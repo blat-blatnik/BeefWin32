@@ -1,7 +1,7 @@
 import os
 import json
 
-INPUT = 'win32json/api'
+INPUT = 'json'
 OUTPUT = 'output'
 
 # If you need to completely replace a type name from the Json data into a native Beef type
