@@ -1,0 +1,2523 @@
+using System;
+
+// namespace Networking.ActiveDirectory
+namespace Win32
+{
+	extension Win32
+	{
+		// --- Constants ---
+		
+		public const uint32 WM_ADSPROP_NOTIFY_PAGEINIT = 2125;
+		public const uint32 WM_ADSPROP_NOTIFY_PAGEHWND = 2126;
+		public const uint32 WM_ADSPROP_NOTIFY_CHANGE = 2127;
+		public const uint32 WM_ADSPROP_NOTIFY_APPLY = 2128;
+		public const uint32 WM_ADSPROP_NOTIFY_SETFOCUS = 2129;
+		public const uint32 WM_ADSPROP_NOTIFY_FOREGROUND = 2130;
+		public const uint32 WM_ADSPROP_NOTIFY_EXIT = 2131;
+		public const uint32 WM_ADSPROP_NOTIFY_ERROR = 2134;
+		public const Guid CLSID_CommonQuery = .(0x83bc5ec0, 0x6f2a, 0x11d0, 0xa1, 0xc4, 0x00, 0xaa, 0x00, 0xc1, 0x6e, 0x65);
+		public const uint64 QUERYFORM_CHANGESFORMLIST = 1uL;
+		public const uint64 QUERYFORM_CHANGESOPTFORMLIST = 2uL;
+		public const uint32 CQFF_NOGLOBALPAGES = 1;
+		public const uint32 CQFF_ISOPTIONAL = 2;
+		public const uint32 CQPM_INITIALIZE = 1;
+		public const uint32 CQPM_RELEASE = 2;
+		public const uint32 CQPM_ENABLE = 3;
+		public const uint32 CQPM_GETPARAMETERS = 5;
+		public const uint32 CQPM_CLEARFORM = 6;
+		public const uint32 CQPM_PERSIST = 7;
+		public const uint32 CQPM_HELP = 8;
+		public const uint32 CQPM_SETDEFAULTPARAMETERS = 9;
+		public const uint32 CQPM_HANDLERSPECIFIC = 268435456;
+		public const uint32 OQWF_OKCANCEL = 1;
+		public const uint32 OQWF_DEFAULTFORM = 2;
+		public const uint32 OQWF_SINGLESELECT = 4;
+		public const uint32 OQWF_LOADQUERY = 8;
+		public const uint32 OQWF_REMOVESCOPES = 16;
+		public const uint32 OQWF_REMOVEFORMS = 32;
+		public const uint32 OQWF_ISSUEONOPEN = 64;
+		public const uint32 OQWF_SHOWOPTIONAL = 128;
+		public const uint32 OQWF_SAVEQUERYONOK = 512;
+		public const uint32 OQWF_HIDEMENUS = 1024;
+		public const uint32 OQWF_HIDESEARCHUI = 2048;
+		public const uint32 OQWF_PARAMISPROPERTYBAG = 2147483648;
+		public const Guid CLSID_DsAdminCreateObj = .(0xe301a009, 0xf901, 0x11d2, 0x82, 0xb9, 0x00, 0xc0, 0x4f, 0x68, 0x92, 0x8b);
+		public const uint32 DSA_NEWOBJ_CTX_PRECOMMIT = 1;
+		public const uint32 DSA_NEWOBJ_CTX_COMMIT = 2;
+		public const uint32 DSA_NEWOBJ_CTX_POSTCOMMIT = 3;
+		public const uint32 DSA_NEWOBJ_CTX_CLEANUP = 4;
+		public const uint32 DSA_NOTIFY_DEL = 1;
+		public const uint32 DSA_NOTIFY_REN = 2;
+		public const uint32 DSA_NOTIFY_MOV = 4;
+		public const uint32 DSA_NOTIFY_PROP = 8;
+		public const uint32 DSA_NOTIFY_FLAG_ADDITIONAL_DATA = 2;
+		public const uint32 DSA_NOTIFY_FLAG_FORCE_ADDITIONAL_DATA = 1;
+		public const Guid CLSID_MicrosoftDS = .(0xfe1290f0, 0xcfbd, 0x11cf, 0xa3, 0x30, 0x00, 0xaa, 0x00, 0xc1, 0x6e, 0x65);
+		public const Guid CLSID_DsPropertyPages = .(0x0d45d530, 0x764b, 0x11d0, 0xa1, 0xca, 0x00, 0xaa, 0x00, 0xc1, 0x6e, 0x65);
+		public const Guid CLSID_DsDomainTreeBrowser = .(0x1698790a, 0xe2b4, 0x11d0, 0xb0, 0xb1, 0x00, 0xc0, 0x4f, 0xd8, 0xdc, 0xa6);
+		public const Guid CLSID_DsDisplaySpecifier = .(0x1ab4a8c0, 0x6a0b, 0x11d2, 0xad, 0x49, 0x00, 0xc0, 0x4f, 0xa3, 0x1a, 0x86);
+		public const Guid CLSID_DsFolderProperties = .(0x9e51e0d0, 0x6e0f, 0x11d2, 0x96, 0x01, 0x00, 0xc0, 0x4f, 0xa3, 0x1a, 0x86);
+		public const uint32 DSOBJECT_ISCONTAINER = 1;
+		public const uint32 DSOBJECT_READONLYPAGES = 2147483648;
+		public const uint32 DSPROVIDER_UNUSED_0 = 1;
+		public const uint32 DSPROVIDER_UNUSED_1 = 2;
+		public const uint32 DSPROVIDER_UNUSED_2 = 4;
+		public const uint32 DSPROVIDER_UNUSED_3 = 8;
+		public const uint32 DSPROVIDER_ADVANCED = 16;
+		public const uint32 DSPROVIDER_AD_LDS = 32;
+		public const uint32 DSDSOF_HASUSERANDSERVERINFO = 1;
+		public const uint32 DSDSOF_SIMPLEAUTHENTICATE = 2;
+		public const uint32 DSDSOF_DONTSIGNSEAL = 4;
+		public const uint32 DSDSOF_DSAVAILABLE = 1073741824;
+		public const uint32 DBDTF_RETURNFQDN = 1;
+		public const uint32 DBDTF_RETURNMIXEDDOMAINS = 2;
+		public const uint32 DBDTF_RETURNEXTERNAL = 4;
+		public const uint32 DBDTF_RETURNINBOUND = 8;
+		public const uint32 DBDTF_RETURNINOUTBOUND = 16;
+		public const uint32 DSSSF_SIMPLEAUTHENTICATE = 1;
+		public const uint32 DSSSF_DONTSIGNSEAL = 2;
+		public const uint32 DSSSF_DSAVAILABLE = 2147483648;
+		public const uint32 DSGIF_ISNORMAL = 0;
+		public const uint32 DSGIF_ISOPEN = 1;
+		public const uint32 DSGIF_ISDISABLED = 2;
+		public const uint32 DSGIF_ISMASK = 15;
+		public const uint32 DSGIF_GETDEFAULTICON = 16;
+		public const uint32 DSGIF_DEFAULTISCONTAINER = 32;
+		public const uint32 DSICCF_IGNORETREATASLEAF = 1;
+		public const uint32 DSECAF_NOTLISTED = 1;
+		public const uint32 DSCCIF_HASWIZARDDIALOG = 1;
+		public const uint32 DSCCIF_HASWIZARDPRIMARYPAGE = 2;
+		public const uint32 DSBI_NOBUTTONS = 1;
+		public const uint32 DSBI_NOLINES = 2;
+		public const uint32 DSBI_NOLINESATROOT = 4;
+		public const uint32 DSBI_CHECKBOXES = 256;
+		public const uint32 DSBI_NOROOT = 65536;
+		public const uint32 DSBI_INCLUDEHIDDEN = 131072;
+		public const uint32 DSBI_EXPANDONOPEN = 262144;
+		public const uint32 DSBI_ENTIREDIRECTORY = 589824;
+		public const uint32 DSBI_RETURN_FORMAT = 1048576;
+		public const uint32 DSBI_HASCREDENTIALS = 2097152;
+		public const uint32 DSBI_IGNORETREATASLEAF = 4194304;
+		public const uint32 DSBI_SIMPLEAUTHENTICATE = 8388608;
+		public const uint32 DSBI_RETURNOBJECTCLASS = 16777216;
+		public const uint32 DSBI_DONTSIGNSEAL = 33554432;
+		public const uint32 DSB_MAX_DISPLAYNAME_CHARS = 64;
+		public const uint32 DSBF_STATE = 1;
+		public const uint32 DSBF_ICONLOCATION = 2;
+		public const uint32 DSBF_DISPLAYNAME = 4;
+		public const uint32 DSBS_CHECKED = 1;
+		public const uint32 DSBS_HIDDEN = 2;
+		public const uint32 DSBS_ROOT = 4;
+		public const uint32 DSBM_QUERYINSERTW = 100;
+		public const uint32 DSBM_QUERYINSERTA = 101;
+		public const uint32 DSBM_QUERYINSERT = 100;
+		public const uint32 DSBM_CHANGEIMAGESTATE = 102;
+		public const uint32 DSBM_HELP = 103;
+		public const uint32 DSBM_CONTEXTMENU = 104;
+		public const uint32 DSBID_BANNER = 256;
+		public const uint32 DSBID_CONTAINERLIST = 257;
+		public const uint32 DS_FORCE_REDISCOVERY = 1;
+		public const uint32 DS_DIRECTORY_SERVICE_REQUIRED = 16;
+		public const uint32 DS_DIRECTORY_SERVICE_PREFERRED = 32;
+		public const uint32 DS_GC_SERVER_REQUIRED = 64;
+		public const uint32 DS_PDC_REQUIRED = 128;
+		public const uint32 DS_BACKGROUND_ONLY = 256;
+		public const uint32 DS_IP_REQUIRED = 512;
+		public const uint32 DS_KDC_REQUIRED = 1024;
+		public const uint32 DS_TIMESERV_REQUIRED = 2048;
+		public const uint32 DS_WRITABLE_REQUIRED = 4096;
+		public const uint32 DS_GOOD_TIMESERV_PREFERRED = 8192;
+		public const uint32 DS_AVOID_SELF = 16384;
+		public const uint32 DS_ONLY_LDAP_NEEDED = 32768;
+		public const uint32 DS_IS_FLAT_NAME = 65536;
+		public const uint32 DS_IS_DNS_NAME = 131072;
+		public const uint32 DS_TRY_NEXTCLOSEST_SITE = 262144;
+		public const uint32 DS_DIRECTORY_SERVICE_6_REQUIRED = 524288;
+		public const uint32 DS_WEB_SERVICE_REQUIRED = 1048576;
+		public const uint32 DS_DIRECTORY_SERVICE_8_REQUIRED = 2097152;
+		public const uint32 DS_DIRECTORY_SERVICE_9_REQUIRED = 4194304;
+		public const uint32 DS_DIRECTORY_SERVICE_10_REQUIRED = 8388608;
+		public const uint32 DS_KEY_LIST_SUPPORT_REQUIRED = 16777216;
+		public const uint32 DS_RETURN_DNS_NAME = 1073741824;
+		public const uint32 DS_RETURN_FLAT_NAME = 2147483648;
+		public const uint32 DS_PDC_FLAG = 1;
+		public const uint32 DS_GC_FLAG = 4;
+		public const uint32 DS_LDAP_FLAG = 8;
+		public const uint32 DS_DS_FLAG = 16;
+		public const uint32 DS_KDC_FLAG = 32;
+		public const uint32 DS_TIMESERV_FLAG = 64;
+		public const uint32 DS_CLOSEST_FLAG = 128;
+		public const uint32 DS_WRITABLE_FLAG = 256;
+		public const uint32 DS_GOOD_TIMESERV_FLAG = 512;
+		public const uint32 DS_NDNC_FLAG = 1024;
+		public const uint32 DS_SELECT_SECRET_DOMAIN_6_FLAG = 2048;
+		public const uint32 DS_FULL_SECRET_DOMAIN_6_FLAG = 4096;
+		public const uint32 DS_WS_FLAG = 8192;
+		public const uint32 DS_DS_8_FLAG = 16384;
+		public const uint32 DS_DS_9_FLAG = 32768;
+		public const uint32 DS_DS_10_FLAG = 65536;
+		public const uint32 DS_KEY_LIST_FLAG = 131072;
+		public const uint32 DS_PING_FLAGS = 1048575;
+		public const uint32 DS_DNS_CONTROLLER_FLAG = 536870912;
+		public const uint32 DS_DNS_DOMAIN_FLAG = 1073741824;
+		public const uint32 DS_DNS_FOREST_FLAG = 2147483648;
+		public const uint32 DS_DOMAIN_IN_FOREST = 1;
+		public const uint32 DS_DOMAIN_DIRECT_OUTBOUND = 2;
+		public const uint32 DS_DOMAIN_TREE_ROOT = 4;
+		public const uint32 DS_DOMAIN_PRIMARY = 8;
+		public const uint32 DS_DOMAIN_NATIVE_MODE = 16;
+		public const uint32 DS_DOMAIN_DIRECT_INBOUND = 32;
+		public const uint32 DS_GFTI_UPDATE_TDO = 1;
+		public const uint32 DS_GFTI_VALID_FLAGS = 1;
+		public const uint32 DS_ONLY_DO_SITE_NAME = 1;
+		public const uint32 DS_NOTIFY_AFTER_SITE_RECORDS = 2;
+		public const Guid CLSID_DsQuery = .(0x8a23e65e, 0x31c2, 0x11d0, 0x89, 0x1c, 0x00, 0xa0, 0x24, 0xab, 0x2d, 0xbb);
+		public const Guid CLSID_DsFindObjects = .(0x83ee3fe1, 0x57d9, 0x11d0, 0xb9, 0x32, 0x00, 0xa0, 0x24, 0xab, 0x2d, 0xbb);
+		public const Guid CLSID_DsFindPeople = .(0x83ee3fe2, 0x57d9, 0x11d0, 0xb9, 0x32, 0x00, 0xa0, 0x24, 0xab, 0x2d, 0xbb);
+		public const Guid CLSID_DsFindPrinter = .(0xb577f070, 0x7ee2, 0x11d0, 0x91, 0x3f, 0x00, 0xaa, 0x00, 0xc1, 0x6e, 0x65);
+		public const Guid CLSID_DsFindComputer = .(0x16006700, 0x87ad, 0x11d0, 0x91, 0x40, 0x00, 0xaa, 0x00, 0xc1, 0x6e, 0x65);
+		public const Guid CLSID_DsFindVolume = .(0xc1b3cbf1, 0x886a, 0x11d0, 0x91, 0x40, 0x00, 0xaa, 0x00, 0xc1, 0x6e, 0x65);
+		public const Guid CLSID_DsFindContainer = .(0xc1b3cbf2, 0x886a, 0x11d0, 0x91, 0x40, 0x00, 0xaa, 0x00, 0xc1, 0x6e, 0x65);
+		public const Guid CLSID_DsFindAdvanced = .(0x83ee3fe3, 0x57d9, 0x11d0, 0xb9, 0x32, 0x00, 0xa0, 0x24, 0xab, 0x2d, 0xbb);
+		public const Guid CLSID_DsFindDomainController = .(0x538c7b7e, 0xd25e, 0x11d0, 0x97, 0x42, 0x00, 0xa0, 0xc9, 0x06, 0xaf, 0x45);
+		public const Guid CLSID_DsFindWriteableDomainController = .(0x7cbef079, 0xaa84, 0x444b, 0xbc, 0x70, 0x68, 0xe4, 0x12, 0x83, 0xea, 0xbc);
+		public const Guid CLSID_DsFindFrsMembers = .(0x94ce4b18, 0xb3d3, 0x11d1, 0xb9, 0xb4, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0xb0);
+		public const uint32 DSQPF_NOSAVE = 1;
+		public const uint32 DSQPF_SAVELOCATION = 2;
+		public const uint32 DSQPF_SHOWHIDDENOBJECTS = 4;
+		public const uint32 DSQPF_ENABLEADMINFEATURES = 8;
+		public const uint32 DSQPF_ENABLEADVANCEDFEATURES = 16;
+		public const uint32 DSQPF_HASCREDENTIALS = 32;
+		public const uint32 DSQPF_NOCHOOSECOLUMNS = 64;
+		public const uint32 DSQPM_GETCLASSLIST = 268435456;
+		public const uint32 DSQPM_HELPTOPICS = 268435457;
+		public const uint32 DSROLE_PRIMARY_DS_RUNNING = 1;
+		public const uint32 DSROLE_PRIMARY_DS_MIXED_MODE = 2;
+		public const uint32 DSROLE_UPGRADE_IN_PROGRESS = 4;
+		public const uint32 DSROLE_PRIMARY_DS_READONLY = 8;
+		public const uint32 DSROLE_PRIMARY_DOMAIN_GUID_PRESENT = 16777216;
+		public const uint32 ADS_ATTR_CLEAR = 1;
+		public const uint32 ADS_ATTR_UPDATE = 2;
+		public const uint32 ADS_ATTR_APPEND = 3;
+		public const uint32 ADS_ATTR_DELETE = 4;
+		public const uint32 ADS_EXT_MINEXTDISPID = 1;
+		public const uint32 ADS_EXT_MAXEXTDISPID = 16777215;
+		public const uint32 ADS_EXT_INITCREDENTIALS = 1;
+		public const uint32 ADS_EXT_INITIALIZE_COMPLETE = 2;
+		public const uint32 DS_BEHAVIOR_WIN2000 = 0;
+		public const uint32 DS_BEHAVIOR_WIN2003_WITH_MIXED_DOMAINS = 1;
+		public const uint32 DS_BEHAVIOR_WIN2003 = 2;
+		public const uint32 DS_BEHAVIOR_WIN2008 = 3;
+		public const uint32 DS_BEHAVIOR_WIN2008R2 = 4;
+		public const uint32 DS_BEHAVIOR_WIN2012 = 5;
+		public const uint32 DS_BEHAVIOR_WIN2012R2 = 6;
+		public const uint32 DS_BEHAVIOR_WIN2016 = 7;
+		public const uint32 DS_BEHAVIOR_LONGHORN = 3;
+		public const uint32 DS_BEHAVIOR_WIN7 = 4;
+		public const uint32 DS_BEHAVIOR_WIN8 = 5;
+		public const uint32 DS_BEHAVIOR_WINBLUE = 6;
+		public const uint32 DS_BEHAVIOR_WINTHRESHOLD = 7;
+		public const uint32 ACTRL_DS_OPEN = 0;
+		public const uint32 ACTRL_DS_CREATE_CHILD = 1;
+		public const uint32 ACTRL_DS_DELETE_CHILD = 2;
+		public const uint32 ACTRL_DS_LIST = 4;
+		public const uint32 ACTRL_DS_SELF = 8;
+		public const uint32 ACTRL_DS_READ_PROP = 16;
+		public const uint32 ACTRL_DS_WRITE_PROP = 32;
+		public const uint32 ACTRL_DS_DELETE_TREE = 64;
+		public const uint32 ACTRL_DS_LIST_OBJECT = 128;
+		public const uint32 ACTRL_DS_CONTROL_ACCESS = 256;
+		public const uint32 NTDSAPI_BIND_ALLOW_DELEGATION = 1;
+		public const uint32 NTDSAPI_BIND_FIND_BINDING = 2;
+		public const uint32 NTDSAPI_BIND_FORCE_KERBEROS = 4;
+		public const uint32 DS_REPSYNC_ASYNCHRONOUS_OPERATION = 1;
+		public const uint32 DS_REPSYNC_WRITEABLE = 2;
+		public const uint32 DS_REPSYNC_PERIODIC = 4;
+		public const uint32 DS_REPSYNC_INTERSITE_MESSAGING = 8;
+		public const uint32 DS_REPSYNC_FULL = 32;
+		public const uint32 DS_REPSYNC_URGENT = 64;
+		public const uint32 DS_REPSYNC_NO_DISCARD = 128;
+		public const uint32 DS_REPSYNC_FORCE = 256;
+		public const uint32 DS_REPSYNC_ADD_REFERENCE = 512;
+		public const uint32 DS_REPSYNC_NEVER_COMPLETED = 1024;
+		public const uint32 DS_REPSYNC_TWO_WAY = 2048;
+		public const uint32 DS_REPSYNC_NEVER_NOTIFY = 4096;
+		public const uint32 DS_REPSYNC_INITIAL = 8192;
+		public const uint32 DS_REPSYNC_USE_COMPRESSION = 16384;
+		public const uint32 DS_REPSYNC_ABANDONED = 32768;
+		public const uint32 DS_REPSYNC_SELECT_SECRETS = 32768;
+		public const uint32 DS_REPSYNC_INITIAL_IN_PROGRESS = 65536;
+		public const uint32 DS_REPSYNC_PARTIAL_ATTRIBUTE_SET = 131072;
+		public const uint32 DS_REPSYNC_REQUEUE = 262144;
+		public const uint32 DS_REPSYNC_NOTIFICATION = 524288;
+		public const uint32 DS_REPSYNC_ASYNCHRONOUS_REPLICA = 1048576;
+		public const uint32 DS_REPSYNC_CRITICAL = 2097152;
+		public const uint32 DS_REPSYNC_FULL_IN_PROGRESS = 4194304;
+		public const uint32 DS_REPSYNC_PREEMPTED = 8388608;
+		public const uint32 DS_REPSYNC_NONGC_RO_REPLICA = 16777216;
+		public const uint32 DS_REPADD_ASYNCHRONOUS_OPERATION = 1;
+		public const uint32 DS_REPADD_WRITEABLE = 2;
+		public const uint32 DS_REPADD_INITIAL = 4;
+		public const uint32 DS_REPADD_PERIODIC = 8;
+		public const uint32 DS_REPADD_INTERSITE_MESSAGING = 16;
+		public const uint32 DS_REPADD_ASYNCHRONOUS_REPLICA = 32;
+		public const uint32 DS_REPADD_DISABLE_NOTIFICATION = 64;
+		public const uint32 DS_REPADD_DISABLE_PERIODIC = 128;
+		public const uint32 DS_REPADD_USE_COMPRESSION = 256;
+		public const uint32 DS_REPADD_NEVER_NOTIFY = 512;
+		public const uint32 DS_REPADD_TWO_WAY = 1024;
+		public const uint32 DS_REPADD_CRITICAL = 2048;
+		public const uint32 DS_REPADD_SELECT_SECRETS = 4096;
+		public const uint32 DS_REPADD_NONGC_RO_REPLICA = 16777216;
+		public const uint32 DS_REPDEL_ASYNCHRONOUS_OPERATION = 1;
+		public const uint32 DS_REPDEL_WRITEABLE = 2;
+		public const uint32 DS_REPDEL_INTERSITE_MESSAGING = 4;
+		public const uint32 DS_REPDEL_IGNORE_ERRORS = 8;
+		public const uint32 DS_REPDEL_LOCAL_ONLY = 16;
+		public const uint32 DS_REPDEL_NO_SOURCE = 32;
+		public const uint32 DS_REPDEL_REF_OK = 64;
+		public const uint32 DS_REPMOD_ASYNCHRONOUS_OPERATION = 1;
+		public const uint32 DS_REPMOD_WRITEABLE = 2;
+		public const uint32 DS_REPMOD_UPDATE_FLAGS = 1;
+		public const uint32 DS_REPMOD_UPDATE_INSTANCE = 2;
+		public const uint32 DS_REPMOD_UPDATE_ADDRESS = 2;
+		public const uint32 DS_REPMOD_UPDATE_SCHEDULE = 4;
+		public const uint32 DS_REPMOD_UPDATE_RESULT = 8;
+		public const uint32 DS_REPMOD_UPDATE_TRANSPORT = 16;
+		public const uint32 DS_REPUPD_ASYNCHRONOUS_OPERATION = 1;
+		public const uint32 DS_REPUPD_WRITEABLE = 2;
+		public const uint32 DS_REPUPD_ADD_REFERENCE = 4;
+		public const uint32 DS_REPUPD_DELETE_REFERENCE = 8;
+		public const uint32 DS_REPUPD_REFERENCE_GCSPN = 16;
+		public const uint32 DS_INSTANCETYPE_IS_NC_HEAD = 1;
+		public const uint32 DS_INSTANCETYPE_NC_IS_WRITEABLE = 4;
+		public const uint32 DS_INSTANCETYPE_NC_COMING = 16;
+		public const uint32 DS_INSTANCETYPE_NC_GOING = 32;
+		public const uint32 NTDSDSA_OPT_IS_GC = 1;
+		public const uint32 NTDSDSA_OPT_DISABLE_INBOUND_REPL = 2;
+		public const uint32 NTDSDSA_OPT_DISABLE_OUTBOUND_REPL = 4;
+		public const uint32 NTDSDSA_OPT_DISABLE_NTDSCONN_XLATE = 8;
+		public const uint32 NTDSDSA_OPT_DISABLE_SPN_REGISTRATION = 16;
+		public const uint32 NTDSDSA_OPT_GENERATE_OWN_TOPO = 32;
+		public const uint32 NTDSDSA_OPT_BLOCK_RPC = 64;
+		public const uint32 NTDSCONN_OPT_IS_GENERATED = 1;
+		public const uint32 NTDSCONN_OPT_TWOWAY_SYNC = 2;
+		public const uint32 NTDSCONN_OPT_OVERRIDE_NOTIFY_DEFAULT = 4;
+		public const uint32 NTDSCONN_OPT_USE_NOTIFY = 8;
+		public const uint32 NTDSCONN_OPT_DISABLE_INTERSITE_COMPRESSION = 16;
+		public const uint32 NTDSCONN_OPT_USER_OWNED_SCHEDULE = 32;
+		public const uint32 NTDSCONN_OPT_RODC_TOPOLOGY = 64;
+		public const uint32 NTDSCONN_KCC_NO_REASON = 0;
+		public const uint32 NTDSCONN_KCC_GC_TOPOLOGY = 1;
+		public const uint32 NTDSCONN_KCC_RING_TOPOLOGY = 2;
+		public const uint32 NTDSCONN_KCC_MINIMIZE_HOPS_TOPOLOGY = 4;
+		public const uint32 NTDSCONN_KCC_STALE_SERVERS_TOPOLOGY = 8;
+		public const uint32 NTDSCONN_KCC_OSCILLATING_CONNECTION_TOPOLOGY = 16;
+		public const uint32 NTDSCONN_KCC_INTERSITE_GC_TOPOLOGY = 32;
+		public const uint32 NTDSCONN_KCC_INTERSITE_TOPOLOGY = 64;
+		public const uint32 NTDSCONN_KCC_SERVER_FAILOVER_TOPOLOGY = 128;
+		public const uint32 NTDSCONN_KCC_SITE_FAILOVER_TOPOLOGY = 256;
+		public const uint32 NTDSCONN_KCC_REDUNDANT_SERVER_TOPOLOGY = 512;
+		public const uint32 FRSCONN_PRIORITY_MASK = 1879048192;
+		public const uint32 FRSCONN_MAX_PRIORITY = 8;
+		public const uint32 NTDSCONN_OPT_IGNORE_SCHEDULE_MASK = 2147483648;
+		public const uint32 NTDSSETTINGS_OPT_IS_AUTO_TOPOLOGY_DISABLED = 1;
+		public const uint32 NTDSSETTINGS_OPT_IS_TOPL_CLEANUP_DISABLED = 2;
+		public const uint32 NTDSSETTINGS_OPT_IS_TOPL_MIN_HOPS_DISABLED = 4;
+		public const uint32 NTDSSETTINGS_OPT_IS_TOPL_DETECT_STALE_DISABLED = 8;
+		public const uint32 NTDSSETTINGS_OPT_IS_INTER_SITE_AUTO_TOPOLOGY_DISABLED = 16;
+		public const uint32 NTDSSETTINGS_OPT_IS_GROUP_CACHING_ENABLED = 32;
+		public const uint32 NTDSSETTINGS_OPT_FORCE_KCC_WHISTLER_BEHAVIOR = 64;
+		public const uint32 NTDSSETTINGS_OPT_FORCE_KCC_W2K_ELECTION = 128;
+		public const uint32 NTDSSETTINGS_OPT_IS_RAND_BH_SELECTION_DISABLED = 256;
+		public const uint32 NTDSSETTINGS_OPT_IS_SCHEDULE_HASHING_ENABLED = 512;
+		public const uint32 NTDSSETTINGS_OPT_IS_REDUNDANT_SERVER_TOPOLOGY_ENABLED = 1024;
+		public const uint32 NTDSSETTINGS_OPT_W2K3_IGNORE_SCHEDULES = 2048;
+		public const uint32 NTDSSETTINGS_OPT_W2K3_BRIDGES_REQUIRED = 4096;
+		public const uint32 NTDSSETTINGS_DEFAULT_SERVER_REDUNDANCY = 2;
+		public const uint32 NTDSTRANSPORT_OPT_IGNORE_SCHEDULES = 1;
+		public const uint32 NTDSTRANSPORT_OPT_BRIDGES_REQUIRED = 2;
+		public const uint32 NTDSSITECONN_OPT_USE_NOTIFY = 1;
+		public const uint32 NTDSSITECONN_OPT_TWOWAY_SYNC = 2;
+		public const uint32 NTDSSITECONN_OPT_DISABLE_COMPRESSION = 4;
+		public const uint32 NTDSSITELINK_OPT_USE_NOTIFY = 1;
+		public const uint32 NTDSSITELINK_OPT_TWOWAY_SYNC = 2;
+		public const uint32 NTDSSITELINK_OPT_DISABLE_COMPRESSION = 4;
+		public const uint32 DS_REPSYNCALL_NO_OPTIONS = 0;
+		public const uint32 DS_REPSYNCALL_ABORT_IF_SERVER_UNAVAILABLE = 1;
+		public const uint32 DS_REPSYNCALL_SYNC_ADJACENT_SERVERS_ONLY = 2;
+		public const uint32 DS_REPSYNCALL_ID_SERVERS_BY_DN = 4;
+		public const uint32 DS_REPSYNCALL_DO_NOT_SYNC = 8;
+		public const uint32 DS_REPSYNCALL_SKIP_INITIAL_CHECK = 16;
+		public const uint32 DS_REPSYNCALL_PUSH_CHANGES_OUTWARD = 32;
+		public const uint32 DS_REPSYNCALL_CROSS_SITE_BOUNDARIES = 64;
+		public const uint32 DS_LIST_DSA_OBJECT_FOR_SERVER = 0;
+		public const uint32 DS_LIST_DNS_HOST_NAME_FOR_SERVER = 1;
+		public const uint32 DS_LIST_ACCOUNT_OBJECT_FOR_SERVER = 2;
+		public const uint32 DS_ROLE_SCHEMA_OWNER = 0;
+		public const uint32 DS_ROLE_DOMAIN_OWNER = 1;
+		public const uint32 DS_ROLE_PDC_OWNER = 2;
+		public const uint32 DS_ROLE_RID_OWNER = 3;
+		public const uint32 DS_ROLE_INFRASTRUCTURE_OWNER = 4;
+		public const uint32 DS_SCHEMA_GUID_NOT_FOUND = 0;
+		public const uint32 DS_SCHEMA_GUID_ATTR = 1;
+		public const uint32 DS_SCHEMA_GUID_ATTR_SET = 2;
+		public const uint32 DS_SCHEMA_GUID_CLASS = 3;
+		public const uint32 DS_SCHEMA_GUID_CONTROL_RIGHT = 4;
+		public const uint32 DS_KCC_FLAG_ASYNC_OP = 1;
+		public const uint32 DS_KCC_FLAG_DAMPED = 2;
+		public const uint32 DS_EXIST_ADVISORY_MODE = 1;
+		public const uint32 DS_REPL_INFO_FLAG_IMPROVE_LINKED_ATTRS = 1;
+		public const uint32 DS_REPL_NBR_WRITEABLE = 16;
+		public const uint32 DS_REPL_NBR_SYNC_ON_STARTUP = 32;
+		public const uint32 DS_REPL_NBR_DO_SCHEDULED_SYNCS = 64;
+		public const uint32 DS_REPL_NBR_USE_ASYNC_INTERSITE_TRANSPORT = 128;
+		public const uint32 DS_REPL_NBR_TWO_WAY_SYNC = 512;
+		public const uint32 DS_REPL_NBR_NONGC_RO_REPLICA = 1024;
+		public const uint32 DS_REPL_NBR_RETURN_OBJECT_PARENTS = 2048;
+		public const uint32 DS_REPL_NBR_SELECT_SECRETS = 4096;
+		public const uint32 DS_REPL_NBR_FULL_SYNC_IN_PROGRESS = 65536;
+		public const uint32 DS_REPL_NBR_FULL_SYNC_NEXT_PACKET = 131072;
+		public const uint32 DS_REPL_NBR_GCSPN = 1048576;
+		public const uint32 DS_REPL_NBR_NEVER_SYNCED = 2097152;
+		public const uint32 DS_REPL_NBR_PREEMPTED = 16777216;
+		public const uint32 DS_REPL_NBR_IGNORE_CHANGE_NOTIFICATIONS = 67108864;
+		public const uint32 DS_REPL_NBR_DISABLE_SCHEDULED_SYNC = 134217728;
+		public const uint32 DS_REPL_NBR_COMPRESS_CHANGES = 268435456;
+		public const uint32 DS_REPL_NBR_NO_CHANGE_NOTIFICATIONS = 536870912;
+		public const uint32 DS_REPL_NBR_PARTIAL_ATTRIBUTE_SET = 1073741824;
+		public const uint32 ADAM_REPL_AUTHENTICATION_MODE_NEGOTIATE_PASS_THROUGH = 0;
+		public const uint32 ADAM_REPL_AUTHENTICATION_MODE_NEGOTIATE = 1;
+		public const uint32 ADAM_REPL_AUTHENTICATION_MODE_MUTUAL_AUTH_REQUIRED = 2;
+		public const uint32 FLAG_FOREST_OPTIONAL_FEATURE = 1;
+		public const uint32 FLAG_DOMAIN_OPTIONAL_FEATURE = 2;
+		public const uint32 FLAG_DISABLABLE_OPTIONAL_FEATURE = 4;
+		public const uint32 FLAG_SERVER_OPTIONAL_FEATURE = 8;
+		public const uint32 DSOP_SCOPE_TYPE_TARGET_COMPUTER = 1;
+		public const uint32 DSOP_SCOPE_TYPE_UPLEVEL_JOINED_DOMAIN = 2;
+		public const uint32 DSOP_SCOPE_TYPE_DOWNLEVEL_JOINED_DOMAIN = 4;
+		public const uint32 DSOP_SCOPE_TYPE_ENTERPRISE_DOMAIN = 8;
+		public const uint32 DSOP_SCOPE_TYPE_GLOBAL_CATALOG = 16;
+		public const uint32 DSOP_SCOPE_TYPE_EXTERNAL_UPLEVEL_DOMAIN = 32;
+		public const uint32 DSOP_SCOPE_TYPE_EXTERNAL_DOWNLEVEL_DOMAIN = 64;
+		public const uint32 DSOP_SCOPE_TYPE_WORKGROUP = 128;
+		public const uint32 DSOP_SCOPE_TYPE_USER_ENTERED_UPLEVEL_SCOPE = 256;
+		public const uint32 DSOP_SCOPE_TYPE_USER_ENTERED_DOWNLEVEL_SCOPE = 512;
+		public const uint32 DSOP_SCOPE_FLAG_STARTING_SCOPE = 1;
+		public const uint32 DSOP_SCOPE_FLAG_WANT_PROVIDER_WINNT = 2;
+		public const uint32 DSOP_SCOPE_FLAG_WANT_PROVIDER_LDAP = 4;
+		public const uint32 DSOP_SCOPE_FLAG_WANT_PROVIDER_GC = 8;
+		public const uint32 DSOP_SCOPE_FLAG_WANT_SID_PATH = 16;
+		public const uint32 DSOP_SCOPE_FLAG_WANT_DOWNLEVEL_BUILTIN_PATH = 32;
+		public const uint32 DSOP_SCOPE_FLAG_DEFAULT_FILTER_USERS = 64;
+		public const uint32 DSOP_SCOPE_FLAG_DEFAULT_FILTER_GROUPS = 128;
+		public const uint32 DSOP_SCOPE_FLAG_DEFAULT_FILTER_COMPUTERS = 256;
+		public const uint32 DSOP_SCOPE_FLAG_DEFAULT_FILTER_CONTACTS = 512;
+		public const uint32 DSOP_SCOPE_FLAG_DEFAULT_FILTER_SERVICE_ACCOUNTS = 1024;
+		public const uint32 DSOP_SCOPE_FLAG_DEFAULT_FILTER_PASSWORDSETTINGS_OBJECTS = 2048;
+		public const uint32 DSOP_FILTER_INCLUDE_ADVANCED_VIEW = 1;
+		public const uint32 DSOP_FILTER_USERS = 2;
+		public const uint32 DSOP_FILTER_BUILTIN_GROUPS = 4;
+		public const uint32 DSOP_FILTER_WELL_KNOWN_PRINCIPALS = 8;
+		public const uint32 DSOP_FILTER_UNIVERSAL_GROUPS_DL = 16;
+		public const uint32 DSOP_FILTER_UNIVERSAL_GROUPS_SE = 32;
+		public const uint32 DSOP_FILTER_GLOBAL_GROUPS_DL = 64;
+		public const uint32 DSOP_FILTER_GLOBAL_GROUPS_SE = 128;
+		public const uint32 DSOP_FILTER_DOMAIN_LOCAL_GROUPS_DL = 256;
+		public const uint32 DSOP_FILTER_DOMAIN_LOCAL_GROUPS_SE = 512;
+		public const uint32 DSOP_FILTER_CONTACTS = 1024;
+		public const uint32 DSOP_FILTER_COMPUTERS = 2048;
+		public const uint32 DSOP_FILTER_SERVICE_ACCOUNTS = 4096;
+		public const uint32 DSOP_FILTER_PASSWORDSETTINGS_OBJECTS = 8192;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_USERS = 2147483649;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_LOCAL_GROUPS = 2147483650;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_GLOBAL_GROUPS = 2147483652;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_COMPUTERS = 2147483656;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_WORLD = 2147483664;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_AUTHENTICATED_USER = 2147483680;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_ANONYMOUS = 2147483712;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_BATCH = 2147483776;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_CREATOR_OWNER = 2147483904;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_CREATOR_GROUP = 2147484160;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_DIALUP = 2147484672;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_INTERACTIVE = 2147485696;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_NETWORK = 2147487744;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_SERVICE = 2147491840;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_SYSTEM = 2147500032;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_EXCLUDE_BUILTIN_GROUPS = 2147516416;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_TERMINAL_SERVER = 2147549184;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_ALL_WELLKNOWN_SIDS = 2147614720;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_LOCAL_SERVICE = 2147745792;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_NETWORK_SERVICE = 2148007936;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_REMOTE_LOGON = 2148532224;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_INTERNET_USER = 2149580800;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_OWNER_RIGHTS = 2151677952;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_SERVICES = 2155872256;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_LOCAL_LOGON = 2164260864;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_THIS_ORG_CERT = 2181038080;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_IIS_APP_POOL = 2214592512;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_ALL_APP_PACKAGES = 2281701376;
+		public const uint32 DSOP_DOWNLEVEL_FILTER_LOCAL_ACCOUNTS = 2415919104;
+		public const uint32 DSOP_FLAG_MULTISELECT = 1;
+		public const uint32 DSOP_FLAG_SKIP_TARGET_COMPUTER_DC_CHECK = 2;
+		public const uint32 SCHEDULE_INTERVAL = 0;
+		public const uint32 SCHEDULE_BANDWIDTH = 1;
+		public const uint32 SCHEDULE_PRIORITY = 2;
+		public const uint32 FACILITY_NTDSB = 2048;
+		public const uint32 FACILITY_BACKUP = 2047;
+		public const uint32 FACILITY_SYSTEM = 0;
+		public const uint32 STATUS_SEVERITY_SUCCESS = 0;
+		public const uint32 STATUS_SEVERITY_INFORMATIONAL = 1;
+		public const uint32 STATUS_SEVERITY_WARNING = 2;
+		public const uint32 STATUS_SEVERITY_ERROR = 3;
+		public const Guid CLSID_DsObjectPicker = .(0x17d6ccd8, 0x3b7b, 0x11d2, 0xb9, 0xe0, 0x00, 0xc0, 0x4f, 0xd8, 0xdb, 0xf7);
+		
+		// --- Typedefs ---
+		
+		public typealias GetDcContextHandle = int;
+		
+		// --- Enums ---
+		
+		[AllowDuplicates]
+		public enum ADSTYPEENUM : int32
+		{
+			ADSTYPE_INVALID = 0,
+			ADSTYPE_DN_STRING = 1,
+			ADSTYPE_CASE_EXACT_STRING = 2,
+			ADSTYPE_CASE_IGNORE_STRING = 3,
+			ADSTYPE_PRINTABLE_STRING = 4,
+			ADSTYPE_NUMERIC_STRING = 5,
+			ADSTYPE_BOOLEAN = 6,
+			ADSTYPE_INTEGER = 7,
+			ADSTYPE_OCTET_STRING = 8,
+			ADSTYPE_UTC_TIME = 9,
+			ADSTYPE_LARGE_INTEGER = 10,
+			ADSTYPE_PROV_SPECIFIC = 11,
+			ADSTYPE_OBJECT_CLASS = 12,
+			ADSTYPE_CASEIGNORE_LIST = 13,
+			ADSTYPE_OCTET_LIST = 14,
+			ADSTYPE_PATH = 15,
+			ADSTYPE_POSTALADDRESS = 16,
+			ADSTYPE_TIMESTAMP = 17,
+			ADSTYPE_BACKLINK = 18,
+			ADSTYPE_TYPEDNAME = 19,
+			ADSTYPE_HOLD = 20,
+			ADSTYPE_NETADDRESS = 21,
+			ADSTYPE_REPLICAPOINTER = 22,
+			ADSTYPE_FAXNUMBER = 23,
+			ADSTYPE_EMAIL = 24,
+			ADSTYPE_NT_SECURITY_DESCRIPTOR = 25,
+			ADSTYPE_UNKNOWN = 26,
+			ADSTYPE_DN_WITH_BINARY = 27,
+			ADSTYPE_DN_WITH_STRING = 28,
+		}
+		[AllowDuplicates]
+		public enum ADS_AUTHENTICATION_ENUM : uint32
+		{
+			ADS_SECURE_AUTHENTICATION = 1,
+			ADS_USE_ENCRYPTION = 2,
+			ADS_USE_SSL = 2,
+			ADS_READONLY_SERVER = 4,
+			ADS_PROMPT_CREDENTIALS = 8,
+			ADS_NO_AUTHENTICATION = 16,
+			ADS_FAST_BIND = 32,
+			ADS_USE_SIGNING = 64,
+			ADS_USE_SEALING = 128,
+			ADS_USE_DELEGATION = 256,
+			ADS_SERVER_BIND = 512,
+			ADS_NO_REFERRAL_CHASING = 1024,
+			ADS_AUTH_RESERVED = 2147483648,
+		}
+		[AllowDuplicates]
+		public enum ADS_STATUSENUM : int32
+		{
+			ADS_STATUS_S_OK = 0,
+			ADS_STATUS_INVALID_SEARCHPREF = 1,
+			ADS_STATUS_INVALID_SEARCHPREFVALUE = 2,
+		}
+		[AllowDuplicates]
+		public enum ADS_DEREFENUM : int32
+		{
+			ADS_DEREF_NEVER = 0,
+			ADS_DEREF_SEARCHING = 1,
+			ADS_DEREF_FINDING = 2,
+			ADS_DEREF_ALWAYS = 3,
+		}
+		[AllowDuplicates]
+		public enum ADS_SCOPEENUM : int32
+		{
+			ADS_SCOPE_BASE = 0,
+			ADS_SCOPE_ONELEVEL = 1,
+			ADS_SCOPE_SUBTREE = 2,
+		}
+		[AllowDuplicates]
+		public enum ADS_PREFERENCES_ENUM : int32
+		{
+			ADSIPROP_ASYNCHRONOUS = 0,
+			ADSIPROP_DEREF_ALIASES = 1,
+			ADSIPROP_SIZE_LIMIT = 2,
+			ADSIPROP_TIME_LIMIT = 3,
+			ADSIPROP_ATTRIBTYPES_ONLY = 4,
+			ADSIPROP_SEARCH_SCOPE = 5,
+			ADSIPROP_TIMEOUT = 6,
+			ADSIPROP_PAGESIZE = 7,
+			ADSIPROP_PAGED_TIME_LIMIT = 8,
+			ADSIPROP_CHASE_REFERRALS = 9,
+			ADSIPROP_SORT_ON = 10,
+			ADSIPROP_CACHE_RESULTS = 11,
+			ADSIPROP_ADSIFLAG = 12,
+		}
+		[AllowDuplicates]
+		public enum ADSI_DIALECT_ENUM : int32
+		{
+			ADSI_DIALECT_LDAP = 0,
+			ADSI_DIALECT_SQL = 1,
+		}
+		[AllowDuplicates]
+		public enum ADS_CHASE_REFERRALS_ENUM : int32
+		{
+			ADS_CHASE_REFERRALS_NEVER = 0,
+			ADS_CHASE_REFERRALS_SUBORDINATE = 32,
+			ADS_CHASE_REFERRALS_EXTERNAL = 64,
+			ADS_CHASE_REFERRALS_ALWAYS = 96,
+		}
+		[AllowDuplicates]
+		public enum ADS_SEARCHPREF_ENUM : int32
+		{
+			ADS_SEARCHPREF_ASYNCHRONOUS = 0,
+			ADS_SEARCHPREF_DEREF_ALIASES = 1,
+			ADS_SEARCHPREF_SIZE_LIMIT = 2,
+			ADS_SEARCHPREF_TIME_LIMIT = 3,
+			ADS_SEARCHPREF_ATTRIBTYPES_ONLY = 4,
+			ADS_SEARCHPREF_SEARCH_SCOPE = 5,
+			ADS_SEARCHPREF_TIMEOUT = 6,
+			ADS_SEARCHPREF_PAGESIZE = 7,
+			ADS_SEARCHPREF_PAGED_TIME_LIMIT = 8,
+			ADS_SEARCHPREF_CHASE_REFERRALS = 9,
+			ADS_SEARCHPREF_SORT_ON = 10,
+			ADS_SEARCHPREF_CACHE_RESULTS = 11,
+			ADS_SEARCHPREF_DIRSYNC = 12,
+			ADS_SEARCHPREF_TOMBSTONE = 13,
+			ADS_SEARCHPREF_VLV = 14,
+			ADS_SEARCHPREF_ATTRIBUTE_QUERY = 15,
+			ADS_SEARCHPREF_SECURITY_MASK = 16,
+			ADS_SEARCHPREF_DIRSYNC_FLAG = 17,
+			ADS_SEARCHPREF_EXTENDED_DN = 18,
+		}
+		[AllowDuplicates]
+		public enum ADS_PASSWORD_ENCODING_ENUM : int32
+		{
+			ADS_PASSWORD_ENCODE_REQUIRE_SSL = 0,
+			ADS_PASSWORD_ENCODE_CLEAR = 1,
+		}
+		[AllowDuplicates]
+		public enum ADS_PROPERTY_OPERATION_ENUM : int32
+		{
+			ADS_PROPERTY_CLEAR = 1,
+			ADS_PROPERTY_UPDATE = 2,
+			ADS_PROPERTY_APPEND = 3,
+			ADS_PROPERTY_DELETE = 4,
+		}
+		[AllowDuplicates]
+		public enum ADS_SYSTEMFLAG_ENUM : int32
+		{
+			ADS_SYSTEMFLAG_DISALLOW_DELETE = -2147483648,
+			ADS_SYSTEMFLAG_CONFIG_ALLOW_RENAME = 1073741824,
+			ADS_SYSTEMFLAG_CONFIG_ALLOW_MOVE = 536870912,
+			ADS_SYSTEMFLAG_CONFIG_ALLOW_LIMITED_MOVE = 268435456,
+			ADS_SYSTEMFLAG_DOMAIN_DISALLOW_RENAME = 134217728,
+			ADS_SYSTEMFLAG_DOMAIN_DISALLOW_MOVE = 67108864,
+			ADS_SYSTEMFLAG_CR_NTDS_NC = 1,
+			ADS_SYSTEMFLAG_CR_NTDS_DOMAIN = 2,
+			ADS_SYSTEMFLAG_ATTR_NOT_REPLICATED = 1,
+			ADS_SYSTEMFLAG_ATTR_IS_CONSTRUCTED = 4,
+		}
+		[AllowDuplicates]
+		public enum ADS_GROUP_TYPE_ENUM : int32
+		{
+			ADS_GROUP_TYPE_GLOBAL_GROUP = 2,
+			ADS_GROUP_TYPE_DOMAIN_LOCAL_GROUP = 4,
+			ADS_GROUP_TYPE_LOCAL_GROUP = 4,
+			ADS_GROUP_TYPE_UNIVERSAL_GROUP = 8,
+			ADS_GROUP_TYPE_SECURITY_ENABLED = -2147483648,
+		}
+		[AllowDuplicates]
+		public enum ADS_USER_FLAG_ENUM : int32
+		{
+			ADS_UF_SCRIPT = 1,
+			ADS_UF_ACCOUNTDISABLE = 2,
+			ADS_UF_HOMEDIR_REQUIRED = 8,
+			ADS_UF_LOCKOUT = 16,
+			ADS_UF_PASSWD_NOTREQD = 32,
+			ADS_UF_PASSWD_CANT_CHANGE = 64,
+			ADS_UF_ENCRYPTED_TEXT_PASSWORD_ALLOWED = 128,
+			ADS_UF_TEMP_DUPLICATE_ACCOUNT = 256,
+			ADS_UF_NORMAL_ACCOUNT = 512,
+			ADS_UF_INTERDOMAIN_TRUST_ACCOUNT = 2048,
+			ADS_UF_WORKSTATION_TRUST_ACCOUNT = 4096,
+			ADS_UF_SERVER_TRUST_ACCOUNT = 8192,
+			ADS_UF_DONT_EXPIRE_PASSWD = 65536,
+			ADS_UF_MNS_LOGON_ACCOUNT = 131072,
+			ADS_UF_SMARTCARD_REQUIRED = 262144,
+			ADS_UF_TRUSTED_FOR_DELEGATION = 524288,
+			ADS_UF_NOT_DELEGATED = 1048576,
+			ADS_UF_USE_DES_KEY_ONLY = 2097152,
+			ADS_UF_DONT_REQUIRE_PREAUTH = 4194304,
+			ADS_UF_PASSWORD_EXPIRED = 8388608,
+			ADS_UF_TRUSTED_TO_AUTHENTICATE_FOR_DELEGATION = 16777216,
+		}
+		[AllowDuplicates]
+		public enum ADS_RIGHTS_ENUM : int32
+		{
+			ADS_RIGHT_DELETE = 65536,
+			ADS_RIGHT_READ_CONTROL = 131072,
+			ADS_RIGHT_WRITE_DAC = 262144,
+			ADS_RIGHT_WRITE_OWNER = 524288,
+			ADS_RIGHT_SYNCHRONIZE = 1048576,
+			ADS_RIGHT_ACCESS_SYSTEM_SECURITY = 16777216,
+			ADS_RIGHT_GENERIC_READ = -2147483648,
+			ADS_RIGHT_GENERIC_WRITE = 1073741824,
+			ADS_RIGHT_GENERIC_EXECUTE = 536870912,
+			ADS_RIGHT_GENERIC_ALL = 268435456,
+			ADS_RIGHT_DS_CREATE_CHILD = 1,
+			ADS_RIGHT_DS_DELETE_CHILD = 2,
+			ADS_RIGHT_ACTRL_DS_LIST = 4,
+			ADS_RIGHT_DS_SELF = 8,
+			ADS_RIGHT_DS_READ_PROP = 16,
+			ADS_RIGHT_DS_WRITE_PROP = 32,
+			ADS_RIGHT_DS_DELETE_TREE = 64,
+			ADS_RIGHT_DS_LIST_OBJECT = 128,
+			ADS_RIGHT_DS_CONTROL_ACCESS = 256,
+		}
+		[AllowDuplicates]
+		public enum ADS_ACETYPE_ENUM : int32
+		{
+			ADS_ACETYPE_ACCESS_ALLOWED = 0,
+			ADS_ACETYPE_ACCESS_DENIED = 1,
+			ADS_ACETYPE_SYSTEM_AUDIT = 2,
+			ADS_ACETYPE_ACCESS_ALLOWED_OBJECT = 5,
+			ADS_ACETYPE_ACCESS_DENIED_OBJECT = 6,
+			ADS_ACETYPE_SYSTEM_AUDIT_OBJECT = 7,
+			ADS_ACETYPE_SYSTEM_ALARM_OBJECT = 8,
+			ADS_ACETYPE_ACCESS_ALLOWED_CALLBACK = 9,
+			ADS_ACETYPE_ACCESS_DENIED_CALLBACK = 10,
+			ADS_ACETYPE_ACCESS_ALLOWED_CALLBACK_OBJECT = 11,
+			ADS_ACETYPE_ACCESS_DENIED_CALLBACK_OBJECT = 12,
+			ADS_ACETYPE_SYSTEM_AUDIT_CALLBACK = 13,
+			ADS_ACETYPE_SYSTEM_ALARM_CALLBACK = 14,
+			ADS_ACETYPE_SYSTEM_AUDIT_CALLBACK_OBJECT = 15,
+			ADS_ACETYPE_SYSTEM_ALARM_CALLBACK_OBJECT = 16,
+		}
+		[AllowDuplicates]
+		public enum ADS_ACEFLAG_ENUM : int32
+		{
+			ADS_ACEFLAG_INHERIT_ACE = 2,
+			ADS_ACEFLAG_NO_PROPAGATE_INHERIT_ACE = 4,
+			ADS_ACEFLAG_INHERIT_ONLY_ACE = 8,
+			ADS_ACEFLAG_INHERITED_ACE = 16,
+			ADS_ACEFLAG_VALID_INHERIT_FLAGS = 31,
+			ADS_ACEFLAG_SUCCESSFUL_ACCESS = 64,
+			ADS_ACEFLAG_FAILED_ACCESS = 128,
+		}
+		[AllowDuplicates]
+		public enum ADS_FLAGTYPE_ENUM : int32
+		{
+			ADS_FLAG_OBJECT_TYPE_PRESENT = 1,
+			ADS_FLAG_INHERITED_OBJECT_TYPE_PRESENT = 2,
+		}
+		[AllowDuplicates]
+		public enum ADS_SD_CONTROL_ENUM : int32
+		{
+			ADS_SD_CONTROL_SE_OWNER_DEFAULTED = 1,
+			ADS_SD_CONTROL_SE_GROUP_DEFAULTED = 2,
+			ADS_SD_CONTROL_SE_DACL_PRESENT = 4,
+			ADS_SD_CONTROL_SE_DACL_DEFAULTED = 8,
+			ADS_SD_CONTROL_SE_SACL_PRESENT = 16,
+			ADS_SD_CONTROL_SE_SACL_DEFAULTED = 32,
+			ADS_SD_CONTROL_SE_DACL_AUTO_INHERIT_REQ = 256,
+			ADS_SD_CONTROL_SE_SACL_AUTO_INHERIT_REQ = 512,
+			ADS_SD_CONTROL_SE_DACL_AUTO_INHERITED = 1024,
+			ADS_SD_CONTROL_SE_SACL_AUTO_INHERITED = 2048,
+			ADS_SD_CONTROL_SE_DACL_PROTECTED = 4096,
+			ADS_SD_CONTROL_SE_SACL_PROTECTED = 8192,
+			ADS_SD_CONTROL_SE_SELF_RELATIVE = 32768,
+		}
+		[AllowDuplicates]
+		public enum ADS_SD_REVISION_ENUM : int32
+		{
+			ADS_SD_REVISION_DS = 4,
+		}
+		[AllowDuplicates]
+		public enum ADS_NAME_TYPE_ENUM : int32
+		{
+			ADS_NAME_TYPE_1779 = 1,
+			ADS_NAME_TYPE_CANONICAL = 2,
+			ADS_NAME_TYPE_NT4 = 3,
+			ADS_NAME_TYPE_DISPLAY = 4,
+			ADS_NAME_TYPE_DOMAIN_SIMPLE = 5,
+			ADS_NAME_TYPE_ENTERPRISE_SIMPLE = 6,
+			ADS_NAME_TYPE_GUID = 7,
+			ADS_NAME_TYPE_UNKNOWN = 8,
+			ADS_NAME_TYPE_USER_PRINCIPAL_NAME = 9,
+			ADS_NAME_TYPE_CANONICAL_EX = 10,
+			ADS_NAME_TYPE_SERVICE_PRINCIPAL_NAME = 11,
+			ADS_NAME_TYPE_SID_OR_SID_HISTORY_NAME = 12,
+		}
+		[AllowDuplicates]
+		public enum ADS_NAME_INITTYPE_ENUM : int32
+		{
+			ADS_NAME_INITTYPE_DOMAIN = 1,
+			ADS_NAME_INITTYPE_SERVER = 2,
+			ADS_NAME_INITTYPE_GC = 3,
+		}
+		[AllowDuplicates]
+		public enum ADS_OPTION_ENUM : int32
+		{
+			ADS_OPTION_SERVERNAME = 0,
+			ADS_OPTION_REFERRALS = 1,
+			ADS_OPTION_PAGE_SIZE = 2,
+			ADS_OPTION_SECURITY_MASK = 3,
+			ADS_OPTION_MUTUAL_AUTH_STATUS = 4,
+			ADS_OPTION_QUOTA = 5,
+			ADS_OPTION_PASSWORD_PORTNUMBER = 6,
+			ADS_OPTION_PASSWORD_METHOD = 7,
+			ADS_OPTION_ACCUMULATIVE_MODIFICATION = 8,
+			ADS_OPTION_SKIP_SID_LOOKUP = 9,
+		}
+		[AllowDuplicates]
+		public enum ADS_SECURITY_INFO_ENUM : int32
+		{
+			ADS_SECURITY_INFO_OWNER = 1,
+			ADS_SECURITY_INFO_GROUP = 2,
+			ADS_SECURITY_INFO_DACL = 4,
+			ADS_SECURITY_INFO_SACL = 8,
+		}
+		[AllowDuplicates]
+		public enum ADS_SETTYPE_ENUM : int32
+		{
+			ADS_SETTYPE_FULL = 1,
+			ADS_SETTYPE_PROVIDER = 2,
+			ADS_SETTYPE_SERVER = 3,
+			ADS_SETTYPE_DN = 4,
+		}
+		[AllowDuplicates]
+		public enum ADS_FORMAT_ENUM : int32
+		{
+			ADS_FORMAT_WINDOWS = 1,
+			ADS_FORMAT_WINDOWS_NO_SERVER = 2,
+			ADS_FORMAT_WINDOWS_DN = 3,
+			ADS_FORMAT_WINDOWS_PARENT = 4,
+			ADS_FORMAT_X500 = 5,
+			ADS_FORMAT_X500_NO_SERVER = 6,
+			ADS_FORMAT_X500_DN = 7,
+			ADS_FORMAT_X500_PARENT = 8,
+			ADS_FORMAT_SERVER = 9,
+			ADS_FORMAT_PROVIDER = 10,
+			ADS_FORMAT_LEAF = 11,
+		}
+		[AllowDuplicates]
+		public enum ADS_DISPLAY_ENUM : int32
+		{
+			ADS_DISPLAY_FULL = 1,
+			ADS_DISPLAY_VALUE_ONLY = 2,
+		}
+		[AllowDuplicates]
+		public enum ADS_ESCAPE_MODE_ENUM : int32
+		{
+			ADS_ESCAPEDMODE_DEFAULT = 1,
+			ADS_ESCAPEDMODE_ON = 2,
+			ADS_ESCAPEDMODE_OFF = 3,
+			ADS_ESCAPEDMODE_OFF_EX = 4,
+		}
+		[AllowDuplicates]
+		public enum ADS_PATHTYPE_ENUM : int32
+		{
+			ADS_PATH_FILE = 1,
+			ADS_PATH_FILESHARE = 2,
+			ADS_PATH_REGISTRY = 3,
+		}
+		[AllowDuplicates]
+		public enum ADS_SD_FORMAT_ENUM : int32
+		{
+			ADS_SD_FORMAT_IID = 1,
+			ADS_SD_FORMAT_RAW = 2,
+			ADS_SD_FORMAT_HEXSTRING = 3,
+		}
+		[AllowDuplicates]
+		public enum DS_MANGLE_FOR : int32
+		{
+			DS_MANGLE_UNKNOWN = 0,
+			DS_MANGLE_OBJECT_RDN_FOR_DELETION = 1,
+			DS_MANGLE_OBJECT_RDN_FOR_NAME_CONFLICT = 2,
+		}
+		[AllowDuplicates]
+		public enum DS_NAME_FORMAT : int32
+		{
+			DS_UNKNOWN_NAME = 0,
+			DS_FQDN_1779_NAME = 1,
+			DS_NT4_ACCOUNT_NAME = 2,
+			DS_DISPLAY_NAME = 3,
+			DS_UNIQUE_ID_NAME = 6,
+			DS_CANONICAL_NAME = 7,
+			DS_USER_PRINCIPAL_NAME = 8,
+			DS_CANONICAL_NAME_EX = 9,
+			DS_SERVICE_PRINCIPAL_NAME = 10,
+			DS_SID_OR_SID_HISTORY_NAME = 11,
+			DS_DNS_DOMAIN_NAME = 12,
+		}
+		[AllowDuplicates]
+		public enum DS_NAME_FLAGS : int32
+		{
+			DS_NAME_NO_FLAGS = 0,
+			DS_NAME_FLAG_SYNTACTICAL_ONLY = 1,
+			DS_NAME_FLAG_EVAL_AT_DC = 2,
+			DS_NAME_FLAG_GCVERIFY = 4,
+			DS_NAME_FLAG_TRUST_REFERRAL = 8,
+		}
+		[AllowDuplicates]
+		public enum DS_NAME_ERROR : int32
+		{
+			DS_NAME_NO_ERROR = 0,
+			DS_NAME_ERROR_RESOLVING = 1,
+			DS_NAME_ERROR_NOT_FOUND = 2,
+			DS_NAME_ERROR_NOT_UNIQUE = 3,
+			DS_NAME_ERROR_NO_MAPPING = 4,
+			DS_NAME_ERROR_DOMAIN_ONLY = 5,
+			DS_NAME_ERROR_NO_SYNTACTICAL_MAPPING = 6,
+			DS_NAME_ERROR_TRUST_REFERRAL = 7,
+		}
+		[AllowDuplicates]
+		public enum DS_SPN_NAME_TYPE : int32
+		{
+			DS_SPN_DNS_HOST = 0,
+			DS_SPN_DN_HOST = 1,
+			DS_SPN_NB_HOST = 2,
+			DS_SPN_DOMAIN = 3,
+			DS_SPN_NB_DOMAIN = 4,
+			DS_SPN_SERVICE = 5,
+		}
+		[AllowDuplicates]
+		public enum DS_SPN_WRITE_OP : int32
+		{
+			DS_SPN_ADD_SPN_OP = 0,
+			DS_SPN_REPLACE_SPN_OP = 1,
+			DS_SPN_DELETE_SPN_OP = 2,
+		}
+		[AllowDuplicates]
+		public enum DS_REPSYNCALL_ERROR : int32
+		{
+			DS_REPSYNCALL_WIN32_ERROR_CONTACTING_SERVER = 0,
+			DS_REPSYNCALL_WIN32_ERROR_REPLICATING = 1,
+			DS_REPSYNCALL_SERVER_UNREACHABLE = 2,
+		}
+		[AllowDuplicates]
+		public enum DS_REPSYNCALL_EVENT : int32
+		{
+			DS_REPSYNCALL_EVENT_ERROR = 0,
+			DS_REPSYNCALL_EVENT_SYNC_STARTED = 1,
+			DS_REPSYNCALL_EVENT_SYNC_COMPLETED = 2,
+			DS_REPSYNCALL_EVENT_FINISHED = 3,
+		}
+		[AllowDuplicates]
+		public enum DS_KCC_TASKID : int32
+		{
+			DS_KCC_TASKID_UPDATE_TOPOLOGY = 0,
+		}
+		[AllowDuplicates]
+		public enum DS_REPL_INFO_TYPE : int32
+		{
+			DS_REPL_INFO_NEIGHBORS = 0,
+			DS_REPL_INFO_CURSORS_FOR_NC = 1,
+			DS_REPL_INFO_METADATA_FOR_OBJ = 2,
+			DS_REPL_INFO_KCC_DSA_CONNECT_FAILURES = 3,
+			DS_REPL_INFO_KCC_DSA_LINK_FAILURES = 4,
+			DS_REPL_INFO_PENDING_OPS = 5,
+			DS_REPL_INFO_METADATA_FOR_ATTR_VALUE = 6,
+			DS_REPL_INFO_CURSORS_2_FOR_NC = 7,
+			DS_REPL_INFO_CURSORS_3_FOR_NC = 8,
+			DS_REPL_INFO_METADATA_2_FOR_OBJ = 9,
+			DS_REPL_INFO_METADATA_2_FOR_ATTR_VALUE = 10,
+			DS_REPL_INFO_METADATA_EXT_FOR_ATTR_VALUE = 11,
+			DS_REPL_INFO_TYPE_MAX = 12,
+		}
+		[AllowDuplicates]
+		public enum DS_REPL_OP_TYPE : int32
+		{
+			DS_REPL_OP_TYPE_SYNC = 0,
+			DS_REPL_OP_TYPE_ADD = 1,
+			DS_REPL_OP_TYPE_DELETE = 2,
+			DS_REPL_OP_TYPE_MODIFY = 3,
+			DS_REPL_OP_TYPE_UPDATE_REFS = 4,
+		}
+		[AllowDuplicates]
+		public enum DSROLE_MACHINE_ROLE : int32
+		{
+			DsRole_RoleStandaloneWorkstation = 0,
+			DsRole_RoleMemberWorkstation = 1,
+			DsRole_RoleStandaloneServer = 2,
+			DsRole_RoleMemberServer = 3,
+			DsRole_RoleBackupDomainController = 4,
+			DsRole_RolePrimaryDomainController = 5,
+		}
+		[AllowDuplicates]
+		public enum DSROLE_SERVER_STATE : int32
+		{
+			DsRoleServerUnknown = 0,
+			DsRoleServerPrimary = 1,
+			DsRoleServerBackup = 2,
+		}
+		[AllowDuplicates]
+		public enum DSROLE_PRIMARY_DOMAIN_INFO_LEVEL : int32
+		{
+			DsRolePrimaryDomainInfoBasic = 1,
+			DsRoleUpgradeStatus = 2,
+			DsRoleOperationState = 3,
+		}
+		[AllowDuplicates]
+		public enum DSROLE_OPERATION_STATE : int32
+		{
+			DsRoleOperationIdle = 0,
+			DsRoleOperationActive = 1,
+			DsRoleOperationNeedReboot = 2,
+		}
+		
+		// --- Function Pointers ---
+		
+		public function HRESULT LPCQADDFORMSPROC(LPARAM lParam, CQFORM* pForm);
+		public function HRESULT LPCQADDPAGESPROC(LPARAM lParam, Guid* clsidForm, CQPAGE* pPage);
+		public function HRESULT LPCQPAGEPROC(CQPAGE* pPage, HWND hwnd, uint32 uMsg, WPARAM wParam, LPARAM lParam);
+		public function HRESULT LPDSENUMATTRIBUTES(LPARAM lParam, PWSTR pszAttributeName, PWSTR pszDisplayName, uint32 dwFlags);
+		
+		// --- Structs ---
+		
+		[CRepr]
+		public struct CQFORM
+		{
+			public uint32 cbStruct;
+			public uint32 dwFlags;
+			public Guid clsid;
+			public HICON hIcon;
+			public PWSTR pszTitle;
+		}
+		[CRepr]
+		public struct CQPAGE
+		{
+			public uint32 cbStruct;
+			public uint32 dwFlags;
+			public LPCQPAGEPROC pPageProc;
+			public HINSTANCE hInstance;
+			public int32 idPageName;
+			public int32 idPageTemplate;
+			public DLGPROC pDlgProc;
+			public LPARAM lParam;
+		}
+		[CRepr]
+		public struct OPENQUERYWINDOW
+		{
+			public uint32 cbStruct;
+			public uint32 dwFlags;
+			public Guid clsidHandler;
+			public void* pHandlerParameters;
+			public Guid clsidDefaultForm;
+			public IPersistQuery pPersistQuery;
+			public _Anonymous_e__Union Anonymous;
+			
+			[CRepr, Union]
+			public struct _Anonymous_e__Union
+			{
+				public void* pFormParameters;
+				public IPropertyBag ppbFormParameters;
+			}
+		}
+		[CRepr]
+		public struct ADS_OCTET_STRING
+		{
+			public uint32 dwLength;
+			public uint8* lpValue;
+		}
+		[CRepr]
+		public struct ADS_NT_SECURITY_DESCRIPTOR
+		{
+			public uint32 dwLength;
+			public uint8* lpValue;
+		}
+		[CRepr]
+		public struct ADS_PROV_SPECIFIC
+		{
+			public uint32 dwLength;
+			public uint8* lpValue;
+		}
+		[CRepr]
+		public struct ADS_CASEIGNORE_LIST
+		{
+			public ADS_CASEIGNORE_LIST* Next;
+			public PWSTR String;
+		}
+		[CRepr]
+		public struct ADS_OCTET_LIST
+		{
+			public ADS_OCTET_LIST* Next;
+			public uint32 Length;
+			public uint8* Data;
+		}
+		[CRepr]
+		public struct ADS_PATH
+		{
+			public uint32 Type;
+			public PWSTR VolumeName;
+			public PWSTR Path;
+		}
+		[CRepr]
+		public struct ADS_POSTALADDRESS
+		{
+			public PWSTR[6] PostalAddress;
+		}
+		[CRepr]
+		public struct ADS_TIMESTAMP
+		{
+			public uint32 WholeSeconds;
+			public uint32 EventID;
+		}
+		[CRepr]
+		public struct ADS_BACKLINK
+		{
+			public uint32 RemoteID;
+			public PWSTR ObjectName;
+		}
+		[CRepr]
+		public struct ADS_TYPEDNAME
+		{
+			public PWSTR ObjectName;
+			public uint32 Level;
+			public uint32 Interval;
+		}
+		[CRepr]
+		public struct ADS_HOLD
+		{
+			public PWSTR ObjectName;
+			public uint32 Amount;
+		}
+		[CRepr]
+		public struct ADS_NETADDRESS
+		{
+			public uint32 AddressType;
+			public uint32 AddressLength;
+			public uint8* Address;
+		}
+		[CRepr]
+		public struct ADS_REPLICAPOINTER
+		{
+			public PWSTR ServerName;
+			public uint32 ReplicaType;
+			public uint32 ReplicaNumber;
+			public uint32 Count;
+			public ADS_NETADDRESS* ReplicaAddressHints;
+		}
+		[CRepr]
+		public struct ADS_FAXNUMBER
+		{
+			public PWSTR TelephoneNumber;
+			public uint32 NumberOfBits;
+			public uint8* Parameters;
+		}
+		[CRepr]
+		public struct ADS_EMAIL
+		{
+			public PWSTR Address;
+			public uint32 Type;
+		}
+		[CRepr]
+		public struct ADS_DN_WITH_BINARY
+		{
+			public uint32 dwLength;
+			public uint8* lpBinaryValue;
+			public PWSTR pszDNString;
+		}
+		[CRepr]
+		public struct ADS_DN_WITH_STRING
+		{
+			public PWSTR pszStringValue;
+			public PWSTR pszDNString;
+		}
+		[CRepr]
+		public struct ADSVALUE
+		{
+			public ADSTYPEENUM dwType;
+			public _Anonymous_e__Union Anonymous;
+			
+			[CRepr, Union]
+			public struct _Anonymous_e__Union
+			{
+				public uint16* DNString;
+				public uint16* CaseExactString;
+				public uint16* CaseIgnoreString;
+				public uint16* PrintableString;
+				public uint16* NumericString;
+				public uint32 Boolean;
+				public uint32 Integer;
+				public ADS_OCTET_STRING OctetString;
+				public SYSTEMTIME UTCTime;
+				public LARGE_INTEGER LargeInteger;
+				public uint16* ClassName;
+				public ADS_PROV_SPECIFIC ProviderSpecific;
+				public ADS_CASEIGNORE_LIST* pCaseIgnoreList;
+				public ADS_OCTET_LIST* pOctetList;
+				public ADS_PATH* pPath;
+				public ADS_POSTALADDRESS* pPostalAddress;
+				public ADS_TIMESTAMP Timestamp;
+				public ADS_BACKLINK BackLink;
+				public ADS_TYPEDNAME* pTypedName;
+				public ADS_HOLD Hold;
+				public ADS_NETADDRESS* pNetAddress;
+				public ADS_REPLICAPOINTER* pReplicaPointer;
+				public ADS_FAXNUMBER* pFaxNumber;
+				public ADS_EMAIL Email;
+				public ADS_NT_SECURITY_DESCRIPTOR SecurityDescriptor;
+				public ADS_DN_WITH_BINARY* pDNWithBinary;
+				public ADS_DN_WITH_STRING* pDNWithString;
+			}
+		}
+		[CRepr]
+		public struct ADS_ATTR_INFO
+		{
+			public PWSTR pszAttrName;
+			public uint32 dwControlCode;
+			public ADSTYPEENUM dwADsType;
+			public ADSVALUE* pADsValues;
+			public uint32 dwNumValues;
+		}
+		[CRepr]
+		public struct ADS_OBJECT_INFO
+		{
+			public PWSTR pszRDN;
+			public PWSTR pszObjectDN;
+			public PWSTR pszParentDN;
+			public PWSTR pszSchemaDN;
+			public PWSTR pszClassName;
+		}
+		[CRepr]
+		public struct ads_searchpref_info
+		{
+			public ADS_SEARCHPREF_ENUM dwSearchPref;
+			public ADSVALUE vValue;
+			public ADS_STATUSENUM dwStatus;
+		}
+		[CRepr]
+		public struct ads_search_column
+		{
+			public PWSTR pszAttrName;
+			public ADSTYPEENUM dwADsType;
+			public ADSVALUE* pADsValues;
+			public uint32 dwNumValues;
+			public HANDLE hReserved;
+		}
+		[CRepr]
+		public struct ADS_ATTR_DEF
+		{
+			public PWSTR pszAttrName;
+			public ADSTYPEENUM dwADsType;
+			public uint32 dwMinRange;
+			public uint32 dwMaxRange;
+			public BOOL fMultiValued;
+		}
+		[CRepr]
+		public struct ADS_CLASS_DEF
+		{
+			public PWSTR pszClassName;
+			public uint32 dwMandatoryAttrs;
+			public PWSTR* ppszMandatoryAttrs;
+			public uint32 optionalAttrs;
+			public PWSTR** ppszOptionalAttrs;
+			public uint32 dwNamingAttrs;
+			public PWSTR** ppszNamingAttrs;
+			public uint32 dwSuperClasses;
+			public PWSTR** ppszSuperClasses;
+			public BOOL fIsContainer;
+		}
+		[CRepr]
+		public struct ADS_SORTKEY
+		{
+			public PWSTR pszAttrType;
+			public PWSTR pszReserved;
+			public BOOLEAN fReverseorder;
+		}
+		[CRepr]
+		public struct ADS_VLV
+		{
+			public uint32 dwBeforeCount;
+			public uint32 dwAfterCount;
+			public uint32 dwOffset;
+			public uint32 dwContentCount;
+			public PWSTR pszTarget;
+			public uint32 dwContextIDLength;
+			public uint8* lpContextID;
+		}
+		[CRepr]
+		public struct DSOBJECT
+		{
+			public uint32 dwFlags;
+			public uint32 dwProviderFlags;
+			public uint32 offsetName;
+			public uint32 offsetClass;
+		}
+		[CRepr]
+		public struct DSOBJECTNAMES
+		{
+			public Guid clsidNamespace;
+			public uint32 cItems;
+			public DSOBJECT[] aObjects;
+		}
+		[CRepr]
+		public struct DSDISPLAYSPECOPTIONS
+		{
+			public uint32 dwSize;
+			public uint32 dwFlags;
+			public uint32 offsetAttribPrefix;
+			public uint32 offsetUserName;
+			public uint32 offsetPassword;
+			public uint32 offsetServer;
+			public uint32 offsetServerConfigPath;
+		}
+		[CRepr]
+		public struct DSPROPERTYPAGEINFO
+		{
+			public uint32 offsetString;
+		}
+		[CRepr]
+		public struct DOMAINDESC
+		{
+			public PWSTR pszName;
+			public PWSTR pszPath;
+			public PWSTR pszNCName;
+			public PWSTR pszTrustParent;
+			public PWSTR pszObjectClass;
+			public uint32 ulFlags;
+			public BOOL fDownLevel;
+			public DOMAINDESC* pdChildList;
+			public DOMAINDESC* pdNextSibling;
+		}
+		[CRepr]
+		public struct DOMAIN_TREE
+		{
+			public uint32 dsSize;
+			public uint32 dwCount;
+			public DOMAINDESC[] aDomains;
+		}
+		[CRepr]
+		public struct DSCLASSCREATIONINFO
+		{
+			public uint32 dwFlags;
+			public Guid clsidWizardDialog;
+			public Guid clsidWizardPrimaryPage;
+			public uint32 cWizardExtensions;
+			public Guid[] aWizardExtensions;
+		}
+		[CRepr]
+		public struct DSBROWSEINFOW
+		{
+			public uint32 cbStruct;
+			public HWND hwndOwner;
+			public PWSTR pszCaption;
+			public PWSTR pszTitle;
+			public PWSTR pszRoot;
+			public PWSTR pszPath;
+			public uint32 cchPath;
+			public uint32 dwFlags;
+			public BFFCALLBACK pfnCallback;
+			public LPARAM lParam;
+			public uint32 dwReturnFormat;
+			public PWSTR pUserName;
+			public PWSTR pPassword;
+			public PWSTR pszObjectClass;
+			public uint32 cchObjectClass;
+		}
+		[CRepr]
+		public struct DSBROWSEINFOA
+		{
+			public uint32 cbStruct;
+			public HWND hwndOwner;
+			public PSTR pszCaption;
+			public PSTR pszTitle;
+			public PWSTR pszRoot;
+			public PWSTR pszPath;
+			public uint32 cchPath;
+			public uint32 dwFlags;
+			public BFFCALLBACK pfnCallback;
+			public LPARAM lParam;
+			public uint32 dwReturnFormat;
+			public PWSTR pUserName;
+			public PWSTR pPassword;
+			public PWSTR pszObjectClass;
+			public uint32 cchObjectClass;
+		}
+		[CRepr]
+		public struct DSBITEMW
+		{
+			public uint32 cbStruct;
+			public PWSTR pszADsPath;
+			public PWSTR pszClass;
+			public uint32 dwMask;
+			public uint32 dwState;
+			public uint32 dwStateMask;
+			public char16[64] szDisplayName;
+			public char16[260] szIconLocation;
+			public int32 iIconResID;
+		}
+		[CRepr]
+		public struct DSBITEMA
+		{
+			public uint32 cbStruct;
+			public PWSTR pszADsPath;
+			public PWSTR pszClass;
+			public uint32 dwMask;
+			public uint32 dwState;
+			public uint32 dwStateMask;
+			public CHAR[64] szDisplayName;
+			public CHAR[260] szIconLocation;
+			public int32 iIconResID;
+		}
+		[CRepr]
+		public struct DSOP_UPLEVEL_FILTER_FLAGS
+		{
+			public uint32 flBothModes;
+			public uint32 flMixedModeOnly;
+			public uint32 flNativeModeOnly;
+		}
+		[CRepr]
+		public struct DSOP_FILTER_FLAGS
+		{
+			public DSOP_UPLEVEL_FILTER_FLAGS Uplevel;
+			public uint32 flDownlevel;
+		}
+		[CRepr]
+		public struct DSOP_SCOPE_INIT_INFO
+		{
+			public uint32 cbSize;
+			public uint32 flType;
+			public uint32 flScope;
+			public DSOP_FILTER_FLAGS FilterFlags;
+			public PWSTR pwzDcName;
+			public PWSTR pwzADsPath;
+			public HRESULT hr;
+		}
+		[CRepr]
+		public struct DSOP_INIT_INFO
+		{
+			public uint32 cbSize;
+			public PWSTR pwzTargetComputer;
+			public uint32 cDsScopeInfos;
+			public DSOP_SCOPE_INIT_INFO* aDsScopeInfos;
+			public uint32 flOptions;
+			public uint32 cAttributesToFetch;
+			public PWSTR* apwzAttributeNames;
+		}
+		[CRepr]
+		public struct DS_SELECTION
+		{
+			public PWSTR pwzName;
+			public PWSTR pwzADsPath;
+			public PWSTR pwzClass;
+			public PWSTR pwzUPN;
+			public VARIANT* pvarFetchedAttributes;
+			public uint32 flScopeType;
+		}
+		[CRepr]
+		public struct DS_SELECTION_LIST
+		{
+			public uint32 cItems;
+			public uint32 cFetchedAttributes;
+			public DS_SELECTION[] aDsSelection;
+		}
+		[CRepr]
+		public struct DSQUERYINITPARAMS
+		{
+			public uint32 cbStruct;
+			public uint32 dwFlags;
+			public PWSTR pDefaultScope;
+			public PWSTR pDefaultSaveLocation;
+			public PWSTR pUserName;
+			public PWSTR pPassword;
+			public PWSTR pServer;
+		}
+		[CRepr]
+		public struct DSCOLUMN
+		{
+			public uint32 dwFlags;
+			public int32 fmt;
+			public int32 cx;
+			public int32 idsName;
+			public int32 offsetProperty;
+			public uint32 dwReserved;
+		}
+		[CRepr]
+		public struct DSQUERYPARAMS
+		{
+			public uint32 cbStruct;
+			public uint32 dwFlags;
+			public HINSTANCE hInstance;
+			public int32 offsetQuery;
+			public int32 iColumns;
+			public uint32 dwReserved;
+			public DSCOLUMN[] aColumns;
+		}
+		[CRepr]
+		public struct DSQUERYCLASSLIST
+		{
+			public uint32 cbStruct;
+			public int32 cClasses;
+			public uint32[] offsetClass;
+		}
+		[CRepr]
+		public struct DSA_NEWOBJ_DISPINFO
+		{
+			public uint32 dwSize;
+			public HICON hObjClassIcon;
+			public PWSTR lpszWizTitle;
+			public PWSTR lpszContDisplayName;
+		}
+		[CRepr]
+		public struct ADSPROPINITPARAMS
+		{
+			public uint32 dwSize;
+			public uint32 dwFlags;
+			public HRESULT hr;
+			public IDirectoryObject pDsObj;
+			public PWSTR pwzCN;
+			public ADS_ATTR_INFO* pWritableAttrs;
+		}
+		[CRepr]
+		public struct ADSPROPERROR
+		{
+			public HWND hwndPage;
+			public PWSTR pszPageTitle;
+			public PWSTR pszObjPath;
+			public PWSTR pszObjClass;
+			public HRESULT hr;
+			public PWSTR pszError;
+		}
+		[CRepr]
+		public struct SCHEDULE_HEADER
+		{
+			public uint32 Type;
+			public uint32 Offset;
+		}
+		[CRepr]
+		public struct SCHEDULE
+		{
+			public uint32 Size;
+			public uint32 Bandwidth;
+			public uint32 NumberOfSchedules;
+			public SCHEDULE_HEADER[] Schedules;
+		}
+		[CRepr]
+		public struct DS_NAME_RESULT_ITEMA
+		{
+			public uint32 status;
+			public PSTR pDomain;
+			public PSTR pName;
+		}
+		[CRepr]
+		public struct DS_NAME_RESULTA
+		{
+			public uint32 cItems;
+			public DS_NAME_RESULT_ITEMA* rItems;
+		}
+		[CRepr]
+		public struct DS_NAME_RESULT_ITEMW
+		{
+			public uint32 status;
+			public PWSTR pDomain;
+			public PWSTR pName;
+		}
+		[CRepr]
+		public struct DS_NAME_RESULTW
+		{
+			public uint32 cItems;
+			public DS_NAME_RESULT_ITEMW* rItems;
+		}
+		[CRepr]
+		public struct DS_REPSYNCALL_SYNCA
+		{
+			public PSTR pszSrcId;
+			public PSTR pszDstId;
+			public PSTR pszNC;
+			public Guid* pguidSrc;
+			public Guid* pguidDst;
+		}
+		[CRepr]
+		public struct DS_REPSYNCALL_SYNCW
+		{
+			public PWSTR pszSrcId;
+			public PWSTR pszDstId;
+			public PWSTR pszNC;
+			public Guid* pguidSrc;
+			public Guid* pguidDst;
+		}
+		[CRepr]
+		public struct DS_REPSYNCALL_ERRINFOA
+		{
+			public PSTR pszSvrId;
+			public DS_REPSYNCALL_ERROR error;
+			public uint32 dwWin32Err;
+			public PSTR pszSrcId;
+		}
+		[CRepr]
+		public struct DS_REPSYNCALL_ERRINFOW
+		{
+			public PWSTR pszSvrId;
+			public DS_REPSYNCALL_ERROR error;
+			public uint32 dwWin32Err;
+			public PWSTR pszSrcId;
+		}
+		[CRepr]
+		public struct DS_REPSYNCALL_UPDATEA
+		{
+			public DS_REPSYNCALL_EVENT event;
+			public DS_REPSYNCALL_ERRINFOA* pErrInfo;
+			public DS_REPSYNCALL_SYNCA* pSync;
+		}
+		[CRepr]
+		public struct DS_REPSYNCALL_UPDATEW
+		{
+			public DS_REPSYNCALL_EVENT event;
+			public DS_REPSYNCALL_ERRINFOW* pErrInfo;
+			public DS_REPSYNCALL_SYNCW* pSync;
+		}
+		[CRepr]
+		public struct DS_SITE_COST_INFO
+		{
+			public uint32 errorCode;
+			public uint32 cost;
+		}
+		[CRepr]
+		public struct DS_SCHEMA_GUID_MAPA
+		{
+			public Guid guid;
+			public uint32 guidType;
+			public PSTR pName;
+		}
+		[CRepr]
+		public struct DS_SCHEMA_GUID_MAPW
+		{
+			public Guid guid;
+			public uint32 guidType;
+			public PWSTR pName;
+		}
+		[CRepr]
+		public struct DS_DOMAIN_CONTROLLER_INFO_1A
+		{
+			public PSTR NetbiosName;
+			public PSTR DnsHostName;
+			public PSTR SiteName;
+			public PSTR ComputerObjectName;
+			public PSTR ServerObjectName;
+			public BOOL fIsPdc;
+			public BOOL fDsEnabled;
+		}
+		[CRepr]
+		public struct DS_DOMAIN_CONTROLLER_INFO_1W
+		{
+			public PWSTR NetbiosName;
+			public PWSTR DnsHostName;
+			public PWSTR SiteName;
+			public PWSTR ComputerObjectName;
+			public PWSTR ServerObjectName;
+			public BOOL fIsPdc;
+			public BOOL fDsEnabled;
+		}
+		[CRepr]
+		public struct DS_DOMAIN_CONTROLLER_INFO_2A
+		{
+			public PSTR NetbiosName;
+			public PSTR DnsHostName;
+			public PSTR SiteName;
+			public PSTR SiteObjectName;
+			public PSTR ComputerObjectName;
+			public PSTR ServerObjectName;
+			public PSTR NtdsDsaObjectName;
+			public BOOL fIsPdc;
+			public BOOL fDsEnabled;
+			public BOOL fIsGc;
+			public Guid SiteObjectGuid;
+			public Guid ComputerObjectGuid;
+			public Guid ServerObjectGuid;
+			public Guid NtdsDsaObjectGuid;
+		}
+		[CRepr]
+		public struct DS_DOMAIN_CONTROLLER_INFO_2W
+		{
+			public PWSTR NetbiosName;
+			public PWSTR DnsHostName;
+			public PWSTR SiteName;
+			public PWSTR SiteObjectName;
+			public PWSTR ComputerObjectName;
+			public PWSTR ServerObjectName;
+			public PWSTR NtdsDsaObjectName;
+			public BOOL fIsPdc;
+			public BOOL fDsEnabled;
+			public BOOL fIsGc;
+			public Guid SiteObjectGuid;
+			public Guid ComputerObjectGuid;
+			public Guid ServerObjectGuid;
+			public Guid NtdsDsaObjectGuid;
+		}
+		[CRepr]
+		public struct DS_DOMAIN_CONTROLLER_INFO_3A
+		{
+			public PSTR NetbiosName;
+			public PSTR DnsHostName;
+			public PSTR SiteName;
+			public PSTR SiteObjectName;
+			public PSTR ComputerObjectName;
+			public PSTR ServerObjectName;
+			public PSTR NtdsDsaObjectName;
+			public BOOL fIsPdc;
+			public BOOL fDsEnabled;
+			public BOOL fIsGc;
+			public BOOL fIsRodc;
+			public Guid SiteObjectGuid;
+			public Guid ComputerObjectGuid;
+			public Guid ServerObjectGuid;
+			public Guid NtdsDsaObjectGuid;
+		}
+		[CRepr]
+		public struct DS_DOMAIN_CONTROLLER_INFO_3W
+		{
+			public PWSTR NetbiosName;
+			public PWSTR DnsHostName;
+			public PWSTR SiteName;
+			public PWSTR SiteObjectName;
+			public PWSTR ComputerObjectName;
+			public PWSTR ServerObjectName;
+			public PWSTR NtdsDsaObjectName;
+			public BOOL fIsPdc;
+			public BOOL fDsEnabled;
+			public BOOL fIsGc;
+			public BOOL fIsRodc;
+			public Guid SiteObjectGuid;
+			public Guid ComputerObjectGuid;
+			public Guid ServerObjectGuid;
+			public Guid NtdsDsaObjectGuid;
+		}
+		[CRepr]
+		public struct DS_REPL_NEIGHBORW
+		{
+			public PWSTR pszNamingContext;
+			public PWSTR pszSourceDsaDN;
+			public PWSTR pszSourceDsaAddress;
+			public PWSTR pszAsyncIntersiteTransportDN;
+			public uint32 dwReplicaFlags;
+			public uint32 dwReserved;
+			public Guid uuidNamingContextObjGuid;
+			public Guid uuidSourceDsaObjGuid;
+			public Guid uuidSourceDsaInvocationID;
+			public Guid uuidAsyncIntersiteTransportObjGuid;
+			public int64 usnLastObjChangeSynced;
+			public int64 usnAttributeFilter;
+			public FILETIME ftimeLastSyncSuccess;
+			public FILETIME ftimeLastSyncAttempt;
+			public uint32 dwLastSyncResult;
+			public uint32 cNumConsecutiveSyncFailures;
+		}
+		[CRepr]
+		public struct DS_REPL_NEIGHBORW_BLOB
+		{
+			public uint32 oszNamingContext;
+			public uint32 oszSourceDsaDN;
+			public uint32 oszSourceDsaAddress;
+			public uint32 oszAsyncIntersiteTransportDN;
+			public uint32 dwReplicaFlags;
+			public uint32 dwReserved;
+			public Guid uuidNamingContextObjGuid;
+			public Guid uuidSourceDsaObjGuid;
+			public Guid uuidSourceDsaInvocationID;
+			public Guid uuidAsyncIntersiteTransportObjGuid;
+			public int64 usnLastObjChangeSynced;
+			public int64 usnAttributeFilter;
+			public FILETIME ftimeLastSyncSuccess;
+			public FILETIME ftimeLastSyncAttempt;
+			public uint32 dwLastSyncResult;
+			public uint32 cNumConsecutiveSyncFailures;
+		}
+		[CRepr]
+		public struct DS_REPL_NEIGHBORSW
+		{
+			public uint32 cNumNeighbors;
+			public uint32 dwReserved;
+			public DS_REPL_NEIGHBORW[] rgNeighbor;
+		}
+		[CRepr]
+		public struct DS_REPL_CURSOR
+		{
+			public Guid uuidSourceDsaInvocationID;
+			public int64 usnAttributeFilter;
+		}
+		[CRepr]
+		public struct DS_REPL_CURSOR_2
+		{
+			public Guid uuidSourceDsaInvocationID;
+			public int64 usnAttributeFilter;
+			public FILETIME ftimeLastSyncSuccess;
+		}
+		[CRepr]
+		public struct DS_REPL_CURSOR_3W
+		{
+			public Guid uuidSourceDsaInvocationID;
+			public int64 usnAttributeFilter;
+			public FILETIME ftimeLastSyncSuccess;
+			public PWSTR pszSourceDsaDN;
+		}
+		[CRepr]
+		public struct DS_REPL_CURSOR_BLOB
+		{
+			public Guid uuidSourceDsaInvocationID;
+			public int64 usnAttributeFilter;
+			public FILETIME ftimeLastSyncSuccess;
+			public uint32 oszSourceDsaDN;
+		}
+		[CRepr]
+		public struct DS_REPL_CURSORS
+		{
+			public uint32 cNumCursors;
+			public uint32 dwReserved;
+			public DS_REPL_CURSOR[] rgCursor;
+		}
+		[CRepr]
+		public struct DS_REPL_CURSORS_2
+		{
+			public uint32 cNumCursors;
+			public uint32 dwEnumerationContext;
+			public DS_REPL_CURSOR_2[] rgCursor;
+		}
+		[CRepr]
+		public struct DS_REPL_CURSORS_3W
+		{
+			public uint32 cNumCursors;
+			public uint32 dwEnumerationContext;
+			public DS_REPL_CURSOR_3W[] rgCursor;
+		}
+		[CRepr]
+		public struct DS_REPL_ATTR_META_DATA
+		{
+			public PWSTR pszAttributeName;
+			public uint32 dwVersion;
+			public FILETIME ftimeLastOriginatingChange;
+			public Guid uuidLastOriginatingDsaInvocationID;
+			public int64 usnOriginatingChange;
+			public int64 usnLocalChange;
+		}
+		[CRepr]
+		public struct DS_REPL_ATTR_META_DATA_2
+		{
+			public PWSTR pszAttributeName;
+			public uint32 dwVersion;
+			public FILETIME ftimeLastOriginatingChange;
+			public Guid uuidLastOriginatingDsaInvocationID;
+			public int64 usnOriginatingChange;
+			public int64 usnLocalChange;
+			public PWSTR pszLastOriginatingDsaDN;
+		}
+		[CRepr]
+		public struct DS_REPL_ATTR_META_DATA_BLOB
+		{
+			public uint32 oszAttributeName;
+			public uint32 dwVersion;
+			public FILETIME ftimeLastOriginatingChange;
+			public Guid uuidLastOriginatingDsaInvocationID;
+			public int64 usnOriginatingChange;
+			public int64 usnLocalChange;
+			public uint32 oszLastOriginatingDsaDN;
+		}
+		[CRepr]
+		public struct DS_REPL_OBJ_META_DATA
+		{
+			public uint32 cNumEntries;
+			public uint32 dwReserved;
+			public DS_REPL_ATTR_META_DATA[] rgMetaData;
+		}
+		[CRepr]
+		public struct DS_REPL_OBJ_META_DATA_2
+		{
+			public uint32 cNumEntries;
+			public uint32 dwReserved;
+			public DS_REPL_ATTR_META_DATA_2[] rgMetaData;
+		}
+		[CRepr]
+		public struct DS_REPL_KCC_DSA_FAILUREW
+		{
+			public PWSTR pszDsaDN;
+			public Guid uuidDsaObjGuid;
+			public FILETIME ftimeFirstFailure;
+			public uint32 cNumFailures;
+			public uint32 dwLastResult;
+		}
+		[CRepr]
+		public struct DS_REPL_KCC_DSA_FAILUREW_BLOB
+		{
+			public uint32 oszDsaDN;
+			public Guid uuidDsaObjGuid;
+			public FILETIME ftimeFirstFailure;
+			public uint32 cNumFailures;
+			public uint32 dwLastResult;
+		}
+		[CRepr]
+		public struct DS_REPL_KCC_DSA_FAILURESW
+		{
+			public uint32 cNumEntries;
+			public uint32 dwReserved;
+			public DS_REPL_KCC_DSA_FAILUREW[] rgDsaFailure;
+		}
+		[CRepr]
+		public struct DS_REPL_OPW
+		{
+			public FILETIME ftimeEnqueued;
+			public uint32 ulSerialNumber;
+			public uint32 ulPriority;
+			public DS_REPL_OP_TYPE OpType;
+			public uint32 ulOptions;
+			public PWSTR pszNamingContext;
+			public PWSTR pszDsaDN;
+			public PWSTR pszDsaAddress;
+			public Guid uuidNamingContextObjGuid;
+			public Guid uuidDsaObjGuid;
+		}
+		[CRepr]
+		public struct DS_REPL_OPW_BLOB
+		{
+			public FILETIME ftimeEnqueued;
+			public uint32 ulSerialNumber;
+			public uint32 ulPriority;
+			public DS_REPL_OP_TYPE OpType;
+			public uint32 ulOptions;
+			public uint32 oszNamingContext;
+			public uint32 oszDsaDN;
+			public uint32 oszDsaAddress;
+			public Guid uuidNamingContextObjGuid;
+			public Guid uuidDsaObjGuid;
+		}
+		[CRepr]
+		public struct DS_REPL_PENDING_OPSW
+		{
+			public FILETIME ftimeCurrentOpStarted;
+			public uint32 cNumPendingOps;
+			public DS_REPL_OPW[] rgPendingOp;
+		}
+		[CRepr]
+		public struct DS_REPL_VALUE_META_DATA
+		{
+			public PWSTR pszAttributeName;
+			public PWSTR pszObjectDn;
+			public uint32 cbData;
+			public uint8* pbData;
+			public FILETIME ftimeDeleted;
+			public FILETIME ftimeCreated;
+			public uint32 dwVersion;
+			public FILETIME ftimeLastOriginatingChange;
+			public Guid uuidLastOriginatingDsaInvocationID;
+			public int64 usnOriginatingChange;
+			public int64 usnLocalChange;
+		}
+		[CRepr]
+		public struct DS_REPL_VALUE_META_DATA_2
+		{
+			public PWSTR pszAttributeName;
+			public PWSTR pszObjectDn;
+			public uint32 cbData;
+			public uint8* pbData;
+			public FILETIME ftimeDeleted;
+			public FILETIME ftimeCreated;
+			public uint32 dwVersion;
+			public FILETIME ftimeLastOriginatingChange;
+			public Guid uuidLastOriginatingDsaInvocationID;
+			public int64 usnOriginatingChange;
+			public int64 usnLocalChange;
+			public PWSTR pszLastOriginatingDsaDN;
+		}
+		[CRepr]
+		public struct DS_REPL_VALUE_META_DATA_EXT
+		{
+			public PWSTR pszAttributeName;
+			public PWSTR pszObjectDn;
+			public uint32 cbData;
+			public uint8* pbData;
+			public FILETIME ftimeDeleted;
+			public FILETIME ftimeCreated;
+			public uint32 dwVersion;
+			public FILETIME ftimeLastOriginatingChange;
+			public Guid uuidLastOriginatingDsaInvocationID;
+			public int64 usnOriginatingChange;
+			public int64 usnLocalChange;
+			public PWSTR pszLastOriginatingDsaDN;
+			public uint32 dwUserIdentifier;
+			public uint32 dwPriorLinkState;
+			public uint32 dwCurrentLinkState;
+		}
+		[CRepr]
+		public struct DS_REPL_VALUE_META_DATA_BLOB
+		{
+			public uint32 oszAttributeName;
+			public uint32 oszObjectDn;
+			public uint32 cbData;
+			public uint32 obData;
+			public FILETIME ftimeDeleted;
+			public FILETIME ftimeCreated;
+			public uint32 dwVersion;
+			public FILETIME ftimeLastOriginatingChange;
+			public Guid uuidLastOriginatingDsaInvocationID;
+			public int64 usnOriginatingChange;
+			public int64 usnLocalChange;
+			public uint32 oszLastOriginatingDsaDN;
+		}
+		[CRepr]
+		public struct DS_REPL_VALUE_META_DATA_BLOB_EXT
+		{
+			public uint32 oszAttributeName;
+			public uint32 oszObjectDn;
+			public uint32 cbData;
+			public uint32 obData;
+			public FILETIME ftimeDeleted;
+			public FILETIME ftimeCreated;
+			public uint32 dwVersion;
+			public FILETIME ftimeLastOriginatingChange;
+			public Guid uuidLastOriginatingDsaInvocationID;
+			public int64 usnOriginatingChange;
+			public int64 usnLocalChange;
+			public uint32 oszLastOriginatingDsaDN;
+			public uint32 dwUserIdentifier;
+			public uint32 dwPriorLinkState;
+			public uint32 dwCurrentLinkState;
+		}
+		[CRepr]
+		public struct DS_REPL_ATTR_VALUE_META_DATA
+		{
+			public uint32 cNumEntries;
+			public uint32 dwEnumerationContext;
+			public DS_REPL_VALUE_META_DATA[] rgMetaData;
+		}
+		[CRepr]
+		public struct DS_REPL_ATTR_VALUE_META_DATA_2
+		{
+			public uint32 cNumEntries;
+			public uint32 dwEnumerationContext;
+			public DS_REPL_VALUE_META_DATA_2[] rgMetaData;
+		}
+		[CRepr]
+		public struct DS_REPL_ATTR_VALUE_META_DATA_EXT
+		{
+			public uint32 cNumEntries;
+			public uint32 dwEnumerationContext;
+			public DS_REPL_VALUE_META_DATA_EXT[] rgMetaData;
+		}
+		[CRepr]
+		public struct DS_REPL_QUEUE_STATISTICSW
+		{
+			public FILETIME ftimeCurrentOpStarted;
+			public uint32 cNumPendingOps;
+			public FILETIME ftimeOldestSync;
+			public FILETIME ftimeOldestAdd;
+			public FILETIME ftimeOldestMod;
+			public FILETIME ftimeOldestDel;
+			public FILETIME ftimeOldestUpdRefs;
+		}
+		[CRepr]
+		public struct DSROLE_PRIMARY_DOMAIN_INFO_BASIC
+		{
+			public DSROLE_MACHINE_ROLE MachineRole;
+			public uint32 Flags;
+			public PWSTR DomainNameFlat;
+			public PWSTR DomainNameDns;
+			public PWSTR DomainForestName;
+			public Guid DomainGuid;
+		}
+		[CRepr]
+		public struct DSROLE_UPGRADE_STATUS_INFO
+		{
+			public uint32 OperationState;
+			public DSROLE_SERVER_STATE PreviousServerState;
+		}
+		[CRepr]
+		public struct DSROLE_OPERATION_STATE_INFO
+		{
+			public DSROLE_OPERATION_STATE OperationState;
+		}
+		[CRepr]
+		public struct DOMAIN_CONTROLLER_INFOA
+		{
+			public PSTR DomainControllerName;
+			public PSTR DomainControllerAddress;
+			public uint32 DomainControllerAddressType;
+			public Guid DomainGuid;
+			public PSTR DomainName;
+			public PSTR DnsForestName;
+			public uint32 Flags;
+			public PSTR DcSiteName;
+			public PSTR ClientSiteName;
+		}
+		[CRepr]
+		public struct DOMAIN_CONTROLLER_INFOW
+		{
+			public PWSTR DomainControllerName;
+			public PWSTR DomainControllerAddress;
+			public uint32 DomainControllerAddressType;
+			public Guid DomainGuid;
+			public PWSTR DomainName;
+			public PWSTR DnsForestName;
+			public uint32 Flags;
+			public PWSTR DcSiteName;
+			public PWSTR ClientSiteName;
+		}
+		[CRepr]
+		public struct DS_DOMAIN_TRUSTSW
+		{
+			public PWSTR NetbiosDomainName;
+			public PWSTR DnsDomainName;
+			public uint32 Flags;
+			public uint32 ParentIndex;
+			public uint32 TrustType;
+			public uint32 TrustAttributes;
+			public PSID DomainSid;
+			public Guid DomainGuid;
+		}
+		[CRepr]
+		public struct DS_DOMAIN_TRUSTSA
+		{
+			public PSTR NetbiosDomainName;
+			public PSTR DnsDomainName;
+			public uint32 Flags;
+			public uint32 ParentIndex;
+			public uint32 TrustType;
+			public uint32 TrustAttributes;
+			public PSID DomainSid;
+			public Guid DomainGuid;
+		}
+		
+		// --- COM Class IDs ---
+		
+		public const Guid CLSID_PropertyEntry = .(0x72d3edc2, 0xa4c4, 0x11d0, 0x85, 0x33, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+		public const Guid CLSID_PropertyValue = .(0x7b9e38b0, 0xa97c, 0x11d0, 0x85, 0x34, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+		public const Guid CLSID_AccessControlEntry = .(0xb75ac000, 0x9bdd, 0x11d0, 0x85, 0x2c, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+		public const Guid CLSID_AccessControlList = .(0xb85ea052, 0x9bdd, 0x11d0, 0x85, 0x2c, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+		public const Guid CLSID_SecurityDescriptor = .(0xb958f73c, 0x9bdd, 0x11d0, 0x85, 0x2c, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+		public const Guid CLSID_LargeInteger = .(0x927971f5, 0x0939, 0x11d1, 0x8b, 0xe1, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+		public const Guid CLSID_NameTranslate = .(0x274fae1f, 0x3626, 0x11d1, 0xa3, 0xa4, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+		public const Guid CLSID_CaseIgnoreList = .(0x15f88a55, 0x4680, 0x11d1, 0xa3, 0xb4, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+		public const Guid CLSID_FaxNumber = .(0xa5062215, 0x4681, 0x11d1, 0xa3, 0xb4, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+		public const Guid CLSID_NetAddress = .(0xb0b71247, 0x4080, 0x11d1, 0xa3, 0xac, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+		public const Guid CLSID_OctetList = .(0x1241400f, 0x4680, 0x11d1, 0xa3, 0xb4, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+		public const Guid CLSID_Email = .(0x8f92a857, 0x478e, 0x11d1, 0xa3, 0xb4, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+		public const Guid CLSID_Path = .(0xb2538919, 0x4080, 0x11d1, 0xa3, 0xac, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+		public const Guid CLSID_ReplicaPointer = .(0xf5d1badf, 0x4080, 0x11d1, 0xa3, 0xac, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+		public const Guid CLSID_Timestamp = .(0xb2bed2eb, 0x4080, 0x11d1, 0xa3, 0xac, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+		public const Guid CLSID_PostalAddress = .(0x0a75afcd, 0x4680, 0x11d1, 0xa3, 0xb4, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+		public const Guid CLSID_BackLink = .(0xfcbf906f, 0x4080, 0x11d1, 0xa3, 0xac, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+		public const Guid CLSID_TypedName = .(0xb33143cb, 0x4080, 0x11d1, 0xa3, 0xac, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+		public const Guid CLSID_Hold = .(0xb3ad3e13, 0x4080, 0x11d1, 0xa3, 0xac, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+		public const Guid CLSID_Pathname = .(0x080d0d78, 0xf421, 0x11d0, 0xa3, 0x6e, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+		public const Guid CLSID_ADSystemInfo = .(0x50b6327f, 0xafd1, 0x11d2, 0x9c, 0xb9, 0x00, 0x00, 0xf8, 0x7a, 0x36, 0x9e);
+		public const Guid CLSID_WinNTSystemInfo = .(0x66182ec4, 0xafd1, 0x11d2, 0x9c, 0xb9, 0x00, 0x00, 0xf8, 0x7a, 0x36, 0x9e);
+		public const Guid CLSID_DNWithBinary = .(0x7e99c0a3, 0xf935, 0x11d2, 0xba, 0x96, 0x00, 0xc0, 0x4f, 0xb6, 0xd0, 0xd1);
+		public const Guid CLSID_DNWithString = .(0x334857cc, 0xf934, 0x11d2, 0xba, 0x96, 0x00, 0xc0, 0x4f, 0xb6, 0xd0, 0xd1);
+		public const Guid CLSID_ADsSecurityUtility = .(0xf270c64a, 0xffb8, 0x4ae4, 0x85, 0xfe, 0x3a, 0x75, 0xe5, 0x34, 0x79, 0x66);
+		
+		// --- COM Interfaces ---
+		
+		public struct IQueryForm {}
+		public struct IPersistQuery {}
+		public struct ICommonQuery {}
+		public struct IADs {}
+		public struct IADsContainer {}
+		public struct IADsCollection {}
+		public struct IADsMembers {}
+		public struct IADsPropertyList {}
+		public struct IADsPropertyEntry {}
+		public struct IADsPropertyValue {}
+		public struct IADsPropertyValue2 {}
+		public struct IPrivateDispatch {}
+		public struct IPrivateUnknown {}
+		public struct IADsExtension {}
+		public struct IADsDeleteOps {}
+		public struct IADsNamespaces {}
+		public struct IADsClass {}
+		public struct IADsProperty {}
+		public struct IADsSyntax {}
+		public struct IADsLocality {}
+		public struct IADsO {}
+		public struct IADsOU {}
+		public struct IADsDomain {}
+		public struct IADsComputer {}
+		public struct IADsComputerOperations {}
+		public struct IADsGroup {}
+		public struct IADsUser {}
+		public struct IADsPrintQueue {}
+		public struct IADsPrintQueueOperations {}
+		public struct IADsPrintJob {}
+		public struct IADsPrintJobOperations {}
+		public struct IADsService {}
+		public struct IADsServiceOperations {}
+		public struct IADsFileService {}
+		public struct IADsFileServiceOperations {}
+		public struct IADsFileShare {}
+		public struct IADsSession {}
+		public struct IADsResource {}
+		public struct IADsOpenDSObject {}
+		public struct IDirectoryObject {}
+		public struct IDirectorySearch {}
+		public struct IDirectorySchemaMgmt {}
+		public struct IADsAggregatee {}
+		public struct IADsAggregator {}
+		public struct IADsAccessControlEntry {}
+		public struct IADsAccessControlList {}
+		public struct IADsSecurityDescriptor {}
+		public struct IADsLargeInteger {}
+		public struct IADsNameTranslate {}
+		public struct IADsCaseIgnoreList {}
+		public struct IADsFaxNumber {}
+		public struct IADsNetAddress {}
+		public struct IADsOctetList {}
+		public struct IADsEmail {}
+		public struct IADsPath {}
+		public struct IADsReplicaPointer {}
+		public struct IADsAcl {}
+		public struct IADsTimestamp {}
+		public struct IADsPostalAddress {}
+		public struct IADsBackLink {}
+		public struct IADsTypedName {}
+		public struct IADsHold {}
+		public struct IADsObjectOptions {}
+		public struct IADsPathname {}
+		public struct IADsADSystemInfo {}
+		public struct IADsWinNTSystemInfo {}
+		public struct IADsDNWithBinary {}
+		public struct IADsDNWithString {}
+		public struct IADsSecurityUtility {}
+		public struct IDsBrowseDomainTree {}
+		public struct IDsDisplaySpecifier {}
+		public struct IDsObjectPicker {}
+		public struct IDsObjectPickerCredentials {}
+		public struct IDsAdminCreateObj {}
+		public struct IDsAdminNewObj {}
+		public struct IDsAdminNewObjPrimarySite {}
+		public struct IDsAdminNewObjExt {}
+		public struct IDsAdminNotifyHandler {}
+		
+		// --- Functions ---
+		
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern HRESULT ADsGetObject(PWSTR lpszPathName, Guid* riid, void** ppObject);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern HRESULT ADsBuildEnumerator(IADsContainer pADsContainer, IEnumVARIANT* ppEnumVariant);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern HRESULT ADsFreeEnumerator(IEnumVARIANT pEnumVariant);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern HRESULT ADsEnumerateNext(IEnumVARIANT pEnumVariant, uint32 cElements, VARIANT* pvar, uint32* pcElementsFetched);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern HRESULT ADsBuildVarArrayStr(PWSTR* lppPathNames, uint32 dwPathNames, VARIANT* pVar);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern HRESULT ADsBuildVarArrayInt(uint32* lpdwObjectTypes, uint32 dwObjectTypes, VARIANT* pVar);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern HRESULT ADsOpenObject(PWSTR lpszPathName, PWSTR lpszUserName, PWSTR lpszPassword, ADS_AUTHENTICATION_ENUM dwReserved, Guid* riid, void** ppObject);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern HRESULT ADsGetLastError(uint32* lpError, char16* lpErrorBuf, uint32 dwErrorBufLen, char16* lpNameBuf, uint32 dwNameBufLen);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern void ADsSetLastError(uint32 dwErr, PWSTR pszError, PWSTR pszProvider);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern void* AllocADsMem(uint32 cb);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern BOOL FreeADsMem(void* pMem);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern void* ReallocADsMem(void* pOldMem, uint32 cbOld, uint32 cbNew);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern PWSTR AllocADsStr(PWSTR pStr);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern BOOL FreeADsStr(PWSTR pStr);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern BOOL ReallocADsStr(PWSTR* ppStr, PWSTR pStr);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern HRESULT ADsEncodeBinaryData(uint8* pbSrcData, uint32 dwSrcLen, PWSTR* ppszDestData);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern HRESULT ADsDecodeBinaryData(PWSTR szSrcData, uint8** ppbDestData, uint32* pdwDestLen);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern HRESULT PropVariantToAdsType(VARIANT* pVariant, uint32 dwNumVariant, ADSVALUE** ppAdsValues, uint32* pdwNumValues);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern HRESULT AdsTypeToPropVariant(ADSVALUE* pAdsValues, uint32 dwNumValues, VARIANT* pVariant);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern void AdsFreeAdsValues(ADSVALUE* pAdsValues, uint32 dwNumValues);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern HRESULT BinarySDToSecurityDescriptor(SECURITY_DESCRIPTOR* pSecurityDescriptor, VARIANT* pVarsec, PWSTR pszServerName, PWSTR userName, PWSTR passWord, uint32 dwFlags);
+		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern HRESULT SecurityDescriptorToBinarySD(VARIANT vVarSecDes, SECURITY_DESCRIPTOR** ppSecurityDescriptor, uint32* pdwSDLength, PWSTR pszServerName, PWSTR userName, PWSTR passWord, uint32 dwFlags);
+		[Import("dsuiext.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern int32 DsBrowseForContainerW(DSBROWSEINFOW* pInfo);
+		[Import("dsuiext.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern int32 DsBrowseForContainerA(DSBROWSEINFOA* pInfo);
+		[Import("dsuiext.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern HICON DsGetIcon(uint32 dwFlags, PWSTR pszObjectClass, int32 cxImage, int32 cyImage);
+		[Import("dsuiext.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern HRESULT DsGetFriendlyClassName(PWSTR pszObjectClass, char16* pszBuffer, uint32 cchBuffer);
+		[Import("dsprop.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern HRESULT ADsPropCreateNotifyObj(IDataObject pAppThdDataObj, PWSTR pwzADsObjName, HWND* phNotifyObj);
+		[Import("dsprop.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern BOOL ADsPropGetInitInfo(HWND hNotifyObj, ADSPROPINITPARAMS* pInitParams);
+		[Import("dsprop.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern BOOL ADsPropSetHwndWithTitle(HWND hNotifyObj, HWND hPage, int8* ptzTitle);
+		[Import("dsprop.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern BOOL ADsPropSetHwnd(HWND hNotifyObj, HWND hPage);
+		[Import("dsprop.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern BOOL ADsPropCheckIfWritable(PWSTR pwzAttr, ADS_ATTR_INFO* pWritableAttrs);
+		[Import("dsprop.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern BOOL ADsPropSendErrorMessage(HWND hNotifyObj, ADSPROPERROR* pError);
+		[Import("dsprop.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern BOOL ADsPropShowErrorDialog(HWND hNotifyObj, HWND hPage);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsMakeSpnW(PWSTR ServiceClass, PWSTR ServiceName, PWSTR InstanceName, uint16 InstancePort, PWSTR Referrer, uint32* pcSpnLength, char16* pszSpn);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsMakeSpnA(PSTR ServiceClass, PSTR ServiceName, PSTR InstanceName, uint16 InstancePort, PSTR Referrer, uint32* pcSpnLength, uint8* pszSpn);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsCrackSpnA(PSTR pszSpn, uint32* pcServiceClass, uint8* ServiceClass, uint32* pcServiceName, uint8* ServiceName, uint32* pcInstanceName, uint8* InstanceName, uint16* pInstancePort);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsCrackSpnW(PWSTR pszSpn, uint32* pcServiceClass, char16* ServiceClass, uint32* pcServiceName, char16* ServiceName, uint32* pcInstanceName, char16* InstanceName, uint16* pInstancePort);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsQuoteRdnValueW(uint32 cUnquotedRdnValueLength, char16* psUnquotedRdnValue, uint32* pcQuotedRdnValueLength, char16* psQuotedRdnValue);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsQuoteRdnValueA(uint32 cUnquotedRdnValueLength, uint8* psUnquotedRdnValue, uint32* pcQuotedRdnValueLength, uint8* psQuotedRdnValue);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsUnquoteRdnValueW(uint32 cQuotedRdnValueLength, char16* psQuotedRdnValue, uint32* pcUnquotedRdnValueLength, char16* psUnquotedRdnValue);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsUnquoteRdnValueA(uint32 cQuotedRdnValueLength, uint8* psQuotedRdnValue, uint32* pcUnquotedRdnValueLength, uint8* psUnquotedRdnValue);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsGetRdnW(PWSTR* ppDN, uint32* pcDN, PWSTR* ppKey, uint32* pcKey, PWSTR* ppVal, uint32* pcVal);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern BOOL DsCrackUnquotedMangledRdnW(char16* pszRDN, uint32 cchRDN, Guid* pGuid, DS_MANGLE_FOR* peDsMangleFor);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern BOOL DsCrackUnquotedMangledRdnA(uint8* pszRDN, uint32 cchRDN, Guid* pGuid, DS_MANGLE_FOR* peDsMangleFor);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern BOOL DsIsMangledRdnValueW(char16* pszRdn, uint32 cRdn, DS_MANGLE_FOR eDsMangleForDesired);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern BOOL DsIsMangledRdnValueA(uint8* pszRdn, uint32 cRdn, DS_MANGLE_FOR eDsMangleForDesired);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern BOOL DsIsMangledDnA(PSTR pszDn, DS_MANGLE_FOR eDsMangleFor);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern BOOL DsIsMangledDnW(PWSTR pszDn, DS_MANGLE_FOR eDsMangleFor);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsCrackSpn2A(uint8* pszSpn, uint32 cSpn, uint32* pcServiceClass, uint8* ServiceClass, uint32* pcServiceName, uint8* ServiceName, uint32* pcInstanceName, uint8* InstanceName, uint16* pInstancePort);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsCrackSpn2W(char16* pszSpn, uint32 cSpn, uint32* pcServiceClass, char16* ServiceClass, uint32* pcServiceName, char16* ServiceName, uint32* pcInstanceName, char16* InstanceName, uint16* pInstancePort);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsCrackSpn3W(PWSTR pszSpn, uint32 cSpn, uint32* pcHostName, char16* HostName, uint32* pcInstanceName, char16* InstanceName, uint16* pPortNumber, uint32* pcDomainName, char16* DomainName, uint32* pcRealmName, char16* RealmName);
+		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsCrackSpn4W(PWSTR pszSpn, uint32 cSpn, uint32* pcHostName, char16* HostName, uint32* pcInstanceName, char16* InstanceName, uint32* pcPortName, char16* PortName, uint32* pcDomainName, char16* DomainName, uint32* pcRealmName, char16* RealmName);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsBindW(PWSTR DomainControllerName, PWSTR DnsDomainName, HANDLE* phDS);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsBindA(PSTR DomainControllerName, PSTR DnsDomainName, HANDLE* phDS);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsBindWithCredW(PWSTR DomainControllerName, PWSTR DnsDomainName, void* AuthIdentity, HANDLE* phDS);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsBindWithCredA(PSTR DomainControllerName, PSTR DnsDomainName, void* AuthIdentity, HANDLE* phDS);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsBindWithSpnW(PWSTR DomainControllerName, PWSTR DnsDomainName, void* AuthIdentity, PWSTR ServicePrincipalName, HANDLE* phDS);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsBindWithSpnA(PSTR DomainControllerName, PSTR DnsDomainName, void* AuthIdentity, PSTR ServicePrincipalName, HANDLE* phDS);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsBindWithSpnExW(PWSTR DomainControllerName, PWSTR DnsDomainName, void* AuthIdentity, PWSTR ServicePrincipalName, uint32 BindFlags, HANDLE* phDS);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsBindWithSpnExA(PSTR DomainControllerName, PSTR DnsDomainName, void* AuthIdentity, PSTR ServicePrincipalName, uint32 BindFlags, HANDLE* phDS);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsBindByInstanceW(PWSTR ServerName, PWSTR Annotation, Guid* InstanceGuid, PWSTR DnsDomainName, void* AuthIdentity, PWSTR ServicePrincipalName, uint32 BindFlags, HANDLE* phDS);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsBindByInstanceA(PSTR ServerName, PSTR Annotation, Guid* InstanceGuid, PSTR DnsDomainName, void* AuthIdentity, PSTR ServicePrincipalName, uint32 BindFlags, HANDLE* phDS);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsBindToISTGW(PWSTR SiteName, HANDLE* phDS);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsBindToISTGA(PSTR SiteName, HANDLE* phDS);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsBindingSetTimeout(HANDLE hDS, uint32 cTimeoutSecs);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsUnBindW(HANDLE* phDS);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsUnBindA(HANDLE* phDS);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsMakePasswordCredentialsW(PWSTR User, PWSTR Domain, PWSTR Password, void** pAuthIdentity);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsMakePasswordCredentialsA(PSTR User, PSTR Domain, PSTR Password, void** pAuthIdentity);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern void DsFreePasswordCredentials(void* AuthIdentity);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsCrackNamesW(HANDLE hDS, DS_NAME_FLAGS flags, DS_NAME_FORMAT formatOffered, DS_NAME_FORMAT formatDesired, uint32 cNames, PWSTR* rpNames, DS_NAME_RESULTW** ppResult);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsCrackNamesA(HANDLE hDS, DS_NAME_FLAGS flags, DS_NAME_FORMAT formatOffered, DS_NAME_FORMAT formatDesired, uint32 cNames, PSTR* rpNames, DS_NAME_RESULTA** ppResult);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern void DsFreeNameResultW(DS_NAME_RESULTW* pResult);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern void DsFreeNameResultA(DS_NAME_RESULTA* pResult);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsGetSpnA(DS_SPN_NAME_TYPE ServiceType, PSTR ServiceClass, PSTR ServiceName, uint16 InstancePort, uint16 cInstanceNames, PSTR* pInstanceNames, uint16* pInstancePorts, uint32* pcSpn, PSTR** prpszSpn);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsGetSpnW(DS_SPN_NAME_TYPE ServiceType, PWSTR ServiceClass, PWSTR ServiceName, uint16 InstancePort, uint16 cInstanceNames, PWSTR* pInstanceNames, uint16* pInstancePorts, uint32* pcSpn, PWSTR** prpszSpn);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern void DsFreeSpnArrayA(uint32 cSpn, PSTR* rpszSpn);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern void DsFreeSpnArrayW(uint32 cSpn, PWSTR* rpszSpn);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsWriteAccountSpnA(HANDLE hDS, DS_SPN_WRITE_OP Operation, PSTR pszAccount, uint32 cSpn, PSTR* rpszSpn);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsWriteAccountSpnW(HANDLE hDS, DS_SPN_WRITE_OP Operation, PWSTR pszAccount, uint32 cSpn, PWSTR* rpszSpn);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsClientMakeSpnForTargetServerW(PWSTR ServiceClass, PWSTR ServiceName, uint32* pcSpnLength, char16* pszSpn);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsClientMakeSpnForTargetServerA(PSTR ServiceClass, PSTR ServiceName, uint32* pcSpnLength, uint8* pszSpn);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsServerRegisterSpnA(DS_SPN_WRITE_OP Operation, PSTR ServiceClass, PSTR UserObjectDN);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsServerRegisterSpnW(DS_SPN_WRITE_OP Operation, PWSTR ServiceClass, PWSTR UserObjectDN);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsReplicaSyncA(HANDLE hDS, PSTR NameContext, Guid* pUuidDsaSrc, uint32 Options);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsReplicaSyncW(HANDLE hDS, PWSTR NameContext, Guid* pUuidDsaSrc, uint32 Options);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsReplicaAddA(HANDLE hDS, PSTR NameContext, PSTR SourceDsaDn, PSTR TransportDn, PSTR SourceDsaAddress, SCHEDULE* pSchedule, uint32 Options);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsReplicaAddW(HANDLE hDS, PWSTR NameContext, PWSTR SourceDsaDn, PWSTR TransportDn, PWSTR SourceDsaAddress, SCHEDULE* pSchedule, uint32 Options);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsReplicaDelA(HANDLE hDS, PSTR NameContext, PSTR DsaSrc, uint32 Options);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsReplicaDelW(HANDLE hDS, PWSTR NameContext, PWSTR DsaSrc, uint32 Options);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsReplicaModifyA(HANDLE hDS, PSTR NameContext, Guid* pUuidSourceDsa, PSTR TransportDn, PSTR SourceDsaAddress, SCHEDULE* pSchedule, uint32 ReplicaFlags, uint32 ModifyFields, uint32 Options);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsReplicaModifyW(HANDLE hDS, PWSTR NameContext, Guid* pUuidSourceDsa, PWSTR TransportDn, PWSTR SourceDsaAddress, SCHEDULE* pSchedule, uint32 ReplicaFlags, uint32 ModifyFields, uint32 Options);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsReplicaUpdateRefsA(HANDLE hDS, PSTR NameContext, PSTR DsaDest, Guid* pUuidDsaDest, uint32 Options);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsReplicaUpdateRefsW(HANDLE hDS, PWSTR NameContext, PWSTR DsaDest, Guid* pUuidDsaDest, uint32 Options);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsReplicaSyncAllA(HANDLE hDS, PSTR pszNameContext, uint32 ulFlags, int pFnCallBack, void* pCallbackData, DS_REPSYNCALL_ERRINFOA*** pErrors);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsReplicaSyncAllW(HANDLE hDS, PWSTR pszNameContext, uint32 ulFlags, int pFnCallBack, void* pCallbackData, DS_REPSYNCALL_ERRINFOW*** pErrors);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsRemoveDsServerW(HANDLE hDs, PWSTR ServerDN, PWSTR DomainDN, BOOL* fLastDcInDomain, BOOL fCommit);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsRemoveDsServerA(HANDLE hDs, PSTR ServerDN, PSTR DomainDN, BOOL* fLastDcInDomain, BOOL fCommit);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsRemoveDsDomainW(HANDLE hDs, PWSTR DomainDN);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsRemoveDsDomainA(HANDLE hDs, PSTR DomainDN);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsListSitesA(HANDLE hDs, DS_NAME_RESULTA** ppSites);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsListSitesW(HANDLE hDs, DS_NAME_RESULTW** ppSites);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsListServersInSiteA(HANDLE hDs, PSTR site, DS_NAME_RESULTA** ppServers);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsListServersInSiteW(HANDLE hDs, PWSTR site, DS_NAME_RESULTW** ppServers);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsListDomainsInSiteA(HANDLE hDs, PSTR site, DS_NAME_RESULTA** ppDomains);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsListDomainsInSiteW(HANDLE hDs, PWSTR site, DS_NAME_RESULTW** ppDomains);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsListServersForDomainInSiteA(HANDLE hDs, PSTR domain, PSTR site, DS_NAME_RESULTA** ppServers);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsListServersForDomainInSiteW(HANDLE hDs, PWSTR domain, PWSTR site, DS_NAME_RESULTW** ppServers);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsListInfoForServerA(HANDLE hDs, PSTR server, DS_NAME_RESULTA** ppInfo);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsListInfoForServerW(HANDLE hDs, PWSTR server, DS_NAME_RESULTW** ppInfo);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsListRolesA(HANDLE hDs, DS_NAME_RESULTA** ppRoles);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsListRolesW(HANDLE hDs, DS_NAME_RESULTW** ppRoles);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsQuerySitesByCostW(HANDLE hDS, PWSTR pwszFromSite, PWSTR* rgwszToSites, uint32 cToSites, uint32 dwFlags, DS_SITE_COST_INFO** prgSiteInfo);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsQuerySitesByCostA(HANDLE hDS, PSTR pszFromSite, PSTR* rgszToSites, uint32 cToSites, uint32 dwFlags, DS_SITE_COST_INFO** prgSiteInfo);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern void DsQuerySitesFree(DS_SITE_COST_INFO* rgSiteInfo);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsMapSchemaGuidsA(HANDLE hDs, uint32 cGuids, Guid* rGuids, DS_SCHEMA_GUID_MAPA** ppGuidMap);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern void DsFreeSchemaGuidMapA(DS_SCHEMA_GUID_MAPA* pGuidMap);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsMapSchemaGuidsW(HANDLE hDs, uint32 cGuids, Guid* rGuids, DS_SCHEMA_GUID_MAPW** ppGuidMap);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern void DsFreeSchemaGuidMapW(DS_SCHEMA_GUID_MAPW* pGuidMap);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsGetDomainControllerInfoA(HANDLE hDs, PSTR DomainName, uint32 InfoLevel, uint32* pcOut, void** ppInfo);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsGetDomainControllerInfoW(HANDLE hDs, PWSTR DomainName, uint32 InfoLevel, uint32* pcOut, void** ppInfo);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern void DsFreeDomainControllerInfoA(uint32 InfoLevel, uint32 cInfo, void* pInfo);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern void DsFreeDomainControllerInfoW(uint32 InfoLevel, uint32 cInfo, void* pInfo);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsReplicaConsistencyCheck(HANDLE hDS, DS_KCC_TASKID TaskID, uint32 dwFlags);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsReplicaVerifyObjectsW(HANDLE hDS, PWSTR NameContext, Guid* pUuidDsaSrc, uint32 ulOptions);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsReplicaVerifyObjectsA(HANDLE hDS, PSTR NameContext, Guid* pUuidDsaSrc, uint32 ulOptions);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsReplicaGetInfoW(HANDLE hDS, DS_REPL_INFO_TYPE InfoType, PWSTR pszObject, Guid* puuidForSourceDsaObjGuid, void** ppInfo);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsReplicaGetInfo2W(HANDLE hDS, DS_REPL_INFO_TYPE InfoType, PWSTR pszObject, Guid* puuidForSourceDsaObjGuid, PWSTR pszAttributeName, PWSTR pszValue, uint32 dwFlags, uint32 dwEnumerationContext, void** ppInfo);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern void DsReplicaFreeInfo(DS_REPL_INFO_TYPE InfoType, void* pInfo);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsAddSidHistoryW(HANDLE hDS, uint32 Flags, PWSTR SrcDomain, PWSTR SrcPrincipal, PWSTR SrcDomainController, void* SrcDomainCreds, PWSTR DstDomain, PWSTR DstPrincipal);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsAddSidHistoryA(HANDLE hDS, uint32 Flags, PSTR SrcDomain, PSTR SrcPrincipal, PSTR SrcDomainController, void* SrcDomainCreds, PSTR DstDomain, PSTR DstPrincipal);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsInheritSecurityIdentityW(HANDLE hDS, uint32 Flags, PWSTR SrcPrincipal, PWSTR DstPrincipal);
+		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsInheritSecurityIdentityA(HANDLE hDS, uint32 Flags, PSTR SrcPrincipal, PSTR DstPrincipal);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsRoleGetPrimaryDomainInformation(PWSTR lpServer, DSROLE_PRIMARY_DOMAIN_INFO_LEVEL InfoLevel, uint8** Buffer);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern void DsRoleFreeMemory(void* Buffer);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsGetDcNameA(PSTR ComputerName, PSTR DomainName, Guid* DomainGuid, PSTR SiteName, uint32 Flags, DOMAIN_CONTROLLER_INFOA** DomainControllerInfo);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsGetDcNameW(PWSTR ComputerName, PWSTR DomainName, Guid* DomainGuid, PWSTR SiteName, uint32 Flags, DOMAIN_CONTROLLER_INFOW** DomainControllerInfo);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsGetSiteNameA(PSTR ComputerName, PSTR* SiteName);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsGetSiteNameW(PWSTR ComputerName, PWSTR* SiteName);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsValidateSubnetNameW(PWSTR SubnetName);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsValidateSubnetNameA(PSTR SubnetName);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsAddressToSiteNamesW(PWSTR ComputerName, uint32 EntryCount, SOCKET_ADDRESS* SocketAddresses, PWSTR** SiteNames);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsAddressToSiteNamesA(PSTR ComputerName, uint32 EntryCount, SOCKET_ADDRESS* SocketAddresses, PSTR** SiteNames);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsAddressToSiteNamesExW(PWSTR ComputerName, uint32 EntryCount, SOCKET_ADDRESS* SocketAddresses, PWSTR** SiteNames, PWSTR** SubnetNames);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsAddressToSiteNamesExA(PSTR ComputerName, uint32 EntryCount, SOCKET_ADDRESS* SocketAddresses, PSTR** SiteNames, PSTR** SubnetNames);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsEnumerateDomainTrustsW(PWSTR ServerName, uint32 Flags, DS_DOMAIN_TRUSTSW** Domains, uint32* DomainCount);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsEnumerateDomainTrustsA(PSTR ServerName, uint32 Flags, DS_DOMAIN_TRUSTSA** Domains, uint32* DomainCount);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsGetForestTrustInformationW(PWSTR ServerName, PWSTR TrustedDomainName, uint32 Flags, LSA_FOREST_TRUST_INFORMATION** ForestTrustInfo);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsMergeForestTrustInformationW(PWSTR DomainName, LSA_FOREST_TRUST_INFORMATION* NewForestTrustInfo, LSA_FOREST_TRUST_INFORMATION* OldForestTrustInfo, LSA_FOREST_TRUST_INFORMATION** MergedForestTrustInfo);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsGetDcSiteCoverageW(PWSTR ServerName, uint32* EntryCount, PWSTR** SiteNames);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsGetDcSiteCoverageA(PSTR ServerName, uint32* EntryCount, PSTR** SiteNames);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsDeregisterDnsHostRecordsW(PWSTR ServerName, PWSTR DnsDomainName, Guid* DomainGuid, Guid* DsaGuid, PWSTR DnsHostName);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsDeregisterDnsHostRecordsA(PSTR ServerName, PSTR DnsDomainName, Guid* DomainGuid, Guid* DsaGuid, PSTR DnsHostName);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsGetDcOpenW(PWSTR DnsName, uint32 OptionFlags, PWSTR SiteName, Guid* DomainGuid, PWSTR DnsForestName, uint32 DcFlags, GetDcContextHandle* RetGetDcContext);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsGetDcOpenA(PSTR DnsName, uint32 OptionFlags, PSTR SiteName, Guid* DomainGuid, PSTR DnsForestName, uint32 DcFlags, GetDcContextHandle* RetGetDcContext);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsGetDcNextW(HANDLE GetDcContextHandle, uint32* SockAddressCount, SOCKET_ADDRESS** SockAddresses, PWSTR* DnsHostName);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern uint32 DsGetDcNextA(HANDLE GetDcContextHandle, uint32* SockAddressCount, SOCKET_ADDRESS** SockAddresses, PSTR* DnsHostName);
+		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern void DsGetDcCloseW(GetDcContextHandle GetDcContextHandle);
+		
+	}
+}

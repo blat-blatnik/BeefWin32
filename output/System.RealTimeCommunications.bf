@@ -1,0 +1,711 @@
+using System;
+
+// namespace System.RealTimeCommunications
+namespace Win32
+{
+	extension Win32
+	{
+		// --- Constants ---
+		
+		public const uint32 RTCCS_FORCE_PROFILE = 1;
+		public const uint32 RTCCS_FAIL_ON_REDIRECT = 2;
+		public const uint32 RTCMT_AUDIO_SEND = 1;
+		public const uint32 RTCMT_AUDIO_RECEIVE = 2;
+		public const uint32 RTCMT_VIDEO_SEND = 4;
+		public const uint32 RTCMT_VIDEO_RECEIVE = 8;
+		public const uint32 RTCMT_T120_SENDRECV = 16;
+		public const uint32 RTCSI_PC_TO_PC = 1;
+		public const uint32 RTCSI_PC_TO_PHONE = 2;
+		public const uint32 RTCSI_PHONE_TO_PHONE = 4;
+		public const uint32 RTCSI_IM = 8;
+		public const uint32 RTCSI_MULTIPARTY_IM = 16;
+		public const uint32 RTCSI_APPLICATION = 32;
+		public const uint32 RTCTR_UDP = 1;
+		public const uint32 RTCTR_TCP = 2;
+		public const uint32 RTCTR_TLS = 4;
+		public const uint32 RTCAU_BASIC = 1;
+		public const uint32 RTCAU_DIGEST = 2;
+		public const uint32 RTCAU_NTLM = 4;
+		public const uint32 RTCAU_KERBEROS = 8;
+		public const uint32 RTCAU_USE_LOGON_CRED = 65536;
+		public const uint32 RTCRF_REGISTER_INVITE_SESSIONS = 1;
+		public const uint32 RTCRF_REGISTER_MESSAGE_SESSIONS = 2;
+		public const uint32 RTCRF_REGISTER_PRESENCE = 4;
+		public const uint32 RTCRF_REGISTER_NOTIFY = 8;
+		public const uint32 RTCRF_REGISTER_ALL = 15;
+		public const uint32 RTCRMF_BUDDY_ROAMING = 1;
+		public const uint32 RTCRMF_WATCHER_ROAMING = 2;
+		public const uint32 RTCRMF_PRESENCE_ROAMING = 4;
+		public const uint32 RTCRMF_PROFILE_ROAMING = 8;
+		public const uint32 RTCRMF_ALL_ROAMING = 15;
+		public const uint32 RTCEF_CLIENT = 1;
+		public const uint32 RTCEF_REGISTRATION_STATE_CHANGE = 2;
+		public const uint32 RTCEF_SESSION_STATE_CHANGE = 4;
+		public const uint32 RTCEF_SESSION_OPERATION_COMPLETE = 8;
+		public const uint32 RTCEF_PARTICIPANT_STATE_CHANGE = 16;
+		public const uint32 RTCEF_MEDIA = 32;
+		public const uint32 RTCEF_INTENSITY = 64;
+		public const uint32 RTCEF_MESSAGING = 128;
+		public const uint32 RTCEF_BUDDY = 256;
+		public const uint32 RTCEF_WATCHER = 512;
+		public const uint32 RTCEF_PROFILE = 1024;
+		public const uint32 RTCEF_USERSEARCH = 2048;
+		public const uint32 RTCEF_INFO = 4096;
+		public const uint32 RTCEF_GROUP = 8192;
+		public const uint32 RTCEF_MEDIA_REQUEST = 16384;
+		public const uint32 RTCEF_ROAMING = 65536;
+		public const uint32 RTCEF_PRESENCE_PROPERTY = 131072;
+		public const uint32 RTCEF_BUDDY2 = 262144;
+		public const uint32 RTCEF_WATCHER2 = 524288;
+		public const uint32 RTCEF_SESSION_REFER_STATUS = 1048576;
+		public const uint32 RTCEF_SESSION_REFERRED = 2097152;
+		public const uint32 RTCEF_REINVITE = 4194304;
+		public const uint32 RTCEF_PRESENCE_DATA = 8388608;
+		public const uint32 RTCEF_PRESENCE_STATUS = 16777216;
+		public const uint32 RTCEF_ALL = 33554431;
+		public const uint32 RTCIF_DISABLE_MEDIA = 1;
+		public const uint32 RTCIF_DISABLE_UPNP = 2;
+		public const uint32 RTCIF_ENABLE_SERVER_CLASS = 4;
+		public const uint32 RTCIF_DISABLE_STRICT_DNS = 8;
+		public const uint32 FACILITY_RTC_INTERFACE = 238;
+		public const uint32 FACILITY_SIP_STATUS_CODE = 239;
+		public const uint32 FACILITY_PINT_STATUS_CODE = 240;
+		public const uint32 STATUS_SEVERITY_RTC_ERROR = 2;
+		public const HRESULT RTC_E_SIP_CODECS_DO_NOT_MATCH = -2131886080;
+		public const HRESULT RTC_E_SIP_STREAM_PRESENT = -2131886079;
+		public const HRESULT RTC_E_SIP_STREAM_NOT_PRESENT = -2131886078;
+		public const HRESULT RTC_E_SIP_NO_STREAM = -2131886077;
+		public const HRESULT RTC_E_SIP_PARSE_FAILED = -2131886076;
+		public const HRESULT RTC_E_SIP_HEADER_NOT_PRESENT = -2131886075;
+		public const HRESULT RTC_E_SDP_NOT_PRESENT = -2131886074;
+		public const HRESULT RTC_E_SDP_PARSE_FAILED = -2131886073;
+		public const HRESULT RTC_E_SDP_UPDATE_FAILED = -2131886072;
+		public const HRESULT RTC_E_SDP_MULTICAST = -2131886071;
+		public const HRESULT RTC_E_SDP_CONNECTION_ADDR = -2131886070;
+		public const HRESULT RTC_E_SDP_NO_MEDIA = -2131886069;
+		public const HRESULT RTC_E_SIP_TIMEOUT = -2131886068;
+		public const HRESULT RTC_E_SDP_FAILED_TO_BUILD = -2131886067;
+		public const HRESULT RTC_E_SIP_INVITE_TRANSACTION_PENDING = -2131886066;
+		public const HRESULT RTC_E_SIP_AUTH_HEADER_SENT = -2131886065;
+		public const HRESULT RTC_E_SIP_AUTH_TYPE_NOT_SUPPORTED = -2131886064;
+		public const HRESULT RTC_E_SIP_AUTH_FAILED = -2131886063;
+		public const HRESULT RTC_E_INVALID_SIP_URL = -2131886062;
+		public const HRESULT RTC_E_DESTINATION_ADDRESS_LOCAL = -2131886061;
+		public const HRESULT RTC_E_INVALID_ADDRESS_LOCAL = -2131886060;
+		public const HRESULT RTC_E_DESTINATION_ADDRESS_MULTICAST = -2131886059;
+		public const HRESULT RTC_E_INVALID_PROXY_ADDRESS = -2131886058;
+		public const HRESULT RTC_E_SIP_TRANSPORT_NOT_SUPPORTED = -2131886057;
+		public const HRESULT RTC_E_SIP_NEED_MORE_DATA = -2131886056;
+		public const HRESULT RTC_E_SIP_CALL_DISCONNECTED = -2131886055;
+		public const HRESULT RTC_E_SIP_REQUEST_DESTINATION_ADDR_NOT_PRESENT = -2131886054;
+		public const HRESULT RTC_E_SIP_UDP_SIZE_EXCEEDED = -2131886053;
+		public const HRESULT RTC_E_SIP_SSL_TUNNEL_FAILED = -2131886052;
+		public const HRESULT RTC_E_SIP_SSL_NEGOTIATION_TIMEOUT = -2131886051;
+		public const HRESULT RTC_E_SIP_STACK_SHUTDOWN = -2131886050;
+		public const HRESULT RTC_E_MEDIA_CONTROLLER_STATE = -2131886049;
+		public const HRESULT RTC_E_MEDIA_NEED_TERMINAL = -2131886048;
+		public const HRESULT RTC_E_MEDIA_AUDIO_DEVICE_NOT_AVAILABLE = -2131886047;
+		public const HRESULT RTC_E_MEDIA_VIDEO_DEVICE_NOT_AVAILABLE = -2131886046;
+		public const HRESULT RTC_E_START_STREAM = -2131886045;
+		public const HRESULT RTC_E_MEDIA_AEC = -2131886044;
+		public const HRESULT RTC_E_CLIENT_NOT_INITIALIZED = -2131886043;
+		public const HRESULT RTC_E_CLIENT_ALREADY_INITIALIZED = -2131886042;
+		public const HRESULT RTC_E_CLIENT_ALREADY_SHUT_DOWN = -2131886041;
+		public const HRESULT RTC_E_PRESENCE_NOT_ENABLED = -2131886040;
+		public const HRESULT RTC_E_INVALID_SESSION_TYPE = -2131886039;
+		public const HRESULT RTC_E_INVALID_SESSION_STATE = -2131886038;
+		public const HRESULT RTC_E_NO_PROFILE = -2131886037;
+		public const HRESULT RTC_E_LOCAL_PHONE_NEEDED = -2131886036;
+		public const HRESULT RTC_E_NO_DEVICE = -2131886035;
+		public const HRESULT RTC_E_INVALID_PROFILE = -2131886034;
+		public const HRESULT RTC_E_PROFILE_NO_PROVISION = -2131886033;
+		public const HRESULT RTC_E_PROFILE_NO_KEY = -2131886032;
+		public const HRESULT RTC_E_PROFILE_NO_NAME = -2131886031;
+		public const HRESULT RTC_E_PROFILE_NO_USER = -2131886030;
+		public const HRESULT RTC_E_PROFILE_NO_USER_URI = -2131886029;
+		public const HRESULT RTC_E_PROFILE_NO_SERVER = -2131886028;
+		public const HRESULT RTC_E_PROFILE_NO_SERVER_ADDRESS = -2131886027;
+		public const HRESULT RTC_E_PROFILE_NO_SERVER_PROTOCOL = -2131886026;
+		public const HRESULT RTC_E_PROFILE_INVALID_SERVER_PROTOCOL = -2131886025;
+		public const HRESULT RTC_E_PROFILE_INVALID_SERVER_AUTHMETHOD = -2131886024;
+		public const HRESULT RTC_E_PROFILE_INVALID_SERVER_ROLE = -2131886023;
+		public const HRESULT RTC_E_PROFILE_MULTIPLE_REGISTRARS = -2131886022;
+		public const HRESULT RTC_E_PROFILE_INVALID_SESSION = -2131886021;
+		public const HRESULT RTC_E_PROFILE_INVALID_SESSION_PARTY = -2131886020;
+		public const HRESULT RTC_E_PROFILE_INVALID_SESSION_TYPE = -2131886019;
+		public const HRESULT RTC_E_OPERATION_WITH_TOO_MANY_PARTICIPANTS = -2131886018;
+		public const HRESULT RTC_E_BASIC_AUTH_SET_TLS = -2131886017;
+		public const HRESULT RTC_E_SIP_HIGH_SECURITY_SET_TLS = -2131886016;
+		public const HRESULT RTC_S_ROAMING_NOT_SUPPORTED = 15597633;
+		public const HRESULT RTC_E_PROFILE_SERVER_UNAUTHORIZED = -2131886014;
+		public const HRESULT RTC_E_DUPLICATE_REALM = -2131886013;
+		public const HRESULT RTC_E_POLICY_NOT_ALLOW = -2131886012;
+		public const HRESULT RTC_E_PORT_MAPPING_UNAVAILABLE = -2131886011;
+		public const HRESULT RTC_E_PORT_MAPPING_FAILED = -2131886010;
+		public const HRESULT RTC_E_SECURITY_LEVEL_NOT_COMPATIBLE = -2131886009;
+		public const HRESULT RTC_E_SECURITY_LEVEL_NOT_DEFINED = -2131886008;
+		public const HRESULT RTC_E_SECURITY_LEVEL_NOT_SUPPORTED_BY_PARTICIPANT = -2131886007;
+		public const HRESULT RTC_E_DUPLICATE_BUDDY = -2131886006;
+		public const HRESULT RTC_E_DUPLICATE_WATCHER = -2131886005;
+		public const HRESULT RTC_E_MALFORMED_XML = -2131886004;
+		public const HRESULT RTC_E_ROAMING_OPERATION_INTERRUPTED = -2131886003;
+		public const HRESULT RTC_E_ROAMING_FAILED = -2131886002;
+		public const HRESULT RTC_E_INVALID_BUDDY_LIST = -2131886001;
+		public const HRESULT RTC_E_INVALID_ACL_LIST = -2131886000;
+		public const HRESULT RTC_E_NO_GROUP = -2131885999;
+		public const HRESULT RTC_E_DUPLICATE_GROUP = -2131885998;
+		public const HRESULT RTC_E_TOO_MANY_GROUPS = -2131885997;
+		public const HRESULT RTC_E_NO_BUDDY = -2131885996;
+		public const HRESULT RTC_E_NO_WATCHER = -2131885995;
+		public const HRESULT RTC_E_NO_REALM = -2131885994;
+		public const HRESULT RTC_E_NO_TRANSPORT = -2131885993;
+		public const HRESULT RTC_E_NOT_EXIST = -2131885992;
+		public const HRESULT RTC_E_INVALID_PREFERENCE_LIST = -2131885991;
+		public const HRESULT RTC_E_MAX_PENDING_OPERATIONS = -2131885990;
+		public const HRESULT RTC_E_TOO_MANY_RETRIES = -2131885989;
+		public const HRESULT RTC_E_INVALID_PORTRANGE = -2131885988;
+		public const HRESULT RTC_E_SIP_CALL_CONNECTION_NOT_ESTABLISHED = -2131885987;
+		public const HRESULT RTC_E_SIP_ADDITIONAL_PARTY_IN_TWO_PARTY_SESSION = -2131885986;
+		public const HRESULT RTC_E_SIP_PARTY_ALREADY_IN_SESSION = -2131885985;
+		public const HRESULT RTC_E_SIP_OTHER_PARTY_JOIN_IN_PROGRESS = -2131885984;
+		public const HRESULT RTC_E_INVALID_OBJECT_STATE = -2131885983;
+		public const HRESULT RTC_E_PRESENCE_ENABLED = -2131885982;
+		public const HRESULT RTC_E_ROAMING_ENABLED = -2131885981;
+		public const HRESULT RTC_E_SIP_TLS_INCOMPATIBLE_ENCRYPTION = -2131885980;
+		public const HRESULT RTC_E_SIP_INVALID_CERTIFICATE = -2131885979;
+		public const HRESULT RTC_E_SIP_DNS_FAIL = -2131885978;
+		public const HRESULT RTC_E_SIP_TCP_FAIL = -2131885977;
+		public const HRESULT RTC_E_TOO_SMALL_EXPIRES_VALUE = -2131885976;
+		public const HRESULT RTC_E_SIP_TLS_FAIL = -2131885975;
+		public const HRESULT RTC_E_NOT_PRESENCE_PROFILE = -2131885974;
+		public const HRESULT RTC_E_SIP_INVITEE_PARTY_TIMEOUT = -2131885973;
+		public const HRESULT RTC_E_SIP_AUTH_TIME_SKEW = -2131885972;
+		public const HRESULT RTC_E_INVALID_REGISTRATION_STATE = -2131885971;
+		public const HRESULT RTC_E_MEDIA_DISABLED = -2131885970;
+		public const HRESULT RTC_E_MEDIA_ENABLED = -2131885969;
+		public const HRESULT RTC_E_REFER_NOT_ACCEPTED = -2131885968;
+		public const HRESULT RTC_E_REFER_NOT_ALLOWED = -2131885967;
+		public const HRESULT RTC_E_REFER_NOT_EXIST = -2131885966;
+		public const HRESULT RTC_E_SIP_HOLD_OPERATION_PENDING = -2131885965;
+		public const HRESULT RTC_E_SIP_UNHOLD_OPERATION_PENDING = -2131885964;
+		public const HRESULT RTC_E_MEDIA_SESSION_NOT_EXIST = -2131885963;
+		public const HRESULT RTC_E_MEDIA_SESSION_IN_HOLD = -2131885962;
+		public const HRESULT RTC_E_ANOTHER_MEDIA_SESSION_ACTIVE = -2131885961;
+		public const HRESULT RTC_E_MAX_REDIRECTS = -2131885960;
+		public const HRESULT RTC_E_REDIRECT_PROCESSING_FAILED = -2131885959;
+		public const HRESULT RTC_E_LISTENING_SOCKET_NOT_EXIST = -2131885958;
+		public const HRESULT RTC_E_INVALID_LISTEN_SOCKET = -2131885957;
+		public const HRESULT RTC_E_PORT_MANAGER_ALREADY_SET = -2131885956;
+		public const HRESULT RTC_E_SECURITY_LEVEL_ALREADY_SET = -2131885955;
+		public const HRESULT RTC_E_UDP_NOT_SUPPORTED = -2131885954;
+		public const HRESULT RTC_E_SIP_REFER_OPERATION_PENDING = -2131885953;
+		public const HRESULT RTC_E_PLATFORM_NOT_SUPPORTED = -2131885952;
+		public const HRESULT RTC_E_SIP_PEER_PARTICIPANT_IN_MULTIPARTY_SESSION = -2131885951;
+		public const HRESULT RTC_E_NOT_ALLOWED = -2131885950;
+		public const HRESULT RTC_E_REGISTRATION_DEACTIVATED = -2131885949;
+		public const HRESULT RTC_E_REGISTRATION_REJECTED = -2131885948;
+		public const HRESULT RTC_E_REGISTRATION_UNREGISTERED = -2131885947;
+		public const HRESULT RTC_E_STATUS_INFO_TRYING = 15663204;
+		public const HRESULT RTC_E_STATUS_INFO_RINGING = 15663284;
+		public const HRESULT RTC_E_STATUS_INFO_CALL_FORWARDING = 15663285;
+		public const HRESULT RTC_E_STATUS_INFO_QUEUED = 15663286;
+		public const HRESULT RTC_E_STATUS_SESSION_PROGRESS = 15663287;
+		public const HRESULT RTC_E_STATUS_SUCCESS = 15663304;
+		public const HRESULT RTC_E_STATUS_REDIRECT_MULTIPLE_CHOICES = -2131820244;
+		public const HRESULT RTC_E_STATUS_REDIRECT_MOVED_PERMANENTLY = -2131820243;
+		public const HRESULT RTC_E_STATUS_REDIRECT_MOVED_TEMPORARILY = -2131820242;
+		public const HRESULT RTC_E_STATUS_REDIRECT_SEE_OTHER = -2131820241;
+		public const HRESULT RTC_E_STATUS_REDIRECT_USE_PROXY = -2131820239;
+		public const HRESULT RTC_E_STATUS_REDIRECT_ALTERNATIVE_SERVICE = -2131820164;
+		public const HRESULT RTC_E_STATUS_CLIENT_BAD_REQUEST = -2131820144;
+		public const HRESULT RTC_E_STATUS_CLIENT_UNAUTHORIZED = -2131820143;
+		public const HRESULT RTC_E_STATUS_CLIENT_PAYMENT_REQUIRED = -2131820142;
+		public const HRESULT RTC_E_STATUS_CLIENT_FORBIDDEN = -2131820141;
+		public const HRESULT RTC_E_STATUS_CLIENT_NOT_FOUND = -2131820140;
+		public const HRESULT RTC_E_STATUS_CLIENT_METHOD_NOT_ALLOWED = -2131820139;
+		public const HRESULT RTC_E_STATUS_CLIENT_NOT_ACCEPTABLE = -2131820138;
+		public const HRESULT RTC_E_STATUS_CLIENT_PROXY_AUTHENTICATION_REQUIRED = -2131820137;
+		public const HRESULT RTC_E_STATUS_CLIENT_REQUEST_TIMEOUT = -2131820136;
+		public const HRESULT RTC_E_STATUS_CLIENT_CONFLICT = -2131820135;
+		public const HRESULT RTC_E_STATUS_CLIENT_GONE = -2131820134;
+		public const HRESULT RTC_E_STATUS_CLIENT_LENGTH_REQUIRED = -2131820133;
+		public const HRESULT RTC_E_STATUS_CLIENT_REQUEST_ENTITY_TOO_LARGE = -2131820131;
+		public const HRESULT RTC_E_STATUS_CLIENT_REQUEST_URI_TOO_LARGE = -2131820130;
+		public const HRESULT RTC_E_STATUS_CLIENT_UNSUPPORTED_MEDIA_TYPE = -2131820129;
+		public const HRESULT RTC_E_STATUS_CLIENT_BAD_EXTENSION = -2131820124;
+		public const HRESULT RTC_E_STATUS_CLIENT_TEMPORARILY_NOT_AVAILABLE = -2131820064;
+		public const HRESULT RTC_E_STATUS_CLIENT_TRANSACTION_DOES_NOT_EXIST = -2131820063;
+		public const HRESULT RTC_E_STATUS_CLIENT_LOOP_DETECTED = -2131820062;
+		public const HRESULT RTC_E_STATUS_CLIENT_TOO_MANY_HOPS = -2131820061;
+		public const HRESULT RTC_E_STATUS_CLIENT_ADDRESS_INCOMPLETE = -2131820060;
+		public const HRESULT RTC_E_STATUS_CLIENT_AMBIGUOUS = -2131820059;
+		public const HRESULT RTC_E_STATUS_CLIENT_BUSY_HERE = -2131820058;
+		public const HRESULT RTC_E_STATUS_REQUEST_TERMINATED = -2131820057;
+		public const HRESULT RTC_E_STATUS_NOT_ACCEPTABLE_HERE = -2131820056;
+		public const HRESULT RTC_E_STATUS_SERVER_INTERNAL_ERROR = -2131820044;
+		public const HRESULT RTC_E_STATUS_SERVER_NOT_IMPLEMENTED = -2131820043;
+		public const HRESULT RTC_E_STATUS_SERVER_BAD_GATEWAY = -2131820042;
+		public const HRESULT RTC_E_STATUS_SERVER_SERVICE_UNAVAILABLE = -2131820041;
+		public const HRESULT RTC_E_STATUS_SERVER_SERVER_TIMEOUT = -2131820040;
+		public const HRESULT RTC_E_STATUS_SERVER_VERSION_NOT_SUPPORTED = -2131820039;
+		public const HRESULT RTC_E_STATUS_GLOBAL_BUSY_EVERYWHERE = -2131819944;
+		public const HRESULT RTC_E_STATUS_GLOBAL_DECLINE = -2131819941;
+		public const HRESULT RTC_E_STATUS_GLOBAL_DOES_NOT_EXIST_ANYWHERE = -2131819940;
+		public const HRESULT RTC_E_STATUS_GLOBAL_NOT_ACCEPTABLE = -2131819938;
+		public const HRESULT RTC_E_PINT_STATUS_REJECTED_BUSY = -2131755003;
+		public const HRESULT RTC_E_PINT_STATUS_REJECTED_NO_ANSWER = -2131755002;
+		public const HRESULT RTC_E_PINT_STATUS_REJECTED_ALL_BUSY = -2131755001;
+		public const HRESULT RTC_E_PINT_STATUS_REJECTED_PL_FAILED = -2131755000;
+		public const HRESULT RTC_E_PINT_STATUS_REJECTED_SW_FAILED = -2131754999;
+		public const HRESULT RTC_E_PINT_STATUS_REJECTED_CANCELLED = -2131754998;
+		public const HRESULT RTC_E_PINT_STATUS_REJECTED_BADNUMBER = -2131754997;
+		
+		// --- Enums ---
+		
+		[AllowDuplicates]
+		public enum RTC_AUDIO_DEVICE : int32
+		{
+			RTCAD_SPEAKER = 0,
+			RTCAD_MICROPHONE = 1,
+		}
+		[AllowDuplicates]
+		public enum RTC_VIDEO_DEVICE : int32
+		{
+			RTCVD_RECEIVE = 0,
+			RTCVD_PREVIEW = 1,
+		}
+		[AllowDuplicates]
+		public enum RTC_EVENT : int32
+		{
+			RTCE_CLIENT = 0,
+			RTCE_REGISTRATION_STATE_CHANGE = 1,
+			RTCE_SESSION_STATE_CHANGE = 2,
+			RTCE_SESSION_OPERATION_COMPLETE = 3,
+			RTCE_PARTICIPANT_STATE_CHANGE = 4,
+			RTCE_MEDIA = 5,
+			RTCE_INTENSITY = 6,
+			RTCE_MESSAGING = 7,
+			RTCE_BUDDY = 8,
+			RTCE_WATCHER = 9,
+			RTCE_PROFILE = 10,
+			RTCE_USERSEARCH = 11,
+			RTCE_INFO = 12,
+			RTCE_GROUP = 13,
+			RTCE_MEDIA_REQUEST = 14,
+			RTCE_ROAMING = 15,
+			RTCE_PRESENCE_PROPERTY = 16,
+			RTCE_PRESENCE_DATA = 17,
+			RTCE_PRESENCE_STATUS = 18,
+			RTCE_SESSION_REFER_STATUS = 19,
+			RTCE_SESSION_REFERRED = 20,
+			RTCE_REINVITE = 21,
+		}
+		[AllowDuplicates]
+		public enum RTC_LISTEN_MODE : int32
+		{
+			RTCLM_NONE = 0,
+			RTCLM_DYNAMIC = 1,
+			RTCLM_BOTH = 2,
+		}
+		[AllowDuplicates]
+		public enum RTC_CLIENT_EVENT_TYPE : int32
+		{
+			RTCCET_VOLUME_CHANGE = 0,
+			RTCCET_DEVICE_CHANGE = 1,
+			RTCCET_NETWORK_QUALITY_CHANGE = 2,
+			RTCCET_ASYNC_CLEANUP_DONE = 3,
+		}
+		[AllowDuplicates]
+		public enum RTC_BUDDY_EVENT_TYPE : int32
+		{
+			RTCBET_BUDDY_ADD = 0,
+			RTCBET_BUDDY_REMOVE = 1,
+			RTCBET_BUDDY_UPDATE = 2,
+			RTCBET_BUDDY_STATE_CHANGE = 3,
+			RTCBET_BUDDY_ROAMED = 4,
+			RTCBET_BUDDY_SUBSCRIBED = 5,
+		}
+		[AllowDuplicates]
+		public enum RTC_WATCHER_EVENT_TYPE : int32
+		{
+			RTCWET_WATCHER_ADD = 0,
+			RTCWET_WATCHER_REMOVE = 1,
+			RTCWET_WATCHER_UPDATE = 2,
+			RTCWET_WATCHER_OFFERING = 3,
+			RTCWET_WATCHER_ROAMED = 4,
+		}
+		[AllowDuplicates]
+		public enum RTC_GROUP_EVENT_TYPE : int32
+		{
+			RTCGET_GROUP_ADD = 0,
+			RTCGET_GROUP_REMOVE = 1,
+			RTCGET_GROUP_UPDATE = 2,
+			RTCGET_GROUP_BUDDY_ADD = 3,
+			RTCGET_GROUP_BUDDY_REMOVE = 4,
+			RTCGET_GROUP_ROAMED = 5,
+		}
+		[AllowDuplicates]
+		public enum RTC_TERMINATE_REASON : int32
+		{
+			RTCTR_NORMAL = 0,
+			RTCTR_DND = 1,
+			RTCTR_BUSY = 2,
+			RTCTR_REJECT = 3,
+			RTCTR_TIMEOUT = 4,
+			RTCTR_SHUTDOWN = 5,
+			RTCTR_INSUFFICIENT_SECURITY_LEVEL = 6,
+			RTCTR_NOT_SUPPORTED = 7,
+		}
+		[AllowDuplicates]
+		public enum RTC_REGISTRATION_STATE : int32
+		{
+			RTCRS_NOT_REGISTERED = 0,
+			RTCRS_REGISTERING = 1,
+			RTCRS_REGISTERED = 2,
+			RTCRS_REJECTED = 3,
+			RTCRS_UNREGISTERING = 4,
+			RTCRS_ERROR = 5,
+			RTCRS_LOGGED_OFF = 6,
+			RTCRS_LOCAL_PA_LOGGED_OFF = 7,
+			RTCRS_REMOTE_PA_LOGGED_OFF = 8,
+		}
+		[AllowDuplicates]
+		public enum RTC_SESSION_STATE : int32
+		{
+			RTCSS_IDLE = 0,
+			RTCSS_INCOMING = 1,
+			RTCSS_ANSWERING = 2,
+			RTCSS_INPROGRESS = 3,
+			RTCSS_CONNECTED = 4,
+			RTCSS_DISCONNECTED = 5,
+			RTCSS_HOLD = 6,
+			RTCSS_REFER = 7,
+		}
+		[AllowDuplicates]
+		public enum RTC_PARTICIPANT_STATE : int32
+		{
+			RTCPS_IDLE = 0,
+			RTCPS_PENDING = 1,
+			RTCPS_INCOMING = 2,
+			RTCPS_ANSWERING = 3,
+			RTCPS_INPROGRESS = 4,
+			RTCPS_ALERTING = 5,
+			RTCPS_CONNECTED = 6,
+			RTCPS_DISCONNECTING = 7,
+			RTCPS_DISCONNECTED = 8,
+		}
+		[AllowDuplicates]
+		public enum RTC_WATCHER_STATE : int32
+		{
+			RTCWS_UNKNOWN = 0,
+			RTCWS_OFFERING = 1,
+			RTCWS_ALLOWED = 2,
+			RTCWS_BLOCKED = 3,
+			RTCWS_DENIED = 4,
+			RTCWS_PROMPT = 5,
+		}
+		[AllowDuplicates]
+		public enum RTC_ACE_SCOPE : int32
+		{
+			RTCAS_SCOPE_USER = 0,
+			RTCAS_SCOPE_DOMAIN = 1,
+			RTCAS_SCOPE_ALL = 2,
+		}
+		[AllowDuplicates]
+		public enum RTC_OFFER_WATCHER_MODE : int32
+		{
+			RTCOWM_OFFER_WATCHER_EVENT = 0,
+			RTCOWM_AUTOMATICALLY_ADD_WATCHER = 1,
+		}
+		[AllowDuplicates]
+		public enum RTC_WATCHER_MATCH_MODE : int32
+		{
+			RTCWMM_EXACT_MATCH = 0,
+			RTCWMM_BEST_ACE_MATCH = 1,
+		}
+		[AllowDuplicates]
+		public enum RTC_PRIVACY_MODE : int32
+		{
+			RTCPM_BLOCK_LIST_EXCLUDED = 0,
+			RTCPM_ALLOW_LIST_ONLY = 1,
+		}
+		[AllowDuplicates]
+		public enum RTC_SESSION_TYPE : int32
+		{
+			RTCST_PC_TO_PC = 0,
+			RTCST_PC_TO_PHONE = 1,
+			RTCST_PHONE_TO_PHONE = 2,
+			RTCST_IM = 3,
+			RTCST_MULTIPARTY_IM = 4,
+			RTCST_APPLICATION = 5,
+		}
+		[AllowDuplicates]
+		public enum RTC_PRESENCE_STATUS : int32
+		{
+			RTCXS_PRESENCE_OFFLINE = 0,
+			RTCXS_PRESENCE_ONLINE = 1,
+			RTCXS_PRESENCE_AWAY = 2,
+			RTCXS_PRESENCE_IDLE = 3,
+			RTCXS_PRESENCE_BUSY = 4,
+			RTCXS_PRESENCE_BE_RIGHT_BACK = 5,
+			RTCXS_PRESENCE_ON_THE_PHONE = 6,
+			RTCXS_PRESENCE_OUT_TO_LUNCH = 7,
+		}
+		[AllowDuplicates]
+		public enum RTC_BUDDY_SUBSCRIPTION_TYPE : int32
+		{
+			RTCBT_SUBSCRIBED = 0,
+			RTCBT_ALWAYS_OFFLINE = 1,
+			RTCBT_ALWAYS_ONLINE = 2,
+			RTCBT_POLL = 3,
+		}
+		[AllowDuplicates]
+		public enum RTC_MEDIA_EVENT_TYPE : int32
+		{
+			RTCMET_STOPPED = 0,
+			RTCMET_STARTED = 1,
+			RTCMET_FAILED = 2,
+		}
+		[AllowDuplicates]
+		public enum RTC_MEDIA_EVENT_REASON : int32
+		{
+			RTCMER_NORMAL = 0,
+			RTCMER_HOLD = 1,
+			RTCMER_TIMEOUT = 2,
+			RTCMER_BAD_DEVICE = 3,
+			RTCMER_NO_PORT = 4,
+			RTCMER_PORT_MAPPING_FAILED = 5,
+			RTCMER_REMOTE_REQUEST = 6,
+		}
+		[AllowDuplicates]
+		public enum RTC_MESSAGING_EVENT_TYPE : int32
+		{
+			RTCMSET_MESSAGE = 0,
+			RTCMSET_STATUS = 1,
+		}
+		[AllowDuplicates]
+		public enum RTC_MESSAGING_USER_STATUS : int32
+		{
+			RTCMUS_IDLE = 0,
+			RTCMUS_TYPING = 1,
+		}
+		[AllowDuplicates]
+		public enum RTC_DTMF : int32
+		{
+			RTC_DTMF_0 = 0,
+			RTC_DTMF_1 = 1,
+			RTC_DTMF_2 = 2,
+			RTC_DTMF_3 = 3,
+			RTC_DTMF_4 = 4,
+			RTC_DTMF_5 = 5,
+			RTC_DTMF_6 = 6,
+			RTC_DTMF_7 = 7,
+			RTC_DTMF_8 = 8,
+			RTC_DTMF_9 = 9,
+			RTC_DTMF_STAR = 10,
+			RTC_DTMF_POUND = 11,
+			RTC_DTMF_A = 12,
+			RTC_DTMF_B = 13,
+			RTC_DTMF_C = 14,
+			RTC_DTMF_D = 15,
+			RTC_DTMF_FLASH = 16,
+		}
+		[AllowDuplicates]
+		public enum RTC_PROVIDER_URI : int32
+		{
+			RTCPU_URIHOMEPAGE = 0,
+			RTCPU_URIHELPDESK = 1,
+			RTCPU_URIPERSONALACCOUNT = 2,
+			RTCPU_URIDISPLAYDURINGCALL = 3,
+			RTCPU_URIDISPLAYDURINGIDLE = 4,
+		}
+		[AllowDuplicates]
+		public enum RTC_RING_TYPE : int32
+		{
+			RTCRT_PHONE = 0,
+			RTCRT_MESSAGE = 1,
+			RTCRT_RINGBACK = 2,
+		}
+		[AllowDuplicates]
+		public enum RTC_T120_APPLET : int32
+		{
+			RTCTA_WHITEBOARD = 0,
+			RTCTA_APPSHARING = 1,
+		}
+		[AllowDuplicates]
+		public enum RTC_PORT_TYPE : int32
+		{
+			RTCPT_AUDIO_RTP = 0,
+			RTCPT_AUDIO_RTCP = 1,
+			RTCPT_VIDEO_RTP = 2,
+			RTCPT_VIDEO_RTCP = 3,
+			RTCPT_SIP = 4,
+		}
+		[AllowDuplicates]
+		public enum RTC_USER_SEARCH_COLUMN : int32
+		{
+			RTCUSC_URI = 0,
+			RTCUSC_DISPLAYNAME = 1,
+			RTCUSC_TITLE = 2,
+			RTCUSC_OFFICE = 3,
+			RTCUSC_PHONE = 4,
+			RTCUSC_COMPANY = 5,
+			RTCUSC_CITY = 6,
+			RTCUSC_STATE = 7,
+			RTCUSC_COUNTRY = 8,
+			RTCUSC_EMAIL = 9,
+		}
+		[AllowDuplicates]
+		public enum RTC_USER_SEARCH_PREFERENCE : int32
+		{
+			RTCUSP_MAX_MATCHES = 0,
+			RTCUSP_TIME_LIMIT = 1,
+		}
+		[AllowDuplicates]
+		public enum RTC_ROAMING_EVENT_TYPE : int32
+		{
+			RTCRET_BUDDY_ROAMING = 0,
+			RTCRET_WATCHER_ROAMING = 1,
+			RTCRET_PRESENCE_ROAMING = 2,
+			RTCRET_PROFILE_ROAMING = 3,
+			RTCRET_WPENDING_ROAMING = 4,
+		}
+		[AllowDuplicates]
+		public enum RTC_PROFILE_EVENT_TYPE : int32
+		{
+			RTCPFET_PROFILE_GET = 0,
+			RTCPFET_PROFILE_UPDATE = 1,
+		}
+		[AllowDuplicates]
+		public enum RTC_ANSWER_MODE : int32
+		{
+			RTCAM_OFFER_SESSION_EVENT = 0,
+			RTCAM_AUTOMATICALLY_ACCEPT = 1,
+			RTCAM_AUTOMATICALLY_REJECT = 2,
+			RTCAM_NOT_SUPPORTED = 3,
+		}
+		[AllowDuplicates]
+		public enum RTC_SESSION_REFER_STATUS : int32
+		{
+			RTCSRS_REFERRING = 0,
+			RTCSRS_ACCEPTED = 1,
+			RTCSRS_ERROR = 2,
+			RTCSRS_REJECTED = 3,
+			RTCSRS_DROPPED = 4,
+			RTCSRS_DONE = 5,
+		}
+		[AllowDuplicates]
+		public enum RTC_PRESENCE_PROPERTY : int32
+		{
+			RTCPP_PHONENUMBER = 0,
+			RTCPP_DISPLAYNAME = 1,
+			RTCPP_EMAIL = 2,
+			RTCPP_DEVICE_NAME = 3,
+			RTCPP_MULTIPLE = 4,
+		}
+		[AllowDuplicates]
+		public enum RTC_SECURITY_TYPE : int32
+		{
+			RTCSECT_AUDIO_VIDEO_MEDIA_ENCRYPTION = 0,
+			RTCSECT_T120_MEDIA_ENCRYPTION = 1,
+		}
+		[AllowDuplicates]
+		public enum RTC_SECURITY_LEVEL : int32
+		{
+			RTCSECL_UNSUPPORTED = 1,
+			RTCSECL_SUPPORTED = 2,
+			RTCSECL_REQUIRED = 3,
+		}
+		[AllowDuplicates]
+		public enum RTC_REINVITE_STATE : int32
+		{
+			RTCRIN_INCOMING = 0,
+			RTCRIN_SUCCEEDED = 1,
+			RTCRIN_FAIL = 2,
+		}
+		
+		// --- Structs ---
+		
+		[CRepr]
+		public struct TRANSPORT_SETTING
+		{
+			public TRANSPORT_SETTING_ID SettingId;
+			public uint32* Length;
+			public uint8* Value;
+		}
+		
+		// --- COM Class IDs ---
+		
+		public const Guid CLSID_RTCClient = .(0x7a42ea29, 0xa2b7, 0x40c4, 0xb0, 0x91, 0xf6, 0xf0, 0x24, 0xaa, 0x89, 0xbe);
+		
+		// --- COM Interfaces ---
+		
+		public struct IRTCClient {}
+		public struct IRTCClient2 {}
+		public struct IRTCClientPresence {}
+		public struct IRTCClientPresence2 {}
+		public struct IRTCClientProvisioning {}
+		public struct IRTCClientProvisioning2 {}
+		public struct IRTCProfile {}
+		public struct IRTCProfile2 {}
+		public struct IRTCSession {}
+		public struct IRTCSession2 {}
+		public struct IRTCSessionCallControl {}
+		public struct IRTCParticipant {}
+		public struct IRTCRoamingEvent {}
+		public struct IRTCProfileEvent {}
+		public struct IRTCProfileEvent2 {}
+		public struct IRTCClientEvent {}
+		public struct IRTCRegistrationStateChangeEvent {}
+		public struct IRTCSessionStateChangeEvent {}
+		public struct IRTCSessionStateChangeEvent2 {}
+		public struct IRTCSessionOperationCompleteEvent {}
+		public struct IRTCSessionOperationCompleteEvent2 {}
+		public struct IRTCParticipantStateChangeEvent {}
+		public struct IRTCMediaEvent {}
+		public struct IRTCIntensityEvent {}
+		public struct IRTCMessagingEvent {}
+		public struct IRTCBuddyEvent {}
+		public struct IRTCBuddyEvent2 {}
+		public struct IRTCWatcherEvent {}
+		public struct IRTCWatcherEvent2 {}
+		public struct IRTCBuddyGroupEvent {}
+		public struct IRTCInfoEvent {}
+		public struct IRTCMediaRequestEvent {}
+		public struct IRTCReInviteEvent {}
+		public struct IRTCPresencePropertyEvent {}
+		public struct IRTCPresenceDataEvent {}
+		public struct IRTCPresenceStatusEvent {}
+		public struct IRTCCollection {}
+		public struct IRTCEnumParticipants {}
+		public struct IRTCEnumProfiles {}
+		public struct IRTCEnumBuddies {}
+		public struct IRTCEnumWatchers {}
+		public struct IRTCEnumGroups {}
+		public struct IRTCPresenceContact {}
+		public struct IRTCBuddy {}
+		public struct IRTCBuddy2 {}
+		public struct IRTCWatcher {}
+		public struct IRTCWatcher2 {}
+		public struct IRTCBuddyGroup {}
+		public struct IRTCEventNotification {}
+		public struct IRTCPortManager {}
+		public struct IRTCSessionPortManagement {}
+		public struct IRTCClientPortManagement {}
+		public struct IRTCUserSearch {}
+		public struct IRTCUserSearchQuery {}
+		public struct IRTCUserSearchResult {}
+		public struct IRTCEnumUserSearchResults {}
+		public struct IRTCUserSearchResultsEvent {}
+		public struct IRTCSessionReferStatusEvent {}
+		public struct IRTCSessionReferredEvent {}
+		public struct IRTCSessionDescriptionManager {}
+		public struct IRTCEnumPresenceDevices {}
+		public struct IRTCPresenceDevice {}
+		public struct IRTCDispatchEventNotification {}
+		public struct ITransportSettingsInternal {}
+		public struct INetworkTransportSettings {}
+		public struct INotificationTransportSync {}
+		
+	}
+}

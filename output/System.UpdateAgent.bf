@@ -1,0 +1,737 @@
+using System;
+
+// namespace System.UpdateAgent
+namespace Win32
+{
+	extension Win32
+	{
+		// --- Constants ---
+		
+		public const Guid LIBID_WUApiLib = .(0xb596cc9f, 0x56e5, 0x419e, 0xa6, 0x22, 0xe0, 0x1b, 0xb4, 0x57, 0x43, 0x1e);
+		public const uint32 UPDATE_LOCKDOWN_WEBSITE_ACCESS = 1;
+		public const HRESULT WU_S_SERVICE_STOP = 2359297;
+		public const HRESULT WU_S_SELFUPDATE = 2359298;
+		public const HRESULT WU_S_UPDATE_ERROR = 2359299;
+		public const HRESULT WU_S_MARKED_FOR_DISCONNECT = 2359300;
+		public const HRESULT WU_S_REBOOT_REQUIRED = 2359301;
+		public const HRESULT WU_S_ALREADY_INSTALLED = 2359302;
+		public const HRESULT WU_S_ALREADY_UNINSTALLED = 2359303;
+		public const HRESULT WU_S_ALREADY_DOWNLOADED = 2359304;
+		public const HRESULT WU_S_SOME_UPDATES_SKIPPED_ON_BATTERY = 2359305;
+		public const HRESULT WU_S_ALREADY_REVERTED = 2359306;
+		public const HRESULT WU_S_SEARCH_CRITERIA_NOT_SUPPORTED = 2359312;
+		public const HRESULT WU_S_UH_INSTALLSTILLPENDING = 2367509;
+		public const HRESULT WU_S_UH_DOWNLOAD_SIZE_CALCULATED = 2367510;
+		public const HRESULT WU_S_SIH_NOOP = 2379777;
+		public const HRESULT WU_S_DM_ALREADYDOWNLOADING = 2383873;
+		public const HRESULT WU_S_METADATA_SKIPPED_BY_ENFORCEMENTMODE = 2388225;
+		public const HRESULT WU_S_METADATA_IGNORED_SIGNATURE_VERIFICATION = 2388226;
+		public const HRESULT WU_S_SEARCH_LOAD_SHEDDING = 2392065;
+		public const HRESULT WU_E_NO_SERVICE = -2145124351;
+		public const HRESULT WU_E_MAX_CAPACITY_REACHED = -2145124350;
+		public const HRESULT WU_E_UNKNOWN_ID = -2145124349;
+		public const HRESULT WU_E_NOT_INITIALIZED = -2145124348;
+		public const HRESULT WU_E_RANGEOVERLAP = -2145124347;
+		public const HRESULT WU_E_TOOMANYRANGES = -2145124346;
+		public const HRESULT WU_E_INVALIDINDEX = -2145124345;
+		public const HRESULT WU_E_ITEMNOTFOUND = -2145124344;
+		public const HRESULT WU_E_OPERATIONINPROGRESS = -2145124343;
+		public const HRESULT WU_E_COULDNOTCANCEL = -2145124342;
+		public const HRESULT WU_E_CALL_CANCELLED = -2145124341;
+		public const HRESULT WU_E_NOOP = -2145124340;
+		public const HRESULT WU_E_XML_MISSINGDATA = -2145124339;
+		public const HRESULT WU_E_XML_INVALID = -2145124338;
+		public const HRESULT WU_E_CYCLE_DETECTED = -2145124337;
+		public const HRESULT WU_E_TOO_DEEP_RELATION = -2145124336;
+		public const HRESULT WU_E_INVALID_RELATIONSHIP = -2145124335;
+		public const HRESULT WU_E_REG_VALUE_INVALID = -2145124334;
+		public const HRESULT WU_E_DUPLICATE_ITEM = -2145124333;
+		public const HRESULT WU_E_INVALID_INSTALL_REQUESTED = -2145124332;
+		public const HRESULT WU_E_INSTALL_NOT_ALLOWED = -2145124330;
+		public const HRESULT WU_E_NOT_APPLICABLE = -2145124329;
+		public const HRESULT WU_E_NO_USERTOKEN = -2145124328;
+		public const HRESULT WU_E_EXCLUSIVE_INSTALL_CONFLICT = -2145124327;
+		public const HRESULT WU_E_POLICY_NOT_SET = -2145124326;
+		public const HRESULT WU_E_SELFUPDATE_IN_PROGRESS = -2145124325;
+		public const HRESULT WU_E_INVALID_UPDATE = -2145124323;
+		public const HRESULT WU_E_SERVICE_STOP = -2145124322;
+		public const HRESULT WU_E_NO_CONNECTION = -2145124321;
+		public const HRESULT WU_E_NO_INTERACTIVE_USER = -2145124320;
+		public const HRESULT WU_E_TIME_OUT = -2145124319;
+		public const HRESULT WU_E_ALL_UPDATES_FAILED = -2145124318;
+		public const HRESULT WU_E_EULAS_DECLINED = -2145124317;
+		public const HRESULT WU_E_NO_UPDATE = -2145124316;
+		public const HRESULT WU_E_USER_ACCESS_DISABLED = -2145124315;
+		public const HRESULT WU_E_INVALID_UPDATE_TYPE = -2145124314;
+		public const HRESULT WU_E_URL_TOO_LONG = -2145124313;
+		public const HRESULT WU_E_UNINSTALL_NOT_ALLOWED = -2145124312;
+		public const HRESULT WU_E_INVALID_PRODUCT_LICENSE = -2145124311;
+		public const HRESULT WU_E_MISSING_HANDLER = -2145124310;
+		public const HRESULT WU_E_LEGACYSERVER = -2145124309;
+		public const HRESULT WU_E_BIN_SOURCE_ABSENT = -2145124308;
+		public const HRESULT WU_E_SOURCE_ABSENT = -2145124307;
+		public const HRESULT WU_E_WU_DISABLED = -2145124306;
+		public const HRESULT WU_E_CALL_CANCELLED_BY_POLICY = -2145124305;
+		public const HRESULT WU_E_INVALID_PROXY_SERVER = -2145124304;
+		public const HRESULT WU_E_INVALID_FILE = -2145124303;
+		public const HRESULT WU_E_INVALID_CRITERIA = -2145124302;
+		public const HRESULT WU_E_EULA_UNAVAILABLE = -2145124301;
+		public const HRESULT WU_E_DOWNLOAD_FAILED = -2145124300;
+		public const HRESULT WU_E_UPDATE_NOT_PROCESSED = -2145124299;
+		public const HRESULT WU_E_INVALID_OPERATION = -2145124298;
+		public const HRESULT WU_E_NOT_SUPPORTED = -2145124297;
+		public const HRESULT WU_E_WINHTTP_INVALID_FILE = -2145124296;
+		public const HRESULT WU_E_TOO_MANY_RESYNC = -2145124295;
+		public const HRESULT WU_E_NO_SERVER_CORE_SUPPORT = -2145124288;
+		public const HRESULT WU_E_SYSPREP_IN_PROGRESS = -2145124287;
+		public const HRESULT WU_E_UNKNOWN_SERVICE = -2145124286;
+		public const HRESULT WU_E_NO_UI_SUPPORT = -2145124285;
+		public const HRESULT WU_E_PER_MACHINE_UPDATE_ACCESS_DENIED = -2145124284;
+		public const HRESULT WU_E_UNSUPPORTED_SEARCHSCOPE = -2145124283;
+		public const HRESULT WU_E_BAD_FILE_URL = -2145124282;
+		public const HRESULT WU_E_REVERT_NOT_ALLOWED = -2145124281;
+		public const HRESULT WU_E_INVALID_NOTIFICATION_INFO = -2145124280;
+		public const HRESULT WU_E_OUTOFRANGE = -2145124279;
+		public const HRESULT WU_E_SETUP_IN_PROGRESS = -2145124278;
+		public const HRESULT WU_E_ORPHANED_DOWNLOAD_JOB = -2145124277;
+		public const HRESULT WU_E_LOW_BATTERY = -2145124276;
+		public const HRESULT WU_E_INFRASTRUCTUREFILE_INVALID_FORMAT = -2145124275;
+		public const HRESULT WU_E_INFRASTRUCTUREFILE_REQUIRES_SSL = -2145124274;
+		public const HRESULT WU_E_IDLESHUTDOWN_OPCOUNT_DISCOVERY = -2145124273;
+		public const HRESULT WU_E_IDLESHUTDOWN_OPCOUNT_SEARCH = -2145124272;
+		public const HRESULT WU_E_IDLESHUTDOWN_OPCOUNT_DOWNLOAD = -2145124271;
+		public const HRESULT WU_E_IDLESHUTDOWN_OPCOUNT_INSTALL = -2145124270;
+		public const HRESULT WU_E_IDLESHUTDOWN_OPCOUNT_OTHER = -2145124269;
+		public const HRESULT WU_E_INTERACTIVE_CALL_CANCELLED = -2145124268;
+		public const HRESULT WU_E_AU_CALL_CANCELLED = -2145124267;
+		public const HRESULT WU_E_SYSTEM_UNSUPPORTED = -2145124266;
+		public const HRESULT WU_E_NO_SUCH_HANDLER_PLUGIN = -2145124265;
+		public const HRESULT WU_E_INVALID_SERIALIZATION_VERSION = -2145124264;
+		public const HRESULT WU_E_NETWORK_COST_EXCEEDS_POLICY = -2145124263;
+		public const HRESULT WU_E_CALL_CANCELLED_BY_HIDE = -2145124262;
+		public const HRESULT WU_E_CALL_CANCELLED_BY_INVALID = -2145124261;
+		public const HRESULT WU_E_INVALID_VOLUMEID = -2145124260;
+		public const HRESULT WU_E_UNRECOGNIZED_VOLUMEID = -2145124259;
+		public const HRESULT WU_E_EXTENDEDERROR_NOTSET = -2145124258;
+		public const HRESULT WU_E_EXTENDEDERROR_FAILED = -2145124257;
+		public const HRESULT WU_E_IDLESHUTDOWN_OPCOUNT_SERVICEREGISTRATION = -2145124256;
+		public const HRESULT WU_E_FILETRUST_SHA2SIGNATURE_MISSING = -2145124255;
+		public const HRESULT WU_E_UPDATE_NOT_APPROVED = -2145124254;
+		public const HRESULT WU_E_CALL_CANCELLED_BY_INTERACTIVE_SEARCH = -2145124253;
+		public const HRESULT WU_E_INSTALL_JOB_RESUME_NOT_ALLOWED = -2145124252;
+		public const HRESULT WU_E_INSTALL_JOB_NOT_SUSPENDED = -2145124251;
+		public const HRESULT WU_E_INSTALL_USERCONTEXT_ACCESSDENIED = -2145124250;
+		public const HRESULT WU_E_UNEXPECTED = -2145120257;
+		public const HRESULT WU_E_MSI_WRONG_VERSION = -2145120255;
+		public const HRESULT WU_E_MSI_NOT_CONFIGURED = -2145120254;
+		public const HRESULT WU_E_MSP_DISABLED = -2145120253;
+		public const HRESULT WU_E_MSI_WRONG_APP_CONTEXT = -2145120252;
+		public const HRESULT WU_E_MSI_NOT_PRESENT = -2145120251;
+		public const HRESULT WU_E_MSP_UNEXPECTED = -2145116161;
+		public const HRESULT WU_E_PT_SOAPCLIENT_BASE = -2145107968;
+		public const HRESULT WU_E_PT_SOAPCLIENT_INITIALIZE = -2145107967;
+		public const HRESULT WU_E_PT_SOAPCLIENT_OUTOFMEMORY = -2145107966;
+		public const HRESULT WU_E_PT_SOAPCLIENT_GENERATE = -2145107965;
+		public const HRESULT WU_E_PT_SOAPCLIENT_CONNECT = -2145107964;
+		public const HRESULT WU_E_PT_SOAPCLIENT_SEND = -2145107963;
+		public const HRESULT WU_E_PT_SOAPCLIENT_SERVER = -2145107962;
+		public const HRESULT WU_E_PT_SOAPCLIENT_SOAPFAULT = -2145107961;
+		public const HRESULT WU_E_PT_SOAPCLIENT_PARSEFAULT = -2145107960;
+		public const HRESULT WU_E_PT_SOAPCLIENT_READ = -2145107959;
+		public const HRESULT WU_E_PT_SOAPCLIENT_PARSE = -2145107958;
+		public const HRESULT WU_E_PT_SOAP_VERSION = -2145107957;
+		public const HRESULT WU_E_PT_SOAP_MUST_UNDERSTAND = -2145107956;
+		public const HRESULT WU_E_PT_SOAP_CLIENT = -2145107955;
+		public const HRESULT WU_E_PT_SOAP_SERVER = -2145107954;
+		public const HRESULT WU_E_PT_WMI_ERROR = -2145107953;
+		public const HRESULT WU_E_PT_EXCEEDED_MAX_SERVER_TRIPS = -2145107952;
+		public const HRESULT WU_E_PT_SUS_SERVER_NOT_SET = -2145107951;
+		public const HRESULT WU_E_PT_DOUBLE_INITIALIZATION = -2145107950;
+		public const HRESULT WU_E_PT_INVALID_COMPUTER_NAME = -2145107949;
+		public const HRESULT WU_E_PT_REFRESH_CACHE_REQUIRED = -2145107947;
+		public const HRESULT WU_E_PT_HTTP_STATUS_BAD_REQUEST = -2145107946;
+		public const HRESULT WU_E_PT_HTTP_STATUS_DENIED = -2145107945;
+		public const HRESULT WU_E_PT_HTTP_STATUS_FORBIDDEN = -2145107944;
+		public const HRESULT WU_E_PT_HTTP_STATUS_NOT_FOUND = -2145107943;
+		public const HRESULT WU_E_PT_HTTP_STATUS_BAD_METHOD = -2145107942;
+		public const HRESULT WU_E_PT_HTTP_STATUS_PROXY_AUTH_REQ = -2145107941;
+		public const HRESULT WU_E_PT_HTTP_STATUS_REQUEST_TIMEOUT = -2145107940;
+		public const HRESULT WU_E_PT_HTTP_STATUS_CONFLICT = -2145107939;
+		public const HRESULT WU_E_PT_HTTP_STATUS_GONE = -2145107938;
+		public const HRESULT WU_E_PT_HTTP_STATUS_SERVER_ERROR = -2145107937;
+		public const HRESULT WU_E_PT_HTTP_STATUS_NOT_SUPPORTED = -2145107936;
+		public const HRESULT WU_E_PT_HTTP_STATUS_BAD_GATEWAY = -2145107935;
+		public const HRESULT WU_E_PT_HTTP_STATUS_SERVICE_UNAVAIL = -2145107934;
+		public const HRESULT WU_E_PT_HTTP_STATUS_GATEWAY_TIMEOUT = -2145107933;
+		public const HRESULT WU_E_PT_HTTP_STATUS_VERSION_NOT_SUP = -2145107932;
+		public const HRESULT WU_E_PT_FILE_LOCATIONS_CHANGED = -2145107931;
+		public const HRESULT WU_E_PT_REGISTRATION_NOT_SUPPORTED = -2145107930;
+		public const HRESULT WU_E_PT_NO_AUTH_PLUGINS_REQUESTED = -2145107929;
+		public const HRESULT WU_E_PT_NO_AUTH_COOKIES_CREATED = -2145107928;
+		public const HRESULT WU_E_PT_INVALID_CONFIG_PROP = -2145107927;
+		public const HRESULT WU_E_PT_CONFIG_PROP_MISSING = -2145107926;
+		public const HRESULT WU_E_PT_HTTP_STATUS_NOT_MAPPED = -2145107925;
+		public const HRESULT WU_E_PT_WINHTTP_NAME_NOT_RESOLVED = -2145107924;
+		public const HRESULT WU_E_PT_LOAD_SHEDDING = -2145107923;
+		public const HRESULT WU_E_PT_SAME_REDIR_ID = -2145103827;
+		public const HRESULT WU_E_PT_NO_MANAGED_RECOVER = -2145103826;
+		public const HRESULT WU_E_PT_ECP_SUCCEEDED_WITH_ERRORS = -2145107921;
+		public const HRESULT WU_E_PT_ECP_INIT_FAILED = -2145107920;
+		public const HRESULT WU_E_PT_ECP_INVALID_FILE_FORMAT = -2145107919;
+		public const HRESULT WU_E_PT_ECP_INVALID_METADATA = -2145107918;
+		public const HRESULT WU_E_PT_ECP_FAILURE_TO_EXTRACT_DIGEST = -2145107917;
+		public const HRESULT WU_E_PT_ECP_FAILURE_TO_DECOMPRESS_CAB_FILE = -2145107916;
+		public const HRESULT WU_E_PT_ECP_FILE_LOCATION_ERROR = -2145107915;
+		public const HRESULT WU_E_PT_CATALOG_SYNC_REQUIRED = -2145123274;
+		public const HRESULT WU_E_PT_SECURITY_VERIFICATION_FAILURE = -2145123273;
+		public const HRESULT WU_E_PT_ENDPOINT_UNREACHABLE = -2145123272;
+		public const HRESULT WU_E_PT_INVALID_FORMAT = -2145123271;
+		public const HRESULT WU_E_PT_INVALID_URL = -2145123270;
+		public const HRESULT WU_E_PT_NWS_NOT_LOADED = -2145123269;
+		public const HRESULT WU_E_PT_PROXY_AUTH_SCHEME_NOT_SUPPORTED = -2145123268;
+		public const HRESULT WU_E_SERVICEPROP_NOTAVAIL = -2145123267;
+		public const HRESULT WU_E_PT_ENDPOINT_REFRESH_REQUIRED = -2145123266;
+		public const HRESULT WU_E_PT_ENDPOINTURL_NOTAVAIL = -2145123265;
+		public const HRESULT WU_E_PT_ENDPOINT_DISCONNECTED = -2145123264;
+		public const HRESULT WU_E_PT_INVALID_OPERATION = -2145123263;
+		public const HRESULT WU_E_PT_OBJECT_FAULTED = -2145123262;
+		public const HRESULT WU_E_PT_NUMERIC_OVERFLOW = -2145123261;
+		public const HRESULT WU_E_PT_OPERATION_ABORTED = -2145123260;
+		public const HRESULT WU_E_PT_OPERATION_ABANDONED = -2145123259;
+		public const HRESULT WU_E_PT_QUOTA_EXCEEDED = -2145123258;
+		public const HRESULT WU_E_PT_NO_TRANSLATION_AVAILABLE = -2145123257;
+		public const HRESULT WU_E_PT_ADDRESS_IN_USE = -2145123256;
+		public const HRESULT WU_E_PT_ADDRESS_NOT_AVAILABLE = -2145123255;
+		public const HRESULT WU_E_PT_OTHER = -2145123254;
+		public const HRESULT WU_E_PT_SECURITY_SYSTEM_FAILURE = -2145123253;
+		public const HRESULT WU_E_PT_UNEXPECTED = -2145103873;
+		public const HRESULT WU_E_REDIRECTOR_LOAD_XML = -2145103871;
+		public const HRESULT WU_E_REDIRECTOR_S_FALSE = -2145103870;
+		public const HRESULT WU_E_REDIRECTOR_ID_SMALLER = -2145103869;
+		public const HRESULT WU_E_REDIRECTOR_UNKNOWN_SERVICE = -2145103868;
+		public const HRESULT WU_E_REDIRECTOR_UNSUPPORTED_CONTENTTYPE = -2145103867;
+		public const HRESULT WU_E_REDIRECTOR_INVALID_RESPONSE = -2145103866;
+		public const HRESULT WU_E_REDIRECTOR_ATTRPROVIDER_EXCEEDED_MAX_NAMEVALUE = -2145103864;
+		public const HRESULT WU_E_REDIRECTOR_ATTRPROVIDER_INVALID_NAME = -2145103863;
+		public const HRESULT WU_E_REDIRECTOR_ATTRPROVIDER_INVALID_VALUE = -2145103862;
+		public const HRESULT WU_E_REDIRECTOR_SLS_GENERIC_ERROR = -2145103861;
+		public const HRESULT WU_E_REDIRECTOR_CONNECT_POLICY = -2145103860;
+		public const HRESULT WU_E_REDIRECTOR_ONLINE_DISALLOWED = -2145103859;
+		public const HRESULT WU_E_REDIRECTOR_UNEXPECTED = -2145103617;
+		public const HRESULT WU_E_SIH_VERIFY_DOWNLOAD_ENGINE = -2145103615;
+		public const HRESULT WU_E_SIH_VERIFY_DOWNLOAD_PAYLOAD = -2145103614;
+		public const HRESULT WU_E_SIH_VERIFY_STAGE_ENGINE = -2145103613;
+		public const HRESULT WU_E_SIH_VERIFY_STAGE_PAYLOAD = -2145103612;
+		public const HRESULT WU_E_SIH_ACTION_NOT_FOUND = -2145103611;
+		public const HRESULT WU_E_SIH_SLS_PARSE = -2145103610;
+		public const HRESULT WU_E_SIH_INVALIDHASH = -2145103609;
+		public const HRESULT WU_E_SIH_NO_ENGINE = -2145103608;
+		public const HRESULT WU_E_SIH_POST_REBOOT_INSTALL_FAILED = -2145103607;
+		public const HRESULT WU_E_SIH_POST_REBOOT_NO_CACHED_SLS_RESPONSE = -2145103606;
+		public const HRESULT WU_E_SIH_PARSE = -2145103605;
+		public const HRESULT WU_E_SIH_SECURITY = -2145103604;
+		public const HRESULT WU_E_SIH_PPL = -2145103603;
+		public const HRESULT WU_E_SIH_POLICY = -2145103602;
+		public const HRESULT WU_E_SIH_STDEXCEPTION = -2145103601;
+		public const HRESULT WU_E_SIH_NONSTDEXCEPTION = -2145103600;
+		public const HRESULT WU_E_SIH_ENGINE_EXCEPTION = -2145103599;
+		public const HRESULT WU_E_SIH_BLOCKED_FOR_PLATFORM = -2145103598;
+		public const HRESULT WU_E_SIH_ANOTHER_INSTANCE_RUNNING = -2145103597;
+		public const HRESULT WU_E_SIH_DNSRESILIENCY_OFF = -2145103596;
+		public const HRESULT WU_E_SIH_UNEXPECTED = -2145103361;
+		public const HRESULT WU_E_DRV_PRUNED = -2145075199;
+		public const HRESULT WU_E_DRV_NOPROP_OR_LEGACY = -2145075198;
+		public const HRESULT WU_E_DRV_REG_MISMATCH = -2145075197;
+		public const HRESULT WU_E_DRV_NO_METADATA = -2145075196;
+		public const HRESULT WU_E_DRV_MISSING_ATTRIBUTE = -2145075195;
+		public const HRESULT WU_E_DRV_SYNC_FAILED = -2145075194;
+		public const HRESULT WU_E_DRV_NO_PRINTER_CONTENT = -2145075193;
+		public const HRESULT WU_E_DRV_DEVICE_PROBLEM = -2145075192;
+		public const HRESULT WU_E_DRV_UNEXPECTED = -2145071105;
+		public const HRESULT WU_E_DS_SHUTDOWN = -2145091584;
+		public const HRESULT WU_E_DS_INUSE = -2145091583;
+		public const HRESULT WU_E_DS_INVALID = -2145091582;
+		public const HRESULT WU_E_DS_TABLEMISSING = -2145091581;
+		public const HRESULT WU_E_DS_TABLEINCORRECT = -2145091580;
+		public const HRESULT WU_E_DS_INVALIDTABLENAME = -2145091579;
+		public const HRESULT WU_E_DS_BADVERSION = -2145091578;
+		public const HRESULT WU_E_DS_NODATA = -2145091577;
+		public const HRESULT WU_E_DS_MISSINGDATA = -2145091576;
+		public const HRESULT WU_E_DS_MISSINGREF = -2145091575;
+		public const HRESULT WU_E_DS_UNKNOWNHANDLER = -2145091574;
+		public const HRESULT WU_E_DS_CANTDELETE = -2145091573;
+		public const HRESULT WU_E_DS_LOCKTIMEOUTEXPIRED = -2145091572;
+		public const HRESULT WU_E_DS_NOCATEGORIES = -2145091571;
+		public const HRESULT WU_E_DS_ROWEXISTS = -2145091570;
+		public const HRESULT WU_E_DS_STOREFILELOCKED = -2145091569;
+		public const HRESULT WU_E_DS_CANNOTREGISTER = -2145091568;
+		public const HRESULT WU_E_DS_UNABLETOSTART = -2145091567;
+		public const HRESULT WU_E_DS_DUPLICATEUPDATEID = -2145091565;
+		public const HRESULT WU_E_DS_UNKNOWNSERVICE = -2145091564;
+		public const HRESULT WU_E_DS_SERVICEEXPIRED = -2145091563;
+		public const HRESULT WU_E_DS_DECLINENOTALLOWED = -2145091562;
+		public const HRESULT WU_E_DS_TABLESESSIONMISMATCH = -2145091561;
+		public const HRESULT WU_E_DS_SESSIONLOCKMISMATCH = -2145091560;
+		public const HRESULT WU_E_DS_NEEDWINDOWSSERVICE = -2145091559;
+		public const HRESULT WU_E_DS_INVALIDOPERATION = -2145091558;
+		public const HRESULT WU_E_DS_SCHEMAMISMATCH = -2145091557;
+		public const HRESULT WU_E_DS_RESETREQUIRED = -2145091556;
+		public const HRESULT WU_E_DS_IMPERSONATED = -2145091555;
+		public const HRESULT WU_E_DS_DATANOTAVAILABLE = -2145091554;
+		public const HRESULT WU_E_DS_DATANOTLOADED = -2145091553;
+		public const HRESULT WU_E_DS_NODATA_NOSUCHREVISION = -2145091552;
+		public const HRESULT WU_E_DS_NODATA_NOSUCHUPDATE = -2145091551;
+		public const HRESULT WU_E_DS_NODATA_EULA = -2145091550;
+		public const HRESULT WU_E_DS_NODATA_SERVICE = -2145091549;
+		public const HRESULT WU_E_DS_NODATA_COOKIE = -2145091548;
+		public const HRESULT WU_E_DS_NODATA_TIMER = -2145091547;
+		public const HRESULT WU_E_DS_NODATA_CCR = -2145091546;
+		public const HRESULT WU_E_DS_NODATA_FILE = -2145091545;
+		public const HRESULT WU_E_DS_NODATA_DOWNLOADJOB = -2145091544;
+		public const HRESULT WU_E_DS_NODATA_TMI = -2145091543;
+		public const HRESULT WU_E_DS_UNEXPECTED = -2145087489;
+		public const HRESULT WU_E_INVENTORY_PARSEFAILED = -2145087487;
+		public const HRESULT WU_E_INVENTORY_GET_INVENTORY_TYPE_FAILED = -2145087486;
+		public const HRESULT WU_E_INVENTORY_RESULT_UPLOAD_FAILED = -2145087485;
+		public const HRESULT WU_E_INVENTORY_UNEXPECTED = -2145087484;
+		public const HRESULT WU_E_INVENTORY_WMI_ERROR = -2145087483;
+		public const HRESULT WU_E_AU_NOSERVICE = -2145083392;
+		public const HRESULT WU_E_AU_NONLEGACYSERVER = -2145083390;
+		public const HRESULT WU_E_AU_LEGACYCLIENTDISABLED = -2145083389;
+		public const HRESULT WU_E_AU_PAUSED = -2145083388;
+		public const HRESULT WU_E_AU_NO_REGISTERED_SERVICE = -2145083387;
+		public const HRESULT WU_E_AU_DETECT_SVCID_MISMATCH = -2145083386;
+		public const HRESULT WU_E_REBOOT_IN_PROGRESS = -2145083385;
+		public const HRESULT WU_E_AU_OOBE_IN_PROGRESS = -2145083384;
+		public const HRESULT WU_E_AU_UNEXPECTED = -2145079297;
+		public const HRESULT WU_E_UH_REMOTEUNAVAILABLE = -2145116160;
+		public const HRESULT WU_E_UH_LOCALONLY = -2145116159;
+		public const HRESULT WU_E_UH_UNKNOWNHANDLER = -2145116158;
+		public const HRESULT WU_E_UH_REMOTEALREADYACTIVE = -2145116157;
+		public const HRESULT WU_E_UH_DOESNOTSUPPORTACTION = -2145116156;
+		public const HRESULT WU_E_UH_WRONGHANDLER = -2145116155;
+		public const HRESULT WU_E_UH_INVALIDMETADATA = -2145116154;
+		public const HRESULT WU_E_UH_INSTALLERHUNG = -2145116153;
+		public const HRESULT WU_E_UH_OPERATIONCANCELLED = -2145116152;
+		public const HRESULT WU_E_UH_BADHANDLERXML = -2145116151;
+		public const HRESULT WU_E_UH_CANREQUIREINPUT = -2145116150;
+		public const HRESULT WU_E_UH_INSTALLERFAILURE = -2145116149;
+		public const HRESULT WU_E_UH_FALLBACKTOSELFCONTAINED = -2145116148;
+		public const HRESULT WU_E_UH_NEEDANOTHERDOWNLOAD = -2145116147;
+		public const HRESULT WU_E_UH_NOTIFYFAILURE = -2145116146;
+		public const HRESULT WU_E_UH_INCONSISTENT_FILE_NAMES = -2145116145;
+		public const HRESULT WU_E_UH_FALLBACKERROR = -2145116144;
+		public const HRESULT WU_E_UH_TOOMANYDOWNLOADREQUESTS = -2145116143;
+		public const HRESULT WU_E_UH_UNEXPECTEDCBSRESPONSE = -2145116142;
+		public const HRESULT WU_E_UH_BADCBSPACKAGEID = -2145116141;
+		public const HRESULT WU_E_UH_POSTREBOOTSTILLPENDING = -2145116140;
+		public const HRESULT WU_E_UH_POSTREBOOTRESULTUNKNOWN = -2145116139;
+		public const HRESULT WU_E_UH_POSTREBOOTUNEXPECTEDSTATE = -2145116138;
+		public const HRESULT WU_E_UH_NEW_SERVICING_STACK_REQUIRED = -2145116137;
+		public const HRESULT WU_E_UH_CALLED_BACK_FAILURE = -2145116136;
+		public const HRESULT WU_E_UH_CUSTOMINSTALLER_INVALID_SIGNATURE = -2145116135;
+		public const HRESULT WU_E_UH_UNSUPPORTED_INSTALLCONTEXT = -2145116134;
+		public const HRESULT WU_E_UH_INVALID_TARGETSESSION = -2145116133;
+		public const HRESULT WU_E_UH_DECRYPTFAILURE = -2145116132;
+		public const HRESULT WU_E_UH_HANDLER_DISABLEDUNTILREBOOT = -2145116131;
+		public const HRESULT WU_E_UH_APPX_NOT_PRESENT = -2145116130;
+		public const HRESULT WU_E_UH_NOTREADYTOCOMMIT = -2145116129;
+		public const HRESULT WU_E_UH_APPX_INVALID_PACKAGE_VOLUME = -2145116128;
+		public const HRESULT WU_E_UH_APPX_DEFAULT_PACKAGE_VOLUME_UNAVAILABLE = -2145116127;
+		public const HRESULT WU_E_UH_APPX_INSTALLED_PACKAGE_VOLUME_UNAVAILABLE = -2145116126;
+		public const HRESULT WU_E_UH_APPX_PACKAGE_FAMILY_NOT_FOUND = -2145116125;
+		public const HRESULT WU_E_UH_APPX_SYSTEM_VOLUME_NOT_FOUND = -2145116124;
+		public const HRESULT WU_E_UH_UNEXPECTED = -2145112065;
+		public const HRESULT WU_E_DM_URLNOTAVAILABLE = -2145099775;
+		public const HRESULT WU_E_DM_INCORRECTFILEHASH = -2145099774;
+		public const HRESULT WU_E_DM_UNKNOWNALGORITHM = -2145099773;
+		public const HRESULT WU_E_DM_NEEDDOWNLOADREQUEST = -2145099772;
+		public const HRESULT WU_E_DM_NONETWORK = -2145099771;
+		public const HRESULT WU_E_DM_WRONGBITSVERSION = -2145099770;
+		public const HRESULT WU_E_DM_NOTDOWNLOADED = -2145099769;
+		public const HRESULT WU_E_DM_FAILTOCONNECTTOBITS = -2145099768;
+		public const HRESULT WU_E_DM_BITSTRANSFERERROR = -2145099767;
+		public const HRESULT WU_E_DM_DOWNLOADLOCATIONCHANGED = -2145099766;
+		public const HRESULT WU_E_DM_CONTENTCHANGED = -2145099765;
+		public const HRESULT WU_E_DM_DOWNLOADLIMITEDBYUPDATESIZE = -2145099764;
+		public const HRESULT WU_E_DM_UNAUTHORIZED = -2145099762;
+		public const HRESULT WU_E_DM_BG_ERROR_TOKEN_REQUIRED = -2145099761;
+		public const HRESULT WU_E_DM_DOWNLOADSANDBOXNOTFOUND = -2145099760;
+		public const HRESULT WU_E_DM_DOWNLOADFILEPATHUNKNOWN = -2145099759;
+		public const HRESULT WU_E_DM_DOWNLOADFILEMISSING = -2145099758;
+		public const HRESULT WU_E_DM_UPDATEREMOVED = -2145099757;
+		public const HRESULT WU_E_DM_READRANGEFAILED = -2145099756;
+		public const HRESULT WU_E_DM_UNAUTHORIZED_NO_USER = -2145099754;
+		public const HRESULT WU_E_DM_UNAUTHORIZED_LOCAL_USER = -2145099753;
+		public const HRESULT WU_E_DM_UNAUTHORIZED_DOMAIN_USER = -2145099752;
+		public const HRESULT WU_E_DM_UNAUTHORIZED_MSA_USER = -2145099751;
+		public const HRESULT WU_E_DM_FALLINGBACKTOBITS = -2145099750;
+		public const HRESULT WU_E_DM_DOWNLOAD_VOLUME_CONFLICT = -2145099749;
+		public const HRESULT WU_E_DM_SANDBOX_HASH_MISMATCH = -2145099748;
+		public const HRESULT WU_E_DM_HARDRESERVEID_CONFLICT = -2145099747;
+		public const HRESULT WU_E_DM_DOSVC_REQUIRED = -2145099746;
+		public const HRESULT WU_E_DM_UNEXPECTED = -2145095681;
+		public const HRESULT WU_E_SETUP_INVALID_INFDATA = -2145071103;
+		public const HRESULT WU_E_SETUP_INVALID_IDENTDATA = -2145071102;
+		public const HRESULT WU_E_SETUP_ALREADY_INITIALIZED = -2145071101;
+		public const HRESULT WU_E_SETUP_NOT_INITIALIZED = -2145071100;
+		public const HRESULT WU_E_SETUP_SOURCE_VERSION_MISMATCH = -2145071099;
+		public const HRESULT WU_E_SETUP_TARGET_VERSION_GREATER = -2145071098;
+		public const HRESULT WU_E_SETUP_REGISTRATION_FAILED = -2145071097;
+		public const HRESULT WU_E_SELFUPDATE_SKIP_ON_FAILURE = -2145071096;
+		public const HRESULT WU_E_SETUP_SKIP_UPDATE = -2145071095;
+		public const HRESULT WU_E_SETUP_UNSUPPORTED_CONFIGURATION = -2145071094;
+		public const HRESULT WU_E_SETUP_BLOCKED_CONFIGURATION = -2145071093;
+		public const HRESULT WU_E_SETUP_REBOOT_TO_FIX = -2145071092;
+		public const HRESULT WU_E_SETUP_ALREADYRUNNING = -2145071091;
+		public const HRESULT WU_E_SETUP_REBOOTREQUIRED = -2145071090;
+		public const HRESULT WU_E_SETUP_HANDLER_EXEC_FAILURE = -2145071089;
+		public const HRESULT WU_E_SETUP_INVALID_REGISTRY_DATA = -2145071088;
+		public const HRESULT WU_E_SELFUPDATE_REQUIRED = -2145071087;
+		public const HRESULT WU_E_SELFUPDATE_REQUIRED_ADMIN = -2145071086;
+		public const HRESULT WU_E_SETUP_WRONG_SERVER_VERSION = -2145071085;
+		public const HRESULT WU_E_SETUP_DEFERRABLE_REBOOT_PENDING = -2145071084;
+		public const HRESULT WU_E_SETUP_NON_DEFERRABLE_REBOOT_PENDING = -2145071083;
+		public const HRESULT WU_E_SETUP_FAIL = -2145071082;
+		public const HRESULT WU_E_SETUP_UNEXPECTED = -2145067009;
+		public const HRESULT WU_E_EE_UNKNOWN_EXPRESSION = -2145067007;
+		public const HRESULT WU_E_EE_INVALID_EXPRESSION = -2145067006;
+		public const HRESULT WU_E_EE_MISSING_METADATA = -2145067005;
+		public const HRESULT WU_E_EE_INVALID_VERSION = -2145067004;
+		public const HRESULT WU_E_EE_NOT_INITIALIZED = -2145067003;
+		public const HRESULT WU_E_EE_INVALID_ATTRIBUTEDATA = -2145067002;
+		public const HRESULT WU_E_EE_CLUSTER_ERROR = -2145067001;
+		public const HRESULT WU_E_EE_UNEXPECTED = -2145062913;
+		public const HRESULT WU_E_INSTALLATION_RESULTS_UNKNOWN_VERSION = -2145112063;
+		public const HRESULT WU_E_INSTALLATION_RESULTS_INVALID_DATA = -2145112062;
+		public const HRESULT WU_E_INSTALLATION_RESULTS_NOT_FOUND = -2145112061;
+		public const HRESULT WU_E_TRAYICON_FAILURE = -2145112060;
+		public const HRESULT WU_E_NON_UI_MODE = -2145107971;
+		public const HRESULT WU_E_WUCLTUI_UNSUPPORTED_VERSION = -2145107970;
+		public const HRESULT WU_E_AUCLIENT_UNEXPECTED = -2145107969;
+		public const HRESULT WU_E_REPORTER_EVENTCACHECORRUPT = -2145062911;
+		public const HRESULT WU_E_REPORTER_EVENTNAMESPACEPARSEFAILED = -2145062910;
+		public const HRESULT WU_E_INVALID_EVENT = -2145062909;
+		public const HRESULT WU_E_SERVER_BUSY = -2145062908;
+		public const HRESULT WU_E_CALLBACK_COOKIE_NOT_FOUND = -2145062907;
+		public const HRESULT WU_E_REPORTER_UNEXPECTED = -2145058817;
+		public const HRESULT WU_E_OL_INVALID_SCANFILE = -2145095679;
+		public const HRESULT WU_E_OL_NEWCLIENT_REQUIRED = -2145095678;
+		public const HRESULT WU_E_INVALID_EVENT_PAYLOAD = -2145095677;
+		public const HRESULT WU_E_INVALID_EVENT_PAYLOADSIZE = -2145095676;
+		public const HRESULT WU_E_SERVICE_NOT_REGISTERED = -2145095675;
+		public const HRESULT WU_E_OL_UNEXPECTED = -2145091585;
+		public const HRESULT WU_E_METADATA_NOOP = -2145095424;
+		public const HRESULT WU_E_METADATA_CONFIG_INVALID_BINARY_ENCODING = -2145095423;
+		public const HRESULT WU_E_METADATA_FETCH_CONFIG = -2145095422;
+		public const HRESULT WU_E_METADATA_INVALID_PARAMETER = -2145095420;
+		public const HRESULT WU_E_METADATA_UNEXPECTED = -2145095419;
+		public const HRESULT WU_E_METADATA_NO_VERIFICATION_DATA = -2145095418;
+		public const HRESULT WU_E_METADATA_BAD_FRAGMENTSIGNING_CONFIG = -2145095417;
+		public const HRESULT WU_E_METADATA_FAILURE_PROCESSING_FRAGMENTSIGNING_CONFIG = -2145095416;
+		public const HRESULT WU_E_METADATA_XML_MISSING = -2145095392;
+		public const HRESULT WU_E_METADATA_XML_FRAGMENTSIGNING_MISSING = -2145095391;
+		public const HRESULT WU_E_METADATA_XML_MODE_MISSING = -2145095390;
+		public const HRESULT WU_E_METADATA_XML_MODE_INVALID = -2145095389;
+		public const HRESULT WU_E_METADATA_XML_VALIDITY_INVALID = -2145095388;
+		public const HRESULT WU_E_METADATA_XML_LEAFCERT_MISSING = -2145095387;
+		public const HRESULT WU_E_METADATA_XML_INTERMEDIATECERT_MISSING = -2145095386;
+		public const HRESULT WU_E_METADATA_XML_LEAFCERT_ID_MISSING = -2145095385;
+		public const HRESULT WU_E_METADATA_XML_BASE64CERDATA_MISSING = -2145095384;
+		public const HRESULT WU_E_METADATA_BAD_SIGNATURE = -2145095360;
+		public const HRESULT WU_E_METADATA_UNSUPPORTED_HASH_ALG = -2145095359;
+		public const HRESULT WU_E_METADATA_SIGNATURE_VERIFY_FAILED = -2145095358;
+		public const HRESULT WU_E_METADATATRUST_CERTIFICATECHAIN_VERIFICATION = -2145095344;
+		public const HRESULT WU_E_METADATATRUST_UNTRUSTED_CERTIFICATECHAIN = -2145095343;
+		public const HRESULT WU_E_METADATA_TIMESTAMP_TOKEN_MISSING = -2145095328;
+		public const HRESULT WU_E_METADATA_TIMESTAMP_TOKEN_VERIFICATION_FAILED = -2145095327;
+		public const HRESULT WU_E_METADATA_TIMESTAMP_TOKEN_UNTRUSTED = -2145095326;
+		public const HRESULT WU_E_METADATA_TIMESTAMP_TOKEN_VALIDITY_WINDOW = -2145095325;
+		public const HRESULT WU_E_METADATA_TIMESTAMP_TOKEN_SIGNATURE = -2145095324;
+		public const HRESULT WU_E_METADATA_TIMESTAMP_TOKEN_CERTCHAIN = -2145095323;
+		public const HRESULT WU_E_METADATA_TIMESTAMP_TOKEN_REFRESHONLINE = -2145095322;
+		public const HRESULT WU_E_METADATA_TIMESTAMP_TOKEN_ALL_BAD = -2145095321;
+		public const HRESULT WU_E_METADATA_TIMESTAMP_TOKEN_NODATA = -2145095320;
+		public const HRESULT WU_E_METADATA_TIMESTAMP_TOKEN_CACHELOOKUP = -2145095319;
+		public const HRESULT WU_E_METADATA_TIMESTAMP_TOKEN_VALIDITYWINDOW_UNEXPECTED = -2145095298;
+		public const HRESULT WU_E_METADATA_TIMESTAMP_TOKEN_UNEXPECTED = -2145095297;
+		public const HRESULT WU_E_METADATA_CERT_MISSING = -2145095296;
+		public const HRESULT WU_E_METADATA_LEAFCERT_BAD_TRANSPORT_ENCODING = -2145095295;
+		public const HRESULT WU_E_METADATA_INTCERT_BAD_TRANSPORT_ENCODING = -2145095294;
+		public const HRESULT WU_E_METADATA_CERT_UNTRUSTED = -2145095293;
+		public const HRESULT WU_E_WUTASK_INPROGRESS = -2145079295;
+		public const HRESULT WU_E_WUTASK_STATUS_DISABLED = -2145079294;
+		public const HRESULT WU_E_WUTASK_NOT_STARTED = -2145079293;
+		public const HRESULT WU_E_WUTASK_RETRY = -2145079292;
+		public const HRESULT WU_E_WUTASK_CANCELINSTALL_DISALLOWED = -2145079291;
+		public const HRESULT WU_E_UNKNOWN_HARDWARECAPABILITY = -2145079039;
+		public const HRESULT WU_E_BAD_XML_HARDWARECAPABILITY = -2145079038;
+		public const HRESULT WU_E_WMI_NOT_SUPPORTED = -2145079037;
+		public const HRESULT WU_E_UPDATE_MERGE_NOT_ALLOWED = -2145079036;
+		public const HRESULT WU_E_SKIPPED_UPDATE_INSTALLATION = -2145079035;
+		public const HRESULT WU_E_SLS_INVALID_REVISION = -2145078783;
+		public const HRESULT WU_E_FILETRUST_DUALSIGNATURE_RSA = -2145078527;
+		public const HRESULT WU_E_FILETRUST_DUALSIGNATURE_ECC = -2145078526;
+		public const HRESULT WU_E_TRUST_SUBJECT_NOT_TRUSTED = -2145078525;
+		public const HRESULT WU_E_TRUST_PROVIDER_UNKNOWN = -2145078524;
+		
+		// --- Enums ---
+		
+		[AllowDuplicates]
+		public enum AutomaticUpdatesNotificationLevel : int32
+		{
+			aunlNotConfigured = 0,
+			aunlDisabled = 1,
+			aunlNotifyBeforeDownload = 2,
+			aunlNotifyBeforeInstallation = 3,
+			aunlScheduledInstallation = 4,
+		}
+		[AllowDuplicates]
+		public enum AutomaticUpdatesScheduledInstallationDay : int32
+		{
+			ausidEveryDay = 0,
+			ausidEverySunday = 1,
+			ausidEveryMonday = 2,
+			ausidEveryTuesday = 3,
+			ausidEveryWednesday = 4,
+			ausidEveryThursday = 5,
+			ausidEveryFriday = 6,
+			ausidEverySaturday = 7,
+		}
+		[AllowDuplicates]
+		public enum DownloadPhase : int32
+		{
+			dphInitializing = 1,
+			dphDownloading = 2,
+			dphVerifying = 3,
+		}
+		[AllowDuplicates]
+		public enum DownloadPriority : int32
+		{
+			dpLow = 1,
+			dpNormal = 2,
+			dpHigh = 3,
+			dpExtraHigh = 4,
+		}
+		[AllowDuplicates]
+		public enum AutoSelectionMode : int32
+		{
+			asLetWindowsUpdateDecide = 0,
+			asAutoSelectIfDownloaded = 1,
+			asNeverAutoSelect = 2,
+			asAlwaysAutoSelect = 3,
+		}
+		[AllowDuplicates]
+		public enum AutoDownloadMode : int32
+		{
+			adLetWindowsUpdateDecide = 0,
+			adNeverAutoDownload = 1,
+			adAlwaysAutoDownload = 2,
+		}
+		[AllowDuplicates]
+		public enum InstallationImpact : int32
+		{
+			iiNormal = 0,
+			iiMinor = 1,
+			iiRequiresExclusiveHandling = 2,
+		}
+		[AllowDuplicates]
+		public enum InstallationRebootBehavior : int32
+		{
+			irbNeverReboots = 0,
+			irbAlwaysRequiresReboot = 1,
+			irbCanRequestReboot = 2,
+		}
+		[AllowDuplicates]
+		public enum OperationResultCode : int32
+		{
+			orcNotStarted = 0,
+			orcInProgress = 1,
+			orcSucceeded = 2,
+			orcSucceededWithErrors = 3,
+			orcFailed = 4,
+			orcAborted = 5,
+		}
+		[AllowDuplicates]
+		public enum ServerSelection : int32
+		{
+			ssDefault = 0,
+			ssManagedServer = 1,
+			ssWindowsUpdate = 2,
+			ssOthers = 3,
+		}
+		[AllowDuplicates]
+		public enum UpdateType : int32
+		{
+			utSoftware = 1,
+			utDriver = 2,
+		}
+		[AllowDuplicates]
+		public enum UpdateOperation : int32
+		{
+			uoInstallation = 1,
+			uoUninstallation = 2,
+		}
+		[AllowDuplicates]
+		public enum DeploymentAction : int32
+		{
+			daNone = 0,
+			daInstallation = 1,
+			daUninstallation = 2,
+			daDetection = 3,
+			daOptionalInstallation = 4,
+		}
+		[AllowDuplicates]
+		public enum UpdateExceptionContext : int32
+		{
+			uecGeneral = 1,
+			uecWindowsDriver = 2,
+			uecWindowsInstaller = 3,
+			uecSearchIncomplete = 4,
+		}
+		[AllowDuplicates]
+		public enum AutomaticUpdatesUserType : int32
+		{
+			auutCurrentUser = 1,
+			auutLocalAdministrator = 2,
+		}
+		[AllowDuplicates]
+		public enum AutomaticUpdatesPermissionType : int32
+		{
+			auptSetNotificationLevel = 1,
+			auptDisableAutomaticUpdates = 2,
+			auptSetIncludeRecommendedUpdates = 3,
+			auptSetFeaturedUpdatesEnabled = 4,
+			auptSetNonAdministratorsElevated = 5,
+		}
+		[AllowDuplicates]
+		public enum UpdateServiceRegistrationState : int32
+		{
+			usrsNotRegistered = 1,
+			usrsRegistrationPending = 2,
+			usrsRegistered = 3,
+		}
+		[AllowDuplicates]
+		public enum SearchScope : int32
+		{
+			searchScopeDefault = 0,
+			searchScopeMachineOnly = 1,
+			searchScopeCurrentUserOnly = 2,
+			searchScopeMachineAndCurrentUser = 3,
+			searchScopeMachineAndAllUsers = 4,
+			searchScopeAllUsers = 5,
+		}
+		[AllowDuplicates]
+		public enum UpdateLockdownOption : int32
+		{
+			uloForWebsiteAccess = 1,
+		}
+		[AllowDuplicates]
+		public enum AddServiceFlag : int32
+		{
+			asfAllowPendingRegistration = 1,
+			asfAllowOnlineRegistration = 2,
+			asfRegisterServiceWithAU = 4,
+		}
+		[AllowDuplicates]
+		public enum UpdateServiceOption : int32
+		{
+			usoNonVolatileService = 1,
+		}
+		
+		// --- COM Class IDs ---
+		
+		public const Guid CLSID_StringCollection = .(0x72c97d74, 0x7c3b, 0x40ae, 0xb7, 0x7d, 0xab, 0xdb, 0x22, 0xeb, 0xa6, 0xfb);
+		public const Guid CLSID_UpdateSearcher = .(0xb699e5e8, 0x67ff, 0x4177, 0x88, 0xb0, 0x36, 0x84, 0xa3, 0x38, 0x8b, 0xfb);
+		public const Guid CLSID_WebProxy = .(0x650503cf, 0x9108, 0x4ddc, 0xa2, 0xce, 0x6c, 0x23, 0x41, 0xe1, 0xc5, 0x82);
+		public const Guid CLSID_SystemInformation = .(0xc01b9ba0, 0xbea7, 0x41ba, 0xb6, 0x04, 0xd0, 0xa3, 0x6f, 0x46, 0x91, 0x33);
+		public const Guid CLSID_WindowsUpdateAgentInfo = .(0xc2e88c2f, 0x6f5b, 0x4aaa, 0x89, 0x4b, 0x55, 0xc8, 0x47, 0xad, 0x3a, 0x2d);
+		public const Guid CLSID_AutomaticUpdates = .(0xbfe18e9c, 0x6d87, 0x4450, 0xb3, 0x7c, 0xe0, 0x2f, 0x0b, 0x37, 0x38, 0x03);
+		public const Guid CLSID_UpdateCollection = .(0x13639463, 0x00db, 0x4646, 0x80, 0x3d, 0x52, 0x80, 0x26, 0x14, 0x0d, 0x88);
+		public const Guid CLSID_UpdateDownloader = .(0x5baf654a, 0x5a07, 0x4264, 0xa2, 0x55, 0x9f, 0xf5, 0x4c, 0x71, 0x51, 0xe7);
+		public const Guid CLSID_UpdateInstaller = .(0xd2e0fe7f, 0xd23e, 0x48e1, 0x93, 0xc0, 0x6f, 0xa8, 0xcc, 0x34, 0x64, 0x74);
+		public const Guid CLSID_UpdateSession = .(0x4cb43d7f, 0x7eee, 0x4906, 0x86, 0x98, 0x60, 0xda, 0x1c, 0x38, 0xf2, 0xfe);
+		public const Guid CLSID_UpdateServiceManager = .(0xf8d253d9, 0x89a4, 0x4daa, 0x87, 0xb6, 0x11, 0x68, 0x36, 0x9f, 0x0b, 0x21);
+		public const Guid CLSID_InstallationAgent = .(0x317e92fc, 0x1679, 0x46fd, 0xa0, 0xb5, 0xf0, 0x89, 0x14, 0xdd, 0x86, 0x23);
+		
+		// --- COM Interfaces ---
+		
+		public struct IUpdateLockdown {}
+		public struct IStringCollection {}
+		public struct IWebProxy {}
+		public struct ISystemInformation {}
+		public struct IWindowsUpdateAgentInfo {}
+		public struct IAutomaticUpdatesResults {}
+		public struct IAutomaticUpdatesSettings {}
+		public struct IAutomaticUpdatesSettings2 {}
+		public struct IAutomaticUpdatesSettings3 {}
+		public struct IAutomaticUpdates {}
+		public struct IAutomaticUpdates2 {}
+		public struct IUpdateIdentity {}
+		public struct IImageInformation {}
+		public struct ICategory {}
+		public struct ICategoryCollection {}
+		public struct IInstallationBehavior {}
+		public struct IUpdateDownloadContent {}
+		public struct IUpdateDownloadContent2 {}
+		public struct IUpdateDownloadContentCollection {}
+		public struct IUpdate {}
+		public struct IWindowsDriverUpdate {}
+		public struct IUpdate2 {}
+		public struct IUpdate3 {}
+		public struct IUpdate4 {}
+		public struct IUpdate5 {}
+		public struct IWindowsDriverUpdate2 {}
+		public struct IWindowsDriverUpdate3 {}
+		public struct IWindowsDriverUpdateEntry {}
+		public struct IWindowsDriverUpdateEntryCollection {}
+		public struct IWindowsDriverUpdate4 {}
+		public struct IWindowsDriverUpdate5 {}
+		public struct IUpdateCollection {}
+		public struct IUpdateException {}
+		public struct IInvalidProductLicenseException {}
+		public struct IUpdateExceptionCollection {}
+		public struct ISearchResult {}
+		public struct ISearchJob {}
+		public struct ISearchCompletedCallbackArgs {}
+		public struct ISearchCompletedCallback {}
+		public struct IUpdateHistoryEntry {}
+		public struct IUpdateHistoryEntry2 {}
+		public struct IUpdateHistoryEntryCollection {}
+		public struct IUpdateSearcher {}
+		public struct IUpdateSearcher2 {}
+		public struct IUpdateSearcher3 {}
+		public struct IUpdateDownloadResult {}
+		public struct IDownloadResult {}
+		public struct IDownloadProgress {}
+		public struct IDownloadJob {}
+		public struct IDownloadCompletedCallbackArgs {}
+		public struct IDownloadCompletedCallback {}
+		public struct IDownloadProgressChangedCallbackArgs {}
+		public struct IDownloadProgressChangedCallback {}
+		public struct IUpdateDownloader {}
+		public struct IUpdateInstallationResult {}
+		public struct IInstallationResult {}
+		public struct IInstallationProgress {}
+		public struct IInstallationJob {}
+		public struct IInstallationCompletedCallbackArgs {}
+		public struct IInstallationCompletedCallback {}
+		public struct IInstallationProgressChangedCallbackArgs {}
+		public struct IInstallationProgressChangedCallback {}
+		public struct IUpdateInstaller {}
+		public struct IUpdateInstaller2 {}
+		public struct IUpdateInstaller3 {}
+		public struct IUpdateInstaller4 {}
+		public struct IUpdateSession {}
+		public struct IUpdateSession2 {}
+		public struct IUpdateSession3 {}
+		public struct IUpdateService {}
+		public struct IUpdateService2 {}
+		public struct IUpdateServiceCollection {}
+		public struct IUpdateServiceRegistration {}
+		public struct IUpdateServiceManager {}
+		public struct IUpdateServiceManager2 {}
+		public struct IInstallationAgent {}
+		
+	}
+}

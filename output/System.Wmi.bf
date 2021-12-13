@@ -1,0 +1,2728 @@
+using System;
+
+// namespace System.Wmi
+namespace Win32
+{
+	extension Win32
+	{
+		// --- Constants ---
+		
+		public const uint32 MI_FLAG_ANY = 127;
+		public const uint32 MI_FLAG_VERSION = 469762048;
+		public const uint32 MI_FLAG_ADOPT = 2147483648;
+		public const uint32 MI_FLAG_CLASS = 1;
+		public const uint32 MI_FLAG_METHOD = 2;
+		public const uint32 MI_FLAG_PROPERTY = 4;
+		public const uint32 MI_FLAG_PARAMETER = 8;
+		public const uint32 MI_FLAG_ASSOCIATION = 16;
+		public const uint32 MI_FLAG_INDICATION = 32;
+		public const uint32 MI_FLAG_REFERENCE = 64;
+		public const uint32 MI_FLAG_ENABLEOVERRIDE = 128;
+		public const uint32 MI_FLAG_DISABLEOVERRIDE = 256;
+		public const uint32 MI_FLAG_RESTRICTED = 512;
+		public const uint32 MI_FLAG_TOSUBCLASS = 1024;
+		public const uint32 MI_FLAG_TRANSLATABLE = 2048;
+		public const uint32 MI_FLAG_KEY = 4096;
+		public const uint32 MI_FLAG_IN = 8192;
+		public const uint32 MI_FLAG_OUT = 16384;
+		public const uint32 MI_FLAG_REQUIRED = 32768;
+		public const uint32 MI_FLAG_STATIC = 65536;
+		public const uint32 MI_FLAG_ABSTRACT = 131072;
+		public const uint32 MI_FLAG_TERMINAL = 262144;
+		public const uint32 MI_FLAG_EXPENSIVE = 524288;
+		public const uint32 MI_FLAG_STREAM = 1048576;
+		public const uint32 MI_FLAG_READONLY = 2097152;
+		public const uint32 MI_FLAG_EXTENDED = 4096;
+		public const uint32 MI_FLAG_NOT_MODIFIED = 33554432;
+		public const uint32 MI_FLAG_NULL = 536870912;
+		public const uint32 MI_FLAG_BORROW = 1073741824;
+		public const uint32 MI_MODULE_FLAG_STANDARD_QUALIFIERS = 1;
+		public const uint32 MI_MODULE_FLAG_DESCRIPTIONS = 2;
+		public const uint32 MI_MODULE_FLAG_VALUES = 4;
+		public const uint32 MI_MODULE_FLAG_MAPPING_STRINGS = 8;
+		public const uint32 MI_MODULE_FLAG_BOOLEANS = 16;
+		public const uint32 MI_MODULE_FLAG_CPLUSPLUS = 32;
+		public const uint32 MI_MODULE_FLAG_LOCALIZED = 64;
+		public const uint32 MI_MODULE_FLAG_FILTER_SUPPORT = 128;
+		public const uint32 MI_MAX_LOCALE_SIZE = 128;
+		public const uint32 MI_WRITEMESSAGE_CHANNEL_WARNING = 0;
+		public const uint32 MI_WRITEMESSAGE_CHANNEL_VERBOSE = 1;
+		public const uint32 MI_WRITEMESSAGE_CHANNEL_DEBUG = 2;
+		public const uint32 MI_CALL_VERSION = 1;
+		public const uint32 MI_OPERATIONFLAGS_MANUAL_ACK_RESULTS = 1;
+		public const uint32 MI_OPERATIONFLAGS_NO_RTTI = 1024;
+		public const uint32 MI_OPERATIONFLAGS_BASIC_RTTI = 2;
+		public const uint32 MI_OPERATIONFLAGS_STANDARD_RTTI = 2048;
+		public const uint32 MI_OPERATIONFLAGS_FULL_RTTI = 4;
+		public const uint32 MI_OPERATIONFLAGS_DEFAULT_RTTI = 0;
+		public const uint32 MI_OPERATIONFLAGS_LOCALIZED_QUALIFIERS = 8;
+		public const uint32 MI_OPERATIONFLAGS_EXPENSIVE_PROPERTIES = 64;
+		public const uint32 MI_OPERATIONFLAGS_POLYMORPHISM_SHALLOW = 128;
+		public const uint32 MI_OPERATIONFLAGS_POLYMORPHISM_DEEP_BASE_PROPS_ONLY = 384;
+		public const uint32 MI_OPERATIONFLAGS_REPORT_OPERATION_STARTED = 512;
+		public const uint32 MI_SERIALIZER_FLAGS_CLASS_DEEP = 1;
+		public const uint32 MI_SERIALIZER_FLAGS_INSTANCE_WITH_CLASS = 1;
+		public const uint32 WBEMS_DISPID_DERIVATION = 23;
+		public const uint32 WBEMS_DISPID_OBJECT_READY = 1;
+		public const uint32 WBEMS_DISPID_COMPLETED = 2;
+		public const uint32 WBEMS_DISPID_PROGRESS = 3;
+		public const uint32 WBEMS_DISPID_OBJECT_PUT = 4;
+		public const uint32 WBEMS_DISPID_CONNECTION_READY = 5;
+		
+		// --- Enums ---
+		
+		[AllowDuplicates]
+		public enum MI_Result : int32
+		{
+			MI_RESULT_OK = 0,
+			MI_RESULT_FAILED = 1,
+			MI_RESULT_ACCESS_DENIED = 2,
+			MI_RESULT_INVALID_NAMESPACE = 3,
+			MI_RESULT_INVALID_PARAMETER = 4,
+			MI_RESULT_INVALID_CLASS = 5,
+			MI_RESULT_NOT_FOUND = 6,
+			MI_RESULT_NOT_SUPPORTED = 7,
+			MI_RESULT_CLASS_HAS_CHILDREN = 8,
+			MI_RESULT_CLASS_HAS_INSTANCES = 9,
+			MI_RESULT_INVALID_SUPERCLASS = 10,
+			MI_RESULT_ALREADY_EXISTS = 11,
+			MI_RESULT_NO_SUCH_PROPERTY = 12,
+			MI_RESULT_TYPE_MISMATCH = 13,
+			MI_RESULT_QUERY_LANGUAGE_NOT_SUPPORTED = 14,
+			MI_RESULT_INVALID_QUERY = 15,
+			MI_RESULT_METHOD_NOT_AVAILABLE = 16,
+			MI_RESULT_METHOD_NOT_FOUND = 17,
+			MI_RESULT_NAMESPACE_NOT_EMPTY = 20,
+			MI_RESULT_INVALID_ENUMERATION_CONTEXT = 21,
+			MI_RESULT_INVALID_OPERATION_TIMEOUT = 22,
+			MI_RESULT_PULL_HAS_BEEN_ABANDONED = 23,
+			MI_RESULT_PULL_CANNOT_BE_ABANDONED = 24,
+			MI_RESULT_FILTERED_ENUMERATION_NOT_SUPPORTED = 25,
+			MI_RESULT_CONTINUATION_ON_ERROR_NOT_SUPPORTED = 26,
+			MI_RESULT_SERVER_LIMITS_EXCEEDED = 27,
+			MI_RESULT_SERVER_IS_SHUTTING_DOWN = 28,
+		}
+		[AllowDuplicates]
+		public enum MI_ErrorCategory : int32
+		{
+			MI_ERRORCATEGORY_NOT_SPECIFIED = 0,
+			MI_ERRORCATEGORY_OPEN_ERROR = 1,
+			MI_ERRORCATEGORY_CLOS_EERROR = 2,
+			MI_ERRORCATEGORY_DEVICE_ERROR = 3,
+			MI_ERRORCATEGORY_DEADLOCK_DETECTED = 4,
+			MI_ERRORCATEGORY_INVALID_ARGUMENT = 5,
+			MI_ERRORCATEGORY_INVALID_DATA = 6,
+			MI_ERRORCATEGORY_INVALID_OPERATION = 7,
+			MI_ERRORCATEGORY_INVALID_RESULT = 8,
+			MI_ERRORCATEGORY_INVALID_TYPE = 9,
+			MI_ERRORCATEGORY_METADATA_ERROR = 10,
+			MI_ERRORCATEGORY_NOT_IMPLEMENTED = 11,
+			MI_ERRORCATEGORY_NOT_INSTALLED = 12,
+			MI_ERRORCATEGORY_OBJECT_NOT_FOUND = 13,
+			MI_ERRORCATEGORY_OPERATION_STOPPED = 14,
+			MI_ERRORCATEGORY_OPERATION_TIMEOUT = 15,
+			MI_ERRORCATEGORY_SYNTAX_ERROR = 16,
+			MI_ERRORCATEGORY_PARSER_ERROR = 17,
+			MI_ERRORCATEGORY_ACCESS_DENIED = 18,
+			MI_ERRORCATEGORY_RESOURCE_BUSY = 19,
+			MI_ERRORCATEGORY_RESOURCE_EXISTS = 20,
+			MI_ERRORCATEGORY_RESOURCE_UNAVAILABLE = 21,
+			MI_ERRORCATEGORY_READ_ERROR = 22,
+			MI_ERRORCATEGORY_WRITE_ERROR = 23,
+			MI_ERRORCATEGORY_FROM_STDERR = 24,
+			MI_ERRORCATEGORY_SECURITY_ERROR = 25,
+			MI_ERRORCATEGORY_PROTOCOL_ERROR = 26,
+			MI_ERRORCATEGORY_CONNECTION_ERROR = 27,
+			MI_ERRORCATEGORY_AUTHENTICATION_ERROR = 28,
+			MI_ERRORCATEGORY_LIMITS_EXCEEDED = 29,
+			MI_ERRORCATEGORY_QUOTA_EXCEEDED = 30,
+			MI_ERRORCATEGORY_NOT_ENABLED = 31,
+		}
+		[AllowDuplicates]
+		public enum MI_PromptType : int32
+		{
+			MI_PROMPTTYPE_NORMAL = 0,
+			MI_PROMPTTYPE_CRITICAL = 1,
+		}
+		[AllowDuplicates]
+		public enum MI_CallbackMode : int32
+		{
+			MI_CALLBACKMODE_REPORT = 0,
+			MI_CALLBACKMODE_INQUIRE = 1,
+			MI_CALLBACKMODE_IGNORE = 2,
+		}
+		[AllowDuplicates]
+		public enum MI_ProviderArchitecture : int32
+		{
+			MI_PROVIDER_ARCHITECTURE_32BIT = 0,
+			MI_PROVIDER_ARCHITECTURE_64BIT = 1,
+		}
+		[AllowDuplicates]
+		public enum MI_Type : int32
+		{
+			MI_BOOLEAN = 0,
+			MI_UINT8 = 1,
+			MI_SINT8 = 2,
+			MI_UINT16 = 3,
+			MI_SINT16 = 4,
+			MI_UINT32 = 5,
+			MI_SINT32 = 6,
+			MI_UINT64 = 7,
+			MI_SINT64 = 8,
+			MI_REAL32 = 9,
+			MI_REAL64 = 10,
+			MI_CHAR16 = 11,
+			MI_DATETIME = 12,
+			MI_STRING = 13,
+			MI_REFERENCE = 14,
+			MI_INSTANCE = 15,
+			MI_BOOLEANA = 16,
+			MI_UINT8A = 17,
+			MI_SINT8A = 18,
+			MI_UINT16A = 19,
+			MI_SINT16A = 20,
+			MI_UINT32A = 21,
+			MI_SINT32A = 22,
+			MI_UINT64A = 23,
+			MI_SINT64A = 24,
+			MI_REAL32A = 25,
+			MI_REAL64A = 26,
+			MI_CHAR16A = 27,
+			MI_DATETIMEA = 28,
+			MI_STRINGA = 29,
+			MI_REFERENCEA = 30,
+			MI_INSTANCEA = 31,
+			MI_ARRAY = 16,
+		}
+		[AllowDuplicates]
+		public enum MI_LocaleType : int32
+		{
+			MI_LOCALE_TYPE_REQUESTED_UI = 0,
+			MI_LOCALE_TYPE_REQUESTED_DATA = 1,
+			MI_LOCALE_TYPE_CLOSEST_UI = 2,
+			MI_LOCALE_TYPE_CLOSEST_DATA = 3,
+		}
+		[AllowDuplicates]
+		public enum MI_CancellationReason : int32
+		{
+			MI_REASON_NONE = 0,
+			MI_REASON_TIMEOUT = 1,
+			MI_REASON_SHUTDOWN = 2,
+			MI_REASON_SERVICESTOP = 3,
+		}
+		[AllowDuplicates]
+		public enum MI_OperationCallback_ResponseType : int32
+		{
+			MI_OperationCallback_ResponseType_No = 0,
+			MI_OperationCallback_ResponseType_Yes = 1,
+			MI_OperationCallback_ResponseType_NoToAll = 2,
+			MI_OperationCallback_ResponseType_YesToAll = 3,
+		}
+		[AllowDuplicates]
+		public enum MI_SubscriptionDeliveryType : int32
+		{
+			MI_SubscriptionDeliveryType_Pull = 1,
+			MI_SubscriptionDeliveryType_Push = 2,
+		}
+		[AllowDuplicates]
+		public enum MI_DestinationOptions_ImpersonationType : int32
+		{
+			MI_DestinationOptions_ImpersonationType_Default = 0,
+			MI_DestinationOptions_ImpersonationType_None = 1,
+			MI_DestinationOptions_ImpersonationType_Identify = 2,
+			MI_DestinationOptions_ImpersonationType_Impersonate = 3,
+			MI_DestinationOptions_ImpersonationType_Delegate = 4,
+		}
+		[AllowDuplicates]
+		public enum WBEM_PATH_STATUS_FLAG : int32
+		{
+			WBEMPATH_INFO_ANON_LOCAL_MACHINE = 1,
+			WBEMPATH_INFO_HAS_MACHINE_NAME = 2,
+			WBEMPATH_INFO_IS_CLASS_REF = 4,
+			WBEMPATH_INFO_IS_INST_REF = 8,
+			WBEMPATH_INFO_HAS_SUBSCOPES = 16,
+			WBEMPATH_INFO_IS_COMPOUND = 32,
+			WBEMPATH_INFO_HAS_V2_REF_PATHS = 64,
+			WBEMPATH_INFO_HAS_IMPLIED_KEY = 128,
+			WBEMPATH_INFO_CONTAINS_SINGLETON = 256,
+			WBEMPATH_INFO_V1_COMPLIANT = 512,
+			WBEMPATH_INFO_V2_COMPLIANT = 1024,
+			WBEMPATH_INFO_CIM_COMPLIANT = 2048,
+			WBEMPATH_INFO_IS_SINGLETON = 4096,
+			WBEMPATH_INFO_IS_PARENT = 8192,
+			WBEMPATH_INFO_SERVER_NAMESPACE_ONLY = 16384,
+			WBEMPATH_INFO_NATIVE_PATH = 32768,
+			WBEMPATH_INFO_WMI_PATH = 65536,
+			WBEMPATH_INFO_PATH_HAD_SERVER = 131072,
+		}
+		[AllowDuplicates]
+		public enum WBEM_PATH_CREATE_FLAG : int32
+		{
+			WBEMPATH_CREATE_ACCEPT_RELATIVE = 1,
+			WBEMPATH_CREATE_ACCEPT_ABSOLUTE = 2,
+			WBEMPATH_CREATE_ACCEPT_ALL = 4,
+			WBEMPATH_TREAT_SINGLE_IDENT_AS_NS = 8,
+		}
+		[AllowDuplicates]
+		public enum WBEM_GET_TEXT_FLAGS : int32
+		{
+			WBEMPATH_COMPRESSED = 1,
+			WBEMPATH_GET_RELATIVE_ONLY = 2,
+			WBEMPATH_GET_SERVER_TOO = 4,
+			WBEMPATH_GET_SERVER_AND_NAMESPACE_ONLY = 8,
+			WBEMPATH_GET_NAMESPACE_ONLY = 16,
+			WBEMPATH_GET_ORIGINAL = 32,
+		}
+		[AllowDuplicates]
+		public enum WBEM_GET_KEY_FLAGS : int32
+		{
+			WBEMPATH_TEXT = 1,
+			WBEMPATH_QUOTEDTEXT = 2,
+		}
+		[AllowDuplicates]
+		public enum WMIQ_ANALYSIS_TYPE : int32
+		{
+			WMIQ_ANALYSIS_RPN_SEQUENCE = 1,
+			WMIQ_ANALYSIS_ASSOC_QUERY = 2,
+			WMIQ_ANALYSIS_PROP_ANALYSIS_MATRIX = 3,
+			WMIQ_ANALYSIS_QUERY_TEXT = 4,
+			WMIQ_ANALYSIS_RESERVED = 134217728,
+		}
+		[AllowDuplicates]
+		public enum WMIQ_RPN_TOKEN_FLAGS : int32
+		{
+			WMIQ_RPN_TOKEN_EXPRESSION = 1,
+			WMIQ_RPN_TOKEN_AND = 2,
+			WMIQ_RPN_TOKEN_OR = 3,
+			WMIQ_RPN_TOKEN_NOT = 4,
+			WMIQ_RPN_OP_UNDEFINED = 0,
+			WMIQ_RPN_OP_EQ = 1,
+			WMIQ_RPN_OP_NE = 2,
+			WMIQ_RPN_OP_GE = 3,
+			WMIQ_RPN_OP_LE = 4,
+			WMIQ_RPN_OP_LT = 5,
+			WMIQ_RPN_OP_GT = 6,
+			WMIQ_RPN_OP_LIKE = 7,
+			WMIQ_RPN_OP_ISA = 8,
+			WMIQ_RPN_OP_ISNOTA = 9,
+			WMIQ_RPN_OP_ISNULL = 10,
+			WMIQ_RPN_OP_ISNOTNULL = 11,
+			WMIQ_RPN_LEFT_PROPERTY_NAME = 1,
+			WMIQ_RPN_RIGHT_PROPERTY_NAME = 2,
+			WMIQ_RPN_CONST2 = 4,
+			WMIQ_RPN_CONST = 8,
+			WMIQ_RPN_RELOP = 16,
+			WMIQ_RPN_LEFT_FUNCTION = 32,
+			WMIQ_RPN_RIGHT_FUNCTION = 64,
+			WMIQ_RPN_GET_TOKEN_TYPE = 1,
+			WMIQ_RPN_GET_EXPR_SHAPE = 2,
+			WMIQ_RPN_GET_LEFT_FUNCTION = 3,
+			WMIQ_RPN_GET_RIGHT_FUNCTION = 4,
+			WMIQ_RPN_GET_RELOP = 5,
+			WMIQ_RPN_NEXT_TOKEN = 1,
+			WMIQ_RPN_FROM_UNARY = 1,
+			WMIQ_RPN_FROM_PATH = 2,
+			WMIQ_RPN_FROM_CLASS_LIST = 4,
+			WMIQ_RPN_FROM_MULTIPLE = 8,
+		}
+		[AllowDuplicates]
+		public enum WMIQ_ASSOCQ_FLAGS : int32
+		{
+			WMIQ_ASSOCQ_ASSOCIATORS = 1,
+			WMIQ_ASSOCQ_REFERENCES = 2,
+			WMIQ_ASSOCQ_RESULTCLASS = 4,
+			WMIQ_ASSOCQ_ASSOCCLASS = 8,
+			WMIQ_ASSOCQ_ROLE = 16,
+			WMIQ_ASSOCQ_RESULTROLE = 32,
+			WMIQ_ASSOCQ_REQUIREDQUALIFIER = 64,
+			WMIQ_ASSOCQ_REQUIREDASSOCQUALIFIER = 128,
+			WMIQ_ASSOCQ_CLASSDEFSONLY = 256,
+			WMIQ_ASSOCQ_KEYSONLY = 512,
+			WMIQ_ASSOCQ_SCHEMAONLY = 1024,
+			WMIQ_ASSOCQ_CLASSREFSONLY = 2048,
+		}
+		[AllowDuplicates]
+		public enum WMIQ_LANGUAGE_FEATURES : int32
+		{
+			WMIQ_LF1_BASIC_SELECT = 1,
+			WMIQ_LF2_CLASS_NAME_IN_QUERY = 2,
+			WMIQ_LF3_STRING_CASE_FUNCTIONS = 3,
+			WMIQ_LF4_PROP_TO_PROP_TESTS = 4,
+			WMIQ_LF5_COUNT_STAR = 5,
+			WMIQ_LF6_ORDER_BY = 6,
+			WMIQ_LF7_DISTINCT = 7,
+			WMIQ_LF8_ISA = 8,
+			WMIQ_LF9_THIS = 9,
+			WMIQ_LF10_COMPEX_SUBEXPRESSIONS = 10,
+			WMIQ_LF11_ALIASING = 11,
+			WMIQ_LF12_GROUP_BY_HAVING = 12,
+			WMIQ_LF13_WMI_WITHIN = 13,
+			WMIQ_LF14_SQL_WRITE_OPERATIONS = 14,
+			WMIQ_LF15_GO = 15,
+			WMIQ_LF16_SINGLE_LEVEL_TRANSACTIONS = 16,
+			WMIQ_LF17_QUALIFIED_NAMES = 17,
+			WMIQ_LF18_ASSOCIATONS = 18,
+			WMIQ_LF19_SYSTEM_PROPERTIES = 19,
+			WMIQ_LF20_EXTENDED_SYSTEM_PROPERTIES = 20,
+			WMIQ_LF21_SQL89_JOINS = 21,
+			WMIQ_LF22_SQL92_JOINS = 22,
+			WMIQ_LF23_SUBSELECTS = 23,
+			WMIQ_LF24_UMI_EXTENSIONS = 24,
+			WMIQ_LF25_DATEPART = 25,
+			WMIQ_LF26_LIKE = 26,
+			WMIQ_LF27_CIM_TEMPORAL_CONSTRUCTS = 27,
+			WMIQ_LF28_STANDARD_AGGREGATES = 28,
+			WMIQ_LF29_MULTI_LEVEL_ORDER_BY = 29,
+			WMIQ_LF30_WMI_PRAGMAS = 30,
+			WMIQ_LF31_QUALIFIER_TESTS = 31,
+			WMIQ_LF32_SP_EXECUTE = 32,
+			WMIQ_LF33_ARRAY_ACCESS = 33,
+			WMIQ_LF34_UNION = 34,
+			WMIQ_LF35_COMPLEX_SELECT_TARGET = 35,
+			WMIQ_LF36_REFERENCE_TESTS = 36,
+			WMIQ_LF37_SELECT_INTO = 37,
+			WMIQ_LF38_BASIC_DATETIME_TESTS = 38,
+			WMIQ_LF39_COUNT_COLUMN = 39,
+			WMIQ_LF40_BETWEEN = 40,
+			WMIQ_LF_LAST = 40,
+		}
+		[AllowDuplicates]
+		public enum WMIQ_RPNQ_FEATURE : int32
+		{
+			WMIQ_RPNF_WHERE_CLAUSE_PRESENT = 1,
+			WMIQ_RPNF_QUERY_IS_CONJUNCTIVE = 2,
+			WMIQ_RPNF_QUERY_IS_DISJUNCTIVE = 4,
+			WMIQ_RPNF_PROJECTION = 8,
+			WMIQ_RPNF_FEATURE_SELECT_STAR = 16,
+			WMIQ_RPNF_EQUALITY_TESTS_ONLY = 32,
+			WMIQ_RPNF_COUNT_STAR = 64,
+			WMIQ_RPNF_QUALIFIED_NAMES_USED = 128,
+			WMIQ_RPNF_SYSPROP_CLASS_USED = 256,
+			WMIQ_RPNF_PROP_TO_PROP_TESTS = 512,
+			WMIQ_RPNF_ORDER_BY = 1024,
+			WMIQ_RPNF_ISA_USED = 2048,
+			WMIQ_RPNF_GROUP_BY_HAVING = 4096,
+			WMIQ_RPNF_ARRAY_ACCESS_USED = 8192,
+		}
+		[AllowDuplicates]
+		public enum WBEM_GENUS_TYPE : int32
+		{
+			WBEM_GENUS_CLASS = 1,
+			WBEM_GENUS_INSTANCE = 2,
+		}
+		[AllowDuplicates]
+		public enum WBEM_CHANGE_FLAG_TYPE : int32
+		{
+			WBEM_FLAG_CREATE_OR_UPDATE = 0,
+			WBEM_FLAG_UPDATE_ONLY = 1,
+			WBEM_FLAG_CREATE_ONLY = 2,
+			WBEM_FLAG_UPDATE_COMPATIBLE = 0,
+			WBEM_FLAG_UPDATE_SAFE_MODE = 32,
+			WBEM_FLAG_UPDATE_FORCE_MODE = 64,
+			WBEM_MASK_UPDATE_MODE = 96,
+			WBEM_FLAG_ADVISORY = 65536,
+		}
+		[AllowDuplicates]
+		public enum WBEM_GENERIC_FLAG_TYPE : int32
+		{
+			WBEM_FLAG_RETURN_IMMEDIATELY = 16,
+			WBEM_FLAG_RETURN_WBEM_COMPLETE = 0,
+			WBEM_FLAG_BIDIRECTIONAL = 0,
+			WBEM_FLAG_FORWARD_ONLY = 32,
+			WBEM_FLAG_NO_ERROR_OBJECT = 64,
+			WBEM_FLAG_RETURN_ERROR_OBJECT = 0,
+			WBEM_FLAG_SEND_STATUS = 128,
+			WBEM_FLAG_DONT_SEND_STATUS = 0,
+			WBEM_FLAG_ENSURE_LOCATABLE = 256,
+			WBEM_FLAG_DIRECT_READ = 512,
+			WBEM_FLAG_SEND_ONLY_SELECTED = 0,
+			WBEM_RETURN_WHEN_COMPLETE = 0,
+			WBEM_RETURN_IMMEDIATELY = 16,
+			WBEM_MASK_RESERVED_FLAGS = 126976,
+			WBEM_FLAG_USE_AMENDED_QUALIFIERS = 131072,
+			WBEM_FLAG_STRONG_VALIDATION = 1048576,
+		}
+		[AllowDuplicates]
+		public enum WBEM_STATUS_TYPE : int32
+		{
+			WBEM_STATUS_COMPLETE = 0,
+			WBEM_STATUS_REQUIREMENTS = 1,
+			WBEM_STATUS_PROGRESS = 2,
+			WBEM_STATUS_LOGGING_INFORMATION = 256,
+			WBEM_STATUS_LOGGING_INFORMATION_PROVIDER = 512,
+			WBEM_STATUS_LOGGING_INFORMATION_HOST = 1024,
+			WBEM_STATUS_LOGGING_INFORMATION_REPOSITORY = 2048,
+			WBEM_STATUS_LOGGING_INFORMATION_ESS = 4096,
+		}
+		[AllowDuplicates]
+		public enum WBEM_TIMEOUT_TYPE : int32
+		{
+			WBEM_NO_WAIT = 0,
+			WBEM_INFINITE = -1,
+		}
+		[AllowDuplicates]
+		public enum WBEM_CONDITION_FLAG_TYPE : int32
+		{
+			WBEM_FLAG_ALWAYS = 0,
+			WBEM_FLAG_ONLY_IF_TRUE = 1,
+			WBEM_FLAG_ONLY_IF_FALSE = 2,
+			WBEM_FLAG_ONLY_IF_IDENTICAL = 3,
+			WBEM_MASK_PRIMARY_CONDITION = 3,
+			WBEM_FLAG_KEYS_ONLY = 4,
+			WBEM_FLAG_REFS_ONLY = 8,
+			WBEM_FLAG_LOCAL_ONLY = 16,
+			WBEM_FLAG_PROPAGATED_ONLY = 32,
+			WBEM_FLAG_SYSTEM_ONLY = 48,
+			WBEM_FLAG_NONSYSTEM_ONLY = 64,
+			WBEM_MASK_CONDITION_ORIGIN = 112,
+			WBEM_FLAG_CLASS_OVERRIDES_ONLY = 256,
+			WBEM_FLAG_CLASS_LOCAL_AND_OVERRIDES = 512,
+			WBEM_MASK_CLASS_CONDITION = 768,
+		}
+		[AllowDuplicates]
+		public enum WBEM_FLAVOR_TYPE : int32
+		{
+			WBEM_FLAVOR_DONT_PROPAGATE = 0,
+			WBEM_FLAVOR_FLAG_PROPAGATE_TO_INSTANCE = 1,
+			WBEM_FLAVOR_FLAG_PROPAGATE_TO_DERIVED_CLASS = 2,
+			WBEM_FLAVOR_MASK_PROPAGATION = 15,
+			WBEM_FLAVOR_OVERRIDABLE = 0,
+			WBEM_FLAVOR_NOT_OVERRIDABLE = 16,
+			WBEM_FLAVOR_MASK_PERMISSIONS = 16,
+			WBEM_FLAVOR_ORIGIN_LOCAL = 0,
+			WBEM_FLAVOR_ORIGIN_PROPAGATED = 32,
+			WBEM_FLAVOR_ORIGIN_SYSTEM = 64,
+			WBEM_FLAVOR_MASK_ORIGIN = 96,
+			WBEM_FLAVOR_NOT_AMENDED = 0,
+			WBEM_FLAVOR_AMENDED = 128,
+			WBEM_FLAVOR_MASK_AMENDED = 128,
+		}
+		[AllowDuplicates]
+		public enum WBEM_QUERY_FLAG_TYPE : int32
+		{
+			WBEM_FLAG_DEEP = 0,
+			WBEM_FLAG_SHALLOW = 1,
+			WBEM_FLAG_PROTOTYPE = 2,
+		}
+		[AllowDuplicates]
+		public enum WBEM_SECURITY_FLAGS : int32
+		{
+			WBEM_ENABLE = 1,
+			WBEM_METHOD_EXECUTE = 2,
+			WBEM_FULL_WRITE_REP = 4,
+			WBEM_PARTIAL_WRITE_REP = 8,
+			WBEM_WRITE_PROVIDER = 16,
+			WBEM_REMOTE_ACCESS = 32,
+			WBEM_RIGHT_SUBSCRIBE = 64,
+			WBEM_RIGHT_PUBLISH = 128,
+		}
+		[AllowDuplicates]
+		public enum WBEM_LIMITATION_FLAG_TYPE : int32
+		{
+			WBEM_FLAG_EXCLUDE_OBJECT_QUALIFIERS = 16,
+			WBEM_FLAG_EXCLUDE_PROPERTY_QUALIFIERS = 32,
+		}
+		[AllowDuplicates]
+		public enum WBEM_TEXT_FLAG_TYPE : int32
+		{
+			WBEM_FLAG_NO_FLAVORS = 1,
+		}
+		[AllowDuplicates]
+		public enum WBEM_COMPARISON_FLAG : int32
+		{
+			WBEM_COMPARISON_INCLUDE_ALL = 0,
+			WBEM_FLAG_IGNORE_QUALIFIERS = 1,
+			WBEM_FLAG_IGNORE_OBJECT_SOURCE = 2,
+			WBEM_FLAG_IGNORE_DEFAULT_VALUES = 4,
+			WBEM_FLAG_IGNORE_CLASS = 8,
+			WBEM_FLAG_IGNORE_CASE = 16,
+			WBEM_FLAG_IGNORE_FLAVOR = 32,
+		}
+		[AllowDuplicates]
+		public enum WBEM_LOCKING : int32
+		{
+			WBEM_FLAG_ALLOW_READ = 1,
+		}
+		[AllowDuplicates]
+		public enum CIMTYPE_ENUMERATION : int32
+		{
+			CIM_ILLEGAL = 4095,
+			CIM_EMPTY = 0,
+			CIM_SINT8 = 16,
+			CIM_UINT8 = 17,
+			CIM_SINT16 = 2,
+			CIM_UINT16 = 18,
+			CIM_SINT32 = 3,
+			CIM_UINT32 = 19,
+			CIM_SINT64 = 20,
+			CIM_UINT64 = 21,
+			CIM_REAL32 = 4,
+			CIM_REAL64 = 5,
+			CIM_BOOLEAN = 11,
+			CIM_STRING = 8,
+			CIM_DATETIME = 101,
+			CIM_REFERENCE = 102,
+			CIM_CHAR16 = 103,
+			CIM_OBJECT = 13,
+			CIM_FLAG_ARRAY = 8192,
+		}
+		[AllowDuplicates]
+		public enum WBEM_BACKUP_RESTORE_FLAGS : int32
+		{
+			WBEM_FLAG_BACKUP_RESTORE_DEFAULT = 0,
+			WBEM_FLAG_BACKUP_RESTORE_FORCE_SHUTDOWN = 1,
+		}
+		[AllowDuplicates]
+		public enum WBEM_REFRESHER_FLAGS : int32
+		{
+			WBEM_FLAG_REFRESH_AUTO_RECONNECT = 0,
+			WBEM_FLAG_REFRESH_NO_AUTO_RECONNECT = 1,
+		}
+		[AllowDuplicates]
+		public enum WBEM_SHUTDOWN_FLAGS : int32
+		{
+			WBEM_SHUTDOWN_UNLOAD_COMPONENT = 1,
+			WBEM_SHUTDOWN_WMI = 2,
+			WBEM_SHUTDOWN_OS = 3,
+		}
+		[AllowDuplicates]
+		public enum WBEMSTATUS_FORMAT : int32
+		{
+			WBEMSTATUS_FORMAT_NEWLINE = 0,
+			WBEMSTATUS_FORMAT_NO_NEWLINE = 1,
+		}
+		[AllowDuplicates]
+		public enum WBEM_LIMITS : int32
+		{
+			WBEM_MAX_IDENTIFIER = 4096,
+			WBEM_MAX_QUERY = 16384,
+			WBEM_MAX_PATH = 8192,
+			WBEM_MAX_OBJECT_NESTING = 64,
+			WBEM_MAX_USER_PROPERTIES = 1024,
+		}
+		[AllowDuplicates]
+		public enum WBEMSTATUS : int32
+		{
+			WBEM_NO_ERROR = 0,
+			WBEM_S_NO_ERROR = 0,
+			WBEM_S_SAME = 0,
+			WBEM_S_FALSE = 1,
+			WBEM_S_ALREADY_EXISTS = 262145,
+			WBEM_S_RESET_TO_DEFAULT = 262146,
+			WBEM_S_DIFFERENT = 262147,
+			WBEM_S_TIMEDOUT = 262148,
+			WBEM_S_NO_MORE_DATA = 262149,
+			WBEM_S_OPERATION_CANCELLED = 262150,
+			WBEM_S_PENDING = 262151,
+			WBEM_S_DUPLICATE_OBJECTS = 262152,
+			WBEM_S_ACCESS_DENIED = 262153,
+			WBEM_S_PARTIAL_RESULTS = 262160,
+			WBEM_S_SOURCE_NOT_AVAILABLE = 262167,
+			WBEM_E_FAILED = -2147217407,
+			WBEM_E_NOT_FOUND = -2147217406,
+			WBEM_E_ACCESS_DENIED = -2147217405,
+			WBEM_E_PROVIDER_FAILURE = -2147217404,
+			WBEM_E_TYPE_MISMATCH = -2147217403,
+			WBEM_E_OUT_OF_MEMORY = -2147217402,
+			WBEM_E_INVALID_CONTEXT = -2147217401,
+			WBEM_E_INVALID_PARAMETER = -2147217400,
+			WBEM_E_NOT_AVAILABLE = -2147217399,
+			WBEM_E_CRITICAL_ERROR = -2147217398,
+			WBEM_E_INVALID_STREAM = -2147217397,
+			WBEM_E_NOT_SUPPORTED = -2147217396,
+			WBEM_E_INVALID_SUPERCLASS = -2147217395,
+			WBEM_E_INVALID_NAMESPACE = -2147217394,
+			WBEM_E_INVALID_OBJECT = -2147217393,
+			WBEM_E_INVALID_CLASS = -2147217392,
+			WBEM_E_PROVIDER_NOT_FOUND = -2147217391,
+			WBEM_E_INVALID_PROVIDER_REGISTRATION = -2147217390,
+			WBEM_E_PROVIDER_LOAD_FAILURE = -2147217389,
+			WBEM_E_INITIALIZATION_FAILURE = -2147217388,
+			WBEM_E_TRANSPORT_FAILURE = -2147217387,
+			WBEM_E_INVALID_OPERATION = -2147217386,
+			WBEM_E_INVALID_QUERY = -2147217385,
+			WBEM_E_INVALID_QUERY_TYPE = -2147217384,
+			WBEM_E_ALREADY_EXISTS = -2147217383,
+			WBEM_E_OVERRIDE_NOT_ALLOWED = -2147217382,
+			WBEM_E_PROPAGATED_QUALIFIER = -2147217381,
+			WBEM_E_PROPAGATED_PROPERTY = -2147217380,
+			WBEM_E_UNEXPECTED = -2147217379,
+			WBEM_E_ILLEGAL_OPERATION = -2147217378,
+			WBEM_E_CANNOT_BE_KEY = -2147217377,
+			WBEM_E_INCOMPLETE_CLASS = -2147217376,
+			WBEM_E_INVALID_SYNTAX = -2147217375,
+			WBEM_E_NONDECORATED_OBJECT = -2147217374,
+			WBEM_E_READ_ONLY = -2147217373,
+			WBEM_E_PROVIDER_NOT_CAPABLE = -2147217372,
+			WBEM_E_CLASS_HAS_CHILDREN = -2147217371,
+			WBEM_E_CLASS_HAS_INSTANCES = -2147217370,
+			WBEM_E_QUERY_NOT_IMPLEMENTED = -2147217369,
+			WBEM_E_ILLEGAL_NULL = -2147217368,
+			WBEM_E_INVALID_QUALIFIER_TYPE = -2147217367,
+			WBEM_E_INVALID_PROPERTY_TYPE = -2147217366,
+			WBEM_E_VALUE_OUT_OF_RANGE = -2147217365,
+			WBEM_E_CANNOT_BE_SINGLETON = -2147217364,
+			WBEM_E_INVALID_CIM_TYPE = -2147217363,
+			WBEM_E_INVALID_METHOD = -2147217362,
+			WBEM_E_INVALID_METHOD_PARAMETERS = -2147217361,
+			WBEM_E_SYSTEM_PROPERTY = -2147217360,
+			WBEM_E_INVALID_PROPERTY = -2147217359,
+			WBEM_E_CALL_CANCELLED = -2147217358,
+			WBEM_E_SHUTTING_DOWN = -2147217357,
+			WBEM_E_PROPAGATED_METHOD = -2147217356,
+			WBEM_E_UNSUPPORTED_PARAMETER = -2147217355,
+			WBEM_E_MISSING_PARAMETER_ID = -2147217354,
+			WBEM_E_INVALID_PARAMETER_ID = -2147217353,
+			WBEM_E_NONCONSECUTIVE_PARAMETER_IDS = -2147217352,
+			WBEM_E_PARAMETER_ID_ON_RETVAL = -2147217351,
+			WBEM_E_INVALID_OBJECT_PATH = -2147217350,
+			WBEM_E_OUT_OF_DISK_SPACE = -2147217349,
+			WBEM_E_BUFFER_TOO_SMALL = -2147217348,
+			WBEM_E_UNSUPPORTED_PUT_EXTENSION = -2147217347,
+			WBEM_E_UNKNOWN_OBJECT_TYPE = -2147217346,
+			WBEM_E_UNKNOWN_PACKET_TYPE = -2147217345,
+			WBEM_E_MARSHAL_VERSION_MISMATCH = -2147217344,
+			WBEM_E_MARSHAL_INVALID_SIGNATURE = -2147217343,
+			WBEM_E_INVALID_QUALIFIER = -2147217342,
+			WBEM_E_INVALID_DUPLICATE_PARAMETER = -2147217341,
+			WBEM_E_TOO_MUCH_DATA = -2147217340,
+			WBEM_E_SERVER_TOO_BUSY = -2147217339,
+			WBEM_E_INVALID_FLAVOR = -2147217338,
+			WBEM_E_CIRCULAR_REFERENCE = -2147217337,
+			WBEM_E_UNSUPPORTED_CLASS_UPDATE = -2147217336,
+			WBEM_E_CANNOT_CHANGE_KEY_INHERITANCE = -2147217335,
+			WBEM_E_CANNOT_CHANGE_INDEX_INHERITANCE = -2147217328,
+			WBEM_E_TOO_MANY_PROPERTIES = -2147217327,
+			WBEM_E_UPDATE_TYPE_MISMATCH = -2147217326,
+			WBEM_E_UPDATE_OVERRIDE_NOT_ALLOWED = -2147217325,
+			WBEM_E_UPDATE_PROPAGATED_METHOD = -2147217324,
+			WBEM_E_METHOD_NOT_IMPLEMENTED = -2147217323,
+			WBEM_E_METHOD_DISABLED = -2147217322,
+			WBEM_E_REFRESHER_BUSY = -2147217321,
+			WBEM_E_UNPARSABLE_QUERY = -2147217320,
+			WBEM_E_NOT_EVENT_CLASS = -2147217319,
+			WBEM_E_MISSING_GROUP_WITHIN = -2147217318,
+			WBEM_E_MISSING_AGGREGATION_LIST = -2147217317,
+			WBEM_E_PROPERTY_NOT_AN_OBJECT = -2147217316,
+			WBEM_E_AGGREGATING_BY_OBJECT = -2147217315,
+			WBEM_E_UNINTERPRETABLE_PROVIDER_QUERY = -2147217313,
+			WBEM_E_BACKUP_RESTORE_WINMGMT_RUNNING = -2147217312,
+			WBEM_E_QUEUE_OVERFLOW = -2147217311,
+			WBEM_E_PRIVILEGE_NOT_HELD = -2147217310,
+			WBEM_E_INVALID_OPERATOR = -2147217309,
+			WBEM_E_LOCAL_CREDENTIALS = -2147217308,
+			WBEM_E_CANNOT_BE_ABSTRACT = -2147217307,
+			WBEM_E_AMENDED_OBJECT = -2147217306,
+			WBEM_E_CLIENT_TOO_SLOW = -2147217305,
+			WBEM_E_NULL_SECURITY_DESCRIPTOR = -2147217304,
+			WBEM_E_TIMED_OUT = -2147217303,
+			WBEM_E_INVALID_ASSOCIATION = -2147217302,
+			WBEM_E_AMBIGUOUS_OPERATION = -2147217301,
+			WBEM_E_QUOTA_VIOLATION = -2147217300,
+			WBEM_E_RESERVED_001 = -2147217299,
+			WBEM_E_RESERVED_002 = -2147217298,
+			WBEM_E_UNSUPPORTED_LOCALE = -2147217297,
+			WBEM_E_HANDLE_OUT_OF_DATE = -2147217296,
+			WBEM_E_CONNECTION_FAILED = -2147217295,
+			WBEM_E_INVALID_HANDLE_REQUEST = -2147217294,
+			WBEM_E_PROPERTY_NAME_TOO_WIDE = -2147217293,
+			WBEM_E_CLASS_NAME_TOO_WIDE = -2147217292,
+			WBEM_E_METHOD_NAME_TOO_WIDE = -2147217291,
+			WBEM_E_QUALIFIER_NAME_TOO_WIDE = -2147217290,
+			WBEM_E_RERUN_COMMAND = -2147217289,
+			WBEM_E_DATABASE_VER_MISMATCH = -2147217288,
+			WBEM_E_VETO_DELETE = -2147217287,
+			WBEM_E_VETO_PUT = -2147217286,
+			WBEM_E_INVALID_LOCALE = -2147217280,
+			WBEM_E_PROVIDER_SUSPENDED = -2147217279,
+			WBEM_E_SYNCHRONIZATION_REQUIRED = -2147217278,
+			WBEM_E_NO_SCHEMA = -2147217277,
+			WBEM_E_PROVIDER_ALREADY_REGISTERED = -2147217276,
+			WBEM_E_PROVIDER_NOT_REGISTERED = -2147217275,
+			WBEM_E_FATAL_TRANSPORT_ERROR = -2147217274,
+			WBEM_E_ENCRYPTED_CONNECTION_REQUIRED = -2147217273,
+			WBEM_E_PROVIDER_TIMED_OUT = -2147217272,
+			WBEM_E_NO_KEY = -2147217271,
+			WBEM_E_PROVIDER_DISABLED = -2147217270,
+			WBEMESS_E_REGISTRATION_TOO_BROAD = -2147213311,
+			WBEMESS_E_REGISTRATION_TOO_PRECISE = -2147213310,
+			WBEMESS_E_AUTHZ_NOT_PRIVILEGED = -2147213309,
+			WBEMMOF_E_EXPECTED_QUALIFIER_NAME = -2147205119,
+			WBEMMOF_E_EXPECTED_SEMI = -2147205118,
+			WBEMMOF_E_EXPECTED_OPEN_BRACE = -2147205117,
+			WBEMMOF_E_EXPECTED_CLOSE_BRACE = -2147205116,
+			WBEMMOF_E_EXPECTED_CLOSE_BRACKET = -2147205115,
+			WBEMMOF_E_EXPECTED_CLOSE_PAREN = -2147205114,
+			WBEMMOF_E_ILLEGAL_CONSTANT_VALUE = -2147205113,
+			WBEMMOF_E_EXPECTED_TYPE_IDENTIFIER = -2147205112,
+			WBEMMOF_E_EXPECTED_OPEN_PAREN = -2147205111,
+			WBEMMOF_E_UNRECOGNIZED_TOKEN = -2147205110,
+			WBEMMOF_E_UNRECOGNIZED_TYPE = -2147205109,
+			WBEMMOF_E_EXPECTED_PROPERTY_NAME = -2147205108,
+			WBEMMOF_E_TYPEDEF_NOT_SUPPORTED = -2147205107,
+			WBEMMOF_E_UNEXPECTED_ALIAS = -2147205106,
+			WBEMMOF_E_UNEXPECTED_ARRAY_INIT = -2147205105,
+			WBEMMOF_E_INVALID_AMENDMENT_SYNTAX = -2147205104,
+			WBEMMOF_E_INVALID_DUPLICATE_AMENDMENT = -2147205103,
+			WBEMMOF_E_INVALID_PRAGMA = -2147205102,
+			WBEMMOF_E_INVALID_NAMESPACE_SYNTAX = -2147205101,
+			WBEMMOF_E_EXPECTED_CLASS_NAME = -2147205100,
+			WBEMMOF_E_TYPE_MISMATCH = -2147205099,
+			WBEMMOF_E_EXPECTED_ALIAS_NAME = -2147205098,
+			WBEMMOF_E_INVALID_CLASS_DECLARATION = -2147205097,
+			WBEMMOF_E_INVALID_INSTANCE_DECLARATION = -2147205096,
+			WBEMMOF_E_EXPECTED_DOLLAR = -2147205095,
+			WBEMMOF_E_CIMTYPE_QUALIFIER = -2147205094,
+			WBEMMOF_E_DUPLICATE_PROPERTY = -2147205093,
+			WBEMMOF_E_INVALID_NAMESPACE_SPECIFICATION = -2147205092,
+			WBEMMOF_E_OUT_OF_RANGE = -2147205091,
+			WBEMMOF_E_INVALID_FILE = -2147205090,
+			WBEMMOF_E_ALIASES_IN_EMBEDDED = -2147205089,
+			WBEMMOF_E_NULL_ARRAY_ELEM = -2147205088,
+			WBEMMOF_E_DUPLICATE_QUALIFIER = -2147205087,
+			WBEMMOF_E_EXPECTED_FLAVOR_TYPE = -2147205086,
+			WBEMMOF_E_INCOMPATIBLE_FLAVOR_TYPES = -2147205085,
+			WBEMMOF_E_MULTIPLE_ALIASES = -2147205084,
+			WBEMMOF_E_INCOMPATIBLE_FLAVOR_TYPES2 = -2147205083,
+			WBEMMOF_E_NO_ARRAYS_RETURNED = -2147205082,
+			WBEMMOF_E_MUST_BE_IN_OR_OUT = -2147205081,
+			WBEMMOF_E_INVALID_FLAGS_SYNTAX = -2147205080,
+			WBEMMOF_E_EXPECTED_BRACE_OR_BAD_TYPE = -2147205079,
+			WBEMMOF_E_UNSUPPORTED_CIMV22_QUAL_VALUE = -2147205078,
+			WBEMMOF_E_UNSUPPORTED_CIMV22_DATA_TYPE = -2147205077,
+			WBEMMOF_E_INVALID_DELETEINSTANCE_SYNTAX = -2147205076,
+			WBEMMOF_E_INVALID_QUALIFIER_SYNTAX = -2147205075,
+			WBEMMOF_E_QUALIFIER_USED_OUTSIDE_SCOPE = -2147205074,
+			WBEMMOF_E_ERROR_CREATING_TEMP_FILE = -2147205073,
+			WBEMMOF_E_ERROR_INVALID_INCLUDE_FILE = -2147205072,
+			WBEMMOF_E_INVALID_DELETECLASS_SYNTAX = -2147205071,
+		}
+		[AllowDuplicates]
+		public enum WMI_OBJ_TEXT : int32
+		{
+			WMI_OBJ_TEXT_CIM_DTD_2_0 = 1,
+			WMI_OBJ_TEXT_WMI_DTD_2_0 = 2,
+			WMI_OBJ_TEXT_WMI_EXT1 = 3,
+			WMI_OBJ_TEXT_WMI_EXT2 = 4,
+			WMI_OBJ_TEXT_WMI_EXT3 = 5,
+			WMI_OBJ_TEXT_WMI_EXT4 = 6,
+			WMI_OBJ_TEXT_WMI_EXT5 = 7,
+			WMI_OBJ_TEXT_WMI_EXT6 = 8,
+			WMI_OBJ_TEXT_WMI_EXT7 = 9,
+			WMI_OBJ_TEXT_WMI_EXT8 = 10,
+			WMI_OBJ_TEXT_WMI_EXT9 = 11,
+			WMI_OBJ_TEXT_WMI_EXT10 = 12,
+			WMI_OBJ_TEXT_LAST = 13,
+		}
+		[AllowDuplicates]
+		public enum WBEM_COMPILER_OPTIONS : int32
+		{
+			WBEM_FLAG_CHECK_ONLY = 1,
+			WBEM_FLAG_AUTORECOVER = 2,
+			WBEM_FLAG_WMI_CHECK = 4,
+			WBEM_FLAG_CONSOLE_PRINT = 8,
+			WBEM_FLAG_DONT_ADD_TO_LIST = 16,
+			WBEM_FLAG_SPLIT_FILES = 32,
+			WBEM_FLAG_STORE_FILE = 256,
+		}
+		[AllowDuplicates]
+		public enum WBEM_CONNECT_OPTIONS : int32
+		{
+			WBEM_FLAG_CONNECT_REPOSITORY_ONLY = 64,
+			WBEM_FLAG_CONNECT_USE_MAX_WAIT = 128,
+			WBEM_FLAG_CONNECT_PROVIDERS = 256,
+		}
+		[AllowDuplicates]
+		public enum WBEM_UNSECAPP_FLAG_TYPE : int32
+		{
+			WBEM_FLAG_UNSECAPP_DEFAULT_CHECK_ACCESS = 0,
+			WBEM_FLAG_UNSECAPP_CHECK_ACCESS = 1,
+			WBEM_FLAG_UNSECAPP_DONT_CHECK_ACCESS = 2,
+		}
+		[AllowDuplicates]
+		public enum WBEM_INFORMATION_FLAG_TYPE : int32
+		{
+			WBEM_FLAG_SHORT_NAME = 1,
+			WBEM_FLAG_LONG_NAME = 2,
+		}
+		[AllowDuplicates]
+		public enum WBEM_PROVIDER_REQUIREMENTS_TYPE : int32
+		{
+			WBEM_REQUIREMENTS_START_POSTFILTER = 0,
+			WBEM_REQUIREMENTS_STOP_POSTFILTER = 1,
+			WBEM_REQUIREMENTS_RECHECK_SUBSCRIPTIONS = 2,
+		}
+		[AllowDuplicates]
+		public enum WBEM_EXTRA_RETURN_CODES : int32
+		{
+			WBEM_S_INITIALIZED = 0,
+			WBEM_S_LIMITED_SERVICE = 274433,
+			WBEM_S_INDIRECTLY_UPDATED = 274434,
+			WBEM_S_SUBJECT_TO_SDS = 274435,
+			WBEM_E_RETRY_LATER = -2147209215,
+			WBEM_E_RESOURCE_CONTENTION = -2147209214,
+		}
+		[AllowDuplicates]
+		public enum WBEM_PROVIDER_FLAGS : int32
+		{
+			WBEM_FLAG_OWNER_UPDATE = 65536,
+		}
+		[AllowDuplicates]
+		public enum WBEM_BATCH_TYPE : int32
+		{
+			WBEM_FLAG_BATCH_IF_NEEDED = 0,
+			WBEM_FLAG_MUST_BATCH = 1,
+			WBEM_FLAG_MUST_NOT_BATCH = 2,
+		}
+		[AllowDuplicates]
+		public enum WbemChangeFlagEnum : int32
+		{
+			wbemChangeFlagCreateOrUpdate = 0,
+			wbemChangeFlagUpdateOnly = 1,
+			wbemChangeFlagCreateOnly = 2,
+			wbemChangeFlagUpdateCompatible = 0,
+			wbemChangeFlagUpdateSafeMode = 32,
+			wbemChangeFlagUpdateForceMode = 64,
+			wbemChangeFlagStrongValidation = 128,
+			wbemChangeFlagAdvisory = 65536,
+		}
+		[AllowDuplicates]
+		public enum WbemFlagEnum : int32
+		{
+			wbemFlagReturnImmediately = 16,
+			wbemFlagReturnWhenComplete = 0,
+			wbemFlagBidirectional = 0,
+			wbemFlagForwardOnly = 32,
+			wbemFlagNoErrorObject = 64,
+			wbemFlagReturnErrorObject = 0,
+			wbemFlagSendStatus = 128,
+			wbemFlagDontSendStatus = 0,
+			wbemFlagEnsureLocatable = 256,
+			wbemFlagDirectRead = 512,
+			wbemFlagSendOnlySelected = 0,
+			wbemFlagUseAmendedQualifiers = 131072,
+			wbemFlagGetDefault = 0,
+			wbemFlagSpawnInstance = 1,
+			wbemFlagUseCurrentTime = 1,
+		}
+		[AllowDuplicates]
+		public enum WbemQueryFlagEnum : int32
+		{
+			wbemQueryFlagDeep = 0,
+			wbemQueryFlagShallow = 1,
+			wbemQueryFlagPrototype = 2,
+		}
+		[AllowDuplicates]
+		public enum WbemTextFlagEnum : int32
+		{
+			wbemTextFlagNoFlavors = 1,
+		}
+		[AllowDuplicates]
+		public enum WbemTimeout : int32
+		{
+			wbemTimeoutInfinite = -1,
+		}
+		[AllowDuplicates]
+		public enum WbemComparisonFlagEnum : int32
+		{
+			wbemComparisonFlagIncludeAll = 0,
+			wbemComparisonFlagIgnoreQualifiers = 1,
+			wbemComparisonFlagIgnoreObjectSource = 2,
+			wbemComparisonFlagIgnoreDefaultValues = 4,
+			wbemComparisonFlagIgnoreClass = 8,
+			wbemComparisonFlagIgnoreCase = 16,
+			wbemComparisonFlagIgnoreFlavor = 32,
+		}
+		[AllowDuplicates]
+		public enum WbemCimtypeEnum : int32
+		{
+			wbemCimtypeSint8 = 16,
+			wbemCimtypeUint8 = 17,
+			wbemCimtypeSint16 = 2,
+			wbemCimtypeUint16 = 18,
+			wbemCimtypeSint32 = 3,
+			wbemCimtypeUint32 = 19,
+			wbemCimtypeSint64 = 20,
+			wbemCimtypeUint64 = 21,
+			wbemCimtypeReal32 = 4,
+			wbemCimtypeReal64 = 5,
+			wbemCimtypeBoolean = 11,
+			wbemCimtypeString = 8,
+			wbemCimtypeDatetime = 101,
+			wbemCimtypeReference = 102,
+			wbemCimtypeChar16 = 103,
+			wbemCimtypeObject = 13,
+		}
+		[AllowDuplicates]
+		public enum WbemErrorEnum : int32
+		{
+			wbemNoErr = 0,
+			wbemErrFailed = -2147217407,
+			wbemErrNotFound = -2147217406,
+			wbemErrAccessDenied = -2147217405,
+			wbemErrProviderFailure = -2147217404,
+			wbemErrTypeMismatch = -2147217403,
+			wbemErrOutOfMemory = -2147217402,
+			wbemErrInvalidContext = -2147217401,
+			wbemErrInvalidParameter = -2147217400,
+			wbemErrNotAvailable = -2147217399,
+			wbemErrCriticalError = -2147217398,
+			wbemErrInvalidStream = -2147217397,
+			wbemErrNotSupported = -2147217396,
+			wbemErrInvalidSuperclass = -2147217395,
+			wbemErrInvalidNamespace = -2147217394,
+			wbemErrInvalidObject = -2147217393,
+			wbemErrInvalidClass = -2147217392,
+			wbemErrProviderNotFound = -2147217391,
+			wbemErrInvalidProviderRegistration = -2147217390,
+			wbemErrProviderLoadFailure = -2147217389,
+			wbemErrInitializationFailure = -2147217388,
+			wbemErrTransportFailure = -2147217387,
+			wbemErrInvalidOperation = -2147217386,
+			wbemErrInvalidQuery = -2147217385,
+			wbemErrInvalidQueryType = -2147217384,
+			wbemErrAlreadyExists = -2147217383,
+			wbemErrOverrideNotAllowed = -2147217382,
+			wbemErrPropagatedQualifier = -2147217381,
+			wbemErrPropagatedProperty = -2147217380,
+			wbemErrUnexpected = -2147217379,
+			wbemErrIllegalOperation = -2147217378,
+			wbemErrCannotBeKey = -2147217377,
+			wbemErrIncompleteClass = -2147217376,
+			wbemErrInvalidSyntax = -2147217375,
+			wbemErrNondecoratedObject = -2147217374,
+			wbemErrReadOnly = -2147217373,
+			wbemErrProviderNotCapable = -2147217372,
+			wbemErrClassHasChildren = -2147217371,
+			wbemErrClassHasInstances = -2147217370,
+			wbemErrQueryNotImplemented = -2147217369,
+			wbemErrIllegalNull = -2147217368,
+			wbemErrInvalidQualifierType = -2147217367,
+			wbemErrInvalidPropertyType = -2147217366,
+			wbemErrValueOutOfRange = -2147217365,
+			wbemErrCannotBeSingleton = -2147217364,
+			wbemErrInvalidCimType = -2147217363,
+			wbemErrInvalidMethod = -2147217362,
+			wbemErrInvalidMethodParameters = -2147217361,
+			wbemErrSystemProperty = -2147217360,
+			wbemErrInvalidProperty = -2147217359,
+			wbemErrCallCancelled = -2147217358,
+			wbemErrShuttingDown = -2147217357,
+			wbemErrPropagatedMethod = -2147217356,
+			wbemErrUnsupportedParameter = -2147217355,
+			wbemErrMissingParameter = -2147217354,
+			wbemErrInvalidParameterId = -2147217353,
+			wbemErrNonConsecutiveParameterIds = -2147217352,
+			wbemErrParameterIdOnRetval = -2147217351,
+			wbemErrInvalidObjectPath = -2147217350,
+			wbemErrOutOfDiskSpace = -2147217349,
+			wbemErrBufferTooSmall = -2147217348,
+			wbemErrUnsupportedPutExtension = -2147217347,
+			wbemErrUnknownObjectType = -2147217346,
+			wbemErrUnknownPacketType = -2147217345,
+			wbemErrMarshalVersionMismatch = -2147217344,
+			wbemErrMarshalInvalidSignature = -2147217343,
+			wbemErrInvalidQualifier = -2147217342,
+			wbemErrInvalidDuplicateParameter = -2147217341,
+			wbemErrTooMuchData = -2147217340,
+			wbemErrServerTooBusy = -2147217339,
+			wbemErrInvalidFlavor = -2147217338,
+			wbemErrCircularReference = -2147217337,
+			wbemErrUnsupportedClassUpdate = -2147217336,
+			wbemErrCannotChangeKeyInheritance = -2147217335,
+			wbemErrCannotChangeIndexInheritance = -2147217328,
+			wbemErrTooManyProperties = -2147217327,
+			wbemErrUpdateTypeMismatch = -2147217326,
+			wbemErrUpdateOverrideNotAllowed = -2147217325,
+			wbemErrUpdatePropagatedMethod = -2147217324,
+			wbemErrMethodNotImplemented = -2147217323,
+			wbemErrMethodDisabled = -2147217322,
+			wbemErrRefresherBusy = -2147217321,
+			wbemErrUnparsableQuery = -2147217320,
+			wbemErrNotEventClass = -2147217319,
+			wbemErrMissingGroupWithin = -2147217318,
+			wbemErrMissingAggregationList = -2147217317,
+			wbemErrPropertyNotAnObject = -2147217316,
+			wbemErrAggregatingByObject = -2147217315,
+			wbemErrUninterpretableProviderQuery = -2147217313,
+			wbemErrBackupRestoreWinmgmtRunning = -2147217312,
+			wbemErrQueueOverflow = -2147217311,
+			wbemErrPrivilegeNotHeld = -2147217310,
+			wbemErrInvalidOperator = -2147217309,
+			wbemErrLocalCredentials = -2147217308,
+			wbemErrCannotBeAbstract = -2147217307,
+			wbemErrAmendedObject = -2147217306,
+			wbemErrClientTooSlow = -2147217305,
+			wbemErrNullSecurityDescriptor = -2147217304,
+			wbemErrTimeout = -2147217303,
+			wbemErrInvalidAssociation = -2147217302,
+			wbemErrAmbiguousOperation = -2147217301,
+			wbemErrQuotaViolation = -2147217300,
+			wbemErrTransactionConflict = -2147217299,
+			wbemErrForcedRollback = -2147217298,
+			wbemErrUnsupportedLocale = -2147217297,
+			wbemErrHandleOutOfDate = -2147217296,
+			wbemErrConnectionFailed = -2147217295,
+			wbemErrInvalidHandleRequest = -2147217294,
+			wbemErrPropertyNameTooWide = -2147217293,
+			wbemErrClassNameTooWide = -2147217292,
+			wbemErrMethodNameTooWide = -2147217291,
+			wbemErrQualifierNameTooWide = -2147217290,
+			wbemErrRerunCommand = -2147217289,
+			wbemErrDatabaseVerMismatch = -2147217288,
+			wbemErrVetoPut = -2147217287,
+			wbemErrVetoDelete = -2147217286,
+			wbemErrInvalidLocale = -2147217280,
+			wbemErrProviderSuspended = -2147217279,
+			wbemErrSynchronizationRequired = -2147217278,
+			wbemErrNoSchema = -2147217277,
+			wbemErrProviderAlreadyRegistered = -2147217276,
+			wbemErrProviderNotRegistered = -2147217275,
+			wbemErrFatalTransportError = -2147217274,
+			wbemErrEncryptedConnectionRequired = -2147217273,
+			wbemErrRegistrationTooBroad = -2147213311,
+			wbemErrRegistrationTooPrecise = -2147213310,
+			wbemErrTimedout = -2147209215,
+			wbemErrResetToDefault = -2147209214,
+		}
+		[AllowDuplicates]
+		public enum WbemAuthenticationLevelEnum : int32
+		{
+			wbemAuthenticationLevelDefault = 0,
+			wbemAuthenticationLevelNone = 1,
+			wbemAuthenticationLevelConnect = 2,
+			wbemAuthenticationLevelCall = 3,
+			wbemAuthenticationLevelPkt = 4,
+			wbemAuthenticationLevelPktIntegrity = 5,
+			wbemAuthenticationLevelPktPrivacy = 6,
+		}
+		[AllowDuplicates]
+		public enum WbemImpersonationLevelEnum : int32
+		{
+			wbemImpersonationLevelAnonymous = 1,
+			wbemImpersonationLevelIdentify = 2,
+			wbemImpersonationLevelImpersonate = 3,
+			wbemImpersonationLevelDelegate = 4,
+		}
+		[AllowDuplicates]
+		public enum WbemPrivilegeEnum : int32
+		{
+			wbemPrivilegeCreateToken = 1,
+			wbemPrivilegePrimaryToken = 2,
+			wbemPrivilegeLockMemory = 3,
+			wbemPrivilegeIncreaseQuota = 4,
+			wbemPrivilegeMachineAccount = 5,
+			wbemPrivilegeTcb = 6,
+			wbemPrivilegeSecurity = 7,
+			wbemPrivilegeTakeOwnership = 8,
+			wbemPrivilegeLoadDriver = 9,
+			wbemPrivilegeSystemProfile = 10,
+			wbemPrivilegeSystemtime = 11,
+			wbemPrivilegeProfileSingleProcess = 12,
+			wbemPrivilegeIncreaseBasePriority = 13,
+			wbemPrivilegeCreatePagefile = 14,
+			wbemPrivilegeCreatePermanent = 15,
+			wbemPrivilegeBackup = 16,
+			wbemPrivilegeRestore = 17,
+			wbemPrivilegeShutdown = 18,
+			wbemPrivilegeDebug = 19,
+			wbemPrivilegeAudit = 20,
+			wbemPrivilegeSystemEnvironment = 21,
+			wbemPrivilegeChangeNotify = 22,
+			wbemPrivilegeRemoteShutdown = 23,
+			wbemPrivilegeUndock = 24,
+			wbemPrivilegeSyncAgent = 25,
+			wbemPrivilegeEnableDelegation = 26,
+			wbemPrivilegeManageVolume = 27,
+		}
+		[AllowDuplicates]
+		public enum WbemObjectTextFormatEnum : int32
+		{
+			wbemObjectTextFormatCIMDTD20 = 1,
+			wbemObjectTextFormatWMIDTD20 = 2,
+		}
+		[AllowDuplicates]
+		public enum WbemConnectOptionsEnum : int32
+		{
+			wbemConnectFlagUseMaxWait = 128,
+		}
+		[AllowDuplicates]
+		public enum tag_WBEM_LOGIN_TYPE : int32
+		{
+			WBEM_FLAG_INPROC_LOGIN = 0,
+			WBEM_FLAG_LOCAL_LOGIN = 1,
+			WBEM_FLAG_REMOTE_LOGIN = 2,
+			WBEM_AUTHENTICATION_METHOD_MASK = 15,
+			WBEM_FLAG_USE_MULTIPLE_CHALLENGES = 16,
+		}
+		
+		// --- Function Pointers ---
+		
+		public function void MI_MethodDecl_Invoke(void* self, MI_Context* context, uint16* nameSpace, uint16* className, uint16* methodName, MI_Instance* instanceName, MI_Instance* parameters);
+		public function void MI_ProviderFT_Load(void** self, MI_Module_Self* selfModule, MI_Context* context);
+		public function void MI_ProviderFT_Unload(void* self, MI_Context* context);
+		public function void MI_ProviderFT_GetInstance(void* self, MI_Context* context, uint16* nameSpace, uint16* className, MI_Instance* instanceName, MI_PropertySet* propertySet);
+		public function void MI_ProviderFT_EnumerateInstances(void* self, MI_Context* context, uint16* nameSpace, uint16* className, MI_PropertySet* propertySet, uint8 keysOnly, MI_Filter* filter);
+		public function void MI_ProviderFT_CreateInstance(void* self, MI_Context* context, uint16* nameSpace, uint16* className, MI_Instance* newInstance);
+		public function void MI_ProviderFT_ModifyInstance(void* self, MI_Context* context, uint16* nameSpace, uint16* className, MI_Instance* modifiedInstance, MI_PropertySet* propertySet);
+		public function void MI_ProviderFT_DeleteInstance(void* self, MI_Context* context, uint16* nameSpace, uint16* className, MI_Instance* instanceName);
+		public function void MI_ProviderFT_AssociatorInstances(void* self, MI_Context* context, uint16* nameSpace, uint16* className, MI_Instance* instanceName, uint16* resultClass, uint16* role, uint16* resultRole, MI_PropertySet* propertySet, uint8 keysOnly, MI_Filter* filter);
+		public function void MI_ProviderFT_ReferenceInstances(void* self, MI_Context* context, uint16* nameSpace, uint16* className, MI_Instance* instanceName, uint16* role, MI_PropertySet* propertySet, uint8 keysOnly, MI_Filter* filter);
+		public function void MI_ProviderFT_EnableIndications(void* self, MI_Context* indicationsContext, uint16* nameSpace, uint16* className);
+		public function void MI_ProviderFT_DisableIndications(void* self, MI_Context* indicationsContext, uint16* nameSpace, uint16* className);
+		public function void MI_ProviderFT_Subscribe(void* self, MI_Context* context, uint16* nameSpace, uint16* className, MI_Filter* filter, uint16* bookmark, uint64 subscriptionID, void** subscriptionSelf);
+		public function void MI_ProviderFT_Unsubscribe(void* self, MI_Context* context, uint16* nameSpace, uint16* className, uint64 subscriptionID, void* subscriptionSelf);
+		public function void MI_ProviderFT_Invoke(void* self, MI_Context* context, uint16* nameSpace, uint16* className, uint16* methodName, MI_Instance* instanceName, MI_Instance* inputParameters);
+		public function void MI_Module_Load(MI_Module_Self** self, MI_Context* context);
+		public function void MI_Module_Unload(MI_Module_Self* self, MI_Context* context);
+		public function void MI_CancelCallback(MI_CancellationReason reason, void* callbackData);
+		public function MI_Module* MI_MainFunction(MI_Server* server);
+		public function void MI_OperationCallback_PromptUser(MI_Operation* operation, void* callbackContext, uint16* message, MI_PromptType promptType, int promptUserResult);
+		public function void MI_OperationCallback_WriteError(MI_Operation* operation, void* callbackContext, MI_Instance* instance, int writeErrorResult);
+		public function void MI_OperationCallback_WriteMessage(MI_Operation* operation, void* callbackContext, uint32 channel, uint16* message);
+		public function void MI_OperationCallback_WriteProgress(MI_Operation* operation, void* callbackContext, uint16* activity, uint16* currentOperation, uint16* statusDescription, uint32 percentageComplete, uint32 secondsRemaining);
+		public function void MI_OperationCallback_Instance(MI_Operation* operation, void* callbackContext, MI_Instance* instance, uint8 moreResults, MI_Result resultCode, uint16* errorString, MI_Instance* errorDetails, int resultAcknowledgement);
+		public function void MI_OperationCallback_StreamedParameter(MI_Operation* operation, void* callbackContext, uint16* parameterName, MI_Type resultType, MI_Value* result, int resultAcknowledgement);
+		public function void MI_OperationCallback_Indication(MI_Operation* operation, void* callbackContext, MI_Instance* instance, uint16* bookmark, uint16* machineID, uint8 moreResults, MI_Result resultCode, uint16* errorString, MI_Instance* errorDetails, int resultAcknowledgement);
+		public function void MI_OperationCallback_Class(MI_Operation* operation, void* callbackContext, MI_Class* classResult, uint8 moreResults, MI_Result resultCode, uint16* errorString, MI_Instance* errorDetails, int resultAcknowledgement);
+		public function MI_Result MI_Deserializer_ClassObjectNeeded(void* context, uint16* serverName, uint16* namespaceName, uint16* className, MI_Class** requestedClassObject);
+		
+		// --- Structs ---
+		
+		[CRepr]
+		public struct MI_Timestamp
+		{
+			public uint32 year;
+			public uint32 month;
+			public uint32 day;
+			public uint32 hour;
+			public uint32 minute;
+			public uint32 second;
+			public uint32 microseconds;
+			public int32 utc;
+		}
+		[CRepr]
+		public struct MI_Interval
+		{
+			public uint32 days;
+			public uint32 hours;
+			public uint32 minutes;
+			public uint32 seconds;
+			public uint32 microseconds;
+			public uint32 __padding1;
+			public uint32 __padding2;
+			public uint32 __padding3;
+		}
+		[CRepr]
+		public struct MI_Datetime
+		{
+			public uint32 isTimestamp;
+			public _u_e__Union u;
+			
+			[CRepr, Union]
+			public struct _u_e__Union
+			{
+				public MI_Timestamp timestamp;
+				public MI_Interval interval;
+			}
+		}
+		[CRepr]
+		public struct MI_BooleanA
+		{
+			public uint8* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_Uint8A
+		{
+			public uint8* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_Sint8A
+		{
+			public int8* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_Uint16A
+		{
+			public uint16* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_Sint16A
+		{
+			public int16* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_Uint32A
+		{
+			public uint32* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_Sint32A
+		{
+			public int32* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_Uint64A
+		{
+			public uint64* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_Sint64A
+		{
+			public int64* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_Real32A
+		{
+			public float* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_Real64A
+		{
+			public double* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_Char16A
+		{
+			public uint16* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_DatetimeA
+		{
+			public MI_Datetime* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_StringA
+		{
+			public uint16** data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_ReferenceA
+		{
+			public MI_Instance** data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_InstanceA
+		{
+			public MI_Instance** data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_Array
+		{
+			public void* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_ConstBooleanA
+		{
+			public uint8* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_ConstUint8A
+		{
+			public uint8* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_ConstSint8A
+		{
+			public int8* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_ConstUint16A
+		{
+			public uint16* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_ConstSint16A
+		{
+			public int16* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_ConstUint32A
+		{
+			public uint32* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_ConstSint32A
+		{
+			public int32* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_ConstUint64A
+		{
+			public uint64* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_ConstSint64A
+		{
+			public int64* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_ConstReal32A
+		{
+			public float* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_ConstReal64A
+		{
+			public double* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_ConstChar16A
+		{
+			public uint16* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_ConstDatetimeA
+		{
+			public MI_Datetime* data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_ConstStringA
+		{
+			public uint16** data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_ConstReferenceA
+		{
+			public MI_Instance** data;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_ConstInstanceA
+		{
+			public MI_Instance** data;
+			public uint32 size;
+		}
+		[CRepr, Union]
+		public struct MI_Value
+		{
+			public uint8 boolean;
+			public uint8 uint8;
+			public int8 sint8;
+			public uint16 uint16;
+			public int16 sint16;
+			public uint32 uint32;
+			public int32 sint32;
+			public uint64 uint64;
+			public int64 sint64;
+			public float real32;
+			public double real64;
+			public uint16 char16;
+			public MI_Datetime datetime;
+			public uint16* string;
+			public MI_Instance* instance;
+			public MI_Instance* reference;
+			public MI_BooleanA booleana;
+			public MI_Uint8A uint8a;
+			public MI_Sint8A sint8a;
+			public MI_Uint16A uint16a;
+			public MI_Sint16A sint16a;
+			public MI_Uint32A uint32a;
+			public MI_Sint32A sint32a;
+			public MI_Uint64A uint64a;
+			public MI_Sint64A sint64a;
+			public MI_Real32A real32a;
+			public MI_Real64A real64a;
+			public MI_Char16A char16a;
+			public MI_DatetimeA datetimea;
+			public MI_StringA stringa;
+			public MI_ReferenceA referencea;
+			public MI_InstanceA instancea;
+			public MI_Array array;
+		}
+		[CRepr]
+		public struct MI_BooleanField
+		{
+			public uint8 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Sint8Field
+		{
+			public int8 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Uint8Field
+		{
+			public uint8 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Sint16Field
+		{
+			public int16 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Uint16Field
+		{
+			public uint16 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Sint32Field
+		{
+			public int32 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Uint32Field
+		{
+			public uint32 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Sint64Field
+		{
+			public int64 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Uint64Field
+		{
+			public uint64 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Real32Field
+		{
+			public float value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Real64Field
+		{
+			public double value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Char16Field
+		{
+			public uint16 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_DatetimeField
+		{
+			public MI_Datetime value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_StringField
+		{
+			public uint16* value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ReferenceField
+		{
+			public MI_Instance* value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_InstanceField
+		{
+			public MI_Instance* value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_BooleanAField
+		{
+			public MI_BooleanA value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Uint8AField
+		{
+			public MI_Uint8A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Sint8AField
+		{
+			public MI_Sint8A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Uint16AField
+		{
+			public MI_Uint16A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Sint16AField
+		{
+			public MI_Sint16A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Uint32AField
+		{
+			public MI_Uint32A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Sint32AField
+		{
+			public MI_Sint32A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Uint64AField
+		{
+			public MI_Uint64A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Sint64AField
+		{
+			public MI_Sint64A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Real32AField
+		{
+			public MI_Real32A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Real64AField
+		{
+			public MI_Real64A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_Char16AField
+		{
+			public MI_Char16A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_DatetimeAField
+		{
+			public MI_DatetimeA value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_StringAField
+		{
+			public MI_StringA value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ReferenceAField
+		{
+			public MI_ReferenceA value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_InstanceAField
+		{
+			public MI_InstanceA value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ArrayField
+		{
+			public MI_Array value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstBooleanField
+		{
+			public uint8 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstSint8Field
+		{
+			public int8 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstUint8Field
+		{
+			public uint8 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstSint16Field
+		{
+			public int16 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstUint16Field
+		{
+			public uint16 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstSint32Field
+		{
+			public int32 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstUint32Field
+		{
+			public uint32 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstSint64Field
+		{
+			public int64 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstUint64Field
+		{
+			public uint64 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstReal32Field
+		{
+			public float value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstReal64Field
+		{
+			public double value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstChar16Field
+		{
+			public uint16 value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstDatetimeField
+		{
+			public MI_Datetime value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstStringField
+		{
+			public uint16* value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstReferenceField
+		{
+			public MI_Instance* value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstInstanceField
+		{
+			public MI_Instance* value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstBooleanAField
+		{
+			public MI_ConstBooleanA value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstUint8AField
+		{
+			public MI_ConstUint8A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstSint8AField
+		{
+			public MI_ConstSint8A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstUint16AField
+		{
+			public MI_ConstUint16A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstSint16AField
+		{
+			public MI_ConstSint16A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstUint32AField
+		{
+			public MI_ConstUint32A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstSint32AField
+		{
+			public MI_ConstSint32A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstUint64AField
+		{
+			public MI_ConstUint64A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstSint64AField
+		{
+			public MI_ConstSint64A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstReal32AField
+		{
+			public MI_ConstReal32A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstReal64AField
+		{
+			public MI_ConstReal64A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstChar16AField
+		{
+			public MI_ConstChar16A value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstDatetimeAField
+		{
+			public MI_ConstDatetimeA value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstStringAField
+		{
+			public MI_ConstStringA value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstReferenceAField
+		{
+			public MI_ConstReferenceA value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ConstInstanceAField
+		{
+			public MI_ConstInstanceA value;
+			public uint8 exists;
+			public uint8 flags;
+		}
+		[CRepr]
+		public struct MI_ServerFT
+		{
+			public int GetVersion;
+			public int GetSystemName;
+		}
+		[CRepr]
+		public struct MI_Server
+		{
+			public MI_ServerFT* serverFT;
+			public MI_ContextFT* contextFT;
+			public MI_InstanceFT* instanceFT;
+			public MI_PropertySetFT* propertySetFT;
+			public MI_FilterFT* filterFT;
+		}
+		[CRepr]
+		public struct MI_FilterFT
+		{
+			public int Evaluate;
+			public int GetExpression;
+		}
+		[CRepr]
+		public struct MI_Filter
+		{
+			public MI_FilterFT* ft;
+			public int[3] reserved;
+		}
+		[CRepr]
+		public struct MI_PropertySetFT
+		{
+			public int GetElementCount;
+			public int ContainsElement;
+			public int AddElement;
+			public int GetElementAt;
+			public int Clear;
+			public int Destruct;
+			public int Delete;
+			public int Clone;
+		}
+		[CRepr]
+		public struct MI_PropertySet
+		{
+			public MI_PropertySetFT* ft;
+			public int[3] reserved;
+		}
+		[CRepr]
+		public struct MI_ObjectDecl
+		{
+			public uint32 flags;
+			public uint32 code;
+			public uint16* name;
+			public MI_Qualifier** qualifiers;
+			public uint32 numQualifiers;
+			public MI_PropertyDecl** properties;
+			public uint32 numProperties;
+			public uint32 size;
+		}
+		[CRepr]
+		public struct MI_ClassDecl
+		{
+			public uint32 flags;
+			public uint32 code;
+			public uint16* name;
+			public MI_Qualifier** qualifiers;
+			public uint32 numQualifiers;
+			public MI_PropertyDecl** properties;
+			public uint32 numProperties;
+			public uint32 size;
+			public uint16* superClass;
+			public MI_ClassDecl* superClassDecl;
+			public MI_MethodDecl** methods;
+			public uint32 numMethods;
+			public MI_SchemaDecl* schema;
+			public MI_ProviderFT* providerFT;
+			public MI_Class* owningClass;
+		}
+		[CRepr]
+		public struct MI_FeatureDecl
+		{
+			public uint32 flags;
+			public uint32 code;
+			public uint16* name;
+			public MI_Qualifier** qualifiers;
+			public uint32 numQualifiers;
+		}
+		[CRepr]
+		public struct MI_ParameterDecl
+		{
+			public uint32 flags;
+			public uint32 code;
+			public uint16* name;
+			public MI_Qualifier** qualifiers;
+			public uint32 numQualifiers;
+			public uint32 type;
+			public uint16* className;
+			public uint32 subscript;
+			public uint32 offset;
+		}
+		[CRepr]
+		public struct MI_PropertyDecl
+		{
+			public uint32 flags;
+			public uint32 code;
+			public uint16* name;
+			public MI_Qualifier** qualifiers;
+			public uint32 numQualifiers;
+			public uint32 type;
+			public uint16* className;
+			public uint32 subscript;
+			public uint32 offset;
+			public uint16* origin;
+			public uint16* propagator;
+			public void* value;
+		}
+		[CRepr]
+		public struct MI_MethodDecl
+		{
+			public uint32 flags;
+			public uint32 code;
+			public uint16* name;
+			public MI_Qualifier** qualifiers;
+			public uint32 numQualifiers;
+			public MI_ParameterDecl** parameters;
+			public uint32 numParameters;
+			public uint32 size;
+			public uint32 returnType;
+			public uint16* origin;
+			public uint16* propagator;
+			public MI_SchemaDecl* schema;
+			public MI_MethodDecl_Invoke @function;
+		}
+		[CRepr]
+		public struct MI_QualifierDecl
+		{
+			public uint16* name;
+			public uint32 type;
+			public uint32 @scope;
+			public uint32 flavor;
+			public uint32 subscript;
+			public void* value;
+		}
+		[CRepr]
+		public struct MI_Qualifier
+		{
+			public uint16* name;
+			public uint32 type;
+			public uint32 flavor;
+			public void* value;
+		}
+		[CRepr]
+		public struct MI_SchemaDecl
+		{
+			public MI_QualifierDecl** qualifierDecls;
+			public uint32 numQualifierDecls;
+			public MI_ClassDecl** classDecls;
+			public uint32 numClassDecls;
+		}
+		[CRepr]
+		public struct MI_Module_Self
+		{
+		}
+		[CRepr]
+		public struct MI_ProviderFT
+		{
+			public MI_ProviderFT_Load Load;
+			public MI_ProviderFT_Unload Unload;
+			public MI_ProviderFT_GetInstance GetInstance;
+			public MI_ProviderFT_EnumerateInstances EnumerateInstances;
+			public MI_ProviderFT_CreateInstance CreateInstance;
+			public MI_ProviderFT_ModifyInstance ModifyInstance;
+			public MI_ProviderFT_DeleteInstance DeleteInstance;
+			public MI_ProviderFT_AssociatorInstances AssociatorInstances;
+			public MI_ProviderFT_ReferenceInstances ReferenceInstances;
+			public MI_ProviderFT_EnableIndications EnableIndications;
+			public MI_ProviderFT_DisableIndications DisableIndications;
+			public MI_ProviderFT_Subscribe Subscribe;
+			public MI_ProviderFT_Unsubscribe Unsubscribe;
+			public MI_ProviderFT_Invoke Invoke;
+		}
+		[CRepr]
+		public struct MI_Module
+		{
+			public uint32 version;
+			public uint32 generatorVersion;
+			public uint32 flags;
+			public uint32 charSize;
+			public MI_SchemaDecl* schemaDecl;
+			public MI_Module_Load Load;
+			public MI_Module_Unload Unload;
+			public MI_ProviderFT* dynamicProviderFT;
+		}
+		[CRepr]
+		public struct MI_InstanceFT
+		{
+			public int Clone;
+			public int Destruct;
+			public int Delete;
+			public int IsA;
+			public int GetClassNameA;
+			public int SetNameSpace;
+			public int GetNameSpace;
+			public int GetElementCount;
+			public int AddElement;
+			public int SetElement;
+			public int SetElementAt;
+			public int GetElement;
+			public int GetElementAt;
+			public int ClearElement;
+			public int ClearElementAt;
+			public int GetServerName;
+			public int SetServerName;
+			public int GetClass;
+		}
+		[CRepr]
+		public struct MI_InstanceExFT
+		{
+			public MI_InstanceFT parent;
+			public int Normalize;
+		}
+		[CRepr]
+		public struct MI_Instance
+		{
+			public MI_InstanceFT* ft;
+			public MI_ClassDecl* classDecl;
+			public uint16* serverName;
+			public uint16* nameSpace;
+			public int[4] reserved;
+		}
+		[CRepr]
+		public struct MI_ContextFT
+		{
+			public int PostResult;
+			public int PostInstance;
+			public int PostIndication;
+			public int ConstructInstance;
+			public int ConstructParameters;
+			public int NewInstance;
+			public int NewDynamicInstance;
+			public int NewParameters;
+			public int Canceled;
+			public int GetLocale;
+			public int RegisterCancel;
+			public int RequestUnload;
+			public int RefuseUnload;
+			public int GetLocalSession;
+			public int SetStringOption;
+			public int GetStringOption;
+			public int GetNumberOption;
+			public int GetCustomOption;
+			public int GetCustomOptionCount;
+			public int GetCustomOptionAt;
+			public int WriteMessage;
+			public int WriteProgress;
+			public int WriteStreamParameter;
+			public int WriteCimError;
+			public int PromptUser;
+			public int ShouldProcess;
+			public int ShouldContinue;
+			public int PostError;
+			public int PostCimError;
+			public int WriteError;
+		}
+		[CRepr]
+		public struct MI_Context
+		{
+			public MI_ContextFT* ft;
+			public int[3] reserved;
+		}
+		[CRepr]
+		public struct MI_QualifierSetFT
+		{
+			public int GetQualifierCount;
+			public int GetQualifierAt;
+			public int GetQualifier;
+		}
+		[CRepr]
+		public struct MI_QualifierSet
+		{
+			public uint64 reserved1;
+			public int reserved2;
+			public MI_QualifierSetFT* ft;
+		}
+		[CRepr]
+		public struct MI_ParameterSetFT
+		{
+			public int GetMethodReturnType;
+			public int GetParameterCount;
+			public int GetParameterAt;
+			public int GetParameter;
+		}
+		[CRepr]
+		public struct MI_ParameterSet
+		{
+			public uint64 reserved1;
+			public int reserved2;
+			public MI_ParameterSetFT* ft;
+		}
+		[CRepr]
+		public struct MI_ClassFT
+		{
+			public int GetClassNameA;
+			public int GetNameSpace;
+			public int GetServerName;
+			public int GetElementCount;
+			public int GetElement;
+			public int GetElementAt;
+			public int GetClassQualifierSet;
+			public int GetMethodCount;
+			public int GetMethodAt;
+			public int GetMethod;
+			public int GetParentClassName;
+			public int GetParentClass;
+			public int Delete;
+			public int Clone;
+		}
+		[CRepr]
+		public struct MI_Class
+		{
+			public MI_ClassFT* ft;
+			public MI_ClassDecl* classDecl;
+			public uint16* namespaceName;
+			public uint16* serverName;
+			public int[4] reserved;
+		}
+		[CRepr]
+		public struct MI_OperationCallbacks
+		{
+			public void* callbackContext;
+			public MI_OperationCallback_PromptUser promptUser;
+			public MI_OperationCallback_WriteError writeError;
+			public MI_OperationCallback_WriteMessage writeMessage;
+			public MI_OperationCallback_WriteProgress writeProgress;
+			public MI_OperationCallback_Instance instanceResult;
+			public MI_OperationCallback_Indication indicationResult;
+			public MI_OperationCallback_Class classResult;
+			public MI_OperationCallback_StreamedParameter streamedParameterResult;
+		}
+		[CRepr]
+		public struct MI_SessionCallbacks
+		{
+			public void* callbackContext;
+			public int writeMessage;
+			public int writeError;
+		}
+		[CRepr]
+		public struct MI_UsernamePasswordCreds
+		{
+			public uint16* domain;
+			public uint16* username;
+			public uint16* password;
+		}
+		[CRepr]
+		public struct MI_UserCredentials
+		{
+			public uint16* authenticationType;
+			public _credentials_e__Union credentials;
+			
+			[CRepr, Union]
+			public struct _credentials_e__Union
+			{
+				public MI_UsernamePasswordCreds usernamePassword;
+				public uint16* certificateThumbprint;
+			}
+		}
+		[CRepr]
+		public struct MI_SubscriptionDeliveryOptionsFT
+		{
+			public int SetString;
+			public int SetNumber;
+			public int SetDateTime;
+			public int SetInterval;
+			public int AddCredentials;
+			public int Delete;
+			public int GetString;
+			public int GetNumber;
+			public int GetDateTime;
+			public int GetInterval;
+			public int GetOptionCount;
+			public int GetOptionAt;
+			public int GetOption;
+			public int GetCredentialsCount;
+			public int GetCredentialsAt;
+			public int GetCredentialsPasswordAt;
+			public int Clone;
+		}
+		[CRepr]
+		public struct MI_SubscriptionDeliveryOptions
+		{
+			public uint64 reserved1;
+			public int reserved2;
+			public MI_SubscriptionDeliveryOptionsFT* ft;
+		}
+		[CRepr]
+		public struct MI_Serializer
+		{
+			public uint64 reserved1;
+			public int reserved2;
+		}
+		[CRepr]
+		public struct MI_Deserializer
+		{
+			public uint64 reserved1;
+			public int reserved2;
+		}
+		[CRepr]
+		public struct MI_SerializerFT
+		{
+			public int Close;
+			public int SerializeClass;
+			public int SerializeInstance;
+		}
+		[CRepr]
+		public struct MI_DeserializerFT
+		{
+			public int Close;
+			public int DeserializeClass;
+			public int Class_GetClassName;
+			public int Class_GetParentClassName;
+			public int DeserializeInstance;
+			public int Instance_GetClassName;
+		}
+		[CRepr]
+		public struct MI_ApplicationFT
+		{
+			public int Close;
+			public int NewSession;
+			public int NewHostedProvider;
+			public int NewInstance;
+			public int NewDestinationOptions;
+			public int NewOperationOptions;
+			public int NewSubscriptionDeliveryOptions;
+			public int NewSerializer;
+			public int NewDeserializer;
+			public int NewInstanceFromClass;
+			public int NewClass;
+		}
+		[CRepr]
+		public struct MI_HostedProviderFT
+		{
+			public int Close;
+			public int GetApplication;
+		}
+		[CRepr]
+		public struct MI_SessionFT
+		{
+			public int Close;
+			public int GetApplication;
+			public int GetInstance;
+			public int ModifyInstance;
+			public int CreateInstance;
+			public int DeleteInstance;
+			public int Invoke;
+			public int EnumerateInstances;
+			public int QueryInstances;
+			public int AssociatorInstances;
+			public int ReferenceInstances;
+			public int Subscribe;
+			public int GetClass;
+			public int EnumerateClasses;
+			public int TestConnection;
+		}
+		[CRepr]
+		public struct MI_OperationFT
+		{
+			public int Close;
+			public int Cancel;
+			public int GetSession;
+			public int GetInstance;
+			public int GetIndication;
+			public int GetClass;
+		}
+		[CRepr]
+		public struct MI_DestinationOptionsFT
+		{
+			public int Delete;
+			public int SetString;
+			public int SetNumber;
+			public int AddCredentials;
+			public int GetString;
+			public int GetNumber;
+			public int GetOptionCount;
+			public int GetOptionAt;
+			public int GetOption;
+			public int GetCredentialsCount;
+			public int GetCredentialsAt;
+			public int GetCredentialsPasswordAt;
+			public int Clone;
+			public int SetInterval;
+			public int GetInterval;
+		}
+		[CRepr]
+		public struct MI_OperationOptionsFT
+		{
+			public int Delete;
+			public int SetString;
+			public int SetNumber;
+			public int SetCustomOption;
+			public int GetString;
+			public int GetNumber;
+			public int GetOptionCount;
+			public int GetOptionAt;
+			public int GetOption;
+			public int GetEnabledChannels;
+			public int Clone;
+			public int SetInterval;
+			public int GetInterval;
+		}
+		[CRepr]
+		public struct MI_Application
+		{
+			public uint64 reserved1;
+			public int reserved2;
+			public MI_ApplicationFT* ft;
+		}
+		[CRepr]
+		public struct MI_Session
+		{
+			public uint64 reserved1;
+			public int reserved2;
+			public MI_SessionFT* ft;
+		}
+		[CRepr]
+		public struct MI_Operation
+		{
+			public uint64 reserved1;
+			public int reserved2;
+			public MI_OperationFT* ft;
+		}
+		[CRepr]
+		public struct MI_HostedProvider
+		{
+			public uint64 reserved1;
+			public int reserved2;
+			public MI_HostedProviderFT* ft;
+		}
+		[CRepr]
+		public struct MI_DestinationOptions
+		{
+			public uint64 reserved1;
+			public int reserved2;
+			public MI_DestinationOptionsFT* ft;
+		}
+		[CRepr]
+		public struct MI_OperationOptions
+		{
+			public uint64 reserved1;
+			public int reserved2;
+			public MI_OperationOptionsFT* ft;
+		}
+		[CRepr]
+		public struct MI_UtilitiesFT
+		{
+			public int MapErrorToMiErrorCategory;
+			public int CimErrorFromErrorCode;
+		}
+		[CRepr]
+		public struct MI_ClientFT_V1
+		{
+			public MI_ApplicationFT* applicationFT;
+			public MI_SessionFT* sessionFT;
+			public MI_OperationFT* operationFT;
+			public MI_HostedProviderFT* hostedProviderFT;
+			public MI_SerializerFT* serializerFT;
+			public MI_DeserializerFT* deserializerFT;
+			public MI_SubscriptionDeliveryOptionsFT* subscribeDeliveryOptionsFT;
+			public MI_DestinationOptionsFT* destinationOptionsFT;
+			public MI_OperationOptionsFT* operationOptionsFT;
+			public MI_UtilitiesFT* utilitiesFT;
+		}
+		[CRepr]
+		public struct SWbemQueryQualifiedName
+		{
+			public uint32 m_uVersion;
+			public uint32 m_uTokenType;
+			public uint32 m_uNameListSize;
+			public PWSTR* m_ppszNameList;
+			public BOOL m_bArraysUsed;
+			public BOOL* m_pbArrayElUsed;
+			public uint32* m_puArrayIndex;
+		}
+		[CRepr, Union]
+		public struct SWbemRpnConst
+		{
+			public PWSTR m_pszStrVal;
+			public BOOL m_bBoolVal;
+			public int32 m_lLongVal;
+			public uint32 m_uLongVal;
+			public double m_dblVal;
+			public int64 m_lVal64;
+			public int64 m_uVal64;
+		}
+		[CRepr]
+		public struct SWbemRpnQueryToken
+		{
+			public uint32 m_uVersion;
+			public uint32 m_uTokenType;
+			public uint32 m_uSubexpressionShape;
+			public uint32 m_uOperator;
+			public SWbemQueryQualifiedName* m_pRightIdent;
+			public SWbemQueryQualifiedName* m_pLeftIdent;
+			public uint32 m_uConstApparentType;
+			public SWbemRpnConst m_Const;
+			public uint32 m_uConst2ApparentType;
+			public SWbemRpnConst m_Const2;
+			public PWSTR m_pszRightFunc;
+			public PWSTR m_pszLeftFunc;
+		}
+		[CRepr]
+		public struct SWbemRpnTokenList
+		{
+			public uint32 m_uVersion;
+			public uint32 m_uTokenType;
+			public uint32 m_uNumTokens;
+		}
+		[CRepr]
+		public struct SWbemRpnEncodedQuery
+		{
+			public uint32 m_uVersion;
+			public uint32 m_uTokenType;
+			public uint64 m_uParsedFeatureMask;
+			public uint32 m_uDetectedArraySize;
+			public uint32* m_puDetectedFeatures;
+			public uint32 m_uSelectListSize;
+			public SWbemQueryQualifiedName** m_ppSelectList;
+			public uint32 m_uFromTargetType;
+			public PWSTR m_pszOptionalFromPath;
+			public uint32 m_uFromListSize;
+			public PWSTR* m_ppszFromList;
+			public uint32 m_uWhereClauseSize;
+			public SWbemRpnQueryToken** m_ppRpnWhereClause;
+			public double m_dblWithinPolling;
+			public double m_dblWithinWindow;
+			public uint32 m_uOrderByListSize;
+			public PWSTR* m_ppszOrderByList;
+			public uint32* m_uOrderDirectionEl;
+		}
+		[CRepr]
+		public struct SWbemAnalysisMatrix
+		{
+			public uint32 m_uVersion;
+			public uint32 m_uMatrixType;
+			public PWSTR m_pszProperty;
+			public uint32 m_uPropertyType;
+			public uint32 m_uEntries;
+			public void** m_pValues;
+			public BOOL* m_pbTruthTable;
+		}
+		[CRepr]
+		public struct SWbemAnalysisMatrixList
+		{
+			public uint32 m_uVersion;
+			public uint32 m_uMatrixType;
+			public uint32 m_uNumMatrices;
+			public SWbemAnalysisMatrix* m_pMatrices;
+		}
+		[CRepr]
+		public struct SWbemAssocQueryInf
+		{
+			public uint32 m_uVersion;
+			public uint32 m_uAnalysisType;
+			public uint32 m_uFeatureMask;
+			public IWbemPath m_pPath;
+			public PWSTR m_pszPath;
+			public PWSTR m_pszQueryText;
+			public PWSTR m_pszResultClass;
+			public PWSTR m_pszAssocClass;
+			public PWSTR m_pszRole;
+			public PWSTR m_pszResultRole;
+			public PWSTR m_pszRequiredQualifier;
+			public PWSTR m_pszRequiredAssocQualifier;
+		}
+		[CRepr]
+		public struct WBEM_COMPILE_STATUS_INFO
+		{
+			public int32 lPhaseError;
+			public HRESULT hRes;
+			public int32 ObjectNum;
+			public int32 FirstLine;
+			public int32 LastLine;
+			public uint32 dwOutFlags;
+		}
+		
+		// --- COM Class IDs ---
+		
+		public const Guid CLSID_WbemDefPath = .(0xcf4cc405, 0xe2c5, 0x4ddd, 0xb3, 0xce, 0x5e, 0x75, 0x82, 0xd8, 0xc9, 0xfa);
+		public const Guid CLSID_WbemQuery = .(0xeac8a024, 0x21e2, 0x4523, 0xad, 0x73, 0xa7, 0x1a, 0x0a, 0xa2, 0xf5, 0x6a);
+		public const Guid CLSID_WbemLocator = .(0x4590f811, 0x1d3a, 0x11d0, 0x89, 0x1f, 0x00, 0xaa, 0x00, 0x4b, 0x2e, 0x24);
+		public const Guid CLSID_WbemContext = .(0x674b6698, 0xee92, 0x11d0, 0xad, 0x71, 0x00, 0xc0, 0x4f, 0xd8, 0xfd, 0xff);
+		public const Guid CLSID_UnsecuredApartment = .(0x49bd2028, 0x1523, 0x11d1, 0xad, 0x79, 0x00, 0xc0, 0x4f, 0xd8, 0xfd, 0xff);
+		public const Guid CLSID_WbemClassObject = .(0x9a653086, 0x174f, 0x11d2, 0xb5, 0xf9, 0x00, 0x10, 0x4b, 0x70, 0x3e, 0xfd);
+		public const Guid CLSID_MofCompiler = .(0x6daf9757, 0x2e37, 0x11d2, 0xae, 0xc9, 0x00, 0xc0, 0x4f, 0xb6, 0x88, 0x20);
+		public const Guid CLSID_WbemStatusCodeText = .(0xeb87e1bd, 0x3233, 0x11d2, 0xae, 0xc9, 0x00, 0xc0, 0x4f, 0xb6, 0x88, 0x20);
+		public const Guid CLSID_WbemBackupRestore = .(0xc49e32c6, 0xbc8b, 0x11d2, 0x85, 0xd4, 0x00, 0x10, 0x5a, 0x1f, 0x83, 0x04);
+		public const Guid CLSID_WbemRefresher = .(0xc71566f2, 0x561e, 0x11d1, 0xad, 0x87, 0x00, 0xc0, 0x4f, 0xd8, 0xfd, 0xff);
+		public const Guid CLSID_WbemObjectTextSrc = .(0x8d1c559d, 0x84f0, 0x4bb3, 0xa7, 0xd5, 0x56, 0xa7, 0x43, 0x5a, 0x9b, 0xa6);
+		public const Guid CLSID_WbemAdministrativeLocator = .(0xcb8555cc, 0x9128, 0x11d1, 0xad, 0x9b, 0x00, 0xc0, 0x4f, 0xd8, 0xfd, 0xff);
+		public const Guid CLSID_WbemAuthenticatedLocator = .(0xcd184336, 0x9128, 0x11d1, 0xad, 0x9b, 0x00, 0xc0, 0x4f, 0xd8, 0xfd, 0xff);
+		public const Guid CLSID_WbemUnauthenticatedLocator = .(0x443e7b79, 0xde31, 0x11d2, 0xb3, 0x40, 0x00, 0x10, 0x4b, 0xcc, 0x4b, 0x4a);
+		public const Guid CLSID_WbemDecoupledRegistrar = .(0x4cfc7932, 0x0f9d, 0x4bef, 0x9c, 0x32, 0x8e, 0xa2, 0xa6, 0xb5, 0x6f, 0xcb);
+		public const Guid CLSID_WbemDecoupledBasicEventProvider = .(0xf5f75737, 0x2843, 0x4f22, 0x93, 0x3d, 0xc7, 0x6a, 0x97, 0xcd, 0xa6, 0x2f);
+		public const Guid CLSID_SWbemLocator = .(0x76a64158, 0xcb41, 0x11d1, 0x8b, 0x02, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+		public const Guid CLSID_SWbemNamedValueSet = .(0x9aed384e, 0xce8b, 0x11d1, 0x8b, 0x05, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+		public const Guid CLSID_SWbemObjectPath = .(0x5791bc26, 0xce9c, 0x11d1, 0x97, 0xbf, 0x00, 0x00, 0xf8, 0x1e, 0x84, 0x9c);
+		public const Guid CLSID_SWbemLastError = .(0xc2feeeac, 0xcfcd, 0x11d1, 0x8b, 0x05, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+		public const Guid CLSID_SWbemSink = .(0x75718c9a, 0xf029, 0x11d1, 0xa1, 0xac, 0x00, 0xc0, 0x4f, 0xb6, 0xc2, 0x23);
+		public const Guid CLSID_SWbemDateTime = .(0x47dfbe54, 0xcf76, 0x11d3, 0xb3, 0x8f, 0x00, 0x10, 0x5a, 0x1f, 0x47, 0x3a);
+		public const Guid CLSID_SWbemRefresher = .(0xd269bf5c, 0xd9c1, 0x11d3, 0xb3, 0x8f, 0x00, 0x10, 0x5a, 0x1f, 0x47, 0x3a);
+		public const Guid CLSID_SWbemServices = .(0x04b83d63, 0x21ae, 0x11d2, 0x8b, 0x33, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+		public const Guid CLSID_SWbemServicesEx = .(0x62e522dc, 0x8cf3, 0x40a8, 0x8b, 0x2e, 0x37, 0xd5, 0x95, 0x65, 0x1e, 0x40);
+		public const Guid CLSID_SWbemObject = .(0x04b83d62, 0x21ae, 0x11d2, 0x8b, 0x33, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+		public const Guid CLSID_SWbemObjectEx = .(0xd6bdafb2, 0x9435, 0x491f, 0xbb, 0x87, 0x6a, 0xa0, 0xf0, 0xbc, 0x31, 0xa2);
+		public const Guid CLSID_SWbemObjectSet = .(0x04b83d61, 0x21ae, 0x11d2, 0x8b, 0x33, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+		public const Guid CLSID_SWbemNamedValue = .(0x04b83d60, 0x21ae, 0x11d2, 0x8b, 0x33, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+		public const Guid CLSID_SWbemQualifier = .(0x04b83d5f, 0x21ae, 0x11d2, 0x8b, 0x33, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+		public const Guid CLSID_SWbemQualifierSet = .(0x04b83d5e, 0x21ae, 0x11d2, 0x8b, 0x33, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+		public const Guid CLSID_SWbemProperty = .(0x04b83d5d, 0x21ae, 0x11d2, 0x8b, 0x33, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+		public const Guid CLSID_SWbemPropertySet = .(0x04b83d5c, 0x21ae, 0x11d2, 0x8b, 0x33, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+		public const Guid CLSID_SWbemMethod = .(0x04b83d5b, 0x21ae, 0x11d2, 0x8b, 0x33, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+		public const Guid CLSID_SWbemMethodSet = .(0x04b83d5a, 0x21ae, 0x11d2, 0x8b, 0x33, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+		public const Guid CLSID_SWbemEventSource = .(0x04b83d58, 0x21ae, 0x11d2, 0x8b, 0x33, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+		public const Guid CLSID_SWbemSecurity = .(0xb54d66e9, 0x2287, 0x11d2, 0x8b, 0x33, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+		public const Guid CLSID_SWbemPrivilege = .(0x26ee67bc, 0x5804, 0x11d2, 0x8b, 0x4a, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+		public const Guid CLSID_SWbemPrivilegeSet = .(0x26ee67be, 0x5804, 0x11d2, 0x8b, 0x4a, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+		public const Guid CLSID_SWbemRefreshableItem = .(0x8c6854bc, 0xde4b, 0x11d3, 0xb3, 0x90, 0x00, 0x10, 0x5a, 0x1f, 0x47, 0x3a);
+		public const Guid CLSID_WMIExtension = .(0xf0975afe, 0x5c7f, 0x11d2, 0x8b, 0x74, 0x00, 0x10, 0x4b, 0x2a, 0xfb, 0x41);
+		public const Guid CLSID_WbemLevel1Login = .(0x8bc3f05e, 0xd86b, 0x11d0, 0xa0, 0x75, 0x00, 0xc0, 0x4f, 0xb6, 0x88, 0x20);
+		public const Guid CLSID_WbemLocalAddrRes = .(0xa1044801, 0x8f7e, 0x11d1, 0x9e, 0x7c, 0x00, 0xc0, 0x4f, 0xc3, 0x24, 0xa8);
+		public const Guid CLSID_WbemUninitializedClassObject = .(0x7a0227f6, 0x7108, 0x11d1, 0xad, 0x90, 0x00, 0xc0, 0x4f, 0xd8, 0xfd, 0xff);
+		public const Guid CLSID_WbemDCOMTransport = .(0xf7ce2e13, 0x8c90, 0x11d1, 0x9e, 0x7b, 0x00, 0xc0, 0x4f, 0xc3, 0x24, 0xa8);
+		
+		// --- COM Interfaces ---
+		
+		public struct IWbemPathKeyList {}
+		public struct IWbemPath {}
+		public struct IWbemQuery {}
+		public struct IWbemClassObject {}
+		public struct IWbemObjectAccess {}
+		public struct IWbemQualifierSet {}
+		public struct IWbemServices {}
+		public struct IWbemLocator {}
+		public struct IWbemObjectSink {}
+		public struct IEnumWbemClassObject {}
+		public struct IWbemCallResult {}
+		public struct IWbemContext {}
+		public struct IUnsecuredApartment {}
+		public struct IWbemUnsecuredApartment {}
+		public struct IWbemStatusCodeText {}
+		public struct IWbemBackupRestore {}
+		public struct IWbemBackupRestoreEx {}
+		public struct IWbemRefresher {}
+		public struct IWbemHiPerfEnum {}
+		public struct IWbemConfigureRefresher {}
+		public struct IWbemObjectSinkEx {}
+		public struct IWbemShutdown {}
+		public struct IWbemObjectTextSrc {}
+		public struct IMofCompiler {}
+		public struct IWbemPropertyProvider {}
+		public struct IWbemUnboundObjectSink {}
+		public struct IWbemEventProvider {}
+		public struct IWbemEventProviderQuerySink {}
+		public struct IWbemEventProviderSecurity {}
+		public struct IWbemEventConsumerProvider {}
+		public struct IWbemProviderInitSink {}
+		public struct IWbemProviderInit {}
+		public struct IWbemHiPerfProvider {}
+		public struct IWbemDecoupledRegistrar {}
+		public struct IWbemProviderIdentity {}
+		public struct IWbemDecoupledBasicEventProvider {}
+		public struct IWbemEventSink {}
+		public struct ISWbemServices {}
+		public struct ISWbemLocator {}
+		public struct ISWbemObject {}
+		public struct ISWbemObjectSet {}
+		public struct ISWbemNamedValue {}
+		public struct ISWbemNamedValueSet {}
+		public struct ISWbemQualifier {}
+		public struct ISWbemQualifierSet {}
+		public struct ISWbemProperty {}
+		public struct ISWbemPropertySet {}
+		public struct ISWbemMethod {}
+		public struct ISWbemMethodSet {}
+		public struct ISWbemEventSource {}
+		public struct ISWbemObjectPath {}
+		public struct ISWbemLastError {}
+		public struct ISWbemSinkEvents {}
+		public struct ISWbemSink {}
+		public struct ISWbemSecurity {}
+		public struct ISWbemPrivilege {}
+		public struct ISWbemPrivilegeSet {}
+		public struct ISWbemServicesEx {}
+		public struct ISWbemObjectEx {}
+		public struct ISWbemDateTime {}
+		public struct ISWbemRefresher {}
+		public struct ISWbemRefreshableItem {}
+		public struct IWMIExtension {}
+		public struct IWbemTransport {}
+		public struct IWbemLevel1Login {}
+		public struct IWbemConnectorLogin {}
+		public struct IWbemAddressResolution {}
+		public struct IWbemClientTransport {}
+		public struct IWbemClientConnectionTransport {}
+		public struct IWbemConstructClassObject {}
+		
+		// --- Functions ---
+		
+		[Import("mi.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern MI_Result MI_Application_InitializeV1(uint32 flags, uint16* applicationID, MI_Instance** extendedError, MI_Application* application);
+		
+	}
+}
