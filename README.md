@@ -8,6 +8,7 @@ This is an **_incomplete_**, **_untested_**, **_work in progress_**. Use at your
 
 - All the types, constants, and functions should be present.
 - COM classes are currently unusable.
+- DirectInput API is not present in the win32 metadata at all - Microsoft is trying to kill DI. I still plan to add manual bindings to it.
 - `PROPERTYKEY` constants aren't implemented yet. 
 - I had to remove 1 function (`CreateDispatcherQueueController`) because it uses a type that's not present in the JSON.
 - I removed another function, `System.TpmBaseServices.GetDeviceID`, because `GetDeviceID` is also defined in `Media.Audio.DirectSound`. But I think there's a way to import both. 
