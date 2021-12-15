@@ -187,6 +187,9 @@ namespace Win32
 		public const uint32 KSDSOUND_BUFFER_CTRL_PAN = 4;
 		public const uint32 KSDSOUND_BUFFER_CTRL_VOLUME = 8;
 		public const uint32 KSDSOUND_BUFFER_CTRL_POSITIONNOTIFY = 16;
+		public const PROPERTYKEY DEVPKEY_KsAudio_PacketSize_Constraints = .(.(0x13e004d6, 0xb066, 0x43bd, 0x91, 0x3b, 0xa4, 0x15, 0xcd, 0x13, 0xda, 0x87), 2);
+		public const PROPERTYKEY DEVPKEY_KsAudio_Controller_DeviceInterface_Path = .(.(0x13e004d6, 0xb066, 0x43bd, 0x91, 0x3b, 0xa4, 0x15, 0xcd, 0x13, 0xda, 0x87), 3);
+		public const PROPERTYKEY DEVPKEY_KsAudio_PacketSize_Constraints2 = .(.(0x9404f781, 0x7191, 0x409b, 0x8b, 0x0b, 0x80, 0xbf, 0x6e, 0xc2, 0x29, 0xae), 2);
 		public const int32 KSAUDIO_STEREO_SPEAKER_GEOMETRY_HEADPHONE = -1;
 		public const uint32 KSAUDIO_STEREO_SPEAKER_GEOMETRY_MIN = 5;
 		public const uint32 KSAUDIO_STEREO_SPEAKER_GEOMETRY_NARROW = 10;

@@ -9,12 +9,10 @@ This is an **_incomplete_**, **_untested_**, **_work in progress_**. Use at your
 - All the types, constants, and functions should be present.
 - COM classes are currently unusable.
 - DirectInput API is not present in the win32 metadata at all - Microsoft is trying to kill DI. I still plan to add manual bindings to it.
-- `PROPERTYKEY` constants aren't implemented yet. 
 - I had to remove 1 function (`CreateDispatcherQueueController`) because it uses a type that's not present in the JSON.
-- I removed another function, `System.TpmBaseServices.GetDeviceID`, because `GetDeviceID` is also defined in `Media.Audio.DirectSound`. But I think there's a way to import both. 
 - All the generated code is placed into a single static class - `Win32`. I might decide to group them in some other way later.
 - Some types had name conflicts. When that happens, I rename one of them `XYZ` -> `XYZ_ALT` or `XyzAbc` -> `XyzAbcAlt`.
-- Structs and unions with annonymous members are very annoying to access since Beef doesn't support annonymous members yet. I plan to add properties to make this easier.
+- Structs and unions with anonymous members are very annoying to access since Beef doesn't support anonymous members yet. I plan to add properties to make this easier.
 - Currently I ignore `[In]`/`[Out]`/`[Optional]` attributes on function parameters, but I plan to make `[Out]` pointer parameters either `ref` or `out`, and non-`[Optional]` pointer parameters `ref`.  
 
 ## How to run

@@ -343,6 +343,11 @@ namespace Win32
 		{
 			public Guid fmtid;
 			public uint32 pid;
+			public this(Guid fmtid, uint32 pid)
+			{
+				this.fmtid = fmtid;
+				this.pid = pid;
+			}
 		}
 		[CRepr]
 		public struct SERIALIZEDPROPSTORAGE

@@ -118,6 +118,8 @@ namespace Win32
 		[Import("tbs.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 Tbsi_Revoke_Attestation();
 		[Import("tbs.dll"), CLink, CallingConvention(.Stdcall)]
+		public static extern HRESULT GetDeviceID(uint8* pbWindowsAIK, uint32 cbWindowsAIK, uint32* pcbResult, BOOL* pfProtectedByTPM);
+		[Import("tbs.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetDeviceIDString(char16* pszWindowsAIK, uint32 cchWindowsAIK, uint32* pcchResult, BOOL* pfProtectedByTPM);
 		[Import("tbs.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 Tbsi_Create_Windows_Key(uint32 keyHandle);

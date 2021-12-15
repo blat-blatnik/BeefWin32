@@ -216,6 +216,8 @@ namespace Win32
 		public const HRESULT STIERR_DEVICE_NOTREADY = -2147024875;
 		public const uint32 IS_DIGITAL_CAMERA_VAL = 1;
 		public const uint32 SUPPORTS_MSCPLUS_VAL = 1;
+		public const PROPERTYKEY DEVPKEY_WIA_DeviceType = .(.(0x6bdd1fc6, 0x810f, 0x11d0, 0xbe, 0xc7, 0x08, 0x00, 0x2b, 0xe2, 0x09, 0x2f), 2);
+		public const PROPERTYKEY DEVPKEY_WIA_USDClassId = .(.(0x6bdd1fc6, 0x810f, 0x11d0, 0xbe, 0xc7, 0x08, 0x00, 0x2b, 0xe2, 0x09, 0x2f), 3);
 		public const uint32 STI_USD_GENCAP_NATIVE_PUSHSUPPORT = 1;
 		public const uint32 STI_DEVICE_CREATE_FOR_MONITOR = 16777216;
 		public const int32 lDEFAULT_PREFETCH_SIZE = 100;

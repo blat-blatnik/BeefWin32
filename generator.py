@@ -64,6 +64,7 @@ REPLACE_KEYWORD_NAMES = {
     'mut',
 }
 
+# Some APIs define the same names. To avoid name conflicts add one of them to this list along with a replacement.
 CONFLICTING_NAME_REPLACEMENTS = {
     'System.Mmc.IImageList' : 'IImageListAlt',
     'System.WindowsSync.IRangeException' : 'IRangeExceptionAlt',
@@ -71,23 +72,24 @@ CONFLICTING_NAME_REPLACEMENTS = {
     'NetworkManagement.QoS.POLICY_ELEMENT' : 'POLICY_ELEMENT_ALT',
     'NetworkManagement.NetworkPolicyServer.IDENTITY_TYPE' : 'IDENTITY_TYPE_ALT',
     'System.Mmc.IComponent' : 'IComponentAlt',
+    'System.TpmBaseServices.GetDeviceID' : 'GetDeviceIDAlt', # conflicts with Media.Audio.DirectSound.GetDeviceID
 }
 
-def replace_type_name(typename: str, namespace: str = '') -> str:
-    if typename in REPLACE_TYPE_NAMES:
-        typename = REPLACE_TYPE_NAMES[typename]
-    qualified_name = f'{namespace}.{typename}'
+def replace_name(name: str, namespace: str = '') -> str:
+    qualified_name = f'{namespace}.{name}'
     if qualified_name in CONFLICTING_NAME_REPLACEMENTS:
-        typename = CONFLICTING_NAME_REPLACEMENTS[qualified_name]
-    return typename
-
-def replace_name(name: str) -> str:
+        name = CONFLICTING_NAME_REPLACEMENTS[qualified_name]
     if name in REPLACE_KEYWORD_NAMES:
         return '@' + name
     else:
         return name
 
-def remove_common_prefix(prefix: str, name: str):
+def replace_type_name(typename: str, namespace: str = '') -> str:
+    if typename in REPLACE_TYPE_NAMES:
+        typename = REPLACE_TYPE_NAMES[typename]
+    return replace_name(typename, namespace)
+
+def remove_common_prefix(prefix: str, name: str) -> str:
     if name.startswith(prefix + '_'):
         return name.removeprefix(prefix + '_')
     
@@ -124,7 +126,7 @@ def get_type_name(type: dict) -> str:
     else:
         raise RuntimeError(f'Unexpected type kind "{kind}"')
 
-def remove_duplicate_names(objects: list[dict]) -> dict:
+def remove_duplicate_names(objects: list[dict]) -> list[dict]:
     existing_names = set()
     result = []
     for object in objects:
@@ -228,7 +230,9 @@ for filename in filenames:
                         guid = process_guid(value)
                         output.write(f'{indent}public const {type} {name} = .({guid});\n')
                     elif type == 'PROPERTYKEY':
-                        pass #TODO: Need to figure out how to handle this one.
+                        fmtid = process_guid(value['Fmtid'])
+                        pid = value['Pid']
+                        output.write(f'{indent}public const {type} {name} = .(.({fmtid}), {pid});\n')
                     elif type == 'String':
                         output.write(f'{indent}public const {type} {name} = "{value}";\n')
                     elif type == 'float':
@@ -340,6 +344,19 @@ for filename in filenames:
                             for nested_type in nested_types:
                                 process_type(nested_type)
 
+                        # This struct is used as a constant - ideally we would initialize a PROPERTYKEY const like this:
+                        #   public const PROPERTYKEY pk = .{ fmtid=..., pid=... };
+                        # However constants currently can't be brace initialized, see https://github.com/beefytech/Beef/issues/1278.
+                        # So instead we initialize them with a constructor.
+                        if name == 'PROPERTYKEY':
+                            output.write(f'{indent}public this(Guid fmtid, uint32 pid)\n')
+                            output.write(f'{indent}{{\n')
+                            indent += '\t'
+                            output.write(f'{indent}this.fmtid = fmtid;\n')    
+                            output.write(f'{indent}this.pid = pid;\n')    
+                            indent = indent[:-1]
+                            output.write(f'{indent}}}\n')
+
                         indent = indent[:-1]
                         output.write(f'{indent}}}\n')
                     process_type(type)
@@ -362,6 +379,8 @@ for filename in filenames:
                 output.write(f'{indent}\n')
 
                 for interface in com_interfaces:
+                    if interface['Kind'] != 'Com':
+                        x = 123
                     name = replace_type_name(interface['Name'], namespace_name)
                     output.write(f'{indent}public struct {name} {{}}\n')
 
@@ -372,17 +391,11 @@ for filename in filenames:
                 output.write(f'{indent}\n')
 
                 for function in functions:
-                    name = function['Name']
+                    name = replace_name(function['Name'])
 
                     # CreateDispatcherQueueController uses a type that's never defined anywhere (DispatcherQueueController)
                     # So we just skip this function completely.. who needs it anyways :)
                     if name == 'CreateDispatcherQueueController':
-                        continue
-
-                    # System.TpmBaseServices and Media.Audio.DirectSound both define GetDeviceID...
-                    # So we just have to skip one of them?
-                    # TODO: Check if we separate the namespaces if we still need to skip one of them. 
-                    if name == 'GetDeviceID' and namespace_name == 'System.TpmBaseServices':
                         continue
 
                     import_name = function['DllImport'].lower()

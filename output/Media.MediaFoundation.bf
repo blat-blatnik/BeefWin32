@@ -1111,6 +1111,7 @@ namespace Win32
 		public const uint32 MF_QUOTA_EXCEEDED_ERR = 2154823702;
 		public const uint32 MF_PARSE_ERR = 2154823761;
 		public const uint32 MF_TYPE_ERR = 2154840069;
+		public const PROPERTYKEY DEVPKEY_DeviceInterface_IsVirtualCamera = .(.(0x6edc630d, 0xc2e3, 0x43b7, 0xb2, 0xd1, 0x20, 0x52, 0x5a, 0x1a, 0xf1, 0x20), 3);
 		public const String g_wszSpeechFormatCaps = "SpeechFormatCap";
 		public const String g_wszWMCPCodecName = "_CODECNAME";
 		public const String g_wszWMCPSupportedVBRModes = "_SUPPORTEDVBRMODES";
