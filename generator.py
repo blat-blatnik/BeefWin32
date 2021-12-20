@@ -1,6 +1,7 @@
 import os
 import json
 
+debug_num_bitfields = 0
 INPUT = 'json'
 OUTPUT = 'output'
 
@@ -335,6 +336,9 @@ for filename in filenames:
                         fields = type['Fields']
                         for field in fields:
                             field_name = replace_name(field['Name'])
+                            if field_name == '_bitfield':
+                                global debug_num_bitfields
+                                debug_num_bitfields += 1
                             field_type = get_type_name(field['Type'])
                             output.write(f'{indent}public {field_type} {field_name};\n')
 
@@ -421,3 +425,5 @@ for filename in filenames:
             output.write(f'{indent}}}\n')
             indent = indent[:-1]
             output.write(f'{indent}}}\n')
+
+print(debug_num_bitfields)
