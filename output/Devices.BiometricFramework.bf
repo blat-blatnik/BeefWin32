@@ -114,7 +114,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WINBIO_SETTING_SOURCE : uint32
 		{
 			INVALID = 0,
@@ -122,27 +121,23 @@ namespace Win32
 			LOCAL = 3,
 			POLICY = 2,
 		}
-		[AllowDuplicates]
 		public enum WINBIO_COMPONENT : uint32
 		{
 			SENSOR = 1,
 			ENGINE = 2,
 			STORAGE = 3,
 		}
-		[AllowDuplicates]
 		public enum WINBIO_POOL : uint32
 		{
 			SYSTEM = 1,
 			PRIVATE = 2,
 		}
-		[AllowDuplicates]
 		public enum WINBIO_ANTI_SPOOF_POLICY_ACTION : int32
 		{
 			DISABLE = 0,
 			ENABLE = 1,
 			REMOVE = 2,
 		}
-		[AllowDuplicates]
 		public enum WINBIO_POLICY_SOURCE : int32
 		{
 			UNKNOWN = 0,
@@ -150,26 +145,22 @@ namespace Win32
 			LOCAL = 2,
 			ADMIN = 3,
 		}
-		[AllowDuplicates]
 		public enum WINBIO_CREDENTIAL_TYPE : int32
 		{
 			PASSWORD = 1,
 			ALL = -1,
 		}
-		[AllowDuplicates]
 		public enum WINBIO_CREDENTIAL_FORMAT : int32
 		{
 			GENERIC = 1,
 			PACKED = 2,
 			PROTECTED = 3,
 		}
-		[AllowDuplicates]
 		public enum WINBIO_CREDENTIAL_STATE : int32
 		{
 			NOT_SET = 1,
 			SET = 2,
 		}
-		[AllowDuplicates]
 		public enum WINBIO_ASYNC_NOTIFICATION_METHOD : int32
 		{
 			NONE = 0,

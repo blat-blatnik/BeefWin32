@@ -24,7 +24,6 @@ namespace Win32
 			PRESSANDTAP = 7,
 			ROLLOVER = 7,
 		}
-		[AllowDuplicates]
 		public enum TOUCHEVENTF_FLAGS : uint32
 		{
 			MOVE = 1,
@@ -36,20 +35,17 @@ namespace Win32
 			PEN = 64,
 			PALM = 128,
 		}
-		[AllowDuplicates]
 		public enum TOUCHINPUTMASKF_MASK : uint32
 		{
 			TIMEFROMSYSTEM = 1,
 			EXTRAINFO = 2,
 			CONTACTAREA = 4,
 		}
-		[AllowDuplicates]
 		public enum REGISTER_TOUCH_WINDOW_FLAGS : uint32
 		{
 			FINETOUCH = 1,
 			WANTPALM = 2,
 		}
-		[AllowDuplicates]
 		public enum MANIPULATION_PROCESSOR_MANIPULATIONS : int32
 		{
 			NONE = 0,

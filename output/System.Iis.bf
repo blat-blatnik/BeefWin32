@@ -872,7 +872,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum FTP_ACCESS : int32
 		{
 			NONE = 0,
@@ -880,7 +879,6 @@ namespace Win32
 			WRITE = 2,
 			READ_WRITE = 3,
 		}
-		[AllowDuplicates]
 		public enum FTP_PROCESS_STATUS : int32
 		{
 			CONTINUE = 0,
@@ -888,7 +886,6 @@ namespace Win32
 			TERMINATE_SESSION = 2,
 			REJECT_COMMAND = 3,
 		}
-		[AllowDuplicates]
 		public enum METADATATYPES : int32
 		{
 			ALL_METADATA = 0,
@@ -899,7 +896,6 @@ namespace Win32
 			MULTISZ_METADATA = 5,
 			INVALID_END_METADATA = 6,
 		}
-		[AllowDuplicates]
 		public enum SF_REQ_TYPE : int32
 		{
 			SEND_RESPONSE_HEADER = 0,
@@ -912,13 +908,11 @@ namespace Win32
 			NORMALIZE_URL = 7,
 			DISABLE_NOTIFICATIONS = 8,
 		}
-		[AllowDuplicates]
 		public enum SF_PROPERTY_IIS : int32
 		{
 			SSL_CTXT = 0,
 			INSTANCE_NUM_ID = 1,
 		}
-		[AllowDuplicates]
 		public enum SF_STATUS_TYPE : int32
 		{
 			FINISHED = 134217728,
@@ -928,7 +922,6 @@ namespace Win32
 			ERROR = 134217732,
 			READ_NEXT = 134217733,
 		}
-		[AllowDuplicates]
 		public enum HTTP_TRACE_TYPE : int32
 		{
 			BYTE = 17,

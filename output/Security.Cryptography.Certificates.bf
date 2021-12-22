@@ -411,20 +411,17 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum CERT_VIEW_COLUMN_INDEX : int32
 		{
 			LOG_DEFAULT = -2,
 			LOG_FAILED_DEFAULT = -3,
 			QUEUE_DEFAULT = -1,
 		}
-		[AllowDuplicates]
 		public enum CERT_DELETE_ROW_FLAGS : uint32
 		{
 			EXPIRED = 1,
 			REQUEST_LAST_CHANGED = 2,
 		}
-		[AllowDuplicates]
 		public enum FULL_RESPONSE_PROPERTY_ID : uint32
 		{
 			NONE = 0,
@@ -450,7 +447,6 @@ namespace Win32
 			ATTESTATIONCHALLENGE = 20,
 			ATTESTATIONPROVIDERNAME = 21,
 		}
-		[AllowDuplicates]
 		public enum CVRC_COLUMN : uint32
 		{
 			SCHEMA = 0,
@@ -458,14 +454,12 @@ namespace Win32
 			VALUE = 2,
 			MASK = 4095,
 		}
-		[AllowDuplicates]
 		public enum CERT_IMPORT_FLAGS : uint32
 		{
 			ASE64HEADER = 0,
 			ASE64 = 1,
 			INARY = 2,
 		}
-		[AllowDuplicates]
 		public enum CERT_GET_CONFIG_FLAGS : uint32
 		{
 			DEFAULTCONFIG = 0,
@@ -475,7 +469,6 @@ namespace Win32
 			UIPICKCONFIG = 1,
 			UIPICKCONFIGSKIPLOCALCA_ = 5,
 		}
-		[AllowDuplicates]
 		public enum ENUM_CERT_COLUMN_VALUE_FLAGS : uint32
 		{
 			BASE64 = 1,
@@ -488,7 +481,6 @@ namespace Win32
 			HEXASCII = 5,
 			HEXASCIIADDR = 11,
 		}
-		[AllowDuplicates]
 		public enum PENDING_REQUEST_DESIRED_PROPERTY : uint32
 		{
 			CADNS = 1,
@@ -497,7 +489,6 @@ namespace Win32
 			HASH = 8,
 			REQUESTID = 4,
 		}
-		[AllowDuplicates]
 		public enum CERTADMIN_GET_ROLES_FLAGS : uint32
 		{
 			ADMIN = 1,
@@ -507,7 +498,6 @@ namespace Win32
 			OPERATOR = 8,
 			READ = 256,
 		}
-		[AllowDuplicates]
 		public enum CR_DISP : uint32
 		{
 			DENIED = 2,
@@ -517,14 +507,12 @@ namespace Win32
 			ISSUED_OUT_OF_BAND = 4,
 			UNDER_SUBMISSION = 5,
 		}
-		[AllowDuplicates]
 		public enum XEKL_KEYSIZE : uint32
 		{
 			MIN = 1,
 			MAX = 2,
 			INC = 3,
 		}
-		[AllowDuplicates]
 		public enum CERT_CREATE_REQUEST_FLAGS : uint32
 		{
 			CMC = 3,
@@ -532,7 +520,6 @@ namespace Win32
 			PKCS10_V2_0 = 1,
 			PKCS7 = 2,
 		}
-		[AllowDuplicates]
 		public enum CERT_EXIT_EVENT_MASK : uint32
 		{
 			CERTDENIED = 4,
@@ -543,13 +530,11 @@ namespace Win32
 			CRLISSUED = 32,
 			SHUTDOWN = 64,
 		}
-		[AllowDuplicates]
 		public enum ADDED_CERT_TYPE : uint32
 		{
 			_1 = 1,
 			_2 = 2,
 		}
-		[AllowDuplicates]
 		public enum CVRC_TABLE : uint32
 		{
 			ATTRIBUTES = 16384,
@@ -557,7 +542,6 @@ namespace Win32
 			EXTENSIONS = 12288,
 			REQCERT = 0,
 		}
-		[AllowDuplicates]
 		public enum CERT_PROPERTY_TYPE : uint32
 		{
 			BINARY = 3,
@@ -565,7 +549,6 @@ namespace Win32
 			LONG = 1,
 			STRING = 4,
 		}
-		[AllowDuplicates]
 		public enum CERT_ALT_NAME : uint32
 		{
 			RFC822_NAME = 2,
@@ -576,26 +559,22 @@ namespace Win32
 			IP_ADDRESS = 8,
 			OTHER_NAME = 1,
 		}
-		[AllowDuplicates]
 		public enum CSBACKUP_TYPE : uint32
 		{
 			FULL = 1,
 			LOGS_ONLY = 2,
 		}
-		[AllowDuplicates]
 		public enum XEKL_KEYSPEC : uint32
 		{
 			KEYX = 1,
 			SIG = 2,
 		}
-		[AllowDuplicates]
 		public enum CERT_REQUEST_OUT_TYPE : uint32
 		{
 			ASE64HEADER = 0,
 			ASE64 = 1,
 			INARY = 2,
 		}
-		[AllowDuplicates]
 		public enum CERT_VIEW_SEEK_OPERATOR_FLAGS : uint32
 		{
 			EQ = 1,
@@ -604,7 +583,6 @@ namespace Win32
 			GE = 8,
 			GT = 16,
 		}
-		[AllowDuplicates]
 		public enum OCSPSigningFlag : int32
 		{
 			SILENT = 1,
@@ -618,12 +596,10 @@ namespace Win32
 			ALLOW_NONCE_EXTENSION = 256,
 			ALLOW_SIGNINGCERT_AUTOENROLLMENT = 512,
 		}
-		[AllowDuplicates]
 		public enum OCSPRequestFlag : int32
 		{
 			OCSP_RF_REJECT_SIGNED_REQUESTS = 1,
 		}
-		[AllowDuplicates]
 		public enum X509EnrollmentAuthFlags : int32
 		{
 			None = 0,
@@ -632,7 +608,6 @@ namespace Win32
 			Username = 4,
 			Certificate = 8,
 		}
-		[AllowDuplicates]
 		public enum X509SCEPMessageType : int32
 		{
 			Unknown = -1,
@@ -643,7 +618,6 @@ namespace Win32
 			GetCRL = 22,
 			ClaimChallengeAnswer = 41,
 		}
-		[AllowDuplicates]
 		public enum X509SCEPDisposition : int32
 		{
 			Unknown = -1,
@@ -652,7 +626,6 @@ namespace Win32
 			Pending = 3,
 			PendingChallenge = 11,
 		}
-		[AllowDuplicates]
 		public enum X509SCEPFailInfo : int32
 		{
 			Unknown = -1,
@@ -662,7 +635,6 @@ namespace Win32
 			BadTime = 3,
 			BadCertId = 4,
 		}
-		[AllowDuplicates]
 		public enum CERTENROLL_OBJECTID : int32
 		{
 			_NONE = 0,
@@ -1104,13 +1076,11 @@ namespace Win32
 			_ENROLL_ENCRYPTION_ALGORITHM = 437,
 			_ENROLL_KSP_NAME = 438,
 		}
-		[AllowDuplicates]
 		public enum WebSecurityLevel : int32
 		{
 			Unsafe = 0,
 			Safe = 1,
 		}
-		[AllowDuplicates]
 		public enum EncodingType : int32
 		{
 			BASE64HEADER = 0,
@@ -1136,7 +1106,6 @@ namespace Win32
 			NOCRLF = 1073741824,
 			NOCR = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum PFXExportOptions : int32
 		{
 			EEOnly = 0,
@@ -1167,20 +1136,17 @@ namespace Win32
 			OID_INFO_OID_GROUP_BIT_LEN_SHIFT = 16,
 			KEY_LENGTH_MASK = 268369920,
 		}
-		[AllowDuplicates]
 		public enum ObjectIdPublicKeyFlags : int32
 		{
 			ANY = 0,
 			SIGN_KEY_FLAG = -2147483648,
 			ENCRYPT_KEY_FLAG = 1073741824,
 		}
-		[AllowDuplicates]
 		public enum AlgorithmFlags : int32
 		{
 			None = 0,
 			Wrap = 1,
 		}
-		[AllowDuplicates]
 		public enum X500NameFlags : int32
 		{
 			NAME_STR_NONE = 0,
@@ -1204,7 +1170,6 @@ namespace Win32
 			NAME_STR_ENABLE_PUNYCODE_FLAG = 2097152,
 			NAME_STR_DS_ESCAPED = 8388608,
 		}
-		[AllowDuplicates]
 		public enum X509CertificateEnrollmentContext : int32
 		{
 			None = 0,
@@ -1212,7 +1177,6 @@ namespace Win32
 			Machine = 2,
 			AdministratorForceMachine = 3,
 		}
-		[AllowDuplicates]
 		public enum EnrollmentEnrollStatus : int32
 		{
 			ed = 1,
@@ -1223,19 +1187,16 @@ namespace Win32
 			Skipped = 64,
 			Denied = 256,
 		}
-		[AllowDuplicates]
 		public enum EnrollmentSelectionStatus : int32
 		{
 			No = 0,
 			Yes = 1,
 		}
-		[AllowDuplicates]
 		public enum EnrollmentDisplayStatus : int32
 		{
 			No = 0,
 			Yes = 1,
 		}
-		[AllowDuplicates]
 		public enum X509ProviderType : int32
 		{
 			NONE = 0,
@@ -1258,7 +1219,6 @@ namespace Win32
 			REPLACE_OWF = 23,
 			RSA_AES = 24,
 		}
-		[AllowDuplicates]
 		public enum AlgorithmType : int32
 		{
 			UNKNOWN_INTERFACE = 0,
@@ -1270,7 +1230,6 @@ namespace Win32
 			RNG_INTERFACE = 6,
 			KEY_DERIVATION_INTERFACE = 7,
 		}
-		[AllowDuplicates]
 		public enum AlgorithmOperationFlags : int32
 		{
 			NO_OPERATION = 0,
@@ -1287,14 +1246,12 @@ namespace Win32
 			EXACT_MATCH_OPERATION = 8388608,
 			PREFERENCE_MASK_OPERATION = 14680064,
 		}
-		[AllowDuplicates]
 		public enum X509KeySpec : int32
 		{
 			NONE = 0,
 			KEYEXCHANGE = 1,
 			SIGNATURE = 2,
 		}
-		[AllowDuplicates]
 		public enum KeyIdentifierHashAlgorithm : int32
 		{
 			Default = 0,
@@ -1303,7 +1260,6 @@ namespace Win32
 			Sha256 = 3,
 			HPKP = 5,
 		}
-		[AllowDuplicates]
 		public enum X509PrivateKeyExportFlags : int32
 		{
 			EXPORT_NONE = 0,
@@ -1312,7 +1268,6 @@ namespace Win32
 			ARCHIVING_FLAG = 4,
 			PLAINTEXT_ARCHIVING_FLAG = 8,
 		}
-		[AllowDuplicates]
 		public enum X509PrivateKeyUsageFlags : int32
 		{
 			USAGES_NONE = 0,
@@ -1322,7 +1277,6 @@ namespace Win32
 			KEY_IMPORT_FLAG = 8,
 			ALL_USAGES = 16777215,
 		}
-		[AllowDuplicates]
 		public enum X509PrivateKeyProtection : int32
 		{
 			NO_PROTECTION_FLAG = 0,
@@ -1331,7 +1285,6 @@ namespace Win32
 			FINGERPRINT_PROTECTION_FLAG = 4,
 			APPCONTAINER_ACCESS_MEDIUM_FLAG = 8,
 		}
-		[AllowDuplicates]
 		public enum X509PrivateKeyVerify : int32
 		{
 			None = 0,
@@ -1340,7 +1293,6 @@ namespace Win32
 			SmartCardSilent = 3,
 			AllowUI = 4,
 		}
-		[AllowDuplicates]
 		public enum X509HardwareKeyUsageFlags : int32
 		{
 			PCP_NONE = 0,
@@ -1351,7 +1303,6 @@ namespace Win32
 			PCP_STORAGE_KEY = 4,
 			PCP_IDENTITY_KEY = 8,
 		}
-		[AllowDuplicates]
 		public enum X509KeyParametersExportType : int32
 		{
 			NONE = 0,
@@ -1373,7 +1324,6 @@ namespace Win32
 			ENCIPHER_ONLY_KEY_USAGE = 1,
 			DECIPHER_ONLY_KEY_USAGE = 32768,
 		}
-		[AllowDuplicates]
 		public enum AlternativeNameType : int32
 		{
 			UNKNOWN = 0,
@@ -1389,7 +1339,6 @@ namespace Win32
 			GUID = 10,
 			USER_PRINCIPLE_NAME = 11,
 		}
-		[AllowDuplicates]
 		public enum PolicyQualifierType : int32
 		{
 			Unknown = 0,
@@ -1397,7 +1346,6 @@ namespace Win32
 			UserNotice = 2,
 			Flags = 3,
 		}
-		[AllowDuplicates]
 		public enum RequestClientInfoClientId : int32
 		{
 			None = 0,
@@ -1518,13 +1466,11 @@ namespace Win32
 			CERT_LAST_USER_PROP_ID = 65535,
 			CERT_STORE_LOCALIZED_NAME_PROP_ID = 4096,
 		}
-		[AllowDuplicates]
 		public enum EnrollmentPolicyServerPropertyFlags : int32
 		{
 			None = 0,
 			PolicyServer = 1,
 		}
-		[AllowDuplicates]
 		public enum PolicyServerUrlFlags : int32
 		{
 			None = 0,
@@ -1534,7 +1480,6 @@ namespace Win32
 			AutoEnrollmentEnabled = 16,
 			AllowUnTrustedCA = 32,
 		}
-		[AllowDuplicates]
 		public enum EnrollmentTemplateProperty : int32
 		{
 			CommonName = 1,
@@ -1569,7 +1514,6 @@ namespace Win32
 			ValidityPeriod = 30,
 			RenewalPeriod = 31,
 		}
-		[AllowDuplicates]
 		public enum CommitTemplateFlags : int32
 		{
 			SaveTemplateGenerateOID = 1,
@@ -1577,7 +1521,6 @@ namespace Win32
 			SaveTemplateOverwrite = 3,
 			DeleteTemplate = 4,
 		}
-		[AllowDuplicates]
 		public enum EnrollmentCAProperty : int32
 		{
 			CommonName = 1,
@@ -1593,7 +1536,6 @@ namespace Win32
 			Security = 11,
 			RenewalOnly = 12,
 		}
-		[AllowDuplicates]
 		public enum X509EnrollmentPolicyLoadOption : int32
 		{
 			Default = 0,
@@ -1601,26 +1543,22 @@ namespace Win32
 			Reload = 2,
 			RegisterForADChanges = 4,
 		}
-		[AllowDuplicates]
 		public enum EnrollmentPolicyFlags : int32
 		{
 			GroupPolicyList = 2,
 			UserServerList = 4,
 		}
-		[AllowDuplicates]
 		public enum PolicyServerUrlPropertyID : int32
 		{
 			PolicyID = 0,
 			FriendlyName = 1,
 		}
-		[AllowDuplicates]
 		public enum X509EnrollmentPolicyExportFlags : int32
 		{
 			Templates = 1,
 			OIDs = 2,
 			CAs = 4,
 		}
-		[AllowDuplicates]
 		public enum X509RequestType : int32
 		{
 			Any = 0,
@@ -1629,7 +1567,6 @@ namespace Win32
 			Cmc = 3,
 			Certificate = 4,
 		}
-		[AllowDuplicates]
 		public enum X509RequestInheritOptions : int32
 		{
 			Default = 0,
@@ -1647,19 +1584,16 @@ namespace Win32
 			ValidityPeriodFlag = 1024,
 			Reserved80000000 = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum InnerRequestLevel : int32
 		{
 			Innermost = 0,
 			Next = 1,
 		}
-		[AllowDuplicates]
 		public enum Pkcs10AllowedSignatureTypes : int32
 		{
 			KeySignature = 1,
 			NullSignature = 2,
 		}
-		[AllowDuplicates]
 		public enum KeyAttestationClaimType : int32
 		{
 			NONE = 0,
@@ -1668,7 +1602,6 @@ namespace Win32
 			SUBJECT_ONLY = 2,
 			UNKNOWN = 4096,
 		}
-		[AllowDuplicates]
 		public enum InstallResponseRestrictionFlags : int32
 		{
 			None = 0,
@@ -1676,12 +1609,10 @@ namespace Win32
 			UntrustedCertificate = 2,
 			UntrustedRoot = 4,
 		}
-		[AllowDuplicates]
 		public enum WebEnrollmentFlags : int32
 		{
 			EnrollPrompt = 1,
 		}
-		[AllowDuplicates]
 		public enum CRLRevocationReason : int32
 		{
 			UNSPECIFIED = 0,
@@ -1695,13 +1626,11 @@ namespace Win32
 			PRIVILEGE_WITHDRAWN = 9,
 			AA_COMPROMISE = 10,
 		}
-		[AllowDuplicates]
 		public enum X509SCEPProcessMessageFlags : int32
 		{
 			Default = 0,
 			SkipCertInstall = 1,
 		}
-		[AllowDuplicates]
 		public enum DelayRetryAction : int32
 		{
 			Unknown = 0,
@@ -1711,7 +1640,6 @@ namespace Win32
 			Success = 4,
 			PastSuccess = 5,
 		}
-		[AllowDuplicates]
 		public enum X509CertificateTemplateGeneralFlag : int32
 		{
 			MachineType = 64,
@@ -1721,7 +1649,6 @@ namespace Win32
 			Modified = 131072,
 			DonotPersist = 4096,
 		}
-		[AllowDuplicates]
 		public enum X509CertificateTemplateEnrollmentFlag : int32
 		{
 			IncludeSymmetricAlgorithms = 1,
@@ -1744,7 +1671,6 @@ namespace Win32
 			CertificateIssuancePoliciesFromRequest = 131072,
 			SkipAutoRenewal = 262144,
 		}
-		[AllowDuplicates]
 		public enum X509CertificateTemplateSubjectNameFlag : int32
 		{
 			NameEnrolleeSupplies = 1,
@@ -1785,7 +1711,6 @@ namespace Win32
 			ClientVersionMask = 251658240,
 			ClientVersionShift = 24,
 		}
-		[AllowDuplicates]
 		public enum ImportPFXFlags : int32
 		{
 			None = 0,
@@ -1802,7 +1727,6 @@ namespace Win32
 			InstallChain = 1024,
 			InstallChainAndRoot = 2048,
 		}
-		[AllowDuplicates]
 		public enum ENUM_CATYPES : int32
 		{
 			ENTERPRISE_ROOTCA = 0,

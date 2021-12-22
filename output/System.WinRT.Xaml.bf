@@ -11,7 +11,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum XAML_REFERENCETRACKER_DISCONNECT : int32
 		{
 			DEFAULT = 0,

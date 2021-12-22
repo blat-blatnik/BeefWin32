@@ -83,7 +83,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DDE_ENABLE_CALLBACK_CMD : uint32
 		{
 			ENABLEALL = 0,
@@ -91,7 +90,6 @@ namespace Win32
 			DISABLE = 8,
 			QUERYWAITING = 2,
 		}
-		[AllowDuplicates]
 		public enum DDE_INITIALIZE_COMMAND : uint32
 		{
 			APPCLASS_MONITOR = 1,
@@ -118,7 +116,6 @@ namespace Win32
 			MF_POSTMSGS = 67108864,
 			MF_SENDMSGS = 33554432,
 		}
-		[AllowDuplicates]
 		public enum DDE_NAME_SERVICE_CMD : uint32
 		{
 			REGISTER = 1,
@@ -126,7 +123,6 @@ namespace Win32
 			FILTERON = 4,
 			FILTEROFF = 8,
 		}
-		[AllowDuplicates]
 		public enum DDE_CLIENT_TRANSACTION_TYPE : uint32
 		{
 			ADVSTART = 4144,
@@ -145,7 +141,6 @@ namespace Win32
 			WILDCONNECT = 8418,
 			XACT_COMPLETE = 32896,
 		}
-		[AllowDuplicates]
 		public enum CONVINFO_CONVERSATION_STATE : uint32
 		{
 			ADVACKRCVD = 13,
@@ -166,7 +161,6 @@ namespace Win32
 			UNADVACKRCVD = 14,
 			UNADVSENT = 12,
 		}
-		[AllowDuplicates]
 		public enum CONVINFO_STATUS : uint32
 		{
 			ADVISE = 2,

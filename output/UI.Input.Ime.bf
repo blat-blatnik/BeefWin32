@@ -645,7 +645,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum SET_COMPOSITION_STRING_TYPE : uint32
 		{
 			SETSTR = 9,
@@ -654,7 +653,6 @@ namespace Win32
 			SETRECONVERTSTRING = 65536,
 			QUERYRECONVERTSTRING = 131072,
 		}
-		[AllowDuplicates]
 		public enum GET_GUIDE_LINE_TYPE : uint32
 		{
 			LEVEL = 1,
@@ -662,7 +660,6 @@ namespace Win32
 			STRING = 3,
 			PRIVATE = 4,
 		}
-		[AllowDuplicates]
 		public enum NOTIFY_IME_INDEX : uint32
 		{
 			CANCEL = 4,
@@ -670,7 +667,6 @@ namespace Win32
 			CONVERT = 2,
 			REVERT = 3,
 		}
-		[AllowDuplicates]
 		public enum NOTIFY_IME_ACTION : uint32
 		{
 			CHANGECANDIDATELIST = 19,
@@ -682,14 +678,12 @@ namespace Win32
 			SETCANDIDATE_PAGESIZE = 23,
 			SETCANDIDATE_PAGESTART = 22,
 		}
-		[AllowDuplicates]
 		public enum GET_CONVERSION_LIST_FLAG : uint32
 		{
 			CONVERSION = 1,
 			REVERSECONVERSION = 2,
 			REVERSE_LENGTH = 3,
 		}
-		[AllowDuplicates]
 		public enum IME_PAD_REQUEST_FLAGS : uint32
 		{
 			INSERTSTRING = 4097,
@@ -712,14 +706,12 @@ namespace Win32
 			GETVERSION = 4127,
 			GETCURRENTIMEINFO = 4128,
 		}
-		[AllowDuplicates]
 		public enum IMEREG : int32
 		{
 			HEAD = 0,
 			TAIL = 1,
 			DEL = 2,
 		}
-		[AllowDuplicates]
 		public enum IMEFMT : int32
 		{
 			UNKNOWN = 0,
@@ -750,7 +742,6 @@ namespace Win32
 			PIME2_BIN_SYSTEM = 25,
 			PIME2_BIN_STANDARD_SYSTEM = 26,
 		}
-		[AllowDuplicates]
 		public enum IMEUCT : int32
 		{
 			NONE = 0,
@@ -759,7 +750,6 @@ namespace Win32
 			USER_DEFINED = 3,
 			MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum IMEREL : int32
 		{
 			NONE = 0,

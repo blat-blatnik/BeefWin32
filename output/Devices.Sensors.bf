@@ -143,20 +143,17 @@ namespace Win32
 			ERROR = 5,
 			MAX = 5,
 		}
-		[AllowDuplicates]
 		public enum SensorConnectionType : int32
 		{
 			INTEGRATED = 0,
 			ATTACHED = 1,
 			EXTERNAL = 2,
 		}
-		[AllowDuplicates]
 		public enum LOCATION_DESIRED_ACCURACY : int32
 		{
 			DEFAULT = 0,
 			HIGH = 1,
 		}
-		[AllowDuplicates]
 		public enum LOCATION_POSITION_SOURCE : int32
 		{
 			CELLULAR = 0,
@@ -165,7 +162,6 @@ namespace Win32
 			IPADDRESS = 3,
 			UNKNOWN = 4,
 		}
-		[AllowDuplicates]
 		public enum SimpleDeviceOrientation : int32
 		{
 			NOT_ROTATED = 0,
@@ -175,7 +171,6 @@ namespace Win32
 			ROTATED_FACE_UP = 4,
 			ROTATED_FACE_DOWN = 5,
 		}
-		[AllowDuplicates]
 		public enum MagnetometerAccuracy : int32
 		{
 			UNKNOWN = 0,
@@ -183,12 +178,10 @@ namespace Win32
 			APPROXIMATE = 2,
 			HIGH = 3,
 		}
-		[AllowDuplicates]
 		public enum ACTIVITY_STATE_COUNT : int32
 		{
 			ActivityStateCount = 8,
 		}
-		[AllowDuplicates]
 		public enum ACTIVITY_STATE : int32
 		{
 			Unknown = 1,
@@ -202,7 +195,6 @@ namespace Win32
 			Max = 256,
 			Force_Dword = -1,
 		}
-		[AllowDuplicates]
 		public enum ELEVATION_CHANGE_MODE : int32
 		{
 			Unknown = 0,
@@ -211,7 +203,6 @@ namespace Win32
 			Max = 3,
 			Force_Dword = -1,
 		}
-		[AllowDuplicates]
 		public enum MAGNETOMETER_ACCURACY : int32
 		{
 			Unknown = 0,
@@ -219,12 +210,10 @@ namespace Win32
 			Approximate = 2,
 			High = 3,
 		}
-		[AllowDuplicates]
 		public enum PEDOMETER_STEP_TYPE_COUNT : int32
 		{
 			PedometerStepTypeCount = 3,
 		}
-		[AllowDuplicates]
 		public enum PEDOMETER_STEP_TYPE : int32
 		{
 			Unknown = 1,
@@ -233,19 +222,16 @@ namespace Win32
 			Max = 8,
 			Force_Dword = -1,
 		}
-		[AllowDuplicates]
 		public enum PROXIMITY_TYPE : int32
 		{
 			ObjectProximity = 0,
 			HumanProximity = 1,
 			Force_Dword = -1,
 		}
-		[AllowDuplicates]
 		public enum HUMAN_PRESENCE_DETECTION_TYPE_COUNT : int32
 		{
 			HumanPresenceDetectionTypeCount = 4,
 		}
-		[AllowDuplicates]
 		public enum HUMAN_PRESENCE_DETECTION_TYPE : int32
 		{
 			VendorDefinedNonBiometric = 1,
@@ -254,7 +240,6 @@ namespace Win32
 			AudioBiometric = 8,
 			Force_Dword = -1,
 		}
-		[AllowDuplicates]
 		public enum SIMPLE_DEVICE_ORIENTATION : int32
 		{
 			NotRotated = 0,
@@ -264,7 +249,6 @@ namespace Win32
 			Faceup = 4,
 			Facedown = 5,
 		}
-		[AllowDuplicates]
 		public enum SENSOR_STATE : int32
 		{
 			Initializing = 0,
@@ -272,14 +256,12 @@ namespace Win32
 			Active = 2,
 			Error = 3,
 		}
-		[AllowDuplicates]
 		public enum SENSOR_CONNECTION_TYPES : int32
 		{
 			Integrated = 0,
 			Attached = 1,
 			External = 2,
 		}
-		[AllowDuplicates]
 		public enum AXIS : int32
 		{
 			X = 0,

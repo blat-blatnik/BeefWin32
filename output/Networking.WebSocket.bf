@@ -15,7 +15,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WEB_SOCKET_CLOSE_STATUS : int32
 		{
 			SUCCESS_CLOSE_STATUS = 1000,
@@ -31,7 +30,6 @@ namespace Win32
 			SERVER_ERROR_CLOSE_STATUS = 1011,
 			SECURE_HANDSHAKE_ERROR_CLOSE_STATUS = 1015,
 		}
-		[AllowDuplicates]
 		public enum WEB_SOCKET_PROPERTY_TYPE : int32
 		{
 			RECEIVE_BUFFER_SIZE_PROPERTY_TYPE = 0,
@@ -42,14 +40,12 @@ namespace Win32
 			KEEPALIVE_INTERVAL_PROPERTY_TYPE = 5,
 			SUPPORTED_VERSIONS_PROPERTY_TYPE = 6,
 		}
-		[AllowDuplicates]
 		public enum WEB_SOCKET_ACTION_QUEUE : int32
 		{
 			SEND_ACTION_QUEUE = 1,
 			RECEIVE_ACTION_QUEUE = 2,
 			ALL_ACTION_QUEUE = 3,
 		}
-		[AllowDuplicates]
 		public enum WEB_SOCKET_BUFFER_TYPE : int32
 		{
 			UTF8_MESSAGE_BUFFER_TYPE = -2147483648,
@@ -60,7 +56,6 @@ namespace Win32
 			PING_PONG_BUFFER_TYPE = -2147483643,
 			UNSOLICITED_PONG_BUFFER_TYPE = -2147483642,
 		}
-		[AllowDuplicates]
 		public enum WEB_SOCKET_ACTION : int32
 		{
 			NO_ACTION = 0,

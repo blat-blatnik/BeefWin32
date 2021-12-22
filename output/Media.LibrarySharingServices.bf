@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WindowsMediaLibrarySharingDeviceAuthorizationStatus : int32
 		{
 			UNKNOWN = 0,

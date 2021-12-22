@@ -1225,26 +1225,22 @@ namespace Win32
 			INBOX_INF = 134217728,
 			HARDLINK = 268435456,
 		}
-		[AllowDuplicates]
 		public enum SETUP_FILE_OPERATION : uint32
 		{
 			DELETE = 2,
 			COPY = 0,
 		}
-		[AllowDuplicates]
 		public enum OEM_SOURCE_MEDIA_TYPE : uint32
 		{
 			NONE = 0,
 			PATH = 1,
 			URL = 2,
 		}
-		[AllowDuplicates]
 		public enum SETUP_DI_BUILD_DRIVER_DRIVER_TYPE : uint32
 		{
 			LASSDRIVER = 1,
 			OMPATDRIVER = 2,
 		}
-		[AllowDuplicates]
 		public enum SP_INF_STYLE : uint32
 		{
 			NONE = 0,
@@ -1320,7 +1316,6 @@ namespace Win32
 			CR_INVALID_STRUCTURE_SIZE = 59,
 			NUM_CR_RESULTS = 60,
 		}
-		[AllowDuplicates]
 		public enum SetupFileLogInfo : int32
 		{
 			SourceFilename = 0,
@@ -1330,7 +1325,6 @@ namespace Win32
 			OtherInfo = 4,
 			Max = 5,
 		}
-		[AllowDuplicates]
 		public enum PNP_VETO_TYPE : int32
 		{
 			TypeUnknown = 0,
@@ -1348,7 +1342,6 @@ namespace Win32
 			InsufficientRights = 12,
 			AlreadyRemoved = 13,
 		}
-		[AllowDuplicates]
 		public enum CM_NOTIFY_FILTER_TYPE : int32
 		{
 			DEVICEINTERFACE = 0,
@@ -1356,7 +1349,6 @@ namespace Win32
 			DEVICEINSTANCE = 2,
 			MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum CM_NOTIFY_ACTION : int32
 		{
 			DEVICEINTERFACEARRIVAL = 0,

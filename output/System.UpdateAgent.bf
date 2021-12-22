@@ -477,7 +477,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum AutomaticUpdatesNotificationLevel : int32
 		{
 			NotConfigured = 0,
@@ -486,7 +485,6 @@ namespace Win32
 			NotifyBeforeInstallation = 3,
 			ScheduledInstallation = 4,
 		}
-		[AllowDuplicates]
 		public enum AutomaticUpdatesScheduledInstallationDay : int32
 		{
 			Day = 0,
@@ -498,14 +496,12 @@ namespace Win32
 			Friday = 6,
 			Saturday = 7,
 		}
-		[AllowDuplicates]
 		public enum DownloadPhase : int32
 		{
 			Initializing = 1,
 			Downloading = 2,
 			Verifying = 3,
 		}
-		[AllowDuplicates]
 		public enum DownloadPriority : int32
 		{
 			Low = 1,
@@ -513,7 +509,6 @@ namespace Win32
 			High = 3,
 			ExtraHigh = 4,
 		}
-		[AllowDuplicates]
 		public enum AutoSelectionMode : int32
 		{
 			LetWindowsUpdateDecide = 0,
@@ -521,28 +516,24 @@ namespace Win32
 			NeverAutoSelect = 2,
 			AlwaysAutoSelect = 3,
 		}
-		[AllowDuplicates]
 		public enum AutoDownloadMode : int32
 		{
 			LetWindowsUpdateDecide = 0,
 			NeverAutoDownload = 1,
 			AlwaysAutoDownload = 2,
 		}
-		[AllowDuplicates]
 		public enum InstallationImpact : int32
 		{
 			Normal = 0,
 			Minor = 1,
 			RequiresExclusiveHandling = 2,
 		}
-		[AllowDuplicates]
 		public enum InstallationRebootBehavior : int32
 		{
 			NeverReboots = 0,
 			AlwaysRequiresReboot = 1,
 			CanRequestReboot = 2,
 		}
-		[AllowDuplicates]
 		public enum OperationResultCode : int32
 		{
 			NotStarted = 0,
@@ -552,7 +543,6 @@ namespace Win32
 			Failed = 4,
 			Aborted = 5,
 		}
-		[AllowDuplicates]
 		public enum ServerSelection : int32
 		{
 			Default = 0,
@@ -560,19 +550,16 @@ namespace Win32
 			WindowsUpdate = 2,
 			Others = 3,
 		}
-		[AllowDuplicates]
 		public enum UpdateType : int32
 		{
 			Software = 1,
 			Driver = 2,
 		}
-		[AllowDuplicates]
 		public enum UpdateOperation : int32
 		{
 			Installation = 1,
 			Uninstallation = 2,
 		}
-		[AllowDuplicates]
 		public enum DeploymentAction : int32
 		{
 			None = 0,
@@ -581,7 +568,6 @@ namespace Win32
 			Detection = 3,
 			OptionalInstallation = 4,
 		}
-		[AllowDuplicates]
 		public enum UpdateExceptionContext : int32
 		{
 			General = 1,
@@ -589,13 +575,11 @@ namespace Win32
 			WindowsInstaller = 3,
 			SearchIncomplete = 4,
 		}
-		[AllowDuplicates]
 		public enum AutomaticUpdatesUserType : int32
 		{
 			CurrentUser = 1,
 			LocalAdministrator = 2,
 		}
-		[AllowDuplicates]
 		public enum AutomaticUpdatesPermissionType : int32
 		{
 			SetNotificationLevel = 1,
@@ -604,14 +588,12 @@ namespace Win32
 			SetFeaturedUpdatesEnabled = 4,
 			SetNonAdministratorsElevated = 5,
 		}
-		[AllowDuplicates]
 		public enum UpdateServiceRegistrationState : int32
 		{
 			NotRegistered = 1,
 			RegistrationPending = 2,
 			Registered = 3,
 		}
-		[AllowDuplicates]
 		public enum SearchScope : int32
 		{
 			Default = 0,
@@ -621,19 +603,16 @@ namespace Win32
 			MachineAndAllUsers = 4,
 			AllUsers = 5,
 		}
-		[AllowDuplicates]
 		public enum UpdateLockdownOption : int32
 		{
 			uloForWebsiteAccess = 1,
 		}
-		[AllowDuplicates]
 		public enum AddServiceFlag : int32
 		{
 			AllowPendingRegistration = 1,
 			AllowOnlineRegistration = 2,
 			RegisterServiceWithAU = 4,
 		}
-		[AllowDuplicates]
 		public enum UpdateServiceOption : int32
 		{
 			usoNonVolatileService = 1,

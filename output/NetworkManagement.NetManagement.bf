@@ -1976,12 +1976,10 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum NET_REQUEST_PROVISION_OPTIONS : uint32
 		{
 			NETSETUP_PROVISION_ONLINE_CALLER = 1073741824,
 		}
-		[AllowDuplicates]
 		public enum NET_JOIN_DOMAIN_JOIN_OPTIONS : uint32
 		{
 			JOIN_DOMAIN = 1,
@@ -2002,7 +2000,6 @@ namespace Win32
 			NO_ACCT_REUSE = 131072,
 			IGNORE_UNSUPPORTED_FLAGS = 268435456,
 		}
-		[AllowDuplicates]
 		public enum NET_REMOTE_COMPUTER_SUPPORTS_OPTIONS : int32
 		{
 			REMOTE_ADMIN_PROTOCOL = 2,
@@ -2011,7 +2008,6 @@ namespace Win32
 			UNICODE = 16,
 			LOCAL = 32,
 		}
-		[AllowDuplicates]
 		public enum FORCE_LEVEL_FLAGS : uint32
 		{
 			NOFORCE = 0,
@@ -2055,7 +2051,6 @@ namespace Win32
 			DOMAIN_ENUM = 2147483648,
 			ALL = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum NET_USER_ENUM_FILTER_FLAGS : uint32
 		{
 			TEMP_DUPLICATE_ACCOUNT = 1,
@@ -2064,7 +2059,6 @@ namespace Win32
 			WORKSTATION_TRUST_ACCOUNT = 16,
 			SERVER_TRUST_ACCOUNT = 32,
 		}
-		[AllowDuplicates]
 		public enum NETSETUP_PROVISION : uint32
 		{
 			DOWNLEVEL_PRIV_SUPPORT = 1,
@@ -2073,7 +2067,6 @@ namespace Win32
 			SKIP_ACCOUNT_SEARCH = 8,
 			ROOT_CA_CERTS = 16,
 		}
-		[AllowDuplicates]
 		public enum USER_ACCOUNT_FLAGS : uint32
 		{
 			SCRIPT = 1,
@@ -2092,7 +2085,6 @@ namespace Win32
 			PASSWORD_EXPIRED = 8388608,
 			TRUSTED_TO_AUTHENTICATE_FOR_DELEGATION = 16777216,
 		}
-		[AllowDuplicates]
 		public enum AF_OP : uint32
 		{
 			PRINT = 1,
@@ -2100,20 +2092,17 @@ namespace Win32
 			SERVER = 4,
 			ACCOUNTS = 8,
 		}
-		[AllowDuplicates]
 		public enum SERVER_INFO_SECURITY : uint32
 		{
 			SHARESECURITY = 0,
 			USERSECURITY = 1,
 		}
-		[AllowDuplicates]
 		public enum USER_PRIV : uint32
 		{
 			GUEST = 0,
 			USER = 1,
 			ADMIN = 2,
 		}
-		[AllowDuplicates]
 		public enum USE_INFO_ASG_TYPE : uint32
 		{
 			WILDCARD = 4294967295,
@@ -2121,13 +2110,11 @@ namespace Win32
 			SPOOLDEV = 1,
 			IPC = 3,
 		}
-		[AllowDuplicates]
 		public enum SERVER_INFO_HIDDEN : uint32
 		{
 			VISIBLE = 0,
 			HIDDEN = 1,
 		}
-		[AllowDuplicates]
 		public enum USER_MODALS_ROLES : uint32
 		{
 			STANDALONE = 0,
@@ -2135,20 +2122,17 @@ namespace Win32
 			BACKUP = 2,
 			PRIMARY = 3,
 		}
-		[AllowDuplicates]
 		public enum NET_VALIDATE_PASSWORD_TYPE : int32
 		{
 			Authentication = 1,
 			PasswordChange = 2,
 			PasswordReset = 3,
 		}
-		[AllowDuplicates]
 		public enum MSA_INFO_LEVEL : int32
 		{
 			_0 = 0,
 			Max = 1,
 		}
-		[AllowDuplicates]
 		public enum MSA_INFO_STATE : int32
 		{
 			NotExist = 1,
@@ -2157,14 +2141,12 @@ namespace Win32
 			CanInstall = 4,
 			Installed = 5,
 		}
-		[AllowDuplicates]
 		public enum TRANSPORT_TYPE : int32
 		{
 			None = 0,
 			Wsk = 1,
 			Quic = 2,
 		}
-		[AllowDuplicates]
 		public enum NETSETUP_NAME_TYPE : int32
 		{
 			Unknown = 0,
@@ -2174,14 +2156,12 @@ namespace Win32
 			NonExistentDomain = 4,
 			DnsMachine = 5,
 		}
-		[AllowDuplicates]
 		public enum DSREG_JOIN_TYPE : int32
 		{
 			UNKNOWN_JOIN = 0,
 			DEVICE_JOIN = 1,
 			WORKPLACE_JOIN = 2,
 		}
-		[AllowDuplicates]
 		public enum NET_COMPUTER_NAME_TYPE : int32
 		{
 			PrimaryComputerName = 0,
@@ -2189,7 +2169,6 @@ namespace Win32
 			AllComputerNames = 2,
 			ComputerNameTypeMax = 3,
 		}
-		[AllowDuplicates]
 		public enum NETSETUP_JOIN_STATUS : int32
 		{
 			UnknownStatus = 0,
@@ -2197,14 +2176,12 @@ namespace Win32
 			WorkgroupName = 2,
 			DomainName = 3,
 		}
-		[AllowDuplicates]
 		public enum OBO_TOKEN_TYPE : int32
 		{
 			USER = 1,
 			COMPONENT = 2,
 			SOFTWARE = 3,
 		}
-		[AllowDuplicates]
 		public enum COMPONENT_CHARACTERISTICS : int32
 		{
 			VIRTUAL = 1,
@@ -2223,37 +2200,31 @@ namespace Win32
 			FIXED_BINDING = 131072,
 			LW_FILTER = 262144,
 		}
-		[AllowDuplicates]
 		public enum NCRP_FLAGS : int32
 		{
 			QUERY_PROPERTY_UI = 1,
 			SHOW_PROPERTY_UI = 2,
 		}
-		[AllowDuplicates]
 		public enum SUPPORTS_BINDING_INTERFACE_FLAGS : int32
 		{
 			LOWER = 1,
 			UPPER = 2,
 		}
-		[AllowDuplicates]
 		public enum ENUM_BINDING_PATHS_FLAGS : int32
 		{
 			ABOVE = 1,
 			BELOW = 2,
 		}
-		[AllowDuplicates]
 		public enum NCPNP_RECONFIG_LAYER : int32
 		{
 			NDIS = 1,
 			TDI = 2,
 		}
-		[AllowDuplicates]
 		public enum NETWORK_INSTALL_TIME : int32
 		{
 			RIMARYINSTALL = 1,
 			OSTSYSINSTALL = 2,
 		}
-		[AllowDuplicates]
 		public enum NETWORK_UPGRADE_TYPE : int32
 		{
 			WIN16_UPGRADE = 16,
@@ -2263,12 +2234,10 @@ namespace Win32
 			WINNT_SBS_UPGRADE = 256,
 			COMPONENT_UPDATE = 512,
 		}
-		[AllowDuplicates]
 		public enum DEFAULT_PAGES : int32
 		{
 			DPP_ADVANCED = 1,
 		}
-		[AllowDuplicates]
 		public enum BIND_FLAGS1 : int32
 		{
 			ADD = 1,
@@ -2283,7 +2252,6 @@ namespace Win32
 			NETCLIENT = 262144,
 			NETSERVICE = 524288,
 		}
-		[AllowDuplicates]
 		public enum tagRASCON_IPUI_FLAGS : int32
 		{
 			VPN = 1,

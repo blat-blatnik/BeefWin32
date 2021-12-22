@@ -448,50 +448,42 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum LANG_BAR_ITEM_ICON_MODE_FLAGS : uint32
 		{
 			NONE = 0,
 			USEPROFILEICON = 1,
 		}
-		[AllowDuplicates]
 		public enum TEXT_STORE_TEXT_CHANGE_FLAGS : uint32
 		{
 			NONE = 0,
 			CORRECTION = 1,
 		}
-		[AllowDuplicates]
 		public enum TEXT_STORE_CHANGE_FLAGS : uint32
 		{
 			NONE = 0,
 			CORRECTION = 1,
 		}
-		[AllowDuplicates]
 		public enum INSERT_TEXT_AT_SELECTION_FLAGS : uint32
 		{
 			NOQUERY = 1,
 			QUERYONLY = 2,
 			NO_DEFAULT_COMPOSITION = 2147483648,
 		}
-		[AllowDuplicates]
 		public enum ANCHOR_CHANGE_HISTORY_FLAGS : uint32
 		{
 			PRECEDING_DEL = 1,
 			FOLLOWING_DEL = 2,
 		}
-		[AllowDuplicates]
 		public enum TEXT_STORE_LOCK_FLAGS : uint32
 		{
 			D = 2,
 			DWRITE = 6,
 		}
-		[AllowDuplicates]
 		public enum GET_TEXT_AND_PROPERTY_UPDATES_FLAGS : uint32
 		{
 			NONE = 0,
 			INCL_TEXT = 1,
 		}
-		[AllowDuplicates]
 		public enum TF_CONTEXT_EDIT_CONTEXT_FLAGS : uint32
 		{
 			ASYNCDONTCARE = 0,
@@ -500,85 +492,72 @@ namespace Win32
 			READWRITE = 6,
 			ASYNC = 8,
 		}
-		[AllowDuplicates]
 		public enum TsActiveSelEnd : int32
 		{
 			NONE = 0,
 			START = 1,
 			END = 2,
 		}
-		[AllowDuplicates]
 		public enum TsLayoutCode : int32
 		{
 			CREATE = 0,
 			CHANGE = 1,
 			DESTROY = 2,
 		}
-		[AllowDuplicates]
 		public enum TsRunType : int32
 		{
 			PLAIN = 0,
 			HIDDEN = 1,
 			OPAQUE = 2,
 		}
-		[AllowDuplicates]
 		public enum TsGravity : int32
 		{
 			BACKWARD = 0,
 			FORWARD = 1,
 		}
-		[AllowDuplicates]
 		public enum TsShiftDir : int32
 		{
 			BACKWARD = 0,
 			FORWARD = 1,
 		}
-		[AllowDuplicates]
 		public enum TfLBIClick : int32
 		{
 			RIGHT = 1,
 			LEFT = 2,
 		}
-		[AllowDuplicates]
 		public enum TfLBBalloonStyle : int32
 		{
 			RECO = 0,
 			SHOW = 1,
 			MISS = 2,
 		}
-		[AllowDuplicates]
 		public enum TfAnchor : int32
 		{
 			START = 0,
 			END = 1,
 		}
-		[AllowDuplicates]
 		public enum TfActiveSelEnd : int32
 		{
 			NONE = 0,
 			START = 1,
 			END = 2,
 		}
-		[AllowDuplicates]
 		public enum TfLayoutCode : int32
 		{
 			CREATE = 0,
 			CHANGE = 1,
 			DESTROY = 2,
 		}
-		[AllowDuplicates]
 		public enum TfGravity : int32
 		{
 			BACKWARD = 0,
 			FORWARD = 1,
 		}
-		[AllowDuplicates]
 		public enum TfShiftDir : int32
 		{
 			BACKWARD = 0,
 			FORWARD = 1,
 		}
-		[AllowDuplicates]
 		public enum TF_DA_LINESTYLE : int32
 		{
 			NONE = 0,
@@ -587,14 +566,12 @@ namespace Win32
 			DASH = 3,
 			SQUIGGLE = 4,
 		}
-		[AllowDuplicates]
 		public enum TF_DA_COLORTYPE : int32
 		{
 			NONE = 0,
 			SYSCOLOR = 1,
 			COLORREF = 2,
 		}
-		[AllowDuplicates]
 		public enum TF_DA_ATTR_INFO : int32
 		{
 			INPUT = 0,
@@ -605,14 +582,12 @@ namespace Win32
 			FIXEDCONVERTED = 5,
 			OTHER = -1,
 		}
-		[AllowDuplicates]
 		public enum TfCandidateResult : int32
 		{
 			FINALIZED = 0,
 			SELECTED = 1,
 			CANCELED = 2,
 		}
-		[AllowDuplicates]
 		public enum TfSapiObject : int32
 		{
 			RESMGR = 0,
@@ -622,20 +597,17 @@ namespace Win32
 			DICTGRAM = 4,
 			RECOGNIZERNOINIT = 5,
 		}
-		[AllowDuplicates]
 		public enum TfIntegratableCandidateListSelectionStyle : int32
 		{
 			ACTIVE_SELECTION = 0,
 			IMPLIED_SELECTION = 1,
 		}
-		[AllowDuplicates]
 		public enum TKBLayoutType : int32
 		{
 			UNDEFINED = 0,
 			CLASSIC = 1,
 			OPTIMIZED = 2,
 		}
-		[AllowDuplicates]
 		public enum InputScope : int32
 		{
 			DEFAULT = 0,

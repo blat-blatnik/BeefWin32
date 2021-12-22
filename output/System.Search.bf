@@ -3394,7 +3394,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DBTYPEENUM : int32
 		{
 			EMPTY = 0,
@@ -3432,19 +3431,16 @@ namespace Win32
 			DBTIME = 134,
 			DBTIMESTAMP = 135,
 		}
-		[AllowDuplicates]
 		public enum DBTYPEENUM15 : int32
 		{
 			DBTYPE_HCHAPTER = 136,
 		}
-		[AllowDuplicates]
 		public enum DBTYPEENUM20 : int32
 		{
 			FILETIME = 64,
 			PROPVARIANT = 138,
 			VARNUMERIC = 139,
 		}
-		[AllowDuplicates]
 		public enum DBPARTENUM : int32
 		{
 			INVALID = 0,
@@ -3452,25 +3448,21 @@ namespace Win32
 			LENGTH = 2,
 			STATUS = 4,
 		}
-		[AllowDuplicates]
 		public enum DBPARAMIOENUM : int32
 		{
 			NOTPARAM = 0,
 			INPUT = 1,
 			OUTPUT = 2,
 		}
-		[AllowDuplicates]
 		public enum DBBINDFLAGENUM : int32
 		{
 			DBBINDFLAG_HTML = 1,
 		}
-		[AllowDuplicates]
 		public enum DBMEMOWNERENUM : int32
 		{
 			CLIENTOWNED = 0,
 			PROVIDEROWNED = 1,
 		}
-		[AllowDuplicates]
 		public enum DBSTATUSENUM : int32
 		{
 			S_OK = 0,
@@ -3488,13 +3480,11 @@ namespace Win32
 			E_BADSTATUS = 12,
 			S_DEFAULT = 13,
 		}
-		[AllowDuplicates]
 		public enum DBSTATUSENUM20 : int32
 		{
 			MDSTATUS_S_CELLEMPTY = 14,
 			DBSTATUS_S_IGNORE = 15,
 		}
-		[AllowDuplicates]
 		public enum DBSTATUSENUM21 : int32
 		{
 			E_DOESNOTEXIST = 16,
@@ -3509,7 +3499,6 @@ namespace Win32
 			E_RESOURCEOUTOFSCOPE = 25,
 			S_ALREADYEXISTS = 26,
 		}
-		[AllowDuplicates]
 		public enum DBBINDURLFLAGENUM : int32
 		{
 			READ = 1,
@@ -3530,7 +3519,6 @@ namespace Win32
 			OVERWRITE = 67108864,
 			ISSTRUCTUREDDOCUMENT = 134217728,
 		}
-		[AllowDuplicates]
 		public enum DBBINDURLSTATUSENUM : int32
 		{
 			OK = 0,
@@ -3538,13 +3526,11 @@ namespace Win32
 			DENYTYPENOTSUPPORTED = 4,
 			REDIRECTED = 8,
 		}
-		[AllowDuplicates]
 		public enum DBSTATUSENUM25 : int32
 		{
 			CANCELED = 27,
 			NOTCOLLECTION = 28,
 		}
-		[AllowDuplicates]
 		public enum DBROWSTATUSENUM : int32
 		{
 			S_OK = 0,
@@ -3566,17 +3552,14 @@ namespace Win32
 			E_SCHEMAVIOLATION = 18,
 			E_FAIL = 19,
 		}
-		[AllowDuplicates]
 		public enum DBROWSTATUSENUM20 : int32
 		{
 			DBROWSTATUS_S_NOCHANGE = 20,
 		}
-		[AllowDuplicates]
 		public enum DBSTATUSENUM26 : int32
 		{
 			DBSTATUS_S_ROWSETCOLUMN = 29,
 		}
-		[AllowDuplicates]
 		public enum DBCOLUMNFLAGSENUM : int32
 		{
 			ISBOOKMARK = 1,
@@ -3591,25 +3574,21 @@ namespace Win32
 			ISROWVER = 512,
 			CACHEDEFERRED = 4096,
 		}
-		[AllowDuplicates]
 		public enum DBCOLUMNFLAGSENUM20 : int32
 		{
 			SCALEISNEGATIVE = 16384,
 			RESERVED = 32768,
 		}
-		[AllowDuplicates]
 		public enum DBCOLUMNFLAGS15ENUM : int32
 		{
 			DBCOLUMNFLAGS_ISCHAPTER = 8192,
 		}
-		[AllowDuplicates]
 		public enum DBCOLUMNFLAGSENUM21 : int32
 		{
 			ROWURL = 65536,
 			DEFAULTSTREAM = 131072,
 			COLLECTION = 262144,
 		}
-		[AllowDuplicates]
 		public enum DBCOLUMNFLAGSENUM26 : int32
 		{
 			ISSTREAM = 524288,
@@ -3617,21 +3596,18 @@ namespace Win32
 			ISROW = 2097152,
 			ROWSPECIFICCOLUMN = 4194304,
 		}
-		[AllowDuplicates]
 		public enum DBTABLESTATISTICSTYPE26 : int32
 		{
 			HISTOGRAM = 1,
 			COLUMN_CARDINALITY = 2,
 			TUPLE_CARDINALITY = 4,
 		}
-		[AllowDuplicates]
 		public enum DBBOOKMARK : int32
 		{
 			INVALID = 0,
 			FIRST = 1,
 			LAST = 2,
 		}
-		[AllowDuplicates]
 		public enum DBPROPENUM : int32
 		{
 			ABORTPRESERVE = 2,
@@ -3795,7 +3771,6 @@ namespace Win32
 			UPDATABILITY = 117,
 			USERNAME = 118,
 		}
-		[AllowDuplicates]
 		public enum DBPROPENUM15 : int32
 		{
 			FILTERCOMPAREOPS = 209,
@@ -3862,7 +3837,6 @@ namespace Win32
 			DBPROP_PROVIDERMEMORY = 259,
 			DBPROP_CLIENTCURSOR = 260,
 		}
-		[AllowDuplicates]
 		public enum DBPROPENUM21 : int32
 		{
 			TRUSTEE_USERNAME = 241,
@@ -3887,7 +3861,6 @@ namespace Win32
 			OPENROWSETSUPPORT = 280,
 			COL_ISLONG = 281,
 		}
-		[AllowDuplicates]
 		public enum DBPROPENUM25 : int32
 		{
 			COL_SEED = 282,
@@ -3895,7 +3868,6 @@ namespace Win32
 			INIT_GENERALTIMEOUT = 284,
 			COMSERVICES = 285,
 		}
-		[AllowDuplicates]
 		public enum DBPROPENUM26 : int32
 		{
 			DBPROP_OUTPUTSTREAM = 286,
@@ -3905,7 +3877,6 @@ namespace Win32
 			DBPROP_IRowsetBookmark = 292,
 			MDPROP_VISUALMODE = 293,
 		}
-		[AllowDuplicates]
 		public enum DBPARAMFLAGSENUM : int32
 		{
 			INPUT = 1,
@@ -3914,12 +3885,10 @@ namespace Win32
 			NULLABLE = 64,
 			LONG = 128,
 		}
-		[AllowDuplicates]
 		public enum DBPARAMFLAGSENUM20 : int32
 		{
 			DBPARAMFLAGS_SCALEISNEGATIVE = 256,
 		}
-		[AllowDuplicates]
 		public enum DBPROPFLAGSENUM : int32
 		{
 			NOTSUPPORTED = 0,
@@ -3937,17 +3906,14 @@ namespace Win32
 			REQUIRED = 2048,
 			SESSION = 4096,
 		}
-		[AllowDuplicates]
 		public enum DBPROPFLAGSENUM21 : int32
 		{
 			DBPROPFLAGS_TRUSTEE = 8192,
 		}
-		[AllowDuplicates]
 		public enum DBPROPFLAGSENUM25 : int32
 		{
 			DBPROPFLAGS_VIEW = 16384,
 		}
-		[AllowDuplicates]
 		public enum DBPROPFLAGSENUM26 : int32
 		{
 			DBPROPFLAGS_STREAM = 32768,
@@ -3959,7 +3925,6 @@ namespace Win32
 			SETIFCHEAP = 1,
 			OPTIONAL = 1,
 		}
-		[AllowDuplicates]
 		public enum DBPROPSTATUSENUM : int32
 		{
 			OK = 0,
@@ -3972,18 +3937,15 @@ namespace Win32
 			NOTSET = 7,
 			CONFLICTING = 8,
 		}
-		[AllowDuplicates]
 		public enum DBPROPSTATUSENUM21 : int32
 		{
 			DBPROPSTATUS_NOTAVAILABLE = 9,
 		}
-		[AllowDuplicates]
 		public enum DBINDEX_COL_ORDERENUM : int32
 		{
 			ASC = 0,
 			DESC = 1,
 		}
-		[AllowDuplicates]
 		public enum DBCOLUMNDESCFLAGSENUM : int32
 		{
 			TYPENAME = 1,
@@ -3996,7 +3958,6 @@ namespace Win32
 			PRECISION = 128,
 			SCALE = 256,
 		}
-		[AllowDuplicates]
 		public enum DBEVENTPHASEENUM : int32
 		{
 			OKTODO = 0,
@@ -4005,7 +3966,6 @@ namespace Win32
 			FAILEDTODO = 3,
 			DIDEVENT = 4,
 		}
-		[AllowDuplicates]
 		public enum DBREASONENUM : int32
 		{
 			ROWSET_FETCHPOSITIONCHANGE = 0,
@@ -4024,7 +3984,6 @@ namespace Win32
 			ROW_UPDATE = 13,
 			ROWSET_CHANGED = 14,
 		}
-		[AllowDuplicates]
 		public enum DBREASONENUM15 : int32
 		{
 			POSITION_CHANGED = 15,
@@ -4032,7 +3991,6 @@ namespace Win32
 			POSITION_CLEARED = 17,
 			_ASYNCHINSERT = 18,
 		}
-		[AllowDuplicates]
 		public enum DBCOMPAREOPSENUM : int32
 		{
 			LT = 0,
@@ -4047,18 +4005,15 @@ namespace Win32
 			CASESENSITIVE = 4096,
 			CASEINSENSITIVE = 8192,
 		}
-		[AllowDuplicates]
 		public enum DBCOMPAREOPSENUM20 : int32
 		{
 			BEGINSWITH = 9,
 			CONTAINS = 10,
 		}
-		[AllowDuplicates]
 		public enum DBASYNCHOPENUM : int32
 		{
 			DBASYNCHOP_OPEN = 0,
 		}
-		[AllowDuplicates]
 		public enum DBASYNCHPHASEENUM : int32
 		{
 			INITIALIZATION = 0,
@@ -4066,25 +4021,21 @@ namespace Win32
 			COMPLETE = 2,
 			CANCELED = 3,
 		}
-		[AllowDuplicates]
 		public enum DBSORTENUM : int32
 		{
 			ASCENDING = 0,
 			DESCENDING = 1,
 		}
-		[AllowDuplicates]
 		public enum DBCOMMANDPERSISTFLAGENUM : int32
 		{
 			DBCOMMANDPERSISTFLAG_NOSAVE = 1,
 		}
-		[AllowDuplicates]
 		public enum DBCOMMANDPERSISTFLAGENUM21 : int32
 		{
 			DEFAULT = 0,
 			PERSISTVIEW = 2,
 			PERSISTPROCEDURE = 4,
 		}
-		[AllowDuplicates]
 		public enum DBCONSTRAINTTYPEENUM : int32
 		{
 			UNIQUE = 0,
@@ -4092,7 +4043,6 @@ namespace Win32
 			PRIMARYKEY = 2,
 			CHECK = 3,
 		}
-		[AllowDuplicates]
 		public enum DBUPDELRULEENUM : int32
 		{
 			NOACTION = 0,
@@ -4100,20 +4050,17 @@ namespace Win32
 			SETNULL = 2,
 			SETDEFAULT = 3,
 		}
-		[AllowDuplicates]
 		public enum DBMATCHTYPEENUM : int32
 		{
 			FULL = 0,
 			NONE = 1,
 			PARTIAL = 2,
 		}
-		[AllowDuplicates]
 		public enum DBDEFERRABILITYENUM : int32
 		{
 			ED = 1,
 			ABLE = 2,
 		}
-		[AllowDuplicates]
 		public enum DBACCESSORFLAGSENUM : int32
 		{
 			INVALID = 0,
@@ -4123,7 +4070,6 @@ namespace Win32
 			OPTIMIZED = 8,
 			INHERITED = 16,
 		}
-		[AllowDuplicates]
 		public enum DBBINDSTATUSENUM : int32
 		{
 			OK = 0,
@@ -4134,7 +4080,6 @@ namespace Win32
 			NOINTERFACE = 5,
 			MULTIPLESTORAGE = 6,
 		}
-		[AllowDuplicates]
 		public enum DBCOMPAREENUM : int32
 		{
 			LT = 0,
@@ -4143,7 +4088,6 @@ namespace Win32
 			NE = 3,
 			NOTCOMPARABLE = 4,
 		}
-		[AllowDuplicates]
 		public enum DBPOSITIONFLAGSENUM : int32
 		{
 			OK = 0,
@@ -4151,7 +4095,6 @@ namespace Win32
 			BOF = 2,
 			EOF = 3,
 		}
-		[AllowDuplicates]
 		public enum DBPENDINGSTATUSENUM : int32
 		{
 			NEW = 1,
@@ -4160,7 +4103,6 @@ namespace Win32
 			UNCHANGED = 8,
 			INVALIDROW = 16,
 		}
-		[AllowDuplicates]
 		public enum DBSEEKENUM : int32
 		{
 			INVALID = 0,
@@ -4182,50 +4124,42 @@ namespace Win32
 			PREFIX = 8,
 			MATCH = 16,
 		}
-		[AllowDuplicates]
 		public enum DBRANGEENUM20 : int32
 		{
 			SHIFT = 24,
 			MASK = 255,
 		}
-		[AllowDuplicates]
 		public enum DBRESULTFLAGENUM : int32
 		{
 			DEFAULT = 0,
 			ROWSET = 1,
 			ROW = 2,
 		}
-		[AllowDuplicates]
 		public enum DBCONVERTFLAGSENUM : int32
 		{
 			COLUMN = 0,
 			PARAMETER = 1,
 		}
-		[AllowDuplicates]
 		public enum DBCONVERTFLAGSENUM20 : int32
 		{
 			ISLONG = 2,
 			ISFIXEDLENGTH = 4,
 			FROMVARIANT = 8,
 		}
-		[AllowDuplicates]
 		public enum DBSOURCETYPEENUM : int32
 		{
 			DATASOURCE = 1,
 			ENUMERATOR = 2,
 		}
-		[AllowDuplicates]
 		public enum DBSOURCETYPEENUM20 : int32
 		{
 			TDP = 1,
 			MDP = 3,
 		}
-		[AllowDuplicates]
 		public enum DBSOURCETYPEENUM25 : int32
 		{
 			DBSOURCETYPE_BINDER = 4,
 		}
-		[AllowDuplicates]
 		public enum DBLITERALENUM : int32
 		{
 			INVALID = 0,
@@ -4250,7 +4184,6 @@ namespace Win32
 			USER_NAME = 19,
 			VIEW_NAME = 20,
 		}
-		[AllowDuplicates]
 		public enum DBLITERALENUM20 : int32
 		{
 			CUBE_NAME = 21,
@@ -4262,13 +4195,11 @@ namespace Win32
 			SCHEMA_SEPARATOR = 27,
 			QUOTE_SUFFIX = 28,
 		}
-		[AllowDuplicates]
 		public enum DBLITERALENUM21 : int32
 		{
 			PERCENT_SUFFIX = 29,
 			UNDERSCORE_SUFFIX = 30,
 		}
-		[AllowDuplicates]
 		public enum ACCESS_MASKENUM : int32
 		{
 			EXCLUSIVE = 512,
@@ -4289,7 +4220,6 @@ namespace Win32
 			UPDATE = 1073741824,
 			DROP = 256,
 		}
-		[AllowDuplicates]
 		public enum DBCOPYFLAGSENUM : int32
 		{
 			ASYNC = 256,
@@ -4298,7 +4228,6 @@ namespace Win32
 			NON_RECURSIVE = 2048,
 			ATOMIC = 4096,
 		}
-		[AllowDuplicates]
 		public enum DBMOVEFLAGSENUM : int32
 		{
 			REPLACE_EXISTING = 1,
@@ -4307,20 +4236,17 @@ namespace Win32
 			ALLOW_EMULATION = 1024,
 			ATOMIC = 4096,
 		}
-		[AllowDuplicates]
 		public enum DBDELETEFLAGSENUM : int32
 		{
 			SYNC = 256,
 			TOMIC = 4096,
 		}
-		[AllowDuplicates]
 		public enum STRUCTURED_QUERY_SYNTAX : int32
 		{
 			NO_SYNTAX = 0,
 			ADVANCED_QUERY_SYNTAX = 1,
 			NATURAL_QUERY_SYNTAX = 2,
 		}
-		[AllowDuplicates]
 		public enum STRUCTURED_QUERY_SINGLE_OPTION : int32
 		{
 			SCHEMA = 0,
@@ -4335,7 +4261,6 @@ namespace Win32
 			IMPLICIT_CONNECTOR = 9,
 			CONNECTOR_CASE = 10,
 		}
-		[AllowDuplicates]
 		public enum STRUCTURED_QUERY_MULTIOPTION : int32
 		{
 			VIRTUAL_PROPERTY = 0,
@@ -4343,7 +4268,6 @@ namespace Win32
 			GENERATOR_FOR_TYPE = 2,
 			MAP_PROPERTY = 3,
 		}
-		[AllowDuplicates]
 		public enum STRUCTURED_QUERY_PARSE_ERROR : int32
 		{
 			NONE = 0,
@@ -4354,7 +4278,6 @@ namespace Win32
 			IGNORED_KEYWORD = 5,
 			UNHANDLED = 6,
 		}
-		[AllowDuplicates]
 		public enum STRUCTURED_QUERY_RESOLVE_OPTION : uint32
 		{
 			DEFAULT = 0,
@@ -4369,13 +4292,11 @@ namespace Win32
 			ADD_VALUE_TYPE_FOR_PLAIN_VALUES = 256,
 			ADD_ROBUST_ITEM_NAME = 512,
 		}
-		[AllowDuplicates]
 		public enum CASE_REQUIREMENT : int32
 		{
 			ANY = 0,
 			UPPER_IF_AQS = 1,
 		}
-		[AllowDuplicates]
 		public enum INTERVAL_LIMIT_KIND : int32
 		{
 			EXPLICIT_INCLUDED = 0,
@@ -4383,7 +4304,6 @@ namespace Win32
 			NEGATIVE_INFINITY = 2,
 			POSITIVE_INFINITY = 3,
 		}
-		[AllowDuplicates]
 		public enum QUERY_PARSER_MANAGER_OPTION : int32
 		{
 			SCHEMA_BINARY_NAME = 0,
@@ -4404,34 +4324,29 @@ namespace Win32
 			VECTOR_LEAF = 8,
 			USE_CONTENT_LOCALE = 16,
 		}
-		[AllowDuplicates]
 		public enum NAMED_ENTITY_CERTAINTY : int32
 		{
 			LOW = 0,
 			MEDIUM = 1,
 			HIGH = 2,
 		}
-		[AllowDuplicates]
 		public enum PROXY_ACCESS : int32
 		{
 			PRECONFIG = 0,
 			DIRECT = 1,
 			PROXY = 2,
 		}
-		[AllowDuplicates]
 		public enum AUTH_TYPE : int32
 		{
 			ANONYMOUS = 0,
 			NTLM = 1,
 			BASIC = 2,
 		}
-		[AllowDuplicates]
 		public enum FOLLOW_FLAGS : int32
 		{
 			INDEXCOMPLEXURLS = 1,
 			SUPPRESSINDEXING = 2,
 		}
-		[AllowDuplicates]
 		public enum CLUSION_REASON : int32
 		{
 			UNKNOWNSCOPE = 0,
@@ -4439,7 +4354,6 @@ namespace Win32
 			USER = 2,
 			GROUPPOLICY = 3,
 		}
-		[AllowDuplicates]
 		public enum SEARCH_KIND_OF_CHANGE : int32
 		{
 			ADD = 0,
@@ -4450,20 +4364,17 @@ namespace Win32
 			SEMANTICS_SHALLOW = 524288,
 			SEMANTICS_UPDATE_SECURITY = 4194304,
 		}
-		[AllowDuplicates]
 		public enum SEARCH_NOTIFICATION_PRIORITY : int32
 		{
 			NORMAL_PRIORITY = 0,
 			HIGH_PRIORITY = 1,
 		}
-		[AllowDuplicates]
 		public enum SEARCH_INDEXING_PHASE : int32
 		{
 			GATHERER = 0,
 			QUERYABLE = 1,
 			PERSISTED = 2,
 		}
-		[AllowDuplicates]
 		public enum CatalogStatus : int32
 		{
 			IDLE = 0,
@@ -4474,7 +4385,6 @@ namespace Win32
 			PROCESSING_NOTIFICATIONS = 5,
 			SHUTTING_DOWN = 6,
 		}
-		[AllowDuplicates]
 		public enum CatalogPausedReason : int32
 		{
 			NONE = 0,
@@ -4489,27 +4399,23 @@ namespace Win32
 			EXTERNAL = 9,
 			UPGRADING = 10,
 		}
-		[AllowDuplicates]
 		public enum PRIORITIZE_FLAGS : int32
 		{
 			RETRYFAILEDITEMS = 1,
 			IGNOREFAILURECOUNT = 2,
 		}
-		[AllowDuplicates]
 		public enum SEARCH_TERM_EXPANSION : int32
 		{
 			NO_EXPANSION = 0,
 			PREFIX_ALL = 1,
 			STEM_ALL = 2,
 		}
-		[AllowDuplicates]
 		public enum SEARCH_QUERY_SYNTAX : int32
 		{
 			NO_QUERY_SYNTAX = 0,
 			ADVANCED_QUERY_SYNTAX = 1,
 			NATURAL_QUERY_SYNTAX = 2,
 		}
-		[AllowDuplicates]
 		public enum PRIORITY_LEVEL : int32
 		{
 			FOREGROUND = 0,
@@ -4517,21 +4423,18 @@ namespace Win32
 			LOW = 2,
 			DEFAULT = 3,
 		}
-		[AllowDuplicates]
 		public enum ROWSETEVENT_ITEMSTATE : int32
 		{
 			NOTINROWSET = 0,
 			INROWSET = 1,
 			UNKNOWN = 2,
 		}
-		[AllowDuplicates]
 		public enum ROWSETEVENT_TYPE : int32
 		{
 			DATAEXPIRED = 0,
 			FOREGROUNDLOST = 1,
 			SCOPESTATISTICS = 2,
 		}
-		[AllowDuplicates]
 		public enum SUBSCRIPTIONTYPE : int32
 		{
 			URL = 0,
@@ -4540,7 +4443,6 @@ namespace Win32
 			EXTERNAL = 3,
 			DESKTOPCHANNEL = 4,
 		}
-		[AllowDuplicates]
 		public enum SUBSCRIPTIONINFOFLAGS : int32
 		{
 			SCHEDULE = 1,
@@ -4558,7 +4460,6 @@ namespace Win32
 			NEEDPASSWORD = 16384,
 			TYPE = 32768,
 		}
-		[AllowDuplicates]
 		public enum CREATESUBSCRIPTIONFLAGS : int32
 		{
 			ADDTOFAVORITES = 1,
@@ -4567,7 +4468,6 @@ namespace Win32
 			NOSAVE = 8,
 			SOFTWAREUPDATE = 16,
 		}
-		[AllowDuplicates]
 		public enum SUBSCRIPTIONSCHEDULE : int32
 		{
 			AUTO = 0,
@@ -4576,14 +4476,12 @@ namespace Win32
 			CUSTOM = 3,
 			MANUAL = 4,
 		}
-		[AllowDuplicates]
 		public enum DELIVERY_AGENT_FLAGS : int32
 		{
 			NO_BROADCAST = 4,
 			NO_RESTRICTIONS = 8,
 			SILENT_DIAL = 16,
 		}
-		[AllowDuplicates]
 		public enum WEBCRAWL_RECURSEFLAGS : int32
 		{
 			DONT_MAKE_STICKY = 1,
@@ -4595,7 +4493,6 @@ namespace Win32
 			IGNORE_ROBOTSTXT = 128,
 			ONLY_LINKS_TO_HTML = 256,
 		}
-		[AllowDuplicates]
 		public enum CHANNEL_AGENT_FLAGS : int32
 		{
 			DYNAMIC_SCHEDULE = 1,
@@ -4603,7 +4500,6 @@ namespace Win32
 			PRECACHE_ALL = 4,
 			PRECACHE_SCRNSAVER = 8,
 		}
-		[AllowDuplicates]
 		public enum DBDATACONVERTENUM : int32
 		{
 			DEFAULT = 0,
@@ -4612,7 +4508,6 @@ namespace Win32
 			DSTISFIXEDLENGTH = 4,
 			DECIMALSCALE = 8,
 		}
-		[AllowDuplicates]
 		public enum DCINFOTYPEENUM : int32
 		{
 			DCINFOTYPE_VERSION = 1,
@@ -4633,7 +4528,6 @@ namespace Win32
 			READWRITE = 1,
 			MIXED = 2,
 		}
-		[AllowDuplicates]
 		public enum OSPFIND : int32
 		{
 			DEFAULT = 0,
@@ -4652,19 +4546,16 @@ namespace Win32
 			GT = 5,
 			NE = 6,
 		}
-		[AllowDuplicates]
 		public enum OSPXFER : int32
 		{
 			COMPLETE = 0,
 			ABORT = 1,
 			ERROR = 2,
 		}
-		[AllowDuplicates]
 		public enum EBindInfoOptions : int32
 		{
 			BIO_BINDER = 1,
 		}
-		[AllowDuplicates]
 		public enum DBPROMPTOPTIONSENUM : int32
 		{
 			NONE = 0,
@@ -4674,23 +4565,19 @@ namespace Win32
 			DISABLE_PROVIDER_SELECTION = 16,
 			DISABLESAVEPASSWORD = 32,
 		}
-		[AllowDuplicates]
 		public enum KAGREQDIAGFLAGSENUM : int32
 		{
 			HEADER = 1,
 			RECORD = 2,
 		}
-		[AllowDuplicates]
 		public enum MSDSDBINITPROPENUM : int32
 		{
 			DBPROP_MSDS_DBINIT_DATAPROVIDER = 2,
 		}
-		[AllowDuplicates]
 		public enum MSDSSESSIONPROPENUM : int32
 		{
 			DBPROP_MSDS_SESS_UNIQUENAMES = 2,
 		}
-		[AllowDuplicates]
 		public enum SQLINTERVAL : int32
 		{
 			YEAR = 1,
@@ -4707,7 +4594,6 @@ namespace Win32
 			HOUR_TO_SECOND = 12,
 			MINUTE_TO_SECOND = 13,
 		}
-		[AllowDuplicates]
 		public enum DBPROPENUM25_DEPRECATED : int32
 		{
 			CommandCost = 141,
@@ -4727,21 +4613,18 @@ namespace Win32
 			RowsetWatchRegion = 157,
 			RowsetWithParameters = 158,
 		}
-		[AllowDuplicates]
 		public enum DBREASONENUM25 : int32
 		{
 			ROWSADDED = 19,
 			POPULATIONCOMPLETE = 20,
 			POPULATIONSTOPPED = 21,
 		}
-		[AllowDuplicates]
 		public enum DBWATCHNOTIFYENUM : int32
 		{
 			ROWSCHANGED = 1,
 			QUERYDONE = 2,
 			QUERYREEXECUTED = 3,
 		}
-		[AllowDuplicates]
 		public enum DBWATCHMODEENUM : int32
 		{
 			ALL = 1,
@@ -4749,7 +4632,6 @@ namespace Win32
 			MOVE = 4,
 			COUNT = 8,
 		}
-		[AllowDuplicates]
 		public enum DBROWCHANGEKINDENUM : int32
 		{
 			INSERT = 0,
@@ -4757,7 +4639,6 @@ namespace Win32
 			UPDATE = 2,
 			COUNT = 3,
 		}
-		[AllowDuplicates]
 		public enum DBRESOURCEKINDENUM : int32
 		{
 			INVALID = 0,
@@ -4770,7 +4651,6 @@ namespace Win32
 			ROWS = 7,
 			OTHER = 8,
 		}
-		[AllowDuplicates]
 		public enum DBCOSTUNITENUM : int32
 		{
 			INVALID = 0,
@@ -4792,14 +4672,12 @@ namespace Win32
 			NUM_ROWS = 32768,
 			OTHER = 65536,
 		}
-		[AllowDuplicates]
 		public enum DBEXECLIMITSENUM : int32
 		{
 			ABORT = 1,
 			STOP = 2,
 			SUSPEND = 3,
 		}
-		[AllowDuplicates]
 		public enum SQLVARENUM : int32
 		{
 			EMPTY = 0,
@@ -4826,7 +4704,6 @@ namespace Win32
 			VARBINARY = 208,
 			UNKNOWN = 209,
 		}
-		[AllowDuplicates]
 		public enum LOCKMODEENUM : int32
 		{
 			INVALID = 0,

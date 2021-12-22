@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum D2D1_ALPHA_MODE : uint32
 		{
 			UNKNOWN = 0,
@@ -16,21 +15,18 @@ namespace Win32
 			IGNORE = 3,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_FIGURE_BEGIN : uint32
 		{
 			FILLED = 0,
 			HOLLOW = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_FIGURE_END : uint32
 		{
 			OPEN = 0,
 			CLOSED = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_PATH_SEGMENT : uint32
 		{
 			NONE = 0,
@@ -38,21 +34,18 @@ namespace Win32
 			FORCE_ROUND_LINE_JOIN = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_FILL_MODE : uint32
 		{
 			ALTERNATE = 0,
 			WINDING = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_BORDER_MODE : uint32
 		{
 			SOFT = 0,
 			HARD = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_BLEND_MODE : uint32
 		{
 			MULTIPLY = 0,
@@ -83,21 +76,18 @@ namespace Win32
 			DIVISION = 25,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_COLORMATRIX_ALPHA_MODE : uint32
 		{
 			PREMULTIPLIED = 1,
 			STRAIGHT = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_TURBULENCE_NOISE : uint32
 		{
 			FRACTAL_SUM = 0,
 			TURBULENCE = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_COMPOSITE_MODE : uint32
 		{
 			SOURCE_OVER = 0,

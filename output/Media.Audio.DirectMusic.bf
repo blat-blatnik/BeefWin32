@@ -246,13 +246,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DMUS_CLOCKTYPE : int32
 		{
 			SYSTEM = 0,
 			WAVE = 1,
 		}
-		[AllowDuplicates]
 		public enum DSPROPERTY_DIRECTSOUNDDEVICE : int32
 		{
 			WAVEDEVICEMAPPING_A = 1,
@@ -264,14 +262,12 @@ namespace Win32
 			ENUMERATE_A = 7,
 			ENUMERATE_W = 8,
 		}
-		[AllowDuplicates]
 		public enum DIRECTSOUNDDEVICE_TYPE : int32
 		{
 			EMULATED = 0,
 			VXD = 1,
 			WDM = 2,
 		}
-		[AllowDuplicates]
 		public enum DIRECTSOUNDDEVICE_DATAFLOW : int32
 		{
 			RENDER = 0,

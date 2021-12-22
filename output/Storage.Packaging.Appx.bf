@@ -32,7 +32,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum APPX_COMPRESSION_OPTION : int32
 		{
 			NONE = 0,
@@ -41,7 +40,6 @@ namespace Win32
 			FAST = 3,
 			SUPERFAST = 4,
 		}
-		[AllowDuplicates]
 		public enum APPX_FOOTPRINT_FILE_TYPE : int32
 		{
 			MANIFEST = 0,
@@ -59,7 +57,6 @@ namespace Win32
 			SIGNATURE = 2,
 			LAST = 2,
 		}
-		[AllowDuplicates]
 		public enum APPX_CAPABILITIES : uint32
 		{
 			INTERNET_CLIENT = 1,
@@ -75,7 +72,6 @@ namespace Win32
 			APPOINTMENTS = 1024,
 			CONTACTS = 2048,
 		}
-		[AllowDuplicates]
 		public enum APPX_PACKAGE_ARCHITECTURE : int32
 		{
 			X86 = 0,
@@ -84,7 +80,6 @@ namespace Win32
 			NEUTRAL = 11,
 			ARM64 = 12,
 		}
-		[AllowDuplicates]
 		public enum APPX_PACKAGE_ARCHITECTURE2 : int32
 		{
 			X86 = 0,
@@ -95,13 +90,11 @@ namespace Win32
 			X86_ON_ARM64 = 14,
 			UNKNOWN = 65535,
 		}
-		[AllowDuplicates]
 		public enum APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE : int32
 		{
 			APPLICATION = 0,
 			RESOURCE = 1,
 		}
-		[AllowDuplicates]
 		public enum DX_FEATURE_LEVEL : int32
 		{
 			UNSPECIFIED = 0,
@@ -109,7 +102,6 @@ namespace Win32
 			_10 = 2,
 			_11 = 3,
 		}
-		[AllowDuplicates]
 		public enum APPX_CAPABILITY_CLASS_TYPE : int32
 		{
 			DEFAULT = 0,
@@ -119,7 +111,6 @@ namespace Win32
 			ALL = 7,
 			CUSTOM = 8,
 		}
-		[AllowDuplicates]
 		public enum APPX_PACKAGING_CONTEXT_CHANGE_TYPE : int32
 		{
 			START = 0,
@@ -127,26 +118,22 @@ namespace Win32
 			DETAILS = 2,
 			END = 3,
 		}
-		[AllowDuplicates]
 		public enum APPX_ENCRYPTED_PACKAGE_OPTIONS : uint32
 		{
 			NONE = 0,
 			DIFFUSION = 1,
 			PAGE_HASHING = 2,
 		}
-		[AllowDuplicates]
 		public enum APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION : int32
 		{
 			APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION_APPEND_DELTA = 0,
 		}
-		[AllowDuplicates]
 		public enum APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS : uint32
 		{
 			NONE = 0,
 			SKIP_VALIDATION = 1,
 			LOCALIZED = 2,
 		}
-		[AllowDuplicates]
 		public enum PackagePathType : int32
 		{
 			Install = 0,
@@ -156,7 +143,6 @@ namespace Win32
 			UserExternal = 4,
 			EffectiveExternal = 5,
 		}
-		[AllowDuplicates]
 		public enum PackageOrigin : int32
 		{
 			Unknown = 0,
@@ -167,27 +153,23 @@ namespace Win32
 			DeveloperSigned = 5,
 			LineOfBusiness = 6,
 		}
-		[AllowDuplicates]
 		public enum CreatePackageDependencyOptions : int32
 		{
 			None = 0,
 			DoNotVerifyDependencyResolution = 1,
 			ScopeIsSystem = 2,
 		}
-		[AllowDuplicates]
 		public enum PackageDependencyLifetimeKind : int32
 		{
 			Process = 0,
 			FilePath = 1,
 			RegistryKey = 2,
 		}
-		[AllowDuplicates]
 		public enum AddPackageDependencyOptions : int32
 		{
 			None = 0,
 			PrependIfRankCollision = 1,
 		}
-		[AllowDuplicates]
 		public enum PackageDependencyProcessorArchitectures : int32
 		{
 			None = 0,
@@ -198,13 +180,11 @@ namespace Win32
 			Arm64 = 16,
 			X86A64 = 32,
 		}
-		[AllowDuplicates]
 		public enum AppPolicyLifecycleManagement : int32
 		{
 			Unmanaged = 0,
 			Managed = 1,
 		}
-		[AllowDuplicates]
 		public enum AppPolicyWindowingModel : int32
 		{
 			None = 0,
@@ -212,13 +192,11 @@ namespace Win32
 			ClassicDesktop = 2,
 			ClassicPhone = 3,
 		}
-		[AllowDuplicates]
 		public enum AppPolicyMediaFoundationCodecLoading : int32
 		{
 			All = 0,
 			InboxOnly = 1,
 		}
-		[AllowDuplicates]
 		public enum AppPolicyClrCompat : int32
 		{
 			Other = 0,
@@ -226,25 +204,21 @@ namespace Win32
 			Universal = 2,
 			PackagedDesktop = 3,
 		}
-		[AllowDuplicates]
 		public enum AppPolicyThreadInitializationType : int32
 		{
 			None = 0,
 			InitializeWinRT = 1,
 		}
-		[AllowDuplicates]
 		public enum AppPolicyShowDeveloperDiagnostic : int32
 		{
 			None = 0,
 			ShowUI = 1,
 		}
-		[AllowDuplicates]
 		public enum AppPolicyProcessTerminationMethod : int32
 		{
 			ExitProcess = 0,
 			TerminateProcess = 1,
 		}
-		[AllowDuplicates]
 		public enum AppPolicyCreateFileAccess : int32
 		{
 			Full = 0,

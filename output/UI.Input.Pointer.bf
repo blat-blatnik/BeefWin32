@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum POINTER_FLAGS : uint32
 		{
 			NONE = 0,
@@ -30,14 +29,12 @@ namespace Win32
 			CAPTURECHANGED = 2097152,
 			HASTRANSFORM = 4194304,
 		}
-		[AllowDuplicates]
 		public enum TOUCH_FEEDBACK_MODE : uint32
 		{
 			DEFAULT = 1,
 			INDIRECT = 2,
 			NONE = 3,
 		}
-		[AllowDuplicates]
 		public enum POINTER_BUTTON_CHANGE_TYPE : int32
 		{
 			NONE = 0,

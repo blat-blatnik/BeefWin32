@@ -1420,7 +1420,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WNDCLASS_STYLES : uint32
 		{
 			VREDRAW = 1,
@@ -1437,7 +1436,6 @@ namespace Win32
 			IME = 65536,
 			DROPSHADOW = 131072,
 		}
-		[AllowDuplicates]
 		public enum CWP_FLAGS : uint32
 		{
 			ALL = 0,
@@ -1877,7 +1875,6 @@ namespace Win32
 			CHILDWINDOW = 1073741824,
 			ACTIVECAPTION = 1,
 		}
-		[AllowDuplicates]
 		public enum OBJECT_IDENTIFIER : int32
 		{
 			WINDOW = 0,
@@ -1895,7 +1892,6 @@ namespace Win32
 			QUERYCLASSNAMEIDX = -12,
 			NATIVEOM = -16,
 		}
-		[AllowDuplicates]
 		public enum MENU_ITEM_TYPE : uint32
 		{
 			BITMAP = 4,
@@ -1908,7 +1904,6 @@ namespace Win32
 			SEPARATOR = 2048,
 			STRING = 0,
 		}
-		[AllowDuplicates]
 		public enum MESSAGEBOX_RESULT : int32
 		{
 			OK = 1,
@@ -1937,7 +1932,6 @@ namespace Win32
 			UNHILITE = 0,
 			DEFAULT = 4096,
 		}
-		[AllowDuplicates]
 		public enum SCROLLBAR_CONSTANTS : uint32
 		{
 			CTL = 2,
@@ -1967,7 +1961,6 @@ namespace Win32
 			LP_MENUNAME = -8,
 			LP_WNDPROC = -24,
 		}
-		[AllowDuplicates]
 		public enum UPDATE_LAYERED_WINDOW_FLAGS : uint32
 		{
 			ALPHA = 2,
@@ -1991,7 +1984,6 @@ namespace Win32
 			_WNDPROC = -4,
 			_HWNDPARENT = -8,
 		}
-		[AllowDuplicates]
 		public enum ANIMATE_WINDOW_FLAGS : uint32
 		{
 			ACTIVATE = 131072,
@@ -2004,20 +1996,17 @@ namespace Win32
 			VER_POSITIVE = 4,
 			VER_NEGATIVE = 8,
 		}
-		[AllowDuplicates]
 		public enum CHANGE_WINDOW_MESSAGE_FILTER_FLAGS : uint32
 		{
 			ADD = 1,
 			REMOVE = 2,
 		}
-		[AllowDuplicates]
 		public enum GDI_IMAGE_TYPE : uint32
 		{
 			BITMAP = 0,
 			CURSOR = 2,
 			ICON = 1,
 		}
-		[AllowDuplicates]
 		public enum WINDOWS_HOOK_ID : int32
 		{
 			CALLWNDPROC = 4,
@@ -2036,7 +2025,6 @@ namespace Win32
 			SHELL = 10,
 			SYSMSGFILTER = 6,
 		}
-		[AllowDuplicates]
 		public enum IMAGE_FLAGS : uint32
 		{
 			CREATEDIBSECTION = 8192,
@@ -2079,7 +2067,6 @@ namespace Win32
 			SHOWWINDOW = 64,
 			_NOOWNERZORDER = 512,
 		}
-		[AllowDuplicates]
 		public enum MSG_WAIT_FOR_MULTIPLE_OBJECTS_EX_FLAGS : uint32
 		{
 			NONE = 0,
@@ -2087,7 +2074,6 @@ namespace Win32
 			INPUTAVAILABLE = 4,
 			WAITALL = 1,
 		}
-		[AllowDuplicates]
 		public enum QUEUE_STATUS_FLAGS : uint32
 		{
 			ALLEVENTS = 1215,
@@ -2105,7 +2091,6 @@ namespace Win32
 			SENDMESSAGE = 64,
 			TIMER = 16,
 		}
-		[AllowDuplicates]
 		public enum SYSTEM_CURSOR_ID : uint32
 		{
 			APPSTARTING = 32650,
@@ -2123,13 +2108,11 @@ namespace Win32
 			UP = 32516,
 			WAIT = 32514,
 		}
-		[AllowDuplicates]
 		public enum LAYERED_WINDOW_ATTRIBUTES_FLAGS : uint32
 		{
 			ALPHA = 2,
 			COLORKEY = 1,
 		}
-		[AllowDuplicates]
 		public enum SEND_MESSAGE_TIMEOUT_FLAGS : uint32
 		{
 			ABORTIFHUNG = 2,
@@ -2138,7 +2121,6 @@ namespace Win32
 			NOTIMEOUTIFNOTHUNG = 8,
 			ERRORONEXIT = 32,
 		}
-		[AllowDuplicates]
 		public enum PEEK_MESSAGE_REMOVE_TYPE : uint32
 		{
 			NOREMOVE = 0,
@@ -2189,7 +2171,6 @@ namespace Win32
 			COLOR_WINDOWFRAME = 6,
 			COLOR_WINDOWTEXT = 8,
 		}
-		[AllowDuplicates]
 		public enum GET_WINDOW_CMD : uint32
 		{
 			CHILD = 5,
@@ -2299,52 +2280,44 @@ namespace Win32
 			XVIRTUALSCREEN = 76,
 			YVIRTUALSCREEN = 77,
 		}
-		[AllowDuplicates]
 		public enum GET_ANCESTOR_FLAGS : uint32
 		{
 			PARENT = 1,
 			ROOT = 2,
 			ROOTOWNER = 3,
 		}
-		[AllowDuplicates]
 		public enum TILE_WINDOWS_HOW : uint32
 		{
 			HORIZONTAL = 1,
 			VERTICAL = 0,
 		}
-		[AllowDuplicates]
 		public enum WINDOW_DISPLAY_AFFINITY : uint32
 		{
 			NONE = 0,
 			MONITOR = 1,
 			EXCLUDEFROMCAPTURE = 17,
 		}
-		[AllowDuplicates]
 		public enum FOREGROUND_WINDOW_LOCK_CODE : uint32
 		{
 			LOCK = 1,
 			UNLOCK = 2,
 		}
-		[AllowDuplicates]
 		public enum CASCADE_WINDOWS_HOW : uint32
 		{
 			SKIPDISABLED = 2,
 			ZORDER = 4,
 		}
-		[AllowDuplicates]
 		public enum WINDOW_MESSAGE_FILTER_ACTION : uint32
 		{
 			ALLOW = 1,
 			DISALLOW = 2,
 			RESET = 0,
 		}
-		[AllowDuplicates]
 		public enum GET_MENU_DEFAULT_ITEM_FLAGS : uint32
 		{
 			GOINTOPOPUPS = 2,
 			USEDISABLED = 1,
 		}
-		[AllowDuplicates]
 		public enum MSGFLTINFO_STATUS : uint32
 		{
 			NONE = 0,
@@ -2352,13 +2325,11 @@ namespace Win32
 			ALREADYALLOWED_FORWND = 1,
 			ALREADYDISALLOWED_FORWND = 2,
 		}
-		[AllowDuplicates]
 		public enum MOUSEHOOKSTRUCTEX_MOUSE_DATA : uint32
 		{
 			_1 = 1,
 			_2 = 2,
 		}
-		[AllowDuplicates]
 		public enum MENU_ITEM_MASK : uint32
 		{
 			BITMAP = 128,
@@ -2371,7 +2342,6 @@ namespace Win32
 			SUBMENU = 4,
 			TYPE = 16,
 		}
-		[AllowDuplicates]
 		public enum FLASHWINFO_FLAGS : uint32
 		{
 			ALL = 3,
@@ -2381,13 +2351,11 @@ namespace Win32
 			TIMERNOFG = 12,
 			TRAY = 2,
 		}
-		[AllowDuplicates]
 		public enum CURSORINFO_FLAGS : uint32
 		{
 			HOWING = 1,
 			UPPRESSED = 2,
 		}
-		[AllowDuplicates]
 		public enum MENUINFO_STYLE : uint32
 		{
 			AUTODISMISS = 268435456,
@@ -2397,14 +2365,12 @@ namespace Win32
 			NOCHECK = 2147483648,
 			NOTIFYBYPOS = 134217728,
 		}
-		[AllowDuplicates]
 		public enum WINDOWPLACEMENT_FLAGS : uint32
 		{
 			ASYNCWINDOWPLACEMENT = 4,
 			RESTORETOMAXIMIZED = 2,
 			SETMINPOSITION = 1,
 		}
-		[AllowDuplicates]
 		public enum MENUINFO_MASK : uint32
 		{
 			APPLYTOSUBMENUS = 2147483648,
@@ -2414,7 +2380,6 @@ namespace Win32
 			MENUDATA = 8,
 			STYLE = 16,
 		}
-		[AllowDuplicates]
 		public enum MINIMIZEDMETRICS_ARRANGE : int32
 		{
 			BOTTOMLEFT = 0,
@@ -2422,7 +2387,6 @@ namespace Win32
 			TOPLEFT = 2,
 			TOPRIGHT = 3,
 		}
-		[AllowDuplicates]
 		public enum SCROLLINFO_MASK : uint32
 		{
 			ALL = 23,
@@ -2432,13 +2396,11 @@ namespace Win32
 			RANGE = 1,
 			TRACKPOS = 16,
 		}
-		[AllowDuplicates]
 		public enum MENUGETOBJECTINFO_FLAGS : uint32
 		{
 			BOTTOMGAP = 2,
 			TOPGAP = 1,
 		}
-		[AllowDuplicates]
 		public enum GUITHREADINFO_FLAGS : uint32
 		{
 			CARETBLINKING = 1,
@@ -2447,7 +2409,6 @@ namespace Win32
 			POPUPMENUMODE = 16,
 			SYSTEMMENUMODE = 8,
 		}
-		[AllowDuplicates]
 		public enum KBDLLHOOKSTRUCT_FLAGS : uint32
 		{
 			EXTENDED = 1,
@@ -2456,7 +2417,6 @@ namespace Win32
 			INJECTED = 16,
 			LOWER_IL_INJECTED = 2,
 		}
-		[AllowDuplicates]
 		public enum DI_FLAGS : uint32
 		{
 			MASK = 1,
@@ -2466,7 +2426,6 @@ namespace Win32
 			DEFAULTSIZE = 8,
 			NOMIRROR = 16,
 		}
-		[AllowDuplicates]
 		public enum POINTER_INPUT_TYPE : int32
 		{
 			POINTER = 1,
@@ -2475,47 +2434,40 @@ namespace Win32
 			MOUSE = 4,
 			TOUCHPAD = 5,
 		}
-		[AllowDuplicates]
 		public enum EDIT_CONTROL_FEATURE : int32
 		{
 			ENTERPRISE_DATA_PROTECTION_PASTE_SUPPORT = 0,
 			PASTE_NOTIFICATIONS = 1,
 		}
-		[AllowDuplicates]
 		public enum HANDEDNESS : int32
 		{
 			LEFT = 0,
 			RIGHT = 1,
 		}
-		[AllowDuplicates]
 		public enum MrmPlatformVersion : int32
 		{
 			Default = 0,
 			Windows10_0_0_0 = 17432576,
 			Windows10_0_0_5 = 17432581,
 		}
-		[AllowDuplicates]
 		public enum MrmPackagingMode : int32
 		{
 			StandaloneFile = 0,
 			AutoSplit = 1,
 			ResourcePack = 2,
 		}
-		[AllowDuplicates]
 		public enum MrmPackagingOptions : int32
 		{
 			None = 0,
 			OmitSchemaFromResourcePacks = 1,
 			SplitLanguageVariants = 2,
 		}
-		[AllowDuplicates]
 		public enum MrmDumpType : int32
 		{
 			Basic = 0,
 			Detailed = 1,
 			Schema = 2,
 		}
-		[AllowDuplicates]
 		public enum MrmResourceIndexerMessageSeverity : int32
 		{
 			Verbose = 0,
@@ -2523,7 +2475,6 @@ namespace Win32
 			Warning = 2,
 			Error = 3,
 		}
-		[AllowDuplicates]
 		public enum MrmIndexerFlags : int32
 		{
 			None = 0,

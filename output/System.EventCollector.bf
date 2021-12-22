@@ -17,7 +17,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum EC_SUBSCRIPTION_PROPERTY_ID : int32
 		{
 			Enabled = 0,
@@ -54,7 +53,6 @@ namespace Win32
 			AllowedSourceDomainComputers = 31,
 			PropertyIdEND = 32,
 		}
-		[AllowDuplicates]
 		public enum EC_SUBSCRIPTION_CREDENTIALS_TYPE : int32
 		{
 			Default = 0,
@@ -63,13 +61,11 @@ namespace Win32
 			Basic = 3,
 			LocalMachine = 4,
 		}
-		[AllowDuplicates]
 		public enum EC_SUBSCRIPTION_TYPE : int32
 		{
 			SourceInitiated = 0,
 			CollectorInitiated = 1,
 		}
-		[AllowDuplicates]
 		public enum EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID : int32
 		{
 			Active = 0,
@@ -81,7 +77,6 @@ namespace Win32
 			LastHeartbeatTime = 6,
 			InfoIdEND = 7,
 		}
-		[AllowDuplicates]
 		public enum EC_VARIANT_TYPE : int32
 		{
 			TypeNull = 0,
@@ -91,7 +86,6 @@ namespace Win32
 			TypeString = 4,
 			ObjectArrayPropertyHandle = 5,
 		}
-		[AllowDuplicates]
 		public enum EC_SUBSCRIPTION_CONFIGURATION_MODE : int32
 		{
 			Normal = 0,
@@ -99,19 +93,16 @@ namespace Win32
 			MinLatency = 2,
 			MinBandwidth = 3,
 		}
-		[AllowDuplicates]
 		public enum EC_SUBSCRIPTION_DELIVERY_MODE : int32
 		{
 			ll = 1,
 			sh = 2,
 		}
-		[AllowDuplicates]
 		public enum EC_SUBSCRIPTION_CONTENT_FORMAT : int32
 		{
 			Events = 1,
 			RenderedText = 2,
 		}
-		[AllowDuplicates]
 		public enum EC_SUBSCRIPTION_RUNTIME_STATUS_ACTIVE_STATUS : int32
 		{
 			Disabled = 1,

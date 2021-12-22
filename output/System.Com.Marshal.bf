@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum STDMSHLFLAGS : int32
 		{
 			SERVER = 1,

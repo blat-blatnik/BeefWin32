@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WSC_SECURITY_PRODUCT_SUBSTATUS : int32
 		{
 			NOT_SET = 0,
@@ -15,7 +14,6 @@ namespace Win32
 			ACTION_RECOMMENDED = 2,
 			ACTION_NEEDED = 3,
 		}
-		[AllowDuplicates]
 		public enum WSC_SECURITY_PRODUCT_STATE : int32
 		{
 			ON = 0,
@@ -23,20 +21,17 @@ namespace Win32
 			SNOOZED = 2,
 			EXPIRED = 3,
 		}
-		[AllowDuplicates]
 		public enum SECURITY_PRODUCT_TYPE : int32
 		{
 			ANTIVIRUS = 0,
 			FIREWALL = 1,
 			ANTISPYWARE = 2,
 		}
-		[AllowDuplicates]
 		public enum WSC_SECURITY_SIGNATURE_STATUS : int32
 		{
 			OUT_OF_DATE = 0,
 			UP_TO_DATE = 1,
 		}
-		[AllowDuplicates]
 		public enum WSC_SECURITY_PROVIDER : int32
 		{
 			FIREWALL = 1,
@@ -49,7 +44,6 @@ namespace Win32
 			NONE = 0,
 			ALL = 127,
 		}
-		[AllowDuplicates]
 		public enum WSC_SECURITY_PROVIDER_HEALTH : int32
 		{
 			GOOD = 0,

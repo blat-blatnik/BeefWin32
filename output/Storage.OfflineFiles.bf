@@ -107,7 +107,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum OFFLINEFILES_ITEM_TYPE : int32
 		{
 			FILE = 0,
@@ -115,14 +114,12 @@ namespace Win32
 			SHARE = 2,
 			SERVER = 3,
 		}
-		[AllowDuplicates]
 		public enum OFFLINEFILES_ITEM_COPY : int32
 		{
 			LOCAL = 0,
 			REMOTE = 1,
 			ORIGINAL = 2,
 		}
-		[AllowDuplicates]
 		public enum OFFLINEFILES_CONNECT_STATE : int32
 		{
 			UNKNOWN = 0,
@@ -131,7 +128,6 @@ namespace Win32
 			TRANSPARENTLY_CACHED = 3,
 			PARTLY_TRANSPARENTLY_CACHED = 4,
 		}
-		[AllowDuplicates]
 		public enum OFFLINEFILES_OFFLINE_REASON : int32
 		{
 			UNKNOWN = 0,
@@ -142,7 +138,6 @@ namespace Win32
 			ITEM_VERSION_CONFLICT = 5,
 			ITEM_SUSPENDED = 6,
 		}
-		[AllowDuplicates]
 		public enum OFFLINEFILES_CACHING_MODE : int32
 		{
 			NONE = 0,
@@ -151,14 +146,12 @@ namespace Win32
 			AUTO_DOC = 3,
 			AUTO_PROGANDDOC = 4,
 		}
-		[AllowDuplicates]
 		public enum OFFLINEFILES_OP_RESPONSE : int32
 		{
 			CONTINUE = 0,
 			RETRY = 1,
 			ABORT = 2,
 		}
-		[AllowDuplicates]
 		public enum OFFLINEFILES_EVENTS : int32
 		{
 			EVENT_CACHEMOVED = 0,
@@ -202,7 +195,6 @@ namespace Win32
 			EVENT_PREFETCHCLOSEHANDLEEND = 38,
 			NUM_EVENTS = 39,
 		}
-		[AllowDuplicates]
 		public enum OFFLINEFILES_PATHFILTER_MATCH : int32
 		{
 			SELF = 0,
@@ -211,7 +203,6 @@ namespace Win32
 			SELFORCHILD = 3,
 			SELFORDESCENDENT = 4,
 		}
-		[AllowDuplicates]
 		public enum OFFLINEFILES_SYNC_CONFLICT_RESOLVE : int32
 		{
 			RESOLVE_NONE = 0,
@@ -224,14 +215,12 @@ namespace Win32
 			ABORT = 7,
 			RESOLVE_NUMCODES = 8,
 		}
-		[AllowDuplicates]
 		public enum OFFLINEFILES_ITEM_TIME : int32
 		{
 			CREATION = 0,
 			LASTACCESS = 1,
 			LASTWRITE = 2,
 		}
-		[AllowDuplicates]
 		public enum OFFLINEFILES_COMPARE : int32
 		{
 			EQ = 0,
@@ -241,7 +230,6 @@ namespace Win32
 			LTE = 4,
 			GTE = 5,
 		}
-		[AllowDuplicates]
 		public enum OFFLINEFILES_SETTING_VALUE_TYPE : int32
 		{
 			UI4 = 0,
@@ -250,7 +238,6 @@ namespace Win32
 			_2DIM_ARRAY_BSTR_UI4 = 3,
 			_2DIM_ARRAY_BSTR_BSTR = 4,
 		}
-		[AllowDuplicates]
 		public enum OFFLINEFILES_SYNC_OPERATION : int32
 		{
 			CREATE_COPY_ON_SERVER = 0,
@@ -262,7 +249,6 @@ namespace Win32
 			PIN = 6,
 			PREPARE = 7,
 		}
-		[AllowDuplicates]
 		public enum OFFLINEFILES_SYNC_STATE : int32
 		{
 			Stable = 0,

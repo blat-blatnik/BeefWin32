@@ -1019,7 +1019,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum GPT_ATTRIBUTES : uint64
 		{
 			ATTRIBUTE_PLATFORM_REQUIRED = 1uL,
@@ -1028,13 +1027,11 @@ namespace Win32
 			BASIC_DATA_ATTRIBUTE_SHADOW_COPY = 2305843009213693952uL,
 			BASIC_DATA_ATTRIBUTE_READ_ONLY = 1152921504606846976uL,
 		}
-		[AllowDuplicates]
 		public enum USN_DELETE_FLAGS : uint32
 		{
 			DELETE = 1,
 			NOTIFY = 2,
 		}
-		[AllowDuplicates]
 		public enum CHANGER_FEATURES : uint32
 		{
 			BAR_CODE_SCANNER_INSTALLED = 1,
@@ -1067,7 +1064,6 @@ namespace Win32
 			VOLUME_SEARCH = 2097152,
 			VOLUME_UNDEFINE = 16777216,
 		}
-		[AllowDuplicates]
 		public enum TXFS_RMF_LAGS : uint32
 		{
 			LOGGING_MODE = 1,
@@ -1088,14 +1084,12 @@ namespace Win32
 			PREFER_CONSISTENCY = 65536,
 			PREFER_AVAILABILITY = 131072,
 		}
-		[AllowDuplicates]
 		public enum FILESYSTEM_STATISTICS_TYPE : uint16
 		{
 			EXFAT = 3,
 			FAT = 2,
 			NTFS = 1,
 		}
-		[AllowDuplicates]
 		public enum USN_SOURCE_INFO_ID : uint32
 		{
 			AUXILIARY_DATA = 2,
@@ -1103,12 +1097,10 @@ namespace Win32
 			REPLICATION_MANAGEMENT = 4,
 			CLIENT_REPLICATION_MANAGEMENT = 8,
 		}
-		[AllowDuplicates]
 		public enum FILE_STORAGE_TIER_FLAGS : uint32
 		{
 			FILE_STORAGE_TIER_FLAG_NO_SEEK_PENALTY = 131072,
 		}
-		[AllowDuplicates]
 		public enum CHANGER_ELEMENT_STATUS_FLAGS : uint32
 		{
 			ACCESS = 8,
@@ -1126,7 +1118,6 @@ namespace Win32
 			SVALID = 8388608,
 			PRODUCT_DATA = 64,
 		}
-		[AllowDuplicates]
 		public enum GET_CHANGER_PARAMETERS_FEATURES1 : uint32
 		{
 			CLEANER_AUTODISMOUNT = 2147483652,
@@ -1141,7 +1132,6 @@ namespace Win32
 			SLOTS_USE_TRAYS = 2147483664,
 			TRUE_EXCHANGE_CAPABLE = 2147483656,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_MEDIA_TYPE : int32
 		{
 			DDS_4mm = 32,
@@ -1208,7 +1198,6 @@ namespace Win32
 			SAIT = 93,
 			VXATape = 94,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_QUERY_TYPE : int32
 		{
 			StandardQuery = 0,
@@ -1216,14 +1205,12 @@ namespace Win32
 			MaskQuery = 2,
 			QueryMaxDefined = 3,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_SET_TYPE : int32
 		{
 			StandardSet = 0,
 			ExistsSet = 1,
 			SetMaxDefined = 2,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_PROPERTY_ID : int32
 		{
 			DeviceProperty = 0,
@@ -1263,7 +1250,6 @@ namespace Win32
 			DeviceSelfEncryptionProperty = 64,
 			FruIdProperty = 65,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_PORT_CODE_SET : int32
 		{
 			Reserved = 0,
@@ -1275,7 +1261,6 @@ namespace Win32
 			SBP2port = 6,
 			SDport = 7,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_IDENTIFIER_CODE_SET : int32
 		{
 			Reserved = 0,
@@ -1283,7 +1268,6 @@ namespace Win32
 			Ascii = 2,
 			Utf8 = 3,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_IDENTIFIER_TYPE : int32
 		{
 			VendorSpecific = 0,
@@ -1296,28 +1280,24 @@ namespace Win32
 			MD5LogicalUnitIdentifier = 7,
 			ScsiNameString = 8,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_ID_NAA_FORMAT : int32
 		{
 			Extended = 2,
 			Registered = 3,
 			ERegisteredExtended = 5,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_ASSOCIATION_TYPE : int32
 		{
 			Device = 0,
 			Port = 1,
 			Target = 2,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_RPMB_FRAME_TYPE : int32
 		{
 			Unknown = 0,
 			Standard = 1,
 			Max = 2,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_CRYPTO_ALGORITHM_ID : int32
 		{
 			Unknown = 0,
@@ -1327,7 +1307,6 @@ namespace Win32
 			ESSIVAESCBC = 4,
 			Max = 5,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_CRYPTO_KEY_SIZE : int32
 		{
 			Unknown = 0,
@@ -1336,7 +1315,6 @@ namespace Win32
 			_256Bits = 3,
 			_512Bits = 4,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_TIER_MEDIA_TYPE : int32
 		{
 			Unspecified = 0,
@@ -1345,7 +1323,6 @@ namespace Win32
 			Scm = 4,
 			Max = 5,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_TIER_CLASS : int32
 		{
 			Unspecified = 0,
@@ -1353,7 +1330,6 @@ namespace Win32
 			Performance = 2,
 			Max = 3,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_PROTOCOL_TYPE : int32
 		{
 			Unknown = 0,
@@ -1365,7 +1341,6 @@ namespace Win32
 			Proprietary = 126,
 			MaxReserved = 127,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_PROTOCOL_NVME_DATA_TYPE : int32
 		{
 			Unknown = 0,
@@ -1373,14 +1348,12 @@ namespace Win32
 			LogPage = 2,
 			Feature = 3,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_PROTOCOL_ATA_DATA_TYPE : int32
 		{
 			Unknown = 0,
 			Identify = 1,
 			LogPage = 2,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_PROTOCOL_UFS_DATA_TYPE : int32
 		{
 			Unknown = 0,
@@ -1391,7 +1364,6 @@ namespace Win32
 			QueryDmePeerAttribute = 5,
 			Max = 6,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_DEVICE_FORM_FACTOR : int32
 		{
 			Unknown = 0,
@@ -1406,7 +1378,6 @@ namespace Win32
 			PCIeBoard = 9,
 			Dimm = 10,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_COMPONENT_HEALTH_STATUS : int32
 		{
 			Unknown = 0,
@@ -1416,7 +1387,6 @@ namespace Win32
 			Disabled = 4,
 			Failed = 5,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_DISK_HEALTH_STATUS : int32
 		{
 			Unknown = 0,
@@ -1425,7 +1395,6 @@ namespace Win32
 			Healthy = 3,
 			Max = 4,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_DISK_OPERATIONAL_STATUS : int32
 		{
 			None = 0,
@@ -1438,7 +1407,6 @@ namespace Win32
 			TransientError = 7,
 			Missing = 8,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_OPERATIONAL_STATUS_REASON : int32
 		{
 			Unknown = 0,
@@ -1463,7 +1431,6 @@ namespace Win32
 			WritePersistenceLossImminent = 19,
 			Max = 20,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_ZONED_DEVICE_TYPES : int32
 		{
 			Unknown = 0,
@@ -1471,7 +1438,6 @@ namespace Win32
 			HostAware = 2,
 			DeviceManaged = 3,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_ZONE_TYPES : int32
 		{
 			Unknown = 0,
@@ -1480,7 +1446,6 @@ namespace Win32
 			SequentialWritePreferred = 3,
 			Max = 4,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_ZONES_ATTRIBUTES : int32
 		{
 			AndLengthMayDifferent = 0,
@@ -1488,7 +1453,6 @@ namespace Win32
 			SameLastZoneLengthDifferent = 2,
 			MayDifferentLengthSame = 3,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_ZONE_CONDITION : int32
 		{
 			Conventional = 0,
@@ -1500,13 +1464,11 @@ namespace Win32
 			Full = 14,
 			Offline = 15,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_DIAGNOSTIC_LEVEL : int32
 		{
 			Default = 0,
 			Max = 1,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_DIAGNOSTIC_TARGET_TYPE : int32
 		{
 			Undefined = 0,
@@ -1515,7 +1477,6 @@ namespace Win32
 			HbaFirmware = 3,
 			Max = 4,
 		}
-		[AllowDuplicates]
 		public enum DEVICE_INTERNAL_STATUS_DATA_REQUEST_TYPE : int32
 		{
 			InternalStatusDataRequestTypeUndefined = 0,
@@ -1524,7 +1485,6 @@ namespace Win32
 			SavedInternalStatusDataHeader = 3,
 			SavedInternalStatusData = 4,
 		}
-		[AllowDuplicates]
 		public enum DEVICE_INTERNAL_STATUS_DATA_SET : int32
 		{
 			Undefined = 0,
@@ -1534,14 +1494,12 @@ namespace Win32
 			_4 = 4,
 			Max = 5,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_SANITIZE_METHOD : int32
 		{
 			Default = 0,
 			BlockErase = 1,
 			CryptoErase = 2,
 		}
-		[AllowDuplicates]
 		public enum WRITE_CACHE_TYPE : int32
 		{
 			Unknown = 0,
@@ -1549,48 +1507,41 @@ namespace Win32
 			WriteBack = 2,
 			WriteThrough = 3,
 		}
-		[AllowDuplicates]
 		public enum WRITE_CACHE_ENABLE : int32
 		{
 			EnableUnknown = 0,
 			Disabled = 1,
 			Enabled = 2,
 		}
-		[AllowDuplicates]
 		public enum WRITE_CACHE_CHANGE : int32
 		{
 			ChangeUnknown = 0,
 			NotChangeable = 1,
 			Changeable = 2,
 		}
-		[AllowDuplicates]
 		public enum WRITE_THROUGH : int32
 		{
 			Unknown = 0,
 			NotSupported = 1,
 			Supported = 2,
 		}
-		[AllowDuplicates]
 		public enum _DEVICEDUMP_COLLECTION_TYPE : int32
 		{
 			BugCheck = 1,
 			ApplicationRequested = 2,
 			DeviceRequested = 3,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_POWERUP_REASON_TYPE : int32
 		{
 			Unknown = 0,
 			IO = 1,
 			DeviceAttention = 2,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_DEVICE_POWER_CAP_UNITS : int32
 		{
 			Percent = 0,
 			Milliwatts = 1,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_RPMB_COMMAND_TYPE : int32
 		{
 			ProgramAuthKey = 1,
@@ -1601,7 +1552,6 @@ namespace Win32
 			AuthenticatedDeviceConfigWrite = 6,
 			AuthenticatedDeviceConfigRead = 7,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_COUNTER_TYPE : int32
 		{
 			Unknown = 0,
@@ -1627,34 +1577,29 @@ namespace Win32
 			FlushLatency100NSMax = 20,
 			Max = 21,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_ATTRIBUTE_MGMT_ACTION : int32
 		{
 			ClearAttribute = 0,
 			SetAttribute = 1,
 			ResetAttribute = 2,
 		}
-		[AllowDuplicates]
 		public enum SCM_REGION_FLAG : int32
 		{
 			None = 0,
 			Label = 1,
 		}
-		[AllowDuplicates]
 		public enum SCM_BUS_QUERY_TYPE : int32
 		{
 			Descriptor = 0,
 			IsSupported = 1,
 			Max = 2,
 		}
-		[AllowDuplicates]
 		public enum SCM_BUS_SET_TYPE : int32
 		{
 			Descriptor = 0,
 			IsSupported = 1,
 			Max = 2,
 		}
-		[AllowDuplicates]
 		public enum SCM_BUS_PROPERTY_ID : int32
 		{
 			RuntimeFwActivationInfo = 0,
@@ -1662,28 +1607,24 @@ namespace Win32
 			DedicatedMemoryState = 2,
 			Max = 3,
 		}
-		[AllowDuplicates]
 		public enum SCM_BUS_FIRMWARE_ACTIVATION_STATE : int32
 		{
 			Idle = 0,
 			Armed = 1,
 			Busy = 2,
 		}
-		[AllowDuplicates]
 		public enum SCM_PD_QUERY_TYPE : int32
 		{
 			Descriptor = 0,
 			IsSupported = 1,
 			Max = 2,
 		}
-		[AllowDuplicates]
 		public enum SCM_PD_SET_TYPE : int32
 		{
 			Descriptor = 0,
 			IsSupported = 1,
 			Max = 2,
 		}
-		[AllowDuplicates]
 		public enum SCM_PD_PROPERTY_ID : int32
 		{
 			DeviceInfo = 0,
@@ -1697,7 +1638,6 @@ namespace Win32
 			RuntimeFwActivationArmState = 8,
 			Max = 9,
 		}
-		[AllowDuplicates]
 		public enum SCM_PD_HEALTH_STATUS : int32
 		{
 			Unknown = 0,
@@ -1706,7 +1646,6 @@ namespace Win32
 			Healthy = 3,
 			Max = 4,
 		}
-		[AllowDuplicates]
 		public enum SCM_PD_OPERATIONAL_STATUS : int32
 		{
 			Unknown = 0,
@@ -1719,7 +1658,6 @@ namespace Win32
 			Missing = 7,
 			Max = 8,
 		}
-		[AllowDuplicates]
 		public enum SCM_PD_OPERATIONAL_STATUS_REASON : int32
 		{
 			Unknown = 0,
@@ -1747,7 +1685,6 @@ namespace Win32
 			InternalFailure = 22,
 			Max = 23,
 		}
-		[AllowDuplicates]
 		public enum SCM_PD_LAST_FW_ACTIVATION_STATUS : int32
 		{
 			tionStatus_None = 0,
@@ -1759,14 +1696,12 @@ namespace Win32
 			itonStatus_FwUnsupported = 6,
 			itonStatus_UnknownError = 7,
 		}
-		[AllowDuplicates]
 		public enum SCM_PD_FIRMWARE_ACTIVATION_STATE : int32
 		{
 			Idle = 0,
 			Armed = 1,
 			Busy = 2,
 		}
-		[AllowDuplicates]
 		public enum SCM_PD_MEDIA_REINITIALIZATION_STATUS : int32
 		{
 			Success = 0,
@@ -1774,7 +1709,6 @@ namespace Win32
 			ColdBootNeeded = 2,
 			Max = 3,
 		}
-		[AllowDuplicates]
 		public enum MEDIA_TYPE : int32
 		{
 			Unknown = 0,
@@ -1804,34 +1738,29 @@ namespace Win32
 			F3_240M_512 = 24,
 			F3_32M_512 = 25,
 		}
-		[AllowDuplicates]
 		public enum PARTITION_STYLE : int32
 		{
 			MBR = 0,
 			GPT = 1,
 			RAW = 2,
 		}
-		[AllowDuplicates]
 		public enum DETECTION_TYPE : int32
 		{
 			None = 0,
 			Int13 = 1,
 			ExInt13 = 2,
 		}
-		[AllowDuplicates]
 		public enum DISK_CACHE_RETENTION_PRIORITY : int32
 		{
 			EqualPriority = 0,
 			KeepPrefetchedData = 1,
 			KeepReadData = 2,
 		}
-		[AllowDuplicates]
 		public enum BIN_TYPES : int32
 		{
 			Size = 0,
 			Location = 1,
 		}
-		[AllowDuplicates]
 		public enum ELEMENT_TYPE : int32
 		{
 			AllElements = 0,
@@ -1843,7 +1772,6 @@ namespace Win32
 			ChangerKeypad = 6,
 			ChangerMaxElement = 7,
 		}
-		[AllowDuplicates]
 		public enum CHANGER_DEVICE_PROBLEM_TYPE : int32
 		{
 			None = 0,
@@ -1861,14 +1789,12 @@ namespace Win32
 			GripperError = 12,
 			DriveError = 13,
 		}
-		[AllowDuplicates]
 		public enum SHRINK_VOLUME_REQUEST_TYPES : int32
 		{
 			Prepare = 1,
 			Commit = 2,
 			Abort = 3,
 		}
-		[AllowDuplicates]
 		public enum CSV_CONTROL_OP : int32
 		{
 			StartRedirectFile = 2,
@@ -1890,7 +1816,6 @@ namespace Win32
 			SetVolumeId = 24,
 			QueryVolumeId = 25,
 		}
-		[AllowDuplicates]
 		public enum CSVFS_DISK_CONNECTIVITY : int32
 		{
 			None = 0,
@@ -1898,7 +1823,6 @@ namespace Win32
 			SubsetOfNodes = 2,
 			AllNodes = 3,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_RESERVE_ID : int32
 		{
 			None = 0,
@@ -1907,7 +1831,6 @@ namespace Win32
 			UpdateScratch = 3,
 			Max = 4,
 		}
-		[AllowDuplicates]
 		public enum QUERY_FILE_LAYOUT_FILTER_TYPE : int32
 		{
 			FILTER_TYPE_NONE = 0,
@@ -1916,7 +1839,6 @@ namespace Win32
 			FILTER_TYPE_STORAGE_RESERVE_ID = 3,
 			NUM_FILTER_TYPES = 4,
 		}
-		[AllowDuplicates]
 		public enum FILE_STORAGE_TIER_MEDIA_TYPE : int32
 		{
 			Unspecified = 0,
@@ -1925,7 +1847,6 @@ namespace Win32
 			Scm = 4,
 			Max = 5,
 		}
-		[AllowDuplicates]
 		public enum FILE_STORAGE_TIER_CLASS : int32
 		{
 			Unspecified = 0,
@@ -1933,14 +1854,12 @@ namespace Win32
 			Performance = 2,
 			Max = 3,
 		}
-		[AllowDuplicates]
 		public enum DUPLICATE_EXTENTS_STATE : int32
 		{
 			Inactive = 0,
 			Source = 1,
 			Target = 2,
 		}
-		[AllowDuplicates]
 		public enum REFS_SMR_VOLUME_GC_STATE : int32
 		{
 			Inactive = 0,
@@ -1948,7 +1867,6 @@ namespace Win32
 			Active = 2,
 			ActiveFullSpeed = 3,
 		}
-		[AllowDuplicates]
 		public enum REFS_SMR_VOLUME_GC_ACTION : int32
 		{
 			Start = 1,
@@ -1956,14 +1874,12 @@ namespace Win32
 			Pause = 3,
 			Stop = 4,
 		}
-		[AllowDuplicates]
 		public enum REFS_SMR_VOLUME_GC_METHOD : int32
 		{
 			Compaction = 1,
 			Compression = 2,
 			Rotation = 3,
 		}
-		[AllowDuplicates]
 		public enum VIRTUAL_STORAGE_BEHAVIOR_CODE : int32
 		{
 			Undefined = 0,
@@ -1972,7 +1888,6 @@ namespace Win32
 			StopIoProcessing = 3,
 			RestartIoProcessing = 4,
 		}
-		[AllowDuplicates]
 		public enum FS_BPIO_OPERATIONS : int32
 		{
 			ENABLE = 1,
@@ -1985,13 +1900,11 @@ namespace Win32
 			GET_INFO = 8,
 			MAX_OPERATION = 9,
 		}
-		[AllowDuplicates]
 		public enum FS_BPIO_INFLAGS : int32
 		{
 			None = 0,
 			SKIP_STORAGE_STACK_QUERY = 1,
 		}
-		[AllowDuplicates]
 		public enum FS_BPIO_OUTFLAGS : int32
 		{
 			None = 0,

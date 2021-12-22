@@ -112,13 +112,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum OPC_URI_TARGET_MODE : int32
 		{
 			INTERNAL = 0,
 			EXTERNAL = 1,
 		}
-		[AllowDuplicates]
 		public enum OPC_COMPRESSION_OPTIONS : int32
 		{
 			NONE = -1,
@@ -127,58 +125,49 @@ namespace Win32
 			FAST = 2,
 			SUPERFAST = 3,
 		}
-		[AllowDuplicates]
 		public enum OPC_STREAM_IO_MODE : int32
 		{
 			READ = 1,
 			WRITE = 2,
 		}
-		[AllowDuplicates]
 		public enum OPC_READ_FLAGS : uint32
 		{
 			READ_DEFAULT = 0,
 			VALIDATE_ON_LOAD = 1,
 			CACHE_ON_ACCESS = 2,
 		}
-		[AllowDuplicates]
 		public enum OPC_WRITE_FLAGS : uint32
 		{
 			DEFAULT = 0,
 			FORCE_ZIP32 = 1,
 		}
-		[AllowDuplicates]
 		public enum OPC_SIGNATURE_VALIDATION_RESULT : int32
 		{
 			VALID = 0,
 			INVALID = -1,
 		}
-		[AllowDuplicates]
 		public enum OPC_CANONICALIZATION_METHOD : int32
 		{
 			NONE = 0,
 			C14N = 1,
 			C14N_WITH_COMMENTS = 2,
 		}
-		[AllowDuplicates]
 		public enum OPC_RELATIONSHIP_SELECTOR : int32
 		{
 			ID = 0,
 			TYPE = 1,
 		}
-		[AllowDuplicates]
 		public enum OPC_RELATIONSHIPS_SIGNING_OPTION : int32
 		{
 			USING_SELECTORS = 0,
 			PART = 1,
 		}
-		[AllowDuplicates]
 		public enum OPC_CERTIFICATE_EMBEDDING_OPTION : int32
 		{
 			IN_CERTIFICATE_PART = 0,
 			IN_SIGNATURE_PART = 1,
 			NOT_EMBEDDED = 2,
 		}
-		[AllowDuplicates]
 		public enum OPC_SIGNATURE_TIME_FORMAT : int32
 		{
 			MILLISECONDS = 0,

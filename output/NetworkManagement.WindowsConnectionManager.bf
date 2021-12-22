@@ -16,7 +16,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WCM_PROPERTY : int32
 		{
 			global_property_domain_policy = 0,
@@ -27,7 +26,6 @@ namespace Win32
 			intf_property_dataplan_status = 5,
 			intf_property_hotspot_profile = 6,
 		}
-		[AllowDuplicates]
 		public enum WCM_MEDIA_TYPE : int32
 		{
 			unknown = 0,
@@ -37,7 +35,6 @@ namespace Win32
 			invalid = 4,
 			max = 5,
 		}
-		[AllowDuplicates]
 		public enum WCM_CONNECTION_COST : int32
 		{
 			UNKNOWN = 0,
@@ -49,7 +46,6 @@ namespace Win32
 			ROAMING = 262144,
 			APPROACHINGDATALIMIT = 524288,
 		}
-		[AllowDuplicates]
 		public enum WCM_CONNECTION_COST_SOURCE : int32
 		{
 			DEFAULT = 0,

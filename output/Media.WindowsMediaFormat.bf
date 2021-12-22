@@ -352,27 +352,23 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum _AM_ASFWRITERCONFIG_PARAM : int32
 		{
 			AUTOINDEX = 1,
 			MULTIPASS = 2,
 			DONTCOMPRESS = 3,
 		}
-		[AllowDuplicates]
 		public enum WEBSTREAM_SAMPLE_TYPE : int32
 		{
 			FILE = 1,
 			RENDER = 2,
 		}
-		[AllowDuplicates]
 		public enum WM_SF_TYPE : int32
 		{
 			CLEANPOINT = 1,
 			DISCONTINUITY = 2,
 			DATALOSS = 4,
 		}
-		[AllowDuplicates]
 		public enum WM_SFEX_TYPE : int32
 		{
 			NOTASYNCPOINT = 2,
@@ -435,14 +431,12 @@ namespace Win32
 			PROXIMITY_COMPLETED = 50,
 			CONTENT_ENABLER = 51,
 		}
-		[AllowDuplicates]
 		public enum WMT_STREAM_SELECTION : int32
 		{
 			OFF = 0,
 			CLEANPOINT_ONLY = 1,
 			ON = 2,
 		}
-		[AllowDuplicates]
 		public enum WMT_IMAGE_TYPE : int32
 		{
 			NONE = 0,
@@ -450,7 +444,6 @@ namespace Win32
 			JPEG = 2,
 			GIF = 3,
 		}
-		[AllowDuplicates]
 		public enum WMT_ATTR_DATATYPE : int32
 		{
 			DWORD = 0,
@@ -461,14 +454,12 @@ namespace Win32
 			WORD = 5,
 			GUID = 6,
 		}
-		[AllowDuplicates]
 		public enum WMT_ATTR_IMAGETYPE : int32
 		{
 			BITMAP = 1,
 			JPEG = 2,
 			GIF = 3,
 		}
-		[AllowDuplicates]
 		public enum WMT_VERSION : int32
 		{
 			_4_0 = 262144,
@@ -476,31 +467,26 @@ namespace Win32
 			_8_0 = 524288,
 			_9_0 = 589824,
 		}
-		[AllowDuplicates]
 		public enum WMT_STORAGE_FORMAT : int32
 		{
 			MP3 = 0,
 			V1 = 1,
 		}
-		[AllowDuplicates]
 		public enum WMT_DRMLA_TRUST : int32
 		{
 			UNTRUSTED = 0,
 			TRUSTED = 1,
 			TAMPERED = 2,
 		}
-		[AllowDuplicates]
 		public enum WMT_TRANSPORT_TYPE : int32
 		{
 			Unreliable = 0,
 			Reliable = 1,
 		}
-		[AllowDuplicates]
 		public enum WMT_NET_PROTOCOL : int32
 		{
 			WMT_PROTOCOL_HTTP = 0,
 		}
-		[AllowDuplicates]
 		public enum WMT_PLAY_MODE : int32
 		{
 			AUTOSELECT = 0,
@@ -508,7 +494,6 @@ namespace Win32
 			DOWNLOAD = 2,
 			STREAMING = 3,
 		}
-		[AllowDuplicates]
 		public enum WMT_PROXY_SETTINGS : int32
 		{
 			NONE = 0,
@@ -517,14 +502,12 @@ namespace Win32
 			BROWSER = 3,
 			MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum WMT_CODEC_INFO_TYPE : int32
 		{
 			AUDIO = 0,
 			VIDEO = 1,
 			UNKNOWN = -1,
 		}
-		[AllowDuplicates]
 		public enum WM_DM_INTERLACED_TYPE : int32
 		{
 			NOTINTERLACED = 0,
@@ -534,7 +517,6 @@ namespace Win32
 			DEINTERLACE_INVERSETELECINE = 4,
 			DEINTERLACE_VERTICALHALFSIZEDOUBLERATE = 5,
 		}
-		[AllowDuplicates]
 		public enum WM_DM_IT_FIRST_FRAME_COHERENCY : int32
 		{
 			DISABLE_COHERENT_MODE = 0,
@@ -549,7 +531,6 @@ namespace Win32
 			FIRST_FRAME_IN_CLIP_IS_CD_BOTTOM = 9,
 			FIRST_FRAME_IN_CLIP_IS_DD_BOTTOM = 10,
 		}
-		[AllowDuplicates]
 		public enum WMT_OFFSET_FORMAT : int32
 		{
 			_100NS = 0,
@@ -558,48 +539,41 @@ namespace Win32
 			TIMECODE = 3,
 			_100NS_APPROXIMATE = 4,
 		}
-		[AllowDuplicates]
 		public enum WMT_INDEXER_TYPE : int32
 		{
 			PRESENTATION_TIME = 0,
 			FRAME_NUMBERS = 1,
 			TIMECODE = 2,
 		}
-		[AllowDuplicates]
 		public enum WMT_INDEX_TYPE : int32
 		{
 			DATA_UNIT = 1,
 			OBJECT = 2,
 			CLEAN_POINT = 3,
 		}
-		[AllowDuplicates]
 		public enum WMT_FILESINK_MODE : int32
 		{
 			SINGLE_BUFFERS = 1,
 			FILESINK_DATA_UNITS = 2,
 			FILESINK_UNBUFFERED = 4,
 		}
-		[AllowDuplicates]
 		public enum WMT_MUSICSPEECH_CLASS_MODE : int32
 		{
 			MUSIC = 0,
 			SPEECH = 1,
 			MIXED = 2,
 		}
-		[AllowDuplicates]
 		public enum WMT_WATERMARK_ENTRY_TYPE : int32
 		{
 			AUDIO = 1,
 			VIDEO = 2,
 		}
-		[AllowDuplicates]
 		public enum WM_PLAYBACK_DRC_LEVEL : int32
 		{
 			HIGH = 0,
 			MEDIUM = 1,
 			LOW = 2,
 		}
-		[AllowDuplicates]
 		public enum WMT_TIMECODE_FRAMERATE : int32
 		{
 			_30 = 0,
@@ -607,7 +581,6 @@ namespace Win32
 			_25 = 2,
 			_24 = 3,
 		}
-		[AllowDuplicates]
 		public enum WMT_CREDENTIAL_FLAGS : int32
 		{
 			SAVE = 1,
@@ -616,13 +589,11 @@ namespace Win32
 			PROXY = 8,
 			ENCRYPT = 16,
 		}
-		[AllowDuplicates]
 		public enum WM_AETYPE : int32
 		{
 			INCLUDE = 105,
 			EXCLUDE = 101,
 		}
-		[AllowDuplicates]
 		public enum WMT_RIGHTS : int32
 		{
 			PLAYBACK = 1,
@@ -636,7 +607,6 @@ namespace Win32
 			SDMI_TRIGGER = 65536,
 			SDMI_NOMORECOPIES = 131072,
 		}
-		[AllowDuplicates]
 		public enum NETSOURCE_URLCREDPOLICY_SETTINGS : int32
 		{
 			SILENTLOGONOK = 0,

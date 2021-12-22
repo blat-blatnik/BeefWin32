@@ -61,7 +61,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum XINPUT_VIRTUAL_KEY : uint16
 		{
 			A = 22528,

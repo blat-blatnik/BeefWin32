@@ -494,26 +494,22 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum D3D11_INPUT_CLASSIFICATION : int32
 		{
 			VERTEX_DATA = 0,
 			INSTANCE_DATA = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D11_FILL_MODE : int32
 		{
 			WIREFRAME = 2,
 			SOLID = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D11_CULL_MODE : int32
 		{
 			NONE = 1,
 			FRONT = 2,
 			BACK = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D11_RESOURCE_DIMENSION : int32
 		{
 			UNKNOWN = 0,
@@ -522,7 +518,6 @@ namespace Win32
 			TEXTURE2D = 3,
 			TEXTURE3D = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D11_DSV_DIMENSION : int32
 		{
 			UNKNOWN = 0,
@@ -533,7 +528,6 @@ namespace Win32
 			TEXTURE2DMS = 5,
 			TEXTURE2DMSARRAY = 6,
 		}
-		[AllowDuplicates]
 		public enum D3D11_RTV_DIMENSION : int32
 		{
 			UNKNOWN = 0,
@@ -546,7 +540,6 @@ namespace Win32
 			TEXTURE2DMSARRAY = 7,
 			TEXTURE3D = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D11_UAV_DIMENSION : int32
 		{
 			UNKNOWN = 0,
@@ -557,7 +550,6 @@ namespace Win32
 			TEXTURE2DARRAY = 5,
 			TEXTURE3D = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D11_USAGE : int32
 		{
 			DEFAULT = 0,
@@ -565,7 +557,6 @@ namespace Win32
 			DYNAMIC = 2,
 			STAGING = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D11_BIND_FLAG : uint32
 		{
 			VERTEX_BUFFER = 1,
@@ -579,13 +570,11 @@ namespace Win32
 			DECODER = 512,
 			VIDEO_ENCODER = 1024,
 		}
-		[AllowDuplicates]
 		public enum D3D11_CPU_ACCESS_FLAG : uint32
 		{
 			WRITE = 65536,
 			READ = 131072,
 		}
-		[AllowDuplicates]
 		public enum D3D11_RESOURCE_MISC_FLAG : uint32
 		{
 			GENERATE_MIPS = 1,
@@ -608,7 +597,6 @@ namespace Win32
 			SHARED_DISPLAYABLE = 1048576,
 			SHARED_EXCLUSIVE_WRITER = 2097152,
 		}
-		[AllowDuplicates]
 		public enum D3D11_MAP : int32
 		{
 			READ = 1,
@@ -617,23 +605,19 @@ namespace Win32
 			WRITE_DISCARD = 4,
 			WRITE_NO_OVERWRITE = 5,
 		}
-		[AllowDuplicates]
 		public enum D3D11_MAP_FLAG : int32
 		{
 			D3D11_MAP_FLAG_DO_NOT_WAIT = 1048576,
 		}
-		[AllowDuplicates]
 		public enum D3D11_RAISE_FLAG : int32
 		{
 			D3D11_RAISE_FLAG_DRIVER_INTERNAL_ERROR = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D11_CLEAR_FLAG : int32
 		{
 			DEPTH = 1,
 			STENCIL = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D11_COMPARISON_FUNC : int32
 		{
 			NEVER = 1,
@@ -645,13 +629,11 @@ namespace Win32
 			GREATER_EQUAL = 7,
 			ALWAYS = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D11_DEPTH_WRITE_MASK : int32
 		{
 			ZERO = 0,
 			ALL = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D11_STENCIL_OP : int32
 		{
 			KEEP = 1,
@@ -663,7 +645,6 @@ namespace Win32
 			INCR = 7,
 			DECR = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D11_BLEND : int32
 		{
 			ZERO = 1,
@@ -684,7 +665,6 @@ namespace Win32
 			SRC1_ALPHA = 18,
 			INV_SRC1_ALPHA = 19,
 		}
-		[AllowDuplicates]
 		public enum D3D11_BLEND_OP : int32
 		{
 			ADD = 1,
@@ -693,7 +673,6 @@ namespace Win32
 			MIN = 4,
 			MAX = 5,
 		}
-		[AllowDuplicates]
 		public enum D3D11_COLOR_WRITE_ENABLE : int32
 		{
 			RED = 1,
@@ -702,7 +681,6 @@ namespace Win32
 			ALPHA = 8,
 			ALL = 15,
 		}
-		[AllowDuplicates]
 		public enum D3D11_TEXTURECUBE_FACE : int32
 		{
 			POSITIVE_X = 0,
@@ -712,25 +690,21 @@ namespace Win32
 			POSITIVE_Z = 4,
 			NEGATIVE_Z = 5,
 		}
-		[AllowDuplicates]
 		public enum D3D11_BUFFEREX_SRV_FLAG : int32
 		{
 			D3D11_BUFFEREX_SRV_FLAG_RAW = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D11_DSV_FLAG : int32
 		{
 			DEPTH = 1,
 			STENCIL = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D11_BUFFER_UAV_FLAG : int32
 		{
 			RAW = 1,
 			APPEND = 2,
 			COUNTER = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D11_FILTER : int32
 		{
 			MIN_MAG_MIP_POINT = 0,
@@ -770,13 +744,11 @@ namespace Win32
 			MAXIMUM_MIN_MAG_MIP_LINEAR = 405,
 			MAXIMUM_ANISOTROPIC = 469,
 		}
-		[AllowDuplicates]
 		public enum D3D11_FILTER_TYPE : int32
 		{
 			POINT = 0,
 			LINEAR = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D11_FILTER_REDUCTION_TYPE : int32
 		{
 			STANDARD = 0,
@@ -784,7 +756,6 @@ namespace Win32
 			MINIMUM = 2,
 			MAXIMUM = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D11_TEXTURE_ADDRESS_MODE : int32
 		{
 			WRAP = 1,
@@ -793,7 +764,6 @@ namespace Win32
 			BORDER = 4,
 			MIRROR_ONCE = 5,
 		}
-		[AllowDuplicates]
 		public enum D3D11_FORMAT_SUPPORT : int32
 		{
 			BUFFER = 1,
@@ -828,7 +798,6 @@ namespace Win32
 			VIDEO_PROCESSOR_INPUT = 536870912,
 			VIDEO_ENCODER = 1073741824,
 		}
-		[AllowDuplicates]
 		public enum D3D11_FORMAT_SUPPORT2 : int32
 		{
 			UAV_ATOMIC_ADD = 1,
@@ -844,12 +813,10 @@ namespace Win32
 			SHAREABLE = 1024,
 			MULTIPLANE_OVERLAY = 16384,
 		}
-		[AllowDuplicates]
 		public enum D3D11_ASYNC_GETDATA_FLAG : int32
 		{
 			D3D11_ASYNC_GETDATA_DONOTFLUSH = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D11_QUERY : int32
 		{
 			EVENT = 0,
@@ -869,17 +836,14 @@ namespace Win32
 			SO_STATISTICS_STREAM3 = 14,
 			SO_OVERFLOW_PREDICATE_STREAM3 = 15,
 		}
-		[AllowDuplicates]
 		public enum D3D11_QUERY_MISC_FLAG : int32
 		{
 			D3D11_QUERY_MISC_PREDICATEHINT = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D11_COUNTER : int32
 		{
 			D3D11_COUNTER_DEVICE_DEPENDENT_0 = 1073741824,
 		}
-		[AllowDuplicates]
 		public enum D3D11_COUNTER_TYPE : int32
 		{
 			FLOAT32 = 0,
@@ -887,19 +851,16 @@ namespace Win32
 			UINT32 = 2,
 			UINT64 = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D11_STANDARD_MULTISAMPLE_QUALITY_LEVELS : int32
 		{
 			STANDARD_MULTISAMPLE_PATTERN = -1,
 			CENTER_MULTISAMPLE_PATTERN = -2,
 		}
-		[AllowDuplicates]
 		public enum D3D11_DEVICE_CONTEXT_TYPE : int32
 		{
 			IMMEDIATE = 0,
 			DEFERRED = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D11_FEATURE : int32
 		{
 			THREADING = 0,
@@ -924,13 +885,11 @@ namespace Win32
 			D3D11_OPTIONS5 = 19,
 			DISPLAYABLE = 20,
 		}
-		[AllowDuplicates]
 		public enum D3D11_SHADER_MIN_PRECISION_SUPPORT : int32
 		{
 			_0_BIT = 1,
 			_6_BIT = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D11_TILED_RESOURCES_TIER : int32
 		{
 			NOT_SUPPORTED = 0,
@@ -938,7 +897,6 @@ namespace Win32
 			TIER_2 = 2,
 			TIER_3 = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D11_CONSERVATIVE_RASTERIZATION_TIER : int32
 		{
 			NOT_SUPPORTED = 0,
@@ -946,14 +904,12 @@ namespace Win32
 			TIER_2 = 2,
 			TIER_3 = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D11_SHADER_CACHE_SUPPORT_FLAGS : int32
 		{
 			NONE = 0,
 			AUTOMATIC_INPROC_CACHE = 1,
 			AUTOMATIC_DISK_CACHE = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D11_SHARED_RESOURCE_TIER : int32
 		{
 			_0 = 0,
@@ -961,7 +917,6 @@ namespace Win32
 			_2 = 2,
 			_3 = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_DECODER_BUFFER_TYPE : int32
 		{
 			PICTURE_PARAMETERS = 0,
@@ -974,13 +929,11 @@ namespace Win32
 			MOTION_VECTOR = 7,
 			FILM_GRAIN = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT : int32
 		{
 			INPUT = 1,
 			OUTPUT = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_PROCESSOR_DEVICE_CAPS : int32
 		{
 			LINEAR_SPACE = 1,
@@ -989,7 +942,6 @@ namespace Win32
 			YCbCr_MATRIX_CONVERSION = 8,
 			NOMINAL_RANGE = 16,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_PROCESSOR_FEATURE_CAPS : int32
 		{
 			ALPHA_FILL = 1,
@@ -1005,7 +957,6 @@ namespace Win32
 			SHADER_USAGE = 1024,
 			METADATA_HDR10 = 2048,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_PROCESSOR_FILTER_CAPS : int32
 		{
 			BRIGHTNESS = 1,
@@ -1017,7 +968,6 @@ namespace Win32
 			ANAMORPHIC_SCALING = 64,
 			STEREO_ADJUSTMENT = 128,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_PROCESSOR_FORMAT_CAPS : int32
 		{
 			RGB_INTERLACED = 1,
@@ -1025,7 +975,6 @@ namespace Win32
 			RGB_LUMA_KEY = 4,
 			PALETTE_INTERLACED = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS : int32
 		{
 			DENOISE = 1,
@@ -1037,7 +986,6 @@ namespace Win32
 			SUPER_RESOLUTION = 64,
 			ANAMORPHIC_SCALING = 128,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_PROCESSOR_STEREO_CAPS : int32
 		{
 			MONO_OFFSET = 1,
@@ -1046,7 +994,6 @@ namespace Win32
 			CHECKERBOARD = 8,
 			FLIP_MODE = 16,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_PROCESSOR_PROCESSOR_CAPS : int32
 		{
 			DEINTERLACE_BLEND = 1,
@@ -1056,7 +1003,6 @@ namespace Win32
 			INVERSE_TELECINE = 16,
 			FRAME_RATE_CONVERSION = 32,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS : int32
 		{
 			_32 = 1,
@@ -1070,7 +1016,6 @@ namespace Win32
 			_222222222223 = 256,
 			OTHER = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum D3D11_CONTENT_PROTECTION_CAPS : int32
 		{
 			SOFTWARE = 1,
@@ -1090,7 +1035,6 @@ namespace Win32
 			HARDWARE_DRM_COMMUNICATION = 16384,
 			HARDWARE_DRM_COMMUNICATION_MULTI_THREADED = 32768,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_PROCESSOR_FILTER : int32
 		{
 			BRIGHTNESS = 0,
@@ -1102,28 +1046,24 @@ namespace Win32
 			ANAMORPHIC_SCALING = 6,
 			STEREO_ADJUSTMENT = 7,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_FRAME_FORMAT : int32
 		{
 			PROGRESSIVE = 0,
 			INTERLACED_TOP_FIELD_FIRST = 1,
 			INTERLACED_BOTTOM_FIELD_FIRST = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_USAGE : int32
 		{
 			PLAYBACK_NORMAL = 0,
 			OPTIMAL_SPEED = 1,
 			OPTIMAL_QUALITY = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE : int32
 		{
 			UNDEFINED = 0,
 			_16_235 = 1,
 			_0_255 = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE : int32
 		{
 			OPAQUE = 0,
@@ -1131,14 +1071,12 @@ namespace Win32
 			DESTINATION = 2,
 			SOURCE_STREAM = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_PROCESSOR_OUTPUT_RATE : int32
 		{
 			NORMAL = 0,
 			HALF = 1,
 			CUSTOM = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_PROCESSOR_STEREO_FORMAT : int32
 		{
 			MONO = 0,
@@ -1150,14 +1088,12 @@ namespace Win32
 			COLUMN_INTERLEAVED = 6,
 			CHECKERBOARD = 7,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE : int32
 		{
 			NONE = 0,
 			FRAME0 = 1,
 			FRAME1 = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_PROCESSOR_ROTATION : int32
 		{
 			IDENTITY = 0,
@@ -1165,21 +1101,18 @@ namespace Win32
 			_180 = 2,
 			_270 = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D11_AUTHENTICATED_CHANNEL_TYPE : int32
 		{
 			_3D11 = 1,
 			RIVER_SOFTWARE = 2,
 			RIVER_HARDWARE = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D11_AUTHENTICATED_PROCESS_IDENTIFIER_TYPE : int32
 		{
 			UNKNOWN = 0,
 			DWM = 1,
 			HANDLE = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D11_BUS_TYPE : int32
 		{
 			TYPE_OTHER = 0,
@@ -1194,26 +1127,22 @@ namespace Win32
 			IMPL_MODIFIER_DAUGHTER_BOARD_CONNECTOR_INSIDE_OF_NUAE = 327680,
 			IMPL_MODIFIER_NON_STANDARD = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VDOV_DIMENSION : int32
 		{
 			UNKNOWN = 0,
 			TEXTURE2D = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VPIV_DIMENSION : int32
 		{
 			UNKNOWN = 0,
 			TEXTURE2D = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VPOV_DIMENSION : int32
 		{
 			UNKNOWN = 0,
 			TEXTURE2D = 1,
 			TEXTURE2DARRAY = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D11_CREATE_DEVICE_FLAG : uint32
 		{
 			SINGLETHREADED = 1,
@@ -1226,14 +1155,12 @@ namespace Win32
 			DISABLE_GPU_TIMEOUT = 256,
 			VIDEO_SUPPORT = 2048,
 		}
-		[AllowDuplicates]
 		public enum D3D11_RLDO_FLAGS : int32
 		{
 			SUMMARY = 1,
 			DETAIL = 2,
 			IGNORE_INTERNAL = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D11_SHADER_TRACKING_RESOURCE_TYPE : int32
 		{
 			NONE = 0,
@@ -1245,7 +1172,6 @@ namespace Win32
 			GROUPSHARED_NON_UAV = 6,
 			ALL = 7,
 		}
-		[AllowDuplicates]
 		public enum D3D11_SHADER_TRACKING_OPTIONS : int32
 		{
 			IGNORE = 0,
@@ -1264,7 +1190,6 @@ namespace Win32
 			ALL_HAZARDS_ALLOWING_SAME = 1022,
 			ALL_OPTIONS = 1023,
 		}
-		[AllowDuplicates]
 		public enum D3D11_MESSAGE_CATEGORY : int32
 		{
 			APPLICATION_DEFINED = 0,
@@ -1279,7 +1204,6 @@ namespace Win32
 			EXECUTION = 9,
 			SHADER = 10,
 		}
-		[AllowDuplicates]
 		public enum D3D11_MESSAGE_SEVERITY : int32
 		{
 			CORRUPTION = 0,
@@ -1288,7 +1212,6 @@ namespace Win32
 			INFO = 3,
 			MESSAGE = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D11_MESSAGE_ID : int32
 		{
 			UNKNOWN = 0,
@@ -2628,13 +2551,11 @@ namespace Win32
 			TRACKED_WORKLOAD_DISJOINT_FAILURE = 3146282,
 			D3D11_5_MESSAGES_END = 3146283,
 		}
-		[AllowDuplicates]
 		public enum D3D11_COPY_FLAGS : int32
 		{
 			NO_OVERWRITE = 1,
 			DISCARD = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D11_LOGIC_OP : int32
 		{
 			CLEAR = 0,
@@ -2654,12 +2575,10 @@ namespace Win32
 			OR_REVERSE = 14,
 			OR_INVERTED = 15,
 		}
-		[AllowDuplicates]
 		public enum D3D11_1_CREATE_DEVICE_CONTEXT_STATE_FLAG : int32
 		{
 			D3D11_1_CREATE_DEVICE_CONTEXT_STATE_SINGLETHREADED = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_DECODER_CAPS : int32
 		{
 			DOWNSAMPLE = 1,
@@ -2668,7 +2587,6 @@ namespace Win32
 			DOWNSAMPLE_REQUIRED = 8,
 			UNSUPPORTED = 16,
 		}
-		[AllowDuplicates]
 		public enum D3D11_VIDEO_PROCESSOR_BEHAVIOR_HINTS : int32
 		{
 			MULTIPLANE_OVERLAY_ROTATION = 1,
@@ -2676,38 +2594,32 @@ namespace Win32
 			MULTIPLANE_OVERLAY_COLOR_SPACE_CONVERSION = 4,
 			TRIPLE_BUFFER_OUTPUT = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D11_CRYPTO_SESSION_STATUS : int32
 		{
 			OK = 0,
 			KEY_LOST = 1,
 			KEY_AND_CONTENT_LOST = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D11_TILE_MAPPING_FLAG : int32
 		{
 			D3D11_TILE_MAPPING_NO_OVERWRITE = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D11_TILE_RANGE_FLAG : int32
 		{
 			NULL = 1,
 			SKIP = 2,
 			REUSE_SINGLE_TILE = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG : int32
 		{
 			D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_TILED_RESOURCE = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D11_TILE_COPY_FLAG : int32
 		{
 			NO_OVERWRITE = 1,
 			LINEAR_BUFFER_TO_SWIZZLED_TILED_RESOURCE = 2,
 			SWIZZLED_TILED_RESOURCE_TO_LINEAR_BUFFER = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D11_CONTEXT_TYPE : int32
 		{
 			ALL = 0,
@@ -2716,20 +2628,17 @@ namespace Win32
 			COPY = 3,
 			VIDEO = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D11_TEXTURE_LAYOUT : int32
 		{
 			UNDEFINED = 0,
 			ROW_MAJOR = 1,
 			_64K_STANDARD_SWIZZLE = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D11_CONSERVATIVE_RASTERIZATION_MODE : int32
 		{
 			FF = 0,
 			N = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D11_FENCE_FLAG : uint32
 		{
 			NONE = 0,
@@ -2737,7 +2646,6 @@ namespace Win32
 			SHARED_CROSS_ADAPTER = 4,
 			NON_MONITORED = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D11_FEATURE_VIDEO : int32
 		{
 			D3D11_FEATURE_VIDEO_DECODER_HISTOGRAM = 0,
@@ -2765,12 +2673,10 @@ namespace Win32
 			B = 4,
 			A = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS : uint32
 		{
 			D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum D3D11_SHADER_VERSION_TYPE : int32
 		{
 			PIXEL_SHADER = 0,
@@ -2781,7 +2687,6 @@ namespace Win32
 			COMPUTE_SHADER = 5,
 			RESERVED0 = 65520,
 		}
-		[AllowDuplicates]
 		public enum D3D11_SHADER_TYPE : int32
 		{
 			VERTEX_SHADER = 1,
@@ -2791,7 +2696,6 @@ namespace Win32
 			PIXEL_SHADER = 5,
 			COMPUTE_SHADER = 6,
 		}
-		[AllowDuplicates]
 		public enum D3D11_TRACE_GS_INPUT_PRIMITIVE : int32
 		{
 			UNDEFINED = 0,
@@ -2801,7 +2705,6 @@ namespace Win32
 			LINE_ADJ = 6,
 			TRIANGLE_ADJ = 7,
 		}
-		[AllowDuplicates]
 		public enum D3D11_TRACE_REGISTER_TYPE : int32
 		{
 			OUTPUT_NULL_REGISTER = 0,
@@ -2841,14 +2744,12 @@ namespace Win32
 			INPUT_CYCLE_COUNTER_REGISTER = 34,
 			INTERFACE_POINTER = 35,
 		}
-		[AllowDuplicates]
 		public enum D3DX11_SCAN_DATA_TYPE : int32
 		{
 			FLOAT = 1,
 			INT = 2,
 			UINT = 3,
 		}
-		[AllowDuplicates]
 		public enum D3DX11_SCAN_OPCODE : int32
 		{
 			ADD = 1,
@@ -2859,26 +2760,22 @@ namespace Win32
 			OR = 6,
 			XOR = 7,
 		}
-		[AllowDuplicates]
 		public enum D3DX11_SCAN_DIRECTION : int32
 		{
 			FORWARD = 1,
 			BACKWARD = 2,
 		}
-		[AllowDuplicates]
 		public enum D3DX11_FFT_DATA_TYPE : int32
 		{
 			REAL = 0,
 			COMPLEX = 1,
 		}
-		[AllowDuplicates]
 		public enum D3DX11_FFT_DIM_MASK : int32
 		{
 			_1D = 1,
 			_2D = 3,
 			_3D = 7,
 		}
-		[AllowDuplicates]
 		public enum D3DX11_FFT_CREATE_FLAG : int32
 		{
 			D3DX11_FFT_CREATE_FLAG_NO_PRECOMPUTE_BUFFERS = 1,

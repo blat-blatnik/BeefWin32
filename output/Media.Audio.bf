@@ -503,7 +503,6 @@ namespace Win32
 			WAVE_MAPPED_DEFAULT_COMMUNICATION_DEVICE = 16,
 			MIDI_IO_STATUS = 32,
 		}
-		[AllowDuplicates]
 		public enum MIXERLINE_COMPONENTTYPE : uint32
 		{
 			DST_DIGITAL = 1,
@@ -527,13 +526,11 @@ namespace Win32
 			SRC_UNDEFINED = 4096,
 			SRC_WAVEOUT = 4104,
 		}
-		[AllowDuplicates]
 		public enum AUDCLNT_SHAREMODE : int32
 		{
 			SHARED = 0,
 			EXCLUSIVE = 1,
 		}
-		[AllowDuplicates]
 		public enum AUDIO_STREAM_CATEGORY : int32
 		{
 			Other = 0,
@@ -551,21 +548,18 @@ namespace Win32
 			UniformSpeech = 13,
 			VoiceTyping = 14,
 		}
-		[AllowDuplicates]
 		public enum AudioSessionState : int32
 		{
 			Inactive = 0,
 			Active = 1,
 			Expired = 2,
 		}
-		[AllowDuplicates]
 		public enum _AUDCLNT_BUFFERFLAGS : int32
 		{
 			DATA_DISCONTINUITY = 1,
 			SILENT = 2,
 			TIMESTAMP_ERROR = 4,
 		}
-		[AllowDuplicates]
 		public enum AUDCLNT_STREAMOPTIONS : uint32
 		{
 			NONE = 0,
@@ -573,35 +567,29 @@ namespace Win32
 			MATCH_FORMAT = 2,
 			AMBISONICS = 4,
 		}
-		[AllowDuplicates]
 		public enum AUDIO_DUCKING_OPTIONS : uint32
 		{
 			EFAULT = 0,
 			O_NOT_DUCK_OTHER_STREAMS = 1,
 		}
-		[AllowDuplicates]
 		public enum AUDIO_EFFECT_STATE : int32
 		{
 			FF = 0,
 			N = 1,
 		}
-		[AllowDuplicates]
 		public enum AMBISONICS_TYPE : int32
 		{
 			AMBISONICS_TYPE_FULL3D = 0,
 		}
-		[AllowDuplicates]
 		public enum AMBISONICS_CHANNEL_ORDERING : int32
 		{
 			AMBISONICS_CHANNEL_ORDERING_ACN = 0,
 		}
-		[AllowDuplicates]
 		public enum AMBISONICS_NORMALIZATION : int32
 		{
 			SN3D = 0,
 			N3D = 1,
 		}
-		[AllowDuplicates]
 		public enum AudioObjectType : uint32
 		{
 			None = 0,
@@ -624,20 +612,17 @@ namespace Win32
 			BottomBackRight = 65536,
 			BackCenter = 131072,
 		}
-		[AllowDuplicates]
 		public enum SPATIAL_AUDIO_STREAM_OPTIONS : uint32
 		{
 			NONE = 0,
 			OFFLOAD = 1,
 		}
-		[AllowDuplicates]
 		public enum SpatialAudioHrtfDirectivityType : int32
 		{
 			OmniDirectional = 0,
 			Cardioid = 1,
 			Cone = 2,
 		}
-		[AllowDuplicates]
 		public enum SpatialAudioHrtfEnvironmentType : int32
 		{
 			Small = 0,
@@ -646,13 +631,11 @@ namespace Win32
 			Outdoors = 3,
 			Average = 4,
 		}
-		[AllowDuplicates]
 		public enum SpatialAudioHrtfDistanceDecayType : int32
 		{
 			NaturalDecay = 0,
 			CustomDecay = 1,
 		}
-		[AllowDuplicates]
 		public enum EDataFlow : int32
 		{
 			eRender = 0,
@@ -660,7 +643,6 @@ namespace Win32
 			eAll = 2,
 			EDataFlow_enum_count = 3,
 		}
-		[AllowDuplicates]
 		public enum ERole : int32
 		{
 			eConsole = 0,
@@ -668,7 +650,6 @@ namespace Win32
 			eCommunications = 2,
 			ERole_enum_count = 3,
 		}
-		[AllowDuplicates]
 		public enum EndpointFormFactor : int32
 		{
 			RemoteNetworkDevice = 0,
@@ -684,7 +665,6 @@ namespace Win32
 			UnknownFormFactor = 10,
 			EndpointFormFactor_enum_count = 11,
 		}
-		[AllowDuplicates]
 		public enum __MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002 : int32
 		{
 			DEFAULT = 0,
@@ -692,19 +672,16 @@ namespace Win32
 			VOLATILE = 2,
 			ENUM_COUNT = 3,
 		}
-		[AllowDuplicates]
 		public enum DataFlow : int32
 		{
 			In = 0,
 			Out = 1,
 		}
-		[AllowDuplicates]
 		public enum PartType : int32
 		{
 			Connector = 0,
 			Subunit = 1,
 		}
-		[AllowDuplicates]
 		public enum ConnectorType : int32
 		{
 			Unknown_Connector = 0,
@@ -714,7 +691,6 @@ namespace Win32
 			Software_Fixed = 4,
 			Network = 5,
 		}
-		[AllowDuplicates]
 		public enum AudioSessionDisconnectReason : int32
 		{
 			DeviceRemoval = 0,
@@ -724,14 +700,12 @@ namespace Win32
 			SessionDisconnected = 4,
 			ExclusiveModeOverride = 5,
 		}
-		[AllowDuplicates]
 		public enum SpatialAudioMetadataWriterOverflowMode : int32
 		{
 			Fail = 0,
 			MergeWithNew = 1,
 			MergeWithLast = 2,
 		}
-		[AllowDuplicates]
 		public enum SpatialAudioMetadataCopyMode : int32
 		{
 			Overwrite = 0,
@@ -739,19 +713,16 @@ namespace Win32
 			AppendMergeWithLast = 2,
 			AppendMergeWithFirst = 3,
 		}
-		[AllowDuplicates]
 		public enum PROCESS_LOOPBACK_MODE : int32
 		{
 			INCLUDE_TARGET_PROCESS_TREE = 0,
 			EXCLUDE_TARGET_PROCESS_TREE = 1,
 		}
-		[AllowDuplicates]
 		public enum AUDIOCLIENT_ACTIVATION_TYPE : int32
 		{
 			DEFAULT = 0,
 			PROCESS_LOOPBACK = 1,
 		}
-		[AllowDuplicates]
 		public enum AudioStateMonitorSoundLevel : int32
 		{
 			Muted = 0,

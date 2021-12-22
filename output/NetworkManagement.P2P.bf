@@ -105,7 +105,6 @@ namespace Win32
 			N_2 = 2,
 			N = 2,
 		}
-		[AllowDuplicates]
 		public enum PNRP_SCOPE : int32
 		{
 			SCOPE_ANY = 0,
@@ -113,7 +112,6 @@ namespace Win32
 			SITE_LOCAL_SCOPE = 2,
 			LINK_LOCAL_SCOPE = 3,
 		}
-		[AllowDuplicates]
 		public enum PNRP_CLOUD_STATE : int32
 		{
 			VIRTUAL = 0,
@@ -124,7 +122,6 @@ namespace Win32
 			NO_NET = 5,
 			ALONE = 6,
 		}
-		[AllowDuplicates]
 		public enum PNRP_CLOUD_FLAGS : int32
 		{
 			NO_FLAGS = 0,
@@ -132,13 +129,11 @@ namespace Win32
 			RESOLVE_ONLY = 2,
 			FULL_PARTICIPANT = 4,
 		}
-		[AllowDuplicates]
 		public enum PNRP_REGISTERED_ID_STATE : int32
 		{
 			OK = 1,
 			PROBLEM = 2,
 		}
-		[AllowDuplicates]
 		public enum PNRP_RESOLVE_CRITERIA : int32
 		{
 			DEFAULT = 0,
@@ -149,14 +144,12 @@ namespace Win32
 			ANY_PEER_NAME = 5,
 			NEAREST_PEER_NAME = 6,
 		}
-		[AllowDuplicates]
 		public enum PNRP_EXTENDED_PAYLOAD_TYPE : int32
 		{
 			NONE = 0,
 			BINARY = 1,
 			STRING = 2,
 		}
-		[AllowDuplicates]
 		public enum PEER_RECORD_CHANGE_TYPE : int32
 		{
 			ADDED = 1,
@@ -164,26 +157,22 @@ namespace Win32
 			DELETED = 3,
 			EXPIRED = 4,
 		}
-		[AllowDuplicates]
 		public enum PEER_CONNECTION_STATUS : int32
 		{
 			CONNECTED = 1,
 			DISCONNECTED = 2,
 			CONNECTION_FAILED = 3,
 		}
-		[AllowDuplicates]
 		public enum PEER_CONNECTION_FLAGS : int32
 		{
 			NEIGHBOR = 1,
 			DIRECT = 2,
 		}
-		[AllowDuplicates]
 		public enum PEER_RECORD_FLAGS : int32
 		{
 			AUTOREFRESH = 1,
 			DELETED = 2,
 		}
-		[AllowDuplicates]
 		public enum PEER_GRAPH_EVENT_TYPE : int32
 		{
 			STATUS_CHANGED = 1,
@@ -196,27 +185,23 @@ namespace Win32
 			NODE_CHANGED = 8,
 			SYNCHRONIZED = 9,
 		}
-		[AllowDuplicates]
 		public enum PEER_NODE_CHANGE_TYPE : int32
 		{
 			CONNECTED = 1,
 			DISCONNECTED = 2,
 			UPDATED = 3,
 		}
-		[AllowDuplicates]
 		public enum PEER_GRAPH_STATUS_FLAGS : int32
 		{
 			LISTENING = 1,
 			HAS_CONNECTIONS = 2,
 			SYNCHRONIZED = 4,
 		}
-		[AllowDuplicates]
 		public enum PEER_GRAPH_PROPERTY_FLAGS : int32
 		{
 			HEARTBEATS = 1,
 			DEFER_EXPIRATION = 2,
 		}
-		[AllowDuplicates]
 		public enum PEER_GRAPH_SCOPE : int32
 		{
 			ANY = 0,
@@ -225,7 +210,6 @@ namespace Win32
 			LINKLOCAL = 3,
 			LOOPBACK = 4,
 		}
-		[AllowDuplicates]
 		public enum PEER_GROUP_EVENT_TYPE : int32
 		{
 			STATUS_CHANGED = 1,
@@ -238,31 +222,26 @@ namespace Win32
 			CONNECTION_FAILED = 10,
 			AUTHENTICATION_FAILED = 11,
 		}
-		[AllowDuplicates]
 		public enum PEER_GROUP_STATUS : int32
 		{
 			LISTENING = 1,
 			HAS_CONNECTIONS = 2,
 		}
-		[AllowDuplicates]
 		public enum PEER_GROUP_PROPERTY_FLAGS : int32
 		{
 			MEMBER_DATA_OPTIONAL = 1,
 			DISABLE_PRESENCE = 2,
 			DEFER_EXPIRATION = 4,
 		}
-		[AllowDuplicates]
 		public enum PEER_GROUP_AUTHENTICATION_SCHEME : int32
 		{
 			GMC_AUTHENTICATION = 1,
 			PASSWORD_AUTHENTICATION = 2,
 		}
-		[AllowDuplicates]
 		public enum PEER_MEMBER_FLAGS : int32
 		{
 			PEER_MEMBER_PRESENT = 1,
 		}
-		[AllowDuplicates]
 		public enum PEER_MEMBER_CHANGE_TYPE : int32
 		{
 			CONNECTED = 1,
@@ -271,12 +250,10 @@ namespace Win32
 			JOINED = 4,
 			LEFT = 5,
 		}
-		[AllowDuplicates]
 		public enum PEER_GROUP_ISSUE_CREDENTIAL_FLAGS : int32
 		{
 			PEER_GROUP_STORE_CREDENTIALS = 1,
 		}
-		[AllowDuplicates]
 		public enum PEER_SIGNIN_FLAGS : int32
 		{
 			NONE = 0,
@@ -284,13 +261,11 @@ namespace Win32
 			INTERNET = 2,
 			ALL = 3,
 		}
-		[AllowDuplicates]
 		public enum PEER_WATCH_PERMISSION : int32
 		{
 			BLOCKED = 0,
 			ALLOWED = 1,
 		}
-		[AllowDuplicates]
 		public enum PEER_PUBLICATION_SCOPE : int32
 		{
 			NONE = 0,
@@ -298,7 +273,6 @@ namespace Win32
 			INTERNET = 2,
 			ALL = 3,
 		}
-		[AllowDuplicates]
 		public enum PEER_INVITATION_RESPONSE_TYPE : int32
 		{
 			DECLINED = 0,
@@ -306,13 +280,11 @@ namespace Win32
 			EXPIRED = 2,
 			ERROR = 3,
 		}
-		[AllowDuplicates]
 		public enum PEER_APPLICATION_REGISTRATION_TYPE : int32
 		{
 			CURRENT_USER = 0,
 			ALL_USERS = 1,
 		}
-		[AllowDuplicates]
 		public enum PEER_PRESENCE_STATUS : int32
 		{
 			OFFLINE = 0,
@@ -324,14 +296,12 @@ namespace Win32
 			ON_THE_PHONE = 6,
 			ONLINE = 7,
 		}
-		[AllowDuplicates]
 		public enum PEER_CHANGE_TYPE : int32
 		{
 			ADDED = 0,
 			DELETED = 1,
 			UPDATED = 2,
 		}
-		[AllowDuplicates]
 		public enum PEER_COLLAB_EVENT_TYPE : int32
 		{
 			WATCHLIST_CHANGED = 1,
@@ -346,14 +316,12 @@ namespace Win32
 			PEOPLE_NEAR_ME_CHANGED = 10,
 			REQUEST_STATUS_CHANGED = 11,
 		}
-		[AllowDuplicates]
 		public enum DRT_SCOPE : int32
 		{
 			GLOBAL_SCOPE = 1,
 			SITE_LOCAL_SCOPE = 2,
 			LINK_LOCAL_SCOPE = 3,
 		}
-		[AllowDuplicates]
 		public enum DRT_STATUS : int32
 		{
 			ACTIVE = 0,
@@ -361,39 +329,33 @@ namespace Win32
 			NO_NETWORK = 10,
 			FAULTED = 20,
 		}
-		[AllowDuplicates]
 		public enum DRT_MATCH_TYPE : int32
 		{
 			EXACT = 0,
 			NEAR = 1,
 			INTERMEDIATE = 2,
 		}
-		[AllowDuplicates]
 		public enum DRT_LEAFSET_KEY_CHANGE_TYPE : int32
 		{
 			ADDED = 0,
 			DELETED = 1,
 		}
-		[AllowDuplicates]
 		public enum DRT_EVENT_TYPE : int32
 		{
 			STATUS_CHANGED = 0,
 			LEAFSET_KEY_CHANGED = 1,
 			REGISTRATION_STATE_CHANGED = 2,
 		}
-		[AllowDuplicates]
 		public enum DRT_SECURITY_MODE : int32
 		{
 			RESOLVE = 0,
 			MEMBERSHIP = 1,
 			CONFIDENTIALPAYLOAD = 2,
 		}
-		[AllowDuplicates]
 		public enum DRT_REGISTRATION_STATE : int32
 		{
 			DRT_REGISTRATION_STATE_UNRESOLVEABLE = 1,
 		}
-		[AllowDuplicates]
 		public enum DRT_ADDRESS_FLAGS : int32
 		{
 			ACCEPTED = 1,
@@ -405,14 +367,12 @@ namespace Win32
 			SUSPECT_UNREGISTERED_ID = 64,
 			INQUIRE = 128,
 		}
-		[AllowDuplicates]
 		public enum PEERDIST_STATUS : int32
 		{
 			DISABLED = 0,
 			UNAVAILABLE = 1,
 			AVAILABLE = 2,
 		}
-		[AllowDuplicates]
 		public enum PEERDIST_CLIENT_INFO_BY_HANDLE_CLASS : int32
 		{
 			PeerDistClientBasicInfo = 0,

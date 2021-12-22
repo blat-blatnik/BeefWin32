@@ -979,7 +979,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WIAVIDEO_STATE : int32
 		{
 			NO_VIDEO = 1,

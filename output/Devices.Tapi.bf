@@ -1127,7 +1127,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum TAPI_TONEMODE : int32
 		{
 			RINGBACK = 2,
@@ -1135,7 +1134,6 @@ namespace Win32
 			BEEP = 8,
 			BILLING = 16,
 		}
-		[AllowDuplicates]
 		public enum TAPI_GATHERTERM : int32
 		{
 			BUFFERFULL = 1,
@@ -1158,7 +1156,6 @@ namespace Win32
 			MSGWAITOFF = 8,
 			LASTITEM = 8,
 		}
-		[AllowDuplicates]
 		public enum ADDRESS_STATE : int32
 		{
 			INSERVICE = 0,
@@ -1176,7 +1173,6 @@ namespace Win32
 			QUEUED = 6,
 			LASTITEM = 6,
 		}
-		[AllowDuplicates]
 		public enum CALL_STATE_EVENT_CAUSE : int32
 		{
 			NONE = 0,
@@ -1200,7 +1196,6 @@ namespace Win32
 			STREAM_INACTIVE = 5,
 			LASTITEM = 5,
 		}
-		[AllowDuplicates]
 		public enum CALL_MEDIA_EVENT_CAUSE : int32
 		{
 			UNKNOWN = 0,
@@ -1212,20 +1207,17 @@ namespace Win32
 			MEDIA_RECOVERED = 6,
 			QUALITY_OF_SERVICE = 7,
 		}
-		[AllowDuplicates]
 		public enum DISCONNECT_CODE : int32
 		{
 			NORMAL = 0,
 			NOANSWER = 1,
 			REJECTED = 2,
 		}
-		[AllowDuplicates]
 		public enum TERMINAL_STATE : int32
 		{
 			INUSE = 0,
 			NOTINUSE = 1,
 		}
-		[AllowDuplicates]
 		public enum TERMINAL_DIRECTION : int32
 		{
 			CAPTURE = 0,
@@ -1234,19 +1226,16 @@ namespace Win32
 			MULTITRACK_MIXED = 3,
 			NONE = 4,
 		}
-		[AllowDuplicates]
 		public enum TERMINAL_TYPE : int32
 		{
 			STATIC = 0,
 			DYNAMIC = 1,
 		}
-		[AllowDuplicates]
 		public enum CALL_PRIVILEGE : int32
 		{
 			OWNER = 0,
 			MONITOR = 1,
 		}
-		[AllowDuplicates]
 		public enum TAPI_EVENT : int32
 		{
 			TAPIOBJECT = 1,
@@ -1292,13 +1281,11 @@ namespace Win32
 			CALLHUBIDLE = 3,
 			LASTITEM = 3,
 		}
-		[AllowDuplicates]
 		public enum CALLHUB_STATE : int32
 		{
 			ACTIVE = 0,
 			IDLE = 1,
 		}
-		[AllowDuplicates]
 		public enum TAPIOBJECT_EVENT : int32
 		{
 			ADDRESSCREATE = 0,
@@ -1309,7 +1296,6 @@ namespace Win32
 			PHONECREATE = 5,
 			PHONEREMOVE = 6,
 		}
-		[AllowDuplicates]
 		public enum TAPI_OBJECT_TYPE : int32
 		{
 			NONE = 0,
@@ -1320,7 +1306,6 @@ namespace Win32
 			CALLHUB = 5,
 			PHONE = 6,
 		}
-		[AllowDuplicates]
 		public enum QOS_SERVICE_LEVEL : int32
 		{
 			NEEDED = 1,
@@ -1368,7 +1353,6 @@ namespace Win32
 			MEDIATYPE = 26,
 			LASTITEM = 26,
 		}
-		[AllowDuplicates]
 		public enum CALLINFO_LONG : int32
 		{
 			MEDIATYPESAVAILABLE = 0,
@@ -1397,7 +1381,6 @@ namespace Win32
 			MONITORDIGITMODES = 23,
 			MONITORMEDIAMODES = 24,
 		}
-		[AllowDuplicates]
 		public enum CALLINFO_STRING : int32
 		{
 			CALLERIDNAME = 0,
@@ -1415,7 +1398,6 @@ namespace Win32
 			DISPLAYABLEADDRESS = 12,
 			CALLINGPARTYID = 13,
 		}
-		[AllowDuplicates]
 		public enum CALLINFO_BUFFER : int32
 		{
 			USERUSERINFO = 0,
@@ -1425,7 +1407,6 @@ namespace Win32
 			HIGHLEVELCOMPATIBILITYBUFFER = 4,
 			LOWLEVELCOMPATIBILITYBUFFER = 5,
 		}
-		[AllowDuplicates]
 		public enum ADDRESS_CAPABILITY : int32
 		{
 			ADDRESSTYPES = 0,
@@ -1477,7 +1458,6 @@ namespace Win32
 			GENERATEDIGITMAXDURATION = 46,
 			GENERATEDIGITDEFAULTDURATION = 47,
 		}
-		[AllowDuplicates]
 		public enum ADDRESS_CAPABILITY_STRING : int32
 		{
 			PROTOCOL = 0,
@@ -1487,33 +1467,28 @@ namespace Win32
 			SWITCHSPECIFIC = 4,
 			PERMANENTDEVICEGUID = 5,
 		}
-		[AllowDuplicates]
 		public enum FULLDUPLEX_SUPPORT : int32
 		{
 			SUPPORTED = 0,
 			NOTSUPPORTED = 1,
 			UNKNOWN = 2,
 		}
-		[AllowDuplicates]
 		public enum FINISH_MODE : int32
 		{
 			TRANSFER = 0,
 			CONFERENCE = 1,
 		}
-		[AllowDuplicates]
 		public enum PHONE_PRIVILEGE : int32
 		{
 			OWNER = 0,
 			MONITOR = 1,
 		}
-		[AllowDuplicates]
 		public enum PHONE_HOOK_SWITCH_DEVICE : int32
 		{
 			HANDSET = 1,
 			SPEAKERPHONE = 2,
 			HEADSET = 4,
 		}
-		[AllowDuplicates]
 		public enum PHONE_HOOK_SWITCH_STATE : int32
 		{
 			NHOOK = 1,
@@ -1521,7 +1496,6 @@ namespace Win32
 			FFHOOK_SPEAKER_ONLY = 4,
 			FFHOOK = 8,
 		}
-		[AllowDuplicates]
 		public enum PHONE_LAMP_MODE : int32
 		{
 			DUMMY = 1,
@@ -1533,7 +1507,6 @@ namespace Win32
 			BROKENFLUTTER = 64,
 			UNKNOWN = 128,
 		}
-		[AllowDuplicates]
 		public enum PHONECAPS_LONG : int32
 		{
 			HOOKSWITCHES = 0,
@@ -1546,19 +1519,16 @@ namespace Win32
 			NUMBUTTONLAMPS = 7,
 			GENERICPHONE = 8,
 		}
-		[AllowDuplicates]
 		public enum PHONECAPS_STRING : int32
 		{
 			HONENAME = 0,
 			HONEINFO = 1,
 			ROVIDERINFO = 2,
 		}
-		[AllowDuplicates]
 		public enum PHONECAPS_BUFFER : int32
 		{
 			PCB_DEVSPECIFICBUFFER = 0,
 		}
-		[AllowDuplicates]
 		public enum PHONE_BUTTON_STATE : int32
 		{
 			UP = 1,
@@ -1566,7 +1536,6 @@ namespace Win32
 			UNKNOWN = 4,
 			UNAVAIL = 8,
 		}
-		[AllowDuplicates]
 		public enum PHONE_BUTTON_MODE : int32
 		{
 			DUMMY = 0,
@@ -1576,7 +1545,6 @@ namespace Win32
 			LOCAL = 4,
 			DISPLAY = 5,
 		}
-		[AllowDuplicates]
 		public enum PHONE_BUTTON_FUNCTION : int32
 		{
 			UNKNOWN = 0,
@@ -1628,7 +1596,6 @@ namespace Win32
 			NONE = 46,
 			SEND = 47,
 		}
-		[AllowDuplicates]
 		public enum PHONE_TONE : int32
 		{
 			KEYPADZERO = 0,
@@ -1679,7 +1646,6 @@ namespace Win32
 			PAUSED = 2,
 			LASTITEM = 2,
 		}
-		[AllowDuplicates]
 		public enum FT_STATE_EVENT_CAUSE : int32
 		{
 			NORMAL = 0,
@@ -1687,7 +1653,6 @@ namespace Win32
 			READ_ERROR = 2,
 			WRITE_ERROR = 3,
 		}
-		[AllowDuplicates]
 		public enum AGENT_EVENT : int32
 		{
 			NOT_READY = 0,
@@ -1697,7 +1662,6 @@ namespace Win32
 			BUSY_OUTGOING = 4,
 			UNKNOWN = 5,
 		}
-		[AllowDuplicates]
 		public enum AGENT_STATE : int32
 		{
 			NOT_READY = 0,
@@ -1707,7 +1671,6 @@ namespace Win32
 			BUSY_OUTGOING = 4,
 			UNKNOWN = 5,
 		}
-		[AllowDuplicates]
 		public enum AGENT_SESSION_EVENT : int32
 		{
 			NEW_SESSION = 0,
@@ -1717,7 +1680,6 @@ namespace Win32
 			WRAPUP = 4,
 			END = 5,
 		}
-		[AllowDuplicates]
 		public enum AGENT_SESSION_STATE : int32
 		{
 			NOT_READY = 0,
@@ -1726,31 +1688,26 @@ namespace Win32
 			BUSY_WRAPUP = 3,
 			SESSION_ENDED = 4,
 		}
-		[AllowDuplicates]
 		public enum AGENTHANDLER_EVENT : int32
 		{
 			NEW_AGENTHANDLER = 0,
 			AGENTHANDLER_REMOVED = 1,
 		}
-		[AllowDuplicates]
 		public enum ACDGROUP_EVENT : int32
 		{
 			NEW_GROUP = 0,
 			GROUP_REMOVED = 1,
 		}
-		[AllowDuplicates]
 		public enum ACDQUEUE_EVENT : int32
 		{
 			NEW_QUEUE = 0,
 			QUEUE_REMOVED = 1,
 		}
-		[AllowDuplicates]
 		public enum MSP_ADDRESS_EVENT : int32
 		{
 			AVAILABLE = 0,
 			UNAVAILABLE = 1,
 		}
-		[AllowDuplicates]
 		public enum MSP_CALL_EVENT : int32
 		{
 			NEW_STREAM = 0,
@@ -1760,7 +1717,6 @@ namespace Win32
 			STREAM_ACTIVE = 4,
 			STREAM_INACTIVE = 5,
 		}
-		[AllowDuplicates]
 		public enum MSP_CALL_EVENT_CAUSE : int32
 		{
 			UNKNOWN = 0,
@@ -1772,7 +1728,6 @@ namespace Win32
 			MEDIA_RECOVERED = 6,
 			QUALITY_OF_SERVICE = 7,
 		}
-		[AllowDuplicates]
 		public enum MSP_EVENT : int32
 		{
 			ADDRESS_EVENT = 0,
@@ -1784,19 +1739,16 @@ namespace Win32
 			FILE_TERMINAL_EVENT = 6,
 			TONE_TERMINAL_EVENT = 7,
 		}
-		[AllowDuplicates]
 		public enum DIRECTORY_TYPE : int32
 		{
 			NTDS = 1,
 			ILS = 2,
 		}
-		[AllowDuplicates]
 		public enum DIRECTORY_OBJECT_TYPE : int32
 		{
 			CONFERENCE = 1,
 			USER = 2,
 		}
-		[AllowDuplicates]
 		public enum RND_ADVERTISING_SCOPE : int32
 		{
 			LOCAL = 1,

@@ -238,7 +238,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DEVPROPSTORE : int32
 		{
 			SYSTEM = 0,

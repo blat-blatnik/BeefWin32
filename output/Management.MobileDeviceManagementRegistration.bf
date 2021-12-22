@@ -76,7 +76,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum REGISTRATION_INFORMATION_CLASS : int32
 		{
 			DeviceRegistrationBasicInfo = 1,

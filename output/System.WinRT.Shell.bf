@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum CreateProcessMethod : int32
 		{
 			CreateProcess = 0,

@@ -15,7 +15,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum RM_APP_TYPE : int32
 		{
 			UnknownApp = 0,
@@ -26,13 +25,11 @@ namespace Win32
 			Console = 5,
 			Critical = 1000,
 		}
-		[AllowDuplicates]
 		public enum RM_SHUTDOWN_TYPE : int32
 		{
 			ForceShutdown = 1,
 			ShutdownOnlyRegistered = 16,
 		}
-		[AllowDuplicates]
 		public enum RM_APP_STATUS : int32
 		{
 			Unknown = 0,
@@ -45,7 +42,6 @@ namespace Win32
 			ShutdownMasked = 64,
 			RestartMasked = 128,
 		}
-		[AllowDuplicates]
 		public enum RM_REBOOT_REASON : int32
 		{
 			None = 0,
@@ -55,7 +51,6 @@ namespace Win32
 			CriticalService = 8,
 			DetectedSelf = 16,
 		}
-		[AllowDuplicates]
 		public enum RM_FILTER_TRIGGER : int32
 		{
 			Invalid = 0,
@@ -63,7 +58,6 @@ namespace Win32
 			Process = 2,
 			Service = 3,
 		}
-		[AllowDuplicates]
 		public enum RM_FILTER_ACTION : int32
 		{
 			InvalidFilterAction = 0,

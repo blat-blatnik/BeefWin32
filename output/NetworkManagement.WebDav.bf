@@ -17,7 +17,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum AUTHNEXTSTEP : int32
 		{
 			DefaultBehavior = 0,

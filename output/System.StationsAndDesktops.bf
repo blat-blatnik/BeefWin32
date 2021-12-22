@@ -12,7 +12,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum BROADCAST_SYSTEM_MESSAGE_FLAGS : uint32
 		{
 			ALLOWSFW = 128,
@@ -27,14 +26,12 @@ namespace Win32
 			LUID = 1024,
 			RETURNHDESK = 512,
 		}
-		[AllowDuplicates]
 		public enum BROADCAST_SYSTEM_MESSAGE_INFO : uint32
 		{
 			LLCOMPONENTS = 0,
 			LLDESKTOPS = 16,
 			PPLICATIONS = 8,
 		}
-		[AllowDuplicates]
 		public enum USER_OBJECT_INFORMATION_INDEX : uint32
 		{
 			FLAGS = 1,

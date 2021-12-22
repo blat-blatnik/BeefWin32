@@ -262,19 +262,16 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum RTC_AUDIO_DEVICE : int32
 		{
 			SPEAKER = 0,
 			MICROPHONE = 1,
 		}
-		[AllowDuplicates]
 		public enum RTC_VIDEO_DEVICE : int32
 		{
 			RECEIVE = 0,
 			PREVIEW = 1,
 		}
-		[AllowDuplicates]
 		public enum RTC_EVENT : int32
 		{
 			CLIENT = 0,
@@ -300,14 +297,12 @@ namespace Win32
 			SESSION_REFERRED = 20,
 			REINVITE = 21,
 		}
-		[AllowDuplicates]
 		public enum RTC_LISTEN_MODE : int32
 		{
 			NONE = 0,
 			DYNAMIC = 1,
 			BOTH = 2,
 		}
-		[AllowDuplicates]
 		public enum RTC_CLIENT_EVENT_TYPE : int32
 		{
 			VOLUME_CHANGE = 0,
@@ -315,7 +310,6 @@ namespace Win32
 			NETWORK_QUALITY_CHANGE = 2,
 			ASYNC_CLEANUP_DONE = 3,
 		}
-		[AllowDuplicates]
 		public enum RTC_BUDDY_EVENT_TYPE : int32
 		{
 			ADD = 0,
@@ -325,7 +319,6 @@ namespace Win32
 			ROAMED = 4,
 			SUBSCRIBED = 5,
 		}
-		[AllowDuplicates]
 		public enum RTC_WATCHER_EVENT_TYPE : int32
 		{
 			ADD = 0,
@@ -334,7 +327,6 @@ namespace Win32
 			OFFERING = 3,
 			ROAMED = 4,
 		}
-		[AllowDuplicates]
 		public enum RTC_GROUP_EVENT_TYPE : int32
 		{
 			ADD = 0,
@@ -344,7 +336,6 @@ namespace Win32
 			BUDDY_REMOVE = 4,
 			ROAMED = 5,
 		}
-		[AllowDuplicates]
 		public enum RTC_TERMINATE_REASON : int32
 		{
 			NORMAL = 0,
@@ -356,7 +347,6 @@ namespace Win32
 			INSUFFICIENT_SECURITY_LEVEL = 6,
 			NOT_SUPPORTED = 7,
 		}
-		[AllowDuplicates]
 		public enum RTC_REGISTRATION_STATE : int32
 		{
 			NOT_REGISTERED = 0,
@@ -369,7 +359,6 @@ namespace Win32
 			LOCAL_PA_LOGGED_OFF = 7,
 			REMOTE_PA_LOGGED_OFF = 8,
 		}
-		[AllowDuplicates]
 		public enum RTC_SESSION_STATE : int32
 		{
 			IDLE = 0,
@@ -381,7 +370,6 @@ namespace Win32
 			HOLD = 6,
 			REFER = 7,
 		}
-		[AllowDuplicates]
 		public enum RTC_PARTICIPANT_STATE : int32
 		{
 			IDLE = 0,
@@ -394,7 +382,6 @@ namespace Win32
 			DISCONNECTING = 7,
 			DISCONNECTED = 8,
 		}
-		[AllowDuplicates]
 		public enum RTC_WATCHER_STATE : int32
 		{
 			UNKNOWN = 0,
@@ -404,32 +391,27 @@ namespace Win32
 			DENIED = 4,
 			PROMPT = 5,
 		}
-		[AllowDuplicates]
 		public enum RTC_ACE_SCOPE : int32
 		{
 			USER = 0,
 			DOMAIN = 1,
 			ALL = 2,
 		}
-		[AllowDuplicates]
 		public enum RTC_OFFER_WATCHER_MODE : int32
 		{
 			OFFER_WATCHER_EVENT = 0,
 			AUTOMATICALLY_ADD_WATCHER = 1,
 		}
-		[AllowDuplicates]
 		public enum RTC_WATCHER_MATCH_MODE : int32
 		{
 			EXACT_MATCH = 0,
 			BEST_ACE_MATCH = 1,
 		}
-		[AllowDuplicates]
 		public enum RTC_PRIVACY_MODE : int32
 		{
 			BLOCK_LIST_EXCLUDED = 0,
 			ALLOW_LIST_ONLY = 1,
 		}
-		[AllowDuplicates]
 		public enum RTC_SESSION_TYPE : int32
 		{
 			PC_TO_PC = 0,
@@ -439,7 +421,6 @@ namespace Win32
 			MULTIPARTY_IM = 4,
 			APPLICATION = 5,
 		}
-		[AllowDuplicates]
 		public enum RTC_PRESENCE_STATUS : int32
 		{
 			OFFLINE = 0,
@@ -451,7 +432,6 @@ namespace Win32
 			ON_THE_PHONE = 6,
 			OUT_TO_LUNCH = 7,
 		}
-		[AllowDuplicates]
 		public enum RTC_BUDDY_SUBSCRIPTION_TYPE : int32
 		{
 			SUBSCRIBED = 0,
@@ -459,14 +439,12 @@ namespace Win32
 			ALWAYS_ONLINE = 2,
 			POLL = 3,
 		}
-		[AllowDuplicates]
 		public enum RTC_MEDIA_EVENT_TYPE : int32
 		{
 			STOPPED = 0,
 			STARTED = 1,
 			FAILED = 2,
 		}
-		[AllowDuplicates]
 		public enum RTC_MEDIA_EVENT_REASON : int32
 		{
 			NORMAL = 0,
@@ -477,19 +455,16 @@ namespace Win32
 			PORT_MAPPING_FAILED = 5,
 			REMOTE_REQUEST = 6,
 		}
-		[AllowDuplicates]
 		public enum RTC_MESSAGING_EVENT_TYPE : int32
 		{
 			MESSAGE = 0,
 			STATUS = 1,
 		}
-		[AllowDuplicates]
 		public enum RTC_MESSAGING_USER_STATUS : int32
 		{
 			IDLE = 0,
 			TYPING = 1,
 		}
-		[AllowDuplicates]
 		public enum RTC_DTMF : int32
 		{
 			_0 = 0,
@@ -510,7 +485,6 @@ namespace Win32
 			D = 15,
 			FLASH = 16,
 		}
-		[AllowDuplicates]
 		public enum RTC_PROVIDER_URI : int32
 		{
 			HOMEPAGE = 0,
@@ -519,20 +493,17 @@ namespace Win32
 			DISPLAYDURINGCALL = 3,
 			DISPLAYDURINGIDLE = 4,
 		}
-		[AllowDuplicates]
 		public enum RTC_RING_TYPE : int32
 		{
 			PHONE = 0,
 			MESSAGE = 1,
 			RINGBACK = 2,
 		}
-		[AllowDuplicates]
 		public enum RTC_T120_APPLET : int32
 		{
 			WHITEBOARD = 0,
 			APPSHARING = 1,
 		}
-		[AllowDuplicates]
 		public enum RTC_PORT_TYPE : int32
 		{
 			AUDIO_RTP = 0,
@@ -541,7 +512,6 @@ namespace Win32
 			VIDEO_RTCP = 3,
 			SIP = 4,
 		}
-		[AllowDuplicates]
 		public enum RTC_USER_SEARCH_COLUMN : int32
 		{
 			URI = 0,
@@ -555,13 +525,11 @@ namespace Win32
 			COUNTRY = 8,
 			EMAIL = 9,
 		}
-		[AllowDuplicates]
 		public enum RTC_USER_SEARCH_PREFERENCE : int32
 		{
 			MAX_MATCHES = 0,
 			TIME_LIMIT = 1,
 		}
-		[AllowDuplicates]
 		public enum RTC_ROAMING_EVENT_TYPE : int32
 		{
 			BUDDY_ROAMING = 0,
@@ -570,13 +538,11 @@ namespace Win32
 			PROFILE_ROAMING = 3,
 			WPENDING_ROAMING = 4,
 		}
-		[AllowDuplicates]
 		public enum RTC_PROFILE_EVENT_TYPE : int32
 		{
 			GET = 0,
 			UPDATE = 1,
 		}
-		[AllowDuplicates]
 		public enum RTC_ANSWER_MODE : int32
 		{
 			OFFER_SESSION_EVENT = 0,
@@ -584,7 +550,6 @@ namespace Win32
 			AUTOMATICALLY_REJECT = 2,
 			NOT_SUPPORTED = 3,
 		}
-		[AllowDuplicates]
 		public enum RTC_SESSION_REFER_STATUS : int32
 		{
 			REFERRING = 0,
@@ -594,7 +559,6 @@ namespace Win32
 			DROPPED = 4,
 			DONE = 5,
 		}
-		[AllowDuplicates]
 		public enum RTC_PRESENCE_PROPERTY : int32
 		{
 			PHONENUMBER = 0,
@@ -603,20 +567,17 @@ namespace Win32
 			DEVICE_NAME = 3,
 			MULTIPLE = 4,
 		}
-		[AllowDuplicates]
 		public enum RTC_SECURITY_TYPE : int32
 		{
 			AUDIO_VIDEO_MEDIA_ENCRYPTION = 0,
 			T120_MEDIA_ENCRYPTION = 1,
 		}
-		[AllowDuplicates]
 		public enum RTC_SECURITY_LEVEL : int32
 		{
 			UNSUPPORTED = 1,
 			SUPPORTED = 2,
 			REQUIRED = 3,
 		}
-		[AllowDuplicates]
 		public enum RTC_REINVITE_STATE : int32
 		{
 			INCOMING = 0,

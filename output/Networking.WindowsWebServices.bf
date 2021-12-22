@@ -135,7 +135,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WS_XML_READER_PROPERTY_ID : int32
 		{
 			MAX_DEPTH = 0,
@@ -154,7 +153,6 @@ namespace Win32
 			ALLOW_INVALID_CHARACTER_REFERENCES = 13,
 			MAX_NAMESPACES = 14,
 		}
-		[AllowDuplicates]
 		public enum WS_XML_CANONICALIZATION_ALGORITHM : int32
 		{
 			EXCLUSIVE_XML_CANONICALIZATION_ALGORITHM = 0,
@@ -162,7 +160,6 @@ namespace Win32
 			INCLUSIVE_XML_CANONICALIZATION_ALGORITHM = 2,
 			INCLUSIVE_WITH_COMMENTS_XML_CANONICALIZATION_ALGORITHM = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_XML_CANONICALIZATION_PROPERTY_ID : int32
 		{
 			ALGORITHM = 0,
@@ -170,7 +167,6 @@ namespace Win32
 			OMITTED_ELEMENT = 2,
 			OUTPUT_BUFFER_SIZE = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_XML_WRITER_PROPERTY_ID : int32
 		{
 			MAX_DEPTH = 0,
@@ -193,11 +189,9 @@ namespace Win32
 			COMPRESS_EMPTY_ELEMENTS = 17,
 			EMIT_UNCOMPRESSED_EMPTY_ELEMENTS = 18,
 		}
-		[AllowDuplicates]
 		public enum WS_XML_BUFFER_PROPERTY_ID
 		{
 		}
-		[AllowDuplicates]
 		public enum WS_XML_TEXT_TYPE : int32
 		{
 			UTF8 = 1,
@@ -217,7 +211,6 @@ namespace Win32
 			QNAME = 15,
 			LIST = 16,
 		}
-		[AllowDuplicates]
 		public enum WS_XML_NODE_TYPE : int32
 		{
 			ELEMENT = 1,
@@ -229,7 +222,6 @@ namespace Win32
 			EOF = 8,
 			BOF = 9,
 		}
-		[AllowDuplicates]
 		public enum WS_MOVE_TO : int32
 		{
 			ROOT_ELEMENT = 0,
@@ -245,7 +237,6 @@ namespace Win32
 			EOF = 10,
 			CHILD_NODE = 11,
 		}
-		[AllowDuplicates]
 		public enum WS_VALUE_TYPE : int32
 		{
 			BOOL_VALUE_TYPE = 0,
@@ -265,13 +256,11 @@ namespace Win32
 			GUID_VALUE_TYPE = 14,
 			DURATION_VALUE_TYPE = 15,
 		}
-		[AllowDuplicates]
 		public enum WS_XML_READER_INPUT_TYPE : int32
 		{
 			BUFFER = 1,
 			STREAM = 2,
 		}
-		[AllowDuplicates]
 		public enum WS_XML_READER_ENCODING_TYPE : int32
 		{
 			TEXT = 1,
@@ -279,7 +268,6 @@ namespace Win32
 			MTOM = 3,
 			RAW = 4,
 		}
-		[AllowDuplicates]
 		public enum WS_CHARSET : int32
 		{
 			AUTO = 0,
@@ -287,7 +275,6 @@ namespace Win32
 			UTF16LE = 2,
 			UTF16BE = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_XML_WRITER_ENCODING_TYPE : int32
 		{
 			TEXT = 1,
@@ -295,19 +282,16 @@ namespace Win32
 			MTOM = 3,
 			RAW = 4,
 		}
-		[AllowDuplicates]
 		public enum WS_XML_WRITER_OUTPUT_TYPE : int32
 		{
 			BUFFER = 1,
 			STREAM = 2,
 		}
-		[AllowDuplicates]
 		public enum WS_CALLBACK_MODEL : int32
 		{
 			SHORT_CALLBACK = 0,
 			LONG_CALLBACK = 1,
 		}
-		[AllowDuplicates]
 		public enum WS_ENCODING : int32
 		{
 			XML_BINARY_1 = 0,
@@ -320,7 +304,6 @@ namespace Win32
 			XML_UTF16LE = 7,
 			RAW = 8,
 		}
-		[AllowDuplicates]
 		public enum WS_CHANNEL_STATE : int32
 		{
 			CREATED = 0,
@@ -331,13 +314,11 @@ namespace Win32
 			CLOSING = 5,
 			CLOSED = 6,
 		}
-		[AllowDuplicates]
 		public enum WS_RECEIVE_OPTION : int32
 		{
 			REQUIRED_MESSAGE = 1,
 			OPTIONAL_MESSAGE = 2,
 		}
-		[AllowDuplicates]
 		public enum WS_CHANNEL_BINDING : int32
 		{
 			HTTP_CHANNEL_BINDING = 0,
@@ -346,7 +327,6 @@ namespace Win32
 			CUSTOM_CHANNEL_BINDING = 3,
 			NAMEDPIPE_CHANNEL_BINDING = 4,
 		}
-		[AllowDuplicates]
 		public enum WS_CHANNEL_TYPE : int32
 		{
 			INPUT = 1,
@@ -359,7 +339,6 @@ namespace Win32
 			REQUEST = 8,
 			REPLY = 16,
 		}
-		[AllowDuplicates]
 		public enum WS_TRANSFER_MODE : int32
 		{
 			STREAMED_INPUT_TRANSFER_MODE = 1,
@@ -367,14 +346,12 @@ namespace Win32
 			BUFFERED_TRANSFER_MODE = 0,
 			STREAMED_TRANSFER_MODE = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_HTTP_PROXY_SETTING_MODE : int32
 		{
 			AUTO = 1,
 			NONE = 2,
 			CUSTOM = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_CHANNEL_PROPERTY_ID : int32
 		{
 			MAX_BUFFERED_MESSAGE_SIZE = 0,
@@ -428,13 +405,11 @@ namespace Win32
 			HTTP_PROXY_SPN = 48,
 			MAX_HTTP_REQUEST_HEADERS_BUFFER_SIZE = 49,
 		}
-		[AllowDuplicates]
 		public enum WS_COOKIE_MODE : int32
 		{
 			MANUAL_COOKIE_MODE = 1,
 			AUTO_COOKIE_MODE = 2,
 		}
-		[AllowDuplicates]
 		public enum WS_OPERATION_CONTEXT_PROPERTY_ID : int32
 		{
 			CHANNEL = 0,
@@ -447,7 +422,6 @@ namespace Win32
 			LISTENER = 7,
 			ENDPOINT_ADDRESS = 8,
 		}
-		[AllowDuplicates]
 		public enum WS_ENDPOINT_IDENTITY_TYPE : int32
 		{
 			DNS_ENDPOINT_IDENTITY_TYPE = 1,
@@ -457,38 +431,32 @@ namespace Win32
 			CERT_ENDPOINT_IDENTITY_TYPE = 5,
 			UNKNOWN_ENDPOINT_IDENTITY_TYPE = 6,
 		}
-		[AllowDuplicates]
 		public enum WS_ENDPOINT_ADDRESS_EXTENSION_TYPE : int32
 		{
 			WS_ENDPOINT_ADDRESS_EXTENSION_METADATA_ADDRESS = 1,
 		}
-		[AllowDuplicates]
 		public enum WS_ERROR_PROPERTY_ID : int32
 		{
 			STRING_COUNT = 0,
 			ORIGINAL_ERROR_CODE = 1,
 			LANGID = 2,
 		}
-		[AllowDuplicates]
 		public enum WS_EXCEPTION_CODE : int32
 		{
 			USAGE_FAILURE = -1069744128,
 			INTERNAL_FAILURE = -1069744127,
 		}
-		[AllowDuplicates]
 		public enum WS_FAULT_ERROR_PROPERTY_ID : int32
 		{
 			FAULT = 0,
 			ACTION = 1,
 			HEADER = 2,
 		}
-		[AllowDuplicates]
 		public enum WS_FAULT_DISCLOSURE : int32
 		{
 			MINIMAL_FAULT_DISCLOSURE = 0,
 			FULL_FAULT_DISCLOSURE = 1,
 		}
-		[AllowDuplicates]
 		public enum WS_HEAP_PROPERTY_ID : int32
 		{
 			MAX_SIZE = 0,
@@ -496,7 +464,6 @@ namespace Win32
 			REQUESTED_SIZE = 2,
 			ACTUAL_SIZE = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_LISTENER_STATE : int32
 		{
 			CREATED = 0,
@@ -506,7 +473,6 @@ namespace Win32
 			CLOSING = 4,
 			CLOSED = 5,
 		}
-		[AllowDuplicates]
 		public enum WS_LISTENER_PROPERTY_ID : int32
 		{
 			LISTEN_BACKLOG = 0,
@@ -527,14 +493,12 @@ namespace Win32
 			CUSTOM_LISTENER_INSTANCE = 15,
 			DISALLOWED_USER_AGENT = 16,
 		}
-		[AllowDuplicates]
 		public enum WS_IP_VERSION : int32
 		{
 			_4 = 1,
 			_6 = 2,
 			AUTO = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_MESSAGE_STATE : int32
 		{
 			EMPTY = 1,
@@ -543,7 +507,6 @@ namespace Win32
 			WRITING = 4,
 			DONE = 5,
 		}
-		[AllowDuplicates]
 		public enum WS_MESSAGE_INITIALIZATION : int32
 		{
 			BLANK_MESSAGE = 0,
@@ -552,13 +515,11 @@ namespace Win32
 			REPLY_MESSAGE = 3,
 			FAULT_MESSAGE = 4,
 		}
-		[AllowDuplicates]
 		public enum WS_REPEATING_HEADER_OPTION : int32
 		{
 			REPEATING_HEADER = 1,
 			SINGLETON_HEADER = 2,
 		}
-		[AllowDuplicates]
 		public enum WS_HEADER_TYPE : int32
 		{
 			ACTION_HEADER = 1,
@@ -569,21 +530,18 @@ namespace Win32
 			REPLY_TO_HEADER = 6,
 			FAULT_TO_HEADER = 7,
 		}
-		[AllowDuplicates]
 		public enum WS_ADDRESSING_VERSION : int32
 		{
 			_0_9 = 1,
 			_1_0 = 2,
 			TRANSPORT = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_ENVELOPE_VERSION : int32
 		{
 			SOAP_1_1 = 1,
 			SOAP_1_2 = 2,
 			NONE = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_MESSAGE_PROPERTY_ID : int32
 		{
 			STATE = 0,
@@ -609,7 +567,6 @@ namespace Win32
 			SECURITY_CONTEXT = 20,
 			PROTECTION_LEVEL = 21,
 		}
-		[AllowDuplicates]
 		public enum WS_SECURITY_BINDING_TYPE : int32
 		{
 			SSL_TRANSPORT_SECURITY_BINDING_TYPE = 1,
@@ -622,45 +579,38 @@ namespace Win32
 			SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_TYPE = 8,
 			NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING_TYPE = 9,
 		}
-		[AllowDuplicates]
 		public enum WS_HTTP_HEADER_AUTH_TARGET : int32
 		{
 			SERVICE = 1,
 			PROXY = 2,
 		}
-		[AllowDuplicates]
 		public enum WS_WINDOWS_INTEGRATED_AUTH_PACKAGE : int32
 		{
 			KERBEROS = 1,
 			NTLM = 2,
 			SPNEGO = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_SECURITY_HEADER_VERSION : int32
 		{
 			_0 = 1,
 			_1 = 2,
 		}
-		[AllowDuplicates]
 		public enum WS_TRUST_VERSION : int32
 		{
 			FEBRUARY_2005 = 1,
 			_1_3 = 2,
 		}
-		[AllowDuplicates]
 		public enum WS_REQUEST_SECURITY_TOKEN_ACTION : int32
 		{
 			ISSUE = 1,
 			NEW_CONTEXT = 2,
 			RENEW_CONTEXT = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_SECURE_CONVERSATION_VERSION : int32
 		{
 			FEBRUARY_2005 = 1,
 			_1_3 = 2,
 		}
-		[AllowDuplicates]
 		public enum WS_SECURE_PROTOCOL : int32
 		{
 			SSL2 = 1,
@@ -669,14 +619,12 @@ namespace Win32
 			TLS1_1 = 8,
 			TLS1_2 = 16,
 		}
-		[AllowDuplicates]
 		public enum WS_SECURITY_TIMESTAMP_USAGE : int32
 		{
 			ALWAYS = 1,
 			NEVER = 2,
 			REQUESTS_ONLY = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_SECURITY_HEADER_LAYOUT : int32
 		{
 			STRICT = 1,
@@ -684,11 +632,9 @@ namespace Win32
 			LAX_WITH_TIMESTAMP_FIRST = 3,
 			LAX_WITH_TIMESTAMP_LAST = 4,
 		}
-		[AllowDuplicates]
 		public enum WS_SECURITY_ALGORITHM_PROPERTY_ID
 		{
 		}
-		[AllowDuplicates]
 		public enum WS_SECURITY_ALGORITHM_ID : int32
 		{
 			DEFAULT = 0,
@@ -711,14 +657,12 @@ namespace Win32
 			ASYMMETRIC_KEYWRAP_RSA_OAEP = 17,
 			KEY_DERIVATION_P_SHA1 = 18,
 		}
-		[AllowDuplicates]
 		public enum WS_PROTECTION_LEVEL : int32
 		{
 			NONE = 1,
 			SIGN = 2,
 			SIGN_AND_ENCRYPT = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_SECURITY_PROPERTY_ID : int32
 		{
 			TRANSPORT_PROTECTION_LEVEL = 1,
@@ -734,14 +678,12 @@ namespace Win32
 			EXTENDED_PROTECTION_SCENARIO = 11,
 			SERVICE_IDENTITIES = 12,
 		}
-		[AllowDuplicates]
 		public enum WS_SECURITY_KEY_TYPE : int32
 		{
 			NONE = 1,
 			SYMMETRIC = 2,
 			ASYMMETRIC = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_SECURITY_ALGORITHM_SUITE_NAME : int32
 		{
 			_256 = 1,
@@ -757,7 +699,6 @@ namespace Win32
 			_192_SHA256_RSA15 = 11,
 			_128_SHA256_RSA15 = 12,
 		}
-		[AllowDuplicates]
 		public enum WS_SECURITY_TOKEN_REFERENCE_MODE : int32
 		{
 			LOCAL_ID = 1,
@@ -766,27 +707,23 @@ namespace Win32
 			SECURITY_CONTEXT_ID = 4,
 			SAML_ASSERTION_ID = 5,
 		}
-		[AllowDuplicates]
 		public enum WS_SECURITY_KEY_ENTROPY_MODE : int32
 		{
 			CLIENT_ONLY = 1,
 			SERVER_ONLY = 2,
 			COMBINED = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_EXTENDED_PROTECTION_POLICY : int32
 		{
 			NEVER = 1,
 			WHEN_SUPPORTED = 2,
 			ALWAYS = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_EXTENDED_PROTECTION_SCENARIO : int32
 		{
 			BOUND_SERVER = 1,
 			TERMINATED_SSL = 2,
 		}
-		[AllowDuplicates]
 		public enum WS_SECURITY_BINDING_PROPERTY_ID : int32
 		{
 			REQUIRE_SSL_CLIENT_CERT = 1,
@@ -813,26 +750,22 @@ namespace Win32
 			DISALLOWED_SECURE_PROTOCOLS = 22,
 			CERTIFICATE_VALIDATION_CALLBACK_CONTEXT = 23,
 		}
-		[AllowDuplicates]
 		public enum WS_CERT_CREDENTIAL_TYPE : int32
 		{
 			SUBJECT_NAME_CERT_CREDENTIAL_TYPE = 1,
 			THUMBPRINT_CERT_CREDENTIAL_TYPE = 2,
 			CUSTOM_CERT_CREDENTIAL_TYPE = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL_TYPE : int32
 		{
 			STRING_WINDOWS_INTEGRATED_AUTH_CREDENTIAL_TYPE = 1,
 			DEFAULT_WINDOWS_INTEGRATED_AUTH_CREDENTIAL_TYPE = 2,
 			OPAQUE_WINDOWS_INTEGRATED_AUTH_CREDENTIAL_TYPE = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_USERNAME_CREDENTIAL_TYPE : int32
 		{
 			WS_STRING_USERNAME_CREDENTIAL_TYPE = 1,
 		}
-		[AllowDuplicates]
 		public enum WS_SECURITY_TOKEN_PROPERTY_ID : int32
 		{
 			KEY_TYPE = 1,
@@ -843,19 +776,16 @@ namespace Win32
 			UNATTACHED_REFERENCE_XML = 6,
 			SYMMETRIC_KEY = 7,
 		}
-		[AllowDuplicates]
 		public enum WS_SECURITY_KEY_HANDLE_TYPE : int32
 		{
 			RAW_SYMMETRIC_SECURITY_KEY_HANDLE_TYPE = 1,
 			NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE_TYPE = 2,
 			CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE_TYPE = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_MESSAGE_SECURITY_USAGE : int32
 		{
 			WS_SUPPORTING_MESSAGE_SECURITY_USAGE = 1,
 		}
-		[AllowDuplicates]
 		public enum WS_SECURITY_CONTEXT_PROPERTY_ID : int32
 		{
 			IDENTIFIER = 1,
@@ -863,7 +793,6 @@ namespace Win32
 			MESSAGE_SECURITY_WINDOWS_TOKEN = 3,
 			SAML_ASSERTION = 4,
 		}
-		[AllowDuplicates]
 		public enum WS_XML_SECURITY_TOKEN_PROPERTY_ID : int32
 		{
 			ATTACHED_REFERENCE = 1,
@@ -871,12 +800,10 @@ namespace Win32
 			VALID_FROM_TIME = 3,
 			VALID_TILL_TIME = 4,
 		}
-		[AllowDuplicates]
 		public enum WS_SAML_AUTHENTICATOR_TYPE : int32
 		{
 			WS_CERT_SIGNED_SAML_AUTHENTICATOR_TYPE = 1,
 		}
-		[AllowDuplicates]
 		public enum WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID : int32
 		{
 			APPLIES_TO = 1,
@@ -893,14 +820,12 @@ namespace Win32
 			MESSAGE_PROPERTIES = 12,
 			BEARER_KEY_TYPE_VERSION = 13,
 		}
-		[AllowDuplicates]
 		public enum WS_SECURITY_BEARER_KEY_TYPE_VERSION : int32
 		{
 			ORIGINAL_SPECIFICATION = 1,
 			ORIGINAL_SCHEMA = 2,
 			ERRATA_01 = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_TYPE : int32
 		{
 			BOOL_TYPE = 0,
@@ -939,7 +864,6 @@ namespace Win32
 			UNION_TYPE = 33,
 			ANY_ATTRIBUTES_TYPE = 34,
 		}
-		[AllowDuplicates]
 		public enum WS_FIELD_MAPPING : int32
 		{
 			TYPE_ATTRIBUTE_FIELD_MAPPING = 0,
@@ -956,7 +880,6 @@ namespace Win32
 			ANY_CONTENT_FIELD_MAPPING = 11,
 			ANY_ATTRIBUTES_FIELD_MAPPING = 12,
 		}
-		[AllowDuplicates]
 		public enum WS_TYPE_MAPPING : int32
 		{
 			ELEMENT_TYPE_MAPPING = 1,
@@ -964,7 +887,6 @@ namespace Win32
 			ELEMENT_CONTENT_TYPE_MAPPING = 3,
 			ANY_ELEMENT_TYPE_MAPPING = 4,
 		}
-		[AllowDuplicates]
 		public enum WS_READ_OPTION : int32
 		{
 			REQUIRED_VALUE = 1,
@@ -973,7 +895,6 @@ namespace Win32
 			NILLABLE_POINTER = 4,
 			NILLABLE_VALUE = 5,
 		}
-		[AllowDuplicates]
 		public enum WS_WRITE_OPTION : int32
 		{
 			REQUIRED_VALUE = 1,
@@ -981,19 +902,16 @@ namespace Win32
 			NILLABLE_VALUE = 3,
 			NILLABLE_POINTER = 4,
 		}
-		[AllowDuplicates]
 		public enum WS_SERVICE_CANCEL_REASON : int32
 		{
 			HOST_ABORT = 0,
 			CHANNEL_FAULTED = 1,
 		}
-		[AllowDuplicates]
 		public enum WS_OPERATION_STYLE : int32
 		{
 			NON_RPC_LITERAL_OPERATION = 0,
 			RPC_LITERAL_OPERATION = 1,
 		}
-		[AllowDuplicates]
 		public enum WS_PARAMETER_TYPE : int32
 		{
 			NORMAL = 0,
@@ -1001,7 +919,6 @@ namespace Win32
 			ARRAY_COUNT = 2,
 			MESSAGES = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_SERVICE_ENDPOINT_PROPERTY_ID : int32
 		{
 			ACCEPT_CHANNEL_CALLBACK = 0,
@@ -1020,14 +937,12 @@ namespace Win32
 			METADATA_EXCHANGE_URL_SUFFIX = 13,
 			MAX_CHANNELS = 14,
 		}
-		[AllowDuplicates]
 		public enum WS_METADATA_EXCHANGE_TYPE : int32
 		{
 			NONE = 0,
 			MEX = 1,
 			HTTP_GET = 2,
 		}
-		[AllowDuplicates]
 		public enum WS_SERVICE_PROPERTY_ID : int32
 		{
 			HOST_USER_STATE = 0,
@@ -1037,7 +952,6 @@ namespace Win32
 			METADATA = 4,
 			CLOSE_TIMEOUT = 5,
 		}
-		[AllowDuplicates]
 		public enum WS_SERVICE_HOST_STATE : int32
 		{
 			CREATED = 0,
@@ -1047,7 +961,6 @@ namespace Win32
 			CLOSED = 4,
 			FAULTED = 5,
 		}
-		[AllowDuplicates]
 		public enum WS_SERVICE_PROXY_STATE : int32
 		{
 			CREATED = 0,
@@ -1057,7 +970,6 @@ namespace Win32
 			CLOSED = 4,
 			FAULTED = 5,
 		}
-		[AllowDuplicates]
 		public enum WS_PROXY_PROPERTY_ID : int32
 		{
 			PROPERTY_CALL_TIMEOUT = 0,
@@ -1068,7 +980,6 @@ namespace Win32
 			PROPERTY_MAX_CLOSE_TIMEOUT = 5,
 			FAULT_LANG_ID = 6,
 		}
-		[AllowDuplicates]
 		public enum WS_CALL_PROPERTY_ID : int32
 		{
 			CHECK_MUST_UNDERSTAND = 0,
@@ -1076,7 +987,6 @@ namespace Win32
 			RECEIVE_MESSAGE_CONTEXT = 2,
 			CALL_ID = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_TRACE_API : int32
 		{
 			NONE = -1,
@@ -1276,7 +1186,6 @@ namespace Win32
 			WS_CREATE_SERVICE_PROXY_FROM_TEMPLATE = 193,
 			WS_CREATE_SERVICE_HOST_FROM_TEMPLATE = 194,
 		}
-		[AllowDuplicates]
 		public enum WS_URL_SCHEME_TYPE : int32
 		{
 			HTTP_SCHEME_TYPE = 0,
@@ -1285,21 +1194,18 @@ namespace Win32
 			SOAPUDP_SCHEME_TYPE = 3,
 			NETPIPE_SCHEME_TYPE = 4,
 		}
-		[AllowDuplicates]
 		public enum WS_DATETIME_FORMAT : int32
 		{
 			UTC = 0,
 			LOCAL = 1,
 			NONE = 2,
 		}
-		[AllowDuplicates]
 		public enum WS_METADATA_STATE : int32
 		{
 			CREATED = 1,
 			RESOLVED = 2,
 			FAULTED = 3,
 		}
-		[AllowDuplicates]
 		public enum WS_METADATA_PROPERTY_ID : int32
 		{
 			STATE = 1,
@@ -1310,13 +1216,11 @@ namespace Win32
 			HOST_NAMES = 6,
 			VERIFY_HOST_NAMES = 7,
 		}
-		[AllowDuplicates]
 		public enum WS_POLICY_STATE : int32
 		{
 			CREATED = 1,
 			FAULTED = 2,
 		}
-		[AllowDuplicates]
 		public enum WS_POLICY_PROPERTY_ID : int32
 		{
 			STATE = 1,
@@ -1324,7 +1228,6 @@ namespace Win32
 			MAX_DEPTH = 3,
 			MAX_EXTENSIONS = 4,
 		}
-		[AllowDuplicates]
 		public enum WS_SECURITY_BINDING_CONSTRAINT_TYPE : int32
 		{
 			SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT_TYPE = 1,
@@ -1336,12 +1239,10 @@ namespace Win32
 			CERT_MESSAGE_SECURITY_BINDING_CONSTRAINT_TYPE = 7,
 			SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT_TYPE = 8,
 		}
-		[AllowDuplicates]
 		public enum WS_POLICY_EXTENSION_TYPE : int32
 		{
 			WS_ENDPOINT_POLICY_EXTENSION_TYPE = 1,
 		}
-		[AllowDuplicates]
 		public enum WS_BINDING_TEMPLATE_TYPE : int32
 		{
 			HTTP_BINDING_TEMPLATE_TYPE = 0,

@@ -7,13 +7,11 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum CALLFRAME_COPY : int32
 		{
 			NESTED = 1,
 			INDEPENDENT = 2,
 		}
-		[AllowDuplicates]
 		public enum CALLFRAME_FREE : int32
 		{
 			NONE = 0,
@@ -24,7 +22,6 @@ namespace Win32
 			TOP_OUT = 16,
 			ALL = 31,
 		}
-		[AllowDuplicates]
 		public enum CALLFRAME_NULL : int32
 		{
 			NONE = 0,
@@ -32,7 +29,6 @@ namespace Win32
 			OUT = 4,
 			ALL = 6,
 		}
-		[AllowDuplicates]
 		public enum CALLFRAME_WALK : int32
 		{
 			IN = 1,

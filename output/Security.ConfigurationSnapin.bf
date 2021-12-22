@@ -34,7 +34,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum SCE_LOG_ERR_LEVEL : uint32
 		{
 			ALWAYS = 0,
@@ -42,7 +41,6 @@ namespace Win32
 			DETAIL = 2,
 			DEBUG = 3,
 		}
-		[AllowDuplicates]
 		public enum SCESVC_INFO_TYPE : int32
 		{
 			ConfigurationInfo = 0,

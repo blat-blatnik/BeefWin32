@@ -16,7 +16,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum PSS_HANDLE_FLAGS : uint32
 		{
 			NONE = 0,
@@ -25,7 +24,6 @@ namespace Win32
 			HAVE_BASIC_INFORMATION = 4,
 			HAVE_TYPE_SPECIFIC_INFORMATION = 8,
 		}
-		[AllowDuplicates]
 		public enum PSS_OBJECT_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -36,7 +34,6 @@ namespace Win32
 			SECTION = 5,
 			SEMAPHORE = 6,
 		}
-		[AllowDuplicates]
 		public enum PSS_CAPTURE_FLAGS : uint32
 		{
 			APTURE_NONE = 0,
@@ -62,7 +59,6 @@ namespace Win32
 			REATE_MEASURE_PERFORMANCE = 1073741824,
 			REATE_RELEASE_SECTION = 2147483648,
 		}
-		[AllowDuplicates]
 		public enum PSS_QUERY_INFORMATION_CLASS : int32
 		{
 			PROCESS_INFORMATION = 0,
@@ -74,7 +70,6 @@ namespace Win32
 			HANDLE_TRACE_INFORMATION = 6,
 			PERFORMANCE_COUNTERS = 7,
 		}
-		[AllowDuplicates]
 		public enum PSS_WALK_INFORMATION_CLASS : int32
 		{
 			AUXILIARY_PAGES = 0,
@@ -82,13 +77,11 @@ namespace Win32
 			HANDLES = 2,
 			THREADS = 3,
 		}
-		[AllowDuplicates]
 		public enum PSS_DUPLICATE_FLAGS : uint32
 		{
 			NONE = 0,
 			CLOSE_SOURCE = 1,
 		}
-		[AllowDuplicates]
 		public enum PSS_PROCESS_FLAGS : uint32
 		{
 			NONE = 0,
@@ -98,7 +91,6 @@ namespace Win32
 			RESERVED_04 = 8,
 			FROZEN = 16,
 		}
-		[AllowDuplicates]
 		public enum PSS_THREAD_FLAGS : uint32
 		{
 			NONE = 0,

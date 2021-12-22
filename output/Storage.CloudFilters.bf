@@ -19,7 +19,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum CF_PLACEHOLDER_CREATE_FLAGS : uint32
 		{
 			NONE = 0,
@@ -28,7 +27,6 @@ namespace Win32
 			SUPERSEDE = 4,
 			ALWAYS_FULL = 8,
 		}
-		[AllowDuplicates]
 		public enum CF_SYNC_PROVIDER_STATUS : uint32
 		{
 			DISCONNECTED = 0,
@@ -43,7 +41,6 @@ namespace Win32
 			TERMINATED = 3221225473,
 			ERROR = 3221225474,
 		}
-		[AllowDuplicates]
 		public enum CF_REGISTER_FLAGS : uint32
 		{
 			NONE = 0,
@@ -51,7 +48,6 @@ namespace Win32
 			DISABLE_ON_DEMAND_POPULATION_ON_ROOT = 2,
 			MARK_IN_SYNC_ON_ROOT = 4,
 		}
-		[AllowDuplicates]
 		public enum CF_HYDRATION_POLICY_PRIMARY : uint16
 		{
 			PARTIAL = 0,
@@ -59,7 +55,6 @@ namespace Win32
 			FULL = 2,
 			ALWAYS_FULL = 3,
 		}
-		[AllowDuplicates]
 		public enum CF_HYDRATION_POLICY_MODIFIER : uint16
 		{
 			NONE = 0,
@@ -68,19 +63,16 @@ namespace Win32
 			AUTO_DEHYDRATION_ALLOWED = 4,
 			ALLOW_FULL_RESTART_HYDRATION = 8,
 		}
-		[AllowDuplicates]
 		public enum CF_POPULATION_POLICY_PRIMARY : uint16
 		{
 			PARTIAL = 0,
 			FULL = 2,
 			ALWAYS_FULL = 3,
 		}
-		[AllowDuplicates]
 		public enum CF_POPULATION_POLICY_MODIFIER : uint16
 		{
 			CF_POPULATION_POLICY_MODIFIER_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum CF_PLACEHOLDER_MANAGEMENT_POLICY : int32
 		{
 			DEFAULT = 0,
@@ -88,7 +80,6 @@ namespace Win32
 			CONVERT_TO_UNRESTRICTED = 2,
 			UPDATE_UNRESTRICTED = 4,
 		}
-		[AllowDuplicates]
 		public enum CF_INSYNC_POLICY : uint32
 		{
 			NONE = 0,
@@ -107,76 +98,64 @@ namespace Win32
 			TRACK_ALL = 16777215,
 			PRESERVE_INSYNC_FOR_SYNC_ENGINE = 2147483648,
 		}
-		[AllowDuplicates]
 		public enum CF_HARDLINK_POLICY : uint32
 		{
 			NONE = 0,
 			ALLOWED = 1,
 		}
-		[AllowDuplicates]
 		public enum CF_CALLBACK_CANCEL_FLAGS : uint32
 		{
 			NONE = 0,
 			IO_TIMEOUT = 1,
 			IO_ABORTED = 2,
 		}
-		[AllowDuplicates]
 		public enum CF_CALLBACK_FETCH_DATA_FLAGS : uint32
 		{
 			NONE = 0,
 			RECOVERY = 1,
 			EXPLICIT_HYDRATION = 2,
 		}
-		[AllowDuplicates]
 		public enum CF_CALLBACK_VALIDATE_DATA_FLAGS : uint32
 		{
 			NONE = 0,
 			EXPLICIT_HYDRATION = 2,
 		}
-		[AllowDuplicates]
 		public enum CF_CALLBACK_FETCH_PLACEHOLDERS_FLAGS : uint32
 		{
 			CF_CALLBACK_FETCH_PLACEHOLDERS_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum CF_CALLBACK_OPEN_COMPLETION_FLAGS : uint32
 		{
 			NONE = 0,
 			PLACEHOLDER_UNKNOWN = 1,
 			PLACEHOLDER_UNSUPPORTED = 2,
 		}
-		[AllowDuplicates]
 		public enum CF_CALLBACK_CLOSE_COMPLETION_FLAGS : uint32
 		{
 			NONE = 0,
 			DELETED = 1,
 		}
-		[AllowDuplicates]
 		public enum CF_CALLBACK_DEHYDRATE_FLAGS : uint32
 		{
 			NONE = 0,
 			BACKGROUND = 1,
 		}
-		[AllowDuplicates]
 		public enum CF_CALLBACK_DEHYDRATE_COMPLETION_FLAGS : uint32
 		{
 			NONE = 0,
 			BACKGROUND = 1,
 			DEHYDRATED = 2,
 		}
-		[AllowDuplicates]
 		public enum CF_CALLBACK_DELETE_FLAGS : uint32
 		{
 			NONE = 0,
 			IS_DIRECTORY = 1,
 			IS_UNDELETE = 2,
 		}
-		[AllowDuplicates]
 		public enum CF_CALLBACK_DELETE_COMPLETION_FLAGS : uint32
 		{
 			CF_CALLBACK_DELETE_COMPLETION_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum CF_CALLBACK_RENAME_FLAGS : uint32
 		{
 			NONE = 0,
@@ -184,12 +163,10 @@ namespace Win32
 			SOURCE_IN_SCOPE = 2,
 			TARGET_IN_SCOPE = 4,
 		}
-		[AllowDuplicates]
 		public enum CF_CALLBACK_RENAME_COMPLETION_FLAGS : uint32
 		{
 			CF_CALLBACK_RENAME_COMPLETION_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum CF_CALLBACK_DEHYDRATION_REASON : int32
 		{
 			NONE = 0,
@@ -198,7 +175,6 @@ namespace Win32
 			SYSTEM_INACTIVITY = 3,
 			SYSTEM_OS_UPGRADE = 4,
 		}
-		[AllowDuplicates]
 		public enum CF_CALLBACK_TYPE : int32
 		{
 			FETCH_DATA = 0,
@@ -216,7 +192,6 @@ namespace Win32
 			NOTIFY_RENAME_COMPLETION = 12,
 			NONE = -1,
 		}
-		[AllowDuplicates]
 		public enum CF_CONNECT_FLAGS : uint32
 		{
 			NONE = 0,
@@ -224,7 +199,6 @@ namespace Win32
 			REQUIRE_FULL_FILE_PATH = 4,
 			BLOCK_SELF_IMPLICIT_HYDRATION = 8,
 		}
-		[AllowDuplicates]
 		public enum CF_OPERATION_TYPE : int32
 		{
 			TRANSFER_DATA = 0,
@@ -236,56 +210,46 @@ namespace Win32
 			ACK_DELETE = 6,
 			ACK_RENAME = 7,
 		}
-		[AllowDuplicates]
 		public enum CF_OPERATION_TRANSFER_DATA_FLAGS : uint32
 		{
 			CF_OPERATION_TRANSFER_DATA_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum CF_OPERATION_RETRIEVE_DATA_FLAGS : uint32
 		{
 			CF_OPERATION_RETRIEVE_DATA_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum CF_OPERATION_ACK_DATA_FLAGS : uint32
 		{
 			CF_OPERATION_ACK_DATA_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum CF_OPERATION_RESTART_HYDRATION_FLAGS : uint32
 		{
 			NONE = 0,
 			MARK_IN_SYNC = 1,
 		}
-		[AllowDuplicates]
 		public enum CF_OPERATION_TRANSFER_PLACEHOLDERS_FLAGS : uint32
 		{
 			NONE = 0,
 			STOP_ON_ERROR = 1,
 			DISABLE_ON_DEMAND_POPULATION = 2,
 		}
-		[AllowDuplicates]
 		public enum CF_OPERATION_ACK_DEHYDRATE_FLAGS : uint32
 		{
 			CF_OPERATION_ACK_DEHYDRATE_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum CF_OPERATION_ACK_RENAME_FLAGS : uint32
 		{
 			CF_OPERATION_ACK_RENAME_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum CF_OPERATION_ACK_DELETE_FLAGS : uint32
 		{
 			CF_OPERATION_ACK_DELETE_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum CF_CREATE_FLAGS : uint32
 		{
 			NONE = 0,
 			STOP_ON_ERROR = 1,
 		}
-		[AllowDuplicates]
 		public enum CF_OPEN_FILE_FLAGS : uint32
 		{
 			NONE = 0,
@@ -294,7 +258,6 @@ namespace Win32
 			DELETE_ACCESS = 4,
 			FOREGROUND = 8,
 		}
-		[AllowDuplicates]
 		public enum CF_CONVERT_FLAGS : uint32
 		{
 			NONE = 0,
@@ -304,7 +267,6 @@ namespace Win32
 			ALWAYS_FULL = 8,
 			FORCE_CONVERT_TO_CLOUD_FILE = 16,
 		}
-		[AllowDuplicates]
 		public enum CF_UPDATE_FLAGS : uint32
 		{
 			NONE = 0,
@@ -320,23 +282,19 @@ namespace Win32
 			ALWAYS_FULL = 512,
 			ALLOW_PARTIAL = 1024,
 		}
-		[AllowDuplicates]
 		public enum CF_REVERT_FLAGS : uint32
 		{
 			CF_REVERT_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum CF_HYDRATE_FLAGS : uint32
 		{
 			CF_HYDRATE_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum CF_DEHYDRATE_FLAGS : uint32
 		{
 			NONE = 0,
 			BACKGROUND = 1,
 		}
-		[AllowDuplicates]
 		public enum CF_PIN_STATE : int32
 		{
 			UNSPECIFIED = 0,
@@ -345,7 +303,6 @@ namespace Win32
 			EXCLUDED = 3,
 			INHERIT = 4,
 		}
-		[AllowDuplicates]
 		public enum CF_SET_PIN_FLAGS : uint32
 		{
 			NONE = 0,
@@ -353,18 +310,15 @@ namespace Win32
 			RECURSE_ONLY = 2,
 			RECURSE_STOP_ON_ERROR = 4,
 		}
-		[AllowDuplicates]
 		public enum CF_IN_SYNC_STATE : int32
 		{
 			NOT_IN_SYNC = 0,
 			IN_SYNC = 1,
 		}
-		[AllowDuplicates]
 		public enum CF_SET_IN_SYNC_FLAGS : uint32
 		{
 			CF_SET_IN_SYNC_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum CF_PLACEHOLDER_STATE : uint32
 		{
 			NO_STATES = 0,
@@ -376,20 +330,17 @@ namespace Win32
 			PARTIALLY_ON_DISK = 32,
 			INVALID = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum CF_PLACEHOLDER_INFO_CLASS : int32
 		{
 			BASIC = 0,
 			STANDARD = 1,
 		}
-		[AllowDuplicates]
 		public enum CF_SYNC_ROOT_INFO_CLASS : int32
 		{
 			BASIC = 0,
 			STANDARD = 1,
 			PROVIDER = 2,
 		}
-		[AllowDuplicates]
 		public enum CF_PLACEHOLDER_RANGE_INFO_CLASS : int32
 		{
 			ONDISK = 1,

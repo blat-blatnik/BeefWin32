@@ -13,7 +13,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WSB_OB_STATUS_ENTRY_PAIR_TYPE : int32
 		{
 			UNDEFINED = 0,

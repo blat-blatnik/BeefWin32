@@ -688,7 +688,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WMPOpenState : int32
 		{
 			Undefined = 0,
@@ -714,7 +713,6 @@ namespace Win32
 			MediaWaiting = 20,
 			OpeningUnknownURL = 21,
 		}
-		[AllowDuplicates]
 		public enum WMPPlayState : int32
 		{
 			Undefined = 0,
@@ -731,7 +729,6 @@ namespace Win32
 			Reconnecting = 11,
 			Last = 12,
 		}
-		[AllowDuplicates]
 		public enum WMPPlaylistChangeEventType : int32
 		{
 			Unknown = 0,
@@ -747,7 +744,6 @@ namespace Win32
 			Sort = 10,
 			Last = 11,
 		}
-		[AllowDuplicates]
 		public enum WMPSyncState : int32
 		{
 			Unknown = 0,
@@ -756,7 +752,6 @@ namespace Win32
 			Estimating = 3,
 			Last = 4,
 		}
-		[AllowDuplicates]
 		public enum WMPDeviceStatus : int32
 		{
 			Unknown = 0,
@@ -767,20 +762,17 @@ namespace Win32
 			NewDevice = 5,
 			Last = 6,
 		}
-		[AllowDuplicates]
 		public enum WMPRipState : int32
 		{
 			Unknown = 0,
 			Ripping = 1,
 			Stopped = 2,
 		}
-		[AllowDuplicates]
 		public enum WMPBurnFormat : int32
 		{
 			AudioCD = 0,
 			DataCD = 1,
 		}
-		[AllowDuplicates]
 		public enum WMPBurnState : int32
 		{
 			Unknown = 0,
@@ -794,7 +786,6 @@ namespace Win32
 			Erasing = 8,
 			Downloading = 9,
 		}
-		[AllowDuplicates]
 		public enum WMPStringCollectionChangeEventType : int32
 		{
 			Unknown = 0,
@@ -805,7 +796,6 @@ namespace Win32
 			BeginUpdates = 5,
 			EndUpdates = 6,
 		}
-		[AllowDuplicates]
 		public enum WMPLibraryType : int32
 		{
 			Unknown = 0,
@@ -815,7 +805,6 @@ namespace Win32
 			Disc = 4,
 			PortableDevice = 5,
 		}
-		[AllowDuplicates]
 		public enum WMPFolderScanState : int32
 		{
 			Unknown = 0,
@@ -823,72 +812,61 @@ namespace Win32
 			Updating = 2,
 			Stopped = 3,
 		}
-		[AllowDuplicates]
 		public enum WMPServices_StreamState : int32
 		{
 			Stop = 0,
 			Pause = 1,
 			Play = 2,
 		}
-		[AllowDuplicates]
 		public enum WMPPlugin_Caps : int32
 		{
 			WMPPlugin_Caps_CannotConvertFormats = 1,
 		}
-		[AllowDuplicates]
 		public enum FEEDS_BACKGROUNDSYNC_ACTION : int32
 		{
 			DISABLE = 0,
 			ENABLE = 1,
 			RUNNOW = 2,
 		}
-		[AllowDuplicates]
 		public enum FEEDS_BACKGROUNDSYNC_STATUS : int32
 		{
 			DISABLED = 0,
 			ENABLED = 1,
 		}
-		[AllowDuplicates]
 		public enum FEEDS_EVENTS_SCOPE : int32
 		{
 			ALL = 0,
 			SELF_ONLY = 1,
 			SELF_AND_CHILDREN_ONLY = 2,
 		}
-		[AllowDuplicates]
 		public enum FEEDS_EVENTS_MASK : int32
 		{
 			OLDEREVENTS = 1,
 			EEDEVENTS = 2,
 		}
-		[AllowDuplicates]
 		public enum FEEDS_XML_SORT_PROPERTY : int32
 		{
 			NONE = 0,
 			PUBDATE = 1,
 			DOWNLOADTIME = 2,
 		}
-		[AllowDuplicates]
 		public enum FEEDS_XML_SORT_ORDER : int32
 		{
 			NONE = 0,
 			ASCENDING = 1,
 			DESCENDING = 2,
 		}
-		[AllowDuplicates]
 		public enum FEEDS_XML_FILTER_FLAGS : int32
 		{
 			ALL = 0,
 			UNREAD = 1,
 			READ = 2,
 		}
-		[AllowDuplicates]
 		public enum FEEDS_XML_INCLUDE_FLAGS : int32
 		{
 			NONE = 0,
 			CF_EXTENSIONS = 1,
 		}
-		[AllowDuplicates]
 		public enum FEEDS_DOWNLOAD_STATUS : int32
 		{
 			NONE = 0,
@@ -897,7 +875,6 @@ namespace Win32
 			DOWNLOADED = 3,
 			DOWNLOAD_FAILED = 4,
 		}
-		[AllowDuplicates]
 		public enum FEEDS_SYNC_SETTING : int32
 		{
 			DEFAULT = 0,
@@ -905,7 +882,6 @@ namespace Win32
 			MANUAL = 2,
 			SUGGESTED = 3,
 		}
-		[AllowDuplicates]
 		public enum FEEDS_DOWNLOAD_ERROR : int32
 		{
 			NONE = 0,
@@ -925,7 +901,6 @@ namespace Win32
 			AUTH_FAILED = 14,
 			INVALID_AUTH = 15,
 		}
-		[AllowDuplicates]
 		public enum FEEDS_EVENTS_ITEM_COUNT_FLAGS : int32
 		{
 			READ_ITEM_COUNT_CHANGED = 1,
@@ -938,14 +913,12 @@ namespace Win32
 			INVALIDMSXMLPROPERTY = -1073479168,
 			DOWNLOADSIZELIMITEXCEEDED = -1073479167,
 		}
-		[AllowDuplicates]
 		public enum PlayerState : int32
 		{
 			stop_state = 0,
 			pause_state = 1,
 			play_state = 2,
 		}
-		[AllowDuplicates]
 		public enum WMPPartnerNotification : int32
 		{
 			BackgroundProcessingBegin = 1,
@@ -953,7 +926,6 @@ namespace Win32
 			CatalogDownloadFailure = 3,
 			CatalogDownloadComplete = 4,
 		}
-		[AllowDuplicates]
 		public enum WMPCallbackNotification : int32
 		{
 			LoginStateChange = 1,
@@ -963,7 +935,6 @@ namespace Win32
 			NewPluginAvailable = 5,
 			DisableRadioSkipping = 6,
 		}
-		[AllowDuplicates]
 		public enum WMPTaskType : int32
 		{
 			Browse = 1,
@@ -971,21 +942,18 @@ namespace Win32
 			Burn = 3,
 			Current = 4,
 		}
-		[AllowDuplicates]
 		public enum WMPTransactionType : int32
 		{
 			NoTransaction = 0,
 			Download = 1,
 			Buy = 2,
 		}
-		[AllowDuplicates]
 		public enum WMPTemplateSize : int32
 		{
 			Small = 0,
 			Medium = 1,
 			Large = 2,
 		}
-		[AllowDuplicates]
 		public enum WMPStreamingType : int32
 		{
 			Unknown = 0,
@@ -993,14 +961,12 @@ namespace Win32
 			Video = 2,
 			Radio = 3,
 		}
-		[AllowDuplicates]
 		public enum WMPAccountType : int32
 		{
 			BuyOnly = 1,
 			Subscription = 2,
 			Janus = 3,
 		}
-		[AllowDuplicates]
 		public enum WMPSubscriptionServiceEvent : int32
 		{
 			CurrentBegin = 1,
@@ -1008,7 +974,6 @@ namespace Win32
 			FullBegin = 3,
 			FullEnd = 4,
 		}
-		[AllowDuplicates]
 		public enum WMPSubscriptionDownloadState : int32
 		{
 			Downloading = 0,

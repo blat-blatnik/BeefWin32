@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum LicenseProtectionStatus : int32
 		{
 			Success = 0,

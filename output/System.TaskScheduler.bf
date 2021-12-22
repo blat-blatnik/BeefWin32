@@ -53,7 +53,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum TASK_TRIGGER_TYPE : int32
 		{
 			TIME_TRIGGER_ONCE = 0,
@@ -65,14 +64,12 @@ namespace Win32
 			EVENT_TRIGGER_AT_SYSTEMSTART = 6,
 			EVENT_TRIGGER_AT_LOGON = 7,
 		}
-		[AllowDuplicates]
 		public enum TASKPAGE : int32
 		{
 			TASK = 0,
 			SCHEDULE = 1,
 			SETTINGS = 2,
 		}
-		[AllowDuplicates]
 		public enum TASK_RUN_FLAGS : int32
 		{
 			NO_FLAGS = 0,
@@ -81,12 +78,10 @@ namespace Win32
 			USE_SESSION_ID = 4,
 			USER_SID = 8,
 		}
-		[AllowDuplicates]
 		public enum TASK_ENUM_FLAGS : int32
 		{
 			TASK_ENUM_HIDDEN = 1,
 		}
-		[AllowDuplicates]
 		public enum TASK_LOGON_TYPE : int32
 		{
 			NONE = 0,
@@ -97,20 +92,17 @@ namespace Win32
 			SERVICE_ACCOUNT = 5,
 			INTERACTIVE_TOKEN_OR_PASSWORD = 6,
 		}
-		[AllowDuplicates]
 		public enum TASK_RUNLEVEL_TYPE : int32
 		{
 			LUA = 0,
 			HIGHEST = 1,
 		}
-		[AllowDuplicates]
 		public enum TASK_PROCESSTOKENSID_TYPE : int32
 		{
 			NONE = 0,
 			UNRESTRICTED = 1,
 			DEFAULT = 2,
 		}
-		[AllowDuplicates]
 		public enum TASK_STATE : int32
 		{
 			UNKNOWN = 0,
@@ -119,7 +111,6 @@ namespace Win32
 			READY = 3,
 			RUNNING = 4,
 		}
-		[AllowDuplicates]
 		public enum TASK_CREATION : int32
 		{
 			VALIDATE_ONLY = 1,
@@ -130,7 +121,6 @@ namespace Win32
 			DONT_ADD_PRINCIPAL_ACE = 16,
 			IGNORE_REGISTRATION_TRIGGERS = 32,
 		}
-		[AllowDuplicates]
 		public enum TASK_TRIGGER_TYPE2 : int32
 		{
 			EVENT = 0,
@@ -146,7 +136,6 @@ namespace Win32
 			SESSION_STATE_CHANGE = 11,
 			CUSTOM_TRIGGER_01 = 12,
 		}
-		[AllowDuplicates]
 		public enum TASK_SESSION_STATE_CHANGE_TYPE : int32
 		{
 			CONSOLE_CONNECT = 1,
@@ -156,7 +145,6 @@ namespace Win32
 			SESSION_LOCK = 7,
 			SESSION_UNLOCK = 8,
 		}
-		[AllowDuplicates]
 		public enum TASK_ACTION_TYPE : int32
 		{
 			EXEC = 0,
@@ -164,7 +152,6 @@ namespace Win32
 			SEND_EMAIL = 6,
 			SHOW_MESSAGE = 7,
 		}
-		[AllowDuplicates]
 		public enum TASK_INSTANCES_POLICY : int32
 		{
 			PARALLEL = 0,
@@ -172,7 +159,6 @@ namespace Win32
 			IGNORE_NEW = 2,
 			STOP_EXISTING = 3,
 		}
-		[AllowDuplicates]
 		public enum TASK_COMPATIBILITY : int32
 		{
 			AT = 0,

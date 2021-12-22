@@ -13,7 +13,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum HCS_OPERATION_TYPE : int32
 		{
 			None = -1,
@@ -34,7 +33,6 @@ namespace Win32
 			ModifyProcess = 14,
 			Crash = 15,
 		}
-		[AllowDuplicates]
 		public enum HCS_EVENT_TYPE : int32
 		{
 			Invalid = 0,
@@ -48,13 +46,11 @@ namespace Win32
 			OperationCallback = 16777216,
 			ServiceDisconnect = 33554432,
 		}
-		[AllowDuplicates]
 		public enum HCS_EVENT_OPTIONS : uint32
 		{
 			None = 0,
 			EnableOperationCallbacks = 1,
 		}
-		[AllowDuplicates]
 		public enum HCS_NOTIFICATION_FLAGS : int32
 		{
 			Success = 0,
@@ -85,7 +81,6 @@ namespace Win32
 			ServiceDisconnect = 16777216,
 			FlagsReserved = -268435456,
 		}
-		[AllowDuplicates]
 		public enum HCS_CREATE_OPTIONS : int32
 		{
 			HcsCreateOptions_1 = 65536,

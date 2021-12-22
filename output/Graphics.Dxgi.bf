@@ -80,7 +80,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DXGI_RESOURCE_PRIORITY : uint32
 		{
 			MINIMUM = 671088640,
@@ -89,14 +88,12 @@ namespace Win32
 			HIGH = 2684354560,
 			MAXIMUM = 3355443200,
 		}
-		[AllowDuplicates]
 		public enum DXGI_RESIDENCY : int32
 		{
 			FULLY_RESIDENT = 1,
 			RESIDENT_IN_SHARED_MEMORY = 2,
 			EVICTED_TO_DISK = 3,
 		}
-		[AllowDuplicates]
 		public enum DXGI_SWAP_EFFECT : int32
 		{
 			DISCARD = 0,
@@ -104,7 +101,6 @@ namespace Win32
 			FLIP_SEQUENTIAL = 3,
 			FLIP_DISCARD = 4,
 		}
-		[AllowDuplicates]
 		public enum DXGI_SWAP_CHAIN_FLAG : int32
 		{
 			NONPREROTATED = 1,
@@ -121,35 +117,30 @@ namespace Win32
 			ALLOW_TEARING = 2048,
 			RESTRICTED_TO_ALL_HOLOGRAPHIC_DISPLAYS = 4096,
 		}
-		[AllowDuplicates]
 		public enum DXGI_ADAPTER_FLAG : uint32
 		{
 			NONE = 0,
 			REMOTE = 1,
 			SOFTWARE = 2,
 		}
-		[AllowDuplicates]
 		public enum DXGI_OUTDUPL_POINTER_SHAPE_TYPE : int32
 		{
 			MONOCHROME = 1,
 			COLOR = 2,
 			MASKED_COLOR = 4,
 		}
-		[AllowDuplicates]
 		public enum DXGI_OFFER_RESOURCE_PRIORITY : int32
 		{
 			LOW = 1,
 			NORMAL = 2,
 			HIGH = 3,
 		}
-		[AllowDuplicates]
 		public enum DXGI_SCALING : int32
 		{
 			STRETCH = 0,
 			NONE = 1,
 			ASPECT_RATIO_STRETCH = 2,
 		}
-		[AllowDuplicates]
 		public enum DXGI_GRAPHICS_PREEMPTION_GRANULARITY : int32
 		{
 			DMA_BUFFER_BOUNDARY = 0,
@@ -158,7 +149,6 @@ namespace Win32
 			PIXEL_BOUNDARY = 3,
 			INSTRUCTION_BOUNDARY = 4,
 		}
-		[AllowDuplicates]
 		public enum DXGI_COMPUTE_PREEMPTION_GRANULARITY : int32
 		{
 			DMA_BUFFER_BOUNDARY = 0,
@@ -167,14 +157,12 @@ namespace Win32
 			THREAD_BOUNDARY = 3,
 			INSTRUCTION_BOUNDARY = 4,
 		}
-		[AllowDuplicates]
 		public enum DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS : int32
 		{
 			NOMINAL_RANGE = 1,
 			BT709 = 2,
 			xvYCC = 4,
 		}
-		[AllowDuplicates]
 		public enum DXGI_FRAME_PRESENTATION_MODE : int32
 		{
 			COMPOSED = 0,
@@ -182,59 +170,49 @@ namespace Win32
 			NONE = 2,
 			COMPOSITION_FAILURE = 3,
 		}
-		[AllowDuplicates]
 		public enum DXGI_OVERLAY_SUPPORT_FLAG : int32
 		{
 			DIRECT = 1,
 			SCALING = 2,
 		}
-		[AllowDuplicates]
 		public enum DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG : int32
 		{
 			PRESENT = 1,
 			OVERLAY_PRESENT = 2,
 		}
-		[AllowDuplicates]
 		public enum DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG : int32
 		{
 			DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG_PRESENT = 1,
 		}
-		[AllowDuplicates]
 		public enum DXGI_MEMORY_SEGMENT_GROUP : int32
 		{
 			LOCAL = 0,
 			NON_LOCAL = 1,
 		}
-		[AllowDuplicates]
 		public enum DXGI_OUTDUPL_FLAG : int32
 		{
 			DXGI_OUTDUPL_COMPOSITED_UI_CAPTURE_ONLY = 1,
 		}
-		[AllowDuplicates]
 		public enum DXGI_HDR_METADATA_TYPE : int32
 		{
 			NONE = 0,
 			HDR10 = 1,
 			HDR10PLUS = 2,
 		}
-		[AllowDuplicates]
 		public enum DXGI_OFFER_RESOURCE_FLAGS : int32
 		{
 			DXGI_OFFER_RESOURCE_FLAG_ALLOW_DECOMMIT = 1,
 		}
-		[AllowDuplicates]
 		public enum DXGI_RECLAIM_RESOURCE_RESULTS : int32
 		{
 			OK = 0,
 			DISCARDED = 1,
 			NOT_COMMITTED = 2,
 		}
-		[AllowDuplicates]
 		public enum DXGI_FEATURE : int32
 		{
 			DXGI_FEATURE_PRESENT_ALLOW_TEARING = 0,
 		}
-		[AllowDuplicates]
 		public enum DXGI_ADAPTER_FLAG3 : uint32
 		{
 			NONE = 0,
@@ -246,21 +224,18 @@ namespace Win32
 			KEYED_MUTEX_CONFORMANCE = 32,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS : uint32
 		{
 			FULLSCREEN = 1,
 			WINDOWED = 2,
 			CURSOR_STRETCHED = 4,
 		}
-		[AllowDuplicates]
 		public enum DXGI_GPU_PREFERENCE : int32
 		{
 			UNSPECIFIED = 0,
 			MINIMUM_POWER = 1,
 			HIGH_PERFORMANCE = 2,
 		}
-		[AllowDuplicates]
 		public enum DXGI_DEBUG_RLO_FLAGS : uint32
 		{
 			SUMMARY = 1,
@@ -268,7 +243,6 @@ namespace Win32
 			IGNORE_INTERNAL = 4,
 			ALL = 7,
 		}
-		[AllowDuplicates]
 		public enum DXGI_INFO_QUEUE_MESSAGE_CATEGORY : int32
 		{
 			UNKNOWN = 0,
@@ -283,7 +257,6 @@ namespace Win32
 			EXECUTION = 9,
 			SHADER = 10,
 		}
-		[AllowDuplicates]
 		public enum DXGI_INFO_QUEUE_MESSAGE_SEVERITY : int32
 		{
 			CORRUPTION = 0,
@@ -292,7 +265,6 @@ namespace Win32
 			INFO = 3,
 			MESSAGE = 4,
 		}
-		[AllowDuplicates]
 		public enum DXGI_Message_Id : int32
 		{
 			IDXGISwapChain_CreationOrResizeBuffers_InvalidOutputWindow = 0,

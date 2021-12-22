@@ -98,14 +98,12 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum MMC_PROPERTY_ACTION : int32
 		{
 			DELETING = 1,
 			CHANGING = 2,
 			INITIALIZED = 3,
 		}
-		[AllowDuplicates]
 		public enum _DocumentMode : int32
 		{
 			Author = 0,
@@ -113,7 +111,6 @@ namespace Win32
 			User_MDI = 2,
 			User_SDI = 3,
 		}
-		[AllowDuplicates]
 		public enum _ListViewMode : int32
 		{
 			Small_Icons = 0,
@@ -122,7 +119,6 @@ namespace Win32
 			Detail = 3,
 			Filtered = 4,
 		}
-		[AllowDuplicates]
 		public enum _ViewOptions : int32
 		{
 			Default = 0,
@@ -131,7 +127,6 @@ namespace Win32
 			NotPersistable = 4,
 			ActionPaneHidden = 8,
 		}
-		[AllowDuplicates]
 		public enum _ExportListOptions : int32
 		{
 			Default = 0,
@@ -139,13 +134,11 @@ namespace Win32
 			TabDelimited = 2,
 			SelectedItemsOnly = 4,
 		}
-		[AllowDuplicates]
 		public enum _ColumnSortOrder : int32
 		{
 			Ascending = 0,
 			Descending = 1,
 		}
-		[AllowDuplicates]
 		public enum MMC_RESULT_VIEW_STYLE : int32
 		{
 			SINGLESEL = 1,
@@ -153,7 +146,6 @@ namespace Win32
 			NOSORTHEADER = 4,
 			ENSUREFOCUSVISIBLE = 8,
 		}
-		[AllowDuplicates]
 		public enum MMC_CONTROL_TYPE : int32
 		{
 			TOOLBAR = 0,
@@ -177,7 +169,6 @@ namespace Win32
 			FIRST = 32768,
 			LAST = 32776,
 		}
-		[AllowDuplicates]
 		public enum MMC_BUTTON_STATE : int32
 		{
 			ENABLED = 1,
@@ -186,33 +177,28 @@ namespace Win32
 			INDETERMINATE = 8,
 			BUTTONPRESSED = 16,
 		}
-		[AllowDuplicates]
 		public enum MMC_SCOPE_ITEM_STATE : int32
 		{
 			NORMAL = 1,
 			BOLD = 2,
 			EXPANDEDONCE = 3,
 		}
-		[AllowDuplicates]
 		public enum MMC_MENU_COMMAND_IDS : int32
 		{
 			MMCC_STANDARD_VIEW_SELECT = -1,
 		}
-		[AllowDuplicates]
 		public enum MMC_FILTER_TYPE : int32
 		{
 			STRING_FILTER = 0,
 			INT_FILTER = 1,
 			FILTER_NOVALUE = 32768,
 		}
-		[AllowDuplicates]
 		public enum MMC_FILTER_CHANGE_CODE : int32
 		{
 			DISABLE = 0,
 			ENABLE = 1,
 			VALUE_CHANGE = 2,
 		}
-		[AllowDuplicates]
 		public enum MMC_NOTIFY_TYPE : int32
 		{
 			ACTIVATE = 32769,
@@ -251,7 +237,6 @@ namespace Win32
 			COLUMNS_CHANGED = 32802,
 			CANPASTE_OUTOFPROC = 32803,
 		}
-		[AllowDuplicates]
 		public enum DATA_OBJECT_TYPES : int32
 		{
 			SCOPE = 32768,
@@ -278,7 +263,6 @@ namespace Win32
 			_3RDPARTY_TASK = -1879048190,
 			ROOT_MENU = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum CCM_INSERTIONALLOWED : int32
 		{
 			TOP = 1,
@@ -286,12 +270,10 @@ namespace Win32
 			TASK = 4,
 			VIEW = 8,
 		}
-		[AllowDuplicates]
 		public enum CCM_COMMANDID_MASK_CONSTANTS : uint32
 		{
 			CCM_COMMANDID_MASK_RESERVED = 4294901760,
 		}
-		[AllowDuplicates]
 		public enum CCM_SPECIAL : int32
 		{
 			SEPARATOR = 1,
@@ -300,7 +282,6 @@ namespace Win32
 			INSERTION_POINT = 8,
 			TESTONLY = 16,
 		}
-		[AllowDuplicates]
 		public enum MMC_TASK_DISPLAY_TYPE : int32
 		{
 			UNINITIALIZED = 0,
@@ -309,7 +290,6 @@ namespace Win32
 			TYPE_CHOCOLATE_GIF = 3,
 			TYPE_BITMAP = 4,
 		}
-		[AllowDuplicates]
 		public enum MMC_ACTION_TYPE : int32
 		{
 			UNINITIALIZED = -1,
@@ -328,7 +308,6 @@ namespace Win32
 			First = 32513,
 			Last = 32516,
 		}
-		[AllowDuplicates]
 		public enum MMC_VIEW_TYPE : int32
 		{
 			LIST = 0,

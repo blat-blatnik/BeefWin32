@@ -7,32 +7,27 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum GAME_INSTALL_SCOPE : int32
 		{
 			NOT_INSTALLED = 1,
 			CURRENT_USER = 2,
 			ALL_USERS = 3,
 		}
-		[AllowDuplicates]
 		public enum GAMESTATS_OPEN_TYPE : int32
 		{
 			RCREATE = 0,
 			NLY = 1,
 		}
-		[AllowDuplicates]
 		public enum GAMESTATS_OPEN_RESULT : int32
 		{
 			CREATED = 0,
 			OPENED = 1,
 		}
-		[AllowDuplicates]
 		public enum GAMING_DEVICE_VENDOR_ID : int32
 		{
 			NONE = 0,
 			MICROSOFT = -1024700366,
 		}
-		[AllowDuplicates]
 		public enum GAMING_DEVICE_DEVICE_ID : int32
 		{
 			NONE = 0,
@@ -41,7 +36,6 @@ namespace Win32
 			XBOX_ONE_X = 1523980231,
 			XBOX_ONE_X_DEVKIT = 284675555,
 		}
-		[AllowDuplicates]
 		public enum KnownGamingPrivileges : int32
 		{
 			BROADCAST = 190,
@@ -67,7 +61,6 @@ namespace Win32
 			MULTIPLAYER_SESSIONS = 254,
 			ADD_FRIEND = 255,
 		}
-		[AllowDuplicates]
 		public enum XBL_IDP_AUTH_TOKEN_STATUS : int32
 		{
 			SUCCESS = 0,

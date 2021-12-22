@@ -34,7 +34,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum RDC_ErrorCode : int32
 		{
 			NoError = 0,
@@ -49,13 +48,11 @@ namespace Win32
 			Aborted = 9,
 			Win32Error = 10,
 		}
-		[AllowDuplicates]
 		public enum GeneratorParametersType : int32
 		{
 			Unused = 0,
 			FilterMax = 1,
 		}
-		[AllowDuplicates]
 		public enum RdcNeedType : int32
 		{
 			SOURCE = 0,
@@ -63,14 +60,12 @@ namespace Win32
 			SEED = 2,
 			SEED_MAX = 255,
 		}
-		[AllowDuplicates]
 		public enum RdcCreatedTables : int32
 		{
 			InvalidOrUnknown = 0,
 			Existing = 1,
 			New = 2,
 		}
-		[AllowDuplicates]
 		public enum RdcMappingAccessMode : int32
 		{
 			Undefined = 0,

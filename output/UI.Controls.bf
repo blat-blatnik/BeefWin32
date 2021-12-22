@@ -2008,7 +2008,6 @@ namespace Win32
 			ATLASINPUTIMAGE = 8001,
 			ATLASRECT = 8002,
 		}
-		[AllowDuplicates]
 		public enum DRAGLISTINFO_NOTIFICATION_FLAGS : uint32
 		{
 			BEGINDRAG = 1157,
@@ -2016,7 +2015,6 @@ namespace Win32
 			DRAGGING = 1158,
 			DROPPED = 1159,
 		}
-		[AllowDuplicates]
 		public enum WORD_BREAK_ACTION : uint32
 		{
 			CLASSIFY = 3,
@@ -2028,14 +2026,12 @@ namespace Win32
 			RIGHT = 1,
 			RIGHTBREAK = 7,
 		}
-		[AllowDuplicates]
 		public enum DPAMM_MESSAGE : uint32
 		{
 			MERGE = 1,
 			DELETE = 2,
 			INSERT = 3,
 		}
-		[AllowDuplicates]
 		public enum DLG_DIR_LIST_FILE_TYPE : uint32
 		{
 			ARCHIVE = 32,
@@ -2048,13 +2044,11 @@ namespace Win32
 			SYSTEM = 4,
 			POSTMSGS = 8192,
 		}
-		[AllowDuplicates]
 		public enum OPEN_THEME_DATA_FLAGS : uint32
 		{
 			FORCE_RECT_SIZING = 1,
 			NONCLIENT = 2,
 		}
-		[AllowDuplicates]
 		public enum GET_THEME_BITMAP_FLAGS : uint32
 		{
 			DIRECT = 1,
@@ -2083,7 +2077,6 @@ namespace Win32
 			NORMAL = 0,
 			SELECTED = 4,
 		}
-		[AllowDuplicates]
 		public enum WSB_PROP : int32
 		{
 			CXHSCROLL = 2,
@@ -2099,7 +2092,6 @@ namespace Win32
 			VSTYLE = 256,
 			WINSTYLE = 1024,
 		}
-		[AllowDuplicates]
 		public enum PSPCB_MESSAGE : uint32
 		{
 			ADDREF = 0,
@@ -2107,34 +2099,29 @@ namespace Win32
 			RELEASE = 1,
 			SI_INITDIALOG = 1025,
 		}
-		[AllowDuplicates]
 		public enum HEADER_CONTROL_NOTIFICATION_BUTTON : uint32
 		{
 			LEFT = 0,
 			RIGHT = 1,
 			MIDDLE = 2,
 		}
-		[AllowDuplicates]
 		public enum IMAGE_LIST_COPY_FLAGS : uint32
 		{
 			MOVE = 0,
 			SWAP = 1,
 		}
-		[AllowDuplicates]
 		public enum DLG_BUTTON_CHECK_STATE : uint32
 		{
 			CHECKED = 1,
 			INDETERMINATE = 2,
 			UNCHECKED = 0,
 		}
-		[AllowDuplicates]
 		public enum DRAW_THEME_PARENT_BACKGROUND_FLAGS : uint32
 		{
 			WINDOWDC = 1,
 			USECTLCOLORSTATIC = 2,
 			USEERASEBKGND = 4,
 		}
-		[AllowDuplicates]
 		public enum IMAGE_LIST_ITEM_FLAGS : uint32
 		{
 			ALPHA = 1,
@@ -2155,14 +2142,12 @@ namespace Win32
 			FILTER = 256,
 			STATE = 512,
 		}
-		[AllowDuplicates]
 		public enum NMREBAR_MASK_FLAGS : uint32
 		{
 			ID = 1,
 			LPARAM = 4,
 			STYLE = 2,
 		}
-		[AllowDuplicates]
 		public enum EDITBALLOONTIP_ICON : uint32
 		{
 			ERROR = 3,
@@ -2173,7 +2158,6 @@ namespace Win32
 			WARNING_LARGE = 5,
 			ERROR_LARGE = 6,
 		}
-		[AllowDuplicates]
 		public enum LVCOLUMNW_FORMAT : uint32
 		{
 			LEFT = 0,
@@ -2188,7 +2172,6 @@ namespace Win32
 			FIXED_RATIO = 524288,
 			SPLITBUTTON = 16777216,
 		}
-		[AllowDuplicates]
 		public enum NMPGSCROLL_KEYS : uint16
 		{
 			NONE = 0,
@@ -2196,7 +2179,6 @@ namespace Win32
 			CONTROL = 2,
 			MENU = 4,
 		}
-		[AllowDuplicates]
 		public enum COMBOBOX_EX_ITEM_FLAGS : uint32
 		{
 			DI_SETITEM = 268435456,
@@ -2207,7 +2189,6 @@ namespace Win32
 			SELECTEDIMAGE = 4,
 			TEXT = 1,
 		}
-		[AllowDuplicates]
 		public enum TVITEMEXW_CHILDREN : int32
 		{
 			ZERO = 0,
@@ -2215,7 +2196,6 @@ namespace Win32
 			CHILDRENCALLBACK = -1,
 			CHILDRENAUTO = -2,
 		}
-		[AllowDuplicates]
 		public enum TVITEM_MASK : uint32
 		{
 			CHILDREN = 64,
@@ -2230,7 +2210,6 @@ namespace Win32
 			INTEGRAL = 128,
 			STATEEX = 256,
 		}
-		[AllowDuplicates]
 		public enum TCITEMHEADERA_MASK : uint32
 		{
 			IMAGE = 2,
@@ -2239,7 +2218,6 @@ namespace Win32
 			PARAM = 8,
 			STATE = 16,
 		}
-		[AllowDuplicates]
 		public enum TCHITTESTINFO_FLAGS : uint32
 		{
 			NOWHERE = 1,
@@ -2247,7 +2225,6 @@ namespace Win32
 			ONITEMICON = 2,
 			ONITEMLABEL = 4,
 		}
-		[AllowDuplicates]
 		public enum COMBOBOXINFO_BUTTON_STATE : uint32
 		{
 			INVISIBLE = 32768,
@@ -2256,7 +2233,6 @@ namespace Win32
 			OFFSCREEN = 65536,
 			UNAVAILABLE = 1,
 		}
-		[AllowDuplicates]
 		public enum NMCUSTOMDRAW_DRAW_STAGE : uint32
 		{
 			POSTPAINT = 2,
@@ -2268,7 +2244,6 @@ namespace Win32
 			ITEMPREPAINT = 65537,
 			SUBITEM = 131072,
 		}
-		[AllowDuplicates]
 		public enum MCGRIDINFO_PART : uint32
 		{
 			CALENDARCONTROL = 0,
@@ -2281,13 +2256,11 @@ namespace Win32
 			CALENDARROW = 7,
 			CALENDARCELL = 8,
 		}
-		[AllowDuplicates]
 		public enum LVITEMA_GROUP_ID : int32
 		{
 			CALLBACK = -1,
 			NONE = -2,
 		}
-		[AllowDuplicates]
 		public enum NMTBHOTITEM_FLAGS : uint32
 		{
 			ACCELERATOR = 4,
@@ -2301,7 +2274,6 @@ namespace Win32
 			RESELECT = 64,
 			TOGGLEDROPDOWN = 256,
 		}
-		[AllowDuplicates]
 		public enum TTTOOLINFO_FLAGS : uint32
 		{
 			ABSOLUTE = 128,
@@ -2313,12 +2285,10 @@ namespace Win32
 			TRACK = 32,
 			TRANSPARENT = 256,
 		}
-		[AllowDuplicates]
 		public enum LVTILEVIEWINFO_FLAGS : uint32
 		{
 			LVTVIF_EXTENDED = 4,
 		}
-		[AllowDuplicates]
 		public enum NMPGSCROLL_DIR : uint32
 		{
 			DOWN = 2,
@@ -2326,7 +2296,6 @@ namespace Win32
 			RIGHT = 8,
 			UP = 1,
 		}
-		[AllowDuplicates]
 		public enum LVCOLUMNW_MASK : uint32
 		{
 			FMT = 1,
@@ -2339,7 +2308,6 @@ namespace Win32
 			DEFAULTWIDTH = 128,
 			IDEALWIDTH = 256,
 		}
-		[AllowDuplicates]
 		public enum LVFINDINFOW_FLAGS : uint32
 		{
 			PARAM = 1,
@@ -2349,7 +2317,6 @@ namespace Win32
 			WRAP = 32,
 			NEARESTXY = 64,
 		}
-		[AllowDuplicates]
 		public enum BUTTON_IMAGELIST_ALIGN : uint32
 		{
 			LEFT = 0,
@@ -2358,7 +2325,6 @@ namespace Win32
 			BOTTOM = 3,
 			CENTER = 4,
 		}
-		[AllowDuplicates]
 		public enum TBBUTTONINFOW_MASK : uint32
 		{
 			BYINDEX = 2147483648,
@@ -2370,14 +2336,12 @@ namespace Win32
 			STYLE = 8,
 			TEXT = 2,
 		}
-		[AllowDuplicates]
 		public enum TBINSERTMARK_FLAGS : uint32
 		{
 			NONE = 0,
 			AFTER = 1,
 			BACKGROUND = 2,
 		}
-		[AllowDuplicates]
 		public enum LVGROUP_MASK : uint32
 		{
 			NONE = 0,
@@ -2385,14 +2349,12 @@ namespace Win32
 			FOOTER = 2,
 			STATE = 4,
 		}
-		[AllowDuplicates]
 		public enum BP_PAINTPARAMS_FLAGS : uint32
 		{
 			ERASE = 1,
 			NOCLIP = 2,
 			NONCLIENT = 4,
 		}
-		[AllowDuplicates]
 		public enum TVHITTESTINFO_FLAGS : uint32
 		{
 			ABOVE = 256,
@@ -2408,7 +2370,6 @@ namespace Win32
 			TOLEFT = 2048,
 			TORIGHT = 1024,
 		}
-		[AllowDuplicates]
 		public enum DRAWITEMSTRUCT_CTL_TYPE : uint32
 		{
 			BUTTON = 4,
@@ -2419,20 +2380,17 @@ namespace Win32
 			STATIC = 5,
 			TAB = 101,
 		}
-		[AllowDuplicates]
 		public enum NMPGCALCSIZE_FLAGS : uint32
 		{
 			HEIGHT = 2,
 			WIDTH = 1,
 		}
-		[AllowDuplicates]
 		public enum NMLVCUSTOMDRAW_ALIGN : uint32
 		{
 			CENTER = 2,
 			LEFT = 1,
 			RIGHT = 4,
 		}
-		[AllowDuplicates]
 		public enum MCGRIDINFO_FLAGS : uint32
 		{
 			DATE = 1,
@@ -2460,7 +2418,6 @@ namespace Win32
 			EX_ONCONTENTS = 67108864,
 			EX_FOOTER = 134217728,
 		}
-		[AllowDuplicates]
 		public enum INITCOMMONCONTROLSEX_ICC : uint32
 		{
 			ANIMATE_CLASS = 128,
@@ -2481,32 +2438,27 @@ namespace Win32
 			USEREX_CLASSES = 512,
 			WIN95_CLASSES = 255,
 		}
-		[AllowDuplicates]
 		public enum NMLVCUSTOMDRAW_ITEM_TYPE : uint32
 		{
 			ITEM = 0,
 			GROUP = 1,
 			ITEMSLIST = 2,
 		}
-		[AllowDuplicates]
 		public enum NMTBDISPINFOW_MASK : uint32
 		{
 			IMAGE = 1,
 			TEXT = 2,
 			DI_SETITEM = 268435456,
 		}
-		[AllowDuplicates]
 		public enum NMLVEMPTYMARKUP_FLAGS : uint32
 		{
 			EMF_CENTERED = 1,
 		}
-		[AllowDuplicates]
 		public enum LVFOOTERITEM_MASK : uint32
 		{
 			TEXT = 1,
 			STATE = 2,
 		}
-		[AllowDuplicates]
 		public enum IMAGELIST_CREATION_FLAGS : uint32
 		{
 			MASK = 1,
@@ -2523,12 +2475,10 @@ namespace Win32
 			ORIGINALSIZE = 65536,
 			HIGHQUALITYSCALE = 131072,
 		}
-		[AllowDuplicates]
 		public enum TVITEMPART : int32
 		{
 			TVGIPR_BUTTON = 1,
 		}
-		[AllowDuplicates]
 		public enum EC_ENDOFLINE : int32
 		{
 			DETECTFROMCONTENT = 0,
@@ -2536,13 +2486,11 @@ namespace Win32
 			CR = 2,
 			LF = 3,
 		}
-		[AllowDuplicates]
 		public enum EC_SEARCHWEB_ENTRYPOINT : int32
 		{
 			EXTERNAL = 0,
 			CONTEXTMENU = 1,
 		}
-		[AllowDuplicates]
 		public enum TASKDIALOG_FLAGS : int32
 		{
 			ENABLE_HYPERLINKS = 1,
@@ -2564,7 +2512,6 @@ namespace Win32
 			NO_SET_FOREGROUND = 65536,
 			SIZE_TO_CONTENT = 16777216,
 		}
-		[AllowDuplicates]
 		public enum TASKDIALOG_MESSAGES : int32
 		{
 			NAVIGATE_PAGE = 1125,
@@ -2583,7 +2530,6 @@ namespace Win32
 			SET_BUTTON_ELEVATION_REQUIRED_STATE = 1139,
 			UPDATE_ICON = 1140,
 		}
-		[AllowDuplicates]
 		public enum TASKDIALOG_NOTIFICATIONS : int32
 		{
 			CREATED = 0,
@@ -2598,7 +2544,6 @@ namespace Win32
 			HELP = 9,
 			EXPANDO_BUTTON_CLICKED = 10,
 		}
-		[AllowDuplicates]
 		public enum TASKDIALOG_ELEMENTS : int32
 		{
 			CONTENT = 0,
@@ -2606,13 +2551,11 @@ namespace Win32
 			FOOTER = 2,
 			MAIN_INSTRUCTION = 3,
 		}
-		[AllowDuplicates]
 		public enum TASKDIALOG_ICON_ELEMENTS : int32
 		{
 			MAIN = 0,
 			FOOTER = 1,
 		}
-		[AllowDuplicates]
 		public enum TASKDIALOG_COMMON_BUTTON_FLAGS : int32
 		{
 			OK_BUTTON = 1,
@@ -2622,13 +2565,11 @@ namespace Win32
 			RETRY_BUTTON = 16,
 			CLOSE_BUTTON = 32,
 		}
-		[AllowDuplicates]
 		public enum _LI_METRIC : int32
 		{
 			SMALL = 0,
 			LARGE = 1,
 		}
-		[AllowDuplicates]
 		public enum TA_PROPERTY : int32
 		{
 			FLAGS = 0,
@@ -2638,7 +2579,6 @@ namespace Win32
 			STAGGERDELAYFACTOR = 4,
 			ZORDER = 5,
 		}
-		[AllowDuplicates]
 		public enum TA_PROPERTY_FLAG : uint32
 		{
 			NONE = 0,
@@ -2648,7 +2588,6 @@ namespace Win32
 			HASBACKGROUND = 8,
 			HASPERSPECTIVE = 16,
 		}
-		[AllowDuplicates]
 		public enum TA_TRANSFORM_TYPE : int32
 		{
 			TRANSLATE_2D = 0,
@@ -2656,7 +2595,6 @@ namespace Win32
 			OPACITY = 2,
 			CLIP = 3,
 		}
-		[AllowDuplicates]
 		public enum TA_TRANSFORM_FLAG : int32
 		{
 			NONE = 0,
@@ -2664,20 +2602,17 @@ namespace Win32
 			HASINITIALVALUES = 2,
 			HASORIGINVALUES = 4,
 		}
-		[AllowDuplicates]
 		public enum TA_TIMINGFUNCTION_TYPE : int32
 		{
 			UNDEFINED = 0,
 			CUBIC_BEZIER = 1,
 		}
-		[AllowDuplicates]
 		public enum THEMESIZE : int32
 		{
 			MIN = 0,
 			TRUE = 1,
 			DRAW = 2,
 		}
-		[AllowDuplicates]
 		public enum PROPERTYORIGIN : int32
 		{
 			STATE = 0,
@@ -2686,12 +2621,10 @@ namespace Win32
 			GLOBAL = 3,
 			NOTFOUND = 4,
 		}
-		[AllowDuplicates]
 		public enum WINDOWTHEMEATTRIBUTETYPE : int32
 		{
 			WTA_NONCLIENT = 1,
 		}
-		[AllowDuplicates]
 		public enum BP_BUFFERFORMAT : int32
 		{
 			COMPATIBLEBITMAP = 0,
@@ -2699,7 +2632,6 @@ namespace Win32
 			TOPDOWNDIB = 2,
 			TOPDOWNMONODIB = 3,
 		}
-		[AllowDuplicates]
 		public enum BP_ANIMATIONSTYLE : int32
 		{
 			NONE = 0,
@@ -2707,27 +2639,23 @@ namespace Win32
 			CUBIC = 2,
 			SINE = 3,
 		}
-		[AllowDuplicates]
 		public enum BGTYPE : int32
 		{
 			IMAGEFILE = 0,
 			BORDERFILL = 1,
 			NONE = 2,
 		}
-		[AllowDuplicates]
 		public enum IMAGELAYOUT : int32
 		{
 			VERTICAL = 0,
 			HORIZONTAL = 1,
 		}
-		[AllowDuplicates]
 		public enum BORDERTYPE : int32
 		{
 			RECT = 0,
 			ROUNDRECT = 1,
 			ELLIPSE = 2,
 		}
-		[AllowDuplicates]
 		public enum FILLTYPE : int32
 		{
 			SOLID = 0,
@@ -2736,35 +2664,30 @@ namespace Win32
 			RADIALGRADIENT = 3,
 			TILEIMAGE = 4,
 		}
-		[AllowDuplicates]
 		public enum SIZINGTYPE : int32
 		{
 			TRUESIZE = 0,
 			STRETCH = 1,
 			TILE = 2,
 		}
-		[AllowDuplicates]
 		public enum HALIGN : int32
 		{
 			LEFT = 0,
 			CENTER = 1,
 			RIGHT = 2,
 		}
-		[AllowDuplicates]
 		public enum CONTENTALIGNMENT : int32
 		{
 			LEFT = 0,
 			CENTER = 1,
 			RIGHT = 2,
 		}
-		[AllowDuplicates]
 		public enum VALIGN : int32
 		{
 			TOP = 0,
 			CENTER = 1,
 			BOTTOM = 2,
 		}
-		[AllowDuplicates]
 		public enum OFFSETTYPE : int32
 		{
 			TOPLEFT = 0,
@@ -2782,7 +2705,6 @@ namespace Win32
 			ABOVELASTBUTTON = 12,
 			BELOWLASTBUTTON = 13,
 		}
-		[AllowDuplicates]
 		public enum ICONEFFECT : int32
 		{
 			NONE = 0,
@@ -2791,69 +2713,58 @@ namespace Win32
 			PULSE = 3,
 			ALPHA = 4,
 		}
-		[AllowDuplicates]
 		public enum TEXTSHADOWTYPE : int32
 		{
 			NONE = 0,
 			SINGLE = 1,
 			CONTINUOUS = 2,
 		}
-		[AllowDuplicates]
 		public enum GLYPHTYPE : int32
 		{
 			NONE = 0,
 			IMAGEGLYPH = 1,
 			FONTGLYPH = 2,
 		}
-		[AllowDuplicates]
 		public enum IMAGESELECTTYPE : int32
 		{
 			NONE = 0,
 			SIZE = 1,
 			DPI = 2,
 		}
-		[AllowDuplicates]
 		public enum TRUESIZESCALINGTYPE : int32
 		{
 			NONE = 0,
 			SIZE = 1,
 			DPI = 2,
 		}
-		[AllowDuplicates]
 		public enum GLYPHFONTSIZINGTYPE : int32
 		{
 			NONE = 0,
 			SIZE = 1,
 			DPI = 2,
 		}
-		[AllowDuplicates]
 		public enum LINKPARTS : int32
 		{
 			LP_HYPERLINK = 1,
 		}
-		[AllowDuplicates]
 		public enum HYPERLINKSTATES : int32
 		{
 			NORMALTEXT = 1,
 			LINKTEXT = 2,
 		}
-		[AllowDuplicates]
 		public enum EMPTYMARKUPPARTS : int32
 		{
 			EMP_MARKUPTEXT = 1,
 		}
-		[AllowDuplicates]
 		public enum MARKUPTEXTSTATES : int32
 		{
 			NORMALTEXT = 1,
 			LINKTEXT = 2,
 		}
-		[AllowDuplicates]
 		public enum STATICPARTS : int32
 		{
 			STAT_TEXT = 1,
 		}
-		[AllowDuplicates]
 		public enum PAGEPARTS : int32
 		{
 			UP = 1,
@@ -2861,7 +2772,6 @@ namespace Win32
 			UPHORZ = 3,
 			DOWNHORZ = 4,
 		}
-		[AllowDuplicates]
 		public enum MONTHCALPARTS : int32
 		{
 			BACKGROUND = 1,
@@ -2876,7 +2786,6 @@ namespace Win32
 			NAVNEXT = 10,
 			NAVPREV = 11,
 		}
-		[AllowDuplicates]
 		public enum GRIDCELLBACKGROUNDSTATES : int32
 		{
 			SELECTED = 1,
@@ -2886,7 +2795,6 @@ namespace Win32
 			TODAY = 5,
 			TODAYSELECTED = 6,
 		}
-		[AllowDuplicates]
 		public enum GRIDCELLSTATES : int32
 		{
 			HOT = 1,
@@ -2897,7 +2805,6 @@ namespace Win32
 			SELECTED = 6,
 			SELECTEDHOT = 7,
 		}
-		[AllowDuplicates]
 		public enum GRIDCELLUPPERSTATES : int32
 		{
 			HOT = 1,
@@ -2906,7 +2813,6 @@ namespace Win32
 			SELECTED = 4,
 			SELECTEDHOT = 5,
 		}
-		[AllowDuplicates]
 		public enum TRAILINGGRIDCELLSTATES : int32
 		{
 			HOT = 1,
@@ -2917,7 +2823,6 @@ namespace Win32
 			SELECTED = 6,
 			SELECTEDHOT = 7,
 		}
-		[AllowDuplicates]
 		public enum TRAILINGGRIDCELLUPPERSTATES : int32
 		{
 			HOT = 1,
@@ -2926,7 +2831,6 @@ namespace Win32
 			SELECTED = 4,
 			SELECTEDHOT = 5,
 		}
-		[AllowDuplicates]
 		public enum NAVNEXTSTATES : int32
 		{
 			NORMAL = 1,
@@ -2934,7 +2838,6 @@ namespace Win32
 			PRESSED = 3,
 			DISABLED = 4,
 		}
-		[AllowDuplicates]
 		public enum NAVPREVSTATES : int32
 		{
 			NORMAL = 1,
@@ -2942,25 +2845,21 @@ namespace Win32
 			PRESSED = 3,
 			DISABLED = 4,
 		}
-		[AllowDuplicates]
 		public enum CLOCKPARTS : int32
 		{
 			CLP_TIME = 1,
 		}
-		[AllowDuplicates]
 		public enum CLOCKSTATES : int32
 		{
 			NORMAL = 1,
 			HOT = 2,
 			PRESSED = 3,
 		}
-		[AllowDuplicates]
 		public enum TRAYNOTIFYPARTS : int32
 		{
 			BACKGROUND = 1,
 			ANIMBACKGROUND = 2,
 		}
-		[AllowDuplicates]
 		public enum TASKBARPARTS : int32
 		{
 			BACKGROUNDBOTTOM = 1,
@@ -2972,14 +2871,12 @@ namespace Win32
 			SIZINGBARTOP = 7,
 			SIZINGBARLEFT = 8,
 		}
-		[AllowDuplicates]
 		public enum TASKBANDPARTS : int32
 		{
 			GROUPCOUNT = 1,
 			FLASHBUTTON = 2,
 			FLASHBUTTONGROUPMENU = 3,
 		}
-		[AllowDuplicates]
 		public enum STARTPANELPARTS : int32
 		{
 			USERPANE = 1,
@@ -3002,7 +2899,6 @@ namespace Win32
 			TOPMATCH = 18,
 			LOGOFFSPLITBUTTONDROPDOWN = 19,
 		}
-		[AllowDuplicates]
 		public enum MOREPROGRAMSTABSTATES : int32
 		{
 			NORMAL = 1,
@@ -3011,7 +2907,6 @@ namespace Win32
 			DISABLED = 4,
 			FOCUSED = 5,
 		}
-		[AllowDuplicates]
 		public enum SOFTWAREEXPLORERSTATES : int32
 		{
 			NORMAL = 1,
@@ -3020,7 +2915,6 @@ namespace Win32
 			DISABLED = 4,
 			FOCUSED = 5,
 		}
-		[AllowDuplicates]
 		public enum OPENBOXSTATES : int32
 		{
 			NORMAL = 1,
@@ -3029,34 +2923,29 @@ namespace Win32
 			DISABLED = 4,
 			FOCUSED = 5,
 		}
-		[AllowDuplicates]
 		public enum MOREPROGRAMSARROWSTATES : int32
 		{
 			NORMAL = 1,
 			HOT = 2,
 			PRESSED = 3,
 		}
-		[AllowDuplicates]
 		public enum MOREPROGRAMSARROWBACKSTATES : int32
 		{
 			NORMAL = 1,
 			HOT = 2,
 			PRESSED = 3,
 		}
-		[AllowDuplicates]
 		public enum LOGOFFBUTTONSSTATES : int32
 		{
 			NORMAL = 1,
 			HOT = 2,
 			PRESSED = 3,
 		}
-		[AllowDuplicates]
 		public enum MENUBANDPARTS : int32
 		{
 			NEWAPPBUTTON = 1,
 			SEPERATOR = 2,
 		}
-		[AllowDuplicates]
 		public enum MENUBANDSTATES : int32
 		{
 			NORMAL = 1,
@@ -3066,14 +2955,12 @@ namespace Win32
 			CHECKED = 5,
 			HOTCHECKED = 6,
 		}
-		[AllowDuplicates]
 		public enum POINTER_FEEDBACK_MODE : int32
 		{
 			DEFAULT = 1,
 			INDIRECT = 2,
 			NONE = 3,
 		}
-		[AllowDuplicates]
 		public enum FEEDBACK_TYPE : int32
 		{
 			TOUCH_CONTACTVISUALIZATION = 1,
@@ -3089,7 +2976,6 @@ namespace Win32
 			GESTURE_PRESSANDTAP = 11,
 			MAX = -1,
 		}
-		[AllowDuplicates]
 		public enum POINTER_DEVICE_TYPE : int32
 		{
 			INTEGRATED_PEN = 1,
@@ -3098,7 +2984,6 @@ namespace Win32
 			TOUCH_PAD = 4,
 			MAX = -1,
 		}
-		[AllowDuplicates]
 		public enum POINTER_DEVICE_CURSOR_TYPE : int32
 		{
 			UNKNOWN = 0,

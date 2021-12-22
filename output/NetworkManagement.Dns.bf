@@ -339,7 +339,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DNS_CONFIG_TYPE : int32
 		{
 			PrimaryDomainName_W = 0,
@@ -362,7 +361,6 @@ namespace Win32
 			FullHostName_UTF8 = 17,
 			NameServer = 18,
 		}
-		[AllowDuplicates]
 		public enum DNS_SECTION : int32
 		{
 			Question = 0,
@@ -370,7 +368,6 @@ namespace Win32
 			Authority = 2,
 			Addtional = 3,
 		}
-		[AllowDuplicates]
 		public enum DNS_PROXY_INFORMATION_TYPE : int32
 		{
 			DIRECT = 0,
@@ -378,7 +375,6 @@ namespace Win32
 			PROXY_NAME = 2,
 			DOES_NOT_EXIST = 3,
 		}
-		[AllowDuplicates]
 		public enum DNS_CHARSET : int32
 		{
 			Unknown = 0,
@@ -386,14 +382,12 @@ namespace Win32
 			Utf8 = 2,
 			Ansi = 3,
 		}
-		[AllowDuplicates]
 		public enum DNS_FREE_TYPE : int32
 		{
 			Flat = 0,
 			RecordList = 1,
 			ParsedMessageFields = 2,
 		}
-		[AllowDuplicates]
 		public enum DNS_NAME_FORMAT : int32
 		{
 			Domain = 0,
@@ -404,7 +398,6 @@ namespace Win32
 			SrvRecord = 5,
 			ValidateTld = 6,
 		}
-		[AllowDuplicates]
 		public enum DNS_CONNECTION_PROXY_TYPE : int32
 		{
 			NULL = 0,
@@ -413,14 +406,12 @@ namespace Win32
 			SOCKS4 = 4,
 			SOCKS5 = 5,
 		}
-		[AllowDuplicates]
 		public enum DNS_CONNECTION_PROXY_INFO_SWITCH : int32
 		{
 			CONFIG = 0,
 			SCRIPT = 1,
 			WPAD = 2,
 		}
-		[AllowDuplicates]
 		public enum DNS_CONNECTION_POLICY_TAG : int32
 		{
 			DEFAULT = 0,

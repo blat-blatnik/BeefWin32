@@ -233,13 +233,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum CLUSTER_QUORUM_TYPE : int32
 		{
 			OperationalQuorum = 0,
 			ModifyQuorum = 1,
 		}
-		[AllowDuplicates]
 		public enum NODE_CLUSTER_STATE : int32
 		{
 			NotInstalled = 0,
@@ -247,7 +245,6 @@ namespace Win32
 			NotRunning = 3,
 			Running = 19,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_RESOURCE_STATE_CHANGE_REASON : int32
 		{
 			Unknown = 0,
@@ -257,7 +254,6 @@ namespace Win32
 			Shutdown = 4,
 			Rundown = 5,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_REG_COMMAND : int32
 		{
 			COMMAND_NONE = 0,
@@ -281,7 +277,6 @@ namespace Win32
 			CONDITION_KEY_NOT_EXISTS = 18,
 			LAST_COMMAND = 19,
 		}
-		[AllowDuplicates]
 		public enum CLUSGROUP_TYPE : int32
 		{
 			CoreCluster = 1,
@@ -315,7 +310,6 @@ namespace Win32
 			CoreSddc = 123,
 			Unknown = 9999,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_MGMT_POINT_TYPE : int32
 		{
 			NONE = 0,
@@ -323,14 +317,12 @@ namespace Win32
 			DNS_ONLY = 2,
 			CNO_ONLY = 3,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_MGMT_POINT_RESTYPE : int32
 		{
 			AUTO = 0,
 			SNN = 1,
 			DNN = 2,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_CLOUD_TYPE : int32
 		{
 			NONE = 0,
@@ -338,7 +330,6 @@ namespace Win32
 			MIXED = 128,
 			UNKNOWN = -1,
 		}
-		[AllowDuplicates]
 		public enum CLUS_GROUP_START_SETTING : int32
 		{
 			START_ALWAYS = 0,
@@ -356,13 +347,11 @@ namespace Win32
 			MIN = 0,
 			MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_QUORUM_VALUE : int32
 		{
 			MAINTAINED = 0,
 			LOST = 1,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_UPGRADE_PHASE : int32
 		{
 			Initialize = 1,
@@ -371,7 +360,6 @@ namespace Win32
 			InstallingNewComponents = 4,
 			UpgradeComplete = 5,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_CHANGE : int32
 		{
 			NODE_STATE = 1,
@@ -408,13 +396,11 @@ namespace Win32
 			HANDLE_CLOSE = -2147483648,
 			ALL = -1,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_NOTIFICATIONS_VERSION : int32
 		{
 			_1 = 1,
 			_2 = 2,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_CHANGE_CLUSTER_V2 : int32
 		{
 			RECONNECT_V2 = 1,
@@ -432,7 +418,6 @@ namespace Win32
 			UPGRADED_V2 = 4096,
 			ALL_V2 = 8191,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_CHANGE_GROUP_V2 : int32
 		{
 			DELETED_V2 = 1,
@@ -447,7 +432,6 @@ namespace Win32
 			HANDLE_CLOSE_V2 = 512,
 			ALL_V2 = 1023,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_CHANGE_GROUPSET_V2 : int32
 		{
 			DELETED_v2 = 1,
@@ -461,7 +445,6 @@ namespace Win32
 			HANDLE_CLOSE_v2 = 256,
 			ALL_V2 = 511,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_CHANGE_RESOURCE_V2 : int32
 		{
 			COMMON_PROPERTY_V2 = 1,
@@ -477,7 +460,6 @@ namespace Win32
 			TERMINAL_STATE_V2 = 1024,
 			ALL_V2 = 2047,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_CHANGE_RESOURCE_TYPE_V2 : int32
 		{
 			CHANGE_RESOURCE_TYPE_DELETED_V2 = 1,
@@ -488,7 +470,6 @@ namespace Win32
 			RESOURCE_TYPE_SPECIFIC_V2 = 32,
 			CHANGE_RESOURCE_TYPE_ALL_V2 = 63,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_CHANGE_NETINTERFACE_V2 : int32
 		{
 			DELETED_V2 = 1,
@@ -498,7 +479,6 @@ namespace Win32
 			HANDLE_CLOSE_V2 = 16,
 			ALL_V2 = 31,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_CHANGE_NETWORK_V2 : int32
 		{
 			DELETED_V2 = 1,
@@ -508,7 +488,6 @@ namespace Win32
 			HANDLE_CLOSE_V2 = 16,
 			ALL_V2 = 31,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_CHANGE_NODE_V2 : int32
 		{
 			NETINTERFACE_ADDED_V2 = 1,
@@ -521,7 +500,6 @@ namespace Win32
 			HANDLE_CLOSE_V2 = 128,
 			ALL_V2 = 255,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_CHANGE_REGISTRY_V2 : int32
 		{
 			ATTRIBUTES_V2 = 1,
@@ -537,7 +515,6 @@ namespace Win32
 			STATE_V2 = 1,
 			ALL_V2 = 1,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_CHANGE_SHARED_VOLUME_V2 : int32
 		{
 			STATE_V2 = 1,
@@ -545,12 +522,10 @@ namespace Win32
 			REMOVED_V2 = 4,
 			ALL_V2 = 7,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_CHANGE_SPACEPORT_V2 : int32
 		{
 			CLUSTER_CHANGE_SPACEPORT_CUSTOM_PNP_V2 = 1,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_CHANGE_NODE_UPGRADE_PHASE_V2 : int32
 		{
 			NODE_PREPARE = 1,
@@ -558,7 +533,6 @@ namespace Win32
 			NODE_POSTCOMMIT = 4,
 			ALL = 7,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_OBJECT_TYPE : int32
 		{
 			NONE = 0,
@@ -575,7 +549,6 @@ namespace Win32
 			GROUPSET = 13,
 			AFFINITYRULE = 16,
 		}
-		[AllowDuplicates]
 		public enum CLUSTERSET_OBJECT_TYPE : int32
 		{
 			NONE = 0,
@@ -583,7 +556,6 @@ namespace Win32
 			WORKLOAD = 2,
 			DATABASE = 3,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_ENUM : int32
 		{
 			NODE = 1,
@@ -597,7 +569,6 @@ namespace Win32
 			INTERNAL_NETWORK = -2147483648,
 			ALL = 63,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_NODE_ENUM : int32
 		{
 			NETINTERFACES = 1,
@@ -605,7 +576,6 @@ namespace Win32
 			PREFERRED_GROUPS = 4,
 			ALL = 3,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_NODE_STATE : int32
 		{
 			StateUnknown = -1,
@@ -614,7 +584,6 @@ namespace Win32
 			Paused = 2,
 			Joining = 3,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_STORAGENODE_STATE : int32
 		{
 			StateUnknown = 0,
@@ -624,7 +593,6 @@ namespace Win32
 			Starting = 4,
 			Stopping = 5,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_NODE_DRAIN_STATUS : int32
 		{
 			NodeDrainStatusNotInitiated = 0,
@@ -633,7 +601,6 @@ namespace Win32
 			NodeDrainStatusFailed = 3,
 			ClusterNodeDrainStatusCount = 4,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_NODE_STATUS : int32
 		{
 			Normal = 0,
@@ -645,14 +612,12 @@ namespace Win32
 			AvoidPlacement = 32,
 			Max = 51,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_GROUP_ENUM : int32
 		{
 			CONTAINS = 1,
 			NODES = 2,
 			ALL = 3,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_GROUP_STATE : int32
 		{
 			StateUnknown = -1,
@@ -662,7 +627,6 @@ namespace Win32
 			PartialOnline = 3,
 			Pending = 4,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_GROUP_PRIORITY : int32
 		{
 			Disabled = 0,
@@ -670,14 +634,12 @@ namespace Win32
 			Medium = 2000,
 			High = 3000,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_GROUP_AUTOFAILBACK_TYPE : int32
 		{
 			PreventFailback = 0,
 			AllowFailback = 1,
 			FailbackTypeCount = 2,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_NODE_RESUME_FAILBACK_TYPE : int32
 		{
 			DoNotFailbackGroups = 0,
@@ -685,7 +647,6 @@ namespace Win32
 			FailbackGroupsPerPolicy = 2,
 			ClusterNodeResumeFailbackTypeCount = 3,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_RESOURCE_STATE : int32
 		{
 			StateUnknown = -1,
@@ -698,7 +659,6 @@ namespace Win32
 			OnlinePending = 129,
 			OfflinePending = 130,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_RESOURCE_RESTART_ACTION : int32
 		{
 			DontRestart = 0,
@@ -706,7 +666,6 @@ namespace Win32
 			RestartNotify = 2,
 			RestartActionCount = 3,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_RESOURCE_EMBEDDED_FAILURE_ACTION : int32
 		{
 			None = 0,
@@ -720,7 +679,6 @@ namespace Win32
 			SEPARATE_MONITOR = 1,
 			VALID_FLAGS = 1,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_SHARED_VOLUME_SNAPSHOT_STATE : int32
 		{
 			SnapshotStateUnknown = 0,
@@ -728,7 +686,6 @@ namespace Win32
 			HWSnapshotCompleted = 2,
 			PrepareForFreeze = 3,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_PROPERTY_TYPE : int32
 		{
 			UNKNOWN = -1,
@@ -750,7 +707,6 @@ namespace Win32
 			STORAGE_DEVICE_ID_DESCRIPTOR = 15,
 			USER = 32768,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_PROPERTY_FORMAT : int32
 		{
 			UNKNOWN = 0,
@@ -770,7 +726,6 @@ namespace Win32
 			PROPERTY_LIST = 14,
 			USER = 32768,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_PROPERTY_SYNTAX : uint32
 		{
 			ENDMARK = 0,
@@ -801,7 +756,6 @@ namespace Win32
 			PARTITION_INFO_EX2 = 917505,
 			STORAGE_DEVICE_ID_DESCRIPTOR = 983041,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_CONTROL_OBJECT : int32
 		{
 			INVALID = 0,
@@ -816,7 +770,6 @@ namespace Win32
 			AFFINITYRULE = 9,
 			USER = 128,
 		}
-		[AllowDuplicates]
 		public enum CLCTL_CODES : int32
 		{
 			LCTL_UNKNOWN = 0,
@@ -1196,7 +1149,6 @@ namespace Win32
 			RESOURCE_TYPE_CHECK_DRAIN_VETO = 34611501,
 			RESOURCE_TYPE_NOTIFY_DRAIN_COMPLETE = 34611505,
 		}
-		[AllowDuplicates]
 		public enum CLUSCTL_GROUP_CODES : int32
 		{
 			UNKNOWN = 50331648,
@@ -1221,7 +1173,6 @@ namespace Win32
 			GET_LAST_MOVE_TIME = 50332377,
 			SET_CCF_FROM_MASTER = 54537606,
 		}
-		[AllowDuplicates]
 		public enum CLUSCTL_NODE_CODES : int32
 		{
 			UNKNOWN = 67108864,
@@ -1249,7 +1200,6 @@ namespace Win32
 			BLOCK_GEM_SEND_RECV = 67109581,
 			GET_GEMID_VECTOR = 67109585,
 		}
-		[AllowDuplicates]
 		public enum CLUSCTL_NETWORK_CODES : int32
 		{
 			UNKNOWN = 83886080,
@@ -1270,7 +1220,6 @@ namespace Win32
 			GET_COMMON_PROPERTY_FMTS = 83886181,
 			GET_PRIVATE_PROPERTY_FMTS = 83886221,
 		}
-		[AllowDuplicates]
 		public enum CLUSCTL_NETINTERFACE_CODES : int32
 		{
 			UNKNOWN = 100663296,
@@ -1293,7 +1242,6 @@ namespace Win32
 			GET_COMMON_PROPERTY_FMTS = 100663397,
 			GET_PRIVATE_PROPERTY_FMTS = 100663437,
 		}
-		[AllowDuplicates]
 		public enum CLUSCTL_CLUSTER_CODES : int32
 		{
 			UNKNOWN = 117440512,
@@ -1335,7 +1283,6 @@ namespace Win32
 			FORCE_FLUSH_DB = 121646566,
 			GET_CLMUSR_TOKEN = 117440877,
 		}
-		[AllowDuplicates]
 		public enum CLUSCTL_GROUPSET_CODES : int32
 		{
 			SET_GET_COMMON_PROPERTIES = 134217817,
@@ -1348,7 +1295,6 @@ namespace Win32
 			_GET_PROVIDER_GROUPSETS = 134229377,
 			SET_GET_ID = 134217785,
 		}
-		[AllowDuplicates]
 		public enum CLUSCTL_AFFINITYRULE_CODES : int32
 		{
 			GET_COMMON_PROPERTIES = 150995033,
@@ -1357,7 +1303,6 @@ namespace Win32
 			GET_ID = 150995001,
 			GET_GROUPNAMES = 151006577,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_RESOURCE_CLASS : int32
 		{
 			UNKNOWN = 0,
@@ -1365,24 +1310,20 @@ namespace Win32
 			NETWORK = 2,
 			USER = 32768,
 		}
-		[AllowDuplicates]
 		public enum CLUS_RESSUBCLASS : int32
 		{
 			CLUS_RESSUBCLASS_SHARED = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum CLUS_RESSUBCLASS_STORAGE : int32
 		{
 			SHARED_BUS = -2147483648,
 			DISK = 1073741824,
 			REPLICATION = 268435456,
 		}
-		[AllowDuplicates]
 		public enum CLUS_RESSUBCLASS_NETWORK : int32
 		{
 			CLUS_RESSUBCLASS_NETWORK_INTERNET_PROTOCOL = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum CLUS_CHARACTERISTICS : int32
 		{
 			UNKNOWN = 0,
@@ -1407,12 +1348,10 @@ namespace Win32
 			VETO_DRAIN = 262144,
 			DRAIN_LOCAL_OFFLINE = 524288,
 		}
-		[AllowDuplicates]
 		public enum CLUS_FLAGS : int32
 		{
 			CLUS_FLAG_CORE = 1,
 		}
-		[AllowDuplicates]
 		public enum CLUSPROP_PIFLAGS : int32
 		{
 			STICKY = 1,
@@ -1424,7 +1363,6 @@ namespace Win32
 			RAW = 64,
 			UNKNOWN = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_CSV_VOLUME_FAULT_STATE : int32
 		{
 			NoFaults = 0,
@@ -1433,13 +1371,11 @@ namespace Win32
 			InMaintenance = 4,
 			Dismounted = 8,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_SHARED_VOLUME_BACKUP_STATE : int32
 		{
 			None = 0,
 			InProgress = 1,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_SHARED_VOLUME_STATE : int32
 		{
 			Unavailable = 0,
@@ -1448,7 +1384,6 @@ namespace Win32
 			ActiveRedirected = 3,
 			ActiveVolumeRedirected = 4,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_SHARED_VOLUME_RENAME_INPUT_TYPE : int32
 		{
 			None = 0,
@@ -1457,21 +1392,18 @@ namespace Win32
 			VolumeName = 3,
 			VolumeGuid = 4,
 		}
-		[AllowDuplicates]
 		public enum MAINTENANCE_MODE_TYPE_ENUM : int32
 		{
 			DisableIsAliveCheck = 1,
 			OfflineResource = 2,
 			UnclusterResource = 3,
 		}
-		[AllowDuplicates]
 		public enum CLUSPROP_IPADDR_ENABLENETBIOS : int32
 		{
 			DISABLED = 0,
 			ENABLED = 1,
 			TRACK_NIC = 2,
 		}
-		[AllowDuplicates]
 		public enum FILESHARE_CHANGE_ENUM : int32
 		{
 			NONE = 0,
@@ -1479,7 +1411,6 @@ namespace Win32
 			DEL = 2,
 			MODIFY = 3,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_RESOURCE_ENUM : int32
 		{
 			DEPENDS = 1,
@@ -1487,7 +1418,6 @@ namespace Win32
 			NODES = 4,
 			ALL = 7,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_RESOURCE_TYPE_ENUM : int32
 		{
 			NODES = 1,
@@ -1500,7 +1430,6 @@ namespace Win32
 			NETINTERFACES = 1,
 			ALL = 1,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_NETWORK_STATE : int32
 		{
 			StateUnknown = -1,
@@ -1509,7 +1438,6 @@ namespace Win32
 			Partitioned = 2,
 			Up = 3,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_NETWORK_ROLE : int32
 		{
 			None = 0,
@@ -1517,7 +1445,6 @@ namespace Win32
 			ClientAccess = 2,
 			InternalAndClient = 3,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_NETINTERFACE_STATE : int32
 		{
 			StateUnknown = -1,
@@ -1526,7 +1453,6 @@ namespace Win32
 			Unreachable = 2,
 			Up = 3,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_SETUP_PHASE : int32
 		{
 			Initialize = 1,
@@ -1558,7 +1484,6 @@ namespace Win32
 			CoreGroupCleanup = 406,
 			FailureCleanup = 999,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_SETUP_PHASE_TYPE : int32
 		{
 			Start = 1,
@@ -1566,7 +1491,6 @@ namespace Win32
 			End = 3,
 			Report = 4,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_SETUP_PHASE_SEVERITY : int32
 		{
 			Informational = 1,
@@ -1598,7 +1522,6 @@ namespace Win32
 			DISABLE_AUTOBALANCING = 1,
 			ALL = 1,
 		}
-		[AllowDuplicates]
 		public enum SR_REPLICATED_DISK_TYPE : int32
 		{
 			None = 0,
@@ -1610,7 +1533,6 @@ namespace Win32
 			LogNotInParthership = 6,
 			Other = 7,
 		}
-		[AllowDuplicates]
 		public enum SR_DISK_REPLICATION_ELIGIBLE : int32
 		{
 			None = 0,
@@ -1626,7 +1548,6 @@ namespace Win32
 			SameAsSpecifiedDisk = 10,
 			Other = 9999,
 		}
-		[AllowDuplicates]
 		public enum VM_RESDLL_CONTEXT : int32
 		{
 			TurnOff = 0,
@@ -1635,7 +1556,6 @@ namespace Win32
 			ShutdownForce = 3,
 			LiveMigration = 4,
 		}
-		[AllowDuplicates]
 		public enum RESDLL_CONTEXT_OPERATION_TYPE : int32
 		{
 			Failback = 0,
@@ -1646,7 +1566,6 @@ namespace Win32
 			NetworkDisconnect = 5,
 			NetworkDisconnectMoveRetry = 6,
 		}
-		[AllowDuplicates]
 		public enum LOG_LEVEL : int32
 		{
 			INFORMATION = 0,
@@ -1654,28 +1573,24 @@ namespace Win32
 			ERROR = 2,
 			SEVERE = 3,
 		}
-		[AllowDuplicates]
 		public enum RESOURCE_EXIT_STATE : int32
 		{
 			Continue = 0,
 			Terminate = 1,
 			Max = 2,
 		}
-		[AllowDuplicates]
 		public enum FAILURE_TYPE : int32
 		{
 			GENERAL = 0,
 			EMBEDDED = 1,
 			NETWORK_LOSS = 2,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_RESOURCE_APPLICATION_STATE : int32
 		{
 			StateUnknown = 1,
 			OSHeartBeat = 2,
 			Ready = 3,
 		}
-		[AllowDuplicates]
 		public enum RESOURCE_MONITOR_STATE : int32
 		{
 			Initializing = 0,
@@ -1695,7 +1610,6 @@ namespace Win32
 			TerminateResource = 14,
 			Deadlocked = 15,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_ROLE : int32
 		{
 			DHCP = 0,
@@ -1731,14 +1645,12 @@ namespace Win32
 			VirtualMachineConfiguration = 30,
 			VirtualMachineReplicaBroker = 31,
 		}
-		[AllowDuplicates]
 		public enum CLUSTER_ROLE_STATE : int32
 		{
 			Unknown = -1,
 			Clustered = 0,
 			Unclustered = 1,
 		}
-		[AllowDuplicates]
 		public enum CLUADMEX_OBJECT_TYPE : int32
 		{
 			NONE = 0,

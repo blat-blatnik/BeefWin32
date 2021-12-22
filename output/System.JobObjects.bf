@@ -38,7 +38,6 @@ namespace Win32
 			EXTENDED_LIMIT_VALID_FLAGS = 32767,
 			NOTIFICATION_LIMIT_VALID_FLAGS = 2064900,
 		}
-		[AllowDuplicates]
 		public enum JOB_OBJECT_UILIMIT : uint32
 		{
 			NONE = 0,
@@ -51,7 +50,6 @@ namespace Win32
 			DESKTOP = 64,
 			EXITWINDOWS = 128,
 		}
-		[AllowDuplicates]
 		public enum JOB_OBJECT_SECURITY : uint32
 		{
 			NO_ADMIN = 1,
@@ -60,7 +58,6 @@ namespace Win32
 			FILTER_TOKENS = 8,
 			VALID_FLAGS = 15,
 		}
-		[AllowDuplicates]
 		public enum JOB_OBJECT_CPU_RATE_CONTROL : uint32
 		{
 			CPU_RATE_CONTROL_ENABLE = 1,
@@ -69,27 +66,23 @@ namespace Win32
 			CPU_RATE_CONTROL_NOTIFY = 8,
 			_CPU_RATE_CONTROL_MIN_MAX_RATE = 16,
 		}
-		[AllowDuplicates]
 		public enum JOB_OBJECT_TERMINATE_AT_END_ACTION : uint32
 		{
 			TERMINATE_AT_END_OF_JOB = 0,
 			POST_AT_END_OF_JOB = 1,
 		}
-		[AllowDuplicates]
 		public enum JOBOBJECT_RATE_CONTROL_TOLERANCE : int32
 		{
 			Low = 1,
 			Medium = 2,
 			High = 3,
 		}
-		[AllowDuplicates]
 		public enum JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL : int32
 		{
 			Short = 1,
 			Medium = 2,
 			Long = 3,
 		}
-		[AllowDuplicates]
 		public enum JOB_OBJECT_NET_RATE_CONTROL_FLAGS : int32
 		{
 			ENABLE = 1,
@@ -97,7 +90,6 @@ namespace Win32
 			DSCP_TAG = 4,
 			VALID_FLAGS = 7,
 		}
-		[AllowDuplicates]
 		public enum JOB_OBJECT_IO_RATE_CONTROL_FLAGS : int32
 		{
 			ENABLE = 1,
@@ -106,14 +98,12 @@ namespace Win32
 			FORCE_UNIT_ACCESS_ON_SOFT_CAP = 8,
 			VALID_FLAGS = 15,
 		}
-		[AllowDuplicates]
 		public enum JOBOBJECT_IO_ATTRIBUTION_CONTROL_FLAGS : int32
 		{
 			ENABLE = 1,
 			DISABLE = 2,
 			VALID_FLAGS = 3,
 		}
-		[AllowDuplicates]
 		public enum JOBOBJECTINFOCLASS : int32
 		{
 			JobObjectBasicAccountingInformation = 1,

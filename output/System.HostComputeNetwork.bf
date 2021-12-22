@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum HCN_NOTIFICATIONS : int32
 		{
 			Invalid = 0,
@@ -26,14 +25,12 @@ namespace Win32
 			ServiceDisconnect = 16777216,
 			FlagsReserved = -268435456,
 		}
-		[AllowDuplicates]
 		public enum HCN_PORT_PROTOCOL : int32
 		{
 			TCP = 1,
 			UDP = 2,
 			BOTH = 3,
 		}
-		[AllowDuplicates]
 		public enum HCN_PORT_ACCESS : int32
 		{
 			EXCLUSIVE = 1,

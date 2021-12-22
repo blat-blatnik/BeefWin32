@@ -79,13 +79,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum alljoyn_about_announceflag : int32
 		{
 			UNANNOUNCED = 0,
 			ANNOUNCED = 1,
 		}
-		[AllowDuplicates]
 		public enum QStatus : int32
 		{
 			OK = 0,
@@ -484,7 +482,6 @@ namespace Win32
 			MANAGEMENT_NOT_STARTED = 37187,
 			BUS_DESCRIPTION_ALREADY_EXISTS = 37188,
 		}
-		[AllowDuplicates]
 		public enum alljoyn_typeid : int32
 		{
 			INVALID = 0,
@@ -520,7 +517,6 @@ namespace Win32
 			BYTE_ARRAY = 31073,
 			WILDCARD = 42,
 		}
-		[AllowDuplicates]
 		public enum alljoyn_applicationstate : int32
 		{
 			NOT_CLAIMABLE = 0,
@@ -528,20 +524,17 @@ namespace Win32
 			CLAIMED = 2,
 			NEED_UPDATE = 3,
 		}
-		[AllowDuplicates]
 		public enum alljoyn_claimcapability_masks : int32
 		{
 			NULL = 1,
 			ECDSA = 4,
 			SPEKE = 8,
 		}
-		[AllowDuplicates]
 		public enum alljoyn_claimcapabilityadditionalinfo_masks : int32
 		{
 			SECURITY_MANAGER = 1,
 			APPLICATION = 2,
 		}
-		[AllowDuplicates]
 		public enum alljoyn_messagetype : int32
 		{
 			INVALID = 0,
@@ -550,14 +543,12 @@ namespace Win32
 			ERROR = 3,
 			SIGNAL = 4,
 		}
-		[AllowDuplicates]
 		public enum alljoyn_interfacedescription_securitypolicy : int32
 		{
 			INHERIT = 0,
 			REQUIRED = 1,
 			OFF = 2,
 		}
-		[AllowDuplicates]
 		public enum alljoyn_sessionlostreason : int32
 		{
 			INVALID = 0,

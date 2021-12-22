@@ -11,7 +11,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum INTERACTION_ID : int32
 		{
 			NONE = 0,
@@ -23,7 +22,6 @@ namespace Win32
 			CROSS_SLIDE = 6,
 			MAX = -1,
 		}
-		[AllowDuplicates]
 		public enum INTERACTION_FLAGS : uint32
 		{
 			NONE = 0,
@@ -65,7 +63,6 @@ namespace Win32
 			DRAG = 1,
 			MAX = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum INERTIA_PARAMETER : int32
 		{
 			TRANSLATION_DECELERATION = 1,
@@ -76,7 +73,6 @@ namespace Win32
 			EXPANSION_EXPANSION = 6,
 			MAX = -1,
 		}
-		[AllowDuplicates]
 		public enum INTERACTION_STATE : int32
 		{
 			IDLE = 0,
@@ -84,7 +80,6 @@ namespace Win32
 			POSSIBLE_DOUBLE_TAP = 2,
 			MAX = -1,
 		}
-		[AllowDuplicates]
 		public enum INTERACTION_CONTEXT_PROPERTY : int32
 		{
 			MEASUREMENT_UNITS = 1,
@@ -92,7 +87,6 @@ namespace Win32
 			FILTER_POINTERS = 3,
 			MAX = -1,
 		}
-		[AllowDuplicates]
 		public enum CROSS_SLIDE_THRESHOLD : int32
 		{
 			SELECT_START = 0,
@@ -102,7 +96,6 @@ namespace Win32
 			COUNT = 4,
 			MAX = -1,
 		}
-		[AllowDuplicates]
 		public enum CROSS_SLIDE_FLAGS : uint32
 		{
 			NONE = 0,
@@ -111,7 +104,6 @@ namespace Win32
 			REARRANGE = 4,
 			MAX = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum MOUSE_WHEEL_PARAMETER : int32
 		{
 			CHAR_TRANSLATION_X = 1,
@@ -122,14 +114,12 @@ namespace Win32
 			PAGE_TRANSLATION_Y = 6,
 			MAX = -1,
 		}
-		[AllowDuplicates]
 		public enum TAP_PARAMETER : int32
 		{
 			IN_CONTACT_COUNT = 0,
 			AX_CONTACT_COUNT = 1,
 			AX = -1,
 		}
-		[AllowDuplicates]
 		public enum HOLD_PARAMETER : int32
 		{
 			MIN_CONTACT_COUNT = 0,
@@ -138,14 +128,12 @@ namespace Win32
 			THRESHOLD_START_DELAY = 3,
 			MAX = -1,
 		}
-		[AllowDuplicates]
 		public enum TRANSLATION_PARAMETER : int32
 		{
 			IN_CONTACT_COUNT = 0,
 			AX_CONTACT_COUNT = 1,
 			AX = -1,
 		}
-		[AllowDuplicates]
 		public enum MANIPULATION_RAILS_STATE : int32
 		{
 			UNDECIDED = 0,

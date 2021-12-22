@@ -22,7 +22,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum OPEN_VIRTUAL_DISK_VERSION : int32
 		{
 			UNSPECIFIED = 0,
@@ -30,7 +29,6 @@ namespace Win32
 			_2 = 2,
 			_3 = 3,
 		}
-		[AllowDuplicates]
 		public enum VIRTUAL_DISK_ACCESS_MASK : uint32
 		{
 			NONE = 0,
@@ -44,7 +42,6 @@ namespace Win32
 			ALL = 4128768,
 			WRITABLE = 3276800,
 		}
-		[AllowDuplicates]
 		public enum OPEN_VIRTUAL_DISK_FLAG : uint32
 		{
 			NONE = 0,
@@ -61,7 +58,6 @@ namespace Win32
 			SUPPORT_SPARSE_FILES_ANY_FS = 1024,
 			SUPPORT_ENCRYPTED_FILES = 2048,
 		}
-		[AllowDuplicates]
 		public enum CREATE_VIRTUAL_DISK_VERSION : int32
 		{
 			UNSPECIFIED = 0,
@@ -70,7 +66,6 @@ namespace Win32
 			_3 = 3,
 			_4 = 4,
 		}
-		[AllowDuplicates]
 		public enum CREATE_VIRTUAL_DISK_FLAG : uint32
 		{
 			NONE = 0,
@@ -86,14 +81,12 @@ namespace Win32
 			SUPPORT_COMPRESSED_VOLUMES = 512,
 			SUPPORT_SPARSE_FILES_ANY_FS = 1024,
 		}
-		[AllowDuplicates]
 		public enum ATTACH_VIRTUAL_DISK_VERSION : int32
 		{
 			UNSPECIFIED = 0,
 			_1 = 1,
 			_2 = 2,
 		}
-		[AllowDuplicates]
 		public enum ATTACH_VIRTUAL_DISK_FLAG : uint32
 		{
 			NONE = 0,
@@ -108,12 +101,10 @@ namespace Win32
 			SINGLE_PARTITION = 256,
 			REGISTER_VOLUME = 512,
 		}
-		[AllowDuplicates]
 		public enum DETACH_VIRTUAL_DISK_FLAG : uint32
 		{
 			DETACH_VIRTUAL_DISK_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum DEPENDENT_DISK_FLAG : uint32
 		{
 			NONE = 0,
@@ -132,21 +123,18 @@ namespace Win32
 			ALWAYS_ALLOW_SPARSE = 4096,
 			SUPPORT_ENCRYPTED_FILES = 8192,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_DEPENDENCY_INFO_VERSION : int32
 		{
 			UNSPECIFIED = 0,
 			_1 = 1,
 			_2 = 2,
 		}
-		[AllowDuplicates]
 		public enum GET_STORAGE_DEPENDENCY_FLAG : uint32
 		{
 			NONE = 0,
 			HOST_VOLUMES = 1,
 			DISK_HANDLE = 2,
 		}
-		[AllowDuplicates]
 		public enum GET_VIRTUAL_DISK_INFO_VERSION : int32
 		{
 			UNSPECIFIED = 0,
@@ -166,7 +154,6 @@ namespace Win32
 			VIRTUAL_DISK_ID = 14,
 			CHANGE_TRACKING_STATE = 15,
 		}
-		[AllowDuplicates]
 		public enum SET_VIRTUAL_DISK_INFO_VERSION : int32
 		{
 			UNSPECIFIED = 0,
@@ -178,63 +165,53 @@ namespace Win32
 			CHANGE_TRACKING_STATE = 6,
 			PARENT_LOCATOR = 7,
 		}
-		[AllowDuplicates]
 		public enum COMPACT_VIRTUAL_DISK_VERSION : int32
 		{
 			UNSPECIFIED = 0,
 			_1 = 1,
 		}
-		[AllowDuplicates]
 		public enum COMPACT_VIRTUAL_DISK_FLAG : uint32
 		{
 			NE = 0,
 			_ZERO_SCAN = 1,
 			_BLOCK_MOVES = 2,
 		}
-		[AllowDuplicates]
 		public enum MERGE_VIRTUAL_DISK_VERSION : int32
 		{
 			UNSPECIFIED = 0,
 			_1 = 1,
 			_2 = 2,
 		}
-		[AllowDuplicates]
 		public enum MERGE_VIRTUAL_DISK_FLAG : uint32
 		{
 			MERGE_VIRTUAL_DISK_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum EXPAND_VIRTUAL_DISK_VERSION : int32
 		{
 			UNSPECIFIED = 0,
 			_1 = 1,
 		}
-		[AllowDuplicates]
 		public enum EXPAND_VIRTUAL_DISK_FLAG : uint32
 		{
 			NE = 0,
 			TIFY_CHANGE = 1,
 		}
-		[AllowDuplicates]
 		public enum RESIZE_VIRTUAL_DISK_VERSION : int32
 		{
 			UNSPECIFIED = 0,
 			_1 = 1,
 		}
-		[AllowDuplicates]
 		public enum RESIZE_VIRTUAL_DISK_FLAG : uint32
 		{
 			NONE = 0,
 			ALLOW_UNSAFE_VIRTUAL_SIZE = 1,
 			RESIZE_TO_SMALLEST_SAFE_VIRTUAL_SIZE = 2,
 		}
-		[AllowDuplicates]
 		public enum MIRROR_VIRTUAL_DISK_VERSION : int32
 		{
 			UNSPECIFIED = 0,
 			_1 = 1,
 		}
-		[AllowDuplicates]
 		public enum MIRROR_VIRTUAL_DISK_FLAG : uint32
 		{
 			NONE = 0,
@@ -243,36 +220,30 @@ namespace Win32
 			ENABLE_SMB_COMPRESSION = 4,
 			IS_LIVE_MIGRATION = 8,
 		}
-		[AllowDuplicates]
 		public enum QUERY_CHANGES_VIRTUAL_DISK_FLAG : uint32
 		{
 			QUERY_CHANGES_VIRTUAL_DISK_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum TAKE_SNAPSHOT_VHDSET_FLAG : uint32
 		{
 			NONE = 0,
 			WRITEABLE = 1,
 		}
-		[AllowDuplicates]
 		public enum TAKE_SNAPSHOT_VHDSET_VERSION : int32
 		{
 			UNSPECIFIED = 0,
 			_1 = 1,
 		}
-		[AllowDuplicates]
 		public enum DELETE_SNAPSHOT_VHDSET_FLAG : uint32
 		{
 			NONE = 0,
 			PERSIST_RCT = 1,
 		}
-		[AllowDuplicates]
 		public enum DELETE_SNAPSHOT_VHDSET_VERSION : int32
 		{
 			UNSPECIFIED = 0,
 			_1 = 1,
 		}
-		[AllowDuplicates]
 		public enum MODIFY_VHDSET_VERSION : int32
 		{
 			UNSPECIFIED = 0,
@@ -280,42 +251,35 @@ namespace Win32
 			REMOVE_SNAPSHOT = 2,
 			DEFAULT_SNAPSHOT_PATH = 3,
 		}
-		[AllowDuplicates]
 		public enum MODIFY_VHDSET_FLAG : uint32
 		{
 			NONE = 0,
 			WRITEABLE_SNAPSHOT = 1,
 		}
-		[AllowDuplicates]
 		public enum APPLY_SNAPSHOT_VHDSET_FLAG : uint32
 		{
 			NONE = 0,
 			WRITEABLE = 1,
 		}
-		[AllowDuplicates]
 		public enum APPLY_SNAPSHOT_VHDSET_VERSION : int32
 		{
 			UNSPECIFIED = 0,
 			_1 = 1,
 		}
-		[AllowDuplicates]
 		public enum RAW_SCSI_VIRTUAL_DISK_FLAG : uint32
 		{
 			RAW_SCSI_VIRTUAL_DISK_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum RAW_SCSI_VIRTUAL_DISK_VERSION : int32
 		{
 			UNSPECIFIED = 0,
 			_1 = 1,
 		}
-		[AllowDuplicates]
 		public enum FORK_VIRTUAL_DISK_VERSION : int32
 		{
 			UNSPECIFIED = 0,
 			_1 = 1,
 		}
-		[AllowDuplicates]
 		public enum FORK_VIRTUAL_DISK_FLAG : uint32
 		{
 			NONE = 0,

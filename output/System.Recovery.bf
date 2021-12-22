@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum REGISTER_APPLICATION_RESTART_FLAGS : uint32
 		{
 			CRASH = 1,

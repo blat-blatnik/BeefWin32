@@ -1520,7 +1520,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum BCRYPT_OPERATION : uint32
 		{
 			CIPHER_OPERATION = 1,
@@ -1530,7 +1529,6 @@ namespace Win32
 			SIGNATURE_OPERATION = 16,
 			RNG_OPERATION = 32,
 		}
-		[AllowDuplicates]
 		public enum NCRYPT_OPERATION : uint32
 		{
 			CIPHER_OPERATION = 1,
@@ -1585,13 +1583,11 @@ namespace Win32
 			OR_CTL_USAGE_FLAG = 16,
 			VALID_CTL_USAGE_FLAG = 32,
 		}
-		[AllowDuplicates]
 		public enum CERT_QUERY_OBJECT_TYPE : uint32
 		{
 			FILE = 1,
 			BLOB = 2,
 		}
-		[AllowDuplicates]
 		public enum CERT_QUERY_CONTENT_TYPE : uint32
 		{
 			CERT = 1,
@@ -1609,7 +1605,6 @@ namespace Win32
 			CERT_PAIR = 13,
 			PFX_AND_LOAD = 14,
 		}
-		[AllowDuplicates]
 		public enum CERT_QUERY_CONTENT_TYPE_FLAGS : uint32
 		{
 			CERT = 2,
@@ -1629,14 +1624,12 @@ namespace Win32
 			ALL = 16382,
 			ALL_ISSUER_CERT = 818,
 		}
-		[AllowDuplicates]
 		public enum CERT_QUERY_FORMAT_TYPE : uint32
 		{
 			BINARY = 1,
 			BASE64_ENCODED = 2,
 			ASN_ASCII_HEX_ENCODED = 3,
 		}
-		[AllowDuplicates]
 		public enum CERT_QUERY_FORMAT_TYPE_FLAGS : uint32
 		{
 			BINARY = 2,
@@ -1644,7 +1637,6 @@ namespace Win32
 			ASN_ASCII_HEX_ENCODED = 8,
 			ALL = 14,
 		}
-		[AllowDuplicates]
 		public enum CERT_QUERY_ENCODING_TYPE : uint32
 		{
 			X509_ASN_ENCODING = 1,
@@ -1672,27 +1664,23 @@ namespace Win32
 			UTF8_STRING = 13,
 			VISIBLE_STRING = 9,
 		}
-		[AllowDuplicates]
 		public enum CERT_STRING_TYPE : uint32
 		{
 			SIMPLE_NAME_STR = 1,
 			OID_NAME_STR = 2,
 			X500_NAME_STR = 3,
 		}
-		[AllowDuplicates]
 		public enum BCRYPT_TABLE : uint32
 		{
 			LOCAL = 1,
 			DOMAIN = 2,
 		}
-		[AllowDuplicates]
 		public enum CERT_KEY_SPEC : uint32
 		{
 			AT_KEYEXCHANGE = 1,
 			AT_SIGNATURE = 2,
 			CERT_NCRYPT_KEY_SPEC = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum BCRYPT_INTERFACE : uint32
 		{
 			BCRYPT_ASYMMETRIC_ENCRYPTION_INTERFACE = 3,
@@ -1727,7 +1715,6 @@ namespace Win32
 			NCRYPT_PERSIST_FLAG = 2147483648,
 			NCRYPT_PERSIST_ONLY_FLAG = 1073741824,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_STRING : uint32
 		{
 			BASE64HEADER = 0,
@@ -1745,20 +1732,17 @@ namespace Win32
 			ANY = 7,
 			HEX_ANY = 8,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_IMPORT_PUBLIC_KEY_FLAGS : uint32
 		{
 			SIGN_KEY_FLAG = 2147483648,
 			ENCRYPT_KEY_FLAG = 1073741824,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_XML_FLAGS : uint32
 		{
 			FLAG_DISABLE_EXTENSIONS = 268435456,
 			FLAG_NO_SERIALIZE = 2147483648,
 			SIGN_ADD_KEYVALUE = 1,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_ENCODE_OBJECT_FLAGS : uint32
 		{
 			ENCODE_ALLOC_FLAG = 32768,
@@ -1767,7 +1751,6 @@ namespace Win32
 			UNICODE_NAME_ENCODE_ENABLE_T61_UNICODE_FLAG = 2147483648,
 			UNICODE_NAME_ENCODE_ENABLE_UTF8_UNICODE_FLAG = 536870912,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_OBJECT_LOCATOR_RELEASE_REASON : uint32
 		{
 			SYSTEM_SHUTDOWN = 1,
@@ -1775,7 +1758,6 @@ namespace Win32
 			PROCESS_EXIT = 3,
 			DLL_UNLOAD = 4,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_ACQUIRE_FLAGS : uint32
 		{
 			CACHE_FLAG = 1,
@@ -1784,7 +1766,6 @@ namespace Win32
 			SILENT_FLAG = 64,
 			USE_PROV_INFO_FLAG = 2,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_GET_URL_FLAGS : uint32
 		{
 			PROPERTY = 1,
@@ -1792,13 +1773,11 @@ namespace Win32
 			UNAUTH_ATTRIBUTE = 4,
 			AUTH_ATTRIBUTE = 8,
 		}
-		[AllowDuplicates]
 		public enum CERT_STORE_SAVE_AS : uint32
 		{
 			PKCS7 = 2,
 			STORE = 1,
 		}
-		[AllowDuplicates]
 		public enum BCRYPT_QUERY_PROVIDER_MODE : uint32
 		{
 			ANY = 4,
@@ -1806,7 +1785,6 @@ namespace Win32
 			KM = 2,
 			MM = 3,
 		}
-		[AllowDuplicates]
 		public enum CERT_FIND_CHAIN_IN_STORE_FLAGS : uint32
 		{
 			COMPARE_KEY_FLAG = 1,
@@ -1823,7 +1801,6 @@ namespace Win32
 			COMMIT_CLEAR_FLAG = 2,
 			INHIBIT_DUPLICATE_HANDLE_FLAG = 1,
 		}
-		[AllowDuplicates]
 		public enum BCRYPT_OPEN_ALGORITHM_PROVIDER_FLAGS : uint32
 		{
 			ALG_HANDLE_HMAC_FLAG = 8,
@@ -1839,7 +1816,6 @@ namespace Win32
 			FILENAME_W = 4,
 			MEMORY = 2,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_SET_PROV_PARAM_ID : uint32
 		{
 			CLIENT_HWND = 1,
@@ -1860,7 +1836,6 @@ namespace Win32
 			SECURE_SIGNATURE_PIN = 48,
 			SMARTCARD_READER = 43,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_KEY_PARAM_ID : uint32
 		{
 			ALGID = 7,
@@ -1907,7 +1882,6 @@ namespace Win32
 			CERT_SET_KEY_PROV_HANDLE_PROP_ID = 1,
 			CERT_SET_KEY_CONTEXT_PROP_ID = 1,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_MSG_TYPE : uint32
 		{
 			DATA = 1,
@@ -1916,7 +1890,6 @@ namespace Win32
 			SIGNED_AND_ENVELOPED = 4,
 			HASHED = 5,
 		}
-		[AllowDuplicates]
 		public enum CERT_OPEN_STORE_FLAGS : uint32
 		{
 			BACKUP_RESTORE_FLAG = 2048,
@@ -1932,44 +1905,37 @@ namespace Win32
 			SHARE_CONTEXT_FLAG = 128,
 			UPDATE_KEYID_FLAG = 1024,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_DEFAULT_CONTEXT_FLAGS : uint32
 		{
 			AUTO_RELEASE_FLAG = 1,
 			PROCESS_FLAG = 2,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_VERIFY_CERT_FLAGS : uint32
 		{
 			DISABLE_MD2_MD4_FLAG = 1,
 			SET_STRONG_PROPERTIES_FLAG = 2,
 			RETURN_STRONG_PROPERTIES_FLAG = 4,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_SET_HASH_PARAM : uint32
 		{
 			MAC_INFO = 5,
 			ASHVAL = 2,
 		}
-		[AllowDuplicates]
 		public enum CERT_SYSTEM_STORE_FLAGS : uint32
 		{
 			LOCATION_MASK = 16711680,
 			RELOCATE_FLAG = 2147483648,
 		}
-		[AllowDuplicates]
 		public enum CERT_CREATE_SELFSIGN_FLAGS : uint32
 		{
 			KEY_INFO = 2,
 			SIGN = 1,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_DEFAULT_CONTEXT_TYPE : uint32
 		{
 			CERT_SIGN_OID = 1,
 			MULTI_CERT_SIGN_OID = 2,
 		}
-		[AllowDuplicates]
 		public enum BCRYPT_RESOLVE_PROVIDERS_FLAGS : uint32
 		{
 			FUNCTIONS = 1,
@@ -1986,20 +1952,17 @@ namespace Win32
 			EXISTING = 5,
 			SUBJECT = 4,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_FIND_FLAGS : uint32
 		{
 			USER_KEYSET_FLAG = 1,
 			MACHINE_KEYSET_FLAG = 2,
 			SILENT_KEYSET_FLAG = 64,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_IMAGE_REF_FLAGS : uint32
 		{
 			MIN_DEPENDENCIES = 1,
 			PROCESS_ISOLATE = 65536,
 		}
-		[AllowDuplicates]
 		public enum CERT_REVOCATION_STATUS_REASON : uint32
 		{
 			UNSPECIFIED = 0,
@@ -2011,14 +1974,12 @@ namespace Win32
 			CERTIFICATE_HOLD = 6,
 			REMOVE_FROM_CRL = 8,
 		}
-		[AllowDuplicates]
 		public enum CERT_ROOT_PROGRAM_FLAGS : uint32
 		{
 			LSC = 64,
 			ORG = 128,
 			SUBJECT_LOGO = 32,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_XML_KEY_VALUE_TYPE : uint32
 		{
 			DSA = 1,
@@ -2026,26 +1987,22 @@ namespace Win32
 			ECDSA = 3,
 			CUSTOM = 4,
 		}
-		[AllowDuplicates]
 		public enum CERT_LOGOTYPE_CHOICE : uint32
 		{
 			NO_IMAGE_RESOLUTION_CHOICE = 0,
 			BITS_IMAGE_RESOLUTION_CHOICE = 1,
 			TABLE_SIZE_IMAGE_RESOLUTION_CHOICE = 2,
 		}
-		[AllowDuplicates]
 		public enum CMSG_KEY_AGREE_OPTION : uint32
 		{
 			EPHEMERAL_KEY_CHOICE = 1,
 			STATIC_KEY_CHOICE = 2,
 		}
-		[AllowDuplicates]
 		public enum CERT_LOGOTYPE_OPTION : uint32
 		{
 			DIRECT_INFO_CHOICE = 1,
 			INDIRECT_INFO_CHOICE = 2,
 		}
-		[AllowDuplicates]
 		public enum CERT_STORE_PROV_FLAGS : uint32
 		{
 			EXTERNAL_FLAG = 1,
@@ -2054,25 +2011,21 @@ namespace Win32
 			SYSTEM_STORE_FLAG = 8,
 			LM_SYSTEM_STORE_FLAG = 16,
 		}
-		[AllowDuplicates]
 		public enum CMSG_KEY_AGREE_ORIGINATOR : uint32
 		{
 			CERT = 1,
 			PUBLIC_KEY = 2,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_CONTEXT_CONFIG_FLAGS : uint32
 		{
 			EXCLUSIVE = 1,
 			OVERRIDE = 65536,
 		}
-		[AllowDuplicates]
 		public enum BCRYPT_DSA_MAGIC : uint32
 		{
 			UBLIC_MAGIC = 1112560452,
 			RIVATE_MAGIC = 1448104772,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_XML_X509DATA_TYPE : uint32
 		{
 			ISSUER_SERIAL = 1,
@@ -2082,13 +2035,11 @@ namespace Win32
 			CRL = 5,
 			CUSTOM = 6,
 		}
-		[AllowDuplicates]
 		public enum CERT_BIOMETRIC_DATA_TYPE : uint32
 		{
 			PREDEFINED_DATA_CHOICE = 1,
 			OID_DATA_CHOICE = 2,
 		}
-		[AllowDuplicates]
 		public enum CERT_CHAIN_POLICY_FLAGS : uint32
 		{
 			IGNORE_NOT_TIME_VALID_FLAG = 1,
@@ -2110,19 +2061,16 @@ namespace Win32
 			IGNORE_NOT_SUPPORTED_CRITICAL_EXT_FLAG = 8192,
 			IGNORE_PEER_TRUST_FLAG = 4096,
 		}
-		[AllowDuplicates]
 		public enum CERT_STRONG_SIGN_FLAGS : uint32
 		{
 			CRL_CHECK = 1,
 			OCSP_CHECK = 2,
 		}
-		[AllowDuplicates]
 		public enum CERT_LOGOTYPE_IMAGE_INFO_TYPE : uint32
 		{
 			GRAY_SCALE_IMAGE_INFO_CHOICE = 1,
 			COLOR_IMAGE_INFO_CHOICE = 2,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_XML_STATUS_INFO_STATUS : uint32
 		{
 			INTERNAL_REFERENCE = 1,
@@ -2132,20 +2080,17 @@ namespace Win32
 			SIGNATURE_VALID = 65536,
 			OPENED_TO_ENCODE = 2147483648,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_XML_TRANSFORM_FLAGS : uint32
 		{
 			ON_STREAM = 1,
 			ON_NODESET = 2,
 			URI_QUERY_STRING = 3,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_XML_GROUP_ID : uint32
 		{
 			HASH_________ = 1,
 			SIGN_________ = 2,
 		}
-		[AllowDuplicates]
 		public enum CERT_SELECT_CRITERIA_TYPE : uint32
 		{
 			ENHKEY_USAGE = 1,
@@ -2160,14 +2105,12 @@ namespace Win32
 			PUBLIC_KEY = 10,
 			TLS_SIGNATURES = 11,
 		}
-		[AllowDuplicates]
 		public enum BCRYPT_RSAKEY_BLOB_MAGIC : uint32
 		{
 			PUBLIC_MAGIC = 826364754,
 			PRIVATE_MAGIC = 843141970,
 			FULLPRIVATE_MAGIC = 859919186,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_XML_KEYINFO_TYPE : uint32
 		{
 			KEYNAME = 1,
@@ -2176,31 +2119,26 @@ namespace Win32
 			X509DATA = 4,
 			CUSTOM = 5,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_TIMESTAMP_VERSION : uint32
 		{
 			TIMESTAMP_VERSION = 1,
 		}
-		[AllowDuplicates]
 		public enum CERT_ID_OPTION : uint32
 		{
 			ISSUER_SERIAL_NUMBER = 1,
 			KEY_IDENTIFIER = 2,
 			SHA1_HASH = 3,
 		}
-		[AllowDuplicates]
 		public enum HTTPSPOLICY_CALLBACK_DATA_AUTH_TYPE : uint32
 		{
 			CLIENT = 1,
 			SERVER = 2,
 		}
-		[AllowDuplicates]
 		public enum BCRYPT_DH_KEY_BLOB_MAGIC : uint32
 		{
 			UBLIC_MAGIC = 1112557636,
 			RIVATE_MAGIC = 1448101956,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_XML_STATUS_ERROR_STATUS : uint32
 		{
 			NOT_RESOLVED = 1,
@@ -2210,7 +2148,6 @@ namespace Win32
 			SIGNATURE_INVALID = 65536,
 			KEYINFO_NOT_PARSED = 131072,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_TIMESTAMP_RESPONSE_STATUS : uint32
 		{
 			GRANTED = 0,
@@ -2220,50 +2157,42 @@ namespace Win32
 			REVOCATION_WARNING = 4,
 			REVOKED = 5,
 		}
-		[AllowDuplicates]
 		public enum NCRYPT_ALGORITHM_NAME_CLASS : uint32
 		{
 			ASYMMETRIC_ENCRYPTION_INTERFACE = 3,
 			SECRET_AGREEMENT_INTERFACE = 4,
 			SIGNATURE_INTERFACE = 5,
 		}
-		[AllowDuplicates]
 		public enum ECC_CURVE_TYPE_ENUM : int32
 		{
 			SHORT_WEIERSTRASS_CURVE = 1,
 			TWISTED_EDWARDS_CURVE = 2,
 			MONTGOMERY_CURVE = 3,
 		}
-		[AllowDuplicates]
 		public enum ECC_CURVE_ALG_ID_ENUM : int32
 		{
 			BCRYPT_NO_CURVE_GENERATION_ALG_ID = 0,
 		}
-		[AllowDuplicates]
 		public enum HASHALGORITHM_ENUM : int32
 		{
 			_1 = 0,
 			_256 = 1,
 			_512 = 2,
 		}
-		[AllowDuplicates]
 		public enum DSAFIPSVERSION_ENUM : int32
 		{
 			_2 = 0,
 			_3 = 1,
 		}
-		[AllowDuplicates]
 		public enum BCRYPT_HASH_OPERATION_TYPE : int32
 		{
 			HASH_DATA = 1,
 			FINISH_HASH = 2,
 		}
-		[AllowDuplicates]
 		public enum BCRYPT_MULTI_OPERATION_TYPE : int32
 		{
 			BCRYPT_OPERATION_TYPE_HASH = 1,
 		}
-		[AllowDuplicates]
 		public enum CertKeyType : uint32
 		{
 			Other = 0,
@@ -2276,7 +2205,6 @@ namespace Win32
 			Software = 7,
 			SelfSigned = 8,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_XML_CHARSET : int32
 		{
 			AUTO = 0,
@@ -2284,7 +2212,6 @@ namespace Win32
 			UTF16LE = 2,
 			UTF16BE = 3,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_XML_PROPERTY_ID : int32
 		{
 			MAX_HEAP_SIZE = 1,
@@ -2293,14 +2220,12 @@ namespace Win32
 			DOC_DECLARATION = 4,
 			XML_OUTPUT_CHARSET = 5,
 		}
-		[AllowDuplicates]
 		public enum CRYPT_XML_KEYINFO_SPEC : int32
 		{
 			NONE = 0,
 			ENCODED = 1,
 			PARAM = 2,
 		}
-		[AllowDuplicates]
 		public enum HandleType : int32
 		{
 			Asymmetric = 1,
@@ -2308,7 +2233,6 @@ namespace Win32
 			Transform = 3,
 			Hash = 4,
 		}
-		[AllowDuplicates]
 		public enum PaddingMode : int32
 		{
 			None = 1,
@@ -2317,13 +2241,11 @@ namespace Win32
 			ANSIX923 = 4,
 			ISO10126 = 5,
 		}
-		[AllowDuplicates]
 		public enum Direction : int32
 		{
 			Encrypt = 1,
 			Decrypt = 2,
 		}
-		[AllowDuplicates]
 		public enum CASetupProperty : int32
 		{
 			INVALID = -1,
@@ -2345,7 +2267,6 @@ namespace Win32
 			WEBCAMACHINE = 15,
 			WEBCANAME = 16,
 		}
-		[AllowDuplicates]
 		public enum MSCEPSetupProperty : int32
 		{
 			USELOCALSYSTEM = 0,
@@ -2363,7 +2284,6 @@ namespace Win32
 			MSCEPURL = 12,
 			CHALLENGEURL = 13,
 		}
-		[AllowDuplicates]
 		public enum CESSetupProperty : int32
 		{
 			USE_IISAPPPOOLIDENTITY = 0,
@@ -2374,7 +2294,6 @@ namespace Win32
 			RENEWALONLY = 5,
 			ALLOW_KEYBASED_RENEWAL = 6,
 		}
-		[AllowDuplicates]
 		public enum CEPSetupProperty : int32
 		{
 			AUTHENTICATION = 0,

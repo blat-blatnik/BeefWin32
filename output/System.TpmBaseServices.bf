@@ -37,7 +37,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum TBS_COMMAND_PRIORITY : uint32
 		{
 			LOW = 100,
@@ -46,7 +45,6 @@ namespace Win32
 			HIGH = 300,
 			MAX = 2147483648,
 		}
-		[AllowDuplicates]
 		public enum TBS_COMMAND_LOCALITY : uint32
 		{
 			ZERO = 0,

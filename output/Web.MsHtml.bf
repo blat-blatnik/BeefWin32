@@ -6590,7 +6590,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum htmlDesignMode : int32
 		{
 			Inherit = -2,
@@ -6598,14 +6597,12 @@ namespace Win32
 			Off = 0,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlZOrder : int32
 		{
 			Front = 0,
 			Back = 1,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlClear : int32
 		{
 			NotSet = 0,
@@ -6616,7 +6613,6 @@ namespace Win32
 			None = 5,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlControlAlign : int32
 		{
 			NotSet = 0,
@@ -6632,7 +6628,6 @@ namespace Win32
 			Top = 10,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlBlockAlign : int32
 		{
 			NotSet = 0,
@@ -6642,7 +6637,6 @@ namespace Win32
 			Justify = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlReadyState : int32
 		{
 			uninitialized = 0,
@@ -6652,13 +6646,11 @@ namespace Win32
 			complete = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlLoop : int32
 		{
 			LoopInfinite = -1,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum mediaType : int32
 		{
 			NotSet = 0,
@@ -6674,7 +6666,6 @@ namespace Win32
 			Tv = 256,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum DomConstructor : int32
 		{
 			Object = 0,
@@ -6787,7 +6778,6 @@ namespace Win32
 			Max = 107,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleTextTransform : int32
 		{
 			NotSet = 0,
@@ -6797,14 +6787,12 @@ namespace Win32
 			None = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleDataRepeat : int32
 		{
 			None = 0,
 			Inner = 1,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleOverflow : int32
 		{
 			NotSet = 0,
@@ -6814,7 +6802,6 @@ namespace Win32
 			Scroll = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsOverflowStyle : int32
 		{
 			NotSet = 0,
@@ -6824,7 +6811,6 @@ namespace Win32
 			MsAutoHidingScrollbar = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleTableLayout : int32
 		{
 			NotSet = 0,
@@ -6832,7 +6818,6 @@ namespace Win32
 			Fixed = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleBorderCollapse : int32
 		{
 			NotSet = 0,
@@ -6840,7 +6825,6 @@ namespace Win32
 			Collapse = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleCaptionSide : int32
 		{
 			NotSet = 0,
@@ -6850,7 +6834,6 @@ namespace Win32
 			Right = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleEmptyCells : int32
 		{
 			NotSet = 0,
@@ -6858,7 +6841,6 @@ namespace Win32
 			Hide = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleFontStyle : int32
 		{
 			NotSet = 0,
@@ -6867,7 +6849,6 @@ namespace Win32
 			Normal = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleFontVariant : int32
 		{
 			NotSet = 0,
@@ -6875,7 +6856,6 @@ namespace Win32
 			Normal = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleBackgroundRepeat : int32
 		{
 			Repeat = 0,
@@ -6885,7 +6865,6 @@ namespace Win32
 			NotSet = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleBackgroundAttachment : int32
 		{
 			Fixed = 0,
@@ -6893,7 +6872,6 @@ namespace Win32
 			NotSet = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleBackgroundAttachment3 : int32
 		{
 			Fixed = 0,
@@ -6902,7 +6880,6 @@ namespace Win32
 			NotSet = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleBackgroundClip : int32
 		{
 			BorderBox = 0,
@@ -6911,7 +6888,6 @@ namespace Win32
 			NotSet = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleBackgroundOrigin : int32
 		{
 			BorderBox = 0,
@@ -6920,7 +6896,6 @@ namespace Win32
 			NotSet = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleVerticalAlign : int32
 		{
 			Auto = 0,
@@ -6936,7 +6911,6 @@ namespace Win32
 			NotSet = 10,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleFontWeight : int32
 		{
 			NotSet = 0,
@@ -6955,7 +6929,6 @@ namespace Win32
 			Lighter = 13,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleFontSize : int32
 		{
 			XXSmall = 0,
@@ -6969,37 +6942,31 @@ namespace Win32
 			Larger = 8,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleZIndex : int32
 		{
 			Auto = -2147483647,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleWidowsOrphans : int32
 		{
 			NotSet = -2147483647,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleAuto : int32
 		{
 			Auto = 0,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleNone : int32
 		{
 			None = 0,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleNormal : int32
 		{
 			Normal = 0,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleBorderWidth : int32
 		{
 			Thin = 0,
@@ -7007,7 +6974,6 @@ namespace Win32
 			Thick = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum stylePosition : int32
 		{
 			NotSet = 0,
@@ -7019,7 +6985,6 @@ namespace Win32
 			MsDeviceFixed = 6,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleBorderStyle : int32
 		{
 			NotSet = 0,
@@ -7036,7 +7001,6 @@ namespace Win32
 			Hidden = 11,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleOutlineStyle : int32
 		{
 			NotSet = 0,
@@ -7052,7 +7016,6 @@ namespace Win32
 			None = 10,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleStyleFloat : int32
 		{
 			NotSet = 0,
@@ -7061,7 +7024,6 @@ namespace Win32
 			None = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleDisplay : int32
 		{
 			NotSet = 0,
@@ -7096,7 +7058,6 @@ namespace Win32
 			WebkitInlineBox = 29,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleVisibility : int32
 		{
 			NotSet = 0,
@@ -7106,7 +7067,6 @@ namespace Win32
 			Collapse = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleListStyleType : int32
 		{
 			NotSet = 0,
@@ -7128,7 +7088,6 @@ namespace Win32
 			LowerGreek = 16,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleListStylePosition : int32
 		{
 			NotSet = 0,
@@ -7136,7 +7095,6 @@ namespace Win32
 			OutSide = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleWhiteSpace : int32
 		{
 			NotSet = 0,
@@ -7147,7 +7105,6 @@ namespace Win32
 			Prewrap = 5,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum stylePageBreak : int32
 		{
 			NotSet = 0,
@@ -7158,7 +7115,6 @@ namespace Win32
 			Avoid = 5,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum stylePageBreakInside : int32
 		{
 			NotSet = 0,
@@ -7166,7 +7122,6 @@ namespace Win32
 			Avoid = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleCursor : int32
 		{
 			Auto = 0,
@@ -7206,7 +7161,6 @@ namespace Win32
 			NotSet = 34,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleDir : int32
 		{
 			NotSet = 0,
@@ -7215,7 +7169,6 @@ namespace Win32
 			Inherit = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleBidi : int32
 		{
 			NotSet = 0,
@@ -7225,7 +7178,6 @@ namespace Win32
 			Inherit = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleImeMode : int32
 		{
 			Auto = 0,
@@ -7235,7 +7187,6 @@ namespace Win32
 			NotSet = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleRubyAlign : int32
 		{
 			NotSet = 0,
@@ -7248,7 +7199,6 @@ namespace Win32
 			LineEdge = 7,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleRubyPosition : int32
 		{
 			NotSet = 0,
@@ -7256,7 +7206,6 @@ namespace Win32
 			Inline = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleRubyOverhang : int32
 		{
 			NotSet = 0,
@@ -7265,7 +7214,6 @@ namespace Win32
 			None = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleLayoutGridChar : int32
 		{
 			NotSet = 0,
@@ -7273,7 +7221,6 @@ namespace Win32
 			None = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleLayoutGridLine : int32
 		{
 			NotSet = 0,
@@ -7281,7 +7228,6 @@ namespace Win32
 			None = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleLayoutGridMode : int32
 		{
 			NotSet = 0,
@@ -7291,7 +7237,6 @@ namespace Win32
 			None = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleLayoutGridType : int32
 		{
 			NotSet = 0,
@@ -7300,7 +7245,6 @@ namespace Win32
 			Fixed = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleLineBreak : int32
 		{
 			NotSet = 0,
@@ -7308,7 +7252,6 @@ namespace Win32
 			Strict = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleWordBreak : int32
 		{
 			NotSet = 0,
@@ -7317,7 +7260,6 @@ namespace Win32
 			KeepAll = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleWordWrap : int32
 		{
 			NotSet = 0,
@@ -7325,7 +7267,6 @@ namespace Win32
 			On = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleTextJustify : int32
 		{
 			NotSet = 0,
@@ -7339,7 +7280,6 @@ namespace Win32
 			Auto = 8,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleTextAlignLast : int32
 		{
 			NotSet = 0,
@@ -7350,7 +7290,6 @@ namespace Win32
 			Auto = 5,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleTextJustifyTrim : int32
 		{
 			NotSet = 0,
@@ -7359,14 +7298,12 @@ namespace Win32
 			PunctAndKana = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleAccelerator : int32
 		{
 			False = 0,
 			True = 1,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleLayoutFlow : int32
 		{
 			Horizontal = 0,
@@ -7374,7 +7311,6 @@ namespace Win32
 			NotSet = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleBlockProgression : int32
 		{
 			Tb = 0,
@@ -7384,7 +7320,6 @@ namespace Win32
 			NotSet = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleWritingMode : int32
 		{
 			Lrtb = 0,
@@ -7401,14 +7336,12 @@ namespace Win32
 			Tb = 11,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleBool : int32
 		{
 			False = 0,
 			True = 1,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleTextUnderlinePosition : int32
 		{
 			Below = 0,
@@ -7417,7 +7350,6 @@ namespace Win32
 			NotSet = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleTextOverflow : int32
 		{
 			Clip = 0,
@@ -7425,7 +7357,6 @@ namespace Win32
 			NotSet = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleInterpolation : int32
 		{
 			NotSet = 0,
@@ -7433,7 +7364,6 @@ namespace Win32
 			BCH = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleBoxSizing : int32
 		{
 			NotSet = 0,
@@ -7441,21 +7371,18 @@ namespace Win32
 			BorderBox = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleFlex : int32
 		{
 			None = 0,
 			NotSet = 1,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleFlexBasis : int32
 		{
 			Auto = 0,
 			NotSet = 1,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleFlexDirection : int32
 		{
 			Row = 0,
@@ -7465,7 +7392,6 @@ namespace Win32
 			NotSet = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleWebkitBoxOrient : int32
 		{
 			Horizontal = 0,
@@ -7475,7 +7401,6 @@ namespace Win32
 			NotSet = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleWebkitBoxDirection : int32
 		{
 			Normal = 0,
@@ -7483,7 +7408,6 @@ namespace Win32
 			NotSet = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleFlexWrap : int32
 		{
 			Nowrap = 0,
@@ -7492,7 +7416,6 @@ namespace Win32
 			NotSet = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleAlignItems : int32
 		{
 			FlexStart = 0,
@@ -7503,7 +7426,6 @@ namespace Win32
 			NotSet = 5,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsFlexAlign : int32
 		{
 			Start = 0,
@@ -7514,7 +7436,6 @@ namespace Win32
 			NotSet = 5,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsFlexItemAlign : int32
 		{
 			Start = 0,
@@ -7526,7 +7447,6 @@ namespace Win32
 			NotSet = 6,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleAlignSelf : int32
 		{
 			FlexStart = 0,
@@ -7538,7 +7458,6 @@ namespace Win32
 			NotSet = 6,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleJustifyContent : int32
 		{
 			FlexStart = 0,
@@ -7549,7 +7468,6 @@ namespace Win32
 			NotSet = 5,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsFlexPack : int32
 		{
 			Start = 0,
@@ -7560,7 +7478,6 @@ namespace Win32
 			NotSet = 5,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleWebkitBoxPack : int32
 		{
 			Start = 0,
@@ -7570,7 +7487,6 @@ namespace Win32
 			NotSet = 5,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsFlexLinePack : int32
 		{
 			Start = 0,
@@ -7582,7 +7498,6 @@ namespace Win32
 			NotSet = 6,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleAlignContent : int32
 		{
 			FlexStart = 0,
@@ -7594,7 +7509,6 @@ namespace Win32
 			NotSet = 6,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleColumnFill : int32
 		{
 			Auto = 0,
@@ -7602,7 +7516,6 @@ namespace Win32
 			NotSet = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleColumnSpan : int32
 		{
 			None = 0,
@@ -7611,7 +7524,6 @@ namespace Win32
 			NotSet = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleBreak : int32
 		{
 			NotSet = 0,
@@ -7626,7 +7538,6 @@ namespace Win32
 			AvoidColumn = 9,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleBreakInside : int32
 		{
 			NotSet = 0,
@@ -7636,7 +7547,6 @@ namespace Win32
 			AvoidColumn = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsScrollChaining : int32
 		{
 			NotSet = 0,
@@ -7644,7 +7554,6 @@ namespace Win32
 			Chained = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsContentZooming : int32
 		{
 			NotSet = 0,
@@ -7652,7 +7561,6 @@ namespace Win32
 			Zoom = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsContentZoomSnapType : int32
 		{
 			NotSet = 0,
@@ -7661,7 +7569,6 @@ namespace Win32
 			Proximity = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsScrollRails : int32
 		{
 			NotSet = 0,
@@ -7669,7 +7576,6 @@ namespace Win32
 			Railed = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsContentZoomChaining : int32
 		{
 			NotSet = 0,
@@ -7677,7 +7583,6 @@ namespace Win32
 			Chained = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsScrollSnapType : int32
 		{
 			NotSet = 0,
@@ -7686,13 +7591,11 @@ namespace Win32
 			Proximity = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleGridColumn : int32
 		{
 			NotSet = 0,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleGridColumnAlign : int32
 		{
 			Center = 0,
@@ -7702,19 +7605,16 @@ namespace Win32
 			NotSet = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleGridColumnSpan : int32
 		{
 			NotSet = 0,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleGridRow : int32
 		{
 			NotSet = 0,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleGridRowAlign : int32
 		{
 			Center = 0,
@@ -7724,13 +7624,11 @@ namespace Win32
 			NotSet = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleGridRowSpan : int32
 		{
 			NotSet = 0,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleWrapThrough : int32
 		{
 			NotSet = 0,
@@ -7738,7 +7636,6 @@ namespace Win32
 			None = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleWrapFlow : int32
 		{
 			NotSet = 0,
@@ -7751,7 +7648,6 @@ namespace Win32
 			Maximum = 7,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleAlignmentBaseline : int32
 		{
 			NotSet = 0,
@@ -7769,7 +7665,6 @@ namespace Win32
 			Ideographic = 12,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleBaselineShift : int32
 		{
 			Baseline = 0,
@@ -7777,7 +7672,6 @@ namespace Win32
 			Super = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleClipRule : int32
 		{
 			NotSet = 0,
@@ -7785,7 +7679,6 @@ namespace Win32
 			EvenOdd = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleDominantBaseline : int32
 		{
 			NotSet = 0,
@@ -7803,7 +7696,6 @@ namespace Win32
 			UseScript = 12,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleFillRule : int32
 		{
 			NotSet = 0,
@@ -7811,7 +7703,6 @@ namespace Win32
 			EvenOdd = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleFontStretch : int32
 		{
 			NotSet = 0,
@@ -7828,7 +7719,6 @@ namespace Win32
 			UltraExpanded = 11,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum stylePointerEvents : int32
 		{
 			NotSet = 0,
@@ -7845,7 +7735,6 @@ namespace Win32
 			Auto = 11,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleEnableBackground : int32
 		{
 			NotSet = 0,
@@ -7854,7 +7743,6 @@ namespace Win32
 			Inherit = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleStrokeLinecap : int32
 		{
 			NotSet = 0,
@@ -7863,7 +7751,6 @@ namespace Win32
 			Square = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleStrokeLinejoin : int32
 		{
 			NotSet = 0,
@@ -7872,7 +7759,6 @@ namespace Win32
 			Bevel = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleTextAnchor : int32
 		{
 			NotSet = 0,
@@ -7881,7 +7767,6 @@ namespace Win32
 			End = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleAttrType : int32
 		{
 			String = 0,
@@ -7913,7 +7798,6 @@ namespace Win32
 			Ms = 26,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleInitialColor : int32
 		{
 			NoInitial = 0,
@@ -7922,7 +7806,6 @@ namespace Win32
 			Invert = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleInitialString : int32
 		{
 			NoInitial = 0,
@@ -7931,7 +7814,6 @@ namespace Win32
 			Normal = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleTransformOriginX : int32
 		{
 			NotSet = 0,
@@ -7940,7 +7822,6 @@ namespace Win32
 			Right = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleTransformOriginY : int32
 		{
 			NotSet = 0,
@@ -7949,7 +7830,6 @@ namespace Win32
 			Bottom = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum stylePerspectiveOriginX : int32
 		{
 			NotSet = 0,
@@ -7958,7 +7838,6 @@ namespace Win32
 			Right = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum stylePerspectiveOriginY : int32
 		{
 			NotSet = 0,
@@ -7967,7 +7846,6 @@ namespace Win32
 			Bottom = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleTransformStyle : int32
 		{
 			Flat = 0,
@@ -7975,7 +7853,6 @@ namespace Win32
 			NotSet = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleBackfaceVisibility : int32
 		{
 			Visible = 0,
@@ -7983,14 +7860,12 @@ namespace Win32
 			NotSet = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleTextSizeAdjust : int32
 		{
 			None = 0,
 			Auto = 1,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleColorInterpolationFilters : int32
 		{
 			Auto = 0,
@@ -7999,7 +7874,6 @@ namespace Win32
 			NotSet = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleHyphens : int32
 		{
 			None = 0,
@@ -8008,13 +7882,11 @@ namespace Win32
 			NotSet = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleHyphenateLimitLines : int32
 		{
 			NoLimit = 0,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsAnimationPlayState : int32
 		{
 			Running = 0,
@@ -8022,7 +7894,6 @@ namespace Win32
 			NotSet = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsAnimationDirection : int32
 		{
 			Normal = 0,
@@ -8032,7 +7903,6 @@ namespace Win32
 			NotSet = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsAnimationFillMode : int32
 		{
 			None = 0,
@@ -8042,7 +7912,6 @@ namespace Win32
 			NotSet = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsHighContrastAdjust : int32
 		{
 			NotSet = 0,
@@ -8050,7 +7919,6 @@ namespace Win32
 			None = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsUserSelect : int32
 		{
 			Auto = 0,
@@ -8060,7 +7928,6 @@ namespace Win32
 			NotSet = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsTouchAction : int32
 		{
 			NotSet = -1,
@@ -8075,7 +7942,6 @@ namespace Win32
 			CrossSlideY = 128,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsTouchSelect : int32
 		{
 			Grippers = 0,
@@ -8083,7 +7949,6 @@ namespace Win32
 			NotSet = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsScrollTranslation : int32
 		{
 			NotSet = 0,
@@ -8091,7 +7956,6 @@ namespace Win32
 			VtoH = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleBorderImageRepeat : int32
 		{
 			Stretch = 0,
@@ -8101,14 +7965,12 @@ namespace Win32
 			NotSet = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleBorderImageSliceFill : int32
 		{
 			NotSet = 0,
 			Fill = 1,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsImeAlign : int32
 		{
 			Auto = 0,
@@ -8116,7 +7978,6 @@ namespace Win32
 			NotSet = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleMsTextCombineHorizontal : int32
 		{
 			None = 0,
@@ -8125,7 +7986,6 @@ namespace Win32
 			NotSet = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleWebkitAppearance : int32
 		{
 			None = 0,
@@ -8165,7 +8025,6 @@ namespace Win32
 			NotSet = 34,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleViewportSize : int32
 		{
 			Auto = 0,
@@ -8173,7 +8032,6 @@ namespace Win32
 			DeviceHeight = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleUserZoom : int32
 		{
 			NotSet = 0,
@@ -8181,7 +8039,6 @@ namespace Win32
 			Fixed = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleTextLineThroughStyle : int32
 		{
 			Undefined = 0,
@@ -8189,7 +8046,6 @@ namespace Win32
 			Double = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleTextUnderlineStyle : int32
 		{
 			Undefined = 0,
@@ -8207,7 +8063,6 @@ namespace Win32
 			ThickDash = 12,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleTextEffect : int32
 		{
 			None = 0,
@@ -8216,14 +8071,12 @@ namespace Win32
 			Outline = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleDefaultTextSelection : int32
 		{
 			False = 0,
 			True = 1,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum styleTextDecoration : int32
 		{
 			None = 0,
@@ -8233,7 +8086,6 @@ namespace Win32
 			Blink = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum textDecoration : int32
 		{
 			None = 0,
@@ -8243,7 +8095,6 @@ namespace Win32
 			Blink = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlListType : int32
 		{
 			NotSet = 0,
@@ -8257,7 +8108,6 @@ namespace Win32
 			Square = 8,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlMethod : int32
 		{
 			NotSet = 0,
@@ -8265,7 +8115,6 @@ namespace Win32
 			Post = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlWrap : int32
 		{
 			Off = 1,
@@ -8273,7 +8122,6 @@ namespace Win32
 			Hard = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlDir : int32
 		{
 			NotSet = 0,
@@ -8281,7 +8129,6 @@ namespace Win32
 			RightToLeft = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlEditable : int32
 		{
 			Inherit = 0,
@@ -8289,7 +8136,6 @@ namespace Win32
 			False = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlInput : int32
 		{
 			NotSet = 0,
@@ -8315,7 +8161,6 @@ namespace Win32
 			Search = 20,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlSpellCheck : int32
 		{
 			NotSet = 0,
@@ -8324,7 +8169,6 @@ namespace Win32
 			Default = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlEncoding : int32
 		{
 			URL = 0,
@@ -8332,7 +8176,6 @@ namespace Win32
 			Text = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlAdjacency : int32
 		{
 			BeforeBegin = 1,
@@ -8341,13 +8184,11 @@ namespace Win32
 			AfterEnd = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlTabIndex : int32
 		{
 			NotSet = -32768,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlComponent : int32
 		{
 			Client = 0,
@@ -8382,14 +8223,12 @@ namespace Win32
 			GHBottomRight = 29,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlApplyLocation : int32
 		{
 			Inside = 0,
 			Outside = 1,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlGlyphMode : int32
 		{
 			None = 0,
@@ -8398,7 +8237,6 @@ namespace Win32
 			Both = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlDraggable : int32
 		{
 			Auto = 0,
@@ -8406,7 +8244,6 @@ namespace Win32
 			False = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlUnit : int32
 		{
 			Character = 1,
@@ -8415,7 +8252,6 @@ namespace Win32
 			TextEdit = 6,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlEndPoints : int32
 		{
 			StartToStart = 1,
@@ -8424,21 +8260,18 @@ namespace Win32
 			EndToEnd = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlDirection : int32
 		{
 			Forward = 99999,
 			Backward = -99999,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlStart : int32
 		{
 			fileopen = 0,
 			mouseover = 1,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum bodyScroll : int32
 		{
 			yes = 1,
@@ -8447,21 +8280,18 @@ namespace Win32
 			@default = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlSelectType : int32
 		{
 			SelectOne = 1,
 			SelectMultiple = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlSelectExFlag : int32
 		{
 			None = 0,
 			HideSelectionInDesign = 1,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlSelection : int32
 		{
 			None = 0,
@@ -8470,7 +8300,6 @@ namespace Win32
 			Table = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlMarqueeBehavior : int32
 		{
 			scroll = 1,
@@ -8478,7 +8307,6 @@ namespace Win32
 			alternate = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlMarqueeDirection : int32
 		{
 			left = 1,
@@ -8487,7 +8315,6 @@ namespace Win32
 			down = 7,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlPersistState : int32
 		{
 			Normal = 0,
@@ -8497,7 +8324,6 @@ namespace Win32
 			UserData = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlDropEffect : int32
 		{
 			Copy = 0,
@@ -8506,7 +8332,6 @@ namespace Win32
 			None = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlEffectAllowed : int32
 		{
 			Copy = 0,
@@ -8520,21 +8345,18 @@ namespace Win32
 			Uninitialized = 8,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlCompatMode : int32
 		{
 			BackCompat = 0,
 			CSS1Compat = 1,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum BoolValue : int32
 		{
 			True = 1,
 			False = 0,
 			BoolValue_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlCaptionAlign : int32
 		{
 			NotSet = 0,
@@ -8546,7 +8368,6 @@ namespace Win32
 			Bottom = 6,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlCaptionVAlign : int32
 		{
 			NotSet = 0,
@@ -8554,7 +8375,6 @@ namespace Win32
 			Bottom = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlFrame : int32
 		{
 			NotSet = 0,
@@ -8569,7 +8389,6 @@ namespace Win32
 			border = 9,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlRules : int32
 		{
 			NotSet = 0,
@@ -8601,7 +8420,6 @@ namespace Win32
 			Center = 2,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum frameScrolling : int32
 		{
 			yes = 1,
@@ -8609,7 +8427,6 @@ namespace Win32
 			auto = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum sandboxAllow : int32
 		{
 			Scripts = 0,
@@ -8619,7 +8436,6 @@ namespace Win32
 			Popups = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgAngleType : int32
 		{
 			SVG_ANGLETYPE_UNKNOWN = 0,
@@ -8629,14 +8445,12 @@ namespace Win32
 			SVG_ANGLETYPE_GRAD = 4,
 			svgAngleType_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgExternalResourcesRequired : int32
 		{
 			False = 0,
 			True = 1,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgFocusable : int32
 		{
 			NotSet = 0,
@@ -8645,7 +8459,6 @@ namespace Win32
 			False = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgLengthType : int32
 		{
 			SVG_LENGTHTYPE_UNKNOWN = 0,
@@ -8661,7 +8474,6 @@ namespace Win32
 			SVG_LENGTHTYPE_PC = 10,
 			svgLengthType_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgPathSegType : int32
 		{
 			PATHSEG_UNKNOWN = 0,
@@ -8686,7 +8498,6 @@ namespace Win32
 			PATHSEG_CURVETO_QUADRATIC_SMOOTH_REL = 19,
 			svgPathSegType_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgTransformType : int32
 		{
 			SVG_TRANSFORM_UNKNOWN = 0,
@@ -8698,7 +8509,6 @@ namespace Win32
 			SVG_TRANSFORM_SKEWY = 6,
 			svgTransformType_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgPreserveAspectRatioAlignType : int32
 		{
 			SVG_PRESERVEASPECTRATIO_UNKNOWN = 0,
@@ -8714,7 +8524,6 @@ namespace Win32
 			SVG_PRESERVEASPECTRATIO_XMAXYMAX = 10,
 			svgPreserveAspectRatioAlignType_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgPreserveAspectMeetOrSliceType : int32
 		{
 			SVG_MEETORSLICE_UNKNOWN = 0,
@@ -8722,7 +8531,6 @@ namespace Win32
 			SVG_MEETORSLICE_SLICE = 2,
 			svgPreserveAspectMeetOrSliceType_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgUnitTypes : int32
 		{
 			SVG_UNITTYPE_UNKNOWN = 0,
@@ -8730,7 +8538,6 @@ namespace Win32
 			SVG_UNITTYPE_OBJECTBOUNDINGBOX = 2,
 			svgUnitTypes_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgSpreadMethod : int32
 		{
 			SVG_SPREADMETHOD_UNKNOWN = 0,
@@ -8739,7 +8546,6 @@ namespace Win32
 			SVG_SPREADMETHOD_REPEAT = 3,
 			svgSpreadMethod_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgFeblendMode : int32
 		{
 			SVG_FEBLEND_MODE_UNKNOWN = 0,
@@ -8750,7 +8556,6 @@ namespace Win32
 			SVG_FEBLEND_MODE_LIGHTEN = 5,
 			svgFeblendMode_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgFecolormatrixType : int32
 		{
 			SVG_FECOLORMATRIX_TYPE_UNKNOWN = 0,
@@ -8760,7 +8565,6 @@ namespace Win32
 			SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA = 4,
 			svgFecolormatrixType_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgFecomponenttransferType : int32
 		{
 			SVG_FECOMPONENTTRANSFER_TYPE_UNKNOWN = 0,
@@ -8771,7 +8575,6 @@ namespace Win32
 			SVG_FECOMPONENTTRANSFER_TYPE_GAMMA = 5,
 			svgFecomponenttransferType_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgFecompositeOperator : int32
 		{
 			SVG_FECOMPOSITE_OPERATOR_UNKNOWN = 0,
@@ -8783,7 +8586,6 @@ namespace Win32
 			SVG_FECOMPOSITE_OPERATOR_ARITHMETIC = 6,
 			svgFecompositeOperator_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgEdgemode : int32
 		{
 			SVG_EDGEMODE_UNKNOWN = 0,
@@ -8792,14 +8594,12 @@ namespace Win32
 			SVG_EDGEMODE_NONE = 3,
 			svgEdgemode_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgPreserveAlpha : int32
 		{
 			SVG_PRESERVEALPHA_FALSE = 0,
 			SVG_PRESERVEALPHA_TRUE = 1,
 			svgPreserveAlpha_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgChannel : int32
 		{
 			SVG_CHANNEL_UNKNOWN = 0,
@@ -8809,7 +8609,6 @@ namespace Win32
 			SVG_CHANNEL_A = 4,
 			svgChannel_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgMorphologyOperator : int32
 		{
 			SVG_MORPHOLOGY_OPERATOR_UNKNOWN = 0,
@@ -8817,7 +8616,6 @@ namespace Win32
 			SVG_MORPHOLOGY_OPERATOR_DILATE = 2,
 			svgMorphologyOperator_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgTurbulenceType : int32
 		{
 			SVG_TURBULENCE_TYPE_UNKNOWN = 0,
@@ -8825,7 +8623,6 @@ namespace Win32
 			SVG_TURBULENCE_TYPE_TURBULENCE = 2,
 			svgTurbulenceType_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgStitchtype : int32
 		{
 			SVG_STITCHTYPE_UNKNOWN = 0,
@@ -8833,7 +8630,6 @@ namespace Win32
 			SVG_STITCHTYPE_NOSTITCH = 2,
 			svgStitchtype_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgMarkerUnits : int32
 		{
 			SVG_MARKERUNITS_UNKNOWN = 0,
@@ -8841,7 +8637,6 @@ namespace Win32
 			SVG_MARKERUNITS_STROKEWIDTH = 2,
 			svgMarkerUnits_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgMarkerOrient : int32
 		{
 			SVG_MARKER_ORIENT_UNKNOWN = 0,
@@ -8849,13 +8644,11 @@ namespace Win32
 			SVG_MARKER_ORIENT_ANGLE = 2,
 			svgMarkerOrient_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum svgMarkerOrientAttribute : int32
 		{
 			Auto = 0,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlMediaNetworkState : int32
 		{
 			Empty = 0,
@@ -8864,7 +8657,6 @@ namespace Win32
 			NoSource = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlMediaReadyState : int32
 		{
 			HaveNothing = 0,
@@ -8874,7 +8666,6 @@ namespace Win32
 			HaveEnoughData = 4,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum htmlMediaErr : int32
 		{
 			Aborted = 0,
@@ -8883,7 +8674,6 @@ namespace Win32
 			SrcNotSupported = 3,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum lengthAdjust : int32
 		{
 			LENGTHADJUST_UNKNOWN = 0,
@@ -8891,7 +8681,6 @@ namespace Win32
 			LENGTHADJUST_SPACINGANDGLYPHS = 2,
 			lengthAdjust_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum textpathMethodtype : int32
 		{
 			TEXTPATH_METHODTYPE_UNKNOWN = 0,
@@ -8899,7 +8688,6 @@ namespace Win32
 			TEXTPATH_METHODTYPE_STRETCH = 2,
 			textpathMethodtype_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum textpathSpacingtype : int32
 		{
 			TEXTPATH_SPACINGTYPE_UNKNOWN = 0,
@@ -8907,7 +8695,6 @@ namespace Win32
 			TEXTPATH_SPACINGTYPE_EXACT = 2,
 			textpathSpacingtype_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum ELEMENT_CORNER : int32
 		{
 			NONE = 0,
@@ -8921,7 +8708,6 @@ namespace Win32
 			BOTTOMRIGHT = 8,
 			Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum SECUREURLHOSTVALIDATE_FLAGS : int32
 		{
 			UHV_PROMPTBEFORENO = 1,
@@ -8929,14 +8715,12 @@ namespace Win32
 			UHV_UNSECURESOURCE = 4,
 			ECUREURLHOSTVALIDATE_FLAGS_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum POINTER_GRAVITY : int32
 		{
 			Left = 0,
 			Right = 1,
 			Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum ELEMENT_ADJACENCY : int32
 		{
 			_ADJ_BeforeBegin = 0,
@@ -8945,7 +8729,6 @@ namespace Win32
 			_ADJ_AfterEnd = 3,
 			ENT_ADJACENCY_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum MARKUP_CONTEXT_TYPE : int32
 		{
 			CONTEXT_TYPE_None = 0,
@@ -8955,7 +8738,6 @@ namespace Win32
 			CONTEXT_TYPE_NoScope = 4,
 			MARKUP_CONTEXT_TYPE_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum FINDTEXT_FLAGS : int32
 		{
 			BACKWARDS = 1,
@@ -8968,7 +8750,6 @@ namespace Win32
 			MATCHALEFHAMZA = -2147483648,
 			FLAGS_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum MOVEUNIT_ACTION : int32
 		{
 			PREVCHAR = 0,
@@ -8993,14 +8774,12 @@ namespace Win32
 			NEXTBLOCK = 19,
 			ACTION_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum PARSE_FLAGS : int32
 		{
 			ABSOLUTIFYIE40URLS = 1,
 			DISABLEVML = 2,
 			FLAGS_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum ELEMENT_TAG_ID : int32
 		{
 			TAGID_NULL = 0,
@@ -9231,7 +9010,6 @@ namespace Win32
 			TAGID_LAST_PREDEFINED = 10000,
 			ELEMENT_TAG_ID_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum SELECTION_TYPE : int32
 		{
 			None = 0,
@@ -9240,13 +9018,11 @@ namespace Win32
 			Control = 3,
 			Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum SAVE_SEGMENTS_FLAGS : int32
 		{
 			NoIE4SelectionCompat = 1,
 			FLAGS_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum CARET_DIRECTION : int32
 		{
 			INDETERMINATE = 0,
@@ -9255,26 +9031,22 @@ namespace Win32
 			FORWARD = 3,
 			Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum LINE_DIRECTION : int32
 		{
 			RightToLeft = 1,
 			LeftToRight = 2,
 			Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum HT_OPTIONS : int32
 		{
 			_AllowAfterEOL = 1,
 			IONS_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum HT_RESULTS : int32
 		{
 			Glyph = 1,
 			Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum DISPLAY_MOVEUNIT : int32
 		{
 			PreviousLine = 1,
@@ -9285,14 +9057,12 @@ namespace Win32
 			BottomOfWindow = 6,
 			Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum DISPLAY_GRAVITY : int32
 		{
 			PreviousLine = 1,
 			NextLine = 2,
 			Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum DISPLAY_BREAK : int32
 		{
 			None = 0,
@@ -9300,7 +9070,6 @@ namespace Win32
 			Break = 2,
 			Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum COORD_SYSTEM : int32
 		{
 			GLOBAL = 0,
@@ -9311,7 +9080,6 @@ namespace Win32
 			CLIENT = 5,
 			Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum DEV_CONSOLE_MESSAGE_LEVEL : int32
 		{
 			CML_INFORMATIONAL = 0,
@@ -9319,7 +9087,6 @@ namespace Win32
 			CML_ERROR = 2,
 			EV_CONSOLE_MESSAGE_LEVEL_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum DOM_EVENT_PHASE : int32
 		{
 			EP_CAPTURING_PHASE = 1,
@@ -9327,7 +9094,6 @@ namespace Win32
 			EP_BUBBLING_PHASE = 3,
 			OM_EVENT_PHASE_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum SCRIPT_TIMER_TYPE : int32
 		{
 			TT_TIMEOUT = 0,
@@ -9336,7 +9102,6 @@ namespace Win32
 			TT_ANIMATION_FRAME = 3,
 			CRIPT_TIMER_TYPE_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum HTML_PAINTER : int32
 		{
 			PAINTER_OPAQUE = 1,
@@ -9356,7 +9121,6 @@ namespace Win32
 			PAINTER_NOSCROLLBITS = 131072,
 			_PAINTER_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum HTML_PAINT_ZORDER : int32
 		{
 			PAINT_ZORDER_NONE = 0,
@@ -9370,21 +9134,18 @@ namespace Win32
 			PAINT_ZORDER_WINDOW_TOP = 8,
 			_PAINT_ZORDER_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum HTML_PAINT_DRAW_FLAGS : int32
 		{
 			PAINT_DRAW_UPDATEREGION = 1,
 			PAINT_DRAW_USE_XFORM = 2,
 			_PAINT_DRAW_FLAGS_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum HTML_PAINT_EVENT_FLAGS : int32
 		{
 			PAINT_EVENT_TARGET = 1,
 			PAINT_EVENT_SETCURSOR = 2,
 			_PAINT_EVENT_FLAGS_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum HTML_PAINT_DRAW_INFO_FLAGS : int32
 		{
 			PAINT_DRAWINFO_VIEWPORT = 1,
@@ -9404,14 +9165,12 @@ namespace Win32
 			NotSet = -1,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum HTMLDlgBorder : int32
 		{
 			Thin = 0,
 			Thick = 262144,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum HTMLDlgEdge : int32
 		{
 			Sunken = 0,
@@ -9442,35 +9201,30 @@ namespace Win32
 			_1 = 1,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum HTMLMinimizeFlag : int32
 		{
 			No = 0,
 			Yes = 131072,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum HTMLMaximizeFlag : int32
 		{
 			No = 0,
 			Yes = 65536,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum HTMLCaptionFlag : int32
 		{
 			No = 0,
 			Yes = 12582912,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum HTMLSysMenuFlag : int32
 		{
 			No = 0,
 			Yes = 524288,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum HTMLBorder : int32
 		{
 			None = 0,
@@ -9479,7 +9233,6 @@ namespace Win32
 			Thin = 8388608,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum HTMLBorderStyle : int32
 		{
 			Normal = 0,
@@ -9489,7 +9242,6 @@ namespace Win32
 			Static = 131072,
 			_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum HTMLWindowState : int32
 		{
 			Normal = 1,
@@ -9509,14 +9261,12 @@ namespace Win32
 			EVENT_LAST = 4,
 			_EVENT_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum BEHAVIOR_EVENT_FLAGS : int32
 		{
 			EVENTFLAGS_BUBBLE = 1,
 			EVENTFLAGS_STANDARDADDITIVE = 2,
 			_EVENT_FLAGS_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum BEHAVIOR_RENDER_INFO : int32
 		{
 			RENDERINFO_BEFOREBACKGROUND = 1,
@@ -9547,7 +9297,6 @@ namespace Win32
 			LASTRELATION = 3,
 			RELATION_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum BEHAVIOR_LAYOUT_INFO : int32
 		{
 			LAYOUTINFO_FULLDELEGATION = 1,
@@ -9555,7 +9304,6 @@ namespace Win32
 			LAYOUTINFO_MAPSIZE = 4,
 			_LAYOUT_INFO_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum BEHAVIOR_LAYOUT_MODE : int32
 		{
 			LAYOUTMODE_NATURAL = 1,
@@ -9565,56 +9313,48 @@ namespace Win32
 			LAYOUTMODE_FINAL_PERCENT = 32768,
 			_LAYOUT_MODE_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum ELEMENTDESCRIPTOR_FLAGS : int32
 		{
 			FLAGS_LITERAL = 1,
 			FLAGS_NESTED_LITERAL = 2,
 			_FLAGS_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum ELEMENTNAMESPACE_FLAGS : int32
 		{
 			FLAGS_ALLOWANYTAG = 1,
 			FLAGS_QUERYFORUNKNOWNTAGS = 2,
 			_FLAGS_Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum VIEW_OBJECT_ALPHA_MODE : int32
 		{
 			IGNORE = 0,
 			PREMULTIPLIED = 1,
 			Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum VIEW_OBJECT_COMPOSITION_MODE : int32
 		{
 			LEGACY = 0,
 			SURFACEPRESENTER = 1,
 			Max = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum ExtensionValidationContexts : int32
 		{
 			None = 0,
 			Dynamic = 1,
 			Parsed = 2,
 		}
-		[AllowDuplicates]
 		public enum ExtensionValidationResults : int32
 		{
 			None = 0,
 			DoNotInstantiate = 1,
 			ArrestPageLoad = 2,
 		}
-		[AllowDuplicates]
 		public enum __MIDL_ITargetFrame2_0001 : int32
 		{
 			NONE = 0,
 			JUSTTESTEXISTENCE = 1,
 			INTERNAL = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum __MIDL_ITargetFrame2_0002 : int32
 		{
 			SCROLL_YES = 1,
@@ -9625,7 +9365,6 @@ namespace Win32
 			DESKTOP = 32,
 			BROWSERBAND = 64,
 		}
-		[AllowDuplicates]
 		public enum __MIDL_ITargetFrame_0001 : int32
 		{
 			RECORD = 1,
@@ -9636,14 +9375,12 @@ namespace Win32
 			SENDING_FROM_FORM = 32,
 			REALLY_SENDING_FROM_FORM = 64,
 		}
-		[AllowDuplicates]
 		public enum MediaActivityNotifyType : int32
 		{
 			Playback = 0,
 			Recording = 1,
 			Casting = 2,
 		}
-		[AllowDuplicates]
 		public enum SCROLLABLECONTEXTMENU_PLACEMENT : int32
 		{
 			TOP = 0,
@@ -9652,14 +9389,12 @@ namespace Win32
 			RIGHT = 3,
 			FULL = 4,
 		}
-		[AllowDuplicates]
 		public enum INTERNETEXPLORERCONFIGURATION : int32
 		{
 			HOST = 1,
 			WEB_DRIVER = 2,
 			WEB_DRIVER_EDGE = 4,
 		}
-		[AllowDuplicates]
 		public enum IELAUNCHOPTION_FLAGS : int32
 		{
 			SCRIPTDEBUG = 1,
@@ -9667,20 +9402,17 @@ namespace Win32
 			FORCE_EDGE = 4,
 			LOCK_ENGINE = 8,
 		}
-		[AllowDuplicates]
 		public enum DOCHOSTUITYPE : int32
 		{
 			BROWSE = 0,
 			AUTHOR = 1,
 		}
-		[AllowDuplicates]
 		public enum DOCHOSTUIDBLCLK : int32
 		{
 			DEFAULT = 0,
 			SHOWPROPERTIES = 1,
 			SHOWCODE = 2,
 		}
-		[AllowDuplicates]
 		public enum DOCHOSTUIFLAG : int32
 		{
 			DIALOG = 1,
@@ -9714,7 +9446,6 @@ namespace Win32
 			ENABLE_ACTIVEX_INACTIVATE_MODE = 536870912,
 			DPI_AWARE = 1073741824,
 		}
-		[AllowDuplicates]
 		public enum OpenServiceErrors : int32
 		{
 			NOTFOUND = -2147287038,
@@ -9722,7 +9453,6 @@ namespace Win32
 			CANCELLED = -2147471631,
 			GPDISABLED = -1072886820,
 		}
-		[AllowDuplicates]
 		public enum OpenServiceActivityContentType : int32
 		{
 			None = -1,

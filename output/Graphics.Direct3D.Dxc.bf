@@ -30,14 +30,12 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DXC_CP : uint32
 		{
 			ACP = 0,
 			UTF16 = 1200,
 			UTF8 = 65001,
 		}
-		[AllowDuplicates]
 		public enum DXC_OUT_KIND : int32
 		{
 			NONE = 0,

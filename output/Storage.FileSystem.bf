@@ -289,14 +289,12 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum FIND_FIRST_EX_FLAGS : uint32
 		{
 			CASE_SENSITIVE = 1,
 			LARGE_FETCH = 2,
 			ON_DISK_ENTRIES_ONLY = 4,
 		}
-		[AllowDuplicates]
 		public enum DEFINE_DOS_DEVICE_FLAGS : uint32
 		{
 			RAW_TARGET_PATH = 1,
@@ -384,32 +382,27 @@ namespace Win32
 			FILE_GENERIC_WRITE = 1179926,
 			FILE_GENERIC_EXECUTE = 1179808,
 		}
-		[AllowDuplicates]
 		public enum GET_FILE_VERSION_INFO_FLAGS : uint32
 		{
 			LOCALISED = 1,
 			NEUTRAL = 2,
 			PREFETCHED = 4,
 		}
-		[AllowDuplicates]
 		public enum VER_FIND_FILE_FLAGS : uint32
 		{
 			VFFF_ISSHAREDFILE = 1,
 		}
-		[AllowDuplicates]
 		public enum VER_FIND_FILE_STATUS : uint32
 		{
 			CURNEDEST = 1,
 			FILEINUSE = 2,
 			BUFFTOOSMALL = 4,
 		}
-		[AllowDuplicates]
 		public enum VER_INSTALL_FILE_FLAGS : uint32
 		{
 			FORCEINSTALL = 1,
 			DONTDELETEOLD = 2,
 		}
-		[AllowDuplicates]
 		public enum VER_INSTALL_FILE_STATUS : uint32
 		{
 			TEMPFILE = 1,
@@ -434,7 +427,6 @@ namespace Win32
 			CANNOTLOADLZ32 = 524288,
 			CANNOTLOADCABINET = 1048576,
 		}
-		[AllowDuplicates]
 		public enum VS_FIXEDFILEINFO_FILE_FLAGS : uint32
 		{
 			DEBUG = 1,
@@ -464,7 +456,6 @@ namespace Win32
 			OS232_PM32 = 196611,
 			NT_WINDOWS32 = 262148,
 		}
-		[AllowDuplicates]
 		public enum VS_FIXEDFILEINFO_FILE_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -495,7 +486,6 @@ namespace Win32
 			FONT_VECTOR = 2,
 			FONT_TRUETYPE = 3,
 		}
-		[AllowDuplicates]
 		public enum FILE_CREATION_DISPOSITION : uint32
 		{
 			CREATE_NEW = 1,
@@ -504,7 +494,6 @@ namespace Win32
 			OPEN_ALWAYS = 4,
 			TRUNCATE_EXISTING = 5,
 		}
-		[AllowDuplicates]
 		public enum FILE_SHARE_MODE : uint32
 		{
 			NONE = 0,
@@ -512,7 +501,6 @@ namespace Win32
 			READ = 1,
 			WRITE = 2,
 		}
-		[AllowDuplicates]
 		public enum SHARE_TYPE : uint32
 		{
 			DISKTREE = 0,
@@ -523,7 +511,6 @@ namespace Win32
 			TEMPORARY = 1073741824,
 			MASK = 255,
 		}
-		[AllowDuplicates]
 		public enum CLFS_FLAG : uint32
 		{
 			FORCE_APPEND = 1,
@@ -531,14 +518,12 @@ namespace Win32
 			NO_FLAGS = 0,
 			USE_RESERVATION = 4,
 		}
-		[AllowDuplicates]
 		public enum SET_FILE_POINTER_MOVE_METHOD : uint32
 		{
 			BEGIN = 0,
 			CURRENT = 1,
 			END = 2,
 		}
-		[AllowDuplicates]
 		public enum MOVE_FILE_FLAGS : uint32
 		{
 			COPY_ALLOWED = 2,
@@ -548,7 +533,6 @@ namespace Win32
 			WRITE_THROUGH = 8,
 			FAIL_IF_NOT_TRACKABLE = 32,
 		}
-		[AllowDuplicates]
 		public enum FILE_NAME : uint32
 		{
 			NORMALIZED = 0,
@@ -574,7 +558,6 @@ namespace Win32
 			SHARE_COMPAT = 0,
 			VERIFY = 1024,
 		}
-		[AllowDuplicates]
 		public enum FILE_NOTIFY_CHANGE : uint32
 		{
 			FILE_NAME = 1,
@@ -586,34 +569,29 @@ namespace Win32
 			CREATION = 64,
 			SECURITY = 256,
 		}
-		[AllowDuplicates]
 		public enum TXFS_MINIVERSION : uint32
 		{
 			COMMITTED_VIEW = 0,
 			DIRTY_VIEW = 65535,
 			DEFAULT_VIEW = 65534,
 		}
-		[AllowDuplicates]
 		public enum TAPE_POSITION_TYPE : int32
 		{
 			ABSOLUTE_POSITION = 0,
 			LOGICAL_POSITION = 1,
 		}
-		[AllowDuplicates]
 		public enum CREATE_TAPE_PARTITION_METHOD : int32
 		{
 			FIXED_PARTITIONS = 0,
 			INITIATOR_PARTITIONS = 2,
 			SELECT_PARTITIONS = 1,
 		}
-		[AllowDuplicates]
 		public enum REPLACE_FILE_FLAGS : uint32
 		{
 			WRITE_THROUGH = 1,
 			IGNORE_MERGE_ERRORS = 2,
 			IGNORE_ACL_ERRORS = 4,
 		}
-		[AllowDuplicates]
 		public enum TAPEMARK_TYPE : int32
 		{
 			FILEMARKS = 1,
@@ -621,14 +599,12 @@ namespace Win32
 			SETMARKS = 0,
 			SHORT_FILEMARKS = 2,
 		}
-		[AllowDuplicates]
 		public enum DISKQUOTA_USERNAME_RESOLVE : uint32
 		{
 			ASYNC = 2,
 			NONE = 0,
 			SYNC = 1,
 		}
-		[AllowDuplicates]
 		public enum TAPE_POSITION_METHOD : int32
 		{
 			ABSOLUTE_BLOCK = 1,
@@ -641,7 +617,6 @@ namespace Win32
 			SPACE_SEQUENTIAL_SMKS = 9,
 			SPACE_SETMARKS = 8,
 		}
-		[AllowDuplicates]
 		public enum NT_CREATE_FILE_DISPOSITION : uint32
 		{
 			SUPERSEDE = 0,
@@ -651,31 +626,26 @@ namespace Win32
 			OVERWRITE = 4,
 			OVERWRITE_IF = 5,
 		}
-		[AllowDuplicates]
 		public enum TAPE_INFORMATION_TYPE : uint32
 		{
 			DRIVE_INFORMATION = 1,
 			MEDIA_INFORMATION = 0,
 		}
-		[AllowDuplicates]
 		public enum NTMS_OMID_TYPE : uint32
 		{
 			FILESYSTEM_INFO = 2,
 			RAW_LABEL = 1,
 		}
-		[AllowDuplicates]
 		public enum LOCK_FILE_FLAGS : uint32
 		{
 			EXCLUSIVE_LOCK = 2,
 			FAIL_IMMEDIATELY = 1,
 		}
-		[AllowDuplicates]
 		public enum LPPROGRESS_ROUTINE_CALLBACK_REASON : uint32
 		{
 			CHUNK_FINISHED = 0,
 			STREAM_SWITCH = 1,
 		}
-		[AllowDuplicates]
 		public enum PREPARE_TAPE_OPERATION : int32
 		{
 			FORMAT = 5,
@@ -685,19 +655,16 @@ namespace Win32
 			UNLOAD = 1,
 			UNLOCK = 4,
 		}
-		[AllowDuplicates]
 		public enum GET_TAPE_DRIVE_PARAMETERS_OPERATION : uint32
 		{
 			DRIVE_INFORMATION = 1,
 			MEDIA_INFORMATION = 0,
 		}
-		[AllowDuplicates]
 		public enum ERASE_TAPE_TYPE : int32
 		{
 			LONG = 1,
 			SHORT = 0,
 		}
-		[AllowDuplicates]
 		public enum FILE_ACTION : uint32
 		{
 			ADDED = 1,
@@ -706,7 +673,6 @@ namespace Win32
 			RENAMED_OLD_NAME = 4,
 			RENAMED_NEW_NAME = 5,
 		}
-		[AllowDuplicates]
 		public enum SHARE_INFO_PERMISSIONS : uint32
 		{
 			READ = 1,
@@ -718,7 +684,6 @@ namespace Win32
 			PERM = 64,
 			ALL = 32768,
 		}
-		[AllowDuplicates]
 		public enum FILE_DEVICE_TYPE : uint32
 		{
 			CD_ROM = 2,
@@ -726,13 +691,11 @@ namespace Win32
 			TAPE = 31,
 			DVD = 51,
 		}
-		[AllowDuplicates]
 		public enum SESSION_INFO_USER_FLAGS : uint32
 		{
 			GUEST = 1,
 			NOENCRYPTION = 2,
 		}
-		[AllowDuplicates]
 		public enum WIN_STREAM_ID : uint32
 		{
 			ALTERNATE_DATA = 4,
@@ -746,34 +709,29 @@ namespace Win32
 			SPARSE_BLOCK = 9,
 			TXFS_DATA = 10,
 		}
-		[AllowDuplicates]
 		public enum TXF_LOG_RECORD_TYPE : uint16
 		{
 			AFFECTED_FILE = 4,
 			TRUNCATE = 2,
 			WRITE = 1,
 		}
-		[AllowDuplicates]
 		public enum FILE_INFO_FLAGS_PERMISSIONS : uint32
 		{
 			READ = 1,
 			WRITE = 2,
 			CREATE = 4,
 		}
-		[AllowDuplicates]
 		public enum SYMBOLIC_LINK_FLAGS : uint32
 		{
 			DIRECTORY = 1,
 			ALLOW_UNPRIVILEGED_CREATE = 2,
 		}
-		[AllowDuplicates]
 		public enum FINDEX_INFO_LEVELS : int32
 		{
 			Standard = 0,
 			Basic = 1,
 			MaxInfoLevel = 2,
 		}
-		[AllowDuplicates]
 		public enum FINDEX_SEARCH_OPS : int32
 		{
 			NameMatch = 0,
@@ -781,19 +739,16 @@ namespace Win32
 			LimitToDevices = 2,
 			MaxSearchOp = 3,
 		}
-		[AllowDuplicates]
 		public enum READ_DIRECTORY_NOTIFY_INFORMATION_CLASS : int32
 		{
 			Information = 1,
 			ExtendedInformation = 2,
 		}
-		[AllowDuplicates]
 		public enum GET_FILEEX_INFO_LEVELS : int32
 		{
 			InfoStandard = 0,
 			MaxInfoLevel = 1,
 		}
-		[AllowDuplicates]
 		public enum FILE_INFO_BY_HANDLE_CLASS : int32
 		{
 			FileBasicInfo = 0,
@@ -823,13 +778,11 @@ namespace Win32
 			FileNormalizedNameInfo = 24,
 			MaximumFileInfoByHandleClass = 25,
 		}
-		[AllowDuplicates]
 		public enum STREAM_INFO_LEVELS : int32
 		{
 			Standard = 0,
 			MaxInfoLevel = 1,
 		}
-		[AllowDuplicates]
 		public enum NtmsObjectsTypes : int32
 		{
 			UNKNOWN = 0,
@@ -853,7 +806,6 @@ namespace Win32
 			UI_DESTINATION = 18,
 			NUMBER_OF_OBJECT_TYPES = 19,
 		}
-		[AllowDuplicates]
 		public enum NtmsAsyncStatus : int32
 		{
 			QUEUED = 0,
@@ -862,12 +814,10 @@ namespace Win32
 			INPROCESS = 3,
 			COMPLETE = 4,
 		}
-		[AllowDuplicates]
 		public enum NtmsAsyncOperations : int32
 		{
 			NTMS_ASYNCOP_MOUNT = 1,
 		}
-		[AllowDuplicates]
 		public enum NtmsSessionOptions : int32
 		{
 			NTMS_SESSION_QUERYEXPEDITE = 1,
@@ -884,7 +834,6 @@ namespace Win32
 			SPECIFIC_DRIVE = 16,
 			NOWAIT = 32,
 		}
-		[AllowDuplicates]
 		public enum NtmsDismountOptions : int32
 		{
 			DEFERRED = 1,
@@ -900,21 +849,18 @@ namespace Win32
 			LOW = -7,
 			LOWEST = -15,
 		}
-		[AllowDuplicates]
 		public enum NtmsAllocateOptions : int32
 		{
 			NEW = 1,
 			NEXT = 2,
 			ERROR_IF_UNAVAILABLE = 4,
 		}
-		[AllowDuplicates]
 		public enum NtmsCreateOptions : int32
 		{
 			OPEN_EXISTING = 1,
 			CREATE_NEW = 2,
 			OPEN_ALWAYS = 3,
 		}
-		[AllowDuplicates]
 		public enum NtmsDriveState : int32
 		{
 			DISMOUNTED = 0,
@@ -924,7 +870,6 @@ namespace Win32
 			BEING_CLEANED = 6,
 			DISMOUNTABLE = 7,
 		}
-		[AllowDuplicates]
 		public enum NtmsLibraryType : int32
 		{
 			UNKNOWN = 0,
@@ -932,7 +877,6 @@ namespace Win32
 			ONLINE = 2,
 			STANDALONE = 3,
 		}
-		[AllowDuplicates]
 		public enum NtmsLibraryFlags : int32
 		{
 			FIXEDOFFLINE = 1,
@@ -941,7 +885,6 @@ namespace Win32
 			IGNORECLEANERUSESREMAINING = 8,
 			RECOGNIZECLEANERBARCODE = 16,
 		}
-		[AllowDuplicates]
 		public enum NtmsInventoryMethod : int32
 		{
 			NONE = 0,
@@ -952,7 +895,6 @@ namespace Win32
 			STOP = 5,
 			MAX = 6,
 		}
-		[AllowDuplicates]
 		public enum NtmsSlotState : int32
 		{
 			UNKNOWN = 0,
@@ -961,34 +903,29 @@ namespace Win32
 			NOTPRESENT = 3,
 			NEEDSINVENTORY = 4,
 		}
-		[AllowDuplicates]
 		public enum NtmsDoorState : int32
 		{
 			UNKNOWN = 0,
 			CLOSED = 1,
 			OPEN = 2,
 		}
-		[AllowDuplicates]
 		public enum NtmsPortPosition : int32
 		{
 			UNKNOWN = 0,
 			EXTENDED = 1,
 			RETRACTED = 2,
 		}
-		[AllowDuplicates]
 		public enum NtmsPortContent : int32
 		{
 			UNKNOWN = 0,
 			FULL = 1,
 			EMPTY = 2,
 		}
-		[AllowDuplicates]
 		public enum NtmsBarCodeState : int32
 		{
 			OK = 1,
 			UNREADABLE = 2,
 		}
-		[AllowDuplicates]
 		public enum NtmsMediaState : int32
 		{
 			IDLE = 0,
@@ -999,7 +936,6 @@ namespace Win32
 			OPERROR = 5,
 			OPREQ = 6,
 		}
-		[AllowDuplicates]
 		public enum NtmsPartitionState : int32
 		{
 			UNKNOWN = 0,
@@ -1013,7 +949,6 @@ namespace Win32
 			IMPORT = 8,
 			RESERVED = 9,
 		}
-		[AllowDuplicates]
 		public enum NtmsPoolType : int32
 		{
 			UNKNOWN = 0,
@@ -1022,17 +957,14 @@ namespace Win32
 			IMPORT = 3,
 			APPLICATION = 1000,
 		}
-		[AllowDuplicates]
 		public enum NtmsAllocationPolicy : int32
 		{
 			NTMS_ALLOCATE_FROMSCRATCH = 1,
 		}
-		[AllowDuplicates]
 		public enum NtmsDeallocationPolicy : int32
 		{
 			NTMS_DEALLOCATE_TOSCRATCH = 1,
 		}
-		[AllowDuplicates]
 		public enum NtmsReadWriteCharacteristics : int32
 		{
 			UNKNOWN = 0,
@@ -1083,7 +1015,6 @@ namespace Win32
 			CANCELLED = 7,
 			STOPPED = 8,
 		}
-		[AllowDuplicates]
 		public enum NtmsOpreqCommand : int32
 		{
 			UNKNOWN = 0,
@@ -1093,7 +1024,6 @@ namespace Win32
 			MOVEMEDIA = 4,
 			MESSAGE = 5,
 		}
-		[AllowDuplicates]
 		public enum NtmsOpreqState : int32
 		{
 			UNKNOWN = 0,
@@ -1103,13 +1033,11 @@ namespace Win32
 			REFUSED = 4,
 			COMPLETE = 5,
 		}
-		[AllowDuplicates]
 		public enum NtmsLibRequestFlags : int32
 		{
 			AUTOPURGE = 1,
 			FAILEDPURGE = 2,
 		}
-		[AllowDuplicates]
 		public enum NtmsOpRequestFlags : int32
 		{
 			AUTOPURGE = 1,
@@ -1117,13 +1045,11 @@ namespace Win32
 			ALERTS = 16,
 			TRAYICON = 32,
 		}
-		[AllowDuplicates]
 		public enum NtmsMediaPoolPolicy : int32
 		{
 			PURGEOFFLINESCRATCH = 1,
 			KEEPOFFLINEIMPORT = 2,
 		}
-		[AllowDuplicates]
 		public enum NtmsOperationalState : int32
 		{
 			READY = 0,
@@ -1131,18 +1057,15 @@ namespace Win32
 			NEEDS_SERVICE = 20,
 			NOT_PRESENT = 21,
 		}
-		[AllowDuplicates]
 		public enum NtmsCreateNtmsMediaOptions : int32
 		{
 			NTMS_ERROR_ON_DUPLICATE = 1,
 		}
-		[AllowDuplicates]
 		public enum NtmsEnumerateOption : int32
 		{
 			DEFAULT = 0,
 			ROOTPOOL = 1,
 		}
-		[AllowDuplicates]
 		public enum NtmsEjectOperation : int32
 		{
 			START = 0,
@@ -1152,7 +1075,6 @@ namespace Win32
 			IMMEDIATE = 4,
 			ASK_USER = 5,
 		}
-		[AllowDuplicates]
 		public enum NtmsInjectOperation : int32
 		{
 			START = 0,
@@ -1160,19 +1082,16 @@ namespace Win32
 			RETRACT = 2,
 			STARTMANY = 3,
 		}
-		[AllowDuplicates]
 		public enum NtmsDriveType : int32
 		{
 			NTMS_UNKNOWN_DRIVE = 0,
 		}
-		[AllowDuplicates]
 		public enum NtmsAccessMask : int32
 		{
 			USE_ACCESS = 1,
 			MODIFY_ACCESS = 2,
 			CONTROL_ACCESS = 4,
 		}
-		[AllowDuplicates]
 		public enum NtmsUITypes : int32
 		{
 			INVALID = 0,
@@ -1181,7 +1100,6 @@ namespace Win32
 			ERR = 3,
 			MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum NtmsUIOperations : int32
 		{
 			DEST_ADD = 1,
@@ -1189,7 +1107,6 @@ namespace Win32
 			DEST_DELETEALL = 3,
 			OPERATION_MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum NtmsNotificationOperations : int32
 		{
 			OBJ_UPDATE = 1,
@@ -1198,7 +1115,6 @@ namespace Win32
 			EVENT_SIGNAL = 4,
 			EVENT_COMPLETE = 5,
 		}
-		[AllowDuplicates]
 		public enum CLS_CONTEXT_MODE : int32
 		{
 			None = 0,
@@ -1206,7 +1122,6 @@ namespace Win32
 			Previous = 2,
 			Forward = 3,
 		}
-		[AllowDuplicates]
 		public enum CLFS_CONTEXT_MODE : int32
 		{
 			None = 0,
@@ -1214,7 +1129,6 @@ namespace Win32
 			Previous = 2,
 			Forward = 3,
 		}
-		[AllowDuplicates]
 		public enum CLS_LOG_INFORMATION_CLASS : int32
 		{
 			BasicInformation = 0,
@@ -1224,25 +1138,21 @@ namespace Win32
 			SystemMarkingInformation = 4,
 			PhysicalLsnInformation = 5,
 		}
-		[AllowDuplicates]
 		public enum CLS_IOSTATS_CLASS : int32
 		{
 			Default = 0,
 			Max = 65535,
 		}
-		[AllowDuplicates]
 		public enum CLFS_IOSTATS_CLASS : int32
 		{
 			Default = 0,
 			Max = 65535,
 		}
-		[AllowDuplicates]
 		public enum CLFS_LOG_ARCHIVE_MODE : int32
 		{
 			Enabled = 1,
 			Disabled = 2,
 		}
-		[AllowDuplicates]
 		public enum CLFS_MGMT_POLICY_TYPE : int32
 		{
 			MaximumSize = 0,
@@ -1257,7 +1167,6 @@ namespace Win32
 			NewContainerExtension = 9,
 			Invalid = 10,
 		}
-		[AllowDuplicates]
 		public enum CLFS_MGMT_NOTIFICATION_TYPE : int32
 		{
 			AdvanceTailNotification = 0,
@@ -1265,25 +1174,21 @@ namespace Win32
 			LogUnpinnedNotification = 2,
 			LogWriteNotification = 3,
 		}
-		[AllowDuplicates]
 		public enum SERVER_CERTIFICATE_TYPE : int32
 		{
 			QUIC = 0,
 		}
-		[AllowDuplicates]
 		public enum IORING_VERSION : int32
 		{
 			INVALID = 0,
 			_1 = 1,
 		}
-		[AllowDuplicates]
 		public enum IORING_FEATURE_FLAGS : int32
 		{
 			FLAGS_NONE = 0,
 			UM_EMULATION = 1,
 			SET_COMPLETION_EVENT = 2,
 		}
-		[AllowDuplicates]
 		public enum IORING_OP_CODE : int32
 		{
 			NOP = 0,
@@ -1292,35 +1197,29 @@ namespace Win32
 			REGISTER_BUFFERS = 3,
 			CANCEL = 4,
 		}
-		[AllowDuplicates]
 		public enum IORING_SQE_FLAGS : int32
 		{
 			IOSQE_FLAGS_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum IORING_CREATE_REQUIRED_FLAGS : int32
 		{
 			IORING_CREATE_REQUIRED_FLAGS_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum IORING_CREATE_ADVISORY_FLAGS : int32
 		{
 			IORING_CREATE_ADVISORY_FLAGS_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum IORING_REF_KIND : int32
 		{
 			AW = 0,
 			EGISTERED = 1,
 		}
-		[AllowDuplicates]
 		public enum TRANSACTION_OUTCOME : int32
 		{
 			Undetermined = 1,
 			Committed = 2,
 			Aborted = 3,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_BUS_TYPE : int32
 		{
 			Unknown = 0,
@@ -1346,7 +1245,6 @@ namespace Win32
 			Max = 20,
 			MaxReserved = 127,
 		}
-		[AllowDuplicates]
 		public enum COPYFILE2_MESSAGE_TYPE : int32
 		{
 			NONE = 0,
@@ -1358,7 +1256,6 @@ namespace Win32
 			ERROR = 6,
 			MAX = 7,
 		}
-		[AllowDuplicates]
 		public enum COPYFILE2_MESSAGE_ACTION : int32
 		{
 			CONTINUE = 0,
@@ -1367,7 +1264,6 @@ namespace Win32
 			QUIET = 3,
 			PAUSE = 4,
 		}
-		[AllowDuplicates]
 		public enum COPYFILE2_COPY_PHASE : int32
 		{
 			NONE = 0,
@@ -1379,7 +1275,6 @@ namespace Win32
 			NAMEGRAFT_COPY = 6,
 			MAX = 7,
 		}
-		[AllowDuplicates]
 		public enum PRIORITY_HINT : int32
 		{
 			IoPriorityHintVeryLow = 0,
@@ -1387,7 +1282,6 @@ namespace Win32
 			IoPriorityHintNormal = 2,
 			MaximumIoPriorityHintType = 3,
 		}
-		[AllowDuplicates]
 		public enum FILE_ID_TYPE : int32
 		{
 			FileIdType = 0,

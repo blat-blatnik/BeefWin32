@@ -12,7 +12,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum PRJ_NOTIFY_TYPES : uint32
 		{
 			NONE = 0,
@@ -31,7 +30,6 @@ namespace Win32
 			FILE_PRE_CONVERT_TO_FULL = 4096,
 			USE_EXISTING_MASK = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum PRJ_NOTIFICATION : int32
 		{
 			FILE_OPENED = 2,
@@ -47,23 +45,19 @@ namespace Win32
 			FILE_HANDLE_CLOSED_FILE_DELETED = 2048,
 			FILE_PRE_CONVERT_TO_FULL = 4096,
 		}
-		[AllowDuplicates]
 		public enum PRJ_EXT_INFO_TYPE : int32
 		{
 			PRJ_EXT_INFO_TYPE_SYMLINK = 1,
 		}
-		[AllowDuplicates]
 		public enum PRJ_STARTVIRTUALIZING_FLAGS : uint32
 		{
 			NONE = 0,
 			USE_NEGATIVE_PATH_CACHE = 1,
 		}
-		[AllowDuplicates]
 		public enum PRJ_PLACEHOLDER_ID : int32
 		{
 			PRJ_PLACEHOLDER_ID_LENGTH = 128,
 		}
-		[AllowDuplicates]
 		public enum PRJ_UPDATE_TYPES : uint32
 		{
 			NONE = 0,
@@ -75,7 +69,6 @@ namespace Win32
 			ALLOW_READ_ONLY = 32,
 			MAX_VAL = 64,
 		}
-		[AllowDuplicates]
 		public enum PRJ_UPDATE_FAILURE_CAUSES : uint32
 		{
 			NONE = 0,
@@ -84,7 +77,6 @@ namespace Win32
 			TOMBSTONE = 4,
 			READ_ONLY = 8,
 		}
-		[AllowDuplicates]
 		public enum PRJ_FILE_STATE : uint32
 		{
 			PLACEHOLDER = 1,
@@ -93,13 +85,11 @@ namespace Win32
 			FULL = 8,
 			TOMBSTONE = 16,
 		}
-		[AllowDuplicates]
 		public enum PRJ_CALLBACK_DATA_FLAGS : int32
 		{
 			START_SCAN = 1,
 			TURN_SINGLE_ENTRY = 2,
 		}
-		[AllowDuplicates]
 		public enum PRJ_COMPLETE_COMMAND_TYPE : int32
 		{
 			NOTIFICATION = 1,

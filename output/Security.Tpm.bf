@@ -11,14 +11,12 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum TPMVSC_ATTESTATION_TYPE : int32
 		{
 			NONE = 0,
 			AIK_ONLY = 1,
 			AIK_AND_CERTIFICATE = 2,
 		}
-		[AllowDuplicates]
 		public enum TPMVSCMGR_STATUS : int32
 		{
 			VTPMSMARTCARD_INITIALIZING = 0,
@@ -36,7 +34,6 @@ namespace Win32
 			CARD_CREATED = 12,
 			CARD_DESTROYED = 13,
 		}
-		[AllowDuplicates]
 		public enum TPMVSCMGR_ERROR : int32
 		{
 			IMPERSONATION = 0,

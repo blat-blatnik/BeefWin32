@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum INK_HIGH_CONTRAST_ADJUSTMENT : int32
 		{
 			SYSTEM_COLORS_WHEN_NECESSARY = 0,

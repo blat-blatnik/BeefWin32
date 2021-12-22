@@ -222,26 +222,22 @@ namespace Win32
 			OPEN_LINK = 8,
 			DONT_VIRTUALIZE = 16,
 		}
-		[AllowDuplicates]
 		public enum REG_CREATE_KEY_DISPOSITION : uint32
 		{
 			CREATED_NEW_KEY = 1,
 			OPENED_EXISTING_KEY = 2,
 		}
-		[AllowDuplicates]
 		public enum REG_SAVE_FORMAT : uint32
 		{
 			STANDARD_FORMAT = 1,
 			LATEST_FORMAT = 2,
 			NO_COMPRESSION = 4,
 		}
-		[AllowDuplicates]
 		public enum REG_RESTORE_KEY_FLAGS : int32
 		{
 			FORCE_RESTORE = 8,
 			WHOLE_HIVE_VOLATILE = 1,
 		}
-		[AllowDuplicates]
 		public enum REG_NOTIFY_FILTER : uint32
 		{
 			CHANGE_NAME = 1,
@@ -250,7 +246,6 @@ namespace Win32
 			CHANGE_SECURITY = 8,
 			THREAD_AGNOSTIC = 268435456,
 		}
-		[AllowDuplicates]
 		public enum RRF_RT : uint32
 		{
 			ANY = 65535,

@@ -806,18 +806,15 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WLAN_SET_EAPHOST_FLAGS : uint32
 		{
 			WLAN_SET_EAPHOST_DATA_ALL_USERS = 1,
 		}
-		[AllowDuplicates]
 		public enum WLAN_CONNECTION_NOTIFICATION_FLAGS : uint32
 		{
 			ADHOC_NETWORK_FORMED = 1,
 			CONSOLE_USER_PROFILE = 4,
 		}
-		[AllowDuplicates]
 		public enum DOT11_BSS_TYPE : int32
 		{
 			infrastructure = 1,
@@ -881,20 +878,17 @@ namespace Win32
 			IHV_start = -2147483648,
 			IHV_end = -1,
 		}
-		[AllowDuplicates]
 		public enum DOT11_OFFLOAD_TYPE : int32
 		{
 			wep = 1,
 			auth = 2,
 		}
-		[AllowDuplicates]
 		public enum DOT11_KEY_DIRECTION : int32
 		{
 			both = 1,
 			inbound = 2,
 			outbound = 3,
 		}
-		[AllowDuplicates]
 		public enum DOT11_SCAN_TYPE : int32
 		{
 			active = 1,
@@ -902,41 +896,35 @@ namespace Win32
 			auto = 3,
 			forced = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum CH_DESCRIPTION_TYPE : int32
 		{
 			logical = 1,
 			center_frequency = 2,
 			phy_specific = 3,
 		}
-		[AllowDuplicates]
 		public enum DOT11_UPDATE_IE_OP : int32
 		{
 			create_replace = 1,
 			@delete = 2,
 		}
-		[AllowDuplicates]
 		public enum DOT11_RESET_TYPE : int32
 		{
 			phy = 1,
 			mac = 2,
 			phy_and_mac = 3,
 		}
-		[AllowDuplicates]
 		public enum DOT11_POWER_MODE : int32
 		{
 			unknown = 0,
 			active = 1,
 			powersave = 2,
 		}
-		[AllowDuplicates]
 		public enum DOT11_TEMP_TYPE : int32
 		{
 			unknown = 0,
 			_1 = 1,
 			_2 = 2,
 		}
-		[AllowDuplicates]
 		public enum DOT11_DIVERSITY_SUPPORT : int32
 		{
 			unknown = 0,
@@ -944,14 +932,12 @@ namespace Win32
 			notsupported = 2,
 			dynamic = 3,
 		}
-		[AllowDuplicates]
 		public enum DOT11_HOP_ALGO_ADOPTED : int32
 		{
 			current = 0,
 			hop_index = 1,
 			hcc = 2,
 		}
-		[AllowDuplicates]
 		public enum DOT11_AC_PARAM : int32
 		{
 			BE = 0,
@@ -960,14 +946,12 @@ namespace Win32
 			VO = 3,
 			max = 4,
 		}
-		[AllowDuplicates]
 		public enum DOT11_DIRECTION : int32
 		{
 			INBOUND = 1,
 			OUTBOUND = 2,
 			BOTH = 3,
 		}
-		[AllowDuplicates]
 		public enum DOT11_ASSOCIATION_STATE : int32
 		{
 			zero = 0,
@@ -975,14 +959,12 @@ namespace Win32
 			auth_unassoc = 2,
 			auth_assoc = 3,
 		}
-		[AllowDuplicates]
 		public enum DOT11_DS_INFO : int32
 		{
 			CHANGED = 0,
 			UNCHANGED = 1,
 			UNKNOWN = 2,
 		}
-		[AllowDuplicates]
 		public enum DOT11_WPS_CONFIG_METHOD : int32
 		{
 			NULL = 0,
@@ -993,7 +975,6 @@ namespace Win32
 			KEYPAD = 256,
 			WFDS_DEFAULT = 4096,
 		}
-		[AllowDuplicates]
 		public enum DOT11_WPS_DEVICE_PASSWORD_ID : int32
 		{
 			DEFAULT = 0,
@@ -1007,7 +988,6 @@ namespace Win32
 			OOB_RANGE_MIN = 16,
 			OOB_RANGE_MAX = 65535,
 		}
-		[AllowDuplicates]
 		public enum DOT11_ANQP_QUERY_RESULT : int32
 		{
 			success = 0,
@@ -1019,7 +999,6 @@ namespace Win32
 			advertisement_server_not_responding = 6,
 			access_issues = 7,
 		}
-		[AllowDuplicates]
 		public enum DOT11_WFD_DISCOVER_TYPE : int32
 		{
 			scan_only = 1,
@@ -1028,14 +1007,12 @@ namespace Win32
 			scan_social_channels = 4,
 			forced = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum DOT11_WFD_SCAN_TYPE : int32
 		{
 			active = 1,
 			passive = 2,
 			auto = 3,
 		}
-		[AllowDuplicates]
 		public enum DOT11_POWER_MODE_REASON : int32
 		{
 			no_change = 0,
@@ -1045,7 +1022,6 @@ namespace Win32
 			compliant_WFD_device = 4,
 			others = 5,
 		}
-		[AllowDuplicates]
 		public enum DOT11_MANUFACTURING_TEST_TYPE : int32
 		{
 			unknown = 0,
@@ -1061,21 +1037,18 @@ namespace Win32
 			IHV_start = -2147483648,
 			IHV_end = -1,
 		}
-		[AllowDuplicates]
 		public enum DOT11_MANUFACTURING_SELF_TEST_TYPE : int32
 		{
 			INTERFACE = 1,
 			RF_INTERFACE = 2,
 			BT_COEXISTENCE = 3,
 		}
-		[AllowDuplicates]
 		public enum DOT11_BAND : int32
 		{
 			_2p4g = 1,
 			_4p9g = 2,
 			_5g = 3,
 		}
-		[AllowDuplicates]
 		public enum DOT11_MANUFACTURING_CALLBACK_TYPE : int32
 		{
 			unknown = 0,
@@ -1084,7 +1057,6 @@ namespace Win32
 			IHV_start = -2147483648,
 			IHV_end = -1,
 		}
-		[AllowDuplicates]
 		public enum WLAN_CONNECTION_MODE : int32
 		{
 			profile = 0,
@@ -1094,7 +1066,6 @@ namespace Win32
 			auto = 4,
 			invalid = 5,
 		}
-		[AllowDuplicates]
 		public enum WLAN_INTERFACE_STATE : int32
 		{
 			not_ready = 0,
@@ -1106,20 +1077,17 @@ namespace Win32
 			discovering = 6,
 			authenticating = 7,
 		}
-		[AllowDuplicates]
 		public enum WLAN_ADHOC_NETWORK_STATE : int32
 		{
 			formed = 0,
 			connected = 1,
 		}
-		[AllowDuplicates]
 		public enum DOT11_RADIO_STATE : int32
 		{
 			unknown = 0,
 			on = 1,
 			off = 2,
 		}
-		[AllowDuplicates]
 		public enum WLAN_OPERATIONAL_STATE : int32
 		{
 			unknown = 0,
@@ -1128,14 +1096,12 @@ namespace Win32
 			going_off = 3,
 			going_on = 4,
 		}
-		[AllowDuplicates]
 		public enum WLAN_INTERFACE_TYPE : int32
 		{
 			emulated_802_11 = 0,
 			native_802_11 = 1,
 			invalid = 2,
 		}
-		[AllowDuplicates]
 		public enum WLAN_POWER_SETTING : int32
 		{
 			no_saving = 0,
@@ -1144,7 +1110,6 @@ namespace Win32
 			maximum_saving = 3,
 			invalid = 4,
 		}
-		[AllowDuplicates]
 		public enum WLAN_NOTIFICATION_ACM : int32
 		{
 			start = 0,
@@ -1177,7 +1142,6 @@ namespace Win32
 			operational_state_change = 27,
 			end = 28,
 		}
-		[AllowDuplicates]
 		public enum WLAN_NOTIFICATION_MSM : int32
 		{
 			start = 0,
@@ -1199,13 +1163,11 @@ namespace Win32
 			link_improved = 16,
 			end = 17,
 		}
-		[AllowDuplicates]
 		public enum WLAN_NOTIFICATION_SECURITY : int32
 		{
 			start = 0,
 			end = 1,
 		}
-		[AllowDuplicates]
 		public enum WLAN_OPCODE_VALUE_TYPE : int32
 		{
 			query_only = 0,
@@ -1213,7 +1175,6 @@ namespace Win32
 			set_by_user = 2,
 			invalid = 3,
 		}
-		[AllowDuplicates]
 		public enum WLAN_INTF_OPCODE : int32
 		{
 			autoconf_start = 0,
@@ -1245,7 +1206,6 @@ namespace Win32
 			ihv_start = 805306368,
 			ihv_end = 1073741823,
 		}
-		[AllowDuplicates]
 		public enum WLAN_AUTOCONF_OPCODE : int32
 		{
 			start = 0,
@@ -1257,13 +1217,11 @@ namespace Win32
 			allow_virtual_station_extensibility = 6,
 			end = 7,
 		}
-		[AllowDuplicates]
 		public enum WLAN_IHV_CONTROL_TYPE : int32
 		{
 			service = 0,
 			driver = 1,
 		}
-		[AllowDuplicates]
 		public enum WLAN_FILTER_LIST_TYPE : int32
 		{
 			gp_permit = 0,
@@ -1271,7 +1229,6 @@ namespace Win32
 			user_permit = 2,
 			user_deny = 3,
 		}
-		[AllowDuplicates]
 		public enum WLAN_SECURABLE_OBJECT : int32
 		{
 			wlan_secure_permit_list = 0,
@@ -1293,7 +1250,6 @@ namespace Win32
 			wlan_secure_wfd_elevated_access = 16,
 			WLAN_SECURABLE_OBJECT_COUNT = 17,
 		}
-		[AllowDuplicates]
 		public enum WFD_ROLE_TYPE : int32
 		{
 			NONE = 0,
@@ -1302,21 +1258,18 @@ namespace Win32
 			CLIENT = 4,
 			MAX = 5,
 		}
-		[AllowDuplicates]
 		public enum WL_DISPLAY_PAGES : int32
 		{
 			ConnectionPage = 0,
 			SecurityPage = 1,
 			AdvPage = 2,
 		}
-		[AllowDuplicates]
 		public enum WLAN_HOSTED_NETWORK_STATE : int32
 		{
 			unavailable = 0,
 			idle = 1,
 			active = 2,
 		}
-		[AllowDuplicates]
 		public enum WLAN_HOSTED_NETWORK_REASON : int32
 		{
 			success = 0,
@@ -1349,20 +1302,17 @@ namespace Win32
 			virtual_station_blocking_use = 27,
 			service_available_on_virtual_station = 28,
 		}
-		[AllowDuplicates]
 		public enum WLAN_HOSTED_NETWORK_PEER_AUTH_STATE : int32
 		{
 			invalid = 0,
 			authenticated = 1,
 		}
-		[AllowDuplicates]
 		public enum WLAN_HOSTED_NETWORK_NOTIFICATION_CODE : int32
 		{
 			state_change = 4096,
 			peer_state_change = 4097,
 			radio_state_change = 4098,
 		}
-		[AllowDuplicates]
 		public enum WLAN_HOSTED_NETWORK_OPCODE : int32
 		{
 			connection_settings = 0,
@@ -1370,7 +1320,6 @@ namespace Win32
 			station_profile = 2,
 			enable = 3,
 		}
-		[AllowDuplicates]
 		public enum ONEX_AUTH_IDENTITY : int32
 		{
 			None = 0,
@@ -1380,7 +1329,6 @@ namespace Win32
 			Guest = 4,
 			Invalid = 5,
 		}
-		[AllowDuplicates]
 		public enum ONEX_AUTH_STATUS : int32
 		{
 			NotStarted = 0,
@@ -1390,7 +1338,6 @@ namespace Win32
 			Failure = 4,
 			Invalid = 5,
 		}
-		[AllowDuplicates]
 		public enum ONEX_REASON_CODE : int32
 		{
 			REASON_CODE_SUCCESS = 0,
@@ -1425,7 +1372,6 @@ namespace Win32
 			NotificationTypeEventInvalid = 3,
 			NumNotifications = 3,
 		}
-		[AllowDuplicates]
 		public enum ONEX_AUTH_RESTART_REASON : int32
 		{
 			PeerInitiated = 0,
@@ -1438,14 +1384,12 @@ namespace Win32
 			AltCredsTrial = 7,
 			Invalid = 8,
 		}
-		[AllowDuplicates]
 		public enum ONEX_EAP_METHOD_BACKEND_SUPPORT : int32
 		{
 			SupportUnknown = 0,
 			Supported = 1,
 			Unsupported = 2,
 		}
-		[AllowDuplicates]
 		public enum DOT11_ADHOC_CIPHER_ALGORITHM : int32
 		{
 			INVALID = -1,
@@ -1453,14 +1397,12 @@ namespace Win32
 			CCMP = 4,
 			WEP = 257,
 		}
-		[AllowDuplicates]
 		public enum DOT11_ADHOC_AUTH_ALGORITHM : int32
 		{
 			INVALID = -1,
 			_80211_OPEN = 1,
 			RSNA_PSK = 7,
 		}
-		[AllowDuplicates]
 		public enum DOT11_ADHOC_NETWORK_CONNECTION_STATUS : int32
 		{
 			INVALID = 0,
@@ -1469,7 +1411,6 @@ namespace Win32
 			CONNECTED = 13,
 			FORMED = 14,
 		}
-		[AllowDuplicates]
 		public enum DOT11_ADHOC_CONNECT_FAIL_REASON : int32
 		{
 			DOMAIN_MISMATCH = 0,

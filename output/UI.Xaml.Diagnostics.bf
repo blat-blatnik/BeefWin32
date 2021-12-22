@@ -11,13 +11,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum VisualMutationType : int32
 		{
 			Add = 0,
 			Remove = 1,
 		}
-		[AllowDuplicates]
 		public enum BaseValueSource : int32
 		{
 			BaseValueSourceUnknown = 0,
@@ -36,7 +34,6 @@ namespace Win32
 			Coercion = 13,
 			BaseValueSourceVisualState = 14,
 		}
-		[AllowDuplicates]
 		public enum MetadataBit : int32
 		{
 			None = 0,
@@ -48,19 +45,16 @@ namespace Win32
 			IsValueNull = 32,
 			IsValueHandleAndEvaluatedValue = 64,
 		}
-		[AllowDuplicates]
 		public enum RenderTargetBitmapOptions : int32
 		{
 			t = 0,
 			tAndChildren = 1,
 		}
-		[AllowDuplicates]
 		public enum ResourceType : int32
 		{
 			Static = 0,
 			Theme = 1,
 		}
-		[AllowDuplicates]
 		public enum VisualElementState : int32
 		{
 			Resolved = 0,

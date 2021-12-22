@@ -30,7 +30,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DWMWINDOWATTRIBUTE : int32
 		{
 			NCRENDERING_ENABLED = 1,
@@ -58,7 +57,6 @@ namespace Win32
 			VISIBLE_FRAME_BORDER_THICKNESS = 37,
 			LAST = 38,
 		}
-		[AllowDuplicates]
 		public enum DWM_WINDOW_CORNER_PREFERENCE : int32
 		{
 			DEFAULT = 0,
@@ -66,7 +64,6 @@ namespace Win32
 			ROUND = 2,
 			ROUNDSMALL = 3,
 		}
-		[AllowDuplicates]
 		public enum DWMNCRENDERINGPOLICY : int32
 		{
 			USEWINDOWSTYLE = 0,
@@ -74,7 +71,6 @@ namespace Win32
 			ENABLED = 2,
 			LAST = 3,
 		}
-		[AllowDuplicates]
 		public enum DWMFLIP3DWINDOWPOLICY : int32
 		{
 			DEFAULT = 0,
@@ -82,20 +78,17 @@ namespace Win32
 			EXCLUDEABOVE = 2,
 			LAST = 3,
 		}
-		[AllowDuplicates]
 		public enum DWM_SOURCE_FRAME_SAMPLING : int32
 		{
 			POINT = 0,
 			COVERAGE = 1,
 			LAST = 2,
 		}
-		[AllowDuplicates]
 		public enum DWMTRANSITION_OWNEDWINDOW_TARGET : int32
 		{
 			NULL = -1,
 			REPOSITION = 0,
 		}
-		[AllowDuplicates]
 		public enum GESTURE_TYPE : int32
 		{
 			PEN_TAP = 0,
@@ -110,7 +103,6 @@ namespace Win32
 			TOUCH_PRESSANDHOLDABORT = 9,
 			TOUCH_PRESSANDTAP = 10,
 		}
-		[AllowDuplicates]
 		public enum DWM_SHOWCONTACT : uint32
 		{
 			DOWN = 1,
@@ -121,7 +113,6 @@ namespace Win32
 			NONE = 0,
 			ALL = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum DWM_TAB_WINDOW_REQUIREMENTS : uint32
 		{
 			NONE = 0,

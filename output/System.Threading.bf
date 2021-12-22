@@ -47,7 +47,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum THREAD_CREATION_FLAGS : uint32
 		{
 			THREAD_CREATE_RUN_IMMEDIATELY = 0,
@@ -68,7 +67,6 @@ namespace Win32
 			PRIORITY_NORMAL = 0,
 			PRIORITY_TIME_CRITICAL = 15,
 		}
-		[AllowDuplicates]
 		public enum WORKER_THREAD_FLAGS : uint32
 		{
 			EXECUTEDEFAULT = 0,
@@ -80,38 +78,32 @@ namespace Win32
 			TRANSFER_IMPERSONATION = 256,
 			EXECUTEINTIMERTHREAD = 32,
 		}
-		[AllowDuplicates]
 		public enum CREATE_EVENT : uint32
 		{
 			INITIAL_SET = 2,
 			MANUAL_RESET = 1,
 		}
-		[AllowDuplicates]
 		public enum CREATE_PROCESS_LOGON_FLAGS : uint32
 		{
 			WITH_PROFILE = 1,
 			NETCREDENTIALS_ONLY = 2,
 		}
-		[AllowDuplicates]
 		public enum PROCESS_AFFINITY_AUTO_UPDATE_FLAGS : uint32
 		{
 			DISABLE_AUTO_UPDATE = 0,
 			ENABLE_AUTO_UPDATE = 1,
 		}
-		[AllowDuplicates]
 		public enum PROCESS_DEP_FLAGS : uint32
 		{
 			ENABLE = 1,
 			DISABLE_ATL_THUNK_EMULATION = 2,
 			NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum PROCESS_NAME_FORMAT : uint32
 		{
 			WIN32 = 0,
 			NATIVE = 1,
 		}
-		[AllowDuplicates]
 		public enum PROCESSOR_FEATURE_ID : uint32
 		{
 			ARM_64BIT_LOADSTORE_ATOMIC = 25,
@@ -143,7 +135,6 @@ namespace Win32
 			ARM_V8_CRC32_INSTRUCTIONS_AVAILABLE = 31,
 			ARM_V81_ATOMIC_INSTRUCTIONS_AVAILABLE = 34,
 		}
-		[AllowDuplicates]
 		public enum GET_GUI_RESOURCES_FLAGS : uint32
 		{
 			GDIOBJECTS = 0,
@@ -151,7 +142,6 @@ namespace Win32
 			USEROBJECTS = 1,
 			USEROBJECTS_PEAK = 4,
 		}
-		[AllowDuplicates]
 		public enum STARTUPINFOW_FLAGS : uint32
 		{
 			FORCEONFEEDBACK = 64,
@@ -169,7 +159,6 @@ namespace Win32
 			USESIZE = 2,
 			USESTDHANDLES = 256,
 		}
-		[AllowDuplicates]
 		public enum MEMORY_PRIORITY : uint32
 		{
 			VERY_LOW = 1,
@@ -178,7 +167,6 @@ namespace Win32
 			BELOW_NORMAL = 4,
 			NORMAL = 5,
 		}
-		[AllowDuplicates]
 		public enum PROCESS_PROTECTION_LEVEL : uint32
 		{
 			WINTCB_LIGHT = 0,
@@ -192,13 +180,11 @@ namespace Win32
 			PPL_APP = 8,
 			NONE = 4294967294,
 		}
-		[AllowDuplicates]
 		public enum POWER_REQUEST_CONTEXT_FLAGS : uint32
 		{
 			DETAILED_STRING = 2,
 			SIMPLE_STRING = 1,
 		}
-		[AllowDuplicates]
 		public enum THREAD_ACCESS_RIGHTS : uint32
 		{
 			TERMINATE = 1,
@@ -221,7 +207,6 @@ namespace Win32
 			SYNCHRONIZE = 1048576,
 			STANDARD_RIGHTS_REQUIRED = 983040,
 		}
-		[AllowDuplicates]
 		public enum PROCESS_CREATION_FLAGS : uint32
 		{
 			DEBUG_PROCESS = 1,
@@ -256,7 +241,6 @@ namespace Win32
 			PROFILE_SERVER = 1073741824,
 			CREATE_IGNORE_SYSTEM_DEFAULT = 2147483648,
 		}
-		[AllowDuplicates]
 		public enum PROCESS_ACCESS_RIGHTS : uint32
 		{
 			TERMINATE = 1,
@@ -281,13 +265,11 @@ namespace Win32
 			SYNCHRONIZE = 1048576,
 			STANDARD_RIGHTS_REQUIRED = 983040,
 		}
-		[AllowDuplicates]
 		public enum QUEUE_USER_APC_FLAGS : int32
 		{
 			NONE = 0,
 			SPECIAL_USER_APC = 1,
 		}
-		[AllowDuplicates]
 		public enum THREAD_INFORMATION_CLASS : int32
 		{
 			MemoryPriority = 0,
@@ -296,7 +278,6 @@ namespace Win32
 			PowerThrottling = 3,
 			InformationClassMax = 4,
 		}
-		[AllowDuplicates]
 		public enum PROCESS_INFORMATION_CLASS : int32
 		{
 			MemoryPriority = 0,
@@ -311,20 +292,17 @@ namespace Win32
 			MachineTypeInfo = 9,
 			InformationClassMax = 10,
 		}
-		[AllowDuplicates]
 		public enum MACHINE_ATTRIBUTES : uint32
 		{
 			UserEnabled = 1,
 			KernelEnabled = 2,
 			Wow64Container = 4,
 		}
-		[AllowDuplicates]
 		public enum PROCESS_MEMORY_EXHAUSTION_TYPE : int32
 		{
 			FailFastOnCommitFailure = 0,
 			Max = 1,
 		}
-		[AllowDuplicates]
 		public enum PROCESS_MITIGATION_POLICY : int32
 		{
 			ProcessDEPPolicy = 0,
@@ -346,7 +324,6 @@ namespace Win32
 			ProcessRedirectionTrustPolicy = 16,
 			MaxProcessMitigationPolicy = 17,
 		}
-		[AllowDuplicates]
 		public enum RTL_UMS_THREAD_INFO_CLASS : int32
 		{
 			InvalidInfoClass = 0,
@@ -367,7 +344,6 @@ namespace Win32
 			INVALID = 3,
 			COUNT = 3,
 		}
-		[AllowDuplicates]
 		public enum PROCESSINFOCLASS : int32
 		{
 			BasicInformation = 0,
@@ -376,7 +352,6 @@ namespace Win32
 			ImageFileName = 27,
 			BreakOnTermination = 29,
 		}
-		[AllowDuplicates]
 		public enum THREADINFOCLASS : int32
 		{
 			IsIoPending = 16,

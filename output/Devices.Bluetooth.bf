@@ -784,13 +784,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum NodeContainerType : int32
 		{
 			Sequence = 0,
 			Alternative = 1,
 		}
-		[AllowDuplicates]
 		public enum SDP_TYPE : int32
 		{
 			NIL = 0,
@@ -822,7 +820,6 @@ namespace Win32
 			UUID32 = 544,
 			UUID128 = 1072,
 		}
-		[AllowDuplicates]
 		public enum IO_CAPABILITY : int32
 		{
 			DisplayOnly = 0,
@@ -831,7 +828,6 @@ namespace Win32
 			NoInputNoOutput = 3,
 			Undefined = 255,
 		}
-		[AllowDuplicates]
 		public enum AUTHENTICATION_REQUIREMENTS : int32
 		{
 			NotRequired = 0,
@@ -842,7 +838,6 @@ namespace Win32
 			RequiredGeneralBonding = 5,
 			NotDefined = 255,
 		}
-		[AllowDuplicates]
 		public enum BLUETOOTH_AUTHENTICATION_METHOD : int32
 		{
 			LEGACY = 1,
@@ -851,7 +846,6 @@ namespace Win32
 			PASSKEY_NOTIFICATION = 4,
 			PASSKEY = 5,
 		}
-		[AllowDuplicates]
 		public enum BLUETOOTH_IO_CAPABILITY : int32
 		{
 			DISPLAYONLY = 0,
@@ -860,7 +854,6 @@ namespace Win32
 			NOINPUTNOOUTPUT = 3,
 			UNDEFINED = 255,
 		}
-		[AllowDuplicates]
 		public enum BLUETOOTH_AUTHENTICATION_REQUIREMENTS : int32
 		{
 			NotRequired = 0,

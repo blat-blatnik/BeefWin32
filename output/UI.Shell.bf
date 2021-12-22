@@ -1596,7 +1596,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum SHGFI_FLAGS : int32
 		{
 			ADDOVERLAYS = 32,
@@ -1618,7 +1617,6 @@ namespace Win32
 			TYPENAME = 1024,
 			USEFILEATTRIBUTES = 16,
 		}
-		[AllowDuplicates]
 		public enum SHCNE_ID : uint32
 		{
 			RENAMEITEM = 1,
@@ -1647,7 +1645,6 @@ namespace Win32
 			ALLEVENTS = 2147483647,
 			INTERRUPT = 2147483648,
 		}
-		[AllowDuplicates]
 		public enum SHCNRF_SOURCE : int32
 		{
 			InterruptLevel = 1,
@@ -1683,7 +1680,6 @@ namespace Win32
 			F_CACHED = 1,
 			F_DONTEXPANDFOLDER = 2,
 		}
-		[AllowDuplicates]
 		public enum SHDID_ID : int32
 		{
 			ROOT_REGITEM = 1,
@@ -1709,14 +1705,12 @@ namespace Win32
 			MOBILE_DEVICE = 21,
 			REMOTE_DESKTOP_DRIVE = 22,
 		}
-		[AllowDuplicates]
 		public enum SHGDFIL_FORMAT : int32
 		{
 			FINDDATA = 1,
 			NETRESOURCE = 2,
 			DESCRIPTIONID = 3,
 		}
-		[AllowDuplicates]
 		public enum PRF_FLAGS : int32
 		{
 			VERIFYEXISTS = 1,
@@ -1725,7 +1719,6 @@ namespace Win32
 			DONTFINDLNK = 8,
 			REQUIREABSOLUTE = 16,
 		}
-		[AllowDuplicates]
 		public enum PCS_RET : uint32
 		{
 			FATAL = 2147483648,
@@ -1734,40 +1727,34 @@ namespace Win32
 			TRUNCATED = 4,
 			PATHTOOLONG = 8,
 		}
-		[AllowDuplicates]
 		public enum MM_FLAGS : uint32
 		{
 			ADDSEPARATOR = 1,
 			SUBMENUSHAVEIDS = 2,
 			DONTREMOVESEPS = 4,
 		}
-		[AllowDuplicates]
 		public enum SHOP_TYPE : int32
 		{
 			PRINTERNAME = 1,
 			FILEPATH = 2,
 			VOLUMEGUID = 4,
 		}
-		[AllowDuplicates]
 		public enum SHFMT_ID : uint32
 		{
 			SHFMT_ID_DEFAULT = 65535,
 		}
-		[AllowDuplicates]
 		public enum SHFMT_OPT : int32
 		{
 			NONE = 0,
 			FULL = 1,
 			SYSONLY = 2,
 		}
-		[AllowDuplicates]
 		public enum SHFMT_RET : uint32
 		{
 			ERROR = 4294967295,
 			CANCEL = 4294967294,
 			NOFORMAT = 4294967293,
 		}
-		[AllowDuplicates]
 		public enum VALIDATEUNC_OPTION : int32
 		{
 			CONNECT = 1,
@@ -1776,7 +1763,6 @@ namespace Win32
 			PERSIST = 8,
 			VALID = 15,
 		}
-		[AllowDuplicates]
 		public enum SFVM_MESSAGE_ID : int32
 		{
 			MERGEMENU = 1,
@@ -1809,14 +1795,12 @@ namespace Win32
 			GETHELPTOPIC = 63,
 			GETANIMATION = 68,
 		}
-		[AllowDuplicates]
 		public enum SFVS_SELECT : int32
 		{
 			NONE = 0,
 			ALLITEMS = 1,
 			INVERT = 2,
 		}
-		[AllowDuplicates]
 		public enum DFM_MESSAGE_ID : int32
 		{
 			MERGECONTEXTMENU = 1,
@@ -1836,7 +1820,6 @@ namespace Win32
 			MERGECONTEXTMENU_BOTTOM = 17,
 			MODIFYQCMFLAGS = 18,
 		}
-		[AllowDuplicates]
 		public enum DFM_CMD : int32
 		{
 			DELETE = -1,
@@ -1853,7 +1836,6 @@ namespace Win32
 			MODALPROP = -12,
 			RENAME = -13,
 		}
-		[AllowDuplicates]
 		public enum PID_IS : int32
 		{
 			URL = 2,
@@ -1869,7 +1851,6 @@ namespace Win32
 			COMMENT = 13,
 			ROAMED = 15,
 		}
-		[AllowDuplicates]
 		public enum PID_INTSITE : int32
 		{
 			WHATSNEW = 2,
@@ -1893,7 +1874,6 @@ namespace Win32
 			ICONFILE = 21,
 			ROAMED = 34,
 		}
-		[AllowDuplicates]
 		public enum PIDISF_FLAGS : int32
 		{
 			RECENTLYCHANGED = 1,
@@ -1901,14 +1881,12 @@ namespace Win32
 			CACHEIMAGES = 16,
 			FOLLOWALLLINKS = 32,
 		}
-		[AllowDuplicates]
 		public enum PIDISM_OPTIONS : int32
 		{
 			GLOBAL = 0,
 			WATCH = 1,
 			DONTWATCH = 2,
 		}
-		[AllowDuplicates]
 		public enum PIDISR_INFO : int32
 		{
 			UP_TO_DATE = 0,
@@ -1947,7 +1925,6 @@ namespace Win32
 			SHOWTYPEOVERLAY = 33554432,
 			SHOWSTATUSBAR = 67108864,
 		}
-		[AllowDuplicates]
 		public enum NOTIFY_ICON_MESSAGE : uint32
 		{
 			ADD = 0,
@@ -1956,7 +1933,6 @@ namespace Win32
 			SETFOCUS = 3,
 			SETVERSION = 4,
 		}
-		[AllowDuplicates]
 		public enum NOTIFY_ICON_DATA_FLAGS : uint32
 		{
 			MESSAGE = 1,
@@ -1968,7 +1944,6 @@ namespace Win32
 			REALTIME = 64,
 			SHOWTIP = 128,
 		}
-		[AllowDuplicates]
 		public enum OS : uint32
 		{
 			WINDOWS = 0,
@@ -2008,7 +1983,6 @@ namespace Win32
 			MEDIACENTER = 35,
 			APPLIANCE = 36,
 		}
-		[AllowDuplicates]
 		public enum _SHGDNF : int32
 		{
 			NORMAL = 0,
@@ -2017,7 +1991,6 @@ namespace Win32
 			FORADDRESSBAR = 16384,
 			FORPARSING = 32768,
 		}
-		[AllowDuplicates]
 		public enum _SHCONTF : int32
 		{
 			CHECKING_FOR_CHILDREN = 16,
@@ -2034,27 +2007,23 @@ namespace Win32
 			ENABLE_ASYNC = 32768,
 			INCLUDESUPERHIDDEN = 65536,
 		}
-		[AllowDuplicates]
 		public enum STORAGE_PROVIDER_FILE_FLAGS : int32
 		{
 			NONE = 0,
 			DOWNLOAD_BY_DEFAULT = 1,
 			CREATED_ON_THIS_DEVICE = 2,
 		}
-		[AllowDuplicates]
 		public enum MERGE_UPDATE_STATUS : int32
 		{
 			COMPLETE = 0,
 			USERINPUTNEEDED = 1,
 			FAILED = 2,
 		}
-		[AllowDuplicates]
 		public enum FOLDER_ENUM_MODE : int32
 		{
 			VIEWRESULT = 0,
 			NAVIGATION = 1,
 		}
-		[AllowDuplicates]
 		public enum FOLDERFLAGS : int32
 		{
 			NONE = 0,
@@ -2118,7 +2087,6 @@ namespace Win32
 			CONTENT = 5,
 			LAST = 5,
 		}
-		[AllowDuplicates]
 		public enum _SVSIF : int32
 		{
 			DESELECT = 0,
@@ -2135,7 +2103,6 @@ namespace Win32
 			KEYBOARDSELECT = 1025,
 			NOTAKEFOCUS = 1073741824,
 		}
-		[AllowDuplicates]
 		public enum _SVGIO : int32
 		{
 			BACKGROUND = 0,
@@ -2145,7 +2112,6 @@ namespace Win32
 			TYPE_MASK = 15,
 			FLAG_VIEWORDER = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum SVUIA_STATUS : int32
 		{
 			DEACTIVATE = 0,
@@ -2153,18 +2119,15 @@ namespace Win32
 			ACTIVATE_FOCUS = 2,
 			INPLACEACTIVATE = 3,
 		}
-		[AllowDuplicates]
 		public enum SORTDIRECTION : int32
 		{
 			DESCENDING = -1,
 			ASCENDING = 1,
 		}
-		[AllowDuplicates]
 		public enum FVTEXTTYPE : int32
 		{
 			FVST_EMPTYTEXT = 0,
 		}
-		[AllowDuplicates]
 		public enum CM_MASK : int32
 		{
 			WIDTH = 1,
@@ -2173,7 +2136,6 @@ namespace Win32
 			NAME = 8,
 			STATE = 16,
 		}
-		[AllowDuplicates]
 		public enum CM_STATE : int32
 		{
 			NONE = 0,
@@ -2182,19 +2144,16 @@ namespace Win32
 			NOSORTBYFOLDERNESS = 4,
 			ALWAYSVISIBLE = 8,
 		}
-		[AllowDuplicates]
 		public enum CM_ENUM_FLAGS : int32
 		{
 			ALL = 1,
 			VISIBLE = 2,
 		}
-		[AllowDuplicates]
 		public enum CM_SET_WIDTH_VALUE : int32
 		{
 			USEDEFAULT = -1,
 			AUTOSIZE = -2,
 		}
-		[AllowDuplicates]
 		public enum SIGDN : int32
 		{
 			NORMALDISPLAY = 0,
@@ -2208,7 +2167,6 @@ namespace Win32
 			PARENTRELATIVE = -2146959359,
 			PARENTRELATIVEFORUI = -2146877439,
 		}
-		[AllowDuplicates]
 		public enum _SICHINTF : int32
 		{
 			DISPLAY = 0,
@@ -2216,7 +2174,6 @@ namespace Win32
 			CANONICAL = 268435456,
 			TEST_FILESYSPATH_IF_NOT_EQUAL = 536870912,
 		}
-		[AllowDuplicates]
 		public enum DATAOBJ_GET_ITEM_FLAGS : int32
 		{
 			DEFAULT = 0,
@@ -2225,7 +2182,6 @@ namespace Win32
 			NO_URL = 4,
 			ONLY_IF_ONE = 8,
 		}
-		[AllowDuplicates]
 		public enum SIIGBF : int32
 		{
 			RESIZETOFIT = 0,
@@ -2239,7 +2195,6 @@ namespace Win32
 			ICONBACKGROUND = 128,
 			SCALEUP = 256,
 		}
-		[AllowDuplicates]
 		public enum STGOP : int32
 		{
 			MOVE = 1,
@@ -2268,7 +2223,6 @@ namespace Win32
 			MOVE_AS_COPY_DELETE = 1024,
 			SUSPEND_SHELLEVENTS = 2048,
 		}
-		[AllowDuplicates]
 		public enum _TRANSFER_ADVISE_STATE : int32
 		{
 			NONE = 0,
@@ -2285,7 +2239,6 @@ namespace Win32
 			MASK = 3,
 			ALLITEMS = 16384,
 		}
-		[AllowDuplicates]
 		public enum CATEGORYINFO_FLAGS : int32
 		{
 			NORMAL = 0,
@@ -2299,13 +2252,11 @@ namespace Win32
 			SEPARATE_IMAGES = 128,
 			SHOWEMPTY = 256,
 		}
-		[AllowDuplicates]
 		public enum CATSORT_FLAGS : int32
 		{
 			DEFAULT = 0,
 			NAME = 1,
 		}
-		[AllowDuplicates]
 		public enum SLR_FLAGS : int32
 		{
 			NONE = 0,
@@ -2324,7 +2275,6 @@ namespace Win32
 			UPDATE_MACHINE_AND_SID = 4096,
 			NO_OBJECT_ID = 8192,
 		}
-		[AllowDuplicates]
 		public enum SLGP_FLAGS : int32
 		{
 			SHORTPATH = 1,
@@ -2332,14 +2282,12 @@ namespace Win32
 			RAWPATH = 4,
 			RELATIVEPRIORITY = 8,
 		}
-		[AllowDuplicates]
 		public enum _SPINITF : int32
 		{
 			NORMAL = 0,
 			MODAL = 1,
 			NOMINIMIZE = 8,
 		}
-		[AllowDuplicates]
 		public enum _SPBEGINF : int32
 		{
 			NORMAL = 0,
@@ -2348,7 +2296,6 @@ namespace Win32
 			MARQUEEPROGRESS = 32,
 			NOCANCELBUTTON = 64,
 		}
-		[AllowDuplicates]
 		public enum SPACTION : int32
 		{
 			NONE = 0,
@@ -2366,18 +2313,15 @@ namespace Win32
 			FORMATTING = 12,
 			COPY_MOVING = 13,
 		}
-		[AllowDuplicates]
 		public enum SPTEXT : int32
 		{
 			SCRIPTION = 1,
 			TAIL = 2,
 		}
-		[AllowDuplicates]
 		public enum _EXPPS : int32
 		{
 			EXPPS_FILETYPES = 1,
 		}
-		[AllowDuplicates]
 		public enum DESKBANDCID : int32
 		{
 			BANDINFOCHANGED = 0,
@@ -2389,7 +2333,6 @@ namespace Win32
 			SETWINDOWTHEME = 6,
 			PERMITAUTOHIDE = 7,
 		}
-		[AllowDuplicates]
 		public enum THUMBBUTTONFLAGS : int32
 		{
 			ENABLED = 0,
@@ -2399,7 +2342,6 @@ namespace Win32
 			HIDDEN = 8,
 			NONINTERACTIVE = 16,
 		}
-		[AllowDuplicates]
 		public enum THUMBBUTTONMASK : int32
 		{
 			BITMAP = 1,
@@ -2407,7 +2349,6 @@ namespace Win32
 			TOOLTIP = 4,
 			FLAGS = 8,
 		}
-		[AllowDuplicates]
 		public enum TBPFLAG : int32
 		{
 			NOPROGRESS = 0,
@@ -2416,7 +2357,6 @@ namespace Win32
 			ERROR = 4,
 			PAUSED = 8,
 		}
-		[AllowDuplicates]
 		public enum STPFLAG : int32
 		{
 			NONE = 0,
@@ -2425,7 +2365,6 @@ namespace Win32
 			USEAPPPEEKALWAYS = 4,
 			USEAPPPEEKWHENACTIVE = 8,
 		}
-		[AllowDuplicates]
 		public enum EXPLORER_BROWSER_OPTIONS : int32
 		{
 			NONE = 0,
@@ -2438,14 +2377,12 @@ namespace Win32
 			NOBORDER = 64,
 			NOPERSISTVIEWSTATE = 128,
 		}
-		[AllowDuplicates]
 		public enum EXPLORER_BROWSER_FILL_FLAGS : int32
 		{
 			NONE = 0,
 			SELECTFROMDATAOBJECT = 256,
 			NODROPTARGET = 512,
 		}
-		[AllowDuplicates]
 		public enum _OPPROGDLGF : int32
 		{
 			DEFAULT = 0,
@@ -2456,7 +2393,6 @@ namespace Win32
 			NOMULTIDAYESTIMATES = 2048,
 			DONTDISPLAYLOCATIONS = 4096,
 		}
-		[AllowDuplicates]
 		public enum _PDMODE : int32
 		{
 			DEFAULT = 0,
@@ -2466,13 +2402,11 @@ namespace Win32
 			ERRORSBLOCKING = 8,
 			INDETERMINATE = 16,
 		}
-		[AllowDuplicates]
 		public enum FILE_OPERATION_FLAGS2 : int32
 		{
 			NONE = 0,
 			MERGEFOLDERSONCOLLISION = 1,
 		}
-		[AllowDuplicates]
 		public enum NAMESPACEWALKFLAG : int32
 		{
 			DEFAULT = 0,
@@ -2493,18 +2427,15 @@ namespace Win32
 			DONT_TRAVERSE_STREAM_JUNCTIONS = 16384,
 			ANY_IMPLIES_ALL = 32768,
 		}
-		[AllowDuplicates]
 		public enum BANDSITECID : int32
 		{
 			ADDED = 0,
 			REMOVED = 1,
 		}
-		[AllowDuplicates]
 		public enum MENUBANDHANDLERCID : int32
 		{
 			MBHANDCID_PIDLSELECT = 0,
 		}
-		[AllowDuplicates]
 		public enum MENUPOPUPSELECT : int32
 		{
 			EXECUTE = 0,
@@ -2514,7 +2445,6 @@ namespace Win32
 			SELECTRIGHT = 4,
 			CHILDTRACKING = 5,
 		}
-		[AllowDuplicates]
 		public enum MENUPOPUPPOPUPFLAGS : int32
 		{
 			SETFOCUS = 1,
@@ -2532,34 +2462,29 @@ namespace Win32
 			ALIGN_LEFT = 33554432,
 			ALIGN_RIGHT = 67108864,
 		}
-		[AllowDuplicates]
 		public enum FILE_USAGE_TYPE : int32
 		{
 			PLAYING = 0,
 			EDITING = 1,
 			GENERIC = 2,
 		}
-		[AllowDuplicates]
 		public enum FDE_OVERWRITE_RESPONSE : int32
 		{
 			DEFAULT = 0,
 			ACCEPT = 1,
 			REFUSE = 2,
 		}
-		[AllowDuplicates]
 		public enum FDE_SHAREVIOLATION_RESPONSE : int32
 		{
 			DEFAULT = 0,
 			ACCEPT = 1,
 			REFUSE = 2,
 		}
-		[AllowDuplicates]
 		public enum FDAP : int32
 		{
 			BOTTOM = 0,
 			TOP = 1,
 		}
-		[AllowDuplicates]
 		public enum _FILEOPENDIALOGOPTIONS : int32
 		{
 			OVERWRITEPROMPT = 2,
@@ -2586,7 +2511,6 @@ namespace Win32
 			FORCEPREVIEWPANEON = 1073741824,
 			SUPPORTSTREAMABLEITEMS = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum CDCONTROLSTATEF : int32
 		{
 			INACTIVE = 0,
@@ -2594,14 +2518,12 @@ namespace Win32
 			VISIBLE = 2,
 			ENABLEDVISIBLE = 3,
 		}
-		[AllowDuplicates]
 		public enum ASSOCIATIONLEVEL : int32
 		{
 			MACHINE = 0,
 			EFFECTIVE = 1,
 			USER = 2,
 		}
-		[AllowDuplicates]
 		public enum ASSOCIATIONTYPE : int32
 		{
 			FILEEXTENSION = 0,
@@ -2609,7 +2531,6 @@ namespace Win32
 			STARTMENUCLIENT = 2,
 			MIMETYPE = 3,
 		}
-		[AllowDuplicates]
 		public enum _BROWSERFRAMEOPTIONS : int32
 		{
 			FO_NONE = 0,
@@ -2633,7 +2554,6 @@ namespace Win32
 			FO_USE_IE_STATUSBAR = 131072,
 			FO_QUERY_ALL = -1,
 		}
-		[AllowDuplicates]
 		public enum NWMF : int32
 		{
 			UNLOADING = 1,
@@ -2651,7 +2571,6 @@ namespace Win32
 			SUGGESTTAB = 524288,
 			INACTIVETAB = 1048576,
 		}
-		[AllowDuplicates]
 		public enum ATTACHMENT_PROMPT : int32
 		{
 			NONE = 0,
@@ -2659,27 +2578,23 @@ namespace Win32
 			EXEC = 2,
 			EXEC_OR_SAVE = 3,
 		}
-		[AllowDuplicates]
 		public enum ATTACHMENT_ACTION : int32
 		{
 			CANCEL = 0,
 			SAVE = 1,
 			EXEC = 2,
 		}
-		[AllowDuplicates]
 		public enum SMINFOMASK : int32
 		{
 			TYPE = 1,
 			FLAGS = 2,
 			ICON = 4,
 		}
-		[AllowDuplicates]
 		public enum SMINFOTYPE : int32
 		{
 			EPARATOR = 1,
 			TRING = 2,
 		}
-		[AllowDuplicates]
 		public enum SMINFOFLAGS : int32
 		{
 			ICON = 1,
@@ -2696,7 +2611,6 @@ namespace Win32
 			DRAGNDROP = 4096,
 			NEW = 8192,
 		}
-		[AllowDuplicates]
 		public enum KF_CATEGORY : int32
 		{
 			VIRTUAL = 1,
@@ -2704,7 +2618,6 @@ namespace Win32
 			COMMON = 3,
 			PERUSER = 4,
 		}
-		[AllowDuplicates]
 		public enum _KF_DEFINITION_FLAGS : int32
 		{
 			LOCAL_REDIRECT_ONLY = 2,
@@ -2714,7 +2627,6 @@ namespace Win32
 			PUBLISHEXPANDEDPATH = 32,
 			NO_REDIRECT_UI = 64,
 		}
-		[AllowDuplicates]
 		public enum _KF_REDIRECT_FLAGS : int32
 		{
 			USER_EXCLUSIVE = 1,
@@ -2729,7 +2641,6 @@ namespace Win32
 			DEL_SOURCE_CONTENTS = 1024,
 			EXCLUDE_ALL_KNOWN_SUBFOLDERS = 2048,
 		}
-		[AllowDuplicates]
 		public enum _KF_REDIRECTION_CAPABILITIES : int32
 		{
 			ALLOW_ALL = 255,
@@ -2739,13 +2650,11 @@ namespace Win32
 			DENY_POLICY = 512,
 			DENY_PERMISSIONS = 1024,
 		}
-		[AllowDuplicates]
 		public enum FFFP_MODE : int32
 		{
 			EXACTMATCH = 0,
 			NEARESTPARENTMATCH = 1,
 		}
-		[AllowDuplicates]
 		public enum SHARE_ROLE : int32
 		{
 			INVALID = -1,
@@ -2756,26 +2665,22 @@ namespace Win32
 			CUSTOM = 4,
 			MIXED = 5,
 		}
-		[AllowDuplicates]
 		public enum DEF_SHARE_ID : int32
 		{
 			USERS = 1,
 			PUBLIC = 2,
 		}
-		[AllowDuplicates]
 		public enum _NMCII_FLAGS : int32
 		{
 			NONE = 0,
 			ITEMS = 1,
 			FOLDERS = 2,
 		}
-		[AllowDuplicates]
 		public enum _NMCSAEI_FLAGS : int32
 		{
 			SELECT = 0,
 			EDIT = 1,
 		}
-		[AllowDuplicates]
 		public enum _NSTCSTYLE : int32
 		{
 			HASEXPANDOS = 1,
@@ -2809,14 +2714,12 @@ namespace Win32
 			SHOWDELETEBUTTON = 1073741824,
 			SHOWREFRESHBUTTON = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum _NSTCROOTSTYLE : int32
 		{
 			VISIBLE = 0,
 			HIDDEN = 1,
 			EXPANDED = 2,
 		}
-		[AllowDuplicates]
 		public enum _NSTCITEMSTATE : int32
 		{
 			NONE = 0,
@@ -2826,7 +2729,6 @@ namespace Win32
 			DISABLED = 8,
 			SELECTEDNOEXPAND = 16,
 		}
-		[AllowDuplicates]
 		public enum NSTCGNI : int32
 		{
 			NEXT = 0,
@@ -2838,14 +2740,12 @@ namespace Win32
 			FIRSTVISIBLE = 6,
 			LASTVISIBLE = 7,
 		}
-		[AllowDuplicates]
 		public enum NSTCFOLDERCAPABILITIES : int32
 		{
 			NONE = 0,
 			PINNEDITEMFILTERING = 1,
 			DELAY_REGISTER_NOTIFY = 2,
 		}
-		[AllowDuplicates]
 		public enum _EXPLORERPANESTATE : int32
 		{
 			DONTCARE = 0,
@@ -2855,7 +2755,6 @@ namespace Win32
 			INITIALSTATE = 65536,
 			FORCE = 131072,
 		}
-		[AllowDuplicates]
 		public enum _EXPCMDSTATE : int32
 		{
 			ENABLED = 0,
@@ -2865,7 +2764,6 @@ namespace Win32
 			CHECKED = 8,
 			RADIOCHECK = 16,
 		}
-		[AllowDuplicates]
 		public enum _EXPCMDFLAGS : int32
 		{
 			DEFAULT = 0,
@@ -2888,37 +2786,31 @@ namespace Win32
 			CATEGORY = 1,
 			HOME = 1,
 		}
-		[AllowDuplicates]
 		public enum KNOWNDESTCATEGORY : int32
 		{
 			FREQUENT = 1,
 			RECENT = 2,
 		}
-		[AllowDuplicates]
 		public enum APPDOCLISTTYPE : int32
 		{
 			RECENT = 0,
 			FREQUENT = 1,
 		}
-		[AllowDuplicates]
 		public enum DESKTOP_SLIDESHOW_OPTIONS : int32
 		{
 			DSO_SHUFFLEIMAGES = 1,
 		}
-		[AllowDuplicates]
 		public enum DESKTOP_SLIDESHOW_STATE : int32
 		{
 			ENABLED = 1,
 			SLIDESHOW = 2,
 			DISABLED_BY_REMOTE_SESSION = 4,
 		}
-		[AllowDuplicates]
 		public enum DESKTOP_SLIDESHOW_DIRECTION : int32
 		{
 			FORWARD = 0,
 			BACKWARD = 1,
 		}
-		[AllowDuplicates]
 		public enum DESKTOP_WALLPAPER_POSITION : int32
 		{
 			CENTER = 0,
@@ -2928,7 +2820,6 @@ namespace Win32
 			FILL = 4,
 			SPAN = 5,
 		}
-		[AllowDuplicates]
 		public enum HOMEGROUPSHARINGCHOICES : int32
 		{
 			NONE = 0,
@@ -2938,7 +2829,6 @@ namespace Win32
 			DOCUMENTSLIBRARY = 8,
 			PRINTERS = 16,
 		}
-		[AllowDuplicates]
 		public enum LIBRARYFOLDERFILTER : int32
 		{
 			FORCEFILESYSTEM = 1,
@@ -2952,21 +2842,18 @@ namespace Win32
 			PINNEDTONAVPANE = 1,
 			MASK_ALL = 1,
 		}
-		[AllowDuplicates]
 		public enum DEFAULTSAVEFOLDERTYPE : int32
 		{
 			DETECT = 1,
 			PRIVATE = 2,
 			PUBLIC = 3,
 		}
-		[AllowDuplicates]
 		public enum LIBRARYSAVEFLAGS : int32
 		{
 			FAILIFTHERE = 0,
 			OVERRIDEEXISTING = 1,
 			MAKEUNIQUENAME = 2,
 		}
-		[AllowDuplicates]
 		public enum DEFAULT_FOLDER_MENU_RESTRICTIONS : int32
 		{
 			DEFAULT = 0,
@@ -2981,7 +2868,6 @@ namespace Win32
 			NO_NATIVECPU_VERBS = 2048,
 			NO_NONWOW_VERBS = 4096,
 		}
-		[AllowDuplicates]
 		public enum ACTIVATEOPTIONS : int32
 		{
 			NONE = 0,
@@ -2990,13 +2876,11 @@ namespace Win32
 			NOSPLASHSCREEN = 4,
 			PRELAUNCH = 33554432,
 		}
-		[AllowDuplicates]
 		public enum LIBRARYMANAGEDIALOGOPTIONS : int32
 		{
 			DEFAULT = 0,
 			ALLOWUNINDEXABLENETWORKLOCATIONS = 1,
 		}
-		[AllowDuplicates]
 		public enum AHTYPE : int32
 		{
 			UNDEFINED = 0,
@@ -3008,20 +2892,17 @@ namespace Win32
 			CLASS_APPLICATION = 256,
 			ANY_PROGID = 512,
 		}
-		[AllowDuplicates]
 		public enum ASSOC_FILTER : int32
 		{
 			NONE = 0,
 			RECOMMENDED = 1,
 		}
-		[AllowDuplicates]
 		public enum MONITOR_APP_VISIBILITY : int32
 		{
 			UNKNOWN = 0,
 			NO_APP_VISIBLE = 1,
 			APP_VISIBLE = 2,
 		}
-		[AllowDuplicates]
 		public enum PACKAGE_EXECUTION_STATE : int32
 		{
 			UNKNOWN = 0,
@@ -3030,20 +2911,17 @@ namespace Win32
 			SUSPENDED = 3,
 			TERMINATED = 4,
 		}
-		[AllowDuplicates]
 		public enum AHE_TYPE : int32
 		{
 			DESKTOP = 0,
 			IMMERSIVE = 1,
 		}
-		[AllowDuplicates]
 		public enum EC_HOST_UI_MODE : int32
 		{
 			DESKTOP = 0,
 			IMMERSIVE = 1,
 			SYSTEM_LAUNCHER = 2,
 		}
-		[AllowDuplicates]
 		public enum APPLICATION_VIEW_STATE : int32
 		{
 			FULLSCREEN_LANDSCAPE = 0,
@@ -3051,40 +2929,34 @@ namespace Win32
 			SNAPPED = 2,
 			FULLSCREEN_PORTRAIT = 3,
 		}
-		[AllowDuplicates]
 		public enum EDGE_GESTURE_KIND : int32
 		{
 			TOUCH = 0,
 			KEYBOARD = 1,
 			MOUSE = 2,
 		}
-		[AllowDuplicates]
 		public enum NATIVE_DISPLAY_ORIENTATION : int32
 		{
 			LANDSCAPE = 0,
 			PORTRAIT = 1,
 		}
-		[AllowDuplicates]
 		public enum APPLICATION_VIEW_ORIENTATION : int32
 		{
 			LANDSCAPE = 0,
 			PORTRAIT = 1,
 		}
-		[AllowDuplicates]
 		public enum ADJACENT_DISPLAY_EDGES : int32
 		{
 			NONE = 0,
 			LEFT = 1,
 			RIGHT = 2,
 		}
-		[AllowDuplicates]
 		public enum APPLICATION_VIEW_MIN_WIDTH : int32
 		{
 			DEFAULT = 0,
 			_320 = 1,
 			_500 = 2,
 		}
-		[AllowDuplicates]
 		public enum APPLICATION_VIEW_SIZE_PREFERENCE : int32
 		{
 			DEFAULT = 0,
@@ -3095,7 +2967,6 @@ namespace Win32
 			USE_NONE = 5,
 			CUSTOM = 6,
 		}
-		[AllowDuplicates]
 		public enum FLYOUT_PLACEMENT : int32
 		{
 			DEFAULT = 0,
@@ -3104,7 +2975,6 @@ namespace Win32
 			LEFT = 3,
 			RIGHT = 4,
 		}
-		[AllowDuplicates]
 		public enum BANNER_NOTIFICATION_EVENT : int32
 		{
 			Rendered = 0,
@@ -3114,13 +2984,11 @@ namespace Win32
 			Button1Clicked = 4,
 			Button2Clicked = 5,
 		}
-		[AllowDuplicates]
 		public enum SORT_ORDER_TYPE : int32
 		{
 			DEFAULT = 0,
 			IGNORE_FOLDERNESS = 1,
 		}
-		[AllowDuplicates]
 		public enum FOLDERVIEWOPTIONS : int32
 		{
 			DEFAULT = 0,
@@ -3131,7 +2999,6 @@ namespace Win32
 			NOANIMATIONS = 16,
 			NOSCROLLTIPS = 32,
 		}
-		[AllowDuplicates]
 		public enum _SV3CVW3_FLAGS : int32
 		{
 			DEFAULT = 0,
@@ -3139,13 +3006,11 @@ namespace Win32
 			FORCEVIEWMODE = 2,
 			FORCEFOLDERFLAGS = 4,
 		}
-		[AllowDuplicates]
 		public enum VPWATERMARKFLAGS : int32
 		{
 			DEFAULT = 0,
 			ALPHABLEND = 1,
 		}
-		[AllowDuplicates]
 		public enum VPCOLORFLAGS : int32
 		{
 			TEXT = 1,
@@ -3154,26 +3019,22 @@ namespace Win32
 			SUBTEXT = 4,
 			TEXTBACKGROUND = 5,
 		}
-		[AllowDuplicates]
 		public enum DSH_FLAGS : int32
 		{
 			DSH_ALLOWDROPDESCRIPTIONTEXT = 1,
 		}
-		[AllowDuplicates]
 		public enum CDBURNINGEXTENSIONRET : int32
 		{
 			DEFAULT = 0,
 			DONTRUNOTHEREXTS = 1,
 			STOPWIZARD = 2,
 		}
-		[AllowDuplicates]
 		public enum _CDBE_ACTIONS : int32
 		{
 			MUSIC = 1,
 			DATA = 2,
 			ALL = -1,
 		}
-		[AllowDuplicates]
 		public enum NSTCSTYLE2 : int32
 		{
 			STCS2_DEFAULT = 0,
@@ -3184,7 +3045,6 @@ namespace Win32
 			TSCS2_NOSINGLETONAUTOEXPAND = 16,
 			TSCS2_NEVERINSERTNONENUMERATED = 32,
 		}
-		[AllowDuplicates]
 		public enum _NSTCEHITTEST : int32
 		{
 			NOWHERE = 1,
@@ -3206,20 +3066,17 @@ namespace Win32
 			BUTTON = 3,
 			DBLCLICK = 4,
 		}
-		[AllowDuplicates]
 		public enum UNDOCK_REASON : int32
 		{
 			RESOLUTION_CHANGE = 0,
 			MONITOR_DISCONNECT = 1,
 		}
-		[AllowDuplicates]
 		public enum CommandStateChangeConstants : int32
 		{
 			UPDATECOMMANDS = -1,
 			NAVIGATEFORWARD = 1,
 			NAVIGATEBACK = 2,
 		}
-		[AllowDuplicates]
 		public enum SecureLockIconConstants : int32
 		{
 			Unsecure = 0,
@@ -3230,12 +3087,10 @@ namespace Win32
 			SecureFortezza = 5,
 			Secure128Bit = 6,
 		}
-		[AllowDuplicates]
 		public enum NewProcessCauseConstants : int32
 		{
 			ProtectedModeRedirect = 1,
 		}
-		[AllowDuplicates]
 		public enum ShellWindowTypeConstants : int32
 		{
 			EXPLORER = 0,
@@ -3244,14 +3099,12 @@ namespace Win32
 			CALLBACK = 4,
 			DESKTOP = 8,
 		}
-		[AllowDuplicates]
 		public enum ShellWindowFindWindowOptions : int32
 		{
 			NEEDDISPATCH = 1,
 			INCLUDEPENDING = 2,
 			COOKIEPASSED = 4,
 		}
-		[AllowDuplicates]
 		public enum BrowserNavConstants : int32
 		{
 			OpenInNewWindow = 1,
@@ -3287,14 +3140,12 @@ namespace Win32
 			Reserved6 = 1073741824,
 			Reserved7 = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum RefreshConstants : int32
 		{
 			NORMAL = 0,
 			IFEXPIRED = 1,
 			COMPLETELY = 3,
 		}
-		[AllowDuplicates]
 		public enum OfflineFolderStatus : int32
 		{
 			INACTIVE = -1,
@@ -3303,7 +3154,6 @@ namespace Win32
 			SERVERBACK = 2,
 			DIRTYCACHE = 3,
 		}
-		[AllowDuplicates]
 		public enum ShellFolderViewOptions : int32
 		{
 			SHOWALLOBJECTS = 1,
@@ -3314,7 +3164,6 @@ namespace Win32
 			DOUBLECLICKINWEBVIEW = 128,
 			DESKTOPHTML = 512,
 		}
-		[AllowDuplicates]
 		public enum ShellSpecialFolderConstants : int32
 		{
 			DESKTOP = 0,
@@ -3356,7 +3205,6 @@ namespace Win32
 			SYSTEMx86 = 41,
 			PROGRAMFILESx86 = 48,
 		}
-		[AllowDuplicates]
 		public enum AUTOCOMPLETEOPTIONS : int32
 		{
 			NONE = 0,
@@ -3370,14 +3218,12 @@ namespace Win32
 			WORD_FILTER = 128,
 			NOPREFIXFILTERING = 256,
 		}
-		[AllowDuplicates]
 		public enum ACENUMOPTION : int32
 		{
 			NONE = 0,
 			MOSTRECENTFIRST = 1,
 			FIRSTUNUSED = 65536,
 		}
-		[AllowDuplicates]
 		public enum SHELL_LINK_DATA_FLAGS : int32
 		{
 			DEFAULT = 0,
@@ -3411,7 +3257,6 @@ namespace Win32
 			VALID = 268433407,
 			RESERVED = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum SHGFP_TYPE : int32
 		{
 			CURRENT = 0,
@@ -3437,7 +3282,6 @@ namespace Win32
 			SIMPLE_IDLIST = 256,
 			ALIAS_ONLY = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum AUTOCOMPLETELISTOPTIONS : int32
 		{
 			NONE = 0,
@@ -3449,7 +3293,6 @@ namespace Win32
 			FILESYSDIRS = 32,
 			VIRTUALNAMESPACE = 64,
 		}
-		[AllowDuplicates]
 		public enum FD_FLAGS : int32
 		{
 			CLSID = 1,
@@ -3463,7 +3306,6 @@ namespace Win32
 			LINKUI = 32768,
 			UNICODE = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum DROPIMAGETYPE : int32
 		{
 			INVALID = -1,
@@ -3475,7 +3317,6 @@ namespace Win32
 			WARNING = 7,
 			NOIMAGE = 8,
 		}
-		[AllowDuplicates]
 		public enum SHARD : int32
 		{
 			PIDL = 1,
@@ -3487,13 +3328,11 @@ namespace Win32
 			APPIDINFOLINK = 7,
 			SHELLITEM = 8,
 		}
-		[AllowDuplicates]
 		public enum SCNRT_STATUS : int32
 		{
 			ENABLE = 0,
 			DISABLE = 1,
 		}
-		[AllowDuplicates]
 		public enum RESTRICTIONS : int32
 		{
 			NONE = 0,
@@ -3661,7 +3500,6 @@ namespace Win32
 			NOFILEASSOCIATE = 1090519043,
 			ALLOWCOMMENTTOGGLE = 1090519044,
 		}
-		[AllowDuplicates]
 		public enum OPEN_AS_INFO_FLAGS : uint32
 		{
 			ALLOW_REGISTRATION = 1,
@@ -3672,7 +3510,6 @@ namespace Win32
 			URL_PROTOCOL = 64,
 			FILE_IS_URI = 128,
 		}
-		[AllowDuplicates]
 		public enum IESHORTCUTFLAGS : int32
 		{
 			NEWBROWSER = 1,
@@ -3680,27 +3517,23 @@ namespace Win32
 			FORCENAVIGATE = 4,
 			BACKGROUNDTAB = 8,
 		}
-		[AllowDuplicates]
 		public enum DISPLAY_DEVICE_TYPE : int32
 		{
 			PRIMARY = 0,
 			IMMERSIVE = 1,
 		}
-		[AllowDuplicates]
 		public enum SCALE_CHANGE_FLAGS : uint32
 		{
 			VALUE_NONE = 0,
 			SCALE = 1,
 			PHYSICAL = 2,
 		}
-		[AllowDuplicates]
 		public enum SHELL_UI_COMPONENT : int32
 		{
 			TASKBARS = 0,
 			NOTIFICATIONAREA = 1,
 			DESKBAND = 2,
 		}
-		[AllowDuplicates]
 		public enum ASSOCCLASS : int32
 		{
 			SHELL_KEY = 0,
@@ -3716,7 +3549,6 @@ namespace Win32
 			FIXED_PROGID_STR = 10,
 			PROTOCOL_STR = 11,
 		}
-		[AllowDuplicates]
 		public enum QUERY_USER_NOTIFICATION_STATE : int32
 		{
 			NOT_PRESENT = 1,
@@ -3727,7 +3559,6 @@ namespace Win32
 			QUIET_TIME = 6,
 			APP = 7,
 		}
-		[AllowDuplicates]
 		public enum SHSTOCKICONID : int32
 		{
 			DOCNOASSOC = 0,
@@ -3825,13 +3656,11 @@ namespace Win32
 			CLUSTEREDDRIVE = 140,
 			MAX_ICONS = 181,
 		}
-		[AllowDuplicates]
 		public enum SFBS_FLAGS : int32
 		{
 			ROUND_TO_NEAREST_DISPLAYED_DIGIT = 1,
 			TRUNCATE_UNDISPLAYED_DECIMAL_DIGITS = 2,
 		}
-		[AllowDuplicates]
 		public enum URL_SCHEME : int32
 		{
 			INVALID = -1,
@@ -3864,7 +3693,6 @@ namespace Win32
 			KNOWNFOLDER = 26,
 			MAXVALUE = 27,
 		}
-		[AllowDuplicates]
 		public enum URL_PART : int32
 		{
 			NONE = 0,
@@ -3875,7 +3703,6 @@ namespace Win32
 			PORT = 5,
 			QUERY = 6,
 		}
-		[AllowDuplicates]
 		public enum URLIS : int32
 		{
 			URL = 0,
@@ -3886,7 +3713,6 @@ namespace Win32
 			DIRECTORY = 5,
 			HASQUERY = 6,
 		}
-		[AllowDuplicates]
 		public enum SHREGDEL_FLAGS : int32
 		{
 			DEFAULT = 0,
@@ -3894,7 +3720,6 @@ namespace Win32
 			HKLM = 16,
 			BOTH = 17,
 		}
-		[AllowDuplicates]
 		public enum SHREGENUM_FLAGS : int32
 		{
 			DEFAULT = 0,
@@ -3902,7 +3727,6 @@ namespace Win32
 			HKLM = 16,
 			BOTH = 17,
 		}
-		[AllowDuplicates]
 		public enum ASSOCSTR : int32
 		{
 			COMMAND = 1,
@@ -3930,7 +3754,6 @@ namespace Win32
 			APPICONREFERENCE = 23,
 			MAX = 24,
 		}
-		[AllowDuplicates]
 		public enum ASSOCKEY : int32
 		{
 			SHELLEXECCLASS = 1,
@@ -3939,7 +3762,6 @@ namespace Win32
 			BASECLASS = 4,
 			MAX = 5,
 		}
-		[AllowDuplicates]
 		public enum ASSOCDATA : int32
 		{
 			MSIDESCRIPTOR = 1,
@@ -3950,12 +3772,10 @@ namespace Win32
 			VALUE = 6,
 			MAX = 7,
 		}
-		[AllowDuplicates]
 		public enum ASSOCENUM : int32
 		{
 			ASSOCENUM_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum FILETYPEATTRIBUTEFLAGS : int32
 		{
 			None = 0,
@@ -3980,7 +3800,6 @@ namespace Win32
 			SafeForElevation = 2097152,
 			AlwaysUseDirectInvoke = 4194304,
 		}
-		[AllowDuplicates]
 		public enum SHGLOBALCOUNTER : int32
 		{
 			GLOBALCOUNTER_SEARCHMANAGER = 0,
@@ -4044,7 +3863,6 @@ namespace Win32
 			GLOBALCOUNTER_BANNERS_DATAMODEL_CACHE_MACHINEWIDE = 58,
 			GLOBALCOUNTER_MAXIMUMVALUE = 59,
 		}
-		[AllowDuplicates]
 		public enum APPINFODATAFLAGS : int32
 		{
 			DISPLAYNAME = 1,
@@ -4066,7 +3884,6 @@ namespace Win32
 			READMEURL = 262144,
 			UPDATEINFOURL = 524288,
 		}
-		[AllowDuplicates]
 		public enum APPACTIONFLAGS : int32
 		{
 			INSTALL = 1,
@@ -4079,7 +3896,6 @@ namespace Win32
 			ADDLATER = 256,
 			UNSCHEDULE = 512,
 		}
-		[AllowDuplicates]
 		public enum PUBAPPINFOFLAGS : int32
 		{
 			SOURCE = 1,
@@ -4088,7 +3904,6 @@ namespace Win32
 			SCHEDULEDTIME = 8,
 			EXPIRETIME = 16,
 		}
-		[AllowDuplicates]
 		public enum CREDENTIAL_PROVIDER_USAGE_SCENARIO : int32
 		{
 			INVALID = 0,
@@ -4098,7 +3913,6 @@ namespace Win32
 			CREDUI = 4,
 			PLAP = 5,
 		}
-		[AllowDuplicates]
 		public enum CREDENTIAL_PROVIDER_FIELD_TYPE : int32
 		{
 			INVALID = 0,
@@ -4112,7 +3926,6 @@ namespace Win32
 			COMBOBOX = 8,
 			SUBMIT_BUTTON = 9,
 		}
-		[AllowDuplicates]
 		public enum CREDENTIAL_PROVIDER_FIELD_STATE : int32
 		{
 			HIDDEN = 0,
@@ -4120,7 +3933,6 @@ namespace Win32
 			DISPLAY_IN_DESELECTED_TILE = 2,
 			DISPLAY_IN_BOTH = 3,
 		}
-		[AllowDuplicates]
 		public enum CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE : int32
 		{
 			NONE = 0,
@@ -4128,7 +3940,6 @@ namespace Win32
 			DISABLED = 2,
 			FOCUSED = 3,
 		}
-		[AllowDuplicates]
 		public enum CREDENTIAL_PROVIDER_GET_SERIALIZATION_RESPONSE : int32
 		{
 			NO_CREDENTIAL_NOT_FINISHED = 0,
@@ -4136,7 +3947,6 @@ namespace Win32
 			RETURN_CREDENTIAL_FINISHED = 2,
 			RETURN_NO_CREDENTIAL_FINISHED = 3,
 		}
-		[AllowDuplicates]
 		public enum CREDENTIAL_PROVIDER_STATUS_ICON : int32
 		{
 			NONE = 0,
@@ -4144,14 +3954,12 @@ namespace Win32
 			WARNING = 2,
 			SUCCESS = 3,
 		}
-		[AllowDuplicates]
 		public enum CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS : int32
 		{
 			NONE = 0,
 			EMPTY_LOCAL = 1,
 			EMPTY_CONNECTED = 2,
 		}
-		[AllowDuplicates]
 		public enum CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS : int32
 		{
 			NONE = 0,
@@ -4161,7 +3969,6 @@ namespace Win32
 			NUMBERS_ONLY = 8,
 			SHOW_ENGLISH_KEYBOARD = 16,
 		}
-		[AllowDuplicates]
 		public enum SYNCMGR_HANDLER_CAPABILITIES : int32
 		{
 			NONE = 0,
@@ -4177,7 +3984,6 @@ namespace Win32
 			QUERY_BEFORE_DISABLE = 8388608,
 			VALID_MASK = 15925271,
 		}
-		[AllowDuplicates]
 		public enum SYNCMGR_HANDLER_POLICIES : int32
 		{
 			NONE = 0,
@@ -4209,7 +4015,6 @@ namespace Win32
 			MIN = 0,
 			MAX = 5,
 		}
-		[AllowDuplicates]
 		public enum SYNCMGR_ITEM_CAPABILITIES : int32
 		{
 			NONE = 0,
@@ -4223,7 +4028,6 @@ namespace Win32
 			QUERY_BEFORE_DELETE = 4194304,
 			VALID_MASK = 7405591,
 		}
-		[AllowDuplicates]
 		public enum SYNCMGR_ITEM_POLICIES : int32
 		{
 			NONE = 0,
@@ -4297,13 +4101,11 @@ namespace Win32
 			REMOVED = 2,
 			MAX = 2,
 		}
-		[AllowDuplicates]
 		public enum SYNCMGR_CONFLICT_ITEM_TYPE : int32
 		{
 			UPDATED = 1,
 			DELETED = 2,
 		}
-		[AllowDuplicates]
 		public enum SYNCMGR_RESOLUTION_ABILITIES : int32
 		{
 			KEEPOTHER = 1,
@@ -4313,21 +4115,18 @@ namespace Win32
 			KEEP_MULTIPLE = 16,
 			VALID = 31,
 		}
-		[AllowDuplicates]
 		public enum SYNCMGR_RESOLUTION_FEEDBACK : int32
 		{
 			CONTINUE = 0,
 			REFRESH = 1,
 			CANCEL = 2,
 		}
-		[AllowDuplicates]
 		public enum SYNCMGR_PRESENTER_NEXT_STEP : int32
 		{
 			CONTINUE = 0,
 			DEFAULT = 1,
 			CANCEL = 2,
 		}
-		[AllowDuplicates]
 		public enum SYNCMGR_PRESENTER_CHOICE : int32
 		{
 			NO_CHOICE = 0,
@@ -4358,14 +4157,12 @@ namespace Win32
 			IDEALCACHESIZEONLY = 32768,
 			SCALEUP = 65536,
 		}
-		[AllowDuplicates]
 		public enum WTS_CACHEFLAGS : int32
 		{
 			DEFAULT = 0,
 			LOWQUALITY = 1,
 			CACHED = 2,
 		}
-		[AllowDuplicates]
 		public enum WTS_CONTEXTFLAGS : int32
 		{
 			DEFAULT = 0,
@@ -4374,14 +4171,12 @@ namespace Win32
 			WIDE = 4,
 			FAST = 8,
 		}
-		[AllowDuplicates]
 		public enum WTS_ALPHATYPE : int32
 		{
 			UNKNOWN = 0,
 			RGB = 1,
 			ARGB = 2,
 		}
-		[AllowDuplicates]
 		public enum SYNCMGRSTATUS : int32
 		{
 			STOPPED = 0,
@@ -4403,12 +4198,10 @@ namespace Win32
 			ERROR = 3,
 			LOGLEVELMAX = 3,
 		}
-		[AllowDuplicates]
 		public enum SYNCMGRERRORFLAGS : int32
 		{
 			SYNCMGRERRORFLAG_ENABLEJUMPTEXT = 1,
 		}
-		[AllowDuplicates]
 		public enum SYNCMGRITEMFLAGS : int32
 		{
 			HASPROPERTIES = 1,
@@ -4418,7 +4211,6 @@ namespace Win32
 			MAYDELETEITEM = 16,
 			HIDDEN = 32,
 		}
-		[AllowDuplicates]
 		public enum SYNCMGRFLAG : int32
 		{
 			CONNECT = 1,
@@ -4431,7 +4223,6 @@ namespace Win32
 			SETTINGS = 256,
 			MAYBOTHERUSER = 512,
 		}
-		[AllowDuplicates]
 		public enum SYNCMGRHANDLERFLAGS : int32
 		{
 			HASPROPERTIES = 1,
@@ -4439,26 +4230,22 @@ namespace Win32
 			ALWAYSLISTHANDLER = 4,
 			HIDDEN = 8,
 		}
-		[AllowDuplicates]
 		public enum SYNCMGRITEMSTATE : int32
 		{
 			UNCHECKED = 0,
 			CHECKED = 1,
 		}
-		[AllowDuplicates]
 		public enum SYNCMGRINVOKEFLAGS : int32
 		{
 			STARTSYNC = 2,
 			MINIMIZED = 4,
 		}
-		[AllowDuplicates]
 		public enum SYNCMGRREGISTERFLAGS : int32
 		{
 			CONNECT = 1,
 			PENDINGDISCONNECT = 2,
 			IDLE = 4,
 		}
-		[AllowDuplicates]
 		public enum ThumbnailStreamCacheOptions : int32
 		{
 			ExtractIfNotCached = 0,
@@ -4466,7 +4253,6 @@ namespace Win32
 			ResizeThumbnail = 2,
 			AllowSmallerSize = 4,
 		}
-		[AllowDuplicates]
 		public enum TLENUMF : int32
 		{
 			RELATIVE_INCLUDE_CURRENT = 1,
@@ -4477,14 +4263,12 @@ namespace Win32
 			EXCLUDE_SUBFRAME_ENTRIES = 128,
 			EXCLUDE_ABOUT_PAGES = 256,
 		}
-		[AllowDuplicates]
 		public enum _HLSR_NOREDEF10 : int32
 		{
 			HOME = 0,
 			SEARCHPAGE = 1,
 			HISTORYFOLDER = 2,
 		}
-		[AllowDuplicates]
 		public enum _HLSHORTCUTF__NOREDEF10 : int32
 		{
 			DEFAULT = 0,
@@ -4493,13 +4277,11 @@ namespace Win32
 			USEUNIQUEFILENAME = 4,
 			MAYUSEEXISTINGSHORTCUT = 8,
 		}
-		[AllowDuplicates]
 		public enum _HLTRANSLATEF_NOREDEF10 : int32
 		{
 			EFAULT = 0,
 			ONTAPPLYDEFAULTPREFIX = 1,
 		}
-		[AllowDuplicates]
 		public enum HLNF : uint32
 		{
 			INTERNALJUMP = 1,
@@ -4509,14 +4291,12 @@ namespace Win32
 			NAVIGATINGTOSTACKITEM = 16,
 			CREATENOHISTORY = 32,
 		}
-		[AllowDuplicates]
 		public enum HLINKGETREF : int32
 		{
 			DEFAULT = 0,
 			ABSOLUTE = 1,
 			RELATIVE = 2,
 		}
-		[AllowDuplicates]
 		public enum HLFNAMEF : uint32
 		{
 			DEFAULT = 0,
@@ -4525,24 +4305,20 @@ namespace Win32
 			TRYFULLTARGET = 4,
 			TRYWIN95SHORTCUT = 8,
 		}
-		[AllowDuplicates]
 		public enum HLINKMISC : int32
 		{
 			HLINKMISC_RELATIVE = 1,
 		}
-		[AllowDuplicates]
 		public enum HLINKSETF : int32
 		{
 			TARGET = 1,
 			LOCATION = 2,
 		}
-		[AllowDuplicates]
 		public enum HLINKWHICHMK : int32
 		{
 			CONTAINER = 1,
 			BASE = 2,
 		}
-		[AllowDuplicates]
 		public enum HLTB_INFO : int32
 		{
 			DOCKEDLEFT = 0,
@@ -4551,7 +4327,6 @@ namespace Win32
 			DOCKEDBOTTOM = 3,
 			FLOATING = 4,
 		}
-		[AllowDuplicates]
 		public enum HLBWIF_FLAGS : uint32
 		{
 			HASFRAMEWNDINFO = 1,
@@ -4561,7 +4336,6 @@ namespace Win32
 			HASWEBTOOLBARINFO = 16,
 			WEBTOOLBARHIDDEN = 32,
 		}
-		[AllowDuplicates]
 		public enum HLID_INFO : uint32
 		{
 			INVALID = 0,
@@ -4571,20 +4345,17 @@ namespace Win32
 			STACKBOTTOM = 4294967292,
 			STACKTOP = 4294967291,
 		}
-		[AllowDuplicates]
 		public enum HLQF_INFO : int32
 		{
 			VALID = 1,
 			CURRENT = 2,
 		}
-		[AllowDuplicates]
 		public enum BNSTATE : int32
 		{
 			NORMAL = 0,
 			BEGIN_NAVIGATE = 1,
 			NAVIGATE = 2,
 		}
-		[AllowDuplicates]
 		public enum SHELLBROWSERSHOWCONTROL : int32
 		{
 			HIDE = 0,
@@ -4612,18 +4383,15 @@ namespace Win32
 			SUGGEST_FORTEZZA = 12,
 			SUGGEST_SECURE128BIT = 13,
 		}
-		[AllowDuplicates]
 		public enum IEPDNFLAGS : int32
 		{
 			IEPDN_BINDINGUI = 1,
 		}
-		[AllowDuplicates]
 		public enum TI_FLAGS : int32
 		{
 			BITMAP = 1,
 			JPEG = 2,
 		}
-		[AllowDuplicates]
 		public enum PATHCCH_OPTIONS : int32
 		{
 			NONE = 0,
@@ -4635,13 +4403,11 @@ namespace Win32
 			ENSURE_TRAILING_SLASH = 32,
 			CANONICALIZE_SLASHES = 64,
 		}
-		[AllowDuplicates]
 		public enum iurl_seturl_flags : int32
 		{
 			GUESS_PROTOCOL = 1,
 			USE_DEFAULT_PROTOCOL = 2,
 		}
-		[AllowDuplicates]
 		public enum iurl_invokecommand_flags : int32
 		{
 			ALLOW_UI = 1,
@@ -4650,19 +4416,16 @@ namespace Win32
 			ASYNCOK = 8,
 			LOG_USAGE = 16,
 		}
-		[AllowDuplicates]
 		public enum translateurl_in_flags : int32
 		{
 			GUESS_PROTOCOL = 1,
 			USE_DEFAULT_PROTOCOL = 2,
 		}
-		[AllowDuplicates]
 		public enum urlassociationdialog_in_flags : int32
 		{
 			USE_DEFAULT_NAME = 1,
 			REGISTER_ASSOC = 2,
 		}
-		[AllowDuplicates]
 		public enum mimeassociationdialog_in_flags : int32
 		{
 			MIMEASSOCDLG_FL_REGISTER_ASSOC = 1,

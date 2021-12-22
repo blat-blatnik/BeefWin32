@@ -219,13 +219,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum BG_TOKEN : uint32
 		{
 			LOCAL_FILE = 1,
 			NETWORK = 2,
 		}
-		[AllowDuplicates]
 		public enum BG_ERROR_CONTEXT : int32
 		{
 			NONE = 0,
@@ -238,7 +236,6 @@ namespace Win32
 			REMOTE_APPLICATION = 7,
 			SERVER_CERTIFICATE_CALLBACK = 8,
 		}
-		[AllowDuplicates]
 		public enum BG_JOB_PRIORITY : int32
 		{
 			FOREGROUND = 0,
@@ -246,7 +243,6 @@ namespace Win32
 			NORMAL = 2,
 			LOW = 3,
 		}
-		[AllowDuplicates]
 		public enum BG_JOB_STATE : int32
 		{
 			QUEUED = 0,
@@ -259,14 +255,12 @@ namespace Win32
 			ACKNOWLEDGED = 7,
 			CANCELLED = 8,
 		}
-		[AllowDuplicates]
 		public enum BG_JOB_TYPE : int32
 		{
 			DOWNLOAD = 0,
 			UPLOAD = 1,
 			UPLOAD_REPLY = 2,
 		}
-		[AllowDuplicates]
 		public enum BG_JOB_PROXY_USAGE : int32
 		{
 			PRECONFIG = 0,
@@ -274,13 +268,11 @@ namespace Win32
 			OVERRIDE = 2,
 			AUTODETECT = 3,
 		}
-		[AllowDuplicates]
 		public enum BG_AUTH_TARGET : int32
 		{
 			SERVER = 1,
 			PROXY = 2,
 		}
-		[AllowDuplicates]
 		public enum BG_AUTH_SCHEME : int32
 		{
 			BASIC = 1,
@@ -289,7 +281,6 @@ namespace Win32
 			NEGOTIATE = 4,
 			PASSPORT = 5,
 		}
-		[AllowDuplicates]
 		public enum BG_CERT_STORE_LOCATION : int32
 		{
 			CURRENT_USER = 0,
@@ -301,7 +292,6 @@ namespace Win32
 			LOCAL_MACHINE_GROUP_POLICY = 6,
 			LOCAL_MACHINE_ENTERPRISE = 7,
 		}
-		[AllowDuplicates]
 		public enum BITS_JOB_TRANSFER_POLICY : int32
 		{
 			ALWAYS = -2147483393,
@@ -310,7 +300,6 @@ namespace Win32
 			STANDARD = -2147483545,
 			UNRESTRICTED = -2147483615,
 		}
-		[AllowDuplicates]
 		public enum BITS_JOB_PROPERTY_ID : int32
 		{
 			ID_COST_FLAGS = 1,
@@ -322,12 +311,10 @@ namespace Win32
 			MINIMUM_NOTIFICATION_INTERVAL_MS = 9,
 			ON_DEMAND_MODE = 10,
 		}
-		[AllowDuplicates]
 		public enum BITS_FILE_PROPERTY_ID : int32
 		{
 			BITS_FILE_PROPERTY_ID_HTTP_RESPONSE_HEADERS = 1,
 		}
-		[AllowDuplicates]
 		public enum GROUPPROP : int32
 		{
 			PRIORITY = 0,

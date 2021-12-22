@@ -93,7 +93,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum VSS_OBJECT_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -103,7 +102,6 @@ namespace Win32
 			PROVIDER = 4,
 			TYPE_COUNT = 5,
 		}
-		[AllowDuplicates]
 		public enum VSS_SNAPSHOT_STATE : int32
 		{
 			UNKNOWN = 0,
@@ -124,7 +122,6 @@ namespace Win32
 			POSTCOMMITTED = 15,
 			COUNT = 16,
 		}
-		[AllowDuplicates]
 		public enum VSS_VOLUME_SNAPSHOT_ATTRIBUTES : int32
 		{
 			PERSISTENT = 1,
@@ -147,7 +144,6 @@ namespace Win32
 			TXF_RECOVERY = 33554432,
 			FILE_SHARE = 67108864,
 		}
-		[AllowDuplicates]
 		public enum VSS_SNAPSHOT_CONTEXT : int32
 		{
 			BACKUP = 0,
@@ -158,7 +154,6 @@ namespace Win32
 			CLIENT_ACCESSIBLE_WRITERS = 13,
 			ALL = -1,
 		}
-		[AllowDuplicates]
 		public enum VSS_PROVIDER_CAPABILITIES : int32
 		{
 			LEGACY = 1,
@@ -172,7 +167,6 @@ namespace Win32
 			DIFFERENTIAL = 256,
 			CLUSTERED = 512,
 		}
-		[AllowDuplicates]
 		public enum VSS_HARDWARE_OPTIONS : int32
 		{
 			BREAKEX_FLAG_MASK_LUNS = 1,
@@ -184,13 +178,11 @@ namespace Win32
 			ONLUNSTATECHANGE_NOTIFY_LUN_POST_RECOVERY = 1024,
 			ONLUNSTATECHANGE_DO_MASK_LUNS = 2048,
 		}
-		[AllowDuplicates]
 		public enum VSS_RECOVERY_OPTIONS : int32
 		{
 			REVERT_IDENTITY_ALL = 256,
 			NO_VOLUME_CHECK = 512,
 		}
-		[AllowDuplicates]
 		public enum VSS_WRITER_STATE : int32
 		{
 			UNKNOWN = 0,
@@ -211,7 +203,6 @@ namespace Win32
 			FAILED_AT_BACKUPSHUTDOWN = 15,
 			COUNT = 16,
 		}
-		[AllowDuplicates]
 		public enum VSS_BACKUP_TYPE : int32
 		{
 			UNDEFINED = 0,
@@ -222,7 +213,6 @@ namespace Win32
 			COPY = 5,
 			OTHER = 6,
 		}
-		[AllowDuplicates]
 		public enum VSS_RESTORE_TYPE : int32
 		{
 			UNDEFINED = 0,
@@ -230,7 +220,6 @@ namespace Win32
 			IMPORT = 2,
 			OTHER = 3,
 		}
-		[AllowDuplicates]
 		public enum VSS_ROLLFORWARD_TYPE : int32
 		{
 			UNDEFINED = 0,
@@ -238,7 +227,6 @@ namespace Win32
 			ALL = 2,
 			PARTIAL = 3,
 		}
-		[AllowDuplicates]
 		public enum VSS_PROVIDER_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -247,7 +235,6 @@ namespace Win32
 			HARDWARE = 3,
 			FILESHARE = 4,
 		}
-		[AllowDuplicates]
 		public enum VSS_APPLICATION_LEVEL : int32
 		{
 			UNKNOWN = 0,
@@ -257,13 +244,11 @@ namespace Win32
 			SYSTEM_RM = 4,
 			AUTO = -1,
 		}
-		[AllowDuplicates]
 		public enum VSS_SNAPSHOT_COMPATIBILITY : int32
 		{
 			DEFRAG = 1,
 			CONTENTINDEX = 2,
 		}
-		[AllowDuplicates]
 		public enum VSS_SNAPSHOT_PROPERTY_ID : int32
 		{
 			UNKNOWN = 0,
@@ -281,7 +266,6 @@ namespace Win32
 			CREATION_TIMESTAMP = 12,
 			STATUS = 13,
 		}
-		[AllowDuplicates]
 		public enum VSS_FILE_SPEC_BACKUP_TYPE : int32
 		{
 			FULL_BACKUP_REQUIRED = 1,
@@ -296,7 +280,6 @@ namespace Win32
 			ALL_BACKUP_REQUIRED = 15,
 			ALL_SNAPSHOT_REQUIRED = 3840,
 		}
-		[AllowDuplicates]
 		public enum VSS_BACKUP_SCHEMA : int32
 		{
 			UNDEFINED = 0,
@@ -316,7 +299,6 @@ namespace Win32
 			AUTHORITATIVE_RESTORE = 16384,
 			WRITER_SUPPORTS_PARALLEL_RESTORES = 32768,
 		}
-		[AllowDuplicates]
 		public enum VSS_USAGE_TYPE : int32
 		{
 			UNDEFINED = 0,
@@ -325,7 +307,6 @@ namespace Win32
 			USERDATA = 3,
 			OTHER = 4,
 		}
-		[AllowDuplicates]
 		public enum VSS_SOURCE_TYPE : int32
 		{
 			UNDEFINED = 0,
@@ -333,7 +314,6 @@ namespace Win32
 			NONTRANSACTEDDB = 2,
 			OTHER = 3,
 		}
-		[AllowDuplicates]
 		public enum VSS_RESTOREMETHOD_ENUM : int32
 		{
 			UNDEFINED = 0,
@@ -346,7 +326,6 @@ namespace Win32
 			CUSTOM = 7,
 			RESTORE_STOP_START = 8,
 		}
-		[AllowDuplicates]
 		public enum VSS_WRITERRESTORE_ENUM : int32
 		{
 			UNDEFINED = 0,
@@ -354,14 +333,12 @@ namespace Win32
 			IF_REPLACE_FAILS = 2,
 			ALWAYS = 3,
 		}
-		[AllowDuplicates]
 		public enum VSS_COMPONENT_TYPE : int32
 		{
 			UNDEFINED = 0,
 			DATABASE = 1,
 			FILEGROUP = 2,
 		}
-		[AllowDuplicates]
 		public enum VSS_ALTERNATE_WRITER_STATE : int32
 		{
 			UNDEFINED = 0,
@@ -369,7 +346,6 @@ namespace Win32
 			ALTERNATE_WRITER_EXISTS = 2,
 			THIS_IS_ALTERNATE_WRITER = 3,
 		}
-		[AllowDuplicates]
 		public enum VSS_SUBSCRIBE_MASK : int32
 		{
 			POST_SNAPSHOT_FLAG = 1,
@@ -378,7 +354,6 @@ namespace Win32
 			IO_THROTTLING_FLAG = 8,
 			ALL_FLAGS = -1,
 		}
-		[AllowDuplicates]
 		public enum VSS_RESTORE_TARGET : int32
 		{
 			UNDEFINED = 0,
@@ -387,7 +362,6 @@ namespace Win32
 			DIRECTED = 3,
 			ORIGINAL_LOCATION = 4,
 		}
-		[AllowDuplicates]
 		public enum VSS_FILE_RESTORE_STATUS : int32
 		{
 			UNDEFINED = 0,
@@ -395,14 +369,12 @@ namespace Win32
 			ALL = 2,
 			FAILED = 3,
 		}
-		[AllowDuplicates]
 		public enum VSS_COMPONENT_FLAGS : int32
 		{
 			BACKUP_RECOVERY = 1,
 			APP_ROLLBACK_RECOVERY = 2,
 			NOT_SYSTEM_STATE = 4,
 		}
-		[AllowDuplicates]
 		public enum VSS_MGMT_OBJECT_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -410,13 +382,11 @@ namespace Win32
 			DIFF_VOLUME = 2,
 			DIFF_AREA = 3,
 		}
-		[AllowDuplicates]
 		public enum VSS_PROTECTION_LEVEL : int32
 		{
 			ORIGINAL_VOLUME = 0,
 			SNAPSHOT = 1,
 		}
-		[AllowDuplicates]
 		public enum VSS_PROTECTION_FAULT : int32
 		{
 			NONE = 0,

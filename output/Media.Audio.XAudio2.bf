@@ -228,13 +228,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum XAPO_BUFFER_FLAGS : int32
 		{
 			SILENT = 0,
 			VALID = 1,
 		}
-		[AllowDuplicates]
 		public enum XAUDIO2_FILTER_TYPE : int32
 		{
 			LowPassFilter = 0,
@@ -244,14 +242,12 @@ namespace Win32
 			LowPassOnePoleFilter = 4,
 			HighPassOnePoleFilter = 5,
 		}
-		[AllowDuplicates]
 		public enum HrtfDirectivityType : int32
 		{
 			OmniDirectional = 0,
 			Cardioid = 1,
 			Cone = 2,
 		}
-		[AllowDuplicates]
 		public enum HrtfEnvironment : int32
 		{
 			Small = 0,
@@ -259,7 +255,6 @@ namespace Win32
 			Large = 2,
 			Outdoors = 3,
 		}
-		[AllowDuplicates]
 		public enum HrtfDistanceDecayType : int32
 		{
 			NaturalDecay = 0,

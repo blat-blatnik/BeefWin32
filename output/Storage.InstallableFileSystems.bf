@@ -105,7 +105,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum FLT_FILESYSTEM_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -140,20 +139,17 @@ namespace Win32
 			OPENAFS = 29,
 			CIMFS = 30,
 		}
-		[AllowDuplicates]
 		public enum FILTER_INFORMATION_CLASS : int32
 		{
 			FullInformation = 0,
 			AggregateBasicInformation = 1,
 			AggregateStandardInformation = 2,
 		}
-		[AllowDuplicates]
 		public enum FILTER_VOLUME_INFORMATION_CLASS : int32
 		{
 			BasicInformation = 0,
 			StandardInformation = 1,
 		}
-		[AllowDuplicates]
 		public enum INSTANCE_INFORMATION_CLASS : int32
 		{
 			BasicInformation = 0,

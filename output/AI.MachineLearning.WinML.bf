@@ -11,7 +11,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WINML_TENSOR_DATA_TYPE : int32
 		{
 			UNDEFINED = 0,
@@ -31,7 +30,6 @@ namespace Win32
 			COMPLEX64 = 14,
 			COMPLEX128 = 15,
 		}
-		[AllowDuplicates]
 		public enum WINML_FEATURE_TYPE : int32
 		{
 			UNDEFINED = 0,
@@ -40,7 +38,6 @@ namespace Win32
 			MAP = 3,
 			IMAGE = 4,
 		}
-		[AllowDuplicates]
 		public enum WINML_BINDING_TYPE : int32
 		{
 			UNDEFINED = 0,
@@ -50,12 +47,10 @@ namespace Win32
 			IMAGE = 4,
 			RESOURCE = 5,
 		}
-		[AllowDuplicates]
 		public enum WINML_RUNTIME_TYPE : int32
 		{
 			WINML_RUNTIME_CNTK = 0,
 		}
-		[AllowDuplicates]
 		public enum MLOperatorAttributeType : uint32
 		{
 			Undefined = 0,
@@ -66,7 +61,6 @@ namespace Win32
 			IntArray = 8,
 			StringArray = 9,
 		}
-		[AllowDuplicates]
 		public enum MLOperatorTensorDataType : uint32
 		{
 			Undefined = 0,
@@ -86,32 +80,27 @@ namespace Win32
 			Complex64 = 14,
 			Complex128 = 15,
 		}
-		[AllowDuplicates]
 		public enum MLOperatorEdgeType : uint32
 		{
 			Undefined = 0,
 			Tensor = 1,
 		}
-		[AllowDuplicates]
 		public enum MLOperatorParameterOptions : uint32
 		{
 			Single = 0,
 			Optional = 1,
 			Variadic = 2,
 		}
-		[AllowDuplicates]
 		public enum MLOperatorSchemaEdgeTypeFormat : int32
 		{
 			EdgeDescription = 0,
 			Label = 1,
 		}
-		[AllowDuplicates]
 		public enum MLOperatorKernelOptions : uint32
 		{
 			None = 0,
 			AllowDynamicInputShapes = 1,
 		}
-		[AllowDuplicates]
 		public enum MLOperatorExecutionType : uint32
 		{
 			Undefined = 0,

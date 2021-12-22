@@ -53,7 +53,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum PropertyConstraint : int32
 		{
 			EQUALS = 0,
@@ -67,20 +66,17 @@ namespace Win32
 			DOESNOTEXIST = 8,
 			CONTAINS = 9,
 		}
-		[AllowDuplicates]
 		public enum SystemVisibilityFlags : int32
 		{
 			SYSTEM = 0,
 			USER = 1,
 		}
-		[AllowDuplicates]
 		public enum QueryUpdateAction : int32
 		{
 			ADD = 0,
 			REMOVE = 1,
 			CHANGE = 2,
 		}
-		[AllowDuplicates]
 		public enum QueryCategoryType : int32
 		{
 			PROVIDER = 0,

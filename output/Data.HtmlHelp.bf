@@ -281,12 +281,10 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WORD_WHEEL_OPEN_FLAGS : uint32
 		{
 			ITWW_OPEN_CONNECT = 0,
 		}
-		[AllowDuplicates]
 		public enum HH_GPROPID : int32
 		{
 			SINGLETHREAD = 1,
@@ -295,7 +293,6 @@ namespace Win32
 			CURRENT_SUBSET = 4,
 			CONTENT_LANGUAGE = 5,
 		}
-		[AllowDuplicates]
 		public enum PRIORITY : int32
 		{
 			LOW = 0,

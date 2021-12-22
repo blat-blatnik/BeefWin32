@@ -38,7 +38,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum NS_CMD_FLAGS : int32
 		{
 			PRIVATE = 1,
@@ -49,7 +48,6 @@ namespace Win32
 			LIMIT_MASK = 65535,
 			PRIORITY = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum NS_REQS : int32
 		{
 			ZERO = 0,
@@ -57,7 +55,6 @@ namespace Win32
 			ALLOW_MULTIPLE = 2,
 			ONE_OR_MORE = 3,
 		}
-		[AllowDuplicates]
 		public enum NS_EVENTS : int32
 		{
 			LOOP = 65536,
@@ -66,7 +63,6 @@ namespace Win32
 			FROM_N = 4,
 			FROM_START = 8,
 		}
-		[AllowDuplicates]
 		public enum NS_MODE_CHANGE : int32
 		{
 			COMMIT = 0,

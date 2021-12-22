@@ -18,7 +18,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum COMPRESS_ALGORITHM : uint32
 		{
 			MSZIP = 2,
@@ -26,7 +25,6 @@ namespace Win32
 			XPRESS_HUFF = 4,
 			LZMS = 5,
 		}
-		[AllowDuplicates]
 		public enum COMPRESS_INFORMATION_CLASS : int32
 		{
 			INVALID = 0,

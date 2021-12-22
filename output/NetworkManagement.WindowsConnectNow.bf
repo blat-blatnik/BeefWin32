@@ -94,7 +94,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WCN_ATTRIBUTE_TYPE : int32
 		{
 			TYPE_AP_CHANNEL = 0,
@@ -199,19 +198,16 @@ namespace Win32
 			TYPE_VENDOR_EXTENSION_WFA = 99,
 			NUM_ATTRIBUTE_TYPES = 100,
 		}
-		[AllowDuplicates]
 		public enum WCN_VALUE_TYPE_VERSION : int32
 		{
 			_1_0 = 16,
 			_2_0 = 32,
 		}
-		[AllowDuplicates]
 		public enum WCN_VALUE_TYPE_BOOLEAN : int32
 		{
 			FALSE = 0,
 			TRUE = 1,
 		}
-		[AllowDuplicates]
 		public enum WCN_VALUE_TYPE_ASSOCIATION_STATE : int32
 		{
 			NOT_ASSOCIATED = 0,
@@ -220,7 +216,6 @@ namespace Win32
 			ASSOCIATION_FAILURE = 3,
 			IP_FAILURE = 4,
 		}
-		[AllowDuplicates]
 		public enum WCN_VALUE_TYPE_AUTHENTICATION_TYPE : int32
 		{
 			OPEN = 1,
@@ -231,7 +226,6 @@ namespace Win32
 			WPA2PSK = 32,
 			WPAWPA2PSK_MIXED = 34,
 		}
-		[AllowDuplicates]
 		public enum WCN_VALUE_TYPE_CONFIG_METHODS : int32
 		{
 			USBA = 1,
@@ -248,7 +242,6 @@ namespace Win32
 			VIRT_DISPLAY = 8200,
 			PHYS_DISPLAY = 16392,
 		}
-		[AllowDuplicates]
 		public enum WCN_VALUE_TYPE_CONFIGURATION_ERROR : int32
 		{
 			NO_ERROR = 0,
@@ -271,13 +264,11 @@ namespace Win32
 			REGISTRATION_SESSION_TIMEOUT = 17,
 			DEVICE_PASSWORD_AUTH_FAILURE = 18,
 		}
-		[AllowDuplicates]
 		public enum WCN_VALUE_TYPE_CONNECTION_TYPE : int32
 		{
 			ESS = 1,
 			IBSS = 2,
 		}
-		[AllowDuplicates]
 		public enum WCN_VALUE_TYPE_DEVICE_PASSWORD_ID : int32
 		{
 			DEFAULT = 0,
@@ -291,7 +282,6 @@ namespace Win32
 			OUTOFBAND_MIN = 16,
 			OUTOFBAND_MAX = 65535,
 		}
-		[AllowDuplicates]
 		public enum WCN_VALUE_TYPE_ENCRYPTION_TYPE : int32
 		{
 			NONE = 1,
@@ -300,7 +290,6 @@ namespace Win32
 			AES = 8,
 			TKIP_AES_MIXED = 12,
 		}
-		[AllowDuplicates]
 		public enum WCN_VALUE_TYPE_MESSAGE_TYPE : int32
 		{
 			BEACON = 1,
@@ -319,7 +308,6 @@ namespace Win32
 			NACK = 14,
 			DONE = 15,
 		}
-		[AllowDuplicates]
 		public enum WCN_VALUE_TYPE_REQUEST_TYPE : int32
 		{
 			ENROLLEE_INFO = 0,
@@ -327,7 +315,6 @@ namespace Win32
 			REGISTRAR = 2,
 			MANAGER_REGISTRAR = 3,
 		}
-		[AllowDuplicates]
 		public enum WCN_VALUE_TYPE_RESPONSE_TYPE : int32
 		{
 			ENROLLEE_INFO = 0,
@@ -335,20 +322,17 @@ namespace Win32
 			REGISTRAR = 2,
 			AP = 3,
 		}
-		[AllowDuplicates]
 		public enum WCN_VALUE_TYPE_RF_BANDS : int32
 		{
 			_24GHZ = 1,
 			_50GHZ = 2,
 		}
-		[AllowDuplicates]
 		public enum WCN_VALUE_TYPE_WI_FI_PROTECTED_SETUP_STATE : int32
 		{
 			RESERVED00 = 0,
 			NOT_CONFIGURED = 1,
 			CONFIGURED = 2,
 		}
-		[AllowDuplicates]
 		public enum WCN_PASSWORD_TYPE : int32
 		{
 			PUSH_BUTTON = 0,
@@ -357,7 +341,6 @@ namespace Win32
 			OOB_SPECIFIED = 3,
 			WFDS = 4,
 		}
-		[AllowDuplicates]
 		public enum WCN_SESSION_STATUS : int32
 		{
 			SUCCESS = 0,

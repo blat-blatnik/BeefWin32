@@ -79,7 +79,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum D2D1_INTERPOLATION_MODE_DEFINITION : int32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -91,14 +90,12 @@ namespace Win32
 			FANT = 6,
 			MIPMAP_LINEAR = 7,
 		}
-		[AllowDuplicates]
 		public enum D2D1_GAMMA : uint32
 		{
 			_2_2 = 0,
 			_1_0 = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_OPACITY_MASK_CONTENT : uint32
 		{
 			GRAPHICS = 0,
@@ -106,7 +103,6 @@ namespace Win32
 			TEXT_GDI_COMPATIBLE = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_EXTEND_MODE : uint32
 		{
 			CLAMP = 0,
@@ -114,14 +110,12 @@ namespace Win32
 			MIRROR = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_ANTIALIAS_MODE : uint32
 		{
 			PER_PRIMITIVE = 0,
 			ALIASED = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_TEXT_ANTIALIAS_MODE : uint32
 		{
 			DEFAULT = 0,
@@ -130,14 +124,12 @@ namespace Win32
 			ALIASED = 3,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_BITMAP_INTERPOLATION_MODE : uint32
 		{
 			NEAREST_NEIGHBOR = 0,
 			LINEAR = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_DRAW_TEXT_OPTIONS : uint32
 		{
 			NO_SNAP = 1,
@@ -147,14 +139,12 @@ namespace Win32
 			NONE = 0,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_ARC_SIZE : uint32
 		{
 			SMALL = 0,
 			LARGE = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_CAP_STYLE : uint32
 		{
 			FLAT = 0,
@@ -163,7 +153,6 @@ namespace Win32
 			TRIANGLE = 3,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_DASH_STYLE : uint32
 		{
 			SOLID = 0,
@@ -174,7 +163,6 @@ namespace Win32
 			CUSTOM = 5,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_LINE_JOIN : uint32
 		{
 			MITER = 0,
@@ -183,7 +171,6 @@ namespace Win32
 			MITER_OR_BEVEL = 3,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_COMBINE_MODE : uint32
 		{
 			UNION = 0,
@@ -192,7 +179,6 @@ namespace Win32
 			EXCLUDE = 3,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_GEOMETRY_RELATION : uint32
 		{
 			UNKNOWN = 0,
@@ -202,35 +188,30 @@ namespace Win32
 			OVERLAP = 4,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_GEOMETRY_SIMPLIFICATION_OPTION : uint32
 		{
 			CUBICS_AND_LINES = 0,
 			LINES = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SWEEP_DIRECTION : uint32
 		{
 			COUNTER_CLOCKWISE = 0,
 			CLOCKWISE = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_LAYER_OPTIONS : uint32
 		{
 			NONE = 0,
 			INITIALIZE_FOR_CLEARTYPE = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_WINDOW_STATE : uint32
 		{
 			NONE = 0,
 			OCCLUDED = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_RENDER_TARGET_TYPE : uint32
 		{
 			DEFAULT = 0,
@@ -238,7 +219,6 @@ namespace Win32
 			HARDWARE = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_FEATURE_LEVEL : uint32
 		{
 			DEFAULT = 0,
@@ -246,7 +226,6 @@ namespace Win32
 			_10 = 40960,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_RENDER_TARGET_USAGE : uint32
 		{
 			NONE = 0,
@@ -254,7 +233,6 @@ namespace Win32
 			GDI_COMPATIBLE = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_PRESENT_OPTIONS : uint32
 		{
 			NONE = 0,
@@ -262,21 +240,18 @@ namespace Win32
 			IMMEDIATELY = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS : uint32
 		{
 			NONE = 0,
 			GDI_COMPATIBLE = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_DC_INITIALIZE_MODE : uint32
 		{
 			COPY = 0,
 			CLEAR = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_DEBUG_LEVEL : uint32
 		{
 			NONE = 0,
@@ -285,14 +260,12 @@ namespace Win32
 			INFORMATION = 3,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_FACTORY_TYPE : uint32
 		{
 			SINGLE_THREADED = 0,
 			MULTI_THREADED = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_CHANNEL_SELECTOR : uint32
 		{
 			R = 0,
@@ -301,7 +274,6 @@ namespace Win32
 			A = 3,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_BITMAPSOURCE_ORIENTATION : uint32
 		{
 			DEFAULT = 1,
@@ -314,7 +286,6 @@ namespace Win32
 			ROTATE_CLOCKWISE270 = 8,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_GAUSSIANBLUR_PROP : uint32
 		{
 			STANDARD_DEVIATION = 0,
@@ -322,7 +293,6 @@ namespace Win32
 			BORDER_MODE = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_GAUSSIANBLUR_OPTIMIZATION : uint32
 		{
 			SPEED = 0,
@@ -330,7 +300,6 @@ namespace Win32
 			QUALITY = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_DIRECTIONALBLUR_PROP : uint32
 		{
 			STANDARD_DEVIATION = 0,
@@ -339,7 +308,6 @@ namespace Win32
 			BORDER_MODE = 3,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_DIRECTIONALBLUR_OPTIMIZATION : uint32
 		{
 			SPEED = 0,
@@ -347,7 +315,6 @@ namespace Win32
 			QUALITY = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SHADOW_PROP : uint32
 		{
 			BLUR_STANDARD_DEVIATION = 0,
@@ -355,7 +322,6 @@ namespace Win32
 			OPTIMIZATION = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SHADOW_OPTIMIZATION : uint32
 		{
 			SPEED = 0,
@@ -363,25 +329,21 @@ namespace Win32
 			QUALITY = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_BLEND_PROP : uint32
 		{
 			MODE = 0,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SATURATION_PROP : uint32
 		{
 			SATURATION = 0,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_HUEROTATION_PROP : uint32
 		{
 			ANGLE = 0,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_COLORMATRIX_PROP : uint32
 		{
 			COLOR_MATRIX = 0,
@@ -389,7 +351,6 @@ namespace Win32
 			CLAMP_OUTPUT = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_BITMAPSOURCE_PROP : uint32
 		{
 			WIC_BITMAP_SOURCE = 0,
@@ -400,7 +361,6 @@ namespace Win32
 			ORIENTATION = 5,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_BITMAPSOURCE_INTERPOLATION_MODE : uint32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -410,20 +370,17 @@ namespace Win32
 			MIPMAP_LINEAR = 7,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_BITMAPSOURCE_ALPHA_MODE : uint32
 		{
 			PREMULTIPLIED = 1,
 			STRAIGHT = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_COMPOSITE_PROP : uint32
 		{
 			MODE = 0,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_3DTRANSFORM_PROP : uint32
 		{
 			INTERPOLATION_MODE = 0,
@@ -431,7 +388,6 @@ namespace Win32
 			TRANSFORM_MATRIX = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_3DTRANSFORM_INTERPOLATION_MODE : uint32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -441,7 +397,6 @@ namespace Win32
 			ANISOTROPIC = 4,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_3DPERSPECTIVETRANSFORM_PROP : uint32
 		{
 			INTERPOLATION_MODE = 0,
@@ -454,7 +409,6 @@ namespace Win32
 			ROTATION = 7,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_3DPERSPECTIVETRANSFORM_INTERPOLATION_MODE : uint32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -464,7 +418,6 @@ namespace Win32
 			ANISOTROPIC = 4,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_2DAFFINETRANSFORM_PROP : uint32
 		{
 			INTERPOLATION_MODE = 0,
@@ -473,7 +426,6 @@ namespace Win32
 			SHARPNESS = 3,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_DPICOMPENSATION_PROP : uint32
 		{
 			INTERPOLATION_MODE = 0,
@@ -481,7 +433,6 @@ namespace Win32
 			INPUT_DPI = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_DPICOMPENSATION_INTERPOLATION_MODE : uint32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -492,7 +443,6 @@ namespace Win32
 			HIGH_QUALITY_CUBIC = 5,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SCALE_PROP : uint32
 		{
 			SCALE = 0,
@@ -502,7 +452,6 @@ namespace Win32
 			SHARPNESS = 4,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SCALE_INTERPOLATION_MODE : uint32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -513,7 +462,6 @@ namespace Win32
 			HIGH_QUALITY_CUBIC = 5,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_TURBULENCE_PROP : uint32
 		{
 			OFFSET = 0,
@@ -525,7 +473,6 @@ namespace Win32
 			STITCHABLE = 6,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_DISPLACEMENTMAP_PROP : uint32
 		{
 			SCALE = 0,
@@ -533,7 +480,6 @@ namespace Win32
 			Y_CHANNEL_SELECT = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_COLORMANAGEMENT_PROP : uint32
 		{
 			SOURCE_COLOR_CONTEXT = 0,
@@ -544,14 +490,12 @@ namespace Win32
 			QUALITY = 5,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_COLORMANAGEMENT_ALPHA_MODE : uint32
 		{
 			PREMULTIPLIED = 1,
 			STRAIGHT = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_COLORMANAGEMENT_QUALITY : uint32
 		{
 			PROOF = 0,
@@ -559,7 +503,6 @@ namespace Win32
 			BEST = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_COLORMANAGEMENT_RENDERING_INTENT : uint32
 		{
 			PERCEPTUAL = 0,
@@ -568,7 +511,6 @@ namespace Win32
 			ABSOLUTE_COLORIMETRIC = 3,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_HISTOGRAM_PROP : uint32
 		{
 			NUM_BINS = 0,
@@ -576,7 +518,6 @@ namespace Win32
 			HISTOGRAM_OUTPUT = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_POINTSPECULAR_PROP : uint32
 		{
 			LIGHT_POSITION = 0,
@@ -588,7 +529,6 @@ namespace Win32
 			SCALE_MODE = 6,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_POINTSPECULAR_SCALE_MODE : uint32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -599,7 +539,6 @@ namespace Win32
 			HIGH_QUALITY_CUBIC = 5,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SPOTSPECULAR_PROP : uint32
 		{
 			LIGHT_POSITION = 0,
@@ -614,7 +553,6 @@ namespace Win32
 			SCALE_MODE = 9,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SPOTSPECULAR_SCALE_MODE : uint32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -625,7 +563,6 @@ namespace Win32
 			HIGH_QUALITY_CUBIC = 5,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_DISTANTSPECULAR_PROP : uint32
 		{
 			AZIMUTH = 0,
@@ -638,7 +575,6 @@ namespace Win32
 			SCALE_MODE = 7,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_DISTANTSPECULAR_SCALE_MODE : uint32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -649,7 +585,6 @@ namespace Win32
 			HIGH_QUALITY_CUBIC = 5,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_POINTDIFFUSE_PROP : uint32
 		{
 			LIGHT_POSITION = 0,
@@ -660,7 +595,6 @@ namespace Win32
 			SCALE_MODE = 5,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_POINTDIFFUSE_SCALE_MODE : uint32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -671,7 +605,6 @@ namespace Win32
 			HIGH_QUALITY_CUBIC = 5,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SPOTDIFFUSE_PROP : uint32
 		{
 			LIGHT_POSITION = 0,
@@ -685,7 +618,6 @@ namespace Win32
 			SCALE_MODE = 8,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SPOTDIFFUSE_SCALE_MODE : uint32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -696,7 +628,6 @@ namespace Win32
 			HIGH_QUALITY_CUBIC = 5,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_DISTANTDIFFUSE_PROP : uint32
 		{
 			AZIMUTH = 0,
@@ -708,7 +639,6 @@ namespace Win32
 			SCALE_MODE = 6,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_DISTANTDIFFUSE_SCALE_MODE : uint32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -719,13 +649,11 @@ namespace Win32
 			HIGH_QUALITY_CUBIC = 5,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_FLOOD_PROP : uint32
 		{
 			COLOR = 0,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_LINEARTRANSFER_PROP : uint32
 		{
 			RED_Y_INTERCEPT = 0,
@@ -743,7 +671,6 @@ namespace Win32
 			CLAMP_OUTPUT = 12,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_GAMMATRANSFER_PROP : uint32
 		{
 			RED_AMPLITUDE = 0,
@@ -765,7 +692,6 @@ namespace Win32
 			CLAMP_OUTPUT = 16,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_TABLETRANSFER_PROP : uint32
 		{
 			RED_TABLE = 0,
@@ -779,7 +705,6 @@ namespace Win32
 			CLAMP_OUTPUT = 8,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_DISCRETETRANSFER_PROP : uint32
 		{
 			RED_TABLE = 0,
@@ -793,7 +718,6 @@ namespace Win32
 			CLAMP_OUTPUT = 8,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_CONVOLVEMATRIX_PROP : uint32
 		{
 			KERNEL_UNIT_LENGTH = 0,
@@ -809,7 +733,6 @@ namespace Win32
 			CLAMP_OUTPUT = 10,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_CONVOLVEMATRIX_SCALE_MODE : uint32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -820,35 +743,30 @@ namespace Win32
 			HIGH_QUALITY_CUBIC = 5,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_BRIGHTNESS_PROP : uint32
 		{
 			WHITE_POINT = 0,
 			BLACK_POINT = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_ARITHMETICCOMPOSITE_PROP : uint32
 		{
 			COEFFICIENTS = 0,
 			CLAMP_OUTPUT = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_CROP_PROP : uint32
 		{
 			RECT = 0,
 			BORDER_MODE = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_BORDER_PROP : uint32
 		{
 			EDGE_MODE_X = 0,
 			EDGE_MODE_Y = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_BORDER_EDGE_MODE : uint32
 		{
 			CLAMP = 0,
@@ -856,7 +774,6 @@ namespace Win32
 			MIRROR = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_MORPHOLOGY_PROP : uint32
 		{
 			MODE = 0,
@@ -864,33 +781,28 @@ namespace Win32
 			HEIGHT = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_MORPHOLOGY_MODE : uint32
 		{
 			ERODE = 0,
 			DILATE = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_TILE_PROP : uint32
 		{
 			RECT = 0,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_ATLAS_PROP : uint32
 		{
 			INPUT_RECT = 0,
 			INPUT_PADDING_RECT = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_OPACITYMETADATA_PROP : uint32
 		{
 			INPUT_OPAQUE_RECT = 0,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_PROPERTY_TYPE : uint32
 		{
 			UNKNOWN = 0,
@@ -914,7 +826,6 @@ namespace Win32
 			COLOR_CONTEXT = 18,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_PROPERTY : uint32
 		{
 			CLSID = 2147483648,
@@ -929,7 +840,6 @@ namespace Win32
 			MAX_INPUTS = 2147483657,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SUBPROPERTY : uint32
 		{
 			DISPLAYNAME = 2147483648,
@@ -941,7 +851,6 @@ namespace Win32
 			INDEX = 2147483654,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_BITMAP_OPTIONS : uint32
 		{
 			NONE = 0,
@@ -951,7 +860,6 @@ namespace Win32
 			GDI_COMPATIBLE = 8,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_BUFFER_PRECISION : uint32
 		{
 			UNKNOWN = 0,
@@ -962,7 +870,6 @@ namespace Win32
 			_32BPC_FLOAT = 5,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_MAP_OPTIONS : uint32
 		{
 			NONE = 0,
@@ -971,7 +878,6 @@ namespace Win32
 			DISCARD = 4,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_INTERPOLATION_MODE : uint32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -982,14 +888,12 @@ namespace Win32
 			HIGH_QUALITY_CUBIC = 5,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_UNIT_MODE : uint32
 		{
 			DIPS = 0,
 			PIXELS = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_COLOR_SPACE : uint32
 		{
 			CUSTOM = 0,
@@ -997,14 +901,12 @@ namespace Win32
 			SCRGB = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_DEVICE_CONTEXT_OPTIONS : uint32
 		{
 			NONE = 0,
 			ENABLE_MULTITHREADED_OPTIMIZATIONS = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_STROKE_TRANSFORM_TYPE : uint32
 		{
 			NORMAL = 0,
@@ -1012,7 +914,6 @@ namespace Win32
 			HAIRLINE = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_PRIMITIVE_BLEND : uint32
 		{
 			SOURCE_OVER = 0,
@@ -1022,21 +923,18 @@ namespace Win32
 			MAX = 4,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_THREADING_MODE : uint32
 		{
 			SINGLE_THREADED = 0,
 			MULTI_THREADED = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_COLOR_INTERPOLATION_MODE : uint32
 		{
 			STRAIGHT = 0,
 			PREMULTIPLIED = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_LAYER_OPTIONS1 : uint32
 		{
 			NONE = 0,
@@ -1044,7 +942,6 @@ namespace Win32
 			IGNORE_ALPHA = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_PRINT_FONT_SUBSET_MODE : uint32
 		{
 			DEFAULT = 0,
@@ -1052,7 +949,6 @@ namespace Win32
 			NONE = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_CHANGE_TYPE : uint32
 		{
 			NONE = 0,
@@ -1061,14 +957,12 @@ namespace Win32
 			GRAPH = 3,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_PIXEL_OPTIONS : uint32
 		{
 			NONE = 0,
 			TRIVIAL_SAMPLING = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_VERTEX_OPTIONS : uint32
 		{
 			NONE = 0,
@@ -1077,14 +971,12 @@ namespace Win32
 			ASSUME_NO_OVERLAP = 4,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_VERTEX_USAGE : uint32
 		{
 			STATIC = 0,
 			DYNAMIC = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_BLEND_OPERATION : uint32
 		{
 			ADD = 1,
@@ -1094,7 +986,6 @@ namespace Win32
 			MAX = 5,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_BLEND : uint32
 		{
 			ZERO = 1,
@@ -1112,7 +1003,6 @@ namespace Win32
 			INV_BLEND_FACTOR = 15,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_CHANNEL_DEPTH : uint32
 		{
 			DEFAULT = 0,
@@ -1120,7 +1010,6 @@ namespace Win32
 			_4 = 4,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_FILTER : uint32
 		{
 			MIN_MAG_MIP_POINT = 0,
@@ -1134,14 +1023,12 @@ namespace Win32
 			ANISOTROPIC = 85,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_FEATURE : uint32
 		{
 			DOUBLES = 0,
 			D3D10_X_HARDWARE_OPTIONS = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_YCBCR_PROP : uint32
 		{
 			CHROMA_SUBSAMPLING = 0,
@@ -1149,7 +1036,6 @@ namespace Win32
 			INTERPOLATION_MODE = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_YCBCR_CHROMA_SUBSAMPLING : uint32
 		{
 			AUTO = 0,
@@ -1159,7 +1045,6 @@ namespace Win32
 			_440 = 4,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_YCBCR_INTERPOLATION_MODE : uint32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -1170,40 +1055,34 @@ namespace Win32
 			HIGH_QUALITY_CUBIC = 5,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_CONTRAST_PROP : uint32
 		{
 			CONTRAST = 0,
 			CLAMP_INPUT = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_RGBTOHUE_PROP : uint32
 		{
 			OUTPUT_COLOR_SPACE = 0,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE : uint32
 		{
 			HUE_SATURATION_VALUE = 0,
 			HUE_SATURATION_LIGHTNESS = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_HUETORGB_PROP : uint32
 		{
 			INPUT_COLOR_SPACE = 0,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_HUETORGB_INPUT_COLOR_SPACE : uint32
 		{
 			HUE_SATURATION_VALUE = 0,
 			HUE_SATURATION_LIGHTNESS = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_CHROMAKEY_PROP : uint32
 		{
 			COLOR = 0,
@@ -1212,20 +1091,17 @@ namespace Win32
 			FEATHER = 3,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_EMBOSS_PROP : uint32
 		{
 			HEIGHT = 0,
 			DIRECTION = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_EXPOSURE_PROP : uint32
 		{
 			EXPOSURE_VALUE = 0,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_POSTERIZE_PROP : uint32
 		{
 			RED_VALUE_COUNT = 0,
@@ -1233,21 +1109,18 @@ namespace Win32
 			BLUE_VALUE_COUNT = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SEPIA_PROP : uint32
 		{
 			INTENSITY = 0,
 			ALPHA_MODE = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SHARPEN_PROP : uint32
 		{
 			SHARPNESS = 0,
 			THRESHOLD = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_STRAIGHTEN_PROP : uint32
 		{
 			ANGLE = 0,
@@ -1255,7 +1128,6 @@ namespace Win32
 			SCALE_MODE = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_STRAIGHTEN_SCALE_MODE : uint32
 		{
 			NEAREST_NEIGHBOR = 0,
@@ -1265,14 +1137,12 @@ namespace Win32
 			ANISOTROPIC = 4,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_TEMPERATUREANDTINT_PROP : uint32
 		{
 			TEMPERATURE = 0,
 			TINT = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_VIGNETTE_PROP : uint32
 		{
 			COLOR = 0,
@@ -1280,7 +1150,6 @@ namespace Win32
 			STRENGTH = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_EDGEDETECTION_PROP : uint32
 		{
 			STRENGTH = 0,
@@ -1290,14 +1159,12 @@ namespace Win32
 			ALPHA_MODE = 4,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_EDGEDETECTION_MODE : uint32
 		{
 			SOBEL = 0,
 			PREWITT = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_HIGHLIGHTSANDSHADOWS_PROP : uint32
 		{
 			HIGHLIGHTS = 0,
@@ -1307,47 +1174,40 @@ namespace Win32
 			MASK_BLUR_RADIUS = 4,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_HIGHLIGHTSANDSHADOWS_INPUT_GAMMA : uint32
 		{
 			LINEAR = 0,
 			SRGB = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_LOOKUPTABLE3D_PROP : uint32
 		{
 			LUT = 0,
 			ALPHA_MODE = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_OPACITY_PROP : uint32
 		{
 			OPACITY = 0,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_CROSSFADE_PROP : uint32
 		{
 			WEIGHT = 0,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_TINT_PROP : uint32
 		{
 			COLOR = 0,
 			CLAMP_OUTPUT = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_WHITELEVELADJUSTMENT_PROP : uint32
 		{
 			INPUT_WHITE_LEVEL = 0,
 			OUTPUT_WHITE_LEVEL = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_HDRTONEMAP_PROP : uint32
 		{
 			INPUT_MAX_LUMINANCE = 0,
@@ -1355,21 +1215,18 @@ namespace Win32
 			DISPLAY_MODE = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_HDRTONEMAP_DISPLAY_MODE : uint32
 		{
 			SDR = 0,
 			HDR = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_RENDERING_PRIORITY : uint32
 		{
 			NORMAL = 0,
 			LOW = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SVG_PAINT_TYPE : uint32
 		{
 			NONE = 0,
@@ -1381,35 +1238,30 @@ namespace Win32
 			URI_CURRENT_COLOR = 6,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SVG_LENGTH_UNITS : uint32
 		{
 			NUMBER = 0,
 			PERCENTAGE = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SVG_DISPLAY : uint32
 		{
 			INLINE = 0,
 			NONE = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SVG_VISIBILITY : uint32
 		{
 			VISIBLE = 0,
 			HIDDEN = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SVG_OVERFLOW : uint32
 		{
 			VISIBLE = 0,
 			HIDDEN = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SVG_LINE_CAP : uint32
 		{
 			BUTT = 0,
@@ -1417,7 +1269,6 @@ namespace Win32
 			ROUND = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SVG_LINE_JOIN : uint32
 		{
 			BEVEL = 1,
@@ -1425,7 +1276,6 @@ namespace Win32
 			ROUND = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SVG_ASPECT_ALIGN : uint32
 		{
 			NONE = 0,
@@ -1440,14 +1290,12 @@ namespace Win32
 			X_MAX_Y_MAX = 9,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SVG_ASPECT_SCALING : uint32
 		{
 			MEET = 0,
 			SLICE = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SVG_PATH_COMMAND : uint32
 		{
 			CLOSE_PATH = 0,
@@ -1471,21 +1319,18 @@ namespace Win32
 			QUADRADIC_SMOOTH_RELATIVE = 18,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SVG_UNIT_TYPE : uint32
 		{
 			USER_SPACE_ON_USE = 0,
 			OBJECT_BOUNDING_BOX = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SVG_ATTRIBUTE_STRING_TYPE : uint32
 		{
 			SVG = 0,
 			ID = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SVG_ATTRIBUTE_POD_TYPE : uint32
 		{
 			FLOAT = 0,
@@ -1504,14 +1349,12 @@ namespace Win32
 			LENGTH = 13,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_INK_NIB_SHAPE : uint32
 		{
 			ROUND = 0,
 			SQUARE = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_ORIENTATION : uint32
 		{
 			DEFAULT = 1,
@@ -1524,7 +1367,6 @@ namespace Win32
 			ROTATE_CLOCKWISE90 = 8,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_IMAGE_SOURCE_LOADING_OPTIONS : uint32
 		{
 			NONE = 0,
@@ -1532,21 +1374,18 @@ namespace Win32
 			CACHE_ON_DEMAND = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS : uint32
 		{
 			NONE = 0,
 			LOW_QUALITY_PRIMARY_CONVERSION = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS : uint32
 		{
 			NONE = 0,
 			DISABLE_DPI_SCALE = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_PATCH_EDGE_MODE : uint32
 		{
 			ALIASED = 0,
@@ -1554,21 +1393,18 @@ namespace Win32
 			ALIASED_INFLATED = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_SPRITE_OPTIONS : uint32
 		{
 			NONE = 0,
 			CLAMP_TO_SOURCE_RECTANGLE = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION : uint32
 		{
 			DEFAULT = 0,
 			DISABLE = 1,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_GAMMA1 : uint32
 		{
 			G22 = 0,
@@ -1576,7 +1412,6 @@ namespace Win32
 			G2084 = 2,
 			FORCE_DWORD = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum D2D1_COLOR_CONTEXT_TYPE : uint32
 		{
 			ICC = 0,

@@ -11,7 +11,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum GETPROPERTYSTOREFLAGS : int32
 		{
 			DEFAULT = 0,
@@ -30,14 +29,12 @@ namespace Win32
 			VOLATILEPROPERTIESONLY = 4096,
 			MASK_VALID = 8191,
 		}
-		[AllowDuplicates]
 		public enum PKA_FLAGS : int32
 		{
 			SET = 0,
 			APPEND = 1,
 			DELETE = 2,
 		}
-		[AllowDuplicates]
 		public enum PSC_STATE : int32
 		{
 			NORMAL = 0,
@@ -45,7 +42,6 @@ namespace Win32
 			DIRTY = 2,
 			READONLY = 3,
 		}
-		[AllowDuplicates]
 		public enum PROPENUMTYPE : int32
 		{
 			DISCRETEVALUE = 0,
@@ -53,7 +49,6 @@ namespace Win32
 			DEFAULTVALUE = 2,
 			ENDRANGE = 3,
 		}
-		[AllowDuplicates]
 		public enum PROPDESC_TYPE_FLAGS : int32
 		{
 			DEFAULT = 0,
@@ -73,7 +68,6 @@ namespace Win32
 			ISSYSTEMPROPERTY = -2147483648,
 			MASK_ALL = -2147475457,
 		}
-		[AllowDuplicates]
 		public enum PROPDESC_VIEW_FLAGS : int32
 		{
 			DEFAULT = 0,
@@ -91,7 +85,6 @@ namespace Win32
 			CANWRAP = 4096,
 			MASK_ALL = 7167,
 		}
-		[AllowDuplicates]
 		public enum PROPDESC_DISPLAYTYPE : int32
 		{
 			STRING = 0,
@@ -100,7 +93,6 @@ namespace Win32
 			DATETIME = 3,
 			ENUMERATED = 4,
 		}
-		[AllowDuplicates]
 		public enum PROPDESC_GROUPING_RANGE : int32
 		{
 			DISCRETE = 0,
@@ -111,7 +103,6 @@ namespace Win32
 			PERCENT = 5,
 			ENUMERATED = 6,
 		}
-		[AllowDuplicates]
 		public enum PROPDESC_FORMAT_FLAGS : int32
 		{
 			DEFAULT = 0,
@@ -130,7 +121,6 @@ namespace Win32
 			READONLY = 4096,
 			NOAUTOREADINGORDER = 8192,
 		}
-		[AllowDuplicates]
 		public enum PROPDESC_SORTDESCRIPTION : int32
 		{
 			GENERAL = 0,
@@ -139,7 +129,6 @@ namespace Win32
 			SMALLEST_BIGGEST = 3,
 			OLDEST_NEWEST = 4,
 		}
-		[AllowDuplicates]
 		public enum PROPDESC_RELATIVEDESCRIPTION_TYPE : int32
 		{
 			GENERAL = 0,
@@ -154,7 +143,6 @@ namespace Win32
 			RATING = 9,
 			PRIORITY = 10,
 		}
-		[AllowDuplicates]
 		public enum PROPDESC_AGGREGATION_TYPE : int32
 		{
 			DEFAULT = 0,
@@ -166,7 +154,6 @@ namespace Win32
 			MAX = 6,
 			MIN = 7,
 		}
-		[AllowDuplicates]
 		public enum PROPDESC_CONDITION_TYPE : int32
 		{
 			NONE = 0,
@@ -176,7 +163,6 @@ namespace Win32
 			BOOLEAN = 4,
 			NUMBER = 5,
 		}
-		[AllowDuplicates]
 		public enum PROPDESC_SEARCHINFO_FLAGS : int32
 		{
 			DEFAULT = 0,
@@ -186,7 +172,6 @@ namespace Win32
 			ALWAYSINCLUDE = 8,
 			USEFORTYPEAHEAD = 16,
 		}
-		[AllowDuplicates]
 		public enum PROPDESC_COLUMNINDEX_TYPE : int32
 		{
 			NONE = 0,
@@ -196,7 +181,6 @@ namespace Win32
 			ONDISKALL = 4,
 			ONDISKVECTOR = 5,
 		}
-		[AllowDuplicates]
 		public enum PROPDESC_ENUMFILTER : int32
 		{
 			ALL = 0,
@@ -207,20 +191,17 @@ namespace Win32
 			INFULLTEXTQUERY = 5,
 			COLUMN = 6,
 		}
-		[AllowDuplicates]
 		public enum _PERSIST_SPROPSTORE_FLAGS : int32
 		{
 			DEFAULT = 0,
 			READONLY = 1,
 			TREAT_NEW_VALUES_AS_DIRTY = 2,
 		}
-		[AllowDuplicates]
 		public enum PSTIME_FLAGS : int32
 		{
 			UTC = 0,
 			LOCAL = 1,
 		}
-		[AllowDuplicates]
 		public enum PROPVAR_COMPARE_UNIT : int32
 		{
 			DEFAULT = 0,
@@ -231,7 +212,6 @@ namespace Win32
 			MONTH = 5,
 			YEAR = 6,
 		}
-		[AllowDuplicates]
 		public enum PROPVAR_COMPARE_FLAGS : int32
 		{
 			DEFAULT = 0,
@@ -242,7 +222,6 @@ namespace Win32
 			USESTRCMPIC = 16,
 			DIGITSASNUMBERS_CASESENSITIVE = 32,
 		}
-		[AllowDuplicates]
 		public enum PROPVAR_CHANGE_FLAGS : int32
 		{
 			DEFAULT = 0,
@@ -252,7 +231,6 @@ namespace Win32
 			LOCALBOOL = 8,
 			NOHEXSTRING = 16,
 		}
-		[AllowDuplicates]
 		public enum DRAWPROGRESSFLAGS : int32
 		{
 			NONE = 0,
@@ -262,7 +240,6 @@ namespace Win32
 			WARNING = 8,
 			STOPPED = 16,
 		}
-		[AllowDuplicates]
 		public enum SYNC_TRANSFER_STATUS : int32
 		{
 			NONE = 0,
@@ -278,7 +255,6 @@ namespace Win32
 			INCOMPLETE = 512,
 			PLACEHOLDER_IFEMPTY = 1024,
 		}
-		[AllowDuplicates]
 		public enum PLACEHOLDER_STATES : int32
 		{
 			NONE = 0,
@@ -289,20 +265,17 @@ namespace Win32
 			DEFAULT = 7,
 			ALL = 15,
 		}
-		[AllowDuplicates]
 		public enum PROPERTYUI_NAME_FLAGS : int32
 		{
 			DEFAULT = 0,
 			MNEMONIC = 1,
 		}
-		[AllowDuplicates]
 		public enum PROPERTYUI_FLAGS : int32
 		{
 			DEFAULT = 0,
 			RIGHTALIGN = 1,
 			NOLABELININFOTIP = 2,
 		}
-		[AllowDuplicates]
 		public enum PROPERTYUI_FORMAT_FLAGS : int32
 		{
 			DEFAULT = 0,
@@ -311,7 +284,6 @@ namespace Win32
 			NOTIME = 4,
 			FRIENDLYDATE = 8,
 		}
-		[AllowDuplicates]
 		public enum PDOPSTATUS : int32
 		{
 			RUNNING = 1,
@@ -320,7 +292,6 @@ namespace Win32
 			STOPPED = 4,
 			ERRORS = 5,
 		}
-		[AllowDuplicates]
 		public enum SYNC_ENGINE_STATE_FLAGS : int32
 		{
 			NONE = 0,

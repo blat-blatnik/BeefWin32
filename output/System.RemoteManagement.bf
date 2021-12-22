@@ -548,7 +548,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WSManDataType : int32
 		{
 			NONE = 0,
@@ -556,7 +555,6 @@ namespace Win32
 			TYPE_BINARY = 2,
 			TYPE_DWORD = 4,
 		}
-		[AllowDuplicates]
 		public enum WSManAuthenticationFlags : int32
 		{
 			DEFAULT_AUTHENTICATION = 0,
@@ -568,7 +566,6 @@ namespace Win32
 			AUTH_CREDSSP = 128,
 			AUTH_CLIENT_CERTIFICATE = 32,
 		}
-		[AllowDuplicates]
 		public enum WSManProxyAccessType : int32
 		{
 			IE_PROXY_CONFIG = 1,
@@ -576,7 +573,6 @@ namespace Win32
 			AUTO_DETECT = 4,
 			NO_PROXY_SERVER = 8,
 		}
-		[AllowDuplicates]
 		public enum WSManSessionOption : int32
 		{
 			DEFAULT_OPERATION_TIMEOUTMS = 1,
@@ -603,7 +599,6 @@ namespace Win32
 			USE_SSL = 33,
 			USE_INTEARACTIVE_TOKEN = 34,
 		}
-		[AllowDuplicates]
 		public enum WSManCallbackFlags : int32
 		{
 			END_OF_OPERATION = 1,
@@ -617,7 +612,6 @@ namespace Win32
 			RETRY_ABORTED_DUE_TO_INTERNAL_ERROR = 4096,
 			RECEIVE_DELAY_STREAM_REQUEST_PROCESSED = 8192,
 		}
-		[AllowDuplicates]
 		public enum WSManShellFlag : int32
 		{
 			NO_COMPRESSION = 1,
@@ -626,7 +620,6 @@ namespace Win32
 			SERVER_BUFFERING_MODE_BLOCK = 8,
 			RECEIVE_DELAY_OUTPUT_STREAM = 16,
 		}
-		[AllowDuplicates]
 		public enum WSManSessionFlags : int32
 		{
 			UTF8 = 1,
@@ -660,7 +653,6 @@ namespace Win32
 			AssociatedInstance = 0,
 			AssociationInstance = 128,
 		}
-		[AllowDuplicates]
 		public enum WSManProxyAccessTypeFlags : int32
 		{
 			IEConfig = 1,
@@ -668,7 +660,6 @@ namespace Win32
 			AutoDetect = 4,
 			NoProxyServer = 8,
 		}
-		[AllowDuplicates]
 		public enum WSManProxyAuthenticationFlags : int32
 		{
 			Negotiate = 1,

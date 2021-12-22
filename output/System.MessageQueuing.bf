@@ -212,7 +212,6 @@ namespace Win32
 			RC4 = 26625,
 			SEAL = 26626,
 		}
-		[AllowDuplicates]
 		public enum MQTRANSACTION : int32
 		{
 			NO_TRANSACTION = 0,
@@ -220,7 +219,6 @@ namespace Win32
 			XA_TRANSACTION = 2,
 			SINGLE_MESSAGE = 3,
 		}
-		[AllowDuplicates]
 		public enum RELOPS : int32
 		{
 			NOP = 0,
@@ -231,20 +229,17 @@ namespace Win32
 			LE = 5,
 			GE = 6,
 		}
-		[AllowDuplicates]
 		public enum MQCERT_REGISTER : int32
 		{
 			ALWAYS = 1,
 			IF_NOT_EXIST = 2,
 		}
-		[AllowDuplicates]
 		public enum MQMSGCURSOR : int32
 		{
 			FIRST = 0,
 			CURRENT = 1,
 			NEXT = 2,
 		}
-		[AllowDuplicates]
 		public enum MQMSGCLASS : int32
 		{
 			NORMAL = 0,
@@ -269,7 +264,6 @@ namespace Win32
 			NACK_RECEIVE_TIMEOUT = 49154,
 			NACK_RECEIVE_TIMEOUT_AT_SENDER = 49155,
 		}
-		[AllowDuplicates]
 		public enum MQMSGDELIVERY : int32
 		{
 			EXPRESS = 0,
@@ -288,26 +282,22 @@ namespace Win32
 			NACK_RECEIVE = 12,
 			FULL_RECEIVE = 14,
 		}
-		[AllowDuplicates]
 		public enum MQMSGJOURNAL : int32
 		{
 			JOURNAL_NONE = 0,
 			DEADLETTER = 1,
 			JOURNAL = 2,
 		}
-		[AllowDuplicates]
 		public enum MQMSGTRACE : int32
 		{
 			TRACE_NONE = 0,
 			SEND_ROUTE_TO_REPORT_QUEUE = 1,
 		}
-		[AllowDuplicates]
 		public enum MQMSGSENDERIDTYPE : int32
 		{
 			NONE = 0,
 			SID = 1,
 		}
-		[AllowDuplicates]
 		public enum MQMSGPRIVLEVEL : int32
 		{
 			NONE = 0,
@@ -332,7 +322,6 @@ namespace Win32
 			CORRELATIONID_SIZE = 20,
 			XACTID_SIZE = 20,
 		}
-		[AllowDuplicates]
 		public enum MQMSGMAX : int32
 		{
 			MQ_MAX_MSG_LABEL_LEN = 249,
@@ -348,13 +337,11 @@ namespace Win32
 			ED_SIG30 = 5,
 			ED_SIGXML = 9,
 		}
-		[AllowDuplicates]
 		public enum MQSHARE : int32
 		{
 			NONE = 0,
 			RECEIVE_SHARE = 1,
 		}
-		[AllowDuplicates]
 		public enum MQACCESS : int32
 		{
 			RECEIVE_ACCESS = 1,
@@ -362,32 +349,27 @@ namespace Win32
 			PEEK_ACCESS = 32,
 			ADMIN_ACCESS = 128,
 		}
-		[AllowDuplicates]
 		public enum MQJOURNAL : int32
 		{
 			L_NONE = 0,
 			L = 1,
 		}
-		[AllowDuplicates]
 		public enum MQTRANSACTIONAL : int32
 		{
 			L_NONE = 0,
 			L = 1,
 		}
-		[AllowDuplicates]
 		public enum MQAUTHENTICATE : int32
 		{
 			E_NONE = 0,
 			E = 1,
 		}
-		[AllowDuplicates]
 		public enum MQPRIVLEVEL : int32
 		{
 			NONE = 0,
 			OPTIONAL = 1,
 			BODY = 2,
 		}
-		[AllowDuplicates]
 		public enum MQPRIORITY : int32
 		{
 			IN_PRIORITY = 0,
@@ -399,7 +381,6 @@ namespace Win32
 			NAME_LEN = 124,
 			LABEL_LEN = 124,
 		}
-		[AllowDuplicates]
 		public enum QUEUE_TYPE : int32
 		{
 			PUBLIC = 0,
@@ -408,21 +389,18 @@ namespace Win32
 			CONNECTOR = 3,
 			MULTICAST = 4,
 		}
-		[AllowDuplicates]
 		public enum FOREIGN_STATUS : int32
 		{
 			FOREIGN = 0,
 			NOT_FOREIGN = 1,
 			UNKNOWN = 2,
 		}
-		[AllowDuplicates]
 		public enum XACT_STATUS : int32
 		{
 			XACT = 0,
 			NOT_XACT = 1,
 			UNKNOWN = 2,
 		}
-		[AllowDuplicates]
 		public enum QUEUE_STATE : int32
 		{
 			LOCAL_CONNECTION = 0,
@@ -592,7 +570,6 @@ namespace Win32
 			ERROR_CANNOT_CREATE_PSC_OBJECTS = -1072824171,
 			ERROR_CANNOT_UPDATE_PSC_OBJECTS = -1072824170,
 		}
-		[AllowDuplicates]
 		public enum MQWARNING : int32
 		{
 			PROPERTY = 1074659329,

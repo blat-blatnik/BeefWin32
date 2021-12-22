@@ -239,7 +239,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum RPC_C_QOS_CAPABILITIES : uint32
 		{
 			DEFAULT = 0,
@@ -250,19 +249,16 @@ namespace Win32
 			LOCAL_MA_HINT = 16,
 			SCHANNEL_FULL_AUTH_IDENTITY = 32,
 		}
-		[AllowDuplicates]
 		public enum RPC_C_QOS_IDENTITY : uint32
 		{
 			STATIC = 0,
 			DYNAMIC = 1,
 		}
-		[AllowDuplicates]
 		public enum RPC_C_AUTHN_INFO_TYPE : uint32
 		{
 			NONE = 0,
 			TYPE_HTTP = 1,
 		}
-		[AllowDuplicates]
 		public enum RPC_C_HTTP_FLAGS : uint32
 		{
 			USE_SSL = 1,
@@ -270,13 +266,11 @@ namespace Win32
 			IGNORE_CERT_CN_INVALID = 8,
 			ENABLE_CERT_REVOCATION_CHECK = 16,
 		}
-		[AllowDuplicates]
 		public enum RPC_C_HTTP_AUTHN_TARGET : uint32
 		{
 			SERVER = 1,
 			PROXY = 2,
 		}
-		[AllowDuplicates]
 		public enum RPC_STATUS : int32
 		{
 			RPC_S_INVALID_STRING_BINDING = 1700,
@@ -380,25 +374,21 @@ namespace Win32
 			RPC_S_GRP_ELT_NOT_ADDED = 1928,
 			RPC_S_GRP_ELT_NOT_REMOVED = 1929,
 		}
-		[AllowDuplicates]
 		public enum GROUP_NAME_SYNTAX : uint32
 		{
 			EFAULT = 0,
 			CE = 3,
 		}
-		[AllowDuplicates]
 		public enum SEC_WINNT_AUTH_IDENTITY : uint32
 		{
 			ANSI = 1,
 			UNICODE = 2,
 		}
-		[AllowDuplicates]
 		public enum RPC_BINDING_HANDLE_OPTIONS_FLAGS : uint32
 		{
 			NONCAUSAL = 1,
 			DONTLINGER = 2,
 		}
-		[AllowDuplicates]
 		public enum RPC_HTTP_REDIRECTOR_STAGE : int32
 		{
 			REDIRECT = 1,
@@ -407,20 +397,17 @@ namespace Win32
 			ACCESS_2 = 4,
 			INTERFACE = 5,
 		}
-		[AllowDuplicates]
 		public enum RPC_ADDRESS_CHANGE_TYPE : int32
 		{
 			NOT_LOADED = 1,
 			LOADED = 2,
 			ADDRESS_CHANGE = 3,
 		}
-		[AllowDuplicates]
 		public enum LRPC_SYSTEM_HANDLE_MARSHAL_DIRECTION : int32
 		{
 			Marshal = 0,
 			Unmarshal = 1,
 		}
-		[AllowDuplicates]
 		public enum RpcProxyPerfCounters : int32
 		{
 			CurrentUniqueUser = 1,
@@ -436,7 +423,6 @@ namespace Win32
 			FailedLbsMessages = 11,
 			LastCounter = 12,
 		}
-		[AllowDuplicates]
 		public enum RPC_NOTIFICATION_TYPES : int32
 		{
 			None = 0,
@@ -446,7 +432,6 @@ namespace Win32
 			Hwnd = 4,
 			Callback = 5,
 		}
-		[AllowDuplicates]
 		public enum RPC_ASYNC_EVENT : int32
 		{
 			CallComplete = 0,
@@ -455,7 +440,6 @@ namespace Win32
 			ClientDisconnect = 3,
 			ClientCancel = 4,
 		}
-		[AllowDuplicates]
 		public enum ExtendedErrorParamTypes : int32
 		{
 			AnsiString = 1,
@@ -466,14 +450,12 @@ namespace Win32
 			None = 6,
 			Binary = 7,
 		}
-		[AllowDuplicates]
 		public enum RpcLocalAddressFormat : int32
 		{
 			nvalid = 0,
 			Pv4 = 1,
 			Pv6 = 2,
 		}
-		[AllowDuplicates]
 		public enum RpcCallType : int32
 		{
 			Invalid = 0,
@@ -481,7 +463,6 @@ namespace Win32
 			Training = 2,
 			Guaranteed = 3,
 		}
-		[AllowDuplicates]
 		public enum RpcCallClientLocality : int32
 		{
 			Invalid = 0,
@@ -489,14 +470,12 @@ namespace Win32
 			Remote = 2,
 			ClientUnknownLocality = 3,
 		}
-		[AllowDuplicates]
 		public enum RPC_NOTIFICATIONS : int32
 		{
 			allNone = 0,
 			lientDisconnect = 1,
 			allCancel = 2,
 		}
-		[AllowDuplicates]
 		public enum USER_MARSHAL_CB_TYPE : int32
 		{
 			BUFFER_SIZE = 0,
@@ -504,14 +483,12 @@ namespace Win32
 			UNMARSHALL = 2,
 			FREE = 3,
 		}
-		[AllowDuplicates]
 		public enum IDL_CS_CONVERT : int32
 		{
 			NO_CONVERT = 0,
 			IN_PLACE_CONVERT = 1,
 			NEW_BUFFER_CONVERT = 2,
 		}
-		[AllowDuplicates]
 		public enum XLAT_SIDE : int32
 		{
 			SERVER = 1,
@@ -536,7 +513,6 @@ namespace Win32
 			MAX = 12,
 			INVALID = 255,
 		}
-		[AllowDuplicates]
 		public enum STUB_PHASE : int32
 		{
 			UNMARSHAL = 0,
@@ -544,7 +520,6 @@ namespace Win32
 			MARSHAL = 2,
 			CALL_SERVER_NO_HRESULT = 3,
 		}
-		[AllowDuplicates]
 		public enum PROXY_PHASE : int32
 		{
 			CALCSIZE = 0,
@@ -553,14 +528,12 @@ namespace Win32
 			SENDRECEIVE = 3,
 			UNMARSHAL = 4,
 		}
-		[AllowDuplicates]
 		public enum MIDL_ES_CODE : int32
 		{
 			ENCODE = 0,
 			DECODE = 1,
 			ENCODE_NDR64 = 2,
 		}
-		[AllowDuplicates]
 		public enum MIDL_ES_HANDLE_STYLE : int32
 		{
 			INCREMENTAL_HANDLE = 0,

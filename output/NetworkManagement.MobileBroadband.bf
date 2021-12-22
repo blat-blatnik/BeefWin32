@@ -15,14 +15,12 @@ namespace Win32
 			RSSI_UNKNOWN = 99,
 			ERROR_RATE_UNKNOWN = 99,
 		}
-		[AllowDuplicates]
 		public enum MBN_CELLULAR_CLASS : int32
 		{
 			NONE = 0,
 			GSM = 1,
 			CDMA = 2,
 		}
-		[AllowDuplicates]
 		public enum MBN_VOICE_CLASS : int32
 		{
 			NONE = 0,
@@ -30,7 +28,6 @@ namespace Win32
 			SEPARATE_VOICE_DATA = 2,
 			SIMULTANEOUS_VOICE_DATA = 3,
 		}
-		[AllowDuplicates]
 		public enum MBN_PROVIDER_STATE : int32
 		{
 			NONE = 0,
@@ -41,7 +38,6 @@ namespace Win32
 			REGISTERED = 16,
 			PREFERRED_MULTICARRIER = 32,
 		}
-		[AllowDuplicates]
 		public enum MBN_PROVIDER_CONSTANTS : int32
 		{
 			NAME_LEN = 20,
@@ -55,7 +51,6 @@ namespace Win32
 			MODEL_LEN = 32,
 			FIRMWARE_LEN = 32,
 		}
-		[AllowDuplicates]
 		public enum MBN_DATA_CLASS : int32
 		{
 			NONE = 0,
@@ -76,7 +71,6 @@ namespace Win32
 			UMB = 4194304,
 			CUSTOM = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum MBN_CTRL_CAPS : int32
 		{
 			NONE = 0,
@@ -89,7 +83,6 @@ namespace Win32
 			USSD = 64,
 			MULTI_MODE = 128,
 		}
-		[AllowDuplicates]
 		public enum MBN_SMS_CAPS : int32
 		{
 			NONE = 0,
@@ -98,7 +91,6 @@ namespace Win32
 			TEXT_RECEIVE = 4,
 			TEXT_SEND = 8,
 		}
-		[AllowDuplicates]
 		public enum MBN_BAND_CLASS : int32
 		{
 			NONE = 0,
@@ -122,7 +114,6 @@ namespace Win32
 			XVII = 131072,
 			CUSTOM = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum MBN_READY_STATE : int32
 		{
 			OFF = 0,
@@ -135,7 +126,6 @@ namespace Win32
 			DEVICE_BLOCKED = 7,
 			NO_ESIM_PROFILE = 8,
 		}
-		[AllowDuplicates]
 		public enum MBN_ACTIVATION_STATE : int32
 		{
 			NONE = 0,
@@ -144,26 +134,22 @@ namespace Win32
 			DEACTIVATED = 3,
 			DEACTIVATING = 4,
 		}
-		[AllowDuplicates]
 		public enum MBN_CONNECTION_MODE : int32
 		{
 			PROFILE = 0,
 			TMP_PROFILE = 1,
 		}
-		[AllowDuplicates]
 		public enum MBN_VOICE_CALL_STATE : int32
 		{
 			NONE = 0,
 			IN_PROGRESS = 1,
 			HANGUP = 2,
 		}
-		[AllowDuplicates]
 		public enum MBN_REGISTRATION_CONSTANTS : int32
 		{
 			ROAMTEXT_LEN = 64,
 			CDMA_DEFAULT_PROVIDER_ID = 0,
 		}
-		[AllowDuplicates]
 		public enum MBN_REGISTER_STATE : int32
 		{
 			NONE = 0,
@@ -174,7 +160,6 @@ namespace Win32
 			PARTNER = 5,
 			DENIED = 6,
 		}
-		[AllowDuplicates]
 		public enum MBN_REGISTER_MODE : int32
 		{
 			NONE = 0,
@@ -187,14 +172,12 @@ namespace Win32
 			ATTEMPTS_REMAINING_UNKNOWN = -1,
 			PIN_LENGTH_UNKNOWN = -1,
 		}
-		[AllowDuplicates]
 		public enum MBN_PIN_STATE : int32
 		{
 			NONE = 0,
 			ENTER = 1,
 			UNBLOCK = 2,
 		}
-		[AllowDuplicates]
 		public enum MBN_PIN_TYPE : int32
 		{
 			NONE = 0,
@@ -209,13 +192,11 @@ namespace Win32
 			CORPORATE_PIN = 9,
 			SUBSIDY_LOCK = 10,
 		}
-		[AllowDuplicates]
 		public enum MBN_PIN_MODE : int32
 		{
 			ENABLED = 1,
 			DISABLED = 2,
 		}
-		[AllowDuplicates]
 		public enum MBN_PIN_FORMAT : int32
 		{
 			NONE = 0,
@@ -230,7 +211,6 @@ namespace Win32
 			PASSWORD_LEN = 255,
 			CONTEXT_ID_APPEND = -1,
 		}
-		[AllowDuplicates]
 		public enum MBN_AUTH_PROTOCOL : int32
 		{
 			NONE = 0,
@@ -238,13 +218,11 @@ namespace Win32
 			CHAP = 2,
 			MSCHAPV2 = 3,
 		}
-		[AllowDuplicates]
 		public enum MBN_COMPRESSION : int32
 		{
 			NONE = 0,
 			ENABLE = 1,
 		}
-		[AllowDuplicates]
 		public enum MBN_CONTEXT_TYPE : int32
 		{
 			NONE = 0,
@@ -262,7 +240,6 @@ namespace Win32
 			CDMA_SHORT_MSG_SIZE_UNKNOWN = 0,
 			CDMA_SHORT_MSG_SIZE_MAX = 160,
 		}
-		[AllowDuplicates]
 		public enum MBN_MSG_STATUS : int32
 		{
 			NEW = 0,
@@ -270,7 +247,6 @@ namespace Win32
 			DRAFT = 2,
 			SENT = 3,
 		}
-		[AllowDuplicates]
 		public enum MBN_SMS_CDMA_LANG : int32
 		{
 			NONE = 0,
@@ -282,7 +258,6 @@ namespace Win32
 			CHINESE = 6,
 			HEBREW = 7,
 		}
-		[AllowDuplicates]
 		public enum MBN_SMS_CDMA_ENCODING : int32
 		{
 			OCTET = 0,
@@ -296,7 +271,6 @@ namespace Win32
 			LATIN = 8,
 			GSM_7BIT = 9,
 		}
-		[AllowDuplicates]
 		public enum MBN_SMS_FLAG : int32
 		{
 			ALL = 0,
@@ -306,32 +280,27 @@ namespace Win32
 			SENT = 4,
 			DRAFT = 5,
 		}
-		[AllowDuplicates]
 		public enum MBN_SMS_STATUS_FLAG : int32
 		{
 			NONE = 0,
 			MESSAGE_STORE_FULL = 1,
 			NEW_MESSAGE = 2,
 		}
-		[AllowDuplicates]
 		public enum MBN_SMS_FORMAT : int32
 		{
 			NONE = 0,
 			PDU = 1,
 			TEXT = 2,
 		}
-		[AllowDuplicates]
 		public enum MBN_RADIO : int32
 		{
 			FF = 0,
 			N = 1,
 		}
-		[AllowDuplicates]
 		public enum MBN_DEVICE_SERVICE_SESSIONS_STATE : int32
 		{
 			MBN_DEVICE_SERVICE_SESSIONS_RESTORED = 0,
 		}
-		[AllowDuplicates]
 		public enum MBN_DEVICE_SERVICES_INTERFACE_STATE : int32
 		{
 			ARRIVAL = 0,

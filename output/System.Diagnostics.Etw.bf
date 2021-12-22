@@ -473,7 +473,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum TRACE_MESSAGE_FLAGS : uint32
 		{
 			COMPONENTID = 4,
@@ -482,14 +481,12 @@ namespace Win32
 			SYSTEMINFO = 32,
 			TIMESTAMP = 8,
 		}
-		[AllowDuplicates]
 		public enum ENABLECALLBACK_ENABLED_STATE : uint32
 		{
 			DISABLE_PROVIDER = 0,
 			ENABLE_PROVIDER = 1,
 			CAPTURE_STATE = 2,
 		}
-		[AllowDuplicates]
 		public enum EVENT_TRACE_CONTROL : uint32
 		{
 			FLUSH = 3,
@@ -497,7 +494,6 @@ namespace Win32
 			STOP = 1,
 			UPDATE = 2,
 		}
-		[AllowDuplicates]
 		public enum EVENT_TRACE_FLAG : uint32
 		{
 			ALPC = 1048576,
@@ -528,7 +524,6 @@ namespace Win32
 			VAMAP = 32768,
 			VIRTUAL_ALLOC = 16384,
 		}
-		[AllowDuplicates]
 		public enum WMIDPREQUESTCODE : int32
 		{
 			GET_ALL_DATA = 0,
@@ -543,14 +538,12 @@ namespace Win32
 			EXECUTE_METHOD = 9,
 			CAPTURE_STATE = 10,
 		}
-		[AllowDuplicates]
 		public enum ETW_COMPRESSION_RESUMPTION_MODE : int32
 		{
 			Restart = 0,
 			NoDisable = 1,
 			NoRestart = 2,
 		}
-		[AllowDuplicates]
 		public enum ETW_PMC_COUNTER_OWNER_TYPE : int32
 		{
 			Free = 0,
@@ -558,7 +551,6 @@ namespace Win32
 			Tagged = 2,
 			TaggedWithSource = 3,
 		}
-		[AllowDuplicates]
 		public enum TRACE_QUERY_INFO_CLASS : int32
 		{
 			TraceGuidQueryList = 0,
@@ -590,7 +582,6 @@ namespace Win32
 			TraceUnifiedStackCachingInfo = 26,
 			MaxTraceSetInfoClass = 27,
 		}
-		[AllowDuplicates]
 		public enum ETW_PROCESS_HANDLE_INFO_TYPE : int32
 		{
 			PartitionInformation = 1,
@@ -598,7 +589,6 @@ namespace Win32
 			LastDroppedTimes = 3,
 			ProcessHandleInfoMax = 4,
 		}
-		[AllowDuplicates]
 		public enum EVENT_INFO_CLASS : int32
 		{
 			EventProviderBinaryTrackInfo = 0,
@@ -607,14 +597,12 @@ namespace Win32
 			EventProviderUseDescriptorType = 3,
 			MaxEventInfo = 4,
 		}
-		[AllowDuplicates]
 		public enum ETW_PROVIDER_TRAIT_TYPE : int32
 		{
 			TypeGroup = 1,
 			DecodeGuid = 2,
 			TypeMax = 3,
 		}
-		[AllowDuplicates]
 		public enum EVENTSECURITYOPERATION : int32
 		{
 			SetDACL = 0,
@@ -623,7 +611,6 @@ namespace Win32
 			AddSACL = 3,
 			Max = 4,
 		}
-		[AllowDuplicates]
 		public enum MAP_FLAGS : int32
 		{
 			MANIFEST_VALUEMAP = 1,
@@ -634,13 +621,11 @@ namespace Win32
 			WBEM_FLAG = 32,
 			WBEM_NO_MAP = 64,
 		}
-		[AllowDuplicates]
 		public enum MAP_VALUETYPE : int32
 		{
 			ULONG = 0,
 			STRING = 1,
 		}
-		[AllowDuplicates]
 		public enum _TDH_IN_TYPE : int32
 		{
 			NULL = 0,
@@ -681,7 +666,6 @@ namespace Win32
 			HEXDUMP = 309,
 			WBEMSID = 310,
 		}
-		[AllowDuplicates]
 		public enum _TDH_OUT_TYPE : int32
 		{
 			NULL = 0,
@@ -726,7 +710,6 @@ namespace Win32
 			REDUCEDSTRING = 300,
 			NOPRINT = 301,
 		}
-		[AllowDuplicates]
 		public enum PROPERTY_FLAGS : int32
 		{
 			Struct = 1,
@@ -738,7 +721,6 @@ namespace Win32
 			HasTags = 64,
 			HasCustomSchema = 128,
 		}
-		[AllowDuplicates]
 		public enum DECODING_SOURCE : int32
 		{
 			XMLFile = 0,
@@ -747,14 +729,12 @@ namespace Win32
 			Tlg = 3,
 			Max = 4,
 		}
-		[AllowDuplicates]
 		public enum TEMPLATE_FLAGS : int32
 		{
 			EVENT_DATA = 1,
 			USER_DATA = 2,
 			CONTROL_GUID = 4,
 		}
-		[AllowDuplicates]
 		public enum PAYLOAD_OPERATOR : int32
 		{
 			EQ = 0,
@@ -772,7 +752,6 @@ namespace Win32
 			ISNOT = 31,
 			INVALID = 32,
 		}
-		[AllowDuplicates]
 		public enum EVENT_FIELD_TYPE : int32
 		{
 			KeywordInformation = 0,
@@ -782,7 +761,6 @@ namespace Win32
 			OpcodeInformation = 4,
 			InformationMax = 5,
 		}
-		[AllowDuplicates]
 		public enum TDH_CONTEXT_TYPE : int32
 		{
 			WPP_TMFFILE = 0,

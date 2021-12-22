@@ -483,14 +483,12 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum ADDRESS_FAMILY : uint32
 		{
 			INET = 2,
 			INET6 = 23,
 			UNSPEC = 0,
 		}
-		[AllowDuplicates]
 		public enum GET_ADAPTERS_ADDRESSES_FLAGS : uint32
 		{
 			SKIP_UNICAST = 1,
@@ -515,7 +513,6 @@ namespace Win32
 			POINT_TO_MULTI_POINT = 4,
 			POINTTOMULTIPOINT = 4,
 		}
-		[AllowDuplicates]
 		public enum INTERNAL_IF_OPER_STATUS : int32
 		{
 			NON_OPERATIONAL = 0,
@@ -525,7 +522,6 @@ namespace Win32
 			CONNECTED = 4,
 			OPERATIONAL = 5,
 		}
-		[AllowDuplicates]
 		public enum NET_IF_OPER_STATUS : int32
 		{
 			UP = 1,
@@ -536,21 +532,18 @@ namespace Win32
 			NOT_PRESENT = 6,
 			LOWER_LAYER_DOWN = 7,
 		}
-		[AllowDuplicates]
 		public enum NET_IF_ADMIN_STATUS : int32
 		{
 			UP = 1,
 			DOWN = 2,
 			TESTING = 3,
 		}
-		[AllowDuplicates]
 		public enum NET_IF_RCV_ADDRESS_TYPE : int32
 		{
 			OTHER = 1,
 			VOLATILE = 2,
 			NON_VOLATILE = 3,
 		}
-		[AllowDuplicates]
 		public enum NET_IF_CONNECTION_TYPE : int32
 		{
 			DEDICATED = 1,
@@ -558,7 +551,6 @@ namespace Win32
 			DEMAND = 3,
 			MAXIMUM = 4,
 		}
-		[AllowDuplicates]
 		public enum TUNNEL_TYPE : int32
 		{
 			NONE = 0,
@@ -569,7 +561,6 @@ namespace Win32
 			TEREDO = 14,
 			IPHTTPS = 15,
 		}
-		[AllowDuplicates]
 		public enum NET_IF_ACCESS_TYPE : int32
 		{
 			LOOPBACK = 1,
@@ -578,7 +569,6 @@ namespace Win32
 			POINT_TO_MULTI_POINT = 4,
 			MAXIMUM = 5,
 		}
-		[AllowDuplicates]
 		public enum NET_IF_DIRECTION_TYPE : int32
 		{
 			SENDRECEIVE = 0,
@@ -586,28 +576,24 @@ namespace Win32
 			RECEIVEONLY = 2,
 			MAXIMUM = 3,
 		}
-		[AllowDuplicates]
 		public enum NET_IF_MEDIA_CONNECT_STATE : int32
 		{
 			Unknown = 0,
 			Connected = 1,
 			Disconnected = 2,
 		}
-		[AllowDuplicates]
 		public enum NET_IF_MEDIA_DUPLEX_STATE : int32
 		{
 			Unknown = 0,
 			Half = 1,
 			Full = 2,
 		}
-		[AllowDuplicates]
 		public enum IF_ADMINISTRATIVE_STATE : int32
 		{
 			DISABLED = 0,
 			ENABLED = 1,
 			DEMANDDIAL = 2,
 		}
-		[AllowDuplicates]
 		public enum IF_OPER_STATUS : int32
 		{
 			Up = 1,
@@ -618,7 +604,6 @@ namespace Win32
 			NotPresent = 6,
 			LowerLayerDown = 7,
 		}
-		[AllowDuplicates]
 		public enum MIB_NOTIFICATION_TYPE : int32
 		{
 			ParameterNotification = 0,
@@ -626,26 +611,22 @@ namespace Win32
 			DeleteInstance = 2,
 			InitialNotification = 3,
 		}
-		[AllowDuplicates]
 		public enum MIB_IF_ENTRY_LEVEL : int32
 		{
 			l = 0,
 			lWithoutStatistics = 2,
 		}
-		[AllowDuplicates]
 		public enum MIB_IF_TABLE_LEVEL : int32
 		{
 			Normal = 0,
 			Raw = 1,
 			NormalWithoutStatistics = 2,
 		}
-		[AllowDuplicates]
 		public enum DNS_SERVER_PROPERTY_TYPE : int32
 		{
 			InvalidProperty = 0,
 			DohProperty = 1,
 		}
-		[AllowDuplicates]
 		public enum MIB_IPFORWARD_TYPE : int32
 		{
 			OTHER = 1,
@@ -653,7 +634,6 @@ namespace Win32
 			DIRECT = 3,
 			INDIRECT = 4,
 		}
-		[AllowDuplicates]
 		public enum MIB_IPNET_TYPE : int32
 		{
 			OTHER = 1,
@@ -661,13 +641,11 @@ namespace Win32
 			DYNAMIC = 3,
 			STATIC = 4,
 		}
-		[AllowDuplicates]
 		public enum MIB_IPSTATS_FORWARDING : int32
 		{
 			FORWARDING = 1,
 			NOT_FORWARDING = 2,
 		}
-		[AllowDuplicates]
 		public enum ICMP6_TYPE : int32
 		{
 			ICMP6_DST_UNREACH = 1,
@@ -686,7 +664,6 @@ namespace Win32
 			ND_REDIRECT = 137,
 			ICMP6_V2_MEMBERSHIP_REPORT = 143,
 		}
-		[AllowDuplicates]
 		public enum ICMP4_TYPE : int32
 		{
 			ECHO_REPLY = 0,
@@ -703,7 +680,6 @@ namespace Win32
 			MASK_REQUEST = 17,
 			MASK_REPLY = 18,
 		}
-		[AllowDuplicates]
 		public enum MIB_TCP_STATE : int32
 		{
 			CLOSED = 1,
@@ -720,7 +696,6 @@ namespace Win32
 			DELETE_TCB = 12,
 			RESERVED = 100,
 		}
-		[AllowDuplicates]
 		public enum TCP_CONNECTION_OFFLOAD_STATE : int32
 		{
 			InHost = 0,
@@ -741,7 +716,6 @@ namespace Win32
 			MIB_TCP_RTO_RSRE = 3,
 			MIB_TCP_RTO_VANJ = 4,
 		}
-		[AllowDuplicates]
 		public enum TCP_TABLE_CLASS : int32
 		{
 			BASIC_LISTENER = 0,
@@ -754,19 +728,16 @@ namespace Win32
 			OWNER_MODULE_CONNECTIONS = 7,
 			OWNER_MODULE_ALL = 8,
 		}
-		[AllowDuplicates]
 		public enum UDP_TABLE_CLASS : int32
 		{
 			BASIC = 0,
 			OWNER_PID = 1,
 			OWNER_MODULE = 2,
 		}
-		[AllowDuplicates]
 		public enum TCPIP_OWNER_MODULE_INFO_CLASS : int32
 		{
 			TCPIP_OWNER_MODULE_INFO_BASIC = 0,
 		}
-		[AllowDuplicates]
 		public enum TCP_ESTATS_TYPE : int32
 		{
 			SynOpts = 0,
@@ -780,14 +751,12 @@ namespace Win32
 			FineRtt = 8,
 			Maximum = 9,
 		}
-		[AllowDuplicates]
 		public enum TCP_BOOLEAN_OPTIONAL : int32
 		{
 			Disabled = 0,
 			Enabled = 1,
 			Unchanged = -1,
 		}
-		[AllowDuplicates]
 		public enum TCP_SOFT_ERROR : int32
 		{
 			None = 0,
@@ -801,7 +770,6 @@ namespace Win32
 			DataLengthError = 8,
 			MaxSoftError = 9,
 		}
-		[AllowDuplicates]
 		public enum NET_ADDRESS_FORMAT : int32
 		{
 			FORMAT_UNSPECIFIED = 0,
@@ -809,26 +777,22 @@ namespace Win32
 			IPV4 = 2,
 			IPV6 = 3,
 		}
-		[AllowDuplicates]
 		public enum GLOBAL_FILTER : int32
 		{
 			FRAGMENTS = 2,
 			STRONGHOST = 8,
 			FRAGCACHE = 9,
 		}
-		[AllowDuplicates]
 		public enum PFFORWARD_ACTION : int32
 		{
 			FORWARD = 0,
 			DROP = 1,
 		}
-		[AllowDuplicates]
 		public enum PFADDRESSTYPE : int32
 		{
 			_4 = 0,
 			_6 = 1,
 		}
-		[AllowDuplicates]
 		public enum PFFRAMETYPE : int32
 		{
 			FILTER = 1,

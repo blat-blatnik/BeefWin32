@@ -303,13 +303,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DELETE_OBJECT_OPTIONS : int32
 		{
 			NO_RECURSION = 0,
 			WITH_RECURSION = 1,
 		}
-		[AllowDuplicates]
 		public enum WPD_DEVICE_TYPES : int32
 		{
 			GENERIC = 0,
@@ -320,7 +318,6 @@ namespace Win32
 			PERSONAL_INFORMATION_MANAGER = 5,
 			AUDIO_RECORDER = 6,
 		}
-		[AllowDuplicates]
 		public enum WpdAttributeForm : int32
 		{
 			UNSPECIFIED = 0,
@@ -329,7 +326,6 @@ namespace Win32
 			REGULAR_EXPRESSION = 3,
 			OBJECT_IDENTIFIER = 4,
 		}
-		[AllowDuplicates]
 		public enum WpdParameterAttributeForm : int32
 		{
 			UNSPECIFIED = 0,
@@ -338,7 +334,6 @@ namespace Win32
 			REGULAR_EXPRESSION = 3,
 			OBJECT_IDENTIFIER = 4,
 		}
-		[AllowDuplicates]
 		public enum WPD_DEVICE_TRANSPORTS : int32
 		{
 			UNSPECIFIED = 0,
@@ -346,7 +341,6 @@ namespace Win32
 			IP = 2,
 			BLUETOOTH = 3,
 		}
-		[AllowDuplicates]
 		public enum WPD_STORAGE_TYPE_VALUES : int32
 		{
 			UNDEFINED = 0,
@@ -355,33 +349,28 @@ namespace Win32
 			FIXED_RAM = 3,
 			REMOVABLE_RAM = 4,
 		}
-		[AllowDuplicates]
 		public enum WPD_STORAGE_ACCESS_CAPABILITY_VALUES : int32
 		{
 			WRITE = 0,
 			_ONLY_WITHOUT_OBJECT_DELETION = 1,
 			_ONLY_WITH_OBJECT_DELETION = 2,
 		}
-		[AllowDuplicates]
 		public enum WPD_SMS_ENCODING_TYPES : int32
 		{
 			_7_BIT = 0,
 			_8_BIT = 1,
 			UTF_16 = 2,
 		}
-		[AllowDuplicates]
 		public enum SMS_MESSAGE_TYPES : int32
 		{
 			TEXT_MESSAGE = 0,
 			BINARY_MESSAGE = 1,
 		}
-		[AllowDuplicates]
 		public enum WPD_POWER_SOURCES : int32
 		{
 			BATTERY = 0,
 			EXTERNAL = 1,
 		}
-		[AllowDuplicates]
 		public enum WPD_WHITE_BALANCE_SETTINGS : int32
 		{
 			UNDEFINED = 0,
@@ -393,7 +382,6 @@ namespace Win32
 			TUNGSTEN = 6,
 			FLASH = 7,
 		}
-		[AllowDuplicates]
 		public enum WPD_FOCUS_MODES : int32
 		{
 			UNDEFINED = 0,
@@ -401,7 +389,6 @@ namespace Win32
 			AUTOMATIC = 2,
 			AUTOMATIC_MACRO = 3,
 		}
-		[AllowDuplicates]
 		public enum WPD_EXPOSURE_METERING_MODES : int32
 		{
 			UNDEFINED = 0,
@@ -410,7 +397,6 @@ namespace Win32
 			MULTI_SPOT = 3,
 			CENTER_SPOT = 4,
 		}
-		[AllowDuplicates]
 		public enum WPD_FLASH_MODES : int32
 		{
 			UNDEFINED = 0,
@@ -421,7 +407,6 @@ namespace Win32
 			RED_EYE_FILL = 5,
 			EXTERNAL_SYNC = 6,
 		}
-		[AllowDuplicates]
 		public enum WPD_EXPOSURE_PROGRAM_MODES : int32
 		{
 			UNDEFINED = 0,
@@ -433,7 +418,6 @@ namespace Win32
 			ACTION = 6,
 			PORTRAIT = 7,
 		}
-		[AllowDuplicates]
 		public enum WPD_CAPTURE_MODES : int32
 		{
 			UNDEFINED = 0,
@@ -441,7 +425,6 @@ namespace Win32
 			BURST = 2,
 			TIMELAPSE = 3,
 		}
-		[AllowDuplicates]
 		public enum WPD_EFFECT_MODES : int32
 		{
 			UNDEFINED = 0,
@@ -449,14 +432,12 @@ namespace Win32
 			BLACK_AND_WHITE = 2,
 			SEPIA = 3,
 		}
-		[AllowDuplicates]
 		public enum WPD_FOCUS_METERING_MODES : int32
 		{
 			UNDEFINED = 0,
 			CENTER_SPOT = 1,
 			MULTI_SPOT = 2,
 		}
-		[AllowDuplicates]
 		public enum WPD_BITRATE_TYPES : int32
 		{
 			UNUSED = 0,
@@ -464,7 +445,6 @@ namespace Win32
 			VARIABLE = 2,
 			FREE = 3,
 		}
-		[AllowDuplicates]
 		public enum WPD_META_GENRES : int32
 		{
 			UNUSED = 0,
@@ -487,21 +467,18 @@ namespace Win32
 			VIDEO_PODCAST = 65,
 			MIXED_PODCAST = 66,
 		}
-		[AllowDuplicates]
 		public enum WPD_CROPPED_STATUS_VALUES : int32
 		{
 			NOT_CROPPED = 0,
 			CROPPED = 1,
 			SHOULD_NOT_BE_CROPPED = 2,
 		}
-		[AllowDuplicates]
 		public enum WPD_COLOR_CORRECTED_STATUS_VALUES : int32
 		{
 			NOT_CORRECTED = 0,
 			CORRECTED = 1,
 			SHOULD_NOT_BE_CORRECTED = 2,
 		}
-		[AllowDuplicates]
 		public enum WPD_VIDEO_SCAN_TYPES : int32
 		{
 			UNUSED = 0,
@@ -513,7 +490,6 @@ namespace Win32
 			MIXED_INTERLACE = 6,
 			MIXED_INTERLACE_AND_PROGRESSIVE = 7,
 		}
-		[AllowDuplicates]
 		public enum WPD_OPERATION_STATES : int32
 		{
 			UNSPECIFIED = 0,
@@ -524,19 +500,16 @@ namespace Win32
 			FINISHED = 5,
 			ABORTED = 6,
 		}
-		[AllowDuplicates]
 		public enum WPD_SECTION_DATA_UNITS_VALUES : int32
 		{
 			BYTES = 0,
 			MILLISECONDS = 1,
 		}
-		[AllowDuplicates]
 		public enum WPD_RENDERING_INFORMATION_PROFILE_ENTRY_TYPES : int32
 		{
 			OBJECT = 0,
 			RESOURCE = 1,
 		}
-		[AllowDuplicates]
 		public enum WPD_COMMAND_ACCESS_TYPES : int32
 		{
 			READ = 1,
@@ -545,12 +518,10 @@ namespace Win32
 			FROM_PROPERTY_WITH_FILE_ACCESS = 8,
 			FROM_ATTRIBUTE_WITH_METHOD_ACCESS = 16,
 		}
-		[AllowDuplicates]
 		public enum WPD_SERVICE_INHERITANCE_TYPES : int32
 		{
 			WPD_SERVICE_INHERITANCE_IMPLEMENTATION = 0,
 		}
-		[AllowDuplicates]
 		public enum WPD_PARAMETER_USAGE_TYPES : int32
 		{
 			RETURN = 0,
@@ -558,7 +529,6 @@ namespace Win32
 			OUT = 2,
 			INOUT = 3,
 		}
-		[AllowDuplicates]
 		public enum WPD_STREAM_UNITS : int32
 		{
 			BYTES = 0,
@@ -579,7 +549,6 @@ namespace Win32
 			HW_RADIO_OFF_UNCONTROLLABLE = 6,
 			RADIO_MAX = 6,
 		}
-		[AllowDuplicates]
 		public enum SYSTEM_RADIO_STATE : int32
 		{
 			ENABLED = 0,

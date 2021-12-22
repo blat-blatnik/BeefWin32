@@ -2418,14 +2418,12 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum HIDP_REPORT_TYPE : int32
 		{
 			Input = 0,
 			Output = 1,
 			Feature = 2,
 		}
-		[AllowDuplicates]
 		public enum HIDP_KEYBOARD_DIRECTION : int32
 		{
 			Break = 0,

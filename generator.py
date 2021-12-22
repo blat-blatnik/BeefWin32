@@ -310,7 +310,10 @@ for filename in filenames:
                 for type in enums:
                     name = replace_type_name(type['Name'], namespace_name)
                     base_type = replace_type_name(type['IntegerBase'])
-                    output.write(f'{indent}[AllowDuplicates]\n')
+                    values = type['Values']
+                    value_values = [value['Value'] for value in values]
+                    if len(set(value_values)) != len(value_values):
+                        output.write(f'{indent}[AllowDuplicates]\n')
                     if base_type is not None:
                         output.write(f'{indent}public enum {name} : {base_type}\n')
                     else:
@@ -318,7 +321,6 @@ for filename in filenames:
                     output.write(f'{indent}{{\n')
                     indent += '\t'
 
-                    values = type['Values']
                     common_prefix = find_common_enum_prefix(name, [value['Name'] for value in values])
                     for value in values:
                         # Sometimes stripping the prefix leaves names that start with numbers - we prefix those with '_'.

@@ -478,7 +478,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum INTERNET_PORT : uint32
 		{
 			HTTP_PORT = 80,
@@ -496,14 +495,12 @@ namespace Win32
 			REFRESH = 256,
 			SECURE = 8388608,
 		}
-		[AllowDuplicates]
 		public enum WIN_HTTP_CREATE_URL_FLAGS : uint32
 		{
 			ESCAPE = 2147483648,
 			REJECT_USERPWD = 16384,
 			DECODE = 268435456,
 		}
-		[AllowDuplicates]
 		public enum WINHTTP_ACCESS_TYPE : uint32
 		{
 			NO_PROXY = 1,
@@ -511,14 +508,12 @@ namespace Win32
 			NAMED_PROXY = 3,
 			AUTOMATIC_PROXY = 4,
 		}
-		[AllowDuplicates]
 		public enum WINHTTP_CREDS_AUTHSCHEME : uint32
 		{
 			BASIC = 1,
 			NTLM = 2,
 			NEGOTIATE = 16,
 		}
-		[AllowDuplicates]
 		public enum WINHTTP_INTERNET_SCHEME : uint32
 		{
 			HTTP = 1,
@@ -526,7 +521,6 @@ namespace Win32
 			FTP = 3,
 			SOCKS = 4,
 		}
-		[AllowDuplicates]
 		public enum WINHTTP_REQUEST_TIME_ENTRY : int32
 		{
 			ProxyDetectionStart = 0,
@@ -568,7 +562,6 @@ namespace Win32
 			RequestTimeLast = 36,
 			RequestTimeMax = 64,
 		}
-		[AllowDuplicates]
 		public enum WINHTTP_REQUEST_STAT_ENTRY : int32
 		{
 			ConnectFailureCount = 0,
@@ -590,7 +583,6 @@ namespace Win32
 			RequestStatLast = 16,
 			RequestStatMax = 32,
 		}
-		[AllowDuplicates]
 		public enum WINHTTP_SECURE_DNS_SETTING : int32
 		{
 			Default = 0,
@@ -599,7 +591,6 @@ namespace Win32
 			TryEncryptionWithFallback = 3,
 			Max = 4,
 		}
-		[AllowDuplicates]
 		public enum WINHTTP_WEB_SOCKET_OPERATION : int32
 		{
 			SEND_OPERATION = 0,
@@ -607,7 +598,6 @@ namespace Win32
 			CLOSE_OPERATION = 2,
 			SHUTDOWN_OPERATION = 3,
 		}
-		[AllowDuplicates]
 		public enum WINHTTP_WEB_SOCKET_BUFFER_TYPE : int32
 		{
 			BINARY_MESSAGE_BUFFER_TYPE = 0,
@@ -616,7 +606,6 @@ namespace Win32
 			UTF8_FRAGMENT_BUFFER_TYPE = 3,
 			CLOSE_BUFFER_TYPE = 4,
 		}
-		[AllowDuplicates]
 		public enum WINHTTP_WEB_SOCKET_CLOSE_STATUS : int32
 		{
 			SUCCESS_CLOSE_STATUS = 1000,

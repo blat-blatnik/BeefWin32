@@ -471,20 +471,17 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum VDS_NF_PACK : uint32
 		{
 			ARRIVE = 1,
 			DEPART = 2,
 			MODIFY = 3,
 		}
-		[AllowDuplicates]
 		public enum VDS_NF_FILE_SYSTEM : uint32
 		{
 			MODIFY = 203,
 			FORMAT_PROGRESS = 204,
 		}
-		[AllowDuplicates]
 		public enum VDS_NF_CONTROLLER : uint32
 		{
 			ARRIVE = 103,
@@ -492,7 +489,6 @@ namespace Win32
 			MODIFY = 350,
 			REMOVED = 351,
 		}
-		[AllowDuplicates]
 		public enum VDS_NF_DRIVE : uint32
 		{
 			ARRIVE = 105,
@@ -500,7 +496,6 @@ namespace Win32
 			MODIFY = 107,
 			REMOVED = 354,
 		}
-		[AllowDuplicates]
 		public enum VDS_NF_PORT : uint32
 		{
 			ARRIVE = 121,
@@ -508,21 +503,18 @@ namespace Win32
 			MODIFY = 352,
 			REMOVED = 353,
 		}
-		[AllowDuplicates]
 		public enum VDS_NF_LUN : uint32
 		{
 			ARRIVE = 108,
 			DEPART = 109,
 			MODIFY = 110,
 		}
-		[AllowDuplicates]
 		public enum VDS_NF_DISK : uint32
 		{
 			ARRIVE = 8,
 			DEPART = 9,
 			MODIFY = 10,
 		}
-		[AllowDuplicates]
 		public enum VDS_STORAGE_IDENTIFIER_CODE_SET : int32
 		{
 			Reserved = 0,
@@ -530,7 +522,6 @@ namespace Win32
 			Ascii = 2,
 			Utf8 = 3,
 		}
-		[AllowDuplicates]
 		public enum VDS_STORAGE_IDENTIFIER_TYPE : int32
 		{
 			VendorSpecific = 0,
@@ -569,7 +560,6 @@ namespace Win32
 			Ufs = 19,
 			MaxReserved = 127,
 		}
-		[AllowDuplicates]
 		public enum VDS_INTERCONNECT_ADDRESS_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -579,7 +569,6 @@ namespace Win32
 			MAC = 4,
 			SCSI = 5,
 		}
-		[AllowDuplicates]
 		public enum VDS_OBJECT_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -606,7 +595,6 @@ namespace Win32
 			VDISK = 200,
 			OPEN_VDISK = 201,
 		}
-		[AllowDuplicates]
 		public enum VDS_PROVIDER_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -615,7 +603,6 @@ namespace Win32
 			VIRTUALDISK = 3,
 			MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum VDS_PROVIDER_FLAG : int32
 		{
 			DYNAMIC = 1,
@@ -629,14 +616,12 @@ namespace Win32
 			SUPPORT_MIRROR = 32,
 			SUPPORT_RAID5 = 64,
 		}
-		[AllowDuplicates]
 		public enum VDS_RECOVER_ACTION : int32
 		{
 			UNKNOWN = 0,
 			REFRESH = 1,
 			RESTART = 2,
 		}
-		[AllowDuplicates]
 		public enum VDS_NOTIFICATION_TARGET_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -657,7 +642,6 @@ namespace Win32
 			PORTAL_GROUP = 38,
 			SERVICE = 200,
 		}
-		[AllowDuplicates]
 		public enum VDS_ASYNC_OUTPUT_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -693,7 +677,6 @@ namespace Win32
 			MERGE_VDISK = 203,
 			EXPAND_VDISK = 204,
 		}
-		[AllowDuplicates]
 		public enum VDS_IPADDRESS_TYPE : int32
 		{
 			TEXT = 0,
@@ -701,7 +684,6 @@ namespace Win32
 			IPV6 = 2,
 			EMPTY = 3,
 		}
-		[AllowDuplicates]
 		public enum VDS_HEALTH : int32
 		{
 			UNKNOWN = 0,
@@ -717,7 +699,6 @@ namespace Win32
 			PENDING_FAILURE = 10,
 			DEGRADED = 11,
 		}
-		[AllowDuplicates]
 		public enum VDS_TRANSITION_STATE : int32
 		{
 			UNKNOWN = 0,
@@ -727,7 +708,6 @@ namespace Win32
 			RECONFIGING = 4,
 			RESTRIPING = 5,
 		}
-		[AllowDuplicates]
 		public enum VDS_FILE_SYSTEM_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -741,7 +721,6 @@ namespace Win32
 			CSVFS = 8,
 			REFS = 9,
 		}
-		[AllowDuplicates]
 		public enum VDS_HBAPORT_TYPE : int32
 		{
 			UNKNOWN = 1,
@@ -756,7 +735,6 @@ namespace Win32
 			LPORT = 20,
 			PTP = 21,
 		}
-		[AllowDuplicates]
 		public enum VDS_HBAPORT_STATUS : int32
 		{
 			UNKNOWN = 1,
@@ -768,7 +746,6 @@ namespace Win32
 			ERROR = 7,
 			LOOPBACK = 8,
 		}
-		[AllowDuplicates]
 		public enum VDS_HBAPORT_SPEED_FLAG : int32
 		{
 			UNKNOWN = 0,
@@ -778,7 +755,6 @@ namespace Win32
 			_4GBIT = 8,
 			NOT_NEGOTIATED = 32768,
 		}
-		[AllowDuplicates]
 		public enum VDS_PATH_STATUS : int32
 		{
 			UNKNOWN = 0,
@@ -786,7 +762,6 @@ namespace Win32
 			FAILED = 5,
 			STANDBY = 7,
 		}
-		[AllowDuplicates]
 		public enum VDS_LOADBALANCE_POLICY_ENUM : int32
 		{
 			UNKNOWN = 0,
@@ -798,7 +773,6 @@ namespace Win32
 			LEAST_BLOCKS = 6,
 			VENDOR_SPECIFIC = 7,
 		}
-		[AllowDuplicates]
 		public enum VDS_PROVIDER_LBSUPPORT_FLAG : int32
 		{
 			FAILOVER = 1,
@@ -809,7 +783,6 @@ namespace Win32
 			LEAST_BLOCKS = 32,
 			VENDOR_SPECIFIC = 64,
 		}
-		[AllowDuplicates]
 		public enum VDS_VERSION_SUPPORT_FLAG : int32
 		{
 			_1_0 = 1,
@@ -818,7 +791,6 @@ namespace Win32
 			_2_1 = 8,
 			_3_0 = 16,
 		}
-		[AllowDuplicates]
 		public enum VDS_HWPROVIDER_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -828,21 +800,18 @@ namespace Win32
 			SAS = 4,
 			HYBRID = 5,
 		}
-		[AllowDuplicates]
 		public enum VDS_ISCSI_LOGIN_TYPE : int32
 		{
 			MANUAL = 0,
 			PERSISTENT = 1,
 			BOOT = 2,
 		}
-		[AllowDuplicates]
 		public enum VDS_ISCSI_AUTH_TYPE : int32
 		{
 			NONE = 0,
 			CHAP = 1,
 			MUTUAL_CHAP = 2,
 		}
-		[AllowDuplicates]
 		public enum VDS_ISCSI_IPSEC_FLAG : int32
 		{
 			VALID = 1,
@@ -853,13 +822,11 @@ namespace Win32
 			TRANSPORT_MODE_PREFERRED = 32,
 			TUNNEL_MODE_PREFERRED = 64,
 		}
-		[AllowDuplicates]
 		public enum VDS_ISCSI_LOGIN_FLAG : int32
 		{
 			REQUIRE_IPSEC = 1,
 			MULTIPATH_ENABLED = 2,
 		}
-		[AllowDuplicates]
 		public enum VDS_SUB_SYSTEM_STATUS : int32
 		{
 			UNKNOWN = 0,
@@ -869,7 +836,6 @@ namespace Win32
 			FAILED = 5,
 			PARTIALLY_MANAGED = 9,
 		}
-		[AllowDuplicates]
 		public enum VDS_SUB_SYSTEM_FLAG : int32
 		{
 			LUN_MASKING_CAPABLE = 1,
@@ -897,7 +863,6 @@ namespace Win32
 			MEDIA_SCAN_CAPABLE = 8388608,
 			CONSISTENCY_CHECK_CAPABLE = 16777216,
 		}
-		[AllowDuplicates]
 		public enum VDS_SUB_SYSTEM_SUPPORTED_RAID_TYPE_FLAG : int32
 		{
 			_2_LUNS = 1,
@@ -917,7 +882,6 @@ namespace Win32
 			_60_LUNS = 16384,
 			_61_LUNS = 32768,
 		}
-		[AllowDuplicates]
 		public enum VDS_INTERCONNECT_FLAG : int32
 		{
 			PCI_RAID = 1,
@@ -925,7 +889,6 @@ namespace Win32
 			ISCSI = 4,
 			SAS = 8,
 		}
-		[AllowDuplicates]
 		public enum VDS_CONTROLLER_STATUS : int32
 		{
 			UNKNOWN = 0,
@@ -935,7 +898,6 @@ namespace Win32
 			FAILED = 5,
 			REMOVED = 8,
 		}
-		[AllowDuplicates]
 		public enum VDS_PORT_STATUS : int32
 		{
 			UNKNOWN = 0,
@@ -945,7 +907,6 @@ namespace Win32
 			FAILED = 5,
 			REMOVED = 8,
 		}
-		[AllowDuplicates]
 		public enum VDS_DRIVE_STATUS : int32
 		{
 			UNKNOWN = 0,
@@ -955,7 +916,6 @@ namespace Win32
 			FAILED = 5,
 			REMOVED = 8,
 		}
-		[AllowDuplicates]
 		public enum VDS_DRIVE_FLAG : int32
 		{
 			HOTSPARE = 1,
@@ -964,7 +924,6 @@ namespace Win32
 			HOTSPARE_IN_USE = 8,
 			HOTSPARE_STANDBY = 16,
 		}
-		[AllowDuplicates]
 		public enum VDS_LUN_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -993,7 +952,6 @@ namespace Win32
 			RAID60 = 29,
 			RAID61 = 30,
 		}
-		[AllowDuplicates]
 		public enum VDS_LUN_STATUS : int32
 		{
 			UNKNOWN = 0,
@@ -1002,7 +960,6 @@ namespace Win32
 			OFFLINE = 4,
 			FAILED = 5,
 		}
-		[AllowDuplicates]
 		public enum VDS_LUN_FLAG : int32
 		{
 			LBN_REMAP_ENABLED = 1,
@@ -1015,7 +972,6 @@ namespace Win32
 			CONSISTENCY_CHECK_ENABLED = 128,
 			SNAPSHOT = 256,
 		}
-		[AllowDuplicates]
 		public enum VDS_LUN_PLEX_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -1037,7 +993,6 @@ namespace Win32
 			RAID53 = 28,
 			RAID60 = 29,
 		}
-		[AllowDuplicates]
 		public enum VDS_LUN_PLEX_STATUS : int32
 		{
 			UNKNOWN = 0,
@@ -1046,12 +1001,10 @@ namespace Win32
 			OFFLINE = 4,
 			FAILED = 5,
 		}
-		[AllowDuplicates]
 		public enum VDS_LUN_PLEX_FLAG : int32
 		{
 			VDS_LPF_LBN_REMAP_ENABLED = 1,
 		}
-		[AllowDuplicates]
 		public enum VDS_ISCSI_PORTAL_STATUS : int32
 		{
 			UNKNOWN = 0,
@@ -1060,7 +1013,6 @@ namespace Win32
 			OFFLINE = 4,
 			FAILED = 5,
 		}
-		[AllowDuplicates]
 		public enum VDS_STORAGE_POOL_STATUS : int32
 		{
 			UNKNOWN = 0,
@@ -1068,14 +1020,12 @@ namespace Win32
 			NOT_READY = 2,
 			OFFLINE = 4,
 		}
-		[AllowDuplicates]
 		public enum VDS_STORAGE_POOL_TYPE : int32
 		{
 			UNKNOWN = 0,
 			PRIMORDIAL = 1,
 			CONCRETE = 2,
 		}
-		[AllowDuplicates]
 		public enum VDS_MAINTENANCE_OPERATION : int32
 		{
 			BlinkLight = 1,
@@ -1084,7 +1034,6 @@ namespace Win32
 			SpinUp = 4,
 			Ping = 5,
 		}
-		[AllowDuplicates]
 		public enum VDS_RAID_TYPE : int32
 		{
 			UNKNOWN = 0,

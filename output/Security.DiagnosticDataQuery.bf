@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DdqAccessLevel : int32
 		{
 			NoData = 0,

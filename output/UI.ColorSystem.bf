@@ -97,7 +97,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum ICM_COMMAND : uint32
 		{
 			ADDPROFILE = 1,
@@ -108,14 +107,12 @@ namespace Win32
 			UNREGISTERICMATCHER = 6,
 			QUERYMATCH = 7,
 		}
-		[AllowDuplicates]
 		public enum COLOR_MATCH_TO_TARGET_ACTION : int32
 		{
 			ENABLE = 1,
 			DISABLE = 2,
 			DELETE_TRANSFORM = 3,
 		}
-		[AllowDuplicates]
 		public enum COLORTYPE : int32
 		{
 			GRAY = 1,
@@ -131,7 +128,6 @@ namespace Win32
 			_8_CHANNEL = 11,
 			NAMED = 12,
 		}
-		[AllowDuplicates]
 		public enum COLORPROFILETYPE : int32
 		{
 			ICC = 0,
@@ -139,7 +135,6 @@ namespace Win32
 			CAMP = 2,
 			GMMP = 3,
 		}
-		[AllowDuplicates]
 		public enum COLORPROFILESUBTYPE : int32
 		{
 			PERCEPTUAL = 0,
@@ -152,7 +147,6 @@ namespace Win32
 			STANDARD_DISPLAY_COLOR_MODE = 7,
 			EXTENDED_DISPLAY_COLOR_MODE = 8,
 		}
-		[AllowDuplicates]
 		public enum COLORDATATYPE : int32
 		{
 			BYTE = 1,
@@ -163,7 +157,6 @@ namespace Win32
 			_10b_R10G10B10A2_XR = 6,
 			FLOAT16 = 7,
 		}
-		[AllowDuplicates]
 		public enum BMFORMAT : int32
 		{
 			x555RGB = 0,
@@ -208,13 +201,11 @@ namespace Win32
 			R10G10B10A2_XR = 1794,
 			R16G16B16A16_FLOAT = 1795,
 		}
-		[AllowDuplicates]
 		public enum WCS_PROFILE_MANAGEMENT_SCOPE : int32
 		{
 			SYSTEM_WIDE = 0,
 			CURRENT_USER = 1,
 		}
-		[AllowDuplicates]
 		public enum WCS_DEVICE_CAPABILITIES_TYPE : int32
 		{
 			VideoCardGammaTable = 1,

@@ -55,13 +55,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WER_FILE : uint32
 		{
 			ANONYMOUS_DATA = 2,
 			DELETE_WHEN_DONE = 1,
 		}
-		[AllowDuplicates]
 		public enum WER_SUBMIT_FLAGS : uint32
 		{
 			ADD_REGISTERED_DATA = 16,
@@ -79,7 +77,6 @@ namespace Win32
 			ARCHIVE_PARAMETERS_ONLY = 4096,
 			REPORT_MACHINE_ID = 8192,
 		}
-		[AllowDuplicates]
 		public enum WER_FAULT_REPORTING : uint32
 		{
 			FLAG_DISABLE_THREAD_SUSPENSION = 4,
@@ -88,7 +85,6 @@ namespace Win32
 			FLAG_QUEUE_UPLOAD = 8,
 			ALWAYS_SHOW_UI = 16,
 		}
-		[AllowDuplicates]
 		public enum WER_REPORT_UI : int32
 		{
 			AdditionalDataDlgHeader = 1,
@@ -103,14 +99,12 @@ namespace Win32
 			CloseDlgButtonText = 10,
 			Max = 11,
 		}
-		[AllowDuplicates]
 		public enum WER_REGISTER_FILE_TYPE : int32
 		{
 			UserDocument = 1,
 			Other = 2,
 			Max = 3,
 		}
-		[AllowDuplicates]
 		public enum WER_FILE_TYPE : int32
 		{
 			Microdump = 1,
@@ -124,7 +118,6 @@ namespace Win32
 			EtlTrace = 9,
 			Max = 10,
 		}
-		[AllowDuplicates]
 		public enum WER_SUBMIT_RESULT : int32
 		{
 			ReportQueued = 1,
@@ -141,7 +134,6 @@ namespace Win32
 			StorageLocationNotFound = 12,
 			SubmitResultMax = 13,
 		}
-		[AllowDuplicates]
 		public enum WER_REPORT_TYPE : int32
 		{
 			NonCritical = 0,
@@ -151,7 +143,6 @@ namespace Win32
 			Kernel = 4,
 			Invalid = 5,
 		}
-		[AllowDuplicates]
 		public enum WER_CONSENT : int32
 		{
 			NotAsked = 1,
@@ -160,7 +151,6 @@ namespace Win32
 			AlwaysPrompt = 4,
 			Max = 5,
 		}
-		[AllowDuplicates]
 		public enum WER_DUMP_TYPE : int32
 		{
 			None = 0,
@@ -170,7 +160,6 @@ namespace Win32
 			TriageDump = 4,
 			Max = 5,
 		}
-		[AllowDuplicates]
 		public enum REPORT_STORE_TYPES : int32
 		{
 			USER_ARCHIVE = 0,
@@ -179,7 +168,6 @@ namespace Win32
 			MACHINE_QUEUE = 3,
 			INVALID = 4,
 		}
-		[AllowDuplicates]
 		public enum EFaultRepRetVal : int32
 		{
 			Ok = 0,

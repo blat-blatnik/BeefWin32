@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum UpdateImpactLevel : int32
 		{
 			None = 0,
@@ -15,7 +14,6 @@ namespace Win32
 			Medium = 2,
 			High = 3,
 		}
-		[AllowDuplicates]
 		public enum UpdateAssessmentStatus : int32
 		{
 			Latest = 0,

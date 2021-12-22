@@ -17,13 +17,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum CONTACT_AGGREGATION_CREATE_OR_OPEN_OPTIONS : int32
 		{
 			LOCAL = 0,
 			EXTERNAL = 1,
 		}
-		[AllowDuplicates]
 		public enum CONTACT_AGGREGATION_COLLECTION_OPTIONS : int32
 		{
 			DEFAULT = 0,

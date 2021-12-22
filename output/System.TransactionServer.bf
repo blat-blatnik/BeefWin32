@@ -7,12 +7,10 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum __MIDL___MIDL_itf_mtxadmin_0107_0001 : int32
 		{
 			mtsInstallUsers = 1,
 		}
-		[AllowDuplicates]
 		public enum __MIDL___MIDL_itf_mtxadmin_0107_0002 : int32
 		{
 			mtsExportUsers = 1,

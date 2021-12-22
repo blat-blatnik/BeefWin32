@@ -954,7 +954,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WSA_ERROR : int32
 		{
 			_IO_PENDING = 997,
@@ -1056,7 +1055,6 @@ namespace Win32
 			_SECURE_HOST_NOT_FOUND = 11032,
 			_IPSEC_NAME_POLICY_ERROR = 11033,
 		}
-		[AllowDuplicates]
 		public enum SET_SERVICE_OPERATION : uint32
 		{
 			REGISTER = 1,
@@ -1065,13 +1063,11 @@ namespace Win32
 			ADD_TYPE = 4,
 			DELETE_TYPE = 5,
 		}
-		[AllowDuplicates]
 		public enum SEND_FLAGS : uint32
 		{
 			DONTROUTE = 4,
 			OOB = 1,
 		}
-		[AllowDuplicates]
 		public enum RESOURCE_DISPLAY_TYPE : uint32
 		{
 			DOMAIN = 1,
@@ -1082,7 +1078,6 @@ namespace Win32
 			SHARE = 3,
 			TREE = 10,
 		}
-		[AllowDuplicates]
 		public enum IPPROTO : int32
 		{
 			HOPOPTS = 0,
@@ -1121,7 +1116,6 @@ namespace Win32
 			RESERVED_WNV = 260,
 			RESERVED_MAX = 261,
 		}
-		[AllowDuplicates]
 		public enum SCOPE_LEVEL : int32
 		{
 			Interface = 1,
@@ -1133,7 +1127,6 @@ namespace Win32
 			Global = 14,
 			Count = 16,
 		}
-		[AllowDuplicates]
 		public enum WSACOMPLETIONTYPE : int32
 		{
 			IMMEDIATELY = 0,
@@ -1142,20 +1135,17 @@ namespace Win32
 			PORT = 3,
 			APC = 4,
 		}
-		[AllowDuplicates]
 		public enum WSAECOMPARATOR : int32
 		{
 			EQUAL = 0,
 			NOTLESS = 1,
 		}
-		[AllowDuplicates]
 		public enum WSAESETSERVICEOP : int32
 		{
 			REGISTER = 0,
 			DEREGISTER = 1,
 			DELETE = 2,
 		}
-		[AllowDuplicates]
 		public enum PMTUD_STATE : int32
 		{
 			NOT_SET = 0,
@@ -1164,19 +1154,16 @@ namespace Win32
 			PROBE = 3,
 			MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum MULTICAST_MODE_TYPE : int32
 		{
 			INCLUDE = 0,
 			EXCLUDE = 1,
 		}
-		[AllowDuplicates]
 		public enum eWINDOW_ADVANCE_METHOD : int32
 		{
 			ADVANCE_BY_TIME = 1,
 			USE_AS_DATA_CACHE = 2,
 		}
-		[AllowDuplicates]
 		public enum NL_PREFIX_ORIGIN : int32
 		{
 			Other = 0,
@@ -1284,7 +1271,6 @@ namespace Win32
 			MIB_IPPROTO_NT_STATIC_NON_DOD = 10007,
 			PROTO_IP_NT_STATIC_NON_DOD = 10007,
 		}
-		[AllowDuplicates]
 		public enum NL_ADDRESS_TYPE : int32
 		{
 			Unspecified = 0,
@@ -1294,7 +1280,6 @@ namespace Win32
 			Broadcast = 4,
 			Invalid = 5,
 		}
-		[AllowDuplicates]
 		public enum NL_ROUTE_ORIGIN : int32
 		{
 			Manual = 0,
@@ -1303,7 +1288,6 @@ namespace Win32
 			RouterAdvertisement = 3,
 			_6to4 = 4,
 		}
-		[AllowDuplicates]
 		public enum NL_NEIGHBOR_STATE : int32
 		{
 			Unreachable = 0,
@@ -1315,7 +1299,6 @@ namespace Win32
 			Permanent = 6,
 			Maximum = 7,
 		}
-		[AllowDuplicates]
 		public enum NL_LINK_LOCAL_ADDRESS_BEHAVIOR : int32
 		{
 			AlwaysOff = 0,
@@ -1323,7 +1306,6 @@ namespace Win32
 			AlwaysOn = 2,
 			Unchanged = -1,
 		}
-		[AllowDuplicates]
 		public enum NL_ROUTER_DISCOVERY_BEHAVIOR : int32
 		{
 			Disabled = 0,
@@ -1331,7 +1313,6 @@ namespace Win32
 			Dhcp = 2,
 			Unchanged = -1,
 		}
-		[AllowDuplicates]
 		public enum NL_BANDWIDTH_FLAG : int32
 		{
 			Disabled = 0,
@@ -1347,7 +1328,6 @@ namespace Win32
 			Unchanged = -1,
 			Unknown = -1,
 		}
-		[AllowDuplicates]
 		public enum NL_INTERFACE_NETWORK_CATEGORY_STATE : int32
 		{
 			CategoryUnknown = 0,
@@ -1356,7 +1336,6 @@ namespace Win32
 			DomainAuthenticated = 3,
 			CategoryStateMax = 4,
 		}
-		[AllowDuplicates]
 		public enum NL_NETWORK_CONNECTIVITY_LEVEL_HINT : int32
 		{
 			Unknown = 0,
@@ -1366,7 +1345,6 @@ namespace Win32
 			ConstrainedInternetAccess = 4,
 			Hidden = 5,
 		}
-		[AllowDuplicates]
 		public enum NL_NETWORK_CONNECTIVITY_COST_HINT : int32
 		{
 			Unknown = 0,
@@ -1374,7 +1352,6 @@ namespace Win32
 			Fixed = 2,
 			Variable = 3,
 		}
-		[AllowDuplicates]
 		public enum TCPSTATE : int32
 		{
 			CLOSED = 0,
@@ -1390,7 +1367,6 @@ namespace Win32
 			TIME_WAIT = 10,
 			MAX = 11,
 		}
-		[AllowDuplicates]
 		public enum CONTROL_CHANNEL_TRIGGER_STATUS : int32
 		{
 			INVALID = 0,
@@ -1401,7 +1377,6 @@ namespace Win32
 			TRANSPORT_DISCONNECTED = 5,
 			SERVICE_UNAVAILABLE = 6,
 		}
-		[AllowDuplicates]
 		public enum SOCKET_PRIORITY_HINT : int32
 		{
 			PriorityHintVeryLow = 0,
@@ -1409,7 +1384,6 @@ namespace Win32
 			PriorityHintNormal = 2,
 			MaximumPriorityHintType = 3,
 		}
-		[AllowDuplicates]
 		public enum RCVALL_VALUE : int32
 		{
 			OFF = 0,
@@ -1417,7 +1391,6 @@ namespace Win32
 			SOCKETLEVELONLY = 2,
 			IPLEVEL = 3,
 		}
-		[AllowDuplicates]
 		public enum TCP_ICW_LEVEL : int32
 		{
 			DEFAULT = 0,
@@ -1428,12 +1401,10 @@ namespace Win32
 			COMPAT = 254,
 			MAX = 255,
 		}
-		[AllowDuplicates]
 		public enum SOCKET_USAGE_TYPE : int32
 		{
 			SYSTEM_CRITICAL_SOCKET = 1,
 		}
-		[AllowDuplicates]
 		public enum SOCKET_SECURITY_PROTOCOL : int32
 		{
 			DEFAULT = 0,
@@ -1441,14 +1412,12 @@ namespace Win32
 			IPSEC2 = 2,
 			INVALID = 3,
 		}
-		[AllowDuplicates]
 		public enum WSA_COMPATIBILITY_BEHAVIOR_ID : int32
 		{
 			All = 0,
 			ReceiveBuffering = 1,
 			AutoTuning = 2,
 		}
-		[AllowDuplicates]
 		public enum Q2931_IE_TYPE : int32
 		{
 			AALParameters = 0,
@@ -1464,26 +1433,22 @@ namespace Win32
 			QOSClass = 10,
 			TransitNetworkSelection = 11,
 		}
-		[AllowDuplicates]
 		public enum AAL_TYPE : int32
 		{
 			_5 = 5,
 			USER = 16,
 		}
-		[AllowDuplicates]
 		public enum NAPI_PROVIDER_TYPE : int32
 		{
 			Application = 1,
 			Service = 2,
 		}
-		[AllowDuplicates]
 		public enum NAPI_PROVIDER_LEVEL : int32
 		{
 			None = 0,
 			Secondary = 1,
 			Primary = 2,
 		}
-		[AllowDuplicates]
 		public enum NLA_BLOB_DATA_TYPE : int32
 		{
 			RAW_DATA = 0,
@@ -1492,7 +1457,6 @@ namespace Win32
 			CONNECTIVITY = 3,
 			ICS = 4,
 		}
-		[AllowDuplicates]
 		public enum NLA_CONNECTIVITY_TYPE : int32
 		{
 			AD_HOC = 0,
@@ -1500,20 +1464,17 @@ namespace Win32
 			UNMANAGED = 2,
 			UNKNOWN = 3,
 		}
-		[AllowDuplicates]
 		public enum NLA_INTERNET : int32
 		{
 			UNKNOWN = 0,
 			NO = 1,
 			YES = 2,
 		}
-		[AllowDuplicates]
 		public enum RIO_NOTIFICATION_COMPLETION_TYPE : int32
 		{
 			EVENT_COMPLETION = 1,
 			IOCP_COMPLETION = 2,
 		}
-		[AllowDuplicates]
 		public enum WSC_PROVIDER_INFO_TYPE : int32
 		{
 			LspCategories = 0,

@@ -940,7 +940,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum STICKYKEYS_FLAGS : uint32
 		{
 			STICKYKEYSON = 1,
@@ -969,14 +968,12 @@ namespace Win32
 			LWINLOCKED = 4194304,
 			RWINLOCKED = 8388608,
 		}
-		[AllowDuplicates]
 		public enum SOUNDSENTRY_FLAGS : uint32
 		{
 			SOUNDSENTRYON = 1,
 			AVAILABLE = 2,
 			INDICATOR = 4,
 		}
-		[AllowDuplicates]
 		public enum ACC_UTILITY_STATE_FLAGS : uint32
 		{
 			ON_SCREEN_KEYBOARD_ACTIVE = 1,
@@ -984,20 +981,17 @@ namespace Win32
 			PRIORITY_AUDIO_ACTIVE = 4,
 			PRIORITY_AUDIO_ACTIVE_NODUCK = 8,
 		}
-		[AllowDuplicates]
 		public enum SOUND_SENTRY_GRAPHICS_EFFECT : uint32
 		{
 			DISPLAY = 3,
 			NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum SERIALKEYS_FLAGS : uint32
 		{
 			AVAILABLE = 2,
 			INDICATOR = 4,
 			SERIALKEYSON = 1,
 		}
-		[AllowDuplicates]
 		public enum HIGHCONTRASTW_FLAGS : uint32
 		{
 			HIGHCONTRASTON = 1,
@@ -1009,7 +1003,6 @@ namespace Win32
 			HOTKEYAVAILABLE = 64,
 			OPTION_NOTHEMECHANGE = 4096,
 		}
-		[AllowDuplicates]
 		public enum SOUNDSENTRY_TEXT_EFFECT : uint32
 		{
 			BORDER = 2,
@@ -1017,7 +1010,6 @@ namespace Win32
 			DISPLAY = 3,
 			NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum SOUNDSENTRY_WINDOWS_EFFECT : uint32
 		{
 			CUSTOM = 4,
@@ -1026,13 +1018,11 @@ namespace Win32
 			TITLE = 1,
 			WINDOW = 2,
 		}
-		[AllowDuplicates]
 		public enum AnnoScope : int32
 		{
 			THIS = 0,
 			CONTAINER = 1,
 		}
-		[AllowDuplicates]
 		public enum NavigateDirection : int32
 		{
 			Parent = 0,
@@ -1041,7 +1031,6 @@ namespace Win32
 			FirstChild = 3,
 			LastChild = 4,
 		}
-		[AllowDuplicates]
 		public enum ProviderOptions : int32
 		{
 			ClientSideProvider = 1,
@@ -1054,7 +1043,6 @@ namespace Win32
 			HasNativeIAccessible = 128,
 			UseClientCoordinates = 256,
 		}
-		[AllowDuplicates]
 		public enum StructureChangeType : int32
 		{
 			Added = 0,
@@ -1064,7 +1052,6 @@ namespace Win32
 			renBulkRemoved = 4,
 			renReordered = 5,
 		}
-		[AllowDuplicates]
 		public enum TextEditChangeType : int32
 		{
 			None = 0,
@@ -1073,14 +1060,12 @@ namespace Win32
 			CompositionFinalized = 3,
 			AutoComplete = 4,
 		}
-		[AllowDuplicates]
 		public enum OrientationType : int32
 		{
 			None = 0,
 			Horizontal = 1,
 			Vertical = 2,
 		}
-		[AllowDuplicates]
 		public enum DockPosition : int32
 		{
 			Top = 0,
@@ -1090,7 +1075,6 @@ namespace Win32
 			Fill = 4,
 			None = 5,
 		}
-		[AllowDuplicates]
 		public enum ExpandCollapseState : int32
 		{
 			Collapsed = 0,
@@ -1098,7 +1082,6 @@ namespace Win32
 			PartiallyExpanded = 2,
 			LeafNode = 3,
 		}
-		[AllowDuplicates]
 		public enum ScrollAmount : int32
 		{
 			LargeDecrement = 0,
@@ -1107,28 +1090,24 @@ namespace Win32
 			LargeIncrement = 3,
 			SmallIncrement = 4,
 		}
-		[AllowDuplicates]
 		public enum RowOrColumnMajor : int32
 		{
 			RowMajor = 0,
 			ColumnMajor = 1,
 			Indeterminate = 2,
 		}
-		[AllowDuplicates]
 		public enum ToggleState : int32
 		{
 			Off = 0,
 			On = 1,
 			Indeterminate = 2,
 		}
-		[AllowDuplicates]
 		public enum WindowVisualState : int32
 		{
 			Normal = 0,
 			Maximized = 1,
 			Minimized = 2,
 		}
-		[AllowDuplicates]
 		public enum SynchronizedInputType : int32
 		{
 			KeyUp = 1,
@@ -1138,7 +1117,6 @@ namespace Win32
 			RightMouseUp = 16,
 			RightMouseDown = 32,
 		}
-		[AllowDuplicates]
 		public enum WindowInteractionState : int32
 		{
 			Running = 0,
@@ -1147,7 +1125,6 @@ namespace Win32
 			BlockedByModalWindow = 3,
 			NotResponding = 4,
 		}
-		[AllowDuplicates]
 		public enum SayAsInterpretAs : int32
 		{
 			None = 0,
@@ -1178,7 +1155,6 @@ namespace Win32
 			Time_HoursMinutesSeconds24 = 25,
 			Time_HoursMinutes24 = 26,
 		}
-		[AllowDuplicates]
 		public enum TextUnit : int32
 		{
 			Character = 0,
@@ -1189,47 +1165,40 @@ namespace Win32
 			Page = 5,
 			Document = 6,
 		}
-		[AllowDuplicates]
 		public enum TextPatternRangeEndpoint : int32
 		{
 			Start = 0,
 			End = 1,
 		}
-		[AllowDuplicates]
 		public enum SupportedTextSelection : int32
 		{
 			None = 0,
 			Single = 1,
 			Multiple = 2,
 		}
-		[AllowDuplicates]
 		public enum LiveSetting : int32
 		{
 			Off = 0,
 			Polite = 1,
 			Assertive = 2,
 		}
-		[AllowDuplicates]
 		public enum ActiveEnd : int32
 		{
 			None = 0,
 			Start = 1,
 			End = 2,
 		}
-		[AllowDuplicates]
 		public enum CaretPosition : int32
 		{
 			Unknown = 0,
 			EndOfLine = 1,
 			BeginningOfLine = 2,
 		}
-		[AllowDuplicates]
 		public enum CaretBidiMode : int32
 		{
 			LTR = 0,
 			RTL = 1,
 		}
-		[AllowDuplicates]
 		public enum ZoomUnit : int32
 		{
 			NoAmount = 0,
@@ -1238,7 +1207,6 @@ namespace Win32
 			LargeIncrement = 3,
 			SmallIncrement = 4,
 		}
-		[AllowDuplicates]
 		public enum AnimationStyle : int32
 		{
 			None = 0,
@@ -1250,7 +1218,6 @@ namespace Win32
 			Shimmer = 6,
 			Other = -1,
 		}
-		[AllowDuplicates]
 		public enum BulletStyle : int32
 		{
 			None = 0,
@@ -1261,7 +1228,6 @@ namespace Win32
 			DashBullet = 5,
 			Other = -1,
 		}
-		[AllowDuplicates]
 		public enum CapStyle : int32
 		{
 			None = 0,
@@ -1273,7 +1239,6 @@ namespace Win32
 			Titling = 6,
 			Other = -1,
 		}
-		[AllowDuplicates]
 		public enum FillType : int32
 		{
 			None = 0,
@@ -1282,7 +1247,6 @@ namespace Win32
 			Picture = 3,
 			Pattern = 4,
 		}
-		[AllowDuplicates]
 		public enum FlowDirections : int32
 		{
 			Default = 0,
@@ -1290,7 +1254,6 @@ namespace Win32
 			BottomToTop = 2,
 			Vertical = 4,
 		}
-		[AllowDuplicates]
 		public enum HorizontalTextAlignment : int32
 		{
 			Left = 0,
@@ -1298,7 +1261,6 @@ namespace Win32
 			Right = 2,
 			Justified = 3,
 		}
-		[AllowDuplicates]
 		public enum OutlineStyles : int32
 		{
 			None = 0,
@@ -1307,7 +1269,6 @@ namespace Win32
 			Engraved = 4,
 			Embossed = 8,
 		}
-		[AllowDuplicates]
 		public enum TextDecorationLineStyle : int32
 		{
 			None = 0,
@@ -1330,7 +1291,6 @@ namespace Win32
 			ThickLongDash = 18,
 			Other = -1,
 		}
-		[AllowDuplicates]
 		public enum VisualEffects : int32
 		{
 			None = 0,
@@ -1340,7 +1300,6 @@ namespace Win32
 			SoftEdges = 8,
 			Bevel = 16,
 		}
-		[AllowDuplicates]
 		public enum NotificationProcessing : int32
 		{
 			ImportantAll = 0,
@@ -1349,7 +1308,6 @@ namespace Win32
 			MostRecent = 3,
 			CurrentThenMostRecent = 4,
 		}
-		[AllowDuplicates]
 		public enum NotificationKind : int32
 		{
 			ItemAdded = 0,
@@ -1358,7 +1316,6 @@ namespace Win32
 			ActionAborted = 3,
 			Other = 4,
 		}
-		[AllowDuplicates]
 		public enum UIAutomationType : int32
 		{
 			Int = 1,
@@ -1392,7 +1349,6 @@ namespace Win32
 			OutRectArray = 196614,
 			OutElementArray = 196615,
 		}
-		[AllowDuplicates]
 		public enum TreeScope : int32
 		{
 			None = 0,
@@ -1403,39 +1359,33 @@ namespace Win32
 			Ancestors = 16,
 			Subtree = 7,
 		}
-		[AllowDuplicates]
 		public enum PropertyConditionFlags : int32
 		{
 			None = 0,
 			IgnoreCase = 1,
 			MatchSubstring = 2,
 		}
-		[AllowDuplicates]
 		public enum AutomationElementMode : int32
 		{
 			None = 0,
 			Full = 1,
 		}
-		[AllowDuplicates]
 		public enum TreeTraversalOptions : int32
 		{
 			Default = 0,
 			PostOrder = 1,
 			LastToFirstOrder = 2,
 		}
-		[AllowDuplicates]
 		public enum ConnectionRecoveryBehaviorOptions : int32
 		{
 			Disabled = 0,
 			Enabled = 1,
 		}
-		[AllowDuplicates]
 		public enum CoalesceEventsOptions : int32
 		{
 			Disabled = 0,
 			Enabled = 1,
 		}
-		[AllowDuplicates]
 		public enum ConditionType : int32
 		{
 			True = 0,
@@ -1445,21 +1395,18 @@ namespace Win32
 			Or = 4,
 			Not = 5,
 		}
-		[AllowDuplicates]
 		public enum NormalizeState : int32
 		{
 			None = 0,
 			View = 1,
 			Custom = 2,
 		}
-		[AllowDuplicates]
 		public enum ProviderType : int32
 		{
 			BaseHwnd = 0,
 			Proxy = 1,
 			NonClientArea = 2,
 		}
-		[AllowDuplicates]
 		public enum AutomationIdentifierType : int32
 		{
 			Property = 0,
@@ -1472,7 +1419,6 @@ namespace Win32
 			Changes = 7,
 			Style = 8,
 		}
-		[AllowDuplicates]
 		public enum EventArgsType : int32
 		{
 			Simple = 0,
@@ -1486,7 +1432,6 @@ namespace Win32
 			ActiveTextPositionChanged = 8,
 			StructuredMarkup = 9,
 		}
-		[AllowDuplicates]
 		public enum AsyncContentLoadedState : int32
 		{
 			Beginning = 0,

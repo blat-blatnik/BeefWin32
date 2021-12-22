@@ -198,7 +198,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum PERF_DETAIL : uint32
 		{
 			NOVICE = 100,
@@ -206,27 +205,23 @@ namespace Win32
 			EXPERT = 300,
 			WIZARD = 400,
 		}
-		[AllowDuplicates]
 		public enum REAL_TIME_DATA_SOURCE_ID_FLAGS : uint32
 		{
 			REGISTRY = 1,
 			WBEM = 4,
 		}
-		[AllowDuplicates]
 		public enum PDH_PATH_FLAGS : uint32
 		{
 			RESULT = 1,
 			INPUT = 2,
 			NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum PDH_FMT : uint32
 		{
 			DOUBLE = 512,
 			LARGE = 1024,
 			LONG = 256,
 		}
-		[AllowDuplicates]
 		public enum PDH_LOG_TYPE : uint32
 		{
 			UNDEFINED = 0,
@@ -236,26 +231,22 @@ namespace Win32
 			BINARY = 8,
 			PERFMON = 6,
 		}
-		[AllowDuplicates]
 		public enum PDH_LOG : uint32
 		{
 			READ_ACCESS = 65536,
 			WRITE_ACCESS = 131072,
 			UPDATE_ACCESS = 262144,
 		}
-		[AllowDuplicates]
 		public enum PDH_SELECT_DATA_SOURCE_FLAGS : uint32
 		{
 			FILE_BROWSER_ONLY = 1,
 			NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum PDH_DLL_VERSION : uint32
 		{
 			CVERSION_WIN50 = 1280,
 			VERSION = 1283,
 		}
-		[AllowDuplicates]
 		public enum PERF_COUNTER_AGGREGATE_FUNC : uint32
 		{
 			UNDEFINED = 0,
@@ -263,7 +254,6 @@ namespace Win32
 			AVG = 2,
 			MIN = 3,
 		}
-		[AllowDuplicates]
 		public enum DataCollectorType : int32
 		{
 			PerformanceCounter = 0,
@@ -272,7 +262,6 @@ namespace Win32
 			Alert = 3,
 			ApiTrace = 4,
 		}
-		[AllowDuplicates]
 		public enum FileFormat : int32
 		{
 			CommaSeparated = 0,
@@ -280,7 +269,6 @@ namespace Win32
 			Sql = 2,
 			Binary = 3,
 		}
-		[AllowDuplicates]
 		public enum AutoPathFormat : int32
 		{
 			None = 0,
@@ -294,7 +282,6 @@ namespace Win32
 			YearMonthDayHour = 8192,
 			MonthDayHourMinute = 16384,
 		}
-		[AllowDuplicates]
 		public enum DataCollectorSetStatus : int32
 		{
 			Stopped = 0,
@@ -303,7 +290,6 @@ namespace Win32
 			Pending = 3,
 			Undefined = 4,
 		}
-		[AllowDuplicates]
 		public enum ClockType : int32
 		{
 			TimeStamp = 0,
@@ -311,7 +297,6 @@ namespace Win32
 			System = 2,
 			Cycle = 3,
 		}
-		[AllowDuplicates]
 		public enum StreamMode : int32
 		{
 			File = 1,
@@ -319,7 +304,6 @@ namespace Win32
 			Both = 3,
 			Buffering = 4,
 		}
-		[AllowDuplicates]
 		public enum CommitMode : int32
 		{
 			CreateNew = 1,
@@ -329,7 +313,6 @@ namespace Win32
 			FlushTrace = 32,
 			ValidateOnly = 4096,
 		}
-		[AllowDuplicates]
 		public enum ValueMapType : int32
 		{
 			Index = 1,
@@ -337,7 +320,6 @@ namespace Win32
 			FlagArray = 3,
 			Validation = 4,
 		}
-		[AllowDuplicates]
 		public enum WeekDays : int32
 		{
 			RunOnce = 0,
@@ -350,13 +332,11 @@ namespace Win32
 			Saturday = 64,
 			Everyday = 127,
 		}
-		[AllowDuplicates]
 		public enum ResourcePolicy : int32
 		{
 			Largest = 0,
 			Oldest = 1,
 		}
-		[AllowDuplicates]
 		public enum DataManagerSteps : int32
 		{
 			CreateReport = 1,
@@ -365,7 +345,6 @@ namespace Win32
 			FolderActions = 8,
 			ResourceFreeing = 16,
 		}
-		[AllowDuplicates]
 		public enum FolderActionSteps : int32
 		{
 			CreateCab = 1,
@@ -374,7 +353,6 @@ namespace Win32
 			DeleteCab = 8,
 			DeleteReport = 16,
 		}
-		[AllowDuplicates]
 		public enum PerfRegInfoType : int32
 		{
 			COUNTERSET_STRUCT = 1,
@@ -388,7 +366,6 @@ namespace Win32
 			COUNTERSET_ENGLISH_NAME = 9,
 			COUNTER_ENGLISH_NAMES = 10,
 		}
-		[AllowDuplicates]
 		public enum PerfCounterDataType : int32
 		{
 			ERROR_RETURN = 0,
@@ -397,7 +374,6 @@ namespace Win32
 			MULTIPLE_INSTANCES = 4,
 			COUNTERSET = 6,
 		}
-		[AllowDuplicates]
 		public enum DisplayTypeConstants : int32
 		{
 			LineGraph = 1,
@@ -406,7 +382,6 @@ namespace Win32
 			ChartArea = 4,
 			ChartStackedArea = 5,
 		}
-		[AllowDuplicates]
 		public enum ReportValueTypeConstants : int32
 		{
 			DefaultValue = 0,
@@ -415,7 +390,6 @@ namespace Win32
 			Minimum = 3,
 			Maximum = 4,
 		}
-		[AllowDuplicates]
 		public enum DataSourceTypeConstants : int32
 		{
 			NullDataSource = -1,
@@ -423,7 +397,6 @@ namespace Win32
 			LogFiles = 2,
 			SqlLog = 3,
 		}
-		[AllowDuplicates]
 		public enum SysmonFileType : int32
 		{
 			Html = 1,
@@ -434,7 +407,6 @@ namespace Win32
 			RetiredBlg = 6,
 			Gif = 7,
 		}
-		[AllowDuplicates]
 		public enum SysmonDataType : int32
 		{
 			Avg = 1,
@@ -443,7 +415,6 @@ namespace Win32
 			Time = 4,
 			Count = 5,
 		}
-		[AllowDuplicates]
 		public enum SysmonBatchReason : int32
 		{
 			None = 0,

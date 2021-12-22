@@ -37,14 +37,12 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum SECURITY_INFO_PAGE_FLAGS : uint32
 		{
 			ADVANCED = 16,
 			EDIT_AUDITS = 2,
 			EDIT_PROPERTIES = 128,
 		}
-		[AllowDuplicates]
 		public enum SI_OBJECT_INFO_FLAGS : uint32
 		{
 			AUDITS_ELEVATION_REQUIRED = 33554432,
@@ -62,7 +60,6 @@ namespace Win32
 			SCOPE_ELEVATION_REQUIRED = 134217728,
 			VIEW_ONLY = 4194304,
 		}
-		[AllowDuplicates]
 		public enum SI_PAGE_TYPE : int32
 		{
 			PERM = 0,
@@ -73,7 +70,6 @@ namespace Win32
 			TAKEOWNERSHIP = 5,
 			SHARE = 6,
 		}
-		[AllowDuplicates]
 		public enum SI_PAGE_ACTIVATED : int32
 		{
 			DEFAULT = 0,

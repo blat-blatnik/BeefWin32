@@ -31,7 +31,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum PWM_POLARITY : int32
 		{
 			HIGH = 0,

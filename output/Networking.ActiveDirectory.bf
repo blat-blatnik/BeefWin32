@@ -478,7 +478,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum ADSTYPEENUM : int32
 		{
 			INVALID = 0,
@@ -528,14 +527,12 @@ namespace Win32
 			NO_REFERRAL_CHASING = 1024,
 			AUTH_RESERVED = 2147483648,
 		}
-		[AllowDuplicates]
 		public enum ADS_STATUSENUM : int32
 		{
 			S_OK = 0,
 			INVALID_SEARCHPREF = 1,
 			INVALID_SEARCHPREFVALUE = 2,
 		}
-		[AllowDuplicates]
 		public enum ADS_DEREFENUM : int32
 		{
 			NEVER = 0,
@@ -543,14 +540,12 @@ namespace Win32
 			FINDING = 2,
 			ALWAYS = 3,
 		}
-		[AllowDuplicates]
 		public enum ADS_SCOPEENUM : int32
 		{
 			BASE = 0,
 			ONELEVEL = 1,
 			SUBTREE = 2,
 		}
-		[AllowDuplicates]
 		public enum ADS_PREFERENCES_ENUM : int32
 		{
 			ASYNCHRONOUS = 0,
@@ -567,13 +562,11 @@ namespace Win32
 			CACHE_RESULTS = 11,
 			ADSIFLAG = 12,
 		}
-		[AllowDuplicates]
 		public enum ADSI_DIALECT_ENUM : int32
 		{
 			LDAP = 0,
 			SQL = 1,
 		}
-		[AllowDuplicates]
 		public enum ADS_CHASE_REFERRALS_ENUM : int32
 		{
 			NEVER = 0,
@@ -581,7 +574,6 @@ namespace Win32
 			EXTERNAL = 64,
 			ALWAYS = 96,
 		}
-		[AllowDuplicates]
 		public enum ADS_SEARCHPREF_ENUM : int32
 		{
 			ASYNCHRONOUS = 0,
@@ -604,13 +596,11 @@ namespace Win32
 			DIRSYNC_FLAG = 17,
 			EXTENDED_DN = 18,
 		}
-		[AllowDuplicates]
 		public enum ADS_PASSWORD_ENCODING_ENUM : int32
 		{
 			REQUIRE_SSL = 0,
 			CLEAR = 1,
 		}
-		[AllowDuplicates]
 		public enum ADS_PROPERTY_OPERATION_ENUM : int32
 		{
 			CLEAR = 1,
@@ -641,7 +631,6 @@ namespace Win32
 			UNIVERSAL_GROUP = 8,
 			SECURITY_ENABLED = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum ADS_USER_FLAG_ENUM : int32
 		{
 			SCRIPT = 1,
@@ -666,7 +655,6 @@ namespace Win32
 			PASSWORD_EXPIRED = 8388608,
 			TRUSTED_TO_AUTHENTICATE_FOR_DELEGATION = 16777216,
 		}
-		[AllowDuplicates]
 		public enum ADS_RIGHTS_ENUM : int32
 		{
 			DELETE = 65536,
@@ -689,7 +677,6 @@ namespace Win32
 			DS_LIST_OBJECT = 128,
 			DS_CONTROL_ACCESS = 256,
 		}
-		[AllowDuplicates]
 		public enum ADS_ACETYPE_ENUM : int32
 		{
 			ACCESS_ALLOWED = 0,
@@ -708,7 +695,6 @@ namespace Win32
 			SYSTEM_AUDIT_CALLBACK_OBJECT = 15,
 			SYSTEM_ALARM_CALLBACK_OBJECT = 16,
 		}
-		[AllowDuplicates]
 		public enum ADS_ACEFLAG_ENUM : int32
 		{
 			INHERIT_ACE = 2,
@@ -719,13 +705,11 @@ namespace Win32
 			SUCCESSFUL_ACCESS = 64,
 			FAILED_ACCESS = 128,
 		}
-		[AllowDuplicates]
 		public enum ADS_FLAGTYPE_ENUM : int32
 		{
 			OBJECT_TYPE_PRESENT = 1,
 			INHERITED_OBJECT_TYPE_PRESENT = 2,
 		}
-		[AllowDuplicates]
 		public enum ADS_SD_CONTROL_ENUM : int32
 		{
 			OWNER_DEFAULTED = 1,
@@ -742,12 +726,10 @@ namespace Win32
 			SACL_PROTECTED = 8192,
 			SELF_RELATIVE = 32768,
 		}
-		[AllowDuplicates]
 		public enum ADS_SD_REVISION_ENUM : int32
 		{
 			ADS_SD_REVISION_DS = 4,
 		}
-		[AllowDuplicates]
 		public enum ADS_NAME_TYPE_ENUM : int32
 		{
 			_1779 = 1,
@@ -763,14 +745,12 @@ namespace Win32
 			SERVICE_PRINCIPAL_NAME = 11,
 			SID_OR_SID_HISTORY_NAME = 12,
 		}
-		[AllowDuplicates]
 		public enum ADS_NAME_INITTYPE_ENUM : int32
 		{
 			DOMAIN = 1,
 			SERVER = 2,
 			GC = 3,
 		}
-		[AllowDuplicates]
 		public enum ADS_OPTION_ENUM : int32
 		{
 			SERVERNAME = 0,
@@ -784,7 +764,6 @@ namespace Win32
 			ACCUMULATIVE_MODIFICATION = 8,
 			SKIP_SID_LOOKUP = 9,
 		}
-		[AllowDuplicates]
 		public enum ADS_SECURITY_INFO_ENUM : int32
 		{
 			OWNER = 1,
@@ -792,7 +771,6 @@ namespace Win32
 			DACL = 4,
 			SACL = 8,
 		}
-		[AllowDuplicates]
 		public enum ADS_SETTYPE_ENUM : int32
 		{
 			FULL = 1,
@@ -800,7 +778,6 @@ namespace Win32
 			SERVER = 3,
 			DN = 4,
 		}
-		[AllowDuplicates]
 		public enum ADS_FORMAT_ENUM : int32
 		{
 			WINDOWS = 1,
@@ -815,13 +792,11 @@ namespace Win32
 			PROVIDER = 10,
 			LEAF = 11,
 		}
-		[AllowDuplicates]
 		public enum ADS_DISPLAY_ENUM : int32
 		{
 			FULL = 1,
 			VALUE_ONLY = 2,
 		}
-		[AllowDuplicates]
 		public enum ADS_ESCAPE_MODE_ENUM : int32
 		{
 			DEFAULT = 1,
@@ -829,28 +804,24 @@ namespace Win32
 			OFF = 3,
 			OFF_EX = 4,
 		}
-		[AllowDuplicates]
 		public enum ADS_PATHTYPE_ENUM : int32
 		{
 			FILE = 1,
 			FILESHARE = 2,
 			REGISTRY = 3,
 		}
-		[AllowDuplicates]
 		public enum ADS_SD_FORMAT_ENUM : int32
 		{
 			IID = 1,
 			RAW = 2,
 			HEXSTRING = 3,
 		}
-		[AllowDuplicates]
 		public enum DS_MANGLE_FOR : int32
 		{
 			UNKNOWN = 0,
 			OBJECT_RDN_FOR_DELETION = 1,
 			OBJECT_RDN_FOR_NAME_CONFLICT = 2,
 		}
-		[AllowDuplicates]
 		public enum DS_NAME_FORMAT : int32
 		{
 			UNKNOWN_NAME = 0,
@@ -865,7 +836,6 @@ namespace Win32
 			SID_OR_SID_HISTORY_NAME = 11,
 			DNS_DOMAIN_NAME = 12,
 		}
-		[AllowDuplicates]
 		public enum DS_NAME_FLAGS : int32
 		{
 			NO_FLAGS = 0,
@@ -874,7 +844,6 @@ namespace Win32
 			FLAG_GCVERIFY = 4,
 			FLAG_TRUST_REFERRAL = 8,
 		}
-		[AllowDuplicates]
 		public enum DS_NAME_ERROR : int32
 		{
 			NO_ERROR = 0,
@@ -886,7 +855,6 @@ namespace Win32
 			ERROR_NO_SYNTACTICAL_MAPPING = 6,
 			ERROR_TRUST_REFERRAL = 7,
 		}
-		[AllowDuplicates]
 		public enum DS_SPN_NAME_TYPE : int32
 		{
 			DNS_HOST = 0,
@@ -896,21 +864,18 @@ namespace Win32
 			NB_DOMAIN = 4,
 			SERVICE = 5,
 		}
-		[AllowDuplicates]
 		public enum DS_SPN_WRITE_OP : int32
 		{
 			ADD_SPN_OP = 0,
 			REPLACE_SPN_OP = 1,
 			DELETE_SPN_OP = 2,
 		}
-		[AllowDuplicates]
 		public enum DS_REPSYNCALL_ERROR : int32
 		{
 			WIN32_ERROR_CONTACTING_SERVER = 0,
 			WIN32_ERROR_REPLICATING = 1,
 			SERVER_UNREACHABLE = 2,
 		}
-		[AllowDuplicates]
 		public enum DS_REPSYNCALL_EVENT : int32
 		{
 			ERROR = 0,
@@ -918,12 +883,10 @@ namespace Win32
 			SYNC_COMPLETED = 2,
 			FINISHED = 3,
 		}
-		[AllowDuplicates]
 		public enum DS_KCC_TASKID : int32
 		{
 			DS_KCC_TASKID_UPDATE_TOPOLOGY = 0,
 		}
-		[AllowDuplicates]
 		public enum DS_REPL_INFO_TYPE : int32
 		{
 			NEIGHBORS = 0,
@@ -940,7 +903,6 @@ namespace Win32
 			METADATA_EXT_FOR_ATTR_VALUE = 11,
 			TYPE_MAX = 12,
 		}
-		[AllowDuplicates]
 		public enum DS_REPL_OP_TYPE : int32
 		{
 			SYNC = 0,
@@ -949,7 +911,6 @@ namespace Win32
 			MODIFY = 3,
 			UPDATE_REFS = 4,
 		}
-		[AllowDuplicates]
 		public enum DSROLE_MACHINE_ROLE : int32
 		{
 			StandaloneWorkstation = 0,
@@ -959,21 +920,18 @@ namespace Win32
 			BackupDomainController = 4,
 			PrimaryDomainController = 5,
 		}
-		[AllowDuplicates]
 		public enum DSROLE_SERVER_STATE : int32
 		{
 			Unknown = 0,
 			Primary = 1,
 			Backup = 2,
 		}
-		[AllowDuplicates]
 		public enum DSROLE_PRIMARY_DOMAIN_INFO_LEVEL : int32
 		{
 			PrimaryDomainInfoBasic = 1,
 			UpgradeStatus = 2,
 			OperationState = 3,
 		}
-		[AllowDuplicates]
 		public enum DSROLE_OPERATION_STATE : int32
 		{
 			Idle = 0,

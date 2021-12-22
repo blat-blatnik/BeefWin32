@@ -31,7 +31,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum RESTOREPOINTINFO_TYPE : uint32
 		{
 			APPLICATION_INSTALL = 0,
@@ -40,7 +39,6 @@ namespace Win32
 			MODIFY_SETTINGS = 12,
 			CANCELLED_OPERATION = 13,
 		}
-		[AllowDuplicates]
 		public enum RESTOREPOINTINFO_EVENT_TYPE : uint32
 		{
 			BEGIN_NESTED_SYSTEM_CHANGE = 102,

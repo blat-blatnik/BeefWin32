@@ -44,7 +44,6 @@ namespace Win32
 			DtdProcessing_Parse = 1,
 			_DtdProcessing_Last = 1,
 		}
-		[AllowDuplicates]
 		public enum XmlReadState : int32
 		{
 			Initial = 0,
@@ -66,7 +65,6 @@ namespace Win32
 			XmlReaderProperty_MaxEntityExpansion = 7,
 			_XmlReaderProperty_Last = 7,
 		}
-		[AllowDuplicates]
 		public enum XmlError : int32
 		{
 			MX_E_MX = -1072894464,

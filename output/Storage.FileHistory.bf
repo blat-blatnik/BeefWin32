@@ -52,7 +52,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum FH_TARGET_PROPERTY_TYPE : int32
 		{
 			FH_TARGET_NAME = 0,
@@ -60,7 +59,6 @@ namespace Win32
 			FH_TARGET_DRIVE_TYPE = 2,
 			MAX_TARGET_PROPERTY = 3,
 		}
-		[AllowDuplicates]
 		public enum FH_TARGET_DRIVE_TYPES : int32
 		{
 			UNKNOWN = 0,
@@ -68,14 +66,12 @@ namespace Win32
 			FIXED = 3,
 			REMOTE = 4,
 		}
-		[AllowDuplicates]
 		public enum FH_PROTECTED_ITEM_CATEGORY : int32
 		{
 			FH_FOLDER = 0,
 			FH_LIBRARY = 1,
 			MAX_PROTECTED_ITEM_CATEGORY = 2,
 		}
-		[AllowDuplicates]
 		public enum FH_LOCAL_POLICY_TYPE : int32
 		{
 			FH_FREQUENCY = 0,
@@ -83,7 +79,6 @@ namespace Win32
 			FH_RETENTION_AGE = 2,
 			MAX_LOCAL_POLICY = 3,
 		}
-		[AllowDuplicates]
 		public enum FH_RETENTION_TYPES : int32
 		{
 			FH_RETENTION_DISABLED = 0,
@@ -91,7 +86,6 @@ namespace Win32
 			FH_RETENTION_AGE_BASED = 2,
 			MAX_RETENTION_TYPE = 3,
 		}
-		[AllowDuplicates]
 		public enum FH_BACKUP_STATUS : int32
 		{
 			FH_STATUS_DISABLED = 0,
@@ -100,7 +94,6 @@ namespace Win32
 			FH_STATUS_REHYDRATING = 3,
 			MAX_BACKUP_STATUS = 4,
 		}
-		[AllowDuplicates]
 		public enum FH_DEVICE_VALIDATION_RESULT : int32
 		{
 			FH_ACCESS_DENIED = 0,
@@ -112,7 +105,6 @@ namespace Win32
 			FH_VALID_TARGET = 6,
 			MAX_VALIDATION_RESULT = 7,
 		}
-		[AllowDuplicates]
 		public enum FhBackupStopReason : int32
 		{
 			InvalidStopReason = 0,

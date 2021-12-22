@@ -150,39 +150,33 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum AUTHZ_RESOURCE_MANAGER_FLAGS : uint32
 		{
 			NO_AUDIT = 1,
 			INITIALIZE_UNDER_IMPERSONATION = 2,
 			NO_CENTRAL_ACCESS_POLICIES = 4,
 		}
-		[AllowDuplicates]
 		public enum AUTHZ_ACCESS_CHECK_FLAGS : uint32
 		{
 			AUTHZ_ACCESS_CHECK_NO_DEEP_COPY_SD = 1,
 		}
-		[AllowDuplicates]
 		public enum AUTHZ_INITIALIZE_OBJECT_ACCESS_AUDIT_EVENT_FLAGS : uint32
 		{
 			SUCCESS_AUDIT = 1,
 			FAILURE_AUDIT = 2,
 			ALLOC_STRINGS = 4,
 		}
-		[AllowDuplicates]
 		public enum TREE_SEC_INFO : uint32
 		{
 			SET = 1,
 			RESET = 2,
 			RESET_KEEP_EXPLICIT = 3,
 		}
-		[AllowDuplicates]
 		public enum AUTHZ_GENERATE_RESULTS : uint32
 		{
 			SUCCESS_AUDIT = 1,
 			FAILURE_AUDIT = 2,
 		}
-		[AllowDuplicates]
 		public enum ACTRL_ACCESS_ENTRY_ACCESS_FLAGS : uint32
 		{
 			CCESS_ALLOWED = 1,
@@ -190,13 +184,11 @@ namespace Win32
 			UDIT_SUCCESS = 4,
 			UDIT_FAILURE = 8,
 		}
-		[AllowDuplicates]
 		public enum AUTHZ_SECURITY_ATTRIBUTE_FLAGS : uint32
 		{
 			NON_INHERITABLE = 1,
 			VALUE_CASE_SENSITIVE = 2,
 		}
-		[AllowDuplicates]
 		public enum SE_OBJECT_TYPE : int32
 		{
 			UNKNOWN_OBJECT_TYPE = 0,
@@ -214,7 +206,6 @@ namespace Win32
 			REGISTRY_WOW64_32KEY = 12,
 			REGISTRY_WOW64_64KEY = 13,
 		}
-		[AllowDuplicates]
 		public enum TRUSTEE_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -227,7 +218,6 @@ namespace Win32
 			INVALID = 7,
 			COMPUTER = 8,
 		}
-		[AllowDuplicates]
 		public enum TRUSTEE_FORM : int32
 		{
 			IS_SID = 0,
@@ -236,13 +226,11 @@ namespace Win32
 			IS_OBJECTS_AND_SID = 3,
 			IS_OBJECTS_AND_NAME = 4,
 		}
-		[AllowDuplicates]
 		public enum MULTIPLE_TRUSTEE_OPERATION : int32
 		{
 			NO_MULTIPLE_TRUSTEE = 0,
 			TRUSTEE_IS_IMPERSONATE = 1,
 		}
-		[AllowDuplicates]
 		public enum ACCESS_MODE : int32
 		{
 			NOT_USED_ACCESS = 0,
@@ -253,7 +241,6 @@ namespace Win32
 			SET_AUDIT_SUCCESS = 5,
 			SET_AUDIT_FAILURE = 6,
 		}
-		[AllowDuplicates]
 		public enum PROG_INVOKE_SETTING : int32
 		{
 			InvokeNever = 1,
@@ -263,7 +250,6 @@ namespace Win32
 			RetryOperation = 5,
 			InvokePrePostError = 6,
 		}
-		[AllowDuplicates]
 		public enum AUDIT_PARAM_TYPE : int32
 		{
 			None = 1,
@@ -280,7 +266,6 @@ namespace Win32
 			IpAddress = 12,
 			LogonIdWithSid = 13,
 		}
-		[AllowDuplicates]
 		public enum AUTHZ_SECURITY_ATTRIBUTE_OPERATION : int32
 		{
 			NONE = 0,
@@ -289,7 +274,6 @@ namespace Win32
 			DELETE = 3,
 			REPLACE = 4,
 		}
-		[AllowDuplicates]
 		public enum AUTHZ_SID_OPERATION : int32
 		{
 			NONE = 0,
@@ -298,7 +282,6 @@ namespace Win32
 			DELETE = 3,
 			REPLACE = 4,
 		}
-		[AllowDuplicates]
 		public enum AUTHZ_CONTEXT_INFORMATION_CLASS : int32
 		{
 			UserSid = 1,
@@ -318,7 +301,6 @@ namespace Win32
 			AppContainerSid = 15,
 			CapabilitySids = 16,
 		}
-		[AllowDuplicates]
 		public enum AUTHZ_AUDIT_EVENT_INFORMATION_CLASS : int32
 		{
 			Flags = 1,

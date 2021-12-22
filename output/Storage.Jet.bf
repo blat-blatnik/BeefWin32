@@ -955,7 +955,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum JET_RELOP : int32
 		{
 			Equals = 0,
@@ -968,7 +967,6 @@ namespace Win32
 			BitmaskEqualsZero = 7,
 			BitmaskNotEqualsZero = 8,
 		}
-		[AllowDuplicates]
 		public enum JET_ERRCAT : int32
 		{
 			Unknown = 0,
@@ -990,7 +988,6 @@ namespace Win32
 			Obsolete = 16,
 			Max = 17,
 		}
-		[AllowDuplicates]
 		public enum JET_INDEXCHECKING : int32
 		{
 			Off = 0,

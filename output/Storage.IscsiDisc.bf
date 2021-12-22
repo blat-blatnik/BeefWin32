@@ -179,7 +179,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum NV_SEP_WRITE_CACHE_TYPE : int32
 		{
 			Unknown = 0,
@@ -187,13 +186,11 @@ namespace Win32
 			WriteBack = 2,
 			WriteThrough = 3,
 		}
-		[AllowDuplicates]
 		public enum MP_STORAGE_DIAGNOSTIC_LEVEL : int32
 		{
 			Default = 0,
 			Max = 1,
 		}
-		[AllowDuplicates]
 		public enum MP_STORAGE_DIAGNOSTIC_TARGET_TYPE : int32
 		{
 			Undefined = 0,
@@ -201,7 +198,6 @@ namespace Win32
 			HbaFirmware = 3,
 			Max = 4,
 		}
-		[AllowDuplicates]
 		public enum NVCACHE_TYPE : int32
 		{
 			Unknown = 0,
@@ -209,7 +205,6 @@ namespace Win32
 			WriteBack = 2,
 			WriteThrough = 3,
 		}
-		[AllowDuplicates]
 		public enum NVCACHE_STATUS : int32
 		{
 			Unknown = 0,
@@ -217,30 +212,25 @@ namespace Win32
 			Disabled = 2,
 			Enabled = 3,
 		}
-		[AllowDuplicates]
 		public enum ISCSI_DIGEST_TYPES : int32
 		{
 			NONE = 0,
 			CRC32C = 1,
 		}
-		[AllowDuplicates]
 		public enum ISCSI_AUTH_TYPES : int32
 		{
 			NO_AUTH_TYPE = 0,
 			CHAP_AUTH_TYPE = 1,
 			MUTUAL_CHAP_AUTH_TYPE = 2,
 		}
-		[AllowDuplicates]
 		public enum IKE_AUTHENTICATION_METHOD : int32
 		{
 			IKE_AUTHENTICATION_PRESHARED_KEY_METHOD = 1,
 		}
-		[AllowDuplicates]
 		public enum TARGETPROTOCOLTYPE : int32
 		{
 			ISCSI_TCP_PROTOCOL_TYPE = 0,
 		}
-		[AllowDuplicates]
 		public enum TARGET_INFORMATION_CLASS : int32
 		{
 			ProtocolType = 0,

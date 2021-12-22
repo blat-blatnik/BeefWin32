@@ -21,7 +21,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum ACTIVATIONTYPE : int32
 		{
 			UNCATEGORIZED = 0,
@@ -31,33 +30,28 @@ namespace Win32
 			FROM_STREAM = 8,
 			FROM_FILE = 16,
 		}
-		[AllowDuplicates]
 		public enum AgileReferenceOptions : int32
 		{
 			FAULT = 0,
 			LAYEDMARSHAL = 1,
 		}
-		[AllowDuplicates]
 		public enum TrustLevel : int32
 		{
 			BaseTrust = 0,
 			PartialTrust = 1,
 			FullTrust = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPATCHERQUEUE_THREAD_APARTMENTTYPE : int32
 		{
 			NONE = 0,
 			ASTA = 1,
 			STA = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPATCHERQUEUE_THREAD_TYPE : int32
 		{
 			DEDICATED = 1,
 			CURRENT = 2,
 		}
-		[AllowDuplicates]
 		public enum CASTING_CONNECTION_ERROR_STATUS : int32
 		{
 			SUCCEEDED = 0,
@@ -68,7 +62,6 @@ namespace Win32
 			INVALID_CASTING_SOURCE = 5,
 			UNKNOWN = 6,
 		}
-		[AllowDuplicates]
 		public enum CASTING_CONNECTION_STATE : int32
 		{
 			DISCONNECTED = 0,
@@ -77,13 +70,11 @@ namespace Win32
 			DISCONNECTING = 3,
 			CONNECTING = 4,
 		}
-		[AllowDuplicates]
 		public enum RO_INIT_TYPE : int32
 		{
 			SINGLETHREADED = 0,
 			MULTITHREADED = 1,
 		}
-		[AllowDuplicates]
 		public enum RO_ERROR_REPORTING_FLAGS : uint32
 		{
 			NONE = 0,
@@ -92,7 +83,6 @@ namespace Win32
 			USESETERRORINFO = 4,
 			SUPPRESSSETERRORINFO = 8,
 		}
-		[AllowDuplicates]
 		public enum BSOS_OPTIONS : int32
 		{
 			DEFAULT = 0,

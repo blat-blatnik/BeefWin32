@@ -102,7 +102,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum MODEM_STATUS_FLAGS : uint32
 		{
 			CTS_ON = 16,
@@ -110,7 +109,6 @@ namespace Win32
 			RING_ON = 64,
 			RLSD_ON = 128,
 		}
-		[AllowDuplicates]
 		public enum CLEAR_COMM_ERROR_FLAGS : uint32
 		{
 			BREAK = 16,
@@ -119,7 +117,6 @@ namespace Win32
 			RXOVER = 1,
 			RXPARITY = 4,
 		}
-		[AllowDuplicates]
 		public enum PURGE_COMM_FLAGS : uint32
 		{
 			RXABORT = 2,
@@ -127,7 +124,6 @@ namespace Win32
 			TXABORT = 1,
 			TXCLEAR = 4,
 		}
-		[AllowDuplicates]
 		public enum COMM_EVENT_MASK : uint32
 		{
 			BREAK = 64,
@@ -144,7 +140,6 @@ namespace Win32
 			RXFLAG = 2,
 			TXEMPTY = 4,
 		}
-		[AllowDuplicates]
 		public enum ESCAPE_COMM_FUNCTION : uint32
 		{
 			CLRBREAK = 9,
@@ -156,14 +151,12 @@ namespace Win32
 			SETXOFF = 1,
 			SETXON = 2,
 		}
-		[AllowDuplicates]
 		public enum MODEMDEVCAPS_DIAL_OPTIONS : uint32
 		{
 			BILLING = 64,
 			DIALTONE = 256,
 			QUIET = 128,
 		}
-		[AllowDuplicates]
 		public enum MODEMSETTINGS_SPEAKER_MODE : uint32
 		{
 			CALLSETUP = 8,
@@ -171,7 +164,6 @@ namespace Win32
 			OFF = 1,
 			ON = 4,
 		}
-		[AllowDuplicates]
 		public enum COMMPROP_STOP_PARITY : uint16
 		{
 			STOPBITS_10 = 1,
@@ -183,21 +175,18 @@ namespace Win32
 			PARITY_MARK = 2048,
 			PARITY_SPACE = 4096,
 		}
-		[AllowDuplicates]
 		public enum MODEM_SPEAKER_VOLUME : uint32
 		{
 			HIGH = 2,
 			LOW = 0,
 			MEDIUM = 1,
 		}
-		[AllowDuplicates]
 		public enum MODEMDEVCAPS_SPEAKER_VOLUME : uint32
 		{
 			HIGH = 4,
 			LOW = 1,
 			MEDIUM = 2,
 		}
-		[AllowDuplicates]
 		public enum MODEMDEVCAPS_SPEAKER_MODE : uint32
 		{
 			CALLSETUP = 8,

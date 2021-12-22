@@ -26,7 +26,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum _DMO_INPUT_DATA_BUFFER_FLAGS : int32
 		{
 			SYNCPOINT = 1,
@@ -34,7 +33,6 @@ namespace Win32
 			TIMELENGTH = 4,
 			DISCONTINUITY = 8,
 		}
-		[AllowDuplicates]
 		public enum _DMO_OUTPUT_DATA_BUFFER_FLAGS : int32
 		{
 			SYNCPOINT = 1,
@@ -43,12 +41,10 @@ namespace Win32
 			DISCONTINUITY = 8,
 			INCOMPLETE = 16777216,
 		}
-		[AllowDuplicates]
 		public enum _DMO_INPUT_STATUS_FLAGS : int32
 		{
 			DMO_INPUT_STATUSF_ACCEPT_DATA = 1,
 		}
-		[AllowDuplicates]
 		public enum _DMO_INPUT_STREAM_INFO_FLAGS : int32
 		{
 			WHOLE_SAMPLES = 1,
@@ -56,7 +52,6 @@ namespace Win32
 			FIXED_SAMPLE_SIZE = 4,
 			HOLDS_BUFFERS = 8,
 		}
-		[AllowDuplicates]
 		public enum _DMO_OUTPUT_STREAM_INFO_FLAGS : int32
 		{
 			WHOLE_SAMPLES = 1,
@@ -65,39 +60,32 @@ namespace Win32
 			DISCARDABLE = 8,
 			OPTIONAL = 16,
 		}
-		[AllowDuplicates]
 		public enum _DMO_SET_TYPE_FLAGS : int32
 		{
 			TEST_ONLY = 1,
 			CLEAR = 2,
 		}
-		[AllowDuplicates]
 		public enum _DMO_PROCESS_OUTPUT_FLAGS : int32
 		{
 			DMO_PROCESS_OUTPUT_DISCARD_WHEN_NO_BUFFER = 1,
 		}
-		[AllowDuplicates]
 		public enum _DMO_INPLACE_PROCESS_FLAGS : int32
 		{
 			NORMAL = 0,
 			ZERO = 1,
 		}
-		[AllowDuplicates]
 		public enum _DMO_QUALITY_STATUS_FLAGS : int32
 		{
 			DMO_QUALITY_STATUS_ENABLED = 1,
 		}
-		[AllowDuplicates]
 		public enum _DMO_VIDEO_OUTPUT_STREAM_FLAGS : int32
 		{
 			DMO_VOSF_NEEDS_PREVIOUS_SAMPLE = 1,
 		}
-		[AllowDuplicates]
 		public enum DMO_REGISTER_FLAGS : int32
 		{
 			DMO_REGISTERF_IS_KEYED = 1,
 		}
-		[AllowDuplicates]
 		public enum DMO_ENUM_FLAGS : int32
 		{
 			DMO_ENUMF_INCLUDE_KEYED = 1,

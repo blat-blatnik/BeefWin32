@@ -85,7 +85,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum COMMON_DLG_ERRORS : uint32
 		{
 			CDERR_DIALOGFAILURE = 65535,
@@ -126,7 +125,6 @@ namespace Win32
 			FRERR_BUFFERLENGTHZERO = 16385,
 			CCERR_CHOOSECOLORCODES = 20480,
 		}
-		[AllowDuplicates]
 		public enum OPEN_FILENAME_FLAGS : uint32
 		{
 			READONLY = 1,
@@ -156,7 +154,6 @@ namespace Win32
 			DONTADDTORECENT = 33554432,
 			FORCESHOWHIDDEN = 268435456,
 		}
-		[AllowDuplicates]
 		public enum OPEN_FILENAME_FLAGS_EX : uint32
 		{
 			NE = 0,
@@ -218,7 +215,6 @@ namespace Win32
 			USESTYLE = 128,
 			WYSIWYG = 32768,
 		}
-		[AllowDuplicates]
 		public enum FINDREPLACE_FLAGS : uint32
 		{
 			DIALOGTERM = 64,
@@ -271,7 +267,6 @@ namespace Win32
 			PRINTSETUP = 64,
 			SHOWHELP = 2048,
 		}
-		[AllowDuplicates]
 		public enum CHOOSEFONT_FONT_TYPE : uint16
 		{
 			BOLD_FONTTYPE = 256,

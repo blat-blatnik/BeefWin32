@@ -24,7 +24,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum LOAD_LIBRARY_FLAGS : uint32
 		{
 			DONT_RESOLVE_DLL_REFERENCES = 1,

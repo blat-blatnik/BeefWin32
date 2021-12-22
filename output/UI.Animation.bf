@@ -19,39 +19,33 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum UI_ANIMATION_UPDATE_RESULT : int32
 		{
 			NO_CHANGE = 0,
 			VARIABLES_CHANGED = 1,
 		}
-		[AllowDuplicates]
 		public enum UI_ANIMATION_MANAGER_STATUS : int32
 		{
 			IDLE = 0,
 			BUSY = 1,
 		}
-		[AllowDuplicates]
 		public enum UI_ANIMATION_MODE : int32
 		{
 			DISABLED = 0,
 			SYSTEM_DEFAULT = 1,
 			ENABLED = 2,
 		}
-		[AllowDuplicates]
 		public enum UI_ANIMATION_REPEAT_MODE : int32
 		{
 			NORMAL = 0,
 			ALTERNATE = 1,
 		}
-		[AllowDuplicates]
 		public enum UI_ANIMATION_ROUNDING_MODE : int32
 		{
 			NEAREST = 0,
 			FLOOR = 1,
 			CEILING = 2,
 		}
-		[AllowDuplicates]
 		public enum UI_ANIMATION_STORYBOARD_STATUS : int32
 		{
 			BUILDING = 0,
@@ -63,7 +57,6 @@ namespace Win32
 			READY = 6,
 			INSUFFICIENT_PRIORITY = 7,
 		}
-		[AllowDuplicates]
 		public enum UI_ANIMATION_SCHEDULING_RESULT : int32
 		{
 			UNEXPECTED_FAILURE = 0,
@@ -72,19 +65,16 @@ namespace Win32
 			SUCCEEDED = 3,
 			DEFERRED = 4,
 		}
-		[AllowDuplicates]
 		public enum UI_ANIMATION_PRIORITY_EFFECT : int32
 		{
 			FAILURE = 0,
 			DELAY = 1,
 		}
-		[AllowDuplicates]
 		public enum UI_ANIMATION_SLOPE : int32
 		{
 			INCREASING = 0,
 			DECREASING = 1,
 		}
-		[AllowDuplicates]
 		public enum UI_ANIMATION_DEPENDENCIES : uint32
 		{
 			NONE = 0,
@@ -93,13 +83,11 @@ namespace Win32
 			FINAL_VELOCITY = 4,
 			DURATION = 8,
 		}
-		[AllowDuplicates]
 		public enum UI_ANIMATION_IDLE_BEHAVIOR : int32
 		{
 			CONTINUE = 0,
 			DISABLE = 1,
 		}
-		[AllowDuplicates]
 		public enum UI_ANIMATION_TIMER_CLIENT_STATUS : int32
 		{
 			IDLE = 0,

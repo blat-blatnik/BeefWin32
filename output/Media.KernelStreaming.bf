@@ -644,13 +644,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum KSRESET : int32
 		{
 			BEGIN = 0,
 			END = 1,
 		}
-		[AllowDuplicates]
 		public enum KSSTATE : int32
 		{
 			STOP = 0,
@@ -658,18 +656,15 @@ namespace Win32
 			PAUSE = 2,
 			RUN = 3,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_GENERAL : int32
 		{
 			KSPROPERTY_GENERAL_COMPONENTID = 0,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_STREAMIO : int32
 		{
 			READ = 0,
 			WRITE = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_MEDIASEEKING : int32
 		{
 			CAPABILITIES = 0,
@@ -694,7 +689,6 @@ namespace Win32
 			SeekToKeyFrame = 4,
 			ReturnTime = 8,
 		}
-		[AllowDuplicates]
 		public enum KS_SEEKING_CAPABILITIES : int32
 		{
 			SeekAbsolute = 1,
@@ -705,7 +699,6 @@ namespace Win32
 			GetDuration = 32,
 			PlayBackwards = 64,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_TOPOLOGY : int32
 		{
 			CATEGORIES = 0,
@@ -713,19 +706,16 @@ namespace Win32
 			CONNECTIONS = 2,
 			NAME = 3,
 		}
-		[AllowDuplicates]
 		public enum KSINTERFACE_STANDARD : int32
 		{
 			STREAMING = 0,
 			LOOPED_STREAMING = 1,
 			CONTROL = 2,
 		}
-		[AllowDuplicates]
 		public enum KSINTERFACE_FILEIO : int32
 		{
 			KSINTERFACE_FILEIO_STREAMING = 0,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_PIN : int32
 		{
 			CINSTANCES = 0,
@@ -746,13 +736,11 @@ namespace Win32
 			PROPOSEDATAFORMAT2 = 15,
 			MODEDATAFORMATS = 16,
 		}
-		[AllowDuplicates]
 		public enum KSPIN_DATAFLOW : int32
 		{
 			IN = 1,
 			OUT = 2,
 		}
-		[AllowDuplicates]
 		public enum KSPIN_COMMUNICATION : int32
 		{
 			NONE = 0,
@@ -761,24 +749,20 @@ namespace Win32
 			BOTH = 3,
 			BRIDGE = 4,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_PINCAPS_CHANGENOTIFICATIONS : int32
 		{
 			FORMATCHANGE = 0,
 			JACKINFOCHANGE = 1,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_VOLUMELIMIT : int32
 		{
 			KSEVENT_VOLUMELIMIT_CHANGED = 0,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_QUALITY : int32
 		{
 			REPORT = 0,
 			ERROR = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_CONNECTION : int32
 		{
 			STATE = 0,
@@ -790,19 +774,16 @@ namespace Win32
 			ALLOCATORFRAMING_EX = 6,
 			STARTAT = 7,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_STREAMALLOCATOR : int32
 		{
 			INTERNAL_FREEFRAME = 0,
 			FREEFRAME = 1,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_STREAMALLOCATOR : int32
 		{
 			ALLOC = 0,
 			FREE = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPIN_MDL_CACHING_EVENT : int32
 		{
 			CLEANUP = 0,
@@ -810,12 +791,10 @@ namespace Win32
 			CLEANALL_NOWAIT = 2,
 			ADDSAMPLE = 3,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_STREAMINTERFACE : int32
 		{
 			KSPROPERTY_STREAMINTERFACE_HEADERSIZE = 0,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_STREAM : int32
 		{
 			ALLOCATOR = 0,
@@ -830,12 +809,10 @@ namespace Win32
 			RATE = 9,
 			PIPE_ID = 10,
 		}
-		[AllowDuplicates]
 		public enum KSPPROPERTY_ALLOCATOR_MDLCACHING : int32
 		{
 			KSPROPERTY_ALLOCATOR_CLEANUP_CACHEDMDLPAGES = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_CLOCK : int32
 		{
 			TIME = 0,
@@ -845,13 +822,11 @@ namespace Win32
 			RESOLUTION = 4,
 			STATE = 5,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_CLOCK_POSITION : int32
 		{
 			INTERVAL_MARK = 0,
 			POSITION_MARK = 1,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_CONNECTION : int32
 		{
 			POSITIONUPDATE = 0,
@@ -860,13 +835,11 @@ namespace Win32
 			PRIORITY = 3,
 			ENDOFSTREAM = 4,
 		}
-		[AllowDuplicates]
 		public enum KSDEVICE_THERMAL_STATE : int32
 		{
 			LOW = 0,
 			HIGH = 1,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_DEVICE : int32
 		{
 			LOST = 0,
@@ -874,7 +847,6 @@ namespace Win32
 			THERMAL_HIGH = 2,
 			THERMAL_LOW = 3,
 		}
-		[AllowDuplicates]
 		public enum KSDEGRADE_STANDARD : int32
 		{
 			SAMPLE = 0,
@@ -882,20 +854,17 @@ namespace Win32
 			COMPUTATION = 2,
 			SKIP = 3,
 		}
-		[AllowDuplicates]
 		public enum KSINTERFACE_MEDIA : int32
 		{
 			MUSIC = 0,
 			WAVE_BUFFERED = 1,
 			WAVE_QUEUED = 2,
 		}
-		[AllowDuplicates]
 		public enum CONSTRICTOR_OPTION : int32
 		{
 			DISABLE = 0,
 			MUTE = 1,
 		}
-		[AllowDuplicates]
 		public enum KSMICARRAY_MICTYPE : int32
 		{
 			OMNIDIRECTIONAL = 0,
@@ -906,14 +875,12 @@ namespace Win32
 			_8SHAPED = 5,
 			VENDORDEFINED = 15,
 		}
-		[AllowDuplicates]
 		public enum KSMICARRAY_MICARRAYTYPE : int32
 		{
 			LINEAR = 0,
 			PLANAR = 1,
 			_3D = 2,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_DIRECTSOUND3DLISTENER : int32
 		{
 			ALL = 0,
@@ -926,7 +893,6 @@ namespace Win32
 			BATCH = 7,
 			ALLOCATION = 8,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_DIRECTSOUND3DBUFFER : int32
 		{
 			ALL = 0,
@@ -939,45 +905,38 @@ namespace Win32
 			MAXDISTANCE = 7,
 			MODE = 8,
 		}
-		[AllowDuplicates]
 		public enum KSDS3D_HRTF_FILTER_QUALITY : int32
 		{
 			FULL_FILTER = 0,
 			LIGHT_FILTER = 1,
 			KSDS3D_FILTER_QUALITY_COUNT = 2,
 		}
-		[AllowDuplicates]
 		public enum KSDS3D_HRTF_COEFF_FORMAT : int32
 		{
 			FLOAT_COEFF = 0,
 			SHORT_COEFF = 1,
 			KSDS3D_COEFF_COUNT = 2,
 		}
-		[AllowDuplicates]
 		public enum KSDS3D_HRTF_FILTER_METHOD : int32
 		{
 			DIRECT_FORM = 0,
 			CASCADE_FORM = 1,
 			KSDS3D_FILTER_METHOD_COUNT = 2,
 		}
-		[AllowDuplicates]
 		public enum KSDS3D_HRTF_FILTER_VERSION : int32
 		{
 			DS3D_HRTF_VERSION_1 = 0,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_HRTF3D : int32
 		{
 			PARAMS = 0,
 			INITIALIZE = 1,
 			FILTER_FORMAT = 2,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_ITD3D : int32
 		{
 			KSPROPERTY_ITD3D_PARAMS = 0,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BIBLIOGRAPHIC : int32
 		{
 			LEADER = 1380207648,
@@ -1017,13 +976,11 @@ namespace Win32
 			SERIESSTATEMENTPERSONALNAME = 808466464,
 			SERIESSTATEMENTUNIFORMTITLE = 808663072,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_TOPOLOGYNODE : int32
 		{
 			ENABLE = 1,
 			RESET = 2,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_RTAUDIO : int32
 		{
 			GETPOSITIONFUNCTION = 0,
@@ -1041,23 +998,19 @@ namespace Win32
 			SETWRITEPACKET = 12,
 			PACKETVREGISTER = 13,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BTAUDIO : int32
 		{
 			RECONNECT = 0,
 			DISCONNECT = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_DRMAUDIOSTREAM : int32
 		{
 			KSPROPERTY_DRMAUDIOSTREAM_CONTENTID = 0,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_INTERLEAVEDAUDIO : int32
 		{
 			KSPROPERTY_INTERLEAVEDAUDIO_FORMATINFORMATION = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_SOUNDDETECTOR : int32
 		{
 			SUPPORTEDPATTERNS = 1,
@@ -1067,12 +1020,10 @@ namespace Win32
 			RESET = 5,
 			STREAMINGSUPPORT = 6,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_SOUNDDETECTOR : int32
 		{
 			KSEVENT_SOUNDDETECTOR_MATCHDETECTED = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_AUDIO : int32
 		{
 			LATENCY = 1,
@@ -1136,7 +1087,6 @@ namespace Win32
 			MIC_SNR = 59,
 			MIC_SENSITIVITY2 = 60,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_TELEPHONY_CONTROL : int32
 		{
 			PROVIDERID = 0,
@@ -1146,27 +1096,23 @@ namespace Win32
 			CALLHOLD = 4,
 			MUTE_TX = 5,
 		}
-		[AllowDuplicates]
 		public enum TELEPHONY_CALLTYPE : int32
 		{
 			CIRCUITSWITCHED = 0,
 			PACKETSWITCHED_LTE = 1,
 			PACKETSWITCHED_WLAN = 2,
 		}
-		[AllowDuplicates]
 		public enum TELEPHONY_CALLCONTROLOP : int32
 		{
 			DISABLE = 0,
 			ENABLE = 1,
 		}
-		[AllowDuplicates]
 		public enum TELEPHONY_PROVIDERCHANGEOP : int32
 		{
 			END = 0,
 			BEGIN = 1,
 			CANCEL = 2,
 		}
-		[AllowDuplicates]
 		public enum TELEPHONY_CALLSTATE : int32
 		{
 			DISABLED = 0,
@@ -1174,30 +1120,25 @@ namespace Win32
 			HOLD = 2,
 			PROVIDERTRANSITION = 3,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_TELEPHONY_TOPOLOGY : int32
 		{
 			ENDPOINTIDPAIR = 0,
 			VOLUME = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_FMRX_TOPOLOGY : int32
 		{
 			ENDPOINTID = 0,
 			VOLUME = 1,
 			ANTENNAENDPOINTID = 2,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_FMRX_CONTROL : int32
 		{
 			KSPROPERTY_FMRX_STATE = 0,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_TELEPHONY : int32
 		{
 			KSEVENT_TELEPHONY_ENDPOINTPAIRS_CHANGED = 0,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_WAVETABLE : int32
 		{
 			ALLOC = 0,
@@ -1205,7 +1146,6 @@ namespace Win32
 			FIND = 2,
 			WRITE = 3,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_WAVE : int32
 		{
 			COMPATIBLE_CAPABILITIES = 0,
@@ -1216,22 +1156,18 @@ namespace Win32
 			VOLUME = 5,
 			PAN = 6,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_CYCLIC : int32
 		{
 			KSPROPERTY_CYCLIC_POSITION = 0,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_AUDIO_CONTROL_CHANGE : int32
 		{
 			KSEVENT_CONTROL_CHANGE = 0,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_LOOPEDSTREAMING : int32
 		{
 			KSEVENT_LOOPEDSTREAMING_POSITION = 0,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_MPEG2VID : int32
 		{
 			MODES = 0,
@@ -1240,7 +1176,6 @@ namespace Win32
 			_16_9_RECT = 3,
 			_16_9_PANSCAN = 4,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_AC3 : int32
 		{
 			ERROR_CONCEALMENT = 1,
@@ -1251,20 +1186,17 @@ namespace Win32
 			LANGUAGE_CODE = 6,
 			ROOM_TYPE = 7,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_AUDDECOUT : int32
 		{
 			MODES = 0,
 			CUR_MODE = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_DVDSUBPIC : int32
 		{
 			PALETTE = 0,
 			HLI = 1,
 			COMPOSIT_ON = 2,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_COPYPROT : int32
 		{
 			DVDCOPY_CHLG_KEY = 1,
@@ -1276,7 +1208,6 @@ namespace Win32
 			DVDCOPY_SET_COPY_STATE = 7,
 			DVDCOPY_DISC_KEY = 128,
 		}
-		[AllowDuplicates]
 		public enum KS_DVDCOPYSTATE : int32
 		{
 			INITIALIZE = 0,
@@ -1285,7 +1216,6 @@ namespace Win32
 			AUTHENTICATION_REQUIRED = 3,
 			DONE = 4,
 		}
-		[AllowDuplicates]
 		public enum KS_COPY_MACROVISION_LEVEL : int32
 		{
 			DISABLED = 0,
@@ -1293,7 +1223,6 @@ namespace Win32
 			LEVEL2 = 2,
 			LEVEL3 = 3,
 		}
-		[AllowDuplicates]
 		public enum KS_MPEG2Level : int32
 		{
 			Low = 0,
@@ -1301,7 +1230,6 @@ namespace Win32
 			High1440 = 2,
 			High = 3,
 		}
-		[AllowDuplicates]
 		public enum KS_MPEG2Profile : int32
 		{
 			Simple = 0,
@@ -1310,12 +1238,10 @@ namespace Win32
 			SpatiallyScalable = 3,
 			High = 4,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_VBICAP : int32
 		{
 			KSPROPERTY_VBICAP_PROPERTIES_PROTECTION = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_VBICODECFILTERING : int32
 		{
 			CANLINES_REQUESTED_BIT_ARRAY = 1,
@@ -1324,7 +1250,6 @@ namespace Win32
 			UBSTREAMS_DISCOVERED_BIT_ARRAY = 4,
 			TATISTICS = 5,
 		}
-		[AllowDuplicates]
 		public enum CAPTURE_MEMORY_ALLOCATION_FLAGS : int32
 		{
 			INVALID = 0,
@@ -1334,7 +1259,6 @@ namespace Win32
 			VRAM_MAPPED = 8,
 			SECURE_BUFFER = 16,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_VIDMEM_TRANSPORT : int32
 		{
 			DISPLAY_ADAPTER_GUID = 1,
@@ -1342,17 +1266,14 @@ namespace Win32
 			CURRENT_CAPTURE_SURFACE = 3,
 			MAP_CAPTURE_HANDLE_TO_VRAM_ADDRESS = 4,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_MPEG4_MEDIATYPE_ATTRIBUTES : int32
 		{
 			KSPROPERTY_MPEG4_MEDIATYPE_SD_BOX = 1,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_DYNAMICFORMATCHANGE : int32
 		{
 			KSEVENT_DYNAMIC_FORMAT_CHANGE = 0,
 		}
-		[AllowDuplicates]
 		public enum KS_AnalogVideoStandard : int32
 		{
 			None = 0,
@@ -1377,7 +1298,6 @@ namespace Win32
 			SECAM_L1 = 524288,
 			PAL_N_COMBO = 1048576,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_ALLOCATOR_CONTROL : int32
 		{
 			HONOR_COUNT = 0,
@@ -1385,7 +1305,6 @@ namespace Win32
 			CAPTURE_CAPS = 2,
 			CAPTURE_INTERLEAVE = 3,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_VIDCAP_VIDEOPROCAMP : int32
 		{
 			BRIGHTNESS = 0,
@@ -1403,13 +1322,11 @@ namespace Win32
 			WHITEBALANCE_COMPONENT = 12,
 			POWERLINE_FREQUENCY = 13,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_VIDCAP_SELECTOR : int32
 		{
 			SOURCE_NODE_ID = 0,
 			NUM_SOURCES = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_TUNER : int32
 		{
 			CAPS = 0,
@@ -1425,7 +1342,6 @@ namespace Win32
 			STANDARD_MODE = 10,
 			NETWORKTYPE_SCAN_CAPS = 11,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_TUNER_MODES : int32
 		{
 			TV = 1,
@@ -1434,34 +1350,29 @@ namespace Win32
 			DSS = 8,
 			ATSC = 16,
 		}
-		[AllowDuplicates]
 		public enum KS_TUNER_TUNING_FLAGS : int32
 		{
 			EXACT = 1,
 			FINE = 2,
 			COARSE = 3,
 		}
-		[AllowDuplicates]
 		public enum KS_TUNER_STRATEGY : int32
 		{
 			PLL = 1,
 			SIGNAL_STRENGTH = 2,
 			DRIVER_TUNES = 4,
 		}
-		[AllowDuplicates]
 		public enum _TunerDecoderLockType : int32
 		{
 			None = 0,
 			Within_Scan_Sensing_Range = 1,
 			Locked = 2,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_TUNER : int32
 		{
 			CHANGED = 0,
 			INITIATE_SCAN = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_VIDCAP_VIDEOENCODER : int32
 		{
 			CAPS = 0,
@@ -1469,7 +1380,6 @@ namespace Win32
 			COPYPROTECTION = 2,
 			CC_ENABLE = 3,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_VIDCAP_VIDEODECODER : int32
 		{
 			CAPS = 0,
@@ -1479,25 +1389,21 @@ namespace Win32
 			VCR_TIMING = 4,
 			STATUS2 = 5,
 		}
-		[AllowDuplicates]
 		public enum KS_VIDEODECODER_FLAGS : int32
 		{
 			DISABLE_OUTPUT = 1,
 			USE_VCR_LOCKING = 2,
 			INDICATE_LOCKED = 4,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_VIDEODECODER : int32
 		{
 			KSEVENT_VIDEODECODER_CHANGED = 0,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_CAMERACONTROL : int32
 		{
 			FOCUS = 0,
 			ZOOM = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_VIDCAP_CAMERACONTROL : int32
 		{
 			PAN = 0,
@@ -1521,29 +1427,24 @@ namespace Win32
 			FOCAL_LENGTH = 18,
 			AUTO_EXPOSURE_PRIORITY = 19,
 		}
-		[AllowDuplicates]
 		public enum KS_CameraControlAsyncOperation : int32
 		{
 			START = 1,
 			STOP = 2,
 			RESET = 3,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_CAMERACONTROL_FLASH : int32
 		{
 			KSPROPERTY_CAMERACONTROL_FLASH_PROPERTY_ID = 0,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_CAMERACONTROL_VIDEO_STABILIZATION_MODE : int32
 		{
 			KSPROPERTY_CAMERACONTROL_VIDEO_STABILIZATION_MODE_PROPERTY_ID = 0,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST : int32
 		{
 			KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_PROPERTY_ID = 0,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_CAMERACONTROL_IMAGE_PIN_CAPABILITY : int32
 		{
 			KSPROPERTY_CAMERACONTROL_IMAGE_PIN_CAPABILITY_PROPERTY_ID = 0,
@@ -1598,18 +1499,15 @@ namespace Win32
 			END = 44,
 			END2 = 44,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_CAMERAEVENT : int32
 		{
 			KSEVENT_PHOTO_SAMPLE_SCANNED = 0,
 		}
-		[AllowDuplicates]
 		public enum KSCAMERA_EXTENDEDPROP_WHITEBALANCE_MODE : int32
 		{
 			TEMPERATURE = 1,
 			PRESET = 2,
 		}
-		[AllowDuplicates]
 		public enum KSCAMERA_EXTENDEDPROP_WBPRESET : int32
 		{
 			CLOUDY = 1,
@@ -1619,13 +1517,11 @@ namespace Win32
 			TUNGSTEN = 5,
 			CANDLELIGHT = 6,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_CAMERA_PHOTOTRIGGERTIME_FLAGS : int32
 		{
 			CLEAR = 0,
 			SET = 1,
 		}
-		[AllowDuplicates]
 		public enum KSCAMERA_EXTENDEDPROP_MetadataAlignment : int32
 		{
 			_16 = 4,
@@ -1654,7 +1550,6 @@ namespace Win32
 			Standard_End = 8,
 			Custom_Start = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum KSCAMERA_EXTENDEDPROP_FOCUSSTATE : int32
 		{
 			UNINITIALIZED = 0,
@@ -1663,20 +1558,17 @@ namespace Win32
 			FOCUSED = 3,
 			FAILED = 4,
 		}
-		[AllowDuplicates]
 		public enum KSCAMERA_EXTENDEDPROP_ROITYPE : int32
 		{
 			UNKNOWN = 0,
 			FACE = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_CAMERACONTROL_PERFRAMESETTING_PROPERTY : int32
 		{
 			CAPABILITY = 0,
 			SET = 1,
 			CLEAR = 2,
 		}
-		[AllowDuplicates]
 		public enum KSCAMERA_PERFRAMESETTING_ITEM_TYPE : int32
 		{
 			EXPOSURE_TIME = 1,
@@ -1687,14 +1579,12 @@ namespace Win32
 			PHOTOCONFIRMATION = 6,
 			CUSTOM = 7,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_TYPE : int32
 		{
 			TY_NETWORKCAMERACONTROL_NTPINFO_TYPE_DISABLE = 0,
 			TY_NETWORKCAMERACONTROL_NTPINFO_TYPE_HOSTNTP = 1,
 			YT_NETWORKCAMERACONTROL_NTPINFO_TYPE_CUSTOM = 2,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_NETWORKCAMERACONTROL_PROPERTY : int32
 		{
 			NTP = 0,
@@ -1702,12 +1592,10 @@ namespace Win32
 			METADATA = 2,
 			EVENTTOPICS_XML = 3,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_NETWORKCAMERACONTROL_METADATA_TYPE : int32
 		{
 			KSPROPERTY_NETWORKCAMERACONTROL_METADATA_TYPE_EVENTSINFO = 0,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_EXTDEVICE : int32
 		{
 			ID = 0,
@@ -1716,7 +1604,6 @@ namespace Win32
 			PORT = 3,
 			CAPABILITIES = 4,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_EXTXPORT : int32
 		{
 			EXTXPORT_CAPABILITIES = 0,
@@ -1731,14 +1618,12 @@ namespace Win32
 			EXTXPORT_RTC_SEARCH = 9,
 			RAW_AVC_CMD = 10,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_TIMECODE : int32
 		{
 			TIMECODE_READER = 0,
 			ATN_READER = 1,
 			RTC_READER = 2,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_DEVCMD : int32
 		{
 			COMMAND_NOTIFY_INTERIM_READY = 0,
@@ -1750,7 +1635,6 @@ namespace Win32
 			NOTIFY_REMOVAL = 6,
 			NOTIFY_MEDIUM_CHANGE = 7,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_VIDCAP_CROSSBAR : int32
 		{
 			CAPS = 0,
@@ -1759,12 +1643,10 @@ namespace Win32
 			ROUTE = 3,
 			INPUT_ACTIVE = 4,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_CROSSBAR : int32
 		{
 			KSEVENT_CROSSBAR_CHANGED = 0,
 		}
-		[AllowDuplicates]
 		public enum KS_PhysicalConnectorType : int32
 		{
 			Video_Tuner = 1,
@@ -1792,19 +1674,16 @@ namespace Win32
 			Audio_USB = 4104,
 			Audio_AudioDecoder = 4105,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_VIDCAP_TVAUDIO : int32
 		{
 			CAPS = 0,
 			MODE = 1,
 			CURRENTLY_AVAILABLE_MODES = 2,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_TVAUDIO : int32
 		{
 			KSEVENT_TVAUDIO_CHANGED = 0,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_VIDCAP_VIDEOCOMPRESSION : int32
 		{
 			GETINFO = 0,
@@ -1815,7 +1694,6 @@ namespace Win32
 			OVERRIDE_FRAME_SIZE = 5,
 			WINDOWSIZE = 6,
 		}
-		[AllowDuplicates]
 		public enum KS_CompressionCaps : int32
 		{
 			Quality = 1,
@@ -1824,7 +1702,6 @@ namespace Win32
 			BFrame = 8,
 			Window = 16,
 		}
-		[AllowDuplicates]
 		public enum KS_VideoStreamingHints : int32
 		{
 			FrameInterval = 256,
@@ -1833,7 +1710,6 @@ namespace Win32
 			CompQuality = 2048,
 			CompWindowSize = 4096,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_OVERLAYUPDATE : int32
 		{
 			INTERESTS = 0,
@@ -1844,7 +1720,6 @@ namespace Win32
 			DISPLAYCHANGE = 16,
 			COLORREF = 268435456,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_VIDCAP_VIDEOCONTROL : int32
 		{
 			CAPS = 0,
@@ -1852,7 +1727,6 @@ namespace Win32
 			FRAME_RATES = 2,
 			MODE = 3,
 		}
-		[AllowDuplicates]
 		public enum KS_VideoControlFlags : int32
 		{
 			VideoControlFlag_FlipHorizontal = 1,
@@ -1866,12 +1740,10 @@ namespace Win32
 			VideoControlFlag_StartPhotoSequenceCapture = 256,
 			VideoControlFlag_StopPhotoSequenceCapture = 512,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_VIDCAP_DROPPEDFRAMES : int32
 		{
 			KSPROPERTY_DROPPEDFRAMES_CURRENT = 0,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_VPCONFIG : int32
 		{
 			NUMCONNECTINFO = 0,
@@ -1891,7 +1763,6 @@ namespace Win32
 			DDRAWSURFACEHANDLE = 14,
 			SURFACEPARAMS = 15,
 		}
-		[AllowDuplicates]
 		public enum KS_AMPixAspectRatio : int32
 		{
 			NTSC4x3 = 0,
@@ -1899,14 +1770,12 @@ namespace Win32
 			PAL4x3 = 2,
 			PAL16x9 = 3,
 		}
-		[AllowDuplicates]
 		public enum KS_AMVP_SELECTFORMATBY : int32
 		{
 			DO_NOT_CARE = 0,
 			BEST_BANDWIDTH = 1,
 			INPUT_SAME_AS_OUTPUT = 2,
 		}
-		[AllowDuplicates]
 		public enum KS_AMVP_MODE : int32
 		{
 			WEAVE = 0,
@@ -1915,31 +1784,26 @@ namespace Win32
 			SKIPEVEN = 3,
 			SKIPODD = 4,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_VPNOTIFY : int32
 		{
 			KSEVENT_VPNOTIFY_FORMATCHANGE = 0,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_VIDCAPTOSTI : int32
 		{
 			TOSTI_EXT_TRIGGER = 0,
 			_AUTO_UPDATE = 1,
 			_SEARCH = 2,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_EXTENSION_UNIT : int32
 		{
 			INFO = 0,
 			CONTROL = 1,
 			PASS_THROUGH = 65535,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_VPVBINOTIFY : int32
 		{
 			KSEVENT_VPVBINOTIFY_FORMATCHANGE = 0,
 		}
-		[AllowDuplicates]
 		public enum KS_AM_PROPERTY_TS_RATE_CHANGE : int32
 		{
 			SimpleRateChange = 1,
@@ -1947,7 +1811,6 @@ namespace Win32
 			MaxFullDataRate = 3,
 			Step = 4,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_JACK : int32
 		{
 			DESCRIPTION = 1,
@@ -1955,7 +1818,6 @@ namespace Win32
 			SINK_INFO = 3,
 			CONTAINERID = 4,
 		}
-		[AllowDuplicates]
 		public enum EPcxConnectionType : int32
 		{
 			Unknown = 0,
@@ -1971,7 +1833,6 @@ namespace Win32
 			RJ11Modem = 10,
 			Combination = 11,
 		}
-		[AllowDuplicates]
 		public enum EPcxGeoLocation : int32
 		{
 			eGeoLocRear = 1,
@@ -1991,7 +1852,6 @@ namespace Win32
 			eGeoLocReserved6 = 15,
 			EPcxGeoLocation_enum_count = 16,
 		}
-		[AllowDuplicates]
 		public enum EPcxGenLocation : int32
 		{
 			eGenLocPrimaryBox = 0,
@@ -2000,7 +1860,6 @@ namespace Win32
 			eGenLocOther = 3,
 			EPcxGenLocation_enum_count = 4,
 		}
-		[AllowDuplicates]
 		public enum EPxcPortConnection : int32
 		{
 			Jack = 0,
@@ -2008,18 +1867,15 @@ namespace Win32
 			BothIntegratedAndJack = 2,
 			Unknown = 3,
 		}
-		[AllowDuplicates]
 		public enum KSJACK_SINK_CONNECTIONTYPE : int32
 		{
 			HDMI = 0,
 			DISPLAYPORT = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_AUDIOPOSTURE : int32
 		{
 			KSPROPERTY_AUDIOPOSTURE_ORIENTATION = 1,
 		}
-		[AllowDuplicates]
 		public enum AUDIOPOSTURE_ORIENTATION : int32
 		{
 			NOTROTATED = 0,
@@ -2027,7 +1883,6 @@ namespace Win32
 			ROTATED180DEGREESCOUNTERCLOCKWISE = 2,
 			ROTATED270DEGREESCOUNTERCLOCKWISE = 3,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_AUDIOENGINE : int32
 		{
 			LFXENABLE = 0,
@@ -2040,36 +1895,30 @@ namespace Win32
 			LOOPBACK_PROTECTION = 8,
 			VOLUMELEVEL = 9,
 		}
-		[AllowDuplicates]
 		public enum AUDIO_CURVE_TYPE : int32
 		{
 			NONE = 0,
 			WINDOWS_FADE = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_AUDIOSIGNALPROCESSING : int32
 		{
 			KSPROPERTY_AUDIOSIGNALPROCESSING_MODES = 0,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_AUDIORESOURCEMANAGEMENT : int32
 		{
 			KSPROPERTY_AUDIORESOURCEMANAGEMENT_RESOURCEGROUP = 0,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_AUDIOMODULE : int32
 		{
 			DESCRIPTORS = 1,
 			COMMAND = 2,
 			NOTIFICATION_DEVICE_ID = 3,
 		}
-		[AllowDuplicates]
 		public enum KSALLOCATORMODE : int32
 		{
 			User = 0,
 			Kernel = 1,
 		}
-		[AllowDuplicates]
 		public enum FRAMING_PROP : int32
 		{
 			Uninitialized = 0,
@@ -2077,7 +1926,6 @@ namespace Win32
 			Old = 2,
 			Ex = 3,
 		}
-		[AllowDuplicates]
 		public enum FRAMING_CACHE_OPS : int32
 		{
 			Update = 0,
@@ -2085,7 +1933,6 @@ namespace Win32
 			ReadOrig = 2,
 			Write = 3,
 		}
-		[AllowDuplicates]
 		public enum PIPE_STATE : int32
 		{
 			DontCare = 0,
@@ -2094,7 +1941,6 @@ namespace Win32
 			CompressionUnknown = 3,
 			Finalized = 4,
 		}
-		[AllowDuplicates]
 		public enum PIPE_ALLOCATOR_PLACE : int32
 		{
 			None = 0,
@@ -2102,7 +1948,6 @@ namespace Win32
 			LastPin = 2,
 			MiddlePin = 3,
 		}
-		[AllowDuplicates]
 		public enum KS_LogicalMemoryType : int32
 		{
 			DontCare = 0,

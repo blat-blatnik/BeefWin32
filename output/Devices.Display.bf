@@ -793,7 +793,6 @@ namespace Win32
 			INTERLACED_LOWERFIELDFIRST = 3,
 			FORCE_UINT32 = -1,
 		}
-		[AllowDuplicates]
 		public enum DISPLAYCONFIG_SCALING : int32
 		{
 			IDENTITY = 1,
@@ -804,7 +803,6 @@ namespace Win32
 			PREFERRED = 128,
 			FORCE_UINT32 = -1,
 		}
-		[AllowDuplicates]
 		public enum DISPLAYCONFIG_ROTATION : int32
 		{
 			IDENTITY = 1,
@@ -813,7 +811,6 @@ namespace Win32
 			ROTATE270 = 4,
 			FORCE_UINT32 = -1,
 		}
-		[AllowDuplicates]
 		public enum DISPLAYCONFIG_MODE_INFO_TYPE : int32
 		{
 			SOURCE = 1,
@@ -821,7 +818,6 @@ namespace Win32
 			DESKTOP_IMAGE = 3,
 			FORCE_UINT32 = -1,
 		}
-		[AllowDuplicates]
 		public enum DISPLAYCONFIG_PIXELFORMAT : int32
 		{
 			_8BPP = 1,
@@ -831,7 +827,6 @@ namespace Win32
 			NONGDI = 5,
 			FORCE_UINT32 = -1,
 		}
-		[AllowDuplicates]
 		public enum DISPLAYCONFIG_TOPOLOGY_ID : int32
 		{
 			INTERNAL = 1,
@@ -840,7 +835,6 @@ namespace Win32
 			EXTERNAL = 8,
 			FORCE_UINT32 = -1,
 		}
-		[AllowDuplicates]
 		public enum DISPLAYCONFIG_DEVICE_INFO_TYPE : int32
 		{
 			GET_SOURCE_NAME = 1,
@@ -858,13 +852,11 @@ namespace Win32
 			SET_MONITOR_SPECIALIZATION = 13,
 			FORCE_UINT32 = -1,
 		}
-		[AllowDuplicates]
 		public enum MC_VCP_CODE_TYPE : int32
 		{
 			MOMENTARY = 0,
 			SET_PARAMETER = 1,
 		}
-		[AllowDuplicates]
 		public enum MC_DISPLAY_TECHNOLOGY_TYPE : int32
 		{
 			SHADOW_MASK_CATHODE_RAY_TUBE = 0,
@@ -877,33 +869,28 @@ namespace Win32
 			MICROELECTROMECHANICAL = 7,
 			FIELD_EMISSION_DEVICE = 8,
 		}
-		[AllowDuplicates]
 		public enum MC_DRIVE_TYPE : int32
 		{
 			RED_DRIVE = 0,
 			GREEN_DRIVE = 1,
 			BLUE_DRIVE = 2,
 		}
-		[AllowDuplicates]
 		public enum MC_GAIN_TYPE : int32
 		{
 			RED_GAIN = 0,
 			GREEN_GAIN = 1,
 			BLUE_GAIN = 2,
 		}
-		[AllowDuplicates]
 		public enum MC_POSITION_TYPE : int32
 		{
 			HORIZONTAL_POSITION = 0,
 			VERTICAL_POSITION = 1,
 		}
-		[AllowDuplicates]
 		public enum MC_SIZE_TYPE : int32
 		{
 			WIDTH = 0,
 			HEIGHT = 1,
 		}
-		[AllowDuplicates]
 		public enum MC_COLOR_TEMPERATURE : int32
 		{
 			UNKNOWN = 0,
@@ -916,7 +903,6 @@ namespace Win32
 			_10000K = 7,
 			_11500K = 8,
 		}
-		[AllowDuplicates]
 		public enum ENG_SYSTEM_ATTRIBUTE : int32
 		{
 			ProcessorFeature = 1,
@@ -924,13 +910,11 @@ namespace Win32
 			OptimumAvailableUserMemory = 3,
 			OptimumAvailableSystemMemory = 4,
 		}
-		[AllowDuplicates]
 		public enum ENG_DEVICE_ATTRIBUTE : int32
 		{
 			RESERVED = 0,
 			ACCELERATION_LEVEL = 1,
 		}
-		[AllowDuplicates]
 		public enum VIDEO_WIN32K_CALLBACKS_PARAMS_TYPE : int32
 		{
 			PowerNotifyCallout = 1,
@@ -946,13 +930,11 @@ namespace Win32
 			DesktopDuplicationChange = 15,
 			BlackScreenDiagnostics = 16,
 		}
-		[AllowDuplicates]
 		public enum BlackScreenDiagnosticsCalloutParam : int32
 		{
 			agnosticsData = 1,
 			splayRecovery = 2,
 		}
-		[AllowDuplicates]
 		public enum VIDEO_BANK_TYPE : int32
 		{
 			VideoNotBanked = 0,
@@ -961,7 +943,6 @@ namespace Win32
 			VideoBanked2RW = 3,
 			NumVideoBankTypes = 4,
 		}
-		[AllowDuplicates]
 		public enum VIDEO_POWER_STATE : int32
 		{
 			Unspecified = 0,
@@ -973,14 +954,12 @@ namespace Win32
 			Shutdown = 6,
 			Maximum = 7,
 		}
-		[AllowDuplicates]
 		public enum BRIGHTNESS_INTERFACE_VERSION : int32
 		{
 			_1 = 1,
 			_2 = 2,
 			_3 = 3,
 		}
-		[AllowDuplicates]
 		public enum BACKLIGHT_OPTIMIZATION_LEVEL : int32
 		{
 			Disable = 0,
@@ -989,7 +968,6 @@ namespace Win32
 			Dimmed = 3,
 			EDR = 4,
 		}
-		[AllowDuplicates]
 		public enum COLORSPACE_TRANSFORM_DATA_TYPE : int32
 		{
 			IXED_POINT = 0,
@@ -1002,7 +980,6 @@ namespace Win32
 			_1 = 1,
 			NOT_SUPPORTED = 0,
 		}
-		[AllowDuplicates]
 		public enum COLORSPACE_TRANSFORM_TYPE : int32
 		{
 			UNINITIALIZED = 0,
@@ -1012,7 +989,6 @@ namespace Win32
 			MATRIX_3x4 = 4,
 			MATRIX_V2 = 5,
 		}
-		[AllowDuplicates]
 		public enum OUTPUT_WIRE_COLOR_SPACE_TYPE : int32
 		{
 			G22_P709 = 0,
@@ -1023,7 +999,6 @@ namespace Win32
 			G2084_P2020_HDR10PLUS = 32,
 			G2084_P2020_DVLL = 33,
 		}
-		[AllowDuplicates]
 		public enum OUTPUT_COLOR_ENCODING : int32
 		{
 			RGB = 0,
@@ -1033,21 +1008,18 @@ namespace Win32
 			INTENSITY = 4,
 			FORCE_UINT32 = -1,
 		}
-		[AllowDuplicates]
 		public enum COLORSPACE_TRANSFORM_STAGE_CONTROL : int32
 		{
 			No_Change = 0,
 			Enable = 1,
 			Bypass = 2,
 		}
-		[AllowDuplicates]
 		public enum DSI_CONTROL_TRANSMISSION_MODE : int32
 		{
 			DEFAULT = 0,
 			FORCE_LOW_POWER = 1,
 			FORCE_HIGH_PERFORMANCE = 2,
 		}
-		[AllowDuplicates]
 		public enum AR_STATE : int32
 		{
 			ENABLED = 0,
@@ -1060,7 +1032,6 @@ namespace Win32
 			DOCKED = 64,
 			LAPTOP = 128,
 		}
-		[AllowDuplicates]
 		public enum ORIENTATION_PREFERENCE : int32
 		{
 			NONE = 0,

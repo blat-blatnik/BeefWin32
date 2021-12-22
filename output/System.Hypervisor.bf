@@ -38,7 +38,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WHV_CAPABILITY_CODE : int32
 		{
 			HypervisorPresent = 0,
@@ -59,14 +58,12 @@ namespace Win32
 			SyntheticProcessorFeaturesBanks = 4104,
 			ProcessorPerfmonFeatures = 4105,
 		}
-		[AllowDuplicates]
 		public enum WHV_PROCESSOR_VENDOR : int32
 		{
 			Amd = 0,
 			Intel = 1,
 			Hygon = 2,
 		}
-		[AllowDuplicates]
 		public enum WHV_PARTITION_PROPERTY_CODE : int32
 		{
 			ExtendedVmExits = 1,
@@ -100,27 +97,23 @@ namespace Win32
 			UnimplementedMsrAction = 4112,
 			ProcessorCount = 8191,
 		}
-		[AllowDuplicates]
 		public enum WHV_MEMORY_ACCESS_TYPE : int32
 		{
 			Read = 0,
 			Write = 1,
 			Execute = 2,
 		}
-		[AllowDuplicates]
 		public enum WHV_X64_CPUID_RESULT2_FLAGS : uint32
 		{
 			SubleafSpecific = 1,
 			VpSpecific = 2,
 		}
-		[AllowDuplicates]
 		public enum WHV_MSR_ACTION : int32
 		{
 			ArchitectureDefault = 0,
 			IgnoreWriteReadZero = 1,
 			Exit = 2,
 		}
-		[AllowDuplicates]
 		public enum WHV_EXCEPTION_TYPE : int32
 		{
 			DivideErrorFault = 0,
@@ -141,14 +134,12 @@ namespace Win32
 			MachineCheckAbort = 18,
 			SimdFloatingPointFault = 19,
 		}
-		[AllowDuplicates]
 		public enum WHV_X64_LOCAL_APIC_EMULATION_MODE : int32
 		{
 			None = 0,
 			XApic = 1,
 			X2Apic = 2,
 		}
-		[AllowDuplicates]
 		public enum WHV_MAP_GPA_RANGE_FLAGS : uint32
 		{
 			None = 0,
@@ -157,7 +148,6 @@ namespace Win32
 			Execute = 4,
 			TrackDirtyPages = 8,
 		}
-		[AllowDuplicates]
 		public enum WHV_TRANSLATE_GVA_FLAGS : uint32
 		{
 			None = 0,
@@ -169,7 +159,6 @@ namespace Win32
 			EnforceSmap = 256,
 			OverrideSmap = 512,
 		}
-		[AllowDuplicates]
 		public enum WHV_TRANSLATE_GVA_RESULT_CODE : int32
 		{
 			Success = 0,
@@ -182,7 +171,6 @@ namespace Win32
 			GpaIllegalOverlayAccess = 7,
 			Intercept = 8,
 		}
-		[AllowDuplicates]
 		public enum WHV_CACHE_TYPE : int32
 		{
 			Uncached = 0,
@@ -191,7 +179,6 @@ namespace Win32
 			WriteProtected = 5,
 			WriteBack = 6,
 		}
-		[AllowDuplicates]
 		public enum WHV_REGISTER_NAME : int32
 		{
 			X64RegisterRax = 0,
@@ -421,13 +408,11 @@ namespace Win32
 			RegisterInternalActivityState = -2147483643,
 			X64RegisterPendingDebugException = -2147483642,
 		}
-		[AllowDuplicates]
 		public enum WHV_X64_PENDING_EVENT_TYPE : int32
 		{
 			ception = 0,
 			tInt = 5,
 		}
-		[AllowDuplicates]
 		public enum WHV_RUN_VP_EXIT_REASON : int32
 		{
 			None = 0,
@@ -450,25 +435,21 @@ namespace Win32
 			X64ApicWriteTrap = 4103,
 			Canceled = 8193,
 		}
-		[AllowDuplicates]
 		public enum WHV_X64_UNSUPPORTED_FEATURE_CODE : int32
 		{
 			Intercept = 1,
 			TaskSwitchTss = 2,
 		}
-		[AllowDuplicates]
 		public enum WHV_RUN_VP_CANCEL_REASON : int32
 		{
 			WHvRunVpCancelReasonUser = 0,
 		}
-		[AllowDuplicates]
 		public enum WHV_X64_PENDING_INTERRUPTION_TYPE : int32
 		{
 			Interrupt = 0,
 			Nmi = 2,
 			Exception = 3,
 		}
-		[AllowDuplicates]
 		public enum WHV_X64_APIC_WRITE_TYPE : int32
 		{
 			Ldr = 208,
@@ -477,7 +458,6 @@ namespace Win32
 			Lint0 = 848,
 			Lint1 = 864,
 		}
-		[AllowDuplicates]
 		public enum WHV_INTERRUPT_TYPE : int32
 		{
 			Fixed = 0,
@@ -487,24 +467,20 @@ namespace Win32
 			Sipi = 6,
 			LocalInt1 = 9,
 		}
-		[AllowDuplicates]
 		public enum WHV_INTERRUPT_DESTINATION_MODE : int32
 		{
 			Physical = 0,
 			Logical = 1,
 		}
-		[AllowDuplicates]
 		public enum WHV_INTERRUPT_TRIGGER_MODE : int32
 		{
 			Edge = 0,
 			Level = 1,
 		}
-		[AllowDuplicates]
 		public enum WHV_PARTITION_COUNTER_SET : int32
 		{
 			WHvPartitionCounterSetMemory = 0,
 		}
-		[AllowDuplicates]
 		public enum WHV_PROCESSOR_COUNTER_SET : int32
 		{
 			Runtime = 0,
@@ -513,14 +489,12 @@ namespace Win32
 			Apic = 3,
 			SyntheticFeatures = 4,
 		}
-		[AllowDuplicates]
 		public enum WHV_ADVISE_GPA_RANGE_CODE : int32
 		{
 			Populate = 0,
 			Pin = 1,
 			Unpin = 2,
 		}
-		[AllowDuplicates]
 		public enum WHV_VIRTUAL_PROCESSOR_STATE_TYPE : int32
 		{
 			SynicMessagePage = 0,
@@ -529,40 +503,34 @@ namespace Win32
 			InterruptControllerState2 = 4096,
 			XsaveState = 4097,
 		}
-		[AllowDuplicates]
 		public enum WHV_ALLOCATE_VPCI_RESOURCE_FLAGS : uint32
 		{
 			None = 0,
 			AllowDirectP2P = 1,
 		}
-		[AllowDuplicates]
 		public enum WHV_VPCI_DEVICE_NOTIFICATION_TYPE : int32
 		{
 			Undefined = 0,
 			MmioRemapping = 1,
 			SurpriseRemoval = 2,
 		}
-		[AllowDuplicates]
 		public enum WHV_CREATE_VPCI_DEVICE_FLAGS : uint32
 		{
 			None = 0,
 			PhysicallyBacked = 1,
 			UseLogicalInterrupts = 2,
 		}
-		[AllowDuplicates]
 		public enum WHV_VPCI_DEVICE_PROPERTY_CODE : int32
 		{
 			Undefined = 0,
 			HardwareIDs = 1,
 			ProbedBARs = 2,
 		}
-		[AllowDuplicates]
 		public enum WHV_VPCI_MMIO_RANGE_FLAGS : uint32
 		{
 			ReadAccess = 1,
 			WriteAccess = 2,
 		}
-		[AllowDuplicates]
 		public enum WHV_VPCI_DEVICE_REGISTER_SPACE : int32
 		{
 			ConfigSpace = -1,
@@ -573,43 +541,36 @@ namespace Win32
 			Bar4 = 4,
 			Bar5 = 5,
 		}
-		[AllowDuplicates]
 		public enum WHV_VPCI_INTERRUPT_TARGET_FLAGS : uint32
 		{
 			None = 0,
 			Multicast = 1,
 		}
-		[AllowDuplicates]
 		public enum WHV_TRIGGER_TYPE : int32
 		{
 			Interrupt = 0,
 			SynicEvent = 1,
 			DeviceInterrupt = 2,
 		}
-		[AllowDuplicates]
 		public enum WHV_VIRTUAL_PROCESSOR_PROPERTY_CODE : int32
 		{
 			WHvVirtualProcessorPropertyCodeNumaNode = 0,
 		}
-		[AllowDuplicates]
 		public enum WHV_NOTIFICATION_PORT_TYPE : int32
 		{
 			Event = 2,
 			Doorbell = 4,
 		}
-		[AllowDuplicates]
 		public enum WHV_NOTIFICATION_PORT_PROPERTY_CODE : int32
 		{
 			Vp = 1,
 			Duration = 5,
 		}
-		[AllowDuplicates]
 		public enum HDV_DEVICE_TYPE : int32
 		{
 			Undefined = 0,
 			PCI = 1,
 		}
-		[AllowDuplicates]
 		public enum HDV_PCI_BAR_SELECTOR : int32
 		{
 			_0 = 0,
@@ -619,7 +580,6 @@ namespace Win32
 			_4 = 4,
 			_5 = 5,
 		}
-		[AllowDuplicates]
 		public enum HDV_DOORBELL_FLAGS : int32
 		{
 			SIZE_ANY = 0,
@@ -629,20 +589,17 @@ namespace Win32
 			SIZE_QWORD = 4,
 			ANY_VALUE = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum HDV_MMIO_MAPPING_FLAGS : uint32
 		{
 			None = 0,
 			Writeable = 1,
 			Executable = 2,
 		}
-		[AllowDuplicates]
 		public enum HDV_PCI_INTERFACE_VERSION : int32
 		{
 			Invalid = 0,
 			_1 = 1,
 		}
-		[AllowDuplicates]
 		public enum PAGING_MODE : int32
 		{
 			Invalid = 0,
@@ -652,7 +609,6 @@ namespace Win32
 			Long = 4,
 			Armv8 = 5,
 		}
-		[AllowDuplicates]
 		public enum VIRTUAL_PROCESSOR_ARCH : int32
 		{
 			Unknown = 0,
@@ -660,7 +616,6 @@ namespace Win32
 			x64 = 2,
 			Armv8 = 3,
 		}
-		[AllowDuplicates]
 		public enum VIRTUAL_PROCESSOR_VENDOR : int32
 		{
 			Unknown = 0,
@@ -669,7 +624,6 @@ namespace Win32
 			Hygon = 3,
 			Arm = 4,
 		}
-		[AllowDuplicates]
 		public enum GUEST_OS_VENDOR : int32
 		{
 			Undefined = 0,
@@ -677,7 +631,6 @@ namespace Win32
 			HPE = 2,
 			LANCOM = 512,
 		}
-		[AllowDuplicates]
 		public enum GUEST_OS_MICROSOFT_IDS : int32
 		{
 			Undefined = 0,
@@ -687,7 +640,6 @@ namespace Win32
 			WindowsNT = 4,
 			WindowsCE = 5,
 		}
-		[AllowDuplicates]
 		public enum GUEST_OS_OPENSOURCE_IDS : int32
 		{
 			Undefined = 0,
@@ -696,7 +648,6 @@ namespace Win32
 			Xen = 3,
 			Illumos = 4,
 		}
-		[AllowDuplicates]
 		public enum REGISTER_ID : int32
 		{
 			X64_RegisterRax = 0,

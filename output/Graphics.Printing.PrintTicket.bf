@@ -17,13 +17,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum EDefaultDevmodeType : int32
 		{
 			UserDefaultDevmode = 0,
 			PrinterDefaultDevmode = 1,
 		}
-		[AllowDuplicates]
 		public enum EPrintTicketScope : int32
 		{
 			PageScope = 0,

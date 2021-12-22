@@ -24,7 +24,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WSD_CONFIG_PARAM_TYPE : int32
 		{
 			CONFIG_MAX_INBOUND_MESSAGE_SIZE = 1,
@@ -41,13 +40,11 @@ namespace Win32
 			SECURITY_REQUIRE_CLIENT_CERT_OR_HTTP_CLIENT_AUTH = 12,
 			SECURITY_USE_HTTP_CLIENT_AUTH = 13,
 		}
-		[AllowDuplicates]
 		public enum WSDUdpMessageType : int32
 		{
 			ONE_WAY = 0,
 			TWO_WAY = 1,
 		}
-		[AllowDuplicates]
 		public enum WSDXML_OP : int32
 		{
 			None = 0,
@@ -98,14 +95,12 @@ namespace Win32
 			FormatXMLDeclaration_ = 45,
 			FormatMax = 46,
 		}
-		[AllowDuplicates]
 		public enum DeviceDiscoveryMechanism : int32
 		{
 			MulticastDiscovery = 0,
 			DirectedDiscovery = 1,
 			SecureDirectedDiscovery = 2,
 		}
-		[AllowDuplicates]
 		public enum WSD_PROTOCOL_TYPE : int32
 		{
 			NONE = 0,
@@ -114,7 +109,6 @@ namespace Win32
 			HTTPS = 4,
 			ALL = 255,
 		}
-		[AllowDuplicates]
 		public enum WSDEventType : int32
 		{
 			NONE = 0,

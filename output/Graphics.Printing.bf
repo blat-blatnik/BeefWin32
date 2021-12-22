@@ -1302,7 +1302,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum EXpsCompressionOptions : int32
 		{
 			NotCompressed = 0,
@@ -1310,20 +1309,17 @@ namespace Win32
 			Small = 2,
 			Fast = 3,
 		}
-		[AllowDuplicates]
 		public enum EXpsFontOptions : int32
 		{
 			Normal = 0,
 			Obfusticate = 1,
 		}
-		[AllowDuplicates]
 		public enum EXpsJobConsumption : int32
 		{
 			DocumentSequenceAdded = 0,
 			FixedDocumentAdded = 1,
 			FixedPageAdded = 2,
 		}
-		[AllowDuplicates]
 		public enum EXpsFontRestriction : int32
 		{
 			Installable = 0,
@@ -1331,7 +1327,6 @@ namespace Win32
 			PreviewPrint = 4,
 			Editable = 8,
 		}
-		[AllowDuplicates]
 		public enum BIDI_TYPE : int32
 		{
 			NULL = 0,
@@ -1343,7 +1338,6 @@ namespace Win32
 			ENUM = 6,
 			BLOB = 7,
 		}
-		[AllowDuplicates]
 		public enum PRINTER_OPTION_FLAGS : int32
 		{
 			NO_CACHE = 1,
@@ -1351,7 +1345,6 @@ namespace Win32
 			CLIENT_CHANGE = 4,
 			NO_CLIENT_DATA = 8,
 		}
-		[AllowDuplicates]
 		public enum EPrintPropertyType : int32
 		{
 			String = 1,
@@ -1365,7 +1358,6 @@ namespace Win32
 			NotificationOptions = 9,
 			Buffer = 10,
 		}
-		[AllowDuplicates]
 		public enum EPrintXPSJobProgress : int32
 		{
 			AddingDocumentSequence = 0,
@@ -1379,13 +1371,11 @@ namespace Win32
 			ImageAdded = 8,
 			XpsDocumentCommitted = 9,
 		}
-		[AllowDuplicates]
 		public enum EPrintXPSJobOperation : int32
 		{
 			Production = 1,
 			Consumption = 2,
 		}
-		[AllowDuplicates]
 		public enum PRINT_EXECUTION_CONTEXT : int32
 		{
 			APPLICATION = 0,
@@ -1394,14 +1384,12 @@ namespace Win32
 			FILTER_PIPELINE = 3,
 			WOW64 = 4,
 		}
-		[AllowDuplicates]
 		public enum MxdcLandscapeRotationEnums : int32
 		{
 			COUNTERCLOCKWISE_90_DEGREES = 90,
 			NONE = 0,
 			COUNTERCLOCKWISE_270_DEGREES = -90,
 		}
-		[AllowDuplicates]
 		public enum MxdcImageTypeEnums : int32
 		{
 			JPEGHIGH_COMPRESSION = 1,
@@ -1409,7 +1397,6 @@ namespace Win32
 			JPEGLOW_COMPRESSION = 3,
 			PNG = 4,
 		}
-		[AllowDuplicates]
 		public enum MxdcS0PageEnums : int32
 		{
 			TTF = 0,
@@ -1423,7 +1410,6 @@ namespace Win32
 			PNG_THUMBNAIL = 8,
 			MAX = 9,
 		}
-		[AllowDuplicates]
 		public enum EATTRIBUTE_DATATYPE : int32
 		{
 			UNKNOWN = 0,
@@ -1438,13 +1424,11 @@ namespace Win32
 			RECT = 9,
 			CUSTOMSIZEPARAMS = 10,
 		}
-		[AllowDuplicates]
 		public enum SHIMOPTS : int32
 		{
 			DEFAULT = 0,
 			NOSNAPSHOT = 1,
 		}
-		[AllowDuplicates]
 		public enum PrintSchemaConstrainedSetting : int32
 		{
 			None = 0,
@@ -1452,20 +1436,17 @@ namespace Win32
 			Admin = 2,
 			Device = 3,
 		}
-		[AllowDuplicates]
 		public enum PrintSchemaSelectionType : int32
 		{
 			One = 0,
 			Many = 1,
 		}
-		[AllowDuplicates]
 		public enum PrintSchemaParameterDataType : int32
 		{
 			Integer = 0,
 			NumericString = 1,
 			String = 2,
 		}
-		[AllowDuplicates]
 		public enum PrintJobStatus : int32
 		{
 			Paused = 1,
@@ -1483,19 +1464,16 @@ namespace Win32
 			Complete = 4096,
 			Retained = 8192,
 		}
-		[AllowDuplicates]
 		public enum PrintAsyncNotifyUserFilter : int32
 		{
 			PerUser = 0,
 			AllUsers = 1,
 		}
-		[AllowDuplicates]
 		public enum PrintAsyncNotifyConversationStyle : int32
 		{
 			BiDirectional = 0,
 			UniDirectional = 1,
 		}
-		[AllowDuplicates]
 		public enum PrintAsyncNotifyError : int32
 		{
 			CHANNEL_CLOSED_BY_SERVER = 1,
@@ -1523,7 +1501,6 @@ namespace Win32
 			LOCAL_ONLY_REGISTRATION = 23,
 			REMOTE_ONLY_REGISTRATION = 24,
 		}
-		[AllowDuplicates]
 		public enum EBranchOfficeJobEventType : int32
 		{
 			InvalidJobState = 0,
@@ -1533,14 +1510,12 @@ namespace Win32
 			LogJobPipelineError = 4,
 			LogOfflineFileFull = 5,
 		}
-		[AllowDuplicates]
 		public enum NOTIFICATION_CALLBACK_COMMANDS : int32
 		{
 			NOTIFY = 0,
 			CONTEXT_ACQUIRE = 1,
 			CONTEXT_RELEASE = 2,
 		}
-		[AllowDuplicates]
 		public enum NOTIFICATION_CONFIG_FLAGS : int32
 		{
 			CREATE_EVENT = 1,
@@ -1548,31 +1523,26 @@ namespace Win32
 			EVENT_TRIGGER = 4,
 			ASYNC_CHANNEL = 8,
 		}
-		[AllowDuplicates]
 		public enum UI_TYPE : int32
 		{
 			kMessageBox = 0,
 		}
-		[AllowDuplicates]
 		public enum XPSRAS_RENDERING_MODE : int32
 		{
 			NTIALIASED = 0,
 			LIASED = 1,
 		}
-		[AllowDuplicates]
 		public enum XPSRAS_PIXEL_FORMAT : int32
 		{
 			_32BPP_PBGRA_UINT_SRGB = 1,
 			_64BPP_PRGBA_HALF_SCRGB = 2,
 			_128BPP_PRGBA_FLOAT_SCRGB = 3,
 		}
-		[AllowDuplicates]
 		public enum XPSRAS_BACKGROUND_COLOR : int32
 		{
 			TRANSPARENT = 0,
 			OPAQUE = 1,
 		}
-		[AllowDuplicates]
 		public enum PageCountType : int32
 		{
 			FinalPageCount = 0,

@@ -40,7 +40,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum ATTRIBUTE_TYPE : int32
 		{
 			INVALID = 0,
@@ -59,7 +58,6 @@ namespace Win32
 			SOCKADDR = 13,
 			OCTET_STRING = 14,
 		}
-		[AllowDuplicates]
 		public enum REPAIR_SCOPE : int32
 		{
 			SYSTEM = 0,
@@ -67,14 +65,12 @@ namespace Win32
 			APPLICATION = 2,
 			PROCESS = 3,
 		}
-		[AllowDuplicates]
 		public enum REPAIR_RISK : int32
 		{
 			NOROLLBACK = 0,
 			ROLLBACK = 1,
 			NORISK = 2,
 		}
-		[AllowDuplicates]
 		public enum UI_INFO_TYPE : int32
 		{
 			INVALID = 0,
@@ -83,7 +79,6 @@ namespace Win32
 			HELP_PANE = 3,
 			DUI = 4,
 		}
-		[AllowDuplicates]
 		public enum DIAGNOSIS_STATUS : int32
 		{
 			NOT_IMPLEMENTED = 0,
@@ -93,7 +88,6 @@ namespace Win32
 			DEFERRED = 4,
 			PASSTHROUGH = 5,
 		}
-		[AllowDuplicates]
 		public enum REPAIR_STATUS : int32
 		{
 			NOT_IMPLEMENTED = 0,
@@ -102,7 +96,6 @@ namespace Win32
 			DEFERRED = 3,
 			USER_ACTION = 4,
 		}
-		[AllowDuplicates]
 		public enum PROBLEM_TYPE : int32
 		{
 			INVALID = 0,

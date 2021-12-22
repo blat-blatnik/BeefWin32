@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum CONDITION_TYPE : int32
 		{
 			AND_CONDITION = 0,
@@ -15,7 +14,6 @@ namespace Win32
 			NOT_CONDITION = 2,
 			LEAF_CONDITION = 3,
 		}
-		[AllowDuplicates]
 		public enum CONDITION_OPERATION : int32
 		{
 			IMPLICIT = 0,

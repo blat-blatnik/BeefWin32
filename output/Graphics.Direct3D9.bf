@@ -327,7 +327,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum D3DLIGHTTYPE : int32
 		{
 			POINT = 1,
@@ -335,7 +334,6 @@ namespace Win32
 			DIRECTIONAL = 3,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DSHADEMODE : int32
 		{
 			FLAT = 1,
@@ -343,7 +341,6 @@ namespace Win32
 			PHONG = 3,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DFILLMODE : int32
 		{
 			POINT = 1,
@@ -351,7 +348,6 @@ namespace Win32
 			SOLID = 3,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DBLEND : uint32
 		{
 			ZERO = 1,
@@ -373,7 +369,6 @@ namespace Win32
 			INVSRCCOLOR2 = 17,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DBLENDOP : uint32
 		{
 			ADD = 1,
@@ -383,7 +378,6 @@ namespace Win32
 			MAX = 5,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DTEXTUREADDRESS : int32
 		{
 			WRAP = 1,
@@ -393,7 +387,6 @@ namespace Win32
 			MIRRORONCE = 5,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DCULL : uint32
 		{
 			NONE = 1,
@@ -401,7 +394,6 @@ namespace Win32
 			CCW = 3,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DCMPFUNC : int32
 		{
 			NEVER = 1,
@@ -414,7 +406,6 @@ namespace Win32
 			ALWAYS = 8,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DSTENCILOP : uint32
 		{
 			KEEP = 1,
@@ -427,7 +418,6 @@ namespace Win32
 			DECR = 8,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DFOGMODE : int32
 		{
 			NONE = 0,
@@ -436,7 +426,6 @@ namespace Win32
 			LINEAR = 3,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DZBUFFERTYPE : int32
 		{
 			FALSE = 0,
@@ -444,7 +433,6 @@ namespace Win32
 			USEW = 2,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DPRIMITIVETYPE : int32
 		{
 			POINTLIST = 1,
@@ -455,7 +443,6 @@ namespace Win32
 			TRIANGLEFAN = 6,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DTRANSFORMSTATETYPE : int32
 		{
 			VIEW = 2,
@@ -470,7 +457,6 @@ namespace Win32
 			TEXTURE7 = 23,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DRENDERSTATETYPE : int32
 		{
 			ZENABLE = 7,
@@ -578,7 +564,6 @@ namespace Win32
 			BLENDOPALPHA = 209,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DMATERIALCOLORSOURCE : int32
 		{
 			MATERIAL = 0,
@@ -586,7 +571,6 @@ namespace Win32
 			COLOR2 = 2,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DTEXTURESTAGESTATETYPE : int32
 		{
 			COLOROP = 1,
@@ -609,7 +593,6 @@ namespace Win32
 			CONSTANT = 32,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DSAMPLERSTATETYPE : int32
 		{
 			ADDRESSU = 1,
@@ -627,7 +610,6 @@ namespace Win32
 			DMAPOFFSET = 13,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DTEXTUREOP : int32
 		{
 			DISABLE = 1,
@@ -658,7 +640,6 @@ namespace Win32
 			LERP = 26,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DTEXTUREFILTERTYPE : int32
 		{
 			NONE = 0,
@@ -670,7 +651,6 @@ namespace Win32
 			CONVOLUTIONMONO = 8,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DDECLUSAGE : int32
 		{
 			POSITION = 0,
@@ -688,7 +668,6 @@ namespace Win32
 			DEPTH = 12,
 			SAMPLE = 13,
 		}
-		[AllowDuplicates]
 		public enum D3DDECLMETHOD : int32
 		{
 			DEFAULT = 0,
@@ -699,7 +678,6 @@ namespace Win32
 			LOOKUP = 5,
 			LOOKUPPRESAMPLED = 6,
 		}
-		[AllowDuplicates]
 		public enum D3DDECLTYPE : int32
 		{
 			FLOAT1 = 0,
@@ -721,7 +699,6 @@ namespace Win32
 			FLOAT16_4 = 16,
 			UNUSED = 17,
 		}
-		[AllowDuplicates]
 		public enum D3DSHADER_INSTRUCTION_OPCODE_TYPE : int32
 		{
 			NOP = 0,
@@ -811,7 +788,6 @@ namespace Win32
 			END = 65535,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DSHADER_COMPARISON : int32
 		{
 			RESERVED0 = 0,
@@ -823,7 +799,6 @@ namespace Win32
 			LE = 6,
 			RESERVED1 = 7,
 		}
-		[AllowDuplicates]
 		public enum D3DSAMPLER_TEXTURE_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -859,13 +834,11 @@ namespace Win32
 			PREDICATE = 19,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DSHADER_MISCTYPE_OFFSETS : int32
 		{
 			POSITION = 0,
 			FACE = 1,
 		}
-		[AllowDuplicates]
 		public enum D3DVS_RASTOUT_OFFSETS : int32
 		{
 			POSITION = 0,
@@ -873,21 +846,18 @@ namespace Win32
 			POINT_SIZE = 2,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DVS_ADDRESSMODE_TYPE : int32
 		{
 			ABSOLUTE = 0,
 			RELATIVE = 8192,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DSHADER_ADDRESSMODE_TYPE : int32
 		{
 			ABSOLUTE = 0,
 			RELATIVE = 8192,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DSHADER_PARAM_SRCMOD_TYPE : int32
 		{
 			NONE = 0,
@@ -906,14 +876,12 @@ namespace Win32
 			NOT = 218103808,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DSHADER_MIN_PRECISION : int32
 		{
 			DEFAULT = 0,
 			_16 = 1,
 			_2_8 = 2,
 		}
-		[AllowDuplicates]
 		public enum D3DBASISTYPE : int32
 		{
 			BEZIER = 0,
@@ -921,7 +889,6 @@ namespace Win32
 			CATMULL_ROM = 2,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DDEGREETYPE : int32
 		{
 			LINEAR = 1,
@@ -930,14 +897,12 @@ namespace Win32
 			QUINTIC = 5,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DPATCHEDGESTYLE : int32
 		{
 			DISCRETE = 0,
 			CONTINUOUS = 1,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DSTATEBLOCKTYPE : int32
 		{
 			ALL = 1,
@@ -945,7 +910,6 @@ namespace Win32
 			VERTEXSTATE = 3,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DVERTEXBLENDFLAGS : int32
 		{
 			DISABLE = 0,
@@ -956,7 +920,6 @@ namespace Win32
 			_0WEIGHTS = 256,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DTEXTURETRANSFORMFLAGS : int32
 		{
 			DISABLE = 0,
@@ -967,7 +930,6 @@ namespace Win32
 			PROJECTED = 256,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DDEVTYPE : uint32
 		{
 			HAL = 1,
@@ -976,7 +938,6 @@ namespace Win32
 			NULLREF = 4,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DMULTISAMPLE_TYPE : int32
 		{
 			NONE = 0,
@@ -998,7 +959,6 @@ namespace Win32
 			_16_SAMPLES = 16,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DFORMAT : uint32
 		{
 			UNKNOWN = 0,
@@ -1068,7 +1028,6 @@ namespace Win32
 			BINARYBUFFER = 199,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DSWAPEFFECT : uint32
 		{
 			DISCARD = 1,
@@ -1078,7 +1037,6 @@ namespace Win32
 			FLIPEX = 5,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DPOOL : uint32
 		{
 			DEFAULT = 0,
@@ -1087,7 +1045,6 @@ namespace Win32
 			SCRATCH = 3,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DBACKBUFFER_TYPE : uint32
 		{
 			MONO = 0,
@@ -1095,7 +1052,6 @@ namespace Win32
 			RIGHT = 2,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DRESOURCETYPE : int32
 		{
 			SURFACE = 1,
@@ -1107,7 +1063,6 @@ namespace Win32
 			INDEXBUFFER = 7,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DCUBEMAP_FACES : int32
 		{
 			POSITIVE_X = 0,
@@ -1118,14 +1073,12 @@ namespace Win32
 			NEGATIVE_Z = 5,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DDEBUGMONITORTOKENS : int32
 		{
 			ENABLE = 0,
 			DISABLE = 1,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DQUERYTYPE : int32
 		{
 			VCACHE = 4,
@@ -1144,7 +1097,6 @@ namespace Win32
 			CACHEUTILIZATION = 18,
 			MEMORYPRESSURE = 19,
 		}
-		[AllowDuplicates]
 		public enum D3DCOMPOSERECTSOP : int32
 		{
 			COPY = 1,
@@ -1153,14 +1105,12 @@ namespace Win32
 			NEG = 4,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3DSCANLINEORDERING : int32
 		{
 			UNKNOWN = 0,
 			PROGRESSIVE = 1,
 			INTERLACED = 2,
 		}
-		[AllowDuplicates]
 		public enum D3DDISPLAYROTATION : int32
 		{
 			IDENTITY = 1,
@@ -1168,21 +1118,18 @@ namespace Win32
 			_180 = 3,
 			_270 = 4,
 		}
-		[AllowDuplicates]
 		public enum D3DAUTHENTICATEDCHANNELTYPE : int32
 		{
 			_3D9 = 1,
 			RIVER_SOFTWARE = 2,
 			RIVER_HARDWARE = 3,
 		}
-		[AllowDuplicates]
 		public enum D3DAUTHENTICATEDCHANNEL_PROCESSIDENTIFIERTYPE : int32
 		{
 			UNKNOWN = 0,
 			DWM = 1,
 			HANDLE = 2,
 		}
-		[AllowDuplicates]
 		public enum D3DBUSTYPE : int32
 		{
 			TYPE_OTHER = 0,

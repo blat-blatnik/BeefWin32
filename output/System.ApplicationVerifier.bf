@@ -11,33 +11,28 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum VERIFIER_ENUM_RESOURCE_FLAGS : uint32
 		{
 			DONT_RESOLVE_TRACES = 2,
 			SUSPEND = 1,
 		}
-		[AllowDuplicates]
 		public enum eUserAllocationState : int32
 		{
 			Unknown = 0,
 			Busy = 1,
 			Free = 2,
 		}
-		[AllowDuplicates]
 		public enum eHeapAllocationState : int32
 		{
 			FullPageHeap = 1073741824,
 			Metadata = -2147483648,
 			StateMask = -65536,
 		}
-		[AllowDuplicates]
 		public enum eHeapEnumerationLevel : int32
 		{
 			Everything = 0,
 			Stop = -1,
 		}
-		[AllowDuplicates]
 		public enum eHANDLE_TRACE_OPERATIONS : int32
 		{
 			Unused = 0,
@@ -45,7 +40,6 @@ namespace Win32
 			CLOSE = 2,
 			BADREF = 3,
 		}
-		[AllowDuplicates]
 		public enum eAvrfResourceTypes : int32
 		{
 			HeapAllocation = 0,

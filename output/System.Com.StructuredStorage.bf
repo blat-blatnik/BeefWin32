@@ -100,13 +100,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum PROPSPEC_KIND : uint32
 		{
 			LPWSTR = 0,
 			PROPID = 1,
 		}
-		[AllowDuplicates]
 		public enum STGC : int32
 		{
 			DEFAULT = 0,
@@ -115,28 +113,24 @@ namespace Win32
 			DANGEROUSLYCOMMITMERELYTODISKCACHE = 4,
 			CONSOLIDATE = 8,
 		}
-		[AllowDuplicates]
 		public enum STGMOVE : int32
 		{
 			MOVE = 0,
 			COPY = 1,
 			SHALLOWCOPY = 2,
 		}
-		[AllowDuplicates]
 		public enum STATFLAG : int32
 		{
 			DEFAULT = 0,
 			NONAME = 1,
 			NOOPEN = 2,
 		}
-		[AllowDuplicates]
 		public enum LOCKTYPE : int32
 		{
 			WRITE = 1,
 			EXCLUSIVE = 2,
 			ONLYONCE = 4,
 		}
-		[AllowDuplicates]
 		public enum PIDMSI_STATUS_VALUE : int32
 		{
 			NORMAL = 0,

@@ -258,7 +258,6 @@ namespace Win32
 			RAS_ATTRIBUTE_BAP_LINE_DOWN_TIME = 4294967209,
 			RAS_ATTRIBUTE_BAP_LINE_DOWN_LIMIT = 4294967210,
 		}
-		[AllowDuplicates]
 		public enum NEW_LOG_FILE_FREQUENCY : int32
 		{
 			UNLIMITED_SIZE = 0,
@@ -267,7 +266,6 @@ namespace Win32
 			MONTHLY = 3,
 			WHEN_FILE_SIZE_REACHES = 4,
 		}
-		[AllowDuplicates]
 		public enum AUTHENTICATION_TYPE : int32
 		{
 			INVALID = 0,
@@ -283,12 +281,10 @@ namespace Win32
 			MSCHAP2_CPW = 10,
 			PEAP = 11,
 		}
-		[AllowDuplicates]
 		public enum IDENTITY_TYPE_ALT : int32
 		{
 			IAS_IDENTITY_NO_DEFAULT = 1,
 		}
-		[AllowDuplicates]
 		public enum ATTRIBUTESYNTAX : int32
 		{
 			BOOLEAN = 1,
@@ -302,7 +298,6 @@ namespace Win32
 			UNSIGNEDINTEGER = 9,
 			INETADDR6 = 10,
 		}
-		[AllowDuplicates]
 		public enum ATTRIBUTERESTRICTIONS : int32
 		{
 			MULTIVALUED = 1,
@@ -313,14 +308,12 @@ namespace Win32
 			ALLOWEDINVPNDIALUP = 32,
 			ALLOWEDIN8021X = 64,
 		}
-		[AllowDuplicates]
 		public enum ATTRIBUTEFILTER : int32
 		{
 			NONE = 0,
 			VPN_DIALUP = 1,
 			IEEE_802_1x = 2,
 		}
-		[AllowDuplicates]
 		public enum ATTRIBUTEINFO : int32
 		{
 			NAME = 1,
@@ -331,7 +324,6 @@ namespace Win32
 			LDAPNAME = 6,
 			VENDORTYPE = 7,
 		}
-		[AllowDuplicates]
 		public enum IASCOMMONPROPERTIES : int32
 		{
 			RESERVED = 0,
@@ -344,7 +336,6 @@ namespace Win32
 			OPAQUE = 7,
 			START = 1024,
 		}
-		[AllowDuplicates]
 		public enum USERPROPERTIES : int32
 		{
 			CALLING_STATION_ID = 1024,
@@ -364,13 +355,11 @@ namespace Win32
 			RADIUS_FRAMED_IPV6_PREFIX = 1038,
 			SAVED_RADIUS_FRAMED_IPV6_PREFIX = 1039,
 		}
-		[AllowDuplicates]
 		public enum DICTIONARYPROPERTIES : int32
 		{
 			ATTRIBUTES_COLLECTION = 1024,
 			LOCATION = 1025,
 		}
-		[AllowDuplicates]
 		public enum ATTRIBUTEPROPERTIES : int32
 		{
 			ID = 1024,
@@ -392,7 +381,6 @@ namespace Win32
 			ALLOW_IN_8021X = 1040,
 			ENUM_FILTERS = 1041,
 		}
-		[AllowDuplicates]
 		public enum IASPROPERTIES : int32
 		{
 			RADIUSSERVERGROUPS_COLLECTION = 1024,
@@ -406,7 +394,6 @@ namespace Win32
 			REMEDIATIONSERVERGROUPS_COLLECTION = 1032,
 			SHVTEMPLATES_COLLECTION = 1033,
 		}
-		[AllowDuplicates]
 		public enum TEMPLATESPROPERTIES : int32
 		{
 			POLICIES_TEMPLATES = 1024,
@@ -422,7 +409,6 @@ namespace Win32
 			SHAREDSECRETS_TEMPLATES = 1034,
 			IPFILTERS_TEMPLATES = 1035,
 		}
-		[AllowDuplicates]
 		public enum CLIENTPROPERTIES : int32
 		{
 			REQUIRE_SIGNATURE = 1024,
@@ -434,18 +420,15 @@ namespace Win32
 			ENABLED = 1030,
 			SECRET_TEMPLATE_GUID = 1031,
 		}
-		[AllowDuplicates]
 		public enum VENDORPROPERTIES : int32
 		{
 			PROPERTY_NAS_VENDOR_ID = 1024,
 		}
-		[AllowDuplicates]
 		public enum PROFILEPROPERTIES : int32
 		{
 			ATTRIBUTES_COLLECTION = 1024,
 			IPFILTER_TEMPLATE_GUID = 1025,
 		}
-		[AllowDuplicates]
 		public enum POLICYPROPERTIES : int32
 		{
 			CONSTRAINT = 1024,
@@ -458,17 +441,14 @@ namespace Win32
 			ENABLED = 1031,
 			SOURCETAG = 1032,
 		}
-		[AllowDuplicates]
 		public enum CONDITIONPROPERTIES : int32
 		{
 			PROPERTY_CONDITION_TEXT = 1024,
 		}
-		[AllowDuplicates]
 		public enum RADIUSSERVERGROUPPROPERTIES : int32
 		{
 			PROPERTY_RADIUSSERVERGROUP_SERVERS_COLLECTION = 1024,
 		}
-		[AllowDuplicates]
 		public enum RADIUSSERVERPROPERTIES : int32
 		{
 			AUTH_PORT = 1024,
@@ -486,48 +466,40 @@ namespace Win32
 			AUTH_SECRET_TEMPLATE_GUID = 1036,
 			ACCT_SECRET_TEMPLATE_GUID = 1037,
 		}
-		[AllowDuplicates]
 		public enum REMEDIATIONSERVERGROUPPROPERTIES : int32
 		{
 			PROPERTY_REMEDIATIONSERVERGROUP_SERVERS_COLLECTION = 1024,
 		}
-		[AllowDuplicates]
 		public enum REMEDIATIONSERVERPROPERTIES : int32
 		{
 			ADDRESS = 1024,
 			FRIENDLY_NAME = 1025,
 		}
-		[AllowDuplicates]
 		public enum SHVTEMPLATEPROPERTIES : int32
 		{
 			_COMBINATION_TYPE = 1024,
 			_LIST = 1025,
 			CONFIG_LIST = 1026,
 		}
-		[AllowDuplicates]
 		public enum IPFILTERPROPERTIES : int32
 		{
 			PROPERTY_IPFILTER_ATTRIBUTES_COLLECTION = 1024,
 		}
-		[AllowDuplicates]
 		public enum SHAREDSECRETPROPERTIES : int32
 		{
 			PROPERTY_SHAREDSECRET_STRING = 1024,
 		}
-		[AllowDuplicates]
 		public enum IASCOMPONENTPROPERTIES : int32
 		{
 			ID = 1024,
 			PROG_ID = 1025,
 			START = 1026,
 		}
-		[AllowDuplicates]
 		public enum PROTOCOLPROPERTIES : int32
 		{
 			REQUEST_HANDLER = 1026,
 			START = 1027,
 		}
-		[AllowDuplicates]
 		public enum RADIUSPROPERTIES : int32
 		{
 			ACCOUNTING_PORT = 1027,
@@ -535,24 +507,20 @@ namespace Win32
 			CLIENTS_COLLECTION = 1029,
 			VENDORS_COLLECTION = 1030,
 		}
-		[AllowDuplicates]
 		public enum NTEVENTLOGPROPERTIES : int32
 		{
 			APPLICATION_EVENTS = 1026,
 			MALFORMED = 1027,
 			DEBUG = 1028,
 		}
-		[AllowDuplicates]
 		public enum NAMESPROPERTIES : int32
 		{
 			PROPERTY_NAMES_REALMS = 1026,
 		}
-		[AllowDuplicates]
 		public enum NTSAMPROPERTIES : int32
 		{
 			PROPERTY_NTSAM_ALLOW_LM_AUTHENTICATION = 1026,
 		}
-		[AllowDuplicates]
 		public enum ACCOUNTINGPROPERTIES : int32
 		{
 			LOG_ACCOUNTING = 1026,
@@ -569,23 +537,19 @@ namespace Win32
 			LOG_FILE_IS_BACKUP = 1037,
 			DISCARD_REQUEST_ON_FAILURE = 1038,
 		}
-		[AllowDuplicates]
 		public enum NAPPROPERTIES : int32
 		{
 			NAP_POLICIES_COLLECTION = 1026,
 			SHV_TEMPLATES_COLLECTION = 1027,
 		}
-		[AllowDuplicates]
 		public enum RADIUSPROXYPROPERTIES : int32
 		{
 			PROPERTY_RADIUSPROXY_SERVERGROUPS = 1026,
 		}
-		[AllowDuplicates]
 		public enum REMEDIATIONSERVERSPROPERTIES : int32
 		{
 			PROPERTY_REMEDIATIONSERVERS_SERVERGROUPS = 1026,
 		}
-		[AllowDuplicates]
 		public enum SHV_COMBINATION_TYPE : int32
 		{
 			ALL_PASS = 0,
@@ -597,7 +561,6 @@ namespace Win32
 			ONE_OR_MORE_UNKNOWN = 6,
 			MAX = 7,
 		}
-		[AllowDuplicates]
 		public enum SERVICE_TYPE : int32
 		{
 			IAS = 0,
@@ -605,7 +568,6 @@ namespace Win32
 			RAMGMTSVC = 2,
 			MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum IASOSTYPE : int32
 		{
 			_4_WORKSTATION = 0,
@@ -623,7 +585,6 @@ namespace Win32
 			_6_3_SERVER = 12,
 			_10_0_SERVER = 13,
 		}
-		[AllowDuplicates]
 		public enum IASDOMAINTYPE : int32
 		{
 			NONE = 0,
@@ -631,13 +592,11 @@ namespace Win32
 			NT5 = 2,
 			MIXED = 3,
 		}
-		[AllowDuplicates]
 		public enum IASDATASTORE : int32
 		{
 			LOCAL = 0,
 			DIRECTORY = 1,
 		}
-		[AllowDuplicates]
 		public enum RADIUS_ATTRIBUTE_TYPE : int32
 		{
 			Minimum = 0,
@@ -720,7 +679,6 @@ namespace Win32
 			SrcIPv6Address = 278,
 			CertificateThumbprint = 279,
 		}
-		[AllowDuplicates]
 		public enum RADIUS_CODE : int32
 		{
 			Unknown = 0,
@@ -732,7 +690,6 @@ namespace Win32
 			AccessChallenge = 11,
 			Discard = 256,
 		}
-		[AllowDuplicates]
 		public enum RADIUS_AUTHENTICATION_PROVIDER : int32
 		{
 			Unknown = 0,
@@ -743,7 +700,6 @@ namespace Win32
 			ODBC = 5,
 			None = 6,
 		}
-		[AllowDuplicates]
 		public enum RADIUS_REJECT_REASON_CODE : int32
 		{
 			Undefined = 0,
@@ -752,7 +708,6 @@ namespace Win32
 			AccountExpired = 3,
 			AuthenticationFailure = 4,
 		}
-		[AllowDuplicates]
 		public enum RADIUS_DATA_TYPE : int32
 		{
 			Unknown = 0,
@@ -762,14 +717,12 @@ namespace Win32
 			Time = 4,
 			Ipv6Address = 5,
 		}
-		[AllowDuplicates]
 		public enum RADIUS_ACTION : int32
 		{
 			Continue = 0,
 			Reject = 1,
 			Accept = 2,
 		}
-		[AllowDuplicates]
 		public enum RADIUS_EXTENSION_POINT : int32
 		{
 			entication = 0,

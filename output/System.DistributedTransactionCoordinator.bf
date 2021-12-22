@@ -79,7 +79,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DTC_STATUS_ : int32
 		{
 			UNKNOWN = 0,
@@ -93,7 +92,6 @@ namespace Win32
 			E_CANTCONTROL = 8,
 			FAILED = 9,
 		}
-		[AllowDuplicates]
 		public enum TX_MISC_CONSTANTS : int32
 		{
 			MAX_TRAN_DESC = 40,
@@ -111,7 +109,6 @@ namespace Win32
 			SERIALIZABLE = 1048576,
 			ISOLATED = 1048576,
 		}
-		[AllowDuplicates]
 		public enum ISOFLAG : int32
 		{
 			RETAIN_COMMIT_DC = 1,
@@ -136,18 +133,15 @@ namespace Win32
 			ASYNC_PHASEONE = 4,
 			ASYNC = 4,
 		}
-		[AllowDuplicates]
 		public enum XACTRM : int32
 		{
 			OPTIMISTICLASTWINS = 1,
 			NOREADONLYPREPARES = 2,
 		}
-		[AllowDuplicates]
 		public enum XACTCONST : int32
 		{
 			XACTCONST_TIMEOUTINFINITE = 0,
 		}
-		[AllowDuplicates]
 		public enum XACTHEURISTIC : int32
 		{
 			ABORT = 1,
@@ -155,7 +149,6 @@ namespace Win32
 			DAMAGE = 3,
 			DANGER = 4,
 		}
-		[AllowDuplicates]
 		public enum XACTSTAT : int32
 		{
 			NONE = 0,
@@ -182,20 +175,17 @@ namespace Win32
 			NOTPREPARED = 524227,
 			ALL = 524287,
 		}
-		[AllowDuplicates]
 		public enum AUTHENTICATION_LEVEL : int32
 		{
 			NO_AUTHENTICATION_REQUIRED = 0,
 			INCOMING_AUTHENTICATION_REQUIRED = 1,
 			MUTUAL_AUTHENTICATION_REQUIRED = 2,
 		}
-		[AllowDuplicates]
 		public enum APPLICATIONTYPE : int32
 		{
 			LOCAL_APPLICATIONTYPE = 0,
 			CLUSTERRESOURCE_APPLICATIONTYPE = 1,
 		}
-		[AllowDuplicates]
 		public enum XACT_DTC_CONSTANTS : int32
 		{
 			XACT_E_CONNECTION_REQUEST_DENIED = -2147168000,
@@ -222,20 +212,17 @@ namespace Win32
 			XACT_OK_NONOTIFY = 315649,
 			dwUSER_MS_SQLSERVER = 65535,
 		}
-		[AllowDuplicates]
 		public enum _DtcLu_LocalRecovery_Work : int32
 		{
 			CHECKLUSTATUS = 1,
 			TRANS = 2,
 			TMDOWN = 3,
 		}
-		[AllowDuplicates]
 		public enum _DtcLu_Xln : int32
 		{
 			COLD = 1,
 			WARM = 2,
 		}
-		[AllowDuplicates]
 		public enum _DtcLu_Xln_Confirmation : int32
 		{
 			CONFIRM = 1,
@@ -243,7 +230,6 @@ namespace Win32
 			COLDWARMMISMATCH = 3,
 			OBSOLETE = 4,
 		}
-		[AllowDuplicates]
 		public enum _DtcLu_Xln_Response : int32
 		{
 			OK_SENDOURXLNBACK = 1,
@@ -251,14 +237,12 @@ namespace Win32
 			LOGNAMEMISMATCH = 3,
 			COLDWARMMISMATCH = 4,
 		}
-		[AllowDuplicates]
 		public enum _DtcLu_Xln_Error : int32
 		{
 			PROTOCOL = 1,
 			LOGNAMEMISMATCH = 2,
 			COLDWARMMISMATCH = 3,
 		}
-		[AllowDuplicates]
 		public enum _DtcLu_CompareState : int32
 		{
 			COMMITTED = 1,
@@ -268,18 +252,15 @@ namespace Win32
 			INDOUBT = 5,
 			RESET = 6,
 		}
-		[AllowDuplicates]
 		public enum _DtcLu_CompareStates_Confirmation : int32
 		{
 			CONFIRM = 1,
 			PROTOCOL = 2,
 		}
-		[AllowDuplicates]
 		public enum _DtcLu_CompareStates_Error : int32
 		{
 			DTCLUCOMPARESTATESERROR_PROTOCOL = 1,
 		}
-		[AllowDuplicates]
 		public enum _DtcLu_CompareStates_Response : int32
 		{
 			OK = 1,

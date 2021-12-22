@@ -218,7 +218,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum Gender : int32
 		{
 			Unspecified = 0,

@@ -75,13 +75,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DRMTIMETYPE : int32
 		{
 			UTC = 0,
 			LOCAL = 1,
 		}
-		[AllowDuplicates]
 		public enum DRMENCODINGTYPE : int32
 		{
 			BASE64 = 0,
@@ -91,30 +89,25 @@ namespace Win32
 			UINT = 4,
 			RAW = 5,
 		}
-		[AllowDuplicates]
 		public enum DRMATTESTTYPE : int32
 		{
 			FULLENVIRONMENT = 0,
 			HASHONLY = 1,
 		}
-		[AllowDuplicates]
 		public enum DRMSPECTYPE : int32
 		{
 			UNKNOWN = 0,
 			FILENAME = 1,
 		}
-		[AllowDuplicates]
 		public enum DRMSECURITYPROVIDERTYPE : int32
 		{
 			DRMSECURITYPROVIDERTYPE_SOFTWARESECREP = 0,
 		}
-		[AllowDuplicates]
 		public enum DRMGLOBALOPTIONS : int32
 		{
 			WINHTTP = 0,
 			SERVERSECURITYPROCESSOR = 1,
 		}
-		[AllowDuplicates]
 		public enum DRM_STATUS_MSG : int32
 		{
 			ACTIVATE_MACHINE = 0,
@@ -125,7 +118,6 @@ namespace Win32
 			ACQUIRE_CLIENTLICENSOR = 5,
 			ACQUIRE_ISSUANCE_LICENSE_TEMPLATE = 6,
 		}
-		[AllowDuplicates]
 		public enum DRM_USAGEPOLICY_TYPE : int32
 		{
 			BYNAME = 0,
@@ -133,7 +125,6 @@ namespace Win32
 			BYDIGEST = 2,
 			OSEXCLUSION = 3,
 		}
-		[AllowDuplicates]
 		public enum DRM_DISTRIBUTION_POINT_INFO : int32
 		{
 			LICENSE_ACQUISITION = 0,

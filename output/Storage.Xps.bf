@@ -99,12 +99,10 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum PRINT_WINDOW_FLAGS : uint32
 		{
 			PW_CLIENTONLY = 1,
 		}
-		[AllowDuplicates]
 		public enum DEVICE_CAPABILITIES : uint32
 		{
 			BINNAMES = 12,
@@ -138,7 +136,6 @@ namespace Win32
 			TRUETYPE = 15,
 			VERSION = 10,
 		}
-		[AllowDuplicates]
 		public enum PSINJECT_POINT : uint16
 		{
 			BEGINSTREAM = 1,
@@ -173,7 +170,6 @@ namespace Win32
 			VMSAVE = 200,
 			VMRESTORE = 201,
 		}
-		[AllowDuplicates]
 		public enum XPS_TILE_MODE : int32
 		{
 			NONE = 1,
@@ -182,20 +178,17 @@ namespace Win32
 			FLIPY = 4,
 			FLIPXY = 5,
 		}
-		[AllowDuplicates]
 		public enum XPS_COLOR_INTERPOLATION : int32
 		{
 			CRGBLINEAR = 1,
 			RGBLINEAR = 2,
 		}
-		[AllowDuplicates]
 		public enum XPS_SPREAD_METHOD : int32
 		{
 			PAD = 1,
 			REFLECT = 2,
 			REPEAT = 3,
 		}
-		[AllowDuplicates]
 		public enum XPS_STYLE_SIMULATION : int32
 		{
 			NONE = 1,
@@ -203,7 +196,6 @@ namespace Win32
 			BOLD = 3,
 			BOLDITALIC = 4,
 		}
-		[AllowDuplicates]
 		public enum XPS_LINE_CAP : int32
 		{
 			FLAT = 1,
@@ -211,7 +203,6 @@ namespace Win32
 			SQUARE = 3,
 			TRIANGLE = 4,
 		}
-		[AllowDuplicates]
 		public enum XPS_DASH_CAP : int32
 		{
 			FLAT = 1,
@@ -219,14 +210,12 @@ namespace Win32
 			SQUARE = 3,
 			TRIANGLE = 4,
 		}
-		[AllowDuplicates]
 		public enum XPS_LINE_JOIN : int32
 		{
 			MITER = 1,
 			BEVEL = 2,
 			ROUND = 3,
 		}
-		[AllowDuplicates]
 		public enum XPS_IMAGE_TYPE : int32
 		{
 			JPEG = 1,
@@ -235,20 +224,17 @@ namespace Win32
 			WDP = 4,
 			JXR = 5,
 		}
-		[AllowDuplicates]
 		public enum XPS_COLOR_TYPE : int32
 		{
 			SRGB = 1,
 			SCRGB = 2,
 			CONTEXT = 3,
 		}
-		[AllowDuplicates]
 		public enum XPS_FILL_RULE : int32
 		{
 			EVENODD = 1,
 			NONZERO = 2,
 		}
-		[AllowDuplicates]
 		public enum XPS_SEGMENT_TYPE : int32
 		{
 			ARC_LARGE_CLOCKWISE = 1,
@@ -259,14 +245,12 @@ namespace Win32
 			LINE = 6,
 			QUADRATIC_BEZIER = 7,
 		}
-		[AllowDuplicates]
 		public enum XPS_SEGMENT_STROKE_PATTERN : int32
 		{
 			ALL = 1,
 			NONE = 2,
 			MIXED = 3,
 		}
-		[AllowDuplicates]
 		public enum XPS_FONT_EMBEDDING : int32
 		{
 			NORMAL = 1,
@@ -274,7 +258,6 @@ namespace Win32
 			RESTRICTED = 3,
 			RESTRICTED_UNOBFUSCATED = 4,
 		}
-		[AllowDuplicates]
 		public enum XPS_OBJECT_TYPE : int32
 		{
 			CANVAS = 1,
@@ -288,7 +271,6 @@ namespace Win32
 			RADIAL_GRADIENT_BRUSH = 9,
 			VISUAL_BRUSH = 10,
 		}
-		[AllowDuplicates]
 		public enum XPS_THUMBNAIL_SIZE : int32
 		{
 			VERYSMALL = 1,
@@ -296,20 +278,17 @@ namespace Win32
 			MEDIUM = 3,
 			LARGE = 4,
 		}
-		[AllowDuplicates]
 		public enum XPS_INTERLEAVING : int32
 		{
 			FF = 1,
 			N = 2,
 		}
-		[AllowDuplicates]
 		public enum XPS_DOCUMENT_TYPE : int32
 		{
 			UNSPECIFIED = 1,
 			XPS = 2,
 			OPENXPS = 3,
 		}
-		[AllowDuplicates]
 		public enum XPS_SIGNATURE_STATUS : int32
 		{
 			INCOMPLIANT = 1,
@@ -318,7 +297,6 @@ namespace Win32
 			QUESTIONABLE = 4,
 			VALID = 5,
 		}
-		[AllowDuplicates]
 		public enum XPS_SIGN_POLICY : int32
 		{
 			NONE = 0,
@@ -328,7 +306,6 @@ namespace Win32
 			DISCARD_CONTROL = 8,
 			ALL = 15,
 		}
-		[AllowDuplicates]
 		public enum XPS_SIGN_FLAGS : int32
 		{
 			NONE = 0,

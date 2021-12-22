@@ -679,7 +679,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum IPSEC_SA_BUNDLE_FLAGS : uint32
 		{
 			ND_SECURE = 1,
@@ -693,7 +692,6 @@ namespace Win32
 			SUPPRESS_DUPLICATE_DELETION = 8192,
 			PEER_SUPPORTS_GUARANTEE_ENCRYPTION = 16384,
 		}
-		[AllowDuplicates]
 		public enum IPSEC_POLICY_FLAG : uint32
 		{
 			ND_SECURE = 2,
@@ -710,7 +708,6 @@ namespace Win32
 			TUNNEL_BYPASS_ICMPV6 = 4096,
 			KEY_MANAGER_ALLOW_DICTATE_KEY = 8192,
 		}
-		[AllowDuplicates]
 		public enum IKEEXT_CERT_AUTH : uint32
 		{
 			FLAG_SSL_ONE_WAY = 1,
@@ -719,13 +716,11 @@ namespace Win32
 			ALLOW_HTTP_CERT_LOOKUP = 16,
 			URL_CONTAINS_BUNDLE = 32,
 		}
-		[AllowDuplicates]
 		public enum IKEEXT_PRESHARED_KEY_AUTHENTICATION_FLAGS : uint32
 		{
 			LOCAL_AUTH_ONLY = 1,
 			REMOTE_AUTH_ONLY = 2,
 		}
-		[AllowDuplicates]
 		public enum IKEEXT_POLICY_FLAG : uint32
 		{
 			DISABLE_DIAGNOSTICS = 1,
@@ -733,13 +728,11 @@ namespace Win32
 			NO_IMPERSONATION_LUID_VERIFY = 4,
 			ENABLE_OPTIONAL_DH = 8,
 		}
-		[AllowDuplicates]
 		public enum FWPM_SUBSCRIPTION_FLAGS : uint32
 		{
 			ADD = 1,
 			DELETE = 2,
 		}
-		[AllowDuplicates]
 		public enum IKEEXT_CERT_FLAGS : uint32
 		{
 			ENABLE_ACCOUNT_MAPPING = 1,
@@ -752,7 +745,6 @@ namespace Win32
 			VERIFY_NAP_CERTIFICATE = 128,
 			FOLLOW_RENEWAL_CERTIFICATE = 256,
 		}
-		[AllowDuplicates]
 		public enum IPSEC_DOSP_FLAGS : uint32
 		{
 			ENABLE_IKEV1 = 1,
@@ -762,24 +754,20 @@ namespace Win32
 			FILTER_BLOCK = 16,
 			FILTER_EXEMPT = 32,
 		}
-		[AllowDuplicates]
 		public enum IKEEXT_KERBEROS_AUTHENTICATION_FLAGS : uint32
 		{
 			ISABLE_INITIATOR_TOKEN_GENERATION = 1,
 			ONT_ACCEPT_EXPLICIT_CREDENTIALS = 2,
 		}
-		[AllowDuplicates]
 		public enum IKEEXT_RESERVED_AUTHENTICATION_FLAGS : uint32
 		{
 			IKEEXT_RESERVED_AUTH_DISABLE_INITIATOR_TOKEN_GENERATION = 1,
 		}
-		[AllowDuplicates]
 		public enum IKEEXT_EAP_AUTHENTICATION_FLAGS : uint32
 		{
 			LOCAL_AUTH_ONLY = 1,
 			REMOTE_AUTH_ONLY = 2,
 		}
-		[AllowDuplicates]
 		public enum FWPM_FILTER_FLAGS : uint32
 		{
 			NONE = 0,
@@ -791,14 +779,12 @@ namespace Win32
 			DISABLED = 32,
 			INDEXED = 64,
 		}
-		[AllowDuplicates]
 		public enum FWP_DIRECTION : int32
 		{
 			OUTBOUND = 0,
 			INBOUND = 1,
 			MAX = 2,
 		}
-		[AllowDuplicates]
 		public enum FWP_IP_VERSION : int32
 		{
 			V4 = 0,
@@ -806,7 +792,6 @@ namespace Win32
 			NONE = 2,
 			MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum FWP_AF : int32
 		{
 			INET = 0,
@@ -814,14 +799,12 @@ namespace Win32
 			ETHER = 2,
 			NONE = 3,
 		}
-		[AllowDuplicates]
 		public enum FWP_ETHER_ENCAP_METHOD : int32
 		{
 			ETHER_V2 = 0,
 			SNAP = 1,
 			SNAP_W_OUI_ZERO = 3,
 		}
-		[AllowDuplicates]
 		public enum FWP_DATA_TYPE : int32
 		{
 			EMPTY = 0,
@@ -849,7 +832,6 @@ namespace Win32
 			RANGE_TYPE = 258,
 			DATA_TYPE_MAX = 259,
 		}
-		[AllowDuplicates]
 		public enum FWP_MATCH_TYPE : int32
 		{
 			EQUAL = 0,
@@ -867,7 +849,6 @@ namespace Win32
 			NOT_PREFIX = 12,
 			TYPE_MAX = 13,
 		}
-		[AllowDuplicates]
 		public enum FWP_CLASSIFY_OPTION_TYPE : int32
 		{
 			MULTICAST_STATE = 0,
@@ -880,7 +861,6 @@ namespace Win32
 			LOCAL_ONLY_MAPPING = 7,
 			MAX = 8,
 		}
-		[AllowDuplicates]
 		public enum FWP_VSWITCH_NETWORK_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -888,14 +868,12 @@ namespace Win32
 			INTERNAL = 2,
 			EXTERNAL = 3,
 		}
-		[AllowDuplicates]
 		public enum FWP_FILTER_ENUM_TYPE : int32
 		{
 			FULLY_CONTAINED = 0,
 			OVERLAPPING = 1,
 			TYPE_MAX = 2,
 		}
-		[AllowDuplicates]
 		public enum IKEEXT_KEY_MODULE_TYPE : int32
 		{
 			IKE = 0,
@@ -903,7 +881,6 @@ namespace Win32
 			IKEV2 = 2,
 			MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum IKEEXT_AUTHENTICATION_METHOD_TYPE : int32
 		{
 			PRESHARED_KEY = 0,
@@ -921,14 +898,12 @@ namespace Win32
 			RESERVED = 12,
 			AUTHENTICATION_METHOD_TYPE_MAX = 13,
 		}
-		[AllowDuplicates]
 		public enum IKEEXT_AUTHENTICATION_IMPERSONATION_TYPE : int32
 		{
 			NONE = 0,
 			SOCKET_PRINCIPAL = 1,
 			MAX = 2,
 		}
-		[AllowDuplicates]
 		public enum IKEEXT_CERT_CONFIG_TYPE : int32
 		{
 			EXPLICIT_TRUST_LIST = 0,
@@ -937,7 +912,6 @@ namespace Win32
 			UNSPECIFIED = 3,
 			TYPE_MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum IKEEXT_CERT_CRITERIA_NAME_TYPE : int32
 		{
 			DNS = 0,
@@ -949,7 +923,6 @@ namespace Win32
 			DC = 6,
 			NAME_TYPE_MAX = 7,
 		}
-		[AllowDuplicates]
 		public enum IKEEXT_CIPHER_TYPE : int32
 		{
 			DES = 0,
@@ -961,7 +934,6 @@ namespace Win32
 			AES_GCM_256_16ICV = 6,
 			TYPE_MAX = 7,
 		}
-		[AllowDuplicates]
 		public enum IKEEXT_INTEGRITY_TYPE : int32
 		{
 			MD5 = 0,
@@ -983,7 +955,6 @@ namespace Win32
 			GROUP_24 = 6,
 			GROUP_MAX = 7,
 		}
-		[AllowDuplicates]
 		public enum IKEEXT_MM_SA_STATE : int32
 		{
 			NONE = 0,
@@ -994,7 +965,6 @@ namespace Win32
 			COMPLETE = 5,
 			MAX = 6,
 		}
-		[AllowDuplicates]
 		public enum IKEEXT_QM_SA_STATE : int32
 		{
 			NONE = 0,
@@ -1003,7 +973,6 @@ namespace Win32
 			COMPLETE = 3,
 			MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum IKEEXT_EM_SA_STATE : int32
 		{
 			NONE = 0,
@@ -1014,14 +983,12 @@ namespace Win32
 			COMPLETE = 5,
 			MAX = 6,
 		}
-		[AllowDuplicates]
 		public enum IKEEXT_SA_ROLE : int32
 		{
 			INITIATOR = 0,
 			RESPONDER = 1,
 			MAX = 2,
 		}
-		[AllowDuplicates]
 		public enum IPSEC_TRANSFORM_TYPE : int32
 		{
 			AH = 1,
@@ -1031,7 +998,6 @@ namespace Win32
 			ESP_AUTH_FW = 5,
 			TYPE_MAX = 6,
 		}
-		[AllowDuplicates]
 		public enum IPSEC_AUTH_TYPE : int32
 		{
 			MD5 = 0,
@@ -1042,7 +1008,6 @@ namespace Win32
 			AES_256 = 5,
 			MAX = 6,
 		}
-		[AllowDuplicates]
 		public enum IPSEC_CIPHER_TYPE : int32
 		{
 			DES = 1,
@@ -1066,42 +1031,36 @@ namespace Win32
 			_24 = 7,
 			MAX = 8,
 		}
-		[AllowDuplicates]
 		public enum IPSEC_TOKEN_TYPE : int32
 		{
 			MACHINE = 0,
 			IMPERSONATION = 1,
 			MAX = 2,
 		}
-		[AllowDuplicates]
 		public enum IPSEC_TOKEN_PRINCIPAL : int32
 		{
 			LOCAL = 0,
 			PEER = 1,
 			MAX = 2,
 		}
-		[AllowDuplicates]
 		public enum IPSEC_TOKEN_MODE : int32
 		{
 			MAIN = 0,
 			EXTENDED = 1,
 			MAX = 2,
 		}
-		[AllowDuplicates]
 		public enum IPSEC_TRAFFIC_TYPE : int32
 		{
 			TRANSPORT = 0,
 			TUNNEL = 1,
 			MAX = 2,
 		}
-		[AllowDuplicates]
 		public enum IPSEC_SA_CONTEXT_EVENT_TYPE0 : int32
 		{
 			ADD = 1,
 			DELETE = 2,
 			MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum IPSEC_FAILURE_POINT : int32
 		{
 			NONE = 0,
@@ -1109,21 +1068,18 @@ namespace Win32
 			PEER = 2,
 			POINT_MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum DL_ADDRESS_TYPE : int32
 		{
 			Unicast = 0,
 			Multicast = 1,
 			Broadcast = 2,
 		}
-		[AllowDuplicates]
 		public enum FWPM_CHANGE_TYPE : int32
 		{
 			ADD = 1,
 			DELETE = 2,
 			TYPE_MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum FWPM_SERVICE_STATE : int32
 		{
 			STOPPED = 0,
@@ -1132,7 +1088,6 @@ namespace Win32
 			RUNNING = 3,
 			STATE_MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum FWPM_ENGINE_OPTION : int32
 		{
 			COLLECT_NET_EVENTS = 0,
@@ -1143,7 +1098,6 @@ namespace Win32
 			TXN_WATCHDOG_TIMEOUT_IN_MSEC = 5,
 			OPTION_MAX = 6,
 		}
-		[AllowDuplicates]
 		public enum FWPM_PROVIDER_CONTEXT_TYPE : int32
 		{
 			IPSEC_KEYING_CONTEXT = 0,
@@ -1161,7 +1115,6 @@ namespace Win32
 			IPSEC_IKEV2_QM_TRANSPORT_CONTEXT = 12,
 			PROVIDER_CONTEXT_TYPE_MAX = 13,
 		}
-		[AllowDuplicates]
 		public enum FWPM_FIELD_TYPE : int32
 		{
 			RAW_DATA = 0,
@@ -1169,7 +1122,6 @@ namespace Win32
 			FLAGS = 2,
 			TYPE_MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum FWPM_NET_EVENT_TYPE : int32
 		{
 			IKEEXT_MM_FAILURE = 0,
@@ -1185,14 +1137,12 @@ namespace Win32
 			LPM_PACKET_ARRIVAL = 10,
 			MAX = 11,
 		}
-		[AllowDuplicates]
 		public enum FWPM_APPC_NETWORK_CAPABILITY_TYPE : int32
 		{
 			CLIENT = 0,
 			CLIENT_SERVER = 1,
 			PRIVATE_NETWORK = 2,
 		}
-		[AllowDuplicates]
 		public enum FWPM_SYSTEM_PORT_TYPE : int32
 		{
 			RPC_EPMAP = 0,
@@ -1201,14 +1151,12 @@ namespace Win32
 			IPHTTPS_OUT = 3,
 			TYPE_MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum FWPM_CONNECTION_EVENT_TYPE : int32
 		{
 			ADD = 0,
 			DELETE = 1,
 			MAX = 2,
 		}
-		[AllowDuplicates]
 		public enum FWPM_VSWITCH_EVENT_TYPE : int32
 		{
 			FILTER_ADD_TO_INCOMPLETE_LAYER = 0,
@@ -1218,7 +1166,6 @@ namespace Win32
 			FILTER_ENGINE_REORDER = 4,
 			MAX = 5,
 		}
-		[AllowDuplicates]
 		public enum IPV4_OPTION_TYPE : int32
 		{
 			EOL = 0,
@@ -1232,14 +1179,12 @@ namespace Win32
 			ROUTER_ALERT = 148,
 			MULTIDEST = 149,
 		}
-		[AllowDuplicates]
 		public enum IP_OPTION_TIMESTAMP_FLAGS : int32
 		{
 			ONLY = 0,
 			ADDRESS = 1,
 			SPECIFIC_ADDRESS = 3,
 		}
-		[AllowDuplicates]
 		public enum ICMP4_UNREACH_CODE : int32
 		{
 			NET = 0,
@@ -1257,31 +1202,26 @@ namespace Win32
 			HOST_TOS = 12,
 			ADMIN = 13,
 		}
-		[AllowDuplicates]
 		public enum ICMP4_TIME_EXCEED_CODE : int32
 		{
 			TRANSIT = 0,
 			REASSEMBLY = 1,
 		}
-		[AllowDuplicates]
 		public enum ARP_OPCODE : int32
 		{
 			QUEST = 1,
 			SPONSE = 2,
 		}
-		[AllowDuplicates]
 		public enum ARP_HARDWARE_TYPE : int32
 		{
 			ENET = 1,
 			_802 = 6,
 		}
-		[AllowDuplicates]
 		public enum IGMP_MAX_RESP_CODE_TYPE : int32
 		{
 			NORMAL = 0,
 			FLOAT = 1,
 		}
-		[AllowDuplicates]
 		public enum IPV6_OPTION_TYPE : int32
 		{
 			PAD1 = 0,
@@ -1291,7 +1231,6 @@ namespace Win32
 			JUMBO = 194,
 			NSAP_ADDR = 195,
 		}
-		[AllowDuplicates]
 		public enum ND_OPTION_TYPE : int32
 		{
 			SOURCE_LINKADDR = 1,
@@ -1308,13 +1247,11 @@ namespace Win32
 			RDNSS = 25,
 			DNSSL = 31,
 		}
-		[AllowDuplicates]
 		public enum MLD_MAX_RESP_CODE_TYPE : int32
 		{
 			NORMAL = 0,
 			FLOAT = 1,
 		}
-		[AllowDuplicates]
 		public enum TUNNEL_SUB_TYPE : int32
 		{
 			NONE = 0,
@@ -1322,13 +1259,11 @@ namespace Win32
 			IPTLS = 2,
 			HA = 3,
 		}
-		[AllowDuplicates]
 		public enum NPI_MODULEID_TYPE : int32
 		{
 			GUID = 1,
 			IF_LUID = 2,
 		}
-		[AllowDuplicates]
 		public enum FALLBACK_INDEX : int32
 		{
 			TcpFastopen = 0,

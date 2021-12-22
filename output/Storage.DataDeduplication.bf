@@ -11,13 +11,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DEDUP_BACKUP_SUPPORT_PARAM_TYPE : int32
 		{
 			UNOPTIMIZED = 1,
 			OPTIMIZED = 2,
 		}
-		[AllowDuplicates]
 		public enum DEDUP_SET_PARAM_TYPE : int32
 		{
 			MinChunkSizeBytes = 1,
@@ -26,14 +24,12 @@ namespace Win32
 			InvariantChunking = 4,
 			DisableStrongHashComputation = 5,
 		}
-		[AllowDuplicates]
 		public enum DedupDataPortManagerOption : int32
 		{
 			None = 0,
 			AutoStart = 1,
 			SkipReconciliation = 2,
 		}
-		[AllowDuplicates]
 		public enum DedupDataPortVolumeStatus : int32
 		{
 			Unknown = 0,
@@ -44,7 +40,6 @@ namespace Win32
 			Maintenance = 5,
 			Shutdown = 6,
 		}
-		[AllowDuplicates]
 		public enum DedupDataPortRequestStatus : int32
 		{
 			Unknown = 0,
@@ -54,25 +49,21 @@ namespace Win32
 			Complete = 4,
 			Failed = 5,
 		}
-		[AllowDuplicates]
 		public enum DedupChunkFlags : int32
 		{
 			None = 0,
 			Compressed = 1,
 		}
-		[AllowDuplicates]
 		public enum DedupChunkingAlgorithm : int32
 		{
 			Unknonwn = 0,
 			V1 = 1,
 		}
-		[AllowDuplicates]
 		public enum DedupHashingAlgorithm : int32
 		{
 			Unknonwn = 0,
 			V1 = 1,
 		}
-		[AllowDuplicates]
 		public enum DedupCompressionAlgorithm : int32
 		{
 			Unknonwn = 0,

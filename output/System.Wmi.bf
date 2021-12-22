@@ -71,7 +71,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum MI_Result : int32
 		{
 			OK = 0,
@@ -102,7 +101,6 @@ namespace Win32
 			SERVER_LIMITS_EXCEEDED = 27,
 			SERVER_IS_SHUTTING_DOWN = 28,
 		}
-		[AllowDuplicates]
 		public enum MI_ErrorCategory : int32
 		{
 			NOT_SPECIFIED = 0,
@@ -138,20 +136,17 @@ namespace Win32
 			QUOTA_EXCEEDED = 30,
 			NOT_ENABLED = 31,
 		}
-		[AllowDuplicates]
 		public enum MI_PromptType : int32
 		{
 			NORMAL = 0,
 			CRITICAL = 1,
 		}
-		[AllowDuplicates]
 		public enum MI_CallbackMode : int32
 		{
 			REPORT = 0,
 			INQUIRE = 1,
 			IGNORE = 2,
 		}
-		[AllowDuplicates]
 		public enum MI_ProviderArchitecture : int32
 		{
 			_32BIT = 0,
@@ -194,7 +189,6 @@ namespace Win32
 			INSTANCEA = 31,
 			ARRAY = 16,
 		}
-		[AllowDuplicates]
 		public enum MI_LocaleType : int32
 		{
 			REQUESTED_UI = 0,
@@ -202,7 +196,6 @@ namespace Win32
 			CLOSEST_UI = 2,
 			CLOSEST_DATA = 3,
 		}
-		[AllowDuplicates]
 		public enum MI_CancellationReason : int32
 		{
 			NONE = 0,
@@ -210,7 +203,6 @@ namespace Win32
 			SHUTDOWN = 2,
 			SERVICESTOP = 3,
 		}
-		[AllowDuplicates]
 		public enum MI_OperationCallback_ResponseType : int32
 		{
 			No = 0,
@@ -218,13 +210,11 @@ namespace Win32
 			NoToAll = 2,
 			YesToAll = 3,
 		}
-		[AllowDuplicates]
 		public enum MI_SubscriptionDeliveryType : int32
 		{
 			ll = 1,
 			sh = 2,
 		}
-		[AllowDuplicates]
 		public enum MI_DestinationOptions_ImpersonationType : int32
 		{
 			Default = 0,
@@ -233,7 +223,6 @@ namespace Win32
 			Impersonate = 3,
 			Delegate = 4,
 		}
-		[AllowDuplicates]
 		public enum WBEM_PATH_STATUS_FLAG : int32
 		{
 			ANON_LOCAL_MACHINE = 1,
@@ -255,7 +244,6 @@ namespace Win32
 			WMI_PATH = 65536,
 			PATH_HAD_SERVER = 131072,
 		}
-		[AllowDuplicates]
 		public enum WBEM_PATH_CREATE_FLAG : int32
 		{
 			CREATE_ACCEPT_RELATIVE = 1,
@@ -263,7 +251,6 @@ namespace Win32
 			CREATE_ACCEPT_ALL = 4,
 			TREAT_SINGLE_IDENT_AS_NS = 8,
 		}
-		[AllowDuplicates]
 		public enum WBEM_GET_TEXT_FLAGS : int32
 		{
 			COMPRESSED = 1,
@@ -273,13 +260,11 @@ namespace Win32
 			GET_NAMESPACE_ONLY = 16,
 			GET_ORIGINAL = 32,
 		}
-		[AllowDuplicates]
 		public enum WBEM_GET_KEY_FLAGS : int32
 		{
 			TEXT = 1,
 			QUOTEDTEXT = 2,
 		}
-		[AllowDuplicates]
 		public enum WMIQ_ANALYSIS_TYPE : int32
 		{
 			RPN_SEQUENCE = 1,
@@ -325,7 +310,6 @@ namespace Win32
 			FROM_CLASS_LIST = 4,
 			FROM_MULTIPLE = 8,
 		}
-		[AllowDuplicates]
 		public enum WMIQ_ASSOCQ_FLAGS : int32
 		{
 			ASSOCIATORS = 1,
@@ -386,7 +370,6 @@ namespace Win32
 			_40_BETWEEN = 40,
 			_LAST = 40,
 		}
-		[AllowDuplicates]
 		public enum WMIQ_RPNQ_FEATURE : int32
 		{
 			WHERE_CLAUSE_PRESENT = 1,
@@ -404,7 +387,6 @@ namespace Win32
 			GROUP_BY_HAVING = 4096,
 			ARRAY_ACCESS_USED = 8192,
 		}
-		[AllowDuplicates]
 		public enum WBEM_GENUS_TYPE : int32
 		{
 			CLASS = 1,
@@ -442,7 +424,6 @@ namespace Win32
 			FLAG_USE_AMENDED_QUALIFIERS = 131072,
 			FLAG_STRONG_VALIDATION = 1048576,
 		}
-		[AllowDuplicates]
 		public enum WBEM_STATUS_TYPE : int32
 		{
 			COMPLETE = 0,
@@ -454,7 +435,6 @@ namespace Win32
 			LOGGING_INFORMATION_REPOSITORY = 2048,
 			LOGGING_INFORMATION_ESS = 4096,
 		}
-		[AllowDuplicates]
 		public enum WBEM_TIMEOUT_TYPE : int32
 		{
 			NO_WAIT = 0,
@@ -497,14 +477,12 @@ namespace Win32
 			AMENDED = 128,
 			MASK_AMENDED = 128,
 		}
-		[AllowDuplicates]
 		public enum WBEM_QUERY_FLAG_TYPE : int32
 		{
 			DEEP = 0,
 			SHALLOW = 1,
 			PROTOTYPE = 2,
 		}
-		[AllowDuplicates]
 		public enum WBEM_SECURITY_FLAGS : int32
 		{
 			ENABLE = 1,
@@ -516,18 +494,15 @@ namespace Win32
 			RIGHT_SUBSCRIBE = 64,
 			RIGHT_PUBLISH = 128,
 		}
-		[AllowDuplicates]
 		public enum WBEM_LIMITATION_FLAG_TYPE : int32
 		{
 			OBJECT_QUALIFIERS = 16,
 			PROPERTY_QUALIFIERS = 32,
 		}
-		[AllowDuplicates]
 		public enum WBEM_TEXT_FLAG_TYPE : int32
 		{
 			WBEM_FLAG_NO_FLAVORS = 1,
 		}
-		[AllowDuplicates]
 		public enum WBEM_COMPARISON_FLAG : int32
 		{
 			COMPARISON_INCLUDE_ALL = 0,
@@ -538,12 +513,10 @@ namespace Win32
 			FLAG_IGNORE_CASE = 16,
 			FLAG_IGNORE_FLAVOR = 32,
 		}
-		[AllowDuplicates]
 		public enum WBEM_LOCKING : int32
 		{
 			WBEM_FLAG_ALLOW_READ = 1,
 		}
-		[AllowDuplicates]
 		public enum CIMTYPE_ENUMERATION : int32
 		{
 			ILLEGAL = 4095,
@@ -566,32 +539,27 @@ namespace Win32
 			OBJECT = 13,
 			FLAG_ARRAY = 8192,
 		}
-		[AllowDuplicates]
 		public enum WBEM_BACKUP_RESTORE_FLAGS : int32
 		{
 			DEFAULT = 0,
 			FORCE_SHUTDOWN = 1,
 		}
-		[AllowDuplicates]
 		public enum WBEM_REFRESHER_FLAGS : int32
 		{
 			AUTO_RECONNECT = 0,
 			NO_AUTO_RECONNECT = 1,
 		}
-		[AllowDuplicates]
 		public enum WBEM_SHUTDOWN_FLAGS : int32
 		{
 			UNLOAD_COMPONENT = 1,
 			WMI = 2,
 			OS = 3,
 		}
-		[AllowDuplicates]
 		public enum WBEMSTATUS_FORMAT : int32
 		{
 			EWLINE = 0,
 			O_NEWLINE = 1,
 		}
-		[AllowDuplicates]
 		public enum WBEM_LIMITS : int32
 		{
 			IDENTIFIER = 4096,
@@ -797,7 +765,6 @@ namespace Win32
 			MOF_E_ERROR_INVALID_INCLUDE_FILE = -2147205072,
 			MOF_E_INVALID_DELETECLASS_SYNTAX = -2147205071,
 		}
-		[AllowDuplicates]
 		public enum WMI_OBJ_TEXT : int32
 		{
 			CIM_DTD_2_0 = 1,
@@ -814,7 +781,6 @@ namespace Win32
 			WMI_EXT10 = 12,
 			LAST = 13,
 		}
-		[AllowDuplicates]
 		public enum WBEM_COMPILER_OPTIONS : int32
 		{
 			CHECK_ONLY = 1,
@@ -825,34 +791,29 @@ namespace Win32
 			SPLIT_FILES = 32,
 			STORE_FILE = 256,
 		}
-		[AllowDuplicates]
 		public enum WBEM_CONNECT_OPTIONS : int32
 		{
 			REPOSITORY_ONLY = 64,
 			USE_MAX_WAIT = 128,
 			PROVIDERS = 256,
 		}
-		[AllowDuplicates]
 		public enum WBEM_UNSECAPP_FLAG_TYPE : int32
 		{
 			DEFAULT_CHECK_ACCESS = 0,
 			CHECK_ACCESS = 1,
 			DONT_CHECK_ACCESS = 2,
 		}
-		[AllowDuplicates]
 		public enum WBEM_INFORMATION_FLAG_TYPE : int32
 		{
 			SHORT_NAME = 1,
 			LONG_NAME = 2,
 		}
-		[AllowDuplicates]
 		public enum WBEM_PROVIDER_REQUIREMENTS_TYPE : int32
 		{
 			START_POSTFILTER = 0,
 			STOP_POSTFILTER = 1,
 			RECHECK_SUBSCRIPTIONS = 2,
 		}
-		[AllowDuplicates]
 		public enum WBEM_EXTRA_RETURN_CODES : int32
 		{
 			S_INITIALIZED = 0,
@@ -862,12 +823,10 @@ namespace Win32
 			E_RETRY_LATER = -2147209215,
 			E_RESOURCE_CONTENTION = -2147209214,
 		}
-		[AllowDuplicates]
 		public enum WBEM_PROVIDER_FLAGS : int32
 		{
 			WBEM_FLAG_OWNER_UPDATE = 65536,
 		}
-		[AllowDuplicates]
 		public enum WBEM_BATCH_TYPE : int32
 		{
 			BATCH_IF_NEEDED = 0,
@@ -905,24 +864,20 @@ namespace Win32
 			SpawnInstance = 1,
 			UseCurrentTime = 1,
 		}
-		[AllowDuplicates]
 		public enum WbemQueryFlagEnum : int32
 		{
 			Deep = 0,
 			Shallow = 1,
 			Prototype = 2,
 		}
-		[AllowDuplicates]
 		public enum WbemTextFlagEnum : int32
 		{
 			wbemTextFlagNoFlavors = 1,
 		}
-		[AllowDuplicates]
 		public enum WbemTimeout : int32
 		{
 			wbemTimeoutInfinite = -1,
 		}
-		[AllowDuplicates]
 		public enum WbemComparisonFlagEnum : int32
 		{
 			ncludeAll = 0,
@@ -933,7 +888,6 @@ namespace Win32
 			gnoreCase = 16,
 			gnoreFlavor = 32,
 		}
-		[AllowDuplicates]
 		public enum WbemCimtypeEnum : int32
 		{
 			Sint8 = 16,
@@ -953,7 +907,6 @@ namespace Win32
 			Char16 = 103,
 			Object = 13,
 		}
-		[AllowDuplicates]
 		public enum WbemErrorEnum : int32
 		{
 			NoErr = 0,
@@ -1085,7 +1038,6 @@ namespace Win32
 			ErrTimedout = -2147209215,
 			ErrResetToDefault = -2147209214,
 		}
-		[AllowDuplicates]
 		public enum WbemAuthenticationLevelEnum : int32
 		{
 			Default = 0,
@@ -1096,7 +1048,6 @@ namespace Win32
 			PktIntegrity = 5,
 			PktPrivacy = 6,
 		}
-		[AllowDuplicates]
 		public enum WbemImpersonationLevelEnum : int32
 		{
 			Anonymous = 1,
@@ -1104,7 +1055,6 @@ namespace Win32
 			Impersonate = 3,
 			Delegate = 4,
 		}
-		[AllowDuplicates]
 		public enum WbemPrivilegeEnum : int32
 		{
 			CreateToken = 1,
@@ -1135,18 +1085,15 @@ namespace Win32
 			EnableDelegation = 26,
 			ManageVolume = 27,
 		}
-		[AllowDuplicates]
 		public enum WbemObjectTextFormatEnum : int32
 		{
 			CIMDTD20 = 1,
 			WMIDTD20 = 2,
 		}
-		[AllowDuplicates]
 		public enum WbemConnectOptionsEnum : int32
 		{
 			wbemConnectFlagUseMaxWait = 128,
 		}
-		[AllowDuplicates]
 		public enum tag_WBEM_LOGIN_TYPE : int32
 		{
 			FLAG_INPROC_LOGIN = 0,

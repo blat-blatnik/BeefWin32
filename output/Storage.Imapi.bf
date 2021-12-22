@@ -294,7 +294,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DISC_RECORDER_STATE_FLAGS : uint32
 		{
 			BURNING = 2,
@@ -326,7 +325,6 @@ namespace Win32
 			BDRE = 19,
 			MAX = 19,
 		}
-		[AllowDuplicates]
 		public enum IMAPI_MEDIA_WRITE_PROTECT_STATE : int32
 		{
 			UNTIL_POWERDOWN = 1,
@@ -336,14 +334,12 @@ namespace Win32
 			BY_DISC_CONTROL_BLOCK = 16,
 			READ_ONLY_MEDIA = 16384,
 		}
-		[AllowDuplicates]
 		public enum IMAPI_READ_TRACK_ADDRESS_TYPE : int32
 		{
 			LBA = 0,
 			TRACK = 1,
 			SESSION = 2,
 		}
-		[AllowDuplicates]
 		public enum IMAPI_MODE_PAGE_REQUEST_TYPE : int32
 		{
 			CURRENT_VALUES = 0,
@@ -351,7 +347,6 @@ namespace Win32
 			DEFAULT_VALUES = 2,
 			SAVED_VALUES = 3,
 		}
-		[AllowDuplicates]
 		public enum IMAPI_MODE_PAGE_TYPE : int32
 		{
 			READ_WRITE_ERROR_RECOVERY = 1,
@@ -363,7 +358,6 @@ namespace Win32
 			POWER_CONDITION = 26,
 			LEGACY_CAPABILITIES = 42,
 		}
-		[AllowDuplicates]
 		public enum IMAPI_FEATURE_PAGE_TYPE : int32
 		{
 			PROFILE_LIST = 0,
@@ -418,7 +412,6 @@ namespace Win32
 			AACS = 269,
 			VCPS = 272,
 		}
-		[AllowDuplicates]
 		public enum IMAPI_PROFILE_TYPE : int32
 		{
 			INVALID = 0,
@@ -453,7 +446,6 @@ namespace Win32
 			HD_DVD_RAM = 82,
 			NON_STANDARD = 65535,
 		}
-		[AllowDuplicates]
 		public enum IMAPI_FORMAT2_DATA_WRITE_ACTION : int32
 		{
 			VALIDATING_MEDIA = 0,
@@ -483,7 +475,6 @@ namespace Win32
 			FINALIZED = 16384,
 			UNSUPPORTED_MEDIA = 32768,
 		}
-		[AllowDuplicates]
 		public enum IMAPI_FORMAT2_TAO_WRITE_ACTION : int32
 		{
 			UNKNOWN = 0,
@@ -492,14 +483,12 @@ namespace Win32
 			FINISHING = 3,
 			VERIFYING = 4,
 		}
-		[AllowDuplicates]
 		public enum IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE : int32
 		{
 			PQ_ONLY = 1,
 			IS_COOKED = 2,
 			IS_RAW = 3,
 		}
-		[AllowDuplicates]
 		public enum IMAPI_FORMAT2_RAW_CD_WRITE_ACTION : int32
 		{
 			UNKNOWN = 0,
@@ -507,7 +496,6 @@ namespace Win32
 			WRITING = 2,
 			FINISHING = 3,
 		}
-		[AllowDuplicates]
 		public enum IMAPI_CD_SECTOR_TYPE : int32
 		{
 			AUDIO = 0,
@@ -521,28 +509,24 @@ namespace Win32
 			MODE2FORM1RAW = 8,
 			MODE2FORM2RAW = 9,
 		}
-		[AllowDuplicates]
 		public enum IMAPI_CD_TRACK_DIGITAL_COPY_SETTING : int32
 		{
 			PERMITTED = 0,
 			PROHIBITED = 1,
 			SCMS = 2,
 		}
-		[AllowDuplicates]
 		public enum IMAPI_BURN_VERIFICATION_LEVEL : int32
 		{
 			NONE = 0,
 			QUICK = 1,
 			FULL = 2,
 		}
-		[AllowDuplicates]
 		public enum FsiItemType : int32
 		{
 			NotFound = 0,
 			Directory = 1,
 			File = 2,
 		}
-		[AllowDuplicates]
 		public enum FsiFileSystems : int32
 		{
 			None = 0,
@@ -551,7 +535,6 @@ namespace Win32
 			UDF = 4,
 			Unknown = 1073741824,
 		}
-		[AllowDuplicates]
 		public enum EmulationType : int32
 		{
 			None = 0,
@@ -560,7 +543,6 @@ namespace Win32
 			_288MFloppy = 3,
 			HardDisk = 4,
 		}
-		[AllowDuplicates]
 		public enum PlatformId : int32
 		{
 			X86 = 0,
@@ -568,7 +550,6 @@ namespace Win32
 			Mac = 2,
 			EFI = 239,
 		}
-		[AllowDuplicates]
 		public enum MEDIA_TYPES : int32
 		{
 			CDDA_CDROM = 1,
@@ -578,7 +559,6 @@ namespace Win32
 			CD_OTHER = 5,
 			SPECIAL = 6,
 		}
-		[AllowDuplicates]
 		public enum MEDIA_FLAGS : int32
 		{
 			BLANK = 1,
@@ -586,13 +566,11 @@ namespace Win32
 			WRITABLE = 4,
 			FORMAT_UNUSABLE_BY_IMAPI = 8,
 		}
-		[AllowDuplicates]
 		public enum RECORDER_TYPES : int32
 		{
 			R = 1,
 			RW = 2,
 		}
-		[AllowDuplicates]
 		public enum IMMPID_MP_ENUM : int32
 		{
 			BEFORE__ = 4095,
@@ -655,7 +633,6 @@ namespace Win32
 			INBOUND_MAIL_FROM_AUTH = 4152,
 			AFTER__ = 4153,
 		}
-		[AllowDuplicates]
 		public enum IMMPID_RP_ENUM : int32
 		{
 			BEFORE__ = 8191,
@@ -682,7 +659,6 @@ namespace Win32
 			DISPLAY_NAME = 8212,
 			AFTER__ = 8213,
 		}
-		[AllowDuplicates]
 		public enum IMMPID_MPV_ENUM : int32
 		{
 			BEFORE__ = 12287,
@@ -694,7 +670,6 @@ namespace Win32
 			TOTAL_OPEN_CONTENT_HANDLES = 12293,
 			AFTER__ = 12294,
 		}
-		[AllowDuplicates]
 		public enum IMMPID_RPV_ENUM : int32
 		{
 			BEFORE__ = 16383,
@@ -702,7 +677,6 @@ namespace Win32
 			NO_NAME_COLLISIONS = 16385,
 			AFTER__ = 16386,
 		}
-		[AllowDuplicates]
 		public enum IMMPID_NMP_ENUM : int32
 		{
 			BEFORE__ = 24575,
@@ -717,7 +691,6 @@ namespace Win32
 			NNTP_APPROVED_HEADER = 24584,
 			AFTER__ = 24585,
 		}
-		[AllowDuplicates]
 		public enum IMMPID_CPV_ENUM : int32
 		{
 			V_BEFORE__ = 32767,

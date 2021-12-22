@@ -61,13 +61,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WINTRUST_GET_DEFAULT_FOR_USAGE_ACTION : uint32
 		{
 			ALLOCANDFILL = 1,
 			FREE = 2,
 		}
-		[AllowDuplicates]
 		public enum WINTRUST_POLICY_FLAGS : uint32
 		{
 			TRUSTTEST = 32,
@@ -82,7 +80,6 @@ namespace Win32
 			IGNOREREVOCATIONONTS = 131072,
 			ALLOWONLYPERTRUST = 262144,
 		}
-		[AllowDuplicates]
 		public enum WINTRUST_DATA_UICHOICE : uint32
 		{
 			ALL = 1,
@@ -90,13 +87,11 @@ namespace Win32
 			NOBAD = 3,
 			NOGOOD = 4,
 		}
-		[AllowDuplicates]
 		public enum WINTRUST_SIGNATURE_SETTINGS_FLAGS : uint32
 		{
 			VERIFY_SPECIFIC = 1,
 			GET_SECONDARY_SIG_COUNT = 2,
 		}
-		[AllowDuplicates]
 		public enum WINTRUST_DATA_STATE_ACTION : uint32
 		{
 			IGNORE = 0,
@@ -105,7 +100,6 @@ namespace Win32
 			AUTO_CACHE = 3,
 			AUTO_CACHE_FLUSH = 4,
 		}
-		[AllowDuplicates]
 		public enum WINTRUST_DATA_UNION_CHOICE : uint32
 		{
 			FILE = 1,
@@ -114,13 +108,11 @@ namespace Win32
 			SIGNER = 4,
 			CERT = 5,
 		}
-		[AllowDuplicates]
 		public enum WINTRUST_DATA_REVOCATION_CHECKS : uint32
 		{
 			NONE = 0,
 			WHOLECHAIN = 1,
 		}
-		[AllowDuplicates]
 		public enum WINTRUST_DATA_UICONTEXT : uint32
 		{
 			EXECUTE = 0,

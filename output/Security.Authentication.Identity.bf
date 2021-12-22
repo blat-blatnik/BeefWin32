@@ -1312,7 +1312,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum SECPKG_ATTR : uint32
 		{
 			C_ACCESS_TOKEN = 2147483666,
@@ -1357,19 +1356,16 @@ namespace Win32
 			TARGET_INFORMATION = 17,
 			UNIQUE_BINDINGS = 25,
 		}
-		[AllowDuplicates]
 		public enum MSV1_0 : uint32
 		{
 			PASSTHRU = 1,
 			GUEST_LOGON = 2,
 		}
-		[AllowDuplicates]
 		public enum SECPKG_CRED : uint32
 		{
 			INBOUND = 1,
 			OUTBOUND = 2,
 		}
-		[AllowDuplicates]
 		public enum MSV_SUB_AUTHENTICATION_FILTER : uint32
 		{
 			GUEST = 1,
@@ -1382,14 +1378,12 @@ namespace Win32
 			PROFILE_PATH_RETURNED = 1024,
 			RESOURCE_GROUPS = 512,
 		}
-		[AllowDuplicates]
 		public enum EXPORT_SECURITY_CONTEXT_FLAGS : uint32
 		{
 			RESET_NEW = 1,
 			DELETE_OLD = 2,
 			TO_KERNEL = 4,
 		}
-		[AllowDuplicates]
 		public enum ACCEPT_SECURITY_CONTEXT_CONTEXT_REQ : uint32
 		{
 			ALLOCATE_MEMORY = 256,
@@ -1400,7 +1394,6 @@ namespace Win32
 			SEQUENCE_DETECT = 8,
 			STREAM = 65536,
 		}
-		[AllowDuplicates]
 		public enum KERB_TICKET_FLAGS : uint32
 		{
 			forwardable = 1073741824,
@@ -1418,13 +1411,11 @@ namespace Win32
 			reserved = 2147483648,
 			reserved1 = 1,
 		}
-		[AllowDuplicates]
 		public enum KERB_ADDRESS_TYPE : uint32
 		{
 			INET_ADDRESS = 1,
 			NETBIOS_ADDRESS = 2,
 		}
-		[AllowDuplicates]
 		public enum SCHANNEL_CRED_FLAGS : uint32
 		{
 			CRED_AUTO_CRED_VALIDATION = 32,
@@ -1445,7 +1436,6 @@ namespace Win32
 			USE_STRONG_CRYPTO = 4194304,
 			USE_PRESHAREDKEY_ONLY = 8388608,
 		}
-		[AllowDuplicates]
 		public enum DOMAIN_PASSWORD_PROPERTIES : uint32
 		{
 			PASSWORD_COMPLEX = 1,
@@ -1455,13 +1445,11 @@ namespace Win32
 			PASSWORD_STORE_CLEARTEXT = 16,
 			REFUSE_PASSWORD_CHANGE = 32,
 		}
-		[AllowDuplicates]
 		public enum SCHANNEL_ALERT_TOKEN_ALERT_TYPE : uint32
 		{
 			WARNING = 1,
 			FATAL = 2,
 		}
-		[AllowDuplicates]
 		public enum TRUSTED_DOMAIN_TRUST_TYPE : uint32
 		{
 			DOWNLEVEL = 1,
@@ -1469,7 +1457,6 @@ namespace Win32
 			MIT = 3,
 			DCE = 4,
 		}
-		[AllowDuplicates]
 		public enum MSV_SUBAUTH_LOGON_PARAMETER_CONTROL : uint32
 		{
 			CLEARTEXT_PASSWORD_ALLOWED = 2,
@@ -1483,14 +1470,12 @@ namespace Win32
 			RETURN_PROFILE_PATH = 512,
 			TRY_SPECIFIED_DOMAIN_ONLY = 1024,
 		}
-		[AllowDuplicates]
 		public enum KERB_REQUEST_FLAGS : uint32
 		{
 			ADD_CREDENTIAL = 1,
 			REPLACE_CREDENTIAL = 2,
 			REMOVE_CREDENTIAL = 4,
 		}
-		[AllowDuplicates]
 		public enum TRUSTED_DOMAIN_TRUST_DIRECTION : uint32
 		{
 			DISABLED = 0,
@@ -1498,27 +1483,23 @@ namespace Win32
 			OUTBOUND = 2,
 			BIDIRECTIONAL = 3,
 		}
-		[AllowDuplicates]
 		public enum MSV_SUPPLEMENTAL_CREDENTIAL_FLAGS : uint32
 		{
 			LM_PRESENT = 1,
 			NT_PRESENT = 2,
 			VERSION = 0,
 		}
-		[AllowDuplicates]
 		public enum SECURITY_PACKAGE_OPTIONS_TYPE : uint32
 		{
 			UNKNOWN = 0,
 			LSA = 1,
 			SSPI = 2,
 		}
-		[AllowDuplicates]
 		public enum SCHANNEL_SESSION_TOKEN_FLAGS : uint32
 		{
 			ENABLE_RECONNECTS = 1,
 			DISABLE_RECONNECTS = 2,
 		}
-		[AllowDuplicates]
 		public enum KERB_CRYPTO_KEY_TYPE : int32
 		{
 			DES_CBC_CRC = 1,
@@ -1528,7 +1509,6 @@ namespace Win32
 			RC4_HMAC_NT = 23,
 			RC4_MD4 = -128,
 		}
-		[AllowDuplicates]
 		public enum LSA_AUTH_INFORMATION_AUTH_TYPE : uint32
 		{
 			NONE = 0,
@@ -1536,14 +1516,12 @@ namespace Win32
 			CLEAR = 2,
 			VERSION = 3,
 		}
-		[AllowDuplicates]
 		public enum SECPKG_PACKAGE_CHANGE_TYPE : uint32
 		{
 			LOAD = 0,
 			UNLOAD = 1,
 			SELECT = 2,
 		}
-		[AllowDuplicates]
 		public enum TRUSTED_DOMAIN_TRUST_ATTRIBUTES : uint32
 		{
 			NON_TRANSITIVE = 1,
@@ -1554,13 +1532,11 @@ namespace Win32
 			TREAT_AS_EXTERNAL = 64,
 			WITHIN_FOREST = 32,
 		}
-		[AllowDuplicates]
 		public enum LSA_LOOKUP_DOMAIN_INFO_CLASS : int32
 		{
 			AccountDomainInformation = 5,
 			DnsDomainInformation = 12,
 		}
-		[AllowDuplicates]
 		public enum SECURITY_LOGON_TYPE : int32
 		{
 			UndefinedLogonType = 0,
@@ -1577,7 +1553,6 @@ namespace Win32
 			CachedRemoteInteractive = 12,
 			CachedUnlock = 13,
 		}
-		[AllowDuplicates]
 		public enum SE_ADT_PARAMETER_TYPE : int32
 		{
 			None = 0,
@@ -1617,7 +1592,6 @@ namespace Win32
 			MultiSzString = 34,
 			LogonIdEx = 35,
 		}
-		[AllowDuplicates]
 		public enum POLICY_AUDIT_EVENT_TYPE : int32
 		{
 			System = 0,
@@ -1630,13 +1604,11 @@ namespace Win32
 			DirectoryServiceAccess = 7,
 			AccountLogon = 8,
 		}
-		[AllowDuplicates]
 		public enum POLICY_LSA_SERVER_ROLE : int32
 		{
 			Backup = 2,
 			Primary = 3,
 		}
-		[AllowDuplicates]
 		public enum POLICY_INFORMATION_CLASS : int32
 		{
 			AuditLogInformation = 1,
@@ -1656,13 +1628,11 @@ namespace Win32
 			MachineAccountInformation = 15,
 			LastEntry = 16,
 		}
-		[AllowDuplicates]
 		public enum POLICY_DOMAIN_INFORMATION_CLASS : int32
 		{
 			EfsInformation = 2,
 			KerberosTicketInformation = 3,
 		}
-		[AllowDuplicates]
 		public enum POLICY_NOTIFICATION_INFORMATION_CLASS : int32
 		{
 			AuditEventsInformation = 1,
@@ -1675,7 +1645,6 @@ namespace Win32
 			GlobalSaclInformation = 8,
 			Max = 9,
 		}
-		[AllowDuplicates]
 		public enum TRUSTED_INFORMATION_CLASS : int32
 		{
 			DomainNameInformation = 1,
@@ -1700,14 +1669,12 @@ namespace Win32
 			DomainInfo = 2,
 			RecordTypeLast = 2,
 		}
-		[AllowDuplicates]
 		public enum LSA_FOREST_TRUST_COLLISION_RECORD_TYPE : int32
 		{
 			Tdo = 0,
 			Xref = 1,
 			Other = 2,
 		}
-		[AllowDuplicates]
 		public enum NEGOTIATE_MESSAGES : int32
 		{
 			EnumPackagePrefixes = 0,
@@ -1716,7 +1683,6 @@ namespace Win32
 			MsgReserved1 = 3,
 			CallPackageMax = 4,
 		}
-		[AllowDuplicates]
 		public enum MSV1_0_LOGON_SUBMIT_TYPE : int32
 		{
 			InteractiveLogon = 2,
@@ -1729,14 +1695,12 @@ namespace Win32
 			NoElevationLogon = 83,
 			LuidLogon = 84,
 		}
-		[AllowDuplicates]
 		public enum MSV1_0_PROFILE_BUFFER_TYPE : int32
 		{
 			InteractiveProfile = 2,
 			Lm20LogonProfile = 3,
 			SmartCardProfile = 4,
 		}
-		[AllowDuplicates]
 		public enum MSV1_0_CREDENTIAL_KEY_TYPE : int32
 		{
 			InvalidCredKey = 0,
@@ -1745,7 +1709,6 @@ namespace Win32
 			LocalUserCredKey = 3,
 			ExternallySuppliedCredKey = 4,
 		}
-		[AllowDuplicates]
 		public enum MSV1_0_AVID : int32
 		{
 			EOL = 0,
@@ -1760,7 +1723,6 @@ namespace Win32
 			TargetName = 9,
 			ChannelBindings = 10,
 		}
-		[AllowDuplicates]
 		public enum MSV1_0_PROTOCOL_MESSAGE_TYPE : int32
 		{
 			Lm20ChallengeRequest = 0,
@@ -1789,7 +1751,6 @@ namespace Win32
 			ProvisionTbal = 23,
 			DeleteTbalSecrets = 24,
 		}
-		[AllowDuplicates]
 		public enum KERB_LOGON_SUBMIT_TYPE : int32
 		{
 			InteractiveLogon = 2,
@@ -1806,14 +1767,12 @@ namespace Win32
 			NoElevationLogon = 83,
 			LuidLogon = 84,
 		}
-		[AllowDuplicates]
 		public enum KERB_PROFILE_BUFFER_TYPE : int32
 		{
 			InteractiveProfile = 2,
 			SmartCardProfile = 4,
 			TicketProfile = 6,
 		}
-		[AllowDuplicates]
 		public enum KERB_PROTOCOL_MESSAGE_TYPE : int32
 		{
 			DebugRequestMessage = 0,
@@ -1854,31 +1813,26 @@ namespace Win32
 			RefreshPolicyMessage = 35,
 			PrintCloudKerberosDebugMessage = 36,
 		}
-		[AllowDuplicates]
 		public enum KERB_CERTIFICATE_INFO_TYPE : int32
 		{
 			CertHashInfo = 1,
 		}
-		[AllowDuplicates]
 		public enum PKU2U_LOGON_SUBMIT_TYPE : int32
 		{
 			Pku2uCertificateS4ULogon = 14,
 		}
-		[AllowDuplicates]
 		public enum SEC_APPLICATION_PROTOCOL_NEGOTIATION_EXT : int32
 		{
 			None = 0,
 			NPN = 1,
 			ALPN = 2,
 		}
-		[AllowDuplicates]
 		public enum SEC_TRAFFIC_SECRET_TYPE : int32
 		{
 			None = 0,
 			Client = 1,
 			Server = 2,
 		}
-		[AllowDuplicates]
 		public enum SECPKG_CRED_CLASS : int32
 		{
 			None = 0,
@@ -1887,21 +1841,18 @@ namespace Win32
 			PersistedSpecific = 30,
 			Explicit = 40,
 		}
-		[AllowDuplicates]
 		public enum SECPKG_ATTR_LCT_STATUS : int32
 		{
 			Yes = 0,
 			No = 1,
 			Maybe = 2,
 		}
-		[AllowDuplicates]
 		public enum SEC_APPLICATION_PROTOCOL_NEGOTIATION_STATUS : int32
 		{
 			None = 0,
 			Success = 1,
 			SelectedClientOnly = 2,
 		}
-		[AllowDuplicates]
 		public enum SecDelegationType : int32
 		{
 			Full = 0,
@@ -1910,13 +1861,11 @@ namespace Win32
 			Directory = 3,
 			Object = 4,
 		}
-		[AllowDuplicates]
 		public enum SASL_AUTHZID_STATE : int32
 		{
 			Forbidden = 0,
 			Processed = 1,
 		}
-		[AllowDuplicates]
 		public enum LSA_TOKEN_INFORMATION_TYPE : int32
 		{
 			Null = 0,
@@ -1924,7 +1873,6 @@ namespace Win32
 			V2 = 2,
 			V3 = 3,
 		}
-		[AllowDuplicates]
 		public enum SECPKG_EXTENDED_INFORMATION_CLASS : int32
 		{
 			GssInfo = 1,
@@ -1944,12 +1892,10 @@ namespace Win32
 			TransferCredMessage = 1026,
 			MaxMessage = 1026,
 		}
-		[AllowDuplicates]
 		public enum SECPKG_SESSIONINFO_TYPE : int32
 		{
 			SecSessionPrimaryCred = 0,
 		}
-		[AllowDuplicates]
 		public enum SECPKG_NAME_TYPE : int32
 		{
 			SamCompatible = 0,
@@ -1958,20 +1904,17 @@ namespace Win32
 			DN = 3,
 			SPN = 4,
 		}
-		[AllowDuplicates]
 		public enum CRED_FETCH : int32
 		{
 			Default = 0,
 			DPAPI = 1,
 			Forced = 2,
 		}
-		[AllowDuplicates]
 		public enum KSEC_CONTEXT_TYPE : int32
 		{
 			Paged = 0,
 			NonPaged = 1,
 		}
-		[AllowDuplicates]
 		public enum eTlsSignatureAlgorithm : int32
 		{
 			Anonymous = 0,
@@ -1979,7 +1922,6 @@ namespace Win32
 			Dsa = 2,
 			Ecdsa = 3,
 		}
-		[AllowDuplicates]
 		public enum eTlsHashAlgorithm : int32
 		{
 			None = 0,
@@ -1990,13 +1932,11 @@ namespace Win32
 			Sha384 = 5,
 			Sha512 = 6,
 		}
-		[AllowDuplicates]
 		public enum SchGetExtensionsOptions : uint32
 		{
 			EXTENSIONS_OPTIONS_NONE = 0,
 			NO_RECORD_HEADER = 1,
 		}
-		[AllowDuplicates]
 		public enum NETLOGON_LOGON_INFO_CLASS : int32
 		{
 			InteractiveInformation = 1,
@@ -2007,18 +1947,15 @@ namespace Win32
 			NetworkTransitiveInformation = 6,
 			ServiceTransitiveInformation = 7,
 		}
-		[AllowDuplicates]
 		public enum TOKENBINDING_TYPE : int32
 		{
 			PROVIDED = 0,
 			REFERRED = 1,
 		}
-		[AllowDuplicates]
 		public enum TOKENBINDING_EXTENSION_FORMAT : int32
 		{
 			TOKENBINDING_EXTENSION_FORMAT_UNDEFINED = 0,
 		}
-		[AllowDuplicates]
 		public enum TOKENBINDING_KEY_PARAMETERS_TYPE : int32
 		{
 			RSA2048_PKCS = 0,
@@ -2026,7 +1963,6 @@ namespace Win32
 			ECDSAP256 = 2,
 			ANYEXISTING = 255,
 		}
-		[AllowDuplicates]
 		public enum EXTENDED_NAME_FORMAT : int32
 		{
 			Unknown = 0,
@@ -2042,7 +1978,6 @@ namespace Win32
 			GivenName = 13,
 			Surname = 14,
 		}
-		[AllowDuplicates]
 		public enum SLDATATYPE : uint32
 		{
 			NONE = 0,
@@ -2052,7 +1987,6 @@ namespace Win32
 			MULTI_SZ = 7,
 			SUM = 100,
 		}
-		[AllowDuplicates]
 		public enum SLIDTYPE : int32
 		{
 			APPLICATION = 0,
@@ -2065,7 +1999,6 @@ namespace Win32
 			STORE_TOKEN = 7,
 			LAST = 8,
 		}
-		[AllowDuplicates]
 		public enum SLLICENSINGSTATUS : int32
 		{
 			UNLICENSED = 0,
@@ -2074,13 +2007,11 @@ namespace Win32
 			NOTIFICATION = 3,
 			LAST = 4,
 		}
-		[AllowDuplicates]
 		public enum SL_ACTIVATION_TYPE : int32
 		{
 			DEFAULT = 0,
 			ACTIVE_DIRECTORY = 1,
 		}
-		[AllowDuplicates]
 		public enum SLREFERRALTYPE : int32
 		{
 			SKUID = 0,
@@ -2089,7 +2020,6 @@ namespace Win32
 			OVERRIDE_APPID = 3,
 			BEST_MATCH = 4,
 		}
-		[AllowDuplicates]
 		public enum SL_GENUINE_STATE : int32
 		{
 			IS_GENUINE = 0,

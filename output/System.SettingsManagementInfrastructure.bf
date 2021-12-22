@@ -65,20 +65,17 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WcmTargetMode : int32
 		{
 			fflineMode = 1,
 			nlineMode = 2,
 		}
-		[AllowDuplicates]
 		public enum WcmNamespaceEnumerationFlags : int32
 		{
 			SharedEnumeration = 1,
 			UserEnumeration = 2,
 			AllEnumeration = 3,
 		}
-		[AllowDuplicates]
 		public enum WcmDataType : int32
 		{
 			Byte = 1,
@@ -93,14 +90,12 @@ namespace Win32
 			String = 12,
 			FlagArray = 32768,
 		}
-		[AllowDuplicates]
 		public enum WcmSettingType : int32
 		{
 			Scalar = 1,
 			Complex = 2,
 			List = 3,
 		}
-		[AllowDuplicates]
 		public enum WcmRestrictionFacets : int32
 		{
 			MaxLength = 1,
@@ -108,7 +103,6 @@ namespace Win32
 			MaxInclusive = 4,
 			MinInclusive = 8,
 		}
-		[AllowDuplicates]
 		public enum WcmUserStatus : int32
 		{
 			nknownStatus = 0,
@@ -117,7 +111,6 @@ namespace Win32
 			serLoaded = 3,
 			serUnloaded = 4,
 		}
-		[AllowDuplicates]
 		public enum WcmNamespaceAccess : int32
 		{
 			OnlyAccess = 1,

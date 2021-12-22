@@ -54,7 +54,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum D3DCOMPILER_STRIP_FLAGS : int32
 		{
 			REFLECTION_DATA = 1,
@@ -64,7 +63,6 @@ namespace Win32
 			ROOT_SIGNATURE = 16,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3D_BLOB_PART : int32
 		{
 			INPUT_SIGNATURE_BLOB = 0,

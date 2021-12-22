@@ -287,7 +287,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WMDM_TAG_DATATYPE : int32
 		{
 			DWORD = 0,
@@ -299,7 +298,6 @@ namespace Win32
 			GUID = 6,
 			DATE = 7,
 		}
-		[AllowDuplicates]
 		public enum WMDM_SESSION_TYPE : int32
 		{
 			NONE = 0,
@@ -308,14 +306,12 @@ namespace Win32
 			DELETE = 256,
 			CUSTOM = 4096,
 		}
-		[AllowDuplicates]
 		public enum WMDM_STORAGE_ENUM_MODE : int32
 		{
 			RAW = 0,
 			USE_DEVICE_PREF = 1,
 			METADATA_VIEWS = 2,
 		}
-		[AllowDuplicates]
 		public enum WMDM_FORMATCODE : int32
 		{
 			NOTUSED = 0,
@@ -414,20 +410,17 @@ namespace Win32
 			_3G2A = 860303937,
 			SECTION = 48770,
 		}
-		[AllowDuplicates]
 		public enum WMDM_ENUM_PROP_VALID_VALUES_FORM : int32
 		{
 			ANY = 0,
 			RANGE = 1,
 			ENUM = 2,
 		}
-		[AllowDuplicates]
 		public enum WMDM_FIND_SCOPE : int32
 		{
 			GLOBAL = 0,
 			IMMEDIATE_CHILDREN = 1,
 		}
-		[AllowDuplicates]
 		public enum WMDMMessage : int32
 		{
 			DEVICE_ARRIVAL = 0,

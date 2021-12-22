@@ -39,13 +39,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum USER_INPUT_STRING_TYPE : int32
 		{
 			DEFAULT = 0,
 			PATH_ELEMENT = 1,
 		}
-		[AllowDuplicates]
 		public enum ERROR_ADVISE_MESSAGE_TYPE : int32
 		{
 			SKIPRETRYCANCEL = 0,
@@ -53,7 +51,6 @@ namespace Win32
 			YESNO = 2,
 			OK = 3,
 		}
-		[AllowDuplicates]
 		public enum ERROR_ADVISE_RESULT : int32
 		{
 			YES = 0,
@@ -64,7 +61,6 @@ namespace Win32
 			RETRY = 5,
 			ABORT = 6,
 		}
-		[AllowDuplicates]
 		public enum PROGRESS_DIALOG_IMAGE_TYPE : int32
 		{
 			ICON_SMALL = 0,
@@ -72,12 +68,10 @@ namespace Win32
 			ICON_THUMBNAIL = 2,
 			BITMAP_THUMBNAIL = 3,
 		}
-		[AllowDuplicates]
 		public enum PROGRESS_DIALOG_CHECKBOX_ID : int32
 		{
 			PROGRESS_DIALOG_CHECKBOX_ID_DEFAULT = 0,
 		}
-		[AllowDuplicates]
 		public enum DEVICE_SELECTION_DEVICE_TYPE : int32
 		{
 			T_UNKNOWN_DEVICE = 0,

@@ -780,7 +780,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum FOLD_STRING_MAP_FLAGS : uint32
 		{
 			COMPOSITE = 64,
@@ -789,7 +788,6 @@ namespace Win32
 			FOLDDIGITS = 128,
 			PRECOMPOSED = 32,
 		}
-		[AllowDuplicates]
 		public enum ENUM_DATE_FORMATS_FLAGS : uint32
 		{
 			SHORTDATE = 1,
@@ -801,7 +799,6 @@ namespace Win32
 			RTLREADING = 32,
 			USE_ALT_CALENDAR = 4,
 		}
-		[AllowDuplicates]
 		public enum TRANSLATE_CHARSET_INFO_FLAGS : uint32
 		{
 			CHARSET = 1,
@@ -809,7 +806,6 @@ namespace Win32
 			FONTSIG = 3,
 			LOCALE = 4096,
 		}
-		[AllowDuplicates]
 		public enum TIME_FORMAT_FLAGS : uint32
 		{
 			NOMINUTESORSECONDS = 1,
@@ -817,13 +813,11 @@ namespace Win32
 			NOTIMEMARKER = 4,
 			FORCE24HOURFORMAT = 8,
 		}
-		[AllowDuplicates]
 		public enum ENUM_SYSTEM_LANGUAGE_GROUPS_FLAGS : uint32
 		{
 			INSTALLED = 1,
 			SUPPORTED = 2,
 		}
-		[AllowDuplicates]
 		public enum MULTI_BYTE_TO_WIDE_CHAR_FLAGS : uint32
 		{
 			COMPOSITE = 2,
@@ -831,7 +825,6 @@ namespace Win32
 			PRECOMPOSED = 1,
 			USEGLYPHCHARS = 4,
 		}
-		[AllowDuplicates]
 		public enum COMPARE_STRING_FLAGS : uint32
 		{
 			LINGUISTIC_IGNORECASE = 16,
@@ -845,26 +838,22 @@ namespace Win32
 			SORT_DIGITSASNUMBERS = 8,
 			SORT_STRINGSORT = 4096,
 		}
-		[AllowDuplicates]
 		public enum IS_VALID_LOCALE_FLAGS : uint32
 		{
 			INSTALLED = 1,
 			SUPPORTED = 2,
 		}
-		[AllowDuplicates]
 		public enum ENUM_SYSTEM_CODE_PAGES_FLAGS : uint32
 		{
 			INSTALLED = 1,
 			SUPPORTED = 2,
 		}
-		[AllowDuplicates]
 		public enum SCRIPT_IS_COMPLEX_FLAGS : uint32
 		{
 			ASCIIDIGIT = 2,
 			COMPLEX = 1,
 			NEUTRAL = 4,
 		}
-		[AllowDuplicates]
 		public enum IS_TEXT_UNICODE_RESULT : uint32
 		{
 			ASCII16 = 1,
@@ -883,12 +872,10 @@ namespace Win32
 			NOT_UNICODE_MASK = 3840,
 			NOT_ASCII_MASK = 61440,
 		}
-		[AllowDuplicates]
 		public enum SYSNLS_FUNCTION : int32
 		{
 			COMPARE_STRING = 1,
 		}
-		[AllowDuplicates]
 		public enum SYSGEOTYPE : int32
 		{
 			NATION = 1,
@@ -910,14 +897,12 @@ namespace Win32
 			NAME = 17,
 			ID = 18,
 		}
-		[AllowDuplicates]
 		public enum SYSGEOCLASS : int32
 		{
 			NATION = 16,
 			REGION = 14,
 			ALL = 0,
 		}
-		[AllowDuplicates]
 		public enum NORM_FORM : int32
 		{
 			Other = 0,
@@ -926,7 +911,6 @@ namespace Win32
 			KC = 5,
 			KD = 6,
 		}
-		[AllowDuplicates]
 		public enum WORDLIST_TYPE : int32
 		{
 			IGNORE = 0,
@@ -934,7 +918,6 @@ namespace Win32
 			EXCLUDE = 2,
 			AUTOCORRECT = 3,
 		}
-		[AllowDuplicates]
 		public enum CORRECTIVE_ACTION : int32
 		{
 			NONE = 0,
@@ -942,7 +925,6 @@ namespace Win32
 			REPLACE = 2,
 			DELETE = 3,
 		}
-		[AllowDuplicates]
 		public enum SCRIPT_JUSTIFY : int32
 		{
 			NONE = 0,
@@ -1118,7 +1100,6 @@ namespace Win32
 			PLUGIN_TOO_HIGH = 66816,
 			PLUGIN_DIDNT_SET_LEVEL = 66817,
 		}
-		[AllowDuplicates]
 		public enum UTraceLevel : int32
 		{
 			OFF = -1,
@@ -1159,7 +1140,6 @@ namespace Win32
 			UDATA_DATA_FILE = 12290,
 			UDATA_RES_FILE = 12291,
 		}
-		[AllowDuplicates]
 		public enum UStringTrieResult : int32
 		{
 			NO_MATCH = 0,
@@ -1370,7 +1350,6 @@ namespace Win32
 			KHITAN_SMALL_SCRIPT = 191,
 			YEZIDI = 192,
 		}
-		[AllowDuplicates]
 		public enum UScriptUsage : int32
 		{
 			NOT_ENCODED = 0,
@@ -1380,7 +1359,6 @@ namespace Win32
 			ASPIRATIONAL = 4,
 			RECOMMENDED = 5,
 		}
-		[AllowDuplicates]
 		public enum UCharIteratorOrigin : int32
 		{
 			START = 0,
@@ -1389,20 +1367,17 @@ namespace Win32
 			ZERO = 3,
 			LENGTH = 4,
 		}
-		[AllowDuplicates]
 		public enum ULocDataLocaleType : int32
 		{
 			ACTUAL_LOCALE = 0,
 			VALID_LOCALE = 1,
 		}
-		[AllowDuplicates]
 		public enum ULocAvailableType : int32
 		{
 			DEFAULT = 0,
 			ONLY_LEGACY_ALIASES = 1,
 			WITH_LEGACY_ALIASES = 2,
 		}
-		[AllowDuplicates]
 		public enum ULayoutType : int32
 		{
 			LTR = 0,
@@ -1411,14 +1386,12 @@ namespace Win32
 			BTT = 3,
 			UNKNOWN = 4,
 		}
-		[AllowDuplicates]
 		public enum UAcceptResult : int32
 		{
 			FAILED = 0,
 			VALID = 1,
 			FALLBACK = 2,
 		}
-		[AllowDuplicates]
 		public enum UResType : int32
 		{
 			NONE = -1,
@@ -1430,7 +1403,6 @@ namespace Win32
 			ARRAY = 8,
 			INT_VECTOR = 14,
 		}
-		[AllowDuplicates]
 		public enum UDisplayContextType : int32
 		{
 			DIALECT_HANDLING = 0,
@@ -1438,7 +1410,6 @@ namespace Win32
 			DISPLAY_LENGTH = 2,
 			SUBSTITUTE_HANDLING = 3,
 		}
-		[AllowDuplicates]
 		public enum UDisplayContext : int32
 		{
 			STANDARD_NAMES = 0,
@@ -1453,26 +1424,22 @@ namespace Win32
 			SUBSTITUTE = 768,
 			NO_SUBSTITUTE = 769,
 		}
-		[AllowDuplicates]
 		public enum UDialectHandling : int32
 		{
 			STANDARD_NAMES = 0,
 			DIALECT_NAMES = 1,
 		}
-		[AllowDuplicates]
 		public enum UCurrencyUsage : int32
 		{
 			STANDARD = 0,
 			CASH = 1,
 		}
-		[AllowDuplicates]
 		public enum UCurrNameStyle : int32
 		{
 			SYMBOL_NAME = 0,
 			LONG_NAME = 1,
 			NARROW_SYMBOL_NAME = 2,
 		}
-		[AllowDuplicates]
 		public enum UCurrCurrencyType : int32
 		{
 			ALL = 2147483647,
@@ -1481,21 +1448,18 @@ namespace Win32
 			DEPRECATED = 4,
 			NON_DEPRECATED = 8,
 		}
-		[AllowDuplicates]
 		public enum UCPMapRangeOption : int32
 		{
 			NORMAL = 0,
 			FIXED_LEAD_SURROGATES = 1,
 			FIXED_ALL_SURROGATES = 2,
 		}
-		[AllowDuplicates]
 		public enum UCPTrieType : int32
 		{
 			ANY = -1,
 			FAST = 0,
 			SMALL = 1,
 		}
-		[AllowDuplicates]
 		public enum UCPTrieValueWidth : int32
 		{
 			ANY = -1,
@@ -1503,7 +1467,6 @@ namespace Win32
 			_32 = 1,
 			_8 = 2,
 		}
-		[AllowDuplicates]
 		public enum UConverterCallbackReason : int32
 		{
 			UNASSIGNED = 0,
@@ -1554,13 +1517,11 @@ namespace Win32
 			COMPOUND_TEXT = 33,
 			NUMBER_OF_SUPPORTED_CONVERTER_TYPES = 34,
 		}
-		[AllowDuplicates]
 		public enum UConverterPlatform : int32
 		{
 			UNKNOWN = -1,
 			IBM = 0,
 		}
-		[AllowDuplicates]
 		public enum UConverterUnicodeSet : int32
 		{
 			SET = 0,
@@ -1718,7 +1679,6 @@ namespace Win32
 			FINAL_PUNCTUATION = 29,
 			CHAR_CATEGORY_COUNT = 30,
 		}
-		[AllowDuplicates]
 		public enum UCharDirection : int32
 		{
 			LEFT_TO_RIGHT = 0,
@@ -1745,7 +1705,6 @@ namespace Win32
 			RIGHT_TO_LEFT_ISOLATE = 21,
 			POP_DIRECTIONAL_ISOLATE = 22,
 		}
-		[AllowDuplicates]
 		public enum UBidiPairedBracketType : int32
 		{
 			NONE = 0,
@@ -2068,7 +2027,6 @@ namespace Win32
 			YEZIDI = 308,
 			INVALID_CODE = -1,
 		}
-		[AllowDuplicates]
 		public enum UEastAsianWidth : int32
 		{
 			NEUTRAL = 0,
@@ -2078,20 +2036,17 @@ namespace Win32
 			NARROW = 4,
 			WIDE = 5,
 		}
-		[AllowDuplicates]
 		public enum UCharNameChoice : int32
 		{
 			UNICODE_CHAR_NAME = 0,
 			EXTENDED_CHAR_NAME = 2,
 			CHAR_NAME_ALIAS = 3,
 		}
-		[AllowDuplicates]
 		public enum UPropertyNameChoice : int32
 		{
 			SHORT_PROPERTY_NAME = 0,
 			LONG_PROPERTY_NAME = 1,
 		}
-		[AllowDuplicates]
 		public enum UDecompositionType : int32
 		{
 			NONE = 0,
@@ -2113,7 +2068,6 @@ namespace Win32
 			VERTICAL = 16,
 			WIDE = 17,
 		}
-		[AllowDuplicates]
 		public enum UJoiningType : int32
 		{
 			NON_JOINING = 0,
@@ -2230,7 +2184,6 @@ namespace Win32
 			HANIFI_ROHINGYA_KINNA_YA = 100,
 			HANIFI_ROHINGYA_PA = 101,
 		}
-		[AllowDuplicates]
 		public enum UGraphemeClusterBreak : int32
 		{
 			OTHER = 0,
@@ -2252,7 +2205,6 @@ namespace Win32
 			GLUE_AFTER_ZWJ = 16,
 			ZWJ = 17,
 		}
-		[AllowDuplicates]
 		public enum UWordBreakValues : int32
 		{
 			OTHER = 0,
@@ -2279,7 +2231,6 @@ namespace Win32
 			ZWJ = 21,
 			WSEGSPACE = 22,
 		}
-		[AllowDuplicates]
 		public enum USentenceBreak : int32
 		{
 			OTHER = 0,
@@ -2346,7 +2297,6 @@ namespace Win32
 			E_MODIFIER = 41,
 			ZWJ = 42,
 		}
-		[AllowDuplicates]
 		public enum UNumericType : int32
 		{
 			NONE = 0,
@@ -2354,7 +2304,6 @@ namespace Win32
 			DIGIT = 2,
 			NUMERIC = 3,
 		}
-		[AllowDuplicates]
 		public enum UHangulSyllableType : int32
 		{
 			NOT_APPLICABLE = 0,
@@ -2364,7 +2313,6 @@ namespace Win32
 			LV_SYLLABLE = 4,
 			LVT_SYLLABLE = 5,
 		}
-		[AllowDuplicates]
 		public enum UIndicPositionalCategory : int32
 		{
 			NA = 0,
@@ -2384,7 +2332,6 @@ namespace Win32
 			VISUAL_ORDER_LEFT = 14,
 			TOP_AND_BOTTOM_AND_LEFT = 15,
 		}
-		[AllowDuplicates]
 		public enum UIndicSyllabicCategory : int32
 		{
 			OTHER = 0,
@@ -2424,7 +2371,6 @@ namespace Win32
 			VOWEL_DEPENDENT = 34,
 			VOWEL_INDEPENDENT = 35,
 		}
-		[AllowDuplicates]
 		public enum UVerticalOrientation : int32
 		{
 			ROTATED = 0,
@@ -2432,7 +2378,6 @@ namespace Win32
 			TRANSFORMED_UPRIGHT = 2,
 			UPRIGHT = 3,
 		}
-		[AllowDuplicates]
 		public enum UBiDiDirection : int32
 		{
 			LTR = 0,
@@ -2440,7 +2385,6 @@ namespace Win32
 			MIXED = 2,
 			NEUTRAL = 3,
 		}
-		[AllowDuplicates]
 		public enum UBiDiReorderingMode : int32
 		{
 			DEFAULT = 0,
@@ -2451,7 +2395,6 @@ namespace Win32
 			INVERSE_LIKE_DIRECT = 5,
 			INVERSE_FOR_NUMBERS_SPECIAL = 6,
 		}
-		[AllowDuplicates]
 		public enum UBiDiReorderingOption : int32
 		{
 			DEFAULT = 0,
@@ -2459,26 +2402,22 @@ namespace Win32
 			REMOVE_CONTROLS = 2,
 			STREAMING = 4,
 		}
-		[AllowDuplicates]
 		public enum UBiDiOrder : int32
 		{
 			LOGICAL = 0,
 			VISUAL = 1,
 		}
-		[AllowDuplicates]
 		public enum UBiDiMirroring : int32
 		{
 			FF = 0,
 			N = 1,
 		}
-		[AllowDuplicates]
 		public enum USetSpanCondition : int32
 		{
 			NOT_CONTAINED = 0,
 			CONTAINED = 1,
 			SIMPLE = 2,
 		}
-		[AllowDuplicates]
 		public enum UNormalization2Mode : int32
 		{
 			COMPOSE = 0,
@@ -2486,7 +2425,6 @@ namespace Win32
 			FCD = 2,
 			COMPOSE_CONTIGUOUS = 3,
 		}
-		[AllowDuplicates]
 		public enum UNormalizationCheckResult : int32
 		{
 			NO = 0,
@@ -2505,7 +2443,6 @@ namespace Win32
 			FCD = 6,
 			MODE_COUNT = 7,
 		}
-		[AllowDuplicates]
 		public enum UStringPrepProfileType : int32
 		{
 			_3491_NAMEPREP = 0,
@@ -2523,7 +2460,6 @@ namespace Win32
 			_4518_LDAP = 12,
 			_4518_LDAP_CI = 13,
 		}
-		[AllowDuplicates]
 		public enum UBreakIteratorType : int32
 		{
 			CHARACTER = 0,
@@ -2597,7 +2533,6 @@ namespace Win32
 			FIELD_COUNT = 23,
 			DAY_OF_MONTH = 5,
 		}
-		[AllowDuplicates]
 		public enum UCalendarDaysOfWeek : int32
 		{
 			SUNDAY = 1,
@@ -2608,7 +2543,6 @@ namespace Win32
 			FRIDAY = 6,
 			SATURDAY = 7,
 		}
-		[AllowDuplicates]
 		public enum UCalendarMonths : int32
 		{
 			JANUARY = 0,
@@ -2625,20 +2559,17 @@ namespace Win32
 			DECEMBER = 11,
 			UNDECIMBER = 12,
 		}
-		[AllowDuplicates]
 		public enum UCalendarAMPMs : int32
 		{
 			AM = 0,
 			PM = 1,
 		}
-		[AllowDuplicates]
 		public enum USystemTimeZoneType : int32
 		{
 			ANY = 0,
 			CANONICAL = 1,
 			CANONICAL_LOCATION = 2,
 		}
-		[AllowDuplicates]
 		public enum UCalendarDisplayNameType : int32
 		{
 			STANDARD = 0,
@@ -2646,7 +2577,6 @@ namespace Win32
 			DST = 2,
 			SHORT_DST = 3,
 		}
-		[AllowDuplicates]
 		public enum UCalendarAttribute : int32
 		{
 			LENIENT = 0,
@@ -2655,14 +2585,12 @@ namespace Win32
 			REPEATED_WALL_TIME = 3,
 			SKIPPED_WALL_TIME = 4,
 		}
-		[AllowDuplicates]
 		public enum UCalendarWallTimeOption : int32
 		{
 			LAST = 0,
 			FIRST = 1,
 			NEXT_VALID = 2,
 		}
-		[AllowDuplicates]
 		public enum UCalendarLimitType : int32
 		{
 			MINIMUM = 0,
@@ -2672,7 +2600,6 @@ namespace Win32
 			ACTUAL_MINIMUM = 4,
 			ACTUAL_MAXIMUM = 5,
 		}
-		[AllowDuplicates]
 		public enum UCalendarWeekdayType : int32
 		{
 			DAY = 0,
@@ -2680,7 +2607,6 @@ namespace Win32
 			END_ONSET = 2,
 			END_CEASE = 3,
 		}
-		[AllowDuplicates]
 		public enum UTimeZoneTransitionType : int32
 		{
 			NEXT = 0,
@@ -2688,7 +2614,6 @@ namespace Win32
 			PREVIOUS = 2,
 			PREVIOUS_INCLUSIVE = 3,
 		}
-		[AllowDuplicates]
 		public enum UCollationResult : int32
 		{
 			EQUAL = 0,
@@ -2740,20 +2665,17 @@ namespace Win32
 			NUMERIC_COLLATION = 7,
 			ATTRIBUTE_COUNT = 8,
 		}
-		[AllowDuplicates]
 		public enum UColRuleOption : int32
 		{
 			TAILORING_ONLY = 0,
 			FULL_RULES = 1,
 		}
-		[AllowDuplicates]
 		public enum UColBoundMode : int32
 		{
 			LOWER = 0,
 			UPPER = 1,
 			UPPER_LONG = 2,
 		}
-		[AllowDuplicates]
 		public enum UFormattableType : int32
 		{
 			DATE = 0,
@@ -2764,7 +2686,6 @@ namespace Win32
 			INT64 = 5,
 			OBJECT = 6,
 		}
-		[AllowDuplicates]
 		public enum UFieldCategory : int32
 		{
 			UNDEFINED = 0,
@@ -2776,34 +2697,29 @@ namespace Win32
 			LIST_SPAN = 4099,
 			DATE_INTERVAL_SPAN = 4101,
 		}
-		[AllowDuplicates]
 		public enum UGender : int32
 		{
 			MALE = 0,
 			FEMALE = 1,
 			OTHER = 2,
 		}
-		[AllowDuplicates]
 		public enum UListFormatterField : int32
 		{
 			LITERAL_FIELD = 0,
 			ELEMENT_FIELD = 1,
 		}
-		[AllowDuplicates]
 		public enum UListFormatterType : int32
 		{
 			AND = 0,
 			OR = 1,
 			UNITS = 2,
 		}
-		[AllowDuplicates]
 		public enum UListFormatterWidth : int32
 		{
 			WIDE = 0,
 			SHORT = 1,
 			NARROW = 2,
 		}
-		[AllowDuplicates]
 		public enum ULocaleDataExemplarSetType : int32
 		{
 			STANDARD = 0,
@@ -2811,7 +2727,6 @@ namespace Win32
 			INDEX = 2,
 			PUNCTUATION = 3,
 		}
-		[AllowDuplicates]
 		public enum ULocaleDataDelimiterType : int32
 		{
 			QUOTATION_START = 0,
@@ -2819,7 +2734,6 @@ namespace Win32
 			ALT_QUOTATION_START = 2,
 			ALT_QUOTATION_END = 3,
 		}
-		[AllowDuplicates]
 		public enum UMeasurementSystem : int32
 		{
 			SI = 0,
@@ -2849,7 +2763,6 @@ namespace Win32
 			DEFAULT = 1,
 			IGNORE = 0,
 		}
-		[AllowDuplicates]
 		public enum UNumberFormatRoundingMode : int32
 		{
 			CEILING = 0,
@@ -2861,7 +2774,6 @@ namespace Win32
 			HALFUP = 6,
 			UNNECESSARY = 7,
 		}
-		[AllowDuplicates]
 		public enum UNumberFormatPadPosition : int32
 		{
 			BEFORE_PREFIX = 0,
@@ -2869,13 +2781,11 @@ namespace Win32
 			BEFORE_SUFFIX = 2,
 			AFTER_SUFFIX = 3,
 		}
-		[AllowDuplicates]
 		public enum UNumberCompactStyle : int32
 		{
 			SHORT = 0,
 			LONG = 1,
 		}
-		[AllowDuplicates]
 		public enum UCurrencySpacing : int32
 		{
 			MATCH = 0,
@@ -2883,7 +2793,6 @@ namespace Win32
 			INSERT = 2,
 			SPACING_COUNT = 3,
 		}
-		[AllowDuplicates]
 		public enum UNumberFormatFields : int32
 		{
 			INTEGER_FIELD = 0,
@@ -2900,12 +2809,10 @@ namespace Win32
 			MEASURE_UNIT_FIELD = 11,
 			COMPACT_FIELD = 12,
 		}
-		[AllowDuplicates]
 		public enum UNumberFormatAttributeValue : int32
 		{
 			UNUM_FORMAT_ATTRIBUTE_VALUE_HIDDEN = 0,
 		}
-		[AllowDuplicates]
 		public enum UNumberFormatAttribute : int32
 		{
 			PARSE_INT_ONLY = 0,
@@ -2938,7 +2845,6 @@ namespace Win32
 			PARSE_CASE_SENSITIVE = 4099,
 			SIGN_ALWAYS_SHOWN = 4100,
 		}
-		[AllowDuplicates]
 		public enum UNumberFormatTextAttribute : int32
 		{
 			POSITIVE_PREFIX = 0,
@@ -2950,7 +2856,6 @@ namespace Win32
 			DEFAULT_RULESET = 6,
 			PUBLIC_RULESETS = 7,
 		}
-		[AllowDuplicates]
 		public enum UNumberFormatSymbol : int32
 		{
 			DECIMAL_SEPARATOR_SYMBOL = 0,
@@ -2998,7 +2903,6 @@ namespace Win32
 			NONE = -1,
 			PATTERN = -2,
 		}
-		[AllowDuplicates]
 		public enum UDateFormatField : int32
 		{
 			ERA_FIELD = 0,
@@ -3038,7 +2942,6 @@ namespace Win32
 			AM_PM_MIDNIGHT_NOON_FIELD = 35,
 			FLEXIBLE_DAY_PERIOD_FIELD = 36,
 		}
-		[AllowDuplicates]
 		public enum UDateFormatBooleanAttribute : int32
 		{
 			PARSE_ALLOW_WHITESPACE = 0,
@@ -3047,7 +2950,6 @@ namespace Win32
 			PARSE_MULTIPLE_PATTERNS_FOR_MATCH = 3,
 			BOOLEAN_ATTRIBUTE_COUNT = 4,
 		}
-		[AllowDuplicates]
 		public enum UDateFormatSymbolType : int32
 		{
 			ERAS = 0,
@@ -3079,7 +2981,6 @@ namespace Win32
 			ZODIAC_NAMES_ABBREVIATED = 26,
 			ZODIAC_NAMES_NARROW = 27,
 		}
-		[AllowDuplicates]
 		public enum UDateTimePatternField : int32
 		{
 			ERA_FIELD = 0,
@@ -3100,28 +3001,24 @@ namespace Win32
 			ZONE_FIELD = 15,
 			FIELD_COUNT = 16,
 		}
-		[AllowDuplicates]
 		public enum UDateTimePGDisplayWidth : int32
 		{
 			WIDE = 0,
 			ABBREVIATED = 1,
 			NARROW = 2,
 		}
-		[AllowDuplicates]
 		public enum UDateTimePatternMatchOptions : int32
 		{
 			NO_OPTIONS = 0,
 			HOUR_FIELD_LENGTH = 2048,
 			ALL_FIELDS_LENGTH = 65535,
 		}
-		[AllowDuplicates]
 		public enum UDateTimePatternConflict : int32
 		{
 			NO_CONFLICT = 0,
 			BASE_CONFLICT = 1,
 			CONFLICT = 2,
 		}
-		[AllowDuplicates]
 		public enum UNumberUnitWidth : int32
 		{
 			NARROW = 0,
@@ -3131,7 +3028,6 @@ namespace Win32
 			HIDDEN = 4,
 			COUNT = 5,
 		}
-		[AllowDuplicates]
 		public enum UNumberGroupingStrategy : int32
 		{
 			OFF = 0,
@@ -3140,7 +3036,6 @@ namespace Win32
 			ON_ALIGNED = 3,
 			THOUSANDS = 4,
 		}
-		[AllowDuplicates]
 		public enum UNumberSignDisplay : int32
 		{
 			AUTO = 0,
@@ -3152,14 +3047,12 @@ namespace Win32
 			ACCOUNTING_EXCEPT_ZERO = 6,
 			COUNT = 7,
 		}
-		[AllowDuplicates]
 		public enum UNumberDecimalSeparatorDisplay : int32
 		{
 			AUTO = 0,
 			ALWAYS = 1,
 			COUNT = 2,
 		}
-		[AllowDuplicates]
 		public enum UNumberRangeCollapse : int32
 		{
 			AUTO = 0,
@@ -3167,7 +3060,6 @@ namespace Win32
 			UNIT = 2,
 			ALL = 3,
 		}
-		[AllowDuplicates]
 		public enum UNumberRangeIdentityFallback : int32
 		{
 			SINGLE_VALUE = 0,
@@ -3175,20 +3067,17 @@ namespace Win32
 			APPROXIMATELY = 2,
 			RANGE = 3,
 		}
-		[AllowDuplicates]
 		public enum UNumberRangeIdentityResult : int32
 		{
 			EQUAL_BEFORE_ROUNDING = 0,
 			EQUAL_AFTER_ROUNDING = 1,
 			NOT_EQUAL = 2,
 		}
-		[AllowDuplicates]
 		public enum UPluralType : int32
 		{
 			CARDINAL = 0,
 			ORDINAL = 1,
 		}
-		[AllowDuplicates]
 		public enum URegexpFlag : int32
 		{
 			CASE_INSENSITIVE = 2,
@@ -3200,7 +3089,6 @@ namespace Win32
 			UWORD = 256,
 			ERROR_ON_UNKNOWN_ESCAPES = 512,
 		}
-		[AllowDuplicates]
 		public enum URegionType : int32
 		{
 			UNKNOWN = 0,
@@ -3211,14 +3099,12 @@ namespace Win32
 			GROUPING = 5,
 			DEPRECATED = 6,
 		}
-		[AllowDuplicates]
 		public enum UDateRelativeDateTimeFormatterStyle : int32
 		{
 			LONG = 0,
 			SHORT = 1,
 			NARROW = 2,
 		}
-		[AllowDuplicates]
 		public enum URelativeDateTimeUnit : int32
 		{
 			YEAR = 0,
@@ -3237,19 +3123,16 @@ namespace Win32
 			FRIDAY = 13,
 			SATURDAY = 14,
 		}
-		[AllowDuplicates]
 		public enum URelativeDateTimeFormatterField : int32
 		{
 			LITERAL_FIELD = 0,
 			NUMERIC_FIELD = 1,
 		}
-		[AllowDuplicates]
 		public enum USearchAttribute : int32
 		{
 			OVERLAP = 0,
 			ELEMENT_COMPARISON = 2,
 		}
-		[AllowDuplicates]
 		public enum USearchAttributeValue : int32
 		{
 			DEFAULT = -1,
@@ -3259,7 +3142,6 @@ namespace Win32
 			PATTERN_BASE_WEIGHT_IS_WILDCARD = 3,
 			ANY_BASE_WEIGHT_IS_WILDCARD = 4,
 		}
-		[AllowDuplicates]
 		public enum USpoofChecks : int32
 		{
 			SINGLE_SCRIPT_CONFUSABLE = 1,
@@ -3274,7 +3156,6 @@ namespace Win32
 			ALL_CHECKS = 65535,
 			AUX_INFO = 1073741824,
 		}
-		[AllowDuplicates]
 		public enum URestrictionLevel : int32
 		{
 			ASCII = 268435456,
@@ -3285,7 +3166,6 @@ namespace Win32
 			UNRESTRICTIVE = 1610612736,
 			RESTRICTION_LEVEL_MASK = 2130706432,
 		}
-		[AllowDuplicates]
 		public enum UDateTimeScale : int32
 		{
 			JAVA_TIME = 0,
@@ -3299,7 +3179,6 @@ namespace Win32
 			DB2_TIME = 8,
 			UNIX_MICROSECONDS_TIME = 9,
 		}
-		[AllowDuplicates]
 		public enum UTimeScaleValue : int32
 		{
 			UNITS_VALUE = 0,
@@ -3309,25 +3188,21 @@ namespace Win32
 			TO_MIN_VALUE = 4,
 			TO_MAX_VALUE = 5,
 		}
-		[AllowDuplicates]
 		public enum UTransDirection : int32
 		{
 			FORWARD = 0,
 			REVERSE = 1,
 		}
-		[AllowDuplicates]
 		public enum UStringTrieBuildOption : int32
 		{
 			FAST = 0,
 			SMALL = 1,
 		}
-		[AllowDuplicates]
 		public enum UMessagePatternApostropheMode : int32
 		{
 			OPTIONAL = 0,
 			REQUIRED = 1,
 		}
-		[AllowDuplicates]
 		public enum UMessagePatternPartType : int32
 		{
 			MSG_START = 0,
@@ -3345,7 +3220,6 @@ namespace Win32
 			ARG_INT = 12,
 			ARG_DOUBLE = 13,
 		}
-		[AllowDuplicates]
 		public enum UMessagePatternArgType : int32
 		{
 			NONE = 0,
@@ -3355,7 +3229,6 @@ namespace Win32
 			SELECT = 4,
 			SELECTORDINAL = 5,
 		}
-		[AllowDuplicates]
 		public enum UAlphabeticIndexLabelType : int32
 		{
 			NORMAL = 0,
@@ -3363,7 +3236,6 @@ namespace Win32
 			INFLOW = 2,
 			OVERFLOW = 3,
 		}
-		[AllowDuplicates]
 		public enum UTimeZoneNameType : int32
 		{
 			UNKNOWN = 0,
@@ -3375,7 +3247,6 @@ namespace Win32
 			SHORT_DAYLIGHT = 32,
 			EXEMPLAR_LOCATION = 64,
 		}
-		[AllowDuplicates]
 		public enum UTimeZoneFormatStyle : int32
 		{
 			GENERIC_LOCATION = 0,
@@ -3399,7 +3270,6 @@ namespace Win32
 			ZONE_ID_SHORT = 18,
 			EXEMPLAR_LOCATION = 19,
 		}
-		[AllowDuplicates]
 		public enum UTimeZoneFormatGMTOffsetPatternType : int32
 		{
 			POSITIVE_HM = 0,
@@ -3410,21 +3280,18 @@ namespace Win32
 			NEGATIVE_H = 5,
 			COUNT = 6,
 		}
-		[AllowDuplicates]
 		public enum UTimeZoneFormatTimeType : int32
 		{
 			UNKNOWN = 0,
 			STANDARD = 1,
 			DAYLIGHT = 2,
 		}
-		[AllowDuplicates]
 		public enum UTimeZoneFormatParseOption : int32
 		{
 			NONE = 0,
 			ALL_STYLES = 1,
 			TZ_DATABASE_ABBREVIATIONS = 2,
 		}
-		[AllowDuplicates]
 		public enum UMeasureFormatWidth : int32
 		{
 			WIDE = 0,
@@ -3433,7 +3300,6 @@ namespace Win32
 			NUMERIC = 3,
 			COUNT = 4,
 		}
-		[AllowDuplicates]
 		public enum UDateRelativeUnit : int32
 		{
 			SECONDS = 0,
@@ -3445,7 +3311,6 @@ namespace Win32
 			YEARS = 6,
 			UNIT_COUNT = 7,
 		}
-		[AllowDuplicates]
 		public enum UDateAbsoluteUnit : int32
 		{
 			SUNDAY = 0,
@@ -3462,7 +3327,6 @@ namespace Win32
 			NOW = 11,
 			UNIT_COUNT = 12,
 		}
-		[AllowDuplicates]
 		public enum UDateDirection : int32
 		{
 			LAST_2 = 0,
@@ -3473,7 +3337,6 @@ namespace Win32
 			PLAIN = 5,
 			COUNT = 6,
 		}
-		[AllowDuplicates]
 		public enum MIMECONTF : int32
 		{
 			MAILNEWS = 1,
@@ -3549,7 +3412,6 @@ namespace Win32
 			NOBESTFITCHARS = 16,
 			DETECTJPN = 32,
 		}
-		[AllowDuplicates]
 		public enum tagMLCPF : int32
 		{
 			MAILNEWS = 1,
@@ -3561,7 +3423,6 @@ namespace Win32
 			FILTER_SPECIALCHAR = 64,
 			EURO_UTF8 = 128,
 		}
-		[AllowDuplicates]
 		public enum MLDETECTCP : int32
 		{
 			NONE = 0,
@@ -3571,7 +3432,6 @@ namespace Win32
 			HTML = 8,
 			NUMBER = 16,
 		}
-		[AllowDuplicates]
 		public enum SCRIPTFONTCONTF : int32
 		{
 			FIXED_FONT = 1,
@@ -3580,7 +3440,6 @@ namespace Win32
 			SCRIPT_HIDE = 131072,
 			SCRIPT_SYSTEM = 262144,
 		}
-		[AllowDuplicates]
 		public enum MLSTR_FLAGS : int32
 		{
 			READ = 1,

@@ -127,7 +127,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum VER_FLAGS : uint32
 		{
 			MINORVERSION = 1,
@@ -139,14 +138,12 @@ namespace Win32
 			SUITENAME = 64,
 			PRODUCT_TYPE = 128,
 		}
-		[AllowDuplicates]
 		public enum FIRMWARE_TABLE_PROVIDER : uint32
 		{
 			ACPI = 1094930505,
 			FIRM = 1179210317,
 			RSMB = 1381190978,
 		}
-		[AllowDuplicates]
 		public enum USER_CET_ENVIRONMENT : uint32
 		{
 			WIN32_PROCESS = 0,
@@ -154,7 +151,6 @@ namespace Win32
 			VBS_ENCLAVE = 16,
 			VBS_BASIC_ENCLAVE = 17,
 		}
-		[AllowDuplicates]
 		public enum OS_PRODUCT_TYPE : uint32
 		{
 			BUSINESS = 6,
@@ -328,7 +324,6 @@ namespace Win32
 			XBOX_RESERVED_09 = 45,
 			MAX = 45,
 		}
-		[AllowDuplicates]
 		public enum COMPUTER_NAME_FORMAT : int32
 		{
 			NetBIOS = 0,
@@ -341,7 +336,6 @@ namespace Win32
 			PhysicalDnsFullyQualified = 7,
 			Max = 8,
 		}
-		[AllowDuplicates]
 		public enum FIRMWARE_TYPE : int32
 		{
 			Unknown = 0,
@@ -349,7 +343,6 @@ namespace Win32
 			Uefi = 2,
 			Max = 3,
 		}
-		[AllowDuplicates]
 		public enum LOGICAL_PROCESSOR_RELATIONSHIP : int32
 		{
 			ProcessorCore = 0,
@@ -362,7 +355,6 @@ namespace Win32
 			ProcessorModule = 7,
 			All = 65535,
 		}
-		[AllowDuplicates]
 		public enum PROCESSOR_CACHE_TYPE : int32
 		{
 			Unified = 0,
@@ -370,18 +362,15 @@ namespace Win32
 			Data = 2,
 			Trace = 3,
 		}
-		[AllowDuplicates]
 		public enum CPU_SET_INFORMATION_TYPE : int32
 		{
 			CpuSetInformation = 0,
 		}
-		[AllowDuplicates]
 		public enum OS_DEPLOYEMENT_STATE_VALUES : int32
 		{
 			STANDARD = 1,
 			COMPACT = 2,
 		}
-		[AllowDuplicates]
 		public enum RTL_SYSTEM_GLOBAL_DATA_ID : int32
 		{
 			Unknown = 0,
@@ -399,7 +388,6 @@ namespace Win32
 			SafeBootMode = 12,
 			LastSystemRITEventTickCount = 13,
 		}
-		[AllowDuplicates]
 		public enum DEP_SYSTEM_POLICY_TYPE : int32
 		{
 			PolicyAlwaysOff = 0,

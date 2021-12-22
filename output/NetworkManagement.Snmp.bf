@@ -102,7 +102,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum SNMP_PDU_TYPE : uint32
 		{
 			GET = 160,
@@ -112,7 +111,6 @@ namespace Win32
 			GETBULK = 165,
 			TRAP = 167,
 		}
-		[AllowDuplicates]
 		public enum SNMP_EXTENSION_REQUEST_TYPE : uint32
 		{
 			GET = 160,
@@ -122,14 +120,12 @@ namespace Win32
 			SET_UNDO = 225,
 			SET_CLEANUP = 226,
 		}
-		[AllowDuplicates]
 		public enum SNMP_API_TRANSLATE_MODE : uint32
 		{
 			TRANSLATED = 0,
 			UNTRANSLATED_V1 = 1,
 			UNTRANSLATED_V2 = 2,
 		}
-		[AllowDuplicates]
 		public enum SNMP_GENERICTRAP : uint32
 		{
 			COLDSTART = 0,
@@ -140,7 +136,6 @@ namespace Win32
 			EGPNEIGHLOSS = 5,
 			ENTERSPECIFIC = 6,
 		}
-		[AllowDuplicates]
 		public enum SNMP_ERROR_STATUS : uint32
 		{
 			NOERROR = 0,
@@ -163,20 +158,17 @@ namespace Win32
 			NOTWRITABLE = 17,
 			INCONSISTENTNAME = 18,
 		}
-		[AllowDuplicates]
 		public enum SNMP_STATUS : uint32
 		{
 			N = 1,
 			FF = 0,
 		}
-		[AllowDuplicates]
 		public enum SNMP_OUTPUT_LOG_TYPE : uint32
 		{
 			CONSOLE = 1,
 			LOGFILE = 2,
 			DEBUGGER = 8,
 		}
-		[AllowDuplicates]
 		public enum SNMP_LOG : uint32
 		{
 			SILENT = 0,
@@ -186,7 +178,6 @@ namespace Win32
 			TRACE = 4,
 			VERBOSE = 5,
 		}
-		[AllowDuplicates]
 		public enum SNMP_ERROR : uint32
 		{
 			NOERROR = 0,

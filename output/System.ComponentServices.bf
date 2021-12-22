@@ -19,7 +19,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum COMAdminInUse : int32
 		{
 			NotInUse = 0,
@@ -29,20 +28,17 @@ namespace Win32
 			InUseByRegistryTypeLib = 4,
 			InUseByRegistryClsid = 5,
 		}
-		[AllowDuplicates]
 		public enum COMAdminComponentType : int32
 		{
 			_32BitComponent = 1,
 			_64BitComponent = 2,
 		}
-		[AllowDuplicates]
 		public enum COMAdminApplicationInstallOptions : int32
 		{
 			NoUsers = 0,
 			Users = 1,
 			ForceOverwriteOfFiles = 2,
 		}
-		[AllowDuplicates]
 		public enum COMAdminApplicationExportOptions : int32
 		{
 			NoUsers = 0,
@@ -51,7 +47,6 @@ namespace Win32
 			ForceOverwriteOfFiles = 4,
 			In10Format = 16,
 		}
-		[AllowDuplicates]
 		public enum COMAdminThreadingModels : int32
 		{
 			Apartment = 0,
@@ -61,7 +56,6 @@ namespace Win32
 			Neutral = 4,
 			NotSpecified = 5,
 		}
-		[AllowDuplicates]
 		public enum COMAdminTransactionOptions : int32
 		{
 			Ignored = 0,
@@ -70,7 +64,6 @@ namespace Win32
 			Required = 3,
 			RequiresNew = 4,
 		}
-		[AllowDuplicates]
 		public enum COMAdminTxIsolationLevelOptions : int32
 		{
 			Any = 0,
@@ -79,7 +72,6 @@ namespace Win32
 			RepeatableRead = 3,
 			Serializable = 4,
 		}
-		[AllowDuplicates]
 		public enum COMAdminSynchronizationOptions : int32
 		{
 			Ignored = 0,
@@ -88,19 +80,16 @@ namespace Win32
 			Required = 3,
 			RequiresNew = 4,
 		}
-		[AllowDuplicates]
 		public enum COMAdminActivationOptions : int32
 		{
 			Inproc = 0,
 			Local = 1,
 		}
-		[AllowDuplicates]
 		public enum COMAdminAccessChecksLevelOptions : int32
 		{
 			Level = 0,
 			ComponentLevel = 1,
 		}
-		[AllowDuplicates]
 		public enum COMAdminAuthenticationLevelOptions : int32
 		{
 			Default = 0,
@@ -111,7 +100,6 @@ namespace Win32
 			Integrity = 5,
 			Privacy = 6,
 		}
-		[AllowDuplicates]
 		public enum COMAdminImpersonationLevelOptions : int32
 		{
 			Anonymous = 1,
@@ -119,7 +107,6 @@ namespace Win32
 			Impersonate = 3,
 			Delegate = 4,
 		}
-		[AllowDuplicates]
 		public enum COMAdminAuthenticationCapabilitiesOptions : int32
 		{
 			None = 0,
@@ -127,7 +114,6 @@ namespace Win32
 			StaticCloaking = 32,
 			DynamicCloaking = 64,
 		}
-		[AllowDuplicates]
 		public enum COMAdminOS : int32
 		{
 			NotInitialized = 0,
@@ -168,12 +154,10 @@ namespace Win32
 			WindowsBlueDatacenterServer = 39,
 			WindowsBlueWebServer = 40,
 		}
-		[AllowDuplicates]
 		public enum COMAdminServiceOptions : int32
 		{
 			COMAdminServiceLoadBalanceRouter = 1,
 		}
-		[AllowDuplicates]
 		public enum COMAdminServiceStatusOptions : int32
 		{
 			Stopped = 0,
@@ -185,14 +169,12 @@ namespace Win32
 			Paused = 6,
 			UnknownState = 7,
 		}
-		[AllowDuplicates]
 		public enum COMAdminQCMessageAuthenticateOptions : int32
 		{
 			SecureApps = 0,
 			Off = 1,
 			On = 2,
 		}
-		[AllowDuplicates]
 		public enum COMAdminFileFlags : int32
 		{
 			Loadable = 1,
@@ -215,7 +197,6 @@ namespace Win32
 			RegistrarFailed = 131072,
 			Error = 262144,
 		}
-		[AllowDuplicates]
 		public enum COMAdminComponentFlags : int32
 		{
 			TypeInfoFound = 1,
@@ -225,7 +206,6 @@ namespace Win32
 			AlreadyInstalled = 16,
 			NotInApplication = 32,
 		}
-		[AllowDuplicates]
 		public enum COMAdminErrorCodes : int32
 		{
 			ObjectErrors = -2146368511,
@@ -317,21 +297,18 @@ namespace Win32
 			CompMovePrivate = -2146367458,
 			CannotCopyEventClass = -2146367456,
 		}
-		[AllowDuplicates]
 		public enum TRACKING_COLL_TYPE : int32
 		{
 			PROCESSES = 0,
 			APPLICATIONS = 1,
 			COMPONENTS = 2,
 		}
-		[AllowDuplicates]
 		public enum DUMPTYPE : int32
 		{
 			FULL = 0,
 			MINI = 1,
 			NONE = 2,
 		}
-		[AllowDuplicates]
 		public enum COMPLUS_APPTYPE : int32
 		{
 			UNKNOWN = -1,
@@ -339,7 +316,6 @@ namespace Win32
 			LIBRARY = 0,
 			SWC = 2,
 		}
-		[AllowDuplicates]
 		public enum GetAppTrackerDataFlags : int32
 		{
 			PROCESS_EXE_NAME = 1,
@@ -348,13 +324,11 @@ namespace Win32
 			CLASS_NAME = 8,
 			APPLICATION_NAME = 16,
 		}
-		[AllowDuplicates]
 		public enum TransactionVote : int32
 		{
 			Commit = 0,
 			Abort = 1,
 		}
-		[AllowDuplicates]
 		public enum CrmTransactionState : int32
 		{
 			Active = 0,
@@ -362,13 +336,11 @@ namespace Win32
 			Aborted = 2,
 			Indoubt = 3,
 		}
-		[AllowDuplicates]
 		public enum CSC_InheritanceConfig : int32
 		{
 			nherit = 0,
 			gnore = 1,
 		}
-		[AllowDuplicates]
 		public enum CSC_ThreadPool : int32
 		{
 			ThreadPoolNone = 0,
@@ -376,13 +348,11 @@ namespace Win32
 			STAThreadPool = 2,
 			MTAThreadPool = 3,
 		}
-		[AllowDuplicates]
 		public enum CSC_Binding : int32
 		{
 			NoBinding = 0,
 			BindToPoolThread = 1,
 		}
-		[AllowDuplicates]
 		public enum CSC_TransactionConfig : int32
 		{
 			NoTransaction = 0,
@@ -390,7 +360,6 @@ namespace Win32
 			CreateTransactionIfNecessary = 2,
 			NewTransaction = 3,
 		}
-		[AllowDuplicates]
 		public enum CSC_SynchronizationConfig : int32
 		{
 			NoSynchronization = 0,
@@ -398,39 +367,33 @@ namespace Win32
 			NewSynchronizationIfNecessary = 2,
 			NewSynchronization = 3,
 		}
-		[AllowDuplicates]
 		public enum CSC_TrackerConfig : int32
 		{
 			DontUseTracker = 0,
 			UseTracker = 1,
 		}
-		[AllowDuplicates]
 		public enum CSC_PartitionConfig : int32
 		{
 			NoPartition = 0,
 			InheritPartition = 1,
 			NewPartition = 2,
 		}
-		[AllowDuplicates]
 		public enum CSC_IISIntrinsicsConfig : int32
 		{
 			NoIISIntrinsics = 0,
 			InheritIISIntrinsics = 1,
 		}
-		[AllowDuplicates]
 		public enum CSC_COMTIIntrinsicsConfig : int32
 		{
 			NoCOMTIIntrinsics = 0,
 			InheritCOMTIIntrinsics = 1,
 		}
-		[AllowDuplicates]
 		public enum CSC_SxsConfig : int32
 		{
 			NoSxs = 0,
 			InheritSxs = 1,
 			NewSxs = 2,
 		}
-		[AllowDuplicates]
 		public enum AutoSvcs_Error_Constants : uint32
 		{
 			mtsErrCtxAborted = 2147803138,
@@ -460,19 +423,16 @@ namespace Win32
 			comqcErrMsmqConnectorUsed = 2148599381,
 			comqcErrBadMarshaledObject = 2148599382,
 		}
-		[AllowDuplicates]
 		public enum LockModes : int32
 		{
 			SetGet = 0,
 			Method = 1,
 		}
-		[AllowDuplicates]
 		public enum ReleaseModes : int32
 		{
 			Standard = 0,
 			Process = 1,
 		}
-		[AllowDuplicates]
 		public enum CRMFLAGS : int32
 		{
 			FORGETTARGET = 1,
@@ -483,7 +443,6 @@ namespace Win32
 			WRITTENDURINGREPLAY = 32,
 			REPLAYINPROGRESS = 64,
 		}
-		[AllowDuplicates]
 		public enum CRMREGFLAGS : int32
 		{
 			PREPAREPHASE = 1,

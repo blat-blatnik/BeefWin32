@@ -475,7 +475,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum D3D12_COMMAND_LIST_TYPE : int32
 		{
 			DIRECT = 0,
@@ -486,20 +485,17 @@ namespace Win32
 			VIDEO_PROCESS = 5,
 			VIDEO_ENCODE = 6,
 		}
-		[AllowDuplicates]
 		public enum D3D12_COMMAND_QUEUE_FLAGS : uint32
 		{
 			NONE = 0,
 			DISABLE_GPU_TIMEOUT = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_COMMAND_QUEUE_PRIORITY : int32
 		{
 			NORMAL = 0,
 			HIGH = 100,
 			GLOBAL_REALTIME = 10000,
 		}
-		[AllowDuplicates]
 		public enum D3D12_PRIMITIVE_TOPOLOGY_TYPE : int32
 		{
 			UNDEFINED = 0,
@@ -508,26 +504,22 @@ namespace Win32
 			TRIANGLE = 3,
 			PATCH = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_INPUT_CLASSIFICATION : int32
 		{
 			VERTEX_DATA = 0,
 			INSTANCE_DATA = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_FILL_MODE : int32
 		{
 			WIREFRAME = 2,
 			SOLID = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D12_CULL_MODE : int32
 		{
 			NONE = 1,
 			FRONT = 2,
 			BACK = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D12_COMPARISON_FUNC : int32
 		{
 			NEVER = 1,
@@ -539,13 +531,11 @@ namespace Win32
 			GREATER_EQUAL = 7,
 			ALWAYS = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D12_DEPTH_WRITE_MASK : int32
 		{
 			ZERO = 0,
 			ALL = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_STENCIL_OP : int32
 		{
 			KEEP = 1,
@@ -557,7 +547,6 @@ namespace Win32
 			INCR = 7,
 			DECR = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D12_BLEND : int32
 		{
 			ZERO = 1,
@@ -578,7 +567,6 @@ namespace Win32
 			SRC1_ALPHA = 18,
 			INV_SRC1_ALPHA = 19,
 		}
-		[AllowDuplicates]
 		public enum D3D12_BLEND_OP : int32
 		{
 			ADD = 1,
@@ -587,7 +575,6 @@ namespace Win32
 			MIN = 4,
 			MAX = 5,
 		}
-		[AllowDuplicates]
 		public enum D3D12_COLOR_WRITE_ENABLE : int32
 		{
 			RED = 1,
@@ -596,7 +583,6 @@ namespace Win32
 			ALPHA = 8,
 			ALL = 15,
 		}
-		[AllowDuplicates]
 		public enum D3D12_LOGIC_OP : int32
 		{
 			CLEAR = 0,
@@ -616,26 +602,22 @@ namespace Win32
 			OR_REVERSE = 14,
 			OR_INVERTED = 15,
 		}
-		[AllowDuplicates]
 		public enum D3D12_CONSERVATIVE_RASTERIZATION_MODE : int32
 		{
 			FF = 0,
 			N = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_INDEX_BUFFER_STRIP_CUT_VALUE : int32
 		{
 			DISABLED = 0,
 			_0xFFFF = 1,
 			_0xFFFFFFFF = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_PIPELINE_STATE_FLAGS : uint32
 		{
 			NONE = 0,
 			TOOL_DEBUG = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_PIPELINE_STATE_SUBOBJECT_TYPE : int32
 		{
 			ROOT_SIGNATURE = 0,
@@ -665,7 +647,6 @@ namespace Win32
 			MS = 25,
 			MAX_VALID = 26,
 		}
-		[AllowDuplicates]
 		public enum D3D12_FEATURE : int32
 		{
 			D3D12_OPTIONS = 0,
@@ -700,14 +681,12 @@ namespace Win32
 			D3D12_OPTIONS10 = 39,
 			D3D12_OPTIONS11 = 40,
 		}
-		[AllowDuplicates]
 		public enum D3D12_SHADER_MIN_PRECISION_SUPPORT : uint32
 		{
 			NONE = 0,
 			_10_BIT = 1,
 			_16_BIT = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_TILED_RESOURCES_TIER : int32
 		{
 			NOT_SUPPORTED = 0,
@@ -716,14 +695,12 @@ namespace Win32
 			_3 = 3,
 			_4 = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RESOURCE_BINDING_TIER : int32
 		{
 			_1 = 1,
 			_2 = 2,
 			_3 = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D12_CONSERVATIVE_RASTERIZATION_TIER : int32
 		{
 			NOT_SUPPORTED = 0,
@@ -731,7 +708,6 @@ namespace Win32
 			_2 = 2,
 			_3 = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D12_FORMAT_SUPPORT1 : uint32
 		{
 			NONE = 0,
@@ -765,7 +741,6 @@ namespace Win32
 			VIDEO_PROCESSOR_INPUT = 536870912,
 			VIDEO_ENCODER = 1073741824,
 		}
-		[AllowDuplicates]
 		public enum D3D12_FORMAT_SUPPORT2 : uint32
 		{
 			NONE = 0,
@@ -782,13 +757,11 @@ namespace Win32
 			MULTIPLANE_OVERLAY = 16384,
 			SAMPLER_FEEDBACK = 32768,
 		}
-		[AllowDuplicates]
 		public enum D3D12_MULTISAMPLE_QUALITY_LEVEL_FLAGS : uint32
 		{
 			NONE = 0,
 			TILED_RESOURCE = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_CROSS_NODE_SHARING_TIER : int32
 		{
 			NOT_SUPPORTED = 0,
@@ -797,20 +770,17 @@ namespace Win32
 			_2 = 3,
 			_3 = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RESOURCE_HEAP_TIER : int32
 		{
 			_1 = 1,
 			_2 = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER : int32
 		{
 			NOT_SUPPORTED = 0,
 			_1 = 1,
 			_2 = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_VIEW_INSTANCING_TIER : int32
 		{
 			NOT_SUPPORTED = 0,
@@ -825,7 +795,6 @@ namespace Win32
 			_1_0 = 1,
 			_1_1 = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D_SHADER_MODEL : int32
 		{
 			_5_1 = 81,
@@ -838,7 +807,6 @@ namespace Win32
 			_6_6 = 102,
 			_6_7 = 103,
 		}
-		[AllowDuplicates]
 		public enum D3D12_SHADER_CACHE_SUPPORT_FLAGS : uint32
 		{
 			NONE = 0,
@@ -850,7 +818,6 @@ namespace Win32
 			SHADER_CONTROL_CLEAR = 32,
 			SHADER_SESSION_DELETE = 64,
 		}
-		[AllowDuplicates]
 		public enum D3D12_COMMAND_LIST_SUPPORT_FLAGS : uint32
 		{
 			NONE = 0,
@@ -862,60 +829,51 @@ namespace Win32
 			VIDEO_PROCESS = 32,
 			VIDEO_ENCODE = 64,
 		}
-		[AllowDuplicates]
 		public enum D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER : int32
 		{
 			_0 = 0,
 			_1 = 1,
 			_2 = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_HEAP_SERIALIZATION_TIER : int32
 		{
 			_0 = 0,
 			_10 = 10,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RENDER_PASS_TIER : int32
 		{
 			_0 = 0,
 			_1 = 1,
 			_2 = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RAYTRACING_TIER : int32
 		{
 			NOT_SUPPORTED = 0,
 			_1_0 = 10,
 			_1_1 = 11,
 		}
-		[AllowDuplicates]
 		public enum D3D12_VARIABLE_SHADING_RATE_TIER : int32
 		{
 			NOT_SUPPORTED = 0,
 			_1 = 1,
 			_2 = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_MESH_SHADER_TIER : int32
 		{
 			NOT_SUPPORTED = 0,
 			_1 = 10,
 		}
-		[AllowDuplicates]
 		public enum D3D12_SAMPLER_FEEDBACK_TIER : int32
 		{
 			NOT_SUPPORTED = 0,
 			_0_9 = 90,
 			_1_0 = 100,
 		}
-		[AllowDuplicates]
 		public enum D3D12_WAVE_MMA_TIER : int32
 		{
 			NOT_SUPPORTED = 0,
 			_1_0 = 10,
 		}
-		[AllowDuplicates]
 		public enum D3D12_HEAP_TYPE : int32
 		{
 			DEFAULT = 1,
@@ -923,7 +881,6 @@ namespace Win32
 			READBACK = 3,
 			CUSTOM = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_CPU_PAGE_PROPERTY : int32
 		{
 			UNKNOWN = 0,
@@ -931,7 +888,6 @@ namespace Win32
 			WRITE_COMBINE = 2,
 			WRITE_BACK = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D12_MEMORY_POOL : int32
 		{
 			UNKNOWN = 0,
@@ -958,7 +914,6 @@ namespace Win32
 			ALLOW_ONLY_NON_RT_DS_TEXTURES = 68,
 			ALLOW_ONLY_RT_DS_TEXTURES = 132,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RESOURCE_DIMENSION : int32
 		{
 			UNKNOWN = 0,
@@ -967,7 +922,6 @@ namespace Win32
 			TEXTURE2D = 3,
 			TEXTURE3D = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_TEXTURE_LAYOUT : int32
 		{
 			UNKNOWN = 0,
@@ -975,7 +929,6 @@ namespace Win32
 			_64KB_UNDEFINED_SWIZZLE = 2,
 			_64KB_STANDARD_SWIZZLE = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RESOURCE_FLAGS : uint32
 		{
 			NONE = 0,
@@ -988,7 +941,6 @@ namespace Win32
 			VIDEO_DECODE_REFERENCE_ONLY = 64,
 			VIDEO_ENCODE_REFERENCE_ONLY = 128,
 		}
-		[AllowDuplicates]
 		public enum D3D12_TILE_RANGE_FLAGS : int32
 		{
 			NONE = 0,
@@ -996,13 +948,11 @@ namespace Win32
 			SKIP = 2,
 			REUSE_SINGLE_TILE = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_TILE_MAPPING_FLAGS : uint32
 		{
 			NE = 0,
 			_HAZARD = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_TILE_COPY_FLAGS : uint32
 		{
 			NONE = 0,
@@ -1041,27 +991,23 @@ namespace Win32
 			VIDEO_ENCODE_READ = 2097152,
 			VIDEO_ENCODE_WRITE = 8388608,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RESOURCE_BARRIER_TYPE : int32
 		{
 			TRANSITION = 0,
 			ALIASING = 1,
 			UAV = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RESOURCE_BARRIER_FLAGS : uint32
 		{
 			NONE = 0,
 			BEGIN_ONLY = 1,
 			END_ONLY = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_TEXTURE_COPY_TYPE : int32
 		{
 			SUBRESOURCE_INDEX = 0,
 			PLACED_FOOTPRINT = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RESOLVE_MODE : int32
 		{
 			DECOMPRESS = 0,
@@ -1071,13 +1017,11 @@ namespace Win32
 			ENCODE_SAMPLER_FEEDBACK = 4,
 			DECODE_SAMPLER_FEEDBACK = 5,
 		}
-		[AllowDuplicates]
 		public enum D3D12_VIEW_INSTANCING_FLAGS : uint32
 		{
 			NONE = 0,
 			ENABLE_VIEW_INSTANCE_MASKING = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_SHADER_COMPONENT_MAPPING : int32
 		{
 			ROM_MEMORY_COMPONENT_0 = 0,
@@ -1087,13 +1031,11 @@ namespace Win32
 			ORCE_VALUE_0 = 4,
 			ORCE_VALUE_1 = 5,
 		}
-		[AllowDuplicates]
 		public enum D3D12_BUFFER_SRV_FLAGS : uint32
 		{
 			NONE = 0,
 			RAW = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_SRV_DIMENSION : int32
 		{
 			UNKNOWN = 0,
@@ -1109,7 +1051,6 @@ namespace Win32
 			TEXTURECUBEARRAY = 10,
 			RAYTRACING_ACCELERATION_STRUCTURE = 11,
 		}
-		[AllowDuplicates]
 		public enum D3D12_FILTER : int32
 		{
 			MIN_MAG_MIP_POINT = 0,
@@ -1149,13 +1090,11 @@ namespace Win32
 			MAXIMUM_MIN_MAG_MIP_LINEAR = 405,
 			MAXIMUM_ANISOTROPIC = 469,
 		}
-		[AllowDuplicates]
 		public enum D3D12_FILTER_TYPE : int32
 		{
 			POINT = 0,
 			LINEAR = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_FILTER_REDUCTION_TYPE : int32
 		{
 			STANDARD = 0,
@@ -1163,7 +1102,6 @@ namespace Win32
 			MINIMUM = 2,
 			MAXIMUM = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D12_TEXTURE_ADDRESS_MODE : int32
 		{
 			WRAP = 1,
@@ -1172,13 +1110,11 @@ namespace Win32
 			BORDER = 4,
 			MIRROR_ONCE = 5,
 		}
-		[AllowDuplicates]
 		public enum D3D12_BUFFER_UAV_FLAGS : uint32
 		{
 			NONE = 0,
 			RAW = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_UAV_DIMENSION : int32
 		{
 			UNKNOWN = 0,
@@ -1189,7 +1125,6 @@ namespace Win32
 			TEXTURE2DARRAY = 5,
 			TEXTURE3D = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RTV_DIMENSION : int32
 		{
 			UNKNOWN = 0,
@@ -1202,14 +1137,12 @@ namespace Win32
 			TEXTURE2DMSARRAY = 7,
 			TEXTURE3D = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D12_DSV_FLAGS : uint32
 		{
 			NONE = 0,
 			READ_ONLY_DEPTH = 1,
 			READ_ONLY_STENCIL = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_DSV_DIMENSION : int32
 		{
 			UNKNOWN = 0,
@@ -1220,13 +1153,11 @@ namespace Win32
 			TEXTURE2DMS = 5,
 			TEXTURE2DMSARRAY = 6,
 		}
-		[AllowDuplicates]
 		public enum D3D12_CLEAR_FLAGS : uint32
 		{
 			DEPTH = 1,
 			STENCIL = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_FENCE_FLAGS : uint32
 		{
 			NONE = 0,
@@ -1234,7 +1165,6 @@ namespace Win32
 			SHARED_CROSS_ADAPTER = 2,
 			NON_MONITORED = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_DESCRIPTOR_HEAP_TYPE : int32
 		{
 			CBV_SRV_UAV = 0,
@@ -1243,13 +1173,11 @@ namespace Win32
 			DSV = 3,
 			NUM_TYPES = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_DESCRIPTOR_HEAP_FLAGS : uint32
 		{
 			NONE = 0,
 			SHADER_VISIBLE = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_DESCRIPTOR_RANGE_TYPE : int32
 		{
 			SRV = 0,
@@ -1257,7 +1185,6 @@ namespace Win32
 			CBV = 2,
 			SAMPLER = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D12_SHADER_VISIBILITY : int32
 		{
 			ALL = 0,
@@ -1269,7 +1196,6 @@ namespace Win32
 			AMPLIFICATION = 6,
 			MESH = 7,
 		}
-		[AllowDuplicates]
 		public enum D3D12_ROOT_PARAMETER_TYPE : int32
 		{
 			DESCRIPTOR_TABLE = 0,
@@ -1278,7 +1204,6 @@ namespace Win32
 			SRV = 3,
 			UAV = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_ROOT_SIGNATURE_FLAGS : uint32
 		{
 			NONE = 0,
@@ -1295,14 +1220,12 @@ namespace Win32
 			CBV_SRV_UAV_HEAP_DIRECTLY_INDEXED = 1024,
 			SAMPLER_HEAP_DIRECTLY_INDEXED = 2048,
 		}
-		[AllowDuplicates]
 		public enum D3D12_STATIC_BORDER_COLOR : int32
 		{
 			TRANSPARENT_BLACK = 0,
 			OPAQUE_BLACK = 1,
 			OPAQUE_WHITE = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_DESCRIPTOR_RANGE_FLAGS : uint32
 		{
 			NONE = 0,
@@ -1312,7 +1235,6 @@ namespace Win32
 			DATA_STATIC = 8,
 			DESCRIPTORS_STATIC_KEEPING_BUFFER_BOUNDS_CHECKS = 65536,
 		}
-		[AllowDuplicates]
 		public enum D3D12_ROOT_DESCRIPTOR_FLAGS : uint32
 		{
 			NONE = 0,
@@ -1320,7 +1242,6 @@ namespace Win32
 			DATA_STATIC_WHILE_SET_AT_EXECUTE = 4,
 			DATA_STATIC = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D12_QUERY_HEAP_TYPE : int32
 		{
 			OCCLUSION = 0,
@@ -1331,7 +1252,6 @@ namespace Win32
 			COPY_QUEUE_TIMESTAMP = 5,
 			PIPELINE_STATISTICS1 = 7,
 		}
-		[AllowDuplicates]
 		public enum D3D12_QUERY_TYPE : int32
 		{
 			OCCLUSION = 0,
@@ -1345,13 +1265,11 @@ namespace Win32
 			VIDEO_DECODE_STATISTICS = 8,
 			PIPELINE_STATISTICS1 = 10,
 		}
-		[AllowDuplicates]
 		public enum D3D12_PREDICATION_OP : int32
 		{
 			EQUAL_ZERO = 0,
 			NOT_EQUAL_ZERO = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_INDIRECT_ARGUMENT_TYPE : int32
 		{
 			DRAW = 0,
@@ -1366,7 +1284,6 @@ namespace Win32
 			DISPATCH_RAYS = 9,
 			DISPATCH_MESH = 10,
 		}
-		[AllowDuplicates]
 		public enum D3D12_WRITEBUFFERIMMEDIATE_MODE : int32
 		{
 			DEFAULT = 0,
@@ -1380,7 +1297,6 @@ namespace Win32
 			ANY = 1,
 			ALL = 0,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RESIDENCY_PRIORITY : int32
 		{
 			MINIMUM = 671088640,
@@ -1389,51 +1305,42 @@ namespace Win32
 			HIGH = -1610547200,
 			MAXIMUM = -939524096,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RESIDENCY_FLAGS : uint32
 		{
 			NONE = 0,
 			DENY_OVERBUDGET = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_COMMAND_LIST_FLAGS : uint32
 		{
 			D3D12_COMMAND_LIST_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum D3D12_COMMAND_POOL_FLAGS : uint32
 		{
 			D3D12_COMMAND_POOL_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum D3D12_COMMAND_RECORDER_FLAGS : uint32
 		{
 			D3D12_COMMAND_RECORDER_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum D3D12_PROTECTED_SESSION_STATUS : int32
 		{
 			OK = 0,
 			INVALID = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAGS : uint32
 		{
 			NONE = 0,
 			SUPPORTED = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_PROTECTED_RESOURCE_SESSION_FLAGS : uint32
 		{
 			D3D12_PROTECTED_RESOURCE_SESSION_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum D3D12_LIFETIME_STATE : int32
 		{
 			IN_USE = 0,
 			NOT_IN_USE = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_META_COMMAND_PARAMETER_TYPE : int32
 		{
 			FLOAT = 0,
@@ -1442,20 +1349,17 @@ namespace Win32
 			CPU_DESCRIPTOR_HANDLE_HEAP_TYPE_CBV_SRV_UAV = 3,
 			GPU_DESCRIPTOR_HANDLE_HEAP_TYPE_CBV_SRV_UAV = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_META_COMMAND_PARAMETER_FLAGS : uint32
 		{
 			INPUT = 1,
 			OUTPUT = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_META_COMMAND_PARAMETER_STAGE : int32
 		{
 			CREATION = 0,
 			INITIALIZATION = 1,
 			EXECUTION = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_GRAPHICS_STATES : uint32
 		{
 			NONE = 0,
@@ -1477,7 +1381,6 @@ namespace Win32
 			SAMPLE_POSITIONS = 32768,
 			VIEW_INSTANCE_MASK = 65536,
 		}
-		[AllowDuplicates]
 		public enum D3D12_STATE_SUBOBJECT_TYPE : int32
 		{
 			STATE_OBJECT_CONFIG = 0,
@@ -1494,7 +1397,6 @@ namespace Win32
 			RAYTRACING_PIPELINE_CONFIG1 = 12,
 			MAX_VALID = 13,
 		}
-		[AllowDuplicates]
 		public enum D3D12_STATE_OBJECT_FLAGS : uint32
 		{
 			NONE = 0,
@@ -1502,44 +1404,37 @@ namespace Win32
 			ALLOW_EXTERNAL_DEPENDENCIES_ON_LOCAL_DEFINITIONS = 2,
 			ALLOW_STATE_OBJECT_ADDITIONS = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_EXPORT_FLAGS : uint32
 		{
 			D3D12_EXPORT_FLAG_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum D3D12_HIT_GROUP_TYPE : int32
 		{
 			TRIANGLES = 0,
 			PROCEDURAL_PRIMITIVE = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RAYTRACING_PIPELINE_FLAGS : uint32
 		{
 			NONE = 0,
 			SKIP_TRIANGLES = 256,
 			SKIP_PROCEDURAL_PRIMITIVES = 512,
 		}
-		[AllowDuplicates]
 		public enum D3D12_STATE_OBJECT_TYPE : int32
 		{
 			COLLECTION = 0,
 			RAYTRACING_PIPELINE = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RAYTRACING_GEOMETRY_FLAGS : uint32
 		{
 			NONE = 0,
 			OPAQUE = 1,
 			NO_DUPLICATE_ANYHIT_INVOCATION = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RAYTRACING_GEOMETRY_TYPE : int32
 		{
 			TRIANGLES = 0,
 			PROCEDURAL_PRIMITIVE_AABBS = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RAYTRACING_INSTANCE_FLAGS : uint32
 		{
 			NONE = 0,
@@ -1548,7 +1443,6 @@ namespace Win32
 			FORCE_OPAQUE = 4,
 			FORCE_NON_OPAQUE = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAGS : uint32
 		{
 			NONE = 0,
@@ -1559,7 +1453,6 @@ namespace Win32
 			MINIMIZE_MEMORY = 16,
 			PERFORM_UPDATE = 32,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RAYTRACING_ACCELERATION_STRUCTURE_COPY_MODE : int32
 		{
 			CLONE = 0,
@@ -1568,19 +1461,16 @@ namespace Win32
 			SERIALIZE = 3,
 			DESERIALIZE = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE : int32
 		{
 			TOP_LEVEL = 0,
 			BOTTOM_LEVEL = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_ELEMENTS_LAYOUT : int32
 		{
 			Y = 0,
 			Y_OF_POINTERS = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_TYPE : int32
 		{
 			COMPACTED_SIZE = 0,
@@ -1588,12 +1478,10 @@ namespace Win32
 			SERIALIZATION = 2,
 			CURRENT_SIZE = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D12_SERIALIZED_DATA_TYPE : int32
 		{
 			D3D12_SERIALIZED_DATA_RAYTRACING_ACCELERATION_STRUCTURE = 0,
 		}
-		[AllowDuplicates]
 		public enum D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS : int32
 		{
 			COMPATIBLE_WITH_DEVICE = 0,
@@ -1602,7 +1490,6 @@ namespace Win32
 			INCOMPATIBLE_VERSION = 3,
 			INCOMPATIBLE_TYPE = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RAY_FLAGS : uint32
 		{
 			NONE = 0,
@@ -1617,13 +1504,11 @@ namespace Win32
 			SKIP_TRIANGLES = 256,
 			SKIP_PROCEDURAL_PRIMITIVES = 512,
 		}
-		[AllowDuplicates]
 		public enum D3D12_HIT_KIND : int32
 		{
 			FRONT_FACE = 254,
 			BACK_FACE = 255,
 		}
-		[AllowDuplicates]
 		public enum D3D12_AUTO_BREADCRUMB_OP : int32
 		{
 			SETMARKER = 0,
@@ -1672,7 +1557,6 @@ namespace Win32
 			ENCODEFRAME = 43,
 			RESOLVEENCODEROUTPUTMETADATA = 44,
 		}
-		[AllowDuplicates]
 		public enum D3D12_DRED_VERSION : int32
 		{
 			_0 = 1,
@@ -1680,21 +1564,18 @@ namespace Win32
 			_2 = 3,
 			_3 = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_DRED_FLAGS : uint32
 		{
 			NONE = 0,
 			FORCE_ENABLE = 1,
 			DISABLE_AUTOBREADCRUMBS = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_DRED_ENABLEMENT : int32
 		{
 			SYSTEM_CONTROLLED = 0,
 			FORCED_OFF = 1,
 			FORCED_ON = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_DRED_ALLOCATION_TYPE : int32
 		{
 			COMMAND_QUEUE = 19,
@@ -1727,12 +1608,10 @@ namespace Win32
 			VIDEO_ENCODER_HEAP = 49,
 			INVALID = -1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_DRED_PAGE_FAULT_FLAGS : uint32
 		{
 			D3D12_DRED_PAGE_FAULT_FLAGS_NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum D3D12_DRED_DEVICE_STATE : int32
 		{
 			UNKNOWN = 0,
@@ -1740,7 +1619,6 @@ namespace Win32
 			FAULT = 6,
 			PAGEFAULT = 7,
 		}
-		[AllowDuplicates]
 		public enum D3D12_BACKGROUND_PROCESSING_MODE : int32
 		{
 			ALLOWED = 0,
@@ -1748,7 +1626,6 @@ namespace Win32
 			DISABLE_BACKGROUND_WORK = 2,
 			DISABLE_PROFILING_BY_SYSTEM = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D12_MEASUREMENTS_ACTION : int32
 		{
 			KEEP_ALL = 0,
@@ -1756,7 +1633,6 @@ namespace Win32
 			COMMIT_RESULTS_HIGH_PRIORITY = 2,
 			DISCARD_PREVIOUS = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RENDER_PASS_BEGINNING_ACCESS_TYPE : int32
 		{
 			DISCARD = 0,
@@ -1764,7 +1640,6 @@ namespace Win32
 			CLEAR = 2,
 			NO_ACCESS = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RENDER_PASS_ENDING_ACCESS_TYPE : int32
 		{
 			DISCARD = 0,
@@ -1772,7 +1647,6 @@ namespace Win32
 			RESOLVE = 2,
 			NO_ACCESS = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RENDER_PASS_FLAGS : uint32
 		{
 			NONE = 0,
@@ -1780,20 +1654,17 @@ namespace Win32
 			SUSPENDING_PASS = 2,
 			RESUMING_PASS = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_SHADER_CACHE_MODE : int32
 		{
 			MEMORY = 0,
 			DISK = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_SHADER_CACHE_FLAGS : uint32
 		{
 			NONE = 0,
 			DRIVER_VERSIONED = 1,
 			USE_WORKING_DIR = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_SHADER_CACHE_KIND_FLAGS : uint32
 		{
 			IMPLICIT_D3D_CACHE_FOR_DRIVER = 1,
@@ -1801,20 +1672,17 @@ namespace Win32
 			IMPLICIT_DRIVER_MANAGED = 4,
 			APPLICATION_MANAGED = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D12_SHADER_CACHE_CONTROL_FLAGS : uint32
 		{
 			DISABLE = 1,
 			ENABLE = 2,
 			CLEAR = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_GPU_BASED_VALIDATION_FLAGS : int32
 		{
 			NONE = 0,
 			DISABLE_STATE_TRACKING = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_RLDO_FLAGS : int32
 		{
 			NONE = 0,
@@ -1822,14 +1690,12 @@ namespace Win32
 			DETAIL = 2,
 			IGNORE_INTERNAL = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_DEBUG_DEVICE_PARAMETER_TYPE : int32
 		{
 			FEATURE_FLAGS = 0,
 			GPU_BASED_VALIDATION_SETTINGS = 1,
 			GPU_SLOWDOWN_PERFORMANCE_FACTOR = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_DEBUG_FEATURE : int32
 		{
 			NONE = 0,
@@ -1838,7 +1704,6 @@ namespace Win32
 			DISABLE_VIRTUALIZED_BUNDLES_VALIDATION = 4,
 			EMULATE_WINDOWS7 = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D12_GPU_BASED_VALIDATION_SHADER_PATCH_MODE : int32
 		{
 			D3D12_GPU_BASED_VALIDATION_SHADER_PATCH_MODE_NONE = 0,
@@ -1847,7 +1712,6 @@ namespace Win32
 			D3D12_GPU_BASED_VALIDATION_SHADER_PATCH_MODE_GUARDED_VALIDATION = 3,
 			NUM_D3D12_GPU_BASED_VALIDATION_SHADER_PATCH_MODES = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAGS : int32
 		{
 			_NONE = 0,
@@ -1856,12 +1720,10 @@ namespace Win32
 			_FRONT_LOAD_CREATE_GUARDED_VALIDATION_SHADERS = 4,
 			S_VALID_MASK = 7,
 		}
-		[AllowDuplicates]
 		public enum D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE : int32
 		{
 			D3D12_DEBUG_COMMAND_LIST_PARAMETER_GPU_BASED_VALIDATION_SETTINGS = 0,
 		}
-		[AllowDuplicates]
 		public enum D3D12_MESSAGE_CATEGORY : int32
 		{
 			APPLICATION_DEFINED = 0,
@@ -1876,7 +1738,6 @@ namespace Win32
 			EXECUTION = 9,
 			SHADER = 10,
 		}
-		[AllowDuplicates]
 		public enum D3D12_MESSAGE_SEVERITY : int32
 		{
 			CORRUPTION = 0,
@@ -2781,20 +2642,17 @@ namespace Win32
 			SHADERCACHECONTROL_SHADERCACHECLEAR_NOTSUPPORTED = 1327,
 			D3D12_MESSAGES_END = 1328,
 		}
-		[AllowDuplicates]
 		public enum D3D12_MESSAGE_CALLBACK_FLAGS : int32
 		{
 			FLAG_NONE = 0,
 			IGNORE_FILTERS = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D12_AXIS_SHADING_RATE : int32
 		{
 			_1X = 0,
 			_2X = 1,
 			_4X = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D12_SHADING_RATE : int32
 		{
 			_1X1 = 0,
@@ -2805,7 +2663,6 @@ namespace Win32
 			_4X2 = 9,
 			_4X4 = 10,
 		}
-		[AllowDuplicates]
 		public enum D3D12_SHADING_RATE_COMBINER : int32
 		{
 			PASSTHROUGH = 0,
@@ -2814,7 +2671,6 @@ namespace Win32
 			MAX = 3,
 			SUM = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D12_SHADER_VERSION_TYPE : int32
 		{
 			PIXEL_SHADER = 0,

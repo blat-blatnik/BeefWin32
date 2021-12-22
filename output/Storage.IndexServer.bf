@@ -147,7 +147,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum IFILTER_INIT : int32
 		{
 			CANON_PARAGRAPHS = 1,
@@ -164,19 +163,16 @@ namespace Win32
 			DISABLE_EMBEDDED = 2048,
 			EMIT_FORMATTING = 4096,
 		}
-		[AllowDuplicates]
 		public enum IFILTER_FLAGS : int32
 		{
 			IFILTER_FLAGS_OLE_PROPERTIES = 1,
 		}
-		[AllowDuplicates]
 		public enum CHUNKSTATE : int32
 		{
 			TEXT = 1,
 			VALUE = 2,
 			FILTER_OWNED_VALUE = 4,
 		}
-		[AllowDuplicates]
 		public enum CHUNK_BREAKTYPE : int32
 		{
 			NO_BREAK = 0,
@@ -185,7 +181,6 @@ namespace Win32
 			EOP = 3,
 			EOC = 4,
 		}
-		[AllowDuplicates]
 		public enum WORDREP_BREAK_TYPE : int32
 		{
 			W = 0,
@@ -193,7 +188,6 @@ namespace Win32
 			P = 2,
 			C = 3,
 		}
-		[AllowDuplicates]
 		public enum DBKINDENUM : int32
 		{
 			GUID_NAME = 0,

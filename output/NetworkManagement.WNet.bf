@@ -97,20 +97,17 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum UNC_INFO_LEVEL : uint32
 		{
 			UNIVERSAL_NAME_INFO_LEVEL = 1,
 			REMOTE_NAME_INFO_LEVEL = 2,
 		}
-		[AllowDuplicates]
 		public enum WNPERM_DLG : uint32
 		{
 			PERM = 0,
 			AUDIT = 1,
 			OWNER = 2,
 		}
-		[AllowDuplicates]
 		public enum WNET_OPEN_ENUM_USAGE : uint32
 		{
 			NONE = 0,
@@ -119,7 +116,6 @@ namespace Win32
 			ATTACHED = 16,
 			ALL = 19,
 		}
-		[AllowDuplicates]
 		public enum NET_USE_CONNECT_FLAGS : uint32
 		{
 			INTERACTIVE = 8,
@@ -132,34 +128,29 @@ namespace Win32
 			DEFERRED = 1024,
 			UPDATE_RECENT = 2,
 		}
-		[AllowDuplicates]
 		public enum NP_PROPERTY_DIALOG_SELECTION : uint32
 		{
 			FILE = 0,
 			DIR = 1,
 			MULT = 2,
 		}
-		[AllowDuplicates]
 		public enum NPDIRECTORY_NOTIFY_OPERATION : uint32
 		{
 			MKDIR = 1,
 			RMDIR = 2,
 			MVDIR = 3,
 		}
-		[AllowDuplicates]
 		public enum NET_RESOURCE_TYPE : uint32
 		{
 			ANY = 0,
 			DISK = 1,
 			PRINT = 2,
 		}
-		[AllowDuplicates]
 		public enum NETWORK_NAME_FORMAT_FLAGS : uint32
 		{
 			MULTILINE = 1,
 			ABBREVIATED = 2,
 		}
-		[AllowDuplicates]
 		public enum NET_RESOURCE_SCOPE : uint32
 		{
 			CONNECTED = 1,
@@ -167,14 +158,12 @@ namespace Win32
 			GLOBALNET = 2,
 			REMEMBERED = 3,
 		}
-		[AllowDuplicates]
 		public enum NETINFOSTRUCT_CHARACTERISTICS : uint32
 		{
 			DLL16 = 1,
 			DISKRED = 4,
 			PRINTERRED = 8,
 		}
-		[AllowDuplicates]
 		public enum CONNECTDLGSTRUCT_FLAGS : uint32
 		{
 			RO_PATH = 1,
@@ -184,7 +173,6 @@ namespace Win32
 			PERSIST = 16,
 			NOT_PERSIST = 32,
 		}
-		[AllowDuplicates]
 		public enum DISCDLGSTRUCT_FLAGS : uint32
 		{
 			UPDATE_PROFILE = 1,

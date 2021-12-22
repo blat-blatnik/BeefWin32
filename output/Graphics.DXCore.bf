@@ -14,7 +14,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DXCoreAdapterProperty : uint32
 		{
 			InstanceLuid = 0,
@@ -33,19 +32,16 @@ namespace Win32
 			IsDetachable = 13,
 			HardwareIDParts = 14,
 		}
-		[AllowDuplicates]
 		public enum DXCoreAdapterState : uint32
 		{
 			IsDriverUpdateInProgress = 0,
 			AdapterMemoryBudget = 1,
 		}
-		[AllowDuplicates]
 		public enum DXCoreSegmentGroup : uint32
 		{
 			Local = 0,
 			NonLocal = 1,
 		}
-		[AllowDuplicates]
 		public enum DXCoreNotificationType : uint32
 		{
 			ListStale = 0,
@@ -53,7 +49,6 @@ namespace Win32
 			BudgetChange = 2,
 			HardwareContentProtectionTeardown = 3,
 		}
-		[AllowDuplicates]
 		public enum DXCoreAdapterPreference : uint32
 		{
 			Hardware = 0,

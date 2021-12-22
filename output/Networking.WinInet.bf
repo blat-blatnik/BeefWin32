@@ -900,7 +900,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum CACHE_CONFIG : uint32
 		{
 			FORCE_CLEANUP_FC = 32,
@@ -923,7 +922,6 @@ namespace Win32
 			INTERNET_FLAG_TRANSFER_ASCII = 1,
 			INTERNET_FLAG_TRANSFER_BINARY = 2,
 		}
-		[AllowDuplicates]
 		public enum INTERNET_CONNECTION : uint32
 		{
 			CONNECTION_CONFIGURED = 64,
@@ -944,20 +942,17 @@ namespace Win32
 			COALESCE_WITH_SEMICOLON = 16777216,
 			REPLACE = 2147483648,
 		}
-		[AllowDuplicates]
 		public enum INTERNET_COOKIE_FLAGS : uint32
 		{
 			COOKIE_HTTPONLY = 8192,
 			COOKIE_THIRD_PARTY = 16,
 			FLAG_RESTRICTED_ZONE = 131072,
 		}
-		[AllowDuplicates]
 		public enum PROXY_AUTO_DETECT_TYPE : uint32
 		{
 			HCP = 1,
 			NS_A = 2,
 		}
-		[AllowDuplicates]
 		public enum INTERNET_AUTODIAL : uint32
 		{
 			FAILIFSECURITYCHECK = 4,
@@ -965,7 +960,6 @@ namespace Win32
 			FORCE_UNATTENDED = 2,
 			OVERRIDE_NET_PRESENT = 8,
 		}
-		[AllowDuplicates]
 		public enum GOPHER_TYPE : uint32
 		{
 			ASK = 1073741824,
@@ -993,7 +987,6 @@ namespace Win32
 			UNIX_UUENCODED = 64,
 			UNKNOWN = 536870912,
 		}
-		[AllowDuplicates]
 		public enum INTERNET_PER_CONN : uint32
 		{
 			AUTOCONFIG_URL = 4,
@@ -1006,14 +999,12 @@ namespace Win32
 			AUTOCONFIG_LAST_DETECT_TIME = 8,
 			AUTOCONFIG_LAST_DETECT_URL = 9,
 		}
-		[AllowDuplicates]
 		public enum INTERNET_ACCESS_TYPE : uint32
 		{
 			DIRECT = 1,
 			PRECONFIG = 0,
 			PROXY = 3,
 		}
-		[AllowDuplicates]
 		public enum INTERNET_STATE : uint32
 		{
 			CONNECTED = 1,
@@ -1053,26 +1044,22 @@ namespace Win32
 			REJECT = 5,
 			MAX = 5,
 		}
-		[AllowDuplicates]
 		public enum WPAD_CACHE_DELETE : int32
 		{
 			CURRENT = 0,
 			ALL = 1,
 		}
-		[AllowDuplicates]
 		public enum FORTCMD : int32
 		{
 			LOGON = 1,
 			LOGOFF = 2,
 			CHG_PERSONALITY = 3,
 		}
-		[AllowDuplicates]
 		public enum FORTSTAT : int32
 		{
 			INSTALLED = 1,
 			LOGGEDON = 2,
 		}
-		[AllowDuplicates]
 		public enum REQUEST_TIMES : int32
 		{
 			NameResolutionStart = 0,
@@ -1083,7 +1070,6 @@ namespace Win32
 			TLSHandshakeEnd = 5,
 			HttpRequestTimeMax = 32,
 		}
-		[AllowDuplicates]
 		public enum HTTP_PUSH_WAIT_TYPE : int32
 		{
 			EnableComplete = 0,
@@ -1100,7 +1086,6 @@ namespace Win32
 			AUTOMATIC = 4,
 			DEFAULT = 4,
 		}
-		[AllowDuplicates]
 		public enum APP_CACHE_STATE : int32
 		{
 			NoUpdateNeeded = 0,
@@ -1108,14 +1093,12 @@ namespace Win32
 			UpdateNeededNew = 2,
 			UpdateNeededMasterOnly = 3,
 		}
-		[AllowDuplicates]
 		public enum APP_CACHE_FINALIZE_STATE : int32
 		{
 			Incomplete = 0,
 			ManifestChange = 1,
 			Complete = 2,
 		}
-		[AllowDuplicates]
 		public enum URL_CACHE_LIMIT_TYPE : int32
 		{
 			IE = 0,
@@ -1124,7 +1107,6 @@ namespace Win32
 			AppContainerTotal = 3,
 			Num = 4,
 		}
-		[AllowDuplicates]
 		public enum HTTP_WEB_SOCKET_OPERATION : int32
 		{
 			SEND_OPERATION = 0,
@@ -1132,7 +1114,6 @@ namespace Win32
 			CLOSE_OPERATION = 2,
 			SHUTDOWN_OPERATION = 3,
 		}
-		[AllowDuplicates]
 		public enum HTTP_WEB_SOCKET_BUFFER_TYPE : int32
 		{
 			BINARY_MESSAGE_TYPE = 0,
@@ -1142,7 +1123,6 @@ namespace Win32
 			CLOSE_TYPE = 4,
 			PING_TYPE = 5,
 		}
-		[AllowDuplicates]
 		public enum HTTP_WEB_SOCKET_CLOSE_STATUS : int32
 		{
 			SUCCESS_CLOSE_STATUS = 1000,
@@ -1158,14 +1138,12 @@ namespace Win32
 			SERVER_ERROR_CLOSE_STATUS = 1011,
 			SECURE_HANDSHAKE_ERROR_CLOSE_STATUS = 1015,
 		}
-		[AllowDuplicates]
 		public enum HTTP_POLICY_EXTENSION_TYPE : int32
 		{
 			NONE = 0,
 			WINHTTP = 1,
 			WININET = 2,
 		}
-		[AllowDuplicates]
 		public enum HTTP_POLICY_EXTENSION_VERSION : int32
 		{
 			POLICY_EXTENSION_VERSION1 = 1,

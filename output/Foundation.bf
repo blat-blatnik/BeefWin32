@@ -9732,7 +9732,6 @@ namespace Win32
 			ERROR_VHD_MISSING_CHANGE_TRACKING_INFORMATION = 3225026608,
 			ERROR_QUERY_STORAGE_ERROR = 2151284737,
 		}
-		[AllowDuplicates]
 		public enum NTSTATUS_FACILITY_CODE : uint32
 		{
 			DEBUGGER = 1,
@@ -9791,13 +9790,11 @@ namespace Win32
 			APP_EXEC = 236,
 			MAXIMUM_VALUE = 237,
 		}
-		[AllowDuplicates]
 		public enum DUPLICATE_HANDLE_OPTIONS : uint32
 		{
 			CLOSE_SOURCE = 1,
 			SAME_ACCESS = 2,
 		}
-		[AllowDuplicates]
 		public enum HANDLE_FLAGS : uint32
 		{
 			INHERIT = 1,

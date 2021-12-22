@@ -14,7 +14,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum NETCON_CHARACTERISTIC_FLAGS : int32
 		{
 			NONE = 0,
@@ -39,7 +38,6 @@ namespace Win32
 			BLUETOOTH_MASK = 983040,
 			LAN_MASK = 15728640,
 		}
-		[AllowDuplicates]
 		public enum NETCON_STATUS : int32
 		{
 			DISCONNECTED = 0,
@@ -59,7 +57,6 @@ namespace Win32
 			ACTION_REQUIRED_RETRY = 14,
 			CONNECT_FAILED = 15,
 		}
-		[AllowDuplicates]
 		public enum NETCON_TYPE : int32
 		{
 			DIRECT_CONNECT = 0,
@@ -70,7 +67,6 @@ namespace Win32
 			TUNNEL = 5,
 			BRIDGE = 6,
 		}
-		[AllowDuplicates]
 		public enum NETCON_MEDIATYPE : int32
 		{
 			NONE = 0,
@@ -84,38 +80,32 @@ namespace Win32
 			SHAREDACCESSHOST_LAN = 8,
 			SHAREDACCESSHOST_RAS = 9,
 		}
-		[AllowDuplicates]
 		public enum NETCONMGR_ENUM_FLAGS : int32
 		{
 			DEFAULT = 0,
 			HIDDEN = 1,
 		}
-		[AllowDuplicates]
 		public enum NETCONUI_CONNECT_FLAGS : int32
 		{
 			DEFAULT = 0,
 			NO_UI = 1,
 			ENABLE_DISABLE = 2,
 		}
-		[AllowDuplicates]
 		public enum SHARINGCONNECTIONTYPE : int32
 		{
 			UBLIC = 0,
 			RIVATE = 1,
 		}
-		[AllowDuplicates]
 		public enum SHARINGCONNECTION_ENUM_FLAGS : int32
 		{
 			DEFAULT = 0,
 			ENABLED = 1,
 		}
-		[AllowDuplicates]
 		public enum ICS_TARGETTYPE : int32
 		{
 			NAME = 0,
 			IPADDRESS = 1,
 		}
-		[AllowDuplicates]
 		public enum NET_FW_POLICY_TYPE : int32
 		{
 			GROUP = 0,
@@ -123,7 +113,6 @@ namespace Win32
 			EFFECTIVE = 2,
 			TYPE_MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum NET_FW_PROFILE_TYPE : int32
 		{
 			DOMAIN = 0,
@@ -131,7 +120,6 @@ namespace Win32
 			CURRENT = 2,
 			TYPE_MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum NET_FW_PROFILE_TYPE2 : int32
 		{
 			DOMAIN = 1,
@@ -139,7 +127,6 @@ namespace Win32
 			PUBLIC = 4,
 			ALL = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum NET_FW_IP_VERSION : int32
 		{
 			V4 = 0,
@@ -147,7 +134,6 @@ namespace Win32
 			ANY = 2,
 			MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum NET_FW_SCOPE : int32
 		{
 			ALL = 0,
@@ -155,14 +141,12 @@ namespace Win32
 			CUSTOM = 2,
 			MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum NET_FW_IP_PROTOCOL : int32
 		{
 			TCP = 6,
 			UDP = 17,
 			ANY = 256,
 		}
-		[AllowDuplicates]
 		public enum NET_FW_SERVICE_TYPE : int32
 		{
 			FILE_AND_PRINT = 0,
@@ -171,28 +155,24 @@ namespace Win32
 			NONE = 3,
 			TYPE_MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum NET_FW_RULE_DIRECTION : int32
 		{
 			IN = 1,
 			OUT = 2,
 			MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum NET_FW_ACTION : int32
 		{
 			BLOCK = 0,
 			ALLOW = 1,
 			MAX = 2,
 		}
-		[AllowDuplicates]
 		public enum NET_FW_MODIFY_STATE : int32
 		{
 			OK = 0,
 			GP_OVERRIDE = 1,
 			INBOUND_BLOCKED = 2,
 		}
-		[AllowDuplicates]
 		public enum NET_FW_RULE_CATEGORY : int32
 		{
 			BOOT = 0,
@@ -201,7 +181,6 @@ namespace Win32
 			CONSEC = 3,
 			MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum NET_FW_EDGE_TRAVERSAL_TYPE : int32
 		{
 			DENY = 0,
@@ -209,7 +188,6 @@ namespace Win32
 			DEFER_TO_APP = 2,
 			DEFER_TO_USER = 3,
 		}
-		[AllowDuplicates]
 		public enum NET_FW_AUTHENTICATE_TYPE : int32
 		{
 			NONE = 0,
@@ -218,13 +196,11 @@ namespace Win32
 			AND_NEGOTIATE_ENCRYPTION = 3,
 			AND_ENCRYPT = 4,
 		}
-		[AllowDuplicates]
 		public enum NETISO_FLAG : int32
 		{
 			FORCE_COMPUTE_BINARIES = 1,
 			MAX = 2,
 		}
-		[AllowDuplicates]
 		public enum INET_FIREWALL_AC_CREATION_TYPE : int32
 		{
 			NONE = 0,
@@ -232,7 +208,6 @@ namespace Win32
 			BINARY = 2,
 			MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum INET_FIREWALL_AC_CHANGE_TYPE : int32
 		{
 			INVALID = 0,
@@ -240,7 +215,6 @@ namespace Win32
 			DELETE = 2,
 			MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum NETISO_ERROR_TYPE : int32
 		{
 			NONE = 0,
@@ -249,19 +223,16 @@ namespace Win32
 			INTERNET_CLIENT_SERVER = 3,
 			MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum _tag_FW_DYNAMIC_KEYWORD_ORIGIN_TYPE : int32
 		{
 			INVALID = 0,
 			LOCAL = 1,
 			MDM = 2,
 		}
-		[AllowDuplicates]
 		public enum _tag_FW_DYNAMIC_KEYWORD_ADDRESS_FLAGS : int32
 		{
 			FW_DYNAMIC_KEYWORD_ADDRESS_FLAGS_AUTO_RESOLVE = 1,
 		}
-		[AllowDuplicates]
 		public enum _tag_FW_DYNAMIC_KEYWORD_ADDRESS_ENUM_FLAGS : int32
 		{
 			AUTO_RESOLVE = 1,

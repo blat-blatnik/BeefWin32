@@ -600,7 +600,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum UPDFCACHE_FLAGS : uint32
 		{
 			ALL = 2147483647,
@@ -613,7 +612,6 @@ namespace Win32
 			ONSTOPCACHE = 4,
 			IFBLANKORONSAVECACHE = 18,
 		}
-		[AllowDuplicates]
 		public enum ENUM_CONTROLS_WHICH_FLAGS : uint32
 		{
 			W_WCH_SIBLING = 1,
@@ -625,7 +623,6 @@ namespace Win32
 			_WCH_FONLYBEFORE = 536870912,
 			_WCH_FSELECTED = 1073741824,
 		}
-		[AllowDuplicates]
 		public enum MULTICLASSINFO_FLAGS : uint32
 		{
 			TYPEINFO = 1,
@@ -689,7 +686,6 @@ namespace Win32
 			ILLEGALMASKED = 4095,
 			TYPEMASK = 4095,
 		}
-		[AllowDuplicates]
 		public enum SF_TYPE : int32
 		{
 			ERROR = 10,
@@ -704,7 +700,6 @@ namespace Win32
 			RECORD = 36,
 			HAVEIID = 32781,
 		}
-		[AllowDuplicates]
 		public enum TYPEFLAGS : int32
 		{
 			APPOBJECT = 1,
@@ -723,7 +718,6 @@ namespace Win32
 			REVERSEBIND = 8192,
 			PROXY = 16384,
 		}
-		[AllowDuplicates]
 		public enum FUNCFLAGS : int32
 		{
 			RESTRICTED = 1,
@@ -740,7 +734,6 @@ namespace Win32
 			REPLACEABLE = 2048,
 			IMMEDIATEBIND = 4096,
 		}
-		[AllowDuplicates]
 		public enum VARFLAGS : int32
 		{
 			READONLY = 1,
@@ -757,7 +750,6 @@ namespace Win32
 			REPLACEABLE = 2048,
 			IMMEDIATEBIND = 4096,
 		}
-		[AllowDuplicates]
 		public enum LIBFLAGS : int32
 		{
 			RESTRICTED = 1,
@@ -765,7 +757,6 @@ namespace Win32
 			HIDDEN = 4,
 			HASDISKIMAGE = 8,
 		}
-		[AllowDuplicates]
 		public enum CHANGEKIND : int32
 		{
 			ADDMEMBER = 0,
@@ -777,13 +768,11 @@ namespace Win32
 			CHANGEFAILED = 6,
 			MAX = 7,
 		}
-		[AllowDuplicates]
 		public enum DISCARDCACHE : int32
 		{
 			SAVEIFDIRTY = 0,
 			NOSAVE = 1,
 		}
-		[AllowDuplicates]
 		public enum OLEGETMONIKER : int32
 		{
 			ONLYIFTHERE = 1,
@@ -791,21 +780,18 @@ namespace Win32
 			UNASSIGN = 3,
 			TEMPFORUSER = 4,
 		}
-		[AllowDuplicates]
 		public enum OLEWHICHMK : int32
 		{
 			CONTAINER = 1,
 			OBJREL = 2,
 			OBJFULL = 3,
 		}
-		[AllowDuplicates]
 		public enum USERCLASSTYPE : int32
 		{
 			FULL = 1,
 			SHORT = 2,
 			APPNAME = 3,
 		}
-		[AllowDuplicates]
 		public enum OLEMISC : int32
 		{
 			RECOMPOSEONRESIZE = 1,
@@ -831,14 +817,12 @@ namespace Win32
 			WANTSTOMENUMERGE = 1048576,
 			SUPPORTSMULTILEVELUNDO = 2097152,
 		}
-		[AllowDuplicates]
 		public enum OLECLOSE : int32
 		{
 			SAVEIFDIRTY = 0,
 			NOSAVE = 1,
 			PROMPTSAVE = 2,
 		}
-		[AllowDuplicates]
 		public enum OLERENDER : int32
 		{
 			NONE = 0,
@@ -846,25 +830,21 @@ namespace Win32
 			FORMAT = 2,
 			ASIS = 3,
 		}
-		[AllowDuplicates]
 		public enum OLEUPDATE : int32
 		{
 			ALWAYS = 1,
 			ONCALL = 3,
 		}
-		[AllowDuplicates]
 		public enum OLELINKBIND : int32
 		{
 			OLELINKBIND_EVENIFCLASSDIFF = 1,
 		}
-		[AllowDuplicates]
 		public enum BINDSPEED : int32
 		{
 			INDEFINITE = 1,
 			MODERATE = 2,
 			IMMEDIATE = 3,
 		}
-		[AllowDuplicates]
 		public enum OLECONTF : int32
 		{
 			EMBEDDINGS = 1,
@@ -873,20 +853,17 @@ namespace Win32
 			ONLYUSER = 8,
 			ONLYIFRUNNING = 16,
 		}
-		[AllowDuplicates]
 		public enum OLEVERBATTRIB : int32
 		{
 			NEVERDIRTIES = 1,
 			ONCONTAINERMENU = 2,
 		}
-		[AllowDuplicates]
 		public enum REGKIND : int32
 		{
 			DEFAULT = 0,
 			REGISTER = 1,
 			NONE = 2,
 		}
-		[AllowDuplicates]
 		public enum UASFLAGS : int32
 		{
 			NORMAL = 0,
@@ -894,7 +871,6 @@ namespace Win32
 			NOPARENTENABLE = 2,
 			MASK = 3,
 		}
-		[AllowDuplicates]
 		public enum READYSTATE : int32
 		{
 			UNINITIALIZED = 0,
@@ -903,18 +879,15 @@ namespace Win32
 			INTERACTIVE = 3,
 			COMPLETE = 4,
 		}
-		[AllowDuplicates]
 		public enum GUIDKIND : int32
 		{
 			GUIDKIND_DEFAULT_SOURCE_DISP_IID = 1,
 		}
-		[AllowDuplicates]
 		public enum CTRLINFO : int32
 		{
 			RETURN = 1,
 			ESCAPE = 2,
 		}
-		[AllowDuplicates]
 		public enum XFORMCOORDS : int32
 		{
 			POSITION = 1,
@@ -923,32 +896,27 @@ namespace Win32
 			CONTAINERTOHIMETRIC = 8,
 			EVENTCOMPAT = 16,
 		}
-		[AllowDuplicates]
 		public enum PROPPAGESTATUS : int32
 		{
 			DIRTY = 1,
 			VALIDATE = 2,
 			CLEAN = 4,
 		}
-		[AllowDuplicates]
 		public enum PictureAttributes : int32
 		{
 			SCALABLE = 1,
 			TRANSPARENT = 2,
 		}
-		[AllowDuplicates]
 		public enum ACTIVATEFLAGS : int32
 		{
 			ACTIVATE_WINDOWLESS = 1,
 		}
-		[AllowDuplicates]
 		public enum OLEDCFLAGS : int32
 		{
 			NODRAW = 1,
 			PAINTBKGND = 2,
 			OFFSCREEN = 4,
 		}
-		[AllowDuplicates]
 		public enum VIEWSTATUS : int32
 		{
 			OPAQUE = 1,
@@ -958,7 +926,6 @@ namespace Win32
 			SURFACE = 16,
 			_3DSURFACE = 32,
 		}
-		[AllowDuplicates]
 		public enum HITRESULT : int32
 		{
 			OUTSIDE = 0,
@@ -966,31 +933,26 @@ namespace Win32
 			CLOSE = 2,
 			HIT = 3,
 		}
-		[AllowDuplicates]
 		public enum DVASPECT2 : int32
 		{
 			OPAQUE = 16,
 			TRANSPARENT = 32,
 		}
-		[AllowDuplicates]
 		public enum ExtentMode : int32
 		{
 			CONTENT = 0,
 			INTEGRAL = 1,
 		}
-		[AllowDuplicates]
 		public enum AspectInfoFlag : int32
 		{
 			DVASPECTINFOFLAG_CANOPTIMIZE = 1,
 		}
-		[AllowDuplicates]
 		public enum POINTERINACTIVE : int32
 		{
 			ACTIVATEONENTRY = 1,
 			DEACTIVATEONLEAVE = 2,
 			ACTIVATEONDRAG = 4,
 		}
-		[AllowDuplicates]
 		public enum PROPBAG2_TYPE : int32
 		{
 			UNDEFINED = 0,
@@ -1001,7 +963,6 @@ namespace Win32
 			STORAGE = 5,
 			MONIKER = 6,
 		}
-		[AllowDuplicates]
 		public enum QACONTAINERFLAGS : int32
 		{
 			SHOWHATCHING = 1,
@@ -1013,14 +974,12 @@ namespace Win32
 			MESSAGEREFLECT = 64,
 			SUPPORTSMNEMONICS = 128,
 		}
-		[AllowDuplicates]
 		public enum OLE_TRISTATE : int32
 		{
 			Unchecked = 0,
 			Checked = 1,
 			Gray = 2,
 		}
-		[AllowDuplicates]
 		public enum DOCMISC : int32
 		{
 			CANCREATEMULTIPLEVIEWS = 1,
@@ -1028,7 +987,6 @@ namespace Win32
 			CANTOPENEDIT = 4,
 			NOFILESUPPORT = 8,
 		}
-		[AllowDuplicates]
 		public enum PRINTFLAG : uint32
 		{
 			MAYBOTHERUSER = 1,
@@ -1039,7 +997,6 @@ namespace Win32
 			FORCEPROPERTIES = 32,
 			PRINTTOFILE = 64,
 		}
-		[AllowDuplicates]
 		public enum OLECMDF : int32
 		{
 			SUPPORTED = 1,
@@ -1049,14 +1006,12 @@ namespace Win32
 			INVISIBLE = 16,
 			DEFHIDEONCTXTMENU = 32,
 		}
-		[AllowDuplicates]
 		public enum OLECMDTEXTF : int32
 		{
 			NONE = 0,
 			NAME = 1,
 			STATUS = 2,
 		}
-		[AllowDuplicates]
 		public enum OLECMDEXECOPT : int32
 		{
 			DODEFAULT = 0,
@@ -1064,7 +1019,6 @@ namespace Win32
 			DONTPROMPTUSER = 2,
 			SHOWHELP = 3,
 		}
-		[AllowDuplicates]
 		public enum OLECMDID : int32
 		{
 			OPEN = 1,
@@ -1151,7 +1105,6 @@ namespace Win32
 			SHOWMESSAGE_BLOCKABLE = 84,
 			SHOWTASKDLG_BLOCKABLE = 85,
 		}
-		[AllowDuplicates]
 		public enum MEDIAPLAYBACK_STATE : int32
 		{
 			RESUME = 0,
@@ -1159,19 +1112,16 @@ namespace Win32
 			PAUSE_AND_SUSPEND = 2,
 			RESUME_FROM_SUSPEND = 3,
 		}
-		[AllowDuplicates]
 		public enum IGNOREMIME : int32
 		{
 			PROMPT = 1,
 			TEXT = 2,
 		}
-		[AllowDuplicates]
 		public enum WPCSETTING : int32
 		{
 			LOGGING_ENABLED = 1,
 			FILEDOWNLOAD_BLOCKED = 2,
 		}
-		[AllowDuplicates]
 		public enum OLECMDID_REFRESHFLAG : int32
 		{
 			NORMAL = 0,
@@ -1235,7 +1185,6 @@ namespace Win32
 			GENERIC_STATE = 1073741824,
 			RESET = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum OLECMDID_BROWSERSTATEFLAG : int32
 		{
 			EXTENSIONSOFF = 1,
@@ -1246,7 +1195,6 @@ namespace Win32
 			DESKTOPHTMLDIALOG = 32,
 			BLOCKEDVERSION = 64,
 		}
-		[AllowDuplicates]
 		public enum OLECMDID_OPTICAL_ZOOMFLAG : int32
 		{
 			NOPERSIST = 1,
@@ -1254,7 +1202,6 @@ namespace Win32
 			NOTRANSIENT = 32,
 			RELOADFORNEWTAB = 64,
 		}
-		[AllowDuplicates]
 		public enum PAGEACTION_UI : int32
 		{
 			DEFAULT = 0,
@@ -1262,7 +1209,6 @@ namespace Win32
 			MODELESS = 2,
 			SILENT = 3,
 		}
-		[AllowDuplicates]
 		public enum OLECMDID_WINDOWSTATE_FLAG : int32
 		{
 			USERVISIBLE = 1,
@@ -1270,7 +1216,6 @@ namespace Win32
 			USERVISIBLE_VALID = 65536,
 			ENABLED_VALID = 131072,
 		}
-		[AllowDuplicates]
 		public enum OLECMDID_VIEWPORT_MODE_FLAG : int32
 		{
 			FIXED_LAYOUT_WIDTH = 1,
@@ -1278,7 +1223,6 @@ namespace Win32
 			FIXED_LAYOUT_WIDTH_VALID = 65536,
 			EXCLUDE_VISUAL_BOTTOM_VALID = 131072,
 		}
-		[AllowDuplicates]
 		public enum OLEUIPASTEFLAG : int32
 		{
 			ENABLEICON = 2048,

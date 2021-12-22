@@ -296,26 +296,22 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum D3D10_INPUT_CLASSIFICATION : int32
 		{
 			VERTEX_DATA = 0,
 			INSTANCE_DATA = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D10_FILL_MODE : int32
 		{
 			WIREFRAME = 2,
 			SOLID = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D10_CULL_MODE : int32
 		{
 			NONE = 1,
 			FRONT = 2,
 			BACK = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D10_RESOURCE_DIMENSION : int32
 		{
 			UNKNOWN = 0,
@@ -324,7 +320,6 @@ namespace Win32
 			TEXTURE2D = 3,
 			TEXTURE3D = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D10_DSV_DIMENSION : int32
 		{
 			UNKNOWN = 0,
@@ -335,7 +330,6 @@ namespace Win32
 			TEXTURE2DMS = 5,
 			TEXTURE2DMSARRAY = 6,
 		}
-		[AllowDuplicates]
 		public enum D3D10_RTV_DIMENSION : int32
 		{
 			UNKNOWN = 0,
@@ -348,7 +342,6 @@ namespace Win32
 			TEXTURE2DMSARRAY = 7,
 			TEXTURE3D = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D10_USAGE : int32
 		{
 			DEFAULT = 0,
@@ -356,7 +349,6 @@ namespace Win32
 			DYNAMIC = 2,
 			STAGING = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D10_BIND_FLAG : int32
 		{
 			VERTEX_BUFFER = 1,
@@ -367,13 +359,11 @@ namespace Win32
 			RENDER_TARGET = 32,
 			DEPTH_STENCIL = 64,
 		}
-		[AllowDuplicates]
 		public enum D3D10_CPU_ACCESS_FLAG : int32
 		{
 			WRITE = 65536,
 			READ = 131072,
 		}
-		[AllowDuplicates]
 		public enum D3D10_RESOURCE_MISC_FLAG : int32
 		{
 			GENERATE_MIPS = 1,
@@ -382,7 +372,6 @@ namespace Win32
 			SHARED_KEYEDMUTEX = 16,
 			GDI_COMPATIBLE = 32,
 		}
-		[AllowDuplicates]
 		public enum D3D10_MAP : int32
 		{
 			READ = 1,
@@ -391,23 +380,19 @@ namespace Win32
 			WRITE_DISCARD = 4,
 			WRITE_NO_OVERWRITE = 5,
 		}
-		[AllowDuplicates]
 		public enum D3D10_MAP_FLAG : int32
 		{
 			D3D10_MAP_FLAG_DO_NOT_WAIT = 1048576,
 		}
-		[AllowDuplicates]
 		public enum D3D10_RAISE_FLAG : int32
 		{
 			D3D10_RAISE_FLAG_DRIVER_INTERNAL_ERROR = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D10_CLEAR_FLAG : int32
 		{
 			DEPTH = 1,
 			STENCIL = 2,
 		}
-		[AllowDuplicates]
 		public enum D3D10_COMPARISON_FUNC : int32
 		{
 			NEVER = 1,
@@ -419,13 +404,11 @@ namespace Win32
 			GREATER_EQUAL = 7,
 			ALWAYS = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D10_DEPTH_WRITE_MASK : int32
 		{
 			ZERO = 0,
 			ALL = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D10_STENCIL_OP : int32
 		{
 			KEEP = 1,
@@ -437,7 +420,6 @@ namespace Win32
 			INCR = 7,
 			DECR = 8,
 		}
-		[AllowDuplicates]
 		public enum D3D10_BLEND : int32
 		{
 			ZERO = 1,
@@ -458,7 +440,6 @@ namespace Win32
 			SRC1_ALPHA = 18,
 			INV_SRC1_ALPHA = 19,
 		}
-		[AllowDuplicates]
 		public enum D3D10_BLEND_OP : int32
 		{
 			ADD = 1,
@@ -467,7 +448,6 @@ namespace Win32
 			MIN = 4,
 			MAX = 5,
 		}
-		[AllowDuplicates]
 		public enum D3D10_COLOR_WRITE_ENABLE : int32
 		{
 			RED = 1,
@@ -476,7 +456,6 @@ namespace Win32
 			ALPHA = 8,
 			ALL = 15,
 		}
-		[AllowDuplicates]
 		public enum D3D10_TEXTURECUBE_FACE : int32
 		{
 			POSITIVE_X = 0,
@@ -486,7 +465,6 @@ namespace Win32
 			POSITIVE_Z = 4,
 			NEGATIVE_Z = 5,
 		}
-		[AllowDuplicates]
 		public enum D3D10_FILTER : int32
 		{
 			MIN_MAG_MIP_POINT = 0,
@@ -509,13 +487,11 @@ namespace Win32
 			COMPARISON_ANISOTROPIC = 213,
 			TEXT_1BIT = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum D3D10_FILTER_TYPE : int32
 		{
 			POINT = 0,
 			LINEAR = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D10_TEXTURE_ADDRESS_MODE : int32
 		{
 			WRAP = 1,
@@ -524,7 +500,6 @@ namespace Win32
 			BORDER = 4,
 			MIRROR_ONCE = 5,
 		}
-		[AllowDuplicates]
 		public enum D3D10_FORMAT_SUPPORT : int32
 		{
 			BUFFER = 1,
@@ -553,12 +528,10 @@ namespace Win32
 			SHADER_GATHER = 8388608,
 			BACK_BUFFER_CAST = 16777216,
 		}
-		[AllowDuplicates]
 		public enum D3D10_ASYNC_GETDATA_FLAG : int32
 		{
 			D3D10_ASYNC_GETDATA_DONOTFLUSH = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D10_QUERY : int32
 		{
 			EVENT = 0,
@@ -570,12 +543,10 @@ namespace Win32
 			SO_STATISTICS = 6,
 			SO_OVERFLOW_PREDICATE = 7,
 		}
-		[AllowDuplicates]
 		public enum D3D10_QUERY_MISC_FLAG : int32
 		{
 			D3D10_QUERY_MISC_PREDICATEHINT = 1,
 		}
-		[AllowDuplicates]
 		public enum D3D10_COUNTER : int32
 		{
 			GPU_IDLE = 0,
@@ -598,7 +569,6 @@ namespace Win32
 			TEXTURE_CACHE_HIT_RATE = 17,
 			DEVICE_DEPENDENT_0 = 1073741824,
 		}
-		[AllowDuplicates]
 		public enum D3D10_COUNTER_TYPE : int32
 		{
 			FLOAT32 = 0,
@@ -606,7 +576,6 @@ namespace Win32
 			UINT32 = 2,
 			UINT64 = 3,
 		}
-		[AllowDuplicates]
 		public enum D3D10_CREATE_DEVICE_FLAG : int32
 		{
 			SINGLETHREADED = 1,
@@ -619,7 +588,6 @@ namespace Win32
 			STRICT_VALIDATION = 512,
 			DEBUGGABLE = 1024,
 		}
-		[AllowDuplicates]
 		public enum D3D10_MESSAGE_CATEGORY : int32
 		{
 			APPLICATION_DEFINED = 0,
@@ -634,7 +602,6 @@ namespace Win32
 			EXECUTION = 9,
 			SHADER = 10,
 		}
-		[AllowDuplicates]
 		public enum D3D10_MESSAGE_SEVERITY : int32
 		{
 			CORRUPTION = 0,
@@ -643,7 +610,6 @@ namespace Win32
 			INFO = 3,
 			MESSAGE = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D10_MESSAGE_ID : int32
 		{
 			UNKNOWN = 0,
@@ -1154,7 +1120,6 @@ namespace Win32
 			COPYRESOURCE_NO_3D_MISMATCHED_UPDATES = 1048637,
 			D3D10L9_MESSAGES_END = 1048638,
 		}
-		[AllowDuplicates]
 		public enum D3D10_DRIVER_TYPE : int32
 		{
 			HARDWARE = 0,
@@ -1163,7 +1128,6 @@ namespace Win32
 			SOFTWARE = 3,
 			WARP = 5,
 		}
-		[AllowDuplicates]
 		public enum D3D10_DEVICE_STATE_TYPES : int32
 		{
 			SO_BUFFERS = 1,
@@ -1191,7 +1155,6 @@ namespace Win32
 			RS_RASTERIZER_STATE = 23,
 			PREDICATION = 24,
 		}
-		[AllowDuplicates]
 		public enum D3D10_FEATURE_LEVEL1 : int32
 		{
 			_10_0 = 40960,
@@ -1200,13 +1163,11 @@ namespace Win32
 			_9_2 = 37376,
 			_9_3 = 37632,
 		}
-		[AllowDuplicates]
 		public enum D3D10_STANDARD_MULTISAMPLE_QUALITY_LEVELS : int32
 		{
 			STANDARD_MULTISAMPLE_PATTERN = -1,
 			CENTER_MULTISAMPLE_PATTERN = -2,
 		}
-		[AllowDuplicates]
 		public enum D3D10_SHADER_DEBUG_REGTYPE : int32
 		{
 			_0_SHADER_DEBUG_REG_INPUT = 0,
@@ -1224,7 +1185,6 @@ namespace Win32
 			_1_SHADER_DEBUG_REG_UAV = 12,
 			_0_SHADER_DEBUG_REG_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3D10_SHADER_DEBUG_SCOPETYPE : int32
 		{
 			GLOBAL = 0,
@@ -1237,7 +1197,6 @@ namespace Win32
 			ANNOTATION = 7,
 			FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum D3D10_SHADER_DEBUG_VARTYPE : int32
 		{
 			VARIABLE = 0,

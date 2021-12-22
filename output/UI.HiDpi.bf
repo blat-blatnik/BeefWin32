@@ -19,7 +19,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DPI_AWARENESS : int32
 		{
 			INVALID = -1,
@@ -27,21 +26,18 @@ namespace Win32
 			SYSTEM_AWARE = 1,
 			PER_MONITOR_AWARE = 2,
 		}
-		[AllowDuplicates]
 		public enum DPI_HOSTING_BEHAVIOR : int32
 		{
 			INVALID = -1,
 			DEFAULT = 0,
 			MIXED = 1,
 		}
-		[AllowDuplicates]
 		public enum DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS : uint32
 		{
 			EFAULT = 0,
 			ISABLE_FONT_UPDATE = 1,
 			ISABLE_RELAYOUT = 2,
 		}
-		[AllowDuplicates]
 		public enum DIALOG_DPI_CHANGE_BEHAVIORS : uint32
 		{
 			EFAULT = 0,
@@ -49,7 +45,6 @@ namespace Win32
 			ISABLE_RESIZE = 2,
 			ISABLE_CONTROL_RELAYOUT = 4,
 		}
-		[AllowDuplicates]
 		public enum PROCESS_DPI_AWARENESS : int32
 		{
 			DPI_UNAWARE = 0,

@@ -54,7 +54,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum URI_CREATE_FLAGS : uint32
 		{
 			ALLOW_RELATIVE = 1,
@@ -76,7 +75,6 @@ namespace Win32
 			NORMALIZE_INTL_CHARACTERS = 65536,
 			CANONICALIZE_ABSOLUTE = 131072,
 		}
-		[AllowDuplicates]
 		public enum RPC_C_AUTHN_LEVEL : uint32
 		{
 			DEFAULT = 0,
@@ -87,7 +85,6 @@ namespace Win32
 			PKT_INTEGRITY = 5,
 			PKT_PRIVACY = 6,
 		}
-		[AllowDuplicates]
 		public enum RPC_C_IMP_LEVEL : uint32
 		{
 			DEFAULT = 0,
@@ -96,7 +93,6 @@ namespace Win32
 			IMPERSONATE = 3,
 			DELEGATE = 4,
 		}
-		[AllowDuplicates]
 		public enum DVASPECT : int32
 		{
 			CONTENT = 1,
@@ -104,7 +100,6 @@ namespace Win32
 			ICON = 4,
 			DOCPRINT = 8,
 		}
-		[AllowDuplicates]
 		public enum TYSPEC : int32
 		{
 			CLSID = 0,
@@ -115,7 +110,6 @@ namespace Win32
 			PACKAGENAME = 5,
 			OBJECTID = 6,
 		}
-		[AllowDuplicates]
 		public enum REGCLS : int32
 		{
 			SINGLEUSE = 0,
@@ -125,12 +119,10 @@ namespace Win32
 			SURROGATE = 8,
 			AGILE = 16,
 		}
-		[AllowDuplicates]
 		public enum COINITBASE : int32
 		{
 			COINITBASE_MULTITHREADED = 0,
 		}
-		[AllowDuplicates]
 		public enum MEMCTX : int32
 		{
 			TASK = 1,
@@ -172,7 +164,6 @@ namespace Win32
 			ALL = 23,
 			SERVER = 21,
 		}
-		[AllowDuplicates]
 		public enum MSHLFLAGS : int32
 		{
 			NORMAL = 0,
@@ -184,7 +175,6 @@ namespace Win32
 			RESERVED3 = 32,
 			RESERVED4 = 64,
 		}
-		[AllowDuplicates]
 		public enum MSHCTX : int32
 		{
 			LOCAL = 0,
@@ -194,14 +184,12 @@ namespace Win32
 			CROSSCTX = 4,
 			CONTAINER = 5,
 		}
-		[AllowDuplicates]
 		public enum EXTCONN : int32
 		{
 			STRONG = 1,
 			WEAK = 2,
 			CALLABLE = 4,
 		}
-		[AllowDuplicates]
 		public enum STGTY : int32
 		{
 			STORAGE = 1,
@@ -209,14 +197,12 @@ namespace Win32
 			LOCKBYTES = 3,
 			PROPERTY = 4,
 		}
-		[AllowDuplicates]
 		public enum STREAM_SEEK : uint32
 		{
 			SET = 0,
 			CUR = 1,
 			END = 2,
 		}
-		[AllowDuplicates]
 		public enum EOLE_AUTHENTICATION_CAPABILITIES : int32
 		{
 			NONE = 0,
@@ -236,7 +222,6 @@ namespace Win32
 			NO_CUSTOM_MARSHAL = 8192,
 			RESERVED1 = 16384,
 		}
-		[AllowDuplicates]
 		public enum RPCOPT_PROPERTIES : int32
 		{
 			RPCTIMEOUT = 1,
@@ -246,14 +231,12 @@ namespace Win32
 			RESERVED3 = 8,
 			RESERVED4 = 16,
 		}
-		[AllowDuplicates]
 		public enum RPCOPT_SERVER_LOCALITY_VALUES : int32
 		{
 			PROCESS_LOCAL = 0,
 			MACHINE_LOCAL = 1,
 			REMOTE = 2,
 		}
-		[AllowDuplicates]
 		public enum GLOBALOPT_PROPERTIES : int32
 		{
 			EXCEPTION_HANDLING = 1,
@@ -273,13 +256,11 @@ namespace Win32
 			DONOT_HANDLE = 1,
 			DONOT_HANDLE_ANY = 2,
 		}
-		[AllowDuplicates]
 		public enum GLOBALOPT_RPCTP_VALUES : int32
 		{
 			DEFAULT_POOL = 0,
 			PRIVATE_POOL = 1,
 		}
-		[AllowDuplicates]
 		public enum GLOBALOPT_RO_FLAGS : int32
 		{
 			STA_MODALLOOP_REMOVE_TOUCH_MESSAGES = 1,
@@ -294,21 +275,18 @@ namespace Win32
 			RESERVED5 = 512,
 			RESERVED6 = 1024,
 		}
-		[AllowDuplicates]
 		public enum GLOBALOPT_UNMARSHALING_POLICY_VALUES : int32
 		{
 			NORMAL = 0,
 			STRONG = 1,
 			HYBRID = 2,
 		}
-		[AllowDuplicates]
 		public enum DCOM_CALL_STATE : int32
 		{
 			NONE = 0,
 			CALL_COMPLETE = 1,
 			CALL_CANCELED = 2,
 		}
-		[AllowDuplicates]
 		public enum APTTYPEQUALIFIER : int32
 		{
 			NONE = 0,
@@ -320,7 +298,6 @@ namespace Win32
 			APPLICATION_STA = 6,
 			RESERVED_1 = 7,
 		}
-		[AllowDuplicates]
 		public enum APTTYPE : int32
 		{
 			CURRENT = -1,
@@ -329,13 +306,11 @@ namespace Win32
 			NA = 2,
 			MAINSTA = 3,
 		}
-		[AllowDuplicates]
 		public enum THDTYPE : int32
 		{
 			BLOCKMESSAGES = 0,
 			PROCESSMESSAGES = 1,
 		}
-		[AllowDuplicates]
 		public enum CO_MARSHALING_CONTEXT_ATTRIBUTES : int32
 		{
 			SOURCE_IS_APP_CONTAINER = 0,
@@ -358,13 +333,11 @@ namespace Win32
 			CONTEXT_ATTRIBUTE_RESERVED_17 = -2147483632,
 			CONTEXT_ATTRIBUTE_RESERVED_18 = -2147483631,
 		}
-		[AllowDuplicates]
 		public enum BIND_FLAGS : int32
 		{
 			MAYBOTHERUSER = 1,
 			JUSTTESTEXISTENCE = 2,
 		}
-		[AllowDuplicates]
 		public enum MKSYS : int32
 		{
 			NONE = 0,
@@ -378,7 +351,6 @@ namespace Win32
 			SESSIONMONIKER = 9,
 			LUAMONIKER = 10,
 		}
-		[AllowDuplicates]
 		public enum MKREDUCE : int32
 		{
 			ONE = 196608,
@@ -386,7 +358,6 @@ namespace Win32
 			THROUGHUSER = 65536,
 			ALL = 0,
 		}
-		[AllowDuplicates]
 		public enum ADVF : int32
 		{
 			_NODATA = 1,
@@ -397,7 +368,6 @@ namespace Win32
 			CACHE_FORCEBUILTIN = 16,
 			CACHE_ONSAVE = 32,
 		}
-		[AllowDuplicates]
 		public enum TYMED : int32
 		{
 			HGLOBAL = 1,
@@ -409,13 +379,11 @@ namespace Win32
 			ENHMF = 64,
 			NULL = 0,
 		}
-		[AllowDuplicates]
 		public enum DATADIR : int32
 		{
 			GET = 1,
 			SET = 2,
 		}
-		[AllowDuplicates]
 		public enum CALLTYPE : int32
 		{
 			TOPLEVEL = 1,
@@ -424,39 +392,33 @@ namespace Win32
 			TOPLEVEL_CALLPENDING = 4,
 			ASYNC_CALLPENDING = 5,
 		}
-		[AllowDuplicates]
 		public enum SERVERCALL : int32
 		{
 			ISHANDLED = 0,
 			REJECTED = 1,
 			RETRYLATER = 2,
 		}
-		[AllowDuplicates]
 		public enum PENDINGTYPE : int32
 		{
 			TOPLEVEL = 1,
 			NESTED = 2,
 		}
-		[AllowDuplicates]
 		public enum PENDINGMSG : int32
 		{
 			CANCELCALL = 0,
 			WAITNOPROCESS = 1,
 			WAITDEFPROCESS = 2,
 		}
-		[AllowDuplicates]
 		public enum ApplicationType : int32
 		{
 			ServerApplication = 0,
 			LibraryApplication = 1,
 		}
-		[AllowDuplicates]
 		public enum ShutdownType : int32
 		{
 			IdleShutdown = 0,
 			ForcedShutdown = 1,
 		}
-		[AllowDuplicates]
 		public enum COINIT : uint32
 		{
 			APARTMENTTHREADED = 2,
@@ -464,7 +426,6 @@ namespace Win32
 			DISABLE_OLE1DDE = 4,
 			SPEED_OVER_MEMORY = 8,
 		}
-		[AllowDuplicates]
 		public enum COMSD : int32
 		{
 			LAUNCHPERMISSIONS = 0,
@@ -472,7 +433,6 @@ namespace Win32
 			LAUNCHRESTRICTIONS = 2,
 			ACCESSRESTRICTIONS = 3,
 		}
-		[AllowDuplicates]
 		public enum COWAIT_FLAGS : int32
 		{
 			DEFAULT = 0,
@@ -482,14 +442,12 @@ namespace Win32
 			DISPATCH_CALLS = 8,
 			DISPATCH_WINDOW_MESSAGES = 16,
 		}
-		[AllowDuplicates]
 		public enum CWMO_FLAGS : int32
 		{
 			EFAULT = 0,
 			ISPATCH_CALLS = 1,
 			ISPATCH_WINDOW_MESSAGES = 2,
 		}
-		[AllowDuplicates]
 		public enum BINDINFOF : int32
 		{
 			STGMEDDATA = 1,
@@ -522,7 +480,6 @@ namespace Win32
 			ZONE = 18,
 			DWORD_LAST = 18,
 		}
-		[AllowDuplicates]
 		public enum TYPEKIND : int32
 		{
 			ENUM = 0,
@@ -550,7 +507,6 @@ namespace Win32
 			MPWPASCAL = 8,
 			MAX = 9,
 		}
-		[AllowDuplicates]
 		public enum FUNCKIND : int32
 		{
 			VIRTUAL = 0,
@@ -559,7 +515,6 @@ namespace Win32
 			STATIC = 3,
 			DISPATCH = 4,
 		}
-		[AllowDuplicates]
 		public enum INVOKEKIND : int32
 		{
 			FUNC = 1,
@@ -567,7 +522,6 @@ namespace Win32
 			PROPERTYPUT = 4,
 			PROPERTYPUTREF = 8,
 		}
-		[AllowDuplicates]
 		public enum VARKIND : int32
 		{
 			PERINSTANCE = 0,
@@ -575,7 +529,6 @@ namespace Win32
 			CONST = 2,
 			DISPATCH = 3,
 		}
-		[AllowDuplicates]
 		public enum DESCKIND : int32
 		{
 			NONE = 0,
@@ -585,7 +538,6 @@ namespace Win32
 			IMPLICITAPPOBJ = 4,
 			MAX = 5,
 		}
-		[AllowDuplicates]
 		public enum SYSKIND : int32
 		{
 			WIN16 = 0,

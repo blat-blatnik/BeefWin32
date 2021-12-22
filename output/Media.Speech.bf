@@ -27,7 +27,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum SPDATAKEYLOCATION : int32
 		{
 			DefaultLocation = 0,
@@ -35,7 +34,6 @@ namespace Win32
 			LocalMachine = 2,
 			CurrentConfig = 5,
 		}
-		[AllowDuplicates]
 		public enum SPSTREAMFORMAT : int32
 		{
 			Default = -1,
@@ -110,7 +108,6 @@ namespace Win32
 			GSM610_44kHzMono = 68,
 			NUM_FORMATS = 69,
 		}
-		[AllowDuplicates]
 		public enum SPEVENTLPARAMTYPE : int32
 		{
 			UNDEFINED = 0,
@@ -163,7 +160,6 @@ namespace Win32
 			RESERVED2 = 33,
 			RESERVED3 = 63,
 		}
-		[AllowDuplicates]
 		public enum SPINTERFERENCE : int32
 		{
 			NONE = 0,
@@ -177,20 +173,17 @@ namespace Win32
 			LATENCY_TRUNCATE_BEGIN = 8,
 			LATENCY_TRUNCATE_END = 9,
 		}
-		[AllowDuplicates]
 		public enum SPENDSRSTREAMFLAGS : int32
 		{
 			NONE = 0,
 			STREAM_RELEASED = 1,
 			EMULATED = 2,
 		}
-		[AllowDuplicates]
 		public enum SPVFEATURE : int32
 		{
 			STRESSED = 1,
 			EMPHASIS = 2,
 		}
-		[AllowDuplicates]
 		public enum SPVISEMES : int32
 		{
 			_0 = 0,
@@ -216,7 +209,6 @@ namespace Win32
 			_20 = 20,
 			_21 = 21,
 		}
-		[AllowDuplicates]
 		public enum SPFILEMODE : int32
 		{
 			OPEN_READONLY = 0,
@@ -225,7 +217,6 @@ namespace Win32
 			CREATE_ALWAYS = 3,
 			NUM_MODES = 4,
 		}
-		[AllowDuplicates]
 		public enum SPAUDIOSTATE : int32
 		{
 			CLOSED = 0,
@@ -233,7 +224,6 @@ namespace Win32
 			PAUSE = 2,
 			RUN = 3,
 		}
-		[AllowDuplicates]
 		public enum SPDISPLYATTRIBUTES : int32
 		{
 			ONE_TRAILING_SPACE = 2,
@@ -243,13 +233,11 @@ namespace Win32
 			ALL = 31,
 			USER_SPECIFIED = 128,
 		}
-		[AllowDuplicates]
 		public enum SPPHRASEPROPERTYUNIONTYPE : int32
 		{
 			UNUSED = 0,
 			ARRAY_INDEX = 1,
 		}
-		[AllowDuplicates]
 		public enum SPSEMANTICFORMAT : int32
 		{
 			SAPI_PROPERTIES = 0,
@@ -258,7 +246,6 @@ namespace Win32
 			UPS = 4,
 			SRGS_SEMANTICINTERPRETATION_W3C = 8,
 		}
-		[AllowDuplicates]
 		public enum SPVALUETYPE : int32
 		{
 			PROPERTY = 1,
@@ -271,12 +258,10 @@ namespace Win32
 			ALTERNATES = 128,
 			ALL = 255,
 		}
-		[AllowDuplicates]
 		public enum SPPHRASERNG : int32
 		{
 			SPPR_ALL_ELEMENTS = -1,
 		}
-		[AllowDuplicates]
 		public enum SPRECOEVENTFLAGS : int32
 		{
 			AutoPause = 1,
@@ -287,7 +272,6 @@ namespace Win32
 			Hypothesis = 32,
 			FalseRecognition = 64,
 		}
-		[AllowDuplicates]
 		public enum SPPARTOFSPEECH : int32
 		{
 			NotOverriden = -1,
@@ -301,7 +285,6 @@ namespace Win32
 			LMA = 28672,
 			SuppressWord = 61440,
 		}
-		[AllowDuplicates]
 		public enum SPLEXICONTYPE : int32
 		{
 			USER = 1,
@@ -337,18 +320,15 @@ namespace Win32
 			PRIVATE19 = 1073741824,
 			PRIVATE20 = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum SPWORDTYPE : int32
 		{
 			ADDED = 1,
 			DELETED = 2,
 		}
-		[AllowDuplicates]
 		public enum SPPRONUNCIATIONFLAGS : int32
 		{
 			ePRONFLAG_USED = 1,
 		}
-		[AllowDuplicates]
 		public enum SPSHORTCUTTYPE : int32
 		{
 			SHT_NotOverriden = -1,
@@ -360,7 +340,6 @@ namespace Win32
 			PS_RESERVED3 = 20480,
 			PS_RESERVED4 = 61440,
 		}
-		[AllowDuplicates]
 		public enum SPVACTIONS : int32
 		{
 			Speak = 0,
@@ -371,13 +350,11 @@ namespace Win32
 			Section = 5,
 			ParseUnknownTag = 6,
 		}
-		[AllowDuplicates]
 		public enum SPRUNSTATE : int32
 		{
 			DONE = 1,
 			IS_SPEAKING = 2,
 		}
-		[AllowDuplicates]
 		public enum SPVLIMITS : int32
 		{
 			IN_VOLUME = 0,
@@ -385,7 +362,6 @@ namespace Win32
 			IN_RATE = -10,
 			AX_RATE = 10,
 		}
-		[AllowDuplicates]
 		public enum SPVPRIORITY : int32
 		{
 			NORMAL = 0,
@@ -411,40 +387,34 @@ namespace Win32
 			VOICE_MASK = 511,
 			UNUSED_FLAGS = -512,
 		}
-		[AllowDuplicates]
 		public enum SPXMLRESULTOPTIONS : int32
 		{
 			SML = 0,
 			Alternates_SML = 1,
 		}
-		[AllowDuplicates]
 		public enum SPCOMMITFLAGS : int32
 		{
 			NONE = 0,
 			ADD_TO_USER_LEXICON = 1,
 			DEFINITE_CORRECTION = 2,
 		}
-		[AllowDuplicates]
 		public enum SPWORDPRONOUNCEABLE : int32
 		{
 			UNKNOWN_WORD_UNPRONOUNCEABLE = 0,
 			UNKNOWN_WORD_PRONOUNCEABLE = 1,
 			KNOWN_WORD_PRONOUNCEABLE = 2,
 		}
-		[AllowDuplicates]
 		public enum SPGRAMMARSTATE : int32
 		{
 			DISABLED = 0,
 			ENABLED = 1,
 			EXCLUSIVE = 3,
 		}
-		[AllowDuplicates]
 		public enum SPCONTEXTSTATE : int32
 		{
 			DISABLED = 0,
 			ENABLED = 1,
 		}
-		[AllowDuplicates]
 		public enum SPRULESTATE : int32
 		{
 			INACTIVE = 0,
@@ -452,7 +422,6 @@ namespace Win32
 			ACTIVE_WITH_AUTO_PAUSE = 3,
 			ACTIVE_USER_DELIMITED = 4,
 		}
-		[AllowDuplicates]
 		public enum SPGRAMMARWORDTYPE : int32
 		{
 			DISPLAY = 0,
@@ -460,7 +429,6 @@ namespace Win32
 			PRONUNCIATION = 2,
 			LEXICAL_NO_SPECIAL_CHARS = 3,
 		}
-		[AllowDuplicates]
 		public enum SPCFGRULEATTRIBUTES : int32
 		{
 			TopLevel = 1,
@@ -473,13 +441,11 @@ namespace Win32
 			AutoPause = 65536,
 			UserDelimited = 131072,
 		}
-		[AllowDuplicates]
 		public enum SPLOADOPTIONS : int32
 		{
 			STATIC = 0,
 			DYNAMIC = 1,
 		}
-		[AllowDuplicates]
 		public enum SPMATCHINGMODE : int32
 		{
 			AllWords = 0,
@@ -488,14 +454,12 @@ namespace Win32
 			SubsequenceContentRequired = 5,
 			OrderedSubsetContentRequired = 7,
 		}
-		[AllowDuplicates]
 		public enum PHONETICALPHABET : int32
 		{
 			Ipa = 0,
 			Ups = 1,
 			Sapi = 2,
 		}
-		[AllowDuplicates]
 		public enum SPBOOKMARKOPTIONS : int32
 		{
 			NONE = 0,
@@ -503,13 +467,11 @@ namespace Win32
 			AHEAD = 2,
 			TIME_UNITS = 4,
 		}
-		[AllowDuplicates]
 		public enum SPAUDIOOPTIONS : int32
 		{
 			NONE = 0,
 			RETAIN_AUDIO = 1,
 		}
-		[AllowDuplicates]
 		public enum SPGRAMMAROPTIONS : int32
 		{
 			SAPI = 1,
@@ -526,7 +488,6 @@ namespace Win32
 			DEFAULT = 1019,
 			ALL = 1023,
 		}
-		[AllowDuplicates]
 		public enum SPADAPTATIONSETTINGS : int32
 		{
 			Default = 0,
@@ -536,7 +497,6 @@ namespace Win32
 			Reset = 8,
 			HighVolumeDataSource = 16,
 		}
-		[AllowDuplicates]
 		public enum SPADAPTATIONRELEVANCE : int32
 		{
 			Unknown = 0,
@@ -544,13 +504,11 @@ namespace Win32
 			Medium = 2,
 			High = 3,
 		}
-		[AllowDuplicates]
 		public enum SPWAVEFORMATTYPE : int32
 		{
 			INPUT = 0,
 			SRENGINE = 1,
 		}
-		[AllowDuplicates]
 		public enum SPRECOSTATE : int32
 		{
 			INACTIVE = 0,
@@ -559,7 +517,6 @@ namespace Win32
 			INACTIVE_WITH_PURGE = 3,
 			NUM_STATES = 4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechDataKey : int32
 		{
 			SetBinaryValue = 1,
@@ -575,7 +532,6 @@ namespace Win32
 			EnumKeys = 11,
 			EnumValues = 12,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechObjectToken : int32
 		{
 			Id = 1,
@@ -592,7 +548,6 @@ namespace Win32
 			DisplayUI = 12,
 			MatchesAttributes = 13,
 		}
-		[AllowDuplicates]
 		public enum SpeechDataKeyLocation : int32
 		{
 			DefaultLocation = 0,
@@ -600,7 +555,6 @@ namespace Win32
 			LocalMachine = 2,
 			CurrentConfig = 5,
 		}
-		[AllowDuplicates]
 		public enum SpeechTokenContext : uint32
 		{
 			InprocServer = 1,
@@ -609,7 +563,6 @@ namespace Win32
 			RemoteServer = 16,
 			All = 23,
 		}
-		[AllowDuplicates]
 		public enum SpeechTokenShellFolder : int32
 		{
 			AppData = 26,
@@ -617,14 +570,12 @@ namespace Win32
 			CommonAppData = 35,
 			FlagCreate = 32768,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechObjectTokens : int32
 		{
 			Count = 1,
 			Item = 0,
 			_NewEnum = -4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechObjectTokenCategory : int32
 		{
 			Id = 1,
@@ -633,7 +584,6 @@ namespace Win32
 			GetDataKey = 4,
 			EnumerateTokens = 5,
 		}
-		[AllowDuplicates]
 		public enum SpeechAudioFormatType : int32
 		{
 			Default = -1,
@@ -707,7 +657,6 @@ namespace Win32
 			GSM610_22kHzMono = 67,
 			GSM610_44kHzMono = 68,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechAudioFormat : int32
 		{
 			Type = 1,
@@ -715,7 +664,6 @@ namespace Win32
 			GetWaveFormatEx = 3,
 			SetWaveFormatEx = 4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechBaseStream : int32
 		{
 			Format = 1,
@@ -723,14 +671,12 @@ namespace Win32
 			Write = 3,
 			Seek = 4,
 		}
-		[AllowDuplicates]
 		public enum SpeechStreamSeekPositionType : uint32
 		{
 			Start = 0,
 			CurrentPosition = 1,
 			End = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechAudio : int32
 		{
 			Status = 200,
@@ -741,7 +687,6 @@ namespace Win32
 			EventHandle = 205,
 			SetState = 206,
 		}
-		[AllowDuplicates]
 		public enum SpeechAudioState : int32
 		{
 			Closed = 0,
@@ -749,20 +694,17 @@ namespace Win32
 			Pause = 2,
 			Run = 3,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechMMSysAudio : int32
 		{
 			DeviceId = 300,
 			LineId = 301,
 			MMHandle = 302,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechFileStream : int32
 		{
 			Open = 100,
 			Close = 101,
 		}
-		[AllowDuplicates]
 		public enum SpeechStreamFileMode : int32
 		{
 			OpenForRead = 0,
@@ -770,18 +712,15 @@ namespace Win32
 			Create = 2,
 			CreateForWrite = 3,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechCustomStream : int32
 		{
 			DISPID_SCSBaseStream = 100,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechMemoryStream : int32
 		{
 			SetData = 100,
 			GetData = 101,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechAudioStatus : int32
 		{
 			FreeBufferSpace = 1,
@@ -790,14 +729,12 @@ namespace Win32
 			CurrentSeekPosition = 4,
 			CurrentDevicePosition = 5,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechAudioBufferInfo : int32
 		{
 			MinNotification = 1,
 			BufferSize = 2,
 			EventBias = 3,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechWaveFormatEx : int32
 		{
 			FormatTag = 1,
@@ -808,7 +745,6 @@ namespace Win32
 			BitsPerSample = 6,
 			ExtraData = 7,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechVoice : int32
 		{
 			Status = 1,
@@ -834,7 +770,6 @@ namespace Win32
 			IsUISupported = 21,
 			DisplayUI = 22,
 		}
-		[AllowDuplicates]
 		public enum SpeechVoicePriority : int32
 		{
 			Normal = 0,
@@ -860,7 +795,6 @@ namespace Win32
 			VoiceMask = 511,
 			UnusedFlags = -512,
 		}
-		[AllowDuplicates]
 		public enum SpeechVoiceEvents : int32
 		{
 			StartInputStream = 2,
@@ -875,7 +809,6 @@ namespace Win32
 			Private = 32768,
 			AllEvents = 33790,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechVoiceStatus : int32
 		{
 			CurrentStreamNumber = 1,
@@ -891,13 +824,11 @@ namespace Win32
 			PhonemeId = 11,
 			VisemeId = 12,
 		}
-		[AllowDuplicates]
 		public enum SpeechRunState : int32
 		{
 			Done = 1,
 			IsSpeaking = 2,
 		}
-		[AllowDuplicates]
 		public enum SpeechVisemeType : int32
 		{
 			_0 = 0,
@@ -923,14 +854,12 @@ namespace Win32
 			_20 = 20,
 			_21 = 21,
 		}
-		[AllowDuplicates]
 		public enum SpeechVisemeFeature : int32
 		{
 			None = 0,
 			Stressed = 1,
 			Emphasis = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechVoiceEvent : int32
 		{
 			StreamStart = 1,
@@ -944,7 +873,6 @@ namespace Win32
 			AudioLevel = 9,
 			EnginePrivate = 10,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechRecognizer : int32
 		{
 			RRecognizer = 1,
@@ -968,7 +896,6 @@ namespace Win32
 			VGetAudioInputs = 19,
 			VGetProfiles = 20,
 		}
-		[AllowDuplicates]
 		public enum SpeechRecognizerState : int32
 		{
 			Inactive = 0,
@@ -976,7 +903,6 @@ namespace Win32
 			ActiveAlways = 2,
 			InactiveWithPurge = 3,
 		}
-		[AllowDuplicates]
 		public enum SpeechDisplayAttributes : int32
 		{
 			No_Trailing_Space = 0,
@@ -984,13 +910,11 @@ namespace Win32
 			Two_Trailing_Spaces = 4,
 			Consume_Leading_Spaces = 8,
 		}
-		[AllowDuplicates]
 		public enum SpeechFormatType : int32
 		{
 			Input = 0,
 			SREngine = 1,
 		}
-		[AllowDuplicates]
 		public enum SpeechEmulationCompareFlags : int32
 		{
 			IgnoreCase = 1,
@@ -1000,7 +924,6 @@ namespace Win32
 			EmulateResult = 1073741824,
 			Default = 196609,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechRecognizerStatus : int32
 		{
 			AudioStatus = 1,
@@ -1010,7 +933,6 @@ namespace Win32
 			ClsidEngine = 5,
 			SupportedLanguages = 6,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechRecoContext : int32
 		{
 			CRecognizer = 1,
@@ -1031,19 +953,16 @@ namespace Win32
 			CBookmark = 16,
 			CSetAdaptationData = 17,
 		}
-		[AllowDuplicates]
 		public enum SpeechRetainedAudioOptions : int32
 		{
 			None = 0,
 			RetainAudio = 1,
 		}
-		[AllowDuplicates]
 		public enum SpeechBookmarkOptions : int32
 		{
 			None = 0,
 			Pause = 1,
 		}
-		[AllowDuplicates]
 		public enum SpeechInterference : int32
 		{
 			None = 0,
@@ -1054,7 +973,6 @@ namespace Win32
 			TooFast = 5,
 			TooSlow = 6,
 		}
-		[AllowDuplicates]
 		public enum SpeechRecoEvents : int32
 		{
 			StreamEnd = 1,
@@ -1077,13 +995,11 @@ namespace Win32
 			Private = 262144,
 			AllEvents = 393215,
 		}
-		[AllowDuplicates]
 		public enum SpeechRecoContextState : int32
 		{
 			Disabled = 0,
 			Enabled = 1,
 		}
-		[AllowDuplicates]
 		public enum DISPIDSPRG : int32
 		{
 			Id = 1,
@@ -1106,27 +1022,23 @@ namespace Win32
 			SetTextSelection = 18,
 			IsPronounceable = 19,
 		}
-		[AllowDuplicates]
 		public enum SpeechLoadOption : int32
 		{
 			Static = 0,
 			Dynamic = 1,
 		}
-		[AllowDuplicates]
 		public enum SpeechWordPronounceable : int32
 		{
 			UnknownWordUnpronounceable = 0,
 			UnknownWordPronounceable = 1,
 			KnownWordPronounceable = 2,
 		}
-		[AllowDuplicates]
 		public enum SpeechGrammarState : int32
 		{
 			Enabled = 1,
 			Disabled = 0,
 			Exclusive = 3,
 		}
-		[AllowDuplicates]
 		public enum SpeechRuleState : int32
 		{
 			Inactive = 0,
@@ -1134,7 +1046,6 @@ namespace Win32
 			ActiveWithAutoPause = 3,
 			ActiveUserDelimited = 4,
 		}
-		[AllowDuplicates]
 		public enum SpeechRuleAttributes : int32
 		{
 			TopLevel = 1,
@@ -1145,7 +1056,6 @@ namespace Win32
 			Dynamic = 32,
 			Root = 64,
 		}
-		[AllowDuplicates]
 		public enum SpeechGrammarWordType : int32
 		{
 			Display = 0,
@@ -1153,7 +1063,6 @@ namespace Win32
 			Pronounciation = 2,
 			LexicalNoSpecialChars = 3,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechRecoContextEvents : int32
 		{
 			StartStream = 1,
@@ -1175,7 +1084,6 @@ namespace Win32
 			AudioLevel = 17,
 			EnginePrivate = 18,
 		}
-		[AllowDuplicates]
 		public enum SpeechRecognitionType : int32
 		{
 			Standard = 0,
@@ -1185,7 +1093,6 @@ namespace Win32
 			ExtendableParse = 8,
 			ReSent = 16,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechGrammarRule : int32
 		{
 			Attributes = 1,
@@ -1196,7 +1103,6 @@ namespace Win32
 			AddResource = 6,
 			AddState = 7,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechGrammarRules : int32
 		{
 			Count = 1,
@@ -1208,7 +1114,6 @@ namespace Win32
 			Item = 0,
 			_NewEnum = -4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechGrammarRuleState : int32
 		{
 			Rule = 1,
@@ -1217,21 +1122,18 @@ namespace Win32
 			AddRuleTransition = 4,
 			AddSpecialTransition = 5,
 		}
-		[AllowDuplicates]
 		public enum SpeechSpecialTransitionType : int32
 		{
 			Wildcard = 1,
 			Dictation = 2,
 			TextBuffer = 3,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechGrammarRuleStateTransitions : int32
 		{
 			Count = 1,
 			Item = 0,
 			_NewEnum = -4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechGrammarRuleStateTransition : int32
 		{
 			Type = 1,
@@ -1243,7 +1145,6 @@ namespace Win32
 			PropertyValue = 7,
 			NextState = 8,
 		}
-		[AllowDuplicates]
 		public enum SpeechGrammarRuleStateTransitionType : int32
 		{
 			Epsilon = 0,
@@ -1253,7 +1154,6 @@ namespace Win32
 			Wildcard = 4,
 			TextBuffer = 5,
 		}
-		[AllowDuplicates]
 		public enum DISPIDSPTSI : int32
 		{
 			ActiveOffset = 1,
@@ -1261,7 +1161,6 @@ namespace Win32
 			SelectionOffset = 3,
 			SelectionLength = 4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechRecoResult : int32
 		{
 			RecoContext = 1,
@@ -1274,7 +1173,6 @@ namespace Win32
 			SaveToMemory = 8,
 			DiscardResultInfo = 9,
 		}
-		[AllowDuplicates]
 		public enum SpeechDiscardType : int32
 		{
 			Property = 1,
@@ -1287,23 +1185,19 @@ namespace Win32
 			Alternates = 128,
 			All = 255,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechXMLRecoResult : int32
 		{
 			Result = 10,
 			ErrorInfo = 11,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechRecoResult2 : int32
 		{
 			DISPID_SRRSetTextFeedback = 12,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechPhraseBuilder : int32
 		{
 			DISPID_SPPBRestorePhraseFromMemory = 1,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechRecoResultTimes : int32
 		{
 			StreamTime = 1,
@@ -1311,7 +1205,6 @@ namespace Win32
 			TickCount = 3,
 			OffsetFromStart = 4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechPhraseAlternate : int32
 		{
 			RecoResult = 1,
@@ -1320,14 +1213,12 @@ namespace Win32
 			PhraseInfo = 4,
 			Commit = 5,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechPhraseAlternates : int32
 		{
 			Count = 1,
 			Item = 0,
 			_NewEnum = -4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechPhraseInfo : int32
 		{
 			LanguageId = 1,
@@ -1347,7 +1238,6 @@ namespace Win32
 			GetText = 15,
 			GetDisplayAttributes = 16,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechPhraseElement : int32
 		{
 			AudioTimeOffset = 1,
@@ -1364,21 +1254,18 @@ namespace Win32
 			ActualConfidence = 12,
 			EngineConfidence = 13,
 		}
-		[AllowDuplicates]
 		public enum SpeechEngineConfidence : int32
 		{
 			LowConfidence = -1,
 			NormalConfidence = 0,
 			HighConfidence = 1,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechPhraseElements : int32
 		{
 			Count = 1,
 			Item = 0,
 			_NewEnum = -4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechPhraseReplacement : int32
 		{
 			DisplayAttributes = 1,
@@ -1386,14 +1273,12 @@ namespace Win32
 			FirstElement = 3,
 			NumberOfElements = 4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechPhraseReplacements : int32
 		{
 			Count = 1,
 			Item = 0,
 			_NewEnum = -4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechPhraseProperty : int32
 		{
 			Name = 1,
@@ -1406,14 +1291,12 @@ namespace Win32
 			Parent = 8,
 			Children = 9,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechPhraseProperties : int32
 		{
 			Count = 1,
 			Item = 0,
 			_NewEnum = -4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechPhraseRule : int32
 		{
 			Name = 1,
@@ -1425,14 +1308,12 @@ namespace Win32
 			Confidence = 7,
 			EngineConfidence = 8,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechPhraseRules : int32
 		{
 			Count = 1,
 			Item = 0,
 			_NewEnum = -4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechLexicon : int32
 		{
 			GenerationId = 1,
@@ -1444,13 +1325,11 @@ namespace Win32
 			GetPronunciations = 7,
 			GetGenerationChange = 8,
 		}
-		[AllowDuplicates]
 		public enum SpeechLexiconType : int32
 		{
 			User = 1,
 			App = 2,
 		}
-		[AllowDuplicates]
 		public enum SpeechPartOfSpeech : int32
 		{
 			NotOverriden = -1,
@@ -1463,20 +1342,17 @@ namespace Win32
 			LMA = 28672,
 			SuppressWord = 61440,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechLexiconWords : int32
 		{
 			Count = 1,
 			Item = 0,
 			_NewEnum = -4,
 		}
-		[AllowDuplicates]
 		public enum SpeechWordType : int32
 		{
 			Added = 1,
 			Deleted = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechLexiconWord : int32
 		{
 			LangId = 1,
@@ -1484,14 +1360,12 @@ namespace Win32
 			Word = 3,
 			Pronunciations = 4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechLexiconProns : int32
 		{
 			Count = 1,
 			Item = 0,
 			_NewEnum = -4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechLexiconPronunciation : int32
 		{
 			Type = 1,
@@ -1500,7 +1374,6 @@ namespace Win32
 			PhoneIds = 4,
 			Symbolic = 5,
 		}
-		[AllowDuplicates]
 		public enum DISPID_SpeechPhoneConverter : int32
 		{
 			LangId = 1,

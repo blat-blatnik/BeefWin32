@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum ENTERPRISE_DATA_POLICIES : uint32
 		{
 			NONE = 0,
@@ -15,14 +14,12 @@ namespace Win32
 			ENLIGHTENED = 2,
 			EXEMPT = 4,
 		}
-		[AllowDuplicates]
 		public enum SRPHOSTING_TYPE : int32
 		{
 			NONE = 0,
 			WINHTTP = 1,
 			WININET = 2,
 		}
-		[AllowDuplicates]
 		public enum SRPHOSTING_VERSION : int32
 		{
 			SRPHOSTING_VERSION1 = 1,

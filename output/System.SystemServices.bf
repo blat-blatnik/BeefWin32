@@ -3115,7 +3115,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum ALERT_SYSTEM_SEV : uint32
 		{
 			INFORMATIONAL = 1,
@@ -3124,7 +3123,6 @@ namespace Win32
 			QUERY = 4,
 			CRITICAL = 5,
 		}
-		[AllowDuplicates]
 		public enum APPCOMMAND_ID : uint32
 		{
 			BROWSER_BACKWARD = 1,
@@ -3182,13 +3180,11 @@ namespace Win32
 			DELETE = 53,
 			DWM_FLIP3D = 54,
 		}
-		[AllowDuplicates]
 		public enum ATF_FLAGS : uint32
 		{
 			TIMEOUTON = 1,
 			ONOFFFEEDBACK = 2,
 		}
-		[AllowDuplicates]
 		public enum CHOOSECOLOR_FLAGS : uint32
 		{
 			RGBINIT = 1,
@@ -3201,7 +3197,6 @@ namespace Win32
 			SOLIDCOLOR = 128,
 			ANYCOLOR = 256,
 		}
-		[AllowDuplicates]
 		public enum CLIPBOARD_FORMATS : uint32
 		{
 			TEXT = 1,
@@ -3247,7 +3242,6 @@ namespace Win32
 			PRESSANDTAP = 1,
 			ROLLOVER = 1,
 		}
-		[AllowDuplicates]
 		public enum CFE_UNDERLINE : uint32
 		{
 			CF1UNDERLINE = 255,
@@ -3272,7 +3266,6 @@ namespace Win32
 			UNDERLINE = 1,
 			UNDERLINENONE = 0,
 		}
-		[AllowDuplicates]
 		public enum IGP_ID : uint32
 		{
 			GETIMEVERSION = 4294967292,
@@ -3283,7 +3276,6 @@ namespace Win32
 			SETCOMPSTR = 20,
 			SELECT = 24,
 		}
-		[AllowDuplicates]
 		public enum SECTION_FLAGS : uint32
 		{
 			ALL_ACCESS = 983071,
@@ -3294,7 +3286,6 @@ namespace Win32
 			EXTEND_SIZE = 16,
 			MAP_EXECUTE_EXPLICIT = 32,
 		}
-		[AllowDuplicates]
 		public enum TAPE_GET_DRIVE_PARAMETERS_FEATURES_HIGH : uint32
 		{
 			ABS_BLK_IMMED = 2147491840,
@@ -3327,7 +3318,6 @@ namespace Win32
 			WRITE_SETMARKS = 2164260864,
 			WRITE_SHORT_FMKS = 2214592512,
 		}
-		[AllowDuplicates]
 		public enum DEV_BROADCAST_HDR_DEVICE_TYPE : uint32
 		{
 			DEVICEINTERFACE = 5,
@@ -3336,13 +3326,11 @@ namespace Win32
 			PORT = 3,
 			VOLUME = 2,
 		}
-		[AllowDuplicates]
 		public enum DEV_BROADCAST_VOLUME_FLAGS : uint16
 		{
 			MEDIA = 1,
 			NET = 2,
 		}
-		[AllowDuplicates]
 		public enum ACCESS_REASON_TYPE : int32
 		{
 			None = 0,
@@ -3364,7 +3352,6 @@ namespace Win32
 			TrustLabel = 9437184,
 			FilterAce = 10485760,
 		}
-		[AllowDuplicates]
 		public enum SE_IMAGE_SIGNATURE_TYPE : int32
 		{
 			None = 0,
@@ -3376,14 +3363,12 @@ namespace Win32
 			PackageCatalog = 6,
 			PplMitigated = 7,
 		}
-		[AllowDuplicates]
 		public enum SE_LEARNING_MODE_DATA_TYPE : int32
 		{
 			InvalidType = 0,
 			Settings = 1,
 			Max = 2,
 		}
-		[AllowDuplicates]
 		public enum SERVERSILO_STATE : int32
 		{
 			INITING = 0,
@@ -3392,7 +3377,6 @@ namespace Win32
 			TERMINATING = 3,
 			TERMINATED = 4,
 		}
-		[AllowDuplicates]
 		public enum MEM_DEDICATED_ATTRIBUTE_TYPE : int32
 		{
 			ReadBandwidth = 0,
@@ -3401,7 +3385,6 @@ namespace Win32
 			WriteLatency = 3,
 			Max = 4,
 		}
-		[AllowDuplicates]
 		public enum MEM_SECTION_EXTENDED_PARAMETER_TYPE : int32
 		{
 			InvalidType = 0,
@@ -3410,7 +3393,6 @@ namespace Win32
 			SigningLevel = 3,
 			Max = 4,
 		}
-		[AllowDuplicates]
 		public enum SharedVirtualDiskSupportType : int32
 		{
 			sUnsupported = 0,
@@ -3418,14 +3400,12 @@ namespace Win32
 			SnapshotsSupported = 3,
 			CDPSnapshotsSupported = 7,
 		}
-		[AllowDuplicates]
 		public enum SharedVirtualDiskHandleState : int32
 		{
 			None = 0,
 			FileShared = 1,
 			HandleShared = 3,
 		}
-		[AllowDuplicates]
 		public enum MONITOR_DISPLAY_STATE : int32
 		{
 			Off = 0,
@@ -3441,14 +3421,12 @@ namespace Win32
 			Maximum = 3,
 			Invalid = 3,
 		}
-		[AllowDuplicates]
 		public enum POWER_USER_PRESENCE_TYPE : int32
 		{
 			NotPresent = 0,
 			Present = 1,
 			Unknown = 255,
 		}
-		[AllowDuplicates]
 		public enum POWER_MONITOR_REQUEST_REASON : int32
 		{
 			Unknown = 0,
@@ -3508,14 +3486,12 @@ namespace Win32
 			UserInputTouch = 54,
 			Max = 55,
 		}
-		[AllowDuplicates]
 		public enum POWER_MONITOR_REQUEST_TYPE : int32
 		{
 			Off = 0,
 			OnAndPresent = 1,
 			ToggleOn = 2,
 		}
-		[AllowDuplicates]
 		public enum POWER_SETTING_ALTITUDE : int32
 		{
 			GROUP_POLICY = 0,
@@ -3526,7 +3502,6 @@ namespace Win32
 			INTERNAL_OVERRIDE = 5,
 			OS_DEFAULT = 6,
 		}
-		[AllowDuplicates]
 		public enum HIBERFILE_BUCKET_SIZE : int32
 		{
 			_1GB = 0,
@@ -3538,19 +3513,16 @@ namespace Win32
 			Unlimited = 6,
 			Max = 7,
 		}
-		[AllowDuplicates]
 		public enum IMAGE_AUX_SYMBOL_TYPE : int32
 		{
 			IMAGE_AUX_SYMBOL_TYPE_TOKEN_DEF = 1,
 		}
-		[AllowDuplicates]
 		public enum ARM64_FNPDATA_FLAGS : int32
 		{
 			RefToFullXdata = 0,
 			PackedUnwindFunction = 1,
 			PackedUnwindFragment = 2,
 		}
-		[AllowDuplicates]
 		public enum ARM64_FNPDATA_CR : int32
 		{
 			Unchained = 0,
@@ -3558,14 +3530,12 @@ namespace Win32
 			ChainedWithPac = 2,
 			Chained = 3,
 		}
-		[AllowDuplicates]
 		public enum IMPORT_OBJECT_TYPE : int32
 		{
 			CODE = 0,
 			DATA = 1,
 			CONST = 2,
 		}
-		[AllowDuplicates]
 		public enum IMPORT_OBJECT_NAME_TYPE : int32
 		{
 			ORDINAL = 0,
@@ -3603,14 +3573,12 @@ namespace Win32
 			MAX_CLASS_NAME = 1024,
 			MAX_PACKAGE_NAME = 1024,
 		}
-		[AllowDuplicates]
 		public enum RTL_UMS_SCHEDULER_REASON : int32
 		{
 			Startup = 0,
 			ThreadBlocked = 1,
 			ThreadYield = 2,
 		}
-		[AllowDuplicates]
 		public enum IMAGE_POLICY_ENTRY_TYPE : int32
 		{
 			None = 0,
@@ -3628,7 +3596,6 @@ namespace Win32
 			Override = 12,
 			Maximum = 13,
 		}
-		[AllowDuplicates]
 		public enum IMAGE_POLICY_ID : int32
 		{
 			None = 0,
@@ -3659,7 +3626,6 @@ namespace Win32
 			AssemblyDetailedInformationInActivationContxt = 3,
 			FileInformationInAssemblyOfAssemblyInActivationContxt = 4,
 		}
-		[AllowDuplicates]
 		public enum CM_SERVICE_NODE_TYPE : int32
 		{
 			DriverType = 1,
@@ -3669,7 +3635,6 @@ namespace Win32
 			AdapterType = 4,
 			RecognizerType = 8,
 		}
-		[AllowDuplicates]
 		public enum CM_SERVICE_LOAD_TYPE : int32
 		{
 			BootLoad = 0,
@@ -3678,7 +3643,6 @@ namespace Win32
 			DemandLoad = 3,
 			DisableLoad = 4,
 		}
-		[AllowDuplicates]
 		public enum CM_ERROR_CONTROL_TYPE : int32
 		{
 			IgnoreError = 0,
@@ -3686,7 +3650,6 @@ namespace Win32
 			SevereError = 2,
 			CriticalError = 3,
 		}
-		[AllowDuplicates]
 		public enum TAPE_DRIVE_PROBLEM_TYPE : int32
 		{
 			ProblemNone = 0,
@@ -3704,14 +3667,12 @@ namespace Win32
 			MediaLifeExpired = 12,
 			SnappedTape = 13,
 		}
-		[AllowDuplicates]
 		public enum TRANSACTION_STATE : int32
 		{
 			Normal = 1,
 			Indoubt = 2,
 			CommittedNotify = 3,
 		}
-		[AllowDuplicates]
 		public enum TRANSACTION_INFORMATION_CLASS : int32
 		{
 			BasicInformation = 0,
@@ -3721,7 +3682,6 @@ namespace Win32
 			BindInformation = 4,
 			DTCPrivateInformation = 5,
 		}
-		[AllowDuplicates]
 		public enum TRANSACTIONMANAGER_INFORMATION_CLASS : int32
 		{
 			BasicInformation = 0,
@@ -3731,20 +3691,17 @@ namespace Win32
 			OnlineProbeInformation = 3,
 			OldestTransactionInformation = 5,
 		}
-		[AllowDuplicates]
 		public enum RESOURCEMANAGER_INFORMATION_CLASS : int32
 		{
 			BasicInformation = 0,
 			CompletionInformation = 1,
 		}
-		[AllowDuplicates]
 		public enum ENLISTMENT_INFORMATION_CLASS : int32
 		{
 			BasicInformation = 0,
 			RecoveryInformation = 1,
 			CrmInformation = 2,
 		}
-		[AllowDuplicates]
 		public enum KTMOBJECT_TYPE : int32
 		{
 			TRANSACTION = 0,

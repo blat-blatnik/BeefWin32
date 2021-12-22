@@ -113,12 +113,10 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WPCFLAG_OVERRIDE : int32
 		{
 			WPCFLAG_APPLICATION = 1,
 		}
-		[AllowDuplicates]
 		public enum WPCFLAG_RESTRICTION : int32
 		{
 			NO_RESTRICTION = 0,
@@ -130,19 +128,16 @@ namespace Win32
 			TIME_ALLOWANCE_RESTRICTED = 32,
 			GAMES_RESTRICTED = 64,
 		}
-		[AllowDuplicates]
 		public enum WPCFLAG_WEB_SETTING : int32
 		{
 			NOTBLOCKED = 0,
 			DOWNLOADSBLOCKED = 1,
 		}
-		[AllowDuplicates]
 		public enum WPCFLAG_VISIBILITY : int32
 		{
 			VISIBLE = 0,
 			HIDDEN = 1,
 		}
-		[AllowDuplicates]
 		public enum WPCFLAG_ISBLOCKED : int32
 		{
 			NOTBLOCKED = 0,
@@ -173,7 +168,6 @@ namespace Win32
 			NOACCESS = 16777216,
 			INTERNALERROR = -1,
 		}
-		[AllowDuplicates]
 		public enum WPCFLAG_LOGOFF_TYPE : int32
 		{
 			LOGOUT = 0,
@@ -182,14 +176,12 @@ namespace Win32
 			FUS = 4,
 			FORCEDFUS = 8,
 		}
-		[AllowDuplicates]
 		public enum WPCFLAG_IM_LEAVE : int32
 		{
 			NORMAL = 0,
 			FORCED = 1,
 			CONVERSATION_END = 2,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_SETTINGSCHANGEEVENT : int32
 		{
 			CLASS = 0,
@@ -201,7 +193,6 @@ namespace Win32
 			OPTIONAL = 6,
 			CARGS = 7,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_SAFERAPPBLOCKED : int32
 		{
 			TIMESTAMP = 0,
@@ -210,7 +201,6 @@ namespace Win32
 			RULEID = 3,
 			CARGS = 4,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_EMAILRECEIEVEDEVENT : int32
 		{
 			SENDER = 0,
@@ -226,7 +216,6 @@ namespace Win32
 			EMAILACCOUNT = 10,
 			CARGS = 11,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_EMAILSENTEVENT : int32
 		{
 			SENDER = 0,
@@ -241,7 +230,6 @@ namespace Win32
 			EMAILACCOUNT = 9,
 			CARGS = 10,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_EMAILCONTACTEVENT : int32
 		{
 			APPNAME = 0,
@@ -254,7 +242,6 @@ namespace Win32
 			EMAILACCOUNT = 7,
 			CARGS = 8,
 		}
-		[AllowDuplicates]
 		public enum WPC_MEDIA_TYPE : int32
 		{
 			OTHER = 0,
@@ -266,14 +253,12 @@ namespace Win32
 			PICTURE_FILE = 6,
 			MAX = 7,
 		}
-		[AllowDuplicates]
 		public enum WPC_MEDIA_EXPLICIT : int32
 		{
 			FALSE = 0,
 			TRUE = 1,
 			UNKNOWN = 2,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_MEDIAPLAYBACKEVENT : int32
 		{
 			APPNAME = 0,
@@ -287,7 +272,6 @@ namespace Win32
 			REASON = 8,
 			CARGS = 9,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_MEDIADOWNLOADEVENT : int32
 		{
 			APPNAME = 0,
@@ -301,7 +285,6 @@ namespace Win32
 			REASON = 8,
 			CARGS = 9,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_CONVERSATIONINITEVENT : int32
 		{
 			APPNAME = 0,
@@ -315,7 +298,6 @@ namespace Win32
 			RECIPIENT = 8,
 			CARGS = 9,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_CONVERSATIONJOINEVENT : int32
 		{
 			APPNAME = 0,
@@ -330,7 +312,6 @@ namespace Win32
 			SENDER = 9,
 			CARGS = 10,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_CONVERSATIONLEAVEEVENT : int32
 		{
 			APPNAME = 0,
@@ -345,7 +326,6 @@ namespace Win32
 			FLAGS = 9,
 			CARGS = 10,
 		}
-		[AllowDuplicates]
 		public enum WPCFLAG_IM_FEATURE : int32
 		{
 			NONE = 0,
@@ -358,7 +338,6 @@ namespace Win32
 			SENDING = -2147483648,
 			ALL = -1,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_IMFEATUREEVENT : int32
 		{
 			APPNAME = 0,
@@ -374,7 +353,6 @@ namespace Win32
 			DATA = 10,
 			CARGS = 11,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_IMCONTACTEVENT : int32
 		{
 			APPNAME = 0,
@@ -387,7 +365,6 @@ namespace Win32
 			REASON = 7,
 			CARGS = 8,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_GAMESTARTEVENT : int32
 		{
 			APPID = 0,
@@ -402,7 +379,6 @@ namespace Win32
 			PID = 9,
 			CARGS = 10,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_FILEDOWNLOADEVENT : int32
 		{
 			URL = 0,
@@ -412,7 +388,6 @@ namespace Win32
 			PATH = 4,
 			CARGS = 5,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_URLVISITEVENT : int32
 		{
 			URL = 0,
@@ -424,7 +399,6 @@ namespace Win32
 			CATEGORY = 6,
 			CARGS = 7,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_WEBSITEVISITEVENT : int32
 		{
 			URL = 0,
@@ -438,7 +412,6 @@ namespace Win32
 			TELEMETRY = 8,
 			CARGS = 9,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_APPLICATIONEVENT : int32
 		{
 			SERIALIZEDAPPLICATION = 0,
@@ -448,14 +421,12 @@ namespace Win32
 			TIMEUSED = 4,
 			CARGS = 5,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_COMPUTERUSAGEEVENT : int32
 		{
 			ID = 0,
 			TIMEUSED = 1,
 			CARGS = 2,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_CONTENTUSAGEEVENT : int32
 		{
 			CONTENTPROVIDERID = 0,
@@ -467,7 +438,6 @@ namespace Win32
 			DECISION = 6,
 			CARGS = 7,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_CUSTOMEVENT : int32
 		{
 			PUBLISHER = 0,
@@ -481,7 +451,6 @@ namespace Win32
 			REASON = 8,
 			CARGS = 9,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_WEBOVERRIDEEVENT : int32
 		{
 			USERID = 0,
@@ -489,7 +458,6 @@ namespace Win32
 			REASON = 2,
 			CARGS = 3,
 		}
-		[AllowDuplicates]
 		public enum WPC_ARGS_APPOVERRIDEEVENT : int32
 		{
 			USERID = 0,
@@ -497,7 +465,6 @@ namespace Win32
 			REASON = 2,
 			CARGS = 3,
 		}
-		[AllowDuplicates]
 		public enum WPC_SETTINGS : int32
 		{
 			S_WPC_EXTENSION_PATH = 0,

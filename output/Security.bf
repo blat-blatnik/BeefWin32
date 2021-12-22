@@ -24,7 +24,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum TOKEN_PRIVILEGES_ATTRIBUTES : uint32
 		{
 			ENABLED = 2,
@@ -32,14 +31,12 @@ namespace Win32
 			REMOVED = 4,
 			USED_FOR_ACCESS = 2147483648,
 		}
-		[AllowDuplicates]
 		public enum LOGON32_PROVIDER : uint32
 		{
 			DEFAULT = 0,
 			WINNT50 = 3,
 			WINNT40 = 2,
 		}
-		[AllowDuplicates]
 		public enum CREATE_RESTRICTED_TOKEN_FLAGS : uint32
 		{
 			DISABLE_MAX_PRIVILEGE = 1,
@@ -47,7 +44,6 @@ namespace Win32
 			LUA_TOKEN = 4,
 			WRITE_RESTRICTED = 8,
 		}
-		[AllowDuplicates]
 		public enum LOGON32_LOGON : uint32
 		{
 			BATCH = 4,
@@ -76,7 +72,6 @@ namespace Win32
 			NO_INHERITANCE = 0,
 			INHERIT_ONLY_ACE_ = 8,
 		}
-		[AllowDuplicates]
 		public enum OBJECT_SECURITY_INFORMATION : uint32
 		{
 			ATTRIBUTE_SECURITY_INFORMATION = 32,
@@ -92,7 +87,6 @@ namespace Win32
 			UNPROTECTED_DACL_SECURITY_INFORMATION = 536870912,
 			UNPROTECTED_SACL_SECURITY_INFORMATION = 268435456,
 		}
-		[AllowDuplicates]
 		public enum SECURITY_AUTO_INHERIT_FLAGS : uint32
 		{
 			AVOID_OWNER_CHECK = 16,
@@ -107,13 +101,11 @@ namespace Win32
 			MACL_NO_WRITE_UP = 256,
 			SACL_AUTO_INHERIT = 2,
 		}
-		[AllowDuplicates]
 		public enum ACE_REVISION : uint32
 		{
 			N = 2,
 			N_DS = 4,
 		}
-		[AllowDuplicates]
 		public enum TOKEN_MANDATORY_POLICY_ID : uint32
 		{
 			OFF = 0,
@@ -121,13 +113,11 @@ namespace Win32
 			NEW_PROCESS_MIN = 2,
 			VALID_MASK = 3,
 		}
-		[AllowDuplicates]
 		public enum SYSTEM_AUDIT_OBJECT_ACE_FLAGS : uint32
 		{
 			OBJECT_TYPE_PRESENT = 1,
 			INHERITED_OBJECT_TYPE_PRESENT = 2,
 		}
-		[AllowDuplicates]
 		public enum CLAIM_SECURITY_ATTRIBUTE_FLAGS : uint32
 		{
 			NON_INHERITABLE = 1,
@@ -137,7 +127,6 @@ namespace Win32
 			DISABLED = 16,
 			MANDATORY = 32,
 		}
-		[AllowDuplicates]
 		public enum CLAIM_SECURITY_ATTRIBUTE_VALUE_TYPE : uint16
 		{
 			INT64 = 1,
@@ -148,7 +137,6 @@ namespace Win32
 			SID = 5,
 			BOOLEAN = 6,
 		}
-		[AllowDuplicates]
 		public enum TOKEN_ACCESS_MASK : uint32
 		{
 			DELETE = 65536,
@@ -167,7 +155,6 @@ namespace Win32
 			ADJUST_SESSIONID = 256,
 			ALL_ACCESS = 983295,
 		}
-		[AllowDuplicates]
 		public enum ENUM_PERIOD : int32
 		{
 			INVALID = -1,
@@ -179,7 +166,6 @@ namespace Win32
 			MONTHS = 5,
 			YEARS = 6,
 		}
-		[AllowDuplicates]
 		public enum SID_NAME_USE : int32
 		{
 			User = 1,
@@ -194,7 +180,6 @@ namespace Win32
 			Label = 10,
 			LogonSession = 11,
 		}
-		[AllowDuplicates]
 		public enum WELL_KNOWN_SID_TYPE : int32
 		{
 			NullSid = 0,
@@ -318,19 +303,16 @@ namespace Win32
 			AuthenticationFreshKeyAuthSid = 118,
 			BuiltinDeviceOwnersSid = 119,
 		}
-		[AllowDuplicates]
 		public enum ACL_INFORMATION_CLASS : int32
 		{
 			RevisionInformation = 1,
 			SizeInformation = 2,
 		}
-		[AllowDuplicates]
 		public enum AUDIT_EVENT_TYPE : int32
 		{
 			ObjectAccess = 0,
 			DirectoryServiceAccess = 1,
 		}
-		[AllowDuplicates]
 		public enum SECURITY_IMPERSONATION_LEVEL : int32
 		{
 			Anonymous = 0,
@@ -338,20 +320,17 @@ namespace Win32
 			Impersonation = 2,
 			Delegation = 3,
 		}
-		[AllowDuplicates]
 		public enum TOKEN_TYPE : int32
 		{
 			Primary = 1,
 			Impersonation = 2,
 		}
-		[AllowDuplicates]
 		public enum TOKEN_ELEVATION_TYPE : int32
 		{
 			Default = 1,
 			Full = 2,
 			Limited = 3,
 		}
-		[AllowDuplicates]
 		public enum TOKEN_INFORMATION_CLASS : int32
 		{
 			TokenUser = 1,
@@ -403,7 +382,6 @@ namespace Win32
 			TokenIsSandboxed = 47,
 			MaxTokenInfoClass = 48,
 		}
-		[AllowDuplicates]
 		public enum MANDATORY_LEVEL : int32
 		{
 			Untrusted = 0,

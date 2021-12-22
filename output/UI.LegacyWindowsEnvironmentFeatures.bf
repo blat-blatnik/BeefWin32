@@ -29,7 +29,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum _reconcilef : int32
 		{
 			RECONCILEF_MAYBOTHERUSER = 1,

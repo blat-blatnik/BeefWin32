@@ -26,7 +26,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum ENCLAVE_SEALING_IDENTITY_POLICY : int32
 		{
 			INVALID = 0,

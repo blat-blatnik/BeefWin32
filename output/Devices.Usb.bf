@@ -553,7 +553,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum USB_DEVICE_SPEED : int32
 		{
 			LowSpeed = 0,
@@ -561,13 +560,11 @@ namespace Win32
 			HighSpeed = 2,
 			SuperSpeed = 3,
 		}
-		[AllowDuplicates]
 		public enum USB_DEVICE_TYPE : int32
 		{
 			_11Device = 0,
 			_20Device = 1,
 		}
-		[AllowDuplicates]
 		public enum USB_CONTROLLER_FLAVOR : int32
 		{
 			USB_HcGeneric = 0,
@@ -598,7 +595,6 @@ namespace Win32
 			EHCI_NVIDIA_Tegra3 = 4001,
 			EHCI_Intel_Medfield = 5001,
 		}
-		[AllowDuplicates]
 		public enum USBD_PIPE_TYPE : int32
 		{
 			Control = 0,
@@ -606,14 +602,12 @@ namespace Win32
 			Bulk = 2,
 			Interrupt = 3,
 		}
-		[AllowDuplicates]
 		public enum USBD_ENDPOINT_OFFLOAD_MODE : int32
 		{
 			ModeNotSupported = 0,
 			SoftwareAssisted = 1,
 			HardwareAssisted = 2,
 		}
-		[AllowDuplicates]
 		public enum USB_USER_ERROR_CODE : int32
 		{
 			Success = 0,
@@ -628,7 +622,6 @@ namespace Win32
 			DeviceNotStarted = 9,
 			NoDeviceConnected = 10,
 		}
-		[AllowDuplicates]
 		public enum WDMUSB_POWER_STATE : int32
 		{
 			NotMapped = 0,
@@ -645,7 +638,6 @@ namespace Win32
 			DeviceD2 = 203,
 			DeviceD3 = 204,
 		}
-		[AllowDuplicates]
 		public enum USBFN_EVENT : int32
 		{
 			Minimum = 0,
@@ -662,7 +654,6 @@ namespace Win32
 			SetInterface = 11,
 			Maximum = 12,
 		}
-		[AllowDuplicates]
 		public enum USBFN_PORT_TYPE : int32
 		{
 			UnknownPort = 0,
@@ -673,7 +664,6 @@ namespace Win32
 			ProprietaryDedicatedChargingPort = 5,
 			PortTypeMaximum = 6,
 		}
-		[AllowDuplicates]
 		public enum USBFN_BUS_SPEED : int32
 		{
 			Low = 0,
@@ -692,7 +682,6 @@ namespace Win32
 			Rx = 2,
 			Maximum = 3,
 		}
-		[AllowDuplicates]
 		public enum USBFN_DEVICE_STATE : int32
 		{
 			Minimum = 0,
@@ -704,7 +693,6 @@ namespace Win32
 			Suspended = 6,
 			StateMaximum = 7,
 		}
-		[AllowDuplicates]
 		public enum PIPE_TYPE : int32
 		{
 			EVENT_PIPE = 0,
@@ -712,7 +700,6 @@ namespace Win32
 			WRITE_DATA_PIPE = 2,
 			ALL_PIPE = 3,
 		}
-		[AllowDuplicates]
 		public enum RAW_PIPE_TYPE : int32
 		{
 			CONTROL = 0,

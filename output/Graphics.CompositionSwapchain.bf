@@ -7,21 +7,18 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum PresentStatisticsKind : int32
 		{
 			PresentStatus = 1,
 			CompositionFrame = 2,
 			IndependentFlipFrame = 3,
 		}
-		[AllowDuplicates]
 		public enum PresentStatus : int32
 		{
 			Queued = 0,
 			Skipped = 1,
 			Canceled = 2,
 		}
-		[AllowDuplicates]
 		public enum CompositionFrameInstanceKind : int32
 		{
 			ComposedOnScreen = 0,

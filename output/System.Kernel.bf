@@ -27,7 +27,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum EXCEPTION_DISPOSITION : int32
 		{
 			ContinueExecution = 0,
@@ -35,19 +34,16 @@ namespace Win32
 			NestedException = 2,
 			CollidedUnwind = 3,
 		}
-		[AllowDuplicates]
 		public enum EVENT_TYPE : int32
 		{
 			NotificationEvent = 0,
 			SynchronizationEvent = 1,
 		}
-		[AllowDuplicates]
 		public enum TIMER_TYPE : int32
 		{
 			NotificationTimer = 0,
 			SynchronizationTimer = 1,
 		}
-		[AllowDuplicates]
 		public enum WAIT_TYPE : int32
 		{
 			All = 0,
@@ -56,14 +52,12 @@ namespace Win32
 			Dequeue = 3,
 			Dpc = 4,
 		}
-		[AllowDuplicates]
 		public enum NT_PRODUCT_TYPE : int32
 		{
 			WinNt = 1,
 			LanManNt = 2,
 			Server = 3,
 		}
-		[AllowDuplicates]
 		public enum SUITE_TYPE : int32
 		{
 			SmallBusiness = 0,
@@ -86,7 +80,6 @@ namespace Win32
 			MultiUserTS = 17,
 			MaxSuiteType = 18,
 		}
-		[AllowDuplicates]
 		public enum COMPARTMENT_ID : int32
 		{
 			UNSPECIFIED_COMPARTMENT_ID = 0,

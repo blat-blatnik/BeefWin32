@@ -23,27 +23,23 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum SIDESHOW_SCREEN_TYPE : int32
 		{
 			BITMAP = 0,
 			TEXT = 1,
 		}
-		[AllowDuplicates]
 		public enum SIDESHOW_COLOR_TYPE : int32
 		{
 			COLOR = 0,
 			GREYSCALE = 1,
 			BLACK_AND_WHITE = 2,
 		}
-		[AllowDuplicates]
 		public enum SCF_EVENT_IDS : int32
 		{
 			NAVIGATION = 1,
 			MENUACTION = 2,
 			CONTEXTMENU = 3,
 		}
-		[AllowDuplicates]
 		public enum SCF_BUTTON_IDS : int32
 		{
 			MENU = 1,

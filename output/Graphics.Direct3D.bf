@@ -64,7 +64,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum D3D_DRIVER_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -74,7 +73,6 @@ namespace Win32
 			SOFTWARE = 4,
 			WARP = 5,
 		}
-		[AllowDuplicates]
 		public enum D3D_FEATURE_LEVEL : int32
 		{
 			_1_0_CORE = 4096,
@@ -688,7 +686,6 @@ namespace Win32
 			_11_TESSELLATOR_OUTPUT_TRIANGLE_CW = 3,
 			_11_TESSELLATOR_OUTPUT_TRIANGLE_CCW = 4,
 		}
-		[AllowDuplicates]
 		public enum D3D_MIN_PRECISION : int32
 		{
 			DEFAULT = 0,
@@ -700,7 +697,6 @@ namespace Win32
 			ANY_16 = 240,
 			ANY_10 = 241,
 		}
-		[AllowDuplicates]
 		public enum D3D_INTERPOLATION_MODE : int32
 		{
 			UNDEFINED = 0,
@@ -712,7 +708,6 @@ namespace Win32
 			LINEAR_SAMPLE = 6,
 			LINEAR_NOPERSPECTIVE_SAMPLE = 7,
 		}
-		[AllowDuplicates]
 		public enum D3D_PARAMETER_FLAGS : int32
 		{
 			NONE = 0,

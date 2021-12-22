@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum EndpointConnectorType : int32
 		{
 			HostProcessConnector = 0,

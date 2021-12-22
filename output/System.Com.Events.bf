@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum EOC_ChangeType : int32
 		{
 			NewObject = 0,

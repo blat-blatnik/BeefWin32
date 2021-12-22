@@ -13,7 +13,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum CREATE_TOOLHELP_SNAPSHOT_FLAGS : uint32
 		{
 			INHERIT = 2147483648,
@@ -24,7 +23,6 @@ namespace Win32
 			SNAPPROCESS = 2,
 			SNAPTHREAD = 4,
 		}
-		[AllowDuplicates]
 		public enum HEAPENTRY32_FLAGS : uint32
 		{
 			FIXED = 1,

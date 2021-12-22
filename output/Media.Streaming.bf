@@ -7,14 +7,12 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum MF_TRANSFER_VIDEO_FRAME_FLAGS : int32
 		{
 			DEFAULT = 0,
 			STRETCH = 1,
 			IGNORE_PAR = 2,
 		}
-		[AllowDuplicates]
 		public enum MF_MEDIASOURCE_STATUS_INFO : int32
 		{
 			FULLYSUPPORTED = 0,

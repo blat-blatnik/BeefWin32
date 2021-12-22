@@ -1841,7 +1841,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum NDIS_REQUEST_TYPE : int32
 		{
 			QueryInformation = 0,
@@ -1857,7 +1856,6 @@ namespace Win32
 			Generic3 = 10,
 			Generic4 = 11,
 		}
-		[AllowDuplicates]
 		public enum NDIS_INTERRUPT_MODERATION : int32
 		{
 			Unknown = 0,
@@ -1865,7 +1863,6 @@ namespace Win32
 			Enabled = 2,
 			Disabled = 3,
 		}
-		[AllowDuplicates]
 		public enum NDIS_802_11_STATUS_TYPE : int32
 		{
 			_Authentication = 0,
@@ -1873,7 +1870,6 @@ namespace Win32
 			_PMKID_CandidateList = 2,
 			Max = 3,
 		}
-		[AllowDuplicates]
 		public enum NDIS_802_11_NETWORK_TYPE : int32
 		{
 			FH = 0,
@@ -1883,7 +1879,6 @@ namespace Win32
 			Automode = 4,
 			NetworkTypeMax = 5,
 		}
-		[AllowDuplicates]
 		public enum NDIS_802_11_POWER_MODE : int32
 		{
 			CAM = 0,
@@ -1891,7 +1886,6 @@ namespace Win32
 			Fast_PSP = 2,
 			Max = 3,
 		}
-		[AllowDuplicates]
 		public enum NDIS_802_11_NETWORK_INFRASTRUCTURE : int32
 		{
 			IBSS = 0,
@@ -1916,7 +1910,6 @@ namespace Win32
 			WPA3Ent = 10,
 			Max = 11,
 		}
-		[AllowDuplicates]
 		public enum NDIS_802_11_PRIVACY_FILTER : int32
 		{
 			AcceptAll = 0,
@@ -1938,18 +1931,15 @@ namespace Win32
 			Encryption3Enabled = 6,
 			Encryption3KeyAbsent = 7,
 		}
-		[AllowDuplicates]
 		public enum NDIS_802_11_RELOAD_DEFAULTS : int32
 		{
 			Ndis802_11ReloadWEPKeys = 0,
 		}
-		[AllowDuplicates]
 		public enum NDIS_802_11_MEDIA_STREAM_MODE : int32
 		{
 			ff = 0,
 			n = 1,
 		}
-		[AllowDuplicates]
 		public enum NDIS_802_11_RADIO_STATUS : int32
 		{
 			On = 0,
@@ -1958,13 +1948,11 @@ namespace Win32
 			HardwareSoftwareOff = 3,
 			Max = 4,
 		}
-		[AllowDuplicates]
 		public enum OFFLOAD_OPERATION_E : int32
 		{
 			AUTHENTICATE = 1,
 			ENCRYPT = 2,
 		}
-		[AllowDuplicates]
 		public enum OFFLOAD_CONF_ALGO : int32
 		{
 			NONE = 0,
@@ -1973,7 +1961,6 @@ namespace Win32
 			_3_DES = 3,
 			MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum OFFLOAD_INTEGRITY_ALGO : int32
 		{
 			NONE = 0,
@@ -1981,13 +1968,11 @@ namespace Win32
 			SHA = 2,
 			MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum UDP_ENCAP_TYPE : int32
 		{
 			IKE = 0,
 			OTHER = 1,
 		}
-		[AllowDuplicates]
 		public enum NDIS_MEDIUM : int32
 		{
 			_802_3 = 0,
@@ -2012,7 +1997,6 @@ namespace Win32
 			IP = 19,
 			Max = 20,
 		}
-		[AllowDuplicates]
 		public enum NDIS_PHYSICAL_MEDIUM : int32
 		{
 			Unspecified = 0,
@@ -2038,7 +2022,6 @@ namespace Win32
 			Native802_15_4 = 20,
 			Max = 21,
 		}
-		[AllowDuplicates]
 		public enum NDIS_HARDWARE_STATUS : int32
 		{
 			Ready = 0,
@@ -2047,7 +2030,6 @@ namespace Win32
 			Closing = 3,
 			NotReady = 4,
 		}
-		[AllowDuplicates]
 		public enum NDIS_DEVICE_POWER_STATE : int32
 		{
 			Unspecified = 0,
@@ -2057,7 +2039,6 @@ namespace Win32
 			D3 = 4,
 			Maximum = 5,
 		}
-		[AllowDuplicates]
 		public enum NDIS_FDDI_ATTACHMENT_TYPE : int32
 		{
 			Isolated = 1,
@@ -2074,7 +2055,6 @@ namespace Win32
 			CWrapS = 12,
 			Through = 13,
 		}
-		[AllowDuplicates]
 		public enum NDIS_FDDI_RING_MGT_STATE : int32
 		{
 			Isolated = 1,
@@ -2086,7 +2066,6 @@ namespace Win32
 			Directed = 7,
 			Trace = 8,
 		}
-		[AllowDuplicates]
 		public enum NDIS_FDDI_LCONNECTION_STATE : int32
 		{
 			Off = 1,
@@ -2100,7 +2079,6 @@ namespace Win32
 			Active = 9,
 			Maintenance = 10,
 		}
-		[AllowDuplicates]
 		public enum NDIS_WAN_MEDIUM_SUBTYPE : int32
 		{
 			Hub = 0,
@@ -2121,20 +2099,17 @@ namespace Win32
 			Gre = 15,
 			SubTypeMax = 16,
 		}
-		[AllowDuplicates]
 		public enum NDIS_WAN_HEADER_FORMAT : int32
 		{
 			Native = 0,
 			Ethernet = 1,
 		}
-		[AllowDuplicates]
 		public enum NDIS_WAN_QUALITY : int32
 		{
 			Raw = 0,
 			ErrorControl = 1,
 			Reliable = 2,
 		}
-		[AllowDuplicates]
 		public enum NDIS_802_5_RING_STATE : int32
 		{
 			Opened = 1,
@@ -2144,13 +2119,11 @@ namespace Win32
 			OpenFailure = 5,
 			RingFailure = 6,
 		}
-		[AllowDuplicates]
 		public enum NDIS_MEDIA_STATE : int32
 		{
 			Connected = 0,
 			Disconnected = 1,
 		}
-		[AllowDuplicates]
 		public enum NDIS_SUPPORTED_PAUSE_FUNCTIONS : int32
 		{
 			Unsupported = 0,
@@ -2159,7 +2132,6 @@ namespace Win32
 			SendAndReceive = 3,
 			Unknown = 4,
 		}
-		[AllowDuplicates]
 		public enum NDIS_PORT_TYPE : int32
 		{
 			Undefined = 0,
@@ -2168,7 +2140,6 @@ namespace Win32
 			_8021xSupplicant = 3,
 			Max = 4,
 		}
-		[AllowDuplicates]
 		public enum NDIS_PORT_AUTHORIZATION_STATE : int32
 		{
 			AuthorizationUnknown = 0,
@@ -2176,14 +2147,12 @@ namespace Win32
 			Unauthorized = 2,
 			Reauthorizing = 3,
 		}
-		[AllowDuplicates]
 		public enum NDIS_PORT_CONTROL_STATE : int32
 		{
 			Unknown = 0,
 			Controlled = 1,
 			Uncontrolled = 2,
 		}
-		[AllowDuplicates]
 		public enum NDIS_NETWORK_CHANGE_TYPE : int32
 		{
 			PossibleNetworkChange = 1,
@@ -2199,7 +2168,6 @@ namespace Win32
 			GenuineIntel = 1,
 			AuthenticAMD = 2,
 		}
-		[AllowDuplicates]
 		public enum NDK_RDMA_TECHNOLOGY : int32
 		{
 			Undefined = 0,
@@ -2209,21 +2177,18 @@ namespace Win32
 			RoCEv2 = 4,
 			MaxTechnology = 5,
 		}
-		[AllowDuplicates]
 		public enum DOT11EXT_IHV_CONNECTION_PHASE : int32
 		{
 			any = 0,
 			initial_connection = 1,
 			post_l3_connection = 2,
 		}
-		[AllowDuplicates]
 		public enum DOT11_MSONEX_RESULT : int32
 		{
 			SUCCESS = 0,
 			FAILURE = 1,
 			IN_PROGRESS = 2,
 		}
-		[AllowDuplicates]
 		public enum DOT11EXT_IHV_INDICATION_TYPE : int32
 		{
 			NicSpecificNotification = 0,

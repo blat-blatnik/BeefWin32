@@ -13,21 +13,18 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum UI_CONTEXTAVAILABILITY : int32
 		{
 			NOTAVAILABLE = 0,
 			AVAILABLE = 1,
 			ACTIVE = 2,
 		}
-		[AllowDuplicates]
 		public enum UI_FONTPROPERTIES : int32
 		{
 			NOTAVAILABLE = 0,
 			NOTSET = 1,
 			SET = 2,
 		}
-		[AllowDuplicates]
 		public enum UI_FONTVERTICALPOSITION : int32
 		{
 			NOTAVAILABLE = 0,
@@ -35,39 +32,33 @@ namespace Win32
 			SUPERSCRIPT = 2,
 			SUBSCRIPT = 3,
 		}
-		[AllowDuplicates]
 		public enum UI_FONTUNDERLINE : int32
 		{
 			NOTAVAILABLE = 0,
 			NOTSET = 1,
 			SET = 2,
 		}
-		[AllowDuplicates]
 		public enum UI_FONTDELTASIZE : int32
 		{
 			GROW = 0,
 			SHRINK = 1,
 		}
-		[AllowDuplicates]
 		public enum UI_CONTROLDOCK : int32
 		{
 			TOP = 1,
 			BOTTOM = 3,
 		}
-		[AllowDuplicates]
 		public enum UI_SWATCHCOLORTYPE : int32
 		{
 			NOCOLOR = 0,
 			AUTOMATIC = 1,
 			RGB = 2,
 		}
-		[AllowDuplicates]
 		public enum UI_SWATCHCOLORMODE : int32
 		{
 			NORMAL = 0,
 			MONOCHROME = 1,
 		}
-		[AllowDuplicates]
 		public enum UI_EVENTTYPE : int32
 		{
 			ApplicationMenuOpened = 0,
@@ -79,7 +70,6 @@ namespace Win32
 			CommandExecuted = 6,
 			TooltipShown = 7,
 		}
-		[AllowDuplicates]
 		public enum UI_EVENTLOCATION : int32
 		{
 			Ribbon = 0,
@@ -87,7 +77,6 @@ namespace Win32
 			ApplicationMenu = 2,
 			ContextPopup = 3,
 		}
-		[AllowDuplicates]
 		public enum UI_INVALIDATIONS : int32
 		{
 			STATE = 1,
@@ -95,7 +84,6 @@ namespace Win32
 			PROPERTY = 4,
 			ALLPROPERTIES = 8,
 		}
-		[AllowDuplicates]
 		public enum UI_COLLECTIONCHANGE : int32
 		{
 			INSERT = 0,
@@ -103,14 +91,12 @@ namespace Win32
 			REPLACE = 2,
 			RESET = 3,
 		}
-		[AllowDuplicates]
 		public enum UI_EXECUTIONVERB : int32
 		{
 			EXECUTE = 0,
 			PREVIEW = 1,
 			CANCELPREVIEW = 2,
 		}
-		[AllowDuplicates]
 		public enum UI_COMMANDTYPE : int32
 		{
 			UNKNOWN = 0,
@@ -127,12 +113,10 @@ namespace Win32
 			COLORANCHOR = 11,
 			COLORCOLLECTION = 12,
 		}
-		[AllowDuplicates]
 		public enum UI_VIEWTYPE : int32
 		{
 			UI_VIEWTYPE_RIBBON = 1,
 		}
-		[AllowDuplicates]
 		public enum UI_VIEWVERB : int32
 		{
 			CREATE = 0,
@@ -140,7 +124,6 @@ namespace Win32
 			SIZE = 2,
 			ERROR = 3,
 		}
-		[AllowDuplicates]
 		public enum UI_OWNERSHIP : int32
 		{
 			TRANSFER = 0,

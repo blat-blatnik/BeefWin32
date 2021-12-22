@@ -21,7 +21,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum REPORT_EVENT_TYPE : uint16
 		{
 			SUCCESS = 0,
@@ -31,13 +30,11 @@ namespace Win32
 			INFORMATION_TYPE = 4,
 			WARNING_TYPE = 2,
 		}
-		[AllowDuplicates]
 		public enum READ_EVENT_LOG_READ_FLAGS : uint32
 		{
 			EK_READ = 2,
 			QUENTIAL_READ = 1,
 		}
-		[AllowDuplicates]
 		public enum EVT_VARIANT_TYPE : int32
 		{
 			Null = 0,
@@ -65,12 +62,10 @@ namespace Win32
 			EvtHandle = 32,
 			EvtXml = 35,
 		}
-		[AllowDuplicates]
 		public enum EVT_LOGIN_CLASS : int32
 		{
 			EvtRpcLogin = 1,
 		}
-		[AllowDuplicates]
 		public enum EVT_RPC_LOGIN_FLAGS : int32
 		{
 			Default = 0,
@@ -78,7 +73,6 @@ namespace Win32
 			Kerberos = 2,
 			NTLM = 3,
 		}
-		[AllowDuplicates]
 		public enum EVT_QUERY_FLAGS : int32
 		{
 			ChannelPath = 1,
@@ -87,7 +81,6 @@ namespace Win32
 			ReverseDirection = 512,
 			TolerateQueryErrors = 4096,
 		}
-		[AllowDuplicates]
 		public enum EVT_SEEK_FLAGS : int32
 		{
 			RelativeToFirst = 1,
@@ -107,13 +100,11 @@ namespace Win32
 			TolerateQueryErrors = 4096,
 			Strict = 65536,
 		}
-		[AllowDuplicates]
 		public enum EVT_SUBSCRIBE_NOTIFY_ACTION : int32
 		{
 			Error = 0,
 			Deliver = 1,
 		}
-		[AllowDuplicates]
 		public enum EVT_SYSTEM_PROPERTY_ID : int32
 		{
 			ProviderName = 0,
@@ -136,21 +127,18 @@ namespace Win32
 			Version = 17,
 			PropertyIdEND = 18,
 		}
-		[AllowDuplicates]
 		public enum EVT_RENDER_CONTEXT_FLAGS : int32
 		{
 			Values = 0,
 			System = 1,
 			User = 2,
 		}
-		[AllowDuplicates]
 		public enum EVT_RENDER_FLAGS : int32
 		{
 			EventValues = 0,
 			EventXml = 1,
 			Bookmark = 2,
 		}
-		[AllowDuplicates]
 		public enum EVT_FORMAT_MESSAGE_FLAGS : int32
 		{
 			Event = 1,
@@ -163,13 +151,11 @@ namespace Win32
 			Id = 8,
 			Xml = 9,
 		}
-		[AllowDuplicates]
 		public enum EVT_OPEN_LOG_FLAGS : int32
 		{
 			ChannelPath = 1,
 			FilePath = 2,
 		}
-		[AllowDuplicates]
 		public enum EVT_LOG_PROPERTY_ID : int32
 		{
 			CreationTime = 0,
@@ -181,7 +167,6 @@ namespace Win32
 			OldestRecordNumber = 6,
 			Full = 7,
 		}
-		[AllowDuplicates]
 		public enum EVT_EXPORTLOG_FLAGS : int32
 		{
 			ChannelPath = 1,
@@ -189,7 +174,6 @@ namespace Win32
 			TolerateQueryErrors = 4096,
 			Overwrite = 8192,
 		}
-		[AllowDuplicates]
 		public enum EVT_CHANNEL_CONFIG_PROPERTY_ID : int32
 		{
 			ConfigEnabled = 0,
@@ -215,7 +199,6 @@ namespace Win32
 			PublishingConfigFileMax = 20,
 			ConfigPropertyIdEND = 21,
 		}
-		[AllowDuplicates]
 		public enum EVT_CHANNEL_TYPE : int32
 		{
 			Admin = 0,
@@ -223,31 +206,26 @@ namespace Win32
 			Analytic = 2,
 			Debug = 3,
 		}
-		[AllowDuplicates]
 		public enum EVT_CHANNEL_ISOLATION_TYPE : int32
 		{
 			Application = 0,
 			System = 1,
 			Custom = 2,
 		}
-		[AllowDuplicates]
 		public enum EVT_CHANNEL_CLOCK_TYPE : int32
 		{
 			SystemTime = 0,
 			QPC = 1,
 		}
-		[AllowDuplicates]
 		public enum EVT_CHANNEL_SID_TYPE : int32
 		{
 			None = 0,
 			Publishing = 1,
 		}
-		[AllowDuplicates]
 		public enum EVT_CHANNEL_REFERENCE_FLAGS : int32
 		{
 			EvtChannelReferenceImported = 1,
 		}
-		[AllowDuplicates]
 		public enum EVT_PUBLISHER_METADATA_PROPERTY_ID : int32
 		{
 			PublisherGuid = 0,
@@ -281,7 +259,6 @@ namespace Win32
 			KeywordMessageID = 28,
 			PropertyIdEND = 29,
 		}
-		[AllowDuplicates]
 		public enum EVT_EVENT_METADATA_PROPERTY_ID : int32
 		{
 			entMetadataEventID = 0,
@@ -295,14 +272,12 @@ namespace Win32
 			entMetadataEventTemplate = 8,
 			tEventMetadataPropertyIdEND = 9,
 		}
-		[AllowDuplicates]
 		public enum EVT_QUERY_PROPERTY_ID : int32
 		{
 			Names = 0,
 			Statuses = 1,
 			PropertyIdEND = 2,
 		}
-		[AllowDuplicates]
 		public enum EVT_EVENT_PROPERTY_ID : int32
 		{
 			QueryIDs = 0,

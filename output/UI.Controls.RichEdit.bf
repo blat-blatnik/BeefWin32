@@ -509,7 +509,6 @@ namespace Win32
 			MATHORDINARY = 536870912,
 			ALLEFFECTS = 2115207167,
 		}
-		[AllowDuplicates]
 		public enum CFE_EFFECTS : uint32
 		{
 			ALLCAPS = 128,
@@ -538,7 +537,6 @@ namespace Win32
 			MATH = 268435456,
 			MATHORDINARY = 536870912,
 		}
-		[AllowDuplicates]
 		public enum PARAFORMAT_MASK : uint32
 		{
 			ALIGNMENT = 8,
@@ -550,7 +548,6 @@ namespace Win32
 			STARTINDENT = 1,
 			TABSTOPS = 16,
 		}
-		[AllowDuplicates]
 		public enum RICH_EDIT_GET_CONTEXT_MENU_SEL_TYPE : uint16
 		{
 			SEL_EMPTY = 0,
@@ -560,7 +557,6 @@ namespace Win32
 			SEL_MULTIOBJECT = 8,
 			GCM_RIGHTMOUSEDROP = 32768,
 		}
-		[AllowDuplicates]
 		public enum RICH_EDIT_GET_OBJECT_FLAGS : uint32
 		{
 			POLEOBJ = 1,
@@ -569,7 +565,6 @@ namespace Win32
 			NO_INTERFACES = 0,
 			ALL_INTERFACES = 7,
 		}
-		[AllowDuplicates]
 		public enum PARAFORMAT_BORDERS : uint16
 		{
 			LEFT = 1,
@@ -580,7 +575,6 @@ namespace Win32
 			OUTSIDE = 32,
 			AUTOCOLOR = 64,
 		}
-		[AllowDuplicates]
 		public enum PARAFORMAT_SHADING_STYLE : uint16
 		{
 			NONE = 0,
@@ -597,7 +591,6 @@ namespace Win32
 			LIGHT_GRID = 11,
 			LIGHT_TRELLIS = 12,
 		}
-		[AllowDuplicates]
 		public enum GETTEXTEX_FLAGS : uint32
 		{
 			DEFAULT = 0,
@@ -606,18 +599,15 @@ namespace Win32
 			SELECTION = 2,
 			USECRLF = 1,
 		}
-		[AllowDuplicates]
 		public enum ENDCOMPOSITIONNOTIFY_CODE : uint32
 		{
 			ENDCOMPOSITION = 1,
 			NEWTEXT = 2,
 		}
-		[AllowDuplicates]
 		public enum IMECOMPTEXT_FLAGS : uint32
 		{
 			ICT_RESULTREADSTR = 1,
 		}
-		[AllowDuplicates]
 		public enum GETTEXTLENGTHEX_FLAGS : uint32
 		{
 			DEFAULT = 0,
@@ -627,7 +617,6 @@ namespace Win32
 			NUMCHARS = 8,
 			NUMBYTES = 16,
 		}
-		[AllowDuplicates]
 		public enum REOBJECT_FLAGS : uint32
 		{
 			ALIGNTORIGHT = 256,
@@ -650,7 +639,6 @@ namespace Win32
 			USEASBACKGROUND = 1024,
 			WRAPTEXTAROUND = 512,
 		}
-		[AllowDuplicates]
 		public enum PARAFORMAT_NUMBERING_STYLE : uint16
 		{
 			PAREN = 0,
@@ -660,14 +648,12 @@ namespace Win32
 			NONUMBER = 1024,
 			NEWNUMBER = 32768,
 		}
-		[AllowDuplicates]
 		public enum PARAFORMAT_ALIGNMENT : uint16
 		{
 			CENTER = 3,
 			LEFT = 1,
 			RIGHT = 2,
 		}
-		[AllowDuplicates]
 		public enum TEXTMODE : int32
 		{
 			PLAINTEXT = 1,
@@ -677,7 +663,6 @@ namespace Win32
 			SINGLECODEPAGE = 16,
 			MULTICODEPAGE = 32,
 		}
-		[AllowDuplicates]
 		public enum UNDONAMEID : int32
 		{
 			UNKNOWN = 0,
@@ -688,7 +673,6 @@ namespace Win32
 			PASTE = 5,
 			AUTOTABLE = 6,
 		}
-		[AllowDuplicates]
 		public enum KHYPH : int32
 		{
 			Nil = 0,
@@ -699,13 +683,11 @@ namespace Win32
 			ChangeAfter = 5,
 			DelAndChange = 6,
 		}
-		[AllowDuplicates]
 		public enum TXTBACKSTYLE : int32
 		{
 			TRANSPARENT = 0,
 			OPAQUE = 1,
 		}
-		[AllowDuplicates]
 		public enum TXTHITRESULT : int32
 		{
 			NOHIT = 0,
@@ -713,7 +695,6 @@ namespace Win32
 			CLOSE = 2,
 			HIT = 3,
 		}
-		[AllowDuplicates]
 		public enum TXTNATURALSIZE : int32
 		{
 			FITTOCONTENT2 = 0,
@@ -724,13 +705,11 @@ namespace Win32
 			INCLUDELASTLINE = 1073741824,
 			EMU = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum TXTVIEW : int32
 		{
 			ACTIVE = 0,
 			INACTIVE = -1,
 		}
-		[AllowDuplicates]
 		public enum CHANGETYPE : int32
 		{
 			GENERIC = 0,
@@ -738,7 +717,6 @@ namespace Win32
 			NEWUNDO = 2,
 			NEWREDO = 4,
 		}
-		[AllowDuplicates]
 		public enum CARET_FLAGS : int32
 		{
 			NONE = 0,
@@ -1371,7 +1349,6 @@ namespace Win32
 			UpperLimit = 33,
 			ObjectMax = 33,
 		}
-		[AllowDuplicates]
 		public enum MANCODE : int32
 		{
 			BOLD = 16,

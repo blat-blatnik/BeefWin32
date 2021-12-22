@@ -11,13 +11,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum IDENTITY_TYPE : int32
 		{
 			ALL = 0,
 			ME_ONLY = 1,
 		}
-		[AllowDuplicates]
 		public enum IdentityUpdateEvent : uint32
 		{
 			ASSOCIATED = 1,
@@ -29,7 +27,6 @@ namespace Win32
 			CONNECTED = 64,
 			DISCONNECTED = 128,
 		}
-		[AllowDuplicates]
 		public enum IDENTITY_URL : int32
 		{
 			CREATE_ACCOUNT_WIZARD = 0,
@@ -40,7 +37,6 @@ namespace Win32
 			RESTORE_WIZARD = 5,
 			CONNECT_WIZARD = 6,
 		}
-		[AllowDuplicates]
 		public enum ACCOUNT_STATE : int32
 		{
 			NOT_CONNECTED = 0,

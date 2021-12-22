@@ -155,42 +155,35 @@ namespace Win32
 			CLI = 2,
 			MAX = 2,
 		}
-		[AllowDuplicates]
 		public enum CHANNEL_PRIORITY : int32
 		{
 			LO = 0,
 			MED = 1,
 			HI = 2,
 		}
-		[AllowDuplicates]
 		public enum CHANNEL_FLAGS : int32
 		{
 			LEGACY = 1,
 			UNCOMPRESSED = 2,
 			DYNAMIC = 4,
 		}
-		[AllowDuplicates]
 		public enum CHANNEL_ACCESS_ENUM : int32
 		{
 			NONE = 0,
 			SENDRECEIVE = 1,
 		}
-		[AllowDuplicates]
 		public enum RDPENCOMAPI_ATTENDEE_FLAGS : int32
 		{
 			ATTENDEE_FLAGS_LOCAL = 1,
 		}
-		[AllowDuplicates]
 		public enum RDPSRAPI_WND_FLAGS : int32
 		{
 			WND_FLAG_PRIVILEGED = 1,
 		}
-		[AllowDuplicates]
 		public enum RDPSRAPI_APP_FLAGS : int32
 		{
 			APP_FLAG_PRIVILEGED = 1,
 		}
-		[AllowDuplicates]
 		public enum RDPSRAPI_MOUSE_BUTTON_TYPE : int32
 		{
 			BUTTON1 = 0,
@@ -200,13 +193,11 @@ namespace Win32
 			XBUTTON2 = 4,
 			XBUTTON3 = 5,
 		}
-		[AllowDuplicates]
 		public enum RDPSRAPI_KBD_CODE_TYPE : int32
 		{
 			SCANCODE = 0,
 			UNICODE = 1,
 		}
-		[AllowDuplicates]
 		public enum RDPSRAPI_KBD_SYNC_FLAG : int32
 		{
 			SCROLL_LOCK = 1,

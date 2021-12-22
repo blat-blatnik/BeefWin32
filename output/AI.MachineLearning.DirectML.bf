@@ -16,7 +16,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DML_TENSOR_DATA_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -32,13 +31,11 @@ namespace Win32
 			UINT64 = 10,
 			INT64 = 11,
 		}
-		[AllowDuplicates]
 		public enum DML_TENSOR_TYPE : int32
 		{
 			INVALID = 0,
 			BUFFER = 1,
 		}
-		[AllowDuplicates]
 		public enum DML_TENSOR_FLAGS : uint32
 		{
 			NONE = 0,
@@ -199,7 +196,6 @@ namespace Win32
 			DYNAMIC_QUANTIZE_LINEAR = 148,
 			ROI_ALIGN1 = 149,
 		}
-		[AllowDuplicates]
 		public enum DML_REDUCE_FUNCTION : int32
 		{
 			ARGMAX = 0,
@@ -215,25 +211,21 @@ namespace Win32
 			SUM = 10,
 			SUM_SQUARE = 11,
 		}
-		[AllowDuplicates]
 		public enum DML_MATRIX_TRANSFORM : int32
 		{
 			NONE = 0,
 			TRANSPOSE = 1,
 		}
-		[AllowDuplicates]
 		public enum DML_CONVOLUTION_MODE : int32
 		{
 			ONVOLUTION = 0,
 			ROSS_CORRELATION = 1,
 		}
-		[AllowDuplicates]
 		public enum DML_CONVOLUTION_DIRECTION : int32
 		{
 			FORWARD = 0,
 			BACKWARD = 1,
 		}
-		[AllowDuplicates]
 		public enum DML_PADDING_MODE : int32
 		{
 			CONSTANT = 0,
@@ -241,51 +233,43 @@ namespace Win32
 			REFLECTION = 2,
 			SYMMETRIC = 3,
 		}
-		[AllowDuplicates]
 		public enum DML_INTERPOLATION_MODE : int32
 		{
 			NEAREST_NEIGHBOR = 0,
 			LINEAR = 1,
 		}
-		[AllowDuplicates]
 		public enum DML_RECURRENT_NETWORK_DIRECTION : int32
 		{
 			FORWARD = 0,
 			BACKWARD = 1,
 			BIDIRECTIONAL = 2,
 		}
-		[AllowDuplicates]
 		public enum DML_ROUNDING_MODE : int32
 		{
 			HALVES_TO_NEAREST_EVEN = 0,
 			TOWARD_ZERO = 1,
 			TOWARD_INFINITY = 2,
 		}
-		[AllowDuplicates]
 		public enum DML_IS_INFINITY_MODE : int32
 		{
 			EITHER = 0,
 			POSITIVE = 1,
 			NEGATIVE = 2,
 		}
-		[AllowDuplicates]
 		public enum DML_AXIS_DIRECTION : int32
 		{
 			INCREASING = 0,
 			DECREASING = 1,
 		}
-		[AllowDuplicates]
 		public enum DML_DEPTH_SPACE_ORDER : int32
 		{
 			DEPTH_COLUMN_ROW = 0,
 			COLUMN_ROW_DEPTH = 1,
 		}
-		[AllowDuplicates]
 		public enum DML_RANDOM_GENERATOR_TYPE : int32
 		{
 			DML_RANDOM_GENERATOR_TYPE_PHILOX_4X32_10 = 0,
 		}
-		[AllowDuplicates]
 		public enum DML_FEATURE_LEVEL : int32
 		{
 			_1_0 = 4096,
@@ -295,13 +279,11 @@ namespace Win32
 			_3_1 = 12544,
 			_4_0 = 16384,
 		}
-		[AllowDuplicates]
 		public enum DML_FEATURE : int32
 		{
 			TENSOR_DATA_TYPE_SUPPORT = 0,
 			FEATURE_LEVELS = 1,
 		}
-		[AllowDuplicates]
 		public enum DML_EXECUTION_FLAGS : uint32
 		{
 			NONE = 0,
@@ -309,20 +291,17 @@ namespace Win32
 			DISABLE_META_COMMANDS = 2,
 			DESCRIPTORS_VOLATILE = 4,
 		}
-		[AllowDuplicates]
 		public enum DML_CREATE_DEVICE_FLAGS : uint32
 		{
 			NONE = 0,
 			DEBUG = 1,
 		}
-		[AllowDuplicates]
 		public enum DML_BINDING_TYPE : int32
 		{
 			NONE = 0,
 			BUFFER = 1,
 			BUFFER_ARRAY = 2,
 		}
-		[AllowDuplicates]
 		public enum DML_GRAPH_EDGE_TYPE : int32
 		{
 			INVALID = 0,
@@ -330,7 +309,6 @@ namespace Win32
 			OUTPUT = 2,
 			INTERMEDIATE = 3,
 		}
-		[AllowDuplicates]
 		public enum DML_GRAPH_NODE_TYPE : int32
 		{
 			INVALID = 0,

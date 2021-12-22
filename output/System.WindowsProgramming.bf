@@ -574,7 +574,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum TDIENTITY_ENTITY_TYPE : uint32
 		{
 			GENERIC_ENTITY = 0,
@@ -586,7 +585,6 @@ namespace Win32
 			ER_ENTITY = 896,
 			IF_ENTITY = 512,
 		}
-		[AllowDuplicates]
 		public enum PROC_THREAD_ATTRIBUTE_NUM : int32
 		{
 			ParentProcess = 0,
@@ -610,12 +608,10 @@ namespace Win32
 			ComponentFilter = 26,
 			EnableOptionalXStateFeatures = 27,
 		}
-		[AllowDuplicates]
 		public enum FILE_INFORMATION_CLASS : int32
 		{
 			FileDirectoryInformation = 1,
 		}
-		[AllowDuplicates]
 		public enum SYSTEM_INFORMATION_CLASS : int32
 		{
 			BasicInformation = 0,
@@ -630,13 +626,11 @@ namespace Win32
 			CodeIntegrityInformation = 103,
 			PolicyInformation = 134,
 		}
-		[AllowDuplicates]
 		public enum OBJECT_INFORMATION_CLASS : int32
 		{
 			BasicInformation = 0,
 			TypeInformation = 2,
 		}
-		[AllowDuplicates]
 		public enum KEY_SET_INFORMATION_CLASS : int32
 		{
 			KeyWriteTimeInformation = 0,
@@ -647,50 +641,42 @@ namespace Win32
 			KeySetHandleTagsInformation = 5,
 			MaxKeySetInfoClass = 6,
 		}
-		[AllowDuplicates]
 		public enum WINSTATIONINFOCLASS : int32
 		{
 			WinStationInformation = 8,
 		}
-		[AllowDuplicates]
 		public enum CameraUIControlMode : int32
 		{
 			Browse = 0,
 			Linear = 1,
 		}
-		[AllowDuplicates]
 		public enum CameraUIControlLinearSelectionMode : int32
 		{
 			Single = 0,
 			Multiple = 1,
 		}
-		[AllowDuplicates]
 		public enum CameraUIControlCaptureMode : int32
 		{
 			PhotoOrVideo = 0,
 			Photo = 1,
 			Video = 2,
 		}
-		[AllowDuplicates]
 		public enum CameraUIControlPhotoFormat : int32
 		{
 			Jpeg = 0,
 			Png = 1,
 			JpegXR = 2,
 		}
-		[AllowDuplicates]
 		public enum CameraUIControlVideoFormat : int32
 		{
 			Mp4 = 0,
 			Wmv = 1,
 		}
-		[AllowDuplicates]
 		public enum CameraUIControlViewType : int32
 		{
 			SingleItem = 0,
 			ItemList = 1,
 		}
-		[AllowDuplicates]
 		public enum FEATURE_CHANGE_TIME : int32
 		{
 			READ = 0,
@@ -698,14 +684,12 @@ namespace Win32
 			SESSION = 2,
 			REBOOT = 3,
 		}
-		[AllowDuplicates]
 		public enum FEATURE_ENABLED_STATE : int32
 		{
 			DEFAULT = 0,
 			DISABLED = 1,
 			ENABLED = 2,
 		}
-		[AllowDuplicates]
 		public enum TDI_TL_IO_CONTROL_TYPE : int32
 		{
 			EndpointIoControlType = 0,
@@ -713,14 +697,12 @@ namespace Win32
 			GetSockOptIoControlType = 2,
 			SocketIoControlType = 3,
 		}
-		[AllowDuplicates]
 		public enum WLDP_HOST : int32
 		{
 			RUNDLL32 = 0,
 			SVCHOST = 1,
 			MAX = 2,
 		}
-		[AllowDuplicates]
 		public enum WLDP_HOST_ID : int32
 		{
 			UNKNOWN = 0,
@@ -733,7 +715,6 @@ namespace Win32
 			ALL = 7,
 			MAX = 8,
 		}
-		[AllowDuplicates]
 		public enum DECISION_LOCATION : int32
 		{
 			REFRESH_GLOBAL_DATA = 0,
@@ -747,21 +728,18 @@ namespace Win32
 			NOT_FOUND = 8,
 			UNKNOWN = 9,
 		}
-		[AllowDuplicates]
 		public enum WLDP_KEY : int32
 		{
 			UNKNOWN = 0,
 			OVERRIDE = 1,
 			ALL_KEYS = 2,
 		}
-		[AllowDuplicates]
 		public enum VALUENAME : int32
 		{
 			UNKNOWN = 0,
 			ENTERPRISE_DEFINED_CLASS_ID = 1,
 			BUILT_IN_LIST = 2,
 		}
-		[AllowDuplicates]
 		public enum WLDP_WINDOWS_LOCKDOWN_MODE : int32
 		{
 			UNLOCKED = 0,
@@ -769,7 +747,6 @@ namespace Win32
 			LOCKED = 2,
 			MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum WLDP_WINDOWS_LOCKDOWN_RESTRICTION : int32
 		{
 			NONE = 0,
@@ -777,7 +754,6 @@ namespace Win32
 			NOUNLOCK_PERMANENT = 2,
 			MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum WLDP_POLICY_SETTING : int32
 		{
 			WLDP_POLICY_SETTING_AV_PERF_MODE = 1000,

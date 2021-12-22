@@ -210,7 +210,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum ACT_AUTHORIZATION_STATE_VALUE : int32
 		{
 			UNAUTHORIZED = 0,

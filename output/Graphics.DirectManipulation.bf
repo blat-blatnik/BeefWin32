@@ -18,7 +18,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DIRECTMANIPULATION_STATUS : int32
 		{
 			BUILDING = 0,
@@ -29,14 +28,12 @@ namespace Win32
 			READY = 5,
 			SUSPENDED = 6,
 		}
-		[AllowDuplicates]
 		public enum DIRECTMANIPULATION_HITTEST_TYPE : int32
 		{
 			ASYNCHRONOUS = 0,
 			SYNCHRONOUS = 1,
 			AUTO_SYNCHRONOUS = 2,
 		}
-		[AllowDuplicates]
 		public enum DIRECTMANIPULATION_CONFIGURATION : int32
 		{
 			NONE = 0,
@@ -58,7 +55,6 @@ namespace Win32
 			CROSS_SLIDE_HORIZONTAL = 16,
 			PINCH_ZOOM = 32,
 		}
-		[AllowDuplicates]
 		public enum DIRECTMANIPULATION_MOTION_TYPES : int32
 		{
 			NONE = 0,
@@ -69,7 +65,6 @@ namespace Win32
 			CENTERY = 32,
 			ALL = 55,
 		}
-		[AllowDuplicates]
 		public enum DIRECTMANIPULATION_VIEWPORT_OPTIONS : int32
 		{
 			DEFAULT = 0,
@@ -79,7 +74,6 @@ namespace Win32
 			EXPLICITHITTEST = 8,
 			DISABLEPIXELSNAPPING = 16,
 		}
-		[AllowDuplicates]
 		public enum DIRECTMANIPULATION_SNAPPOINT_TYPE : int32
 		{
 			MANDATORY = 0,
@@ -87,14 +81,12 @@ namespace Win32
 			MANDATORY_SINGLE = 2,
 			OPTIONAL_SINGLE = 3,
 		}
-		[AllowDuplicates]
 		public enum DIRECTMANIPULATION_SNAPPOINT_COORDINATE : int32
 		{
 			BOUNDARY = 0,
 			ORIGIN = 1,
 			MIRRORED = 16,
 		}
-		[AllowDuplicates]
 		public enum DIRECTMANIPULATION_HORIZONTALALIGNMENT : int32
 		{
 			NONE = 0,
@@ -103,7 +95,6 @@ namespace Win32
 			RIGHT = 4,
 			UNLOCKCENTER = 8,
 		}
-		[AllowDuplicates]
 		public enum DIRECTMANIPULATION_VERTICALALIGNMENT : int32
 		{
 			NONE = 0,
@@ -112,13 +103,11 @@ namespace Win32
 			BOTTOM = 4,
 			UNLOCKCENTER = 8,
 		}
-		[AllowDuplicates]
 		public enum DIRECTMANIPULATION_INPUT_MODE : int32
 		{
 			AUTOMATIC = 0,
 			MANUAL = 1,
 		}
-		[AllowDuplicates]
 		public enum DIRECTMANIPULATION_DRAG_DROP_STATUS : int32
 		{
 			READY = 0,
@@ -128,7 +117,6 @@ namespace Win32
 			CANCELLED = 4,
 			COMMITTED = 5,
 		}
-		[AllowDuplicates]
 		public enum DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION : int32
 		{
 			VERTICAL = 1,
@@ -137,7 +125,6 @@ namespace Win32
 			SELECT_DRAG = 32,
 			HOLD_DRAG = 64,
 		}
-		[AllowDuplicates]
 		public enum DIRECTMANIPULATION_INTERACTION_TYPE : int32
 		{
 			BEGIN = 0,
@@ -148,7 +135,6 @@ namespace Win32
 			TYPE_GESTURE_PINCH_ZOOM = 5,
 			END = 100,
 		}
-		[AllowDuplicates]
 		public enum DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION : int32
 		{
 			STOP = 0,

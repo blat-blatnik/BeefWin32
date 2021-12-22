@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DEVPROP_OPERATOR : uint32
 		{
 			MODIFIER_NOT = 65536,
@@ -53,7 +52,6 @@ namespace Win32
 			MASK_LOGICAL = 267386880,
 			MASK_ARRAY = 4026531840,
 		}
-		[AllowDuplicates]
 		public enum DEV_OBJECT_TYPE : int32
 		{
 			Unknown = 0,
@@ -69,7 +67,6 @@ namespace Win32
 			AEPService = 10,
 			DevicePanel = 11,
 		}
-		[AllowDuplicates]
 		public enum DEV_QUERY_FLAGS : int32
 		{
 			None = 0,
@@ -78,7 +75,6 @@ namespace Win32
 			Localize = 4,
 			AsyncClose = 8,
 		}
-		[AllowDuplicates]
 		public enum DEV_QUERY_STATE : int32
 		{
 			Initialized = 0,
@@ -86,7 +82,6 @@ namespace Win32
 			Aborted = 2,
 			Closed = 3,
 		}
-		[AllowDuplicates]
 		public enum DEV_QUERY_RESULT_ACTION : int32
 		{
 			StateChange = 0,

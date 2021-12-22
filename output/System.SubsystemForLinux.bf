@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WSL_DISTRIBUTION_FLAGS : uint32
 		{
 			NONE = 0,

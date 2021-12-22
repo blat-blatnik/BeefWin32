@@ -1017,13 +1017,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum OA_BOOL : int32
 		{
 			TRUE = -1,
 			FALSE = 0,
 		}
-		[AllowDuplicates]
 		public enum MPEG2VIDEOINFO_FLAGS : uint32
 		{
 			DoPanScan = 1,
@@ -1037,21 +1035,18 @@ namespace Win32
 			_27MhzTimebase = 256,
 			WidescreenAnalogOut = 512,
 		}
-		[AllowDuplicates]
 		public enum MPEGLAYER3WAVEFORMAT_FLAGS : uint32
 		{
 			ISO = 0,
 			ON = 1,
 			OFF = 2,
 		}
-		[AllowDuplicates]
 		public enum AMVP_SELECT_FORMAT_BY : int32
 		{
 			DO_NOT_CARE = 0,
 			BEST_BANDWIDTH = 1,
 			INPUT_SAME_AS_OUTPUT = 2,
 		}
-		[AllowDuplicates]
 		public enum AMVP_MODE : int32
 		{
 			WEAVE = 0,
@@ -1060,13 +1055,11 @@ namespace Win32
 			SKIPEVEN = 3,
 			SKIPODD = 4,
 		}
-		[AllowDuplicates]
 		public enum PIN_DIRECTION : int32
 		{
 			INPUT = 0,
 			OUTPUT = 1,
 		}
-		[AllowDuplicates]
 		public enum FILTER_STATE : int32
 		{
 			Stopped = 0,
@@ -1101,7 +1094,6 @@ namespace Win32
 			Segment = 16,
 			NoFlush = 32,
 		}
-		[AllowDuplicates]
 		public enum AM_SEEKING_SEEKING_CAPABILITIES : int32
 		{
 			CanSeekAbsolute = 1,
@@ -1114,12 +1106,10 @@ namespace Win32
 			CanDoSegments = 128,
 			Source = 256,
 		}
-		[AllowDuplicates]
 		public enum AM_MEDIAEVENT_FLAGS : int32
 		{
 			AM_MEDIAEVENT_NONOTIFY = 1,
 		}
-		[AllowDuplicates]
 		public enum IFILTERMAPPER_MERIT : int32
 		{
 			PREFERRED = 8388608,
@@ -1129,7 +1119,6 @@ namespace Win32
 			SW_COMPRESSOR = 1048576,
 			HW_COMPRESSOR = 1048656,
 		}
-		[AllowDuplicates]
 		public enum REG_PINFLAG : uint32
 		{
 			ZERO = 1,
@@ -1137,20 +1126,17 @@ namespace Win32
 			MANY = 4,
 			OUTPUT = 8,
 		}
-		[AllowDuplicates]
 		public enum QualityMessageType : int32
 		{
 			amine = 0,
 			lood = 1,
 		}
-		[AllowDuplicates]
 		public enum COLORKEY_TYPE : int32
 		{
 			NOCOLORKEY = 0,
 			INDEX = 1,
 			RGB = 2,
 		}
-		[AllowDuplicates]
 		public enum ADVISE_TYPE : uint32
 		{
 			NONE = 0,
@@ -1160,17 +1146,14 @@ namespace Win32
 			POSITION = 8,
 			DISPLAY_CHANGE = 16,
 		}
-		[AllowDuplicates]
 		public enum AM_FILESINK_FLAGS : int32
 		{
 			AM_FILE_OVERWRITE = 1,
 		}
-		[AllowDuplicates]
 		public enum _AM_RENSDEREXFLAGS : int32
 		{
 			AM_RENDEREX_RENDERTOEXISTINGRENDERERS = 1,
 		}
-		[AllowDuplicates]
 		public enum AM_STREAM_INFO_FLAGS : int32
 		{
 			START_DEFINED = 1,
@@ -1178,7 +1161,6 @@ namespace Win32
 			DISCARDING = 4,
 			STOP_SEND_EXTRA = 16,
 		}
-		[AllowDuplicates]
 		public enum InterleavingMode : int32
 		{
 			NONE = 0,
@@ -1186,7 +1168,6 @@ namespace Win32
 			FULL = 2,
 			NONE_BUFFERED = 3,
 		}
-		[AllowDuplicates]
 		public enum CompressionCaps : int32
 		{
 			Quality = 1,
@@ -1195,14 +1176,12 @@ namespace Win32
 			BFrame = 8,
 			Window = 16,
 		}
-		[AllowDuplicates]
 		public enum VfwCaptureDialogs : int32
 		{
 			Source = 1,
 			Format = 2,
 			Display = 4,
 		}
-		[AllowDuplicates]
 		public enum VfwCompressDialogs : int32
 		{
 			Config = 1,
@@ -1210,7 +1189,6 @@ namespace Win32
 			QueryConfig = 4,
 			QueryAbout = 8,
 		}
-		[AllowDuplicates]
 		public enum AnalogVideoStandard : int32
 		{
 			_None = 0,
@@ -1238,19 +1216,16 @@ namespace Win32
 			Mask_MCE_PAL = 496,
 			Mask_MCE_SECAM = 1044480,
 		}
-		[AllowDuplicates]
 		public enum TunerInputType : int32
 		{
 			Cable = 0,
 			Antenna = 1,
 		}
-		[AllowDuplicates]
 		public enum VideoCopyProtectionType : int32
 		{
 			Basic = 0,
 			CBI = 1,
 		}
-		[AllowDuplicates]
 		public enum PhysicalConnectorType : int32
 		{
 			Video_Tuner = 1,
@@ -1279,7 +1254,6 @@ namespace Win32
 			Audio_USB = 4104,
 			Audio_AudioDecoder = 4105,
 		}
-		[AllowDuplicates]
 		public enum VideoProcAmpProperty : int32
 		{
 			Brightness = 0,
@@ -1293,13 +1267,11 @@ namespace Win32
 			BacklightCompensation = 8,
 			Gain = 9,
 		}
-		[AllowDuplicates]
 		public enum VideoProcAmpFlags : int32
 		{
 			Auto = 1,
 			Manual = 2,
 		}
-		[AllowDuplicates]
 		public enum CameraControlProperty : int32
 		{
 			Pan = 0,
@@ -1310,13 +1282,11 @@ namespace Win32
 			Iris = 5,
 			Focus = 6,
 		}
-		[AllowDuplicates]
 		public enum CameraControlFlags : int32
 		{
 			Auto = 1,
 			Manual = 2,
 		}
-		[AllowDuplicates]
 		public enum VideoControlFlags : int32
 		{
 			FlipHorizontal = 1,
@@ -1324,20 +1294,17 @@ namespace Win32
 			ExternalTriggerEnable = 4,
 			Trigger = 8,
 		}
-		[AllowDuplicates]
 		public enum AMTunerSubChannel : int32
 		{
 			NO_TUNE = -2,
 			DEFAULT = -1,
 		}
-		[AllowDuplicates]
 		public enum AMTunerSignalStrength : int32
 		{
 			HASNOSIGNALSTRENGTH = -1,
 			NOSIGNAL = 0,
 			SIGNALPRESENT = 1,
 		}
-		[AllowDuplicates]
 		public enum AMTunerModeType : int32
 		{
 			DEFAULT = 0,
@@ -1346,12 +1313,10 @@ namespace Win32
 			AM_RADIO = 4,
 			DSS = 8,
 		}
-		[AllowDuplicates]
 		public enum AMTunerEventType : int32
 		{
 			AMTUNER_EVENT_CHANGED = 1,
 		}
-		[AllowDuplicates]
 		public enum TVAudioMode : int32
 		{
 			MODE_MONO = 1,
@@ -1364,42 +1329,35 @@ namespace Win32
 			PRESET_LANG_B = 8192,
 			PRESET_LANG_C = 16384,
 		}
-		[AllowDuplicates]
 		public enum AMTVAudioEventType : int32
 		{
 			AMTVAUDIO_EVENT_CHANGED = 1,
 		}
-		[AllowDuplicates]
 		public enum AMPROPERTY_PIN : int32
 		{
 			CATEGORY = 0,
 			MEDIUM = 1,
 		}
-		[AllowDuplicates]
 		public enum _AMSTREAMSELECTINFOFLAGS : int32
 		{
 			NABLED = 1,
 			XCLUSIVE = 2,
 		}
-		[AllowDuplicates]
 		public enum _AMSTREAMSELECTENABLEFLAGS : int32
 		{
 			E = 1,
 			EALL = 2,
 		}
-		[AllowDuplicates]
 		public enum _AMRESCTL_RESERVEFLAGS : int32
 		{
 			RESERVE = 0,
 			UNRESERVE = 1,
 		}
-		[AllowDuplicates]
 		public enum _AM_FILTER_MISC_FLAGS : int32
 		{
 			RENDERER = 1,
 			SOURCE = 2,
 		}
-		[AllowDuplicates]
 		public enum DECIMATION_USAGE : int32
 		{
 			LEGACY = 0,
@@ -1408,7 +1366,6 @@ namespace Win32
 			USE_OVERLAY_ONLY = 3,
 			DEFAULT = 4,
 		}
-		[AllowDuplicates]
 		public enum _AM_PUSHSOURCE_FLAGS : int32
 		{
 			CAPS_INTERNAL_RM = 1,
@@ -1417,7 +1374,6 @@ namespace Win32
 			REQS_USE_STREAM_CLOCK = 65536,
 			REQS_USE_CLOCK_CHAIN = 131072,
 		}
-		[AllowDuplicates]
 		public enum _DVENCODERRESOLUTION : int32
 		{
 			_720x480 = 2012,
@@ -1425,20 +1381,17 @@ namespace Win32
 			_180x120 = 2014,
 			_88x60 = 2015,
 		}
-		[AllowDuplicates]
 		public enum _DVENCODERVIDEOFORMAT : int32
 		{
 			NTSC = 2000,
 			PAL = 2001,
 		}
-		[AllowDuplicates]
 		public enum _DVENCODERFORMAT : int32
 		{
 			SD = 2007,
 			HD = 2008,
 			SL = 2009,
 		}
-		[AllowDuplicates]
 		public enum _DVDECODERRESOLUTION : int32
 		{
 			_720x480 = 1000,
@@ -1446,7 +1399,6 @@ namespace Win32
 			_180x120 = 1002,
 			_88x60 = 1003,
 		}
-		[AllowDuplicates]
 		public enum _DVRESOLUTION : int32
 		{
 			FULL = 1000,
@@ -1454,7 +1406,6 @@ namespace Win32
 			QUARTER = 1002,
 			DC = 1003,
 		}
-		[AllowDuplicates]
 		public enum _AM_AUDIO_RENDERER_STAT_PARAM : int32
 		{
 			BREAK_COUNT = 1,
@@ -1470,14 +1421,12 @@ namespace Win32
 			BUFFERFULLNESS = 11,
 			JITTER = 12,
 		}
-		[AllowDuplicates]
 		public enum _AM_INTF_SEARCH_FLAGS : int32
 		{
 			INPUT_PIN = 1,
 			OUTPUT_PIN = 2,
 			FILTER = 4,
 		}
-		[AllowDuplicates]
 		public enum AMOVERLAYFX : int32
 		{
 			NOFX = 0,
@@ -1485,29 +1434,24 @@ namespace Win32
 			MIRRORUPDOWN = 4,
 			DEINTERLACE = 8,
 		}
-		[AllowDuplicates]
 		public enum _AM_PIN_FLOW_CONTROL_BLOCK_FLAGS : int32
 		{
 			AM_PIN_FLOW_CONTROL_BLOCK = 1,
 		}
-		[AllowDuplicates]
 		public enum AM_GRAPH_CONFIG_RECONNECT_FLAGS : int32
 		{
 			DIRECTCONNECT = 1,
 			CACHE_REMOVED_FILTERS = 2,
 			USE_ONLY_CACHED_FILTERS = 4,
 		}
-		[AllowDuplicates]
 		public enum _REM_FILTER_FLAGS : int32
 		{
 			REMFILTERF_LEAVECONNECTED = 1,
 		}
-		[AllowDuplicates]
 		public enum AM_FILTER_FLAGS : int32
 		{
 			AM_FILTER_FLAGS_REMOVABLE = 1,
 		}
-		[AllowDuplicates]
 		public enum VMRPresentationFlags : int32
 		{
 			SyncPoint = 1,
@@ -1516,7 +1460,6 @@ namespace Win32
 			TimeValid = 8,
 			SrcDstRectsValid = 16,
 		}
-		[AllowDuplicates]
 		public enum VMRSurfaceAllocationFlags : int32
 		{
 			PIXELFORMAT_VALID = 1,
@@ -1526,13 +1469,11 @@ namespace Win32
 			DIRECTED_FLIP = 16,
 			DXVA_TARGET = 32,
 		}
-		[AllowDuplicates]
 		public enum VMR_ASPECT_RATIO_MODE : int32
 		{
 			NONE = 0,
 			LETTER_BOX = 1,
 		}
-		[AllowDuplicates]
 		public enum VMRMixerPrefs : int32
 		{
 			NoDecimation = 1,
@@ -1568,7 +1509,6 @@ namespace Win32
 			PreferAGPMemWhenMixing = 32,
 			Mask = 63,
 		}
-		[AllowDuplicates]
 		public enum VMRMode : int32
 		{
 			Windowed = 1,
@@ -1576,12 +1516,10 @@ namespace Win32
 			Renderless = 4,
 			Mask = 7,
 		}
-		[AllowDuplicates]
 		public enum STREAMIF_CONSTANTS : int32
 		{
 			MAX_NUMBER_OF_STREAMS = 16,
 		}
-		[AllowDuplicates]
 		public enum VMRDeinterlacePrefs : int32
 		{
 			NextBest = 1,
@@ -1589,7 +1527,6 @@ namespace Win32
 			Weave = 4,
 			Mask = 7,
 		}
-		[AllowDuplicates]
 		public enum VMRDeinterlaceTech : int32
 		{
 			Unknown = 0,
@@ -1601,7 +1538,6 @@ namespace Win32
 			PixelAdaptive = 64,
 			MotionVectorSteered = 128,
 		}
-		[AllowDuplicates]
 		public enum DVD_DOMAIN : int32
 		{
 			FirstPlay = 1,
@@ -1610,7 +1546,6 @@ namespace Win32
 			Title = 4,
 			Stop = 5,
 		}
-		[AllowDuplicates]
 		public enum DVD_MENU_ID : int32
 		{
 			Title = 2,
@@ -1620,13 +1555,11 @@ namespace Win32
 			Angle = 6,
 			Chapter = 7,
 		}
-		[AllowDuplicates]
 		public enum DVD_DISC_SIDE : int32
 		{
 			A = 1,
 			B = 2,
 		}
-		[AllowDuplicates]
 		public enum DVD_PREFERRED_DISPLAY_MODE : int32
 		{
 			CONTENT_DEFAULT = 0,
@@ -1634,13 +1567,11 @@ namespace Win32
 			_4x3_PANSCAN_PREFERRED = 2,
 			_4x3_LETTERBOX_PREFERRED = 3,
 		}
-		[AllowDuplicates]
 		public enum DVD_FRAMERATE : int32
 		{
 			_25 = 1,
 			_30NonDrop = 3,
 		}
-		[AllowDuplicates]
 		public enum DVD_NavCmdType : int32
 		{
 			Pre = 1,
@@ -1648,7 +1579,6 @@ namespace Win32
 			Cell = 3,
 			Button = 4,
 		}
-		[AllowDuplicates]
 		public enum DVD_TIMECODE_FLAGS : int32
 		{
 			_25fps = 1,
@@ -1656,7 +1586,6 @@ namespace Win32
 			DropFrame = 4,
 			Interpolated = 8,
 		}
-		[AllowDuplicates]
 		public enum VALID_UOP_FLAG : int32
 		{
 			Play_Title_Or_AtTime = 1,
@@ -1685,7 +1614,6 @@ namespace Win32
 			Select_Karaoke_Audio_Presentation_Mode = 8388608,
 			Select_Video_Mode_Preference = 16777216,
 		}
-		[AllowDuplicates]
 		public enum DVD_CMD_FLAGS : int32
 		{
 			None = 0,
@@ -1695,7 +1623,6 @@ namespace Win32
 			StartWhenRendered = 8,
 			EndAfterRendered = 16,
 		}
-		[AllowDuplicates]
 		public enum DVD_OPTION_FLAG : int32
 		{
 			ResetOnStop = 1,
@@ -1718,7 +1645,6 @@ namespace Win32
 			RestartDisc = 18,
 			EnableCC = 19,
 		}
-		[AllowDuplicates]
 		public enum DVD_RELATIVE_BUTTON : int32
 		{
 			Upper = 1,
@@ -1726,7 +1652,6 @@ namespace Win32
 			Left = 3,
 			Right = 4,
 		}
-		[AllowDuplicates]
 		public enum DVD_PARENTAL_LEVEL : int32
 		{
 			_8 = 32768,
@@ -1738,7 +1663,6 @@ namespace Win32
 			_2 = 512,
 			_1 = 256,
 		}
-		[AllowDuplicates]
 		public enum DVD_AUDIO_LANG_EXT : int32
 		{
 			NotSpecified = 0,
@@ -1747,7 +1671,6 @@ namespace Win32
 			DirectorComments1 = 3,
 			DirectorComments2 = 4,
 		}
-		[AllowDuplicates]
 		public enum DVD_SUBPICTURE_LANG_EXT : int32
 		{
 			NotSpecified = 0,
@@ -1762,7 +1685,6 @@ namespace Win32
 			DirectorComments_Big = 14,
 			DirectorComments_Children = 15,
 		}
-		[AllowDuplicates]
 		public enum DVD_AUDIO_APPMODE : int32
 		{
 			None = 0,
@@ -1770,7 +1692,6 @@ namespace Win32
 			Surround = 2,
 			Other = 3,
 		}
-		[AllowDuplicates]
 		public enum DVD_AUDIO_FORMAT : int32
 		{
 			AC3 = 0,
@@ -1783,7 +1704,6 @@ namespace Win32
 			SDDS = 7,
 			Other = 8,
 		}
-		[AllowDuplicates]
 		public enum DVD_KARAOKE_DOWNMIX : int32
 		{
 			_0to0 = 1,
@@ -1801,7 +1721,6 @@ namespace Win32
 			Lto1 = 8192,
 			Rto1 = 16384,
 		}
-		[AllowDuplicates]
 		public enum DVD_KARAOKE_CONTENTS : int32
 		{
 			GuideVocal1 = 1,
@@ -1813,7 +1732,6 @@ namespace Win32
 			SoundEffectA = 64,
 			SoundEffectB = 128,
 		}
-		[AllowDuplicates]
 		public enum DVD_KARAOKE_ASSIGNMENT : int32
 		{
 			reserved0 = 0,
@@ -1825,35 +1743,30 @@ namespace Win32
 			LR12 = 6,
 			LRM12 = 7,
 		}
-		[AllowDuplicates]
 		public enum DVD_VIDEO_COMPRESSION : int32
 		{
 			Other = 0,
 			MPEG1 = 1,
 			MPEG2 = 2,
 		}
-		[AllowDuplicates]
 		public enum DVD_SUBPICTURE_TYPE : int32
 		{
 			NotSpecified = 0,
 			Language = 1,
 			Other = 2,
 		}
-		[AllowDuplicates]
 		public enum DVD_SUBPICTURE_CODING : int32
 		{
 			RunLength = 0,
 			Extended = 1,
 			Other = 2,
 		}
-		[AllowDuplicates]
 		public enum DVD_TITLE_APPMODE : int32
 		{
 			Not_Specified = 0,
 			Karaoke = 1,
 			Other = 3,
 		}
-		[AllowDuplicates]
 		public enum DVD_TextStringType : int32
 		{
 			Struct_Volume = 1,
@@ -1889,7 +1802,6 @@ namespace Win32
 			Other_Cut = 81,
 			Other_Take = 82,
 		}
-		[AllowDuplicates]
 		public enum DVD_TextCharSet : int32
 		{
 			Unicode = 0,
@@ -1898,7 +1810,6 @@ namespace Win32
 			ISO8859_1 = 3,
 			ShiftJIS_Kanji_Roman_Katakana = 4,
 		}
-		[AllowDuplicates]
 		public enum AM_DVD_GRAPH_FLAGS : int32
 		{
 			HWDEC_PREFER = 1,
@@ -1913,21 +1824,18 @@ namespace Win32
 			ADAPT_GRAPH = 16384,
 			MASK = 65535,
 		}
-		[AllowDuplicates]
 		public enum AM_DVD_STREAM_FLAGS : int32
 		{
 			VIDEO = 1,
 			AUDIO = 2,
 			SUBPIC = 4,
 		}
-		[AllowDuplicates]
 		public enum _AM_OVERLAY_NOTIFY_FLAGS : int32
 		{
 			VISIBLE_CHANGE = 1,
 			SOURCE_CHANGE = 2,
 			DEST_CHANGE = 4,
 		}
-		[AllowDuplicates]
 		public enum BDA_EVENT_ID : int32
 		{
 			SIGNAL_LOSS = 0,
@@ -1951,27 +1859,23 @@ namespace Win32
 			SMART_CARD_INSERTED = 18,
 			SMART_CARD_REMOVED = 19,
 		}
-		[AllowDuplicates]
 		public enum BDA_MULTICAST_MODE : int32
 		{
 			PROMISCUOUS_MULTICAST = 0,
 			FILTERED_MULTICAST = 1,
 			NO_MULTICAST = 2,
 		}
-		[AllowDuplicates]
 		public enum BDA_SIGNAL_STATE : int32
 		{
 			UNAVAILABLE = 0,
 			INACTIVE = 1,
 			ACTIVE = 2,
 		}
-		[AllowDuplicates]
 		public enum BDA_CHANGE_STATE : int32
 		{
 			COMPLETE = 0,
 			PENDING = 1,
 		}
-		[AllowDuplicates]
 		public enum MEDIA_SAMPLE_CONTENT : int32
 		{
 			TRANSPORT_PACKET = 0,
@@ -1979,20 +1883,17 @@ namespace Win32
 			MPEG2_PSI = 2,
 			TRANSPORT_PAYLOAD = 3,
 		}
-		[AllowDuplicates]
 		public enum ISDBCAS_REQUEST_ID : int32
 		{
 			G = 56,
 			D = 58,
 		}
-		[AllowDuplicates]
 		public enum MUX_PID_TYPE : int32
 		{
 			OTHER = -1,
 			ELEMENTARY_STREAM = 0,
 			MPEG2_SECTION_PSI_SI = 1,
 		}
-		[AllowDuplicates]
 		public enum DVBSystemType : int32
 		{
 			DVB_Cable = 0,
@@ -2001,12 +1902,10 @@ namespace Win32
 			ISDB_Terrestrial = 3,
 			ISDB_Satellite = 4,
 		}
-		[AllowDuplicates]
 		public enum BDA_Channel : int32
 		{
 			BDA_UNDEFINED_CHANNEL = -1,
 		}
-		[AllowDuplicates]
 		public enum ComponentCategory : int32
 		{
 			ategoryNotSet = -1,
@@ -2020,7 +1919,6 @@ namespace Win32
 			ategoryData = 7,
 			ATEGORY_COUNT = 8,
 		}
-		[AllowDuplicates]
 		public enum ComponentStatus : int32
 		{
 			Active = 0,
@@ -2067,12 +1965,10 @@ namespace Win32
 			DOLBY_AC3_AUDIO = 129,
 			DOLBY_DIGITAL_PLUS_AUDIO_ATSC = 135,
 		}
-		[AllowDuplicates]
 		public enum ATSCComponentTypeFlags : int32
 		{
 			ATSCCT_AC3 = 1,
 		}
-		[AllowDuplicates]
 		public enum BinaryConvolutionCodeRate : int32
 		{
 			NOT_SET = -1,
@@ -2093,7 +1989,6 @@ namespace Win32
 			_9_10 = 14,
 			MAX = 15,
 		}
-		[AllowDuplicates]
 		public enum FECMethod : int32
 		{
 			METHOD_NOT_SET = -1,
@@ -2105,7 +2000,6 @@ namespace Win32
 			RS_147_130 = 5,
 			MAX = 6,
 		}
-		[AllowDuplicates]
 		public enum ModulationType : int32
 		{
 			NOT_SET = -1,
@@ -2147,7 +2041,6 @@ namespace Win32
 			ISDB_S_TMCC = 35,
 			MAX = 36,
 		}
-		[AllowDuplicates]
 		public enum ScanModulationTypes : int32
 		{
 			BDA_SCAN_MOD_16QAM = 1,
@@ -2186,7 +2079,6 @@ namespace Win32
 			BDA_SCAN_MOD_16APSK = 268435456,
 			BDA_SCAN_MOD_32APSK = 536870912,
 		}
-		[AllowDuplicates]
 		public enum SpectralInversion : int32
 		{
 			NOT_SET = -1,
@@ -2196,7 +2088,6 @@ namespace Win32
 			INVERTED = 3,
 			MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum Polarisation : int32
 		{
 			NOT_SET = -1,
@@ -2207,7 +2098,6 @@ namespace Win32
 			CIRCULAR_R = 4,
 			MAX = 5,
 		}
-		[AllowDuplicates]
 		public enum LNB_Source : int32
 		{
 			NOT_SET = -1,
@@ -2218,7 +2108,6 @@ namespace Win32
 			D = 4,
 			MAX = 5,
 		}
-		[AllowDuplicates]
 		public enum GuardInterval : int32
 		{
 			NOT_SET = -1,
@@ -2232,7 +2121,6 @@ namespace Win32
 			_19_256 = 7,
 			MAX = 8,
 		}
-		[AllowDuplicates]
 		public enum HierarchyAlpha : int32
 		{
 			NOT_SET = -1,
@@ -2242,7 +2130,6 @@ namespace Win32
 			_4 = 3,
 			MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum TransmissionMode : int32
 		{
 			NOT_SET = -1,
@@ -2257,7 +2144,6 @@ namespace Win32
 			_32K = 8,
 			MAX = 9,
 		}
-		[AllowDuplicates]
 		public enum RollOff : int32
 		{
 			NOT_SET = -1,
@@ -2267,7 +2153,6 @@ namespace Win32
 			_35 = 3,
 			MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum Pilot : int32
 		{
 			NOT_SET = -1,
@@ -2276,31 +2161,26 @@ namespace Win32
 			ON = 2,
 			MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum BDA_Frequency : int32
 		{
 			SET = -1,
 			DEFINED = 0,
 		}
-		[AllowDuplicates]
 		public enum BDA_Range : int32
 		{
 			SET = -1,
 			DEFINED = 0,
 		}
-		[AllowDuplicates]
 		public enum BDA_Channel_Bandwidth : int32
 		{
 			SET = -1,
 			DEFINED = 0,
 		}
-		[AllowDuplicates]
 		public enum BDA_Frequency_Multiplier : int32
 		{
 			SET = -1,
 			DEFINED = 0,
 		}
-		[AllowDuplicates]
 		public enum BDA_Comp_Flags : int32
 		{
 			NOT_DEFINED = 0,
@@ -2308,7 +2188,6 @@ namespace Win32
 			INCLUDE_LOCATOR_IN_TR = 2,
 			INCLUDE_COMPONENTS_IN_TR = 4,
 		}
-		[AllowDuplicates]
 		public enum ApplicationTypeType : int32
 		{
 			ConditionalAccess = 0,
@@ -2321,7 +2200,6 @@ namespace Win32
 			Undesignated = 7,
 			Reserved = 8,
 		}
-		[AllowDuplicates]
 		public enum BDA_CONDITIONALACCESS_REQUESTTYPE : int32
 		{
 			UNSPECIFIED = 0,
@@ -2329,7 +2207,6 @@ namespace Win32
 			POSSIBLE = 2,
 			POSSIBLE_NO_STREAMING_DISRUPTION = 3,
 		}
-		[AllowDuplicates]
 		public enum BDA_CONDITIONALACCESS_MMICLOSEREASON : int32
 		{
 			UNSPECIFIED = 0,
@@ -2340,21 +2217,18 @@ namespace Win32
 			DIALOG_USER_DISMISSED = 5,
 			DIALOG_USER_NOT_AVAILABLE = 6,
 		}
-		[AllowDuplicates]
 		public enum BDA_CONDITIONALACCESS_SESSION_RESULT : int32
 		{
 			SUCCESSFULL = 0,
 			ENDED_NOCHANGE = 1,
 			ABORTED = 2,
 		}
-		[AllowDuplicates]
 		public enum BDA_DISCOVERY_STATE : int32
 		{
 			UNSPECIFIED = 0,
 			REQUIRED = 1,
 			COMPLETE = 2,
 		}
-		[AllowDuplicates]
 		public enum SmartCardStatusType : int32
 		{
 			Inserted = 0,
@@ -2363,26 +2237,22 @@ namespace Win32
 			DataChanged = 3,
 			FirmwareUpgrade = 4,
 		}
-		[AllowDuplicates]
 		public enum SmartCardAssociationType : int32
 		{
 			NotAssociated = 0,
 			Associated = 1,
 			AssociationUnknown = 2,
 		}
-		[AllowDuplicates]
 		public enum LocationCodeSchemeType : int32
 		{
 			SCTE_18 = 0,
 		}
-		[AllowDuplicates]
 		public enum EntitlementType : int32
 		{
 			Entitled = 0,
 			NotEntitled = 1,
 			TechnicalFailure = 2,
 		}
-		[AllowDuplicates]
 		public enum UICloseReasonType : int32
 		{
 			NotReady = 0,
@@ -2391,7 +2261,6 @@ namespace Win32
 			DeviceClosed = 3,
 			ErrorClosed = 4,
 		}
-		[AllowDuplicates]
 		public enum BDA_DrmPairingError : int32
 		{
 			Succeeded = 0,
@@ -2405,14 +2274,12 @@ namespace Win32
 			Aborted = 8,
 			NeedSDKUpdate = 9,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_IPSINK : uint32
 		{
 			MULTICASTLIST = 0,
 			ADAPTER_DESCRIPTION = 1,
 			ADAPTER_ADDRESS = 2,
 		}
-		[AllowDuplicates]
 		public enum AMExtendedSeekingCapabilities : int32
 		{
 			CANSEEK = 1,
@@ -2423,12 +2290,10 @@ namespace Win32
 			BUFFERING = 32,
 			SENDS_VIDEOFRAMEREADY = 64,
 		}
-		[AllowDuplicates]
 		public enum AM_LINE21_CCLEVEL : int32
 		{
 			AM_L21_CCLEVEL_TC2 = 0,
 		}
-		[AllowDuplicates]
 		public enum AM_LINE21_CCSERVICE : int32
 		{
 			None = 0,
@@ -2440,13 +2305,11 @@ namespace Win32
 			DefChannel = 10,
 			Invalid = 11,
 		}
-		[AllowDuplicates]
 		public enum AM_LINE21_CCSTATE : int32
 		{
 			ff = 0,
 			n = 1,
 		}
-		[AllowDuplicates]
 		public enum AM_LINE21_CCSTYLE : int32
 		{
 			None = 0,
@@ -2454,18 +2317,15 @@ namespace Win32
 			PaintOn = 2,
 			RollUp = 3,
 		}
-		[AllowDuplicates]
 		public enum AM_LINE21_DRAWBGMODE : int32
 		{
 			Opaque = 0,
 			Transparent = 1,
 		}
-		[AllowDuplicates]
 		public enum AM_WST_LEVEL : int32
 		{
 			AM_WST_LEVEL_1_5 = 0,
 		}
-		[AllowDuplicates]
 		public enum AM_WST_SERVICE : int32
 		{
 			None = 0,
@@ -2473,68 +2333,57 @@ namespace Win32
 			IDS = 2,
 			Invalid = 3,
 		}
-		[AllowDuplicates]
 		public enum AM_WST_STATE : int32
 		{
 			ff = 0,
 			n = 1,
 		}
-		[AllowDuplicates]
 		public enum AM_WST_STYLE : int32
 		{
 			None = 0,
 			Invers = 1,
 		}
-		[AllowDuplicates]
 		public enum AM_WST_DRAWBGMODE : int32
 		{
 			Opaque = 0,
 			Transparent = 1,
 		}
-		[AllowDuplicates]
 		public enum STREAM_TYPE : int32
 		{
 			READ = 0,
 			WRITE = 1,
 			TRANSFORM = 2,
 		}
-		[AllowDuplicates]
 		public enum STREAM_STATE : int32
 		{
 			STOP = 0,
 			RUN = 1,
 		}
-		[AllowDuplicates]
 		public enum COMPLETION_STATUS_FLAGS : int32
 		{
 			NOUPDATEOK = 1,
 			WAIT = 2,
 			ABORT = 4,
 		}
-		[AllowDuplicates]
 		public enum MMSSF_GET_INFORMATION_FLAGS : uint32
 		{
 			HASCLOCK = 1,
 			SUPPORTSEEK = 2,
 			ASYNCHRONOUS = 4,
 		}
-		[AllowDuplicates]
 		public enum SSUPDATE_TYPE : int32
 		{
 			ASYNC = 1,
 			CONTINUOUS = 2,
 		}
-		[AllowDuplicates]
 		public enum DDSFF_FLAGS : uint32
 		{
 			DDSFF_PROGRESSIVERENDER = 1,
 		}
-		[AllowDuplicates]
 		public enum AMMSF_MMS_INIT_FLAGS : uint32
 		{
 			AMMSF_NOGRAPHTHREAD = 1,
 		}
-		[AllowDuplicates]
 		public enum AMMSF_MS_FLAGS : uint32
 		{
 			ADDDEFAULTRENDERER = 1,
@@ -2542,7 +2391,6 @@ namespace Win32
 			STOPIFNOSAMPLES = 4,
 			NOSTALL = 8,
 		}
-		[AllowDuplicates]
 		public enum AMMSF_RENDER_FLAGS : uint32
 		{
 			RENDERTYPEMASK = 3,
@@ -2552,14 +2400,12 @@ namespace Win32
 			NOCLOCK = 4,
 			RUN = 8,
 		}
-		[AllowDuplicates]
 		public enum OUTPUT_STATE : uint32
 		{
 			Disabled = 0,
 			ReadData = 1,
 			RenderData = 2,
 		}
-		[AllowDuplicates]
 		public enum AM_PROPERTY_FRAMESTEP : int32
 		{
 			STEP = 1,
@@ -2567,7 +2413,6 @@ namespace Win32
 			CANSTEP = 3,
 			CANSTEPMULTIPLE = 4,
 		}
-		[AllowDuplicates]
 		public enum AM_ASPECT_RATIO_MODE : int32
 		{
 			STRETCHED = 0,
@@ -2575,7 +2420,6 @@ namespace Win32
 			CROP = 2,
 			STRETCHED_AS_PRIMARY = 3,
 		}
-		[AllowDuplicates]
 		public enum VMR9PresentationFlags : int32
 		{
 			SyncPoint = 1,
@@ -2584,7 +2428,6 @@ namespace Win32
 			TimeValid = 8,
 			SrcDstRectsValid = 16,
 		}
-		[AllowDuplicates]
 		public enum VMR9SurfaceAllocationFlags : int32
 		{
 			_3DRenderTarget = 1,
@@ -2595,13 +2438,11 @@ namespace Win32
 			UsageReserved = 224,
 			UsageMask = 255,
 		}
-		[AllowDuplicates]
 		public enum VMR9AspectRatioMode : int32
 		{
 			None = 0,
 			LetterBox = 1,
 		}
-		[AllowDuplicates]
 		public enum VMR9MixerPrefs : int32
 		{
 			NoDecimation = 1,
@@ -2625,7 +2466,6 @@ namespace Win32
 			DynamicReserved = 12582912,
 			DynamicMask = 15728640,
 		}
-		[AllowDuplicates]
 		public enum VMR9ProcAmpControlFlags : int32
 		{
 			Brightness = 1,
@@ -2634,7 +2474,6 @@ namespace Win32
 			Saturation = 8,
 			Mask = 15,
 		}
-		[AllowDuplicates]
 		public enum VMR9AlphaBitmapFlags : int32
 		{
 			Disable = 1,
@@ -2650,7 +2489,6 @@ namespace Win32
 			DoNotRenderBorder = 1,
 			Mask = 1,
 		}
-		[AllowDuplicates]
 		public enum VMR9Mode : int32
 		{
 			Windowed = 1,
@@ -2658,7 +2496,6 @@ namespace Win32
 			Renderless = 4,
 			Mask = 7,
 		}
-		[AllowDuplicates]
 		public enum VMR9DeinterlacePrefs : int32
 		{
 			NextBest = 1,
@@ -2666,7 +2503,6 @@ namespace Win32
 			Weave = 4,
 			Mask = 7,
 		}
-		[AllowDuplicates]
 		public enum VMR9DeinterlaceTech : int32
 		{
 			Unknown = 0,
@@ -2678,7 +2514,6 @@ namespace Win32
 			PixelAdaptive = 64,
 			MotionVectorSteered = 128,
 		}
-		[AllowDuplicates]
 		public enum VMR9_SampleFormat : int32
 		{
 			Reserved = 1,
@@ -2688,7 +2523,6 @@ namespace Win32
 			FieldSingleEven = 5,
 			FieldSingleOdd = 6,
 		}
-		[AllowDuplicates]
 		public enum AM_PROPERTY_AC3 : int32
 		{
 			ERROR_CONCEALMENT = 1,
@@ -2699,14 +2533,12 @@ namespace Win32
 			LANGUAGE_CODE = 6,
 			ROOM_TYPE = 7,
 		}
-		[AllowDuplicates]
 		public enum AM_PROPERTY_DVDSUBPIC : int32
 		{
 			PALETTE = 0,
 			HLI = 1,
 			COMPOSIT_ON = 2,
 		}
-		[AllowDuplicates]
 		public enum AM_PROPERTY_DVDCOPYPROT : int32
 		{
 			DVDCOPY_CHLG_KEY = 1,
@@ -2722,14 +2554,12 @@ namespace Win32
 			DVDCOPY_SUPPORTS_NEW_KEYCOUNT = 11,
 			DVDCOPY_DISC_KEY = 128,
 		}
-		[AllowDuplicates]
 		public enum AM_DIGITAL_CP : int32
 		{
 			OFF = 0,
 			ON = 1,
 			DVD_COMPLIANT = 2,
 		}
-		[AllowDuplicates]
 		public enum AM_DVDCOPYSTATE : int32
 		{
 			INITIALIZE = 0,
@@ -2738,7 +2568,6 @@ namespace Win32
 			AUTHENTICATION_REQUIRED = 3,
 			DONE = 4,
 		}
-		[AllowDuplicates]
 		public enum AM_COPY_MACROVISION_LEVEL : int32
 		{
 			DISABLED = 0,
@@ -2746,7 +2575,6 @@ namespace Win32
 			LEVEL2 = 2,
 			LEVEL3 = 3,
 		}
-		[AllowDuplicates]
 		public enum AM_MPEG2Level : int32
 		{
 			Low = 1,
@@ -2754,7 +2582,6 @@ namespace Win32
 			High1440 = 3,
 			High = 4,
 		}
-		[AllowDuplicates]
 		public enum AM_MPEG2Profile : int32
 		{
 			Simple = 1,
@@ -2763,13 +2590,11 @@ namespace Win32
 			SpatiallyScalable = 4,
 			High = 5,
 		}
-		[AllowDuplicates]
 		public enum AM_PROPERTY_DVDKARAOKE : int32
 		{
 			ENABLE = 0,
 			DATA = 1,
 		}
-		[AllowDuplicates]
 		public enum AM_PROPERTY_TS_RATE_CHANGE : int32
 		{
 			SimpleRateChange = 1,
@@ -2784,7 +2609,6 @@ namespace Win32
 			ResetOnTimeDisc = 10,
 			QueryMapping = 11,
 		}
-		[AllowDuplicates]
 		public enum AM_PROPERTY_DVD_RATE_CHANGE : int32
 		{
 			ChangeRate = 1,
@@ -2793,13 +2617,11 @@ namespace Win32
 			DecoderPosition = 4,
 			DecoderVersion = 5,
 		}
-		[AllowDuplicates]
 		public enum DVD_PLAY_DIRECTION : int32
 		{
 			FORWARD = 0,
 			BACKWARD = 1,
 		}
-		[AllowDuplicates]
 		public enum DVD_ERROR : int32
 		{
 			Unexpected = 1,
@@ -2813,7 +2635,6 @@ namespace Win32
 			CopyProtectOutputFail = 9,
 			CopyProtectOutputNotSupported = 10,
 		}
-		[AllowDuplicates]
 		public enum DVD_WARNING : int32
 		{
 			InvalidDVD1_0Disc = 1,
@@ -2823,7 +2644,6 @@ namespace Win32
 			Seek = 5,
 			Read = 6,
 		}
-		[AllowDuplicates]
 		public enum DVD_PB_STOPPED : int32
 		{
 			Other = 0,
@@ -2843,7 +2663,6 @@ namespace Win32
 			CopyProtectOutputFailure = 14,
 			CopyProtectOutputNotSupported = 15,
 		}
-		[AllowDuplicates]
 		public enum SNDDEV_ERR : int32
 		{
 			Open = 1,
@@ -2861,7 +2680,6 @@ namespace Win32
 			AddBuffer = 13,
 			Query = 14,
 		}
-		[AllowDuplicates]
 		public enum MP_TYPE : int32
 		{
 			INT = 0,
@@ -2870,7 +2688,6 @@ namespace Win32
 			ENUM = 3,
 			MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum MP_CURVE_TYPE : int32
 		{
 			JUMP = 1,
@@ -2879,7 +2696,6 @@ namespace Win32
 			INVSQUARE = 8,
 			SINE = 16,
 		}
-		[AllowDuplicates]
 		public enum DXVA2_SampleFlags : int32
 		{
 			_Palette_Changed = 1,
@@ -2892,7 +2708,6 @@ namespace Win32
 			_RFF_TFF_Present = 262144,
 			sMask = -65505,
 		}
-		[AllowDuplicates]
 		public enum DXVA2_DestinationFlags : int32
 		{
 			_Background_Changed = 1,
@@ -2904,19 +2719,16 @@ namespace Win32
 			_RFF_TFF_Present = 262144,
 			Mask = -65521,
 		}
-		[AllowDuplicates]
 		public enum AMPlayListItemFlags : int32
 		{
 			SKIP = 1,
 			BIND = 2,
 		}
-		[AllowDuplicates]
 		public enum AMPlayListFlags : int32
 		{
 			STARTINSCANMODE = 1,
 			FORCEBANNER = 2,
 		}
-		[AllowDuplicates]
 		public enum AMPlayListEventFlags : int32
 		{
 			RESUME = 0,
@@ -3041,7 +2853,6 @@ namespace Win32
 			MP2TUNER_PROGNO = 102,
 			MP2TUNERFACTORY_CREATETUNEREQUEST = 1,
 		}
-		[AllowDuplicates]
 		public enum EnTvRat_System : int32
 		{
 			MPAA = 0,
@@ -3057,7 +2868,6 @@ namespace Win32
 			TvRat_kSystems = 10,
 			TvRat_SystemDontKnow = 255,
 		}
-		[AllowDuplicates]
 		public enum EnTvRat_GenericLevel : int32
 		{
 			_0 = 0,
@@ -3086,7 +2896,6 @@ namespace Win32
 			Unblock = -1,
 			LevelDontKnow = 255,
 		}
-		[AllowDuplicates]
 		public enum EnTvRat_MPAA : int32
 		{
 			NotApplicable = 0,
@@ -3098,7 +2907,6 @@ namespace Win32
 			X = 6,
 			NotRated = 7,
 		}
-		[AllowDuplicates]
 		public enum EnTvRat_US_TV : int32
 		{
 			None = 0,
@@ -3110,7 +2918,6 @@ namespace Win32
 			MA = 6,
 			None7 = 7,
 		}
-		[AllowDuplicates]
 		public enum EnTvRat_CAE_TV : int32
 		{
 			Exempt = 0,
@@ -3122,7 +2929,6 @@ namespace Win32
 			_18 = 6,
 			Reserved = 7,
 		}
-		[AllowDuplicates]
 		public enum EnTvRat_CAF_TV : int32
 		{
 			Exempt = 0,
@@ -3134,7 +2940,6 @@ namespace Win32
 			Reserved6 = 6,
 			Reserved = 7,
 		}
-		[AllowDuplicates]
 		public enum BfEnTvRat_GenericAttributes : int32
 		{
 			AttrNone = 0,
@@ -3148,7 +2953,6 @@ namespace Win32
 			IsAttr_7 = 128,
 			ValidAttrSubmask = 255,
 		}
-		[AllowDuplicates]
 		public enum BfEnTvRat_Attributes_US_TV : int32
 		{
 			IsBlocked = 1,
@@ -3176,13 +2980,11 @@ namespace Win32
 			IsBlocked = 1,
 			ValidAttrSubmask = 1,
 		}
-		[AllowDuplicates]
 		public enum FormatNotSupportedEvents : int32
 		{
 			CLEAR = 0,
 			NOTSUPPORTED = 1,
 		}
-		[AllowDuplicates]
 		public enum ProtType : int32
 		{
 			FREE = 1,
@@ -3196,19 +2998,16 @@ namespace Win32
 			FREE_SECURE = 9,
 			INVALID = 50,
 		}
-		[AllowDuplicates]
 		public enum EncDecEvents : int32
 		{
 			CPEVENT = 0,
 			RECORDING_STATUS = 1,
 		}
-		[AllowDuplicates]
 		public enum CPRecordingStatus : int32
 		{
 			OPPED = 0,
 			ARTED = 1,
 		}
-		[AllowDuplicates]
 		public enum CPEventBitShift : int32
 		{
 			RATINGS = 0,
@@ -3222,7 +3021,6 @@ namespace Win32
 			PENDING_CERTIFICATE = 8,
 			NO_PLAYREADY = 9,
 		}
-		[AllowDuplicates]
 		public enum CPEvents : int32
 		{
 			NONE = 0,
@@ -3236,7 +3034,6 @@ namespace Win32
 			UNTRUSTEDGRAPH = 8,
 			PROTECTWINDOWED = 9,
 		}
-		[AllowDuplicates]
 		public enum RevokedComponent : int32
 		{
 			COPP = 0,
@@ -3245,14 +3042,12 @@ namespace Win32
 			SECURE_PIPELINE = 3,
 			MAX_TYPES = 4,
 		}
-		[AllowDuplicates]
 		public enum EnTag_Mode : int32
 		{
 			Remove = 0,
 			Once = 1,
 			Repeat = 2,
 		}
-		[AllowDuplicates]
 		public enum COPPEventBlockReason : int32
 		{
 			Unknown = -1,
@@ -3267,7 +3062,6 @@ namespace Win32
 			Activate = 8,
 			DigitalAudioUnprotected = 9,
 		}
-		[AllowDuplicates]
 		public enum LicenseEventBlockReason : int32
 		{
 			BadLicense = 0,
@@ -3276,14 +3070,12 @@ namespace Win32
 			NeedActivation = 3,
 			ExtenderBlocked = 4,
 		}
-		[AllowDuplicates]
 		public enum DownResEventParam : int32
 		{
 			Always = 0,
 			InWindowOnly = 1,
 			Undefined = 2,
 		}
-		[AllowDuplicates]
 		public enum SegDispidList : int32
 		{
 			dispidName = 0,
@@ -3510,7 +3302,6 @@ namespace Win32
 			dispid_Bookmark = 221,
 			LastReservedDeviceDispid = 16383,
 		}
-		[AllowDuplicates]
 		public enum SegEventidList : int32
 		{
 			eventidStateChange = 0,
@@ -3573,19 +3364,16 @@ namespace Win32
 			eventidWriteFailureClear = 57,
 			LastReservedDeviceEvent = 16383,
 		}
-		[AllowDuplicates]
 		public enum PositionModeList : int32
 		{
 			FrameMode = 0,
 			TenthsSecondsMode = 1,
 		}
-		[AllowDuplicates]
 		public enum RecordingType : int32
 		{
 			CONTENT = 0,
 			REFERENCE = 1,
 		}
-		[AllowDuplicates]
 		public enum MSVidCCService : int32
 		{
 			None = 0,
@@ -3595,14 +3383,12 @@ namespace Win32
 			Text2 = 4,
 			XDS = 5,
 		}
-		[AllowDuplicates]
 		public enum MSVidSinkStreams : int32
 		{
 			Video = 1,
 			Audio = 2,
 			Other = 4,
 		}
-		[AllowDuplicates]
 		public enum MSVidSegmentType : int32
 		{
 			SOURCE = 0,
@@ -3621,7 +3407,6 @@ namespace Win32
 			CTRL = 2,
 			ALT = 4,
 		}
-		[AllowDuplicates]
 		public enum DVDMenuIDConstants : int32
 		{
 			Title = 2,
@@ -3631,7 +3416,6 @@ namespace Win32
 			Angle = 6,
 			Chapter = 7,
 		}
-		[AllowDuplicates]
 		public enum DVDFilterState : int32
 		{
 			Undefined = -2,
@@ -3640,7 +3424,6 @@ namespace Win32
 			Paused = 1,
 			Running = 2,
 		}
-		[AllowDuplicates]
 		public enum DVDTextStringType : int32
 		{
 			Struct_Volume = 1,
@@ -3676,7 +3459,6 @@ namespace Win32
 			Other_Cut = 81,
 			Other_Take = 82,
 		}
-		[AllowDuplicates]
 		public enum DVDSPExt : int32
 		{
 			NotSpecified = 0,
@@ -3691,14 +3473,12 @@ namespace Win32
 			DirectorComments_Big = 14,
 			DirectorComments_Children = 15,
 		}
-		[AllowDuplicates]
 		public enum SourceSizeList : int32
 		{
 			FullSize = 0,
 			ClipByOverScan = 1,
 			ClipByClipRect = 2,
 		}
-		[AllowDuplicates]
 		public enum MSViddispidList : int32
 		{
 			Inputs = 0,
@@ -3743,7 +3523,6 @@ namespace Win32
 			QuarterScreen = 5,
 			SixteenthScreen = 6,
 		}
-		[AllowDuplicates]
 		public enum MSVidCtlStateList : int32
 		{
 			UNBUILT = -1,
@@ -3751,13 +3530,11 @@ namespace Win32
 			PAUSE = 1,
 			PLAY = 2,
 		}
-		[AllowDuplicates]
 		public enum RECORDING_TYPE : int32
 		{
 			CONTENT = 0,
 			REFERENCE = 1,
 		}
-		[AllowDuplicates]
 		public enum STREAMBUFFER_ATTR_DATATYPE : int32
 		{
 			DWORD = 0,
@@ -3768,25 +3545,21 @@ namespace Win32
 			WORD = 5,
 			GUID = 6,
 		}
-		[AllowDuplicates]
 		public enum CROSSBAR_DEFAULT_FLAGS : int32
 		{
 			PROFILE = 1,
 			STREAMS = 2,
 		}
-		[AllowDuplicates]
 		public enum MPEG_CURRENT_NEXT_BIT : int32
 		{
 			NEXT = 0,
 			CURRENT = 1,
 		}
-		[AllowDuplicates]
 		public enum MPEG_CONTEXT_TYPE : int32
 		{
 			BCS_DEMUX = 0,
 			WINSOCK = 1,
 		}
-		[AllowDuplicates]
 		public enum MPEG_REQUEST_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -3799,7 +3572,6 @@ namespace Win32
 			GET_TS_STREAM = 7,
 			START_MPE_STREAM = 8,
 		}
-		[AllowDuplicates]
 		public enum VA_VIDEO_FORMAT : int32
 		{
 			COMPONENT = 0,
@@ -3809,7 +3581,6 @@ namespace Win32
 			MAC = 4,
 			UNSPECIFIED = 5,
 		}
-		[AllowDuplicates]
 		public enum VA_COLOR_PRIMARIES : int32
 		{
 			ITU_R_BT_709 = 1,
@@ -3820,7 +3591,6 @@ namespace Win32
 			SMPTE_240M = 7,
 			H264_GENERIC_FILM = 8,
 		}
-		[AllowDuplicates]
 		public enum VA_TRANSFER_CHARACTERISTICS : int32
 		{
 			ITU_R_BT_709 = 1,
@@ -3833,7 +3603,6 @@ namespace Win32
 			H264_LOG_100_TO_1 = 9,
 			H264_LOG_316_TO_1 = 10,
 		}
-		[AllowDuplicates]
 		public enum VA_MATRIX_COEFFICIENTS : int32
 		{
 			H264_RGB = 0,
@@ -3845,7 +3614,6 @@ namespace Win32
 			SMPTE_240M = 7,
 			H264_YCgCo = 8,
 		}
-		[AllowDuplicates]
 		public enum DVB_STRCONV_MODE : int32
 		{
 			DVB = 0,
@@ -3853,7 +3621,6 @@ namespace Win32
 			DVB_WITHOUT_EMPHASIS = 2,
 			ISDB = 3,
 		}
-		[AllowDuplicates]
 		public enum CRID_LOCATION : int32
 		{
 			IN_DESCRIPTOR = 0,
@@ -3861,7 +3628,6 @@ namespace Win32
 			DVB_RESERVED1 = 2,
 			DVB_RESERVED2 = 3,
 		}
-		[AllowDuplicates]
 		public enum DESC_LINKAGE_TYPE : int32
 		{
 			RESERVED0 = 0,
@@ -3875,13 +3641,11 @@ namespace Win32
 			USER = 8,
 			RESERVED2 = 255,
 		}
-		[AllowDuplicates]
 		public enum ChannelChangeSpanningEvent_State : int32
 		{
 			Start = 0,
 			End = 2,
 		}
-		[AllowDuplicates]
 		public enum ChannelType : int32
 		{
 			None = 0,
@@ -3894,7 +3658,6 @@ namespace Win32
 			Superimpose = 64,
 			Data = 128,
 		}
-		[AllowDuplicates]
 		public enum SignalAndServiceStatusSpanningEvent_State : int32
 		{
 			None = -1,
@@ -3905,28 +3668,24 @@ namespace Win32
 			NoSubscription = 4,
 			AllAVScrambled = 5,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_ETHERNET_FILTER : int32
 		{
 			LIST_SIZE = 0,
 			LIST = 1,
 			MODE = 2,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_IPv4_FILTER : int32
 		{
 			LIST_SIZE = 0,
 			LIST = 1,
 			MODE = 2,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_IPv6_FILTER : int32
 		{
 			LIST_SIZE = 0,
 			LIST = 1,
 			MODE = 2,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_SIGNAL_STATS : int32
 		{
 			IGNAL_STRENGTH = 0,
@@ -3937,7 +3696,6 @@ namespace Win32
 			IGNAL_LOCK_CAPS = 5,
 			IGNAL_LOCK_TYPE = 6,
 		}
-		[AllowDuplicates]
 		public enum BDA_LockType : int32
 		{
 			None = 0,
@@ -3945,7 +3703,6 @@ namespace Win32
 			DecoderDemod = 2,
 			Complete = 128,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_BDA_CHANGE_SYNC : int32
 		{
 			START_CHANGES = 0,
@@ -3953,14 +3710,12 @@ namespace Win32
 			COMMIT_CHANGES = 2,
 			GET_CHANGE_STATE = 3,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_BDA_DEVICE_CONFIGURATION : int32
 		{
 			CREATE_PIN_FACTORY = 0,
 			DELETE_PIN_FACTORY = 1,
 			CREATE_TOPOLOGY = 2,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_TOPOLOGY : int32
 		{
 			NODE_TYPES = 0,
@@ -3972,31 +3727,26 @@ namespace Win32
 			CONTROLLING_PIN_ID = 6,
 			NODE_DESCRIPTORS = 7,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_PIN_CONTROL : int32
 		{
 			ID = 0,
 			TYPE = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_PIN_EVENT : int32
 		{
 			CONNECTED = 0,
 			DISCONNECTED = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_VOID_TRANSFORM : int32
 		{
 			ART = 0,
 			OP = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_NULL_TRANSFORM : int32
 		{
 			ART = 0,
 			OP = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_FREQUENCY_FILTER : int32
 		{
 			FREQUENCY = 0,
@@ -4010,14 +3760,12 @@ namespace Win32
 			STANDARD = 8,
 			STANDARD_MODE = 9,
 		}
-		[AllowDuplicates]
 		public enum BDA_SignalType : int32
 		{
 			Unknown = 0,
 			Analog = 1,
 			Digital = 2,
 		}
-		[AllowDuplicates]
 		public enum BDA_DigitalSignalStandard : int32
 		{
 			None = 0,
@@ -4029,19 +3777,16 @@ namespace Win32
 			ISDB_S = 32,
 			ISDB_C = 64,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_BDA_TUNER : int32
 		{
 			KSEVENT_BDA_TUNER_SCAN = 0,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_LNB_INFO : int32
 		{
 			LOF_LOW_BAND = 0,
 			LOF_HIGH_BAND = 1,
 			SWITCH_FREQUENCY = 2,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_DISEQC_COMMAND : int32
 		{
 			ENABLE = 0,
@@ -4051,12 +3796,10 @@ namespace Win32
 			SEND = 4,
 			RESPONSE = 5,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_DISEQC_EVENT : int32
 		{
 			KSEVENT_BDA_DISEQC_DATA_RECEIVED = 0,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_DIGITAL_DEMODULATOR : int32
 		{
 			MODULATION_TYPE = 0,
@@ -4073,25 +3816,21 @@ namespace Win32
 			SIGNALTIMEOUTS = 11,
 			PLP_NUMBER = 12,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_AUTODEMODULATE : int32
 		{
 			ART = 0,
 			OP = 1,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_IDS_BDA_TABLE : int32
 		{
 			KSPROPERTY_BDA_TABLE_SECTION = 0,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_PIDFILTER : int32
 		{
 			MAP_PIDS = 0,
 			UNMAP_PIDS = 1,
 			LIST_PIDS = 2,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_CA : int32
 		{
 			ECM_MAP_STATUS = 0,
@@ -4101,7 +3840,6 @@ namespace Win32
 			CA_SET_PROGRAM_PIDS = 4,
 			CA_REMOVE_PROGRAM = 5,
 		}
-		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_CA_EVENT : int32
 		{
 			PROGRAM_FLOW_STATUS_CHANGED = 0,
@@ -4109,13 +3847,11 @@ namespace Win32
 			CA_SMART_CARD_STATUS_CHANGED = 2,
 			CA_MODULE_UI_REQUESTED = 3,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_BDA_DRM : int32
 		{
 			CURRENT = 0,
 			DRMSTATUS = 1,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_BDA_WMDRM : int32
 		{
 			STATUS = 0,
@@ -4127,7 +3863,6 @@ namespace Win32
 			LICENSE = 6,
 			KEYINFO = 7,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_BDA_WMDRM_TUNER : int32
 		{
 			CANCELCAPTURETOKEN = 0,
@@ -4137,31 +3872,26 @@ namespace Win32
 			STARTCODEPROFILE = 4,
 			PURCHASE_ENTITLEMENT = 5,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_BDA_EVENTING_SERVICE : int32
 		{
 			DATA = 0,
 			COMPLETE = 1,
 		}
-		[AllowDuplicates]
 		public enum KSEVENT_BDA_EVENT_TYPE : int32
 		{
 			KSEVENT_BDA_EVENT_PENDINGEVENT = 0,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_BDA_DEBUG_SERVICE : int32
 		{
 			LEVEL = 0,
 			DATA = 1,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_BDA_TUNER_SERVICE : int32
 		{
 			SETTUNER = 0,
 			GETTUNERSTATE = 1,
 			SIGNALNOISERATIO = 2,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_BDA_GPNV_SERVICE : int32
 		{
 			GETVALUE = 0,
@@ -4169,13 +3899,11 @@ namespace Win32
 			NAMEFROMINDEX = 2,
 			GETVALUEUPDATENAME = 3,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_BDA_MUX_SERVICE : int32
 		{
 			GETPIDLIST = 0,
 			SETPIDLIST = 1,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_BDA_SCAN_SERVICE : int32
 		{
 			_CAPABILTIES = 0,
@@ -4185,7 +3913,6 @@ namespace Win32
 			_RESUME = 4,
 			_STOP = 5,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_BDA_GDDS_SERVICE : int32
 		{
 			DATATYPE = 0,
@@ -4195,7 +3922,6 @@ namespace Win32
 			SERVICEFROMTUNEXML = 4,
 			DATAUPDATE = 5,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_BDA_CAS_SERVICE : int32
 		{
 			CHECKENTITLEMENTTOKEN = 0,
@@ -4203,26 +3929,22 @@ namespace Win32
 			OPENBROADCASTMMI = 2,
 			CLOSEMMIDIALOG = 3,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_BDA_ISDB_CAS : int32
 		{
 			SETREQUEST = 0,
 			RESPONSEDATA = 1,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_BDA_TS_SELECTOR : int32
 		{
 			SETTSID = 0,
 			GETTSINFORMATION = 1,
 		}
-		[AllowDuplicates]
 		public enum KSMETHOD_BDA_USERACTIVITY_SERVICE : int32
 		{
 			USEREASON = 0,
 			INTERVAL = 1,
 			DETECTED = 2,
 		}
-		[AllowDuplicates]
 		public enum VIDEOENCODER_BITRATE_MODE : int32
 		{
 			ConstantBitRate = 0,
@@ -4262,7 +3984,6 @@ namespace Win32
 			LevelMax = 3,
 			ForceDWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum COPP_TVProtectionStandard : int32
 		{
 			Unknown = -2147483648,
@@ -4285,7 +4006,6 @@ namespace Win32
 			Mask = -2147450881,
 			Reserved = 2147450880,
 		}
-		[AllowDuplicates]
 		public enum COPP_ImageAspectRatio_EN300294 : int32
 		{
 			EN300294_FullFormat4by3 = 0,
@@ -4298,7 +4018,6 @@ namespace Win32
 			EN300294_FullFormat16by9Anamorphic = 7,
 			ForceDWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum COPP_StatusFlags : int32
 		{
 			StatusNormal = 0,
@@ -4306,13 +4025,11 @@ namespace Win32
 			RenegotiationRequired = 2,
 			StatusFlagsReserved = -4,
 		}
-		[AllowDuplicates]
 		public enum COPP_StatusHDCPFlags : int32
 		{
 			Repeater = 1,
 			FlagsReserved = -2,
 		}
-		[AllowDuplicates]
 		public enum COPP_ConnectorType : int32
 		{
 			Unknown = -1,
@@ -4328,7 +4045,6 @@ namespace Win32
 			Internal = -2147483648,
 			ForceDWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum COPP_BusType : int32
 		{
 			Unknown = 0,

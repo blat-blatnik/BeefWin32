@@ -500,7 +500,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum int_serv_wkp : int32
 		{
 			HOP_CNT = 4,
@@ -510,7 +509,6 @@ namespace Win32
 			TB_TSPEC = 127,
 			Q_TSPEC = 128,
 		}
-		[AllowDuplicates]
 		public enum QOS_TRAFFIC_TYPE : int32
 		{
 			BestEffort = 0,
@@ -520,14 +518,12 @@ namespace Win32
 			Voice = 4,
 			Control = 5,
 		}
-		[AllowDuplicates]
 		public enum QOS_SET_FLOW : int32
 		{
 			TrafficType = 0,
 			OutgoingRate = 1,
 			OutgoingDSCPValue = 2,
 		}
-		[AllowDuplicates]
 		public enum QOS_FLOWRATE_REASON : int32
 		{
 			NotApplicable = 0,
@@ -536,28 +532,24 @@ namespace Win32
 			HigherContentEncoding = 3,
 			UserCaused = 4,
 		}
-		[AllowDuplicates]
 		public enum QOS_SHAPING : int32
 		{
 			ShapeOnly = 0,
 			ShapeAndMark = 1,
 			UseNonConformantMarkings = 2,
 		}
-		[AllowDuplicates]
 		public enum QOS_QUERY_FLOW : int32
 		{
 			FlowFundamentals = 0,
 			PacketPriority = 1,
 			OutgoingRate = 2,
 		}
-		[AllowDuplicates]
 		public enum QOS_NOTIFY_FLOW : int32
 		{
 			Congested = 0,
 			Uncongested = 1,
 			Available = 2,
 		}
-		[AllowDuplicates]
 		public enum FilterType : int32
 		{
 			V4 = 1,

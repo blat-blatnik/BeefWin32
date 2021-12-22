@@ -20,13 +20,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum SYNC_PROVIDER_ROLE : int32
 		{
 			SOURCE = 0,
 			DESTINATION = 1,
 		}
-		[AllowDuplicates]
 		public enum CONFLICT_RESOLUTION_POLICY : int32
 		{
 			NONE = 0,
@@ -34,21 +32,18 @@ namespace Win32
 			SOURCE_PROVIDER_WINS = 2,
 			LAST = 3,
 		}
-		[AllowDuplicates]
 		public enum SYNC_PROGRESS_STAGE : int32
 		{
 			DETECTION = 0,
 			ENUMERATION = 1,
 			APPLICATION = 2,
 		}
-		[AllowDuplicates]
 		public enum SYNC_FULL_ENUMERATION_ACTION : int32
 		{
 			FULL_ENUMERATION = 0,
 			PARTIAL_SYNC = 1,
 			ABORT = 2,
 		}
-		[AllowDuplicates]
 		public enum SYNC_RESOLVE_ACTION : int32
 		{
 			DEFER = 0,
@@ -58,25 +53,21 @@ namespace Win32
 			TRANSFER_AND_DEFER = 4,
 			LAST = 5,
 		}
-		[AllowDuplicates]
 		public enum SYNC_STATISTICS : int32
 		{
 			SYNC_STATISTICS_RANGE_COUNT = 0,
 		}
-		[AllowDuplicates]
 		public enum SYNC_SERIALIZATION_VERSION : int32
 		{
 			_1 = 1,
 			_2 = 4,
 			_3 = 5,
 		}
-		[AllowDuplicates]
 		public enum FILTERING_TYPE : int32
 		{
 			ONLY = 0,
 			AND_VERSIONS_FOR_MOVED_OUT_ITEMS = 1,
 		}
-		[AllowDuplicates]
 		public enum SYNC_CONSTRAINT_RESOLVE_ACTION : int32
 		{
 			DEFER = 0,
@@ -87,7 +78,6 @@ namespace Win32
 			RENAME_SOURCE = 5,
 			RENAME_DESTINATION = 6,
 		}
-		[AllowDuplicates]
 		public enum CONSTRAINT_CONFLICT_REASON : int32
 		{
 			OTHER = 0,
@@ -95,7 +85,6 @@ namespace Win32
 			NOPARENT = 2,
 			IDENTITY = 3,
 		}
-		[AllowDuplicates]
 		public enum KNOWLEDGE_COOKIE_COMPARISON_RESULT : int32
 		{
 			EQUAL = 0,
@@ -103,12 +92,10 @@ namespace Win32
 			CONTAINS = 2,
 			NOT_COMPARABLE = 3,
 		}
-		[AllowDuplicates]
 		public enum FILTER_COMBINATION_TYPE : int32
 		{
 			FCT_INTERSECTION = 0,
 		}
-		[AllowDuplicates]
 		public enum SYNC_REGISTRATION_EVENT : int32
 		{
 			PROVIDER_ADDED = 0,

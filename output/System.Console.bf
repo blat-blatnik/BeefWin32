@@ -98,7 +98,6 @@ namespace Win32
 			DISABLE_NEWLINE_AUTO_RETURN = 8,
 			ENABLE_LVB_GRID_WORLDWIDE = 16,
 		}
-		[AllowDuplicates]
 		public enum STD_HANDLE : uint32
 		{
 			INPUT_HANDLE = 4294967286,

@@ -69,7 +69,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WLX_SHUTDOWN_TYPE : uint32
 		{
 			N = 5,

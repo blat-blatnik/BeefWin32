@@ -148,20 +148,17 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum POWER_PLATFORM_ROLE_VERSION : uint32
 		{
 			_1 = 1,
 			_2 = 2,
 		}
-		[AllowDuplicates]
 		public enum POWER_SETTING_REGISTER_NOTIFICATION_FLAGS : uint32
 		{
 			SERVICE_HANDLE = 1,
 			CALLBACK = 2,
 			WINDOW_HANDLE = 0,
 		}
-		[AllowDuplicates]
 		public enum EXECUTION_STATE : uint32
 		{
 			AWAYMODE_REQUIRED = 64,
@@ -170,7 +167,6 @@ namespace Win32
 			SYSTEM_REQUIRED = 1,
 			USER_PRESENT = 4,
 		}
-		[AllowDuplicates]
 		public enum POWER_ACTION_POLICY_EVENT_CODE : uint32
 		{
 			FORCE_TRIGGER_RESET = 2147483648,
@@ -180,7 +176,6 @@ namespace Win32
 			USER_NOTIFY_BUTTON = 8,
 			USER_NOTIFY_SHUTDOWN = 16,
 		}
-		[AllowDuplicates]
 		public enum EFFECTIVE_POWER_MODE : int32
 		{
 			BatterySaver = 0,
@@ -191,7 +186,6 @@ namespace Win32
 			GameMode = 5,
 			MixedReality = 6,
 		}
-		[AllowDuplicates]
 		public enum POWER_DATA_ACCESSOR : int32
 		{
 			AC_POWER_SETTING_INDEX = 0,
@@ -223,7 +217,6 @@ namespace Win32
 			OVERLAY_SCHEME = 26,
 			ACTIVE_OVERLAY_SCHEME = 27,
 		}
-		[AllowDuplicates]
 		public enum BATTERY_QUERY_INFORMATION_LEVEL : int32
 		{
 			Information = 0,
@@ -236,7 +229,6 @@ namespace Win32
 			UniqueID = 7,
 			SerialNumber = 8,
 		}
-		[AllowDuplicates]
 		public enum BATTERY_CHARGING_SOURCE_TYPE : int32
 		{
 			AC = 1,
@@ -244,14 +236,12 @@ namespace Win32
 			Wireless = 3,
 			Max = 4,
 		}
-		[AllowDuplicates]
 		public enum USB_CHARGER_PORT : int32
 		{
 			Legacy = 0,
 			TypeC = 1,
 			Max = 2,
 		}
-		[AllowDuplicates]
 		public enum BATTERY_SET_INFORMATION_LEVEL : int32
 		{
 			CriticalBias = 0,
@@ -261,12 +251,10 @@ namespace Win32
 			ChargerId = 4,
 			ChargerStatus = 5,
 		}
-		[AllowDuplicates]
 		public enum EMI_MEASUREMENT_UNIT : int32
 		{
 			EmiMeasurementUnitPicowattHours = 0,
 		}
-		[AllowDuplicates]
 		public enum SYSTEM_POWER_STATE : int32
 		{
 			Unspecified = 0,
@@ -278,7 +266,6 @@ namespace Win32
 			Shutdown = 6,
 			Maximum = 7,
 		}
-		[AllowDuplicates]
 		public enum POWER_ACTION : int32
 		{
 			None = 0,
@@ -291,7 +278,6 @@ namespace Win32
 			WarmEject = 7,
 			DisplayOff = 8,
 		}
-		[AllowDuplicates]
 		public enum DEVICE_POWER_STATE : int32
 		{
 			Unspecified = 0,
@@ -301,13 +287,11 @@ namespace Win32
 			D3 = 4,
 			Maximum = 5,
 		}
-		[AllowDuplicates]
 		public enum LATENCY_TIME : int32
 		{
 			DONT_CARE = 0,
 			LOWEST_LATENCY = 1,
 		}
-		[AllowDuplicates]
 		public enum POWER_REQUEST_TYPE : int32
 		{
 			DisplayRequired = 0,
@@ -315,7 +299,6 @@ namespace Win32
 			AwayModeRequired = 2,
 			ExecutionRequired = 3,
 		}
-		[AllowDuplicates]
 		public enum POWER_INFORMATION_LEVEL : int32
 		{
 			SystemPowerPolicyAc = 0,
@@ -417,7 +400,6 @@ namespace Win32
 			SendSuspendResumeNotification = 96,
 			PowerInformationLevelMaximum = 97,
 		}
-		[AllowDuplicates]
 		public enum SYSTEM_POWER_CONDITION : int32
 		{
 			Ac = 0,
@@ -425,7 +407,6 @@ namespace Win32
 			Hot = 2,
 			ConditionMaximum = 3,
 		}
-		[AllowDuplicates]
 		public enum POWER_PLATFORM_ROLE : int32
 		{
 			Unspecified = 0,

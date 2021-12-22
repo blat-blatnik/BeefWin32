@@ -43,7 +43,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DFS_TARGET_PRIORITY_CLASS : int32
 		{
 			InvalidPriorityClass = -1,
@@ -53,7 +52,6 @@ namespace Win32
 			SiteCostLowPriorityClass = 3,
 			GlobalLowPriorityClass = 4,
 		}
-		[AllowDuplicates]
 		public enum DFS_NAMESPACE_VERSION_ORIGIN : int32
 		{
 			COMBINED = 0,

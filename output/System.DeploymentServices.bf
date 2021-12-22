@@ -207,14 +207,12 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum CPU_ARCHITECTURE : uint32
 		{
 			AMD64 = 9,
 			IA64 = 6,
 			INTEL = 0,
 		}
-		[AllowDuplicates]
 		public enum PFN_WDS_CLI_CALLBACK_MESSAGE_ID : uint32
 		{
 			START = 0,
@@ -222,13 +220,11 @@ namespace Win32
 			PROGRESS = 2,
 			TEXT = 3,
 		}
-		[AllowDuplicates]
 		public enum WDS_TRANSPORTCLIENT_REQUEST_AUTH_LEVEL : uint32
 		{
 			AUTH = 1,
 			NO_AUTH = 2,
 		}
-		[AllowDuplicates]
 		public enum WDS_CLI_IMAGE_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -236,21 +232,18 @@ namespace Win32
 			VHD = 2,
 			VHDX = 3,
 		}
-		[AllowDuplicates]
 		public enum WDS_CLI_FIRMWARE_TYPE : int32
 		{
 			UNKNOWN = 0,
 			BIOS = 1,
 			EFI = 2,
 		}
-		[AllowDuplicates]
 		public enum WDS_CLI_IMAGE_PARAM_TYPE : int32
 		{
 			UNKNOWN = 0,
 			SPARSE_FILE = 1,
 			SUPPORTED_FIRMWARES = 2,
 		}
-		[AllowDuplicates]
 		public enum TRANSPORTPROVIDER_CALLBACK_ID : int32
 		{
 			CREATE_INSTANCE = 0,
@@ -267,7 +260,6 @@ namespace Win32
 			GET_CONTENT_METADATA = 11,
 			MAX_CALLBACKS = 12,
 		}
-		[AllowDuplicates]
 		public enum TRANSPORTCLIENT_CALLBACK_ID : int32
 		{
 			SESSION_START = 0,
@@ -278,20 +270,17 @@ namespace Win32
 			SESSION_NEGOTIATE = 5,
 			MAX_CALLBACKS = 6,
 		}
-		[AllowDuplicates]
 		public enum WDSTRANSPORT_FEATURE_FLAGS : int32
 		{
 			AdminPack = 1,
 			TransportServer = 2,
 			DeploymentServer = 4,
 		}
-		[AllowDuplicates]
 		public enum WDSTRANSPORT_PROTOCOL_FLAGS : int32
 		{
 			Unicast = 1,
 			Multicast = 2,
 		}
-		[AllowDuplicates]
 		public enum WDSTRANSPORT_NAMESPACE_TYPE : int32
 		{
 			Unknown = 0,
@@ -299,34 +288,29 @@ namespace Win32
 			ScheduledCastManualStart = 2,
 			ScheduledCastAutoStart = 3,
 		}
-		[AllowDuplicates]
 		public enum WDSTRANSPORT_DISCONNECT_TYPE : int32
 		{
 			Unknown = 0,
 			Fallback = 1,
 			Abort = 2,
 		}
-		[AllowDuplicates]
 		public enum WDSTRANSPORT_SERVICE_NOTIFICATION : int32
 		{
 			Unknown = 0,
 			ReadSettings = 1,
 		}
-		[AllowDuplicates]
 		public enum WDSTRANSPORT_IP_ADDRESS_TYPE : int32
 		{
 			Unknown = 0,
 			Ipv4 = 1,
 			Ipv6 = 2,
 		}
-		[AllowDuplicates]
 		public enum WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE : int32
 		{
 			Unknown = 0,
 			Dhcp = 1,
 			Range = 2,
 		}
-		[AllowDuplicates]
 		public enum WDSTRANSPORT_NETWORK_PROFILE_TYPE : int32
 		{
 			Unknown = 0,
@@ -335,7 +319,6 @@ namespace Win32
 			_100Mbps = 3,
 			_1Gbps = 4,
 		}
-		[AllowDuplicates]
 		public enum WDSTRANSPORT_DIAGNOSTICS_COMPONENT_FLAGS : int32
 		{
 			Pxe = 1,
@@ -343,7 +326,6 @@ namespace Win32
 			ImageServer = 4,
 			Multicast = 8,
 		}
-		[AllowDuplicates]
 		public enum WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE : int32
 		{
 			Unknown = 0,
@@ -351,13 +333,11 @@ namespace Win32
 			AutoDisconnect = 2,
 			Multistream = 3,
 		}
-		[AllowDuplicates]
 		public enum WDSTRANSPORT_UDP_PORT_POLICY : int32
 		{
 			Dynamic = 0,
 			Fixed = 1,
 		}
-		[AllowDuplicates]
 		public enum WDSTRANSPORT_TFTP_CAPABILITY : int32
 		{
 			MaximumBlockSize = 1,

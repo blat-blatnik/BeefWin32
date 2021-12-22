@@ -705,14 +705,12 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum MPR_INTERFACE_DIAL_MODE : uint32
 		{
 			First = 0,
 			All = 1,
 			AsNeeded = 2,
 		}
-		[AllowDuplicates]
 		public enum RASENTRY_DIAL_MODE : uint32
 		{
 			ll = 1,
@@ -728,7 +726,6 @@ namespace Win32
 			IKEV2_CONNECTION = 16,
 			DORMANT = 32,
 		}
-		[AllowDuplicates]
 		public enum MPR_ET : uint32
 		{
 			None = 0,
@@ -736,14 +733,12 @@ namespace Win32
 			RequireMax = 2,
 			Optional = 3,
 		}
-		[AllowDuplicates]
 		public enum RASPPP_PROJECTION_INFO_SERVER_AUTH_DATA : uint32
 		{
 			D5 = 5,
 			S = 128,
 			SV2 = 129,
 		}
-		[AllowDuplicates]
 		public enum PPP_LCP : uint32
 		{
 			PAP = 49187,
@@ -751,7 +746,6 @@ namespace Win32
 			EAP = 49703,
 			SPAP = 49191,
 		}
-		[AllowDuplicates]
 		public enum RASPPP_PROJECTION_INFO_SERVER_AUTH_PROTOCOL : uint32
 		{
 			PAP = 49187,
@@ -759,21 +753,18 @@ namespace Win32
 			CHAP = 49699,
 			EAP = 49703,
 		}
-		[AllowDuplicates]
 		public enum PPP_LCP_INFO_AUTH_DATA : uint32
 		{
 			D5 = 5,
 			S = 128,
 			SV2 = 129,
 		}
-		[AllowDuplicates]
 		public enum RASIKEV_PROJECTION_INFO_FLAGS : uint32
 		{
 			MOBIKESUPPORTED = 1,
 			BEHIND_NAT = 2,
 			SERVERBEHIND_NAT = 4,
 		}
-		[AllowDuplicates]
 		public enum MPR_VS : uint32
 		{
 			Default = 0,
@@ -782,14 +773,12 @@ namespace Win32
 			L2tpOnly = 3,
 			L2tpFirst = 4,
 		}
-		[AllowDuplicates]
 		public enum SECURITY_MESSAGE_MSG_ID : uint32
 		{
 			SUCCESS = 1,
 			FAILURE = 2,
 			ERROR = 3,
 		}
-		[AllowDuplicates]
 		public enum RASAPIVERSION : int32
 		{
 			_500 = 1,
@@ -797,7 +786,6 @@ namespace Win32
 			_600 = 3,
 			_601 = 4,
 		}
-		[AllowDuplicates]
 		public enum RASCONNSTATE : int32
 		{
 			OpenPort = 0,
@@ -833,7 +821,6 @@ namespace Win32
 			Connected = 8192,
 			Disconnected = 8193,
 		}
-		[AllowDuplicates]
 		public enum RASCONNSUBSTATE : int32
 		{
 			None = 0,
@@ -841,7 +828,6 @@ namespace Win32
 			Reconnecting = 2,
 			Reconnected = 8192,
 		}
-		[AllowDuplicates]
 		public enum RASPROJECTION : int32
 		{
 			Amb = 65536,
@@ -852,13 +838,11 @@ namespace Win32
 			PppLcp = 49185,
 			PppIpv6 = 32855,
 		}
-		[AllowDuplicates]
 		public enum RASPROJECTION_INFO_TYPE : int32
 		{
 			PPP = 1,
 			IKEv2 = 2,
 		}
-		[AllowDuplicates]
 		public enum IKEV2_ID_PAYLOAD_TYPE : int32
 		{
 			INVALID = 0,
@@ -875,7 +859,6 @@ namespace Win32
 			KEY_ID = 11,
 			MAX = 12,
 		}
-		[AllowDuplicates]
 		public enum ROUTER_INTERFACE_TYPE : int32
 		{
 			CLIENT = 0,
@@ -888,7 +871,6 @@ namespace Win32
 			DIALOUT = 7,
 			MAX = 8,
 		}
-		[AllowDuplicates]
 		public enum ROUTER_CONNECTION_STATE : int32
 		{
 			UNREACHABLE = 0,
@@ -896,7 +878,6 @@ namespace Win32
 			CONNECTING = 2,
 			CONNECTED = 3,
 		}
-		[AllowDuplicates]
 		public enum RAS_PORT_CONDITION : int32
 		{
 			NON_OPERATIONAL = 0,
@@ -907,13 +888,11 @@ namespace Win32
 			AUTHENTICATED = 5,
 			INITIALIZING = 6,
 		}
-		[AllowDuplicates]
 		public enum RAS_HARDWARE_CONDITION : int32
 		{
 			OPERATIONAL = 0,
 			FAILURE = 1,
 		}
-		[AllowDuplicates]
 		public enum RAS_QUARANTINE_STATE : int32
 		{
 			NORMAL = 0,
@@ -921,7 +900,6 @@ namespace Win32
 			PROBATION = 2,
 			NOT_CAPABLE = 3,
 		}
-		[AllowDuplicates]
 		public enum MPRAPI_OBJECT_TYPE : int32
 		{
 			RAS_CONNECTION_OBJECT = 1,
@@ -931,19 +909,16 @@ namespace Win32
 			UPDATE_CONNECTION_OBJECT = 5,
 			IF_CUSTOM_CONFIG_OBJECT = 6,
 		}
-		[AllowDuplicates]
 		public enum MPR_VPN_TS_TYPE : int32
 		{
 			_4_ADDR_RANGE = 7,
 			_6_ADDR_RANGE = 8,
 		}
-		[AllowDuplicates]
 		public enum MGM_ENUM_TYPES : int32
 		{
 			NY_SOURCE = 0,
 			LL_SOURCES = 1,
 		}
-		[AllowDuplicates]
 		public enum RTM_EVENT_TYPE : int32
 		{
 			ENTITY_REGISTERED = 0,

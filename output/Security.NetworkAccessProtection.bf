@@ -12,14 +12,12 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum IsolationState : int32
 		{
 			NotRestricted = 1,
 			InProbation = 2,
 			RestrictedAccess = 3,
 		}
-		[AllowDuplicates]
 		public enum ExtendedIsolationState : int32
 		{
 			NoData = 0,
@@ -27,7 +25,6 @@ namespace Win32
 			Infected = 2,
 			Unknown = 3,
 		}
-		[AllowDuplicates]
 		public enum NapTracingLevel : int32
 		{
 			Undefined = 0,
@@ -35,7 +32,6 @@ namespace Win32
 			Advanced = 2,
 			Debug = 3,
 		}
-		[AllowDuplicates]
 		public enum FailureCategory : int32
 		{
 			None = 0,
@@ -45,21 +41,18 @@ namespace Win32
 			ServerComponent = 4,
 			ServerCommunication = 5,
 		}
-		[AllowDuplicates]
 		public enum FixupState : int32
 		{
 			Success = 0,
 			InProgress = 1,
 			CouldNotUpdate = 2,
 		}
-		[AllowDuplicates]
 		public enum NapNotifyType : int32
 		{
 			Unknown = 0,
 			ServiceState = 1,
 			QuarState = 2,
 		}
-		[AllowDuplicates]
 		public enum RemoteConfigurationType : int32
 		{
 			Machine = 1,

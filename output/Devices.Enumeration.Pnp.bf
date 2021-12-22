@@ -59,7 +59,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum SW_DEVICE_CAPABILITIES : int32
 		{
 			None = 0,
@@ -68,7 +67,6 @@ namespace Win32
 			NoDisplayInUI = 4,
 			DriverRequired = 8,
 		}
-		[AllowDuplicates]
 		public enum SW_DEVICE_LIFETIME : int32
 		{
 			Handle = 0,

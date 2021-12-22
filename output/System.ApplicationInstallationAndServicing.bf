@@ -363,13 +363,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum MSIASSEMBLYINFO : uint32
 		{
 			NETASSEMBLY = 0,
 			WIN32ASSEMBLY = 1,
 		}
-		[AllowDuplicates]
 		public enum IASSEMBLYCACHE_UNINSTALL_DISPOSITION : uint32
 		{
 			UNINSTALLED = 1,
@@ -377,12 +375,10 @@ namespace Win32
 			ALREADY_UNINSTALLED = 3,
 			DELETE_PENDING = 4,
 		}
-		[AllowDuplicates]
 		public enum QUERYASMINFO_FLAGS : uint32
 		{
 			QUERYASMINFO_FLAG_VALIDATE = 1,
 		}
-		[AllowDuplicates]
 		public enum RESULTTYPES : int32
 		{
 			Unknown = 0,
@@ -390,7 +386,6 @@ namespace Win32
 			Warning = 2,
 			Info = 3,
 		}
-		[AllowDuplicates]
 		public enum STATUSTYPES : int32
 		{
 			GetCUB = 0,
@@ -405,7 +400,6 @@ namespace Win32
 			Fail = 9,
 			Cancel = 10,
 		}
-		[AllowDuplicates]
 		public enum msmErrorType : int32
 		{
 			LanguageUnsupported = 1,
@@ -417,7 +411,6 @@ namespace Win32
 			DirCreate = 7,
 			FeatureRequired = 8,
 		}
-		[AllowDuplicates]
 		public enum INSTALLMESSAGE : int32
 		{
 			FATALEXIT = 0,
@@ -440,7 +433,6 @@ namespace Win32
 			INSTALLSTART = 436207616,
 			INSTALLEND = 452984832,
 		}
-		[AllowDuplicates]
 		public enum INSTALLUILEVEL : int32
 		{
 			NOCHANGE = 0,
@@ -473,7 +465,6 @@ namespace Win32
 			SOURCE = 4,
 			DEFAULT = 5,
 		}
-		[AllowDuplicates]
 		public enum USERINFOSTATE : int32
 		{
 			MOREDATA = -3,
@@ -482,14 +473,12 @@ namespace Win32
 			ABSENT = 0,
 			PRESENT = 1,
 		}
-		[AllowDuplicates]
 		public enum INSTALLLEVEL : int32
 		{
 			DEFAULT = 0,
 			MINIMUM = 1,
 			MAXIMUM = 65535,
 		}
-		[AllowDuplicates]
 		public enum REINSTALLMODE : int32
 		{
 			REPAIR = 1,
@@ -531,13 +520,11 @@ namespace Win32
 			INSTALLSTART = 67108864,
 			INSTALLEND = 134217728,
 		}
-		[AllowDuplicates]
 		public enum INSTALLLOGATTRIBUTES : int32
 		{
 			APPEND = 1,
 			FLUSHEACHLINE = 2,
 		}
-		[AllowDuplicates]
 		public enum INSTALLFEATUREATTRIBUTE : int32
 		{
 			FAVORLOCAL = 1,
@@ -547,7 +534,6 @@ namespace Win32
 			DISALLOWADVERTISE = 16,
 			NOUNSUPPORTEDADVERTISE = 32,
 		}
-		[AllowDuplicates]
 		public enum INSTALLMODE : int32
 		{
 			NODETECTION_ANY = -4,
@@ -556,7 +542,6 @@ namespace Win32
 			EXISTING = -1,
 			DEFAULT = 0,
 		}
-		[AllowDuplicates]
 		public enum MSIPATCHSTATE : int32
 		{
 			INVALID = 0,
@@ -577,14 +562,12 @@ namespace Win32
 			ALL = 7,
 			ALLUSERMANAGED = 8,
 		}
-		[AllowDuplicates]
 		public enum MSIPATCHDATATYPE : int32
 		{
 			PATCHFILE = 0,
 			XMLPATH = 1,
 			XMLBLOB = 2,
 		}
-		[AllowDuplicates]
 		public enum SCRIPTFLAGS : int32
 		{
 			CACHEINFO = 1,
@@ -597,20 +580,17 @@ namespace Win32
 			REGDATA_APPINFO = 384,
 			REGDATA = 416,
 		}
-		[AllowDuplicates]
 		public enum ADVERTISEFLAGS : int32
 		{
 			MACHINEASSIGN = 0,
 			USERASSIGN = 1,
 		}
-		[AllowDuplicates]
 		public enum INSTALLTYPE : int32
 		{
 			DEFAULT = 0,
 			NETWORK_IMAGE = 1,
 			SINGLE_INSTANCE = 2,
 		}
-		[AllowDuplicates]
 		public enum MSIARCHITECTUREFLAGS : int32
 		{
 			X86 = 1,
@@ -618,17 +598,14 @@ namespace Win32
 			AMD64 = 4,
 			ARM = 8,
 		}
-		[AllowDuplicates]
 		public enum MSIOPENPACKAGEFLAGS : int32
 		{
 			MSIOPENPACKAGEFLAGS_IGNOREMACHINESTATE = 1,
 		}
-		[AllowDuplicates]
 		public enum MSIADVERTISEOPTIONFLAGS : int32
 		{
 			MSIADVERTISEOPTIONFLAGS_INSTANCE = 1,
 		}
-		[AllowDuplicates]
 		public enum MSISOURCETYPE : int32
 		{
 			UNKNOWN = 0,
@@ -636,32 +613,27 @@ namespace Win32
 			URL = 2,
 			MEDIA = 4,
 		}
-		[AllowDuplicates]
 		public enum MSICODE : int32
 		{
 			RODUCT = 0,
 			ATCH = 1073741824,
 		}
-		[AllowDuplicates]
 		public enum MSITRANSACTION : int32
 		{
 			CHAIN_EMBEDDEDUI = 1,
 			JOIN_EXISTING_EMBEDDEDUI = 2,
 		}
-		[AllowDuplicates]
 		public enum MSITRANSACTIONSTATE : uint32
 		{
 			ROLLBACK = 0,
 			COMMIT = 1,
 		}
-		[AllowDuplicates]
 		public enum MSIDBSTATE : int32
 		{
 			ERROR = -1,
 			READ = 0,
 			WRITE = 1,
 		}
-		[AllowDuplicates]
 		public enum MSIMODIFY : int32
 		{
 			SEEK = -1,
@@ -678,13 +650,11 @@ namespace Win32
 			VALIDATE_FIELD = 10,
 			VALIDATE_DELETE = 11,
 		}
-		[AllowDuplicates]
 		public enum MSICOLINFO : int32
 		{
 			NAMES = 0,
 			TYPES = 1,
 		}
-		[AllowDuplicates]
 		public enum MSICONDITION : int32
 		{
 			FALSE = 0,
@@ -692,7 +662,6 @@ namespace Win32
 			NONE = 2,
 			ERROR = 3,
 		}
-		[AllowDuplicates]
 		public enum MSICOSTTREE : int32
 		{
 			SELFONLY = 0,
@@ -700,7 +669,6 @@ namespace Win32
 			PARENTS = 2,
 			RESERVED = 3,
 		}
-		[AllowDuplicates]
 		public enum MSIDBERROR : int32
 		{
 			INVALIDARG = -3,
@@ -737,7 +705,6 @@ namespace Win32
 			STRINGOVERFLOW = 28,
 			BADLOCALIZEATTRIB = 29,
 		}
-		[AllowDuplicates]
 		public enum MSIRUNMODE : int32
 		{
 			ADMIN = 0,
@@ -760,7 +727,6 @@ namespace Win32
 			ROLLBACK = 17,
 			COMMIT = 18,
 		}
-		[AllowDuplicates]
 		public enum MSITRANSFORM_ERROR : int32
 		{
 			ADDEXISTINGROW = 1,
@@ -772,7 +738,6 @@ namespace Win32
 			VIEWTRANSFORM = 256,
 			NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum MSITRANSFORM_VALIDATE : int32
 		{
 			LANGUAGE = 1,
@@ -788,7 +753,6 @@ namespace Win32
 			NEWGREATERBASEVERSION = 1024,
 			UPGRADECODE = 2048,
 		}
-		[AllowDuplicates]
 		public enum ASM_NAME : int32
 		{
 			PUBLIC_KEY = 0,
@@ -813,7 +777,6 @@ namespace Win32
 			MVID = 19,
 			MAX_PARAMS = 20,
 		}
-		[AllowDuplicates]
 		public enum ASM_BIND_FLAGS : uint32
 		{
 			FORCE_CACHE_INSTALL = 1,
@@ -823,7 +786,6 @@ namespace Win32
 			SHARED_BINPATH_HINT = 16,
 			PARENT_ASM_HINT = 32,
 		}
-		[AllowDuplicates]
 		public enum ASM_DISPLAY_FLAGS : int32
 		{
 			VERSION = 1,
@@ -834,7 +796,6 @@ namespace Win32
 			PROCESSORARCHITECTURE = 32,
 			LANGUAGEID = 64,
 		}
-		[AllowDuplicates]
 		public enum ASM_CMP_FLAGS : int32
 		{
 			NAME = 1,
@@ -848,7 +809,6 @@ namespace Win32
 			ALL = 255,
 			DEFAULT = 256,
 		}
-		[AllowDuplicates]
 		public enum CREATE_ASM_NAME_OBJ_FLAGS : int32
 		{
 			PARSE_DISPLAY_NAME = 1,
@@ -894,7 +854,6 @@ namespace Win32
 			AttributesElevationShield = 8388608,
 			AttributesHasBorder = 16777216,
 		}
-		[AllowDuplicates]
 		public enum msidbLocatorType : int32
 		{
 			Directory = 0,
@@ -902,7 +861,6 @@ namespace Win32
 			RawValue = 2,
 			_64bit = 16,
 		}
-		[AllowDuplicates]
 		public enum msidbComponentAttributes : int32
 		{
 			LocalOnly = 0,
@@ -919,7 +877,6 @@ namespace Win32
 			UninstallOnSupersedence = 1024,
 			Shared = 2048,
 		}
-		[AllowDuplicates]
 		public enum msidbAssemblyAttributes : int32
 		{
 			URT = 0,
@@ -952,7 +909,6 @@ namespace Win32
 			HideTarget = 8192,
 			PatchUninstall = 32768,
 		}
-		[AllowDuplicates]
 		public enum msidbDialogAttributes : int32
 		{
 			Visible = 1,
@@ -968,7 +924,6 @@ namespace Win32
 			BiDi = 896,
 			Error = 65536,
 		}
-		[AllowDuplicates]
 		public enum msidbFeatureAttributes : int32
 		{
 			FavorLocal = 0,
@@ -979,7 +934,6 @@ namespace Win32
 			UIDisallowAbsent = 16,
 			NoUnsupportedAdvertise = 32,
 		}
-		[AllowDuplicates]
 		public enum msidbFileAttributes : int32
 		{
 			ReadOnly = 1,
@@ -997,7 +951,6 @@ namespace Win32
 			Compressed = 16384,
 			Reserved4 = 32768,
 		}
-		[AllowDuplicates]
 		public enum msidbIniFileAction : int32
 		{
 			AddLine = 0,
@@ -1006,28 +959,23 @@ namespace Win32
 			AddTag = 3,
 			RemoveTag = 4,
 		}
-		[AllowDuplicates]
 		public enum msidbMoveFileOptions : int32
 		{
 			msidbMoveFileOptionsMove = 1,
 		}
-		[AllowDuplicates]
 		public enum msidbODBCDataSourceRegistration : int32
 		{
 			Machine = 0,
 			User = 1,
 		}
-		[AllowDuplicates]
 		public enum msidbClassAttributes : int32
 		{
 			msidbClassAttributesRelativePath = 1,
 		}
-		[AllowDuplicates]
 		public enum msidbPatchAttributes : int32
 		{
 			msidbPatchAttributesNonVital = 1,
 		}
-		[AllowDuplicates]
 		public enum msidbRegistryRoot : int32
 		{
 			ClassesRoot = 0,
@@ -1035,14 +983,12 @@ namespace Win32
 			LocalMachine = 2,
 			Users = 3,
 		}
-		[AllowDuplicates]
 		public enum msidbRemoveFileInstallMode : int32
 		{
 			Install = 1,
 			Remove = 2,
 			Both = 3,
 		}
-		[AllowDuplicates]
 		public enum msidbServiceControlEvent : int32
 		{
 			Start = 1,
@@ -1052,19 +998,16 @@ namespace Win32
 			UninstallStop = 32,
 			UninstallDelete = 128,
 		}
-		[AllowDuplicates]
 		public enum msidbServiceConfigEvent : int32
 		{
 			Install = 1,
 			Uninstall = 2,
 			Reinstall = 4,
 		}
-		[AllowDuplicates]
 		public enum msidbServiceInstallErrorControl : int32
 		{
 			msidbServiceInstallErrorControlVital = 32768,
 		}
-		[AllowDuplicates]
 		public enum msidbTextStyleStyleBits : int32
 		{
 			Bold = 1,
@@ -1072,7 +1015,6 @@ namespace Win32
 			Underline = 4,
 			Strike = 8,
 		}
-		[AllowDuplicates]
 		public enum msidbUpgradeAttributes : int32
 		{
 			MigrateFeatures = 1,
@@ -1082,13 +1024,11 @@ namespace Win32
 			VersionMaxInclusive = 512,
 			LanguagesExclusive = 1024,
 		}
-		[AllowDuplicates]
 		public enum msidbEmbeddedUIAttributes : int32
 		{
 			UI = 1,
 			HandlesBasic = 2,
 		}
-		[AllowDuplicates]
 		public enum msidbSumInfoSourceType : int32
 		{
 			SFN = 1,
@@ -1096,13 +1036,11 @@ namespace Win32
 			AdminImage = 4,
 			LUAPackage = 8,
 		}
-		[AllowDuplicates]
 		public enum msirbRebootType : int32
 		{
 			Immediate = 1,
 			Deferred = 2,
 		}
-		[AllowDuplicates]
 		public enum msirbRebootReason : int32
 		{
 			UndeterminedReason = 0,
@@ -1111,14 +1049,12 @@ namespace Win32
 			ForceRebootReason = 3,
 			CustomActionReason = 4,
 		}
-		[AllowDuplicates]
 		public enum msifiFastInstallBits : int32
 		{
 			NoSR = 1,
 			QuickCosting = 2,
 			LessPrgMsg = 4,
 		}
-		[AllowDuplicates]
 		public enum TILE_TEMPLATE_TYPE : int32
 		{
 			INVALID = 0,
@@ -1180,14 +1116,12 @@ namespace Win32
 			FOLDER = 59,
 			ALL = 100,
 		}
-		[AllowDuplicates]
 		public enum PM_APP_GENRE : int32
 		{
 			GAMES = 0,
 			OTHER = 1,
 			INVALID = 2,
 		}
-		[AllowDuplicates]
 		public enum PM_APPLICATION_INSTALL_TYPE : int32
 		{
 			NORMAL = 0,
@@ -1214,14 +1148,12 @@ namespace Win32
 			MAX = 10,
 			INVALID = 11,
 		}
-		[AllowDuplicates]
 		public enum PM_APPLICATION_HUBTYPE : int32
 		{
 			NONMUSIC = 0,
 			MUSIC = 1,
 			INVALID = 2,
 		}
-		[AllowDuplicates]
 		public enum PM_TILE_HUBTYPE : int32
 		{
 			MUSIC = 1,
@@ -1234,7 +1166,6 @@ namespace Win32
 			CACHED = 67108864,
 			INVALID = 67108865,
 		}
-		[AllowDuplicates]
 		public enum PM_STARTTILE_TYPE : int32
 		{
 			PRIMARY = 1,
@@ -1243,7 +1174,6 @@ namespace Win32
 			APPLISTPRIMARY = 4,
 			INVALID = 5,
 		}
-		[AllowDuplicates]
 		public enum PM_TASK_TYPE : int32
 		{
 			NORMAL = 0,
@@ -1253,7 +1183,6 @@ namespace Win32
 			BACKGROUNDWORKER = 4,
 			INVALID = 5,
 		}
-		[AllowDuplicates]
 		public enum PACKMAN_RUNTIME : int32
 		{
 			NATIVE = 1,
@@ -1263,7 +1192,6 @@ namespace Win32
 			JUPITER = 5,
 			INVALID = 6,
 		}
-		[AllowDuplicates]
 		public enum PM_ACTIVATION_POLICY : int32
 		{
 			RESUME = 0,
@@ -1275,7 +1203,6 @@ namespace Win32
 			UNKNOWN = 6,
 			INVALID = 7,
 		}
-		[AllowDuplicates]
 		public enum PM_TASK_TRANSITION : int32
 		{
 			DEFAULT = 0,
@@ -1287,7 +1214,6 @@ namespace Win32
 			CUSTOM = 6,
 			INVALID = 7,
 		}
-		[AllowDuplicates]
 		public enum PM_ENUM_APP_FILTER : int32
 		{
 			ALL = 0,
@@ -1300,7 +1226,6 @@ namespace Win32
 			FRAMEWORK = 7,
 			MAX = 8,
 		}
-		[AllowDuplicates]
 		public enum PM_ENUM_TILE_FILTER : int32
 		{
 			APPLIST = 8,
@@ -1309,7 +1234,6 @@ namespace Win32
 			APP_ALL = 11,
 			MAX = 12,
 		}
-		[AllowDuplicates]
 		public enum PM_ENUM_TASK_FILTER : int32
 		{
 			APP_ALL = 12,
@@ -1334,7 +1258,6 @@ namespace Win32
 			CACHEDFILEUPDATER_ALL = 25,
 			MAX = 26,
 		}
-		[AllowDuplicates]
 		public enum PM_ENUM_BSA_FILTER : int32
 		{
 			ALL = 26,
@@ -1344,7 +1267,6 @@ namespace Win32
 			BY_ALL_LAUNCHONBOOT = 30,
 			MAX = 31,
 		}
-		[AllowDuplicates]
 		public enum PM_ENUM_BW_FILTER : int32
 		{
 			BOOTWORKER_ALL = 31,
@@ -1359,7 +1281,6 @@ namespace Win32
 			INTERVAL = 2,
 			MAX = 2,
 		}
-		[AllowDuplicates]
 		public enum PM_TILE_SIZE : int32
 		{
 			SMALL = 0,
@@ -1369,7 +1290,6 @@ namespace Win32
 			TALL150X310 = 4,
 			INVALID = 5,
 		}
-		[AllowDuplicates]
 		public enum PM_LOGO_SIZE : int32
 		{
 			SMALL = 0,
@@ -1377,7 +1297,6 @@ namespace Win32
 			LARGE = 2,
 			INVALID = 3,
 		}
-		[AllowDuplicates]
 		public enum ACTCTX_REQUESTED_RUN_LEVEL : int32
 		{
 			UNSPECIFIED = 0,
@@ -1386,7 +1305,6 @@ namespace Win32
 			REQUIRE_ADMIN = 3,
 			NUMBERS = 4,
 		}
-		[AllowDuplicates]
 		public enum ACTCTX_COMPATIBILITY_ELEMENT_TYPE : int32
 		{
 			UNKNOWN = 0,

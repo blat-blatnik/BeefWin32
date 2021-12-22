@@ -34,13 +34,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum CRYPTCAT_VERSION : uint32
 		{
 			_1 = 256,
 			_2 = 512,
 		}
-		[AllowDuplicates]
 		public enum CRYPTCAT_OPEN_FLAGS : uint32
 		{
 			ALWAYS = 2,

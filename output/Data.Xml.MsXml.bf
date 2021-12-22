@@ -562,7 +562,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DOMNodeType : int32
 		{
 			INVALID = 0,
@@ -579,7 +578,6 @@ namespace Win32
 			DOCUMENT_FRAGMENT = 11,
 			NOTATION = 12,
 		}
-		[AllowDuplicates]
 		public enum XMLEMEM_TYPE : int32
 		{
 			ELEMENT = 0,
@@ -590,7 +588,6 @@ namespace Win32
 			PI = 5,
 			OTHER = 6,
 		}
-		[AllowDuplicates]
 		public enum SERVERXMLHTTP_OPTION : int32
 		{
 			URL = -1,
@@ -599,7 +596,6 @@ namespace Win32
 			IGNORE_SERVER_SSL_CERT_ERROR_FLAGS = 2,
 			SELECT_CLIENT_SSL_CERT = 3,
 		}
-		[AllowDuplicates]
 		public enum SXH_SERVER_CERT_OPTION : int32
 		{
 			UNKNOWN_CA = 256,
@@ -616,7 +612,6 @@ namespace Win32
 			DIRECT = 1,
 			PROXY = 2,
 		}
-		[AllowDuplicates]
 		public enum SOMITEMTYPE : int32
 		{
 			SCHEMA = 4096,
@@ -693,14 +688,12 @@ namespace Win32
 			NULL_ANYATTRIBUTE = 18434,
 			NULL_ELEMENT = 18435,
 		}
-		[AllowDuplicates]
 		public enum SCHEMAUSE : int32
 		{
 			OPTIONAL = 0,
 			PROHIBITED = 1,
 			REQUIRED = 2,
 		}
-		[AllowDuplicates]
 		public enum SCHEMADERIVATIONMETHOD : int32
 		{
 			EMPTY = 0,
@@ -712,7 +705,6 @@ namespace Win32
 			ALL = 255,
 			NONE = 256,
 		}
-		[AllowDuplicates]
 		public enum SCHEMACONTENTTYPE : int32
 		{
 			EMPTY = 0,
@@ -720,7 +712,6 @@ namespace Win32
 			ELEMENTONLY = 2,
 			MIXED = 3,
 		}
-		[AllowDuplicates]
 		public enum SCHEMAPROCESSCONTENTS : int32
 		{
 			NONE = 0,
@@ -728,7 +719,6 @@ namespace Win32
 			LAX = 2,
 			STRICT = 3,
 		}
-		[AllowDuplicates]
 		public enum SCHEMAWHITESPACE : int32
 		{
 			NONE = -1,
@@ -736,7 +726,6 @@ namespace Win32
 			REPLACE = 1,
 			COLLAPSE = 2,
 		}
-		[AllowDuplicates]
 		public enum SCHEMATYPEVARIETY : int32
 		{
 			NONE = -1,
@@ -744,7 +733,6 @@ namespace Win32
 			LIST = 1,
 			UNION = 2,
 		}
-		[AllowDuplicates]
 		public enum XHR_COOKIE_STATE : int32
 		{
 			UNKNOWN = 0,
@@ -754,7 +742,6 @@ namespace Win32
 			DOWNGRADE = 4,
 			REJECT = 5,
 		}
-		[AllowDuplicates]
 		public enum XHR_COOKIE_FLAG : int32
 		{
 			IS_SECURE = 1,
@@ -770,21 +757,18 @@ namespace Win32
 			NON_SCRIPT = 4096,
 			HTTPONLY = 8192,
 		}
-		[AllowDuplicates]
 		public enum XHR_CRED_PROMPT : int32
 		{
 			ALL = 0,
 			NONE = 1,
 			PROXY = 2,
 		}
-		[AllowDuplicates]
 		public enum XHR_AUTH : int32
 		{
 			ALL = 0,
 			NONE = 1,
 			PROXY = 2,
 		}
-		[AllowDuplicates]
 		public enum XHR_PROPERTY : int32
 		{
 			NO_CRED_PROMPT = 0,
@@ -800,7 +784,6 @@ namespace Win32
 			SET_ENTERPRISEID = 10,
 			MAX_CONNECTIONS = 11,
 		}
-		[AllowDuplicates]
 		public enum XHR_CERT_IGNORE_FLAG : uint32
 		{
 			REVOCATION_FAILED = 128,
@@ -809,7 +792,6 @@ namespace Win32
 			CERT_DATE_INVALID = 8192,
 			ALL_SERVER_ERRORS = 12672,
 		}
-		[AllowDuplicates]
 		public enum XHR_CERT_ERROR_FLAG : uint32
 		{
 			REVOCATION_FAILED = 8388608,

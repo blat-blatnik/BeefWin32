@@ -12,7 +12,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum NLM_CONNECTION_COST : int32
 		{
 			UNKNOWN = 0,
@@ -24,21 +23,18 @@ namespace Win32
 			ROAMING = 262144,
 			APPROACHINGDATALIMIT = 524288,
 		}
-		[AllowDuplicates]
 		public enum NLM_NETWORK_CLASS : int32
 		{
 			IDENTIFYING = 1,
 			IDENTIFIED = 2,
 			UNIDENTIFIED = 3,
 		}
-		[AllowDuplicates]
 		public enum NLM_INTERNET_CONNECTIVITY : int32
 		{
 			WEBHIJACK = 1,
 			PROXIED = 2,
 			CORPORATE = 4,
 		}
-		[AllowDuplicates]
 		public enum NLM_CONNECTIVITY : int32
 		{
 			DISCONNECTED = 0,
@@ -51,28 +47,24 @@ namespace Win32
 			IPV6_LOCALNETWORK = 512,
 			IPV6_INTERNET = 1024,
 		}
-		[AllowDuplicates]
 		public enum NLM_DOMAIN_TYPE : int32
 		{
 			NON_DOMAIN_NETWORK = 0,
 			DOMAIN_NETWORK = 1,
 			DOMAIN_AUTHENTICATED = 2,
 		}
-		[AllowDuplicates]
 		public enum NLM_ENUM_NETWORK : int32
 		{
 			CONNECTED = 1,
 			DISCONNECTED = 2,
 			ALL = 3,
 		}
-		[AllowDuplicates]
 		public enum NLM_NETWORK_CATEGORY : int32
 		{
 			PUBLIC = 0,
 			PRIVATE = 1,
 			DOMAIN_AUTHENTICATED = 2,
 		}
-		[AllowDuplicates]
 		public enum NLM_NETWORK_PROPERTY_CHANGE : int32
 		{
 			CONNECTION = 1,
@@ -81,7 +73,6 @@ namespace Win32
 			ICON = 8,
 			CATEGORY_VALUE = 16,
 		}
-		[AllowDuplicates]
 		public enum NLM_CONNECTION_PROPERTY_CHANGE : int32
 		{
 			NLM_CONNECTION_PROPERTY_CHANGE_AUTHENTICATION = 1,

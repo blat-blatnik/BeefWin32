@@ -78,7 +78,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum LOCATION_REPORT_STATUS : int32
 		{
 			NOT_SUPPORTED = 0,
@@ -87,7 +86,6 @@ namespace Win32
 			INITIALIZING = 3,
 			RUNNING = 4,
 		}
-		[AllowDuplicates]
 		public enum GNSS_DRIVERCOMMAND_TYPE : int32
 		{
 			SetLocationServiceEnabled = 1,
@@ -104,7 +102,6 @@ namespace Win32
 			SetSuplVersion2 = 17,
 			CustomCommand = 256,
 		}
-		[AllowDuplicates]
 		public enum GNSS_FIXSESSIONTYPE : int32
 		{
 			SingleShot = 1,
@@ -112,19 +109,16 @@ namespace Win32
 			ContinuousTracking = 3,
 			LKG = 4,
 		}
-		[AllowDuplicates]
 		public enum GNSS_GEOREGIONTYPE : int32
 		{
 			GNSS_GeoRegion_Circle = 1,
 		}
-		[AllowDuplicates]
 		public enum GNSS_GEOFENCE_STATE : int32
 		{
 			Unknown = 0,
 			Entered = 1,
 			Exited = 2,
 		}
-		[AllowDuplicates]
 		public enum GNSS_EVENT_TYPE : int32
 		{
 			FixAvailable = 1,
@@ -139,27 +133,23 @@ namespace Win32
 			FixAvailable_2 = 18,
 			Custom = 32768,
 		}
-		[AllowDuplicates]
 		public enum GNSS_AGNSS_REQUEST_TYPE : int32
 		{
 			TimeInjection = 1,
 			PositionInjection = 2,
 			BlobInjection = 3,
 		}
-		[AllowDuplicates]
 		public enum GNSS_NI_PLANE_TYPE : int32
 		{
 			SUPL = 1,
 			CP = 2,
 			V2UPL = 3,
 		}
-		[AllowDuplicates]
 		public enum GNSS_NI_REQUEST_TYPE : int32
 		{
 			SingleShot = 1,
 			AreaTrigger = 2,
 		}
-		[AllowDuplicates]
 		public enum GNSS_NI_NOTIFICATION_TYPE : int32
 		{
 			NoNotifyNoVerify = 1,
@@ -168,19 +158,16 @@ namespace Win32
 			NotifyVerifyDefaultNotAllow = 4,
 			PrivacyOverride = 5,
 		}
-		[AllowDuplicates]
 		public enum GNSS_DRIVER_REQUEST : int32
 		{
 			SUPL_CONFIG_DATA = 1,
 		}
-		[AllowDuplicates]
 		public enum GNSS_SUPL_CERT_ACTION : int32
 		{
 			Inject = 1,
 			Delete = 2,
 			Purge = 3,
 		}
-		[AllowDuplicates]
 		public enum GNSS_NI_USER_RESPONSE : int32
 		{
 			Accept = 1,

@@ -19,7 +19,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum FILE_MAP : uint32
 		{
 			WRITE = 2,
@@ -31,7 +30,6 @@ namespace Win32
 			TARGETS_INVALID = 1073741824,
 			LARGE_PAGES = 536870912,
 		}
-		[AllowDuplicates]
 		public enum HEAP_FLAGS : uint32
 		{
 			NONE = 0,
@@ -95,20 +93,17 @@ namespace Win32
 			SEC_LARGE_PAGES = 2147483648,
 			SEC_IMAGE_NO_EXECUTE = 285212672,
 		}
-		[AllowDuplicates]
 		public enum UNMAP_VIEW_OF_FILE_FLAGS : uint32
 		{
 			UNMAP_NONE = 0,
 			UNMAP_WITH_TRANSIENT_BOOST = 1,
 			PRESERVE_PLACEHOLDER = 2,
 		}
-		[AllowDuplicates]
 		public enum VIRTUAL_FREE_TYPE : uint32
 		{
 			DECOMMIT = 16384,
 			RELEASE = 32768,
 		}
-		[AllowDuplicates]
 		public enum VIRTUAL_ALLOCATION_TYPE : uint32
 		{
 			COMMIT = 4096,
@@ -140,20 +135,17 @@ namespace Win32
 			MEM_ZEROINIT = 64,
 			PTR = 64,
 		}
-		[AllowDuplicates]
 		public enum PAGE_TYPE : uint32
 		{
 			PRIVATE = 131072,
 			MAPPED = 262144,
 			IMAGE = 16777216,
 		}
-		[AllowDuplicates]
 		public enum MEMORY_RESOURCE_NOTIFICATION_TYPE : int32
 		{
 			LowMemoryResourceNotification = 0,
 			HighMemoryResourceNotification = 1,
 		}
-		[AllowDuplicates]
 		public enum OFFER_PRIORITY : int32
 		{
 			VeryLow = 1,
@@ -161,18 +153,15 @@ namespace Win32
 			BelowNormal = 3,
 			Normal = 4,
 		}
-		[AllowDuplicates]
 		public enum WIN32_MEMORY_INFORMATION_CLASS : int32
 		{
 			MemoryRegionInfo = 0,
 		}
-		[AllowDuplicates]
 		public enum WIN32_MEMORY_PARTITION_INFORMATION_CLASS : int32
 		{
 			Info = 0,
 			DedicatedMemoryInfo = 1,
 		}
-		[AllowDuplicates]
 		public enum MEM_EXTENDED_PARAMETER_TYPE : int32
 		{
 			InvalidType = 0,
@@ -184,7 +173,6 @@ namespace Win32
 			ImageMachine = 6,
 			Max = 7,
 		}
-		[AllowDuplicates]
 		public enum HEAP_INFORMATION_CLASS : int32
 		{
 			CompatibilityInformation = 0,

@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum HANDLE_OPTIONS : uint32
 		{
 			NONE = 0,
@@ -19,7 +18,6 @@ namespace Win32
 			OVERLAPPED = 1073741824,
 			WRITE_THROUGH = 2147483648,
 		}
-		[AllowDuplicates]
 		public enum HANDLE_ACCESS_OPTIONS : uint32
 		{
 			NONE = 0,
@@ -28,7 +26,6 @@ namespace Win32
 			WRITE = 1179926,
 			DELETE = 65536,
 		}
-		[AllowDuplicates]
 		public enum HANDLE_SHARING_OPTIONS : uint32
 		{
 			NONE = 0,
@@ -36,7 +33,6 @@ namespace Win32
 			WRITE = 2,
 			DELETE = 4,
 		}
-		[AllowDuplicates]
 		public enum HANDLE_CREATION_OPTIONS : int32
 		{
 			CREATE_NEW = 1,

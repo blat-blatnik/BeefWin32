@@ -286,7 +286,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum PROPERTY_UNITS : int32
 		{
 			DEFAULT = 0,
@@ -307,26 +306,22 @@ namespace Win32
 			AMPERE = 15,
 			CANDELA = 16,
 		}
-		[AllowDuplicates]
 		public enum enumINKMETRIC_FLAGS : int32
 		{
 			FONT_SELECTED_IN_HDC = 1,
 			ITALIC = 2,
 			BOLD = 4,
 		}
-		[AllowDuplicates]
 		public enum enumGetCandidateFlags : int32
 		{
 			ALLOW_RECOGNITION = 1,
 			FORCE_RECOGNITION = 2,
 		}
-		[AllowDuplicates]
 		public enum InkSelectionConstants : int32
 		{
 			FirstElement = 0,
 			AllElements = -1,
 		}
-		[AllowDuplicates]
 		public enum InkBoundingBoxMode : int32
 		{
 			Default = 0,
@@ -342,7 +337,6 @@ namespace Win32
 			RemoveFromOriginal = 1,
 			Default = 1,
 		}
-		[AllowDuplicates]
 		public enum InkPersistenceFormat : int32
 		{
 			InkSerializedFormat = 0,
@@ -350,20 +344,17 @@ namespace Win32
 			GIF = 2,
 			Base64GIF = 3,
 		}
-		[AllowDuplicates]
 		public enum InkPersistenceCompressionMode : int32
 		{
 			Default = 0,
 			MaximumCompression = 1,
 			NoCompression = 2,
 		}
-		[AllowDuplicates]
 		public enum InkPenTip : int32
 		{
 			Ball = 0,
 			Rectangle = 1,
 		}
-		[AllowDuplicates]
 		public enum InkRasterOperation : int32
 		{
 			Black = 1,
@@ -383,7 +374,6 @@ namespace Win32
 			MergePen = 15,
 			White = 16,
 		}
-		[AllowDuplicates]
 		public enum InkMousePointer : int32
 		{
 			Default = 0,
@@ -426,7 +416,6 @@ namespace Win32
 			CopyMask = 127,
 			Default = 127,
 		}
-		[AllowDuplicates]
 		public enum SelectionHitResult : int32
 		{
 			None = 0,
@@ -440,7 +429,6 @@ namespace Win32
 			S = 8,
 			Selection = 9,
 		}
-		[AllowDuplicates]
 		public enum InkRecognitionStatus : int32
 		{
 			NoError = 0,
@@ -455,7 +443,6 @@ namespace Win32
 			SetPrefixSuffixFailed = 256,
 			SetWordListFailed = 512,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkRectangle : int32
 		{
 			Top = 1,
@@ -466,13 +453,11 @@ namespace Win32
 			SetRectangle = 6,
 			Data = 7,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkExtendedProperty : int32
 		{
 			Guid = 1,
 			Data = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkExtendedProperties : int32
 		{
 			_NewEnum = -4,
@@ -483,7 +468,6 @@ namespace Win32
 			Clear = 4,
 			DoesPropertyExist = 5,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkDrawingAttributes : int32
 		{
 			Height = 1,
@@ -498,7 +482,6 @@ namespace Win32
 			Clone = 10,
 			ExtendedProperties = 11,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkTransform : int32
 		{
 			Reset = 1,
@@ -517,7 +500,6 @@ namespace Win32
 			SetTransform = 14,
 			Data = 15,
 		}
-		[AllowDuplicates]
 		public enum InkApplicationGesture : int32
 		{
 			AllGestures = 0,
@@ -565,7 +547,6 @@ namespace Win32
 			Tap = 61680,
 			DoubleTap = 61681,
 		}
-		[AllowDuplicates]
 		public enum InkSystemGesture : int32
 		{
 			Tap = 16,
@@ -579,21 +560,18 @@ namespace Win32
 			HoverLeave = 24,
 			Flick = 31,
 		}
-		[AllowDuplicates]
 		public enum InkRecognitionConfidence : int32
 		{
 			Strong = 0,
 			Intermediate = 1,
 			Poor = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkGesture : int32
 		{
 			Id = 0,
 			GetHotPoint = 1,
 			Confidence = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkCursor : int32
 		{
 			Name = 0,
@@ -603,35 +581,30 @@ namespace Win32
 			Inverted = 4,
 			Tablet = 5,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkCursors : int32
 		{
 			_NewEnum = -4,
 			Item = 0,
 			Count = 1,
 		}
-		[AllowDuplicates]
 		public enum InkCursorButtonState : int32
 		{
 			Unavailable = 0,
 			Up = 1,
 			Down = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkCursorButton : int32
 		{
 			Name = 0,
 			Id = 1,
 			State = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkCursorButtons : int32
 		{
 			_NewEnum = -4,
 			Item = 0,
 			Count = 1,
 		}
-		[AllowDuplicates]
 		public enum TabletHardwareCapabilities : int32
 		{
 			Integrated = 1,
@@ -639,7 +612,6 @@ namespace Win32
 			HardProximity = 4,
 			CursorsHavePhysicalIds = 8,
 		}
-		[AllowDuplicates]
 		public enum TabletPropertyMetricUnit : int32
 		{
 			Default = 0,
@@ -651,7 +623,6 @@ namespace Win32
 			Pounds = 6,
 			Grams = 7,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkTablet : int32
 		{
 			Name = 0,
@@ -661,25 +632,21 @@ namespace Win32
 			MaximumInputRectangle = 4,
 			HardwareCapabilities = 5,
 		}
-		[AllowDuplicates]
 		public enum TabletDeviceKind : int32
 		{
 			Mouse = 0,
 			Pen = 1,
 			Touch = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkTablet2 : int32
 		{
 			DISPID_IT2DeviceKind = 0,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkTablet3 : int32
 		{
 			IsMultiTouch = 0,
 			MaximumCursors = 1,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkTablets : int32
 		{
 			_NewEnum = -4,
@@ -688,7 +655,6 @@ namespace Win32
 			Count = 2,
 			IsPacketPropertySupported = 3,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkStrokeDisp : int32
 		{
 			InkIndex = 1,
@@ -725,7 +691,6 @@ namespace Win32
 			Shear = 32,
 			Scale = 33,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkStrokes : int32
 		{
 			_NewEnum = -4,
@@ -750,7 +715,6 @@ namespace Win32
 			RecognitionResult = 18,
 			RemoveRecognitionResult = 19,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkCustomStrokes : int32
 		{
 			_NewEnum = -4,
@@ -760,13 +724,11 @@ namespace Win32
 			Remove = 3,
 			Clear = 4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_StrokeEvent : int32
 		{
 			Added = 1,
 			Removed = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPID_Ink : int32
 		{
 			Strokes = 1,
@@ -795,13 +757,11 @@ namespace Win32
 			CanPaste = 24,
 			ClipboardPaste = 25,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkEvent : int32
 		{
 			Added = 1,
 			Deleted = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkRenderer : int32
 		{
 			GetViewTransform = 1,
@@ -820,7 +780,6 @@ namespace Win32
 			Rotate = 14,
 			Scale = 15,
 		}
-		[AllowDuplicates]
 		public enum InkCollectorEventInterest : int32
 		{
 			DefaultEvents = -1,
@@ -842,21 +801,18 @@ namespace Win32
 			DblClick = 15,
 			AllEvents = 16,
 		}
-		[AllowDuplicates]
 		public enum InkMouseButton : int32
 		{
 			Left = 1,
 			Right = 2,
 			Middle = 4,
 		}
-		[AllowDuplicates]
 		public enum InkShiftKeyModifierFlags : int32
 		{
 			Shift = 1,
 			Control = 2,
 			Alt = 4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkCollectorEvent : int32
 		{
 			CEStroke = 1,
@@ -901,20 +857,17 @@ namespace Win32
 			PEResize = 40,
 			PESizeChanged = 41,
 		}
-		[AllowDuplicates]
 		public enum InkOverlayEditingMode : int32
 		{
 			Ink = 0,
 			Delete = 1,
 			Select = 2,
 		}
-		[AllowDuplicates]
 		public enum InkOverlayAttachMode : int32
 		{
 			Behind = 0,
 			InFront = 1,
 		}
-		[AllowDuplicates]
 		public enum InkPictureSizeMode : int32
 		{
 			AutoSize = 0,
@@ -922,20 +875,17 @@ namespace Win32
 			Normal = 2,
 			StretchImage = 3,
 		}
-		[AllowDuplicates]
 		public enum InkOverlayEraserMode : int32
 		{
 			StrokeErase = 0,
 			PointErase = 1,
 		}
-		[AllowDuplicates]
 		public enum InkCollectionMode : int32
 		{
 			InkOnly = 0,
 			GestureOnly = 1,
 			InkAndGesture = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkCollector : int32
 		{
 			CEnabled = 1,
@@ -978,7 +928,6 @@ namespace Win32
 			CSupportHighContrastInk = 38,
 			OSupportHighContrastSelectionUI = 39,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkRecognizer : int32
 		{
 			Clsid = 1,
@@ -990,7 +939,6 @@ namespace Win32
 			CreateRecognizerContext = 7,
 			SupportedProperties = 8,
 		}
-		[AllowDuplicates]
 		public enum InkRecognizerCapabilities : int32
 		{
 			DontCare = 1,
@@ -1016,13 +964,11 @@ namespace Win32
 			Alpha = 1048576,
 			Beta = 2097152,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkRecognizer2 : int32
 		{
 			Id = 0,
 			UnicodeRanges = 1,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkRecognizers : int32
 		{
 			_NewEnum = -4,
@@ -1030,14 +976,12 @@ namespace Win32
 			Count = 1,
 			GetDefaultRecognizer = 2,
 		}
-		[AllowDuplicates]
 		public enum InkRecognizerCharacterAutoCompletionMode : int32
 		{
 			Full = 0,
 			Prefix = 1,
 			Random = 2,
 		}
-		[AllowDuplicates]
 		public enum InkRecognitionModes : int32
 		{
 			None = 0,
@@ -1050,13 +994,11 @@ namespace Win32
 			AutoSpace = 64,
 			Max = 128,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkRecognitionEvent : int32
 		{
 			nWithAlternates = 1,
 			n = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkRecoContext : int32
 		{
 			Strokes = 1,
@@ -1077,19 +1019,16 @@ namespace Win32
 			BackgroundRecognizeWithAlternates = 16,
 			IsStringSupported = 17,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkRecoContext2 : int32
 		{
 			DISPID_IRecoCtx2_EnabledUnicodeRanges = 0,
 		}
-		[AllowDuplicates]
 		public enum InkRecognitionAlternatesSelection : int32
 		{
 			Start = 0,
 			DefaultCount = 10,
 			All = -1,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkRecognitionResult : int32
 		{
 			TopString = 1,
@@ -1100,7 +1039,6 @@ namespace Win32
 			ModifyTopAlternate = 6,
 			SetResultOnStrokes = 7,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkRecoAlternate : int32
 		{
 			String = 1,
@@ -1119,7 +1057,6 @@ namespace Win32
 			ConfidenceAlternates = 14,
 			AlternatesWithConstantPropertyValues = 15,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkRecognitionAlternates : int32
 		{
 			NewEnum = -4,
@@ -1127,7 +1064,6 @@ namespace Win32
 			Count = 1,
 			Strokes = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkRecognizerGuide : int32
 		{
 			WritingBox = 1,
@@ -1137,19 +1073,16 @@ namespace Win32
 			Midline = 5,
 			GuideData = 6,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkWordList : int32
 		{
 			AddWord = 0,
 			RemoveWord = 1,
 			Merge = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkWordList2 : int32
 		{
 			DISPID_InkWordList2_AddWords = 3,
 		}
-		[AllowDuplicates]
 		public enum InkDivisionType : int32
 		{
 			Segment = 0,
@@ -1157,7 +1090,6 @@ namespace Win32
 			Paragraph = 2,
 			Drawing = 3,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkDivider : int32
 		{
 			Strokes = 1,
@@ -1165,13 +1097,11 @@ namespace Win32
 			LineHeight = 3,
 			Divide = 4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkDivisionResult : int32
 		{
 			Strokes = 1,
 			ResultByType = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkDivisionUnit : int32
 		{
 			Strokes = 1,
@@ -1179,14 +1109,12 @@ namespace Win32
 			RecognizedString = 3,
 			RotationTransform = 4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkDivisionUnits : int32
 		{
 			NewEnum = -4,
 			Item = 0,
 			Count = 1,
 		}
-		[AllowDuplicates]
 		public enum DISPID_PenInputPanel : int32
 		{
 			AttachedEditWindow = 0,
@@ -1207,7 +1135,6 @@ namespace Win32
 			EnableTsf = 15,
 			AutoShow = 16,
 		}
-		[AllowDuplicates]
 		public enum DISPID_PenInputPanelEvents : int32
 		{
 			VisibleChanged = 0,
@@ -1215,7 +1142,6 @@ namespace Win32
 			InputFailed = 2,
 			PanelMoving = 3,
 		}
-		[AllowDuplicates]
 		public enum VisualState : int32
 		{
 			InPlace = 0,
@@ -1224,7 +1150,6 @@ namespace Win32
 			DockedBottom = 3,
 			Closed = 4,
 		}
-		[AllowDuplicates]
 		public enum InteractionMode : int32
 		{
 			InPlace = 0,
@@ -1232,14 +1157,12 @@ namespace Win32
 			DockedTop = 2,
 			DockedBottom = 3,
 		}
-		[AllowDuplicates]
 		public enum InPlaceState : int32
 		{
 			Auto = 0,
 			HoverTarget = 1,
 			Expanded = 2,
 		}
-		[AllowDuplicates]
 		public enum PanelInputArea : int32
 		{
 			Auto = 0,
@@ -1247,7 +1170,6 @@ namespace Win32
 			WritingPad = 2,
 			CharacterPad = 3,
 		}
-		[AllowDuplicates]
 		public enum CorrectionMode : int32
 		{
 			NotVisible = 0,
@@ -1255,21 +1177,18 @@ namespace Win32
 			PostInsertionCollapsed = 2,
 			PostInsertionExpanded = 3,
 		}
-		[AllowDuplicates]
 		public enum CorrectionPosition : int32
 		{
 			Auto = 0,
 			Bottom = 1,
 			Top = 2,
 		}
-		[AllowDuplicates]
 		public enum InPlaceDirection : int32
 		{
 			Auto = 0,
 			Bottom = 1,
 			Top = 2,
 		}
-		[AllowDuplicates]
 		public enum EventMask : int32
 		{
 			InPlaceStateChanging = 1,
@@ -1286,7 +1205,6 @@ namespace Win32
 			TextInserted = 2048,
 			All = 4095,
 		}
-		[AllowDuplicates]
 		public enum PanelType : int32
 		{
 			Default = 0,
@@ -1318,7 +1236,6 @@ namespace Win32
 			MAX = 2,
 			DEFAULT = 1,
 		}
-		[AllowDuplicates]
 		public enum FLICKACTION_COMMANDCODE : int32
 		{
 			NULL = 0,
@@ -1327,13 +1244,11 @@ namespace Win32
 			CUSTOMKEY = 3,
 			KEYMODIFIER = 4,
 		}
-		[AllowDuplicates]
 		public enum SCROLLDIRECTION : int32
 		{
 			UP = 0,
 			DOWN = 1,
 		}
-		[AllowDuplicates]
 		public enum KEYMODIFIER : int32
 		{
 			CONTROL = 1,
@@ -1343,7 +1258,6 @@ namespace Win32
 			ALTGR = 16,
 			EXT = 32,
 		}
-		[AllowDuplicates]
 		public enum MouseButton : int32
 		{
 			NO_BUTTON = 0,
@@ -1351,14 +1265,12 @@ namespace Win32
 			RIGHT_BUTTON = 2,
 			MIDDLE_BUTTON = 4,
 		}
-		[AllowDuplicates]
 		public enum SelAlignmentConstants : int32
 		{
 			Left = 0,
 			Right = 1,
 			Center = 2,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkEdit : int32
 		{
 			Text = 0,
@@ -1398,7 +1310,6 @@ namespace Win32
 			SetGestStatus = 34,
 			Refresh = 35,
 		}
-		[AllowDuplicates]
 		public enum DISPID_InkEditEvents : int32
 		{
 			Change = 1,
@@ -1416,45 +1327,38 @@ namespace Win32
 			Gesture = 23,
 			RecognitionResult = 24,
 		}
-		[AllowDuplicates]
 		public enum InkMode : int32
 		{
 			Disabled = 0,
 			Ink = 1,
 			InkAndGesture = 2,
 		}
-		[AllowDuplicates]
 		public enum InkInsertMode : int32
 		{
 			Text = 0,
 			Ink = 1,
 		}
-		[AllowDuplicates]
 		public enum InkEditStatus : int32
 		{
 			Idle = 0,
 			Collecting = 1,
 			Recognizing = 2,
 		}
-		[AllowDuplicates]
 		public enum InkDisplayMode : int32
 		{
 			Ink = 0,
 			Text = 1,
 		}
-		[AllowDuplicates]
 		public enum AppearanceConstants : int32
 		{
 			Flat = 0,
 			ThreeD = 1,
 		}
-		[AllowDuplicates]
 		public enum BorderStyleConstants : int32
 		{
 			NoBorder = 0,
 			FixedSingle = 1,
 		}
-		[AllowDuplicates]
 		public enum ScrollBarsConstants : int32
 		{
 			None = 0,
@@ -1462,7 +1366,6 @@ namespace Win32
 			Vertical = 2,
 			Both = 3,
 		}
-		[AllowDuplicates]
 		public enum MICUIELEMENT : int32
 		{
 			BUTTON_WRITE = 1,
@@ -1476,7 +1379,6 @@ namespace Win32
 			INKPANEL_BACKGROUND = 256,
 			RESULTPANEL_BACKGROUND = 512,
 		}
-		[AllowDuplicates]
 		public enum MICUIELEMENTSTATE : int32
 		{
 			NORMAL = 1,
@@ -1484,7 +1386,6 @@ namespace Win32
 			PRESSED = 3,
 			DISABLED = 4,
 		}
-		[AllowDuplicates]
 		public enum DISPID_MathInputControlEvents : int32
 		{
 			Insert = 0,
@@ -1492,7 +1393,6 @@ namespace Win32
 			Paint = 2,
 			Clear = 3,
 		}
-		[AllowDuplicates]
 		public enum RealTimeStylusDataInterest : int32
 		{
 			AllData = -1,
@@ -1516,14 +1416,12 @@ namespace Win32
 			UpdateMapping = 65536,
 			DefaultEvents = 37766,
 		}
-		[AllowDuplicates]
 		public enum StylusQueue : int32
 		{
 			SyncStylusQueue = 1,
 			AsyncStylusQueueImmediate = 2,
 			AsyncStylusQueue = 3,
 		}
-		[AllowDuplicates]
 		public enum RealTimeStylusLockType : int32
 		{
 			ObjLock = 1,
@@ -1533,7 +1431,6 @@ namespace Win32
 			SyncObjLock = 11,
 			AsyncObjLock = 13,
 		}
-		[AllowDuplicates]
 		public enum LINE_METRICS : int32
 		{
 			BASELINE = 0,
@@ -1541,21 +1438,18 @@ namespace Win32
 			ASCENDER = 2,
 			DESCENDER = 3,
 		}
-		[AllowDuplicates]
 		public enum CONFIDENCE_LEVEL : int32
 		{
 			STRONG = 0,
 			INTERMEDIATE = 1,
 			POOR = 2,
 		}
-		[AllowDuplicates]
 		public enum ALT_BREAKS : int32
 		{
 			SAME = 0,
 			UNIQUE = 1,
 			FULL = 2,
 		}
-		[AllowDuplicates]
 		public enum enumRECO_TYPE : int32
 		{
 			STRING = 0,

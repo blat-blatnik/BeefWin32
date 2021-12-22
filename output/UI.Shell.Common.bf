@@ -17,7 +17,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum STRRET_TYPE : int32
 		{
 			WSTR = 0,
@@ -44,7 +43,6 @@ namespace Win32
 			CONTACTS = 10,
 			LAST = 10,
 		}
-		[AllowDuplicates]
 		public enum SHCOLSTATE : int32
 		{
 			DEFAULT = 0,
@@ -68,7 +66,6 @@ namespace Win32
 			FIXED_RATIO = 16384,
 			DISPLAYMASK = 61440,
 		}
-		[AllowDuplicates]
 		public enum DEVICE_SCALE_FACTOR : int32
 		{
 			DEVICE_SCALE_FACTOR_INVALID = 0,

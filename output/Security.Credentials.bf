@@ -133,7 +133,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum CRED_FLAGS : uint32
 		{
 			PASSWORD_FOR_CERT = 1,
@@ -147,7 +146,6 @@ namespace Win32
 			VALID_FLAGS = 61695,
 			VALID_INPUT_FLAGS = 61599,
 		}
-		[AllowDuplicates]
 		public enum CRED_TYPE : uint32
 		{
 			GENERIC = 1,
@@ -159,7 +157,6 @@ namespace Win32
 			MAXIMUM = 7,
 			MAXIMUM_EX = 1007,
 		}
-		[AllowDuplicates]
 		public enum CRED_PERSIST : uint32
 		{
 			NONE = 0,
@@ -167,7 +164,6 @@ namespace Win32
 			LOCAL_MACHINE = 2,
 			ENTERPRISE = 3,
 		}
-		[AllowDuplicates]
 		public enum CREDUI_FLAGS : uint32
 		{
 			ALWAYS_SHOW_UI = 128,
@@ -188,18 +184,15 @@ namespace Win32
 			USERNAME_TARGET_CREDENTIALS = 524288,
 			VALIDATE_USERNAME = 1024,
 		}
-		[AllowDuplicates]
 		public enum SCARD_SCOPE : uint32
 		{
 			USER = 0,
 			SYSTEM = 2,
 		}
-		[AllowDuplicates]
 		public enum CRED_ENUMERATE_FLAGS : uint32
 		{
 			CRED_ENUMERATE_ALL_CREDENTIALS = 1,
 		}
-		[AllowDuplicates]
 		public enum CREDUIWIN_FLAGS : uint32
 		{
 			GENERIC = 1,
@@ -212,7 +205,6 @@ namespace Win32
 			PREPROMPTING = 8192,
 			PACK_32_WOW = 268435456,
 		}
-		[AllowDuplicates]
 		public enum SCARD_STATE : uint32
 		{
 			UNAWARE = 0,
@@ -227,7 +219,6 @@ namespace Win32
 			CHANGED = 2,
 			UNKNOWN = 4,
 		}
-		[AllowDuplicates]
 		public enum CRED_PACK_FLAGS : uint32
 		{
 			PROTECTED_CREDENTIALS = 1,
@@ -235,7 +226,6 @@ namespace Win32
 			GENERIC_CREDENTIALS = 4,
 			ID_PROVIDER_CREDENTIALS = 8,
 		}
-		[AllowDuplicates]
 		public enum KeyCredentialManagerOperationErrorStates : uint32
 		{
 			None = 0,
@@ -247,14 +237,12 @@ namespace Win32
 			HardwareFailure = 32,
 			PinExistsFailure = 64,
 		}
-		[AllowDuplicates]
 		public enum KeyCredentialManagerOperationType : int32
 		{
 			rovisioning = 0,
 			inChange = 1,
 			inReset = 2,
 		}
-		[AllowDuplicates]
 		public enum CRED_MARSHAL_TYPE : int32
 		{
 			CertCredential = 1,
@@ -263,7 +251,6 @@ namespace Win32
 			UsernameForPackedCredentials = 4,
 			BinaryBlobForSystem = 5,
 		}
-		[AllowDuplicates]
 		public enum CRED_PROTECTION_TYPE : int32
 		{
 			Unprotected = 0,
@@ -271,14 +258,12 @@ namespace Win32
 			TrustedProtection = 2,
 			ForSystemProtection = 3,
 		}
-		[AllowDuplicates]
 		public enum READER_SEL_REQUEST_MATCH_TYPE : int32
 		{
 			READER_AND_CONTAINER = 1,
 			SERIAL_NUMBER = 2,
 			ALL_CARDS = 3,
 		}
-		[AllowDuplicates]
 		public enum CREDSPP_SUBMIT_TYPE : int32
 		{
 			PasswordCreds = 2,

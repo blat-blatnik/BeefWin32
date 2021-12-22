@@ -11,14 +11,12 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum JsRuntimeVersion : int32
 		{
 			_10 = 0,
 			_11 = 1,
 			Edge = -1,
 		}
-		[AllowDuplicates]
 		public enum JsErrorCode : uint32
 		{
 			NoError = 0,
@@ -51,7 +49,6 @@ namespace Win32
 			ErrorCategoryFatal = 262144,
 			ErrorFatal = 262145,
 		}
-		[AllowDuplicates]
 		public enum JsRuntimeAttributes : int32
 		{
 			None = 0,
@@ -61,14 +58,12 @@ namespace Win32
 			DisableNativeCodeGeneration = 8,
 			DisableEval = 16,
 		}
-		[AllowDuplicates]
 		public enum JsMemoryEventType : int32
 		{
 			Allocate = 0,
 			Free = 1,
 			Failure = 2,
 		}
-		[AllowDuplicates]
 		public enum JsValueType : int32
 		{
 			Undefined = 0,

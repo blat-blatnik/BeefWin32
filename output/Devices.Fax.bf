@@ -225,7 +225,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum FAX_ENUM_LOG_LEVELS : int32
 		{
 			NONE = 0,
@@ -233,7 +232,6 @@ namespace Win32
 			MED = 2,
 			MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum FAX_ENUM_LOG_CATEGORIES : int32
 		{
 			INIT = 1,
@@ -241,7 +239,6 @@ namespace Win32
 			INBOUND = 3,
 			UNKNOWN = 4,
 		}
-		[AllowDuplicates]
 		public enum FAX_ENUM_JOB_COMMANDS : int32
 		{
 			UNKNOWN = 0,
@@ -249,27 +246,23 @@ namespace Win32
 			PAUSE = 2,
 			RESUME = 3,
 		}
-		[AllowDuplicates]
 		public enum FAX_ENUM_JOB_SEND_ATTRIBUTES : int32
 		{
 			NOW = 0,
 			SPECIFIC_TIME = 1,
 			DISCOUNT_PERIOD = 2,
 		}
-		[AllowDuplicates]
 		public enum FAX_ENUM_DELIVERY_REPORT_TYPES : int32
 		{
 			NONE = 0,
 			EMAIL = 1,
 			INBOX = 2,
 		}
-		[AllowDuplicates]
 		public enum FAX_ENUM_PORT_OPEN_TYPE : int32
 		{
 			QUERY = 1,
 			MODIFY = 2,
 		}
-		[AllowDuplicates]
 		public enum FAX_JOB_STATUS_ENUM : int32
 		{
 			PENDING = 1,
@@ -284,7 +277,6 @@ namespace Win32
 			CANCELING = 1024,
 			ROUTING = 2048,
 		}
-		[AllowDuplicates]
 		public enum FAX_JOB_EXTENDED_STATUS_ENUM : int32
 		{
 			NONE = 0,
@@ -309,7 +301,6 @@ namespace Win32
 			CALL_ABORTED = 19,
 			PROPRIETARY = 16777216,
 		}
-		[AllowDuplicates]
 		public enum FAX_JOB_OPERATIONS_ENUM : int32
 		{
 			VIEW = 1,
@@ -320,14 +311,12 @@ namespace Win32
 			RECIPIENT_INFO = 32,
 			SENDER_INFO = 64,
 		}
-		[AllowDuplicates]
 		public enum FAX_JOB_TYPE_ENUM : int32
 		{
 			SEND = 0,
 			RECEIVE = 1,
 			ROUTING = 2,
 		}
-		[AllowDuplicates]
 		public enum FAX_SERVER_EVENTS_TYPE_ENUM : int32
 		{
 			NONE = 0,
@@ -342,7 +331,6 @@ namespace Win32
 			DEVICE_STATUS = 256,
 			INCOMING_CALL = 512,
 		}
-		[AllowDuplicates]
 		public enum FAX_SERVER_APIVERSION_ENUM : int32
 		{
 			_0 = 0,
@@ -350,21 +338,18 @@ namespace Win32
 			_2 = 131072,
 			_3 = 196608,
 		}
-		[AllowDuplicates]
 		public enum FAX_SMTP_AUTHENTICATION_TYPE_ENUM : int32
 		{
 			ANONYMOUS = 0,
 			BASIC = 1,
 			NTLM = 2,
 		}
-		[AllowDuplicates]
 		public enum FAX_RECEIPT_TYPE_ENUM : int32
 		{
 			NONE = 0,
 			MAIL = 1,
 			MSGBOX = 4,
 		}
-		[AllowDuplicates]
 		public enum FAX_ACCESS_RIGHTS_ENUM : int32
 		{
 			SUBMIT_LOW = 1,
@@ -379,28 +364,24 @@ namespace Win32
 			QUERY_OUT_ARCHIVE = 512,
 			MANAGE_OUT_ARCHIVE = 1024,
 		}
-		[AllowDuplicates]
 		public enum FAX_PRIORITY_TYPE_ENUM : int32
 		{
 			LOW = 0,
 			NORMAL = 1,
 			HIGH = 2,
 		}
-		[AllowDuplicates]
 		public enum FAX_COVERPAGE_TYPE_ENUM : int32
 		{
 			NONE = 0,
 			LOCAL = 1,
 			SERVER = 2,
 		}
-		[AllowDuplicates]
 		public enum FAX_SCHEDULE_TYPE_ENUM : int32
 		{
 			NOW = 0,
 			SPECIFIC_TIME = 1,
 			DISCOUNT_PERIOD = 2,
 		}
-		[AllowDuplicates]
 		public enum FAX_PROVIDER_STATUS_ENUM : int32
 		{
 			SUCCESS = 0,
@@ -411,14 +392,12 @@ namespace Win32
 			CANT_LINK = 5,
 			CANT_INIT = 6,
 		}
-		[AllowDuplicates]
 		public enum FAX_DEVICE_RECEIVE_MODE_ENUM : int32
 		{
 			NO_ANSWER = 0,
 			AUTO_ANSWER = 1,
 			MANUAL_ANSWER = 2,
 		}
-		[AllowDuplicates]
 		public enum FAX_LOG_LEVEL_ENUM : int32
 		{
 			NONE = 0,
@@ -426,7 +405,6 @@ namespace Win32
 			MED = 2,
 			MAX = 3,
 		}
-		[AllowDuplicates]
 		public enum FAX_GROUP_STATUS_ENUM : int32
 		{
 			ALL_DEV_VALID = 0,
@@ -434,7 +412,6 @@ namespace Win32
 			ALL_DEV_NOT_VALID = 2,
 			SOME_DEV_NOT_VALID = 3,
 		}
-		[AllowDuplicates]
 		public enum FAX_RULE_STATUS_ENUM : int32
 		{
 			VALID = 0,
@@ -443,7 +420,6 @@ namespace Win32
 			SOME_GROUP_DEV_NOT_VALID = 3,
 			BAD_DEVICE = 4,
 		}
-		[AllowDuplicates]
 		public enum FAX_ACCOUNT_EVENTS_TYPE_ENUM : int32
 		{
 			NONE = 0,
@@ -453,7 +429,6 @@ namespace Win32
 			OUT_ARCHIVE = 8,
 			FXSSVC_ENDED = 16,
 		}
-		[AllowDuplicates]
 		public enum FAX_ACCESS_RIGHTS_ENUM_2 : int32
 		{
 			SUBMIT_LOW = 1,
@@ -467,30 +442,25 @@ namespace Win32
 			MANAGE_ARCHIVES = 256,
 			MANAGE_RECEIVE_FOLDER = 512,
 		}
-		[AllowDuplicates]
 		public enum FAX_ROUTING_RULE_CODE_ENUM : int32
 		{
 			frrcANY_CODE = 0,
 		}
-		[AllowDuplicates]
 		public enum FAXROUTE_ENABLE : int32
 		{
 			QUERY_STATUS = -1,
 			STATUS_DISABLE = 0,
 			STATUS_ENABLE = 1,
 		}
-		[AllowDuplicates]
 		public enum FAX_ENUM_DEVICE_ID_SOURCE : int32
 		{
 			FAX = 0,
 			TAPI = 1,
 		}
-		[AllowDuplicates]
 		public enum SendToMode : int32
 		{
 			SEND_TO_FAX_RECIPIENT_ATTACHMENT = 0,
 		}
-		[AllowDuplicates]
 		public enum STI_DEVICE_MJ_TYPE : int32
 		{
 			Default = 0,

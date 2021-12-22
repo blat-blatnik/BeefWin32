@@ -286,7 +286,6 @@ namespace Win32
 			SessionId = 9004,
 			Reserved = -1,
 		}
-		[AllowDuplicates]
 		public enum PPP_EAP_ACTION : int32
 		{
 			NoAction = 0,
@@ -401,7 +400,6 @@ namespace Win32
 			SessionId = 9004,
 			Reserved = -1,
 		}
-		[AllowDuplicates]
 		public enum EAP_CONFIG_INPUT_FIELD_TYPE : int32
 		{
 			InputUsername = 0,
@@ -414,7 +412,6 @@ namespace Win32
 			SmartCardUsername = 7,
 			SmartCardError = 8,
 		}
-		[AllowDuplicates]
 		public enum EAP_INTERACTIVE_UI_DATA_TYPE : int32
 		{
 			Req = 0,
@@ -424,7 +421,6 @@ namespace Win32
 			LogonReq = 4,
 			LogonResp = 5,
 		}
-		[AllowDuplicates]
 		public enum EAP_METHOD_PROPERTY_TYPE : int32
 		{
 			PropCipherSuiteNegotiation = 0,
@@ -459,14 +455,12 @@ namespace Win32
 			LegacyMethodPropertyFlag = 31,
 			PropVendorSpecific = 255,
 		}
-		[AllowDuplicates]
 		public enum EAP_METHOD_PROPERTY_VALUE_TYPE : int32
 		{
 			Bool = 0,
 			Dword = 1,
 			String = 2,
 		}
-		[AllowDuplicates]
 		public enum EapCredentialType : int32
 		{
 			EMPTY_CREDENTIAL = 0,
@@ -475,14 +469,12 @@ namespace Win32
 			CERTIFICATE_CREDENTIAL = 3,
 			SIM_CREDENTIAL = 4,
 		}
-		[AllowDuplicates]
 		public enum EapHostPeerMethodResultReason : int32
 		{
 			AltSuccessReceived = 1,
 			Timeout = 2,
 			FromMethod = 3,
 		}
-		[AllowDuplicates]
 		public enum EapHostPeerResponseAction : int32
 		{
 			Discard = 0,
@@ -493,7 +485,6 @@ namespace Win32
 			StartAuthentication = 5,
 			None = 6,
 		}
-		[AllowDuplicates]
 		public enum EapHostPeerAuthParams : int32
 		{
 			PeerAuthStatus = 1,
@@ -501,7 +492,6 @@ namespace Win32
 			PeerIdentityExtendedInfo = 3,
 			NapInfo = 4,
 		}
-		[AllowDuplicates]
 		public enum EAPHOST_AUTH_STATUS : int32
 		{
 			InvalidSession = 0,
@@ -512,7 +502,6 @@ namespace Win32
 			AuthSucceeded = 5,
 			AuthFailed = 6,
 		}
-		[AllowDuplicates]
 		public enum ISOLATION_STATE : int32
 		{
 			UNKNOWN = 0,
@@ -530,7 +519,6 @@ namespace Win32
 			Failure = 4,
 			Maximum = 4,
 		}
-		[AllowDuplicates]
 		public enum EAP_METHOD_AUTHENTICATOR_RESPONSE_ACTION : int32
 		{
 			DISCARD = 0,
@@ -540,7 +528,6 @@ namespace Win32
 			AUTHENTICATE = 4,
 			HANDLE_IDENTITY = 5,
 		}
-		[AllowDuplicates]
 		public enum EapPeerMethodResponseAction : int32
 		{
 			Discard = 0,
@@ -550,14 +537,12 @@ namespace Win32
 			Respond = 4,
 			None = 5,
 		}
-		[AllowDuplicates]
 		public enum EapPeerMethodResultReason : int32
 		{
 			Unknown = 1,
 			Success = 2,
 			Failure = 3,
 		}
-		[AllowDuplicates]
 		public enum EAP_AUTHENTICATOR_SEND_TIMEOUT : int32
 		{
 			NONE = 0,

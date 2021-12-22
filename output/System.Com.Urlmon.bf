@@ -311,7 +311,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum IEObjectType : int32
 		{
 			EVENT = 0,
@@ -323,7 +322,6 @@ namespace Win32
 			NAMED_PIPE = 6,
 			REGISTRY = 7,
 		}
-		[AllowDuplicates]
 		public enum MONIKERPROPERTY : int32
 		{
 			MIMETYPEPROP = 0,
@@ -332,7 +330,6 @@ namespace Win32
 			TRUSTEDDOWNLOADPROP = 3,
 			POPUPLEVELPROP = 4,
 		}
-		[AllowDuplicates]
 		public enum BINDVERB : int32
 		{
 			GET = 0,
@@ -341,7 +338,6 @@ namespace Win32
 			CUSTOM = 3,
 			RESERVED1 = 4,
 		}
-		[AllowDuplicates]
 		public enum BINDF : int32
 		{
 			ASYNCHRONOUS = 1,
@@ -376,14 +372,12 @@ namespace Win32
 			RESERVED_7 = 1073741824,
 			RESERVED_8 = 536870912,
 		}
-		[AllowDuplicates]
 		public enum URL_ENCODING : int32
 		{
 			NONE = 0,
 			ENABLE_UTF8 = 268435456,
 			DISABLE_UTF8 = 536870912,
 		}
-		[AllowDuplicates]
 		public enum BINDINFO_OPTIONS : int32
 		{
 			OPTIONS_WININETFLAG = 65536,
@@ -402,7 +396,6 @@ namespace Win32
 			OPTIONS_DISABLEAUTOREDIRECTS = 1073741824,
 			OPTIONS_SHDOCVW_NAVIGATE = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum BSCF : int32
 		{
 			FIRSTDATANOTIFICATION = 1,
@@ -496,7 +489,6 @@ namespace Win32
 			RESERVED_14 = 77,
 			LAST_PRIVATE = 77,
 		}
-		[AllowDuplicates]
 		public enum BINDF2 : int32
 		{
 			DISABLEBASICOVERHTTP = 1,
@@ -531,14 +523,12 @@ namespace Win32
 			RESERVED_2 = 1073741824,
 			RESERVED_1 = -2147483648,
 		}
-		[AllowDuplicates]
 		public enum AUTHENTICATEF : int32
 		{
 			PROXY = 1,
 			BASIC = 2,
 			HTTP = 4,
 		}
-		[AllowDuplicates]
 		public enum CIP_STATUS : int32
 		{
 			DISK_FULL = 0,
@@ -552,7 +542,6 @@ namespace Win32
 			NEED_REBOOT = 8,
 			NEED_REBOOT_UI_PERMISSION = 9,
 		}
-		[AllowDuplicates]
 		public enum Uri_HOST_TYPE : int32
 		{
 			UNKNOWN = 0,
@@ -561,7 +550,6 @@ namespace Win32
 			IPV6 = 3,
 			IDN = 4,
 		}
-		[AllowDuplicates]
 		public enum BINDSTRING : int32
 		{
 			HEADERS = 1,
@@ -591,7 +579,6 @@ namespace Win32
 			DOC_URL = 25,
 			SAMESITE_COOKIE_LEVEL = 26,
 		}
-		[AllowDuplicates]
 		public enum PI_FLAGS : int32
 		{
 			I_PARSE_URL = 1,
@@ -610,13 +597,11 @@ namespace Win32
 			D_FORCE_SWITCH = 65536,
 			I_PREFERDEFAULTHANDLER = 131072,
 		}
-		[AllowDuplicates]
 		public enum OIBDG_FLAGS : int32
 		{
 			APARTMENTTHREADED = 256,
 			DATAONLY = 4096,
 		}
-		[AllowDuplicates]
 		public enum PARSEACTION : int32
 		{
 			CANONICALIZE = 1,
@@ -639,13 +624,11 @@ namespace Win32
 			ESCAPE = 18,
 			UNESCAPE = 19,
 		}
-		[AllowDuplicates]
 		public enum PSUACTION : int32
 		{
 			DEFAULT = 1,
 			SECURITY_URL_ONLY = 2,
 		}
-		[AllowDuplicates]
 		public enum QUERYOPTION : int32
 		{
 			EXPIRATION_DATE = 1,
@@ -665,7 +648,6 @@ namespace Win32
 			USES_HISTORYFOLDER = 15,
 			IS_CACHED_AND_USABLE_OFFLINE = 16,
 		}
-		[AllowDuplicates]
 		public enum INTERNETFEATURELIST : int32
 		{
 			OBJECT_CACHING = 0,
@@ -698,7 +680,6 @@ namespace Win32
 			BLOCK_INPUT_PROMPTS = 27,
 			ENTRY_COUNT = 28,
 		}
-		[AllowDuplicates]
 		public enum PUAF : int32
 		{
 			DEFAULT = 0,
@@ -723,13 +704,11 @@ namespace Win32
 			NOUIIFLOCKED = 1048576,
 			DRAGPROTOCOLCHECK = 2097152,
 		}
-		[AllowDuplicates]
 		public enum PUAFOUT : int32
 		{
 			DEFAULT = 0,
 			ISLOCKZONEPOLICY = 1,
 		}
-		[AllowDuplicates]
 		public enum SZM_FLAGS : int32
 		{
 			CREATE = 0,
@@ -761,13 +740,11 @@ namespace Win32
 			HIGH = 73728,
 			PREDEFINED_MAX = 131072,
 		}
-		[AllowDuplicates]
 		public enum INET_ZONE_MANAGER_CONSTANTS : int32
 		{
 			PATH = 260,
 			DESCRIPTION = 200,
 		}
-		[AllowDuplicates]
 		public enum ZAFLAGS : int32
 		{
 			CUSTOM_EDIT = 1,
@@ -783,14 +760,12 @@ namespace Win32
 			VERIFY_TEMPLATE_SETTINGS = 131072,
 			NO_CACHE = 262144,
 		}
-		[AllowDuplicates]
 		public enum URLZONEREG : int32
 		{
 			DEFAULT = 0,
 			HKLM = 1,
 			HKCU = 2,
 		}
-		[AllowDuplicates]
 		public enum BINDHANDLETYPES : int32
 		{
 			APPCACHE = 0,

@@ -12,7 +12,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WNV_NOTIFICATION_TYPE : int32
 		{
 			PolicyMismatchType = 0,
@@ -20,14 +19,12 @@ namespace Win32
 			ObjectChangeType = 2,
 			NotificationTypeMax = 3,
 		}
-		[AllowDuplicates]
 		public enum WNV_OBJECT_TYPE : int32
 		{
 			ProviderAddressType = 0,
 			CustomerAddressType = 1,
 			ObjectTypeMax = 2,
 		}
-		[AllowDuplicates]
 		public enum WNV_CA_NOTIFICATION_TYPE : int32
 		{
 			Added = 0,

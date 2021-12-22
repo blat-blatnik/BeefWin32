@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE : uint32
 		{
 			NEAREST_NEIGHBOR = 0,

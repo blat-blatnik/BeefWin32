@@ -33,21 +33,18 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum APO_BUFFER_FLAGS : int32
 		{
 			INVALID = 0,
 			VALID = 1,
 			SILENT = 2,
 		}
-		[AllowDuplicates]
 		public enum APO_CONNECTION_BUFFER_TYPE : int32
 		{
 			ALLOCATED = 0,
 			EXTERNAL = 1,
 			DEPENDANT = 2,
 		}
-		[AllowDuplicates]
 		public enum APO_FLAG : int32
 		{
 			NONE = 0,
@@ -58,13 +55,11 @@ namespace Win32
 			MIXER = 16,
 			DEFAULT = 14,
 		}
-		[AllowDuplicates]
 		public enum AUDIO_FLOW_TYPE : int32
 		{
 			LL = 0,
 			SH = 1,
 		}
-		[AllowDuplicates]
 		public enum EAudioConstriction : int32
 		{
 			Off = 0,
@@ -73,13 +68,11 @@ namespace Win32
 			_14_14 = 3,
 			Mute = 4,
 		}
-		[AllowDuplicates]
 		public enum AUDIO_SYSTEMEFFECT_STATE : int32
 		{
 			FF = 0,
 			N = 1,
 		}
-		[AllowDuplicates]
 		public enum APO_LOG_LEVEL : int32
 		{
 			ALWAYS = 0,
@@ -89,7 +82,6 @@ namespace Win32
 			INFO = 4,
 			VERBOSE = 5,
 		}
-		[AllowDuplicates]
 		public enum APO_NOTIFICATION_TYPE : int32
 		{
 			NONE = 0,

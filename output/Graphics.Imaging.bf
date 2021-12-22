@@ -311,14 +311,12 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WICColorContextType : int32
 		{
 			Uninitialized = 0,
 			Profile = 1,
 			ExifColorSpace = 2,
 		}
-		[AllowDuplicates]
 		public enum WICBitmapCreateCacheOption : int32
 		{
 			itmapNoCache = 0,
@@ -326,14 +324,12 @@ namespace Win32
 			itmapCacheOnLoad = 2,
 			ITMAPCREATECACHEOPTION_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICDecodeOptions : int32
 		{
 			DecodeMetadataCacheOnDemand = 0,
 			DecodeMetadataCacheOnLoad = 1,
 			METADATACACHEOPTION_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICBitmapEncoderCacheOption : int32
 		{
 			itmapEncoderCacheInMemory = 0,
@@ -341,7 +337,6 @@ namespace Win32
 			itmapEncoderNoCache = 2,
 			ITMAPENCODERCACHEOPTION_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICComponentType : int32
 		{
 			Decoder = 1,
@@ -353,7 +348,6 @@ namespace Win32
 			AllComponents = 63,
 			COMPONENTTYPE_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICComponentEnumerateOptions : int32
 		{
 			omponentEnumerateDefault = 0,
@@ -363,7 +357,6 @@ namespace Win32
 			omponentEnumerateBuiltInOnly = 536870912,
 			OMPONENTENUMERATEOPTIONS_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICBitmapInterpolationMode : int32
 		{
 			itmapInterpolationModeNearestNeighbor = 0,
@@ -407,7 +400,6 @@ namespace Win32
 			itmapDitherTypeErrorDiffusion = 8,
 			ITMAPDITHERTYPE_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICBitmapAlphaChannelOption : int32
 		{
 			itmapUseAlpha = 0,
@@ -415,7 +407,6 @@ namespace Win32
 			itmapIgnoreAlpha = 2,
 			ITMAPALPHACHANNELOPTIONS_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICBitmapTransformOptions : int32
 		{
 			itmapTransformRotate0 = 0,
@@ -426,14 +417,12 @@ namespace Win32
 			itmapTransformFlipVertical = 16,
 			ITMAPTRANSFORMOPTIONS_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICBitmapLockFlags : int32
 		{
 			itmapLockRead = 1,
 			itmapLockWrite = 2,
 			ITMAPLOCKFLAGS_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICBitmapDecoderCapabilities : int32
 		{
 			itmapDecoderCapabilitySameEncoder = 1,
@@ -443,7 +432,6 @@ namespace Win32
 			itmapDecoderCapabilityCanDecodeThumbnail = 16,
 			ITMAPDECODERCAPABILITIES_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICProgressOperation : int32
 		{
 			rogressOperationCopyPixels = 1,
@@ -451,7 +439,6 @@ namespace Win32
 			rogressOperationAll = 65535,
 			ROGRESSOPERATION_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICProgressNotification : int32
 		{
 			rogressNotificationBegin = 65536,
@@ -460,7 +447,6 @@ namespace Win32
 			rogressNotificationAll = -65536,
 			ROGRESSNOTIFICATION_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICComponentSigning : int32
 		{
 			omponentSigned = 1,
@@ -469,7 +455,6 @@ namespace Win32
 			omponentDisabled = -2147483648,
 			OMPONENTSIGNING_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICGifLogicalScreenDescriptorProperties : uint32
 		{
 			Signature = 1,
@@ -483,7 +468,6 @@ namespace Win32
 			DescriptorPixelAspectRatio = 9,
 			DescriptorProperties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICGifImageDescriptorProperties : uint32
 		{
 			Left = 1,
@@ -496,7 +480,6 @@ namespace Win32
 			LocalColorTableSize = 8,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICGifGraphicControlExtensionProperties : uint32
 		{
 			Disposal = 1,
@@ -506,45 +489,38 @@ namespace Win32
 			TransparentColorIndex = 5,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICGifApplicationExtensionProperties : uint32
 		{
 			Application = 1,
 			Data = 2,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICGifCommentExtensionProperties : uint32
 		{
 			Text = 1,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICJpegCommentProperties : uint32
 		{
 			Text = 1,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICJpegLuminanceProperties : uint32
 		{
 			Table = 1,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICJpegChrominanceProperties : uint32
 		{
 			Table = 1,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WIC8BIMIptcProperties : uint32
 		{
 			PString = 0,
 			EmbeddedIPTC = 1,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WIC8BIMResolutionInfoProperties : uint32
 		{
 			PString = 1,
@@ -556,26 +532,22 @@ namespace Win32
 			HeightUnit = 7,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WIC8BIMIptcDigestProperties : uint32
 		{
 			PString = 1,
 			IptcDigest = 2,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICPngGamaProperties : uint32
 		{
 			Gamma = 1,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICPngBkgdProperties : uint32
 		{
 			BackgroundColor = 1,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICPngItxtProperties : uint32
 		{
 			Keyword = 1,
@@ -585,7 +557,6 @@ namespace Win32
 			Text = 5,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICPngChrmProperties : uint32
 		{
 			WhitePointX = 1,
@@ -598,26 +569,22 @@ namespace Win32
 			BlueY = 8,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICPngHistProperties : uint32
 		{
 			Frequencies = 1,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICPngIccpProperties : uint32
 		{
 			fileName = 1,
 			fileData = 2,
 			perties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICPngSrgbProperties : uint32
 		{
 			RenderingIntent = 1,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICPngTimeProperties : uint32
 		{
 			Year = 1,
@@ -628,13 +595,11 @@ namespace Win32
 			Second = 6,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICHeifProperties : uint32
 		{
 			Orientation = 1,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICHeifHdrProperties : uint32
 		{
 			MaximumLuminanceLevel = 1,
@@ -644,26 +609,22 @@ namespace Win32
 			CustomVideoPrimaries = 5,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICWebpAnimProperties : uint32
 		{
 			LoopCount = 1,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICWebpAnmfProperties : uint32
 		{
 			FrameDuration = 1,
 			Properties_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICSectionAccessLevel : uint32
 		{
 			Read = 1,
 			ReadWrite = 3,
 			_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICPixelFormatNumericRepresentation : uint32
 		{
 			Unspecified = 0,
@@ -674,28 +635,24 @@ namespace Win32
 			Float = 5,
 			_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICPlanarOptions : int32
 		{
 			lanarOptionsDefault = 0,
 			lanarOptionsPreserveSubsampling = 1,
 			LANAROPTIONS_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICJpegIndexingOptions : uint32
 		{
 			GenerateOnDemand = 0,
 			GenerateOnLoad = 1,
 			_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICJpegTransferMatrix : uint32
 		{
 			Identity = 0,
 			BT601 = 1,
 			_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICJpegScanType : uint32
 		{
 			Interleaved = 0,
@@ -703,7 +660,6 @@ namespace Win32
 			Progressive = 2,
 			_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICTiffCompressionOption : int32
 		{
 			iffCompressionDontCare = 0,
@@ -716,7 +672,6 @@ namespace Win32
 			iffCompressionLZWHDifferencing = 7,
 			IFFCOMPRESSIONOPTION_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICJpegYCrCbSubsamplingOption : int32
 		{
 			pegYCrCbSubsamplingDefault = 0,
@@ -726,7 +681,6 @@ namespace Win32
 			pegYCrCbSubsampling440 = 4,
 			PEGYCRCBSUBSAMPLING_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICPngFilterOption : int32
 		{
 			ngFilterUnspecified = 0,
@@ -754,7 +708,6 @@ namespace Win32
 			WhitePointAsShot = 1,
 			NAMEDWHITEPOINT_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICRawCapabilities : int32
 		{
 			awCapabilityNotSupported = 0,
@@ -762,7 +715,6 @@ namespace Win32
 			awCapabilityFullySupported = 2,
 			AWCAPABILITIES_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICRawRotationCapabilities : int32
 		{
 			awRotationCapabilityNotSupported = 0,
@@ -771,7 +723,6 @@ namespace Win32
 			awRotationCapabilityFullySupported = 3,
 			AWROTATIONCAPABILITIES_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICRawParameterSet : int32
 		{
 			AsShotParameterSet = 1,
@@ -779,7 +730,6 @@ namespace Win32
 			AutoAdjustedParameterSet = 3,
 			RAWPARAMETERSET_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICRawRenderMode : int32
 		{
 			awRenderModeDraft = 1,
@@ -787,7 +737,6 @@ namespace Win32
 			awRenderModeBestQuality = 3,
 			AWRENDERMODE_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICDdsDimension : int32
 		{
 			dsTexture1D = 0,
@@ -796,7 +745,6 @@ namespace Win32
 			dsTextureCube = 3,
 			DSTEXTURE_FORCE_DWORD = 2147483647,
 		}
-		[AllowDuplicates]
 		public enum WICDdsAlphaMode : int32
 		{
 			dsAlphaModeUnknown = 0,

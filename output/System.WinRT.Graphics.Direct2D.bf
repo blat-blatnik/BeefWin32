@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum GRAPHICS_EFFECT_PROPERTY_MAPPING : int32
 		{
 			UNKNOWN = 0,

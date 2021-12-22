@@ -115,7 +115,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum TIMECODE_SAMPLE_FLAGS : uint32
 		{
 			TIMECODE_READ = 4121,

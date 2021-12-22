@@ -1281,7 +1281,6 @@ namespace Win32
 			MIN = 1,
 			MAX = 5,
 		}
-		[AllowDuplicates]
 		public enum ETO_OPTIONS : uint32
 		{
 			OPAQUE = 2,
@@ -1294,7 +1293,6 @@ namespace Win32
 			PDY = 8192,
 			REVERSE_INDEX_MAP = 65536,
 		}
-		[AllowDuplicates]
 		public enum OBJ_TYPE : int32
 		{
 			PEN = 1,
@@ -1312,7 +1310,6 @@ namespace Win32
 			ENHMETAFILE = 13,
 			COLORSPACE = 14,
 		}
-		[AllowDuplicates]
 		public enum ROP_CODE : uint32
 		{
 			SRCCOPY = 13369376,
@@ -1333,7 +1330,6 @@ namespace Win32
 			NOMIRRORBITMAP = 2147483648,
 			CAPTUREBLT = 1073741824,
 		}
-		[AllowDuplicates]
 		public enum DIB_USAGE : uint32
 		{
 			RGB_COLORS = 0,
@@ -1355,7 +1351,6 @@ namespace Win32
 			EDGE_ETCHED = 6,
 			EDGE_BUMP = 9,
 		}
-		[AllowDuplicates]
 		public enum DFC_TYPE : uint32
 		{
 			CAPTION = 1,
@@ -1398,7 +1393,6 @@ namespace Win32
 			FLAT = 16384,
 			MONO = 32768,
 		}
-		[AllowDuplicates]
 		public enum CDS_TYPE : uint32
 		{
 			FULLSCREEN = 4,
@@ -1413,7 +1407,6 @@ namespace Win32
 			DISABLE_UNSAFE_MODES = 512,
 			RESET_EX = 536870912,
 		}
-		[AllowDuplicates]
 		public enum DISP_CHANGE : int32
 		{
 			SUCCESSFUL = 0,
@@ -1441,7 +1434,6 @@ namespace Win32
 			S_PREFIXONLY = 1024,
 			S_RIGHT = 32768,
 		}
-		[AllowDuplicates]
 		public enum REDRAW_WINDOW_FLAGS : uint32
 		{
 			INVALIDATE = 1,
@@ -1457,7 +1449,6 @@ namespace Win32
 			FRAME = 1024,
 			NOFRAME = 2048,
 		}
-		[AllowDuplicates]
 		public enum ENUM_DISPLAY_SETTINGS_MODE : uint32
 		{
 			CURRENT_SETTINGS = 4294967295,
@@ -1508,7 +1499,6 @@ namespace Win32
 			JOIN_MASK = 61440,
 			TYPE_MASK = 983040,
 		}
-		[AllowDuplicates]
 		public enum TTEMBED_FLAGS : uint32
 		{
 			EMBEDEUDC = 32,
@@ -1544,13 +1534,11 @@ namespace Win32
 			WORDBREAK = 16,
 			WORD_ELLIPSIS = 262144,
 		}
-		[AllowDuplicates]
 		public enum EMBED_FONT_CHARSET : uint32
 		{
 			UNICODE = 1,
 			SYMBOL = 2,
 		}
-		[AllowDuplicates]
 		public enum GET_DCX_FLAGS : uint32
 		{
 			WINDOW = 1,
@@ -1565,7 +1553,6 @@ namespace Win32
 			INTERSECTUPDATE = 512,
 			VALIDATE = 2097152,
 		}
-		[AllowDuplicates]
 		public enum GET_GLYPH_OUTLINE_FORMAT : uint32
 		{
 			BEZIER = 3,
@@ -1578,7 +1565,6 @@ namespace Win32
 			NATIVE = 2,
 			UNHINTED = 256,
 		}
-		[AllowDuplicates]
 		public enum SET_BOUNDS_RECT_FLAGS : uint32
 		{
 			ACCUMULATE = 2,
@@ -1610,14 +1596,12 @@ namespace Win32
 			SYSTEM_FIXED_FONT = 16,
 			DEFAULT_PALETTE = 15,
 		}
-		[AllowDuplicates]
 		public enum MODIFY_WORLD_TRANSFORM_MODE : uint32
 		{
 			IDENTITY = 1,
 			LEFTMULTIPLY = 2,
 			RIGHTMULTIPLY = 3,
 		}
-		[AllowDuplicates]
 		public enum FONT_CLIP_PRECISION : uint32
 		{
 			CHARACTER_PRECIS = 1,
@@ -1629,13 +1613,11 @@ namespace Win32
 			STROKE_PRECIS = 2,
 			TT_ALWAYS = 32,
 		}
-		[AllowDuplicates]
 		public enum CREATE_POLYGON_RGN_MODE : uint32
 		{
 			ALTERNATE = 1,
 			WINDING = 2,
 		}
-		[AllowDuplicates]
 		public enum EMBEDDED_FONT_PRIV_STATUS : uint32
 		{
 			PREVIEWPRINT = 1,
@@ -1643,26 +1625,22 @@ namespace Win32
 			INSTALLABLE = 3,
 			NOEMBEDDING = 4,
 		}
-		[AllowDuplicates]
 		public enum MONITOR_FROM_FLAGS : uint32
 		{
 			NEAREST = 2,
 			NULL = 0,
 			PRIMARY = 1,
 		}
-		[AllowDuplicates]
 		public enum FONT_RESOURCE_CHARACTERISTICS : uint32
 		{
 			PRIVATE = 16,
 			NOT_ENUM = 32,
 		}
-		[AllowDuplicates]
 		public enum DC_LAYOUT : uint32
 		{
 			BITMAPORIENTATIONPRESERVED = 8,
 			RTL = 1,
 		}
-		[AllowDuplicates]
 		public enum GET_DEVICE_CAPS_INDEX : uint32
 		{
 			DRIVERVERSION = 0,
@@ -1706,7 +1684,6 @@ namespace Win32
 			SHADEBLENDCAPS = 120,
 			COLORMGMTCAPS = 121,
 		}
-		[AllowDuplicates]
 		public enum FONT_OUTPUT_PRECISION : uint32
 		{
 			CHARACTER_PRECIS = 2,
@@ -1720,13 +1697,11 @@ namespace Win32
 			TT_ONLY_PRECIS = 7,
 			TT_PRECIS = 4,
 		}
-		[AllowDuplicates]
 		public enum ARC_DIRECTION : uint32
 		{
 			OUNTERCLOCKWISE = 1,
 			LOCKWISE = 2,
 		}
-		[AllowDuplicates]
 		public enum TTLOAD_EMBEDDED_FONT_STATUS : uint32
 		{
 			SUBSETTED = 1,
@@ -1744,7 +1719,6 @@ namespace Win32
 			STRETCH_ORSCANS = 2,
 			WHITEONBLACK = 2,
 		}
-		[AllowDuplicates]
 		public enum FONT_QUALITY : uint32
 		{
 			ANTIALIASED_QUALITY = 4,
@@ -1754,13 +1728,11 @@ namespace Win32
 			NONANTIALIASED_QUALITY = 3,
 			PROOF_QUALITY = 2,
 		}
-		[AllowDuplicates]
 		public enum BACKGROUND_MODE : uint32
 		{
 			OPAQUE = 2,
 			TRANSPARENT = 1,
 		}
-		[AllowDuplicates]
 		public enum GET_CHARACTER_PLACEMENT_FLAGS : uint32
 		{
 			CLASSIN = 524288,
@@ -1779,7 +1751,6 @@ namespace Win32
 			SYMSWAPOFF = 8388608,
 			USEKERNING = 8,
 		}
-		[AllowDuplicates]
 		public enum DRAW_EDGE_FLAGS : uint32
 		{
 			ADJUST = 8192,
@@ -1811,7 +1782,6 @@ namespace Win32
 			NOEMBEDDING = 2,
 			DEFAULT = 0,
 		}
-		[AllowDuplicates]
 		public enum GRADIENT_FILL : uint32
 		{
 			RECT_H = 0,
@@ -1825,13 +1795,11 @@ namespace Win32
 			SYMBOL_CHAR_SET = 0,
 			UNICODE_CHAR_SET = 1,
 		}
-		[AllowDuplicates]
 		public enum EXT_FLOOD_FILL_TYPE : uint32
 		{
 			BORDER = 0,
 			SURFACE = 1,
 		}
-		[AllowDuplicates]
 		public enum HATCH_BRUSH_STYLE : uint32
 		{
 			BDIAGONAL = 3,
@@ -1841,7 +1809,6 @@ namespace Win32
 			HORIZONTAL = 0,
 			VERTICAL = 1,
 		}
-		[AllowDuplicates]
 		public enum DRAW_CAPTION_FLAGS : uint32
 		{
 			ACTIVE = 1,
@@ -1852,20 +1819,17 @@ namespace Win32
 			SMALLCAP = 2,
 			TEXT = 8,
 		}
-		[AllowDuplicates]
 		public enum SYSTEM_PALETTE_USE : uint32
 		{
 			NOSTATIC = 2,
 			NOSTATIC256 = 3,
 			STATIC = 1,
 		}
-		[AllowDuplicates]
 		public enum GRAPHICS_MODE : uint32
 		{
 			COMPATIBLE = 1,
 			ADVANCED = 2,
 		}
-		[AllowDuplicates]
 		public enum FONT_PITCH_AND_FAMILY : uint32
 		{
 			DECORATIVE = 80,
@@ -1875,13 +1839,11 @@ namespace Win32
 			SCRIPT = 64,
 			SWISS = 32,
 		}
-		[AllowDuplicates]
 		public enum CREATE_FONT_PACKAGE_SUBSET_PLATFORM : uint32
 		{
 			UNICODE_PLATFORMID = 0,
 			ISO_PLATFORMID = 2,
 		}
-		[AllowDuplicates]
 		public enum HDC_MAP_MODE : uint32
 		{
 			ANISOTROPIC = 8,
@@ -1893,7 +1855,6 @@ namespace Win32
 			TEXT = 1,
 			TWIPS = 6,
 		}
-		[AllowDuplicates]
 		public enum DISPLAYCONFIG_COLOR_ENCODING : int32
 		{
 			RGB = 0,

@@ -11,7 +11,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum ENUM_PROCESS_MODULES_EX_FLAGS : uint32
 		{
 			ALL = 3,

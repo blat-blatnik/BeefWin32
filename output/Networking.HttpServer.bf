@@ -105,19 +105,16 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum HTTP_RECEIVE_HTTP_REQUEST_FLAGS : uint32
 		{
 			COPY_BODY = 1,
 			FLUSH_BODY = 2,
 		}
-		[AllowDuplicates]
 		public enum HTTP_INITIALIZE : uint32
 		{
 			CONFIG = 2,
 			SERVER = 1,
 		}
-		[AllowDuplicates]
 		public enum HTTP_SERVER_PROPERTY : int32
 		{
 			AuthenticationProperty = 0,
@@ -134,53 +131,45 @@ namespace Win32
 			ProtectionLevelProperty = 11,
 			DelegationProperty = 16,
 		}
-		[AllowDuplicates]
 		public enum HTTP_ENABLED_STATE : int32
 		{
 			Active = 0,
 			Inactive = 1,
 		}
-		[AllowDuplicates]
 		public enum HTTP_503_RESPONSE_VERBOSITY : int32
 		{
 			Basic = 0,
 			Limited = 1,
 			Full = 2,
 		}
-		[AllowDuplicates]
 		public enum HTTP_QOS_SETTING_TYPE : int32
 		{
 			Bandwidth = 0,
 			ConnectionLimit = 1,
 			FlowRate = 2,
 		}
-		[AllowDuplicates]
 		public enum HTTP_SERVICE_CONFIG_TIMEOUT_KEY : int32
 		{
 			IdleConnectionTimeout = 0,
 			HeaderWaitTimeout = 1,
 		}
-		[AllowDuplicates]
 		public enum HTTP_SERVICE_CONFIG_SETTING_KEY : int32
 		{
 			None = 0,
 			TlsThrottle = 1,
 		}
-		[AllowDuplicates]
 		public enum HTTP_SERVICE_BINDING_TYPE : int32
 		{
 			None = 0,
 			W = 1,
 			A = 2,
 		}
-		[AllowDuplicates]
 		public enum HTTP_AUTHENTICATION_HARDENING_LEVELS : int32
 		{
 			Legacy = 0,
 			Medium = 1,
 			Strict = 2,
 		}
-		[AllowDuplicates]
 		public enum HTTP_LOGGING_TYPE : int32
 		{
 			W3C = 0,
@@ -188,7 +177,6 @@ namespace Win32
 			NCSA = 2,
 			Raw = 3,
 		}
-		[AllowDuplicates]
 		public enum HTTP_LOGGING_ROLLOVER_TYPE : int32
 		{
 			Size = 0,
@@ -197,21 +185,18 @@ namespace Win32
 			Monthly = 3,
 			Hourly = 4,
 		}
-		[AllowDuplicates]
 		public enum HTTP_PROTECTION_LEVEL_TYPE : int32
 		{
 			Unrestricted = 0,
 			EdgeRestricted = 1,
 			Restricted = 2,
 		}
-		[AllowDuplicates]
 		public enum HTTP_SCHEME : int32
 		{
 			Http = 0,
 			Https = 1,
 			Maximum = 2,
 		}
-		[AllowDuplicates]
 		public enum HTTP_VERB : int32
 		{
 			Unparsed = 0,
@@ -294,12 +279,10 @@ namespace Win32
 			ResponseMaximum = 30,
 			Maximum = 41,
 		}
-		[AllowDuplicates]
 		public enum HTTP_LOG_DATA_TYPE : int32
 		{
 			HttpLogDataTypeFields = 0,
 		}
-		[AllowDuplicates]
 		public enum HTTP_DATA_CHUNK_TYPE : int32
 		{
 			FromMemory = 0,
@@ -309,26 +292,22 @@ namespace Win32
 			Trailers = 4,
 			Maximum = 5,
 		}
-		[AllowDuplicates]
 		public enum HTTP_DELEGATE_REQUEST_PROPERTY_ID : int32
 		{
 			ReservedProperty = 0,
 			DelegateUrlProperty = 1,
 		}
-		[AllowDuplicates]
 		public enum HTTP_CREATE_REQUEST_QUEUE_PROPERTY_ID : int32
 		{
 			ExternalIdProperty = 1,
 			Max = 2,
 		}
-		[AllowDuplicates]
 		public enum HTTP_AUTH_STATUS : int32
 		{
 			Success = 0,
 			NotAuthenticated = 1,
 			Failure = 2,
 		}
-		[AllowDuplicates]
 		public enum HTTP_REQUEST_AUTH_TYPE : int32
 		{
 			None = 0,
@@ -338,7 +317,6 @@ namespace Win32
 			Negotiate = 4,
 			Kerberos = 5,
 		}
-		[AllowDuplicates]
 		public enum HTTP_REQUEST_SIZING_TYPE : int32
 		{
 			TlsHandshakeLeg1ClientData = 0,
@@ -348,7 +326,6 @@ namespace Win32
 			Headers = 4,
 			Max = 5,
 		}
-		[AllowDuplicates]
 		public enum HTTP_REQUEST_TIMING_TYPE : int32
 		{
 			ConnectionStart = 0,
@@ -383,7 +360,6 @@ namespace Win32
 			Http3HeaderDecodeEnd = 29,
 			Max = 30,
 		}
-		[AllowDuplicates]
 		public enum HTTP_REQUEST_INFO_TYPE : int32
 		{
 			Auth = 0,
@@ -397,7 +373,6 @@ namespace Win32
 			QuicStats = 8,
 			TcpInfoV1 = 9,
 		}
-		[AllowDuplicates]
 		public enum HTTP_RESPONSE_INFO_TYPE : int32
 		{
 			MultipleKnownHeaders = 0,
@@ -405,7 +380,6 @@ namespace Win32
 			QoSProperty = 2,
 			ChannelBind = 3,
 		}
-		[AllowDuplicates]
 		public enum HTTP_CACHE_POLICY_TYPE : int32
 		{
 			Nocache = 0,
@@ -413,7 +387,6 @@ namespace Win32
 			TimeToLive = 2,
 			Maximum = 3,
 		}
-		[AllowDuplicates]
 		public enum HTTP_SERVICE_CONFIG_ID : int32
 		{
 			IPListenList = 0,
@@ -431,14 +404,12 @@ namespace Win32
 			SslScopedCcsCertInfoEx = 12,
 			Max = 13,
 		}
-		[AllowDuplicates]
 		public enum HTTP_SERVICE_CONFIG_QUERY_TYPE : int32
 		{
 			Exact = 0,
 			Next = 1,
 			Max = 2,
 		}
-		[AllowDuplicates]
 		public enum HTTP_SSL_SERVICE_CONFIG_EX_PARAM_TYPE : int32
 		{
 			Http2Window = 0,
@@ -449,7 +420,6 @@ namespace Win32
 			TlsSessionTicketKeys = 5,
 			Max = 6,
 		}
-		[AllowDuplicates]
 		public enum HTTP_PERFORMANCE_PARAM_TYPE : int32
 		{
 			SendBufferingFlags = 0,
@@ -460,13 +430,11 @@ namespace Win32
 			DecryptOnSspiThread = 5,
 			Max = 6,
 		}
-		[AllowDuplicates]
 		public enum HTTP_SERVICE_CONFIG_CACHE_KEY : int32
 		{
 			MaxCacheResponseSize = 0,
 			CacheRangeChunkSize = 1,
 		}
-		[AllowDuplicates]
 		public enum HTTP_REQUEST_PROPERTY : int32
 		{
 			Isb = 0,
@@ -478,7 +446,6 @@ namespace Win32
 			WskApiTimings = 6,
 			QuicApiTimings = 7,
 		}
-		[AllowDuplicates]
 		public enum HTTP_FEATURE_ID : int32
 		{
 			Unknown = 0,

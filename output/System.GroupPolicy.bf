@@ -105,14 +105,12 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum GPMRSOPMode : int32
 		{
 			Unknown = 0,
 			Planning = 1,
 			Logging = 2,
 		}
-		[AllowDuplicates]
 		public enum GPMPermissionType : int32
 		{
 			GPOApply = 65536,
@@ -135,7 +133,6 @@ namespace Win32
 			StarterGPOCustom = 197891,
 			SOMStarterGPOCreate = 1049856,
 		}
-		[AllowDuplicates]
 		public enum GPMSearchProperty : int32
 		{
 			gpoPermissions = 0,
@@ -154,7 +151,6 @@ namespace Win32
 			starterGPOID = 13,
 			starterGPODomain = 14,
 		}
-		[AllowDuplicates]
 		public enum GPMSearchOperation : int32
 		{
 			Equals = 0,
@@ -162,7 +158,6 @@ namespace Win32
 			NotContains = 2,
 			NotEquals = 3,
 		}
-		[AllowDuplicates]
 		public enum GPMReportType : int32
 		{
 			XML = 0,
@@ -172,7 +167,6 @@ namespace Win32
 			ClientHealthXML = 4,
 			ClientHealthRefreshXML = 5,
 		}
-		[AllowDuplicates]
 		public enum GPMEntryType : int32
 		{
 			User = 0,
@@ -183,7 +177,6 @@ namespace Win32
 			UNCPath = 5,
 			Unknown = 6,
 		}
-		[AllowDuplicates]
 		public enum GPMDestinationOption : int32
 		{
 			SameAsSource = 0,
@@ -191,32 +184,27 @@ namespace Win32
 			ByRelativeName = 2,
 			Set = 3,
 		}
-		[AllowDuplicates]
 		public enum GPMReportingOptions : int32
 		{
 			Legacy = 0,
 			Comments = 1,
 		}
-		[AllowDuplicates]
 		public enum GPMSOMType : int32
 		{
 			Site = 0,
 			Domain = 1,
 			OU = 2,
 		}
-		[AllowDuplicates]
 		public enum GPMBackupType : int32
 		{
 			GPO = 0,
 			StarterGPO = 1,
 		}
-		[AllowDuplicates]
 		public enum GPMStarterGPOType : int32
 		{
 			System = 0,
 			Custom = 1,
 		}
-		[AllowDuplicates]
 		public enum GPO_LINK : int32
 		{
 			Unknown = 0,
@@ -225,7 +213,6 @@ namespace Win32
 			Domain = 3,
 			OrganizationalUnit = 4,
 		}
-		[AllowDuplicates]
 		public enum SETTINGSTATUS : int32
 		{
 			Unspecified = 0,
@@ -234,7 +221,6 @@ namespace Win32
 			Failed = 3,
 			SubsettingFailed = 4,
 		}
-		[AllowDuplicates]
 		public enum INSTALLSPECTYPE : int32
 		{
 			APPNAME = 1,
@@ -242,14 +228,12 @@ namespace Win32
 			PROGID = 3,
 			COMCLASS = 4,
 		}
-		[AllowDuplicates]
 		public enum APPSTATE : int32
 		{
 			ABSENT = 0,
 			ASSIGNED = 1,
 			PUBLISHED = 2,
 		}
-		[AllowDuplicates]
 		public enum GROUP_POLICY_OBJECT_TYPE : int32
 		{
 			Local = 0,
@@ -258,7 +242,6 @@ namespace Win32
 			LocalUser = 3,
 			LocalGroup = 4,
 		}
-		[AllowDuplicates]
 		public enum GROUP_POLICY_HINT_TYPE : int32
 		{
 			Unknown = 0,

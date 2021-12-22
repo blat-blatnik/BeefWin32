@@ -14,21 +14,18 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DCOMPOSITION_BITMAP_INTERPOLATION_MODE : int32
 		{
 			NEAREST_NEIGHBOR = 0,
 			LINEAR = 1,
 			INHERIT = -1,
 		}
-		[AllowDuplicates]
 		public enum DCOMPOSITION_BORDER_MODE : int32
 		{
 			SOFT = 0,
 			HARD = 1,
 			INHERIT = -1,
 		}
-		[AllowDuplicates]
 		public enum DCOMPOSITION_COMPOSITE_MODE : int32
 		{
 			SOURCE_OVER = 0,
@@ -36,21 +33,18 @@ namespace Win32
 			MIN_BLEND = 2,
 			INHERIT = -1,
 		}
-		[AllowDuplicates]
 		public enum DCOMPOSITION_BACKFACE_VISIBILITY : int32
 		{
 			VISIBLE = 0,
 			HIDDEN = 1,
 			INHERIT = -1,
 		}
-		[AllowDuplicates]
 		public enum DCOMPOSITION_OPACITY_MODE : int32
 		{
 			LAYER = 0,
 			MULTIPLY = 1,
 			INHERIT = -1,
 		}
-		[AllowDuplicates]
 		public enum DCOMPOSITION_DEPTH_MODE : int32
 		{
 			TREE = 0,
@@ -58,7 +52,6 @@ namespace Win32
 			SORTED = 3,
 			INHERIT = -1,
 		}
-		[AllowDuplicates]
 		public enum COMPOSITION_FRAME_ID_TYPE : int32
 		{
 			REATED = 0,

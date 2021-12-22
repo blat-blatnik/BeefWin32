@@ -40,7 +40,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum SAFER_COMPUTE_TOKEN_FROM_LEVEL_FLAGS : uint32
 		{
 			NULL_IF_EQUAL = 1,
@@ -48,7 +47,6 @@ namespace Win32
 			MAKE_INERT = 4,
 			WANT_FLAGS = 8,
 		}
-		[AllowDuplicates]
 		public enum SAFER_POLICY_INFO_CLASS : int32
 		{
 			LevelList = 1,
@@ -59,7 +57,6 @@ namespace Win32
 			DefaultLevelFlags = 6,
 			AuthenticodeEnabled = 7,
 		}
-		[AllowDuplicates]
 		public enum SAFER_OBJECT_INFO_CLASS : int32
 		{
 			LevelId = 1,
@@ -79,7 +76,6 @@ namespace Win32
 			SingleIdentification = 15,
 			ExtendedError = 16,
 		}
-		[AllowDuplicates]
 		public enum SAFER_IDENTIFICATION_TYPES : int32
 		{
 			Default = 0,

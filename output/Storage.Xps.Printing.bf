@@ -13,7 +13,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum XPS_JOB_COMPLETION : int32
 		{
 			IN_PROGRESS = 0,
@@ -21,7 +20,6 @@ namespace Win32
 			CANCELLED = 2,
 			FAILED = 3,
 		}
-		[AllowDuplicates]
 		public enum PrintDocumentPackageCompletion : int32
 		{
 			InProgress = 0,

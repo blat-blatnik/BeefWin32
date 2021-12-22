@@ -17,7 +17,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DWRITE_FONT_AXIS_TAG : uint32
 		{
 			WEIGHT = 1952999287,
@@ -26,14 +25,12 @@ namespace Win32
 			OPTICAL_SIZE = 2054385775,
 			ITALIC = 1818326121,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_MEASURING_MODE : int32
 		{
 			NATURAL = 0,
 			GDI_CLASSIC = 1,
 			GDI_NATURAL = 2,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_GLYPH_IMAGE_FORMATS : uint32
 		{
 			NONE = 0,
@@ -72,7 +69,6 @@ namespace Win32
 			RAW_CFF = 7,
 			TRUETYPE_COLLECTION = 2,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_FONT_SIMULATIONS : uint32
 		{
 			NONE = 0,
@@ -115,7 +111,6 @@ namespace Win32
 			EXTRA_EXPANDED = 8,
 			ULTRA_EXPANDED = 9,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_FONT_STYLE : int32
 		{
 			NORMAL = 0,
@@ -151,13 +146,11 @@ namespace Win32
 			PREFERRED_SUBFAMILY_NAMES = 14,
 			WWS_FAMILY_NAME = 19,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_FACTORY_TYPE : int32
 		{
 			SHARED = 0,
 			ISOLATED = 1,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PIXEL_GEOMETRY : int32
 		{
 			FLAT = 0,
@@ -179,7 +172,6 @@ namespace Win32
 			CLEARTYPE_NATURAL = 4,
 			CLEARTYPE_NATURAL_SYMMETRIC = 5,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_READING_DIRECTION : int32
 		{
 			LEFT_TO_RIGHT = 0,
@@ -187,7 +179,6 @@ namespace Win32
 			TOP_TO_BOTTOM = 2,
 			BOTTOM_TO_TOP = 3,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_FLOW_DIRECTION : int32
 		{
 			TOP_TO_BOTTOM = 0,
@@ -195,7 +186,6 @@ namespace Win32
 			LEFT_TO_RIGHT = 2,
 			RIGHT_TO_LEFT = 3,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_TEXT_ALIGNMENT : int32
 		{
 			LEADING = 0,
@@ -203,14 +193,12 @@ namespace Win32
 			CENTER = 2,
 			JUSTIFIED = 3,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PARAGRAPH_ALIGNMENT : int32
 		{
 			NEAR = 0,
 			FAR = 1,
 			CENTER = 2,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_WORD_WRAPPING : int32
 		{
 			WRAP = 0,
@@ -219,21 +207,18 @@ namespace Win32
 			WHOLE_WORD = 3,
 			CHARACTER = 4,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_LINE_SPACING_METHOD : int32
 		{
 			DEFAULT = 0,
 			UNIFORM = 1,
 			PROPORTIONAL = 2,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_TRIMMING_GRANULARITY : int32
 		{
 			NONE = 0,
 			CHARACTER = 1,
 			WORD = 2,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_FONT_FEATURE_TAG : uint32
 		{
 			ALTERNATIVE_FRACTIONS = 1668441697,
@@ -318,13 +303,11 @@ namespace Win32
 			VERTICAL_ALTERNATES_AND_ROTATION = 846492278,
 			SLASHED_ZERO = 1869768058,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_SCRIPT_SHAPES : uint32
 		{
 			DEFAULT = 0,
 			NO_VISUAL = 1,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_BREAK_CONDITION : int32
 		{
 			NEUTRAL = 0,
@@ -332,7 +315,6 @@ namespace Win32
 			MAY_NOT_BREAK = 2,
 			MUST_BREAK = 3,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_NUMBER_SUBSTITUTION_METHOD : int32
 		{
 			FROM_CULTURE = 0,
@@ -341,7 +323,6 @@ namespace Win32
 			NATIONAL = 3,
 			TRADITIONAL = 4,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_TEXTURE_TYPE : int32
 		{
 			ALIASED_1x1 = 0,
@@ -398,7 +379,6 @@ namespace Win32
 			EXTRA_BLACK = 11,
 			NORD = 11,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_PROPORTION : int32
 		{
 			ANY = 0,
@@ -412,7 +392,6 @@ namespace Win32
 			VERY_CONDENSED = 8,
 			MONOSPACED = 9,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_CONTRAST : int32
 		{
 			ANY = 0,
@@ -430,7 +409,6 @@ namespace Win32
 			HORIZONTAL_HIGH = 12,
 			BROKEN = 13,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_STROKE_VARIATION : int32
 		{
 			ANY = 0,
@@ -468,7 +446,6 @@ namespace Win32
 			BENT_ARMS_SINGLE_SERIF = 10,
 			BENT_ARMS_DOUBLE_SERIF = 11,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_LETTERFORM : int32
 		{
 			ANY = 0,
@@ -488,7 +465,6 @@ namespace Win32
 			OBLIQUE_OFF_CENTER = 14,
 			OBLIQUE_SQUARE = 15,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_MIDLINE : int32
 		{
 			ANY = 0,
@@ -520,7 +496,6 @@ namespace Win32
 			CONSTANT_STD = 3,
 			DUCKING_STD = 6,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_TOOL_KIND : int32
 		{
 			ANY = 0,
@@ -534,7 +509,6 @@ namespace Win32
 			FELT_PEN_BRUSH_TIP = 8,
 			WILD_BRUSH = 9,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_SPACING : int32
 		{
 			ANY = 0,
@@ -542,7 +516,6 @@ namespace Win32
 			PROPORTIONAL_SPACED = 2,
 			MONOSPACED = 3,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_ASPECT_RATIO : int32
 		{
 			ANY = 0,
@@ -553,7 +526,6 @@ namespace Win32
 			EXPANDED = 5,
 			VERY_EXPANDED = 6,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_SCRIPT_TOPOLOGY : int32
 		{
 			ANY = 0,
@@ -568,7 +540,6 @@ namespace Win32
 			BLACKLETTER_TRAILING = 9,
 			BLACKLETTER_CONNECTED = 10,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_SCRIPT_FORM : int32
 		{
 			ANY = 0,
@@ -586,7 +557,6 @@ namespace Win32
 			EXAGGERATED_MORE_WRAPPING = 12,
 			EXAGGERATED_EXTREME_WRAPPING = 13,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_FINIALS : int32
 		{
 			ANY = 0,
@@ -604,7 +574,6 @@ namespace Win32
 			ROUND_CLOSED_LOOPS = 12,
 			ROUND_OPEN_LOOPS = 13,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_XASCENT : int32
 		{
 			ANY = 0,
@@ -615,7 +584,6 @@ namespace Win32
 			HIGH = 5,
 			VERY_HIGH = 6,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_DECORATIVE_CLASS : int32
 		{
 			ANY = 0,
@@ -632,7 +600,6 @@ namespace Win32
 			COLLAGE = 11,
 			MONTAGE = 12,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_ASPECT : int32
 		{
 			ANY = 0,
@@ -646,7 +613,6 @@ namespace Win32
 			SUPER_EXTENDED = 8,
 			MONOSPACED = 9,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_FILL : int32
 		{
 			ANY = 0,
@@ -658,7 +624,6 @@ namespace Win32
 			SHAPED_FILL = 6,
 			DRAWN_DISTRESSED = 7,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_LINING : int32
 		{
 			ANY = 0,
@@ -671,7 +636,6 @@ namespace Win32
 			RELIEF = 7,
 			BACKDROP = 8,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_DECORATIVE_TOPOLOGY : int32
 		{
 			ANY = 0,
@@ -691,7 +655,6 @@ namespace Win32
 			BLACKLETTER = 14,
 			SWASH_VARIANCE = 15,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_CHARACTER_RANGES : int32
 		{
 			ANY = 0,
@@ -701,7 +664,6 @@ namespace Win32
 			NO_LOWER_CASE = 4,
 			SMALL_CAPS = 5,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_SYMBOL_KIND : int32
 		{
 			ANY = 0,
@@ -718,7 +680,6 @@ namespace Win32
 			LOGOS = 11,
 			INDUSTRY_SPECIFIC = 12,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_PANOSE_SYMBOL_ASPECT_RATIO : int32
 		{
 			ANY = 0,
@@ -732,13 +693,11 @@ namespace Win32
 			NARROW = 8,
 			VERY_NARROW = 9,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_OUTLINE_THRESHOLD : int32
 		{
 			NTIALIASED = 0,
 			LIASED = 1,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_BASELINE : int32
 		{
 			DEFAULT = 0,
@@ -751,13 +710,11 @@ namespace Win32
 			MINIMUM = 7,
 			MAXIMUM = 8,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_VERTICAL_GLYPH_ORIENTATION : int32
 		{
 			DEFAULT = 0,
 			STACKED = 1,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_GLYPH_ORIENTATION_ANGLE : int32
 		{
 			_0_DEGREES = 0,
@@ -765,19 +722,16 @@ namespace Win32
 			_180_DEGREES = 2,
 			_270_DEGREES = 3,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_TEXT_ANTIALIAS_MODE : int32
 		{
 			CLEARTYPE = 0,
 			GRAYSCALE = 1,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_OPTICAL_ALIGNMENT : int32
 		{
 			NE = 0,
 			_SIDE_BEARINGS = 1,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_GRID_FIT_MODE : int32
 		{
 			DEFAULT = 0,
@@ -807,14 +761,12 @@ namespace Win32
 			FAMILY_NAME = 1,
 			FACE_NAME = 3,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_LOCALITY : int32
 		{
 			REMOTE = 0,
 			PARTIAL = 1,
 			LOCAL = 2,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_RENDERING_MODE1 : int32
 		{
 			DEFAULT = 0,
@@ -826,40 +778,34 @@ namespace Win32
 			OUTLINE = 6,
 			NATURAL_SYMMETRIC_DOWNSAMPLED = 7,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_FONT_LINE_GAP_USAGE : int32
 		{
 			DEFAULT = 0,
 			DISABLED = 1,
 			ENABLED = 2,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_CONTAINER_TYPE : int32
 		{
 			UNKNOWN = 0,
 			WOFF = 1,
 			WOFF2 = 2,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_FONT_FAMILY_MODEL : int32
 		{
 			TYPOGRAPHIC = 0,
 			WEIGHT_STRETCH_STYLE = 1,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_AUTOMATIC_FONT_AXES : uint32
 		{
 			NONE = 0,
 			OPTICAL_SIZE = 1,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_FONT_AXIS_ATTRIBUTES : uint32
 		{
 			NONE = 0,
 			VARIABLE = 1,
 			HIDDEN = 2,
 		}
-		[AllowDuplicates]
 		public enum DWRITE_FONT_SOURCE_TYPE : int32
 		{
 			UNKNOWN = 0,

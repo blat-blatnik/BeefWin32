@@ -143,7 +143,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum HOT_KEY_MODIFIERS : uint32
 		{
 			ALT = 1,
@@ -152,7 +151,6 @@ namespace Win32
 			SHIFT = 4,
 			WIN = 8,
 		}
-		[AllowDuplicates]
 		public enum ACTIVATE_KEYBOARD_LAYOUT_FLAGS : uint32
 		{
 			REORDER = 8,
@@ -164,13 +162,11 @@ namespace Win32
 			REPLACELANG = 16,
 			SUBSTITUTE_OK = 2,
 		}
-		[AllowDuplicates]
 		public enum GET_MOUSE_MOVE_POINTS_EX_RESOLUTION : uint32
 		{
 			DISPLAY_POINTS = 1,
 			HIGH_RESOLUTION_POINTS = 2,
 		}
-		[AllowDuplicates]
 		public enum KEYBD_EVENT_FLAGS : uint32
 		{
 			EXTENDEDKEY = 1,
@@ -178,7 +174,6 @@ namespace Win32
 			SCANCODE = 8,
 			UNICODE = 4,
 		}
-		[AllowDuplicates]
 		public enum MOUSE_EVENT_FLAGS : uint32
 		{
 			ABSOLUTE = 32768,
@@ -196,14 +191,12 @@ namespace Win32
 			MOVE_NOCOALESCE = 8192,
 			VIRTUALDESK = 16384,
 		}
-		[AllowDuplicates]
 		public enum INPUT_TYPE : uint32
 		{
 			MOUSE = 0,
 			KEYBOARD = 1,
 			HARDWARE = 2,
 		}
-		[AllowDuplicates]
 		public enum TRACKMOUSEEVENT_FLAGS : uint32
 		{
 			CANCEL = 2147483648,

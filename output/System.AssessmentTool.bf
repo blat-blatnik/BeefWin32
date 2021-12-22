@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum WINSAT_OEM_DATA_TYPE : int32
 		{
 			DATA_VALID = 0,
@@ -26,7 +25,6 @@ namespace Win32
 			INVALID = 4,
 			MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum WINSAT_ASSESSMENT_TYPE : int32
 		{
 			MEMORY = 0,
@@ -35,7 +33,6 @@ namespace Win32
 			D3D = 3,
 			GRAPHICS = 4,
 		}
-		[AllowDuplicates]
 		public enum WINSAT_BITMAP_SIZE : int32
 		{
 			SMALL = 0,

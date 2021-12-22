@@ -14,7 +14,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum RENDEZVOUS_SESSION_STATE : int32
 		{
 			UNKNOWN = 0,
@@ -26,7 +25,6 @@ namespace Win32
 			DECLINED = 6,
 			TERMINATED = 7,
 		}
-		[AllowDuplicates]
 		public enum RENDEZVOUS_SESSION_FLAGS : int32
 		{
 			NONE = 0,

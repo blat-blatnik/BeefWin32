@@ -7,7 +7,6 @@ namespace Win32
 	{
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum HARDWARE_COUNTER_TYPE : int32
 		{
 			PMCCounter = 0,

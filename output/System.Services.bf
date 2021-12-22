@@ -137,14 +137,12 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum ENUM_SERVICE_STATE : uint32
 		{
 			ACTIVE = 1,
 			INACTIVE = 2,
 			STATE_ALL = 3,
 		}
-		[AllowDuplicates]
 		public enum SERVICE_ERROR : uint32
 		{
 			CRITICAL = 3,
@@ -152,7 +150,6 @@ namespace Win32
 			NORMAL = 1,
 			SEVERE = 2,
 		}
-		[AllowDuplicates]
 		public enum SERVICE_CONFIG : uint32
 		{
 			DELAYED_AUTO_START_INFO = 3,
@@ -182,7 +179,6 @@ namespace Win32
 			USER_OWN_PROCESS = 80,
 			USER_SHARE_PROCESS = 96,
 		}
-		[AllowDuplicates]
 		public enum SERVICE_START_TYPE : uint32
 		{
 			AUTO_START = 2,
@@ -191,7 +187,6 @@ namespace Win32
 			DISABLED = 4,
 			SYSTEM_START = 1,
 		}
-		[AllowDuplicates]
 		public enum SERVICE_NOTIFY : uint32
 		{
 			CREATED = 128,
@@ -205,19 +200,16 @@ namespace Win32
 			STOP_PENDING = 4,
 			STOPPED = 1,
 		}
-		[AllowDuplicates]
 		public enum SERVICE_RUNS_IN_PROCESS : uint32
 		{
 			NON_SYSTEM_OR_NOT_RUNNING = 0,
 			SYSTEM_PROCESS = 1,
 		}
-		[AllowDuplicates]
 		public enum SERVICE_TRIGGER_ACTION : uint32
 		{
 			ART = 1,
 			OP = 2,
 		}
-		[AllowDuplicates]
 		public enum SERVICE_TRIGGER_TYPE : uint32
 		{
 			CUSTOM = 20,
@@ -228,7 +220,6 @@ namespace Win32
 			IP_ADDRESS_AVAILABILITY = 2,
 			NETWORK_ENDPOINT = 6,
 		}
-		[AllowDuplicates]
 		public enum SERVICE_TRIGGER_SPECIFIC_DATA_ITEM_DATA_TYPE : uint32
 		{
 			BINARY = 1,
@@ -237,7 +228,6 @@ namespace Win32
 			KEYWORD_ANY = 4,
 			KEYWORD_ALL = 5,
 		}
-		[AllowDuplicates]
 		public enum SERVICE_STATUS_CURRENT_STATE : uint32
 		{
 			CONTINUE_PENDING = 5,
@@ -248,7 +238,6 @@ namespace Win32
 			STOP_PENDING = 3,
 			STOPPED = 1,
 		}
-		[AllowDuplicates]
 		public enum SC_ACTION_TYPE : int32
 		{
 			NONE = 0,
@@ -257,42 +246,35 @@ namespace Win32
 			RUN_COMMAND = 3,
 			OWN_RESTART = 4,
 		}
-		[AllowDuplicates]
 		public enum SC_STATUS_TYPE : int32
 		{
 			SC_STATUS_PROCESS_INFO = 0,
 		}
-		[AllowDuplicates]
 		public enum SC_ENUM_TYPE : int32
 		{
 			SC_ENUM_PROCESS_INFO = 0,
 		}
-		[AllowDuplicates]
 		public enum SC_EVENT_TYPE : int32
 		{
 			DATABASE_CHANGE = 0,
 			PROPERTY_CHANGE = 1,
 			STATUS_CHANGE = 2,
 		}
-		[AllowDuplicates]
 		public enum SERVICE_REGISTRY_STATE_TYPE : int32
 		{
 			ServiceRegistryStateParameters = 0,
 			ServiceRegistryStatePersistent = 1,
 			MaxServiceRegistryStateType = 2,
 		}
-		[AllowDuplicates]
 		public enum SERVICE_DIRECTORY_TYPE : int32
 		{
 			PersistentState = 0,
 			TypeMax = 1,
 		}
-		[AllowDuplicates]
 		public enum SERVICE_SHARED_REGISTRY_STATE_TYPE : int32
 		{
 			ServiceSharedRegistryPersistentState = 0,
 		}
-		[AllowDuplicates]
 		public enum SERVICE_SHARED_DIRECTORY_TYPE : int32
 		{
 			ServiceSharedDirectoryPersistentState = 0,

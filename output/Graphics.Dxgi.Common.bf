@@ -19,7 +19,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum DXGI_COLOR_SPACE_TYPE : int32
 		{
 			RGB_FULL_G22_NONE_P709 = 0,
@@ -49,7 +48,6 @@ namespace Win32
 			YCBCR_STUDIO_G24_TOPLEFT_P2020 = 24,
 			CUSTOM = -1,
 		}
-		[AllowDuplicates]
 		public enum DXGI_FORMAT : uint32
 		{
 			UNKNOWN = 0,
@@ -175,7 +173,6 @@ namespace Win32
 			SAMPLER_FEEDBACK_MIP_REGION_USED_OPAQUE = 190,
 			FORCE_UINT = 4294967295,
 		}
-		[AllowDuplicates]
 		public enum DXGI_MODE_SCANLINE_ORDER : int32
 		{
 			UNSPECIFIED = 0,
@@ -183,14 +180,12 @@ namespace Win32
 			UPPER_FIELD_FIRST = 2,
 			LOWER_FIELD_FIRST = 3,
 		}
-		[AllowDuplicates]
 		public enum DXGI_MODE_SCALING : int32
 		{
 			UNSPECIFIED = 0,
 			CENTERED = 1,
 			STRETCHED = 2,
 		}
-		[AllowDuplicates]
 		public enum DXGI_MODE_ROTATION : int32
 		{
 			UNSPECIFIED = 0,
@@ -199,7 +194,6 @@ namespace Win32
 			ROTATE180 = 3,
 			ROTATE270 = 4,
 		}
-		[AllowDuplicates]
 		public enum DXGI_ALPHA_MODE : uint32
 		{
 			UNSPECIFIED = 0,

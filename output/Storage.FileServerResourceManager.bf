@@ -161,7 +161,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum FsrmQuotaFlags : int32
 		{
 			Enforce = 256,
@@ -169,12 +168,10 @@ namespace Win32
 			StatusIncomplete = 65536,
 			StatusRebuilding = 131072,
 		}
-		[AllowDuplicates]
 		public enum FsrmFileScreenFlags : int32
 		{
 			FsrmFileScreenFlags_Enforce = 1,
 		}
-		[AllowDuplicates]
 		public enum FsrmCollectionState : int32
 		{
 			Fetching = 1,
@@ -182,7 +179,6 @@ namespace Win32
 			Complete = 3,
 			Cancelled = 4,
 		}
-		[AllowDuplicates]
 		public enum FsrmEnumOptions : int32
 		{
 			None = 0,
@@ -191,19 +187,16 @@ namespace Win32
 			IncludeClusterNodes = 4,
 			IncludeDeprecatedObjects = 8,
 		}
-		[AllowDuplicates]
 		public enum FsrmCommitOptions : int32
 		{
 			None = 0,
 			Asynchronous = 1,
 		}
-		[AllowDuplicates]
 		public enum FsrmTemplateApplyOptions : int32
 		{
 			Matching = 1,
 			All = 2,
 		}
-		[AllowDuplicates]
 		public enum FsrmActionType : int32
 		{
 			Unknown = 0,
@@ -212,7 +205,6 @@ namespace Win32
 			Command = 3,
 			Report = 4,
 		}
-		[AllowDuplicates]
 		public enum FsrmEventType : int32
 		{
 			Unknown = 0,
@@ -220,7 +212,6 @@ namespace Win32
 			Warning = 2,
 			Error = 3,
 		}
-		[AllowDuplicates]
 		public enum FsrmAccountType : int32
 		{
 			Unknown = 0,
@@ -231,7 +222,6 @@ namespace Win32
 			External = 5,
 			Automatic = 500,
 		}
-		[AllowDuplicates]
 		public enum FsrmReportType : int32
 		{
 			Unknown = 0,
@@ -249,7 +239,6 @@ namespace Win32
 			Expiration = 12,
 			FoldersByProperty = 13,
 		}
-		[AllowDuplicates]
 		public enum FsrmReportFormat : int32
 		{
 			Unknown = 0,
@@ -259,7 +248,6 @@ namespace Win32
 			Csv = 4,
 			Xml = 5,
 		}
-		[AllowDuplicates]
 		public enum FsrmReportRunningStatus : int32
 		{
 			Unknown = 0,
@@ -267,7 +255,6 @@ namespace Win32
 			Queued = 2,
 			Running = 3,
 		}
-		[AllowDuplicates]
 		public enum FsrmReportGenerationContext : int32
 		{
 			Undefined = 1,
@@ -275,7 +262,6 @@ namespace Win32
 			InteractiveReport = 3,
 			IncidentReport = 4,
 		}
-		[AllowDuplicates]
 		public enum FsrmReportFilter : int32
 		{
 			MinSize = 1,
@@ -287,7 +273,6 @@ namespace Win32
 			NamePattern = 7,
 			Property = 8,
 		}
-		[AllowDuplicates]
 		public enum FsrmReportLimit : int32
 		{
 			Files = 1,
@@ -303,7 +288,6 @@ namespace Win32
 			FilesPerPropertyValue = 11,
 			Folders = 12,
 		}
-		[AllowDuplicates]
 		public enum FsrmPropertyDefinitionType : int32
 		{
 			Unknown = 0,
@@ -316,27 +300,23 @@ namespace Win32
 			Bool = 7,
 			Date = 8,
 		}
-		[AllowDuplicates]
 		public enum FsrmPropertyDefinitionFlags : int32
 		{
 			Global = 1,
 			Deprecated = 2,
 			Secure = 4,
 		}
-		[AllowDuplicates]
 		public enum FsrmPropertyDefinitionAppliesTo : int32
 		{
 			iles = 1,
 			olders = 2,
 		}
-		[AllowDuplicates]
 		public enum FsrmRuleType : int32
 		{
 			Unknown = 0,
 			Classification = 1,
 			Generic = 2,
 		}
-		[AllowDuplicates]
 		public enum FsrmRuleFlags : int32
 		{
 			Disabled = 256,
@@ -344,7 +324,6 @@ namespace Win32
 			ClearManuallyClassifiedProperty = 2048,
 			Invalid = 4096,
 		}
-		[AllowDuplicates]
 		public enum FsrmClassificationLoggingFlags : int32
 		{
 			None = 0,
@@ -353,7 +332,6 @@ namespace Win32
 			ClassificationsInSystemLog = 4,
 			ErrorsInSystemLog = 8,
 		}
-		[AllowDuplicates]
 		public enum FsrmExecutionOption : int32
 		{
 			Unknown = 0,
@@ -361,7 +339,6 @@ namespace Win32
 			ReEvaluate_ConsiderExistingValue = 2,
 			ReEvaluate_IgnoreExistingValue = 3,
 		}
-		[AllowDuplicates]
 		public enum FsrmStorageModuleCaps : int32
 		{
 			Unknown = 0,
@@ -370,7 +347,6 @@ namespace Win32
 			CanHandleDirectories = 4,
 			CanHandleFiles = 8,
 		}
-		[AllowDuplicates]
 		public enum FsrmStorageModuleType : int32
 		{
 			Unknown = 0,
@@ -379,7 +355,6 @@ namespace Win32
 			Database = 3,
 			System = 100,
 		}
-		[AllowDuplicates]
 		public enum FsrmPropertyBagFlags : int32
 		{
 			UpdatedByClassifier = 1,
@@ -387,13 +362,11 @@ namespace Win32
 			FailedSavingProperties = 4,
 			FailedClassifyingProperties = 8,
 		}
-		[AllowDuplicates]
 		public enum FsrmPropertyBagField : int32
 		{
 			AccessVolume = 0,
 			VolumeGuidName = 1,
 		}
-		[AllowDuplicates]
 		public enum FsrmPropertyFlags : int32
 		{
 			None = 0,
@@ -417,14 +390,12 @@ namespace Win32
 			PropertySourceMask = 14,
 			PersistentMask = 20480,
 		}
-		[AllowDuplicates]
 		public enum FsrmPipelineModuleType : int32
 		{
 			Unknown = 0,
 			Storage = 1,
 			Classifier = 2,
 		}
-		[AllowDuplicates]
 		public enum FsrmGetFilePropertyOptions : int32
 		{
 			None = 0,
@@ -433,7 +404,6 @@ namespace Win32
 			FailOnPersistErrors = 4,
 			SkipOrphaned = 8,
 		}
-		[AllowDuplicates]
 		public enum FsrmFileManagementType : int32
 		{
 			Unknown = 0,
@@ -441,7 +411,6 @@ namespace Win32
 			Custom = 2,
 			Rms = 3,
 		}
-		[AllowDuplicates]
 		public enum FsrmFileManagementLoggingFlags : int32
 		{
 			None = 0,
@@ -449,7 +418,6 @@ namespace Win32
 			Information = 2,
 			Audit = 4,
 		}
-		[AllowDuplicates]
 		public enum FsrmPropertyConditionType : int32
 		{
 			Unknown = 0,
@@ -467,27 +435,23 @@ namespace Win32
 			SuffixOf = 12,
 			MatchesPattern = 13,
 		}
-		[AllowDuplicates]
 		public enum FsrmFileStreamingMode : int32
 		{
 			Unknown = 0,
 			Read = 1,
 			Write = 2,
 		}
-		[AllowDuplicates]
 		public enum FsrmFileStreamingInterfaceType : int32
 		{
 			Unknown = 0,
 			ILockBytes = 1,
 			IStream = 2,
 		}
-		[AllowDuplicates]
 		public enum FsrmFileConditionType : int32
 		{
 			Unknown = 0,
 			Property = 1,
 		}
-		[AllowDuplicates]
 		public enum FsrmFileSystemPropertyId : int32
 		{
 			Undefined = 0,
@@ -497,20 +461,17 @@ namespace Win32
 			DateLastModified = 4,
 			DateNow = 5,
 		}
-		[AllowDuplicates]
 		public enum FsrmPropertyValueType : int32
 		{
 			Undefined = 0,
 			Literal = 1,
 			DateOffset = 2,
 		}
-		[AllowDuplicates]
 		public enum AdrClientDisplayFlags : int32
 		{
 			AllowEmailRequests = 1,
 			ShowDeviceTroubleshooting = 2,
 		}
-		[AllowDuplicates]
 		public enum AdrEmailFlags : int32
 		{
 			PutDataOwnerOnToLine = 1,
@@ -519,14 +480,12 @@ namespace Win32
 			IncludeUserInfo = 8,
 			GenerateEventLog = 16,
 		}
-		[AllowDuplicates]
 		public enum AdrClientErrorType : int32
 		{
 			Unknown = 0,
 			AccessDenied = 1,
 			FileNotFound = 2,
 		}
-		[AllowDuplicates]
 		public enum AdrClientFlags : int32
 		{
 			None = 0,

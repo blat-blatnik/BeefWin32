@@ -88,7 +88,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum CRYPTUI_WIZ_FLAGS : uint32
 		{
 			NO_UI = 1,
@@ -128,7 +127,6 @@ namespace Win32
 			DISABLE_ISSUERSTATEMENT = 131072,
 			CACHE_ONLY_URL_RETRIEVAL = 262144,
 		}
-		[AllowDuplicates]
 		public enum CERT_SELECT_STRUCT_FLAGS : uint32
 		{
 			HIDE_PROPERTIES = 1,
@@ -138,7 +136,6 @@ namespace Win32
 			ENABLETEMPLATE = 32,
 			ENABLETEMPLATEHANDLE = 64,
 		}
-		[AllowDuplicates]
 		public enum CRYPTUI_WIZ_IMPORT_SUBJECT_OPTION : uint32
 		{
 			FILE = 1,
@@ -147,14 +144,12 @@ namespace Win32
 			CRL_CONTEXT = 4,
 			CERT_STORE = 5,
 		}
-		[AllowDuplicates]
 		public enum CRYPTUI_WIZ_DIGITAL_SIGN_SUBJECT : uint32
 		{
 			BLOB = 2,
 			FILE = 1,
 			NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum CRYPTUI_WIZ_DIGITAL_SIGN : uint32
 		{
 			CERT = 1,
@@ -162,7 +157,6 @@ namespace Win32
 			PVK = 3,
 			NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum CRYPTUI_WIZ_EXPORT_SUBJECT : uint32
 		{
 			ERT_CONTEXT = 1,
@@ -171,19 +165,16 @@ namespace Win32
 			ERT_STORE = 4,
 			ERT_STORE_CERTIFICATES_ONLY = 5,
 		}
-		[AllowDuplicates]
 		public enum CRYPTUI_WIZ_DIGITAL_SIGN_SIG_TYPE : uint32
 		{
 			COMMERCIAL = 1,
 			INDIVIDUAL = 2,
 		}
-		[AllowDuplicates]
 		public enum CRYPTUI_WIZ_DIGITAL_SIGN_PVK_OPTION : uint32
 		{
 			FILE = 1,
 			PROV = 2,
 		}
-		[AllowDuplicates]
 		public enum CERT_VIEWPROPERTIES_STRUCT_FLAGS : uint32
 		{
 			ENABLEHOOK = 1,
@@ -197,7 +188,6 @@ namespace Win32
 			HIDE_DETAILPAGE = 256,
 			ADD_CERT_STORES = 512,
 		}
-		[AllowDuplicates]
 		public enum CRYPTUI_WIZ_EXPORT_FORMAT : uint32
 		{
 			DER = 1,
@@ -207,14 +197,12 @@ namespace Win32
 			CRL = 6,
 			CTL = 7,
 		}
-		[AllowDuplicates]
 		public enum CRYPTUI_WIZ_DIGITAL_ADDITIONAL_CERT_CHOICE : uint32
 		{
 			CHAIN = 1,
 			CHAIN_NO_ROOT = 2,
 			NONE = 0,
 		}
-		[AllowDuplicates]
 		public enum CTL_MODIFY_REQUEST_OPERATION : uint32
 		{
 			ADD_TRUSTED = 3,

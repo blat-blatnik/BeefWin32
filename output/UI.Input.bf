@@ -11,20 +11,17 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum RAW_INPUT_DATA_COMMAND_FLAGS : uint32
 		{
 			HEADER = 268435461,
 			INPUT = 268435459,
 		}
-		[AllowDuplicates]
 		public enum RAW_INPUT_DEVICE_INFO_COMMAND : uint32
 		{
 			PREPARSEDDATA = 536870917,
 			DEVICENAME = 536870919,
 			DEVICEINFO = 536870923,
 		}
-		[AllowDuplicates]
 		public enum RID_DEVICE_INFO_TYPE : uint32
 		{
 			MOUSE = 0,
@@ -45,7 +42,6 @@ namespace Win32
 			EXINPUTSINK = 4096,
 			DEVNOTIFY = 8192,
 		}
-		[AllowDuplicates]
 		public enum INPUT_MESSAGE_DEVICE_TYPE : int32
 		{
 			UNAVAILABLE = 0,
@@ -55,7 +51,6 @@ namespace Win32
 			PEN = 8,
 			TOUCHPAD = 16,
 		}
-		[AllowDuplicates]
 		public enum INPUT_MESSAGE_ORIGIN_ID : int32
 		{
 			UNAVAILABLE = 0,

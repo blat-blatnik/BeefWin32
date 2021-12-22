@@ -1312,7 +1312,6 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum SYM_LOAD_FLAGS : uint32
 		{
 			NONE = 0,
@@ -1399,7 +1398,6 @@ namespace Win32
 			ARM64 = 43620,
 			CEE = 49390,
 		}
-		[AllowDuplicates]
 		public enum IMAGE_SUBSYSTEM : uint16
 		{
 			UNKNOWN = 0,
@@ -1447,7 +1445,6 @@ namespace Win32
 			NT_OPTIONAL_HDR64_MAGIC = 523,
 			ROM_OPTIONAL_HDR_MAGIC = 263,
 		}
-		[AllowDuplicates]
 		public enum BUGCHECK_ERROR : uint32
 		{
 			HARDWARE_PROFILE_UNDOCKED_STRING = 1073807361,
@@ -2125,7 +2122,6 @@ namespace Win32
 			PIX = 2748,
 			NT_BIT = 268435456,
 		}
-		[AllowDuplicates]
 		public enum THREAD_ERROR_MODE : uint32
 		{
 			ALL_ERRORS = 0,
@@ -2134,7 +2130,6 @@ namespace Win32
 			NOOPENFILEERRORBOX = 32768,
 			NOALIGNMENTFAULTEXCEPT = 4,
 		}
-		[AllowDuplicates]
 		public enum FORMAT_MESSAGE_OPTIONS : uint32
 		{
 			ALLOCATE_BUFFER = 256,
@@ -2144,7 +2139,6 @@ namespace Win32
 			FROM_SYSTEM = 4096,
 			IGNORE_INSERTS = 512,
 		}
-		[AllowDuplicates]
 		public enum RTL_VIRTUAL_UNWIND_HANDLER_TYPE : uint32
 		{
 			NHANDLER = 0,
@@ -2152,12 +2146,10 @@ namespace Win32
 			UHANDLER = 2,
 			CHAININFO = 4,
 		}
-		[AllowDuplicates]
 		public enum OPEN_THREAD_WAIT_CHAIN_SESSION_FLAGS : uint32
 		{
 			WCT_ASYNC_OPEN_FLAG = 1,
 		}
-		[AllowDuplicates]
 		public enum SYM_SRV_STORE_FILE_FLAGS : uint32
 		{
 			COMPRESS = 1,
@@ -2166,7 +2158,6 @@ namespace Win32
 			POINTER = 8,
 			RETURNINDEX = 4,
 		}
-		[AllowDuplicates]
 		public enum PROCESSOR_ARCHITECTURE : uint16
 		{
 			AMD64 = 9,
@@ -2175,7 +2166,6 @@ namespace Win32
 			ARM = 5,
 			UNKNOWN = 65535,
 		}
-		[AllowDuplicates]
 		public enum IMAGE_DIRECTORY_ENTRY : uint32
 		{
 			ARCHITECTURE = 7,
@@ -2194,21 +2184,18 @@ namespace Win32
 			SECURITY = 4,
 			TLS = 9,
 		}
-		[AllowDuplicates]
 		public enum WAIT_CHAIN_THREAD_OPTIONS : uint32
 		{
 			COM_FLAG = 2,
 			CS_FLAG = 4,
 			FLAG = 1,
 		}
-		[AllowDuplicates]
 		public enum SYM_FIND_ID_OPTION : uint32
 		{
 			DWORD = 2,
 			DWORDPTR = 4,
 			GUIDPTR = 8,
 		}
-		[AllowDuplicates]
 		public enum IMAGE_FILE_CHARACTERISTICS : uint16
 		{
 			RELOCS_STRIPPED = 1,
@@ -2227,7 +2214,6 @@ namespace Win32
 			UP_SYSTEM_ONLY = 16384,
 			BYTES_REVERSED_HI = 32768,
 		}
-		[AllowDuplicates]
 		public enum IMAGE_FILE_CHARACTERISTICS2 : uint32
 		{
 			RELOCS_STRIPPED2 = 1,
@@ -2246,7 +2232,6 @@ namespace Win32
 			UP_SYSTEM_ONLY_2 = 16384,
 			BYTES_REVERSED_HI_2 = 32768,
 		}
-		[AllowDuplicates]
 		public enum SYMBOL_INFO_FLAGS : uint32
 		{
 			CLR_TOKEN = 262144,
@@ -2267,7 +2252,6 @@ namespace Win32
 			VALUEPRESENT = 1,
 			VIRTUAL = 4096,
 		}
-		[AllowDuplicates]
 		public enum IMAGEHLP_CBA_EVENT_SEVERITY : uint32
 		{
 			Info = 0,
@@ -2275,27 +2259,23 @@ namespace Win32
 			Attn = 2,
 			Fatal = 3,
 		}
-		[AllowDuplicates]
 		public enum IMAGEHLP_GET_TYPE_INFO_FLAGS : uint32
 		{
 			CHILDREN = 2,
 			UNCACHED = 1,
 		}
-		[AllowDuplicates]
 		public enum RIP_INFO_TYPE : uint32
 		{
 			ERROR = 1,
 			MINORERROR = 2,
 			WARNING = 3,
 		}
-		[AllowDuplicates]
 		public enum VER_PLATFORM : uint32
 		{
 			s = 0,
 			_WINDOWS = 1,
 			_NT = 2,
 		}
-		[AllowDuplicates]
 		public enum IMAGE_DEBUG_TYPE : uint32
 		{
 			UNKNOWN = 0,
@@ -2307,7 +2287,6 @@ namespace Win32
 			FIXUP = 6,
 			BORLAND = 9,
 		}
-		[AllowDuplicates]
 		public enum MINIDUMP_THREAD_INFO_DUMP_FLAGS : uint32
 		{
 			ERROR_THREAD = 1,
@@ -2317,7 +2296,6 @@ namespace Win32
 			INVALID_TEB = 32,
 			WRITING_THREAD = 2,
 		}
-		[AllowDuplicates]
 		public enum DEBUG_EVENT_CODE : uint32
 		{
 			CREATE_PROCESS_DEBUG_EVENT = 3,
@@ -2330,19 +2308,16 @@ namespace Win32
 			RIP_EVENT = 9,
 			UNLOAD_DLL_DEBUG_EVENT = 7,
 		}
-		[AllowDuplicates]
 		public enum MINIDUMP_MISC_INFO_FLAGS : uint32
 		{
 			ID = 1,
 			TIMES = 2,
 		}
-		[AllowDuplicates]
 		public enum MODLOAD_DATA_TYPE : uint32
 		{
 			DEBUGDIRS = 1,
 			CVMISC = 2,
 		}
-		[AllowDuplicates]
 		public enum ModelObjectKind : int32
 		{
 			PropertyAccessor = 0,
@@ -2356,7 +2331,6 @@ namespace Win32
 			Method = 8,
 			KeyReference = 9,
 		}
-		[AllowDuplicates]
 		public enum SymbolKind : int32
 		{
 			l = 0,
@@ -2369,7 +2343,6 @@ namespace Win32
 			lPublic = 7,
 			lFunction = 8,
 		}
-		[AllowDuplicates]
 		public enum TypeKind : int32
 		{
 			UDT = 0,
@@ -2382,7 +2355,6 @@ namespace Win32
 			Intrinsic = 7,
 			ExtendedArray = 8,
 		}
-		[AllowDuplicates]
 		public enum IntrinsicKind : int32
 		{
 			Void = 0,
@@ -2398,7 +2370,6 @@ namespace Win32
 			Char16 = 10,
 			Char32 = 11,
 		}
-		[AllowDuplicates]
 		public enum PointerKind : int32
 		{
 			Standard = 0,
@@ -2407,7 +2378,6 @@ namespace Win32
 			CXHat = 3,
 			ManagedReference = 4,
 		}
-		[AllowDuplicates]
 		public enum CallingConventionKind : int32
 		{
 			Unknown = 0,
@@ -2417,7 +2387,6 @@ namespace Win32
 			SysCall = 4,
 			ThisCall = 5,
 		}
-		[AllowDuplicates]
 		public enum LocationKind : int32
 		{
 			Member = 0,
@@ -2425,7 +2394,6 @@ namespace Win32
 			Constant = 2,
 			None = 3,
 		}
-		[AllowDuplicates]
 		public enum PreferredFormat : int32
 		{
 			None = 0,
@@ -2445,19 +2413,16 @@ namespace Win32
 			UTF32String = 14,
 			QuotedUTF32String = 15,
 		}
-		[AllowDuplicates]
 		public enum RawSearchFlags : int32
 		{
 			ne = 0,
 			Bases = 1,
 		}
-		[AllowDuplicates]
 		public enum ErrorClass : int32
 		{
 			Warning = 0,
 			Error = 1,
 		}
-		[AllowDuplicates]
 		public enum SignatureComparison : int32
 		{
 			Unrelated = 0,
@@ -2466,14 +2431,12 @@ namespace Win32
 			MoreSpecific = 3,
 			Identical = 4,
 		}
-		[AllowDuplicates]
 		public enum SymbolSearchOptions : int32
 		{
 			None = 0,
 			Completion = 1,
 			CaseInsensitive = 2,
 		}
-		[AllowDuplicates]
 		public enum LanguageKind : int32
 		{
 			Unknown = 0,
@@ -2481,18 +2444,15 @@ namespace Win32
 			CPP = 2,
 			Assembly = 3,
 		}
-		[AllowDuplicates]
 		public enum VarArgsKind : int32
 		{
 			None = 0,
 			CStyle = 1,
 		}
-		[AllowDuplicates]
 		public enum ScriptChangeKind : int32
 		{
 			ScriptRename = 0,
 		}
-		[AllowDuplicates]
 		public enum ScriptDebugState : int32
 		{
 			NoDebugger = 0,
@@ -2500,7 +2460,6 @@ namespace Win32
 			Executing = 2,
 			Break = 3,
 		}
-		[AllowDuplicates]
 		public enum ScriptDebugEventFilter : int32
 		{
 			Entry = 0,
@@ -2508,7 +2467,6 @@ namespace Win32
 			UnhandledException = 2,
 			Abort = 3,
 		}
-		[AllowDuplicates]
 		public enum ScriptDebugEvent : int32
 		{
 			Breakpoint = 0,
@@ -2516,7 +2474,6 @@ namespace Win32
 			Exception = 2,
 			AsyncBreak = 3,
 		}
-		[AllowDuplicates]
 		public enum ScriptExecutionKind : int32
 		{
 			Normal = 0,
@@ -2524,7 +2481,6 @@ namespace Win32
 			StepOut = 2,
 			StepOver = 3,
 		}
-		[AllowDuplicates]
 		public enum EXT_TDOP : int32
 		{
 			COPY = 0,
@@ -2548,7 +2504,6 @@ namespace Win32
 			SET_PTR_FROM_TYPE_ID_AND_U64 = 18,
 			COUNT = 19,
 		}
-		[AllowDuplicates]
 		public enum DBGKD_MAJOR_TYPES : int32
 		{
 			NT = 0,
@@ -2564,7 +2519,6 @@ namespace Win32
 			CE = 10,
 			COUNT = 11,
 		}
-		[AllowDuplicates]
 		public enum WCT_OBJECT_TYPE : int32
 		{
 			CriticalSectionType = 1,
@@ -2581,7 +2535,6 @@ namespace Win32
 			SmbIoType = 12,
 			MaxType = 13,
 		}
-		[AllowDuplicates]
 		public enum WCT_OBJECT_STATUS : int32
 		{
 			NoAccess = 1,
@@ -2596,7 +2549,6 @@ namespace Win32
 			Error = 10,
 			Max = 11,
 		}
-		[AllowDuplicates]
 		public enum MINIDUMP_STREAM_TYPE : int32
 		{
 			UnusedStream = 0,
@@ -2639,7 +2591,6 @@ namespace Win32
 			ceStreamDiagnosisList = 32780,
 			LastReservedStream = 65535,
 		}
-		[AllowDuplicates]
 		public enum MINIDUMP_HANDLE_OBJECT_INFORMATION_TYPE : int32
 		{
 			HandleObjectInformationNone = 0,
@@ -2653,7 +2604,6 @@ namespace Win32
 			SemaphoreInformation1 = 8,
 			HandleObjectInformationTypeMax = 9,
 		}
-		[AllowDuplicates]
 		public enum MINIDUMP_CALLBACK_TYPE : int32
 		{
 			ModuleCallback = 0,
@@ -2678,7 +2628,6 @@ namespace Win32
 			VmPreReadCallback = 19,
 			VmPostReadCallback = 20,
 		}
-		[AllowDuplicates]
 		public enum THREAD_WRITE_FLAGS : int32
 		{
 			Thread = 1,
@@ -2689,7 +2638,6 @@ namespace Win32
 			ThreadData = 32,
 			ThreadInfo = 64,
 		}
-		[AllowDuplicates]
 		public enum MODULE_WRITE_FLAGS : int32
 		{
 			WriteModule = 1,
@@ -2700,7 +2648,6 @@ namespace Win32
 			WriteTlsData = 32,
 			WriteCodeSegs = 64,
 		}
-		[AllowDuplicates]
 		public enum MINIDUMP_TYPE : uint32
 		{
 			Normal = 0,
@@ -2737,7 +2684,6 @@ namespace Win32
 			WithoutPowerInfo = 1,
 			ValidFlags = 1,
 		}
-		[AllowDuplicates]
 		public enum SCRIPTLANGUAGEVERSION : int32
 		{
 			DEFAULT = 0,
@@ -2745,7 +2691,6 @@ namespace Win32
 			_5_8 = 2,
 			MAX = 255,
 		}
-		[AllowDuplicates]
 		public enum SCRIPTSTATE : int32
 		{
 			UNINITIALIZED = 0,
@@ -2755,7 +2700,6 @@ namespace Win32
 			DISCONNECTED = 3,
 			CLOSED = 4,
 		}
-		[AllowDuplicates]
 		public enum SCRIPTTRACEINFO : int32
 		{
 			SCRIPTSTART = 0,
@@ -2767,32 +2711,27 @@ namespace Win32
 			GETOBJSTART = 6,
 			GETOBJEND = 7,
 		}
-		[AllowDuplicates]
 		public enum SCRIPTTHREADSTATE : int32
 		{
 			NOTINSCRIPT = 0,
 			RUNNING = 1,
 		}
-		[AllowDuplicates]
 		public enum SCRIPTGCTYPE : int32
 		{
 			NORMAL = 0,
 			EXHAUSTIVE = 1,
 		}
-		[AllowDuplicates]
 		public enum SCRIPTUICITEM : int32
 		{
 			INPUTBOX = 1,
 			MSGBOX = 2,
 		}
-		[AllowDuplicates]
 		public enum SCRIPTUICHANDLING : int32
 		{
 			ALLOW = 0,
 			NOUIERROR = 1,
 			NOUIDEFAULT = 2,
 		}
-		[AllowDuplicates]
 		public enum DBGPROP_ATTRIB_FLAGS : uint32
 		{
 			NO_ATTRIB = 0,
@@ -2821,7 +2760,6 @@ namespace Win32
 			VALUE_IS_RETURN_VALUE = 134217728,
 			VALUE_PENDING_MUTATION = 268435456,
 		}
-		[AllowDuplicates]
 		public enum DBGPROP_INFO : uint32
 		{
 			NAME = 1,
@@ -2873,7 +2811,6 @@ namespace Win32
 			IS_INHERITED = 1073741824,
 			IS_INTERFACE = 2147483648,
 		}
-		[AllowDuplicates]
 		public enum PROP_INFO_FLAGS : int32
 		{
 			NAME = 1,
@@ -2884,7 +2821,6 @@ namespace Win32
 			DEBUGPROP = 16,
 			AUTOEXPAND = 134217728,
 		}
-		[AllowDuplicates]
 		public enum EX_PROP_INFO_FLAGS : int32
 		{
 			ID = 256,
@@ -2893,14 +2829,12 @@ namespace Win32
 			LOCKBYTES = 2048,
 			DEBUGEXTPROP = 4096,
 		}
-		[AllowDuplicates]
 		public enum BREAKPOINT_STATE : int32
 		{
 			DELETED = 0,
 			DISABLED = 1,
 			ENABLED = 2,
 		}
-		[AllowDuplicates]
 		public enum BREAKREASON : int32
 		{
 			STEP = 0,
@@ -2913,7 +2847,6 @@ namespace Win32
 			JIT = 7,
 			MUTATION_BREAKPOINT = 8,
 		}
-		[AllowDuplicates]
 		public enum BREAKRESUME_ACTION : int32
 		{
 			ABORT = 0,
@@ -2924,14 +2857,12 @@ namespace Win32
 			IGNORE = 5,
 			STEP_DOCUMENT = 6,
 		}
-		[AllowDuplicates]
 		public enum ERRORRESUMEACTION : int32
 		{
 			ReexecuteErrorStatement = 0,
 			AbortCallAndReturnErrorToCaller = 1,
 			SkipErrorStatement = 2,
 		}
-		[AllowDuplicates]
 		public enum DOCUMENTNAMETYPE : int32
 		{
 			APPNODE = 0,
@@ -2941,7 +2872,6 @@ namespace Win32
 			UNIQUE_TITLE = 4,
 			SOURCE_MAP_URL = 5,
 		}
-		[AllowDuplicates]
 		public enum PROFILER_SCRIPT_TYPE : int32
 		{
 			USER = 0,
@@ -2949,7 +2879,6 @@ namespace Win32
 			NATIVE = 2,
 			DOM = 3,
 		}
-		[AllowDuplicates]
 		public enum PROFILER_EVENT_MASK : uint32
 		{
 			SCRIPT_FUNCTION_CALL = 1,
@@ -2958,7 +2887,6 @@ namespace Win32
 			ALL = 3,
 			ALL_WITH_DOM = 7,
 		}
-		[AllowDuplicates]
 		public enum PROFILER_HEAP_OBJECT_FLAGS : uint32
 		{
 			NEW_OBJECT = 1,
@@ -2993,7 +2921,6 @@ namespace Win32
 			SET_COLLECTION_LIST = 13,
 			MAX_VALUE = 13,
 		}
-		[AllowDuplicates]
 		public enum PROFILER_HEAP_OBJECT_RELATIONSHIP_FLAGS : uint32
 		{
 			NONE = 0,
@@ -3002,7 +2929,6 @@ namespace Win32
 			LET_VARIABLE = 262144,
 			CONST_VARIABLE = 524288,
 		}
-		[AllowDuplicates]
 		public enum PROFILER_HEAP_ENUM_FLAGS : uint32
 		{
 			NONE = 0,
@@ -3010,7 +2936,6 @@ namespace Win32
 			SUBSTRINGS = 2,
 			RELATIONSHIP_SUBSTRINGS = 3,
 		}
-		[AllowDuplicates]
 		public enum PROFILER_RELATIONSHIP_INFO : int32
 		{
 			NUMBER = 1,
@@ -3020,12 +2945,10 @@ namespace Win32
 			BSTR = 5,
 			SUBSTRING = 6,
 		}
-		[AllowDuplicates]
 		public enum PROFILER_HEAP_SUMMARY_VERSION : int32
 		{
 			PROFILER_HEAP_SUMMARY_VERSION_1 = 1,
 		}
-		[AllowDuplicates]
 		public enum IMAGEHLP_STATUS_REASON : int32
 		{
 			OutOfMemory = 0,
@@ -3049,7 +2972,6 @@ namespace Win32
 			ForwarderNOT32 = 18,
 			ForwarderNOT64 = 19,
 		}
-		[AllowDuplicates]
 		public enum ADDRESS_MODE : int32
 		{
 			_1616 = 0,
@@ -3057,7 +2979,6 @@ namespace Win32
 			Real = 2,
 			Flat = 3,
 		}
-		[AllowDuplicates]
 		public enum SYM_TYPE : int32
 		{
 			SymNone = 0,
@@ -3071,7 +2992,6 @@ namespace Win32
 			SymVirtual = 8,
 			NumSymTypes = 9,
 		}
-		[AllowDuplicates]
 		public enum IMAGEHLP_HD_TYPE : int32
 		{
 			Base = 0,
@@ -3079,7 +2999,6 @@ namespace Win32
 			Src = 2,
 			Max = 3,
 		}
-		[AllowDuplicates]
 		public enum IMAGEHLP_EXTENDED_OPTIONS : int32
 		{
 			DISABLEACCESSTIMEUPDATE = 0,
@@ -3088,7 +3007,6 @@ namespace Win32
 			NEVERLOADSYMBOLS = 3,
 			MAX = 4,
 		}
-		[AllowDuplicates]
 		public enum IMAGEHLP_SYMBOL_TYPE_INFO : int32
 		{
 			TI_GET_SYMTAG = 0,
@@ -3128,7 +3046,6 @@ namespace Win32
 			TI_GET_OBJECTPOINTERTYPE = 34,
 			IMAGEHLP_SYMBOL_TYPE_INFO_MAX = 35,
 		}
-		[AllowDuplicates]
 		public enum IMAGEHLP_SF_TYPE : int32
 		{
 			Image = 0,
@@ -3137,14 +3054,12 @@ namespace Win32
 			Mpd = 3,
 			Max = 4,
 		}
-		[AllowDuplicates]
 		public enum APPLICATION_NODE_EVENT_FILTER : int32
 		{
 			NOTHING = 0,
 			ANONYMOUS_CODE = 1,
 			EVAL_CODE = 2,
 		}
-		[AllowDuplicates]
 		public enum SCRIPT_DEBUGGER_OPTIONS : int32
 		{
 			NONE = 0,
@@ -3153,14 +3068,12 @@ namespace Win32
 			ENABLE_NONUSER_CODE_SUPPORT = 4,
 			ENABLE_LIBRARY_STACK_FRAME = 8,
 		}
-		[AllowDuplicates]
 		public enum SCRIPT_ERROR_DEBUG_EXCEPTION_THROWN_KIND : int32
 		{
 			FIRST_CHANCE = 0,
 			USER_UNHANDLED = 1,
 			UNHANDLED = 2,
 		}
-		[AllowDuplicates]
 		public enum SCRIPT_INVOCATION_CONTEXT_TYPE : int32
 		{
 			Event = 0,
@@ -3173,14 +3086,12 @@ namespace Win32
 			WWAExecUnsafeLocalFunction = 7,
 			WWAExecAtPriority = 8,
 		}
-		[AllowDuplicates]
 		public enum DEBUG_STACKFRAME_TYPE : int32
 		{
 			SCRIPT_FRAME = 0,
 			INTERNAL_FRAME = 1,
 			INVOCATION_FRAME = 2,
 		}
-		[AllowDuplicates]
 		public enum DEBUG_EVENT_INFO_TYPE : int32
 		{
 			GENERAL = 0,
@@ -3188,13 +3099,11 @@ namespace Win32
 			ASMJS_SUCCEEDED = 2,
 			ASMJS_FAILED = 3,
 		}
-		[AllowDuplicates]
 		public enum JS_PROPERTY_MEMBERS : int32
 		{
 			LL = 0,
 			RGUMENTS = 1,
 		}
-		[AllowDuplicates]
 		public enum JS_PROPERTY_ATTRIBUTES : int32
 		{
 			ATTRIBUTE_NONE = 0,
@@ -3207,13 +3116,11 @@ namespace Win32
 			FRAME_INCATCHBLOCK = 64,
 			FRAME_INFINALLYBLOCK = 128,
 		}
-		[AllowDuplicates]
 		public enum JsDebugReadMemoryFlags : int32
 		{
 			None = 0,
 			JsDebugAllowPartialRead = 1,
 		}
-		[AllowDuplicates]
 		public enum _DUMP_TYPES : int32
 		{
 			INVALID = -1,
@@ -3226,7 +3133,6 @@ namespace Win32
 			BITMAP_KERNEL = 6,
 			AUTOMATIC = 7,
 		}
-		[AllowDuplicates]
 		public enum WHEA_ERROR_SOURCE_TYPE : int32
 		{
 			MCE = 0,
@@ -3248,7 +3154,6 @@ namespace Win32
 			DeviceDriver = 16,
 			Max = 17,
 		}
-		[AllowDuplicates]
 		public enum WHEA_ERROR_SOURCE_STATE : int32
 		{
 			Stopped = 1,
@@ -3256,7 +3161,6 @@ namespace Win32
 			Removed = 3,
 			RemovePending = 4,
 		}
-		[AllowDuplicates]
 		public enum IPMI_OS_SEL_RECORD_TYPE : int32
 		{
 			Whea = 0,

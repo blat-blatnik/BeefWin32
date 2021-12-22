@@ -78,7 +78,6 @@ namespace Win32
 			LEGACY_API = 2147942400,
 			VALID_BIT_MASK = 3238002687,
 		}
-		[AllowDuplicates]
 		public enum SHUTDOWN_FLAGS : uint32
 		{
 			FORCE_OTHERS = 1,
@@ -99,7 +98,6 @@ namespace Win32
 			VAIL_CONTAINER = 32768,
 			SYSTEM_INITIATED = 65536,
 		}
-		[AllowDuplicates]
 		public enum EXIT_WINDOWS_FLAGS : uint32
 		{
 			HYBRID_SHUTDOWN = 4194304,

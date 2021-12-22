@@ -20,13 +20,11 @@ namespace Win32
 		
 		// --- Enums ---
 		
-		[AllowDuplicates]
 		public enum FDICREATE_CPU_TYPE : uint32
 		{
 			_286 = 0,
 			_386 = 1,
 		}
-		[AllowDuplicates]
 		public enum FCIERROR : int32
 		{
 			NONE = 0,
@@ -40,7 +38,6 @@ namespace Win32
 			MCI_FAIL = 8,
 			CAB_FORMAT_LIMIT = 9,
 		}
-		[AllowDuplicates]
 		public enum FDIERROR : int32
 		{
 			NONE = 0,
@@ -57,14 +54,12 @@ namespace Win32
 			USER_ABORT = 11,
 			EOF = 12,
 		}
-		[AllowDuplicates]
 		public enum FDIDECRYPTTYPE : int32
 		{
 			NEW_CABINET = 0,
 			NEW_FOLDER = 1,
 			DECRYPT = 2,
 		}
-		[AllowDuplicates]
 		public enum FDINOTIFICATIONTYPE : int32
 		{
 			CABINET_INFO = 0,
