@@ -2,7 +2,7 @@
 
 [Beef](https://www.beeflang.org/) bindings for the various Win32 APIs.
 
-This is an **_incomplete_**, **_untested_**, **_work in progress_**. Use at your own peril.
+This is a **mostly untested work in progress**. Use at your own peril.
 
 ## Current state
 
