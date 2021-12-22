@@ -1715,350 +1715,530 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x118610b7, 0x8d94, 0x4030, 0xb5, 0xb8, 0x50, 0x08, 0x89, 0x78, 0x8e, 0x4e);
 			
-			public function HRESULT(IEnumVdsObject *self, uint32 celt, IUnknown** ppObjectArray, uint32* pcFetched) Next;
-			public function HRESULT(IEnumVdsObject *self, uint32 celt) Skip;
-			public function HRESULT(IEnumVdsObject *self) Reset;
-			public function HRESULT(IEnumVdsObject *self, IEnumVdsObject** ppEnum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumVdsObject *self, uint32 celt, IUnknown** ppObjectArray, uint32* pcFetched) Next;
+				public function HRESULT(IEnumVdsObject *self, uint32 celt) Skip;
+				public function HRESULT(IEnumVdsObject *self) Reset;
+				public function HRESULT(IEnumVdsObject *self, IEnumVdsObject** ppEnum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IVdsAsync : IUnknown
 		{
 			public const new Guid IID = .(0xd5d23b6d, 0x5a55, 0x4492, 0x98, 0x89, 0x39, 0x7a, 0x3c, 0x2d, 0x2d, 0xbc);
 			
-			public function HRESULT(IVdsAsync *self) Cancel;
-			public function HRESULT(IVdsAsync *self, HRESULT* pHrResult, VDS_ASYNC_OUTPUT* pAsyncOut) Wait;
-			public function HRESULT(IVdsAsync *self, HRESULT* pHrResult, uint32* pulPercentCompleted) QueryStatus;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsAsync *self) Cancel;
+				public function HRESULT(IVdsAsync *self, HRESULT* pHrResult, VDS_ASYNC_OUTPUT* pAsyncOut) Wait;
+				public function HRESULT(IVdsAsync *self, HRESULT* pHrResult, uint32* pulPercentCompleted) QueryStatus;
+			}
 		}
 		[CRepr]
 		public struct IVdsAdviseSink : IUnknown
 		{
 			public const new Guid IID = .(0x8326cd1d, 0xcf59, 0x4936, 0xb7, 0x86, 0x5e, 0xfc, 0x08, 0x79, 0x8e, 0x25);
 			
-			public function HRESULT(IVdsAdviseSink *self, int32 lNumberOfNotifications, VDS_NOTIFICATION* pNotificationArray) OnNotify;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsAdviseSink *self, int32 lNumberOfNotifications, VDS_NOTIFICATION* pNotificationArray) OnNotify;
+			}
 		}
 		[CRepr]
 		public struct IVdsProvider : IUnknown
 		{
 			public const new Guid IID = .(0x10c5e575, 0x7984, 0x4e81, 0xa5, 0x6b, 0x43, 0x1f, 0x5f, 0x92, 0xae, 0x42);
 			
-			public function HRESULT(IVdsProvider *self, VDS_PROVIDER_PROP* pProviderProp) GetProperties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsProvider *self, VDS_PROVIDER_PROP* pProviderProp) GetProperties;
+			}
 		}
 		[CRepr]
 		public struct IVdsProviderSupport : IUnknown
 		{
 			public const new Guid IID = .(0x1732be13, 0xe8f9, 0x4a03, 0xbf, 0xbc, 0x5f, 0x61, 0x6a, 0xa6, 0x6c, 0xe1);
 			
-			public function HRESULT(IVdsProviderSupport *self, uint32* ulVersionSupport) GetVersionSupport;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsProviderSupport *self, uint32* ulVersionSupport) GetVersionSupport;
+			}
 		}
 		[CRepr]
 		public struct IVdsProviderPrivate : IUnknown
 		{
 			public const new Guid IID = .(0x11f3cd41, 0xb7e8, 0x48ff, 0x94, 0x72, 0x9d, 0xff, 0x01, 0x8a, 0xa2, 0x92);
 			
-			public function HRESULT(IVdsProviderPrivate *self, Guid ObjectId, VDS_OBJECT_TYPE type, IUnknown** ppObjectUnk) GetObject;
-			public function HRESULT(IVdsProviderPrivate *self, PWSTR pwszMachineName, IUnknown* pCallbackObject) OnLoad;
-			public function HRESULT(IVdsProviderPrivate *self, BOOL bForceUnload) OnUnload;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsProviderPrivate *self, Guid ObjectId, VDS_OBJECT_TYPE type, IUnknown** ppObjectUnk) GetObject;
+				public function HRESULT(IVdsProviderPrivate *self, PWSTR pwszMachineName, IUnknown* pCallbackObject) OnLoad;
+				public function HRESULT(IVdsProviderPrivate *self, BOOL bForceUnload) OnUnload;
+			}
 		}
 		[CRepr]
 		public struct IVdsHwProvider : IUnknown
 		{
 			public const new Guid IID = .(0xd99bdaae, 0xb13a, 0x4178, 0x9f, 0xdb, 0xe2, 0x7f, 0x16, 0xb4, 0x60, 0x3e);
 			
-			public function HRESULT(IVdsHwProvider *self, IEnumVdsObject** ppEnum) QuerySubSystems;
-			public function HRESULT(IVdsHwProvider *self) Reenumerate;
-			public function HRESULT(IVdsHwProvider *self) Refresh;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsHwProvider *self, IEnumVdsObject** ppEnum) QuerySubSystems;
+				public function HRESULT(IVdsHwProvider *self) Reenumerate;
+				public function HRESULT(IVdsHwProvider *self) Refresh;
+			}
 		}
 		[CRepr]
 		public struct IVdsHwProviderType : IUnknown
 		{
 			public const new Guid IID = .(0x3e0f5166, 0x542d, 0x4fc6, 0x94, 0x7a, 0x01, 0x21, 0x74, 0x24, 0x0b, 0x7e);
 			
-			public function HRESULT(IVdsHwProviderType *self, VDS_HWPROVIDER_TYPE* pType) GetProviderType;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsHwProviderType *self, VDS_HWPROVIDER_TYPE* pType) GetProviderType;
+			}
 		}
 		[CRepr]
 		public struct IVdsHwProviderType2 : IUnknown
 		{
 			public const new Guid IID = .(0x8190236f, 0xc4d0, 0x4e81, 0x80, 0x11, 0xd6, 0x95, 0x12, 0xfc, 0xc9, 0x84);
 			
-			public function HRESULT(IVdsHwProviderType2 *self, VDS_HWPROVIDER_TYPE* pType) GetProviderType2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsHwProviderType2 *self, VDS_HWPROVIDER_TYPE* pType) GetProviderType2;
+			}
 		}
 		[CRepr]
 		public struct IVdsHwProviderStoragePools : IUnknown
 		{
 			public const new Guid IID = .(0xd5b5937a, 0xf188, 0x4c79, 0xb8, 0x6c, 0x11, 0xc9, 0x20, 0xad, 0x11, 0xb8);
 			
-			public function HRESULT(IVdsHwProviderStoragePools *self, uint32 ulFlags, uint64 ullRemainingFreeSpace, VDS_POOL_ATTRIBUTES* pPoolAttributes, IEnumVdsObject** ppEnum) QueryStoragePools;
-			public function HRESULT(IVdsHwProviderStoragePools *self, VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid StoragePoolId, PWSTR pwszUnmaskingList, VDS_HINTS2* pHints2, IVdsAsync** ppAsync) CreateLunInStoragePool;
-			public function HRESULT(IVdsHwProviderStoragePools *self, VDS_LUN_TYPE type, Guid StoragePoolId, VDS_HINTS2* pHints2, uint64* pullMaxLunSize) QueryMaxLunCreateSizeInStoragePool;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsHwProviderStoragePools *self, uint32 ulFlags, uint64 ullRemainingFreeSpace, VDS_POOL_ATTRIBUTES* pPoolAttributes, IEnumVdsObject** ppEnum) QueryStoragePools;
+				public function HRESULT(IVdsHwProviderStoragePools *self, VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid StoragePoolId, PWSTR pwszUnmaskingList, VDS_HINTS2* pHints2, IVdsAsync** ppAsync) CreateLunInStoragePool;
+				public function HRESULT(IVdsHwProviderStoragePools *self, VDS_LUN_TYPE type, Guid StoragePoolId, VDS_HINTS2* pHints2, uint64* pullMaxLunSize) QueryMaxLunCreateSizeInStoragePool;
+			}
 		}
 		[CRepr]
 		public struct IVdsSubSystem : IUnknown
 		{
 			public const new Guid IID = .(0x6fcee2d3, 0x6d90, 0x4f91, 0x80, 0xe2, 0xa5, 0xc7, 0xca, 0xac, 0xa9, 0xd8);
 			
-			public function HRESULT(IVdsSubSystem *self, VDS_SUB_SYSTEM_PROP* pSubSystemProp) GetProperties;
-			public function HRESULT(IVdsSubSystem *self, IVdsProvider** ppProvider) GetProvider;
-			public function HRESULT(IVdsSubSystem *self, IEnumVdsObject** ppEnum) QueryControllers;
-			public function HRESULT(IVdsSubSystem *self, IEnumVdsObject** ppEnum) QueryLuns;
-			public function HRESULT(IVdsSubSystem *self, IEnumVdsObject** ppEnum) QueryDrives;
-			public function HRESULT(IVdsSubSystem *self, int16 sBusNumber, int16 sSlotNumber, IVdsDrive** ppDrive) GetDrive;
-			public function HRESULT(IVdsSubSystem *self) Reenumerate;
-			public function HRESULT(IVdsSubSystem *self, Guid* pOnlineControllerIdArray, int32 lNumberOfOnlineControllers, Guid* pOfflineControllerIdArray, int32 lNumberOfOfflineControllers) SetControllerStatus;
-			public function HRESULT(IVdsSubSystem *self, VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid* pDriveIdArray, int32 lNumberOfDrives, PWSTR pwszUnmaskingList, VDS_HINTS* pHints, IVdsAsync** ppAsync) CreateLun;
-			public function HRESULT(IVdsSubSystem *self, Guid DriveToBeReplaced, Guid ReplacementDrive) ReplaceDrive;
-			public function HRESULT(IVdsSubSystem *self, VDS_SUB_SYSTEM_STATUS status) SetStatus;
-			public function HRESULT(IVdsSubSystem *self, VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS* pHints, uint64* pullMaxLunSize) QueryMaxLunCreateSize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsSubSystem *self, VDS_SUB_SYSTEM_PROP* pSubSystemProp) GetProperties;
+				public function HRESULT(IVdsSubSystem *self, IVdsProvider** ppProvider) GetProvider;
+				public function HRESULT(IVdsSubSystem *self, IEnumVdsObject** ppEnum) QueryControllers;
+				public function HRESULT(IVdsSubSystem *self, IEnumVdsObject** ppEnum) QueryLuns;
+				public function HRESULT(IVdsSubSystem *self, IEnumVdsObject** ppEnum) QueryDrives;
+				public function HRESULT(IVdsSubSystem *self, int16 sBusNumber, int16 sSlotNumber, IVdsDrive** ppDrive) GetDrive;
+				public function HRESULT(IVdsSubSystem *self) Reenumerate;
+				public function HRESULT(IVdsSubSystem *self, Guid* pOnlineControllerIdArray, int32 lNumberOfOnlineControllers, Guid* pOfflineControllerIdArray, int32 lNumberOfOfflineControllers) SetControllerStatus;
+				public function HRESULT(IVdsSubSystem *self, VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid* pDriveIdArray, int32 lNumberOfDrives, PWSTR pwszUnmaskingList, VDS_HINTS* pHints, IVdsAsync** ppAsync) CreateLun;
+				public function HRESULT(IVdsSubSystem *self, Guid DriveToBeReplaced, Guid ReplacementDrive) ReplaceDrive;
+				public function HRESULT(IVdsSubSystem *self, VDS_SUB_SYSTEM_STATUS status) SetStatus;
+				public function HRESULT(IVdsSubSystem *self, VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS* pHints, uint64* pullMaxLunSize) QueryMaxLunCreateSize;
+			}
 		}
 		[CRepr]
 		public struct IVdsSubSystem2 : IUnknown
 		{
 			public const new Guid IID = .(0xbe666735, 0x7800, 0x4a77, 0x9d, 0x9c, 0x40, 0xf8, 0x5b, 0x87, 0xe2, 0x92);
 			
-			public function HRESULT(IVdsSubSystem2 *self, VDS_SUB_SYSTEM_PROP2* pSubSystemProp2) GetProperties2;
-			public function HRESULT(IVdsSubSystem2 *self, int16 sBusNumber, int16 sSlotNumber, uint32 ulEnclosureNumber, IVdsDrive** ppDrive) GetDrive2;
-			public function HRESULT(IVdsSubSystem2 *self, VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid* pDriveIdArray, int32 lNumberOfDrives, PWSTR pwszUnmaskingList, VDS_HINTS2* pHints2, IVdsAsync** ppAsync) CreateLun2;
-			public function HRESULT(IVdsSubSystem2 *self, VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS2* pHints2, uint64* pullMaxLunSize) QueryMaxLunCreateSize2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsSubSystem2 *self, VDS_SUB_SYSTEM_PROP2* pSubSystemProp2) GetProperties2;
+				public function HRESULT(IVdsSubSystem2 *self, int16 sBusNumber, int16 sSlotNumber, uint32 ulEnclosureNumber, IVdsDrive** ppDrive) GetDrive2;
+				public function HRESULT(IVdsSubSystem2 *self, VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid* pDriveIdArray, int32 lNumberOfDrives, PWSTR pwszUnmaskingList, VDS_HINTS2* pHints2, IVdsAsync** ppAsync) CreateLun2;
+				public function HRESULT(IVdsSubSystem2 *self, VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS2* pHints2, uint64* pullMaxLunSize) QueryMaxLunCreateSize2;
+			}
 		}
 		[CRepr]
 		public struct IVdsSubSystemNaming : IUnknown
 		{
 			public const new Guid IID = .(0x0d70faa3, 0x9cd4, 0x4900, 0xaa, 0x20, 0x69, 0x81, 0xb6, 0xaa, 0xfc, 0x75);
 			
-			public function HRESULT(IVdsSubSystemNaming *self, PWSTR pwszFriendlyName) SetFriendlyName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsSubSystemNaming *self, PWSTR pwszFriendlyName) SetFriendlyName;
+			}
 		}
 		[CRepr]
 		public struct IVdsSubSystemIscsi : IUnknown
 		{
 			public const new Guid IID = .(0x0027346f, 0x40d0, 0x4b45, 0x8c, 0xec, 0x59, 0x06, 0xdc, 0x03, 0x80, 0xc8);
 			
-			public function HRESULT(IVdsSubSystemIscsi *self, IEnumVdsObject** ppEnum) QueryTargets;
-			public function HRESULT(IVdsSubSystemIscsi *self, IEnumVdsObject** ppEnum) QueryPortals;
-			public function HRESULT(IVdsSubSystemIscsi *self, PWSTR pwszIscsiName, PWSTR pwszFriendlyName, IVdsAsync** ppAsync) CreateTarget;
-			public function HRESULT(IVdsSubSystemIscsi *self, VDS_ISCSI_IPSEC_KEY* pIpsecKey) SetIpsecGroupPresharedKey;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsSubSystemIscsi *self, IEnumVdsObject** ppEnum) QueryTargets;
+				public function HRESULT(IVdsSubSystemIscsi *self, IEnumVdsObject** ppEnum) QueryPortals;
+				public function HRESULT(IVdsSubSystemIscsi *self, PWSTR pwszIscsiName, PWSTR pwszFriendlyName, IVdsAsync** ppAsync) CreateTarget;
+				public function HRESULT(IVdsSubSystemIscsi *self, VDS_ISCSI_IPSEC_KEY* pIpsecKey) SetIpsecGroupPresharedKey;
+			}
 		}
 		[CRepr]
 		public struct IVdsSubSystemInterconnect : IUnknown
 		{
 			public const new Guid IID = .(0x9e6fa560, 0xc141, 0x477b, 0x83, 0xba, 0x0b, 0x6c, 0x38, 0xf7, 0xfe, 0xbf);
 			
-			public function HRESULT(IVdsSubSystemInterconnect *self, uint32* pulSupportedInterconnectsFlag) GetSupportedInterconnects;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsSubSystemInterconnect *self, uint32* pulSupportedInterconnectsFlag) GetSupportedInterconnects;
+			}
 		}
 		[CRepr]
 		public struct IVdsControllerPort : IUnknown
 		{
 			public const new Guid IID = .(0x18691d0d, 0x4e7f, 0x43e8, 0x92, 0xe4, 0xcf, 0x44, 0xbe, 0xee, 0xd1, 0x1c);
 			
-			public function HRESULT(IVdsControllerPort *self, VDS_PORT_PROP* pPortProp) GetProperties;
-			public function HRESULT(IVdsControllerPort *self, IVdsController** ppController) GetController;
-			public function HRESULT(IVdsControllerPort *self, IEnumVdsObject** ppEnum) QueryAssociatedLuns;
-			public function HRESULT(IVdsControllerPort *self) Reset;
-			public function HRESULT(IVdsControllerPort *self, VDS_PORT_STATUS status) SetStatus;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsControllerPort *self, VDS_PORT_PROP* pPortProp) GetProperties;
+				public function HRESULT(IVdsControllerPort *self, IVdsController** ppController) GetController;
+				public function HRESULT(IVdsControllerPort *self, IEnumVdsObject** ppEnum) QueryAssociatedLuns;
+				public function HRESULT(IVdsControllerPort *self) Reset;
+				public function HRESULT(IVdsControllerPort *self, VDS_PORT_STATUS status) SetStatus;
+			}
 		}
 		[CRepr]
 		public struct IVdsController : IUnknown
 		{
 			public const new Guid IID = .(0xcb53d96e, 0xdffb, 0x474a, 0xa0, 0x78, 0x79, 0x0d, 0x1e, 0x2b, 0xc0, 0x82);
 			
-			public function HRESULT(IVdsController *self, VDS_CONTROLLER_PROP* pControllerProp) GetProperties;
-			public function HRESULT(IVdsController *self, IVdsSubSystem** ppSubSystem) GetSubSystem;
-			public function HRESULT(IVdsController *self, int16 sPortNumber, VDS_PORT_PROP* pPortProp) GetPortProperties;
-			public function HRESULT(IVdsController *self) FlushCache;
-			public function HRESULT(IVdsController *self) InvalidateCache;
-			public function HRESULT(IVdsController *self) Reset;
-			public function HRESULT(IVdsController *self, IEnumVdsObject** ppEnum) QueryAssociatedLuns;
-			public function HRESULT(IVdsController *self, VDS_CONTROLLER_STATUS status) SetStatus;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsController *self, VDS_CONTROLLER_PROP* pControllerProp) GetProperties;
+				public function HRESULT(IVdsController *self, IVdsSubSystem** ppSubSystem) GetSubSystem;
+				public function HRESULT(IVdsController *self, int16 sPortNumber, VDS_PORT_PROP* pPortProp) GetPortProperties;
+				public function HRESULT(IVdsController *self) FlushCache;
+				public function HRESULT(IVdsController *self) InvalidateCache;
+				public function HRESULT(IVdsController *self) Reset;
+				public function HRESULT(IVdsController *self, IEnumVdsObject** ppEnum) QueryAssociatedLuns;
+				public function HRESULT(IVdsController *self, VDS_CONTROLLER_STATUS status) SetStatus;
+			}
 		}
 		[CRepr]
 		public struct IVdsControllerControllerPort : IUnknown
 		{
 			public const new Guid IID = .(0xca5d735f, 0x6bae, 0x42c0, 0xb3, 0x0e, 0xf2, 0x66, 0x60, 0x45, 0xce, 0x71);
 			
-			public function HRESULT(IVdsControllerControllerPort *self, IEnumVdsObject** ppEnum) QueryControllerPorts;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsControllerControllerPort *self, IEnumVdsObject** ppEnum) QueryControllerPorts;
+			}
 		}
 		[CRepr]
 		public struct IVdsDrive : IUnknown
 		{
 			public const new Guid IID = .(0xff24efa4, 0xaade, 0x4b6b, 0x89, 0x8b, 0xea, 0xa6, 0xa2, 0x08, 0x87, 0xc7);
 			
-			public function HRESULT(IVdsDrive *self, VDS_DRIVE_PROP* pDriveProp) GetProperties;
-			public function HRESULT(IVdsDrive *self, IVdsSubSystem** ppSubSystem) GetSubSystem;
-			public function HRESULT(IVdsDrive *self, VDS_DRIVE_EXTENT** ppExtentArray, int32* plNumberOfExtents) QueryExtents;
-			public function HRESULT(IVdsDrive *self, uint32 ulFlags) SetFlags;
-			public function HRESULT(IVdsDrive *self, uint32 ulFlags) ClearFlags;
-			public function HRESULT(IVdsDrive *self, VDS_DRIVE_STATUS status) SetStatus;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsDrive *self, VDS_DRIVE_PROP* pDriveProp) GetProperties;
+				public function HRESULT(IVdsDrive *self, IVdsSubSystem** ppSubSystem) GetSubSystem;
+				public function HRESULT(IVdsDrive *self, VDS_DRIVE_EXTENT** ppExtentArray, int32* plNumberOfExtents) QueryExtents;
+				public function HRESULT(IVdsDrive *self, uint32 ulFlags) SetFlags;
+				public function HRESULT(IVdsDrive *self, uint32 ulFlags) ClearFlags;
+				public function HRESULT(IVdsDrive *self, VDS_DRIVE_STATUS status) SetStatus;
+			}
 		}
 		[CRepr]
 		public struct IVdsDrive2 : IUnknown
 		{
 			public const new Guid IID = .(0x60b5a730, 0xaddf, 0x4436, 0x8c, 0xa7, 0x57, 0x69, 0xe2, 0xd1, 0xff, 0xa4);
 			
-			public function HRESULT(IVdsDrive2 *self, VDS_DRIVE_PROP2* pDriveProp2) GetProperties2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsDrive2 *self, VDS_DRIVE_PROP2* pDriveProp2) GetProperties2;
+			}
 		}
 		[CRepr]
 		public struct IVdsLun : IUnknown
 		{
 			public const new Guid IID = .(0x3540a9c7, 0xe60f, 0x4111, 0xa8, 0x40, 0x8b, 0xba, 0x6c, 0x2c, 0x83, 0xd8);
 			
-			public function HRESULT(IVdsLun *self, VDS_LUN_PROP* pLunProp) GetProperties;
-			public function HRESULT(IVdsLun *self, IVdsSubSystem** ppSubSystem) GetSubSystem;
-			public function HRESULT(IVdsLun *self, VDS_LUN_INFORMATION* pLunInfo) GetIdentificationData;
-			public function HRESULT(IVdsLun *self, IEnumVdsObject** ppEnum) QueryActiveControllers;
-			public function HRESULT(IVdsLun *self, uint64 ullNumberOfBytesToAdd, Guid* pDriveIdArray, int32 lNumberOfDrives, IVdsAsync** ppAsync) Extend;
-			public function HRESULT(IVdsLun *self, uint64 ullNumberOfBytesToRemove, IVdsAsync** ppAsync) Shrink;
-			public function HRESULT(IVdsLun *self, IEnumVdsObject** ppEnum) QueryPlexes;
-			public function HRESULT(IVdsLun *self, Guid lunId, IVdsAsync** ppAsync) AddPlex;
-			public function HRESULT(IVdsLun *self, Guid plexId, IVdsAsync** ppAsync) RemovePlex;
-			public function HRESULT(IVdsLun *self, IVdsAsync** ppAsync) Recover;
-			public function HRESULT(IVdsLun *self, PWSTR pwszUnmaskingList) SetMask;
-			public function HRESULT(IVdsLun *self) Delete;
-			public function HRESULT(IVdsLun *self, Guid* pActiveControllerIdArray, int32 lNumberOfActiveControllers, Guid* pInactiveControllerIdArray, int32 lNumberOfInactiveControllers) AssociateControllers;
-			public function HRESULT(IVdsLun *self, VDS_HINTS* pHints) QueryHints;
-			public function HRESULT(IVdsLun *self, VDS_HINTS* pHints) ApplyHints;
-			public function HRESULT(IVdsLun *self, VDS_LUN_STATUS status) SetStatus;
-			public function HRESULT(IVdsLun *self, Guid* pDriveIdArray, int32 lNumberOfDrives, uint64* pullMaxBytesToBeAdded) QueryMaxLunExtendSize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsLun *self, VDS_LUN_PROP* pLunProp) GetProperties;
+				public function HRESULT(IVdsLun *self, IVdsSubSystem** ppSubSystem) GetSubSystem;
+				public function HRESULT(IVdsLun *self, VDS_LUN_INFORMATION* pLunInfo) GetIdentificationData;
+				public function HRESULT(IVdsLun *self, IEnumVdsObject** ppEnum) QueryActiveControllers;
+				public function HRESULT(IVdsLun *self, uint64 ullNumberOfBytesToAdd, Guid* pDriveIdArray, int32 lNumberOfDrives, IVdsAsync** ppAsync) Extend;
+				public function HRESULT(IVdsLun *self, uint64 ullNumberOfBytesToRemove, IVdsAsync** ppAsync) Shrink;
+				public function HRESULT(IVdsLun *self, IEnumVdsObject** ppEnum) QueryPlexes;
+				public function HRESULT(IVdsLun *self, Guid lunId, IVdsAsync** ppAsync) AddPlex;
+				public function HRESULT(IVdsLun *self, Guid plexId, IVdsAsync** ppAsync) RemovePlex;
+				public function HRESULT(IVdsLun *self, IVdsAsync** ppAsync) Recover;
+				public function HRESULT(IVdsLun *self, PWSTR pwszUnmaskingList) SetMask;
+				public function HRESULT(IVdsLun *self) Delete;
+				public function HRESULT(IVdsLun *self, Guid* pActiveControllerIdArray, int32 lNumberOfActiveControllers, Guid* pInactiveControllerIdArray, int32 lNumberOfInactiveControllers) AssociateControllers;
+				public function HRESULT(IVdsLun *self, VDS_HINTS* pHints) QueryHints;
+				public function HRESULT(IVdsLun *self, VDS_HINTS* pHints) ApplyHints;
+				public function HRESULT(IVdsLun *self, VDS_LUN_STATUS status) SetStatus;
+				public function HRESULT(IVdsLun *self, Guid* pDriveIdArray, int32 lNumberOfDrives, uint64* pullMaxBytesToBeAdded) QueryMaxLunExtendSize;
+			}
 		}
 		[CRepr]
 		public struct IVdsLun2 : IUnknown
 		{
 			public const new Guid IID = .(0xe5b3a735, 0x9efb, 0x499a, 0x80, 0x71, 0x43, 0x94, 0xd9, 0xee, 0x6f, 0xcb);
 			
-			public function HRESULT(IVdsLun2 *self, VDS_HINTS2* pHints2) QueryHints2;
-			public function HRESULT(IVdsLun2 *self, VDS_HINTS2* pHints2) ApplyHints2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsLun2 *self, VDS_HINTS2* pHints2) QueryHints2;
+				public function HRESULT(IVdsLun2 *self, VDS_HINTS2* pHints2) ApplyHints2;
+			}
 		}
 		[CRepr]
 		public struct IVdsLunNaming : IUnknown
 		{
 			public const new Guid IID = .(0x907504cb, 0x6b4e, 0x4d88, 0xa3, 0x4d, 0x17, 0xba, 0x66, 0x1f, 0xbb, 0x06);
 			
-			public function HRESULT(IVdsLunNaming *self, PWSTR pwszFriendlyName) SetFriendlyName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsLunNaming *self, PWSTR pwszFriendlyName) SetFriendlyName;
+			}
 		}
 		[CRepr]
 		public struct IVdsLunNumber : IUnknown
 		{
 			public const new Guid IID = .(0xd3f95e46, 0x54b3, 0x41f9, 0xb6, 0x78, 0x0f, 0x18, 0x71, 0x44, 0x3a, 0x08);
 			
-			public function HRESULT(IVdsLunNumber *self, uint32* pulLunNumber) GetLunNumber;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsLunNumber *self, uint32* pulLunNumber) GetLunNumber;
+			}
 		}
 		[CRepr]
 		public struct IVdsLunControllerPorts : IUnknown
 		{
 			public const new Guid IID = .(0x451fe266, 0xda6d, 0x406a, 0xbb, 0x60, 0x82, 0xe5, 0x34, 0xf8, 0x5a, 0xeb);
 			
-			public function HRESULT(IVdsLunControllerPorts *self, Guid* pActiveControllerPortIdArray, int32 lNumberOfActiveControllerPorts, Guid* pInactiveControllerPortIdArray, int32 lNumberOfInactiveControllerPorts) AssociateControllerPorts;
-			public function HRESULT(IVdsLunControllerPorts *self, IEnumVdsObject** ppEnum) QueryActiveControllerPorts;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsLunControllerPorts *self, Guid* pActiveControllerPortIdArray, int32 lNumberOfActiveControllerPorts, Guid* pInactiveControllerPortIdArray, int32 lNumberOfInactiveControllerPorts) AssociateControllerPorts;
+				public function HRESULT(IVdsLunControllerPorts *self, IEnumVdsObject** ppEnum) QueryActiveControllerPorts;
+			}
 		}
 		[CRepr]
 		public struct IVdsLunMpio : IUnknown
 		{
 			public const new Guid IID = .(0x7c5fbae3, 0x333a, 0x48a1, 0xa9, 0x82, 0x33, 0xc1, 0x57, 0x88, 0xcd, 0xe3);
 			
-			public function HRESULT(IVdsLunMpio *self, VDS_PATH_INFO** ppPaths, int32* plNumberOfPaths) GetPathInfo;
-			public function HRESULT(IVdsLunMpio *self, VDS_LOADBALANCE_POLICY_ENUM* pPolicy, VDS_PATH_POLICY** ppPaths, int32* plNumberOfPaths) GetLoadBalancePolicy;
-			public function HRESULT(IVdsLunMpio *self, VDS_LOADBALANCE_POLICY_ENUM policy, VDS_PATH_POLICY* pPaths, int32 lNumberOfPaths) SetLoadBalancePolicy;
-			public function HRESULT(IVdsLunMpio *self, uint32* pulLbFlags) GetSupportedLbPolicies;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsLunMpio *self, VDS_PATH_INFO** ppPaths, int32* plNumberOfPaths) GetPathInfo;
+				public function HRESULT(IVdsLunMpio *self, VDS_LOADBALANCE_POLICY_ENUM* pPolicy, VDS_PATH_POLICY** ppPaths, int32* plNumberOfPaths) GetLoadBalancePolicy;
+				public function HRESULT(IVdsLunMpio *self, VDS_LOADBALANCE_POLICY_ENUM policy, VDS_PATH_POLICY* pPaths, int32 lNumberOfPaths) SetLoadBalancePolicy;
+				public function HRESULT(IVdsLunMpio *self, uint32* pulLbFlags) GetSupportedLbPolicies;
+			}
 		}
 		[CRepr]
 		public struct IVdsLunIscsi : IUnknown
 		{
 			public const new Guid IID = .(0x0d7c1e64, 0xb59b, 0x45ae, 0xb8, 0x6a, 0x2c, 0x2c, 0xc6, 0xa4, 0x20, 0x67);
 			
-			public function HRESULT(IVdsLunIscsi *self, Guid* pTargetIdArray, int32 lNumberOfTargets) AssociateTargets;
-			public function HRESULT(IVdsLunIscsi *self, IEnumVdsObject** ppEnum) QueryAssociatedTargets;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsLunIscsi *self, Guid* pTargetIdArray, int32 lNumberOfTargets) AssociateTargets;
+				public function HRESULT(IVdsLunIscsi *self, IEnumVdsObject** ppEnum) QueryAssociatedTargets;
+			}
 		}
 		[CRepr]
 		public struct IVdsLunPlex : IUnknown
 		{
 			public const new Guid IID = .(0x0ee1a790, 0x5d2e, 0x4abb, 0x8c, 0x99, 0xc4, 0x81, 0xe8, 0xbe, 0x21, 0x38);
 			
-			public function HRESULT(IVdsLunPlex *self, VDS_LUN_PLEX_PROP* pPlexProp) GetProperties;
-			public function HRESULT(IVdsLunPlex *self, IVdsLun** ppLun) GetLun;
-			public function HRESULT(IVdsLunPlex *self, VDS_DRIVE_EXTENT** ppExtentArray, int32* plNumberOfExtents) QueryExtents;
-			public function HRESULT(IVdsLunPlex *self, VDS_HINTS* pHints) QueryHints;
-			public function HRESULT(IVdsLunPlex *self, VDS_HINTS* pHints) ApplyHints;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsLunPlex *self, VDS_LUN_PLEX_PROP* pPlexProp) GetProperties;
+				public function HRESULT(IVdsLunPlex *self, IVdsLun** ppLun) GetLun;
+				public function HRESULT(IVdsLunPlex *self, VDS_DRIVE_EXTENT** ppExtentArray, int32* plNumberOfExtents) QueryExtents;
+				public function HRESULT(IVdsLunPlex *self, VDS_HINTS* pHints) QueryHints;
+				public function HRESULT(IVdsLunPlex *self, VDS_HINTS* pHints) ApplyHints;
+			}
 		}
 		[CRepr]
 		public struct IVdsIscsiPortal : IUnknown
 		{
 			public const new Guid IID = .(0x7fa1499d, 0xec85, 0x4a8a, 0xa4, 0x7b, 0xff, 0x69, 0x20, 0x1f, 0xcd, 0x34);
 			
-			public function HRESULT(IVdsIscsiPortal *self, VDS_ISCSI_PORTAL_PROP* pPortalProp) GetProperties;
-			public function HRESULT(IVdsIscsiPortal *self, IVdsSubSystem** ppSubSystem) GetSubSystem;
-			public function HRESULT(IVdsIscsiPortal *self, IEnumVdsObject** ppEnum) QueryAssociatedPortalGroups;
-			public function HRESULT(IVdsIscsiPortal *self, VDS_ISCSI_PORTAL_STATUS status) SetStatus;
-			public function HRESULT(IVdsIscsiPortal *self, VDS_IPADDRESS* pTunnelAddress, VDS_IPADDRESS* pDestinationAddress) SetIpsecTunnelAddress;
-			public function HRESULT(IVdsIscsiPortal *self, VDS_IPADDRESS* pInitiatorPortalAddress, uint64* pullSecurityFlags) GetIpsecSecurity;
-			public function HRESULT(IVdsIscsiPortal *self, VDS_IPADDRESS* pInitiatorPortalAddress, uint64 ullSecurityFlags, VDS_ISCSI_IPSEC_KEY* pIpsecKey) SetIpsecSecurity;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsIscsiPortal *self, VDS_ISCSI_PORTAL_PROP* pPortalProp) GetProperties;
+				public function HRESULT(IVdsIscsiPortal *self, IVdsSubSystem** ppSubSystem) GetSubSystem;
+				public function HRESULT(IVdsIscsiPortal *self, IEnumVdsObject** ppEnum) QueryAssociatedPortalGroups;
+				public function HRESULT(IVdsIscsiPortal *self, VDS_ISCSI_PORTAL_STATUS status) SetStatus;
+				public function HRESULT(IVdsIscsiPortal *self, VDS_IPADDRESS* pTunnelAddress, VDS_IPADDRESS* pDestinationAddress) SetIpsecTunnelAddress;
+				public function HRESULT(IVdsIscsiPortal *self, VDS_IPADDRESS* pInitiatorPortalAddress, uint64* pullSecurityFlags) GetIpsecSecurity;
+				public function HRESULT(IVdsIscsiPortal *self, VDS_IPADDRESS* pInitiatorPortalAddress, uint64 ullSecurityFlags, VDS_ISCSI_IPSEC_KEY* pIpsecKey) SetIpsecSecurity;
+			}
 		}
 		[CRepr]
 		public struct IVdsIscsiTarget : IUnknown
 		{
 			public const new Guid IID = .(0xaa8f5055, 0x83e5, 0x4bcc, 0xaa, 0x73, 0x19, 0x85, 0x1a, 0x36, 0xa8, 0x49);
 			
-			public function HRESULT(IVdsIscsiTarget *self, VDS_ISCSI_TARGET_PROP* pTargetProp) GetProperties;
-			public function HRESULT(IVdsIscsiTarget *self, IVdsSubSystem** ppSubSystem) GetSubSystem;
-			public function HRESULT(IVdsIscsiTarget *self, IEnumVdsObject** ppEnum) QueryPortalGroups;
-			public function HRESULT(IVdsIscsiTarget *self, IEnumVdsObject** ppEnum) QueryAssociatedLuns;
-			public function HRESULT(IVdsIscsiTarget *self, IVdsAsync** ppAsync) CreatePortalGroup;
-			public function HRESULT(IVdsIscsiTarget *self, IVdsAsync** ppAsync) Delete;
-			public function HRESULT(IVdsIscsiTarget *self, PWSTR pwszFriendlyName) SetFriendlyName;
-			public function HRESULT(IVdsIscsiTarget *self, VDS_ISCSI_SHARED_SECRET* pTargetSharedSecret, PWSTR pwszInitiatorName) SetSharedSecret;
-			public function HRESULT(IVdsIscsiTarget *self, PWSTR pwszInitiatorName, VDS_ISCSI_SHARED_SECRET* pInitiatorSharedSecret) RememberInitiatorSharedSecret;
-			public function HRESULT(IVdsIscsiTarget *self, PWSTR** pppwszInitiatorList, int32* plNumberOfInitiators) GetConnectedInitiators;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsIscsiTarget *self, VDS_ISCSI_TARGET_PROP* pTargetProp) GetProperties;
+				public function HRESULT(IVdsIscsiTarget *self, IVdsSubSystem** ppSubSystem) GetSubSystem;
+				public function HRESULT(IVdsIscsiTarget *self, IEnumVdsObject** ppEnum) QueryPortalGroups;
+				public function HRESULT(IVdsIscsiTarget *self, IEnumVdsObject** ppEnum) QueryAssociatedLuns;
+				public function HRESULT(IVdsIscsiTarget *self, IVdsAsync** ppAsync) CreatePortalGroup;
+				public function HRESULT(IVdsIscsiTarget *self, IVdsAsync** ppAsync) Delete;
+				public function HRESULT(IVdsIscsiTarget *self, PWSTR pwszFriendlyName) SetFriendlyName;
+				public function HRESULT(IVdsIscsiTarget *self, VDS_ISCSI_SHARED_SECRET* pTargetSharedSecret, PWSTR pwszInitiatorName) SetSharedSecret;
+				public function HRESULT(IVdsIscsiTarget *self, PWSTR pwszInitiatorName, VDS_ISCSI_SHARED_SECRET* pInitiatorSharedSecret) RememberInitiatorSharedSecret;
+				public function HRESULT(IVdsIscsiTarget *self, PWSTR** pppwszInitiatorList, int32* plNumberOfInitiators) GetConnectedInitiators;
+			}
 		}
 		[CRepr]
 		public struct IVdsIscsiPortalGroup : IUnknown
 		{
 			public const new Guid IID = .(0xfef5f89d, 0xa3dd, 0x4b36, 0xbf, 0x28, 0xe7, 0xdd, 0xe0, 0x45, 0xc5, 0x93);
 			
-			public function HRESULT(IVdsIscsiPortalGroup *self, VDS_ISCSI_PORTALGROUP_PROP* pPortalGroupProp) GetProperties;
-			public function HRESULT(IVdsIscsiPortalGroup *self, IVdsIscsiTarget** ppTarget) GetTarget;
-			public function HRESULT(IVdsIscsiPortalGroup *self, IEnumVdsObject** ppEnum) QueryAssociatedPortals;
-			public function HRESULT(IVdsIscsiPortalGroup *self, Guid portalId, IVdsAsync** ppAsync) AddPortal;
-			public function HRESULT(IVdsIscsiPortalGroup *self, Guid portalId, IVdsAsync** ppAsync) RemovePortal;
-			public function HRESULT(IVdsIscsiPortalGroup *self, IVdsAsync** ppAsync) Delete;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsIscsiPortalGroup *self, VDS_ISCSI_PORTALGROUP_PROP* pPortalGroupProp) GetProperties;
+				public function HRESULT(IVdsIscsiPortalGroup *self, IVdsIscsiTarget** ppTarget) GetTarget;
+				public function HRESULT(IVdsIscsiPortalGroup *self, IEnumVdsObject** ppEnum) QueryAssociatedPortals;
+				public function HRESULT(IVdsIscsiPortalGroup *self, Guid portalId, IVdsAsync** ppAsync) AddPortal;
+				public function HRESULT(IVdsIscsiPortalGroup *self, Guid portalId, IVdsAsync** ppAsync) RemovePortal;
+				public function HRESULT(IVdsIscsiPortalGroup *self, IVdsAsync** ppAsync) Delete;
+			}
 		}
 		[CRepr]
 		public struct IVdsStoragePool : IUnknown
 		{
 			public const new Guid IID = .(0x932ca8cf, 0x0eb3, 0x4ba8, 0x96, 0x20, 0x22, 0x66, 0x5d, 0x7f, 0x84, 0x50);
 			
-			public function HRESULT(IVdsStoragePool *self, IVdsProvider** ppProvider) GetProvider;
-			public function HRESULT(IVdsStoragePool *self, VDS_STORAGE_POOL_PROP* pStoragePoolProp) GetProperties;
-			public function HRESULT(IVdsStoragePool *self, VDS_POOL_ATTRIBUTES* pStoragePoolAttributes) GetAttributes;
-			public function HRESULT(IVdsStoragePool *self, VDS_STORAGE_POOL_DRIVE_EXTENT** ppExtentArray, int32* plNumberOfExtents) QueryDriveExtents;
-			public function HRESULT(IVdsStoragePool *self, IEnumVdsObject** ppEnum) QueryAllocatedLuns;
-			public function HRESULT(IVdsStoragePool *self, IEnumVdsObject** ppEnum) QueryAllocatedStoragePools;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsStoragePool *self, IVdsProvider** ppProvider) GetProvider;
+				public function HRESULT(IVdsStoragePool *self, VDS_STORAGE_POOL_PROP* pStoragePoolProp) GetProperties;
+				public function HRESULT(IVdsStoragePool *self, VDS_POOL_ATTRIBUTES* pStoragePoolAttributes) GetAttributes;
+				public function HRESULT(IVdsStoragePool *self, VDS_STORAGE_POOL_DRIVE_EXTENT** ppExtentArray, int32* plNumberOfExtents) QueryDriveExtents;
+				public function HRESULT(IVdsStoragePool *self, IEnumVdsObject** ppEnum) QueryAllocatedLuns;
+				public function HRESULT(IVdsStoragePool *self, IEnumVdsObject** ppEnum) QueryAllocatedStoragePools;
+			}
 		}
 		[CRepr]
 		public struct IVdsMaintenance : IUnknown
 		{
 			public const new Guid IID = .(0xdaebeef3, 0x8523, 0x47ed, 0xa2, 0xb9, 0x05, 0xce, 0xcc, 0xe2, 0xa1, 0xae);
 			
-			public function HRESULT(IVdsMaintenance *self, VDS_MAINTENANCE_OPERATION operation) StartMaintenance;
-			public function HRESULT(IVdsMaintenance *self, VDS_MAINTENANCE_OPERATION operation) StopMaintenance;
-			public function HRESULT(IVdsMaintenance *self, VDS_MAINTENANCE_OPERATION operation, uint32 ulCount) PulseMaintenance;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsMaintenance *self, VDS_MAINTENANCE_OPERATION operation) StartMaintenance;
+				public function HRESULT(IVdsMaintenance *self, VDS_MAINTENANCE_OPERATION operation) StopMaintenance;
+				public function HRESULT(IVdsMaintenance *self, VDS_MAINTENANCE_OPERATION operation, uint32 ulCount) PulseMaintenance;
+			}
 		}
 		[CRepr]
 		public struct IVdsHwProviderPrivate : IUnknown
 		{
 			public const new Guid IID = .(0x98f17bf3, 0x9f33, 0x4f12, 0x87, 0x14, 0x8b, 0x40, 0x75, 0x09, 0x2c, 0x2e);
 			
-			public function HRESULT(IVdsHwProviderPrivate *self, PWSTR pwszDevicePath, VDS_LUN_INFORMATION* pVdsLunInformation, Guid* pLunId) QueryIfCreatedLun;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsHwProviderPrivate *self, PWSTR pwszDevicePath, VDS_LUN_INFORMATION* pVdsLunInformation, Guid* pLunId) QueryIfCreatedLun;
+			}
 		}
 		[CRepr]
 		public struct IVdsHwProviderPrivateMpio : IUnknown
 		{
 			public const new Guid IID = .(0x310a7715, 0xac2b, 0x4c6f, 0x98, 0x27, 0x3d, 0x74, 0x2f, 0x35, 0x16, 0x76);
 			
-			public function HRESULT(IVdsHwProviderPrivateMpio *self, VDS_HBAPORT_PROP hbaPortProp, VDS_PATH_STATUS status) SetAllPathStatusesFromHbaPort;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsHwProviderPrivateMpio *self, VDS_HBAPORT_PROP hbaPortProp, VDS_PATH_STATUS status) SetAllPathStatusesFromHbaPort;
+			}
 		}
 		[CRepr]
 		public struct IVdsAdmin : IUnknown
 		{
 			public const new Guid IID = .(0xd188e97d, 0x85aa, 0x4d33, 0xab, 0xc6, 0x26, 0x29, 0x9a, 0x10, 0xff, 0xc1);
 			
-			public function HRESULT(IVdsAdmin *self, Guid providerId, Guid providerClsid, PWSTR pwszName, VDS_PROVIDER_TYPE type, PWSTR pwszMachineName, PWSTR pwszVersion, Guid guidVersionId) RegisterProvider;
-			public function HRESULT(IVdsAdmin *self, Guid providerId) UnregisterProvider;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVdsAdmin *self, Guid providerId, Guid providerClsid, PWSTR pwszName, VDS_PROVIDER_TYPE type, PWSTR pwszMachineName, PWSTR pwszVersion, Guid guidVersionId) RegisterProvider;
+				public function HRESULT(IVdsAdmin *self, Guid providerId) UnregisterProvider;
+			}
 		}
 		
 	}

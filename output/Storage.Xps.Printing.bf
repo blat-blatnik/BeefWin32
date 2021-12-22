@@ -65,38 +65,63 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7a77dc5f, 0x45d6, 0x4dff, 0x93, 0x07, 0xd8, 0xcb, 0x84, 0x63, 0x47, 0xca);
 			
-			public function HRESULT(IXpsPrintJobStream *self) Close;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ISequentialStream.VTable
+			{
+				public function HRESULT(IXpsPrintJobStream *self) Close;
+			}
 		}
 		[CRepr]
 		public struct IXpsPrintJob : IUnknown
 		{
 			public const new Guid IID = .(0x5ab89b06, 0x8194, 0x425f, 0xab, 0x3b, 0xd7, 0xa9, 0x6e, 0x35, 0x01, 0x61);
 			
-			public function HRESULT(IXpsPrintJob *self) Cancel;
-			public function HRESULT(IXpsPrintJob *self, XPS_JOB_STATUS* jobStatus) GetJobStatus;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IXpsPrintJob *self) Cancel;
+				public function HRESULT(IXpsPrintJob *self, XPS_JOB_STATUS* jobStatus) GetJobStatus;
+			}
 		}
 		[CRepr]
 		public struct IPrintDocumentPackageTarget : IUnknown
 		{
 			public const new Guid IID = .(0x1b8efec4, 0x3019, 0x4c27, 0x96, 0x4e, 0x36, 0x72, 0x02, 0x15, 0x69, 0x06);
 			
-			public function HRESULT(IPrintDocumentPackageTarget *self, uint32* targetCount, Guid** targetTypes) GetPackageTargetTypes;
-			public function HRESULT(IPrintDocumentPackageTarget *self, Guid* guidTargetType, Guid* riid, void** ppvTarget) GetPackageTarget;
-			public function HRESULT(IPrintDocumentPackageTarget *self) Cancel;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPrintDocumentPackageTarget *self, uint32* targetCount, Guid** targetTypes) GetPackageTargetTypes;
+				public function HRESULT(IPrintDocumentPackageTarget *self, Guid* guidTargetType, Guid* riid, void** ppvTarget) GetPackageTarget;
+				public function HRESULT(IPrintDocumentPackageTarget *self) Cancel;
+			}
 		}
 		[CRepr]
 		public struct IPrintDocumentPackageStatusEvent : IDispatch
 		{
 			public const new Guid IID = .(0xed90c8ad, 0x5c34, 0x4d05, 0xa1, 0xec, 0x0e, 0x8a, 0x9b, 0x3a, 0xd7, 0xaf);
 			
-			public function HRESULT(IPrintDocumentPackageStatusEvent *self, PrintDocumentPackageStatus* packageStatus) PackageStatusUpdated;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IPrintDocumentPackageStatusEvent *self, PrintDocumentPackageStatus* packageStatus) PackageStatusUpdated;
+			}
 		}
 		[CRepr]
 		public struct IPrintDocumentPackageTargetFactory : IUnknown
 		{
 			public const new Guid IID = .(0xd2959bf7, 0xb31b, 0x4a3d, 0x96, 0x00, 0x71, 0x2e, 0xb1, 0x33, 0x5b, 0xa4);
 			
-			public function HRESULT(IPrintDocumentPackageTargetFactory *self, PWSTR printerName, PWSTR jobName, IStream* jobOutputStream, IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget) CreateDocumentPackageTargetForPrintJob;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPrintDocumentPackageTargetFactory *self, PWSTR printerName, PWSTR jobName, IStream* jobOutputStream, IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget) CreateDocumentPackageTargetForPrintJob;
+			}
 		}
 		
 		// --- Functions ---

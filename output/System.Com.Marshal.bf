@@ -21,25 +21,40 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x00000003, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IMarshal *self, Guid* riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, Guid* pCid) GetUnmarshalClass;
-			public function HRESULT(IMarshal *self, Guid* riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, uint32* pSize) GetMarshalSizeMax;
-			public function HRESULT(IMarshal *self, IStream* pStm, Guid* riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags) MarshalInterface;
-			public function HRESULT(IMarshal *self, IStream* pStm, Guid* riid, void** ppv) UnmarshalInterface;
-			public function HRESULT(IMarshal *self, IStream* pStm) ReleaseMarshalData;
-			public function HRESULT(IMarshal *self, uint32 dwReserved) DisconnectObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMarshal *self, Guid* riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, Guid* pCid) GetUnmarshalClass;
+				public function HRESULT(IMarshal *self, Guid* riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, uint32* pSize) GetMarshalSizeMax;
+				public function HRESULT(IMarshal *self, IStream* pStm, Guid* riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags) MarshalInterface;
+				public function HRESULT(IMarshal *self, IStream* pStm, Guid* riid, void** ppv) UnmarshalInterface;
+				public function HRESULT(IMarshal *self, IStream* pStm) ReleaseMarshalData;
+				public function HRESULT(IMarshal *self, uint32 dwReserved) DisconnectObject;
+			}
 		}
 		[CRepr]
 		public struct IMarshal2 : IMarshal
 		{
 			public const new Guid IID = .(0x000001cf, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMarshal.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IMarshalingStream : IStream
 		{
 			public const new Guid IID = .(0xd8f2f5e6, 0x6102, 0x4863, 0x9f, 0x26, 0x38, 0x9a, 0x46, 0x76, 0xef, 0xde);
 			
-			public function HRESULT(IMarshalingStream *self, CO_MARSHALING_CONTEXT_ATTRIBUTES attribute, uint* pAttributeValue) GetMarshalingContextAttribute;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IStream.VTable
+			{
+				public function HRESULT(IMarshalingStream *self, CO_MARSHALING_CONTEXT_ATTRIBUTES attribute, uint* pAttributeValue) GetMarshalingContextAttribute;
+			}
 		}
 		
 		// --- Functions ---

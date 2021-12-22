@@ -60,26 +60,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x999bad24, 0x9acd, 0x45bb, 0x86, 0x69, 0x2a, 0x2f, 0xc0, 0x28, 0x8b, 0x04);
 			
-			public function HRESULT(IDeviceRequestCompletionCallback *self, HRESULT requestResult, uint32 bytesReturned) Invoke;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDeviceRequestCompletionCallback *self, HRESULT requestResult, uint32 bytesReturned) Invoke;
+			}
 		}
 		[CRepr]
 		public struct IDeviceIoControl : IUnknown
 		{
 			public const new Guid IID = .(0x9eefe161, 0x23ab, 0x4f18, 0x9b, 0x49, 0x99, 0x1b, 0x58, 0x6a, 0xe9, 0x70);
 			
-			public function HRESULT(IDeviceIoControl *self, uint32 ioControlCode, uint8* inputBuffer, uint32 inputBufferSize, uint8* outputBuffer, uint32 outputBufferSize, uint32* bytesReturned) DeviceIoControlSync;
-			public function HRESULT(IDeviceIoControl *self, uint32 ioControlCode, uint8* inputBuffer, uint32 inputBufferSize, uint8* outputBuffer, uint32 outputBufferSize, IDeviceRequestCompletionCallback* requestCompletionCallback, uint* cancelContext) DeviceIoControlAsync;
-			public function HRESULT(IDeviceIoControl *self, uint cancelContext) CancelOperation;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDeviceIoControl *self, uint32 ioControlCode, uint8* inputBuffer, uint32 inputBufferSize, uint8* outputBuffer, uint32 outputBufferSize, uint32* bytesReturned) DeviceIoControlSync;
+				public function HRESULT(IDeviceIoControl *self, uint32 ioControlCode, uint8* inputBuffer, uint32 inputBufferSize, uint8* outputBuffer, uint32 outputBufferSize, IDeviceRequestCompletionCallback* requestCompletionCallback, uint* cancelContext) DeviceIoControlAsync;
+				public function HRESULT(IDeviceIoControl *self, uint cancelContext) CancelOperation;
+			}
 		}
 		[CRepr]
 		public struct ICreateDeviceAccessAsync : IUnknown
 		{
 			public const new Guid IID = .(0x3474628f, 0x683d, 0x42d2, 0xab, 0xcb, 0xdb, 0x01, 0x8c, 0x65, 0x03, 0xbc);
 			
-			public function HRESULT(ICreateDeviceAccessAsync *self) Cancel;
-			public function HRESULT(ICreateDeviceAccessAsync *self, uint32 timeout) Wait;
-			public function HRESULT(ICreateDeviceAccessAsync *self) Close;
-			public function HRESULT(ICreateDeviceAccessAsync *self, Guid* riid, void** deviceAccess) GetResult;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICreateDeviceAccessAsync *self) Cancel;
+				public function HRESULT(ICreateDeviceAccessAsync *self, uint32 timeout) Wait;
+				public function HRESULT(ICreateDeviceAccessAsync *self) Close;
+				public function HRESULT(ICreateDeviceAccessAsync *self, Guid* riid, void** deviceAccess) GetResult;
+			}
 		}
 		
 		// --- Functions ---

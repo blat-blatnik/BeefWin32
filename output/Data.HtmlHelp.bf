@@ -480,124 +480,159 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1f403bb1, 0x9997, 0x11d0, 0xa8, 0x50, 0x00, 0xaa, 0x00, 0x6c, 0x7d, 0x01);
 			
-			public function HRESULT(IITPropList *self, uint32 PropID, PWSTR lpszwString, uint32 dwOperation) Set;
-			public function HRESULT(IITPropList *self, uint32 PropID, void* lpvData, uint32 cbData, uint32 dwOperation) Set2;
-			public function HRESULT(IITPropList *self, uint32 PropID, uint32 dwData, uint32 dwOperation) Set3;
-			public function HRESULT(IITPropList *self, CProperty* Prop) Add;
-			public function HRESULT(IITPropList *self, uint32 PropID, CProperty* Property) Get;
-			public function HRESULT(IITPropList *self) Clear;
-			public function HRESULT(IITPropList *self, BOOL fPersist) SetPersist;
-			public function HRESULT(IITPropList *self, uint32 PropID, BOOL fPersist) SetPersist2;
-			public function HRESULT(IITPropList *self, CProperty* Property) GetFirst;
-			public function HRESULT(IITPropList *self, CProperty* Property) GetNext;
-			public function HRESULT(IITPropList *self, int32* cProp) GetPropCount;
-			public function HRESULT(IITPropList *self, void* lpvData, uint32 dwHdrSize) SaveHeader;
-			public function HRESULT(IITPropList *self, void* lpvHeader, uint32 dwHdrSize, void* lpvData, uint32 dwBufSize) SaveData;
-			public function HRESULT(IITPropList *self, uint32* dwHdrSize) GetHeaderSize;
-			public function HRESULT(IITPropList *self, void* lpvHeader, uint32 dwHdrSize, uint32* dwDataSize) GetDataSize;
-			public function HRESULT(IITPropList *self, void* lpvHeader, uint32 dwHdrSize, IStream* pStream) SaveDataToStream;
-			public function HRESULT(IITPropList *self, void* lpvData, uint32 dwBufSize) LoadFromMem;
-			public function HRESULT(IITPropList *self, void* lpvData, uint32 dwBufSize) SaveToMem;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IPersistStreamInit.VTable
+			{
+				public function HRESULT(IITPropList *self, uint32 PropID, PWSTR lpszwString, uint32 dwOperation) Set;
+				public function HRESULT(IITPropList *self, uint32 PropID, void* lpvData, uint32 cbData, uint32 dwOperation) Set2;
+				public function HRESULT(IITPropList *self, uint32 PropID, uint32 dwData, uint32 dwOperation) Set3;
+				public function HRESULT(IITPropList *self, CProperty* Prop) Add;
+				public function HRESULT(IITPropList *self, uint32 PropID, CProperty* Property) Get;
+				public function HRESULT(IITPropList *self) Clear;
+				public function HRESULT(IITPropList *self, BOOL fPersist) SetPersist;
+				public function HRESULT(IITPropList *self, uint32 PropID, BOOL fPersist) SetPersist2;
+				public function HRESULT(IITPropList *self, CProperty* Property) GetFirst;
+				public function HRESULT(IITPropList *self, CProperty* Property) GetNext;
+				public function HRESULT(IITPropList *self, int32* cProp) GetPropCount;
+				public function HRESULT(IITPropList *self, void* lpvData, uint32 dwHdrSize) SaveHeader;
+				public function HRESULT(IITPropList *self, void* lpvHeader, uint32 dwHdrSize, void* lpvData, uint32 dwBufSize) SaveData;
+				public function HRESULT(IITPropList *self, uint32* dwHdrSize) GetHeaderSize;
+				public function HRESULT(IITPropList *self, void* lpvHeader, uint32 dwHdrSize, uint32* dwDataSize) GetDataSize;
+				public function HRESULT(IITPropList *self, void* lpvHeader, uint32 dwHdrSize, IStream* pStream) SaveDataToStream;
+				public function HRESULT(IITPropList *self, void* lpvData, uint32 dwBufSize) LoadFromMem;
+				public function HRESULT(IITPropList *self, void* lpvData, uint32 dwBufSize) SaveToMem;
+			}
 		}
 		[CRepr]
 		public struct IITDatabase : IUnknown
 		{
 			public const new Guid IID = .(0x8fa0d5a2, 0xdedf, 0x11d0, 0x9a, 0x61, 0x00, 0xc0, 0x4f, 0xb6, 0x8b, 0xf7);
 			
-			public function HRESULT(IITDatabase *self, PWSTR lpszHost, PWSTR lpszMoniker, uint32 dwFlags) Open;
-			public function HRESULT(IITDatabase *self) Close;
-			public function HRESULT(IITDatabase *self, Guid* rclsid, uint32* pdwObjInstance) CreateObject;
-			public function HRESULT(IITDatabase *self, uint32 dwObjInstance, Guid* riid, void** ppvObj) GetObject;
-			public function HRESULT(IITDatabase *self, PWSTR lpwszObject, uint32 dwObjInstance, void** ppvPersistence, BOOL fStream) GetObjectPersistence;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IITDatabase *self, PWSTR lpszHost, PWSTR lpszMoniker, uint32 dwFlags) Open;
+				public function HRESULT(IITDatabase *self) Close;
+				public function HRESULT(IITDatabase *self, Guid* rclsid, uint32* pdwObjInstance) CreateObject;
+				public function HRESULT(IITDatabase *self, uint32 dwObjInstance, Guid* riid, void** ppvObj) GetObject;
+				public function HRESULT(IITDatabase *self, PWSTR lpwszObject, uint32 dwObjInstance, void** ppvPersistence, BOOL fStream) GetObjectPersistence;
+			}
 		}
 		[CRepr]
 		public struct IITWordWheel : IUnknown
 		{
 			public const new Guid IID = .(0x8fa0d5a4, 0xdedf, 0x11d0, 0x9a, 0x61, 0x00, 0xc0, 0x4f, 0xb6, 0x8b, 0xf7);
 			
-			public function HRESULT(IITWordWheel *self, IITDatabase* lpITDB, PWSTR lpszMoniker, WORD_WHEEL_OPEN_FLAGS dwFlags) Open;
-			public function HRESULT(IITWordWheel *self) Close;
-			public function HRESULT(IITWordWheel *self, uint32* pdwCodePageID, uint32* plcid) GetLocaleInfo;
-			public function HRESULT(IITWordWheel *self, uint32* pdwObjInstance) GetSorterInstance;
-			public function HRESULT(IITWordWheel *self, int32* pcEntries) Count;
-			public function HRESULT(IITWordWheel *self, void* lpcvPrefix, BOOL fExactMatch, int32* plEntry) Lookup;
-			public function HRESULT(IITWordWheel *self, int32 lEntry, IITResultSet* lpITResult, int32 cEntries) Lookup2;
-			public function HRESULT(IITWordWheel *self, int32 lEntry, void* lpvKeyBuf, uint32 cbKeyBuf) Lookup3;
-			public function HRESULT(IITWordWheel *self, IITGroup* piitGroup) SetGroup;
-			public function HRESULT(IITWordWheel *self, IITGroup** ppiitGroup) GetGroup;
-			public function HRESULT(IITWordWheel *self, int32 lEntry, uint32* pdwCount) GetDataCount;
-			public function HRESULT(IITWordWheel *self, int32 lEntry, IITResultSet* lpITResult) GetData;
-			public function HRESULT(IITWordWheel *self, IITResultSet* pRS) GetDataColumns;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IITWordWheel *self, IITDatabase* lpITDB, PWSTR lpszMoniker, WORD_WHEEL_OPEN_FLAGS dwFlags) Open;
+				public function HRESULT(IITWordWheel *self) Close;
+				public function HRESULT(IITWordWheel *self, uint32* pdwCodePageID, uint32* plcid) GetLocaleInfo;
+				public function HRESULT(IITWordWheel *self, uint32* pdwObjInstance) GetSorterInstance;
+				public function HRESULT(IITWordWheel *self, int32* pcEntries) Count;
+				public function HRESULT(IITWordWheel *self, void* lpcvPrefix, BOOL fExactMatch, int32* plEntry) Lookup;
+				public function HRESULT(IITWordWheel *self, int32 lEntry, IITResultSet* lpITResult, int32 cEntries) Lookup2;
+				public function HRESULT(IITWordWheel *self, int32 lEntry, void* lpvKeyBuf, uint32 cbKeyBuf) Lookup3;
+				public function HRESULT(IITWordWheel *self, IITGroup* piitGroup) SetGroup;
+				public function HRESULT(IITWordWheel *self, IITGroup** ppiitGroup) GetGroup;
+				public function HRESULT(IITWordWheel *self, int32 lEntry, uint32* pdwCount) GetDataCount;
+				public function HRESULT(IITWordWheel *self, int32 lEntry, IITResultSet* lpITResult) GetData;
+				public function HRESULT(IITWordWheel *self, IITResultSet* pRS) GetDataColumns;
+			}
 		}
 		[CRepr]
 		public struct IStemSink : IUnknown
 		{
 			public const new Guid IID = .(0xfe77c330, 0x7f42, 0x11ce, 0xbe, 0x57, 0x00, 0xaa, 0x00, 0x51, 0xfe, 0x20);
 			
-			public function HRESULT(IStemSink *self, PWSTR pwcInBuf, uint32 cwc) PutAltWord;
-			public function HRESULT(IStemSink *self, PWSTR pwcInBuf, uint32 cwc) PutWord;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IStemSink *self, PWSTR pwcInBuf, uint32 cwc) PutAltWord;
+				public function HRESULT(IStemSink *self, PWSTR pwcInBuf, uint32 cwc) PutWord;
+			}
 		}
 		[CRepr]
 		public struct IStemmerConfig : IUnknown
 		{
 			public const new Guid IID = .(0x8fa0d5a7, 0xdedf, 0x11d0, 0x9a, 0x61, 0x00, 0xc0, 0x4f, 0xb6, 0x8b, 0xf7);
 			
-			public function HRESULT(IStemmerConfig *self, uint32 dwCodePageID, uint32 lcid) SetLocaleInfo;
-			public function HRESULT(IStemmerConfig *self, uint32* pdwCodePageID, uint32* plcid) GetLocaleInfo;
-			public function HRESULT(IStemmerConfig *self, uint32 grfStemFlags, uint32 dwReserved) SetControlInfo;
-			public function HRESULT(IStemmerConfig *self, uint32* pgrfStemFlags, uint32* pdwReserved) GetControlInfo;
-			public function HRESULT(IStemmerConfig *self, IStream* pStream, uint32 dwExtDataType) LoadExternalStemmerData;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IStemmerConfig *self, uint32 dwCodePageID, uint32 lcid) SetLocaleInfo;
+				public function HRESULT(IStemmerConfig *self, uint32* pdwCodePageID, uint32* plcid) GetLocaleInfo;
+				public function HRESULT(IStemmerConfig *self, uint32 grfStemFlags, uint32 dwReserved) SetControlInfo;
+				public function HRESULT(IStemmerConfig *self, uint32* pgrfStemFlags, uint32* pdwReserved) GetControlInfo;
+				public function HRESULT(IStemmerConfig *self, IStream* pStream, uint32 dwExtDataType) LoadExternalStemmerData;
+			}
 		}
 		[CRepr]
 		public struct IWordBreakerConfig : IUnknown
 		{
 			public const new Guid IID = .(0x8fa0d5a6, 0xdedf, 0x11d0, 0x9a, 0x61, 0x00, 0xc0, 0x4f, 0xb6, 0x8b, 0xf7);
 			
-			public function HRESULT(IWordBreakerConfig *self, uint32 dwCodePageID, uint32 lcid) SetLocaleInfo;
-			public function HRESULT(IWordBreakerConfig *self, uint32* pdwCodePageID, uint32* plcid) GetLocaleInfo;
-			public function HRESULT(IWordBreakerConfig *self, uint32 dwBreakWordType) SetBreakWordType;
-			public function HRESULT(IWordBreakerConfig *self, uint32* pdwBreakWordType) GetBreakWordType;
-			public function HRESULT(IWordBreakerConfig *self, uint32 grfBreakFlags, uint32 dwReserved) SetControlInfo;
-			public function HRESULT(IWordBreakerConfig *self, uint32* pgrfBreakFlags, uint32* pdwReserved) GetControlInfo;
-			public function HRESULT(IWordBreakerConfig *self, IStream* pStream, uint32 dwExtDataType) LoadExternalBreakerData;
-			public function HRESULT(IWordBreakerConfig *self, Guid* rclsid, IStemmer* pStemmer) SetWordStemmer;
-			public function HRESULT(IWordBreakerConfig *self, IStemmer** ppStemmer) GetWordStemmer;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWordBreakerConfig *self, uint32 dwCodePageID, uint32 lcid) SetLocaleInfo;
+				public function HRESULT(IWordBreakerConfig *self, uint32* pdwCodePageID, uint32* plcid) GetLocaleInfo;
+				public function HRESULT(IWordBreakerConfig *self, uint32 dwBreakWordType) SetBreakWordType;
+				public function HRESULT(IWordBreakerConfig *self, uint32* pdwBreakWordType) GetBreakWordType;
+				public function HRESULT(IWordBreakerConfig *self, uint32 grfBreakFlags, uint32 dwReserved) SetControlInfo;
+				public function HRESULT(IWordBreakerConfig *self, uint32* pgrfBreakFlags, uint32* pdwReserved) GetControlInfo;
+				public function HRESULT(IWordBreakerConfig *self, IStream* pStream, uint32 dwExtDataType) LoadExternalBreakerData;
+				public function HRESULT(IWordBreakerConfig *self, Guid* rclsid, IStemmer* pStemmer) SetWordStemmer;
+				public function HRESULT(IWordBreakerConfig *self, IStemmer** ppStemmer) GetWordStemmer;
+			}
 		}
 		[CRepr]
 		public struct IITResultSet : IUnknown
 		{
 			public const new Guid IID = .(0x3bb91d41, 0x998b, 0x11d0, 0xa8, 0x50, 0x00, 0xaa, 0x00, 0x6c, 0x7d, 0x01);
 			
-			public function HRESULT(IITResultSet *self, int32 lColumnIndex, PRIORITY ColumnPriority) SetColumnPriority;
-			public function HRESULT(IITResultSet *self, int32 lColumnIndex, void* lpvHeap, PFNCOLHEAPFREE pfnColHeapFree) SetColumnHeap;
-			public function HRESULT(IITResultSet *self, uint32 PropID) SetKeyProp;
-			public function HRESULT(IITResultSet *self, uint32 PropID, uint32 dwDefaultData, PRIORITY Priority) Add;
-			public function HRESULT(IITResultSet *self, uint32 PropID, PWSTR lpszwDefault, PRIORITY Priority) Add2;
-			public function HRESULT(IITResultSet *self, uint32 PropID, void* lpvDefaultData, uint32 cbData, PRIORITY Priority) Add3;
-			public function HRESULT(IITResultSet *self, void* lpvHdr) Add4;
-			public function HRESULT(IITResultSet *self, void* lpvHdr, void* lpvData) Append;
-			public function HRESULT(IITResultSet *self, int32 lRowIndex, int32 lColumnIndex, void* lpvData, uint32 cbData) Set;
-			public function HRESULT(IITResultSet *self, int32 lRowIndex, int32 lColumnIndex, PWSTR lpwStr) Set2;
-			public function HRESULT(IITResultSet *self, int32 lRowIndex, int32 lColumnIndex, uint dwData) Set3;
-			public function HRESULT(IITResultSet *self, int32 lRowIndex, void* lpvHdr, void* lpvData) Set4;
-			public function HRESULT(IITResultSet *self, IITResultSet* pRSCopy) Copy;
-			public function HRESULT(IITResultSet *self, IITResultSet* pResSrc, int32 lRowSrcFirst, int32 cSrcRows, int32* lRowFirstDest) AppendRows;
-			public function HRESULT(IITResultSet *self, int32 lRowIndex, int32 lColumnIndex, CProperty* Prop) Get;
-			public function HRESULT(IITResultSet *self, uint32* KeyPropID) GetKeyProp;
-			public function HRESULT(IITResultSet *self, int32 lColumnIndex, PRIORITY* ColumnPriority) GetColumnPriority;
-			public function HRESULT(IITResultSet *self, int32* lNumberOfRows) GetRowCount;
-			public function HRESULT(IITResultSet *self, int32* lNumberOfColumns) GetColumnCount;
-			public function HRESULT(IITResultSet *self, int32 lColumnIndex, uint32* PropID, uint32* dwType, void** lpvDefaultValue, uint32* cbSize, PRIORITY* ColumnPriority) GetColumn;
-			public function HRESULT(IITResultSet *self, int32 lColumnIndex, uint32* PropID) GetColumn2;
-			public function HRESULT(IITResultSet *self, uint32 PropID, int32* lColumnIndex) GetColumnFromPropID;
-			public function HRESULT(IITResultSet *self) Clear;
-			public function HRESULT(IITResultSet *self) ClearRows;
-			public function HRESULT(IITResultSet *self) Free;
-			public function HRESULT(IITResultSet *self) IsCompleted;
-			public function HRESULT(IITResultSet *self) Cancel;
-			public function HRESULT(IITResultSet *self, BOOL fPause) Pause;
-			public function HRESULT(IITResultSet *self, int32 lRowFirst, int32 cRows, ROWSTATUS* lpRowStatus) GetRowStatus;
-			public function HRESULT(IITResultSet *self, COLUMNSTATUS* lpColStatus) GetColumnStatus;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IITResultSet *self, int32 lColumnIndex, PRIORITY ColumnPriority) SetColumnPriority;
+				public function HRESULT(IITResultSet *self, int32 lColumnIndex, void* lpvHeap, PFNCOLHEAPFREE pfnColHeapFree) SetColumnHeap;
+				public function HRESULT(IITResultSet *self, uint32 PropID) SetKeyProp;
+				public function HRESULT(IITResultSet *self, uint32 PropID, uint32 dwDefaultData, PRIORITY Priority) Add;
+				public function HRESULT(IITResultSet *self, uint32 PropID, PWSTR lpszwDefault, PRIORITY Priority) Add2;
+				public function HRESULT(IITResultSet *self, uint32 PropID, void* lpvDefaultData, uint32 cbData, PRIORITY Priority) Add3;
+				public function HRESULT(IITResultSet *self, void* lpvHdr) Add4;
+				public function HRESULT(IITResultSet *self, void* lpvHdr, void* lpvData) Append;
+				public function HRESULT(IITResultSet *self, int32 lRowIndex, int32 lColumnIndex, void* lpvData, uint32 cbData) Set;
+				public function HRESULT(IITResultSet *self, int32 lRowIndex, int32 lColumnIndex, PWSTR lpwStr) Set2;
+				public function HRESULT(IITResultSet *self, int32 lRowIndex, int32 lColumnIndex, uint dwData) Set3;
+				public function HRESULT(IITResultSet *self, int32 lRowIndex, void* lpvHdr, void* lpvData) Set4;
+				public function HRESULT(IITResultSet *self, IITResultSet* pRSCopy) Copy;
+				public function HRESULT(IITResultSet *self, IITResultSet* pResSrc, int32 lRowSrcFirst, int32 cSrcRows, int32* lRowFirstDest) AppendRows;
+				public function HRESULT(IITResultSet *self, int32 lRowIndex, int32 lColumnIndex, CProperty* Prop) Get;
+				public function HRESULT(IITResultSet *self, uint32* KeyPropID) GetKeyProp;
+				public function HRESULT(IITResultSet *self, int32 lColumnIndex, PRIORITY* ColumnPriority) GetColumnPriority;
+				public function HRESULT(IITResultSet *self, int32* lNumberOfRows) GetRowCount;
+				public function HRESULT(IITResultSet *self, int32* lNumberOfColumns) GetColumnCount;
+				public function HRESULT(IITResultSet *self, int32 lColumnIndex, uint32* PropID, uint32* dwType, void** lpvDefaultValue, uint32* cbSize, PRIORITY* ColumnPriority) GetColumn;
+				public function HRESULT(IITResultSet *self, int32 lColumnIndex, uint32* PropID) GetColumn2;
+				public function HRESULT(IITResultSet *self, uint32 PropID, int32* lColumnIndex) GetColumnFromPropID;
+				public function HRESULT(IITResultSet *self) Clear;
+				public function HRESULT(IITResultSet *self) ClearRows;
+				public function HRESULT(IITResultSet *self) Free;
+				public function HRESULT(IITResultSet *self) IsCompleted;
+				public function HRESULT(IITResultSet *self) Cancel;
+				public function HRESULT(IITResultSet *self, BOOL fPause) Pause;
+				public function HRESULT(IITResultSet *self, int32 lRowFirst, int32 cRows, ROWSTATUS* lpRowStatus) GetRowStatus;
+				public function HRESULT(IITResultSet *self, COLUMNSTATUS* lpColStatus) GetColumnStatus;
+			}
 		}
 		
 	}

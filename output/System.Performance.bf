@@ -1036,750 +1036,915 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x03837520, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(IDataCollectorSet *self, IDataCollectorCollection** collectors) get_DataCollectors;
-			public function HRESULT(IDataCollectorSet *self, uint32* seconds) get_Duration;
-			public function HRESULT(IDataCollectorSet *self, uint32 seconds) put_Duration;
-			public function HRESULT(IDataCollectorSet *self, BSTR* description) get_Description;
-			public function HRESULT(IDataCollectorSet *self, BSTR description) put_Description;
-			public function HRESULT(IDataCollectorSet *self, BSTR* Descr) get_DescriptionUnresolved;
-			public function HRESULT(IDataCollectorSet *self, BSTR* DisplayName) get_DisplayName;
-			public function HRESULT(IDataCollectorSet *self, BSTR DisplayName) put_DisplayName;
-			public function HRESULT(IDataCollectorSet *self, BSTR* name) get_DisplayNameUnresolved;
-			public function HRESULT(IDataCollectorSet *self, SAFEARRAY** keywords) get_Keywords;
-			public function HRESULT(IDataCollectorSet *self, SAFEARRAY* keywords) put_Keywords;
-			public function HRESULT(IDataCollectorSet *self, BSTR* path) get_LatestOutputLocation;
-			public function HRESULT(IDataCollectorSet *self, BSTR path) put_LatestOutputLocation;
-			public function HRESULT(IDataCollectorSet *self, BSTR* name) get_Name;
-			public function HRESULT(IDataCollectorSet *self, BSTR* path) get_OutputLocation;
-			public function HRESULT(IDataCollectorSet *self, BSTR* folder) get_RootPath;
-			public function HRESULT(IDataCollectorSet *self, BSTR folder) put_RootPath;
-			public function HRESULT(IDataCollectorSet *self, int16* segment) get_Segment;
-			public function HRESULT(IDataCollectorSet *self, int16 segment) put_Segment;
-			public function HRESULT(IDataCollectorSet *self, uint32* seconds) get_SegmentMaxDuration;
-			public function HRESULT(IDataCollectorSet *self, uint32 seconds) put_SegmentMaxDuration;
-			public function HRESULT(IDataCollectorSet *self, uint32* size) get_SegmentMaxSize;
-			public function HRESULT(IDataCollectorSet *self, uint32 size) put_SegmentMaxSize;
-			public function HRESULT(IDataCollectorSet *self, uint32* index) get_SerialNumber;
-			public function HRESULT(IDataCollectorSet *self, uint32 index) put_SerialNumber;
-			public function HRESULT(IDataCollectorSet *self, BSTR* server) get_Server;
-			public function HRESULT(IDataCollectorSet *self, DataCollectorSetStatus* status) get_Status;
-			public function HRESULT(IDataCollectorSet *self, BSTR* folder) get_Subdirectory;
-			public function HRESULT(IDataCollectorSet *self, BSTR folder) put_Subdirectory;
-			public function HRESULT(IDataCollectorSet *self, AutoPathFormat* format) get_SubdirectoryFormat;
-			public function HRESULT(IDataCollectorSet *self, AutoPathFormat format) put_SubdirectoryFormat;
-			public function HRESULT(IDataCollectorSet *self, BSTR* pattern) get_SubdirectoryFormatPattern;
-			public function HRESULT(IDataCollectorSet *self, BSTR pattern) put_SubdirectoryFormatPattern;
-			public function HRESULT(IDataCollectorSet *self, BSTR* task) get_Task;
-			public function HRESULT(IDataCollectorSet *self, BSTR task) put_Task;
-			public function HRESULT(IDataCollectorSet *self, int16* RunAsSelf) get_TaskRunAsSelf;
-			public function HRESULT(IDataCollectorSet *self, int16 RunAsSelf) put_TaskRunAsSelf;
-			public function HRESULT(IDataCollectorSet *self, BSTR* task) get_TaskArguments;
-			public function HRESULT(IDataCollectorSet *self, BSTR task) put_TaskArguments;
-			public function HRESULT(IDataCollectorSet *self, BSTR* UserText) get_TaskUserTextArguments;
-			public function HRESULT(IDataCollectorSet *self, BSTR UserText) put_TaskUserTextArguments;
-			public function HRESULT(IDataCollectorSet *self, IScheduleCollection** ppSchedules) get_Schedules;
-			public function HRESULT(IDataCollectorSet *self, int16* enabled) get_SchedulesEnabled;
-			public function HRESULT(IDataCollectorSet *self, int16 enabled) put_SchedulesEnabled;
-			public function HRESULT(IDataCollectorSet *self, BSTR* user) get_UserAccount;
-			public function HRESULT(IDataCollectorSet *self, BSTR* xml) get_Xml;
-			public function HRESULT(IDataCollectorSet *self, BSTR* pbstrSecurity) get_Security;
-			public function HRESULT(IDataCollectorSet *self, BSTR bstrSecurity) put_Security;
-			public function HRESULT(IDataCollectorSet *self, int16* Stop) get_StopOnCompletion;
-			public function HRESULT(IDataCollectorSet *self, int16 Stop) put_StopOnCompletion;
-			public function HRESULT(IDataCollectorSet *self, IDataManager** DataManager) get_DataManager;
-			public function HRESULT(IDataCollectorSet *self, BSTR user, BSTR password) SetCredentials;
-			public function HRESULT(IDataCollectorSet *self, BSTR name, BSTR server) Query;
-			public function HRESULT(IDataCollectorSet *self, BSTR name, BSTR server, CommitMode mode, IValueMap** validation) Commit;
-			public function HRESULT(IDataCollectorSet *self) Delete;
-			public function HRESULT(IDataCollectorSet *self, int16 Synchronous) Start;
-			public function HRESULT(IDataCollectorSet *self, int16 Synchronous) Stop;
-			public function HRESULT(IDataCollectorSet *self, BSTR xml, IValueMap** validation) SetXml;
-			public function HRESULT(IDataCollectorSet *self, BSTR key, BSTR value) SetValue;
-			public function HRESULT(IDataCollectorSet *self, BSTR key, BSTR* value) GetValue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IDataCollectorSet *self, IDataCollectorCollection** collectors) get_DataCollectors;
+				public function HRESULT(IDataCollectorSet *self, uint32* seconds) get_Duration;
+				public function HRESULT(IDataCollectorSet *self, uint32 seconds) put_Duration;
+				public function HRESULT(IDataCollectorSet *self, BSTR* description) get_Description;
+				public function HRESULT(IDataCollectorSet *self, BSTR description) put_Description;
+				public function HRESULT(IDataCollectorSet *self, BSTR* Descr) get_DescriptionUnresolved;
+				public function HRESULT(IDataCollectorSet *self, BSTR* DisplayName) get_DisplayName;
+				public function HRESULT(IDataCollectorSet *self, BSTR DisplayName) put_DisplayName;
+				public function HRESULT(IDataCollectorSet *self, BSTR* name) get_DisplayNameUnresolved;
+				public function HRESULT(IDataCollectorSet *self, SAFEARRAY** keywords) get_Keywords;
+				public function HRESULT(IDataCollectorSet *self, SAFEARRAY* keywords) put_Keywords;
+				public function HRESULT(IDataCollectorSet *self, BSTR* path) get_LatestOutputLocation;
+				public function HRESULT(IDataCollectorSet *self, BSTR path) put_LatestOutputLocation;
+				public function HRESULT(IDataCollectorSet *self, BSTR* name) get_Name;
+				public function HRESULT(IDataCollectorSet *self, BSTR* path) get_OutputLocation;
+				public function HRESULT(IDataCollectorSet *self, BSTR* folder) get_RootPath;
+				public function HRESULT(IDataCollectorSet *self, BSTR folder) put_RootPath;
+				public function HRESULT(IDataCollectorSet *self, int16* segment) get_Segment;
+				public function HRESULT(IDataCollectorSet *self, int16 segment) put_Segment;
+				public function HRESULT(IDataCollectorSet *self, uint32* seconds) get_SegmentMaxDuration;
+				public function HRESULT(IDataCollectorSet *self, uint32 seconds) put_SegmentMaxDuration;
+				public function HRESULT(IDataCollectorSet *self, uint32* size) get_SegmentMaxSize;
+				public function HRESULT(IDataCollectorSet *self, uint32 size) put_SegmentMaxSize;
+				public function HRESULT(IDataCollectorSet *self, uint32* index) get_SerialNumber;
+				public function HRESULT(IDataCollectorSet *self, uint32 index) put_SerialNumber;
+				public function HRESULT(IDataCollectorSet *self, BSTR* server) get_Server;
+				public function HRESULT(IDataCollectorSet *self, DataCollectorSetStatus* status) get_Status;
+				public function HRESULT(IDataCollectorSet *self, BSTR* folder) get_Subdirectory;
+				public function HRESULT(IDataCollectorSet *self, BSTR folder) put_Subdirectory;
+				public function HRESULT(IDataCollectorSet *self, AutoPathFormat* format) get_SubdirectoryFormat;
+				public function HRESULT(IDataCollectorSet *self, AutoPathFormat format) put_SubdirectoryFormat;
+				public function HRESULT(IDataCollectorSet *self, BSTR* pattern) get_SubdirectoryFormatPattern;
+				public function HRESULT(IDataCollectorSet *self, BSTR pattern) put_SubdirectoryFormatPattern;
+				public function HRESULT(IDataCollectorSet *self, BSTR* task) get_Task;
+				public function HRESULT(IDataCollectorSet *self, BSTR task) put_Task;
+				public function HRESULT(IDataCollectorSet *self, int16* RunAsSelf) get_TaskRunAsSelf;
+				public function HRESULT(IDataCollectorSet *self, int16 RunAsSelf) put_TaskRunAsSelf;
+				public function HRESULT(IDataCollectorSet *self, BSTR* task) get_TaskArguments;
+				public function HRESULT(IDataCollectorSet *self, BSTR task) put_TaskArguments;
+				public function HRESULT(IDataCollectorSet *self, BSTR* UserText) get_TaskUserTextArguments;
+				public function HRESULT(IDataCollectorSet *self, BSTR UserText) put_TaskUserTextArguments;
+				public function HRESULT(IDataCollectorSet *self, IScheduleCollection** ppSchedules) get_Schedules;
+				public function HRESULT(IDataCollectorSet *self, int16* enabled) get_SchedulesEnabled;
+				public function HRESULT(IDataCollectorSet *self, int16 enabled) put_SchedulesEnabled;
+				public function HRESULT(IDataCollectorSet *self, BSTR* user) get_UserAccount;
+				public function HRESULT(IDataCollectorSet *self, BSTR* xml) get_Xml;
+				public function HRESULT(IDataCollectorSet *self, BSTR* pbstrSecurity) get_Security;
+				public function HRESULT(IDataCollectorSet *self, BSTR bstrSecurity) put_Security;
+				public function HRESULT(IDataCollectorSet *self, int16* Stop) get_StopOnCompletion;
+				public function HRESULT(IDataCollectorSet *self, int16 Stop) put_StopOnCompletion;
+				public function HRESULT(IDataCollectorSet *self, IDataManager** DataManager) get_DataManager;
+				public function HRESULT(IDataCollectorSet *self, BSTR user, BSTR password) SetCredentials;
+				public function HRESULT(IDataCollectorSet *self, BSTR name, BSTR server) Query;
+				public function HRESULT(IDataCollectorSet *self, BSTR name, BSTR server, CommitMode mode, IValueMap** validation) Commit;
+				public function HRESULT(IDataCollectorSet *self) Delete;
+				public function HRESULT(IDataCollectorSet *self, int16 Synchronous) Start;
+				public function HRESULT(IDataCollectorSet *self, int16 Synchronous) Stop;
+				public function HRESULT(IDataCollectorSet *self, BSTR xml, IValueMap** validation) SetXml;
+				public function HRESULT(IDataCollectorSet *self, BSTR key, BSTR value) SetValue;
+				public function HRESULT(IDataCollectorSet *self, BSTR key, BSTR* value) GetValue;
+			}
 		}
 		[CRepr]
 		public struct IDataManager : IDispatch
 		{
 			public const new Guid IID = .(0x03837541, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(IDataManager *self, int16* pfEnabled) get_Enabled;
-			public function HRESULT(IDataManager *self, int16 fEnabled) put_Enabled;
-			public function HRESULT(IDataManager *self, int16* pfCheck) get_CheckBeforeRunning;
-			public function HRESULT(IDataManager *self, int16 fCheck) put_CheckBeforeRunning;
-			public function HRESULT(IDataManager *self, uint32* MinFreeDisk) get_MinFreeDisk;
-			public function HRESULT(IDataManager *self, uint32 MinFreeDisk) put_MinFreeDisk;
-			public function HRESULT(IDataManager *self, uint32* pulMaxSize) get_MaxSize;
-			public function HRESULT(IDataManager *self, uint32 ulMaxSize) put_MaxSize;
-			public function HRESULT(IDataManager *self, uint32* pulMaxFolderCount) get_MaxFolderCount;
-			public function HRESULT(IDataManager *self, uint32 ulMaxFolderCount) put_MaxFolderCount;
-			public function HRESULT(IDataManager *self, ResourcePolicy* pPolicy) get_ResourcePolicy;
-			public function HRESULT(IDataManager *self, ResourcePolicy Policy) put_ResourcePolicy;
-			public function HRESULT(IDataManager *self, IFolderActionCollection** Actions) get_FolderActions;
-			public function HRESULT(IDataManager *self, BSTR* ReportSchema) get_ReportSchema;
-			public function HRESULT(IDataManager *self, BSTR ReportSchema) put_ReportSchema;
-			public function HRESULT(IDataManager *self, BSTR* pbstrFilename) get_ReportFileName;
-			public function HRESULT(IDataManager *self, BSTR pbstrFilename) put_ReportFileName;
-			public function HRESULT(IDataManager *self, BSTR* Filename) get_RuleTargetFileName;
-			public function HRESULT(IDataManager *self, BSTR Filename) put_RuleTargetFileName;
-			public function HRESULT(IDataManager *self, BSTR* pbstrFilename) get_EventsFileName;
-			public function HRESULT(IDataManager *self, BSTR pbstrFilename) put_EventsFileName;
-			public function HRESULT(IDataManager *self, BSTR* pbstrXml) get_Rules;
-			public function HRESULT(IDataManager *self, BSTR bstrXml) put_Rules;
-			public function HRESULT(IDataManager *self, DataManagerSteps Steps, BSTR bstrFolder, IValueMap** Errors) Run;
-			public function HRESULT(IDataManager *self, BSTR CabFilename, BSTR DestinationPath) Extract;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IDataManager *self, int16* pfEnabled) get_Enabled;
+				public function HRESULT(IDataManager *self, int16 fEnabled) put_Enabled;
+				public function HRESULT(IDataManager *self, int16* pfCheck) get_CheckBeforeRunning;
+				public function HRESULT(IDataManager *self, int16 fCheck) put_CheckBeforeRunning;
+				public function HRESULT(IDataManager *self, uint32* MinFreeDisk) get_MinFreeDisk;
+				public function HRESULT(IDataManager *self, uint32 MinFreeDisk) put_MinFreeDisk;
+				public function HRESULT(IDataManager *self, uint32* pulMaxSize) get_MaxSize;
+				public function HRESULT(IDataManager *self, uint32 ulMaxSize) put_MaxSize;
+				public function HRESULT(IDataManager *self, uint32* pulMaxFolderCount) get_MaxFolderCount;
+				public function HRESULT(IDataManager *self, uint32 ulMaxFolderCount) put_MaxFolderCount;
+				public function HRESULT(IDataManager *self, ResourcePolicy* pPolicy) get_ResourcePolicy;
+				public function HRESULT(IDataManager *self, ResourcePolicy Policy) put_ResourcePolicy;
+				public function HRESULT(IDataManager *self, IFolderActionCollection** Actions) get_FolderActions;
+				public function HRESULT(IDataManager *self, BSTR* ReportSchema) get_ReportSchema;
+				public function HRESULT(IDataManager *self, BSTR ReportSchema) put_ReportSchema;
+				public function HRESULT(IDataManager *self, BSTR* pbstrFilename) get_ReportFileName;
+				public function HRESULT(IDataManager *self, BSTR pbstrFilename) put_ReportFileName;
+				public function HRESULT(IDataManager *self, BSTR* Filename) get_RuleTargetFileName;
+				public function HRESULT(IDataManager *self, BSTR Filename) put_RuleTargetFileName;
+				public function HRESULT(IDataManager *self, BSTR* pbstrFilename) get_EventsFileName;
+				public function HRESULT(IDataManager *self, BSTR pbstrFilename) put_EventsFileName;
+				public function HRESULT(IDataManager *self, BSTR* pbstrXml) get_Rules;
+				public function HRESULT(IDataManager *self, BSTR bstrXml) put_Rules;
+				public function HRESULT(IDataManager *self, DataManagerSteps Steps, BSTR bstrFolder, IValueMap** Errors) Run;
+				public function HRESULT(IDataManager *self, BSTR CabFilename, BSTR DestinationPath) Extract;
+			}
 		}
 		[CRepr]
 		public struct IFolderAction : IDispatch
 		{
 			public const new Guid IID = .(0x03837543, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(IFolderAction *self, uint32* pulAge) get_Age;
-			public function HRESULT(IFolderAction *self, uint32 ulAge) put_Age;
-			public function HRESULT(IFolderAction *self, uint32* pulAge) get_Size;
-			public function HRESULT(IFolderAction *self, uint32 ulAge) put_Size;
-			public function HRESULT(IFolderAction *self, FolderActionSteps* Steps) get_Actions;
-			public function HRESULT(IFolderAction *self, FolderActionSteps Steps) put_Actions;
-			public function HRESULT(IFolderAction *self, BSTR* pbstrDestination) get_SendCabTo;
-			public function HRESULT(IFolderAction *self, BSTR bstrDestination) put_SendCabTo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IFolderAction *self, uint32* pulAge) get_Age;
+				public function HRESULT(IFolderAction *self, uint32 ulAge) put_Age;
+				public function HRESULT(IFolderAction *self, uint32* pulAge) get_Size;
+				public function HRESULT(IFolderAction *self, uint32 ulAge) put_Size;
+				public function HRESULT(IFolderAction *self, FolderActionSteps* Steps) get_Actions;
+				public function HRESULT(IFolderAction *self, FolderActionSteps Steps) put_Actions;
+				public function HRESULT(IFolderAction *self, BSTR* pbstrDestination) get_SendCabTo;
+				public function HRESULT(IFolderAction *self, BSTR bstrDestination) put_SendCabTo;
+			}
 		}
 		[CRepr]
 		public struct IFolderActionCollection : IDispatch
 		{
 			public const new Guid IID = .(0x03837544, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(IFolderActionCollection *self, uint32* Count) get_Count;
-			public function HRESULT(IFolderActionCollection *self, VARIANT Index, IFolderAction** Action) get_Item;
-			public function HRESULT(IFolderActionCollection *self, IUnknown** Enum) get__NewEnum;
-			public function HRESULT(IFolderActionCollection *self, IFolderAction* Action) Add;
-			public function HRESULT(IFolderActionCollection *self, VARIANT Index) Remove;
-			public function HRESULT(IFolderActionCollection *self) Clear;
-			public function HRESULT(IFolderActionCollection *self, IFolderActionCollection* Actions) AddRange;
-			public function HRESULT(IFolderActionCollection *self, IFolderAction** FolderAction) CreateFolderAction;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IFolderActionCollection *self, uint32* Count) get_Count;
+				public function HRESULT(IFolderActionCollection *self, VARIANT Index, IFolderAction** Action) get_Item;
+				public function HRESULT(IFolderActionCollection *self, IUnknown** Enum) get__NewEnum;
+				public function HRESULT(IFolderActionCollection *self, IFolderAction* Action) Add;
+				public function HRESULT(IFolderActionCollection *self, VARIANT Index) Remove;
+				public function HRESULT(IFolderActionCollection *self) Clear;
+				public function HRESULT(IFolderActionCollection *self, IFolderActionCollection* Actions) AddRange;
+				public function HRESULT(IFolderActionCollection *self, IFolderAction** FolderAction) CreateFolderAction;
+			}
 		}
 		[CRepr]
 		public struct IDataCollector : IDispatch
 		{
 			public const new Guid IID = .(0x038374ff, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(IDataCollector *self, IDataCollectorSet** group) get_DataCollectorSet;
-			public function HRESULT(IDataCollector *self, IDataCollectorSet* group) put_DataCollectorSet;
-			public function HRESULT(IDataCollector *self, DataCollectorType* type) get_DataCollectorType;
-			public function HRESULT(IDataCollector *self, BSTR* name) get_FileName;
-			public function HRESULT(IDataCollector *self, BSTR name) put_FileName;
-			public function HRESULT(IDataCollector *self, AutoPathFormat* format) get_FileNameFormat;
-			public function HRESULT(IDataCollector *self, AutoPathFormat format) put_FileNameFormat;
-			public function HRESULT(IDataCollector *self, BSTR* pattern) get_FileNameFormatPattern;
-			public function HRESULT(IDataCollector *self, BSTR pattern) put_FileNameFormatPattern;
-			public function HRESULT(IDataCollector *self, BSTR* path) get_LatestOutputLocation;
-			public function HRESULT(IDataCollector *self, BSTR path) put_LatestOutputLocation;
-			public function HRESULT(IDataCollector *self, int16* @append) get_LogAppend;
-			public function HRESULT(IDataCollector *self, int16 @append) put_LogAppend;
-			public function HRESULT(IDataCollector *self, int16* circular) get_LogCircular;
-			public function HRESULT(IDataCollector *self, int16 circular) put_LogCircular;
-			public function HRESULT(IDataCollector *self, int16* overwrite) get_LogOverwrite;
-			public function HRESULT(IDataCollector *self, int16 overwrite) put_LogOverwrite;
-			public function HRESULT(IDataCollector *self, BSTR* name) get_Name;
-			public function HRESULT(IDataCollector *self, BSTR name) put_Name;
-			public function HRESULT(IDataCollector *self, BSTR* path) get_OutputLocation;
-			public function HRESULT(IDataCollector *self, int32* index) get_Index;
-			public function HRESULT(IDataCollector *self, int32 index) put_Index;
-			public function HRESULT(IDataCollector *self, BSTR* Xml) get_Xml;
-			public function HRESULT(IDataCollector *self, BSTR Xml, IValueMap** Validation) SetXml;
-			public function HRESULT(IDataCollector *self, int16 Latest, BSTR* Location) CreateOutputLocation;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IDataCollector *self, IDataCollectorSet** group) get_DataCollectorSet;
+				public function HRESULT(IDataCollector *self, IDataCollectorSet* group) put_DataCollectorSet;
+				public function HRESULT(IDataCollector *self, DataCollectorType* type) get_DataCollectorType;
+				public function HRESULT(IDataCollector *self, BSTR* name) get_FileName;
+				public function HRESULT(IDataCollector *self, BSTR name) put_FileName;
+				public function HRESULT(IDataCollector *self, AutoPathFormat* format) get_FileNameFormat;
+				public function HRESULT(IDataCollector *self, AutoPathFormat format) put_FileNameFormat;
+				public function HRESULT(IDataCollector *self, BSTR* pattern) get_FileNameFormatPattern;
+				public function HRESULT(IDataCollector *self, BSTR pattern) put_FileNameFormatPattern;
+				public function HRESULT(IDataCollector *self, BSTR* path) get_LatestOutputLocation;
+				public function HRESULT(IDataCollector *self, BSTR path) put_LatestOutputLocation;
+				public function HRESULT(IDataCollector *self, int16* @append) get_LogAppend;
+				public function HRESULT(IDataCollector *self, int16 @append) put_LogAppend;
+				public function HRESULT(IDataCollector *self, int16* circular) get_LogCircular;
+				public function HRESULT(IDataCollector *self, int16 circular) put_LogCircular;
+				public function HRESULT(IDataCollector *self, int16* overwrite) get_LogOverwrite;
+				public function HRESULT(IDataCollector *self, int16 overwrite) put_LogOverwrite;
+				public function HRESULT(IDataCollector *self, BSTR* name) get_Name;
+				public function HRESULT(IDataCollector *self, BSTR name) put_Name;
+				public function HRESULT(IDataCollector *self, BSTR* path) get_OutputLocation;
+				public function HRESULT(IDataCollector *self, int32* index) get_Index;
+				public function HRESULT(IDataCollector *self, int32 index) put_Index;
+				public function HRESULT(IDataCollector *self, BSTR* Xml) get_Xml;
+				public function HRESULT(IDataCollector *self, BSTR Xml, IValueMap** Validation) SetXml;
+				public function HRESULT(IDataCollector *self, int16 Latest, BSTR* Location) CreateOutputLocation;
+			}
 		}
 		[CRepr]
 		public struct IPerformanceCounterDataCollector : IDataCollector
 		{
 			public const new Guid IID = .(0x03837506, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(IPerformanceCounterDataCollector *self, BSTR* dsn) get_DataSourceName;
-			public function HRESULT(IPerformanceCounterDataCollector *self, BSTR dsn) put_DataSourceName;
-			public function HRESULT(IPerformanceCounterDataCollector *self, SAFEARRAY** counters) get_PerformanceCounters;
-			public function HRESULT(IPerformanceCounterDataCollector *self, SAFEARRAY* counters) put_PerformanceCounters;
-			public function HRESULT(IPerformanceCounterDataCollector *self, FileFormat* format) get_LogFileFormat;
-			public function HRESULT(IPerformanceCounterDataCollector *self, FileFormat format) put_LogFileFormat;
-			public function HRESULT(IPerformanceCounterDataCollector *self, uint32* interval) get_SampleInterval;
-			public function HRESULT(IPerformanceCounterDataCollector *self, uint32 interval) put_SampleInterval;
-			public function HRESULT(IPerformanceCounterDataCollector *self, uint32* records) get_SegmentMaxRecords;
-			public function HRESULT(IPerformanceCounterDataCollector *self, uint32 records) put_SegmentMaxRecords;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDataCollector.VTable
+			{
+				public function HRESULT(IPerformanceCounterDataCollector *self, BSTR* dsn) get_DataSourceName;
+				public function HRESULT(IPerformanceCounterDataCollector *self, BSTR dsn) put_DataSourceName;
+				public function HRESULT(IPerformanceCounterDataCollector *self, SAFEARRAY** counters) get_PerformanceCounters;
+				public function HRESULT(IPerformanceCounterDataCollector *self, SAFEARRAY* counters) put_PerformanceCounters;
+				public function HRESULT(IPerformanceCounterDataCollector *self, FileFormat* format) get_LogFileFormat;
+				public function HRESULT(IPerformanceCounterDataCollector *self, FileFormat format) put_LogFileFormat;
+				public function HRESULT(IPerformanceCounterDataCollector *self, uint32* interval) get_SampleInterval;
+				public function HRESULT(IPerformanceCounterDataCollector *self, uint32 interval) put_SampleInterval;
+				public function HRESULT(IPerformanceCounterDataCollector *self, uint32* records) get_SegmentMaxRecords;
+				public function HRESULT(IPerformanceCounterDataCollector *self, uint32 records) put_SegmentMaxRecords;
+			}
 		}
 		[CRepr]
 		public struct ITraceDataCollector : IDataCollector
 		{
 			public const new Guid IID = .(0x0383750b, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(ITraceDataCollector *self, uint32* size) get_BufferSize;
-			public function HRESULT(ITraceDataCollector *self, uint32 size) put_BufferSize;
-			public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_BuffersLost;
-			public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_BuffersLost;
-			public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_BuffersWritten;
-			public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_BuffersWritten;
-			public function HRESULT(ITraceDataCollector *self, ClockType* clock) get_ClockType;
-			public function HRESULT(ITraceDataCollector *self, ClockType clock) put_ClockType;
-			public function HRESULT(ITraceDataCollector *self, uint32* events) get_EventsLost;
-			public function HRESULT(ITraceDataCollector *self, uint32 events) put_EventsLost;
-			public function HRESULT(ITraceDataCollector *self, uint32* mode) get_ExtendedModes;
-			public function HRESULT(ITraceDataCollector *self, uint32 mode) put_ExtendedModes;
-			public function HRESULT(ITraceDataCollector *self, uint32* seconds) get_FlushTimer;
-			public function HRESULT(ITraceDataCollector *self, uint32 seconds) put_FlushTimer;
-			public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_FreeBuffers;
-			public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_FreeBuffers;
-			public function HRESULT(ITraceDataCollector *self, Guid* guid) get_Guid;
-			public function HRESULT(ITraceDataCollector *self, Guid guid) put_Guid;
-			public function HRESULT(ITraceDataCollector *self, int16* kernel) get_IsKernelTrace;
-			public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_MaximumBuffers;
-			public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_MaximumBuffers;
-			public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_MinimumBuffers;
-			public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_MinimumBuffers;
-			public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_NumberOfBuffers;
-			public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_NumberOfBuffers;
-			public function HRESULT(ITraceDataCollector *self, int16* allocate) get_PreallocateFile;
-			public function HRESULT(ITraceDataCollector *self, int16 allocate) put_PreallocateFile;
-			public function HRESULT(ITraceDataCollector *self, int16* process) get_ProcessMode;
-			public function HRESULT(ITraceDataCollector *self, int16 process) put_ProcessMode;
-			public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_RealTimeBuffersLost;
-			public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_RealTimeBuffersLost;
-			public function HRESULT(ITraceDataCollector *self, uint64* id) get_SessionId;
-			public function HRESULT(ITraceDataCollector *self, uint64 id) put_SessionId;
-			public function HRESULT(ITraceDataCollector *self, BSTR* name) get_SessionName;
-			public function HRESULT(ITraceDataCollector *self, BSTR name) put_SessionName;
-			public function HRESULT(ITraceDataCollector *self, uint32* tid) get_SessionThreadId;
-			public function HRESULT(ITraceDataCollector *self, uint32 tid) put_SessionThreadId;
-			public function HRESULT(ITraceDataCollector *self, StreamMode* mode) get_StreamMode;
-			public function HRESULT(ITraceDataCollector *self, StreamMode mode) put_StreamMode;
-			public function HRESULT(ITraceDataCollector *self, ITraceDataProviderCollection** providers) get_TraceDataProviders;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDataCollector.VTable
+			{
+				public function HRESULT(ITraceDataCollector *self, uint32* size) get_BufferSize;
+				public function HRESULT(ITraceDataCollector *self, uint32 size) put_BufferSize;
+				public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_BuffersLost;
+				public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_BuffersLost;
+				public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_BuffersWritten;
+				public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_BuffersWritten;
+				public function HRESULT(ITraceDataCollector *self, ClockType* clock) get_ClockType;
+				public function HRESULT(ITraceDataCollector *self, ClockType clock) put_ClockType;
+				public function HRESULT(ITraceDataCollector *self, uint32* events) get_EventsLost;
+				public function HRESULT(ITraceDataCollector *self, uint32 events) put_EventsLost;
+				public function HRESULT(ITraceDataCollector *self, uint32* mode) get_ExtendedModes;
+				public function HRESULT(ITraceDataCollector *self, uint32 mode) put_ExtendedModes;
+				public function HRESULT(ITraceDataCollector *self, uint32* seconds) get_FlushTimer;
+				public function HRESULT(ITraceDataCollector *self, uint32 seconds) put_FlushTimer;
+				public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_FreeBuffers;
+				public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_FreeBuffers;
+				public function HRESULT(ITraceDataCollector *self, Guid* guid) get_Guid;
+				public function HRESULT(ITraceDataCollector *self, Guid guid) put_Guid;
+				public function HRESULT(ITraceDataCollector *self, int16* kernel) get_IsKernelTrace;
+				public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_MaximumBuffers;
+				public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_MaximumBuffers;
+				public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_MinimumBuffers;
+				public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_MinimumBuffers;
+				public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_NumberOfBuffers;
+				public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_NumberOfBuffers;
+				public function HRESULT(ITraceDataCollector *self, int16* allocate) get_PreallocateFile;
+				public function HRESULT(ITraceDataCollector *self, int16 allocate) put_PreallocateFile;
+				public function HRESULT(ITraceDataCollector *self, int16* process) get_ProcessMode;
+				public function HRESULT(ITraceDataCollector *self, int16 process) put_ProcessMode;
+				public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_RealTimeBuffersLost;
+				public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_RealTimeBuffersLost;
+				public function HRESULT(ITraceDataCollector *self, uint64* id) get_SessionId;
+				public function HRESULT(ITraceDataCollector *self, uint64 id) put_SessionId;
+				public function HRESULT(ITraceDataCollector *self, BSTR* name) get_SessionName;
+				public function HRESULT(ITraceDataCollector *self, BSTR name) put_SessionName;
+				public function HRESULT(ITraceDataCollector *self, uint32* tid) get_SessionThreadId;
+				public function HRESULT(ITraceDataCollector *self, uint32 tid) put_SessionThreadId;
+				public function HRESULT(ITraceDataCollector *self, StreamMode* mode) get_StreamMode;
+				public function HRESULT(ITraceDataCollector *self, StreamMode mode) put_StreamMode;
+				public function HRESULT(ITraceDataCollector *self, ITraceDataProviderCollection** providers) get_TraceDataProviders;
+			}
 		}
 		[CRepr]
 		public struct IConfigurationDataCollector : IDataCollector
 		{
 			public const new Guid IID = .(0x03837514, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(IConfigurationDataCollector *self, uint32* count) get_FileMaxCount;
-			public function HRESULT(IConfigurationDataCollector *self, uint32 count) put_FileMaxCount;
-			public function HRESULT(IConfigurationDataCollector *self, uint32* depth) get_FileMaxRecursiveDepth;
-			public function HRESULT(IConfigurationDataCollector *self, uint32 depth) put_FileMaxRecursiveDepth;
-			public function HRESULT(IConfigurationDataCollector *self, uint32* size) get_FileMaxTotalSize;
-			public function HRESULT(IConfigurationDataCollector *self, uint32 size) put_FileMaxTotalSize;
-			public function HRESULT(IConfigurationDataCollector *self, SAFEARRAY** Files) get_Files;
-			public function HRESULT(IConfigurationDataCollector *self, SAFEARRAY* Files) put_Files;
-			public function HRESULT(IConfigurationDataCollector *self, SAFEARRAY** Queries) get_ManagementQueries;
-			public function HRESULT(IConfigurationDataCollector *self, SAFEARRAY* Queries) put_ManagementQueries;
-			public function HRESULT(IConfigurationDataCollector *self, int16* network) get_QueryNetworkAdapters;
-			public function HRESULT(IConfigurationDataCollector *self, int16 network) put_QueryNetworkAdapters;
-			public function HRESULT(IConfigurationDataCollector *self, SAFEARRAY** query) get_RegistryKeys;
-			public function HRESULT(IConfigurationDataCollector *self, SAFEARRAY* query) put_RegistryKeys;
-			public function HRESULT(IConfigurationDataCollector *self, uint32* depth) get_RegistryMaxRecursiveDepth;
-			public function HRESULT(IConfigurationDataCollector *self, uint32 depth) put_RegistryMaxRecursiveDepth;
-			public function HRESULT(IConfigurationDataCollector *self, BSTR* FileName) get_SystemStateFile;
-			public function HRESULT(IConfigurationDataCollector *self, BSTR FileName) put_SystemStateFile;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDataCollector.VTable
+			{
+				public function HRESULT(IConfigurationDataCollector *self, uint32* count) get_FileMaxCount;
+				public function HRESULT(IConfigurationDataCollector *self, uint32 count) put_FileMaxCount;
+				public function HRESULT(IConfigurationDataCollector *self, uint32* depth) get_FileMaxRecursiveDepth;
+				public function HRESULT(IConfigurationDataCollector *self, uint32 depth) put_FileMaxRecursiveDepth;
+				public function HRESULT(IConfigurationDataCollector *self, uint32* size) get_FileMaxTotalSize;
+				public function HRESULT(IConfigurationDataCollector *self, uint32 size) put_FileMaxTotalSize;
+				public function HRESULT(IConfigurationDataCollector *self, SAFEARRAY** Files) get_Files;
+				public function HRESULT(IConfigurationDataCollector *self, SAFEARRAY* Files) put_Files;
+				public function HRESULT(IConfigurationDataCollector *self, SAFEARRAY** Queries) get_ManagementQueries;
+				public function HRESULT(IConfigurationDataCollector *self, SAFEARRAY* Queries) put_ManagementQueries;
+				public function HRESULT(IConfigurationDataCollector *self, int16* network) get_QueryNetworkAdapters;
+				public function HRESULT(IConfigurationDataCollector *self, int16 network) put_QueryNetworkAdapters;
+				public function HRESULT(IConfigurationDataCollector *self, SAFEARRAY** query) get_RegistryKeys;
+				public function HRESULT(IConfigurationDataCollector *self, SAFEARRAY* query) put_RegistryKeys;
+				public function HRESULT(IConfigurationDataCollector *self, uint32* depth) get_RegistryMaxRecursiveDepth;
+				public function HRESULT(IConfigurationDataCollector *self, uint32 depth) put_RegistryMaxRecursiveDepth;
+				public function HRESULT(IConfigurationDataCollector *self, BSTR* FileName) get_SystemStateFile;
+				public function HRESULT(IConfigurationDataCollector *self, BSTR FileName) put_SystemStateFile;
+			}
 		}
 		[CRepr]
 		public struct IAlertDataCollector : IDataCollector
 		{
 			public const new Guid IID = .(0x03837516, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(IAlertDataCollector *self, SAFEARRAY** alerts) get_AlertThresholds;
-			public function HRESULT(IAlertDataCollector *self, SAFEARRAY* alerts) put_AlertThresholds;
-			public function HRESULT(IAlertDataCollector *self, int16* log) get_EventLog;
-			public function HRESULT(IAlertDataCollector *self, int16 log) put_EventLog;
-			public function HRESULT(IAlertDataCollector *self, uint32* interval) get_SampleInterval;
-			public function HRESULT(IAlertDataCollector *self, uint32 interval) put_SampleInterval;
-			public function HRESULT(IAlertDataCollector *self, BSTR* task) get_Task;
-			public function HRESULT(IAlertDataCollector *self, BSTR task) put_Task;
-			public function HRESULT(IAlertDataCollector *self, int16* RunAsSelf) get_TaskRunAsSelf;
-			public function HRESULT(IAlertDataCollector *self, int16 RunAsSelf) put_TaskRunAsSelf;
-			public function HRESULT(IAlertDataCollector *self, BSTR* task) get_TaskArguments;
-			public function HRESULT(IAlertDataCollector *self, BSTR task) put_TaskArguments;
-			public function HRESULT(IAlertDataCollector *self, BSTR* task) get_TaskUserTextArguments;
-			public function HRESULT(IAlertDataCollector *self, BSTR task) put_TaskUserTextArguments;
-			public function HRESULT(IAlertDataCollector *self, BSTR* name) get_TriggerDataCollectorSet;
-			public function HRESULT(IAlertDataCollector *self, BSTR name) put_TriggerDataCollectorSet;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDataCollector.VTable
+			{
+				public function HRESULT(IAlertDataCollector *self, SAFEARRAY** alerts) get_AlertThresholds;
+				public function HRESULT(IAlertDataCollector *self, SAFEARRAY* alerts) put_AlertThresholds;
+				public function HRESULT(IAlertDataCollector *self, int16* log) get_EventLog;
+				public function HRESULT(IAlertDataCollector *self, int16 log) put_EventLog;
+				public function HRESULT(IAlertDataCollector *self, uint32* interval) get_SampleInterval;
+				public function HRESULT(IAlertDataCollector *self, uint32 interval) put_SampleInterval;
+				public function HRESULT(IAlertDataCollector *self, BSTR* task) get_Task;
+				public function HRESULT(IAlertDataCollector *self, BSTR task) put_Task;
+				public function HRESULT(IAlertDataCollector *self, int16* RunAsSelf) get_TaskRunAsSelf;
+				public function HRESULT(IAlertDataCollector *self, int16 RunAsSelf) put_TaskRunAsSelf;
+				public function HRESULT(IAlertDataCollector *self, BSTR* task) get_TaskArguments;
+				public function HRESULT(IAlertDataCollector *self, BSTR task) put_TaskArguments;
+				public function HRESULT(IAlertDataCollector *self, BSTR* task) get_TaskUserTextArguments;
+				public function HRESULT(IAlertDataCollector *self, BSTR task) put_TaskUserTextArguments;
+				public function HRESULT(IAlertDataCollector *self, BSTR* name) get_TriggerDataCollectorSet;
+				public function HRESULT(IAlertDataCollector *self, BSTR name) put_TriggerDataCollectorSet;
+			}
 		}
 		[CRepr]
 		public struct IApiTracingDataCollector : IDataCollector
 		{
 			public const new Guid IID = .(0x0383751a, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(IApiTracingDataCollector *self, int16* logapinames) get_LogApiNamesOnly;
-			public function HRESULT(IApiTracingDataCollector *self, int16 logapinames) put_LogApiNamesOnly;
-			public function HRESULT(IApiTracingDataCollector *self, int16* logrecursively) get_LogApisRecursively;
-			public function HRESULT(IApiTracingDataCollector *self, int16 logrecursively) put_LogApisRecursively;
-			public function HRESULT(IApiTracingDataCollector *self, BSTR* exepath) get_ExePath;
-			public function HRESULT(IApiTracingDataCollector *self, BSTR exepath) put_ExePath;
-			public function HRESULT(IApiTracingDataCollector *self, BSTR* logfilepath) get_LogFilePath;
-			public function HRESULT(IApiTracingDataCollector *self, BSTR logfilepath) put_LogFilePath;
-			public function HRESULT(IApiTracingDataCollector *self, SAFEARRAY** includemodules) get_IncludeModules;
-			public function HRESULT(IApiTracingDataCollector *self, SAFEARRAY* includemodules) put_IncludeModules;
-			public function HRESULT(IApiTracingDataCollector *self, SAFEARRAY** includeapis) get_IncludeApis;
-			public function HRESULT(IApiTracingDataCollector *self, SAFEARRAY* includeapis) put_IncludeApis;
-			public function HRESULT(IApiTracingDataCollector *self, SAFEARRAY** excludeapis) get_ExcludeApis;
-			public function HRESULT(IApiTracingDataCollector *self, SAFEARRAY* excludeapis) put_ExcludeApis;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDataCollector.VTable
+			{
+				public function HRESULT(IApiTracingDataCollector *self, int16* logapinames) get_LogApiNamesOnly;
+				public function HRESULT(IApiTracingDataCollector *self, int16 logapinames) put_LogApiNamesOnly;
+				public function HRESULT(IApiTracingDataCollector *self, int16* logrecursively) get_LogApisRecursively;
+				public function HRESULT(IApiTracingDataCollector *self, int16 logrecursively) put_LogApisRecursively;
+				public function HRESULT(IApiTracingDataCollector *self, BSTR* exepath) get_ExePath;
+				public function HRESULT(IApiTracingDataCollector *self, BSTR exepath) put_ExePath;
+				public function HRESULT(IApiTracingDataCollector *self, BSTR* logfilepath) get_LogFilePath;
+				public function HRESULT(IApiTracingDataCollector *self, BSTR logfilepath) put_LogFilePath;
+				public function HRESULT(IApiTracingDataCollector *self, SAFEARRAY** includemodules) get_IncludeModules;
+				public function HRESULT(IApiTracingDataCollector *self, SAFEARRAY* includemodules) put_IncludeModules;
+				public function HRESULT(IApiTracingDataCollector *self, SAFEARRAY** includeapis) get_IncludeApis;
+				public function HRESULT(IApiTracingDataCollector *self, SAFEARRAY* includeapis) put_IncludeApis;
+				public function HRESULT(IApiTracingDataCollector *self, SAFEARRAY** excludeapis) get_ExcludeApis;
+				public function HRESULT(IApiTracingDataCollector *self, SAFEARRAY* excludeapis) put_ExcludeApis;
+			}
 		}
 		[CRepr]
 		public struct IDataCollectorCollection : IDispatch
 		{
 			public const new Guid IID = .(0x03837502, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(IDataCollectorCollection *self, int32* retVal) get_Count;
-			public function HRESULT(IDataCollectorCollection *self, VARIANT index, IDataCollector** collector) get_Item;
-			public function HRESULT(IDataCollectorCollection *self, IUnknown** retVal) get__NewEnum;
-			public function HRESULT(IDataCollectorCollection *self, IDataCollector* collector) Add;
-			public function HRESULT(IDataCollectorCollection *self, VARIANT collector) Remove;
-			public function HRESULT(IDataCollectorCollection *self) Clear;
-			public function HRESULT(IDataCollectorCollection *self, IDataCollectorCollection* collectors) AddRange;
-			public function HRESULT(IDataCollectorCollection *self, BSTR bstrXml, IValueMap** pValidation, IDataCollector** pCollector) CreateDataCollectorFromXml;
-			public function HRESULT(IDataCollectorCollection *self, DataCollectorType Type, IDataCollector** Collector) CreateDataCollector;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IDataCollectorCollection *self, int32* retVal) get_Count;
+				public function HRESULT(IDataCollectorCollection *self, VARIANT index, IDataCollector** collector) get_Item;
+				public function HRESULT(IDataCollectorCollection *self, IUnknown** retVal) get__NewEnum;
+				public function HRESULT(IDataCollectorCollection *self, IDataCollector* collector) Add;
+				public function HRESULT(IDataCollectorCollection *self, VARIANT collector) Remove;
+				public function HRESULT(IDataCollectorCollection *self) Clear;
+				public function HRESULT(IDataCollectorCollection *self, IDataCollectorCollection* collectors) AddRange;
+				public function HRESULT(IDataCollectorCollection *self, BSTR bstrXml, IValueMap** pValidation, IDataCollector** pCollector) CreateDataCollectorFromXml;
+				public function HRESULT(IDataCollectorCollection *self, DataCollectorType Type, IDataCollector** Collector) CreateDataCollector;
+			}
 		}
 		[CRepr]
 		public struct IDataCollectorSetCollection : IDispatch
 		{
 			public const new Guid IID = .(0x03837524, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(IDataCollectorSetCollection *self, int32* retVal) get_Count;
-			public function HRESULT(IDataCollectorSetCollection *self, VARIANT index, IDataCollectorSet** set) get_Item;
-			public function HRESULT(IDataCollectorSetCollection *self, IUnknown** retVal) get__NewEnum;
-			public function HRESULT(IDataCollectorSetCollection *self, IDataCollectorSet* set) Add;
-			public function HRESULT(IDataCollectorSetCollection *self, VARIANT set) Remove;
-			public function HRESULT(IDataCollectorSetCollection *self) Clear;
-			public function HRESULT(IDataCollectorSetCollection *self, IDataCollectorSetCollection* sets) AddRange;
-			public function HRESULT(IDataCollectorSetCollection *self, BSTR server, BSTR filter) GetDataCollectorSets;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IDataCollectorSetCollection *self, int32* retVal) get_Count;
+				public function HRESULT(IDataCollectorSetCollection *self, VARIANT index, IDataCollectorSet** set) get_Item;
+				public function HRESULT(IDataCollectorSetCollection *self, IUnknown** retVal) get__NewEnum;
+				public function HRESULT(IDataCollectorSetCollection *self, IDataCollectorSet* set) Add;
+				public function HRESULT(IDataCollectorSetCollection *self, VARIANT set) Remove;
+				public function HRESULT(IDataCollectorSetCollection *self) Clear;
+				public function HRESULT(IDataCollectorSetCollection *self, IDataCollectorSetCollection* sets) AddRange;
+				public function HRESULT(IDataCollectorSetCollection *self, BSTR server, BSTR filter) GetDataCollectorSets;
+			}
 		}
 		[CRepr]
 		public struct ITraceDataProvider : IDispatch
 		{
 			public const new Guid IID = .(0x03837512, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(ITraceDataProvider *self, BSTR* name) get_DisplayName;
-			public function HRESULT(ITraceDataProvider *self, BSTR name) put_DisplayName;
-			public function HRESULT(ITraceDataProvider *self, Guid* guid) get_Guid;
-			public function HRESULT(ITraceDataProvider *self, Guid guid) put_Guid;
-			public function HRESULT(ITraceDataProvider *self, IValueMap** ppLevel) get_Level;
-			public function HRESULT(ITraceDataProvider *self, IValueMap** ppKeywords) get_KeywordsAny;
-			public function HRESULT(ITraceDataProvider *self, IValueMap** ppKeywords) get_KeywordsAll;
-			public function HRESULT(ITraceDataProvider *self, IValueMap** ppProperties) get_Properties;
-			public function HRESULT(ITraceDataProvider *self, int16* FilterEnabled) get_FilterEnabled;
-			public function HRESULT(ITraceDataProvider *self, int16 FilterEnabled) put_FilterEnabled;
-			public function HRESULT(ITraceDataProvider *self, uint32* pulType) get_FilterType;
-			public function HRESULT(ITraceDataProvider *self, uint32 ulType) put_FilterType;
-			public function HRESULT(ITraceDataProvider *self, SAFEARRAY** ppData) get_FilterData;
-			public function HRESULT(ITraceDataProvider *self, SAFEARRAY* pData) put_FilterData;
-			public function HRESULT(ITraceDataProvider *self, BSTR bstrName, BSTR bstrServer) Query;
-			public function HRESULT(ITraceDataProvider *self, IDispatch* pFrom) Resolve;
-			public function HRESULT(ITraceDataProvider *self, BSTR Sddl) SetSecurity;
-			public function HRESULT(ITraceDataProvider *self, uint32 SecurityInfo, BSTR* Sddl) GetSecurity;
-			public function HRESULT(ITraceDataProvider *self, IValueMap** Processes) GetRegisteredProcesses;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ITraceDataProvider *self, BSTR* name) get_DisplayName;
+				public function HRESULT(ITraceDataProvider *self, BSTR name) put_DisplayName;
+				public function HRESULT(ITraceDataProvider *self, Guid* guid) get_Guid;
+				public function HRESULT(ITraceDataProvider *self, Guid guid) put_Guid;
+				public function HRESULT(ITraceDataProvider *self, IValueMap** ppLevel) get_Level;
+				public function HRESULT(ITraceDataProvider *self, IValueMap** ppKeywords) get_KeywordsAny;
+				public function HRESULT(ITraceDataProvider *self, IValueMap** ppKeywords) get_KeywordsAll;
+				public function HRESULT(ITraceDataProvider *self, IValueMap** ppProperties) get_Properties;
+				public function HRESULT(ITraceDataProvider *self, int16* FilterEnabled) get_FilterEnabled;
+				public function HRESULT(ITraceDataProvider *self, int16 FilterEnabled) put_FilterEnabled;
+				public function HRESULT(ITraceDataProvider *self, uint32* pulType) get_FilterType;
+				public function HRESULT(ITraceDataProvider *self, uint32 ulType) put_FilterType;
+				public function HRESULT(ITraceDataProvider *self, SAFEARRAY** ppData) get_FilterData;
+				public function HRESULT(ITraceDataProvider *self, SAFEARRAY* pData) put_FilterData;
+				public function HRESULT(ITraceDataProvider *self, BSTR bstrName, BSTR bstrServer) Query;
+				public function HRESULT(ITraceDataProvider *self, IDispatch* pFrom) Resolve;
+				public function HRESULT(ITraceDataProvider *self, BSTR Sddl) SetSecurity;
+				public function HRESULT(ITraceDataProvider *self, uint32 SecurityInfo, BSTR* Sddl) GetSecurity;
+				public function HRESULT(ITraceDataProvider *self, IValueMap** Processes) GetRegisteredProcesses;
+			}
 		}
 		[CRepr]
 		public struct ITraceDataProviderCollection : IDispatch
 		{
 			public const new Guid IID = .(0x03837510, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(ITraceDataProviderCollection *self, int32* retVal) get_Count;
-			public function HRESULT(ITraceDataProviderCollection *self, VARIANT index, ITraceDataProvider** ppProvider) get_Item;
-			public function HRESULT(ITraceDataProviderCollection *self, IUnknown** retVal) get__NewEnum;
-			public function HRESULT(ITraceDataProviderCollection *self, ITraceDataProvider* pProvider) Add;
-			public function HRESULT(ITraceDataProviderCollection *self, VARIANT vProvider) Remove;
-			public function HRESULT(ITraceDataProviderCollection *self) Clear;
-			public function HRESULT(ITraceDataProviderCollection *self, ITraceDataProviderCollection* providers) AddRange;
-			public function HRESULT(ITraceDataProviderCollection *self, ITraceDataProvider** Provider) CreateTraceDataProvider;
-			public function HRESULT(ITraceDataProviderCollection *self, BSTR server) GetTraceDataProviders;
-			public function HRESULT(ITraceDataProviderCollection *self, BSTR Server, uint32 Pid) GetTraceDataProvidersByProcess;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ITraceDataProviderCollection *self, int32* retVal) get_Count;
+				public function HRESULT(ITraceDataProviderCollection *self, VARIANT index, ITraceDataProvider** ppProvider) get_Item;
+				public function HRESULT(ITraceDataProviderCollection *self, IUnknown** retVal) get__NewEnum;
+				public function HRESULT(ITraceDataProviderCollection *self, ITraceDataProvider* pProvider) Add;
+				public function HRESULT(ITraceDataProviderCollection *self, VARIANT vProvider) Remove;
+				public function HRESULT(ITraceDataProviderCollection *self) Clear;
+				public function HRESULT(ITraceDataProviderCollection *self, ITraceDataProviderCollection* providers) AddRange;
+				public function HRESULT(ITraceDataProviderCollection *self, ITraceDataProvider** Provider) CreateTraceDataProvider;
+				public function HRESULT(ITraceDataProviderCollection *self, BSTR server) GetTraceDataProviders;
+				public function HRESULT(ITraceDataProviderCollection *self, BSTR Server, uint32 Pid) GetTraceDataProvidersByProcess;
+			}
 		}
 		[CRepr]
 		public struct ISchedule : IDispatch
 		{
 			public const new Guid IID = .(0x0383753a, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(ISchedule *self, VARIANT* start) get_StartDate;
-			public function HRESULT(ISchedule *self, VARIANT start) put_StartDate;
-			public function HRESULT(ISchedule *self, VARIANT* end) get_EndDate;
-			public function HRESULT(ISchedule *self, VARIANT end) put_EndDate;
-			public function HRESULT(ISchedule *self, VARIANT* start) get_StartTime;
-			public function HRESULT(ISchedule *self, VARIANT start) put_StartTime;
-			public function HRESULT(ISchedule *self, WeekDays* days) get_Days;
-			public function HRESULT(ISchedule *self, WeekDays days) put_Days;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ISchedule *self, VARIANT* start) get_StartDate;
+				public function HRESULT(ISchedule *self, VARIANT start) put_StartDate;
+				public function HRESULT(ISchedule *self, VARIANT* end) get_EndDate;
+				public function HRESULT(ISchedule *self, VARIANT end) put_EndDate;
+				public function HRESULT(ISchedule *self, VARIANT* start) get_StartTime;
+				public function HRESULT(ISchedule *self, VARIANT start) put_StartTime;
+				public function HRESULT(ISchedule *self, WeekDays* days) get_Days;
+				public function HRESULT(ISchedule *self, WeekDays days) put_Days;
+			}
 		}
 		[CRepr]
 		public struct IScheduleCollection : IDispatch
 		{
 			public const new Guid IID = .(0x0383753d, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(IScheduleCollection *self, int32* retVal) get_Count;
-			public function HRESULT(IScheduleCollection *self, VARIANT index, ISchedule** ppSchedule) get_Item;
-			public function HRESULT(IScheduleCollection *self, IUnknown** ienum) get__NewEnum;
-			public function HRESULT(IScheduleCollection *self, ISchedule* pSchedule) Add;
-			public function HRESULT(IScheduleCollection *self, VARIANT vSchedule) Remove;
-			public function HRESULT(IScheduleCollection *self) Clear;
-			public function HRESULT(IScheduleCollection *self, IScheduleCollection* pSchedules) AddRange;
-			public function HRESULT(IScheduleCollection *self, ISchedule** Schedule) CreateSchedule;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IScheduleCollection *self, int32* retVal) get_Count;
+				public function HRESULT(IScheduleCollection *self, VARIANT index, ISchedule** ppSchedule) get_Item;
+				public function HRESULT(IScheduleCollection *self, IUnknown** ienum) get__NewEnum;
+				public function HRESULT(IScheduleCollection *self, ISchedule* pSchedule) Add;
+				public function HRESULT(IScheduleCollection *self, VARIANT vSchedule) Remove;
+				public function HRESULT(IScheduleCollection *self) Clear;
+				public function HRESULT(IScheduleCollection *self, IScheduleCollection* pSchedules) AddRange;
+				public function HRESULT(IScheduleCollection *self, ISchedule** Schedule) CreateSchedule;
+			}
 		}
 		[CRepr]
 		public struct IValueMapItem : IDispatch
 		{
 			public const new Guid IID = .(0x03837533, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(IValueMapItem *self, BSTR* description) get_Description;
-			public function HRESULT(IValueMapItem *self, BSTR description) put_Description;
-			public function HRESULT(IValueMapItem *self, int16* enabled) get_Enabled;
-			public function HRESULT(IValueMapItem *self, int16 enabled) put_Enabled;
-			public function HRESULT(IValueMapItem *self, BSTR* key) get_Key;
-			public function HRESULT(IValueMapItem *self, BSTR key) put_Key;
-			public function HRESULT(IValueMapItem *self, VARIANT* Value) get_Value;
-			public function HRESULT(IValueMapItem *self, VARIANT Value) put_Value;
-			public function HRESULT(IValueMapItem *self, ValueMapType* type) get_ValueMapType;
-			public function HRESULT(IValueMapItem *self, ValueMapType type) put_ValueMapType;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IValueMapItem *self, BSTR* description) get_Description;
+				public function HRESULT(IValueMapItem *self, BSTR description) put_Description;
+				public function HRESULT(IValueMapItem *self, int16* enabled) get_Enabled;
+				public function HRESULT(IValueMapItem *self, int16 enabled) put_Enabled;
+				public function HRESULT(IValueMapItem *self, BSTR* key) get_Key;
+				public function HRESULT(IValueMapItem *self, BSTR key) put_Key;
+				public function HRESULT(IValueMapItem *self, VARIANT* Value) get_Value;
+				public function HRESULT(IValueMapItem *self, VARIANT Value) put_Value;
+				public function HRESULT(IValueMapItem *self, ValueMapType* type) get_ValueMapType;
+				public function HRESULT(IValueMapItem *self, ValueMapType type) put_ValueMapType;
+			}
 		}
 		[CRepr]
 		public struct IValueMap : IDispatch
 		{
 			public const new Guid IID = .(0x03837534, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(IValueMap *self, int32* retVal) get_Count;
-			public function HRESULT(IValueMap *self, VARIANT index, IValueMapItem** value) get_Item;
-			public function HRESULT(IValueMap *self, IUnknown** retVal) get__NewEnum;
-			public function HRESULT(IValueMap *self, BSTR* description) get_Description;
-			public function HRESULT(IValueMap *self, BSTR description) put_Description;
-			public function HRESULT(IValueMap *self, VARIANT* Value) get_Value;
-			public function HRESULT(IValueMap *self, VARIANT Value) put_Value;
-			public function HRESULT(IValueMap *self, ValueMapType* type) get_ValueMapType;
-			public function HRESULT(IValueMap *self, ValueMapType type) put_ValueMapType;
-			public function HRESULT(IValueMap *self, VARIANT value) Add;
-			public function HRESULT(IValueMap *self, VARIANT value) Remove;
-			public function HRESULT(IValueMap *self) Clear;
-			public function HRESULT(IValueMap *self, IValueMap* map) AddRange;
-			public function HRESULT(IValueMap *self, IValueMapItem** Item) CreateValueMapItem;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IValueMap *self, int32* retVal) get_Count;
+				public function HRESULT(IValueMap *self, VARIANT index, IValueMapItem** value) get_Item;
+				public function HRESULT(IValueMap *self, IUnknown** retVal) get__NewEnum;
+				public function HRESULT(IValueMap *self, BSTR* description) get_Description;
+				public function HRESULT(IValueMap *self, BSTR description) put_Description;
+				public function HRESULT(IValueMap *self, VARIANT* Value) get_Value;
+				public function HRESULT(IValueMap *self, VARIANT Value) put_Value;
+				public function HRESULT(IValueMap *self, ValueMapType* type) get_ValueMapType;
+				public function HRESULT(IValueMap *self, ValueMapType type) put_ValueMapType;
+				public function HRESULT(IValueMap *self, VARIANT value) Add;
+				public function HRESULT(IValueMap *self, VARIANT value) Remove;
+				public function HRESULT(IValueMap *self) Clear;
+				public function HRESULT(IValueMap *self, IValueMap* map) AddRange;
+				public function HRESULT(IValueMap *self, IValueMapItem** Item) CreateValueMapItem;
+			}
 		}
 		[CRepr]
 		public struct ICounterItem : IUnknown
 		{
 			public const new Guid IID = .(0x771a9520, 0xee28, 0x11ce, 0x94, 0x1e, 0x00, 0x80, 0x29, 0x00, 0x43, 0x47);
 			
-			public function HRESULT(ICounterItem *self, double* pdblValue) get_Value;
-			public function HRESULT(ICounterItem *self, uint32 Color) put_Color;
-			public function HRESULT(ICounterItem *self, uint32* pColor) get_Color;
-			public function HRESULT(ICounterItem *self, int32 iWidth) put_Width;
-			public function HRESULT(ICounterItem *self, int32* piValue) get_Width;
-			public function HRESULT(ICounterItem *self, int32 iLineStyle) put_LineStyle;
-			public function HRESULT(ICounterItem *self, int32* piValue) get_LineStyle;
-			public function HRESULT(ICounterItem *self, int32 iScale) put_ScaleFactor;
-			public function HRESULT(ICounterItem *self, int32* piValue) get_ScaleFactor;
-			public function HRESULT(ICounterItem *self, BSTR* pstrValue) get_Path;
-			public function HRESULT(ICounterItem *self, double* Value, int32* Status) GetValue;
-			public function HRESULT(ICounterItem *self, double* Max, double* Min, double* Avg, int32* Status) GetStatistics;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICounterItem *self, double* pdblValue) get_Value;
+				public function HRESULT(ICounterItem *self, uint32 Color) put_Color;
+				public function HRESULT(ICounterItem *self, uint32* pColor) get_Color;
+				public function HRESULT(ICounterItem *self, int32 iWidth) put_Width;
+				public function HRESULT(ICounterItem *self, int32* piValue) get_Width;
+				public function HRESULT(ICounterItem *self, int32 iLineStyle) put_LineStyle;
+				public function HRESULT(ICounterItem *self, int32* piValue) get_LineStyle;
+				public function HRESULT(ICounterItem *self, int32 iScale) put_ScaleFactor;
+				public function HRESULT(ICounterItem *self, int32* piValue) get_ScaleFactor;
+				public function HRESULT(ICounterItem *self, BSTR* pstrValue) get_Path;
+				public function HRESULT(ICounterItem *self, double* Value, int32* Status) GetValue;
+				public function HRESULT(ICounterItem *self, double* Max, double* Min, double* Avg, int32* Status) GetStatistics;
+			}
 		}
 		[CRepr]
 		public struct ICounterItem2 : ICounterItem
 		{
 			public const new Guid IID = .(0xeefcd4e1, 0xea1c, 0x4435, 0xb7, 0xf4, 0xe3, 0x41, 0xba, 0x03, 0xb4, 0xf9);
 			
-			public function HRESULT(ICounterItem2 *self, int16 bState) put_Selected;
-			public function HRESULT(ICounterItem2 *self, int16* pbState) get_Selected;
-			public function HRESULT(ICounterItem2 *self, int16 bState) put_Visible;
-			public function HRESULT(ICounterItem2 *self, int16* pbState) get_Visible;
-			public function HRESULT(ICounterItem2 *self, int32 iIndex, SysmonDataType iWhich, VARIANT* pVariant) GetDataAt;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICounterItem.VTable
+			{
+				public function HRESULT(ICounterItem2 *self, int16 bState) put_Selected;
+				public function HRESULT(ICounterItem2 *self, int16* pbState) get_Selected;
+				public function HRESULT(ICounterItem2 *self, int16 bState) put_Visible;
+				public function HRESULT(ICounterItem2 *self, int16* pbState) get_Visible;
+				public function HRESULT(ICounterItem2 *self, int32 iIndex, SysmonDataType iWhich, VARIANT* pVariant) GetDataAt;
+			}
 		}
 		[CRepr]
 		public struct _ICounterItemUnion : IUnknown
 		{
 			public const new Guid IID = .(0xde1a6b74, 0x9182, 0x4c41, 0x8e, 0x2c, 0x24, 0xc2, 0xcd, 0x30, 0xee, 0x83);
 			
-			public function HRESULT(_ICounterItemUnion *self, double* pdblValue) get_Value;
-			public function HRESULT(_ICounterItemUnion *self, uint32 Color) put_Color;
-			public function HRESULT(_ICounterItemUnion *self, uint32* pColor) get_Color;
-			public function HRESULT(_ICounterItemUnion *self, int32 iWidth) put_Width;
-			public function HRESULT(_ICounterItemUnion *self, int32* piValue) get_Width;
-			public function HRESULT(_ICounterItemUnion *self, int32 iLineStyle) put_LineStyle;
-			public function HRESULT(_ICounterItemUnion *self, int32* piValue) get_LineStyle;
-			public function HRESULT(_ICounterItemUnion *self, int32 iScale) put_ScaleFactor;
-			public function HRESULT(_ICounterItemUnion *self, int32* piValue) get_ScaleFactor;
-			public function HRESULT(_ICounterItemUnion *self, BSTR* pstrValue) get_Path;
-			public function HRESULT(_ICounterItemUnion *self, double* Value, int32* Status) GetValue;
-			public function HRESULT(_ICounterItemUnion *self, double* Max, double* Min, double* Avg, int32* Status) GetStatistics;
-			public function HRESULT(_ICounterItemUnion *self, int16 bState) put_Selected;
-			public function HRESULT(_ICounterItemUnion *self, int16* pbState) get_Selected;
-			public function HRESULT(_ICounterItemUnion *self, int16 bState) put_Visible;
-			public function HRESULT(_ICounterItemUnion *self, int16* pbState) get_Visible;
-			public function HRESULT(_ICounterItemUnion *self, int32 iIndex, SysmonDataType iWhich, VARIANT* pVariant) GetDataAt;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(_ICounterItemUnion *self, double* pdblValue) get_Value;
+				public function HRESULT(_ICounterItemUnion *self, uint32 Color) put_Color;
+				public function HRESULT(_ICounterItemUnion *self, uint32* pColor) get_Color;
+				public function HRESULT(_ICounterItemUnion *self, int32 iWidth) put_Width;
+				public function HRESULT(_ICounterItemUnion *self, int32* piValue) get_Width;
+				public function HRESULT(_ICounterItemUnion *self, int32 iLineStyle) put_LineStyle;
+				public function HRESULT(_ICounterItemUnion *self, int32* piValue) get_LineStyle;
+				public function HRESULT(_ICounterItemUnion *self, int32 iScale) put_ScaleFactor;
+				public function HRESULT(_ICounterItemUnion *self, int32* piValue) get_ScaleFactor;
+				public function HRESULT(_ICounterItemUnion *self, BSTR* pstrValue) get_Path;
+				public function HRESULT(_ICounterItemUnion *self, double* Value, int32* Status) GetValue;
+				public function HRESULT(_ICounterItemUnion *self, double* Max, double* Min, double* Avg, int32* Status) GetStatistics;
+				public function HRESULT(_ICounterItemUnion *self, int16 bState) put_Selected;
+				public function HRESULT(_ICounterItemUnion *self, int16* pbState) get_Selected;
+				public function HRESULT(_ICounterItemUnion *self, int16 bState) put_Visible;
+				public function HRESULT(_ICounterItemUnion *self, int16* pbState) get_Visible;
+				public function HRESULT(_ICounterItemUnion *self, int32 iIndex, SysmonDataType iWhich, VARIANT* pVariant) GetDataAt;
+			}
 		}
 		[CRepr]
 		public struct DICounterItem : IDispatch
 		{
 			public const new Guid IID = .(0xc08c4ff2, 0x0e2e, 0x11cf, 0x94, 0x2c, 0x00, 0x80, 0x29, 0x00, 0x43, 0x47);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct ICounters : IDispatch
 		{
 			public const new Guid IID = .(0x79167962, 0x28fc, 0x11cf, 0x94, 0x2f, 0x00, 0x80, 0x29, 0x00, 0x43, 0x47);
 			
-			public function HRESULT(ICounters *self, int32* pLong) get_Count;
-			public function HRESULT(ICounters *self, IUnknown** ppIunk) get__NewEnum;
-			public function HRESULT(ICounters *self, VARIANT index, DICounterItem** ppI) get_Item;
-			public function HRESULT(ICounters *self, BSTR pathname, DICounterItem** ppI) Add;
-			public function HRESULT(ICounters *self, VARIANT index) Remove;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICounters *self, int32* pLong) get_Count;
+				public function HRESULT(ICounters *self, IUnknown** ppIunk) get__NewEnum;
+				public function HRESULT(ICounters *self, VARIANT index, DICounterItem** ppI) get_Item;
+				public function HRESULT(ICounters *self, BSTR pathname, DICounterItem** ppI) Add;
+				public function HRESULT(ICounters *self, VARIANT index) Remove;
+			}
 		}
 		[CRepr]
 		public struct ILogFileItem : IUnknown
 		{
 			public const new Guid IID = .(0xd6b518dd, 0x05c7, 0x418a, 0x89, 0xe6, 0x4f, 0x9c, 0xe8, 0xc6, 0x84, 0x1e);
 			
-			public function HRESULT(ILogFileItem *self, BSTR* pstrValue) get_Path;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ILogFileItem *self, BSTR* pstrValue) get_Path;
+			}
 		}
 		[CRepr]
 		public struct DILogFileItem : IDispatch
 		{
 			public const new Guid IID = .(0x8d093ffc, 0xf777, 0x4917, 0x82, 0xd1, 0x83, 0x3f, 0xbc, 0x54, 0xc5, 0x8f);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct ILogFiles : IDispatch
 		{
 			public const new Guid IID = .(0x6a2a97e6, 0x6851, 0x41ea, 0x87, 0xad, 0x2a, 0x82, 0x25, 0x33, 0x58, 0x65);
 			
-			public function HRESULT(ILogFiles *self, int32* pLong) get_Count;
-			public function HRESULT(ILogFiles *self, IUnknown** ppIunk) get__NewEnum;
-			public function HRESULT(ILogFiles *self, VARIANT index, DILogFileItem** ppI) get_Item;
-			public function HRESULT(ILogFiles *self, BSTR pathname, DILogFileItem** ppI) Add;
-			public function HRESULT(ILogFiles *self, VARIANT index) Remove;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ILogFiles *self, int32* pLong) get_Count;
+				public function HRESULT(ILogFiles *self, IUnknown** ppIunk) get__NewEnum;
+				public function HRESULT(ILogFiles *self, VARIANT index, DILogFileItem** ppI) get_Item;
+				public function HRESULT(ILogFiles *self, BSTR pathname, DILogFileItem** ppI) Add;
+				public function HRESULT(ILogFiles *self, VARIANT index) Remove;
+			}
 		}
 		[CRepr]
 		public struct ISystemMonitor : IUnknown
 		{
 			public const new Guid IID = .(0x194eb241, 0xc32c, 0x11cf, 0x93, 0x98, 0x00, 0xaa, 0x00, 0xa3, 0xdd, 0xea);
 			
-			public function HRESULT(ISystemMonitor *self, int32* iAppearance) get_Appearance;
-			public function HRESULT(ISystemMonitor *self, int32 iAppearance) put_Appearance;
-			public function HRESULT(ISystemMonitor *self, uint32* pColor) get_BackColor;
-			public function HRESULT(ISystemMonitor *self, uint32 Color) put_BackColor;
-			public function HRESULT(ISystemMonitor *self, int32* iBorderStyle) get_BorderStyle;
-			public function HRESULT(ISystemMonitor *self, int32 iBorderStyle) put_BorderStyle;
-			public function HRESULT(ISystemMonitor *self, uint32* pColor) get_ForeColor;
-			public function HRESULT(ISystemMonitor *self, uint32 Color) put_ForeColor;
-			public function HRESULT(ISystemMonitor *self, IFontDisp** ppFont) get_Font;
-			public function HRESULT(ISystemMonitor *self, IFontDisp* pFont) putref_Font;
-			public function HRESULT(ISystemMonitor *self, ICounters** ppICounters) get_Counters;
-			public function HRESULT(ISystemMonitor *self, int16 bState) put_ShowVerticalGrid;
-			public function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowVerticalGrid;
-			public function HRESULT(ISystemMonitor *self, int16 bState) put_ShowHorizontalGrid;
-			public function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowHorizontalGrid;
-			public function HRESULT(ISystemMonitor *self, int16 bState) put_ShowLegend;
-			public function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowLegend;
-			public function HRESULT(ISystemMonitor *self, int16 bState) put_ShowScaleLabels;
-			public function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowScaleLabels;
-			public function HRESULT(ISystemMonitor *self, int16 bState) put_ShowValueBar;
-			public function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowValueBar;
-			public function HRESULT(ISystemMonitor *self, int32 iValue) put_MaximumScale;
-			public function HRESULT(ISystemMonitor *self, int32* piValue) get_MaximumScale;
-			public function HRESULT(ISystemMonitor *self, int32 iValue) put_MinimumScale;
-			public function HRESULT(ISystemMonitor *self, int32* piValue) get_MinimumScale;
-			public function HRESULT(ISystemMonitor *self, float fValue) put_UpdateInterval;
-			public function HRESULT(ISystemMonitor *self, float* pfValue) get_UpdateInterval;
-			public function HRESULT(ISystemMonitor *self, DisplayTypeConstants eDisplayType) put_DisplayType;
-			public function HRESULT(ISystemMonitor *self, DisplayTypeConstants* peDisplayType) get_DisplayType;
-			public function HRESULT(ISystemMonitor *self, int16 bState) put_ManualUpdate;
-			public function HRESULT(ISystemMonitor *self, int16* pbState) get_ManualUpdate;
-			public function HRESULT(ISystemMonitor *self, BSTR bsTitle) put_GraphTitle;
-			public function HRESULT(ISystemMonitor *self, BSTR* pbsTitle) get_GraphTitle;
-			public function HRESULT(ISystemMonitor *self, BSTR bsTitle) put_YAxisLabel;
-			public function HRESULT(ISystemMonitor *self, BSTR* pbsTitle) get_YAxisLabel;
-			public function HRESULT(ISystemMonitor *self) CollectSample;
-			public function HRESULT(ISystemMonitor *self) UpdateGraph;
-			public function HRESULT(ISystemMonitor *self) BrowseCounters;
-			public function HRESULT(ISystemMonitor *self) DisplayProperties;
-			public function HRESULT(ISystemMonitor *self, int32 iIndex, ICounterItem** ppICounter) Counter;
-			public function HRESULT(ISystemMonitor *self, BSTR bsPath, ICounterItem** ppICounter) AddCounter;
-			public function HRESULT(ISystemMonitor *self, ICounterItem* pCtr) DeleteCounter;
-			public function HRESULT(ISystemMonitor *self, uint32* pColor) get_BackColorCtl;
-			public function HRESULT(ISystemMonitor *self, uint32 Color) put_BackColorCtl;
-			public function HRESULT(ISystemMonitor *self, BSTR bsFileName) put_LogFileName;
-			public function HRESULT(ISystemMonitor *self, BSTR* bsFileName) get_LogFileName;
-			public function HRESULT(ISystemMonitor *self, double StartTime) put_LogViewStart;
-			public function HRESULT(ISystemMonitor *self, double* StartTime) get_LogViewStart;
-			public function HRESULT(ISystemMonitor *self, double StopTime) put_LogViewStop;
-			public function HRESULT(ISystemMonitor *self, double* StopTime) get_LogViewStop;
-			public function HRESULT(ISystemMonitor *self, uint32* pColor) get_GridColor;
-			public function HRESULT(ISystemMonitor *self, uint32 Color) put_GridColor;
-			public function HRESULT(ISystemMonitor *self, uint32* pColor) get_TimeBarColor;
-			public function HRESULT(ISystemMonitor *self, uint32 Color) put_TimeBarColor;
-			public function HRESULT(ISystemMonitor *self, int16* pbState) get_Highlight;
-			public function HRESULT(ISystemMonitor *self, int16 bState) put_Highlight;
-			public function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowToolbar;
-			public function HRESULT(ISystemMonitor *self, int16 bState) put_ShowToolbar;
-			public function HRESULT(ISystemMonitor *self) Paste;
-			public function HRESULT(ISystemMonitor *self) Copy;
-			public function HRESULT(ISystemMonitor *self) Reset;
-			public function HRESULT(ISystemMonitor *self, int16 bState) put_ReadOnly;
-			public function HRESULT(ISystemMonitor *self, int16* pbState) get_ReadOnly;
-			public function HRESULT(ISystemMonitor *self, ReportValueTypeConstants eReportValueType) put_ReportValueType;
-			public function HRESULT(ISystemMonitor *self, ReportValueTypeConstants* peReportValueType) get_ReportValueType;
-			public function HRESULT(ISystemMonitor *self, int16 bState) put_MonitorDuplicateInstances;
-			public function HRESULT(ISystemMonitor *self, int16* pbState) get_MonitorDuplicateInstances;
-			public function HRESULT(ISystemMonitor *self, int32 iValue) put_DisplayFilter;
-			public function HRESULT(ISystemMonitor *self, int32* piValue) get_DisplayFilter;
-			public function HRESULT(ISystemMonitor *self, ILogFiles** ppILogFiles) get_LogFiles;
-			public function HRESULT(ISystemMonitor *self, DataSourceTypeConstants eDataSourceType) put_DataSourceType;
-			public function HRESULT(ISystemMonitor *self, DataSourceTypeConstants* peDataSourceType) get_DataSourceType;
-			public function HRESULT(ISystemMonitor *self, BSTR bsSqlDsnName) put_SqlDsnName;
-			public function HRESULT(ISystemMonitor *self, BSTR* bsSqlDsnName) get_SqlDsnName;
-			public function HRESULT(ISystemMonitor *self, BSTR bsSqlLogSetName) put_SqlLogSetName;
-			public function HRESULT(ISystemMonitor *self, BSTR* bsSqlLogSetName) get_SqlLogSetName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISystemMonitor *self, int32* iAppearance) get_Appearance;
+				public function HRESULT(ISystemMonitor *self, int32 iAppearance) put_Appearance;
+				public function HRESULT(ISystemMonitor *self, uint32* pColor) get_BackColor;
+				public function HRESULT(ISystemMonitor *self, uint32 Color) put_BackColor;
+				public function HRESULT(ISystemMonitor *self, int32* iBorderStyle) get_BorderStyle;
+				public function HRESULT(ISystemMonitor *self, int32 iBorderStyle) put_BorderStyle;
+				public function HRESULT(ISystemMonitor *self, uint32* pColor) get_ForeColor;
+				public function HRESULT(ISystemMonitor *self, uint32 Color) put_ForeColor;
+				public function HRESULT(ISystemMonitor *self, IFontDisp** ppFont) get_Font;
+				public function HRESULT(ISystemMonitor *self, IFontDisp* pFont) putref_Font;
+				public function HRESULT(ISystemMonitor *self, ICounters** ppICounters) get_Counters;
+				public function HRESULT(ISystemMonitor *self, int16 bState) put_ShowVerticalGrid;
+				public function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowVerticalGrid;
+				public function HRESULT(ISystemMonitor *self, int16 bState) put_ShowHorizontalGrid;
+				public function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowHorizontalGrid;
+				public function HRESULT(ISystemMonitor *self, int16 bState) put_ShowLegend;
+				public function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowLegend;
+				public function HRESULT(ISystemMonitor *self, int16 bState) put_ShowScaleLabels;
+				public function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowScaleLabels;
+				public function HRESULT(ISystemMonitor *self, int16 bState) put_ShowValueBar;
+				public function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowValueBar;
+				public function HRESULT(ISystemMonitor *self, int32 iValue) put_MaximumScale;
+				public function HRESULT(ISystemMonitor *self, int32* piValue) get_MaximumScale;
+				public function HRESULT(ISystemMonitor *self, int32 iValue) put_MinimumScale;
+				public function HRESULT(ISystemMonitor *self, int32* piValue) get_MinimumScale;
+				public function HRESULT(ISystemMonitor *self, float fValue) put_UpdateInterval;
+				public function HRESULT(ISystemMonitor *self, float* pfValue) get_UpdateInterval;
+				public function HRESULT(ISystemMonitor *self, DisplayTypeConstants eDisplayType) put_DisplayType;
+				public function HRESULT(ISystemMonitor *self, DisplayTypeConstants* peDisplayType) get_DisplayType;
+				public function HRESULT(ISystemMonitor *self, int16 bState) put_ManualUpdate;
+				public function HRESULT(ISystemMonitor *self, int16* pbState) get_ManualUpdate;
+				public function HRESULT(ISystemMonitor *self, BSTR bsTitle) put_GraphTitle;
+				public function HRESULT(ISystemMonitor *self, BSTR* pbsTitle) get_GraphTitle;
+				public function HRESULT(ISystemMonitor *self, BSTR bsTitle) put_YAxisLabel;
+				public function HRESULT(ISystemMonitor *self, BSTR* pbsTitle) get_YAxisLabel;
+				public function HRESULT(ISystemMonitor *self) CollectSample;
+				public function HRESULT(ISystemMonitor *self) UpdateGraph;
+				public function HRESULT(ISystemMonitor *self) BrowseCounters;
+				public function HRESULT(ISystemMonitor *self) DisplayProperties;
+				public function HRESULT(ISystemMonitor *self, int32 iIndex, ICounterItem** ppICounter) Counter;
+				public function HRESULT(ISystemMonitor *self, BSTR bsPath, ICounterItem** ppICounter) AddCounter;
+				public function HRESULT(ISystemMonitor *self, ICounterItem* pCtr) DeleteCounter;
+				public function HRESULT(ISystemMonitor *self, uint32* pColor) get_BackColorCtl;
+				public function HRESULT(ISystemMonitor *self, uint32 Color) put_BackColorCtl;
+				public function HRESULT(ISystemMonitor *self, BSTR bsFileName) put_LogFileName;
+				public function HRESULT(ISystemMonitor *self, BSTR* bsFileName) get_LogFileName;
+				public function HRESULT(ISystemMonitor *self, double StartTime) put_LogViewStart;
+				public function HRESULT(ISystemMonitor *self, double* StartTime) get_LogViewStart;
+				public function HRESULT(ISystemMonitor *self, double StopTime) put_LogViewStop;
+				public function HRESULT(ISystemMonitor *self, double* StopTime) get_LogViewStop;
+				public function HRESULT(ISystemMonitor *self, uint32* pColor) get_GridColor;
+				public function HRESULT(ISystemMonitor *self, uint32 Color) put_GridColor;
+				public function HRESULT(ISystemMonitor *self, uint32* pColor) get_TimeBarColor;
+				public function HRESULT(ISystemMonitor *self, uint32 Color) put_TimeBarColor;
+				public function HRESULT(ISystemMonitor *self, int16* pbState) get_Highlight;
+				public function HRESULT(ISystemMonitor *self, int16 bState) put_Highlight;
+				public function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowToolbar;
+				public function HRESULT(ISystemMonitor *self, int16 bState) put_ShowToolbar;
+				public function HRESULT(ISystemMonitor *self) Paste;
+				public function HRESULT(ISystemMonitor *self) Copy;
+				public function HRESULT(ISystemMonitor *self) Reset;
+				public function HRESULT(ISystemMonitor *self, int16 bState) put_ReadOnly;
+				public function HRESULT(ISystemMonitor *self, int16* pbState) get_ReadOnly;
+				public function HRESULT(ISystemMonitor *self, ReportValueTypeConstants eReportValueType) put_ReportValueType;
+				public function HRESULT(ISystemMonitor *self, ReportValueTypeConstants* peReportValueType) get_ReportValueType;
+				public function HRESULT(ISystemMonitor *self, int16 bState) put_MonitorDuplicateInstances;
+				public function HRESULT(ISystemMonitor *self, int16* pbState) get_MonitorDuplicateInstances;
+				public function HRESULT(ISystemMonitor *self, int32 iValue) put_DisplayFilter;
+				public function HRESULT(ISystemMonitor *self, int32* piValue) get_DisplayFilter;
+				public function HRESULT(ISystemMonitor *self, ILogFiles** ppILogFiles) get_LogFiles;
+				public function HRESULT(ISystemMonitor *self, DataSourceTypeConstants eDataSourceType) put_DataSourceType;
+				public function HRESULT(ISystemMonitor *self, DataSourceTypeConstants* peDataSourceType) get_DataSourceType;
+				public function HRESULT(ISystemMonitor *self, BSTR bsSqlDsnName) put_SqlDsnName;
+				public function HRESULT(ISystemMonitor *self, BSTR* bsSqlDsnName) get_SqlDsnName;
+				public function HRESULT(ISystemMonitor *self, BSTR bsSqlLogSetName) put_SqlLogSetName;
+				public function HRESULT(ISystemMonitor *self, BSTR* bsSqlLogSetName) get_SqlLogSetName;
+			}
 		}
 		[CRepr]
 		public struct ISystemMonitor2 : ISystemMonitor
 		{
 			public const new Guid IID = .(0x08e3206a, 0x5fd2, 0x4fde, 0xa8, 0xa5, 0x8c, 0xb3, 0xb6, 0x3d, 0x26, 0x77);
 			
-			public function HRESULT(ISystemMonitor2 *self, int16 bState) put_EnableDigitGrouping;
-			public function HRESULT(ISystemMonitor2 *self, int16* pbState) get_EnableDigitGrouping;
-			public function HRESULT(ISystemMonitor2 *self, int16 bState) put_EnableToolTips;
-			public function HRESULT(ISystemMonitor2 *self, int16* pbState) get_EnableToolTips;
-			public function HRESULT(ISystemMonitor2 *self, int16 bState) put_ShowTimeAxisLabels;
-			public function HRESULT(ISystemMonitor2 *self, int16* pbState) get_ShowTimeAxisLabels;
-			public function HRESULT(ISystemMonitor2 *self, int16 bScroll) put_ChartScroll;
-			public function HRESULT(ISystemMonitor2 *self, int16* pbScroll) get_ChartScroll;
-			public function HRESULT(ISystemMonitor2 *self, int32 iNewCount) put_DataPointCount;
-			public function HRESULT(ISystemMonitor2 *self, int32* piDataPointCount) get_DataPointCount;
-			public function HRESULT(ISystemMonitor2 *self, int16 bSelectedCountersOnly) ScaleToFit;
-			public function HRESULT(ISystemMonitor2 *self, BSTR bstrFileName, SysmonFileType eSysmonFileType) SaveAs;
-			public function HRESULT(ISystemMonitor2 *self, BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) Relog;
-			public function HRESULT(ISystemMonitor2 *self) ClearData;
-			public function HRESULT(ISystemMonitor2 *self, double* pDate) get_LogSourceStartTime;
-			public function HRESULT(ISystemMonitor2 *self, double* pDate) get_LogSourceStopTime;
-			public function HRESULT(ISystemMonitor2 *self, double StartTime, double StopTime) SetLogViewRange;
-			public function HRESULT(ISystemMonitor2 *self, double* StartTime, double* StopTime) GetLogViewRange;
-			public function HRESULT(ISystemMonitor2 *self, int16 fLock, SysmonBatchReason eBatchReason) BatchingLock;
-			public function HRESULT(ISystemMonitor2 *self, BSTR bstrSettingFileName) LoadSettings;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ISystemMonitor.VTable
+			{
+				public function HRESULT(ISystemMonitor2 *self, int16 bState) put_EnableDigitGrouping;
+				public function HRESULT(ISystemMonitor2 *self, int16* pbState) get_EnableDigitGrouping;
+				public function HRESULT(ISystemMonitor2 *self, int16 bState) put_EnableToolTips;
+				public function HRESULT(ISystemMonitor2 *self, int16* pbState) get_EnableToolTips;
+				public function HRESULT(ISystemMonitor2 *self, int16 bState) put_ShowTimeAxisLabels;
+				public function HRESULT(ISystemMonitor2 *self, int16* pbState) get_ShowTimeAxisLabels;
+				public function HRESULT(ISystemMonitor2 *self, int16 bScroll) put_ChartScroll;
+				public function HRESULT(ISystemMonitor2 *self, int16* pbScroll) get_ChartScroll;
+				public function HRESULT(ISystemMonitor2 *self, int32 iNewCount) put_DataPointCount;
+				public function HRESULT(ISystemMonitor2 *self, int32* piDataPointCount) get_DataPointCount;
+				public function HRESULT(ISystemMonitor2 *self, int16 bSelectedCountersOnly) ScaleToFit;
+				public function HRESULT(ISystemMonitor2 *self, BSTR bstrFileName, SysmonFileType eSysmonFileType) SaveAs;
+				public function HRESULT(ISystemMonitor2 *self, BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) Relog;
+				public function HRESULT(ISystemMonitor2 *self) ClearData;
+				public function HRESULT(ISystemMonitor2 *self, double* pDate) get_LogSourceStartTime;
+				public function HRESULT(ISystemMonitor2 *self, double* pDate) get_LogSourceStopTime;
+				public function HRESULT(ISystemMonitor2 *self, double StartTime, double StopTime) SetLogViewRange;
+				public function HRESULT(ISystemMonitor2 *self, double* StartTime, double* StopTime) GetLogViewRange;
+				public function HRESULT(ISystemMonitor2 *self, int16 fLock, SysmonBatchReason eBatchReason) BatchingLock;
+				public function HRESULT(ISystemMonitor2 *self, BSTR bstrSettingFileName) LoadSettings;
+			}
 		}
 		[CRepr]
 		public struct _ISystemMonitorUnion : IUnknown
 		{
 			public const new Guid IID = .(0xc8a77338, 0x265f, 0x4de5, 0xaa, 0x25, 0xc7, 0xda, 0x1c, 0xe5, 0xa8, 0xf4);
 			
-			public function HRESULT(_ISystemMonitorUnion *self, int32* iAppearance) get_Appearance;
-			public function HRESULT(_ISystemMonitorUnion *self, int32 iAppearance) put_Appearance;
-			public function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_BackColor;
-			public function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_BackColor;
-			public function HRESULT(_ISystemMonitorUnion *self, int32* iBorderStyle) get_BorderStyle;
-			public function HRESULT(_ISystemMonitorUnion *self, int32 iBorderStyle) put_BorderStyle;
-			public function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_ForeColor;
-			public function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_ForeColor;
-			public function HRESULT(_ISystemMonitorUnion *self, IFontDisp** ppFont) get_Font;
-			public function HRESULT(_ISystemMonitorUnion *self, IFontDisp* pFont) putref_Font;
-			public function HRESULT(_ISystemMonitorUnion *self, ICounters** ppICounters) get_Counters;
-			public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowVerticalGrid;
-			public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowVerticalGrid;
-			public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowHorizontalGrid;
-			public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowHorizontalGrid;
-			public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowLegend;
-			public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowLegend;
-			public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowScaleLabels;
-			public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowScaleLabels;
-			public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowValueBar;
-			public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowValueBar;
-			public function HRESULT(_ISystemMonitorUnion *self, int32 iValue) put_MaximumScale;
-			public function HRESULT(_ISystemMonitorUnion *self, int32* piValue) get_MaximumScale;
-			public function HRESULT(_ISystemMonitorUnion *self, int32 iValue) put_MinimumScale;
-			public function HRESULT(_ISystemMonitorUnion *self, int32* piValue) get_MinimumScale;
-			public function HRESULT(_ISystemMonitorUnion *self, float fValue) put_UpdateInterval;
-			public function HRESULT(_ISystemMonitorUnion *self, float* pfValue) get_UpdateInterval;
-			public function HRESULT(_ISystemMonitorUnion *self, DisplayTypeConstants eDisplayType) put_DisplayType;
-			public function HRESULT(_ISystemMonitorUnion *self, DisplayTypeConstants* peDisplayType) get_DisplayType;
-			public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ManualUpdate;
-			public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ManualUpdate;
-			public function HRESULT(_ISystemMonitorUnion *self, BSTR bsTitle) put_GraphTitle;
-			public function HRESULT(_ISystemMonitorUnion *self, BSTR* pbsTitle) get_GraphTitle;
-			public function HRESULT(_ISystemMonitorUnion *self, BSTR bsTitle) put_YAxisLabel;
-			public function HRESULT(_ISystemMonitorUnion *self, BSTR* pbsTitle) get_YAxisLabel;
-			public function HRESULT(_ISystemMonitorUnion *self) CollectSample;
-			public function HRESULT(_ISystemMonitorUnion *self) UpdateGraph;
-			public function HRESULT(_ISystemMonitorUnion *self) BrowseCounters;
-			public function HRESULT(_ISystemMonitorUnion *self) DisplayProperties;
-			public function HRESULT(_ISystemMonitorUnion *self, int32 iIndex, ICounterItem** ppICounter) Counter;
-			public function HRESULT(_ISystemMonitorUnion *self, BSTR bsPath, ICounterItem** ppICounter) AddCounter;
-			public function HRESULT(_ISystemMonitorUnion *self, ICounterItem* pCtr) DeleteCounter;
-			public function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_BackColorCtl;
-			public function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_BackColorCtl;
-			public function HRESULT(_ISystemMonitorUnion *self, BSTR bsFileName) put_LogFileName;
-			public function HRESULT(_ISystemMonitorUnion *self, BSTR* bsFileName) get_LogFileName;
-			public function HRESULT(_ISystemMonitorUnion *self, double StartTime) put_LogViewStart;
-			public function HRESULT(_ISystemMonitorUnion *self, double* StartTime) get_LogViewStart;
-			public function HRESULT(_ISystemMonitorUnion *self, double StopTime) put_LogViewStop;
-			public function HRESULT(_ISystemMonitorUnion *self, double* StopTime) get_LogViewStop;
-			public function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_GridColor;
-			public function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_GridColor;
-			public function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_TimeBarColor;
-			public function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_TimeBarColor;
-			public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_Highlight;
-			public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_Highlight;
-			public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowToolbar;
-			public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowToolbar;
-			public function HRESULT(_ISystemMonitorUnion *self) Paste;
-			public function HRESULT(_ISystemMonitorUnion *self) Copy;
-			public function HRESULT(_ISystemMonitorUnion *self) Reset;
-			public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ReadOnly;
-			public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ReadOnly;
-			public function HRESULT(_ISystemMonitorUnion *self, ReportValueTypeConstants eReportValueType) put_ReportValueType;
-			public function HRESULT(_ISystemMonitorUnion *self, ReportValueTypeConstants* peReportValueType) get_ReportValueType;
-			public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_MonitorDuplicateInstances;
-			public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_MonitorDuplicateInstances;
-			public function HRESULT(_ISystemMonitorUnion *self, int32 iValue) put_DisplayFilter;
-			public function HRESULT(_ISystemMonitorUnion *self, int32* piValue) get_DisplayFilter;
-			public function HRESULT(_ISystemMonitorUnion *self, ILogFiles** ppILogFiles) get_LogFiles;
-			public function HRESULT(_ISystemMonitorUnion *self, DataSourceTypeConstants eDataSourceType) put_DataSourceType;
-			public function HRESULT(_ISystemMonitorUnion *self, DataSourceTypeConstants* peDataSourceType) get_DataSourceType;
-			public function HRESULT(_ISystemMonitorUnion *self, BSTR bsSqlDsnName) put_SqlDsnName;
-			public function HRESULT(_ISystemMonitorUnion *self, BSTR* bsSqlDsnName) get_SqlDsnName;
-			public function HRESULT(_ISystemMonitorUnion *self, BSTR bsSqlLogSetName) put_SqlLogSetName;
-			public function HRESULT(_ISystemMonitorUnion *self, BSTR* bsSqlLogSetName) get_SqlLogSetName;
-			public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_EnableDigitGrouping;
-			public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_EnableDigitGrouping;
-			public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_EnableToolTips;
-			public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_EnableToolTips;
-			public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowTimeAxisLabels;
-			public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowTimeAxisLabels;
-			public function HRESULT(_ISystemMonitorUnion *self, int16 bScroll) put_ChartScroll;
-			public function HRESULT(_ISystemMonitorUnion *self, int16* pbScroll) get_ChartScroll;
-			public function HRESULT(_ISystemMonitorUnion *self, int32 iNewCount) put_DataPointCount;
-			public function HRESULT(_ISystemMonitorUnion *self, int32* piDataPointCount) get_DataPointCount;
-			public function HRESULT(_ISystemMonitorUnion *self, int16 bSelectedCountersOnly) ScaleToFit;
-			public function HRESULT(_ISystemMonitorUnion *self, BSTR bstrFileName, SysmonFileType eSysmonFileType) SaveAs;
-			public function HRESULT(_ISystemMonitorUnion *self, BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) Relog;
-			public function HRESULT(_ISystemMonitorUnion *self) ClearData;
-			public function HRESULT(_ISystemMonitorUnion *self, double* pDate) get_LogSourceStartTime;
-			public function HRESULT(_ISystemMonitorUnion *self, double* pDate) get_LogSourceStopTime;
-			public function HRESULT(_ISystemMonitorUnion *self, double StartTime, double StopTime) SetLogViewRange;
-			public function HRESULT(_ISystemMonitorUnion *self, double* StartTime, double* StopTime) GetLogViewRange;
-			public function HRESULT(_ISystemMonitorUnion *self, int16 fLock, SysmonBatchReason eBatchReason) BatchingLock;
-			public function HRESULT(_ISystemMonitorUnion *self, BSTR bstrSettingFileName) LoadSettings;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(_ISystemMonitorUnion *self, int32* iAppearance) get_Appearance;
+				public function HRESULT(_ISystemMonitorUnion *self, int32 iAppearance) put_Appearance;
+				public function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_BackColor;
+				public function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_BackColor;
+				public function HRESULT(_ISystemMonitorUnion *self, int32* iBorderStyle) get_BorderStyle;
+				public function HRESULT(_ISystemMonitorUnion *self, int32 iBorderStyle) put_BorderStyle;
+				public function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_ForeColor;
+				public function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_ForeColor;
+				public function HRESULT(_ISystemMonitorUnion *self, IFontDisp** ppFont) get_Font;
+				public function HRESULT(_ISystemMonitorUnion *self, IFontDisp* pFont) putref_Font;
+				public function HRESULT(_ISystemMonitorUnion *self, ICounters** ppICounters) get_Counters;
+				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowVerticalGrid;
+				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowVerticalGrid;
+				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowHorizontalGrid;
+				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowHorizontalGrid;
+				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowLegend;
+				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowLegend;
+				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowScaleLabels;
+				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowScaleLabels;
+				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowValueBar;
+				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowValueBar;
+				public function HRESULT(_ISystemMonitorUnion *self, int32 iValue) put_MaximumScale;
+				public function HRESULT(_ISystemMonitorUnion *self, int32* piValue) get_MaximumScale;
+				public function HRESULT(_ISystemMonitorUnion *self, int32 iValue) put_MinimumScale;
+				public function HRESULT(_ISystemMonitorUnion *self, int32* piValue) get_MinimumScale;
+				public function HRESULT(_ISystemMonitorUnion *self, float fValue) put_UpdateInterval;
+				public function HRESULT(_ISystemMonitorUnion *self, float* pfValue) get_UpdateInterval;
+				public function HRESULT(_ISystemMonitorUnion *self, DisplayTypeConstants eDisplayType) put_DisplayType;
+				public function HRESULT(_ISystemMonitorUnion *self, DisplayTypeConstants* peDisplayType) get_DisplayType;
+				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ManualUpdate;
+				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ManualUpdate;
+				public function HRESULT(_ISystemMonitorUnion *self, BSTR bsTitle) put_GraphTitle;
+				public function HRESULT(_ISystemMonitorUnion *self, BSTR* pbsTitle) get_GraphTitle;
+				public function HRESULT(_ISystemMonitorUnion *self, BSTR bsTitle) put_YAxisLabel;
+				public function HRESULT(_ISystemMonitorUnion *self, BSTR* pbsTitle) get_YAxisLabel;
+				public function HRESULT(_ISystemMonitorUnion *self) CollectSample;
+				public function HRESULT(_ISystemMonitorUnion *self) UpdateGraph;
+				public function HRESULT(_ISystemMonitorUnion *self) BrowseCounters;
+				public function HRESULT(_ISystemMonitorUnion *self) DisplayProperties;
+				public function HRESULT(_ISystemMonitorUnion *self, int32 iIndex, ICounterItem** ppICounter) Counter;
+				public function HRESULT(_ISystemMonitorUnion *self, BSTR bsPath, ICounterItem** ppICounter) AddCounter;
+				public function HRESULT(_ISystemMonitorUnion *self, ICounterItem* pCtr) DeleteCounter;
+				public function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_BackColorCtl;
+				public function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_BackColorCtl;
+				public function HRESULT(_ISystemMonitorUnion *self, BSTR bsFileName) put_LogFileName;
+				public function HRESULT(_ISystemMonitorUnion *self, BSTR* bsFileName) get_LogFileName;
+				public function HRESULT(_ISystemMonitorUnion *self, double StartTime) put_LogViewStart;
+				public function HRESULT(_ISystemMonitorUnion *self, double* StartTime) get_LogViewStart;
+				public function HRESULT(_ISystemMonitorUnion *self, double StopTime) put_LogViewStop;
+				public function HRESULT(_ISystemMonitorUnion *self, double* StopTime) get_LogViewStop;
+				public function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_GridColor;
+				public function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_GridColor;
+				public function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_TimeBarColor;
+				public function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_TimeBarColor;
+				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_Highlight;
+				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_Highlight;
+				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowToolbar;
+				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowToolbar;
+				public function HRESULT(_ISystemMonitorUnion *self) Paste;
+				public function HRESULT(_ISystemMonitorUnion *self) Copy;
+				public function HRESULT(_ISystemMonitorUnion *self) Reset;
+				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ReadOnly;
+				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ReadOnly;
+				public function HRESULT(_ISystemMonitorUnion *self, ReportValueTypeConstants eReportValueType) put_ReportValueType;
+				public function HRESULT(_ISystemMonitorUnion *self, ReportValueTypeConstants* peReportValueType) get_ReportValueType;
+				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_MonitorDuplicateInstances;
+				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_MonitorDuplicateInstances;
+				public function HRESULT(_ISystemMonitorUnion *self, int32 iValue) put_DisplayFilter;
+				public function HRESULT(_ISystemMonitorUnion *self, int32* piValue) get_DisplayFilter;
+				public function HRESULT(_ISystemMonitorUnion *self, ILogFiles** ppILogFiles) get_LogFiles;
+				public function HRESULT(_ISystemMonitorUnion *self, DataSourceTypeConstants eDataSourceType) put_DataSourceType;
+				public function HRESULT(_ISystemMonitorUnion *self, DataSourceTypeConstants* peDataSourceType) get_DataSourceType;
+				public function HRESULT(_ISystemMonitorUnion *self, BSTR bsSqlDsnName) put_SqlDsnName;
+				public function HRESULT(_ISystemMonitorUnion *self, BSTR* bsSqlDsnName) get_SqlDsnName;
+				public function HRESULT(_ISystemMonitorUnion *self, BSTR bsSqlLogSetName) put_SqlLogSetName;
+				public function HRESULT(_ISystemMonitorUnion *self, BSTR* bsSqlLogSetName) get_SqlLogSetName;
+				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_EnableDigitGrouping;
+				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_EnableDigitGrouping;
+				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_EnableToolTips;
+				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_EnableToolTips;
+				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowTimeAxisLabels;
+				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowTimeAxisLabels;
+				public function HRESULT(_ISystemMonitorUnion *self, int16 bScroll) put_ChartScroll;
+				public function HRESULT(_ISystemMonitorUnion *self, int16* pbScroll) get_ChartScroll;
+				public function HRESULT(_ISystemMonitorUnion *self, int32 iNewCount) put_DataPointCount;
+				public function HRESULT(_ISystemMonitorUnion *self, int32* piDataPointCount) get_DataPointCount;
+				public function HRESULT(_ISystemMonitorUnion *self, int16 bSelectedCountersOnly) ScaleToFit;
+				public function HRESULT(_ISystemMonitorUnion *self, BSTR bstrFileName, SysmonFileType eSysmonFileType) SaveAs;
+				public function HRESULT(_ISystemMonitorUnion *self, BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) Relog;
+				public function HRESULT(_ISystemMonitorUnion *self) ClearData;
+				public function HRESULT(_ISystemMonitorUnion *self, double* pDate) get_LogSourceStartTime;
+				public function HRESULT(_ISystemMonitorUnion *self, double* pDate) get_LogSourceStopTime;
+				public function HRESULT(_ISystemMonitorUnion *self, double StartTime, double StopTime) SetLogViewRange;
+				public function HRESULT(_ISystemMonitorUnion *self, double* StartTime, double* StopTime) GetLogViewRange;
+				public function HRESULT(_ISystemMonitorUnion *self, int16 fLock, SysmonBatchReason eBatchReason) BatchingLock;
+				public function HRESULT(_ISystemMonitorUnion *self, BSTR bstrSettingFileName) LoadSettings;
+			}
 		}
 		[CRepr]
 		public struct DISystemMonitor : IDispatch
 		{
 			public const new Guid IID = .(0x13d73d81, 0xc32e, 0x11cf, 0x93, 0x98, 0x00, 0xaa, 0x00, 0xa3, 0xdd, 0xea);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct DISystemMonitorInternal : IDispatch
 		{
 			public const new Guid IID = .(0x194eb242, 0xc32c, 0x11cf, 0x93, 0x98, 0x00, 0xaa, 0x00, 0xa3, 0xdd, 0xea);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct ISystemMonitorEvents : IUnknown
 		{
 			public const new Guid IID = .(0xee660ea0, 0x4abd, 0x11cf, 0x94, 0x3a, 0x00, 0x80, 0x29, 0x00, 0x43, 0x47);
 			
-			public function void(ISystemMonitorEvents *self, int32 Index) OnCounterSelected;
-			public function void(ISystemMonitorEvents *self, int32 Index) OnCounterAdded;
-			public function void(ISystemMonitorEvents *self, int32 Index) OnCounterDeleted;
-			public function void(ISystemMonitorEvents *self) OnSampleCollected;
-			public function void(ISystemMonitorEvents *self, int32 Index) OnDblClick;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function void(ISystemMonitorEvents *self, int32 Index) OnCounterSelected;
+				public function void(ISystemMonitorEvents *self, int32 Index) OnCounterAdded;
+				public function void(ISystemMonitorEvents *self, int32 Index) OnCounterDeleted;
+				public function void(ISystemMonitorEvents *self) OnSampleCollected;
+				public function void(ISystemMonitorEvents *self, int32 Index) OnDblClick;
+			}
 		}
 		[CRepr]
 		public struct DISystemMonitorEvents : IDispatch
 		{
 			public const new Guid IID = .(0x84979930, 0x4ab3, 0x11cf, 0x94, 0x3a, 0x00, 0x80, 0x29, 0x00, 0x43, 0x47);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+			}
 		}
 		
 		// --- Functions ---

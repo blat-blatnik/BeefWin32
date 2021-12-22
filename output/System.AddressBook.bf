@@ -879,250 +879,361 @@ namespace Win32
 		[CRepr]
 		public struct IMAPIAdviseSink : IUnknown
 		{
-			public function uint32(IMAPIAdviseSink *self, uint32 cNotif, NOTIFICATION* lpNotifications) OnNotify;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function uint32(IMAPIAdviseSink *self, uint32 cNotif, NOTIFICATION* lpNotifications) OnNotify;
+			}
 		}
 		[CRepr]
 		public struct IMAPIProgress : IUnknown
 		{
-			public function HRESULT(IMAPIProgress *self, uint32 ulValue, uint32 ulCount, uint32 ulTotal) Progress;
-			public function HRESULT(IMAPIProgress *self, uint32* lpulFlags) GetFlags;
-			public function HRESULT(IMAPIProgress *self, uint32* lpulMax) GetMax;
-			public function HRESULT(IMAPIProgress *self, uint32* lpulMin) GetMin;
-			public function HRESULT(IMAPIProgress *self, uint32* lpulMin, uint32* lpulMax, uint32* lpulFlags) SetLimits;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMAPIProgress *self, uint32 ulValue, uint32 ulCount, uint32 ulTotal) Progress;
+				public function HRESULT(IMAPIProgress *self, uint32* lpulFlags) GetFlags;
+				public function HRESULT(IMAPIProgress *self, uint32* lpulMax) GetMax;
+				public function HRESULT(IMAPIProgress *self, uint32* lpulMin) GetMin;
+				public function HRESULT(IMAPIProgress *self, uint32* lpulMin, uint32* lpulMax, uint32* lpulFlags) SetLimits;
+			}
 		}
 		[CRepr]
 		public struct IMAPIProp : IUnknown
 		{
-			public function HRESULT(IMAPIProp *self, HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) GetLastError;
-			public function HRESULT(IMAPIProp *self, uint32 ulFlags) SaveChanges;
-			public function HRESULT(IMAPIProp *self, SPropTagArray* lpPropTagArray, uint32 ulFlags, uint32* lpcValues, SPropValue** lppPropArray) GetProps;
-			public function HRESULT(IMAPIProp *self, uint32 ulFlags, SPropTagArray** lppPropTagArray) GetPropList;
-			public function HRESULT(IMAPIProp *self, uint32 ulPropTag, Guid* lpiid, uint32 ulInterfaceOptions, uint32 ulFlags, IUnknown** lppUnk) OpenProperty;
-			public function HRESULT(IMAPIProp *self, uint32 cValues, SPropValue* lpPropArray, SPropProblemArray** lppProblems) SetProps;
-			public function HRESULT(IMAPIProp *self, SPropTagArray* lpPropTagArray, SPropProblemArray** lppProblems) DeleteProps;
-			public function HRESULT(IMAPIProp *self, uint32 ciidExclude, Guid* rgiidExclude, SPropTagArray* lpExcludeProps, uint ulUIParam, IMAPIProgress* lpProgress, Guid* lpInterface, void* lpDestObj, uint32 ulFlags, SPropProblemArray** lppProblems) CopyTo;
-			public function HRESULT(IMAPIProp *self, SPropTagArray* lpIncludeProps, uint ulUIParam, IMAPIProgress* lpProgress, Guid* lpInterface, void* lpDestObj, uint32 ulFlags, SPropProblemArray** lppProblems) CopyProps;
-			public function HRESULT(IMAPIProp *self, SPropTagArray** lppPropTags, Guid* lpPropSetGuid, uint32 ulFlags, uint32* lpcPropNames, MAPINAMEID*** lpppPropNames) GetNamesFromIDs;
-			public function HRESULT(IMAPIProp *self, uint32 cPropNames, MAPINAMEID** lppPropNames, uint32 ulFlags, SPropTagArray** lppPropTags) GetIDsFromNames;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMAPIProp *self, HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) GetLastError;
+				public function HRESULT(IMAPIProp *self, uint32 ulFlags) SaveChanges;
+				public function HRESULT(IMAPIProp *self, SPropTagArray* lpPropTagArray, uint32 ulFlags, uint32* lpcValues, SPropValue** lppPropArray) GetProps;
+				public function HRESULT(IMAPIProp *self, uint32 ulFlags, SPropTagArray** lppPropTagArray) GetPropList;
+				public function HRESULT(IMAPIProp *self, uint32 ulPropTag, Guid* lpiid, uint32 ulInterfaceOptions, uint32 ulFlags, IUnknown** lppUnk) OpenProperty;
+				public function HRESULT(IMAPIProp *self, uint32 cValues, SPropValue* lpPropArray, SPropProblemArray** lppProblems) SetProps;
+				public function HRESULT(IMAPIProp *self, SPropTagArray* lpPropTagArray, SPropProblemArray** lppProblems) DeleteProps;
+				public function HRESULT(IMAPIProp *self, uint32 ciidExclude, Guid* rgiidExclude, SPropTagArray* lpExcludeProps, uint ulUIParam, IMAPIProgress* lpProgress, Guid* lpInterface, void* lpDestObj, uint32 ulFlags, SPropProblemArray** lppProblems) CopyTo;
+				public function HRESULT(IMAPIProp *self, SPropTagArray* lpIncludeProps, uint ulUIParam, IMAPIProgress* lpProgress, Guid* lpInterface, void* lpDestObj, uint32 ulFlags, SPropProblemArray** lppProblems) CopyProps;
+				public function HRESULT(IMAPIProp *self, SPropTagArray** lppPropTags, Guid* lpPropSetGuid, uint32 ulFlags, uint32* lpcPropNames, MAPINAMEID*** lpppPropNames) GetNamesFromIDs;
+				public function HRESULT(IMAPIProp *self, uint32 cPropNames, MAPINAMEID** lppPropNames, uint32 ulFlags, SPropTagArray** lppPropTags) GetIDsFromNames;
+			}
 		}
 		[CRepr]
 		public struct IMAPITable : IUnknown
 		{
-			public function HRESULT(IMAPITable *self, HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) GetLastError;
-			public function HRESULT(IMAPITable *self, uint32 ulEventMask, IMAPIAdviseSink* lpAdviseSink, uint32* lpulConnection) Advise;
-			public function HRESULT(IMAPITable *self, uint32 ulConnection) Unadvise;
-			public function HRESULT(IMAPITable *self, uint32* lpulTableStatus, uint32* lpulTableType) GetStatus;
-			public function HRESULT(IMAPITable *self, SPropTagArray* lpPropTagArray, uint32 ulFlags) SetColumns;
-			public function HRESULT(IMAPITable *self, uint32 ulFlags, SPropTagArray** lpPropTagArray) QueryColumns;
-			public function HRESULT(IMAPITable *self, uint32 ulFlags, uint32* lpulCount) GetRowCount;
-			public function HRESULT(IMAPITable *self, uint32 bkOrigin, int32 lRowCount, int32* lplRowsSought) SeekRow;
-			public function HRESULT(IMAPITable *self, uint32 ulNumerator, uint32 ulDenominator) SeekRowApprox;
-			public function HRESULT(IMAPITable *self, uint32* lpulRow, uint32* lpulNumerator, uint32* lpulDenominator) QueryPosition;
-			public function HRESULT(IMAPITable *self, SRestriction* lpRestriction, uint32 bkOrigin, uint32 ulFlags) FindRow;
-			public function HRESULT(IMAPITable *self, SRestriction* lpRestriction, uint32 ulFlags) Restrict;
-			public function HRESULT(IMAPITable *self, uint32* lpbkPosition) CreateBookmark;
-			public function HRESULT(IMAPITable *self, uint32 bkPosition) FreeBookmark;
-			public function HRESULT(IMAPITable *self, SSortOrderSet* lpSortCriteria, uint32 ulFlags) SortTable;
-			public function HRESULT(IMAPITable *self, SSortOrderSet** lppSortCriteria) QuerySortOrder;
-			public function HRESULT(IMAPITable *self, int32 lRowCount, uint32 ulFlags, SRowSet** lppRows) QueryRows;
-			public function HRESULT(IMAPITable *self) Abort;
-			public function HRESULT(IMAPITable *self, uint32 cbInstanceKey, uint8* pbInstanceKey, uint32 ulRowCount, uint32 ulFlags, SRowSet** lppRows, uint32* lpulMoreRows) ExpandRow;
-			public function HRESULT(IMAPITable *self, uint32 cbInstanceKey, uint8* pbInstanceKey, uint32 ulFlags, uint32* lpulRowCount) CollapseRow;
-			public function HRESULT(IMAPITable *self, uint32 ulFlags, uint32 ulTimeout, uint32* lpulTableStatus) WaitForCompletion;
-			public function HRESULT(IMAPITable *self, uint32 ulFlags, uint32 cbInstanceKey, uint8* lpbInstanceKey, uint32* lpcbCollapseState, uint8** lppbCollapseState) GetCollapseState;
-			public function HRESULT(IMAPITable *self, uint32 ulFlags, uint32 cbCollapseState, uint8* pbCollapseState, uint32* lpbkLocation) SetCollapseState;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMAPITable *self, HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) GetLastError;
+				public function HRESULT(IMAPITable *self, uint32 ulEventMask, IMAPIAdviseSink* lpAdviseSink, uint32* lpulConnection) Advise;
+				public function HRESULT(IMAPITable *self, uint32 ulConnection) Unadvise;
+				public function HRESULT(IMAPITable *self, uint32* lpulTableStatus, uint32* lpulTableType) GetStatus;
+				public function HRESULT(IMAPITable *self, SPropTagArray* lpPropTagArray, uint32 ulFlags) SetColumns;
+				public function HRESULT(IMAPITable *self, uint32 ulFlags, SPropTagArray** lpPropTagArray) QueryColumns;
+				public function HRESULT(IMAPITable *self, uint32 ulFlags, uint32* lpulCount) GetRowCount;
+				public function HRESULT(IMAPITable *self, uint32 bkOrigin, int32 lRowCount, int32* lplRowsSought) SeekRow;
+				public function HRESULT(IMAPITable *self, uint32 ulNumerator, uint32 ulDenominator) SeekRowApprox;
+				public function HRESULT(IMAPITable *self, uint32* lpulRow, uint32* lpulNumerator, uint32* lpulDenominator) QueryPosition;
+				public function HRESULT(IMAPITable *self, SRestriction* lpRestriction, uint32 bkOrigin, uint32 ulFlags) FindRow;
+				public function HRESULT(IMAPITable *self, SRestriction* lpRestriction, uint32 ulFlags) Restrict;
+				public function HRESULT(IMAPITable *self, uint32* lpbkPosition) CreateBookmark;
+				public function HRESULT(IMAPITable *self, uint32 bkPosition) FreeBookmark;
+				public function HRESULT(IMAPITable *self, SSortOrderSet* lpSortCriteria, uint32 ulFlags) SortTable;
+				public function HRESULT(IMAPITable *self, SSortOrderSet** lppSortCriteria) QuerySortOrder;
+				public function HRESULT(IMAPITable *self, int32 lRowCount, uint32 ulFlags, SRowSet** lppRows) QueryRows;
+				public function HRESULT(IMAPITable *self) Abort;
+				public function HRESULT(IMAPITable *self, uint32 cbInstanceKey, uint8* pbInstanceKey, uint32 ulRowCount, uint32 ulFlags, SRowSet** lppRows, uint32* lpulMoreRows) ExpandRow;
+				public function HRESULT(IMAPITable *self, uint32 cbInstanceKey, uint8* pbInstanceKey, uint32 ulFlags, uint32* lpulRowCount) CollapseRow;
+				public function HRESULT(IMAPITable *self, uint32 ulFlags, uint32 ulTimeout, uint32* lpulTableStatus) WaitForCompletion;
+				public function HRESULT(IMAPITable *self, uint32 ulFlags, uint32 cbInstanceKey, uint8* lpbInstanceKey, uint32* lpcbCollapseState, uint8** lppbCollapseState) GetCollapseState;
+				public function HRESULT(IMAPITable *self, uint32 ulFlags, uint32 cbCollapseState, uint8* pbCollapseState, uint32* lpbkLocation) SetCollapseState;
+			}
 		}
 		[CRepr]
 		public struct IProfSect : IMAPIProp
 		{
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMAPIProp.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IMAPIStatus : IMAPIProp
 		{
-			public function HRESULT(IMAPIStatus *self, uint ulUIParam, uint32 ulFlags) ValidateState;
-			public function HRESULT(IMAPIStatus *self, uint ulUIParam, uint32 ulFlags) SettingsDialog;
-			public function HRESULT(IMAPIStatus *self, int8* lpOldPass, int8* lpNewPass, uint32 ulFlags) ChangePassword;
-			public function HRESULT(IMAPIStatus *self, uint ulUIParam, uint32 cbTargetTransport, ENTRYID* lpTargetTransport, uint32 ulFlags) FlushQueues;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMAPIProp.VTable
+			{
+				public function HRESULT(IMAPIStatus *self, uint ulUIParam, uint32 ulFlags) ValidateState;
+				public function HRESULT(IMAPIStatus *self, uint ulUIParam, uint32 ulFlags) SettingsDialog;
+				public function HRESULT(IMAPIStatus *self, int8* lpOldPass, int8* lpNewPass, uint32 ulFlags) ChangePassword;
+				public function HRESULT(IMAPIStatus *self, uint ulUIParam, uint32 cbTargetTransport, ENTRYID* lpTargetTransport, uint32 ulFlags) FlushQueues;
+			}
 		}
 		[CRepr]
 		public struct IMAPIContainer : IMAPIProp
 		{
-			public function HRESULT(IMAPIContainer *self, uint32 ulFlags, IMAPITable** lppTable) GetContentsTable;
-			public function HRESULT(IMAPIContainer *self, uint32 ulFlags, IMAPITable** lppTable) GetHierarchyTable;
-			public function HRESULT(IMAPIContainer *self, uint32 cbEntryID, ENTRYID* lpEntryID, Guid* lpInterface, uint32 ulFlags, uint32* lpulObjType, IUnknown** lppUnk) OpenEntry;
-			public function HRESULT(IMAPIContainer *self, SRestriction* lpRestriction, SBinaryArray* lpContainerList, uint32 ulSearchFlags) SetSearchCriteria;
-			public function HRESULT(IMAPIContainer *self, uint32 ulFlags, SRestriction** lppRestriction, SBinaryArray** lppContainerList, uint32* lpulSearchState) GetSearchCriteria;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMAPIProp.VTable
+			{
+				public function HRESULT(IMAPIContainer *self, uint32 ulFlags, IMAPITable** lppTable) GetContentsTable;
+				public function HRESULT(IMAPIContainer *self, uint32 ulFlags, IMAPITable** lppTable) GetHierarchyTable;
+				public function HRESULT(IMAPIContainer *self, uint32 cbEntryID, ENTRYID* lpEntryID, Guid* lpInterface, uint32 ulFlags, uint32* lpulObjType, IUnknown** lppUnk) OpenEntry;
+				public function HRESULT(IMAPIContainer *self, SRestriction* lpRestriction, SBinaryArray* lpContainerList, uint32 ulSearchFlags) SetSearchCriteria;
+				public function HRESULT(IMAPIContainer *self, uint32 ulFlags, SRestriction** lppRestriction, SBinaryArray** lppContainerList, uint32* lpulSearchState) GetSearchCriteria;
+			}
 		}
 		[CRepr]
 		public struct IABContainer : IMAPIContainer
 		{
-			public function HRESULT(IABContainer *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulCreateFlags, IMAPIProp** lppMAPIPropEntry) CreateEntry;
-			public function HRESULT(IABContainer *self, SBinaryArray* lpEntries, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) CopyEntries;
-			public function HRESULT(IABContainer *self, SBinaryArray* lpEntries, uint32 ulFlags) DeleteEntries;
-			public function HRESULT(IABContainer *self, SPropTagArray* lpPropTagArray, uint32 ulFlags, ADRLIST* lpAdrList, _flaglist* lpFlagList) ResolveNames;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMAPIContainer.VTable
+			{
+				public function HRESULT(IABContainer *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulCreateFlags, IMAPIProp** lppMAPIPropEntry) CreateEntry;
+				public function HRESULT(IABContainer *self, SBinaryArray* lpEntries, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) CopyEntries;
+				public function HRESULT(IABContainer *self, SBinaryArray* lpEntries, uint32 ulFlags) DeleteEntries;
+				public function HRESULT(IABContainer *self, SPropTagArray* lpPropTagArray, uint32 ulFlags, ADRLIST* lpAdrList, _flaglist* lpFlagList) ResolveNames;
+			}
 		}
 		[CRepr]
 		public struct IMailUser : IMAPIProp
 		{
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMAPIProp.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IDistList : IMAPIContainer
 		{
-			public function HRESULT(IDistList *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulCreateFlags, IMAPIProp** lppMAPIPropEntry) CreateEntry;
-			public function HRESULT(IDistList *self, SBinaryArray* lpEntries, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) CopyEntries;
-			public function HRESULT(IDistList *self, SBinaryArray* lpEntries, uint32 ulFlags) DeleteEntries;
-			public function HRESULT(IDistList *self, SPropTagArray* lpPropTagArray, uint32 ulFlags, ADRLIST* lpAdrList, _flaglist* lpFlagList) ResolveNames;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMAPIContainer.VTable
+			{
+				public function HRESULT(IDistList *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulCreateFlags, IMAPIProp** lppMAPIPropEntry) CreateEntry;
+				public function HRESULT(IDistList *self, SBinaryArray* lpEntries, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) CopyEntries;
+				public function HRESULT(IDistList *self, SBinaryArray* lpEntries, uint32 ulFlags) DeleteEntries;
+				public function HRESULT(IDistList *self, SPropTagArray* lpPropTagArray, uint32 ulFlags, ADRLIST* lpAdrList, _flaglist* lpFlagList) ResolveNames;
+			}
 		}
 		[CRepr]
 		public struct IMAPIFolder : IMAPIContainer
 		{
-			public function HRESULT(IMAPIFolder *self, Guid* lpInterface, uint32 ulFlags, IMessage** lppMessage) CreateMessage;
-			public function HRESULT(IMAPIFolder *self, SBinaryArray* lpMsgList, Guid* lpInterface, void* lpDestFolder, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) CopyMessages;
-			public function HRESULT(IMAPIFolder *self, SBinaryArray* lpMsgList, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) DeleteMessages;
-			public function HRESULT(IMAPIFolder *self, uint32 ulFolderType, int8* lpszFolderName, int8* lpszFolderComment, Guid* lpInterface, uint32 ulFlags, IMAPIFolder** lppFolder) CreateFolder;
-			public function HRESULT(IMAPIFolder *self, uint32 cbEntryID, ENTRYID* lpEntryID, Guid* lpInterface, void* lpDestFolder, int8* lpszNewFolderName, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) CopyFolder;
-			public function HRESULT(IMAPIFolder *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) DeleteFolder;
-			public function HRESULT(IMAPIFolder *self, SBinaryArray* lpMsgList, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) SetReadFlags;
-			public function HRESULT(IMAPIFolder *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulFlags, uint32* lpulMessageStatus) GetMessageStatus;
-			public function HRESULT(IMAPIFolder *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulNewStatus, uint32 ulNewStatusMask, uint32* lpulOldStatus) SetMessageStatus;
-			public function HRESULT(IMAPIFolder *self, SSortOrderSet* lpSortCriteria, uint32 ulFlags) SaveContentsSort;
-			public function HRESULT(IMAPIFolder *self, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) EmptyFolder;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMAPIContainer.VTable
+			{
+				public function HRESULT(IMAPIFolder *self, Guid* lpInterface, uint32 ulFlags, IMessage** lppMessage) CreateMessage;
+				public function HRESULT(IMAPIFolder *self, SBinaryArray* lpMsgList, Guid* lpInterface, void* lpDestFolder, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) CopyMessages;
+				public function HRESULT(IMAPIFolder *self, SBinaryArray* lpMsgList, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) DeleteMessages;
+				public function HRESULT(IMAPIFolder *self, uint32 ulFolderType, int8* lpszFolderName, int8* lpszFolderComment, Guid* lpInterface, uint32 ulFlags, IMAPIFolder** lppFolder) CreateFolder;
+				public function HRESULT(IMAPIFolder *self, uint32 cbEntryID, ENTRYID* lpEntryID, Guid* lpInterface, void* lpDestFolder, int8* lpszNewFolderName, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) CopyFolder;
+				public function HRESULT(IMAPIFolder *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) DeleteFolder;
+				public function HRESULT(IMAPIFolder *self, SBinaryArray* lpMsgList, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) SetReadFlags;
+				public function HRESULT(IMAPIFolder *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulFlags, uint32* lpulMessageStatus) GetMessageStatus;
+				public function HRESULT(IMAPIFolder *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulNewStatus, uint32 ulNewStatusMask, uint32* lpulOldStatus) SetMessageStatus;
+				public function HRESULT(IMAPIFolder *self, SSortOrderSet* lpSortCriteria, uint32 ulFlags) SaveContentsSort;
+				public function HRESULT(IMAPIFolder *self, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) EmptyFolder;
+			}
 		}
 		[CRepr]
 		public struct IMsgStore : IMAPIProp
 		{
-			public function HRESULT(IMsgStore *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulEventMask, IMAPIAdviseSink* lpAdviseSink, uint32* lpulConnection) Advise;
-			public function HRESULT(IMsgStore *self, uint32 ulConnection) Unadvise;
-			public function HRESULT(IMsgStore *self, uint32 cbEntryID1, ENTRYID* lpEntryID1, uint32 cbEntryID2, ENTRYID* lpEntryID2, uint32 ulFlags, uint32* lpulResult) CompareEntryIDs;
-			public function HRESULT(IMsgStore *self, uint32 cbEntryID, ENTRYID* lpEntryID, Guid* lpInterface, uint32 ulFlags, uint32* lpulObjType, IUnknown** ppUnk) OpenEntry;
-			public function HRESULT(IMsgStore *self, int8* lpszMessageClass, uint32 ulFlags, uint32 cbEntryID, ENTRYID* lpEntryID) SetReceiveFolder;
-			public function HRESULT(IMsgStore *self, int8* lpszMessageClass, uint32 ulFlags, uint32* lpcbEntryID, ENTRYID** lppEntryID, int8** lppszExplicitClass) GetReceiveFolder;
-			public function HRESULT(IMsgStore *self, uint32 ulFlags, IMAPITable** lppTable) GetReceiveFolderTable;
-			public function HRESULT(IMsgStore *self, uint32* lpulFlags) StoreLogoff;
-			public function HRESULT(IMsgStore *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulFlags) AbortSubmit;
-			public function HRESULT(IMsgStore *self, uint32 ulFlags, IMAPITable** lppTable) GetOutgoingQueue;
-			public function HRESULT(IMsgStore *self, IMessage* lpMessage, uint32 ulLockState) SetLockState;
-			public function HRESULT(IMsgStore *self, uint32 ulFlags, uint32 cbEntryID, ENTRYID* lpEntryID) FinishedMsg;
-			public function HRESULT(IMsgStore *self, NOTIFICATION* lpNotification) NotifyNewMail;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMAPIProp.VTable
+			{
+				public function HRESULT(IMsgStore *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulEventMask, IMAPIAdviseSink* lpAdviseSink, uint32* lpulConnection) Advise;
+				public function HRESULT(IMsgStore *self, uint32 ulConnection) Unadvise;
+				public function HRESULT(IMsgStore *self, uint32 cbEntryID1, ENTRYID* lpEntryID1, uint32 cbEntryID2, ENTRYID* lpEntryID2, uint32 ulFlags, uint32* lpulResult) CompareEntryIDs;
+				public function HRESULT(IMsgStore *self, uint32 cbEntryID, ENTRYID* lpEntryID, Guid* lpInterface, uint32 ulFlags, uint32* lpulObjType, IUnknown** ppUnk) OpenEntry;
+				public function HRESULT(IMsgStore *self, int8* lpszMessageClass, uint32 ulFlags, uint32 cbEntryID, ENTRYID* lpEntryID) SetReceiveFolder;
+				public function HRESULT(IMsgStore *self, int8* lpszMessageClass, uint32 ulFlags, uint32* lpcbEntryID, ENTRYID** lppEntryID, int8** lppszExplicitClass) GetReceiveFolder;
+				public function HRESULT(IMsgStore *self, uint32 ulFlags, IMAPITable** lppTable) GetReceiveFolderTable;
+				public function HRESULT(IMsgStore *self, uint32* lpulFlags) StoreLogoff;
+				public function HRESULT(IMsgStore *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulFlags) AbortSubmit;
+				public function HRESULT(IMsgStore *self, uint32 ulFlags, IMAPITable** lppTable) GetOutgoingQueue;
+				public function HRESULT(IMsgStore *self, IMessage* lpMessage, uint32 ulLockState) SetLockState;
+				public function HRESULT(IMsgStore *self, uint32 ulFlags, uint32 cbEntryID, ENTRYID* lpEntryID) FinishedMsg;
+				public function HRESULT(IMsgStore *self, NOTIFICATION* lpNotification) NotifyNewMail;
+			}
 		}
 		[CRepr]
 		public struct IMessage : IMAPIProp
 		{
-			public function HRESULT(IMessage *self, uint32 ulFlags, IMAPITable** lppTable) GetAttachmentTable;
-			public function HRESULT(IMessage *self, uint32 ulAttachmentNum, Guid* lpInterface, uint32 ulFlags, IAttach** lppAttach) OpenAttach;
-			public function HRESULT(IMessage *self, Guid* lpInterface, uint32 ulFlags, uint32* lpulAttachmentNum, IAttach** lppAttach) CreateAttach;
-			public function HRESULT(IMessage *self, uint32 ulAttachmentNum, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) DeleteAttach;
-			public function HRESULT(IMessage *self, uint32 ulFlags, IMAPITable** lppTable) GetRecipientTable;
-			public function HRESULT(IMessage *self, uint32 ulFlags, ADRLIST* lpMods) ModifyRecipients;
-			public function HRESULT(IMessage *self, uint32 ulFlags) SubmitMessage;
-			public function HRESULT(IMessage *self, uint32 ulFlags) SetReadFlag;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMAPIProp.VTable
+			{
+				public function HRESULT(IMessage *self, uint32 ulFlags, IMAPITable** lppTable) GetAttachmentTable;
+				public function HRESULT(IMessage *self, uint32 ulAttachmentNum, Guid* lpInterface, uint32 ulFlags, IAttach** lppAttach) OpenAttach;
+				public function HRESULT(IMessage *self, Guid* lpInterface, uint32 ulFlags, uint32* lpulAttachmentNum, IAttach** lppAttach) CreateAttach;
+				public function HRESULT(IMessage *self, uint32 ulAttachmentNum, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) DeleteAttach;
+				public function HRESULT(IMessage *self, uint32 ulFlags, IMAPITable** lppTable) GetRecipientTable;
+				public function HRESULT(IMessage *self, uint32 ulFlags, ADRLIST* lpMods) ModifyRecipients;
+				public function HRESULT(IMessage *self, uint32 ulFlags) SubmitMessage;
+				public function HRESULT(IMessage *self, uint32 ulFlags) SetReadFlag;
+			}
 		}
 		[CRepr]
 		public struct IAttach : IMAPIProp
 		{
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMAPIProp.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IMAPIControl : IUnknown
 		{
-			public function HRESULT(IMAPIControl *self, HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) GetLastError;
-			public function HRESULT(IMAPIControl *self, uint32 ulFlags, uint ulUIParam) Activate;
-			public function HRESULT(IMAPIControl *self, uint32 ulFlags, uint32* lpulState) GetState;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMAPIControl *self, HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) GetLastError;
+				public function HRESULT(IMAPIControl *self, uint32 ulFlags, uint ulUIParam) Activate;
+				public function HRESULT(IMAPIControl *self, uint32 ulFlags, uint32* lpulState) GetState;
+			}
 		}
 		[CRepr]
 		public struct IProviderAdmin : IUnknown
 		{
-			public function HRESULT(IProviderAdmin *self, HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) GetLastError;
-			public function HRESULT(IProviderAdmin *self, uint32 ulFlags, IMAPITable** lppTable) GetProviderTable;
-			public function HRESULT(IProviderAdmin *self, int8* lpszProvider, uint32 cValues, SPropValue* lpProps, uint ulUIParam, uint32 ulFlags, MAPIUID* lpUID) CreateProvider;
-			public function HRESULT(IProviderAdmin *self, MAPIUID* lpUID) DeleteProvider;
-			public function HRESULT(IProviderAdmin *self, MAPIUID* lpUID, Guid* lpInterface, uint32 ulFlags, IProfSect** lppProfSect) OpenProfileSection;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IProviderAdmin *self, HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) GetLastError;
+				public function HRESULT(IProviderAdmin *self, uint32 ulFlags, IMAPITable** lppTable) GetProviderTable;
+				public function HRESULT(IProviderAdmin *self, int8* lpszProvider, uint32 cValues, SPropValue* lpProps, uint ulUIParam, uint32 ulFlags, MAPIUID* lpUID) CreateProvider;
+				public function HRESULT(IProviderAdmin *self, MAPIUID* lpUID) DeleteProvider;
+				public function HRESULT(IProviderAdmin *self, MAPIUID* lpUID, Guid* lpInterface, uint32 ulFlags, IProfSect** lppProfSect) OpenProfileSection;
+			}
 		}
 		[CRepr]
 		public struct ITableData : IUnknown
 		{
-			public function HRESULT(ITableData *self, SSortOrderSet* lpSSortOrderSet, CALLERRELEASE* lpfCallerRelease, uint32 ulCallerData, IMAPITable** lppMAPITable) HrGetView;
-			public function HRESULT(ITableData *self, SRow* param0) HrModifyRow;
-			public function HRESULT(ITableData *self, SPropValue* lpSPropValue) HrDeleteRow;
-			public function HRESULT(ITableData *self, SPropValue* lpsPropValue, SRow** lppSRow, uint32* lpuliRow) HrQueryRow;
-			public function HRESULT(ITableData *self, uint32 ulRowNumber, SRow** lppSRow) HrEnumRow;
-			public function HRESULT(ITableData *self, uint32 ulFlags, uint32 cValues, SPropValue* lpSPropValue) HrNotify;
-			public function HRESULT(ITableData *self, uint32 uliRow, SRow* lpSRow) HrInsertRow;
-			public function HRESULT(ITableData *self, uint32 ulFlags, SRowSet* lpSRowSet) HrModifyRows;
-			public function HRESULT(ITableData *self, uint32 ulFlags, SRowSet* lprowsetToDelete, uint32* cRowsDeleted) HrDeleteRows;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITableData *self, SSortOrderSet* lpSSortOrderSet, CALLERRELEASE* lpfCallerRelease, uint32 ulCallerData, IMAPITable** lppMAPITable) HrGetView;
+				public function HRESULT(ITableData *self, SRow* param0) HrModifyRow;
+				public function HRESULT(ITableData *self, SPropValue* lpSPropValue) HrDeleteRow;
+				public function HRESULT(ITableData *self, SPropValue* lpsPropValue, SRow** lppSRow, uint32* lpuliRow) HrQueryRow;
+				public function HRESULT(ITableData *self, uint32 ulRowNumber, SRow** lppSRow) HrEnumRow;
+				public function HRESULT(ITableData *self, uint32 ulFlags, uint32 cValues, SPropValue* lpSPropValue) HrNotify;
+				public function HRESULT(ITableData *self, uint32 uliRow, SRow* lpSRow) HrInsertRow;
+				public function HRESULT(ITableData *self, uint32 ulFlags, SRowSet* lpSRowSet) HrModifyRows;
+				public function HRESULT(ITableData *self, uint32 ulFlags, SRowSet* lprowsetToDelete, uint32* cRowsDeleted) HrDeleteRows;
+			}
 		}
 		[CRepr]
 		public struct IPropData : IMAPIProp
 		{
-			public function HRESULT(IPropData *self, uint32 ulAccess) HrSetObjAccess;
-			public function HRESULT(IPropData *self, SPropTagArray* lpPropTagArray, uint32* rgulAccess) HrSetPropAccess;
-			public function HRESULT(IPropData *self, SPropTagArray** lppPropTagArray, uint32** lprgulAccess) HrGetPropAccess;
-			public function HRESULT(IPropData *self, SPropTagArray* lppPropTagArray, SPropProblemArray** lprgulAccess) HrAddObjProps;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMAPIProp.VTable
+			{
+				public function HRESULT(IPropData *self, uint32 ulAccess) HrSetObjAccess;
+				public function HRESULT(IPropData *self, SPropTagArray* lpPropTagArray, uint32* rgulAccess) HrSetPropAccess;
+				public function HRESULT(IPropData *self, SPropTagArray** lppPropTagArray, uint32** lprgulAccess) HrGetPropAccess;
+				public function HRESULT(IPropData *self, SPropTagArray* lppPropTagArray, SPropProblemArray** lprgulAccess) HrAddObjProps;
+			}
 		}
 		[CRepr]
 		public struct IAddrBook : IMAPIProp
 		{
-			public function HRESULT(IAddrBook *self, uint32 cbEntryID, ENTRYID* lpEntryID, Guid* lpInterface, uint32 ulFlags, uint32* lpulObjType, IUnknown** lppUnk) OpenEntry;
-			public function HRESULT(IAddrBook *self, uint32 cbEntryID1, ENTRYID* lpEntryID1, uint32 cbEntryID2, ENTRYID* lpEntryID2, uint32 ulFlags, uint32* lpulResult) CompareEntryIDs;
-			public function HRESULT(IAddrBook *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulEventMask, IMAPIAdviseSink* lpAdviseSink, uint32* lpulConnection) Advise;
-			public function HRESULT(IAddrBook *self, uint32 ulConnection) Unadvise;
-			public function HRESULT(IAddrBook *self, int8* lpszName, int8* lpszAdrType, int8* lpszAddress, uint32 ulFlags, uint32* lpcbEntryID, ENTRYID** lppEntryID) CreateOneOff;
-			public function HRESULT(IAddrBook *self, uint32 ulUIParam, uint32 ulFlags, uint32 cbEIDContainer, ENTRYID* lpEIDContainer, uint32 cbEIDNewEntryTpl, ENTRYID* lpEIDNewEntryTpl, uint32* lpcbEIDNewEntry, ENTRYID** lppEIDNewEntry) NewEntry;
-			public function HRESULT(IAddrBook *self, uint ulUIParam, uint32 ulFlags, int8* lpszNewEntryTitle, ADRLIST* lpAdrList) ResolveName;
-			public function HRESULT(IAddrBook *self, uint32* lpulUIParam, ADRPARM* lpAdrParms, ADRLIST** lppAdrList) Address;
-			public function HRESULT(IAddrBook *self, uint* lpulUIParam, LPFNDISMISS lpfnDismiss, void* lpvDismissContext, uint32 cbEntryID, ENTRYID* lpEntryID, LPFNBUTTON lpfButtonCallback, void* lpvButtonContext, int8* lpszButtonText, uint32 ulFlags) Details;
-			public function HRESULT(IAddrBook *self, uint32 ulUIParam, uint32 ulFlags, ADRENTRY* lpRecip) RecipOptions;
-			public function HRESULT(IAddrBook *self, int8* lpszAdrType, uint32 ulFlags, uint32* lpcValues, SPropValue** lppOptions) QueryDefaultRecipOpt;
-			public function HRESULT(IAddrBook *self, uint32* lpcbEntryID, ENTRYID** lppEntryID) GetPAB;
-			public function HRESULT(IAddrBook *self, uint32 cbEntryID, ENTRYID* lpEntryID) SetPAB;
-			public function HRESULT(IAddrBook *self, uint32* lpcbEntryID, ENTRYID** lppEntryID) GetDefaultDir;
-			public function HRESULT(IAddrBook *self, uint32 cbEntryID, ENTRYID* lpEntryID) SetDefaultDir;
-			public function HRESULT(IAddrBook *self, uint32 ulFlags, SRowSet** lppSearchPath) GetSearchPath;
-			public function HRESULT(IAddrBook *self, uint32 ulFlags, SRowSet* lpSearchPath) SetSearchPath;
-			public function HRESULT(IAddrBook *self, uint32 ulFlags, SPropTagArray* lpPropTagArray, ADRLIST* lpRecipList) PrepareRecips;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMAPIProp.VTable
+			{
+				public function HRESULT(IAddrBook *self, uint32 cbEntryID, ENTRYID* lpEntryID, Guid* lpInterface, uint32 ulFlags, uint32* lpulObjType, IUnknown** lppUnk) OpenEntry;
+				public function HRESULT(IAddrBook *self, uint32 cbEntryID1, ENTRYID* lpEntryID1, uint32 cbEntryID2, ENTRYID* lpEntryID2, uint32 ulFlags, uint32* lpulResult) CompareEntryIDs;
+				public function HRESULT(IAddrBook *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulEventMask, IMAPIAdviseSink* lpAdviseSink, uint32* lpulConnection) Advise;
+				public function HRESULT(IAddrBook *self, uint32 ulConnection) Unadvise;
+				public function HRESULT(IAddrBook *self, int8* lpszName, int8* lpszAdrType, int8* lpszAddress, uint32 ulFlags, uint32* lpcbEntryID, ENTRYID** lppEntryID) CreateOneOff;
+				public function HRESULT(IAddrBook *self, uint32 ulUIParam, uint32 ulFlags, uint32 cbEIDContainer, ENTRYID* lpEIDContainer, uint32 cbEIDNewEntryTpl, ENTRYID* lpEIDNewEntryTpl, uint32* lpcbEIDNewEntry, ENTRYID** lppEIDNewEntry) NewEntry;
+				public function HRESULT(IAddrBook *self, uint ulUIParam, uint32 ulFlags, int8* lpszNewEntryTitle, ADRLIST* lpAdrList) ResolveName;
+				public function HRESULT(IAddrBook *self, uint32* lpulUIParam, ADRPARM* lpAdrParms, ADRLIST** lppAdrList) Address;
+				public function HRESULT(IAddrBook *self, uint* lpulUIParam, LPFNDISMISS lpfnDismiss, void* lpvDismissContext, uint32 cbEntryID, ENTRYID* lpEntryID, LPFNBUTTON lpfButtonCallback, void* lpvButtonContext, int8* lpszButtonText, uint32 ulFlags) Details;
+				public function HRESULT(IAddrBook *self, uint32 ulUIParam, uint32 ulFlags, ADRENTRY* lpRecip) RecipOptions;
+				public function HRESULT(IAddrBook *self, int8* lpszAdrType, uint32 ulFlags, uint32* lpcValues, SPropValue** lppOptions) QueryDefaultRecipOpt;
+				public function HRESULT(IAddrBook *self, uint32* lpcbEntryID, ENTRYID** lppEntryID) GetPAB;
+				public function HRESULT(IAddrBook *self, uint32 cbEntryID, ENTRYID* lpEntryID) SetPAB;
+				public function HRESULT(IAddrBook *self, uint32* lpcbEntryID, ENTRYID** lppEntryID) GetDefaultDir;
+				public function HRESULT(IAddrBook *self, uint32 cbEntryID, ENTRYID* lpEntryID) SetDefaultDir;
+				public function HRESULT(IAddrBook *self, uint32 ulFlags, SRowSet** lppSearchPath) GetSearchPath;
+				public function HRESULT(IAddrBook *self, uint32 ulFlags, SRowSet* lpSearchPath) SetSearchPath;
+				public function HRESULT(IAddrBook *self, uint32 ulFlags, SPropTagArray* lpPropTagArray, ADRLIST* lpRecipList) PrepareRecips;
+			}
 		}
 		[CRepr]
 		public struct IWABObject : IUnknown
 		{
-			public function HRESULT(IWABObject *self, HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) GetLastError;
-			public function HRESULT(IWABObject *self, uint32 cbSize, void** lppBuffer) AllocateBuffer;
-			public function HRESULT(IWABObject *self, uint32 cbSize, void* lpObject, void** lppBuffer) AllocateMore;
-			public function HRESULT(IWABObject *self, void* lpBuffer) FreeBuffer;
-			public function HRESULT(IWABObject *self, PSTR lpFileName) Backup;
-			public function HRESULT(IWABObject *self, PSTR lpWIP) Import;
-			public function HRESULT(IWABObject *self, IAddrBook* lpIAB, HWND hWnd) Find;
-			public function HRESULT(IWABObject *self, IAddrBook* lpIAB, HWND hWnd, PSTR lpszFileName) VCardDisplay;
-			public function HRESULT(IWABObject *self, IAddrBook* lpIAB, HWND hWnd, uint32 ulFlags, PSTR lpszURL, IMailUser** lppMailUser) LDAPUrl;
-			public function HRESULT(IWABObject *self, IAddrBook* lpIAB, uint32 ulFlags, PSTR lpszVCard, IMailUser* lpMailUser) VCardCreate;
-			public function HRESULT(IWABObject *self, IAddrBook* lpIAB, uint32 ulFlags, PSTR lpszVCard, IMailUser** lppMailUser) VCardRetrieve;
-			public function HRESULT(IWABObject *self, IAddrBook* lpIAB, uint32 ulFlags, uint32* lpdwAction, SBinary* lpsbEID, HWND hwnd) GetMe;
-			public function HRESULT(IWABObject *self, IAddrBook* lpIAB, uint32 ulFlags, SBinary sbEID, HWND hwnd) SetMe;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWABObject *self, HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) GetLastError;
+				public function HRESULT(IWABObject *self, uint32 cbSize, void** lppBuffer) AllocateBuffer;
+				public function HRESULT(IWABObject *self, uint32 cbSize, void* lpObject, void** lppBuffer) AllocateMore;
+				public function HRESULT(IWABObject *self, void* lpBuffer) FreeBuffer;
+				public function HRESULT(IWABObject *self, PSTR lpFileName) Backup;
+				public function HRESULT(IWABObject *self, PSTR lpWIP) Import;
+				public function HRESULT(IWABObject *self, IAddrBook* lpIAB, HWND hWnd) Find;
+				public function HRESULT(IWABObject *self, IAddrBook* lpIAB, HWND hWnd, PSTR lpszFileName) VCardDisplay;
+				public function HRESULT(IWABObject *self, IAddrBook* lpIAB, HWND hWnd, uint32 ulFlags, PSTR lpszURL, IMailUser** lppMailUser) LDAPUrl;
+				public function HRESULT(IWABObject *self, IAddrBook* lpIAB, uint32 ulFlags, PSTR lpszVCard, IMailUser* lpMailUser) VCardCreate;
+				public function HRESULT(IWABObject *self, IAddrBook* lpIAB, uint32 ulFlags, PSTR lpszVCard, IMailUser** lppMailUser) VCardRetrieve;
+				public function HRESULT(IWABObject *self, IAddrBook* lpIAB, uint32 ulFlags, uint32* lpdwAction, SBinary* lpsbEID, HWND hwnd) GetMe;
+				public function HRESULT(IWABObject *self, IAddrBook* lpIAB, uint32 ulFlags, SBinary sbEID, HWND hwnd) SetMe;
+			}
 		}
 		[CRepr]
 		public struct IWABOBJECT_
 		{
-			public function HRESULT(IWABOBJECT_ *self, Guid* riid, void** ppvObj) QueryInterface;
-			public function uint32(IWABOBJECT_ *self) AddRef;
-			public function uint32(IWABOBJECT_ *self) Release;
-			public function HRESULT(IWABOBJECT_ *self, HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) GetLastError;
-			public function HRESULT(IWABOBJECT_ *self, uint32 cbSize, void** lppBuffer) AllocateBuffer;
-			public function HRESULT(IWABOBJECT_ *self, uint32 cbSize, void* lpObject, void** lppBuffer) AllocateMore;
-			public function HRESULT(IWABOBJECT_ *self, void* lpBuffer) FreeBuffer;
-			public function HRESULT(IWABOBJECT_ *self, PSTR lpFileName) Backup;
-			public function HRESULT(IWABOBJECT_ *self, PSTR lpWIP) Import;
-			public function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, HWND hWnd) Find;
-			public function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, HWND hWnd, PSTR lpszFileName) VCardDisplay;
-			public function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, HWND hWnd, uint32 ulFlags, PSTR lpszURL, IMailUser** lppMailUser) LDAPUrl;
-			public function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, uint32 ulFlags, PSTR lpszVCard, IMailUser* lpMailUser) VCardCreate;
-			public function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, uint32 ulFlags, PSTR lpszVCard, IMailUser** lppMailUser) VCardRetrieve;
-			public function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, uint32 ulFlags, uint32* lpdwAction, SBinary* lpsbEID, HWND hwnd) GetMe;
-			public function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, uint32 ulFlags, SBinary sbEID, HWND hwnd) SetMe;
+			protected VTable* vt;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable
+			{
+				public function HRESULT(IWABOBJECT_ *self, Guid* riid, void** ppvObj) QueryInterface;
+				public function uint32(IWABOBJECT_ *self) AddRef;
+				public function uint32(IWABOBJECT_ *self) Release;
+				public function HRESULT(IWABOBJECT_ *self, HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) GetLastError;
+				public function HRESULT(IWABOBJECT_ *self, uint32 cbSize, void** lppBuffer) AllocateBuffer;
+				public function HRESULT(IWABOBJECT_ *self, uint32 cbSize, void* lpObject, void** lppBuffer) AllocateMore;
+				public function HRESULT(IWABOBJECT_ *self, void* lpBuffer) FreeBuffer;
+				public function HRESULT(IWABOBJECT_ *self, PSTR lpFileName) Backup;
+				public function HRESULT(IWABOBJECT_ *self, PSTR lpWIP) Import;
+				public function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, HWND hWnd) Find;
+				public function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, HWND hWnd, PSTR lpszFileName) VCardDisplay;
+				public function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, HWND hWnd, uint32 ulFlags, PSTR lpszURL, IMailUser** lppMailUser) LDAPUrl;
+				public function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, uint32 ulFlags, PSTR lpszVCard, IMailUser* lpMailUser) VCardCreate;
+				public function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, uint32 ulFlags, PSTR lpszVCard, IMailUser** lppMailUser) VCardRetrieve;
+				public function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, uint32 ulFlags, uint32* lpdwAction, SBinary* lpsbEID, HWND hwnd) GetMe;
+				public function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, uint32 ulFlags, SBinary sbEID, HWND hwnd) SetMe;
+			}
 		}
 		[CRepr]
 		public struct IWABExtInit : IUnknown
 		{
 			public const new Guid IID = .(0xea22ebf0, 0x87a4, 0x11d1, 0x9a, 0xcf, 0x00, 0xa0, 0xc9, 0x1f, 0x9c, 0x8b);
 			
-			public function HRESULT(IWABExtInit *self, WABEXTDISPLAY* lpWABExtDisplay) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWABExtInit *self, WABEXTDISPLAY* lpWABExtDisplay) Initialize;
+			}
 		}
 		
 		// --- Functions ---

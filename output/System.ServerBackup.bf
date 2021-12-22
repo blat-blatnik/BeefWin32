@@ -66,25 +66,40 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1eff3510, 0x4a27, 0x46ad, 0xb9, 0xe0, 0x08, 0x33, 0x2f, 0x0f, 0x4f, 0x6d);
 			
-			public function HRESULT(IWsbApplicationBackupSupport *self, PWSTR wszWriterMetadata, PWSTR wszComponentName, PWSTR wszComponentLogicalPath, uint32 cVolumes, PWSTR* rgwszSourceVolumePath, PWSTR* rgwszSnapshotVolumePath, IWsbApplicationAsync** ppAsync) CheckConsistency;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWsbApplicationBackupSupport *self, PWSTR wszWriterMetadata, PWSTR wszComponentName, PWSTR wszComponentLogicalPath, uint32 cVolumes, PWSTR* rgwszSourceVolumePath, PWSTR* rgwszSnapshotVolumePath, IWsbApplicationAsync** ppAsync) CheckConsistency;
+			}
 		}
 		[CRepr]
 		public struct IWsbApplicationRestoreSupport : IUnknown
 		{
 			public const new Guid IID = .(0x8d3bdb38, 0x4ee8, 0x4718, 0x85, 0xf9, 0xc7, 0xdb, 0xc4, 0xab, 0x77, 0xaa);
 			
-			public function HRESULT(IWsbApplicationRestoreSupport *self, PWSTR wszWriterMetadata, PWSTR wszComponentName, PWSTR wszComponentLogicalPath, BOOLEAN bNoRollForward) PreRestore;
-			public function HRESULT(IWsbApplicationRestoreSupport *self, PWSTR wszWriterMetadata, PWSTR wszComponentName, PWSTR wszComponentLogicalPath, BOOLEAN bNoRollForward) PostRestore;
-			public function HRESULT(IWsbApplicationRestoreSupport *self, uint32 cComponents, PWSTR* rgComponentName, PWSTR* rgComponentLogicalPaths, PWSTR** prgComponentName, PWSTR** prgComponentLogicalPath) OrderComponents;
-			public function HRESULT(IWsbApplicationRestoreSupport *self, uint8* pbRollForwardSupported) IsRollForwardSupported;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWsbApplicationRestoreSupport *self, PWSTR wszWriterMetadata, PWSTR wszComponentName, PWSTR wszComponentLogicalPath, BOOLEAN bNoRollForward) PreRestore;
+				public function HRESULT(IWsbApplicationRestoreSupport *self, PWSTR wszWriterMetadata, PWSTR wszComponentName, PWSTR wszComponentLogicalPath, BOOLEAN bNoRollForward) PostRestore;
+				public function HRESULT(IWsbApplicationRestoreSupport *self, uint32 cComponents, PWSTR* rgComponentName, PWSTR* rgComponentLogicalPaths, PWSTR** prgComponentName, PWSTR** prgComponentLogicalPath) OrderComponents;
+				public function HRESULT(IWsbApplicationRestoreSupport *self, uint8* pbRollForwardSupported) IsRollForwardSupported;
+			}
 		}
 		[CRepr]
 		public struct IWsbApplicationAsync : IUnknown
 		{
 			public const new Guid IID = .(0x0843f6f7, 0x895c, 0x44a6, 0xb0, 0xc2, 0x05, 0xa5, 0x02, 0x2a, 0xa3, 0xa1);
 			
-			public function HRESULT(IWsbApplicationAsync *self, HRESULT* phrResult) QueryStatus;
-			public function HRESULT(IWsbApplicationAsync *self) Abort;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWsbApplicationAsync *self, HRESULT* phrResult) QueryStatus;
+				public function HRESULT(IWsbApplicationAsync *self) Abort;
+			}
 		}
 		
 	}

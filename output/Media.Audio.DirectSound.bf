@@ -590,240 +590,350 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x279afa83, 0x4981, 0x11ce, 0xa5, 0x21, 0x00, 0x20, 0xaf, 0x0b, 0xe5, 0x60);
 			
-			public function HRESULT(IDirectSound *self, DSBUFFERDESC* pcDSBufferDesc, IDirectSoundBuffer** ppDSBuffer, IUnknown* pUnkOuter) CreateSoundBuffer;
-			public function HRESULT(IDirectSound *self, DSCAPS* pDSCaps) GetCaps;
-			public function HRESULT(IDirectSound *self, IDirectSoundBuffer* pDSBufferOriginal, IDirectSoundBuffer** ppDSBufferDuplicate) DuplicateSoundBuffer;
-			public function HRESULT(IDirectSound *self, HWND hwnd, uint32 dwLevel) SetCooperativeLevel;
-			public function HRESULT(IDirectSound *self) Compact;
-			public function HRESULT(IDirectSound *self, uint32* pdwSpeakerConfig) GetSpeakerConfig;
-			public function HRESULT(IDirectSound *self, uint32 dwSpeakerConfig) SetSpeakerConfig;
-			public function HRESULT(IDirectSound *self, Guid* pcGuidDevice) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSound *self, DSBUFFERDESC* pcDSBufferDesc, IDirectSoundBuffer** ppDSBuffer, IUnknown* pUnkOuter) CreateSoundBuffer;
+				public function HRESULT(IDirectSound *self, DSCAPS* pDSCaps) GetCaps;
+				public function HRESULT(IDirectSound *self, IDirectSoundBuffer* pDSBufferOriginal, IDirectSoundBuffer** ppDSBufferDuplicate) DuplicateSoundBuffer;
+				public function HRESULT(IDirectSound *self, HWND hwnd, uint32 dwLevel) SetCooperativeLevel;
+				public function HRESULT(IDirectSound *self) Compact;
+				public function HRESULT(IDirectSound *self, uint32* pdwSpeakerConfig) GetSpeakerConfig;
+				public function HRESULT(IDirectSound *self, uint32 dwSpeakerConfig) SetSpeakerConfig;
+				public function HRESULT(IDirectSound *self, Guid* pcGuidDevice) Initialize;
+			}
 		}
 		[CRepr]
 		public struct IDirectSound8 : IDirectSound
 		{
 			public const new Guid IID = .(0xc50a7e93, 0xf395, 0x4834, 0x9e, 0xf6, 0x7f, 0xa9, 0x9d, 0xe5, 0x09, 0x66);
 			
-			public function HRESULT(IDirectSound8 *self, uint32* pdwCertified) VerifyCertification;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDirectSound.VTable
+			{
+				public function HRESULT(IDirectSound8 *self, uint32* pdwCertified) VerifyCertification;
+			}
 		}
 		[CRepr]
 		public struct IDirectSoundBuffer : IUnknown
 		{
 			public const new Guid IID = .(0x279afa85, 0x4981, 0x11ce, 0xa5, 0x21, 0x00, 0x20, 0xaf, 0x0b, 0xe5, 0x60);
 			
-			public function HRESULT(IDirectSoundBuffer *self, DSBCAPS* pDSBufferCaps) GetCaps;
-			public function HRESULT(IDirectSoundBuffer *self, uint32* pdwCurrentPlayCursor, uint32* pdwCurrentWriteCursor) GetCurrentPosition;
-			public function HRESULT(IDirectSoundBuffer *self, WAVEFORMATEX* pwfxFormat, uint32 dwSizeAllocated, uint32* pdwSizeWritten) GetFormat;
-			public function HRESULT(IDirectSoundBuffer *self, int32* plVolume) GetVolume;
-			public function HRESULT(IDirectSoundBuffer *self, int32* plPan) GetPan;
-			public function HRESULT(IDirectSoundBuffer *self, uint32* pdwFrequency) GetFrequency;
-			public function HRESULT(IDirectSoundBuffer *self, uint32* pdwStatus) GetStatus;
-			public function HRESULT(IDirectSoundBuffer *self, IDirectSound* pDirectSound, DSBUFFERDESC* pcDSBufferDesc) Initialize;
-			public function HRESULT(IDirectSoundBuffer *self, uint32 dwOffset, uint32 dwBytes, void** ppvAudioPtr1, uint32* pdwAudioBytes1, void** ppvAudioPtr2, uint32* pdwAudioBytes2, uint32 dwFlags) Lock;
-			public function HRESULT(IDirectSoundBuffer *self, uint32 dwReserved1, uint32 dwPriority, uint32 dwFlags) Play;
-			public function HRESULT(IDirectSoundBuffer *self, uint32 dwNewPosition) SetCurrentPosition;
-			public function HRESULT(IDirectSoundBuffer *self, WAVEFORMATEX* pcfxFormat) SetFormat;
-			public function HRESULT(IDirectSoundBuffer *self, int32 lVolume) SetVolume;
-			public function HRESULT(IDirectSoundBuffer *self, int32 lPan) SetPan;
-			public function HRESULT(IDirectSoundBuffer *self, uint32 dwFrequency) SetFrequency;
-			public function HRESULT(IDirectSoundBuffer *self) Stop;
-			public function HRESULT(IDirectSoundBuffer *self, void* pvAudioPtr1, uint32 dwAudioBytes1, void* pvAudioPtr2, uint32 dwAudioBytes2) Unlock;
-			public function HRESULT(IDirectSoundBuffer *self) Restore;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSoundBuffer *self, DSBCAPS* pDSBufferCaps) GetCaps;
+				public function HRESULT(IDirectSoundBuffer *self, uint32* pdwCurrentPlayCursor, uint32* pdwCurrentWriteCursor) GetCurrentPosition;
+				public function HRESULT(IDirectSoundBuffer *self, WAVEFORMATEX* pwfxFormat, uint32 dwSizeAllocated, uint32* pdwSizeWritten) GetFormat;
+				public function HRESULT(IDirectSoundBuffer *self, int32* plVolume) GetVolume;
+				public function HRESULT(IDirectSoundBuffer *self, int32* plPan) GetPan;
+				public function HRESULT(IDirectSoundBuffer *self, uint32* pdwFrequency) GetFrequency;
+				public function HRESULT(IDirectSoundBuffer *self, uint32* pdwStatus) GetStatus;
+				public function HRESULT(IDirectSoundBuffer *self, IDirectSound* pDirectSound, DSBUFFERDESC* pcDSBufferDesc) Initialize;
+				public function HRESULT(IDirectSoundBuffer *self, uint32 dwOffset, uint32 dwBytes, void** ppvAudioPtr1, uint32* pdwAudioBytes1, void** ppvAudioPtr2, uint32* pdwAudioBytes2, uint32 dwFlags) Lock;
+				public function HRESULT(IDirectSoundBuffer *self, uint32 dwReserved1, uint32 dwPriority, uint32 dwFlags) Play;
+				public function HRESULT(IDirectSoundBuffer *self, uint32 dwNewPosition) SetCurrentPosition;
+				public function HRESULT(IDirectSoundBuffer *self, WAVEFORMATEX* pcfxFormat) SetFormat;
+				public function HRESULT(IDirectSoundBuffer *self, int32 lVolume) SetVolume;
+				public function HRESULT(IDirectSoundBuffer *self, int32 lPan) SetPan;
+				public function HRESULT(IDirectSoundBuffer *self, uint32 dwFrequency) SetFrequency;
+				public function HRESULT(IDirectSoundBuffer *self) Stop;
+				public function HRESULT(IDirectSoundBuffer *self, void* pvAudioPtr1, uint32 dwAudioBytes1, void* pvAudioPtr2, uint32 dwAudioBytes2) Unlock;
+				public function HRESULT(IDirectSoundBuffer *self) Restore;
+			}
 		}
 		[CRepr]
 		public struct IDirectSoundBuffer8 : IDirectSoundBuffer
 		{
 			public const new Guid IID = .(0x6825a449, 0x7524, 0x4d82, 0x92, 0x0f, 0x50, 0xe3, 0x6a, 0xb3, 0xab, 0x1e);
 			
-			public function HRESULT(IDirectSoundBuffer8 *self, uint32 dwEffectsCount, DSEFFECTDESC* pDSFXDesc, uint32* pdwResultCodes) SetFX;
-			public function HRESULT(IDirectSoundBuffer8 *self, uint32 dwFlags, uint32 dwEffectsCount, uint32* pdwResultCodes) AcquireResources;
-			public function HRESULT(IDirectSoundBuffer8 *self, Guid* rguidObject, uint32 dwIndex, Guid* rguidInterface, void** ppObject) GetObjectInPath;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDirectSoundBuffer.VTable
+			{
+				public function HRESULT(IDirectSoundBuffer8 *self, uint32 dwEffectsCount, DSEFFECTDESC* pDSFXDesc, uint32* pdwResultCodes) SetFX;
+				public function HRESULT(IDirectSoundBuffer8 *self, uint32 dwFlags, uint32 dwEffectsCount, uint32* pdwResultCodes) AcquireResources;
+				public function HRESULT(IDirectSoundBuffer8 *self, Guid* rguidObject, uint32 dwIndex, Guid* rguidInterface, void** ppObject) GetObjectInPath;
+			}
 		}
 		[CRepr]
 		public struct IDirectSound3DListener : IUnknown
 		{
 			public const new Guid IID = .(0x279afa84, 0x4981, 0x11ce, 0xa5, 0x21, 0x00, 0x20, 0xaf, 0x0b, 0xe5, 0x60);
 			
-			public function HRESULT(IDirectSound3DListener *self, DS3DLISTENER* pListener) GetAllParameters;
-			public function HRESULT(IDirectSound3DListener *self, float* pflDistanceFactor) GetDistanceFactor;
-			public function HRESULT(IDirectSound3DListener *self, float* pflDopplerFactor) GetDopplerFactor;
-			public function HRESULT(IDirectSound3DListener *self, D3DVECTOR* pvOrientFront, D3DVECTOR* pvOrientTop) GetOrientation;
-			public function HRESULT(IDirectSound3DListener *self, D3DVECTOR* pvPosition) GetPosition;
-			public function HRESULT(IDirectSound3DListener *self, float* pflRolloffFactor) GetRolloffFactor;
-			public function HRESULT(IDirectSound3DListener *self, D3DVECTOR* pvVelocity) GetVelocity;
-			public function HRESULT(IDirectSound3DListener *self, DS3DLISTENER* pcListener, uint32 dwApply) SetAllParameters;
-			public function HRESULT(IDirectSound3DListener *self, float flDistanceFactor, uint32 dwApply) SetDistanceFactor;
-			public function HRESULT(IDirectSound3DListener *self, float flDopplerFactor, uint32 dwApply) SetDopplerFactor;
-			public function HRESULT(IDirectSound3DListener *self, float xFront, float yFront, float zFront, float xTop, float yTop, float zTop, uint32 dwApply) SetOrientation;
-			public function HRESULT(IDirectSound3DListener *self, float x, float y, float z, uint32 dwApply) SetPosition;
-			public function HRESULT(IDirectSound3DListener *self, float flRolloffFactor, uint32 dwApply) SetRolloffFactor;
-			public function HRESULT(IDirectSound3DListener *self, float x, float y, float z, uint32 dwApply) SetVelocity;
-			public function HRESULT(IDirectSound3DListener *self) CommitDeferredSettings;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSound3DListener *self, DS3DLISTENER* pListener) GetAllParameters;
+				public function HRESULT(IDirectSound3DListener *self, float* pflDistanceFactor) GetDistanceFactor;
+				public function HRESULT(IDirectSound3DListener *self, float* pflDopplerFactor) GetDopplerFactor;
+				public function HRESULT(IDirectSound3DListener *self, D3DVECTOR* pvOrientFront, D3DVECTOR* pvOrientTop) GetOrientation;
+				public function HRESULT(IDirectSound3DListener *self, D3DVECTOR* pvPosition) GetPosition;
+				public function HRESULT(IDirectSound3DListener *self, float* pflRolloffFactor) GetRolloffFactor;
+				public function HRESULT(IDirectSound3DListener *self, D3DVECTOR* pvVelocity) GetVelocity;
+				public function HRESULT(IDirectSound3DListener *self, DS3DLISTENER* pcListener, uint32 dwApply) SetAllParameters;
+				public function HRESULT(IDirectSound3DListener *self, float flDistanceFactor, uint32 dwApply) SetDistanceFactor;
+				public function HRESULT(IDirectSound3DListener *self, float flDopplerFactor, uint32 dwApply) SetDopplerFactor;
+				public function HRESULT(IDirectSound3DListener *self, float xFront, float yFront, float zFront, float xTop, float yTop, float zTop, uint32 dwApply) SetOrientation;
+				public function HRESULT(IDirectSound3DListener *self, float x, float y, float z, uint32 dwApply) SetPosition;
+				public function HRESULT(IDirectSound3DListener *self, float flRolloffFactor, uint32 dwApply) SetRolloffFactor;
+				public function HRESULT(IDirectSound3DListener *self, float x, float y, float z, uint32 dwApply) SetVelocity;
+				public function HRESULT(IDirectSound3DListener *self) CommitDeferredSettings;
+			}
 		}
 		[CRepr]
 		public struct IDirectSound3DBuffer : IUnknown
 		{
 			public const new Guid IID = .(0x279afa86, 0x4981, 0x11ce, 0xa5, 0x21, 0x00, 0x20, 0xaf, 0x0b, 0xe5, 0x60);
 			
-			public function HRESULT(IDirectSound3DBuffer *self, DS3DBUFFER* pDs3dBuffer) GetAllParameters;
-			public function HRESULT(IDirectSound3DBuffer *self, uint32* pdwInsideConeAngle, uint32* pdwOutsideConeAngle) GetConeAngles;
-			public function HRESULT(IDirectSound3DBuffer *self, D3DVECTOR* pvOrientation) GetConeOrientation;
-			public function HRESULT(IDirectSound3DBuffer *self, int32* plConeOutsideVolume) GetConeOutsideVolume;
-			public function HRESULT(IDirectSound3DBuffer *self, float* pflMaxDistance) GetMaxDistance;
-			public function HRESULT(IDirectSound3DBuffer *self, float* pflMinDistance) GetMinDistance;
-			public function HRESULT(IDirectSound3DBuffer *self, uint32* pdwMode) GetMode;
-			public function HRESULT(IDirectSound3DBuffer *self, D3DVECTOR* pvPosition) GetPosition;
-			public function HRESULT(IDirectSound3DBuffer *self, D3DVECTOR* pvVelocity) GetVelocity;
-			public function HRESULT(IDirectSound3DBuffer *self, DS3DBUFFER* pcDs3dBuffer, uint32 dwApply) SetAllParameters;
-			public function HRESULT(IDirectSound3DBuffer *self, uint32 dwInsideConeAngle, uint32 dwOutsideConeAngle, uint32 dwApply) SetConeAngles;
-			public function HRESULT(IDirectSound3DBuffer *self, float x, float y, float z, uint32 dwApply) SetConeOrientation;
-			public function HRESULT(IDirectSound3DBuffer *self, int32 lConeOutsideVolume, uint32 dwApply) SetConeOutsideVolume;
-			public function HRESULT(IDirectSound3DBuffer *self, float flMaxDistance, uint32 dwApply) SetMaxDistance;
-			public function HRESULT(IDirectSound3DBuffer *self, float flMinDistance, uint32 dwApply) SetMinDistance;
-			public function HRESULT(IDirectSound3DBuffer *self, uint32 dwMode, uint32 dwApply) SetMode;
-			public function HRESULT(IDirectSound3DBuffer *self, float x, float y, float z, uint32 dwApply) SetPosition;
-			public function HRESULT(IDirectSound3DBuffer *self, float x, float y, float z, uint32 dwApply) SetVelocity;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSound3DBuffer *self, DS3DBUFFER* pDs3dBuffer) GetAllParameters;
+				public function HRESULT(IDirectSound3DBuffer *self, uint32* pdwInsideConeAngle, uint32* pdwOutsideConeAngle) GetConeAngles;
+				public function HRESULT(IDirectSound3DBuffer *self, D3DVECTOR* pvOrientation) GetConeOrientation;
+				public function HRESULT(IDirectSound3DBuffer *self, int32* plConeOutsideVolume) GetConeOutsideVolume;
+				public function HRESULT(IDirectSound3DBuffer *self, float* pflMaxDistance) GetMaxDistance;
+				public function HRESULT(IDirectSound3DBuffer *self, float* pflMinDistance) GetMinDistance;
+				public function HRESULT(IDirectSound3DBuffer *self, uint32* pdwMode) GetMode;
+				public function HRESULT(IDirectSound3DBuffer *self, D3DVECTOR* pvPosition) GetPosition;
+				public function HRESULT(IDirectSound3DBuffer *self, D3DVECTOR* pvVelocity) GetVelocity;
+				public function HRESULT(IDirectSound3DBuffer *self, DS3DBUFFER* pcDs3dBuffer, uint32 dwApply) SetAllParameters;
+				public function HRESULT(IDirectSound3DBuffer *self, uint32 dwInsideConeAngle, uint32 dwOutsideConeAngle, uint32 dwApply) SetConeAngles;
+				public function HRESULT(IDirectSound3DBuffer *self, float x, float y, float z, uint32 dwApply) SetConeOrientation;
+				public function HRESULT(IDirectSound3DBuffer *self, int32 lConeOutsideVolume, uint32 dwApply) SetConeOutsideVolume;
+				public function HRESULT(IDirectSound3DBuffer *self, float flMaxDistance, uint32 dwApply) SetMaxDistance;
+				public function HRESULT(IDirectSound3DBuffer *self, float flMinDistance, uint32 dwApply) SetMinDistance;
+				public function HRESULT(IDirectSound3DBuffer *self, uint32 dwMode, uint32 dwApply) SetMode;
+				public function HRESULT(IDirectSound3DBuffer *self, float x, float y, float z, uint32 dwApply) SetPosition;
+				public function HRESULT(IDirectSound3DBuffer *self, float x, float y, float z, uint32 dwApply) SetVelocity;
+			}
 		}
 		[CRepr]
 		public struct IDirectSoundCapture : IUnknown
 		{
 			public const new Guid IID = .(0xb0210781, 0x89cd, 0x11d0, 0xaf, 0x08, 0x00, 0xa0, 0xc9, 0x25, 0xcd, 0x16);
 			
-			public function HRESULT(IDirectSoundCapture *self, DSCBUFFERDESC* pcDSCBufferDesc, IDirectSoundCaptureBuffer** ppDSCBuffer, IUnknown* pUnkOuter) CreateCaptureBuffer;
-			public function HRESULT(IDirectSoundCapture *self, DSCCAPS* pDSCCaps) GetCaps;
-			public function HRESULT(IDirectSoundCapture *self, Guid* pcGuidDevice) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSoundCapture *self, DSCBUFFERDESC* pcDSCBufferDesc, IDirectSoundCaptureBuffer** ppDSCBuffer, IUnknown* pUnkOuter) CreateCaptureBuffer;
+				public function HRESULT(IDirectSoundCapture *self, DSCCAPS* pDSCCaps) GetCaps;
+				public function HRESULT(IDirectSoundCapture *self, Guid* pcGuidDevice) Initialize;
+			}
 		}
 		[CRepr]
 		public struct IDirectSoundCaptureBuffer : IUnknown
 		{
 			public const new Guid IID = .(0xb0210782, 0x89cd, 0x11d0, 0xaf, 0x08, 0x00, 0xa0, 0xc9, 0x25, 0xcd, 0x16);
 			
-			public function HRESULT(IDirectSoundCaptureBuffer *self, DSCBCAPS* pDSCBCaps) GetCaps;
-			public function HRESULT(IDirectSoundCaptureBuffer *self, uint32* pdwCapturePosition, uint32* pdwReadPosition) GetCurrentPosition;
-			public function HRESULT(IDirectSoundCaptureBuffer *self, WAVEFORMATEX* pwfxFormat, uint32 dwSizeAllocated, uint32* pdwSizeWritten) GetFormat;
-			public function HRESULT(IDirectSoundCaptureBuffer *self, uint32* pdwStatus) GetStatus;
-			public function HRESULT(IDirectSoundCaptureBuffer *self, IDirectSoundCapture* pDirectSoundCapture, DSCBUFFERDESC* pcDSCBufferDesc) Initialize;
-			public function HRESULT(IDirectSoundCaptureBuffer *self, uint32 dwOffset, uint32 dwBytes, void** ppvAudioPtr1, uint32* pdwAudioBytes1, void** ppvAudioPtr2, uint32* pdwAudioBytes2, uint32 dwFlags) Lock;
-			public function HRESULT(IDirectSoundCaptureBuffer *self, uint32 dwFlags) Start;
-			public function HRESULT(IDirectSoundCaptureBuffer *self) Stop;
-			public function HRESULT(IDirectSoundCaptureBuffer *self, void* pvAudioPtr1, uint32 dwAudioBytes1, void* pvAudioPtr2, uint32 dwAudioBytes2) Unlock;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSoundCaptureBuffer *self, DSCBCAPS* pDSCBCaps) GetCaps;
+				public function HRESULT(IDirectSoundCaptureBuffer *self, uint32* pdwCapturePosition, uint32* pdwReadPosition) GetCurrentPosition;
+				public function HRESULT(IDirectSoundCaptureBuffer *self, WAVEFORMATEX* pwfxFormat, uint32 dwSizeAllocated, uint32* pdwSizeWritten) GetFormat;
+				public function HRESULT(IDirectSoundCaptureBuffer *self, uint32* pdwStatus) GetStatus;
+				public function HRESULT(IDirectSoundCaptureBuffer *self, IDirectSoundCapture* pDirectSoundCapture, DSCBUFFERDESC* pcDSCBufferDesc) Initialize;
+				public function HRESULT(IDirectSoundCaptureBuffer *self, uint32 dwOffset, uint32 dwBytes, void** ppvAudioPtr1, uint32* pdwAudioBytes1, void** ppvAudioPtr2, uint32* pdwAudioBytes2, uint32 dwFlags) Lock;
+				public function HRESULT(IDirectSoundCaptureBuffer *self, uint32 dwFlags) Start;
+				public function HRESULT(IDirectSoundCaptureBuffer *self) Stop;
+				public function HRESULT(IDirectSoundCaptureBuffer *self, void* pvAudioPtr1, uint32 dwAudioBytes1, void* pvAudioPtr2, uint32 dwAudioBytes2) Unlock;
+			}
 		}
 		[CRepr]
 		public struct IDirectSoundCaptureBuffer8 : IDirectSoundCaptureBuffer
 		{
 			public const new Guid IID = .(0x00990df4, 0x0dbb, 0x4872, 0x83, 0x3e, 0x6d, 0x30, 0x3e, 0x80, 0xae, 0xb6);
 			
-			public function HRESULT(IDirectSoundCaptureBuffer8 *self, Guid* rguidObject, uint32 dwIndex, Guid* rguidInterface, void** ppObject) GetObjectInPath;
-			public function HRESULT(IDirectSoundCaptureBuffer8 *self, uint32 dwEffectsCount, uint32* pdwFXStatus) GetFXStatus;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDirectSoundCaptureBuffer.VTable
+			{
+				public function HRESULT(IDirectSoundCaptureBuffer8 *self, Guid* rguidObject, uint32 dwIndex, Guid* rguidInterface, void** ppObject) GetObjectInPath;
+				public function HRESULT(IDirectSoundCaptureBuffer8 *self, uint32 dwEffectsCount, uint32* pdwFXStatus) GetFXStatus;
+			}
 		}
 		[CRepr]
 		public struct IDirectSoundNotify : IUnknown
 		{
 			public const new Guid IID = .(0xb0210783, 0x89cd, 0x11d0, 0xaf, 0x08, 0x00, 0xa0, 0xc9, 0x25, 0xcd, 0x16);
 			
-			public function HRESULT(IDirectSoundNotify *self, uint32 dwPositionNotifies, DSBPOSITIONNOTIFY* pcPositionNotifies) SetNotificationPositions;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSoundNotify *self, uint32 dwPositionNotifies, DSBPOSITIONNOTIFY* pcPositionNotifies) SetNotificationPositions;
+			}
 		}
 		[CRepr]
 		public struct IDirectSoundFXGargle : IUnknown
 		{
 			public const new Guid IID = .(0xd616f352, 0xd622, 0x11ce, 0xaa, 0xc5, 0x00, 0x20, 0xaf, 0x0b, 0x99, 0xa3);
 			
-			public function HRESULT(IDirectSoundFXGargle *self, DSFXGargle* pcDsFxGargle) SetAllParameters;
-			public function HRESULT(IDirectSoundFXGargle *self, DSFXGargle* pDsFxGargle) GetAllParameters;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSoundFXGargle *self, DSFXGargle* pcDsFxGargle) SetAllParameters;
+				public function HRESULT(IDirectSoundFXGargle *self, DSFXGargle* pDsFxGargle) GetAllParameters;
+			}
 		}
 		[CRepr]
 		public struct IDirectSoundFXChorus : IUnknown
 		{
 			public const new Guid IID = .(0x880842e3, 0x145f, 0x43e6, 0xa9, 0x34, 0xa7, 0x18, 0x06, 0xe5, 0x05, 0x47);
 			
-			public function HRESULT(IDirectSoundFXChorus *self, DSFXChorus* pcDsFxChorus) SetAllParameters;
-			public function HRESULT(IDirectSoundFXChorus *self, DSFXChorus* pDsFxChorus) GetAllParameters;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSoundFXChorus *self, DSFXChorus* pcDsFxChorus) SetAllParameters;
+				public function HRESULT(IDirectSoundFXChorus *self, DSFXChorus* pDsFxChorus) GetAllParameters;
+			}
 		}
 		[CRepr]
 		public struct IDirectSoundFXFlanger : IUnknown
 		{
 			public const new Guid IID = .(0x903e9878, 0x2c92, 0x4072, 0x9b, 0x2c, 0xea, 0x68, 0xf5, 0x39, 0x67, 0x83);
 			
-			public function HRESULT(IDirectSoundFXFlanger *self, DSFXFlanger* pcDsFxFlanger) SetAllParameters;
-			public function HRESULT(IDirectSoundFXFlanger *self, DSFXFlanger* pDsFxFlanger) GetAllParameters;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSoundFXFlanger *self, DSFXFlanger* pcDsFxFlanger) SetAllParameters;
+				public function HRESULT(IDirectSoundFXFlanger *self, DSFXFlanger* pDsFxFlanger) GetAllParameters;
+			}
 		}
 		[CRepr]
 		public struct IDirectSoundFXEcho : IUnknown
 		{
 			public const new Guid IID = .(0x8bd28edf, 0x50db, 0x4e92, 0xa2, 0xbd, 0x44, 0x54, 0x88, 0xd1, 0xed, 0x42);
 			
-			public function HRESULT(IDirectSoundFXEcho *self, DSFXEcho* pcDsFxEcho) SetAllParameters;
-			public function HRESULT(IDirectSoundFXEcho *self, DSFXEcho* pDsFxEcho) GetAllParameters;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSoundFXEcho *self, DSFXEcho* pcDsFxEcho) SetAllParameters;
+				public function HRESULT(IDirectSoundFXEcho *self, DSFXEcho* pDsFxEcho) GetAllParameters;
+			}
 		}
 		[CRepr]
 		public struct IDirectSoundFXDistortion : IUnknown
 		{
 			public const new Guid IID = .(0x8ecf4326, 0x455f, 0x4d8b, 0xbd, 0xa9, 0x8d, 0x5d, 0x3e, 0x9e, 0x3e, 0x0b);
 			
-			public function HRESULT(IDirectSoundFXDistortion *self, DSFXDistortion* pcDsFxDistortion) SetAllParameters;
-			public function HRESULT(IDirectSoundFXDistortion *self, DSFXDistortion* pDsFxDistortion) GetAllParameters;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSoundFXDistortion *self, DSFXDistortion* pcDsFxDistortion) SetAllParameters;
+				public function HRESULT(IDirectSoundFXDistortion *self, DSFXDistortion* pDsFxDistortion) GetAllParameters;
+			}
 		}
 		[CRepr]
 		public struct IDirectSoundFXCompressor : IUnknown
 		{
 			public const new Guid IID = .(0x4bbd1154, 0x62f6, 0x4e2c, 0xa1, 0x5c, 0xd3, 0xb6, 0xc4, 0x17, 0xf7, 0xa0);
 			
-			public function HRESULT(IDirectSoundFXCompressor *self, DSFXCompressor* pcDsFxCompressor) SetAllParameters;
-			public function HRESULT(IDirectSoundFXCompressor *self, DSFXCompressor* pDsFxCompressor) GetAllParameters;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSoundFXCompressor *self, DSFXCompressor* pcDsFxCompressor) SetAllParameters;
+				public function HRESULT(IDirectSoundFXCompressor *self, DSFXCompressor* pDsFxCompressor) GetAllParameters;
+			}
 		}
 		[CRepr]
 		public struct IDirectSoundFXParamEq : IUnknown
 		{
 			public const new Guid IID = .(0xc03ca9fe, 0xfe90, 0x4204, 0x80, 0x78, 0x82, 0x33, 0x4c, 0xd1, 0x77, 0xda);
 			
-			public function HRESULT(IDirectSoundFXParamEq *self, DSFXParamEq* pcDsFxParamEq) SetAllParameters;
-			public function HRESULT(IDirectSoundFXParamEq *self, DSFXParamEq* pDsFxParamEq) GetAllParameters;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSoundFXParamEq *self, DSFXParamEq* pcDsFxParamEq) SetAllParameters;
+				public function HRESULT(IDirectSoundFXParamEq *self, DSFXParamEq* pDsFxParamEq) GetAllParameters;
+			}
 		}
 		[CRepr]
 		public struct IDirectSoundFXI3DL2Reverb : IUnknown
 		{
 			public const new Guid IID = .(0x4b166a6a, 0x0d66, 0x43f3, 0x80, 0xe3, 0xee, 0x62, 0x80, 0xde, 0xe1, 0xa4);
 			
-			public function HRESULT(IDirectSoundFXI3DL2Reverb *self, DSFXI3DL2Reverb* pcDsFxI3DL2Reverb) SetAllParameters;
-			public function HRESULT(IDirectSoundFXI3DL2Reverb *self, DSFXI3DL2Reverb* pDsFxI3DL2Reverb) GetAllParameters;
-			public function HRESULT(IDirectSoundFXI3DL2Reverb *self, uint32 dwPreset) SetPreset;
-			public function HRESULT(IDirectSoundFXI3DL2Reverb *self, uint32* pdwPreset) GetPreset;
-			public function HRESULT(IDirectSoundFXI3DL2Reverb *self, int32 lQuality) SetQuality;
-			public function HRESULT(IDirectSoundFXI3DL2Reverb *self, int32* plQuality) GetQuality;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSoundFXI3DL2Reverb *self, DSFXI3DL2Reverb* pcDsFxI3DL2Reverb) SetAllParameters;
+				public function HRESULT(IDirectSoundFXI3DL2Reverb *self, DSFXI3DL2Reverb* pDsFxI3DL2Reverb) GetAllParameters;
+				public function HRESULT(IDirectSoundFXI3DL2Reverb *self, uint32 dwPreset) SetPreset;
+				public function HRESULT(IDirectSoundFXI3DL2Reverb *self, uint32* pdwPreset) GetPreset;
+				public function HRESULT(IDirectSoundFXI3DL2Reverb *self, int32 lQuality) SetQuality;
+				public function HRESULT(IDirectSoundFXI3DL2Reverb *self, int32* plQuality) GetQuality;
+			}
 		}
 		[CRepr]
 		public struct IDirectSoundFXWavesReverb : IUnknown
 		{
 			public const new Guid IID = .(0x46858c3a, 0x0dc6, 0x45e3, 0xb7, 0x60, 0xd4, 0xee, 0xf1, 0x6c, 0xb3, 0x25);
 			
-			public function HRESULT(IDirectSoundFXWavesReverb *self, DSFXWavesReverb* pcDsFxWavesReverb) SetAllParameters;
-			public function HRESULT(IDirectSoundFXWavesReverb *self, DSFXWavesReverb* pDsFxWavesReverb) GetAllParameters;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSoundFXWavesReverb *self, DSFXWavesReverb* pcDsFxWavesReverb) SetAllParameters;
+				public function HRESULT(IDirectSoundFXWavesReverb *self, DSFXWavesReverb* pDsFxWavesReverb) GetAllParameters;
+			}
 		}
 		[CRepr]
 		public struct IDirectSoundCaptureFXAec : IUnknown
 		{
 			public const new Guid IID = .(0xad74143d, 0x903d, 0x4ab7, 0x80, 0x66, 0x28, 0xd3, 0x63, 0x03, 0x6d, 0x65);
 			
-			public function HRESULT(IDirectSoundCaptureFXAec *self, DSCFXAec* pDscFxAec) SetAllParameters;
-			public function HRESULT(IDirectSoundCaptureFXAec *self, DSCFXAec* pDscFxAec) GetAllParameters;
-			public function HRESULT(IDirectSoundCaptureFXAec *self, uint32* pdwStatus) GetStatus;
-			public function HRESULT(IDirectSoundCaptureFXAec *self) Reset;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSoundCaptureFXAec *self, DSCFXAec* pDscFxAec) SetAllParameters;
+				public function HRESULT(IDirectSoundCaptureFXAec *self, DSCFXAec* pDscFxAec) GetAllParameters;
+				public function HRESULT(IDirectSoundCaptureFXAec *self, uint32* pdwStatus) GetStatus;
+				public function HRESULT(IDirectSoundCaptureFXAec *self) Reset;
+			}
 		}
 		[CRepr]
 		public struct IDirectSoundCaptureFXNoiseSuppress : IUnknown
 		{
 			public const new Guid IID = .(0xed311e41, 0xfbae, 0x4175, 0x96, 0x25, 0xcd, 0x08, 0x54, 0xf6, 0x93, 0xca);
 			
-			public function HRESULT(IDirectSoundCaptureFXNoiseSuppress *self, DSCFXNoiseSuppress* pcDscFxNoiseSuppress) SetAllParameters;
-			public function HRESULT(IDirectSoundCaptureFXNoiseSuppress *self, DSCFXNoiseSuppress* pDscFxNoiseSuppress) GetAllParameters;
-			public function HRESULT(IDirectSoundCaptureFXNoiseSuppress *self) Reset;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSoundCaptureFXNoiseSuppress *self, DSCFXNoiseSuppress* pcDscFxNoiseSuppress) SetAllParameters;
+				public function HRESULT(IDirectSoundCaptureFXNoiseSuppress *self, DSCFXNoiseSuppress* pDscFxNoiseSuppress) GetAllParameters;
+				public function HRESULT(IDirectSoundCaptureFXNoiseSuppress *self) Reset;
+			}
 		}
 		[CRepr]
 		public struct IDirectSoundFullDuplex : IUnknown
 		{
 			public const new Guid IID = .(0xedcb4c7a, 0xdaab, 0x4216, 0xa4, 0x2e, 0x6c, 0x50, 0x59, 0x6d, 0xdc, 0x1d);
 			
-			public function HRESULT(IDirectSoundFullDuplex *self, Guid* pCaptureGuid, Guid* pRenderGuid, DSCBUFFERDESC* lpDscBufferDesc, DSBUFFERDESC* lpDsBufferDesc, HWND hWnd, uint32 dwLevel, IDirectSoundCaptureBuffer8** lplpDirectSoundCaptureBuffer8, IDirectSoundBuffer8** lplpDirectSoundBuffer8) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectSoundFullDuplex *self, Guid* pCaptureGuid, Guid* pRenderGuid, DSCBUFFERDESC* lpDscBufferDesc, DSBUFFERDESC* lpDsBufferDesc, HWND hWnd, uint32 dwLevel, IDirectSoundCaptureBuffer8** lplpDirectSoundCaptureBuffer8, IDirectSoundBuffer8** lplpDirectSoundBuffer8) Initialize;
+			}
 		}
 		
 		// --- Functions ---

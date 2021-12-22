@@ -109,92 +109,127 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe7b2fb72, 0xd728, 0x49b3, 0xa5, 0xf2, 0x18, 0xeb, 0xf5, 0xf1, 0x34, 0x9e);
 			
-			public function HRESULT(IGameExplorer *self, BSTR bstrGDFBinaryPath, BSTR bstrGameInstallDirectory, GAME_INSTALL_SCOPE installScope, Guid* pguidInstanceID) AddGame;
-			public function HRESULT(IGameExplorer *self, Guid guidInstanceID) RemoveGame;
-			public function HRESULT(IGameExplorer *self, Guid guidInstanceID) UpdateGame;
-			public function HRESULT(IGameExplorer *self, BSTR bstrGDFBinaryPath, BOOL* pfHasAccess) VerifyAccess;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IGameExplorer *self, BSTR bstrGDFBinaryPath, BSTR bstrGameInstallDirectory, GAME_INSTALL_SCOPE installScope, Guid* pguidInstanceID) AddGame;
+				public function HRESULT(IGameExplorer *self, Guid guidInstanceID) RemoveGame;
+				public function HRESULT(IGameExplorer *self, Guid guidInstanceID) UpdateGame;
+				public function HRESULT(IGameExplorer *self, BSTR bstrGDFBinaryPath, BOOL* pfHasAccess) VerifyAccess;
+			}
 		}
 		[CRepr]
 		public struct IGameStatistics : IUnknown
 		{
 			public const new Guid IID = .(0x3887c9ca, 0x04a0, 0x42ae, 0xbc, 0x4c, 0x5f, 0xa6, 0xc7, 0x72, 0x11, 0x45);
 			
-			public function HRESULT(IGameStatistics *self, uint32* cch) GetMaxCategoryLength;
-			public function HRESULT(IGameStatistics *self, uint32* cch) GetMaxNameLength;
-			public function HRESULT(IGameStatistics *self, uint32* cch) GetMaxValueLength;
-			public function HRESULT(IGameStatistics *self, uint16* pMax) GetMaxCategories;
-			public function HRESULT(IGameStatistics *self, uint16* pMax) GetMaxStatsPerCategory;
-			public function HRESULT(IGameStatistics *self, uint16 categoryIndex, PWSTR title) SetCategoryTitle;
-			public function HRESULT(IGameStatistics *self, uint16 categoryIndex, PWSTR* pTitle) GetCategoryTitle;
-			public function HRESULT(IGameStatistics *self, uint16 categoryIndex, uint16 statIndex, PWSTR* pName, PWSTR* pValue) GetStatistic;
-			public function HRESULT(IGameStatistics *self, uint16 categoryIndex, uint16 statIndex, PWSTR name, PWSTR value) SetStatistic;
-			public function HRESULT(IGameStatistics *self, BOOL trackChanges) Save;
-			public function HRESULT(IGameStatistics *self, uint32 categoryIndex) SetLastPlayedCategory;
-			public function HRESULT(IGameStatistics *self, uint32* pCategoryIndex) GetLastPlayedCategory;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IGameStatistics *self, uint32* cch) GetMaxCategoryLength;
+				public function HRESULT(IGameStatistics *self, uint32* cch) GetMaxNameLength;
+				public function HRESULT(IGameStatistics *self, uint32* cch) GetMaxValueLength;
+				public function HRESULT(IGameStatistics *self, uint16* pMax) GetMaxCategories;
+				public function HRESULT(IGameStatistics *self, uint16* pMax) GetMaxStatsPerCategory;
+				public function HRESULT(IGameStatistics *self, uint16 categoryIndex, PWSTR title) SetCategoryTitle;
+				public function HRESULT(IGameStatistics *self, uint16 categoryIndex, PWSTR* pTitle) GetCategoryTitle;
+				public function HRESULT(IGameStatistics *self, uint16 categoryIndex, uint16 statIndex, PWSTR* pName, PWSTR* pValue) GetStatistic;
+				public function HRESULT(IGameStatistics *self, uint16 categoryIndex, uint16 statIndex, PWSTR name, PWSTR value) SetStatistic;
+				public function HRESULT(IGameStatistics *self, BOOL trackChanges) Save;
+				public function HRESULT(IGameStatistics *self, uint32 categoryIndex) SetLastPlayedCategory;
+				public function HRESULT(IGameStatistics *self, uint32* pCategoryIndex) GetLastPlayedCategory;
+			}
 		}
 		[CRepr]
 		public struct IGameStatisticsMgr : IUnknown
 		{
 			public const new Guid IID = .(0xaff3ea11, 0xe70e, 0x407d, 0x95, 0xdd, 0x35, 0xe6, 0x12, 0xc4, 0x1c, 0xe2);
 			
-			public function HRESULT(IGameStatisticsMgr *self, PWSTR GDFBinaryPath, GAMESTATS_OPEN_TYPE openType, GAMESTATS_OPEN_RESULT* pOpenResult, IGameStatistics** ppiStats) GetGameStatistics;
-			public function HRESULT(IGameStatisticsMgr *self, PWSTR GDFBinaryPath) RemoveGameStatistics;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IGameStatisticsMgr *self, PWSTR GDFBinaryPath, GAMESTATS_OPEN_TYPE openType, GAMESTATS_OPEN_RESULT* pOpenResult, IGameStatistics** ppiStats) GetGameStatistics;
+				public function HRESULT(IGameStatisticsMgr *self, PWSTR GDFBinaryPath) RemoveGameStatistics;
+			}
 		}
 		[CRepr]
 		public struct IGameExplorer2 : IUnknown
 		{
 			public const new Guid IID = .(0x86874aa7, 0xa1ed, 0x450d, 0xa7, 0xeb, 0xb8, 0x9e, 0x20, 0xb2, 0xff, 0xf3);
 			
-			public function HRESULT(IGameExplorer2 *self, PWSTR binaryGDFPath, PWSTR installDirectory, GAME_INSTALL_SCOPE installScope) InstallGame;
-			public function HRESULT(IGameExplorer2 *self, PWSTR binaryGDFPath) UninstallGame;
-			public function HRESULT(IGameExplorer2 *self, PWSTR binaryGDFPath, BOOL* pHasAccess) CheckAccess;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IGameExplorer2 *self, PWSTR binaryGDFPath, PWSTR installDirectory, GAME_INSTALL_SCOPE installScope) InstallGame;
+				public function HRESULT(IGameExplorer2 *self, PWSTR binaryGDFPath) UninstallGame;
+				public function HRESULT(IGameExplorer2 *self, PWSTR binaryGDFPath, BOOL* pHasAccess) CheckAccess;
+			}
 		}
 		[CRepr]
 		public struct IXblIdpAuthManager : IUnknown
 		{
 			public const new Guid IID = .(0xeb5ddb08, 0x8bbf, 0x449b, 0xac, 0x21, 0xb0, 0x2d, 0xde, 0xb3, 0xb1, 0x36);
 			
-			public function HRESULT(IXblIdpAuthManager *self, PWSTR msaAccountId, PWSTR xuid) SetGamerAccount;
-			public function HRESULT(IXblIdpAuthManager *self, PWSTR* msaAccountId, PWSTR* xuid) GetGamerAccount;
-			public function HRESULT(IXblIdpAuthManager *self, PWSTR appSid, PWSTR msaAccountId) SetAppViewInitialized;
-			public function HRESULT(IXblIdpAuthManager *self, PWSTR* environment) GetEnvironment;
-			public function HRESULT(IXblIdpAuthManager *self, PWSTR* sandbox) GetSandbox;
-			public function HRESULT(IXblIdpAuthManager *self, PWSTR msaAccountId, PWSTR appSid, PWSTR msaTarget, PWSTR msaPolicy, PWSTR httpMethod, PWSTR uri, PWSTR headers, uint8* body, uint32 bodySize, BOOL forceRefresh, IXblIdpAuthTokenResult** result) GetTokenAndSignatureWithTokenResult;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IXblIdpAuthManager *self, PWSTR msaAccountId, PWSTR xuid) SetGamerAccount;
+				public function HRESULT(IXblIdpAuthManager *self, PWSTR* msaAccountId, PWSTR* xuid) GetGamerAccount;
+				public function HRESULT(IXblIdpAuthManager *self, PWSTR appSid, PWSTR msaAccountId) SetAppViewInitialized;
+				public function HRESULT(IXblIdpAuthManager *self, PWSTR* environment) GetEnvironment;
+				public function HRESULT(IXblIdpAuthManager *self, PWSTR* sandbox) GetSandbox;
+				public function HRESULT(IXblIdpAuthManager *self, PWSTR msaAccountId, PWSTR appSid, PWSTR msaTarget, PWSTR msaPolicy, PWSTR httpMethod, PWSTR uri, PWSTR headers, uint8* body, uint32 bodySize, BOOL forceRefresh, IXblIdpAuthTokenResult** result) GetTokenAndSignatureWithTokenResult;
+			}
 		}
 		[CRepr]
 		public struct IXblIdpAuthTokenResult : IUnknown
 		{
 			public const new Guid IID = .(0x46ce0225, 0xf267, 0x4d68, 0xb2, 0x99, 0xb2, 0x76, 0x25, 0x52, 0xde, 0xc1);
 			
-			public function HRESULT(IXblIdpAuthTokenResult *self, XBL_IDP_AUTH_TOKEN_STATUS* status) GetStatus;
-			public function HRESULT(IXblIdpAuthTokenResult *self, HRESULT* errorCode) GetErrorCode;
-			public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* token) GetToken;
-			public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* signature) GetSignature;
-			public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* sandbox) GetSandbox;
-			public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* environment) GetEnvironment;
-			public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* msaAccountId) GetMsaAccountId;
-			public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* xuid) GetXuid;
-			public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* gamertag) GetGamertag;
-			public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* ageGroup) GetAgeGroup;
-			public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* privileges) GetPrivileges;
-			public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* msaTarget) GetMsaTarget;
-			public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* msaPolicy) GetMsaPolicy;
-			public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* msaAppId) GetMsaAppId;
-			public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* redirect) GetRedirect;
-			public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* message) GetMessage;
-			public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* helpId) GetHelpId;
-			public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* enforcementBans) GetEnforcementBans;
-			public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* restrictions) GetRestrictions;
-			public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* titleRestrictions) GetTitleRestrictions;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IXblIdpAuthTokenResult *self, XBL_IDP_AUTH_TOKEN_STATUS* status) GetStatus;
+				public function HRESULT(IXblIdpAuthTokenResult *self, HRESULT* errorCode) GetErrorCode;
+				public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* token) GetToken;
+				public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* signature) GetSignature;
+				public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* sandbox) GetSandbox;
+				public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* environment) GetEnvironment;
+				public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* msaAccountId) GetMsaAccountId;
+				public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* xuid) GetXuid;
+				public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* gamertag) GetGamertag;
+				public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* ageGroup) GetAgeGroup;
+				public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* privileges) GetPrivileges;
+				public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* msaTarget) GetMsaTarget;
+				public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* msaPolicy) GetMsaPolicy;
+				public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* msaAppId) GetMsaAppId;
+				public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* redirect) GetRedirect;
+				public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* message) GetMessage;
+				public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* helpId) GetHelpId;
+				public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* enforcementBans) GetEnforcementBans;
+				public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* restrictions) GetRestrictions;
+				public function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* titleRestrictions) GetTitleRestrictions;
+			}
 		}
 		[CRepr]
 		public struct IXblIdpAuthTokenResult2 : IUnknown
 		{
 			public const new Guid IID = .(0x75d760b0, 0x60b9, 0x412d, 0x99, 0x4f, 0x26, 0xb2, 0xcd, 0x5f, 0x78, 0x12);
 			
-			public function HRESULT(IXblIdpAuthTokenResult2 *self, PWSTR* value) GetModernGamertag;
-			public function HRESULT(IXblIdpAuthTokenResult2 *self, PWSTR* value) GetModernGamertagSuffix;
-			public function HRESULT(IXblIdpAuthTokenResult2 *self, PWSTR* value) GetUniqueModernGamertag;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IXblIdpAuthTokenResult2 *self, PWSTR* value) GetModernGamertag;
+				public function HRESULT(IXblIdpAuthTokenResult2 *self, PWSTR* value) GetModernGamertagSuffix;
+				public function HRESULT(IXblIdpAuthTokenResult2 *self, PWSTR* value) GetUniqueModernGamertag;
+			}
 		}
 		
 		// --- Functions ---

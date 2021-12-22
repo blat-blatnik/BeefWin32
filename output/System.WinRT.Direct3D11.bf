@@ -12,7 +12,12 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa9b3d012, 0x3df2, 0x4ee3, 0xb8, 0xd1, 0x86, 0x95, 0xf4, 0x57, 0xd3, 0xc1);
 			
-			public function HRESULT(IDirect3DDxgiInterfaceAccess *self, Guid* iid, void** p) GetInterface;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirect3DDxgiInterfaceAccess *self, Guid* iid, void** p) GetInterface;
+			}
 		}
 		
 		// --- Functions ---

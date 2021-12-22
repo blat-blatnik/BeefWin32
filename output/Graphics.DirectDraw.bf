@@ -4792,434 +4792,524 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6c14db80, 0xa733, 0x11ce, 0xa5, 0x21, 0x00, 0x20, 0xaf, 0x0b, 0xe5, 0x60);
 			
-			public function HRESULT(IDirectDraw *self) Compact;
-			public function HRESULT(IDirectDraw *self, uint32 param0, IDirectDrawClipper** param1, IUnknown* param2) CreateClipper;
-			public function HRESULT(IDirectDraw *self, uint32 param0, PALETTEENTRY* param1, IDirectDrawPalette** param2, IUnknown* param3) CreatePalette;
-			public function HRESULT(IDirectDraw *self, DDSURFACEDESC* param0, IDirectDrawSurface** param1, IUnknown* param2) CreateSurface;
-			public function HRESULT(IDirectDraw *self, IDirectDrawSurface* param0, IDirectDrawSurface** param1) DuplicateSurface;
-			public function HRESULT(IDirectDraw *self, uint32 param0, DDSURFACEDESC* param1, void* param2, LPDDENUMMODESCALLBACK param3) EnumDisplayModes;
-			public function HRESULT(IDirectDraw *self, uint32 param0, DDSURFACEDESC* param1, void* param2, LPDDENUMSURFACESCALLBACK param3) EnumSurfaces;
-			public function HRESULT(IDirectDraw *self) FlipToGDISurface;
-			public function HRESULT(IDirectDraw *self, DDCAPS_DX7* param0, DDCAPS_DX7* param1) GetCaps;
-			public function HRESULT(IDirectDraw *self, DDSURFACEDESC* param0) GetDisplayMode;
-			public function HRESULT(IDirectDraw *self, uint32* param0, uint32* param1) GetFourCCCodes;
-			public function HRESULT(IDirectDraw *self, IDirectDrawSurface** param0) GetGDISurface;
-			public function HRESULT(IDirectDraw *self, uint32* param0) GetMonitorFrequency;
-			public function HRESULT(IDirectDraw *self, uint32* param0) GetScanLine;
-			public function HRESULT(IDirectDraw *self, int32* param0) GetVerticalBlankStatus;
-			public function HRESULT(IDirectDraw *self, Guid* param0) Initialize;
-			public function HRESULT(IDirectDraw *self) RestoreDisplayMode;
-			public function HRESULT(IDirectDraw *self, HWND param0, uint32 param1) SetCooperativeLevel;
-			public function HRESULT(IDirectDraw *self, uint32 param0, uint32 param1, uint32 param2) SetDisplayMode;
-			public function HRESULT(IDirectDraw *self, uint32 param0, HANDLE param1) WaitForVerticalBlank;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectDraw *self) Compact;
+				public function HRESULT(IDirectDraw *self, uint32 param0, IDirectDrawClipper** param1, IUnknown* param2) CreateClipper;
+				public function HRESULT(IDirectDraw *self, uint32 param0, PALETTEENTRY* param1, IDirectDrawPalette** param2, IUnknown* param3) CreatePalette;
+				public function HRESULT(IDirectDraw *self, DDSURFACEDESC* param0, IDirectDrawSurface** param1, IUnknown* param2) CreateSurface;
+				public function HRESULT(IDirectDraw *self, IDirectDrawSurface* param0, IDirectDrawSurface** param1) DuplicateSurface;
+				public function HRESULT(IDirectDraw *self, uint32 param0, DDSURFACEDESC* param1, void* param2, LPDDENUMMODESCALLBACK param3) EnumDisplayModes;
+				public function HRESULT(IDirectDraw *self, uint32 param0, DDSURFACEDESC* param1, void* param2, LPDDENUMSURFACESCALLBACK param3) EnumSurfaces;
+				public function HRESULT(IDirectDraw *self) FlipToGDISurface;
+				public function HRESULT(IDirectDraw *self, DDCAPS_DX7* param0, DDCAPS_DX7* param1) GetCaps;
+				public function HRESULT(IDirectDraw *self, DDSURFACEDESC* param0) GetDisplayMode;
+				public function HRESULT(IDirectDraw *self, uint32* param0, uint32* param1) GetFourCCCodes;
+				public function HRESULT(IDirectDraw *self, IDirectDrawSurface** param0) GetGDISurface;
+				public function HRESULT(IDirectDraw *self, uint32* param0) GetMonitorFrequency;
+				public function HRESULT(IDirectDraw *self, uint32* param0) GetScanLine;
+				public function HRESULT(IDirectDraw *self, int32* param0) GetVerticalBlankStatus;
+				public function HRESULT(IDirectDraw *self, Guid* param0) Initialize;
+				public function HRESULT(IDirectDraw *self) RestoreDisplayMode;
+				public function HRESULT(IDirectDraw *self, HWND param0, uint32 param1) SetCooperativeLevel;
+				public function HRESULT(IDirectDraw *self, uint32 param0, uint32 param1, uint32 param2) SetDisplayMode;
+				public function HRESULT(IDirectDraw *self, uint32 param0, HANDLE param1) WaitForVerticalBlank;
+			}
 		}
 		[CRepr]
 		public struct IDirectDraw2 : IUnknown
 		{
 			public const new Guid IID = .(0xb3a6f3e0, 0x2b43, 0x11cf, 0xa2, 0xde, 0x00, 0xaa, 0x00, 0xb9, 0x33, 0x56);
 			
-			public function HRESULT(IDirectDraw2 *self) Compact;
-			public function HRESULT(IDirectDraw2 *self, uint32 param0, IDirectDrawClipper** param1, IUnknown* param2) CreateClipper;
-			public function HRESULT(IDirectDraw2 *self, uint32 param0, PALETTEENTRY* param1, IDirectDrawPalette** param2, IUnknown* param3) CreatePalette;
-			public function HRESULT(IDirectDraw2 *self, DDSURFACEDESC* param0, IDirectDrawSurface** param1, IUnknown* param2) CreateSurface;
-			public function HRESULT(IDirectDraw2 *self, IDirectDrawSurface* param0, IDirectDrawSurface** param1) DuplicateSurface;
-			public function HRESULT(IDirectDraw2 *self, uint32 param0, DDSURFACEDESC* param1, void* param2, LPDDENUMMODESCALLBACK param3) EnumDisplayModes;
-			public function HRESULT(IDirectDraw2 *self, uint32 param0, DDSURFACEDESC* param1, void* param2, LPDDENUMSURFACESCALLBACK param3) EnumSurfaces;
-			public function HRESULT(IDirectDraw2 *self) FlipToGDISurface;
-			public function HRESULT(IDirectDraw2 *self, DDCAPS_DX7* param0, DDCAPS_DX7* param1) GetCaps;
-			public function HRESULT(IDirectDraw2 *self, DDSURFACEDESC* param0) GetDisplayMode;
-			public function HRESULT(IDirectDraw2 *self, uint32* param0, uint32* param1) GetFourCCCodes;
-			public function HRESULT(IDirectDraw2 *self, IDirectDrawSurface** param0) GetGDISurface;
-			public function HRESULT(IDirectDraw2 *self, uint32* param0) GetMonitorFrequency;
-			public function HRESULT(IDirectDraw2 *self, uint32* param0) GetScanLine;
-			public function HRESULT(IDirectDraw2 *self, int32* param0) GetVerticalBlankStatus;
-			public function HRESULT(IDirectDraw2 *self, Guid* param0) Initialize;
-			public function HRESULT(IDirectDraw2 *self) RestoreDisplayMode;
-			public function HRESULT(IDirectDraw2 *self, HWND param0, uint32 param1) SetCooperativeLevel;
-			public function HRESULT(IDirectDraw2 *self, uint32 param0, uint32 param1, uint32 param2, uint32 param3, uint32 param4) SetDisplayMode;
-			public function HRESULT(IDirectDraw2 *self, uint32 param0, HANDLE param1) WaitForVerticalBlank;
-			public function HRESULT(IDirectDraw2 *self, DDSCAPS* param0, uint32* param1, uint32* param2) GetAvailableVidMem;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectDraw2 *self) Compact;
+				public function HRESULT(IDirectDraw2 *self, uint32 param0, IDirectDrawClipper** param1, IUnknown* param2) CreateClipper;
+				public function HRESULT(IDirectDraw2 *self, uint32 param0, PALETTEENTRY* param1, IDirectDrawPalette** param2, IUnknown* param3) CreatePalette;
+				public function HRESULT(IDirectDraw2 *self, DDSURFACEDESC* param0, IDirectDrawSurface** param1, IUnknown* param2) CreateSurface;
+				public function HRESULT(IDirectDraw2 *self, IDirectDrawSurface* param0, IDirectDrawSurface** param1) DuplicateSurface;
+				public function HRESULT(IDirectDraw2 *self, uint32 param0, DDSURFACEDESC* param1, void* param2, LPDDENUMMODESCALLBACK param3) EnumDisplayModes;
+				public function HRESULT(IDirectDraw2 *self, uint32 param0, DDSURFACEDESC* param1, void* param2, LPDDENUMSURFACESCALLBACK param3) EnumSurfaces;
+				public function HRESULT(IDirectDraw2 *self) FlipToGDISurface;
+				public function HRESULT(IDirectDraw2 *self, DDCAPS_DX7* param0, DDCAPS_DX7* param1) GetCaps;
+				public function HRESULT(IDirectDraw2 *self, DDSURFACEDESC* param0) GetDisplayMode;
+				public function HRESULT(IDirectDraw2 *self, uint32* param0, uint32* param1) GetFourCCCodes;
+				public function HRESULT(IDirectDraw2 *self, IDirectDrawSurface** param0) GetGDISurface;
+				public function HRESULT(IDirectDraw2 *self, uint32* param0) GetMonitorFrequency;
+				public function HRESULT(IDirectDraw2 *self, uint32* param0) GetScanLine;
+				public function HRESULT(IDirectDraw2 *self, int32* param0) GetVerticalBlankStatus;
+				public function HRESULT(IDirectDraw2 *self, Guid* param0) Initialize;
+				public function HRESULT(IDirectDraw2 *self) RestoreDisplayMode;
+				public function HRESULT(IDirectDraw2 *self, HWND param0, uint32 param1) SetCooperativeLevel;
+				public function HRESULT(IDirectDraw2 *self, uint32 param0, uint32 param1, uint32 param2, uint32 param3, uint32 param4) SetDisplayMode;
+				public function HRESULT(IDirectDraw2 *self, uint32 param0, HANDLE param1) WaitForVerticalBlank;
+				public function HRESULT(IDirectDraw2 *self, DDSCAPS* param0, uint32* param1, uint32* param2) GetAvailableVidMem;
+			}
 		}
 		[CRepr]
 		public struct IDirectDraw4 : IUnknown
 		{
 			public const new Guid IID = .(0x9c59509a, 0x39bd, 0x11d1, 0x8c, 0x4a, 0x00, 0xc0, 0x4f, 0xd9, 0x30, 0xc5);
 			
-			public function HRESULT(IDirectDraw4 *self) Compact;
-			public function HRESULT(IDirectDraw4 *self, uint32 param0, IDirectDrawClipper** param1, IUnknown* param2) CreateClipper;
-			public function HRESULT(IDirectDraw4 *self, uint32 param0, PALETTEENTRY* param1, IDirectDrawPalette** param2, IUnknown* param3) CreatePalette;
-			public function HRESULT(IDirectDraw4 *self, DDSURFACEDESC2* param0, IDirectDrawSurface4** param1, IUnknown* param2) CreateSurface;
-			public function HRESULT(IDirectDraw4 *self, IDirectDrawSurface4* param0, IDirectDrawSurface4** param1) DuplicateSurface;
-			public function HRESULT(IDirectDraw4 *self, uint32 param0, DDSURFACEDESC2* param1, void* param2, LPDDENUMMODESCALLBACK2 param3) EnumDisplayModes;
-			public function HRESULT(IDirectDraw4 *self, uint32 param0, DDSURFACEDESC2* param1, void* param2, LPDDENUMSURFACESCALLBACK2 param3) EnumSurfaces;
-			public function HRESULT(IDirectDraw4 *self) FlipToGDISurface;
-			public function HRESULT(IDirectDraw4 *self, DDCAPS_DX7* param0, DDCAPS_DX7* param1) GetCaps;
-			public function HRESULT(IDirectDraw4 *self, DDSURFACEDESC2* param0) GetDisplayMode;
-			public function HRESULT(IDirectDraw4 *self, uint32* param0, uint32* param1) GetFourCCCodes;
-			public function HRESULT(IDirectDraw4 *self, IDirectDrawSurface4** param0) GetGDISurface;
-			public function HRESULT(IDirectDraw4 *self, uint32* param0) GetMonitorFrequency;
-			public function HRESULT(IDirectDraw4 *self, uint32* param0) GetScanLine;
-			public function HRESULT(IDirectDraw4 *self, int32* param0) GetVerticalBlankStatus;
-			public function HRESULT(IDirectDraw4 *self, Guid* param0) Initialize;
-			public function HRESULT(IDirectDraw4 *self) RestoreDisplayMode;
-			public function HRESULT(IDirectDraw4 *self, HWND param0, uint32 param1) SetCooperativeLevel;
-			public function HRESULT(IDirectDraw4 *self, uint32 param0, uint32 param1, uint32 param2, uint32 param3, uint32 param4) SetDisplayMode;
-			public function HRESULT(IDirectDraw4 *self, uint32 param0, HANDLE param1) WaitForVerticalBlank;
-			public function HRESULT(IDirectDraw4 *self, DDSCAPS2* param0, uint32* param1, uint32* param2) GetAvailableVidMem;
-			public function HRESULT(IDirectDraw4 *self, HDC param0, IDirectDrawSurface4** param1) GetSurfaceFromDC;
-			public function HRESULT(IDirectDraw4 *self) RestoreAllSurfaces;
-			public function HRESULT(IDirectDraw4 *self) TestCooperativeLevel;
-			public function HRESULT(IDirectDraw4 *self, DDDEVICEIDENTIFIER* param0, uint32 param1) GetDeviceIdentifier;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectDraw4 *self) Compact;
+				public function HRESULT(IDirectDraw4 *self, uint32 param0, IDirectDrawClipper** param1, IUnknown* param2) CreateClipper;
+				public function HRESULT(IDirectDraw4 *self, uint32 param0, PALETTEENTRY* param1, IDirectDrawPalette** param2, IUnknown* param3) CreatePalette;
+				public function HRESULT(IDirectDraw4 *self, DDSURFACEDESC2* param0, IDirectDrawSurface4** param1, IUnknown* param2) CreateSurface;
+				public function HRESULT(IDirectDraw4 *self, IDirectDrawSurface4* param0, IDirectDrawSurface4** param1) DuplicateSurface;
+				public function HRESULT(IDirectDraw4 *self, uint32 param0, DDSURFACEDESC2* param1, void* param2, LPDDENUMMODESCALLBACK2 param3) EnumDisplayModes;
+				public function HRESULT(IDirectDraw4 *self, uint32 param0, DDSURFACEDESC2* param1, void* param2, LPDDENUMSURFACESCALLBACK2 param3) EnumSurfaces;
+				public function HRESULT(IDirectDraw4 *self) FlipToGDISurface;
+				public function HRESULT(IDirectDraw4 *self, DDCAPS_DX7* param0, DDCAPS_DX7* param1) GetCaps;
+				public function HRESULT(IDirectDraw4 *self, DDSURFACEDESC2* param0) GetDisplayMode;
+				public function HRESULT(IDirectDraw4 *self, uint32* param0, uint32* param1) GetFourCCCodes;
+				public function HRESULT(IDirectDraw4 *self, IDirectDrawSurface4** param0) GetGDISurface;
+				public function HRESULT(IDirectDraw4 *self, uint32* param0) GetMonitorFrequency;
+				public function HRESULT(IDirectDraw4 *self, uint32* param0) GetScanLine;
+				public function HRESULT(IDirectDraw4 *self, int32* param0) GetVerticalBlankStatus;
+				public function HRESULT(IDirectDraw4 *self, Guid* param0) Initialize;
+				public function HRESULT(IDirectDraw4 *self) RestoreDisplayMode;
+				public function HRESULT(IDirectDraw4 *self, HWND param0, uint32 param1) SetCooperativeLevel;
+				public function HRESULT(IDirectDraw4 *self, uint32 param0, uint32 param1, uint32 param2, uint32 param3, uint32 param4) SetDisplayMode;
+				public function HRESULT(IDirectDraw4 *self, uint32 param0, HANDLE param1) WaitForVerticalBlank;
+				public function HRESULT(IDirectDraw4 *self, DDSCAPS2* param0, uint32* param1, uint32* param2) GetAvailableVidMem;
+				public function HRESULT(IDirectDraw4 *self, HDC param0, IDirectDrawSurface4** param1) GetSurfaceFromDC;
+				public function HRESULT(IDirectDraw4 *self) RestoreAllSurfaces;
+				public function HRESULT(IDirectDraw4 *self) TestCooperativeLevel;
+				public function HRESULT(IDirectDraw4 *self, DDDEVICEIDENTIFIER* param0, uint32 param1) GetDeviceIdentifier;
+			}
 		}
 		[CRepr]
 		public struct IDirectDraw7 : IUnknown
 		{
 			public const new Guid IID = .(0x15e65ec0, 0x3b9c, 0x11d2, 0xb9, 0x2f, 0x00, 0x60, 0x97, 0x97, 0xea, 0x5b);
 			
-			public function HRESULT(IDirectDraw7 *self) Compact;
-			public function HRESULT(IDirectDraw7 *self, uint32 param0, IDirectDrawClipper** param1, IUnknown* param2) CreateClipper;
-			public function HRESULT(IDirectDraw7 *self, uint32 param0, PALETTEENTRY* param1, IDirectDrawPalette** param2, IUnknown* param3) CreatePalette;
-			public function HRESULT(IDirectDraw7 *self, DDSURFACEDESC2* param0, IDirectDrawSurface7** param1, IUnknown* param2) CreateSurface;
-			public function HRESULT(IDirectDraw7 *self, IDirectDrawSurface7* param0, IDirectDrawSurface7** param1) DuplicateSurface;
-			public function HRESULT(IDirectDraw7 *self, uint32 param0, DDSURFACEDESC2* param1, void* param2, LPDDENUMMODESCALLBACK2 param3) EnumDisplayModes;
-			public function HRESULT(IDirectDraw7 *self, uint32 param0, DDSURFACEDESC2* param1, void* param2, LPDDENUMSURFACESCALLBACK7 param3) EnumSurfaces;
-			public function HRESULT(IDirectDraw7 *self) FlipToGDISurface;
-			public function HRESULT(IDirectDraw7 *self, DDCAPS_DX7* param0, DDCAPS_DX7* param1) GetCaps;
-			public function HRESULT(IDirectDraw7 *self, DDSURFACEDESC2* param0) GetDisplayMode;
-			public function HRESULT(IDirectDraw7 *self, uint32* param0, uint32* param1) GetFourCCCodes;
-			public function HRESULT(IDirectDraw7 *self, IDirectDrawSurface7** param0) GetGDISurface;
-			public function HRESULT(IDirectDraw7 *self, uint32* param0) GetMonitorFrequency;
-			public function HRESULT(IDirectDraw7 *self, uint32* param0) GetScanLine;
-			public function HRESULT(IDirectDraw7 *self, int32* param0) GetVerticalBlankStatus;
-			public function HRESULT(IDirectDraw7 *self, Guid* param0) Initialize;
-			public function HRESULT(IDirectDraw7 *self) RestoreDisplayMode;
-			public function HRESULT(IDirectDraw7 *self, HWND param0, uint32 param1) SetCooperativeLevel;
-			public function HRESULT(IDirectDraw7 *self, uint32 param0, uint32 param1, uint32 param2, uint32 param3, uint32 param4) SetDisplayMode;
-			public function HRESULT(IDirectDraw7 *self, uint32 param0, HANDLE param1) WaitForVerticalBlank;
-			public function HRESULT(IDirectDraw7 *self, DDSCAPS2* param0, uint32* param1, uint32* param2) GetAvailableVidMem;
-			public function HRESULT(IDirectDraw7 *self, HDC param0, IDirectDrawSurface7** param1) GetSurfaceFromDC;
-			public function HRESULT(IDirectDraw7 *self) RestoreAllSurfaces;
-			public function HRESULT(IDirectDraw7 *self) TestCooperativeLevel;
-			public function HRESULT(IDirectDraw7 *self, DDDEVICEIDENTIFIER2* param0, uint32 param1) GetDeviceIdentifier;
-			public function HRESULT(IDirectDraw7 *self, SIZE* param0, uint32 param1, uint32 param2) StartModeTest;
-			public function HRESULT(IDirectDraw7 *self, uint32 param0, uint32* param1) EvaluateMode;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectDraw7 *self) Compact;
+				public function HRESULT(IDirectDraw7 *self, uint32 param0, IDirectDrawClipper** param1, IUnknown* param2) CreateClipper;
+				public function HRESULT(IDirectDraw7 *self, uint32 param0, PALETTEENTRY* param1, IDirectDrawPalette** param2, IUnknown* param3) CreatePalette;
+				public function HRESULT(IDirectDraw7 *self, DDSURFACEDESC2* param0, IDirectDrawSurface7** param1, IUnknown* param2) CreateSurface;
+				public function HRESULT(IDirectDraw7 *self, IDirectDrawSurface7* param0, IDirectDrawSurface7** param1) DuplicateSurface;
+				public function HRESULT(IDirectDraw7 *self, uint32 param0, DDSURFACEDESC2* param1, void* param2, LPDDENUMMODESCALLBACK2 param3) EnumDisplayModes;
+				public function HRESULT(IDirectDraw7 *self, uint32 param0, DDSURFACEDESC2* param1, void* param2, LPDDENUMSURFACESCALLBACK7 param3) EnumSurfaces;
+				public function HRESULT(IDirectDraw7 *self) FlipToGDISurface;
+				public function HRESULT(IDirectDraw7 *self, DDCAPS_DX7* param0, DDCAPS_DX7* param1) GetCaps;
+				public function HRESULT(IDirectDraw7 *self, DDSURFACEDESC2* param0) GetDisplayMode;
+				public function HRESULT(IDirectDraw7 *self, uint32* param0, uint32* param1) GetFourCCCodes;
+				public function HRESULT(IDirectDraw7 *self, IDirectDrawSurface7** param0) GetGDISurface;
+				public function HRESULT(IDirectDraw7 *self, uint32* param0) GetMonitorFrequency;
+				public function HRESULT(IDirectDraw7 *self, uint32* param0) GetScanLine;
+				public function HRESULT(IDirectDraw7 *self, int32* param0) GetVerticalBlankStatus;
+				public function HRESULT(IDirectDraw7 *self, Guid* param0) Initialize;
+				public function HRESULT(IDirectDraw7 *self) RestoreDisplayMode;
+				public function HRESULT(IDirectDraw7 *self, HWND param0, uint32 param1) SetCooperativeLevel;
+				public function HRESULT(IDirectDraw7 *self, uint32 param0, uint32 param1, uint32 param2, uint32 param3, uint32 param4) SetDisplayMode;
+				public function HRESULT(IDirectDraw7 *self, uint32 param0, HANDLE param1) WaitForVerticalBlank;
+				public function HRESULT(IDirectDraw7 *self, DDSCAPS2* param0, uint32* param1, uint32* param2) GetAvailableVidMem;
+				public function HRESULT(IDirectDraw7 *self, HDC param0, IDirectDrawSurface7** param1) GetSurfaceFromDC;
+				public function HRESULT(IDirectDraw7 *self) RestoreAllSurfaces;
+				public function HRESULT(IDirectDraw7 *self) TestCooperativeLevel;
+				public function HRESULT(IDirectDraw7 *self, DDDEVICEIDENTIFIER2* param0, uint32 param1) GetDeviceIdentifier;
+				public function HRESULT(IDirectDraw7 *self, SIZE* param0, uint32 param1, uint32 param2) StartModeTest;
+				public function HRESULT(IDirectDraw7 *self, uint32 param0, uint32* param1) EvaluateMode;
+			}
 		}
 		[CRepr]
 		public struct IDirectDrawPalette : IUnknown
 		{
 			public const new Guid IID = .(0x6c14db84, 0xa733, 0x11ce, 0xa5, 0x21, 0x00, 0x20, 0xaf, 0x0b, 0xe5, 0x60);
 			
-			public function HRESULT(IDirectDrawPalette *self, uint32* param0) GetCaps;
-			public function HRESULT(IDirectDrawPalette *self, uint32 param0, uint32 param1, uint32 param2, PALETTEENTRY* param3) GetEntries;
-			public function HRESULT(IDirectDrawPalette *self, IDirectDraw* param0, uint32 param1, PALETTEENTRY* param2) Initialize;
-			public function HRESULT(IDirectDrawPalette *self, uint32 param0, uint32 param1, uint32 param2, PALETTEENTRY* param3) SetEntries;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectDrawPalette *self, uint32* param0) GetCaps;
+				public function HRESULT(IDirectDrawPalette *self, uint32 param0, uint32 param1, uint32 param2, PALETTEENTRY* param3) GetEntries;
+				public function HRESULT(IDirectDrawPalette *self, IDirectDraw* param0, uint32 param1, PALETTEENTRY* param2) Initialize;
+				public function HRESULT(IDirectDrawPalette *self, uint32 param0, uint32 param1, uint32 param2, PALETTEENTRY* param3) SetEntries;
+			}
 		}
 		[CRepr]
 		public struct IDirectDrawClipper : IUnknown
 		{
 			public const new Guid IID = .(0x6c14db85, 0xa733, 0x11ce, 0xa5, 0x21, 0x00, 0x20, 0xaf, 0x0b, 0xe5, 0x60);
 			
-			public function HRESULT(IDirectDrawClipper *self, RECT* param0, RGNDATA* param1, uint32* param2) GetClipList;
-			public function HRESULT(IDirectDrawClipper *self, HWND* param0) GetHWnd;
-			public function HRESULT(IDirectDrawClipper *self, IDirectDraw* param0, uint32 param1) Initialize;
-			public function HRESULT(IDirectDrawClipper *self, BOOL* param0) IsClipListChanged;
-			public function HRESULT(IDirectDrawClipper *self, RGNDATA* param0, uint32 param1) SetClipList;
-			public function HRESULT(IDirectDrawClipper *self, uint32 param0, HWND param1) SetHWnd;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectDrawClipper *self, RECT* param0, RGNDATA* param1, uint32* param2) GetClipList;
+				public function HRESULT(IDirectDrawClipper *self, HWND* param0) GetHWnd;
+				public function HRESULT(IDirectDrawClipper *self, IDirectDraw* param0, uint32 param1) Initialize;
+				public function HRESULT(IDirectDrawClipper *self, BOOL* param0) IsClipListChanged;
+				public function HRESULT(IDirectDrawClipper *self, RGNDATA* param0, uint32 param1) SetClipList;
+				public function HRESULT(IDirectDrawClipper *self, uint32 param0, HWND param1) SetHWnd;
+			}
 		}
 		[CRepr]
 		public struct IDirectDrawSurface : IUnknown
 		{
 			public const new Guid IID = .(0x6c14db81, 0xa733, 0x11ce, 0xa5, 0x21, 0x00, 0x20, 0xaf, 0x0b, 0xe5, 0x60);
 			
-			public function HRESULT(IDirectDrawSurface *self, IDirectDrawSurface* param0) AddAttachedSurface;
-			public function HRESULT(IDirectDrawSurface *self, RECT* param0) AddOverlayDirtyRect;
-			public function HRESULT(IDirectDrawSurface *self, RECT* param0, IDirectDrawSurface* param1, RECT* param2, uint32 param3, DDBLTFX* param4) Blt;
-			public function HRESULT(IDirectDrawSurface *self, DDBLTBATCH* param0, uint32 param1, uint32 param2) BltBatch;
-			public function HRESULT(IDirectDrawSurface *self, uint32 param0, uint32 param1, IDirectDrawSurface* param2, RECT* param3, uint32 param4) BltFast;
-			public function HRESULT(IDirectDrawSurface *self, uint32 param0, IDirectDrawSurface* param1) DeleteAttachedSurface;
-			public function HRESULT(IDirectDrawSurface *self, void* param0, LPDDENUMSURFACESCALLBACK param1) EnumAttachedSurfaces;
-			public function HRESULT(IDirectDrawSurface *self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK param2) EnumOverlayZOrders;
-			public function HRESULT(IDirectDrawSurface *self, IDirectDrawSurface* param0, uint32 param1) Flip;
-			public function HRESULT(IDirectDrawSurface *self, DDSCAPS* param0, IDirectDrawSurface** param1) GetAttachedSurface;
-			public function HRESULT(IDirectDrawSurface *self, uint32 param0) GetBltStatus;
-			public function HRESULT(IDirectDrawSurface *self, DDSCAPS* param0) GetCaps;
-			public function HRESULT(IDirectDrawSurface *self, IDirectDrawClipper** param0) GetClipper;
-			public function HRESULT(IDirectDrawSurface *self, uint32 param0, DDCOLORKEY* param1) GetColorKey;
-			public function HRESULT(IDirectDrawSurface *self, HDC* param0) GetDC;
-			public function HRESULT(IDirectDrawSurface *self, uint32 param0) GetFlipStatus;
-			public function HRESULT(IDirectDrawSurface *self, int32* param0, int32* param1) GetOverlayPosition;
-			public function HRESULT(IDirectDrawSurface *self, IDirectDrawPalette** param0) GetPalette;
-			public function HRESULT(IDirectDrawSurface *self, DDPIXELFORMAT* param0) GetPixelFormat;
-			public function HRESULT(IDirectDrawSurface *self, DDSURFACEDESC* param0) GetSurfaceDesc;
-			public function HRESULT(IDirectDrawSurface *self, IDirectDraw* param0, DDSURFACEDESC* param1) Initialize;
-			public function HRESULT(IDirectDrawSurface *self) IsLost;
-			public function HRESULT(IDirectDrawSurface *self, RECT* param0, DDSURFACEDESC* param1, uint32 param2, HANDLE param3) Lock;
-			public function HRESULT(IDirectDrawSurface *self, HDC param0) ReleaseDC;
-			public function HRESULT(IDirectDrawSurface *self) Restore;
-			public function HRESULT(IDirectDrawSurface *self, IDirectDrawClipper* param0) SetClipper;
-			public function HRESULT(IDirectDrawSurface *self, uint32 param0, DDCOLORKEY* param1) SetColorKey;
-			public function HRESULT(IDirectDrawSurface *self, int32 param0, int32 param1) SetOverlayPosition;
-			public function HRESULT(IDirectDrawSurface *self, IDirectDrawPalette* param0) SetPalette;
-			public function HRESULT(IDirectDrawSurface *self, void* param0) Unlock;
-			public function HRESULT(IDirectDrawSurface *self, RECT* param0, IDirectDrawSurface* param1, RECT* param2, uint32 param3, DDOVERLAYFX* param4) UpdateOverlay;
-			public function HRESULT(IDirectDrawSurface *self, uint32 param0) UpdateOverlayDisplay;
-			public function HRESULT(IDirectDrawSurface *self, uint32 param0, IDirectDrawSurface* param1) UpdateOverlayZOrder;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectDrawSurface *self, IDirectDrawSurface* param0) AddAttachedSurface;
+				public function HRESULT(IDirectDrawSurface *self, RECT* param0) AddOverlayDirtyRect;
+				public function HRESULT(IDirectDrawSurface *self, RECT* param0, IDirectDrawSurface* param1, RECT* param2, uint32 param3, DDBLTFX* param4) Blt;
+				public function HRESULT(IDirectDrawSurface *self, DDBLTBATCH* param0, uint32 param1, uint32 param2) BltBatch;
+				public function HRESULT(IDirectDrawSurface *self, uint32 param0, uint32 param1, IDirectDrawSurface* param2, RECT* param3, uint32 param4) BltFast;
+				public function HRESULT(IDirectDrawSurface *self, uint32 param0, IDirectDrawSurface* param1) DeleteAttachedSurface;
+				public function HRESULT(IDirectDrawSurface *self, void* param0, LPDDENUMSURFACESCALLBACK param1) EnumAttachedSurfaces;
+				public function HRESULT(IDirectDrawSurface *self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK param2) EnumOverlayZOrders;
+				public function HRESULT(IDirectDrawSurface *self, IDirectDrawSurface* param0, uint32 param1) Flip;
+				public function HRESULT(IDirectDrawSurface *self, DDSCAPS* param0, IDirectDrawSurface** param1) GetAttachedSurface;
+				public function HRESULT(IDirectDrawSurface *self, uint32 param0) GetBltStatus;
+				public function HRESULT(IDirectDrawSurface *self, DDSCAPS* param0) GetCaps;
+				public function HRESULT(IDirectDrawSurface *self, IDirectDrawClipper** param0) GetClipper;
+				public function HRESULT(IDirectDrawSurface *self, uint32 param0, DDCOLORKEY* param1) GetColorKey;
+				public function HRESULT(IDirectDrawSurface *self, HDC* param0) GetDC;
+				public function HRESULT(IDirectDrawSurface *self, uint32 param0) GetFlipStatus;
+				public function HRESULT(IDirectDrawSurface *self, int32* param0, int32* param1) GetOverlayPosition;
+				public function HRESULT(IDirectDrawSurface *self, IDirectDrawPalette** param0) GetPalette;
+				public function HRESULT(IDirectDrawSurface *self, DDPIXELFORMAT* param0) GetPixelFormat;
+				public function HRESULT(IDirectDrawSurface *self, DDSURFACEDESC* param0) GetSurfaceDesc;
+				public function HRESULT(IDirectDrawSurface *self, IDirectDraw* param0, DDSURFACEDESC* param1) Initialize;
+				public function HRESULT(IDirectDrawSurface *self) IsLost;
+				public function HRESULT(IDirectDrawSurface *self, RECT* param0, DDSURFACEDESC* param1, uint32 param2, HANDLE param3) Lock;
+				public function HRESULT(IDirectDrawSurface *self, HDC param0) ReleaseDC;
+				public function HRESULT(IDirectDrawSurface *self) Restore;
+				public function HRESULT(IDirectDrawSurface *self, IDirectDrawClipper* param0) SetClipper;
+				public function HRESULT(IDirectDrawSurface *self, uint32 param0, DDCOLORKEY* param1) SetColorKey;
+				public function HRESULT(IDirectDrawSurface *self, int32 param0, int32 param1) SetOverlayPosition;
+				public function HRESULT(IDirectDrawSurface *self, IDirectDrawPalette* param0) SetPalette;
+				public function HRESULT(IDirectDrawSurface *self, void* param0) Unlock;
+				public function HRESULT(IDirectDrawSurface *self, RECT* param0, IDirectDrawSurface* param1, RECT* param2, uint32 param3, DDOVERLAYFX* param4) UpdateOverlay;
+				public function HRESULT(IDirectDrawSurface *self, uint32 param0) UpdateOverlayDisplay;
+				public function HRESULT(IDirectDrawSurface *self, uint32 param0, IDirectDrawSurface* param1) UpdateOverlayZOrder;
+			}
 		}
 		[CRepr]
 		public struct IDirectDrawSurface2 : IUnknown
 		{
 			public const new Guid IID = .(0x57805885, 0x6eec, 0x11cf, 0x94, 0x41, 0xa8, 0x23, 0x03, 0xc1, 0x0e, 0x27);
 			
-			public function HRESULT(IDirectDrawSurface2 *self, IDirectDrawSurface2* param0) AddAttachedSurface;
-			public function HRESULT(IDirectDrawSurface2 *self, RECT* param0) AddOverlayDirtyRect;
-			public function HRESULT(IDirectDrawSurface2 *self, RECT* param0, IDirectDrawSurface2* param1, RECT* param2, uint32 param3, DDBLTFX* param4) Blt;
-			public function HRESULT(IDirectDrawSurface2 *self, DDBLTBATCH* param0, uint32 param1, uint32 param2) BltBatch;
-			public function HRESULT(IDirectDrawSurface2 *self, uint32 param0, uint32 param1, IDirectDrawSurface2* param2, RECT* param3, uint32 param4) BltFast;
-			public function HRESULT(IDirectDrawSurface2 *self, uint32 param0, IDirectDrawSurface2* param1) DeleteAttachedSurface;
-			public function HRESULT(IDirectDrawSurface2 *self, void* param0, LPDDENUMSURFACESCALLBACK param1) EnumAttachedSurfaces;
-			public function HRESULT(IDirectDrawSurface2 *self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK param2) EnumOverlayZOrders;
-			public function HRESULT(IDirectDrawSurface2 *self, IDirectDrawSurface2* param0, uint32 param1) Flip;
-			public function HRESULT(IDirectDrawSurface2 *self, DDSCAPS* param0, IDirectDrawSurface2** param1) GetAttachedSurface;
-			public function HRESULT(IDirectDrawSurface2 *self, uint32 param0) GetBltStatus;
-			public function HRESULT(IDirectDrawSurface2 *self, DDSCAPS* param0) GetCaps;
-			public function HRESULT(IDirectDrawSurface2 *self, IDirectDrawClipper** param0) GetClipper;
-			public function HRESULT(IDirectDrawSurface2 *self, uint32 param0, DDCOLORKEY* param1) GetColorKey;
-			public function HRESULT(IDirectDrawSurface2 *self, HDC* param0) GetDC;
-			public function HRESULT(IDirectDrawSurface2 *self, uint32 param0) GetFlipStatus;
-			public function HRESULT(IDirectDrawSurface2 *self, int32* param0, int32* param1) GetOverlayPosition;
-			public function HRESULT(IDirectDrawSurface2 *self, IDirectDrawPalette** param0) GetPalette;
-			public function HRESULT(IDirectDrawSurface2 *self, DDPIXELFORMAT* param0) GetPixelFormat;
-			public function HRESULT(IDirectDrawSurface2 *self, DDSURFACEDESC* param0) GetSurfaceDesc;
-			public function HRESULT(IDirectDrawSurface2 *self, IDirectDraw* param0, DDSURFACEDESC* param1) Initialize;
-			public function HRESULT(IDirectDrawSurface2 *self) IsLost;
-			public function HRESULT(IDirectDrawSurface2 *self, RECT* param0, DDSURFACEDESC* param1, uint32 param2, HANDLE param3) Lock;
-			public function HRESULT(IDirectDrawSurface2 *self, HDC param0) ReleaseDC;
-			public function HRESULT(IDirectDrawSurface2 *self) Restore;
-			public function HRESULT(IDirectDrawSurface2 *self, IDirectDrawClipper* param0) SetClipper;
-			public function HRESULT(IDirectDrawSurface2 *self, uint32 param0, DDCOLORKEY* param1) SetColorKey;
-			public function HRESULT(IDirectDrawSurface2 *self, int32 param0, int32 param1) SetOverlayPosition;
-			public function HRESULT(IDirectDrawSurface2 *self, IDirectDrawPalette* param0) SetPalette;
-			public function HRESULT(IDirectDrawSurface2 *self, void* param0) Unlock;
-			public function HRESULT(IDirectDrawSurface2 *self, RECT* param0, IDirectDrawSurface2* param1, RECT* param2, uint32 param3, DDOVERLAYFX* param4) UpdateOverlay;
-			public function HRESULT(IDirectDrawSurface2 *self, uint32 param0) UpdateOverlayDisplay;
-			public function HRESULT(IDirectDrawSurface2 *self, uint32 param0, IDirectDrawSurface2* param1) UpdateOverlayZOrder;
-			public function HRESULT(IDirectDrawSurface2 *self, void** param0) GetDDInterface;
-			public function HRESULT(IDirectDrawSurface2 *self, uint32 param0) PageLock;
-			public function HRESULT(IDirectDrawSurface2 *self, uint32 param0) PageUnlock;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectDrawSurface2 *self, IDirectDrawSurface2* param0) AddAttachedSurface;
+				public function HRESULT(IDirectDrawSurface2 *self, RECT* param0) AddOverlayDirtyRect;
+				public function HRESULT(IDirectDrawSurface2 *self, RECT* param0, IDirectDrawSurface2* param1, RECT* param2, uint32 param3, DDBLTFX* param4) Blt;
+				public function HRESULT(IDirectDrawSurface2 *self, DDBLTBATCH* param0, uint32 param1, uint32 param2) BltBatch;
+				public function HRESULT(IDirectDrawSurface2 *self, uint32 param0, uint32 param1, IDirectDrawSurface2* param2, RECT* param3, uint32 param4) BltFast;
+				public function HRESULT(IDirectDrawSurface2 *self, uint32 param0, IDirectDrawSurface2* param1) DeleteAttachedSurface;
+				public function HRESULT(IDirectDrawSurface2 *self, void* param0, LPDDENUMSURFACESCALLBACK param1) EnumAttachedSurfaces;
+				public function HRESULT(IDirectDrawSurface2 *self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK param2) EnumOverlayZOrders;
+				public function HRESULT(IDirectDrawSurface2 *self, IDirectDrawSurface2* param0, uint32 param1) Flip;
+				public function HRESULT(IDirectDrawSurface2 *self, DDSCAPS* param0, IDirectDrawSurface2** param1) GetAttachedSurface;
+				public function HRESULT(IDirectDrawSurface2 *self, uint32 param0) GetBltStatus;
+				public function HRESULT(IDirectDrawSurface2 *self, DDSCAPS* param0) GetCaps;
+				public function HRESULT(IDirectDrawSurface2 *self, IDirectDrawClipper** param0) GetClipper;
+				public function HRESULT(IDirectDrawSurface2 *self, uint32 param0, DDCOLORKEY* param1) GetColorKey;
+				public function HRESULT(IDirectDrawSurface2 *self, HDC* param0) GetDC;
+				public function HRESULT(IDirectDrawSurface2 *self, uint32 param0) GetFlipStatus;
+				public function HRESULT(IDirectDrawSurface2 *self, int32* param0, int32* param1) GetOverlayPosition;
+				public function HRESULT(IDirectDrawSurface2 *self, IDirectDrawPalette** param0) GetPalette;
+				public function HRESULT(IDirectDrawSurface2 *self, DDPIXELFORMAT* param0) GetPixelFormat;
+				public function HRESULT(IDirectDrawSurface2 *self, DDSURFACEDESC* param0) GetSurfaceDesc;
+				public function HRESULT(IDirectDrawSurface2 *self, IDirectDraw* param0, DDSURFACEDESC* param1) Initialize;
+				public function HRESULT(IDirectDrawSurface2 *self) IsLost;
+				public function HRESULT(IDirectDrawSurface2 *self, RECT* param0, DDSURFACEDESC* param1, uint32 param2, HANDLE param3) Lock;
+				public function HRESULT(IDirectDrawSurface2 *self, HDC param0) ReleaseDC;
+				public function HRESULT(IDirectDrawSurface2 *self) Restore;
+				public function HRESULT(IDirectDrawSurface2 *self, IDirectDrawClipper* param0) SetClipper;
+				public function HRESULT(IDirectDrawSurface2 *self, uint32 param0, DDCOLORKEY* param1) SetColorKey;
+				public function HRESULT(IDirectDrawSurface2 *self, int32 param0, int32 param1) SetOverlayPosition;
+				public function HRESULT(IDirectDrawSurface2 *self, IDirectDrawPalette* param0) SetPalette;
+				public function HRESULT(IDirectDrawSurface2 *self, void* param0) Unlock;
+				public function HRESULT(IDirectDrawSurface2 *self, RECT* param0, IDirectDrawSurface2* param1, RECT* param2, uint32 param3, DDOVERLAYFX* param4) UpdateOverlay;
+				public function HRESULT(IDirectDrawSurface2 *self, uint32 param0) UpdateOverlayDisplay;
+				public function HRESULT(IDirectDrawSurface2 *self, uint32 param0, IDirectDrawSurface2* param1) UpdateOverlayZOrder;
+				public function HRESULT(IDirectDrawSurface2 *self, void** param0) GetDDInterface;
+				public function HRESULT(IDirectDrawSurface2 *self, uint32 param0) PageLock;
+				public function HRESULT(IDirectDrawSurface2 *self, uint32 param0) PageUnlock;
+			}
 		}
 		[CRepr]
 		public struct IDirectDrawSurface3 : IUnknown
 		{
 			public const new Guid IID = .(0xda044e00, 0x69b2, 0x11d0, 0xa1, 0xd5, 0x00, 0xaa, 0x00, 0xb8, 0xdf, 0xbb);
 			
-			public function HRESULT(IDirectDrawSurface3 *self, IDirectDrawSurface3* param0) AddAttachedSurface;
-			public function HRESULT(IDirectDrawSurface3 *self, RECT* param0) AddOverlayDirtyRect;
-			public function HRESULT(IDirectDrawSurface3 *self, RECT* param0, IDirectDrawSurface3* param1, RECT* param2, uint32 param3, DDBLTFX* param4) Blt;
-			public function HRESULT(IDirectDrawSurface3 *self, DDBLTBATCH* param0, uint32 param1, uint32 param2) BltBatch;
-			public function HRESULT(IDirectDrawSurface3 *self, uint32 param0, uint32 param1, IDirectDrawSurface3* param2, RECT* param3, uint32 param4) BltFast;
-			public function HRESULT(IDirectDrawSurface3 *self, uint32 param0, IDirectDrawSurface3* param1) DeleteAttachedSurface;
-			public function HRESULT(IDirectDrawSurface3 *self, void* param0, LPDDENUMSURFACESCALLBACK param1) EnumAttachedSurfaces;
-			public function HRESULT(IDirectDrawSurface3 *self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK param2) EnumOverlayZOrders;
-			public function HRESULT(IDirectDrawSurface3 *self, IDirectDrawSurface3* param0, uint32 param1) Flip;
-			public function HRESULT(IDirectDrawSurface3 *self, DDSCAPS* param0, IDirectDrawSurface3** param1) GetAttachedSurface;
-			public function HRESULT(IDirectDrawSurface3 *self, uint32 param0) GetBltStatus;
-			public function HRESULT(IDirectDrawSurface3 *self, DDSCAPS* param0) GetCaps;
-			public function HRESULT(IDirectDrawSurface3 *self, IDirectDrawClipper** param0) GetClipper;
-			public function HRESULT(IDirectDrawSurface3 *self, uint32 param0, DDCOLORKEY* param1) GetColorKey;
-			public function HRESULT(IDirectDrawSurface3 *self, HDC* param0) GetDC;
-			public function HRESULT(IDirectDrawSurface3 *self, uint32 param0) GetFlipStatus;
-			public function HRESULT(IDirectDrawSurface3 *self, int32* param0, int32* param1) GetOverlayPosition;
-			public function HRESULT(IDirectDrawSurface3 *self, IDirectDrawPalette** param0) GetPalette;
-			public function HRESULT(IDirectDrawSurface3 *self, DDPIXELFORMAT* param0) GetPixelFormat;
-			public function HRESULT(IDirectDrawSurface3 *self, DDSURFACEDESC* param0) GetSurfaceDesc;
-			public function HRESULT(IDirectDrawSurface3 *self, IDirectDraw* param0, DDSURFACEDESC* param1) Initialize;
-			public function HRESULT(IDirectDrawSurface3 *self) IsLost;
-			public function HRESULT(IDirectDrawSurface3 *self, RECT* param0, DDSURFACEDESC* param1, uint32 param2, HANDLE param3) Lock;
-			public function HRESULT(IDirectDrawSurface3 *self, HDC param0) ReleaseDC;
-			public function HRESULT(IDirectDrawSurface3 *self) Restore;
-			public function HRESULT(IDirectDrawSurface3 *self, IDirectDrawClipper* param0) SetClipper;
-			public function HRESULT(IDirectDrawSurface3 *self, uint32 param0, DDCOLORKEY* param1) SetColorKey;
-			public function HRESULT(IDirectDrawSurface3 *self, int32 param0, int32 param1) SetOverlayPosition;
-			public function HRESULT(IDirectDrawSurface3 *self, IDirectDrawPalette* param0) SetPalette;
-			public function HRESULT(IDirectDrawSurface3 *self, void* param0) Unlock;
-			public function HRESULT(IDirectDrawSurface3 *self, RECT* param0, IDirectDrawSurface3* param1, RECT* param2, uint32 param3, DDOVERLAYFX* param4) UpdateOverlay;
-			public function HRESULT(IDirectDrawSurface3 *self, uint32 param0) UpdateOverlayDisplay;
-			public function HRESULT(IDirectDrawSurface3 *self, uint32 param0, IDirectDrawSurface3* param1) UpdateOverlayZOrder;
-			public function HRESULT(IDirectDrawSurface3 *self, void** param0) GetDDInterface;
-			public function HRESULT(IDirectDrawSurface3 *self, uint32 param0) PageLock;
-			public function HRESULT(IDirectDrawSurface3 *self, uint32 param0) PageUnlock;
-			public function HRESULT(IDirectDrawSurface3 *self, DDSURFACEDESC* param0, uint32 param1) SetSurfaceDesc;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectDrawSurface3 *self, IDirectDrawSurface3* param0) AddAttachedSurface;
+				public function HRESULT(IDirectDrawSurface3 *self, RECT* param0) AddOverlayDirtyRect;
+				public function HRESULT(IDirectDrawSurface3 *self, RECT* param0, IDirectDrawSurface3* param1, RECT* param2, uint32 param3, DDBLTFX* param4) Blt;
+				public function HRESULT(IDirectDrawSurface3 *self, DDBLTBATCH* param0, uint32 param1, uint32 param2) BltBatch;
+				public function HRESULT(IDirectDrawSurface3 *self, uint32 param0, uint32 param1, IDirectDrawSurface3* param2, RECT* param3, uint32 param4) BltFast;
+				public function HRESULT(IDirectDrawSurface3 *self, uint32 param0, IDirectDrawSurface3* param1) DeleteAttachedSurface;
+				public function HRESULT(IDirectDrawSurface3 *self, void* param0, LPDDENUMSURFACESCALLBACK param1) EnumAttachedSurfaces;
+				public function HRESULT(IDirectDrawSurface3 *self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK param2) EnumOverlayZOrders;
+				public function HRESULT(IDirectDrawSurface3 *self, IDirectDrawSurface3* param0, uint32 param1) Flip;
+				public function HRESULT(IDirectDrawSurface3 *self, DDSCAPS* param0, IDirectDrawSurface3** param1) GetAttachedSurface;
+				public function HRESULT(IDirectDrawSurface3 *self, uint32 param0) GetBltStatus;
+				public function HRESULT(IDirectDrawSurface3 *self, DDSCAPS* param0) GetCaps;
+				public function HRESULT(IDirectDrawSurface3 *self, IDirectDrawClipper** param0) GetClipper;
+				public function HRESULT(IDirectDrawSurface3 *self, uint32 param0, DDCOLORKEY* param1) GetColorKey;
+				public function HRESULT(IDirectDrawSurface3 *self, HDC* param0) GetDC;
+				public function HRESULT(IDirectDrawSurface3 *self, uint32 param0) GetFlipStatus;
+				public function HRESULT(IDirectDrawSurface3 *self, int32* param0, int32* param1) GetOverlayPosition;
+				public function HRESULT(IDirectDrawSurface3 *self, IDirectDrawPalette** param0) GetPalette;
+				public function HRESULT(IDirectDrawSurface3 *self, DDPIXELFORMAT* param0) GetPixelFormat;
+				public function HRESULT(IDirectDrawSurface3 *self, DDSURFACEDESC* param0) GetSurfaceDesc;
+				public function HRESULT(IDirectDrawSurface3 *self, IDirectDraw* param0, DDSURFACEDESC* param1) Initialize;
+				public function HRESULT(IDirectDrawSurface3 *self) IsLost;
+				public function HRESULT(IDirectDrawSurface3 *self, RECT* param0, DDSURFACEDESC* param1, uint32 param2, HANDLE param3) Lock;
+				public function HRESULT(IDirectDrawSurface3 *self, HDC param0) ReleaseDC;
+				public function HRESULT(IDirectDrawSurface3 *self) Restore;
+				public function HRESULT(IDirectDrawSurface3 *self, IDirectDrawClipper* param0) SetClipper;
+				public function HRESULT(IDirectDrawSurface3 *self, uint32 param0, DDCOLORKEY* param1) SetColorKey;
+				public function HRESULT(IDirectDrawSurface3 *self, int32 param0, int32 param1) SetOverlayPosition;
+				public function HRESULT(IDirectDrawSurface3 *self, IDirectDrawPalette* param0) SetPalette;
+				public function HRESULT(IDirectDrawSurface3 *self, void* param0) Unlock;
+				public function HRESULT(IDirectDrawSurface3 *self, RECT* param0, IDirectDrawSurface3* param1, RECT* param2, uint32 param3, DDOVERLAYFX* param4) UpdateOverlay;
+				public function HRESULT(IDirectDrawSurface3 *self, uint32 param0) UpdateOverlayDisplay;
+				public function HRESULT(IDirectDrawSurface3 *self, uint32 param0, IDirectDrawSurface3* param1) UpdateOverlayZOrder;
+				public function HRESULT(IDirectDrawSurface3 *self, void** param0) GetDDInterface;
+				public function HRESULT(IDirectDrawSurface3 *self, uint32 param0) PageLock;
+				public function HRESULT(IDirectDrawSurface3 *self, uint32 param0) PageUnlock;
+				public function HRESULT(IDirectDrawSurface3 *self, DDSURFACEDESC* param0, uint32 param1) SetSurfaceDesc;
+			}
 		}
 		[CRepr]
 		public struct IDirectDrawSurface4 : IUnknown
 		{
 			public const new Guid IID = .(0x0b2b8630, 0xad35, 0x11d0, 0x8e, 0xa6, 0x00, 0x60, 0x97, 0x97, 0xea, 0x5b);
 			
-			public function HRESULT(IDirectDrawSurface4 *self, IDirectDrawSurface4* param0) AddAttachedSurface;
-			public function HRESULT(IDirectDrawSurface4 *self, RECT* param0) AddOverlayDirtyRect;
-			public function HRESULT(IDirectDrawSurface4 *self, RECT* param0, IDirectDrawSurface4* param1, RECT* param2, uint32 param3, DDBLTFX* param4) Blt;
-			public function HRESULT(IDirectDrawSurface4 *self, DDBLTBATCH* param0, uint32 param1, uint32 param2) BltBatch;
-			public function HRESULT(IDirectDrawSurface4 *self, uint32 param0, uint32 param1, IDirectDrawSurface4* param2, RECT* param3, uint32 param4) BltFast;
-			public function HRESULT(IDirectDrawSurface4 *self, uint32 param0, IDirectDrawSurface4* param1) DeleteAttachedSurface;
-			public function HRESULT(IDirectDrawSurface4 *self, void* param0, LPDDENUMSURFACESCALLBACK2 param1) EnumAttachedSurfaces;
-			public function HRESULT(IDirectDrawSurface4 *self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK2 param2) EnumOverlayZOrders;
-			public function HRESULT(IDirectDrawSurface4 *self, IDirectDrawSurface4* param0, uint32 param1) Flip;
-			public function HRESULT(IDirectDrawSurface4 *self, DDSCAPS2* param0, IDirectDrawSurface4** param1) GetAttachedSurface;
-			public function HRESULT(IDirectDrawSurface4 *self, uint32 param0) GetBltStatus;
-			public function HRESULT(IDirectDrawSurface4 *self, DDSCAPS2* param0) GetCaps;
-			public function HRESULT(IDirectDrawSurface4 *self, IDirectDrawClipper** param0) GetClipper;
-			public function HRESULT(IDirectDrawSurface4 *self, uint32 param0, DDCOLORKEY* param1) GetColorKey;
-			public function HRESULT(IDirectDrawSurface4 *self, HDC* param0) GetDC;
-			public function HRESULT(IDirectDrawSurface4 *self, uint32 param0) GetFlipStatus;
-			public function HRESULT(IDirectDrawSurface4 *self, int32* param0, int32* param1) GetOverlayPosition;
-			public function HRESULT(IDirectDrawSurface4 *self, IDirectDrawPalette** param0) GetPalette;
-			public function HRESULT(IDirectDrawSurface4 *self, DDPIXELFORMAT* param0) GetPixelFormat;
-			public function HRESULT(IDirectDrawSurface4 *self, DDSURFACEDESC2* param0) GetSurfaceDesc;
-			public function HRESULT(IDirectDrawSurface4 *self, IDirectDraw* param0, DDSURFACEDESC2* param1) Initialize;
-			public function HRESULT(IDirectDrawSurface4 *self) IsLost;
-			public function HRESULT(IDirectDrawSurface4 *self, RECT* param0, DDSURFACEDESC2* param1, uint32 param2, HANDLE param3) Lock;
-			public function HRESULT(IDirectDrawSurface4 *self, HDC param0) ReleaseDC;
-			public function HRESULT(IDirectDrawSurface4 *self) Restore;
-			public function HRESULT(IDirectDrawSurface4 *self, IDirectDrawClipper* param0) SetClipper;
-			public function HRESULT(IDirectDrawSurface4 *self, uint32 param0, DDCOLORKEY* param1) SetColorKey;
-			public function HRESULT(IDirectDrawSurface4 *self, int32 param0, int32 param1) SetOverlayPosition;
-			public function HRESULT(IDirectDrawSurface4 *self, IDirectDrawPalette* param0) SetPalette;
-			public function HRESULT(IDirectDrawSurface4 *self, RECT* param0) Unlock;
-			public function HRESULT(IDirectDrawSurface4 *self, RECT* param0, IDirectDrawSurface4* param1, RECT* param2, uint32 param3, DDOVERLAYFX* param4) UpdateOverlay;
-			public function HRESULT(IDirectDrawSurface4 *self, uint32 param0) UpdateOverlayDisplay;
-			public function HRESULT(IDirectDrawSurface4 *self, uint32 param0, IDirectDrawSurface4* param1) UpdateOverlayZOrder;
-			public function HRESULT(IDirectDrawSurface4 *self, void** param0) GetDDInterface;
-			public function HRESULT(IDirectDrawSurface4 *self, uint32 param0) PageLock;
-			public function HRESULT(IDirectDrawSurface4 *self, uint32 param0) PageUnlock;
-			public function HRESULT(IDirectDrawSurface4 *self, DDSURFACEDESC2* param0, uint32 param1) SetSurfaceDesc;
-			public function HRESULT(IDirectDrawSurface4 *self, Guid* param0, void* param1, uint32 param2, uint32 param3) SetPrivateData;
-			public function HRESULT(IDirectDrawSurface4 *self, Guid* param0, void* param1, uint32* param2) GetPrivateData;
-			public function HRESULT(IDirectDrawSurface4 *self, Guid* param0) FreePrivateData;
-			public function HRESULT(IDirectDrawSurface4 *self, uint32* param0) GetUniquenessValue;
-			public function HRESULT(IDirectDrawSurface4 *self) ChangeUniquenessValue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectDrawSurface4 *self, IDirectDrawSurface4* param0) AddAttachedSurface;
+				public function HRESULT(IDirectDrawSurface4 *self, RECT* param0) AddOverlayDirtyRect;
+				public function HRESULT(IDirectDrawSurface4 *self, RECT* param0, IDirectDrawSurface4* param1, RECT* param2, uint32 param3, DDBLTFX* param4) Blt;
+				public function HRESULT(IDirectDrawSurface4 *self, DDBLTBATCH* param0, uint32 param1, uint32 param2) BltBatch;
+				public function HRESULT(IDirectDrawSurface4 *self, uint32 param0, uint32 param1, IDirectDrawSurface4* param2, RECT* param3, uint32 param4) BltFast;
+				public function HRESULT(IDirectDrawSurface4 *self, uint32 param0, IDirectDrawSurface4* param1) DeleteAttachedSurface;
+				public function HRESULT(IDirectDrawSurface4 *self, void* param0, LPDDENUMSURFACESCALLBACK2 param1) EnumAttachedSurfaces;
+				public function HRESULT(IDirectDrawSurface4 *self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK2 param2) EnumOverlayZOrders;
+				public function HRESULT(IDirectDrawSurface4 *self, IDirectDrawSurface4* param0, uint32 param1) Flip;
+				public function HRESULT(IDirectDrawSurface4 *self, DDSCAPS2* param0, IDirectDrawSurface4** param1) GetAttachedSurface;
+				public function HRESULT(IDirectDrawSurface4 *self, uint32 param0) GetBltStatus;
+				public function HRESULT(IDirectDrawSurface4 *self, DDSCAPS2* param0) GetCaps;
+				public function HRESULT(IDirectDrawSurface4 *self, IDirectDrawClipper** param0) GetClipper;
+				public function HRESULT(IDirectDrawSurface4 *self, uint32 param0, DDCOLORKEY* param1) GetColorKey;
+				public function HRESULT(IDirectDrawSurface4 *self, HDC* param0) GetDC;
+				public function HRESULT(IDirectDrawSurface4 *self, uint32 param0) GetFlipStatus;
+				public function HRESULT(IDirectDrawSurface4 *self, int32* param0, int32* param1) GetOverlayPosition;
+				public function HRESULT(IDirectDrawSurface4 *self, IDirectDrawPalette** param0) GetPalette;
+				public function HRESULT(IDirectDrawSurface4 *self, DDPIXELFORMAT* param0) GetPixelFormat;
+				public function HRESULT(IDirectDrawSurface4 *self, DDSURFACEDESC2* param0) GetSurfaceDesc;
+				public function HRESULT(IDirectDrawSurface4 *self, IDirectDraw* param0, DDSURFACEDESC2* param1) Initialize;
+				public function HRESULT(IDirectDrawSurface4 *self) IsLost;
+				public function HRESULT(IDirectDrawSurface4 *self, RECT* param0, DDSURFACEDESC2* param1, uint32 param2, HANDLE param3) Lock;
+				public function HRESULT(IDirectDrawSurface4 *self, HDC param0) ReleaseDC;
+				public function HRESULT(IDirectDrawSurface4 *self) Restore;
+				public function HRESULT(IDirectDrawSurface4 *self, IDirectDrawClipper* param0) SetClipper;
+				public function HRESULT(IDirectDrawSurface4 *self, uint32 param0, DDCOLORKEY* param1) SetColorKey;
+				public function HRESULT(IDirectDrawSurface4 *self, int32 param0, int32 param1) SetOverlayPosition;
+				public function HRESULT(IDirectDrawSurface4 *self, IDirectDrawPalette* param0) SetPalette;
+				public function HRESULT(IDirectDrawSurface4 *self, RECT* param0) Unlock;
+				public function HRESULT(IDirectDrawSurface4 *self, RECT* param0, IDirectDrawSurface4* param1, RECT* param2, uint32 param3, DDOVERLAYFX* param4) UpdateOverlay;
+				public function HRESULT(IDirectDrawSurface4 *self, uint32 param0) UpdateOverlayDisplay;
+				public function HRESULT(IDirectDrawSurface4 *self, uint32 param0, IDirectDrawSurface4* param1) UpdateOverlayZOrder;
+				public function HRESULT(IDirectDrawSurface4 *self, void** param0) GetDDInterface;
+				public function HRESULT(IDirectDrawSurface4 *self, uint32 param0) PageLock;
+				public function HRESULT(IDirectDrawSurface4 *self, uint32 param0) PageUnlock;
+				public function HRESULT(IDirectDrawSurface4 *self, DDSURFACEDESC2* param0, uint32 param1) SetSurfaceDesc;
+				public function HRESULT(IDirectDrawSurface4 *self, Guid* param0, void* param1, uint32 param2, uint32 param3) SetPrivateData;
+				public function HRESULT(IDirectDrawSurface4 *self, Guid* param0, void* param1, uint32* param2) GetPrivateData;
+				public function HRESULT(IDirectDrawSurface4 *self, Guid* param0) FreePrivateData;
+				public function HRESULT(IDirectDrawSurface4 *self, uint32* param0) GetUniquenessValue;
+				public function HRESULT(IDirectDrawSurface4 *self) ChangeUniquenessValue;
+			}
 		}
 		[CRepr]
 		public struct IDirectDrawSurface7 : IUnknown
 		{
 			public const new Guid IID = .(0x06675a80, 0x3b9b, 0x11d2, 0xb9, 0x2f, 0x00, 0x60, 0x97, 0x97, 0xea, 0x5b);
 			
-			public function HRESULT(IDirectDrawSurface7 *self, IDirectDrawSurface7* param0) AddAttachedSurface;
-			public function HRESULT(IDirectDrawSurface7 *self, RECT* param0) AddOverlayDirtyRect;
-			public function HRESULT(IDirectDrawSurface7 *self, RECT* param0, IDirectDrawSurface7* param1, RECT* param2, uint32 param3, DDBLTFX* param4) Blt;
-			public function HRESULT(IDirectDrawSurface7 *self, DDBLTBATCH* param0, uint32 param1, uint32 param2) BltBatch;
-			public function HRESULT(IDirectDrawSurface7 *self, uint32 param0, uint32 param1, IDirectDrawSurface7* param2, RECT* param3, uint32 param4) BltFast;
-			public function HRESULT(IDirectDrawSurface7 *self, uint32 param0, IDirectDrawSurface7* param1) DeleteAttachedSurface;
-			public function HRESULT(IDirectDrawSurface7 *self, void* param0, LPDDENUMSURFACESCALLBACK7 param1) EnumAttachedSurfaces;
-			public function HRESULT(IDirectDrawSurface7 *self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK7 param2) EnumOverlayZOrders;
-			public function HRESULT(IDirectDrawSurface7 *self, IDirectDrawSurface7* param0, uint32 param1) Flip;
-			public function HRESULT(IDirectDrawSurface7 *self, DDSCAPS2* param0, IDirectDrawSurface7** param1) GetAttachedSurface;
-			public function HRESULT(IDirectDrawSurface7 *self, uint32 param0) GetBltStatus;
-			public function HRESULT(IDirectDrawSurface7 *self, DDSCAPS2* param0) GetCaps;
-			public function HRESULT(IDirectDrawSurface7 *self, IDirectDrawClipper** param0) GetClipper;
-			public function HRESULT(IDirectDrawSurface7 *self, uint32 param0, DDCOLORKEY* param1) GetColorKey;
-			public function HRESULT(IDirectDrawSurface7 *self, HDC* param0) GetDC;
-			public function HRESULT(IDirectDrawSurface7 *self, uint32 param0) GetFlipStatus;
-			public function HRESULT(IDirectDrawSurface7 *self, int32* param0, int32* param1) GetOverlayPosition;
-			public function HRESULT(IDirectDrawSurface7 *self, IDirectDrawPalette** param0) GetPalette;
-			public function HRESULT(IDirectDrawSurface7 *self, DDPIXELFORMAT* param0) GetPixelFormat;
-			public function HRESULT(IDirectDrawSurface7 *self, DDSURFACEDESC2* param0) GetSurfaceDesc;
-			public function HRESULT(IDirectDrawSurface7 *self, IDirectDraw* param0, DDSURFACEDESC2* param1) Initialize;
-			public function HRESULT(IDirectDrawSurface7 *self) IsLost;
-			public function HRESULT(IDirectDrawSurface7 *self, RECT* param0, DDSURFACEDESC2* param1, uint32 param2, HANDLE param3) Lock;
-			public function HRESULT(IDirectDrawSurface7 *self, HDC param0) ReleaseDC;
-			public function HRESULT(IDirectDrawSurface7 *self) Restore;
-			public function HRESULT(IDirectDrawSurface7 *self, IDirectDrawClipper* param0) SetClipper;
-			public function HRESULT(IDirectDrawSurface7 *self, uint32 param0, DDCOLORKEY* param1) SetColorKey;
-			public function HRESULT(IDirectDrawSurface7 *self, int32 param0, int32 param1) SetOverlayPosition;
-			public function HRESULT(IDirectDrawSurface7 *self, IDirectDrawPalette* param0) SetPalette;
-			public function HRESULT(IDirectDrawSurface7 *self, RECT* param0) Unlock;
-			public function HRESULT(IDirectDrawSurface7 *self, RECT* param0, IDirectDrawSurface7* param1, RECT* param2, uint32 param3, DDOVERLAYFX* param4) UpdateOverlay;
-			public function HRESULT(IDirectDrawSurface7 *self, uint32 param0) UpdateOverlayDisplay;
-			public function HRESULT(IDirectDrawSurface7 *self, uint32 param0, IDirectDrawSurface7* param1) UpdateOverlayZOrder;
-			public function HRESULT(IDirectDrawSurface7 *self, void** param0) GetDDInterface;
-			public function HRESULT(IDirectDrawSurface7 *self, uint32 param0) PageLock;
-			public function HRESULT(IDirectDrawSurface7 *self, uint32 param0) PageUnlock;
-			public function HRESULT(IDirectDrawSurface7 *self, DDSURFACEDESC2* param0, uint32 param1) SetSurfaceDesc;
-			public function HRESULT(IDirectDrawSurface7 *self, Guid* param0, void* param1, uint32 param2, uint32 param3) SetPrivateData;
-			public function HRESULT(IDirectDrawSurface7 *self, Guid* param0, void* param1, uint32* param2) GetPrivateData;
-			public function HRESULT(IDirectDrawSurface7 *self, Guid* param0) FreePrivateData;
-			public function HRESULT(IDirectDrawSurface7 *self, uint32* param0) GetUniquenessValue;
-			public function HRESULT(IDirectDrawSurface7 *self) ChangeUniquenessValue;
-			public function HRESULT(IDirectDrawSurface7 *self, uint32 param0) SetPriority;
-			public function HRESULT(IDirectDrawSurface7 *self, uint32* param0) GetPriority;
-			public function HRESULT(IDirectDrawSurface7 *self, uint32 param0) SetLOD;
-			public function HRESULT(IDirectDrawSurface7 *self, uint32* param0) GetLOD;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectDrawSurface7 *self, IDirectDrawSurface7* param0) AddAttachedSurface;
+				public function HRESULT(IDirectDrawSurface7 *self, RECT* param0) AddOverlayDirtyRect;
+				public function HRESULT(IDirectDrawSurface7 *self, RECT* param0, IDirectDrawSurface7* param1, RECT* param2, uint32 param3, DDBLTFX* param4) Blt;
+				public function HRESULT(IDirectDrawSurface7 *self, DDBLTBATCH* param0, uint32 param1, uint32 param2) BltBatch;
+				public function HRESULT(IDirectDrawSurface7 *self, uint32 param0, uint32 param1, IDirectDrawSurface7* param2, RECT* param3, uint32 param4) BltFast;
+				public function HRESULT(IDirectDrawSurface7 *self, uint32 param0, IDirectDrawSurface7* param1) DeleteAttachedSurface;
+				public function HRESULT(IDirectDrawSurface7 *self, void* param0, LPDDENUMSURFACESCALLBACK7 param1) EnumAttachedSurfaces;
+				public function HRESULT(IDirectDrawSurface7 *self, uint32 param0, void* param1, LPDDENUMSURFACESCALLBACK7 param2) EnumOverlayZOrders;
+				public function HRESULT(IDirectDrawSurface7 *self, IDirectDrawSurface7* param0, uint32 param1) Flip;
+				public function HRESULT(IDirectDrawSurface7 *self, DDSCAPS2* param0, IDirectDrawSurface7** param1) GetAttachedSurface;
+				public function HRESULT(IDirectDrawSurface7 *self, uint32 param0) GetBltStatus;
+				public function HRESULT(IDirectDrawSurface7 *self, DDSCAPS2* param0) GetCaps;
+				public function HRESULT(IDirectDrawSurface7 *self, IDirectDrawClipper** param0) GetClipper;
+				public function HRESULT(IDirectDrawSurface7 *self, uint32 param0, DDCOLORKEY* param1) GetColorKey;
+				public function HRESULT(IDirectDrawSurface7 *self, HDC* param0) GetDC;
+				public function HRESULT(IDirectDrawSurface7 *self, uint32 param0) GetFlipStatus;
+				public function HRESULT(IDirectDrawSurface7 *self, int32* param0, int32* param1) GetOverlayPosition;
+				public function HRESULT(IDirectDrawSurface7 *self, IDirectDrawPalette** param0) GetPalette;
+				public function HRESULT(IDirectDrawSurface7 *self, DDPIXELFORMAT* param0) GetPixelFormat;
+				public function HRESULT(IDirectDrawSurface7 *self, DDSURFACEDESC2* param0) GetSurfaceDesc;
+				public function HRESULT(IDirectDrawSurface7 *self, IDirectDraw* param0, DDSURFACEDESC2* param1) Initialize;
+				public function HRESULT(IDirectDrawSurface7 *self) IsLost;
+				public function HRESULT(IDirectDrawSurface7 *self, RECT* param0, DDSURFACEDESC2* param1, uint32 param2, HANDLE param3) Lock;
+				public function HRESULT(IDirectDrawSurface7 *self, HDC param0) ReleaseDC;
+				public function HRESULT(IDirectDrawSurface7 *self) Restore;
+				public function HRESULT(IDirectDrawSurface7 *self, IDirectDrawClipper* param0) SetClipper;
+				public function HRESULT(IDirectDrawSurface7 *self, uint32 param0, DDCOLORKEY* param1) SetColorKey;
+				public function HRESULT(IDirectDrawSurface7 *self, int32 param0, int32 param1) SetOverlayPosition;
+				public function HRESULT(IDirectDrawSurface7 *self, IDirectDrawPalette* param0) SetPalette;
+				public function HRESULT(IDirectDrawSurface7 *self, RECT* param0) Unlock;
+				public function HRESULT(IDirectDrawSurface7 *self, RECT* param0, IDirectDrawSurface7* param1, RECT* param2, uint32 param3, DDOVERLAYFX* param4) UpdateOverlay;
+				public function HRESULT(IDirectDrawSurface7 *self, uint32 param0) UpdateOverlayDisplay;
+				public function HRESULT(IDirectDrawSurface7 *self, uint32 param0, IDirectDrawSurface7* param1) UpdateOverlayZOrder;
+				public function HRESULT(IDirectDrawSurface7 *self, void** param0) GetDDInterface;
+				public function HRESULT(IDirectDrawSurface7 *self, uint32 param0) PageLock;
+				public function HRESULT(IDirectDrawSurface7 *self, uint32 param0) PageUnlock;
+				public function HRESULT(IDirectDrawSurface7 *self, DDSURFACEDESC2* param0, uint32 param1) SetSurfaceDesc;
+				public function HRESULT(IDirectDrawSurface7 *self, Guid* param0, void* param1, uint32 param2, uint32 param3) SetPrivateData;
+				public function HRESULT(IDirectDrawSurface7 *self, Guid* param0, void* param1, uint32* param2) GetPrivateData;
+				public function HRESULT(IDirectDrawSurface7 *self, Guid* param0) FreePrivateData;
+				public function HRESULT(IDirectDrawSurface7 *self, uint32* param0) GetUniquenessValue;
+				public function HRESULT(IDirectDrawSurface7 *self) ChangeUniquenessValue;
+				public function HRESULT(IDirectDrawSurface7 *self, uint32 param0) SetPriority;
+				public function HRESULT(IDirectDrawSurface7 *self, uint32* param0) GetPriority;
+				public function HRESULT(IDirectDrawSurface7 *self, uint32 param0) SetLOD;
+				public function HRESULT(IDirectDrawSurface7 *self, uint32* param0) GetLOD;
+			}
 		}
 		[CRepr]
 		public struct IDirectDrawColorControl : IUnknown
 		{
 			public const new Guid IID = .(0x4b9f0ee0, 0x0d7e, 0x11d0, 0x9b, 0x06, 0x00, 0xa0, 0xc9, 0x03, 0xa3, 0xb8);
 			
-			public function HRESULT(IDirectDrawColorControl *self, DDCOLORCONTROL* param0) GetColorControls;
-			public function HRESULT(IDirectDrawColorControl *self, DDCOLORCONTROL* param0) SetColorControls;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectDrawColorControl *self, DDCOLORCONTROL* param0) GetColorControls;
+				public function HRESULT(IDirectDrawColorControl *self, DDCOLORCONTROL* param0) SetColorControls;
+			}
 		}
 		[CRepr]
 		public struct IDirectDrawGammaControl : IUnknown
 		{
 			public const new Guid IID = .(0x69c11c3e, 0xb46b, 0x11d1, 0xad, 0x7a, 0x00, 0xc0, 0x4f, 0xc2, 0x9b, 0x4e);
 			
-			public function HRESULT(IDirectDrawGammaControl *self, uint32 param0, DDGAMMARAMP* param1) GetGammaRamp;
-			public function HRESULT(IDirectDrawGammaControl *self, uint32 param0, DDGAMMARAMP* param1) SetGammaRamp;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectDrawGammaControl *self, uint32 param0, DDGAMMARAMP* param1) GetGammaRamp;
+				public function HRESULT(IDirectDrawGammaControl *self, uint32 param0, DDGAMMARAMP* param1) SetGammaRamp;
+			}
 		}
 		[CRepr]
 		public struct IDDVideoPortContainer : IUnknown
 		{
 			public const new Guid IID = .(0x6c142760, 0xa733, 0x11ce, 0xa5, 0x21, 0x00, 0x20, 0xaf, 0x0b, 0xe5, 0x60);
 			
-			public function HRESULT(IDDVideoPortContainer *self, uint32 param0, DDVIDEOPORTDESC* param1, IDirectDrawVideoPort** param2, IUnknown* param3) CreateVideoPort;
-			public function HRESULT(IDDVideoPortContainer *self, uint32 param0, DDVIDEOPORTCAPS* param1, void* param2, LPDDENUMVIDEOCALLBACK param3) EnumVideoPorts;
-			public function HRESULT(IDDVideoPortContainer *self, uint32 param0, uint32* pcInfo, DDVIDEOPORTCONNECT* param2) GetVideoPortConnectInfo;
-			public function HRESULT(IDDVideoPortContainer *self, uint32 param0, DDVIDEOPORTSTATUS* param1) QueryVideoPortStatus;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDDVideoPortContainer *self, uint32 param0, DDVIDEOPORTDESC* param1, IDirectDrawVideoPort** param2, IUnknown* param3) CreateVideoPort;
+				public function HRESULT(IDDVideoPortContainer *self, uint32 param0, DDVIDEOPORTCAPS* param1, void* param2, LPDDENUMVIDEOCALLBACK param3) EnumVideoPorts;
+				public function HRESULT(IDDVideoPortContainer *self, uint32 param0, uint32* pcInfo, DDVIDEOPORTCONNECT* param2) GetVideoPortConnectInfo;
+				public function HRESULT(IDDVideoPortContainer *self, uint32 param0, DDVIDEOPORTSTATUS* param1) QueryVideoPortStatus;
+			}
 		}
 		[CRepr]
 		public struct IDirectDrawVideoPort : IUnknown
 		{
 			public const new Guid IID = .(0xb36d93e0, 0x2b43, 0x11cf, 0xa2, 0xde, 0x00, 0xaa, 0x00, 0xb9, 0x33, 0x56);
 			
-			public function HRESULT(IDirectDrawVideoPort *self, IDirectDrawSurface* param0, uint32 param1) Flip;
-			public function HRESULT(IDirectDrawVideoPort *self, DDPIXELFORMAT* param0, uint32 param1, uint32 param2, uint32 param3, DDVIDEOPORTBANDWIDTH* param4) GetBandwidthInfo;
-			public function HRESULT(IDirectDrawVideoPort *self, DDCOLORCONTROL* param0) GetColorControls;
-			public function HRESULT(IDirectDrawVideoPort *self, uint32* lpNumFormats, DDPIXELFORMAT* param1, uint32 param2) GetInputFormats;
-			public function HRESULT(IDirectDrawVideoPort *self, DDPIXELFORMAT* param0, uint32* lpNumFormats, DDPIXELFORMAT* param2, uint32 param3) GetOutputFormats;
-			public function HRESULT(IDirectDrawVideoPort *self, int32* param0) GetFieldPolarity;
-			public function HRESULT(IDirectDrawVideoPort *self, uint32* param0) GetVideoLine;
-			public function HRESULT(IDirectDrawVideoPort *self, uint32* param0) GetVideoSignalStatus;
-			public function HRESULT(IDirectDrawVideoPort *self, DDCOLORCONTROL* param0) SetColorControls;
-			public function HRESULT(IDirectDrawVideoPort *self, IDirectDrawSurface* param0, uint32 param1) SetTargetSurface;
-			public function HRESULT(IDirectDrawVideoPort *self, DDVIDEOPORTINFO* param0) StartVideo;
-			public function HRESULT(IDirectDrawVideoPort *self) StopVideo;
-			public function HRESULT(IDirectDrawVideoPort *self, DDVIDEOPORTINFO* param0) UpdateVideo;
-			public function HRESULT(IDirectDrawVideoPort *self, uint32 param0, uint32 param1, uint32 param2) WaitForSync;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectDrawVideoPort *self, IDirectDrawSurface* param0, uint32 param1) Flip;
+				public function HRESULT(IDirectDrawVideoPort *self, DDPIXELFORMAT* param0, uint32 param1, uint32 param2, uint32 param3, DDVIDEOPORTBANDWIDTH* param4) GetBandwidthInfo;
+				public function HRESULT(IDirectDrawVideoPort *self, DDCOLORCONTROL* param0) GetColorControls;
+				public function HRESULT(IDirectDrawVideoPort *self, uint32* lpNumFormats, DDPIXELFORMAT* param1, uint32 param2) GetInputFormats;
+				public function HRESULT(IDirectDrawVideoPort *self, DDPIXELFORMAT* param0, uint32* lpNumFormats, DDPIXELFORMAT* param2, uint32 param3) GetOutputFormats;
+				public function HRESULT(IDirectDrawVideoPort *self, int32* param0) GetFieldPolarity;
+				public function HRESULT(IDirectDrawVideoPort *self, uint32* param0) GetVideoLine;
+				public function HRESULT(IDirectDrawVideoPort *self, uint32* param0) GetVideoSignalStatus;
+				public function HRESULT(IDirectDrawVideoPort *self, DDCOLORCONTROL* param0) SetColorControls;
+				public function HRESULT(IDirectDrawVideoPort *self, IDirectDrawSurface* param0, uint32 param1) SetTargetSurface;
+				public function HRESULT(IDirectDrawVideoPort *self, DDVIDEOPORTINFO* param0) StartVideo;
+				public function HRESULT(IDirectDrawVideoPort *self) StopVideo;
+				public function HRESULT(IDirectDrawVideoPort *self, DDVIDEOPORTINFO* param0) UpdateVideo;
+				public function HRESULT(IDirectDrawVideoPort *self, uint32 param0, uint32 param1, uint32 param2) WaitForSync;
+			}
 		}
 		[CRepr]
 		public struct IDirectDrawVideoPortNotify : IUnknown
 		{
 			public const new Guid IID = .(0xa655fb94, 0x0589, 0x4e57, 0xb3, 0x33, 0x56, 0x7a, 0x89, 0x46, 0x8c, 0x88);
 			
-			public function HRESULT(IDirectDrawVideoPortNotify *self, HANDLE* param0, DDVIDEOPORTNOTIFY* param1) AcquireNotification;
-			public function HRESULT(IDirectDrawVideoPortNotify *self, HANDLE param0) ReleaseNotification;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectDrawVideoPortNotify *self, HANDLE* param0, DDVIDEOPORTNOTIFY* param1) AcquireNotification;
+				public function HRESULT(IDirectDrawVideoPortNotify *self, HANDLE param0) ReleaseNotification;
+			}
 		}
 		[CRepr]
 		public struct IDirectDrawKernel : IUnknown
 		{
 			public const new Guid IID = .(0x8d56c120, 0x6a08, 0x11d0, 0x9b, 0x06, 0x00, 0xa0, 0xc9, 0x03, 0xa3, 0xb8);
 			
-			public function HRESULT(IDirectDrawKernel *self, DDKERNELCAPS* param0) GetCaps;
-			public function HRESULT(IDirectDrawKernel *self, uint* param0) GetKernelHandle;
-			public function HRESULT(IDirectDrawKernel *self) ReleaseKernelHandle;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectDrawKernel *self, DDKERNELCAPS* param0) GetCaps;
+				public function HRESULT(IDirectDrawKernel *self, uint* param0) GetKernelHandle;
+				public function HRESULT(IDirectDrawKernel *self) ReleaseKernelHandle;
+			}
 		}
 		[CRepr]
 		public struct IDirectDrawSurfaceKernel : IUnknown
 		{
 			public const new Guid IID = .(0x60755da0, 0x6a40, 0x11d0, 0x9b, 0x06, 0x00, 0xa0, 0xc9, 0x03, 0xa3, 0xb8);
 			
-			public function HRESULT(IDirectDrawSurfaceKernel *self, uint* param0) GetKernelHandle;
-			public function HRESULT(IDirectDrawSurfaceKernel *self) ReleaseKernelHandle;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectDrawSurfaceKernel *self, uint* param0) GetKernelHandle;
+				public function HRESULT(IDirectDrawSurfaceKernel *self) ReleaseKernelHandle;
+			}
 		}
 		
 		// --- Functions ---

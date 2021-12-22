@@ -279,19 +279,29 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x89bcb740, 0x6119, 0x101a, 0xbc, 0xb7, 0x00, 0xdd, 0x01, 0x06, 0x55, 0xaf);
 			
-			public function int32(IFilter *self, uint32 grfFlags, uint32 cAttributes, FULLPROPSPEC* aAttributes, uint32* pFlags) Init;
-			public function int32(IFilter *self, STAT_CHUNK* pStat) GetChunk;
-			public function int32(IFilter *self, uint32* pcwcBuffer, char16* awcBuffer) GetText;
-			public function int32(IFilter *self, PROPVARIANT** ppPropValue) GetValue;
-			public function int32(IFilter *self, FILTERREGION origPos, Guid* riid, void** ppunk) BindRegion;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function int32(IFilter *self, uint32 grfFlags, uint32 cAttributes, FULLPROPSPEC* aAttributes, uint32* pFlags) Init;
+				public function int32(IFilter *self, STAT_CHUNK* pStat) GetChunk;
+				public function int32(IFilter *self, uint32* pcwcBuffer, char16* awcBuffer) GetText;
+				public function int32(IFilter *self, PROPVARIANT** ppPropValue) GetValue;
+				public function int32(IFilter *self, FILTERREGION origPos, Guid* riid, void** ppunk) BindRegion;
+			}
 		}
 		[CRepr]
 		public struct IPhraseSink : IUnknown
 		{
 			public const new Guid IID = .(0xcc906ff0, 0xc058, 0x101a, 0xb5, 0x54, 0x08, 0x00, 0x2b, 0x33, 0xb0, 0xe6);
 			
-			public function HRESULT(IPhraseSink *self, PWSTR pwcNoun, uint32 cwcNoun, PWSTR pwcModifier, uint32 cwcModifier, uint32 ulAttachmentType) PutSmallPhrase;
-			public function HRESULT(IPhraseSink *self, PWSTR pwcPhrase, uint32 cwcPhrase) PutPhrase;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPhraseSink *self, PWSTR pwcNoun, uint32 cwcNoun, PWSTR pwcModifier, uint32 cwcModifier, uint32 ulAttachmentType) PutSmallPhrase;
+				public function HRESULT(IPhraseSink *self, PWSTR pwcPhrase, uint32 cwcPhrase) PutPhrase;
+			}
 		}
 		
 		// --- Functions ---

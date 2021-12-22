@@ -135,134 +135,174 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9f7d7bb7, 0x20b3, 0x11da, 0x81, 0xa5, 0x00, 0x30, 0xf1, 0x64, 0x2e, 0x3c);
 			
-			public function HRESULT(IItemEnumerator *self, VARIANT* Item) Current;
-			public function HRESULT(IItemEnumerator *self, BOOL* ItemValid) MoveNext;
-			public function HRESULT(IItemEnumerator *self) Reset;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IItemEnumerator *self, VARIANT* Item) Current;
+				public function HRESULT(IItemEnumerator *self, BOOL* ItemValid) MoveNext;
+				public function HRESULT(IItemEnumerator *self) Reset;
+			}
 		}
 		[CRepr]
 		public struct ISettingsIdentity : IUnknown
 		{
 			public const new Guid IID = .(0x9f7d7bb6, 0x20b3, 0x11da, 0x81, 0xa5, 0x00, 0x30, 0xf1, 0x64, 0x2e, 0x3c);
 			
-			public function HRESULT(ISettingsIdentity *self, void* Reserved, PWSTR Name, BSTR* Value) GetAttribute;
-			public function HRESULT(ISettingsIdentity *self, void* Reserved, PWSTR Name, PWSTR Value) SetAttribute;
-			public function HRESULT(ISettingsIdentity *self, uint32* Flags) GetFlags;
-			public function HRESULT(ISettingsIdentity *self, uint32 Flags) SetFlags;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISettingsIdentity *self, void* Reserved, PWSTR Name, BSTR* Value) GetAttribute;
+				public function HRESULT(ISettingsIdentity *self, void* Reserved, PWSTR Name, PWSTR Value) SetAttribute;
+				public function HRESULT(ISettingsIdentity *self, uint32* Flags) GetFlags;
+				public function HRESULT(ISettingsIdentity *self, uint32 Flags) SetFlags;
+			}
 		}
 		[CRepr]
 		public struct ITargetInfo : IUnknown
 		{
 			public const new Guid IID = .(0x9f7d7bb8, 0x20b3, 0x11da, 0x81, 0xa5, 0x00, 0x30, 0xf1, 0x64, 0x2e, 0x3c);
 			
-			public function HRESULT(ITargetInfo *self, WcmTargetMode* TargetMode) GetTargetMode;
-			public function HRESULT(ITargetInfo *self, WcmTargetMode TargetMode) SetTargetMode;
-			public function HRESULT(ITargetInfo *self, BSTR* TemporaryStoreLocation) GetTemporaryStoreLocation;
-			public function HRESULT(ITargetInfo *self, PWSTR TemporaryStoreLocation) SetTemporaryStoreLocation;
-			public function HRESULT(ITargetInfo *self, BSTR* TargetID) GetTargetID;
-			public function HRESULT(ITargetInfo *self, Guid TargetID) SetTargetID;
-			public function HRESULT(ITargetInfo *self, BSTR* ProcessorArchitecture) GetTargetProcessorArchitecture;
-			public function HRESULT(ITargetInfo *self, PWSTR ProcessorArchitecture) SetTargetProcessorArchitecture;
-			public function HRESULT(ITargetInfo *self, BOOL Offline, PWSTR Property, BSTR* Value) GetProperty;
-			public function HRESULT(ITargetInfo *self, BOOL Offline, PWSTR Property, PWSTR Value) SetProperty;
-			public function HRESULT(ITargetInfo *self, IItemEnumerator** Enumerator) GetEnumerator;
-			public function HRESULT(ITargetInfo *self, BOOL Offline, PWSTR Location, BSTR* ExpandedLocation) ExpandTarget;
-			public function HRESULT(ITargetInfo *self, BOOL Offline, PWSTR Location, BSTR* ExpandedLocation) ExpandTargetPath;
-			public function HRESULT(ITargetInfo *self, PWSTR Module, PWSTR Path) SetModulePath;
-			public function HRESULT(ITargetInfo *self, PWSTR Module, HINSTANCE* ModuleHandle) LoadModule;
-			public function HRESULT(ITargetInfo *self, PWSTR InstallerModule, uint8* Wow64Context) SetWow64Context;
-			public function HRESULT(ITargetInfo *self, PWSTR ClientArchitecture, PWSTR Value, BSTR* TranslatedValue) TranslateWow64;
-			public function HRESULT(ITargetInfo *self, PWSTR pwzHiveDir) SetSchemaHiveLocation;
-			public function HRESULT(ITargetInfo *self, BSTR* pHiveLocation) GetSchemaHiveLocation;
-			public function HRESULT(ITargetInfo *self, PWSTR pwzMountName) SetSchemaHiveMountName;
-			public function HRESULT(ITargetInfo *self, BSTR* pMountName) GetSchemaHiveMountName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITargetInfo *self, WcmTargetMode* TargetMode) GetTargetMode;
+				public function HRESULT(ITargetInfo *self, WcmTargetMode TargetMode) SetTargetMode;
+				public function HRESULT(ITargetInfo *self, BSTR* TemporaryStoreLocation) GetTemporaryStoreLocation;
+				public function HRESULT(ITargetInfo *self, PWSTR TemporaryStoreLocation) SetTemporaryStoreLocation;
+				public function HRESULT(ITargetInfo *self, BSTR* TargetID) GetTargetID;
+				public function HRESULT(ITargetInfo *self, Guid TargetID) SetTargetID;
+				public function HRESULT(ITargetInfo *self, BSTR* ProcessorArchitecture) GetTargetProcessorArchitecture;
+				public function HRESULT(ITargetInfo *self, PWSTR ProcessorArchitecture) SetTargetProcessorArchitecture;
+				public function HRESULT(ITargetInfo *self, BOOL Offline, PWSTR Property, BSTR* Value) GetProperty;
+				public function HRESULT(ITargetInfo *self, BOOL Offline, PWSTR Property, PWSTR Value) SetProperty;
+				public function HRESULT(ITargetInfo *self, IItemEnumerator** Enumerator) GetEnumerator;
+				public function HRESULT(ITargetInfo *self, BOOL Offline, PWSTR Location, BSTR* ExpandedLocation) ExpandTarget;
+				public function HRESULT(ITargetInfo *self, BOOL Offline, PWSTR Location, BSTR* ExpandedLocation) ExpandTargetPath;
+				public function HRESULT(ITargetInfo *self, PWSTR Module, PWSTR Path) SetModulePath;
+				public function HRESULT(ITargetInfo *self, PWSTR Module, HINSTANCE* ModuleHandle) LoadModule;
+				public function HRESULT(ITargetInfo *self, PWSTR InstallerModule, uint8* Wow64Context) SetWow64Context;
+				public function HRESULT(ITargetInfo *self, PWSTR ClientArchitecture, PWSTR Value, BSTR* TranslatedValue) TranslateWow64;
+				public function HRESULT(ITargetInfo *self, PWSTR pwzHiveDir) SetSchemaHiveLocation;
+				public function HRESULT(ITargetInfo *self, BSTR* pHiveLocation) GetSchemaHiveLocation;
+				public function HRESULT(ITargetInfo *self, PWSTR pwzMountName) SetSchemaHiveMountName;
+				public function HRESULT(ITargetInfo *self, BSTR* pMountName) GetSchemaHiveMountName;
+			}
 		}
 		[CRepr]
 		public struct ISettingsEngine : IUnknown
 		{
 			public const new Guid IID = .(0x9f7d7bb9, 0x20b3, 0x11da, 0x81, 0xa5, 0x00, 0x30, 0xf1, 0x64, 0x2e, 0x3c);
 			
-			public function HRESULT(ISettingsEngine *self, WcmNamespaceEnumerationFlags Flags, void* Reserved, IItemEnumerator** Namespaces) GetNamespaces;
-			public function HRESULT(ISettingsEngine *self, ISettingsIdentity* SettingsID, WcmNamespaceAccess Access, void* Reserved, ISettingsNamespace** NamespaceItem) GetNamespace;
-			public function HRESULT(ISettingsEngine *self, int32 HResult, BSTR* Message) GetErrorDescription;
-			public function HRESULT(ISettingsEngine *self, ISettingsIdentity** SettingsID) CreateSettingsIdentity;
-			public function HRESULT(ISettingsEngine *self, void* Reserved, WcmUserStatus* Status) GetStoreStatus;
-			public function HRESULT(ISettingsEngine *self, uint32 Flags) LoadStore;
-			public function HRESULT(ISettingsEngine *self, void* Reserved) UnloadStore;
-			public function HRESULT(ISettingsEngine *self, ISettingsIdentity* SettingsID, IStream* Stream, BOOL PushSettings, VARIANT* Results) RegisterNamespace;
-			public function HRESULT(ISettingsEngine *self, ISettingsIdentity* SettingsID, BOOL RemoveSettings) UnregisterNamespace;
-			public function HRESULT(ISettingsEngine *self, ITargetInfo** Target) CreateTargetInfo;
-			public function HRESULT(ISettingsEngine *self, ITargetInfo** Target) GetTargetInfo;
-			public function HRESULT(ISettingsEngine *self, ITargetInfo* Target) SetTargetInfo;
-			public function HRESULT(ISettingsEngine *self, uint32 Flags, void* Reserved, ISettingsContext** SettingsContext) CreateSettingsContext;
-			public function HRESULT(ISettingsEngine *self, ISettingsContext* SettingsContext) SetSettingsContext;
-			public function HRESULT(ISettingsEngine *self, ISettingsContext* SettingsContext, PWSTR** pppwzIdentities, uint* pcIdentities) ApplySettingsContext;
-			public function HRESULT(ISettingsEngine *self, ISettingsContext** SettingsContext) GetSettingsContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISettingsEngine *self, WcmNamespaceEnumerationFlags Flags, void* Reserved, IItemEnumerator** Namespaces) GetNamespaces;
+				public function HRESULT(ISettingsEngine *self, ISettingsIdentity* SettingsID, WcmNamespaceAccess Access, void* Reserved, ISettingsNamespace** NamespaceItem) GetNamespace;
+				public function HRESULT(ISettingsEngine *self, int32 HResult, BSTR* Message) GetErrorDescription;
+				public function HRESULT(ISettingsEngine *self, ISettingsIdentity** SettingsID) CreateSettingsIdentity;
+				public function HRESULT(ISettingsEngine *self, void* Reserved, WcmUserStatus* Status) GetStoreStatus;
+				public function HRESULT(ISettingsEngine *self, uint32 Flags) LoadStore;
+				public function HRESULT(ISettingsEngine *self, void* Reserved) UnloadStore;
+				public function HRESULT(ISettingsEngine *self, ISettingsIdentity* SettingsID, IStream* Stream, BOOL PushSettings, VARIANT* Results) RegisterNamespace;
+				public function HRESULT(ISettingsEngine *self, ISettingsIdentity* SettingsID, BOOL RemoveSettings) UnregisterNamespace;
+				public function HRESULT(ISettingsEngine *self, ITargetInfo** Target) CreateTargetInfo;
+				public function HRESULT(ISettingsEngine *self, ITargetInfo** Target) GetTargetInfo;
+				public function HRESULT(ISettingsEngine *self, ITargetInfo* Target) SetTargetInfo;
+				public function HRESULT(ISettingsEngine *self, uint32 Flags, void* Reserved, ISettingsContext** SettingsContext) CreateSettingsContext;
+				public function HRESULT(ISettingsEngine *self, ISettingsContext* SettingsContext) SetSettingsContext;
+				public function HRESULT(ISettingsEngine *self, ISettingsContext* SettingsContext, PWSTR** pppwzIdentities, uint* pcIdentities) ApplySettingsContext;
+				public function HRESULT(ISettingsEngine *self, ISettingsContext** SettingsContext) GetSettingsContext;
+			}
 		}
 		[CRepr]
 		public struct ISettingsItem : IUnknown
 		{
 			public const new Guid IID = .(0x9f7d7bbb, 0x20b3, 0x11da, 0x81, 0xa5, 0x00, 0x30, 0xf1, 0x64, 0x2e, 0x3c);
 			
-			public function HRESULT(ISettingsItem *self, BSTR* Name) GetName;
-			public function HRESULT(ISettingsItem *self, VARIANT* Value) GetValue;
-			public function HRESULT(ISettingsItem *self, VARIANT* Value) SetValue;
-			public function HRESULT(ISettingsItem *self, WcmSettingType* Type) GetSettingType;
-			public function HRESULT(ISettingsItem *self, WcmDataType* Type) GetDataType;
-			public function HRESULT(ISettingsItem *self, uint8** Data, uint32* DataSize) GetValueRaw;
-			public function HRESULT(ISettingsItem *self, int32 DataType, uint8* Data, uint32 DataSize) SetValueRaw;
-			public function HRESULT(ISettingsItem *self, BOOL* ItemHasChild) HasChild;
-			public function HRESULT(ISettingsItem *self, IItemEnumerator** Children) Children;
-			public function HRESULT(ISettingsItem *self, PWSTR Name, ISettingsItem** Child) GetChild;
-			public function HRESULT(ISettingsItem *self, PWSTR Path, ISettingsItem** Setting) GetSettingByPath;
-			public function HRESULT(ISettingsItem *self, PWSTR Path, ISettingsItem** Setting) CreateSettingByPath;
-			public function HRESULT(ISettingsItem *self, PWSTR Path) RemoveSettingByPath;
-			public function HRESULT(ISettingsItem *self, BSTR* KeyName, WcmDataType* DataType) GetListKeyInformation;
-			public function HRESULT(ISettingsItem *self, VARIANT* KeyData, ISettingsItem** Child) CreateListElement;
-			public function HRESULT(ISettingsItem *self, PWSTR ElementName) RemoveListElement;
-			public function HRESULT(ISettingsItem *self, IItemEnumerator** Attributes) Attributes;
-			public function HRESULT(ISettingsItem *self, PWSTR Name, VARIANT* Value) GetAttribute;
-			public function HRESULT(ISettingsItem *self, BSTR* Path) GetPath;
-			public function HRESULT(ISettingsItem *self, WcmRestrictionFacets* RestrictionFacets) GetRestrictionFacets;
-			public function HRESULT(ISettingsItem *self, WcmRestrictionFacets RestrictionFacet, VARIANT* FacetData) GetRestriction;
-			public function HRESULT(ISettingsItem *self, VARIANT* Value) GetKeyValue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISettingsItem *self, BSTR* Name) GetName;
+				public function HRESULT(ISettingsItem *self, VARIANT* Value) GetValue;
+				public function HRESULT(ISettingsItem *self, VARIANT* Value) SetValue;
+				public function HRESULT(ISettingsItem *self, WcmSettingType* Type) GetSettingType;
+				public function HRESULT(ISettingsItem *self, WcmDataType* Type) GetDataType;
+				public function HRESULT(ISettingsItem *self, uint8** Data, uint32* DataSize) GetValueRaw;
+				public function HRESULT(ISettingsItem *self, int32 DataType, uint8* Data, uint32 DataSize) SetValueRaw;
+				public function HRESULT(ISettingsItem *self, BOOL* ItemHasChild) HasChild;
+				public function HRESULT(ISettingsItem *self, IItemEnumerator** Children) Children;
+				public function HRESULT(ISettingsItem *self, PWSTR Name, ISettingsItem** Child) GetChild;
+				public function HRESULT(ISettingsItem *self, PWSTR Path, ISettingsItem** Setting) GetSettingByPath;
+				public function HRESULT(ISettingsItem *self, PWSTR Path, ISettingsItem** Setting) CreateSettingByPath;
+				public function HRESULT(ISettingsItem *self, PWSTR Path) RemoveSettingByPath;
+				public function HRESULT(ISettingsItem *self, BSTR* KeyName, WcmDataType* DataType) GetListKeyInformation;
+				public function HRESULT(ISettingsItem *self, VARIANT* KeyData, ISettingsItem** Child) CreateListElement;
+				public function HRESULT(ISettingsItem *self, PWSTR ElementName) RemoveListElement;
+				public function HRESULT(ISettingsItem *self, IItemEnumerator** Attributes) Attributes;
+				public function HRESULT(ISettingsItem *self, PWSTR Name, VARIANT* Value) GetAttribute;
+				public function HRESULT(ISettingsItem *self, BSTR* Path) GetPath;
+				public function HRESULT(ISettingsItem *self, WcmRestrictionFacets* RestrictionFacets) GetRestrictionFacets;
+				public function HRESULT(ISettingsItem *self, WcmRestrictionFacets RestrictionFacet, VARIANT* FacetData) GetRestriction;
+				public function HRESULT(ISettingsItem *self, VARIANT* Value) GetKeyValue;
+			}
 		}
 		[CRepr]
 		public struct ISettingsNamespace : IUnknown
 		{
 			public const new Guid IID = .(0x9f7d7bba, 0x20b3, 0x11da, 0x81, 0xa5, 0x00, 0x30, 0xf1, 0x64, 0x2e, 0x3c);
 			
-			public function HRESULT(ISettingsNamespace *self, ISettingsIdentity** SettingsID) GetIdentity;
-			public function HRESULT(ISettingsNamespace *self, IItemEnumerator** Settings) Settings;
-			public function HRESULT(ISettingsNamespace *self, BOOL PushSettings, ISettingsResult** Result) Save;
-			public function HRESULT(ISettingsNamespace *self, PWSTR Path, ISettingsItem** Setting) GetSettingByPath;
-			public function HRESULT(ISettingsNamespace *self, PWSTR Path, ISettingsItem** Setting) CreateSettingByPath;
-			public function HRESULT(ISettingsNamespace *self, PWSTR Path) RemoveSettingByPath;
-			public function HRESULT(ISettingsNamespace *self, PWSTR Name, VARIANT* Value) GetAttribute;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISettingsNamespace *self, ISettingsIdentity** SettingsID) GetIdentity;
+				public function HRESULT(ISettingsNamespace *self, IItemEnumerator** Settings) Settings;
+				public function HRESULT(ISettingsNamespace *self, BOOL PushSettings, ISettingsResult** Result) Save;
+				public function HRESULT(ISettingsNamespace *self, PWSTR Path, ISettingsItem** Setting) GetSettingByPath;
+				public function HRESULT(ISettingsNamespace *self, PWSTR Path, ISettingsItem** Setting) CreateSettingByPath;
+				public function HRESULT(ISettingsNamespace *self, PWSTR Path) RemoveSettingByPath;
+				public function HRESULT(ISettingsNamespace *self, PWSTR Name, VARIANT* Value) GetAttribute;
+			}
 		}
 		[CRepr]
 		public struct ISettingsResult : IUnknown
 		{
 			public const new Guid IID = .(0x9f7d7bbc, 0x20b3, 0x11da, 0x81, 0xa5, 0x00, 0x30, 0xf1, 0x64, 0x2e, 0x3c);
 			
-			public function HRESULT(ISettingsResult *self, BSTR* description) GetDescription;
-			public function HRESULT(ISettingsResult *self, HRESULT* hrOut) GetErrorCode;
-			public function HRESULT(ISettingsResult *self, BSTR* description) GetContextDescription;
-			public function HRESULT(ISettingsResult *self, uint32* dwLine) GetLine;
-			public function HRESULT(ISettingsResult *self, uint32* dwColumn) GetColumn;
-			public function HRESULT(ISettingsResult *self, BSTR* file) GetSource;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISettingsResult *self, BSTR* description) GetDescription;
+				public function HRESULT(ISettingsResult *self, HRESULT* hrOut) GetErrorCode;
+				public function HRESULT(ISettingsResult *self, BSTR* description) GetContextDescription;
+				public function HRESULT(ISettingsResult *self, uint32* dwLine) GetLine;
+				public function HRESULT(ISettingsResult *self, uint32* dwColumn) GetColumn;
+				public function HRESULT(ISettingsResult *self, BSTR* file) GetSource;
+			}
 		}
 		[CRepr]
 		public struct ISettingsContext : IUnknown
 		{
 			public const new Guid IID = .(0x9f7d7bbd, 0x20b3, 0x11da, 0x81, 0xa5, 0x00, 0x30, 0xf1, 0x64, 0x2e, 0x3c);
 			
-			public function HRESULT(ISettingsContext *self, IStream* pStream, ITargetInfo* pTarget) Serialize;
-			public function HRESULT(ISettingsContext *self, IStream* pStream, ITargetInfo* pTarget, ISettingsResult*** pppResults, uint* pcResultCount) Deserialize;
-			public function HRESULT(ISettingsContext *self, void* pUserData) SetUserData;
-			public function HRESULT(ISettingsContext *self, void** pUserData) GetUserData;
-			public function HRESULT(ISettingsContext *self, IItemEnumerator** ppNamespaceIds) GetNamespaces;
-			public function HRESULT(ISettingsContext *self, ISettingsIdentity* pIdentity, IItemEnumerator** ppAddedSettings, IItemEnumerator** ppModifiedSettings, IItemEnumerator** ppDeletedSettings) GetStoredSettings;
-			public function HRESULT(ISettingsContext *self, ISettingsIdentity* pIdentity, PWSTR pwzSetting) RevertSetting;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISettingsContext *self, IStream* pStream, ITargetInfo* pTarget) Serialize;
+				public function HRESULT(ISettingsContext *self, IStream* pStream, ITargetInfo* pTarget, ISettingsResult*** pppResults, uint* pcResultCount) Deserialize;
+				public function HRESULT(ISettingsContext *self, void* pUserData) SetUserData;
+				public function HRESULT(ISettingsContext *self, void** pUserData) GetUserData;
+				public function HRESULT(ISettingsContext *self, IItemEnumerator** ppNamespaceIds) GetNamespaces;
+				public function HRESULT(ISettingsContext *self, ISettingsIdentity* pIdentity, IItemEnumerator** ppAddedSettings, IItemEnumerator** ppModifiedSettings, IItemEnumerator** ppDeletedSettings) GetStoredSettings;
+				public function HRESULT(ISettingsContext *self, ISettingsIdentity* pIdentity, PWSTR pwzSetting) RevertSetting;
+			}
 		}
 		
 	}

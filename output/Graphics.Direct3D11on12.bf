@@ -27,24 +27,39 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x85611e73, 0x70a9, 0x490e, 0x96, 0x14, 0xa9, 0xe3, 0x02, 0x77, 0x79, 0x04);
 			
-			public function HRESULT(ID3D11On12Device *self, IUnknown* pResource12, D3D11_RESOURCE_FLAGS* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, Guid* riid, void** ppResource11) CreateWrappedResource;
-			public function void(ID3D11On12Device *self, ID3D11Resource** ppResources, uint32 NumResources) ReleaseWrappedResources;
-			public function void(ID3D11On12Device *self, ID3D11Resource** ppResources, uint32 NumResources) AcquireWrappedResources;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ID3D11On12Device *self, IUnknown* pResource12, D3D11_RESOURCE_FLAGS* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, Guid* riid, void** ppResource11) CreateWrappedResource;
+				public function void(ID3D11On12Device *self, ID3D11Resource** ppResources, uint32 NumResources) ReleaseWrappedResources;
+				public function void(ID3D11On12Device *self, ID3D11Resource** ppResources, uint32 NumResources) AcquireWrappedResources;
+			}
 		}
 		[CRepr]
 		public struct ID3D11On12Device1 : ID3D11On12Device
 		{
 			public const new Guid IID = .(0xbdb64df4, 0xea2f, 0x4c70, 0xb8, 0x61, 0xaa, 0xab, 0x12, 0x58, 0xbb, 0x5d);
 			
-			public function HRESULT(ID3D11On12Device1 *self, Guid* riid, void** ppvDevice) GetD3D12Device;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID3D11On12Device.VTable
+			{
+				public function HRESULT(ID3D11On12Device1 *self, Guid* riid, void** ppvDevice) GetD3D12Device;
+			}
 		}
 		[CRepr]
 		public struct ID3D11On12Device2 : ID3D11On12Device1
 		{
 			public const new Guid IID = .(0xdc90f331, 0x4740, 0x43fa, 0x86, 0x6e, 0x67, 0xf1, 0x2c, 0xb5, 0x82, 0x23);
 			
-			public function HRESULT(ID3D11On12Device2 *self, ID3D11Resource* pResource11, ID3D12CommandQueue* pCommandQueue, Guid* riid, void** ppvResource12) UnwrapUnderlyingResource;
-			public function HRESULT(ID3D11On12Device2 *self, ID3D11Resource* pResource11, uint32 NumSync, uint64* pSignalValues, ID3D12Fence** ppFences) ReturnUnderlyingResource;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID3D11On12Device1.VTable
+			{
+				public function HRESULT(ID3D11On12Device2 *self, ID3D11Resource* pResource11, ID3D12CommandQueue* pCommandQueue, Guid* riid, void** ppvResource12) UnwrapUnderlyingResource;
+				public function HRESULT(ID3D11On12Device2 *self, ID3D11Resource* pResource11, uint32 NumSync, uint64* pSignalValues, ID3D12Fence** ppFences) ReturnUnderlyingResource;
+			}
 		}
 		
 		// --- Functions ---

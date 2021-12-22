@@ -282,129 +282,209 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4e997f73, 0xb71f, 0x4798, 0x87, 0x3b, 0xed, 0x7d, 0xfc, 0xf1, 0x5b, 0x4d);
 			
-			public function HRESULT(IAudioMediaType *self, BOOL* pfCompressed) IsCompressedFormat;
-			public function HRESULT(IAudioMediaType *self, IAudioMediaType* pIAudioType, uint32* pdwFlags) IsEqual;
-			public function WAVEFORMATEX*(IAudioMediaType *self) GetAudioFormat;
-			public function HRESULT(IAudioMediaType *self, UNCOMPRESSEDAUDIOFORMAT* pUncompressedAudioFormat) GetUncompressedAudioFormat;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAudioMediaType *self, BOOL* pfCompressed) IsCompressedFormat;
+				public function HRESULT(IAudioMediaType *self, IAudioMediaType* pIAudioType, uint32* pdwFlags) IsEqual;
+				public function WAVEFORMATEX*(IAudioMediaType *self) GetAudioFormat;
+				public function HRESULT(IAudioMediaType *self, UNCOMPRESSEDAUDIOFORMAT* pUncompressedAudioFormat) GetUncompressedAudioFormat;
+			}
 		}
 		[CRepr]
 		public struct IAudioProcessingObjectRT : IUnknown
 		{
 			public const new Guid IID = .(0x9e1d6a6d, 0xddbc, 0x4e95, 0xa4, 0xc7, 0xad, 0x64, 0xba, 0x37, 0x84, 0x6c);
 			
-			public function void(IAudioProcessingObjectRT *self, uint32 u32NumInputConnections, APO_CONNECTION_PROPERTY** ppInputConnections, uint32 u32NumOutputConnections, APO_CONNECTION_PROPERTY** ppOutputConnections) APOProcess;
-			public function uint32(IAudioProcessingObjectRT *self, uint32 u32OutputFrameCount) CalcInputFrames;
-			public function uint32(IAudioProcessingObjectRT *self, uint32 u32InputFrameCount) CalcOutputFrames;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function void(IAudioProcessingObjectRT *self, uint32 u32NumInputConnections, APO_CONNECTION_PROPERTY** ppInputConnections, uint32 u32NumOutputConnections, APO_CONNECTION_PROPERTY** ppOutputConnections) APOProcess;
+				public function uint32(IAudioProcessingObjectRT *self, uint32 u32OutputFrameCount) CalcInputFrames;
+				public function uint32(IAudioProcessingObjectRT *self, uint32 u32InputFrameCount) CalcOutputFrames;
+			}
 		}
 		[CRepr]
 		public struct IAudioProcessingObjectVBR : IUnknown
 		{
 			public const new Guid IID = .(0x7ba1db8f, 0x78ad, 0x49cd, 0x95, 0x91, 0xf7, 0x9d, 0x80, 0xa1, 0x7c, 0x81);
 			
-			public function HRESULT(IAudioProcessingObjectVBR *self, uint32 u32MaxOutputFrameCount, uint32* pu32InputFrameCount) CalcMaxInputFrames;
-			public function HRESULT(IAudioProcessingObjectVBR *self, uint32 u32MaxInputFrameCount, uint32* pu32OutputFrameCount) CalcMaxOutputFrames;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAudioProcessingObjectVBR *self, uint32 u32MaxOutputFrameCount, uint32* pu32InputFrameCount) CalcMaxInputFrames;
+				public function HRESULT(IAudioProcessingObjectVBR *self, uint32 u32MaxInputFrameCount, uint32* pu32OutputFrameCount) CalcMaxOutputFrames;
+			}
 		}
 		[CRepr]
 		public struct IAudioProcessingObjectConfiguration : IUnknown
 		{
 			public const new Guid IID = .(0x0e5ed805, 0xaba6, 0x49c3, 0x8f, 0x9a, 0x2b, 0x8c, 0x88, 0x9c, 0x4f, 0xa8);
 			
-			public function HRESULT(IAudioProcessingObjectConfiguration *self, uint32 u32NumInputConnections, APO_CONNECTION_DESCRIPTOR** ppInputConnections, uint32 u32NumOutputConnections, APO_CONNECTION_DESCRIPTOR** ppOutputConnections) LockForProcess;
-			public function HRESULT(IAudioProcessingObjectConfiguration *self) UnlockForProcess;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAudioProcessingObjectConfiguration *self, uint32 u32NumInputConnections, APO_CONNECTION_DESCRIPTOR** ppInputConnections, uint32 u32NumOutputConnections, APO_CONNECTION_DESCRIPTOR** ppOutputConnections) LockForProcess;
+				public function HRESULT(IAudioProcessingObjectConfiguration *self) UnlockForProcess;
+			}
 		}
 		[CRepr]
 		public struct IAudioProcessingObject : IUnknown
 		{
 			public const new Guid IID = .(0xfd7f2b29, 0x24d0, 0x4b5c, 0xb1, 0x77, 0x59, 0x2c, 0x39, 0xf9, 0xca, 0x10);
 			
-			public function HRESULT(IAudioProcessingObject *self) Reset;
-			public function HRESULT(IAudioProcessingObject *self, int64* pTime) GetLatency;
-			public function HRESULT(IAudioProcessingObject *self, APO_REG_PROPERTIES** ppRegProps) GetRegistrationProperties;
-			public function HRESULT(IAudioProcessingObject *self, uint32 cbDataSize, uint8* pbyData) Initialize;
-			public function HRESULT(IAudioProcessingObject *self, IAudioMediaType* pOppositeFormat, IAudioMediaType* pRequestedInputFormat, IAudioMediaType** ppSupportedInputFormat) IsInputFormatSupported;
-			public function HRESULT(IAudioProcessingObject *self, IAudioMediaType* pOppositeFormat, IAudioMediaType* pRequestedOutputFormat, IAudioMediaType** ppSupportedOutputFormat) IsOutputFormatSupported;
-			public function HRESULT(IAudioProcessingObject *self, uint32* pu32ChannelCount) GetInputChannelCount;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAudioProcessingObject *self) Reset;
+				public function HRESULT(IAudioProcessingObject *self, int64* pTime) GetLatency;
+				public function HRESULT(IAudioProcessingObject *self, APO_REG_PROPERTIES** ppRegProps) GetRegistrationProperties;
+				public function HRESULT(IAudioProcessingObject *self, uint32 cbDataSize, uint8* pbyData) Initialize;
+				public function HRESULT(IAudioProcessingObject *self, IAudioMediaType* pOppositeFormat, IAudioMediaType* pRequestedInputFormat, IAudioMediaType** ppSupportedInputFormat) IsInputFormatSupported;
+				public function HRESULT(IAudioProcessingObject *self, IAudioMediaType* pOppositeFormat, IAudioMediaType* pRequestedOutputFormat, IAudioMediaType** ppSupportedOutputFormat) IsOutputFormatSupported;
+				public function HRESULT(IAudioProcessingObject *self, uint32* pu32ChannelCount) GetInputChannelCount;
+			}
 		}
 		[CRepr]
 		public struct IAudioDeviceModulesClient : IUnknown
 		{
 			public const new Guid IID = .(0x98f37dac, 0xd0b6, 0x49f5, 0x89, 0x6a, 0xaa, 0x4d, 0x16, 0x9a, 0x4c, 0x48);
 			
-			public function HRESULT(IAudioDeviceModulesClient *self, IUnknown* pAudioDeviceModulesManager) SetAudioDeviceModulesManager;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAudioDeviceModulesClient *self, IUnknown* pAudioDeviceModulesManager) SetAudioDeviceModulesManager;
+			}
 		}
 		[CRepr]
 		public struct IAudioSystemEffects : IUnknown
 		{
 			public const new Guid IID = .(0x5fa00f27, 0xadd6, 0x499a, 0x8a, 0x9d, 0x6b, 0x98, 0x52, 0x1f, 0xa7, 0x5b);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IAudioSystemEffects2 : IAudioSystemEffects
 		{
 			public const new Guid IID = .(0xbafe99d2, 0x7436, 0x44ce, 0x9e, 0x0e, 0x4d, 0x89, 0xaf, 0xbf, 0xff, 0x56);
 			
-			public function HRESULT(IAudioSystemEffects2 *self, Guid** ppEffectsIds, uint32* pcEffects, HANDLE Event) GetEffectsList;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IAudioSystemEffects.VTable
+			{
+				public function HRESULT(IAudioSystemEffects2 *self, Guid** ppEffectsIds, uint32* pcEffects, HANDLE Event) GetEffectsList;
+			}
 		}
 		[CRepr]
 		public struct IAudioSystemEffectsCustomFormats : IUnknown
 		{
 			public const new Guid IID = .(0xb1176e34, 0xbb7f, 0x4f05, 0xbe, 0xbd, 0x1b, 0x18, 0xa5, 0x34, 0xe0, 0x97);
 			
-			public function HRESULT(IAudioSystemEffectsCustomFormats *self, uint32* pcFormats) GetFormatCount;
-			public function HRESULT(IAudioSystemEffectsCustomFormats *self, uint32 nFormat, IAudioMediaType** ppFormat) GetFormat;
-			public function HRESULT(IAudioSystemEffectsCustomFormats *self, uint32 nFormat, PWSTR* ppwstrFormatRep) GetFormatRepresentation;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAudioSystemEffectsCustomFormats *self, uint32* pcFormats) GetFormatCount;
+				public function HRESULT(IAudioSystemEffectsCustomFormats *self, uint32 nFormat, IAudioMediaType** ppFormat) GetFormat;
+				public function HRESULT(IAudioSystemEffectsCustomFormats *self, uint32 nFormat, PWSTR* ppwstrFormatRep) GetFormatRepresentation;
+			}
 		}
 		[CRepr]
 		public struct IApoAuxiliaryInputConfiguration : IUnknown
 		{
 			public const new Guid IID = .(0x4ceb0aab, 0xfa19, 0x48ed, 0xa8, 0x57, 0x87, 0x77, 0x1a, 0xe1, 0xb7, 0x68);
 			
-			public function HRESULT(IApoAuxiliaryInputConfiguration *self, uint32 dwInputId, uint32 cbDataSize, uint8* pbyData, APO_CONNECTION_DESCRIPTOR* pInputConnection) AddAuxiliaryInput;
-			public function HRESULT(IApoAuxiliaryInputConfiguration *self, uint32 dwInputId) RemoveAuxiliaryInput;
-			public function HRESULT(IApoAuxiliaryInputConfiguration *self, IAudioMediaType* pRequestedInputFormat, IAudioMediaType** ppSupportedInputFormat) IsInputFormatSupported;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IApoAuxiliaryInputConfiguration *self, uint32 dwInputId, uint32 cbDataSize, uint8* pbyData, APO_CONNECTION_DESCRIPTOR* pInputConnection) AddAuxiliaryInput;
+				public function HRESULT(IApoAuxiliaryInputConfiguration *self, uint32 dwInputId) RemoveAuxiliaryInput;
+				public function HRESULT(IApoAuxiliaryInputConfiguration *self, IAudioMediaType* pRequestedInputFormat, IAudioMediaType** ppSupportedInputFormat) IsInputFormatSupported;
+			}
 		}
 		[CRepr]
 		public struct IApoAuxiliaryInputRT : IUnknown
 		{
 			public const new Guid IID = .(0xf851809c, 0xc177, 0x49a0, 0xb1, 0xb2, 0xb6, 0x6f, 0x01, 0x79, 0x43, 0xab);
 			
-			public function void(IApoAuxiliaryInputRT *self, uint32 dwInputId, APO_CONNECTION_PROPERTY* pInputConnection) AcceptInput;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function void(IApoAuxiliaryInputRT *self, uint32 dwInputId, APO_CONNECTION_PROPERTY* pInputConnection) AcceptInput;
+			}
 		}
 		[CRepr]
 		public struct IApoAcousticEchoCancellation : IUnknown
 		{
 			public const new Guid IID = .(0x25385759, 0x3236, 0x4101, 0xa9, 0x43, 0x25, 0x69, 0x3d, 0xfb, 0x5d, 0x2d);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IAudioSystemEffects3 : IAudioSystemEffects2
 		{
 			public const new Guid IID = .(0xc58b31cd, 0xfc6a, 0x4255, 0xbc, 0x1f, 0xad, 0x29, 0xbb, 0x0a, 0x4a, 0x17);
 			
-			public function HRESULT(IAudioSystemEffects3 *self, AUDIO_SYSTEMEFFECT** effects, uint32* numEffects, HANDLE event) GetControllableSystemEffectsList;
-			public function HRESULT(IAudioSystemEffects3 *self, Guid effectId, AUDIO_SYSTEMEFFECT_STATE state) SetAudioSystemEffectState;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IAudioSystemEffects2.VTable
+			{
+				public function HRESULT(IAudioSystemEffects3 *self, AUDIO_SYSTEMEFFECT** effects, uint32* numEffects, HANDLE event) GetControllableSystemEffectsList;
+				public function HRESULT(IAudioSystemEffects3 *self, Guid effectId, AUDIO_SYSTEMEFFECT_STATE state) SetAudioSystemEffectState;
+			}
 		}
 		[CRepr]
 		public struct IAudioProcessingObjectRTQueueService : IUnknown
 		{
 			public const new Guid IID = .(0xacd65e2f, 0x955b, 0x4b57, 0xb9, 0xbf, 0xac, 0x29, 0x7b, 0xb7, 0x52, 0xc9);
 			
-			public function HRESULT(IAudioProcessingObjectRTQueueService *self, uint32* workQueueId) GetRealTimeWorkQueue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAudioProcessingObjectRTQueueService *self, uint32* workQueueId) GetRealTimeWorkQueue;
+			}
 		}
 		[CRepr]
 		public struct IAudioProcessingObjectLoggingService : IUnknown
 		{
 			public const new Guid IID = .(0x698f0107, 0x1745, 0x4708, 0x95, 0xa5, 0xd8, 0x44, 0x78, 0xa6, 0x2a, 0x65);
 			
-			public function void(IAudioProcessingObjectLoggingService *self, APO_LOG_LEVEL level, PWSTR format) ApoLog;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function void(IAudioProcessingObjectLoggingService *self, APO_LOG_LEVEL level, PWSTR format) ApoLog;
+			}
 		}
 		[CRepr]
 		public struct IAudioProcessingObjectNotifications : IUnknown
 		{
 			public const new Guid IID = .(0x56b0c76f, 0x02fd, 0x4b21, 0xa5, 0x2e, 0x9f, 0x82, 0x19, 0xfc, 0x86, 0xe4);
 			
-			public function HRESULT(IAudioProcessingObjectNotifications *self, APO_NOTIFICATION_DESCRIPTOR** apoNotifications, uint32* count) GetApoNotificationRegistrationInfo;
-			public function void(IAudioProcessingObjectNotifications *self, APO_NOTIFICATION* apoNotification) HandleNotification;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAudioProcessingObjectNotifications *self, APO_NOTIFICATION_DESCRIPTOR** apoNotifications, uint32* count) GetApoNotificationRegistrationInfo;
+				public function void(IAudioProcessingObjectNotifications *self, APO_NOTIFICATION* apoNotification) HandleNotification;
+			}
 		}
 		
 	}

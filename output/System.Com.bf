@@ -1265,1129 +1265,1695 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x00000000, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IUnknown *self, Guid* riid, void** ppvObject) QueryInterface;
-			public function uint32(IUnknown *self) AddRef;
-			public function uint32(IUnknown *self) Release;
+			protected VTable* vt;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable
+			{
+				public function HRESULT(IUnknown *self, Guid* riid, void** ppvObject) QueryInterface;
+				public function uint32(IUnknown *self) AddRef;
+				public function uint32(IUnknown *self) Release;
+			}
 		}
 		[CRepr]
 		public struct AsyncIUnknown : IUnknown
 		{
 			public const new Guid IID = .(0x000e0000, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(AsyncIUnknown *self, Guid* riid) Begin_QueryInterface;
-			public function HRESULT(AsyncIUnknown *self, void** ppvObject) Finish_QueryInterface;
-			public function HRESULT(AsyncIUnknown *self) Begin_AddRef;
-			public function uint32(AsyncIUnknown *self) Finish_AddRef;
-			public function HRESULT(AsyncIUnknown *self) Begin_Release;
-			public function uint32(AsyncIUnknown *self) Finish_Release;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(AsyncIUnknown *self, Guid* riid) Begin_QueryInterface;
+				public function HRESULT(AsyncIUnknown *self, void** ppvObject) Finish_QueryInterface;
+				public function HRESULT(AsyncIUnknown *self) Begin_AddRef;
+				public function uint32(AsyncIUnknown *self) Finish_AddRef;
+				public function HRESULT(AsyncIUnknown *self) Begin_Release;
+				public function uint32(AsyncIUnknown *self) Finish_Release;
+			}
 		}
 		[CRepr]
 		public struct IClassFactory : IUnknown
 		{
 			public const new Guid IID = .(0x00000001, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IClassFactory *self, IUnknown* pUnkOuter, Guid* riid, void** ppvObject) CreateInstance;
-			public function HRESULT(IClassFactory *self, BOOL fLock) LockServer;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IClassFactory *self, IUnknown* pUnkOuter, Guid* riid, void** ppvObject) CreateInstance;
+				public function HRESULT(IClassFactory *self, BOOL fLock) LockServer;
+			}
 		}
 		[CRepr]
 		public struct INoMarshal : IUnknown
 		{
 			public const new Guid IID = .(0xecc8691b, 0xc1db, 0x4dc0, 0x85, 0x5e, 0x65, 0xf6, 0xc5, 0x51, 0xaf, 0x49);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IAgileObject : IUnknown
 		{
 			public const new Guid IID = .(0x94ea2b94, 0xe9cc, 0x49e0, 0xc0, 0xff, 0xee, 0x64, 0xca, 0x8f, 0x5b, 0x90);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IActivationFilter : IUnknown
 		{
 			public const new Guid IID = .(0x00000017, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IActivationFilter *self, uint32 dwActivationType, Guid* rclsid, Guid* pReplacementClsId) HandleActivation;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActivationFilter *self, uint32 dwActivationType, Guid* rclsid, Guid* pReplacementClsId) HandleActivation;
+			}
 		}
 		[CRepr]
 		public struct IMalloc : IUnknown
 		{
 			public const new Guid IID = .(0x00000002, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function void*(IMalloc *self, uint cb) Alloc;
-			public function void*(IMalloc *self, void* pv, uint cb) Realloc;
-			public function void(IMalloc *self, void* pv) Free;
-			public function uint(IMalloc *self, void* pv) GetSize;
-			public function int32(IMalloc *self, void* pv) DidAlloc;
-			public function void(IMalloc *self) HeapMinimize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function void*(IMalloc *self, uint cb) Alloc;
+				public function void*(IMalloc *self, void* pv, uint cb) Realloc;
+				public function void(IMalloc *self, void* pv) Free;
+				public function uint(IMalloc *self, void* pv) GetSize;
+				public function int32(IMalloc *self, void* pv) DidAlloc;
+				public function void(IMalloc *self) HeapMinimize;
+			}
 		}
 		[CRepr]
 		public struct IStdMarshalInfo : IUnknown
 		{
 			public const new Guid IID = .(0x00000018, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IStdMarshalInfo *self, uint32 dwDestContext, void* pvDestContext, Guid* pClsid) GetClassForHandler;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IStdMarshalInfo *self, uint32 dwDestContext, void* pvDestContext, Guid* pClsid) GetClassForHandler;
+			}
 		}
 		[CRepr]
 		public struct IExternalConnection : IUnknown
 		{
 			public const new Guid IID = .(0x00000019, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function uint32(IExternalConnection *self, uint32 extconn, uint32 reserved) AddConnection;
-			public function uint32(IExternalConnection *self, uint32 extconn, uint32 reserved, BOOL fLastReleaseCloses) ReleaseConnection;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function uint32(IExternalConnection *self, uint32 extconn, uint32 reserved) AddConnection;
+				public function uint32(IExternalConnection *self, uint32 extconn, uint32 reserved, BOOL fLastReleaseCloses) ReleaseConnection;
+			}
 		}
 		[CRepr]
 		public struct IMultiQI : IUnknown
 		{
 			public const new Guid IID = .(0x00000020, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IMultiQI *self, uint32 cMQIs, MULTI_QI* pMQIs) QueryMultipleInterfaces;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMultiQI *self, uint32 cMQIs, MULTI_QI* pMQIs) QueryMultipleInterfaces;
+			}
 		}
 		[CRepr]
 		public struct AsyncIMultiQI : IUnknown
 		{
 			public const new Guid IID = .(0x000e0020, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(AsyncIMultiQI *self, uint32 cMQIs, MULTI_QI* pMQIs) Begin_QueryMultipleInterfaces;
-			public function HRESULT(AsyncIMultiQI *self, MULTI_QI* pMQIs) Finish_QueryMultipleInterfaces;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(AsyncIMultiQI *self, uint32 cMQIs, MULTI_QI* pMQIs) Begin_QueryMultipleInterfaces;
+				public function HRESULT(AsyncIMultiQI *self, MULTI_QI* pMQIs) Finish_QueryMultipleInterfaces;
+			}
 		}
 		[CRepr]
 		public struct IInternalUnknown : IUnknown
 		{
 			public const new Guid IID = .(0x00000021, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IInternalUnknown *self, Guid* riid, void** ppv) QueryInternalInterface;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInternalUnknown *self, Guid* riid, void** ppv) QueryInternalInterface;
+			}
 		}
 		[CRepr]
 		public struct IEnumUnknown : IUnknown
 		{
 			public const new Guid IID = .(0x00000100, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IEnumUnknown *self, uint32 celt, IUnknown** rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumUnknown *self, uint32 celt) Skip;
-			public function HRESULT(IEnumUnknown *self) Reset;
-			public function HRESULT(IEnumUnknown *self, IEnumUnknown** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumUnknown *self, uint32 celt, IUnknown** rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumUnknown *self, uint32 celt) Skip;
+				public function HRESULT(IEnumUnknown *self) Reset;
+				public function HRESULT(IEnumUnknown *self, IEnumUnknown** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IEnumString : IUnknown
 		{
 			public const new Guid IID = .(0x00000101, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IEnumString *self, uint32 celt, PWSTR* rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumString *self, uint32 celt) Skip;
-			public function HRESULT(IEnumString *self) Reset;
-			public function HRESULT(IEnumString *self, IEnumString** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumString *self, uint32 celt, PWSTR* rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumString *self, uint32 celt) Skip;
+				public function HRESULT(IEnumString *self) Reset;
+				public function HRESULT(IEnumString *self, IEnumString** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct ISequentialStream : IUnknown
 		{
 			public const new Guid IID = .(0x0c733a30, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public function HRESULT(ISequentialStream *self, void* pv, uint32 cb, uint32* pcbRead) Read;
-			public function HRESULT(ISequentialStream *self, void* pv, uint32 cb, uint32* pcbWritten) Write;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISequentialStream *self, void* pv, uint32 cb, uint32* pcbRead) Read;
+				public function HRESULT(ISequentialStream *self, void* pv, uint32 cb, uint32* pcbWritten) Write;
+			}
 		}
 		[CRepr]
 		public struct IStream : ISequentialStream
 		{
 			public const new Guid IID = .(0x0000000c, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IStream *self, LARGE_INTEGER dlibMove, STREAM_SEEK dwOrigin, ULARGE_INTEGER* plibNewPosition) Seek;
-			public function HRESULT(IStream *self, ULARGE_INTEGER libNewSize) SetSize;
-			public function HRESULT(IStream *self, IStream* pstm, ULARGE_INTEGER cb, ULARGE_INTEGER* pcbRead, ULARGE_INTEGER* pcbWritten) CopyTo;
-			public function HRESULT(IStream *self, uint32 grfCommitFlags) Commit;
-			public function HRESULT(IStream *self) Revert;
-			public function HRESULT(IStream *self, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) LockRegion;
-			public function HRESULT(IStream *self, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) UnlockRegion;
-			public function HRESULT(IStream *self, STATSTG* pstatstg, uint32 grfStatFlag) Stat;
-			public function HRESULT(IStream *self, IStream** ppstm) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ISequentialStream.VTable
+			{
+				public function HRESULT(IStream *self, LARGE_INTEGER dlibMove, STREAM_SEEK dwOrigin, ULARGE_INTEGER* plibNewPosition) Seek;
+				public function HRESULT(IStream *self, ULARGE_INTEGER libNewSize) SetSize;
+				public function HRESULT(IStream *self, IStream* pstm, ULARGE_INTEGER cb, ULARGE_INTEGER* pcbRead, ULARGE_INTEGER* pcbWritten) CopyTo;
+				public function HRESULT(IStream *self, uint32 grfCommitFlags) Commit;
+				public function HRESULT(IStream *self) Revert;
+				public function HRESULT(IStream *self, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) LockRegion;
+				public function HRESULT(IStream *self, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) UnlockRegion;
+				public function HRESULT(IStream *self, STATSTG* pstatstg, uint32 grfStatFlag) Stat;
+				public function HRESULT(IStream *self, IStream** ppstm) Clone;
+			}
 		}
 		[CRepr]
 		public struct IRpcChannelBuffer : IUnknown
 		{
 			public const new Guid IID = .(0xd5f56b60, 0x593b, 0x101a, 0xb5, 0x69, 0x08, 0x00, 0x2b, 0x2d, 0xbf, 0x7a);
 			
-			public function HRESULT(IRpcChannelBuffer *self, RPCOLEMESSAGE* pMessage, Guid* riid) GetBuffer;
-			public function HRESULT(IRpcChannelBuffer *self, RPCOLEMESSAGE* pMessage, uint32* pStatus) SendReceive;
-			public function HRESULT(IRpcChannelBuffer *self, RPCOLEMESSAGE* pMessage) FreeBuffer;
-			public function HRESULT(IRpcChannelBuffer *self, uint32* pdwDestContext, void** ppvDestContext) GetDestCtx;
-			public function HRESULT(IRpcChannelBuffer *self) IsConnected;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRpcChannelBuffer *self, RPCOLEMESSAGE* pMessage, Guid* riid) GetBuffer;
+				public function HRESULT(IRpcChannelBuffer *self, RPCOLEMESSAGE* pMessage, uint32* pStatus) SendReceive;
+				public function HRESULT(IRpcChannelBuffer *self, RPCOLEMESSAGE* pMessage) FreeBuffer;
+				public function HRESULT(IRpcChannelBuffer *self, uint32* pdwDestContext, void** ppvDestContext) GetDestCtx;
+				public function HRESULT(IRpcChannelBuffer *self) IsConnected;
+			}
 		}
 		[CRepr]
 		public struct IRpcChannelBuffer2 : IRpcChannelBuffer
 		{
 			public const new Guid IID = .(0x594f31d0, 0x7f19, 0x11d0, 0xb1, 0x94, 0x00, 0xa0, 0xc9, 0x0d, 0xc8, 0xbf);
 			
-			public function HRESULT(IRpcChannelBuffer2 *self, uint32* pdwVersion) GetProtocolVersion;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IRpcChannelBuffer.VTable
+			{
+				public function HRESULT(IRpcChannelBuffer2 *self, uint32* pdwVersion) GetProtocolVersion;
+			}
 		}
 		[CRepr]
 		public struct IAsyncRpcChannelBuffer : IRpcChannelBuffer2
 		{
 			public const new Guid IID = .(0xa5029fb6, 0x3c34, 0x11d1, 0x9c, 0x99, 0x00, 0xc0, 0x4f, 0xb9, 0x98, 0xaa);
 			
-			public function HRESULT(IAsyncRpcChannelBuffer *self, RPCOLEMESSAGE* pMsg, ISynchronize* pSync, uint32* pulStatus) Send;
-			public function HRESULT(IAsyncRpcChannelBuffer *self, RPCOLEMESSAGE* pMsg, uint32* pulStatus) Receive;
-			public function HRESULT(IAsyncRpcChannelBuffer *self, RPCOLEMESSAGE* pMsg, uint32* pdwDestContext, void** ppvDestContext) GetDestCtxEx;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IRpcChannelBuffer2.VTable
+			{
+				public function HRESULT(IAsyncRpcChannelBuffer *self, RPCOLEMESSAGE* pMsg, ISynchronize* pSync, uint32* pulStatus) Send;
+				public function HRESULT(IAsyncRpcChannelBuffer *self, RPCOLEMESSAGE* pMsg, uint32* pulStatus) Receive;
+				public function HRESULT(IAsyncRpcChannelBuffer *self, RPCOLEMESSAGE* pMsg, uint32* pdwDestContext, void** ppvDestContext) GetDestCtxEx;
+			}
 		}
 		[CRepr]
 		public struct IRpcChannelBuffer3 : IRpcChannelBuffer2
 		{
 			public const new Guid IID = .(0x25b15600, 0x0115, 0x11d0, 0xbf, 0x0d, 0x00, 0xaa, 0x00, 0xb8, 0xdf, 0xd2);
 			
-			public function HRESULT(IRpcChannelBuffer3 *self, RPCOLEMESSAGE* pMsg, uint32* pulStatus) Send;
-			public function HRESULT(IRpcChannelBuffer3 *self, RPCOLEMESSAGE* pMsg, uint32 ulSize, uint32* pulStatus) Receive;
-			public function HRESULT(IRpcChannelBuffer3 *self, RPCOLEMESSAGE* pMsg) Cancel;
-			public function HRESULT(IRpcChannelBuffer3 *self, RPCOLEMESSAGE* pMsg, Guid* riid, void** pInterface) GetCallContext;
-			public function HRESULT(IRpcChannelBuffer3 *self, RPCOLEMESSAGE* pMsg, uint32* pdwDestContext, void** ppvDestContext) GetDestCtxEx;
-			public function HRESULT(IRpcChannelBuffer3 *self, RPCOLEMESSAGE* pMsg, uint32* pState) GetState;
-			public function HRESULT(IRpcChannelBuffer3 *self, RPCOLEMESSAGE* pMsg, IAsyncManager* pAsyncMgr) RegisterAsync;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IRpcChannelBuffer2.VTable
+			{
+				public function HRESULT(IRpcChannelBuffer3 *self, RPCOLEMESSAGE* pMsg, uint32* pulStatus) Send;
+				public function HRESULT(IRpcChannelBuffer3 *self, RPCOLEMESSAGE* pMsg, uint32 ulSize, uint32* pulStatus) Receive;
+				public function HRESULT(IRpcChannelBuffer3 *self, RPCOLEMESSAGE* pMsg) Cancel;
+				public function HRESULT(IRpcChannelBuffer3 *self, RPCOLEMESSAGE* pMsg, Guid* riid, void** pInterface) GetCallContext;
+				public function HRESULT(IRpcChannelBuffer3 *self, RPCOLEMESSAGE* pMsg, uint32* pdwDestContext, void** ppvDestContext) GetDestCtxEx;
+				public function HRESULT(IRpcChannelBuffer3 *self, RPCOLEMESSAGE* pMsg, uint32* pState) GetState;
+				public function HRESULT(IRpcChannelBuffer3 *self, RPCOLEMESSAGE* pMsg, IAsyncManager* pAsyncMgr) RegisterAsync;
+			}
 		}
 		[CRepr]
 		public struct IRpcSyntaxNegotiate : IUnknown
 		{
 			public const new Guid IID = .(0x58a08519, 0x24c8, 0x4935, 0xb4, 0x82, 0x3f, 0xd8, 0x23, 0x33, 0x3a, 0x4f);
 			
-			public function HRESULT(IRpcSyntaxNegotiate *self, RPCOLEMESSAGE* pMsg) NegotiateSyntax;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRpcSyntaxNegotiate *self, RPCOLEMESSAGE* pMsg) NegotiateSyntax;
+			}
 		}
 		[CRepr]
 		public struct IRpcProxyBuffer : IUnknown
 		{
 			public const new Guid IID = .(0xd5f56a34, 0x593b, 0x101a, 0xb5, 0x69, 0x08, 0x00, 0x2b, 0x2d, 0xbf, 0x7a);
 			
-			public function HRESULT(IRpcProxyBuffer *self, IRpcChannelBuffer* pRpcChannelBuffer) Connect;
-			public function void(IRpcProxyBuffer *self) Disconnect;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRpcProxyBuffer *self, IRpcChannelBuffer* pRpcChannelBuffer) Connect;
+				public function void(IRpcProxyBuffer *self) Disconnect;
+			}
 		}
 		[CRepr]
 		public struct IRpcStubBuffer : IUnknown
 		{
 			public const new Guid IID = .(0xd5f56afc, 0x593b, 0x101a, 0xb5, 0x69, 0x08, 0x00, 0x2b, 0x2d, 0xbf, 0x7a);
 			
-			public function HRESULT(IRpcStubBuffer *self, IUnknown* pUnkServer) Connect;
-			public function void(IRpcStubBuffer *self) Disconnect;
-			public function HRESULT(IRpcStubBuffer *self, RPCOLEMESSAGE* _prpcmsg, IRpcChannelBuffer* _pRpcChannelBuffer) Invoke;
-			public function IRpcStubBuffer*(IRpcStubBuffer *self, Guid* riid) IsIIDSupported;
-			public function uint32(IRpcStubBuffer *self) CountRefs;
-			public function HRESULT(IRpcStubBuffer *self, void** ppv) DebugServerQueryInterface;
-			public function void(IRpcStubBuffer *self, void* pv) DebugServerRelease;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRpcStubBuffer *self, IUnknown* pUnkServer) Connect;
+				public function void(IRpcStubBuffer *self) Disconnect;
+				public function HRESULT(IRpcStubBuffer *self, RPCOLEMESSAGE* _prpcmsg, IRpcChannelBuffer* _pRpcChannelBuffer) Invoke;
+				public function IRpcStubBuffer*(IRpcStubBuffer *self, Guid* riid) IsIIDSupported;
+				public function uint32(IRpcStubBuffer *self) CountRefs;
+				public function HRESULT(IRpcStubBuffer *self, void** ppv) DebugServerQueryInterface;
+				public function void(IRpcStubBuffer *self, void* pv) DebugServerRelease;
+			}
 		}
 		[CRepr]
 		public struct IPSFactoryBuffer : IUnknown
 		{
 			public const new Guid IID = .(0xd5f569d0, 0x593b, 0x101a, 0xb5, 0x69, 0x08, 0x00, 0x2b, 0x2d, 0xbf, 0x7a);
 			
-			public function HRESULT(IPSFactoryBuffer *self, IUnknown* pUnkOuter, Guid* riid, IRpcProxyBuffer** ppProxy, void** ppv) CreateProxy;
-			public function HRESULT(IPSFactoryBuffer *self, Guid* riid, IUnknown* pUnkServer, IRpcStubBuffer** ppStub) CreateStub;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPSFactoryBuffer *self, IUnknown* pUnkOuter, Guid* riid, IRpcProxyBuffer** ppProxy, void** ppv) CreateProxy;
+				public function HRESULT(IPSFactoryBuffer *self, Guid* riid, IUnknown* pUnkServer, IRpcStubBuffer** ppStub) CreateStub;
+			}
 		}
 		[CRepr]
 		public struct IChannelHook : IUnknown
 		{
 			public const new Guid IID = .(0x1008c4a0, 0x7613, 0x11cf, 0x9a, 0xf1, 0x00, 0x20, 0xaf, 0x6e, 0x72, 0xf4);
 			
-			public function void(IChannelHook *self, Guid* uExtent, Guid* riid, uint32* pDataSize) ClientGetSize;
-			public function void(IChannelHook *self, Guid* uExtent, Guid* riid, uint32* pDataSize, void* pDataBuffer) ClientFillBuffer;
-			public function void(IChannelHook *self, Guid* uExtent, Guid* riid, uint32 cbDataSize, void* pDataBuffer, uint32 lDataRep, HRESULT hrFault) ClientNotify;
-			public function void(IChannelHook *self, Guid* uExtent, Guid* riid, uint32 cbDataSize, void* pDataBuffer, uint32 lDataRep) ServerNotify;
-			public function void(IChannelHook *self, Guid* uExtent, Guid* riid, HRESULT hrFault, uint32* pDataSize) ServerGetSize;
-			public function void(IChannelHook *self, Guid* uExtent, Guid* riid, uint32* pDataSize, void* pDataBuffer, HRESULT hrFault) ServerFillBuffer;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function void(IChannelHook *self, Guid* uExtent, Guid* riid, uint32* pDataSize) ClientGetSize;
+				public function void(IChannelHook *self, Guid* uExtent, Guid* riid, uint32* pDataSize, void* pDataBuffer) ClientFillBuffer;
+				public function void(IChannelHook *self, Guid* uExtent, Guid* riid, uint32 cbDataSize, void* pDataBuffer, uint32 lDataRep, HRESULT hrFault) ClientNotify;
+				public function void(IChannelHook *self, Guid* uExtent, Guid* riid, uint32 cbDataSize, void* pDataBuffer, uint32 lDataRep) ServerNotify;
+				public function void(IChannelHook *self, Guid* uExtent, Guid* riid, HRESULT hrFault, uint32* pDataSize) ServerGetSize;
+				public function void(IChannelHook *self, Guid* uExtent, Guid* riid, uint32* pDataSize, void* pDataBuffer, HRESULT hrFault) ServerFillBuffer;
+			}
 		}
 		[CRepr]
 		public struct IClientSecurity : IUnknown
 		{
 			public const new Guid IID = .(0x0000013d, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IClientSecurity *self, IUnknown* pProxy, uint32* pAuthnSvc, uint32* pAuthzSvc, uint16** pServerPrincName, RPC_C_AUTHN_LEVEL* pAuthnLevel, RPC_C_IMP_LEVEL* pImpLevel, void** pAuthInfo, EOLE_AUTHENTICATION_CAPABILITIES* pCapabilites) QueryBlanket;
-			public function HRESULT(IClientSecurity *self, IUnknown* pProxy, uint32 dwAuthnSvc, uint32 dwAuthzSvc, PWSTR pServerPrincName, RPC_C_AUTHN_LEVEL dwAuthnLevel, RPC_C_IMP_LEVEL dwImpLevel, void* pAuthInfo, EOLE_AUTHENTICATION_CAPABILITIES dwCapabilities) SetBlanket;
-			public function HRESULT(IClientSecurity *self, IUnknown* pProxy, IUnknown** ppCopy) CopyProxy;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IClientSecurity *self, IUnknown* pProxy, uint32* pAuthnSvc, uint32* pAuthzSvc, uint16** pServerPrincName, RPC_C_AUTHN_LEVEL* pAuthnLevel, RPC_C_IMP_LEVEL* pImpLevel, void** pAuthInfo, EOLE_AUTHENTICATION_CAPABILITIES* pCapabilites) QueryBlanket;
+				public function HRESULT(IClientSecurity *self, IUnknown* pProxy, uint32 dwAuthnSvc, uint32 dwAuthzSvc, PWSTR pServerPrincName, RPC_C_AUTHN_LEVEL dwAuthnLevel, RPC_C_IMP_LEVEL dwImpLevel, void* pAuthInfo, EOLE_AUTHENTICATION_CAPABILITIES dwCapabilities) SetBlanket;
+				public function HRESULT(IClientSecurity *self, IUnknown* pProxy, IUnknown** ppCopy) CopyProxy;
+			}
 		}
 		[CRepr]
 		public struct IServerSecurity : IUnknown
 		{
 			public const new Guid IID = .(0x0000013e, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IServerSecurity *self, uint32* pAuthnSvc, uint32* pAuthzSvc, uint16** pServerPrincName, uint32* pAuthnLevel, uint32* pImpLevel, void** pPrivs, uint32* pCapabilities) QueryBlanket;
-			public function HRESULT(IServerSecurity *self) ImpersonateClient;
-			public function HRESULT(IServerSecurity *self) RevertToSelf;
-			public function BOOL(IServerSecurity *self) IsImpersonating;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IServerSecurity *self, uint32* pAuthnSvc, uint32* pAuthzSvc, uint16** pServerPrincName, uint32* pAuthnLevel, uint32* pImpLevel, void** pPrivs, uint32* pCapabilities) QueryBlanket;
+				public function HRESULT(IServerSecurity *self) ImpersonateClient;
+				public function HRESULT(IServerSecurity *self) RevertToSelf;
+				public function BOOL(IServerSecurity *self) IsImpersonating;
+			}
 		}
 		[CRepr]
 		public struct IRpcOptions : IUnknown
 		{
 			public const new Guid IID = .(0x00000144, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IRpcOptions *self, IUnknown* pPrx, RPCOPT_PROPERTIES dwProperty, uint dwValue) Set;
-			public function HRESULT(IRpcOptions *self, IUnknown* pPrx, RPCOPT_PROPERTIES dwProperty, uint* pdwValue) Query;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRpcOptions *self, IUnknown* pPrx, RPCOPT_PROPERTIES dwProperty, uint dwValue) Set;
+				public function HRESULT(IRpcOptions *self, IUnknown* pPrx, RPCOPT_PROPERTIES dwProperty, uint* pdwValue) Query;
+			}
 		}
 		[CRepr]
 		public struct IGlobalOptions : IUnknown
 		{
 			public const new Guid IID = .(0x0000015b, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IGlobalOptions *self, GLOBALOPT_PROPERTIES dwProperty, uint dwValue) Set;
-			public function HRESULT(IGlobalOptions *self, GLOBALOPT_PROPERTIES dwProperty, uint* pdwValue) Query;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IGlobalOptions *self, GLOBALOPT_PROPERTIES dwProperty, uint dwValue) Set;
+				public function HRESULT(IGlobalOptions *self, GLOBALOPT_PROPERTIES dwProperty, uint* pdwValue) Query;
+			}
 		}
 		[CRepr]
 		public struct ISurrogate : IUnknown
 		{
 			public const new Guid IID = .(0x00000022, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(ISurrogate *self, Guid* Clsid) LoadDllServer;
-			public function HRESULT(ISurrogate *self) FreeSurrogate;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISurrogate *self, Guid* Clsid) LoadDllServer;
+				public function HRESULT(ISurrogate *self) FreeSurrogate;
+			}
 		}
 		[CRepr]
 		public struct IGlobalInterfaceTable : IUnknown
 		{
 			public const new Guid IID = .(0x00000146, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IGlobalInterfaceTable *self, IUnknown* pUnk, Guid* riid, uint32* pdwCookie) RegisterInterfaceInGlobal;
-			public function HRESULT(IGlobalInterfaceTable *self, uint32 dwCookie) RevokeInterfaceFromGlobal;
-			public function HRESULT(IGlobalInterfaceTable *self, uint32 dwCookie, Guid* riid, void** ppv) GetInterfaceFromGlobal;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IGlobalInterfaceTable *self, IUnknown* pUnk, Guid* riid, uint32* pdwCookie) RegisterInterfaceInGlobal;
+				public function HRESULT(IGlobalInterfaceTable *self, uint32 dwCookie) RevokeInterfaceFromGlobal;
+				public function HRESULT(IGlobalInterfaceTable *self, uint32 dwCookie, Guid* riid, void** ppv) GetInterfaceFromGlobal;
+			}
 		}
 		[CRepr]
 		public struct ISynchronize : IUnknown
 		{
 			public const new Guid IID = .(0x00000030, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(ISynchronize *self, uint32 dwFlags, uint32 dwMilliseconds) Wait;
-			public function HRESULT(ISynchronize *self) Signal;
-			public function HRESULT(ISynchronize *self) Reset;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISynchronize *self, uint32 dwFlags, uint32 dwMilliseconds) Wait;
+				public function HRESULT(ISynchronize *self) Signal;
+				public function HRESULT(ISynchronize *self) Reset;
+			}
 		}
 		[CRepr]
 		public struct ISynchronizeHandle : IUnknown
 		{
 			public const new Guid IID = .(0x00000031, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(ISynchronizeHandle *self, HANDLE* ph) GetHandle;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISynchronizeHandle *self, HANDLE* ph) GetHandle;
+			}
 		}
 		[CRepr]
 		public struct ISynchronizeEvent : ISynchronizeHandle
 		{
 			public const new Guid IID = .(0x00000032, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(ISynchronizeEvent *self, HANDLE* ph) SetEventHandle;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ISynchronizeHandle.VTable
+			{
+				public function HRESULT(ISynchronizeEvent *self, HANDLE* ph) SetEventHandle;
+			}
 		}
 		[CRepr]
 		public struct ISynchronizeContainer : IUnknown
 		{
 			public const new Guid IID = .(0x00000033, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(ISynchronizeContainer *self, ISynchronize* pSync) AddSynchronize;
-			public function HRESULT(ISynchronizeContainer *self, uint32 dwFlags, uint32 dwTimeOut, ISynchronize** ppSync) WaitMultiple;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISynchronizeContainer *self, ISynchronize* pSync) AddSynchronize;
+				public function HRESULT(ISynchronizeContainer *self, uint32 dwFlags, uint32 dwTimeOut, ISynchronize** ppSync) WaitMultiple;
+			}
 		}
 		[CRepr]
 		public struct ISynchronizeMutex : ISynchronize
 		{
 			public const new Guid IID = .(0x00000025, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(ISynchronizeMutex *self) ReleaseMutex;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ISynchronize.VTable
+			{
+				public function HRESULT(ISynchronizeMutex *self) ReleaseMutex;
+			}
 		}
 		[CRepr]
 		public struct ICancelMethodCalls : IUnknown
 		{
 			public const new Guid IID = .(0x00000029, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(ICancelMethodCalls *self, uint32 ulSeconds) Cancel;
-			public function HRESULT(ICancelMethodCalls *self) TestCancel;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICancelMethodCalls *self, uint32 ulSeconds) Cancel;
+				public function HRESULT(ICancelMethodCalls *self) TestCancel;
+			}
 		}
 		[CRepr]
 		public struct IAsyncManager : IUnknown
 		{
 			public const new Guid IID = .(0x0000002a, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IAsyncManager *self, HRESULT Result) CompleteCall;
-			public function HRESULT(IAsyncManager *self, Guid* riid, void** pInterface) GetCallContext;
-			public function HRESULT(IAsyncManager *self, uint32* pulStateFlags) GetState;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAsyncManager *self, HRESULT Result) CompleteCall;
+				public function HRESULT(IAsyncManager *self, Guid* riid, void** pInterface) GetCallContext;
+				public function HRESULT(IAsyncManager *self, uint32* pulStateFlags) GetState;
+			}
 		}
 		[CRepr]
 		public struct ICallFactory : IUnknown
 		{
 			public const new Guid IID = .(0x1c733a30, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public function HRESULT(ICallFactory *self, Guid* riid, IUnknown* pCtrlUnk, Guid* riid2, IUnknown** ppv) CreateCall;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICallFactory *self, Guid* riid, IUnknown* pCtrlUnk, Guid* riid2, IUnknown** ppv) CreateCall;
+			}
 		}
 		[CRepr]
 		public struct IRpcHelper : IUnknown
 		{
 			public const new Guid IID = .(0x00000149, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IRpcHelper *self, uint32* pComVersion) GetDCOMProtocolVersion;
-			public function HRESULT(IRpcHelper *self, void* pObjRef, Guid** piid) GetIIDFromOBJREF;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRpcHelper *self, uint32* pComVersion) GetDCOMProtocolVersion;
+				public function HRESULT(IRpcHelper *self, void* pObjRef, Guid** piid) GetIIDFromOBJREF;
+			}
 		}
 		[CRepr]
 		public struct IReleaseMarshalBuffers : IUnknown
 		{
 			public const new Guid IID = .(0xeb0cb9e8, 0x7996, 0x11d2, 0x87, 0x2e, 0x00, 0x00, 0xf8, 0x08, 0x08, 0x59);
 			
-			public function HRESULT(IReleaseMarshalBuffers *self, RPCOLEMESSAGE* pMsg, uint32 dwFlags, IUnknown* pChnl) ReleaseMarshalBuffer;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IReleaseMarshalBuffers *self, RPCOLEMESSAGE* pMsg, uint32 dwFlags, IUnknown* pChnl) ReleaseMarshalBuffer;
+			}
 		}
 		[CRepr]
 		public struct IWaitMultiple : IUnknown
 		{
 			public const new Guid IID = .(0x0000002b, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IWaitMultiple *self, uint32 timeout, ISynchronize** pSync) WaitMultiple;
-			public function HRESULT(IWaitMultiple *self, ISynchronize* pSync) AddSynchronize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWaitMultiple *self, uint32 timeout, ISynchronize** pSync) WaitMultiple;
+				public function HRESULT(IWaitMultiple *self, ISynchronize* pSync) AddSynchronize;
+			}
 		}
 		[CRepr]
 		public struct IAddrTrackingControl : IUnknown
 		{
 			public const new Guid IID = .(0x00000147, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IAddrTrackingControl *self) EnableCOMDynamicAddrTracking;
-			public function HRESULT(IAddrTrackingControl *self) DisableCOMDynamicAddrTracking;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAddrTrackingControl *self) EnableCOMDynamicAddrTracking;
+				public function HRESULT(IAddrTrackingControl *self) DisableCOMDynamicAddrTracking;
+			}
 		}
 		[CRepr]
 		public struct IAddrExclusionControl : IUnknown
 		{
 			public const new Guid IID = .(0x00000148, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IAddrExclusionControl *self, Guid* riid, void** ppEnumerator) GetCurrentAddrExclusionList;
-			public function HRESULT(IAddrExclusionControl *self, IUnknown* pEnumerator) UpdateAddrExclusionList;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAddrExclusionControl *self, Guid* riid, void** ppEnumerator) GetCurrentAddrExclusionList;
+				public function HRESULT(IAddrExclusionControl *self, IUnknown* pEnumerator) UpdateAddrExclusionList;
+			}
 		}
 		[CRepr]
 		public struct IPipeByte : IUnknown
 		{
 			public const new Guid IID = .(0xdb2f3aca, 0x2f86, 0x11d1, 0x8e, 0x04, 0x00, 0xc0, 0x4f, 0xb9, 0x98, 0x9a);
 			
-			public function HRESULT(IPipeByte *self, uint8* buf, uint32 cRequest, uint32* pcReturned) Pull;
-			public function HRESULT(IPipeByte *self, uint8* buf, uint32 cSent) Push;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPipeByte *self, uint8* buf, uint32 cRequest, uint32* pcReturned) Pull;
+				public function HRESULT(IPipeByte *self, uint8* buf, uint32 cSent) Push;
+			}
 		}
 		[CRepr]
 		public struct AsyncIPipeByte : IUnknown
 		{
 			public const new Guid IID = .(0xdb2f3acb, 0x2f86, 0x11d1, 0x8e, 0x04, 0x00, 0xc0, 0x4f, 0xb9, 0x98, 0x9a);
 			
-			public function HRESULT(AsyncIPipeByte *self, uint32 cRequest) Begin_Pull;
-			public function HRESULT(AsyncIPipeByte *self, uint8* buf, uint32* pcReturned) Finish_Pull;
-			public function HRESULT(AsyncIPipeByte *self, uint8* buf, uint32 cSent) Begin_Push;
-			public function HRESULT(AsyncIPipeByte *self) Finish_Push;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(AsyncIPipeByte *self, uint32 cRequest) Begin_Pull;
+				public function HRESULT(AsyncIPipeByte *self, uint8* buf, uint32* pcReturned) Finish_Pull;
+				public function HRESULT(AsyncIPipeByte *self, uint8* buf, uint32 cSent) Begin_Push;
+				public function HRESULT(AsyncIPipeByte *self) Finish_Push;
+			}
 		}
 		[CRepr]
 		public struct IPipeLong : IUnknown
 		{
 			public const new Guid IID = .(0xdb2f3acc, 0x2f86, 0x11d1, 0x8e, 0x04, 0x00, 0xc0, 0x4f, 0xb9, 0x98, 0x9a);
 			
-			public function HRESULT(IPipeLong *self, int32* buf, uint32 cRequest, uint32* pcReturned) Pull;
-			public function HRESULT(IPipeLong *self, int32* buf, uint32 cSent) Push;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPipeLong *self, int32* buf, uint32 cRequest, uint32* pcReturned) Pull;
+				public function HRESULT(IPipeLong *self, int32* buf, uint32 cSent) Push;
+			}
 		}
 		[CRepr]
 		public struct AsyncIPipeLong : IUnknown
 		{
 			public const new Guid IID = .(0xdb2f3acd, 0x2f86, 0x11d1, 0x8e, 0x04, 0x00, 0xc0, 0x4f, 0xb9, 0x98, 0x9a);
 			
-			public function HRESULT(AsyncIPipeLong *self, uint32 cRequest) Begin_Pull;
-			public function HRESULT(AsyncIPipeLong *self, int32* buf, uint32* pcReturned) Finish_Pull;
-			public function HRESULT(AsyncIPipeLong *self, int32* buf, uint32 cSent) Begin_Push;
-			public function HRESULT(AsyncIPipeLong *self) Finish_Push;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(AsyncIPipeLong *self, uint32 cRequest) Begin_Pull;
+				public function HRESULT(AsyncIPipeLong *self, int32* buf, uint32* pcReturned) Finish_Pull;
+				public function HRESULT(AsyncIPipeLong *self, int32* buf, uint32 cSent) Begin_Push;
+				public function HRESULT(AsyncIPipeLong *self) Finish_Push;
+			}
 		}
 		[CRepr]
 		public struct IPipeDouble : IUnknown
 		{
 			public const new Guid IID = .(0xdb2f3ace, 0x2f86, 0x11d1, 0x8e, 0x04, 0x00, 0xc0, 0x4f, 0xb9, 0x98, 0x9a);
 			
-			public function HRESULT(IPipeDouble *self, double* buf, uint32 cRequest, uint32* pcReturned) Pull;
-			public function HRESULT(IPipeDouble *self, double* buf, uint32 cSent) Push;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPipeDouble *self, double* buf, uint32 cRequest, uint32* pcReturned) Pull;
+				public function HRESULT(IPipeDouble *self, double* buf, uint32 cSent) Push;
+			}
 		}
 		[CRepr]
 		public struct AsyncIPipeDouble : IUnknown
 		{
 			public const new Guid IID = .(0xdb2f3acf, 0x2f86, 0x11d1, 0x8e, 0x04, 0x00, 0xc0, 0x4f, 0xb9, 0x98, 0x9a);
 			
-			public function HRESULT(AsyncIPipeDouble *self, uint32 cRequest) Begin_Pull;
-			public function HRESULT(AsyncIPipeDouble *self, double* buf, uint32* pcReturned) Finish_Pull;
-			public function HRESULT(AsyncIPipeDouble *self, double* buf, uint32 cSent) Begin_Push;
-			public function HRESULT(AsyncIPipeDouble *self) Finish_Push;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(AsyncIPipeDouble *self, uint32 cRequest) Begin_Pull;
+				public function HRESULT(AsyncIPipeDouble *self, double* buf, uint32* pcReturned) Finish_Pull;
+				public function HRESULT(AsyncIPipeDouble *self, double* buf, uint32 cSent) Begin_Push;
+				public function HRESULT(AsyncIPipeDouble *self) Finish_Push;
+			}
 		}
 		[CRepr]
 		public struct IComThreadingInfo : IUnknown
 		{
 			public const new Guid IID = .(0x000001ce, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IComThreadingInfo *self, APTTYPE* pAptType) GetCurrentApartmentType;
-			public function HRESULT(IComThreadingInfo *self, THDTYPE* pThreadType) GetCurrentThreadType;
-			public function HRESULT(IComThreadingInfo *self, Guid* pguidLogicalThreadId) GetCurrentLogicalThreadId;
-			public function HRESULT(IComThreadingInfo *self, Guid* rguid) SetCurrentLogicalThreadId;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IComThreadingInfo *self, APTTYPE* pAptType) GetCurrentApartmentType;
+				public function HRESULT(IComThreadingInfo *self, THDTYPE* pThreadType) GetCurrentThreadType;
+				public function HRESULT(IComThreadingInfo *self, Guid* pguidLogicalThreadId) GetCurrentLogicalThreadId;
+				public function HRESULT(IComThreadingInfo *self, Guid* rguid) SetCurrentLogicalThreadId;
+			}
 		}
 		[CRepr]
 		public struct IProcessInitControl : IUnknown
 		{
 			public const new Guid IID = .(0x72380d55, 0x8d2b, 0x43a3, 0x85, 0x13, 0x2b, 0x6e, 0xf3, 0x14, 0x34, 0xe9);
 			
-			public function HRESULT(IProcessInitControl *self, uint32 dwSecondsRemaining) ResetInitializerTimeout;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IProcessInitControl *self, uint32 dwSecondsRemaining) ResetInitializerTimeout;
+			}
 		}
 		[CRepr]
 		public struct IFastRundown : IUnknown
 		{
 			public const new Guid IID = .(0x00000040, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IMachineGlobalObjectTable : IUnknown
 		{
 			public const new Guid IID = .(0x26d709ac, 0xf70b, 0x4421, 0xa9, 0x6f, 0xd2, 0x87, 0x8f, 0xaf, 0xb0, 0x0d);
 			
-			public function HRESULT(IMachineGlobalObjectTable *self, Guid* clsid, PWSTR identifier, IUnknown* object, MachineGlobalObjectTableRegistrationToken__** token) RegisterObject;
-			public function HRESULT(IMachineGlobalObjectTable *self, Guid* clsid, PWSTR identifier, Guid* riid, void** ppv) GetObject;
-			public function HRESULT(IMachineGlobalObjectTable *self, MachineGlobalObjectTableRegistrationToken__* token) RevokeObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMachineGlobalObjectTable *self, Guid* clsid, PWSTR identifier, IUnknown* object, MachineGlobalObjectTableRegistrationToken__** token) RegisterObject;
+				public function HRESULT(IMachineGlobalObjectTable *self, Guid* clsid, PWSTR identifier, Guid* riid, void** ppv) GetObject;
+				public function HRESULT(IMachineGlobalObjectTable *self, MachineGlobalObjectTableRegistrationToken__* token) RevokeObject;
+			}
 		}
 		[CRepr]
 		public struct IMallocSpy : IUnknown
 		{
 			public const new Guid IID = .(0x0000001d, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function uint(IMallocSpy *self, uint cbRequest) PreAlloc;
-			public function void*(IMallocSpy *self, void* pActual) PostAlloc;
-			public function void*(IMallocSpy *self, void* pRequest, BOOL fSpyed) PreFree;
-			public function void(IMallocSpy *self, BOOL fSpyed) PostFree;
-			public function uint(IMallocSpy *self, void* pRequest, uint cbRequest, void** ppNewRequest, BOOL fSpyed) PreRealloc;
-			public function void*(IMallocSpy *self, void* pActual, BOOL fSpyed) PostRealloc;
-			public function void*(IMallocSpy *self, void* pRequest, BOOL fSpyed) PreGetSize;
-			public function uint(IMallocSpy *self, uint cbActual, BOOL fSpyed) PostGetSize;
-			public function void*(IMallocSpy *self, void* pRequest, BOOL fSpyed) PreDidAlloc;
-			public function int32(IMallocSpy *self, void* pRequest, BOOL fSpyed, int32 fActual) PostDidAlloc;
-			public function void(IMallocSpy *self) PreHeapMinimize;
-			public function void(IMallocSpy *self) PostHeapMinimize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function uint(IMallocSpy *self, uint cbRequest) PreAlloc;
+				public function void*(IMallocSpy *self, void* pActual) PostAlloc;
+				public function void*(IMallocSpy *self, void* pRequest, BOOL fSpyed) PreFree;
+				public function void(IMallocSpy *self, BOOL fSpyed) PostFree;
+				public function uint(IMallocSpy *self, void* pRequest, uint cbRequest, void** ppNewRequest, BOOL fSpyed) PreRealloc;
+				public function void*(IMallocSpy *self, void* pActual, BOOL fSpyed) PostRealloc;
+				public function void*(IMallocSpy *self, void* pRequest, BOOL fSpyed) PreGetSize;
+				public function uint(IMallocSpy *self, uint cbActual, BOOL fSpyed) PostGetSize;
+				public function void*(IMallocSpy *self, void* pRequest, BOOL fSpyed) PreDidAlloc;
+				public function int32(IMallocSpy *self, void* pRequest, BOOL fSpyed, int32 fActual) PostDidAlloc;
+				public function void(IMallocSpy *self) PreHeapMinimize;
+				public function void(IMallocSpy *self) PostHeapMinimize;
+			}
 		}
 		[CRepr]
 		public struct IBindCtx : IUnknown
 		{
 			public const new Guid IID = .(0x0000000e, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IBindCtx *self, IUnknown* punk) RegisterObjectBound;
-			public function HRESULT(IBindCtx *self, IUnknown* punk) RevokeObjectBound;
-			public function HRESULT(IBindCtx *self) ReleaseBoundObjects;
-			public function HRESULT(IBindCtx *self, BIND_OPTS* pbindopts) SetBindOptions;
-			public function HRESULT(IBindCtx *self, BIND_OPTS* pbindopts) GetBindOptions;
-			public function HRESULT(IBindCtx *self, IRunningObjectTable** pprot) GetRunningObjectTable;
-			public function HRESULT(IBindCtx *self, PWSTR pszKey, IUnknown* punk) RegisterObjectParam;
-			public function HRESULT(IBindCtx *self, PWSTR pszKey, IUnknown** ppunk) GetObjectParam;
-			public function HRESULT(IBindCtx *self, IEnumString** ppenum) EnumObjectParam;
-			public function HRESULT(IBindCtx *self, PWSTR pszKey) RevokeObjectParam;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IBindCtx *self, IUnknown* punk) RegisterObjectBound;
+				public function HRESULT(IBindCtx *self, IUnknown* punk) RevokeObjectBound;
+				public function HRESULT(IBindCtx *self) ReleaseBoundObjects;
+				public function HRESULT(IBindCtx *self, BIND_OPTS* pbindopts) SetBindOptions;
+				public function HRESULT(IBindCtx *self, BIND_OPTS* pbindopts) GetBindOptions;
+				public function HRESULT(IBindCtx *self, IRunningObjectTable** pprot) GetRunningObjectTable;
+				public function HRESULT(IBindCtx *self, PWSTR pszKey, IUnknown* punk) RegisterObjectParam;
+				public function HRESULT(IBindCtx *self, PWSTR pszKey, IUnknown** ppunk) GetObjectParam;
+				public function HRESULT(IBindCtx *self, IEnumString** ppenum) EnumObjectParam;
+				public function HRESULT(IBindCtx *self, PWSTR pszKey) RevokeObjectParam;
+			}
 		}
 		[CRepr]
 		public struct IEnumMoniker : IUnknown
 		{
 			public const new Guid IID = .(0x00000102, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IEnumMoniker *self, uint32 celt, IMoniker** rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumMoniker *self, uint32 celt) Skip;
-			public function HRESULT(IEnumMoniker *self) Reset;
-			public function HRESULT(IEnumMoniker *self, IEnumMoniker** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumMoniker *self, uint32 celt, IMoniker** rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumMoniker *self, uint32 celt) Skip;
+				public function HRESULT(IEnumMoniker *self) Reset;
+				public function HRESULT(IEnumMoniker *self, IEnumMoniker** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IRunnableObject : IUnknown
 		{
 			public const new Guid IID = .(0x00000126, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IRunnableObject *self, Guid* lpClsid) GetRunningClass;
-			public function HRESULT(IRunnableObject *self, IBindCtx* pbc) Run;
-			public function BOOL(IRunnableObject *self) IsRunning;
-			public function HRESULT(IRunnableObject *self, BOOL fLock, BOOL fLastUnlockCloses) LockRunning;
-			public function HRESULT(IRunnableObject *self, BOOL fContained) SetContainedObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRunnableObject *self, Guid* lpClsid) GetRunningClass;
+				public function HRESULT(IRunnableObject *self, IBindCtx* pbc) Run;
+				public function BOOL(IRunnableObject *self) IsRunning;
+				public function HRESULT(IRunnableObject *self, BOOL fLock, BOOL fLastUnlockCloses) LockRunning;
+				public function HRESULT(IRunnableObject *self, BOOL fContained) SetContainedObject;
+			}
 		}
 		[CRepr]
 		public struct IRunningObjectTable : IUnknown
 		{
 			public const new Guid IID = .(0x00000010, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IRunningObjectTable *self, uint32 grfFlags, IUnknown* punkObject, IMoniker* pmkObjectName, uint32* pdwRegister) Register;
-			public function HRESULT(IRunningObjectTable *self, uint32 dwRegister) Revoke;
-			public function HRESULT(IRunningObjectTable *self, IMoniker* pmkObjectName) IsRunning;
-			public function HRESULT(IRunningObjectTable *self, IMoniker* pmkObjectName, IUnknown** ppunkObject) GetObject;
-			public function HRESULT(IRunningObjectTable *self, uint32 dwRegister, FILETIME* pfiletime) NoteChangeTime;
-			public function HRESULT(IRunningObjectTable *self, IMoniker* pmkObjectName, FILETIME* pfiletime) GetTimeOfLastChange;
-			public function HRESULT(IRunningObjectTable *self, IEnumMoniker** ppenumMoniker) EnumRunning;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRunningObjectTable *self, uint32 grfFlags, IUnknown* punkObject, IMoniker* pmkObjectName, uint32* pdwRegister) Register;
+				public function HRESULT(IRunningObjectTable *self, uint32 dwRegister) Revoke;
+				public function HRESULT(IRunningObjectTable *self, IMoniker* pmkObjectName) IsRunning;
+				public function HRESULT(IRunningObjectTable *self, IMoniker* pmkObjectName, IUnknown** ppunkObject) GetObject;
+				public function HRESULT(IRunningObjectTable *self, uint32 dwRegister, FILETIME* pfiletime) NoteChangeTime;
+				public function HRESULT(IRunningObjectTable *self, IMoniker* pmkObjectName, FILETIME* pfiletime) GetTimeOfLastChange;
+				public function HRESULT(IRunningObjectTable *self, IEnumMoniker** ppenumMoniker) EnumRunning;
+			}
 		}
 		[CRepr]
 		public struct IPersist : IUnknown
 		{
 			public const new Guid IID = .(0x0000010c, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IPersist *self, Guid* pClassID) GetClassID;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPersist *self, Guid* pClassID) GetClassID;
+			}
 		}
 		[CRepr]
 		public struct IPersistStream : IPersist
 		{
 			public const new Guid IID = .(0x00000109, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IPersistStream *self) IsDirty;
-			public function HRESULT(IPersistStream *self, IStream* pStm) Load;
-			public function HRESULT(IPersistStream *self, IStream* pStm, BOOL fClearDirty) Save;
-			public function HRESULT(IPersistStream *self, ULARGE_INTEGER* pcbSize) GetSizeMax;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IPersist.VTable
+			{
+				public function HRESULT(IPersistStream *self) IsDirty;
+				public function HRESULT(IPersistStream *self, IStream* pStm) Load;
+				public function HRESULT(IPersistStream *self, IStream* pStm, BOOL fClearDirty) Save;
+				public function HRESULT(IPersistStream *self, ULARGE_INTEGER* pcbSize) GetSizeMax;
+			}
 		}
 		[CRepr]
 		public struct IMoniker : IPersistStream
 		{
 			public const new Guid IID = .(0x0000000f, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IMoniker *self, IBindCtx* pbc, IMoniker* pmkToLeft, Guid* riidResult, void** ppvResult) BindToObject;
-			public function HRESULT(IMoniker *self, IBindCtx* pbc, IMoniker* pmkToLeft, Guid* riid, void** ppvObj) BindToStorage;
-			public function HRESULT(IMoniker *self, IBindCtx* pbc, uint32 dwReduceHowFar, IMoniker** ppmkToLeft, IMoniker** ppmkReduced) Reduce;
-			public function HRESULT(IMoniker *self, IMoniker* pmkRight, BOOL fOnlyIfNotGeneric, IMoniker** ppmkComposite) ComposeWith;
-			public function HRESULT(IMoniker *self, BOOL fForward, IEnumMoniker** ppenumMoniker) Enum;
-			public function HRESULT(IMoniker *self, IMoniker* pmkOtherMoniker) IsEqual;
-			public function HRESULT(IMoniker *self, uint32* pdwHash) Hash;
-			public function HRESULT(IMoniker *self, IBindCtx* pbc, IMoniker* pmkToLeft, IMoniker* pmkNewlyRunning) IsRunning;
-			public function HRESULT(IMoniker *self, IBindCtx* pbc, IMoniker* pmkToLeft, FILETIME* pFileTime) GetTimeOfLastChange;
-			public function HRESULT(IMoniker *self, IMoniker** ppmk) Inverse;
-			public function HRESULT(IMoniker *self, IMoniker* pmkOther, IMoniker** ppmkPrefix) CommonPrefixWith;
-			public function HRESULT(IMoniker *self, IMoniker* pmkOther, IMoniker** ppmkRelPath) RelativePathTo;
-			public function HRESULT(IMoniker *self, IBindCtx* pbc, IMoniker* pmkToLeft, PWSTR* ppszDisplayName) GetDisplayName;
-			public function HRESULT(IMoniker *self, IBindCtx* pbc, IMoniker* pmkToLeft, PWSTR pszDisplayName, uint32* pchEaten, IMoniker** ppmkOut) ParseDisplayName;
-			public function HRESULT(IMoniker *self, uint32* pdwMksys) IsSystemMoniker;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IPersistStream.VTable
+			{
+				public function HRESULT(IMoniker *self, IBindCtx* pbc, IMoniker* pmkToLeft, Guid* riidResult, void** ppvResult) BindToObject;
+				public function HRESULT(IMoniker *self, IBindCtx* pbc, IMoniker* pmkToLeft, Guid* riid, void** ppvObj) BindToStorage;
+				public function HRESULT(IMoniker *self, IBindCtx* pbc, uint32 dwReduceHowFar, IMoniker** ppmkToLeft, IMoniker** ppmkReduced) Reduce;
+				public function HRESULT(IMoniker *self, IMoniker* pmkRight, BOOL fOnlyIfNotGeneric, IMoniker** ppmkComposite) ComposeWith;
+				public function HRESULT(IMoniker *self, BOOL fForward, IEnumMoniker** ppenumMoniker) Enum;
+				public function HRESULT(IMoniker *self, IMoniker* pmkOtherMoniker) IsEqual;
+				public function HRESULT(IMoniker *self, uint32* pdwHash) Hash;
+				public function HRESULT(IMoniker *self, IBindCtx* pbc, IMoniker* pmkToLeft, IMoniker* pmkNewlyRunning) IsRunning;
+				public function HRESULT(IMoniker *self, IBindCtx* pbc, IMoniker* pmkToLeft, FILETIME* pFileTime) GetTimeOfLastChange;
+				public function HRESULT(IMoniker *self, IMoniker** ppmk) Inverse;
+				public function HRESULT(IMoniker *self, IMoniker* pmkOther, IMoniker** ppmkPrefix) CommonPrefixWith;
+				public function HRESULT(IMoniker *self, IMoniker* pmkOther, IMoniker** ppmkRelPath) RelativePathTo;
+				public function HRESULT(IMoniker *self, IBindCtx* pbc, IMoniker* pmkToLeft, PWSTR* ppszDisplayName) GetDisplayName;
+				public function HRESULT(IMoniker *self, IBindCtx* pbc, IMoniker* pmkToLeft, PWSTR pszDisplayName, uint32* pchEaten, IMoniker** ppmkOut) ParseDisplayName;
+				public function HRESULT(IMoniker *self, uint32* pdwMksys) IsSystemMoniker;
+			}
 		}
 		[CRepr]
 		public struct IROTData : IUnknown
 		{
 			public const new Guid IID = .(0xf29f6bc0, 0x5021, 0x11ce, 0xaa, 0x15, 0x00, 0x00, 0x69, 0x01, 0x29, 0x3f);
 			
-			public function HRESULT(IROTData *self, uint8* pbData, uint32 cbMax, uint32* pcbData) GetComparisonData;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IROTData *self, uint8* pbData, uint32 cbMax, uint32* pcbData) GetComparisonData;
+			}
 		}
 		[CRepr]
 		public struct IPersistFile : IPersist
 		{
 			public const new Guid IID = .(0x0000010b, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IPersistFile *self) IsDirty;
-			public function HRESULT(IPersistFile *self, PWSTR pszFileName, uint32 dwMode) Load;
-			public function HRESULT(IPersistFile *self, PWSTR pszFileName, BOOL fRemember) Save;
-			public function HRESULT(IPersistFile *self, PWSTR pszFileName) SaveCompleted;
-			public function HRESULT(IPersistFile *self, PWSTR* ppszFileName) GetCurFile;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IPersist.VTable
+			{
+				public function HRESULT(IPersistFile *self) IsDirty;
+				public function HRESULT(IPersistFile *self, PWSTR pszFileName, uint32 dwMode) Load;
+				public function HRESULT(IPersistFile *self, PWSTR pszFileName, BOOL fRemember) Save;
+				public function HRESULT(IPersistFile *self, PWSTR pszFileName) SaveCompleted;
+				public function HRESULT(IPersistFile *self, PWSTR* ppszFileName) GetCurFile;
+			}
 		}
 		[CRepr]
 		public struct IEnumFORMATETC : IUnknown
 		{
 			public const new Guid IID = .(0x00000103, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IEnumFORMATETC *self, uint32 celt, FORMATETC* rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumFORMATETC *self, uint32 celt) Skip;
-			public function HRESULT(IEnumFORMATETC *self) Reset;
-			public function HRESULT(IEnumFORMATETC *self, IEnumFORMATETC** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumFORMATETC *self, uint32 celt, FORMATETC* rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumFORMATETC *self, uint32 celt) Skip;
+				public function HRESULT(IEnumFORMATETC *self) Reset;
+				public function HRESULT(IEnumFORMATETC *self, IEnumFORMATETC** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IEnumSTATDATA : IUnknown
 		{
 			public const new Guid IID = .(0x00000105, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IEnumSTATDATA *self, uint32 celt, STATDATA* rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumSTATDATA *self, uint32 celt) Skip;
-			public function HRESULT(IEnumSTATDATA *self) Reset;
-			public function HRESULT(IEnumSTATDATA *self, IEnumSTATDATA** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumSTATDATA *self, uint32 celt, STATDATA* rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumSTATDATA *self, uint32 celt) Skip;
+				public function HRESULT(IEnumSTATDATA *self) Reset;
+				public function HRESULT(IEnumSTATDATA *self, IEnumSTATDATA** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IAdviseSink : IUnknown
 		{
 			public const new Guid IID = .(0x0000010f, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function void(IAdviseSink *self, FORMATETC* pFormatetc, STGMEDIUM* pStgmed) OnDataChange;
-			public function void(IAdviseSink *self, uint32 dwAspect, int32 lindex) OnViewChange;
-			public function void(IAdviseSink *self, IMoniker* pmk) OnRename;
-			public function void(IAdviseSink *self) OnSave;
-			public function void(IAdviseSink *self) OnClose;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function void(IAdviseSink *self, FORMATETC* pFormatetc, STGMEDIUM* pStgmed) OnDataChange;
+				public function void(IAdviseSink *self, uint32 dwAspect, int32 lindex) OnViewChange;
+				public function void(IAdviseSink *self, IMoniker* pmk) OnRename;
+				public function void(IAdviseSink *self) OnSave;
+				public function void(IAdviseSink *self) OnClose;
+			}
 		}
 		[CRepr]
 		public struct AsyncIAdviseSink : IUnknown
 		{
 			public const new Guid IID = .(0x00000150, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function void(AsyncIAdviseSink *self, FORMATETC* pFormatetc, STGMEDIUM* pStgmed) Begin_OnDataChange;
-			public function void(AsyncIAdviseSink *self) Finish_OnDataChange;
-			public function void(AsyncIAdviseSink *self, uint32 dwAspect, int32 lindex) Begin_OnViewChange;
-			public function void(AsyncIAdviseSink *self) Finish_OnViewChange;
-			public function void(AsyncIAdviseSink *self, IMoniker* pmk) Begin_OnRename;
-			public function void(AsyncIAdviseSink *self) Finish_OnRename;
-			public function void(AsyncIAdviseSink *self) Begin_OnSave;
-			public function void(AsyncIAdviseSink *self) Finish_OnSave;
-			public function void(AsyncIAdviseSink *self) Begin_OnClose;
-			public function void(AsyncIAdviseSink *self) Finish_OnClose;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function void(AsyncIAdviseSink *self, FORMATETC* pFormatetc, STGMEDIUM* pStgmed) Begin_OnDataChange;
+				public function void(AsyncIAdviseSink *self) Finish_OnDataChange;
+				public function void(AsyncIAdviseSink *self, uint32 dwAspect, int32 lindex) Begin_OnViewChange;
+				public function void(AsyncIAdviseSink *self) Finish_OnViewChange;
+				public function void(AsyncIAdviseSink *self, IMoniker* pmk) Begin_OnRename;
+				public function void(AsyncIAdviseSink *self) Finish_OnRename;
+				public function void(AsyncIAdviseSink *self) Begin_OnSave;
+				public function void(AsyncIAdviseSink *self) Finish_OnSave;
+				public function void(AsyncIAdviseSink *self) Begin_OnClose;
+				public function void(AsyncIAdviseSink *self) Finish_OnClose;
+			}
 		}
 		[CRepr]
 		public struct IAdviseSink2 : IAdviseSink
 		{
 			public const new Guid IID = .(0x00000125, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function void(IAdviseSink2 *self, IMoniker* pmk) OnLinkSrcChange;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IAdviseSink.VTable
+			{
+				public function void(IAdviseSink2 *self, IMoniker* pmk) OnLinkSrcChange;
+			}
 		}
 		[CRepr]
 		public struct AsyncIAdviseSink2 : AsyncIAdviseSink
 		{
 			public const new Guid IID = .(0x00000151, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function void(AsyncIAdviseSink2 *self, IMoniker* pmk) Begin_OnLinkSrcChange;
-			public function void(AsyncIAdviseSink2 *self) Finish_OnLinkSrcChange;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : AsyncIAdviseSink.VTable
+			{
+				public function void(AsyncIAdviseSink2 *self, IMoniker* pmk) Begin_OnLinkSrcChange;
+				public function void(AsyncIAdviseSink2 *self) Finish_OnLinkSrcChange;
+			}
 		}
 		[CRepr]
 		public struct IDataObject : IUnknown
 		{
 			public const new Guid IID = .(0x0000010e, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IDataObject *self, FORMATETC* pformatetcIn, STGMEDIUM* pmedium) GetData;
-			public function HRESULT(IDataObject *self, FORMATETC* pformatetc, STGMEDIUM* pmedium) GetDataHere;
-			public function HRESULT(IDataObject *self, FORMATETC* pformatetc) QueryGetData;
-			public function HRESULT(IDataObject *self, FORMATETC* pformatectIn, FORMATETC* pformatetcOut) GetCanonicalFormatEtc;
-			public function HRESULT(IDataObject *self, FORMATETC* pformatetc, STGMEDIUM* pmedium, BOOL fRelease) SetData;
-			public function HRESULT(IDataObject *self, uint32 dwDirection, IEnumFORMATETC** ppenumFormatEtc) EnumFormatEtc;
-			public function HRESULT(IDataObject *self, FORMATETC* pformatetc, uint32 advf, IAdviseSink* pAdvSink, uint32* pdwConnection) DAdvise;
-			public function HRESULT(IDataObject *self, uint32 dwConnection) DUnadvise;
-			public function HRESULT(IDataObject *self, IEnumSTATDATA** ppenumAdvise) EnumDAdvise;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataObject *self, FORMATETC* pformatetcIn, STGMEDIUM* pmedium) GetData;
+				public function HRESULT(IDataObject *self, FORMATETC* pformatetc, STGMEDIUM* pmedium) GetDataHere;
+				public function HRESULT(IDataObject *self, FORMATETC* pformatetc) QueryGetData;
+				public function HRESULT(IDataObject *self, FORMATETC* pformatectIn, FORMATETC* pformatetcOut) GetCanonicalFormatEtc;
+				public function HRESULT(IDataObject *self, FORMATETC* pformatetc, STGMEDIUM* pmedium, BOOL fRelease) SetData;
+				public function HRESULT(IDataObject *self, uint32 dwDirection, IEnumFORMATETC** ppenumFormatEtc) EnumFormatEtc;
+				public function HRESULT(IDataObject *self, FORMATETC* pformatetc, uint32 advf, IAdviseSink* pAdvSink, uint32* pdwConnection) DAdvise;
+				public function HRESULT(IDataObject *self, uint32 dwConnection) DUnadvise;
+				public function HRESULT(IDataObject *self, IEnumSTATDATA** ppenumAdvise) EnumDAdvise;
+			}
 		}
 		[CRepr]
 		public struct IDataAdviseHolder : IUnknown
 		{
 			public const new Guid IID = .(0x00000110, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IDataAdviseHolder *self, IDataObject* pDataObject, FORMATETC* pFetc, uint32 advf, IAdviseSink* pAdvise, uint32* pdwConnection) Advise;
-			public function HRESULT(IDataAdviseHolder *self, uint32 dwConnection) Unadvise;
-			public function HRESULT(IDataAdviseHolder *self, IEnumSTATDATA** ppenumAdvise) EnumAdvise;
-			public function HRESULT(IDataAdviseHolder *self, IDataObject* pDataObject, uint32 dwReserved, uint32 advf) SendOnDataChange;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataAdviseHolder *self, IDataObject* pDataObject, FORMATETC* pFetc, uint32 advf, IAdviseSink* pAdvise, uint32* pdwConnection) Advise;
+				public function HRESULT(IDataAdviseHolder *self, uint32 dwConnection) Unadvise;
+				public function HRESULT(IDataAdviseHolder *self, IEnumSTATDATA** ppenumAdvise) EnumAdvise;
+				public function HRESULT(IDataAdviseHolder *self, IDataObject* pDataObject, uint32 dwReserved, uint32 advf) SendOnDataChange;
+			}
 		}
 		[CRepr]
 		public struct IClassActivator : IUnknown
 		{
 			public const new Guid IID = .(0x00000140, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IClassActivator *self, Guid* rclsid, uint32 dwClassContext, uint32 locale, Guid* riid, void** ppv) GetClassObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IClassActivator *self, Guid* rclsid, uint32 dwClassContext, uint32 locale, Guid* riid, void** ppv) GetClassObject;
+			}
 		}
 		[CRepr]
 		public struct IProgressNotify : IUnknown
 		{
 			public const new Guid IID = .(0xa9d758a0, 0x4617, 0x11cf, 0x95, 0xfc, 0x00, 0xaa, 0x00, 0x68, 0x0d, 0xb4);
 			
-			public function HRESULT(IProgressNotify *self, uint32 dwProgressCurrent, uint32 dwProgressMaximum, BOOL fAccurate, BOOL fOwner) OnProgress;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IProgressNotify *self, uint32 dwProgressCurrent, uint32 dwProgressMaximum, BOOL fAccurate, BOOL fOwner) OnProgress;
+			}
 		}
 		[CRepr]
 		public struct IBlockingLock : IUnknown
 		{
 			public const new Guid IID = .(0x30f3d47a, 0x6447, 0x11d1, 0x8e, 0x3c, 0x00, 0xc0, 0x4f, 0xb9, 0x38, 0x6d);
 			
-			public function HRESULT(IBlockingLock *self, uint32 dwTimeout) Lock;
-			public function HRESULT(IBlockingLock *self) Unlock;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IBlockingLock *self, uint32 dwTimeout) Lock;
+				public function HRESULT(IBlockingLock *self) Unlock;
+			}
 		}
 		[CRepr]
 		public struct ITimeAndNoticeControl : IUnknown
 		{
 			public const new Guid IID = .(0xbc0bf6ae, 0x8878, 0x11d1, 0x83, 0xe9, 0x00, 0xc0, 0x4f, 0xc2, 0xc6, 0xd4);
 			
-			public function HRESULT(ITimeAndNoticeControl *self, uint32 res1, uint32 res2) SuppressChanges;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITimeAndNoticeControl *self, uint32 res1, uint32 res2) SuppressChanges;
+			}
 		}
 		[CRepr]
 		public struct IOplockStorage : IUnknown
 		{
 			public const new Guid IID = .(0x8d19c834, 0x8879, 0x11d1, 0x83, 0xe9, 0x00, 0xc0, 0x4f, 0xc2, 0xc6, 0xd4);
 			
-			public function HRESULT(IOplockStorage *self, PWSTR pwcsName, uint32 grfMode, uint32 stgfmt, uint32 grfAttrs, Guid* riid, void** ppstgOpen) CreateStorageEx;
-			public function HRESULT(IOplockStorage *self, PWSTR pwcsName, uint32 grfMode, uint32 stgfmt, uint32 grfAttrs, Guid* riid, void** ppstgOpen) OpenStorageEx;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IOplockStorage *self, PWSTR pwcsName, uint32 grfMode, uint32 stgfmt, uint32 grfAttrs, Guid* riid, void** ppstgOpen) CreateStorageEx;
+				public function HRESULT(IOplockStorage *self, PWSTR pwcsName, uint32 grfMode, uint32 stgfmt, uint32 grfAttrs, Guid* riid, void** ppstgOpen) OpenStorageEx;
+			}
 		}
 		[CRepr]
 		public struct IUrlMon : IUnknown
 		{
 			public const new Guid IID = .(0x00000026, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IUrlMon *self, Guid* rclsid, PWSTR pszTYPE, PWSTR pszExt, uint32 dwFileVersionMS, uint32 dwFileVersionLS, PWSTR pszCodeBase, IBindCtx* pbc, uint32 dwClassContext, Guid* riid, uint32 flags) AsyncGetClassBits;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IUrlMon *self, Guid* rclsid, PWSTR pszTYPE, PWSTR pszExt, uint32 dwFileVersionMS, uint32 dwFileVersionLS, PWSTR pszCodeBase, IBindCtx* pbc, uint32 dwClassContext, Guid* riid, uint32 flags) AsyncGetClassBits;
+			}
 		}
 		[CRepr]
 		public struct IForegroundTransfer : IUnknown
 		{
 			public const new Guid IID = .(0x00000145, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IForegroundTransfer *self, void* lpvReserved) AllowForegroundTransfer;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IForegroundTransfer *self, void* lpvReserved) AllowForegroundTransfer;
+			}
 		}
 		[CRepr]
 		public struct IProcessLock : IUnknown
 		{
 			public const new Guid IID = .(0x000001d5, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function uint32(IProcessLock *self) AddRefOnProcess;
-			public function uint32(IProcessLock *self) ReleaseRefOnProcess;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function uint32(IProcessLock *self) AddRefOnProcess;
+				public function uint32(IProcessLock *self) ReleaseRefOnProcess;
+			}
 		}
 		[CRepr]
 		public struct ISurrogateService : IUnknown
 		{
 			public const new Guid IID = .(0x000001d4, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(ISurrogateService *self, Guid* rguidProcessID, IProcessLock* pProcessLock, BOOL* pfApplicationAware) Init;
-			public function HRESULT(ISurrogateService *self, Guid* rguidApplID, ApplicationType appType) ApplicationLaunch;
-			public function HRESULT(ISurrogateService *self, Guid* rguidApplID) ApplicationFree;
-			public function HRESULT(ISurrogateService *self, uint32 ulReserved) CatalogRefresh;
-			public function HRESULT(ISurrogateService *self, ShutdownType shutdownType) ProcessShutdown;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISurrogateService *self, Guid* rguidProcessID, IProcessLock* pProcessLock, BOOL* pfApplicationAware) Init;
+				public function HRESULT(ISurrogateService *self, Guid* rguidApplID, ApplicationType appType) ApplicationLaunch;
+				public function HRESULT(ISurrogateService *self, Guid* rguidApplID) ApplicationFree;
+				public function HRESULT(ISurrogateService *self, uint32 ulReserved) CatalogRefresh;
+				public function HRESULT(ISurrogateService *self, ShutdownType shutdownType) ProcessShutdown;
+			}
 		}
 		[CRepr]
 		public struct IInitializeSpy : IUnknown
 		{
 			public const new Guid IID = .(0x00000034, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IInitializeSpy *self, uint32 dwCoInit, uint32 dwCurThreadAptRefs) PreInitialize;
-			public function HRESULT(IInitializeSpy *self, HRESULT hrCoInit, uint32 dwCoInit, uint32 dwNewThreadAptRefs) PostInitialize;
-			public function HRESULT(IInitializeSpy *self, uint32 dwCurThreadAptRefs) PreUninitialize;
-			public function HRESULT(IInitializeSpy *self, uint32 dwNewThreadAptRefs) PostUninitialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInitializeSpy *self, uint32 dwCoInit, uint32 dwCurThreadAptRefs) PreInitialize;
+				public function HRESULT(IInitializeSpy *self, HRESULT hrCoInit, uint32 dwCoInit, uint32 dwNewThreadAptRefs) PostInitialize;
+				public function HRESULT(IInitializeSpy *self, uint32 dwCurThreadAptRefs) PreUninitialize;
+				public function HRESULT(IInitializeSpy *self, uint32 dwNewThreadAptRefs) PostUninitialize;
+			}
 		}
 		[CRepr]
 		public struct IServiceProvider : IUnknown
 		{
 			public const new Guid IID = .(0x6d5140c1, 0x7436, 0x11ce, 0x80, 0x34, 0x00, 0xaa, 0x00, 0x60, 0x09, 0xfa);
 			
-			public function HRESULT(IServiceProvider *self, Guid* guidService, Guid* riid, void** ppvObject) QueryService;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IServiceProvider *self, Guid* guidService, Guid* riid, void** ppvObject) QueryService;
+			}
 		}
 		[CRepr]
 		public struct IEnumGUID : IUnknown
 		{
 			public const new Guid IID = .(0x0002e000, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IEnumGUID *self, uint32 celt, Guid* rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumGUID *self, uint32 celt) Skip;
-			public function HRESULT(IEnumGUID *self) Reset;
-			public function HRESULT(IEnumGUID *self, IEnumGUID** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumGUID *self, uint32 celt, Guid* rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumGUID *self, uint32 celt) Skip;
+				public function HRESULT(IEnumGUID *self) Reset;
+				public function HRESULT(IEnumGUID *self, IEnumGUID** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IEnumCATEGORYINFO : IUnknown
 		{
 			public const new Guid IID = .(0x0002e011, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IEnumCATEGORYINFO *self, uint32 celt, CATEGORYINFO* rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumCATEGORYINFO *self, uint32 celt) Skip;
-			public function HRESULT(IEnumCATEGORYINFO *self) Reset;
-			public function HRESULT(IEnumCATEGORYINFO *self, IEnumCATEGORYINFO** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumCATEGORYINFO *self, uint32 celt, CATEGORYINFO* rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumCATEGORYINFO *self, uint32 celt) Skip;
+				public function HRESULT(IEnumCATEGORYINFO *self) Reset;
+				public function HRESULT(IEnumCATEGORYINFO *self, IEnumCATEGORYINFO** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct ICatRegister : IUnknown
 		{
 			public const new Guid IID = .(0x0002e012, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(ICatRegister *self, uint32 cCategories, CATEGORYINFO* rgCategoryInfo) RegisterCategories;
-			public function HRESULT(ICatRegister *self, uint32 cCategories, Guid* rgcatid) UnRegisterCategories;
-			public function HRESULT(ICatRegister *self, Guid* rclsid, uint32 cCategories, Guid* rgcatid) RegisterClassImplCategories;
-			public function HRESULT(ICatRegister *self, Guid* rclsid, uint32 cCategories, Guid* rgcatid) UnRegisterClassImplCategories;
-			public function HRESULT(ICatRegister *self, Guid* rclsid, uint32 cCategories, Guid* rgcatid) RegisterClassReqCategories;
-			public function HRESULT(ICatRegister *self, Guid* rclsid, uint32 cCategories, Guid* rgcatid) UnRegisterClassReqCategories;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICatRegister *self, uint32 cCategories, CATEGORYINFO* rgCategoryInfo) RegisterCategories;
+				public function HRESULT(ICatRegister *self, uint32 cCategories, Guid* rgcatid) UnRegisterCategories;
+				public function HRESULT(ICatRegister *self, Guid* rclsid, uint32 cCategories, Guid* rgcatid) RegisterClassImplCategories;
+				public function HRESULT(ICatRegister *self, Guid* rclsid, uint32 cCategories, Guid* rgcatid) UnRegisterClassImplCategories;
+				public function HRESULT(ICatRegister *self, Guid* rclsid, uint32 cCategories, Guid* rgcatid) RegisterClassReqCategories;
+				public function HRESULT(ICatRegister *self, Guid* rclsid, uint32 cCategories, Guid* rgcatid) UnRegisterClassReqCategories;
+			}
 		}
 		[CRepr]
 		public struct ICatInformation : IUnknown
 		{
 			public const new Guid IID = .(0x0002e013, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(ICatInformation *self, uint32 lcid, IEnumCATEGORYINFO** ppenumCategoryInfo) EnumCategories;
-			public function HRESULT(ICatInformation *self, Guid* rcatid, uint32 lcid, PWSTR* pszDesc) GetCategoryDesc;
-			public function HRESULT(ICatInformation *self, uint32 cImplemented, Guid* rgcatidImpl, uint32 cRequired, Guid* rgcatidReq, IEnumGUID** ppenumClsid) EnumClassesOfCategories;
-			public function HRESULT(ICatInformation *self, Guid* rclsid, uint32 cImplemented, Guid* rgcatidImpl, uint32 cRequired, Guid* rgcatidReq) IsClassOfCategories;
-			public function HRESULT(ICatInformation *self, Guid* rclsid, IEnumGUID** ppenumCatid) EnumImplCategoriesOfClass;
-			public function HRESULT(ICatInformation *self, Guid* rclsid, IEnumGUID** ppenumCatid) EnumReqCategoriesOfClass;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICatInformation *self, uint32 lcid, IEnumCATEGORYINFO** ppenumCategoryInfo) EnumCategories;
+				public function HRESULT(ICatInformation *self, Guid* rcatid, uint32 lcid, PWSTR* pszDesc) GetCategoryDesc;
+				public function HRESULT(ICatInformation *self, uint32 cImplemented, Guid* rgcatidImpl, uint32 cRequired, Guid* rgcatidReq, IEnumGUID** ppenumClsid) EnumClassesOfCategories;
+				public function HRESULT(ICatInformation *self, Guid* rclsid, uint32 cImplemented, Guid* rgcatidImpl, uint32 cRequired, Guid* rgcatidReq) IsClassOfCategories;
+				public function HRESULT(ICatInformation *self, Guid* rclsid, IEnumGUID** ppenumCatid) EnumImplCategoriesOfClass;
+				public function HRESULT(ICatInformation *self, Guid* rclsid, IEnumGUID** ppenumCatid) EnumReqCategoriesOfClass;
+			}
 		}
 		[CRepr]
 		public struct IContextCallback : IUnknown
 		{
 			public const new Guid IID = .(0x000001da, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IContextCallback *self, PFNCONTEXTCALL pfnCallback, ComCallData* pParam, Guid* riid, int32 iMethod, IUnknown* pUnk) ContextCallback;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IContextCallback *self, PFNCONTEXTCALL pfnCallback, ComCallData* pParam, Guid* riid, int32 iMethod, IUnknown* pUnk) ContextCallback;
+			}
 		}
 		[CRepr]
 		public struct IBinding : IUnknown
 		{
 			public const new Guid IID = .(0x79eac9c0, 0xbaf9, 0x11ce, 0x8c, 0x82, 0x00, 0xaa, 0x00, 0x4b, 0xa9, 0x0b);
 			
-			public function HRESULT(IBinding *self) Abort;
-			public function HRESULT(IBinding *self) Suspend;
-			public function HRESULT(IBinding *self) Resume;
-			public function HRESULT(IBinding *self, int32 nPriority) SetPriority;
-			public function HRESULT(IBinding *self, int32* pnPriority) GetPriority;
-			public function HRESULT(IBinding *self, Guid* pclsidProtocol, uint32* pdwResult, PWSTR* pszResult, uint32* pdwReserved) GetBindResult;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IBinding *self) Abort;
+				public function HRESULT(IBinding *self) Suspend;
+				public function HRESULT(IBinding *self) Resume;
+				public function HRESULT(IBinding *self, int32 nPriority) SetPriority;
+				public function HRESULT(IBinding *self, int32* pnPriority) GetPriority;
+				public function HRESULT(IBinding *self, Guid* pclsidProtocol, uint32* pdwResult, PWSTR* pszResult, uint32* pdwReserved) GetBindResult;
+			}
 		}
 		[CRepr]
 		public struct IBindStatusCallback : IUnknown
 		{
 			public const new Guid IID = .(0x79eac9c1, 0xbaf9, 0x11ce, 0x8c, 0x82, 0x00, 0xaa, 0x00, 0x4b, 0xa9, 0x0b);
 			
-			public function HRESULT(IBindStatusCallback *self, uint32 dwReserved, IBinding* pib) OnStartBinding;
-			public function HRESULT(IBindStatusCallback *self, int32* pnPriority) GetPriority;
-			public function HRESULT(IBindStatusCallback *self, uint32 reserved) OnLowResource;
-			public function HRESULT(IBindStatusCallback *self, uint32 ulProgress, uint32 ulProgressMax, uint32 ulStatusCode, PWSTR szStatusText) OnProgress;
-			public function HRESULT(IBindStatusCallback *self, HRESULT hresult, PWSTR szError) OnStopBinding;
-			public function HRESULT(IBindStatusCallback *self, uint32* grfBINDF, BINDINFO* pbindinfo) GetBindInfo;
-			public function HRESULT(IBindStatusCallback *self, uint32 grfBSCF, uint32 dwSize, FORMATETC* pformatetc, STGMEDIUM* pstgmed) OnDataAvailable;
-			public function HRESULT(IBindStatusCallback *self, Guid* riid, IUnknown* punk) OnObjectAvailable;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IBindStatusCallback *self, uint32 dwReserved, IBinding* pib) OnStartBinding;
+				public function HRESULT(IBindStatusCallback *self, int32* pnPriority) GetPriority;
+				public function HRESULT(IBindStatusCallback *self, uint32 reserved) OnLowResource;
+				public function HRESULT(IBindStatusCallback *self, uint32 ulProgress, uint32 ulProgressMax, uint32 ulStatusCode, PWSTR szStatusText) OnProgress;
+				public function HRESULT(IBindStatusCallback *self, HRESULT hresult, PWSTR szError) OnStopBinding;
+				public function HRESULT(IBindStatusCallback *self, uint32* grfBINDF, BINDINFO* pbindinfo) GetBindInfo;
+				public function HRESULT(IBindStatusCallback *self, uint32 grfBSCF, uint32 dwSize, FORMATETC* pformatetc, STGMEDIUM* pstgmed) OnDataAvailable;
+				public function HRESULT(IBindStatusCallback *self, Guid* riid, IUnknown* punk) OnObjectAvailable;
+			}
 		}
 		[CRepr]
 		public struct IBindStatusCallbackEx : IBindStatusCallback
 		{
 			public const new Guid IID = .(0xaaa74ef9, 0x8ee7, 0x4659, 0x88, 0xd9, 0xf8, 0xc5, 0x04, 0xda, 0x73, 0xcc);
 			
-			public function HRESULT(IBindStatusCallbackEx *self, uint32* grfBINDF, BINDINFO* pbindinfo, uint32* grfBINDF2, uint32* pdwReserved) GetBindInfoEx;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IBindStatusCallback.VTable
+			{
+				public function HRESULT(IBindStatusCallbackEx *self, uint32* grfBINDF, BINDINFO* pbindinfo, uint32* grfBINDF2, uint32* pdwReserved) GetBindInfoEx;
+			}
 		}
 		[CRepr]
 		public struct IAuthenticate : IUnknown
 		{
 			public const new Guid IID = .(0x79eac9d0, 0xbaf9, 0x11ce, 0x8c, 0x82, 0x00, 0xaa, 0x00, 0x4b, 0xa9, 0x0b);
 			
-			public function HRESULT(IAuthenticate *self, HWND* phwnd, PWSTR* pszUsername, PWSTR* pszPassword) Authenticate;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAuthenticate *self, HWND* phwnd, PWSTR* pszUsername, PWSTR* pszPassword) Authenticate;
+			}
 		}
 		[CRepr]
 		public struct IAuthenticateEx : IAuthenticate
 		{
 			public const new Guid IID = .(0x2ad1edaf, 0xd83d, 0x48b5, 0x9a, 0xdf, 0x03, 0xdb, 0xe1, 0x9f, 0x53, 0xbd);
 			
-			public function HRESULT(IAuthenticateEx *self, HWND* phwnd, PWSTR* pszUsername, PWSTR* pszPassword, AUTHENTICATEINFO* pauthinfo) AuthenticateEx;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IAuthenticate.VTable
+			{
+				public function HRESULT(IAuthenticateEx *self, HWND* phwnd, PWSTR* pszUsername, PWSTR* pszPassword, AUTHENTICATEINFO* pauthinfo) AuthenticateEx;
+			}
 		}
 		[CRepr]
 		public struct IUri : IUnknown
 		{
 			public const new Guid IID = .(0xa39ee748, 0x6a27, 0x4817, 0xa6, 0xf2, 0x13, 0x91, 0x4b, 0xef, 0x58, 0x90);
 			
-			public function HRESULT(IUri *self, Uri_PROPERTY uriProp, BSTR* pbstrProperty, uint32 dwFlags) GetPropertyBSTR;
-			public function HRESULT(IUri *self, Uri_PROPERTY uriProp, uint32* pcchProperty, uint32 dwFlags) GetPropertyLength;
-			public function HRESULT(IUri *self, Uri_PROPERTY uriProp, uint32* pdwProperty, uint32 dwFlags) GetPropertyDWORD;
-			public function HRESULT(IUri *self, Uri_PROPERTY uriProp, BOOL* pfHasProperty) HasProperty;
-			public function HRESULT(IUri *self, BSTR* pbstrAbsoluteUri) GetAbsoluteUri;
-			public function HRESULT(IUri *self, BSTR* pbstrAuthority) GetAuthority;
-			public function HRESULT(IUri *self, BSTR* pbstrDisplayString) GetDisplayUri;
-			public function HRESULT(IUri *self, BSTR* pbstrDomain) GetDomain;
-			public function HRESULT(IUri *self, BSTR* pbstrExtension) GetExtension;
-			public function HRESULT(IUri *self, BSTR* pbstrFragment) GetFragment;
-			public function HRESULT(IUri *self, BSTR* pbstrHost) GetHost;
-			public function HRESULT(IUri *self, BSTR* pbstrPassword) GetPassword;
-			public function HRESULT(IUri *self, BSTR* pbstrPath) GetPath;
-			public function HRESULT(IUri *self, BSTR* pbstrPathAndQuery) GetPathAndQuery;
-			public function HRESULT(IUri *self, BSTR* pbstrQuery) GetQuery;
-			public function HRESULT(IUri *self, BSTR* pbstrRawUri) GetRawUri;
-			public function HRESULT(IUri *self, BSTR* pbstrSchemeName) GetSchemeName;
-			public function HRESULT(IUri *self, BSTR* pbstrUserInfo) GetUserInfo;
-			public function HRESULT(IUri *self, BSTR* pbstrUserName) GetUserName;
-			public function HRESULT(IUri *self, uint32* pdwHostType) GetHostType;
-			public function HRESULT(IUri *self, uint32* pdwPort) GetPort;
-			public function HRESULT(IUri *self, uint32* pdwScheme) GetScheme;
-			public function HRESULT(IUri *self, uint32* pdwZone) GetZone;
-			public function HRESULT(IUri *self, uint32* pdwFlags) GetProperties;
-			public function HRESULT(IUri *self, IUri* pUri, BOOL* pfEqual) IsEqual;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IUri *self, Uri_PROPERTY uriProp, BSTR* pbstrProperty, uint32 dwFlags) GetPropertyBSTR;
+				public function HRESULT(IUri *self, Uri_PROPERTY uriProp, uint32* pcchProperty, uint32 dwFlags) GetPropertyLength;
+				public function HRESULT(IUri *self, Uri_PROPERTY uriProp, uint32* pdwProperty, uint32 dwFlags) GetPropertyDWORD;
+				public function HRESULT(IUri *self, Uri_PROPERTY uriProp, BOOL* pfHasProperty) HasProperty;
+				public function HRESULT(IUri *self, BSTR* pbstrAbsoluteUri) GetAbsoluteUri;
+				public function HRESULT(IUri *self, BSTR* pbstrAuthority) GetAuthority;
+				public function HRESULT(IUri *self, BSTR* pbstrDisplayString) GetDisplayUri;
+				public function HRESULT(IUri *self, BSTR* pbstrDomain) GetDomain;
+				public function HRESULT(IUri *self, BSTR* pbstrExtension) GetExtension;
+				public function HRESULT(IUri *self, BSTR* pbstrFragment) GetFragment;
+				public function HRESULT(IUri *self, BSTR* pbstrHost) GetHost;
+				public function HRESULT(IUri *self, BSTR* pbstrPassword) GetPassword;
+				public function HRESULT(IUri *self, BSTR* pbstrPath) GetPath;
+				public function HRESULT(IUri *self, BSTR* pbstrPathAndQuery) GetPathAndQuery;
+				public function HRESULT(IUri *self, BSTR* pbstrQuery) GetQuery;
+				public function HRESULT(IUri *self, BSTR* pbstrRawUri) GetRawUri;
+				public function HRESULT(IUri *self, BSTR* pbstrSchemeName) GetSchemeName;
+				public function HRESULT(IUri *self, BSTR* pbstrUserInfo) GetUserInfo;
+				public function HRESULT(IUri *self, BSTR* pbstrUserName) GetUserName;
+				public function HRESULT(IUri *self, uint32* pdwHostType) GetHostType;
+				public function HRESULT(IUri *self, uint32* pdwPort) GetPort;
+				public function HRESULT(IUri *self, uint32* pdwScheme) GetScheme;
+				public function HRESULT(IUri *self, uint32* pdwZone) GetZone;
+				public function HRESULT(IUri *self, uint32* pdwFlags) GetProperties;
+				public function HRESULT(IUri *self, IUri* pUri, BOOL* pfEqual) IsEqual;
+			}
 		}
 		[CRepr]
 		public struct IUriBuilder : IUnknown
 		{
 			public const new Guid IID = .(0x4221b2e1, 0x8955, 0x46c0, 0xbd, 0x5b, 0xde, 0x98, 0x97, 0x56, 0x5d, 0xe7);
 			
-			public function HRESULT(IUriBuilder *self, uint32 dwAllowEncodingPropertyMask, uint dwReserved, IUri** ppIUri) CreateUriSimple;
-			public function HRESULT(IUriBuilder *self, uint32 dwCreateFlags, uint32 dwAllowEncodingPropertyMask, uint dwReserved, IUri** ppIUri) CreateUri;
-			public function HRESULT(IUriBuilder *self, uint32 dwCreateFlags, uint32 dwUriBuilderFlags, uint32 dwAllowEncodingPropertyMask, uint dwReserved, IUri** ppIUri) CreateUriWithFlags;
-			public function HRESULT(IUriBuilder *self, IUri** ppIUri) GetIUri;
-			public function HRESULT(IUriBuilder *self, IUri* pIUri) SetIUri;
-			public function HRESULT(IUriBuilder *self, uint32* pcchFragment, PWSTR* ppwzFragment) GetFragment;
-			public function HRESULT(IUriBuilder *self, uint32* pcchHost, PWSTR* ppwzHost) GetHost;
-			public function HRESULT(IUriBuilder *self, uint32* pcchPassword, PWSTR* ppwzPassword) GetPassword;
-			public function HRESULT(IUriBuilder *self, uint32* pcchPath, PWSTR* ppwzPath) GetPath;
-			public function HRESULT(IUriBuilder *self, BOOL* pfHasPort, uint32* pdwPort) GetPort;
-			public function HRESULT(IUriBuilder *self, uint32* pcchQuery, PWSTR* ppwzQuery) GetQuery;
-			public function HRESULT(IUriBuilder *self, uint32* pcchSchemeName, PWSTR* ppwzSchemeName) GetSchemeName;
-			public function HRESULT(IUriBuilder *self, uint32* pcchUserName, PWSTR* ppwzUserName) GetUserName;
-			public function HRESULT(IUriBuilder *self, PWSTR pwzNewValue) SetFragment;
-			public function HRESULT(IUriBuilder *self, PWSTR pwzNewValue) SetHost;
-			public function HRESULT(IUriBuilder *self, PWSTR pwzNewValue) SetPassword;
-			public function HRESULT(IUriBuilder *self, PWSTR pwzNewValue) SetPath;
-			public function HRESULT(IUriBuilder *self, BOOL fHasPort, uint32 dwNewValue) SetPort;
-			public function HRESULT(IUriBuilder *self, PWSTR pwzNewValue) SetQuery;
-			public function HRESULT(IUriBuilder *self, PWSTR pwzNewValue) SetSchemeName;
-			public function HRESULT(IUriBuilder *self, PWSTR pwzNewValue) SetUserName;
-			public function HRESULT(IUriBuilder *self, uint32 dwPropertyMask) RemoveProperties;
-			public function HRESULT(IUriBuilder *self, BOOL* pfModified) HasBeenModified;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IUriBuilder *self, uint32 dwAllowEncodingPropertyMask, uint dwReserved, IUri** ppIUri) CreateUriSimple;
+				public function HRESULT(IUriBuilder *self, uint32 dwCreateFlags, uint32 dwAllowEncodingPropertyMask, uint dwReserved, IUri** ppIUri) CreateUri;
+				public function HRESULT(IUriBuilder *self, uint32 dwCreateFlags, uint32 dwUriBuilderFlags, uint32 dwAllowEncodingPropertyMask, uint dwReserved, IUri** ppIUri) CreateUriWithFlags;
+				public function HRESULT(IUriBuilder *self, IUri** ppIUri) GetIUri;
+				public function HRESULT(IUriBuilder *self, IUri* pIUri) SetIUri;
+				public function HRESULT(IUriBuilder *self, uint32* pcchFragment, PWSTR* ppwzFragment) GetFragment;
+				public function HRESULT(IUriBuilder *self, uint32* pcchHost, PWSTR* ppwzHost) GetHost;
+				public function HRESULT(IUriBuilder *self, uint32* pcchPassword, PWSTR* ppwzPassword) GetPassword;
+				public function HRESULT(IUriBuilder *self, uint32* pcchPath, PWSTR* ppwzPath) GetPath;
+				public function HRESULT(IUriBuilder *self, BOOL* pfHasPort, uint32* pdwPort) GetPort;
+				public function HRESULT(IUriBuilder *self, uint32* pcchQuery, PWSTR* ppwzQuery) GetQuery;
+				public function HRESULT(IUriBuilder *self, uint32* pcchSchemeName, PWSTR* ppwzSchemeName) GetSchemeName;
+				public function HRESULT(IUriBuilder *self, uint32* pcchUserName, PWSTR* ppwzUserName) GetUserName;
+				public function HRESULT(IUriBuilder *self, PWSTR pwzNewValue) SetFragment;
+				public function HRESULT(IUriBuilder *self, PWSTR pwzNewValue) SetHost;
+				public function HRESULT(IUriBuilder *self, PWSTR pwzNewValue) SetPassword;
+				public function HRESULT(IUriBuilder *self, PWSTR pwzNewValue) SetPath;
+				public function HRESULT(IUriBuilder *self, BOOL fHasPort, uint32 dwNewValue) SetPort;
+				public function HRESULT(IUriBuilder *self, PWSTR pwzNewValue) SetQuery;
+				public function HRESULT(IUriBuilder *self, PWSTR pwzNewValue) SetSchemeName;
+				public function HRESULT(IUriBuilder *self, PWSTR pwzNewValue) SetUserName;
+				public function HRESULT(IUriBuilder *self, uint32 dwPropertyMask) RemoveProperties;
+				public function HRESULT(IUriBuilder *self, BOOL* pfModified) HasBeenModified;
+			}
 		}
 		[CRepr]
 		public struct IBindHost : IUnknown
 		{
 			public const new Guid IID = .(0xfc4801a1, 0x2ba9, 0x11cf, 0xa2, 0x29, 0x00, 0xaa, 0x00, 0x3d, 0x73, 0x52);
 			
-			public function HRESULT(IBindHost *self, PWSTR szName, IBindCtx* pBC, IMoniker** ppmk, uint32 dwReserved) CreateMoniker;
-			public function HRESULT(IBindHost *self, IMoniker* pMk, IBindCtx* pBC, IBindStatusCallback* pBSC, Guid* riid, void** ppvObj) MonikerBindToStorage;
-			public function HRESULT(IBindHost *self, IMoniker* pMk, IBindCtx* pBC, IBindStatusCallback* pBSC, Guid* riid, void** ppvObj) MonikerBindToObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IBindHost *self, PWSTR szName, IBindCtx* pBC, IMoniker** ppmk, uint32 dwReserved) CreateMoniker;
+				public function HRESULT(IBindHost *self, IMoniker* pMk, IBindCtx* pBC, IBindStatusCallback* pBSC, Guid* riid, void** ppvObj) MonikerBindToStorage;
+				public function HRESULT(IBindHost *self, IMoniker* pMk, IBindCtx* pBC, IBindStatusCallback* pBSC, Guid* riid, void** ppvObj) MonikerBindToObject;
+			}
 		}
 		[CRepr]
 		public struct IDispatch : IUnknown
 		{
 			public const new Guid IID = .(0x00020400, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IDispatch *self, uint32* pctinfo) GetTypeInfoCount;
-			public function HRESULT(IDispatch *self, uint32 iTInfo, uint32 lcid, ITypeInfo** ppTInfo) GetTypeInfo;
-			public function HRESULT(IDispatch *self, Guid* riid, PWSTR* rgszNames, uint32 cNames, uint32 lcid, int32* rgDispId) GetIDsOfNames;
-			public function HRESULT(IDispatch *self, int32 dispIdMember, Guid* riid, uint32 lcid, uint16 wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint32* puArgErr) Invoke;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDispatch *self, uint32* pctinfo) GetTypeInfoCount;
+				public function HRESULT(IDispatch *self, uint32 iTInfo, uint32 lcid, ITypeInfo** ppTInfo) GetTypeInfo;
+				public function HRESULT(IDispatch *self, Guid* riid, PWSTR* rgszNames, uint32 cNames, uint32 lcid, int32* rgDispId) GetIDsOfNames;
+				public function HRESULT(IDispatch *self, int32 dispIdMember, Guid* riid, uint32 lcid, uint16 wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint32* puArgErr) Invoke;
+			}
 		}
 		[CRepr]
 		public struct ITypeComp : IUnknown
 		{
 			public const new Guid IID = .(0x00020403, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(ITypeComp *self, PWSTR szName, uint32 lHashVal, uint16 wFlags, ITypeInfo** ppTInfo, DESCKIND* pDescKind, BINDPTR* pBindPtr) Bind;
-			public function HRESULT(ITypeComp *self, PWSTR szName, uint32 lHashVal, ITypeInfo** ppTInfo, ITypeComp** ppTComp) BindType;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITypeComp *self, PWSTR szName, uint32 lHashVal, uint16 wFlags, ITypeInfo** ppTInfo, DESCKIND* pDescKind, BINDPTR* pBindPtr) Bind;
+				public function HRESULT(ITypeComp *self, PWSTR szName, uint32 lHashVal, ITypeInfo** ppTInfo, ITypeComp** ppTComp) BindType;
+			}
 		}
 		[CRepr]
 		public struct ITypeInfo : IUnknown
 		{
 			public const new Guid IID = .(0x00020401, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(ITypeInfo *self, TYPEATTR** ppTypeAttr) GetTypeAttr;
-			public function HRESULT(ITypeInfo *self, ITypeComp** ppTComp) GetTypeComp;
-			public function HRESULT(ITypeInfo *self, uint32 index, FUNCDESC** ppFuncDesc) GetFuncDesc;
-			public function HRESULT(ITypeInfo *self, uint32 index, VARDESC** ppVarDesc) GetVarDesc;
-			public function HRESULT(ITypeInfo *self, int32 memid, BSTR* rgBstrNames, uint32 cMaxNames, uint32* pcNames) GetNames;
-			public function HRESULT(ITypeInfo *self, uint32 index, uint32* pRefType) GetRefTypeOfImplType;
-			public function HRESULT(ITypeInfo *self, uint32 index, int32* pImplTypeFlags) GetImplTypeFlags;
-			public function HRESULT(ITypeInfo *self, PWSTR* rgszNames, uint32 cNames, int32* pMemId) GetIDsOfNames;
-			public function HRESULT(ITypeInfo *self, void* pvInstance, int32 memid, uint16 wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint32* puArgErr) Invoke;
-			public function HRESULT(ITypeInfo *self, int32 memid, BSTR* pBstrName, BSTR* pBstrDocString, uint32* pdwHelpContext, BSTR* pBstrHelpFile) GetDocumentation;
-			public function HRESULT(ITypeInfo *self, int32 memid, INVOKEKIND invKind, BSTR* pBstrDllName, BSTR* pBstrName, uint16* pwOrdinal) GetDllEntry;
-			public function HRESULT(ITypeInfo *self, uint32 hRefType, ITypeInfo** ppTInfo) GetRefTypeInfo;
-			public function HRESULT(ITypeInfo *self, int32 memid, INVOKEKIND invKind, void** ppv) AddressOfMember;
-			public function HRESULT(ITypeInfo *self, IUnknown* pUnkOuter, Guid* riid, void** ppvObj) CreateInstance;
-			public function HRESULT(ITypeInfo *self, int32 memid, BSTR* pBstrMops) GetMops;
-			public function HRESULT(ITypeInfo *self, ITypeLib** ppTLib, uint32* pIndex) GetContainingTypeLib;
-			public function void(ITypeInfo *self, TYPEATTR* pTypeAttr) ReleaseTypeAttr;
-			public function void(ITypeInfo *self, FUNCDESC* pFuncDesc) ReleaseFuncDesc;
-			public function void(ITypeInfo *self, VARDESC* pVarDesc) ReleaseVarDesc;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITypeInfo *self, TYPEATTR** ppTypeAttr) GetTypeAttr;
+				public function HRESULT(ITypeInfo *self, ITypeComp** ppTComp) GetTypeComp;
+				public function HRESULT(ITypeInfo *self, uint32 index, FUNCDESC** ppFuncDesc) GetFuncDesc;
+				public function HRESULT(ITypeInfo *self, uint32 index, VARDESC** ppVarDesc) GetVarDesc;
+				public function HRESULT(ITypeInfo *self, int32 memid, BSTR* rgBstrNames, uint32 cMaxNames, uint32* pcNames) GetNames;
+				public function HRESULT(ITypeInfo *self, uint32 index, uint32* pRefType) GetRefTypeOfImplType;
+				public function HRESULT(ITypeInfo *self, uint32 index, int32* pImplTypeFlags) GetImplTypeFlags;
+				public function HRESULT(ITypeInfo *self, PWSTR* rgszNames, uint32 cNames, int32* pMemId) GetIDsOfNames;
+				public function HRESULT(ITypeInfo *self, void* pvInstance, int32 memid, uint16 wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint32* puArgErr) Invoke;
+				public function HRESULT(ITypeInfo *self, int32 memid, BSTR* pBstrName, BSTR* pBstrDocString, uint32* pdwHelpContext, BSTR* pBstrHelpFile) GetDocumentation;
+				public function HRESULT(ITypeInfo *self, int32 memid, INVOKEKIND invKind, BSTR* pBstrDllName, BSTR* pBstrName, uint16* pwOrdinal) GetDllEntry;
+				public function HRESULT(ITypeInfo *self, uint32 hRefType, ITypeInfo** ppTInfo) GetRefTypeInfo;
+				public function HRESULT(ITypeInfo *self, int32 memid, INVOKEKIND invKind, void** ppv) AddressOfMember;
+				public function HRESULT(ITypeInfo *self, IUnknown* pUnkOuter, Guid* riid, void** ppvObj) CreateInstance;
+				public function HRESULT(ITypeInfo *self, int32 memid, BSTR* pBstrMops) GetMops;
+				public function HRESULT(ITypeInfo *self, ITypeLib** ppTLib, uint32* pIndex) GetContainingTypeLib;
+				public function void(ITypeInfo *self, TYPEATTR* pTypeAttr) ReleaseTypeAttr;
+				public function void(ITypeInfo *self, FUNCDESC* pFuncDesc) ReleaseFuncDesc;
+				public function void(ITypeInfo *self, VARDESC* pVarDesc) ReleaseVarDesc;
+			}
 		}
 		[CRepr]
 		public struct ITypeInfo2 : ITypeInfo
 		{
 			public const new Guid IID = .(0x00020412, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(ITypeInfo2 *self, TYPEKIND* pTypeKind) GetTypeKind;
-			public function HRESULT(ITypeInfo2 *self, uint32* pTypeFlags) GetTypeFlags;
-			public function HRESULT(ITypeInfo2 *self, int32 memid, INVOKEKIND invKind, uint32* pFuncIndex) GetFuncIndexOfMemId;
-			public function HRESULT(ITypeInfo2 *self, int32 memid, uint32* pVarIndex) GetVarIndexOfMemId;
-			public function HRESULT(ITypeInfo2 *self, Guid* guid, VARIANT* pVarVal) GetCustData;
-			public function HRESULT(ITypeInfo2 *self, uint32 index, Guid* guid, VARIANT* pVarVal) GetFuncCustData;
-			public function HRESULT(ITypeInfo2 *self, uint32 indexFunc, uint32 indexParam, Guid* guid, VARIANT* pVarVal) GetParamCustData;
-			public function HRESULT(ITypeInfo2 *self, uint32 index, Guid* guid, VARIANT* pVarVal) GetVarCustData;
-			public function HRESULT(ITypeInfo2 *self, uint32 index, Guid* guid, VARIANT* pVarVal) GetImplTypeCustData;
-			public function HRESULT(ITypeInfo2 *self, int32 memid, uint32 lcid, BSTR* pbstrHelpString, uint32* pdwHelpStringContext, BSTR* pbstrHelpStringDll) GetDocumentation2;
-			public function HRESULT(ITypeInfo2 *self, CUSTDATA* pCustData) GetAllCustData;
-			public function HRESULT(ITypeInfo2 *self, uint32 index, CUSTDATA* pCustData) GetAllFuncCustData;
-			public function HRESULT(ITypeInfo2 *self, uint32 indexFunc, uint32 indexParam, CUSTDATA* pCustData) GetAllParamCustData;
-			public function HRESULT(ITypeInfo2 *self, uint32 index, CUSTDATA* pCustData) GetAllVarCustData;
-			public function HRESULT(ITypeInfo2 *self, uint32 index, CUSTDATA* pCustData) GetAllImplTypeCustData;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ITypeInfo.VTable
+			{
+				public function HRESULT(ITypeInfo2 *self, TYPEKIND* pTypeKind) GetTypeKind;
+				public function HRESULT(ITypeInfo2 *self, uint32* pTypeFlags) GetTypeFlags;
+				public function HRESULT(ITypeInfo2 *self, int32 memid, INVOKEKIND invKind, uint32* pFuncIndex) GetFuncIndexOfMemId;
+				public function HRESULT(ITypeInfo2 *self, int32 memid, uint32* pVarIndex) GetVarIndexOfMemId;
+				public function HRESULT(ITypeInfo2 *self, Guid* guid, VARIANT* pVarVal) GetCustData;
+				public function HRESULT(ITypeInfo2 *self, uint32 index, Guid* guid, VARIANT* pVarVal) GetFuncCustData;
+				public function HRESULT(ITypeInfo2 *self, uint32 indexFunc, uint32 indexParam, Guid* guid, VARIANT* pVarVal) GetParamCustData;
+				public function HRESULT(ITypeInfo2 *self, uint32 index, Guid* guid, VARIANT* pVarVal) GetVarCustData;
+				public function HRESULT(ITypeInfo2 *self, uint32 index, Guid* guid, VARIANT* pVarVal) GetImplTypeCustData;
+				public function HRESULT(ITypeInfo2 *self, int32 memid, uint32 lcid, BSTR* pbstrHelpString, uint32* pdwHelpStringContext, BSTR* pbstrHelpStringDll) GetDocumentation2;
+				public function HRESULT(ITypeInfo2 *self, CUSTDATA* pCustData) GetAllCustData;
+				public function HRESULT(ITypeInfo2 *self, uint32 index, CUSTDATA* pCustData) GetAllFuncCustData;
+				public function HRESULT(ITypeInfo2 *self, uint32 indexFunc, uint32 indexParam, CUSTDATA* pCustData) GetAllParamCustData;
+				public function HRESULT(ITypeInfo2 *self, uint32 index, CUSTDATA* pCustData) GetAllVarCustData;
+				public function HRESULT(ITypeInfo2 *self, uint32 index, CUSTDATA* pCustData) GetAllImplTypeCustData;
+			}
 		}
 		[CRepr]
 		public struct ITypeLib : IUnknown
 		{
 			public const new Guid IID = .(0x00020402, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function uint32(ITypeLib *self) GetTypeInfoCount;
-			public function HRESULT(ITypeLib *self, uint32 index, ITypeInfo** ppTInfo) GetTypeInfo;
-			public function HRESULT(ITypeLib *self, uint32 index, TYPEKIND* pTKind) GetTypeInfoType;
-			public function HRESULT(ITypeLib *self, Guid* guid, ITypeInfo** ppTinfo) GetTypeInfoOfGuid;
-			public function HRESULT(ITypeLib *self, TLIBATTR** ppTLibAttr) GetLibAttr;
-			public function HRESULT(ITypeLib *self, ITypeComp** ppTComp) GetTypeComp;
-			public function HRESULT(ITypeLib *self, int32 index, BSTR* pBstrName, BSTR* pBstrDocString, uint32* pdwHelpContext, BSTR* pBstrHelpFile) GetDocumentation;
-			public function HRESULT(ITypeLib *self, PWSTR szNameBuf, uint32 lHashVal, BOOL* pfName) IsName;
-			public function HRESULT(ITypeLib *self, PWSTR szNameBuf, uint32 lHashVal, ITypeInfo** ppTInfo, int32* rgMemId, uint16* pcFound) FindName;
-			public function void(ITypeLib *self, TLIBATTR* pTLibAttr) ReleaseTLibAttr;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function uint32(ITypeLib *self) GetTypeInfoCount;
+				public function HRESULT(ITypeLib *self, uint32 index, ITypeInfo** ppTInfo) GetTypeInfo;
+				public function HRESULT(ITypeLib *self, uint32 index, TYPEKIND* pTKind) GetTypeInfoType;
+				public function HRESULT(ITypeLib *self, Guid* guid, ITypeInfo** ppTinfo) GetTypeInfoOfGuid;
+				public function HRESULT(ITypeLib *self, TLIBATTR** ppTLibAttr) GetLibAttr;
+				public function HRESULT(ITypeLib *self, ITypeComp** ppTComp) GetTypeComp;
+				public function HRESULT(ITypeLib *self, int32 index, BSTR* pBstrName, BSTR* pBstrDocString, uint32* pdwHelpContext, BSTR* pBstrHelpFile) GetDocumentation;
+				public function HRESULT(ITypeLib *self, PWSTR szNameBuf, uint32 lHashVal, BOOL* pfName) IsName;
+				public function HRESULT(ITypeLib *self, PWSTR szNameBuf, uint32 lHashVal, ITypeInfo** ppTInfo, int32* rgMemId, uint16* pcFound) FindName;
+				public function void(ITypeLib *self, TLIBATTR* pTLibAttr) ReleaseTLibAttr;
+			}
 		}
 		[CRepr]
 		public struct ITypeLib2 : ITypeLib
 		{
 			public const new Guid IID = .(0x00020411, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(ITypeLib2 *self, Guid* guid, VARIANT* pVarVal) GetCustData;
-			public function HRESULT(ITypeLib2 *self, uint32* pcUniqueNames, uint32* pcchUniqueNames) GetLibStatistics;
-			public function HRESULT(ITypeLib2 *self, int32 index, uint32 lcid, BSTR* pbstrHelpString, uint32* pdwHelpStringContext, BSTR* pbstrHelpStringDll) GetDocumentation2;
-			public function HRESULT(ITypeLib2 *self, CUSTDATA* pCustData) GetAllCustData;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ITypeLib.VTable
+			{
+				public function HRESULT(ITypeLib2 *self, Guid* guid, VARIANT* pVarVal) GetCustData;
+				public function HRESULT(ITypeLib2 *self, uint32* pcUniqueNames, uint32* pcchUniqueNames) GetLibStatistics;
+				public function HRESULT(ITypeLib2 *self, int32 index, uint32 lcid, BSTR* pbstrHelpString, uint32* pdwHelpStringContext, BSTR* pbstrHelpStringDll) GetDocumentation2;
+				public function HRESULT(ITypeLib2 *self, CUSTDATA* pCustData) GetAllCustData;
+			}
 		}
 		[CRepr]
 		public struct IErrorInfo : IUnknown
 		{
 			public const new Guid IID = .(0x1cf2b120, 0x547d, 0x101b, 0x8e, 0x65, 0x08, 0x00, 0x2b, 0x2b, 0xd1, 0x19);
 			
-			public function HRESULT(IErrorInfo *self, Guid* pGUID) GetGUID;
-			public function HRESULT(IErrorInfo *self, BSTR* pBstrSource) GetSource;
-			public function HRESULT(IErrorInfo *self, BSTR* pBstrDescription) GetDescription;
-			public function HRESULT(IErrorInfo *self, BSTR* pBstrHelpFile) GetHelpFile;
-			public function HRESULT(IErrorInfo *self, uint32* pdwHelpContext) GetHelpContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IErrorInfo *self, Guid* pGUID) GetGUID;
+				public function HRESULT(IErrorInfo *self, BSTR* pBstrSource) GetSource;
+				public function HRESULT(IErrorInfo *self, BSTR* pBstrDescription) GetDescription;
+				public function HRESULT(IErrorInfo *self, BSTR* pBstrHelpFile) GetHelpFile;
+				public function HRESULT(IErrorInfo *self, uint32* pdwHelpContext) GetHelpContext;
+			}
 		}
 		[CRepr]
 		public struct ISupportErrorInfo : IUnknown
 		{
 			public const new Guid IID = .(0xdf0b3d60, 0x548f, 0x101b, 0x8e, 0x65, 0x08, 0x00, 0x2b, 0x2b, 0xd1, 0x19);
 			
-			public function HRESULT(ISupportErrorInfo *self, Guid* riid) InterfaceSupportsErrorInfo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISupportErrorInfo *self, Guid* riid) InterfaceSupportsErrorInfo;
+			}
 		}
 		[CRepr]
 		public struct IErrorLog : IUnknown
 		{
 			public const new Guid IID = .(0x3127ca40, 0x446e, 0x11ce, 0x81, 0x35, 0x00, 0xaa, 0x00, 0x4b, 0xb8, 0x51);
 			
-			public function HRESULT(IErrorLog *self, PWSTR pszPropName, EXCEPINFO* pExcepInfo) AddError;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IErrorLog *self, PWSTR pszPropName, EXCEPINFO* pExcepInfo) AddError;
+			}
 		}
 		[CRepr]
 		public struct ITypeLibRegistrationReader : IUnknown
 		{
 			public const new Guid IID = .(0xed6a8a2a, 0xb160, 0x4e77, 0x8f, 0x73, 0xaa, 0x74, 0x35, 0xcd, 0x5c, 0x27);
 			
-			public function HRESULT(ITypeLibRegistrationReader *self, IEnumUnknown** ppEnumUnknown) EnumTypeLibRegistrations;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITypeLibRegistrationReader *self, IEnumUnknown** ppEnumUnknown) EnumTypeLibRegistrations;
+			}
 		}
 		[CRepr]
 		public struct ITypeLibRegistration : IUnknown
 		{
 			public const new Guid IID = .(0x76a3e735, 0x02df, 0x4a12, 0x98, 0xeb, 0x04, 0x3a, 0xd3, 0x60, 0x0a, 0xf3);
 			
-			public function HRESULT(ITypeLibRegistration *self, Guid* pGuid) GetGuid;
-			public function HRESULT(ITypeLibRegistration *self, BSTR* pVersion) GetVersion;
-			public function HRESULT(ITypeLibRegistration *self, uint32* pLcid) GetLcid;
-			public function HRESULT(ITypeLibRegistration *self, BSTR* pWin32Path) GetWin32Path;
-			public function HRESULT(ITypeLibRegistration *self, BSTR* pWin64Path) GetWin64Path;
-			public function HRESULT(ITypeLibRegistration *self, BSTR* pDisplayName) GetDisplayName;
-			public function HRESULT(ITypeLibRegistration *self, uint32* pFlags) GetFlags;
-			public function HRESULT(ITypeLibRegistration *self, BSTR* pHelpDir) GetHelpDir;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITypeLibRegistration *self, Guid* pGuid) GetGuid;
+				public function HRESULT(ITypeLibRegistration *self, BSTR* pVersion) GetVersion;
+				public function HRESULT(ITypeLibRegistration *self, uint32* pLcid) GetLcid;
+				public function HRESULT(ITypeLibRegistration *self, BSTR* pWin32Path) GetWin32Path;
+				public function HRESULT(ITypeLibRegistration *self, BSTR* pWin64Path) GetWin64Path;
+				public function HRESULT(ITypeLibRegistration *self, BSTR* pDisplayName) GetDisplayName;
+				public function HRESULT(ITypeLibRegistration *self, uint32* pFlags) GetFlags;
+				public function HRESULT(ITypeLibRegistration *self, BSTR* pHelpDir) GetHelpDir;
+			}
 		}
 		[CRepr]
 		public struct IEnumConnections : IUnknown
 		{
 			public const new Guid IID = .(0xb196b287, 0xbab4, 0x101a, 0xb6, 0x9c, 0x00, 0xaa, 0x00, 0x34, 0x1d, 0x07);
 			
-			public function HRESULT(IEnumConnections *self, uint32 cConnections, CONNECTDATA* rgcd, uint32* pcFetched) Next;
-			public function HRESULT(IEnumConnections *self, uint32 cConnections) Skip;
-			public function HRESULT(IEnumConnections *self) Reset;
-			public function HRESULT(IEnumConnections *self, IEnumConnections** ppEnum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumConnections *self, uint32 cConnections, CONNECTDATA* rgcd, uint32* pcFetched) Next;
+				public function HRESULT(IEnumConnections *self, uint32 cConnections) Skip;
+				public function HRESULT(IEnumConnections *self) Reset;
+				public function HRESULT(IEnumConnections *self, IEnumConnections** ppEnum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IConnectionPoint : IUnknown
 		{
 			public const new Guid IID = .(0xb196b286, 0xbab4, 0x101a, 0xb6, 0x9c, 0x00, 0xaa, 0x00, 0x34, 0x1d, 0x07);
 			
-			public function HRESULT(IConnectionPoint *self, Guid* pIID) GetConnectionInterface;
-			public function HRESULT(IConnectionPoint *self, IConnectionPointContainer** ppCPC) GetConnectionPointContainer;
-			public function HRESULT(IConnectionPoint *self, IUnknown* pUnkSink, uint32* pdwCookie) Advise;
-			public function HRESULT(IConnectionPoint *self, uint32 dwCookie) Unadvise;
-			public function HRESULT(IConnectionPoint *self, IEnumConnections** ppEnum) EnumConnections;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IConnectionPoint *self, Guid* pIID) GetConnectionInterface;
+				public function HRESULT(IConnectionPoint *self, IConnectionPointContainer** ppCPC) GetConnectionPointContainer;
+				public function HRESULT(IConnectionPoint *self, IUnknown* pUnkSink, uint32* pdwCookie) Advise;
+				public function HRESULT(IConnectionPoint *self, uint32 dwCookie) Unadvise;
+				public function HRESULT(IConnectionPoint *self, IEnumConnections** ppEnum) EnumConnections;
+			}
 		}
 		[CRepr]
 		public struct IEnumConnectionPoints : IUnknown
 		{
 			public const new Guid IID = .(0xb196b285, 0xbab4, 0x101a, 0xb6, 0x9c, 0x00, 0xaa, 0x00, 0x34, 0x1d, 0x07);
 			
-			public function HRESULT(IEnumConnectionPoints *self, uint32 cConnections, IConnectionPoint** ppCP, uint32* pcFetched) Next;
-			public function HRESULT(IEnumConnectionPoints *self, uint32 cConnections) Skip;
-			public function HRESULT(IEnumConnectionPoints *self) Reset;
-			public function HRESULT(IEnumConnectionPoints *self, IEnumConnectionPoints** ppEnum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumConnectionPoints *self, uint32 cConnections, IConnectionPoint** ppCP, uint32* pcFetched) Next;
+				public function HRESULT(IEnumConnectionPoints *self, uint32 cConnections) Skip;
+				public function HRESULT(IEnumConnectionPoints *self) Reset;
+				public function HRESULT(IEnumConnectionPoints *self, IEnumConnectionPoints** ppEnum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IConnectionPointContainer : IUnknown
 		{
 			public const new Guid IID = .(0xb196b284, 0xbab4, 0x101a, 0xb6, 0x9c, 0x00, 0xaa, 0x00, 0x34, 0x1d, 0x07);
 			
-			public function HRESULT(IConnectionPointContainer *self, IEnumConnectionPoints** ppEnum) EnumConnectionPoints;
-			public function HRESULT(IConnectionPointContainer *self, Guid* riid, IConnectionPoint** ppCP) FindConnectionPoint;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IConnectionPointContainer *self, IEnumConnectionPoints** ppEnum) EnumConnectionPoints;
+				public function HRESULT(IConnectionPointContainer *self, Guid* riid, IConnectionPoint** ppCP) FindConnectionPoint;
+			}
 		}
 		[CRepr]
 		public struct IPersistMemory : IPersist
 		{
 			public const new Guid IID = .(0xbd1ae5e0, 0xa6ae, 0x11ce, 0xbd, 0x37, 0x50, 0x42, 0x00, 0xc1, 0x00, 0x00);
 			
-			public function HRESULT(IPersistMemory *self) IsDirty;
-			public function HRESULT(IPersistMemory *self, void* pMem, uint32 cbSize) Load;
-			public function HRESULT(IPersistMemory *self, void* pMem, BOOL fClearDirty, uint32 cbSize) Save;
-			public function HRESULT(IPersistMemory *self, uint32* pCbSize) GetSizeMax;
-			public function HRESULT(IPersistMemory *self) InitNew;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IPersist.VTable
+			{
+				public function HRESULT(IPersistMemory *self) IsDirty;
+				public function HRESULT(IPersistMemory *self, void* pMem, uint32 cbSize) Load;
+				public function HRESULT(IPersistMemory *self, void* pMem, BOOL fClearDirty, uint32 cbSize) Save;
+				public function HRESULT(IPersistMemory *self, uint32* pCbSize) GetSizeMax;
+				public function HRESULT(IPersistMemory *self) InitNew;
+			}
 		}
 		[CRepr]
 		public struct IPersistStreamInit : IPersist
 		{
 			public const new Guid IID = .(0x7fd52380, 0x4e07, 0x101b, 0xae, 0x2d, 0x08, 0x00, 0x2b, 0x2e, 0xc7, 0x13);
 			
-			public function HRESULT(IPersistStreamInit *self) IsDirty;
-			public function HRESULT(IPersistStreamInit *self, IStream* pStm) Load;
-			public function HRESULT(IPersistStreamInit *self, IStream* pStm, BOOL fClearDirty) Save;
-			public function HRESULT(IPersistStreamInit *self, ULARGE_INTEGER* pCbSize) GetSizeMax;
-			public function HRESULT(IPersistStreamInit *self) InitNew;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IPersist.VTable
+			{
+				public function HRESULT(IPersistStreamInit *self) IsDirty;
+				public function HRESULT(IPersistStreamInit *self, IStream* pStm) Load;
+				public function HRESULT(IPersistStreamInit *self, IStream* pStm, BOOL fClearDirty) Save;
+				public function HRESULT(IPersistStreamInit *self, ULARGE_INTEGER* pCbSize) GetSizeMax;
+				public function HRESULT(IPersistStreamInit *self) InitNew;
+			}
 		}
 		
 		// --- Functions ---

@@ -414,17 +414,18 @@ for filename in filenames:
                     kind = com['Kind']
                     if kind != 'Com':
                         raise RuntimeError(f'Encountered COM interface "{name}" of kind "{kind}". We don\'t know how to handle those.')
-                    interface = com['Interface']
-                    if interface != None and len(interface['Parents']) > 0:
-                        raise RuntimeError(f'Encountered COM interface "{name}" with parents. We don\'t know how to handle those.')
+                    base = com['Interface']
+                    base_name = ''
+                    if base != None:
+                        base_namespace = base['Api']
+                        base_name = replace_type_name(base['Name'], base_namespace)
+                        if len(base['Parents']) > 0:
+                            raise RuntimeError(f'Encountered COM interface "{name}" with parents. We don\'t know how to handle those.')
                     
-                    if interface != None:
-                        interface_namespace = interface['Api']
-                        interface_name = replace_type_name(interface['Name'], interface_namespace)
-                        output.write(f'{indent}[CRepr]\n')
-                        output.write(f'{indent}public struct {name} : {interface_name}\n')
+                    output.write(f'{indent}[CRepr]\n')
+                    if base != None:
+                        output.write(f'{indent}public struct {name} : {base_name}\n')
                     else:
-                        output.write(f'{indent}[CRepr]\n')
                         output.write(f'{indent}public struct {name}\n')
                     output.write(f'{indent}{{\n')
                     indent += '\t'
@@ -433,7 +434,20 @@ for filename in filenames:
                     if guid != None:
                         output.write(f'{indent}public const new Guid IID = .({process_guid(guid)});\n')
                         output.write(f'{indent}\n')
+
+                    if base == None:
+                        output.write(f'{indent}protected VTable* vt;\n')
+                    output.write(f'{indent}public VTable* VT {{ get => (.)vt; }}')
+                    output.write(f'{indent}\n')
+
+                    output.write(f'{indent}[CRepr]\n')
+                    if base != None:
+                        output.write(f'{indent}public struct VTable : {base_name}.VTable\n')
+                    else:
+                        output.write(f'{indent}public struct VTable\n')
                     
+                    output.write(f'{indent}{{\n')
+                    indent += '\t'
                     methods = com['Methods']
                     # Functions could be overloaded here, so we need to mangle the names somehow.
                     encountered_names = set()
@@ -451,10 +465,10 @@ for filename in filenames:
                         for param in parameters:
                             param_name = replace_name(param['Name'])
                             param_type = get_param_type(param)
-                            if param_type == 'IUnknown':
-                                x = 123
                             output.write(f', {param_type} {param_name}')
                         output.write(f') {method_name};\n')
+                    indent = indent[:-1]
+                    output.write(f'{indent}}}\n')
                     indent = indent[:-1]
                     output.write(f'{indent}}}\n')
 

@@ -631,898 +631,1113 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd7d6e072, 0xdccd, 0x11d0, 0xaa, 0x4b, 0x00, 0x60, 0x97, 0x0d, 0xeb, 0xae);
 			
-			public function HRESULT(IMSMQQuery *self, VARIANT* QueueGuid, VARIANT* ServiceTypeGuid, VARIANT* Label, VARIANT* CreateTime, VARIANT* ModifyTime, VARIANT* RelServiceType, VARIANT* RelLabel, VARIANT* RelCreateTime, VARIANT* RelModifyTime, IMSMQQueueInfos** ppqinfos) LookupQueue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQQuery *self, VARIANT* QueueGuid, VARIANT* ServiceTypeGuid, VARIANT* Label, VARIANT* CreateTime, VARIANT* ModifyTime, VARIANT* RelServiceType, VARIANT* RelLabel, VARIANT* RelCreateTime, VARIANT* RelModifyTime, IMSMQQueueInfos** ppqinfos) LookupQueue;
+			}
 		}
 		[CRepr]
 		public struct IMSMQQueueInfo : IDispatch
 		{
 			public const new Guid IID = .(0xd7d6e07b, 0xdccd, 0x11d0, 0xaa, 0x4b, 0x00, 0x60, 0x97, 0x0d, 0xeb, 0xae);
 			
-			public function HRESULT(IMSMQQueueInfo *self, BSTR* pbstrGuidQueue) get_QueueGuid;
-			public function HRESULT(IMSMQQueueInfo *self, BSTR* pbstrGuidServiceType) get_ServiceTypeGuid;
-			public function HRESULT(IMSMQQueueInfo *self, BSTR bstrGuidServiceType) put_ServiceTypeGuid;
-			public function HRESULT(IMSMQQueueInfo *self, BSTR* pbstrLabel) get_Label;
-			public function HRESULT(IMSMQQueueInfo *self, BSTR bstrLabel) put_Label;
-			public function HRESULT(IMSMQQueueInfo *self, BSTR* pbstrPathName) get_PathName;
-			public function HRESULT(IMSMQQueueInfo *self, BSTR bstrPathName) put_PathName;
-			public function HRESULT(IMSMQQueueInfo *self, BSTR* pbstrFormatName) get_FormatName;
-			public function HRESULT(IMSMQQueueInfo *self, BSTR bstrFormatName) put_FormatName;
-			public function HRESULT(IMSMQQueueInfo *self, int16* pisTransactional) get_IsTransactional;
-			public function HRESULT(IMSMQQueueInfo *self, int32* plPrivLevel) get_PrivLevel;
-			public function HRESULT(IMSMQQueueInfo *self, int32 lPrivLevel) put_PrivLevel;
-			public function HRESULT(IMSMQQueueInfo *self, int32* plJournal) get_Journal;
-			public function HRESULT(IMSMQQueueInfo *self, int32 lJournal) put_Journal;
-			public function HRESULT(IMSMQQueueInfo *self, int32* plQuota) get_Quota;
-			public function HRESULT(IMSMQQueueInfo *self, int32 lQuota) put_Quota;
-			public function HRESULT(IMSMQQueueInfo *self, int32* plBasePriority) get_BasePriority;
-			public function HRESULT(IMSMQQueueInfo *self, int32 lBasePriority) put_BasePriority;
-			public function HRESULT(IMSMQQueueInfo *self, VARIANT* pvarCreateTime) get_CreateTime;
-			public function HRESULT(IMSMQQueueInfo *self, VARIANT* pvarModifyTime) get_ModifyTime;
-			public function HRESULT(IMSMQQueueInfo *self, int32* plAuthenticate) get_Authenticate;
-			public function HRESULT(IMSMQQueueInfo *self, int32 lAuthenticate) put_Authenticate;
-			public function HRESULT(IMSMQQueueInfo *self, int32* plJournalQuota) get_JournalQuota;
-			public function HRESULT(IMSMQQueueInfo *self, int32 lJournalQuota) put_JournalQuota;
-			public function HRESULT(IMSMQQueueInfo *self, int16* pisWorldReadable) get_IsWorldReadable;
-			public function HRESULT(IMSMQQueueInfo *self, VARIANT* IsTransactional, VARIANT* IsWorldReadable) Create;
-			public function HRESULT(IMSMQQueueInfo *self) Delete;
-			public function HRESULT(IMSMQQueueInfo *self, int32 Access, int32 ShareMode, IMSMQQueue** ppq) Open;
-			public function HRESULT(IMSMQQueueInfo *self) Refresh;
-			public function HRESULT(IMSMQQueueInfo *self) Update;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQQueueInfo *self, BSTR* pbstrGuidQueue) get_QueueGuid;
+				public function HRESULT(IMSMQQueueInfo *self, BSTR* pbstrGuidServiceType) get_ServiceTypeGuid;
+				public function HRESULT(IMSMQQueueInfo *self, BSTR bstrGuidServiceType) put_ServiceTypeGuid;
+				public function HRESULT(IMSMQQueueInfo *self, BSTR* pbstrLabel) get_Label;
+				public function HRESULT(IMSMQQueueInfo *self, BSTR bstrLabel) put_Label;
+				public function HRESULT(IMSMQQueueInfo *self, BSTR* pbstrPathName) get_PathName;
+				public function HRESULT(IMSMQQueueInfo *self, BSTR bstrPathName) put_PathName;
+				public function HRESULT(IMSMQQueueInfo *self, BSTR* pbstrFormatName) get_FormatName;
+				public function HRESULT(IMSMQQueueInfo *self, BSTR bstrFormatName) put_FormatName;
+				public function HRESULT(IMSMQQueueInfo *self, int16* pisTransactional) get_IsTransactional;
+				public function HRESULT(IMSMQQueueInfo *self, int32* plPrivLevel) get_PrivLevel;
+				public function HRESULT(IMSMQQueueInfo *self, int32 lPrivLevel) put_PrivLevel;
+				public function HRESULT(IMSMQQueueInfo *self, int32* plJournal) get_Journal;
+				public function HRESULT(IMSMQQueueInfo *self, int32 lJournal) put_Journal;
+				public function HRESULT(IMSMQQueueInfo *self, int32* plQuota) get_Quota;
+				public function HRESULT(IMSMQQueueInfo *self, int32 lQuota) put_Quota;
+				public function HRESULT(IMSMQQueueInfo *self, int32* plBasePriority) get_BasePriority;
+				public function HRESULT(IMSMQQueueInfo *self, int32 lBasePriority) put_BasePriority;
+				public function HRESULT(IMSMQQueueInfo *self, VARIANT* pvarCreateTime) get_CreateTime;
+				public function HRESULT(IMSMQQueueInfo *self, VARIANT* pvarModifyTime) get_ModifyTime;
+				public function HRESULT(IMSMQQueueInfo *self, int32* plAuthenticate) get_Authenticate;
+				public function HRESULT(IMSMQQueueInfo *self, int32 lAuthenticate) put_Authenticate;
+				public function HRESULT(IMSMQQueueInfo *self, int32* plJournalQuota) get_JournalQuota;
+				public function HRESULT(IMSMQQueueInfo *self, int32 lJournalQuota) put_JournalQuota;
+				public function HRESULT(IMSMQQueueInfo *self, int16* pisWorldReadable) get_IsWorldReadable;
+				public function HRESULT(IMSMQQueueInfo *self, VARIANT* IsTransactional, VARIANT* IsWorldReadable) Create;
+				public function HRESULT(IMSMQQueueInfo *self) Delete;
+				public function HRESULT(IMSMQQueueInfo *self, int32 Access, int32 ShareMode, IMSMQQueue** ppq) Open;
+				public function HRESULT(IMSMQQueueInfo *self) Refresh;
+				public function HRESULT(IMSMQQueueInfo *self) Update;
+			}
 		}
 		[CRepr]
 		public struct IMSMQQueueInfo2 : IDispatch
 		{
 			public const new Guid IID = .(0xfd174a80, 0x89cf, 0x11d2, 0xb0, 0xf2, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQQueueInfo2 *self, BSTR* pbstrGuidQueue) get_QueueGuid;
-			public function HRESULT(IMSMQQueueInfo2 *self, BSTR* pbstrGuidServiceType) get_ServiceTypeGuid;
-			public function HRESULT(IMSMQQueueInfo2 *self, BSTR bstrGuidServiceType) put_ServiceTypeGuid;
-			public function HRESULT(IMSMQQueueInfo2 *self, BSTR* pbstrLabel) get_Label;
-			public function HRESULT(IMSMQQueueInfo2 *self, BSTR bstrLabel) put_Label;
-			public function HRESULT(IMSMQQueueInfo2 *self, BSTR* pbstrPathName) get_PathName;
-			public function HRESULT(IMSMQQueueInfo2 *self, BSTR bstrPathName) put_PathName;
-			public function HRESULT(IMSMQQueueInfo2 *self, BSTR* pbstrFormatName) get_FormatName;
-			public function HRESULT(IMSMQQueueInfo2 *self, BSTR bstrFormatName) put_FormatName;
-			public function HRESULT(IMSMQQueueInfo2 *self, int16* pisTransactional) get_IsTransactional;
-			public function HRESULT(IMSMQQueueInfo2 *self, int32* plPrivLevel) get_PrivLevel;
-			public function HRESULT(IMSMQQueueInfo2 *self, int32 lPrivLevel) put_PrivLevel;
-			public function HRESULT(IMSMQQueueInfo2 *self, int32* plJournal) get_Journal;
-			public function HRESULT(IMSMQQueueInfo2 *self, int32 lJournal) put_Journal;
-			public function HRESULT(IMSMQQueueInfo2 *self, int32* plQuota) get_Quota;
-			public function HRESULT(IMSMQQueueInfo2 *self, int32 lQuota) put_Quota;
-			public function HRESULT(IMSMQQueueInfo2 *self, int32* plBasePriority) get_BasePriority;
-			public function HRESULT(IMSMQQueueInfo2 *self, int32 lBasePriority) put_BasePriority;
-			public function HRESULT(IMSMQQueueInfo2 *self, VARIANT* pvarCreateTime) get_CreateTime;
-			public function HRESULT(IMSMQQueueInfo2 *self, VARIANT* pvarModifyTime) get_ModifyTime;
-			public function HRESULT(IMSMQQueueInfo2 *self, int32* plAuthenticate) get_Authenticate;
-			public function HRESULT(IMSMQQueueInfo2 *self, int32 lAuthenticate) put_Authenticate;
-			public function HRESULT(IMSMQQueueInfo2 *self, int32* plJournalQuota) get_JournalQuota;
-			public function HRESULT(IMSMQQueueInfo2 *self, int32 lJournalQuota) put_JournalQuota;
-			public function HRESULT(IMSMQQueueInfo2 *self, int16* pisWorldReadable) get_IsWorldReadable;
-			public function HRESULT(IMSMQQueueInfo2 *self, VARIANT* IsTransactional, VARIANT* IsWorldReadable) Create;
-			public function HRESULT(IMSMQQueueInfo2 *self) Delete;
-			public function HRESULT(IMSMQQueueInfo2 *self, int32 Access, int32 ShareMode, IMSMQQueue2** ppq) Open;
-			public function HRESULT(IMSMQQueueInfo2 *self) Refresh;
-			public function HRESULT(IMSMQQueueInfo2 *self) Update;
-			public function HRESULT(IMSMQQueueInfo2 *self, BSTR* pbstrPathNameDNS) get_PathNameDNS;
-			public function HRESULT(IMSMQQueueInfo2 *self, IDispatch** ppcolProperties) get_Properties;
-			public function HRESULT(IMSMQQueueInfo2 *self, VARIANT* pvarSecurity) get_Security;
-			public function HRESULT(IMSMQQueueInfo2 *self, VARIANT varSecurity) put_Security;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQQueueInfo2 *self, BSTR* pbstrGuidQueue) get_QueueGuid;
+				public function HRESULT(IMSMQQueueInfo2 *self, BSTR* pbstrGuidServiceType) get_ServiceTypeGuid;
+				public function HRESULT(IMSMQQueueInfo2 *self, BSTR bstrGuidServiceType) put_ServiceTypeGuid;
+				public function HRESULT(IMSMQQueueInfo2 *self, BSTR* pbstrLabel) get_Label;
+				public function HRESULT(IMSMQQueueInfo2 *self, BSTR bstrLabel) put_Label;
+				public function HRESULT(IMSMQQueueInfo2 *self, BSTR* pbstrPathName) get_PathName;
+				public function HRESULT(IMSMQQueueInfo2 *self, BSTR bstrPathName) put_PathName;
+				public function HRESULT(IMSMQQueueInfo2 *self, BSTR* pbstrFormatName) get_FormatName;
+				public function HRESULT(IMSMQQueueInfo2 *self, BSTR bstrFormatName) put_FormatName;
+				public function HRESULT(IMSMQQueueInfo2 *self, int16* pisTransactional) get_IsTransactional;
+				public function HRESULT(IMSMQQueueInfo2 *self, int32* plPrivLevel) get_PrivLevel;
+				public function HRESULT(IMSMQQueueInfo2 *self, int32 lPrivLevel) put_PrivLevel;
+				public function HRESULT(IMSMQQueueInfo2 *self, int32* plJournal) get_Journal;
+				public function HRESULT(IMSMQQueueInfo2 *self, int32 lJournal) put_Journal;
+				public function HRESULT(IMSMQQueueInfo2 *self, int32* plQuota) get_Quota;
+				public function HRESULT(IMSMQQueueInfo2 *self, int32 lQuota) put_Quota;
+				public function HRESULT(IMSMQQueueInfo2 *self, int32* plBasePriority) get_BasePriority;
+				public function HRESULT(IMSMQQueueInfo2 *self, int32 lBasePriority) put_BasePriority;
+				public function HRESULT(IMSMQQueueInfo2 *self, VARIANT* pvarCreateTime) get_CreateTime;
+				public function HRESULT(IMSMQQueueInfo2 *self, VARIANT* pvarModifyTime) get_ModifyTime;
+				public function HRESULT(IMSMQQueueInfo2 *self, int32* plAuthenticate) get_Authenticate;
+				public function HRESULT(IMSMQQueueInfo2 *self, int32 lAuthenticate) put_Authenticate;
+				public function HRESULT(IMSMQQueueInfo2 *self, int32* plJournalQuota) get_JournalQuota;
+				public function HRESULT(IMSMQQueueInfo2 *self, int32 lJournalQuota) put_JournalQuota;
+				public function HRESULT(IMSMQQueueInfo2 *self, int16* pisWorldReadable) get_IsWorldReadable;
+				public function HRESULT(IMSMQQueueInfo2 *self, VARIANT* IsTransactional, VARIANT* IsWorldReadable) Create;
+				public function HRESULT(IMSMQQueueInfo2 *self) Delete;
+				public function HRESULT(IMSMQQueueInfo2 *self, int32 Access, int32 ShareMode, IMSMQQueue2** ppq) Open;
+				public function HRESULT(IMSMQQueueInfo2 *self) Refresh;
+				public function HRESULT(IMSMQQueueInfo2 *self) Update;
+				public function HRESULT(IMSMQQueueInfo2 *self, BSTR* pbstrPathNameDNS) get_PathNameDNS;
+				public function HRESULT(IMSMQQueueInfo2 *self, IDispatch** ppcolProperties) get_Properties;
+				public function HRESULT(IMSMQQueueInfo2 *self, VARIANT* pvarSecurity) get_Security;
+				public function HRESULT(IMSMQQueueInfo2 *self, VARIANT varSecurity) put_Security;
+			}
 		}
 		[CRepr]
 		public struct IMSMQQueueInfo3 : IDispatch
 		{
 			public const new Guid IID = .(0xeba96b1d, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQQueueInfo3 *self, BSTR* pbstrGuidQueue) get_QueueGuid;
-			public function HRESULT(IMSMQQueueInfo3 *self, BSTR* pbstrGuidServiceType) get_ServiceTypeGuid;
-			public function HRESULT(IMSMQQueueInfo3 *self, BSTR bstrGuidServiceType) put_ServiceTypeGuid;
-			public function HRESULT(IMSMQQueueInfo3 *self, BSTR* pbstrLabel) get_Label;
-			public function HRESULT(IMSMQQueueInfo3 *self, BSTR bstrLabel) put_Label;
-			public function HRESULT(IMSMQQueueInfo3 *self, BSTR* pbstrPathName) get_PathName;
-			public function HRESULT(IMSMQQueueInfo3 *self, BSTR bstrPathName) put_PathName;
-			public function HRESULT(IMSMQQueueInfo3 *self, BSTR* pbstrFormatName) get_FormatName;
-			public function HRESULT(IMSMQQueueInfo3 *self, BSTR bstrFormatName) put_FormatName;
-			public function HRESULT(IMSMQQueueInfo3 *self, int16* pisTransactional) get_IsTransactional;
-			public function HRESULT(IMSMQQueueInfo3 *self, int32* plPrivLevel) get_PrivLevel;
-			public function HRESULT(IMSMQQueueInfo3 *self, int32 lPrivLevel) put_PrivLevel;
-			public function HRESULT(IMSMQQueueInfo3 *self, int32* plJournal) get_Journal;
-			public function HRESULT(IMSMQQueueInfo3 *self, int32 lJournal) put_Journal;
-			public function HRESULT(IMSMQQueueInfo3 *self, int32* plQuota) get_Quota;
-			public function HRESULT(IMSMQQueueInfo3 *self, int32 lQuota) put_Quota;
-			public function HRESULT(IMSMQQueueInfo3 *self, int32* plBasePriority) get_BasePriority;
-			public function HRESULT(IMSMQQueueInfo3 *self, int32 lBasePriority) put_BasePriority;
-			public function HRESULT(IMSMQQueueInfo3 *self, VARIANT* pvarCreateTime) get_CreateTime;
-			public function HRESULT(IMSMQQueueInfo3 *self, VARIANT* pvarModifyTime) get_ModifyTime;
-			public function HRESULT(IMSMQQueueInfo3 *self, int32* plAuthenticate) get_Authenticate;
-			public function HRESULT(IMSMQQueueInfo3 *self, int32 lAuthenticate) put_Authenticate;
-			public function HRESULT(IMSMQQueueInfo3 *self, int32* plJournalQuota) get_JournalQuota;
-			public function HRESULT(IMSMQQueueInfo3 *self, int32 lJournalQuota) put_JournalQuota;
-			public function HRESULT(IMSMQQueueInfo3 *self, int16* pisWorldReadable) get_IsWorldReadable;
-			public function HRESULT(IMSMQQueueInfo3 *self, VARIANT* IsTransactional, VARIANT* IsWorldReadable) Create;
-			public function HRESULT(IMSMQQueueInfo3 *self) Delete;
-			public function HRESULT(IMSMQQueueInfo3 *self, int32 Access, int32 ShareMode, IMSMQQueue3** ppq) Open;
-			public function HRESULT(IMSMQQueueInfo3 *self) Refresh;
-			public function HRESULT(IMSMQQueueInfo3 *self) Update;
-			public function HRESULT(IMSMQQueueInfo3 *self, BSTR* pbstrPathNameDNS) get_PathNameDNS;
-			public function HRESULT(IMSMQQueueInfo3 *self, IDispatch** ppcolProperties) get_Properties;
-			public function HRESULT(IMSMQQueueInfo3 *self, VARIANT* pvarSecurity) get_Security;
-			public function HRESULT(IMSMQQueueInfo3 *self, VARIANT varSecurity) put_Security;
-			public function HRESULT(IMSMQQueueInfo3 *self, int16* pisTransactional) get_IsTransactional2;
-			public function HRESULT(IMSMQQueueInfo3 *self, int16* pisWorldReadable) get_IsWorldReadable2;
-			public function HRESULT(IMSMQQueueInfo3 *self, BSTR* pbstrMulticastAddress) get_MulticastAddress;
-			public function HRESULT(IMSMQQueueInfo3 *self, BSTR bstrMulticastAddress) put_MulticastAddress;
-			public function HRESULT(IMSMQQueueInfo3 *self, BSTR* pbstrADsPath) get_ADsPath;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQQueueInfo3 *self, BSTR* pbstrGuidQueue) get_QueueGuid;
+				public function HRESULT(IMSMQQueueInfo3 *self, BSTR* pbstrGuidServiceType) get_ServiceTypeGuid;
+				public function HRESULT(IMSMQQueueInfo3 *self, BSTR bstrGuidServiceType) put_ServiceTypeGuid;
+				public function HRESULT(IMSMQQueueInfo3 *self, BSTR* pbstrLabel) get_Label;
+				public function HRESULT(IMSMQQueueInfo3 *self, BSTR bstrLabel) put_Label;
+				public function HRESULT(IMSMQQueueInfo3 *self, BSTR* pbstrPathName) get_PathName;
+				public function HRESULT(IMSMQQueueInfo3 *self, BSTR bstrPathName) put_PathName;
+				public function HRESULT(IMSMQQueueInfo3 *self, BSTR* pbstrFormatName) get_FormatName;
+				public function HRESULT(IMSMQQueueInfo3 *self, BSTR bstrFormatName) put_FormatName;
+				public function HRESULT(IMSMQQueueInfo3 *self, int16* pisTransactional) get_IsTransactional;
+				public function HRESULT(IMSMQQueueInfo3 *self, int32* plPrivLevel) get_PrivLevel;
+				public function HRESULT(IMSMQQueueInfo3 *self, int32 lPrivLevel) put_PrivLevel;
+				public function HRESULT(IMSMQQueueInfo3 *self, int32* plJournal) get_Journal;
+				public function HRESULT(IMSMQQueueInfo3 *self, int32 lJournal) put_Journal;
+				public function HRESULT(IMSMQQueueInfo3 *self, int32* plQuota) get_Quota;
+				public function HRESULT(IMSMQQueueInfo3 *self, int32 lQuota) put_Quota;
+				public function HRESULT(IMSMQQueueInfo3 *self, int32* plBasePriority) get_BasePriority;
+				public function HRESULT(IMSMQQueueInfo3 *self, int32 lBasePriority) put_BasePriority;
+				public function HRESULT(IMSMQQueueInfo3 *self, VARIANT* pvarCreateTime) get_CreateTime;
+				public function HRESULT(IMSMQQueueInfo3 *self, VARIANT* pvarModifyTime) get_ModifyTime;
+				public function HRESULT(IMSMQQueueInfo3 *self, int32* plAuthenticate) get_Authenticate;
+				public function HRESULT(IMSMQQueueInfo3 *self, int32 lAuthenticate) put_Authenticate;
+				public function HRESULT(IMSMQQueueInfo3 *self, int32* plJournalQuota) get_JournalQuota;
+				public function HRESULT(IMSMQQueueInfo3 *self, int32 lJournalQuota) put_JournalQuota;
+				public function HRESULT(IMSMQQueueInfo3 *self, int16* pisWorldReadable) get_IsWorldReadable;
+				public function HRESULT(IMSMQQueueInfo3 *self, VARIANT* IsTransactional, VARIANT* IsWorldReadable) Create;
+				public function HRESULT(IMSMQQueueInfo3 *self) Delete;
+				public function HRESULT(IMSMQQueueInfo3 *self, int32 Access, int32 ShareMode, IMSMQQueue3** ppq) Open;
+				public function HRESULT(IMSMQQueueInfo3 *self) Refresh;
+				public function HRESULT(IMSMQQueueInfo3 *self) Update;
+				public function HRESULT(IMSMQQueueInfo3 *self, BSTR* pbstrPathNameDNS) get_PathNameDNS;
+				public function HRESULT(IMSMQQueueInfo3 *self, IDispatch** ppcolProperties) get_Properties;
+				public function HRESULT(IMSMQQueueInfo3 *self, VARIANT* pvarSecurity) get_Security;
+				public function HRESULT(IMSMQQueueInfo3 *self, VARIANT varSecurity) put_Security;
+				public function HRESULT(IMSMQQueueInfo3 *self, int16* pisTransactional) get_IsTransactional2;
+				public function HRESULT(IMSMQQueueInfo3 *self, int16* pisWorldReadable) get_IsWorldReadable2;
+				public function HRESULT(IMSMQQueueInfo3 *self, BSTR* pbstrMulticastAddress) get_MulticastAddress;
+				public function HRESULT(IMSMQQueueInfo3 *self, BSTR bstrMulticastAddress) put_MulticastAddress;
+				public function HRESULT(IMSMQQueueInfo3 *self, BSTR* pbstrADsPath) get_ADsPath;
+			}
 		}
 		[CRepr]
 		public struct IMSMQQueueInfo4 : IDispatch
 		{
 			public const new Guid IID = .(0xeba96b21, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQQueueInfo4 *self, BSTR* pbstrGuidQueue) get_QueueGuid;
-			public function HRESULT(IMSMQQueueInfo4 *self, BSTR* pbstrGuidServiceType) get_ServiceTypeGuid;
-			public function HRESULT(IMSMQQueueInfo4 *self, BSTR bstrGuidServiceType) put_ServiceTypeGuid;
-			public function HRESULT(IMSMQQueueInfo4 *self, BSTR* pbstrLabel) get_Label;
-			public function HRESULT(IMSMQQueueInfo4 *self, BSTR bstrLabel) put_Label;
-			public function HRESULT(IMSMQQueueInfo4 *self, BSTR* pbstrPathName) get_PathName;
-			public function HRESULT(IMSMQQueueInfo4 *self, BSTR bstrPathName) put_PathName;
-			public function HRESULT(IMSMQQueueInfo4 *self, BSTR* pbstrFormatName) get_FormatName;
-			public function HRESULT(IMSMQQueueInfo4 *self, BSTR bstrFormatName) put_FormatName;
-			public function HRESULT(IMSMQQueueInfo4 *self, int16* pisTransactional) get_IsTransactional;
-			public function HRESULT(IMSMQQueueInfo4 *self, int32* plPrivLevel) get_PrivLevel;
-			public function HRESULT(IMSMQQueueInfo4 *self, int32 lPrivLevel) put_PrivLevel;
-			public function HRESULT(IMSMQQueueInfo4 *self, int32* plJournal) get_Journal;
-			public function HRESULT(IMSMQQueueInfo4 *self, int32 lJournal) put_Journal;
-			public function HRESULT(IMSMQQueueInfo4 *self, int32* plQuota) get_Quota;
-			public function HRESULT(IMSMQQueueInfo4 *self, int32 lQuota) put_Quota;
-			public function HRESULT(IMSMQQueueInfo4 *self, int32* plBasePriority) get_BasePriority;
-			public function HRESULT(IMSMQQueueInfo4 *self, int32 lBasePriority) put_BasePriority;
-			public function HRESULT(IMSMQQueueInfo4 *self, VARIANT* pvarCreateTime) get_CreateTime;
-			public function HRESULT(IMSMQQueueInfo4 *self, VARIANT* pvarModifyTime) get_ModifyTime;
-			public function HRESULT(IMSMQQueueInfo4 *self, int32* plAuthenticate) get_Authenticate;
-			public function HRESULT(IMSMQQueueInfo4 *self, int32 lAuthenticate) put_Authenticate;
-			public function HRESULT(IMSMQQueueInfo4 *self, int32* plJournalQuota) get_JournalQuota;
-			public function HRESULT(IMSMQQueueInfo4 *self, int32 lJournalQuota) put_JournalQuota;
-			public function HRESULT(IMSMQQueueInfo4 *self, int16* pisWorldReadable) get_IsWorldReadable;
-			public function HRESULT(IMSMQQueueInfo4 *self, VARIANT* IsTransactional, VARIANT* IsWorldReadable) Create;
-			public function HRESULT(IMSMQQueueInfo4 *self) Delete;
-			public function HRESULT(IMSMQQueueInfo4 *self, int32 Access, int32 ShareMode, IMSMQQueue4** ppq) Open;
-			public function HRESULT(IMSMQQueueInfo4 *self) Refresh;
-			public function HRESULT(IMSMQQueueInfo4 *self) Update;
-			public function HRESULT(IMSMQQueueInfo4 *self, BSTR* pbstrPathNameDNS) get_PathNameDNS;
-			public function HRESULT(IMSMQQueueInfo4 *self, IDispatch** ppcolProperties) get_Properties;
-			public function HRESULT(IMSMQQueueInfo4 *self, VARIANT* pvarSecurity) get_Security;
-			public function HRESULT(IMSMQQueueInfo4 *self, VARIANT varSecurity) put_Security;
-			public function HRESULT(IMSMQQueueInfo4 *self, int16* pisTransactional) get_IsTransactional2;
-			public function HRESULT(IMSMQQueueInfo4 *self, int16* pisWorldReadable) get_IsWorldReadable2;
-			public function HRESULT(IMSMQQueueInfo4 *self, BSTR* pbstrMulticastAddress) get_MulticastAddress;
-			public function HRESULT(IMSMQQueueInfo4 *self, BSTR bstrMulticastAddress) put_MulticastAddress;
-			public function HRESULT(IMSMQQueueInfo4 *self, BSTR* pbstrADsPath) get_ADsPath;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQQueueInfo4 *self, BSTR* pbstrGuidQueue) get_QueueGuid;
+				public function HRESULT(IMSMQQueueInfo4 *self, BSTR* pbstrGuidServiceType) get_ServiceTypeGuid;
+				public function HRESULT(IMSMQQueueInfo4 *self, BSTR bstrGuidServiceType) put_ServiceTypeGuid;
+				public function HRESULT(IMSMQQueueInfo4 *self, BSTR* pbstrLabel) get_Label;
+				public function HRESULT(IMSMQQueueInfo4 *self, BSTR bstrLabel) put_Label;
+				public function HRESULT(IMSMQQueueInfo4 *self, BSTR* pbstrPathName) get_PathName;
+				public function HRESULT(IMSMQQueueInfo4 *self, BSTR bstrPathName) put_PathName;
+				public function HRESULT(IMSMQQueueInfo4 *self, BSTR* pbstrFormatName) get_FormatName;
+				public function HRESULT(IMSMQQueueInfo4 *self, BSTR bstrFormatName) put_FormatName;
+				public function HRESULT(IMSMQQueueInfo4 *self, int16* pisTransactional) get_IsTransactional;
+				public function HRESULT(IMSMQQueueInfo4 *self, int32* plPrivLevel) get_PrivLevel;
+				public function HRESULT(IMSMQQueueInfo4 *self, int32 lPrivLevel) put_PrivLevel;
+				public function HRESULT(IMSMQQueueInfo4 *self, int32* plJournal) get_Journal;
+				public function HRESULT(IMSMQQueueInfo4 *self, int32 lJournal) put_Journal;
+				public function HRESULT(IMSMQQueueInfo4 *self, int32* plQuota) get_Quota;
+				public function HRESULT(IMSMQQueueInfo4 *self, int32 lQuota) put_Quota;
+				public function HRESULT(IMSMQQueueInfo4 *self, int32* plBasePriority) get_BasePriority;
+				public function HRESULT(IMSMQQueueInfo4 *self, int32 lBasePriority) put_BasePriority;
+				public function HRESULT(IMSMQQueueInfo4 *self, VARIANT* pvarCreateTime) get_CreateTime;
+				public function HRESULT(IMSMQQueueInfo4 *self, VARIANT* pvarModifyTime) get_ModifyTime;
+				public function HRESULT(IMSMQQueueInfo4 *self, int32* plAuthenticate) get_Authenticate;
+				public function HRESULT(IMSMQQueueInfo4 *self, int32 lAuthenticate) put_Authenticate;
+				public function HRESULT(IMSMQQueueInfo4 *self, int32* plJournalQuota) get_JournalQuota;
+				public function HRESULT(IMSMQQueueInfo4 *self, int32 lJournalQuota) put_JournalQuota;
+				public function HRESULT(IMSMQQueueInfo4 *self, int16* pisWorldReadable) get_IsWorldReadable;
+				public function HRESULT(IMSMQQueueInfo4 *self, VARIANT* IsTransactional, VARIANT* IsWorldReadable) Create;
+				public function HRESULT(IMSMQQueueInfo4 *self) Delete;
+				public function HRESULT(IMSMQQueueInfo4 *self, int32 Access, int32 ShareMode, IMSMQQueue4** ppq) Open;
+				public function HRESULT(IMSMQQueueInfo4 *self) Refresh;
+				public function HRESULT(IMSMQQueueInfo4 *self) Update;
+				public function HRESULT(IMSMQQueueInfo4 *self, BSTR* pbstrPathNameDNS) get_PathNameDNS;
+				public function HRESULT(IMSMQQueueInfo4 *self, IDispatch** ppcolProperties) get_Properties;
+				public function HRESULT(IMSMQQueueInfo4 *self, VARIANT* pvarSecurity) get_Security;
+				public function HRESULT(IMSMQQueueInfo4 *self, VARIANT varSecurity) put_Security;
+				public function HRESULT(IMSMQQueueInfo4 *self, int16* pisTransactional) get_IsTransactional2;
+				public function HRESULT(IMSMQQueueInfo4 *self, int16* pisWorldReadable) get_IsWorldReadable2;
+				public function HRESULT(IMSMQQueueInfo4 *self, BSTR* pbstrMulticastAddress) get_MulticastAddress;
+				public function HRESULT(IMSMQQueueInfo4 *self, BSTR bstrMulticastAddress) put_MulticastAddress;
+				public function HRESULT(IMSMQQueueInfo4 *self, BSTR* pbstrADsPath) get_ADsPath;
+			}
 		}
 		[CRepr]
 		public struct IMSMQQueue : IDispatch
 		{
 			public const new Guid IID = .(0xd7d6e076, 0xdccd, 0x11d0, 0xaa, 0x4b, 0x00, 0x60, 0x97, 0x0d, 0xeb, 0xae);
 			
-			public function HRESULT(IMSMQQueue *self, int32* plAccess) get_Access;
-			public function HRESULT(IMSMQQueue *self, int32* plShareMode) get_ShareMode;
-			public function HRESULT(IMSMQQueue *self, IMSMQQueueInfo** ppqinfo) get_QueueInfo;
-			public function HRESULT(IMSMQQueue *self, int32* plHandle) get_Handle;
-			public function HRESULT(IMSMQQueue *self, int16* pisOpen) get_IsOpen;
-			public function HRESULT(IMSMQQueue *self) Close;
-			public function HRESULT(IMSMQQueue *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) Receive;
-			public function HRESULT(IMSMQQueue *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) Peek;
-			public function HRESULT(IMSMQQueue *self, IMSMQEvent* Event, VARIANT* Cursor, VARIANT* ReceiveTimeout) EnableNotification;
-			public function HRESULT(IMSMQQueue *self) Reset;
-			public function HRESULT(IMSMQQueue *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) ReceiveCurrent;
-			public function HRESULT(IMSMQQueue *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) PeekNext;
-			public function HRESULT(IMSMQQueue *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) PeekCurrent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQQueue *self, int32* plAccess) get_Access;
+				public function HRESULT(IMSMQQueue *self, int32* plShareMode) get_ShareMode;
+				public function HRESULT(IMSMQQueue *self, IMSMQQueueInfo** ppqinfo) get_QueueInfo;
+				public function HRESULT(IMSMQQueue *self, int32* plHandle) get_Handle;
+				public function HRESULT(IMSMQQueue *self, int16* pisOpen) get_IsOpen;
+				public function HRESULT(IMSMQQueue *self) Close;
+				public function HRESULT(IMSMQQueue *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) Receive;
+				public function HRESULT(IMSMQQueue *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) Peek;
+				public function HRESULT(IMSMQQueue *self, IMSMQEvent* Event, VARIANT* Cursor, VARIANT* ReceiveTimeout) EnableNotification;
+				public function HRESULT(IMSMQQueue *self) Reset;
+				public function HRESULT(IMSMQQueue *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) ReceiveCurrent;
+				public function HRESULT(IMSMQQueue *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) PeekNext;
+				public function HRESULT(IMSMQQueue *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) PeekCurrent;
+			}
 		}
 		[CRepr]
 		public struct IMSMQQueue2 : IDispatch
 		{
 			public const new Guid IID = .(0xef0574e0, 0x06d8, 0x11d3, 0xb1, 0x00, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQQueue2 *self, int32* plAccess) get_Access;
-			public function HRESULT(IMSMQQueue2 *self, int32* plShareMode) get_ShareMode;
-			public function HRESULT(IMSMQQueue2 *self, IMSMQQueueInfo2** ppqinfo) get_QueueInfo;
-			public function HRESULT(IMSMQQueue2 *self, int32* plHandle) get_Handle;
-			public function HRESULT(IMSMQQueue2 *self, int16* pisOpen) get_IsOpen;
-			public function HRESULT(IMSMQQueue2 *self) Close;
-			public function HRESULT(IMSMQQueue2 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) Receive_v1;
-			public function HRESULT(IMSMQQueue2 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) Peek_v1;
-			public function HRESULT(IMSMQQueue2 *self, IMSMQEvent2* Event, VARIANT* Cursor, VARIANT* ReceiveTimeout) EnableNotification;
-			public function HRESULT(IMSMQQueue2 *self) Reset;
-			public function HRESULT(IMSMQQueue2 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) ReceiveCurrent_v1;
-			public function HRESULT(IMSMQQueue2 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) PeekNext_v1;
-			public function HRESULT(IMSMQQueue2 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) PeekCurrent_v1;
-			public function HRESULT(IMSMQQueue2 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage2** ppmsg) Receive;
-			public function HRESULT(IMSMQQueue2 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage2** ppmsg) Peek;
-			public function HRESULT(IMSMQQueue2 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage2** ppmsg) ReceiveCurrent;
-			public function HRESULT(IMSMQQueue2 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage2** ppmsg) PeekNext;
-			public function HRESULT(IMSMQQueue2 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage2** ppmsg) PeekCurrent;
-			public function HRESULT(IMSMQQueue2 *self, IDispatch** ppcolProperties) get_Properties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQQueue2 *self, int32* plAccess) get_Access;
+				public function HRESULT(IMSMQQueue2 *self, int32* plShareMode) get_ShareMode;
+				public function HRESULT(IMSMQQueue2 *self, IMSMQQueueInfo2** ppqinfo) get_QueueInfo;
+				public function HRESULT(IMSMQQueue2 *self, int32* plHandle) get_Handle;
+				public function HRESULT(IMSMQQueue2 *self, int16* pisOpen) get_IsOpen;
+				public function HRESULT(IMSMQQueue2 *self) Close;
+				public function HRESULT(IMSMQQueue2 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) Receive_v1;
+				public function HRESULT(IMSMQQueue2 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) Peek_v1;
+				public function HRESULT(IMSMQQueue2 *self, IMSMQEvent2* Event, VARIANT* Cursor, VARIANT* ReceiveTimeout) EnableNotification;
+				public function HRESULT(IMSMQQueue2 *self) Reset;
+				public function HRESULT(IMSMQQueue2 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) ReceiveCurrent_v1;
+				public function HRESULT(IMSMQQueue2 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) PeekNext_v1;
+				public function HRESULT(IMSMQQueue2 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) PeekCurrent_v1;
+				public function HRESULT(IMSMQQueue2 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage2** ppmsg) Receive;
+				public function HRESULT(IMSMQQueue2 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage2** ppmsg) Peek;
+				public function HRESULT(IMSMQQueue2 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage2** ppmsg) ReceiveCurrent;
+				public function HRESULT(IMSMQQueue2 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage2** ppmsg) PeekNext;
+				public function HRESULT(IMSMQQueue2 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage2** ppmsg) PeekCurrent;
+				public function HRESULT(IMSMQQueue2 *self, IDispatch** ppcolProperties) get_Properties;
+			}
 		}
 		[CRepr]
 		public struct IMSMQQueue3 : IDispatch
 		{
 			public const new Guid IID = .(0xeba96b1b, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQQueue3 *self, int32* plAccess) get_Access;
-			public function HRESULT(IMSMQQueue3 *self, int32* plShareMode) get_ShareMode;
-			public function HRESULT(IMSMQQueue3 *self, IMSMQQueueInfo3** ppqinfo) get_QueueInfo;
-			public function HRESULT(IMSMQQueue3 *self, int32* plHandle) get_Handle;
-			public function HRESULT(IMSMQQueue3 *self, int16* pisOpen) get_IsOpen;
-			public function HRESULT(IMSMQQueue3 *self) Close;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) Receive_v1;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) Peek_v1;
-			public function HRESULT(IMSMQQueue3 *self, IMSMQEvent3* Event, VARIANT* Cursor, VARIANT* ReceiveTimeout) EnableNotification;
-			public function HRESULT(IMSMQQueue3 *self) Reset;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) ReceiveCurrent_v1;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) PeekNext_v1;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) PeekCurrent_v1;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) Receive;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) Peek;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) ReceiveCurrent;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) PeekNext;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) PeekCurrent;
-			public function HRESULT(IMSMQQueue3 *self, IDispatch** ppcolProperties) get_Properties;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT* pvarHandle) get_Handle2;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT LookupId, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) ReceiveByLookupId;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT LookupId, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) ReceiveNextByLookupId;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT LookupId, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) ReceivePreviousByLookupId;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) ReceiveFirstByLookupId;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) ReceiveLastByLookupId;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT LookupId, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) PeekByLookupId;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT LookupId, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) PeekNextByLookupId;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT LookupId, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) PeekPreviousByLookupId;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) PeekFirstByLookupId;
-			public function HRESULT(IMSMQQueue3 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) PeekLastByLookupId;
-			public function HRESULT(IMSMQQueue3 *self) Purge;
-			public function HRESULT(IMSMQQueue3 *self, int16* pisOpen) get_IsOpen2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQQueue3 *self, int32* plAccess) get_Access;
+				public function HRESULT(IMSMQQueue3 *self, int32* plShareMode) get_ShareMode;
+				public function HRESULT(IMSMQQueue3 *self, IMSMQQueueInfo3** ppqinfo) get_QueueInfo;
+				public function HRESULT(IMSMQQueue3 *self, int32* plHandle) get_Handle;
+				public function HRESULT(IMSMQQueue3 *self, int16* pisOpen) get_IsOpen;
+				public function HRESULT(IMSMQQueue3 *self) Close;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) Receive_v1;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) Peek_v1;
+				public function HRESULT(IMSMQQueue3 *self, IMSMQEvent3* Event, VARIANT* Cursor, VARIANT* ReceiveTimeout) EnableNotification;
+				public function HRESULT(IMSMQQueue3 *self) Reset;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) ReceiveCurrent_v1;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) PeekNext_v1;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) PeekCurrent_v1;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) Receive;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) Peek;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) ReceiveCurrent;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) PeekNext;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) PeekCurrent;
+				public function HRESULT(IMSMQQueue3 *self, IDispatch** ppcolProperties) get_Properties;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT* pvarHandle) get_Handle2;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT LookupId, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) ReceiveByLookupId;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT LookupId, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) ReceiveNextByLookupId;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT LookupId, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) ReceivePreviousByLookupId;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) ReceiveFirstByLookupId;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) ReceiveLastByLookupId;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT LookupId, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) PeekByLookupId;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT LookupId, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) PeekNextByLookupId;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT LookupId, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) PeekPreviousByLookupId;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) PeekFirstByLookupId;
+				public function HRESULT(IMSMQQueue3 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage3** ppmsg) PeekLastByLookupId;
+				public function HRESULT(IMSMQQueue3 *self) Purge;
+				public function HRESULT(IMSMQQueue3 *self, int16* pisOpen) get_IsOpen2;
+			}
 		}
 		[CRepr]
 		public struct IMSMQQueue4 : IDispatch
 		{
 			public const new Guid IID = .(0xeba96b20, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQQueue4 *self, int32* plAccess) get_Access;
-			public function HRESULT(IMSMQQueue4 *self, int32* plShareMode) get_ShareMode;
-			public function HRESULT(IMSMQQueue4 *self, IMSMQQueueInfo4** ppqinfo) get_QueueInfo;
-			public function HRESULT(IMSMQQueue4 *self, int32* plHandle) get_Handle;
-			public function HRESULT(IMSMQQueue4 *self, int16* pisOpen) get_IsOpen;
-			public function HRESULT(IMSMQQueue4 *self) Close;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) Receive_v1;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) Peek_v1;
-			public function HRESULT(IMSMQQueue4 *self, IMSMQEvent3* Event, VARIANT* Cursor, VARIANT* ReceiveTimeout) EnableNotification;
-			public function HRESULT(IMSMQQueue4 *self) Reset;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) ReceiveCurrent_v1;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) PeekNext_v1;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) PeekCurrent_v1;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) Receive;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) Peek;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) ReceiveCurrent;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) PeekNext;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) PeekCurrent;
-			public function HRESULT(IMSMQQueue4 *self, IDispatch** ppcolProperties) get_Properties;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT* pvarHandle) get_Handle2;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT LookupId, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) ReceiveByLookupId;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT LookupId, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) ReceiveNextByLookupId;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT LookupId, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) ReceivePreviousByLookupId;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) ReceiveFirstByLookupId;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) ReceiveLastByLookupId;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT LookupId, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) PeekByLookupId;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT LookupId, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) PeekNextByLookupId;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT LookupId, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) PeekPreviousByLookupId;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) PeekFirstByLookupId;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) PeekLastByLookupId;
-			public function HRESULT(IMSMQQueue4 *self) Purge;
-			public function HRESULT(IMSMQQueue4 *self, int16* pisOpen) get_IsOpen2;
-			public function HRESULT(IMSMQQueue4 *self, VARIANT LookupId, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) ReceiveByLookupIdAllowPeek;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQQueue4 *self, int32* plAccess) get_Access;
+				public function HRESULT(IMSMQQueue4 *self, int32* plShareMode) get_ShareMode;
+				public function HRESULT(IMSMQQueue4 *self, IMSMQQueueInfo4** ppqinfo) get_QueueInfo;
+				public function HRESULT(IMSMQQueue4 *self, int32* plHandle) get_Handle;
+				public function HRESULT(IMSMQQueue4 *self, int16* pisOpen) get_IsOpen;
+				public function HRESULT(IMSMQQueue4 *self) Close;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) Receive_v1;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) Peek_v1;
+				public function HRESULT(IMSMQQueue4 *self, IMSMQEvent3* Event, VARIANT* Cursor, VARIANT* ReceiveTimeout) EnableNotification;
+				public function HRESULT(IMSMQQueue4 *self) Reset;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) ReceiveCurrent_v1;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) PeekNext_v1;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, IMSMQMessage** ppmsg) PeekCurrent_v1;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) Receive;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) Peek;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) ReceiveCurrent;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) PeekNext;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* ReceiveTimeout, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) PeekCurrent;
+				public function HRESULT(IMSMQQueue4 *self, IDispatch** ppcolProperties) get_Properties;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT* pvarHandle) get_Handle2;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT LookupId, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) ReceiveByLookupId;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT LookupId, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) ReceiveNextByLookupId;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT LookupId, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) ReceivePreviousByLookupId;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) ReceiveFirstByLookupId;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) ReceiveLastByLookupId;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT LookupId, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) PeekByLookupId;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT LookupId, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) PeekNextByLookupId;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT LookupId, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) PeekPreviousByLookupId;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) PeekFirstByLookupId;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) PeekLastByLookupId;
+				public function HRESULT(IMSMQQueue4 *self) Purge;
+				public function HRESULT(IMSMQQueue4 *self, int16* pisOpen) get_IsOpen2;
+				public function HRESULT(IMSMQQueue4 *self, VARIANT LookupId, VARIANT* Transaction, VARIANT* WantDestinationQueue, VARIANT* WantBody, VARIANT* WantConnectorType, IMSMQMessage4** ppmsg) ReceiveByLookupIdAllowPeek;
+			}
 		}
 		[CRepr]
 		public struct IMSMQMessage : IDispatch
 		{
 			public const new Guid IID = .(0xd7d6e074, 0xdccd, 0x11d0, 0xaa, 0x4b, 0x00, 0x60, 0x97, 0x0d, 0xeb, 0xae);
 			
-			public function HRESULT(IMSMQMessage *self, int32* plClass) get_Class;
-			public function HRESULT(IMSMQMessage *self, int32* plPrivLevel) get_PrivLevel;
-			public function HRESULT(IMSMQMessage *self, int32 lPrivLevel) put_PrivLevel;
-			public function HRESULT(IMSMQMessage *self, int32* plAuthLevel) get_AuthLevel;
-			public function HRESULT(IMSMQMessage *self, int32 lAuthLevel) put_AuthLevel;
-			public function HRESULT(IMSMQMessage *self, int16* pisAuthenticated) get_IsAuthenticated;
-			public function HRESULT(IMSMQMessage *self, int32* plDelivery) get_Delivery;
-			public function HRESULT(IMSMQMessage *self, int32 lDelivery) put_Delivery;
-			public function HRESULT(IMSMQMessage *self, int32* plTrace) get_Trace;
-			public function HRESULT(IMSMQMessage *self, int32 lTrace) put_Trace;
-			public function HRESULT(IMSMQMessage *self, int32* plPriority) get_Priority;
-			public function HRESULT(IMSMQMessage *self, int32 lPriority) put_Priority;
-			public function HRESULT(IMSMQMessage *self, int32* plJournal) get_Journal;
-			public function HRESULT(IMSMQMessage *self, int32 lJournal) put_Journal;
-			public function HRESULT(IMSMQMessage *self, IMSMQQueueInfo** ppqinfoResponse) get_ResponseQueueInfo;
-			public function HRESULT(IMSMQMessage *self, IMSMQQueueInfo* pqinfoResponse) putref_ResponseQueueInfo;
-			public function HRESULT(IMSMQMessage *self, int32* plAppSpecific) get_AppSpecific;
-			public function HRESULT(IMSMQMessage *self, int32 lAppSpecific) put_AppSpecific;
-			public function HRESULT(IMSMQMessage *self, BSTR* pbstrGuidSrcMachine) get_SourceMachineGuid;
-			public function HRESULT(IMSMQMessage *self, int32* pcbBody) get_BodyLength;
-			public function HRESULT(IMSMQMessage *self, VARIANT* pvarBody) get_Body;
-			public function HRESULT(IMSMQMessage *self, VARIANT varBody) put_Body;
-			public function HRESULT(IMSMQMessage *self, IMSMQQueueInfo** ppqinfoAdmin) get_AdminQueueInfo;
-			public function HRESULT(IMSMQMessage *self, IMSMQQueueInfo* pqinfoAdmin) putref_AdminQueueInfo;
-			public function HRESULT(IMSMQMessage *self, VARIANT* pvarMsgId) get_Id;
-			public function HRESULT(IMSMQMessage *self, VARIANT* pvarMsgId) get_CorrelationId;
-			public function HRESULT(IMSMQMessage *self, VARIANT varMsgId) put_CorrelationId;
-			public function HRESULT(IMSMQMessage *self, int32* plAck) get_Ack;
-			public function HRESULT(IMSMQMessage *self, int32 lAck) put_Ack;
-			public function HRESULT(IMSMQMessage *self, BSTR* pbstrLabel) get_Label;
-			public function HRESULT(IMSMQMessage *self, BSTR bstrLabel) put_Label;
-			public function HRESULT(IMSMQMessage *self, int32* plMaxTimeToReachQueue) get_MaxTimeToReachQueue;
-			public function HRESULT(IMSMQMessage *self, int32 lMaxTimeToReachQueue) put_MaxTimeToReachQueue;
-			public function HRESULT(IMSMQMessage *self, int32* plMaxTimeToReceive) get_MaxTimeToReceive;
-			public function HRESULT(IMSMQMessage *self, int32 lMaxTimeToReceive) put_MaxTimeToReceive;
-			public function HRESULT(IMSMQMessage *self, int32* plHashAlg) get_HashAlgorithm;
-			public function HRESULT(IMSMQMessage *self, int32 lHashAlg) put_HashAlgorithm;
-			public function HRESULT(IMSMQMessage *self, int32* plEncryptAlg) get_EncryptAlgorithm;
-			public function HRESULT(IMSMQMessage *self, int32 lEncryptAlg) put_EncryptAlgorithm;
-			public function HRESULT(IMSMQMessage *self, VARIANT* pvarSentTime) get_SentTime;
-			public function HRESULT(IMSMQMessage *self, VARIANT* plArrivedTime) get_ArrivedTime;
-			public function HRESULT(IMSMQMessage *self, IMSMQQueueInfo** ppqinfoDest) get_DestinationQueueInfo;
-			public function HRESULT(IMSMQMessage *self, VARIANT* pvarSenderCert) get_SenderCertificate;
-			public function HRESULT(IMSMQMessage *self, VARIANT varSenderCert) put_SenderCertificate;
-			public function HRESULT(IMSMQMessage *self, VARIANT* pvarSenderId) get_SenderId;
-			public function HRESULT(IMSMQMessage *self, int32* plSenderIdType) get_SenderIdType;
-			public function HRESULT(IMSMQMessage *self, int32 lSenderIdType) put_SenderIdType;
-			public function HRESULT(IMSMQMessage *self, IMSMQQueue* DestinationQueue, VARIANT* Transaction) Send;
-			public function HRESULT(IMSMQMessage *self) AttachCurrentSecurityContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQMessage *self, int32* plClass) get_Class;
+				public function HRESULT(IMSMQMessage *self, int32* plPrivLevel) get_PrivLevel;
+				public function HRESULT(IMSMQMessage *self, int32 lPrivLevel) put_PrivLevel;
+				public function HRESULT(IMSMQMessage *self, int32* plAuthLevel) get_AuthLevel;
+				public function HRESULT(IMSMQMessage *self, int32 lAuthLevel) put_AuthLevel;
+				public function HRESULT(IMSMQMessage *self, int16* pisAuthenticated) get_IsAuthenticated;
+				public function HRESULT(IMSMQMessage *self, int32* plDelivery) get_Delivery;
+				public function HRESULT(IMSMQMessage *self, int32 lDelivery) put_Delivery;
+				public function HRESULT(IMSMQMessage *self, int32* plTrace) get_Trace;
+				public function HRESULT(IMSMQMessage *self, int32 lTrace) put_Trace;
+				public function HRESULT(IMSMQMessage *self, int32* plPriority) get_Priority;
+				public function HRESULT(IMSMQMessage *self, int32 lPriority) put_Priority;
+				public function HRESULT(IMSMQMessage *self, int32* plJournal) get_Journal;
+				public function HRESULT(IMSMQMessage *self, int32 lJournal) put_Journal;
+				public function HRESULT(IMSMQMessage *self, IMSMQQueueInfo** ppqinfoResponse) get_ResponseQueueInfo;
+				public function HRESULT(IMSMQMessage *self, IMSMQQueueInfo* pqinfoResponse) putref_ResponseQueueInfo;
+				public function HRESULT(IMSMQMessage *self, int32* plAppSpecific) get_AppSpecific;
+				public function HRESULT(IMSMQMessage *self, int32 lAppSpecific) put_AppSpecific;
+				public function HRESULT(IMSMQMessage *self, BSTR* pbstrGuidSrcMachine) get_SourceMachineGuid;
+				public function HRESULT(IMSMQMessage *self, int32* pcbBody) get_BodyLength;
+				public function HRESULT(IMSMQMessage *self, VARIANT* pvarBody) get_Body;
+				public function HRESULT(IMSMQMessage *self, VARIANT varBody) put_Body;
+				public function HRESULT(IMSMQMessage *self, IMSMQQueueInfo** ppqinfoAdmin) get_AdminQueueInfo;
+				public function HRESULT(IMSMQMessage *self, IMSMQQueueInfo* pqinfoAdmin) putref_AdminQueueInfo;
+				public function HRESULT(IMSMQMessage *self, VARIANT* pvarMsgId) get_Id;
+				public function HRESULT(IMSMQMessage *self, VARIANT* pvarMsgId) get_CorrelationId;
+				public function HRESULT(IMSMQMessage *self, VARIANT varMsgId) put_CorrelationId;
+				public function HRESULT(IMSMQMessage *self, int32* plAck) get_Ack;
+				public function HRESULT(IMSMQMessage *self, int32 lAck) put_Ack;
+				public function HRESULT(IMSMQMessage *self, BSTR* pbstrLabel) get_Label;
+				public function HRESULT(IMSMQMessage *self, BSTR bstrLabel) put_Label;
+				public function HRESULT(IMSMQMessage *self, int32* plMaxTimeToReachQueue) get_MaxTimeToReachQueue;
+				public function HRESULT(IMSMQMessage *self, int32 lMaxTimeToReachQueue) put_MaxTimeToReachQueue;
+				public function HRESULT(IMSMQMessage *self, int32* plMaxTimeToReceive) get_MaxTimeToReceive;
+				public function HRESULT(IMSMQMessage *self, int32 lMaxTimeToReceive) put_MaxTimeToReceive;
+				public function HRESULT(IMSMQMessage *self, int32* plHashAlg) get_HashAlgorithm;
+				public function HRESULT(IMSMQMessage *self, int32 lHashAlg) put_HashAlgorithm;
+				public function HRESULT(IMSMQMessage *self, int32* plEncryptAlg) get_EncryptAlgorithm;
+				public function HRESULT(IMSMQMessage *self, int32 lEncryptAlg) put_EncryptAlgorithm;
+				public function HRESULT(IMSMQMessage *self, VARIANT* pvarSentTime) get_SentTime;
+				public function HRESULT(IMSMQMessage *self, VARIANT* plArrivedTime) get_ArrivedTime;
+				public function HRESULT(IMSMQMessage *self, IMSMQQueueInfo** ppqinfoDest) get_DestinationQueueInfo;
+				public function HRESULT(IMSMQMessage *self, VARIANT* pvarSenderCert) get_SenderCertificate;
+				public function HRESULT(IMSMQMessage *self, VARIANT varSenderCert) put_SenderCertificate;
+				public function HRESULT(IMSMQMessage *self, VARIANT* pvarSenderId) get_SenderId;
+				public function HRESULT(IMSMQMessage *self, int32* plSenderIdType) get_SenderIdType;
+				public function HRESULT(IMSMQMessage *self, int32 lSenderIdType) put_SenderIdType;
+				public function HRESULT(IMSMQMessage *self, IMSMQQueue* DestinationQueue, VARIANT* Transaction) Send;
+				public function HRESULT(IMSMQMessage *self) AttachCurrentSecurityContext;
+			}
 		}
 		[CRepr]
 		public struct IMSMQQueueInfos : IDispatch
 		{
 			public const new Guid IID = .(0xd7d6e07d, 0xdccd, 0x11d0, 0xaa, 0x4b, 0x00, 0x60, 0x97, 0x0d, 0xeb, 0xae);
 			
-			public function HRESULT(IMSMQQueueInfos *self) Reset;
-			public function HRESULT(IMSMQQueueInfos *self, IMSMQQueueInfo** ppqinfoNext) Next;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQQueueInfos *self) Reset;
+				public function HRESULT(IMSMQQueueInfos *self, IMSMQQueueInfo** ppqinfoNext) Next;
+			}
 		}
 		[CRepr]
 		public struct IMSMQQueueInfos2 : IDispatch
 		{
 			public const new Guid IID = .(0xeba96b0f, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQQueueInfos2 *self) Reset;
-			public function HRESULT(IMSMQQueueInfos2 *self, IMSMQQueueInfo2** ppqinfoNext) Next;
-			public function HRESULT(IMSMQQueueInfos2 *self, IDispatch** ppcolProperties) get_Properties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQQueueInfos2 *self) Reset;
+				public function HRESULT(IMSMQQueueInfos2 *self, IMSMQQueueInfo2** ppqinfoNext) Next;
+				public function HRESULT(IMSMQQueueInfos2 *self, IDispatch** ppcolProperties) get_Properties;
+			}
 		}
 		[CRepr]
 		public struct IMSMQQueueInfos3 : IDispatch
 		{
 			public const new Guid IID = .(0xeba96b1e, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQQueueInfos3 *self) Reset;
-			public function HRESULT(IMSMQQueueInfos3 *self, IMSMQQueueInfo3** ppqinfoNext) Next;
-			public function HRESULT(IMSMQQueueInfos3 *self, IDispatch** ppcolProperties) get_Properties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQQueueInfos3 *self) Reset;
+				public function HRESULT(IMSMQQueueInfos3 *self, IMSMQQueueInfo3** ppqinfoNext) Next;
+				public function HRESULT(IMSMQQueueInfos3 *self, IDispatch** ppcolProperties) get_Properties;
+			}
 		}
 		[CRepr]
 		public struct IMSMQQueueInfos4 : IDispatch
 		{
 			public const new Guid IID = .(0xeba96b22, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQQueueInfos4 *self) Reset;
-			public function HRESULT(IMSMQQueueInfos4 *self, IMSMQQueueInfo4** ppqinfoNext) Next;
-			public function HRESULT(IMSMQQueueInfos4 *self, IDispatch** ppcolProperties) get_Properties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQQueueInfos4 *self) Reset;
+				public function HRESULT(IMSMQQueueInfos4 *self, IMSMQQueueInfo4** ppqinfoNext) Next;
+				public function HRESULT(IMSMQQueueInfos4 *self, IDispatch** ppcolProperties) get_Properties;
+			}
 		}
 		[CRepr]
 		public struct IMSMQEvent : IDispatch
 		{
 			public const new Guid IID = .(0xd7d6e077, 0xdccd, 0x11d0, 0xaa, 0x4b, 0x00, 0x60, 0x97, 0x0d, 0xeb, 0xae);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IMSMQEvent2 : IMSMQEvent
 		{
 			public const new Guid IID = .(0xeba96b12, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQEvent2 *self, IDispatch** ppcolProperties) get_Properties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMSMQEvent.VTable
+			{
+				public function HRESULT(IMSMQEvent2 *self, IDispatch** ppcolProperties) get_Properties;
+			}
 		}
 		[CRepr]
 		public struct IMSMQEvent3 : IMSMQEvent2
 		{
 			public const new Guid IID = .(0xeba96b1c, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMSMQEvent2.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IMSMQTransaction : IDispatch
 		{
 			public const new Guid IID = .(0xd7d6e07f, 0xdccd, 0x11d0, 0xaa, 0x4b, 0x00, 0x60, 0x97, 0x0d, 0xeb, 0xae);
 			
-			public function HRESULT(IMSMQTransaction *self, int32* plTransaction) get_Transaction;
-			public function HRESULT(IMSMQTransaction *self, VARIANT* fRetaining, VARIANT* grfTC, VARIANT* grfRM) Commit;
-			public function HRESULT(IMSMQTransaction *self, VARIANT* fRetaining, VARIANT* fAsync) Abort;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQTransaction *self, int32* plTransaction) get_Transaction;
+				public function HRESULT(IMSMQTransaction *self, VARIANT* fRetaining, VARIANT* grfTC, VARIANT* grfRM) Commit;
+				public function HRESULT(IMSMQTransaction *self, VARIANT* fRetaining, VARIANT* fAsync) Abort;
+			}
 		}
 		[CRepr]
 		public struct IMSMQCoordinatedTransactionDispenser : IDispatch
 		{
 			public const new Guid IID = .(0xd7d6e081, 0xdccd, 0x11d0, 0xaa, 0x4b, 0x00, 0x60, 0x97, 0x0d, 0xeb, 0xae);
 			
-			public function HRESULT(IMSMQCoordinatedTransactionDispenser *self, IMSMQTransaction** ptransaction) BeginTransaction;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQCoordinatedTransactionDispenser *self, IMSMQTransaction** ptransaction) BeginTransaction;
+			}
 		}
 		[CRepr]
 		public struct IMSMQTransactionDispenser : IDispatch
 		{
 			public const new Guid IID = .(0xd7d6e083, 0xdccd, 0x11d0, 0xaa, 0x4b, 0x00, 0x60, 0x97, 0x0d, 0xeb, 0xae);
 			
-			public function HRESULT(IMSMQTransactionDispenser *self, IMSMQTransaction** ptransaction) BeginTransaction;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQTransactionDispenser *self, IMSMQTransaction** ptransaction) BeginTransaction;
+			}
 		}
 		[CRepr]
 		public struct IMSMQQuery2 : IDispatch
 		{
 			public const new Guid IID = .(0xeba96b0e, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQQuery2 *self, VARIANT* QueueGuid, VARIANT* ServiceTypeGuid, VARIANT* Label, VARIANT* CreateTime, VARIANT* ModifyTime, VARIANT* RelServiceType, VARIANT* RelLabel, VARIANT* RelCreateTime, VARIANT* RelModifyTime, IMSMQQueueInfos2** ppqinfos) LookupQueue;
-			public function HRESULT(IMSMQQuery2 *self, IDispatch** ppcolProperties) get_Properties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQQuery2 *self, VARIANT* QueueGuid, VARIANT* ServiceTypeGuid, VARIANT* Label, VARIANT* CreateTime, VARIANT* ModifyTime, VARIANT* RelServiceType, VARIANT* RelLabel, VARIANT* RelCreateTime, VARIANT* RelModifyTime, IMSMQQueueInfos2** ppqinfos) LookupQueue;
+				public function HRESULT(IMSMQQuery2 *self, IDispatch** ppcolProperties) get_Properties;
+			}
 		}
 		[CRepr]
 		public struct IMSMQQuery3 : IDispatch
 		{
 			public const new Guid IID = .(0xeba96b19, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQQuery3 *self, VARIANT* QueueGuid, VARIANT* ServiceTypeGuid, VARIANT* Label, VARIANT* CreateTime, VARIANT* ModifyTime, VARIANT* RelServiceType, VARIANT* RelLabel, VARIANT* RelCreateTime, VARIANT* RelModifyTime, IMSMQQueueInfos3** ppqinfos) LookupQueue_v2;
-			public function HRESULT(IMSMQQuery3 *self, IDispatch** ppcolProperties) get_Properties;
-			public function HRESULT(IMSMQQuery3 *self, VARIANT* QueueGuid, VARIANT* ServiceTypeGuid, VARIANT* Label, VARIANT* CreateTime, VARIANT* ModifyTime, VARIANT* RelServiceType, VARIANT* RelLabel, VARIANT* RelCreateTime, VARIANT* RelModifyTime, VARIANT* MulticastAddress, VARIANT* RelMulticastAddress, IMSMQQueueInfos3** ppqinfos) LookupQueue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQQuery3 *self, VARIANT* QueueGuid, VARIANT* ServiceTypeGuid, VARIANT* Label, VARIANT* CreateTime, VARIANT* ModifyTime, VARIANT* RelServiceType, VARIANT* RelLabel, VARIANT* RelCreateTime, VARIANT* RelModifyTime, IMSMQQueueInfos3** ppqinfos) LookupQueue_v2;
+				public function HRESULT(IMSMQQuery3 *self, IDispatch** ppcolProperties) get_Properties;
+				public function HRESULT(IMSMQQuery3 *self, VARIANT* QueueGuid, VARIANT* ServiceTypeGuid, VARIANT* Label, VARIANT* CreateTime, VARIANT* ModifyTime, VARIANT* RelServiceType, VARIANT* RelLabel, VARIANT* RelCreateTime, VARIANT* RelModifyTime, VARIANT* MulticastAddress, VARIANT* RelMulticastAddress, IMSMQQueueInfos3** ppqinfos) LookupQueue;
+			}
 		}
 		[CRepr]
 		public struct IMSMQQuery4 : IDispatch
 		{
 			public const new Guid IID = .(0xeba96b24, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQQuery4 *self, VARIANT* QueueGuid, VARIANT* ServiceTypeGuid, VARIANT* Label, VARIANT* CreateTime, VARIANT* ModifyTime, VARIANT* RelServiceType, VARIANT* RelLabel, VARIANT* RelCreateTime, VARIANT* RelModifyTime, IMSMQQueueInfos4** ppqinfos) LookupQueue_v2;
-			public function HRESULT(IMSMQQuery4 *self, IDispatch** ppcolProperties) get_Properties;
-			public function HRESULT(IMSMQQuery4 *self, VARIANT* QueueGuid, VARIANT* ServiceTypeGuid, VARIANT* Label, VARIANT* CreateTime, VARIANT* ModifyTime, VARIANT* RelServiceType, VARIANT* RelLabel, VARIANT* RelCreateTime, VARIANT* RelModifyTime, VARIANT* MulticastAddress, VARIANT* RelMulticastAddress, IMSMQQueueInfos4** ppqinfos) LookupQueue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQQuery4 *self, VARIANT* QueueGuid, VARIANT* ServiceTypeGuid, VARIANT* Label, VARIANT* CreateTime, VARIANT* ModifyTime, VARIANT* RelServiceType, VARIANT* RelLabel, VARIANT* RelCreateTime, VARIANT* RelModifyTime, IMSMQQueueInfos4** ppqinfos) LookupQueue_v2;
+				public function HRESULT(IMSMQQuery4 *self, IDispatch** ppcolProperties) get_Properties;
+				public function HRESULT(IMSMQQuery4 *self, VARIANT* QueueGuid, VARIANT* ServiceTypeGuid, VARIANT* Label, VARIANT* CreateTime, VARIANT* ModifyTime, VARIANT* RelServiceType, VARIANT* RelLabel, VARIANT* RelCreateTime, VARIANT* RelModifyTime, VARIANT* MulticastAddress, VARIANT* RelMulticastAddress, IMSMQQueueInfos4** ppqinfos) LookupQueue;
+			}
 		}
 		[CRepr]
 		public struct IMSMQMessage2 : IDispatch
 		{
 			public const new Guid IID = .(0xd9933be0, 0xa567, 0x11d2, 0xb0, 0xf3, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQMessage2 *self, int32* plClass) get_Class;
-			public function HRESULT(IMSMQMessage2 *self, int32* plPrivLevel) get_PrivLevel;
-			public function HRESULT(IMSMQMessage2 *self, int32 lPrivLevel) put_PrivLevel;
-			public function HRESULT(IMSMQMessage2 *self, int32* plAuthLevel) get_AuthLevel;
-			public function HRESULT(IMSMQMessage2 *self, int32 lAuthLevel) put_AuthLevel;
-			public function HRESULT(IMSMQMessage2 *self, int16* pisAuthenticated) get_IsAuthenticated;
-			public function HRESULT(IMSMQMessage2 *self, int32* plDelivery) get_Delivery;
-			public function HRESULT(IMSMQMessage2 *self, int32 lDelivery) put_Delivery;
-			public function HRESULT(IMSMQMessage2 *self, int32* plTrace) get_Trace;
-			public function HRESULT(IMSMQMessage2 *self, int32 lTrace) put_Trace;
-			public function HRESULT(IMSMQMessage2 *self, int32* plPriority) get_Priority;
-			public function HRESULT(IMSMQMessage2 *self, int32 lPriority) put_Priority;
-			public function HRESULT(IMSMQMessage2 *self, int32* plJournal) get_Journal;
-			public function HRESULT(IMSMQMessage2 *self, int32 lJournal) put_Journal;
-			public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo** ppqinfoResponse) get_ResponseQueueInfo_v1;
-			public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo* pqinfoResponse) putref_ResponseQueueInfo_v1;
-			public function HRESULT(IMSMQMessage2 *self, int32* plAppSpecific) get_AppSpecific;
-			public function HRESULT(IMSMQMessage2 *self, int32 lAppSpecific) put_AppSpecific;
-			public function HRESULT(IMSMQMessage2 *self, BSTR* pbstrGuidSrcMachine) get_SourceMachineGuid;
-			public function HRESULT(IMSMQMessage2 *self, int32* pcbBody) get_BodyLength;
-			public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarBody) get_Body;
-			public function HRESULT(IMSMQMessage2 *self, VARIANT varBody) put_Body;
-			public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo** ppqinfoAdmin) get_AdminQueueInfo_v1;
-			public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo* pqinfoAdmin) putref_AdminQueueInfo_v1;
-			public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarMsgId) get_Id;
-			public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarMsgId) get_CorrelationId;
-			public function HRESULT(IMSMQMessage2 *self, VARIANT varMsgId) put_CorrelationId;
-			public function HRESULT(IMSMQMessage2 *self, int32* plAck) get_Ack;
-			public function HRESULT(IMSMQMessage2 *self, int32 lAck) put_Ack;
-			public function HRESULT(IMSMQMessage2 *self, BSTR* pbstrLabel) get_Label;
-			public function HRESULT(IMSMQMessage2 *self, BSTR bstrLabel) put_Label;
-			public function HRESULT(IMSMQMessage2 *self, int32* plMaxTimeToReachQueue) get_MaxTimeToReachQueue;
-			public function HRESULT(IMSMQMessage2 *self, int32 lMaxTimeToReachQueue) put_MaxTimeToReachQueue;
-			public function HRESULT(IMSMQMessage2 *self, int32* plMaxTimeToReceive) get_MaxTimeToReceive;
-			public function HRESULT(IMSMQMessage2 *self, int32 lMaxTimeToReceive) put_MaxTimeToReceive;
-			public function HRESULT(IMSMQMessage2 *self, int32* plHashAlg) get_HashAlgorithm;
-			public function HRESULT(IMSMQMessage2 *self, int32 lHashAlg) put_HashAlgorithm;
-			public function HRESULT(IMSMQMessage2 *self, int32* plEncryptAlg) get_EncryptAlgorithm;
-			public function HRESULT(IMSMQMessage2 *self, int32 lEncryptAlg) put_EncryptAlgorithm;
-			public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarSentTime) get_SentTime;
-			public function HRESULT(IMSMQMessage2 *self, VARIANT* plArrivedTime) get_ArrivedTime;
-			public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo2** ppqinfoDest) get_DestinationQueueInfo;
-			public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarSenderCert) get_SenderCertificate;
-			public function HRESULT(IMSMQMessage2 *self, VARIANT varSenderCert) put_SenderCertificate;
-			public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarSenderId) get_SenderId;
-			public function HRESULT(IMSMQMessage2 *self, int32* plSenderIdType) get_SenderIdType;
-			public function HRESULT(IMSMQMessage2 *self, int32 lSenderIdType) put_SenderIdType;
-			public function HRESULT(IMSMQMessage2 *self, IMSMQQueue2* DestinationQueue, VARIANT* Transaction) Send;
-			public function HRESULT(IMSMQMessage2 *self) AttachCurrentSecurityContext;
-			public function HRESULT(IMSMQMessage2 *self, int32* plSenderVersion) get_SenderVersion;
-			public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarExtension) get_Extension;
-			public function HRESULT(IMSMQMessage2 *self, VARIANT varExtension) put_Extension;
-			public function HRESULT(IMSMQMessage2 *self, BSTR* pbstrGuidConnectorType) get_ConnectorTypeGuid;
-			public function HRESULT(IMSMQMessage2 *self, BSTR bstrGuidConnectorType) put_ConnectorTypeGuid;
-			public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo2** ppqinfoXactStatus) get_TransactionStatusQueueInfo;
-			public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarDestSymmKey) get_DestinationSymmetricKey;
-			public function HRESULT(IMSMQMessage2 *self, VARIANT varDestSymmKey) put_DestinationSymmetricKey;
-			public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarSignature) get_Signature;
-			public function HRESULT(IMSMQMessage2 *self, VARIANT varSignature) put_Signature;
-			public function HRESULT(IMSMQMessage2 *self, int32* plAuthProvType) get_AuthenticationProviderType;
-			public function HRESULT(IMSMQMessage2 *self, int32 lAuthProvType) put_AuthenticationProviderType;
-			public function HRESULT(IMSMQMessage2 *self, BSTR* pbstrAuthProvName) get_AuthenticationProviderName;
-			public function HRESULT(IMSMQMessage2 *self, BSTR bstrAuthProvName) put_AuthenticationProviderName;
-			public function HRESULT(IMSMQMessage2 *self, VARIANT varSenderId) put_SenderId;
-			public function HRESULT(IMSMQMessage2 *self, int32* plMsgClass) get_MsgClass;
-			public function HRESULT(IMSMQMessage2 *self, int32 lMsgClass) put_MsgClass;
-			public function HRESULT(IMSMQMessage2 *self, IDispatch** ppcolProperties) get_Properties;
-			public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarXactId) get_TransactionId;
-			public function HRESULT(IMSMQMessage2 *self, int16* pisFirstInXact) get_IsFirstInTransaction;
-			public function HRESULT(IMSMQMessage2 *self, int16* pisLastInXact) get_IsLastInTransaction;
-			public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo2** ppqinfoResponse) get_ResponseQueueInfo;
-			public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo2* pqinfoResponse) putref_ResponseQueueInfo;
-			public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo2** ppqinfoAdmin) get_AdminQueueInfo;
-			public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo2* pqinfoAdmin) putref_AdminQueueInfo;
-			public function HRESULT(IMSMQMessage2 *self, int16* psReceivedAuthenticationLevel) get_ReceivedAuthenticationLevel;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQMessage2 *self, int32* plClass) get_Class;
+				public function HRESULT(IMSMQMessage2 *self, int32* plPrivLevel) get_PrivLevel;
+				public function HRESULT(IMSMQMessage2 *self, int32 lPrivLevel) put_PrivLevel;
+				public function HRESULT(IMSMQMessage2 *self, int32* plAuthLevel) get_AuthLevel;
+				public function HRESULT(IMSMQMessage2 *self, int32 lAuthLevel) put_AuthLevel;
+				public function HRESULT(IMSMQMessage2 *self, int16* pisAuthenticated) get_IsAuthenticated;
+				public function HRESULT(IMSMQMessage2 *self, int32* plDelivery) get_Delivery;
+				public function HRESULT(IMSMQMessage2 *self, int32 lDelivery) put_Delivery;
+				public function HRESULT(IMSMQMessage2 *self, int32* plTrace) get_Trace;
+				public function HRESULT(IMSMQMessage2 *self, int32 lTrace) put_Trace;
+				public function HRESULT(IMSMQMessage2 *self, int32* plPriority) get_Priority;
+				public function HRESULT(IMSMQMessage2 *self, int32 lPriority) put_Priority;
+				public function HRESULT(IMSMQMessage2 *self, int32* plJournal) get_Journal;
+				public function HRESULT(IMSMQMessage2 *self, int32 lJournal) put_Journal;
+				public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo** ppqinfoResponse) get_ResponseQueueInfo_v1;
+				public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo* pqinfoResponse) putref_ResponseQueueInfo_v1;
+				public function HRESULT(IMSMQMessage2 *self, int32* plAppSpecific) get_AppSpecific;
+				public function HRESULT(IMSMQMessage2 *self, int32 lAppSpecific) put_AppSpecific;
+				public function HRESULT(IMSMQMessage2 *self, BSTR* pbstrGuidSrcMachine) get_SourceMachineGuid;
+				public function HRESULT(IMSMQMessage2 *self, int32* pcbBody) get_BodyLength;
+				public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarBody) get_Body;
+				public function HRESULT(IMSMQMessage2 *self, VARIANT varBody) put_Body;
+				public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo** ppqinfoAdmin) get_AdminQueueInfo_v1;
+				public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo* pqinfoAdmin) putref_AdminQueueInfo_v1;
+				public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarMsgId) get_Id;
+				public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarMsgId) get_CorrelationId;
+				public function HRESULT(IMSMQMessage2 *self, VARIANT varMsgId) put_CorrelationId;
+				public function HRESULT(IMSMQMessage2 *self, int32* plAck) get_Ack;
+				public function HRESULT(IMSMQMessage2 *self, int32 lAck) put_Ack;
+				public function HRESULT(IMSMQMessage2 *self, BSTR* pbstrLabel) get_Label;
+				public function HRESULT(IMSMQMessage2 *self, BSTR bstrLabel) put_Label;
+				public function HRESULT(IMSMQMessage2 *self, int32* plMaxTimeToReachQueue) get_MaxTimeToReachQueue;
+				public function HRESULT(IMSMQMessage2 *self, int32 lMaxTimeToReachQueue) put_MaxTimeToReachQueue;
+				public function HRESULT(IMSMQMessage2 *self, int32* plMaxTimeToReceive) get_MaxTimeToReceive;
+				public function HRESULT(IMSMQMessage2 *self, int32 lMaxTimeToReceive) put_MaxTimeToReceive;
+				public function HRESULT(IMSMQMessage2 *self, int32* plHashAlg) get_HashAlgorithm;
+				public function HRESULT(IMSMQMessage2 *self, int32 lHashAlg) put_HashAlgorithm;
+				public function HRESULT(IMSMQMessage2 *self, int32* plEncryptAlg) get_EncryptAlgorithm;
+				public function HRESULT(IMSMQMessage2 *self, int32 lEncryptAlg) put_EncryptAlgorithm;
+				public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarSentTime) get_SentTime;
+				public function HRESULT(IMSMQMessage2 *self, VARIANT* plArrivedTime) get_ArrivedTime;
+				public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo2** ppqinfoDest) get_DestinationQueueInfo;
+				public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarSenderCert) get_SenderCertificate;
+				public function HRESULT(IMSMQMessage2 *self, VARIANT varSenderCert) put_SenderCertificate;
+				public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarSenderId) get_SenderId;
+				public function HRESULT(IMSMQMessage2 *self, int32* plSenderIdType) get_SenderIdType;
+				public function HRESULT(IMSMQMessage2 *self, int32 lSenderIdType) put_SenderIdType;
+				public function HRESULT(IMSMQMessage2 *self, IMSMQQueue2* DestinationQueue, VARIANT* Transaction) Send;
+				public function HRESULT(IMSMQMessage2 *self) AttachCurrentSecurityContext;
+				public function HRESULT(IMSMQMessage2 *self, int32* plSenderVersion) get_SenderVersion;
+				public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarExtension) get_Extension;
+				public function HRESULT(IMSMQMessage2 *self, VARIANT varExtension) put_Extension;
+				public function HRESULT(IMSMQMessage2 *self, BSTR* pbstrGuidConnectorType) get_ConnectorTypeGuid;
+				public function HRESULT(IMSMQMessage2 *self, BSTR bstrGuidConnectorType) put_ConnectorTypeGuid;
+				public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo2** ppqinfoXactStatus) get_TransactionStatusQueueInfo;
+				public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarDestSymmKey) get_DestinationSymmetricKey;
+				public function HRESULT(IMSMQMessage2 *self, VARIANT varDestSymmKey) put_DestinationSymmetricKey;
+				public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarSignature) get_Signature;
+				public function HRESULT(IMSMQMessage2 *self, VARIANT varSignature) put_Signature;
+				public function HRESULT(IMSMQMessage2 *self, int32* plAuthProvType) get_AuthenticationProviderType;
+				public function HRESULT(IMSMQMessage2 *self, int32 lAuthProvType) put_AuthenticationProviderType;
+				public function HRESULT(IMSMQMessage2 *self, BSTR* pbstrAuthProvName) get_AuthenticationProviderName;
+				public function HRESULT(IMSMQMessage2 *self, BSTR bstrAuthProvName) put_AuthenticationProviderName;
+				public function HRESULT(IMSMQMessage2 *self, VARIANT varSenderId) put_SenderId;
+				public function HRESULT(IMSMQMessage2 *self, int32* plMsgClass) get_MsgClass;
+				public function HRESULT(IMSMQMessage2 *self, int32 lMsgClass) put_MsgClass;
+				public function HRESULT(IMSMQMessage2 *self, IDispatch** ppcolProperties) get_Properties;
+				public function HRESULT(IMSMQMessage2 *self, VARIANT* pvarXactId) get_TransactionId;
+				public function HRESULT(IMSMQMessage2 *self, int16* pisFirstInXact) get_IsFirstInTransaction;
+				public function HRESULT(IMSMQMessage2 *self, int16* pisLastInXact) get_IsLastInTransaction;
+				public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo2** ppqinfoResponse) get_ResponseQueueInfo;
+				public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo2* pqinfoResponse) putref_ResponseQueueInfo;
+				public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo2** ppqinfoAdmin) get_AdminQueueInfo;
+				public function HRESULT(IMSMQMessage2 *self, IMSMQQueueInfo2* pqinfoAdmin) putref_AdminQueueInfo;
+				public function HRESULT(IMSMQMessage2 *self, int16* psReceivedAuthenticationLevel) get_ReceivedAuthenticationLevel;
+			}
 		}
 		[CRepr]
 		public struct IMSMQMessage3 : IDispatch
 		{
 			public const new Guid IID = .(0xeba96b1a, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQMessage3 *self, int32* plClass) get_Class;
-			public function HRESULT(IMSMQMessage3 *self, int32* plPrivLevel) get_PrivLevel;
-			public function HRESULT(IMSMQMessage3 *self, int32 lPrivLevel) put_PrivLevel;
-			public function HRESULT(IMSMQMessage3 *self, int32* plAuthLevel) get_AuthLevel;
-			public function HRESULT(IMSMQMessage3 *self, int32 lAuthLevel) put_AuthLevel;
-			public function HRESULT(IMSMQMessage3 *self, int16* pisAuthenticated) get_IsAuthenticated;
-			public function HRESULT(IMSMQMessage3 *self, int32* plDelivery) get_Delivery;
-			public function HRESULT(IMSMQMessage3 *self, int32 lDelivery) put_Delivery;
-			public function HRESULT(IMSMQMessage3 *self, int32* plTrace) get_Trace;
-			public function HRESULT(IMSMQMessage3 *self, int32 lTrace) put_Trace;
-			public function HRESULT(IMSMQMessage3 *self, int32* plPriority) get_Priority;
-			public function HRESULT(IMSMQMessage3 *self, int32 lPriority) put_Priority;
-			public function HRESULT(IMSMQMessage3 *self, int32* plJournal) get_Journal;
-			public function HRESULT(IMSMQMessage3 *self, int32 lJournal) put_Journal;
-			public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo** ppqinfoResponse) get_ResponseQueueInfo_v1;
-			public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo* pqinfoResponse) putref_ResponseQueueInfo_v1;
-			public function HRESULT(IMSMQMessage3 *self, int32* plAppSpecific) get_AppSpecific;
-			public function HRESULT(IMSMQMessage3 *self, int32 lAppSpecific) put_AppSpecific;
-			public function HRESULT(IMSMQMessage3 *self, BSTR* pbstrGuidSrcMachine) get_SourceMachineGuid;
-			public function HRESULT(IMSMQMessage3 *self, int32* pcbBody) get_BodyLength;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarBody) get_Body;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT varBody) put_Body;
-			public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo** ppqinfoAdmin) get_AdminQueueInfo_v1;
-			public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo* pqinfoAdmin) putref_AdminQueueInfo_v1;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarMsgId) get_Id;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarMsgId) get_CorrelationId;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT varMsgId) put_CorrelationId;
-			public function HRESULT(IMSMQMessage3 *self, int32* plAck) get_Ack;
-			public function HRESULT(IMSMQMessage3 *self, int32 lAck) put_Ack;
-			public function HRESULT(IMSMQMessage3 *self, BSTR* pbstrLabel) get_Label;
-			public function HRESULT(IMSMQMessage3 *self, BSTR bstrLabel) put_Label;
-			public function HRESULT(IMSMQMessage3 *self, int32* plMaxTimeToReachQueue) get_MaxTimeToReachQueue;
-			public function HRESULT(IMSMQMessage3 *self, int32 lMaxTimeToReachQueue) put_MaxTimeToReachQueue;
-			public function HRESULT(IMSMQMessage3 *self, int32* plMaxTimeToReceive) get_MaxTimeToReceive;
-			public function HRESULT(IMSMQMessage3 *self, int32 lMaxTimeToReceive) put_MaxTimeToReceive;
-			public function HRESULT(IMSMQMessage3 *self, int32* plHashAlg) get_HashAlgorithm;
-			public function HRESULT(IMSMQMessage3 *self, int32 lHashAlg) put_HashAlgorithm;
-			public function HRESULT(IMSMQMessage3 *self, int32* plEncryptAlg) get_EncryptAlgorithm;
-			public function HRESULT(IMSMQMessage3 *self, int32 lEncryptAlg) put_EncryptAlgorithm;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarSentTime) get_SentTime;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT* plArrivedTime) get_ArrivedTime;
-			public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo3** ppqinfoDest) get_DestinationQueueInfo;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarSenderCert) get_SenderCertificate;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT varSenderCert) put_SenderCertificate;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarSenderId) get_SenderId;
-			public function HRESULT(IMSMQMessage3 *self, int32* plSenderIdType) get_SenderIdType;
-			public function HRESULT(IMSMQMessage3 *self, int32 lSenderIdType) put_SenderIdType;
-			public function HRESULT(IMSMQMessage3 *self, IDispatch* DestinationQueue, VARIANT* Transaction) Send;
-			public function HRESULT(IMSMQMessage3 *self) AttachCurrentSecurityContext;
-			public function HRESULT(IMSMQMessage3 *self, int32* plSenderVersion) get_SenderVersion;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarExtension) get_Extension;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT varExtension) put_Extension;
-			public function HRESULT(IMSMQMessage3 *self, BSTR* pbstrGuidConnectorType) get_ConnectorTypeGuid;
-			public function HRESULT(IMSMQMessage3 *self, BSTR bstrGuidConnectorType) put_ConnectorTypeGuid;
-			public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo3** ppqinfoXactStatus) get_TransactionStatusQueueInfo;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarDestSymmKey) get_DestinationSymmetricKey;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT varDestSymmKey) put_DestinationSymmetricKey;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarSignature) get_Signature;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT varSignature) put_Signature;
-			public function HRESULT(IMSMQMessage3 *self, int32* plAuthProvType) get_AuthenticationProviderType;
-			public function HRESULT(IMSMQMessage3 *self, int32 lAuthProvType) put_AuthenticationProviderType;
-			public function HRESULT(IMSMQMessage3 *self, BSTR* pbstrAuthProvName) get_AuthenticationProviderName;
-			public function HRESULT(IMSMQMessage3 *self, BSTR bstrAuthProvName) put_AuthenticationProviderName;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT varSenderId) put_SenderId;
-			public function HRESULT(IMSMQMessage3 *self, int32* plMsgClass) get_MsgClass;
-			public function HRESULT(IMSMQMessage3 *self, int32 lMsgClass) put_MsgClass;
-			public function HRESULT(IMSMQMessage3 *self, IDispatch** ppcolProperties) get_Properties;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarXactId) get_TransactionId;
-			public function HRESULT(IMSMQMessage3 *self, int16* pisFirstInXact) get_IsFirstInTransaction;
-			public function HRESULT(IMSMQMessage3 *self, int16* pisLastInXact) get_IsLastInTransaction;
-			public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo2** ppqinfoResponse) get_ResponseQueueInfo_v2;
-			public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo2* pqinfoResponse) putref_ResponseQueueInfo_v2;
-			public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo2** ppqinfoAdmin) get_AdminQueueInfo_v2;
-			public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo2* pqinfoAdmin) putref_AdminQueueInfo_v2;
-			public function HRESULT(IMSMQMessage3 *self, int16* psReceivedAuthenticationLevel) get_ReceivedAuthenticationLevel;
-			public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo3** ppqinfoResponse) get_ResponseQueueInfo;
-			public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo3* pqinfoResponse) putref_ResponseQueueInfo;
-			public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo3** ppqinfoAdmin) get_AdminQueueInfo;
-			public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo3* pqinfoAdmin) putref_AdminQueueInfo;
-			public function HRESULT(IMSMQMessage3 *self, IDispatch** ppdestResponse) get_ResponseDestination;
-			public function HRESULT(IMSMQMessage3 *self, IDispatch* pdestResponse) putref_ResponseDestination;
-			public function HRESULT(IMSMQMessage3 *self, IDispatch** ppdestDestination) get_Destination;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarLookupId) get_LookupId;
-			public function HRESULT(IMSMQMessage3 *self, int16* pisAuthenticated) get_IsAuthenticated2;
-			public function HRESULT(IMSMQMessage3 *self, int16* pisFirstInXact) get_IsFirstInTransaction2;
-			public function HRESULT(IMSMQMessage3 *self, int16* pisLastInXact) get_IsLastInTransaction2;
-			public function HRESULT(IMSMQMessage3 *self) AttachCurrentSecurityContext2;
-			public function HRESULT(IMSMQMessage3 *self, BSTR* pbstrSoapEnvelope) get_SoapEnvelope;
-			public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarCompoundMessage) get_CompoundMessage;
-			public function HRESULT(IMSMQMessage3 *self, BSTR bstrSoapHeader) put_SoapHeader;
-			public function HRESULT(IMSMQMessage3 *self, BSTR bstrSoapBody) put_SoapBody;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQMessage3 *self, int32* plClass) get_Class;
+				public function HRESULT(IMSMQMessage3 *self, int32* plPrivLevel) get_PrivLevel;
+				public function HRESULT(IMSMQMessage3 *self, int32 lPrivLevel) put_PrivLevel;
+				public function HRESULT(IMSMQMessage3 *self, int32* plAuthLevel) get_AuthLevel;
+				public function HRESULT(IMSMQMessage3 *self, int32 lAuthLevel) put_AuthLevel;
+				public function HRESULT(IMSMQMessage3 *self, int16* pisAuthenticated) get_IsAuthenticated;
+				public function HRESULT(IMSMQMessage3 *self, int32* plDelivery) get_Delivery;
+				public function HRESULT(IMSMQMessage3 *self, int32 lDelivery) put_Delivery;
+				public function HRESULT(IMSMQMessage3 *self, int32* plTrace) get_Trace;
+				public function HRESULT(IMSMQMessage3 *self, int32 lTrace) put_Trace;
+				public function HRESULT(IMSMQMessage3 *self, int32* plPriority) get_Priority;
+				public function HRESULT(IMSMQMessage3 *self, int32 lPriority) put_Priority;
+				public function HRESULT(IMSMQMessage3 *self, int32* plJournal) get_Journal;
+				public function HRESULT(IMSMQMessage3 *self, int32 lJournal) put_Journal;
+				public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo** ppqinfoResponse) get_ResponseQueueInfo_v1;
+				public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo* pqinfoResponse) putref_ResponseQueueInfo_v1;
+				public function HRESULT(IMSMQMessage3 *self, int32* plAppSpecific) get_AppSpecific;
+				public function HRESULT(IMSMQMessage3 *self, int32 lAppSpecific) put_AppSpecific;
+				public function HRESULT(IMSMQMessage3 *self, BSTR* pbstrGuidSrcMachine) get_SourceMachineGuid;
+				public function HRESULT(IMSMQMessage3 *self, int32* pcbBody) get_BodyLength;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarBody) get_Body;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT varBody) put_Body;
+				public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo** ppqinfoAdmin) get_AdminQueueInfo_v1;
+				public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo* pqinfoAdmin) putref_AdminQueueInfo_v1;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarMsgId) get_Id;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarMsgId) get_CorrelationId;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT varMsgId) put_CorrelationId;
+				public function HRESULT(IMSMQMessage3 *self, int32* plAck) get_Ack;
+				public function HRESULT(IMSMQMessage3 *self, int32 lAck) put_Ack;
+				public function HRESULT(IMSMQMessage3 *self, BSTR* pbstrLabel) get_Label;
+				public function HRESULT(IMSMQMessage3 *self, BSTR bstrLabel) put_Label;
+				public function HRESULT(IMSMQMessage3 *self, int32* plMaxTimeToReachQueue) get_MaxTimeToReachQueue;
+				public function HRESULT(IMSMQMessage3 *self, int32 lMaxTimeToReachQueue) put_MaxTimeToReachQueue;
+				public function HRESULT(IMSMQMessage3 *self, int32* plMaxTimeToReceive) get_MaxTimeToReceive;
+				public function HRESULT(IMSMQMessage3 *self, int32 lMaxTimeToReceive) put_MaxTimeToReceive;
+				public function HRESULT(IMSMQMessage3 *self, int32* plHashAlg) get_HashAlgorithm;
+				public function HRESULT(IMSMQMessage3 *self, int32 lHashAlg) put_HashAlgorithm;
+				public function HRESULT(IMSMQMessage3 *self, int32* plEncryptAlg) get_EncryptAlgorithm;
+				public function HRESULT(IMSMQMessage3 *self, int32 lEncryptAlg) put_EncryptAlgorithm;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarSentTime) get_SentTime;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT* plArrivedTime) get_ArrivedTime;
+				public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo3** ppqinfoDest) get_DestinationQueueInfo;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarSenderCert) get_SenderCertificate;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT varSenderCert) put_SenderCertificate;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarSenderId) get_SenderId;
+				public function HRESULT(IMSMQMessage3 *self, int32* plSenderIdType) get_SenderIdType;
+				public function HRESULT(IMSMQMessage3 *self, int32 lSenderIdType) put_SenderIdType;
+				public function HRESULT(IMSMQMessage3 *self, IDispatch* DestinationQueue, VARIANT* Transaction) Send;
+				public function HRESULT(IMSMQMessage3 *self) AttachCurrentSecurityContext;
+				public function HRESULT(IMSMQMessage3 *self, int32* plSenderVersion) get_SenderVersion;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarExtension) get_Extension;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT varExtension) put_Extension;
+				public function HRESULT(IMSMQMessage3 *self, BSTR* pbstrGuidConnectorType) get_ConnectorTypeGuid;
+				public function HRESULT(IMSMQMessage3 *self, BSTR bstrGuidConnectorType) put_ConnectorTypeGuid;
+				public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo3** ppqinfoXactStatus) get_TransactionStatusQueueInfo;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarDestSymmKey) get_DestinationSymmetricKey;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT varDestSymmKey) put_DestinationSymmetricKey;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarSignature) get_Signature;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT varSignature) put_Signature;
+				public function HRESULT(IMSMQMessage3 *self, int32* plAuthProvType) get_AuthenticationProviderType;
+				public function HRESULT(IMSMQMessage3 *self, int32 lAuthProvType) put_AuthenticationProviderType;
+				public function HRESULT(IMSMQMessage3 *self, BSTR* pbstrAuthProvName) get_AuthenticationProviderName;
+				public function HRESULT(IMSMQMessage3 *self, BSTR bstrAuthProvName) put_AuthenticationProviderName;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT varSenderId) put_SenderId;
+				public function HRESULT(IMSMQMessage3 *self, int32* plMsgClass) get_MsgClass;
+				public function HRESULT(IMSMQMessage3 *self, int32 lMsgClass) put_MsgClass;
+				public function HRESULT(IMSMQMessage3 *self, IDispatch** ppcolProperties) get_Properties;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarXactId) get_TransactionId;
+				public function HRESULT(IMSMQMessage3 *self, int16* pisFirstInXact) get_IsFirstInTransaction;
+				public function HRESULT(IMSMQMessage3 *self, int16* pisLastInXact) get_IsLastInTransaction;
+				public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo2** ppqinfoResponse) get_ResponseQueueInfo_v2;
+				public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo2* pqinfoResponse) putref_ResponseQueueInfo_v2;
+				public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo2** ppqinfoAdmin) get_AdminQueueInfo_v2;
+				public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo2* pqinfoAdmin) putref_AdminQueueInfo_v2;
+				public function HRESULT(IMSMQMessage3 *self, int16* psReceivedAuthenticationLevel) get_ReceivedAuthenticationLevel;
+				public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo3** ppqinfoResponse) get_ResponseQueueInfo;
+				public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo3* pqinfoResponse) putref_ResponseQueueInfo;
+				public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo3** ppqinfoAdmin) get_AdminQueueInfo;
+				public function HRESULT(IMSMQMessage3 *self, IMSMQQueueInfo3* pqinfoAdmin) putref_AdminQueueInfo;
+				public function HRESULT(IMSMQMessage3 *self, IDispatch** ppdestResponse) get_ResponseDestination;
+				public function HRESULT(IMSMQMessage3 *self, IDispatch* pdestResponse) putref_ResponseDestination;
+				public function HRESULT(IMSMQMessage3 *self, IDispatch** ppdestDestination) get_Destination;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarLookupId) get_LookupId;
+				public function HRESULT(IMSMQMessage3 *self, int16* pisAuthenticated) get_IsAuthenticated2;
+				public function HRESULT(IMSMQMessage3 *self, int16* pisFirstInXact) get_IsFirstInTransaction2;
+				public function HRESULT(IMSMQMessage3 *self, int16* pisLastInXact) get_IsLastInTransaction2;
+				public function HRESULT(IMSMQMessage3 *self) AttachCurrentSecurityContext2;
+				public function HRESULT(IMSMQMessage3 *self, BSTR* pbstrSoapEnvelope) get_SoapEnvelope;
+				public function HRESULT(IMSMQMessage3 *self, VARIANT* pvarCompoundMessage) get_CompoundMessage;
+				public function HRESULT(IMSMQMessage3 *self, BSTR bstrSoapHeader) put_SoapHeader;
+				public function HRESULT(IMSMQMessage3 *self, BSTR bstrSoapBody) put_SoapBody;
+			}
 		}
 		[CRepr]
 		public struct IMSMQMessage4 : IDispatch
 		{
 			public const new Guid IID = .(0xeba96b23, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQMessage4 *self, int32* plClass) get_Class;
-			public function HRESULT(IMSMQMessage4 *self, int32* plPrivLevel) get_PrivLevel;
-			public function HRESULT(IMSMQMessage4 *self, int32 lPrivLevel) put_PrivLevel;
-			public function HRESULT(IMSMQMessage4 *self, int32* plAuthLevel) get_AuthLevel;
-			public function HRESULT(IMSMQMessage4 *self, int32 lAuthLevel) put_AuthLevel;
-			public function HRESULT(IMSMQMessage4 *self, int16* pisAuthenticated) get_IsAuthenticated;
-			public function HRESULT(IMSMQMessage4 *self, int32* plDelivery) get_Delivery;
-			public function HRESULT(IMSMQMessage4 *self, int32 lDelivery) put_Delivery;
-			public function HRESULT(IMSMQMessage4 *self, int32* plTrace) get_Trace;
-			public function HRESULT(IMSMQMessage4 *self, int32 lTrace) put_Trace;
-			public function HRESULT(IMSMQMessage4 *self, int32* plPriority) get_Priority;
-			public function HRESULT(IMSMQMessage4 *self, int32 lPriority) put_Priority;
-			public function HRESULT(IMSMQMessage4 *self, int32* plJournal) get_Journal;
-			public function HRESULT(IMSMQMessage4 *self, int32 lJournal) put_Journal;
-			public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo** ppqinfoResponse) get_ResponseQueueInfo_v1;
-			public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo* pqinfoResponse) putref_ResponseQueueInfo_v1;
-			public function HRESULT(IMSMQMessage4 *self, int32* plAppSpecific) get_AppSpecific;
-			public function HRESULT(IMSMQMessage4 *self, int32 lAppSpecific) put_AppSpecific;
-			public function HRESULT(IMSMQMessage4 *self, BSTR* pbstrGuidSrcMachine) get_SourceMachineGuid;
-			public function HRESULT(IMSMQMessage4 *self, int32* pcbBody) get_BodyLength;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarBody) get_Body;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT varBody) put_Body;
-			public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo** ppqinfoAdmin) get_AdminQueueInfo_v1;
-			public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo* pqinfoAdmin) putref_AdminQueueInfo_v1;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarMsgId) get_Id;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarMsgId) get_CorrelationId;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT varMsgId) put_CorrelationId;
-			public function HRESULT(IMSMQMessage4 *self, int32* plAck) get_Ack;
-			public function HRESULT(IMSMQMessage4 *self, int32 lAck) put_Ack;
-			public function HRESULT(IMSMQMessage4 *self, BSTR* pbstrLabel) get_Label;
-			public function HRESULT(IMSMQMessage4 *self, BSTR bstrLabel) put_Label;
-			public function HRESULT(IMSMQMessage4 *self, int32* plMaxTimeToReachQueue) get_MaxTimeToReachQueue;
-			public function HRESULT(IMSMQMessage4 *self, int32 lMaxTimeToReachQueue) put_MaxTimeToReachQueue;
-			public function HRESULT(IMSMQMessage4 *self, int32* plMaxTimeToReceive) get_MaxTimeToReceive;
-			public function HRESULT(IMSMQMessage4 *self, int32 lMaxTimeToReceive) put_MaxTimeToReceive;
-			public function HRESULT(IMSMQMessage4 *self, int32* plHashAlg) get_HashAlgorithm;
-			public function HRESULT(IMSMQMessage4 *self, int32 lHashAlg) put_HashAlgorithm;
-			public function HRESULT(IMSMQMessage4 *self, int32* plEncryptAlg) get_EncryptAlgorithm;
-			public function HRESULT(IMSMQMessage4 *self, int32 lEncryptAlg) put_EncryptAlgorithm;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarSentTime) get_SentTime;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT* plArrivedTime) get_ArrivedTime;
-			public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo4** ppqinfoDest) get_DestinationQueueInfo;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarSenderCert) get_SenderCertificate;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT varSenderCert) put_SenderCertificate;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarSenderId) get_SenderId;
-			public function HRESULT(IMSMQMessage4 *self, int32* plSenderIdType) get_SenderIdType;
-			public function HRESULT(IMSMQMessage4 *self, int32 lSenderIdType) put_SenderIdType;
-			public function HRESULT(IMSMQMessage4 *self, IDispatch* DestinationQueue, VARIANT* Transaction) Send;
-			public function HRESULT(IMSMQMessage4 *self) AttachCurrentSecurityContext;
-			public function HRESULT(IMSMQMessage4 *self, int32* plSenderVersion) get_SenderVersion;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarExtension) get_Extension;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT varExtension) put_Extension;
-			public function HRESULT(IMSMQMessage4 *self, BSTR* pbstrGuidConnectorType) get_ConnectorTypeGuid;
-			public function HRESULT(IMSMQMessage4 *self, BSTR bstrGuidConnectorType) put_ConnectorTypeGuid;
-			public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo4** ppqinfoXactStatus) get_TransactionStatusQueueInfo;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarDestSymmKey) get_DestinationSymmetricKey;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT varDestSymmKey) put_DestinationSymmetricKey;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarSignature) get_Signature;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT varSignature) put_Signature;
-			public function HRESULT(IMSMQMessage4 *self, int32* plAuthProvType) get_AuthenticationProviderType;
-			public function HRESULT(IMSMQMessage4 *self, int32 lAuthProvType) put_AuthenticationProviderType;
-			public function HRESULT(IMSMQMessage4 *self, BSTR* pbstrAuthProvName) get_AuthenticationProviderName;
-			public function HRESULT(IMSMQMessage4 *self, BSTR bstrAuthProvName) put_AuthenticationProviderName;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT varSenderId) put_SenderId;
-			public function HRESULT(IMSMQMessage4 *self, int32* plMsgClass) get_MsgClass;
-			public function HRESULT(IMSMQMessage4 *self, int32 lMsgClass) put_MsgClass;
-			public function HRESULT(IMSMQMessage4 *self, IDispatch** ppcolProperties) get_Properties;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarXactId) get_TransactionId;
-			public function HRESULT(IMSMQMessage4 *self, int16* pisFirstInXact) get_IsFirstInTransaction;
-			public function HRESULT(IMSMQMessage4 *self, int16* pisLastInXact) get_IsLastInTransaction;
-			public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo2** ppqinfoResponse) get_ResponseQueueInfo_v2;
-			public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo2* pqinfoResponse) putref_ResponseQueueInfo_v2;
-			public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo2** ppqinfoAdmin) get_AdminQueueInfo_v2;
-			public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo2* pqinfoAdmin) putref_AdminQueueInfo_v2;
-			public function HRESULT(IMSMQMessage4 *self, int16* psReceivedAuthenticationLevel) get_ReceivedAuthenticationLevel;
-			public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo4** ppqinfoResponse) get_ResponseQueueInfo;
-			public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo4* pqinfoResponse) putref_ResponseQueueInfo;
-			public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo4** ppqinfoAdmin) get_AdminQueueInfo;
-			public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo4* pqinfoAdmin) putref_AdminQueueInfo;
-			public function HRESULT(IMSMQMessage4 *self, IDispatch** ppdestResponse) get_ResponseDestination;
-			public function HRESULT(IMSMQMessage4 *self, IDispatch* pdestResponse) putref_ResponseDestination;
-			public function HRESULT(IMSMQMessage4 *self, IDispatch** ppdestDestination) get_Destination;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarLookupId) get_LookupId;
-			public function HRESULT(IMSMQMessage4 *self, int16* pisAuthenticated) get_IsAuthenticated2;
-			public function HRESULT(IMSMQMessage4 *self, int16* pisFirstInXact) get_IsFirstInTransaction2;
-			public function HRESULT(IMSMQMessage4 *self, int16* pisLastInXact) get_IsLastInTransaction2;
-			public function HRESULT(IMSMQMessage4 *self) AttachCurrentSecurityContext2;
-			public function HRESULT(IMSMQMessage4 *self, BSTR* pbstrSoapEnvelope) get_SoapEnvelope;
-			public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarCompoundMessage) get_CompoundMessage;
-			public function HRESULT(IMSMQMessage4 *self, BSTR bstrSoapHeader) put_SoapHeader;
-			public function HRESULT(IMSMQMessage4 *self, BSTR bstrSoapBody) put_SoapBody;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQMessage4 *self, int32* plClass) get_Class;
+				public function HRESULT(IMSMQMessage4 *self, int32* plPrivLevel) get_PrivLevel;
+				public function HRESULT(IMSMQMessage4 *self, int32 lPrivLevel) put_PrivLevel;
+				public function HRESULT(IMSMQMessage4 *self, int32* plAuthLevel) get_AuthLevel;
+				public function HRESULT(IMSMQMessage4 *self, int32 lAuthLevel) put_AuthLevel;
+				public function HRESULT(IMSMQMessage4 *self, int16* pisAuthenticated) get_IsAuthenticated;
+				public function HRESULT(IMSMQMessage4 *self, int32* plDelivery) get_Delivery;
+				public function HRESULT(IMSMQMessage4 *self, int32 lDelivery) put_Delivery;
+				public function HRESULT(IMSMQMessage4 *self, int32* plTrace) get_Trace;
+				public function HRESULT(IMSMQMessage4 *self, int32 lTrace) put_Trace;
+				public function HRESULT(IMSMQMessage4 *self, int32* plPriority) get_Priority;
+				public function HRESULT(IMSMQMessage4 *self, int32 lPriority) put_Priority;
+				public function HRESULT(IMSMQMessage4 *self, int32* plJournal) get_Journal;
+				public function HRESULT(IMSMQMessage4 *self, int32 lJournal) put_Journal;
+				public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo** ppqinfoResponse) get_ResponseQueueInfo_v1;
+				public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo* pqinfoResponse) putref_ResponseQueueInfo_v1;
+				public function HRESULT(IMSMQMessage4 *self, int32* plAppSpecific) get_AppSpecific;
+				public function HRESULT(IMSMQMessage4 *self, int32 lAppSpecific) put_AppSpecific;
+				public function HRESULT(IMSMQMessage4 *self, BSTR* pbstrGuidSrcMachine) get_SourceMachineGuid;
+				public function HRESULT(IMSMQMessage4 *self, int32* pcbBody) get_BodyLength;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarBody) get_Body;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT varBody) put_Body;
+				public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo** ppqinfoAdmin) get_AdminQueueInfo_v1;
+				public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo* pqinfoAdmin) putref_AdminQueueInfo_v1;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarMsgId) get_Id;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarMsgId) get_CorrelationId;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT varMsgId) put_CorrelationId;
+				public function HRESULT(IMSMQMessage4 *self, int32* plAck) get_Ack;
+				public function HRESULT(IMSMQMessage4 *self, int32 lAck) put_Ack;
+				public function HRESULT(IMSMQMessage4 *self, BSTR* pbstrLabel) get_Label;
+				public function HRESULT(IMSMQMessage4 *self, BSTR bstrLabel) put_Label;
+				public function HRESULT(IMSMQMessage4 *self, int32* plMaxTimeToReachQueue) get_MaxTimeToReachQueue;
+				public function HRESULT(IMSMQMessage4 *self, int32 lMaxTimeToReachQueue) put_MaxTimeToReachQueue;
+				public function HRESULT(IMSMQMessage4 *self, int32* plMaxTimeToReceive) get_MaxTimeToReceive;
+				public function HRESULT(IMSMQMessage4 *self, int32 lMaxTimeToReceive) put_MaxTimeToReceive;
+				public function HRESULT(IMSMQMessage4 *self, int32* plHashAlg) get_HashAlgorithm;
+				public function HRESULT(IMSMQMessage4 *self, int32 lHashAlg) put_HashAlgorithm;
+				public function HRESULT(IMSMQMessage4 *self, int32* plEncryptAlg) get_EncryptAlgorithm;
+				public function HRESULT(IMSMQMessage4 *self, int32 lEncryptAlg) put_EncryptAlgorithm;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarSentTime) get_SentTime;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT* plArrivedTime) get_ArrivedTime;
+				public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo4** ppqinfoDest) get_DestinationQueueInfo;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarSenderCert) get_SenderCertificate;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT varSenderCert) put_SenderCertificate;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarSenderId) get_SenderId;
+				public function HRESULT(IMSMQMessage4 *self, int32* plSenderIdType) get_SenderIdType;
+				public function HRESULT(IMSMQMessage4 *self, int32 lSenderIdType) put_SenderIdType;
+				public function HRESULT(IMSMQMessage4 *self, IDispatch* DestinationQueue, VARIANT* Transaction) Send;
+				public function HRESULT(IMSMQMessage4 *self) AttachCurrentSecurityContext;
+				public function HRESULT(IMSMQMessage4 *self, int32* plSenderVersion) get_SenderVersion;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarExtension) get_Extension;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT varExtension) put_Extension;
+				public function HRESULT(IMSMQMessage4 *self, BSTR* pbstrGuidConnectorType) get_ConnectorTypeGuid;
+				public function HRESULT(IMSMQMessage4 *self, BSTR bstrGuidConnectorType) put_ConnectorTypeGuid;
+				public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo4** ppqinfoXactStatus) get_TransactionStatusQueueInfo;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarDestSymmKey) get_DestinationSymmetricKey;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT varDestSymmKey) put_DestinationSymmetricKey;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarSignature) get_Signature;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT varSignature) put_Signature;
+				public function HRESULT(IMSMQMessage4 *self, int32* plAuthProvType) get_AuthenticationProviderType;
+				public function HRESULT(IMSMQMessage4 *self, int32 lAuthProvType) put_AuthenticationProviderType;
+				public function HRESULT(IMSMQMessage4 *self, BSTR* pbstrAuthProvName) get_AuthenticationProviderName;
+				public function HRESULT(IMSMQMessage4 *self, BSTR bstrAuthProvName) put_AuthenticationProviderName;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT varSenderId) put_SenderId;
+				public function HRESULT(IMSMQMessage4 *self, int32* plMsgClass) get_MsgClass;
+				public function HRESULT(IMSMQMessage4 *self, int32 lMsgClass) put_MsgClass;
+				public function HRESULT(IMSMQMessage4 *self, IDispatch** ppcolProperties) get_Properties;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarXactId) get_TransactionId;
+				public function HRESULT(IMSMQMessage4 *self, int16* pisFirstInXact) get_IsFirstInTransaction;
+				public function HRESULT(IMSMQMessage4 *self, int16* pisLastInXact) get_IsLastInTransaction;
+				public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo2** ppqinfoResponse) get_ResponseQueueInfo_v2;
+				public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo2* pqinfoResponse) putref_ResponseQueueInfo_v2;
+				public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo2** ppqinfoAdmin) get_AdminQueueInfo_v2;
+				public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo2* pqinfoAdmin) putref_AdminQueueInfo_v2;
+				public function HRESULT(IMSMQMessage4 *self, int16* psReceivedAuthenticationLevel) get_ReceivedAuthenticationLevel;
+				public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo4** ppqinfoResponse) get_ResponseQueueInfo;
+				public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo4* pqinfoResponse) putref_ResponseQueueInfo;
+				public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo4** ppqinfoAdmin) get_AdminQueueInfo;
+				public function HRESULT(IMSMQMessage4 *self, IMSMQQueueInfo4* pqinfoAdmin) putref_AdminQueueInfo;
+				public function HRESULT(IMSMQMessage4 *self, IDispatch** ppdestResponse) get_ResponseDestination;
+				public function HRESULT(IMSMQMessage4 *self, IDispatch* pdestResponse) putref_ResponseDestination;
+				public function HRESULT(IMSMQMessage4 *self, IDispatch** ppdestDestination) get_Destination;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarLookupId) get_LookupId;
+				public function HRESULT(IMSMQMessage4 *self, int16* pisAuthenticated) get_IsAuthenticated2;
+				public function HRESULT(IMSMQMessage4 *self, int16* pisFirstInXact) get_IsFirstInTransaction2;
+				public function HRESULT(IMSMQMessage4 *self, int16* pisLastInXact) get_IsLastInTransaction2;
+				public function HRESULT(IMSMQMessage4 *self) AttachCurrentSecurityContext2;
+				public function HRESULT(IMSMQMessage4 *self, BSTR* pbstrSoapEnvelope) get_SoapEnvelope;
+				public function HRESULT(IMSMQMessage4 *self, VARIANT* pvarCompoundMessage) get_CompoundMessage;
+				public function HRESULT(IMSMQMessage4 *self, BSTR bstrSoapHeader) put_SoapHeader;
+				public function HRESULT(IMSMQMessage4 *self, BSTR bstrSoapBody) put_SoapBody;
+			}
 		}
 		[CRepr]
 		public struct IMSMQPrivateEvent : IDispatch
 		{
 			public const new Guid IID = .(0xd7ab3341, 0xc9d3, 0x11d1, 0xbb, 0x47, 0x00, 0x80, 0xc7, 0xc5, 0xa2, 0xc0);
 			
-			public function HRESULT(IMSMQPrivateEvent *self, int32* phwnd) get_Hwnd;
-			public function HRESULT(IMSMQPrivateEvent *self, IMSMQQueue* pq, int32 msgcursor) FireArrivedEvent;
-			public function HRESULT(IMSMQPrivateEvent *self, IMSMQQueue* pq, HRESULT hrStatus, int32 msgcursor) FireArrivedErrorEvent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQPrivateEvent *self, int32* phwnd) get_Hwnd;
+				public function HRESULT(IMSMQPrivateEvent *self, IMSMQQueue* pq, int32 msgcursor) FireArrivedEvent;
+				public function HRESULT(IMSMQPrivateEvent *self, IMSMQQueue* pq, HRESULT hrStatus, int32 msgcursor) FireArrivedErrorEvent;
+			}
 		}
 		[CRepr]
 		public struct _DMSMQEventEvents : IDispatch
 		{
 			public const new Guid IID = .(0xd7d6e078, 0xdccd, 0x11d0, 0xaa, 0x4b, 0x00, 0x60, 0x97, 0x0d, 0xeb, 0xae);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IMSMQTransaction2 : IMSMQTransaction
 		{
 			public const new Guid IID = .(0x2ce0c5b0, 0x6e67, 0x11d2, 0xb0, 0xe6, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQTransaction2 *self, VARIANT varTransaction) InitNew;
-			public function HRESULT(IMSMQTransaction2 *self, IDispatch** ppcolProperties) get_Properties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMSMQTransaction.VTable
+			{
+				public function HRESULT(IMSMQTransaction2 *self, VARIANT varTransaction) InitNew;
+				public function HRESULT(IMSMQTransaction2 *self, IDispatch** ppcolProperties) get_Properties;
+			}
 		}
 		[CRepr]
 		public struct IMSMQTransaction3 : IMSMQTransaction2
 		{
 			public const new Guid IID = .(0xeba96b13, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQTransaction3 *self, VARIANT* pvarITransaction) get_ITransaction;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMSMQTransaction2.VTable
+			{
+				public function HRESULT(IMSMQTransaction3 *self, VARIANT* pvarITransaction) get_ITransaction;
+			}
 		}
 		[CRepr]
 		public struct IMSMQCoordinatedTransactionDispenser2 : IDispatch
 		{
 			public const new Guid IID = .(0xeba96b10, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQCoordinatedTransactionDispenser2 *self, IMSMQTransaction2** ptransaction) BeginTransaction;
-			public function HRESULT(IMSMQCoordinatedTransactionDispenser2 *self, IDispatch** ppcolProperties) get_Properties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQCoordinatedTransactionDispenser2 *self, IMSMQTransaction2** ptransaction) BeginTransaction;
+				public function HRESULT(IMSMQCoordinatedTransactionDispenser2 *self, IDispatch** ppcolProperties) get_Properties;
+			}
 		}
 		[CRepr]
 		public struct IMSMQCoordinatedTransactionDispenser3 : IDispatch
 		{
 			public const new Guid IID = .(0xeba96b14, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQCoordinatedTransactionDispenser3 *self, IMSMQTransaction3** ptransaction) BeginTransaction;
-			public function HRESULT(IMSMQCoordinatedTransactionDispenser3 *self, IDispatch** ppcolProperties) get_Properties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQCoordinatedTransactionDispenser3 *self, IMSMQTransaction3** ptransaction) BeginTransaction;
+				public function HRESULT(IMSMQCoordinatedTransactionDispenser3 *self, IDispatch** ppcolProperties) get_Properties;
+			}
 		}
 		[CRepr]
 		public struct IMSMQTransactionDispenser2 : IDispatch
 		{
 			public const new Guid IID = .(0xeba96b11, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQTransactionDispenser2 *self, IMSMQTransaction2** ptransaction) BeginTransaction;
-			public function HRESULT(IMSMQTransactionDispenser2 *self, IDispatch** ppcolProperties) get_Properties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQTransactionDispenser2 *self, IMSMQTransaction2** ptransaction) BeginTransaction;
+				public function HRESULT(IMSMQTransactionDispenser2 *self, IDispatch** ppcolProperties) get_Properties;
+			}
 		}
 		[CRepr]
 		public struct IMSMQTransactionDispenser3 : IDispatch
 		{
 			public const new Guid IID = .(0xeba96b15, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQTransactionDispenser3 *self, IMSMQTransaction3** ptransaction) BeginTransaction;
-			public function HRESULT(IMSMQTransactionDispenser3 *self, IDispatch** ppcolProperties) get_Properties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQTransactionDispenser3 *self, IMSMQTransaction3** ptransaction) BeginTransaction;
+				public function HRESULT(IMSMQTransactionDispenser3 *self, IDispatch** ppcolProperties) get_Properties;
+			}
 		}
 		[CRepr]
 		public struct IMSMQApplication : IDispatch
 		{
 			public const new Guid IID = .(0xd7d6e085, 0xdccd, 0x11d0, 0xaa, 0x4b, 0x00, 0x60, 0x97, 0x0d, 0xeb, 0xae);
 			
-			public function HRESULT(IMSMQApplication *self, BSTR MachineName, BSTR* pbstrGuid) MachineIdOfMachineName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQApplication *self, BSTR MachineName, BSTR* pbstrGuid) MachineIdOfMachineName;
+			}
 		}
 		[CRepr]
 		public struct IMSMQApplication2 : IMSMQApplication
 		{
 			public const new Guid IID = .(0x12a30900, 0x7300, 0x11d2, 0xb0, 0xe6, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQApplication2 *self, VARIANT* Flags, VARIANT* ExternalCertificate) RegisterCertificate;
-			public function HRESULT(IMSMQApplication2 *self, BSTR bstrGuid, BSTR* pbstrMachineName) MachineNameOfMachineId;
-			public function HRESULT(IMSMQApplication2 *self, int16* psMSMQVersionMajor) get_MSMQVersionMajor;
-			public function HRESULT(IMSMQApplication2 *self, int16* psMSMQVersionMinor) get_MSMQVersionMinor;
-			public function HRESULT(IMSMQApplication2 *self, int16* psMSMQVersionBuild) get_MSMQVersionBuild;
-			public function HRESULT(IMSMQApplication2 *self, int16* pfIsDsEnabled) get_IsDsEnabled;
-			public function HRESULT(IMSMQApplication2 *self, IDispatch** ppcolProperties) get_Properties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMSMQApplication.VTable
+			{
+				public function HRESULT(IMSMQApplication2 *self, VARIANT* Flags, VARIANT* ExternalCertificate) RegisterCertificate;
+				public function HRESULT(IMSMQApplication2 *self, BSTR bstrGuid, BSTR* pbstrMachineName) MachineNameOfMachineId;
+				public function HRESULT(IMSMQApplication2 *self, int16* psMSMQVersionMajor) get_MSMQVersionMajor;
+				public function HRESULT(IMSMQApplication2 *self, int16* psMSMQVersionMinor) get_MSMQVersionMinor;
+				public function HRESULT(IMSMQApplication2 *self, int16* psMSMQVersionBuild) get_MSMQVersionBuild;
+				public function HRESULT(IMSMQApplication2 *self, int16* pfIsDsEnabled) get_IsDsEnabled;
+				public function HRESULT(IMSMQApplication2 *self, IDispatch** ppcolProperties) get_Properties;
+			}
 		}
 		[CRepr]
 		public struct IMSMQApplication3 : IMSMQApplication2
 		{
 			public const new Guid IID = .(0xeba96b1f, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQApplication3 *self, VARIANT* pvActiveQueues) get_ActiveQueues;
-			public function HRESULT(IMSMQApplication3 *self, VARIANT* pvPrivateQueues) get_PrivateQueues;
-			public function HRESULT(IMSMQApplication3 *self, BSTR* pbstrDirectoryServiceServer) get_DirectoryServiceServer;
-			public function HRESULT(IMSMQApplication3 *self, int16* pfIsConnected) get_IsConnected;
-			public function HRESULT(IMSMQApplication3 *self, VARIANT* pvBytesInAllQueues) get_BytesInAllQueues;
-			public function HRESULT(IMSMQApplication3 *self, BSTR bstrMachine) put_Machine;
-			public function HRESULT(IMSMQApplication3 *self, BSTR* pbstrMachine) get_Machine;
-			public function HRESULT(IMSMQApplication3 *self) Connect;
-			public function HRESULT(IMSMQApplication3 *self) Disconnect;
-			public function HRESULT(IMSMQApplication3 *self) Tidy;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMSMQApplication2.VTable
+			{
+				public function HRESULT(IMSMQApplication3 *self, VARIANT* pvActiveQueues) get_ActiveQueues;
+				public function HRESULT(IMSMQApplication3 *self, VARIANT* pvPrivateQueues) get_PrivateQueues;
+				public function HRESULT(IMSMQApplication3 *self, BSTR* pbstrDirectoryServiceServer) get_DirectoryServiceServer;
+				public function HRESULT(IMSMQApplication3 *self, int16* pfIsConnected) get_IsConnected;
+				public function HRESULT(IMSMQApplication3 *self, VARIANT* pvBytesInAllQueues) get_BytesInAllQueues;
+				public function HRESULT(IMSMQApplication3 *self, BSTR bstrMachine) put_Machine;
+				public function HRESULT(IMSMQApplication3 *self, BSTR* pbstrMachine) get_Machine;
+				public function HRESULT(IMSMQApplication3 *self) Connect;
+				public function HRESULT(IMSMQApplication3 *self) Disconnect;
+				public function HRESULT(IMSMQApplication3 *self) Tidy;
+			}
 		}
 		[CRepr]
 		public struct IMSMQDestination : IDispatch
 		{
 			public const new Guid IID = .(0xeba96b16, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQDestination *self) Open;
-			public function HRESULT(IMSMQDestination *self) Close;
-			public function HRESULT(IMSMQDestination *self, int16* pfIsOpen) get_IsOpen;
-			public function HRESULT(IMSMQDestination *self, IDispatch** ppIADs) get_IADs;
-			public function HRESULT(IMSMQDestination *self, IDispatch* pIADs) putref_IADs;
-			public function HRESULT(IMSMQDestination *self, BSTR* pbstrADsPath) get_ADsPath;
-			public function HRESULT(IMSMQDestination *self, BSTR bstrADsPath) put_ADsPath;
-			public function HRESULT(IMSMQDestination *self, BSTR* pbstrPathName) get_PathName;
-			public function HRESULT(IMSMQDestination *self, BSTR bstrPathName) put_PathName;
-			public function HRESULT(IMSMQDestination *self, BSTR* pbstrFormatName) get_FormatName;
-			public function HRESULT(IMSMQDestination *self, BSTR bstrFormatName) put_FormatName;
-			public function HRESULT(IMSMQDestination *self, IDispatch** ppDestinations) get_Destinations;
-			public function HRESULT(IMSMQDestination *self, IDispatch* pDestinations) putref_Destinations;
-			public function HRESULT(IMSMQDestination *self, IDispatch** ppcolProperties) get_Properties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQDestination *self) Open;
+				public function HRESULT(IMSMQDestination *self) Close;
+				public function HRESULT(IMSMQDestination *self, int16* pfIsOpen) get_IsOpen;
+				public function HRESULT(IMSMQDestination *self, IDispatch** ppIADs) get_IADs;
+				public function HRESULT(IMSMQDestination *self, IDispatch* pIADs) putref_IADs;
+				public function HRESULT(IMSMQDestination *self, BSTR* pbstrADsPath) get_ADsPath;
+				public function HRESULT(IMSMQDestination *self, BSTR bstrADsPath) put_ADsPath;
+				public function HRESULT(IMSMQDestination *self, BSTR* pbstrPathName) get_PathName;
+				public function HRESULT(IMSMQDestination *self, BSTR bstrPathName) put_PathName;
+				public function HRESULT(IMSMQDestination *self, BSTR* pbstrFormatName) get_FormatName;
+				public function HRESULT(IMSMQDestination *self, BSTR bstrFormatName) put_FormatName;
+				public function HRESULT(IMSMQDestination *self, IDispatch** ppDestinations) get_Destinations;
+				public function HRESULT(IMSMQDestination *self, IDispatch* pDestinations) putref_Destinations;
+				public function HRESULT(IMSMQDestination *self, IDispatch** ppcolProperties) get_Properties;
+			}
 		}
 		[CRepr]
 		public struct IMSMQPrivateDestination : IDispatch
 		{
 			public const new Guid IID = .(0xeba96b17, 0x2168, 0x11d3, 0x89, 0x8c, 0x00, 0xe0, 0x2c, 0x07, 0x4f, 0x6b);
 			
-			public function HRESULT(IMSMQPrivateDestination *self, VARIANT* pvarHandle) get_Handle;
-			public function HRESULT(IMSMQPrivateDestination *self, VARIANT varHandle) put_Handle;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQPrivateDestination *self, VARIANT* pvarHandle) get_Handle;
+				public function HRESULT(IMSMQPrivateDestination *self, VARIANT varHandle) put_Handle;
+			}
 		}
 		[CRepr]
 		public struct IMSMQCollection : IDispatch
 		{
 			public const new Guid IID = .(0x0188ac2f, 0xecb3, 0x4173, 0x97, 0x79, 0x63, 0x5c, 0xa2, 0x03, 0x9c, 0x72);
 			
-			public function HRESULT(IMSMQCollection *self, VARIANT* Index, VARIANT* pvarRet) Item;
-			public function HRESULT(IMSMQCollection *self, int32* pCount) get_Count;
-			public function HRESULT(IMSMQCollection *self, IUnknown** ppunk) _NewEnum;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQCollection *self, VARIANT* Index, VARIANT* pvarRet) Item;
+				public function HRESULT(IMSMQCollection *self, int32* pCount) get_Count;
+				public function HRESULT(IMSMQCollection *self, IUnknown** ppunk) _NewEnum;
+			}
 		}
 		[CRepr]
 		public struct IMSMQManagement : IDispatch
 		{
 			public const new Guid IID = .(0xbe5f0241, 0xe489, 0x4957, 0x8c, 0xc4, 0xa4, 0x52, 0xfc, 0xf3, 0xe2, 0x3e);
 			
-			public function HRESULT(IMSMQManagement *self, VARIANT* Machine, VARIANT* Pathname, VARIANT* FormatName) Init;
-			public function HRESULT(IMSMQManagement *self, BSTR* pbstrFormatName) get_FormatName;
-			public function HRESULT(IMSMQManagement *self, BSTR* pbstrMachine) get_Machine;
-			public function HRESULT(IMSMQManagement *self, int32* plMessageCount) get_MessageCount;
-			public function HRESULT(IMSMQManagement *self, int32* plForeignStatus) get_ForeignStatus;
-			public function HRESULT(IMSMQManagement *self, int32* plQueueType) get_QueueType;
-			public function HRESULT(IMSMQManagement *self, int16* pfIsLocal) get_IsLocal;
-			public function HRESULT(IMSMQManagement *self, int32* plTransactionalStatus) get_TransactionalStatus;
-			public function HRESULT(IMSMQManagement *self, VARIANT* pvBytesInQueue) get_BytesInQueue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IMSMQManagement *self, VARIANT* Machine, VARIANT* Pathname, VARIANT* FormatName) Init;
+				public function HRESULT(IMSMQManagement *self, BSTR* pbstrFormatName) get_FormatName;
+				public function HRESULT(IMSMQManagement *self, BSTR* pbstrMachine) get_Machine;
+				public function HRESULT(IMSMQManagement *self, int32* plMessageCount) get_MessageCount;
+				public function HRESULT(IMSMQManagement *self, int32* plForeignStatus) get_ForeignStatus;
+				public function HRESULT(IMSMQManagement *self, int32* plQueueType) get_QueueType;
+				public function HRESULT(IMSMQManagement *self, int16* pfIsLocal) get_IsLocal;
+				public function HRESULT(IMSMQManagement *self, int32* plTransactionalStatus) get_TransactionalStatus;
+				public function HRESULT(IMSMQManagement *self, VARIANT* pvBytesInQueue) get_BytesInQueue;
+			}
 		}
 		[CRepr]
 		public struct IMSMQOutgoingQueueManagement : IMSMQManagement
 		{
 			public const new Guid IID = .(0x64c478fb, 0xf9b0, 0x4695, 0x8a, 0x7f, 0x43, 0x9a, 0xc9, 0x43, 0x26, 0xd3);
 			
-			public function HRESULT(IMSMQOutgoingQueueManagement *self, int32* plState) get_State;
-			public function HRESULT(IMSMQOutgoingQueueManagement *self, VARIANT* pvNextHops) get_NextHops;
-			public function HRESULT(IMSMQOutgoingQueueManagement *self, IMSMQCollection** ppCollection) EodGetSendInfo;
-			public function HRESULT(IMSMQOutgoingQueueManagement *self) Resume;
-			public function HRESULT(IMSMQOutgoingQueueManagement *self) Pause;
-			public function HRESULT(IMSMQOutgoingQueueManagement *self) EodResend;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMSMQManagement.VTable
+			{
+				public function HRESULT(IMSMQOutgoingQueueManagement *self, int32* plState) get_State;
+				public function HRESULT(IMSMQOutgoingQueueManagement *self, VARIANT* pvNextHops) get_NextHops;
+				public function HRESULT(IMSMQOutgoingQueueManagement *self, IMSMQCollection** ppCollection) EodGetSendInfo;
+				public function HRESULT(IMSMQOutgoingQueueManagement *self) Resume;
+				public function HRESULT(IMSMQOutgoingQueueManagement *self) Pause;
+				public function HRESULT(IMSMQOutgoingQueueManagement *self) EodResend;
+			}
 		}
 		[CRepr]
 		public struct IMSMQQueueManagement : IMSMQManagement
 		{
 			public const new Guid IID = .(0x7fbe7759, 0x5760, 0x444d, 0xb8, 0xa5, 0x5e, 0x7a, 0xb9, 0xa8, 0x4c, 0xce);
 			
-			public function HRESULT(IMSMQQueueManagement *self, int32* plJournalMessageCount) get_JournalMessageCount;
-			public function HRESULT(IMSMQQueueManagement *self, VARIANT* pvBytesInJournal) get_BytesInJournal;
-			public function HRESULT(IMSMQQueueManagement *self, VARIANT* pvCollection) EodGetReceiveInfo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMSMQManagement.VTable
+			{
+				public function HRESULT(IMSMQQueueManagement *self, int32* plJournalMessageCount) get_JournalMessageCount;
+				public function HRESULT(IMSMQQueueManagement *self, VARIANT* pvBytesInJournal) get_BytesInJournal;
+				public function HRESULT(IMSMQQueueManagement *self, VARIANT* pvCollection) EodGetReceiveInfo;
+			}
 		}
 		
 	}

@@ -2008,1191 +2008,1746 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2cd90691, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function void(ID2D1Resource *self, ID2D1Factory** factory) GetFactory;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function void(ID2D1Resource *self, ID2D1Factory** factory) GetFactory;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Image : ID2D1Resource
 		{
 			public const new Guid IID = .(0x65019f75, 0x8da2, 0x497c, 0xb3, 0x2c, 0xdf, 0xa3, 0x4e, 0x48, 0xed, 0xe6);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct ID2D1Bitmap : ID2D1Image
 		{
 			public const new Guid IID = .(0xa2296057, 0xea42, 0x4099, 0x98, 0x3b, 0x53, 0x9f, 0xb6, 0x50, 0x54, 0x26);
 			
-			public function D2D_SIZE_F(ID2D1Bitmap *self) GetSize;
-			public function D2D_SIZE_U(ID2D1Bitmap *self) GetPixelSize;
-			public function D2D1_PIXEL_FORMAT(ID2D1Bitmap *self) GetPixelFormat;
-			public function void(ID2D1Bitmap *self, float* dpiX, float* dpiY) GetDpi;
-			public function HRESULT(ID2D1Bitmap *self, D2D_POINT_2U* destPoint, ID2D1Bitmap* bitmap, D2D_RECT_U* srcRect) CopyFromBitmap;
-			public function HRESULT(ID2D1Bitmap *self, D2D_POINT_2U* destPoint, ID2D1RenderTarget* renderTarget, D2D_RECT_U* srcRect) CopyFromRenderTarget;
-			public function HRESULT(ID2D1Bitmap *self, D2D_RECT_U* dstRect, void* srcData, uint32 pitch) CopyFromMemory;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Image.VTable
+			{
+				public function D2D_SIZE_F(ID2D1Bitmap *self) GetSize;
+				public function D2D_SIZE_U(ID2D1Bitmap *self) GetPixelSize;
+				public function D2D1_PIXEL_FORMAT(ID2D1Bitmap *self) GetPixelFormat;
+				public function void(ID2D1Bitmap *self, float* dpiX, float* dpiY) GetDpi;
+				public function HRESULT(ID2D1Bitmap *self, D2D_POINT_2U* destPoint, ID2D1Bitmap* bitmap, D2D_RECT_U* srcRect) CopyFromBitmap;
+				public function HRESULT(ID2D1Bitmap *self, D2D_POINT_2U* destPoint, ID2D1RenderTarget* renderTarget, D2D_RECT_U* srcRect) CopyFromRenderTarget;
+				public function HRESULT(ID2D1Bitmap *self, D2D_RECT_U* dstRect, void* srcData, uint32 pitch) CopyFromMemory;
+			}
 		}
 		[CRepr]
 		public struct ID2D1GradientStopCollection : ID2D1Resource
 		{
 			public const new Guid IID = .(0x2cd906a7, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function uint32(ID2D1GradientStopCollection *self) GetGradientStopCount;
-			public function void(ID2D1GradientStopCollection *self, D2D1_GRADIENT_STOP* gradientStops, uint32 gradientStopsCount) GetGradientStops;
-			public function D2D1_GAMMA(ID2D1GradientStopCollection *self) GetColorInterpolationGamma;
-			public function D2D1_EXTEND_MODE(ID2D1GradientStopCollection *self) GetExtendMode;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function uint32(ID2D1GradientStopCollection *self) GetGradientStopCount;
+				public function void(ID2D1GradientStopCollection *self, D2D1_GRADIENT_STOP* gradientStops, uint32 gradientStopsCount) GetGradientStops;
+				public function D2D1_GAMMA(ID2D1GradientStopCollection *self) GetColorInterpolationGamma;
+				public function D2D1_EXTEND_MODE(ID2D1GradientStopCollection *self) GetExtendMode;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Brush : ID2D1Resource
 		{
 			public const new Guid IID = .(0x2cd906a8, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function void(ID2D1Brush *self, float opacity) SetOpacity;
-			public function void(ID2D1Brush *self, D2D_MATRIX_3X2_F* transform) SetTransform;
-			public function float(ID2D1Brush *self) GetOpacity;
-			public function void(ID2D1Brush *self, D2D_MATRIX_3X2_F* transform) GetTransform;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function void(ID2D1Brush *self, float opacity) SetOpacity;
+				public function void(ID2D1Brush *self, D2D_MATRIX_3X2_F* transform) SetTransform;
+				public function float(ID2D1Brush *self) GetOpacity;
+				public function void(ID2D1Brush *self, D2D_MATRIX_3X2_F* transform) GetTransform;
+			}
 		}
 		[CRepr]
 		public struct ID2D1BitmapBrush : ID2D1Brush
 		{
 			public const new Guid IID = .(0x2cd906aa, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function void(ID2D1BitmapBrush *self, D2D1_EXTEND_MODE extendModeX) SetExtendModeX;
-			public function void(ID2D1BitmapBrush *self, D2D1_EXTEND_MODE extendModeY) SetExtendModeY;
-			public function void(ID2D1BitmapBrush *self, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode) SetInterpolationMode;
-			public function void(ID2D1BitmapBrush *self, ID2D1Bitmap* bitmap) SetBitmap;
-			public function D2D1_EXTEND_MODE(ID2D1BitmapBrush *self) GetExtendModeX;
-			public function D2D1_EXTEND_MODE(ID2D1BitmapBrush *self) GetExtendModeY;
-			public function D2D1_BITMAP_INTERPOLATION_MODE(ID2D1BitmapBrush *self) GetInterpolationMode;
-			public function void(ID2D1BitmapBrush *self, ID2D1Bitmap** bitmap) GetBitmap;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Brush.VTable
+			{
+				public function void(ID2D1BitmapBrush *self, D2D1_EXTEND_MODE extendModeX) SetExtendModeX;
+				public function void(ID2D1BitmapBrush *self, D2D1_EXTEND_MODE extendModeY) SetExtendModeY;
+				public function void(ID2D1BitmapBrush *self, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode) SetInterpolationMode;
+				public function void(ID2D1BitmapBrush *self, ID2D1Bitmap* bitmap) SetBitmap;
+				public function D2D1_EXTEND_MODE(ID2D1BitmapBrush *self) GetExtendModeX;
+				public function D2D1_EXTEND_MODE(ID2D1BitmapBrush *self) GetExtendModeY;
+				public function D2D1_BITMAP_INTERPOLATION_MODE(ID2D1BitmapBrush *self) GetInterpolationMode;
+				public function void(ID2D1BitmapBrush *self, ID2D1Bitmap** bitmap) GetBitmap;
+			}
 		}
 		[CRepr]
 		public struct ID2D1SolidColorBrush : ID2D1Brush
 		{
 			public const new Guid IID = .(0x2cd906a9, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function void(ID2D1SolidColorBrush *self, D2D1_COLOR_F* color) SetColor;
-			public function D2D1_COLOR_F(ID2D1SolidColorBrush *self) GetColor;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Brush.VTable
+			{
+				public function void(ID2D1SolidColorBrush *self, D2D1_COLOR_F* color) SetColor;
+				public function D2D1_COLOR_F(ID2D1SolidColorBrush *self) GetColor;
+			}
 		}
 		[CRepr]
 		public struct ID2D1LinearGradientBrush : ID2D1Brush
 		{
 			public const new Guid IID = .(0x2cd906ab, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function void(ID2D1LinearGradientBrush *self, D2D_POINT_2F startPoint) SetStartPoint;
-			public function void(ID2D1LinearGradientBrush *self, D2D_POINT_2F endPoint) SetEndPoint;
-			public function D2D_POINT_2F(ID2D1LinearGradientBrush *self) GetStartPoint;
-			public function D2D_POINT_2F(ID2D1LinearGradientBrush *self) GetEndPoint;
-			public function void(ID2D1LinearGradientBrush *self, ID2D1GradientStopCollection** gradientStopCollection) GetGradientStopCollection;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Brush.VTable
+			{
+				public function void(ID2D1LinearGradientBrush *self, D2D_POINT_2F startPoint) SetStartPoint;
+				public function void(ID2D1LinearGradientBrush *self, D2D_POINT_2F endPoint) SetEndPoint;
+				public function D2D_POINT_2F(ID2D1LinearGradientBrush *self) GetStartPoint;
+				public function D2D_POINT_2F(ID2D1LinearGradientBrush *self) GetEndPoint;
+				public function void(ID2D1LinearGradientBrush *self, ID2D1GradientStopCollection** gradientStopCollection) GetGradientStopCollection;
+			}
 		}
 		[CRepr]
 		public struct ID2D1RadialGradientBrush : ID2D1Brush
 		{
 			public const new Guid IID = .(0x2cd906ac, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function void(ID2D1RadialGradientBrush *self, D2D_POINT_2F center) SetCenter;
-			public function void(ID2D1RadialGradientBrush *self, D2D_POINT_2F gradientOriginOffset) SetGradientOriginOffset;
-			public function void(ID2D1RadialGradientBrush *self, float radiusX) SetRadiusX;
-			public function void(ID2D1RadialGradientBrush *self, float radiusY) SetRadiusY;
-			public function D2D_POINT_2F(ID2D1RadialGradientBrush *self) GetCenter;
-			public function D2D_POINT_2F(ID2D1RadialGradientBrush *self) GetGradientOriginOffset;
-			public function float(ID2D1RadialGradientBrush *self) GetRadiusX;
-			public function float(ID2D1RadialGradientBrush *self) GetRadiusY;
-			public function void(ID2D1RadialGradientBrush *self, ID2D1GradientStopCollection** gradientStopCollection) GetGradientStopCollection;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Brush.VTable
+			{
+				public function void(ID2D1RadialGradientBrush *self, D2D_POINT_2F center) SetCenter;
+				public function void(ID2D1RadialGradientBrush *self, D2D_POINT_2F gradientOriginOffset) SetGradientOriginOffset;
+				public function void(ID2D1RadialGradientBrush *self, float radiusX) SetRadiusX;
+				public function void(ID2D1RadialGradientBrush *self, float radiusY) SetRadiusY;
+				public function D2D_POINT_2F(ID2D1RadialGradientBrush *self) GetCenter;
+				public function D2D_POINT_2F(ID2D1RadialGradientBrush *self) GetGradientOriginOffset;
+				public function float(ID2D1RadialGradientBrush *self) GetRadiusX;
+				public function float(ID2D1RadialGradientBrush *self) GetRadiusY;
+				public function void(ID2D1RadialGradientBrush *self, ID2D1GradientStopCollection** gradientStopCollection) GetGradientStopCollection;
+			}
 		}
 		[CRepr]
 		public struct ID2D1StrokeStyle : ID2D1Resource
 		{
 			public const new Guid IID = .(0x2cd9069d, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function D2D1_CAP_STYLE(ID2D1StrokeStyle *self) GetStartCap;
-			public function D2D1_CAP_STYLE(ID2D1StrokeStyle *self) GetEndCap;
-			public function D2D1_CAP_STYLE(ID2D1StrokeStyle *self) GetDashCap;
-			public function float(ID2D1StrokeStyle *self) GetMiterLimit;
-			public function D2D1_LINE_JOIN(ID2D1StrokeStyle *self) GetLineJoin;
-			public function float(ID2D1StrokeStyle *self) GetDashOffset;
-			public function D2D1_DASH_STYLE(ID2D1StrokeStyle *self) GetDashStyle;
-			public function uint32(ID2D1StrokeStyle *self) GetDashesCount;
-			public function void(ID2D1StrokeStyle *self, float* dashes, uint32 dashesCount) GetDashes;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function D2D1_CAP_STYLE(ID2D1StrokeStyle *self) GetStartCap;
+				public function D2D1_CAP_STYLE(ID2D1StrokeStyle *self) GetEndCap;
+				public function D2D1_CAP_STYLE(ID2D1StrokeStyle *self) GetDashCap;
+				public function float(ID2D1StrokeStyle *self) GetMiterLimit;
+				public function D2D1_LINE_JOIN(ID2D1StrokeStyle *self) GetLineJoin;
+				public function float(ID2D1StrokeStyle *self) GetDashOffset;
+				public function D2D1_DASH_STYLE(ID2D1StrokeStyle *self) GetDashStyle;
+				public function uint32(ID2D1StrokeStyle *self) GetDashesCount;
+				public function void(ID2D1StrokeStyle *self, float* dashes, uint32 dashesCount) GetDashes;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Geometry : ID2D1Resource
 		{
 			public const new Guid IID = .(0x2cd906a1, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function HRESULT(ID2D1Geometry *self, D2D_MATRIX_3X2_F* worldTransform, D2D_RECT_F* bounds) GetBounds;
-			public function HRESULT(ID2D1Geometry *self, float strokeWidth, ID2D1StrokeStyle* strokeStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, D2D_RECT_F* bounds) GetWidenedBounds;
-			public function HRESULT(ID2D1Geometry *self, D2D_POINT_2F point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, BOOL* contains) StrokeContainsPoint;
-			public function HRESULT(ID2D1Geometry *self, D2D_POINT_2F point, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, BOOL* contains) FillContainsPoint;
-			public function HRESULT(ID2D1Geometry *self, ID2D1Geometry* inputGeometry, D2D_MATRIX_3X2_F* inputGeometryTransform, float flatteningTolerance, D2D1_GEOMETRY_RELATION* relation) CompareWithGeometry;
-			public function HRESULT(ID2D1Geometry *self, D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink) Simplify;
-			public function HRESULT(ID2D1Geometry *self, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ID2D1TessellationSink* tessellationSink) Tessellate;
-			public function HRESULT(ID2D1Geometry *self, ID2D1Geometry* inputGeometry, D2D1_COMBINE_MODE combineMode, D2D_MATRIX_3X2_F* inputGeometryTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink) CombineWithGeometry;
-			public function HRESULT(ID2D1Geometry *self, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink) Outline;
-			public function HRESULT(ID2D1Geometry *self, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, float* area) ComputeArea;
-			public function HRESULT(ID2D1Geometry *self, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, float* length) ComputeLength;
-			public function HRESULT(ID2D1Geometry *self, float length, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, D2D_POINT_2F* point, D2D_POINT_2F* unitTangentVector) ComputePointAtLength;
-			public function HRESULT(ID2D1Geometry *self, float strokeWidth, ID2D1StrokeStyle* strokeStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink) Widen;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function HRESULT(ID2D1Geometry *self, D2D_MATRIX_3X2_F* worldTransform, D2D_RECT_F* bounds) GetBounds;
+				public function HRESULT(ID2D1Geometry *self, float strokeWidth, ID2D1StrokeStyle* strokeStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, D2D_RECT_F* bounds) GetWidenedBounds;
+				public function HRESULT(ID2D1Geometry *self, D2D_POINT_2F point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, BOOL* contains) StrokeContainsPoint;
+				public function HRESULT(ID2D1Geometry *self, D2D_POINT_2F point, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, BOOL* contains) FillContainsPoint;
+				public function HRESULT(ID2D1Geometry *self, ID2D1Geometry* inputGeometry, D2D_MATRIX_3X2_F* inputGeometryTransform, float flatteningTolerance, D2D1_GEOMETRY_RELATION* relation) CompareWithGeometry;
+				public function HRESULT(ID2D1Geometry *self, D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink) Simplify;
+				public function HRESULT(ID2D1Geometry *self, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ID2D1TessellationSink* tessellationSink) Tessellate;
+				public function HRESULT(ID2D1Geometry *self, ID2D1Geometry* inputGeometry, D2D1_COMBINE_MODE combineMode, D2D_MATRIX_3X2_F* inputGeometryTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink) CombineWithGeometry;
+				public function HRESULT(ID2D1Geometry *self, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink) Outline;
+				public function HRESULT(ID2D1Geometry *self, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, float* area) ComputeArea;
+				public function HRESULT(ID2D1Geometry *self, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, float* length) ComputeLength;
+				public function HRESULT(ID2D1Geometry *self, float length, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, D2D_POINT_2F* point, D2D_POINT_2F* unitTangentVector) ComputePointAtLength;
+				public function HRESULT(ID2D1Geometry *self, float strokeWidth, ID2D1StrokeStyle* strokeStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink) Widen;
+			}
 		}
 		[CRepr]
 		public struct ID2D1RectangleGeometry : ID2D1Geometry
 		{
 			public const new Guid IID = .(0x2cd906a2, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function void(ID2D1RectangleGeometry *self, D2D_RECT_F* rect) GetRect;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Geometry.VTable
+			{
+				public function void(ID2D1RectangleGeometry *self, D2D_RECT_F* rect) GetRect;
+			}
 		}
 		[CRepr]
 		public struct ID2D1RoundedRectangleGeometry : ID2D1Geometry
 		{
 			public const new Guid IID = .(0x2cd906a3, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function void(ID2D1RoundedRectangleGeometry *self, D2D1_ROUNDED_RECT* roundedRect) GetRoundedRect;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Geometry.VTable
+			{
+				public function void(ID2D1RoundedRectangleGeometry *self, D2D1_ROUNDED_RECT* roundedRect) GetRoundedRect;
+			}
 		}
 		[CRepr]
 		public struct ID2D1EllipseGeometry : ID2D1Geometry
 		{
 			public const new Guid IID = .(0x2cd906a4, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function void(ID2D1EllipseGeometry *self, D2D1_ELLIPSE* ellipse) GetEllipse;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Geometry.VTable
+			{
+				public function void(ID2D1EllipseGeometry *self, D2D1_ELLIPSE* ellipse) GetEllipse;
+			}
 		}
 		[CRepr]
 		public struct ID2D1GeometryGroup : ID2D1Geometry
 		{
 			public const new Guid IID = .(0x2cd906a6, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function D2D1_FILL_MODE(ID2D1GeometryGroup *self) GetFillMode;
-			public function uint32(ID2D1GeometryGroup *self) GetSourceGeometryCount;
-			public function void(ID2D1GeometryGroup *self, ID2D1Geometry** geometries, uint32 geometriesCount) GetSourceGeometries;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Geometry.VTable
+			{
+				public function D2D1_FILL_MODE(ID2D1GeometryGroup *self) GetFillMode;
+				public function uint32(ID2D1GeometryGroup *self) GetSourceGeometryCount;
+				public function void(ID2D1GeometryGroup *self, ID2D1Geometry** geometries, uint32 geometriesCount) GetSourceGeometries;
+			}
 		}
 		[CRepr]
 		public struct ID2D1TransformedGeometry : ID2D1Geometry
 		{
 			public const new Guid IID = .(0x2cd906bb, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function void(ID2D1TransformedGeometry *self, ID2D1Geometry** sourceGeometry) GetSourceGeometry;
-			public function void(ID2D1TransformedGeometry *self, D2D_MATRIX_3X2_F* transform) GetTransform;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Geometry.VTable
+			{
+				public function void(ID2D1TransformedGeometry *self, ID2D1Geometry** sourceGeometry) GetSourceGeometry;
+				public function void(ID2D1TransformedGeometry *self, D2D_MATRIX_3X2_F* transform) GetTransform;
+			}
 		}
 		[CRepr]
 		public struct ID2D1GeometrySink : ID2D1SimplifiedGeometrySink
 		{
 			public const new Guid IID = .(0x2cd9069f, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function void(ID2D1GeometrySink *self, D2D_POINT_2F point) AddLine;
-			public function void(ID2D1GeometrySink *self, D2D1_BEZIER_SEGMENT* bezier) AddBezier;
-			public function void(ID2D1GeometrySink *self, D2D1_QUADRATIC_BEZIER_SEGMENT* bezier) AddQuadraticBezier;
-			public function void(ID2D1GeometrySink *self, D2D1_QUADRATIC_BEZIER_SEGMENT* beziers, uint32 beziersCount) AddQuadraticBeziers;
-			public function void(ID2D1GeometrySink *self, D2D1_ARC_SEGMENT* arc) AddArc;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1SimplifiedGeometrySink.VTable
+			{
+				public function void(ID2D1GeometrySink *self, D2D_POINT_2F point) AddLine;
+				public function void(ID2D1GeometrySink *self, D2D1_BEZIER_SEGMENT* bezier) AddBezier;
+				public function void(ID2D1GeometrySink *self, D2D1_QUADRATIC_BEZIER_SEGMENT* bezier) AddQuadraticBezier;
+				public function void(ID2D1GeometrySink *self, D2D1_QUADRATIC_BEZIER_SEGMENT* beziers, uint32 beziersCount) AddQuadraticBeziers;
+				public function void(ID2D1GeometrySink *self, D2D1_ARC_SEGMENT* arc) AddArc;
+			}
 		}
 		[CRepr]
 		public struct ID2D1TessellationSink : IUnknown
 		{
 			public const new Guid IID = .(0x2cd906c1, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function void(ID2D1TessellationSink *self, D2D1_TRIANGLE* triangles, uint32 trianglesCount) AddTriangles;
-			public function HRESULT(ID2D1TessellationSink *self) Close;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function void(ID2D1TessellationSink *self, D2D1_TRIANGLE* triangles, uint32 trianglesCount) AddTriangles;
+				public function HRESULT(ID2D1TessellationSink *self) Close;
+			}
 		}
 		[CRepr]
 		public struct ID2D1PathGeometry : ID2D1Geometry
 		{
 			public const new Guid IID = .(0x2cd906a5, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function HRESULT(ID2D1PathGeometry *self, ID2D1GeometrySink** geometrySink) Open;
-			public function HRESULT(ID2D1PathGeometry *self, ID2D1GeometrySink* geometrySink) Stream;
-			public function HRESULT(ID2D1PathGeometry *self, uint32* count) GetSegmentCount;
-			public function HRESULT(ID2D1PathGeometry *self, uint32* count) GetFigureCount;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Geometry.VTable
+			{
+				public function HRESULT(ID2D1PathGeometry *self, ID2D1GeometrySink** geometrySink) Open;
+				public function HRESULT(ID2D1PathGeometry *self, ID2D1GeometrySink* geometrySink) Stream;
+				public function HRESULT(ID2D1PathGeometry *self, uint32* count) GetSegmentCount;
+				public function HRESULT(ID2D1PathGeometry *self, uint32* count) GetFigureCount;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Mesh : ID2D1Resource
 		{
 			public const new Guid IID = .(0x2cd906c2, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function HRESULT(ID2D1Mesh *self, ID2D1TessellationSink** tessellationSink) Open;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function HRESULT(ID2D1Mesh *self, ID2D1TessellationSink** tessellationSink) Open;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Layer : ID2D1Resource
 		{
 			public const new Guid IID = .(0x2cd9069b, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function D2D_SIZE_F(ID2D1Layer *self) GetSize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function D2D_SIZE_F(ID2D1Layer *self) GetSize;
+			}
 		}
 		[CRepr]
 		public struct ID2D1DrawingStateBlock : ID2D1Resource
 		{
 			public const new Guid IID = .(0x28506e39, 0xebf6, 0x46a1, 0xbb, 0x47, 0xfd, 0x85, 0x56, 0x5a, 0xb9, 0x57);
 			
-			public function void(ID2D1DrawingStateBlock *self, D2D1_DRAWING_STATE_DESCRIPTION* stateDescription) GetDescription;
-			public function void(ID2D1DrawingStateBlock *self, D2D1_DRAWING_STATE_DESCRIPTION* stateDescription) SetDescription;
-			public function void(ID2D1DrawingStateBlock *self, IDWriteRenderingParams* textRenderingParams) SetTextRenderingParams;
-			public function void(ID2D1DrawingStateBlock *self, IDWriteRenderingParams** textRenderingParams) GetTextRenderingParams;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function void(ID2D1DrawingStateBlock *self, D2D1_DRAWING_STATE_DESCRIPTION* stateDescription) GetDescription;
+				public function void(ID2D1DrawingStateBlock *self, D2D1_DRAWING_STATE_DESCRIPTION* stateDescription) SetDescription;
+				public function void(ID2D1DrawingStateBlock *self, IDWriteRenderingParams* textRenderingParams) SetTextRenderingParams;
+				public function void(ID2D1DrawingStateBlock *self, IDWriteRenderingParams** textRenderingParams) GetTextRenderingParams;
+			}
 		}
 		[CRepr]
 		public struct ID2D1RenderTarget : ID2D1Resource
 		{
 			public const new Guid IID = .(0x2cd90694, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function HRESULT(ID2D1RenderTarget *self, D2D_SIZE_U size, void* srcData, uint32 pitch, D2D1_BITMAP_PROPERTIES* bitmapProperties, ID2D1Bitmap** bitmap) CreateBitmap;
-			public function HRESULT(ID2D1RenderTarget *self, IWICBitmapSource* wicBitmapSource, D2D1_BITMAP_PROPERTIES* bitmapProperties, ID2D1Bitmap** bitmap) CreateBitmapFromWicBitmap;
-			public function HRESULT(ID2D1RenderTarget *self, Guid* riid, void* data, D2D1_BITMAP_PROPERTIES* bitmapProperties, ID2D1Bitmap** bitmap) CreateSharedBitmap;
-			public function HRESULT(ID2D1RenderTarget *self, ID2D1Bitmap* bitmap, D2D1_BITMAP_BRUSH_PROPERTIES* bitmapBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, ID2D1BitmapBrush** bitmapBrush) CreateBitmapBrush;
-			public function HRESULT(ID2D1RenderTarget *self, D2D1_COLOR_F* color, D2D1_BRUSH_PROPERTIES* brushProperties, ID2D1SolidColorBrush** solidColorBrush) CreateSolidColorBrush;
-			public function HRESULT(ID2D1RenderTarget *self, D2D1_GRADIENT_STOP* gradientStops, uint32 gradientStopsCount, D2D1_GAMMA colorInterpolationGamma, D2D1_EXTEND_MODE extendMode, ID2D1GradientStopCollection** gradientStopCollection) CreateGradientStopCollection;
-			public function HRESULT(ID2D1RenderTarget *self, D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES* linearGradientBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush) CreateLinearGradientBrush;
-			public function HRESULT(ID2D1RenderTarget *self, D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES* radialGradientBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush) CreateRadialGradientBrush;
-			public function HRESULT(ID2D1RenderTarget *self, D2D_SIZE_F* desiredSize, D2D_SIZE_U* desiredPixelSize, D2D1_PIXEL_FORMAT* desiredFormat, D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS options, ID2D1BitmapRenderTarget** bitmapRenderTarget) CreateCompatibleRenderTarget;
-			public function HRESULT(ID2D1RenderTarget *self, D2D_SIZE_F* size, ID2D1Layer** layer) CreateLayer;
-			public function HRESULT(ID2D1RenderTarget *self, ID2D1Mesh** mesh) CreateMesh;
-			public function void(ID2D1RenderTarget *self, D2D_POINT_2F point0, D2D_POINT_2F point1, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawLine;
-			public function void(ID2D1RenderTarget *self, D2D_RECT_F* rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawRectangle;
-			public function void(ID2D1RenderTarget *self, D2D_RECT_F* rect, ID2D1Brush* brush) FillRectangle;
-			public function void(ID2D1RenderTarget *self, D2D1_ROUNDED_RECT* roundedRect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawRoundedRectangle;
-			public function void(ID2D1RenderTarget *self, D2D1_ROUNDED_RECT* roundedRect, ID2D1Brush* brush) FillRoundedRectangle;
-			public function void(ID2D1RenderTarget *self, D2D1_ELLIPSE* ellipse, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawEllipse;
-			public function void(ID2D1RenderTarget *self, D2D1_ELLIPSE* ellipse, ID2D1Brush* brush) FillEllipse;
-			public function void(ID2D1RenderTarget *self, ID2D1Geometry* geometry, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawGeometry;
-			public function void(ID2D1RenderTarget *self, ID2D1Geometry* geometry, ID2D1Brush* brush, ID2D1Brush* opacityBrush) FillGeometry;
-			public function void(ID2D1RenderTarget *self, ID2D1Mesh* mesh, ID2D1Brush* brush) FillMesh;
-			public function void(ID2D1RenderTarget *self, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, D2D1_OPACITY_MASK_CONTENT content, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) FillOpacityMask;
-			public function void(ID2D1RenderTarget *self, ID2D1Bitmap* bitmap, D2D_RECT_F* destinationRectangle, float opacity, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D_RECT_F* sourceRectangle) DrawBitmap;
-			public function void(ID2D1RenderTarget *self, char16* string, uint32 stringLength, IDWriteTextFormat* textFormat, D2D_RECT_F* layoutRect, ID2D1Brush* defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options, DWRITE_MEASURING_MODE measuringMode) DrawText;
-			public function void(ID2D1RenderTarget *self, D2D_POINT_2F origin, IDWriteTextLayout* textLayout, ID2D1Brush* defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options) DrawTextLayout;
-			public function void(ID2D1RenderTarget *self, D2D_POINT_2F baselineOrigin, DWRITE_GLYPH_RUN* glyphRun, ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode) DrawGlyphRun;
-			public function void(ID2D1RenderTarget *self, D2D_MATRIX_3X2_F* transform) SetTransform;
-			public function void(ID2D1RenderTarget *self, D2D_MATRIX_3X2_F* transform) GetTransform;
-			public function void(ID2D1RenderTarget *self, D2D1_ANTIALIAS_MODE antialiasMode) SetAntialiasMode;
-			public function D2D1_ANTIALIAS_MODE(ID2D1RenderTarget *self) GetAntialiasMode;
-			public function void(ID2D1RenderTarget *self, D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode) SetTextAntialiasMode;
-			public function D2D1_TEXT_ANTIALIAS_MODE(ID2D1RenderTarget *self) GetTextAntialiasMode;
-			public function void(ID2D1RenderTarget *self, IDWriteRenderingParams* textRenderingParams) SetTextRenderingParams;
-			public function void(ID2D1RenderTarget *self, IDWriteRenderingParams** textRenderingParams) GetTextRenderingParams;
-			public function void(ID2D1RenderTarget *self, uint64 tag1, uint64 tag2) SetTags;
-			public function void(ID2D1RenderTarget *self, uint64* tag1, uint64* tag2) GetTags;
-			public function void(ID2D1RenderTarget *self, D2D1_LAYER_PARAMETERS* layerParameters, ID2D1Layer* layer) PushLayer;
-			public function void(ID2D1RenderTarget *self) PopLayer;
-			public function HRESULT(ID2D1RenderTarget *self, uint64* tag1, uint64* tag2) Flush;
-			public function void(ID2D1RenderTarget *self, ID2D1DrawingStateBlock* drawingStateBlock) SaveDrawingState;
-			public function void(ID2D1RenderTarget *self, ID2D1DrawingStateBlock* drawingStateBlock) RestoreDrawingState;
-			public function void(ID2D1RenderTarget *self, D2D_RECT_F* clipRect, D2D1_ANTIALIAS_MODE antialiasMode) PushAxisAlignedClip;
-			public function void(ID2D1RenderTarget *self) PopAxisAlignedClip;
-			public function void(ID2D1RenderTarget *self, D2D1_COLOR_F* clearColor) Clear;
-			public function void(ID2D1RenderTarget *self) BeginDraw;
-			public function HRESULT(ID2D1RenderTarget *self, uint64* tag1, uint64* tag2) EndDraw;
-			public function D2D1_PIXEL_FORMAT(ID2D1RenderTarget *self) GetPixelFormat;
-			public function void(ID2D1RenderTarget *self, float dpiX, float dpiY) SetDpi;
-			public function void(ID2D1RenderTarget *self, float* dpiX, float* dpiY) GetDpi;
-			public function D2D_SIZE_F(ID2D1RenderTarget *self) GetSize;
-			public function D2D_SIZE_U(ID2D1RenderTarget *self) GetPixelSize;
-			public function uint32(ID2D1RenderTarget *self) GetMaximumBitmapSize;
-			public function BOOL(ID2D1RenderTarget *self, D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties) IsSupported;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function HRESULT(ID2D1RenderTarget *self, D2D_SIZE_U size, void* srcData, uint32 pitch, D2D1_BITMAP_PROPERTIES* bitmapProperties, ID2D1Bitmap** bitmap) CreateBitmap;
+				public function HRESULT(ID2D1RenderTarget *self, IWICBitmapSource* wicBitmapSource, D2D1_BITMAP_PROPERTIES* bitmapProperties, ID2D1Bitmap** bitmap) CreateBitmapFromWicBitmap;
+				public function HRESULT(ID2D1RenderTarget *self, Guid* riid, void* data, D2D1_BITMAP_PROPERTIES* bitmapProperties, ID2D1Bitmap** bitmap) CreateSharedBitmap;
+				public function HRESULT(ID2D1RenderTarget *self, ID2D1Bitmap* bitmap, D2D1_BITMAP_BRUSH_PROPERTIES* bitmapBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, ID2D1BitmapBrush** bitmapBrush) CreateBitmapBrush;
+				public function HRESULT(ID2D1RenderTarget *self, D2D1_COLOR_F* color, D2D1_BRUSH_PROPERTIES* brushProperties, ID2D1SolidColorBrush** solidColorBrush) CreateSolidColorBrush;
+				public function HRESULT(ID2D1RenderTarget *self, D2D1_GRADIENT_STOP* gradientStops, uint32 gradientStopsCount, D2D1_GAMMA colorInterpolationGamma, D2D1_EXTEND_MODE extendMode, ID2D1GradientStopCollection** gradientStopCollection) CreateGradientStopCollection;
+				public function HRESULT(ID2D1RenderTarget *self, D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES* linearGradientBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush) CreateLinearGradientBrush;
+				public function HRESULT(ID2D1RenderTarget *self, D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES* radialGradientBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush) CreateRadialGradientBrush;
+				public function HRESULT(ID2D1RenderTarget *self, D2D_SIZE_F* desiredSize, D2D_SIZE_U* desiredPixelSize, D2D1_PIXEL_FORMAT* desiredFormat, D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS options, ID2D1BitmapRenderTarget** bitmapRenderTarget) CreateCompatibleRenderTarget;
+				public function HRESULT(ID2D1RenderTarget *self, D2D_SIZE_F* size, ID2D1Layer** layer) CreateLayer;
+				public function HRESULT(ID2D1RenderTarget *self, ID2D1Mesh** mesh) CreateMesh;
+				public function void(ID2D1RenderTarget *self, D2D_POINT_2F point0, D2D_POINT_2F point1, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawLine;
+				public function void(ID2D1RenderTarget *self, D2D_RECT_F* rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawRectangle;
+				public function void(ID2D1RenderTarget *self, D2D_RECT_F* rect, ID2D1Brush* brush) FillRectangle;
+				public function void(ID2D1RenderTarget *self, D2D1_ROUNDED_RECT* roundedRect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawRoundedRectangle;
+				public function void(ID2D1RenderTarget *self, D2D1_ROUNDED_RECT* roundedRect, ID2D1Brush* brush) FillRoundedRectangle;
+				public function void(ID2D1RenderTarget *self, D2D1_ELLIPSE* ellipse, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawEllipse;
+				public function void(ID2D1RenderTarget *self, D2D1_ELLIPSE* ellipse, ID2D1Brush* brush) FillEllipse;
+				public function void(ID2D1RenderTarget *self, ID2D1Geometry* geometry, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawGeometry;
+				public function void(ID2D1RenderTarget *self, ID2D1Geometry* geometry, ID2D1Brush* brush, ID2D1Brush* opacityBrush) FillGeometry;
+				public function void(ID2D1RenderTarget *self, ID2D1Mesh* mesh, ID2D1Brush* brush) FillMesh;
+				public function void(ID2D1RenderTarget *self, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, D2D1_OPACITY_MASK_CONTENT content, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) FillOpacityMask;
+				public function void(ID2D1RenderTarget *self, ID2D1Bitmap* bitmap, D2D_RECT_F* destinationRectangle, float opacity, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D_RECT_F* sourceRectangle) DrawBitmap;
+				public function void(ID2D1RenderTarget *self, char16* string, uint32 stringLength, IDWriteTextFormat* textFormat, D2D_RECT_F* layoutRect, ID2D1Brush* defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options, DWRITE_MEASURING_MODE measuringMode) DrawText;
+				public function void(ID2D1RenderTarget *self, D2D_POINT_2F origin, IDWriteTextLayout* textLayout, ID2D1Brush* defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options) DrawTextLayout;
+				public function void(ID2D1RenderTarget *self, D2D_POINT_2F baselineOrigin, DWRITE_GLYPH_RUN* glyphRun, ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode) DrawGlyphRun;
+				public function void(ID2D1RenderTarget *self, D2D_MATRIX_3X2_F* transform) SetTransform;
+				public function void(ID2D1RenderTarget *self, D2D_MATRIX_3X2_F* transform) GetTransform;
+				public function void(ID2D1RenderTarget *self, D2D1_ANTIALIAS_MODE antialiasMode) SetAntialiasMode;
+				public function D2D1_ANTIALIAS_MODE(ID2D1RenderTarget *self) GetAntialiasMode;
+				public function void(ID2D1RenderTarget *self, D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode) SetTextAntialiasMode;
+				public function D2D1_TEXT_ANTIALIAS_MODE(ID2D1RenderTarget *self) GetTextAntialiasMode;
+				public function void(ID2D1RenderTarget *self, IDWriteRenderingParams* textRenderingParams) SetTextRenderingParams;
+				public function void(ID2D1RenderTarget *self, IDWriteRenderingParams** textRenderingParams) GetTextRenderingParams;
+				public function void(ID2D1RenderTarget *self, uint64 tag1, uint64 tag2) SetTags;
+				public function void(ID2D1RenderTarget *self, uint64* tag1, uint64* tag2) GetTags;
+				public function void(ID2D1RenderTarget *self, D2D1_LAYER_PARAMETERS* layerParameters, ID2D1Layer* layer) PushLayer;
+				public function void(ID2D1RenderTarget *self) PopLayer;
+				public function HRESULT(ID2D1RenderTarget *self, uint64* tag1, uint64* tag2) Flush;
+				public function void(ID2D1RenderTarget *self, ID2D1DrawingStateBlock* drawingStateBlock) SaveDrawingState;
+				public function void(ID2D1RenderTarget *self, ID2D1DrawingStateBlock* drawingStateBlock) RestoreDrawingState;
+				public function void(ID2D1RenderTarget *self, D2D_RECT_F* clipRect, D2D1_ANTIALIAS_MODE antialiasMode) PushAxisAlignedClip;
+				public function void(ID2D1RenderTarget *self) PopAxisAlignedClip;
+				public function void(ID2D1RenderTarget *self, D2D1_COLOR_F* clearColor) Clear;
+				public function void(ID2D1RenderTarget *self) BeginDraw;
+				public function HRESULT(ID2D1RenderTarget *self, uint64* tag1, uint64* tag2) EndDraw;
+				public function D2D1_PIXEL_FORMAT(ID2D1RenderTarget *self) GetPixelFormat;
+				public function void(ID2D1RenderTarget *self, float dpiX, float dpiY) SetDpi;
+				public function void(ID2D1RenderTarget *self, float* dpiX, float* dpiY) GetDpi;
+				public function D2D_SIZE_F(ID2D1RenderTarget *self) GetSize;
+				public function D2D_SIZE_U(ID2D1RenderTarget *self) GetPixelSize;
+				public function uint32(ID2D1RenderTarget *self) GetMaximumBitmapSize;
+				public function BOOL(ID2D1RenderTarget *self, D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties) IsSupported;
+			}
 		}
 		[CRepr]
 		public struct ID2D1BitmapRenderTarget : ID2D1RenderTarget
 		{
 			public const new Guid IID = .(0x2cd90695, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function HRESULT(ID2D1BitmapRenderTarget *self, ID2D1Bitmap** bitmap) GetBitmap;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1RenderTarget.VTable
+			{
+				public function HRESULT(ID2D1BitmapRenderTarget *self, ID2D1Bitmap** bitmap) GetBitmap;
+			}
 		}
 		[CRepr]
 		public struct ID2D1HwndRenderTarget : ID2D1RenderTarget
 		{
 			public const new Guid IID = .(0x2cd90698, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function D2D1_WINDOW_STATE(ID2D1HwndRenderTarget *self) CheckWindowState;
-			public function HRESULT(ID2D1HwndRenderTarget *self, D2D_SIZE_U* pixelSize) Resize;
-			public function HWND(ID2D1HwndRenderTarget *self) GetHwnd;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1RenderTarget.VTable
+			{
+				public function D2D1_WINDOW_STATE(ID2D1HwndRenderTarget *self) CheckWindowState;
+				public function HRESULT(ID2D1HwndRenderTarget *self, D2D_SIZE_U* pixelSize) Resize;
+				public function HWND(ID2D1HwndRenderTarget *self) GetHwnd;
+			}
 		}
 		[CRepr]
 		public struct ID2D1GdiInteropRenderTarget : IUnknown
 		{
 			public const new Guid IID = .(0xe0db51c3, 0x6f77, 0x4bae, 0xb3, 0xd5, 0xe4, 0x75, 0x09, 0xb3, 0x58, 0x38);
 			
-			public function HRESULT(ID2D1GdiInteropRenderTarget *self, D2D1_DC_INITIALIZE_MODE mode, HDC* hdc) GetDC;
-			public function HRESULT(ID2D1GdiInteropRenderTarget *self, RECT* update) ReleaseDC;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ID2D1GdiInteropRenderTarget *self, D2D1_DC_INITIALIZE_MODE mode, HDC* hdc) GetDC;
+				public function HRESULT(ID2D1GdiInteropRenderTarget *self, RECT* update) ReleaseDC;
+			}
 		}
 		[CRepr]
 		public struct ID2D1DCRenderTarget : ID2D1RenderTarget
 		{
 			public const new Guid IID = .(0x1c51bc64, 0xde61, 0x46fd, 0x98, 0x99, 0x63, 0xa5, 0xd8, 0xf0, 0x39, 0x50);
 			
-			public function HRESULT(ID2D1DCRenderTarget *self, HDC hDC, RECT* pSubRect) BindDC;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1RenderTarget.VTable
+			{
+				public function HRESULT(ID2D1DCRenderTarget *self, HDC hDC, RECT* pSubRect) BindDC;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Factory : IUnknown
 		{
 			public const new Guid IID = .(0x06152247, 0x6f50, 0x465a, 0x92, 0x45, 0x11, 0x8b, 0xfd, 0x3b, 0x60, 0x07);
 			
-			public function HRESULT(ID2D1Factory *self) ReloadSystemMetrics;
-			public function void(ID2D1Factory *self, float* dpiX, float* dpiY) GetDesktopDpi;
-			public function HRESULT(ID2D1Factory *self, D2D_RECT_F* rectangle, ID2D1RectangleGeometry** rectangleGeometry) CreateRectangleGeometry;
-			public function HRESULT(ID2D1Factory *self, D2D1_ROUNDED_RECT* roundedRectangle, ID2D1RoundedRectangleGeometry** roundedRectangleGeometry) CreateRoundedRectangleGeometry;
-			public function HRESULT(ID2D1Factory *self, D2D1_ELLIPSE* ellipse, ID2D1EllipseGeometry** ellipseGeometry) CreateEllipseGeometry;
-			public function HRESULT(ID2D1Factory *self, D2D1_FILL_MODE fillMode, ID2D1Geometry** geometries, uint32 geometriesCount, ID2D1GeometryGroup** geometryGroup) CreateGeometryGroup;
-			public function HRESULT(ID2D1Factory *self, ID2D1Geometry* sourceGeometry, D2D_MATRIX_3X2_F* transform, ID2D1TransformedGeometry** transformedGeometry) CreateTransformedGeometry;
-			public function HRESULT(ID2D1Factory *self, ID2D1PathGeometry** pathGeometry) CreatePathGeometry;
-			public function HRESULT(ID2D1Factory *self, D2D1_STROKE_STYLE_PROPERTIES* strokeStyleProperties, float* dashes, uint32 dashesCount, ID2D1StrokeStyle** strokeStyle) CreateStrokeStyle;
-			public function HRESULT(ID2D1Factory *self, D2D1_DRAWING_STATE_DESCRIPTION* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock) CreateDrawingStateBlock;
-			public function HRESULT(ID2D1Factory *self, IWICBitmap* target, D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties, ID2D1RenderTarget** renderTarget) CreateWicBitmapRenderTarget;
-			public function HRESULT(ID2D1Factory *self, D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties, D2D1_HWND_RENDER_TARGET_PROPERTIES* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget) CreateHwndRenderTarget;
-			public function HRESULT(ID2D1Factory *self, IDXGISurface* dxgiSurface, D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties, ID2D1RenderTarget** renderTarget) CreateDxgiSurfaceRenderTarget;
-			public function HRESULT(ID2D1Factory *self, D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties, ID2D1DCRenderTarget** dcRenderTarget) CreateDCRenderTarget;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ID2D1Factory *self) ReloadSystemMetrics;
+				public function void(ID2D1Factory *self, float* dpiX, float* dpiY) GetDesktopDpi;
+				public function HRESULT(ID2D1Factory *self, D2D_RECT_F* rectangle, ID2D1RectangleGeometry** rectangleGeometry) CreateRectangleGeometry;
+				public function HRESULT(ID2D1Factory *self, D2D1_ROUNDED_RECT* roundedRectangle, ID2D1RoundedRectangleGeometry** roundedRectangleGeometry) CreateRoundedRectangleGeometry;
+				public function HRESULT(ID2D1Factory *self, D2D1_ELLIPSE* ellipse, ID2D1EllipseGeometry** ellipseGeometry) CreateEllipseGeometry;
+				public function HRESULT(ID2D1Factory *self, D2D1_FILL_MODE fillMode, ID2D1Geometry** geometries, uint32 geometriesCount, ID2D1GeometryGroup** geometryGroup) CreateGeometryGroup;
+				public function HRESULT(ID2D1Factory *self, ID2D1Geometry* sourceGeometry, D2D_MATRIX_3X2_F* transform, ID2D1TransformedGeometry** transformedGeometry) CreateTransformedGeometry;
+				public function HRESULT(ID2D1Factory *self, ID2D1PathGeometry** pathGeometry) CreatePathGeometry;
+				public function HRESULT(ID2D1Factory *self, D2D1_STROKE_STYLE_PROPERTIES* strokeStyleProperties, float* dashes, uint32 dashesCount, ID2D1StrokeStyle** strokeStyle) CreateStrokeStyle;
+				public function HRESULT(ID2D1Factory *self, D2D1_DRAWING_STATE_DESCRIPTION* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock) CreateDrawingStateBlock;
+				public function HRESULT(ID2D1Factory *self, IWICBitmap* target, D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties, ID2D1RenderTarget** renderTarget) CreateWicBitmapRenderTarget;
+				public function HRESULT(ID2D1Factory *self, D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties, D2D1_HWND_RENDER_TARGET_PROPERTIES* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget) CreateHwndRenderTarget;
+				public function HRESULT(ID2D1Factory *self, IDXGISurface* dxgiSurface, D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties, ID2D1RenderTarget** renderTarget) CreateDxgiSurfaceRenderTarget;
+				public function HRESULT(ID2D1Factory *self, D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties, ID2D1DCRenderTarget** dcRenderTarget) CreateDCRenderTarget;
+			}
 		}
 		[CRepr]
 		public struct ID2D1GdiMetafileSink : IUnknown
 		{
 			public const new Guid IID = .(0x82237326, 0x8111, 0x4f7c, 0xbc, 0xf4, 0xb5, 0xc1, 0x17, 0x55, 0x64, 0xfe);
 			
-			public function HRESULT(ID2D1GdiMetafileSink *self, uint32 recordType, void* recordData, uint32 recordDataSize) ProcessRecord;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ID2D1GdiMetafileSink *self, uint32 recordType, void* recordData, uint32 recordDataSize) ProcessRecord;
+			}
 		}
 		[CRepr]
 		public struct ID2D1GdiMetafile : ID2D1Resource
 		{
 			public const new Guid IID = .(0x2f543dc3, 0xcfc1, 0x4211, 0x86, 0x4f, 0xcf, 0xd9, 0x1c, 0x6f, 0x33, 0x95);
 			
-			public function HRESULT(ID2D1GdiMetafile *self, ID2D1GdiMetafileSink* sink) Stream;
-			public function HRESULT(ID2D1GdiMetafile *self, D2D_RECT_F* bounds) GetBounds;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function HRESULT(ID2D1GdiMetafile *self, ID2D1GdiMetafileSink* sink) Stream;
+				public function HRESULT(ID2D1GdiMetafile *self, D2D_RECT_F* bounds) GetBounds;
+			}
 		}
 		[CRepr]
 		public struct ID2D1CommandSink : IUnknown
 		{
 			public const new Guid IID = .(0x54d7898a, 0xa061, 0x40a7, 0xbe, 0xc7, 0xe4, 0x65, 0xbc, 0xba, 0x2c, 0x4f);
 			
-			public function HRESULT(ID2D1CommandSink *self) BeginDraw;
-			public function HRESULT(ID2D1CommandSink *self) EndDraw;
-			public function HRESULT(ID2D1CommandSink *self, D2D1_ANTIALIAS_MODE antialiasMode) SetAntialiasMode;
-			public function HRESULT(ID2D1CommandSink *self, uint64 tag1, uint64 tag2) SetTags;
-			public function HRESULT(ID2D1CommandSink *self, D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode) SetTextAntialiasMode;
-			public function HRESULT(ID2D1CommandSink *self, IDWriteRenderingParams* textRenderingParams) SetTextRenderingParams;
-			public function HRESULT(ID2D1CommandSink *self, D2D_MATRIX_3X2_F* transform) SetTransform;
-			public function HRESULT(ID2D1CommandSink *self, D2D1_PRIMITIVE_BLEND primitiveBlend) SetPrimitiveBlend;
-			public function HRESULT(ID2D1CommandSink *self, D2D1_UNIT_MODE unitMode) SetUnitMode;
-			public function HRESULT(ID2D1CommandSink *self, D2D1_COLOR_F* color) Clear;
-			public function HRESULT(ID2D1CommandSink *self, D2D_POINT_2F baselineOrigin, DWRITE_GLYPH_RUN* glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode) DrawGlyphRun;
-			public function HRESULT(ID2D1CommandSink *self, D2D_POINT_2F point0, D2D_POINT_2F point1, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawLine;
-			public function HRESULT(ID2D1CommandSink *self, ID2D1Geometry* geometry, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawGeometry;
-			public function HRESULT(ID2D1CommandSink *self, D2D_RECT_F* rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawRectangle;
-			public function HRESULT(ID2D1CommandSink *self, ID2D1Bitmap* bitmap, D2D_RECT_F* destinationRectangle, float opacity, D2D1_INTERPOLATION_MODE interpolationMode, D2D_RECT_F* sourceRectangle, D2D_MATRIX_4X4_F* perspectiveTransform) DrawBitmap;
-			public function HRESULT(ID2D1CommandSink *self, ID2D1Image* image, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode) DrawImage;
-			public function HRESULT(ID2D1CommandSink *self, ID2D1GdiMetafile* gdiMetafile, D2D_POINT_2F* targetOffset) DrawGdiMetafile;
-			public function HRESULT(ID2D1CommandSink *self, ID2D1Mesh* mesh, ID2D1Brush* brush) FillMesh;
-			public function HRESULT(ID2D1CommandSink *self, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) FillOpacityMask;
-			public function HRESULT(ID2D1CommandSink *self, ID2D1Geometry* geometry, ID2D1Brush* brush, ID2D1Brush* opacityBrush) FillGeometry;
-			public function HRESULT(ID2D1CommandSink *self, D2D_RECT_F* rect, ID2D1Brush* brush) FillRectangle;
-			public function HRESULT(ID2D1CommandSink *self, D2D_RECT_F* clipRect, D2D1_ANTIALIAS_MODE antialiasMode) PushAxisAlignedClip;
-			public function HRESULT(ID2D1CommandSink *self, D2D1_LAYER_PARAMETERS1* layerParameters1, ID2D1Layer* layer) PushLayer;
-			public function HRESULT(ID2D1CommandSink *self) PopAxisAlignedClip;
-			public function HRESULT(ID2D1CommandSink *self) PopLayer;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ID2D1CommandSink *self) BeginDraw;
+				public function HRESULT(ID2D1CommandSink *self) EndDraw;
+				public function HRESULT(ID2D1CommandSink *self, D2D1_ANTIALIAS_MODE antialiasMode) SetAntialiasMode;
+				public function HRESULT(ID2D1CommandSink *self, uint64 tag1, uint64 tag2) SetTags;
+				public function HRESULT(ID2D1CommandSink *self, D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode) SetTextAntialiasMode;
+				public function HRESULT(ID2D1CommandSink *self, IDWriteRenderingParams* textRenderingParams) SetTextRenderingParams;
+				public function HRESULT(ID2D1CommandSink *self, D2D_MATRIX_3X2_F* transform) SetTransform;
+				public function HRESULT(ID2D1CommandSink *self, D2D1_PRIMITIVE_BLEND primitiveBlend) SetPrimitiveBlend;
+				public function HRESULT(ID2D1CommandSink *self, D2D1_UNIT_MODE unitMode) SetUnitMode;
+				public function HRESULT(ID2D1CommandSink *self, D2D1_COLOR_F* color) Clear;
+				public function HRESULT(ID2D1CommandSink *self, D2D_POINT_2F baselineOrigin, DWRITE_GLYPH_RUN* glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode) DrawGlyphRun;
+				public function HRESULT(ID2D1CommandSink *self, D2D_POINT_2F point0, D2D_POINT_2F point1, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawLine;
+				public function HRESULT(ID2D1CommandSink *self, ID2D1Geometry* geometry, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawGeometry;
+				public function HRESULT(ID2D1CommandSink *self, D2D_RECT_F* rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle) DrawRectangle;
+				public function HRESULT(ID2D1CommandSink *self, ID2D1Bitmap* bitmap, D2D_RECT_F* destinationRectangle, float opacity, D2D1_INTERPOLATION_MODE interpolationMode, D2D_RECT_F* sourceRectangle, D2D_MATRIX_4X4_F* perspectiveTransform) DrawBitmap;
+				public function HRESULT(ID2D1CommandSink *self, ID2D1Image* image, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode) DrawImage;
+				public function HRESULT(ID2D1CommandSink *self, ID2D1GdiMetafile* gdiMetafile, D2D_POINT_2F* targetOffset) DrawGdiMetafile;
+				public function HRESULT(ID2D1CommandSink *self, ID2D1Mesh* mesh, ID2D1Brush* brush) FillMesh;
+				public function HRESULT(ID2D1CommandSink *self, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) FillOpacityMask;
+				public function HRESULT(ID2D1CommandSink *self, ID2D1Geometry* geometry, ID2D1Brush* brush, ID2D1Brush* opacityBrush) FillGeometry;
+				public function HRESULT(ID2D1CommandSink *self, D2D_RECT_F* rect, ID2D1Brush* brush) FillRectangle;
+				public function HRESULT(ID2D1CommandSink *self, D2D_RECT_F* clipRect, D2D1_ANTIALIAS_MODE antialiasMode) PushAxisAlignedClip;
+				public function HRESULT(ID2D1CommandSink *self, D2D1_LAYER_PARAMETERS1* layerParameters1, ID2D1Layer* layer) PushLayer;
+				public function HRESULT(ID2D1CommandSink *self) PopAxisAlignedClip;
+				public function HRESULT(ID2D1CommandSink *self) PopLayer;
+			}
 		}
 		[CRepr]
 		public struct ID2D1CommandList : ID2D1Image
 		{
 			public const new Guid IID = .(0xb4f34a19, 0x2383, 0x4d76, 0x94, 0xf6, 0xec, 0x34, 0x36, 0x57, 0xc3, 0xdc);
 			
-			public function HRESULT(ID2D1CommandList *self, ID2D1CommandSink* sink) Stream;
-			public function HRESULT(ID2D1CommandList *self) Close;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Image.VTable
+			{
+				public function HRESULT(ID2D1CommandList *self, ID2D1CommandSink* sink) Stream;
+				public function HRESULT(ID2D1CommandList *self) Close;
+			}
 		}
 		[CRepr]
 		public struct ID2D1PrintControl : IUnknown
 		{
 			public const new Guid IID = .(0x2c1d867d, 0xc290, 0x41c8, 0xae, 0x7e, 0x34, 0xa9, 0x87, 0x02, 0xe9, 0xa5);
 			
-			public function HRESULT(ID2D1PrintControl *self, ID2D1CommandList* commandList, D2D_SIZE_F pageSize, IStream* pagePrintTicketStream, uint64* tag1, uint64* tag2) AddPage;
-			public function HRESULT(ID2D1PrintControl *self) Close;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ID2D1PrintControl *self, ID2D1CommandList* commandList, D2D_SIZE_F pageSize, IStream* pagePrintTicketStream, uint64* tag1, uint64* tag2) AddPage;
+				public function HRESULT(ID2D1PrintControl *self) Close;
+			}
 		}
 		[CRepr]
 		public struct ID2D1ImageBrush : ID2D1Brush
 		{
 			public const new Guid IID = .(0xfe9e984d, 0x3f95, 0x407c, 0xb5, 0xdb, 0xcb, 0x94, 0xd4, 0xe8, 0xf8, 0x7c);
 			
-			public function void(ID2D1ImageBrush *self, ID2D1Image* image) SetImage;
-			public function void(ID2D1ImageBrush *self, D2D1_EXTEND_MODE extendModeX) SetExtendModeX;
-			public function void(ID2D1ImageBrush *self, D2D1_EXTEND_MODE extendModeY) SetExtendModeY;
-			public function void(ID2D1ImageBrush *self, D2D1_INTERPOLATION_MODE interpolationMode) SetInterpolationMode;
-			public function void(ID2D1ImageBrush *self, D2D_RECT_F* sourceRectangle) SetSourceRectangle;
-			public function void(ID2D1ImageBrush *self, ID2D1Image** image) GetImage;
-			public function D2D1_EXTEND_MODE(ID2D1ImageBrush *self) GetExtendModeX;
-			public function D2D1_EXTEND_MODE(ID2D1ImageBrush *self) GetExtendModeY;
-			public function D2D1_INTERPOLATION_MODE(ID2D1ImageBrush *self) GetInterpolationMode;
-			public function void(ID2D1ImageBrush *self, D2D_RECT_F* sourceRectangle) GetSourceRectangle;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Brush.VTable
+			{
+				public function void(ID2D1ImageBrush *self, ID2D1Image* image) SetImage;
+				public function void(ID2D1ImageBrush *self, D2D1_EXTEND_MODE extendModeX) SetExtendModeX;
+				public function void(ID2D1ImageBrush *self, D2D1_EXTEND_MODE extendModeY) SetExtendModeY;
+				public function void(ID2D1ImageBrush *self, D2D1_INTERPOLATION_MODE interpolationMode) SetInterpolationMode;
+				public function void(ID2D1ImageBrush *self, D2D_RECT_F* sourceRectangle) SetSourceRectangle;
+				public function void(ID2D1ImageBrush *self, ID2D1Image** image) GetImage;
+				public function D2D1_EXTEND_MODE(ID2D1ImageBrush *self) GetExtendModeX;
+				public function D2D1_EXTEND_MODE(ID2D1ImageBrush *self) GetExtendModeY;
+				public function D2D1_INTERPOLATION_MODE(ID2D1ImageBrush *self) GetInterpolationMode;
+				public function void(ID2D1ImageBrush *self, D2D_RECT_F* sourceRectangle) GetSourceRectangle;
+			}
 		}
 		[CRepr]
 		public struct ID2D1BitmapBrush1 : ID2D1BitmapBrush
 		{
 			public const new Guid IID = .(0x41343a53, 0xe41a, 0x49a2, 0x91, 0xcd, 0x21, 0x79, 0x3b, 0xbb, 0x62, 0xe5);
 			
-			public function void(ID2D1BitmapBrush1 *self, D2D1_INTERPOLATION_MODE interpolationMode) SetInterpolationMode1;
-			public function D2D1_INTERPOLATION_MODE(ID2D1BitmapBrush1 *self) GetInterpolationMode1;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1BitmapBrush.VTable
+			{
+				public function void(ID2D1BitmapBrush1 *self, D2D1_INTERPOLATION_MODE interpolationMode) SetInterpolationMode1;
+				public function D2D1_INTERPOLATION_MODE(ID2D1BitmapBrush1 *self) GetInterpolationMode1;
+			}
 		}
 		[CRepr]
 		public struct ID2D1StrokeStyle1 : ID2D1StrokeStyle
 		{
 			public const new Guid IID = .(0x10a72a66, 0xe91c, 0x43f4, 0x99, 0x3f, 0xdd, 0xf4, 0xb8, 0x2b, 0x0b, 0x4a);
 			
-			public function D2D1_STROKE_TRANSFORM_TYPE(ID2D1StrokeStyle1 *self) GetStrokeTransformType;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1StrokeStyle.VTable
+			{
+				public function D2D1_STROKE_TRANSFORM_TYPE(ID2D1StrokeStyle1 *self) GetStrokeTransformType;
+			}
 		}
 		[CRepr]
 		public struct ID2D1PathGeometry1 : ID2D1PathGeometry
 		{
 			public const new Guid IID = .(0x62baa2d2, 0xab54, 0x41b7, 0xb8, 0x72, 0x78, 0x7e, 0x01, 0x06, 0xa4, 0x21);
 			
-			public function HRESULT(ID2D1PathGeometry1 *self, float length, uint32 startSegment, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, D2D1_POINT_DESCRIPTION* pointDescription) ComputePointAndSegmentAtLength;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1PathGeometry.VTable
+			{
+				public function HRESULT(ID2D1PathGeometry1 *self, float length, uint32 startSegment, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, D2D1_POINT_DESCRIPTION* pointDescription) ComputePointAndSegmentAtLength;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Properties : IUnknown
 		{
 			public const new Guid IID = .(0x483473d7, 0xcd46, 0x4f9d, 0x9d, 0x3a, 0x31, 0x12, 0xaa, 0x80, 0x15, 0x9d);
 			
-			public function uint32(ID2D1Properties *self) GetPropertyCount;
-			public function HRESULT(ID2D1Properties *self, uint32 index, char16* name, uint32 nameCount) GetPropertyName;
-			public function uint32(ID2D1Properties *self, uint32 index) GetPropertyNameLength;
-			public function D2D1_PROPERTY_TYPE(ID2D1Properties *self, uint32 index) GetType;
-			public function uint32(ID2D1Properties *self, PWSTR name) GetPropertyIndex;
-			public function HRESULT(ID2D1Properties *self, PWSTR name, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) SetValueByName;
-			public function HRESULT(ID2D1Properties *self, uint32 index, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) SetValue;
-			public function HRESULT(ID2D1Properties *self, PWSTR name, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) GetValueByName;
-			public function HRESULT(ID2D1Properties *self, uint32 index, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) GetValue;
-			public function uint32(ID2D1Properties *self, uint32 index) GetValueSize;
-			public function HRESULT(ID2D1Properties *self, uint32 index, ID2D1Properties** subProperties) GetSubProperties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function uint32(ID2D1Properties *self) GetPropertyCount;
+				public function HRESULT(ID2D1Properties *self, uint32 index, char16* name, uint32 nameCount) GetPropertyName;
+				public function uint32(ID2D1Properties *self, uint32 index) GetPropertyNameLength;
+				public function D2D1_PROPERTY_TYPE(ID2D1Properties *self, uint32 index) GetType;
+				public function uint32(ID2D1Properties *self, PWSTR name) GetPropertyIndex;
+				public function HRESULT(ID2D1Properties *self, PWSTR name, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) SetValueByName;
+				public function HRESULT(ID2D1Properties *self, uint32 index, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) SetValue;
+				public function HRESULT(ID2D1Properties *self, PWSTR name, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) GetValueByName;
+				public function HRESULT(ID2D1Properties *self, uint32 index, D2D1_PROPERTY_TYPE type, uint8* data, uint32 dataSize) GetValue;
+				public function uint32(ID2D1Properties *self, uint32 index) GetValueSize;
+				public function HRESULT(ID2D1Properties *self, uint32 index, ID2D1Properties** subProperties) GetSubProperties;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Effect : ID2D1Properties
 		{
 			public const new Guid IID = .(0x28211a43, 0x7d89, 0x476f, 0x81, 0x81, 0x2d, 0x61, 0x59, 0xb2, 0x20, 0xad);
 			
-			public function void(ID2D1Effect *self, uint32 index, ID2D1Image* input, BOOL invalidate) SetInput;
-			public function HRESULT(ID2D1Effect *self, uint32 inputCount) SetInputCount;
-			public function void(ID2D1Effect *self, uint32 index, ID2D1Image** input) GetInput;
-			public function uint32(ID2D1Effect *self) GetInputCount;
-			public function void(ID2D1Effect *self, ID2D1Image** outputImage) GetOutput;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Properties.VTable
+			{
+				public function void(ID2D1Effect *self, uint32 index, ID2D1Image* input, BOOL invalidate) SetInput;
+				public function HRESULT(ID2D1Effect *self, uint32 inputCount) SetInputCount;
+				public function void(ID2D1Effect *self, uint32 index, ID2D1Image** input) GetInput;
+				public function uint32(ID2D1Effect *self) GetInputCount;
+				public function void(ID2D1Effect *self, ID2D1Image** outputImage) GetOutput;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Bitmap1 : ID2D1Bitmap
 		{
 			public const new Guid IID = .(0xa898a84c, 0x3873, 0x4588, 0xb0, 0x8b, 0xeb, 0xbf, 0x97, 0x8d, 0xf0, 0x41);
 			
-			public function void(ID2D1Bitmap1 *self, ID2D1ColorContext** colorContext) GetColorContext;
-			public function D2D1_BITMAP_OPTIONS(ID2D1Bitmap1 *self) GetOptions;
-			public function HRESULT(ID2D1Bitmap1 *self, IDXGISurface** dxgiSurface) GetSurface;
-			public function HRESULT(ID2D1Bitmap1 *self, D2D1_MAP_OPTIONS options, D2D1_MAPPED_RECT* mappedRect) Map;
-			public function HRESULT(ID2D1Bitmap1 *self) Unmap;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Bitmap.VTable
+			{
+				public function void(ID2D1Bitmap1 *self, ID2D1ColorContext** colorContext) GetColorContext;
+				public function D2D1_BITMAP_OPTIONS(ID2D1Bitmap1 *self) GetOptions;
+				public function HRESULT(ID2D1Bitmap1 *self, IDXGISurface** dxgiSurface) GetSurface;
+				public function HRESULT(ID2D1Bitmap1 *self, D2D1_MAP_OPTIONS options, D2D1_MAPPED_RECT* mappedRect) Map;
+				public function HRESULT(ID2D1Bitmap1 *self) Unmap;
+			}
 		}
 		[CRepr]
 		public struct ID2D1ColorContext : ID2D1Resource
 		{
 			public const new Guid IID = .(0x1c4820bb, 0x5771, 0x4518, 0xa5, 0x81, 0x2f, 0xe4, 0xdd, 0x0e, 0xc6, 0x57);
 			
-			public function D2D1_COLOR_SPACE(ID2D1ColorContext *self) GetColorSpace;
-			public function uint32(ID2D1ColorContext *self) GetProfileSize;
-			public function HRESULT(ID2D1ColorContext *self, uint8* profile, uint32 profileSize) GetProfile;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function D2D1_COLOR_SPACE(ID2D1ColorContext *self) GetColorSpace;
+				public function uint32(ID2D1ColorContext *self) GetProfileSize;
+				public function HRESULT(ID2D1ColorContext *self, uint8* profile, uint32 profileSize) GetProfile;
+			}
 		}
 		[CRepr]
 		public struct ID2D1GradientStopCollection1 : ID2D1GradientStopCollection
 		{
 			public const new Guid IID = .(0xae1572f4, 0x5dd0, 0x4777, 0x99, 0x8b, 0x92, 0x79, 0x47, 0x2a, 0xe6, 0x3b);
 			
-			public function void(ID2D1GradientStopCollection1 *self, D2D1_GRADIENT_STOP* gradientStops, uint32 gradientStopsCount) GetGradientStops1;
-			public function D2D1_COLOR_SPACE(ID2D1GradientStopCollection1 *self) GetPreInterpolationSpace;
-			public function D2D1_COLOR_SPACE(ID2D1GradientStopCollection1 *self) GetPostInterpolationSpace;
-			public function D2D1_BUFFER_PRECISION(ID2D1GradientStopCollection1 *self) GetBufferPrecision;
-			public function D2D1_COLOR_INTERPOLATION_MODE(ID2D1GradientStopCollection1 *self) GetColorInterpolationMode;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1GradientStopCollection.VTable
+			{
+				public function void(ID2D1GradientStopCollection1 *self, D2D1_GRADIENT_STOP* gradientStops, uint32 gradientStopsCount) GetGradientStops1;
+				public function D2D1_COLOR_SPACE(ID2D1GradientStopCollection1 *self) GetPreInterpolationSpace;
+				public function D2D1_COLOR_SPACE(ID2D1GradientStopCollection1 *self) GetPostInterpolationSpace;
+				public function D2D1_BUFFER_PRECISION(ID2D1GradientStopCollection1 *self) GetBufferPrecision;
+				public function D2D1_COLOR_INTERPOLATION_MODE(ID2D1GradientStopCollection1 *self) GetColorInterpolationMode;
+			}
 		}
 		[CRepr]
 		public struct ID2D1DrawingStateBlock1 : ID2D1DrawingStateBlock
 		{
 			public const new Guid IID = .(0x689f1f85, 0xc72e, 0x4e33, 0x8f, 0x19, 0x85, 0x75, 0x4e, 0xfd, 0x5a, 0xce);
 			
-			public function void(ID2D1DrawingStateBlock1 *self, D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription) GetDescription;
-			public function void(ID2D1DrawingStateBlock1 *self, D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription) SetDescription;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1DrawingStateBlock.VTable
+			{
+				public function void(ID2D1DrawingStateBlock1 *self, D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription) GetDescription;
+				public function void(ID2D1DrawingStateBlock1 *self, D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription) SetDescription;
+			}
 		}
 		[CRepr]
 		public struct ID2D1DeviceContext : ID2D1RenderTarget
 		{
 			public const new Guid IID = .(0xe8f7fe7a, 0x191c, 0x466d, 0xad, 0x95, 0x97, 0x56, 0x78, 0xbd, 0xa9, 0x98);
 			
-			public function HRESULT(ID2D1DeviceContext *self, D2D_SIZE_U size, void* sourceData, uint32 pitch, D2D1_BITMAP_PROPERTIES1* bitmapProperties, ID2D1Bitmap1** bitmap) CreateBitmap;
-			public function HRESULT(ID2D1DeviceContext *self, IWICBitmapSource* wicBitmapSource, D2D1_BITMAP_PROPERTIES1* bitmapProperties, ID2D1Bitmap1** bitmap) CreateBitmapFromWicBitmap;
-			public function HRESULT(ID2D1DeviceContext *self, D2D1_COLOR_SPACE space, uint8* profile, uint32 profileSize, ID2D1ColorContext** colorContext) CreateColorContext;
-			public function HRESULT(ID2D1DeviceContext *self, PWSTR filename, ID2D1ColorContext** colorContext) CreateColorContextFromFilename;
-			public function HRESULT(ID2D1DeviceContext *self, IWICColorContext* wicColorContext, ID2D1ColorContext** colorContext) CreateColorContextFromWicColorContext;
-			public function HRESULT(ID2D1DeviceContext *self, IDXGISurface* surface, D2D1_BITMAP_PROPERTIES1* bitmapProperties, ID2D1Bitmap1** bitmap) CreateBitmapFromDxgiSurface;
-			public function HRESULT(ID2D1DeviceContext *self, Guid* effectId, ID2D1Effect** effect) CreateEffect;
-			public function HRESULT(ID2D1DeviceContext *self, D2D1_GRADIENT_STOP* straightAlphaGradientStops, uint32 straightAlphaGradientStopsCount, D2D1_COLOR_SPACE preInterpolationSpace, D2D1_COLOR_SPACE postInterpolationSpace, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_EXTEND_MODE extendMode, D2D1_COLOR_INTERPOLATION_MODE colorInterpolationMode, ID2D1GradientStopCollection1** gradientStopCollection1) CreateGradientStopCollection;
-			public function HRESULT(ID2D1DeviceContext *self, ID2D1Image* image, D2D1_IMAGE_BRUSH_PROPERTIES* imageBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, ID2D1ImageBrush** imageBrush) CreateImageBrush;
-			public function HRESULT(ID2D1DeviceContext *self, ID2D1Bitmap* bitmap, D2D1_BITMAP_BRUSH_PROPERTIES1* bitmapBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, ID2D1BitmapBrush1** bitmapBrush) CreateBitmapBrush;
-			public function HRESULT(ID2D1DeviceContext *self, ID2D1CommandList** commandList) CreateCommandList;
-			public function BOOL(ID2D1DeviceContext *self, DXGI_FORMAT format) IsDxgiFormatSupported;
-			public function BOOL(ID2D1DeviceContext *self, D2D1_BUFFER_PRECISION bufferPrecision) IsBufferPrecisionSupported;
-			public function HRESULT(ID2D1DeviceContext *self, ID2D1Image* image, D2D_RECT_F* localBounds) GetImageLocalBounds;
-			public function HRESULT(ID2D1DeviceContext *self, ID2D1Image* image, D2D_RECT_F* worldBounds) GetImageWorldBounds;
-			public function HRESULT(ID2D1DeviceContext *self, D2D_POINT_2F baselineOrigin, DWRITE_GLYPH_RUN* glyphRun, DWRITE_MEASURING_MODE measuringMode, D2D_RECT_F* bounds) GetGlyphRunWorldBounds;
-			public function void(ID2D1DeviceContext *self, ID2D1Device** device) GetDevice;
-			public function void(ID2D1DeviceContext *self, ID2D1Image* image) SetTarget;
-			public function void(ID2D1DeviceContext *self, ID2D1Image** image) GetTarget;
-			public function void(ID2D1DeviceContext *self, D2D1_RENDERING_CONTROLS* renderingControls) SetRenderingControls;
-			public function void(ID2D1DeviceContext *self, D2D1_RENDERING_CONTROLS* renderingControls) GetRenderingControls;
-			public function void(ID2D1DeviceContext *self, D2D1_PRIMITIVE_BLEND primitiveBlend) SetPrimitiveBlend;
-			public function D2D1_PRIMITIVE_BLEND(ID2D1DeviceContext *self) GetPrimitiveBlend;
-			public function void(ID2D1DeviceContext *self, D2D1_UNIT_MODE unitMode) SetUnitMode;
-			public function D2D1_UNIT_MODE(ID2D1DeviceContext *self) GetUnitMode;
-			public function void(ID2D1DeviceContext *self, D2D_POINT_2F baselineOrigin, DWRITE_GLYPH_RUN* glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode) DrawGlyphRun;
-			public function void(ID2D1DeviceContext *self, ID2D1Image* image, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode) DrawImage;
-			public function void(ID2D1DeviceContext *self, ID2D1GdiMetafile* gdiMetafile, D2D_POINT_2F* targetOffset) DrawGdiMetafile;
-			public function void(ID2D1DeviceContext *self, ID2D1Bitmap* bitmap, D2D_RECT_F* destinationRectangle, float opacity, D2D1_INTERPOLATION_MODE interpolationMode, D2D_RECT_F* sourceRectangle, D2D_MATRIX_4X4_F* perspectiveTransform) DrawBitmap;
-			public function void(ID2D1DeviceContext *self, D2D1_LAYER_PARAMETERS1* layerParameters, ID2D1Layer* layer) PushLayer;
-			public function HRESULT(ID2D1DeviceContext *self, ID2D1Effect* effect, uint32 input, D2D_RECT_F* inputRectangle) InvalidateEffectInputRectangle;
-			public function HRESULT(ID2D1DeviceContext *self, ID2D1Effect* effect, uint32* rectangleCount) GetEffectInvalidRectangleCount;
-			public function HRESULT(ID2D1DeviceContext *self, ID2D1Effect* effect, D2D_RECT_F* rectangles, uint32 rectanglesCount) GetEffectInvalidRectangles;
-			public function HRESULT(ID2D1DeviceContext *self, ID2D1Effect* renderEffect, D2D_RECT_F* renderImageRectangle, D2D1_EFFECT_INPUT_DESCRIPTION* inputDescriptions, D2D_RECT_F* requiredInputRects, uint32 inputCount) GetEffectRequiredInputRectangles;
-			public function void(ID2D1DeviceContext *self, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) FillOpacityMask;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1RenderTarget.VTable
+			{
+				public function HRESULT(ID2D1DeviceContext *self, D2D_SIZE_U size, void* sourceData, uint32 pitch, D2D1_BITMAP_PROPERTIES1* bitmapProperties, ID2D1Bitmap1** bitmap) CreateBitmap;
+				public function HRESULT(ID2D1DeviceContext *self, IWICBitmapSource* wicBitmapSource, D2D1_BITMAP_PROPERTIES1* bitmapProperties, ID2D1Bitmap1** bitmap) CreateBitmapFromWicBitmap;
+				public function HRESULT(ID2D1DeviceContext *self, D2D1_COLOR_SPACE space, uint8* profile, uint32 profileSize, ID2D1ColorContext** colorContext) CreateColorContext;
+				public function HRESULT(ID2D1DeviceContext *self, PWSTR filename, ID2D1ColorContext** colorContext) CreateColorContextFromFilename;
+				public function HRESULT(ID2D1DeviceContext *self, IWICColorContext* wicColorContext, ID2D1ColorContext** colorContext) CreateColorContextFromWicColorContext;
+				public function HRESULT(ID2D1DeviceContext *self, IDXGISurface* surface, D2D1_BITMAP_PROPERTIES1* bitmapProperties, ID2D1Bitmap1** bitmap) CreateBitmapFromDxgiSurface;
+				public function HRESULT(ID2D1DeviceContext *self, Guid* effectId, ID2D1Effect** effect) CreateEffect;
+				public function HRESULT(ID2D1DeviceContext *self, D2D1_GRADIENT_STOP* straightAlphaGradientStops, uint32 straightAlphaGradientStopsCount, D2D1_COLOR_SPACE preInterpolationSpace, D2D1_COLOR_SPACE postInterpolationSpace, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_EXTEND_MODE extendMode, D2D1_COLOR_INTERPOLATION_MODE colorInterpolationMode, ID2D1GradientStopCollection1** gradientStopCollection1) CreateGradientStopCollection;
+				public function HRESULT(ID2D1DeviceContext *self, ID2D1Image* image, D2D1_IMAGE_BRUSH_PROPERTIES* imageBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, ID2D1ImageBrush** imageBrush) CreateImageBrush;
+				public function HRESULT(ID2D1DeviceContext *self, ID2D1Bitmap* bitmap, D2D1_BITMAP_BRUSH_PROPERTIES1* bitmapBrushProperties, D2D1_BRUSH_PROPERTIES* brushProperties, ID2D1BitmapBrush1** bitmapBrush) CreateBitmapBrush;
+				public function HRESULT(ID2D1DeviceContext *self, ID2D1CommandList** commandList) CreateCommandList;
+				public function BOOL(ID2D1DeviceContext *self, DXGI_FORMAT format) IsDxgiFormatSupported;
+				public function BOOL(ID2D1DeviceContext *self, D2D1_BUFFER_PRECISION bufferPrecision) IsBufferPrecisionSupported;
+				public function HRESULT(ID2D1DeviceContext *self, ID2D1Image* image, D2D_RECT_F* localBounds) GetImageLocalBounds;
+				public function HRESULT(ID2D1DeviceContext *self, ID2D1Image* image, D2D_RECT_F* worldBounds) GetImageWorldBounds;
+				public function HRESULT(ID2D1DeviceContext *self, D2D_POINT_2F baselineOrigin, DWRITE_GLYPH_RUN* glyphRun, DWRITE_MEASURING_MODE measuringMode, D2D_RECT_F* bounds) GetGlyphRunWorldBounds;
+				public function void(ID2D1DeviceContext *self, ID2D1Device** device) GetDevice;
+				public function void(ID2D1DeviceContext *self, ID2D1Image* image) SetTarget;
+				public function void(ID2D1DeviceContext *self, ID2D1Image** image) GetTarget;
+				public function void(ID2D1DeviceContext *self, D2D1_RENDERING_CONTROLS* renderingControls) SetRenderingControls;
+				public function void(ID2D1DeviceContext *self, D2D1_RENDERING_CONTROLS* renderingControls) GetRenderingControls;
+				public function void(ID2D1DeviceContext *self, D2D1_PRIMITIVE_BLEND primitiveBlend) SetPrimitiveBlend;
+				public function D2D1_PRIMITIVE_BLEND(ID2D1DeviceContext *self) GetPrimitiveBlend;
+				public function void(ID2D1DeviceContext *self, D2D1_UNIT_MODE unitMode) SetUnitMode;
+				public function D2D1_UNIT_MODE(ID2D1DeviceContext *self) GetUnitMode;
+				public function void(ID2D1DeviceContext *self, D2D_POINT_2F baselineOrigin, DWRITE_GLYPH_RUN* glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode) DrawGlyphRun;
+				public function void(ID2D1DeviceContext *self, ID2D1Image* image, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode) DrawImage;
+				public function void(ID2D1DeviceContext *self, ID2D1GdiMetafile* gdiMetafile, D2D_POINT_2F* targetOffset) DrawGdiMetafile;
+				public function void(ID2D1DeviceContext *self, ID2D1Bitmap* bitmap, D2D_RECT_F* destinationRectangle, float opacity, D2D1_INTERPOLATION_MODE interpolationMode, D2D_RECT_F* sourceRectangle, D2D_MATRIX_4X4_F* perspectiveTransform) DrawBitmap;
+				public function void(ID2D1DeviceContext *self, D2D1_LAYER_PARAMETERS1* layerParameters, ID2D1Layer* layer) PushLayer;
+				public function HRESULT(ID2D1DeviceContext *self, ID2D1Effect* effect, uint32 input, D2D_RECT_F* inputRectangle) InvalidateEffectInputRectangle;
+				public function HRESULT(ID2D1DeviceContext *self, ID2D1Effect* effect, uint32* rectangleCount) GetEffectInvalidRectangleCount;
+				public function HRESULT(ID2D1DeviceContext *self, ID2D1Effect* effect, D2D_RECT_F* rectangles, uint32 rectanglesCount) GetEffectInvalidRectangles;
+				public function HRESULT(ID2D1DeviceContext *self, ID2D1Effect* renderEffect, D2D_RECT_F* renderImageRectangle, D2D1_EFFECT_INPUT_DESCRIPTION* inputDescriptions, D2D_RECT_F* requiredInputRects, uint32 inputCount) GetEffectRequiredInputRectangles;
+				public function void(ID2D1DeviceContext *self, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) FillOpacityMask;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Device : ID2D1Resource
 		{
 			public const new Guid IID = .(0x47dd575d, 0xac05, 0x4cdd, 0x80, 0x49, 0x9b, 0x02, 0xcd, 0x16, 0xf4, 0x4c);
 			
-			public function HRESULT(ID2D1Device *self, D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext** deviceContext) CreateDeviceContext;
-			public function HRESULT(ID2D1Device *self, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, D2D1_PRINT_CONTROL_PROPERTIES* printControlProperties, ID2D1PrintControl** printControl) CreatePrintControl;
-			public function void(ID2D1Device *self, uint64 maximumInBytes) SetMaximumTextureMemory;
-			public function uint64(ID2D1Device *self) GetMaximumTextureMemory;
-			public function void(ID2D1Device *self, uint32 millisecondsSinceUse) ClearResources;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function HRESULT(ID2D1Device *self, D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext** deviceContext) CreateDeviceContext;
+				public function HRESULT(ID2D1Device *self, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, D2D1_PRINT_CONTROL_PROPERTIES* printControlProperties, ID2D1PrintControl** printControl) CreatePrintControl;
+				public function void(ID2D1Device *self, uint64 maximumInBytes) SetMaximumTextureMemory;
+				public function uint64(ID2D1Device *self) GetMaximumTextureMemory;
+				public function void(ID2D1Device *self, uint32 millisecondsSinceUse) ClearResources;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Factory1 : ID2D1Factory
 		{
 			public const new Guid IID = .(0xbb12d362, 0xdaee, 0x4b9a, 0xaa, 0x1d, 0x14, 0xba, 0x40, 0x1c, 0xfa, 0x1f);
 			
-			public function HRESULT(ID2D1Factory1 *self, IDXGIDevice* dxgiDevice, ID2D1Device** d2dDevice) CreateDevice;
-			public function HRESULT(ID2D1Factory1 *self, D2D1_STROKE_STYLE_PROPERTIES1* strokeStyleProperties, float* dashes, uint32 dashesCount, ID2D1StrokeStyle1** strokeStyle) CreateStrokeStyle;
-			public function HRESULT(ID2D1Factory1 *self, ID2D1PathGeometry1** pathGeometry) CreatePathGeometry;
-			public function HRESULT(ID2D1Factory1 *self, D2D1_DRAWING_STATE_DESCRIPTION1* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock1** drawingStateBlock) CreateDrawingStateBlock;
-			public function HRESULT(ID2D1Factory1 *self, IStream* metafileStream, ID2D1GdiMetafile** metafile) CreateGdiMetafile;
-			public function HRESULT(ID2D1Factory1 *self, Guid* classId, IStream* propertyXml, D2D1_PROPERTY_BINDING* bindings, uint32 bindingsCount, PD2D1_EFFECT_FACTORY effectFactory) RegisterEffectFromStream;
-			public function HRESULT(ID2D1Factory1 *self, Guid* classId, PWSTR propertyXml, D2D1_PROPERTY_BINDING* bindings, uint32 bindingsCount, PD2D1_EFFECT_FACTORY effectFactory) RegisterEffectFromString;
-			public function HRESULT(ID2D1Factory1 *self, Guid* classId) UnregisterEffect;
-			public function HRESULT(ID2D1Factory1 *self, Guid* effects, uint32 effectsCount, uint32* effectsReturned, uint32* effectsRegistered) GetRegisteredEffects;
-			public function HRESULT(ID2D1Factory1 *self, Guid* effectId, ID2D1Properties** properties) GetEffectProperties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Factory.VTable
+			{
+				public function HRESULT(ID2D1Factory1 *self, IDXGIDevice* dxgiDevice, ID2D1Device** d2dDevice) CreateDevice;
+				public function HRESULT(ID2D1Factory1 *self, D2D1_STROKE_STYLE_PROPERTIES1* strokeStyleProperties, float* dashes, uint32 dashesCount, ID2D1StrokeStyle1** strokeStyle) CreateStrokeStyle;
+				public function HRESULT(ID2D1Factory1 *self, ID2D1PathGeometry1** pathGeometry) CreatePathGeometry;
+				public function HRESULT(ID2D1Factory1 *self, D2D1_DRAWING_STATE_DESCRIPTION1* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock1** drawingStateBlock) CreateDrawingStateBlock;
+				public function HRESULT(ID2D1Factory1 *self, IStream* metafileStream, ID2D1GdiMetafile** metafile) CreateGdiMetafile;
+				public function HRESULT(ID2D1Factory1 *self, Guid* classId, IStream* propertyXml, D2D1_PROPERTY_BINDING* bindings, uint32 bindingsCount, PD2D1_EFFECT_FACTORY effectFactory) RegisterEffectFromStream;
+				public function HRESULT(ID2D1Factory1 *self, Guid* classId, PWSTR propertyXml, D2D1_PROPERTY_BINDING* bindings, uint32 bindingsCount, PD2D1_EFFECT_FACTORY effectFactory) RegisterEffectFromString;
+				public function HRESULT(ID2D1Factory1 *self, Guid* classId) UnregisterEffect;
+				public function HRESULT(ID2D1Factory1 *self, Guid* effects, uint32 effectsCount, uint32* effectsReturned, uint32* effectsRegistered) GetRegisteredEffects;
+				public function HRESULT(ID2D1Factory1 *self, Guid* effectId, ID2D1Properties** properties) GetEffectProperties;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Multithread : IUnknown
 		{
 			public const new Guid IID = .(0x31e6e7bc, 0xe0ff, 0x4d46, 0x8c, 0x64, 0xa0, 0xa8, 0xc4, 0x1c, 0x15, 0xd3);
 			
-			public function BOOL(ID2D1Multithread *self) GetMultithreadProtected;
-			public function void(ID2D1Multithread *self) Enter;
-			public function void(ID2D1Multithread *self) Leave;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function BOOL(ID2D1Multithread *self) GetMultithreadProtected;
+				public function void(ID2D1Multithread *self) Enter;
+				public function void(ID2D1Multithread *self) Leave;
+			}
 		}
 		[CRepr]
 		public struct ID2D1VertexBuffer : IUnknown
 		{
 			public const new Guid IID = .(0x9b8b1336, 0x00a5, 0x4668, 0x92, 0xb7, 0xce, 0xd5, 0xd8, 0xbf, 0x9b, 0x7b);
 			
-			public function HRESULT(ID2D1VertexBuffer *self, uint8** data, uint32 bufferSize) Map;
-			public function HRESULT(ID2D1VertexBuffer *self) Unmap;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ID2D1VertexBuffer *self, uint8** data, uint32 bufferSize) Map;
+				public function HRESULT(ID2D1VertexBuffer *self) Unmap;
+			}
 		}
 		[CRepr]
 		public struct ID2D1ResourceTexture : IUnknown
 		{
 			public const new Guid IID = .(0x688d15c3, 0x02b0, 0x438d, 0xb1, 0x3a, 0xd1, 0xb4, 0x4c, 0x32, 0xc3, 0x9a);
 			
-			public function HRESULT(ID2D1ResourceTexture *self, uint32* minimumExtents, uint32* maximimumExtents, uint32* strides, uint32 dimensions, uint8* data, uint32 dataCount) Update;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ID2D1ResourceTexture *self, uint32* minimumExtents, uint32* maximimumExtents, uint32* strides, uint32 dimensions, uint8* data, uint32 dataCount) Update;
+			}
 		}
 		[CRepr]
 		public struct ID2D1RenderInfo : IUnknown
 		{
 			public const new Guid IID = .(0x519ae1bd, 0xd19a, 0x420d, 0xb8, 0x49, 0x36, 0x4f, 0x59, 0x47, 0x76, 0xb7);
 			
-			public function HRESULT(ID2D1RenderInfo *self, uint32 inputIndex, D2D1_INPUT_DESCRIPTION inputDescription) SetInputDescription;
-			public function HRESULT(ID2D1RenderInfo *self, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth) SetOutputBuffer;
-			public function void(ID2D1RenderInfo *self, BOOL isCached) SetCached;
-			public function void(ID2D1RenderInfo *self, uint32 instructionCount) SetInstructionCountHint;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ID2D1RenderInfo *self, uint32 inputIndex, D2D1_INPUT_DESCRIPTION inputDescription) SetInputDescription;
+				public function HRESULT(ID2D1RenderInfo *self, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth) SetOutputBuffer;
+				public function void(ID2D1RenderInfo *self, BOOL isCached) SetCached;
+				public function void(ID2D1RenderInfo *self, uint32 instructionCount) SetInstructionCountHint;
+			}
 		}
 		[CRepr]
 		public struct ID2D1DrawInfo : ID2D1RenderInfo
 		{
 			public const new Guid IID = .(0x693ce632, 0x7f2f, 0x45de, 0x93, 0xfe, 0x18, 0xd8, 0x8b, 0x37, 0xaa, 0x21);
 			
-			public function HRESULT(ID2D1DrawInfo *self, uint8* buffer, uint32 bufferCount) SetPixelShaderConstantBuffer;
-			public function HRESULT(ID2D1DrawInfo *self, uint32 textureIndex, ID2D1ResourceTexture* resourceTexture) SetResourceTexture;
-			public function HRESULT(ID2D1DrawInfo *self, uint8* buffer, uint32 bufferCount) SetVertexShaderConstantBuffer;
-			public function HRESULT(ID2D1DrawInfo *self, Guid* shaderId, D2D1_PIXEL_OPTIONS pixelOptions) SetPixelShader;
-			public function HRESULT(ID2D1DrawInfo *self, ID2D1VertexBuffer* vertexBuffer, D2D1_VERTEX_OPTIONS vertexOptions, D2D1_BLEND_DESCRIPTION* blendDescription, D2D1_VERTEX_RANGE* vertexRange, Guid* vertexShader) SetVertexProcessing;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1RenderInfo.VTable
+			{
+				public function HRESULT(ID2D1DrawInfo *self, uint8* buffer, uint32 bufferCount) SetPixelShaderConstantBuffer;
+				public function HRESULT(ID2D1DrawInfo *self, uint32 textureIndex, ID2D1ResourceTexture* resourceTexture) SetResourceTexture;
+				public function HRESULT(ID2D1DrawInfo *self, uint8* buffer, uint32 bufferCount) SetVertexShaderConstantBuffer;
+				public function HRESULT(ID2D1DrawInfo *self, Guid* shaderId, D2D1_PIXEL_OPTIONS pixelOptions) SetPixelShader;
+				public function HRESULT(ID2D1DrawInfo *self, ID2D1VertexBuffer* vertexBuffer, D2D1_VERTEX_OPTIONS vertexOptions, D2D1_BLEND_DESCRIPTION* blendDescription, D2D1_VERTEX_RANGE* vertexRange, Guid* vertexShader) SetVertexProcessing;
+			}
 		}
 		[CRepr]
 		public struct ID2D1ComputeInfo : ID2D1RenderInfo
 		{
 			public const new Guid IID = .(0x5598b14b, 0x9fd7, 0x48b7, 0x9b, 0xdb, 0x8f, 0x09, 0x64, 0xeb, 0x38, 0xbc);
 			
-			public function HRESULT(ID2D1ComputeInfo *self, uint8* buffer, uint32 bufferCount) SetComputeShaderConstantBuffer;
-			public function HRESULT(ID2D1ComputeInfo *self, Guid* shaderId) SetComputeShader;
-			public function HRESULT(ID2D1ComputeInfo *self, uint32 textureIndex, ID2D1ResourceTexture* resourceTexture) SetResourceTexture;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1RenderInfo.VTable
+			{
+				public function HRESULT(ID2D1ComputeInfo *self, uint8* buffer, uint32 bufferCount) SetComputeShaderConstantBuffer;
+				public function HRESULT(ID2D1ComputeInfo *self, Guid* shaderId) SetComputeShader;
+				public function HRESULT(ID2D1ComputeInfo *self, uint32 textureIndex, ID2D1ResourceTexture* resourceTexture) SetResourceTexture;
+			}
 		}
 		[CRepr]
 		public struct ID2D1TransformNode : IUnknown
 		{
 			public const new Guid IID = .(0xb2efe1e7, 0x729f, 0x4102, 0x94, 0x9f, 0x50, 0x5f, 0xa2, 0x1b, 0xf6, 0x66);
 			
-			public function uint32(ID2D1TransformNode *self) GetInputCount;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function uint32(ID2D1TransformNode *self) GetInputCount;
+			}
 		}
 		[CRepr]
 		public struct ID2D1TransformGraph : IUnknown
 		{
 			public const new Guid IID = .(0x13d29038, 0xc3e6, 0x4034, 0x90, 0x81, 0x13, 0xb5, 0x3a, 0x41, 0x79, 0x92);
 			
-			public function uint32(ID2D1TransformGraph *self) GetInputCount;
-			public function HRESULT(ID2D1TransformGraph *self, ID2D1TransformNode* node) SetSingleTransformNode;
-			public function HRESULT(ID2D1TransformGraph *self, ID2D1TransformNode* node) AddNode;
-			public function HRESULT(ID2D1TransformGraph *self, ID2D1TransformNode* node) RemoveNode;
-			public function HRESULT(ID2D1TransformGraph *self, ID2D1TransformNode* node) SetOutputNode;
-			public function HRESULT(ID2D1TransformGraph *self, ID2D1TransformNode* fromNode, ID2D1TransformNode* toNode, uint32 toNodeInputIndex) ConnectNode;
-			public function HRESULT(ID2D1TransformGraph *self, uint32 toEffectInputIndex, ID2D1TransformNode* node, uint32 toNodeInputIndex) ConnectToEffectInput;
-			public function void(ID2D1TransformGraph *self) Clear;
-			public function HRESULT(ID2D1TransformGraph *self, uint32 effectInputIndex) SetPassthroughGraph;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function uint32(ID2D1TransformGraph *self) GetInputCount;
+				public function HRESULT(ID2D1TransformGraph *self, ID2D1TransformNode* node) SetSingleTransformNode;
+				public function HRESULT(ID2D1TransformGraph *self, ID2D1TransformNode* node) AddNode;
+				public function HRESULT(ID2D1TransformGraph *self, ID2D1TransformNode* node) RemoveNode;
+				public function HRESULT(ID2D1TransformGraph *self, ID2D1TransformNode* node) SetOutputNode;
+				public function HRESULT(ID2D1TransformGraph *self, ID2D1TransformNode* fromNode, ID2D1TransformNode* toNode, uint32 toNodeInputIndex) ConnectNode;
+				public function HRESULT(ID2D1TransformGraph *self, uint32 toEffectInputIndex, ID2D1TransformNode* node, uint32 toNodeInputIndex) ConnectToEffectInput;
+				public function void(ID2D1TransformGraph *self) Clear;
+				public function HRESULT(ID2D1TransformGraph *self, uint32 effectInputIndex) SetPassthroughGraph;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Transform : ID2D1TransformNode
 		{
 			public const new Guid IID = .(0xef1a287d, 0x342a, 0x4f76, 0x8f, 0xdb, 0xda, 0x0d, 0x6e, 0xa9, 0xf9, 0x2b);
 			
-			public function HRESULT(ID2D1Transform *self, RECT* outputRect, RECT* inputRects, uint32 inputRectsCount) MapOutputRectToInputRects;
-			public function HRESULT(ID2D1Transform *self, RECT* inputRects, RECT* inputOpaqueSubRects, uint32 inputRectCount, RECT* outputRect, RECT* outputOpaqueSubRect) MapInputRectsToOutputRect;
-			public function HRESULT(ID2D1Transform *self, uint32 inputIndex, RECT invalidInputRect, RECT* invalidOutputRect) MapInvalidRect;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1TransformNode.VTable
+			{
+				public function HRESULT(ID2D1Transform *self, RECT* outputRect, RECT* inputRects, uint32 inputRectsCount) MapOutputRectToInputRects;
+				public function HRESULT(ID2D1Transform *self, RECT* inputRects, RECT* inputOpaqueSubRects, uint32 inputRectCount, RECT* outputRect, RECT* outputOpaqueSubRect) MapInputRectsToOutputRect;
+				public function HRESULT(ID2D1Transform *self, uint32 inputIndex, RECT invalidInputRect, RECT* invalidOutputRect) MapInvalidRect;
+			}
 		}
 		[CRepr]
 		public struct ID2D1DrawTransform : ID2D1Transform
 		{
 			public const new Guid IID = .(0x36bfdcb6, 0x9739, 0x435d, 0xa3, 0x0d, 0xa6, 0x53, 0xbe, 0xff, 0x6a, 0x6f);
 			
-			public function HRESULT(ID2D1DrawTransform *self, ID2D1DrawInfo* drawInfo) SetDrawInfo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Transform.VTable
+			{
+				public function HRESULT(ID2D1DrawTransform *self, ID2D1DrawInfo* drawInfo) SetDrawInfo;
+			}
 		}
 		[CRepr]
 		public struct ID2D1ComputeTransform : ID2D1Transform
 		{
 			public const new Guid IID = .(0x0d85573c, 0x01e3, 0x4f7d, 0xbf, 0xd9, 0x0d, 0x60, 0x60, 0x8b, 0xf3, 0xc3);
 			
-			public function HRESULT(ID2D1ComputeTransform *self, ID2D1ComputeInfo* computeInfo) SetComputeInfo;
-			public function HRESULT(ID2D1ComputeTransform *self, RECT* outputRect, uint32* dimensionX, uint32* dimensionY, uint32* dimensionZ) CalculateThreadgroups;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Transform.VTable
+			{
+				public function HRESULT(ID2D1ComputeTransform *self, ID2D1ComputeInfo* computeInfo) SetComputeInfo;
+				public function HRESULT(ID2D1ComputeTransform *self, RECT* outputRect, uint32* dimensionX, uint32* dimensionY, uint32* dimensionZ) CalculateThreadgroups;
+			}
 		}
 		[CRepr]
 		public struct ID2D1AnalysisTransform : IUnknown
 		{
 			public const new Guid IID = .(0x0359dc30, 0x95e6, 0x4568, 0x90, 0x55, 0x27, 0x72, 0x0d, 0x13, 0x0e, 0x93);
 			
-			public function HRESULT(ID2D1AnalysisTransform *self, uint8* analysisData, uint32 analysisDataCount) ProcessAnalysisResults;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ID2D1AnalysisTransform *self, uint8* analysisData, uint32 analysisDataCount) ProcessAnalysisResults;
+			}
 		}
 		[CRepr]
 		public struct ID2D1SourceTransform : ID2D1Transform
 		{
 			public const new Guid IID = .(0xdb1800dd, 0x0c34, 0x4cf9, 0xbe, 0x90, 0x31, 0xcc, 0x0a, 0x56, 0x53, 0xe1);
 			
-			public function HRESULT(ID2D1SourceTransform *self, ID2D1RenderInfo* renderInfo) SetRenderInfo;
-			public function HRESULT(ID2D1SourceTransform *self, ID2D1Bitmap1* target, RECT* drawRect, D2D_POINT_2U targetOrigin) Draw;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Transform.VTable
+			{
+				public function HRESULT(ID2D1SourceTransform *self, ID2D1RenderInfo* renderInfo) SetRenderInfo;
+				public function HRESULT(ID2D1SourceTransform *self, ID2D1Bitmap1* target, RECT* drawRect, D2D_POINT_2U targetOrigin) Draw;
+			}
 		}
 		[CRepr]
 		public struct ID2D1ConcreteTransform : ID2D1TransformNode
 		{
 			public const new Guid IID = .(0x1a799d8a, 0x69f7, 0x4e4c, 0x9f, 0xed, 0x43, 0x7c, 0xcc, 0x66, 0x84, 0xcc);
 			
-			public function HRESULT(ID2D1ConcreteTransform *self, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth) SetOutputBuffer;
-			public function void(ID2D1ConcreteTransform *self, BOOL isCached) SetCached;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1TransformNode.VTable
+			{
+				public function HRESULT(ID2D1ConcreteTransform *self, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth) SetOutputBuffer;
+				public function void(ID2D1ConcreteTransform *self, BOOL isCached) SetCached;
+			}
 		}
 		[CRepr]
 		public struct ID2D1BlendTransform : ID2D1ConcreteTransform
 		{
 			public const new Guid IID = .(0x63ac0b32, 0xba44, 0x450f, 0x88, 0x06, 0x7f, 0x4c, 0xa1, 0xff, 0x2f, 0x1b);
 			
-			public function void(ID2D1BlendTransform *self, D2D1_BLEND_DESCRIPTION* description) SetDescription;
-			public function void(ID2D1BlendTransform *self, D2D1_BLEND_DESCRIPTION* description) GetDescription;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1ConcreteTransform.VTable
+			{
+				public function void(ID2D1BlendTransform *self, D2D1_BLEND_DESCRIPTION* description) SetDescription;
+				public function void(ID2D1BlendTransform *self, D2D1_BLEND_DESCRIPTION* description) GetDescription;
+			}
 		}
 		[CRepr]
 		public struct ID2D1BorderTransform : ID2D1ConcreteTransform
 		{
 			public const new Guid IID = .(0x4998735c, 0x3a19, 0x473c, 0x97, 0x81, 0x65, 0x68, 0x47, 0xe3, 0xa3, 0x47);
 			
-			public function void(ID2D1BorderTransform *self, D2D1_EXTEND_MODE extendMode) SetExtendModeX;
-			public function void(ID2D1BorderTransform *self, D2D1_EXTEND_MODE extendMode) SetExtendModeY;
-			public function D2D1_EXTEND_MODE(ID2D1BorderTransform *self) GetExtendModeX;
-			public function D2D1_EXTEND_MODE(ID2D1BorderTransform *self) GetExtendModeY;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1ConcreteTransform.VTable
+			{
+				public function void(ID2D1BorderTransform *self, D2D1_EXTEND_MODE extendMode) SetExtendModeX;
+				public function void(ID2D1BorderTransform *self, D2D1_EXTEND_MODE extendMode) SetExtendModeY;
+				public function D2D1_EXTEND_MODE(ID2D1BorderTransform *self) GetExtendModeX;
+				public function D2D1_EXTEND_MODE(ID2D1BorderTransform *self) GetExtendModeY;
+			}
 		}
 		[CRepr]
 		public struct ID2D1OffsetTransform : ID2D1TransformNode
 		{
 			public const new Guid IID = .(0x3fe6adea, 0x7643, 0x4f53, 0xbd, 0x14, 0xa0, 0xce, 0x63, 0xf2, 0x40, 0x42);
 			
-			public function void(ID2D1OffsetTransform *self, POINT offset) SetOffset;
-			public function POINT(ID2D1OffsetTransform *self) GetOffset;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1TransformNode.VTable
+			{
+				public function void(ID2D1OffsetTransform *self, POINT offset) SetOffset;
+				public function POINT(ID2D1OffsetTransform *self) GetOffset;
+			}
 		}
 		[CRepr]
 		public struct ID2D1BoundsAdjustmentTransform : ID2D1TransformNode
 		{
 			public const new Guid IID = .(0x90f732e2, 0x5092, 0x4606, 0xa8, 0x19, 0x86, 0x51, 0x97, 0x0b, 0xac, 0xcd);
 			
-			public function void(ID2D1BoundsAdjustmentTransform *self, RECT* outputBounds) SetOutputBounds;
-			public function void(ID2D1BoundsAdjustmentTransform *self, RECT* outputBounds) GetOutputBounds;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1TransformNode.VTable
+			{
+				public function void(ID2D1BoundsAdjustmentTransform *self, RECT* outputBounds) SetOutputBounds;
+				public function void(ID2D1BoundsAdjustmentTransform *self, RECT* outputBounds) GetOutputBounds;
+			}
 		}
 		[CRepr]
 		public struct ID2D1EffectImpl : IUnknown
 		{
 			public const new Guid IID = .(0xa248fd3f, 0x3e6c, 0x4e63, 0x9f, 0x03, 0x7f, 0x68, 0xec, 0xc9, 0x1d, 0xb9);
 			
-			public function HRESULT(ID2D1EffectImpl *self, ID2D1EffectContext* effectContext, ID2D1TransformGraph* transformGraph) Initialize;
-			public function HRESULT(ID2D1EffectImpl *self, D2D1_CHANGE_TYPE changeType) PrepareForRender;
-			public function HRESULT(ID2D1EffectImpl *self, ID2D1TransformGraph* transformGraph) SetGraph;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ID2D1EffectImpl *self, ID2D1EffectContext* effectContext, ID2D1TransformGraph* transformGraph) Initialize;
+				public function HRESULT(ID2D1EffectImpl *self, D2D1_CHANGE_TYPE changeType) PrepareForRender;
+				public function HRESULT(ID2D1EffectImpl *self, ID2D1TransformGraph* transformGraph) SetGraph;
+			}
 		}
 		[CRepr]
 		public struct ID2D1EffectContext : IUnknown
 		{
 			public const new Guid IID = .(0x3d9f916b, 0x27dc, 0x4ad7, 0xb4, 0xf1, 0x64, 0x94, 0x53, 0x40, 0xf5, 0x63);
 			
-			public function void(ID2D1EffectContext *self, float* dpiX, float* dpiY) GetDpi;
-			public function HRESULT(ID2D1EffectContext *self, Guid* effectId, ID2D1Effect** effect) CreateEffect;
-			public function HRESULT(ID2D1EffectContext *self, D3D_FEATURE_LEVEL* featureLevels, uint32 featureLevelsCount, D3D_FEATURE_LEVEL* maximumSupportedFeatureLevel) GetMaximumSupportedFeatureLevel;
-			public function HRESULT(ID2D1EffectContext *self, ID2D1Effect* effect, ID2D1TransformNode** transformNode) CreateTransformNodeFromEffect;
-			public function HRESULT(ID2D1EffectContext *self, uint32 numInputs, D2D1_BLEND_DESCRIPTION* blendDescription, ID2D1BlendTransform** transform) CreateBlendTransform;
-			public function HRESULT(ID2D1EffectContext *self, D2D1_EXTEND_MODE extendModeX, D2D1_EXTEND_MODE extendModeY, ID2D1BorderTransform** transform) CreateBorderTransform;
-			public function HRESULT(ID2D1EffectContext *self, POINT offset, ID2D1OffsetTransform** transform) CreateOffsetTransform;
-			public function HRESULT(ID2D1EffectContext *self, RECT* outputRectangle, ID2D1BoundsAdjustmentTransform** transform) CreateBoundsAdjustmentTransform;
-			public function HRESULT(ID2D1EffectContext *self, Guid* shaderId, uint8* shaderBuffer, uint32 shaderBufferCount) LoadPixelShader;
-			public function HRESULT(ID2D1EffectContext *self, Guid* resourceId, uint8* shaderBuffer, uint32 shaderBufferCount) LoadVertexShader;
-			public function HRESULT(ID2D1EffectContext *self, Guid* resourceId, uint8* shaderBuffer, uint32 shaderBufferCount) LoadComputeShader;
-			public function BOOL(ID2D1EffectContext *self, Guid* shaderId) IsShaderLoaded;
-			public function HRESULT(ID2D1EffectContext *self, Guid* resourceId, D2D1_RESOURCE_TEXTURE_PROPERTIES* resourceTextureProperties, uint8* data, uint32* strides, uint32 dataSize, ID2D1ResourceTexture** resourceTexture) CreateResourceTexture;
-			public function HRESULT(ID2D1EffectContext *self, Guid* resourceId, ID2D1ResourceTexture** resourceTexture) FindResourceTexture;
-			public function HRESULT(ID2D1EffectContext *self, D2D1_VERTEX_BUFFER_PROPERTIES* vertexBufferProperties, Guid* resourceId, D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES* customVertexBufferProperties, ID2D1VertexBuffer** buffer) CreateVertexBuffer;
-			public function HRESULT(ID2D1EffectContext *self, Guid* resourceId, ID2D1VertexBuffer** buffer) FindVertexBuffer;
-			public function HRESULT(ID2D1EffectContext *self, D2D1_COLOR_SPACE space, uint8* profile, uint32 profileSize, ID2D1ColorContext** colorContext) CreateColorContext;
-			public function HRESULT(ID2D1EffectContext *self, PWSTR filename, ID2D1ColorContext** colorContext) CreateColorContextFromFilename;
-			public function HRESULT(ID2D1EffectContext *self, IWICColorContext* wicColorContext, ID2D1ColorContext** colorContext) CreateColorContextFromWicColorContext;
-			public function HRESULT(ID2D1EffectContext *self, D2D1_FEATURE feature, void* featureSupportData, uint32 featureSupportDataSize) CheckFeatureSupport;
-			public function BOOL(ID2D1EffectContext *self, D2D1_BUFFER_PRECISION bufferPrecision) IsBufferPrecisionSupported;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function void(ID2D1EffectContext *self, float* dpiX, float* dpiY) GetDpi;
+				public function HRESULT(ID2D1EffectContext *self, Guid* effectId, ID2D1Effect** effect) CreateEffect;
+				public function HRESULT(ID2D1EffectContext *self, D3D_FEATURE_LEVEL* featureLevels, uint32 featureLevelsCount, D3D_FEATURE_LEVEL* maximumSupportedFeatureLevel) GetMaximumSupportedFeatureLevel;
+				public function HRESULT(ID2D1EffectContext *self, ID2D1Effect* effect, ID2D1TransformNode** transformNode) CreateTransformNodeFromEffect;
+				public function HRESULT(ID2D1EffectContext *self, uint32 numInputs, D2D1_BLEND_DESCRIPTION* blendDescription, ID2D1BlendTransform** transform) CreateBlendTransform;
+				public function HRESULT(ID2D1EffectContext *self, D2D1_EXTEND_MODE extendModeX, D2D1_EXTEND_MODE extendModeY, ID2D1BorderTransform** transform) CreateBorderTransform;
+				public function HRESULT(ID2D1EffectContext *self, POINT offset, ID2D1OffsetTransform** transform) CreateOffsetTransform;
+				public function HRESULT(ID2D1EffectContext *self, RECT* outputRectangle, ID2D1BoundsAdjustmentTransform** transform) CreateBoundsAdjustmentTransform;
+				public function HRESULT(ID2D1EffectContext *self, Guid* shaderId, uint8* shaderBuffer, uint32 shaderBufferCount) LoadPixelShader;
+				public function HRESULT(ID2D1EffectContext *self, Guid* resourceId, uint8* shaderBuffer, uint32 shaderBufferCount) LoadVertexShader;
+				public function HRESULT(ID2D1EffectContext *self, Guid* resourceId, uint8* shaderBuffer, uint32 shaderBufferCount) LoadComputeShader;
+				public function BOOL(ID2D1EffectContext *self, Guid* shaderId) IsShaderLoaded;
+				public function HRESULT(ID2D1EffectContext *self, Guid* resourceId, D2D1_RESOURCE_TEXTURE_PROPERTIES* resourceTextureProperties, uint8* data, uint32* strides, uint32 dataSize, ID2D1ResourceTexture** resourceTexture) CreateResourceTexture;
+				public function HRESULT(ID2D1EffectContext *self, Guid* resourceId, ID2D1ResourceTexture** resourceTexture) FindResourceTexture;
+				public function HRESULT(ID2D1EffectContext *self, D2D1_VERTEX_BUFFER_PROPERTIES* vertexBufferProperties, Guid* resourceId, D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES* customVertexBufferProperties, ID2D1VertexBuffer** buffer) CreateVertexBuffer;
+				public function HRESULT(ID2D1EffectContext *self, Guid* resourceId, ID2D1VertexBuffer** buffer) FindVertexBuffer;
+				public function HRESULT(ID2D1EffectContext *self, D2D1_COLOR_SPACE space, uint8* profile, uint32 profileSize, ID2D1ColorContext** colorContext) CreateColorContext;
+				public function HRESULT(ID2D1EffectContext *self, PWSTR filename, ID2D1ColorContext** colorContext) CreateColorContextFromFilename;
+				public function HRESULT(ID2D1EffectContext *self, IWICColorContext* wicColorContext, ID2D1ColorContext** colorContext) CreateColorContextFromWicColorContext;
+				public function HRESULT(ID2D1EffectContext *self, D2D1_FEATURE feature, void* featureSupportData, uint32 featureSupportDataSize) CheckFeatureSupport;
+				public function BOOL(ID2D1EffectContext *self, D2D1_BUFFER_PRECISION bufferPrecision) IsBufferPrecisionSupported;
+			}
 		}
 		[CRepr]
 		public struct ID2D1GeometryRealization : ID2D1Resource
 		{
 			public const new Guid IID = .(0xa16907d7, 0xbc02, 0x4801, 0x99, 0xe8, 0x8c, 0xf7, 0xf4, 0x85, 0xf7, 0x74);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct ID2D1DeviceContext1 : ID2D1DeviceContext
 		{
 			public const new Guid IID = .(0xd37f57e4, 0x6908, 0x459f, 0xa1, 0x99, 0xe7, 0x2f, 0x24, 0xf7, 0x99, 0x87);
 			
-			public function HRESULT(ID2D1DeviceContext1 *self, ID2D1Geometry* geometry, float flatteningTolerance, ID2D1GeometryRealization** geometryRealization) CreateFilledGeometryRealization;
-			public function HRESULT(ID2D1DeviceContext1 *self, ID2D1Geometry* geometry, float flatteningTolerance, float strokeWidth, ID2D1StrokeStyle* strokeStyle, ID2D1GeometryRealization** geometryRealization) CreateStrokedGeometryRealization;
-			public function void(ID2D1DeviceContext1 *self, ID2D1GeometryRealization* geometryRealization, ID2D1Brush* brush) DrawGeometryRealization;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1DeviceContext.VTable
+			{
+				public function HRESULT(ID2D1DeviceContext1 *self, ID2D1Geometry* geometry, float flatteningTolerance, ID2D1GeometryRealization** geometryRealization) CreateFilledGeometryRealization;
+				public function HRESULT(ID2D1DeviceContext1 *self, ID2D1Geometry* geometry, float flatteningTolerance, float strokeWidth, ID2D1StrokeStyle* strokeStyle, ID2D1GeometryRealization** geometryRealization) CreateStrokedGeometryRealization;
+				public function void(ID2D1DeviceContext1 *self, ID2D1GeometryRealization* geometryRealization, ID2D1Brush* brush) DrawGeometryRealization;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Device1 : ID2D1Device
 		{
 			public const new Guid IID = .(0xd21768e1, 0x23a4, 0x4823, 0xa1, 0x4b, 0x7c, 0x3e, 0xba, 0x85, 0xd6, 0x58);
 			
-			public function D2D1_RENDERING_PRIORITY(ID2D1Device1 *self) GetRenderingPriority;
-			public function void(ID2D1Device1 *self, D2D1_RENDERING_PRIORITY renderingPriority) SetRenderingPriority;
-			public function HRESULT(ID2D1Device1 *self, D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext1** deviceContext1) CreateDeviceContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Device.VTable
+			{
+				public function D2D1_RENDERING_PRIORITY(ID2D1Device1 *self) GetRenderingPriority;
+				public function void(ID2D1Device1 *self, D2D1_RENDERING_PRIORITY renderingPriority) SetRenderingPriority;
+				public function HRESULT(ID2D1Device1 *self, D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext1** deviceContext1) CreateDeviceContext;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Factory2 : ID2D1Factory1
 		{
 			public const new Guid IID = .(0x94f81a73, 0x9212, 0x4376, 0x9c, 0x58, 0xb1, 0x6a, 0x3a, 0x0d, 0x39, 0x92);
 			
-			public function HRESULT(ID2D1Factory2 *self, IDXGIDevice* dxgiDevice, ID2D1Device1** d2dDevice1) CreateDevice;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Factory1.VTable
+			{
+				public function HRESULT(ID2D1Factory2 *self, IDXGIDevice* dxgiDevice, ID2D1Device1** d2dDevice1) CreateDevice;
+			}
 		}
 		[CRepr]
 		public struct ID2D1CommandSink1 : ID2D1CommandSink
 		{
 			public const new Guid IID = .(0x9eb767fd, 0x4269, 0x4467, 0xb8, 0xc2, 0xeb, 0x30, 0xcb, 0x30, 0x57, 0x43);
 			
-			public function HRESULT(ID2D1CommandSink1 *self, D2D1_PRIMITIVE_BLEND primitiveBlend) SetPrimitiveBlend1;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1CommandSink.VTable
+			{
+				public function HRESULT(ID2D1CommandSink1 *self, D2D1_PRIMITIVE_BLEND primitiveBlend) SetPrimitiveBlend1;
+			}
 		}
 		[CRepr]
 		public struct ID2D1SvgAttribute : ID2D1Resource
 		{
 			public const new Guid IID = .(0xc9cdb0dd, 0xf8c9, 0x4e70, 0xb7, 0xc2, 0x30, 0x1c, 0x80, 0x29, 0x2c, 0x5e);
 			
-			public function void(ID2D1SvgAttribute *self, ID2D1SvgElement** element) GetElement;
-			public function HRESULT(ID2D1SvgAttribute *self, ID2D1SvgAttribute** attribute) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function void(ID2D1SvgAttribute *self, ID2D1SvgElement** element) GetElement;
+				public function HRESULT(ID2D1SvgAttribute *self, ID2D1SvgAttribute** attribute) Clone;
+			}
 		}
 		[CRepr]
 		public struct ID2D1SvgPaint : ID2D1SvgAttribute
 		{
 			public const new Guid IID = .(0xd59bab0a, 0x68a2, 0x455b, 0xa5, 0xdc, 0x9e, 0xb2, 0x85, 0x4e, 0x24, 0x90);
 			
-			public function HRESULT(ID2D1SvgPaint *self, D2D1_SVG_PAINT_TYPE paintType) SetPaintType;
-			public function D2D1_SVG_PAINT_TYPE(ID2D1SvgPaint *self) GetPaintType;
-			public function HRESULT(ID2D1SvgPaint *self, D2D1_COLOR_F* color) SetColor;
-			public function void(ID2D1SvgPaint *self, D2D1_COLOR_F* color) GetColor;
-			public function HRESULT(ID2D1SvgPaint *self, PWSTR id) SetId;
-			public function HRESULT(ID2D1SvgPaint *self, char16* id, uint32 idCount) GetId;
-			public function uint32(ID2D1SvgPaint *self) GetIdLength;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1SvgAttribute.VTable
+			{
+				public function HRESULT(ID2D1SvgPaint *self, D2D1_SVG_PAINT_TYPE paintType) SetPaintType;
+				public function D2D1_SVG_PAINT_TYPE(ID2D1SvgPaint *self) GetPaintType;
+				public function HRESULT(ID2D1SvgPaint *self, D2D1_COLOR_F* color) SetColor;
+				public function void(ID2D1SvgPaint *self, D2D1_COLOR_F* color) GetColor;
+				public function HRESULT(ID2D1SvgPaint *self, PWSTR id) SetId;
+				public function HRESULT(ID2D1SvgPaint *self, char16* id, uint32 idCount) GetId;
+				public function uint32(ID2D1SvgPaint *self) GetIdLength;
+			}
 		}
 		[CRepr]
 		public struct ID2D1SvgStrokeDashArray : ID2D1SvgAttribute
 		{
 			public const new Guid IID = .(0xf1c0ca52, 0x92a3, 0x4f00, 0xb4, 0xce, 0xf3, 0x56, 0x91, 0xef, 0xd9, 0xd9);
 			
-			public function HRESULT(ID2D1SvgStrokeDashArray *self, uint32 dashesCount) RemoveDashesAtEnd;
-			public function HRESULT(ID2D1SvgStrokeDashArray *self, D2D1_SVG_LENGTH* dashes, uint32 dashesCount, uint32 startIndex) UpdateDashes;
-			public function HRESULT(ID2D1SvgStrokeDashArray *self, float* dashes, uint32 dashesCount, uint32 startIndex) UpdateDashes2;
-			public function HRESULT(ID2D1SvgStrokeDashArray *self, D2D1_SVG_LENGTH* dashes, uint32 dashesCount, uint32 startIndex) GetDashes;
-			public function HRESULT(ID2D1SvgStrokeDashArray *self, float* dashes, uint32 dashesCount, uint32 startIndex) GetDashes2;
-			public function uint32(ID2D1SvgStrokeDashArray *self) GetDashesCount;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1SvgAttribute.VTable
+			{
+				public function HRESULT(ID2D1SvgStrokeDashArray *self, uint32 dashesCount) RemoveDashesAtEnd;
+				public function HRESULT(ID2D1SvgStrokeDashArray *self, D2D1_SVG_LENGTH* dashes, uint32 dashesCount, uint32 startIndex) UpdateDashes;
+				public function HRESULT(ID2D1SvgStrokeDashArray *self, float* dashes, uint32 dashesCount, uint32 startIndex) UpdateDashes2;
+				public function HRESULT(ID2D1SvgStrokeDashArray *self, D2D1_SVG_LENGTH* dashes, uint32 dashesCount, uint32 startIndex) GetDashes;
+				public function HRESULT(ID2D1SvgStrokeDashArray *self, float* dashes, uint32 dashesCount, uint32 startIndex) GetDashes2;
+				public function uint32(ID2D1SvgStrokeDashArray *self) GetDashesCount;
+			}
 		}
 		[CRepr]
 		public struct ID2D1SvgPointCollection : ID2D1SvgAttribute
 		{
 			public const new Guid IID = .(0x9dbe4c0d, 0x3572, 0x4dd9, 0x98, 0x25, 0x55, 0x30, 0x81, 0x3b, 0xb7, 0x12);
 			
-			public function HRESULT(ID2D1SvgPointCollection *self, uint32 pointsCount) RemovePointsAtEnd;
-			public function HRESULT(ID2D1SvgPointCollection *self, D2D_POINT_2F* points, uint32 pointsCount, uint32 startIndex) UpdatePoints;
-			public function HRESULT(ID2D1SvgPointCollection *self, D2D_POINT_2F* points, uint32 pointsCount, uint32 startIndex) GetPoints;
-			public function uint32(ID2D1SvgPointCollection *self) GetPointsCount;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1SvgAttribute.VTable
+			{
+				public function HRESULT(ID2D1SvgPointCollection *self, uint32 pointsCount) RemovePointsAtEnd;
+				public function HRESULT(ID2D1SvgPointCollection *self, D2D_POINT_2F* points, uint32 pointsCount, uint32 startIndex) UpdatePoints;
+				public function HRESULT(ID2D1SvgPointCollection *self, D2D_POINT_2F* points, uint32 pointsCount, uint32 startIndex) GetPoints;
+				public function uint32(ID2D1SvgPointCollection *self) GetPointsCount;
+			}
 		}
 		[CRepr]
 		public struct ID2D1SvgPathData : ID2D1SvgAttribute
 		{
 			public const new Guid IID = .(0xc095e4f4, 0xbb98, 0x43d6, 0x97, 0x45, 0x4d, 0x1b, 0x84, 0xec, 0x98, 0x88);
 			
-			public function HRESULT(ID2D1SvgPathData *self, uint32 dataCount) RemoveSegmentDataAtEnd;
-			public function HRESULT(ID2D1SvgPathData *self, float* data, uint32 dataCount, uint32 startIndex) UpdateSegmentData;
-			public function HRESULT(ID2D1SvgPathData *self, float* data, uint32 dataCount, uint32 startIndex) GetSegmentData;
-			public function uint32(ID2D1SvgPathData *self) GetSegmentDataCount;
-			public function HRESULT(ID2D1SvgPathData *self, uint32 commandsCount) RemoveCommandsAtEnd;
-			public function HRESULT(ID2D1SvgPathData *self, D2D1_SVG_PATH_COMMAND* commands, uint32 commandsCount, uint32 startIndex) UpdateCommands;
-			public function HRESULT(ID2D1SvgPathData *self, D2D1_SVG_PATH_COMMAND* commands, uint32 commandsCount, uint32 startIndex) GetCommands;
-			public function uint32(ID2D1SvgPathData *self) GetCommandsCount;
-			public function HRESULT(ID2D1SvgPathData *self, D2D1_FILL_MODE fillMode, ID2D1PathGeometry1** pathGeometry) CreatePathGeometry;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1SvgAttribute.VTable
+			{
+				public function HRESULT(ID2D1SvgPathData *self, uint32 dataCount) RemoveSegmentDataAtEnd;
+				public function HRESULT(ID2D1SvgPathData *self, float* data, uint32 dataCount, uint32 startIndex) UpdateSegmentData;
+				public function HRESULT(ID2D1SvgPathData *self, float* data, uint32 dataCount, uint32 startIndex) GetSegmentData;
+				public function uint32(ID2D1SvgPathData *self) GetSegmentDataCount;
+				public function HRESULT(ID2D1SvgPathData *self, uint32 commandsCount) RemoveCommandsAtEnd;
+				public function HRESULT(ID2D1SvgPathData *self, D2D1_SVG_PATH_COMMAND* commands, uint32 commandsCount, uint32 startIndex) UpdateCommands;
+				public function HRESULT(ID2D1SvgPathData *self, D2D1_SVG_PATH_COMMAND* commands, uint32 commandsCount, uint32 startIndex) GetCommands;
+				public function uint32(ID2D1SvgPathData *self) GetCommandsCount;
+				public function HRESULT(ID2D1SvgPathData *self, D2D1_FILL_MODE fillMode, ID2D1PathGeometry1** pathGeometry) CreatePathGeometry;
+			}
 		}
 		[CRepr]
 		public struct ID2D1SvgElement : ID2D1Resource
 		{
 			public const new Guid IID = .(0xac7b67a6, 0x183e, 0x49c1, 0xa8, 0x23, 0x0e, 0xbe, 0x40, 0xb0, 0xdb, 0x29);
 			
-			public function void(ID2D1SvgElement *self, ID2D1SvgDocument** document) GetDocument;
-			public function HRESULT(ID2D1SvgElement *self, char16* name, uint32 nameCount) GetTagName;
-			public function uint32(ID2D1SvgElement *self) GetTagNameLength;
-			public function BOOL(ID2D1SvgElement *self) IsTextContent;
-			public function void(ID2D1SvgElement *self, ID2D1SvgElement** parent) GetParent;
-			public function BOOL(ID2D1SvgElement *self) HasChildren;
-			public function void(ID2D1SvgElement *self, ID2D1SvgElement** child) GetFirstChild;
-			public function void(ID2D1SvgElement *self, ID2D1SvgElement** child) GetLastChild;
-			public function HRESULT(ID2D1SvgElement *self, ID2D1SvgElement* referenceChild, ID2D1SvgElement** previousChild) GetPreviousChild;
-			public function HRESULT(ID2D1SvgElement *self, ID2D1SvgElement* referenceChild, ID2D1SvgElement** nextChild) GetNextChild;
-			public function HRESULT(ID2D1SvgElement *self, ID2D1SvgElement* newChild, ID2D1SvgElement* referenceChild) InsertChildBefore;
-			public function HRESULT(ID2D1SvgElement *self, ID2D1SvgElement* newChild) AppendChild;
-			public function HRESULT(ID2D1SvgElement *self, ID2D1SvgElement* newChild, ID2D1SvgElement* oldChild) ReplaceChild;
-			public function HRESULT(ID2D1SvgElement *self, ID2D1SvgElement* oldChild) RemoveChild;
-			public function HRESULT(ID2D1SvgElement *self, PWSTR tagName, ID2D1SvgElement** newChild) CreateChild;
-			public function BOOL(ID2D1SvgElement *self, PWSTR name, BOOL* inherited) IsAttributeSpecified;
-			public function uint32(ID2D1SvgElement *self) GetSpecifiedAttributeCount;
-			public function HRESULT(ID2D1SvgElement *self, uint32 index, char16* name, uint32 nameCount, BOOL* inherited) GetSpecifiedAttributeName;
-			public function HRESULT(ID2D1SvgElement *self, uint32 index, uint32* nameLength, BOOL* inherited) GetSpecifiedAttributeNameLength;
-			public function HRESULT(ID2D1SvgElement *self, PWSTR name) RemoveAttribute;
-			public function HRESULT(ID2D1SvgElement *self, char16* name, uint32 nameCount) SetTextValue;
-			public function HRESULT(ID2D1SvgElement *self, char16* name, uint32 nameCount) GetTextValue;
-			public function uint32(ID2D1SvgElement *self) GetTextValueLength;
-			public function HRESULT(ID2D1SvgElement *self, PWSTR name, ID2D1SvgAttribute* value) SetAttributeValue;
-			public function HRESULT(ID2D1SvgElement *self, PWSTR name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, uint32 valueSizeInBytes) SetAttributeValue2;
-			public function HRESULT(ID2D1SvgElement *self, PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, PWSTR value) SetAttributeValue3;
-			public function HRESULT(ID2D1SvgElement *self, PWSTR name, Guid* riid, void** value) GetAttributeValue;
-			public function HRESULT(ID2D1SvgElement *self, PWSTR name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, uint32 valueSizeInBytes) GetAttributeValue2;
-			public function HRESULT(ID2D1SvgElement *self, PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, char16* value, uint32 valueCount) GetAttributeValue3;
-			public function HRESULT(ID2D1SvgElement *self, PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, uint32* valueLength) GetAttributeValueLength;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function void(ID2D1SvgElement *self, ID2D1SvgDocument** document) GetDocument;
+				public function HRESULT(ID2D1SvgElement *self, char16* name, uint32 nameCount) GetTagName;
+				public function uint32(ID2D1SvgElement *self) GetTagNameLength;
+				public function BOOL(ID2D1SvgElement *self) IsTextContent;
+				public function void(ID2D1SvgElement *self, ID2D1SvgElement** parent) GetParent;
+				public function BOOL(ID2D1SvgElement *self) HasChildren;
+				public function void(ID2D1SvgElement *self, ID2D1SvgElement** child) GetFirstChild;
+				public function void(ID2D1SvgElement *self, ID2D1SvgElement** child) GetLastChild;
+				public function HRESULT(ID2D1SvgElement *self, ID2D1SvgElement* referenceChild, ID2D1SvgElement** previousChild) GetPreviousChild;
+				public function HRESULT(ID2D1SvgElement *self, ID2D1SvgElement* referenceChild, ID2D1SvgElement** nextChild) GetNextChild;
+				public function HRESULT(ID2D1SvgElement *self, ID2D1SvgElement* newChild, ID2D1SvgElement* referenceChild) InsertChildBefore;
+				public function HRESULT(ID2D1SvgElement *self, ID2D1SvgElement* newChild) AppendChild;
+				public function HRESULT(ID2D1SvgElement *self, ID2D1SvgElement* newChild, ID2D1SvgElement* oldChild) ReplaceChild;
+				public function HRESULT(ID2D1SvgElement *self, ID2D1SvgElement* oldChild) RemoveChild;
+				public function HRESULT(ID2D1SvgElement *self, PWSTR tagName, ID2D1SvgElement** newChild) CreateChild;
+				public function BOOL(ID2D1SvgElement *self, PWSTR name, BOOL* inherited) IsAttributeSpecified;
+				public function uint32(ID2D1SvgElement *self) GetSpecifiedAttributeCount;
+				public function HRESULT(ID2D1SvgElement *self, uint32 index, char16* name, uint32 nameCount, BOOL* inherited) GetSpecifiedAttributeName;
+				public function HRESULT(ID2D1SvgElement *self, uint32 index, uint32* nameLength, BOOL* inherited) GetSpecifiedAttributeNameLength;
+				public function HRESULT(ID2D1SvgElement *self, PWSTR name) RemoveAttribute;
+				public function HRESULT(ID2D1SvgElement *self, char16* name, uint32 nameCount) SetTextValue;
+				public function HRESULT(ID2D1SvgElement *self, char16* name, uint32 nameCount) GetTextValue;
+				public function uint32(ID2D1SvgElement *self) GetTextValueLength;
+				public function HRESULT(ID2D1SvgElement *self, PWSTR name, ID2D1SvgAttribute* value) SetAttributeValue;
+				public function HRESULT(ID2D1SvgElement *self, PWSTR name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, uint32 valueSizeInBytes) SetAttributeValue2;
+				public function HRESULT(ID2D1SvgElement *self, PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, PWSTR value) SetAttributeValue3;
+				public function HRESULT(ID2D1SvgElement *self, PWSTR name, Guid* riid, void** value) GetAttributeValue;
+				public function HRESULT(ID2D1SvgElement *self, PWSTR name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, uint32 valueSizeInBytes) GetAttributeValue2;
+				public function HRESULT(ID2D1SvgElement *self, PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, char16* value, uint32 valueCount) GetAttributeValue3;
+				public function HRESULT(ID2D1SvgElement *self, PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, uint32* valueLength) GetAttributeValueLength;
+			}
 		}
 		[CRepr]
 		public struct ID2D1SvgDocument : ID2D1Resource
 		{
 			public const new Guid IID = .(0x86b88e4d, 0xafa4, 0x4d7b, 0x88, 0xe4, 0x68, 0xa5, 0x1c, 0x4a, 0x0a, 0xec);
 			
-			public function HRESULT(ID2D1SvgDocument *self, D2D_SIZE_F viewportSize) SetViewportSize;
-			public function D2D_SIZE_F(ID2D1SvgDocument *self) GetViewportSize;
-			public function HRESULT(ID2D1SvgDocument *self, ID2D1SvgElement* root) SetRoot;
-			public function void(ID2D1SvgDocument *self, ID2D1SvgElement** root) GetRoot;
-			public function HRESULT(ID2D1SvgDocument *self, PWSTR id, ID2D1SvgElement** svgElement) FindElementById;
-			public function HRESULT(ID2D1SvgDocument *self, IStream* outputXmlStream, ID2D1SvgElement* subtree) Serialize;
-			public function HRESULT(ID2D1SvgDocument *self, IStream* inputXmlStream, ID2D1SvgElement** subtree) Deserialize;
-			public function HRESULT(ID2D1SvgDocument *self, D2D1_SVG_PAINT_TYPE paintType, D2D1_COLOR_F* color, PWSTR id, ID2D1SvgPaint** paint) CreatePaint;
-			public function HRESULT(ID2D1SvgDocument *self, D2D1_SVG_LENGTH* dashes, uint32 dashesCount, ID2D1SvgStrokeDashArray** strokeDashArray) CreateStrokeDashArray;
-			public function HRESULT(ID2D1SvgDocument *self, D2D_POINT_2F* points, uint32 pointsCount, ID2D1SvgPointCollection** pointCollection) CreatePointCollection;
-			public function HRESULT(ID2D1SvgDocument *self, float* segmentData, uint32 segmentDataCount, D2D1_SVG_PATH_COMMAND* commands, uint32 commandsCount, ID2D1SvgPathData** pathData) CreatePathData;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function HRESULT(ID2D1SvgDocument *self, D2D_SIZE_F viewportSize) SetViewportSize;
+				public function D2D_SIZE_F(ID2D1SvgDocument *self) GetViewportSize;
+				public function HRESULT(ID2D1SvgDocument *self, ID2D1SvgElement* root) SetRoot;
+				public function void(ID2D1SvgDocument *self, ID2D1SvgElement** root) GetRoot;
+				public function HRESULT(ID2D1SvgDocument *self, PWSTR id, ID2D1SvgElement** svgElement) FindElementById;
+				public function HRESULT(ID2D1SvgDocument *self, IStream* outputXmlStream, ID2D1SvgElement* subtree) Serialize;
+				public function HRESULT(ID2D1SvgDocument *self, IStream* inputXmlStream, ID2D1SvgElement** subtree) Deserialize;
+				public function HRESULT(ID2D1SvgDocument *self, D2D1_SVG_PAINT_TYPE paintType, D2D1_COLOR_F* color, PWSTR id, ID2D1SvgPaint** paint) CreatePaint;
+				public function HRESULT(ID2D1SvgDocument *self, D2D1_SVG_LENGTH* dashes, uint32 dashesCount, ID2D1SvgStrokeDashArray** strokeDashArray) CreateStrokeDashArray;
+				public function HRESULT(ID2D1SvgDocument *self, D2D_POINT_2F* points, uint32 pointsCount, ID2D1SvgPointCollection** pointCollection) CreatePointCollection;
+				public function HRESULT(ID2D1SvgDocument *self, float* segmentData, uint32 segmentDataCount, D2D1_SVG_PATH_COMMAND* commands, uint32 commandsCount, ID2D1SvgPathData** pathData) CreatePathData;
+			}
 		}
 		[CRepr]
 		public struct ID2D1InkStyle : ID2D1Resource
 		{
 			public const new Guid IID = .(0xbae8b344, 0x23fc, 0x4071, 0x8c, 0xb5, 0xd0, 0x5d, 0x6f, 0x07, 0x38, 0x48);
 			
-			public function void(ID2D1InkStyle *self, D2D_MATRIX_3X2_F* transform) SetNibTransform;
-			public function void(ID2D1InkStyle *self, D2D_MATRIX_3X2_F* transform) GetNibTransform;
-			public function void(ID2D1InkStyle *self, D2D1_INK_NIB_SHAPE nibShape) SetNibShape;
-			public function D2D1_INK_NIB_SHAPE(ID2D1InkStyle *self) GetNibShape;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function void(ID2D1InkStyle *self, D2D_MATRIX_3X2_F* transform) SetNibTransform;
+				public function void(ID2D1InkStyle *self, D2D_MATRIX_3X2_F* transform) GetNibTransform;
+				public function void(ID2D1InkStyle *self, D2D1_INK_NIB_SHAPE nibShape) SetNibShape;
+				public function D2D1_INK_NIB_SHAPE(ID2D1InkStyle *self) GetNibShape;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Ink : ID2D1Resource
 		{
 			public const new Guid IID = .(0xb499923b, 0x7029, 0x478f, 0xa8, 0xb3, 0x43, 0x2c, 0x7c, 0x5f, 0x53, 0x12);
 			
-			public function void(ID2D1Ink *self, D2D1_INK_POINT* startPoint) SetStartPoint;
-			public function D2D1_INK_POINT(ID2D1Ink *self) GetStartPoint;
-			public function HRESULT(ID2D1Ink *self, D2D1_INK_BEZIER_SEGMENT* segments, uint32 segmentsCount) AddSegments;
-			public function HRESULT(ID2D1Ink *self, uint32 segmentsCount) RemoveSegmentsAtEnd;
-			public function HRESULT(ID2D1Ink *self, uint32 startSegment, D2D1_INK_BEZIER_SEGMENT* segments, uint32 segmentsCount) SetSegments;
-			public function HRESULT(ID2D1Ink *self, D2D1_INK_BEZIER_SEGMENT* segment) SetSegmentAtEnd;
-			public function uint32(ID2D1Ink *self) GetSegmentCount;
-			public function HRESULT(ID2D1Ink *self, uint32 startSegment, D2D1_INK_BEZIER_SEGMENT* segments, uint32 segmentsCount) GetSegments;
-			public function HRESULT(ID2D1Ink *self, ID2D1InkStyle* inkStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink) StreamAsGeometry;
-			public function HRESULT(ID2D1Ink *self, ID2D1InkStyle* inkStyle, D2D_MATRIX_3X2_F* worldTransform, D2D_RECT_F* bounds) GetBounds;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function void(ID2D1Ink *self, D2D1_INK_POINT* startPoint) SetStartPoint;
+				public function D2D1_INK_POINT(ID2D1Ink *self) GetStartPoint;
+				public function HRESULT(ID2D1Ink *self, D2D1_INK_BEZIER_SEGMENT* segments, uint32 segmentsCount) AddSegments;
+				public function HRESULT(ID2D1Ink *self, uint32 segmentsCount) RemoveSegmentsAtEnd;
+				public function HRESULT(ID2D1Ink *self, uint32 startSegment, D2D1_INK_BEZIER_SEGMENT* segments, uint32 segmentsCount) SetSegments;
+				public function HRESULT(ID2D1Ink *self, D2D1_INK_BEZIER_SEGMENT* segment) SetSegmentAtEnd;
+				public function uint32(ID2D1Ink *self) GetSegmentCount;
+				public function HRESULT(ID2D1Ink *self, uint32 startSegment, D2D1_INK_BEZIER_SEGMENT* segments, uint32 segmentsCount) GetSegments;
+				public function HRESULT(ID2D1Ink *self, ID2D1InkStyle* inkStyle, D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink) StreamAsGeometry;
+				public function HRESULT(ID2D1Ink *self, ID2D1InkStyle* inkStyle, D2D_MATRIX_3X2_F* worldTransform, D2D_RECT_F* bounds) GetBounds;
+			}
 		}
 		[CRepr]
 		public struct ID2D1GradientMesh : ID2D1Resource
 		{
 			public const new Guid IID = .(0xf292e401, 0xc050, 0x4cde, 0x83, 0xd7, 0x04, 0x96, 0x2d, 0x3b, 0x23, 0xc2);
 			
-			public function uint32(ID2D1GradientMesh *self) GetPatchCount;
-			public function HRESULT(ID2D1GradientMesh *self, uint32 startIndex, D2D1_GRADIENT_MESH_PATCH* patches, uint32 patchesCount) GetPatches;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function uint32(ID2D1GradientMesh *self) GetPatchCount;
+				public function HRESULT(ID2D1GradientMesh *self, uint32 startIndex, D2D1_GRADIENT_MESH_PATCH* patches, uint32 patchesCount) GetPatches;
+			}
 		}
 		[CRepr]
 		public struct ID2D1ImageSource : ID2D1Image
 		{
 			public const new Guid IID = .(0xc9b664e5, 0x74a1, 0x4378, 0x9a, 0xc2, 0xee, 0xfc, 0x37, 0xa3, 0xf4, 0xd8);
 			
-			public function HRESULT(ID2D1ImageSource *self) OfferResources;
-			public function HRESULT(ID2D1ImageSource *self, BOOL* resourcesDiscarded) TryReclaimResources;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Image.VTable
+			{
+				public function HRESULT(ID2D1ImageSource *self) OfferResources;
+				public function HRESULT(ID2D1ImageSource *self, BOOL* resourcesDiscarded) TryReclaimResources;
+			}
 		}
 		[CRepr]
 		public struct ID2D1ImageSourceFromWic : ID2D1ImageSource
 		{
 			public const new Guid IID = .(0x77395441, 0x1c8f, 0x4555, 0x86, 0x83, 0xf5, 0x0d, 0xab, 0x0f, 0xe7, 0x92);
 			
-			public function HRESULT(ID2D1ImageSourceFromWic *self, D2D_RECT_U* rectangleToFill) EnsureCached;
-			public function HRESULT(ID2D1ImageSourceFromWic *self, D2D_RECT_U* rectangleToPreserve) TrimCache;
-			public function void(ID2D1ImageSourceFromWic *self, IWICBitmapSource** wicBitmapSource) GetSource;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1ImageSource.VTable
+			{
+				public function HRESULT(ID2D1ImageSourceFromWic *self, D2D_RECT_U* rectangleToFill) EnsureCached;
+				public function HRESULT(ID2D1ImageSourceFromWic *self, D2D_RECT_U* rectangleToPreserve) TrimCache;
+				public function void(ID2D1ImageSourceFromWic *self, IWICBitmapSource** wicBitmapSource) GetSource;
+			}
 		}
 		[CRepr]
 		public struct ID2D1TransformedImageSource : ID2D1Image
 		{
 			public const new Guid IID = .(0x7f1f79e5, 0x2796, 0x416c, 0x8f, 0x55, 0x70, 0x0f, 0x91, 0x14, 0x45, 0xe5);
 			
-			public function void(ID2D1TransformedImageSource *self, ID2D1ImageSource** imageSource) GetSource;
-			public function void(ID2D1TransformedImageSource *self, D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES* properties) GetProperties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Image.VTable
+			{
+				public function void(ID2D1TransformedImageSource *self, ID2D1ImageSource** imageSource) GetSource;
+				public function void(ID2D1TransformedImageSource *self, D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES* properties) GetProperties;
+			}
 		}
 		[CRepr]
 		public struct ID2D1LookupTable3D : ID2D1Resource
 		{
 			public const new Guid IID = .(0x53dd9855, 0xa3b0, 0x4d5b, 0x82, 0xe1, 0x26, 0xe2, 0x5c, 0x5e, 0x57, 0x97);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct ID2D1DeviceContext2 : ID2D1DeviceContext1
 		{
 			public const new Guid IID = .(0x394ea6a3, 0x0c34, 0x4321, 0x95, 0x0b, 0x6c, 0xa2, 0x0f, 0x0b, 0xe6, 0xc7);
 			
-			public function HRESULT(ID2D1DeviceContext2 *self, D2D1_INK_POINT* startPoint, ID2D1Ink** ink) CreateInk;
-			public function HRESULT(ID2D1DeviceContext2 *self, D2D1_INK_STYLE_PROPERTIES* inkStyleProperties, ID2D1InkStyle** inkStyle) CreateInkStyle;
-			public function HRESULT(ID2D1DeviceContext2 *self, D2D1_GRADIENT_MESH_PATCH* patches, uint32 patchesCount, ID2D1GradientMesh** gradientMesh) CreateGradientMesh;
-			public function HRESULT(ID2D1DeviceContext2 *self, IWICBitmapSource* wicBitmapSource, D2D1_IMAGE_SOURCE_LOADING_OPTIONS loadingOptions, D2D1_ALPHA_MODE alphaMode, ID2D1ImageSourceFromWic** imageSource) CreateImageSourceFromWic;
-			public function HRESULT(ID2D1DeviceContext2 *self, D2D1_BUFFER_PRECISION precision, uint32* extents, uint8* data, uint32 dataCount, uint32* strides, ID2D1LookupTable3D** lookupTable) CreateLookupTable3D;
-			public function HRESULT(ID2D1DeviceContext2 *self, IDXGISurface** surfaces, uint32 surfaceCount, DXGI_COLOR_SPACE_TYPE colorSpace, D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS options, ID2D1ImageSource** imageSource) CreateImageSourceFromDxgi;
-			public function HRESULT(ID2D1DeviceContext2 *self, ID2D1GradientMesh* gradientMesh, D2D_RECT_F* pBounds) GetGradientMeshWorldBounds;
-			public function void(ID2D1DeviceContext2 *self, ID2D1Ink* ink, ID2D1Brush* brush, ID2D1InkStyle* inkStyle) DrawInk;
-			public function void(ID2D1DeviceContext2 *self, ID2D1GradientMesh* gradientMesh) DrawGradientMesh;
-			public function void(ID2D1DeviceContext2 *self, ID2D1GdiMetafile* gdiMetafile, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) DrawGdiMetafile;
-			public function HRESULT(ID2D1DeviceContext2 *self, ID2D1ImageSource* imageSource, D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES* properties, ID2D1TransformedImageSource** transformedImageSource) CreateTransformedImageSource;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1DeviceContext1.VTable
+			{
+				public function HRESULT(ID2D1DeviceContext2 *self, D2D1_INK_POINT* startPoint, ID2D1Ink** ink) CreateInk;
+				public function HRESULT(ID2D1DeviceContext2 *self, D2D1_INK_STYLE_PROPERTIES* inkStyleProperties, ID2D1InkStyle** inkStyle) CreateInkStyle;
+				public function HRESULT(ID2D1DeviceContext2 *self, D2D1_GRADIENT_MESH_PATCH* patches, uint32 patchesCount, ID2D1GradientMesh** gradientMesh) CreateGradientMesh;
+				public function HRESULT(ID2D1DeviceContext2 *self, IWICBitmapSource* wicBitmapSource, D2D1_IMAGE_SOURCE_LOADING_OPTIONS loadingOptions, D2D1_ALPHA_MODE alphaMode, ID2D1ImageSourceFromWic** imageSource) CreateImageSourceFromWic;
+				public function HRESULT(ID2D1DeviceContext2 *self, D2D1_BUFFER_PRECISION precision, uint32* extents, uint8* data, uint32 dataCount, uint32* strides, ID2D1LookupTable3D** lookupTable) CreateLookupTable3D;
+				public function HRESULT(ID2D1DeviceContext2 *self, IDXGISurface** surfaces, uint32 surfaceCount, DXGI_COLOR_SPACE_TYPE colorSpace, D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS options, ID2D1ImageSource** imageSource) CreateImageSourceFromDxgi;
+				public function HRESULT(ID2D1DeviceContext2 *self, ID2D1GradientMesh* gradientMesh, D2D_RECT_F* pBounds) GetGradientMeshWorldBounds;
+				public function void(ID2D1DeviceContext2 *self, ID2D1Ink* ink, ID2D1Brush* brush, ID2D1InkStyle* inkStyle) DrawInk;
+				public function void(ID2D1DeviceContext2 *self, ID2D1GradientMesh* gradientMesh) DrawGradientMesh;
+				public function void(ID2D1DeviceContext2 *self, ID2D1GdiMetafile* gdiMetafile, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) DrawGdiMetafile;
+				public function HRESULT(ID2D1DeviceContext2 *self, ID2D1ImageSource* imageSource, D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES* properties, ID2D1TransformedImageSource** transformedImageSource) CreateTransformedImageSource;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Device2 : ID2D1Device1
 		{
 			public const new Guid IID = .(0xa44472e1, 0x8dfb, 0x4e60, 0x84, 0x92, 0x6e, 0x28, 0x61, 0xc9, 0xca, 0x8b);
 			
-			public function HRESULT(ID2D1Device2 *self, D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext2** deviceContext2) CreateDeviceContext;
-			public function void(ID2D1Device2 *self, ID2D1Bitmap* bitmap) FlushDeviceContexts;
-			public function HRESULT(ID2D1Device2 *self, IDXGIDevice** dxgiDevice) GetDxgiDevice;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Device1.VTable
+			{
+				public function HRESULT(ID2D1Device2 *self, D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext2** deviceContext2) CreateDeviceContext;
+				public function void(ID2D1Device2 *self, ID2D1Bitmap* bitmap) FlushDeviceContexts;
+				public function HRESULT(ID2D1Device2 *self, IDXGIDevice** dxgiDevice) GetDxgiDevice;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Factory3 : ID2D1Factory2
 		{
 			public const new Guid IID = .(0x0869759f, 0x4f00, 0x413f, 0xb0, 0x3e, 0x2b, 0xda, 0x45, 0x40, 0x4d, 0x0f);
 			
-			public function HRESULT(ID2D1Factory3 *self, IDXGIDevice* dxgiDevice, ID2D1Device2** d2dDevice2) CreateDevice;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Factory2.VTable
+			{
+				public function HRESULT(ID2D1Factory3 *self, IDXGIDevice* dxgiDevice, ID2D1Device2** d2dDevice2) CreateDevice;
+			}
 		}
 		[CRepr]
 		public struct ID2D1CommandSink2 : ID2D1CommandSink1
 		{
 			public const new Guid IID = .(0x3bab440e, 0x417e, 0x47df, 0xa2, 0xe2, 0xbc, 0x0b, 0xe6, 0xa0, 0x09, 0x16);
 			
-			public function HRESULT(ID2D1CommandSink2 *self, ID2D1Ink* ink, ID2D1Brush* brush, ID2D1InkStyle* inkStyle) DrawInk;
-			public function HRESULT(ID2D1CommandSink2 *self, ID2D1GradientMesh* gradientMesh) DrawGradientMesh;
-			public function HRESULT(ID2D1CommandSink2 *self, ID2D1GdiMetafile* gdiMetafile, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) DrawGdiMetafile;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1CommandSink1.VTable
+			{
+				public function HRESULT(ID2D1CommandSink2 *self, ID2D1Ink* ink, ID2D1Brush* brush, ID2D1InkStyle* inkStyle) DrawInk;
+				public function HRESULT(ID2D1CommandSink2 *self, ID2D1GradientMesh* gradientMesh) DrawGradientMesh;
+				public function HRESULT(ID2D1CommandSink2 *self, ID2D1GdiMetafile* gdiMetafile, D2D_RECT_F* destinationRectangle, D2D_RECT_F* sourceRectangle) DrawGdiMetafile;
+			}
 		}
 		[CRepr]
 		public struct ID2D1GdiMetafile1 : ID2D1GdiMetafile
 		{
 			public const new Guid IID = .(0x2e69f9e8, 0xdd3f, 0x4bf9, 0x95, 0xba, 0xc0, 0x4f, 0x49, 0xd7, 0x88, 0xdf);
 			
-			public function HRESULT(ID2D1GdiMetafile1 *self, float* dpiX, float* dpiY) GetDpi;
-			public function HRESULT(ID2D1GdiMetafile1 *self, D2D_RECT_F* bounds) GetSourceBounds;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1GdiMetafile.VTable
+			{
+				public function HRESULT(ID2D1GdiMetafile1 *self, float* dpiX, float* dpiY) GetDpi;
+				public function HRESULT(ID2D1GdiMetafile1 *self, D2D_RECT_F* bounds) GetSourceBounds;
+			}
 		}
 		[CRepr]
 		public struct ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink
 		{
 			public const new Guid IID = .(0xfd0ecb6b, 0x91e6, 0x411e, 0x86, 0x55, 0x39, 0x5e, 0x76, 0x0f, 0x91, 0xb4);
 			
-			public function HRESULT(ID2D1GdiMetafileSink1 *self, uint32 recordType, void* recordData, uint32 recordDataSize, uint32 flags) ProcessRecord;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1GdiMetafileSink.VTable
+			{
+				public function HRESULT(ID2D1GdiMetafileSink1 *self, uint32 recordType, void* recordData, uint32 recordDataSize, uint32 flags) ProcessRecord;
+			}
 		}
 		[CRepr]
 		public struct ID2D1SpriteBatch : ID2D1Resource
 		{
 			public const new Guid IID = .(0x4dc583bf, 0x3a10, 0x438a, 0x87, 0x22, 0xe9, 0x76, 0x52, 0x24, 0xf1, 0xf1);
 			
-			public function HRESULT(ID2D1SpriteBatch *self, uint32 spriteCount, D2D_RECT_F* destinationRectangles, D2D_RECT_U* sourceRectangles, D2D1_COLOR_F* colors, D2D_MATRIX_3X2_F* transforms, uint32 destinationRectanglesStride, uint32 sourceRectanglesStride, uint32 colorsStride, uint32 transformsStride) AddSprites;
-			public function HRESULT(ID2D1SpriteBatch *self, uint32 startIndex, uint32 spriteCount, D2D_RECT_F* destinationRectangles, D2D_RECT_U* sourceRectangles, D2D1_COLOR_F* colors, D2D_MATRIX_3X2_F* transforms, uint32 destinationRectanglesStride, uint32 sourceRectanglesStride, uint32 colorsStride, uint32 transformsStride) SetSprites;
-			public function HRESULT(ID2D1SpriteBatch *self, uint32 startIndex, uint32 spriteCount, D2D_RECT_F* destinationRectangles, D2D_RECT_U* sourceRectangles, D2D1_COLOR_F* colors, D2D_MATRIX_3X2_F* transforms) GetSprites;
-			public function uint32(ID2D1SpriteBatch *self) GetSpriteCount;
-			public function void(ID2D1SpriteBatch *self) Clear;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function HRESULT(ID2D1SpriteBatch *self, uint32 spriteCount, D2D_RECT_F* destinationRectangles, D2D_RECT_U* sourceRectangles, D2D1_COLOR_F* colors, D2D_MATRIX_3X2_F* transforms, uint32 destinationRectanglesStride, uint32 sourceRectanglesStride, uint32 colorsStride, uint32 transformsStride) AddSprites;
+				public function HRESULT(ID2D1SpriteBatch *self, uint32 startIndex, uint32 spriteCount, D2D_RECT_F* destinationRectangles, D2D_RECT_U* sourceRectangles, D2D1_COLOR_F* colors, D2D_MATRIX_3X2_F* transforms, uint32 destinationRectanglesStride, uint32 sourceRectanglesStride, uint32 colorsStride, uint32 transformsStride) SetSprites;
+				public function HRESULT(ID2D1SpriteBatch *self, uint32 startIndex, uint32 spriteCount, D2D_RECT_F* destinationRectangles, D2D_RECT_U* sourceRectangles, D2D1_COLOR_F* colors, D2D_MATRIX_3X2_F* transforms) GetSprites;
+				public function uint32(ID2D1SpriteBatch *self) GetSpriteCount;
+				public function void(ID2D1SpriteBatch *self) Clear;
+			}
 		}
 		[CRepr]
 		public struct ID2D1DeviceContext3 : ID2D1DeviceContext2
 		{
 			public const new Guid IID = .(0x235a7496, 0x8351, 0x414c, 0xbc, 0xd4, 0x66, 0x72, 0xab, 0x2d, 0x8e, 0x00);
 			
-			public function HRESULT(ID2D1DeviceContext3 *self, ID2D1SpriteBatch** spriteBatch) CreateSpriteBatch;
-			public function void(ID2D1DeviceContext3 *self, ID2D1SpriteBatch* spriteBatch, uint32 startIndex, uint32 spriteCount, ID2D1Bitmap* bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D1_SPRITE_OPTIONS spriteOptions) DrawSpriteBatch;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1DeviceContext2.VTable
+			{
+				public function HRESULT(ID2D1DeviceContext3 *self, ID2D1SpriteBatch** spriteBatch) CreateSpriteBatch;
+				public function void(ID2D1DeviceContext3 *self, ID2D1SpriteBatch* spriteBatch, uint32 startIndex, uint32 spriteCount, ID2D1Bitmap* bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D1_SPRITE_OPTIONS spriteOptions) DrawSpriteBatch;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Device3 : ID2D1Device2
 		{
 			public const new Guid IID = .(0x852f2087, 0x802c, 0x4037, 0xab, 0x60, 0xff, 0x2e, 0x7e, 0xe6, 0xfc, 0x01);
 			
-			public function HRESULT(ID2D1Device3 *self, D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext3** deviceContext3) CreateDeviceContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Device2.VTable
+			{
+				public function HRESULT(ID2D1Device3 *self, D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext3** deviceContext3) CreateDeviceContext;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Factory4 : ID2D1Factory3
 		{
 			public const new Guid IID = .(0xbd4ec2d2, 0x0662, 0x4bee, 0xba, 0x8e, 0x6f, 0x29, 0xf0, 0x32, 0xe0, 0x96);
 			
-			public function HRESULT(ID2D1Factory4 *self, IDXGIDevice* dxgiDevice, ID2D1Device3** d2dDevice3) CreateDevice;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Factory3.VTable
+			{
+				public function HRESULT(ID2D1Factory4 *self, IDXGIDevice* dxgiDevice, ID2D1Device3** d2dDevice3) CreateDevice;
+			}
 		}
 		[CRepr]
 		public struct ID2D1CommandSink3 : ID2D1CommandSink2
 		{
 			public const new Guid IID = .(0x18079135, 0x4cf3, 0x4868, 0xbc, 0x8e, 0x06, 0x06, 0x7e, 0x6d, 0x24, 0x2d);
 			
-			public function HRESULT(ID2D1CommandSink3 *self, ID2D1SpriteBatch* spriteBatch, uint32 startIndex, uint32 spriteCount, ID2D1Bitmap* bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D1_SPRITE_OPTIONS spriteOptions) DrawSpriteBatch;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1CommandSink2.VTable
+			{
+				public function HRESULT(ID2D1CommandSink3 *self, ID2D1SpriteBatch* spriteBatch, uint32 startIndex, uint32 spriteCount, ID2D1Bitmap* bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D1_SPRITE_OPTIONS spriteOptions) DrawSpriteBatch;
+			}
 		}
 		[CRepr]
 		public struct ID2D1SvgGlyphStyle : ID2D1Resource
 		{
 			public const new Guid IID = .(0xaf671749, 0xd241, 0x4db8, 0x8e, 0x41, 0xdc, 0xc2, 0xe5, 0xc1, 0xa4, 0x38);
 			
-			public function HRESULT(ID2D1SvgGlyphStyle *self, ID2D1Brush* brush) SetFill;
-			public function void(ID2D1SvgGlyphStyle *self, ID2D1Brush** brush) GetFill;
-			public function HRESULT(ID2D1SvgGlyphStyle *self, ID2D1Brush* brush, float strokeWidth, float* dashes, uint32 dashesCount, float dashOffset) SetStroke;
-			public function uint32(ID2D1SvgGlyphStyle *self) GetStrokeDashesCount;
-			public function void(ID2D1SvgGlyphStyle *self, ID2D1Brush** brush, float* strokeWidth, float* dashes, uint32 dashesCount, float* dashOffset) GetStroke;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Resource.VTable
+			{
+				public function HRESULT(ID2D1SvgGlyphStyle *self, ID2D1Brush* brush) SetFill;
+				public function void(ID2D1SvgGlyphStyle *self, ID2D1Brush** brush) GetFill;
+				public function HRESULT(ID2D1SvgGlyphStyle *self, ID2D1Brush* brush, float strokeWidth, float* dashes, uint32 dashesCount, float dashOffset) SetStroke;
+				public function uint32(ID2D1SvgGlyphStyle *self) GetStrokeDashesCount;
+				public function void(ID2D1SvgGlyphStyle *self, ID2D1Brush** brush, float* strokeWidth, float* dashes, uint32 dashesCount, float* dashOffset) GetStroke;
+			}
 		}
 		[CRepr]
 		public struct ID2D1DeviceContext4 : ID2D1DeviceContext3
 		{
 			public const new Guid IID = .(0x8c427831, 0x3d90, 0x4476, 0xb6, 0x47, 0xc4, 0xfa, 0xe3, 0x49, 0xe4, 0xdb);
 			
-			public function HRESULT(ID2D1DeviceContext4 *self, ID2D1SvgGlyphStyle** svgGlyphStyle) CreateSvgGlyphStyle;
-			public function void(ID2D1DeviceContext4 *self, char16* string, uint32 stringLength, IDWriteTextFormat* textFormat, D2D_RECT_F* layoutRect, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, D2D1_DRAW_TEXT_OPTIONS options, DWRITE_MEASURING_MODE measuringMode) DrawText;
-			public function void(ID2D1DeviceContext4 *self, D2D_POINT_2F origin, IDWriteTextLayout* textLayout, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, D2D1_DRAW_TEXT_OPTIONS options) DrawTextLayout;
-			public function void(ID2D1DeviceContext4 *self, DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, D2D_POINT_2F baselineOrigin, DWRITE_GLYPH_RUN* glyphRun, DWRITE_MEASURING_MODE measuringMode, D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION bitmapSnapOption) DrawColorBitmapGlyphRun;
-			public function void(ID2D1DeviceContext4 *self, D2D_POINT_2F baselineOrigin, DWRITE_GLYPH_RUN* glyphRun, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, DWRITE_MEASURING_MODE measuringMode) DrawSvgGlyphRun;
-			public function HRESULT(ID2D1DeviceContext4 *self, DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, D2D_POINT_2F glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, uint16 glyphIndex, BOOL isSideways, D2D_MATRIX_3X2_F* worldTransform, float dpiX, float dpiY, D2D_MATRIX_3X2_F* glyphTransform, ID2D1Image** glyphImage) GetColorBitmapGlyphImage;
-			public function HRESULT(ID2D1DeviceContext4 *self, D2D_POINT_2F glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, uint16 glyphIndex, BOOL isSideways, D2D_MATRIX_3X2_F* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, D2D_MATRIX_3X2_F* glyphTransform, ID2D1CommandList** glyphImage) GetSvgGlyphImage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1DeviceContext3.VTable
+			{
+				public function HRESULT(ID2D1DeviceContext4 *self, ID2D1SvgGlyphStyle** svgGlyphStyle) CreateSvgGlyphStyle;
+				public function void(ID2D1DeviceContext4 *self, char16* string, uint32 stringLength, IDWriteTextFormat* textFormat, D2D_RECT_F* layoutRect, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, D2D1_DRAW_TEXT_OPTIONS options, DWRITE_MEASURING_MODE measuringMode) DrawText;
+				public function void(ID2D1DeviceContext4 *self, D2D_POINT_2F origin, IDWriteTextLayout* textLayout, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, D2D1_DRAW_TEXT_OPTIONS options) DrawTextLayout;
+				public function void(ID2D1DeviceContext4 *self, DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, D2D_POINT_2F baselineOrigin, DWRITE_GLYPH_RUN* glyphRun, DWRITE_MEASURING_MODE measuringMode, D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION bitmapSnapOption) DrawColorBitmapGlyphRun;
+				public function void(ID2D1DeviceContext4 *self, D2D_POINT_2F baselineOrigin, DWRITE_GLYPH_RUN* glyphRun, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, DWRITE_MEASURING_MODE measuringMode) DrawSvgGlyphRun;
+				public function HRESULT(ID2D1DeviceContext4 *self, DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, D2D_POINT_2F glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, uint16 glyphIndex, BOOL isSideways, D2D_MATRIX_3X2_F* worldTransform, float dpiX, float dpiY, D2D_MATRIX_3X2_F* glyphTransform, ID2D1Image** glyphImage) GetColorBitmapGlyphImage;
+				public function HRESULT(ID2D1DeviceContext4 *self, D2D_POINT_2F glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, uint16 glyphIndex, BOOL isSideways, D2D_MATRIX_3X2_F* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint32 colorPaletteIndex, D2D_MATRIX_3X2_F* glyphTransform, ID2D1CommandList** glyphImage) GetSvgGlyphImage;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Device4 : ID2D1Device3
 		{
 			public const new Guid IID = .(0xd7bdb159, 0x5683, 0x4a46, 0xbc, 0x9c, 0x72, 0xdc, 0x72, 0x0b, 0x85, 0x8b);
 			
-			public function HRESULT(ID2D1Device4 *self, D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext4** deviceContext4) CreateDeviceContext;
-			public function void(ID2D1Device4 *self, uint64 maximumInBytes) SetMaximumColorGlyphCacheMemory;
-			public function uint64(ID2D1Device4 *self) GetMaximumColorGlyphCacheMemory;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Device3.VTable
+			{
+				public function HRESULT(ID2D1Device4 *self, D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext4** deviceContext4) CreateDeviceContext;
+				public function void(ID2D1Device4 *self, uint64 maximumInBytes) SetMaximumColorGlyphCacheMemory;
+				public function uint64(ID2D1Device4 *self) GetMaximumColorGlyphCacheMemory;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Factory5 : ID2D1Factory4
 		{
 			public const new Guid IID = .(0xc4349994, 0x838e, 0x4b0f, 0x8c, 0xab, 0x44, 0x99, 0x7d, 0x9e, 0xea, 0xcc);
 			
-			public function HRESULT(ID2D1Factory5 *self, IDXGIDevice* dxgiDevice, ID2D1Device4** d2dDevice4) CreateDevice;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Factory4.VTable
+			{
+				public function HRESULT(ID2D1Factory5 *self, IDXGIDevice* dxgiDevice, ID2D1Device4** d2dDevice4) CreateDevice;
+			}
 		}
 		[CRepr]
 		public struct ID2D1CommandSink4 : ID2D1CommandSink3
 		{
 			public const new Guid IID = .(0xc78a6519, 0x40d6, 0x4218, 0xb2, 0xde, 0xbe, 0xee, 0xb7, 0x44, 0xbb, 0x3e);
 			
-			public function HRESULT(ID2D1CommandSink4 *self, D2D1_PRIMITIVE_BLEND primitiveBlend) SetPrimitiveBlend2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1CommandSink3.VTable
+			{
+				public function HRESULT(ID2D1CommandSink4 *self, D2D1_PRIMITIVE_BLEND primitiveBlend) SetPrimitiveBlend2;
+			}
 		}
 		[CRepr]
 		public struct ID2D1ColorContext1 : ID2D1ColorContext
 		{
 			public const new Guid IID = .(0x1ab42875, 0xc57f, 0x4be9, 0xbd, 0x85, 0x9c, 0xd7, 0x8d, 0x6f, 0x55, 0xee);
 			
-			public function D2D1_COLOR_CONTEXT_TYPE(ID2D1ColorContext1 *self) GetColorContextType;
-			public function DXGI_COLOR_SPACE_TYPE(ID2D1ColorContext1 *self) GetDXGIColorSpace;
-			public function HRESULT(ID2D1ColorContext1 *self, D2D1_SIMPLE_COLOR_PROFILE* simpleProfile) GetSimpleColorProfile;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1ColorContext.VTable
+			{
+				public function D2D1_COLOR_CONTEXT_TYPE(ID2D1ColorContext1 *self) GetColorContextType;
+				public function DXGI_COLOR_SPACE_TYPE(ID2D1ColorContext1 *self) GetDXGIColorSpace;
+				public function HRESULT(ID2D1ColorContext1 *self, D2D1_SIMPLE_COLOR_PROFILE* simpleProfile) GetSimpleColorProfile;
+			}
 		}
 		[CRepr]
 		public struct ID2D1DeviceContext5 : ID2D1DeviceContext4
 		{
 			public const new Guid IID = .(0x7836d248, 0x68cc, 0x4df6, 0xb9, 0xe8, 0xde, 0x99, 0x1b, 0xf6, 0x2e, 0xb7);
 			
-			public function HRESULT(ID2D1DeviceContext5 *self, IStream* inputXmlStream, D2D_SIZE_F viewportSize, ID2D1SvgDocument** svgDocument) CreateSvgDocument;
-			public function void(ID2D1DeviceContext5 *self, ID2D1SvgDocument* svgDocument) DrawSvgDocument;
-			public function HRESULT(ID2D1DeviceContext5 *self, DXGI_COLOR_SPACE_TYPE colorSpace, ID2D1ColorContext1** colorContext) CreateColorContextFromDxgiColorSpace;
-			public function HRESULT(ID2D1DeviceContext5 *self, D2D1_SIMPLE_COLOR_PROFILE* simpleProfile, ID2D1ColorContext1** colorContext) CreateColorContextFromSimpleColorProfile;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1DeviceContext4.VTable
+			{
+				public function HRESULT(ID2D1DeviceContext5 *self, IStream* inputXmlStream, D2D_SIZE_F viewportSize, ID2D1SvgDocument** svgDocument) CreateSvgDocument;
+				public function void(ID2D1DeviceContext5 *self, ID2D1SvgDocument* svgDocument) DrawSvgDocument;
+				public function HRESULT(ID2D1DeviceContext5 *self, DXGI_COLOR_SPACE_TYPE colorSpace, ID2D1ColorContext1** colorContext) CreateColorContextFromDxgiColorSpace;
+				public function HRESULT(ID2D1DeviceContext5 *self, D2D1_SIMPLE_COLOR_PROFILE* simpleProfile, ID2D1ColorContext1** colorContext) CreateColorContextFromSimpleColorProfile;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Device5 : ID2D1Device4
 		{
 			public const new Guid IID = .(0xd55ba0a4, 0x6405, 0x4694, 0xae, 0xf5, 0x08, 0xee, 0x1a, 0x43, 0x58, 0xb4);
 			
-			public function HRESULT(ID2D1Device5 *self, D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext5** deviceContext5) CreateDeviceContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Device4.VTable
+			{
+				public function HRESULT(ID2D1Device5 *self, D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext5** deviceContext5) CreateDeviceContext;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Factory6 : ID2D1Factory5
 		{
 			public const new Guid IID = .(0xf9976f46, 0xf642, 0x44c1, 0x97, 0xca, 0xda, 0x32, 0xea, 0x2a, 0x26, 0x35);
 			
-			public function HRESULT(ID2D1Factory6 *self, IDXGIDevice* dxgiDevice, ID2D1Device5** d2dDevice5) CreateDevice;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Factory5.VTable
+			{
+				public function HRESULT(ID2D1Factory6 *self, IDXGIDevice* dxgiDevice, ID2D1Device5** d2dDevice5) CreateDevice;
+			}
 		}
 		[CRepr]
 		public struct ID2D1CommandSink5 : ID2D1CommandSink4
 		{
 			public const new Guid IID = .(0x7047dd26, 0xb1e7, 0x44a7, 0x95, 0x9a, 0x83, 0x49, 0xe2, 0x14, 0x4f, 0xa8);
 			
-			public function HRESULT(ID2D1CommandSink5 *self, ID2D1Image* image, D2D1_BLEND_MODE blendMode, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode) BlendImage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1CommandSink4.VTable
+			{
+				public function HRESULT(ID2D1CommandSink5 *self, ID2D1Image* image, D2D1_BLEND_MODE blendMode, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode) BlendImage;
+			}
 		}
 		[CRepr]
 		public struct ID2D1DeviceContext6 : ID2D1DeviceContext5
 		{
 			public const new Guid IID = .(0x985f7e37, 0x4ed0, 0x4a19, 0x98, 0xa3, 0x15, 0xb0, 0xed, 0xfd, 0xe3, 0x06);
 			
-			public function void(ID2D1DeviceContext6 *self, ID2D1Image* image, D2D1_BLEND_MODE blendMode, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode) BlendImage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1DeviceContext5.VTable
+			{
+				public function void(ID2D1DeviceContext6 *self, ID2D1Image* image, D2D1_BLEND_MODE blendMode, D2D_POINT_2F* targetOffset, D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode) BlendImage;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Device6 : ID2D1Device5
 		{
 			public const new Guid IID = .(0x7bfef914, 0x2d75, 0x4bad, 0xbe, 0x87, 0xe1, 0x8d, 0xdb, 0x07, 0x7b, 0x6d);
 			
-			public function HRESULT(ID2D1Device6 *self, D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext6** deviceContext6) CreateDeviceContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Device5.VTable
+			{
+				public function HRESULT(ID2D1Device6 *self, D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext6** deviceContext6) CreateDeviceContext;
+			}
 		}
 		[CRepr]
 		public struct ID2D1Factory7 : ID2D1Factory6
 		{
 			public const new Guid IID = .(0xbdc2bdd3, 0xb96c, 0x4de6, 0xbd, 0xf7, 0x99, 0xd4, 0x74, 0x54, 0x54, 0xde);
 			
-			public function HRESULT(ID2D1Factory7 *self, IDXGIDevice* dxgiDevice, ID2D1Device6** d2dDevice6) CreateDevice;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1Factory6.VTable
+			{
+				public function HRESULT(ID2D1Factory7 *self, IDXGIDevice* dxgiDevice, ID2D1Device6** d2dDevice6) CreateDevice;
+			}
 		}
 		[CRepr]
 		public struct ID2D1EffectContext1 : ID2D1EffectContext
 		{
 			public const new Guid IID = .(0x84ab595a, 0xfc81, 0x4546, 0xba, 0xcd, 0xe8, 0xef, 0x4d, 0x8a, 0xbe, 0x7a);
 			
-			public function HRESULT(ID2D1EffectContext1 *self, D2D1_BUFFER_PRECISION precision, uint32* extents, uint8* data, uint32 dataCount, uint32* strides, ID2D1LookupTable3D** lookupTable) CreateLookupTable3D;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1EffectContext.VTable
+			{
+				public function HRESULT(ID2D1EffectContext1 *self, D2D1_BUFFER_PRECISION precision, uint32* extents, uint8* data, uint32 dataCount, uint32* strides, ID2D1LookupTable3D** lookupTable) CreateLookupTable3D;
+			}
 		}
 		[CRepr]
 		public struct ID2D1EffectContext2 : ID2D1EffectContext1
 		{
 			public const new Guid IID = .(0x577ad2a0, 0x9fc7, 0x4dda, 0x8b, 0x18, 0xda, 0xb8, 0x10, 0x14, 0x00, 0x52);
 			
-			public function HRESULT(ID2D1EffectContext2 *self, DXGI_COLOR_SPACE_TYPE colorSpace, ID2D1ColorContext1** colorContext) CreateColorContextFromDxgiColorSpace;
-			public function HRESULT(ID2D1EffectContext2 *self, D2D1_SIMPLE_COLOR_PROFILE* simpleProfile, ID2D1ColorContext1** colorContext) CreateColorContextFromSimpleColorProfile;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ID2D1EffectContext1.VTable
+			{
+				public function HRESULT(ID2D1EffectContext2 *self, DXGI_COLOR_SPACE_TYPE colorSpace, ID2D1ColorContext1** colorContext) CreateColorContextFromDxgiColorSpace;
+				public function HRESULT(ID2D1EffectContext2 *self, D2D1_SIMPLE_COLOR_PROFILE* simpleProfile, ID2D1ColorContext1** colorContext) CreateColorContextFromSimpleColorProfile;
+			}
 		}
 		
 		// --- Functions ---

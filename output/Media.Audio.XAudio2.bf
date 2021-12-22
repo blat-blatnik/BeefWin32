@@ -544,122 +544,180 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa410b984, 0x9839, 0x4819, 0xa0, 0xbe, 0x28, 0x56, 0xae, 0x6b, 0x3a, 0xdb);
 			
-			public function HRESULT(IXAPO *self, XAPO_REGISTRATION_PROPERTIES** ppRegistrationProperties) GetRegistrationProperties;
-			public function HRESULT(IXAPO *self, WAVEFORMATEX* pOutputFormat, WAVEFORMATEX* pRequestedInputFormat, WAVEFORMATEX** ppSupportedInputFormat) IsInputFormatSupported;
-			public function HRESULT(IXAPO *self, WAVEFORMATEX* pInputFormat, WAVEFORMATEX* pRequestedOutputFormat, WAVEFORMATEX** ppSupportedOutputFormat) IsOutputFormatSupported;
-			public function HRESULT(IXAPO *self, void* pData, uint32 DataByteSize) Initialize;
-			public function void(IXAPO *self) Reset;
-			public function HRESULT(IXAPO *self, uint32 InputLockedParameterCount, XAPO_LOCKFORPROCESS_PARAMETERS* pInputLockedParameters, uint32 OutputLockedParameterCount, XAPO_LOCKFORPROCESS_PARAMETERS* pOutputLockedParameters) LockForProcess;
-			public function void(IXAPO *self) UnlockForProcess;
-			public function void(IXAPO *self, uint32 InputProcessParameterCount, XAPO_PROCESS_BUFFER_PARAMETERS* pInputProcessParameters, uint32 OutputProcessParameterCount, XAPO_PROCESS_BUFFER_PARAMETERS* pOutputProcessParameters, BOOL IsEnabled) Process;
-			public function uint32(IXAPO *self, uint32 OutputFrameCount) CalcInputFrames;
-			public function uint32(IXAPO *self, uint32 InputFrameCount) CalcOutputFrames;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IXAPO *self, XAPO_REGISTRATION_PROPERTIES** ppRegistrationProperties) GetRegistrationProperties;
+				public function HRESULT(IXAPO *self, WAVEFORMATEX* pOutputFormat, WAVEFORMATEX* pRequestedInputFormat, WAVEFORMATEX** ppSupportedInputFormat) IsInputFormatSupported;
+				public function HRESULT(IXAPO *self, WAVEFORMATEX* pInputFormat, WAVEFORMATEX* pRequestedOutputFormat, WAVEFORMATEX** ppSupportedOutputFormat) IsOutputFormatSupported;
+				public function HRESULT(IXAPO *self, void* pData, uint32 DataByteSize) Initialize;
+				public function void(IXAPO *self) Reset;
+				public function HRESULT(IXAPO *self, uint32 InputLockedParameterCount, XAPO_LOCKFORPROCESS_PARAMETERS* pInputLockedParameters, uint32 OutputLockedParameterCount, XAPO_LOCKFORPROCESS_PARAMETERS* pOutputLockedParameters) LockForProcess;
+				public function void(IXAPO *self) UnlockForProcess;
+				public function void(IXAPO *self, uint32 InputProcessParameterCount, XAPO_PROCESS_BUFFER_PARAMETERS* pInputProcessParameters, uint32 OutputProcessParameterCount, XAPO_PROCESS_BUFFER_PARAMETERS* pOutputProcessParameters, BOOL IsEnabled) Process;
+				public function uint32(IXAPO *self, uint32 OutputFrameCount) CalcInputFrames;
+				public function uint32(IXAPO *self, uint32 InputFrameCount) CalcOutputFrames;
+			}
 		}
 		[CRepr]
 		public struct IXAPOParameters : IUnknown
 		{
 			public const new Guid IID = .(0x26d95c66, 0x80f2, 0x499a, 0xad, 0x54, 0x5a, 0xe7, 0xf0, 0x1c, 0x6d, 0x98);
 			
-			public function void(IXAPOParameters *self, void* pParameters, uint32 ParameterByteSize) SetParameters;
-			public function void(IXAPOParameters *self, void* pParameters, uint32 ParameterByteSize) GetParameters;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function void(IXAPOParameters *self, void* pParameters, uint32 ParameterByteSize) SetParameters;
+				public function void(IXAPOParameters *self, void* pParameters, uint32 ParameterByteSize) GetParameters;
+			}
 		}
 		[CRepr]
 		public struct IXAudio2 : IUnknown
 		{
 			public const new Guid IID = .(0x2b02e3cf, 0x2e0b, 0x4ec3, 0xbe, 0x45, 0x1b, 0x2a, 0x3f, 0xe7, 0x21, 0x0d);
 			
-			public function HRESULT(IXAudio2 *self, IXAudio2EngineCallback* pCallback) RegisterForCallbacks;
-			public function void(IXAudio2 *self, IXAudio2EngineCallback* pCallback) UnregisterForCallbacks;
-			public function HRESULT(IXAudio2 *self, IXAudio2SourceVoice** ppSourceVoice, WAVEFORMATEX* pSourceFormat, uint32 Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, XAUDIO2_VOICE_SENDS* pSendList, XAUDIO2_EFFECT_CHAIN* pEffectChain) CreateSourceVoice;
-			public function HRESULT(IXAudio2 *self, IXAudio2SubmixVoice** ppSubmixVoice, uint32 InputChannels, uint32 InputSampleRate, uint32 Flags, uint32 ProcessingStage, XAUDIO2_VOICE_SENDS* pSendList, XAUDIO2_EFFECT_CHAIN* pEffectChain) CreateSubmixVoice;
-			public function HRESULT(IXAudio2 *self, IXAudio2MasteringVoice** ppMasteringVoice, uint32 InputChannels, uint32 InputSampleRate, uint32 Flags, PWSTR szDeviceId, XAUDIO2_EFFECT_CHAIN* pEffectChain, AUDIO_STREAM_CATEGORY StreamCategory) CreateMasteringVoice;
-			public function HRESULT(IXAudio2 *self) StartEngine;
-			public function void(IXAudio2 *self) StopEngine;
-			public function HRESULT(IXAudio2 *self, uint32 OperationSet) CommitChanges;
-			public function void(IXAudio2 *self, XAUDIO2_PERFORMANCE_DATA* pPerfData) GetPerformanceData;
-			public function void(IXAudio2 *self, XAUDIO2_DEBUG_CONFIGURATION* pDebugConfiguration, void* pReserved) SetDebugConfiguration;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IXAudio2 *self, IXAudio2EngineCallback* pCallback) RegisterForCallbacks;
+				public function void(IXAudio2 *self, IXAudio2EngineCallback* pCallback) UnregisterForCallbacks;
+				public function HRESULT(IXAudio2 *self, IXAudio2SourceVoice** ppSourceVoice, WAVEFORMATEX* pSourceFormat, uint32 Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, XAUDIO2_VOICE_SENDS* pSendList, XAUDIO2_EFFECT_CHAIN* pEffectChain) CreateSourceVoice;
+				public function HRESULT(IXAudio2 *self, IXAudio2SubmixVoice** ppSubmixVoice, uint32 InputChannels, uint32 InputSampleRate, uint32 Flags, uint32 ProcessingStage, XAUDIO2_VOICE_SENDS* pSendList, XAUDIO2_EFFECT_CHAIN* pEffectChain) CreateSubmixVoice;
+				public function HRESULT(IXAudio2 *self, IXAudio2MasteringVoice** ppMasteringVoice, uint32 InputChannels, uint32 InputSampleRate, uint32 Flags, PWSTR szDeviceId, XAUDIO2_EFFECT_CHAIN* pEffectChain, AUDIO_STREAM_CATEGORY StreamCategory) CreateMasteringVoice;
+				public function HRESULT(IXAudio2 *self) StartEngine;
+				public function void(IXAudio2 *self) StopEngine;
+				public function HRESULT(IXAudio2 *self, uint32 OperationSet) CommitChanges;
+				public function void(IXAudio2 *self, XAUDIO2_PERFORMANCE_DATA* pPerfData) GetPerformanceData;
+				public function void(IXAudio2 *self, XAUDIO2_DEBUG_CONFIGURATION* pDebugConfiguration, void* pReserved) SetDebugConfiguration;
+			}
 		}
 		[CRepr]
 		public struct IXAudio2Extension : IUnknown
 		{
 			public const new Guid IID = .(0x84ac29bb, 0xd619, 0x44d2, 0xb1, 0x97, 0xe4, 0xac, 0xf7, 0xdf, 0x3e, 0xd6);
 			
-			public function void(IXAudio2Extension *self, uint32* quantumNumerator, uint32* quantumDenominator) GetProcessingQuantum;
-			public function void(IXAudio2Extension *self, uint32* processor) GetProcessor;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function void(IXAudio2Extension *self, uint32* quantumNumerator, uint32* quantumDenominator) GetProcessingQuantum;
+				public function void(IXAudio2Extension *self, uint32* processor) GetProcessor;
+			}
 		}
 		[CRepr]
 		public struct IXAudio2Voice
 		{
-			public function void(IXAudio2Voice *self, XAUDIO2_VOICE_DETAILS* pVoiceDetails) GetVoiceDetails;
-			public function HRESULT(IXAudio2Voice *self, XAUDIO2_VOICE_SENDS* pSendList) SetOutputVoices;
-			public function HRESULT(IXAudio2Voice *self, XAUDIO2_EFFECT_CHAIN* pEffectChain) SetEffectChain;
-			public function HRESULT(IXAudio2Voice *self, uint32 EffectIndex, uint32 OperationSet) EnableEffect;
-			public function HRESULT(IXAudio2Voice *self, uint32 EffectIndex, uint32 OperationSet) DisableEffect;
-			public function void(IXAudio2Voice *self, uint32 EffectIndex, BOOL* pEnabled) GetEffectState;
-			public function HRESULT(IXAudio2Voice *self, uint32 EffectIndex, void* pParameters, uint32 ParametersByteSize, uint32 OperationSet) SetEffectParameters;
-			public function HRESULT(IXAudio2Voice *self, uint32 EffectIndex, void* pParameters, uint32 ParametersByteSize) GetEffectParameters;
-			public function HRESULT(IXAudio2Voice *self, XAUDIO2_FILTER_PARAMETERS* pParameters, uint32 OperationSet) SetFilterParameters;
-			public function void(IXAudio2Voice *self, XAUDIO2_FILTER_PARAMETERS* pParameters) GetFilterParameters;
-			public function HRESULT(IXAudio2Voice *self, IXAudio2Voice* pDestinationVoice, XAUDIO2_FILTER_PARAMETERS* pParameters, uint32 OperationSet) SetOutputFilterParameters;
-			public function void(IXAudio2Voice *self, IXAudio2Voice* pDestinationVoice, XAUDIO2_FILTER_PARAMETERS* pParameters) GetOutputFilterParameters;
-			public function HRESULT(IXAudio2Voice *self, float Volume, uint32 OperationSet) SetVolume;
-			public function void(IXAudio2Voice *self, float* pVolume) GetVolume;
-			public function HRESULT(IXAudio2Voice *self, uint32 Channels, float* pVolumes, uint32 OperationSet) SetChannelVolumes;
-			public function void(IXAudio2Voice *self, uint32 Channels, float* pVolumes) GetChannelVolumes;
-			public function HRESULT(IXAudio2Voice *self, IXAudio2Voice* pDestinationVoice, uint32 SourceChannels, uint32 DestinationChannels, float* pLevelMatrix, uint32 OperationSet) SetOutputMatrix;
-			public function void(IXAudio2Voice *self, IXAudio2Voice* pDestinationVoice, uint32 SourceChannels, uint32 DestinationChannels, float* pLevelMatrix) GetOutputMatrix;
-			public function void(IXAudio2Voice *self) DestroyVoice;
+			protected VTable* vt;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable
+			{
+				public function void(IXAudio2Voice *self, XAUDIO2_VOICE_DETAILS* pVoiceDetails) GetVoiceDetails;
+				public function HRESULT(IXAudio2Voice *self, XAUDIO2_VOICE_SENDS* pSendList) SetOutputVoices;
+				public function HRESULT(IXAudio2Voice *self, XAUDIO2_EFFECT_CHAIN* pEffectChain) SetEffectChain;
+				public function HRESULT(IXAudio2Voice *self, uint32 EffectIndex, uint32 OperationSet) EnableEffect;
+				public function HRESULT(IXAudio2Voice *self, uint32 EffectIndex, uint32 OperationSet) DisableEffect;
+				public function void(IXAudio2Voice *self, uint32 EffectIndex, BOOL* pEnabled) GetEffectState;
+				public function HRESULT(IXAudio2Voice *self, uint32 EffectIndex, void* pParameters, uint32 ParametersByteSize, uint32 OperationSet) SetEffectParameters;
+				public function HRESULT(IXAudio2Voice *self, uint32 EffectIndex, void* pParameters, uint32 ParametersByteSize) GetEffectParameters;
+				public function HRESULT(IXAudio2Voice *self, XAUDIO2_FILTER_PARAMETERS* pParameters, uint32 OperationSet) SetFilterParameters;
+				public function void(IXAudio2Voice *self, XAUDIO2_FILTER_PARAMETERS* pParameters) GetFilterParameters;
+				public function HRESULT(IXAudio2Voice *self, IXAudio2Voice* pDestinationVoice, XAUDIO2_FILTER_PARAMETERS* pParameters, uint32 OperationSet) SetOutputFilterParameters;
+				public function void(IXAudio2Voice *self, IXAudio2Voice* pDestinationVoice, XAUDIO2_FILTER_PARAMETERS* pParameters) GetOutputFilterParameters;
+				public function HRESULT(IXAudio2Voice *self, float Volume, uint32 OperationSet) SetVolume;
+				public function void(IXAudio2Voice *self, float* pVolume) GetVolume;
+				public function HRESULT(IXAudio2Voice *self, uint32 Channels, float* pVolumes, uint32 OperationSet) SetChannelVolumes;
+				public function void(IXAudio2Voice *self, uint32 Channels, float* pVolumes) GetChannelVolumes;
+				public function HRESULT(IXAudio2Voice *self, IXAudio2Voice* pDestinationVoice, uint32 SourceChannels, uint32 DestinationChannels, float* pLevelMatrix, uint32 OperationSet) SetOutputMatrix;
+				public function void(IXAudio2Voice *self, IXAudio2Voice* pDestinationVoice, uint32 SourceChannels, uint32 DestinationChannels, float* pLevelMatrix) GetOutputMatrix;
+				public function void(IXAudio2Voice *self) DestroyVoice;
+			}
 		}
 		[CRepr]
 		public struct IXAudio2SourceVoice : IXAudio2Voice
 		{
-			public function HRESULT(IXAudio2SourceVoice *self, uint32 Flags, uint32 OperationSet) Start;
-			public function HRESULT(IXAudio2SourceVoice *self, uint32 Flags, uint32 OperationSet) Stop;
-			public function HRESULT(IXAudio2SourceVoice *self, XAUDIO2_BUFFER* pBuffer, XAUDIO2_BUFFER_WMA* pBufferWMA) SubmitSourceBuffer;
-			public function HRESULT(IXAudio2SourceVoice *self) FlushSourceBuffers;
-			public function HRESULT(IXAudio2SourceVoice *self) Discontinuity;
-			public function HRESULT(IXAudio2SourceVoice *self, uint32 OperationSet) ExitLoop;
-			public function void(IXAudio2SourceVoice *self, XAUDIO2_VOICE_STATE* pVoiceState, uint32 Flags) GetState;
-			public function HRESULT(IXAudio2SourceVoice *self, float Ratio, uint32 OperationSet) SetFrequencyRatio;
-			public function void(IXAudio2SourceVoice *self, float* pRatio) GetFrequencyRatio;
-			public function HRESULT(IXAudio2SourceVoice *self, uint32 NewSourceSampleRate) SetSourceSampleRate;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IXAudio2Voice.VTable
+			{
+				public function HRESULT(IXAudio2SourceVoice *self, uint32 Flags, uint32 OperationSet) Start;
+				public function HRESULT(IXAudio2SourceVoice *self, uint32 Flags, uint32 OperationSet) Stop;
+				public function HRESULT(IXAudio2SourceVoice *self, XAUDIO2_BUFFER* pBuffer, XAUDIO2_BUFFER_WMA* pBufferWMA) SubmitSourceBuffer;
+				public function HRESULT(IXAudio2SourceVoice *self) FlushSourceBuffers;
+				public function HRESULT(IXAudio2SourceVoice *self) Discontinuity;
+				public function HRESULT(IXAudio2SourceVoice *self, uint32 OperationSet) ExitLoop;
+				public function void(IXAudio2SourceVoice *self, XAUDIO2_VOICE_STATE* pVoiceState, uint32 Flags) GetState;
+				public function HRESULT(IXAudio2SourceVoice *self, float Ratio, uint32 OperationSet) SetFrequencyRatio;
+				public function void(IXAudio2SourceVoice *self, float* pRatio) GetFrequencyRatio;
+				public function HRESULT(IXAudio2SourceVoice *self, uint32 NewSourceSampleRate) SetSourceSampleRate;
+			}
 		}
 		[CRepr]
 		public struct IXAudio2SubmixVoice : IXAudio2Voice
 		{
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IXAudio2Voice.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IXAudio2MasteringVoice : IXAudio2Voice
 		{
-			public function HRESULT(IXAudio2MasteringVoice *self, uint32* pChannelmask) GetChannelMask;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IXAudio2Voice.VTable
+			{
+				public function HRESULT(IXAudio2MasteringVoice *self, uint32* pChannelmask) GetChannelMask;
+			}
 		}
 		[CRepr]
 		public struct IXAudio2EngineCallback
 		{
-			public function void(IXAudio2EngineCallback *self) OnProcessingPassStart;
-			public function void(IXAudio2EngineCallback *self) OnProcessingPassEnd;
-			public function void(IXAudio2EngineCallback *self, HRESULT Error) OnCriticalError;
+			protected VTable* vt;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable
+			{
+				public function void(IXAudio2EngineCallback *self) OnProcessingPassStart;
+				public function void(IXAudio2EngineCallback *self) OnProcessingPassEnd;
+				public function void(IXAudio2EngineCallback *self, HRESULT Error) OnCriticalError;
+			}
 		}
 		[CRepr]
 		public struct IXAudio2VoiceCallback
 		{
-			public function void(IXAudio2VoiceCallback *self, uint32 BytesRequired) OnVoiceProcessingPassStart;
-			public function void(IXAudio2VoiceCallback *self) OnVoiceProcessingPassEnd;
-			public function void(IXAudio2VoiceCallback *self) OnStreamEnd;
-			public function void(IXAudio2VoiceCallback *self, void* pBufferContext) OnBufferStart;
-			public function void(IXAudio2VoiceCallback *self, void* pBufferContext) OnBufferEnd;
-			public function void(IXAudio2VoiceCallback *self, void* pBufferContext) OnLoopEnd;
-			public function void(IXAudio2VoiceCallback *self, void* pBufferContext, HRESULT Error) OnVoiceError;
+			protected VTable* vt;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable
+			{
+				public function void(IXAudio2VoiceCallback *self, uint32 BytesRequired) OnVoiceProcessingPassStart;
+				public function void(IXAudio2VoiceCallback *self) OnVoiceProcessingPassEnd;
+				public function void(IXAudio2VoiceCallback *self) OnStreamEnd;
+				public function void(IXAudio2VoiceCallback *self, void* pBufferContext) OnBufferStart;
+				public function void(IXAudio2VoiceCallback *self, void* pBufferContext) OnBufferEnd;
+				public function void(IXAudio2VoiceCallback *self, void* pBufferContext) OnLoopEnd;
+				public function void(IXAudio2VoiceCallback *self, void* pBufferContext, HRESULT Error) OnVoiceError;
+			}
 		}
 		[CRepr]
 		public struct IXAPOHrtfParameters : IUnknown
 		{
 			public const new Guid IID = .(0x15b3cd66, 0xe9de, 0x4464, 0xb6, 0xe6, 0x2b, 0xc3, 0xcf, 0x63, 0xd4, 0x55);
 			
-			public function HRESULT(IXAPOHrtfParameters *self, HrtfPosition* position) SetSourcePosition;
-			public function HRESULT(IXAPOHrtfParameters *self, HrtfOrientation* orientation) SetSourceOrientation;
-			public function HRESULT(IXAPOHrtfParameters *self, float gain) SetSourceGain;
-			public function HRESULT(IXAPOHrtfParameters *self, HrtfEnvironment environment) SetEnvironment;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IXAPOHrtfParameters *self, HrtfPosition* position) SetSourcePosition;
+				public function HRESULT(IXAPOHrtfParameters *self, HrtfOrientation* orientation) SetSourceOrientation;
+				public function HRESULT(IXAPOHrtfParameters *self, float gain) SetSourceGain;
+				public function HRESULT(IXAPOHrtfParameters *self, HrtfEnvironment environment) SetEnvironment;
+			}
 		}
 		
 		// --- Functions ---

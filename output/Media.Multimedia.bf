@@ -6212,66 +6212,96 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x00020021, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IAVIStream *self, LPARAM lParam1, LPARAM lParam2) Create;
-			public function HRESULT(IAVIStream *self, AVISTREAMINFOW* psi, int32 lSize) Info;
-			public function int32(IAVIStream *self, int32 lPos, int32 lFlags) FindSample;
-			public function HRESULT(IAVIStream *self, int32 lPos, void* lpFormat, int32* lpcbFormat) ReadFormat;
-			public function HRESULT(IAVIStream *self, int32 lPos, void* lpFormat, int32 cbFormat) SetFormat;
-			public function HRESULT(IAVIStream *self, int32 lStart, int32 lSamples, void* lpBuffer, int32 cbBuffer, int32* plBytes, int32* plSamples) Read;
-			public function HRESULT(IAVIStream *self, int32 lStart, int32 lSamples, void* lpBuffer, int32 cbBuffer, uint32 dwFlags, int32* plSampWritten, int32* plBytesWritten) Write;
-			public function HRESULT(IAVIStream *self, int32 lStart, int32 lSamples) Delete;
-			public function HRESULT(IAVIStream *self, uint32 fcc, void* lp, int32* lpcb) ReadData;
-			public function HRESULT(IAVIStream *self, uint32 fcc, void* lp, int32 cb) WriteData;
-			public function HRESULT(IAVIStream *self, AVISTREAMINFOW* lpInfo, int32 cbInfo) SetInfo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAVIStream *self, LPARAM lParam1, LPARAM lParam2) Create;
+				public function HRESULT(IAVIStream *self, AVISTREAMINFOW* psi, int32 lSize) Info;
+				public function int32(IAVIStream *self, int32 lPos, int32 lFlags) FindSample;
+				public function HRESULT(IAVIStream *self, int32 lPos, void* lpFormat, int32* lpcbFormat) ReadFormat;
+				public function HRESULT(IAVIStream *self, int32 lPos, void* lpFormat, int32 cbFormat) SetFormat;
+				public function HRESULT(IAVIStream *self, int32 lStart, int32 lSamples, void* lpBuffer, int32 cbBuffer, int32* plBytes, int32* plSamples) Read;
+				public function HRESULT(IAVIStream *self, int32 lStart, int32 lSamples, void* lpBuffer, int32 cbBuffer, uint32 dwFlags, int32* plSampWritten, int32* plBytesWritten) Write;
+				public function HRESULT(IAVIStream *self, int32 lStart, int32 lSamples) Delete;
+				public function HRESULT(IAVIStream *self, uint32 fcc, void* lp, int32* lpcb) ReadData;
+				public function HRESULT(IAVIStream *self, uint32 fcc, void* lp, int32 cb) WriteData;
+				public function HRESULT(IAVIStream *self, AVISTREAMINFOW* lpInfo, int32 cbInfo) SetInfo;
+			}
 		}
 		[CRepr]
 		public struct IAVIStreaming : IUnknown
 		{
 			public const new Guid IID = .(0x00020022, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IAVIStreaming *self, int32 lStart, int32 lEnd, int32 lRate) Begin;
-			public function HRESULT(IAVIStreaming *self) End;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAVIStreaming *self, int32 lStart, int32 lEnd, int32 lRate) Begin;
+				public function HRESULT(IAVIStreaming *self) End;
+			}
 		}
 		[CRepr]
 		public struct IAVIEditStream : IUnknown
 		{
 			public const new Guid IID = .(0x00020024, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IAVIEditStream *self, int32* plStart, int32* plLength, IAVIStream** ppResult) Cut;
-			public function HRESULT(IAVIEditStream *self, int32* plStart, int32* plLength, IAVIStream** ppResult) Copy;
-			public function HRESULT(IAVIEditStream *self, int32* plPos, int32* plLength, IAVIStream* pstream, int32 lStart, int32 lEnd) Paste;
-			public function HRESULT(IAVIEditStream *self, IAVIStream** ppResult) Clone;
-			public function HRESULT(IAVIEditStream *self, AVISTREAMINFOW* lpInfo, int32 cbInfo) SetInfo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAVIEditStream *self, int32* plStart, int32* plLength, IAVIStream** ppResult) Cut;
+				public function HRESULT(IAVIEditStream *self, int32* plStart, int32* plLength, IAVIStream** ppResult) Copy;
+				public function HRESULT(IAVIEditStream *self, int32* plPos, int32* plLength, IAVIStream* pstream, int32 lStart, int32 lEnd) Paste;
+				public function HRESULT(IAVIEditStream *self, IAVIStream** ppResult) Clone;
+				public function HRESULT(IAVIEditStream *self, AVISTREAMINFOW* lpInfo, int32 cbInfo) SetInfo;
+			}
 		}
 		[CRepr]
 		public struct IAVIPersistFile : IPersistFile
 		{
 			public const new Guid IID = .(0x00020025, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IAVIPersistFile *self) Reserved1;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IPersistFile.VTable
+			{
+				public function HRESULT(IAVIPersistFile *self) Reserved1;
+			}
 		}
 		[CRepr]
 		public struct IAVIFile : IUnknown
 		{
 			public const new Guid IID = .(0x00020020, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IAVIFile *self, AVIFILEINFOW* pfi, int32 lSize) Info;
-			public function HRESULT(IAVIFile *self, IAVIStream** ppStream, uint32 fccType, int32 lParam) GetStream;
-			public function HRESULT(IAVIFile *self, IAVIStream** ppStream, AVISTREAMINFOW* psi) CreateStream;
-			public function HRESULT(IAVIFile *self, uint32 ckid, void* lpData, int32 cbData) WriteData;
-			public function HRESULT(IAVIFile *self, uint32 ckid, void* lpData, int32* lpcbData) ReadData;
-			public function HRESULT(IAVIFile *self) EndRecord;
-			public function HRESULT(IAVIFile *self, uint32 fccType, int32 lParam) DeleteStream;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAVIFile *self, AVIFILEINFOW* pfi, int32 lSize) Info;
+				public function HRESULT(IAVIFile *self, IAVIStream** ppStream, uint32 fccType, int32 lParam) GetStream;
+				public function HRESULT(IAVIFile *self, IAVIStream** ppStream, AVISTREAMINFOW* psi) CreateStream;
+				public function HRESULT(IAVIFile *self, uint32 ckid, void* lpData, int32 cbData) WriteData;
+				public function HRESULT(IAVIFile *self, uint32 ckid, void* lpData, int32* lpcbData) ReadData;
+				public function HRESULT(IAVIFile *self) EndRecord;
+				public function HRESULT(IAVIFile *self, uint32 fccType, int32 lParam) DeleteStream;
+			}
 		}
 		[CRepr]
 		public struct IGetFrame : IUnknown
 		{
 			public const new Guid IID = .(0x00020023, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function void*(IGetFrame *self, int32 lPos) GetFrame;
-			public function HRESULT(IGetFrame *self, int32 lStart, int32 lEnd, int32 lRate) Begin;
-			public function HRESULT(IGetFrame *self) End;
-			public function HRESULT(IGetFrame *self, BITMAPINFOHEADER* lpbi, void* lpBits, int32 x, int32 y, int32 dx, int32 dy) SetFormat;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function void*(IGetFrame *self, int32 lPos) GetFrame;
+				public function HRESULT(IGetFrame *self, int32 lStart, int32 lEnd, int32 lRate) Begin;
+				public function HRESULT(IGetFrame *self) End;
+				public function HRESULT(IGetFrame *self, BITMAPINFOHEADER* lpbi, void* lpBits, int32 x, int32 y, int32 dx, int32 dy) SetFormat;
+			}
 		}
 		
 		// --- Functions ---

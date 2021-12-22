@@ -1270,985 +1270,1430 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x727cad4e, 0xd6af, 0x4c9e, 0x8a, 0x08, 0xd6, 0x95, 0xb1, 0x1c, 0xaa, 0x49);
 			
-			public function HRESULT(IDWriteFontFileLoader *self, void* fontFileReferenceKey, uint32 fontFileReferenceKeySize, IDWriteFontFileStream** fontFileStream) CreateStreamFromKey;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteFontFileLoader *self, void* fontFileReferenceKey, uint32 fontFileReferenceKeySize, IDWriteFontFileStream** fontFileStream) CreateStreamFromKey;
+			}
 		}
 		[CRepr]
 		public struct IDWriteLocalFontFileLoader : IDWriteFontFileLoader
 		{
 			public const new Guid IID = .(0xb2d9f3ec, 0xc9fe, 0x4a11, 0xa2, 0xec, 0xd8, 0x62, 0x08, 0xf7, 0xc0, 0xa2);
 			
-			public function HRESULT(IDWriteLocalFontFileLoader *self, void* fontFileReferenceKey, uint32 fontFileReferenceKeySize, uint32* filePathLength) GetFilePathLengthFromKey;
-			public function HRESULT(IDWriteLocalFontFileLoader *self, void* fontFileReferenceKey, uint32 fontFileReferenceKeySize, char16* filePath, uint32 filePathSize) GetFilePathFromKey;
-			public function HRESULT(IDWriteLocalFontFileLoader *self, void* fontFileReferenceKey, uint32 fontFileReferenceKeySize, FILETIME* lastWriteTime) GetLastWriteTimeFromKey;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontFileLoader.VTable
+			{
+				public function HRESULT(IDWriteLocalFontFileLoader *self, void* fontFileReferenceKey, uint32 fontFileReferenceKeySize, uint32* filePathLength) GetFilePathLengthFromKey;
+				public function HRESULT(IDWriteLocalFontFileLoader *self, void* fontFileReferenceKey, uint32 fontFileReferenceKeySize, char16* filePath, uint32 filePathSize) GetFilePathFromKey;
+				public function HRESULT(IDWriteLocalFontFileLoader *self, void* fontFileReferenceKey, uint32 fontFileReferenceKeySize, FILETIME* lastWriteTime) GetLastWriteTimeFromKey;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontFileStream : IUnknown
 		{
 			public const new Guid IID = .(0x6d4865fe, 0x0ab8, 0x4d91, 0x8f, 0x62, 0x5d, 0xd6, 0xbe, 0x34, 0xa3, 0xe0);
 			
-			public function HRESULT(IDWriteFontFileStream *self, void** fragmentStart, uint64 fileOffset, uint64 fragmentSize, void** fragmentContext) ReadFileFragment;
-			public function void(IDWriteFontFileStream *self, void* fragmentContext) ReleaseFileFragment;
-			public function HRESULT(IDWriteFontFileStream *self, uint64* fileSize) GetFileSize;
-			public function HRESULT(IDWriteFontFileStream *self, uint64* lastWriteTime) GetLastWriteTime;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteFontFileStream *self, void** fragmentStart, uint64 fileOffset, uint64 fragmentSize, void** fragmentContext) ReadFileFragment;
+				public function void(IDWriteFontFileStream *self, void* fragmentContext) ReleaseFileFragment;
+				public function HRESULT(IDWriteFontFileStream *self, uint64* fileSize) GetFileSize;
+				public function HRESULT(IDWriteFontFileStream *self, uint64* lastWriteTime) GetLastWriteTime;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontFile : IUnknown
 		{
 			public const new Guid IID = .(0x739d886a, 0xcef5, 0x47dc, 0x87, 0x69, 0x1a, 0x8b, 0x41, 0xbe, 0xbb, 0xb0);
 			
-			public function HRESULT(IDWriteFontFile *self, void** fontFileReferenceKey, uint32* fontFileReferenceKeySize) GetReferenceKey;
-			public function HRESULT(IDWriteFontFile *self, IDWriteFontFileLoader** fontFileLoader) GetLoader;
-			public function HRESULT(IDWriteFontFile *self, BOOL* isSupportedFontType, DWRITE_FONT_FILE_TYPE* fontFileType, DWRITE_FONT_FACE_TYPE* fontFaceType, uint32* numberOfFaces) Analyze;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteFontFile *self, void** fontFileReferenceKey, uint32* fontFileReferenceKeySize) GetReferenceKey;
+				public function HRESULT(IDWriteFontFile *self, IDWriteFontFileLoader** fontFileLoader) GetLoader;
+				public function HRESULT(IDWriteFontFile *self, BOOL* isSupportedFontType, DWRITE_FONT_FILE_TYPE* fontFileType, DWRITE_FONT_FACE_TYPE* fontFaceType, uint32* numberOfFaces) Analyze;
+			}
 		}
 		[CRepr]
 		public struct IDWriteRenderingParams : IUnknown
 		{
 			public const new Guid IID = .(0x2f0da53a, 0x2add, 0x47cd, 0x82, 0xee, 0xd9, 0xec, 0x34, 0x68, 0x8e, 0x75);
 			
-			public function float(IDWriteRenderingParams *self) GetGamma;
-			public function float(IDWriteRenderingParams *self) GetEnhancedContrast;
-			public function float(IDWriteRenderingParams *self) GetClearTypeLevel;
-			public function DWRITE_PIXEL_GEOMETRY(IDWriteRenderingParams *self) GetPixelGeometry;
-			public function DWRITE_RENDERING_MODE(IDWriteRenderingParams *self) GetRenderingMode;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function float(IDWriteRenderingParams *self) GetGamma;
+				public function float(IDWriteRenderingParams *self) GetEnhancedContrast;
+				public function float(IDWriteRenderingParams *self) GetClearTypeLevel;
+				public function DWRITE_PIXEL_GEOMETRY(IDWriteRenderingParams *self) GetPixelGeometry;
+				public function DWRITE_RENDERING_MODE(IDWriteRenderingParams *self) GetRenderingMode;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontFace : IUnknown
 		{
 			public const new Guid IID = .(0x5f49804d, 0x7024, 0x4d43, 0xbf, 0xa9, 0xd2, 0x59, 0x84, 0xf5, 0x38, 0x49);
 			
-			public function DWRITE_FONT_FACE_TYPE(IDWriteFontFace *self) GetType;
-			public function HRESULT(IDWriteFontFace *self, uint32* numberOfFiles, IDWriteFontFile** fontFiles) GetFiles;
-			public function uint32(IDWriteFontFace *self) GetIndex;
-			public function DWRITE_FONT_SIMULATIONS(IDWriteFontFace *self) GetSimulations;
-			public function BOOL(IDWriteFontFace *self) IsSymbolFont;
-			public function void(IDWriteFontFace *self, DWRITE_FONT_METRICS* fontFaceMetrics) GetMetrics;
-			public function uint16(IDWriteFontFace *self) GetGlyphCount;
-			public function HRESULT(IDWriteFontFace *self, uint16* glyphIndices, uint32 glyphCount, DWRITE_GLYPH_METRICS* glyphMetrics, BOOL isSideways) GetDesignGlyphMetrics;
-			public function HRESULT(IDWriteFontFace *self, uint32* codePoints, uint32 codePointCount, uint16* glyphIndices) GetGlyphIndices;
-			public function HRESULT(IDWriteFontFace *self, uint32 openTypeTableTag, void** tableData, uint32* tableSize, void** tableContext, BOOL* exists) TryGetFontTable;
-			public function void(IDWriteFontFace *self, void* tableContext) ReleaseFontTable;
-			public function HRESULT(IDWriteFontFace *self, float emSize, uint16* glyphIndices, float* glyphAdvances, DWRITE_GLYPH_OFFSET* glyphOffsets, uint32 glyphCount, BOOL isSideways, BOOL isRightToLeft, ID2D1SimplifiedGeometrySink* geometrySink) GetGlyphRunOutline;
-			public function HRESULT(IDWriteFontFace *self, float emSize, float pixelsPerDip, DWRITE_MEASURING_MODE measuringMode, IDWriteRenderingParams* renderingParams, DWRITE_RENDERING_MODE* renderingMode) GetRecommendedRenderingMode;
-			public function HRESULT(IDWriteFontFace *self, float emSize, float pixelsPerDip, DWRITE_MATRIX* transform, DWRITE_FONT_METRICS* fontFaceMetrics) GetGdiCompatibleMetrics;
-			public function HRESULT(IDWriteFontFace *self, float emSize, float pixelsPerDip, DWRITE_MATRIX* transform, BOOL useGdiNatural, uint16* glyphIndices, uint32 glyphCount, DWRITE_GLYPH_METRICS* glyphMetrics, BOOL isSideways) GetGdiCompatibleGlyphMetrics;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function DWRITE_FONT_FACE_TYPE(IDWriteFontFace *self) GetType;
+				public function HRESULT(IDWriteFontFace *self, uint32* numberOfFiles, IDWriteFontFile** fontFiles) GetFiles;
+				public function uint32(IDWriteFontFace *self) GetIndex;
+				public function DWRITE_FONT_SIMULATIONS(IDWriteFontFace *self) GetSimulations;
+				public function BOOL(IDWriteFontFace *self) IsSymbolFont;
+				public function void(IDWriteFontFace *self, DWRITE_FONT_METRICS* fontFaceMetrics) GetMetrics;
+				public function uint16(IDWriteFontFace *self) GetGlyphCount;
+				public function HRESULT(IDWriteFontFace *self, uint16* glyphIndices, uint32 glyphCount, DWRITE_GLYPH_METRICS* glyphMetrics, BOOL isSideways) GetDesignGlyphMetrics;
+				public function HRESULT(IDWriteFontFace *self, uint32* codePoints, uint32 codePointCount, uint16* glyphIndices) GetGlyphIndices;
+				public function HRESULT(IDWriteFontFace *self, uint32 openTypeTableTag, void** tableData, uint32* tableSize, void** tableContext, BOOL* exists) TryGetFontTable;
+				public function void(IDWriteFontFace *self, void* tableContext) ReleaseFontTable;
+				public function HRESULT(IDWriteFontFace *self, float emSize, uint16* glyphIndices, float* glyphAdvances, DWRITE_GLYPH_OFFSET* glyphOffsets, uint32 glyphCount, BOOL isSideways, BOOL isRightToLeft, ID2D1SimplifiedGeometrySink* geometrySink) GetGlyphRunOutline;
+				public function HRESULT(IDWriteFontFace *self, float emSize, float pixelsPerDip, DWRITE_MEASURING_MODE measuringMode, IDWriteRenderingParams* renderingParams, DWRITE_RENDERING_MODE* renderingMode) GetRecommendedRenderingMode;
+				public function HRESULT(IDWriteFontFace *self, float emSize, float pixelsPerDip, DWRITE_MATRIX* transform, DWRITE_FONT_METRICS* fontFaceMetrics) GetGdiCompatibleMetrics;
+				public function HRESULT(IDWriteFontFace *self, float emSize, float pixelsPerDip, DWRITE_MATRIX* transform, BOOL useGdiNatural, uint16* glyphIndices, uint32 glyphCount, DWRITE_GLYPH_METRICS* glyphMetrics, BOOL isSideways) GetGdiCompatibleGlyphMetrics;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontCollectionLoader : IUnknown
 		{
 			public const new Guid IID = .(0xcca920e4, 0x52f0, 0x492b, 0xbf, 0xa8, 0x29, 0xc7, 0x2e, 0xe0, 0xa4, 0x68);
 			
-			public function HRESULT(IDWriteFontCollectionLoader *self, IDWriteFactory* factory, void* collectionKey, uint32 collectionKeySize, IDWriteFontFileEnumerator** fontFileEnumerator) CreateEnumeratorFromKey;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteFontCollectionLoader *self, IDWriteFactory* factory, void* collectionKey, uint32 collectionKeySize, IDWriteFontFileEnumerator** fontFileEnumerator) CreateEnumeratorFromKey;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontFileEnumerator : IUnknown
 		{
 			public const new Guid IID = .(0x72755049, 0x5ff7, 0x435d, 0x83, 0x48, 0x4b, 0xe9, 0x7c, 0xfa, 0x6c, 0x7c);
 			
-			public function HRESULT(IDWriteFontFileEnumerator *self, BOOL* hasCurrentFile) MoveNext;
-			public function HRESULT(IDWriteFontFileEnumerator *self, IDWriteFontFile** fontFile) GetCurrentFontFile;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteFontFileEnumerator *self, BOOL* hasCurrentFile) MoveNext;
+				public function HRESULT(IDWriteFontFileEnumerator *self, IDWriteFontFile** fontFile) GetCurrentFontFile;
+			}
 		}
 		[CRepr]
 		public struct IDWriteLocalizedStrings : IUnknown
 		{
 			public const new Guid IID = .(0x08256209, 0x099a, 0x4b34, 0xb8, 0x6d, 0xc2, 0x2b, 0x11, 0x0e, 0x77, 0x71);
 			
-			public function uint32(IDWriteLocalizedStrings *self) GetCount;
-			public function HRESULT(IDWriteLocalizedStrings *self, PWSTR localeName, uint32* index, BOOL* exists) FindLocaleName;
-			public function HRESULT(IDWriteLocalizedStrings *self, uint32 index, uint32* length) GetLocaleNameLength;
-			public function HRESULT(IDWriteLocalizedStrings *self, uint32 index, char16* localeName, uint32 size) GetLocaleName;
-			public function HRESULT(IDWriteLocalizedStrings *self, uint32 index, uint32* length) GetStringLength;
-			public function HRESULT(IDWriteLocalizedStrings *self, uint32 index, char16* stringBuffer, uint32 size) GetString;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function uint32(IDWriteLocalizedStrings *self) GetCount;
+				public function HRESULT(IDWriteLocalizedStrings *self, PWSTR localeName, uint32* index, BOOL* exists) FindLocaleName;
+				public function HRESULT(IDWriteLocalizedStrings *self, uint32 index, uint32* length) GetLocaleNameLength;
+				public function HRESULT(IDWriteLocalizedStrings *self, uint32 index, char16* localeName, uint32 size) GetLocaleName;
+				public function HRESULT(IDWriteLocalizedStrings *self, uint32 index, uint32* length) GetStringLength;
+				public function HRESULT(IDWriteLocalizedStrings *self, uint32 index, char16* stringBuffer, uint32 size) GetString;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontCollection : IUnknown
 		{
 			public const new Guid IID = .(0xa84cee02, 0x3eea, 0x4eee, 0xa8, 0x27, 0x87, 0xc1, 0xa0, 0x2a, 0x0f, 0xcc);
 			
-			public function uint32(IDWriteFontCollection *self) GetFontFamilyCount;
-			public function HRESULT(IDWriteFontCollection *self, uint32 index, IDWriteFontFamily** fontFamily) GetFontFamily;
-			public function HRESULT(IDWriteFontCollection *self, PWSTR familyName, uint32* index, BOOL* exists) FindFamilyName;
-			public function HRESULT(IDWriteFontCollection *self, IDWriteFontFace* fontFace, IDWriteFont** font) GetFontFromFontFace;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function uint32(IDWriteFontCollection *self) GetFontFamilyCount;
+				public function HRESULT(IDWriteFontCollection *self, uint32 index, IDWriteFontFamily** fontFamily) GetFontFamily;
+				public function HRESULT(IDWriteFontCollection *self, PWSTR familyName, uint32* index, BOOL* exists) FindFamilyName;
+				public function HRESULT(IDWriteFontCollection *self, IDWriteFontFace* fontFace, IDWriteFont** font) GetFontFromFontFace;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontList : IUnknown
 		{
 			public const new Guid IID = .(0x1a0d8438, 0x1d97, 0x4ec1, 0xae, 0xf9, 0xa2, 0xfb, 0x86, 0xed, 0x6a, 0xcb);
 			
-			public function HRESULT(IDWriteFontList *self, IDWriteFontCollection** fontCollection) GetFontCollection;
-			public function uint32(IDWriteFontList *self) GetFontCount;
-			public function HRESULT(IDWriteFontList *self, uint32 index, IDWriteFont** font) GetFont;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteFontList *self, IDWriteFontCollection** fontCollection) GetFontCollection;
+				public function uint32(IDWriteFontList *self) GetFontCount;
+				public function HRESULT(IDWriteFontList *self, uint32 index, IDWriteFont** font) GetFont;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontFamily : IDWriteFontList
 		{
 			public const new Guid IID = .(0xda20d8ef, 0x812a, 0x4c43, 0x98, 0x02, 0x62, 0xec, 0x4a, 0xbd, 0x7a, 0xdd);
 			
-			public function HRESULT(IDWriteFontFamily *self, IDWriteLocalizedStrings** names) GetFamilyNames;
-			public function HRESULT(IDWriteFontFamily *self, DWRITE_FONT_WEIGHT weight, DWRITE_FONT_STRETCH stretch, DWRITE_FONT_STYLE style, IDWriteFont** matchingFont) GetFirstMatchingFont;
-			public function HRESULT(IDWriteFontFamily *self, DWRITE_FONT_WEIGHT weight, DWRITE_FONT_STRETCH stretch, DWRITE_FONT_STYLE style, IDWriteFontList** matchingFonts) GetMatchingFonts;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontList.VTable
+			{
+				public function HRESULT(IDWriteFontFamily *self, IDWriteLocalizedStrings** names) GetFamilyNames;
+				public function HRESULT(IDWriteFontFamily *self, DWRITE_FONT_WEIGHT weight, DWRITE_FONT_STRETCH stretch, DWRITE_FONT_STYLE style, IDWriteFont** matchingFont) GetFirstMatchingFont;
+				public function HRESULT(IDWriteFontFamily *self, DWRITE_FONT_WEIGHT weight, DWRITE_FONT_STRETCH stretch, DWRITE_FONT_STYLE style, IDWriteFontList** matchingFonts) GetMatchingFonts;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFont : IUnknown
 		{
 			public const new Guid IID = .(0xacd16696, 0x8c14, 0x4f5d, 0x87, 0x7e, 0xfe, 0x3f, 0xc1, 0xd3, 0x27, 0x37);
 			
-			public function HRESULT(IDWriteFont *self, IDWriteFontFamily** fontFamily) GetFontFamily;
-			public function DWRITE_FONT_WEIGHT(IDWriteFont *self) GetWeight;
-			public function DWRITE_FONT_STRETCH(IDWriteFont *self) GetStretch;
-			public function DWRITE_FONT_STYLE(IDWriteFont *self) GetStyle;
-			public function BOOL(IDWriteFont *self) IsSymbolFont;
-			public function HRESULT(IDWriteFont *self, IDWriteLocalizedStrings** names) GetFaceNames;
-			public function HRESULT(IDWriteFont *self, DWRITE_INFORMATIONAL_STRING_ID informationalStringID, IDWriteLocalizedStrings** informationalStrings, BOOL* exists) GetInformationalStrings;
-			public function DWRITE_FONT_SIMULATIONS(IDWriteFont *self) GetSimulations;
-			public function void(IDWriteFont *self, DWRITE_FONT_METRICS* fontMetrics) GetMetrics;
-			public function HRESULT(IDWriteFont *self, uint32 unicodeValue, BOOL* exists) HasCharacter;
-			public function HRESULT(IDWriteFont *self, IDWriteFontFace** fontFace) CreateFontFace;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteFont *self, IDWriteFontFamily** fontFamily) GetFontFamily;
+				public function DWRITE_FONT_WEIGHT(IDWriteFont *self) GetWeight;
+				public function DWRITE_FONT_STRETCH(IDWriteFont *self) GetStretch;
+				public function DWRITE_FONT_STYLE(IDWriteFont *self) GetStyle;
+				public function BOOL(IDWriteFont *self) IsSymbolFont;
+				public function HRESULT(IDWriteFont *self, IDWriteLocalizedStrings** names) GetFaceNames;
+				public function HRESULT(IDWriteFont *self, DWRITE_INFORMATIONAL_STRING_ID informationalStringID, IDWriteLocalizedStrings** informationalStrings, BOOL* exists) GetInformationalStrings;
+				public function DWRITE_FONT_SIMULATIONS(IDWriteFont *self) GetSimulations;
+				public function void(IDWriteFont *self, DWRITE_FONT_METRICS* fontMetrics) GetMetrics;
+				public function HRESULT(IDWriteFont *self, uint32 unicodeValue, BOOL* exists) HasCharacter;
+				public function HRESULT(IDWriteFont *self, IDWriteFontFace** fontFace) CreateFontFace;
+			}
 		}
 		[CRepr]
 		public struct IDWriteTextFormat : IUnknown
 		{
 			public const new Guid IID = .(0x9c906818, 0x31d7, 0x4fd3, 0xa1, 0x51, 0x7c, 0x5e, 0x22, 0x5d, 0xb5, 0x5a);
 			
-			public function HRESULT(IDWriteTextFormat *self, DWRITE_TEXT_ALIGNMENT textAlignment) SetTextAlignment;
-			public function HRESULT(IDWriteTextFormat *self, DWRITE_PARAGRAPH_ALIGNMENT paragraphAlignment) SetParagraphAlignment;
-			public function HRESULT(IDWriteTextFormat *self, DWRITE_WORD_WRAPPING wordWrapping) SetWordWrapping;
-			public function HRESULT(IDWriteTextFormat *self, DWRITE_READING_DIRECTION readingDirection) SetReadingDirection;
-			public function HRESULT(IDWriteTextFormat *self, DWRITE_FLOW_DIRECTION flowDirection) SetFlowDirection;
-			public function HRESULT(IDWriteTextFormat *self, float incrementalTabStop) SetIncrementalTabStop;
-			public function HRESULT(IDWriteTextFormat *self, DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject* trimmingSign) SetTrimming;
-			public function HRESULT(IDWriteTextFormat *self, DWRITE_LINE_SPACING_METHOD lineSpacingMethod, float lineSpacing, float baseline) SetLineSpacing;
-			public function DWRITE_TEXT_ALIGNMENT(IDWriteTextFormat *self) GetTextAlignment;
-			public function DWRITE_PARAGRAPH_ALIGNMENT(IDWriteTextFormat *self) GetParagraphAlignment;
-			public function DWRITE_WORD_WRAPPING(IDWriteTextFormat *self) GetWordWrapping;
-			public function DWRITE_READING_DIRECTION(IDWriteTextFormat *self) GetReadingDirection;
-			public function DWRITE_FLOW_DIRECTION(IDWriteTextFormat *self) GetFlowDirection;
-			public function float(IDWriteTextFormat *self) GetIncrementalTabStop;
-			public function HRESULT(IDWriteTextFormat *self, DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject** trimmingSign) GetTrimming;
-			public function HRESULT(IDWriteTextFormat *self, DWRITE_LINE_SPACING_METHOD* lineSpacingMethod, float* lineSpacing, float* baseline) GetLineSpacing;
-			public function HRESULT(IDWriteTextFormat *self, IDWriteFontCollection** fontCollection) GetFontCollection;
-			public function uint32(IDWriteTextFormat *self) GetFontFamilyNameLength;
-			public function HRESULT(IDWriteTextFormat *self, char16* fontFamilyName, uint32 nameSize) GetFontFamilyName;
-			public function DWRITE_FONT_WEIGHT(IDWriteTextFormat *self) GetFontWeight;
-			public function DWRITE_FONT_STYLE(IDWriteTextFormat *self) GetFontStyle;
-			public function DWRITE_FONT_STRETCH(IDWriteTextFormat *self) GetFontStretch;
-			public function float(IDWriteTextFormat *self) GetFontSize;
-			public function uint32(IDWriteTextFormat *self) GetLocaleNameLength;
-			public function HRESULT(IDWriteTextFormat *self, char16* localeName, uint32 nameSize) GetLocaleName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteTextFormat *self, DWRITE_TEXT_ALIGNMENT textAlignment) SetTextAlignment;
+				public function HRESULT(IDWriteTextFormat *self, DWRITE_PARAGRAPH_ALIGNMENT paragraphAlignment) SetParagraphAlignment;
+				public function HRESULT(IDWriteTextFormat *self, DWRITE_WORD_WRAPPING wordWrapping) SetWordWrapping;
+				public function HRESULT(IDWriteTextFormat *self, DWRITE_READING_DIRECTION readingDirection) SetReadingDirection;
+				public function HRESULT(IDWriteTextFormat *self, DWRITE_FLOW_DIRECTION flowDirection) SetFlowDirection;
+				public function HRESULT(IDWriteTextFormat *self, float incrementalTabStop) SetIncrementalTabStop;
+				public function HRESULT(IDWriteTextFormat *self, DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject* trimmingSign) SetTrimming;
+				public function HRESULT(IDWriteTextFormat *self, DWRITE_LINE_SPACING_METHOD lineSpacingMethod, float lineSpacing, float baseline) SetLineSpacing;
+				public function DWRITE_TEXT_ALIGNMENT(IDWriteTextFormat *self) GetTextAlignment;
+				public function DWRITE_PARAGRAPH_ALIGNMENT(IDWriteTextFormat *self) GetParagraphAlignment;
+				public function DWRITE_WORD_WRAPPING(IDWriteTextFormat *self) GetWordWrapping;
+				public function DWRITE_READING_DIRECTION(IDWriteTextFormat *self) GetReadingDirection;
+				public function DWRITE_FLOW_DIRECTION(IDWriteTextFormat *self) GetFlowDirection;
+				public function float(IDWriteTextFormat *self) GetIncrementalTabStop;
+				public function HRESULT(IDWriteTextFormat *self, DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject** trimmingSign) GetTrimming;
+				public function HRESULT(IDWriteTextFormat *self, DWRITE_LINE_SPACING_METHOD* lineSpacingMethod, float* lineSpacing, float* baseline) GetLineSpacing;
+				public function HRESULT(IDWriteTextFormat *self, IDWriteFontCollection** fontCollection) GetFontCollection;
+				public function uint32(IDWriteTextFormat *self) GetFontFamilyNameLength;
+				public function HRESULT(IDWriteTextFormat *self, char16* fontFamilyName, uint32 nameSize) GetFontFamilyName;
+				public function DWRITE_FONT_WEIGHT(IDWriteTextFormat *self) GetFontWeight;
+				public function DWRITE_FONT_STYLE(IDWriteTextFormat *self) GetFontStyle;
+				public function DWRITE_FONT_STRETCH(IDWriteTextFormat *self) GetFontStretch;
+				public function float(IDWriteTextFormat *self) GetFontSize;
+				public function uint32(IDWriteTextFormat *self) GetLocaleNameLength;
+				public function HRESULT(IDWriteTextFormat *self, char16* localeName, uint32 nameSize) GetLocaleName;
+			}
 		}
 		[CRepr]
 		public struct IDWriteTypography : IUnknown
 		{
 			public const new Guid IID = .(0x55f1112b, 0x1dc2, 0x4b3c, 0x95, 0x41, 0xf4, 0x68, 0x94, 0xed, 0x85, 0xb6);
 			
-			public function HRESULT(IDWriteTypography *self, DWRITE_FONT_FEATURE fontFeature) AddFontFeature;
-			public function uint32(IDWriteTypography *self) GetFontFeatureCount;
-			public function HRESULT(IDWriteTypography *self, uint32 fontFeatureIndex, DWRITE_FONT_FEATURE* fontFeature) GetFontFeature;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteTypography *self, DWRITE_FONT_FEATURE fontFeature) AddFontFeature;
+				public function uint32(IDWriteTypography *self) GetFontFeatureCount;
+				public function HRESULT(IDWriteTypography *self, uint32 fontFeatureIndex, DWRITE_FONT_FEATURE* fontFeature) GetFontFeature;
+			}
 		}
 		[CRepr]
 		public struct IDWriteNumberSubstitution : IUnknown
 		{
 			public const new Guid IID = .(0x14885cc9, 0xbab0, 0x4f90, 0xb6, 0xed, 0x5c, 0x36, 0x6a, 0x2c, 0xd0, 0x3d);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IDWriteTextAnalysisSource : IUnknown
 		{
 			public const new Guid IID = .(0x688e1a58, 0x5094, 0x47c8, 0xad, 0xc8, 0xfb, 0xce, 0xa6, 0x0a, 0xe9, 0x2b);
 			
-			public function HRESULT(IDWriteTextAnalysisSource *self, uint32 textPosition, uint16** textString, uint32* textLength) GetTextAtPosition;
-			public function HRESULT(IDWriteTextAnalysisSource *self, uint32 textPosition, uint16** textString, uint32* textLength) GetTextBeforePosition;
-			public function DWRITE_READING_DIRECTION(IDWriteTextAnalysisSource *self) GetParagraphReadingDirection;
-			public function HRESULT(IDWriteTextAnalysisSource *self, uint32 textPosition, uint32* textLength, uint16** localeName) GetLocaleName;
-			public function HRESULT(IDWriteTextAnalysisSource *self, uint32 textPosition, uint32* textLength, IDWriteNumberSubstitution** numberSubstitution) GetNumberSubstitution;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteTextAnalysisSource *self, uint32 textPosition, uint16** textString, uint32* textLength) GetTextAtPosition;
+				public function HRESULT(IDWriteTextAnalysisSource *self, uint32 textPosition, uint16** textString, uint32* textLength) GetTextBeforePosition;
+				public function DWRITE_READING_DIRECTION(IDWriteTextAnalysisSource *self) GetParagraphReadingDirection;
+				public function HRESULT(IDWriteTextAnalysisSource *self, uint32 textPosition, uint32* textLength, uint16** localeName) GetLocaleName;
+				public function HRESULT(IDWriteTextAnalysisSource *self, uint32 textPosition, uint32* textLength, IDWriteNumberSubstitution** numberSubstitution) GetNumberSubstitution;
+			}
 		}
 		[CRepr]
 		public struct IDWriteTextAnalysisSink : IUnknown
 		{
 			public const new Guid IID = .(0x5810cd44, 0x0ca0, 0x4701, 0xb3, 0xfa, 0xbe, 0xc5, 0x18, 0x2a, 0xe4, 0xf6);
 			
-			public function HRESULT(IDWriteTextAnalysisSink *self, uint32 textPosition, uint32 textLength, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis) SetScriptAnalysis;
-			public function HRESULT(IDWriteTextAnalysisSink *self, uint32 textPosition, uint32 textLength, DWRITE_LINE_BREAKPOINT* lineBreakpoints) SetLineBreakpoints;
-			public function HRESULT(IDWriteTextAnalysisSink *self, uint32 textPosition, uint32 textLength, uint8 explicitLevel, uint8 resolvedLevel) SetBidiLevel;
-			public function HRESULT(IDWriteTextAnalysisSink *self, uint32 textPosition, uint32 textLength, IDWriteNumberSubstitution* numberSubstitution) SetNumberSubstitution;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteTextAnalysisSink *self, uint32 textPosition, uint32 textLength, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis) SetScriptAnalysis;
+				public function HRESULT(IDWriteTextAnalysisSink *self, uint32 textPosition, uint32 textLength, DWRITE_LINE_BREAKPOINT* lineBreakpoints) SetLineBreakpoints;
+				public function HRESULT(IDWriteTextAnalysisSink *self, uint32 textPosition, uint32 textLength, uint8 explicitLevel, uint8 resolvedLevel) SetBidiLevel;
+				public function HRESULT(IDWriteTextAnalysisSink *self, uint32 textPosition, uint32 textLength, IDWriteNumberSubstitution* numberSubstitution) SetNumberSubstitution;
+			}
 		}
 		[CRepr]
 		public struct IDWriteTextAnalyzer : IUnknown
 		{
 			public const new Guid IID = .(0xb7e6163e, 0x7f46, 0x43b4, 0x84, 0xb3, 0xe4, 0xe6, 0x24, 0x9c, 0x36, 0x5d);
 			
-			public function HRESULT(IDWriteTextAnalyzer *self, IDWriteTextAnalysisSource* analysisSource, uint32 textPosition, uint32 textLength, IDWriteTextAnalysisSink* analysisSink) AnalyzeScript;
-			public function HRESULT(IDWriteTextAnalyzer *self, IDWriteTextAnalysisSource* analysisSource, uint32 textPosition, uint32 textLength, IDWriteTextAnalysisSink* analysisSink) AnalyzeBidi;
-			public function HRESULT(IDWriteTextAnalyzer *self, IDWriteTextAnalysisSource* analysisSource, uint32 textPosition, uint32 textLength, IDWriteTextAnalysisSink* analysisSink) AnalyzeNumberSubstitution;
-			public function HRESULT(IDWriteTextAnalyzer *self, IDWriteTextAnalysisSource* analysisSource, uint32 textPosition, uint32 textLength, IDWriteTextAnalysisSink* analysisSink) AnalyzeLineBreakpoints;
-			public function HRESULT(IDWriteTextAnalyzer *self, char16* textString, uint32 textLength, IDWriteFontFace* fontFace, BOOL isSideways, BOOL isRightToLeft, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis, PWSTR localeName, IDWriteNumberSubstitution* numberSubstitution, DWRITE_TYPOGRAPHIC_FEATURES** features, uint32* featureRangeLengths, uint32 featureRanges, uint32 maxGlyphCount, uint16* clusterMap, DWRITE_SHAPING_TEXT_PROPERTIES* textProps, uint16* glyphIndices, DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps, uint32* actualGlyphCount) GetGlyphs;
-			public function HRESULT(IDWriteTextAnalyzer *self, char16* textString, uint16* clusterMap, DWRITE_SHAPING_TEXT_PROPERTIES* textProps, uint32 textLength, uint16* glyphIndices, DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps, uint32 glyphCount, IDWriteFontFace* fontFace, float fontEmSize, BOOL isSideways, BOOL isRightToLeft, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis, PWSTR localeName, DWRITE_TYPOGRAPHIC_FEATURES** features, uint32* featureRangeLengths, uint32 featureRanges, float* glyphAdvances, DWRITE_GLYPH_OFFSET* glyphOffsets) GetGlyphPlacements;
-			public function HRESULT(IDWriteTextAnalyzer *self, char16* textString, uint16* clusterMap, DWRITE_SHAPING_TEXT_PROPERTIES* textProps, uint32 textLength, uint16* glyphIndices, DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps, uint32 glyphCount, IDWriteFontFace* fontFace, float fontEmSize, float pixelsPerDip, DWRITE_MATRIX* transform, BOOL useGdiNatural, BOOL isSideways, BOOL isRightToLeft, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis, PWSTR localeName, DWRITE_TYPOGRAPHIC_FEATURES** features, uint32* featureRangeLengths, uint32 featureRanges, float* glyphAdvances, DWRITE_GLYPH_OFFSET* glyphOffsets) GetGdiCompatibleGlyphPlacements;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteTextAnalyzer *self, IDWriteTextAnalysisSource* analysisSource, uint32 textPosition, uint32 textLength, IDWriteTextAnalysisSink* analysisSink) AnalyzeScript;
+				public function HRESULT(IDWriteTextAnalyzer *self, IDWriteTextAnalysisSource* analysisSource, uint32 textPosition, uint32 textLength, IDWriteTextAnalysisSink* analysisSink) AnalyzeBidi;
+				public function HRESULT(IDWriteTextAnalyzer *self, IDWriteTextAnalysisSource* analysisSource, uint32 textPosition, uint32 textLength, IDWriteTextAnalysisSink* analysisSink) AnalyzeNumberSubstitution;
+				public function HRESULT(IDWriteTextAnalyzer *self, IDWriteTextAnalysisSource* analysisSource, uint32 textPosition, uint32 textLength, IDWriteTextAnalysisSink* analysisSink) AnalyzeLineBreakpoints;
+				public function HRESULT(IDWriteTextAnalyzer *self, char16* textString, uint32 textLength, IDWriteFontFace* fontFace, BOOL isSideways, BOOL isRightToLeft, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis, PWSTR localeName, IDWriteNumberSubstitution* numberSubstitution, DWRITE_TYPOGRAPHIC_FEATURES** features, uint32* featureRangeLengths, uint32 featureRanges, uint32 maxGlyphCount, uint16* clusterMap, DWRITE_SHAPING_TEXT_PROPERTIES* textProps, uint16* glyphIndices, DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps, uint32* actualGlyphCount) GetGlyphs;
+				public function HRESULT(IDWriteTextAnalyzer *self, char16* textString, uint16* clusterMap, DWRITE_SHAPING_TEXT_PROPERTIES* textProps, uint32 textLength, uint16* glyphIndices, DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps, uint32 glyphCount, IDWriteFontFace* fontFace, float fontEmSize, BOOL isSideways, BOOL isRightToLeft, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis, PWSTR localeName, DWRITE_TYPOGRAPHIC_FEATURES** features, uint32* featureRangeLengths, uint32 featureRanges, float* glyphAdvances, DWRITE_GLYPH_OFFSET* glyphOffsets) GetGlyphPlacements;
+				public function HRESULT(IDWriteTextAnalyzer *self, char16* textString, uint16* clusterMap, DWRITE_SHAPING_TEXT_PROPERTIES* textProps, uint32 textLength, uint16* glyphIndices, DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps, uint32 glyphCount, IDWriteFontFace* fontFace, float fontEmSize, float pixelsPerDip, DWRITE_MATRIX* transform, BOOL useGdiNatural, BOOL isSideways, BOOL isRightToLeft, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis, PWSTR localeName, DWRITE_TYPOGRAPHIC_FEATURES** features, uint32* featureRangeLengths, uint32 featureRanges, float* glyphAdvances, DWRITE_GLYPH_OFFSET* glyphOffsets) GetGdiCompatibleGlyphPlacements;
+			}
 		}
 		[CRepr]
 		public struct IDWriteInlineObject : IUnknown
 		{
 			public const new Guid IID = .(0x8339fde3, 0x106f, 0x47ab, 0x83, 0x73, 0x1c, 0x62, 0x95, 0xeb, 0x10, 0xb3);
 			
-			public function HRESULT(IDWriteInlineObject *self, void* clientDrawingContext, IDWriteTextRenderer* renderer, float originX, float originY, BOOL isSideways, BOOL isRightToLeft, IUnknown* clientDrawingEffect) Draw;
-			public function HRESULT(IDWriteInlineObject *self, DWRITE_INLINE_OBJECT_METRICS* metrics) GetMetrics;
-			public function HRESULT(IDWriteInlineObject *self, DWRITE_OVERHANG_METRICS* overhangs) GetOverhangMetrics;
-			public function HRESULT(IDWriteInlineObject *self, DWRITE_BREAK_CONDITION* breakConditionBefore, DWRITE_BREAK_CONDITION* breakConditionAfter) GetBreakConditions;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteInlineObject *self, void* clientDrawingContext, IDWriteTextRenderer* renderer, float originX, float originY, BOOL isSideways, BOOL isRightToLeft, IUnknown* clientDrawingEffect) Draw;
+				public function HRESULT(IDWriteInlineObject *self, DWRITE_INLINE_OBJECT_METRICS* metrics) GetMetrics;
+				public function HRESULT(IDWriteInlineObject *self, DWRITE_OVERHANG_METRICS* overhangs) GetOverhangMetrics;
+				public function HRESULT(IDWriteInlineObject *self, DWRITE_BREAK_CONDITION* breakConditionBefore, DWRITE_BREAK_CONDITION* breakConditionAfter) GetBreakConditions;
+			}
 		}
 		[CRepr]
 		public struct IDWritePixelSnapping : IUnknown
 		{
 			public const new Guid IID = .(0xeaf3a2da, 0xecf4, 0x4d24, 0xb6, 0x44, 0xb3, 0x4f, 0x68, 0x42, 0x02, 0x4b);
 			
-			public function HRESULT(IDWritePixelSnapping *self, void* clientDrawingContext, BOOL* isDisabled) IsPixelSnappingDisabled;
-			public function HRESULT(IDWritePixelSnapping *self, void* clientDrawingContext, DWRITE_MATRIX* transform) GetCurrentTransform;
-			public function HRESULT(IDWritePixelSnapping *self, void* clientDrawingContext, float* pixelsPerDip) GetPixelsPerDip;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWritePixelSnapping *self, void* clientDrawingContext, BOOL* isDisabled) IsPixelSnappingDisabled;
+				public function HRESULT(IDWritePixelSnapping *self, void* clientDrawingContext, DWRITE_MATRIX* transform) GetCurrentTransform;
+				public function HRESULT(IDWritePixelSnapping *self, void* clientDrawingContext, float* pixelsPerDip) GetPixelsPerDip;
+			}
 		}
 		[CRepr]
 		public struct IDWriteTextRenderer : IDWritePixelSnapping
 		{
 			public const new Guid IID = .(0xef8a8135, 0x5cc6, 0x45fe, 0x88, 0x25, 0xc5, 0xa0, 0x72, 0x4e, 0xb8, 0x19);
 			
-			public function HRESULT(IDWriteTextRenderer *self, void* clientDrawingContext, float baselineOriginX, float baselineOriginY, DWRITE_MEASURING_MODE measuringMode, DWRITE_GLYPH_RUN* glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, IUnknown* clientDrawingEffect) DrawGlyphRun;
-			public function HRESULT(IDWriteTextRenderer *self, void* clientDrawingContext, float baselineOriginX, float baselineOriginY, DWRITE_UNDERLINE* underline, IUnknown* clientDrawingEffect) DrawUnderline;
-			public function HRESULT(IDWriteTextRenderer *self, void* clientDrawingContext, float baselineOriginX, float baselineOriginY, DWRITE_STRIKETHROUGH* strikethrough, IUnknown* clientDrawingEffect) DrawStrikethrough;
-			public function HRESULT(IDWriteTextRenderer *self, void* clientDrawingContext, float originX, float originY, IDWriteInlineObject* inlineObject, BOOL isSideways, BOOL isRightToLeft, IUnknown* clientDrawingEffect) DrawInlineObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWritePixelSnapping.VTable
+			{
+				public function HRESULT(IDWriteTextRenderer *self, void* clientDrawingContext, float baselineOriginX, float baselineOriginY, DWRITE_MEASURING_MODE measuringMode, DWRITE_GLYPH_RUN* glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, IUnknown* clientDrawingEffect) DrawGlyphRun;
+				public function HRESULT(IDWriteTextRenderer *self, void* clientDrawingContext, float baselineOriginX, float baselineOriginY, DWRITE_UNDERLINE* underline, IUnknown* clientDrawingEffect) DrawUnderline;
+				public function HRESULT(IDWriteTextRenderer *self, void* clientDrawingContext, float baselineOriginX, float baselineOriginY, DWRITE_STRIKETHROUGH* strikethrough, IUnknown* clientDrawingEffect) DrawStrikethrough;
+				public function HRESULT(IDWriteTextRenderer *self, void* clientDrawingContext, float originX, float originY, IDWriteInlineObject* inlineObject, BOOL isSideways, BOOL isRightToLeft, IUnknown* clientDrawingEffect) DrawInlineObject;
+			}
 		}
 		[CRepr]
 		public struct IDWriteTextLayout : IDWriteTextFormat
 		{
 			public const new Guid IID = .(0x53737037, 0x6d14, 0x410b, 0x9b, 0xfe, 0x0b, 0x18, 0x2b, 0xb7, 0x09, 0x61);
 			
-			public function HRESULT(IDWriteTextLayout *self, float maxWidth) SetMaxWidth;
-			public function HRESULT(IDWriteTextLayout *self, float maxHeight) SetMaxHeight;
-			public function HRESULT(IDWriteTextLayout *self, IDWriteFontCollection* fontCollection, DWRITE_TEXT_RANGE textRange) SetFontCollection;
-			public function HRESULT(IDWriteTextLayout *self, PWSTR fontFamilyName, DWRITE_TEXT_RANGE textRange) SetFontFamilyName;
-			public function HRESULT(IDWriteTextLayout *self, DWRITE_FONT_WEIGHT fontWeight, DWRITE_TEXT_RANGE textRange) SetFontWeight;
-			public function HRESULT(IDWriteTextLayout *self, DWRITE_FONT_STYLE fontStyle, DWRITE_TEXT_RANGE textRange) SetFontStyle;
-			public function HRESULT(IDWriteTextLayout *self, DWRITE_FONT_STRETCH fontStretch, DWRITE_TEXT_RANGE textRange) SetFontStretch;
-			public function HRESULT(IDWriteTextLayout *self, float fontSize, DWRITE_TEXT_RANGE textRange) SetFontSize;
-			public function HRESULT(IDWriteTextLayout *self, BOOL hasUnderline, DWRITE_TEXT_RANGE textRange) SetUnderline;
-			public function HRESULT(IDWriteTextLayout *self, BOOL hasStrikethrough, DWRITE_TEXT_RANGE textRange) SetStrikethrough;
-			public function HRESULT(IDWriteTextLayout *self, IUnknown* drawingEffect, DWRITE_TEXT_RANGE textRange) SetDrawingEffect;
-			public function HRESULT(IDWriteTextLayout *self, IDWriteInlineObject* inlineObject, DWRITE_TEXT_RANGE textRange) SetInlineObject;
-			public function HRESULT(IDWriteTextLayout *self, IDWriteTypography* typography, DWRITE_TEXT_RANGE textRange) SetTypography;
-			public function HRESULT(IDWriteTextLayout *self, PWSTR localeName, DWRITE_TEXT_RANGE textRange) SetLocaleName;
-			public function float(IDWriteTextLayout *self) GetMaxWidth;
-			public function float(IDWriteTextLayout *self) GetMaxHeight;
-			public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, IDWriteFontCollection** fontCollection, DWRITE_TEXT_RANGE* textRange) GetFontCollection;
-			public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, uint32* nameLength, DWRITE_TEXT_RANGE* textRange) GetFontFamilyNameLength;
-			public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, char16* fontFamilyName, uint32 nameSize, DWRITE_TEXT_RANGE* textRange) GetFontFamilyName;
-			public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, DWRITE_FONT_WEIGHT* fontWeight, DWRITE_TEXT_RANGE* textRange) GetFontWeight;
-			public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, DWRITE_FONT_STYLE* fontStyle, DWRITE_TEXT_RANGE* textRange) GetFontStyle;
-			public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, DWRITE_FONT_STRETCH* fontStretch, DWRITE_TEXT_RANGE* textRange) GetFontStretch;
-			public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, float* fontSize, DWRITE_TEXT_RANGE* textRange) GetFontSize;
-			public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, BOOL* hasUnderline, DWRITE_TEXT_RANGE* textRange) GetUnderline;
-			public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, BOOL* hasStrikethrough, DWRITE_TEXT_RANGE* textRange) GetStrikethrough;
-			public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, IUnknown** drawingEffect, DWRITE_TEXT_RANGE* textRange) GetDrawingEffect;
-			public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, IDWriteInlineObject** inlineObject, DWRITE_TEXT_RANGE* textRange) GetInlineObject;
-			public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, IDWriteTypography** typography, DWRITE_TEXT_RANGE* textRange) GetTypography;
-			public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, uint32* nameLength, DWRITE_TEXT_RANGE* textRange) GetLocaleNameLength;
-			public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, char16* localeName, uint32 nameSize, DWRITE_TEXT_RANGE* textRange) GetLocaleName;
-			public function HRESULT(IDWriteTextLayout *self, void* clientDrawingContext, IDWriteTextRenderer* renderer, float originX, float originY) Draw;
-			public function HRESULT(IDWriteTextLayout *self, DWRITE_LINE_METRICS* lineMetrics, uint32 maxLineCount, uint32* actualLineCount) GetLineMetrics;
-			public function HRESULT(IDWriteTextLayout *self, DWRITE_TEXT_METRICS* textMetrics) GetMetrics;
-			public function HRESULT(IDWriteTextLayout *self, DWRITE_OVERHANG_METRICS* overhangs) GetOverhangMetrics;
-			public function HRESULT(IDWriteTextLayout *self, DWRITE_CLUSTER_METRICS* clusterMetrics, uint32 maxClusterCount, uint32* actualClusterCount) GetClusterMetrics;
-			public function HRESULT(IDWriteTextLayout *self, float* minWidth) DetermineMinWidth;
-			public function HRESULT(IDWriteTextLayout *self, float pointX, float pointY, BOOL* isTrailingHit, BOOL* isInside, DWRITE_HIT_TEST_METRICS* hitTestMetrics) HitTestPoint;
-			public function HRESULT(IDWriteTextLayout *self, uint32 textPosition, BOOL isTrailingHit, float* pointX, float* pointY, DWRITE_HIT_TEST_METRICS* hitTestMetrics) HitTestTextPosition;
-			public function HRESULT(IDWriteTextLayout *self, uint32 textPosition, uint32 textLength, float originX, float originY, DWRITE_HIT_TEST_METRICS* hitTestMetrics, uint32 maxHitTestMetricsCount, uint32* actualHitTestMetricsCount) HitTestTextRange;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteTextFormat.VTable
+			{
+				public function HRESULT(IDWriteTextLayout *self, float maxWidth) SetMaxWidth;
+				public function HRESULT(IDWriteTextLayout *self, float maxHeight) SetMaxHeight;
+				public function HRESULT(IDWriteTextLayout *self, IDWriteFontCollection* fontCollection, DWRITE_TEXT_RANGE textRange) SetFontCollection;
+				public function HRESULT(IDWriteTextLayout *self, PWSTR fontFamilyName, DWRITE_TEXT_RANGE textRange) SetFontFamilyName;
+				public function HRESULT(IDWriteTextLayout *self, DWRITE_FONT_WEIGHT fontWeight, DWRITE_TEXT_RANGE textRange) SetFontWeight;
+				public function HRESULT(IDWriteTextLayout *self, DWRITE_FONT_STYLE fontStyle, DWRITE_TEXT_RANGE textRange) SetFontStyle;
+				public function HRESULT(IDWriteTextLayout *self, DWRITE_FONT_STRETCH fontStretch, DWRITE_TEXT_RANGE textRange) SetFontStretch;
+				public function HRESULT(IDWriteTextLayout *self, float fontSize, DWRITE_TEXT_RANGE textRange) SetFontSize;
+				public function HRESULT(IDWriteTextLayout *self, BOOL hasUnderline, DWRITE_TEXT_RANGE textRange) SetUnderline;
+				public function HRESULT(IDWriteTextLayout *self, BOOL hasStrikethrough, DWRITE_TEXT_RANGE textRange) SetStrikethrough;
+				public function HRESULT(IDWriteTextLayout *self, IUnknown* drawingEffect, DWRITE_TEXT_RANGE textRange) SetDrawingEffect;
+				public function HRESULT(IDWriteTextLayout *self, IDWriteInlineObject* inlineObject, DWRITE_TEXT_RANGE textRange) SetInlineObject;
+				public function HRESULT(IDWriteTextLayout *self, IDWriteTypography* typography, DWRITE_TEXT_RANGE textRange) SetTypography;
+				public function HRESULT(IDWriteTextLayout *self, PWSTR localeName, DWRITE_TEXT_RANGE textRange) SetLocaleName;
+				public function float(IDWriteTextLayout *self) GetMaxWidth;
+				public function float(IDWriteTextLayout *self) GetMaxHeight;
+				public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, IDWriteFontCollection** fontCollection, DWRITE_TEXT_RANGE* textRange) GetFontCollection;
+				public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, uint32* nameLength, DWRITE_TEXT_RANGE* textRange) GetFontFamilyNameLength;
+				public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, char16* fontFamilyName, uint32 nameSize, DWRITE_TEXT_RANGE* textRange) GetFontFamilyName;
+				public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, DWRITE_FONT_WEIGHT* fontWeight, DWRITE_TEXT_RANGE* textRange) GetFontWeight;
+				public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, DWRITE_FONT_STYLE* fontStyle, DWRITE_TEXT_RANGE* textRange) GetFontStyle;
+				public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, DWRITE_FONT_STRETCH* fontStretch, DWRITE_TEXT_RANGE* textRange) GetFontStretch;
+				public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, float* fontSize, DWRITE_TEXT_RANGE* textRange) GetFontSize;
+				public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, BOOL* hasUnderline, DWRITE_TEXT_RANGE* textRange) GetUnderline;
+				public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, BOOL* hasStrikethrough, DWRITE_TEXT_RANGE* textRange) GetStrikethrough;
+				public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, IUnknown** drawingEffect, DWRITE_TEXT_RANGE* textRange) GetDrawingEffect;
+				public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, IDWriteInlineObject** inlineObject, DWRITE_TEXT_RANGE* textRange) GetInlineObject;
+				public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, IDWriteTypography** typography, DWRITE_TEXT_RANGE* textRange) GetTypography;
+				public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, uint32* nameLength, DWRITE_TEXT_RANGE* textRange) GetLocaleNameLength;
+				public function HRESULT(IDWriteTextLayout *self, uint32 currentPosition, char16* localeName, uint32 nameSize, DWRITE_TEXT_RANGE* textRange) GetLocaleName;
+				public function HRESULT(IDWriteTextLayout *self, void* clientDrawingContext, IDWriteTextRenderer* renderer, float originX, float originY) Draw;
+				public function HRESULT(IDWriteTextLayout *self, DWRITE_LINE_METRICS* lineMetrics, uint32 maxLineCount, uint32* actualLineCount) GetLineMetrics;
+				public function HRESULT(IDWriteTextLayout *self, DWRITE_TEXT_METRICS* textMetrics) GetMetrics;
+				public function HRESULT(IDWriteTextLayout *self, DWRITE_OVERHANG_METRICS* overhangs) GetOverhangMetrics;
+				public function HRESULT(IDWriteTextLayout *self, DWRITE_CLUSTER_METRICS* clusterMetrics, uint32 maxClusterCount, uint32* actualClusterCount) GetClusterMetrics;
+				public function HRESULT(IDWriteTextLayout *self, float* minWidth) DetermineMinWidth;
+				public function HRESULT(IDWriteTextLayout *self, float pointX, float pointY, BOOL* isTrailingHit, BOOL* isInside, DWRITE_HIT_TEST_METRICS* hitTestMetrics) HitTestPoint;
+				public function HRESULT(IDWriteTextLayout *self, uint32 textPosition, BOOL isTrailingHit, float* pointX, float* pointY, DWRITE_HIT_TEST_METRICS* hitTestMetrics) HitTestTextPosition;
+				public function HRESULT(IDWriteTextLayout *self, uint32 textPosition, uint32 textLength, float originX, float originY, DWRITE_HIT_TEST_METRICS* hitTestMetrics, uint32 maxHitTestMetricsCount, uint32* actualHitTestMetricsCount) HitTestTextRange;
+			}
 		}
 		[CRepr]
 		public struct IDWriteBitmapRenderTarget : IUnknown
 		{
 			public const new Guid IID = .(0x5e5a32a3, 0x8dff, 0x4773, 0x9f, 0xf6, 0x06, 0x96, 0xea, 0xb7, 0x72, 0x67);
 			
-			public function HRESULT(IDWriteBitmapRenderTarget *self, float baselineOriginX, float baselineOriginY, DWRITE_MEASURING_MODE measuringMode, DWRITE_GLYPH_RUN* glyphRun, IDWriteRenderingParams* renderingParams, uint32 textColor, RECT* blackBoxRect) DrawGlyphRun;
-			public function HDC(IDWriteBitmapRenderTarget *self) GetMemoryDC;
-			public function float(IDWriteBitmapRenderTarget *self) GetPixelsPerDip;
-			public function HRESULT(IDWriteBitmapRenderTarget *self, float pixelsPerDip) SetPixelsPerDip;
-			public function HRESULT(IDWriteBitmapRenderTarget *self, DWRITE_MATRIX* transform) GetCurrentTransform;
-			public function HRESULT(IDWriteBitmapRenderTarget *self, DWRITE_MATRIX* transform) SetCurrentTransform;
-			public function HRESULT(IDWriteBitmapRenderTarget *self, SIZE* size) GetSize;
-			public function HRESULT(IDWriteBitmapRenderTarget *self, uint32 width, uint32 height) Resize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteBitmapRenderTarget *self, float baselineOriginX, float baselineOriginY, DWRITE_MEASURING_MODE measuringMode, DWRITE_GLYPH_RUN* glyphRun, IDWriteRenderingParams* renderingParams, uint32 textColor, RECT* blackBoxRect) DrawGlyphRun;
+				public function HDC(IDWriteBitmapRenderTarget *self) GetMemoryDC;
+				public function float(IDWriteBitmapRenderTarget *self) GetPixelsPerDip;
+				public function HRESULT(IDWriteBitmapRenderTarget *self, float pixelsPerDip) SetPixelsPerDip;
+				public function HRESULT(IDWriteBitmapRenderTarget *self, DWRITE_MATRIX* transform) GetCurrentTransform;
+				public function HRESULT(IDWriteBitmapRenderTarget *self, DWRITE_MATRIX* transform) SetCurrentTransform;
+				public function HRESULT(IDWriteBitmapRenderTarget *self, SIZE* size) GetSize;
+				public function HRESULT(IDWriteBitmapRenderTarget *self, uint32 width, uint32 height) Resize;
+			}
 		}
 		[CRepr]
 		public struct IDWriteGdiInterop : IUnknown
 		{
 			public const new Guid IID = .(0x1edd9491, 0x9853, 0x4299, 0x89, 0x8f, 0x64, 0x32, 0x98, 0x3b, 0x6f, 0x3a);
 			
-			public function HRESULT(IDWriteGdiInterop *self, LOGFONTW* logFont, IDWriteFont** font) CreateFontFromLOGFONT;
-			public function HRESULT(IDWriteGdiInterop *self, IDWriteFont* font, LOGFONTW* logFont, BOOL* isSystemFont) ConvertFontToLOGFONT;
-			public function HRESULT(IDWriteGdiInterop *self, IDWriteFontFace* font, LOGFONTW* logFont) ConvertFontFaceToLOGFONT;
-			public function HRESULT(IDWriteGdiInterop *self, HDC hdc, IDWriteFontFace** fontFace) CreateFontFaceFromHdc;
-			public function HRESULT(IDWriteGdiInterop *self, HDC hdc, uint32 width, uint32 height, IDWriteBitmapRenderTarget** renderTarget) CreateBitmapRenderTarget;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteGdiInterop *self, LOGFONTW* logFont, IDWriteFont** font) CreateFontFromLOGFONT;
+				public function HRESULT(IDWriteGdiInterop *self, IDWriteFont* font, LOGFONTW* logFont, BOOL* isSystemFont) ConvertFontToLOGFONT;
+				public function HRESULT(IDWriteGdiInterop *self, IDWriteFontFace* font, LOGFONTW* logFont) ConvertFontFaceToLOGFONT;
+				public function HRESULT(IDWriteGdiInterop *self, HDC hdc, IDWriteFontFace** fontFace) CreateFontFaceFromHdc;
+				public function HRESULT(IDWriteGdiInterop *self, HDC hdc, uint32 width, uint32 height, IDWriteBitmapRenderTarget** renderTarget) CreateBitmapRenderTarget;
+			}
 		}
 		[CRepr]
 		public struct IDWriteGlyphRunAnalysis : IUnknown
 		{
 			public const new Guid IID = .(0x7d97dbf7, 0xe085, 0x42d4, 0x81, 0xe3, 0x6a, 0x88, 0x3b, 0xde, 0xd1, 0x18);
 			
-			public function HRESULT(IDWriteGlyphRunAnalysis *self, DWRITE_TEXTURE_TYPE textureType, RECT* textureBounds) GetAlphaTextureBounds;
-			public function HRESULT(IDWriteGlyphRunAnalysis *self, DWRITE_TEXTURE_TYPE textureType, RECT* textureBounds, uint8* alphaValues, uint32 bufferSize) CreateAlphaTexture;
-			public function HRESULT(IDWriteGlyphRunAnalysis *self, IDWriteRenderingParams* renderingParams, float* blendGamma, float* blendEnhancedContrast, float* blendClearTypeLevel) GetAlphaBlendParams;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteGlyphRunAnalysis *self, DWRITE_TEXTURE_TYPE textureType, RECT* textureBounds) GetAlphaTextureBounds;
+				public function HRESULT(IDWriteGlyphRunAnalysis *self, DWRITE_TEXTURE_TYPE textureType, RECT* textureBounds, uint8* alphaValues, uint32 bufferSize) CreateAlphaTexture;
+				public function HRESULT(IDWriteGlyphRunAnalysis *self, IDWriteRenderingParams* renderingParams, float* blendGamma, float* blendEnhancedContrast, float* blendClearTypeLevel) GetAlphaBlendParams;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFactory : IUnknown
 		{
 			public const new Guid IID = .(0xb859ee5a, 0xd838, 0x4b5b, 0xa2, 0xe8, 0x1a, 0xdc, 0x7d, 0x93, 0xdb, 0x48);
 			
-			public function HRESULT(IDWriteFactory *self, IDWriteFontCollection** fontCollection, BOOL checkForUpdates) GetSystemFontCollection;
-			public function HRESULT(IDWriteFactory *self, IDWriteFontCollectionLoader* collectionLoader, void* collectionKey, uint32 collectionKeySize, IDWriteFontCollection** fontCollection) CreateCustomFontCollection;
-			public function HRESULT(IDWriteFactory *self, IDWriteFontCollectionLoader* fontCollectionLoader) RegisterFontCollectionLoader;
-			public function HRESULT(IDWriteFactory *self, IDWriteFontCollectionLoader* fontCollectionLoader) UnregisterFontCollectionLoader;
-			public function HRESULT(IDWriteFactory *self, PWSTR filePath, FILETIME* lastWriteTime, IDWriteFontFile** fontFile) CreateFontFileReference;
-			public function HRESULT(IDWriteFactory *self, void* fontFileReferenceKey, uint32 fontFileReferenceKeySize, IDWriteFontFileLoader* fontFileLoader, IDWriteFontFile** fontFile) CreateCustomFontFileReference;
-			public function HRESULT(IDWriteFactory *self, DWRITE_FONT_FACE_TYPE fontFaceType, uint32 numberOfFiles, IDWriteFontFile** fontFiles, uint32 faceIndex, DWRITE_FONT_SIMULATIONS fontFaceSimulationFlags, IDWriteFontFace** fontFace) CreateFontFace;
-			public function HRESULT(IDWriteFactory *self, IDWriteRenderingParams** renderingParams) CreateRenderingParams;
-			public function HRESULT(IDWriteFactory *self, HMONITOR monitor, IDWriteRenderingParams** renderingParams) CreateMonitorRenderingParams;
-			public function HRESULT(IDWriteFactory *self, float gamma, float enhancedContrast, float clearTypeLevel, DWRITE_PIXEL_GEOMETRY pixelGeometry, DWRITE_RENDERING_MODE renderingMode, IDWriteRenderingParams** renderingParams) CreateCustomRenderingParams;
-			public function HRESULT(IDWriteFactory *self, IDWriteFontFileLoader* fontFileLoader) RegisterFontFileLoader;
-			public function HRESULT(IDWriteFactory *self, IDWriteFontFileLoader* fontFileLoader) UnregisterFontFileLoader;
-			public function HRESULT(IDWriteFactory *self, PWSTR fontFamilyName, IDWriteFontCollection* fontCollection, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STYLE fontStyle, DWRITE_FONT_STRETCH fontStretch, float fontSize, PWSTR localeName, IDWriteTextFormat** textFormat) CreateTextFormat;
-			public function HRESULT(IDWriteFactory *self, IDWriteTypography** typography) CreateTypography;
-			public function HRESULT(IDWriteFactory *self, IDWriteGdiInterop** gdiInterop) GetGdiInterop;
-			public function HRESULT(IDWriteFactory *self, char16* string, uint32 stringLength, IDWriteTextFormat* textFormat, float maxWidth, float maxHeight, IDWriteTextLayout** textLayout) CreateTextLayout;
-			public function HRESULT(IDWriteFactory *self, char16* string, uint32 stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, DWRITE_MATRIX* transform, BOOL useGdiNatural, IDWriteTextLayout** textLayout) CreateGdiCompatibleTextLayout;
-			public function HRESULT(IDWriteFactory *self, IDWriteTextFormat* textFormat, IDWriteInlineObject** trimmingSign) CreateEllipsisTrimmingSign;
-			public function HRESULT(IDWriteFactory *self, IDWriteTextAnalyzer** textAnalyzer) CreateTextAnalyzer;
-			public function HRESULT(IDWriteFactory *self, DWRITE_NUMBER_SUBSTITUTION_METHOD substitutionMethod, PWSTR localeName, BOOL ignoreUserOverride, IDWriteNumberSubstitution** numberSubstitution) CreateNumberSubstitution;
-			public function HRESULT(IDWriteFactory *self, DWRITE_GLYPH_RUN* glyphRun, float pixelsPerDip, DWRITE_MATRIX* transform, DWRITE_RENDERING_MODE renderingMode, DWRITE_MEASURING_MODE measuringMode, float baselineOriginX, float baselineOriginY, IDWriteGlyphRunAnalysis** glyphRunAnalysis) CreateGlyphRunAnalysis;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteFactory *self, IDWriteFontCollection** fontCollection, BOOL checkForUpdates) GetSystemFontCollection;
+				public function HRESULT(IDWriteFactory *self, IDWriteFontCollectionLoader* collectionLoader, void* collectionKey, uint32 collectionKeySize, IDWriteFontCollection** fontCollection) CreateCustomFontCollection;
+				public function HRESULT(IDWriteFactory *self, IDWriteFontCollectionLoader* fontCollectionLoader) RegisterFontCollectionLoader;
+				public function HRESULT(IDWriteFactory *self, IDWriteFontCollectionLoader* fontCollectionLoader) UnregisterFontCollectionLoader;
+				public function HRESULT(IDWriteFactory *self, PWSTR filePath, FILETIME* lastWriteTime, IDWriteFontFile** fontFile) CreateFontFileReference;
+				public function HRESULT(IDWriteFactory *self, void* fontFileReferenceKey, uint32 fontFileReferenceKeySize, IDWriteFontFileLoader* fontFileLoader, IDWriteFontFile** fontFile) CreateCustomFontFileReference;
+				public function HRESULT(IDWriteFactory *self, DWRITE_FONT_FACE_TYPE fontFaceType, uint32 numberOfFiles, IDWriteFontFile** fontFiles, uint32 faceIndex, DWRITE_FONT_SIMULATIONS fontFaceSimulationFlags, IDWriteFontFace** fontFace) CreateFontFace;
+				public function HRESULT(IDWriteFactory *self, IDWriteRenderingParams** renderingParams) CreateRenderingParams;
+				public function HRESULT(IDWriteFactory *self, HMONITOR monitor, IDWriteRenderingParams** renderingParams) CreateMonitorRenderingParams;
+				public function HRESULT(IDWriteFactory *self, float gamma, float enhancedContrast, float clearTypeLevel, DWRITE_PIXEL_GEOMETRY pixelGeometry, DWRITE_RENDERING_MODE renderingMode, IDWriteRenderingParams** renderingParams) CreateCustomRenderingParams;
+				public function HRESULT(IDWriteFactory *self, IDWriteFontFileLoader* fontFileLoader) RegisterFontFileLoader;
+				public function HRESULT(IDWriteFactory *self, IDWriteFontFileLoader* fontFileLoader) UnregisterFontFileLoader;
+				public function HRESULT(IDWriteFactory *self, PWSTR fontFamilyName, IDWriteFontCollection* fontCollection, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STYLE fontStyle, DWRITE_FONT_STRETCH fontStretch, float fontSize, PWSTR localeName, IDWriteTextFormat** textFormat) CreateTextFormat;
+				public function HRESULT(IDWriteFactory *self, IDWriteTypography** typography) CreateTypography;
+				public function HRESULT(IDWriteFactory *self, IDWriteGdiInterop** gdiInterop) GetGdiInterop;
+				public function HRESULT(IDWriteFactory *self, char16* string, uint32 stringLength, IDWriteTextFormat* textFormat, float maxWidth, float maxHeight, IDWriteTextLayout** textLayout) CreateTextLayout;
+				public function HRESULT(IDWriteFactory *self, char16* string, uint32 stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, DWRITE_MATRIX* transform, BOOL useGdiNatural, IDWriteTextLayout** textLayout) CreateGdiCompatibleTextLayout;
+				public function HRESULT(IDWriteFactory *self, IDWriteTextFormat* textFormat, IDWriteInlineObject** trimmingSign) CreateEllipsisTrimmingSign;
+				public function HRESULT(IDWriteFactory *self, IDWriteTextAnalyzer** textAnalyzer) CreateTextAnalyzer;
+				public function HRESULT(IDWriteFactory *self, DWRITE_NUMBER_SUBSTITUTION_METHOD substitutionMethod, PWSTR localeName, BOOL ignoreUserOverride, IDWriteNumberSubstitution** numberSubstitution) CreateNumberSubstitution;
+				public function HRESULT(IDWriteFactory *self, DWRITE_GLYPH_RUN* glyphRun, float pixelsPerDip, DWRITE_MATRIX* transform, DWRITE_RENDERING_MODE renderingMode, DWRITE_MEASURING_MODE measuringMode, float baselineOriginX, float baselineOriginY, IDWriteGlyphRunAnalysis** glyphRunAnalysis) CreateGlyphRunAnalysis;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFactory1 : IDWriteFactory
 		{
 			public const new Guid IID = .(0x30572f99, 0xdac6, 0x41db, 0xa1, 0x6e, 0x04, 0x86, 0x30, 0x7e, 0x60, 0x6a);
 			
-			public function HRESULT(IDWriteFactory1 *self, IDWriteFontCollection** fontCollection, BOOL checkForUpdates) GetEudcFontCollection;
-			public function HRESULT(IDWriteFactory1 *self, float gamma, float enhancedContrast, float enhancedContrastGrayscale, float clearTypeLevel, DWRITE_PIXEL_GEOMETRY pixelGeometry, DWRITE_RENDERING_MODE renderingMode, IDWriteRenderingParams1** renderingParams) CreateCustomRenderingParams;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFactory.VTable
+			{
+				public function HRESULT(IDWriteFactory1 *self, IDWriteFontCollection** fontCollection, BOOL checkForUpdates) GetEudcFontCollection;
+				public function HRESULT(IDWriteFactory1 *self, float gamma, float enhancedContrast, float enhancedContrastGrayscale, float clearTypeLevel, DWRITE_PIXEL_GEOMETRY pixelGeometry, DWRITE_RENDERING_MODE renderingMode, IDWriteRenderingParams1** renderingParams) CreateCustomRenderingParams;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontFace1 : IDWriteFontFace
 		{
 			public const new Guid IID = .(0xa71efdb4, 0x9fdb, 0x4838, 0xad, 0x90, 0xcf, 0xc3, 0xbe, 0x8c, 0x3d, 0xaf);
 			
-			public function void(IDWriteFontFace1 *self, DWRITE_FONT_METRICS1* fontMetrics) GetMetrics;
-			public function HRESULT(IDWriteFontFace1 *self, float emSize, float pixelsPerDip, DWRITE_MATRIX* transform, DWRITE_FONT_METRICS1* fontMetrics) GetGdiCompatibleMetrics;
-			public function void(IDWriteFontFace1 *self, DWRITE_CARET_METRICS* caretMetrics) GetCaretMetrics;
-			public function HRESULT(IDWriteFontFace1 *self, uint32 maxRangeCount, DWRITE_UNICODE_RANGE* unicodeRanges, uint32* actualRangeCount) GetUnicodeRanges;
-			public function BOOL(IDWriteFontFace1 *self) IsMonospacedFont;
-			public function HRESULT(IDWriteFontFace1 *self, uint32 glyphCount, uint16* glyphIndices, int32* glyphAdvances, BOOL isSideways) GetDesignGlyphAdvances;
-			public function HRESULT(IDWriteFontFace1 *self, float emSize, float pixelsPerDip, DWRITE_MATRIX* transform, BOOL useGdiNatural, BOOL isSideways, uint32 glyphCount, uint16* glyphIndices, int32* glyphAdvances) GetGdiCompatibleGlyphAdvances;
-			public function HRESULT(IDWriteFontFace1 *self, uint32 glyphCount, uint16* glyphIndices, int32* glyphAdvanceAdjustments) GetKerningPairAdjustments;
-			public function BOOL(IDWriteFontFace1 *self) HasKerningPairs;
-			public function HRESULT(IDWriteFontFace1 *self, float fontEmSize, float dpiX, float dpiY, DWRITE_MATRIX* transform, BOOL isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, DWRITE_RENDERING_MODE* renderingMode) GetRecommendedRenderingMode;
-			public function HRESULT(IDWriteFontFace1 *self, uint32 glyphCount, uint16* nominalGlyphIndices, uint16* verticalGlyphIndices) GetVerticalGlyphVariants;
-			public function BOOL(IDWriteFontFace1 *self) HasVerticalGlyphVariants;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontFace.VTable
+			{
+				public function void(IDWriteFontFace1 *self, DWRITE_FONT_METRICS1* fontMetrics) GetMetrics;
+				public function HRESULT(IDWriteFontFace1 *self, float emSize, float pixelsPerDip, DWRITE_MATRIX* transform, DWRITE_FONT_METRICS1* fontMetrics) GetGdiCompatibleMetrics;
+				public function void(IDWriteFontFace1 *self, DWRITE_CARET_METRICS* caretMetrics) GetCaretMetrics;
+				public function HRESULT(IDWriteFontFace1 *self, uint32 maxRangeCount, DWRITE_UNICODE_RANGE* unicodeRanges, uint32* actualRangeCount) GetUnicodeRanges;
+				public function BOOL(IDWriteFontFace1 *self) IsMonospacedFont;
+				public function HRESULT(IDWriteFontFace1 *self, uint32 glyphCount, uint16* glyphIndices, int32* glyphAdvances, BOOL isSideways) GetDesignGlyphAdvances;
+				public function HRESULT(IDWriteFontFace1 *self, float emSize, float pixelsPerDip, DWRITE_MATRIX* transform, BOOL useGdiNatural, BOOL isSideways, uint32 glyphCount, uint16* glyphIndices, int32* glyphAdvances) GetGdiCompatibleGlyphAdvances;
+				public function HRESULT(IDWriteFontFace1 *self, uint32 glyphCount, uint16* glyphIndices, int32* glyphAdvanceAdjustments) GetKerningPairAdjustments;
+				public function BOOL(IDWriteFontFace1 *self) HasKerningPairs;
+				public function HRESULT(IDWriteFontFace1 *self, float fontEmSize, float dpiX, float dpiY, DWRITE_MATRIX* transform, BOOL isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, DWRITE_RENDERING_MODE* renderingMode) GetRecommendedRenderingMode;
+				public function HRESULT(IDWriteFontFace1 *self, uint32 glyphCount, uint16* nominalGlyphIndices, uint16* verticalGlyphIndices) GetVerticalGlyphVariants;
+				public function BOOL(IDWriteFontFace1 *self) HasVerticalGlyphVariants;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFont1 : IDWriteFont
 		{
 			public const new Guid IID = .(0xacd16696, 0x8c14, 0x4f5d, 0x87, 0x7e, 0xfe, 0x3f, 0xc1, 0xd3, 0x27, 0x38);
 			
-			public function void(IDWriteFont1 *self, DWRITE_FONT_METRICS1* fontMetrics) GetMetrics;
-			public function void(IDWriteFont1 *self, DWRITE_PANOSE* panose) GetPanose;
-			public function HRESULT(IDWriteFont1 *self, uint32 maxRangeCount, DWRITE_UNICODE_RANGE* unicodeRanges, uint32* actualRangeCount) GetUnicodeRanges;
-			public function BOOL(IDWriteFont1 *self) IsMonospacedFont;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFont.VTable
+			{
+				public function void(IDWriteFont1 *self, DWRITE_FONT_METRICS1* fontMetrics) GetMetrics;
+				public function void(IDWriteFont1 *self, DWRITE_PANOSE* panose) GetPanose;
+				public function HRESULT(IDWriteFont1 *self, uint32 maxRangeCount, DWRITE_UNICODE_RANGE* unicodeRanges, uint32* actualRangeCount) GetUnicodeRanges;
+				public function BOOL(IDWriteFont1 *self) IsMonospacedFont;
+			}
 		}
 		[CRepr]
 		public struct IDWriteRenderingParams1 : IDWriteRenderingParams
 		{
 			public const new Guid IID = .(0x94413cf4, 0xa6fc, 0x4248, 0x8b, 0x50, 0x66, 0x74, 0x34, 0x8f, 0xca, 0xd3);
 			
-			public function float(IDWriteRenderingParams1 *self) GetGrayscaleEnhancedContrast;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteRenderingParams.VTable
+			{
+				public function float(IDWriteRenderingParams1 *self) GetGrayscaleEnhancedContrast;
+			}
 		}
 		[CRepr]
 		public struct IDWriteTextAnalyzer1 : IDWriteTextAnalyzer
 		{
 			public const new Guid IID = .(0x80dad800, 0xe21f, 0x4e83, 0x96, 0xce, 0xbf, 0xcc, 0xe5, 0x00, 0xdb, 0x7c);
 			
-			public function HRESULT(IDWriteTextAnalyzer1 *self, float leadingSpacing, float trailingSpacing, float minimumAdvanceWidth, uint32 textLength, uint32 glyphCount, uint16* clusterMap, float* glyphAdvances, DWRITE_GLYPH_OFFSET* glyphOffsets, DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProperties, float* modifiedGlyphAdvances, DWRITE_GLYPH_OFFSET* modifiedGlyphOffsets) ApplyCharacterSpacing;
-			public function HRESULT(IDWriteTextAnalyzer1 *self, IDWriteFontFace* fontFace, DWRITE_BASELINE baseline, BOOL isVertical, BOOL isSimulationAllowed, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, PWSTR localeName, int32* baselineCoordinate, BOOL* exists) GetBaseline;
-			public function HRESULT(IDWriteTextAnalyzer1 *self, IDWriteTextAnalysisSource1* analysisSource, uint32 textPosition, uint32 textLength, IDWriteTextAnalysisSink1* analysisSink) AnalyzeVerticalGlyphOrientation;
-			public function HRESULT(IDWriteTextAnalyzer1 *self, DWRITE_GLYPH_ORIENTATION_ANGLE glyphOrientationAngle, BOOL isSideways, DWRITE_MATRIX* transform) GetGlyphOrientationTransform;
-			public function HRESULT(IDWriteTextAnalyzer1 *self, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, DWRITE_SCRIPT_PROPERTIES* scriptProperties) GetScriptProperties;
-			public function HRESULT(IDWriteTextAnalyzer1 *self, char16* textString, uint32 textLength, IDWriteFontFace* fontFace, BOOL* isTextSimple, uint32* textLengthRead, uint16* glyphIndices) GetTextComplexity;
-			public function HRESULT(IDWriteTextAnalyzer1 *self, IDWriteFontFace* fontFace, float fontEmSize, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, uint32 textLength, uint32 glyphCount, char16* textString, uint16* clusterMap, DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProperties, DWRITE_JUSTIFICATION_OPPORTUNITY* justificationOpportunities) GetJustificationOpportunities;
-			public function HRESULT(IDWriteTextAnalyzer1 *self, float lineWidth, uint32 glyphCount, DWRITE_JUSTIFICATION_OPPORTUNITY* justificationOpportunities, float* glyphAdvances, DWRITE_GLYPH_OFFSET* glyphOffsets, float* justifiedGlyphAdvances, DWRITE_GLYPH_OFFSET* justifiedGlyphOffsets) JustifyGlyphAdvances;
-			public function HRESULT(IDWriteTextAnalyzer1 *self, IDWriteFontFace* fontFace, float fontEmSize, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, uint32 textLength, uint32 glyphCount, uint32 maxGlyphCount, uint16* clusterMap, uint16* glyphIndices, float* glyphAdvances, float* justifiedGlyphAdvances, DWRITE_GLYPH_OFFSET* justifiedGlyphOffsets, DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProperties, uint32* actualGlyphCount, uint16* modifiedClusterMap, uint16* modifiedGlyphIndices, float* modifiedGlyphAdvances, DWRITE_GLYPH_OFFSET* modifiedGlyphOffsets) GetJustifiedGlyphs;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteTextAnalyzer.VTable
+			{
+				public function HRESULT(IDWriteTextAnalyzer1 *self, float leadingSpacing, float trailingSpacing, float minimumAdvanceWidth, uint32 textLength, uint32 glyphCount, uint16* clusterMap, float* glyphAdvances, DWRITE_GLYPH_OFFSET* glyphOffsets, DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProperties, float* modifiedGlyphAdvances, DWRITE_GLYPH_OFFSET* modifiedGlyphOffsets) ApplyCharacterSpacing;
+				public function HRESULT(IDWriteTextAnalyzer1 *self, IDWriteFontFace* fontFace, DWRITE_BASELINE baseline, BOOL isVertical, BOOL isSimulationAllowed, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, PWSTR localeName, int32* baselineCoordinate, BOOL* exists) GetBaseline;
+				public function HRESULT(IDWriteTextAnalyzer1 *self, IDWriteTextAnalysisSource1* analysisSource, uint32 textPosition, uint32 textLength, IDWriteTextAnalysisSink1* analysisSink) AnalyzeVerticalGlyphOrientation;
+				public function HRESULT(IDWriteTextAnalyzer1 *self, DWRITE_GLYPH_ORIENTATION_ANGLE glyphOrientationAngle, BOOL isSideways, DWRITE_MATRIX* transform) GetGlyphOrientationTransform;
+				public function HRESULT(IDWriteTextAnalyzer1 *self, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, DWRITE_SCRIPT_PROPERTIES* scriptProperties) GetScriptProperties;
+				public function HRESULT(IDWriteTextAnalyzer1 *self, char16* textString, uint32 textLength, IDWriteFontFace* fontFace, BOOL* isTextSimple, uint32* textLengthRead, uint16* glyphIndices) GetTextComplexity;
+				public function HRESULT(IDWriteTextAnalyzer1 *self, IDWriteFontFace* fontFace, float fontEmSize, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, uint32 textLength, uint32 glyphCount, char16* textString, uint16* clusterMap, DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProperties, DWRITE_JUSTIFICATION_OPPORTUNITY* justificationOpportunities) GetJustificationOpportunities;
+				public function HRESULT(IDWriteTextAnalyzer1 *self, float lineWidth, uint32 glyphCount, DWRITE_JUSTIFICATION_OPPORTUNITY* justificationOpportunities, float* glyphAdvances, DWRITE_GLYPH_OFFSET* glyphOffsets, float* justifiedGlyphAdvances, DWRITE_GLYPH_OFFSET* justifiedGlyphOffsets) JustifyGlyphAdvances;
+				public function HRESULT(IDWriteTextAnalyzer1 *self, IDWriteFontFace* fontFace, float fontEmSize, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, uint32 textLength, uint32 glyphCount, uint32 maxGlyphCount, uint16* clusterMap, uint16* glyphIndices, float* glyphAdvances, float* justifiedGlyphAdvances, DWRITE_GLYPH_OFFSET* justifiedGlyphOffsets, DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProperties, uint32* actualGlyphCount, uint16* modifiedClusterMap, uint16* modifiedGlyphIndices, float* modifiedGlyphAdvances, DWRITE_GLYPH_OFFSET* modifiedGlyphOffsets) GetJustifiedGlyphs;
+			}
 		}
 		[CRepr]
 		public struct IDWriteTextAnalysisSource1 : IDWriteTextAnalysisSource
 		{
 			public const new Guid IID = .(0x639cfad8, 0x0fb4, 0x4b21, 0xa5, 0x8a, 0x06, 0x79, 0x20, 0x12, 0x00, 0x09);
 			
-			public function HRESULT(IDWriteTextAnalysisSource1 *self, uint32 textPosition, uint32* textLength, DWRITE_VERTICAL_GLYPH_ORIENTATION* glyphOrientation, uint8* bidiLevel) GetVerticalGlyphOrientation;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteTextAnalysisSource.VTable
+			{
+				public function HRESULT(IDWriteTextAnalysisSource1 *self, uint32 textPosition, uint32* textLength, DWRITE_VERTICAL_GLYPH_ORIENTATION* glyphOrientation, uint8* bidiLevel) GetVerticalGlyphOrientation;
+			}
 		}
 		[CRepr]
 		public struct IDWriteTextAnalysisSink1 : IDWriteTextAnalysisSink
 		{
 			public const new Guid IID = .(0xb0d941a0, 0x85e7, 0x4d8b, 0x9f, 0xd3, 0x5c, 0xed, 0x99, 0x34, 0x48, 0x2a);
 			
-			public function HRESULT(IDWriteTextAnalysisSink1 *self, uint32 textPosition, uint32 textLength, DWRITE_GLYPH_ORIENTATION_ANGLE glyphOrientationAngle, uint8 adjustedBidiLevel, BOOL isSideways, BOOL isRightToLeft) SetGlyphOrientation;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteTextAnalysisSink.VTable
+			{
+				public function HRESULT(IDWriteTextAnalysisSink1 *self, uint32 textPosition, uint32 textLength, DWRITE_GLYPH_ORIENTATION_ANGLE glyphOrientationAngle, uint8 adjustedBidiLevel, BOOL isSideways, BOOL isRightToLeft) SetGlyphOrientation;
+			}
 		}
 		[CRepr]
 		public struct IDWriteTextLayout1 : IDWriteTextLayout
 		{
 			public const new Guid IID = .(0x9064d822, 0x80a7, 0x465c, 0xa9, 0x86, 0xdf, 0x65, 0xf7, 0x8b, 0x8f, 0xeb);
 			
-			public function HRESULT(IDWriteTextLayout1 *self, BOOL isPairKerningEnabled, DWRITE_TEXT_RANGE textRange) SetPairKerning;
-			public function HRESULT(IDWriteTextLayout1 *self, uint32 currentPosition, BOOL* isPairKerningEnabled, DWRITE_TEXT_RANGE* textRange) GetPairKerning;
-			public function HRESULT(IDWriteTextLayout1 *self, float leadingSpacing, float trailingSpacing, float minimumAdvanceWidth, DWRITE_TEXT_RANGE textRange) SetCharacterSpacing;
-			public function HRESULT(IDWriteTextLayout1 *self, uint32 currentPosition, float* leadingSpacing, float* trailingSpacing, float* minimumAdvanceWidth, DWRITE_TEXT_RANGE* textRange) GetCharacterSpacing;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteTextLayout.VTable
+			{
+				public function HRESULT(IDWriteTextLayout1 *self, BOOL isPairKerningEnabled, DWRITE_TEXT_RANGE textRange) SetPairKerning;
+				public function HRESULT(IDWriteTextLayout1 *self, uint32 currentPosition, BOOL* isPairKerningEnabled, DWRITE_TEXT_RANGE* textRange) GetPairKerning;
+				public function HRESULT(IDWriteTextLayout1 *self, float leadingSpacing, float trailingSpacing, float minimumAdvanceWidth, DWRITE_TEXT_RANGE textRange) SetCharacterSpacing;
+				public function HRESULT(IDWriteTextLayout1 *self, uint32 currentPosition, float* leadingSpacing, float* trailingSpacing, float* minimumAdvanceWidth, DWRITE_TEXT_RANGE* textRange) GetCharacterSpacing;
+			}
 		}
 		[CRepr]
 		public struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTarget
 		{
 			public const new Guid IID = .(0x791e8298, 0x3ef3, 0x4230, 0x98, 0x80, 0xc9, 0xbd, 0xec, 0xc4, 0x20, 0x64);
 			
-			public function DWRITE_TEXT_ANTIALIAS_MODE(IDWriteBitmapRenderTarget1 *self) GetTextAntialiasMode;
-			public function HRESULT(IDWriteBitmapRenderTarget1 *self, DWRITE_TEXT_ANTIALIAS_MODE antialiasMode) SetTextAntialiasMode;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteBitmapRenderTarget.VTable
+			{
+				public function DWRITE_TEXT_ANTIALIAS_MODE(IDWriteBitmapRenderTarget1 *self) GetTextAntialiasMode;
+				public function HRESULT(IDWriteBitmapRenderTarget1 *self, DWRITE_TEXT_ANTIALIAS_MODE antialiasMode) SetTextAntialiasMode;
+			}
 		}
 		[CRepr]
 		public struct IDWriteTextRenderer1 : IDWriteTextRenderer
 		{
 			public const new Guid IID = .(0xd3e0e934, 0x22a0, 0x427e, 0xaa, 0xe4, 0x7d, 0x95, 0x74, 0xb5, 0x9d, 0xb1);
 			
-			public function HRESULT(IDWriteTextRenderer1 *self, void* clientDrawingContext, float baselineOriginX, float baselineOriginY, DWRITE_GLYPH_ORIENTATION_ANGLE orientationAngle, DWRITE_MEASURING_MODE measuringMode, DWRITE_GLYPH_RUN* glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, IUnknown* clientDrawingEffect) DrawGlyphRun;
-			public function HRESULT(IDWriteTextRenderer1 *self, void* clientDrawingContext, float baselineOriginX, float baselineOriginY, DWRITE_GLYPH_ORIENTATION_ANGLE orientationAngle, DWRITE_UNDERLINE* underline, IUnknown* clientDrawingEffect) DrawUnderline;
-			public function HRESULT(IDWriteTextRenderer1 *self, void* clientDrawingContext, float baselineOriginX, float baselineOriginY, DWRITE_GLYPH_ORIENTATION_ANGLE orientationAngle, DWRITE_STRIKETHROUGH* strikethrough, IUnknown* clientDrawingEffect) DrawStrikethrough;
-			public function HRESULT(IDWriteTextRenderer1 *self, void* clientDrawingContext, float originX, float originY, DWRITE_GLYPH_ORIENTATION_ANGLE orientationAngle, IDWriteInlineObject* inlineObject, BOOL isSideways, BOOL isRightToLeft, IUnknown* clientDrawingEffect) DrawInlineObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteTextRenderer.VTable
+			{
+				public function HRESULT(IDWriteTextRenderer1 *self, void* clientDrawingContext, float baselineOriginX, float baselineOriginY, DWRITE_GLYPH_ORIENTATION_ANGLE orientationAngle, DWRITE_MEASURING_MODE measuringMode, DWRITE_GLYPH_RUN* glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, IUnknown* clientDrawingEffect) DrawGlyphRun;
+				public function HRESULT(IDWriteTextRenderer1 *self, void* clientDrawingContext, float baselineOriginX, float baselineOriginY, DWRITE_GLYPH_ORIENTATION_ANGLE orientationAngle, DWRITE_UNDERLINE* underline, IUnknown* clientDrawingEffect) DrawUnderline;
+				public function HRESULT(IDWriteTextRenderer1 *self, void* clientDrawingContext, float baselineOriginX, float baselineOriginY, DWRITE_GLYPH_ORIENTATION_ANGLE orientationAngle, DWRITE_STRIKETHROUGH* strikethrough, IUnknown* clientDrawingEffect) DrawStrikethrough;
+				public function HRESULT(IDWriteTextRenderer1 *self, void* clientDrawingContext, float originX, float originY, DWRITE_GLYPH_ORIENTATION_ANGLE orientationAngle, IDWriteInlineObject* inlineObject, BOOL isSideways, BOOL isRightToLeft, IUnknown* clientDrawingEffect) DrawInlineObject;
+			}
 		}
 		[CRepr]
 		public struct IDWriteTextFormat1 : IDWriteTextFormat
 		{
 			public const new Guid IID = .(0x5f174b49, 0x0d8b, 0x4cfb, 0x8b, 0xca, 0xf1, 0xcc, 0xe9, 0xd0, 0x6c, 0x67);
 			
-			public function HRESULT(IDWriteTextFormat1 *self, DWRITE_VERTICAL_GLYPH_ORIENTATION glyphOrientation) SetVerticalGlyphOrientation;
-			public function DWRITE_VERTICAL_GLYPH_ORIENTATION(IDWriteTextFormat1 *self) GetVerticalGlyphOrientation;
-			public function HRESULT(IDWriteTextFormat1 *self, BOOL isLastLineWrappingEnabled) SetLastLineWrapping;
-			public function BOOL(IDWriteTextFormat1 *self) GetLastLineWrapping;
-			public function HRESULT(IDWriteTextFormat1 *self, DWRITE_OPTICAL_ALIGNMENT opticalAlignment) SetOpticalAlignment;
-			public function DWRITE_OPTICAL_ALIGNMENT(IDWriteTextFormat1 *self) GetOpticalAlignment;
-			public function HRESULT(IDWriteTextFormat1 *self, IDWriteFontFallback* fontFallback) SetFontFallback;
-			public function HRESULT(IDWriteTextFormat1 *self, IDWriteFontFallback** fontFallback) GetFontFallback;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteTextFormat.VTable
+			{
+				public function HRESULT(IDWriteTextFormat1 *self, DWRITE_VERTICAL_GLYPH_ORIENTATION glyphOrientation) SetVerticalGlyphOrientation;
+				public function DWRITE_VERTICAL_GLYPH_ORIENTATION(IDWriteTextFormat1 *self) GetVerticalGlyphOrientation;
+				public function HRESULT(IDWriteTextFormat1 *self, BOOL isLastLineWrappingEnabled) SetLastLineWrapping;
+				public function BOOL(IDWriteTextFormat1 *self) GetLastLineWrapping;
+				public function HRESULT(IDWriteTextFormat1 *self, DWRITE_OPTICAL_ALIGNMENT opticalAlignment) SetOpticalAlignment;
+				public function DWRITE_OPTICAL_ALIGNMENT(IDWriteTextFormat1 *self) GetOpticalAlignment;
+				public function HRESULT(IDWriteTextFormat1 *self, IDWriteFontFallback* fontFallback) SetFontFallback;
+				public function HRESULT(IDWriteTextFormat1 *self, IDWriteFontFallback** fontFallback) GetFontFallback;
+			}
 		}
 		[CRepr]
 		public struct IDWriteTextLayout2 : IDWriteTextLayout1
 		{
 			public const new Guid IID = .(0x1093c18f, 0x8d5e, 0x43f0, 0xb0, 0x64, 0x09, 0x17, 0x31, 0x1b, 0x52, 0x5e);
 			
-			public function HRESULT(IDWriteTextLayout2 *self, DWRITE_TEXT_METRICS1* textMetrics) GetMetrics;
-			public function HRESULT(IDWriteTextLayout2 *self, DWRITE_VERTICAL_GLYPH_ORIENTATION glyphOrientation) SetVerticalGlyphOrientation;
-			public function DWRITE_VERTICAL_GLYPH_ORIENTATION(IDWriteTextLayout2 *self) GetVerticalGlyphOrientation;
-			public function HRESULT(IDWriteTextLayout2 *self, BOOL isLastLineWrappingEnabled) SetLastLineWrapping;
-			public function BOOL(IDWriteTextLayout2 *self) GetLastLineWrapping;
-			public function HRESULT(IDWriteTextLayout2 *self, DWRITE_OPTICAL_ALIGNMENT opticalAlignment) SetOpticalAlignment;
-			public function DWRITE_OPTICAL_ALIGNMENT(IDWriteTextLayout2 *self) GetOpticalAlignment;
-			public function HRESULT(IDWriteTextLayout2 *self, IDWriteFontFallback* fontFallback) SetFontFallback;
-			public function HRESULT(IDWriteTextLayout2 *self, IDWriteFontFallback** fontFallback) GetFontFallback;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteTextLayout1.VTable
+			{
+				public function HRESULT(IDWriteTextLayout2 *self, DWRITE_TEXT_METRICS1* textMetrics) GetMetrics;
+				public function HRESULT(IDWriteTextLayout2 *self, DWRITE_VERTICAL_GLYPH_ORIENTATION glyphOrientation) SetVerticalGlyphOrientation;
+				public function DWRITE_VERTICAL_GLYPH_ORIENTATION(IDWriteTextLayout2 *self) GetVerticalGlyphOrientation;
+				public function HRESULT(IDWriteTextLayout2 *self, BOOL isLastLineWrappingEnabled) SetLastLineWrapping;
+				public function BOOL(IDWriteTextLayout2 *self) GetLastLineWrapping;
+				public function HRESULT(IDWriteTextLayout2 *self, DWRITE_OPTICAL_ALIGNMENT opticalAlignment) SetOpticalAlignment;
+				public function DWRITE_OPTICAL_ALIGNMENT(IDWriteTextLayout2 *self) GetOpticalAlignment;
+				public function HRESULT(IDWriteTextLayout2 *self, IDWriteFontFallback* fontFallback) SetFontFallback;
+				public function HRESULT(IDWriteTextLayout2 *self, IDWriteFontFallback** fontFallback) GetFontFallback;
+			}
 		}
 		[CRepr]
 		public struct IDWriteTextAnalyzer2 : IDWriteTextAnalyzer1
 		{
 			public const new Guid IID = .(0x553a9ff3, 0x5693, 0x4df7, 0xb5, 0x2b, 0x74, 0x80, 0x6f, 0x7f, 0x2e, 0xb9);
 			
-			public function HRESULT(IDWriteTextAnalyzer2 *self, DWRITE_GLYPH_ORIENTATION_ANGLE glyphOrientationAngle, BOOL isSideways, float originX, float originY, DWRITE_MATRIX* transform) GetGlyphOrientationTransform;
-			public function HRESULT(IDWriteTextAnalyzer2 *self, IDWriteFontFace* fontFace, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, PWSTR localeName, uint32 maxTagCount, uint32* actualTagCount, DWRITE_FONT_FEATURE_TAG* tags) GetTypographicFeatures;
-			public function HRESULT(IDWriteTextAnalyzer2 *self, IDWriteFontFace* fontFace, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, PWSTR localeName, DWRITE_FONT_FEATURE_TAG featureTag, uint32 glyphCount, uint16* glyphIndices, uint8* featureApplies) CheckTypographicFeature;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteTextAnalyzer1.VTable
+			{
+				public function HRESULT(IDWriteTextAnalyzer2 *self, DWRITE_GLYPH_ORIENTATION_ANGLE glyphOrientationAngle, BOOL isSideways, float originX, float originY, DWRITE_MATRIX* transform) GetGlyphOrientationTransform;
+				public function HRESULT(IDWriteTextAnalyzer2 *self, IDWriteFontFace* fontFace, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, PWSTR localeName, uint32 maxTagCount, uint32* actualTagCount, DWRITE_FONT_FEATURE_TAG* tags) GetTypographicFeatures;
+				public function HRESULT(IDWriteTextAnalyzer2 *self, IDWriteFontFace* fontFace, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, PWSTR localeName, DWRITE_FONT_FEATURE_TAG featureTag, uint32 glyphCount, uint16* glyphIndices, uint8* featureApplies) CheckTypographicFeature;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontFallback : IUnknown
 		{
 			public const new Guid IID = .(0xefa008f9, 0xf7a1, 0x48bf, 0xb0, 0x5c, 0xf2, 0x24, 0x71, 0x3c, 0xc0, 0xff);
 			
-			public function HRESULT(IDWriteFontFallback *self, IDWriteTextAnalysisSource* analysisSource, uint32 textPosition, uint32 textLength, IDWriteFontCollection* baseFontCollection, PWSTR baseFamilyName, DWRITE_FONT_WEIGHT baseWeight, DWRITE_FONT_STYLE baseStyle, DWRITE_FONT_STRETCH baseStretch, uint32* mappedLength, IDWriteFont** mappedFont, float* scale) MapCharacters;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteFontFallback *self, IDWriteTextAnalysisSource* analysisSource, uint32 textPosition, uint32 textLength, IDWriteFontCollection* baseFontCollection, PWSTR baseFamilyName, DWRITE_FONT_WEIGHT baseWeight, DWRITE_FONT_STYLE baseStyle, DWRITE_FONT_STRETCH baseStretch, uint32* mappedLength, IDWriteFont** mappedFont, float* scale) MapCharacters;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontFallbackBuilder : IUnknown
 		{
 			public const new Guid IID = .(0xfd882d06, 0x8aba, 0x4fb8, 0xb8, 0x49, 0x8b, 0xe8, 0xb7, 0x3e, 0x14, 0xde);
 			
-			public function HRESULT(IDWriteFontFallbackBuilder *self, DWRITE_UNICODE_RANGE* ranges, uint32 rangesCount, uint16** targetFamilyNames, uint32 targetFamilyNamesCount, IDWriteFontCollection* fontCollection, PWSTR localeName, PWSTR baseFamilyName, float scale) AddMapping;
-			public function HRESULT(IDWriteFontFallbackBuilder *self, IDWriteFontFallback* fontFallback) AddMappings;
-			public function HRESULT(IDWriteFontFallbackBuilder *self, IDWriteFontFallback** fontFallback) CreateFontFallback;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteFontFallbackBuilder *self, DWRITE_UNICODE_RANGE* ranges, uint32 rangesCount, uint16** targetFamilyNames, uint32 targetFamilyNamesCount, IDWriteFontCollection* fontCollection, PWSTR localeName, PWSTR baseFamilyName, float scale) AddMapping;
+				public function HRESULT(IDWriteFontFallbackBuilder *self, IDWriteFontFallback* fontFallback) AddMappings;
+				public function HRESULT(IDWriteFontFallbackBuilder *self, IDWriteFontFallback** fontFallback) CreateFontFallback;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFont2 : IDWriteFont1
 		{
 			public const new Guid IID = .(0x29748ed6, 0x8c9c, 0x4a6a, 0xbe, 0x0b, 0xd9, 0x12, 0xe8, 0x53, 0x89, 0x44);
 			
-			public function BOOL(IDWriteFont2 *self) IsColorFont;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFont1.VTable
+			{
+				public function BOOL(IDWriteFont2 *self) IsColorFont;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontFace2 : IDWriteFontFace1
 		{
 			public const new Guid IID = .(0xd8b768ff, 0x64bc, 0x4e66, 0x98, 0x2b, 0xec, 0x8e, 0x87, 0xf6, 0x93, 0xf7);
 			
-			public function BOOL(IDWriteFontFace2 *self) IsColorFont;
-			public function uint32(IDWriteFontFace2 *self) GetColorPaletteCount;
-			public function uint32(IDWriteFontFace2 *self) GetPaletteEntryCount;
-			public function HRESULT(IDWriteFontFace2 *self, uint32 colorPaletteIndex, uint32 firstEntryIndex, uint32 entryCount, DWRITE_COLOR_F* paletteEntries) GetPaletteEntries;
-			public function HRESULT(IDWriteFontFace2 *self, float fontEmSize, float dpiX, float dpiY, DWRITE_MATRIX* transform, BOOL isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, IDWriteRenderingParams* renderingParams, DWRITE_RENDERING_MODE* renderingMode, DWRITE_GRID_FIT_MODE* gridFitMode) GetRecommendedRenderingMode;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontFace1.VTable
+			{
+				public function BOOL(IDWriteFontFace2 *self) IsColorFont;
+				public function uint32(IDWriteFontFace2 *self) GetColorPaletteCount;
+				public function uint32(IDWriteFontFace2 *self) GetPaletteEntryCount;
+				public function HRESULT(IDWriteFontFace2 *self, uint32 colorPaletteIndex, uint32 firstEntryIndex, uint32 entryCount, DWRITE_COLOR_F* paletteEntries) GetPaletteEntries;
+				public function HRESULT(IDWriteFontFace2 *self, float fontEmSize, float dpiX, float dpiY, DWRITE_MATRIX* transform, BOOL isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, IDWriteRenderingParams* renderingParams, DWRITE_RENDERING_MODE* renderingMode, DWRITE_GRID_FIT_MODE* gridFitMode) GetRecommendedRenderingMode;
+			}
 		}
 		[CRepr]
 		public struct IDWriteColorGlyphRunEnumerator : IUnknown
 		{
 			public const new Guid IID = .(0xd31fbe17, 0xf157, 0x41a2, 0x8d, 0x24, 0xcb, 0x77, 0x9e, 0x05, 0x60, 0xe8);
 			
-			public function HRESULT(IDWriteColorGlyphRunEnumerator *self, BOOL* hasRun) MoveNext;
-			public function HRESULT(IDWriteColorGlyphRunEnumerator *self, DWRITE_COLOR_GLYPH_RUN** colorGlyphRun) GetCurrentRun;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteColorGlyphRunEnumerator *self, BOOL* hasRun) MoveNext;
+				public function HRESULT(IDWriteColorGlyphRunEnumerator *self, DWRITE_COLOR_GLYPH_RUN** colorGlyphRun) GetCurrentRun;
+			}
 		}
 		[CRepr]
 		public struct IDWriteRenderingParams2 : IDWriteRenderingParams1
 		{
 			public const new Guid IID = .(0xf9d711c3, 0x9777, 0x40ae, 0x87, 0xe8, 0x3e, 0x5a, 0xf9, 0xbf, 0x09, 0x48);
 			
-			public function DWRITE_GRID_FIT_MODE(IDWriteRenderingParams2 *self) GetGridFitMode;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteRenderingParams1.VTable
+			{
+				public function DWRITE_GRID_FIT_MODE(IDWriteRenderingParams2 *self) GetGridFitMode;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFactory2 : IDWriteFactory1
 		{
 			public const new Guid IID = .(0x0439fc60, 0xca44, 0x4994, 0x8d, 0xee, 0x3a, 0x9a, 0xf7, 0xb7, 0x32, 0xec);
 			
-			public function HRESULT(IDWriteFactory2 *self, IDWriteFontFallback** fontFallback) GetSystemFontFallback;
-			public function HRESULT(IDWriteFactory2 *self, IDWriteFontFallbackBuilder** fontFallbackBuilder) CreateFontFallbackBuilder;
-			public function HRESULT(IDWriteFactory2 *self, float baselineOriginX, float baselineOriginY, DWRITE_GLYPH_RUN* glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, DWRITE_MEASURING_MODE measuringMode, DWRITE_MATRIX* worldToDeviceTransform, uint32 colorPaletteIndex, IDWriteColorGlyphRunEnumerator** colorLayers) TranslateColorGlyphRun;
-			public function HRESULT(IDWriteFactory2 *self, float gamma, float enhancedContrast, float grayscaleEnhancedContrast, float clearTypeLevel, DWRITE_PIXEL_GEOMETRY pixelGeometry, DWRITE_RENDERING_MODE renderingMode, DWRITE_GRID_FIT_MODE gridFitMode, IDWriteRenderingParams2** renderingParams) CreateCustomRenderingParams;
-			public function HRESULT(IDWriteFactory2 *self, DWRITE_GLYPH_RUN* glyphRun, DWRITE_MATRIX* transform, DWRITE_RENDERING_MODE renderingMode, DWRITE_MEASURING_MODE measuringMode, DWRITE_GRID_FIT_MODE gridFitMode, DWRITE_TEXT_ANTIALIAS_MODE antialiasMode, float baselineOriginX, float baselineOriginY, IDWriteGlyphRunAnalysis** glyphRunAnalysis) CreateGlyphRunAnalysis;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFactory1.VTable
+			{
+				public function HRESULT(IDWriteFactory2 *self, IDWriteFontFallback** fontFallback) GetSystemFontFallback;
+				public function HRESULT(IDWriteFactory2 *self, IDWriteFontFallbackBuilder** fontFallbackBuilder) CreateFontFallbackBuilder;
+				public function HRESULT(IDWriteFactory2 *self, float baselineOriginX, float baselineOriginY, DWRITE_GLYPH_RUN* glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, DWRITE_MEASURING_MODE measuringMode, DWRITE_MATRIX* worldToDeviceTransform, uint32 colorPaletteIndex, IDWriteColorGlyphRunEnumerator** colorLayers) TranslateColorGlyphRun;
+				public function HRESULT(IDWriteFactory2 *self, float gamma, float enhancedContrast, float grayscaleEnhancedContrast, float clearTypeLevel, DWRITE_PIXEL_GEOMETRY pixelGeometry, DWRITE_RENDERING_MODE renderingMode, DWRITE_GRID_FIT_MODE gridFitMode, IDWriteRenderingParams2** renderingParams) CreateCustomRenderingParams;
+				public function HRESULT(IDWriteFactory2 *self, DWRITE_GLYPH_RUN* glyphRun, DWRITE_MATRIX* transform, DWRITE_RENDERING_MODE renderingMode, DWRITE_MEASURING_MODE measuringMode, DWRITE_GRID_FIT_MODE gridFitMode, DWRITE_TEXT_ANTIALIAS_MODE antialiasMode, float baselineOriginX, float baselineOriginY, IDWriteGlyphRunAnalysis** glyphRunAnalysis) CreateGlyphRunAnalysis;
+			}
 		}
 		[CRepr]
 		public struct IDWriteRenderingParams3 : IDWriteRenderingParams2
 		{
 			public const new Guid IID = .(0xb7924baa, 0x391b, 0x412a, 0x8c, 0x5c, 0xe4, 0x4c, 0xc2, 0xd8, 0x67, 0xdc);
 			
-			public function DWRITE_RENDERING_MODE1(IDWriteRenderingParams3 *self) GetRenderingMode1;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteRenderingParams2.VTable
+			{
+				public function DWRITE_RENDERING_MODE1(IDWriteRenderingParams3 *self) GetRenderingMode1;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFactory3 : IDWriteFactory2
 		{
 			public const new Guid IID = .(0x9a1b41c3, 0xd3bb, 0x466a, 0x87, 0xfc, 0xfe, 0x67, 0x55, 0x6a, 0x3b, 0x65);
 			
-			public function HRESULT(IDWriteFactory3 *self, DWRITE_GLYPH_RUN* glyphRun, DWRITE_MATRIX* transform, DWRITE_RENDERING_MODE1 renderingMode, DWRITE_MEASURING_MODE measuringMode, DWRITE_GRID_FIT_MODE gridFitMode, DWRITE_TEXT_ANTIALIAS_MODE antialiasMode, float baselineOriginX, float baselineOriginY, IDWriteGlyphRunAnalysis** glyphRunAnalysis) CreateGlyphRunAnalysis;
-			public function HRESULT(IDWriteFactory3 *self, float gamma, float enhancedContrast, float grayscaleEnhancedContrast, float clearTypeLevel, DWRITE_PIXEL_GEOMETRY pixelGeometry, DWRITE_RENDERING_MODE1 renderingMode, DWRITE_GRID_FIT_MODE gridFitMode, IDWriteRenderingParams3** renderingParams) CreateCustomRenderingParams;
-			public function HRESULT(IDWriteFactory3 *self, IDWriteFontFile* fontFile, uint32 faceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, IDWriteFontFaceReference** fontFaceReference) CreateFontFaceReference;
-			public function HRESULT(IDWriteFactory3 *self, PWSTR filePath, FILETIME* lastWriteTime, uint32 faceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, IDWriteFontFaceReference** fontFaceReference) CreateFontFaceReference2;
-			public function HRESULT(IDWriteFactory3 *self, IDWriteFontSet** fontSet) GetSystemFontSet;
-			public function HRESULT(IDWriteFactory3 *self, IDWriteFontSetBuilder** fontSetBuilder) CreateFontSetBuilder;
-			public function HRESULT(IDWriteFactory3 *self, IDWriteFontSet* fontSet, IDWriteFontCollection1** fontCollection) CreateFontCollectionFromFontSet;
-			public function HRESULT(IDWriteFactory3 *self, BOOL includeDownloadableFonts, IDWriteFontCollection1** fontCollection, BOOL checkForUpdates) GetSystemFontCollection;
-			public function HRESULT(IDWriteFactory3 *self, IDWriteFontDownloadQueue** fontDownloadQueue) GetFontDownloadQueue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFactory2.VTable
+			{
+				public function HRESULT(IDWriteFactory3 *self, DWRITE_GLYPH_RUN* glyphRun, DWRITE_MATRIX* transform, DWRITE_RENDERING_MODE1 renderingMode, DWRITE_MEASURING_MODE measuringMode, DWRITE_GRID_FIT_MODE gridFitMode, DWRITE_TEXT_ANTIALIAS_MODE antialiasMode, float baselineOriginX, float baselineOriginY, IDWriteGlyphRunAnalysis** glyphRunAnalysis) CreateGlyphRunAnalysis;
+				public function HRESULT(IDWriteFactory3 *self, float gamma, float enhancedContrast, float grayscaleEnhancedContrast, float clearTypeLevel, DWRITE_PIXEL_GEOMETRY pixelGeometry, DWRITE_RENDERING_MODE1 renderingMode, DWRITE_GRID_FIT_MODE gridFitMode, IDWriteRenderingParams3** renderingParams) CreateCustomRenderingParams;
+				public function HRESULT(IDWriteFactory3 *self, IDWriteFontFile* fontFile, uint32 faceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, IDWriteFontFaceReference** fontFaceReference) CreateFontFaceReference;
+				public function HRESULT(IDWriteFactory3 *self, PWSTR filePath, FILETIME* lastWriteTime, uint32 faceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, IDWriteFontFaceReference** fontFaceReference) CreateFontFaceReference2;
+				public function HRESULT(IDWriteFactory3 *self, IDWriteFontSet** fontSet) GetSystemFontSet;
+				public function HRESULT(IDWriteFactory3 *self, IDWriteFontSetBuilder** fontSetBuilder) CreateFontSetBuilder;
+				public function HRESULT(IDWriteFactory3 *self, IDWriteFontSet* fontSet, IDWriteFontCollection1** fontCollection) CreateFontCollectionFromFontSet;
+				public function HRESULT(IDWriteFactory3 *self, BOOL includeDownloadableFonts, IDWriteFontCollection1** fontCollection, BOOL checkForUpdates) GetSystemFontCollection;
+				public function HRESULT(IDWriteFactory3 *self, IDWriteFontDownloadQueue** fontDownloadQueue) GetFontDownloadQueue;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontSet : IUnknown
 		{
 			public const new Guid IID = .(0x53585141, 0xd9f8, 0x4095, 0x83, 0x21, 0xd7, 0x3c, 0xf6, 0xbd, 0x11, 0x6b);
 			
-			public function uint32(IDWriteFontSet *self) GetFontCount;
-			public function HRESULT(IDWriteFontSet *self, uint32 listIndex, IDWriteFontFaceReference** fontFaceReference) GetFontFaceReference;
-			public function HRESULT(IDWriteFontSet *self, IDWriteFontFaceReference* fontFaceReference, uint32* listIndex, BOOL* exists) FindFontFaceReference;
-			public function HRESULT(IDWriteFontSet *self, IDWriteFontFace* fontFace, uint32* listIndex, BOOL* exists) FindFontFace;
-			public function HRESULT(IDWriteFontSet *self, DWRITE_FONT_PROPERTY_ID propertyID, IDWriteStringList** values) GetPropertyValues;
-			public function HRESULT(IDWriteFontSet *self, DWRITE_FONT_PROPERTY_ID propertyID, PWSTR preferredLocaleNames, IDWriteStringList** values) GetPropertyValues2;
-			public function HRESULT(IDWriteFontSet *self, uint32 listIndex, DWRITE_FONT_PROPERTY_ID propertyId, BOOL* exists, IDWriteLocalizedStrings** values) GetPropertyValues3;
-			public function HRESULT(IDWriteFontSet *self, DWRITE_FONT_PROPERTY* property, uint32* propertyOccurrenceCount) GetPropertyOccurrenceCount;
-			public function HRESULT(IDWriteFontSet *self, PWSTR familyName, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STRETCH fontStretch, DWRITE_FONT_STYLE fontStyle, IDWriteFontSet** filteredSet) GetMatchingFonts;
-			public function HRESULT(IDWriteFontSet *self, DWRITE_FONT_PROPERTY* properties, uint32 propertyCount, IDWriteFontSet** filteredSet) GetMatchingFonts2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function uint32(IDWriteFontSet *self) GetFontCount;
+				public function HRESULT(IDWriteFontSet *self, uint32 listIndex, IDWriteFontFaceReference** fontFaceReference) GetFontFaceReference;
+				public function HRESULT(IDWriteFontSet *self, IDWriteFontFaceReference* fontFaceReference, uint32* listIndex, BOOL* exists) FindFontFaceReference;
+				public function HRESULT(IDWriteFontSet *self, IDWriteFontFace* fontFace, uint32* listIndex, BOOL* exists) FindFontFace;
+				public function HRESULT(IDWriteFontSet *self, DWRITE_FONT_PROPERTY_ID propertyID, IDWriteStringList** values) GetPropertyValues;
+				public function HRESULT(IDWriteFontSet *self, DWRITE_FONT_PROPERTY_ID propertyID, PWSTR preferredLocaleNames, IDWriteStringList** values) GetPropertyValues2;
+				public function HRESULT(IDWriteFontSet *self, uint32 listIndex, DWRITE_FONT_PROPERTY_ID propertyId, BOOL* exists, IDWriteLocalizedStrings** values) GetPropertyValues3;
+				public function HRESULT(IDWriteFontSet *self, DWRITE_FONT_PROPERTY* property, uint32* propertyOccurrenceCount) GetPropertyOccurrenceCount;
+				public function HRESULT(IDWriteFontSet *self, PWSTR familyName, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STRETCH fontStretch, DWRITE_FONT_STYLE fontStyle, IDWriteFontSet** filteredSet) GetMatchingFonts;
+				public function HRESULT(IDWriteFontSet *self, DWRITE_FONT_PROPERTY* properties, uint32 propertyCount, IDWriteFontSet** filteredSet) GetMatchingFonts2;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontSetBuilder : IUnknown
 		{
 			public const new Guid IID = .(0x2f642afe, 0x9c68, 0x4f40, 0xb8, 0xbe, 0x45, 0x74, 0x01, 0xaf, 0xcb, 0x3d);
 			
-			public function HRESULT(IDWriteFontSetBuilder *self, IDWriteFontFaceReference* fontFaceReference, DWRITE_FONT_PROPERTY* properties, uint32 propertyCount) AddFontFaceReference;
-			public function HRESULT(IDWriteFontSetBuilder *self, IDWriteFontFaceReference* fontFaceReference) AddFontFaceReference2;
-			public function HRESULT(IDWriteFontSetBuilder *self, IDWriteFontSet* fontSet) AddFontSet;
-			public function HRESULT(IDWriteFontSetBuilder *self, IDWriteFontSet** fontSet) CreateFontSet;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteFontSetBuilder *self, IDWriteFontFaceReference* fontFaceReference, DWRITE_FONT_PROPERTY* properties, uint32 propertyCount) AddFontFaceReference;
+				public function HRESULT(IDWriteFontSetBuilder *self, IDWriteFontFaceReference* fontFaceReference) AddFontFaceReference2;
+				public function HRESULT(IDWriteFontSetBuilder *self, IDWriteFontSet* fontSet) AddFontSet;
+				public function HRESULT(IDWriteFontSetBuilder *self, IDWriteFontSet** fontSet) CreateFontSet;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontCollection1 : IDWriteFontCollection
 		{
 			public const new Guid IID = .(0x53585141, 0xd9f8, 0x4095, 0x83, 0x21, 0xd7, 0x3c, 0xf6, 0xbd, 0x11, 0x6c);
 			
-			public function HRESULT(IDWriteFontCollection1 *self, IDWriteFontSet** fontSet) GetFontSet;
-			public function HRESULT(IDWriteFontCollection1 *self, uint32 index, IDWriteFontFamily1** fontFamily) GetFontFamily;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontCollection.VTable
+			{
+				public function HRESULT(IDWriteFontCollection1 *self, IDWriteFontSet** fontSet) GetFontSet;
+				public function HRESULT(IDWriteFontCollection1 *self, uint32 index, IDWriteFontFamily1** fontFamily) GetFontFamily;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontFamily1 : IDWriteFontFamily
 		{
 			public const new Guid IID = .(0xda20d8ef, 0x812a, 0x4c43, 0x98, 0x02, 0x62, 0xec, 0x4a, 0xbd, 0x7a, 0xdf);
 			
-			public function DWRITE_LOCALITY(IDWriteFontFamily1 *self, uint32 listIndex) GetFontLocality;
-			public function HRESULT(IDWriteFontFamily1 *self, uint32 listIndex, IDWriteFont3** font) GetFont;
-			public function HRESULT(IDWriteFontFamily1 *self, uint32 listIndex, IDWriteFontFaceReference** fontFaceReference) GetFontFaceReference;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontFamily.VTable
+			{
+				public function DWRITE_LOCALITY(IDWriteFontFamily1 *self, uint32 listIndex) GetFontLocality;
+				public function HRESULT(IDWriteFontFamily1 *self, uint32 listIndex, IDWriteFont3** font) GetFont;
+				public function HRESULT(IDWriteFontFamily1 *self, uint32 listIndex, IDWriteFontFaceReference** fontFaceReference) GetFontFaceReference;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontList1 : IDWriteFontList
 		{
 			public const new Guid IID = .(0xda20d8ef, 0x812a, 0x4c43, 0x98, 0x02, 0x62, 0xec, 0x4a, 0xbd, 0x7a, 0xde);
 			
-			public function DWRITE_LOCALITY(IDWriteFontList1 *self, uint32 listIndex) GetFontLocality;
-			public function HRESULT(IDWriteFontList1 *self, uint32 listIndex, IDWriteFont3** font) GetFont;
-			public function HRESULT(IDWriteFontList1 *self, uint32 listIndex, IDWriteFontFaceReference** fontFaceReference) GetFontFaceReference;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontList.VTable
+			{
+				public function DWRITE_LOCALITY(IDWriteFontList1 *self, uint32 listIndex) GetFontLocality;
+				public function HRESULT(IDWriteFontList1 *self, uint32 listIndex, IDWriteFont3** font) GetFont;
+				public function HRESULT(IDWriteFontList1 *self, uint32 listIndex, IDWriteFontFaceReference** fontFaceReference) GetFontFaceReference;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontFaceReference : IUnknown
 		{
 			public const new Guid IID = .(0x5e7fa7ca, 0xdde3, 0x424c, 0x89, 0xf0, 0x9f, 0xcd, 0x6f, 0xed, 0x58, 0xcd);
 			
-			public function HRESULT(IDWriteFontFaceReference *self, IDWriteFontFace3** fontFace) CreateFontFace;
-			public function HRESULT(IDWriteFontFaceReference *self, DWRITE_FONT_SIMULATIONS fontFaceSimulationFlags, IDWriteFontFace3** fontFace) CreateFontFaceWithSimulations;
-			public function BOOL(IDWriteFontFaceReference *self, IDWriteFontFaceReference* fontFaceReference) Equals;
-			public function uint32(IDWriteFontFaceReference *self) GetFontFaceIndex;
-			public function DWRITE_FONT_SIMULATIONS(IDWriteFontFaceReference *self) GetSimulations;
-			public function HRESULT(IDWriteFontFaceReference *self, IDWriteFontFile** fontFile) GetFontFile;
-			public function uint64(IDWriteFontFaceReference *self) GetLocalFileSize;
-			public function uint64(IDWriteFontFaceReference *self) GetFileSize;
-			public function HRESULT(IDWriteFontFaceReference *self, FILETIME* lastWriteTime) GetFileTime;
-			public function DWRITE_LOCALITY(IDWriteFontFaceReference *self) GetLocality;
-			public function HRESULT(IDWriteFontFaceReference *self) EnqueueFontDownloadRequest;
-			public function HRESULT(IDWriteFontFaceReference *self, char16* characters, uint32 characterCount) EnqueueCharacterDownloadRequest;
-			public function HRESULT(IDWriteFontFaceReference *self, uint16* glyphIndices, uint32 glyphCount) EnqueueGlyphDownloadRequest;
-			public function HRESULT(IDWriteFontFaceReference *self, uint64 fileOffset, uint64 fragmentSize) EnqueueFileFragmentDownloadRequest;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteFontFaceReference *self, IDWriteFontFace3** fontFace) CreateFontFace;
+				public function HRESULT(IDWriteFontFaceReference *self, DWRITE_FONT_SIMULATIONS fontFaceSimulationFlags, IDWriteFontFace3** fontFace) CreateFontFaceWithSimulations;
+				public function BOOL(IDWriteFontFaceReference *self, IDWriteFontFaceReference* fontFaceReference) Equals;
+				public function uint32(IDWriteFontFaceReference *self) GetFontFaceIndex;
+				public function DWRITE_FONT_SIMULATIONS(IDWriteFontFaceReference *self) GetSimulations;
+				public function HRESULT(IDWriteFontFaceReference *self, IDWriteFontFile** fontFile) GetFontFile;
+				public function uint64(IDWriteFontFaceReference *self) GetLocalFileSize;
+				public function uint64(IDWriteFontFaceReference *self) GetFileSize;
+				public function HRESULT(IDWriteFontFaceReference *self, FILETIME* lastWriteTime) GetFileTime;
+				public function DWRITE_LOCALITY(IDWriteFontFaceReference *self) GetLocality;
+				public function HRESULT(IDWriteFontFaceReference *self) EnqueueFontDownloadRequest;
+				public function HRESULT(IDWriteFontFaceReference *self, char16* characters, uint32 characterCount) EnqueueCharacterDownloadRequest;
+				public function HRESULT(IDWriteFontFaceReference *self, uint16* glyphIndices, uint32 glyphCount) EnqueueGlyphDownloadRequest;
+				public function HRESULT(IDWriteFontFaceReference *self, uint64 fileOffset, uint64 fragmentSize) EnqueueFileFragmentDownloadRequest;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFont3 : IDWriteFont2
 		{
 			public const new Guid IID = .(0x29748ed6, 0x8c9c, 0x4a6a, 0xbe, 0x0b, 0xd9, 0x12, 0xe8, 0x53, 0x89, 0x44);
 			
-			public function HRESULT(IDWriteFont3 *self, IDWriteFontFace3** fontFace) CreateFontFace;
-			public function BOOL(IDWriteFont3 *self, IDWriteFont* font) Equals;
-			public function HRESULT(IDWriteFont3 *self, IDWriteFontFaceReference** fontFaceReference) GetFontFaceReference;
-			public function BOOL(IDWriteFont3 *self, uint32 unicodeValue) HasCharacter;
-			public function DWRITE_LOCALITY(IDWriteFont3 *self) GetLocality;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFont2.VTable
+			{
+				public function HRESULT(IDWriteFont3 *self, IDWriteFontFace3** fontFace) CreateFontFace;
+				public function BOOL(IDWriteFont3 *self, IDWriteFont* font) Equals;
+				public function HRESULT(IDWriteFont3 *self, IDWriteFontFaceReference** fontFaceReference) GetFontFaceReference;
+				public function BOOL(IDWriteFont3 *self, uint32 unicodeValue) HasCharacter;
+				public function DWRITE_LOCALITY(IDWriteFont3 *self) GetLocality;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontFace3 : IDWriteFontFace2
 		{
 			public const new Guid IID = .(0xd37d7598, 0x09be, 0x4222, 0xa2, 0x36, 0x20, 0x81, 0x34, 0x1c, 0xc1, 0xf2);
 			
-			public function HRESULT(IDWriteFontFace3 *self, IDWriteFontFaceReference** fontFaceReference) GetFontFaceReference;
-			public function void(IDWriteFontFace3 *self, DWRITE_PANOSE* panose) GetPanose;
-			public function DWRITE_FONT_WEIGHT(IDWriteFontFace3 *self) GetWeight;
-			public function DWRITE_FONT_STRETCH(IDWriteFontFace3 *self) GetStretch;
-			public function DWRITE_FONT_STYLE(IDWriteFontFace3 *self) GetStyle;
-			public function HRESULT(IDWriteFontFace3 *self, IDWriteLocalizedStrings** names) GetFamilyNames;
-			public function HRESULT(IDWriteFontFace3 *self, IDWriteLocalizedStrings** names) GetFaceNames;
-			public function HRESULT(IDWriteFontFace3 *self, DWRITE_INFORMATIONAL_STRING_ID informationalStringID, IDWriteLocalizedStrings** informationalStrings, BOOL* exists) GetInformationalStrings;
-			public function BOOL(IDWriteFontFace3 *self, uint32 unicodeValue) HasCharacter;
-			public function HRESULT(IDWriteFontFace3 *self, float fontEmSize, float dpiX, float dpiY, DWRITE_MATRIX* transform, BOOL isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, IDWriteRenderingParams* renderingParams, DWRITE_RENDERING_MODE1* renderingMode, DWRITE_GRID_FIT_MODE* gridFitMode) GetRecommendedRenderingMode;
-			public function BOOL(IDWriteFontFace3 *self, uint32 unicodeValue) IsCharacterLocal;
-			public function BOOL(IDWriteFontFace3 *self, uint16 glyphId) IsGlyphLocal;
-			public function HRESULT(IDWriteFontFace3 *self, char16* characters, uint32 characterCount, BOOL enqueueIfNotLocal, BOOL* isLocal) AreCharactersLocal;
-			public function HRESULT(IDWriteFontFace3 *self, uint16* glyphIndices, uint32 glyphCount, BOOL enqueueIfNotLocal, BOOL* isLocal) AreGlyphsLocal;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontFace2.VTable
+			{
+				public function HRESULT(IDWriteFontFace3 *self, IDWriteFontFaceReference** fontFaceReference) GetFontFaceReference;
+				public function void(IDWriteFontFace3 *self, DWRITE_PANOSE* panose) GetPanose;
+				public function DWRITE_FONT_WEIGHT(IDWriteFontFace3 *self) GetWeight;
+				public function DWRITE_FONT_STRETCH(IDWriteFontFace3 *self) GetStretch;
+				public function DWRITE_FONT_STYLE(IDWriteFontFace3 *self) GetStyle;
+				public function HRESULT(IDWriteFontFace3 *self, IDWriteLocalizedStrings** names) GetFamilyNames;
+				public function HRESULT(IDWriteFontFace3 *self, IDWriteLocalizedStrings** names) GetFaceNames;
+				public function HRESULT(IDWriteFontFace3 *self, DWRITE_INFORMATIONAL_STRING_ID informationalStringID, IDWriteLocalizedStrings** informationalStrings, BOOL* exists) GetInformationalStrings;
+				public function BOOL(IDWriteFontFace3 *self, uint32 unicodeValue) HasCharacter;
+				public function HRESULT(IDWriteFontFace3 *self, float fontEmSize, float dpiX, float dpiY, DWRITE_MATRIX* transform, BOOL isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, IDWriteRenderingParams* renderingParams, DWRITE_RENDERING_MODE1* renderingMode, DWRITE_GRID_FIT_MODE* gridFitMode) GetRecommendedRenderingMode;
+				public function BOOL(IDWriteFontFace3 *self, uint32 unicodeValue) IsCharacterLocal;
+				public function BOOL(IDWriteFontFace3 *self, uint16 glyphId) IsGlyphLocal;
+				public function HRESULT(IDWriteFontFace3 *self, char16* characters, uint32 characterCount, BOOL enqueueIfNotLocal, BOOL* isLocal) AreCharactersLocal;
+				public function HRESULT(IDWriteFontFace3 *self, uint16* glyphIndices, uint32 glyphCount, BOOL enqueueIfNotLocal, BOOL* isLocal) AreGlyphsLocal;
+			}
 		}
 		[CRepr]
 		public struct IDWriteStringList : IUnknown
 		{
 			public const new Guid IID = .(0xcfee3140, 0x1157, 0x47ca, 0x8b, 0x85, 0x31, 0xbf, 0xcf, 0x3f, 0x2d, 0x0e);
 			
-			public function uint32(IDWriteStringList *self) GetCount;
-			public function HRESULT(IDWriteStringList *self, uint32 listIndex, uint32* length) GetLocaleNameLength;
-			public function HRESULT(IDWriteStringList *self, uint32 listIndex, char16* localeName, uint32 size) GetLocaleName;
-			public function HRESULT(IDWriteStringList *self, uint32 listIndex, uint32* length) GetStringLength;
-			public function HRESULT(IDWriteStringList *self, uint32 listIndex, char16* stringBuffer, uint32 stringBufferSize) GetString;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function uint32(IDWriteStringList *self) GetCount;
+				public function HRESULT(IDWriteStringList *self, uint32 listIndex, uint32* length) GetLocaleNameLength;
+				public function HRESULT(IDWriteStringList *self, uint32 listIndex, char16* localeName, uint32 size) GetLocaleName;
+				public function HRESULT(IDWriteStringList *self, uint32 listIndex, uint32* length) GetStringLength;
+				public function HRESULT(IDWriteStringList *self, uint32 listIndex, char16* stringBuffer, uint32 stringBufferSize) GetString;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontDownloadListener : IUnknown
 		{
 			public const new Guid IID = .(0xb06fe5b9, 0x43ec, 0x4393, 0x88, 0x1b, 0xdb, 0xe4, 0xdc, 0x72, 0xfd, 0xa7);
 			
-			public function void(IDWriteFontDownloadListener *self, IDWriteFontDownloadQueue* downloadQueue, IUnknown* context, HRESULT downloadResult) DownloadCompleted;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function void(IDWriteFontDownloadListener *self, IDWriteFontDownloadQueue* downloadQueue, IUnknown* context, HRESULT downloadResult) DownloadCompleted;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontDownloadQueue : IUnknown
 		{
 			public const new Guid IID = .(0xb71e6052, 0x5aea, 0x4fa3, 0x83, 0x2e, 0xf6, 0x0d, 0x43, 0x1f, 0x7e, 0x91);
 			
-			public function HRESULT(IDWriteFontDownloadQueue *self, IDWriteFontDownloadListener* listener, uint32* token) AddListener;
-			public function HRESULT(IDWriteFontDownloadQueue *self, uint32 token) RemoveListener;
-			public function BOOL(IDWriteFontDownloadQueue *self) IsEmpty;
-			public function HRESULT(IDWriteFontDownloadQueue *self, IUnknown* context) BeginDownload;
-			public function HRESULT(IDWriteFontDownloadQueue *self) CancelDownload;
-			public function uint64(IDWriteFontDownloadQueue *self) GetGenerationCount;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteFontDownloadQueue *self, IDWriteFontDownloadListener* listener, uint32* token) AddListener;
+				public function HRESULT(IDWriteFontDownloadQueue *self, uint32 token) RemoveListener;
+				public function BOOL(IDWriteFontDownloadQueue *self) IsEmpty;
+				public function HRESULT(IDWriteFontDownloadQueue *self, IUnknown* context) BeginDownload;
+				public function HRESULT(IDWriteFontDownloadQueue *self) CancelDownload;
+				public function uint64(IDWriteFontDownloadQueue *self) GetGenerationCount;
+			}
 		}
 		[CRepr]
 		public struct IDWriteGdiInterop1 : IDWriteGdiInterop
 		{
 			public const new Guid IID = .(0x4556be70, 0x3abd, 0x4f70, 0x90, 0xbe, 0x42, 0x17, 0x80, 0xa6, 0xf5, 0x15);
 			
-			public function HRESULT(IDWriteGdiInterop1 *self, LOGFONTW* logFont, IDWriteFontCollection* fontCollection, IDWriteFont** font) CreateFontFromLOGFONT;
-			public function HRESULT(IDWriteGdiInterop1 *self, IDWriteFontFace* fontFace, FONTSIGNATURE* fontSignature) GetFontSignature;
-			public function HRESULT(IDWriteGdiInterop1 *self, IDWriteFont* font, FONTSIGNATURE* fontSignature) GetFontSignature2;
-			public function HRESULT(IDWriteGdiInterop1 *self, LOGFONTA* logFont, IDWriteFontSet* fontSet, IDWriteFontSet** filteredSet) GetMatchingFontsByLOGFONT;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteGdiInterop.VTable
+			{
+				public function HRESULT(IDWriteGdiInterop1 *self, LOGFONTW* logFont, IDWriteFontCollection* fontCollection, IDWriteFont** font) CreateFontFromLOGFONT;
+				public function HRESULT(IDWriteGdiInterop1 *self, IDWriteFontFace* fontFace, FONTSIGNATURE* fontSignature) GetFontSignature;
+				public function HRESULT(IDWriteGdiInterop1 *self, IDWriteFont* font, FONTSIGNATURE* fontSignature) GetFontSignature2;
+				public function HRESULT(IDWriteGdiInterop1 *self, LOGFONTA* logFont, IDWriteFontSet* fontSet, IDWriteFontSet** filteredSet) GetMatchingFontsByLOGFONT;
+			}
 		}
 		[CRepr]
 		public struct IDWriteTextFormat2 : IDWriteTextFormat1
 		{
 			public const new Guid IID = .(0xf67e0edd, 0x9e3d, 0x4ecc, 0x8c, 0x32, 0x41, 0x83, 0x25, 0x3d, 0xfe, 0x70);
 			
-			public function HRESULT(IDWriteTextFormat2 *self, DWRITE_LINE_SPACING* lineSpacingOptions) SetLineSpacing;
-			public function HRESULT(IDWriteTextFormat2 *self, DWRITE_LINE_SPACING* lineSpacingOptions) GetLineSpacing;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteTextFormat1.VTable
+			{
+				public function HRESULT(IDWriteTextFormat2 *self, DWRITE_LINE_SPACING* lineSpacingOptions) SetLineSpacing;
+				public function HRESULT(IDWriteTextFormat2 *self, DWRITE_LINE_SPACING* lineSpacingOptions) GetLineSpacing;
+			}
 		}
 		[CRepr]
 		public struct IDWriteTextLayout3 : IDWriteTextLayout2
 		{
 			public const new Guid IID = .(0x07ddcd52, 0x020e, 0x4de8, 0xac, 0x33, 0x6c, 0x95, 0x3d, 0x83, 0xf9, 0x2d);
 			
-			public function HRESULT(IDWriteTextLayout3 *self) InvalidateLayout;
-			public function HRESULT(IDWriteTextLayout3 *self, DWRITE_LINE_SPACING* lineSpacingOptions) SetLineSpacing;
-			public function HRESULT(IDWriteTextLayout3 *self, DWRITE_LINE_SPACING* lineSpacingOptions) GetLineSpacing;
-			public function HRESULT(IDWriteTextLayout3 *self, DWRITE_LINE_METRICS1* lineMetrics, uint32 maxLineCount, uint32* actualLineCount) GetLineMetrics;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteTextLayout2.VTable
+			{
+				public function HRESULT(IDWriteTextLayout3 *self) InvalidateLayout;
+				public function HRESULT(IDWriteTextLayout3 *self, DWRITE_LINE_SPACING* lineSpacingOptions) SetLineSpacing;
+				public function HRESULT(IDWriteTextLayout3 *self, DWRITE_LINE_SPACING* lineSpacingOptions) GetLineSpacing;
+				public function HRESULT(IDWriteTextLayout3 *self, DWRITE_LINE_METRICS1* lineMetrics, uint32 maxLineCount, uint32* actualLineCount) GetLineMetrics;
+			}
 		}
 		[CRepr]
 		public struct IDWriteColorGlyphRunEnumerator1 : IDWriteColorGlyphRunEnumerator
 		{
 			public const new Guid IID = .(0x7c5f86da, 0xc7a1, 0x4f05, 0xb8, 0xe1, 0x55, 0xa1, 0x79, 0xfe, 0x5a, 0x35);
 			
-			public function HRESULT(IDWriteColorGlyphRunEnumerator1 *self, DWRITE_COLOR_GLYPH_RUN1** colorGlyphRun) GetCurrentRun;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteColorGlyphRunEnumerator.VTable
+			{
+				public function HRESULT(IDWriteColorGlyphRunEnumerator1 *self, DWRITE_COLOR_GLYPH_RUN1** colorGlyphRun) GetCurrentRun;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontFace4 : IDWriteFontFace3
 		{
 			public const new Guid IID = .(0x27f2a904, 0x4eb8, 0x441d, 0x96, 0x78, 0x05, 0x63, 0xf5, 0x3e, 0x3e, 0x2f);
 			
-			public function HRESULT(IDWriteFontFace4 *self, uint16 glyphId, uint32 pixelsPerEmFirst, uint32 pixelsPerEmLast, DWRITE_GLYPH_IMAGE_FORMATS* glyphImageFormats) GetGlyphImageFormats;
-			public function DWRITE_GLYPH_IMAGE_FORMATS(IDWriteFontFace4 *self) GetGlyphImageFormats2;
-			public function HRESULT(IDWriteFontFace4 *self, uint16 glyphId, uint32 pixelsPerEm, DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, DWRITE_GLYPH_IMAGE_DATA* glyphData, void** glyphDataContext) GetGlyphImageData;
-			public function void(IDWriteFontFace4 *self, void* glyphDataContext) ReleaseGlyphImageData;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontFace3.VTable
+			{
+				public function HRESULT(IDWriteFontFace4 *self, uint16 glyphId, uint32 pixelsPerEmFirst, uint32 pixelsPerEmLast, DWRITE_GLYPH_IMAGE_FORMATS* glyphImageFormats) GetGlyphImageFormats;
+				public function DWRITE_GLYPH_IMAGE_FORMATS(IDWriteFontFace4 *self) GetGlyphImageFormats2;
+				public function HRESULT(IDWriteFontFace4 *self, uint16 glyphId, uint32 pixelsPerEm, DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, DWRITE_GLYPH_IMAGE_DATA* glyphData, void** glyphDataContext) GetGlyphImageData;
+				public function void(IDWriteFontFace4 *self, void* glyphDataContext) ReleaseGlyphImageData;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFactory4 : IDWriteFactory3
 		{
 			public const new Guid IID = .(0x4b0b5bd3, 0x0797, 0x4549, 0x8a, 0xc5, 0xfe, 0x91, 0x5c, 0xc5, 0x38, 0x56);
 			
-			public function HRESULT(IDWriteFactory4 *self, D2D_POINT_2F baselineOrigin, DWRITE_GLYPH_RUN* glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, DWRITE_GLYPH_IMAGE_FORMATS desiredGlyphImageFormats, DWRITE_MEASURING_MODE measuringMode, DWRITE_MATRIX* worldAndDpiTransform, uint32 colorPaletteIndex, IDWriteColorGlyphRunEnumerator1** colorLayers) TranslateColorGlyphRun;
-			public function HRESULT(IDWriteFactory4 *self, DWRITE_GLYPH_RUN* glyphRun, D2D_POINT_2F baselineOrigin, D2D_POINT_2F* glyphOrigins) ComputeGlyphOrigins;
-			public function HRESULT(IDWriteFactory4 *self, DWRITE_GLYPH_RUN* glyphRun, DWRITE_MEASURING_MODE measuringMode, D2D_POINT_2F baselineOrigin, DWRITE_MATRIX* worldAndDpiTransform, D2D_POINT_2F* glyphOrigins) ComputeGlyphOrigins2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFactory3.VTable
+			{
+				public function HRESULT(IDWriteFactory4 *self, D2D_POINT_2F baselineOrigin, DWRITE_GLYPH_RUN* glyphRun, DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, DWRITE_GLYPH_IMAGE_FORMATS desiredGlyphImageFormats, DWRITE_MEASURING_MODE measuringMode, DWRITE_MATRIX* worldAndDpiTransform, uint32 colorPaletteIndex, IDWriteColorGlyphRunEnumerator1** colorLayers) TranslateColorGlyphRun;
+				public function HRESULT(IDWriteFactory4 *self, DWRITE_GLYPH_RUN* glyphRun, D2D_POINT_2F baselineOrigin, D2D_POINT_2F* glyphOrigins) ComputeGlyphOrigins;
+				public function HRESULT(IDWriteFactory4 *self, DWRITE_GLYPH_RUN* glyphRun, DWRITE_MEASURING_MODE measuringMode, D2D_POINT_2F baselineOrigin, DWRITE_MATRIX* worldAndDpiTransform, D2D_POINT_2F* glyphOrigins) ComputeGlyphOrigins2;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontSetBuilder1 : IDWriteFontSetBuilder
 		{
 			public const new Guid IID = .(0x3ff7715f, 0x3cdc, 0x4dc6, 0x9b, 0x72, 0xec, 0x56, 0x21, 0xdc, 0xca, 0xfd);
 			
-			public function HRESULT(IDWriteFontSetBuilder1 *self, IDWriteFontFile* fontFile) AddFontFile;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontSetBuilder.VTable
+			{
+				public function HRESULT(IDWriteFontSetBuilder1 *self, IDWriteFontFile* fontFile) AddFontFile;
+			}
 		}
 		[CRepr]
 		public struct IDWriteAsyncResult : IUnknown
 		{
 			public const new Guid IID = .(0xce25f8fd, 0x863b, 0x4d13, 0x96, 0x51, 0xc1, 0xf8, 0x8d, 0xc7, 0x3f, 0xe2);
 			
-			public function HANDLE(IDWriteAsyncResult *self) GetWaitHandle;
-			public function HRESULT(IDWriteAsyncResult *self) GetResult;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HANDLE(IDWriteAsyncResult *self) GetWaitHandle;
+				public function HRESULT(IDWriteAsyncResult *self) GetResult;
+			}
 		}
 		[CRepr]
 		public struct IDWriteRemoteFontFileStream : IDWriteFontFileStream
 		{
 			public const new Guid IID = .(0x4db3757a, 0x2c72, 0x4ed9, 0xb2, 0xb6, 0x1a, 0xba, 0xbe, 0x1a, 0xff, 0x9c);
 			
-			public function HRESULT(IDWriteRemoteFontFileStream *self, uint64* localFileSize) GetLocalFileSize;
-			public function HRESULT(IDWriteRemoteFontFileStream *self, uint64 fileOffset, uint64 fragmentSize, BOOL* isLocal, uint64* partialSize) GetFileFragmentLocality;
-			public function DWRITE_LOCALITY(IDWriteRemoteFontFileStream *self) GetLocality;
-			public function HRESULT(IDWriteRemoteFontFileStream *self, Guid* downloadOperationID, DWRITE_FILE_FRAGMENT* fileFragments, uint32 fragmentCount, IDWriteAsyncResult** asyncResult) BeginDownload;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontFileStream.VTable
+			{
+				public function HRESULT(IDWriteRemoteFontFileStream *self, uint64* localFileSize) GetLocalFileSize;
+				public function HRESULT(IDWriteRemoteFontFileStream *self, uint64 fileOffset, uint64 fragmentSize, BOOL* isLocal, uint64* partialSize) GetFileFragmentLocality;
+				public function DWRITE_LOCALITY(IDWriteRemoteFontFileStream *self) GetLocality;
+				public function HRESULT(IDWriteRemoteFontFileStream *self, Guid* downloadOperationID, DWRITE_FILE_FRAGMENT* fileFragments, uint32 fragmentCount, IDWriteAsyncResult** asyncResult) BeginDownload;
+			}
 		}
 		[CRepr]
 		public struct IDWriteRemoteFontFileLoader : IDWriteFontFileLoader
 		{
 			public const new Guid IID = .(0x68648c83, 0x6ede, 0x46c0, 0xab, 0x46, 0x20, 0x08, 0x3a, 0x88, 0x7f, 0xde);
 			
-			public function HRESULT(IDWriteRemoteFontFileLoader *self, void* fontFileReferenceKey, uint32 fontFileReferenceKeySize, IDWriteRemoteFontFileStream** fontFileStream) CreateRemoteStreamFromKey;
-			public function HRESULT(IDWriteRemoteFontFileLoader *self, void* fontFileReferenceKey, uint32 fontFileReferenceKeySize, DWRITE_LOCALITY* locality) GetLocalityFromKey;
-			public function HRESULT(IDWriteRemoteFontFileLoader *self, IDWriteFactory* factory, PWSTR baseUrl, PWSTR fontFileUrl, IDWriteFontFile** fontFile) CreateFontFileReferenceFromUrl;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontFileLoader.VTable
+			{
+				public function HRESULT(IDWriteRemoteFontFileLoader *self, void* fontFileReferenceKey, uint32 fontFileReferenceKeySize, IDWriteRemoteFontFileStream** fontFileStream) CreateRemoteStreamFromKey;
+				public function HRESULT(IDWriteRemoteFontFileLoader *self, void* fontFileReferenceKey, uint32 fontFileReferenceKeySize, DWRITE_LOCALITY* locality) GetLocalityFromKey;
+				public function HRESULT(IDWriteRemoteFontFileLoader *self, IDWriteFactory* factory, PWSTR baseUrl, PWSTR fontFileUrl, IDWriteFontFile** fontFile) CreateFontFileReferenceFromUrl;
+			}
 		}
 		[CRepr]
 		public struct IDWriteInMemoryFontFileLoader : IDWriteFontFileLoader
 		{
 			public const new Guid IID = .(0xdc102f47, 0xa12d, 0x4b1c, 0x82, 0x2d, 0x9e, 0x11, 0x7e, 0x33, 0x04, 0x3f);
 			
-			public function HRESULT(IDWriteInMemoryFontFileLoader *self, IDWriteFactory* factory, void* fontData, uint32 fontDataSize, IUnknown* ownerObject, IDWriteFontFile** fontFile) CreateInMemoryFontFileReference;
-			public function uint32(IDWriteInMemoryFontFileLoader *self) GetFileCount;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontFileLoader.VTable
+			{
+				public function HRESULT(IDWriteInMemoryFontFileLoader *self, IDWriteFactory* factory, void* fontData, uint32 fontDataSize, IUnknown* ownerObject, IDWriteFontFile** fontFile) CreateInMemoryFontFileReference;
+				public function uint32(IDWriteInMemoryFontFileLoader *self) GetFileCount;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFactory5 : IDWriteFactory4
 		{
 			public const new Guid IID = .(0x958db99a, 0xbe2a, 0x4f09, 0xaf, 0x7d, 0x65, 0x18, 0x98, 0x03, 0xd1, 0xd3);
 			
-			public function HRESULT(IDWriteFactory5 *self, IDWriteFontSetBuilder1** fontSetBuilder) CreateFontSetBuilder;
-			public function HRESULT(IDWriteFactory5 *self, IDWriteInMemoryFontFileLoader** newLoader) CreateInMemoryFontFileLoader;
-			public function HRESULT(IDWriteFactory5 *self, PWSTR referrerUrl, PWSTR extraHeaders, IDWriteRemoteFontFileLoader** newLoader) CreateHttpFontFileLoader;
-			public function DWRITE_CONTAINER_TYPE(IDWriteFactory5 *self, void* fileData, uint32 fileDataSize) AnalyzeContainerType;
-			public function HRESULT(IDWriteFactory5 *self, DWRITE_CONTAINER_TYPE containerType, void* fileData, uint32 fileDataSize, IDWriteFontFileStream** unpackedFontStream) UnpackFontFile;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFactory4.VTable
+			{
+				public function HRESULT(IDWriteFactory5 *self, IDWriteFontSetBuilder1** fontSetBuilder) CreateFontSetBuilder;
+				public function HRESULT(IDWriteFactory5 *self, IDWriteInMemoryFontFileLoader** newLoader) CreateInMemoryFontFileLoader;
+				public function HRESULT(IDWriteFactory5 *self, PWSTR referrerUrl, PWSTR extraHeaders, IDWriteRemoteFontFileLoader** newLoader) CreateHttpFontFileLoader;
+				public function DWRITE_CONTAINER_TYPE(IDWriteFactory5 *self, void* fileData, uint32 fileDataSize) AnalyzeContainerType;
+				public function HRESULT(IDWriteFactory5 *self, DWRITE_CONTAINER_TYPE containerType, void* fileData, uint32 fileDataSize, IDWriteFontFileStream** unpackedFontStream) UnpackFontFile;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFactory6 : IDWriteFactory5
 		{
 			public const new Guid IID = .(0xf3744d80, 0x21f7, 0x42eb, 0xb3, 0x5d, 0x99, 0x5b, 0xc7, 0x2f, 0xc2, 0x23);
 			
-			public function HRESULT(IDWriteFactory6 *self, IDWriteFontFile* fontFile, uint32 faceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, IDWriteFontFaceReference1** fontFaceReference) CreateFontFaceReference;
-			public function HRESULT(IDWriteFactory6 *self, IDWriteFontFile* fontFile, uint32 faceIndex, IDWriteFontResource** fontResource) CreateFontResource;
-			public function HRESULT(IDWriteFactory6 *self, BOOL includeDownloadableFonts, IDWriteFontSet1** fontSet) GetSystemFontSet;
-			public function HRESULT(IDWriteFactory6 *self, BOOL includeDownloadableFonts, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteFontCollection2** fontCollection) GetSystemFontCollection;
-			public function HRESULT(IDWriteFactory6 *self, IDWriteFontSet* fontSet, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteFontCollection2** fontCollection) CreateFontCollectionFromFontSet;
-			public function HRESULT(IDWriteFactory6 *self, IDWriteFontSetBuilder2** fontSetBuilder) CreateFontSetBuilder;
-			public function HRESULT(IDWriteFactory6 *self, PWSTR fontFamilyName, IDWriteFontCollection* fontCollection, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, float fontSize, PWSTR localeName, IDWriteTextFormat3** textFormat) CreateTextFormat;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFactory5.VTable
+			{
+				public function HRESULT(IDWriteFactory6 *self, IDWriteFontFile* fontFile, uint32 faceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, IDWriteFontFaceReference1** fontFaceReference) CreateFontFaceReference;
+				public function HRESULT(IDWriteFactory6 *self, IDWriteFontFile* fontFile, uint32 faceIndex, IDWriteFontResource** fontResource) CreateFontResource;
+				public function HRESULT(IDWriteFactory6 *self, BOOL includeDownloadableFonts, IDWriteFontSet1** fontSet) GetSystemFontSet;
+				public function HRESULT(IDWriteFactory6 *self, BOOL includeDownloadableFonts, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteFontCollection2** fontCollection) GetSystemFontCollection;
+				public function HRESULT(IDWriteFactory6 *self, IDWriteFontSet* fontSet, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteFontCollection2** fontCollection) CreateFontCollectionFromFontSet;
+				public function HRESULT(IDWriteFactory6 *self, IDWriteFontSetBuilder2** fontSetBuilder) CreateFontSetBuilder;
+				public function HRESULT(IDWriteFactory6 *self, PWSTR fontFamilyName, IDWriteFontCollection* fontCollection, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, float fontSize, PWSTR localeName, IDWriteTextFormat3** textFormat) CreateTextFormat;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontFace5 : IDWriteFontFace4
 		{
 			public const new Guid IID = .(0x98eff3a5, 0xb667, 0x479a, 0xb1, 0x45, 0xe2, 0xfa, 0x5b, 0x9f, 0xdc, 0x29);
 			
-			public function uint32(IDWriteFontFace5 *self) GetFontAxisValueCount;
-			public function HRESULT(IDWriteFontFace5 *self, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount) GetFontAxisValues;
-			public function BOOL(IDWriteFontFace5 *self) HasVariations;
-			public function HRESULT(IDWriteFontFace5 *self, IDWriteFontResource** fontResource) GetFontResource;
-			public function BOOL(IDWriteFontFace5 *self, IDWriteFontFace* fontFace) Equals;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontFace4.VTable
+			{
+				public function uint32(IDWriteFontFace5 *self) GetFontAxisValueCount;
+				public function HRESULT(IDWriteFontFace5 *self, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount) GetFontAxisValues;
+				public function BOOL(IDWriteFontFace5 *self) HasVariations;
+				public function HRESULT(IDWriteFontFace5 *self, IDWriteFontResource** fontResource) GetFontResource;
+				public function BOOL(IDWriteFontFace5 *self, IDWriteFontFace* fontFace) Equals;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontResource : IUnknown
 		{
 			public const new Guid IID = .(0x1f803a76, 0x6871, 0x48e8, 0x98, 0x7f, 0xb9, 0x75, 0x55, 0x1c, 0x50, 0xf2);
 			
-			public function HRESULT(IDWriteFontResource *self, IDWriteFontFile** fontFile) GetFontFile;
-			public function uint32(IDWriteFontResource *self) GetFontFaceIndex;
-			public function uint32(IDWriteFontResource *self) GetFontAxisCount;
-			public function HRESULT(IDWriteFontResource *self, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount) GetDefaultFontAxisValues;
-			public function HRESULT(IDWriteFontResource *self, DWRITE_FONT_AXIS_RANGE* fontAxisRanges, uint32 fontAxisRangeCount) GetFontAxisRanges;
-			public function DWRITE_FONT_AXIS_ATTRIBUTES(IDWriteFontResource *self, uint32 axisIndex) GetFontAxisAttributes;
-			public function HRESULT(IDWriteFontResource *self, uint32 axisIndex, IDWriteLocalizedStrings** names) GetAxisNames;
-			public function uint32(IDWriteFontResource *self, uint32 axisIndex) GetAxisValueNameCount;
-			public function HRESULT(IDWriteFontResource *self, uint32 axisIndex, uint32 axisValueIndex, DWRITE_FONT_AXIS_RANGE* fontAxisRange, IDWriteLocalizedStrings** names) GetAxisValueNames;
-			public function BOOL(IDWriteFontResource *self) HasVariations;
-			public function HRESULT(IDWriteFontResource *self, DWRITE_FONT_SIMULATIONS fontSimulations, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, IDWriteFontFace5** fontFace) CreateFontFace;
-			public function HRESULT(IDWriteFontResource *self, DWRITE_FONT_SIMULATIONS fontSimulations, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, IDWriteFontFaceReference1** fontFaceReference) CreateFontFaceReference;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDWriteFontResource *self, IDWriteFontFile** fontFile) GetFontFile;
+				public function uint32(IDWriteFontResource *self) GetFontFaceIndex;
+				public function uint32(IDWriteFontResource *self) GetFontAxisCount;
+				public function HRESULT(IDWriteFontResource *self, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount) GetDefaultFontAxisValues;
+				public function HRESULT(IDWriteFontResource *self, DWRITE_FONT_AXIS_RANGE* fontAxisRanges, uint32 fontAxisRangeCount) GetFontAxisRanges;
+				public function DWRITE_FONT_AXIS_ATTRIBUTES(IDWriteFontResource *self, uint32 axisIndex) GetFontAxisAttributes;
+				public function HRESULT(IDWriteFontResource *self, uint32 axisIndex, IDWriteLocalizedStrings** names) GetAxisNames;
+				public function uint32(IDWriteFontResource *self, uint32 axisIndex) GetAxisValueNameCount;
+				public function HRESULT(IDWriteFontResource *self, uint32 axisIndex, uint32 axisValueIndex, DWRITE_FONT_AXIS_RANGE* fontAxisRange, IDWriteLocalizedStrings** names) GetAxisValueNames;
+				public function BOOL(IDWriteFontResource *self) HasVariations;
+				public function HRESULT(IDWriteFontResource *self, DWRITE_FONT_SIMULATIONS fontSimulations, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, IDWriteFontFace5** fontFace) CreateFontFace;
+				public function HRESULT(IDWriteFontResource *self, DWRITE_FONT_SIMULATIONS fontSimulations, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, IDWriteFontFaceReference1** fontFaceReference) CreateFontFaceReference;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontFaceReference1 : IDWriteFontFaceReference
 		{
 			public const new Guid IID = .(0xc081fe77, 0x2fd1, 0x41ac, 0xa5, 0xa3, 0x34, 0x98, 0x3c, 0x4b, 0xa6, 0x1a);
 			
-			public function HRESULT(IDWriteFontFaceReference1 *self, IDWriteFontFace5** fontFace) CreateFontFace;
-			public function uint32(IDWriteFontFaceReference1 *self) GetFontAxisValueCount;
-			public function HRESULT(IDWriteFontFaceReference1 *self, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount) GetFontAxisValues;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontFaceReference.VTable
+			{
+				public function HRESULT(IDWriteFontFaceReference1 *self, IDWriteFontFace5** fontFace) CreateFontFace;
+				public function uint32(IDWriteFontFaceReference1 *self) GetFontAxisValueCount;
+				public function HRESULT(IDWriteFontFaceReference1 *self, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount) GetFontAxisValues;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontSetBuilder2 : IDWriteFontSetBuilder1
 		{
 			public const new Guid IID = .(0xee5ba612, 0xb131, 0x463c, 0x8f, 0x4f, 0x31, 0x89, 0xb9, 0x40, 0x1e, 0x45);
 			
-			public function HRESULT(IDWriteFontSetBuilder2 *self, IDWriteFontFile* fontFile, uint32 fontFaceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, DWRITE_FONT_AXIS_RANGE* fontAxisRanges, uint32 fontAxisRangeCount, DWRITE_FONT_PROPERTY* properties, uint32 propertyCount) AddFont;
-			public function HRESULT(IDWriteFontSetBuilder2 *self, PWSTR filePath) AddFontFile;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontSetBuilder1.VTable
+			{
+				public function HRESULT(IDWriteFontSetBuilder2 *self, IDWriteFontFile* fontFile, uint32 fontFaceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, DWRITE_FONT_AXIS_RANGE* fontAxisRanges, uint32 fontAxisRangeCount, DWRITE_FONT_PROPERTY* properties, uint32 propertyCount) AddFont;
+				public function HRESULT(IDWriteFontSetBuilder2 *self, PWSTR filePath) AddFontFile;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontSet1 : IDWriteFontSet
 		{
 			public const new Guid IID = .(0x7e9fda85, 0x6c92, 0x4053, 0xbc, 0x47, 0x7a, 0xe3, 0x53, 0x0d, 0xb4, 0xd3);
 			
-			public function HRESULT(IDWriteFontSet1 *self, DWRITE_FONT_PROPERTY* fontProperty, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, IDWriteFontSet1** matchingFonts) GetMatchingFonts;
-			public function HRESULT(IDWriteFontSet1 *self, IDWriteFontSet1** filteredFontSet) GetFirstFontResources;
-			public function HRESULT(IDWriteFontSet1 *self, uint32* indices, uint32 indexCount, IDWriteFontSet1** filteredFontSet) GetFilteredFonts;
-			public function HRESULT(IDWriteFontSet1 *self, DWRITE_FONT_AXIS_RANGE* fontAxisRanges, uint32 fontAxisRangeCount, BOOL selectAnyRange, IDWriteFontSet1** filteredFontSet) GetFilteredFonts2;
-			public function HRESULT(IDWriteFontSet1 *self, DWRITE_FONT_PROPERTY* properties, uint32 propertyCount, BOOL selectAnyProperty, IDWriteFontSet1** filteredFontSet) GetFilteredFonts3;
-			public function HRESULT(IDWriteFontSet1 *self, DWRITE_FONT_AXIS_RANGE* fontAxisRanges, uint32 fontAxisRangeCount, BOOL selectAnyRange, uint32* indices, uint32 maxIndexCount, uint32* actualIndexCount) GetFilteredFontIndices;
-			public function HRESULT(IDWriteFontSet1 *self, DWRITE_FONT_PROPERTY* properties, uint32 propertyCount, BOOL selectAnyProperty, uint32* indices, uint32 maxIndexCount, uint32* actualIndexCount) GetFilteredFontIndices2;
-			public function HRESULT(IDWriteFontSet1 *self, uint32 listIndex, DWRITE_FONT_AXIS_RANGE* fontAxisRanges, uint32 maxFontAxisRangeCount, uint32* actualFontAxisRangeCount) GetFontAxisRanges;
-			public function HRESULT(IDWriteFontSet1 *self, DWRITE_FONT_AXIS_RANGE* fontAxisRanges, uint32 maxFontAxisRangeCount, uint32* actualFontAxisRangeCount) GetFontAxisRanges2;
-			public function HRESULT(IDWriteFontSet1 *self, uint32 listIndex, IDWriteFontFaceReference1** fontFaceReference) GetFontFaceReference;
-			public function HRESULT(IDWriteFontSet1 *self, uint32 listIndex, IDWriteFontResource** fontResource) CreateFontResource;
-			public function HRESULT(IDWriteFontSet1 *self, uint32 listIndex, IDWriteFontFace5** fontFace) CreateFontFace;
-			public function DWRITE_LOCALITY(IDWriteFontSet1 *self, uint32 listIndex) GetFontLocality;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontSet.VTable
+			{
+				public function HRESULT(IDWriteFontSet1 *self, DWRITE_FONT_PROPERTY* fontProperty, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, IDWriteFontSet1** matchingFonts) GetMatchingFonts;
+				public function HRESULT(IDWriteFontSet1 *self, IDWriteFontSet1** filteredFontSet) GetFirstFontResources;
+				public function HRESULT(IDWriteFontSet1 *self, uint32* indices, uint32 indexCount, IDWriteFontSet1** filteredFontSet) GetFilteredFonts;
+				public function HRESULT(IDWriteFontSet1 *self, DWRITE_FONT_AXIS_RANGE* fontAxisRanges, uint32 fontAxisRangeCount, BOOL selectAnyRange, IDWriteFontSet1** filteredFontSet) GetFilteredFonts2;
+				public function HRESULT(IDWriteFontSet1 *self, DWRITE_FONT_PROPERTY* properties, uint32 propertyCount, BOOL selectAnyProperty, IDWriteFontSet1** filteredFontSet) GetFilteredFonts3;
+				public function HRESULT(IDWriteFontSet1 *self, DWRITE_FONT_AXIS_RANGE* fontAxisRanges, uint32 fontAxisRangeCount, BOOL selectAnyRange, uint32* indices, uint32 maxIndexCount, uint32* actualIndexCount) GetFilteredFontIndices;
+				public function HRESULT(IDWriteFontSet1 *self, DWRITE_FONT_PROPERTY* properties, uint32 propertyCount, BOOL selectAnyProperty, uint32* indices, uint32 maxIndexCount, uint32* actualIndexCount) GetFilteredFontIndices2;
+				public function HRESULT(IDWriteFontSet1 *self, uint32 listIndex, DWRITE_FONT_AXIS_RANGE* fontAxisRanges, uint32 maxFontAxisRangeCount, uint32* actualFontAxisRangeCount) GetFontAxisRanges;
+				public function HRESULT(IDWriteFontSet1 *self, DWRITE_FONT_AXIS_RANGE* fontAxisRanges, uint32 maxFontAxisRangeCount, uint32* actualFontAxisRangeCount) GetFontAxisRanges2;
+				public function HRESULT(IDWriteFontSet1 *self, uint32 listIndex, IDWriteFontFaceReference1** fontFaceReference) GetFontFaceReference;
+				public function HRESULT(IDWriteFontSet1 *self, uint32 listIndex, IDWriteFontResource** fontResource) CreateFontResource;
+				public function HRESULT(IDWriteFontSet1 *self, uint32 listIndex, IDWriteFontFace5** fontFace) CreateFontFace;
+				public function DWRITE_LOCALITY(IDWriteFontSet1 *self, uint32 listIndex) GetFontLocality;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontList2 : IDWriteFontList1
 		{
 			public const new Guid IID = .(0xc0763a34, 0x77af, 0x445a, 0xb7, 0x35, 0x08, 0xc3, 0x7b, 0x0a, 0x5b, 0xf5);
 			
-			public function HRESULT(IDWriteFontList2 *self, IDWriteFontSet1** fontSet) GetFontSet;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontList1.VTable
+			{
+				public function HRESULT(IDWriteFontList2 *self, IDWriteFontSet1** fontSet) GetFontSet;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontFamily2 : IDWriteFontFamily1
 		{
 			public const new Guid IID = .(0x3ed49e77, 0xa398, 0x4261, 0xb9, 0xcf, 0xc1, 0x26, 0xc2, 0x13, 0x1e, 0xf3);
 			
-			public function HRESULT(IDWriteFontFamily2 *self, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, IDWriteFontList2** matchingFonts) GetMatchingFonts;
-			public function HRESULT(IDWriteFontFamily2 *self, IDWriteFontSet1** fontSet) GetFontSet;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontFamily1.VTable
+			{
+				public function HRESULT(IDWriteFontFamily2 *self, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, IDWriteFontList2** matchingFonts) GetMatchingFonts;
+				public function HRESULT(IDWriteFontFamily2 *self, IDWriteFontSet1** fontSet) GetFontSet;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontCollection2 : IDWriteFontCollection1
 		{
 			public const new Guid IID = .(0x514039c6, 0x4617, 0x4064, 0xbf, 0x8b, 0x92, 0xea, 0x83, 0xe5, 0x06, 0xe0);
 			
-			public function HRESULT(IDWriteFontCollection2 *self, uint32 index, IDWriteFontFamily2** fontFamily) GetFontFamily;
-			public function HRESULT(IDWriteFontCollection2 *self, PWSTR familyName, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, IDWriteFontList2** fontList) GetMatchingFonts;
-			public function DWRITE_FONT_FAMILY_MODEL(IDWriteFontCollection2 *self) GetFontFamilyModel;
-			public function HRESULT(IDWriteFontCollection2 *self, IDWriteFontSet1** fontSet) GetFontSet;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontCollection1.VTable
+			{
+				public function HRESULT(IDWriteFontCollection2 *self, uint32 index, IDWriteFontFamily2** fontFamily) GetFontFamily;
+				public function HRESULT(IDWriteFontCollection2 *self, PWSTR familyName, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, IDWriteFontList2** fontList) GetMatchingFonts;
+				public function DWRITE_FONT_FAMILY_MODEL(IDWriteFontCollection2 *self) GetFontFamilyModel;
+				public function HRESULT(IDWriteFontCollection2 *self, IDWriteFontSet1** fontSet) GetFontSet;
+			}
 		}
 		[CRepr]
 		public struct IDWriteTextLayout4 : IDWriteTextLayout3
 		{
 			public const new Guid IID = .(0x05a9bf42, 0x223f, 0x4441, 0xb5, 0xfb, 0x82, 0x63, 0x68, 0x5f, 0x55, 0xe9);
 			
-			public function HRESULT(IDWriteTextLayout4 *self, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, DWRITE_TEXT_RANGE textRange) SetFontAxisValues;
-			public function uint32(IDWriteTextLayout4 *self, uint32 currentPosition) GetFontAxisValueCount;
-			public function HRESULT(IDWriteTextLayout4 *self, uint32 currentPosition, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, DWRITE_TEXT_RANGE* textRange) GetFontAxisValues;
-			public function DWRITE_AUTOMATIC_FONT_AXES(IDWriteTextLayout4 *self) GetAutomaticFontAxes;
-			public function HRESULT(IDWriteTextLayout4 *self, DWRITE_AUTOMATIC_FONT_AXES automaticFontAxes) SetAutomaticFontAxes;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteTextLayout3.VTable
+			{
+				public function HRESULT(IDWriteTextLayout4 *self, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, DWRITE_TEXT_RANGE textRange) SetFontAxisValues;
+				public function uint32(IDWriteTextLayout4 *self, uint32 currentPosition) GetFontAxisValueCount;
+				public function HRESULT(IDWriteTextLayout4 *self, uint32 currentPosition, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, DWRITE_TEXT_RANGE* textRange) GetFontAxisValues;
+				public function DWRITE_AUTOMATIC_FONT_AXES(IDWriteTextLayout4 *self) GetAutomaticFontAxes;
+				public function HRESULT(IDWriteTextLayout4 *self, DWRITE_AUTOMATIC_FONT_AXES automaticFontAxes) SetAutomaticFontAxes;
+			}
 		}
 		[CRepr]
 		public struct IDWriteTextFormat3 : IDWriteTextFormat2
 		{
 			public const new Guid IID = .(0x6d3b5641, 0xe550, 0x430d, 0xa8, 0x5b, 0xb7, 0xbf, 0x48, 0xa9, 0x34, 0x27);
 			
-			public function HRESULT(IDWriteTextFormat3 *self, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount) SetFontAxisValues;
-			public function uint32(IDWriteTextFormat3 *self) GetFontAxisValueCount;
-			public function HRESULT(IDWriteTextFormat3 *self, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount) GetFontAxisValues;
-			public function DWRITE_AUTOMATIC_FONT_AXES(IDWriteTextFormat3 *self) GetAutomaticFontAxes;
-			public function HRESULT(IDWriteTextFormat3 *self, DWRITE_AUTOMATIC_FONT_AXES automaticFontAxes) SetAutomaticFontAxes;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteTextFormat2.VTable
+			{
+				public function HRESULT(IDWriteTextFormat3 *self, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount) SetFontAxisValues;
+				public function uint32(IDWriteTextFormat3 *self) GetFontAxisValueCount;
+				public function HRESULT(IDWriteTextFormat3 *self, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount) GetFontAxisValues;
+				public function DWRITE_AUTOMATIC_FONT_AXES(IDWriteTextFormat3 *self) GetAutomaticFontAxes;
+				public function HRESULT(IDWriteTextFormat3 *self, DWRITE_AUTOMATIC_FONT_AXES automaticFontAxes) SetAutomaticFontAxes;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontFallback1 : IDWriteFontFallback
 		{
 			public const new Guid IID = .(0x2397599d, 0xdd0d, 0x4681, 0xbd, 0x6a, 0xf4, 0xf3, 0x1e, 0xaa, 0xde, 0x77);
 			
-			public function HRESULT(IDWriteFontFallback1 *self, IDWriteTextAnalysisSource* analysisSource, uint32 textPosition, uint32 textLength, IDWriteFontCollection* baseFontCollection, PWSTR baseFamilyName, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, uint32* mappedLength, float* scale, IDWriteFontFace5** mappedFontFace) MapCharacters;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontFallback.VTable
+			{
+				public function HRESULT(IDWriteFontFallback1 *self, IDWriteTextAnalysisSource* analysisSource, uint32 textPosition, uint32 textLength, IDWriteFontCollection* baseFontCollection, PWSTR baseFamilyName, DWRITE_FONT_AXIS_VALUE* fontAxisValues, uint32 fontAxisValueCount, uint32* mappedLength, float* scale, IDWriteFontFace5** mappedFontFace) MapCharacters;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontSet2 : IDWriteFontSet1
 		{
 			public const new Guid IID = .(0xdc7ead19, 0xe54c, 0x43af, 0xb2, 0xda, 0x4e, 0x2b, 0x79, 0xba, 0x3f, 0x7f);
 			
-			public function HANDLE(IDWriteFontSet2 *self) GetExpirationEvent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontSet1.VTable
+			{
+				public function HANDLE(IDWriteFontSet2 *self) GetExpirationEvent;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontCollection3 : IDWriteFontCollection2
 		{
 			public const new Guid IID = .(0xa4d055a6, 0xf9e3, 0x4e25, 0x93, 0xb7, 0x9e, 0x30, 0x9f, 0x3a, 0xf8, 0xe9);
 			
-			public function HANDLE(IDWriteFontCollection3 *self) GetExpirationEvent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontCollection2.VTable
+			{
+				public function HANDLE(IDWriteFontCollection3 *self) GetExpirationEvent;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFactory7 : IDWriteFactory6
 		{
 			public const new Guid IID = .(0x35d0e0b3, 0x9076, 0x4d2e, 0xa0, 0x16, 0xa9, 0x1b, 0x56, 0x8a, 0x06, 0xb4);
 			
-			public function HRESULT(IDWriteFactory7 *self, BOOL includeDownloadableFonts, IDWriteFontSet2** fontSet) GetSystemFontSet;
-			public function HRESULT(IDWriteFactory7 *self, BOOL includeDownloadableFonts, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteFontCollection3** fontCollection) GetSystemFontCollection;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFactory6.VTable
+			{
+				public function HRESULT(IDWriteFactory7 *self, BOOL includeDownloadableFonts, IDWriteFontSet2** fontSet) GetSystemFontSet;
+				public function HRESULT(IDWriteFactory7 *self, BOOL includeDownloadableFonts, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteFontCollection3** fontCollection) GetSystemFontCollection;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontSet3 : IDWriteFontSet2
 		{
 			public const new Guid IID = .(0x7c073ef2, 0xa7f4, 0x4045, 0x8c, 0x32, 0x8a, 0xb8, 0xae, 0x64, 0x0f, 0x90);
 			
-			public function DWRITE_FONT_SOURCE_TYPE(IDWriteFontSet3 *self, uint32 fontIndex) GetFontSourceType;
-			public function uint32(IDWriteFontSet3 *self, uint32 listIndex) GetFontSourceNameLength;
-			public function HRESULT(IDWriteFontSet3 *self, uint32 listIndex, char16* stringBuffer, uint32 stringBufferSize) GetFontSourceName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontSet2.VTable
+			{
+				public function DWRITE_FONT_SOURCE_TYPE(IDWriteFontSet3 *self, uint32 fontIndex) GetFontSourceType;
+				public function uint32(IDWriteFontSet3 *self, uint32 listIndex) GetFontSourceNameLength;
+				public function HRESULT(IDWriteFontSet3 *self, uint32 listIndex, char16* stringBuffer, uint32 stringBufferSize) GetFontSourceName;
+			}
 		}
 		[CRepr]
 		public struct IDWriteFontFace6 : IDWriteFontFace5
 		{
 			public const new Guid IID = .(0xc4b1fe1b, 0x6e84, 0x47d5, 0xb5, 0x4c, 0xa5, 0x97, 0x98, 0x1b, 0x06, 0xad);
 			
-			public function HRESULT(IDWriteFontFace6 *self, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteLocalizedStrings** names) GetFamilyNames;
-			public function HRESULT(IDWriteFontFace6 *self, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteLocalizedStrings** names) GetFaceNames;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDWriteFontFace5.VTable
+			{
+				public function HRESULT(IDWriteFontFace6 *self, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteLocalizedStrings** names) GetFamilyNames;
+				public function HRESULT(IDWriteFontFace6 *self, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteLocalizedStrings** names) GetFaceNames;
+			}
 		}
 		
 		// --- Functions ---

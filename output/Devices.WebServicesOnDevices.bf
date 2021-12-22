@@ -660,343 +660,498 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb9574c6c, 0x12a6, 0x4f74, 0x93, 0xa1, 0x33, 0x18, 0xff, 0x60, 0x57, 0x59);
 			
-			public function HRESULT(IWSDAddress *self, char16* pszBuffer, uint32 cchLength, BOOL fSafe) Serialize;
-			public function HRESULT(IWSDAddress *self, PWSTR pszBuffer) Deserialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDAddress *self, char16* pszBuffer, uint32 cchLength, BOOL fSafe) Serialize;
+				public function HRESULT(IWSDAddress *self, PWSTR pszBuffer) Deserialize;
+			}
 		}
 		[CRepr]
 		public struct IWSDTransportAddress : IWSDAddress
 		{
 			public const new Guid IID = .(0x70d23498, 0x4ee6, 0x4340, 0xa3, 0xdf, 0xd8, 0x45, 0xd2, 0x23, 0x54, 0x67);
 			
-			public function HRESULT(IWSDTransportAddress *self, uint16* pwPort) GetPort;
-			public function HRESULT(IWSDTransportAddress *self, uint16 wPort) SetPort;
-			public function HRESULT(IWSDTransportAddress *self, PWSTR* ppszAddress) GetTransportAddress;
-			public function HRESULT(IWSDTransportAddress *self, BOOL fSafe, PWSTR* ppszAddress) GetTransportAddressEx;
-			public function HRESULT(IWSDTransportAddress *self, PWSTR pszAddress) SetTransportAddress;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWSDAddress.VTable
+			{
+				public function HRESULT(IWSDTransportAddress *self, uint16* pwPort) GetPort;
+				public function HRESULT(IWSDTransportAddress *self, uint16 wPort) SetPort;
+				public function HRESULT(IWSDTransportAddress *self, PWSTR* ppszAddress) GetTransportAddress;
+				public function HRESULT(IWSDTransportAddress *self, BOOL fSafe, PWSTR* ppszAddress) GetTransportAddressEx;
+				public function HRESULT(IWSDTransportAddress *self, PWSTR pszAddress) SetTransportAddress;
+			}
 		}
 		[CRepr]
 		public struct IWSDMessageParameters : IUnknown
 		{
 			public const new Guid IID = .(0x1fafe8a2, 0xe6fc, 0x4b80, 0xb6, 0xcf, 0xb7, 0xd4, 0x5c, 0x41, 0x6d, 0x7c);
 			
-			public function HRESULT(IWSDMessageParameters *self, IWSDAddress** ppAddress) GetLocalAddress;
-			public function HRESULT(IWSDMessageParameters *self, IWSDAddress* pAddress) SetLocalAddress;
-			public function HRESULT(IWSDMessageParameters *self, IWSDAddress** ppAddress) GetRemoteAddress;
-			public function HRESULT(IWSDMessageParameters *self, IWSDAddress* pAddress) SetRemoteAddress;
-			public function HRESULT(IWSDMessageParameters *self, IWSDMessageParameters** ppTxParams) GetLowerParameters;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDMessageParameters *self, IWSDAddress** ppAddress) GetLocalAddress;
+				public function HRESULT(IWSDMessageParameters *self, IWSDAddress* pAddress) SetLocalAddress;
+				public function HRESULT(IWSDMessageParameters *self, IWSDAddress** ppAddress) GetRemoteAddress;
+				public function HRESULT(IWSDMessageParameters *self, IWSDAddress* pAddress) SetRemoteAddress;
+				public function HRESULT(IWSDMessageParameters *self, IWSDMessageParameters** ppTxParams) GetLowerParameters;
+			}
 		}
 		[CRepr]
 		public struct IWSDUdpMessageParameters : IWSDMessageParameters
 		{
 			public const new Guid IID = .(0x9934149f, 0x8f0c, 0x447b, 0xaa, 0x0b, 0x73, 0x12, 0x4b, 0x0c, 0xa7, 0xf0);
 			
-			public function HRESULT(IWSDUdpMessageParameters *self, WSDUdpRetransmitParams* pParams) SetRetransmitParams;
-			public function HRESULT(IWSDUdpMessageParameters *self, WSDUdpRetransmitParams* pParams) GetRetransmitParams;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWSDMessageParameters.VTable
+			{
+				public function HRESULT(IWSDUdpMessageParameters *self, WSDUdpRetransmitParams* pParams) SetRetransmitParams;
+				public function HRESULT(IWSDUdpMessageParameters *self, WSDUdpRetransmitParams* pParams) GetRetransmitParams;
+			}
 		}
 		[CRepr]
 		public struct IWSDUdpAddress : IWSDTransportAddress
 		{
 			public const new Guid IID = .(0x74d6124a, 0xa441, 0x4f78, 0xa1, 0xeb, 0x97, 0xa8, 0xd1, 0x99, 0x68, 0x93);
 			
-			public function HRESULT(IWSDUdpAddress *self, SOCKADDR_STORAGE* pSockAddr) SetSockaddr;
-			public function HRESULT(IWSDUdpAddress *self, SOCKADDR_STORAGE* pSockAddr) GetSockaddr;
-			public function HRESULT(IWSDUdpAddress *self, BOOL fExclusive) SetExclusive;
-			public function HRESULT(IWSDUdpAddress *self) GetExclusive;
-			public function HRESULT(IWSDUdpAddress *self, WSDUdpMessageType messageType) SetMessageType;
-			public function HRESULT(IWSDUdpAddress *self, WSDUdpMessageType* pMessageType) GetMessageType;
-			public function HRESULT(IWSDUdpAddress *self, uint32 dwTTL) SetTTL;
-			public function HRESULT(IWSDUdpAddress *self, uint32* pdwTTL) GetTTL;
-			public function HRESULT(IWSDUdpAddress *self, Guid* pAlias) SetAlias;
-			public function HRESULT(IWSDUdpAddress *self, Guid* pAlias) GetAlias;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWSDTransportAddress.VTable
+			{
+				public function HRESULT(IWSDUdpAddress *self, SOCKADDR_STORAGE* pSockAddr) SetSockaddr;
+				public function HRESULT(IWSDUdpAddress *self, SOCKADDR_STORAGE* pSockAddr) GetSockaddr;
+				public function HRESULT(IWSDUdpAddress *self, BOOL fExclusive) SetExclusive;
+				public function HRESULT(IWSDUdpAddress *self) GetExclusive;
+				public function HRESULT(IWSDUdpAddress *self, WSDUdpMessageType messageType) SetMessageType;
+				public function HRESULT(IWSDUdpAddress *self, WSDUdpMessageType* pMessageType) GetMessageType;
+				public function HRESULT(IWSDUdpAddress *self, uint32 dwTTL) SetTTL;
+				public function HRESULT(IWSDUdpAddress *self, uint32* pdwTTL) GetTTL;
+				public function HRESULT(IWSDUdpAddress *self, Guid* pAlias) SetAlias;
+				public function HRESULT(IWSDUdpAddress *self, Guid* pAlias) GetAlias;
+			}
 		}
 		[CRepr]
 		public struct IWSDHttpMessageParameters : IWSDMessageParameters
 		{
 			public const new Guid IID = .(0x540bd122, 0x5c83, 0x4dec, 0xb3, 0x96, 0xea, 0x62, 0xa2, 0x69, 0x7f, 0xdf);
 			
-			public function HRESULT(IWSDHttpMessageParameters *self, PWSTR pszHeaders) SetInboundHttpHeaders;
-			public function HRESULT(IWSDHttpMessageParameters *self, PWSTR* ppszHeaders) GetInboundHttpHeaders;
-			public function HRESULT(IWSDHttpMessageParameters *self, PWSTR pszHeaders) SetOutboundHttpHeaders;
-			public function HRESULT(IWSDHttpMessageParameters *self, PWSTR* ppszHeaders) GetOutboundHttpHeaders;
-			public function HRESULT(IWSDHttpMessageParameters *self, PWSTR pszId) SetID;
-			public function HRESULT(IWSDHttpMessageParameters *self, PWSTR* ppszId) GetID;
-			public function HRESULT(IWSDHttpMessageParameters *self, IUnknown* pContext) SetContext;
-			public function HRESULT(IWSDHttpMessageParameters *self, IUnknown** ppContext) GetContext;
-			public function HRESULT(IWSDHttpMessageParameters *self) Clear;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWSDMessageParameters.VTable
+			{
+				public function HRESULT(IWSDHttpMessageParameters *self, PWSTR pszHeaders) SetInboundHttpHeaders;
+				public function HRESULT(IWSDHttpMessageParameters *self, PWSTR* ppszHeaders) GetInboundHttpHeaders;
+				public function HRESULT(IWSDHttpMessageParameters *self, PWSTR pszHeaders) SetOutboundHttpHeaders;
+				public function HRESULT(IWSDHttpMessageParameters *self, PWSTR* ppszHeaders) GetOutboundHttpHeaders;
+				public function HRESULT(IWSDHttpMessageParameters *self, PWSTR pszId) SetID;
+				public function HRESULT(IWSDHttpMessageParameters *self, PWSTR* ppszId) GetID;
+				public function HRESULT(IWSDHttpMessageParameters *self, IUnknown* pContext) SetContext;
+				public function HRESULT(IWSDHttpMessageParameters *self, IUnknown** ppContext) GetContext;
+				public function HRESULT(IWSDHttpMessageParameters *self) Clear;
+			}
 		}
 		[CRepr]
 		public struct IWSDHttpAddress : IWSDTransportAddress
 		{
 			public const new Guid IID = .(0xd09ac7bd, 0x2a3e, 0x4b85, 0x86, 0x05, 0x27, 0x37, 0xff, 0x3e, 0x4e, 0xa0);
 			
-			public function HRESULT(IWSDHttpAddress *self) GetSecure;
-			public function HRESULT(IWSDHttpAddress *self, BOOL fSecure) SetSecure;
-			public function HRESULT(IWSDHttpAddress *self, PWSTR* ppszPath) GetPath;
-			public function HRESULT(IWSDHttpAddress *self, PWSTR pszPath) SetPath;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWSDTransportAddress.VTable
+			{
+				public function HRESULT(IWSDHttpAddress *self) GetSecure;
+				public function HRESULT(IWSDHttpAddress *self, BOOL fSecure) SetSecure;
+				public function HRESULT(IWSDHttpAddress *self, PWSTR* ppszPath) GetPath;
+				public function HRESULT(IWSDHttpAddress *self, PWSTR pszPath) SetPath;
+			}
 		}
 		[CRepr]
 		public struct IWSDSSLClientCertificate : IUnknown
 		{
 			public const new Guid IID = .(0xde105e87, 0xa0da, 0x418e, 0x98, 0xad, 0x27, 0xb9, 0xee, 0xd8, 0x7b, 0xdc);
 			
-			public function HRESULT(IWSDSSLClientCertificate *self, CERT_CONTEXT** ppCertContext) GetClientCertificate;
-			public function HRESULT(IWSDSSLClientCertificate *self, HANDLE* phToken) GetMappedAccessToken;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDSSLClientCertificate *self, CERT_CONTEXT** ppCertContext) GetClientCertificate;
+				public function HRESULT(IWSDSSLClientCertificate *self, HANDLE* phToken) GetMappedAccessToken;
+			}
 		}
 		[CRepr]
 		public struct IWSDHttpAuthParameters : IUnknown
 		{
 			public const new Guid IID = .(0x0b476df0, 0x8dac, 0x480d, 0xb0, 0x5c, 0x99, 0x78, 0x1a, 0x58, 0x84, 0xaa);
 			
-			public function HRESULT(IWSDHttpAuthParameters *self, HANDLE* phToken) GetClientAccessToken;
-			public function HRESULT(IWSDHttpAuthParameters *self, uint32* pAuthType) GetAuthType;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDHttpAuthParameters *self, HANDLE* phToken) GetClientAccessToken;
+				public function HRESULT(IWSDHttpAuthParameters *self, uint32* pAuthType) GetAuthType;
+			}
 		}
 		[CRepr]
 		public struct IWSDSignatureProperty : IUnknown
 		{
 			public const new Guid IID = .(0x03ce20aa, 0x71c4, 0x45e2, 0xb3, 0x2e, 0x37, 0x66, 0xc6, 0x1c, 0x79, 0x0f);
 			
-			public function HRESULT(IWSDSignatureProperty *self, BOOL* pbSigned) IsMessageSigned;
-			public function HRESULT(IWSDSignatureProperty *self, BOOL* pbSignatureTrusted) IsMessageSignatureTrusted;
-			public function HRESULT(IWSDSignatureProperty *self, uint8* pbKeyInfo, uint32* pdwKeyInfoSize) GetKeyInfo;
-			public function HRESULT(IWSDSignatureProperty *self, uint8* pbSignature, uint32* pdwSignatureSize) GetSignature;
-			public function HRESULT(IWSDSignatureProperty *self, uint8* pbSignedInfoHash, uint32* pdwHashSize) GetSignedInfoHash;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDSignatureProperty *self, BOOL* pbSigned) IsMessageSigned;
+				public function HRESULT(IWSDSignatureProperty *self, BOOL* pbSignatureTrusted) IsMessageSignatureTrusted;
+				public function HRESULT(IWSDSignatureProperty *self, uint8* pbKeyInfo, uint32* pdwKeyInfoSize) GetKeyInfo;
+				public function HRESULT(IWSDSignatureProperty *self, uint8* pbSignature, uint32* pdwSignatureSize) GetSignature;
+				public function HRESULT(IWSDSignatureProperty *self, uint8* pbSignedInfoHash, uint32* pdwHashSize) GetSignedInfoHash;
+			}
 		}
 		[CRepr]
 		public struct IWSDAttachment : IUnknown
 		{
 			public const new Guid IID = .(0x5d55a616, 0x9df8, 0x4b09, 0xb1, 0x56, 0x9b, 0xa3, 0x51, 0xa4, 0x8b, 0x76);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IWSDOutboundAttachment : IWSDAttachment
 		{
 			public const new Guid IID = .(0xaa302f8d, 0x5a22, 0x4ba5, 0xb3, 0x92, 0xaa, 0x84, 0x86, 0xf4, 0xc1, 0x5d);
 			
-			public function HRESULT(IWSDOutboundAttachment *self, uint8* pBuffer, uint32 dwBytesToWrite, uint32* pdwNumberOfBytesWritten) Write;
-			public function HRESULT(IWSDOutboundAttachment *self) Close;
-			public function HRESULT(IWSDOutboundAttachment *self) Abort;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWSDAttachment.VTable
+			{
+				public function HRESULT(IWSDOutboundAttachment *self, uint8* pBuffer, uint32 dwBytesToWrite, uint32* pdwNumberOfBytesWritten) Write;
+				public function HRESULT(IWSDOutboundAttachment *self) Close;
+				public function HRESULT(IWSDOutboundAttachment *self) Abort;
+			}
 		}
 		[CRepr]
 		public struct IWSDInboundAttachment : IWSDAttachment
 		{
 			public const new Guid IID = .(0x5bd6ca65, 0x233c, 0x4fb8, 0x9f, 0x7a, 0x26, 0x41, 0x61, 0x96, 0x55, 0xc9);
 			
-			public function HRESULT(IWSDInboundAttachment *self, uint8* pBuffer, uint32 dwBytesToRead, uint32* pdwNumberOfBytesRead) Read;
-			public function HRESULT(IWSDInboundAttachment *self) Close;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWSDAttachment.VTable
+			{
+				public function HRESULT(IWSDInboundAttachment *self, uint8* pBuffer, uint32 dwBytesToRead, uint32* pdwNumberOfBytesRead) Read;
+				public function HRESULT(IWSDInboundAttachment *self) Close;
+			}
 		}
 		[CRepr]
 		public struct IWSDXMLContext : IUnknown
 		{
 			public const new Guid IID = .(0x75d8f3ee, 0x3e5a, 0x43b4, 0xa1, 0x5a, 0xbc, 0xf6, 0x88, 0x74, 0x60, 0xc0);
 			
-			public function HRESULT(IWSDXMLContext *self, PWSTR pszUri, PWSTR pszSuggestedPrefix, WSDXML_NAMESPACE** ppNamespace) AddNamespace;
-			public function HRESULT(IWSDXMLContext *self, PWSTR pszUri, PWSTR pszName, WSDXML_NAME** ppName) AddNameToNamespace;
-			public function HRESULT(IWSDXMLContext *self, WSDXML_NAMESPACE** pNamespaces, uint16 wNamespacesCount, uint8 bLayerNumber) SetNamespaces;
-			public function HRESULT(IWSDXMLContext *self, WSDXML_TYPE** pTypes, uint32 dwTypesCount, uint8 bLayerNumber) SetTypes;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDXMLContext *self, PWSTR pszUri, PWSTR pszSuggestedPrefix, WSDXML_NAMESPACE** ppNamespace) AddNamespace;
+				public function HRESULT(IWSDXMLContext *self, PWSTR pszUri, PWSTR pszName, WSDXML_NAME** ppName) AddNameToNamespace;
+				public function HRESULT(IWSDXMLContext *self, WSDXML_NAMESPACE** pNamespaces, uint16 wNamespacesCount, uint8 bLayerNumber) SetNamespaces;
+				public function HRESULT(IWSDXMLContext *self, WSDXML_TYPE** pTypes, uint32 dwTypesCount, uint8 bLayerNumber) SetTypes;
+			}
 		}
 		[CRepr]
 		public struct IWSDiscoveryProvider : IUnknown
 		{
 			public const new Guid IID = .(0x8ffc8e55, 0xf0eb, 0x480f, 0x88, 0xb7, 0xb4, 0x35, 0xdd, 0x28, 0x1d, 0x45);
 			
-			public function HRESULT(IWSDiscoveryProvider *self, uint32 dwAddressFamily) SetAddressFamily;
-			public function HRESULT(IWSDiscoveryProvider *self, IWSDiscoveryProviderNotify* pSink) Attach;
-			public function HRESULT(IWSDiscoveryProvider *self) Detach;
-			public function HRESULT(IWSDiscoveryProvider *self, PWSTR pszId, PWSTR pszTag) SearchById;
-			public function HRESULT(IWSDiscoveryProvider *self, PWSTR pszAddress, PWSTR pszTag) SearchByAddress;
-			public function HRESULT(IWSDiscoveryProvider *self, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, PWSTR pszMatchBy, PWSTR pszTag) SearchByType;
-			public function HRESULT(IWSDiscoveryProvider *self, IWSDXMLContext** ppContext) GetXMLContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDiscoveryProvider *self, uint32 dwAddressFamily) SetAddressFamily;
+				public function HRESULT(IWSDiscoveryProvider *self, IWSDiscoveryProviderNotify* pSink) Attach;
+				public function HRESULT(IWSDiscoveryProvider *self) Detach;
+				public function HRESULT(IWSDiscoveryProvider *self, PWSTR pszId, PWSTR pszTag) SearchById;
+				public function HRESULT(IWSDiscoveryProvider *self, PWSTR pszAddress, PWSTR pszTag) SearchByAddress;
+				public function HRESULT(IWSDiscoveryProvider *self, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, PWSTR pszMatchBy, PWSTR pszTag) SearchByType;
+				public function HRESULT(IWSDiscoveryProvider *self, IWSDXMLContext** ppContext) GetXMLContext;
+			}
 		}
 		[CRepr]
 		public struct IWSDiscoveryProviderNotify : IUnknown
 		{
 			public const new Guid IID = .(0x73ee3ced, 0xb6e6, 0x4329, 0xa5, 0x46, 0x3e, 0x8a, 0xd4, 0x65, 0x63, 0xd2);
 			
-			public function HRESULT(IWSDiscoveryProviderNotify *self, IWSDiscoveredService* pService) Add;
-			public function HRESULT(IWSDiscoveryProviderNotify *self, IWSDiscoveredService* pService) Remove;
-			public function HRESULT(IWSDiscoveryProviderNotify *self, HRESULT hr, PWSTR pszTag) SearchFailed;
-			public function HRESULT(IWSDiscoveryProviderNotify *self, PWSTR pszTag) SearchComplete;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDiscoveryProviderNotify *self, IWSDiscoveredService* pService) Add;
+				public function HRESULT(IWSDiscoveryProviderNotify *self, IWSDiscoveredService* pService) Remove;
+				public function HRESULT(IWSDiscoveryProviderNotify *self, HRESULT hr, PWSTR pszTag) SearchFailed;
+				public function HRESULT(IWSDiscoveryProviderNotify *self, PWSTR pszTag) SearchComplete;
+			}
 		}
 		[CRepr]
 		public struct IWSDiscoveredService : IUnknown
 		{
 			public const new Guid IID = .(0x4bad8a3b, 0xb374, 0x4420, 0x96, 0x32, 0xaa, 0xc9, 0x45, 0xb3, 0x74, 0xaa);
 			
-			public function HRESULT(IWSDiscoveredService *self, WSD_ENDPOINT_REFERENCE** ppEndpointReference) GetEndpointReference;
-			public function HRESULT(IWSDiscoveredService *self, WSD_NAME_LIST** ppTypesList) GetTypes;
-			public function HRESULT(IWSDiscoveredService *self, WSD_URI_LIST** ppScopesList) GetScopes;
-			public function HRESULT(IWSDiscoveredService *self, WSD_URI_LIST** ppXAddrsList) GetXAddrs;
-			public function HRESULT(IWSDiscoveredService *self, uint64* pullMetadataVersion) GetMetadataVersion;
-			public function HRESULT(IWSDiscoveredService *self, WSDXML_ELEMENT** ppHeaderAny, WSDXML_ELEMENT** ppBodyAny) GetExtendedDiscoXML;
-			public function HRESULT(IWSDiscoveredService *self, PWSTR* ppszTag) GetProbeResolveTag;
-			public function HRESULT(IWSDiscoveredService *self, PWSTR* ppszRemoteTransportAddress) GetRemoteTransportAddress;
-			public function HRESULT(IWSDiscoveredService *self, PWSTR* ppszLocalTransportAddress) GetLocalTransportAddress;
-			public function HRESULT(IWSDiscoveredService *self, Guid* pGuid) GetLocalInterfaceGUID;
-			public function HRESULT(IWSDiscoveredService *self, uint64* pullInstanceId) GetInstanceId;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDiscoveredService *self, WSD_ENDPOINT_REFERENCE** ppEndpointReference) GetEndpointReference;
+				public function HRESULT(IWSDiscoveredService *self, WSD_NAME_LIST** ppTypesList) GetTypes;
+				public function HRESULT(IWSDiscoveredService *self, WSD_URI_LIST** ppScopesList) GetScopes;
+				public function HRESULT(IWSDiscoveredService *self, WSD_URI_LIST** ppXAddrsList) GetXAddrs;
+				public function HRESULT(IWSDiscoveredService *self, uint64* pullMetadataVersion) GetMetadataVersion;
+				public function HRESULT(IWSDiscoveredService *self, WSDXML_ELEMENT** ppHeaderAny, WSDXML_ELEMENT** ppBodyAny) GetExtendedDiscoXML;
+				public function HRESULT(IWSDiscoveredService *self, PWSTR* ppszTag) GetProbeResolveTag;
+				public function HRESULT(IWSDiscoveredService *self, PWSTR* ppszRemoteTransportAddress) GetRemoteTransportAddress;
+				public function HRESULT(IWSDiscoveredService *self, PWSTR* ppszLocalTransportAddress) GetLocalTransportAddress;
+				public function HRESULT(IWSDiscoveredService *self, Guid* pGuid) GetLocalInterfaceGUID;
+				public function HRESULT(IWSDiscoveredService *self, uint64* pullInstanceId) GetInstanceId;
+			}
 		}
 		[CRepr]
 		public struct IWSDiscoveryPublisher : IUnknown
 		{
 			public const new Guid IID = .(0xae01e1a8, 0x3ff9, 0x4148, 0x81, 0x16, 0x05, 0x7c, 0xc6, 0x16, 0xfe, 0x13);
 			
-			public function HRESULT(IWSDiscoveryPublisher *self, uint32 dwAddressFamily) SetAddressFamily;
-			public function HRESULT(IWSDiscoveryPublisher *self, IWSDiscoveryPublisherNotify* pSink) RegisterNotificationSink;
-			public function HRESULT(IWSDiscoveryPublisher *self, IWSDiscoveryPublisherNotify* pSink) UnRegisterNotificationSink;
-			public function HRESULT(IWSDiscoveryPublisher *self, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList) Publish;
-			public function HRESULT(IWSDiscoveryPublisher *self, PWSTR pszId, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSDXML_ELEMENT* pAny) UnPublish;
-			public function HRESULT(IWSDiscoveryPublisher *self, WSD_SOAP_MESSAGE* pProbeMessage, IWSDMessageParameters* pMessageParameters, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList) MatchProbe;
-			public function HRESULT(IWSDiscoveryPublisher *self, WSD_SOAP_MESSAGE* pResolveMessage, IWSDMessageParameters* pMessageParameters, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList) MatchResolve;
-			public function HRESULT(IWSDiscoveryPublisher *self, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList, WSDXML_ELEMENT* pHeaderAny, WSDXML_ELEMENT* pReferenceParameterAny, WSDXML_ELEMENT* pPolicyAny, WSDXML_ELEMENT* pEndpointReferenceAny, WSDXML_ELEMENT* pAny) PublishEx;
-			public function HRESULT(IWSDiscoveryPublisher *self, WSD_SOAP_MESSAGE* pProbeMessage, IWSDMessageParameters* pMessageParameters, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList, WSDXML_ELEMENT* pHeaderAny, WSDXML_ELEMENT* pReferenceParameterAny, WSDXML_ELEMENT* pPolicyAny, WSDXML_ELEMENT* pEndpointReferenceAny, WSDXML_ELEMENT* pAny) MatchProbeEx;
-			public function HRESULT(IWSDiscoveryPublisher *self, WSD_SOAP_MESSAGE* pResolveMessage, IWSDMessageParameters* pMessageParameters, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList, WSDXML_ELEMENT* pHeaderAny, WSDXML_ELEMENT* pReferenceParameterAny, WSDXML_ELEMENT* pPolicyAny, WSDXML_ELEMENT* pEndpointReferenceAny, WSDXML_ELEMENT* pAny) MatchResolveEx;
-			public function HRESULT(IWSDiscoveryPublisher *self, IWSDScopeMatchingRule* pScopeMatchingRule) RegisterScopeMatchingRule;
-			public function HRESULT(IWSDiscoveryPublisher *self, IWSDScopeMatchingRule* pScopeMatchingRule) UnRegisterScopeMatchingRule;
-			public function HRESULT(IWSDiscoveryPublisher *self, IWSDXMLContext** ppContext) GetXMLContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDiscoveryPublisher *self, uint32 dwAddressFamily) SetAddressFamily;
+				public function HRESULT(IWSDiscoveryPublisher *self, IWSDiscoveryPublisherNotify* pSink) RegisterNotificationSink;
+				public function HRESULT(IWSDiscoveryPublisher *self, IWSDiscoveryPublisherNotify* pSink) UnRegisterNotificationSink;
+				public function HRESULT(IWSDiscoveryPublisher *self, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList) Publish;
+				public function HRESULT(IWSDiscoveryPublisher *self, PWSTR pszId, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSDXML_ELEMENT* pAny) UnPublish;
+				public function HRESULT(IWSDiscoveryPublisher *self, WSD_SOAP_MESSAGE* pProbeMessage, IWSDMessageParameters* pMessageParameters, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList) MatchProbe;
+				public function HRESULT(IWSDiscoveryPublisher *self, WSD_SOAP_MESSAGE* pResolveMessage, IWSDMessageParameters* pMessageParameters, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList) MatchResolve;
+				public function HRESULT(IWSDiscoveryPublisher *self, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList, WSDXML_ELEMENT* pHeaderAny, WSDXML_ELEMENT* pReferenceParameterAny, WSDXML_ELEMENT* pPolicyAny, WSDXML_ELEMENT* pEndpointReferenceAny, WSDXML_ELEMENT* pAny) PublishEx;
+				public function HRESULT(IWSDiscoveryPublisher *self, WSD_SOAP_MESSAGE* pProbeMessage, IWSDMessageParameters* pMessageParameters, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList, WSDXML_ELEMENT* pHeaderAny, WSDXML_ELEMENT* pReferenceParameterAny, WSDXML_ELEMENT* pPolicyAny, WSDXML_ELEMENT* pEndpointReferenceAny, WSDXML_ELEMENT* pAny) MatchProbeEx;
+				public function HRESULT(IWSDiscoveryPublisher *self, WSD_SOAP_MESSAGE* pResolveMessage, IWSDMessageParameters* pMessageParameters, PWSTR pszId, uint64 ullMetadataVersion, uint64 ullInstanceId, uint64 ullMessageNumber, PWSTR pszSessionId, WSD_NAME_LIST* pTypesList, WSD_URI_LIST* pScopesList, WSD_URI_LIST* pXAddrsList, WSDXML_ELEMENT* pHeaderAny, WSDXML_ELEMENT* pReferenceParameterAny, WSDXML_ELEMENT* pPolicyAny, WSDXML_ELEMENT* pEndpointReferenceAny, WSDXML_ELEMENT* pAny) MatchResolveEx;
+				public function HRESULT(IWSDiscoveryPublisher *self, IWSDScopeMatchingRule* pScopeMatchingRule) RegisterScopeMatchingRule;
+				public function HRESULT(IWSDiscoveryPublisher *self, IWSDScopeMatchingRule* pScopeMatchingRule) UnRegisterScopeMatchingRule;
+				public function HRESULT(IWSDiscoveryPublisher *self, IWSDXMLContext** ppContext) GetXMLContext;
+			}
 		}
 		[CRepr]
 		public struct IWSDiscoveryPublisherNotify : IUnknown
 		{
 			public const new Guid IID = .(0xe67651b0, 0x337a, 0x4b3c, 0x97, 0x58, 0x73, 0x33, 0x88, 0x56, 0x82, 0x51);
 			
-			public function HRESULT(IWSDiscoveryPublisherNotify *self, WSD_SOAP_MESSAGE* pSoap, IWSDMessageParameters* pMessageParameters) ProbeHandler;
-			public function HRESULT(IWSDiscoveryPublisherNotify *self, WSD_SOAP_MESSAGE* pSoap, IWSDMessageParameters* pMessageParameters) ResolveHandler;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDiscoveryPublisherNotify *self, WSD_SOAP_MESSAGE* pSoap, IWSDMessageParameters* pMessageParameters) ProbeHandler;
+				public function HRESULT(IWSDiscoveryPublisherNotify *self, WSD_SOAP_MESSAGE* pSoap, IWSDMessageParameters* pMessageParameters) ResolveHandler;
+			}
 		}
 		[CRepr]
 		public struct IWSDScopeMatchingRule : IUnknown
 		{
 			public const new Guid IID = .(0xfcafe424, 0xfef5, 0x481a, 0xbd, 0x9f, 0x33, 0xce, 0x05, 0x74, 0x25, 0x6f);
 			
-			public function HRESULT(IWSDScopeMatchingRule *self, PWSTR* ppszScopeMatchingRule) GetScopeRule;
-			public function HRESULT(IWSDScopeMatchingRule *self, PWSTR pszScope1, PWSTR pszScope2, BOOL* pfMatch) MatchScopes;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDScopeMatchingRule *self, PWSTR* ppszScopeMatchingRule) GetScopeRule;
+				public function HRESULT(IWSDScopeMatchingRule *self, PWSTR pszScope1, PWSTR pszScope2, BOOL* pfMatch) MatchScopes;
+			}
 		}
 		[CRepr]
 		public struct IWSDEndpointProxy : IUnknown
 		{
 			public const new Guid IID = .(0x1860d430, 0xb24c, 0x4975, 0x9f, 0x90, 0xdb, 0xb3, 0x9b, 0xaa, 0x24, 0xec);
 			
-			public function HRESULT(IWSDEndpointProxy *self, void* pBody, WSD_OPERATION* pOperation) SendOneWayRequest;
-			public function HRESULT(IWSDEndpointProxy *self, void* pBody, WSD_OPERATION* pOperation, WSD_SYNCHRONOUS_RESPONSE_CONTEXT* pResponseContext) SendTwoWayRequest;
-			public function HRESULT(IWSDEndpointProxy *self, void* pBody, WSD_OPERATION* pOperation, IUnknown* pAsyncState, IWSDAsyncCallback* pCallback, IWSDAsyncResult** pResult) SendTwoWayRequestAsync;
-			public function HRESULT(IWSDEndpointProxy *self, IWSDAsyncResult* pAsyncResult) AbortAsyncOperation;
-			public function HRESULT(IWSDEndpointProxy *self, WSD_SOAP_FAULT* pFault) ProcessFault;
-			public function HRESULT(IWSDEndpointProxy *self, PWSTR* ppszErrorInfo) GetErrorInfo;
-			public function HRESULT(IWSDEndpointProxy *self, WSD_SOAP_FAULT** ppFault) GetFaultInfo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDEndpointProxy *self, void* pBody, WSD_OPERATION* pOperation) SendOneWayRequest;
+				public function HRESULT(IWSDEndpointProxy *self, void* pBody, WSD_OPERATION* pOperation, WSD_SYNCHRONOUS_RESPONSE_CONTEXT* pResponseContext) SendTwoWayRequest;
+				public function HRESULT(IWSDEndpointProxy *self, void* pBody, WSD_OPERATION* pOperation, IUnknown* pAsyncState, IWSDAsyncCallback* pCallback, IWSDAsyncResult** pResult) SendTwoWayRequestAsync;
+				public function HRESULT(IWSDEndpointProxy *self, IWSDAsyncResult* pAsyncResult) AbortAsyncOperation;
+				public function HRESULT(IWSDEndpointProxy *self, WSD_SOAP_FAULT* pFault) ProcessFault;
+				public function HRESULT(IWSDEndpointProxy *self, PWSTR* ppszErrorInfo) GetErrorInfo;
+				public function HRESULT(IWSDEndpointProxy *self, WSD_SOAP_FAULT** ppFault) GetFaultInfo;
+			}
 		}
 		[CRepr]
 		public struct IWSDMetadataExchange : IUnknown
 		{
 			public const new Guid IID = .(0x06996d57, 0x1d67, 0x4928, 0x93, 0x07, 0x3d, 0x78, 0x33, 0xfd, 0xb8, 0x46);
 			
-			public function HRESULT(IWSDMetadataExchange *self, WSD_METADATA_SECTION_LIST** MetadataOut) GetMetadata;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDMetadataExchange *self, WSD_METADATA_SECTION_LIST** MetadataOut) GetMetadata;
+			}
 		}
 		[CRepr]
 		public struct IWSDServiceProxy : IWSDMetadataExchange
 		{
 			public const new Guid IID = .(0xd4c7fb9c, 0x03ab, 0x4175, 0x9d, 0x67, 0x09, 0x4f, 0xaf, 0xeb, 0xf4, 0x87);
 			
-			public function HRESULT(IWSDServiceProxy *self, IWSDAsyncResult** ppResult) BeginGetMetadata;
-			public function HRESULT(IWSDServiceProxy *self, IWSDAsyncResult* pResult, WSD_METADATA_SECTION_LIST** ppMetadata) EndGetMetadata;
-			public function HRESULT(IWSDServiceProxy *self, WSD_SERVICE_METADATA** ppServiceMetadata) GetServiceMetadata;
-			public function HRESULT(IWSDServiceProxy *self, WSD_OPERATION* pOperation, IUnknown* pUnknown, WSDXML_ELEMENT* pAny, WSDXML_ELEMENT** ppAny) SubscribeToOperation;
-			public function HRESULT(IWSDServiceProxy *self, WSD_OPERATION* pOperation) UnsubscribeToOperation;
-			public function HRESULT(IWSDServiceProxy *self, IWSDEventingStatus* pStatus) SetEventingStatusCallback;
-			public function HRESULT(IWSDServiceProxy *self, IWSDEndpointProxy** ppProxy) GetEndpointProxy;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWSDMetadataExchange.VTable
+			{
+				public function HRESULT(IWSDServiceProxy *self, IWSDAsyncResult** ppResult) BeginGetMetadata;
+				public function HRESULT(IWSDServiceProxy *self, IWSDAsyncResult* pResult, WSD_METADATA_SECTION_LIST** ppMetadata) EndGetMetadata;
+				public function HRESULT(IWSDServiceProxy *self, WSD_SERVICE_METADATA** ppServiceMetadata) GetServiceMetadata;
+				public function HRESULT(IWSDServiceProxy *self, WSD_OPERATION* pOperation, IUnknown* pUnknown, WSDXML_ELEMENT* pAny, WSDXML_ELEMENT** ppAny) SubscribeToOperation;
+				public function HRESULT(IWSDServiceProxy *self, WSD_OPERATION* pOperation) UnsubscribeToOperation;
+				public function HRESULT(IWSDServiceProxy *self, IWSDEventingStatus* pStatus) SetEventingStatusCallback;
+				public function HRESULT(IWSDServiceProxy *self, IWSDEndpointProxy** ppProxy) GetEndpointProxy;
+			}
 		}
 		[CRepr]
 		public struct IWSDServiceProxyEventing : IWSDServiceProxy
 		{
 			public const new Guid IID = .(0xf9279d6d, 0x1012, 0x4a94, 0xb8, 0xcc, 0xfd, 0x35, 0xd2, 0x20, 0x2b, 0xfe);
 			
-			public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, IUnknown* pUnknown, WSD_EVENTING_EXPIRES* pExpires, WSDXML_ELEMENT* pAny, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) SubscribeToMultipleOperations;
-			public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, IUnknown* pUnknown, WSD_EVENTING_EXPIRES* pExpires, WSDXML_ELEMENT* pAny, IUnknown* pAsyncState, IWSDAsyncCallback* pAsyncCallback, IWSDAsyncResult** ppResult) BeginSubscribeToMultipleOperations;
-			public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, IWSDAsyncResult* pResult, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) EndSubscribeToMultipleOperations;
-			public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSDXML_ELEMENT* pAny) UnsubscribeToMultipleOperations;
-			public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSDXML_ELEMENT* pAny, IUnknown* pAsyncState, IWSDAsyncCallback* pAsyncCallback, IWSDAsyncResult** ppResult) BeginUnsubscribeToMultipleOperations;
-			public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, IWSDAsyncResult* pResult) EndUnsubscribeToMultipleOperations;
-			public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSD_EVENTING_EXPIRES* pExpires, WSDXML_ELEMENT* pAny, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) RenewMultipleOperations;
-			public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSD_EVENTING_EXPIRES* pExpires, WSDXML_ELEMENT* pAny, IUnknown* pAsyncState, IWSDAsyncCallback* pAsyncCallback, IWSDAsyncResult** ppResult) BeginRenewMultipleOperations;
-			public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, IWSDAsyncResult* pResult, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) EndRenewMultipleOperations;
-			public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSDXML_ELEMENT* pAny, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) GetStatusForMultipleOperations;
-			public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSDXML_ELEMENT* pAny, IUnknown* pAsyncState, IWSDAsyncCallback* pAsyncCallback, IWSDAsyncResult** ppResult) BeginGetStatusForMultipleOperations;
-			public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, IWSDAsyncResult* pResult, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) EndGetStatusForMultipleOperations;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWSDServiceProxy.VTable
+			{
+				public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, IUnknown* pUnknown, WSD_EVENTING_EXPIRES* pExpires, WSDXML_ELEMENT* pAny, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) SubscribeToMultipleOperations;
+				public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, IUnknown* pUnknown, WSD_EVENTING_EXPIRES* pExpires, WSDXML_ELEMENT* pAny, IUnknown* pAsyncState, IWSDAsyncCallback* pAsyncCallback, IWSDAsyncResult** ppResult) BeginSubscribeToMultipleOperations;
+				public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, IWSDAsyncResult* pResult, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) EndSubscribeToMultipleOperations;
+				public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSDXML_ELEMENT* pAny) UnsubscribeToMultipleOperations;
+				public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSDXML_ELEMENT* pAny, IUnknown* pAsyncState, IWSDAsyncCallback* pAsyncCallback, IWSDAsyncResult** ppResult) BeginUnsubscribeToMultipleOperations;
+				public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, IWSDAsyncResult* pResult) EndUnsubscribeToMultipleOperations;
+				public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSD_EVENTING_EXPIRES* pExpires, WSDXML_ELEMENT* pAny, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) RenewMultipleOperations;
+				public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSD_EVENTING_EXPIRES* pExpires, WSDXML_ELEMENT* pAny, IUnknown* pAsyncState, IWSDAsyncCallback* pAsyncCallback, IWSDAsyncResult** ppResult) BeginRenewMultipleOperations;
+				public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, IWSDAsyncResult* pResult, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) EndRenewMultipleOperations;
+				public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSDXML_ELEMENT* pAny, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) GetStatusForMultipleOperations;
+				public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, WSDXML_ELEMENT* pAny, IUnknown* pAsyncState, IWSDAsyncCallback* pAsyncCallback, IWSDAsyncResult** ppResult) BeginGetStatusForMultipleOperations;
+				public function HRESULT(IWSDServiceProxyEventing *self, WSD_OPERATION* pOperations, uint32 dwOperationCount, IWSDAsyncResult* pResult, WSD_EVENTING_EXPIRES** ppExpires, WSDXML_ELEMENT** ppAny) EndGetStatusForMultipleOperations;
+			}
 		}
 		[CRepr]
 		public struct IWSDDeviceProxy : IUnknown
 		{
 			public const new Guid IID = .(0xeee0c031, 0xc578, 0x4c0e, 0x9a, 0x3b, 0x97, 0x3c, 0x35, 0xf4, 0x09, 0xdb);
 			
-			public function HRESULT(IWSDDeviceProxy *self, PWSTR pszDeviceId, IWSDAddress* pDeviceAddress, PWSTR pszLocalId, IWSDXMLContext* pContext, IWSDDeviceProxy* pSponsor) Init;
-			public function HRESULT(IWSDDeviceProxy *self, IWSDAsyncResult** ppResult) BeginGetMetadata;
-			public function HRESULT(IWSDDeviceProxy *self, IWSDAsyncResult* pResult) EndGetMetadata;
-			public function HRESULT(IWSDDeviceProxy *self, WSD_HOST_METADATA** ppHostMetadata) GetHostMetadata;
-			public function HRESULT(IWSDDeviceProxy *self, WSD_THIS_MODEL_METADATA** ppManufacturerMetadata) GetThisModelMetadata;
-			public function HRESULT(IWSDDeviceProxy *self, WSD_THIS_DEVICE_METADATA** ppThisDeviceMetadata) GetThisDeviceMetadata;
-			public function HRESULT(IWSDDeviceProxy *self, WSD_METADATA_SECTION_LIST** ppMetadata) GetAllMetadata;
-			public function HRESULT(IWSDDeviceProxy *self, PWSTR pszServiceId, IWSDServiceProxy** ppServiceProxy) GetServiceProxyById;
-			public function HRESULT(IWSDDeviceProxy *self, WSDXML_NAME* pType, IWSDServiceProxy** ppServiceProxy) GetServiceProxyByType;
-			public function HRESULT(IWSDDeviceProxy *self, IWSDEndpointProxy** ppProxy) GetEndpointProxy;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDDeviceProxy *self, PWSTR pszDeviceId, IWSDAddress* pDeviceAddress, PWSTR pszLocalId, IWSDXMLContext* pContext, IWSDDeviceProxy* pSponsor) Init;
+				public function HRESULT(IWSDDeviceProxy *self, IWSDAsyncResult** ppResult) BeginGetMetadata;
+				public function HRESULT(IWSDDeviceProxy *self, IWSDAsyncResult* pResult) EndGetMetadata;
+				public function HRESULT(IWSDDeviceProxy *self, WSD_HOST_METADATA** ppHostMetadata) GetHostMetadata;
+				public function HRESULT(IWSDDeviceProxy *self, WSD_THIS_MODEL_METADATA** ppManufacturerMetadata) GetThisModelMetadata;
+				public function HRESULT(IWSDDeviceProxy *self, WSD_THIS_DEVICE_METADATA** ppThisDeviceMetadata) GetThisDeviceMetadata;
+				public function HRESULT(IWSDDeviceProxy *self, WSD_METADATA_SECTION_LIST** ppMetadata) GetAllMetadata;
+				public function HRESULT(IWSDDeviceProxy *self, PWSTR pszServiceId, IWSDServiceProxy** ppServiceProxy) GetServiceProxyById;
+				public function HRESULT(IWSDDeviceProxy *self, WSDXML_NAME* pType, IWSDServiceProxy** ppServiceProxy) GetServiceProxyByType;
+				public function HRESULT(IWSDDeviceProxy *self, IWSDEndpointProxy** ppProxy) GetEndpointProxy;
+			}
 		}
 		[CRepr]
 		public struct IWSDAsyncResult : IUnknown
 		{
 			public const new Guid IID = .(0x11a9852a, 0x8dd8, 0x423e, 0xb5, 0x37, 0x93, 0x56, 0xdb, 0x4f, 0xbf, 0xb8);
 			
-			public function HRESULT(IWSDAsyncResult *self, IWSDAsyncCallback* pCallback, IUnknown* pAsyncState) SetCallback;
-			public function HRESULT(IWSDAsyncResult *self, HANDLE hWaitHandle) SetWaitHandle;
-			public function HRESULT(IWSDAsyncResult *self) HasCompleted;
-			public function HRESULT(IWSDAsyncResult *self, IUnknown** ppAsyncState) GetAsyncState;
-			public function HRESULT(IWSDAsyncResult *self) Abort;
-			public function HRESULT(IWSDAsyncResult *self, WSD_EVENT* pEvent) GetEvent;
-			public function HRESULT(IWSDAsyncResult *self, IWSDEndpointProxy** ppEndpoint) GetEndpointProxy;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDAsyncResult *self, IWSDAsyncCallback* pCallback, IUnknown* pAsyncState) SetCallback;
+				public function HRESULT(IWSDAsyncResult *self, HANDLE hWaitHandle) SetWaitHandle;
+				public function HRESULT(IWSDAsyncResult *self) HasCompleted;
+				public function HRESULT(IWSDAsyncResult *self, IUnknown** ppAsyncState) GetAsyncState;
+				public function HRESULT(IWSDAsyncResult *self) Abort;
+				public function HRESULT(IWSDAsyncResult *self, WSD_EVENT* pEvent) GetEvent;
+				public function HRESULT(IWSDAsyncResult *self, IWSDEndpointProxy** ppEndpoint) GetEndpointProxy;
+			}
 		}
 		[CRepr]
 		public struct IWSDAsyncCallback : IUnknown
 		{
 			public const new Guid IID = .(0xa63e109d, 0xce72, 0x49e2, 0xba, 0x98, 0xe8, 0x45, 0xf5, 0xee, 0x16, 0x66);
 			
-			public function HRESULT(IWSDAsyncCallback *self, IWSDAsyncResult* pAsyncResult, IUnknown* pAsyncState) AsyncOperationComplete;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDAsyncCallback *self, IWSDAsyncResult* pAsyncResult, IUnknown* pAsyncState) AsyncOperationComplete;
+			}
 		}
 		[CRepr]
 		public struct IWSDEventingStatus : IUnknown
 		{
 			public const new Guid IID = .(0x49b17f52, 0x637a, 0x407a, 0xae, 0x99, 0xfb, 0xe8, 0x2a, 0x4d, 0x38, 0xc0);
 			
-			public function void(IWSDEventingStatus *self, PWSTR pszSubscriptionAction) SubscriptionRenewed;
-			public function void(IWSDEventingStatus *self, PWSTR pszSubscriptionAction, HRESULT hr) SubscriptionRenewalFailed;
-			public function void(IWSDEventingStatus *self, PWSTR pszSubscriptionAction) SubscriptionEnded;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function void(IWSDEventingStatus *self, PWSTR pszSubscriptionAction) SubscriptionRenewed;
+				public function void(IWSDEventingStatus *self, PWSTR pszSubscriptionAction, HRESULT hr) SubscriptionRenewalFailed;
+				public function void(IWSDEventingStatus *self, PWSTR pszSubscriptionAction) SubscriptionEnded;
+			}
 		}
 		[CRepr]
 		public struct IWSDDeviceHost : IUnknown
 		{
 			public const new Guid IID = .(0x917fe891, 0x3d13, 0x4138, 0x98, 0x09, 0x93, 0x4c, 0x8a, 0xbe, 0xb1, 0x2c);
 			
-			public function HRESULT(IWSDDeviceHost *self, PWSTR pszLocalId, IWSDXMLContext* pContext, IWSDAddress** ppHostAddresses, uint32 dwHostAddressCount) Init;
-			public function HRESULT(IWSDDeviceHost *self, uint64 ullInstanceId, WSD_URI_LIST* pScopeList, IWSDDeviceHostNotify* pNotificationSink) Start;
-			public function HRESULT(IWSDDeviceHost *self) Stop;
-			public function HRESULT(IWSDDeviceHost *self) Terminate;
-			public function HRESULT(IWSDDeviceHost *self, WSD_PORT_TYPE* pPortType) RegisterPortType;
-			public function HRESULT(IWSDDeviceHost *self, WSD_THIS_MODEL_METADATA* pThisModelMetadata, WSD_THIS_DEVICE_METADATA* pThisDeviceMetadata, WSD_HOST_METADATA* pHostMetadata, WSD_METADATA_SECTION_LIST* pCustomMetadata) SetMetadata;
-			public function HRESULT(IWSDDeviceHost *self, PWSTR pszServiceId, IUnknown* pService) RegisterService;
-			public function HRESULT(IWSDDeviceHost *self, PWSTR pszServiceId) RetireService;
-			public function HRESULT(IWSDDeviceHost *self, PWSTR pszServiceId, PWSTR pszEndpointAddress, WSD_PORT_TYPE* pPortType, WSDXML_NAME* pPortName, WSDXML_ELEMENT* pAny, IUnknown* pService) AddDynamicService;
-			public function HRESULT(IWSDDeviceHost *self, PWSTR pszServiceId) RemoveDynamicService;
-			public function HRESULT(IWSDDeviceHost *self, PWSTR pszServiceId, BOOL fDiscoverable) SetServiceDiscoverable;
-			public function HRESULT(IWSDDeviceHost *self, PWSTR pszServiceId, void* pBody, WSD_OPERATION* pOperation) SignalEvent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDDeviceHost *self, PWSTR pszLocalId, IWSDXMLContext* pContext, IWSDAddress** ppHostAddresses, uint32 dwHostAddressCount) Init;
+				public function HRESULT(IWSDDeviceHost *self, uint64 ullInstanceId, WSD_URI_LIST* pScopeList, IWSDDeviceHostNotify* pNotificationSink) Start;
+				public function HRESULT(IWSDDeviceHost *self) Stop;
+				public function HRESULT(IWSDDeviceHost *self) Terminate;
+				public function HRESULT(IWSDDeviceHost *self, WSD_PORT_TYPE* pPortType) RegisterPortType;
+				public function HRESULT(IWSDDeviceHost *self, WSD_THIS_MODEL_METADATA* pThisModelMetadata, WSD_THIS_DEVICE_METADATA* pThisDeviceMetadata, WSD_HOST_METADATA* pHostMetadata, WSD_METADATA_SECTION_LIST* pCustomMetadata) SetMetadata;
+				public function HRESULT(IWSDDeviceHost *self, PWSTR pszServiceId, IUnknown* pService) RegisterService;
+				public function HRESULT(IWSDDeviceHost *self, PWSTR pszServiceId) RetireService;
+				public function HRESULT(IWSDDeviceHost *self, PWSTR pszServiceId, PWSTR pszEndpointAddress, WSD_PORT_TYPE* pPortType, WSDXML_NAME* pPortName, WSDXML_ELEMENT* pAny, IUnknown* pService) AddDynamicService;
+				public function HRESULT(IWSDDeviceHost *self, PWSTR pszServiceId) RemoveDynamicService;
+				public function HRESULT(IWSDDeviceHost *self, PWSTR pszServiceId, BOOL fDiscoverable) SetServiceDiscoverable;
+				public function HRESULT(IWSDDeviceHost *self, PWSTR pszServiceId, void* pBody, WSD_OPERATION* pOperation) SignalEvent;
+			}
 		}
 		[CRepr]
 		public struct IWSDDeviceHostNotify : IUnknown
 		{
 			public const new Guid IID = .(0xb5bee9f9, 0xeeda, 0x41fe, 0x96, 0xf7, 0xf4, 0x5e, 0x14, 0x99, 0x0f, 0xb0);
 			
-			public function HRESULT(IWSDDeviceHostNotify *self, PWSTR pszServiceId, IUnknown** ppService) GetService;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDDeviceHostNotify *self, PWSTR pszServiceId, IUnknown** ppService) GetService;
+			}
 		}
 		[CRepr]
 		public struct IWSDServiceMessaging : IUnknown
 		{
 			public const new Guid IID = .(0x94974cf4, 0x0cab, 0x460d, 0xa3, 0xf6, 0x7a, 0x0a, 0xd6, 0x23, 0xc0, 0xe6);
 			
-			public function HRESULT(IWSDServiceMessaging *self, void* pBody, WSD_OPERATION* pOperation, IWSDMessageParameters* pMessageParameters) SendResponse;
-			public function HRESULT(IWSDServiceMessaging *self, WSD_SOAP_HEADER* pRequestHeader, IWSDMessageParameters* pMessageParameters, WSD_SOAP_FAULT* pFault) FaultRequest;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWSDServiceMessaging *self, void* pBody, WSD_OPERATION* pOperation, IWSDMessageParameters* pMessageParameters) SendResponse;
+				public function HRESULT(IWSDServiceMessaging *self, WSD_SOAP_HEADER* pRequestHeader, IWSDMessageParameters* pMessageParameters, WSD_SOAP_FAULT* pFault) FaultRequest;
+			}
 		}
 		
 		// --- Functions ---

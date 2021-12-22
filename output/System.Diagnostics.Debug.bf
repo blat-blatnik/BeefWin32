@@ -7823,4805 +7823,6060 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2df5f53, 0x071f, 0x47bd, 0x9d, 0xe6, 0x57, 0x34, 0xc3, 0xfe, 0xd6, 0x89);
 			
-			public function HRESULT(IDebugAdvanced *self, void* Context, uint32 ContextSize) GetThreadContext;
-			public function HRESULT(IDebugAdvanced *self, void* Context, uint32 ContextSize) SetThreadContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugAdvanced *self, void* Context, uint32 ContextSize) GetThreadContext;
+				public function HRESULT(IDebugAdvanced *self, void* Context, uint32 ContextSize) SetThreadContext;
+			}
 		}
 		[CRepr]
 		public struct IDebugAdvanced2 : IUnknown
 		{
 			public const new Guid IID = .(0x716d14c9, 0x119b, 0x4ba5, 0xaf, 0x1f, 0x08, 0x90, 0xe6, 0x72, 0x41, 0x6a);
 			
-			public function HRESULT(IDebugAdvanced2 *self, void* Context, uint32 ContextSize) GetThreadContext;
-			public function HRESULT(IDebugAdvanced2 *self, void* Context, uint32 ContextSize) SetThreadContext;
-			public function HRESULT(IDebugAdvanced2 *self, uint32 Request, void* InBuffer, uint32 InBufferSize, void* OutBuffer, uint32 OutBufferSize, uint32* OutSize) Request;
-			public function HRESULT(IDebugAdvanced2 *self, uint32 Which, PSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformation;
-			public function HRESULT(IDebugAdvanced2 *self, uint32 StartElement, uint64 ModAddr, PSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndToken;
-			public function HRESULT(IDebugAdvanced2 *self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, uint8* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformation;
-			public function HRESULT(IDebugAdvanced2 *self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSystemObjectInformation;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugAdvanced2 *self, void* Context, uint32 ContextSize) GetThreadContext;
+				public function HRESULT(IDebugAdvanced2 *self, void* Context, uint32 ContextSize) SetThreadContext;
+				public function HRESULT(IDebugAdvanced2 *self, uint32 Request, void* InBuffer, uint32 InBufferSize, void* OutBuffer, uint32 OutBufferSize, uint32* OutSize) Request;
+				public function HRESULT(IDebugAdvanced2 *self, uint32 Which, PSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformation;
+				public function HRESULT(IDebugAdvanced2 *self, uint32 StartElement, uint64 ModAddr, PSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndToken;
+				public function HRESULT(IDebugAdvanced2 *self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, uint8* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformation;
+				public function HRESULT(IDebugAdvanced2 *self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSystemObjectInformation;
+			}
 		}
 		[CRepr]
 		public struct IDebugAdvanced3 : IUnknown
 		{
 			public const new Guid IID = .(0xcba4abb4, 0x84c4, 0x444d, 0x87, 0xca, 0xa0, 0x4e, 0x13, 0x28, 0x67, 0x39);
 			
-			public function HRESULT(IDebugAdvanced3 *self, void* Context, uint32 ContextSize) GetThreadContext;
-			public function HRESULT(IDebugAdvanced3 *self, void* Context, uint32 ContextSize) SetThreadContext;
-			public function HRESULT(IDebugAdvanced3 *self, uint32 Request, void* InBuffer, uint32 InBufferSize, void* OutBuffer, uint32 OutBufferSize, uint32* OutSize) Request;
-			public function HRESULT(IDebugAdvanced3 *self, uint32 Which, PSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformation;
-			public function HRESULT(IDebugAdvanced3 *self, uint32 StartElement, uint64 ModAddr, PSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndToken;
-			public function HRESULT(IDebugAdvanced3 *self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, uint8* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformation;
-			public function HRESULT(IDebugAdvanced3 *self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSystemObjectInformation;
-			public function HRESULT(IDebugAdvanced3 *self, uint32 Which, PWSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformationWide;
-			public function HRESULT(IDebugAdvanced3 *self, uint32 StartElement, uint64 ModAddr, PWSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndTokenWide;
-			public function HRESULT(IDebugAdvanced3 *self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, char16* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformationWide;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugAdvanced3 *self, void* Context, uint32 ContextSize) GetThreadContext;
+				public function HRESULT(IDebugAdvanced3 *self, void* Context, uint32 ContextSize) SetThreadContext;
+				public function HRESULT(IDebugAdvanced3 *self, uint32 Request, void* InBuffer, uint32 InBufferSize, void* OutBuffer, uint32 OutBufferSize, uint32* OutSize) Request;
+				public function HRESULT(IDebugAdvanced3 *self, uint32 Which, PSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformation;
+				public function HRESULT(IDebugAdvanced3 *self, uint32 StartElement, uint64 ModAddr, PSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndToken;
+				public function HRESULT(IDebugAdvanced3 *self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, uint8* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformation;
+				public function HRESULT(IDebugAdvanced3 *self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSystemObjectInformation;
+				public function HRESULT(IDebugAdvanced3 *self, uint32 Which, PWSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformationWide;
+				public function HRESULT(IDebugAdvanced3 *self, uint32 StartElement, uint64 ModAddr, PWSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndTokenWide;
+				public function HRESULT(IDebugAdvanced3 *self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, char16* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformationWide;
+			}
 		}
 		[CRepr]
 		public struct IDebugAdvanced4 : IUnknown
 		{
 			public const new Guid IID = .(0xd1069067, 0x2a65, 0x4bf0, 0xae, 0x97, 0x76, 0x18, 0x4b, 0x67, 0x85, 0x6b);
 			
-			public function HRESULT(IDebugAdvanced4 *self, void* Context, uint32 ContextSize) GetThreadContext;
-			public function HRESULT(IDebugAdvanced4 *self, void* Context, uint32 ContextSize) SetThreadContext;
-			public function HRESULT(IDebugAdvanced4 *self, uint32 Request, void* InBuffer, uint32 InBufferSize, void* OutBuffer, uint32 OutBufferSize, uint32* OutSize) Request;
-			public function HRESULT(IDebugAdvanced4 *self, uint32 Which, PSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformation;
-			public function HRESULT(IDebugAdvanced4 *self, uint32 StartElement, uint64 ModAddr, PSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndToken;
-			public function HRESULT(IDebugAdvanced4 *self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, uint8* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformation;
-			public function HRESULT(IDebugAdvanced4 *self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSystemObjectInformation;
-			public function HRESULT(IDebugAdvanced4 *self, uint32 Which, PWSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformationWide;
-			public function HRESULT(IDebugAdvanced4 *self, uint32 StartElement, uint64 ModAddr, PWSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndTokenWide;
-			public function HRESULT(IDebugAdvanced4 *self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, char16* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformationWide;
-			public function HRESULT(IDebugAdvanced4 *self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, char16* StringBuffer, uint32 StringBufferSize, uint32* StringSize, SYMBOL_INFO_EX* pInfoEx) GetSymbolInformationWideEx;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugAdvanced4 *self, void* Context, uint32 ContextSize) GetThreadContext;
+				public function HRESULT(IDebugAdvanced4 *self, void* Context, uint32 ContextSize) SetThreadContext;
+				public function HRESULT(IDebugAdvanced4 *self, uint32 Request, void* InBuffer, uint32 InBufferSize, void* OutBuffer, uint32 OutBufferSize, uint32* OutSize) Request;
+				public function HRESULT(IDebugAdvanced4 *self, uint32 Which, PSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformation;
+				public function HRESULT(IDebugAdvanced4 *self, uint32 StartElement, uint64 ModAddr, PSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndToken;
+				public function HRESULT(IDebugAdvanced4 *self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, uint8* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformation;
+				public function HRESULT(IDebugAdvanced4 *self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSystemObjectInformation;
+				public function HRESULT(IDebugAdvanced4 *self, uint32 Which, PWSTR SourceFile, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetSourceFileInformationWide;
+				public function HRESULT(IDebugAdvanced4 *self, uint32 StartElement, uint64 ModAddr, PWSTR File, uint32 Flags, void* FileToken, uint32 FileTokenSize, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileAndTokenWide;
+				public function HRESULT(IDebugAdvanced4 *self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, char16* StringBuffer, uint32 StringBufferSize, uint32* StringSize) GetSymbolInformationWide;
+				public function HRESULT(IDebugAdvanced4 *self, uint32 Which, uint64 Arg64, uint32 Arg32, void* Buffer, uint32 BufferSize, uint32* InfoSize, char16* StringBuffer, uint32 StringBufferSize, uint32* StringSize, SYMBOL_INFO_EX* pInfoEx) GetSymbolInformationWideEx;
+			}
 		}
 		[CRepr]
 		public struct IDebugBreakpoint : IUnknown
 		{
 			public const new Guid IID = .(0x5bd9d474, 0x5975, 0x423a, 0xb8, 0x8b, 0x65, 0xa8, 0xe7, 0x11, 0x0e, 0x65);
 			
-			public function HRESULT(IDebugBreakpoint *self, uint32* Id) GetId;
-			public function HRESULT(IDebugBreakpoint *self, uint32* BreakType, uint32* ProcType) GetType;
-			public function HRESULT(IDebugBreakpoint *self, IDebugClient** Adder) GetAdder;
-			public function HRESULT(IDebugBreakpoint *self, uint32* Flags) GetFlags;
-			public function HRESULT(IDebugBreakpoint *self, uint32 Flags) AddFlags;
-			public function HRESULT(IDebugBreakpoint *self, uint32 Flags) RemoveFlags;
-			public function HRESULT(IDebugBreakpoint *self, uint32 Flags) SetFlags;
-			public function HRESULT(IDebugBreakpoint *self, uint64* Offset) GetOffset;
-			public function HRESULT(IDebugBreakpoint *self, uint64 Offset) SetOffset;
-			public function HRESULT(IDebugBreakpoint *self, uint32* Size, uint32* AccessType) GetDataParameters;
-			public function HRESULT(IDebugBreakpoint *self, uint32 Size, uint32 AccessType) SetDataParameters;
-			public function HRESULT(IDebugBreakpoint *self, uint32* Count) GetPassCount;
-			public function HRESULT(IDebugBreakpoint *self, uint32 Count) SetPassCount;
-			public function HRESULT(IDebugBreakpoint *self, uint32* Count) GetCurrentPassCount;
-			public function HRESULT(IDebugBreakpoint *self, uint32* Id) GetMatchThreadId;
-			public function HRESULT(IDebugBreakpoint *self, uint32 Thread) SetMatchThreadId;
-			public function HRESULT(IDebugBreakpoint *self, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommand;
-			public function HRESULT(IDebugBreakpoint *self, PSTR Command) SetCommand;
-			public function HRESULT(IDebugBreakpoint *self, uint8* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpression;
-			public function HRESULT(IDebugBreakpoint *self, PSTR Expression) SetOffsetExpression;
-			public function HRESULT(IDebugBreakpoint *self, DEBUG_BREAKPOINT_PARAMETERS* Params) GetParameters;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugBreakpoint *self, uint32* Id) GetId;
+				public function HRESULT(IDebugBreakpoint *self, uint32* BreakType, uint32* ProcType) GetType;
+				public function HRESULT(IDebugBreakpoint *self, IDebugClient** Adder) GetAdder;
+				public function HRESULT(IDebugBreakpoint *self, uint32* Flags) GetFlags;
+				public function HRESULT(IDebugBreakpoint *self, uint32 Flags) AddFlags;
+				public function HRESULT(IDebugBreakpoint *self, uint32 Flags) RemoveFlags;
+				public function HRESULT(IDebugBreakpoint *self, uint32 Flags) SetFlags;
+				public function HRESULT(IDebugBreakpoint *self, uint64* Offset) GetOffset;
+				public function HRESULT(IDebugBreakpoint *self, uint64 Offset) SetOffset;
+				public function HRESULT(IDebugBreakpoint *self, uint32* Size, uint32* AccessType) GetDataParameters;
+				public function HRESULT(IDebugBreakpoint *self, uint32 Size, uint32 AccessType) SetDataParameters;
+				public function HRESULT(IDebugBreakpoint *self, uint32* Count) GetPassCount;
+				public function HRESULT(IDebugBreakpoint *self, uint32 Count) SetPassCount;
+				public function HRESULT(IDebugBreakpoint *self, uint32* Count) GetCurrentPassCount;
+				public function HRESULT(IDebugBreakpoint *self, uint32* Id) GetMatchThreadId;
+				public function HRESULT(IDebugBreakpoint *self, uint32 Thread) SetMatchThreadId;
+				public function HRESULT(IDebugBreakpoint *self, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommand;
+				public function HRESULT(IDebugBreakpoint *self, PSTR Command) SetCommand;
+				public function HRESULT(IDebugBreakpoint *self, uint8* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpression;
+				public function HRESULT(IDebugBreakpoint *self, PSTR Expression) SetOffsetExpression;
+				public function HRESULT(IDebugBreakpoint *self, DEBUG_BREAKPOINT_PARAMETERS* Params) GetParameters;
+			}
 		}
 		[CRepr]
 		public struct IDebugBreakpoint2 : IUnknown
 		{
 			public const new Guid IID = .(0x1b278d20, 0x79f2, 0x426e, 0xa3, 0xf9, 0xc1, 0xdd, 0xf3, 0x75, 0xd4, 0x8e);
 			
-			public function HRESULT(IDebugBreakpoint2 *self, uint32* Id) GetId;
-			public function HRESULT(IDebugBreakpoint2 *self, uint32* BreakType, uint32* ProcType) GetType;
-			public function HRESULT(IDebugBreakpoint2 *self, IDebugClient** Adder) GetAdder;
-			public function HRESULT(IDebugBreakpoint2 *self, uint32* Flags) GetFlags;
-			public function HRESULT(IDebugBreakpoint2 *self, uint32 Flags) AddFlags;
-			public function HRESULT(IDebugBreakpoint2 *self, uint32 Flags) RemoveFlags;
-			public function HRESULT(IDebugBreakpoint2 *self, uint32 Flags) SetFlags;
-			public function HRESULT(IDebugBreakpoint2 *self, uint64* Offset) GetOffset;
-			public function HRESULT(IDebugBreakpoint2 *self, uint64 Offset) SetOffset;
-			public function HRESULT(IDebugBreakpoint2 *self, uint32* Size, uint32* AccessType) GetDataParameters;
-			public function HRESULT(IDebugBreakpoint2 *self, uint32 Size, uint32 AccessType) SetDataParameters;
-			public function HRESULT(IDebugBreakpoint2 *self, uint32* Count) GetPassCount;
-			public function HRESULT(IDebugBreakpoint2 *self, uint32 Count) SetPassCount;
-			public function HRESULT(IDebugBreakpoint2 *self, uint32* Count) GetCurrentPassCount;
-			public function HRESULT(IDebugBreakpoint2 *self, uint32* Id) GetMatchThreadId;
-			public function HRESULT(IDebugBreakpoint2 *self, uint32 Thread) SetMatchThreadId;
-			public function HRESULT(IDebugBreakpoint2 *self, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommand;
-			public function HRESULT(IDebugBreakpoint2 *self, PSTR Command) SetCommand;
-			public function HRESULT(IDebugBreakpoint2 *self, uint8* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpression;
-			public function HRESULT(IDebugBreakpoint2 *self, PSTR Expression) SetOffsetExpression;
-			public function HRESULT(IDebugBreakpoint2 *self, DEBUG_BREAKPOINT_PARAMETERS* Params) GetParameters;
-			public function HRESULT(IDebugBreakpoint2 *self, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommandWide;
-			public function HRESULT(IDebugBreakpoint2 *self, PWSTR Command) SetCommandWide;
-			public function HRESULT(IDebugBreakpoint2 *self, char16* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpressionWide;
-			public function HRESULT(IDebugBreakpoint2 *self, PWSTR Expression) SetOffsetExpressionWide;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugBreakpoint2 *self, uint32* Id) GetId;
+				public function HRESULT(IDebugBreakpoint2 *self, uint32* BreakType, uint32* ProcType) GetType;
+				public function HRESULT(IDebugBreakpoint2 *self, IDebugClient** Adder) GetAdder;
+				public function HRESULT(IDebugBreakpoint2 *self, uint32* Flags) GetFlags;
+				public function HRESULT(IDebugBreakpoint2 *self, uint32 Flags) AddFlags;
+				public function HRESULT(IDebugBreakpoint2 *self, uint32 Flags) RemoveFlags;
+				public function HRESULT(IDebugBreakpoint2 *self, uint32 Flags) SetFlags;
+				public function HRESULT(IDebugBreakpoint2 *self, uint64* Offset) GetOffset;
+				public function HRESULT(IDebugBreakpoint2 *self, uint64 Offset) SetOffset;
+				public function HRESULT(IDebugBreakpoint2 *self, uint32* Size, uint32* AccessType) GetDataParameters;
+				public function HRESULT(IDebugBreakpoint2 *self, uint32 Size, uint32 AccessType) SetDataParameters;
+				public function HRESULT(IDebugBreakpoint2 *self, uint32* Count) GetPassCount;
+				public function HRESULT(IDebugBreakpoint2 *self, uint32 Count) SetPassCount;
+				public function HRESULT(IDebugBreakpoint2 *self, uint32* Count) GetCurrentPassCount;
+				public function HRESULT(IDebugBreakpoint2 *self, uint32* Id) GetMatchThreadId;
+				public function HRESULT(IDebugBreakpoint2 *self, uint32 Thread) SetMatchThreadId;
+				public function HRESULT(IDebugBreakpoint2 *self, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommand;
+				public function HRESULT(IDebugBreakpoint2 *self, PSTR Command) SetCommand;
+				public function HRESULT(IDebugBreakpoint2 *self, uint8* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpression;
+				public function HRESULT(IDebugBreakpoint2 *self, PSTR Expression) SetOffsetExpression;
+				public function HRESULT(IDebugBreakpoint2 *self, DEBUG_BREAKPOINT_PARAMETERS* Params) GetParameters;
+				public function HRESULT(IDebugBreakpoint2 *self, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommandWide;
+				public function HRESULT(IDebugBreakpoint2 *self, PWSTR Command) SetCommandWide;
+				public function HRESULT(IDebugBreakpoint2 *self, char16* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpressionWide;
+				public function HRESULT(IDebugBreakpoint2 *self, PWSTR Expression) SetOffsetExpressionWide;
+			}
 		}
 		[CRepr]
 		public struct IDebugBreakpoint3 : IUnknown
 		{
 			public const new Guid IID = .(0x38f5c249, 0xb448, 0x43bb, 0x98, 0x35, 0x57, 0x9d, 0x4e, 0xc0, 0x22, 0x49);
 			
-			public function HRESULT(IDebugBreakpoint3 *self, uint32* Id) GetId;
-			public function HRESULT(IDebugBreakpoint3 *self, uint32* BreakType, uint32* ProcType) GetType;
-			public function HRESULT(IDebugBreakpoint3 *self, IDebugClient** Adder) GetAdder;
-			public function HRESULT(IDebugBreakpoint3 *self, uint32* Flags) GetFlags;
-			public function HRESULT(IDebugBreakpoint3 *self, uint32 Flags) AddFlags;
-			public function HRESULT(IDebugBreakpoint3 *self, uint32 Flags) RemoveFlags;
-			public function HRESULT(IDebugBreakpoint3 *self, uint32 Flags) SetFlags;
-			public function HRESULT(IDebugBreakpoint3 *self, uint64* Offset) GetOffset;
-			public function HRESULT(IDebugBreakpoint3 *self, uint64 Offset) SetOffset;
-			public function HRESULT(IDebugBreakpoint3 *self, uint32* Size, uint32* AccessType) GetDataParameters;
-			public function HRESULT(IDebugBreakpoint3 *self, uint32 Size, uint32 AccessType) SetDataParameters;
-			public function HRESULT(IDebugBreakpoint3 *self, uint32* Count) GetPassCount;
-			public function HRESULT(IDebugBreakpoint3 *self, uint32 Count) SetPassCount;
-			public function HRESULT(IDebugBreakpoint3 *self, uint32* Count) GetCurrentPassCount;
-			public function HRESULT(IDebugBreakpoint3 *self, uint32* Id) GetMatchThreadId;
-			public function HRESULT(IDebugBreakpoint3 *self, uint32 Thread) SetMatchThreadId;
-			public function HRESULT(IDebugBreakpoint3 *self, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommand;
-			public function HRESULT(IDebugBreakpoint3 *self, PSTR Command) SetCommand;
-			public function HRESULT(IDebugBreakpoint3 *self, uint8* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpression;
-			public function HRESULT(IDebugBreakpoint3 *self, PSTR Expression) SetOffsetExpression;
-			public function HRESULT(IDebugBreakpoint3 *self, DEBUG_BREAKPOINT_PARAMETERS* Params) GetParameters;
-			public function HRESULT(IDebugBreakpoint3 *self, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommandWide;
-			public function HRESULT(IDebugBreakpoint3 *self, PWSTR Command) SetCommandWide;
-			public function HRESULT(IDebugBreakpoint3 *self, char16* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpressionWide;
-			public function HRESULT(IDebugBreakpoint3 *self, PWSTR Expression) SetOffsetExpressionWide;
-			public function HRESULT(IDebugBreakpoint3 *self, Guid* Guid) GetGuid;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugBreakpoint3 *self, uint32* Id) GetId;
+				public function HRESULT(IDebugBreakpoint3 *self, uint32* BreakType, uint32* ProcType) GetType;
+				public function HRESULT(IDebugBreakpoint3 *self, IDebugClient** Adder) GetAdder;
+				public function HRESULT(IDebugBreakpoint3 *self, uint32* Flags) GetFlags;
+				public function HRESULT(IDebugBreakpoint3 *self, uint32 Flags) AddFlags;
+				public function HRESULT(IDebugBreakpoint3 *self, uint32 Flags) RemoveFlags;
+				public function HRESULT(IDebugBreakpoint3 *self, uint32 Flags) SetFlags;
+				public function HRESULT(IDebugBreakpoint3 *self, uint64* Offset) GetOffset;
+				public function HRESULT(IDebugBreakpoint3 *self, uint64 Offset) SetOffset;
+				public function HRESULT(IDebugBreakpoint3 *self, uint32* Size, uint32* AccessType) GetDataParameters;
+				public function HRESULT(IDebugBreakpoint3 *self, uint32 Size, uint32 AccessType) SetDataParameters;
+				public function HRESULT(IDebugBreakpoint3 *self, uint32* Count) GetPassCount;
+				public function HRESULT(IDebugBreakpoint3 *self, uint32 Count) SetPassCount;
+				public function HRESULT(IDebugBreakpoint3 *self, uint32* Count) GetCurrentPassCount;
+				public function HRESULT(IDebugBreakpoint3 *self, uint32* Id) GetMatchThreadId;
+				public function HRESULT(IDebugBreakpoint3 *self, uint32 Thread) SetMatchThreadId;
+				public function HRESULT(IDebugBreakpoint3 *self, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommand;
+				public function HRESULT(IDebugBreakpoint3 *self, PSTR Command) SetCommand;
+				public function HRESULT(IDebugBreakpoint3 *self, uint8* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpression;
+				public function HRESULT(IDebugBreakpoint3 *self, PSTR Expression) SetOffsetExpression;
+				public function HRESULT(IDebugBreakpoint3 *self, DEBUG_BREAKPOINT_PARAMETERS* Params) GetParameters;
+				public function HRESULT(IDebugBreakpoint3 *self, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetCommandWide;
+				public function HRESULT(IDebugBreakpoint3 *self, PWSTR Command) SetCommandWide;
+				public function HRESULT(IDebugBreakpoint3 *self, char16* Buffer, uint32 BufferSize, uint32* ExpressionSize) GetOffsetExpressionWide;
+				public function HRESULT(IDebugBreakpoint3 *self, PWSTR Expression) SetOffsetExpressionWide;
+				public function HRESULT(IDebugBreakpoint3 *self, Guid* Guid) GetGuid;
+			}
 		}
 		[CRepr]
 		public struct IDebugClient : IUnknown
 		{
 			public const new Guid IID = .(0x27fe5639, 0x8407, 0x4f47, 0x83, 0x64, 0xee, 0x11, 0x8f, 0xb0, 0x8a, 0xc8);
 			
-			public function HRESULT(IDebugClient *self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
-			public function HRESULT(IDebugClient *self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
-			public function HRESULT(IDebugClient *self, PSTR Options) SetKernelConnectionOptions;
-			public function HRESULT(IDebugClient *self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
-			public function HRESULT(IDebugClient *self, PSTR RemoteOptions, uint64* Server) ConnectProcessServer;
-			public function HRESULT(IDebugClient *self, uint64 Server) DisconnectProcessServer;
-			public function HRESULT(IDebugClient *self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
-			public function HRESULT(IDebugClient *self, uint64 Server, PSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableName;
-			public function HRESULT(IDebugClient *self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
-			public function HRESULT(IDebugClient *self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
-			public function HRESULT(IDebugClient *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
-			public function HRESULT(IDebugClient *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
-			public function HRESULT(IDebugClient *self, uint32* Options) GetProcessOptions;
-			public function HRESULT(IDebugClient *self, uint32 Options) AddProcessOptions;
-			public function HRESULT(IDebugClient *self, uint32 Options) RemoveProcessOptions;
-			public function HRESULT(IDebugClient *self, uint32 Options) SetProcessOptions;
-			public function HRESULT(IDebugClient *self, PSTR DumpFile) OpenDumpFile;
-			public function HRESULT(IDebugClient *self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
-			public function HRESULT(IDebugClient *self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
-			public function HRESULT(IDebugClient *self, PSTR Options) StartServer;
-			public function HRESULT(IDebugClient *self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
-			public function HRESULT(IDebugClient *self) TerminateProcesses;
-			public function HRESULT(IDebugClient *self) DetachProcesses;
-			public function HRESULT(IDebugClient *self, uint32 Flags) EndSession;
-			public function HRESULT(IDebugClient *self, uint32* Code) GetExitCode;
-			public function HRESULT(IDebugClient *self, uint32 Timeout) DispatchCallbacks;
-			public function HRESULT(IDebugClient *self, IDebugClient* Client) ExitDispatch;
-			public function HRESULT(IDebugClient *self, IDebugClient** Client) CreateClient;
-			public function HRESULT(IDebugClient *self, IDebugInputCallbacks** Callbacks) GetInputCallbacks;
-			public function HRESULT(IDebugClient *self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
-			public function HRESULT(IDebugClient *self, IDebugOutputCallbacks** Callbacks) GetOutputCallbacks;
-			public function HRESULT(IDebugClient *self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
-			public function HRESULT(IDebugClient *self, uint32* Mask) GetOutputMask;
-			public function HRESULT(IDebugClient *self, uint32 Mask) SetOutputMask;
-			public function HRESULT(IDebugClient *self, IDebugClient* Client, uint32* Mask) GetOtherOutputMask;
-			public function HRESULT(IDebugClient *self, IDebugClient* Client, uint32 Mask) SetOtherOutputMask;
-			public function HRESULT(IDebugClient *self, uint32* Columns) GetOutputWidth;
-			public function HRESULT(IDebugClient *self, uint32 Columns) SetOutputWidth;
-			public function HRESULT(IDebugClient *self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
-			public function HRESULT(IDebugClient *self, PSTR Prefix) SetOutputLinePrefix;
-			public function HRESULT(IDebugClient *self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
-			public function HRESULT(IDebugClient *self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
-			public function HRESULT(IDebugClient *self, IDebugEventCallbacks** Callbacks) GetEventCallbacks;
-			public function HRESULT(IDebugClient *self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
-			public function HRESULT(IDebugClient *self) FlushCallbacks;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugClient *self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
+				public function HRESULT(IDebugClient *self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
+				public function HRESULT(IDebugClient *self, PSTR Options) SetKernelConnectionOptions;
+				public function HRESULT(IDebugClient *self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
+				public function HRESULT(IDebugClient *self, PSTR RemoteOptions, uint64* Server) ConnectProcessServer;
+				public function HRESULT(IDebugClient *self, uint64 Server) DisconnectProcessServer;
+				public function HRESULT(IDebugClient *self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
+				public function HRESULT(IDebugClient *self, uint64 Server, PSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableName;
+				public function HRESULT(IDebugClient *self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
+				public function HRESULT(IDebugClient *self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
+				public function HRESULT(IDebugClient *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
+				public function HRESULT(IDebugClient *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
+				public function HRESULT(IDebugClient *self, uint32* Options) GetProcessOptions;
+				public function HRESULT(IDebugClient *self, uint32 Options) AddProcessOptions;
+				public function HRESULT(IDebugClient *self, uint32 Options) RemoveProcessOptions;
+				public function HRESULT(IDebugClient *self, uint32 Options) SetProcessOptions;
+				public function HRESULT(IDebugClient *self, PSTR DumpFile) OpenDumpFile;
+				public function HRESULT(IDebugClient *self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
+				public function HRESULT(IDebugClient *self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
+				public function HRESULT(IDebugClient *self, PSTR Options) StartServer;
+				public function HRESULT(IDebugClient *self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
+				public function HRESULT(IDebugClient *self) TerminateProcesses;
+				public function HRESULT(IDebugClient *self) DetachProcesses;
+				public function HRESULT(IDebugClient *self, uint32 Flags) EndSession;
+				public function HRESULT(IDebugClient *self, uint32* Code) GetExitCode;
+				public function HRESULT(IDebugClient *self, uint32 Timeout) DispatchCallbacks;
+				public function HRESULT(IDebugClient *self, IDebugClient* Client) ExitDispatch;
+				public function HRESULT(IDebugClient *self, IDebugClient** Client) CreateClient;
+				public function HRESULT(IDebugClient *self, IDebugInputCallbacks** Callbacks) GetInputCallbacks;
+				public function HRESULT(IDebugClient *self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
+				public function HRESULT(IDebugClient *self, IDebugOutputCallbacks** Callbacks) GetOutputCallbacks;
+				public function HRESULT(IDebugClient *self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
+				public function HRESULT(IDebugClient *self, uint32* Mask) GetOutputMask;
+				public function HRESULT(IDebugClient *self, uint32 Mask) SetOutputMask;
+				public function HRESULT(IDebugClient *self, IDebugClient* Client, uint32* Mask) GetOtherOutputMask;
+				public function HRESULT(IDebugClient *self, IDebugClient* Client, uint32 Mask) SetOtherOutputMask;
+				public function HRESULT(IDebugClient *self, uint32* Columns) GetOutputWidth;
+				public function HRESULT(IDebugClient *self, uint32 Columns) SetOutputWidth;
+				public function HRESULT(IDebugClient *self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
+				public function HRESULT(IDebugClient *self, PSTR Prefix) SetOutputLinePrefix;
+				public function HRESULT(IDebugClient *self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
+				public function HRESULT(IDebugClient *self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
+				public function HRESULT(IDebugClient *self, IDebugEventCallbacks** Callbacks) GetEventCallbacks;
+				public function HRESULT(IDebugClient *self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
+				public function HRESULT(IDebugClient *self) FlushCallbacks;
+			}
 		}
 		[CRepr]
 		public struct IDebugClient2 : IUnknown
 		{
 			public const new Guid IID = .(0xedbed635, 0x372e, 0x4dab, 0xbb, 0xfe, 0xed, 0x0d, 0x2f, 0x63, 0xbe, 0x81);
 			
-			public function HRESULT(IDebugClient2 *self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
-			public function HRESULT(IDebugClient2 *self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
-			public function HRESULT(IDebugClient2 *self, PSTR Options) SetKernelConnectionOptions;
-			public function HRESULT(IDebugClient2 *self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
-			public function HRESULT(IDebugClient2 *self, PSTR RemoteOptions, uint64* Server) ConnectProcessServer;
-			public function HRESULT(IDebugClient2 *self, uint64 Server) DisconnectProcessServer;
-			public function HRESULT(IDebugClient2 *self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
-			public function HRESULT(IDebugClient2 *self, uint64 Server, PSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableName;
-			public function HRESULT(IDebugClient2 *self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
-			public function HRESULT(IDebugClient2 *self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
-			public function HRESULT(IDebugClient2 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
-			public function HRESULT(IDebugClient2 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
-			public function HRESULT(IDebugClient2 *self, uint32* Options) GetProcessOptions;
-			public function HRESULT(IDebugClient2 *self, uint32 Options) AddProcessOptions;
-			public function HRESULT(IDebugClient2 *self, uint32 Options) RemoveProcessOptions;
-			public function HRESULT(IDebugClient2 *self, uint32 Options) SetProcessOptions;
-			public function HRESULT(IDebugClient2 *self, PSTR DumpFile) OpenDumpFile;
-			public function HRESULT(IDebugClient2 *self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
-			public function HRESULT(IDebugClient2 *self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
-			public function HRESULT(IDebugClient2 *self, PSTR Options) StartServer;
-			public function HRESULT(IDebugClient2 *self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
-			public function HRESULT(IDebugClient2 *self) TerminateProcesses;
-			public function HRESULT(IDebugClient2 *self) DetachProcesses;
-			public function HRESULT(IDebugClient2 *self, uint32 Flags) EndSession;
-			public function HRESULT(IDebugClient2 *self, uint32* Code) GetExitCode;
-			public function HRESULT(IDebugClient2 *self, uint32 Timeout) DispatchCallbacks;
-			public function HRESULT(IDebugClient2 *self, IDebugClient* Client) ExitDispatch;
-			public function HRESULT(IDebugClient2 *self, IDebugClient** Client) CreateClient;
-			public function HRESULT(IDebugClient2 *self, IDebugInputCallbacks** Callbacks) GetInputCallbacks;
-			public function HRESULT(IDebugClient2 *self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
-			public function HRESULT(IDebugClient2 *self, IDebugOutputCallbacks** Callbacks) GetOutputCallbacks;
-			public function HRESULT(IDebugClient2 *self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
-			public function HRESULT(IDebugClient2 *self, uint32* Mask) GetOutputMask;
-			public function HRESULT(IDebugClient2 *self, uint32 Mask) SetOutputMask;
-			public function HRESULT(IDebugClient2 *self, IDebugClient* Client, uint32* Mask) GetOtherOutputMask;
-			public function HRESULT(IDebugClient2 *self, IDebugClient* Client, uint32 Mask) SetOtherOutputMask;
-			public function HRESULT(IDebugClient2 *self, uint32* Columns) GetOutputWidth;
-			public function HRESULT(IDebugClient2 *self, uint32 Columns) SetOutputWidth;
-			public function HRESULT(IDebugClient2 *self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
-			public function HRESULT(IDebugClient2 *self, PSTR Prefix) SetOutputLinePrefix;
-			public function HRESULT(IDebugClient2 *self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
-			public function HRESULT(IDebugClient2 *self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
-			public function HRESULT(IDebugClient2 *self, IDebugEventCallbacks** Callbacks) GetEventCallbacks;
-			public function HRESULT(IDebugClient2 *self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
-			public function HRESULT(IDebugClient2 *self) FlushCallbacks;
-			public function HRESULT(IDebugClient2 *self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
-			public function HRESULT(IDebugClient2 *self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
-			public function HRESULT(IDebugClient2 *self, uint64 Server) EndProcessServer;
-			public function HRESULT(IDebugClient2 *self, uint32 Timeout) WaitForProcessServerEnd;
-			public function HRESULT(IDebugClient2 *self) IsKernelDebuggerEnabled;
-			public function HRESULT(IDebugClient2 *self) TerminateCurrentProcess;
-			public function HRESULT(IDebugClient2 *self) DetachCurrentProcess;
-			public function HRESULT(IDebugClient2 *self) AbandonCurrentProcess;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugClient2 *self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
+				public function HRESULT(IDebugClient2 *self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
+				public function HRESULT(IDebugClient2 *self, PSTR Options) SetKernelConnectionOptions;
+				public function HRESULT(IDebugClient2 *self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
+				public function HRESULT(IDebugClient2 *self, PSTR RemoteOptions, uint64* Server) ConnectProcessServer;
+				public function HRESULT(IDebugClient2 *self, uint64 Server) DisconnectProcessServer;
+				public function HRESULT(IDebugClient2 *self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
+				public function HRESULT(IDebugClient2 *self, uint64 Server, PSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableName;
+				public function HRESULT(IDebugClient2 *self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
+				public function HRESULT(IDebugClient2 *self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
+				public function HRESULT(IDebugClient2 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
+				public function HRESULT(IDebugClient2 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
+				public function HRESULT(IDebugClient2 *self, uint32* Options) GetProcessOptions;
+				public function HRESULT(IDebugClient2 *self, uint32 Options) AddProcessOptions;
+				public function HRESULT(IDebugClient2 *self, uint32 Options) RemoveProcessOptions;
+				public function HRESULT(IDebugClient2 *self, uint32 Options) SetProcessOptions;
+				public function HRESULT(IDebugClient2 *self, PSTR DumpFile) OpenDumpFile;
+				public function HRESULT(IDebugClient2 *self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
+				public function HRESULT(IDebugClient2 *self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
+				public function HRESULT(IDebugClient2 *self, PSTR Options) StartServer;
+				public function HRESULT(IDebugClient2 *self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
+				public function HRESULT(IDebugClient2 *self) TerminateProcesses;
+				public function HRESULT(IDebugClient2 *self) DetachProcesses;
+				public function HRESULT(IDebugClient2 *self, uint32 Flags) EndSession;
+				public function HRESULT(IDebugClient2 *self, uint32* Code) GetExitCode;
+				public function HRESULT(IDebugClient2 *self, uint32 Timeout) DispatchCallbacks;
+				public function HRESULT(IDebugClient2 *self, IDebugClient* Client) ExitDispatch;
+				public function HRESULT(IDebugClient2 *self, IDebugClient** Client) CreateClient;
+				public function HRESULT(IDebugClient2 *self, IDebugInputCallbacks** Callbacks) GetInputCallbacks;
+				public function HRESULT(IDebugClient2 *self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
+				public function HRESULT(IDebugClient2 *self, IDebugOutputCallbacks** Callbacks) GetOutputCallbacks;
+				public function HRESULT(IDebugClient2 *self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
+				public function HRESULT(IDebugClient2 *self, uint32* Mask) GetOutputMask;
+				public function HRESULT(IDebugClient2 *self, uint32 Mask) SetOutputMask;
+				public function HRESULT(IDebugClient2 *self, IDebugClient* Client, uint32* Mask) GetOtherOutputMask;
+				public function HRESULT(IDebugClient2 *self, IDebugClient* Client, uint32 Mask) SetOtherOutputMask;
+				public function HRESULT(IDebugClient2 *self, uint32* Columns) GetOutputWidth;
+				public function HRESULT(IDebugClient2 *self, uint32 Columns) SetOutputWidth;
+				public function HRESULT(IDebugClient2 *self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
+				public function HRESULT(IDebugClient2 *self, PSTR Prefix) SetOutputLinePrefix;
+				public function HRESULT(IDebugClient2 *self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
+				public function HRESULT(IDebugClient2 *self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
+				public function HRESULT(IDebugClient2 *self, IDebugEventCallbacks** Callbacks) GetEventCallbacks;
+				public function HRESULT(IDebugClient2 *self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
+				public function HRESULT(IDebugClient2 *self) FlushCallbacks;
+				public function HRESULT(IDebugClient2 *self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
+				public function HRESULT(IDebugClient2 *self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
+				public function HRESULT(IDebugClient2 *self, uint64 Server) EndProcessServer;
+				public function HRESULT(IDebugClient2 *self, uint32 Timeout) WaitForProcessServerEnd;
+				public function HRESULT(IDebugClient2 *self) IsKernelDebuggerEnabled;
+				public function HRESULT(IDebugClient2 *self) TerminateCurrentProcess;
+				public function HRESULT(IDebugClient2 *self) DetachCurrentProcess;
+				public function HRESULT(IDebugClient2 *self) AbandonCurrentProcess;
+			}
 		}
 		[CRepr]
 		public struct IDebugClient3 : IUnknown
 		{
 			public const new Guid IID = .(0xdd492d7f, 0x71b8, 0x4ad6, 0xa8, 0xdc, 0x1c, 0x88, 0x74, 0x79, 0xff, 0x91);
 			
-			public function HRESULT(IDebugClient3 *self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
-			public function HRESULT(IDebugClient3 *self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
-			public function HRESULT(IDebugClient3 *self, PSTR Options) SetKernelConnectionOptions;
-			public function HRESULT(IDebugClient3 *self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
-			public function HRESULT(IDebugClient3 *self, PSTR RemoteOptions, uint64* Server) ConnectProcessServer;
-			public function HRESULT(IDebugClient3 *self, uint64 Server) DisconnectProcessServer;
-			public function HRESULT(IDebugClient3 *self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
-			public function HRESULT(IDebugClient3 *self, uint64 Server, PSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableName;
-			public function HRESULT(IDebugClient3 *self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
-			public function HRESULT(IDebugClient3 *self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
-			public function HRESULT(IDebugClient3 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
-			public function HRESULT(IDebugClient3 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
-			public function HRESULT(IDebugClient3 *self, uint32* Options) GetProcessOptions;
-			public function HRESULT(IDebugClient3 *self, uint32 Options) AddProcessOptions;
-			public function HRESULT(IDebugClient3 *self, uint32 Options) RemoveProcessOptions;
-			public function HRESULT(IDebugClient3 *self, uint32 Options) SetProcessOptions;
-			public function HRESULT(IDebugClient3 *self, PSTR DumpFile) OpenDumpFile;
-			public function HRESULT(IDebugClient3 *self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
-			public function HRESULT(IDebugClient3 *self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
-			public function HRESULT(IDebugClient3 *self, PSTR Options) StartServer;
-			public function HRESULT(IDebugClient3 *self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
-			public function HRESULT(IDebugClient3 *self) TerminateProcesses;
-			public function HRESULT(IDebugClient3 *self) DetachProcesses;
-			public function HRESULT(IDebugClient3 *self, uint32 Flags) EndSession;
-			public function HRESULT(IDebugClient3 *self, uint32* Code) GetExitCode;
-			public function HRESULT(IDebugClient3 *self, uint32 Timeout) DispatchCallbacks;
-			public function HRESULT(IDebugClient3 *self, IDebugClient* Client) ExitDispatch;
-			public function HRESULT(IDebugClient3 *self, IDebugClient** Client) CreateClient;
-			public function HRESULT(IDebugClient3 *self, IDebugInputCallbacks** Callbacks) GetInputCallbacks;
-			public function HRESULT(IDebugClient3 *self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
-			public function HRESULT(IDebugClient3 *self, IDebugOutputCallbacks** Callbacks) GetOutputCallbacks;
-			public function HRESULT(IDebugClient3 *self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
-			public function HRESULT(IDebugClient3 *self, uint32* Mask) GetOutputMask;
-			public function HRESULT(IDebugClient3 *self, uint32 Mask) SetOutputMask;
-			public function HRESULT(IDebugClient3 *self, IDebugClient* Client, uint32* Mask) GetOtherOutputMask;
-			public function HRESULT(IDebugClient3 *self, IDebugClient* Client, uint32 Mask) SetOtherOutputMask;
-			public function HRESULT(IDebugClient3 *self, uint32* Columns) GetOutputWidth;
-			public function HRESULT(IDebugClient3 *self, uint32 Columns) SetOutputWidth;
-			public function HRESULT(IDebugClient3 *self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
-			public function HRESULT(IDebugClient3 *self, PSTR Prefix) SetOutputLinePrefix;
-			public function HRESULT(IDebugClient3 *self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
-			public function HRESULT(IDebugClient3 *self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
-			public function HRESULT(IDebugClient3 *self, IDebugEventCallbacks** Callbacks) GetEventCallbacks;
-			public function HRESULT(IDebugClient3 *self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
-			public function HRESULT(IDebugClient3 *self) FlushCallbacks;
-			public function HRESULT(IDebugClient3 *self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
-			public function HRESULT(IDebugClient3 *self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
-			public function HRESULT(IDebugClient3 *self, uint64 Server) EndProcessServer;
-			public function HRESULT(IDebugClient3 *self, uint32 Timeout) WaitForProcessServerEnd;
-			public function HRESULT(IDebugClient3 *self) IsKernelDebuggerEnabled;
-			public function HRESULT(IDebugClient3 *self) TerminateCurrentProcess;
-			public function HRESULT(IDebugClient3 *self) DetachCurrentProcess;
-			public function HRESULT(IDebugClient3 *self) AbandonCurrentProcess;
-			public function HRESULT(IDebugClient3 *self, uint64 Server, PWSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableNameWide;
-			public function HRESULT(IDebugClient3 *self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
-			public function HRESULT(IDebugClient3 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
-			public function HRESULT(IDebugClient3 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugClient3 *self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
+				public function HRESULT(IDebugClient3 *self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
+				public function HRESULT(IDebugClient3 *self, PSTR Options) SetKernelConnectionOptions;
+				public function HRESULT(IDebugClient3 *self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
+				public function HRESULT(IDebugClient3 *self, PSTR RemoteOptions, uint64* Server) ConnectProcessServer;
+				public function HRESULT(IDebugClient3 *self, uint64 Server) DisconnectProcessServer;
+				public function HRESULT(IDebugClient3 *self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
+				public function HRESULT(IDebugClient3 *self, uint64 Server, PSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableName;
+				public function HRESULT(IDebugClient3 *self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
+				public function HRESULT(IDebugClient3 *self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
+				public function HRESULT(IDebugClient3 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
+				public function HRESULT(IDebugClient3 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
+				public function HRESULT(IDebugClient3 *self, uint32* Options) GetProcessOptions;
+				public function HRESULT(IDebugClient3 *self, uint32 Options) AddProcessOptions;
+				public function HRESULT(IDebugClient3 *self, uint32 Options) RemoveProcessOptions;
+				public function HRESULT(IDebugClient3 *self, uint32 Options) SetProcessOptions;
+				public function HRESULT(IDebugClient3 *self, PSTR DumpFile) OpenDumpFile;
+				public function HRESULT(IDebugClient3 *self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
+				public function HRESULT(IDebugClient3 *self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
+				public function HRESULT(IDebugClient3 *self, PSTR Options) StartServer;
+				public function HRESULT(IDebugClient3 *self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
+				public function HRESULT(IDebugClient3 *self) TerminateProcesses;
+				public function HRESULT(IDebugClient3 *self) DetachProcesses;
+				public function HRESULT(IDebugClient3 *self, uint32 Flags) EndSession;
+				public function HRESULT(IDebugClient3 *self, uint32* Code) GetExitCode;
+				public function HRESULT(IDebugClient3 *self, uint32 Timeout) DispatchCallbacks;
+				public function HRESULT(IDebugClient3 *self, IDebugClient* Client) ExitDispatch;
+				public function HRESULT(IDebugClient3 *self, IDebugClient** Client) CreateClient;
+				public function HRESULT(IDebugClient3 *self, IDebugInputCallbacks** Callbacks) GetInputCallbacks;
+				public function HRESULT(IDebugClient3 *self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
+				public function HRESULT(IDebugClient3 *self, IDebugOutputCallbacks** Callbacks) GetOutputCallbacks;
+				public function HRESULT(IDebugClient3 *self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
+				public function HRESULT(IDebugClient3 *self, uint32* Mask) GetOutputMask;
+				public function HRESULT(IDebugClient3 *self, uint32 Mask) SetOutputMask;
+				public function HRESULT(IDebugClient3 *self, IDebugClient* Client, uint32* Mask) GetOtherOutputMask;
+				public function HRESULT(IDebugClient3 *self, IDebugClient* Client, uint32 Mask) SetOtherOutputMask;
+				public function HRESULT(IDebugClient3 *self, uint32* Columns) GetOutputWidth;
+				public function HRESULT(IDebugClient3 *self, uint32 Columns) SetOutputWidth;
+				public function HRESULT(IDebugClient3 *self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
+				public function HRESULT(IDebugClient3 *self, PSTR Prefix) SetOutputLinePrefix;
+				public function HRESULT(IDebugClient3 *self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
+				public function HRESULT(IDebugClient3 *self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
+				public function HRESULT(IDebugClient3 *self, IDebugEventCallbacks** Callbacks) GetEventCallbacks;
+				public function HRESULT(IDebugClient3 *self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
+				public function HRESULT(IDebugClient3 *self) FlushCallbacks;
+				public function HRESULT(IDebugClient3 *self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
+				public function HRESULT(IDebugClient3 *self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
+				public function HRESULT(IDebugClient3 *self, uint64 Server) EndProcessServer;
+				public function HRESULT(IDebugClient3 *self, uint32 Timeout) WaitForProcessServerEnd;
+				public function HRESULT(IDebugClient3 *self) IsKernelDebuggerEnabled;
+				public function HRESULT(IDebugClient3 *self) TerminateCurrentProcess;
+				public function HRESULT(IDebugClient3 *self) DetachCurrentProcess;
+				public function HRESULT(IDebugClient3 *self) AbandonCurrentProcess;
+				public function HRESULT(IDebugClient3 *self, uint64 Server, PWSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableNameWide;
+				public function HRESULT(IDebugClient3 *self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
+				public function HRESULT(IDebugClient3 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
+				public function HRESULT(IDebugClient3 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
+			}
 		}
 		[CRepr]
 		public struct IDebugClient4 : IUnknown
 		{
 			public const new Guid IID = .(0xca83c3de, 0x5089, 0x4cf8, 0x93, 0xc8, 0xd8, 0x92, 0x38, 0x7f, 0x2a, 0x5e);
 			
-			public function HRESULT(IDebugClient4 *self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
-			public function HRESULT(IDebugClient4 *self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
-			public function HRESULT(IDebugClient4 *self, PSTR Options) SetKernelConnectionOptions;
-			public function HRESULT(IDebugClient4 *self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
-			public function HRESULT(IDebugClient4 *self, PSTR RemoteOptions, uint64* Server) ConnectProcessServer;
-			public function HRESULT(IDebugClient4 *self, uint64 Server) DisconnectProcessServer;
-			public function HRESULT(IDebugClient4 *self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
-			public function HRESULT(IDebugClient4 *self, uint64 Server, PSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableName;
-			public function HRESULT(IDebugClient4 *self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
-			public function HRESULT(IDebugClient4 *self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
-			public function HRESULT(IDebugClient4 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
-			public function HRESULT(IDebugClient4 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
-			public function HRESULT(IDebugClient4 *self, uint32* Options) GetProcessOptions;
-			public function HRESULT(IDebugClient4 *self, uint32 Options) AddProcessOptions;
-			public function HRESULT(IDebugClient4 *self, uint32 Options) RemoveProcessOptions;
-			public function HRESULT(IDebugClient4 *self, uint32 Options) SetProcessOptions;
-			public function HRESULT(IDebugClient4 *self, PSTR DumpFile) OpenDumpFile;
-			public function HRESULT(IDebugClient4 *self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
-			public function HRESULT(IDebugClient4 *self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
-			public function HRESULT(IDebugClient4 *self, PSTR Options) StartServer;
-			public function HRESULT(IDebugClient4 *self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
-			public function HRESULT(IDebugClient4 *self) TerminateProcesses;
-			public function HRESULT(IDebugClient4 *self) DetachProcesses;
-			public function HRESULT(IDebugClient4 *self, uint32 Flags) EndSession;
-			public function HRESULT(IDebugClient4 *self, uint32* Code) GetExitCode;
-			public function HRESULT(IDebugClient4 *self, uint32 Timeout) DispatchCallbacks;
-			public function HRESULT(IDebugClient4 *self, IDebugClient* Client) ExitDispatch;
-			public function HRESULT(IDebugClient4 *self, IDebugClient** Client) CreateClient;
-			public function HRESULT(IDebugClient4 *self, IDebugInputCallbacks** Callbacks) GetInputCallbacks;
-			public function HRESULT(IDebugClient4 *self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
-			public function HRESULT(IDebugClient4 *self, IDebugOutputCallbacks** Callbacks) GetOutputCallbacks;
-			public function HRESULT(IDebugClient4 *self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
-			public function HRESULT(IDebugClient4 *self, uint32* Mask) GetOutputMask;
-			public function HRESULT(IDebugClient4 *self, uint32 Mask) SetOutputMask;
-			public function HRESULT(IDebugClient4 *self, IDebugClient* Client, uint32* Mask) GetOtherOutputMask;
-			public function HRESULT(IDebugClient4 *self, IDebugClient* Client, uint32 Mask) SetOtherOutputMask;
-			public function HRESULT(IDebugClient4 *self, uint32* Columns) GetOutputWidth;
-			public function HRESULT(IDebugClient4 *self, uint32 Columns) SetOutputWidth;
-			public function HRESULT(IDebugClient4 *self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
-			public function HRESULT(IDebugClient4 *self, PSTR Prefix) SetOutputLinePrefix;
-			public function HRESULT(IDebugClient4 *self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
-			public function HRESULT(IDebugClient4 *self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
-			public function HRESULT(IDebugClient4 *self, IDebugEventCallbacks** Callbacks) GetEventCallbacks;
-			public function HRESULT(IDebugClient4 *self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
-			public function HRESULT(IDebugClient4 *self) FlushCallbacks;
-			public function HRESULT(IDebugClient4 *self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
-			public function HRESULT(IDebugClient4 *self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
-			public function HRESULT(IDebugClient4 *self, uint64 Server) EndProcessServer;
-			public function HRESULT(IDebugClient4 *self, uint32 Timeout) WaitForProcessServerEnd;
-			public function HRESULT(IDebugClient4 *self) IsKernelDebuggerEnabled;
-			public function HRESULT(IDebugClient4 *self) TerminateCurrentProcess;
-			public function HRESULT(IDebugClient4 *self) DetachCurrentProcess;
-			public function HRESULT(IDebugClient4 *self) AbandonCurrentProcess;
-			public function HRESULT(IDebugClient4 *self, uint64 Server, PWSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableNameWide;
-			public function HRESULT(IDebugClient4 *self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
-			public function HRESULT(IDebugClient4 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
-			public function HRESULT(IDebugClient4 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
-			public function HRESULT(IDebugClient4 *self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
-			public function HRESULT(IDebugClient4 *self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
-			public function HRESULT(IDebugClient4 *self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
-			public function HRESULT(IDebugClient4 *self, uint32* Number) GetNumberDumpFiles;
-			public function HRESULT(IDebugClient4 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFile;
-			public function HRESULT(IDebugClient4 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFileWide;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugClient4 *self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
+				public function HRESULT(IDebugClient4 *self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
+				public function HRESULT(IDebugClient4 *self, PSTR Options) SetKernelConnectionOptions;
+				public function HRESULT(IDebugClient4 *self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
+				public function HRESULT(IDebugClient4 *self, PSTR RemoteOptions, uint64* Server) ConnectProcessServer;
+				public function HRESULT(IDebugClient4 *self, uint64 Server) DisconnectProcessServer;
+				public function HRESULT(IDebugClient4 *self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
+				public function HRESULT(IDebugClient4 *self, uint64 Server, PSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableName;
+				public function HRESULT(IDebugClient4 *self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
+				public function HRESULT(IDebugClient4 *self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
+				public function HRESULT(IDebugClient4 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
+				public function HRESULT(IDebugClient4 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
+				public function HRESULT(IDebugClient4 *self, uint32* Options) GetProcessOptions;
+				public function HRESULT(IDebugClient4 *self, uint32 Options) AddProcessOptions;
+				public function HRESULT(IDebugClient4 *self, uint32 Options) RemoveProcessOptions;
+				public function HRESULT(IDebugClient4 *self, uint32 Options) SetProcessOptions;
+				public function HRESULT(IDebugClient4 *self, PSTR DumpFile) OpenDumpFile;
+				public function HRESULT(IDebugClient4 *self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
+				public function HRESULT(IDebugClient4 *self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
+				public function HRESULT(IDebugClient4 *self, PSTR Options) StartServer;
+				public function HRESULT(IDebugClient4 *self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
+				public function HRESULT(IDebugClient4 *self) TerminateProcesses;
+				public function HRESULT(IDebugClient4 *self) DetachProcesses;
+				public function HRESULT(IDebugClient4 *self, uint32 Flags) EndSession;
+				public function HRESULT(IDebugClient4 *self, uint32* Code) GetExitCode;
+				public function HRESULT(IDebugClient4 *self, uint32 Timeout) DispatchCallbacks;
+				public function HRESULT(IDebugClient4 *self, IDebugClient* Client) ExitDispatch;
+				public function HRESULT(IDebugClient4 *self, IDebugClient** Client) CreateClient;
+				public function HRESULT(IDebugClient4 *self, IDebugInputCallbacks** Callbacks) GetInputCallbacks;
+				public function HRESULT(IDebugClient4 *self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
+				public function HRESULT(IDebugClient4 *self, IDebugOutputCallbacks** Callbacks) GetOutputCallbacks;
+				public function HRESULT(IDebugClient4 *self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
+				public function HRESULT(IDebugClient4 *self, uint32* Mask) GetOutputMask;
+				public function HRESULT(IDebugClient4 *self, uint32 Mask) SetOutputMask;
+				public function HRESULT(IDebugClient4 *self, IDebugClient* Client, uint32* Mask) GetOtherOutputMask;
+				public function HRESULT(IDebugClient4 *self, IDebugClient* Client, uint32 Mask) SetOtherOutputMask;
+				public function HRESULT(IDebugClient4 *self, uint32* Columns) GetOutputWidth;
+				public function HRESULT(IDebugClient4 *self, uint32 Columns) SetOutputWidth;
+				public function HRESULT(IDebugClient4 *self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
+				public function HRESULT(IDebugClient4 *self, PSTR Prefix) SetOutputLinePrefix;
+				public function HRESULT(IDebugClient4 *self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
+				public function HRESULT(IDebugClient4 *self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
+				public function HRESULT(IDebugClient4 *self, IDebugEventCallbacks** Callbacks) GetEventCallbacks;
+				public function HRESULT(IDebugClient4 *self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
+				public function HRESULT(IDebugClient4 *self) FlushCallbacks;
+				public function HRESULT(IDebugClient4 *self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
+				public function HRESULT(IDebugClient4 *self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
+				public function HRESULT(IDebugClient4 *self, uint64 Server) EndProcessServer;
+				public function HRESULT(IDebugClient4 *self, uint32 Timeout) WaitForProcessServerEnd;
+				public function HRESULT(IDebugClient4 *self) IsKernelDebuggerEnabled;
+				public function HRESULT(IDebugClient4 *self) TerminateCurrentProcess;
+				public function HRESULT(IDebugClient4 *self) DetachCurrentProcess;
+				public function HRESULT(IDebugClient4 *self) AbandonCurrentProcess;
+				public function HRESULT(IDebugClient4 *self, uint64 Server, PWSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableNameWide;
+				public function HRESULT(IDebugClient4 *self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
+				public function HRESULT(IDebugClient4 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
+				public function HRESULT(IDebugClient4 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
+				public function HRESULT(IDebugClient4 *self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
+				public function HRESULT(IDebugClient4 *self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
+				public function HRESULT(IDebugClient4 *self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
+				public function HRESULT(IDebugClient4 *self, uint32* Number) GetNumberDumpFiles;
+				public function HRESULT(IDebugClient4 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFile;
+				public function HRESULT(IDebugClient4 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFileWide;
+			}
 		}
 		[CRepr]
 		public struct IDebugClient5 : IUnknown
 		{
 			public const new Guid IID = .(0xe3acb9d7, 0x7ec2, 0x4f0c, 0xa0, 0xda, 0xe8, 0x1e, 0x0c, 0xbb, 0xe6, 0x28);
 			
-			public function HRESULT(IDebugClient5 *self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
-			public function HRESULT(IDebugClient5 *self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
-			public function HRESULT(IDebugClient5 *self, PSTR Options) SetKernelConnectionOptions;
-			public function HRESULT(IDebugClient5 *self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
-			public function HRESULT(IDebugClient5 *self, PSTR RemoteOptions, uint64* Server) ConnectProcessServer;
-			public function HRESULT(IDebugClient5 *self, uint64 Server) DisconnectProcessServer;
-			public function HRESULT(IDebugClient5 *self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
-			public function HRESULT(IDebugClient5 *self, uint64 Server, PSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableName;
-			public function HRESULT(IDebugClient5 *self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
-			public function HRESULT(IDebugClient5 *self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
-			public function HRESULT(IDebugClient5 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
-			public function HRESULT(IDebugClient5 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
-			public function HRESULT(IDebugClient5 *self, uint32* Options) GetProcessOptions;
-			public function HRESULT(IDebugClient5 *self, uint32 Options) AddProcessOptions;
-			public function HRESULT(IDebugClient5 *self, uint32 Options) RemoveProcessOptions;
-			public function HRESULT(IDebugClient5 *self, uint32 Options) SetProcessOptions;
-			public function HRESULT(IDebugClient5 *self, PSTR DumpFile) OpenDumpFile;
-			public function HRESULT(IDebugClient5 *self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
-			public function HRESULT(IDebugClient5 *self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
-			public function HRESULT(IDebugClient5 *self, PSTR Options) StartServer;
-			public function HRESULT(IDebugClient5 *self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
-			public function HRESULT(IDebugClient5 *self) TerminateProcesses;
-			public function HRESULT(IDebugClient5 *self) DetachProcesses;
-			public function HRESULT(IDebugClient5 *self, uint32 Flags) EndSession;
-			public function HRESULT(IDebugClient5 *self, uint32* Code) GetExitCode;
-			public function HRESULT(IDebugClient5 *self, uint32 Timeout) DispatchCallbacks;
-			public function HRESULT(IDebugClient5 *self, IDebugClient* Client) ExitDispatch;
-			public function HRESULT(IDebugClient5 *self, IDebugClient** Client) CreateClient;
-			public function HRESULT(IDebugClient5 *self, IDebugInputCallbacks** Callbacks) GetInputCallbacks;
-			public function HRESULT(IDebugClient5 *self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
-			public function HRESULT(IDebugClient5 *self, IDebugOutputCallbacks** Callbacks) GetOutputCallbacks;
-			public function HRESULT(IDebugClient5 *self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
-			public function HRESULT(IDebugClient5 *self, uint32* Mask) GetOutputMask;
-			public function HRESULT(IDebugClient5 *self, uint32 Mask) SetOutputMask;
-			public function HRESULT(IDebugClient5 *self, IDebugClient* Client, uint32* Mask) GetOtherOutputMask;
-			public function HRESULT(IDebugClient5 *self, IDebugClient* Client, uint32 Mask) SetOtherOutputMask;
-			public function HRESULT(IDebugClient5 *self, uint32* Columns) GetOutputWidth;
-			public function HRESULT(IDebugClient5 *self, uint32 Columns) SetOutputWidth;
-			public function HRESULT(IDebugClient5 *self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
-			public function HRESULT(IDebugClient5 *self, PSTR Prefix) SetOutputLinePrefix;
-			public function HRESULT(IDebugClient5 *self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
-			public function HRESULT(IDebugClient5 *self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
-			public function HRESULT(IDebugClient5 *self, IDebugEventCallbacks** Callbacks) GetEventCallbacks;
-			public function HRESULT(IDebugClient5 *self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
-			public function HRESULT(IDebugClient5 *self) FlushCallbacks;
-			public function HRESULT(IDebugClient5 *self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
-			public function HRESULT(IDebugClient5 *self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
-			public function HRESULT(IDebugClient5 *self, uint64 Server) EndProcessServer;
-			public function HRESULT(IDebugClient5 *self, uint32 Timeout) WaitForProcessServerEnd;
-			public function HRESULT(IDebugClient5 *self) IsKernelDebuggerEnabled;
-			public function HRESULT(IDebugClient5 *self) TerminateCurrentProcess;
-			public function HRESULT(IDebugClient5 *self) DetachCurrentProcess;
-			public function HRESULT(IDebugClient5 *self) AbandonCurrentProcess;
-			public function HRESULT(IDebugClient5 *self, uint64 Server, PWSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableNameWide;
-			public function HRESULT(IDebugClient5 *self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
-			public function HRESULT(IDebugClient5 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
-			public function HRESULT(IDebugClient5 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
-			public function HRESULT(IDebugClient5 *self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
-			public function HRESULT(IDebugClient5 *self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
-			public function HRESULT(IDebugClient5 *self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
-			public function HRESULT(IDebugClient5 *self, uint32* Number) GetNumberDumpFiles;
-			public function HRESULT(IDebugClient5 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFile;
-			public function HRESULT(IDebugClient5 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFileWide;
-			public function HRESULT(IDebugClient5 *self, uint32 Flags, PWSTR ConnectOptions) AttachKernelWide;
-			public function HRESULT(IDebugClient5 *self, char16* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptionsWide;
-			public function HRESULT(IDebugClient5 *self, PWSTR Options) SetKernelConnectionOptionsWide;
-			public function HRESULT(IDebugClient5 *self, uint32 Flags, PWSTR Options, void* Reserved) StartProcessServerWide;
-			public function HRESULT(IDebugClient5 *self, PWSTR RemoteOptions, uint64* Server) ConnectProcessServerWide;
-			public function HRESULT(IDebugClient5 *self, PWSTR Options) StartServerWide;
-			public function HRESULT(IDebugClient5 *self, uint32 OutputControl, PWSTR Machine, uint32 Flags) OutputServersWide;
-			public function HRESULT(IDebugClient5 *self, IDebugOutputCallbacksWide** Callbacks) GetOutputCallbacksWide;
-			public function HRESULT(IDebugClient5 *self, IDebugOutputCallbacksWide* Callbacks) SetOutputCallbacksWide;
-			public function HRESULT(IDebugClient5 *self, char16* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefixWide;
-			public function HRESULT(IDebugClient5 *self, PWSTR Prefix) SetOutputLinePrefixWide;
-			public function HRESULT(IDebugClient5 *self, char16* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentityWide;
-			public function HRESULT(IDebugClient5 *self, uint32 OutputControl, uint32 Flags, PWSTR Format) OutputIdentityWide;
-			public function HRESULT(IDebugClient5 *self, IDebugEventCallbacksWide** Callbacks) GetEventCallbacksWide;
-			public function HRESULT(IDebugClient5 *self, IDebugEventCallbacksWide* Callbacks) SetEventCallbacksWide;
-			public function HRESULT(IDebugClient5 *self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment) CreateProcess2;
-			public function HRESULT(IDebugClient5 *self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment) CreateProcess2Wide;
-			public function HRESULT(IDebugClient5 *self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2;
-			public function HRESULT(IDebugClient5 *self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2Wide;
-			public function HRESULT(IDebugClient5 *self, PSTR NewPrefix, uint64* Handle) PushOutputLinePrefix;
-			public function HRESULT(IDebugClient5 *self, PWSTR NewPrefix, uint64* Handle) PushOutputLinePrefixWide;
-			public function HRESULT(IDebugClient5 *self, uint64 Handle) PopOutputLinePrefix;
-			public function HRESULT(IDebugClient5 *self, uint32* Count) GetNumberInputCallbacks;
-			public function HRESULT(IDebugClient5 *self, uint32* Count) GetNumberOutputCallbacks;
-			public function HRESULT(IDebugClient5 *self, uint32 EventFlags, uint32* Count) GetNumberEventCallbacks;
-			public function HRESULT(IDebugClient5 *self, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockString;
-			public function HRESULT(IDebugClient5 *self, PSTR String) SetQuitLockString;
-			public function HRESULT(IDebugClient5 *self, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockStringWide;
-			public function HRESULT(IDebugClient5 *self, PWSTR String) SetQuitLockStringWide;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugClient5 *self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
+				public function HRESULT(IDebugClient5 *self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
+				public function HRESULT(IDebugClient5 *self, PSTR Options) SetKernelConnectionOptions;
+				public function HRESULT(IDebugClient5 *self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
+				public function HRESULT(IDebugClient5 *self, PSTR RemoteOptions, uint64* Server) ConnectProcessServer;
+				public function HRESULT(IDebugClient5 *self, uint64 Server) DisconnectProcessServer;
+				public function HRESULT(IDebugClient5 *self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
+				public function HRESULT(IDebugClient5 *self, uint64 Server, PSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableName;
+				public function HRESULT(IDebugClient5 *self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
+				public function HRESULT(IDebugClient5 *self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
+				public function HRESULT(IDebugClient5 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
+				public function HRESULT(IDebugClient5 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
+				public function HRESULT(IDebugClient5 *self, uint32* Options) GetProcessOptions;
+				public function HRESULT(IDebugClient5 *self, uint32 Options) AddProcessOptions;
+				public function HRESULT(IDebugClient5 *self, uint32 Options) RemoveProcessOptions;
+				public function HRESULT(IDebugClient5 *self, uint32 Options) SetProcessOptions;
+				public function HRESULT(IDebugClient5 *self, PSTR DumpFile) OpenDumpFile;
+				public function HRESULT(IDebugClient5 *self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
+				public function HRESULT(IDebugClient5 *self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
+				public function HRESULT(IDebugClient5 *self, PSTR Options) StartServer;
+				public function HRESULT(IDebugClient5 *self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
+				public function HRESULT(IDebugClient5 *self) TerminateProcesses;
+				public function HRESULT(IDebugClient5 *self) DetachProcesses;
+				public function HRESULT(IDebugClient5 *self, uint32 Flags) EndSession;
+				public function HRESULT(IDebugClient5 *self, uint32* Code) GetExitCode;
+				public function HRESULT(IDebugClient5 *self, uint32 Timeout) DispatchCallbacks;
+				public function HRESULT(IDebugClient5 *self, IDebugClient* Client) ExitDispatch;
+				public function HRESULT(IDebugClient5 *self, IDebugClient** Client) CreateClient;
+				public function HRESULT(IDebugClient5 *self, IDebugInputCallbacks** Callbacks) GetInputCallbacks;
+				public function HRESULT(IDebugClient5 *self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
+				public function HRESULT(IDebugClient5 *self, IDebugOutputCallbacks** Callbacks) GetOutputCallbacks;
+				public function HRESULT(IDebugClient5 *self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
+				public function HRESULT(IDebugClient5 *self, uint32* Mask) GetOutputMask;
+				public function HRESULT(IDebugClient5 *self, uint32 Mask) SetOutputMask;
+				public function HRESULT(IDebugClient5 *self, IDebugClient* Client, uint32* Mask) GetOtherOutputMask;
+				public function HRESULT(IDebugClient5 *self, IDebugClient* Client, uint32 Mask) SetOtherOutputMask;
+				public function HRESULT(IDebugClient5 *self, uint32* Columns) GetOutputWidth;
+				public function HRESULT(IDebugClient5 *self, uint32 Columns) SetOutputWidth;
+				public function HRESULT(IDebugClient5 *self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
+				public function HRESULT(IDebugClient5 *self, PSTR Prefix) SetOutputLinePrefix;
+				public function HRESULT(IDebugClient5 *self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
+				public function HRESULT(IDebugClient5 *self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
+				public function HRESULT(IDebugClient5 *self, IDebugEventCallbacks** Callbacks) GetEventCallbacks;
+				public function HRESULT(IDebugClient5 *self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
+				public function HRESULT(IDebugClient5 *self) FlushCallbacks;
+				public function HRESULT(IDebugClient5 *self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
+				public function HRESULT(IDebugClient5 *self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
+				public function HRESULT(IDebugClient5 *self, uint64 Server) EndProcessServer;
+				public function HRESULT(IDebugClient5 *self, uint32 Timeout) WaitForProcessServerEnd;
+				public function HRESULT(IDebugClient5 *self) IsKernelDebuggerEnabled;
+				public function HRESULT(IDebugClient5 *self) TerminateCurrentProcess;
+				public function HRESULT(IDebugClient5 *self) DetachCurrentProcess;
+				public function HRESULT(IDebugClient5 *self) AbandonCurrentProcess;
+				public function HRESULT(IDebugClient5 *self, uint64 Server, PWSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableNameWide;
+				public function HRESULT(IDebugClient5 *self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
+				public function HRESULT(IDebugClient5 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
+				public function HRESULT(IDebugClient5 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
+				public function HRESULT(IDebugClient5 *self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
+				public function HRESULT(IDebugClient5 *self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
+				public function HRESULT(IDebugClient5 *self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
+				public function HRESULT(IDebugClient5 *self, uint32* Number) GetNumberDumpFiles;
+				public function HRESULT(IDebugClient5 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFile;
+				public function HRESULT(IDebugClient5 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFileWide;
+				public function HRESULT(IDebugClient5 *self, uint32 Flags, PWSTR ConnectOptions) AttachKernelWide;
+				public function HRESULT(IDebugClient5 *self, char16* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptionsWide;
+				public function HRESULT(IDebugClient5 *self, PWSTR Options) SetKernelConnectionOptionsWide;
+				public function HRESULT(IDebugClient5 *self, uint32 Flags, PWSTR Options, void* Reserved) StartProcessServerWide;
+				public function HRESULT(IDebugClient5 *self, PWSTR RemoteOptions, uint64* Server) ConnectProcessServerWide;
+				public function HRESULT(IDebugClient5 *self, PWSTR Options) StartServerWide;
+				public function HRESULT(IDebugClient5 *self, uint32 OutputControl, PWSTR Machine, uint32 Flags) OutputServersWide;
+				public function HRESULT(IDebugClient5 *self, IDebugOutputCallbacksWide** Callbacks) GetOutputCallbacksWide;
+				public function HRESULT(IDebugClient5 *self, IDebugOutputCallbacksWide* Callbacks) SetOutputCallbacksWide;
+				public function HRESULT(IDebugClient5 *self, char16* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefixWide;
+				public function HRESULT(IDebugClient5 *self, PWSTR Prefix) SetOutputLinePrefixWide;
+				public function HRESULT(IDebugClient5 *self, char16* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentityWide;
+				public function HRESULT(IDebugClient5 *self, uint32 OutputControl, uint32 Flags, PWSTR Format) OutputIdentityWide;
+				public function HRESULT(IDebugClient5 *self, IDebugEventCallbacksWide** Callbacks) GetEventCallbacksWide;
+				public function HRESULT(IDebugClient5 *self, IDebugEventCallbacksWide* Callbacks) SetEventCallbacksWide;
+				public function HRESULT(IDebugClient5 *self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment) CreateProcess2;
+				public function HRESULT(IDebugClient5 *self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment) CreateProcess2Wide;
+				public function HRESULT(IDebugClient5 *self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2;
+				public function HRESULT(IDebugClient5 *self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2Wide;
+				public function HRESULT(IDebugClient5 *self, PSTR NewPrefix, uint64* Handle) PushOutputLinePrefix;
+				public function HRESULT(IDebugClient5 *self, PWSTR NewPrefix, uint64* Handle) PushOutputLinePrefixWide;
+				public function HRESULT(IDebugClient5 *self, uint64 Handle) PopOutputLinePrefix;
+				public function HRESULT(IDebugClient5 *self, uint32* Count) GetNumberInputCallbacks;
+				public function HRESULT(IDebugClient5 *self, uint32* Count) GetNumberOutputCallbacks;
+				public function HRESULT(IDebugClient5 *self, uint32 EventFlags, uint32* Count) GetNumberEventCallbacks;
+				public function HRESULT(IDebugClient5 *self, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockString;
+				public function HRESULT(IDebugClient5 *self, PSTR String) SetQuitLockString;
+				public function HRESULT(IDebugClient5 *self, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockStringWide;
+				public function HRESULT(IDebugClient5 *self, PWSTR String) SetQuitLockStringWide;
+			}
 		}
 		[CRepr]
 		public struct IDebugClient6 : IUnknown
 		{
 			public const new Guid IID = .(0xfd28b4c5, 0xc498, 0x4686, 0xa2, 0x8e, 0x62, 0xca, 0xd2, 0x15, 0x4e, 0xb3);
 			
-			public function HRESULT(IDebugClient6 *self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
-			public function HRESULT(IDebugClient6 *self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
-			public function HRESULT(IDebugClient6 *self, PSTR Options) SetKernelConnectionOptions;
-			public function HRESULT(IDebugClient6 *self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
-			public function HRESULT(IDebugClient6 *self, PSTR RemoteOptions, uint64* Server) ConnectProcessServer;
-			public function HRESULT(IDebugClient6 *self, uint64 Server) DisconnectProcessServer;
-			public function HRESULT(IDebugClient6 *self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
-			public function HRESULT(IDebugClient6 *self, uint64 Server, PSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableName;
-			public function HRESULT(IDebugClient6 *self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
-			public function HRESULT(IDebugClient6 *self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
-			public function HRESULT(IDebugClient6 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
-			public function HRESULT(IDebugClient6 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
-			public function HRESULT(IDebugClient6 *self, uint32* Options) GetProcessOptions;
-			public function HRESULT(IDebugClient6 *self, uint32 Options) AddProcessOptions;
-			public function HRESULT(IDebugClient6 *self, uint32 Options) RemoveProcessOptions;
-			public function HRESULT(IDebugClient6 *self, uint32 Options) SetProcessOptions;
-			public function HRESULT(IDebugClient6 *self, PSTR DumpFile) OpenDumpFile;
-			public function HRESULT(IDebugClient6 *self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
-			public function HRESULT(IDebugClient6 *self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
-			public function HRESULT(IDebugClient6 *self, PSTR Options) StartServer;
-			public function HRESULT(IDebugClient6 *self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
-			public function HRESULT(IDebugClient6 *self) TerminateProcesses;
-			public function HRESULT(IDebugClient6 *self) DetachProcesses;
-			public function HRESULT(IDebugClient6 *self, uint32 Flags) EndSession;
-			public function HRESULT(IDebugClient6 *self, uint32* Code) GetExitCode;
-			public function HRESULT(IDebugClient6 *self, uint32 Timeout) DispatchCallbacks;
-			public function HRESULT(IDebugClient6 *self, IDebugClient* Client) ExitDispatch;
-			public function HRESULT(IDebugClient6 *self, IDebugClient** Client) CreateClient;
-			public function HRESULT(IDebugClient6 *self, IDebugInputCallbacks** Callbacks) GetInputCallbacks;
-			public function HRESULT(IDebugClient6 *self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
-			public function HRESULT(IDebugClient6 *self, IDebugOutputCallbacks** Callbacks) GetOutputCallbacks;
-			public function HRESULT(IDebugClient6 *self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
-			public function HRESULT(IDebugClient6 *self, uint32* Mask) GetOutputMask;
-			public function HRESULT(IDebugClient6 *self, uint32 Mask) SetOutputMask;
-			public function HRESULT(IDebugClient6 *self, IDebugClient* Client, uint32* Mask) GetOtherOutputMask;
-			public function HRESULT(IDebugClient6 *self, IDebugClient* Client, uint32 Mask) SetOtherOutputMask;
-			public function HRESULT(IDebugClient6 *self, uint32* Columns) GetOutputWidth;
-			public function HRESULT(IDebugClient6 *self, uint32 Columns) SetOutputWidth;
-			public function HRESULT(IDebugClient6 *self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
-			public function HRESULT(IDebugClient6 *self, PSTR Prefix) SetOutputLinePrefix;
-			public function HRESULT(IDebugClient6 *self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
-			public function HRESULT(IDebugClient6 *self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
-			public function HRESULT(IDebugClient6 *self, IDebugEventCallbacks** Callbacks) GetEventCallbacks;
-			public function HRESULT(IDebugClient6 *self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
-			public function HRESULT(IDebugClient6 *self) FlushCallbacks;
-			public function HRESULT(IDebugClient6 *self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
-			public function HRESULT(IDebugClient6 *self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
-			public function HRESULT(IDebugClient6 *self, uint64 Server) EndProcessServer;
-			public function HRESULT(IDebugClient6 *self, uint32 Timeout) WaitForProcessServerEnd;
-			public function HRESULT(IDebugClient6 *self) IsKernelDebuggerEnabled;
-			public function HRESULT(IDebugClient6 *self) TerminateCurrentProcess;
-			public function HRESULT(IDebugClient6 *self) DetachCurrentProcess;
-			public function HRESULT(IDebugClient6 *self) AbandonCurrentProcess;
-			public function HRESULT(IDebugClient6 *self, uint64 Server, PWSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableNameWide;
-			public function HRESULT(IDebugClient6 *self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
-			public function HRESULT(IDebugClient6 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
-			public function HRESULT(IDebugClient6 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
-			public function HRESULT(IDebugClient6 *self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
-			public function HRESULT(IDebugClient6 *self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
-			public function HRESULT(IDebugClient6 *self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
-			public function HRESULT(IDebugClient6 *self, uint32* Number) GetNumberDumpFiles;
-			public function HRESULT(IDebugClient6 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFile;
-			public function HRESULT(IDebugClient6 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFileWide;
-			public function HRESULT(IDebugClient6 *self, uint32 Flags, PWSTR ConnectOptions) AttachKernelWide;
-			public function HRESULT(IDebugClient6 *self, char16* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptionsWide;
-			public function HRESULT(IDebugClient6 *self, PWSTR Options) SetKernelConnectionOptionsWide;
-			public function HRESULT(IDebugClient6 *self, uint32 Flags, PWSTR Options, void* Reserved) StartProcessServerWide;
-			public function HRESULT(IDebugClient6 *self, PWSTR RemoteOptions, uint64* Server) ConnectProcessServerWide;
-			public function HRESULT(IDebugClient6 *self, PWSTR Options) StartServerWide;
-			public function HRESULT(IDebugClient6 *self, uint32 OutputControl, PWSTR Machine, uint32 Flags) OutputServersWide;
-			public function HRESULT(IDebugClient6 *self, IDebugOutputCallbacksWide** Callbacks) GetOutputCallbacksWide;
-			public function HRESULT(IDebugClient6 *self, IDebugOutputCallbacksWide* Callbacks) SetOutputCallbacksWide;
-			public function HRESULT(IDebugClient6 *self, char16* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefixWide;
-			public function HRESULT(IDebugClient6 *self, PWSTR Prefix) SetOutputLinePrefixWide;
-			public function HRESULT(IDebugClient6 *self, char16* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentityWide;
-			public function HRESULT(IDebugClient6 *self, uint32 OutputControl, uint32 Flags, PWSTR Format) OutputIdentityWide;
-			public function HRESULT(IDebugClient6 *self, IDebugEventCallbacksWide** Callbacks) GetEventCallbacksWide;
-			public function HRESULT(IDebugClient6 *self, IDebugEventCallbacksWide* Callbacks) SetEventCallbacksWide;
-			public function HRESULT(IDebugClient6 *self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment) CreateProcess2;
-			public function HRESULT(IDebugClient6 *self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment) CreateProcess2Wide;
-			public function HRESULT(IDebugClient6 *self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2;
-			public function HRESULT(IDebugClient6 *self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2Wide;
-			public function HRESULT(IDebugClient6 *self, PSTR NewPrefix, uint64* Handle) PushOutputLinePrefix;
-			public function HRESULT(IDebugClient6 *self, PWSTR NewPrefix, uint64* Handle) PushOutputLinePrefixWide;
-			public function HRESULT(IDebugClient6 *self, uint64 Handle) PopOutputLinePrefix;
-			public function HRESULT(IDebugClient6 *self, uint32* Count) GetNumberInputCallbacks;
-			public function HRESULT(IDebugClient6 *self, uint32* Count) GetNumberOutputCallbacks;
-			public function HRESULT(IDebugClient6 *self, uint32 EventFlags, uint32* Count) GetNumberEventCallbacks;
-			public function HRESULT(IDebugClient6 *self, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockString;
-			public function HRESULT(IDebugClient6 *self, PSTR String) SetQuitLockString;
-			public function HRESULT(IDebugClient6 *self, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockStringWide;
-			public function HRESULT(IDebugClient6 *self, PWSTR String) SetQuitLockStringWide;
-			public function HRESULT(IDebugClient6 *self, IDebugEventContextCallbacks* Callbacks) SetEventContextCallbacks;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugClient6 *self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
+				public function HRESULT(IDebugClient6 *self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
+				public function HRESULT(IDebugClient6 *self, PSTR Options) SetKernelConnectionOptions;
+				public function HRESULT(IDebugClient6 *self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
+				public function HRESULT(IDebugClient6 *self, PSTR RemoteOptions, uint64* Server) ConnectProcessServer;
+				public function HRESULT(IDebugClient6 *self, uint64 Server) DisconnectProcessServer;
+				public function HRESULT(IDebugClient6 *self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
+				public function HRESULT(IDebugClient6 *self, uint64 Server, PSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableName;
+				public function HRESULT(IDebugClient6 *self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
+				public function HRESULT(IDebugClient6 *self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
+				public function HRESULT(IDebugClient6 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
+				public function HRESULT(IDebugClient6 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
+				public function HRESULT(IDebugClient6 *self, uint32* Options) GetProcessOptions;
+				public function HRESULT(IDebugClient6 *self, uint32 Options) AddProcessOptions;
+				public function HRESULT(IDebugClient6 *self, uint32 Options) RemoveProcessOptions;
+				public function HRESULT(IDebugClient6 *self, uint32 Options) SetProcessOptions;
+				public function HRESULT(IDebugClient6 *self, PSTR DumpFile) OpenDumpFile;
+				public function HRESULT(IDebugClient6 *self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
+				public function HRESULT(IDebugClient6 *self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
+				public function HRESULT(IDebugClient6 *self, PSTR Options) StartServer;
+				public function HRESULT(IDebugClient6 *self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
+				public function HRESULT(IDebugClient6 *self) TerminateProcesses;
+				public function HRESULT(IDebugClient6 *self) DetachProcesses;
+				public function HRESULT(IDebugClient6 *self, uint32 Flags) EndSession;
+				public function HRESULT(IDebugClient6 *self, uint32* Code) GetExitCode;
+				public function HRESULT(IDebugClient6 *self, uint32 Timeout) DispatchCallbacks;
+				public function HRESULT(IDebugClient6 *self, IDebugClient* Client) ExitDispatch;
+				public function HRESULT(IDebugClient6 *self, IDebugClient** Client) CreateClient;
+				public function HRESULT(IDebugClient6 *self, IDebugInputCallbacks** Callbacks) GetInputCallbacks;
+				public function HRESULT(IDebugClient6 *self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
+				public function HRESULT(IDebugClient6 *self, IDebugOutputCallbacks** Callbacks) GetOutputCallbacks;
+				public function HRESULT(IDebugClient6 *self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
+				public function HRESULT(IDebugClient6 *self, uint32* Mask) GetOutputMask;
+				public function HRESULT(IDebugClient6 *self, uint32 Mask) SetOutputMask;
+				public function HRESULT(IDebugClient6 *self, IDebugClient* Client, uint32* Mask) GetOtherOutputMask;
+				public function HRESULT(IDebugClient6 *self, IDebugClient* Client, uint32 Mask) SetOtherOutputMask;
+				public function HRESULT(IDebugClient6 *self, uint32* Columns) GetOutputWidth;
+				public function HRESULT(IDebugClient6 *self, uint32 Columns) SetOutputWidth;
+				public function HRESULT(IDebugClient6 *self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
+				public function HRESULT(IDebugClient6 *self, PSTR Prefix) SetOutputLinePrefix;
+				public function HRESULT(IDebugClient6 *self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
+				public function HRESULT(IDebugClient6 *self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
+				public function HRESULT(IDebugClient6 *self, IDebugEventCallbacks** Callbacks) GetEventCallbacks;
+				public function HRESULT(IDebugClient6 *self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
+				public function HRESULT(IDebugClient6 *self) FlushCallbacks;
+				public function HRESULT(IDebugClient6 *self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
+				public function HRESULT(IDebugClient6 *self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
+				public function HRESULT(IDebugClient6 *self, uint64 Server) EndProcessServer;
+				public function HRESULT(IDebugClient6 *self, uint32 Timeout) WaitForProcessServerEnd;
+				public function HRESULT(IDebugClient6 *self) IsKernelDebuggerEnabled;
+				public function HRESULT(IDebugClient6 *self) TerminateCurrentProcess;
+				public function HRESULT(IDebugClient6 *self) DetachCurrentProcess;
+				public function HRESULT(IDebugClient6 *self) AbandonCurrentProcess;
+				public function HRESULT(IDebugClient6 *self, uint64 Server, PWSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableNameWide;
+				public function HRESULT(IDebugClient6 *self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
+				public function HRESULT(IDebugClient6 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
+				public function HRESULT(IDebugClient6 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
+				public function HRESULT(IDebugClient6 *self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
+				public function HRESULT(IDebugClient6 *self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
+				public function HRESULT(IDebugClient6 *self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
+				public function HRESULT(IDebugClient6 *self, uint32* Number) GetNumberDumpFiles;
+				public function HRESULT(IDebugClient6 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFile;
+				public function HRESULT(IDebugClient6 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFileWide;
+				public function HRESULT(IDebugClient6 *self, uint32 Flags, PWSTR ConnectOptions) AttachKernelWide;
+				public function HRESULT(IDebugClient6 *self, char16* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptionsWide;
+				public function HRESULT(IDebugClient6 *self, PWSTR Options) SetKernelConnectionOptionsWide;
+				public function HRESULT(IDebugClient6 *self, uint32 Flags, PWSTR Options, void* Reserved) StartProcessServerWide;
+				public function HRESULT(IDebugClient6 *self, PWSTR RemoteOptions, uint64* Server) ConnectProcessServerWide;
+				public function HRESULT(IDebugClient6 *self, PWSTR Options) StartServerWide;
+				public function HRESULT(IDebugClient6 *self, uint32 OutputControl, PWSTR Machine, uint32 Flags) OutputServersWide;
+				public function HRESULT(IDebugClient6 *self, IDebugOutputCallbacksWide** Callbacks) GetOutputCallbacksWide;
+				public function HRESULT(IDebugClient6 *self, IDebugOutputCallbacksWide* Callbacks) SetOutputCallbacksWide;
+				public function HRESULT(IDebugClient6 *self, char16* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefixWide;
+				public function HRESULT(IDebugClient6 *self, PWSTR Prefix) SetOutputLinePrefixWide;
+				public function HRESULT(IDebugClient6 *self, char16* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentityWide;
+				public function HRESULT(IDebugClient6 *self, uint32 OutputControl, uint32 Flags, PWSTR Format) OutputIdentityWide;
+				public function HRESULT(IDebugClient6 *self, IDebugEventCallbacksWide** Callbacks) GetEventCallbacksWide;
+				public function HRESULT(IDebugClient6 *self, IDebugEventCallbacksWide* Callbacks) SetEventCallbacksWide;
+				public function HRESULT(IDebugClient6 *self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment) CreateProcess2;
+				public function HRESULT(IDebugClient6 *self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment) CreateProcess2Wide;
+				public function HRESULT(IDebugClient6 *self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2;
+				public function HRESULT(IDebugClient6 *self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2Wide;
+				public function HRESULT(IDebugClient6 *self, PSTR NewPrefix, uint64* Handle) PushOutputLinePrefix;
+				public function HRESULT(IDebugClient6 *self, PWSTR NewPrefix, uint64* Handle) PushOutputLinePrefixWide;
+				public function HRESULT(IDebugClient6 *self, uint64 Handle) PopOutputLinePrefix;
+				public function HRESULT(IDebugClient6 *self, uint32* Count) GetNumberInputCallbacks;
+				public function HRESULT(IDebugClient6 *self, uint32* Count) GetNumberOutputCallbacks;
+				public function HRESULT(IDebugClient6 *self, uint32 EventFlags, uint32* Count) GetNumberEventCallbacks;
+				public function HRESULT(IDebugClient6 *self, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockString;
+				public function HRESULT(IDebugClient6 *self, PSTR String) SetQuitLockString;
+				public function HRESULT(IDebugClient6 *self, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockStringWide;
+				public function HRESULT(IDebugClient6 *self, PWSTR String) SetQuitLockStringWide;
+				public function HRESULT(IDebugClient6 *self, IDebugEventContextCallbacks* Callbacks) SetEventContextCallbacks;
+			}
 		}
 		[CRepr]
 		public struct IDebugClient7 : IUnknown
 		{
 			public const new Guid IID = .(0x13586be3, 0x542e, 0x481e, 0xb1, 0xf2, 0x84, 0x97, 0xba, 0x74, 0xf9, 0xa9);
 			
-			public function HRESULT(IDebugClient7 *self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
-			public function HRESULT(IDebugClient7 *self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
-			public function HRESULT(IDebugClient7 *self, PSTR Options) SetKernelConnectionOptions;
-			public function HRESULT(IDebugClient7 *self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
-			public function HRESULT(IDebugClient7 *self, PSTR RemoteOptions, uint64* Server) ConnectProcessServer;
-			public function HRESULT(IDebugClient7 *self, uint64 Server) DisconnectProcessServer;
-			public function HRESULT(IDebugClient7 *self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
-			public function HRESULT(IDebugClient7 *self, uint64 Server, PSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableName;
-			public function HRESULT(IDebugClient7 *self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
-			public function HRESULT(IDebugClient7 *self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
-			public function HRESULT(IDebugClient7 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
-			public function HRESULT(IDebugClient7 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
-			public function HRESULT(IDebugClient7 *self, uint32* Options) GetProcessOptions;
-			public function HRESULT(IDebugClient7 *self, uint32 Options) AddProcessOptions;
-			public function HRESULT(IDebugClient7 *self, uint32 Options) RemoveProcessOptions;
-			public function HRESULT(IDebugClient7 *self, uint32 Options) SetProcessOptions;
-			public function HRESULT(IDebugClient7 *self, PSTR DumpFile) OpenDumpFile;
-			public function HRESULT(IDebugClient7 *self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
-			public function HRESULT(IDebugClient7 *self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
-			public function HRESULT(IDebugClient7 *self, PSTR Options) StartServer;
-			public function HRESULT(IDebugClient7 *self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
-			public function HRESULT(IDebugClient7 *self) TerminateProcesses;
-			public function HRESULT(IDebugClient7 *self) DetachProcesses;
-			public function HRESULT(IDebugClient7 *self, uint32 Flags) EndSession;
-			public function HRESULT(IDebugClient7 *self, uint32* Code) GetExitCode;
-			public function HRESULT(IDebugClient7 *self, uint32 Timeout) DispatchCallbacks;
-			public function HRESULT(IDebugClient7 *self, IDebugClient* Client) ExitDispatch;
-			public function HRESULT(IDebugClient7 *self, IDebugClient** Client) CreateClient;
-			public function HRESULT(IDebugClient7 *self, IDebugInputCallbacks** Callbacks) GetInputCallbacks;
-			public function HRESULT(IDebugClient7 *self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
-			public function HRESULT(IDebugClient7 *self, IDebugOutputCallbacks** Callbacks) GetOutputCallbacks;
-			public function HRESULT(IDebugClient7 *self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
-			public function HRESULT(IDebugClient7 *self, uint32* Mask) GetOutputMask;
-			public function HRESULT(IDebugClient7 *self, uint32 Mask) SetOutputMask;
-			public function HRESULT(IDebugClient7 *self, IDebugClient* Client, uint32* Mask) GetOtherOutputMask;
-			public function HRESULT(IDebugClient7 *self, IDebugClient* Client, uint32 Mask) SetOtherOutputMask;
-			public function HRESULT(IDebugClient7 *self, uint32* Columns) GetOutputWidth;
-			public function HRESULT(IDebugClient7 *self, uint32 Columns) SetOutputWidth;
-			public function HRESULT(IDebugClient7 *self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
-			public function HRESULT(IDebugClient7 *self, PSTR Prefix) SetOutputLinePrefix;
-			public function HRESULT(IDebugClient7 *self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
-			public function HRESULT(IDebugClient7 *self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
-			public function HRESULT(IDebugClient7 *self, IDebugEventCallbacks** Callbacks) GetEventCallbacks;
-			public function HRESULT(IDebugClient7 *self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
-			public function HRESULT(IDebugClient7 *self) FlushCallbacks;
-			public function HRESULT(IDebugClient7 *self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
-			public function HRESULT(IDebugClient7 *self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
-			public function HRESULT(IDebugClient7 *self, uint64 Server) EndProcessServer;
-			public function HRESULT(IDebugClient7 *self, uint32 Timeout) WaitForProcessServerEnd;
-			public function HRESULT(IDebugClient7 *self) IsKernelDebuggerEnabled;
-			public function HRESULT(IDebugClient7 *self) TerminateCurrentProcess;
-			public function HRESULT(IDebugClient7 *self) DetachCurrentProcess;
-			public function HRESULT(IDebugClient7 *self) AbandonCurrentProcess;
-			public function HRESULT(IDebugClient7 *self, uint64 Server, PWSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableNameWide;
-			public function HRESULT(IDebugClient7 *self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
-			public function HRESULT(IDebugClient7 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
-			public function HRESULT(IDebugClient7 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
-			public function HRESULT(IDebugClient7 *self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
-			public function HRESULT(IDebugClient7 *self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
-			public function HRESULT(IDebugClient7 *self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
-			public function HRESULT(IDebugClient7 *self, uint32* Number) GetNumberDumpFiles;
-			public function HRESULT(IDebugClient7 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFile;
-			public function HRESULT(IDebugClient7 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFileWide;
-			public function HRESULT(IDebugClient7 *self, uint32 Flags, PWSTR ConnectOptions) AttachKernelWide;
-			public function HRESULT(IDebugClient7 *self, char16* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptionsWide;
-			public function HRESULT(IDebugClient7 *self, PWSTR Options) SetKernelConnectionOptionsWide;
-			public function HRESULT(IDebugClient7 *self, uint32 Flags, PWSTR Options, void* Reserved) StartProcessServerWide;
-			public function HRESULT(IDebugClient7 *self, PWSTR RemoteOptions, uint64* Server) ConnectProcessServerWide;
-			public function HRESULT(IDebugClient7 *self, PWSTR Options) StartServerWide;
-			public function HRESULT(IDebugClient7 *self, uint32 OutputControl, PWSTR Machine, uint32 Flags) OutputServersWide;
-			public function HRESULT(IDebugClient7 *self, IDebugOutputCallbacksWide** Callbacks) GetOutputCallbacksWide;
-			public function HRESULT(IDebugClient7 *self, IDebugOutputCallbacksWide* Callbacks) SetOutputCallbacksWide;
-			public function HRESULT(IDebugClient7 *self, char16* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefixWide;
-			public function HRESULT(IDebugClient7 *self, PWSTR Prefix) SetOutputLinePrefixWide;
-			public function HRESULT(IDebugClient7 *self, char16* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentityWide;
-			public function HRESULT(IDebugClient7 *self, uint32 OutputControl, uint32 Flags, PWSTR Format) OutputIdentityWide;
-			public function HRESULT(IDebugClient7 *self, IDebugEventCallbacksWide** Callbacks) GetEventCallbacksWide;
-			public function HRESULT(IDebugClient7 *self, IDebugEventCallbacksWide* Callbacks) SetEventCallbacksWide;
-			public function HRESULT(IDebugClient7 *self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment) CreateProcess2;
-			public function HRESULT(IDebugClient7 *self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment) CreateProcess2Wide;
-			public function HRESULT(IDebugClient7 *self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2;
-			public function HRESULT(IDebugClient7 *self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2Wide;
-			public function HRESULT(IDebugClient7 *self, PSTR NewPrefix, uint64* Handle) PushOutputLinePrefix;
-			public function HRESULT(IDebugClient7 *self, PWSTR NewPrefix, uint64* Handle) PushOutputLinePrefixWide;
-			public function HRESULT(IDebugClient7 *self, uint64 Handle) PopOutputLinePrefix;
-			public function HRESULT(IDebugClient7 *self, uint32* Count) GetNumberInputCallbacks;
-			public function HRESULT(IDebugClient7 *self, uint32* Count) GetNumberOutputCallbacks;
-			public function HRESULT(IDebugClient7 *self, uint32 EventFlags, uint32* Count) GetNumberEventCallbacks;
-			public function HRESULT(IDebugClient7 *self, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockString;
-			public function HRESULT(IDebugClient7 *self, PSTR String) SetQuitLockString;
-			public function HRESULT(IDebugClient7 *self, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockStringWide;
-			public function HRESULT(IDebugClient7 *self, PWSTR String) SetQuitLockStringWide;
-			public function HRESULT(IDebugClient7 *self, IDebugEventContextCallbacks* Callbacks) SetEventContextCallbacks;
-			public function HRESULT(IDebugClient7 *self, void* Context, uint32 ContextSize) SetClientContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugClient7 *self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
+				public function HRESULT(IDebugClient7 *self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
+				public function HRESULT(IDebugClient7 *self, PSTR Options) SetKernelConnectionOptions;
+				public function HRESULT(IDebugClient7 *self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
+				public function HRESULT(IDebugClient7 *self, PSTR RemoteOptions, uint64* Server) ConnectProcessServer;
+				public function HRESULT(IDebugClient7 *self, uint64 Server) DisconnectProcessServer;
+				public function HRESULT(IDebugClient7 *self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
+				public function HRESULT(IDebugClient7 *self, uint64 Server, PSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableName;
+				public function HRESULT(IDebugClient7 *self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
+				public function HRESULT(IDebugClient7 *self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
+				public function HRESULT(IDebugClient7 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
+				public function HRESULT(IDebugClient7 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
+				public function HRESULT(IDebugClient7 *self, uint32* Options) GetProcessOptions;
+				public function HRESULT(IDebugClient7 *self, uint32 Options) AddProcessOptions;
+				public function HRESULT(IDebugClient7 *self, uint32 Options) RemoveProcessOptions;
+				public function HRESULT(IDebugClient7 *self, uint32 Options) SetProcessOptions;
+				public function HRESULT(IDebugClient7 *self, PSTR DumpFile) OpenDumpFile;
+				public function HRESULT(IDebugClient7 *self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
+				public function HRESULT(IDebugClient7 *self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
+				public function HRESULT(IDebugClient7 *self, PSTR Options) StartServer;
+				public function HRESULT(IDebugClient7 *self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
+				public function HRESULT(IDebugClient7 *self) TerminateProcesses;
+				public function HRESULT(IDebugClient7 *self) DetachProcesses;
+				public function HRESULT(IDebugClient7 *self, uint32 Flags) EndSession;
+				public function HRESULT(IDebugClient7 *self, uint32* Code) GetExitCode;
+				public function HRESULT(IDebugClient7 *self, uint32 Timeout) DispatchCallbacks;
+				public function HRESULT(IDebugClient7 *self, IDebugClient* Client) ExitDispatch;
+				public function HRESULT(IDebugClient7 *self, IDebugClient** Client) CreateClient;
+				public function HRESULT(IDebugClient7 *self, IDebugInputCallbacks** Callbacks) GetInputCallbacks;
+				public function HRESULT(IDebugClient7 *self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
+				public function HRESULT(IDebugClient7 *self, IDebugOutputCallbacks** Callbacks) GetOutputCallbacks;
+				public function HRESULT(IDebugClient7 *self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
+				public function HRESULT(IDebugClient7 *self, uint32* Mask) GetOutputMask;
+				public function HRESULT(IDebugClient7 *self, uint32 Mask) SetOutputMask;
+				public function HRESULT(IDebugClient7 *self, IDebugClient* Client, uint32* Mask) GetOtherOutputMask;
+				public function HRESULT(IDebugClient7 *self, IDebugClient* Client, uint32 Mask) SetOtherOutputMask;
+				public function HRESULT(IDebugClient7 *self, uint32* Columns) GetOutputWidth;
+				public function HRESULT(IDebugClient7 *self, uint32 Columns) SetOutputWidth;
+				public function HRESULT(IDebugClient7 *self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
+				public function HRESULT(IDebugClient7 *self, PSTR Prefix) SetOutputLinePrefix;
+				public function HRESULT(IDebugClient7 *self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
+				public function HRESULT(IDebugClient7 *self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
+				public function HRESULT(IDebugClient7 *self, IDebugEventCallbacks** Callbacks) GetEventCallbacks;
+				public function HRESULT(IDebugClient7 *self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
+				public function HRESULT(IDebugClient7 *self) FlushCallbacks;
+				public function HRESULT(IDebugClient7 *self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
+				public function HRESULT(IDebugClient7 *self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
+				public function HRESULT(IDebugClient7 *self, uint64 Server) EndProcessServer;
+				public function HRESULT(IDebugClient7 *self, uint32 Timeout) WaitForProcessServerEnd;
+				public function HRESULT(IDebugClient7 *self) IsKernelDebuggerEnabled;
+				public function HRESULT(IDebugClient7 *self) TerminateCurrentProcess;
+				public function HRESULT(IDebugClient7 *self) DetachCurrentProcess;
+				public function HRESULT(IDebugClient7 *self) AbandonCurrentProcess;
+				public function HRESULT(IDebugClient7 *self, uint64 Server, PWSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableNameWide;
+				public function HRESULT(IDebugClient7 *self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
+				public function HRESULT(IDebugClient7 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
+				public function HRESULT(IDebugClient7 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
+				public function HRESULT(IDebugClient7 *self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
+				public function HRESULT(IDebugClient7 *self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
+				public function HRESULT(IDebugClient7 *self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
+				public function HRESULT(IDebugClient7 *self, uint32* Number) GetNumberDumpFiles;
+				public function HRESULT(IDebugClient7 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFile;
+				public function HRESULT(IDebugClient7 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFileWide;
+				public function HRESULT(IDebugClient7 *self, uint32 Flags, PWSTR ConnectOptions) AttachKernelWide;
+				public function HRESULT(IDebugClient7 *self, char16* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptionsWide;
+				public function HRESULT(IDebugClient7 *self, PWSTR Options) SetKernelConnectionOptionsWide;
+				public function HRESULT(IDebugClient7 *self, uint32 Flags, PWSTR Options, void* Reserved) StartProcessServerWide;
+				public function HRESULT(IDebugClient7 *self, PWSTR RemoteOptions, uint64* Server) ConnectProcessServerWide;
+				public function HRESULT(IDebugClient7 *self, PWSTR Options) StartServerWide;
+				public function HRESULT(IDebugClient7 *self, uint32 OutputControl, PWSTR Machine, uint32 Flags) OutputServersWide;
+				public function HRESULT(IDebugClient7 *self, IDebugOutputCallbacksWide** Callbacks) GetOutputCallbacksWide;
+				public function HRESULT(IDebugClient7 *self, IDebugOutputCallbacksWide* Callbacks) SetOutputCallbacksWide;
+				public function HRESULT(IDebugClient7 *self, char16* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefixWide;
+				public function HRESULT(IDebugClient7 *self, PWSTR Prefix) SetOutputLinePrefixWide;
+				public function HRESULT(IDebugClient7 *self, char16* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentityWide;
+				public function HRESULT(IDebugClient7 *self, uint32 OutputControl, uint32 Flags, PWSTR Format) OutputIdentityWide;
+				public function HRESULT(IDebugClient7 *self, IDebugEventCallbacksWide** Callbacks) GetEventCallbacksWide;
+				public function HRESULT(IDebugClient7 *self, IDebugEventCallbacksWide* Callbacks) SetEventCallbacksWide;
+				public function HRESULT(IDebugClient7 *self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment) CreateProcess2;
+				public function HRESULT(IDebugClient7 *self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment) CreateProcess2Wide;
+				public function HRESULT(IDebugClient7 *self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2;
+				public function HRESULT(IDebugClient7 *self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2Wide;
+				public function HRESULT(IDebugClient7 *self, PSTR NewPrefix, uint64* Handle) PushOutputLinePrefix;
+				public function HRESULT(IDebugClient7 *self, PWSTR NewPrefix, uint64* Handle) PushOutputLinePrefixWide;
+				public function HRESULT(IDebugClient7 *self, uint64 Handle) PopOutputLinePrefix;
+				public function HRESULT(IDebugClient7 *self, uint32* Count) GetNumberInputCallbacks;
+				public function HRESULT(IDebugClient7 *self, uint32* Count) GetNumberOutputCallbacks;
+				public function HRESULT(IDebugClient7 *self, uint32 EventFlags, uint32* Count) GetNumberEventCallbacks;
+				public function HRESULT(IDebugClient7 *self, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockString;
+				public function HRESULT(IDebugClient7 *self, PSTR String) SetQuitLockString;
+				public function HRESULT(IDebugClient7 *self, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockStringWide;
+				public function HRESULT(IDebugClient7 *self, PWSTR String) SetQuitLockStringWide;
+				public function HRESULT(IDebugClient7 *self, IDebugEventContextCallbacks* Callbacks) SetEventContextCallbacks;
+				public function HRESULT(IDebugClient7 *self, void* Context, uint32 ContextSize) SetClientContext;
+			}
 		}
 		[CRepr]
 		public struct IDebugClient8 : IUnknown
 		{
 			public const new Guid IID = .(0xcec43add, 0x6375, 0x469e, 0x83, 0xd5, 0x41, 0x4e, 0x40, 0x33, 0xc1, 0x9a);
 			
-			public function HRESULT(IDebugClient8 *self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
-			public function HRESULT(IDebugClient8 *self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
-			public function HRESULT(IDebugClient8 *self, PSTR Options) SetKernelConnectionOptions;
-			public function HRESULT(IDebugClient8 *self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
-			public function HRESULT(IDebugClient8 *self, PSTR RemoteOptions, uint64* Server) ConnectProcessServer;
-			public function HRESULT(IDebugClient8 *self, uint64 Server) DisconnectProcessServer;
-			public function HRESULT(IDebugClient8 *self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
-			public function HRESULT(IDebugClient8 *self, uint64 Server, PSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableName;
-			public function HRESULT(IDebugClient8 *self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
-			public function HRESULT(IDebugClient8 *self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
-			public function HRESULT(IDebugClient8 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
-			public function HRESULT(IDebugClient8 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
-			public function HRESULT(IDebugClient8 *self, uint32* Options) GetProcessOptions;
-			public function HRESULT(IDebugClient8 *self, uint32 Options) AddProcessOptions;
-			public function HRESULT(IDebugClient8 *self, uint32 Options) RemoveProcessOptions;
-			public function HRESULT(IDebugClient8 *self, uint32 Options) SetProcessOptions;
-			public function HRESULT(IDebugClient8 *self, PSTR DumpFile) OpenDumpFile;
-			public function HRESULT(IDebugClient8 *self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
-			public function HRESULT(IDebugClient8 *self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
-			public function HRESULT(IDebugClient8 *self, PSTR Options) StartServer;
-			public function HRESULT(IDebugClient8 *self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
-			public function HRESULT(IDebugClient8 *self) TerminateProcesses;
-			public function HRESULT(IDebugClient8 *self) DetachProcesses;
-			public function HRESULT(IDebugClient8 *self, uint32 Flags) EndSession;
-			public function HRESULT(IDebugClient8 *self, uint32* Code) GetExitCode;
-			public function HRESULT(IDebugClient8 *self, uint32 Timeout) DispatchCallbacks;
-			public function HRESULT(IDebugClient8 *self, IDebugClient* Client) ExitDispatch;
-			public function HRESULT(IDebugClient8 *self, IDebugClient** Client) CreateClient;
-			public function HRESULT(IDebugClient8 *self, IDebugInputCallbacks** Callbacks) GetInputCallbacks;
-			public function HRESULT(IDebugClient8 *self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
-			public function HRESULT(IDebugClient8 *self, IDebugOutputCallbacks** Callbacks) GetOutputCallbacks;
-			public function HRESULT(IDebugClient8 *self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
-			public function HRESULT(IDebugClient8 *self, uint32* Mask) GetOutputMask;
-			public function HRESULT(IDebugClient8 *self, uint32 Mask) SetOutputMask;
-			public function HRESULT(IDebugClient8 *self, IDebugClient* Client, uint32* Mask) GetOtherOutputMask;
-			public function HRESULT(IDebugClient8 *self, IDebugClient* Client, uint32 Mask) SetOtherOutputMask;
-			public function HRESULT(IDebugClient8 *self, uint32* Columns) GetOutputWidth;
-			public function HRESULT(IDebugClient8 *self, uint32 Columns) SetOutputWidth;
-			public function HRESULT(IDebugClient8 *self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
-			public function HRESULT(IDebugClient8 *self, PSTR Prefix) SetOutputLinePrefix;
-			public function HRESULT(IDebugClient8 *self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
-			public function HRESULT(IDebugClient8 *self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
-			public function HRESULT(IDebugClient8 *self, IDebugEventCallbacks** Callbacks) GetEventCallbacks;
-			public function HRESULT(IDebugClient8 *self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
-			public function HRESULT(IDebugClient8 *self) FlushCallbacks;
-			public function HRESULT(IDebugClient8 *self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
-			public function HRESULT(IDebugClient8 *self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
-			public function HRESULT(IDebugClient8 *self, uint64 Server) EndProcessServer;
-			public function HRESULT(IDebugClient8 *self, uint32 Timeout) WaitForProcessServerEnd;
-			public function HRESULT(IDebugClient8 *self) IsKernelDebuggerEnabled;
-			public function HRESULT(IDebugClient8 *self) TerminateCurrentProcess;
-			public function HRESULT(IDebugClient8 *self) DetachCurrentProcess;
-			public function HRESULT(IDebugClient8 *self) AbandonCurrentProcess;
-			public function HRESULT(IDebugClient8 *self, uint64 Server, PWSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableNameWide;
-			public function HRESULT(IDebugClient8 *self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
-			public function HRESULT(IDebugClient8 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
-			public function HRESULT(IDebugClient8 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
-			public function HRESULT(IDebugClient8 *self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
-			public function HRESULT(IDebugClient8 *self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
-			public function HRESULT(IDebugClient8 *self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
-			public function HRESULT(IDebugClient8 *self, uint32* Number) GetNumberDumpFiles;
-			public function HRESULT(IDebugClient8 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFile;
-			public function HRESULT(IDebugClient8 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFileWide;
-			public function HRESULT(IDebugClient8 *self, uint32 Flags, PWSTR ConnectOptions) AttachKernelWide;
-			public function HRESULT(IDebugClient8 *self, char16* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptionsWide;
-			public function HRESULT(IDebugClient8 *self, PWSTR Options) SetKernelConnectionOptionsWide;
-			public function HRESULT(IDebugClient8 *self, uint32 Flags, PWSTR Options, void* Reserved) StartProcessServerWide;
-			public function HRESULT(IDebugClient8 *self, PWSTR RemoteOptions, uint64* Server) ConnectProcessServerWide;
-			public function HRESULT(IDebugClient8 *self, PWSTR Options) StartServerWide;
-			public function HRESULT(IDebugClient8 *self, uint32 OutputControl, PWSTR Machine, uint32 Flags) OutputServersWide;
-			public function HRESULT(IDebugClient8 *self, IDebugOutputCallbacksWide** Callbacks) GetOutputCallbacksWide;
-			public function HRESULT(IDebugClient8 *self, IDebugOutputCallbacksWide* Callbacks) SetOutputCallbacksWide;
-			public function HRESULT(IDebugClient8 *self, char16* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefixWide;
-			public function HRESULT(IDebugClient8 *self, PWSTR Prefix) SetOutputLinePrefixWide;
-			public function HRESULT(IDebugClient8 *self, char16* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentityWide;
-			public function HRESULT(IDebugClient8 *self, uint32 OutputControl, uint32 Flags, PWSTR Format) OutputIdentityWide;
-			public function HRESULT(IDebugClient8 *self, IDebugEventCallbacksWide** Callbacks) GetEventCallbacksWide;
-			public function HRESULT(IDebugClient8 *self, IDebugEventCallbacksWide* Callbacks) SetEventCallbacksWide;
-			public function HRESULT(IDebugClient8 *self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment) CreateProcess2;
-			public function HRESULT(IDebugClient8 *self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment) CreateProcess2Wide;
-			public function HRESULT(IDebugClient8 *self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2;
-			public function HRESULT(IDebugClient8 *self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2Wide;
-			public function HRESULT(IDebugClient8 *self, PSTR NewPrefix, uint64* Handle) PushOutputLinePrefix;
-			public function HRESULT(IDebugClient8 *self, PWSTR NewPrefix, uint64* Handle) PushOutputLinePrefixWide;
-			public function HRESULT(IDebugClient8 *self, uint64 Handle) PopOutputLinePrefix;
-			public function HRESULT(IDebugClient8 *self, uint32* Count) GetNumberInputCallbacks;
-			public function HRESULT(IDebugClient8 *self, uint32* Count) GetNumberOutputCallbacks;
-			public function HRESULT(IDebugClient8 *self, uint32 EventFlags, uint32* Count) GetNumberEventCallbacks;
-			public function HRESULT(IDebugClient8 *self, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockString;
-			public function HRESULT(IDebugClient8 *self, PSTR String) SetQuitLockString;
-			public function HRESULT(IDebugClient8 *self, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockStringWide;
-			public function HRESULT(IDebugClient8 *self, PWSTR String) SetQuitLockStringWide;
-			public function HRESULT(IDebugClient8 *self, IDebugEventContextCallbacks* Callbacks) SetEventContextCallbacks;
-			public function HRESULT(IDebugClient8 *self, void* Context, uint32 ContextSize) SetClientContext;
-			public function HRESULT(IDebugClient8 *self, PWSTR FileName, uint64 FileHandle, uint32 AlternateArch) OpenDumpFileWide2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugClient8 *self, uint32 Flags, PSTR ConnectOptions) AttachKernel;
+				public function HRESULT(IDebugClient8 *self, uint8* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptions;
+				public function HRESULT(IDebugClient8 *self, PSTR Options) SetKernelConnectionOptions;
+				public function HRESULT(IDebugClient8 *self, uint32 Flags, PSTR Options, void* Reserved) StartProcessServer;
+				public function HRESULT(IDebugClient8 *self, PSTR RemoteOptions, uint64* Server) ConnectProcessServer;
+				public function HRESULT(IDebugClient8 *self, uint64 Server) DisconnectProcessServer;
+				public function HRESULT(IDebugClient8 *self, uint64 Server, uint32* Ids, uint32 Count, uint32* ActualCount) GetRunningProcessSystemIds;
+				public function HRESULT(IDebugClient8 *self, uint64 Server, PSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableName;
+				public function HRESULT(IDebugClient8 *self, uint64 Server, uint32 SystemId, uint32 Flags, uint8* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, uint8* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescription;
+				public function HRESULT(IDebugClient8 *self, uint64 Server, uint32 ProcessId, uint32 AttachFlags) AttachProcess;
+				public function HRESULT(IDebugClient8 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags) CreateProcessA;
+				public function HRESULT(IDebugClient8 *self, uint64 Server, PSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach;
+				public function HRESULT(IDebugClient8 *self, uint32* Options) GetProcessOptions;
+				public function HRESULT(IDebugClient8 *self, uint32 Options) AddProcessOptions;
+				public function HRESULT(IDebugClient8 *self, uint32 Options) RemoveProcessOptions;
+				public function HRESULT(IDebugClient8 *self, uint32 Options) SetProcessOptions;
+				public function HRESULT(IDebugClient8 *self, PSTR DumpFile) OpenDumpFile;
+				public function HRESULT(IDebugClient8 *self, PSTR DumpFile, uint32 Qualifier) WriteDumpFile;
+				public function HRESULT(IDebugClient8 *self, uint32 Flags, uint32 HistoryLimit) ConnectSession;
+				public function HRESULT(IDebugClient8 *self, PSTR Options) StartServer;
+				public function HRESULT(IDebugClient8 *self, uint32 OutputControl, PSTR Machine, uint32 Flags) OutputServers;
+				public function HRESULT(IDebugClient8 *self) TerminateProcesses;
+				public function HRESULT(IDebugClient8 *self) DetachProcesses;
+				public function HRESULT(IDebugClient8 *self, uint32 Flags) EndSession;
+				public function HRESULT(IDebugClient8 *self, uint32* Code) GetExitCode;
+				public function HRESULT(IDebugClient8 *self, uint32 Timeout) DispatchCallbacks;
+				public function HRESULT(IDebugClient8 *self, IDebugClient* Client) ExitDispatch;
+				public function HRESULT(IDebugClient8 *self, IDebugClient** Client) CreateClient;
+				public function HRESULT(IDebugClient8 *self, IDebugInputCallbacks** Callbacks) GetInputCallbacks;
+				public function HRESULT(IDebugClient8 *self, IDebugInputCallbacks* Callbacks) SetInputCallbacks;
+				public function HRESULT(IDebugClient8 *self, IDebugOutputCallbacks** Callbacks) GetOutputCallbacks;
+				public function HRESULT(IDebugClient8 *self, IDebugOutputCallbacks* Callbacks) SetOutputCallbacks;
+				public function HRESULT(IDebugClient8 *self, uint32* Mask) GetOutputMask;
+				public function HRESULT(IDebugClient8 *self, uint32 Mask) SetOutputMask;
+				public function HRESULT(IDebugClient8 *self, IDebugClient* Client, uint32* Mask) GetOtherOutputMask;
+				public function HRESULT(IDebugClient8 *self, IDebugClient* Client, uint32 Mask) SetOtherOutputMask;
+				public function HRESULT(IDebugClient8 *self, uint32* Columns) GetOutputWidth;
+				public function HRESULT(IDebugClient8 *self, uint32 Columns) SetOutputWidth;
+				public function HRESULT(IDebugClient8 *self, uint8* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefix;
+				public function HRESULT(IDebugClient8 *self, PSTR Prefix) SetOutputLinePrefix;
+				public function HRESULT(IDebugClient8 *self, uint8* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentity;
+				public function HRESULT(IDebugClient8 *self, uint32 OutputControl, uint32 Flags, PSTR Format) OutputIdentity;
+				public function HRESULT(IDebugClient8 *self, IDebugEventCallbacks** Callbacks) GetEventCallbacks;
+				public function HRESULT(IDebugClient8 *self, IDebugEventCallbacks* Callbacks) SetEventCallbacks;
+				public function HRESULT(IDebugClient8 *self) FlushCallbacks;
+				public function HRESULT(IDebugClient8 *self, PSTR DumpFile, uint32 Qualifier, uint32 FormatFlags, PSTR Comment) WriteDumpFile2;
+				public function HRESULT(IDebugClient8 *self, PSTR InfoFile, uint32 Type) AddDumpInformationFile;
+				public function HRESULT(IDebugClient8 *self, uint64 Server) EndProcessServer;
+				public function HRESULT(IDebugClient8 *self, uint32 Timeout) WaitForProcessServerEnd;
+				public function HRESULT(IDebugClient8 *self) IsKernelDebuggerEnabled;
+				public function HRESULT(IDebugClient8 *self) TerminateCurrentProcess;
+				public function HRESULT(IDebugClient8 *self) DetachCurrentProcess;
+				public function HRESULT(IDebugClient8 *self) AbandonCurrentProcess;
+				public function HRESULT(IDebugClient8 *self, uint64 Server, PWSTR ExeName, uint32 Flags, uint32* Id) GetRunningProcessSystemIdByExecutableNameWide;
+				public function HRESULT(IDebugClient8 *self, uint64 Server, uint32 SystemId, uint32 Flags, char16* ExeName, uint32 ExeNameSize, uint32* ActualExeNameSize, char16* Description, uint32 DescriptionSize, uint32* ActualDescriptionSize) GetRunningProcessDescriptionWide;
+				public function HRESULT(IDebugClient8 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags) CreateProcessWide;
+				public function HRESULT(IDebugClient8 *self, uint64 Server, PWSTR CommandLine, uint32 CreateFlags, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttachWide;
+				public function HRESULT(IDebugClient8 *self, PWSTR FileName, uint64 FileHandle) OpenDumpFileWide;
+				public function HRESULT(IDebugClient8 *self, PWSTR FileName, uint64 FileHandle, uint32 Qualifier, uint32 FormatFlags, PWSTR Comment) WriteDumpFileWide;
+				public function HRESULT(IDebugClient8 *self, PWSTR FileName, uint64 FileHandle, uint32 Type) AddDumpInformationFileWide;
+				public function HRESULT(IDebugClient8 *self, uint32* Number) GetNumberDumpFiles;
+				public function HRESULT(IDebugClient8 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFile;
+				public function HRESULT(IDebugClient8 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize, uint64* Handle, uint32* Type) GetDumpFileWide;
+				public function HRESULT(IDebugClient8 *self, uint32 Flags, PWSTR ConnectOptions) AttachKernelWide;
+				public function HRESULT(IDebugClient8 *self, char16* Buffer, uint32 BufferSize, uint32* OptionsSize) GetKernelConnectionOptionsWide;
+				public function HRESULT(IDebugClient8 *self, PWSTR Options) SetKernelConnectionOptionsWide;
+				public function HRESULT(IDebugClient8 *self, uint32 Flags, PWSTR Options, void* Reserved) StartProcessServerWide;
+				public function HRESULT(IDebugClient8 *self, PWSTR RemoteOptions, uint64* Server) ConnectProcessServerWide;
+				public function HRESULT(IDebugClient8 *self, PWSTR Options) StartServerWide;
+				public function HRESULT(IDebugClient8 *self, uint32 OutputControl, PWSTR Machine, uint32 Flags) OutputServersWide;
+				public function HRESULT(IDebugClient8 *self, IDebugOutputCallbacksWide** Callbacks) GetOutputCallbacksWide;
+				public function HRESULT(IDebugClient8 *self, IDebugOutputCallbacksWide* Callbacks) SetOutputCallbacksWide;
+				public function HRESULT(IDebugClient8 *self, char16* Buffer, uint32 BufferSize, uint32* PrefixSize) GetOutputLinePrefixWide;
+				public function HRESULT(IDebugClient8 *self, PWSTR Prefix) SetOutputLinePrefixWide;
+				public function HRESULT(IDebugClient8 *self, char16* Buffer, uint32 BufferSize, uint32* IdentitySize) GetIdentityWide;
+				public function HRESULT(IDebugClient8 *self, uint32 OutputControl, uint32 Flags, PWSTR Format) OutputIdentityWide;
+				public function HRESULT(IDebugClient8 *self, IDebugEventCallbacksWide** Callbacks) GetEventCallbacksWide;
+				public function HRESULT(IDebugClient8 *self, IDebugEventCallbacksWide* Callbacks) SetEventCallbacksWide;
+				public function HRESULT(IDebugClient8 *self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment) CreateProcess2;
+				public function HRESULT(IDebugClient8 *self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment) CreateProcess2Wide;
+				public function HRESULT(IDebugClient8 *self, uint64 Server, PSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PSTR InitialDirectory, PSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2;
+				public function HRESULT(IDebugClient8 *self, uint64 Server, PWSTR CommandLine, void* OptionsBuffer, uint32 OptionsBufferSize, PWSTR InitialDirectory, PWSTR Environment, uint32 ProcessId, uint32 AttachFlags) CreateProcessAndAttach2Wide;
+				public function HRESULT(IDebugClient8 *self, PSTR NewPrefix, uint64* Handle) PushOutputLinePrefix;
+				public function HRESULT(IDebugClient8 *self, PWSTR NewPrefix, uint64* Handle) PushOutputLinePrefixWide;
+				public function HRESULT(IDebugClient8 *self, uint64 Handle) PopOutputLinePrefix;
+				public function HRESULT(IDebugClient8 *self, uint32* Count) GetNumberInputCallbacks;
+				public function HRESULT(IDebugClient8 *self, uint32* Count) GetNumberOutputCallbacks;
+				public function HRESULT(IDebugClient8 *self, uint32 EventFlags, uint32* Count) GetNumberEventCallbacks;
+				public function HRESULT(IDebugClient8 *self, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockString;
+				public function HRESULT(IDebugClient8 *self, PSTR String) SetQuitLockString;
+				public function HRESULT(IDebugClient8 *self, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetQuitLockStringWide;
+				public function HRESULT(IDebugClient8 *self, PWSTR String) SetQuitLockStringWide;
+				public function HRESULT(IDebugClient8 *self, IDebugEventContextCallbacks* Callbacks) SetEventContextCallbacks;
+				public function HRESULT(IDebugClient8 *self, void* Context, uint32 ContextSize) SetClientContext;
+				public function HRESULT(IDebugClient8 *self, PWSTR FileName, uint64 FileHandle, uint32 AlternateArch) OpenDumpFileWide2;
+			}
 		}
 		[CRepr]
 		public struct IDebugPlmClient : IUnknown
 		{
 			public const new Guid IID = .(0xa02b66c4, 0xaea3, 0x4234, 0xa9, 0xf7, 0xfe, 0x4c, 0x38, 0x3d, 0x4e, 0x29);
 			
-			public function HRESULT(IDebugPlmClient *self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR AppName, PWSTR Arguments, uint32* ProcessId, uint32* ThreadId) LaunchPlmPackageForDebugWide;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugPlmClient *self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR AppName, PWSTR Arguments, uint32* ProcessId, uint32* ThreadId) LaunchPlmPackageForDebugWide;
+			}
 		}
 		[CRepr]
 		public struct IDebugPlmClient2 : IUnknown
 		{
 			public const new Guid IID = .(0x597c980d, 0xe7bd, 0x4309, 0x96, 0x2c, 0x9d, 0x9b, 0x69, 0xa7, 0x37, 0x2c);
 			
-			public function HRESULT(IDebugPlmClient2 *self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR AppName, PWSTR Arguments, uint32* ProcessId, uint32* ThreadId) LaunchPlmPackageForDebugWide;
-			public function HRESULT(IDebugPlmClient2 *self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR BackgroundTaskId, uint32* ProcessId, uint32* ThreadId) LaunchPlmBgTaskForDebugWide;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugPlmClient2 *self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR AppName, PWSTR Arguments, uint32* ProcessId, uint32* ThreadId) LaunchPlmPackageForDebugWide;
+				public function HRESULT(IDebugPlmClient2 *self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR BackgroundTaskId, uint32* ProcessId, uint32* ThreadId) LaunchPlmBgTaskForDebugWide;
+			}
 		}
 		[CRepr]
 		public struct IDebugPlmClient3 : IUnknown
 		{
 			public const new Guid IID = .(0xd4a5dbd1, 0xca02, 0x4d90, 0x85, 0x6a, 0x2a, 0x92, 0xbf, 0xd0, 0xf2, 0x0f);
 			
-			public function HRESULT(IDebugPlmClient3 *self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR AppName, PWSTR Arguments, uint32* ProcessId, uint32* ThreadId) LaunchPlmPackageForDebugWide;
-			public function HRESULT(IDebugPlmClient3 *self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR BackgroundTaskId, uint32* ProcessId, uint32* ThreadId) LaunchPlmBgTaskForDebugWide;
-			public function HRESULT(IDebugPlmClient3 *self, uint64 Server, PWSTR PackageFullName, IDebugOutputStream* Stream) QueryPlmPackageWide;
-			public function HRESULT(IDebugPlmClient3 *self, uint64 Server, IDebugOutputStream* Stream) QueryPlmPackageList;
-			public function HRESULT(IDebugPlmClient3 *self, uint64 Server, PWSTR PackageFullName) EnablePlmPackageDebugWide;
-			public function HRESULT(IDebugPlmClient3 *self, uint64 Server, PWSTR PackageFullName) DisablePlmPackageDebugWide;
-			public function HRESULT(IDebugPlmClient3 *self, uint64 Server, PWSTR PackageFullName) SuspendPlmPackageWide;
-			public function HRESULT(IDebugPlmClient3 *self, uint64 Server, PWSTR PackageFullName) ResumePlmPackageWide;
-			public function HRESULT(IDebugPlmClient3 *self, uint64 Server, PWSTR PackageFullName) TerminatePlmPackageWide;
-			public function HRESULT(IDebugPlmClient3 *self, uint64 Server, PWSTR PackageFullName, PWSTR AppName, PWSTR Arguments) LaunchAndDebugPlmAppWide;
-			public function HRESULT(IDebugPlmClient3 *self, uint64 Server, PWSTR PackageFullName, PWSTR BackgroundTaskId) ActivateAndDebugPlmBgTaskWide;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugPlmClient3 *self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR AppName, PWSTR Arguments, uint32* ProcessId, uint32* ThreadId) LaunchPlmPackageForDebugWide;
+				public function HRESULT(IDebugPlmClient3 *self, uint64 Server, uint32 Timeout, PWSTR PackageFullName, PWSTR BackgroundTaskId, uint32* ProcessId, uint32* ThreadId) LaunchPlmBgTaskForDebugWide;
+				public function HRESULT(IDebugPlmClient3 *self, uint64 Server, PWSTR PackageFullName, IDebugOutputStream* Stream) QueryPlmPackageWide;
+				public function HRESULT(IDebugPlmClient3 *self, uint64 Server, IDebugOutputStream* Stream) QueryPlmPackageList;
+				public function HRESULT(IDebugPlmClient3 *self, uint64 Server, PWSTR PackageFullName) EnablePlmPackageDebugWide;
+				public function HRESULT(IDebugPlmClient3 *self, uint64 Server, PWSTR PackageFullName) DisablePlmPackageDebugWide;
+				public function HRESULT(IDebugPlmClient3 *self, uint64 Server, PWSTR PackageFullName) SuspendPlmPackageWide;
+				public function HRESULT(IDebugPlmClient3 *self, uint64 Server, PWSTR PackageFullName) ResumePlmPackageWide;
+				public function HRESULT(IDebugPlmClient3 *self, uint64 Server, PWSTR PackageFullName) TerminatePlmPackageWide;
+				public function HRESULT(IDebugPlmClient3 *self, uint64 Server, PWSTR PackageFullName, PWSTR AppName, PWSTR Arguments) LaunchAndDebugPlmAppWide;
+				public function HRESULT(IDebugPlmClient3 *self, uint64 Server, PWSTR PackageFullName, PWSTR BackgroundTaskId) ActivateAndDebugPlmBgTaskWide;
+			}
 		}
 		[CRepr]
 		public struct IDebugOutputStream : IUnknown
 		{
 			public const new Guid IID = .(0x7782d8f2, 0x2b85, 0x4059, 0xab, 0x88, 0x28, 0xce, 0xdd, 0xca, 0x1c, 0x80);
 			
-			public function HRESULT(IDebugOutputStream *self, PWSTR psz) Write;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugOutputStream *self, PWSTR psz) Write;
+			}
 		}
 		[CRepr]
 		public struct IDebugControl : IUnknown
 		{
 			public const new Guid IID = .(0x5182e668, 0x105e, 0x416e, 0xad, 0x92, 0x24, 0xef, 0x80, 0x04, 0x24, 0xba);
 			
-			public function HRESULT(IDebugControl *self) GetInterrupt;
-			public function HRESULT(IDebugControl *self, uint32 Flags) SetInterrupt;
-			public function HRESULT(IDebugControl *self, uint32* Seconds) GetInterruptTimeout;
-			public function HRESULT(IDebugControl *self, uint32 Seconds) SetInterruptTimeout;
-			public function HRESULT(IDebugControl *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFile;
-			public function HRESULT(IDebugControl *self, PSTR File, BOOL Append) OpenLogFile;
-			public function HRESULT(IDebugControl *self) CloseLogFile;
-			public function HRESULT(IDebugControl *self, uint32* Mask) GetLogMask;
-			public function HRESULT(IDebugControl *self, uint32 Mask) SetLogMask;
-			public function HRESULT(IDebugControl *self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
-			public function HRESULT(IDebugControl *self, PSTR Buffer) ReturnInput;
-			public function HRESULT(IDebugControl *self, uint32 Mask, PSTR Format) Output;
-			public function HRESULT(IDebugControl *self, uint32 Mask, PSTR Format, int8* Args) OutputVaList;
-			public function HRESULT(IDebugControl *self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
-			public function HRESULT(IDebugControl *self, uint32 OutputControl, uint32 Mask, PSTR Format, int8* Args) ControlledOutputVaList;
-			public function HRESULT(IDebugControl *self, uint32 OutputControl, PSTR Format) OutputPrompt;
-			public function HRESULT(IDebugControl *self, uint32 OutputControl, PSTR Format, int8* Args) OutputPromptVaList;
-			public function HRESULT(IDebugControl *self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
-			public function HRESULT(IDebugControl *self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
-			public function HRESULT(IDebugControl *self, uint32 OutputControl) OutputVersionInformation;
-			public function HRESULT(IDebugControl *self, uint64* Handle) GetNotifyEventHandle;
-			public function HRESULT(IDebugControl *self, uint64 Handle) SetNotifyEventHandle;
-			public function HRESULT(IDebugControl *self, uint64 Offset, PSTR Instr, uint64* EndOffset) Assemble;
-			public function HRESULT(IDebugControl *self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) Disassemble;
-			public function HRESULT(IDebugControl *self, uint64* Offset) GetDisassembleEffectiveOffset;
-			public function HRESULT(IDebugControl *self, uint32 OutputControl, uint64 Offset, uint32 Flags, uint64* EndOffset) OutputDisassembly;
-			public function HRESULT(IDebugControl *self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
-			public function HRESULT(IDebugControl *self, uint64 Offset, int32 Delta, uint64* NearOffset) GetNearInstruction;
-			public function HRESULT(IDebugControl *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
-			public function HRESULT(IDebugControl *self, uint64* Offset) GetReturnOffset;
-			public function HRESULT(IDebugControl *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
-			public function HRESULT(IDebugControl *self, uint32* Class, uint32* Qualifier) GetDebuggeeType;
-			public function HRESULT(IDebugControl *self, uint32* Type) GetActualProcessorType;
-			public function HRESULT(IDebugControl *self, uint32* Type) GetExecutingProcessorType;
-			public function HRESULT(IDebugControl *self, uint32* Number) GetNumberPossibleExecutingProcessorTypes;
-			public function HRESULT(IDebugControl *self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
-			public function HRESULT(IDebugControl *self, uint32* Number) GetNumberProcessors;
-			public function HRESULT(IDebugControl *self, uint32* PlatformId, uint32* Major, uint32* Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, uint32* ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
-			public function HRESULT(IDebugControl *self, uint32* Size) GetPageSize;
-			public function HRESULT(IDebugControl *self) IsPointer64Bit;
-			public function HRESULT(IDebugControl *self, uint32* Code, uint64* Arg1, uint64* Arg2, uint64* Arg3, uint64* Arg4) ReadBugCheckData;
-			public function HRESULT(IDebugControl *self, uint32* Number) GetNumberSupportedProcessorTypes;
-			public function HRESULT(IDebugControl *self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
-			public function HRESULT(IDebugControl *self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
-			public function HRESULT(IDebugControl *self, uint32* Type) GetEffectiveProcessorType;
-			public function HRESULT(IDebugControl *self, uint32 Type) SetEffectiveProcessorType;
-			public function HRESULT(IDebugControl *self, uint32* Status) GetExecutionStatus;
-			public function HRESULT(IDebugControl *self, uint32 Status) SetExecutionStatus;
-			public function HRESULT(IDebugControl *self, uint32* Level) GetCodeLevel;
-			public function HRESULT(IDebugControl *self, uint32 Level) SetCodeLevel;
-			public function HRESULT(IDebugControl *self, uint32* Options) GetEngineOptions;
-			public function HRESULT(IDebugControl *self, uint32 Options) AddEngineOptions;
-			public function HRESULT(IDebugControl *self, uint32 Options) RemoveEngineOptions;
-			public function HRESULT(IDebugControl *self, uint32 Options) SetEngineOptions;
-			public function HRESULT(IDebugControl *self, uint32* OutputLevel, uint32* BreakLevel) GetSystemErrorControl;
-			public function HRESULT(IDebugControl *self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
-			public function HRESULT(IDebugControl *self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
-			public function HRESULT(IDebugControl *self, uint32 Slot, PSTR Macro) SetTextMacro;
-			public function HRESULT(IDebugControl *self, uint32* Radix) GetRadix;
-			public function HRESULT(IDebugControl *self, uint32 Radix) SetRadix;
-			public function HRESULT(IDebugControl *self, PSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) Evaluate;
-			public function HRESULT(IDebugControl *self, DEBUG_VALUE* In, uint32 OutType, DEBUG_VALUE* Out) CoerceValue;
-			public function HRESULT(IDebugControl *self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
-			public function HRESULT(IDebugControl *self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
-			public function HRESULT(IDebugControl *self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
-			public function HRESULT(IDebugControl *self, uint32* Number) GetNumberBreakpoints;
-			public function HRESULT(IDebugControl *self, uint32 Index, IDebugBreakpoint** Bp) GetBreakpointByIndex;
-			public function HRESULT(IDebugControl *self, uint32 Id, IDebugBreakpoint** Bp) GetBreakpointById;
-			public function HRESULT(IDebugControl *self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
-			public function HRESULT(IDebugControl *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint** Bp) AddBreakpoint;
-			public function HRESULT(IDebugControl *self, IDebugBreakpoint* Bp) RemoveBreakpoint;
-			public function HRESULT(IDebugControl *self, PSTR Path, uint32 Flags, uint64* Handle) AddExtension;
-			public function HRESULT(IDebugControl *self, uint64 Handle) RemoveExtension;
-			public function HRESULT(IDebugControl *self, PSTR Path, uint64* Handle) GetExtensionByPath;
-			public function HRESULT(IDebugControl *self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
-			public function HRESULT(IDebugControl *self, uint64 Handle, PSTR FuncName, FARPROC* Function) GetExtensionFunction;
-			public function HRESULT(IDebugControl *self, WINDBG_EXTENSION_APIS32* Api) GetWindbgExtensionApis32;
-			public function HRESULT(IDebugControl *self, WINDBG_EXTENSION_APIS64* Api) GetWindbgExtensionApis64;
-			public function HRESULT(IDebugControl *self, uint32* SpecificEvents, uint32* SpecificExceptions, uint32* ArbitraryExceptions) GetNumberEventFilters;
-			public function HRESULT(IDebugControl *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
-			public function HRESULT(IDebugControl *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
-			public function HRESULT(IDebugControl *self, uint32 Index, PSTR Command) SetEventFilterCommand;
-			public function HRESULT(IDebugControl *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
-			public function HRESULT(IDebugControl *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
-			public function HRESULT(IDebugControl *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
-			public function HRESULT(IDebugControl *self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
-			public function HRESULT(IDebugControl *self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
-			public function HRESULT(IDebugControl *self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
-			public function HRESULT(IDebugControl *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
-			public function HRESULT(IDebugControl *self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
-			public function HRESULT(IDebugControl *self, uint32 Flags, uint32 Timeout) WaitForEvent;
-			public function HRESULT(IDebugControl *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugControl *self) GetInterrupt;
+				public function HRESULT(IDebugControl *self, uint32 Flags) SetInterrupt;
+				public function HRESULT(IDebugControl *self, uint32* Seconds) GetInterruptTimeout;
+				public function HRESULT(IDebugControl *self, uint32 Seconds) SetInterruptTimeout;
+				public function HRESULT(IDebugControl *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFile;
+				public function HRESULT(IDebugControl *self, PSTR File, BOOL Append) OpenLogFile;
+				public function HRESULT(IDebugControl *self) CloseLogFile;
+				public function HRESULT(IDebugControl *self, uint32* Mask) GetLogMask;
+				public function HRESULT(IDebugControl *self, uint32 Mask) SetLogMask;
+				public function HRESULT(IDebugControl *self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
+				public function HRESULT(IDebugControl *self, PSTR Buffer) ReturnInput;
+				public function HRESULT(IDebugControl *self, uint32 Mask, PSTR Format) Output;
+				public function HRESULT(IDebugControl *self, uint32 Mask, PSTR Format, int8* Args) OutputVaList;
+				public function HRESULT(IDebugControl *self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
+				public function HRESULT(IDebugControl *self, uint32 OutputControl, uint32 Mask, PSTR Format, int8* Args) ControlledOutputVaList;
+				public function HRESULT(IDebugControl *self, uint32 OutputControl, PSTR Format) OutputPrompt;
+				public function HRESULT(IDebugControl *self, uint32 OutputControl, PSTR Format, int8* Args) OutputPromptVaList;
+				public function HRESULT(IDebugControl *self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
+				public function HRESULT(IDebugControl *self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
+				public function HRESULT(IDebugControl *self, uint32 OutputControl) OutputVersionInformation;
+				public function HRESULT(IDebugControl *self, uint64* Handle) GetNotifyEventHandle;
+				public function HRESULT(IDebugControl *self, uint64 Handle) SetNotifyEventHandle;
+				public function HRESULT(IDebugControl *self, uint64 Offset, PSTR Instr, uint64* EndOffset) Assemble;
+				public function HRESULT(IDebugControl *self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) Disassemble;
+				public function HRESULT(IDebugControl *self, uint64* Offset) GetDisassembleEffectiveOffset;
+				public function HRESULT(IDebugControl *self, uint32 OutputControl, uint64 Offset, uint32 Flags, uint64* EndOffset) OutputDisassembly;
+				public function HRESULT(IDebugControl *self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
+				public function HRESULT(IDebugControl *self, uint64 Offset, int32 Delta, uint64* NearOffset) GetNearInstruction;
+				public function HRESULT(IDebugControl *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
+				public function HRESULT(IDebugControl *self, uint64* Offset) GetReturnOffset;
+				public function HRESULT(IDebugControl *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
+				public function HRESULT(IDebugControl *self, uint32* Class, uint32* Qualifier) GetDebuggeeType;
+				public function HRESULT(IDebugControl *self, uint32* Type) GetActualProcessorType;
+				public function HRESULT(IDebugControl *self, uint32* Type) GetExecutingProcessorType;
+				public function HRESULT(IDebugControl *self, uint32* Number) GetNumberPossibleExecutingProcessorTypes;
+				public function HRESULT(IDebugControl *self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
+				public function HRESULT(IDebugControl *self, uint32* Number) GetNumberProcessors;
+				public function HRESULT(IDebugControl *self, uint32* PlatformId, uint32* Major, uint32* Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, uint32* ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
+				public function HRESULT(IDebugControl *self, uint32* Size) GetPageSize;
+				public function HRESULT(IDebugControl *self) IsPointer64Bit;
+				public function HRESULT(IDebugControl *self, uint32* Code, uint64* Arg1, uint64* Arg2, uint64* Arg3, uint64* Arg4) ReadBugCheckData;
+				public function HRESULT(IDebugControl *self, uint32* Number) GetNumberSupportedProcessorTypes;
+				public function HRESULT(IDebugControl *self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
+				public function HRESULT(IDebugControl *self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
+				public function HRESULT(IDebugControl *self, uint32* Type) GetEffectiveProcessorType;
+				public function HRESULT(IDebugControl *self, uint32 Type) SetEffectiveProcessorType;
+				public function HRESULT(IDebugControl *self, uint32* Status) GetExecutionStatus;
+				public function HRESULT(IDebugControl *self, uint32 Status) SetExecutionStatus;
+				public function HRESULT(IDebugControl *self, uint32* Level) GetCodeLevel;
+				public function HRESULT(IDebugControl *self, uint32 Level) SetCodeLevel;
+				public function HRESULT(IDebugControl *self, uint32* Options) GetEngineOptions;
+				public function HRESULT(IDebugControl *self, uint32 Options) AddEngineOptions;
+				public function HRESULT(IDebugControl *self, uint32 Options) RemoveEngineOptions;
+				public function HRESULT(IDebugControl *self, uint32 Options) SetEngineOptions;
+				public function HRESULT(IDebugControl *self, uint32* OutputLevel, uint32* BreakLevel) GetSystemErrorControl;
+				public function HRESULT(IDebugControl *self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
+				public function HRESULT(IDebugControl *self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
+				public function HRESULT(IDebugControl *self, uint32 Slot, PSTR Macro) SetTextMacro;
+				public function HRESULT(IDebugControl *self, uint32* Radix) GetRadix;
+				public function HRESULT(IDebugControl *self, uint32 Radix) SetRadix;
+				public function HRESULT(IDebugControl *self, PSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) Evaluate;
+				public function HRESULT(IDebugControl *self, DEBUG_VALUE* In, uint32 OutType, DEBUG_VALUE* Out) CoerceValue;
+				public function HRESULT(IDebugControl *self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
+				public function HRESULT(IDebugControl *self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
+				public function HRESULT(IDebugControl *self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
+				public function HRESULT(IDebugControl *self, uint32* Number) GetNumberBreakpoints;
+				public function HRESULT(IDebugControl *self, uint32 Index, IDebugBreakpoint** Bp) GetBreakpointByIndex;
+				public function HRESULT(IDebugControl *self, uint32 Id, IDebugBreakpoint** Bp) GetBreakpointById;
+				public function HRESULT(IDebugControl *self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
+				public function HRESULT(IDebugControl *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint** Bp) AddBreakpoint;
+				public function HRESULT(IDebugControl *self, IDebugBreakpoint* Bp) RemoveBreakpoint;
+				public function HRESULT(IDebugControl *self, PSTR Path, uint32 Flags, uint64* Handle) AddExtension;
+				public function HRESULT(IDebugControl *self, uint64 Handle) RemoveExtension;
+				public function HRESULT(IDebugControl *self, PSTR Path, uint64* Handle) GetExtensionByPath;
+				public function HRESULT(IDebugControl *self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
+				public function HRESULT(IDebugControl *self, uint64 Handle, PSTR FuncName, FARPROC* Function) GetExtensionFunction;
+				public function HRESULT(IDebugControl *self, WINDBG_EXTENSION_APIS32* Api) GetWindbgExtensionApis32;
+				public function HRESULT(IDebugControl *self, WINDBG_EXTENSION_APIS64* Api) GetWindbgExtensionApis64;
+				public function HRESULT(IDebugControl *self, uint32* SpecificEvents, uint32* SpecificExceptions, uint32* ArbitraryExceptions) GetNumberEventFilters;
+				public function HRESULT(IDebugControl *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
+				public function HRESULT(IDebugControl *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
+				public function HRESULT(IDebugControl *self, uint32 Index, PSTR Command) SetEventFilterCommand;
+				public function HRESULT(IDebugControl *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
+				public function HRESULT(IDebugControl *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
+				public function HRESULT(IDebugControl *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
+				public function HRESULT(IDebugControl *self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
+				public function HRESULT(IDebugControl *self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
+				public function HRESULT(IDebugControl *self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
+				public function HRESULT(IDebugControl *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
+				public function HRESULT(IDebugControl *self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
+				public function HRESULT(IDebugControl *self, uint32 Flags, uint32 Timeout) WaitForEvent;
+				public function HRESULT(IDebugControl *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
+			}
 		}
 		[CRepr]
 		public struct IDebugControl2 : IUnknown
 		{
 			public const new Guid IID = .(0xd4366723, 0x44df, 0x4bed, 0x8c, 0x7e, 0x4c, 0x05, 0x42, 0x4f, 0x45, 0x88);
 			
-			public function HRESULT(IDebugControl2 *self) GetInterrupt;
-			public function HRESULT(IDebugControl2 *self, uint32 Flags) SetInterrupt;
-			public function HRESULT(IDebugControl2 *self, uint32* Seconds) GetInterruptTimeout;
-			public function HRESULT(IDebugControl2 *self, uint32 Seconds) SetInterruptTimeout;
-			public function HRESULT(IDebugControl2 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFile;
-			public function HRESULT(IDebugControl2 *self, PSTR File, BOOL Append) OpenLogFile;
-			public function HRESULT(IDebugControl2 *self) CloseLogFile;
-			public function HRESULT(IDebugControl2 *self, uint32* Mask) GetLogMask;
-			public function HRESULT(IDebugControl2 *self, uint32 Mask) SetLogMask;
-			public function HRESULT(IDebugControl2 *self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
-			public function HRESULT(IDebugControl2 *self, PSTR Buffer) ReturnInput;
-			public function HRESULT(IDebugControl2 *self, uint32 Mask, PSTR Format) Output;
-			public function HRESULT(IDebugControl2 *self, uint32 Mask, PSTR Format, int8* Args) OutputVaList;
-			public function HRESULT(IDebugControl2 *self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
-			public function HRESULT(IDebugControl2 *self, uint32 OutputControl, uint32 Mask, PSTR Format, int8* Args) ControlledOutputVaList;
-			public function HRESULT(IDebugControl2 *self, uint32 OutputControl, PSTR Format) OutputPrompt;
-			public function HRESULT(IDebugControl2 *self, uint32 OutputControl, PSTR Format, int8* Args) OutputPromptVaList;
-			public function HRESULT(IDebugControl2 *self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
-			public function HRESULT(IDebugControl2 *self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
-			public function HRESULT(IDebugControl2 *self, uint32 OutputControl) OutputVersionInformation;
-			public function HRESULT(IDebugControl2 *self, uint64* Handle) GetNotifyEventHandle;
-			public function HRESULT(IDebugControl2 *self, uint64 Handle) SetNotifyEventHandle;
-			public function HRESULT(IDebugControl2 *self, uint64 Offset, PSTR Instr, uint64* EndOffset) Assemble;
-			public function HRESULT(IDebugControl2 *self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) Disassemble;
-			public function HRESULT(IDebugControl2 *self, uint64* Offset) GetDisassembleEffectiveOffset;
-			public function HRESULT(IDebugControl2 *self, uint32 OutputControl, uint64 Offset, uint32 Flags, uint64* EndOffset) OutputDisassembly;
-			public function HRESULT(IDebugControl2 *self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
-			public function HRESULT(IDebugControl2 *self, uint64 Offset, int32 Delta, uint64* NearOffset) GetNearInstruction;
-			public function HRESULT(IDebugControl2 *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
-			public function HRESULT(IDebugControl2 *self, uint64* Offset) GetReturnOffset;
-			public function HRESULT(IDebugControl2 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
-			public function HRESULT(IDebugControl2 *self, uint32* Class, uint32* Qualifier) GetDebuggeeType;
-			public function HRESULT(IDebugControl2 *self, uint32* Type) GetActualProcessorType;
-			public function HRESULT(IDebugControl2 *self, uint32* Type) GetExecutingProcessorType;
-			public function HRESULT(IDebugControl2 *self, uint32* Number) GetNumberPossibleExecutingProcessorTypes;
-			public function HRESULT(IDebugControl2 *self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
-			public function HRESULT(IDebugControl2 *self, uint32* Number) GetNumberProcessors;
-			public function HRESULT(IDebugControl2 *self, uint32* PlatformId, uint32* Major, uint32* Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, uint32* ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
-			public function HRESULT(IDebugControl2 *self, uint32* Size) GetPageSize;
-			public function HRESULT(IDebugControl2 *self) IsPointer64Bit;
-			public function HRESULT(IDebugControl2 *self, uint32* Code, uint64* Arg1, uint64* Arg2, uint64* Arg3, uint64* Arg4) ReadBugCheckData;
-			public function HRESULT(IDebugControl2 *self, uint32* Number) GetNumberSupportedProcessorTypes;
-			public function HRESULT(IDebugControl2 *self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
-			public function HRESULT(IDebugControl2 *self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
-			public function HRESULT(IDebugControl2 *self, uint32* Type) GetEffectiveProcessorType;
-			public function HRESULT(IDebugControl2 *self, uint32 Type) SetEffectiveProcessorType;
-			public function HRESULT(IDebugControl2 *self, uint32* Status) GetExecutionStatus;
-			public function HRESULT(IDebugControl2 *self, uint32 Status) SetExecutionStatus;
-			public function HRESULT(IDebugControl2 *self, uint32* Level) GetCodeLevel;
-			public function HRESULT(IDebugControl2 *self, uint32 Level) SetCodeLevel;
-			public function HRESULT(IDebugControl2 *self, uint32* Options) GetEngineOptions;
-			public function HRESULT(IDebugControl2 *self, uint32 Options) AddEngineOptions;
-			public function HRESULT(IDebugControl2 *self, uint32 Options) RemoveEngineOptions;
-			public function HRESULT(IDebugControl2 *self, uint32 Options) SetEngineOptions;
-			public function HRESULT(IDebugControl2 *self, uint32* OutputLevel, uint32* BreakLevel) GetSystemErrorControl;
-			public function HRESULT(IDebugControl2 *self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
-			public function HRESULT(IDebugControl2 *self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
-			public function HRESULT(IDebugControl2 *self, uint32 Slot, PSTR Macro) SetTextMacro;
-			public function HRESULT(IDebugControl2 *self, uint32* Radix) GetRadix;
-			public function HRESULT(IDebugControl2 *self, uint32 Radix) SetRadix;
-			public function HRESULT(IDebugControl2 *self, PSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) Evaluate;
-			public function HRESULT(IDebugControl2 *self, DEBUG_VALUE* In, uint32 OutType, DEBUG_VALUE* Out) CoerceValue;
-			public function HRESULT(IDebugControl2 *self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
-			public function HRESULT(IDebugControl2 *self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
-			public function HRESULT(IDebugControl2 *self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
-			public function HRESULT(IDebugControl2 *self, uint32* Number) GetNumberBreakpoints;
-			public function HRESULT(IDebugControl2 *self, uint32 Index, IDebugBreakpoint** Bp) GetBreakpointByIndex;
-			public function HRESULT(IDebugControl2 *self, uint32 Id, IDebugBreakpoint** Bp) GetBreakpointById;
-			public function HRESULT(IDebugControl2 *self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
-			public function HRESULT(IDebugControl2 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint** Bp) AddBreakpoint;
-			public function HRESULT(IDebugControl2 *self, IDebugBreakpoint* Bp) RemoveBreakpoint;
-			public function HRESULT(IDebugControl2 *self, PSTR Path, uint32 Flags, uint64* Handle) AddExtension;
-			public function HRESULT(IDebugControl2 *self, uint64 Handle) RemoveExtension;
-			public function HRESULT(IDebugControl2 *self, PSTR Path, uint64* Handle) GetExtensionByPath;
-			public function HRESULT(IDebugControl2 *self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
-			public function HRESULT(IDebugControl2 *self, uint64 Handle, PSTR FuncName, FARPROC* Function) GetExtensionFunction;
-			public function HRESULT(IDebugControl2 *self, WINDBG_EXTENSION_APIS32* Api) GetWindbgExtensionApis32;
-			public function HRESULT(IDebugControl2 *self, WINDBG_EXTENSION_APIS64* Api) GetWindbgExtensionApis64;
-			public function HRESULT(IDebugControl2 *self, uint32* SpecificEvents, uint32* SpecificExceptions, uint32* ArbitraryExceptions) GetNumberEventFilters;
-			public function HRESULT(IDebugControl2 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
-			public function HRESULT(IDebugControl2 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
-			public function HRESULT(IDebugControl2 *self, uint32 Index, PSTR Command) SetEventFilterCommand;
-			public function HRESULT(IDebugControl2 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
-			public function HRESULT(IDebugControl2 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
-			public function HRESULT(IDebugControl2 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
-			public function HRESULT(IDebugControl2 *self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
-			public function HRESULT(IDebugControl2 *self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
-			public function HRESULT(IDebugControl2 *self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
-			public function HRESULT(IDebugControl2 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
-			public function HRESULT(IDebugControl2 *self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
-			public function HRESULT(IDebugControl2 *self, uint32 Flags, uint32 Timeout) WaitForEvent;
-			public function HRESULT(IDebugControl2 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
-			public function HRESULT(IDebugControl2 *self, uint32* TimeDate) GetCurrentTimeDate;
-			public function HRESULT(IDebugControl2 *self, uint32* UpTime) GetCurrentSystemUpTime;
-			public function HRESULT(IDebugControl2 *self, uint32* FormatFlags) GetDumpFormatFlags;
-			public function HRESULT(IDebugControl2 *self, uint32* NumRepl) GetNumberTextReplacements;
-			public function HRESULT(IDebugControl2 *self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
-			public function HRESULT(IDebugControl2 *self, PSTR SrcText, PSTR DstText) SetTextReplacement;
-			public function HRESULT(IDebugControl2 *self) RemoveTextReplacements;
-			public function HRESULT(IDebugControl2 *self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugControl2 *self) GetInterrupt;
+				public function HRESULT(IDebugControl2 *self, uint32 Flags) SetInterrupt;
+				public function HRESULT(IDebugControl2 *self, uint32* Seconds) GetInterruptTimeout;
+				public function HRESULT(IDebugControl2 *self, uint32 Seconds) SetInterruptTimeout;
+				public function HRESULT(IDebugControl2 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFile;
+				public function HRESULT(IDebugControl2 *self, PSTR File, BOOL Append) OpenLogFile;
+				public function HRESULT(IDebugControl2 *self) CloseLogFile;
+				public function HRESULT(IDebugControl2 *self, uint32* Mask) GetLogMask;
+				public function HRESULT(IDebugControl2 *self, uint32 Mask) SetLogMask;
+				public function HRESULT(IDebugControl2 *self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
+				public function HRESULT(IDebugControl2 *self, PSTR Buffer) ReturnInput;
+				public function HRESULT(IDebugControl2 *self, uint32 Mask, PSTR Format) Output;
+				public function HRESULT(IDebugControl2 *self, uint32 Mask, PSTR Format, int8* Args) OutputVaList;
+				public function HRESULT(IDebugControl2 *self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
+				public function HRESULT(IDebugControl2 *self, uint32 OutputControl, uint32 Mask, PSTR Format, int8* Args) ControlledOutputVaList;
+				public function HRESULT(IDebugControl2 *self, uint32 OutputControl, PSTR Format) OutputPrompt;
+				public function HRESULT(IDebugControl2 *self, uint32 OutputControl, PSTR Format, int8* Args) OutputPromptVaList;
+				public function HRESULT(IDebugControl2 *self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
+				public function HRESULT(IDebugControl2 *self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
+				public function HRESULT(IDebugControl2 *self, uint32 OutputControl) OutputVersionInformation;
+				public function HRESULT(IDebugControl2 *self, uint64* Handle) GetNotifyEventHandle;
+				public function HRESULT(IDebugControl2 *self, uint64 Handle) SetNotifyEventHandle;
+				public function HRESULT(IDebugControl2 *self, uint64 Offset, PSTR Instr, uint64* EndOffset) Assemble;
+				public function HRESULT(IDebugControl2 *self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) Disassemble;
+				public function HRESULT(IDebugControl2 *self, uint64* Offset) GetDisassembleEffectiveOffset;
+				public function HRESULT(IDebugControl2 *self, uint32 OutputControl, uint64 Offset, uint32 Flags, uint64* EndOffset) OutputDisassembly;
+				public function HRESULT(IDebugControl2 *self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
+				public function HRESULT(IDebugControl2 *self, uint64 Offset, int32 Delta, uint64* NearOffset) GetNearInstruction;
+				public function HRESULT(IDebugControl2 *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
+				public function HRESULT(IDebugControl2 *self, uint64* Offset) GetReturnOffset;
+				public function HRESULT(IDebugControl2 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
+				public function HRESULT(IDebugControl2 *self, uint32* Class, uint32* Qualifier) GetDebuggeeType;
+				public function HRESULT(IDebugControl2 *self, uint32* Type) GetActualProcessorType;
+				public function HRESULT(IDebugControl2 *self, uint32* Type) GetExecutingProcessorType;
+				public function HRESULT(IDebugControl2 *self, uint32* Number) GetNumberPossibleExecutingProcessorTypes;
+				public function HRESULT(IDebugControl2 *self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
+				public function HRESULT(IDebugControl2 *self, uint32* Number) GetNumberProcessors;
+				public function HRESULT(IDebugControl2 *self, uint32* PlatformId, uint32* Major, uint32* Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, uint32* ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
+				public function HRESULT(IDebugControl2 *self, uint32* Size) GetPageSize;
+				public function HRESULT(IDebugControl2 *self) IsPointer64Bit;
+				public function HRESULT(IDebugControl2 *self, uint32* Code, uint64* Arg1, uint64* Arg2, uint64* Arg3, uint64* Arg4) ReadBugCheckData;
+				public function HRESULT(IDebugControl2 *self, uint32* Number) GetNumberSupportedProcessorTypes;
+				public function HRESULT(IDebugControl2 *self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
+				public function HRESULT(IDebugControl2 *self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
+				public function HRESULT(IDebugControl2 *self, uint32* Type) GetEffectiveProcessorType;
+				public function HRESULT(IDebugControl2 *self, uint32 Type) SetEffectiveProcessorType;
+				public function HRESULT(IDebugControl2 *self, uint32* Status) GetExecutionStatus;
+				public function HRESULT(IDebugControl2 *self, uint32 Status) SetExecutionStatus;
+				public function HRESULT(IDebugControl2 *self, uint32* Level) GetCodeLevel;
+				public function HRESULT(IDebugControl2 *self, uint32 Level) SetCodeLevel;
+				public function HRESULT(IDebugControl2 *self, uint32* Options) GetEngineOptions;
+				public function HRESULT(IDebugControl2 *self, uint32 Options) AddEngineOptions;
+				public function HRESULT(IDebugControl2 *self, uint32 Options) RemoveEngineOptions;
+				public function HRESULT(IDebugControl2 *self, uint32 Options) SetEngineOptions;
+				public function HRESULT(IDebugControl2 *self, uint32* OutputLevel, uint32* BreakLevel) GetSystemErrorControl;
+				public function HRESULT(IDebugControl2 *self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
+				public function HRESULT(IDebugControl2 *self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
+				public function HRESULT(IDebugControl2 *self, uint32 Slot, PSTR Macro) SetTextMacro;
+				public function HRESULT(IDebugControl2 *self, uint32* Radix) GetRadix;
+				public function HRESULT(IDebugControl2 *self, uint32 Radix) SetRadix;
+				public function HRESULT(IDebugControl2 *self, PSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) Evaluate;
+				public function HRESULT(IDebugControl2 *self, DEBUG_VALUE* In, uint32 OutType, DEBUG_VALUE* Out) CoerceValue;
+				public function HRESULT(IDebugControl2 *self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
+				public function HRESULT(IDebugControl2 *self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
+				public function HRESULT(IDebugControl2 *self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
+				public function HRESULT(IDebugControl2 *self, uint32* Number) GetNumberBreakpoints;
+				public function HRESULT(IDebugControl2 *self, uint32 Index, IDebugBreakpoint** Bp) GetBreakpointByIndex;
+				public function HRESULT(IDebugControl2 *self, uint32 Id, IDebugBreakpoint** Bp) GetBreakpointById;
+				public function HRESULT(IDebugControl2 *self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
+				public function HRESULT(IDebugControl2 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint** Bp) AddBreakpoint;
+				public function HRESULT(IDebugControl2 *self, IDebugBreakpoint* Bp) RemoveBreakpoint;
+				public function HRESULT(IDebugControl2 *self, PSTR Path, uint32 Flags, uint64* Handle) AddExtension;
+				public function HRESULT(IDebugControl2 *self, uint64 Handle) RemoveExtension;
+				public function HRESULT(IDebugControl2 *self, PSTR Path, uint64* Handle) GetExtensionByPath;
+				public function HRESULT(IDebugControl2 *self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
+				public function HRESULT(IDebugControl2 *self, uint64 Handle, PSTR FuncName, FARPROC* Function) GetExtensionFunction;
+				public function HRESULT(IDebugControl2 *self, WINDBG_EXTENSION_APIS32* Api) GetWindbgExtensionApis32;
+				public function HRESULT(IDebugControl2 *self, WINDBG_EXTENSION_APIS64* Api) GetWindbgExtensionApis64;
+				public function HRESULT(IDebugControl2 *self, uint32* SpecificEvents, uint32* SpecificExceptions, uint32* ArbitraryExceptions) GetNumberEventFilters;
+				public function HRESULT(IDebugControl2 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
+				public function HRESULT(IDebugControl2 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
+				public function HRESULT(IDebugControl2 *self, uint32 Index, PSTR Command) SetEventFilterCommand;
+				public function HRESULT(IDebugControl2 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
+				public function HRESULT(IDebugControl2 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
+				public function HRESULT(IDebugControl2 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
+				public function HRESULT(IDebugControl2 *self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
+				public function HRESULT(IDebugControl2 *self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
+				public function HRESULT(IDebugControl2 *self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
+				public function HRESULT(IDebugControl2 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
+				public function HRESULT(IDebugControl2 *self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
+				public function HRESULT(IDebugControl2 *self, uint32 Flags, uint32 Timeout) WaitForEvent;
+				public function HRESULT(IDebugControl2 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
+				public function HRESULT(IDebugControl2 *self, uint32* TimeDate) GetCurrentTimeDate;
+				public function HRESULT(IDebugControl2 *self, uint32* UpTime) GetCurrentSystemUpTime;
+				public function HRESULT(IDebugControl2 *self, uint32* FormatFlags) GetDumpFormatFlags;
+				public function HRESULT(IDebugControl2 *self, uint32* NumRepl) GetNumberTextReplacements;
+				public function HRESULT(IDebugControl2 *self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
+				public function HRESULT(IDebugControl2 *self, PSTR SrcText, PSTR DstText) SetTextReplacement;
+				public function HRESULT(IDebugControl2 *self) RemoveTextReplacements;
+				public function HRESULT(IDebugControl2 *self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
+			}
 		}
 		[CRepr]
 		public struct IDebugControl3 : IUnknown
 		{
 			public const new Guid IID = .(0x7df74a86, 0xb03f, 0x407f, 0x90, 0xab, 0xa2, 0x0d, 0xad, 0xce, 0xad, 0x08);
 			
-			public function HRESULT(IDebugControl3 *self) GetInterrupt;
-			public function HRESULT(IDebugControl3 *self, uint32 Flags) SetInterrupt;
-			public function HRESULT(IDebugControl3 *self, uint32* Seconds) GetInterruptTimeout;
-			public function HRESULT(IDebugControl3 *self, uint32 Seconds) SetInterruptTimeout;
-			public function HRESULT(IDebugControl3 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFile;
-			public function HRESULT(IDebugControl3 *self, PSTR File, BOOL Append) OpenLogFile;
-			public function HRESULT(IDebugControl3 *self) CloseLogFile;
-			public function HRESULT(IDebugControl3 *self, uint32* Mask) GetLogMask;
-			public function HRESULT(IDebugControl3 *self, uint32 Mask) SetLogMask;
-			public function HRESULT(IDebugControl3 *self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
-			public function HRESULT(IDebugControl3 *self, PSTR Buffer) ReturnInput;
-			public function HRESULT(IDebugControl3 *self, uint32 Mask, PSTR Format) Output;
-			public function HRESULT(IDebugControl3 *self, uint32 Mask, PSTR Format, int8* Args) OutputVaList;
-			public function HRESULT(IDebugControl3 *self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
-			public function HRESULT(IDebugControl3 *self, uint32 OutputControl, uint32 Mask, PSTR Format, int8* Args) ControlledOutputVaList;
-			public function HRESULT(IDebugControl3 *self, uint32 OutputControl, PSTR Format) OutputPrompt;
-			public function HRESULT(IDebugControl3 *self, uint32 OutputControl, PSTR Format, int8* Args) OutputPromptVaList;
-			public function HRESULT(IDebugControl3 *self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
-			public function HRESULT(IDebugControl3 *self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
-			public function HRESULT(IDebugControl3 *self, uint32 OutputControl) OutputVersionInformation;
-			public function HRESULT(IDebugControl3 *self, uint64* Handle) GetNotifyEventHandle;
-			public function HRESULT(IDebugControl3 *self, uint64 Handle) SetNotifyEventHandle;
-			public function HRESULT(IDebugControl3 *self, uint64 Offset, PSTR Instr, uint64* EndOffset) Assemble;
-			public function HRESULT(IDebugControl3 *self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) Disassemble;
-			public function HRESULT(IDebugControl3 *self, uint64* Offset) GetDisassembleEffectiveOffset;
-			public function HRESULT(IDebugControl3 *self, uint32 OutputControl, uint64 Offset, uint32 Flags, uint64* EndOffset) OutputDisassembly;
-			public function HRESULT(IDebugControl3 *self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
-			public function HRESULT(IDebugControl3 *self, uint64 Offset, int32 Delta, uint64* NearOffset) GetNearInstruction;
-			public function HRESULT(IDebugControl3 *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
-			public function HRESULT(IDebugControl3 *self, uint64* Offset) GetReturnOffset;
-			public function HRESULT(IDebugControl3 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
-			public function HRESULT(IDebugControl3 *self, uint32* Class, uint32* Qualifier) GetDebuggeeType;
-			public function HRESULT(IDebugControl3 *self, uint32* Type) GetActualProcessorType;
-			public function HRESULT(IDebugControl3 *self, uint32* Type) GetExecutingProcessorType;
-			public function HRESULT(IDebugControl3 *self, uint32* Number) GetNumberPossibleExecutingProcessorTypes;
-			public function HRESULT(IDebugControl3 *self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
-			public function HRESULT(IDebugControl3 *self, uint32* Number) GetNumberProcessors;
-			public function HRESULT(IDebugControl3 *self, uint32* PlatformId, uint32* Major, uint32* Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, uint32* ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
-			public function HRESULT(IDebugControl3 *self, uint32* Size) GetPageSize;
-			public function HRESULT(IDebugControl3 *self) IsPointer64Bit;
-			public function HRESULT(IDebugControl3 *self, uint32* Code, uint64* Arg1, uint64* Arg2, uint64* Arg3, uint64* Arg4) ReadBugCheckData;
-			public function HRESULT(IDebugControl3 *self, uint32* Number) GetNumberSupportedProcessorTypes;
-			public function HRESULT(IDebugControl3 *self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
-			public function HRESULT(IDebugControl3 *self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
-			public function HRESULT(IDebugControl3 *self, uint32* Type) GetEffectiveProcessorType;
-			public function HRESULT(IDebugControl3 *self, uint32 Type) SetEffectiveProcessorType;
-			public function HRESULT(IDebugControl3 *self, uint32* Status) GetExecutionStatus;
-			public function HRESULT(IDebugControl3 *self, uint32 Status) SetExecutionStatus;
-			public function HRESULT(IDebugControl3 *self, uint32* Level) GetCodeLevel;
-			public function HRESULT(IDebugControl3 *self, uint32 Level) SetCodeLevel;
-			public function HRESULT(IDebugControl3 *self, uint32* Options) GetEngineOptions;
-			public function HRESULT(IDebugControl3 *self, uint32 Options) AddEngineOptions;
-			public function HRESULT(IDebugControl3 *self, uint32 Options) RemoveEngineOptions;
-			public function HRESULT(IDebugControl3 *self, uint32 Options) SetEngineOptions;
-			public function HRESULT(IDebugControl3 *self, uint32* OutputLevel, uint32* BreakLevel) GetSystemErrorControl;
-			public function HRESULT(IDebugControl3 *self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
-			public function HRESULT(IDebugControl3 *self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
-			public function HRESULT(IDebugControl3 *self, uint32 Slot, PSTR Macro) SetTextMacro;
-			public function HRESULT(IDebugControl3 *self, uint32* Radix) GetRadix;
-			public function HRESULT(IDebugControl3 *self, uint32 Radix) SetRadix;
-			public function HRESULT(IDebugControl3 *self, PSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) Evaluate;
-			public function HRESULT(IDebugControl3 *self, DEBUG_VALUE* In, uint32 OutType, DEBUG_VALUE* Out) CoerceValue;
-			public function HRESULT(IDebugControl3 *self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
-			public function HRESULT(IDebugControl3 *self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
-			public function HRESULT(IDebugControl3 *self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
-			public function HRESULT(IDebugControl3 *self, uint32* Number) GetNumberBreakpoints;
-			public function HRESULT(IDebugControl3 *self, uint32 Index, IDebugBreakpoint** Bp) GetBreakpointByIndex;
-			public function HRESULT(IDebugControl3 *self, uint32 Id, IDebugBreakpoint** Bp) GetBreakpointById;
-			public function HRESULT(IDebugControl3 *self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
-			public function HRESULT(IDebugControl3 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint** Bp) AddBreakpoint;
-			public function HRESULT(IDebugControl3 *self, IDebugBreakpoint* Bp) RemoveBreakpoint;
-			public function HRESULT(IDebugControl3 *self, PSTR Path, uint32 Flags, uint64* Handle) AddExtension;
-			public function HRESULT(IDebugControl3 *self, uint64 Handle) RemoveExtension;
-			public function HRESULT(IDebugControl3 *self, PSTR Path, uint64* Handle) GetExtensionByPath;
-			public function HRESULT(IDebugControl3 *self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
-			public function HRESULT(IDebugControl3 *self, uint64 Handle, PSTR FuncName, FARPROC* Function) GetExtensionFunction;
-			public function HRESULT(IDebugControl3 *self, WINDBG_EXTENSION_APIS32* Api) GetWindbgExtensionApis32;
-			public function HRESULT(IDebugControl3 *self, WINDBG_EXTENSION_APIS64* Api) GetWindbgExtensionApis64;
-			public function HRESULT(IDebugControl3 *self, uint32* SpecificEvents, uint32* SpecificExceptions, uint32* ArbitraryExceptions) GetNumberEventFilters;
-			public function HRESULT(IDebugControl3 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
-			public function HRESULT(IDebugControl3 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
-			public function HRESULT(IDebugControl3 *self, uint32 Index, PSTR Command) SetEventFilterCommand;
-			public function HRESULT(IDebugControl3 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
-			public function HRESULT(IDebugControl3 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
-			public function HRESULT(IDebugControl3 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
-			public function HRESULT(IDebugControl3 *self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
-			public function HRESULT(IDebugControl3 *self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
-			public function HRESULT(IDebugControl3 *self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
-			public function HRESULT(IDebugControl3 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
-			public function HRESULT(IDebugControl3 *self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
-			public function HRESULT(IDebugControl3 *self, uint32 Flags, uint32 Timeout) WaitForEvent;
-			public function HRESULT(IDebugControl3 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
-			public function HRESULT(IDebugControl3 *self, uint32* TimeDate) GetCurrentTimeDate;
-			public function HRESULT(IDebugControl3 *self, uint32* UpTime) GetCurrentSystemUpTime;
-			public function HRESULT(IDebugControl3 *self, uint32* FormatFlags) GetDumpFormatFlags;
-			public function HRESULT(IDebugControl3 *self, uint32* NumRepl) GetNumberTextReplacements;
-			public function HRESULT(IDebugControl3 *self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
-			public function HRESULT(IDebugControl3 *self, PSTR SrcText, PSTR DstText) SetTextReplacement;
-			public function HRESULT(IDebugControl3 *self) RemoveTextReplacements;
-			public function HRESULT(IDebugControl3 *self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
-			public function HRESULT(IDebugControl3 *self, uint32* Options) GetAssemblyOptions;
-			public function HRESULT(IDebugControl3 *self, uint32 Options) AddAssemblyOptions;
-			public function HRESULT(IDebugControl3 *self, uint32 Options) RemoveAssemblyOptions;
-			public function HRESULT(IDebugControl3 *self, uint32 Options) SetAssemblyOptions;
-			public function HRESULT(IDebugControl3 *self, uint32* Flags) GetExpressionSyntax;
-			public function HRESULT(IDebugControl3 *self, uint32 Flags) SetExpressionSyntax;
-			public function HRESULT(IDebugControl3 *self, PSTR AbbrevName) SetExpressionSyntaxByName;
-			public function HRESULT(IDebugControl3 *self, uint32* Number) GetNumberExpressionSyntaxes;
-			public function HRESULT(IDebugControl3 *self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
-			public function HRESULT(IDebugControl3 *self, uint32* Events) GetNumberEvents;
-			public function HRESULT(IDebugControl3 *self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
-			public function HRESULT(IDebugControl3 *self, uint32* Index) GetCurrentEventIndex;
-			public function HRESULT(IDebugControl3 *self, uint32 Relation, uint32 Value, uint32* NextIndex) SetNextEventIndex;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugControl3 *self) GetInterrupt;
+				public function HRESULT(IDebugControl3 *self, uint32 Flags) SetInterrupt;
+				public function HRESULT(IDebugControl3 *self, uint32* Seconds) GetInterruptTimeout;
+				public function HRESULT(IDebugControl3 *self, uint32 Seconds) SetInterruptTimeout;
+				public function HRESULT(IDebugControl3 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFile;
+				public function HRESULT(IDebugControl3 *self, PSTR File, BOOL Append) OpenLogFile;
+				public function HRESULT(IDebugControl3 *self) CloseLogFile;
+				public function HRESULT(IDebugControl3 *self, uint32* Mask) GetLogMask;
+				public function HRESULT(IDebugControl3 *self, uint32 Mask) SetLogMask;
+				public function HRESULT(IDebugControl3 *self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
+				public function HRESULT(IDebugControl3 *self, PSTR Buffer) ReturnInput;
+				public function HRESULT(IDebugControl3 *self, uint32 Mask, PSTR Format) Output;
+				public function HRESULT(IDebugControl3 *self, uint32 Mask, PSTR Format, int8* Args) OutputVaList;
+				public function HRESULT(IDebugControl3 *self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
+				public function HRESULT(IDebugControl3 *self, uint32 OutputControl, uint32 Mask, PSTR Format, int8* Args) ControlledOutputVaList;
+				public function HRESULT(IDebugControl3 *self, uint32 OutputControl, PSTR Format) OutputPrompt;
+				public function HRESULT(IDebugControl3 *self, uint32 OutputControl, PSTR Format, int8* Args) OutputPromptVaList;
+				public function HRESULT(IDebugControl3 *self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
+				public function HRESULT(IDebugControl3 *self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
+				public function HRESULT(IDebugControl3 *self, uint32 OutputControl) OutputVersionInformation;
+				public function HRESULT(IDebugControl3 *self, uint64* Handle) GetNotifyEventHandle;
+				public function HRESULT(IDebugControl3 *self, uint64 Handle) SetNotifyEventHandle;
+				public function HRESULT(IDebugControl3 *self, uint64 Offset, PSTR Instr, uint64* EndOffset) Assemble;
+				public function HRESULT(IDebugControl3 *self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) Disassemble;
+				public function HRESULT(IDebugControl3 *self, uint64* Offset) GetDisassembleEffectiveOffset;
+				public function HRESULT(IDebugControl3 *self, uint32 OutputControl, uint64 Offset, uint32 Flags, uint64* EndOffset) OutputDisassembly;
+				public function HRESULT(IDebugControl3 *self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
+				public function HRESULT(IDebugControl3 *self, uint64 Offset, int32 Delta, uint64* NearOffset) GetNearInstruction;
+				public function HRESULT(IDebugControl3 *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
+				public function HRESULT(IDebugControl3 *self, uint64* Offset) GetReturnOffset;
+				public function HRESULT(IDebugControl3 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
+				public function HRESULT(IDebugControl3 *self, uint32* Class, uint32* Qualifier) GetDebuggeeType;
+				public function HRESULT(IDebugControl3 *self, uint32* Type) GetActualProcessorType;
+				public function HRESULT(IDebugControl3 *self, uint32* Type) GetExecutingProcessorType;
+				public function HRESULT(IDebugControl3 *self, uint32* Number) GetNumberPossibleExecutingProcessorTypes;
+				public function HRESULT(IDebugControl3 *self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
+				public function HRESULT(IDebugControl3 *self, uint32* Number) GetNumberProcessors;
+				public function HRESULT(IDebugControl3 *self, uint32* PlatformId, uint32* Major, uint32* Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, uint32* ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
+				public function HRESULT(IDebugControl3 *self, uint32* Size) GetPageSize;
+				public function HRESULT(IDebugControl3 *self) IsPointer64Bit;
+				public function HRESULT(IDebugControl3 *self, uint32* Code, uint64* Arg1, uint64* Arg2, uint64* Arg3, uint64* Arg4) ReadBugCheckData;
+				public function HRESULT(IDebugControl3 *self, uint32* Number) GetNumberSupportedProcessorTypes;
+				public function HRESULT(IDebugControl3 *self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
+				public function HRESULT(IDebugControl3 *self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
+				public function HRESULT(IDebugControl3 *self, uint32* Type) GetEffectiveProcessorType;
+				public function HRESULT(IDebugControl3 *self, uint32 Type) SetEffectiveProcessorType;
+				public function HRESULT(IDebugControl3 *self, uint32* Status) GetExecutionStatus;
+				public function HRESULT(IDebugControl3 *self, uint32 Status) SetExecutionStatus;
+				public function HRESULT(IDebugControl3 *self, uint32* Level) GetCodeLevel;
+				public function HRESULT(IDebugControl3 *self, uint32 Level) SetCodeLevel;
+				public function HRESULT(IDebugControl3 *self, uint32* Options) GetEngineOptions;
+				public function HRESULT(IDebugControl3 *self, uint32 Options) AddEngineOptions;
+				public function HRESULT(IDebugControl3 *self, uint32 Options) RemoveEngineOptions;
+				public function HRESULT(IDebugControl3 *self, uint32 Options) SetEngineOptions;
+				public function HRESULT(IDebugControl3 *self, uint32* OutputLevel, uint32* BreakLevel) GetSystemErrorControl;
+				public function HRESULT(IDebugControl3 *self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
+				public function HRESULT(IDebugControl3 *self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
+				public function HRESULT(IDebugControl3 *self, uint32 Slot, PSTR Macro) SetTextMacro;
+				public function HRESULT(IDebugControl3 *self, uint32* Radix) GetRadix;
+				public function HRESULT(IDebugControl3 *self, uint32 Radix) SetRadix;
+				public function HRESULT(IDebugControl3 *self, PSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) Evaluate;
+				public function HRESULT(IDebugControl3 *self, DEBUG_VALUE* In, uint32 OutType, DEBUG_VALUE* Out) CoerceValue;
+				public function HRESULT(IDebugControl3 *self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
+				public function HRESULT(IDebugControl3 *self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
+				public function HRESULT(IDebugControl3 *self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
+				public function HRESULT(IDebugControl3 *self, uint32* Number) GetNumberBreakpoints;
+				public function HRESULT(IDebugControl3 *self, uint32 Index, IDebugBreakpoint** Bp) GetBreakpointByIndex;
+				public function HRESULT(IDebugControl3 *self, uint32 Id, IDebugBreakpoint** Bp) GetBreakpointById;
+				public function HRESULT(IDebugControl3 *self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
+				public function HRESULT(IDebugControl3 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint** Bp) AddBreakpoint;
+				public function HRESULT(IDebugControl3 *self, IDebugBreakpoint* Bp) RemoveBreakpoint;
+				public function HRESULT(IDebugControl3 *self, PSTR Path, uint32 Flags, uint64* Handle) AddExtension;
+				public function HRESULT(IDebugControl3 *self, uint64 Handle) RemoveExtension;
+				public function HRESULT(IDebugControl3 *self, PSTR Path, uint64* Handle) GetExtensionByPath;
+				public function HRESULT(IDebugControl3 *self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
+				public function HRESULT(IDebugControl3 *self, uint64 Handle, PSTR FuncName, FARPROC* Function) GetExtensionFunction;
+				public function HRESULT(IDebugControl3 *self, WINDBG_EXTENSION_APIS32* Api) GetWindbgExtensionApis32;
+				public function HRESULT(IDebugControl3 *self, WINDBG_EXTENSION_APIS64* Api) GetWindbgExtensionApis64;
+				public function HRESULT(IDebugControl3 *self, uint32* SpecificEvents, uint32* SpecificExceptions, uint32* ArbitraryExceptions) GetNumberEventFilters;
+				public function HRESULT(IDebugControl3 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
+				public function HRESULT(IDebugControl3 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
+				public function HRESULT(IDebugControl3 *self, uint32 Index, PSTR Command) SetEventFilterCommand;
+				public function HRESULT(IDebugControl3 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
+				public function HRESULT(IDebugControl3 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
+				public function HRESULT(IDebugControl3 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
+				public function HRESULT(IDebugControl3 *self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
+				public function HRESULT(IDebugControl3 *self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
+				public function HRESULT(IDebugControl3 *self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
+				public function HRESULT(IDebugControl3 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
+				public function HRESULT(IDebugControl3 *self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
+				public function HRESULT(IDebugControl3 *self, uint32 Flags, uint32 Timeout) WaitForEvent;
+				public function HRESULT(IDebugControl3 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
+				public function HRESULT(IDebugControl3 *self, uint32* TimeDate) GetCurrentTimeDate;
+				public function HRESULT(IDebugControl3 *self, uint32* UpTime) GetCurrentSystemUpTime;
+				public function HRESULT(IDebugControl3 *self, uint32* FormatFlags) GetDumpFormatFlags;
+				public function HRESULT(IDebugControl3 *self, uint32* NumRepl) GetNumberTextReplacements;
+				public function HRESULT(IDebugControl3 *self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
+				public function HRESULT(IDebugControl3 *self, PSTR SrcText, PSTR DstText) SetTextReplacement;
+				public function HRESULT(IDebugControl3 *self) RemoveTextReplacements;
+				public function HRESULT(IDebugControl3 *self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
+				public function HRESULT(IDebugControl3 *self, uint32* Options) GetAssemblyOptions;
+				public function HRESULT(IDebugControl3 *self, uint32 Options) AddAssemblyOptions;
+				public function HRESULT(IDebugControl3 *self, uint32 Options) RemoveAssemblyOptions;
+				public function HRESULT(IDebugControl3 *self, uint32 Options) SetAssemblyOptions;
+				public function HRESULT(IDebugControl3 *self, uint32* Flags) GetExpressionSyntax;
+				public function HRESULT(IDebugControl3 *self, uint32 Flags) SetExpressionSyntax;
+				public function HRESULT(IDebugControl3 *self, PSTR AbbrevName) SetExpressionSyntaxByName;
+				public function HRESULT(IDebugControl3 *self, uint32* Number) GetNumberExpressionSyntaxes;
+				public function HRESULT(IDebugControl3 *self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
+				public function HRESULT(IDebugControl3 *self, uint32* Events) GetNumberEvents;
+				public function HRESULT(IDebugControl3 *self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
+				public function HRESULT(IDebugControl3 *self, uint32* Index) GetCurrentEventIndex;
+				public function HRESULT(IDebugControl3 *self, uint32 Relation, uint32 Value, uint32* NextIndex) SetNextEventIndex;
+			}
 		}
 		[CRepr]
 		public struct IDebugControl4 : IUnknown
 		{
 			public const new Guid IID = .(0x94e60ce9, 0x9b41, 0x4b19, 0x9f, 0xc0, 0x6d, 0x9e, 0xb3, 0x52, 0x72, 0xb3);
 			
-			public function HRESULT(IDebugControl4 *self) GetInterrupt;
-			public function HRESULT(IDebugControl4 *self, uint32 Flags) SetInterrupt;
-			public function HRESULT(IDebugControl4 *self, uint32* Seconds) GetInterruptTimeout;
-			public function HRESULT(IDebugControl4 *self, uint32 Seconds) SetInterruptTimeout;
-			public function HRESULT(IDebugControl4 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFile;
-			public function HRESULT(IDebugControl4 *self, PSTR File, BOOL Append) OpenLogFile;
-			public function HRESULT(IDebugControl4 *self) CloseLogFile;
-			public function HRESULT(IDebugControl4 *self, uint32* Mask) GetLogMask;
-			public function HRESULT(IDebugControl4 *self, uint32 Mask) SetLogMask;
-			public function HRESULT(IDebugControl4 *self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
-			public function HRESULT(IDebugControl4 *self, PSTR Buffer) ReturnInput;
-			public function HRESULT(IDebugControl4 *self, uint32 Mask, PSTR Format) Output;
-			public function HRESULT(IDebugControl4 *self, uint32 Mask, PSTR Format, int8* Args) OutputVaList;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl, uint32 Mask, PSTR Format, int8* Args) ControlledOutputVaList;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl, PSTR Format) OutputPrompt;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl, PSTR Format, int8* Args) OutputPromptVaList;
-			public function HRESULT(IDebugControl4 *self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl) OutputVersionInformation;
-			public function HRESULT(IDebugControl4 *self, uint64* Handle) GetNotifyEventHandle;
-			public function HRESULT(IDebugControl4 *self, uint64 Handle) SetNotifyEventHandle;
-			public function HRESULT(IDebugControl4 *self, uint64 Offset, PSTR Instr, uint64* EndOffset) Assemble;
-			public function HRESULT(IDebugControl4 *self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) Disassemble;
-			public function HRESULT(IDebugControl4 *self, uint64* Offset) GetDisassembleEffectiveOffset;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl, uint64 Offset, uint32 Flags, uint64* EndOffset) OutputDisassembly;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
-			public function HRESULT(IDebugControl4 *self, uint64 Offset, int32 Delta, uint64* NearOffset) GetNearInstruction;
-			public function HRESULT(IDebugControl4 *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
-			public function HRESULT(IDebugControl4 *self, uint64* Offset) GetReturnOffset;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
-			public function HRESULT(IDebugControl4 *self, uint32* Class, uint32* Qualifier) GetDebuggeeType;
-			public function HRESULT(IDebugControl4 *self, uint32* Type) GetActualProcessorType;
-			public function HRESULT(IDebugControl4 *self, uint32* Type) GetExecutingProcessorType;
-			public function HRESULT(IDebugControl4 *self, uint32* Number) GetNumberPossibleExecutingProcessorTypes;
-			public function HRESULT(IDebugControl4 *self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
-			public function HRESULT(IDebugControl4 *self, uint32* Number) GetNumberProcessors;
-			public function HRESULT(IDebugControl4 *self, uint32* PlatformId, uint32* Major, uint32* Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, uint32* ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
-			public function HRESULT(IDebugControl4 *self, uint32* Size) GetPageSize;
-			public function HRESULT(IDebugControl4 *self) IsPointer64Bit;
-			public function HRESULT(IDebugControl4 *self, uint32* Code, uint64* Arg1, uint64* Arg2, uint64* Arg3, uint64* Arg4) ReadBugCheckData;
-			public function HRESULT(IDebugControl4 *self, uint32* Number) GetNumberSupportedProcessorTypes;
-			public function HRESULT(IDebugControl4 *self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
-			public function HRESULT(IDebugControl4 *self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
-			public function HRESULT(IDebugControl4 *self, uint32* Type) GetEffectiveProcessorType;
-			public function HRESULT(IDebugControl4 *self, uint32 Type) SetEffectiveProcessorType;
-			public function HRESULT(IDebugControl4 *self, uint32* Status) GetExecutionStatus;
-			public function HRESULT(IDebugControl4 *self, uint32 Status) SetExecutionStatus;
-			public function HRESULT(IDebugControl4 *self, uint32* Level) GetCodeLevel;
-			public function HRESULT(IDebugControl4 *self, uint32 Level) SetCodeLevel;
-			public function HRESULT(IDebugControl4 *self, uint32* Options) GetEngineOptions;
-			public function HRESULT(IDebugControl4 *self, uint32 Options) AddEngineOptions;
-			public function HRESULT(IDebugControl4 *self, uint32 Options) RemoveEngineOptions;
-			public function HRESULT(IDebugControl4 *self, uint32 Options) SetEngineOptions;
-			public function HRESULT(IDebugControl4 *self, uint32* OutputLevel, uint32* BreakLevel) GetSystemErrorControl;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
-			public function HRESULT(IDebugControl4 *self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
-			public function HRESULT(IDebugControl4 *self, uint32 Slot, PSTR Macro) SetTextMacro;
-			public function HRESULT(IDebugControl4 *self, uint32* Radix) GetRadix;
-			public function HRESULT(IDebugControl4 *self, uint32 Radix) SetRadix;
-			public function HRESULT(IDebugControl4 *self, PSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) Evaluate;
-			public function HRESULT(IDebugControl4 *self, DEBUG_VALUE* In, uint32 OutType, DEBUG_VALUE* Out) CoerceValue;
-			public function HRESULT(IDebugControl4 *self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
-			public function HRESULT(IDebugControl4 *self, uint32* Number) GetNumberBreakpoints;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, IDebugBreakpoint** Bp) GetBreakpointByIndex;
-			public function HRESULT(IDebugControl4 *self, uint32 Id, IDebugBreakpoint** Bp) GetBreakpointById;
-			public function HRESULT(IDebugControl4 *self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
-			public function HRESULT(IDebugControl4 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint** Bp) AddBreakpoint;
-			public function HRESULT(IDebugControl4 *self, IDebugBreakpoint* Bp) RemoveBreakpoint;
-			public function HRESULT(IDebugControl4 *self, PSTR Path, uint32 Flags, uint64* Handle) AddExtension;
-			public function HRESULT(IDebugControl4 *self, uint64 Handle) RemoveExtension;
-			public function HRESULT(IDebugControl4 *self, PSTR Path, uint64* Handle) GetExtensionByPath;
-			public function HRESULT(IDebugControl4 *self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
-			public function HRESULT(IDebugControl4 *self, uint64 Handle, PSTR FuncName, FARPROC* Function) GetExtensionFunction;
-			public function HRESULT(IDebugControl4 *self, WINDBG_EXTENSION_APIS32* Api) GetWindbgExtensionApis32;
-			public function HRESULT(IDebugControl4 *self, WINDBG_EXTENSION_APIS64* Api) GetWindbgExtensionApis64;
-			public function HRESULT(IDebugControl4 *self, uint32* SpecificEvents, uint32* SpecificExceptions, uint32* ArbitraryExceptions) GetNumberEventFilters;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, PSTR Command) SetEventFilterCommand;
-			public function HRESULT(IDebugControl4 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
-			public function HRESULT(IDebugControl4 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
-			public function HRESULT(IDebugControl4 *self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
-			public function HRESULT(IDebugControl4 *self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
-			public function HRESULT(IDebugControl4 *self, uint32 Flags, uint32 Timeout) WaitForEvent;
-			public function HRESULT(IDebugControl4 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
-			public function HRESULT(IDebugControl4 *self, uint32* TimeDate) GetCurrentTimeDate;
-			public function HRESULT(IDebugControl4 *self, uint32* UpTime) GetCurrentSystemUpTime;
-			public function HRESULT(IDebugControl4 *self, uint32* FormatFlags) GetDumpFormatFlags;
-			public function HRESULT(IDebugControl4 *self, uint32* NumRepl) GetNumberTextReplacements;
-			public function HRESULT(IDebugControl4 *self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
-			public function HRESULT(IDebugControl4 *self, PSTR SrcText, PSTR DstText) SetTextReplacement;
-			public function HRESULT(IDebugControl4 *self) RemoveTextReplacements;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
-			public function HRESULT(IDebugControl4 *self, uint32* Options) GetAssemblyOptions;
-			public function HRESULT(IDebugControl4 *self, uint32 Options) AddAssemblyOptions;
-			public function HRESULT(IDebugControl4 *self, uint32 Options) RemoveAssemblyOptions;
-			public function HRESULT(IDebugControl4 *self, uint32 Options) SetAssemblyOptions;
-			public function HRESULT(IDebugControl4 *self, uint32* Flags) GetExpressionSyntax;
-			public function HRESULT(IDebugControl4 *self, uint32 Flags) SetExpressionSyntax;
-			public function HRESULT(IDebugControl4 *self, PSTR AbbrevName) SetExpressionSyntaxByName;
-			public function HRESULT(IDebugControl4 *self, uint32* Number) GetNumberExpressionSyntaxes;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
-			public function HRESULT(IDebugControl4 *self, uint32* Events) GetNumberEvents;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
-			public function HRESULT(IDebugControl4 *self, uint32* Index) GetCurrentEventIndex;
-			public function HRESULT(IDebugControl4 *self, uint32 Relation, uint32 Value, uint32* NextIndex) SetNextEventIndex;
-			public function HRESULT(IDebugControl4 *self, char16* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFileWide;
-			public function HRESULT(IDebugControl4 *self, PWSTR File, BOOL Append) OpenLogFileWide;
-			public function HRESULT(IDebugControl4 *self, char16* Buffer, uint32 BufferSize, uint32* InputSize) InputWide;
-			public function HRESULT(IDebugControl4 *self, PWSTR Buffer) ReturnInputWide;
-			public function HRESULT(IDebugControl4 *self, uint32 Mask, PWSTR Format) OutputWide;
-			public function HRESULT(IDebugControl4 *self, uint32 Mask, PWSTR Format, int8* Args) OutputVaListWide;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl, uint32 Mask, PWSTR Format) ControlledOutputWide;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl, uint32 Mask, PWSTR Format, int8* Args) ControlledOutputVaListWide;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl, PWSTR Format) OutputPromptWide;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl, PWSTR Format, int8* Args) OutputPromptVaListWide;
-			public function HRESULT(IDebugControl4 *self, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptTextWide;
-			public function HRESULT(IDebugControl4 *self, uint64 Offset, PWSTR Instr, uint64* EndOffset) AssembleWide;
-			public function HRESULT(IDebugControl4 *self, uint64 Offset, uint32 Flags, char16* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) DisassembleWide;
-			public function HRESULT(IDebugControl4 *self, uint32 Type, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNamesWide;
-			public function HRESULT(IDebugControl4 *self, uint32 Slot, char16* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacroWide;
-			public function HRESULT(IDebugControl4 *self, uint32 Slot, PWSTR Macro) SetTextMacroWide;
-			public function HRESULT(IDebugControl4 *self, PWSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) EvaluateWide;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl, PWSTR Command, uint32 Flags) ExecuteWide;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl, PWSTR CommandFile, uint32 Flags) ExecuteCommandFileWide;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, IDebugBreakpoint2** Bp) GetBreakpointByIndex2;
-			public function HRESULT(IDebugControl4 *self, uint32 Id, IDebugBreakpoint2** Bp) GetBreakpointById2;
-			public function HRESULT(IDebugControl4 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint2** Bp) AddBreakpoint2;
-			public function HRESULT(IDebugControl4 *self, IDebugBreakpoint2* Bp) RemoveBreakpoint2;
-			public function HRESULT(IDebugControl4 *self, PWSTR Path, uint32 Flags, uint64* Handle) AddExtensionWide;
-			public function HRESULT(IDebugControl4 *self, PWSTR Path, uint64* Handle) GetExtensionByPathWide;
-			public function HRESULT(IDebugControl4 *self, uint64 Handle, PWSTR Function, PWSTR Arguments) CallExtensionWide;
-			public function HRESULT(IDebugControl4 *self, uint64 Handle, PWSTR FuncName, FARPROC* Function) GetExtensionFunctionWide;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterTextWide;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommandWide;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, PWSTR Command) SetEventFilterCommandWide;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgumentWide;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, PWSTR Argument) SetSpecificFilterArgumentWide;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommandWide;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, PWSTR Command) SetExceptionFilterSecondCommandWide;
-			public function HRESULT(IDebugControl4 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, char16* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformationWide;
-			public function HRESULT(IDebugControl4 *self, PWSTR SrcText, uint32 Index, char16* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, char16* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacementWide;
-			public function HRESULT(IDebugControl4 *self, PWSTR SrcText, PWSTR DstText) SetTextReplacementWide;
-			public function HRESULT(IDebugControl4 *self, PWSTR AbbrevName) SetExpressionSyntaxByNameWide;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNamesWide;
-			public function HRESULT(IDebugControl4 *self, uint32 Index, uint32 Which, PWSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescriptionWide;
-			public function HRESULT(IDebugControl4 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, uint32* Flags) GetLogFile2;
-			public function HRESULT(IDebugControl4 *self, PSTR File, uint32 Flags) OpenLogFile2;
-			public function HRESULT(IDebugControl4 *self, char16* Buffer, uint32 BufferSize, uint32* FileSize, uint32* Flags) GetLogFile2Wide;
-			public function HRESULT(IDebugControl4 *self, PWSTR File, uint32 Flags) OpenLogFile2Wide;
-			public function HRESULT(IDebugControl4 *self, uint32* PlatformId, uint32* Win32Major, uint32* Win32Minor, uint32* KdMajor, uint32* KdMinor) GetSystemVersionValues;
-			public function HRESULT(IDebugControl4 *self, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionString;
-			public function HRESULT(IDebugControl4 *self, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionStringWide;
-			public function HRESULT(IDebugControl4 *self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTrace;
-			public function HRESULT(IDebugControl4 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTrace;
-			public function HRESULT(IDebugControl4 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* Context, uint32 ContextSize, uint32* ContextUsed, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed) GetStoredEventInformation;
-			public function HRESULT(IDebugControl4 *self, uint32* Flags, uint32 WhichString, uint8* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatus;
-			public function HRESULT(IDebugControl4 *self, uint32* Flags, uint32 WhichString, char16* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatusWide;
-			public function HRESULT(IDebugControl4 *self, uint32 Flags) ResetManagedStatus;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugControl4 *self) GetInterrupt;
+				public function HRESULT(IDebugControl4 *self, uint32 Flags) SetInterrupt;
+				public function HRESULT(IDebugControl4 *self, uint32* Seconds) GetInterruptTimeout;
+				public function HRESULT(IDebugControl4 *self, uint32 Seconds) SetInterruptTimeout;
+				public function HRESULT(IDebugControl4 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFile;
+				public function HRESULT(IDebugControl4 *self, PSTR File, BOOL Append) OpenLogFile;
+				public function HRESULT(IDebugControl4 *self) CloseLogFile;
+				public function HRESULT(IDebugControl4 *self, uint32* Mask) GetLogMask;
+				public function HRESULT(IDebugControl4 *self, uint32 Mask) SetLogMask;
+				public function HRESULT(IDebugControl4 *self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
+				public function HRESULT(IDebugControl4 *self, PSTR Buffer) ReturnInput;
+				public function HRESULT(IDebugControl4 *self, uint32 Mask, PSTR Format) Output;
+				public function HRESULT(IDebugControl4 *self, uint32 Mask, PSTR Format, int8* Args) OutputVaList;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl, uint32 Mask, PSTR Format, int8* Args) ControlledOutputVaList;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl, PSTR Format) OutputPrompt;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl, PSTR Format, int8* Args) OutputPromptVaList;
+				public function HRESULT(IDebugControl4 *self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl) OutputVersionInformation;
+				public function HRESULT(IDebugControl4 *self, uint64* Handle) GetNotifyEventHandle;
+				public function HRESULT(IDebugControl4 *self, uint64 Handle) SetNotifyEventHandle;
+				public function HRESULT(IDebugControl4 *self, uint64 Offset, PSTR Instr, uint64* EndOffset) Assemble;
+				public function HRESULT(IDebugControl4 *self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) Disassemble;
+				public function HRESULT(IDebugControl4 *self, uint64* Offset) GetDisassembleEffectiveOffset;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl, uint64 Offset, uint32 Flags, uint64* EndOffset) OutputDisassembly;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
+				public function HRESULT(IDebugControl4 *self, uint64 Offset, int32 Delta, uint64* NearOffset) GetNearInstruction;
+				public function HRESULT(IDebugControl4 *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
+				public function HRESULT(IDebugControl4 *self, uint64* Offset) GetReturnOffset;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
+				public function HRESULT(IDebugControl4 *self, uint32* Class, uint32* Qualifier) GetDebuggeeType;
+				public function HRESULT(IDebugControl4 *self, uint32* Type) GetActualProcessorType;
+				public function HRESULT(IDebugControl4 *self, uint32* Type) GetExecutingProcessorType;
+				public function HRESULT(IDebugControl4 *self, uint32* Number) GetNumberPossibleExecutingProcessorTypes;
+				public function HRESULT(IDebugControl4 *self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
+				public function HRESULT(IDebugControl4 *self, uint32* Number) GetNumberProcessors;
+				public function HRESULT(IDebugControl4 *self, uint32* PlatformId, uint32* Major, uint32* Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, uint32* ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
+				public function HRESULT(IDebugControl4 *self, uint32* Size) GetPageSize;
+				public function HRESULT(IDebugControl4 *self) IsPointer64Bit;
+				public function HRESULT(IDebugControl4 *self, uint32* Code, uint64* Arg1, uint64* Arg2, uint64* Arg3, uint64* Arg4) ReadBugCheckData;
+				public function HRESULT(IDebugControl4 *self, uint32* Number) GetNumberSupportedProcessorTypes;
+				public function HRESULT(IDebugControl4 *self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
+				public function HRESULT(IDebugControl4 *self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
+				public function HRESULT(IDebugControl4 *self, uint32* Type) GetEffectiveProcessorType;
+				public function HRESULT(IDebugControl4 *self, uint32 Type) SetEffectiveProcessorType;
+				public function HRESULT(IDebugControl4 *self, uint32* Status) GetExecutionStatus;
+				public function HRESULT(IDebugControl4 *self, uint32 Status) SetExecutionStatus;
+				public function HRESULT(IDebugControl4 *self, uint32* Level) GetCodeLevel;
+				public function HRESULT(IDebugControl4 *self, uint32 Level) SetCodeLevel;
+				public function HRESULT(IDebugControl4 *self, uint32* Options) GetEngineOptions;
+				public function HRESULT(IDebugControl4 *self, uint32 Options) AddEngineOptions;
+				public function HRESULT(IDebugControl4 *self, uint32 Options) RemoveEngineOptions;
+				public function HRESULT(IDebugControl4 *self, uint32 Options) SetEngineOptions;
+				public function HRESULT(IDebugControl4 *self, uint32* OutputLevel, uint32* BreakLevel) GetSystemErrorControl;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
+				public function HRESULT(IDebugControl4 *self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
+				public function HRESULT(IDebugControl4 *self, uint32 Slot, PSTR Macro) SetTextMacro;
+				public function HRESULT(IDebugControl4 *self, uint32* Radix) GetRadix;
+				public function HRESULT(IDebugControl4 *self, uint32 Radix) SetRadix;
+				public function HRESULT(IDebugControl4 *self, PSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) Evaluate;
+				public function HRESULT(IDebugControl4 *self, DEBUG_VALUE* In, uint32 OutType, DEBUG_VALUE* Out) CoerceValue;
+				public function HRESULT(IDebugControl4 *self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
+				public function HRESULT(IDebugControl4 *self, uint32* Number) GetNumberBreakpoints;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, IDebugBreakpoint** Bp) GetBreakpointByIndex;
+				public function HRESULT(IDebugControl4 *self, uint32 Id, IDebugBreakpoint** Bp) GetBreakpointById;
+				public function HRESULT(IDebugControl4 *self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
+				public function HRESULT(IDebugControl4 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint** Bp) AddBreakpoint;
+				public function HRESULT(IDebugControl4 *self, IDebugBreakpoint* Bp) RemoveBreakpoint;
+				public function HRESULT(IDebugControl4 *self, PSTR Path, uint32 Flags, uint64* Handle) AddExtension;
+				public function HRESULT(IDebugControl4 *self, uint64 Handle) RemoveExtension;
+				public function HRESULT(IDebugControl4 *self, PSTR Path, uint64* Handle) GetExtensionByPath;
+				public function HRESULT(IDebugControl4 *self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
+				public function HRESULT(IDebugControl4 *self, uint64 Handle, PSTR FuncName, FARPROC* Function) GetExtensionFunction;
+				public function HRESULT(IDebugControl4 *self, WINDBG_EXTENSION_APIS32* Api) GetWindbgExtensionApis32;
+				public function HRESULT(IDebugControl4 *self, WINDBG_EXTENSION_APIS64* Api) GetWindbgExtensionApis64;
+				public function HRESULT(IDebugControl4 *self, uint32* SpecificEvents, uint32* SpecificExceptions, uint32* ArbitraryExceptions) GetNumberEventFilters;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, PSTR Command) SetEventFilterCommand;
+				public function HRESULT(IDebugControl4 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
+				public function HRESULT(IDebugControl4 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
+				public function HRESULT(IDebugControl4 *self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
+				public function HRESULT(IDebugControl4 *self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
+				public function HRESULT(IDebugControl4 *self, uint32 Flags, uint32 Timeout) WaitForEvent;
+				public function HRESULT(IDebugControl4 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
+				public function HRESULT(IDebugControl4 *self, uint32* TimeDate) GetCurrentTimeDate;
+				public function HRESULT(IDebugControl4 *self, uint32* UpTime) GetCurrentSystemUpTime;
+				public function HRESULT(IDebugControl4 *self, uint32* FormatFlags) GetDumpFormatFlags;
+				public function HRESULT(IDebugControl4 *self, uint32* NumRepl) GetNumberTextReplacements;
+				public function HRESULT(IDebugControl4 *self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
+				public function HRESULT(IDebugControl4 *self, PSTR SrcText, PSTR DstText) SetTextReplacement;
+				public function HRESULT(IDebugControl4 *self) RemoveTextReplacements;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
+				public function HRESULT(IDebugControl4 *self, uint32* Options) GetAssemblyOptions;
+				public function HRESULT(IDebugControl4 *self, uint32 Options) AddAssemblyOptions;
+				public function HRESULT(IDebugControl4 *self, uint32 Options) RemoveAssemblyOptions;
+				public function HRESULT(IDebugControl4 *self, uint32 Options) SetAssemblyOptions;
+				public function HRESULT(IDebugControl4 *self, uint32* Flags) GetExpressionSyntax;
+				public function HRESULT(IDebugControl4 *self, uint32 Flags) SetExpressionSyntax;
+				public function HRESULT(IDebugControl4 *self, PSTR AbbrevName) SetExpressionSyntaxByName;
+				public function HRESULT(IDebugControl4 *self, uint32* Number) GetNumberExpressionSyntaxes;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
+				public function HRESULT(IDebugControl4 *self, uint32* Events) GetNumberEvents;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
+				public function HRESULT(IDebugControl4 *self, uint32* Index) GetCurrentEventIndex;
+				public function HRESULT(IDebugControl4 *self, uint32 Relation, uint32 Value, uint32* NextIndex) SetNextEventIndex;
+				public function HRESULT(IDebugControl4 *self, char16* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFileWide;
+				public function HRESULT(IDebugControl4 *self, PWSTR File, BOOL Append) OpenLogFileWide;
+				public function HRESULT(IDebugControl4 *self, char16* Buffer, uint32 BufferSize, uint32* InputSize) InputWide;
+				public function HRESULT(IDebugControl4 *self, PWSTR Buffer) ReturnInputWide;
+				public function HRESULT(IDebugControl4 *self, uint32 Mask, PWSTR Format) OutputWide;
+				public function HRESULT(IDebugControl4 *self, uint32 Mask, PWSTR Format, int8* Args) OutputVaListWide;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl, uint32 Mask, PWSTR Format) ControlledOutputWide;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl, uint32 Mask, PWSTR Format, int8* Args) ControlledOutputVaListWide;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl, PWSTR Format) OutputPromptWide;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl, PWSTR Format, int8* Args) OutputPromptVaListWide;
+				public function HRESULT(IDebugControl4 *self, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptTextWide;
+				public function HRESULT(IDebugControl4 *self, uint64 Offset, PWSTR Instr, uint64* EndOffset) AssembleWide;
+				public function HRESULT(IDebugControl4 *self, uint64 Offset, uint32 Flags, char16* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) DisassembleWide;
+				public function HRESULT(IDebugControl4 *self, uint32 Type, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNamesWide;
+				public function HRESULT(IDebugControl4 *self, uint32 Slot, char16* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacroWide;
+				public function HRESULT(IDebugControl4 *self, uint32 Slot, PWSTR Macro) SetTextMacroWide;
+				public function HRESULT(IDebugControl4 *self, PWSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) EvaluateWide;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl, PWSTR Command, uint32 Flags) ExecuteWide;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl, PWSTR CommandFile, uint32 Flags) ExecuteCommandFileWide;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, IDebugBreakpoint2** Bp) GetBreakpointByIndex2;
+				public function HRESULT(IDebugControl4 *self, uint32 Id, IDebugBreakpoint2** Bp) GetBreakpointById2;
+				public function HRESULT(IDebugControl4 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint2** Bp) AddBreakpoint2;
+				public function HRESULT(IDebugControl4 *self, IDebugBreakpoint2* Bp) RemoveBreakpoint2;
+				public function HRESULT(IDebugControl4 *self, PWSTR Path, uint32 Flags, uint64* Handle) AddExtensionWide;
+				public function HRESULT(IDebugControl4 *self, PWSTR Path, uint64* Handle) GetExtensionByPathWide;
+				public function HRESULT(IDebugControl4 *self, uint64 Handle, PWSTR Function, PWSTR Arguments) CallExtensionWide;
+				public function HRESULT(IDebugControl4 *self, uint64 Handle, PWSTR FuncName, FARPROC* Function) GetExtensionFunctionWide;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterTextWide;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommandWide;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, PWSTR Command) SetEventFilterCommandWide;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgumentWide;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, PWSTR Argument) SetSpecificFilterArgumentWide;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommandWide;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, PWSTR Command) SetExceptionFilterSecondCommandWide;
+				public function HRESULT(IDebugControl4 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, char16* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformationWide;
+				public function HRESULT(IDebugControl4 *self, PWSTR SrcText, uint32 Index, char16* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, char16* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacementWide;
+				public function HRESULT(IDebugControl4 *self, PWSTR SrcText, PWSTR DstText) SetTextReplacementWide;
+				public function HRESULT(IDebugControl4 *self, PWSTR AbbrevName) SetExpressionSyntaxByNameWide;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNamesWide;
+				public function HRESULT(IDebugControl4 *self, uint32 Index, uint32 Which, PWSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescriptionWide;
+				public function HRESULT(IDebugControl4 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, uint32* Flags) GetLogFile2;
+				public function HRESULT(IDebugControl4 *self, PSTR File, uint32 Flags) OpenLogFile2;
+				public function HRESULT(IDebugControl4 *self, char16* Buffer, uint32 BufferSize, uint32* FileSize, uint32* Flags) GetLogFile2Wide;
+				public function HRESULT(IDebugControl4 *self, PWSTR File, uint32 Flags) OpenLogFile2Wide;
+				public function HRESULT(IDebugControl4 *self, uint32* PlatformId, uint32* Win32Major, uint32* Win32Minor, uint32* KdMajor, uint32* KdMinor) GetSystemVersionValues;
+				public function HRESULT(IDebugControl4 *self, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionString;
+				public function HRESULT(IDebugControl4 *self, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionStringWide;
+				public function HRESULT(IDebugControl4 *self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTrace;
+				public function HRESULT(IDebugControl4 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTrace;
+				public function HRESULT(IDebugControl4 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* Context, uint32 ContextSize, uint32* ContextUsed, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed) GetStoredEventInformation;
+				public function HRESULT(IDebugControl4 *self, uint32* Flags, uint32 WhichString, uint8* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatus;
+				public function HRESULT(IDebugControl4 *self, uint32* Flags, uint32 WhichString, char16* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatusWide;
+				public function HRESULT(IDebugControl4 *self, uint32 Flags) ResetManagedStatus;
+			}
 		}
 		[CRepr]
 		public struct IDebugControl5 : IUnknown
 		{
 			public const new Guid IID = .(0xb2ffe162, 0x2412, 0x429f, 0x8d, 0x1d, 0x5b, 0xf6, 0xdd, 0x82, 0x46, 0x96);
 			
-			public function HRESULT(IDebugControl5 *self) GetInterrupt;
-			public function HRESULT(IDebugControl5 *self, uint32 Flags) SetInterrupt;
-			public function HRESULT(IDebugControl5 *self, uint32* Seconds) GetInterruptTimeout;
-			public function HRESULT(IDebugControl5 *self, uint32 Seconds) SetInterruptTimeout;
-			public function HRESULT(IDebugControl5 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFile;
-			public function HRESULT(IDebugControl5 *self, PSTR File, BOOL Append) OpenLogFile;
-			public function HRESULT(IDebugControl5 *self) CloseLogFile;
-			public function HRESULT(IDebugControl5 *self, uint32* Mask) GetLogMask;
-			public function HRESULT(IDebugControl5 *self, uint32 Mask) SetLogMask;
-			public function HRESULT(IDebugControl5 *self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
-			public function HRESULT(IDebugControl5 *self, PSTR Buffer) ReturnInput;
-			public function HRESULT(IDebugControl5 *self, uint32 Mask, PSTR Format) Output;
-			public function HRESULT(IDebugControl5 *self, uint32 Mask, PSTR Format, int8* Args) OutputVaList;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, uint32 Mask, PSTR Format, int8* Args) ControlledOutputVaList;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, PSTR Format) OutputPrompt;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, PSTR Format, int8* Args) OutputPromptVaList;
-			public function HRESULT(IDebugControl5 *self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl) OutputVersionInformation;
-			public function HRESULT(IDebugControl5 *self, uint64* Handle) GetNotifyEventHandle;
-			public function HRESULT(IDebugControl5 *self, uint64 Handle) SetNotifyEventHandle;
-			public function HRESULT(IDebugControl5 *self, uint64 Offset, PSTR Instr, uint64* EndOffset) Assemble;
-			public function HRESULT(IDebugControl5 *self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) Disassemble;
-			public function HRESULT(IDebugControl5 *self, uint64* Offset) GetDisassembleEffectiveOffset;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, uint64 Offset, uint32 Flags, uint64* EndOffset) OutputDisassembly;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
-			public function HRESULT(IDebugControl5 *self, uint64 Offset, int32 Delta, uint64* NearOffset) GetNearInstruction;
-			public function HRESULT(IDebugControl5 *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
-			public function HRESULT(IDebugControl5 *self, uint64* Offset) GetReturnOffset;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
-			public function HRESULT(IDebugControl5 *self, uint32* Class, uint32* Qualifier) GetDebuggeeType;
-			public function HRESULT(IDebugControl5 *self, uint32* Type) GetActualProcessorType;
-			public function HRESULT(IDebugControl5 *self, uint32* Type) GetExecutingProcessorType;
-			public function HRESULT(IDebugControl5 *self, uint32* Number) GetNumberPossibleExecutingProcessorTypes;
-			public function HRESULT(IDebugControl5 *self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
-			public function HRESULT(IDebugControl5 *self, uint32* Number) GetNumberProcessors;
-			public function HRESULT(IDebugControl5 *self, uint32* PlatformId, uint32* Major, uint32* Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, uint32* ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
-			public function HRESULT(IDebugControl5 *self, uint32* Size) GetPageSize;
-			public function HRESULT(IDebugControl5 *self) IsPointer64Bit;
-			public function HRESULT(IDebugControl5 *self, uint32* Code, uint64* Arg1, uint64* Arg2, uint64* Arg3, uint64* Arg4) ReadBugCheckData;
-			public function HRESULT(IDebugControl5 *self, uint32* Number) GetNumberSupportedProcessorTypes;
-			public function HRESULT(IDebugControl5 *self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
-			public function HRESULT(IDebugControl5 *self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
-			public function HRESULT(IDebugControl5 *self, uint32* Type) GetEffectiveProcessorType;
-			public function HRESULT(IDebugControl5 *self, uint32 Type) SetEffectiveProcessorType;
-			public function HRESULT(IDebugControl5 *self, uint32* Status) GetExecutionStatus;
-			public function HRESULT(IDebugControl5 *self, uint32 Status) SetExecutionStatus;
-			public function HRESULT(IDebugControl5 *self, uint32* Level) GetCodeLevel;
-			public function HRESULT(IDebugControl5 *self, uint32 Level) SetCodeLevel;
-			public function HRESULT(IDebugControl5 *self, uint32* Options) GetEngineOptions;
-			public function HRESULT(IDebugControl5 *self, uint32 Options) AddEngineOptions;
-			public function HRESULT(IDebugControl5 *self, uint32 Options) RemoveEngineOptions;
-			public function HRESULT(IDebugControl5 *self, uint32 Options) SetEngineOptions;
-			public function HRESULT(IDebugControl5 *self, uint32* OutputLevel, uint32* BreakLevel) GetSystemErrorControl;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
-			public function HRESULT(IDebugControl5 *self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
-			public function HRESULT(IDebugControl5 *self, uint32 Slot, PSTR Macro) SetTextMacro;
-			public function HRESULT(IDebugControl5 *self, uint32* Radix) GetRadix;
-			public function HRESULT(IDebugControl5 *self, uint32 Radix) SetRadix;
-			public function HRESULT(IDebugControl5 *self, PSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) Evaluate;
-			public function HRESULT(IDebugControl5 *self, DEBUG_VALUE* In, uint32 OutType, DEBUG_VALUE* Out) CoerceValue;
-			public function HRESULT(IDebugControl5 *self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
-			public function HRESULT(IDebugControl5 *self, uint32* Number) GetNumberBreakpoints;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, IDebugBreakpoint** Bp) GetBreakpointByIndex;
-			public function HRESULT(IDebugControl5 *self, uint32 Id, IDebugBreakpoint** Bp) GetBreakpointById;
-			public function HRESULT(IDebugControl5 *self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
-			public function HRESULT(IDebugControl5 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint** Bp) AddBreakpoint;
-			public function HRESULT(IDebugControl5 *self, IDebugBreakpoint* Bp) RemoveBreakpoint;
-			public function HRESULT(IDebugControl5 *self, PSTR Path, uint32 Flags, uint64* Handle) AddExtension;
-			public function HRESULT(IDebugControl5 *self, uint64 Handle) RemoveExtension;
-			public function HRESULT(IDebugControl5 *self, PSTR Path, uint64* Handle) GetExtensionByPath;
-			public function HRESULT(IDebugControl5 *self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
-			public function HRESULT(IDebugControl5 *self, uint64 Handle, PSTR FuncName, FARPROC* Function) GetExtensionFunction;
-			public function HRESULT(IDebugControl5 *self, WINDBG_EXTENSION_APIS32* Api) GetWindbgExtensionApis32;
-			public function HRESULT(IDebugControl5 *self, WINDBG_EXTENSION_APIS64* Api) GetWindbgExtensionApis64;
-			public function HRESULT(IDebugControl5 *self, uint32* SpecificEvents, uint32* SpecificExceptions, uint32* ArbitraryExceptions) GetNumberEventFilters;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, PSTR Command) SetEventFilterCommand;
-			public function HRESULT(IDebugControl5 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
-			public function HRESULT(IDebugControl5 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
-			public function HRESULT(IDebugControl5 *self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
-			public function HRESULT(IDebugControl5 *self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
-			public function HRESULT(IDebugControl5 *self, uint32 Flags, uint32 Timeout) WaitForEvent;
-			public function HRESULT(IDebugControl5 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
-			public function HRESULT(IDebugControl5 *self, uint32* TimeDate) GetCurrentTimeDate;
-			public function HRESULT(IDebugControl5 *self, uint32* UpTime) GetCurrentSystemUpTime;
-			public function HRESULT(IDebugControl5 *self, uint32* FormatFlags) GetDumpFormatFlags;
-			public function HRESULT(IDebugControl5 *self, uint32* NumRepl) GetNumberTextReplacements;
-			public function HRESULT(IDebugControl5 *self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
-			public function HRESULT(IDebugControl5 *self, PSTR SrcText, PSTR DstText) SetTextReplacement;
-			public function HRESULT(IDebugControl5 *self) RemoveTextReplacements;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
-			public function HRESULT(IDebugControl5 *self, uint32* Options) GetAssemblyOptions;
-			public function HRESULT(IDebugControl5 *self, uint32 Options) AddAssemblyOptions;
-			public function HRESULT(IDebugControl5 *self, uint32 Options) RemoveAssemblyOptions;
-			public function HRESULT(IDebugControl5 *self, uint32 Options) SetAssemblyOptions;
-			public function HRESULT(IDebugControl5 *self, uint32* Flags) GetExpressionSyntax;
-			public function HRESULT(IDebugControl5 *self, uint32 Flags) SetExpressionSyntax;
-			public function HRESULT(IDebugControl5 *self, PSTR AbbrevName) SetExpressionSyntaxByName;
-			public function HRESULT(IDebugControl5 *self, uint32* Number) GetNumberExpressionSyntaxes;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
-			public function HRESULT(IDebugControl5 *self, uint32* Events) GetNumberEvents;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
-			public function HRESULT(IDebugControl5 *self, uint32* Index) GetCurrentEventIndex;
-			public function HRESULT(IDebugControl5 *self, uint32 Relation, uint32 Value, uint32* NextIndex) SetNextEventIndex;
-			public function HRESULT(IDebugControl5 *self, char16* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFileWide;
-			public function HRESULT(IDebugControl5 *self, PWSTR File, BOOL Append) OpenLogFileWide;
-			public function HRESULT(IDebugControl5 *self, char16* Buffer, uint32 BufferSize, uint32* InputSize) InputWide;
-			public function HRESULT(IDebugControl5 *self, PWSTR Buffer) ReturnInputWide;
-			public function HRESULT(IDebugControl5 *self, uint32 Mask, PWSTR Format) OutputWide;
-			public function HRESULT(IDebugControl5 *self, uint32 Mask, PWSTR Format, int8* Args) OutputVaListWide;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, uint32 Mask, PWSTR Format) ControlledOutputWide;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, uint32 Mask, PWSTR Format, int8* Args) ControlledOutputVaListWide;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, PWSTR Format) OutputPromptWide;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, PWSTR Format, int8* Args) OutputPromptVaListWide;
-			public function HRESULT(IDebugControl5 *self, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptTextWide;
-			public function HRESULT(IDebugControl5 *self, uint64 Offset, PWSTR Instr, uint64* EndOffset) AssembleWide;
-			public function HRESULT(IDebugControl5 *self, uint64 Offset, uint32 Flags, char16* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) DisassembleWide;
-			public function HRESULT(IDebugControl5 *self, uint32 Type, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNamesWide;
-			public function HRESULT(IDebugControl5 *self, uint32 Slot, char16* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacroWide;
-			public function HRESULT(IDebugControl5 *self, uint32 Slot, PWSTR Macro) SetTextMacroWide;
-			public function HRESULT(IDebugControl5 *self, PWSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) EvaluateWide;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, PWSTR Command, uint32 Flags) ExecuteWide;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, PWSTR CommandFile, uint32 Flags) ExecuteCommandFileWide;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, IDebugBreakpoint2** Bp) GetBreakpointByIndex2;
-			public function HRESULT(IDebugControl5 *self, uint32 Id, IDebugBreakpoint2** Bp) GetBreakpointById2;
-			public function HRESULT(IDebugControl5 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint2** Bp) AddBreakpoint2;
-			public function HRESULT(IDebugControl5 *self, IDebugBreakpoint2* Bp) RemoveBreakpoint2;
-			public function HRESULT(IDebugControl5 *self, PWSTR Path, uint32 Flags, uint64* Handle) AddExtensionWide;
-			public function HRESULT(IDebugControl5 *self, PWSTR Path, uint64* Handle) GetExtensionByPathWide;
-			public function HRESULT(IDebugControl5 *self, uint64 Handle, PWSTR Function, PWSTR Arguments) CallExtensionWide;
-			public function HRESULT(IDebugControl5 *self, uint64 Handle, PWSTR FuncName, FARPROC* Function) GetExtensionFunctionWide;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterTextWide;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommandWide;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, PWSTR Command) SetEventFilterCommandWide;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgumentWide;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, PWSTR Argument) SetSpecificFilterArgumentWide;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommandWide;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, PWSTR Command) SetExceptionFilterSecondCommandWide;
-			public function HRESULT(IDebugControl5 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, char16* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformationWide;
-			public function HRESULT(IDebugControl5 *self, PWSTR SrcText, uint32 Index, char16* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, char16* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacementWide;
-			public function HRESULT(IDebugControl5 *self, PWSTR SrcText, PWSTR DstText) SetTextReplacementWide;
-			public function HRESULT(IDebugControl5 *self, PWSTR AbbrevName) SetExpressionSyntaxByNameWide;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNamesWide;
-			public function HRESULT(IDebugControl5 *self, uint32 Index, uint32 Which, PWSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescriptionWide;
-			public function HRESULT(IDebugControl5 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, uint32* Flags) GetLogFile2;
-			public function HRESULT(IDebugControl5 *self, PSTR File, uint32 Flags) OpenLogFile2;
-			public function HRESULT(IDebugControl5 *self, char16* Buffer, uint32 BufferSize, uint32* FileSize, uint32* Flags) GetLogFile2Wide;
-			public function HRESULT(IDebugControl5 *self, PWSTR File, uint32 Flags) OpenLogFile2Wide;
-			public function HRESULT(IDebugControl5 *self, uint32* PlatformId, uint32* Win32Major, uint32* Win32Minor, uint32* KdMajor, uint32* KdMinor) GetSystemVersionValues;
-			public function HRESULT(IDebugControl5 *self, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionString;
-			public function HRESULT(IDebugControl5 *self, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionStringWide;
-			public function HRESULT(IDebugControl5 *self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTrace;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTrace;
-			public function HRESULT(IDebugControl5 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* Context, uint32 ContextSize, uint32* ContextUsed, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed) GetStoredEventInformation;
-			public function HRESULT(IDebugControl5 *self, uint32* Flags, uint32 WhichString, uint8* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatus;
-			public function HRESULT(IDebugControl5 *self, uint32* Flags, uint32 WhichString, char16* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatusWide;
-			public function HRESULT(IDebugControl5 *self, uint32 Flags) ResetManagedStatus;
-			public function HRESULT(IDebugControl5 *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTraceEx;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32 Flags) OutputStackTraceEx;
-			public function HRESULT(IDebugControl5 *self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTraceEx;
-			public function HRESULT(IDebugControl5 *self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTraceEx;
-			public function HRESULT(IDebugControl5 *self, Guid* Guid, IDebugBreakpoint3** Bp) GetBreakpointByGuid;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugControl5 *self) GetInterrupt;
+				public function HRESULT(IDebugControl5 *self, uint32 Flags) SetInterrupt;
+				public function HRESULT(IDebugControl5 *self, uint32* Seconds) GetInterruptTimeout;
+				public function HRESULT(IDebugControl5 *self, uint32 Seconds) SetInterruptTimeout;
+				public function HRESULT(IDebugControl5 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFile;
+				public function HRESULT(IDebugControl5 *self, PSTR File, BOOL Append) OpenLogFile;
+				public function HRESULT(IDebugControl5 *self) CloseLogFile;
+				public function HRESULT(IDebugControl5 *self, uint32* Mask) GetLogMask;
+				public function HRESULT(IDebugControl5 *self, uint32 Mask) SetLogMask;
+				public function HRESULT(IDebugControl5 *self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
+				public function HRESULT(IDebugControl5 *self, PSTR Buffer) ReturnInput;
+				public function HRESULT(IDebugControl5 *self, uint32 Mask, PSTR Format) Output;
+				public function HRESULT(IDebugControl5 *self, uint32 Mask, PSTR Format, int8* Args) OutputVaList;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, uint32 Mask, PSTR Format, int8* Args) ControlledOutputVaList;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, PSTR Format) OutputPrompt;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, PSTR Format, int8* Args) OutputPromptVaList;
+				public function HRESULT(IDebugControl5 *self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl) OutputVersionInformation;
+				public function HRESULT(IDebugControl5 *self, uint64* Handle) GetNotifyEventHandle;
+				public function HRESULT(IDebugControl5 *self, uint64 Handle) SetNotifyEventHandle;
+				public function HRESULT(IDebugControl5 *self, uint64 Offset, PSTR Instr, uint64* EndOffset) Assemble;
+				public function HRESULT(IDebugControl5 *self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) Disassemble;
+				public function HRESULT(IDebugControl5 *self, uint64* Offset) GetDisassembleEffectiveOffset;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, uint64 Offset, uint32 Flags, uint64* EndOffset) OutputDisassembly;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
+				public function HRESULT(IDebugControl5 *self, uint64 Offset, int32 Delta, uint64* NearOffset) GetNearInstruction;
+				public function HRESULT(IDebugControl5 *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
+				public function HRESULT(IDebugControl5 *self, uint64* Offset) GetReturnOffset;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
+				public function HRESULT(IDebugControl5 *self, uint32* Class, uint32* Qualifier) GetDebuggeeType;
+				public function HRESULT(IDebugControl5 *self, uint32* Type) GetActualProcessorType;
+				public function HRESULT(IDebugControl5 *self, uint32* Type) GetExecutingProcessorType;
+				public function HRESULT(IDebugControl5 *self, uint32* Number) GetNumberPossibleExecutingProcessorTypes;
+				public function HRESULT(IDebugControl5 *self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
+				public function HRESULT(IDebugControl5 *self, uint32* Number) GetNumberProcessors;
+				public function HRESULT(IDebugControl5 *self, uint32* PlatformId, uint32* Major, uint32* Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, uint32* ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
+				public function HRESULT(IDebugControl5 *self, uint32* Size) GetPageSize;
+				public function HRESULT(IDebugControl5 *self) IsPointer64Bit;
+				public function HRESULT(IDebugControl5 *self, uint32* Code, uint64* Arg1, uint64* Arg2, uint64* Arg3, uint64* Arg4) ReadBugCheckData;
+				public function HRESULT(IDebugControl5 *self, uint32* Number) GetNumberSupportedProcessorTypes;
+				public function HRESULT(IDebugControl5 *self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
+				public function HRESULT(IDebugControl5 *self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
+				public function HRESULT(IDebugControl5 *self, uint32* Type) GetEffectiveProcessorType;
+				public function HRESULT(IDebugControl5 *self, uint32 Type) SetEffectiveProcessorType;
+				public function HRESULT(IDebugControl5 *self, uint32* Status) GetExecutionStatus;
+				public function HRESULT(IDebugControl5 *self, uint32 Status) SetExecutionStatus;
+				public function HRESULT(IDebugControl5 *self, uint32* Level) GetCodeLevel;
+				public function HRESULT(IDebugControl5 *self, uint32 Level) SetCodeLevel;
+				public function HRESULT(IDebugControl5 *self, uint32* Options) GetEngineOptions;
+				public function HRESULT(IDebugControl5 *self, uint32 Options) AddEngineOptions;
+				public function HRESULT(IDebugControl5 *self, uint32 Options) RemoveEngineOptions;
+				public function HRESULT(IDebugControl5 *self, uint32 Options) SetEngineOptions;
+				public function HRESULT(IDebugControl5 *self, uint32* OutputLevel, uint32* BreakLevel) GetSystemErrorControl;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
+				public function HRESULT(IDebugControl5 *self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
+				public function HRESULT(IDebugControl5 *self, uint32 Slot, PSTR Macro) SetTextMacro;
+				public function HRESULT(IDebugControl5 *self, uint32* Radix) GetRadix;
+				public function HRESULT(IDebugControl5 *self, uint32 Radix) SetRadix;
+				public function HRESULT(IDebugControl5 *self, PSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) Evaluate;
+				public function HRESULT(IDebugControl5 *self, DEBUG_VALUE* In, uint32 OutType, DEBUG_VALUE* Out) CoerceValue;
+				public function HRESULT(IDebugControl5 *self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
+				public function HRESULT(IDebugControl5 *self, uint32* Number) GetNumberBreakpoints;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, IDebugBreakpoint** Bp) GetBreakpointByIndex;
+				public function HRESULT(IDebugControl5 *self, uint32 Id, IDebugBreakpoint** Bp) GetBreakpointById;
+				public function HRESULT(IDebugControl5 *self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
+				public function HRESULT(IDebugControl5 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint** Bp) AddBreakpoint;
+				public function HRESULT(IDebugControl5 *self, IDebugBreakpoint* Bp) RemoveBreakpoint;
+				public function HRESULT(IDebugControl5 *self, PSTR Path, uint32 Flags, uint64* Handle) AddExtension;
+				public function HRESULT(IDebugControl5 *self, uint64 Handle) RemoveExtension;
+				public function HRESULT(IDebugControl5 *self, PSTR Path, uint64* Handle) GetExtensionByPath;
+				public function HRESULT(IDebugControl5 *self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
+				public function HRESULT(IDebugControl5 *self, uint64 Handle, PSTR FuncName, FARPROC* Function) GetExtensionFunction;
+				public function HRESULT(IDebugControl5 *self, WINDBG_EXTENSION_APIS32* Api) GetWindbgExtensionApis32;
+				public function HRESULT(IDebugControl5 *self, WINDBG_EXTENSION_APIS64* Api) GetWindbgExtensionApis64;
+				public function HRESULT(IDebugControl5 *self, uint32* SpecificEvents, uint32* SpecificExceptions, uint32* ArbitraryExceptions) GetNumberEventFilters;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, PSTR Command) SetEventFilterCommand;
+				public function HRESULT(IDebugControl5 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
+				public function HRESULT(IDebugControl5 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
+				public function HRESULT(IDebugControl5 *self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
+				public function HRESULT(IDebugControl5 *self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
+				public function HRESULT(IDebugControl5 *self, uint32 Flags, uint32 Timeout) WaitForEvent;
+				public function HRESULT(IDebugControl5 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
+				public function HRESULT(IDebugControl5 *self, uint32* TimeDate) GetCurrentTimeDate;
+				public function HRESULT(IDebugControl5 *self, uint32* UpTime) GetCurrentSystemUpTime;
+				public function HRESULT(IDebugControl5 *self, uint32* FormatFlags) GetDumpFormatFlags;
+				public function HRESULT(IDebugControl5 *self, uint32* NumRepl) GetNumberTextReplacements;
+				public function HRESULT(IDebugControl5 *self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
+				public function HRESULT(IDebugControl5 *self, PSTR SrcText, PSTR DstText) SetTextReplacement;
+				public function HRESULT(IDebugControl5 *self) RemoveTextReplacements;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
+				public function HRESULT(IDebugControl5 *self, uint32* Options) GetAssemblyOptions;
+				public function HRESULT(IDebugControl5 *self, uint32 Options) AddAssemblyOptions;
+				public function HRESULT(IDebugControl5 *self, uint32 Options) RemoveAssemblyOptions;
+				public function HRESULT(IDebugControl5 *self, uint32 Options) SetAssemblyOptions;
+				public function HRESULT(IDebugControl5 *self, uint32* Flags) GetExpressionSyntax;
+				public function HRESULT(IDebugControl5 *self, uint32 Flags) SetExpressionSyntax;
+				public function HRESULT(IDebugControl5 *self, PSTR AbbrevName) SetExpressionSyntaxByName;
+				public function HRESULT(IDebugControl5 *self, uint32* Number) GetNumberExpressionSyntaxes;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
+				public function HRESULT(IDebugControl5 *self, uint32* Events) GetNumberEvents;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
+				public function HRESULT(IDebugControl5 *self, uint32* Index) GetCurrentEventIndex;
+				public function HRESULT(IDebugControl5 *self, uint32 Relation, uint32 Value, uint32* NextIndex) SetNextEventIndex;
+				public function HRESULT(IDebugControl5 *self, char16* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFileWide;
+				public function HRESULT(IDebugControl5 *self, PWSTR File, BOOL Append) OpenLogFileWide;
+				public function HRESULT(IDebugControl5 *self, char16* Buffer, uint32 BufferSize, uint32* InputSize) InputWide;
+				public function HRESULT(IDebugControl5 *self, PWSTR Buffer) ReturnInputWide;
+				public function HRESULT(IDebugControl5 *self, uint32 Mask, PWSTR Format) OutputWide;
+				public function HRESULT(IDebugControl5 *self, uint32 Mask, PWSTR Format, int8* Args) OutputVaListWide;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, uint32 Mask, PWSTR Format) ControlledOutputWide;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, uint32 Mask, PWSTR Format, int8* Args) ControlledOutputVaListWide;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, PWSTR Format) OutputPromptWide;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, PWSTR Format, int8* Args) OutputPromptVaListWide;
+				public function HRESULT(IDebugControl5 *self, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptTextWide;
+				public function HRESULT(IDebugControl5 *self, uint64 Offset, PWSTR Instr, uint64* EndOffset) AssembleWide;
+				public function HRESULT(IDebugControl5 *self, uint64 Offset, uint32 Flags, char16* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) DisassembleWide;
+				public function HRESULT(IDebugControl5 *self, uint32 Type, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNamesWide;
+				public function HRESULT(IDebugControl5 *self, uint32 Slot, char16* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacroWide;
+				public function HRESULT(IDebugControl5 *self, uint32 Slot, PWSTR Macro) SetTextMacroWide;
+				public function HRESULT(IDebugControl5 *self, PWSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) EvaluateWide;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, PWSTR Command, uint32 Flags) ExecuteWide;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, PWSTR CommandFile, uint32 Flags) ExecuteCommandFileWide;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, IDebugBreakpoint2** Bp) GetBreakpointByIndex2;
+				public function HRESULT(IDebugControl5 *self, uint32 Id, IDebugBreakpoint2** Bp) GetBreakpointById2;
+				public function HRESULT(IDebugControl5 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint2** Bp) AddBreakpoint2;
+				public function HRESULT(IDebugControl5 *self, IDebugBreakpoint2* Bp) RemoveBreakpoint2;
+				public function HRESULT(IDebugControl5 *self, PWSTR Path, uint32 Flags, uint64* Handle) AddExtensionWide;
+				public function HRESULT(IDebugControl5 *self, PWSTR Path, uint64* Handle) GetExtensionByPathWide;
+				public function HRESULT(IDebugControl5 *self, uint64 Handle, PWSTR Function, PWSTR Arguments) CallExtensionWide;
+				public function HRESULT(IDebugControl5 *self, uint64 Handle, PWSTR FuncName, FARPROC* Function) GetExtensionFunctionWide;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterTextWide;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommandWide;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, PWSTR Command) SetEventFilterCommandWide;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgumentWide;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, PWSTR Argument) SetSpecificFilterArgumentWide;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommandWide;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, PWSTR Command) SetExceptionFilterSecondCommandWide;
+				public function HRESULT(IDebugControl5 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, char16* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformationWide;
+				public function HRESULT(IDebugControl5 *self, PWSTR SrcText, uint32 Index, char16* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, char16* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacementWide;
+				public function HRESULT(IDebugControl5 *self, PWSTR SrcText, PWSTR DstText) SetTextReplacementWide;
+				public function HRESULT(IDebugControl5 *self, PWSTR AbbrevName) SetExpressionSyntaxByNameWide;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNamesWide;
+				public function HRESULT(IDebugControl5 *self, uint32 Index, uint32 Which, PWSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescriptionWide;
+				public function HRESULT(IDebugControl5 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, uint32* Flags) GetLogFile2;
+				public function HRESULT(IDebugControl5 *self, PSTR File, uint32 Flags) OpenLogFile2;
+				public function HRESULT(IDebugControl5 *self, char16* Buffer, uint32 BufferSize, uint32* FileSize, uint32* Flags) GetLogFile2Wide;
+				public function HRESULT(IDebugControl5 *self, PWSTR File, uint32 Flags) OpenLogFile2Wide;
+				public function HRESULT(IDebugControl5 *self, uint32* PlatformId, uint32* Win32Major, uint32* Win32Minor, uint32* KdMajor, uint32* KdMinor) GetSystemVersionValues;
+				public function HRESULT(IDebugControl5 *self, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionString;
+				public function HRESULT(IDebugControl5 *self, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionStringWide;
+				public function HRESULT(IDebugControl5 *self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTrace;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTrace;
+				public function HRESULT(IDebugControl5 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* Context, uint32 ContextSize, uint32* ContextUsed, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed) GetStoredEventInformation;
+				public function HRESULT(IDebugControl5 *self, uint32* Flags, uint32 WhichString, uint8* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatus;
+				public function HRESULT(IDebugControl5 *self, uint32* Flags, uint32 WhichString, char16* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatusWide;
+				public function HRESULT(IDebugControl5 *self, uint32 Flags) ResetManagedStatus;
+				public function HRESULT(IDebugControl5 *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTraceEx;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32 Flags) OutputStackTraceEx;
+				public function HRESULT(IDebugControl5 *self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTraceEx;
+				public function HRESULT(IDebugControl5 *self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTraceEx;
+				public function HRESULT(IDebugControl5 *self, Guid* Guid, IDebugBreakpoint3** Bp) GetBreakpointByGuid;
+			}
 		}
 		[CRepr]
 		public struct IDebugControl6 : IUnknown
 		{
 			public const new Guid IID = .(0xbc0d583f, 0x126d, 0x43a1, 0x9c, 0xc4, 0xa8, 0x60, 0xab, 0x1d, 0x53, 0x7b);
 			
-			public function HRESULT(IDebugControl6 *self) GetInterrupt;
-			public function HRESULT(IDebugControl6 *self, uint32 Flags) SetInterrupt;
-			public function HRESULT(IDebugControl6 *self, uint32* Seconds) GetInterruptTimeout;
-			public function HRESULT(IDebugControl6 *self, uint32 Seconds) SetInterruptTimeout;
-			public function HRESULT(IDebugControl6 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFile;
-			public function HRESULT(IDebugControl6 *self, PSTR File, BOOL Append) OpenLogFile;
-			public function HRESULT(IDebugControl6 *self) CloseLogFile;
-			public function HRESULT(IDebugControl6 *self, uint32* Mask) GetLogMask;
-			public function HRESULT(IDebugControl6 *self, uint32 Mask) SetLogMask;
-			public function HRESULT(IDebugControl6 *self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
-			public function HRESULT(IDebugControl6 *self, PSTR Buffer) ReturnInput;
-			public function HRESULT(IDebugControl6 *self, uint32 Mask, PSTR Format) Output;
-			public function HRESULT(IDebugControl6 *self, uint32 Mask, PSTR Format, int8* Args) OutputVaList;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, uint32 Mask, PSTR Format, int8* Args) ControlledOutputVaList;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, PSTR Format) OutputPrompt;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, PSTR Format, int8* Args) OutputPromptVaList;
-			public function HRESULT(IDebugControl6 *self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl) OutputVersionInformation;
-			public function HRESULT(IDebugControl6 *self, uint64* Handle) GetNotifyEventHandle;
-			public function HRESULT(IDebugControl6 *self, uint64 Handle) SetNotifyEventHandle;
-			public function HRESULT(IDebugControl6 *self, uint64 Offset, PSTR Instr, uint64* EndOffset) Assemble;
-			public function HRESULT(IDebugControl6 *self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) Disassemble;
-			public function HRESULT(IDebugControl6 *self, uint64* Offset) GetDisassembleEffectiveOffset;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, uint64 Offset, uint32 Flags, uint64* EndOffset) OutputDisassembly;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
-			public function HRESULT(IDebugControl6 *self, uint64 Offset, int32 Delta, uint64* NearOffset) GetNearInstruction;
-			public function HRESULT(IDebugControl6 *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
-			public function HRESULT(IDebugControl6 *self, uint64* Offset) GetReturnOffset;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
-			public function HRESULT(IDebugControl6 *self, uint32* Class, uint32* Qualifier) GetDebuggeeType;
-			public function HRESULT(IDebugControl6 *self, uint32* Type) GetActualProcessorType;
-			public function HRESULT(IDebugControl6 *self, uint32* Type) GetExecutingProcessorType;
-			public function HRESULT(IDebugControl6 *self, uint32* Number) GetNumberPossibleExecutingProcessorTypes;
-			public function HRESULT(IDebugControl6 *self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
-			public function HRESULT(IDebugControl6 *self, uint32* Number) GetNumberProcessors;
-			public function HRESULT(IDebugControl6 *self, uint32* PlatformId, uint32* Major, uint32* Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, uint32* ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
-			public function HRESULT(IDebugControl6 *self, uint32* Size) GetPageSize;
-			public function HRESULT(IDebugControl6 *self) IsPointer64Bit;
-			public function HRESULT(IDebugControl6 *self, uint32* Code, uint64* Arg1, uint64* Arg2, uint64* Arg3, uint64* Arg4) ReadBugCheckData;
-			public function HRESULT(IDebugControl6 *self, uint32* Number) GetNumberSupportedProcessorTypes;
-			public function HRESULT(IDebugControl6 *self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
-			public function HRESULT(IDebugControl6 *self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
-			public function HRESULT(IDebugControl6 *self, uint32* Type) GetEffectiveProcessorType;
-			public function HRESULT(IDebugControl6 *self, uint32 Type) SetEffectiveProcessorType;
-			public function HRESULT(IDebugControl6 *self, uint32* Status) GetExecutionStatus;
-			public function HRESULT(IDebugControl6 *self, uint32 Status) SetExecutionStatus;
-			public function HRESULT(IDebugControl6 *self, uint32* Level) GetCodeLevel;
-			public function HRESULT(IDebugControl6 *self, uint32 Level) SetCodeLevel;
-			public function HRESULT(IDebugControl6 *self, uint32* Options) GetEngineOptions;
-			public function HRESULT(IDebugControl6 *self, uint32 Options) AddEngineOptions;
-			public function HRESULT(IDebugControl6 *self, uint32 Options) RemoveEngineOptions;
-			public function HRESULT(IDebugControl6 *self, uint32 Options) SetEngineOptions;
-			public function HRESULT(IDebugControl6 *self, uint32* OutputLevel, uint32* BreakLevel) GetSystemErrorControl;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
-			public function HRESULT(IDebugControl6 *self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
-			public function HRESULT(IDebugControl6 *self, uint32 Slot, PSTR Macro) SetTextMacro;
-			public function HRESULT(IDebugControl6 *self, uint32* Radix) GetRadix;
-			public function HRESULT(IDebugControl6 *self, uint32 Radix) SetRadix;
-			public function HRESULT(IDebugControl6 *self, PSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) Evaluate;
-			public function HRESULT(IDebugControl6 *self, DEBUG_VALUE* In, uint32 OutType, DEBUG_VALUE* Out) CoerceValue;
-			public function HRESULT(IDebugControl6 *self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
-			public function HRESULT(IDebugControl6 *self, uint32* Number) GetNumberBreakpoints;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, IDebugBreakpoint** Bp) GetBreakpointByIndex;
-			public function HRESULT(IDebugControl6 *self, uint32 Id, IDebugBreakpoint** Bp) GetBreakpointById;
-			public function HRESULT(IDebugControl6 *self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
-			public function HRESULT(IDebugControl6 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint** Bp) AddBreakpoint;
-			public function HRESULT(IDebugControl6 *self, IDebugBreakpoint* Bp) RemoveBreakpoint;
-			public function HRESULT(IDebugControl6 *self, PSTR Path, uint32 Flags, uint64* Handle) AddExtension;
-			public function HRESULT(IDebugControl6 *self, uint64 Handle) RemoveExtension;
-			public function HRESULT(IDebugControl6 *self, PSTR Path, uint64* Handle) GetExtensionByPath;
-			public function HRESULT(IDebugControl6 *self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
-			public function HRESULT(IDebugControl6 *self, uint64 Handle, PSTR FuncName, FARPROC* Function) GetExtensionFunction;
-			public function HRESULT(IDebugControl6 *self, WINDBG_EXTENSION_APIS32* Api) GetWindbgExtensionApis32;
-			public function HRESULT(IDebugControl6 *self, WINDBG_EXTENSION_APIS64* Api) GetWindbgExtensionApis64;
-			public function HRESULT(IDebugControl6 *self, uint32* SpecificEvents, uint32* SpecificExceptions, uint32* ArbitraryExceptions) GetNumberEventFilters;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, PSTR Command) SetEventFilterCommand;
-			public function HRESULT(IDebugControl6 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
-			public function HRESULT(IDebugControl6 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
-			public function HRESULT(IDebugControl6 *self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
-			public function HRESULT(IDebugControl6 *self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
-			public function HRESULT(IDebugControl6 *self, uint32 Flags, uint32 Timeout) WaitForEvent;
-			public function HRESULT(IDebugControl6 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
-			public function HRESULT(IDebugControl6 *self, uint32* TimeDate) GetCurrentTimeDate;
-			public function HRESULT(IDebugControl6 *self, uint32* UpTime) GetCurrentSystemUpTime;
-			public function HRESULT(IDebugControl6 *self, uint32* FormatFlags) GetDumpFormatFlags;
-			public function HRESULT(IDebugControl6 *self, uint32* NumRepl) GetNumberTextReplacements;
-			public function HRESULT(IDebugControl6 *self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
-			public function HRESULT(IDebugControl6 *self, PSTR SrcText, PSTR DstText) SetTextReplacement;
-			public function HRESULT(IDebugControl6 *self) RemoveTextReplacements;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
-			public function HRESULT(IDebugControl6 *self, uint32* Options) GetAssemblyOptions;
-			public function HRESULT(IDebugControl6 *self, uint32 Options) AddAssemblyOptions;
-			public function HRESULT(IDebugControl6 *self, uint32 Options) RemoveAssemblyOptions;
-			public function HRESULT(IDebugControl6 *self, uint32 Options) SetAssemblyOptions;
-			public function HRESULT(IDebugControl6 *self, uint32* Flags) GetExpressionSyntax;
-			public function HRESULT(IDebugControl6 *self, uint32 Flags) SetExpressionSyntax;
-			public function HRESULT(IDebugControl6 *self, PSTR AbbrevName) SetExpressionSyntaxByName;
-			public function HRESULT(IDebugControl6 *self, uint32* Number) GetNumberExpressionSyntaxes;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
-			public function HRESULT(IDebugControl6 *self, uint32* Events) GetNumberEvents;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
-			public function HRESULT(IDebugControl6 *self, uint32* Index) GetCurrentEventIndex;
-			public function HRESULT(IDebugControl6 *self, uint32 Relation, uint32 Value, uint32* NextIndex) SetNextEventIndex;
-			public function HRESULT(IDebugControl6 *self, char16* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFileWide;
-			public function HRESULT(IDebugControl6 *self, PWSTR File, BOOL Append) OpenLogFileWide;
-			public function HRESULT(IDebugControl6 *self, char16* Buffer, uint32 BufferSize, uint32* InputSize) InputWide;
-			public function HRESULT(IDebugControl6 *self, PWSTR Buffer) ReturnInputWide;
-			public function HRESULT(IDebugControl6 *self, uint32 Mask, PWSTR Format) OutputWide;
-			public function HRESULT(IDebugControl6 *self, uint32 Mask, PWSTR Format, int8* Args) OutputVaListWide;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, uint32 Mask, PWSTR Format) ControlledOutputWide;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, uint32 Mask, PWSTR Format, int8* Args) ControlledOutputVaListWide;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, PWSTR Format) OutputPromptWide;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, PWSTR Format, int8* Args) OutputPromptVaListWide;
-			public function HRESULT(IDebugControl6 *self, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptTextWide;
-			public function HRESULT(IDebugControl6 *self, uint64 Offset, PWSTR Instr, uint64* EndOffset) AssembleWide;
-			public function HRESULT(IDebugControl6 *self, uint64 Offset, uint32 Flags, char16* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) DisassembleWide;
-			public function HRESULT(IDebugControl6 *self, uint32 Type, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNamesWide;
-			public function HRESULT(IDebugControl6 *self, uint32 Slot, char16* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacroWide;
-			public function HRESULT(IDebugControl6 *self, uint32 Slot, PWSTR Macro) SetTextMacroWide;
-			public function HRESULT(IDebugControl6 *self, PWSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) EvaluateWide;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, PWSTR Command, uint32 Flags) ExecuteWide;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, PWSTR CommandFile, uint32 Flags) ExecuteCommandFileWide;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, IDebugBreakpoint2** Bp) GetBreakpointByIndex2;
-			public function HRESULT(IDebugControl6 *self, uint32 Id, IDebugBreakpoint2** Bp) GetBreakpointById2;
-			public function HRESULT(IDebugControl6 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint2** Bp) AddBreakpoint2;
-			public function HRESULT(IDebugControl6 *self, IDebugBreakpoint2* Bp) RemoveBreakpoint2;
-			public function HRESULT(IDebugControl6 *self, PWSTR Path, uint32 Flags, uint64* Handle) AddExtensionWide;
-			public function HRESULT(IDebugControl6 *self, PWSTR Path, uint64* Handle) GetExtensionByPathWide;
-			public function HRESULT(IDebugControl6 *self, uint64 Handle, PWSTR Function, PWSTR Arguments) CallExtensionWide;
-			public function HRESULT(IDebugControl6 *self, uint64 Handle, PWSTR FuncName, FARPROC* Function) GetExtensionFunctionWide;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterTextWide;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommandWide;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, PWSTR Command) SetEventFilterCommandWide;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgumentWide;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, PWSTR Argument) SetSpecificFilterArgumentWide;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommandWide;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, PWSTR Command) SetExceptionFilterSecondCommandWide;
-			public function HRESULT(IDebugControl6 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, char16* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformationWide;
-			public function HRESULT(IDebugControl6 *self, PWSTR SrcText, uint32 Index, char16* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, char16* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacementWide;
-			public function HRESULT(IDebugControl6 *self, PWSTR SrcText, PWSTR DstText) SetTextReplacementWide;
-			public function HRESULT(IDebugControl6 *self, PWSTR AbbrevName) SetExpressionSyntaxByNameWide;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNamesWide;
-			public function HRESULT(IDebugControl6 *self, uint32 Index, uint32 Which, PWSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescriptionWide;
-			public function HRESULT(IDebugControl6 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, uint32* Flags) GetLogFile2;
-			public function HRESULT(IDebugControl6 *self, PSTR File, uint32 Flags) OpenLogFile2;
-			public function HRESULT(IDebugControl6 *self, char16* Buffer, uint32 BufferSize, uint32* FileSize, uint32* Flags) GetLogFile2Wide;
-			public function HRESULT(IDebugControl6 *self, PWSTR File, uint32 Flags) OpenLogFile2Wide;
-			public function HRESULT(IDebugControl6 *self, uint32* PlatformId, uint32* Win32Major, uint32* Win32Minor, uint32* KdMajor, uint32* KdMinor) GetSystemVersionValues;
-			public function HRESULT(IDebugControl6 *self, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionString;
-			public function HRESULT(IDebugControl6 *self, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionStringWide;
-			public function HRESULT(IDebugControl6 *self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTrace;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTrace;
-			public function HRESULT(IDebugControl6 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* Context, uint32 ContextSize, uint32* ContextUsed, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed) GetStoredEventInformation;
-			public function HRESULT(IDebugControl6 *self, uint32* Flags, uint32 WhichString, uint8* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatus;
-			public function HRESULT(IDebugControl6 *self, uint32* Flags, uint32 WhichString, char16* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatusWide;
-			public function HRESULT(IDebugControl6 *self, uint32 Flags) ResetManagedStatus;
-			public function HRESULT(IDebugControl6 *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTraceEx;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32 Flags) OutputStackTraceEx;
-			public function HRESULT(IDebugControl6 *self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTraceEx;
-			public function HRESULT(IDebugControl6 *self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTraceEx;
-			public function HRESULT(IDebugControl6 *self, Guid* Guid, IDebugBreakpoint3** Bp) GetBreakpointByGuid;
-			public function HRESULT(IDebugControl6 *self, uint32* Status) GetExecutionStatusEx;
-			public function HRESULT(IDebugControl6 *self, uint32* SendsAttempted, uint32* SecondsSinceLastResponse) GetSynchronizationStatus;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugControl6 *self) GetInterrupt;
+				public function HRESULT(IDebugControl6 *self, uint32 Flags) SetInterrupt;
+				public function HRESULT(IDebugControl6 *self, uint32* Seconds) GetInterruptTimeout;
+				public function HRESULT(IDebugControl6 *self, uint32 Seconds) SetInterruptTimeout;
+				public function HRESULT(IDebugControl6 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFile;
+				public function HRESULT(IDebugControl6 *self, PSTR File, BOOL Append) OpenLogFile;
+				public function HRESULT(IDebugControl6 *self) CloseLogFile;
+				public function HRESULT(IDebugControl6 *self, uint32* Mask) GetLogMask;
+				public function HRESULT(IDebugControl6 *self, uint32 Mask) SetLogMask;
+				public function HRESULT(IDebugControl6 *self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
+				public function HRESULT(IDebugControl6 *self, PSTR Buffer) ReturnInput;
+				public function HRESULT(IDebugControl6 *self, uint32 Mask, PSTR Format) Output;
+				public function HRESULT(IDebugControl6 *self, uint32 Mask, PSTR Format, int8* Args) OutputVaList;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, uint32 Mask, PSTR Format, int8* Args) ControlledOutputVaList;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, PSTR Format) OutputPrompt;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, PSTR Format, int8* Args) OutputPromptVaList;
+				public function HRESULT(IDebugControl6 *self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl) OutputVersionInformation;
+				public function HRESULT(IDebugControl6 *self, uint64* Handle) GetNotifyEventHandle;
+				public function HRESULT(IDebugControl6 *self, uint64 Handle) SetNotifyEventHandle;
+				public function HRESULT(IDebugControl6 *self, uint64 Offset, PSTR Instr, uint64* EndOffset) Assemble;
+				public function HRESULT(IDebugControl6 *self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) Disassemble;
+				public function HRESULT(IDebugControl6 *self, uint64* Offset) GetDisassembleEffectiveOffset;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, uint64 Offset, uint32 Flags, uint64* EndOffset) OutputDisassembly;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
+				public function HRESULT(IDebugControl6 *self, uint64 Offset, int32 Delta, uint64* NearOffset) GetNearInstruction;
+				public function HRESULT(IDebugControl6 *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
+				public function HRESULT(IDebugControl6 *self, uint64* Offset) GetReturnOffset;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
+				public function HRESULT(IDebugControl6 *self, uint32* Class, uint32* Qualifier) GetDebuggeeType;
+				public function HRESULT(IDebugControl6 *self, uint32* Type) GetActualProcessorType;
+				public function HRESULT(IDebugControl6 *self, uint32* Type) GetExecutingProcessorType;
+				public function HRESULT(IDebugControl6 *self, uint32* Number) GetNumberPossibleExecutingProcessorTypes;
+				public function HRESULT(IDebugControl6 *self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
+				public function HRESULT(IDebugControl6 *self, uint32* Number) GetNumberProcessors;
+				public function HRESULT(IDebugControl6 *self, uint32* PlatformId, uint32* Major, uint32* Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, uint32* ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
+				public function HRESULT(IDebugControl6 *self, uint32* Size) GetPageSize;
+				public function HRESULT(IDebugControl6 *self) IsPointer64Bit;
+				public function HRESULT(IDebugControl6 *self, uint32* Code, uint64* Arg1, uint64* Arg2, uint64* Arg3, uint64* Arg4) ReadBugCheckData;
+				public function HRESULT(IDebugControl6 *self, uint32* Number) GetNumberSupportedProcessorTypes;
+				public function HRESULT(IDebugControl6 *self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
+				public function HRESULT(IDebugControl6 *self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
+				public function HRESULT(IDebugControl6 *self, uint32* Type) GetEffectiveProcessorType;
+				public function HRESULT(IDebugControl6 *self, uint32 Type) SetEffectiveProcessorType;
+				public function HRESULT(IDebugControl6 *self, uint32* Status) GetExecutionStatus;
+				public function HRESULT(IDebugControl6 *self, uint32 Status) SetExecutionStatus;
+				public function HRESULT(IDebugControl6 *self, uint32* Level) GetCodeLevel;
+				public function HRESULT(IDebugControl6 *self, uint32 Level) SetCodeLevel;
+				public function HRESULT(IDebugControl6 *self, uint32* Options) GetEngineOptions;
+				public function HRESULT(IDebugControl6 *self, uint32 Options) AddEngineOptions;
+				public function HRESULT(IDebugControl6 *self, uint32 Options) RemoveEngineOptions;
+				public function HRESULT(IDebugControl6 *self, uint32 Options) SetEngineOptions;
+				public function HRESULT(IDebugControl6 *self, uint32* OutputLevel, uint32* BreakLevel) GetSystemErrorControl;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
+				public function HRESULT(IDebugControl6 *self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
+				public function HRESULT(IDebugControl6 *self, uint32 Slot, PSTR Macro) SetTextMacro;
+				public function HRESULT(IDebugControl6 *self, uint32* Radix) GetRadix;
+				public function HRESULT(IDebugControl6 *self, uint32 Radix) SetRadix;
+				public function HRESULT(IDebugControl6 *self, PSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) Evaluate;
+				public function HRESULT(IDebugControl6 *self, DEBUG_VALUE* In, uint32 OutType, DEBUG_VALUE* Out) CoerceValue;
+				public function HRESULT(IDebugControl6 *self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
+				public function HRESULT(IDebugControl6 *self, uint32* Number) GetNumberBreakpoints;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, IDebugBreakpoint** Bp) GetBreakpointByIndex;
+				public function HRESULT(IDebugControl6 *self, uint32 Id, IDebugBreakpoint** Bp) GetBreakpointById;
+				public function HRESULT(IDebugControl6 *self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
+				public function HRESULT(IDebugControl6 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint** Bp) AddBreakpoint;
+				public function HRESULT(IDebugControl6 *self, IDebugBreakpoint* Bp) RemoveBreakpoint;
+				public function HRESULT(IDebugControl6 *self, PSTR Path, uint32 Flags, uint64* Handle) AddExtension;
+				public function HRESULT(IDebugControl6 *self, uint64 Handle) RemoveExtension;
+				public function HRESULT(IDebugControl6 *self, PSTR Path, uint64* Handle) GetExtensionByPath;
+				public function HRESULT(IDebugControl6 *self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
+				public function HRESULT(IDebugControl6 *self, uint64 Handle, PSTR FuncName, FARPROC* Function) GetExtensionFunction;
+				public function HRESULT(IDebugControl6 *self, WINDBG_EXTENSION_APIS32* Api) GetWindbgExtensionApis32;
+				public function HRESULT(IDebugControl6 *self, WINDBG_EXTENSION_APIS64* Api) GetWindbgExtensionApis64;
+				public function HRESULT(IDebugControl6 *self, uint32* SpecificEvents, uint32* SpecificExceptions, uint32* ArbitraryExceptions) GetNumberEventFilters;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, PSTR Command) SetEventFilterCommand;
+				public function HRESULT(IDebugControl6 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
+				public function HRESULT(IDebugControl6 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
+				public function HRESULT(IDebugControl6 *self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
+				public function HRESULT(IDebugControl6 *self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
+				public function HRESULT(IDebugControl6 *self, uint32 Flags, uint32 Timeout) WaitForEvent;
+				public function HRESULT(IDebugControl6 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
+				public function HRESULT(IDebugControl6 *self, uint32* TimeDate) GetCurrentTimeDate;
+				public function HRESULT(IDebugControl6 *self, uint32* UpTime) GetCurrentSystemUpTime;
+				public function HRESULT(IDebugControl6 *self, uint32* FormatFlags) GetDumpFormatFlags;
+				public function HRESULT(IDebugControl6 *self, uint32* NumRepl) GetNumberTextReplacements;
+				public function HRESULT(IDebugControl6 *self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
+				public function HRESULT(IDebugControl6 *self, PSTR SrcText, PSTR DstText) SetTextReplacement;
+				public function HRESULT(IDebugControl6 *self) RemoveTextReplacements;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
+				public function HRESULT(IDebugControl6 *self, uint32* Options) GetAssemblyOptions;
+				public function HRESULT(IDebugControl6 *self, uint32 Options) AddAssemblyOptions;
+				public function HRESULT(IDebugControl6 *self, uint32 Options) RemoveAssemblyOptions;
+				public function HRESULT(IDebugControl6 *self, uint32 Options) SetAssemblyOptions;
+				public function HRESULT(IDebugControl6 *self, uint32* Flags) GetExpressionSyntax;
+				public function HRESULT(IDebugControl6 *self, uint32 Flags) SetExpressionSyntax;
+				public function HRESULT(IDebugControl6 *self, PSTR AbbrevName) SetExpressionSyntaxByName;
+				public function HRESULT(IDebugControl6 *self, uint32* Number) GetNumberExpressionSyntaxes;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
+				public function HRESULT(IDebugControl6 *self, uint32* Events) GetNumberEvents;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
+				public function HRESULT(IDebugControl6 *self, uint32* Index) GetCurrentEventIndex;
+				public function HRESULT(IDebugControl6 *self, uint32 Relation, uint32 Value, uint32* NextIndex) SetNextEventIndex;
+				public function HRESULT(IDebugControl6 *self, char16* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFileWide;
+				public function HRESULT(IDebugControl6 *self, PWSTR File, BOOL Append) OpenLogFileWide;
+				public function HRESULT(IDebugControl6 *self, char16* Buffer, uint32 BufferSize, uint32* InputSize) InputWide;
+				public function HRESULT(IDebugControl6 *self, PWSTR Buffer) ReturnInputWide;
+				public function HRESULT(IDebugControl6 *self, uint32 Mask, PWSTR Format) OutputWide;
+				public function HRESULT(IDebugControl6 *self, uint32 Mask, PWSTR Format, int8* Args) OutputVaListWide;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, uint32 Mask, PWSTR Format) ControlledOutputWide;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, uint32 Mask, PWSTR Format, int8* Args) ControlledOutputVaListWide;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, PWSTR Format) OutputPromptWide;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, PWSTR Format, int8* Args) OutputPromptVaListWide;
+				public function HRESULT(IDebugControl6 *self, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptTextWide;
+				public function HRESULT(IDebugControl6 *self, uint64 Offset, PWSTR Instr, uint64* EndOffset) AssembleWide;
+				public function HRESULT(IDebugControl6 *self, uint64 Offset, uint32 Flags, char16* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) DisassembleWide;
+				public function HRESULT(IDebugControl6 *self, uint32 Type, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNamesWide;
+				public function HRESULT(IDebugControl6 *self, uint32 Slot, char16* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacroWide;
+				public function HRESULT(IDebugControl6 *self, uint32 Slot, PWSTR Macro) SetTextMacroWide;
+				public function HRESULT(IDebugControl6 *self, PWSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) EvaluateWide;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, PWSTR Command, uint32 Flags) ExecuteWide;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, PWSTR CommandFile, uint32 Flags) ExecuteCommandFileWide;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, IDebugBreakpoint2** Bp) GetBreakpointByIndex2;
+				public function HRESULT(IDebugControl6 *self, uint32 Id, IDebugBreakpoint2** Bp) GetBreakpointById2;
+				public function HRESULT(IDebugControl6 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint2** Bp) AddBreakpoint2;
+				public function HRESULT(IDebugControl6 *self, IDebugBreakpoint2* Bp) RemoveBreakpoint2;
+				public function HRESULT(IDebugControl6 *self, PWSTR Path, uint32 Flags, uint64* Handle) AddExtensionWide;
+				public function HRESULT(IDebugControl6 *self, PWSTR Path, uint64* Handle) GetExtensionByPathWide;
+				public function HRESULT(IDebugControl6 *self, uint64 Handle, PWSTR Function, PWSTR Arguments) CallExtensionWide;
+				public function HRESULT(IDebugControl6 *self, uint64 Handle, PWSTR FuncName, FARPROC* Function) GetExtensionFunctionWide;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterTextWide;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommandWide;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, PWSTR Command) SetEventFilterCommandWide;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgumentWide;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, PWSTR Argument) SetSpecificFilterArgumentWide;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommandWide;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, PWSTR Command) SetExceptionFilterSecondCommandWide;
+				public function HRESULT(IDebugControl6 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, char16* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformationWide;
+				public function HRESULT(IDebugControl6 *self, PWSTR SrcText, uint32 Index, char16* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, char16* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacementWide;
+				public function HRESULT(IDebugControl6 *self, PWSTR SrcText, PWSTR DstText) SetTextReplacementWide;
+				public function HRESULT(IDebugControl6 *self, PWSTR AbbrevName) SetExpressionSyntaxByNameWide;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNamesWide;
+				public function HRESULT(IDebugControl6 *self, uint32 Index, uint32 Which, PWSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescriptionWide;
+				public function HRESULT(IDebugControl6 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, uint32* Flags) GetLogFile2;
+				public function HRESULT(IDebugControl6 *self, PSTR File, uint32 Flags) OpenLogFile2;
+				public function HRESULT(IDebugControl6 *self, char16* Buffer, uint32 BufferSize, uint32* FileSize, uint32* Flags) GetLogFile2Wide;
+				public function HRESULT(IDebugControl6 *self, PWSTR File, uint32 Flags) OpenLogFile2Wide;
+				public function HRESULT(IDebugControl6 *self, uint32* PlatformId, uint32* Win32Major, uint32* Win32Minor, uint32* KdMajor, uint32* KdMinor) GetSystemVersionValues;
+				public function HRESULT(IDebugControl6 *self, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionString;
+				public function HRESULT(IDebugControl6 *self, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionStringWide;
+				public function HRESULT(IDebugControl6 *self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTrace;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTrace;
+				public function HRESULT(IDebugControl6 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* Context, uint32 ContextSize, uint32* ContextUsed, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed) GetStoredEventInformation;
+				public function HRESULT(IDebugControl6 *self, uint32* Flags, uint32 WhichString, uint8* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatus;
+				public function HRESULT(IDebugControl6 *self, uint32* Flags, uint32 WhichString, char16* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatusWide;
+				public function HRESULT(IDebugControl6 *self, uint32 Flags) ResetManagedStatus;
+				public function HRESULT(IDebugControl6 *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTraceEx;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32 Flags) OutputStackTraceEx;
+				public function HRESULT(IDebugControl6 *self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTraceEx;
+				public function HRESULT(IDebugControl6 *self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTraceEx;
+				public function HRESULT(IDebugControl6 *self, Guid* Guid, IDebugBreakpoint3** Bp) GetBreakpointByGuid;
+				public function HRESULT(IDebugControl6 *self, uint32* Status) GetExecutionStatusEx;
+				public function HRESULT(IDebugControl6 *self, uint32* SendsAttempted, uint32* SecondsSinceLastResponse) GetSynchronizationStatus;
+			}
 		}
 		[CRepr]
 		public struct IDebugControl7 : IUnknown
 		{
 			public const new Guid IID = .(0xb86fb3b1, 0x80d4, 0x475b, 0xae, 0xa3, 0xcf, 0x06, 0x53, 0x9c, 0xf6, 0x3a);
 			
-			public function HRESULT(IDebugControl7 *self) GetInterrupt;
-			public function HRESULT(IDebugControl7 *self, uint32 Flags) SetInterrupt;
-			public function HRESULT(IDebugControl7 *self, uint32* Seconds) GetInterruptTimeout;
-			public function HRESULT(IDebugControl7 *self, uint32 Seconds) SetInterruptTimeout;
-			public function HRESULT(IDebugControl7 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFile;
-			public function HRESULT(IDebugControl7 *self, PSTR File, BOOL Append) OpenLogFile;
-			public function HRESULT(IDebugControl7 *self) CloseLogFile;
-			public function HRESULT(IDebugControl7 *self, uint32* Mask) GetLogMask;
-			public function HRESULT(IDebugControl7 *self, uint32 Mask) SetLogMask;
-			public function HRESULT(IDebugControl7 *self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
-			public function HRESULT(IDebugControl7 *self, PSTR Buffer) ReturnInput;
-			public function HRESULT(IDebugControl7 *self, uint32 Mask, PSTR Format) Output;
-			public function HRESULT(IDebugControl7 *self, uint32 Mask, PSTR Format, int8* Args) OutputVaList;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, uint32 Mask, PSTR Format, int8* Args) ControlledOutputVaList;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, PSTR Format) OutputPrompt;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, PSTR Format, int8* Args) OutputPromptVaList;
-			public function HRESULT(IDebugControl7 *self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl) OutputVersionInformation;
-			public function HRESULT(IDebugControl7 *self, uint64* Handle) GetNotifyEventHandle;
-			public function HRESULT(IDebugControl7 *self, uint64 Handle) SetNotifyEventHandle;
-			public function HRESULT(IDebugControl7 *self, uint64 Offset, PSTR Instr, uint64* EndOffset) Assemble;
-			public function HRESULT(IDebugControl7 *self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) Disassemble;
-			public function HRESULT(IDebugControl7 *self, uint64* Offset) GetDisassembleEffectiveOffset;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, uint64 Offset, uint32 Flags, uint64* EndOffset) OutputDisassembly;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
-			public function HRESULT(IDebugControl7 *self, uint64 Offset, int32 Delta, uint64* NearOffset) GetNearInstruction;
-			public function HRESULT(IDebugControl7 *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
-			public function HRESULT(IDebugControl7 *self, uint64* Offset) GetReturnOffset;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
-			public function HRESULT(IDebugControl7 *self, uint32* Class, uint32* Qualifier) GetDebuggeeType;
-			public function HRESULT(IDebugControl7 *self, uint32* Type) GetActualProcessorType;
-			public function HRESULT(IDebugControl7 *self, uint32* Type) GetExecutingProcessorType;
-			public function HRESULT(IDebugControl7 *self, uint32* Number) GetNumberPossibleExecutingProcessorTypes;
-			public function HRESULT(IDebugControl7 *self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
-			public function HRESULT(IDebugControl7 *self, uint32* Number) GetNumberProcessors;
-			public function HRESULT(IDebugControl7 *self, uint32* PlatformId, uint32* Major, uint32* Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, uint32* ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
-			public function HRESULT(IDebugControl7 *self, uint32* Size) GetPageSize;
-			public function HRESULT(IDebugControl7 *self) IsPointer64Bit;
-			public function HRESULT(IDebugControl7 *self, uint32* Code, uint64* Arg1, uint64* Arg2, uint64* Arg3, uint64* Arg4) ReadBugCheckData;
-			public function HRESULT(IDebugControl7 *self, uint32* Number) GetNumberSupportedProcessorTypes;
-			public function HRESULT(IDebugControl7 *self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
-			public function HRESULT(IDebugControl7 *self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
-			public function HRESULT(IDebugControl7 *self, uint32* Type) GetEffectiveProcessorType;
-			public function HRESULT(IDebugControl7 *self, uint32 Type) SetEffectiveProcessorType;
-			public function HRESULT(IDebugControl7 *self, uint32* Status) GetExecutionStatus;
-			public function HRESULT(IDebugControl7 *self, uint32 Status) SetExecutionStatus;
-			public function HRESULT(IDebugControl7 *self, uint32* Level) GetCodeLevel;
-			public function HRESULT(IDebugControl7 *self, uint32 Level) SetCodeLevel;
-			public function HRESULT(IDebugControl7 *self, uint32* Options) GetEngineOptions;
-			public function HRESULT(IDebugControl7 *self, uint32 Options) AddEngineOptions;
-			public function HRESULT(IDebugControl7 *self, uint32 Options) RemoveEngineOptions;
-			public function HRESULT(IDebugControl7 *self, uint32 Options) SetEngineOptions;
-			public function HRESULT(IDebugControl7 *self, uint32* OutputLevel, uint32* BreakLevel) GetSystemErrorControl;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
-			public function HRESULT(IDebugControl7 *self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
-			public function HRESULT(IDebugControl7 *self, uint32 Slot, PSTR Macro) SetTextMacro;
-			public function HRESULT(IDebugControl7 *self, uint32* Radix) GetRadix;
-			public function HRESULT(IDebugControl7 *self, uint32 Radix) SetRadix;
-			public function HRESULT(IDebugControl7 *self, PSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) Evaluate;
-			public function HRESULT(IDebugControl7 *self, DEBUG_VALUE* In, uint32 OutType, DEBUG_VALUE* Out) CoerceValue;
-			public function HRESULT(IDebugControl7 *self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
-			public function HRESULT(IDebugControl7 *self, uint32* Number) GetNumberBreakpoints;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, IDebugBreakpoint** Bp) GetBreakpointByIndex;
-			public function HRESULT(IDebugControl7 *self, uint32 Id, IDebugBreakpoint** Bp) GetBreakpointById;
-			public function HRESULT(IDebugControl7 *self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
-			public function HRESULT(IDebugControl7 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint** Bp) AddBreakpoint;
-			public function HRESULT(IDebugControl7 *self, IDebugBreakpoint* Bp) RemoveBreakpoint;
-			public function HRESULT(IDebugControl7 *self, PSTR Path, uint32 Flags, uint64* Handle) AddExtension;
-			public function HRESULT(IDebugControl7 *self, uint64 Handle) RemoveExtension;
-			public function HRESULT(IDebugControl7 *self, PSTR Path, uint64* Handle) GetExtensionByPath;
-			public function HRESULT(IDebugControl7 *self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
-			public function HRESULT(IDebugControl7 *self, uint64 Handle, PSTR FuncName, FARPROC* Function) GetExtensionFunction;
-			public function HRESULT(IDebugControl7 *self, WINDBG_EXTENSION_APIS32* Api) GetWindbgExtensionApis32;
-			public function HRESULT(IDebugControl7 *self, WINDBG_EXTENSION_APIS64* Api) GetWindbgExtensionApis64;
-			public function HRESULT(IDebugControl7 *self, uint32* SpecificEvents, uint32* SpecificExceptions, uint32* ArbitraryExceptions) GetNumberEventFilters;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, PSTR Command) SetEventFilterCommand;
-			public function HRESULT(IDebugControl7 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
-			public function HRESULT(IDebugControl7 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
-			public function HRESULT(IDebugControl7 *self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
-			public function HRESULT(IDebugControl7 *self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
-			public function HRESULT(IDebugControl7 *self, uint32 Flags, uint32 Timeout) WaitForEvent;
-			public function HRESULT(IDebugControl7 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
-			public function HRESULT(IDebugControl7 *self, uint32* TimeDate) GetCurrentTimeDate;
-			public function HRESULT(IDebugControl7 *self, uint32* UpTime) GetCurrentSystemUpTime;
-			public function HRESULT(IDebugControl7 *self, uint32* FormatFlags) GetDumpFormatFlags;
-			public function HRESULT(IDebugControl7 *self, uint32* NumRepl) GetNumberTextReplacements;
-			public function HRESULT(IDebugControl7 *self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
-			public function HRESULT(IDebugControl7 *self, PSTR SrcText, PSTR DstText) SetTextReplacement;
-			public function HRESULT(IDebugControl7 *self) RemoveTextReplacements;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
-			public function HRESULT(IDebugControl7 *self, uint32* Options) GetAssemblyOptions;
-			public function HRESULT(IDebugControl7 *self, uint32 Options) AddAssemblyOptions;
-			public function HRESULT(IDebugControl7 *self, uint32 Options) RemoveAssemblyOptions;
-			public function HRESULT(IDebugControl7 *self, uint32 Options) SetAssemblyOptions;
-			public function HRESULT(IDebugControl7 *self, uint32* Flags) GetExpressionSyntax;
-			public function HRESULT(IDebugControl7 *self, uint32 Flags) SetExpressionSyntax;
-			public function HRESULT(IDebugControl7 *self, PSTR AbbrevName) SetExpressionSyntaxByName;
-			public function HRESULT(IDebugControl7 *self, uint32* Number) GetNumberExpressionSyntaxes;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
-			public function HRESULT(IDebugControl7 *self, uint32* Events) GetNumberEvents;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
-			public function HRESULT(IDebugControl7 *self, uint32* Index) GetCurrentEventIndex;
-			public function HRESULT(IDebugControl7 *self, uint32 Relation, uint32 Value, uint32* NextIndex) SetNextEventIndex;
-			public function HRESULT(IDebugControl7 *self, char16* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFileWide;
-			public function HRESULT(IDebugControl7 *self, PWSTR File, BOOL Append) OpenLogFileWide;
-			public function HRESULT(IDebugControl7 *self, char16* Buffer, uint32 BufferSize, uint32* InputSize) InputWide;
-			public function HRESULT(IDebugControl7 *self, PWSTR Buffer) ReturnInputWide;
-			public function HRESULT(IDebugControl7 *self, uint32 Mask, PWSTR Format) OutputWide;
-			public function HRESULT(IDebugControl7 *self, uint32 Mask, PWSTR Format, int8* Args) OutputVaListWide;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, uint32 Mask, PWSTR Format) ControlledOutputWide;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, uint32 Mask, PWSTR Format, int8* Args) ControlledOutputVaListWide;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, PWSTR Format) OutputPromptWide;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, PWSTR Format, int8* Args) OutputPromptVaListWide;
-			public function HRESULT(IDebugControl7 *self, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptTextWide;
-			public function HRESULT(IDebugControl7 *self, uint64 Offset, PWSTR Instr, uint64* EndOffset) AssembleWide;
-			public function HRESULT(IDebugControl7 *self, uint64 Offset, uint32 Flags, char16* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) DisassembleWide;
-			public function HRESULT(IDebugControl7 *self, uint32 Type, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNamesWide;
-			public function HRESULT(IDebugControl7 *self, uint32 Slot, char16* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacroWide;
-			public function HRESULT(IDebugControl7 *self, uint32 Slot, PWSTR Macro) SetTextMacroWide;
-			public function HRESULT(IDebugControl7 *self, PWSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) EvaluateWide;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, PWSTR Command, uint32 Flags) ExecuteWide;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, PWSTR CommandFile, uint32 Flags) ExecuteCommandFileWide;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, IDebugBreakpoint2** Bp) GetBreakpointByIndex2;
-			public function HRESULT(IDebugControl7 *self, uint32 Id, IDebugBreakpoint2** Bp) GetBreakpointById2;
-			public function HRESULT(IDebugControl7 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint2** Bp) AddBreakpoint2;
-			public function HRESULT(IDebugControl7 *self, IDebugBreakpoint2* Bp) RemoveBreakpoint2;
-			public function HRESULT(IDebugControl7 *self, PWSTR Path, uint32 Flags, uint64* Handle) AddExtensionWide;
-			public function HRESULT(IDebugControl7 *self, PWSTR Path, uint64* Handle) GetExtensionByPathWide;
-			public function HRESULT(IDebugControl7 *self, uint64 Handle, PWSTR Function, PWSTR Arguments) CallExtensionWide;
-			public function HRESULT(IDebugControl7 *self, uint64 Handle, PWSTR FuncName, FARPROC* Function) GetExtensionFunctionWide;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterTextWide;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommandWide;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, PWSTR Command) SetEventFilterCommandWide;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgumentWide;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, PWSTR Argument) SetSpecificFilterArgumentWide;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommandWide;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, PWSTR Command) SetExceptionFilterSecondCommandWide;
-			public function HRESULT(IDebugControl7 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, char16* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformationWide;
-			public function HRESULT(IDebugControl7 *self, PWSTR SrcText, uint32 Index, char16* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, char16* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacementWide;
-			public function HRESULT(IDebugControl7 *self, PWSTR SrcText, PWSTR DstText) SetTextReplacementWide;
-			public function HRESULT(IDebugControl7 *self, PWSTR AbbrevName) SetExpressionSyntaxByNameWide;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNamesWide;
-			public function HRESULT(IDebugControl7 *self, uint32 Index, uint32 Which, PWSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescriptionWide;
-			public function HRESULT(IDebugControl7 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, uint32* Flags) GetLogFile2;
-			public function HRESULT(IDebugControl7 *self, PSTR File, uint32 Flags) OpenLogFile2;
-			public function HRESULT(IDebugControl7 *self, char16* Buffer, uint32 BufferSize, uint32* FileSize, uint32* Flags) GetLogFile2Wide;
-			public function HRESULT(IDebugControl7 *self, PWSTR File, uint32 Flags) OpenLogFile2Wide;
-			public function HRESULT(IDebugControl7 *self, uint32* PlatformId, uint32* Win32Major, uint32* Win32Minor, uint32* KdMajor, uint32* KdMinor) GetSystemVersionValues;
-			public function HRESULT(IDebugControl7 *self, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionString;
-			public function HRESULT(IDebugControl7 *self, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionStringWide;
-			public function HRESULT(IDebugControl7 *self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTrace;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTrace;
-			public function HRESULT(IDebugControl7 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* Context, uint32 ContextSize, uint32* ContextUsed, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed) GetStoredEventInformation;
-			public function HRESULT(IDebugControl7 *self, uint32* Flags, uint32 WhichString, uint8* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatus;
-			public function HRESULT(IDebugControl7 *self, uint32* Flags, uint32 WhichString, char16* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatusWide;
-			public function HRESULT(IDebugControl7 *self, uint32 Flags) ResetManagedStatus;
-			public function HRESULT(IDebugControl7 *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTraceEx;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32 Flags) OutputStackTraceEx;
-			public function HRESULT(IDebugControl7 *self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTraceEx;
-			public function HRESULT(IDebugControl7 *self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTraceEx;
-			public function HRESULT(IDebugControl7 *self, Guid* Guid, IDebugBreakpoint3** Bp) GetBreakpointByGuid;
-			public function HRESULT(IDebugControl7 *self, uint32* Status) GetExecutionStatusEx;
-			public function HRESULT(IDebugControl7 *self, uint32* SendsAttempted, uint32* SecondsSinceLastResponse) GetSynchronizationStatus;
-			public function HRESULT(IDebugControl7 *self, uint32 Flags, uint32* Class, uint32* Qualifier) GetDebuggeeType2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugControl7 *self) GetInterrupt;
+				public function HRESULT(IDebugControl7 *self, uint32 Flags) SetInterrupt;
+				public function HRESULT(IDebugControl7 *self, uint32* Seconds) GetInterruptTimeout;
+				public function HRESULT(IDebugControl7 *self, uint32 Seconds) SetInterruptTimeout;
+				public function HRESULT(IDebugControl7 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFile;
+				public function HRESULT(IDebugControl7 *self, PSTR File, BOOL Append) OpenLogFile;
+				public function HRESULT(IDebugControl7 *self) CloseLogFile;
+				public function HRESULT(IDebugControl7 *self, uint32* Mask) GetLogMask;
+				public function HRESULT(IDebugControl7 *self, uint32 Mask) SetLogMask;
+				public function HRESULT(IDebugControl7 *self, uint8* Buffer, uint32 BufferSize, uint32* InputSize) Input;
+				public function HRESULT(IDebugControl7 *self, PSTR Buffer) ReturnInput;
+				public function HRESULT(IDebugControl7 *self, uint32 Mask, PSTR Format) Output;
+				public function HRESULT(IDebugControl7 *self, uint32 Mask, PSTR Format, int8* Args) OutputVaList;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, uint32 Mask, PSTR Format) ControlledOutput;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, uint32 Mask, PSTR Format, int8* Args) ControlledOutputVaList;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, PSTR Format) OutputPrompt;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, PSTR Format, int8* Args) OutputPromptVaList;
+				public function HRESULT(IDebugControl7 *self, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptText;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, uint32 Flags) OutputCurrentState;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl) OutputVersionInformation;
+				public function HRESULT(IDebugControl7 *self, uint64* Handle) GetNotifyEventHandle;
+				public function HRESULT(IDebugControl7 *self, uint64 Handle) SetNotifyEventHandle;
+				public function HRESULT(IDebugControl7 *self, uint64 Offset, PSTR Instr, uint64* EndOffset) Assemble;
+				public function HRESULT(IDebugControl7 *self, uint64 Offset, uint32 Flags, uint8* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) Disassemble;
+				public function HRESULT(IDebugControl7 *self, uint64* Offset) GetDisassembleEffectiveOffset;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, uint64 Offset, uint32 Flags, uint64* EndOffset) OutputDisassembly;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, uint32 PreviousLines, uint32 TotalLines, uint64 Offset, uint32 Flags, uint32* OffsetLine, uint64* StartOffset, uint64* EndOffset, uint64* LineOffsets) OutputDisassemblyLines;
+				public function HRESULT(IDebugControl7 *self, uint64 Offset, int32 Delta, uint64* NearOffset) GetNearInstruction;
+				public function HRESULT(IDebugControl7 *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTrace;
+				public function HRESULT(IDebugControl7 *self, uint64* Offset) GetReturnOffset;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, uint32 Flags) OutputStackTrace;
+				public function HRESULT(IDebugControl7 *self, uint32* Class, uint32* Qualifier) GetDebuggeeType;
+				public function HRESULT(IDebugControl7 *self, uint32* Type) GetActualProcessorType;
+				public function HRESULT(IDebugControl7 *self, uint32* Type) GetExecutingProcessorType;
+				public function HRESULT(IDebugControl7 *self, uint32* Number) GetNumberPossibleExecutingProcessorTypes;
+				public function HRESULT(IDebugControl7 *self, uint32 Start, uint32 Count, uint32* Types) GetPossibleExecutingProcessorTypes;
+				public function HRESULT(IDebugControl7 *self, uint32* Number) GetNumberProcessors;
+				public function HRESULT(IDebugControl7 *self, uint32* PlatformId, uint32* Major, uint32* Minor, uint8* ServicePackString, uint32 ServicePackStringSize, uint32* ServicePackStringUsed, uint32* ServicePackNumber, uint8* BuildString, uint32 BuildStringSize, uint32* BuildStringUsed) GetSystemVersion;
+				public function HRESULT(IDebugControl7 *self, uint32* Size) GetPageSize;
+				public function HRESULT(IDebugControl7 *self) IsPointer64Bit;
+				public function HRESULT(IDebugControl7 *self, uint32* Code, uint64* Arg1, uint64* Arg2, uint64* Arg3, uint64* Arg4) ReadBugCheckData;
+				public function HRESULT(IDebugControl7 *self, uint32* Number) GetNumberSupportedProcessorTypes;
+				public function HRESULT(IDebugControl7 *self, uint32 Start, uint32 Count, uint32* Types) GetSupportedProcessorTypes;
+				public function HRESULT(IDebugControl7 *self, uint32 Type, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNames;
+				public function HRESULT(IDebugControl7 *self, uint32* Type) GetEffectiveProcessorType;
+				public function HRESULT(IDebugControl7 *self, uint32 Type) SetEffectiveProcessorType;
+				public function HRESULT(IDebugControl7 *self, uint32* Status) GetExecutionStatus;
+				public function HRESULT(IDebugControl7 *self, uint32 Status) SetExecutionStatus;
+				public function HRESULT(IDebugControl7 *self, uint32* Level) GetCodeLevel;
+				public function HRESULT(IDebugControl7 *self, uint32 Level) SetCodeLevel;
+				public function HRESULT(IDebugControl7 *self, uint32* Options) GetEngineOptions;
+				public function HRESULT(IDebugControl7 *self, uint32 Options) AddEngineOptions;
+				public function HRESULT(IDebugControl7 *self, uint32 Options) RemoveEngineOptions;
+				public function HRESULT(IDebugControl7 *self, uint32 Options) SetEngineOptions;
+				public function HRESULT(IDebugControl7 *self, uint32* OutputLevel, uint32* BreakLevel) GetSystemErrorControl;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputLevel, uint32 BreakLevel) SetSystemErrorControl;
+				public function HRESULT(IDebugControl7 *self, uint32 Slot, uint8* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacro;
+				public function HRESULT(IDebugControl7 *self, uint32 Slot, PSTR Macro) SetTextMacro;
+				public function HRESULT(IDebugControl7 *self, uint32* Radix) GetRadix;
+				public function HRESULT(IDebugControl7 *self, uint32 Radix) SetRadix;
+				public function HRESULT(IDebugControl7 *self, PSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) Evaluate;
+				public function HRESULT(IDebugControl7 *self, DEBUG_VALUE* In, uint32 OutType, DEBUG_VALUE* Out) CoerceValue;
+				public function HRESULT(IDebugControl7 *self, uint32 Count, DEBUG_VALUE* In, uint32* OutTypes, DEBUG_VALUE* Out) CoerceValues;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, PSTR Command, uint32 Flags) Execute;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, PSTR CommandFile, uint32 Flags) ExecuteCommandFile;
+				public function HRESULT(IDebugControl7 *self, uint32* Number) GetNumberBreakpoints;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, IDebugBreakpoint** Bp) GetBreakpointByIndex;
+				public function HRESULT(IDebugControl7 *self, uint32 Id, IDebugBreakpoint** Bp) GetBreakpointById;
+				public function HRESULT(IDebugControl7 *self, uint32 Count, uint32* Ids, uint32 Start, DEBUG_BREAKPOINT_PARAMETERS* Params) GetBreakpointParameters;
+				public function HRESULT(IDebugControl7 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint** Bp) AddBreakpoint;
+				public function HRESULT(IDebugControl7 *self, IDebugBreakpoint* Bp) RemoveBreakpoint;
+				public function HRESULT(IDebugControl7 *self, PSTR Path, uint32 Flags, uint64* Handle) AddExtension;
+				public function HRESULT(IDebugControl7 *self, uint64 Handle) RemoveExtension;
+				public function HRESULT(IDebugControl7 *self, PSTR Path, uint64* Handle) GetExtensionByPath;
+				public function HRESULT(IDebugControl7 *self, uint64 Handle, PSTR Function, PSTR Arguments) CallExtension;
+				public function HRESULT(IDebugControl7 *self, uint64 Handle, PSTR FuncName, FARPROC* Function) GetExtensionFunction;
+				public function HRESULT(IDebugControl7 *self, WINDBG_EXTENSION_APIS32* Api) GetWindbgExtensionApis32;
+				public function HRESULT(IDebugControl7 *self, WINDBG_EXTENSION_APIS64* Api) GetWindbgExtensionApis64;
+				public function HRESULT(IDebugControl7 *self, uint32* SpecificEvents, uint32* SpecificExceptions, uint32* ArbitraryExceptions) GetNumberEventFilters;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterText;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommand;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, PSTR Command) SetEventFilterCommand;
+				public function HRESULT(IDebugControl7 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) GetSpecificFilterParameters;
+				public function HRESULT(IDebugControl7 *self, uint32 Start, uint32 Count, DEBUG_SPECIFIC_FILTER_PARAMETERS* Params) SetSpecificFilterParameters;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgument;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, PSTR Argument) SetSpecificFilterArgument;
+				public function HRESULT(IDebugControl7 *self, uint32 Count, uint32* Codes, uint32 Start, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) GetExceptionFilterParameters;
+				public function HRESULT(IDebugControl7 *self, uint32 Count, DEBUG_EXCEPTION_FILTER_PARAMETERS* Params) SetExceptionFilterParameters;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommand;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, PSTR Command) SetExceptionFilterSecondCommand;
+				public function HRESULT(IDebugControl7 *self, uint32 Flags, uint32 Timeout) WaitForEvent;
+				public function HRESULT(IDebugControl7 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, uint8* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformation;
+				public function HRESULT(IDebugControl7 *self, uint32* TimeDate) GetCurrentTimeDate;
+				public function HRESULT(IDebugControl7 *self, uint32* UpTime) GetCurrentSystemUpTime;
+				public function HRESULT(IDebugControl7 *self, uint32* FormatFlags) GetDumpFormatFlags;
+				public function HRESULT(IDebugControl7 *self, uint32* NumRepl) GetNumberTextReplacements;
+				public function HRESULT(IDebugControl7 *self, PSTR SrcText, uint32 Index, uint8* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, uint8* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacement;
+				public function HRESULT(IDebugControl7 *self, PSTR SrcText, PSTR DstText) SetTextReplacement;
+				public function HRESULT(IDebugControl7 *self) RemoveTextReplacements;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, uint32 Flags) OutputTextReplacements;
+				public function HRESULT(IDebugControl7 *self, uint32* Options) GetAssemblyOptions;
+				public function HRESULT(IDebugControl7 *self, uint32 Options) AddAssemblyOptions;
+				public function HRESULT(IDebugControl7 *self, uint32 Options) RemoveAssemblyOptions;
+				public function HRESULT(IDebugControl7 *self, uint32 Options) SetAssemblyOptions;
+				public function HRESULT(IDebugControl7 *self, uint32* Flags) GetExpressionSyntax;
+				public function HRESULT(IDebugControl7 *self, uint32 Flags) SetExpressionSyntax;
+				public function HRESULT(IDebugControl7 *self, PSTR AbbrevName) SetExpressionSyntaxByName;
+				public function HRESULT(IDebugControl7 *self, uint32* Number) GetNumberExpressionSyntaxes;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, uint8* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, uint8* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNames;
+				public function HRESULT(IDebugControl7 *self, uint32* Events) GetNumberEvents;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, uint32 Which, PSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescription;
+				public function HRESULT(IDebugControl7 *self, uint32* Index) GetCurrentEventIndex;
+				public function HRESULT(IDebugControl7 *self, uint32 Relation, uint32 Value, uint32* NextIndex) SetNextEventIndex;
+				public function HRESULT(IDebugControl7 *self, char16* Buffer, uint32 BufferSize, uint32* FileSize, BOOL* Append) GetLogFileWide;
+				public function HRESULT(IDebugControl7 *self, PWSTR File, BOOL Append) OpenLogFileWide;
+				public function HRESULT(IDebugControl7 *self, char16* Buffer, uint32 BufferSize, uint32* InputSize) InputWide;
+				public function HRESULT(IDebugControl7 *self, PWSTR Buffer) ReturnInputWide;
+				public function HRESULT(IDebugControl7 *self, uint32 Mask, PWSTR Format) OutputWide;
+				public function HRESULT(IDebugControl7 *self, uint32 Mask, PWSTR Format, int8* Args) OutputVaListWide;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, uint32 Mask, PWSTR Format) ControlledOutputWide;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, uint32 Mask, PWSTR Format, int8* Args) ControlledOutputVaListWide;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, PWSTR Format) OutputPromptWide;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, PWSTR Format, int8* Args) OutputPromptVaListWide;
+				public function HRESULT(IDebugControl7 *self, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetPromptTextWide;
+				public function HRESULT(IDebugControl7 *self, uint64 Offset, PWSTR Instr, uint64* EndOffset) AssembleWide;
+				public function HRESULT(IDebugControl7 *self, uint64 Offset, uint32 Flags, char16* Buffer, uint32 BufferSize, uint32* DisassemblySize, uint64* EndOffset) DisassembleWide;
+				public function HRESULT(IDebugControl7 *self, uint32 Type, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetProcessorTypeNamesWide;
+				public function HRESULT(IDebugControl7 *self, uint32 Slot, char16* Buffer, uint32 BufferSize, uint32* MacroSize) GetTextMacroWide;
+				public function HRESULT(IDebugControl7 *self, uint32 Slot, PWSTR Macro) SetTextMacroWide;
+				public function HRESULT(IDebugControl7 *self, PWSTR Expression, uint32 DesiredType, DEBUG_VALUE* Value, uint32* RemainderIndex) EvaluateWide;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, PWSTR Command, uint32 Flags) ExecuteWide;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, PWSTR CommandFile, uint32 Flags) ExecuteCommandFileWide;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, IDebugBreakpoint2** Bp) GetBreakpointByIndex2;
+				public function HRESULT(IDebugControl7 *self, uint32 Id, IDebugBreakpoint2** Bp) GetBreakpointById2;
+				public function HRESULT(IDebugControl7 *self, uint32 Type, uint32 DesiredId, IDebugBreakpoint2** Bp) AddBreakpoint2;
+				public function HRESULT(IDebugControl7 *self, IDebugBreakpoint2* Bp) RemoveBreakpoint2;
+				public function HRESULT(IDebugControl7 *self, PWSTR Path, uint32 Flags, uint64* Handle) AddExtensionWide;
+				public function HRESULT(IDebugControl7 *self, PWSTR Path, uint64* Handle) GetExtensionByPathWide;
+				public function HRESULT(IDebugControl7 *self, uint64 Handle, PWSTR Function, PWSTR Arguments) CallExtensionWide;
+				public function HRESULT(IDebugControl7 *self, uint64 Handle, PWSTR FuncName, FARPROC* Function) GetExtensionFunctionWide;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* TextSize) GetEventFilterTextWide;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetEventFilterCommandWide;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, PWSTR Command) SetEventFilterCommandWide;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ArgumentSize) GetSpecificFilterArgumentWide;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, PWSTR Argument) SetSpecificFilterArgumentWide;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* CommandSize) GetExceptionFilterSecondCommandWide;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, PWSTR Command) SetExceptionFilterSecondCommandWide;
+				public function HRESULT(IDebugControl7 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed, char16* Description, uint32 DescriptionSize, uint32* DescriptionUsed) GetLastEventInformationWide;
+				public function HRESULT(IDebugControl7 *self, PWSTR SrcText, uint32 Index, char16* SrcBuffer, uint32 SrcBufferSize, uint32* SrcSize, char16* DstBuffer, uint32 DstBufferSize, uint32* DstSize) GetTextReplacementWide;
+				public function HRESULT(IDebugControl7 *self, PWSTR SrcText, PWSTR DstText) SetTextReplacementWide;
+				public function HRESULT(IDebugControl7 *self, PWSTR AbbrevName) SetExpressionSyntaxByNameWide;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, char16* FullNameBuffer, uint32 FullNameBufferSize, uint32* FullNameSize, char16* AbbrevNameBuffer, uint32 AbbrevNameBufferSize, uint32* AbbrevNameSize) GetExpressionSyntaxNamesWide;
+				public function HRESULT(IDebugControl7 *self, uint32 Index, uint32 Which, PWSTR Buffer, uint32 BufferSize, uint32* DescSize) GetEventIndexDescriptionWide;
+				public function HRESULT(IDebugControl7 *self, uint8* Buffer, uint32 BufferSize, uint32* FileSize, uint32* Flags) GetLogFile2;
+				public function HRESULT(IDebugControl7 *self, PSTR File, uint32 Flags) OpenLogFile2;
+				public function HRESULT(IDebugControl7 *self, char16* Buffer, uint32 BufferSize, uint32* FileSize, uint32* Flags) GetLogFile2Wide;
+				public function HRESULT(IDebugControl7 *self, PWSTR File, uint32 Flags) OpenLogFile2Wide;
+				public function HRESULT(IDebugControl7 *self, uint32* PlatformId, uint32* Win32Major, uint32* Win32Minor, uint32* KdMajor, uint32* KdMinor) GetSystemVersionValues;
+				public function HRESULT(IDebugControl7 *self, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionString;
+				public function HRESULT(IDebugControl7 *self, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSystemVersionStringWide;
+				public function HRESULT(IDebugControl7 *self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTrace;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, DEBUG_STACK_FRAME* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTrace;
+				public function HRESULT(IDebugControl7 *self, uint32* Type, uint32* ProcessId, uint32* ThreadId, void* Context, uint32 ContextSize, uint32* ContextUsed, void* ExtraInformation, uint32 ExtraInformationSize, uint32* ExtraInformationUsed) GetStoredEventInformation;
+				public function HRESULT(IDebugControl7 *self, uint32* Flags, uint32 WhichString, uint8* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatus;
+				public function HRESULT(IDebugControl7 *self, uint32* Flags, uint32 WhichString, char16* String, uint32 StringSize, uint32* StringNeeded) GetManagedStatusWide;
+				public function HRESULT(IDebugControl7 *self, uint32 Flags) ResetManagedStatus;
+				public function HRESULT(IDebugControl7 *self, uint64 FrameOffset, uint64 StackOffset, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32* FramesFilled) GetStackTraceEx;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, uint32 Flags) OutputStackTraceEx;
+				public function HRESULT(IDebugControl7 *self, void* StartContext, uint32 StartContextSize, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32* FramesFilled) GetContextStackTraceEx;
+				public function HRESULT(IDebugControl7 *self, uint32 OutputControl, DEBUG_STACK_FRAME_EX* Frames, uint32 FramesSize, void* FrameContexts, uint32 FrameContextsSize, uint32 FrameContextsEntrySize, uint32 Flags) OutputContextStackTraceEx;
+				public function HRESULT(IDebugControl7 *self, Guid* Guid, IDebugBreakpoint3** Bp) GetBreakpointByGuid;
+				public function HRESULT(IDebugControl7 *self, uint32* Status) GetExecutionStatusEx;
+				public function HRESULT(IDebugControl7 *self, uint32* SendsAttempted, uint32* SecondsSinceLastResponse) GetSynchronizationStatus;
+				public function HRESULT(IDebugControl7 *self, uint32 Flags, uint32* Class, uint32* Qualifier) GetDebuggeeType2;
+			}
 		}
 		[CRepr]
 		public struct IDebugDataSpaces : IUnknown
 		{
 			public const new Guid IID = .(0x88f7dfab, 0x3ea7, 0x4c3a, 0xae, 0xfb, 0xc4, 0xe8, 0x10, 0x61, 0x73, 0xaa);
 			
-			public function HRESULT(IDebugDataSpaces *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtual;
-			public function HRESULT(IDebugDataSpaces *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtual;
-			public function HRESULT(IDebugDataSpaces *self, uint64 Offset, uint64 Length, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, uint64* MatchOffset) SearchVirtual;
-			public function HRESULT(IDebugDataSpaces *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtualUncached;
-			public function HRESULT(IDebugDataSpaces *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtualUncached;
-			public function HRESULT(IDebugDataSpaces *self, uint32 Count, uint64 Offset, uint64* Ptrs) ReadPointersVirtual;
-			public function HRESULT(IDebugDataSpaces *self, uint32 Count, uint64 Offset, uint64* Ptrs) WritePointersVirtual;
-			public function HRESULT(IDebugDataSpaces *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical;
-			public function HRESULT(IDebugDataSpaces *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical;
-			public function HRESULT(IDebugDataSpaces *self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadControl;
-			public function HRESULT(IDebugDataSpaces *self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteControl;
-			public function HRESULT(IDebugDataSpaces *self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadIo;
-			public function HRESULT(IDebugDataSpaces *self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteIo;
-			public function HRESULT(IDebugDataSpaces *self, uint32 Msr, uint64* Value) ReadMsr;
-			public function HRESULT(IDebugDataSpaces *self, uint32 Msr, uint64 Value) WriteMsr;
-			public function HRESULT(IDebugDataSpaces *self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadBusData;
-			public function HRESULT(IDebugDataSpaces *self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteBusData;
-			public function HRESULT(IDebugDataSpaces *self) CheckLowMemory;
-			public function HRESULT(IDebugDataSpaces *self, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadDebuggerData;
-			public function HRESULT(IDebugDataSpaces *self, uint32 Processor, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadProcessorSystemData;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugDataSpaces *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtual;
+				public function HRESULT(IDebugDataSpaces *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtual;
+				public function HRESULT(IDebugDataSpaces *self, uint64 Offset, uint64 Length, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, uint64* MatchOffset) SearchVirtual;
+				public function HRESULT(IDebugDataSpaces *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtualUncached;
+				public function HRESULT(IDebugDataSpaces *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtualUncached;
+				public function HRESULT(IDebugDataSpaces *self, uint32 Count, uint64 Offset, uint64* Ptrs) ReadPointersVirtual;
+				public function HRESULT(IDebugDataSpaces *self, uint32 Count, uint64 Offset, uint64* Ptrs) WritePointersVirtual;
+				public function HRESULT(IDebugDataSpaces *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical;
+				public function HRESULT(IDebugDataSpaces *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical;
+				public function HRESULT(IDebugDataSpaces *self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadControl;
+				public function HRESULT(IDebugDataSpaces *self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteControl;
+				public function HRESULT(IDebugDataSpaces *self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadIo;
+				public function HRESULT(IDebugDataSpaces *self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteIo;
+				public function HRESULT(IDebugDataSpaces *self, uint32 Msr, uint64* Value) ReadMsr;
+				public function HRESULT(IDebugDataSpaces *self, uint32 Msr, uint64 Value) WriteMsr;
+				public function HRESULT(IDebugDataSpaces *self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadBusData;
+				public function HRESULT(IDebugDataSpaces *self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteBusData;
+				public function HRESULT(IDebugDataSpaces *self) CheckLowMemory;
+				public function HRESULT(IDebugDataSpaces *self, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadDebuggerData;
+				public function HRESULT(IDebugDataSpaces *self, uint32 Processor, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadProcessorSystemData;
+			}
 		}
 		[CRepr]
 		public struct IDebugDataSpaces2 : IUnknown
 		{
 			public const new Guid IID = .(0x7a5e852f, 0x96e9, 0x468f, 0xac, 0x1b, 0x0b, 0x3a, 0xdd, 0xc4, 0xa0, 0x49);
 			
-			public function HRESULT(IDebugDataSpaces2 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtual;
-			public function HRESULT(IDebugDataSpaces2 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtual;
-			public function HRESULT(IDebugDataSpaces2 *self, uint64 Offset, uint64 Length, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, uint64* MatchOffset) SearchVirtual;
-			public function HRESULT(IDebugDataSpaces2 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtualUncached;
-			public function HRESULT(IDebugDataSpaces2 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtualUncached;
-			public function HRESULT(IDebugDataSpaces2 *self, uint32 Count, uint64 Offset, uint64* Ptrs) ReadPointersVirtual;
-			public function HRESULT(IDebugDataSpaces2 *self, uint32 Count, uint64 Offset, uint64* Ptrs) WritePointersVirtual;
-			public function HRESULT(IDebugDataSpaces2 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical;
-			public function HRESULT(IDebugDataSpaces2 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical;
-			public function HRESULT(IDebugDataSpaces2 *self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadControl;
-			public function HRESULT(IDebugDataSpaces2 *self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteControl;
-			public function HRESULT(IDebugDataSpaces2 *self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadIo;
-			public function HRESULT(IDebugDataSpaces2 *self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteIo;
-			public function HRESULT(IDebugDataSpaces2 *self, uint32 Msr, uint64* Value) ReadMsr;
-			public function HRESULT(IDebugDataSpaces2 *self, uint32 Msr, uint64 Value) WriteMsr;
-			public function HRESULT(IDebugDataSpaces2 *self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadBusData;
-			public function HRESULT(IDebugDataSpaces2 *self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteBusData;
-			public function HRESULT(IDebugDataSpaces2 *self) CheckLowMemory;
-			public function HRESULT(IDebugDataSpaces2 *self, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadDebuggerData;
-			public function HRESULT(IDebugDataSpaces2 *self, uint32 Processor, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadProcessorSystemData;
-			public function HRESULT(IDebugDataSpaces2 *self, uint64 Virtual, uint64* Physical) VirtualToPhysical;
-			public function HRESULT(IDebugDataSpaces2 *self, uint64 Virtual, uint64* Offsets, uint32 OffsetsSize, uint32* Levels) GetVirtualTranslationPhysicalOffsets;
-			public function HRESULT(IDebugDataSpaces2 *self, uint64 Handle, uint32 DataType, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadHandleData;
-			public function HRESULT(IDebugDataSpaces2 *self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillVirtual;
-			public function HRESULT(IDebugDataSpaces2 *self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillPhysical;
-			public function HRESULT(IDebugDataSpaces2 *self, uint64 Offset, MEMORY_BASIC_INFORMATION64* Info) QueryVirtual;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugDataSpaces2 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtual;
+				public function HRESULT(IDebugDataSpaces2 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtual;
+				public function HRESULT(IDebugDataSpaces2 *self, uint64 Offset, uint64 Length, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, uint64* MatchOffset) SearchVirtual;
+				public function HRESULT(IDebugDataSpaces2 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtualUncached;
+				public function HRESULT(IDebugDataSpaces2 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtualUncached;
+				public function HRESULT(IDebugDataSpaces2 *self, uint32 Count, uint64 Offset, uint64* Ptrs) ReadPointersVirtual;
+				public function HRESULT(IDebugDataSpaces2 *self, uint32 Count, uint64 Offset, uint64* Ptrs) WritePointersVirtual;
+				public function HRESULT(IDebugDataSpaces2 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical;
+				public function HRESULT(IDebugDataSpaces2 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical;
+				public function HRESULT(IDebugDataSpaces2 *self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadControl;
+				public function HRESULT(IDebugDataSpaces2 *self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteControl;
+				public function HRESULT(IDebugDataSpaces2 *self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadIo;
+				public function HRESULT(IDebugDataSpaces2 *self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteIo;
+				public function HRESULT(IDebugDataSpaces2 *self, uint32 Msr, uint64* Value) ReadMsr;
+				public function HRESULT(IDebugDataSpaces2 *self, uint32 Msr, uint64 Value) WriteMsr;
+				public function HRESULT(IDebugDataSpaces2 *self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadBusData;
+				public function HRESULT(IDebugDataSpaces2 *self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteBusData;
+				public function HRESULT(IDebugDataSpaces2 *self) CheckLowMemory;
+				public function HRESULT(IDebugDataSpaces2 *self, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadDebuggerData;
+				public function HRESULT(IDebugDataSpaces2 *self, uint32 Processor, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadProcessorSystemData;
+				public function HRESULT(IDebugDataSpaces2 *self, uint64 Virtual, uint64* Physical) VirtualToPhysical;
+				public function HRESULT(IDebugDataSpaces2 *self, uint64 Virtual, uint64* Offsets, uint32 OffsetsSize, uint32* Levels) GetVirtualTranslationPhysicalOffsets;
+				public function HRESULT(IDebugDataSpaces2 *self, uint64 Handle, uint32 DataType, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadHandleData;
+				public function HRESULT(IDebugDataSpaces2 *self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillVirtual;
+				public function HRESULT(IDebugDataSpaces2 *self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillPhysical;
+				public function HRESULT(IDebugDataSpaces2 *self, uint64 Offset, MEMORY_BASIC_INFORMATION64* Info) QueryVirtual;
+			}
 		}
 		[CRepr]
 		public struct IDebugDataSpaces3 : IUnknown
 		{
 			public const new Guid IID = .(0x23f79d6c, 0x8aaf, 0x4f7c, 0xa6, 0x07, 0x99, 0x95, 0xf5, 0x40, 0x7e, 0x63);
 			
-			public function HRESULT(IDebugDataSpaces3 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtual;
-			public function HRESULT(IDebugDataSpaces3 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtual;
-			public function HRESULT(IDebugDataSpaces3 *self, uint64 Offset, uint64 Length, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, uint64* MatchOffset) SearchVirtual;
-			public function HRESULT(IDebugDataSpaces3 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtualUncached;
-			public function HRESULT(IDebugDataSpaces3 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtualUncached;
-			public function HRESULT(IDebugDataSpaces3 *self, uint32 Count, uint64 Offset, uint64* Ptrs) ReadPointersVirtual;
-			public function HRESULT(IDebugDataSpaces3 *self, uint32 Count, uint64 Offset, uint64* Ptrs) WritePointersVirtual;
-			public function HRESULT(IDebugDataSpaces3 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical;
-			public function HRESULT(IDebugDataSpaces3 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical;
-			public function HRESULT(IDebugDataSpaces3 *self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadControl;
-			public function HRESULT(IDebugDataSpaces3 *self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteControl;
-			public function HRESULT(IDebugDataSpaces3 *self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadIo;
-			public function HRESULT(IDebugDataSpaces3 *self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteIo;
-			public function HRESULT(IDebugDataSpaces3 *self, uint32 Msr, uint64* Value) ReadMsr;
-			public function HRESULT(IDebugDataSpaces3 *self, uint32 Msr, uint64 Value) WriteMsr;
-			public function HRESULT(IDebugDataSpaces3 *self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadBusData;
-			public function HRESULT(IDebugDataSpaces3 *self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteBusData;
-			public function HRESULT(IDebugDataSpaces3 *self) CheckLowMemory;
-			public function HRESULT(IDebugDataSpaces3 *self, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadDebuggerData;
-			public function HRESULT(IDebugDataSpaces3 *self, uint32 Processor, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadProcessorSystemData;
-			public function HRESULT(IDebugDataSpaces3 *self, uint64 Virtual, uint64* Physical) VirtualToPhysical;
-			public function HRESULT(IDebugDataSpaces3 *self, uint64 Virtual, uint64* Offsets, uint32 OffsetsSize, uint32* Levels) GetVirtualTranslationPhysicalOffsets;
-			public function HRESULT(IDebugDataSpaces3 *self, uint64 Handle, uint32 DataType, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadHandleData;
-			public function HRESULT(IDebugDataSpaces3 *self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillVirtual;
-			public function HRESULT(IDebugDataSpaces3 *self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillPhysical;
-			public function HRESULT(IDebugDataSpaces3 *self, uint64 Offset, MEMORY_BASIC_INFORMATION64* Info) QueryVirtual;
-			public function HRESULT(IDebugDataSpaces3 *self, uint64 ImageBase, IMAGE_NT_HEADERS64* Headers) ReadImageNtHeaders;
-			public function HRESULT(IDebugDataSpaces3 *self, Guid* Tag, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* TotalSize) ReadTagged;
-			public function HRESULT(IDebugDataSpaces3 *self, uint64* Handle) StartEnumTagged;
-			public function HRESULT(IDebugDataSpaces3 *self, uint64 Handle, Guid* Tag, uint32* Size) GetNextTagged;
-			public function HRESULT(IDebugDataSpaces3 *self, uint64 Handle) EndEnumTagged;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugDataSpaces3 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtual;
+				public function HRESULT(IDebugDataSpaces3 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtual;
+				public function HRESULT(IDebugDataSpaces3 *self, uint64 Offset, uint64 Length, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, uint64* MatchOffset) SearchVirtual;
+				public function HRESULT(IDebugDataSpaces3 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtualUncached;
+				public function HRESULT(IDebugDataSpaces3 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtualUncached;
+				public function HRESULT(IDebugDataSpaces3 *self, uint32 Count, uint64 Offset, uint64* Ptrs) ReadPointersVirtual;
+				public function HRESULT(IDebugDataSpaces3 *self, uint32 Count, uint64 Offset, uint64* Ptrs) WritePointersVirtual;
+				public function HRESULT(IDebugDataSpaces3 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical;
+				public function HRESULT(IDebugDataSpaces3 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical;
+				public function HRESULT(IDebugDataSpaces3 *self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadControl;
+				public function HRESULT(IDebugDataSpaces3 *self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteControl;
+				public function HRESULT(IDebugDataSpaces3 *self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadIo;
+				public function HRESULT(IDebugDataSpaces3 *self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteIo;
+				public function HRESULT(IDebugDataSpaces3 *self, uint32 Msr, uint64* Value) ReadMsr;
+				public function HRESULT(IDebugDataSpaces3 *self, uint32 Msr, uint64 Value) WriteMsr;
+				public function HRESULT(IDebugDataSpaces3 *self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadBusData;
+				public function HRESULT(IDebugDataSpaces3 *self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteBusData;
+				public function HRESULT(IDebugDataSpaces3 *self) CheckLowMemory;
+				public function HRESULT(IDebugDataSpaces3 *self, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadDebuggerData;
+				public function HRESULT(IDebugDataSpaces3 *self, uint32 Processor, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadProcessorSystemData;
+				public function HRESULT(IDebugDataSpaces3 *self, uint64 Virtual, uint64* Physical) VirtualToPhysical;
+				public function HRESULT(IDebugDataSpaces3 *self, uint64 Virtual, uint64* Offsets, uint32 OffsetsSize, uint32* Levels) GetVirtualTranslationPhysicalOffsets;
+				public function HRESULT(IDebugDataSpaces3 *self, uint64 Handle, uint32 DataType, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadHandleData;
+				public function HRESULT(IDebugDataSpaces3 *self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillVirtual;
+				public function HRESULT(IDebugDataSpaces3 *self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillPhysical;
+				public function HRESULT(IDebugDataSpaces3 *self, uint64 Offset, MEMORY_BASIC_INFORMATION64* Info) QueryVirtual;
+				public function HRESULT(IDebugDataSpaces3 *self, uint64 ImageBase, IMAGE_NT_HEADERS64* Headers) ReadImageNtHeaders;
+				public function HRESULT(IDebugDataSpaces3 *self, Guid* Tag, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* TotalSize) ReadTagged;
+				public function HRESULT(IDebugDataSpaces3 *self, uint64* Handle) StartEnumTagged;
+				public function HRESULT(IDebugDataSpaces3 *self, uint64 Handle, Guid* Tag, uint32* Size) GetNextTagged;
+				public function HRESULT(IDebugDataSpaces3 *self, uint64 Handle) EndEnumTagged;
+			}
 		}
 		[CRepr]
 		public struct IDebugDataSpaces4 : IUnknown
 		{
 			public const new Guid IID = .(0xd98ada1f, 0x29e9, 0x4ef5, 0xa6, 0xc0, 0xe5, 0x33, 0x49, 0x88, 0x32, 0x12);
 			
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtual;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtual;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, uint64 Length, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, uint64* MatchOffset) SearchVirtual;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtualUncached;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtualUncached;
-			public function HRESULT(IDebugDataSpaces4 *self, uint32 Count, uint64 Offset, uint64* Ptrs) ReadPointersVirtual;
-			public function HRESULT(IDebugDataSpaces4 *self, uint32 Count, uint64 Offset, uint64* Ptrs) WritePointersVirtual;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical;
-			public function HRESULT(IDebugDataSpaces4 *self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadControl;
-			public function HRESULT(IDebugDataSpaces4 *self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteControl;
-			public function HRESULT(IDebugDataSpaces4 *self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadIo;
-			public function HRESULT(IDebugDataSpaces4 *self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteIo;
-			public function HRESULT(IDebugDataSpaces4 *self, uint32 Msr, uint64* Value) ReadMsr;
-			public function HRESULT(IDebugDataSpaces4 *self, uint32 Msr, uint64 Value) WriteMsr;
-			public function HRESULT(IDebugDataSpaces4 *self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadBusData;
-			public function HRESULT(IDebugDataSpaces4 *self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteBusData;
-			public function HRESULT(IDebugDataSpaces4 *self) CheckLowMemory;
-			public function HRESULT(IDebugDataSpaces4 *self, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadDebuggerData;
-			public function HRESULT(IDebugDataSpaces4 *self, uint32 Processor, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadProcessorSystemData;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Virtual, uint64* Physical) VirtualToPhysical;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Virtual, uint64* Offsets, uint32 OffsetsSize, uint32* Levels) GetVirtualTranslationPhysicalOffsets;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Handle, uint32 DataType, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadHandleData;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillVirtual;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillPhysical;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, MEMORY_BASIC_INFORMATION64* Info) QueryVirtual;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 ImageBase, IMAGE_NT_HEADERS64* Headers) ReadImageNtHeaders;
-			public function HRESULT(IDebugDataSpaces4 *self, Guid* Tag, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* TotalSize) ReadTagged;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64* Handle) StartEnumTagged;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Handle, Guid* Tag, uint32* Size) GetNextTagged;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Handle) EndEnumTagged;
-			public function HRESULT(IDebugDataSpaces4 *self, uint32 Space, uint32 Which, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetOffsetInformation;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, uint64* NextOffset) GetNextDifferentlyValidOffsetVirtual;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Base, uint32 Size, uint64* ValidBase, uint32* ValidSize) GetValidRegionVirtual;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, uint64 Length, uint32 Flags, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, uint64* MatchOffset) SearchVirtual2;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, uint32 MaxBytes, uint8* Buffer, uint32 BufferSize, uint32* StringBytes) ReadMultiByteStringVirtual;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, uint32 MaxBytes, uint32 CodePage, char16* Buffer, uint32 BufferSize, uint32* StringBytes) ReadMultiByteStringVirtualWide;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, uint32 MaxBytes, uint32 CodePage, uint8* Buffer, uint32 BufferSize, uint32* StringBytes) ReadUnicodeStringVirtual;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, uint32 MaxBytes, char16* Buffer, uint32 BufferSize, uint32* StringBytes) ReadUnicodeStringVirtualWide;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical2;
-			public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtual;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtual;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, uint64 Length, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, uint64* MatchOffset) SearchVirtual;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadVirtualUncached;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteVirtualUncached;
+				public function HRESULT(IDebugDataSpaces4 *self, uint32 Count, uint64 Offset, uint64* Ptrs) ReadPointersVirtual;
+				public function HRESULT(IDebugDataSpaces4 *self, uint32 Count, uint64 Offset, uint64* Ptrs) WritePointersVirtual;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical;
+				public function HRESULT(IDebugDataSpaces4 *self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadControl;
+				public function HRESULT(IDebugDataSpaces4 *self, uint32 Processor, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteControl;
+				public function HRESULT(IDebugDataSpaces4 *self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadIo;
+				public function HRESULT(IDebugDataSpaces4 *self, uint32 InterfaceType, uint32 BusNumber, uint32 AddressSpace, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteIo;
+				public function HRESULT(IDebugDataSpaces4 *self, uint32 Msr, uint64* Value) ReadMsr;
+				public function HRESULT(IDebugDataSpaces4 *self, uint32 Msr, uint64 Value) WriteMsr;
+				public function HRESULT(IDebugDataSpaces4 *self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadBusData;
+				public function HRESULT(IDebugDataSpaces4 *self, uint32 BusDataType, uint32 BusNumber, uint32 SlotNumber, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteBusData;
+				public function HRESULT(IDebugDataSpaces4 *self) CheckLowMemory;
+				public function HRESULT(IDebugDataSpaces4 *self, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadDebuggerData;
+				public function HRESULT(IDebugDataSpaces4 *self, uint32 Processor, uint32 Index, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadProcessorSystemData;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Virtual, uint64* Physical) VirtualToPhysical;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Virtual, uint64* Offsets, uint32 OffsetsSize, uint32* Levels) GetVirtualTranslationPhysicalOffsets;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Handle, uint32 DataType, void* Buffer, uint32 BufferSize, uint32* DataSize) ReadHandleData;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillVirtual;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Start, uint32 Size, void* Pattern, uint32 PatternSize, uint32* Filled) FillPhysical;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, MEMORY_BASIC_INFORMATION64* Info) QueryVirtual;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 ImageBase, IMAGE_NT_HEADERS64* Headers) ReadImageNtHeaders;
+				public function HRESULT(IDebugDataSpaces4 *self, Guid* Tag, uint32 Offset, void* Buffer, uint32 BufferSize, uint32* TotalSize) ReadTagged;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64* Handle) StartEnumTagged;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Handle, Guid* Tag, uint32* Size) GetNextTagged;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Handle) EndEnumTagged;
+				public function HRESULT(IDebugDataSpaces4 *self, uint32 Space, uint32 Which, uint64 Offset, void* Buffer, uint32 BufferSize, uint32* InfoSize) GetOffsetInformation;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, uint64* NextOffset) GetNextDifferentlyValidOffsetVirtual;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Base, uint32 Size, uint64* ValidBase, uint32* ValidSize) GetValidRegionVirtual;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, uint64 Length, uint32 Flags, void* Pattern, uint32 PatternSize, uint32 PatternGranularity, uint64* MatchOffset) SearchVirtual2;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, uint32 MaxBytes, uint8* Buffer, uint32 BufferSize, uint32* StringBytes) ReadMultiByteStringVirtual;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, uint32 MaxBytes, uint32 CodePage, char16* Buffer, uint32 BufferSize, uint32* StringBytes) ReadMultiByteStringVirtualWide;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, uint32 MaxBytes, uint32 CodePage, uint8* Buffer, uint32 BufferSize, uint32* StringBytes) ReadUnicodeStringVirtual;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, uint32 MaxBytes, char16* Buffer, uint32 BufferSize, uint32* StringBytes) ReadUnicodeStringVirtualWide;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadPhysical2;
+				public function HRESULT(IDebugDataSpaces4 *self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WritePhysical2;
+			}
 		}
 		[CRepr]
 		public struct IDebugEventCallbacks : IUnknown
 		{
 			public const new Guid IID = .(0x337be28b, 0x5036, 0x4d72, 0xb6, 0xbf, 0xc4, 0x5f, 0xbb, 0x9f, 0x2e, 0xaa);
 			
-			public function HRESULT(IDebugEventCallbacks *self, uint32* Mask) GetInterestMask;
-			public function HRESULT(IDebugEventCallbacks *self, IDebugBreakpoint* Bp) Breakpoint;
-			public function HRESULT(IDebugEventCallbacks *self, EXCEPTION_RECORD64* Exception, uint32 FirstChance) Exception;
-			public function HRESULT(IDebugEventCallbacks *self, uint64 Handle, uint64 DataOffset, uint64 StartOffset) CreateThread;
-			public function HRESULT(IDebugEventCallbacks *self, uint32 ExitCode) ExitThread;
-			public function HRESULT(IDebugEventCallbacks *self, uint64 ImageFileHandle, uint64 Handle, uint64 BaseOffset, uint32 ModuleSize, PSTR ModuleName, PSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp, uint64 InitialThreadHandle, uint64 ThreadDataOffset, uint64 StartOffset) CreateProcessA;
-			public function HRESULT(IDebugEventCallbacks *self, uint32 ExitCode) ExitProcess;
-			public function HRESULT(IDebugEventCallbacks *self, uint64 ImageFileHandle, uint64 BaseOffset, uint32 ModuleSize, PSTR ModuleName, PSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp) LoadModule;
-			public function HRESULT(IDebugEventCallbacks *self, PSTR ImageBaseName, uint64 BaseOffset) UnloadModule;
-			public function HRESULT(IDebugEventCallbacks *self, uint32 Error, uint32 Level) SystemError;
-			public function HRESULT(IDebugEventCallbacks *self, uint32 Status) SessionStatus;
-			public function HRESULT(IDebugEventCallbacks *self, uint32 Flags, uint64 Argument) ChangeDebuggeeState;
-			public function HRESULT(IDebugEventCallbacks *self, uint32 Flags, uint64 Argument) ChangeEngineState;
-			public function HRESULT(IDebugEventCallbacks *self, uint32 Flags, uint64 Argument) ChangeSymbolState;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugEventCallbacks *self, uint32* Mask) GetInterestMask;
+				public function HRESULT(IDebugEventCallbacks *self, IDebugBreakpoint* Bp) Breakpoint;
+				public function HRESULT(IDebugEventCallbacks *self, EXCEPTION_RECORD64* Exception, uint32 FirstChance) Exception;
+				public function HRESULT(IDebugEventCallbacks *self, uint64 Handle, uint64 DataOffset, uint64 StartOffset) CreateThread;
+				public function HRESULT(IDebugEventCallbacks *self, uint32 ExitCode) ExitThread;
+				public function HRESULT(IDebugEventCallbacks *self, uint64 ImageFileHandle, uint64 Handle, uint64 BaseOffset, uint32 ModuleSize, PSTR ModuleName, PSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp, uint64 InitialThreadHandle, uint64 ThreadDataOffset, uint64 StartOffset) CreateProcessA;
+				public function HRESULT(IDebugEventCallbacks *self, uint32 ExitCode) ExitProcess;
+				public function HRESULT(IDebugEventCallbacks *self, uint64 ImageFileHandle, uint64 BaseOffset, uint32 ModuleSize, PSTR ModuleName, PSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp) LoadModule;
+				public function HRESULT(IDebugEventCallbacks *self, PSTR ImageBaseName, uint64 BaseOffset) UnloadModule;
+				public function HRESULT(IDebugEventCallbacks *self, uint32 Error, uint32 Level) SystemError;
+				public function HRESULT(IDebugEventCallbacks *self, uint32 Status) SessionStatus;
+				public function HRESULT(IDebugEventCallbacks *self, uint32 Flags, uint64 Argument) ChangeDebuggeeState;
+				public function HRESULT(IDebugEventCallbacks *self, uint32 Flags, uint64 Argument) ChangeEngineState;
+				public function HRESULT(IDebugEventCallbacks *self, uint32 Flags, uint64 Argument) ChangeSymbolState;
+			}
 		}
 		[CRepr]
 		public struct IDebugEventCallbacksWide : IUnknown
 		{
 			public const new Guid IID = .(0x0690e046, 0x9c23, 0x45ac, 0xa0, 0x4f, 0x98, 0x7a, 0xc2, 0x9a, 0xd0, 0xd3);
 			
-			public function HRESULT(IDebugEventCallbacksWide *self, uint32* Mask) GetInterestMask;
-			public function HRESULT(IDebugEventCallbacksWide *self, IDebugBreakpoint2* Bp) Breakpoint;
-			public function HRESULT(IDebugEventCallbacksWide *self, EXCEPTION_RECORD64* Exception, uint32 FirstChance) Exception;
-			public function HRESULT(IDebugEventCallbacksWide *self, uint64 Handle, uint64 DataOffset, uint64 StartOffset) CreateThread;
-			public function HRESULT(IDebugEventCallbacksWide *self, uint32 ExitCode) ExitThread;
-			public function HRESULT(IDebugEventCallbacksWide *self, uint64 ImageFileHandle, uint64 Handle, uint64 BaseOffset, uint32 ModuleSize, PWSTR ModuleName, PWSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp, uint64 InitialThreadHandle, uint64 ThreadDataOffset, uint64 StartOffset) CreateProcessA;
-			public function HRESULT(IDebugEventCallbacksWide *self, uint32 ExitCode) ExitProcess;
-			public function HRESULT(IDebugEventCallbacksWide *self, uint64 ImageFileHandle, uint64 BaseOffset, uint32 ModuleSize, PWSTR ModuleName, PWSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp) LoadModule;
-			public function HRESULT(IDebugEventCallbacksWide *self, PWSTR ImageBaseName, uint64 BaseOffset) UnloadModule;
-			public function HRESULT(IDebugEventCallbacksWide *self, uint32 Error, uint32 Level) SystemError;
-			public function HRESULT(IDebugEventCallbacksWide *self, uint32 Status) SessionStatus;
-			public function HRESULT(IDebugEventCallbacksWide *self, uint32 Flags, uint64 Argument) ChangeDebuggeeState;
-			public function HRESULT(IDebugEventCallbacksWide *self, uint32 Flags, uint64 Argument) ChangeEngineState;
-			public function HRESULT(IDebugEventCallbacksWide *self, uint32 Flags, uint64 Argument) ChangeSymbolState;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugEventCallbacksWide *self, uint32* Mask) GetInterestMask;
+				public function HRESULT(IDebugEventCallbacksWide *self, IDebugBreakpoint2* Bp) Breakpoint;
+				public function HRESULT(IDebugEventCallbacksWide *self, EXCEPTION_RECORD64* Exception, uint32 FirstChance) Exception;
+				public function HRESULT(IDebugEventCallbacksWide *self, uint64 Handle, uint64 DataOffset, uint64 StartOffset) CreateThread;
+				public function HRESULT(IDebugEventCallbacksWide *self, uint32 ExitCode) ExitThread;
+				public function HRESULT(IDebugEventCallbacksWide *self, uint64 ImageFileHandle, uint64 Handle, uint64 BaseOffset, uint32 ModuleSize, PWSTR ModuleName, PWSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp, uint64 InitialThreadHandle, uint64 ThreadDataOffset, uint64 StartOffset) CreateProcessA;
+				public function HRESULT(IDebugEventCallbacksWide *self, uint32 ExitCode) ExitProcess;
+				public function HRESULT(IDebugEventCallbacksWide *self, uint64 ImageFileHandle, uint64 BaseOffset, uint32 ModuleSize, PWSTR ModuleName, PWSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp) LoadModule;
+				public function HRESULT(IDebugEventCallbacksWide *self, PWSTR ImageBaseName, uint64 BaseOffset) UnloadModule;
+				public function HRESULT(IDebugEventCallbacksWide *self, uint32 Error, uint32 Level) SystemError;
+				public function HRESULT(IDebugEventCallbacksWide *self, uint32 Status) SessionStatus;
+				public function HRESULT(IDebugEventCallbacksWide *self, uint32 Flags, uint64 Argument) ChangeDebuggeeState;
+				public function HRESULT(IDebugEventCallbacksWide *self, uint32 Flags, uint64 Argument) ChangeEngineState;
+				public function HRESULT(IDebugEventCallbacksWide *self, uint32 Flags, uint64 Argument) ChangeSymbolState;
+			}
 		}
 		[CRepr]
 		public struct IDebugEventContextCallbacks : IUnknown
 		{
 			public const new Guid IID = .(0x61a4905b, 0x23f9, 0x4247, 0xb3, 0xc5, 0x53, 0xd0, 0x87, 0x52, 0x9a, 0xb7);
 			
-			public function HRESULT(IDebugEventContextCallbacks *self, uint32* Mask) GetInterestMask;
-			public function HRESULT(IDebugEventContextCallbacks *self, IDebugBreakpoint2* Bp, void* Context, uint32 ContextSize) Breakpoint;
-			public function HRESULT(IDebugEventContextCallbacks *self, EXCEPTION_RECORD64* Exception, uint32 FirstChance, void* Context, uint32 ContextSize) Exception;
-			public function HRESULT(IDebugEventContextCallbacks *self, uint64 Handle, uint64 DataOffset, uint64 StartOffset, void* Context, uint32 ContextSize) CreateThread;
-			public function HRESULT(IDebugEventContextCallbacks *self, uint32 ExitCode, void* Context, uint32 ContextSize) ExitThread;
-			public function HRESULT(IDebugEventContextCallbacks *self, uint64 ImageFileHandle, uint64 Handle, uint64 BaseOffset, uint32 ModuleSize, PWSTR ModuleName, PWSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp, uint64 InitialThreadHandle, uint64 ThreadDataOffset, uint64 StartOffset, void* Context, uint32 ContextSize) CreateProcessA;
-			public function HRESULT(IDebugEventContextCallbacks *self, uint32 ExitCode, void* Context, uint32 ContextSize) ExitProcess;
-			public function HRESULT(IDebugEventContextCallbacks *self, uint64 ImageFileHandle, uint64 BaseOffset, uint32 ModuleSize, PWSTR ModuleName, PWSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp, void* Context, uint32 ContextSize) LoadModule;
-			public function HRESULT(IDebugEventContextCallbacks *self, PWSTR ImageBaseName, uint64 BaseOffset, void* Context, uint32 ContextSize) UnloadModule;
-			public function HRESULT(IDebugEventContextCallbacks *self, uint32 Error, uint32 Level, void* Context, uint32 ContextSize) SystemError;
-			public function HRESULT(IDebugEventContextCallbacks *self, uint32 Status) SessionStatus;
-			public function HRESULT(IDebugEventContextCallbacks *self, uint32 Flags, uint64 Argument, void* Context, uint32 ContextSize) ChangeDebuggeeState;
-			public function HRESULT(IDebugEventContextCallbacks *self, uint32 Flags, uint64 Argument, void* Context, uint32 ContextSize) ChangeEngineState;
-			public function HRESULT(IDebugEventContextCallbacks *self, uint32 Flags, uint64 Argument) ChangeSymbolState;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugEventContextCallbacks *self, uint32* Mask) GetInterestMask;
+				public function HRESULT(IDebugEventContextCallbacks *self, IDebugBreakpoint2* Bp, void* Context, uint32 ContextSize) Breakpoint;
+				public function HRESULT(IDebugEventContextCallbacks *self, EXCEPTION_RECORD64* Exception, uint32 FirstChance, void* Context, uint32 ContextSize) Exception;
+				public function HRESULT(IDebugEventContextCallbacks *self, uint64 Handle, uint64 DataOffset, uint64 StartOffset, void* Context, uint32 ContextSize) CreateThread;
+				public function HRESULT(IDebugEventContextCallbacks *self, uint32 ExitCode, void* Context, uint32 ContextSize) ExitThread;
+				public function HRESULT(IDebugEventContextCallbacks *self, uint64 ImageFileHandle, uint64 Handle, uint64 BaseOffset, uint32 ModuleSize, PWSTR ModuleName, PWSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp, uint64 InitialThreadHandle, uint64 ThreadDataOffset, uint64 StartOffset, void* Context, uint32 ContextSize) CreateProcessA;
+				public function HRESULT(IDebugEventContextCallbacks *self, uint32 ExitCode, void* Context, uint32 ContextSize) ExitProcess;
+				public function HRESULT(IDebugEventContextCallbacks *self, uint64 ImageFileHandle, uint64 BaseOffset, uint32 ModuleSize, PWSTR ModuleName, PWSTR ImageName, uint32 CheckSum, uint32 TimeDateStamp, void* Context, uint32 ContextSize) LoadModule;
+				public function HRESULT(IDebugEventContextCallbacks *self, PWSTR ImageBaseName, uint64 BaseOffset, void* Context, uint32 ContextSize) UnloadModule;
+				public function HRESULT(IDebugEventContextCallbacks *self, uint32 Error, uint32 Level, void* Context, uint32 ContextSize) SystemError;
+				public function HRESULT(IDebugEventContextCallbacks *self, uint32 Status) SessionStatus;
+				public function HRESULT(IDebugEventContextCallbacks *self, uint32 Flags, uint64 Argument, void* Context, uint32 ContextSize) ChangeDebuggeeState;
+				public function HRESULT(IDebugEventContextCallbacks *self, uint32 Flags, uint64 Argument, void* Context, uint32 ContextSize) ChangeEngineState;
+				public function HRESULT(IDebugEventContextCallbacks *self, uint32 Flags, uint64 Argument) ChangeSymbolState;
+			}
 		}
 		[CRepr]
 		public struct IDebugInputCallbacks : IUnknown
 		{
 			public const new Guid IID = .(0x9f50e42c, 0xf136, 0x499e, 0x9a, 0x97, 0x73, 0x03, 0x6c, 0x94, 0xed, 0x2d);
 			
-			public function HRESULT(IDebugInputCallbacks *self, uint32 BufferSize) StartInput;
-			public function HRESULT(IDebugInputCallbacks *self) EndInput;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugInputCallbacks *self, uint32 BufferSize) StartInput;
+				public function HRESULT(IDebugInputCallbacks *self) EndInput;
+			}
 		}
 		[CRepr]
 		public struct IDebugOutputCallbacks : IUnknown
 		{
 			public const new Guid IID = .(0x4bf58045, 0xd654, 0x4c40, 0xb0, 0xaf, 0x68, 0x30, 0x90, 0xf3, 0x56, 0xdc);
 			
-			public function HRESULT(IDebugOutputCallbacks *self, uint32 Mask, PSTR Text) Output;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugOutputCallbacks *self, uint32 Mask, PSTR Text) Output;
+			}
 		}
 		[CRepr]
 		public struct IDebugOutputCallbacksWide : IUnknown
 		{
 			public const new Guid IID = .(0x4c7fd663, 0xc394, 0x4e26, 0x8e, 0xf1, 0x34, 0xad, 0x5e, 0xd3, 0x76, 0x4c);
 			
-			public function HRESULT(IDebugOutputCallbacksWide *self, uint32 Mask, PWSTR Text) Output;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugOutputCallbacksWide *self, uint32 Mask, PWSTR Text) Output;
+			}
 		}
 		[CRepr]
 		public struct IDebugOutputCallbacks2 : IUnknown
 		{
 			public const new Guid IID = .(0x67721fe9, 0x56d2, 0x4a44, 0xa3, 0x25, 0x2b, 0x65, 0x51, 0x3c, 0xe6, 0xeb);
 			
-			public function HRESULT(IDebugOutputCallbacks2 *self, uint32 Mask, PSTR Text) Output;
-			public function HRESULT(IDebugOutputCallbacks2 *self, uint32* Mask) GetInterestMask;
-			public function HRESULT(IDebugOutputCallbacks2 *self, uint32 Which, uint32 Flags, uint64 Arg, PWSTR Text) Output2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugOutputCallbacks2 *self, uint32 Mask, PSTR Text) Output;
+				public function HRESULT(IDebugOutputCallbacks2 *self, uint32* Mask) GetInterestMask;
+				public function HRESULT(IDebugOutputCallbacks2 *self, uint32 Which, uint32 Flags, uint64 Arg, PWSTR Text) Output2;
+			}
 		}
 		[CRepr]
 		public struct IDebugRegisters : IUnknown
 		{
 			public const new Guid IID = .(0xce289126, 0x9e84, 0x45a7, 0x93, 0x7e, 0x67, 0xbb, 0x18, 0x69, 0x14, 0x93);
 			
-			public function HRESULT(IDebugRegisters *self, uint32* Number) GetNumberRegisters;
-			public function HRESULT(IDebugRegisters *self, uint32 Register, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, DEBUG_REGISTER_DESCRIPTION* Desc) GetDescription;
-			public function HRESULT(IDebugRegisters *self, PSTR Name, uint32* Index) GetIndexByName;
-			public function HRESULT(IDebugRegisters *self, uint32 Register, DEBUG_VALUE* Value) GetValue;
-			public function HRESULT(IDebugRegisters *self, uint32 Register, DEBUG_VALUE* Value) SetValue;
-			public function HRESULT(IDebugRegisters *self, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) GetValues;
-			public function HRESULT(IDebugRegisters *self, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) SetValues;
-			public function HRESULT(IDebugRegisters *self, uint32 OutputControl, uint32 Flags) OutputRegisters;
-			public function HRESULT(IDebugRegisters *self, uint64* Offset) GetInstructionOffset;
-			public function HRESULT(IDebugRegisters *self, uint64* Offset) GetStackOffset;
-			public function HRESULT(IDebugRegisters *self, uint64* Offset) GetFrameOffset;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugRegisters *self, uint32* Number) GetNumberRegisters;
+				public function HRESULT(IDebugRegisters *self, uint32 Register, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, DEBUG_REGISTER_DESCRIPTION* Desc) GetDescription;
+				public function HRESULT(IDebugRegisters *self, PSTR Name, uint32* Index) GetIndexByName;
+				public function HRESULT(IDebugRegisters *self, uint32 Register, DEBUG_VALUE* Value) GetValue;
+				public function HRESULT(IDebugRegisters *self, uint32 Register, DEBUG_VALUE* Value) SetValue;
+				public function HRESULT(IDebugRegisters *self, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) GetValues;
+				public function HRESULT(IDebugRegisters *self, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) SetValues;
+				public function HRESULT(IDebugRegisters *self, uint32 OutputControl, uint32 Flags) OutputRegisters;
+				public function HRESULT(IDebugRegisters *self, uint64* Offset) GetInstructionOffset;
+				public function HRESULT(IDebugRegisters *self, uint64* Offset) GetStackOffset;
+				public function HRESULT(IDebugRegisters *self, uint64* Offset) GetFrameOffset;
+			}
 		}
 		[CRepr]
 		public struct IDebugRegisters2 : IUnknown
 		{
 			public const new Guid IID = .(0x1656afa9, 0x19c6, 0x4e3a, 0x97, 0xe7, 0x5d, 0xc9, 0x16, 0x0c, 0xf9, 0xc4);
 			
-			public function HRESULT(IDebugRegisters2 *self, uint32* Number) GetNumberRegisters;
-			public function HRESULT(IDebugRegisters2 *self, uint32 Register, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, DEBUG_REGISTER_DESCRIPTION* Desc) GetDescription;
-			public function HRESULT(IDebugRegisters2 *self, PSTR Name, uint32* Index) GetIndexByName;
-			public function HRESULT(IDebugRegisters2 *self, uint32 Register, DEBUG_VALUE* Value) GetValue;
-			public function HRESULT(IDebugRegisters2 *self, uint32 Register, DEBUG_VALUE* Value) SetValue;
-			public function HRESULT(IDebugRegisters2 *self, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) GetValues;
-			public function HRESULT(IDebugRegisters2 *self, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) SetValues;
-			public function HRESULT(IDebugRegisters2 *self, uint32 OutputControl, uint32 Flags) OutputRegisters;
-			public function HRESULT(IDebugRegisters2 *self, uint64* Offset) GetInstructionOffset;
-			public function HRESULT(IDebugRegisters2 *self, uint64* Offset) GetStackOffset;
-			public function HRESULT(IDebugRegisters2 *self, uint64* Offset) GetFrameOffset;
-			public function HRESULT(IDebugRegisters2 *self, uint32 Register, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, DEBUG_REGISTER_DESCRIPTION* Desc) GetDescriptionWide;
-			public function HRESULT(IDebugRegisters2 *self, PWSTR Name, uint32* Index) GetIndexByNameWide;
-			public function HRESULT(IDebugRegisters2 *self, uint32* Number) GetNumberPseudoRegisters;
-			public function HRESULT(IDebugRegisters2 *self, uint32 Register, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* TypeModule, uint32* TypeId) GetPseudoDescription;
-			public function HRESULT(IDebugRegisters2 *self, uint32 Register, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* TypeModule, uint32* TypeId) GetPseudoDescriptionWide;
-			public function HRESULT(IDebugRegisters2 *self, PSTR Name, uint32* Index) GetPseudoIndexByName;
-			public function HRESULT(IDebugRegisters2 *self, PWSTR Name, uint32* Index) GetPseudoIndexByNameWide;
-			public function HRESULT(IDebugRegisters2 *self, uint32 Source, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) GetPseudoValues;
-			public function HRESULT(IDebugRegisters2 *self, uint32 Source, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) SetPseudoValues;
-			public function HRESULT(IDebugRegisters2 *self, uint32 Source, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) GetValues2;
-			public function HRESULT(IDebugRegisters2 *self, uint32 Source, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) SetValues2;
-			public function HRESULT(IDebugRegisters2 *self, uint32 OutputControl, uint32 Source, uint32 Flags) OutputRegisters2;
-			public function HRESULT(IDebugRegisters2 *self, uint32 Source, uint64* Offset) GetInstructionOffset2;
-			public function HRESULT(IDebugRegisters2 *self, uint32 Source, uint64* Offset) GetStackOffset2;
-			public function HRESULT(IDebugRegisters2 *self, uint32 Source, uint64* Offset) GetFrameOffset2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugRegisters2 *self, uint32* Number) GetNumberRegisters;
+				public function HRESULT(IDebugRegisters2 *self, uint32 Register, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, DEBUG_REGISTER_DESCRIPTION* Desc) GetDescription;
+				public function HRESULT(IDebugRegisters2 *self, PSTR Name, uint32* Index) GetIndexByName;
+				public function HRESULT(IDebugRegisters2 *self, uint32 Register, DEBUG_VALUE* Value) GetValue;
+				public function HRESULT(IDebugRegisters2 *self, uint32 Register, DEBUG_VALUE* Value) SetValue;
+				public function HRESULT(IDebugRegisters2 *self, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) GetValues;
+				public function HRESULT(IDebugRegisters2 *self, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) SetValues;
+				public function HRESULT(IDebugRegisters2 *self, uint32 OutputControl, uint32 Flags) OutputRegisters;
+				public function HRESULT(IDebugRegisters2 *self, uint64* Offset) GetInstructionOffset;
+				public function HRESULT(IDebugRegisters2 *self, uint64* Offset) GetStackOffset;
+				public function HRESULT(IDebugRegisters2 *self, uint64* Offset) GetFrameOffset;
+				public function HRESULT(IDebugRegisters2 *self, uint32 Register, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, DEBUG_REGISTER_DESCRIPTION* Desc) GetDescriptionWide;
+				public function HRESULT(IDebugRegisters2 *self, PWSTR Name, uint32* Index) GetIndexByNameWide;
+				public function HRESULT(IDebugRegisters2 *self, uint32* Number) GetNumberPseudoRegisters;
+				public function HRESULT(IDebugRegisters2 *self, uint32 Register, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* TypeModule, uint32* TypeId) GetPseudoDescription;
+				public function HRESULT(IDebugRegisters2 *self, uint32 Register, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* TypeModule, uint32* TypeId) GetPseudoDescriptionWide;
+				public function HRESULT(IDebugRegisters2 *self, PSTR Name, uint32* Index) GetPseudoIndexByName;
+				public function HRESULT(IDebugRegisters2 *self, PWSTR Name, uint32* Index) GetPseudoIndexByNameWide;
+				public function HRESULT(IDebugRegisters2 *self, uint32 Source, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) GetPseudoValues;
+				public function HRESULT(IDebugRegisters2 *self, uint32 Source, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) SetPseudoValues;
+				public function HRESULT(IDebugRegisters2 *self, uint32 Source, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) GetValues2;
+				public function HRESULT(IDebugRegisters2 *self, uint32 Source, uint32 Count, uint32* Indices, uint32 Start, DEBUG_VALUE* Values) SetValues2;
+				public function HRESULT(IDebugRegisters2 *self, uint32 OutputControl, uint32 Source, uint32 Flags) OutputRegisters2;
+				public function HRESULT(IDebugRegisters2 *self, uint32 Source, uint64* Offset) GetInstructionOffset2;
+				public function HRESULT(IDebugRegisters2 *self, uint32 Source, uint64* Offset) GetStackOffset2;
+				public function HRESULT(IDebugRegisters2 *self, uint32 Source, uint64* Offset) GetFrameOffset2;
+			}
 		}
 		[CRepr]
 		public struct IDebugSymbolGroup : IUnknown
 		{
 			public const new Guid IID = .(0xf2528316, 0x0f1a, 0x4431, 0xae, 0xed, 0x11, 0xd0, 0x96, 0xe1, 0xe2, 0xab);
 			
-			public function HRESULT(IDebugSymbolGroup *self, uint32* Number) GetNumberSymbols;
-			public function HRESULT(IDebugSymbolGroup *self, PSTR Name, uint32* Index) AddSymbol;
-			public function HRESULT(IDebugSymbolGroup *self, PSTR Name) RemoveSymbolByName;
-			public function HRESULT(IDebugSymbolGroup *self, uint32 Index) RemoveSymbolByIndex;
-			public function HRESULT(IDebugSymbolGroup *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolName;
-			public function HRESULT(IDebugSymbolGroup *self, uint32 Start, uint32 Count, DEBUG_SYMBOL_PARAMETERS* Params) GetSymbolParameters;
-			public function HRESULT(IDebugSymbolGroup *self, uint32 Index, BOOL Expand) ExpandSymbol;
-			public function HRESULT(IDebugSymbolGroup *self, uint32 OutputControl, uint32 Flags, uint32 Start, uint32 Count) OutputSymbols;
-			public function HRESULT(IDebugSymbolGroup *self, uint32 Index, PSTR Value) WriteSymbol;
-			public function HRESULT(IDebugSymbolGroup *self, uint32 Index, PSTR Type) OutputAsType;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugSymbolGroup *self, uint32* Number) GetNumberSymbols;
+				public function HRESULT(IDebugSymbolGroup *self, PSTR Name, uint32* Index) AddSymbol;
+				public function HRESULT(IDebugSymbolGroup *self, PSTR Name) RemoveSymbolByName;
+				public function HRESULT(IDebugSymbolGroup *self, uint32 Index) RemoveSymbolByIndex;
+				public function HRESULT(IDebugSymbolGroup *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolName;
+				public function HRESULT(IDebugSymbolGroup *self, uint32 Start, uint32 Count, DEBUG_SYMBOL_PARAMETERS* Params) GetSymbolParameters;
+				public function HRESULT(IDebugSymbolGroup *self, uint32 Index, BOOL Expand) ExpandSymbol;
+				public function HRESULT(IDebugSymbolGroup *self, uint32 OutputControl, uint32 Flags, uint32 Start, uint32 Count) OutputSymbols;
+				public function HRESULT(IDebugSymbolGroup *self, uint32 Index, PSTR Value) WriteSymbol;
+				public function HRESULT(IDebugSymbolGroup *self, uint32 Index, PSTR Type) OutputAsType;
+			}
 		}
 		[CRepr]
 		public struct IDebugSymbolGroup2 : IUnknown
 		{
 			public const new Guid IID = .(0x6a7ccc5f, 0xfb5e, 0x4dcc, 0xb4, 0x1c, 0x6c, 0x20, 0x30, 0x7b, 0xcc, 0xc7);
 			
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32* Number) GetNumberSymbols;
-			public function HRESULT(IDebugSymbolGroup2 *self, PSTR Name, uint32* Index) AddSymbol;
-			public function HRESULT(IDebugSymbolGroup2 *self, PSTR Name) RemoveSymbolByName;
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index) RemoveSymbolByIndex;
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolName;
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32 Start, uint32 Count, DEBUG_SYMBOL_PARAMETERS* Params) GetSymbolParameters;
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, BOOL Expand) ExpandSymbol;
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32 OutputControl, uint32 Flags, uint32 Start, uint32 Count) OutputSymbols;
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, PSTR Value) WriteSymbol;
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, PSTR Type) OutputAsType;
-			public function HRESULT(IDebugSymbolGroup2 *self, PWSTR Name, uint32* Index) AddSymbolWide;
-			public function HRESULT(IDebugSymbolGroup2 *self, PWSTR Name) RemoveSymbolByNameWide;
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolNameWide;
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, PWSTR Value) WriteSymbolWide;
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, PWSTR Type) OutputAsTypeWide;
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolTypeName;
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolTypeNameWide;
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, uint32* Size) GetSymbolSize;
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, uint64* Offset) GetSymbolOffset;
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, uint32* Register) GetSymbolRegister;
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolValueText;
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolValueTextWide;
-			public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, DEBUG_SYMBOL_ENTRY* Entry) GetSymbolEntryInformation;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32* Number) GetNumberSymbols;
+				public function HRESULT(IDebugSymbolGroup2 *self, PSTR Name, uint32* Index) AddSymbol;
+				public function HRESULT(IDebugSymbolGroup2 *self, PSTR Name) RemoveSymbolByName;
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index) RemoveSymbolByIndex;
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolName;
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32 Start, uint32 Count, DEBUG_SYMBOL_PARAMETERS* Params) GetSymbolParameters;
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, BOOL Expand) ExpandSymbol;
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32 OutputControl, uint32 Flags, uint32 Start, uint32 Count) OutputSymbols;
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, PSTR Value) WriteSymbol;
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, PSTR Type) OutputAsType;
+				public function HRESULT(IDebugSymbolGroup2 *self, PWSTR Name, uint32* Index) AddSymbolWide;
+				public function HRESULT(IDebugSymbolGroup2 *self, PWSTR Name) RemoveSymbolByNameWide;
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolNameWide;
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, PWSTR Value) WriteSymbolWide;
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, PWSTR Type) OutputAsTypeWide;
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolTypeName;
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolTypeNameWide;
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, uint32* Size) GetSymbolSize;
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, uint64* Offset) GetSymbolOffset;
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, uint32* Register) GetSymbolRegister;
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolValueText;
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetSymbolValueTextWide;
+				public function HRESULT(IDebugSymbolGroup2 *self, uint32 Index, DEBUG_SYMBOL_ENTRY* Entry) GetSymbolEntryInformation;
+			}
 		}
 		[CRepr]
 		public struct IDebugSymbols : IUnknown
 		{
 			public const new Guid IID = .(0x8c31e98c, 0x983a, 0x48a5, 0x90, 0x16, 0x6f, 0xe5, 0xd6, 0x67, 0xa9, 0x50);
 			
-			public function HRESULT(IDebugSymbols *self, uint32* Options) GetSymbolOptions;
-			public function HRESULT(IDebugSymbols *self, uint32 Options) AddSymbolOptions;
-			public function HRESULT(IDebugSymbols *self, uint32 Options) RemoveSymbolOptions;
-			public function HRESULT(IDebugSymbols *self, uint32 Options) SetSymbolOptions;
-			public function HRESULT(IDebugSymbols *self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
-			public function HRESULT(IDebugSymbols *self, PSTR Symbol, uint64* Offset) GetOffsetByName;
-			public function HRESULT(IDebugSymbols *self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
-			public function HRESULT(IDebugSymbols *self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
-			public function HRESULT(IDebugSymbols *self, uint32 Line, PSTR File, uint64* Offset) GetOffsetByLine;
-			public function HRESULT(IDebugSymbols *self, uint32* Loaded, uint32* Unloaded) GetNumberModules;
-			public function HRESULT(IDebugSymbols *self, uint32 Index, uint64* Base) GetModuleByIndex;
-			public function HRESULT(IDebugSymbols *self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
-			public function HRESULT(IDebugSymbols *self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
-			public function HRESULT(IDebugSymbols *self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
-			public function HRESULT(IDebugSymbols *self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
-			public function HRESULT(IDebugSymbols *self, PSTR Symbol, uint64* Base) GetSymbolModule;
-			public function HRESULT(IDebugSymbols *self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
-			public function HRESULT(IDebugSymbols *self, uint64 Module, PSTR Name, uint32* TypeId) GetTypeId;
-			public function HRESULT(IDebugSymbols *self, uint64 Module, uint32 TypeId, uint32* Size) GetTypeSize;
-			public function HRESULT(IDebugSymbols *self, uint64 Module, uint32 TypeId, PSTR Field, uint32* Offset) GetFieldOffset;
-			public function HRESULT(IDebugSymbols *self, PSTR Symbol, uint32* TypeId, uint64* Module) GetSymbolTypeId;
-			public function HRESULT(IDebugSymbols *self, uint64 Offset, uint32* TypeId, uint64* Module) GetOffsetTypeId;
-			public function HRESULT(IDebugSymbols *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
-			public function HRESULT(IDebugSymbols *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
-			public function HRESULT(IDebugSymbols *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
-			public function HRESULT(IDebugSymbols *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
-			public function HRESULT(IDebugSymbols *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
-			public function HRESULT(IDebugSymbols *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
-			public function HRESULT(IDebugSymbols *self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
-			public function HRESULT(IDebugSymbols *self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
-			public function HRESULT(IDebugSymbols *self) ResetScope;
-			public function HRESULT(IDebugSymbols *self, uint32 Flags, IDebugSymbolGroup* Update, IDebugSymbolGroup** Symbols) GetScopeSymbolGroup;
-			public function HRESULT(IDebugSymbols *self, IDebugSymbolGroup** Group) CreateSymbolGroup;
-			public function HRESULT(IDebugSymbols *self, PSTR Pattern, uint64* Handle) StartSymbolMatch;
-			public function HRESULT(IDebugSymbols *self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
-			public function HRESULT(IDebugSymbols *self, uint64 Handle) EndSymbolMatch;
-			public function HRESULT(IDebugSymbols *self, PSTR Module) Reload;
-			public function HRESULT(IDebugSymbols *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
-			public function HRESULT(IDebugSymbols *self, PSTR Path) SetSymbolPath;
-			public function HRESULT(IDebugSymbols *self, PSTR Addition) AppendSymbolPath;
-			public function HRESULT(IDebugSymbols *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
-			public function HRESULT(IDebugSymbols *self, PSTR Path) SetImagePath;
-			public function HRESULT(IDebugSymbols *self, PSTR Addition) AppendImagePath;
-			public function HRESULT(IDebugSymbols *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
-			public function HRESULT(IDebugSymbols *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
-			public function HRESULT(IDebugSymbols *self, PSTR Path) SetSourcePath;
-			public function HRESULT(IDebugSymbols *self, PSTR Addition) AppendSourcePath;
-			public function HRESULT(IDebugSymbols *self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
-			public function HRESULT(IDebugSymbols *self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugSymbols *self, uint32* Options) GetSymbolOptions;
+				public function HRESULT(IDebugSymbols *self, uint32 Options) AddSymbolOptions;
+				public function HRESULT(IDebugSymbols *self, uint32 Options) RemoveSymbolOptions;
+				public function HRESULT(IDebugSymbols *self, uint32 Options) SetSymbolOptions;
+				public function HRESULT(IDebugSymbols *self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
+				public function HRESULT(IDebugSymbols *self, PSTR Symbol, uint64* Offset) GetOffsetByName;
+				public function HRESULT(IDebugSymbols *self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
+				public function HRESULT(IDebugSymbols *self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
+				public function HRESULT(IDebugSymbols *self, uint32 Line, PSTR File, uint64* Offset) GetOffsetByLine;
+				public function HRESULT(IDebugSymbols *self, uint32* Loaded, uint32* Unloaded) GetNumberModules;
+				public function HRESULT(IDebugSymbols *self, uint32 Index, uint64* Base) GetModuleByIndex;
+				public function HRESULT(IDebugSymbols *self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
+				public function HRESULT(IDebugSymbols *self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
+				public function HRESULT(IDebugSymbols *self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
+				public function HRESULT(IDebugSymbols *self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
+				public function HRESULT(IDebugSymbols *self, PSTR Symbol, uint64* Base) GetSymbolModule;
+				public function HRESULT(IDebugSymbols *self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
+				public function HRESULT(IDebugSymbols *self, uint64 Module, PSTR Name, uint32* TypeId) GetTypeId;
+				public function HRESULT(IDebugSymbols *self, uint64 Module, uint32 TypeId, uint32* Size) GetTypeSize;
+				public function HRESULT(IDebugSymbols *self, uint64 Module, uint32 TypeId, PSTR Field, uint32* Offset) GetFieldOffset;
+				public function HRESULT(IDebugSymbols *self, PSTR Symbol, uint32* TypeId, uint64* Module) GetSymbolTypeId;
+				public function HRESULT(IDebugSymbols *self, uint64 Offset, uint32* TypeId, uint64* Module) GetOffsetTypeId;
+				public function HRESULT(IDebugSymbols *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
+				public function HRESULT(IDebugSymbols *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
+				public function HRESULT(IDebugSymbols *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
+				public function HRESULT(IDebugSymbols *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
+				public function HRESULT(IDebugSymbols *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
+				public function HRESULT(IDebugSymbols *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
+				public function HRESULT(IDebugSymbols *self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
+				public function HRESULT(IDebugSymbols *self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
+				public function HRESULT(IDebugSymbols *self) ResetScope;
+				public function HRESULT(IDebugSymbols *self, uint32 Flags, IDebugSymbolGroup* Update, IDebugSymbolGroup** Symbols) GetScopeSymbolGroup;
+				public function HRESULT(IDebugSymbols *self, IDebugSymbolGroup** Group) CreateSymbolGroup;
+				public function HRESULT(IDebugSymbols *self, PSTR Pattern, uint64* Handle) StartSymbolMatch;
+				public function HRESULT(IDebugSymbols *self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
+				public function HRESULT(IDebugSymbols *self, uint64 Handle) EndSymbolMatch;
+				public function HRESULT(IDebugSymbols *self, PSTR Module) Reload;
+				public function HRESULT(IDebugSymbols *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
+				public function HRESULT(IDebugSymbols *self, PSTR Path) SetSymbolPath;
+				public function HRESULT(IDebugSymbols *self, PSTR Addition) AppendSymbolPath;
+				public function HRESULT(IDebugSymbols *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
+				public function HRESULT(IDebugSymbols *self, PSTR Path) SetImagePath;
+				public function HRESULT(IDebugSymbols *self, PSTR Addition) AppendImagePath;
+				public function HRESULT(IDebugSymbols *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
+				public function HRESULT(IDebugSymbols *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
+				public function HRESULT(IDebugSymbols *self, PSTR Path) SetSourcePath;
+				public function HRESULT(IDebugSymbols *self, PSTR Addition) AppendSourcePath;
+				public function HRESULT(IDebugSymbols *self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
+				public function HRESULT(IDebugSymbols *self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
+			}
 		}
 		[CRepr]
 		public struct IDebugSymbols2 : IUnknown
 		{
 			public const new Guid IID = .(0x3a707211, 0xafdd, 0x4495, 0xad, 0x4f, 0x56, 0xfe, 0xcd, 0xf8, 0x16, 0x3f);
 			
-			public function HRESULT(IDebugSymbols2 *self, uint32* Options) GetSymbolOptions;
-			public function HRESULT(IDebugSymbols2 *self, uint32 Options) AddSymbolOptions;
-			public function HRESULT(IDebugSymbols2 *self, uint32 Options) RemoveSymbolOptions;
-			public function HRESULT(IDebugSymbols2 *self, uint32 Options) SetSymbolOptions;
-			public function HRESULT(IDebugSymbols2 *self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
-			public function HRESULT(IDebugSymbols2 *self, PSTR Symbol, uint64* Offset) GetOffsetByName;
-			public function HRESULT(IDebugSymbols2 *self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
-			public function HRESULT(IDebugSymbols2 *self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
-			public function HRESULT(IDebugSymbols2 *self, uint32 Line, PSTR File, uint64* Offset) GetOffsetByLine;
-			public function HRESULT(IDebugSymbols2 *self, uint32* Loaded, uint32* Unloaded) GetNumberModules;
-			public function HRESULT(IDebugSymbols2 *self, uint32 Index, uint64* Base) GetModuleByIndex;
-			public function HRESULT(IDebugSymbols2 *self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
-			public function HRESULT(IDebugSymbols2 *self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
-			public function HRESULT(IDebugSymbols2 *self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
-			public function HRESULT(IDebugSymbols2 *self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
-			public function HRESULT(IDebugSymbols2 *self, PSTR Symbol, uint64* Base) GetSymbolModule;
-			public function HRESULT(IDebugSymbols2 *self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
-			public function HRESULT(IDebugSymbols2 *self, uint64 Module, PSTR Name, uint32* TypeId) GetTypeId;
-			public function HRESULT(IDebugSymbols2 *self, uint64 Module, uint32 TypeId, uint32* Size) GetTypeSize;
-			public function HRESULT(IDebugSymbols2 *self, uint64 Module, uint32 TypeId, PSTR Field, uint32* Offset) GetFieldOffset;
-			public function HRESULT(IDebugSymbols2 *self, PSTR Symbol, uint32* TypeId, uint64* Module) GetSymbolTypeId;
-			public function HRESULT(IDebugSymbols2 *self, uint64 Offset, uint32* TypeId, uint64* Module) GetOffsetTypeId;
-			public function HRESULT(IDebugSymbols2 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
-			public function HRESULT(IDebugSymbols2 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
-			public function HRESULT(IDebugSymbols2 *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
-			public function HRESULT(IDebugSymbols2 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
-			public function HRESULT(IDebugSymbols2 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
-			public function HRESULT(IDebugSymbols2 *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
-			public function HRESULT(IDebugSymbols2 *self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
-			public function HRESULT(IDebugSymbols2 *self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
-			public function HRESULT(IDebugSymbols2 *self) ResetScope;
-			public function HRESULT(IDebugSymbols2 *self, uint32 Flags, IDebugSymbolGroup* Update, IDebugSymbolGroup** Symbols) GetScopeSymbolGroup;
-			public function HRESULT(IDebugSymbols2 *self, IDebugSymbolGroup** Group) CreateSymbolGroup;
-			public function HRESULT(IDebugSymbols2 *self, PSTR Pattern, uint64* Handle) StartSymbolMatch;
-			public function HRESULT(IDebugSymbols2 *self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
-			public function HRESULT(IDebugSymbols2 *self, uint64 Handle) EndSymbolMatch;
-			public function HRESULT(IDebugSymbols2 *self, PSTR Module) Reload;
-			public function HRESULT(IDebugSymbols2 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
-			public function HRESULT(IDebugSymbols2 *self, PSTR Path) SetSymbolPath;
-			public function HRESULT(IDebugSymbols2 *self, PSTR Addition) AppendSymbolPath;
-			public function HRESULT(IDebugSymbols2 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
-			public function HRESULT(IDebugSymbols2 *self, PSTR Path) SetImagePath;
-			public function HRESULT(IDebugSymbols2 *self, PSTR Addition) AppendImagePath;
-			public function HRESULT(IDebugSymbols2 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
-			public function HRESULT(IDebugSymbols2 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
-			public function HRESULT(IDebugSymbols2 *self, PSTR Path) SetSourcePath;
-			public function HRESULT(IDebugSymbols2 *self, PSTR Addition) AppendSourcePath;
-			public function HRESULT(IDebugSymbols2 *self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
-			public function HRESULT(IDebugSymbols2 *self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
-			public function HRESULT(IDebugSymbols2 *self, uint32 Index, uint64 Base, PSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformation;
-			public function HRESULT(IDebugSymbols2 *self, uint32 Which, uint32 Index, uint64 Base, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameString;
-			public function HRESULT(IDebugSymbols2 *self, uint64 Module, uint32 TypeId, uint64 Value, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantName;
-			public function HRESULT(IDebugSymbols2 *self, uint64 Module, uint32 TypeId, uint32 FieldIndex, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldName;
-			public function HRESULT(IDebugSymbols2 *self, uint32* Options) GetTypeOptions;
-			public function HRESULT(IDebugSymbols2 *self, uint32 Options) AddTypeOptions;
-			public function HRESULT(IDebugSymbols2 *self, uint32 Options) RemoveTypeOptions;
-			public function HRESULT(IDebugSymbols2 *self, uint32 Options) SetTypeOptions;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugSymbols2 *self, uint32* Options) GetSymbolOptions;
+				public function HRESULT(IDebugSymbols2 *self, uint32 Options) AddSymbolOptions;
+				public function HRESULT(IDebugSymbols2 *self, uint32 Options) RemoveSymbolOptions;
+				public function HRESULT(IDebugSymbols2 *self, uint32 Options) SetSymbolOptions;
+				public function HRESULT(IDebugSymbols2 *self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
+				public function HRESULT(IDebugSymbols2 *self, PSTR Symbol, uint64* Offset) GetOffsetByName;
+				public function HRESULT(IDebugSymbols2 *self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
+				public function HRESULT(IDebugSymbols2 *self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
+				public function HRESULT(IDebugSymbols2 *self, uint32 Line, PSTR File, uint64* Offset) GetOffsetByLine;
+				public function HRESULT(IDebugSymbols2 *self, uint32* Loaded, uint32* Unloaded) GetNumberModules;
+				public function HRESULT(IDebugSymbols2 *self, uint32 Index, uint64* Base) GetModuleByIndex;
+				public function HRESULT(IDebugSymbols2 *self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
+				public function HRESULT(IDebugSymbols2 *self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
+				public function HRESULT(IDebugSymbols2 *self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
+				public function HRESULT(IDebugSymbols2 *self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
+				public function HRESULT(IDebugSymbols2 *self, PSTR Symbol, uint64* Base) GetSymbolModule;
+				public function HRESULT(IDebugSymbols2 *self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
+				public function HRESULT(IDebugSymbols2 *self, uint64 Module, PSTR Name, uint32* TypeId) GetTypeId;
+				public function HRESULT(IDebugSymbols2 *self, uint64 Module, uint32 TypeId, uint32* Size) GetTypeSize;
+				public function HRESULT(IDebugSymbols2 *self, uint64 Module, uint32 TypeId, PSTR Field, uint32* Offset) GetFieldOffset;
+				public function HRESULT(IDebugSymbols2 *self, PSTR Symbol, uint32* TypeId, uint64* Module) GetSymbolTypeId;
+				public function HRESULT(IDebugSymbols2 *self, uint64 Offset, uint32* TypeId, uint64* Module) GetOffsetTypeId;
+				public function HRESULT(IDebugSymbols2 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
+				public function HRESULT(IDebugSymbols2 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
+				public function HRESULT(IDebugSymbols2 *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
+				public function HRESULT(IDebugSymbols2 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
+				public function HRESULT(IDebugSymbols2 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
+				public function HRESULT(IDebugSymbols2 *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
+				public function HRESULT(IDebugSymbols2 *self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
+				public function HRESULT(IDebugSymbols2 *self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
+				public function HRESULT(IDebugSymbols2 *self) ResetScope;
+				public function HRESULT(IDebugSymbols2 *self, uint32 Flags, IDebugSymbolGroup* Update, IDebugSymbolGroup** Symbols) GetScopeSymbolGroup;
+				public function HRESULT(IDebugSymbols2 *self, IDebugSymbolGroup** Group) CreateSymbolGroup;
+				public function HRESULT(IDebugSymbols2 *self, PSTR Pattern, uint64* Handle) StartSymbolMatch;
+				public function HRESULT(IDebugSymbols2 *self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
+				public function HRESULT(IDebugSymbols2 *self, uint64 Handle) EndSymbolMatch;
+				public function HRESULT(IDebugSymbols2 *self, PSTR Module) Reload;
+				public function HRESULT(IDebugSymbols2 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
+				public function HRESULT(IDebugSymbols2 *self, PSTR Path) SetSymbolPath;
+				public function HRESULT(IDebugSymbols2 *self, PSTR Addition) AppendSymbolPath;
+				public function HRESULT(IDebugSymbols2 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
+				public function HRESULT(IDebugSymbols2 *self, PSTR Path) SetImagePath;
+				public function HRESULT(IDebugSymbols2 *self, PSTR Addition) AppendImagePath;
+				public function HRESULT(IDebugSymbols2 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
+				public function HRESULT(IDebugSymbols2 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
+				public function HRESULT(IDebugSymbols2 *self, PSTR Path) SetSourcePath;
+				public function HRESULT(IDebugSymbols2 *self, PSTR Addition) AppendSourcePath;
+				public function HRESULT(IDebugSymbols2 *self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
+				public function HRESULT(IDebugSymbols2 *self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
+				public function HRESULT(IDebugSymbols2 *self, uint32 Index, uint64 Base, PSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformation;
+				public function HRESULT(IDebugSymbols2 *self, uint32 Which, uint32 Index, uint64 Base, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameString;
+				public function HRESULT(IDebugSymbols2 *self, uint64 Module, uint32 TypeId, uint64 Value, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantName;
+				public function HRESULT(IDebugSymbols2 *self, uint64 Module, uint32 TypeId, uint32 FieldIndex, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldName;
+				public function HRESULT(IDebugSymbols2 *self, uint32* Options) GetTypeOptions;
+				public function HRESULT(IDebugSymbols2 *self, uint32 Options) AddTypeOptions;
+				public function HRESULT(IDebugSymbols2 *self, uint32 Options) RemoveTypeOptions;
+				public function HRESULT(IDebugSymbols2 *self, uint32 Options) SetTypeOptions;
+			}
 		}
 		[CRepr]
 		public struct IDebugSymbols3 : IUnknown
 		{
 			public const new Guid IID = .(0xf02fbecc, 0x50ac, 0x4f36, 0x9a, 0xd9, 0xc9, 0x75, 0xe8, 0xf3, 0x2f, 0xf8);
 			
-			public function HRESULT(IDebugSymbols3 *self, uint32* Options) GetSymbolOptions;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Options) AddSymbolOptions;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Options) RemoveSymbolOptions;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Options) SetSymbolOptions;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
-			public function HRESULT(IDebugSymbols3 *self, PSTR Symbol, uint64* Offset) GetOffsetByName;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Line, PSTR File, uint64* Offset) GetOffsetByLine;
-			public function HRESULT(IDebugSymbols3 *self, uint32* Loaded, uint32* Unloaded) GetNumberModules;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Index, uint64* Base) GetModuleByIndex;
-			public function HRESULT(IDebugSymbols3 *self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
-			public function HRESULT(IDebugSymbols3 *self, PSTR Symbol, uint64* Base) GetSymbolModule;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Module, PSTR Name, uint32* TypeId) GetTypeId;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 TypeId, uint32* Size) GetTypeSize;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 TypeId, PSTR Field, uint32* Offset) GetFieldOffset;
-			public function HRESULT(IDebugSymbols3 *self, PSTR Symbol, uint32* TypeId, uint64* Module) GetSymbolTypeId;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32* TypeId, uint64* Module) GetOffsetTypeId;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
-			public function HRESULT(IDebugSymbols3 *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
-			public function HRESULT(IDebugSymbols3 *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
-			public function HRESULT(IDebugSymbols3 *self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
-			public function HRESULT(IDebugSymbols3 *self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
-			public function HRESULT(IDebugSymbols3 *self) ResetScope;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Flags, IDebugSymbolGroup* Update, IDebugSymbolGroup** Symbols) GetScopeSymbolGroup;
-			public function HRESULT(IDebugSymbols3 *self, IDebugSymbolGroup** Group) CreateSymbolGroup;
-			public function HRESULT(IDebugSymbols3 *self, PSTR Pattern, uint64* Handle) StartSymbolMatch;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Handle) EndSymbolMatch;
-			public function HRESULT(IDebugSymbols3 *self, PSTR Module) Reload;
-			public function HRESULT(IDebugSymbols3 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
-			public function HRESULT(IDebugSymbols3 *self, PSTR Path) SetSymbolPath;
-			public function HRESULT(IDebugSymbols3 *self, PSTR Addition) AppendSymbolPath;
-			public function HRESULT(IDebugSymbols3 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
-			public function HRESULT(IDebugSymbols3 *self, PSTR Path) SetImagePath;
-			public function HRESULT(IDebugSymbols3 *self, PSTR Addition) AppendImagePath;
-			public function HRESULT(IDebugSymbols3 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
-			public function HRESULT(IDebugSymbols3 *self, PSTR Path) SetSourcePath;
-			public function HRESULT(IDebugSymbols3 *self, PSTR Addition) AppendSourcePath;
-			public function HRESULT(IDebugSymbols3 *self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
-			public function HRESULT(IDebugSymbols3 *self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Index, uint64 Base, PSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformation;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Which, uint32 Index, uint64 Base, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameString;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 TypeId, uint64 Value, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantName;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 TypeId, uint32 FieldIndex, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldName;
-			public function HRESULT(IDebugSymbols3 *self, uint32* Options) GetTypeOptions;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Options) AddTypeOptions;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Options) RemoveTypeOptions;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Options) SetTypeOptions;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Offset, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffsetWide;
-			public function HRESULT(IDebugSymbols3 *self, PWSTR Symbol, uint64* Offset) GetOffsetByNameWide;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Offset, int32 Delta, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffsetWide;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffsetWide;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Line, PWSTR File, uint64* Offset) GetOffsetByLineWide;
-			public function HRESULT(IDebugSymbols3 *self, PWSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleNameWide;
-			public function HRESULT(IDebugSymbols3 *self, PWSTR Symbol, uint64* Base) GetSymbolModuleWide;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 TypeId, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeNameWide;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Module, PWSTR Name, uint32* TypeId) GetTypeIdWide;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 TypeId, PWSTR Field, uint32* Offset) GetFieldOffsetWide;
-			public function HRESULT(IDebugSymbols3 *self, PWSTR Symbol, uint32* TypeId, uint64* Module) GetSymbolTypeIdWide;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Flags, IDebugSymbolGroup2* Update, IDebugSymbolGroup2** Symbols) GetScopeSymbolGroup2;
-			public function HRESULT(IDebugSymbols3 *self, IDebugSymbolGroup2** Group) CreateSymbolGroup2;
-			public function HRESULT(IDebugSymbols3 *self, PWSTR Pattern, uint64* Handle) StartSymbolMatchWide;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Handle, char16* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatchWide;
-			public function HRESULT(IDebugSymbols3 *self, PWSTR Module) ReloadWide;
-			public function HRESULT(IDebugSymbols3 *self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPathWide;
-			public function HRESULT(IDebugSymbols3 *self, PWSTR Path) SetSymbolPathWide;
-			public function HRESULT(IDebugSymbols3 *self, PWSTR Addition) AppendSymbolPathWide;
-			public function HRESULT(IDebugSymbols3 *self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePathWide;
-			public function HRESULT(IDebugSymbols3 *self, PWSTR Path) SetImagePathWide;
-			public function HRESULT(IDebugSymbols3 *self, PWSTR Addition) AppendImagePathWide;
-			public function HRESULT(IDebugSymbols3 *self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePathWide;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElementWide;
-			public function HRESULT(IDebugSymbols3 *self, PWSTR Path) SetSourcePathWide;
-			public function HRESULT(IDebugSymbols3 *self, PWSTR Addition) AppendSourcePathWide;
-			public function HRESULT(IDebugSymbols3 *self, uint32 StartElement, PWSTR File, uint32 Flags, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileWide;
-			public function HRESULT(IDebugSymbols3 *self, PWSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsetsWide;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Index, uint64 Base, PWSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformationWide;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Which, uint32 Index, uint64 Base, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameStringWide;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 TypeId, uint64 Value, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantNameWide;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 TypeId, uint32 FieldIndex, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldNameWide;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Index, uint64 Base) IsManagedModule;
-			public function HRESULT(IDebugSymbols3 *self, PSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2;
-			public function HRESULT(IDebugSymbols3 *self, PWSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2Wide;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByOffset2;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Base, uint32 Size, PSTR ImagePath, PSTR ModuleName, uint32 Flags) AddSyntheticModule;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Base, uint32 Size, PWSTR ImagePath, PWSTR ModuleName, uint32 Flags) AddSyntheticModuleWide;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Base) RemoveSyntheticModule;
-			public function HRESULT(IDebugSymbols3 *self, uint32* Index) GetCurrentScopeFrameIndex;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Index) SetScopeFrameByIndex;
-			public function HRESULT(IDebugSymbols3 *self, uint32 OutputControl, uint64 InfoOffset) SetScopeFromJitDebugInfo;
-			public function HRESULT(IDebugSymbols3 *self) SetScopeFromStoredEvent;
-			public function HRESULT(IDebugSymbols3 *self, uint32 OutputControl, uint32 Flags, uint64 Offset) OutputSymbolByOffset;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BufferNeeded) GetFunctionEntryByOffset;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 ContainerTypeId, PSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffset;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 ContainerTypeId, PWSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffsetWide;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32 Size, PSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbol;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32 Size, PWSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbolWide;
-			public function HRESULT(IDebugSymbols3 *self, DEBUG_MODULE_AND_ID* Id) RemoveSyntheticSymbol;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint64* Displacements, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByOffset;
-			public function HRESULT(IDebugSymbols3 *self, PSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByName;
-			public function HRESULT(IDebugSymbols3 *self, PWSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByNameWide;
-			public function HRESULT(IDebugSymbols3 *self, uint64 ModuleBase, uint32 Token, DEBUG_MODULE_AND_ID* Id) GetSymbolEntryByToken;
-			public function HRESULT(IDebugSymbols3 *self, DEBUG_MODULE_AND_ID* Id, DEBUG_SYMBOL_ENTRY* Info) GetSymbolEntryInformation;
-			public function HRESULT(IDebugSymbols3 *self, DEBUG_MODULE_AND_ID* Id, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryString;
-			public function HRESULT(IDebugSymbols3 *self, DEBUG_MODULE_AND_ID* Id, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryStringWide;
-			public function HRESULT(IDebugSymbols3 *self, DEBUG_MODULE_AND_ID* Id, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSymbolEntryOffsetRegions;
-			public function HRESULT(IDebugSymbols3 *self, DEBUG_MODULE_AND_ID* FromId, uint32 Flags, DEBUG_MODULE_AND_ID* ToId) GetSymbolEntryBySymbolEntry;
-			public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByOffset;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Line, PSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLine;
-			public function HRESULT(IDebugSymbols3 *self, uint32 Line, PWSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLineWide;
-			public function HRESULT(IDebugSymbols3 *self, DEBUG_SYMBOL_SOURCE_ENTRY* Entry, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryString;
-			public function HRESULT(IDebugSymbols3 *self, DEBUG_SYMBOL_SOURCE_ENTRY* Entry, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryStringWide;
-			public function HRESULT(IDebugSymbols3 *self, DEBUG_SYMBOL_SOURCE_ENTRY* Entry, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSourceEntryOffsetRegions;
-			public function HRESULT(IDebugSymbols3 *self, DEBUG_SYMBOL_SOURCE_ENTRY* FromEntry, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* ToEntry) GetSourceEntryBySourceEntry;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugSymbols3 *self, uint32* Options) GetSymbolOptions;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Options) AddSymbolOptions;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Options) RemoveSymbolOptions;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Options) SetSymbolOptions;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
+				public function HRESULT(IDebugSymbols3 *self, PSTR Symbol, uint64* Offset) GetOffsetByName;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Line, PSTR File, uint64* Offset) GetOffsetByLine;
+				public function HRESULT(IDebugSymbols3 *self, uint32* Loaded, uint32* Unloaded) GetNumberModules;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Index, uint64* Base) GetModuleByIndex;
+				public function HRESULT(IDebugSymbols3 *self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
+				public function HRESULT(IDebugSymbols3 *self, PSTR Symbol, uint64* Base) GetSymbolModule;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Module, PSTR Name, uint32* TypeId) GetTypeId;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 TypeId, uint32* Size) GetTypeSize;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 TypeId, PSTR Field, uint32* Offset) GetFieldOffset;
+				public function HRESULT(IDebugSymbols3 *self, PSTR Symbol, uint32* TypeId, uint64* Module) GetSymbolTypeId;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32* TypeId, uint64* Module) GetOffsetTypeId;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
+				public function HRESULT(IDebugSymbols3 *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
+				public function HRESULT(IDebugSymbols3 *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
+				public function HRESULT(IDebugSymbols3 *self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
+				public function HRESULT(IDebugSymbols3 *self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
+				public function HRESULT(IDebugSymbols3 *self) ResetScope;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Flags, IDebugSymbolGroup* Update, IDebugSymbolGroup** Symbols) GetScopeSymbolGroup;
+				public function HRESULT(IDebugSymbols3 *self, IDebugSymbolGroup** Group) CreateSymbolGroup;
+				public function HRESULT(IDebugSymbols3 *self, PSTR Pattern, uint64* Handle) StartSymbolMatch;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Handle) EndSymbolMatch;
+				public function HRESULT(IDebugSymbols3 *self, PSTR Module) Reload;
+				public function HRESULT(IDebugSymbols3 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
+				public function HRESULT(IDebugSymbols3 *self, PSTR Path) SetSymbolPath;
+				public function HRESULT(IDebugSymbols3 *self, PSTR Addition) AppendSymbolPath;
+				public function HRESULT(IDebugSymbols3 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
+				public function HRESULT(IDebugSymbols3 *self, PSTR Path) SetImagePath;
+				public function HRESULT(IDebugSymbols3 *self, PSTR Addition) AppendImagePath;
+				public function HRESULT(IDebugSymbols3 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
+				public function HRESULT(IDebugSymbols3 *self, PSTR Path) SetSourcePath;
+				public function HRESULT(IDebugSymbols3 *self, PSTR Addition) AppendSourcePath;
+				public function HRESULT(IDebugSymbols3 *self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
+				public function HRESULT(IDebugSymbols3 *self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Index, uint64 Base, PSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformation;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Which, uint32 Index, uint64 Base, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameString;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 TypeId, uint64 Value, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantName;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 TypeId, uint32 FieldIndex, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldName;
+				public function HRESULT(IDebugSymbols3 *self, uint32* Options) GetTypeOptions;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Options) AddTypeOptions;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Options) RemoveTypeOptions;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Options) SetTypeOptions;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Offset, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffsetWide;
+				public function HRESULT(IDebugSymbols3 *self, PWSTR Symbol, uint64* Offset) GetOffsetByNameWide;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Offset, int32 Delta, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffsetWide;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffsetWide;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Line, PWSTR File, uint64* Offset) GetOffsetByLineWide;
+				public function HRESULT(IDebugSymbols3 *self, PWSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleNameWide;
+				public function HRESULT(IDebugSymbols3 *self, PWSTR Symbol, uint64* Base) GetSymbolModuleWide;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 TypeId, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeNameWide;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Module, PWSTR Name, uint32* TypeId) GetTypeIdWide;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 TypeId, PWSTR Field, uint32* Offset) GetFieldOffsetWide;
+				public function HRESULT(IDebugSymbols3 *self, PWSTR Symbol, uint32* TypeId, uint64* Module) GetSymbolTypeIdWide;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Flags, IDebugSymbolGroup2* Update, IDebugSymbolGroup2** Symbols) GetScopeSymbolGroup2;
+				public function HRESULT(IDebugSymbols3 *self, IDebugSymbolGroup2** Group) CreateSymbolGroup2;
+				public function HRESULT(IDebugSymbols3 *self, PWSTR Pattern, uint64* Handle) StartSymbolMatchWide;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Handle, char16* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatchWide;
+				public function HRESULT(IDebugSymbols3 *self, PWSTR Module) ReloadWide;
+				public function HRESULT(IDebugSymbols3 *self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPathWide;
+				public function HRESULT(IDebugSymbols3 *self, PWSTR Path) SetSymbolPathWide;
+				public function HRESULT(IDebugSymbols3 *self, PWSTR Addition) AppendSymbolPathWide;
+				public function HRESULT(IDebugSymbols3 *self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePathWide;
+				public function HRESULT(IDebugSymbols3 *self, PWSTR Path) SetImagePathWide;
+				public function HRESULT(IDebugSymbols3 *self, PWSTR Addition) AppendImagePathWide;
+				public function HRESULT(IDebugSymbols3 *self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePathWide;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElementWide;
+				public function HRESULT(IDebugSymbols3 *self, PWSTR Path) SetSourcePathWide;
+				public function HRESULT(IDebugSymbols3 *self, PWSTR Addition) AppendSourcePathWide;
+				public function HRESULT(IDebugSymbols3 *self, uint32 StartElement, PWSTR File, uint32 Flags, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileWide;
+				public function HRESULT(IDebugSymbols3 *self, PWSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsetsWide;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Index, uint64 Base, PWSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformationWide;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Which, uint32 Index, uint64 Base, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameStringWide;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 TypeId, uint64 Value, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantNameWide;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 TypeId, uint32 FieldIndex, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldNameWide;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Index, uint64 Base) IsManagedModule;
+				public function HRESULT(IDebugSymbols3 *self, PSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2;
+				public function HRESULT(IDebugSymbols3 *self, PWSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2Wide;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByOffset2;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Base, uint32 Size, PSTR ImagePath, PSTR ModuleName, uint32 Flags) AddSyntheticModule;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Base, uint32 Size, PWSTR ImagePath, PWSTR ModuleName, uint32 Flags) AddSyntheticModuleWide;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Base) RemoveSyntheticModule;
+				public function HRESULT(IDebugSymbols3 *self, uint32* Index) GetCurrentScopeFrameIndex;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Index) SetScopeFrameByIndex;
+				public function HRESULT(IDebugSymbols3 *self, uint32 OutputControl, uint64 InfoOffset) SetScopeFromJitDebugInfo;
+				public function HRESULT(IDebugSymbols3 *self) SetScopeFromStoredEvent;
+				public function HRESULT(IDebugSymbols3 *self, uint32 OutputControl, uint32 Flags, uint64 Offset) OutputSymbolByOffset;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BufferNeeded) GetFunctionEntryByOffset;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 ContainerTypeId, PSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffset;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Module, uint32 ContainerTypeId, PWSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffsetWide;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32 Size, PSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbol;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32 Size, PWSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbolWide;
+				public function HRESULT(IDebugSymbols3 *self, DEBUG_MODULE_AND_ID* Id) RemoveSyntheticSymbol;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint64* Displacements, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByOffset;
+				public function HRESULT(IDebugSymbols3 *self, PSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByName;
+				public function HRESULT(IDebugSymbols3 *self, PWSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByNameWide;
+				public function HRESULT(IDebugSymbols3 *self, uint64 ModuleBase, uint32 Token, DEBUG_MODULE_AND_ID* Id) GetSymbolEntryByToken;
+				public function HRESULT(IDebugSymbols3 *self, DEBUG_MODULE_AND_ID* Id, DEBUG_SYMBOL_ENTRY* Info) GetSymbolEntryInformation;
+				public function HRESULT(IDebugSymbols3 *self, DEBUG_MODULE_AND_ID* Id, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryString;
+				public function HRESULT(IDebugSymbols3 *self, DEBUG_MODULE_AND_ID* Id, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryStringWide;
+				public function HRESULT(IDebugSymbols3 *self, DEBUG_MODULE_AND_ID* Id, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSymbolEntryOffsetRegions;
+				public function HRESULT(IDebugSymbols3 *self, DEBUG_MODULE_AND_ID* FromId, uint32 Flags, DEBUG_MODULE_AND_ID* ToId) GetSymbolEntryBySymbolEntry;
+				public function HRESULT(IDebugSymbols3 *self, uint64 Offset, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByOffset;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Line, PSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLine;
+				public function HRESULT(IDebugSymbols3 *self, uint32 Line, PWSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLineWide;
+				public function HRESULT(IDebugSymbols3 *self, DEBUG_SYMBOL_SOURCE_ENTRY* Entry, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryString;
+				public function HRESULT(IDebugSymbols3 *self, DEBUG_SYMBOL_SOURCE_ENTRY* Entry, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryStringWide;
+				public function HRESULT(IDebugSymbols3 *self, DEBUG_SYMBOL_SOURCE_ENTRY* Entry, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSourceEntryOffsetRegions;
+				public function HRESULT(IDebugSymbols3 *self, DEBUG_SYMBOL_SOURCE_ENTRY* FromEntry, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* ToEntry) GetSourceEntryBySourceEntry;
+			}
 		}
 		[CRepr]
 		public struct IDebugSymbols4 : IUnknown
 		{
 			public const new Guid IID = .(0xe391bbd8, 0x9d8c, 0x4418, 0x84, 0x0b, 0xc0, 0x06, 0x59, 0x2a, 0x17, 0x52);
 			
-			public function HRESULT(IDebugSymbols4 *self, uint32* Options) GetSymbolOptions;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Options) AddSymbolOptions;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Options) RemoveSymbolOptions;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Options) SetSymbolOptions;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
-			public function HRESULT(IDebugSymbols4 *self, PSTR Symbol, uint64* Offset) GetOffsetByName;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Line, PSTR File, uint64* Offset) GetOffsetByLine;
-			public function HRESULT(IDebugSymbols4 *self, uint32* Loaded, uint32* Unloaded) GetNumberModules;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Index, uint64* Base) GetModuleByIndex;
-			public function HRESULT(IDebugSymbols4 *self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
-			public function HRESULT(IDebugSymbols4 *self, PSTR Symbol, uint64* Base) GetSymbolModule;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Module, PSTR Name, uint32* TypeId) GetTypeId;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 TypeId, uint32* Size) GetTypeSize;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 TypeId, PSTR Field, uint32* Offset) GetFieldOffset;
-			public function HRESULT(IDebugSymbols4 *self, PSTR Symbol, uint32* TypeId, uint64* Module) GetSymbolTypeId;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32* TypeId, uint64* Module) GetOffsetTypeId;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
-			public function HRESULT(IDebugSymbols4 *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
-			public function HRESULT(IDebugSymbols4 *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
-			public function HRESULT(IDebugSymbols4 *self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
-			public function HRESULT(IDebugSymbols4 *self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
-			public function HRESULT(IDebugSymbols4 *self) ResetScope;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Flags, IDebugSymbolGroup* Update, IDebugSymbolGroup** Symbols) GetScopeSymbolGroup;
-			public function HRESULT(IDebugSymbols4 *self, IDebugSymbolGroup** Group) CreateSymbolGroup;
-			public function HRESULT(IDebugSymbols4 *self, PSTR Pattern, uint64* Handle) StartSymbolMatch;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Handle) EndSymbolMatch;
-			public function HRESULT(IDebugSymbols4 *self, PSTR Module) Reload;
-			public function HRESULT(IDebugSymbols4 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
-			public function HRESULT(IDebugSymbols4 *self, PSTR Path) SetSymbolPath;
-			public function HRESULT(IDebugSymbols4 *self, PSTR Addition) AppendSymbolPath;
-			public function HRESULT(IDebugSymbols4 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
-			public function HRESULT(IDebugSymbols4 *self, PSTR Path) SetImagePath;
-			public function HRESULT(IDebugSymbols4 *self, PSTR Addition) AppendImagePath;
-			public function HRESULT(IDebugSymbols4 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
-			public function HRESULT(IDebugSymbols4 *self, PSTR Path) SetSourcePath;
-			public function HRESULT(IDebugSymbols4 *self, PSTR Addition) AppendSourcePath;
-			public function HRESULT(IDebugSymbols4 *self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
-			public function HRESULT(IDebugSymbols4 *self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Index, uint64 Base, PSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformation;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Which, uint32 Index, uint64 Base, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameString;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 TypeId, uint64 Value, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantName;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 TypeId, uint32 FieldIndex, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldName;
-			public function HRESULT(IDebugSymbols4 *self, uint32* Options) GetTypeOptions;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Options) AddTypeOptions;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Options) RemoveTypeOptions;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Options) SetTypeOptions;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffsetWide;
-			public function HRESULT(IDebugSymbols4 *self, PWSTR Symbol, uint64* Offset) GetOffsetByNameWide;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, int32 Delta, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffsetWide;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffsetWide;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Line, PWSTR File, uint64* Offset) GetOffsetByLineWide;
-			public function HRESULT(IDebugSymbols4 *self, PWSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleNameWide;
-			public function HRESULT(IDebugSymbols4 *self, PWSTR Symbol, uint64* Base) GetSymbolModuleWide;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 TypeId, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeNameWide;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Module, PWSTR Name, uint32* TypeId) GetTypeIdWide;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 TypeId, PWSTR Field, uint32* Offset) GetFieldOffsetWide;
-			public function HRESULT(IDebugSymbols4 *self, PWSTR Symbol, uint32* TypeId, uint64* Module) GetSymbolTypeIdWide;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Flags, IDebugSymbolGroup2* Update, IDebugSymbolGroup2** Symbols) GetScopeSymbolGroup2;
-			public function HRESULT(IDebugSymbols4 *self, IDebugSymbolGroup2** Group) CreateSymbolGroup2;
-			public function HRESULT(IDebugSymbols4 *self, PWSTR Pattern, uint64* Handle) StartSymbolMatchWide;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Handle, char16* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatchWide;
-			public function HRESULT(IDebugSymbols4 *self, PWSTR Module) ReloadWide;
-			public function HRESULT(IDebugSymbols4 *self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPathWide;
-			public function HRESULT(IDebugSymbols4 *self, PWSTR Path) SetSymbolPathWide;
-			public function HRESULT(IDebugSymbols4 *self, PWSTR Addition) AppendSymbolPathWide;
-			public function HRESULT(IDebugSymbols4 *self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePathWide;
-			public function HRESULT(IDebugSymbols4 *self, PWSTR Path) SetImagePathWide;
-			public function HRESULT(IDebugSymbols4 *self, PWSTR Addition) AppendImagePathWide;
-			public function HRESULT(IDebugSymbols4 *self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePathWide;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElementWide;
-			public function HRESULT(IDebugSymbols4 *self, PWSTR Path) SetSourcePathWide;
-			public function HRESULT(IDebugSymbols4 *self, PWSTR Addition) AppendSourcePathWide;
-			public function HRESULT(IDebugSymbols4 *self, uint32 StartElement, PWSTR File, uint32 Flags, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileWide;
-			public function HRESULT(IDebugSymbols4 *self, PWSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsetsWide;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Index, uint64 Base, PWSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformationWide;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Which, uint32 Index, uint64 Base, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameStringWide;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 TypeId, uint64 Value, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantNameWide;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 TypeId, uint32 FieldIndex, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldNameWide;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Index, uint64 Base) IsManagedModule;
-			public function HRESULT(IDebugSymbols4 *self, PSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2;
-			public function HRESULT(IDebugSymbols4 *self, PWSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2Wide;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByOffset2;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Base, uint32 Size, PSTR ImagePath, PSTR ModuleName, uint32 Flags) AddSyntheticModule;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Base, uint32 Size, PWSTR ImagePath, PWSTR ModuleName, uint32 Flags) AddSyntheticModuleWide;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Base) RemoveSyntheticModule;
-			public function HRESULT(IDebugSymbols4 *self, uint32* Index) GetCurrentScopeFrameIndex;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Index) SetScopeFrameByIndex;
-			public function HRESULT(IDebugSymbols4 *self, uint32 OutputControl, uint64 InfoOffset) SetScopeFromJitDebugInfo;
-			public function HRESULT(IDebugSymbols4 *self) SetScopeFromStoredEvent;
-			public function HRESULT(IDebugSymbols4 *self, uint32 OutputControl, uint32 Flags, uint64 Offset) OutputSymbolByOffset;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BufferNeeded) GetFunctionEntryByOffset;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 ContainerTypeId, PSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffset;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 ContainerTypeId, PWSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffsetWide;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 Size, PSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbol;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 Size, PWSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbolWide;
-			public function HRESULT(IDebugSymbols4 *self, DEBUG_MODULE_AND_ID* Id) RemoveSyntheticSymbol;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint64* Displacements, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByOffset;
-			public function HRESULT(IDebugSymbols4 *self, PSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByName;
-			public function HRESULT(IDebugSymbols4 *self, PWSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByNameWide;
-			public function HRESULT(IDebugSymbols4 *self, uint64 ModuleBase, uint32 Token, DEBUG_MODULE_AND_ID* Id) GetSymbolEntryByToken;
-			public function HRESULT(IDebugSymbols4 *self, DEBUG_MODULE_AND_ID* Id, DEBUG_SYMBOL_ENTRY* Info) GetSymbolEntryInformation;
-			public function HRESULT(IDebugSymbols4 *self, DEBUG_MODULE_AND_ID* Id, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryString;
-			public function HRESULT(IDebugSymbols4 *self, DEBUG_MODULE_AND_ID* Id, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryStringWide;
-			public function HRESULT(IDebugSymbols4 *self, DEBUG_MODULE_AND_ID* Id, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSymbolEntryOffsetRegions;
-			public function HRESULT(IDebugSymbols4 *self, DEBUG_MODULE_AND_ID* FromId, uint32 Flags, DEBUG_MODULE_AND_ID* ToId) GetSymbolEntryBySymbolEntry;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByOffset;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Line, PSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLine;
-			public function HRESULT(IDebugSymbols4 *self, uint32 Line, PWSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLineWide;
-			public function HRESULT(IDebugSymbols4 *self, DEBUG_SYMBOL_SOURCE_ENTRY* Entry, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryString;
-			public function HRESULT(IDebugSymbols4 *self, DEBUG_SYMBOL_SOURCE_ENTRY* Entry, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryStringWide;
-			public function HRESULT(IDebugSymbols4 *self, DEBUG_SYMBOL_SOURCE_ENTRY* Entry, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSourceEntryOffsetRegions;
-			public function HRESULT(IDebugSymbols4 *self, DEBUG_SYMBOL_SOURCE_ENTRY* FromEntry, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* ToEntry) GetSourceEntryBySourceEntry;
-			public function HRESULT(IDebugSymbols4 *self, uint64* InstructionOffset, DEBUG_STACK_FRAME_EX* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScopeEx;
-			public function HRESULT(IDebugSymbols4 *self, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScopeEx;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 InlineContext, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByInlineContext;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 InlineContext, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByInlineContextWide;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 InlineContext, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByInlineContext;
-			public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 InlineContext, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByInlineContextWide;
-			public function HRESULT(IDebugSymbols4 *self, uint32 OutputControl, uint32 Flags, uint64 Offset, uint32 InlineContext) OutputSymbolByInlineContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugSymbols4 *self, uint32* Options) GetSymbolOptions;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Options) AddSymbolOptions;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Options) RemoveSymbolOptions;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Options) SetSymbolOptions;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
+				public function HRESULT(IDebugSymbols4 *self, PSTR Symbol, uint64* Offset) GetOffsetByName;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Line, PSTR File, uint64* Offset) GetOffsetByLine;
+				public function HRESULT(IDebugSymbols4 *self, uint32* Loaded, uint32* Unloaded) GetNumberModules;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Index, uint64* Base) GetModuleByIndex;
+				public function HRESULT(IDebugSymbols4 *self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
+				public function HRESULT(IDebugSymbols4 *self, PSTR Symbol, uint64* Base) GetSymbolModule;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Module, PSTR Name, uint32* TypeId) GetTypeId;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 TypeId, uint32* Size) GetTypeSize;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 TypeId, PSTR Field, uint32* Offset) GetFieldOffset;
+				public function HRESULT(IDebugSymbols4 *self, PSTR Symbol, uint32* TypeId, uint64* Module) GetSymbolTypeId;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32* TypeId, uint64* Module) GetOffsetTypeId;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
+				public function HRESULT(IDebugSymbols4 *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
+				public function HRESULT(IDebugSymbols4 *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
+				public function HRESULT(IDebugSymbols4 *self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
+				public function HRESULT(IDebugSymbols4 *self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
+				public function HRESULT(IDebugSymbols4 *self) ResetScope;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Flags, IDebugSymbolGroup* Update, IDebugSymbolGroup** Symbols) GetScopeSymbolGroup;
+				public function HRESULT(IDebugSymbols4 *self, IDebugSymbolGroup** Group) CreateSymbolGroup;
+				public function HRESULT(IDebugSymbols4 *self, PSTR Pattern, uint64* Handle) StartSymbolMatch;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Handle) EndSymbolMatch;
+				public function HRESULT(IDebugSymbols4 *self, PSTR Module) Reload;
+				public function HRESULT(IDebugSymbols4 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
+				public function HRESULT(IDebugSymbols4 *self, PSTR Path) SetSymbolPath;
+				public function HRESULT(IDebugSymbols4 *self, PSTR Addition) AppendSymbolPath;
+				public function HRESULT(IDebugSymbols4 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
+				public function HRESULT(IDebugSymbols4 *self, PSTR Path) SetImagePath;
+				public function HRESULT(IDebugSymbols4 *self, PSTR Addition) AppendImagePath;
+				public function HRESULT(IDebugSymbols4 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
+				public function HRESULT(IDebugSymbols4 *self, PSTR Path) SetSourcePath;
+				public function HRESULT(IDebugSymbols4 *self, PSTR Addition) AppendSourcePath;
+				public function HRESULT(IDebugSymbols4 *self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
+				public function HRESULT(IDebugSymbols4 *self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Index, uint64 Base, PSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformation;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Which, uint32 Index, uint64 Base, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameString;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 TypeId, uint64 Value, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantName;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 TypeId, uint32 FieldIndex, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldName;
+				public function HRESULT(IDebugSymbols4 *self, uint32* Options) GetTypeOptions;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Options) AddTypeOptions;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Options) RemoveTypeOptions;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Options) SetTypeOptions;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffsetWide;
+				public function HRESULT(IDebugSymbols4 *self, PWSTR Symbol, uint64* Offset) GetOffsetByNameWide;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, int32 Delta, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffsetWide;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffsetWide;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Line, PWSTR File, uint64* Offset) GetOffsetByLineWide;
+				public function HRESULT(IDebugSymbols4 *self, PWSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleNameWide;
+				public function HRESULT(IDebugSymbols4 *self, PWSTR Symbol, uint64* Base) GetSymbolModuleWide;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 TypeId, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeNameWide;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Module, PWSTR Name, uint32* TypeId) GetTypeIdWide;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 TypeId, PWSTR Field, uint32* Offset) GetFieldOffsetWide;
+				public function HRESULT(IDebugSymbols4 *self, PWSTR Symbol, uint32* TypeId, uint64* Module) GetSymbolTypeIdWide;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Flags, IDebugSymbolGroup2* Update, IDebugSymbolGroup2** Symbols) GetScopeSymbolGroup2;
+				public function HRESULT(IDebugSymbols4 *self, IDebugSymbolGroup2** Group) CreateSymbolGroup2;
+				public function HRESULT(IDebugSymbols4 *self, PWSTR Pattern, uint64* Handle) StartSymbolMatchWide;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Handle, char16* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatchWide;
+				public function HRESULT(IDebugSymbols4 *self, PWSTR Module) ReloadWide;
+				public function HRESULT(IDebugSymbols4 *self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPathWide;
+				public function HRESULT(IDebugSymbols4 *self, PWSTR Path) SetSymbolPathWide;
+				public function HRESULT(IDebugSymbols4 *self, PWSTR Addition) AppendSymbolPathWide;
+				public function HRESULT(IDebugSymbols4 *self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePathWide;
+				public function HRESULT(IDebugSymbols4 *self, PWSTR Path) SetImagePathWide;
+				public function HRESULT(IDebugSymbols4 *self, PWSTR Addition) AppendImagePathWide;
+				public function HRESULT(IDebugSymbols4 *self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePathWide;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElementWide;
+				public function HRESULT(IDebugSymbols4 *self, PWSTR Path) SetSourcePathWide;
+				public function HRESULT(IDebugSymbols4 *self, PWSTR Addition) AppendSourcePathWide;
+				public function HRESULT(IDebugSymbols4 *self, uint32 StartElement, PWSTR File, uint32 Flags, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileWide;
+				public function HRESULT(IDebugSymbols4 *self, PWSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsetsWide;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Index, uint64 Base, PWSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformationWide;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Which, uint32 Index, uint64 Base, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameStringWide;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 TypeId, uint64 Value, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantNameWide;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 TypeId, uint32 FieldIndex, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldNameWide;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Index, uint64 Base) IsManagedModule;
+				public function HRESULT(IDebugSymbols4 *self, PSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2;
+				public function HRESULT(IDebugSymbols4 *self, PWSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2Wide;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByOffset2;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Base, uint32 Size, PSTR ImagePath, PSTR ModuleName, uint32 Flags) AddSyntheticModule;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Base, uint32 Size, PWSTR ImagePath, PWSTR ModuleName, uint32 Flags) AddSyntheticModuleWide;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Base) RemoveSyntheticModule;
+				public function HRESULT(IDebugSymbols4 *self, uint32* Index) GetCurrentScopeFrameIndex;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Index) SetScopeFrameByIndex;
+				public function HRESULT(IDebugSymbols4 *self, uint32 OutputControl, uint64 InfoOffset) SetScopeFromJitDebugInfo;
+				public function HRESULT(IDebugSymbols4 *self) SetScopeFromStoredEvent;
+				public function HRESULT(IDebugSymbols4 *self, uint32 OutputControl, uint32 Flags, uint64 Offset) OutputSymbolByOffset;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BufferNeeded) GetFunctionEntryByOffset;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 ContainerTypeId, PSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffset;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Module, uint32 ContainerTypeId, PWSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffsetWide;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 Size, PSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbol;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 Size, PWSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbolWide;
+				public function HRESULT(IDebugSymbols4 *self, DEBUG_MODULE_AND_ID* Id) RemoveSyntheticSymbol;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint64* Displacements, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByOffset;
+				public function HRESULT(IDebugSymbols4 *self, PSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByName;
+				public function HRESULT(IDebugSymbols4 *self, PWSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByNameWide;
+				public function HRESULT(IDebugSymbols4 *self, uint64 ModuleBase, uint32 Token, DEBUG_MODULE_AND_ID* Id) GetSymbolEntryByToken;
+				public function HRESULT(IDebugSymbols4 *self, DEBUG_MODULE_AND_ID* Id, DEBUG_SYMBOL_ENTRY* Info) GetSymbolEntryInformation;
+				public function HRESULT(IDebugSymbols4 *self, DEBUG_MODULE_AND_ID* Id, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryString;
+				public function HRESULT(IDebugSymbols4 *self, DEBUG_MODULE_AND_ID* Id, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryStringWide;
+				public function HRESULT(IDebugSymbols4 *self, DEBUG_MODULE_AND_ID* Id, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSymbolEntryOffsetRegions;
+				public function HRESULT(IDebugSymbols4 *self, DEBUG_MODULE_AND_ID* FromId, uint32 Flags, DEBUG_MODULE_AND_ID* ToId) GetSymbolEntryBySymbolEntry;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByOffset;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Line, PSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLine;
+				public function HRESULT(IDebugSymbols4 *self, uint32 Line, PWSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLineWide;
+				public function HRESULT(IDebugSymbols4 *self, DEBUG_SYMBOL_SOURCE_ENTRY* Entry, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryString;
+				public function HRESULT(IDebugSymbols4 *self, DEBUG_SYMBOL_SOURCE_ENTRY* Entry, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryStringWide;
+				public function HRESULT(IDebugSymbols4 *self, DEBUG_SYMBOL_SOURCE_ENTRY* Entry, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSourceEntryOffsetRegions;
+				public function HRESULT(IDebugSymbols4 *self, DEBUG_SYMBOL_SOURCE_ENTRY* FromEntry, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* ToEntry) GetSourceEntryBySourceEntry;
+				public function HRESULT(IDebugSymbols4 *self, uint64* InstructionOffset, DEBUG_STACK_FRAME_EX* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScopeEx;
+				public function HRESULT(IDebugSymbols4 *self, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScopeEx;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 InlineContext, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByInlineContext;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 InlineContext, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByInlineContextWide;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 InlineContext, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByInlineContext;
+				public function HRESULT(IDebugSymbols4 *self, uint64 Offset, uint32 InlineContext, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByInlineContextWide;
+				public function HRESULT(IDebugSymbols4 *self, uint32 OutputControl, uint32 Flags, uint64 Offset, uint32 InlineContext) OutputSymbolByInlineContext;
+			}
 		}
 		[CRepr]
 		public struct IDebugSymbols5 : IUnknown
 		{
 			public const new Guid IID = .(0xc65fa83e, 0x1e69, 0x475e, 0x8e, 0x0e, 0xb5, 0xd7, 0x9e, 0x9c, 0xc1, 0x7e);
 			
-			public function HRESULT(IDebugSymbols5 *self, uint32* Options) GetSymbolOptions;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Options) AddSymbolOptions;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Options) RemoveSymbolOptions;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Options) SetSymbolOptions;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
-			public function HRESULT(IDebugSymbols5 *self, PSTR Symbol, uint64* Offset) GetOffsetByName;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Line, PSTR File, uint64* Offset) GetOffsetByLine;
-			public function HRESULT(IDebugSymbols5 *self, uint32* Loaded, uint32* Unloaded) GetNumberModules;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Index, uint64* Base) GetModuleByIndex;
-			public function HRESULT(IDebugSymbols5 *self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
-			public function HRESULT(IDebugSymbols5 *self, PSTR Symbol, uint64* Base) GetSymbolModule;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Module, PSTR Name, uint32* TypeId) GetTypeId;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 TypeId, uint32* Size) GetTypeSize;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 TypeId, PSTR Field, uint32* Offset) GetFieldOffset;
-			public function HRESULT(IDebugSymbols5 *self, PSTR Symbol, uint32* TypeId, uint64* Module) GetSymbolTypeId;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32* TypeId, uint64* Module) GetOffsetTypeId;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
-			public function HRESULT(IDebugSymbols5 *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
-			public function HRESULT(IDebugSymbols5 *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
-			public function HRESULT(IDebugSymbols5 *self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
-			public function HRESULT(IDebugSymbols5 *self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
-			public function HRESULT(IDebugSymbols5 *self) ResetScope;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Flags, IDebugSymbolGroup* Update, IDebugSymbolGroup** Symbols) GetScopeSymbolGroup;
-			public function HRESULT(IDebugSymbols5 *self, IDebugSymbolGroup** Group) CreateSymbolGroup;
-			public function HRESULT(IDebugSymbols5 *self, PSTR Pattern, uint64* Handle) StartSymbolMatch;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Handle) EndSymbolMatch;
-			public function HRESULT(IDebugSymbols5 *self, PSTR Module) Reload;
-			public function HRESULT(IDebugSymbols5 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
-			public function HRESULT(IDebugSymbols5 *self, PSTR Path) SetSymbolPath;
-			public function HRESULT(IDebugSymbols5 *self, PSTR Addition) AppendSymbolPath;
-			public function HRESULT(IDebugSymbols5 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
-			public function HRESULT(IDebugSymbols5 *self, PSTR Path) SetImagePath;
-			public function HRESULT(IDebugSymbols5 *self, PSTR Addition) AppendImagePath;
-			public function HRESULT(IDebugSymbols5 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
-			public function HRESULT(IDebugSymbols5 *self, PSTR Path) SetSourcePath;
-			public function HRESULT(IDebugSymbols5 *self, PSTR Addition) AppendSourcePath;
-			public function HRESULT(IDebugSymbols5 *self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
-			public function HRESULT(IDebugSymbols5 *self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Index, uint64 Base, PSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformation;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Which, uint32 Index, uint64 Base, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameString;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 TypeId, uint64 Value, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantName;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 TypeId, uint32 FieldIndex, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldName;
-			public function HRESULT(IDebugSymbols5 *self, uint32* Options) GetTypeOptions;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Options) AddTypeOptions;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Options) RemoveTypeOptions;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Options) SetTypeOptions;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffsetWide;
-			public function HRESULT(IDebugSymbols5 *self, PWSTR Symbol, uint64* Offset) GetOffsetByNameWide;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, int32 Delta, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffsetWide;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffsetWide;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Line, PWSTR File, uint64* Offset) GetOffsetByLineWide;
-			public function HRESULT(IDebugSymbols5 *self, PWSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleNameWide;
-			public function HRESULT(IDebugSymbols5 *self, PWSTR Symbol, uint64* Base) GetSymbolModuleWide;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 TypeId, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeNameWide;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Module, PWSTR Name, uint32* TypeId) GetTypeIdWide;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 TypeId, PWSTR Field, uint32* Offset) GetFieldOffsetWide;
-			public function HRESULT(IDebugSymbols5 *self, PWSTR Symbol, uint32* TypeId, uint64* Module) GetSymbolTypeIdWide;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Flags, IDebugSymbolGroup2* Update, IDebugSymbolGroup2** Symbols) GetScopeSymbolGroup2;
-			public function HRESULT(IDebugSymbols5 *self, IDebugSymbolGroup2** Group) CreateSymbolGroup2;
-			public function HRESULT(IDebugSymbols5 *self, PWSTR Pattern, uint64* Handle) StartSymbolMatchWide;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Handle, char16* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatchWide;
-			public function HRESULT(IDebugSymbols5 *self, PWSTR Module) ReloadWide;
-			public function HRESULT(IDebugSymbols5 *self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPathWide;
-			public function HRESULT(IDebugSymbols5 *self, PWSTR Path) SetSymbolPathWide;
-			public function HRESULT(IDebugSymbols5 *self, PWSTR Addition) AppendSymbolPathWide;
-			public function HRESULT(IDebugSymbols5 *self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePathWide;
-			public function HRESULT(IDebugSymbols5 *self, PWSTR Path) SetImagePathWide;
-			public function HRESULT(IDebugSymbols5 *self, PWSTR Addition) AppendImagePathWide;
-			public function HRESULT(IDebugSymbols5 *self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePathWide;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElementWide;
-			public function HRESULT(IDebugSymbols5 *self, PWSTR Path) SetSourcePathWide;
-			public function HRESULT(IDebugSymbols5 *self, PWSTR Addition) AppendSourcePathWide;
-			public function HRESULT(IDebugSymbols5 *self, uint32 StartElement, PWSTR File, uint32 Flags, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileWide;
-			public function HRESULT(IDebugSymbols5 *self, PWSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsetsWide;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Index, uint64 Base, PWSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformationWide;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Which, uint32 Index, uint64 Base, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameStringWide;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 TypeId, uint64 Value, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantNameWide;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 TypeId, uint32 FieldIndex, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldNameWide;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Index, uint64 Base) IsManagedModule;
-			public function HRESULT(IDebugSymbols5 *self, PSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2;
-			public function HRESULT(IDebugSymbols5 *self, PWSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2Wide;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByOffset2;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Base, uint32 Size, PSTR ImagePath, PSTR ModuleName, uint32 Flags) AddSyntheticModule;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Base, uint32 Size, PWSTR ImagePath, PWSTR ModuleName, uint32 Flags) AddSyntheticModuleWide;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Base) RemoveSyntheticModule;
-			public function HRESULT(IDebugSymbols5 *self, uint32* Index) GetCurrentScopeFrameIndex;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Index) SetScopeFrameByIndex;
-			public function HRESULT(IDebugSymbols5 *self, uint32 OutputControl, uint64 InfoOffset) SetScopeFromJitDebugInfo;
-			public function HRESULT(IDebugSymbols5 *self) SetScopeFromStoredEvent;
-			public function HRESULT(IDebugSymbols5 *self, uint32 OutputControl, uint32 Flags, uint64 Offset) OutputSymbolByOffset;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BufferNeeded) GetFunctionEntryByOffset;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 ContainerTypeId, PSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffset;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 ContainerTypeId, PWSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffsetWide;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 Size, PSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbol;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 Size, PWSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbolWide;
-			public function HRESULT(IDebugSymbols5 *self, DEBUG_MODULE_AND_ID* Id) RemoveSyntheticSymbol;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint64* Displacements, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByOffset;
-			public function HRESULT(IDebugSymbols5 *self, PSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByName;
-			public function HRESULT(IDebugSymbols5 *self, PWSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByNameWide;
-			public function HRESULT(IDebugSymbols5 *self, uint64 ModuleBase, uint32 Token, DEBUG_MODULE_AND_ID* Id) GetSymbolEntryByToken;
-			public function HRESULT(IDebugSymbols5 *self, DEBUG_MODULE_AND_ID* Id, DEBUG_SYMBOL_ENTRY* Info) GetSymbolEntryInformation;
-			public function HRESULT(IDebugSymbols5 *self, DEBUG_MODULE_AND_ID* Id, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryString;
-			public function HRESULT(IDebugSymbols5 *self, DEBUG_MODULE_AND_ID* Id, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryStringWide;
-			public function HRESULT(IDebugSymbols5 *self, DEBUG_MODULE_AND_ID* Id, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSymbolEntryOffsetRegions;
-			public function HRESULT(IDebugSymbols5 *self, DEBUG_MODULE_AND_ID* FromId, uint32 Flags, DEBUG_MODULE_AND_ID* ToId) GetSymbolEntryBySymbolEntry;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByOffset;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Line, PSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLine;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Line, PWSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLineWide;
-			public function HRESULT(IDebugSymbols5 *self, DEBUG_SYMBOL_SOURCE_ENTRY* Entry, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryString;
-			public function HRESULT(IDebugSymbols5 *self, DEBUG_SYMBOL_SOURCE_ENTRY* Entry, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryStringWide;
-			public function HRESULT(IDebugSymbols5 *self, DEBUG_SYMBOL_SOURCE_ENTRY* Entry, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSourceEntryOffsetRegions;
-			public function HRESULT(IDebugSymbols5 *self, DEBUG_SYMBOL_SOURCE_ENTRY* FromEntry, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* ToEntry) GetSourceEntryBySourceEntry;
-			public function HRESULT(IDebugSymbols5 *self, uint64* InstructionOffset, DEBUG_STACK_FRAME_EX* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScopeEx;
-			public function HRESULT(IDebugSymbols5 *self, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScopeEx;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 InlineContext, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByInlineContext;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 InlineContext, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByInlineContextWide;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 InlineContext, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByInlineContext;
-			public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 InlineContext, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByInlineContextWide;
-			public function HRESULT(IDebugSymbols5 *self, uint32 OutputControl, uint32 Flags, uint64 Offset, uint32 InlineContext) OutputSymbolByInlineContext;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Flags, uint32* Index) GetCurrentScopeFrameIndexEx;
-			public function HRESULT(IDebugSymbols5 *self, uint32 Flags, uint32 Index) SetScopeFrameByIndexEx;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugSymbols5 *self, uint32* Options) GetSymbolOptions;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Options) AddSymbolOptions;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Options) RemoveSymbolOptions;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Options) SetSymbolOptions;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffset;
+				public function HRESULT(IDebugSymbols5 *self, PSTR Symbol, uint64* Offset) GetOffsetByName;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, int32 Delta, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffset;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffset;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Line, PSTR File, uint64* Offset) GetOffsetByLine;
+				public function HRESULT(IDebugSymbols5 *self, uint32* Loaded, uint32* Unloaded) GetNumberModules;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Index, uint64* Base) GetModuleByIndex;
+				public function HRESULT(IDebugSymbols5 *self, PSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleName;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByOffset;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Index, uint64 Base, uint8* ImageNameBuffer, uint32 ImageNameBufferSize, uint32* ImageNameSize, uint8* ModuleNameBuffer, uint32 ModuleNameBufferSize, uint32* ModuleNameSize, uint8* LoadedImageNameBuffer, uint32 LoadedImageNameBufferSize, uint32* LoadedImageNameSize) GetModuleNames;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Count, uint64* Bases, uint32 Start, DEBUG_MODULE_PARAMETERS* Params) GetModuleParameters;
+				public function HRESULT(IDebugSymbols5 *self, PSTR Symbol, uint64* Base) GetSymbolModule;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 TypeId, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeName;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Module, PSTR Name, uint32* TypeId) GetTypeId;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 TypeId, uint32* Size) GetTypeSize;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 TypeId, PSTR Field, uint32* Offset) GetFieldOffset;
+				public function HRESULT(IDebugSymbols5 *self, PSTR Symbol, uint32* TypeId, uint64* Module) GetSymbolTypeId;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32* TypeId, uint64* Module) GetOffsetTypeId;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataVirtual;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataVirtual;
+				public function HRESULT(IDebugSymbols5 *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataVirtual;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesRead) ReadTypedDataPhysical;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint64 Module, uint32 TypeId, void* Buffer, uint32 BufferSize, uint32* BytesWritten) WriteTypedDataPhysical;
+				public function HRESULT(IDebugSymbols5 *self, uint32 OutputControl, uint64 Offset, uint64 Module, uint32 TypeId, uint32 Flags) OutputTypedDataPhysical;
+				public function HRESULT(IDebugSymbols5 *self, uint64* InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScope;
+				public function HRESULT(IDebugSymbols5 *self, uint64 InstructionOffset, DEBUG_STACK_FRAME* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScope;
+				public function HRESULT(IDebugSymbols5 *self) ResetScope;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Flags, IDebugSymbolGroup* Update, IDebugSymbolGroup** Symbols) GetScopeSymbolGroup;
+				public function HRESULT(IDebugSymbols5 *self, IDebugSymbolGroup** Group) CreateSymbolGroup;
+				public function HRESULT(IDebugSymbols5 *self, PSTR Pattern, uint64* Handle) StartSymbolMatch;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Handle, uint8* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatch;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Handle) EndSymbolMatch;
+				public function HRESULT(IDebugSymbols5 *self, PSTR Module) Reload;
+				public function HRESULT(IDebugSymbols5 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPath;
+				public function HRESULT(IDebugSymbols5 *self, PSTR Path) SetSymbolPath;
+				public function HRESULT(IDebugSymbols5 *self, PSTR Addition) AppendSymbolPath;
+				public function HRESULT(IDebugSymbols5 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePath;
+				public function HRESULT(IDebugSymbols5 *self, PSTR Path) SetImagePath;
+				public function HRESULT(IDebugSymbols5 *self, PSTR Addition) AppendImagePath;
+				public function HRESULT(IDebugSymbols5 *self, uint8* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePath;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Index, uint8* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElement;
+				public function HRESULT(IDebugSymbols5 *self, PSTR Path) SetSourcePath;
+				public function HRESULT(IDebugSymbols5 *self, PSTR Addition) AppendSourcePath;
+				public function HRESULT(IDebugSymbols5 *self, uint32 StartElement, PSTR File, uint32 Flags, uint32* FoundElement, uint8* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFile;
+				public function HRESULT(IDebugSymbols5 *self, PSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsets;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Index, uint64 Base, PSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformation;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Which, uint32 Index, uint64 Base, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameString;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 TypeId, uint64 Value, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantName;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 TypeId, uint32 FieldIndex, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldName;
+				public function HRESULT(IDebugSymbols5 *self, uint32* Options) GetTypeOptions;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Options) AddTypeOptions;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Options) RemoveTypeOptions;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Options) SetTypeOptions;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByOffsetWide;
+				public function HRESULT(IDebugSymbols5 *self, PWSTR Symbol, uint64* Offset) GetOffsetByNameWide;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, int32 Delta, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNearNameByOffsetWide;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByOffsetWide;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Line, PWSTR File, uint64* Offset) GetOffsetByLineWide;
+				public function HRESULT(IDebugSymbols5 *self, PWSTR Name, uint32 StartIndex, uint32* Index, uint64* Base) GetModuleByModuleNameWide;
+				public function HRESULT(IDebugSymbols5 *self, PWSTR Symbol, uint64* Base) GetSymbolModuleWide;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 TypeId, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetTypeNameWide;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Module, PWSTR Name, uint32* TypeId) GetTypeIdWide;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 TypeId, PWSTR Field, uint32* Offset) GetFieldOffsetWide;
+				public function HRESULT(IDebugSymbols5 *self, PWSTR Symbol, uint32* TypeId, uint64* Module) GetSymbolTypeIdWide;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Flags, IDebugSymbolGroup2* Update, IDebugSymbolGroup2** Symbols) GetScopeSymbolGroup2;
+				public function HRESULT(IDebugSymbols5 *self, IDebugSymbolGroup2** Group) CreateSymbolGroup2;
+				public function HRESULT(IDebugSymbols5 *self, PWSTR Pattern, uint64* Handle) StartSymbolMatchWide;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Handle, char16* Buffer, uint32 BufferSize, uint32* MatchSize, uint64* Offset) GetNextSymbolMatchWide;
+				public function HRESULT(IDebugSymbols5 *self, PWSTR Module) ReloadWide;
+				public function HRESULT(IDebugSymbols5 *self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSymbolPathWide;
+				public function HRESULT(IDebugSymbols5 *self, PWSTR Path) SetSymbolPathWide;
+				public function HRESULT(IDebugSymbols5 *self, PWSTR Addition) AppendSymbolPathWide;
+				public function HRESULT(IDebugSymbols5 *self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetImagePathWide;
+				public function HRESULT(IDebugSymbols5 *self, PWSTR Path) SetImagePathWide;
+				public function HRESULT(IDebugSymbols5 *self, PWSTR Addition) AppendImagePathWide;
+				public function HRESULT(IDebugSymbols5 *self, char16* Buffer, uint32 BufferSize, uint32* PathSize) GetSourcePathWide;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Index, char16* Buffer, uint32 BufferSize, uint32* ElementSize) GetSourcePathElementWide;
+				public function HRESULT(IDebugSymbols5 *self, PWSTR Path) SetSourcePathWide;
+				public function HRESULT(IDebugSymbols5 *self, PWSTR Addition) AppendSourcePathWide;
+				public function HRESULT(IDebugSymbols5 *self, uint32 StartElement, PWSTR File, uint32 Flags, uint32* FoundElement, char16* Buffer, uint32 BufferSize, uint32* FoundSize) FindSourceFileWide;
+				public function HRESULT(IDebugSymbols5 *self, PWSTR File, uint64* Buffer, uint32 BufferLines, uint32* FileLines) GetSourceFileLineOffsetsWide;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Index, uint64 Base, PWSTR Item, void* Buffer, uint32 BufferSize, uint32* VerInfoSize) GetModuleVersionInformationWide;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Which, uint32 Index, uint64 Base, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetModuleNameStringWide;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 TypeId, uint64 Value, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetConstantNameWide;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 TypeId, uint32 FieldIndex, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize) GetFieldNameWide;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Index, uint64 Base) IsManagedModule;
+				public function HRESULT(IDebugSymbols5 *self, PSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2;
+				public function HRESULT(IDebugSymbols5 *self, PWSTR Name, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByModuleName2Wide;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 StartIndex, uint32 Flags, uint32* Index, uint64* Base) GetModuleByOffset2;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Base, uint32 Size, PSTR ImagePath, PSTR ModuleName, uint32 Flags) AddSyntheticModule;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Base, uint32 Size, PWSTR ImagePath, PWSTR ModuleName, uint32 Flags) AddSyntheticModuleWide;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Base) RemoveSyntheticModule;
+				public function HRESULT(IDebugSymbols5 *self, uint32* Index) GetCurrentScopeFrameIndex;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Index) SetScopeFrameByIndex;
+				public function HRESULT(IDebugSymbols5 *self, uint32 OutputControl, uint64 InfoOffset) SetScopeFromJitDebugInfo;
+				public function HRESULT(IDebugSymbols5 *self) SetScopeFromStoredEvent;
+				public function HRESULT(IDebugSymbols5 *self, uint32 OutputControl, uint32 Flags, uint64 Offset) OutputSymbolByOffset;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 Flags, void* Buffer, uint32 BufferSize, uint32* BufferNeeded) GetFunctionEntryByOffset;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 ContainerTypeId, PSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffset;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Module, uint32 ContainerTypeId, PWSTR Field, uint32* FieldTypeId, uint32* Offset) GetFieldTypeAndOffsetWide;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 Size, PSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbol;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 Size, PWSTR Name, uint32 Flags, DEBUG_MODULE_AND_ID* Id) AddSyntheticSymbolWide;
+				public function HRESULT(IDebugSymbols5 *self, DEBUG_MODULE_AND_ID* Id) RemoveSyntheticSymbol;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint64* Displacements, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByOffset;
+				public function HRESULT(IDebugSymbols5 *self, PSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByName;
+				public function HRESULT(IDebugSymbols5 *self, PWSTR Symbol, uint32 Flags, DEBUG_MODULE_AND_ID* Ids, uint32 IdsCount, uint32* Entries) GetSymbolEntriesByNameWide;
+				public function HRESULT(IDebugSymbols5 *self, uint64 ModuleBase, uint32 Token, DEBUG_MODULE_AND_ID* Id) GetSymbolEntryByToken;
+				public function HRESULT(IDebugSymbols5 *self, DEBUG_MODULE_AND_ID* Id, DEBUG_SYMBOL_ENTRY* Info) GetSymbolEntryInformation;
+				public function HRESULT(IDebugSymbols5 *self, DEBUG_MODULE_AND_ID* Id, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryString;
+				public function HRESULT(IDebugSymbols5 *self, DEBUG_MODULE_AND_ID* Id, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSymbolEntryStringWide;
+				public function HRESULT(IDebugSymbols5 *self, DEBUG_MODULE_AND_ID* Id, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSymbolEntryOffsetRegions;
+				public function HRESULT(IDebugSymbols5 *self, DEBUG_MODULE_AND_ID* FromId, uint32 Flags, DEBUG_MODULE_AND_ID* ToId) GetSymbolEntryBySymbolEntry;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByOffset;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Line, PSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLine;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Line, PWSTR File, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* Entries, uint32 EntriesCount, uint32* EntriesAvail) GetSourceEntriesByLineWide;
+				public function HRESULT(IDebugSymbols5 *self, DEBUG_SYMBOL_SOURCE_ENTRY* Entry, uint32 Which, uint8* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryString;
+				public function HRESULT(IDebugSymbols5 *self, DEBUG_SYMBOL_SOURCE_ENTRY* Entry, uint32 Which, char16* Buffer, uint32 BufferSize, uint32* StringSize) GetSourceEntryStringWide;
+				public function HRESULT(IDebugSymbols5 *self, DEBUG_SYMBOL_SOURCE_ENTRY* Entry, uint32 Flags, DEBUG_OFFSET_REGION* Regions, uint32 RegionsCount, uint32* RegionsAvail) GetSourceEntryOffsetRegions;
+				public function HRESULT(IDebugSymbols5 *self, DEBUG_SYMBOL_SOURCE_ENTRY* FromEntry, uint32 Flags, DEBUG_SYMBOL_SOURCE_ENTRY* ToEntry) GetSourceEntryBySourceEntry;
+				public function HRESULT(IDebugSymbols5 *self, uint64* InstructionOffset, DEBUG_STACK_FRAME_EX* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) GetScopeEx;
+				public function HRESULT(IDebugSymbols5 *self, uint64 InstructionOffset, DEBUG_STACK_FRAME_EX* ScopeFrame, void* ScopeContext, uint32 ScopeContextSize) SetScopeEx;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 InlineContext, uint8* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByInlineContext;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 InlineContext, char16* NameBuffer, uint32 NameBufferSize, uint32* NameSize, uint64* Displacement) GetNameByInlineContextWide;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 InlineContext, uint32* Line, uint8* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByInlineContext;
+				public function HRESULT(IDebugSymbols5 *self, uint64 Offset, uint32 InlineContext, uint32* Line, char16* FileBuffer, uint32 FileBufferSize, uint32* FileSize, uint64* Displacement) GetLineByInlineContextWide;
+				public function HRESULT(IDebugSymbols5 *self, uint32 OutputControl, uint32 Flags, uint64 Offset, uint32 InlineContext) OutputSymbolByInlineContext;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Flags, uint32* Index) GetCurrentScopeFrameIndexEx;
+				public function HRESULT(IDebugSymbols5 *self, uint32 Flags, uint32 Index) SetScopeFrameByIndexEx;
+			}
 		}
 		[CRepr]
 		public struct IDebugSystemObjects : IUnknown
 		{
 			public const new Guid IID = .(0x6b86fe2c, 0x2c4f, 0x4f0c, 0x9d, 0xa2, 0x17, 0x43, 0x11, 0xac, 0xc3, 0x27);
 			
-			public function HRESULT(IDebugSystemObjects *self, uint32* Id) GetEventThread;
-			public function HRESULT(IDebugSystemObjects *self, uint32* Id) GetEventProcess;
-			public function HRESULT(IDebugSystemObjects *self, uint32* Id) GetCurrentThreadId;
-			public function HRESULT(IDebugSystemObjects *self, uint32 Id) SetCurrentThreadId;
-			public function HRESULT(IDebugSystemObjects *self, uint32* Id) GetCurrentProcessId;
-			public function HRESULT(IDebugSystemObjects *self, uint32 Id) SetCurrentProcessId;
-			public function HRESULT(IDebugSystemObjects *self, uint32* Number) GetNumberThreads;
-			public function HRESULT(IDebugSystemObjects *self, uint32* Total, uint32* LargestProcess) GetTotalNumberThreads;
-			public function HRESULT(IDebugSystemObjects *self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetThreadIdsByIndex;
-			public function HRESULT(IDebugSystemObjects *self, uint32 Processor, uint32* Id) GetThreadIdByProcessor;
-			public function HRESULT(IDebugSystemObjects *self, uint64* Offset) GetCurrentThreadDataOffset;
-			public function HRESULT(IDebugSystemObjects *self, uint64 Offset, uint32* Id) GetThreadIdByDataOffset;
-			public function HRESULT(IDebugSystemObjects *self, uint64* Offset) GetCurrentThreadTeb;
-			public function HRESULT(IDebugSystemObjects *self, uint64 Offset, uint32* Id) GetThreadIdByTeb;
-			public function HRESULT(IDebugSystemObjects *self, uint32* SysId) GetCurrentThreadSystemId;
-			public function HRESULT(IDebugSystemObjects *self, uint32 SysId, uint32* Id) GetThreadIdBySystemId;
-			public function HRESULT(IDebugSystemObjects *self, uint64* Handle) GetCurrentThreadHandle;
-			public function HRESULT(IDebugSystemObjects *self, uint64 Handle, uint32* Id) GetThreadIdByHandle;
-			public function HRESULT(IDebugSystemObjects *self, uint32* Number) GetNumberProcesses;
-			public function HRESULT(IDebugSystemObjects *self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetProcessIdsByIndex;
-			public function HRESULT(IDebugSystemObjects *self, uint64* Offset) GetCurrentProcessDataOffset;
-			public function HRESULT(IDebugSystemObjects *self, uint64 Offset, uint32* Id) GetProcessIdByDataOffset;
-			public function HRESULT(IDebugSystemObjects *self, uint64* Offset) GetCurrentProcessPeb;
-			public function HRESULT(IDebugSystemObjects *self, uint64 Offset, uint32* Id) GetProcessIdByPeb;
-			public function HRESULT(IDebugSystemObjects *self, uint32* SysId) GetCurrentProcessSystemId;
-			public function HRESULT(IDebugSystemObjects *self, uint32 SysId, uint32* Id) GetProcessIdBySystemId;
-			public function HRESULT(IDebugSystemObjects *self, uint64* Handle) GetCurrentProcessHandle;
-			public function HRESULT(IDebugSystemObjects *self, uint64 Handle, uint32* Id) GetProcessIdByHandle;
-			public function HRESULT(IDebugSystemObjects *self, uint8* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugSystemObjects *self, uint32* Id) GetEventThread;
+				public function HRESULT(IDebugSystemObjects *self, uint32* Id) GetEventProcess;
+				public function HRESULT(IDebugSystemObjects *self, uint32* Id) GetCurrentThreadId;
+				public function HRESULT(IDebugSystemObjects *self, uint32 Id) SetCurrentThreadId;
+				public function HRESULT(IDebugSystemObjects *self, uint32* Id) GetCurrentProcessId;
+				public function HRESULT(IDebugSystemObjects *self, uint32 Id) SetCurrentProcessId;
+				public function HRESULT(IDebugSystemObjects *self, uint32* Number) GetNumberThreads;
+				public function HRESULT(IDebugSystemObjects *self, uint32* Total, uint32* LargestProcess) GetTotalNumberThreads;
+				public function HRESULT(IDebugSystemObjects *self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetThreadIdsByIndex;
+				public function HRESULT(IDebugSystemObjects *self, uint32 Processor, uint32* Id) GetThreadIdByProcessor;
+				public function HRESULT(IDebugSystemObjects *self, uint64* Offset) GetCurrentThreadDataOffset;
+				public function HRESULT(IDebugSystemObjects *self, uint64 Offset, uint32* Id) GetThreadIdByDataOffset;
+				public function HRESULT(IDebugSystemObjects *self, uint64* Offset) GetCurrentThreadTeb;
+				public function HRESULT(IDebugSystemObjects *self, uint64 Offset, uint32* Id) GetThreadIdByTeb;
+				public function HRESULT(IDebugSystemObjects *self, uint32* SysId) GetCurrentThreadSystemId;
+				public function HRESULT(IDebugSystemObjects *self, uint32 SysId, uint32* Id) GetThreadIdBySystemId;
+				public function HRESULT(IDebugSystemObjects *self, uint64* Handle) GetCurrentThreadHandle;
+				public function HRESULT(IDebugSystemObjects *self, uint64 Handle, uint32* Id) GetThreadIdByHandle;
+				public function HRESULT(IDebugSystemObjects *self, uint32* Number) GetNumberProcesses;
+				public function HRESULT(IDebugSystemObjects *self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetProcessIdsByIndex;
+				public function HRESULT(IDebugSystemObjects *self, uint64* Offset) GetCurrentProcessDataOffset;
+				public function HRESULT(IDebugSystemObjects *self, uint64 Offset, uint32* Id) GetProcessIdByDataOffset;
+				public function HRESULT(IDebugSystemObjects *self, uint64* Offset) GetCurrentProcessPeb;
+				public function HRESULT(IDebugSystemObjects *self, uint64 Offset, uint32* Id) GetProcessIdByPeb;
+				public function HRESULT(IDebugSystemObjects *self, uint32* SysId) GetCurrentProcessSystemId;
+				public function HRESULT(IDebugSystemObjects *self, uint32 SysId, uint32* Id) GetProcessIdBySystemId;
+				public function HRESULT(IDebugSystemObjects *self, uint64* Handle) GetCurrentProcessHandle;
+				public function HRESULT(IDebugSystemObjects *self, uint64 Handle, uint32* Id) GetProcessIdByHandle;
+				public function HRESULT(IDebugSystemObjects *self, uint8* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableName;
+			}
 		}
 		[CRepr]
 		public struct IDebugSystemObjects2 : IUnknown
 		{
 			public const new Guid IID = .(0x0ae9f5ff, 0x1852, 0x4679, 0xb0, 0x55, 0x49, 0x4b, 0xee, 0x64, 0x07, 0xee);
 			
-			public function HRESULT(IDebugSystemObjects2 *self, uint32* Id) GetEventThread;
-			public function HRESULT(IDebugSystemObjects2 *self, uint32* Id) GetEventProcess;
-			public function HRESULT(IDebugSystemObjects2 *self, uint32* Id) GetCurrentThreadId;
-			public function HRESULT(IDebugSystemObjects2 *self, uint32 Id) SetCurrentThreadId;
-			public function HRESULT(IDebugSystemObjects2 *self, uint32* Id) GetCurrentProcessId;
-			public function HRESULT(IDebugSystemObjects2 *self, uint32 Id) SetCurrentProcessId;
-			public function HRESULT(IDebugSystemObjects2 *self, uint32* Number) GetNumberThreads;
-			public function HRESULT(IDebugSystemObjects2 *self, uint32* Total, uint32* LargestProcess) GetTotalNumberThreads;
-			public function HRESULT(IDebugSystemObjects2 *self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetThreadIdsByIndex;
-			public function HRESULT(IDebugSystemObjects2 *self, uint32 Processor, uint32* Id) GetThreadIdByProcessor;
-			public function HRESULT(IDebugSystemObjects2 *self, uint64* Offset) GetCurrentThreadDataOffset;
-			public function HRESULT(IDebugSystemObjects2 *self, uint64 Offset, uint32* Id) GetThreadIdByDataOffset;
-			public function HRESULT(IDebugSystemObjects2 *self, uint64* Offset) GetCurrentThreadTeb;
-			public function HRESULT(IDebugSystemObjects2 *self, uint64 Offset, uint32* Id) GetThreadIdByTeb;
-			public function HRESULT(IDebugSystemObjects2 *self, uint32* SysId) GetCurrentThreadSystemId;
-			public function HRESULT(IDebugSystemObjects2 *self, uint32 SysId, uint32* Id) GetThreadIdBySystemId;
-			public function HRESULT(IDebugSystemObjects2 *self, uint64* Handle) GetCurrentThreadHandle;
-			public function HRESULT(IDebugSystemObjects2 *self, uint64 Handle, uint32* Id) GetThreadIdByHandle;
-			public function HRESULT(IDebugSystemObjects2 *self, uint32* Number) GetNumberProcesses;
-			public function HRESULT(IDebugSystemObjects2 *self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetProcessIdsByIndex;
-			public function HRESULT(IDebugSystemObjects2 *self, uint64* Offset) GetCurrentProcessDataOffset;
-			public function HRESULT(IDebugSystemObjects2 *self, uint64 Offset, uint32* Id) GetProcessIdByDataOffset;
-			public function HRESULT(IDebugSystemObjects2 *self, uint64* Offset) GetCurrentProcessPeb;
-			public function HRESULT(IDebugSystemObjects2 *self, uint64 Offset, uint32* Id) GetProcessIdByPeb;
-			public function HRESULT(IDebugSystemObjects2 *self, uint32* SysId) GetCurrentProcessSystemId;
-			public function HRESULT(IDebugSystemObjects2 *self, uint32 SysId, uint32* Id) GetProcessIdBySystemId;
-			public function HRESULT(IDebugSystemObjects2 *self, uint64* Handle) GetCurrentProcessHandle;
-			public function HRESULT(IDebugSystemObjects2 *self, uint64 Handle, uint32* Id) GetProcessIdByHandle;
-			public function HRESULT(IDebugSystemObjects2 *self, uint8* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableName;
-			public function HRESULT(IDebugSystemObjects2 *self, uint32* UpTime) GetCurrentProcessUpTime;
-			public function HRESULT(IDebugSystemObjects2 *self, uint64* Offset) GetImplicitThreadDataOffset;
-			public function HRESULT(IDebugSystemObjects2 *self, uint64 Offset) SetImplicitThreadDataOffset;
-			public function HRESULT(IDebugSystemObjects2 *self, uint64* Offset) GetImplicitProcessDataOffset;
-			public function HRESULT(IDebugSystemObjects2 *self, uint64 Offset) SetImplicitProcessDataOffset;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugSystemObjects2 *self, uint32* Id) GetEventThread;
+				public function HRESULT(IDebugSystemObjects2 *self, uint32* Id) GetEventProcess;
+				public function HRESULT(IDebugSystemObjects2 *self, uint32* Id) GetCurrentThreadId;
+				public function HRESULT(IDebugSystemObjects2 *self, uint32 Id) SetCurrentThreadId;
+				public function HRESULT(IDebugSystemObjects2 *self, uint32* Id) GetCurrentProcessId;
+				public function HRESULT(IDebugSystemObjects2 *self, uint32 Id) SetCurrentProcessId;
+				public function HRESULT(IDebugSystemObjects2 *self, uint32* Number) GetNumberThreads;
+				public function HRESULT(IDebugSystemObjects2 *self, uint32* Total, uint32* LargestProcess) GetTotalNumberThreads;
+				public function HRESULT(IDebugSystemObjects2 *self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetThreadIdsByIndex;
+				public function HRESULT(IDebugSystemObjects2 *self, uint32 Processor, uint32* Id) GetThreadIdByProcessor;
+				public function HRESULT(IDebugSystemObjects2 *self, uint64* Offset) GetCurrentThreadDataOffset;
+				public function HRESULT(IDebugSystemObjects2 *self, uint64 Offset, uint32* Id) GetThreadIdByDataOffset;
+				public function HRESULT(IDebugSystemObjects2 *self, uint64* Offset) GetCurrentThreadTeb;
+				public function HRESULT(IDebugSystemObjects2 *self, uint64 Offset, uint32* Id) GetThreadIdByTeb;
+				public function HRESULT(IDebugSystemObjects2 *self, uint32* SysId) GetCurrentThreadSystemId;
+				public function HRESULT(IDebugSystemObjects2 *self, uint32 SysId, uint32* Id) GetThreadIdBySystemId;
+				public function HRESULT(IDebugSystemObjects2 *self, uint64* Handle) GetCurrentThreadHandle;
+				public function HRESULT(IDebugSystemObjects2 *self, uint64 Handle, uint32* Id) GetThreadIdByHandle;
+				public function HRESULT(IDebugSystemObjects2 *self, uint32* Number) GetNumberProcesses;
+				public function HRESULT(IDebugSystemObjects2 *self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetProcessIdsByIndex;
+				public function HRESULT(IDebugSystemObjects2 *self, uint64* Offset) GetCurrentProcessDataOffset;
+				public function HRESULT(IDebugSystemObjects2 *self, uint64 Offset, uint32* Id) GetProcessIdByDataOffset;
+				public function HRESULT(IDebugSystemObjects2 *self, uint64* Offset) GetCurrentProcessPeb;
+				public function HRESULT(IDebugSystemObjects2 *self, uint64 Offset, uint32* Id) GetProcessIdByPeb;
+				public function HRESULT(IDebugSystemObjects2 *self, uint32* SysId) GetCurrentProcessSystemId;
+				public function HRESULT(IDebugSystemObjects2 *self, uint32 SysId, uint32* Id) GetProcessIdBySystemId;
+				public function HRESULT(IDebugSystemObjects2 *self, uint64* Handle) GetCurrentProcessHandle;
+				public function HRESULT(IDebugSystemObjects2 *self, uint64 Handle, uint32* Id) GetProcessIdByHandle;
+				public function HRESULT(IDebugSystemObjects2 *self, uint8* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableName;
+				public function HRESULT(IDebugSystemObjects2 *self, uint32* UpTime) GetCurrentProcessUpTime;
+				public function HRESULT(IDebugSystemObjects2 *self, uint64* Offset) GetImplicitThreadDataOffset;
+				public function HRESULT(IDebugSystemObjects2 *self, uint64 Offset) SetImplicitThreadDataOffset;
+				public function HRESULT(IDebugSystemObjects2 *self, uint64* Offset) GetImplicitProcessDataOffset;
+				public function HRESULT(IDebugSystemObjects2 *self, uint64 Offset) SetImplicitProcessDataOffset;
+			}
 		}
 		[CRepr]
 		public struct IDebugSystemObjects3 : IUnknown
 		{
 			public const new Guid IID = .(0xe9676e2f, 0xe286, 0x4ea3, 0xb0, 0xf9, 0xdf, 0xe5, 0xd9, 0xfc, 0x33, 0x0e);
 			
-			public function HRESULT(IDebugSystemObjects3 *self, uint32* Id) GetEventThread;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32* Id) GetEventProcess;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32* Id) GetCurrentThreadId;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32 Id) SetCurrentThreadId;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32* Id) GetCurrentProcessId;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32 Id) SetCurrentProcessId;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32* Number) GetNumberThreads;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32* Total, uint32* LargestProcess) GetTotalNumberThreads;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetThreadIdsByIndex;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32 Processor, uint32* Id) GetThreadIdByProcessor;
-			public function HRESULT(IDebugSystemObjects3 *self, uint64* Offset) GetCurrentThreadDataOffset;
-			public function HRESULT(IDebugSystemObjects3 *self, uint64 Offset, uint32* Id) GetThreadIdByDataOffset;
-			public function HRESULT(IDebugSystemObjects3 *self, uint64* Offset) GetCurrentThreadTeb;
-			public function HRESULT(IDebugSystemObjects3 *self, uint64 Offset, uint32* Id) GetThreadIdByTeb;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32* SysId) GetCurrentThreadSystemId;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32 SysId, uint32* Id) GetThreadIdBySystemId;
-			public function HRESULT(IDebugSystemObjects3 *self, uint64* Handle) GetCurrentThreadHandle;
-			public function HRESULT(IDebugSystemObjects3 *self, uint64 Handle, uint32* Id) GetThreadIdByHandle;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32* Number) GetNumberProcesses;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetProcessIdsByIndex;
-			public function HRESULT(IDebugSystemObjects3 *self, uint64* Offset) GetCurrentProcessDataOffset;
-			public function HRESULT(IDebugSystemObjects3 *self, uint64 Offset, uint32* Id) GetProcessIdByDataOffset;
-			public function HRESULT(IDebugSystemObjects3 *self, uint64* Offset) GetCurrentProcessPeb;
-			public function HRESULT(IDebugSystemObjects3 *self, uint64 Offset, uint32* Id) GetProcessIdByPeb;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32* SysId) GetCurrentProcessSystemId;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32 SysId, uint32* Id) GetProcessIdBySystemId;
-			public function HRESULT(IDebugSystemObjects3 *self, uint64* Handle) GetCurrentProcessHandle;
-			public function HRESULT(IDebugSystemObjects3 *self, uint64 Handle, uint32* Id) GetProcessIdByHandle;
-			public function HRESULT(IDebugSystemObjects3 *self, uint8* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableName;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32* UpTime) GetCurrentProcessUpTime;
-			public function HRESULT(IDebugSystemObjects3 *self, uint64* Offset) GetImplicitThreadDataOffset;
-			public function HRESULT(IDebugSystemObjects3 *self, uint64 Offset) SetImplicitThreadDataOffset;
-			public function HRESULT(IDebugSystemObjects3 *self, uint64* Offset) GetImplicitProcessDataOffset;
-			public function HRESULT(IDebugSystemObjects3 *self, uint64 Offset) SetImplicitProcessDataOffset;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32* Id) GetEventSystem;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32* Id) GetCurrentSystemId;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32 Id) SetCurrentSystemId;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32* Number) GetNumberSystems;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32 Start, uint32 Count, uint32* Ids) GetSystemIdsByIndex;
-			public function HRESULT(IDebugSystemObjects3 *self, uint32* TotalThreads, uint32* TotalProcesses, uint32* LargestProcessThreads, uint32* LargestSystemThreads, uint32* LargestSystemProcesses) GetTotalNumberThreadsAndProcesses;
-			public function HRESULT(IDebugSystemObjects3 *self, uint64* Server) GetCurrentSystemServer;
-			public function HRESULT(IDebugSystemObjects3 *self, uint64 Server, uint32* Id) GetSystemByServer;
-			public function HRESULT(IDebugSystemObjects3 *self, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetCurrentSystemServerName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugSystemObjects3 *self, uint32* Id) GetEventThread;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32* Id) GetEventProcess;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32* Id) GetCurrentThreadId;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32 Id) SetCurrentThreadId;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32* Id) GetCurrentProcessId;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32 Id) SetCurrentProcessId;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32* Number) GetNumberThreads;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32* Total, uint32* LargestProcess) GetTotalNumberThreads;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetThreadIdsByIndex;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32 Processor, uint32* Id) GetThreadIdByProcessor;
+				public function HRESULT(IDebugSystemObjects3 *self, uint64* Offset) GetCurrentThreadDataOffset;
+				public function HRESULT(IDebugSystemObjects3 *self, uint64 Offset, uint32* Id) GetThreadIdByDataOffset;
+				public function HRESULT(IDebugSystemObjects3 *self, uint64* Offset) GetCurrentThreadTeb;
+				public function HRESULT(IDebugSystemObjects3 *self, uint64 Offset, uint32* Id) GetThreadIdByTeb;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32* SysId) GetCurrentThreadSystemId;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32 SysId, uint32* Id) GetThreadIdBySystemId;
+				public function HRESULT(IDebugSystemObjects3 *self, uint64* Handle) GetCurrentThreadHandle;
+				public function HRESULT(IDebugSystemObjects3 *self, uint64 Handle, uint32* Id) GetThreadIdByHandle;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32* Number) GetNumberProcesses;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetProcessIdsByIndex;
+				public function HRESULT(IDebugSystemObjects3 *self, uint64* Offset) GetCurrentProcessDataOffset;
+				public function HRESULT(IDebugSystemObjects3 *self, uint64 Offset, uint32* Id) GetProcessIdByDataOffset;
+				public function HRESULT(IDebugSystemObjects3 *self, uint64* Offset) GetCurrentProcessPeb;
+				public function HRESULT(IDebugSystemObjects3 *self, uint64 Offset, uint32* Id) GetProcessIdByPeb;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32* SysId) GetCurrentProcessSystemId;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32 SysId, uint32* Id) GetProcessIdBySystemId;
+				public function HRESULT(IDebugSystemObjects3 *self, uint64* Handle) GetCurrentProcessHandle;
+				public function HRESULT(IDebugSystemObjects3 *self, uint64 Handle, uint32* Id) GetProcessIdByHandle;
+				public function HRESULT(IDebugSystemObjects3 *self, uint8* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableName;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32* UpTime) GetCurrentProcessUpTime;
+				public function HRESULT(IDebugSystemObjects3 *self, uint64* Offset) GetImplicitThreadDataOffset;
+				public function HRESULT(IDebugSystemObjects3 *self, uint64 Offset) SetImplicitThreadDataOffset;
+				public function HRESULT(IDebugSystemObjects3 *self, uint64* Offset) GetImplicitProcessDataOffset;
+				public function HRESULT(IDebugSystemObjects3 *self, uint64 Offset) SetImplicitProcessDataOffset;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32* Id) GetEventSystem;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32* Id) GetCurrentSystemId;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32 Id) SetCurrentSystemId;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32* Number) GetNumberSystems;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32 Start, uint32 Count, uint32* Ids) GetSystemIdsByIndex;
+				public function HRESULT(IDebugSystemObjects3 *self, uint32* TotalThreads, uint32* TotalProcesses, uint32* LargestProcessThreads, uint32* LargestSystemThreads, uint32* LargestSystemProcesses) GetTotalNumberThreadsAndProcesses;
+				public function HRESULT(IDebugSystemObjects3 *self, uint64* Server) GetCurrentSystemServer;
+				public function HRESULT(IDebugSystemObjects3 *self, uint64 Server, uint32* Id) GetSystemByServer;
+				public function HRESULT(IDebugSystemObjects3 *self, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetCurrentSystemServerName;
+			}
 		}
 		[CRepr]
 		public struct IDebugSystemObjects4 : IUnknown
 		{
 			public const new Guid IID = .(0x489468e6, 0x7d0f, 0x4af5, 0x87, 0xab, 0x25, 0x20, 0x74, 0x54, 0xd5, 0x53);
 			
-			public function HRESULT(IDebugSystemObjects4 *self, uint32* Id) GetEventThread;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32* Id) GetEventProcess;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32* Id) GetCurrentThreadId;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32 Id) SetCurrentThreadId;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32* Id) GetCurrentProcessId;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32 Id) SetCurrentProcessId;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32* Number) GetNumberThreads;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32* Total, uint32* LargestProcess) GetTotalNumberThreads;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetThreadIdsByIndex;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32 Processor, uint32* Id) GetThreadIdByProcessor;
-			public function HRESULT(IDebugSystemObjects4 *self, uint64* Offset) GetCurrentThreadDataOffset;
-			public function HRESULT(IDebugSystemObjects4 *self, uint64 Offset, uint32* Id) GetThreadIdByDataOffset;
-			public function HRESULT(IDebugSystemObjects4 *self, uint64* Offset) GetCurrentThreadTeb;
-			public function HRESULT(IDebugSystemObjects4 *self, uint64 Offset, uint32* Id) GetThreadIdByTeb;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32* SysId) GetCurrentThreadSystemId;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32 SysId, uint32* Id) GetThreadIdBySystemId;
-			public function HRESULT(IDebugSystemObjects4 *self, uint64* Handle) GetCurrentThreadHandle;
-			public function HRESULT(IDebugSystemObjects4 *self, uint64 Handle, uint32* Id) GetThreadIdByHandle;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32* Number) GetNumberProcesses;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetProcessIdsByIndex;
-			public function HRESULT(IDebugSystemObjects4 *self, uint64* Offset) GetCurrentProcessDataOffset;
-			public function HRESULT(IDebugSystemObjects4 *self, uint64 Offset, uint32* Id) GetProcessIdByDataOffset;
-			public function HRESULT(IDebugSystemObjects4 *self, uint64* Offset) GetCurrentProcessPeb;
-			public function HRESULT(IDebugSystemObjects4 *self, uint64 Offset, uint32* Id) GetProcessIdByPeb;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32* SysId) GetCurrentProcessSystemId;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32 SysId, uint32* Id) GetProcessIdBySystemId;
-			public function HRESULT(IDebugSystemObjects4 *self, uint64* Handle) GetCurrentProcessHandle;
-			public function HRESULT(IDebugSystemObjects4 *self, uint64 Handle, uint32* Id) GetProcessIdByHandle;
-			public function HRESULT(IDebugSystemObjects4 *self, uint8* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableName;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32* UpTime) GetCurrentProcessUpTime;
-			public function HRESULT(IDebugSystemObjects4 *self, uint64* Offset) GetImplicitThreadDataOffset;
-			public function HRESULT(IDebugSystemObjects4 *self, uint64 Offset) SetImplicitThreadDataOffset;
-			public function HRESULT(IDebugSystemObjects4 *self, uint64* Offset) GetImplicitProcessDataOffset;
-			public function HRESULT(IDebugSystemObjects4 *self, uint64 Offset) SetImplicitProcessDataOffset;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32* Id) GetEventSystem;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32* Id) GetCurrentSystemId;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32 Id) SetCurrentSystemId;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32* Number) GetNumberSystems;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32 Start, uint32 Count, uint32* Ids) GetSystemIdsByIndex;
-			public function HRESULT(IDebugSystemObjects4 *self, uint32* TotalThreads, uint32* TotalProcesses, uint32* LargestProcessThreads, uint32* LargestSystemThreads, uint32* LargestSystemProcesses) GetTotalNumberThreadsAndProcesses;
-			public function HRESULT(IDebugSystemObjects4 *self, uint64* Server) GetCurrentSystemServer;
-			public function HRESULT(IDebugSystemObjects4 *self, uint64 Server, uint32* Id) GetSystemByServer;
-			public function HRESULT(IDebugSystemObjects4 *self, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetCurrentSystemServerName;
-			public function HRESULT(IDebugSystemObjects4 *self, char16* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableNameWide;
-			public function HRESULT(IDebugSystemObjects4 *self, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetCurrentSystemServerNameWide;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugSystemObjects4 *self, uint32* Id) GetEventThread;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32* Id) GetEventProcess;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32* Id) GetCurrentThreadId;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32 Id) SetCurrentThreadId;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32* Id) GetCurrentProcessId;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32 Id) SetCurrentProcessId;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32* Number) GetNumberThreads;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32* Total, uint32* LargestProcess) GetTotalNumberThreads;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetThreadIdsByIndex;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32 Processor, uint32* Id) GetThreadIdByProcessor;
+				public function HRESULT(IDebugSystemObjects4 *self, uint64* Offset) GetCurrentThreadDataOffset;
+				public function HRESULT(IDebugSystemObjects4 *self, uint64 Offset, uint32* Id) GetThreadIdByDataOffset;
+				public function HRESULT(IDebugSystemObjects4 *self, uint64* Offset) GetCurrentThreadTeb;
+				public function HRESULT(IDebugSystemObjects4 *self, uint64 Offset, uint32* Id) GetThreadIdByTeb;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32* SysId) GetCurrentThreadSystemId;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32 SysId, uint32* Id) GetThreadIdBySystemId;
+				public function HRESULT(IDebugSystemObjects4 *self, uint64* Handle) GetCurrentThreadHandle;
+				public function HRESULT(IDebugSystemObjects4 *self, uint64 Handle, uint32* Id) GetThreadIdByHandle;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32* Number) GetNumberProcesses;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32 Start, uint32 Count, uint32* Ids, uint32* SysIds) GetProcessIdsByIndex;
+				public function HRESULT(IDebugSystemObjects4 *self, uint64* Offset) GetCurrentProcessDataOffset;
+				public function HRESULT(IDebugSystemObjects4 *self, uint64 Offset, uint32* Id) GetProcessIdByDataOffset;
+				public function HRESULT(IDebugSystemObjects4 *self, uint64* Offset) GetCurrentProcessPeb;
+				public function HRESULT(IDebugSystemObjects4 *self, uint64 Offset, uint32* Id) GetProcessIdByPeb;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32* SysId) GetCurrentProcessSystemId;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32 SysId, uint32* Id) GetProcessIdBySystemId;
+				public function HRESULT(IDebugSystemObjects4 *self, uint64* Handle) GetCurrentProcessHandle;
+				public function HRESULT(IDebugSystemObjects4 *self, uint64 Handle, uint32* Id) GetProcessIdByHandle;
+				public function HRESULT(IDebugSystemObjects4 *self, uint8* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableName;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32* UpTime) GetCurrentProcessUpTime;
+				public function HRESULT(IDebugSystemObjects4 *self, uint64* Offset) GetImplicitThreadDataOffset;
+				public function HRESULT(IDebugSystemObjects4 *self, uint64 Offset) SetImplicitThreadDataOffset;
+				public function HRESULT(IDebugSystemObjects4 *self, uint64* Offset) GetImplicitProcessDataOffset;
+				public function HRESULT(IDebugSystemObjects4 *self, uint64 Offset) SetImplicitProcessDataOffset;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32* Id) GetEventSystem;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32* Id) GetCurrentSystemId;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32 Id) SetCurrentSystemId;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32* Number) GetNumberSystems;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32 Start, uint32 Count, uint32* Ids) GetSystemIdsByIndex;
+				public function HRESULT(IDebugSystemObjects4 *self, uint32* TotalThreads, uint32* TotalProcesses, uint32* LargestProcessThreads, uint32* LargestSystemThreads, uint32* LargestSystemProcesses) GetTotalNumberThreadsAndProcesses;
+				public function HRESULT(IDebugSystemObjects4 *self, uint64* Server) GetCurrentSystemServer;
+				public function HRESULT(IDebugSystemObjects4 *self, uint64 Server, uint32* Id) GetSystemByServer;
+				public function HRESULT(IDebugSystemObjects4 *self, uint8* Buffer, uint32 BufferSize, uint32* NameSize) GetCurrentSystemServerName;
+				public function HRESULT(IDebugSystemObjects4 *self, char16* Buffer, uint32 BufferSize, uint32* ExeSize) GetCurrentProcessExecutableNameWide;
+				public function HRESULT(IDebugSystemObjects4 *self, char16* Buffer, uint32 BufferSize, uint32* NameSize) GetCurrentSystemServerNameWide;
+			}
 		}
 		[CRepr]
 		public struct DebugBaseEventCallbacks : IDebugEventCallbacks
 		{
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugEventCallbacks.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct DebugBaseEventCallbacksWide : IDebugEventCallbacksWide
 		{
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugEventCallbacksWide.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IHostDataModelAccess : IUnknown
 		{
 			public const new Guid IID = .(0xf2bce54e, 0x4835, 0x4f8a, 0x83, 0x6e, 0x79, 0x81, 0xe2, 0x99, 0x04, 0xd1);
 			
-			public function HRESULT(IHostDataModelAccess *self, IDataModelManager** manager, IDebugHost** host) GetDataModel;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IHostDataModelAccess *self, IDataModelManager** manager, IDebugHost** host) GetDataModel;
+			}
 		}
 		[CRepr]
 		public struct IKeyStore : IUnknown
 		{
 			public const new Guid IID = .(0x0fc7557d, 0x401d, 0x4fca, 0x93, 0x65, 0xda, 0x1e, 0x98, 0x50, 0x69, 0x7c);
 			
-			public function HRESULT(IKeyStore *self, PWSTR key, IModelObject** object, IKeyStore** metadata) GetKey;
-			public function HRESULT(IKeyStore *self, PWSTR key, IModelObject* object, IKeyStore* metadata) SetKey;
-			public function HRESULT(IKeyStore *self, PWSTR key, IModelObject** object, IKeyStore** metadata) GetKeyValue;
-			public function HRESULT(IKeyStore *self, PWSTR key, IModelObject* object) SetKeyValue;
-			public function HRESULT(IKeyStore *self) ClearKeys;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IKeyStore *self, PWSTR key, IModelObject** object, IKeyStore** metadata) GetKey;
+				public function HRESULT(IKeyStore *self, PWSTR key, IModelObject* object, IKeyStore* metadata) SetKey;
+				public function HRESULT(IKeyStore *self, PWSTR key, IModelObject** object, IKeyStore** metadata) GetKeyValue;
+				public function HRESULT(IKeyStore *self, PWSTR key, IModelObject* object) SetKeyValue;
+				public function HRESULT(IKeyStore *self) ClearKeys;
+			}
 		}
 		[CRepr]
 		public struct IModelObject : IUnknown
 		{
 			public const new Guid IID = .(0xe28c7893, 0x3f4b, 0x4b96, 0xba, 0xca, 0x29, 0x3c, 0xdc, 0x55, 0xf4, 0x5d);
 			
-			public function HRESULT(IModelObject *self, IDebugHostContext** context) GetContext;
-			public function HRESULT(IModelObject *self, ModelObjectKind* kind) GetKind;
-			public function HRESULT(IModelObject *self, VARIANT* intrinsicData) GetIntrinsicValue;
-			public function HRESULT(IModelObject *self, uint16 vt, VARIANT* intrinsicData) GetIntrinsicValueAs;
-			public function HRESULT(IModelObject *self, PWSTR key, IModelObject** object, IKeyStore** metadata) GetKeyValue;
-			public function HRESULT(IModelObject *self, PWSTR key, IModelObject* object) SetKeyValue;
-			public function HRESULT(IModelObject *self, IKeyEnumerator** enumerator) EnumerateKeyValues;
-			public function HRESULT(IModelObject *self, SymbolKind kind, PWSTR name, uint32 searchFlags, IModelObject** object) GetRawValue;
-			public function HRESULT(IModelObject *self, SymbolKind kind, uint32 searchFlags, IRawEnumerator** enumerator) EnumerateRawValues;
-			public function HRESULT(IModelObject *self, IModelObject** object) Dereference;
-			public function HRESULT(IModelObject *self, IModelObject** runtimeTypedObject) TryCastToRuntimeType;
-			public function HRESULT(IModelObject *self, Guid* conceptId, IUnknown** conceptInterface, IKeyStore** conceptMetadata) GetConcept;
-			public function HRESULT(IModelObject *self, Location* location) GetLocation;
-			public function HRESULT(IModelObject *self, IDebugHostType** type) GetTypeInfo;
-			public function HRESULT(IModelObject *self, Location* location, IDebugHostType** type) GetTargetInfo;
-			public function HRESULT(IModelObject *self, uint64* numModels) GetNumberOfParentModels;
-			public function HRESULT(IModelObject *self, uint64 i, IModelObject** model, IModelObject** contextObject) GetParentModel;
-			public function HRESULT(IModelObject *self, IModelObject* model, IModelObject* contextObject, uint8 @override) AddParentModel;
-			public function HRESULT(IModelObject *self, IModelObject* model) RemoveParentModel;
-			public function HRESULT(IModelObject *self, PWSTR key, IModelObject** object, IKeyStore** metadata) GetKey;
-			public function HRESULT(IModelObject *self, PWSTR key, IModelObject** objectReference, IKeyStore** metadata) GetKeyReference;
-			public function HRESULT(IModelObject *self, PWSTR key, IModelObject* object, IKeyStore* metadata) SetKey;
-			public function HRESULT(IModelObject *self) ClearKeys;
-			public function HRESULT(IModelObject *self, IKeyEnumerator** enumerator) EnumerateKeys;
-			public function HRESULT(IModelObject *self, IKeyEnumerator** enumerator) EnumerateKeyReferences;
-			public function HRESULT(IModelObject *self, Guid* conceptId, IUnknown* conceptInterface, IKeyStore* conceptMetadata) SetConcept;
-			public function HRESULT(IModelObject *self) ClearConcepts;
-			public function HRESULT(IModelObject *self, SymbolKind kind, PWSTR name, uint32 searchFlags, IModelObject** object) GetRawReference;
-			public function HRESULT(IModelObject *self, SymbolKind kind, uint32 searchFlags, IRawEnumerator** enumerator) EnumerateRawReferences;
-			public function HRESULT(IModelObject *self, IModelObject* dataModelObject, IUnknown* context) SetContextForDataModel;
-			public function HRESULT(IModelObject *self, IModelObject* dataModelObject, IUnknown** context) GetContextForDataModel;
-			public function HRESULT(IModelObject *self, IModelObject* other, IModelObject** ppResult) Compare;
-			public function HRESULT(IModelObject *self, IModelObject* other, Boolean* equal) IsEqualTo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IModelObject *self, IDebugHostContext** context) GetContext;
+				public function HRESULT(IModelObject *self, ModelObjectKind* kind) GetKind;
+				public function HRESULT(IModelObject *self, VARIANT* intrinsicData) GetIntrinsicValue;
+				public function HRESULT(IModelObject *self, uint16 vt, VARIANT* intrinsicData) GetIntrinsicValueAs;
+				public function HRESULT(IModelObject *self, PWSTR key, IModelObject** object, IKeyStore** metadata) GetKeyValue;
+				public function HRESULT(IModelObject *self, PWSTR key, IModelObject* object) SetKeyValue;
+				public function HRESULT(IModelObject *self, IKeyEnumerator** enumerator) EnumerateKeyValues;
+				public function HRESULT(IModelObject *self, SymbolKind kind, PWSTR name, uint32 searchFlags, IModelObject** object) GetRawValue;
+				public function HRESULT(IModelObject *self, SymbolKind kind, uint32 searchFlags, IRawEnumerator** enumerator) EnumerateRawValues;
+				public function HRESULT(IModelObject *self, IModelObject** object) Dereference;
+				public function HRESULT(IModelObject *self, IModelObject** runtimeTypedObject) TryCastToRuntimeType;
+				public function HRESULT(IModelObject *self, Guid* conceptId, IUnknown** conceptInterface, IKeyStore** conceptMetadata) GetConcept;
+				public function HRESULT(IModelObject *self, Location* location) GetLocation;
+				public function HRESULT(IModelObject *self, IDebugHostType** type) GetTypeInfo;
+				public function HRESULT(IModelObject *self, Location* location, IDebugHostType** type) GetTargetInfo;
+				public function HRESULT(IModelObject *self, uint64* numModels) GetNumberOfParentModels;
+				public function HRESULT(IModelObject *self, uint64 i, IModelObject** model, IModelObject** contextObject) GetParentModel;
+				public function HRESULT(IModelObject *self, IModelObject* model, IModelObject* contextObject, uint8 @override) AddParentModel;
+				public function HRESULT(IModelObject *self, IModelObject* model) RemoveParentModel;
+				public function HRESULT(IModelObject *self, PWSTR key, IModelObject** object, IKeyStore** metadata) GetKey;
+				public function HRESULT(IModelObject *self, PWSTR key, IModelObject** objectReference, IKeyStore** metadata) GetKeyReference;
+				public function HRESULT(IModelObject *self, PWSTR key, IModelObject* object, IKeyStore* metadata) SetKey;
+				public function HRESULT(IModelObject *self) ClearKeys;
+				public function HRESULT(IModelObject *self, IKeyEnumerator** enumerator) EnumerateKeys;
+				public function HRESULT(IModelObject *self, IKeyEnumerator** enumerator) EnumerateKeyReferences;
+				public function HRESULT(IModelObject *self, Guid* conceptId, IUnknown* conceptInterface, IKeyStore* conceptMetadata) SetConcept;
+				public function HRESULT(IModelObject *self) ClearConcepts;
+				public function HRESULT(IModelObject *self, SymbolKind kind, PWSTR name, uint32 searchFlags, IModelObject** object) GetRawReference;
+				public function HRESULT(IModelObject *self, SymbolKind kind, uint32 searchFlags, IRawEnumerator** enumerator) EnumerateRawReferences;
+				public function HRESULT(IModelObject *self, IModelObject* dataModelObject, IUnknown* context) SetContextForDataModel;
+				public function HRESULT(IModelObject *self, IModelObject* dataModelObject, IUnknown** context) GetContextForDataModel;
+				public function HRESULT(IModelObject *self, IModelObject* other, IModelObject** ppResult) Compare;
+				public function HRESULT(IModelObject *self, IModelObject* other, Boolean* equal) IsEqualTo;
+			}
 		}
 		[CRepr]
 		public struct IDataModelManager : IUnknown
 		{
 			public const new Guid IID = .(0x73fe19f4, 0xa110, 0x4500, 0x8e, 0xd9, 0x3c, 0x28, 0x89, 0x6f, 0x50, 0x8c);
 			
-			public function HRESULT(IDataModelManager *self) Close;
-			public function HRESULT(IDataModelManager *self, IModelObject** object) CreateNoValue;
-			public function HRESULT(IDataModelManager *self, HRESULT hrError, PWSTR pwszMessage, IModelObject** object) CreateErrorObject;
-			public function HRESULT(IDataModelManager *self, IDebugHostContext* context, Location objectLocation, IDebugHostType* objectType, IModelObject** object) CreateTypedObject;
-			public function HRESULT(IDataModelManager *self, IDebugHostContext* context, Location objectLocation, IDebugHostType* objectType, IModelObject** object) CreateTypedObjectReference;
-			public function HRESULT(IDataModelManager *self, IDebugHostContext* context, IModelObject** object) CreateSyntheticObject;
-			public function HRESULT(IDataModelManager *self, IDataModelConcept* dataModel, IModelObject** object) CreateDataModelObject;
-			public function HRESULT(IDataModelManager *self, ModelObjectKind objectKind, VARIANT* intrinsicData, IModelObject** object) CreateIntrinsicObject;
-			public function HRESULT(IDataModelManager *self, VARIANT* intrinsicData, IDebugHostType* type, IModelObject** object) CreateTypedIntrinsicObject;
-			public function HRESULT(IDataModelManager *self, IDebugHostTypeSignature* typeSignature, IModelObject** dataModel) GetModelForTypeSignature;
-			public function HRESULT(IDataModelManager *self, IDebugHostType* type, IModelObject** dataModel, IDebugHostTypeSignature** typeSignature, IDebugHostSymbolEnumerator** wildcardMatches) GetModelForType;
-			public function HRESULT(IDataModelManager *self, IDebugHostTypeSignature* typeSignature, IModelObject* dataModel) RegisterModelForTypeSignature;
-			public function HRESULT(IDataModelManager *self, IModelObject* dataModel, IDebugHostTypeSignature* typeSignature) UnregisterModelForTypeSignature;
-			public function HRESULT(IDataModelManager *self, IDebugHostTypeSignature* typeSignature, IModelObject* dataModel) RegisterExtensionForTypeSignature;
-			public function HRESULT(IDataModelManager *self, IModelObject* dataModel, IDebugHostTypeSignature* typeSignature) UnregisterExtensionForTypeSignature;
-			public function HRESULT(IDataModelManager *self, IKeyStore* parentStore, IKeyStore** metadataStore) CreateMetadataStore;
-			public function HRESULT(IDataModelManager *self, IModelObject** rootNamespace) GetRootNamespace;
-			public function HRESULT(IDataModelManager *self, PWSTR modelName, IModelObject* modeObject) RegisterNamedModel;
-			public function HRESULT(IDataModelManager *self, PWSTR modelName) UnregisterNamedModel;
-			public function HRESULT(IDataModelManager *self, PWSTR modelName, IModelObject** modelObject) AcquireNamedModel;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataModelManager *self) Close;
+				public function HRESULT(IDataModelManager *self, IModelObject** object) CreateNoValue;
+				public function HRESULT(IDataModelManager *self, HRESULT hrError, PWSTR pwszMessage, IModelObject** object) CreateErrorObject;
+				public function HRESULT(IDataModelManager *self, IDebugHostContext* context, Location objectLocation, IDebugHostType* objectType, IModelObject** object) CreateTypedObject;
+				public function HRESULT(IDataModelManager *self, IDebugHostContext* context, Location objectLocation, IDebugHostType* objectType, IModelObject** object) CreateTypedObjectReference;
+				public function HRESULT(IDataModelManager *self, IDebugHostContext* context, IModelObject** object) CreateSyntheticObject;
+				public function HRESULT(IDataModelManager *self, IDataModelConcept* dataModel, IModelObject** object) CreateDataModelObject;
+				public function HRESULT(IDataModelManager *self, ModelObjectKind objectKind, VARIANT* intrinsicData, IModelObject** object) CreateIntrinsicObject;
+				public function HRESULT(IDataModelManager *self, VARIANT* intrinsicData, IDebugHostType* type, IModelObject** object) CreateTypedIntrinsicObject;
+				public function HRESULT(IDataModelManager *self, IDebugHostTypeSignature* typeSignature, IModelObject** dataModel) GetModelForTypeSignature;
+				public function HRESULT(IDataModelManager *self, IDebugHostType* type, IModelObject** dataModel, IDebugHostTypeSignature** typeSignature, IDebugHostSymbolEnumerator** wildcardMatches) GetModelForType;
+				public function HRESULT(IDataModelManager *self, IDebugHostTypeSignature* typeSignature, IModelObject* dataModel) RegisterModelForTypeSignature;
+				public function HRESULT(IDataModelManager *self, IModelObject* dataModel, IDebugHostTypeSignature* typeSignature) UnregisterModelForTypeSignature;
+				public function HRESULT(IDataModelManager *self, IDebugHostTypeSignature* typeSignature, IModelObject* dataModel) RegisterExtensionForTypeSignature;
+				public function HRESULT(IDataModelManager *self, IModelObject* dataModel, IDebugHostTypeSignature* typeSignature) UnregisterExtensionForTypeSignature;
+				public function HRESULT(IDataModelManager *self, IKeyStore* parentStore, IKeyStore** metadataStore) CreateMetadataStore;
+				public function HRESULT(IDataModelManager *self, IModelObject** rootNamespace) GetRootNamespace;
+				public function HRESULT(IDataModelManager *self, PWSTR modelName, IModelObject* modeObject) RegisterNamedModel;
+				public function HRESULT(IDataModelManager *self, PWSTR modelName) UnregisterNamedModel;
+				public function HRESULT(IDataModelManager *self, PWSTR modelName, IModelObject** modelObject) AcquireNamedModel;
+			}
 		}
 		[CRepr]
 		public struct IModelKeyReference : IUnknown
 		{
 			public const new Guid IID = .(0x5253dcf8, 0x5aff, 0x4c62, 0xb3, 0x02, 0x56, 0xa2, 0x89, 0xe0, 0x09, 0x98);
 			
-			public function HRESULT(IModelKeyReference *self, BSTR* keyName) GetKeyName;
-			public function HRESULT(IModelKeyReference *self, IModelObject** originalObject) GetOriginalObject;
-			public function HRESULT(IModelKeyReference *self, IModelObject** containingObject) GetContextObject;
-			public function HRESULT(IModelKeyReference *self, IModelObject** object, IKeyStore** metadata) GetKey;
-			public function HRESULT(IModelKeyReference *self, IModelObject** object, IKeyStore** metadata) GetKeyValue;
-			public function HRESULT(IModelKeyReference *self, IModelObject* object, IKeyStore* metadata) SetKey;
-			public function HRESULT(IModelKeyReference *self, IModelObject* object) SetKeyValue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IModelKeyReference *self, BSTR* keyName) GetKeyName;
+				public function HRESULT(IModelKeyReference *self, IModelObject** originalObject) GetOriginalObject;
+				public function HRESULT(IModelKeyReference *self, IModelObject** containingObject) GetContextObject;
+				public function HRESULT(IModelKeyReference *self, IModelObject** object, IKeyStore** metadata) GetKey;
+				public function HRESULT(IModelKeyReference *self, IModelObject** object, IKeyStore** metadata) GetKeyValue;
+				public function HRESULT(IModelKeyReference *self, IModelObject* object, IKeyStore* metadata) SetKey;
+				public function HRESULT(IModelKeyReference *self, IModelObject* object) SetKeyValue;
+			}
 		}
 		[CRepr]
 		public struct IModelPropertyAccessor : IUnknown
 		{
 			public const new Guid IID = .(0x5a0c63d9, 0x0526, 0x42b8, 0x96, 0x0c, 0x95, 0x16, 0xa3, 0x25, 0x4c, 0x85);
 			
-			public function HRESULT(IModelPropertyAccessor *self, PWSTR key, IModelObject* contextObject, IModelObject** value) GetValue;
-			public function HRESULT(IModelPropertyAccessor *self, PWSTR key, IModelObject* contextObject, IModelObject* value) SetValue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IModelPropertyAccessor *self, PWSTR key, IModelObject* contextObject, IModelObject** value) GetValue;
+				public function HRESULT(IModelPropertyAccessor *self, PWSTR key, IModelObject* contextObject, IModelObject* value) SetValue;
+			}
 		}
 		[CRepr]
 		public struct IModelMethod : IUnknown
 		{
 			public const new Guid IID = .(0x80600c1f, 0xb90b, 0x4896, 0x82, 0xad, 0x1c, 0x00, 0x20, 0x79, 0x09, 0xe8);
 			
-			public function HRESULT(IModelMethod *self, IModelObject* pContextObject, uint64 argCount, IModelObject** ppArguments, IModelObject** ppResult, IKeyStore** ppMetadata) Call;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IModelMethod *self, IModelObject* pContextObject, uint64 argCount, IModelObject** ppArguments, IModelObject** ppResult, IKeyStore** ppMetadata) Call;
+			}
 		}
 		[CRepr]
 		public struct IKeyEnumerator : IUnknown
 		{
 			public const new Guid IID = .(0x345fa92e, 0x5e00, 0x4319, 0x9c, 0xae, 0x97, 0x1f, 0x76, 0x01, 0xcd, 0xcf);
 			
-			public function HRESULT(IKeyEnumerator *self) Reset;
-			public function HRESULT(IKeyEnumerator *self, BSTR* key, IModelObject** value, IKeyStore** metadata) GetNext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IKeyEnumerator *self) Reset;
+				public function HRESULT(IKeyEnumerator *self, BSTR* key, IModelObject** value, IKeyStore** metadata) GetNext;
+			}
 		}
 		[CRepr]
 		public struct IRawEnumerator : IUnknown
 		{
 			public const new Guid IID = .(0xe13613f9, 0x3a3c, 0x40b5, 0x8f, 0x48, 0x1e, 0x5e, 0xbf, 0xb9, 0xb2, 0x1b);
 			
-			public function HRESULT(IRawEnumerator *self) Reset;
-			public function HRESULT(IRawEnumerator *self, BSTR* name, SymbolKind* kind, IModelObject** value) GetNext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRawEnumerator *self) Reset;
+				public function HRESULT(IRawEnumerator *self, BSTR* name, SymbolKind* kind, IModelObject** value) GetNext;
+			}
 		}
 		[CRepr]
 		public struct IDataModelConcept : IUnknown
 		{
 			public const new Guid IID = .(0xfcb98d1d, 0x1114, 0x4fbf, 0xb2, 0x4c, 0xef, 0xfc, 0xb5, 0xde, 0xf0, 0xd3);
 			
-			public function HRESULT(IDataModelConcept *self, IModelObject* modelObject, IDebugHostTypeSignature* matchingTypeSignature, IDebugHostSymbolEnumerator* wildcardMatches) InitializeObject;
-			public function HRESULT(IDataModelConcept *self, BSTR* modelName) GetName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataModelConcept *self, IModelObject* modelObject, IDebugHostTypeSignature* matchingTypeSignature, IDebugHostSymbolEnumerator* wildcardMatches) InitializeObject;
+				public function HRESULT(IDataModelConcept *self, BSTR* modelName) GetName;
+			}
 		}
 		[CRepr]
 		public struct IStringDisplayableConcept : IUnknown
 		{
 			public const new Guid IID = .(0xd28e8d70, 0x6c00, 0x4205, 0x94, 0x0d, 0x50, 0x10, 0x16, 0x60, 0x1e, 0xa3);
 			
-			public function HRESULT(IStringDisplayableConcept *self, IModelObject* contextObject, IKeyStore* metadata, BSTR* displayString) ToDisplayString;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IStringDisplayableConcept *self, IModelObject* contextObject, IKeyStore* metadata, BSTR* displayString) ToDisplayString;
+			}
 		}
 		[CRepr]
 		public struct ICodeAddressConcept : IUnknown
 		{
 			public const new Guid IID = .(0xc7371568, 0x5c78, 0x4a00, 0xa4, 0xab, 0x6e, 0xf8, 0x82, 0x31, 0x84, 0xcb);
 			
-			public function HRESULT(ICodeAddressConcept *self, IModelObject* pContextObject, IDebugHostSymbol** ppSymbol) GetContainingSymbol;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICodeAddressConcept *self, IModelObject* pContextObject, IDebugHostSymbol** ppSymbol) GetContainingSymbol;
+			}
 		}
 		[CRepr]
 		public struct IModelIterator : IUnknown
 		{
 			public const new Guid IID = .(0xe4622136, 0x927d, 0x4490, 0x87, 0x4f, 0x58, 0x1f, 0x3e, 0x4e, 0x36, 0x88);
 			
-			public function HRESULT(IModelIterator *self) Reset;
-			public function HRESULT(IModelIterator *self, IModelObject** object, uint64 dimensions, IModelObject** indexers, IKeyStore** metadata) GetNext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IModelIterator *self) Reset;
+				public function HRESULT(IModelIterator *self, IModelObject** object, uint64 dimensions, IModelObject** indexers, IKeyStore** metadata) GetNext;
+			}
 		}
 		[CRepr]
 		public struct IIterableConcept : IUnknown
 		{
 			public const new Guid IID = .(0xf5d49d0c, 0x0b02, 0x4301, 0x9c, 0x9b, 0xb3, 0xa6, 0x03, 0x76, 0x28, 0xf3);
 			
-			public function HRESULT(IIterableConcept *self, IModelObject* contextObject, uint64* dimensionality) GetDefaultIndexDimensionality;
-			public function HRESULT(IIterableConcept *self, IModelObject* contextObject, IModelIterator** iterator) GetIterator;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IIterableConcept *self, IModelObject* contextObject, uint64* dimensionality) GetDefaultIndexDimensionality;
+				public function HRESULT(IIterableConcept *self, IModelObject* contextObject, IModelIterator** iterator) GetIterator;
+			}
 		}
 		[CRepr]
 		public struct IIndexableConcept : IUnknown
 		{
 			public const new Guid IID = .(0xd1fad99f, 0x3f53, 0x4457, 0x85, 0x0c, 0x80, 0x51, 0xdf, 0x2d, 0x3f, 0xb5);
 			
-			public function HRESULT(IIndexableConcept *self, IModelObject* contextObject, uint64* dimensionality) GetDimensionality;
-			public function HRESULT(IIndexableConcept *self, IModelObject* contextObject, uint64 indexerCount, IModelObject** indexers, IModelObject** object, IKeyStore** metadata) GetAt;
-			public function HRESULT(IIndexableConcept *self, IModelObject* contextObject, uint64 indexerCount, IModelObject** indexers, IModelObject* value) SetAt;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IIndexableConcept *self, IModelObject* contextObject, uint64* dimensionality) GetDimensionality;
+				public function HRESULT(IIndexableConcept *self, IModelObject* contextObject, uint64 indexerCount, IModelObject** indexers, IModelObject** object, IKeyStore** metadata) GetAt;
+				public function HRESULT(IIndexableConcept *self, IModelObject* contextObject, uint64 indexerCount, IModelObject** indexers, IModelObject* value) SetAt;
+			}
 		}
 		[CRepr]
 		public struct IPreferredRuntimeTypeConcept : IUnknown
 		{
 			public const new Guid IID = .(0x9d6c1d7b, 0xa76f, 0x4618, 0x80, 0x68, 0x5f, 0x76, 0xbd, 0x9a, 0x4e, 0x8a);
 			
-			public function HRESULT(IPreferredRuntimeTypeConcept *self, IModelObject* contextObject, IModelObject** object) CastToPreferredRuntimeType;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPreferredRuntimeTypeConcept *self, IModelObject* contextObject, IModelObject** object) CastToPreferredRuntimeType;
+			}
 		}
 		[CRepr]
 		public struct IDebugHost : IUnknown
 		{
 			public const new Guid IID = .(0xb8c74943, 0x6b2c, 0x4eeb, 0xb5, 0xc5, 0x35, 0xd3, 0x78, 0xa6, 0xd9, 0x9d);
 			
-			public function HRESULT(IDebugHost *self, IUnknown** hostUnk) GetHostDefinedInterface;
-			public function HRESULT(IDebugHost *self, IDebugHostContext** context) GetCurrentContext;
-			public function HRESULT(IDebugHost *self, IKeyStore** defaultMetadataStore) GetDefaultMetadata;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugHost *self, IUnknown** hostUnk) GetHostDefinedInterface;
+				public function HRESULT(IDebugHost *self, IDebugHostContext** context) GetCurrentContext;
+				public function HRESULT(IDebugHost *self, IKeyStore** defaultMetadataStore) GetDefaultMetadata;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostContext : IUnknown
 		{
 			public const new Guid IID = .(0xa68c70d8, 0x5ec0, 0x46e5, 0xb7, 0x75, 0x31, 0x34, 0xa4, 0x8e, 0xa2, 0xe3);
 			
-			public function HRESULT(IDebugHostContext *self, IDebugHostContext* pContext, Boolean* pIsEqual) IsEqualTo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugHostContext *self, IDebugHostContext* pContext, Boolean* pIsEqual) IsEqualTo;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostErrorSink : IUnknown
 		{
 			public const new Guid IID = .(0xc8ff0f0b, 0xfce9, 0x467e, 0x8b, 0xb3, 0x5d, 0x69, 0xef, 0x10, 0x9c, 0x00);
 			
-			public function HRESULT(IDebugHostErrorSink *self, ErrorClass errClass, HRESULT hrError, PWSTR message) ReportError;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugHostErrorSink *self, ErrorClass errClass, HRESULT hrError, PWSTR message) ReportError;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostSymbol : IUnknown
 		{
 			public const new Guid IID = .(0x0f819103, 0x87de, 0x4e96, 0x82, 0x77, 0xe0, 0x5c, 0xd4, 0x41, 0xfb, 0x22);
 			
-			public function HRESULT(IDebugHostSymbol *self, IDebugHostContext** context) GetContext;
-			public function HRESULT(IDebugHostSymbol *self, SymbolKind kind, PWSTR name, IDebugHostSymbolEnumerator** ppEnum) EnumerateChildren;
-			public function HRESULT(IDebugHostSymbol *self, SymbolKind* kind) GetSymbolKind;
-			public function HRESULT(IDebugHostSymbol *self, BSTR* symbolName) GetName;
-			public function HRESULT(IDebugHostSymbol *self, IDebugHostType** type) GetType;
-			public function HRESULT(IDebugHostSymbol *self, IDebugHostModule** containingModule) GetContainingModule;
-			public function HRESULT(IDebugHostSymbol *self, IDebugHostSymbol* pComparisonSymbol, uint32 comparisonFlags, Boolean* pMatches) CompareAgainst;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugHostSymbol *self, IDebugHostContext** context) GetContext;
+				public function HRESULT(IDebugHostSymbol *self, SymbolKind kind, PWSTR name, IDebugHostSymbolEnumerator** ppEnum) EnumerateChildren;
+				public function HRESULT(IDebugHostSymbol *self, SymbolKind* kind) GetSymbolKind;
+				public function HRESULT(IDebugHostSymbol *self, BSTR* symbolName) GetName;
+				public function HRESULT(IDebugHostSymbol *self, IDebugHostType** type) GetType;
+				public function HRESULT(IDebugHostSymbol *self, IDebugHostModule** containingModule) GetContainingModule;
+				public function HRESULT(IDebugHostSymbol *self, IDebugHostSymbol* pComparisonSymbol, uint32 comparisonFlags, Boolean* pMatches) CompareAgainst;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostSymbolEnumerator : IUnknown
 		{
 			public const new Guid IID = .(0x28d96c86, 0x10a3, 0x4976, 0xb1, 0x4e, 0xea, 0xef, 0x47, 0x90, 0xaa, 0x1f);
 			
-			public function HRESULT(IDebugHostSymbolEnumerator *self) Reset;
-			public function HRESULT(IDebugHostSymbolEnumerator *self, IDebugHostSymbol** symbol) GetNext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugHostSymbolEnumerator *self) Reset;
+				public function HRESULT(IDebugHostSymbolEnumerator *self, IDebugHostSymbol** symbol) GetNext;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostModule : IDebugHostSymbol
 		{
 			public const new Guid IID = .(0xc9ba3e18, 0xd070, 0x4378, 0xbb, 0xd0, 0x34, 0x61, 0x3b, 0x34, 0x6e, 0x1e);
 			
-			public function HRESULT(IDebugHostModule *self, uint8 allowPath, BSTR* imageName) GetImageName;
-			public function HRESULT(IDebugHostModule *self, Location* moduleBaseLocation) GetBaseLocation;
-			public function HRESULT(IDebugHostModule *self, uint64* fileVersion, uint64* productVersion) GetVersion;
-			public function HRESULT(IDebugHostModule *self, PWSTR typeName, IDebugHostType** type) FindTypeByName;
-			public function HRESULT(IDebugHostModule *self, uint64 rva, IDebugHostSymbol** symbol) FindSymbolByRVA;
-			public function HRESULT(IDebugHostModule *self, PWSTR symbolName, IDebugHostSymbol** symbol) FindSymbolByName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugHostSymbol.VTable
+			{
+				public function HRESULT(IDebugHostModule *self, uint8 allowPath, BSTR* imageName) GetImageName;
+				public function HRESULT(IDebugHostModule *self, Location* moduleBaseLocation) GetBaseLocation;
+				public function HRESULT(IDebugHostModule *self, uint64* fileVersion, uint64* productVersion) GetVersion;
+				public function HRESULT(IDebugHostModule *self, PWSTR typeName, IDebugHostType** type) FindTypeByName;
+				public function HRESULT(IDebugHostModule *self, uint64 rva, IDebugHostSymbol** symbol) FindSymbolByRVA;
+				public function HRESULT(IDebugHostModule *self, PWSTR symbolName, IDebugHostSymbol** symbol) FindSymbolByName;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostType : IDebugHostSymbol
 		{
 			public const new Guid IID = .(0x3aadc353, 0x2b14, 0x4abb, 0x98, 0x93, 0x5e, 0x03, 0x45, 0x8e, 0x07, 0xee);
 			
-			public function HRESULT(IDebugHostType *self, TypeKind* kind) GetTypeKind;
-			public function HRESULT(IDebugHostType *self, uint64* size) GetSize;
-			public function HRESULT(IDebugHostType *self, IDebugHostType** baseType) GetBaseType;
-			public function HRESULT(IDebugHostType *self, uint32* hashCode) GetHashCode;
-			public function HRESULT(IDebugHostType *self, IntrinsicKind* intrinsicKind, uint16* carrierType) GetIntrinsicType;
-			public function HRESULT(IDebugHostType *self, uint32* lsbOfField, uint32* lengthOfField) GetBitField;
-			public function HRESULT(IDebugHostType *self, PointerKind* pointerKind) GetPointerKind;
-			public function HRESULT(IDebugHostType *self, IDebugHostType** memberType) GetMemberType;
-			public function HRESULT(IDebugHostType *self, PointerKind kind, IDebugHostType** newType) CreatePointerTo;
-			public function HRESULT(IDebugHostType *self, uint64* arrayDimensionality) GetArrayDimensionality;
-			public function HRESULT(IDebugHostType *self, uint64 dimensions, ArrayDimension* pDimensions) GetArrayDimensions;
-			public function HRESULT(IDebugHostType *self, uint64 dimensions, ArrayDimension* pDimensions, IDebugHostType** newType) CreateArrayOf;
-			public function HRESULT(IDebugHostType *self, CallingConventionKind* conventionKind) GetFunctionCallingConvention;
-			public function HRESULT(IDebugHostType *self, IDebugHostType** returnType) GetFunctionReturnType;
-			public function HRESULT(IDebugHostType *self, uint64* count) GetFunctionParameterTypeCount;
-			public function HRESULT(IDebugHostType *self, uint64 i, IDebugHostType** parameterType) GetFunctionParameterTypeAt;
-			public function HRESULT(IDebugHostType *self, Boolean* isGeneric) IsGeneric;
-			public function HRESULT(IDebugHostType *self, uint64* argCount) GetGenericArgumentCount;
-			public function HRESULT(IDebugHostType *self, uint64 i, IDebugHostSymbol** argument) GetGenericArgumentAt;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugHostSymbol.VTable
+			{
+				public function HRESULT(IDebugHostType *self, TypeKind* kind) GetTypeKind;
+				public function HRESULT(IDebugHostType *self, uint64* size) GetSize;
+				public function HRESULT(IDebugHostType *self, IDebugHostType** baseType) GetBaseType;
+				public function HRESULT(IDebugHostType *self, uint32* hashCode) GetHashCode;
+				public function HRESULT(IDebugHostType *self, IntrinsicKind* intrinsicKind, uint16* carrierType) GetIntrinsicType;
+				public function HRESULT(IDebugHostType *self, uint32* lsbOfField, uint32* lengthOfField) GetBitField;
+				public function HRESULT(IDebugHostType *self, PointerKind* pointerKind) GetPointerKind;
+				public function HRESULT(IDebugHostType *self, IDebugHostType** memberType) GetMemberType;
+				public function HRESULT(IDebugHostType *self, PointerKind kind, IDebugHostType** newType) CreatePointerTo;
+				public function HRESULT(IDebugHostType *self, uint64* arrayDimensionality) GetArrayDimensionality;
+				public function HRESULT(IDebugHostType *self, uint64 dimensions, ArrayDimension* pDimensions) GetArrayDimensions;
+				public function HRESULT(IDebugHostType *self, uint64 dimensions, ArrayDimension* pDimensions, IDebugHostType** newType) CreateArrayOf;
+				public function HRESULT(IDebugHostType *self, CallingConventionKind* conventionKind) GetFunctionCallingConvention;
+				public function HRESULT(IDebugHostType *self, IDebugHostType** returnType) GetFunctionReturnType;
+				public function HRESULT(IDebugHostType *self, uint64* count) GetFunctionParameterTypeCount;
+				public function HRESULT(IDebugHostType *self, uint64 i, IDebugHostType** parameterType) GetFunctionParameterTypeAt;
+				public function HRESULT(IDebugHostType *self, Boolean* isGeneric) IsGeneric;
+				public function HRESULT(IDebugHostType *self, uint64* argCount) GetGenericArgumentCount;
+				public function HRESULT(IDebugHostType *self, uint64 i, IDebugHostSymbol** argument) GetGenericArgumentAt;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostConstant : IDebugHostSymbol
 		{
 			public const new Guid IID = .(0x62787edc, 0xfa76, 0x4690, 0xbd, 0x71, 0x5e, 0x8c, 0x3e, 0x29, 0x37, 0xec);
 			
-			public function HRESULT(IDebugHostConstant *self, VARIANT* value) GetValue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugHostSymbol.VTable
+			{
+				public function HRESULT(IDebugHostConstant *self, VARIANT* value) GetValue;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostField : IDebugHostSymbol
 		{
 			public const new Guid IID = .(0xe06f6495, 0x16bc, 0x4cc9, 0xb1, 0x1d, 0x2a, 0x6b, 0x23, 0xfa, 0x72, 0xf3);
 			
-			public function HRESULT(IDebugHostField *self, LocationKind* locationKind) GetLocationKind;
-			public function HRESULT(IDebugHostField *self, uint64* offset) GetOffset;
-			public function HRESULT(IDebugHostField *self, Location* location) GetLocation;
-			public function HRESULT(IDebugHostField *self, VARIANT* value) GetValue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugHostSymbol.VTable
+			{
+				public function HRESULT(IDebugHostField *self, LocationKind* locationKind) GetLocationKind;
+				public function HRESULT(IDebugHostField *self, uint64* offset) GetOffset;
+				public function HRESULT(IDebugHostField *self, Location* location) GetLocation;
+				public function HRESULT(IDebugHostField *self, VARIANT* value) GetValue;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostData : IDebugHostSymbol
 		{
 			public const new Guid IID = .(0xa3d64993, 0x826c, 0x44fa, 0x89, 0x7d, 0x92, 0x6f, 0x2f, 0xe7, 0xad, 0x0b);
 			
-			public function HRESULT(IDebugHostData *self, LocationKind* locationKind) GetLocationKind;
-			public function HRESULT(IDebugHostData *self, Location* location) GetLocation;
-			public function HRESULT(IDebugHostData *self, VARIANT* value) GetValue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugHostSymbol.VTable
+			{
+				public function HRESULT(IDebugHostData *self, LocationKind* locationKind) GetLocationKind;
+				public function HRESULT(IDebugHostData *self, Location* location) GetLocation;
+				public function HRESULT(IDebugHostData *self, VARIANT* value) GetValue;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostPublic : IDebugHostSymbol
 		{
 			public const new Guid IID = .(0x6c597ac9, 0xfb4d, 0x4f6d, 0x9f, 0x39, 0x22, 0x48, 0x85, 0x39, 0xf8, 0xf4);
 			
-			public function HRESULT(IDebugHostPublic *self, LocationKind* locationKind) GetLocationKind;
-			public function HRESULT(IDebugHostPublic *self, Location* location) GetLocation;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugHostSymbol.VTable
+			{
+				public function HRESULT(IDebugHostPublic *self, LocationKind* locationKind) GetLocationKind;
+				public function HRESULT(IDebugHostPublic *self, Location* location) GetLocation;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostBaseClass : IDebugHostSymbol
 		{
 			public const new Guid IID = .(0xb94d57d2, 0x390b, 0x40f7, 0xb5, 0xb4, 0xb6, 0xdb, 0x89, 0x7d, 0x97, 0x4b);
 			
-			public function HRESULT(IDebugHostBaseClass *self, uint64* offset) GetOffset;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugHostSymbol.VTable
+			{
+				public function HRESULT(IDebugHostBaseClass *self, uint64* offset) GetOffset;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostSymbols : IUnknown
 		{
 			public const new Guid IID = .(0x854fd751, 0xc2e1, 0x4eb2, 0xb5, 0x25, 0x66, 0x19, 0xcb, 0x97, 0xa5, 0x88);
 			
-			public function HRESULT(IDebugHostSymbols *self, PWSTR pwszModuleName, PWSTR pwszMinVersion, PWSTR pwszMaxVersion, IDebugHostModuleSignature** ppModuleSignature) CreateModuleSignature;
-			public function HRESULT(IDebugHostSymbols *self, PWSTR signatureSpecification, IDebugHostModule* module, IDebugHostTypeSignature** typeSignature) CreateTypeSignature;
-			public function HRESULT(IDebugHostSymbols *self, PWSTR signatureSpecification, PWSTR moduleName, PWSTR minVersion, PWSTR maxVersion, IDebugHostTypeSignature** typeSignature) CreateTypeSignatureForModuleRange;
-			public function HRESULT(IDebugHostSymbols *self, IDebugHostContext* context, IDebugHostSymbolEnumerator** moduleEnum) EnumerateModules;
-			public function HRESULT(IDebugHostSymbols *self, IDebugHostContext* context, PWSTR moduleName, IDebugHostModule** module) FindModuleByName;
-			public function HRESULT(IDebugHostSymbols *self, IDebugHostContext* context, Location moduleLocation, IDebugHostModule** module) FindModuleByLocation;
-			public function HRESULT(IDebugHostSymbols *self, IDebugHostContext* pContext, Location location, IDebugHostType* objectType, Location* derivedLocation, IDebugHostType** derivedType) GetMostDerivedObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugHostSymbols *self, PWSTR pwszModuleName, PWSTR pwszMinVersion, PWSTR pwszMaxVersion, IDebugHostModuleSignature** ppModuleSignature) CreateModuleSignature;
+				public function HRESULT(IDebugHostSymbols *self, PWSTR signatureSpecification, IDebugHostModule* module, IDebugHostTypeSignature** typeSignature) CreateTypeSignature;
+				public function HRESULT(IDebugHostSymbols *self, PWSTR signatureSpecification, PWSTR moduleName, PWSTR minVersion, PWSTR maxVersion, IDebugHostTypeSignature** typeSignature) CreateTypeSignatureForModuleRange;
+				public function HRESULT(IDebugHostSymbols *self, IDebugHostContext* context, IDebugHostSymbolEnumerator** moduleEnum) EnumerateModules;
+				public function HRESULT(IDebugHostSymbols *self, IDebugHostContext* context, PWSTR moduleName, IDebugHostModule** module) FindModuleByName;
+				public function HRESULT(IDebugHostSymbols *self, IDebugHostContext* context, Location moduleLocation, IDebugHostModule** module) FindModuleByLocation;
+				public function HRESULT(IDebugHostSymbols *self, IDebugHostContext* pContext, Location location, IDebugHostType* objectType, Location* derivedLocation, IDebugHostType** derivedType) GetMostDerivedObject;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostMemory : IUnknown
 		{
 			public const new Guid IID = .(0x212149c9, 0x9183, 0x4a3e, 0xb0, 0x0e, 0x4f, 0xd1, 0xdc, 0x95, 0x33, 0x9b);
 			
-			public function HRESULT(IDebugHostMemory *self, IDebugHostContext* context, Location location, void* buffer, uint64 bufferSize, uint64* bytesRead) ReadBytes;
-			public function HRESULT(IDebugHostMemory *self, IDebugHostContext* context, Location location, void* buffer, uint64 bufferSize, uint64* bytesWritten) WriteBytes;
-			public function HRESULT(IDebugHostMemory *self, IDebugHostContext* context, Location location, uint64 count, uint64* pointers) ReadPointers;
-			public function HRESULT(IDebugHostMemory *self, IDebugHostContext* context, Location location, uint64 count, uint64* pointers) WritePointers;
-			public function HRESULT(IDebugHostMemory *self, IDebugHostContext* context, Location location, uint8 verbose, BSTR* locationName) GetDisplayStringForLocation;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugHostMemory *self, IDebugHostContext* context, Location location, void* buffer, uint64 bufferSize, uint64* bytesRead) ReadBytes;
+				public function HRESULT(IDebugHostMemory *self, IDebugHostContext* context, Location location, void* buffer, uint64 bufferSize, uint64* bytesWritten) WriteBytes;
+				public function HRESULT(IDebugHostMemory *self, IDebugHostContext* context, Location location, uint64 count, uint64* pointers) ReadPointers;
+				public function HRESULT(IDebugHostMemory *self, IDebugHostContext* context, Location location, uint64 count, uint64* pointers) WritePointers;
+				public function HRESULT(IDebugHostMemory *self, IDebugHostContext* context, Location location, uint8 verbose, BSTR* locationName) GetDisplayStringForLocation;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostEvaluator : IUnknown
 		{
 			public const new Guid IID = .(0x0fef9a21, 0x577e, 0x4997, 0xac, 0x7b, 0x1c, 0x48, 0x83, 0x24, 0x1d, 0x99);
 			
-			public function HRESULT(IDebugHostEvaluator *self, IDebugHostContext* context, PWSTR expression, IModelObject* bindingContext, IModelObject** result, IKeyStore** metadata) EvaluateExpression;
-			public function HRESULT(IDebugHostEvaluator *self, IDebugHostContext* context, PWSTR expression, IModelObject* bindingContext, IModelObject** result, IKeyStore** metadata) EvaluateExtendedExpression;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugHostEvaluator *self, IDebugHostContext* context, PWSTR expression, IModelObject* bindingContext, IModelObject** result, IKeyStore** metadata) EvaluateExpression;
+				public function HRESULT(IDebugHostEvaluator *self, IDebugHostContext* context, PWSTR expression, IModelObject* bindingContext, IModelObject** result, IKeyStore** metadata) EvaluateExtendedExpression;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostModuleSignature : IUnknown
 		{
 			public const new Guid IID = .(0x31e53a5a, 0x01ee, 0x4bbb, 0xb8, 0x99, 0x4b, 0x46, 0xae, 0x7d, 0x59, 0x5c);
 			
-			public function HRESULT(IDebugHostModuleSignature *self, IDebugHostModule* pModule, Boolean* isMatch) IsMatch;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugHostModuleSignature *self, IDebugHostModule* pModule, Boolean* isMatch) IsMatch;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostTypeSignature : IUnknown
 		{
 			public const new Guid IID = .(0x3aadc353, 0x2b14, 0x4abb, 0x98, 0x93, 0x5e, 0x03, 0x45, 0x8e, 0x07, 0xee);
 			
-			public function HRESULT(IDebugHostTypeSignature *self, uint32* hashCode) GetHashCode;
-			public function HRESULT(IDebugHostTypeSignature *self, IDebugHostType* type, Boolean* isMatch, IDebugHostSymbolEnumerator** wildcardMatches) IsMatch;
-			public function HRESULT(IDebugHostTypeSignature *self, IDebugHostTypeSignature* typeSignature, SignatureComparison* result) CompareAgainst;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugHostTypeSignature *self, uint32* hashCode) GetHashCode;
+				public function HRESULT(IDebugHostTypeSignature *self, IDebugHostType* type, Boolean* isMatch, IDebugHostSymbolEnumerator** wildcardMatches) IsMatch;
+				public function HRESULT(IDebugHostTypeSignature *self, IDebugHostTypeSignature* typeSignature, SignatureComparison* result) CompareAgainst;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostSymbol2 : IDebugHostSymbol
 		{
 			public const new Guid IID = .(0x21515b67, 0x6720, 0x4257, 0x8a, 0x68, 0x07, 0x7d, 0xc9, 0x44, 0x47, 0x1c);
 			
-			public function HRESULT(IDebugHostSymbol2 *self, LanguageKind* pKind) GetLanguage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugHostSymbol.VTable
+			{
+				public function HRESULT(IDebugHostSymbol2 *self, LanguageKind* pKind) GetLanguage;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostType2 : IDebugHostType
 		{
 			public const new Guid IID = .(0xb28632b9, 0x8506, 0x4676, 0x87, 0xce, 0x8f, 0x7e, 0x05, 0xe5, 0x98, 0x76);
 			
-			public function HRESULT(IDebugHostType2 *self, Boolean* isTypedef) IsTypedef;
-			public function HRESULT(IDebugHostType2 *self, IDebugHostType2** baseType) GetTypedefBaseType;
-			public function HRESULT(IDebugHostType2 *self, IDebugHostType2** finalBaseType) GetTypedefFinalBaseType;
-			public function HRESULT(IDebugHostType2 *self, VarArgsKind* varArgsKind) GetFunctionVarArgsKind;
-			public function HRESULT(IDebugHostType2 *self, IDebugHostType2** instancePointerType) GetFunctionInstancePointerType;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugHostType.VTable
+			{
+				public function HRESULT(IDebugHostType2 *self, Boolean* isTypedef) IsTypedef;
+				public function HRESULT(IDebugHostType2 *self, IDebugHostType2** baseType) GetTypedefBaseType;
+				public function HRESULT(IDebugHostType2 *self, IDebugHostType2** finalBaseType) GetTypedefFinalBaseType;
+				public function HRESULT(IDebugHostType2 *self, VarArgsKind* varArgsKind) GetFunctionVarArgsKind;
+				public function HRESULT(IDebugHostType2 *self, IDebugHostType2** instancePointerType) GetFunctionInstancePointerType;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostStatus : IUnknown
 		{
 			public const new Guid IID = .(0x4f3e1ce2, 0x86b2, 0x4c7a, 0x9c, 0x65, 0xd0, 0xa9, 0xd0, 0xee, 0xcf, 0x44);
 			
-			public function HRESULT(IDebugHostStatus *self, Boolean* interruptRequested) PollUserInterrupt;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugHostStatus *self, Boolean* interruptRequested) PollUserInterrupt;
+			}
 		}
 		[CRepr]
 		public struct IDataModelScriptClient : IUnknown
 		{
 			public const new Guid IID = .(0x3b362b0e, 0x89f0, 0x46c6, 0xa6, 0x63, 0xdf, 0xdc, 0x95, 0x19, 0x4a, 0xef);
 			
-			public function HRESULT(IDataModelScriptClient *self, ErrorClass errClass, HRESULT hrFail, PWSTR message, uint32 line, uint32 position) ReportError;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataModelScriptClient *self, ErrorClass errClass, HRESULT hrFail, PWSTR message, uint32 line, uint32 position) ReportError;
+			}
 		}
 		[CRepr]
 		public struct IDataModelScriptTemplate : IUnknown
 		{
 			public const new Guid IID = .(0x1303dec4, 0xfa3b, 0x4f1b, 0x92, 0x24, 0xb9, 0x53, 0xd1, 0x6b, 0xab, 0xb5);
 			
-			public function HRESULT(IDataModelScriptTemplate *self, BSTR* templateName) GetName;
-			public function HRESULT(IDataModelScriptTemplate *self, BSTR* templateDescription) GetDescription;
-			public function HRESULT(IDataModelScriptTemplate *self, IStream** contentStream) GetContent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataModelScriptTemplate *self, BSTR* templateName) GetName;
+				public function HRESULT(IDataModelScriptTemplate *self, BSTR* templateDescription) GetDescription;
+				public function HRESULT(IDataModelScriptTemplate *self, IStream** contentStream) GetContent;
+			}
 		}
 		[CRepr]
 		public struct IDataModelScript : IUnknown
 		{
 			public const new Guid IID = .(0x7b4d30fc, 0xb14a, 0x49f8, 0x8d, 0x87, 0xd9, 0xa1, 0x48, 0x0c, 0x97, 0xf7);
 			
-			public function HRESULT(IDataModelScript *self, BSTR* scriptName) GetName;
-			public function HRESULT(IDataModelScript *self, PWSTR scriptName) Rename;
-			public function HRESULT(IDataModelScript *self, IStream* contentStream) Populate;
-			public function HRESULT(IDataModelScript *self, IDataModelScriptClient* client) Execute;
-			public function HRESULT(IDataModelScript *self) Unlink;
-			public function HRESULT(IDataModelScript *self, Boolean* isInvocable) IsInvocable;
-			public function HRESULT(IDataModelScript *self, IDataModelScriptClient* client) InvokeMain;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataModelScript *self, BSTR* scriptName) GetName;
+				public function HRESULT(IDataModelScript *self, PWSTR scriptName) Rename;
+				public function HRESULT(IDataModelScript *self, IStream* contentStream) Populate;
+				public function HRESULT(IDataModelScript *self, IDataModelScriptClient* client) Execute;
+				public function HRESULT(IDataModelScript *self) Unlink;
+				public function HRESULT(IDataModelScript *self, Boolean* isInvocable) IsInvocable;
+				public function HRESULT(IDataModelScript *self, IDataModelScriptClient* client) InvokeMain;
+			}
 		}
 		[CRepr]
 		public struct IDataModelScriptTemplateEnumerator : IUnknown
 		{
 			public const new Guid IID = .(0x69ce6ae2, 0x2268, 0x4e6f, 0xb0, 0x62, 0x20, 0xce, 0x62, 0xbf, 0xe6, 0x77);
 			
-			public function HRESULT(IDataModelScriptTemplateEnumerator *self) Reset;
-			public function HRESULT(IDataModelScriptTemplateEnumerator *self, IDataModelScriptTemplate** templateContent) GetNext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataModelScriptTemplateEnumerator *self) Reset;
+				public function HRESULT(IDataModelScriptTemplateEnumerator *self, IDataModelScriptTemplate** templateContent) GetNext;
+			}
 		}
 		[CRepr]
 		public struct IDataModelScriptProvider : IUnknown
 		{
 			public const new Guid IID = .(0x513461e0, 0x4fca, 0x48ce, 0x86, 0x58, 0x32, 0xf3, 0xe2, 0x05, 0x6f, 0x3b);
 			
-			public function HRESULT(IDataModelScriptProvider *self, BSTR* name) GetName;
-			public function HRESULT(IDataModelScriptProvider *self, BSTR* @extension) GetExtension;
-			public function HRESULT(IDataModelScriptProvider *self, IDataModelScript** script) CreateScript;
-			public function HRESULT(IDataModelScriptProvider *self, IDataModelScriptTemplate** templateContent) GetDefaultTemplateContent;
-			public function HRESULT(IDataModelScriptProvider *self, IDataModelScriptTemplateEnumerator** enumerator) EnumerateTemplates;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataModelScriptProvider *self, BSTR* name) GetName;
+				public function HRESULT(IDataModelScriptProvider *self, BSTR* @extension) GetExtension;
+				public function HRESULT(IDataModelScriptProvider *self, IDataModelScript** script) CreateScript;
+				public function HRESULT(IDataModelScriptProvider *self, IDataModelScriptTemplate** templateContent) GetDefaultTemplateContent;
+				public function HRESULT(IDataModelScriptProvider *self, IDataModelScriptTemplateEnumerator** enumerator) EnumerateTemplates;
+			}
 		}
 		[CRepr]
 		public struct IDataModelScriptProviderEnumerator : IUnknown
 		{
 			public const new Guid IID = .(0x95ba00e2, 0x704a, 0x4fe2, 0xa8, 0xf1, 0xa7, 0xe7, 0xd8, 0xfb, 0x09, 0x41);
 			
-			public function HRESULT(IDataModelScriptProviderEnumerator *self) Reset;
-			public function HRESULT(IDataModelScriptProviderEnumerator *self, IDataModelScriptProvider** provider) GetNext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataModelScriptProviderEnumerator *self) Reset;
+				public function HRESULT(IDataModelScriptProviderEnumerator *self, IDataModelScriptProvider** provider) GetNext;
+			}
 		}
 		[CRepr]
 		public struct IDataModelScriptManager : IUnknown
 		{
 			public const new Guid IID = .(0x6fd11e33, 0xe5ad, 0x410b, 0x80, 0x11, 0x68, 0xc6, 0xbc, 0x4b, 0xf8, 0x0d);
 			
-			public function HRESULT(IDataModelScriptManager *self, IDataModelNameBinder** ppNameBinder) GetDefaultNameBinder;
-			public function HRESULT(IDataModelScriptManager *self, IDataModelScriptProvider* provider) RegisterScriptProvider;
-			public function HRESULT(IDataModelScriptManager *self, IDataModelScriptProvider* provider) UnregisterScriptProvider;
-			public function HRESULT(IDataModelScriptManager *self, PWSTR scriptType, IDataModelScriptProvider** provider) FindProviderForScriptType;
-			public function HRESULT(IDataModelScriptManager *self, PWSTR scriptExtension, IDataModelScriptProvider** provider) FindProviderForScriptExtension;
-			public function HRESULT(IDataModelScriptManager *self, IDataModelScriptProviderEnumerator** enumerator) EnumerateScriptProviders;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataModelScriptManager *self, IDataModelNameBinder** ppNameBinder) GetDefaultNameBinder;
+				public function HRESULT(IDataModelScriptManager *self, IDataModelScriptProvider* provider) RegisterScriptProvider;
+				public function HRESULT(IDataModelScriptManager *self, IDataModelScriptProvider* provider) UnregisterScriptProvider;
+				public function HRESULT(IDataModelScriptManager *self, PWSTR scriptType, IDataModelScriptProvider** provider) FindProviderForScriptType;
+				public function HRESULT(IDataModelScriptManager *self, PWSTR scriptExtension, IDataModelScriptProvider** provider) FindProviderForScriptExtension;
+				public function HRESULT(IDataModelScriptManager *self, IDataModelScriptProviderEnumerator** enumerator) EnumerateScriptProviders;
+			}
 		}
 		[CRepr]
 		public struct IDynamicKeyProviderConcept : IUnknown
 		{
 			public const new Guid IID = .(0xe7983fa1, 0x80a7, 0x498c, 0x98, 0x8f, 0x51, 0x8d, 0xdc, 0x5d, 0x40, 0x25);
 			
-			public function HRESULT(IDynamicKeyProviderConcept *self, IModelObject* contextObject, PWSTR key, IModelObject** keyValue, IKeyStore** metadata, Boolean* hasKey) GetKey;
-			public function HRESULT(IDynamicKeyProviderConcept *self, IModelObject* contextObject, PWSTR key, IModelObject* keyValue, IKeyStore* metadata) SetKey;
-			public function HRESULT(IDynamicKeyProviderConcept *self, IModelObject* contextObject, IKeyEnumerator** ppEnumerator) EnumerateKeys;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDynamicKeyProviderConcept *self, IModelObject* contextObject, PWSTR key, IModelObject** keyValue, IKeyStore** metadata, Boolean* hasKey) GetKey;
+				public function HRESULT(IDynamicKeyProviderConcept *self, IModelObject* contextObject, PWSTR key, IModelObject* keyValue, IKeyStore* metadata) SetKey;
+				public function HRESULT(IDynamicKeyProviderConcept *self, IModelObject* contextObject, IKeyEnumerator** ppEnumerator) EnumerateKeys;
+			}
 		}
 		[CRepr]
 		public struct IDynamicConceptProviderConcept : IUnknown
 		{
 			public const new Guid IID = .(0x95a7f7dd, 0x602e, 0x483f, 0x9d, 0x06, 0xa1, 0x5c, 0x0e, 0xe1, 0x31, 0x74);
 			
-			public function HRESULT(IDynamicConceptProviderConcept *self, IModelObject* contextObject, Guid* conceptId, IUnknown** conceptInterface, IKeyStore** conceptMetadata, Boolean* hasConcept) GetConcept;
-			public function HRESULT(IDynamicConceptProviderConcept *self, IModelObject* contextObject, Guid* conceptId, IUnknown* conceptInterface, IKeyStore* conceptMetadata) SetConcept;
-			public function HRESULT(IDynamicConceptProviderConcept *self, IModelObject* parentModel) NotifyParent;
-			public function HRESULT(IDynamicConceptProviderConcept *self, IModelObject* parentModel) NotifyParentChange;
-			public function HRESULT(IDynamicConceptProviderConcept *self) NotifyDestruct;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDynamicConceptProviderConcept *self, IModelObject* contextObject, Guid* conceptId, IUnknown** conceptInterface, IKeyStore** conceptMetadata, Boolean* hasConcept) GetConcept;
+				public function HRESULT(IDynamicConceptProviderConcept *self, IModelObject* contextObject, Guid* conceptId, IUnknown* conceptInterface, IKeyStore* conceptMetadata) SetConcept;
+				public function HRESULT(IDynamicConceptProviderConcept *self, IModelObject* parentModel) NotifyParent;
+				public function HRESULT(IDynamicConceptProviderConcept *self, IModelObject* parentModel) NotifyParentChange;
+				public function HRESULT(IDynamicConceptProviderConcept *self) NotifyDestruct;
+			}
 		}
 		[CRepr]
 		public struct IDataModelScriptHostContext : IUnknown
 		{
 			public const new Guid IID = .(0x014d366a, 0x1f23, 0x4981, 0x92, 0x19, 0xb2, 0xdb, 0x8b, 0x40, 0x20, 0x54);
 			
-			public function HRESULT(IDataModelScriptHostContext *self, IDataModelScript* script, ScriptChangeKind changeKind) NotifyScriptChange;
-			public function HRESULT(IDataModelScriptHostContext *self, IModelObject** namespaceObject) GetNamespaceObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataModelScriptHostContext *self, IDataModelScript* script, ScriptChangeKind changeKind) NotifyScriptChange;
+				public function HRESULT(IDataModelScriptHostContext *self, IModelObject** namespaceObject) GetNamespaceObject;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostScriptHost : IUnknown
 		{
 			public const new Guid IID = .(0xb70334a4, 0xb92c, 0x4570, 0x93, 0xa1, 0xd3, 0xeb, 0x68, 0x66, 0x49, 0xa0);
 			
-			public function HRESULT(IDebugHostScriptHost *self, IDataModelScript* script, IDataModelScriptHostContext** scriptContext) CreateContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugHostScriptHost *self, IDataModelScript* script, IDataModelScriptHostContext** scriptContext) CreateContext;
+			}
 		}
 		[CRepr]
 		public struct IDataModelNameBinder : IUnknown
 		{
 			public const new Guid IID = .(0xaf352b7b, 0x8292, 0x4c01, 0xb3, 0x60, 0x2d, 0xc3, 0x69, 0x6c, 0x65, 0xe7);
 			
-			public function HRESULT(IDataModelNameBinder *self, IModelObject* contextObject, PWSTR name, IModelObject** value, IKeyStore** metadata) BindValue;
-			public function HRESULT(IDataModelNameBinder *self, IModelObject* contextObject, PWSTR name, IModelObject** reference, IKeyStore** metadata) BindReference;
-			public function HRESULT(IDataModelNameBinder *self, IModelObject* contextObject, IKeyEnumerator** enumerator) EnumerateValues;
-			public function HRESULT(IDataModelNameBinder *self, IModelObject* contextObject, IKeyEnumerator** enumerator) EnumerateReferences;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataModelNameBinder *self, IModelObject* contextObject, PWSTR name, IModelObject** value, IKeyStore** metadata) BindValue;
+				public function HRESULT(IDataModelNameBinder *self, IModelObject* contextObject, PWSTR name, IModelObject** reference, IKeyStore** metadata) BindReference;
+				public function HRESULT(IDataModelNameBinder *self, IModelObject* contextObject, IKeyEnumerator** enumerator) EnumerateValues;
+				public function HRESULT(IDataModelNameBinder *self, IModelObject* contextObject, IKeyEnumerator** enumerator) EnumerateReferences;
+			}
 		}
 		[CRepr]
 		public struct IModelKeyReference2 : IModelKeyReference
 		{
 			public const new Guid IID = .(0x80e2f7c5, 0x7159, 0x4e92, 0x88, 0x7e, 0x7e, 0x03, 0x47, 0xe8, 0x84, 0x06);
 			
-			public function HRESULT(IModelKeyReference2 *self, IModelObject* newContextObject) OverrideContextObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IModelKeyReference.VTable
+			{
+				public function HRESULT(IModelKeyReference2 *self, IModelObject* newContextObject) OverrideContextObject;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostEvaluator2 : IDebugHostEvaluator
 		{
 			public const new Guid IID = .(0xa117a435, 0x1fb4, 0x4092, 0xa2, 0xab, 0xa9, 0x29, 0x57, 0x6c, 0x1e, 0x87);
 			
-			public function HRESULT(IDebugHostEvaluator2 *self, IModelObject* assignmentReference, IModelObject* assignmentValue, IModelObject** assignmentResult, IKeyStore** assignmentMetadata) AssignTo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugHostEvaluator.VTable
+			{
+				public function HRESULT(IDebugHostEvaluator2 *self, IModelObject* assignmentReference, IModelObject* assignmentValue, IModelObject** assignmentResult, IKeyStore** assignmentMetadata) AssignTo;
+			}
 		}
 		[CRepr]
 		public struct IDataModelManager2 : IDataModelManager
 		{
 			public const new Guid IID = .(0xf412c5ea, 0x2284, 0x4622, 0xa6, 0x60, 0xa6, 0x97, 0x16, 0x0d, 0x33, 0x12);
 			
-			public function HRESULT(IDataModelManager2 *self, PWSTR modelName, PWSTR subNamespaceModelName, PWSTR accessName, IKeyStore* metadata, IModelObject** namespaceModelObject) AcquireSubNamespace;
-			public function HRESULT(IDataModelManager2 *self, IDebugHostContext* context, VARIANT* intrinsicData, IDebugHostType* type, IModelObject** object) CreateTypedIntrinsicObjectEx;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDataModelManager.VTable
+			{
+				public function HRESULT(IDataModelManager2 *self, PWSTR modelName, PWSTR subNamespaceModelName, PWSTR accessName, IKeyStore* metadata, IModelObject** namespaceModelObject) AcquireSubNamespace;
+				public function HRESULT(IDataModelManager2 *self, IDebugHostContext* context, VARIANT* intrinsicData, IDebugHostType* type, IModelObject** object) CreateTypedIntrinsicObjectEx;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostMemory2 : IDebugHostMemory
 		{
 			public const new Guid IID = .(0xeea033de, 0x38f6, 0x416b, 0xa2, 0x51, 0x1d, 0x37, 0x71, 0x00, 0x12, 0x70);
 			
-			public function HRESULT(IDebugHostMemory2 *self, IDebugHostContext* context, Location location, Location* pLinearizedLocation) LinearizeLocation;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugHostMemory.VTable
+			{
+				public function HRESULT(IDebugHostMemory2 *self, IDebugHostContext* context, Location location, Location* pLinearizedLocation) LinearizeLocation;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostExtensibility : IUnknown
 		{
 			public const new Guid IID = .(0x3c2b24e1, 0x11d0, 0x4f86, 0x8a, 0xe5, 0x4d, 0xf1, 0x66, 0xf7, 0x32, 0x53);
 			
-			public function HRESULT(IDebugHostExtensibility *self, PWSTR aliasName, IModelObject* functionObject) CreateFunctionAlias;
-			public function HRESULT(IDebugHostExtensibility *self, PWSTR aliasName) DestroyFunctionAlias;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugHostExtensibility *self, PWSTR aliasName, IModelObject* functionObject) CreateFunctionAlias;
+				public function HRESULT(IDebugHostExtensibility *self, PWSTR aliasName) DestroyFunctionAlias;
+			}
 		}
 		[CRepr]
 		public struct IDataModelScriptDebugClient : IUnknown
 		{
 			public const new Guid IID = .(0x53159b6d, 0xd4c4, 0x471b, 0xa8, 0x63, 0x5b, 0x11, 0x0c, 0xa8, 0x00, 0xca);
 			
-			public function HRESULT(IDataModelScriptDebugClient *self, ScriptDebugEventInformation* pEventInfo, IDataModelScript* pScript, IModelObject* pEventDataObject, ScriptExecutionKind* resumeEventKind) NotifyDebugEvent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataModelScriptDebugClient *self, ScriptDebugEventInformation* pEventInfo, IDataModelScript* pScript, IModelObject* pEventDataObject, ScriptExecutionKind* resumeEventKind) NotifyDebugEvent;
+			}
 		}
 		[CRepr]
 		public struct IDataModelScriptDebugVariableSetEnumerator : IUnknown
 		{
 			public const new Guid IID = .(0x0f9feed7, 0xd045, 0x4ac3, 0x98, 0xa8, 0xa9, 0x89, 0x42, 0xcf, 0x6a, 0x35);
 			
-			public function HRESULT(IDataModelScriptDebugVariableSetEnumerator *self) Reset;
-			public function HRESULT(IDataModelScriptDebugVariableSetEnumerator *self, BSTR* variableName, IModelObject** variableValue, IKeyStore** variableMetadata) GetNext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataModelScriptDebugVariableSetEnumerator *self) Reset;
+				public function HRESULT(IDataModelScriptDebugVariableSetEnumerator *self, BSTR* variableName, IModelObject** variableValue, IKeyStore** variableMetadata) GetNext;
+			}
 		}
 		[CRepr]
 		public struct IDataModelScriptDebugStackFrame : IUnknown
 		{
 			public const new Guid IID = .(0xdec6ed5e, 0x6360, 0x4941, 0xab, 0x4c, 0xa2, 0x64, 0x09, 0xde, 0x4f, 0x82);
 			
-			public function HRESULT(IDataModelScriptDebugStackFrame *self, BSTR* name) GetName;
-			public function HRESULT(IDataModelScriptDebugStackFrame *self, ScriptDebugPosition* position, ScriptDebugPosition* positionSpanEnd, BSTR* lineText) GetPosition;
-			public function HRESULT(IDataModelScriptDebugStackFrame *self, Boolean* isTransitionPoint) IsTransitionPoint;
-			public function HRESULT(IDataModelScriptDebugStackFrame *self, IDataModelScript** transitionScript, Boolean* isTransitionContiguous) GetTransition;
-			public function HRESULT(IDataModelScriptDebugStackFrame *self, PWSTR pwszExpression, IModelObject** ppResult) Evaluate;
-			public function HRESULT(IDataModelScriptDebugStackFrame *self, IDataModelScriptDebugVariableSetEnumerator** variablesEnum) EnumerateLocals;
-			public function HRESULT(IDataModelScriptDebugStackFrame *self, IDataModelScriptDebugVariableSetEnumerator** variablesEnum) EnumerateArguments;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataModelScriptDebugStackFrame *self, BSTR* name) GetName;
+				public function HRESULT(IDataModelScriptDebugStackFrame *self, ScriptDebugPosition* position, ScriptDebugPosition* positionSpanEnd, BSTR* lineText) GetPosition;
+				public function HRESULT(IDataModelScriptDebugStackFrame *self, Boolean* isTransitionPoint) IsTransitionPoint;
+				public function HRESULT(IDataModelScriptDebugStackFrame *self, IDataModelScript** transitionScript, Boolean* isTransitionContiguous) GetTransition;
+				public function HRESULT(IDataModelScriptDebugStackFrame *self, PWSTR pwszExpression, IModelObject** ppResult) Evaluate;
+				public function HRESULT(IDataModelScriptDebugStackFrame *self, IDataModelScriptDebugVariableSetEnumerator** variablesEnum) EnumerateLocals;
+				public function HRESULT(IDataModelScriptDebugStackFrame *self, IDataModelScriptDebugVariableSetEnumerator** variablesEnum) EnumerateArguments;
+			}
 		}
 		[CRepr]
 		public struct IDataModelScriptDebugStack : IUnknown
 		{
 			public const new Guid IID = .(0x051364dd, 0xe449, 0x443e, 0x97, 0x62, 0xfe, 0x57, 0x8f, 0x4a, 0x54, 0x73);
 			
-			public function uint64(IDataModelScriptDebugStack *self) GetFrameCount;
-			public function HRESULT(IDataModelScriptDebugStack *self, uint64 frameNumber, IDataModelScriptDebugStackFrame** stackFrame) GetStackFrame;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function uint64(IDataModelScriptDebugStack *self) GetFrameCount;
+				public function HRESULT(IDataModelScriptDebugStack *self, uint64 frameNumber, IDataModelScriptDebugStackFrame** stackFrame) GetStackFrame;
+			}
 		}
 		[CRepr]
 		public struct IDataModelScriptDebugBreakpoint : IUnknown
 		{
 			public const new Guid IID = .(0x6bb27b35, 0x02e6, 0x47cb, 0x90, 0xa0, 0x53, 0x71, 0x24, 0x40, 0x32, 0xde);
 			
-			public function uint64(IDataModelScriptDebugBreakpoint *self) GetId;
-			public function Boolean(IDataModelScriptDebugBreakpoint *self) IsEnabled;
-			public function void(IDataModelScriptDebugBreakpoint *self) Enable;
-			public function void(IDataModelScriptDebugBreakpoint *self) Disable;
-			public function void(IDataModelScriptDebugBreakpoint *self) Remove;
-			public function HRESULT(IDataModelScriptDebugBreakpoint *self, ScriptDebugPosition* position, ScriptDebugPosition* positionSpanEnd, BSTR* lineText) GetPosition;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function uint64(IDataModelScriptDebugBreakpoint *self) GetId;
+				public function Boolean(IDataModelScriptDebugBreakpoint *self) IsEnabled;
+				public function void(IDataModelScriptDebugBreakpoint *self) Enable;
+				public function void(IDataModelScriptDebugBreakpoint *self) Disable;
+				public function void(IDataModelScriptDebugBreakpoint *self) Remove;
+				public function HRESULT(IDataModelScriptDebugBreakpoint *self, ScriptDebugPosition* position, ScriptDebugPosition* positionSpanEnd, BSTR* lineText) GetPosition;
+			}
 		}
 		[CRepr]
 		public struct IDataModelScriptDebugBreakpointEnumerator : IUnknown
 		{
 			public const new Guid IID = .(0x39484a75, 0xb4f3, 0x4799, 0x86, 0xda, 0x69, 0x1a, 0xfa, 0x57, 0xb2, 0x99);
 			
-			public function HRESULT(IDataModelScriptDebugBreakpointEnumerator *self) Reset;
-			public function HRESULT(IDataModelScriptDebugBreakpointEnumerator *self, IDataModelScriptDebugBreakpoint** breakpoint) GetNext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataModelScriptDebugBreakpointEnumerator *self) Reset;
+				public function HRESULT(IDataModelScriptDebugBreakpointEnumerator *self, IDataModelScriptDebugBreakpoint** breakpoint) GetNext;
+			}
 		}
 		[CRepr]
 		public struct IDataModelScriptDebug : IUnknown
 		{
 			public const new Guid IID = .(0xde8e0945, 0x9750, 0x4471, 0xab, 0x76, 0xa8, 0xf7, 0x9d, 0x6e, 0xc3, 0x50);
 			
-			public function ScriptDebugState(IDataModelScriptDebug *self) GetDebugState;
-			public function HRESULT(IDataModelScriptDebug *self, ScriptDebugPosition* currentPosition, ScriptDebugPosition* positionSpanEnd, BSTR* lineText) GetCurrentPosition;
-			public function HRESULT(IDataModelScriptDebug *self, IDataModelScriptDebugStack** @stack) GetStack;
-			public function HRESULT(IDataModelScriptDebug *self, uint32 linePosition, uint32 columnPosition, IDataModelScriptDebugBreakpoint** breakpoint) SetBreakpoint;
-			public function HRESULT(IDataModelScriptDebug *self, uint64 breakpointId, IDataModelScriptDebugBreakpoint** breakpoint) FindBreakpointById;
-			public function HRESULT(IDataModelScriptDebug *self, IDataModelScriptDebugBreakpointEnumerator** breakpointEnum) EnumerateBreakpoints;
-			public function HRESULT(IDataModelScriptDebug *self, ScriptDebugEventFilter eventFilter, Boolean* isBreakEnabled) GetEventFilter;
-			public function HRESULT(IDataModelScriptDebug *self, ScriptDebugEventFilter eventFilter, uint8 isBreakEnabled) SetEventFilter;
-			public function HRESULT(IDataModelScriptDebug *self, IDataModelScriptDebugClient* debugClient) StartDebugging;
-			public function HRESULT(IDataModelScriptDebug *self, IDataModelScriptDebugClient* debugClient) StopDebugging;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function ScriptDebugState(IDataModelScriptDebug *self) GetDebugState;
+				public function HRESULT(IDataModelScriptDebug *self, ScriptDebugPosition* currentPosition, ScriptDebugPosition* positionSpanEnd, BSTR* lineText) GetCurrentPosition;
+				public function HRESULT(IDataModelScriptDebug *self, IDataModelScriptDebugStack** @stack) GetStack;
+				public function HRESULT(IDataModelScriptDebug *self, uint32 linePosition, uint32 columnPosition, IDataModelScriptDebugBreakpoint** breakpoint) SetBreakpoint;
+				public function HRESULT(IDataModelScriptDebug *self, uint64 breakpointId, IDataModelScriptDebugBreakpoint** breakpoint) FindBreakpointById;
+				public function HRESULT(IDataModelScriptDebug *self, IDataModelScriptDebugBreakpointEnumerator** breakpointEnum) EnumerateBreakpoints;
+				public function HRESULT(IDataModelScriptDebug *self, ScriptDebugEventFilter eventFilter, Boolean* isBreakEnabled) GetEventFilter;
+				public function HRESULT(IDataModelScriptDebug *self, ScriptDebugEventFilter eventFilter, uint8 isBreakEnabled) SetEventFilter;
+				public function HRESULT(IDataModelScriptDebug *self, IDataModelScriptDebugClient* debugClient) StartDebugging;
+				public function HRESULT(IDataModelScriptDebug *self, IDataModelScriptDebugClient* debugClient) StopDebugging;
+			}
 		}
 		[CRepr]
 		public struct IDataModelScriptDebug2 : IDataModelScriptDebug
 		{
 			public const new Guid IID = .(0xcbb10ed3, 0x839e, 0x426c, 0x92, 0x43, 0xe2, 0x35, 0x35, 0xc1, 0xae, 0x1a);
 			
-			public function HRESULT(IDataModelScriptDebug2 *self, PWSTR functionName, IDataModelScriptDebugBreakpoint** breakpoint) SetBreakpointAtFunction;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDataModelScriptDebug.VTable
+			{
+				public function HRESULT(IDataModelScriptDebug2 *self, PWSTR functionName, IDataModelScriptDebugBreakpoint** breakpoint) SetBreakpointAtFunction;
+			}
 		}
 		[CRepr]
 		public struct IDebugHostModule2 : IDebugHostModule
 		{
 			public const new Guid IID = .(0xb51887e8, 0xbcd0, 0x4e8f, 0xa8, 0xc7, 0x43, 0x43, 0x98, 0xb7, 0x8c, 0x37);
 			
-			public function HRESULT(IDebugHostModule2 *self, uint64 rva, IDebugHostSymbol** symbol, uint64* offset) FindContainingSymbolByRVA;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugHostModule.VTable
+			{
+				public function HRESULT(IDebugHostModule2 *self, uint64 rva, IDebugHostSymbol** symbol, uint64* offset) FindContainingSymbolByRVA;
+			}
 		}
 		[CRepr]
 		public struct IComparableConcept : IUnknown
 		{
 			public const new Guid IID = .(0xa7830646, 0x9f0c, 0x4a31, 0xba, 0x19, 0x50, 0x3f, 0x33, 0xe6, 0xc8, 0xa3);
 			
-			public function HRESULT(IComparableConcept *self, IModelObject* contextObject, IModelObject* otherObject, int32* comparisonResult) CompareObjects;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IComparableConcept *self, IModelObject* contextObject, IModelObject* otherObject, int32* comparisonResult) CompareObjects;
+			}
 		}
 		[CRepr]
 		public struct IEquatableConcept : IUnknown
 		{
 			public const new Guid IID = .(0xc52d5d3d, 0x609d, 0x4d5d, 0x8a, 0x82, 0x46, 0xb0, 0xac, 0xde, 0xc4, 0xf4);
 			
-			public function HRESULT(IEquatableConcept *self, IModelObject* contextObject, IModelObject* otherObject, Boolean* isEqual) AreObjectsEqual;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEquatableConcept *self, IModelObject* contextObject, IModelObject* otherObject, Boolean* isEqual) AreObjectsEqual;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptSite : IUnknown
 		{
 			public const new Guid IID = .(0xdb01a1e3, 0xa42b, 0x11cf, 0x8f, 0x20, 0x00, 0x80, 0x5f, 0x2c, 0xd0, 0x64);
 			
-			public function HRESULT(IActiveScriptSite *self, uint32* plcid) GetLCID;
-			public function HRESULT(IActiveScriptSite *self, PWSTR pstrName, uint32 dwReturnMask, IUnknown** ppiunkItem, ITypeInfo** ppti) GetItemInfo;
-			public function HRESULT(IActiveScriptSite *self, BSTR* pbstrVersion) GetDocVersionString;
-			public function HRESULT(IActiveScriptSite *self, VARIANT* pvarResult, EXCEPINFO* pexcepinfo) OnScriptTerminate;
-			public function HRESULT(IActiveScriptSite *self, SCRIPTSTATE ssScriptState) OnStateChange;
-			public function HRESULT(IActiveScriptSite *self, IActiveScriptError* pscripterror) OnScriptError;
-			public function HRESULT(IActiveScriptSite *self) OnEnterScript;
-			public function HRESULT(IActiveScriptSite *self) OnLeaveScript;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptSite *self, uint32* plcid) GetLCID;
+				public function HRESULT(IActiveScriptSite *self, PWSTR pstrName, uint32 dwReturnMask, IUnknown** ppiunkItem, ITypeInfo** ppti) GetItemInfo;
+				public function HRESULT(IActiveScriptSite *self, BSTR* pbstrVersion) GetDocVersionString;
+				public function HRESULT(IActiveScriptSite *self, VARIANT* pvarResult, EXCEPINFO* pexcepinfo) OnScriptTerminate;
+				public function HRESULT(IActiveScriptSite *self, SCRIPTSTATE ssScriptState) OnStateChange;
+				public function HRESULT(IActiveScriptSite *self, IActiveScriptError* pscripterror) OnScriptError;
+				public function HRESULT(IActiveScriptSite *self) OnEnterScript;
+				public function HRESULT(IActiveScriptSite *self) OnLeaveScript;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptError : IUnknown
 		{
 			public const new Guid IID = .(0xeae1ba61, 0xa4ed, 0x11cf, 0x8f, 0x20, 0x00, 0x80, 0x5f, 0x2c, 0xd0, 0x64);
 			
-			public function HRESULT(IActiveScriptError *self, EXCEPINFO* pexcepinfo) GetExceptionInfo;
-			public function HRESULT(IActiveScriptError *self, uint32* pdwSourceContext, uint32* pulLineNumber, int32* plCharacterPosition) GetSourcePosition;
-			public function HRESULT(IActiveScriptError *self, BSTR* pbstrSourceLine) GetSourceLineText;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptError *self, EXCEPINFO* pexcepinfo) GetExceptionInfo;
+				public function HRESULT(IActiveScriptError *self, uint32* pdwSourceContext, uint32* pulLineNumber, int32* plCharacterPosition) GetSourcePosition;
+				public function HRESULT(IActiveScriptError *self, BSTR* pbstrSourceLine) GetSourceLineText;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptError64 : IActiveScriptError
 		{
 			public const new Guid IID = .(0xb21fb2a1, 0x5b8f, 0x4963, 0x8c, 0x21, 0x21, 0x45, 0x0f, 0x84, 0xed, 0x7f);
 			
-			public function HRESULT(IActiveScriptError64 *self, uint64* pdwSourceContext, uint32* pulLineNumber, int32* plCharacterPosition) GetSourcePosition64;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IActiveScriptError.VTable
+			{
+				public function HRESULT(IActiveScriptError64 *self, uint64* pdwSourceContext, uint32* pulLineNumber, int32* plCharacterPosition) GetSourcePosition64;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptSiteWindow : IUnknown
 		{
 			public const new Guid IID = .(0xd10f6761, 0x83e9, 0x11cf, 0x8f, 0x20, 0x00, 0x80, 0x5f, 0x2c, 0xd0, 0x64);
 			
-			public function HRESULT(IActiveScriptSiteWindow *self, HWND* phwnd) GetWindow;
-			public function HRESULT(IActiveScriptSiteWindow *self, BOOL fEnable) EnableModeless;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptSiteWindow *self, HWND* phwnd) GetWindow;
+				public function HRESULT(IActiveScriptSiteWindow *self, BOOL fEnable) EnableModeless;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptSiteUIControl : IUnknown
 		{
 			public const new Guid IID = .(0xaedae97e, 0xd7ee, 0x4796, 0xb9, 0x60, 0x7f, 0x09, 0x2a, 0xe8, 0x44, 0xab);
 			
-			public function HRESULT(IActiveScriptSiteUIControl *self, SCRIPTUICITEM UicItem, SCRIPTUICHANDLING* pUicHandling) GetUIBehavior;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptSiteUIControl *self, SCRIPTUICITEM UicItem, SCRIPTUICHANDLING* pUicHandling) GetUIBehavior;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptSiteInterruptPoll : IUnknown
 		{
 			public const new Guid IID = .(0x539698a0, 0xcdca, 0x11cf, 0xa5, 0xeb, 0x00, 0xaa, 0x00, 0x47, 0xa0, 0x63);
 			
-			public function HRESULT(IActiveScriptSiteInterruptPoll *self) QueryContinue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptSiteInterruptPoll *self) QueryContinue;
+			}
 		}
 		[CRepr]
 		public struct IActiveScript : IUnknown
 		{
 			public const new Guid IID = .(0xbb1a2ae1, 0xa4f9, 0x11cf, 0x8f, 0x20, 0x00, 0x80, 0x5f, 0x2c, 0xd0, 0x64);
 			
-			public function HRESULT(IActiveScript *self, IActiveScriptSite* pass) SetScriptSite;
-			public function HRESULT(IActiveScript *self, Guid* riid, void** ppvObject) GetScriptSite;
-			public function HRESULT(IActiveScript *self, SCRIPTSTATE ss) SetScriptState;
-			public function HRESULT(IActiveScript *self, SCRIPTSTATE* pssState) GetScriptState;
-			public function HRESULT(IActiveScript *self) Close;
-			public function HRESULT(IActiveScript *self, PWSTR pstrName, uint32 dwFlags) AddNamedItem;
-			public function HRESULT(IActiveScript *self, Guid* rguidTypeLib, uint32 dwMajor, uint32 dwMinor, uint32 dwFlags) AddTypeLib;
-			public function HRESULT(IActiveScript *self, PWSTR pstrItemName, IDispatch** ppdisp) GetScriptDispatch;
-			public function HRESULT(IActiveScript *self, uint32* pstidThread) GetCurrentScriptThreadID;
-			public function HRESULT(IActiveScript *self, uint32 dwWin32ThreadId, uint32* pstidThread) GetScriptThreadID;
-			public function HRESULT(IActiveScript *self, uint32 stidThread, SCRIPTTHREADSTATE* pstsState) GetScriptThreadState;
-			public function HRESULT(IActiveScript *self, uint32 stidThread, EXCEPINFO* pexcepinfo, uint32 dwFlags) InterruptScriptThread;
-			public function HRESULT(IActiveScript *self, IActiveScript** ppscript) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScript *self, IActiveScriptSite* pass) SetScriptSite;
+				public function HRESULT(IActiveScript *self, Guid* riid, void** ppvObject) GetScriptSite;
+				public function HRESULT(IActiveScript *self, SCRIPTSTATE ss) SetScriptState;
+				public function HRESULT(IActiveScript *self, SCRIPTSTATE* pssState) GetScriptState;
+				public function HRESULT(IActiveScript *self) Close;
+				public function HRESULT(IActiveScript *self, PWSTR pstrName, uint32 dwFlags) AddNamedItem;
+				public function HRESULT(IActiveScript *self, Guid* rguidTypeLib, uint32 dwMajor, uint32 dwMinor, uint32 dwFlags) AddTypeLib;
+				public function HRESULT(IActiveScript *self, PWSTR pstrItemName, IDispatch** ppdisp) GetScriptDispatch;
+				public function HRESULT(IActiveScript *self, uint32* pstidThread) GetCurrentScriptThreadID;
+				public function HRESULT(IActiveScript *self, uint32 dwWin32ThreadId, uint32* pstidThread) GetScriptThreadID;
+				public function HRESULT(IActiveScript *self, uint32 stidThread, SCRIPTTHREADSTATE* pstsState) GetScriptThreadState;
+				public function HRESULT(IActiveScript *self, uint32 stidThread, EXCEPINFO* pexcepinfo, uint32 dwFlags) InterruptScriptThread;
+				public function HRESULT(IActiveScript *self, IActiveScript** ppscript) Clone;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptParse32 : IUnknown
 		{
 			public const new Guid IID = .(0xbb1a2ae2, 0xa4f9, 0x11cf, 0x8f, 0x20, 0x00, 0x80, 0x5f, 0x2c, 0xd0, 0x64);
 			
-			public function HRESULT(IActiveScriptParse32 *self) InitNew;
-			public function HRESULT(IActiveScriptParse32 *self, PWSTR pstrDefaultName, PWSTR pstrCode, PWSTR pstrItemName, PWSTR pstrSubItemName, PWSTR pstrEventName, PWSTR pstrDelimiter, uint32 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, BSTR* pbstrName, EXCEPINFO* pexcepinfo) AddScriptlet;
-			public function HRESULT(IActiveScriptParse32 *self, PWSTR pstrCode, PWSTR pstrItemName, IUnknown* punkContext, PWSTR pstrDelimiter, uint32 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, VARIANT* pvarResult, EXCEPINFO* pexcepinfo) ParseScriptText;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptParse32 *self) InitNew;
+				public function HRESULT(IActiveScriptParse32 *self, PWSTR pstrDefaultName, PWSTR pstrCode, PWSTR pstrItemName, PWSTR pstrSubItemName, PWSTR pstrEventName, PWSTR pstrDelimiter, uint32 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, BSTR* pbstrName, EXCEPINFO* pexcepinfo) AddScriptlet;
+				public function HRESULT(IActiveScriptParse32 *self, PWSTR pstrCode, PWSTR pstrItemName, IUnknown* punkContext, PWSTR pstrDelimiter, uint32 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, VARIANT* pvarResult, EXCEPINFO* pexcepinfo) ParseScriptText;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptParse64 : IUnknown
 		{
 			public const new Guid IID = .(0xc7ef7658, 0xe1ee, 0x480e, 0x97, 0xea, 0xd5, 0x2c, 0xb4, 0xd7, 0x6d, 0x17);
 			
-			public function HRESULT(IActiveScriptParse64 *self) InitNew;
-			public function HRESULT(IActiveScriptParse64 *self, PWSTR pstrDefaultName, PWSTR pstrCode, PWSTR pstrItemName, PWSTR pstrSubItemName, PWSTR pstrEventName, PWSTR pstrDelimiter, uint64 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, BSTR* pbstrName, EXCEPINFO* pexcepinfo) AddScriptlet;
-			public function HRESULT(IActiveScriptParse64 *self, PWSTR pstrCode, PWSTR pstrItemName, IUnknown* punkContext, PWSTR pstrDelimiter, uint64 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, VARIANT* pvarResult, EXCEPINFO* pexcepinfo) ParseScriptText;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptParse64 *self) InitNew;
+				public function HRESULT(IActiveScriptParse64 *self, PWSTR pstrDefaultName, PWSTR pstrCode, PWSTR pstrItemName, PWSTR pstrSubItemName, PWSTR pstrEventName, PWSTR pstrDelimiter, uint64 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, BSTR* pbstrName, EXCEPINFO* pexcepinfo) AddScriptlet;
+				public function HRESULT(IActiveScriptParse64 *self, PWSTR pstrCode, PWSTR pstrItemName, IUnknown* punkContext, PWSTR pstrDelimiter, uint64 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, VARIANT* pvarResult, EXCEPINFO* pexcepinfo) ParseScriptText;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptParseProcedureOld32 : IUnknown
 		{
 			public const new Guid IID = .(0x1cff0050, 0x6fdd, 0x11d0, 0x93, 0x28, 0x00, 0xa0, 0xc9, 0x0d, 0xca, 0xa9);
 			
-			public function HRESULT(IActiveScriptParseProcedureOld32 *self, PWSTR pstrCode, PWSTR pstrFormalParams, PWSTR pstrItemName, IUnknown* punkContext, PWSTR pstrDelimiter, uint32 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, IDispatch** ppdisp) ParseProcedureText;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptParseProcedureOld32 *self, PWSTR pstrCode, PWSTR pstrFormalParams, PWSTR pstrItemName, IUnknown* punkContext, PWSTR pstrDelimiter, uint32 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, IDispatch** ppdisp) ParseProcedureText;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptParseProcedureOld64 : IUnknown
 		{
 			public const new Guid IID = .(0x21f57128, 0x08c9, 0x4638, 0xba, 0x12, 0x22, 0xd1, 0x5d, 0x88, 0xdc, 0x5c);
 			
-			public function HRESULT(IActiveScriptParseProcedureOld64 *self, PWSTR pstrCode, PWSTR pstrFormalParams, PWSTR pstrItemName, IUnknown* punkContext, PWSTR pstrDelimiter, uint64 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, IDispatch** ppdisp) ParseProcedureText;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptParseProcedureOld64 *self, PWSTR pstrCode, PWSTR pstrFormalParams, PWSTR pstrItemName, IUnknown* punkContext, PWSTR pstrDelimiter, uint64 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, IDispatch** ppdisp) ParseProcedureText;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptParseProcedure32 : IUnknown
 		{
 			public const new Guid IID = .(0xaa5b6a80, 0xb834, 0x11d0, 0x93, 0x2f, 0x00, 0xa0, 0xc9, 0x0d, 0xca, 0xa9);
 			
-			public function HRESULT(IActiveScriptParseProcedure32 *self, PWSTR pstrCode, PWSTR pstrFormalParams, PWSTR pstrProcedureName, PWSTR pstrItemName, IUnknown* punkContext, PWSTR pstrDelimiter, uint32 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, IDispatch** ppdisp) ParseProcedureText;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptParseProcedure32 *self, PWSTR pstrCode, PWSTR pstrFormalParams, PWSTR pstrProcedureName, PWSTR pstrItemName, IUnknown* punkContext, PWSTR pstrDelimiter, uint32 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, IDispatch** ppdisp) ParseProcedureText;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptParseProcedure64 : IUnknown
 		{
 			public const new Guid IID = .(0xc64713b6, 0xe029, 0x4cc5, 0x92, 0x00, 0x43, 0x8b, 0x72, 0x89, 0x0b, 0x6a);
 			
-			public function HRESULT(IActiveScriptParseProcedure64 *self, PWSTR pstrCode, PWSTR pstrFormalParams, PWSTR pstrProcedureName, PWSTR pstrItemName, IUnknown* punkContext, PWSTR pstrDelimiter, uint64 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, IDispatch** ppdisp) ParseProcedureText;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptParseProcedure64 *self, PWSTR pstrCode, PWSTR pstrFormalParams, PWSTR pstrProcedureName, PWSTR pstrItemName, IUnknown* punkContext, PWSTR pstrDelimiter, uint64 dwSourceContextCookie, uint32 ulStartingLineNumber, uint32 dwFlags, IDispatch** ppdisp) ParseProcedureText;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptParseProcedure2_32 : IActiveScriptParseProcedure32
 		{
 			public const new Guid IID = .(0x71ee5b20, 0xfb04, 0x11d1, 0xb3, 0xa8, 0x00, 0xa0, 0xc9, 0x11, 0xe8, 0xb2);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IActiveScriptParseProcedure32.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptParseProcedure2_64 : IActiveScriptParseProcedure64
 		{
 			public const new Guid IID = .(0xfe7c4271, 0x210c, 0x448d, 0x9f, 0x54, 0x76, 0xda, 0xb7, 0x04, 0x7b, 0x28);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IActiveScriptParseProcedure64.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptEncode : IUnknown
 		{
 			public const new Guid IID = .(0xbb1a2ae3, 0xa4f9, 0x11cf, 0x8f, 0x20, 0x00, 0x80, 0x5f, 0x2c, 0xd0, 0x64);
 			
-			public function HRESULT(IActiveScriptEncode *self, PWSTR pchIn, uint32 cchIn, PWSTR pchOut, uint32 cchOut, uint32* pcchRet) EncodeSection;
-			public function HRESULT(IActiveScriptEncode *self, PWSTR pchIn, uint32 cchIn, PWSTR pchOut, uint32 cchOut, uint32* pcchRet) DecodeScript;
-			public function HRESULT(IActiveScriptEncode *self, BSTR* pbstrOut) GetEncodeProgId;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptEncode *self, PWSTR pchIn, uint32 cchIn, PWSTR pchOut, uint32 cchOut, uint32* pcchRet) EncodeSection;
+				public function HRESULT(IActiveScriptEncode *self, PWSTR pchIn, uint32 cchIn, PWSTR pchOut, uint32 cchOut, uint32* pcchRet) DecodeScript;
+				public function HRESULT(IActiveScriptEncode *self, BSTR* pbstrOut) GetEncodeProgId;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptHostEncode : IUnknown
 		{
 			public const new Guid IID = .(0xbee9b76e, 0xcfe3, 0x11d1, 0xb7, 0x47, 0x00, 0xc0, 0x4f, 0xc2, 0xb0, 0x85);
 			
-			public function HRESULT(IActiveScriptHostEncode *self, BSTR bstrInFile, BSTR* pbstrOutFile, uint32 cFlags, BSTR bstrDefaultLang) EncodeScriptHostFile;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptHostEncode *self, BSTR bstrInFile, BSTR* pbstrOutFile, uint32 cFlags, BSTR bstrDefaultLang) EncodeScriptHostFile;
+			}
 		}
 		[CRepr]
 		public struct IBindEventHandler : IUnknown
 		{
 			public const new Guid IID = .(0x63cdbcb0, 0xc1b1, 0x11d0, 0x93, 0x36, 0x00, 0xa0, 0xc9, 0x0d, 0xca, 0xa9);
 			
-			public function HRESULT(IBindEventHandler *self, PWSTR pstrEvent, IDispatch* pdisp) BindHandler;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IBindEventHandler *self, PWSTR pstrEvent, IDispatch* pdisp) BindHandler;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptStats : IUnknown
 		{
 			public const new Guid IID = .(0xb8da6310, 0xe19b, 0x11d0, 0x93, 0x3c, 0x00, 0xa0, 0xc9, 0x0d, 0xca, 0xa9);
 			
-			public function HRESULT(IActiveScriptStats *self, uint32 stid, uint32* pluHi, uint32* pluLo) GetStat;
-			public function HRESULT(IActiveScriptStats *self, Guid* guid, uint32* pluHi, uint32* pluLo) GetStatEx;
-			public function HRESULT(IActiveScriptStats *self) ResetStats;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptStats *self, uint32 stid, uint32* pluHi, uint32* pluLo) GetStat;
+				public function HRESULT(IActiveScriptStats *self, Guid* guid, uint32* pluHi, uint32* pluLo) GetStatEx;
+				public function HRESULT(IActiveScriptStats *self) ResetStats;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptProperty : IUnknown
 		{
 			public const new Guid IID = .(0x4954e0d0, 0xfbc7, 0x11d1, 0x84, 0x10, 0x00, 0x60, 0x08, 0xc3, 0xfb, 0xfc);
 			
-			public function HRESULT(IActiveScriptProperty *self, uint32 dwProperty, VARIANT* pvarIndex, VARIANT* pvarValue) GetProperty;
-			public function HRESULT(IActiveScriptProperty *self, uint32 dwProperty, VARIANT* pvarIndex, VARIANT* pvarValue) SetProperty;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptProperty *self, uint32 dwProperty, VARIANT* pvarIndex, VARIANT* pvarValue) GetProperty;
+				public function HRESULT(IActiveScriptProperty *self, uint32 dwProperty, VARIANT* pvarIndex, VARIANT* pvarValue) SetProperty;
+			}
 		}
 		[CRepr]
 		public struct ITridentEventSink : IUnknown
 		{
 			public const new Guid IID = .(0x1dc9ca50, 0x06ef, 0x11d2, 0x84, 0x15, 0x00, 0x60, 0x08, 0xc3, 0xfb, 0xfc);
 			
-			public function HRESULT(ITridentEventSink *self, PWSTR pstrEvent, DISPPARAMS* pdp, VARIANT* pvarRes, EXCEPINFO* pei) FireEvent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITridentEventSink *self, PWSTR pstrEvent, DISPPARAMS* pdp, VARIANT* pvarRes, EXCEPINFO* pei) FireEvent;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptGarbageCollector : IUnknown
 		{
 			public const new Guid IID = .(0x6aa2c4a0, 0x2b53, 0x11d4, 0xa2, 0xa0, 0x00, 0x10, 0x4b, 0xd3, 0x50, 0x90);
 			
-			public function HRESULT(IActiveScriptGarbageCollector *self, SCRIPTGCTYPE scriptgctype) CollectGarbage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptGarbageCollector *self, SCRIPTGCTYPE scriptgctype) CollectGarbage;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptSIPInfo : IUnknown
 		{
 			public const new Guid IID = .(0x764651d0, 0x38de, 0x11d4, 0xa2, 0xa3, 0x00, 0x10, 0x4b, 0xd3, 0x50, 0x90);
 			
-			public function HRESULT(IActiveScriptSIPInfo *self, Guid* poid_sip) GetSIPOID;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptSIPInfo *self, Guid* poid_sip) GetSIPOID;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptSiteTraceInfo : IUnknown
 		{
 			public const new Guid IID = .(0x4b7272ae, 0x1955, 0x4bfe, 0x98, 0xb0, 0x78, 0x06, 0x21, 0x88, 0x85, 0x69);
 			
-			public function HRESULT(IActiveScriptSiteTraceInfo *self, SCRIPTTRACEINFO stiEventType, Guid guidContextID, uint32 dwScriptContextCookie, int32 lScriptStatementStart, int32 lScriptStatementEnd, uint64 dwReserved) SendScriptTraceInfo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptSiteTraceInfo *self, SCRIPTTRACEINFO stiEventType, Guid guidContextID, uint32 dwScriptContextCookie, int32 lScriptStatementStart, int32 lScriptStatementEnd, uint64 dwReserved) SendScriptTraceInfo;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptTraceInfo : IUnknown
 		{
 			public const new Guid IID = .(0xc35456e7, 0xbebf, 0x4a1b, 0x86, 0xa9, 0x24, 0xd5, 0x6b, 0xe8, 0xb3, 0x69);
 			
-			public function HRESULT(IActiveScriptTraceInfo *self, IActiveScriptSiteTraceInfo* pSiteTraceInfo, Guid guidContextID) StartScriptTracing;
-			public function HRESULT(IActiveScriptTraceInfo *self) StopScriptTracing;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptTraceInfo *self, IActiveScriptSiteTraceInfo* pSiteTraceInfo, Guid guidContextID) StartScriptTracing;
+				public function HRESULT(IActiveScriptTraceInfo *self) StopScriptTracing;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptStringCompare : IUnknown
 		{
 			public const new Guid IID = .(0x58562769, 0xed52, 0x42f7, 0x84, 0x03, 0x49, 0x63, 0x51, 0x4e, 0x1f, 0x11);
 			
-			public function HRESULT(IActiveScriptStringCompare *self, BSTR bszStr1, BSTR bszStr2, int32* iRet) StrComp;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptStringCompare *self, BSTR bszStr1, BSTR bszStr2, int32* iRet) StrComp;
+			}
 		}
 		[CRepr]
 		public struct IDebugProperty : IUnknown
 		{
 			public const new Guid IID = .(0x51973c50, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugProperty *self, uint32 dwFieldSpec, uint32 nRadix, DebugPropertyInfo* pPropertyInfo) GetPropertyInfo;
-			public function HRESULT(IDebugProperty *self, uint32 cInfos, Guid* rgguidExtendedInfo, VARIANT* rgvar) GetExtendedInfo;
-			public function HRESULT(IDebugProperty *self, PWSTR pszValue, uint32 nRadix) SetValueAsString;
-			public function HRESULT(IDebugProperty *self, uint32 dwFieldSpec, uint32 nRadix, Guid* refiid, IEnumDebugPropertyInfo** ppepi) EnumMembers;
-			public function HRESULT(IDebugProperty *self, IDebugProperty** ppDebugProp) GetParent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugProperty *self, uint32 dwFieldSpec, uint32 nRadix, DebugPropertyInfo* pPropertyInfo) GetPropertyInfo;
+				public function HRESULT(IDebugProperty *self, uint32 cInfos, Guid* rgguidExtendedInfo, VARIANT* rgvar) GetExtendedInfo;
+				public function HRESULT(IDebugProperty *self, PWSTR pszValue, uint32 nRadix) SetValueAsString;
+				public function HRESULT(IDebugProperty *self, uint32 dwFieldSpec, uint32 nRadix, Guid* refiid, IEnumDebugPropertyInfo** ppepi) EnumMembers;
+				public function HRESULT(IDebugProperty *self, IDebugProperty** ppDebugProp) GetParent;
+			}
 		}
 		[CRepr]
 		public struct IEnumDebugPropertyInfo : IUnknown
 		{
 			public const new Guid IID = .(0x51973c51, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IEnumDebugPropertyInfo *self, uint32 celt, DebugPropertyInfo* pi, uint32* pcEltsfetched) Next;
-			public function HRESULT(IEnumDebugPropertyInfo *self, uint32 celt) Skip;
-			public function HRESULT(IEnumDebugPropertyInfo *self) Reset;
-			public function HRESULT(IEnumDebugPropertyInfo *self, IEnumDebugPropertyInfo** ppepi) Clone;
-			public function HRESULT(IEnumDebugPropertyInfo *self, uint32* pcelt) GetCount;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumDebugPropertyInfo *self, uint32 celt, DebugPropertyInfo* pi, uint32* pcEltsfetched) Next;
+				public function HRESULT(IEnumDebugPropertyInfo *self, uint32 celt) Skip;
+				public function HRESULT(IEnumDebugPropertyInfo *self) Reset;
+				public function HRESULT(IEnumDebugPropertyInfo *self, IEnumDebugPropertyInfo** ppepi) Clone;
+				public function HRESULT(IEnumDebugPropertyInfo *self, uint32* pcelt) GetCount;
+			}
 		}
 		[CRepr]
 		public struct IDebugExtendedProperty : IDebugProperty
 		{
 			public const new Guid IID = .(0x51973c52, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugExtendedProperty *self, uint32 dwFieldSpec, uint32 nRadix, ExtendedDebugPropertyInfo* pExtendedPropertyInfo) GetExtendedPropertyInfo;
-			public function HRESULT(IDebugExtendedProperty *self, uint32 dwFieldSpec, uint32 nRadix, IEnumDebugExtendedPropertyInfo** ppeepi) EnumExtendedMembers;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugProperty.VTable
+			{
+				public function HRESULT(IDebugExtendedProperty *self, uint32 dwFieldSpec, uint32 nRadix, ExtendedDebugPropertyInfo* pExtendedPropertyInfo) GetExtendedPropertyInfo;
+				public function HRESULT(IDebugExtendedProperty *self, uint32 dwFieldSpec, uint32 nRadix, IEnumDebugExtendedPropertyInfo** ppeepi) EnumExtendedMembers;
+			}
 		}
 		[CRepr]
 		public struct IEnumDebugExtendedPropertyInfo : IUnknown
 		{
 			public const new Guid IID = .(0x51973c53, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IEnumDebugExtendedPropertyInfo *self, uint32 celt, ExtendedDebugPropertyInfo* rgExtendedPropertyInfo, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumDebugExtendedPropertyInfo *self, uint32 celt) Skip;
-			public function HRESULT(IEnumDebugExtendedPropertyInfo *self) Reset;
-			public function HRESULT(IEnumDebugExtendedPropertyInfo *self, IEnumDebugExtendedPropertyInfo** pedpe) Clone;
-			public function HRESULT(IEnumDebugExtendedPropertyInfo *self, uint32* pcelt) GetCount;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumDebugExtendedPropertyInfo *self, uint32 celt, ExtendedDebugPropertyInfo* rgExtendedPropertyInfo, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumDebugExtendedPropertyInfo *self, uint32 celt) Skip;
+				public function HRESULT(IEnumDebugExtendedPropertyInfo *self) Reset;
+				public function HRESULT(IEnumDebugExtendedPropertyInfo *self, IEnumDebugExtendedPropertyInfo** pedpe) Clone;
+				public function HRESULT(IEnumDebugExtendedPropertyInfo *self, uint32* pcelt) GetCount;
+			}
 		}
 		[CRepr]
 		public struct IPerPropertyBrowsing2 : IUnknown
 		{
 			public const new Guid IID = .(0x51973c54, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IPerPropertyBrowsing2 *self, int32 dispid, BSTR* pBstr) GetDisplayString;
-			public function HRESULT(IPerPropertyBrowsing2 *self, int32 dispid, Guid* pClsidPropPage) MapPropertyToPage;
-			public function HRESULT(IPerPropertyBrowsing2 *self, int32 dispid, CALPOLESTR* pCaStrings, CADWORD* pCaCookies) GetPredefinedStrings;
-			public function HRESULT(IPerPropertyBrowsing2 *self, int32 dispid, uint32 dwCookie) SetPredefinedValue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPerPropertyBrowsing2 *self, int32 dispid, BSTR* pBstr) GetDisplayString;
+				public function HRESULT(IPerPropertyBrowsing2 *self, int32 dispid, Guid* pClsidPropPage) MapPropertyToPage;
+				public function HRESULT(IPerPropertyBrowsing2 *self, int32 dispid, CALPOLESTR* pCaStrings, CADWORD* pCaCookies) GetPredefinedStrings;
+				public function HRESULT(IPerPropertyBrowsing2 *self, int32 dispid, uint32 dwCookie) SetPredefinedValue;
+			}
 		}
 		[CRepr]
 		public struct IDebugPropertyEnumType_All : IUnknown
 		{
 			public const new Guid IID = .(0x51973c55, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugPropertyEnumType_All *self, BSTR* __MIDL__IDebugPropertyEnumType_All0000) GetName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugPropertyEnumType_All *self, BSTR* __MIDL__IDebugPropertyEnumType_All0000) GetName;
+			}
 		}
 		[CRepr]
 		public struct IDebugPropertyEnumType_Locals : IDebugPropertyEnumType_All
 		{
 			public const new Guid IID = .(0x51973c56, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugPropertyEnumType_All.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IDebugPropertyEnumType_Arguments : IDebugPropertyEnumType_All
 		{
 			public const new Guid IID = .(0x51973c57, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugPropertyEnumType_All.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IDebugPropertyEnumType_LocalsPlusArgs : IDebugPropertyEnumType_All
 		{
 			public const new Guid IID = .(0x51973c58, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugPropertyEnumType_All.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IDebugPropertyEnumType_Registers : IDebugPropertyEnumType_All
 		{
 			public const new Guid IID = .(0x51973c59, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugPropertyEnumType_All.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptDebug32 : IUnknown
 		{
 			public const new Guid IID = .(0x51973c10, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IActiveScriptDebug32 *self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptTextAttributes;
-			public function HRESULT(IActiveScriptDebug32 *self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptletTextAttributes;
-			public function HRESULT(IActiveScriptDebug32 *self, uint32 dwSourceContext, uint32 uCharacterOffset, uint32 uNumChars, IEnumDebugCodeContexts** ppescc) EnumCodeContextsOfPosition;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptDebug32 *self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptTextAttributes;
+				public function HRESULT(IActiveScriptDebug32 *self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptletTextAttributes;
+				public function HRESULT(IActiveScriptDebug32 *self, uint32 dwSourceContext, uint32 uCharacterOffset, uint32 uNumChars, IEnumDebugCodeContexts** ppescc) EnumCodeContextsOfPosition;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptDebug64 : IUnknown
 		{
 			public const new Guid IID = .(0xbc437e23, 0xf5b8, 0x47f4, 0xbb, 0x79, 0x7d, 0x1c, 0xe5, 0x48, 0x3b, 0x86);
 			
-			public function HRESULT(IActiveScriptDebug64 *self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptTextAttributes;
-			public function HRESULT(IActiveScriptDebug64 *self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptletTextAttributes;
-			public function HRESULT(IActiveScriptDebug64 *self, uint64 dwSourceContext, uint32 uCharacterOffset, uint32 uNumChars, IEnumDebugCodeContexts** ppescc) EnumCodeContextsOfPosition;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptDebug64 *self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptTextAttributes;
+				public function HRESULT(IActiveScriptDebug64 *self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptletTextAttributes;
+				public function HRESULT(IActiveScriptDebug64 *self, uint64 dwSourceContext, uint32 uCharacterOffset, uint32 uNumChars, IEnumDebugCodeContexts** ppescc) EnumCodeContextsOfPosition;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptSiteDebug32 : IUnknown
 		{
 			public const new Guid IID = .(0x51973c11, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IActiveScriptSiteDebug32 *self, uint32 dwSourceContext, uint32 uCharacterOffset, uint32 uNumChars, IDebugDocumentContext** ppsc) GetDocumentContextFromPosition;
-			public function HRESULT(IActiveScriptSiteDebug32 *self, IDebugApplication32** ppda) GetApplication;
-			public function HRESULT(IActiveScriptSiteDebug32 *self, IDebugApplicationNode** ppdanRoot) GetRootApplicationNode;
-			public function HRESULT(IActiveScriptSiteDebug32 *self, IActiveScriptErrorDebug* pErrorDebug, BOOL* pfEnterDebugger, BOOL* pfCallOnScriptErrorWhenContinuing) OnScriptErrorDebug;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptSiteDebug32 *self, uint32 dwSourceContext, uint32 uCharacterOffset, uint32 uNumChars, IDebugDocumentContext** ppsc) GetDocumentContextFromPosition;
+				public function HRESULT(IActiveScriptSiteDebug32 *self, IDebugApplication32** ppda) GetApplication;
+				public function HRESULT(IActiveScriptSiteDebug32 *self, IDebugApplicationNode** ppdanRoot) GetRootApplicationNode;
+				public function HRESULT(IActiveScriptSiteDebug32 *self, IActiveScriptErrorDebug* pErrorDebug, BOOL* pfEnterDebugger, BOOL* pfCallOnScriptErrorWhenContinuing) OnScriptErrorDebug;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptSiteDebug64 : IUnknown
 		{
 			public const new Guid IID = .(0xd6b96b0a, 0x7463, 0x402c, 0x92, 0xac, 0x89, 0x98, 0x42, 0x26, 0x94, 0x2f);
 			
-			public function HRESULT(IActiveScriptSiteDebug64 *self, uint64 dwSourceContext, uint32 uCharacterOffset, uint32 uNumChars, IDebugDocumentContext** ppsc) GetDocumentContextFromPosition;
-			public function HRESULT(IActiveScriptSiteDebug64 *self, IDebugApplication64** ppda) GetApplication;
-			public function HRESULT(IActiveScriptSiteDebug64 *self, IDebugApplicationNode** ppdanRoot) GetRootApplicationNode;
-			public function HRESULT(IActiveScriptSiteDebug64 *self, IActiveScriptErrorDebug* pErrorDebug, BOOL* pfEnterDebugger, BOOL* pfCallOnScriptErrorWhenContinuing) OnScriptErrorDebug;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptSiteDebug64 *self, uint64 dwSourceContext, uint32 uCharacterOffset, uint32 uNumChars, IDebugDocumentContext** ppsc) GetDocumentContextFromPosition;
+				public function HRESULT(IActiveScriptSiteDebug64 *self, IDebugApplication64** ppda) GetApplication;
+				public function HRESULT(IActiveScriptSiteDebug64 *self, IDebugApplicationNode** ppdanRoot) GetRootApplicationNode;
+				public function HRESULT(IActiveScriptSiteDebug64 *self, IActiveScriptErrorDebug* pErrorDebug, BOOL* pfEnterDebugger, BOOL* pfCallOnScriptErrorWhenContinuing) OnScriptErrorDebug;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptSiteDebugEx : IUnknown
 		{
 			public const new Guid IID = .(0xbb722ccb, 0x6ad2, 0x41c6, 0xb7, 0x80, 0xaf, 0x9c, 0x03, 0xee, 0x69, 0xf5);
 			
-			public function HRESULT(IActiveScriptSiteDebugEx *self, IActiveScriptErrorDebug* pErrorDebug, BOOL* pfCallOnScriptErrorWhenContinuing) OnCanNotJITScriptErrorDebug;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptSiteDebugEx *self, IActiveScriptErrorDebug* pErrorDebug, BOOL* pfCallOnScriptErrorWhenContinuing) OnCanNotJITScriptErrorDebug;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptErrorDebug : IActiveScriptError
 		{
 			public const new Guid IID = .(0x51973c12, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IActiveScriptErrorDebug *self, IDebugDocumentContext** ppssc) GetDocumentContext;
-			public function HRESULT(IActiveScriptErrorDebug *self, IDebugStackFrame** ppdsf) GetStackFrame;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IActiveScriptError.VTable
+			{
+				public function HRESULT(IActiveScriptErrorDebug *self, IDebugDocumentContext** ppssc) GetDocumentContext;
+				public function HRESULT(IActiveScriptErrorDebug *self, IDebugStackFrame** ppdsf) GetStackFrame;
+			}
 		}
 		[CRepr]
 		public struct IDebugCodeContext : IUnknown
 		{
 			public const new Guid IID = .(0x51973c13, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugCodeContext *self, IDebugDocumentContext** ppsc) GetDocumentContext;
-			public function HRESULT(IDebugCodeContext *self, BREAKPOINT_STATE bps) SetBreakPoint;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugCodeContext *self, IDebugDocumentContext** ppsc) GetDocumentContext;
+				public function HRESULT(IDebugCodeContext *self, BREAKPOINT_STATE bps) SetBreakPoint;
+			}
 		}
 		[CRepr]
 		public struct IDebugExpression : IUnknown
 		{
 			public const new Guid IID = .(0x51973c14, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugExpression *self, IDebugExpressionCallBack* pdecb) Start;
-			public function HRESULT(IDebugExpression *self) Abort;
-			public function HRESULT(IDebugExpression *self) QueryIsComplete;
-			public function HRESULT(IDebugExpression *self, HRESULT* phrResult, BSTR* pbstrResult) GetResultAsString;
-			public function HRESULT(IDebugExpression *self, HRESULT* phrResult, IDebugProperty** ppdp) GetResultAsDebugProperty;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugExpression *self, IDebugExpressionCallBack* pdecb) Start;
+				public function HRESULT(IDebugExpression *self) Abort;
+				public function HRESULT(IDebugExpression *self) QueryIsComplete;
+				public function HRESULT(IDebugExpression *self, HRESULT* phrResult, BSTR* pbstrResult) GetResultAsString;
+				public function HRESULT(IDebugExpression *self, HRESULT* phrResult, IDebugProperty** ppdp) GetResultAsDebugProperty;
+			}
 		}
 		[CRepr]
 		public struct IDebugExpressionContext : IUnknown
 		{
 			public const new Guid IID = .(0x51973c15, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugExpressionContext *self, PWSTR pstrCode, uint32 nRadix, PWSTR pstrDelimiter, uint32 dwFlags, IDebugExpression** ppe) ParseLanguageText;
-			public function HRESULT(IDebugExpressionContext *self, BSTR* pbstrLanguageName, Guid* pLanguageID) GetLanguageInfo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugExpressionContext *self, PWSTR pstrCode, uint32 nRadix, PWSTR pstrDelimiter, uint32 dwFlags, IDebugExpression** ppe) ParseLanguageText;
+				public function HRESULT(IDebugExpressionContext *self, BSTR* pbstrLanguageName, Guid* pLanguageID) GetLanguageInfo;
+			}
 		}
 		[CRepr]
 		public struct IDebugExpressionCallBack : IUnknown
 		{
 			public const new Guid IID = .(0x51973c16, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugExpressionCallBack *self) onComplete;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugExpressionCallBack *self) onComplete;
+			}
 		}
 		[CRepr]
 		public struct IDebugStackFrame : IUnknown
 		{
 			public const new Guid IID = .(0x51973c17, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugStackFrame *self, IDebugCodeContext** ppcc) GetCodeContext;
-			public function HRESULT(IDebugStackFrame *self, BOOL fLong, BSTR* pbstrDescription) GetDescriptionString;
-			public function HRESULT(IDebugStackFrame *self, BOOL fLong, BSTR* pbstrLanguage) GetLanguageString;
-			public function HRESULT(IDebugStackFrame *self, IDebugApplicationThread** ppat) GetThread;
-			public function HRESULT(IDebugStackFrame *self, IDebugProperty** ppDebugProp) GetDebugProperty;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugStackFrame *self, IDebugCodeContext** ppcc) GetCodeContext;
+				public function HRESULT(IDebugStackFrame *self, BOOL fLong, BSTR* pbstrDescription) GetDescriptionString;
+				public function HRESULT(IDebugStackFrame *self, BOOL fLong, BSTR* pbstrLanguage) GetLanguageString;
+				public function HRESULT(IDebugStackFrame *self, IDebugApplicationThread** ppat) GetThread;
+				public function HRESULT(IDebugStackFrame *self, IDebugProperty** ppDebugProp) GetDebugProperty;
+			}
 		}
 		[CRepr]
 		public struct IDebugStackFrameSniffer : IUnknown
 		{
 			public const new Guid IID = .(0x51973c18, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugStackFrameSniffer *self, IEnumDebugStackFrames** ppedsf) EnumStackFrames;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugStackFrameSniffer *self, IEnumDebugStackFrames** ppedsf) EnumStackFrames;
+			}
 		}
 		[CRepr]
 		public struct IDebugStackFrameSnifferEx32 : IDebugStackFrameSniffer
 		{
 			public const new Guid IID = .(0x51973c19, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugStackFrameSnifferEx32 *self, uint32 dwSpMin, IEnumDebugStackFrames** ppedsf) EnumStackFramesEx32;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugStackFrameSniffer.VTable
+			{
+				public function HRESULT(IDebugStackFrameSnifferEx32 *self, uint32 dwSpMin, IEnumDebugStackFrames** ppedsf) EnumStackFramesEx32;
+			}
 		}
 		[CRepr]
 		public struct IDebugStackFrameSnifferEx64 : IDebugStackFrameSniffer
 		{
 			public const new Guid IID = .(0x8cd12af4, 0x49c1, 0x4d52, 0x8d, 0x8a, 0xc1, 0x46, 0xf4, 0x75, 0x81, 0xaa);
 			
-			public function HRESULT(IDebugStackFrameSnifferEx64 *self, uint64 dwSpMin, IEnumDebugStackFrames64** ppedsf) EnumStackFramesEx64;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugStackFrameSniffer.VTable
+			{
+				public function HRESULT(IDebugStackFrameSnifferEx64 *self, uint64 dwSpMin, IEnumDebugStackFrames64** ppedsf) EnumStackFramesEx64;
+			}
 		}
 		[CRepr]
 		public struct IDebugSyncOperation : IUnknown
 		{
 			public const new Guid IID = .(0x51973c1a, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugSyncOperation *self, IDebugApplicationThread** ppatTarget) GetTargetThread;
-			public function HRESULT(IDebugSyncOperation *self, IUnknown** ppunkResult) Execute;
-			public function HRESULT(IDebugSyncOperation *self) InProgressAbort;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugSyncOperation *self, IDebugApplicationThread** ppatTarget) GetTargetThread;
+				public function HRESULT(IDebugSyncOperation *self, IUnknown** ppunkResult) Execute;
+				public function HRESULT(IDebugSyncOperation *self) InProgressAbort;
+			}
 		}
 		[CRepr]
 		public struct IDebugAsyncOperation : IUnknown
 		{
 			public const new Guid IID = .(0x51973c1b, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugAsyncOperation *self, IDebugSyncOperation** ppsdo) GetSyncDebugOperation;
-			public function HRESULT(IDebugAsyncOperation *self, IDebugAsyncOperationCallBack* padocb) Start;
-			public function HRESULT(IDebugAsyncOperation *self) Abort;
-			public function HRESULT(IDebugAsyncOperation *self) QueryIsComplete;
-			public function HRESULT(IDebugAsyncOperation *self, HRESULT* phrResult, IUnknown** ppunkResult) GetResult;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugAsyncOperation *self, IDebugSyncOperation** ppsdo) GetSyncDebugOperation;
+				public function HRESULT(IDebugAsyncOperation *self, IDebugAsyncOperationCallBack* padocb) Start;
+				public function HRESULT(IDebugAsyncOperation *self) Abort;
+				public function HRESULT(IDebugAsyncOperation *self) QueryIsComplete;
+				public function HRESULT(IDebugAsyncOperation *self, HRESULT* phrResult, IUnknown** ppunkResult) GetResult;
+			}
 		}
 		[CRepr]
 		public struct IDebugAsyncOperationCallBack : IUnknown
 		{
 			public const new Guid IID = .(0x51973c1c, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugAsyncOperationCallBack *self) onComplete;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugAsyncOperationCallBack *self) onComplete;
+			}
 		}
 		[CRepr]
 		public struct IEnumDebugCodeContexts : IUnknown
 		{
 			public const new Guid IID = .(0x51973c1d, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IEnumDebugCodeContexts *self, uint32 celt, IDebugCodeContext** pscc, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumDebugCodeContexts *self, uint32 celt) Skip;
-			public function HRESULT(IEnumDebugCodeContexts *self) Reset;
-			public function HRESULT(IEnumDebugCodeContexts *self, IEnumDebugCodeContexts** ppescc) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumDebugCodeContexts *self, uint32 celt, IDebugCodeContext** pscc, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumDebugCodeContexts *self, uint32 celt) Skip;
+				public function HRESULT(IEnumDebugCodeContexts *self) Reset;
+				public function HRESULT(IEnumDebugCodeContexts *self, IEnumDebugCodeContexts** ppescc) Clone;
+			}
 		}
 		[CRepr]
 		public struct IEnumDebugStackFrames : IUnknown
 		{
 			public const new Guid IID = .(0x51973c1e, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IEnumDebugStackFrames *self, uint32 celt, DebugStackFrameDescriptor* prgdsfd, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumDebugStackFrames *self, uint32 celt) Skip;
-			public function HRESULT(IEnumDebugStackFrames *self) Reset;
-			public function HRESULT(IEnumDebugStackFrames *self, IEnumDebugStackFrames** ppedsf) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumDebugStackFrames *self, uint32 celt, DebugStackFrameDescriptor* prgdsfd, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumDebugStackFrames *self, uint32 celt) Skip;
+				public function HRESULT(IEnumDebugStackFrames *self) Reset;
+				public function HRESULT(IEnumDebugStackFrames *self, IEnumDebugStackFrames** ppedsf) Clone;
+			}
 		}
 		[CRepr]
 		public struct IEnumDebugStackFrames64 : IEnumDebugStackFrames
 		{
 			public const new Guid IID = .(0x0dc38853, 0xc1b0, 0x4176, 0xa9, 0x84, 0xb2, 0x98, 0x36, 0x10, 0x27, 0xaf);
 			
-			public function HRESULT(IEnumDebugStackFrames64 *self, uint32 celt, DebugStackFrameDescriptor64* prgdsfd, uint32* pceltFetched) Next64;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IEnumDebugStackFrames.VTable
+			{
+				public function HRESULT(IEnumDebugStackFrames64 *self, uint32 celt, DebugStackFrameDescriptor64* prgdsfd, uint32* pceltFetched) Next64;
+			}
 		}
 		[CRepr]
 		public struct IDebugDocumentInfo : IUnknown
 		{
 			public const new Guid IID = .(0x51973c1f, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugDocumentInfo *self, DOCUMENTNAMETYPE dnt, BSTR* pbstrName) GetName;
-			public function HRESULT(IDebugDocumentInfo *self, Guid* pclsidDocument) GetDocumentClassId;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugDocumentInfo *self, DOCUMENTNAMETYPE dnt, BSTR* pbstrName) GetName;
+				public function HRESULT(IDebugDocumentInfo *self, Guid* pclsidDocument) GetDocumentClassId;
+			}
 		}
 		[CRepr]
 		public struct IDebugDocumentProvider : IDebugDocumentInfo
 		{
 			public const new Guid IID = .(0x51973c20, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugDocumentProvider *self, IDebugDocument** ppssd) GetDocument;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugDocumentInfo.VTable
+			{
+				public function HRESULT(IDebugDocumentProvider *self, IDebugDocument** ppssd) GetDocument;
+			}
 		}
 		[CRepr]
 		public struct IDebugDocument : IDebugDocumentInfo
 		{
 			public const new Guid IID = .(0x51973c21, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugDocumentInfo.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IDebugDocumentText : IDebugDocument
 		{
 			public const new Guid IID = .(0x51973c22, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugDocumentText *self, uint32* ptextdocattr) GetDocumentAttributes;
-			public function HRESULT(IDebugDocumentText *self, uint32* pcNumLines, uint32* pcNumChars) GetSize;
-			public function HRESULT(IDebugDocumentText *self, uint32 cLineNumber, uint32* pcCharacterPosition) GetPositionOfLine;
-			public function HRESULT(IDebugDocumentText *self, uint32 cCharacterPosition, uint32* pcLineNumber, uint32* pcCharacterOffsetInLine) GetLineOfPosition;
-			public function HRESULT(IDebugDocumentText *self, uint32 cCharacterPosition, char16* pcharText, uint16* pstaTextAttr, uint32* pcNumChars, uint32 cMaxChars) GetText;
-			public function HRESULT(IDebugDocumentText *self, IDebugDocumentContext* psc, uint32* pcCharacterPosition, uint32* cNumChars) GetPositionOfContext;
-			public function HRESULT(IDebugDocumentText *self, uint32 cCharacterPosition, uint32 cNumChars, IDebugDocumentContext** ppsc) GetContextOfPosition;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugDocument.VTable
+			{
+				public function HRESULT(IDebugDocumentText *self, uint32* ptextdocattr) GetDocumentAttributes;
+				public function HRESULT(IDebugDocumentText *self, uint32* pcNumLines, uint32* pcNumChars) GetSize;
+				public function HRESULT(IDebugDocumentText *self, uint32 cLineNumber, uint32* pcCharacterPosition) GetPositionOfLine;
+				public function HRESULT(IDebugDocumentText *self, uint32 cCharacterPosition, uint32* pcLineNumber, uint32* pcCharacterOffsetInLine) GetLineOfPosition;
+				public function HRESULT(IDebugDocumentText *self, uint32 cCharacterPosition, char16* pcharText, uint16* pstaTextAttr, uint32* pcNumChars, uint32 cMaxChars) GetText;
+				public function HRESULT(IDebugDocumentText *self, IDebugDocumentContext* psc, uint32* pcCharacterPosition, uint32* cNumChars) GetPositionOfContext;
+				public function HRESULT(IDebugDocumentText *self, uint32 cCharacterPosition, uint32 cNumChars, IDebugDocumentContext** ppsc) GetContextOfPosition;
+			}
 		}
 		[CRepr]
 		public struct IDebugDocumentTextEvents : IUnknown
 		{
 			public const new Guid IID = .(0x51973c23, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugDocumentTextEvents *self) onDestroy;
-			public function HRESULT(IDebugDocumentTextEvents *self, uint32 cCharacterPosition, uint32 cNumToInsert) onInsertText;
-			public function HRESULT(IDebugDocumentTextEvents *self, uint32 cCharacterPosition, uint32 cNumToRemove) onRemoveText;
-			public function HRESULT(IDebugDocumentTextEvents *self, uint32 cCharacterPosition, uint32 cNumToReplace) onReplaceText;
-			public function HRESULT(IDebugDocumentTextEvents *self, uint32 cCharacterPosition, uint32 cNumToUpdate) onUpdateTextAttributes;
-			public function HRESULT(IDebugDocumentTextEvents *self, uint32 textdocattr) onUpdateDocumentAttributes;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugDocumentTextEvents *self) onDestroy;
+				public function HRESULT(IDebugDocumentTextEvents *self, uint32 cCharacterPosition, uint32 cNumToInsert) onInsertText;
+				public function HRESULT(IDebugDocumentTextEvents *self, uint32 cCharacterPosition, uint32 cNumToRemove) onRemoveText;
+				public function HRESULT(IDebugDocumentTextEvents *self, uint32 cCharacterPosition, uint32 cNumToReplace) onReplaceText;
+				public function HRESULT(IDebugDocumentTextEvents *self, uint32 cCharacterPosition, uint32 cNumToUpdate) onUpdateTextAttributes;
+				public function HRESULT(IDebugDocumentTextEvents *self, uint32 textdocattr) onUpdateDocumentAttributes;
+			}
 		}
 		[CRepr]
 		public struct IDebugDocumentTextAuthor : IDebugDocumentText
 		{
 			public const new Guid IID = .(0x51973c24, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugDocumentTextAuthor *self, uint32 cCharacterPosition, uint32 cNumToInsert, char16* pcharText) InsertText;
-			public function HRESULT(IDebugDocumentTextAuthor *self, uint32 cCharacterPosition, uint32 cNumToRemove) RemoveText;
-			public function HRESULT(IDebugDocumentTextAuthor *self, uint32 cCharacterPosition, uint32 cNumToReplace, char16* pcharText) ReplaceText;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugDocumentText.VTable
+			{
+				public function HRESULT(IDebugDocumentTextAuthor *self, uint32 cCharacterPosition, uint32 cNumToInsert, char16* pcharText) InsertText;
+				public function HRESULT(IDebugDocumentTextAuthor *self, uint32 cCharacterPosition, uint32 cNumToRemove) RemoveText;
+				public function HRESULT(IDebugDocumentTextAuthor *self, uint32 cCharacterPosition, uint32 cNumToReplace, char16* pcharText) ReplaceText;
+			}
 		}
 		[CRepr]
 		public struct IDebugDocumentTextExternalAuthor : IUnknown
 		{
 			public const new Guid IID = .(0x51973c25, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugDocumentTextExternalAuthor *self, BSTR* pbstrLongName, BOOL* pfIsOriginalFile) GetPathName;
-			public function HRESULT(IDebugDocumentTextExternalAuthor *self, BSTR* pbstrShortName) GetFileName;
-			public function HRESULT(IDebugDocumentTextExternalAuthor *self) NotifyChanged;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugDocumentTextExternalAuthor *self, BSTR* pbstrLongName, BOOL* pfIsOriginalFile) GetPathName;
+				public function HRESULT(IDebugDocumentTextExternalAuthor *self, BSTR* pbstrShortName) GetFileName;
+				public function HRESULT(IDebugDocumentTextExternalAuthor *self) NotifyChanged;
+			}
 		}
 		[CRepr]
 		public struct IDebugDocumentHelper32 : IUnknown
 		{
 			public const new Guid IID = .(0x51973c26, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugDocumentHelper32 *self, IDebugApplication32* pda, PWSTR pszShortName, PWSTR pszLongName, uint32 docAttr) Init;
-			public function HRESULT(IDebugDocumentHelper32 *self, IDebugDocumentHelper32* pddhParent) Attach;
-			public function HRESULT(IDebugDocumentHelper32 *self) Detach;
-			public function HRESULT(IDebugDocumentHelper32 *self, PWSTR pszText) AddUnicodeText;
-			public function HRESULT(IDebugDocumentHelper32 *self, PSTR pszText) AddDBCSText;
-			public function HRESULT(IDebugDocumentHelper32 *self, IDebugDocumentHost* pddh) SetDebugDocumentHost;
-			public function HRESULT(IDebugDocumentHelper32 *self, uint32 cChars, uint32 dwTextStartCookie) AddDeferredText;
-			public function HRESULT(IDebugDocumentHelper32 *self, uint32 ulCharOffset, uint32 cChars, IActiveScript* pas, BOOL fScriptlet, uint32* pdwSourceContext) DefineScriptBlock;
-			public function HRESULT(IDebugDocumentHelper32 *self, uint16 staTextAttr) SetDefaultTextAttr;
-			public function HRESULT(IDebugDocumentHelper32 *self, uint32 ulCharOffset, uint32 cChars, uint16* pstaTextAttr) SetTextAttributes;
-			public function HRESULT(IDebugDocumentHelper32 *self, PWSTR pszLongName) SetLongName;
-			public function HRESULT(IDebugDocumentHelper32 *self, PWSTR pszShortName) SetShortName;
-			public function HRESULT(IDebugDocumentHelper32 *self, uint32 pszAttributes) SetDocumentAttr;
-			public function HRESULT(IDebugDocumentHelper32 *self, IDebugApplicationNode** ppdan) GetDebugApplicationNode;
-			public function HRESULT(IDebugDocumentHelper32 *self, uint32 dwSourceContext, IActiveScript** ppasd, uint32* piCharPos, uint32* pcChars) GetScriptBlockInfo;
-			public function HRESULT(IDebugDocumentHelper32 *self, uint32 iCharPos, uint32 cChars, IDebugDocumentContext** ppddc) CreateDebugDocumentContext;
-			public function HRESULT(IDebugDocumentHelper32 *self) BringDocumentToTop;
-			public function HRESULT(IDebugDocumentHelper32 *self, IDebugDocumentContext* pddc) BringDocumentContextToTop;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugDocumentHelper32 *self, IDebugApplication32* pda, PWSTR pszShortName, PWSTR pszLongName, uint32 docAttr) Init;
+				public function HRESULT(IDebugDocumentHelper32 *self, IDebugDocumentHelper32* pddhParent) Attach;
+				public function HRESULT(IDebugDocumentHelper32 *self) Detach;
+				public function HRESULT(IDebugDocumentHelper32 *self, PWSTR pszText) AddUnicodeText;
+				public function HRESULT(IDebugDocumentHelper32 *self, PSTR pszText) AddDBCSText;
+				public function HRESULT(IDebugDocumentHelper32 *self, IDebugDocumentHost* pddh) SetDebugDocumentHost;
+				public function HRESULT(IDebugDocumentHelper32 *self, uint32 cChars, uint32 dwTextStartCookie) AddDeferredText;
+				public function HRESULT(IDebugDocumentHelper32 *self, uint32 ulCharOffset, uint32 cChars, IActiveScript* pas, BOOL fScriptlet, uint32* pdwSourceContext) DefineScriptBlock;
+				public function HRESULT(IDebugDocumentHelper32 *self, uint16 staTextAttr) SetDefaultTextAttr;
+				public function HRESULT(IDebugDocumentHelper32 *self, uint32 ulCharOffset, uint32 cChars, uint16* pstaTextAttr) SetTextAttributes;
+				public function HRESULT(IDebugDocumentHelper32 *self, PWSTR pszLongName) SetLongName;
+				public function HRESULT(IDebugDocumentHelper32 *self, PWSTR pszShortName) SetShortName;
+				public function HRESULT(IDebugDocumentHelper32 *self, uint32 pszAttributes) SetDocumentAttr;
+				public function HRESULT(IDebugDocumentHelper32 *self, IDebugApplicationNode** ppdan) GetDebugApplicationNode;
+				public function HRESULT(IDebugDocumentHelper32 *self, uint32 dwSourceContext, IActiveScript** ppasd, uint32* piCharPos, uint32* pcChars) GetScriptBlockInfo;
+				public function HRESULT(IDebugDocumentHelper32 *self, uint32 iCharPos, uint32 cChars, IDebugDocumentContext** ppddc) CreateDebugDocumentContext;
+				public function HRESULT(IDebugDocumentHelper32 *self) BringDocumentToTop;
+				public function HRESULT(IDebugDocumentHelper32 *self, IDebugDocumentContext* pddc) BringDocumentContextToTop;
+			}
 		}
 		[CRepr]
 		public struct IDebugDocumentHelper64 : IUnknown
 		{
 			public const new Guid IID = .(0xc4c7363c, 0x20fd, 0x47f9, 0xbd, 0x82, 0x48, 0x55, 0xe0, 0x15, 0x08, 0x71);
 			
-			public function HRESULT(IDebugDocumentHelper64 *self, IDebugApplication64* pda, PWSTR pszShortName, PWSTR pszLongName, uint32 docAttr) Init;
-			public function HRESULT(IDebugDocumentHelper64 *self, IDebugDocumentHelper64* pddhParent) Attach;
-			public function HRESULT(IDebugDocumentHelper64 *self) Detach;
-			public function HRESULT(IDebugDocumentHelper64 *self, PWSTR pszText) AddUnicodeText;
-			public function HRESULT(IDebugDocumentHelper64 *self, PSTR pszText) AddDBCSText;
-			public function HRESULT(IDebugDocumentHelper64 *self, IDebugDocumentHost* pddh) SetDebugDocumentHost;
-			public function HRESULT(IDebugDocumentHelper64 *self, uint32 cChars, uint32 dwTextStartCookie) AddDeferredText;
-			public function HRESULT(IDebugDocumentHelper64 *self, uint32 ulCharOffset, uint32 cChars, IActiveScript* pas, BOOL fScriptlet, uint64* pdwSourceContext) DefineScriptBlock;
-			public function HRESULT(IDebugDocumentHelper64 *self, uint16 staTextAttr) SetDefaultTextAttr;
-			public function HRESULT(IDebugDocumentHelper64 *self, uint32 ulCharOffset, uint32 cChars, uint16* pstaTextAttr) SetTextAttributes;
-			public function HRESULT(IDebugDocumentHelper64 *self, PWSTR pszLongName) SetLongName;
-			public function HRESULT(IDebugDocumentHelper64 *self, PWSTR pszShortName) SetShortName;
-			public function HRESULT(IDebugDocumentHelper64 *self, uint32 pszAttributes) SetDocumentAttr;
-			public function HRESULT(IDebugDocumentHelper64 *self, IDebugApplicationNode** ppdan) GetDebugApplicationNode;
-			public function HRESULT(IDebugDocumentHelper64 *self, uint64 dwSourceContext, IActiveScript** ppasd, uint32* piCharPos, uint32* pcChars) GetScriptBlockInfo;
-			public function HRESULT(IDebugDocumentHelper64 *self, uint32 iCharPos, uint32 cChars, IDebugDocumentContext** ppddc) CreateDebugDocumentContext;
-			public function HRESULT(IDebugDocumentHelper64 *self) BringDocumentToTop;
-			public function HRESULT(IDebugDocumentHelper64 *self, IDebugDocumentContext* pddc) BringDocumentContextToTop;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugDocumentHelper64 *self, IDebugApplication64* pda, PWSTR pszShortName, PWSTR pszLongName, uint32 docAttr) Init;
+				public function HRESULT(IDebugDocumentHelper64 *self, IDebugDocumentHelper64* pddhParent) Attach;
+				public function HRESULT(IDebugDocumentHelper64 *self) Detach;
+				public function HRESULT(IDebugDocumentHelper64 *self, PWSTR pszText) AddUnicodeText;
+				public function HRESULT(IDebugDocumentHelper64 *self, PSTR pszText) AddDBCSText;
+				public function HRESULT(IDebugDocumentHelper64 *self, IDebugDocumentHost* pddh) SetDebugDocumentHost;
+				public function HRESULT(IDebugDocumentHelper64 *self, uint32 cChars, uint32 dwTextStartCookie) AddDeferredText;
+				public function HRESULT(IDebugDocumentHelper64 *self, uint32 ulCharOffset, uint32 cChars, IActiveScript* pas, BOOL fScriptlet, uint64* pdwSourceContext) DefineScriptBlock;
+				public function HRESULT(IDebugDocumentHelper64 *self, uint16 staTextAttr) SetDefaultTextAttr;
+				public function HRESULT(IDebugDocumentHelper64 *self, uint32 ulCharOffset, uint32 cChars, uint16* pstaTextAttr) SetTextAttributes;
+				public function HRESULT(IDebugDocumentHelper64 *self, PWSTR pszLongName) SetLongName;
+				public function HRESULT(IDebugDocumentHelper64 *self, PWSTR pszShortName) SetShortName;
+				public function HRESULT(IDebugDocumentHelper64 *self, uint32 pszAttributes) SetDocumentAttr;
+				public function HRESULT(IDebugDocumentHelper64 *self, IDebugApplicationNode** ppdan) GetDebugApplicationNode;
+				public function HRESULT(IDebugDocumentHelper64 *self, uint64 dwSourceContext, IActiveScript** ppasd, uint32* piCharPos, uint32* pcChars) GetScriptBlockInfo;
+				public function HRESULT(IDebugDocumentHelper64 *self, uint32 iCharPos, uint32 cChars, IDebugDocumentContext** ppddc) CreateDebugDocumentContext;
+				public function HRESULT(IDebugDocumentHelper64 *self) BringDocumentToTop;
+				public function HRESULT(IDebugDocumentHelper64 *self, IDebugDocumentContext* pddc) BringDocumentContextToTop;
+			}
 		}
 		[CRepr]
 		public struct IDebugDocumentHost : IUnknown
 		{
 			public const new Guid IID = .(0x51973c27, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugDocumentHost *self, uint32 dwTextStartCookie, char16* pcharText, uint16* pstaTextAttr, uint32* pcNumChars, uint32 cMaxChars) GetDeferredText;
-			public function HRESULT(IDebugDocumentHost *self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptTextAttributes;
-			public function HRESULT(IDebugDocumentHost *self, IUnknown** ppunkOuter) OnCreateDocumentContext;
-			public function HRESULT(IDebugDocumentHost *self, BSTR* pbstrLongName, BOOL* pfIsOriginalFile) GetPathName;
-			public function HRESULT(IDebugDocumentHost *self, BSTR* pbstrShortName) GetFileName;
-			public function HRESULT(IDebugDocumentHost *self) NotifyChanged;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugDocumentHost *self, uint32 dwTextStartCookie, char16* pcharText, uint16* pstaTextAttr, uint32* pcNumChars, uint32 cMaxChars) GetDeferredText;
+				public function HRESULT(IDebugDocumentHost *self, char16* pstrCode, uint32 uNumCodeChars, PWSTR pstrDelimiter, uint32 dwFlags, uint16* pattr) GetScriptTextAttributes;
+				public function HRESULT(IDebugDocumentHost *self, IUnknown** ppunkOuter) OnCreateDocumentContext;
+				public function HRESULT(IDebugDocumentHost *self, BSTR* pbstrLongName, BOOL* pfIsOriginalFile) GetPathName;
+				public function HRESULT(IDebugDocumentHost *self, BSTR* pbstrShortName) GetFileName;
+				public function HRESULT(IDebugDocumentHost *self) NotifyChanged;
+			}
 		}
 		[CRepr]
 		public struct IDebugDocumentContext : IUnknown
 		{
 			public const new Guid IID = .(0x51973c28, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugDocumentContext *self, IDebugDocument** ppsd) GetDocument;
-			public function HRESULT(IDebugDocumentContext *self, IEnumDebugCodeContexts** ppescc) EnumCodeContexts;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugDocumentContext *self, IDebugDocument** ppsd) GetDocument;
+				public function HRESULT(IDebugDocumentContext *self, IEnumDebugCodeContexts** ppescc) EnumCodeContexts;
+			}
 		}
 		[CRepr]
 		public struct IDebugSessionProvider : IUnknown
 		{
 			public const new Guid IID = .(0x51973c29, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugSessionProvider *self, IRemoteDebugApplication* pda) StartDebugSession;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugSessionProvider *self, IRemoteDebugApplication* pda) StartDebugSession;
+			}
 		}
 		[CRepr]
 		public struct IApplicationDebugger : IUnknown
 		{
 			public const new Guid IID = .(0x51973c2a, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IApplicationDebugger *self) QueryAlive;
-			public function HRESULT(IApplicationDebugger *self, Guid* rclsid, IUnknown* pUnkOuter, uint32 dwClsContext, Guid* riid, IUnknown** ppvObject) CreateInstanceAtDebugger;
-			public function HRESULT(IApplicationDebugger *self, PWSTR pstr) onDebugOutput;
-			public function HRESULT(IApplicationDebugger *self, IRemoteDebugApplicationThread* prpt, BREAKREASON br, IActiveScriptErrorDebug* pError) onHandleBreakPoint;
-			public function HRESULT(IApplicationDebugger *self) onClose;
-			public function HRESULT(IApplicationDebugger *self, Guid* riid, IUnknown* punk) onDebuggerEvent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IApplicationDebugger *self) QueryAlive;
+				public function HRESULT(IApplicationDebugger *self, Guid* rclsid, IUnknown* pUnkOuter, uint32 dwClsContext, Guid* riid, IUnknown** ppvObject) CreateInstanceAtDebugger;
+				public function HRESULT(IApplicationDebugger *self, PWSTR pstr) onDebugOutput;
+				public function HRESULT(IApplicationDebugger *self, IRemoteDebugApplicationThread* prpt, BREAKREASON br, IActiveScriptErrorDebug* pError) onHandleBreakPoint;
+				public function HRESULT(IApplicationDebugger *self) onClose;
+				public function HRESULT(IApplicationDebugger *self, Guid* riid, IUnknown* punk) onDebuggerEvent;
+			}
 		}
 		[CRepr]
 		public struct IApplicationDebuggerUI : IUnknown
 		{
 			public const new Guid IID = .(0x51973c2b, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IApplicationDebuggerUI *self, IDebugDocumentText* pddt) BringDocumentToTop;
-			public function HRESULT(IApplicationDebuggerUI *self, IDebugDocumentContext* pddc) BringDocumentContextToTop;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IApplicationDebuggerUI *self, IDebugDocumentText* pddt) BringDocumentToTop;
+				public function HRESULT(IApplicationDebuggerUI *self, IDebugDocumentContext* pddc) BringDocumentContextToTop;
+			}
 		}
 		[CRepr]
 		public struct IMachineDebugManager : IUnknown
 		{
 			public const new Guid IID = .(0x51973c2c, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IMachineDebugManager *self, IRemoteDebugApplication* pda, uint32* pdwAppCookie) AddApplication;
-			public function HRESULT(IMachineDebugManager *self, uint32 dwAppCookie) RemoveApplication;
-			public function HRESULT(IMachineDebugManager *self, IEnumRemoteDebugApplications** ppeda) EnumApplications;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMachineDebugManager *self, IRemoteDebugApplication* pda, uint32* pdwAppCookie) AddApplication;
+				public function HRESULT(IMachineDebugManager *self, uint32 dwAppCookie) RemoveApplication;
+				public function HRESULT(IMachineDebugManager *self, IEnumRemoteDebugApplications** ppeda) EnumApplications;
+			}
 		}
 		[CRepr]
 		public struct IMachineDebugManagerCookie : IUnknown
 		{
 			public const new Guid IID = .(0x51973c2d, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IMachineDebugManagerCookie *self, IRemoteDebugApplication* pda, uint32 dwDebugAppCookie, uint32* pdwAppCookie) AddApplication;
-			public function HRESULT(IMachineDebugManagerCookie *self, uint32 dwDebugAppCookie, uint32 dwAppCookie) RemoveApplication;
-			public function HRESULT(IMachineDebugManagerCookie *self, IEnumRemoteDebugApplications** ppeda) EnumApplications;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMachineDebugManagerCookie *self, IRemoteDebugApplication* pda, uint32 dwDebugAppCookie, uint32* pdwAppCookie) AddApplication;
+				public function HRESULT(IMachineDebugManagerCookie *self, uint32 dwDebugAppCookie, uint32 dwAppCookie) RemoveApplication;
+				public function HRESULT(IMachineDebugManagerCookie *self, IEnumRemoteDebugApplications** ppeda) EnumApplications;
+			}
 		}
 		[CRepr]
 		public struct IMachineDebugManagerEvents : IUnknown
 		{
 			public const new Guid IID = .(0x51973c2e, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IMachineDebugManagerEvents *self, IRemoteDebugApplication* pda, uint32 dwAppCookie) onAddApplication;
-			public function HRESULT(IMachineDebugManagerEvents *self, IRemoteDebugApplication* pda, uint32 dwAppCookie) onRemoveApplication;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMachineDebugManagerEvents *self, IRemoteDebugApplication* pda, uint32 dwAppCookie) onAddApplication;
+				public function HRESULT(IMachineDebugManagerEvents *self, IRemoteDebugApplication* pda, uint32 dwAppCookie) onRemoveApplication;
+			}
 		}
 		[CRepr]
 		public struct IProcessDebugManager32 : IUnknown
 		{
 			public const new Guid IID = .(0x51973c2f, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IProcessDebugManager32 *self, IDebugApplication32** ppda) CreateApplication;
-			public function HRESULT(IProcessDebugManager32 *self, IDebugApplication32** ppda) GetDefaultApplication;
-			public function HRESULT(IProcessDebugManager32 *self, IDebugApplication32* pda, uint32* pdwAppCookie) AddApplication;
-			public function HRESULT(IProcessDebugManager32 *self, uint32 dwAppCookie) RemoveApplication;
-			public function HRESULT(IProcessDebugManager32 *self, IUnknown* punkOuter, IDebugDocumentHelper32** pddh) CreateDebugDocumentHelper;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IProcessDebugManager32 *self, IDebugApplication32** ppda) CreateApplication;
+				public function HRESULT(IProcessDebugManager32 *self, IDebugApplication32** ppda) GetDefaultApplication;
+				public function HRESULT(IProcessDebugManager32 *self, IDebugApplication32* pda, uint32* pdwAppCookie) AddApplication;
+				public function HRESULT(IProcessDebugManager32 *self, uint32 dwAppCookie) RemoveApplication;
+				public function HRESULT(IProcessDebugManager32 *self, IUnknown* punkOuter, IDebugDocumentHelper32** pddh) CreateDebugDocumentHelper;
+			}
 		}
 		[CRepr]
 		public struct IProcessDebugManager64 : IUnknown
 		{
 			public const new Guid IID = .(0x56b9fc1c, 0x63a9, 0x4cc1, 0xac, 0x21, 0x08, 0x7d, 0x69, 0xa1, 0x7f, 0xab);
 			
-			public function HRESULT(IProcessDebugManager64 *self, IDebugApplication64** ppda) CreateApplication;
-			public function HRESULT(IProcessDebugManager64 *self, IDebugApplication64** ppda) GetDefaultApplication;
-			public function HRESULT(IProcessDebugManager64 *self, IDebugApplication64* pda, uint32* pdwAppCookie) AddApplication;
-			public function HRESULT(IProcessDebugManager64 *self, uint32 dwAppCookie) RemoveApplication;
-			public function HRESULT(IProcessDebugManager64 *self, IUnknown* punkOuter, IDebugDocumentHelper64** pddh) CreateDebugDocumentHelper;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IProcessDebugManager64 *self, IDebugApplication64** ppda) CreateApplication;
+				public function HRESULT(IProcessDebugManager64 *self, IDebugApplication64** ppda) GetDefaultApplication;
+				public function HRESULT(IProcessDebugManager64 *self, IDebugApplication64* pda, uint32* pdwAppCookie) AddApplication;
+				public function HRESULT(IProcessDebugManager64 *self, uint32 dwAppCookie) RemoveApplication;
+				public function HRESULT(IProcessDebugManager64 *self, IUnknown* punkOuter, IDebugDocumentHelper64** pddh) CreateDebugDocumentHelper;
+			}
 		}
 		[CRepr]
 		public struct IRemoteDebugApplication : IUnknown
 		{
 			public const new Guid IID = .(0x51973c30, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IRemoteDebugApplication *self, IRemoteDebugApplicationThread* prptFocus, BREAKRESUME_ACTION bra, ERRORRESUMEACTION era) ResumeFromBreakPoint;
-			public function HRESULT(IRemoteDebugApplication *self) CauseBreak;
-			public function HRESULT(IRemoteDebugApplication *self, IApplicationDebugger* pad) ConnectDebugger;
-			public function HRESULT(IRemoteDebugApplication *self) DisconnectDebugger;
-			public function HRESULT(IRemoteDebugApplication *self, IApplicationDebugger** pad) GetDebugger;
-			public function HRESULT(IRemoteDebugApplication *self, Guid* rclsid, IUnknown* pUnkOuter, uint32 dwClsContext, Guid* riid, IUnknown** ppvObject) CreateInstanceAtApplication;
-			public function HRESULT(IRemoteDebugApplication *self) QueryAlive;
-			public function HRESULT(IRemoteDebugApplication *self, IEnumRemoteDebugApplicationThreads** pperdat) EnumThreads;
-			public function HRESULT(IRemoteDebugApplication *self, BSTR* pbstrName) GetName;
-			public function HRESULT(IRemoteDebugApplication *self, IDebugApplicationNode** ppdanRoot) GetRootNode;
-			public function HRESULT(IRemoteDebugApplication *self, IEnumDebugExpressionContexts** ppedec) EnumGlobalExpressionContexts;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRemoteDebugApplication *self, IRemoteDebugApplicationThread* prptFocus, BREAKRESUME_ACTION bra, ERRORRESUMEACTION era) ResumeFromBreakPoint;
+				public function HRESULT(IRemoteDebugApplication *self) CauseBreak;
+				public function HRESULT(IRemoteDebugApplication *self, IApplicationDebugger* pad) ConnectDebugger;
+				public function HRESULT(IRemoteDebugApplication *self) DisconnectDebugger;
+				public function HRESULT(IRemoteDebugApplication *self, IApplicationDebugger** pad) GetDebugger;
+				public function HRESULT(IRemoteDebugApplication *self, Guid* rclsid, IUnknown* pUnkOuter, uint32 dwClsContext, Guid* riid, IUnknown** ppvObject) CreateInstanceAtApplication;
+				public function HRESULT(IRemoteDebugApplication *self) QueryAlive;
+				public function HRESULT(IRemoteDebugApplication *self, IEnumRemoteDebugApplicationThreads** pperdat) EnumThreads;
+				public function HRESULT(IRemoteDebugApplication *self, BSTR* pbstrName) GetName;
+				public function HRESULT(IRemoteDebugApplication *self, IDebugApplicationNode** ppdanRoot) GetRootNode;
+				public function HRESULT(IRemoteDebugApplication *self, IEnumDebugExpressionContexts** ppedec) EnumGlobalExpressionContexts;
+			}
 		}
 		[CRepr]
 		public struct IDebugApplication32 : IRemoteDebugApplication
 		{
 			public const new Guid IID = .(0x51973c32, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugApplication32 *self, PWSTR pstrName) SetName;
-			public function HRESULT(IDebugApplication32 *self) StepOutComplete;
-			public function HRESULT(IDebugApplication32 *self, PWSTR pstr) DebugOutput;
-			public function HRESULT(IDebugApplication32 *self) StartDebugSession;
-			public function HRESULT(IDebugApplication32 *self, BREAKREASON br, BREAKRESUME_ACTION* pbra) HandleBreakPoint;
-			public function HRESULT(IDebugApplication32 *self) Close;
-			public function HRESULT(IDebugApplication32 *self, uint32* pabf, IRemoteDebugApplicationThread** pprdatSteppingThread) GetBreakFlags;
-			public function HRESULT(IDebugApplication32 *self, IDebugApplicationThread** pat) GetCurrentThread;
-			public function HRESULT(IDebugApplication32 *self, IDebugSyncOperation* psdo, IDebugAsyncOperation** ppado) CreateAsyncDebugOperation;
-			public function HRESULT(IDebugApplication32 *self, IDebugStackFrameSniffer* pdsfs, uint32* pdwCookie) AddStackFrameSniffer;
-			public function HRESULT(IDebugApplication32 *self, uint32 dwCookie) RemoveStackFrameSniffer;
-			public function HRESULT(IDebugApplication32 *self) QueryCurrentThreadIsDebuggerThread;
-			public function HRESULT(IDebugApplication32 *self, IDebugThreadCall32* pptc, uint32 dwParam1, uint32 dwParam2, uint32 dwParam3) SynchronousCallInDebuggerThread;
-			public function HRESULT(IDebugApplication32 *self, IDebugApplicationNode** ppdanNew) CreateApplicationNode;
-			public function HRESULT(IDebugApplication32 *self, Guid* riid, IUnknown* punk) FireDebuggerEvent;
-			public function HRESULT(IDebugApplication32 *self, IActiveScriptErrorDebug* pErrorDebug, IActiveScriptSite* pScriptSite, BREAKRESUME_ACTION* pbra, ERRORRESUMEACTION* perra, BOOL* pfCallOnScriptError) HandleRuntimeError;
-			public function BOOL(IDebugApplication32 *self) FCanJitDebug;
-			public function BOOL(IDebugApplication32 *self) FIsAutoJitDebugEnabled;
-			public function HRESULT(IDebugApplication32 *self, IProvideExpressionContexts* pdsfs, uint32* pdwCookie) AddGlobalExpressionContextProvider;
-			public function HRESULT(IDebugApplication32 *self, uint32 dwCookie) RemoveGlobalExpressionContextProvider;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IRemoteDebugApplication.VTable
+			{
+				public function HRESULT(IDebugApplication32 *self, PWSTR pstrName) SetName;
+				public function HRESULT(IDebugApplication32 *self) StepOutComplete;
+				public function HRESULT(IDebugApplication32 *self, PWSTR pstr) DebugOutput;
+				public function HRESULT(IDebugApplication32 *self) StartDebugSession;
+				public function HRESULT(IDebugApplication32 *self, BREAKREASON br, BREAKRESUME_ACTION* pbra) HandleBreakPoint;
+				public function HRESULT(IDebugApplication32 *self) Close;
+				public function HRESULT(IDebugApplication32 *self, uint32* pabf, IRemoteDebugApplicationThread** pprdatSteppingThread) GetBreakFlags;
+				public function HRESULT(IDebugApplication32 *self, IDebugApplicationThread** pat) GetCurrentThread;
+				public function HRESULT(IDebugApplication32 *self, IDebugSyncOperation* psdo, IDebugAsyncOperation** ppado) CreateAsyncDebugOperation;
+				public function HRESULT(IDebugApplication32 *self, IDebugStackFrameSniffer* pdsfs, uint32* pdwCookie) AddStackFrameSniffer;
+				public function HRESULT(IDebugApplication32 *self, uint32 dwCookie) RemoveStackFrameSniffer;
+				public function HRESULT(IDebugApplication32 *self) QueryCurrentThreadIsDebuggerThread;
+				public function HRESULT(IDebugApplication32 *self, IDebugThreadCall32* pptc, uint32 dwParam1, uint32 dwParam2, uint32 dwParam3) SynchronousCallInDebuggerThread;
+				public function HRESULT(IDebugApplication32 *self, IDebugApplicationNode** ppdanNew) CreateApplicationNode;
+				public function HRESULT(IDebugApplication32 *self, Guid* riid, IUnknown* punk) FireDebuggerEvent;
+				public function HRESULT(IDebugApplication32 *self, IActiveScriptErrorDebug* pErrorDebug, IActiveScriptSite* pScriptSite, BREAKRESUME_ACTION* pbra, ERRORRESUMEACTION* perra, BOOL* pfCallOnScriptError) HandleRuntimeError;
+				public function BOOL(IDebugApplication32 *self) FCanJitDebug;
+				public function BOOL(IDebugApplication32 *self) FIsAutoJitDebugEnabled;
+				public function HRESULT(IDebugApplication32 *self, IProvideExpressionContexts* pdsfs, uint32* pdwCookie) AddGlobalExpressionContextProvider;
+				public function HRESULT(IDebugApplication32 *self, uint32 dwCookie) RemoveGlobalExpressionContextProvider;
+			}
 		}
 		[CRepr]
 		public struct IDebugApplication64 : IRemoteDebugApplication
 		{
 			public const new Guid IID = .(0x4dedc754, 0x04c7, 0x4f10, 0x9e, 0x60, 0x16, 0xa3, 0x90, 0xfe, 0x6e, 0x62);
 			
-			public function HRESULT(IDebugApplication64 *self, PWSTR pstrName) SetName;
-			public function HRESULT(IDebugApplication64 *self) StepOutComplete;
-			public function HRESULT(IDebugApplication64 *self, PWSTR pstr) DebugOutput;
-			public function HRESULT(IDebugApplication64 *self) StartDebugSession;
-			public function HRESULT(IDebugApplication64 *self, BREAKREASON br, BREAKRESUME_ACTION* pbra) HandleBreakPoint;
-			public function HRESULT(IDebugApplication64 *self) Close;
-			public function HRESULT(IDebugApplication64 *self, uint32* pabf, IRemoteDebugApplicationThread** pprdatSteppingThread) GetBreakFlags;
-			public function HRESULT(IDebugApplication64 *self, IDebugApplicationThread** pat) GetCurrentThread;
-			public function HRESULT(IDebugApplication64 *self, IDebugSyncOperation* psdo, IDebugAsyncOperation** ppado) CreateAsyncDebugOperation;
-			public function HRESULT(IDebugApplication64 *self, IDebugStackFrameSniffer* pdsfs, uint32* pdwCookie) AddStackFrameSniffer;
-			public function HRESULT(IDebugApplication64 *self, uint32 dwCookie) RemoveStackFrameSniffer;
-			public function HRESULT(IDebugApplication64 *self) QueryCurrentThreadIsDebuggerThread;
-			public function HRESULT(IDebugApplication64 *self, IDebugThreadCall64* pptc, uint64 dwParam1, uint64 dwParam2, uint64 dwParam3) SynchronousCallInDebuggerThread;
-			public function HRESULT(IDebugApplication64 *self, IDebugApplicationNode** ppdanNew) CreateApplicationNode;
-			public function HRESULT(IDebugApplication64 *self, Guid* riid, IUnknown* punk) FireDebuggerEvent;
-			public function HRESULT(IDebugApplication64 *self, IActiveScriptErrorDebug* pErrorDebug, IActiveScriptSite* pScriptSite, BREAKRESUME_ACTION* pbra, ERRORRESUMEACTION* perra, BOOL* pfCallOnScriptError) HandleRuntimeError;
-			public function BOOL(IDebugApplication64 *self) FCanJitDebug;
-			public function BOOL(IDebugApplication64 *self) FIsAutoJitDebugEnabled;
-			public function HRESULT(IDebugApplication64 *self, IProvideExpressionContexts* pdsfs, uint64* pdwCookie) AddGlobalExpressionContextProvider;
-			public function HRESULT(IDebugApplication64 *self, uint64 dwCookie) RemoveGlobalExpressionContextProvider;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IRemoteDebugApplication.VTable
+			{
+				public function HRESULT(IDebugApplication64 *self, PWSTR pstrName) SetName;
+				public function HRESULT(IDebugApplication64 *self) StepOutComplete;
+				public function HRESULT(IDebugApplication64 *self, PWSTR pstr) DebugOutput;
+				public function HRESULT(IDebugApplication64 *self) StartDebugSession;
+				public function HRESULT(IDebugApplication64 *self, BREAKREASON br, BREAKRESUME_ACTION* pbra) HandleBreakPoint;
+				public function HRESULT(IDebugApplication64 *self) Close;
+				public function HRESULT(IDebugApplication64 *self, uint32* pabf, IRemoteDebugApplicationThread** pprdatSteppingThread) GetBreakFlags;
+				public function HRESULT(IDebugApplication64 *self, IDebugApplicationThread** pat) GetCurrentThread;
+				public function HRESULT(IDebugApplication64 *self, IDebugSyncOperation* psdo, IDebugAsyncOperation** ppado) CreateAsyncDebugOperation;
+				public function HRESULT(IDebugApplication64 *self, IDebugStackFrameSniffer* pdsfs, uint32* pdwCookie) AddStackFrameSniffer;
+				public function HRESULT(IDebugApplication64 *self, uint32 dwCookie) RemoveStackFrameSniffer;
+				public function HRESULT(IDebugApplication64 *self) QueryCurrentThreadIsDebuggerThread;
+				public function HRESULT(IDebugApplication64 *self, IDebugThreadCall64* pptc, uint64 dwParam1, uint64 dwParam2, uint64 dwParam3) SynchronousCallInDebuggerThread;
+				public function HRESULT(IDebugApplication64 *self, IDebugApplicationNode** ppdanNew) CreateApplicationNode;
+				public function HRESULT(IDebugApplication64 *self, Guid* riid, IUnknown* punk) FireDebuggerEvent;
+				public function HRESULT(IDebugApplication64 *self, IActiveScriptErrorDebug* pErrorDebug, IActiveScriptSite* pScriptSite, BREAKRESUME_ACTION* pbra, ERRORRESUMEACTION* perra, BOOL* pfCallOnScriptError) HandleRuntimeError;
+				public function BOOL(IDebugApplication64 *self) FCanJitDebug;
+				public function BOOL(IDebugApplication64 *self) FIsAutoJitDebugEnabled;
+				public function HRESULT(IDebugApplication64 *self, IProvideExpressionContexts* pdsfs, uint64* pdwCookie) AddGlobalExpressionContextProvider;
+				public function HRESULT(IDebugApplication64 *self, uint64 dwCookie) RemoveGlobalExpressionContextProvider;
+			}
 		}
 		[CRepr]
 		public struct IRemoteDebugApplicationEvents : IUnknown
 		{
 			public const new Guid IID = .(0x51973c33, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IRemoteDebugApplicationEvents *self, IApplicationDebugger* pad) OnConnectDebugger;
-			public function HRESULT(IRemoteDebugApplicationEvents *self) OnDisconnectDebugger;
-			public function HRESULT(IRemoteDebugApplicationEvents *self, PWSTR pstrName) OnSetName;
-			public function HRESULT(IRemoteDebugApplicationEvents *self, PWSTR pstr) OnDebugOutput;
-			public function HRESULT(IRemoteDebugApplicationEvents *self) OnClose;
-			public function HRESULT(IRemoteDebugApplicationEvents *self, IRemoteDebugApplicationThread* prdat) OnEnterBreakPoint;
-			public function HRESULT(IRemoteDebugApplicationEvents *self, IRemoteDebugApplicationThread* prdat) OnLeaveBreakPoint;
-			public function HRESULT(IRemoteDebugApplicationEvents *self, IRemoteDebugApplicationThread* prdat) OnCreateThread;
-			public function HRESULT(IRemoteDebugApplicationEvents *self, IRemoteDebugApplicationThread* prdat) OnDestroyThread;
-			public function HRESULT(IRemoteDebugApplicationEvents *self, uint32 abf, IRemoteDebugApplicationThread* prdatSteppingThread) OnBreakFlagChange;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRemoteDebugApplicationEvents *self, IApplicationDebugger* pad) OnConnectDebugger;
+				public function HRESULT(IRemoteDebugApplicationEvents *self) OnDisconnectDebugger;
+				public function HRESULT(IRemoteDebugApplicationEvents *self, PWSTR pstrName) OnSetName;
+				public function HRESULT(IRemoteDebugApplicationEvents *self, PWSTR pstr) OnDebugOutput;
+				public function HRESULT(IRemoteDebugApplicationEvents *self) OnClose;
+				public function HRESULT(IRemoteDebugApplicationEvents *self, IRemoteDebugApplicationThread* prdat) OnEnterBreakPoint;
+				public function HRESULT(IRemoteDebugApplicationEvents *self, IRemoteDebugApplicationThread* prdat) OnLeaveBreakPoint;
+				public function HRESULT(IRemoteDebugApplicationEvents *self, IRemoteDebugApplicationThread* prdat) OnCreateThread;
+				public function HRESULT(IRemoteDebugApplicationEvents *self, IRemoteDebugApplicationThread* prdat) OnDestroyThread;
+				public function HRESULT(IRemoteDebugApplicationEvents *self, uint32 abf, IRemoteDebugApplicationThread* prdatSteppingThread) OnBreakFlagChange;
+			}
 		}
 		[CRepr]
 		public struct IDebugApplicationNode : IDebugDocumentProvider
 		{
 			public const new Guid IID = .(0x51973c34, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugApplicationNode *self, IEnumDebugApplicationNodes** pperddp) EnumChildren;
-			public function HRESULT(IDebugApplicationNode *self, IDebugApplicationNode** pprddp) GetParent;
-			public function HRESULT(IDebugApplicationNode *self, IDebugDocumentProvider* pddp) SetDocumentProvider;
-			public function HRESULT(IDebugApplicationNode *self) Close;
-			public function HRESULT(IDebugApplicationNode *self, IDebugApplicationNode* pdanParent) Attach;
-			public function HRESULT(IDebugApplicationNode *self) Detach;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugDocumentProvider.VTable
+			{
+				public function HRESULT(IDebugApplicationNode *self, IEnumDebugApplicationNodes** pperddp) EnumChildren;
+				public function HRESULT(IDebugApplicationNode *self, IDebugApplicationNode** pprddp) GetParent;
+				public function HRESULT(IDebugApplicationNode *self, IDebugDocumentProvider* pddp) SetDocumentProvider;
+				public function HRESULT(IDebugApplicationNode *self) Close;
+				public function HRESULT(IDebugApplicationNode *self, IDebugApplicationNode* pdanParent) Attach;
+				public function HRESULT(IDebugApplicationNode *self) Detach;
+			}
 		}
 		[CRepr]
 		public struct IDebugApplicationNodeEvents : IUnknown
 		{
 			public const new Guid IID = .(0x51973c35, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugApplicationNodeEvents *self, IDebugApplicationNode* prddpChild) onAddChild;
-			public function HRESULT(IDebugApplicationNodeEvents *self, IDebugApplicationNode* prddpChild) onRemoveChild;
-			public function HRESULT(IDebugApplicationNodeEvents *self) onDetach;
-			public function HRESULT(IDebugApplicationNodeEvents *self, IDebugApplicationNode* prddpParent) onAttach;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugApplicationNodeEvents *self, IDebugApplicationNode* prddpChild) onAddChild;
+				public function HRESULT(IDebugApplicationNodeEvents *self, IDebugApplicationNode* prddpChild) onRemoveChild;
+				public function HRESULT(IDebugApplicationNodeEvents *self) onDetach;
+				public function HRESULT(IDebugApplicationNodeEvents *self, IDebugApplicationNode* prddpParent) onAttach;
+			}
 		}
 		[CRepr]
 		public struct AsyncIDebugApplicationNodeEvents : IUnknown
 		{
 			public const new Guid IID = .(0xa2e3aa3b, 0xaa8d, 0x4ebf, 0x84, 0xcd, 0x64, 0x8b, 0x73, 0x7b, 0x8c, 0x13);
 			
-			public function HRESULT(AsyncIDebugApplicationNodeEvents *self, IDebugApplicationNode* prddpChild) Begin_onAddChild;
-			public function HRESULT(AsyncIDebugApplicationNodeEvents *self) Finish_onAddChild;
-			public function HRESULT(AsyncIDebugApplicationNodeEvents *self, IDebugApplicationNode* prddpChild) Begin_onRemoveChild;
-			public function HRESULT(AsyncIDebugApplicationNodeEvents *self) Finish_onRemoveChild;
-			public function HRESULT(AsyncIDebugApplicationNodeEvents *self) Begin_onDetach;
-			public function HRESULT(AsyncIDebugApplicationNodeEvents *self) Finish_onDetach;
-			public function HRESULT(AsyncIDebugApplicationNodeEvents *self, IDebugApplicationNode* prddpParent) Begin_onAttach;
-			public function HRESULT(AsyncIDebugApplicationNodeEvents *self) Finish_onAttach;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(AsyncIDebugApplicationNodeEvents *self, IDebugApplicationNode* prddpChild) Begin_onAddChild;
+				public function HRESULT(AsyncIDebugApplicationNodeEvents *self) Finish_onAddChild;
+				public function HRESULT(AsyncIDebugApplicationNodeEvents *self, IDebugApplicationNode* prddpChild) Begin_onRemoveChild;
+				public function HRESULT(AsyncIDebugApplicationNodeEvents *self) Finish_onRemoveChild;
+				public function HRESULT(AsyncIDebugApplicationNodeEvents *self) Begin_onDetach;
+				public function HRESULT(AsyncIDebugApplicationNodeEvents *self) Finish_onDetach;
+				public function HRESULT(AsyncIDebugApplicationNodeEvents *self, IDebugApplicationNode* prddpParent) Begin_onAttach;
+				public function HRESULT(AsyncIDebugApplicationNodeEvents *self) Finish_onAttach;
+			}
 		}
 		[CRepr]
 		public struct IDebugThreadCall32 : IUnknown
 		{
 			public const new Guid IID = .(0x51973c36, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugThreadCall32 *self, uint32 dwParam1, uint32 dwParam2, uint32 dwParam3) ThreadCallHandler;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugThreadCall32 *self, uint32 dwParam1, uint32 dwParam2, uint32 dwParam3) ThreadCallHandler;
+			}
 		}
 		[CRepr]
 		public struct IDebugThreadCall64 : IUnknown
 		{
 			public const new Guid IID = .(0xcb3fa335, 0xe979, 0x42fd, 0x9f, 0xcf, 0xa7, 0x54, 0x6a, 0x0f, 0x39, 0x05);
 			
-			public function HRESULT(IDebugThreadCall64 *self, uint64 dwParam1, uint64 dwParam2, uint64 dwParam3) ThreadCallHandler;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugThreadCall64 *self, uint64 dwParam1, uint64 dwParam2, uint64 dwParam3) ThreadCallHandler;
+			}
 		}
 		[CRepr]
 		public struct IRemoteDebugApplicationThread : IUnknown
 		{
 			public const new Guid IID = .(0x51973c37, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IRemoteDebugApplicationThread *self, uint32* dwThreadId) GetSystemThreadId;
-			public function HRESULT(IRemoteDebugApplicationThread *self, IRemoteDebugApplication** pprda) GetApplication;
-			public function HRESULT(IRemoteDebugApplicationThread *self, IEnumDebugStackFrames** ppedsf) EnumStackFrames;
-			public function HRESULT(IRemoteDebugApplicationThread *self, BSTR* pbstrDescription, BSTR* pbstrState) GetDescription;
-			public function HRESULT(IRemoteDebugApplicationThread *self, IDebugStackFrame* pStackFrame, IDebugCodeContext* pCodeContext) SetNextStatement;
-			public function HRESULT(IRemoteDebugApplicationThread *self, uint32* pState) GetState;
-			public function HRESULT(IRemoteDebugApplicationThread *self, uint32* pdwCount) Suspend;
-			public function HRESULT(IRemoteDebugApplicationThread *self, uint32* pdwCount) Resume;
-			public function HRESULT(IRemoteDebugApplicationThread *self, uint32* pdwCount) GetSuspendCount;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRemoteDebugApplicationThread *self, uint32* dwThreadId) GetSystemThreadId;
+				public function HRESULT(IRemoteDebugApplicationThread *self, IRemoteDebugApplication** pprda) GetApplication;
+				public function HRESULT(IRemoteDebugApplicationThread *self, IEnumDebugStackFrames** ppedsf) EnumStackFrames;
+				public function HRESULT(IRemoteDebugApplicationThread *self, BSTR* pbstrDescription, BSTR* pbstrState) GetDescription;
+				public function HRESULT(IRemoteDebugApplicationThread *self, IDebugStackFrame* pStackFrame, IDebugCodeContext* pCodeContext) SetNextStatement;
+				public function HRESULT(IRemoteDebugApplicationThread *self, uint32* pState) GetState;
+				public function HRESULT(IRemoteDebugApplicationThread *self, uint32* pdwCount) Suspend;
+				public function HRESULT(IRemoteDebugApplicationThread *self, uint32* pdwCount) Resume;
+				public function HRESULT(IRemoteDebugApplicationThread *self, uint32* pdwCount) GetSuspendCount;
+			}
 		}
 		[CRepr]
 		public struct IDebugApplicationThread : IRemoteDebugApplicationThread
 		{
 			public const new Guid IID = .(0x51973c38, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugApplicationThread *self, IDebugThreadCall32* pstcb, uint32 dwParam1, uint32 dwParam2, uint32 dwParam3) SynchronousCallIntoThread32;
-			public function HRESULT(IDebugApplicationThread *self) QueryIsCurrentThread;
-			public function HRESULT(IDebugApplicationThread *self) QueryIsDebuggerThread;
-			public function HRESULT(IDebugApplicationThread *self, PWSTR pstrDescription) SetDescription;
-			public function HRESULT(IDebugApplicationThread *self, PWSTR pstrState) SetStateString;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IRemoteDebugApplicationThread.VTable
+			{
+				public function HRESULT(IDebugApplicationThread *self, IDebugThreadCall32* pstcb, uint32 dwParam1, uint32 dwParam2, uint32 dwParam3) SynchronousCallIntoThread32;
+				public function HRESULT(IDebugApplicationThread *self) QueryIsCurrentThread;
+				public function HRESULT(IDebugApplicationThread *self) QueryIsDebuggerThread;
+				public function HRESULT(IDebugApplicationThread *self, PWSTR pstrDescription) SetDescription;
+				public function HRESULT(IDebugApplicationThread *self, PWSTR pstrState) SetStateString;
+			}
 		}
 		[CRepr]
 		public struct IDebugApplicationThread64 : IDebugApplicationThread
 		{
 			public const new Guid IID = .(0x9dac5886, 0xdbad, 0x456d, 0x9d, 0xee, 0x5d, 0xec, 0x39, 0xab, 0x3d, 0xda);
 			
-			public function HRESULT(IDebugApplicationThread64 *self, IDebugThreadCall64* pstcb, uint64 dwParam1, uint64 dwParam2, uint64 dwParam3) SynchronousCallIntoThread64;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugApplicationThread.VTable
+			{
+				public function HRESULT(IDebugApplicationThread64 *self, IDebugThreadCall64* pstcb, uint64 dwParam1, uint64 dwParam2, uint64 dwParam3) SynchronousCallIntoThread64;
+			}
 		}
 		[CRepr]
 		public struct IDebugCookie : IUnknown
 		{
 			public const new Guid IID = .(0x51973c39, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugCookie *self, uint32 dwDebugAppCookie) SetDebugCookie;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugCookie *self, uint32 dwDebugAppCookie) SetDebugCookie;
+			}
 		}
 		[CRepr]
 		public struct IEnumDebugApplicationNodes : IUnknown
 		{
 			public const new Guid IID = .(0x51973c3a, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IEnumDebugApplicationNodes *self, uint32 celt, IDebugApplicationNode** pprddp, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumDebugApplicationNodes *self, uint32 celt) Skip;
-			public function HRESULT(IEnumDebugApplicationNodes *self) Reset;
-			public function HRESULT(IEnumDebugApplicationNodes *self, IEnumDebugApplicationNodes** pperddp) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumDebugApplicationNodes *self, uint32 celt, IDebugApplicationNode** pprddp, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumDebugApplicationNodes *self, uint32 celt) Skip;
+				public function HRESULT(IEnumDebugApplicationNodes *self) Reset;
+				public function HRESULT(IEnumDebugApplicationNodes *self, IEnumDebugApplicationNodes** pperddp) Clone;
+			}
 		}
 		[CRepr]
 		public struct IEnumRemoteDebugApplications : IUnknown
 		{
 			public const new Guid IID = .(0x51973c3b, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IEnumRemoteDebugApplications *self, uint32 celt, IRemoteDebugApplication** ppda, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumRemoteDebugApplications *self, uint32 celt) Skip;
-			public function HRESULT(IEnumRemoteDebugApplications *self) Reset;
-			public function HRESULT(IEnumRemoteDebugApplications *self, IEnumRemoteDebugApplications** ppessd) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumRemoteDebugApplications *self, uint32 celt, IRemoteDebugApplication** ppda, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumRemoteDebugApplications *self, uint32 celt) Skip;
+				public function HRESULT(IEnumRemoteDebugApplications *self) Reset;
+				public function HRESULT(IEnumRemoteDebugApplications *self, IEnumRemoteDebugApplications** ppessd) Clone;
+			}
 		}
 		[CRepr]
 		public struct IEnumRemoteDebugApplicationThreads : IUnknown
 		{
 			public const new Guid IID = .(0x51973c3c, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IEnumRemoteDebugApplicationThreads *self, uint32 celt, IRemoteDebugApplicationThread** pprdat, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumRemoteDebugApplicationThreads *self, uint32 celt) Skip;
-			public function HRESULT(IEnumRemoteDebugApplicationThreads *self) Reset;
-			public function HRESULT(IEnumRemoteDebugApplicationThreads *self, IEnumRemoteDebugApplicationThreads** pperdat) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumRemoteDebugApplicationThreads *self, uint32 celt, IRemoteDebugApplicationThread** pprdat, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumRemoteDebugApplicationThreads *self, uint32 celt) Skip;
+				public function HRESULT(IEnumRemoteDebugApplicationThreads *self) Reset;
+				public function HRESULT(IEnumRemoteDebugApplicationThreads *self, IEnumRemoteDebugApplicationThreads** pperdat) Clone;
+			}
 		}
 		[CRepr]
 		public struct IDebugFormatter : IUnknown
 		{
 			public const new Guid IID = .(0x51973c05, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugFormatter *self, VARIANT* pvar, uint32 nRadix, BSTR* pbstrValue) GetStringForVariant;
-			public function HRESULT(IDebugFormatter *self, PWSTR pwstrValue, VARIANT* pvar) GetVariantForString;
-			public function HRESULT(IDebugFormatter *self, uint16 vt, TYPEDESC* ptdescArrayType, BSTR* pbstr) GetStringForVarType;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugFormatter *self, VARIANT* pvar, uint32 nRadix, BSTR* pbstrValue) GetStringForVariant;
+				public function HRESULT(IDebugFormatter *self, PWSTR pwstrValue, VARIANT* pvar) GetVariantForString;
+				public function HRESULT(IDebugFormatter *self, uint16 vt, TYPEDESC* ptdescArrayType, BSTR* pbstr) GetStringForVarType;
+			}
 		}
 		[CRepr]
 		public struct ISimpleConnectionPoint : IUnknown
 		{
 			public const new Guid IID = .(0x51973c3e, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(ISimpleConnectionPoint *self, uint32* pulCount) GetEventCount;
-			public function HRESULT(ISimpleConnectionPoint *self, uint32 iEvent, uint32 cEvents, int32* prgid, BSTR* prgbstr, uint32* pcEventsFetched) DescribeEvents;
-			public function HRESULT(ISimpleConnectionPoint *self, IDispatch* pdisp, uint32* pdwCookie) Advise;
-			public function HRESULT(ISimpleConnectionPoint *self, uint32 dwCookie) Unadvise;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISimpleConnectionPoint *self, uint32* pulCount) GetEventCount;
+				public function HRESULT(ISimpleConnectionPoint *self, uint32 iEvent, uint32 cEvents, int32* prgid, BSTR* prgbstr, uint32* pcEventsFetched) DescribeEvents;
+				public function HRESULT(ISimpleConnectionPoint *self, IDispatch* pdisp, uint32* pdwCookie) Advise;
+				public function HRESULT(ISimpleConnectionPoint *self, uint32 dwCookie) Unadvise;
+			}
 		}
 		[CRepr]
 		public struct IDebugHelper : IUnknown
 		{
 			public const new Guid IID = .(0x51973c3f, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IDebugHelper *self, VARIANT* pvar, PWSTR bstrName, IDebugApplicationThread* pdat, IDebugProperty** ppdob) CreatePropertyBrowser;
-			public function HRESULT(IDebugHelper *self, VARIANT* pvar, PWSTR bstrName, IDebugApplicationThread* pdat, IDebugFormatter* pdf, IDebugProperty** ppdob) CreatePropertyBrowserEx;
-			public function HRESULT(IDebugHelper *self, IDispatch* pdisp, ISimpleConnectionPoint** ppscp) CreateSimpleConnectionPoint;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugHelper *self, VARIANT* pvar, PWSTR bstrName, IDebugApplicationThread* pdat, IDebugProperty** ppdob) CreatePropertyBrowser;
+				public function HRESULT(IDebugHelper *self, VARIANT* pvar, PWSTR bstrName, IDebugApplicationThread* pdat, IDebugFormatter* pdf, IDebugProperty** ppdob) CreatePropertyBrowserEx;
+				public function HRESULT(IDebugHelper *self, IDispatch* pdisp, ISimpleConnectionPoint** ppscp) CreateSimpleConnectionPoint;
+			}
 		}
 		[CRepr]
 		public struct IEnumDebugExpressionContexts : IUnknown
 		{
 			public const new Guid IID = .(0x51973c40, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IEnumDebugExpressionContexts *self, uint32 celt, IDebugExpressionContext** ppdec, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumDebugExpressionContexts *self, uint32 celt) Skip;
-			public function HRESULT(IEnumDebugExpressionContexts *self) Reset;
-			public function HRESULT(IEnumDebugExpressionContexts *self, IEnumDebugExpressionContexts** ppedec) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumDebugExpressionContexts *self, uint32 celt, IDebugExpressionContext** ppdec, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumDebugExpressionContexts *self, uint32 celt) Skip;
+				public function HRESULT(IEnumDebugExpressionContexts *self) Reset;
+				public function HRESULT(IEnumDebugExpressionContexts *self, IEnumDebugExpressionContexts** ppedec) Clone;
+			}
 		}
 		[CRepr]
 		public struct IProvideExpressionContexts : IUnknown
 		{
 			public const new Guid IID = .(0x51973c41, 0xcb0c, 0x11d0, 0xb5, 0xc9, 0x00, 0xa0, 0x24, 0x4a, 0x0e, 0x7a);
 			
-			public function HRESULT(IProvideExpressionContexts *self, IEnumDebugExpressionContexts** ppedec) EnumExpressionContexts;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IProvideExpressionContexts *self, IEnumDebugExpressionContexts** ppedec) EnumExpressionContexts;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptProfilerControl : IUnknown
 		{
 			public const new Guid IID = .(0x784b5ff0, 0x69b0, 0x47d1, 0xa7, 0xdc, 0x25, 0x18, 0xf4, 0x23, 0x0e, 0x90);
 			
-			public function HRESULT(IActiveScriptProfilerControl *self, Guid* clsidProfilerObject, uint32 dwEventMask, uint32 dwContext) StartProfiling;
-			public function HRESULT(IActiveScriptProfilerControl *self, uint32 dwEventMask) SetProfilerEventMask;
-			public function HRESULT(IActiveScriptProfilerControl *self, HRESULT hrShutdownReason) StopProfiling;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptProfilerControl *self, Guid* clsidProfilerObject, uint32 dwEventMask, uint32 dwContext) StartProfiling;
+				public function HRESULT(IActiveScriptProfilerControl *self, uint32 dwEventMask) SetProfilerEventMask;
+				public function HRESULT(IActiveScriptProfilerControl *self, HRESULT hrShutdownReason) StopProfiling;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptProfilerControl2 : IActiveScriptProfilerControl
 		{
 			public const new Guid IID = .(0x47810165, 0x498f, 0x40be, 0x94, 0xf1, 0x65, 0x35, 0x57, 0xe9, 0xe7, 0xda);
 			
-			public function HRESULT(IActiveScriptProfilerControl2 *self) CompleteProfilerStart;
-			public function HRESULT(IActiveScriptProfilerControl2 *self) PrepareProfilerStop;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IActiveScriptProfilerControl.VTable
+			{
+				public function HRESULT(IActiveScriptProfilerControl2 *self) CompleteProfilerStart;
+				public function HRESULT(IActiveScriptProfilerControl2 *self) PrepareProfilerStop;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptProfilerHeapEnum : IUnknown
 		{
 			public const new Guid IID = .(0x32e4694e, 0x0d37, 0x419b, 0xb9, 0x3d, 0xfa, 0x20, 0xde, 0xd6, 0xe8, 0xea);
 			
-			public function HRESULT(IActiveScriptProfilerHeapEnum *self, uint32 celt, PROFILER_HEAP_OBJECT** heapObjects, uint32* pceltFetched) Next;
-			public function HRESULT(IActiveScriptProfilerHeapEnum *self, PROFILER_HEAP_OBJECT* heapObject, uint32 celt, PROFILER_HEAP_OBJECT_OPTIONAL_INFO* optionalInfo) GetOptionalInfo;
-			public function HRESULT(IActiveScriptProfilerHeapEnum *self, uint32 celt, PROFILER_HEAP_OBJECT** heapObjects) FreeObjectAndOptionalInfo;
-			public function HRESULT(IActiveScriptProfilerHeapEnum *self, PWSTR*** pNameList, uint32* pcelt) GetNameIdMap;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptProfilerHeapEnum *self, uint32 celt, PROFILER_HEAP_OBJECT** heapObjects, uint32* pceltFetched) Next;
+				public function HRESULT(IActiveScriptProfilerHeapEnum *self, PROFILER_HEAP_OBJECT* heapObject, uint32 celt, PROFILER_HEAP_OBJECT_OPTIONAL_INFO* optionalInfo) GetOptionalInfo;
+				public function HRESULT(IActiveScriptProfilerHeapEnum *self, uint32 celt, PROFILER_HEAP_OBJECT** heapObjects) FreeObjectAndOptionalInfo;
+				public function HRESULT(IActiveScriptProfilerHeapEnum *self, PWSTR*** pNameList, uint32* pcelt) GetNameIdMap;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptProfilerControl3 : IActiveScriptProfilerControl2
 		{
 			public const new Guid IID = .(0x0b403015, 0xf381, 0x4023, 0xa5, 0xd0, 0x6f, 0xed, 0x07, 0x6d, 0xe7, 0x16);
 			
-			public function HRESULT(IActiveScriptProfilerControl3 *self, IActiveScriptProfilerHeapEnum** ppEnum) EnumHeap;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IActiveScriptProfilerControl2.VTable
+			{
+				public function HRESULT(IActiveScriptProfilerControl3 *self, IActiveScriptProfilerHeapEnum** ppEnum) EnumHeap;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptProfilerControl4 : IActiveScriptProfilerControl3
 		{
 			public const new Guid IID = .(0x160f94fd, 0x9dbc, 0x40d4, 0x9e, 0xac, 0x2b, 0x71, 0xdb, 0x31, 0x32, 0xf4);
 			
-			public function HRESULT(IActiveScriptProfilerControl4 *self, PROFILER_HEAP_SUMMARY* heapSummary) SummarizeHeap;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IActiveScriptProfilerControl3.VTable
+			{
+				public function HRESULT(IActiveScriptProfilerControl4 *self, PROFILER_HEAP_SUMMARY* heapSummary) SummarizeHeap;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptProfilerControl5 : IActiveScriptProfilerControl4
 		{
 			public const new Guid IID = .(0x1c01a2d1, 0x8f0f, 0x46a5, 0x97, 0x20, 0x0d, 0x7e, 0xd2, 0xc6, 0x2f, 0x0a);
 			
-			public function HRESULT(IActiveScriptProfilerControl5 *self, PROFILER_HEAP_ENUM_FLAGS enumFlags, IActiveScriptProfilerHeapEnum** ppEnum) EnumHeap2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IActiveScriptProfilerControl4.VTable
+			{
+				public function HRESULT(IActiveScriptProfilerControl5 *self, PROFILER_HEAP_ENUM_FLAGS enumFlags, IActiveScriptProfilerHeapEnum** ppEnum) EnumHeap2;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptProfilerCallback : IUnknown
 		{
 			public const new Guid IID = .(0x740eca23, 0x7d9d, 0x42e5, 0xba, 0x9d, 0xf8, 0xb2, 0x4b, 0x1c, 0x7a, 0x9b);
 			
-			public function HRESULT(IActiveScriptProfilerCallback *self, uint32 dwContext) Initialize;
-			public function HRESULT(IActiveScriptProfilerCallback *self, HRESULT hrReason) Shutdown;
-			public function HRESULT(IActiveScriptProfilerCallback *self, int32 scriptId, PROFILER_SCRIPT_TYPE type, IUnknown* pIDebugDocumentContext) ScriptCompiled;
-			public function HRESULT(IActiveScriptProfilerCallback *self, int32 functionId, int32 scriptId, PWSTR pwszFunctionName, PWSTR pwszFunctionNameHint, IUnknown* pIDebugDocumentContext) FunctionCompiled;
-			public function HRESULT(IActiveScriptProfilerCallback *self, int32 scriptId, int32 functionId) OnFunctionEnter;
-			public function HRESULT(IActiveScriptProfilerCallback *self, int32 scriptId, int32 functionId) OnFunctionExit;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptProfilerCallback *self, uint32 dwContext) Initialize;
+				public function HRESULT(IActiveScriptProfilerCallback *self, HRESULT hrReason) Shutdown;
+				public function HRESULT(IActiveScriptProfilerCallback *self, int32 scriptId, PROFILER_SCRIPT_TYPE type, IUnknown* pIDebugDocumentContext) ScriptCompiled;
+				public function HRESULT(IActiveScriptProfilerCallback *self, int32 functionId, int32 scriptId, PWSTR pwszFunctionName, PWSTR pwszFunctionNameHint, IUnknown* pIDebugDocumentContext) FunctionCompiled;
+				public function HRESULT(IActiveScriptProfilerCallback *self, int32 scriptId, int32 functionId) OnFunctionEnter;
+				public function HRESULT(IActiveScriptProfilerCallback *self, int32 scriptId, int32 functionId) OnFunctionExit;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptProfilerCallback2 : IActiveScriptProfilerCallback
 		{
 			public const new Guid IID = .(0x31b7f8ad, 0xa637, 0x409c, 0xb2, 0x2f, 0x04, 0x09, 0x95, 0xb6, 0x10, 0x3d);
 			
-			public function HRESULT(IActiveScriptProfilerCallback2 *self, PWSTR pwszFunctionName, PROFILER_SCRIPT_TYPE type) OnFunctionEnterByName;
-			public function HRESULT(IActiveScriptProfilerCallback2 *self, PWSTR pwszFunctionName, PROFILER_SCRIPT_TYPE type) OnFunctionExitByName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IActiveScriptProfilerCallback.VTable
+			{
+				public function HRESULT(IActiveScriptProfilerCallback2 *self, PWSTR pwszFunctionName, PROFILER_SCRIPT_TYPE type) OnFunctionEnterByName;
+				public function HRESULT(IActiveScriptProfilerCallback2 *self, PWSTR pwszFunctionName, PROFILER_SCRIPT_TYPE type) OnFunctionExitByName;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptProfilerCallback3 : IActiveScriptProfilerCallback2
 		{
 			public const new Guid IID = .(0x6ac5ad25, 0x2037, 0x4687, 0x91, 0xdf, 0xb5, 0x99, 0x79, 0xd9, 0x3d, 0x73);
 			
-			public function HRESULT(IActiveScriptProfilerCallback3 *self, uint32 webWorkerId) SetWebWorkerId;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IActiveScriptProfilerCallback2.VTable
+			{
+				public function HRESULT(IActiveScriptProfilerCallback3 *self, uint32 webWorkerId) SetWebWorkerId;
+			}
 		}
 		[CRepr]
 		public struct IScriptNode : IUnknown
 		{
 			public const new Guid IID = .(0x0aee2a94, 0xbcbb, 0x11d0, 0x8c, 0x72, 0x00, 0xc0, 0x4f, 0xc2, 0xb0, 0x85);
 			
-			public function HRESULT(IScriptNode *self) Alive;
-			public function HRESULT(IScriptNode *self) Delete;
-			public function HRESULT(IScriptNode *self, IScriptNode** ppsnParent) GetParent;
-			public function HRESULT(IScriptNode *self, uint32* pisn) GetIndexInParent;
-			public function HRESULT(IScriptNode *self, uint32* pdwCookie) GetCookie;
-			public function HRESULT(IScriptNode *self, uint32* pcsn) GetNumberOfChildren;
-			public function HRESULT(IScriptNode *self, uint32 isn, IScriptNode** ppsn) GetChild;
-			public function HRESULT(IScriptNode *self, BSTR* pbstr) GetLanguage;
-			public function HRESULT(IScriptNode *self, uint32 isn, uint32 dwCookie, PWSTR pszDelimiter, IScriptEntry** ppse) CreateChildEntry;
-			public function HRESULT(IScriptNode *self, PWSTR pszDefaultName, PWSTR* prgpszNames, uint32 cpszNames, PWSTR pszEvent, PWSTR pszDelimiter, ITypeInfo* ptiSignature, uint32 iMethodSignature, uint32 isn, uint32 dwCookie, IScriptEntry** ppse) CreateChildHandler;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IScriptNode *self) Alive;
+				public function HRESULT(IScriptNode *self) Delete;
+				public function HRESULT(IScriptNode *self, IScriptNode** ppsnParent) GetParent;
+				public function HRESULT(IScriptNode *self, uint32* pisn) GetIndexInParent;
+				public function HRESULT(IScriptNode *self, uint32* pdwCookie) GetCookie;
+				public function HRESULT(IScriptNode *self, uint32* pcsn) GetNumberOfChildren;
+				public function HRESULT(IScriptNode *self, uint32 isn, IScriptNode** ppsn) GetChild;
+				public function HRESULT(IScriptNode *self, BSTR* pbstr) GetLanguage;
+				public function HRESULT(IScriptNode *self, uint32 isn, uint32 dwCookie, PWSTR pszDelimiter, IScriptEntry** ppse) CreateChildEntry;
+				public function HRESULT(IScriptNode *self, PWSTR pszDefaultName, PWSTR* prgpszNames, uint32 cpszNames, PWSTR pszEvent, PWSTR pszDelimiter, ITypeInfo* ptiSignature, uint32 iMethodSignature, uint32 isn, uint32 dwCookie, IScriptEntry** ppse) CreateChildHandler;
+			}
 		}
 		[CRepr]
 		public struct IScriptEntry : IScriptNode
 		{
 			public const new Guid IID = .(0x0aee2a95, 0xbcbb, 0x11d0, 0x8c, 0x72, 0x00, 0xc0, 0x4f, 0xc2, 0xb0, 0x85);
 			
-			public function HRESULT(IScriptEntry *self, BSTR* pbstr) GetText;
-			public function HRESULT(IScriptEntry *self, PWSTR psz) SetText;
-			public function HRESULT(IScriptEntry *self, BSTR* pbstr) GetBody;
-			public function HRESULT(IScriptEntry *self, PWSTR psz) SetBody;
-			public function HRESULT(IScriptEntry *self, BSTR* pbstr) GetName;
-			public function HRESULT(IScriptEntry *self, PWSTR psz) SetName;
-			public function HRESULT(IScriptEntry *self, BSTR* pbstr) GetItemName;
-			public function HRESULT(IScriptEntry *self, PWSTR psz) SetItemName;
-			public function HRESULT(IScriptEntry *self, ITypeInfo** ppti, uint32* piMethod) GetSignature;
-			public function HRESULT(IScriptEntry *self, ITypeInfo* pti, uint32 iMethod) SetSignature;
-			public function HRESULT(IScriptEntry *self, uint32* pichMin, uint32* pcch) GetRange;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IScriptNode.VTable
+			{
+				public function HRESULT(IScriptEntry *self, BSTR* pbstr) GetText;
+				public function HRESULT(IScriptEntry *self, PWSTR psz) SetText;
+				public function HRESULT(IScriptEntry *self, BSTR* pbstr) GetBody;
+				public function HRESULT(IScriptEntry *self, PWSTR psz) SetBody;
+				public function HRESULT(IScriptEntry *self, BSTR* pbstr) GetName;
+				public function HRESULT(IScriptEntry *self, PWSTR psz) SetName;
+				public function HRESULT(IScriptEntry *self, BSTR* pbstr) GetItemName;
+				public function HRESULT(IScriptEntry *self, PWSTR psz) SetItemName;
+				public function HRESULT(IScriptEntry *self, ITypeInfo** ppti, uint32* piMethod) GetSignature;
+				public function HRESULT(IScriptEntry *self, ITypeInfo* pti, uint32 iMethod) SetSignature;
+				public function HRESULT(IScriptEntry *self, uint32* pichMin, uint32* pcch) GetRange;
+			}
 		}
 		[CRepr]
 		public struct IScriptScriptlet : IScriptEntry
 		{
 			public const new Guid IID = .(0x0aee2a96, 0xbcbb, 0x11d0, 0x8c, 0x72, 0x00, 0xc0, 0x4f, 0xc2, 0xb0, 0x85);
 			
-			public function HRESULT(IScriptScriptlet *self, BSTR* pbstr) GetSubItemName;
-			public function HRESULT(IScriptScriptlet *self, PWSTR psz) SetSubItemName;
-			public function HRESULT(IScriptScriptlet *self, BSTR* pbstr) GetEventName;
-			public function HRESULT(IScriptScriptlet *self, PWSTR psz) SetEventName;
-			public function HRESULT(IScriptScriptlet *self, BSTR* pbstr) GetSimpleEventName;
-			public function HRESULT(IScriptScriptlet *self, PWSTR psz) SetSimpleEventName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IScriptEntry.VTable
+			{
+				public function HRESULT(IScriptScriptlet *self, BSTR* pbstr) GetSubItemName;
+				public function HRESULT(IScriptScriptlet *self, PWSTR psz) SetSubItemName;
+				public function HRESULT(IScriptScriptlet *self, BSTR* pbstr) GetEventName;
+				public function HRESULT(IScriptScriptlet *self, PWSTR psz) SetEventName;
+				public function HRESULT(IScriptScriptlet *self, BSTR* pbstr) GetSimpleEventName;
+				public function HRESULT(IScriptScriptlet *self, PWSTR psz) SetSimpleEventName;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptAuthor : IUnknown
 		{
 			public const new Guid IID = .(0x9c109da0, 0x7006, 0x11d1, 0xb3, 0x6c, 0x00, 0xa0, 0xc9, 0x11, 0xe8, 0xb2);
 			
-			public function HRESULT(IActiveScriptAuthor *self, PWSTR pszName, uint32 dwFlags, IDispatch* pdisp) AddNamedItem;
-			public function HRESULT(IActiveScriptAuthor *self, PWSTR pszDefaultName, PWSTR pszCode, PWSTR pszItemName, PWSTR pszSubItemName, PWSTR pszEventName, PWSTR pszDelimiter, uint32 dwCookie, uint32 dwFlags) AddScriptlet;
-			public function HRESULT(IActiveScriptAuthor *self, PWSTR pszCode, PWSTR pszItemName, PWSTR pszDelimiter, uint32 dwCookie, uint32 dwFlags) ParseScriptText;
-			public function HRESULT(IActiveScriptAuthor *self, char16* pszCode, uint32 cch, PWSTR pszDelimiter, uint32 dwFlags, uint16* pattr) GetScriptTextAttributes;
-			public function HRESULT(IActiveScriptAuthor *self, char16* pszCode, uint32 cch, PWSTR pszDelimiter, uint32 dwFlags, uint16* pattr) GetScriptletTextAttributes;
-			public function HRESULT(IActiveScriptAuthor *self, IScriptNode** ppsp) GetRoot;
-			public function HRESULT(IActiveScriptAuthor *self, uint32* pgrfasa) GetLanguageFlags;
-			public function HRESULT(IActiveScriptAuthor *self, IDispatch* pdisp, PWSTR pszItem, PWSTR pszSubItem, PWSTR pszEvent, IScriptEntry** ppse) GetEventHandler;
-			public function HRESULT(IActiveScriptAuthor *self, PWSTR pszName) RemoveNamedItem;
-			public function HRESULT(IActiveScriptAuthor *self, Guid* rguidTypeLib, uint32 dwMajor, uint32 dwMinor, uint32 dwFlags) AddTypeLib;
-			public function HRESULT(IActiveScriptAuthor *self, Guid* rguidTypeLib, uint32 dwMajor, uint32 dwMinor) RemoveTypeLib;
-			public function HRESULT(IActiveScriptAuthor *self, uint32 fRequestedList, BSTR* pbstrChars) GetChars;
-			public function HRESULT(IActiveScriptAuthor *self, PWSTR pszCode, uint32 cchCode, uint32 ichCurrentPosition, uint32 dwListTypesRequested, uint32* pdwListTypesProvided, uint32* pichListAnchorPosition, uint32* pichFuncAnchorPosition, int32* pmemid, int32* piCurrentParameter, IUnknown** ppunk) GetInfoFromContext;
-			public function HRESULT(IActiveScriptAuthor *self, char16 ch, BOOL* pfcommit) IsCommitChar;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptAuthor *self, PWSTR pszName, uint32 dwFlags, IDispatch* pdisp) AddNamedItem;
+				public function HRESULT(IActiveScriptAuthor *self, PWSTR pszDefaultName, PWSTR pszCode, PWSTR pszItemName, PWSTR pszSubItemName, PWSTR pszEventName, PWSTR pszDelimiter, uint32 dwCookie, uint32 dwFlags) AddScriptlet;
+				public function HRESULT(IActiveScriptAuthor *self, PWSTR pszCode, PWSTR pszItemName, PWSTR pszDelimiter, uint32 dwCookie, uint32 dwFlags) ParseScriptText;
+				public function HRESULT(IActiveScriptAuthor *self, char16* pszCode, uint32 cch, PWSTR pszDelimiter, uint32 dwFlags, uint16* pattr) GetScriptTextAttributes;
+				public function HRESULT(IActiveScriptAuthor *self, char16* pszCode, uint32 cch, PWSTR pszDelimiter, uint32 dwFlags, uint16* pattr) GetScriptletTextAttributes;
+				public function HRESULT(IActiveScriptAuthor *self, IScriptNode** ppsp) GetRoot;
+				public function HRESULT(IActiveScriptAuthor *self, uint32* pgrfasa) GetLanguageFlags;
+				public function HRESULT(IActiveScriptAuthor *self, IDispatch* pdisp, PWSTR pszItem, PWSTR pszSubItem, PWSTR pszEvent, IScriptEntry** ppse) GetEventHandler;
+				public function HRESULT(IActiveScriptAuthor *self, PWSTR pszName) RemoveNamedItem;
+				public function HRESULT(IActiveScriptAuthor *self, Guid* rguidTypeLib, uint32 dwMajor, uint32 dwMinor, uint32 dwFlags) AddTypeLib;
+				public function HRESULT(IActiveScriptAuthor *self, Guid* rguidTypeLib, uint32 dwMajor, uint32 dwMinor) RemoveTypeLib;
+				public function HRESULT(IActiveScriptAuthor *self, uint32 fRequestedList, BSTR* pbstrChars) GetChars;
+				public function HRESULT(IActiveScriptAuthor *self, PWSTR pszCode, uint32 cchCode, uint32 ichCurrentPosition, uint32 dwListTypesRequested, uint32* pdwListTypesProvided, uint32* pichListAnchorPosition, uint32* pichFuncAnchorPosition, int32* pmemid, int32* piCurrentParameter, IUnknown** ppunk) GetInfoFromContext;
+				public function HRESULT(IActiveScriptAuthor *self, char16 ch, BOOL* pfcommit) IsCommitChar;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptAuthorProcedure : IUnknown
 		{
 			public const new Guid IID = .(0x7e2d4b70, 0xbd9a, 0x11d0, 0x93, 0x36, 0x00, 0xa0, 0xc9, 0x0d, 0xca, 0xa9);
 			
-			public function HRESULT(IActiveScriptAuthorProcedure *self, PWSTR pszCode, PWSTR pszFormalParams, PWSTR pszProcedureName, PWSTR pszItemName, PWSTR pszDelimiter, uint32 dwCookie, uint32 dwFlags, IDispatch* pdispFor) ParseProcedureText;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptAuthorProcedure *self, PWSTR pszCode, PWSTR pszFormalParams, PWSTR pszProcedureName, PWSTR pszItemName, PWSTR pszDelimiter, uint32 dwCookie, uint32 dwFlags, IDispatch* pdispFor) ParseProcedureText;
+			}
 		}
 		[CRepr]
 		public struct IDebugApplicationNode100 : IUnknown
 		{
 			public const new Guid IID = .(0x90a7734e, 0x841b, 0x4f77, 0x93, 0x84, 0xa2, 0x89, 0x1e, 0x76, 0xe7, 0xe2);
 			
-			public function HRESULT(IDebugApplicationNode100 *self, uint32 dwCookie, APPLICATION_NODE_EVENT_FILTER filter) SetFilterForEventSink;
-			public function HRESULT(IDebugApplicationNode100 *self, APPLICATION_NODE_EVENT_FILTER filter, TEXT_DOCUMENT_ARRAY* pDocuments) GetExcludedDocuments;
-			public function HRESULT(IDebugApplicationNode100 *self, IDebugDocument* pSearchKey) QueryIsChildNode;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugApplicationNode100 *self, uint32 dwCookie, APPLICATION_NODE_EVENT_FILTER filter) SetFilterForEventSink;
+				public function HRESULT(IDebugApplicationNode100 *self, APPLICATION_NODE_EVENT_FILTER filter, TEXT_DOCUMENT_ARRAY* pDocuments) GetExcludedDocuments;
+				public function HRESULT(IDebugApplicationNode100 *self, IDebugDocument* pSearchKey) QueryIsChildNode;
+			}
 		}
 		[CRepr]
 		public struct IWebAppDiagnosticsSetup : IUnknown
 		{
 			public const new Guid IID = .(0x379bfbe1, 0xc6c9, 0x432a, 0x93, 0xe1, 0x6d, 0x17, 0x65, 0x6c, 0x53, 0x8c);
 			
-			public function HRESULT(IWebAppDiagnosticsSetup *self, int16* pRetVal) DiagnosticsSupported;
-			public function HRESULT(IWebAppDiagnosticsSetup *self, Guid* rclsid, uint32 dwClsContext, Guid* riid, uint hPassToObject) CreateObjectWithSiteAtWebApp;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWebAppDiagnosticsSetup *self, int16* pRetVal) DiagnosticsSupported;
+				public function HRESULT(IWebAppDiagnosticsSetup *self, Guid* rclsid, uint32 dwClsContext, Guid* riid, uint hPassToObject) CreateObjectWithSiteAtWebApp;
+			}
 		}
 		[CRepr]
 		public struct IRemoteDebugApplication110 : IUnknown
 		{
 			public const new Guid IID = .(0xd5fe005b, 0x2836, 0x485e, 0xb1, 0xf9, 0x89, 0xd9, 0x1a, 0xa2, 0x4f, 0xd4);
 			
-			public function HRESULT(IRemoteDebugApplication110 *self, SCRIPT_DEBUGGER_OPTIONS mask, SCRIPT_DEBUGGER_OPTIONS value) SetDebuggerOptions;
-			public function HRESULT(IRemoteDebugApplication110 *self, SCRIPT_DEBUGGER_OPTIONS* pCurrentOptions) GetCurrentDebuggerOptions;
-			public function HRESULT(IRemoteDebugApplication110 *self, IRemoteDebugApplicationThread** ppThread) GetMainThread;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRemoteDebugApplication110 *self, SCRIPT_DEBUGGER_OPTIONS mask, SCRIPT_DEBUGGER_OPTIONS value) SetDebuggerOptions;
+				public function HRESULT(IRemoteDebugApplication110 *self, SCRIPT_DEBUGGER_OPTIONS* pCurrentOptions) GetCurrentDebuggerOptions;
+				public function HRESULT(IRemoteDebugApplication110 *self, IRemoteDebugApplicationThread** ppThread) GetMainThread;
+			}
 		}
 		[CRepr]
 		public struct IDebugApplication11032 : IRemoteDebugApplication110
 		{
 			public const new Guid IID = .(0xbdb3b5de, 0x89f2, 0x4e11, 0x84, 0xa5, 0x97, 0x44, 0x5f, 0x94, 0x1c, 0x7d);
 			
-			public function HRESULT(IDebugApplication11032 *self, IDebugThreadCall32* pptc, uint dwParam1, uint dwParam2, uint dwParam3) SynchronousCallInMainThread;
-			public function HRESULT(IDebugApplication11032 *self, IDebugThreadCall32* pptc, uint dwParam1, uint dwParam2, uint dwParam3) AsynchronousCallInMainThread;
-			public function HRESULT(IDebugApplication11032 *self, uint32 handleCount, HANDLE* pHandles, uint32* pIndex) CallableWaitForHandles;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IRemoteDebugApplication110.VTable
+			{
+				public function HRESULT(IDebugApplication11032 *self, IDebugThreadCall32* pptc, uint dwParam1, uint dwParam2, uint dwParam3) SynchronousCallInMainThread;
+				public function HRESULT(IDebugApplication11032 *self, IDebugThreadCall32* pptc, uint dwParam1, uint dwParam2, uint dwParam3) AsynchronousCallInMainThread;
+				public function HRESULT(IDebugApplication11032 *self, uint32 handleCount, HANDLE* pHandles, uint32* pIndex) CallableWaitForHandles;
+			}
 		}
 		[CRepr]
 		public struct IDebugApplication11064 : IRemoteDebugApplication110
 		{
 			public const new Guid IID = .(0x2039d958, 0x4eeb, 0x496a, 0x87, 0xbb, 0x2e, 0x52, 0x01, 0xea, 0xde, 0xef);
 			
-			public function HRESULT(IDebugApplication11064 *self, IDebugThreadCall64* pptc, uint dwParam1, uint dwParam2, uint dwParam3) SynchronousCallInMainThread;
-			public function HRESULT(IDebugApplication11064 *self, IDebugThreadCall64* pptc, uint dwParam1, uint dwParam2, uint dwParam3) AsynchronousCallInMainThread;
-			public function HRESULT(IDebugApplication11064 *self, uint32 handleCount, HANDLE* pHandles, uint32* pIndex) CallableWaitForHandles;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IRemoteDebugApplication110.VTable
+			{
+				public function HRESULT(IDebugApplication11064 *self, IDebugThreadCall64* pptc, uint dwParam1, uint dwParam2, uint dwParam3) SynchronousCallInMainThread;
+				public function HRESULT(IDebugApplication11064 *self, IDebugThreadCall64* pptc, uint dwParam1, uint dwParam2, uint dwParam3) AsynchronousCallInMainThread;
+				public function HRESULT(IDebugApplication11064 *self, uint32 handleCount, HANDLE* pHandles, uint32* pIndex) CallableWaitForHandles;
+			}
 		}
 		[CRepr]
 		public struct IWebAppDiagnosticsObjectInitialization : IUnknown
 		{
 			public const new Guid IID = .(0x16ff3a42, 0xa5f5, 0x432b, 0xb6, 0x25, 0x8e, 0x8e, 0x16, 0xf5, 0x7e, 0x15);
 			
-			public function HRESULT(IWebAppDiagnosticsObjectInitialization *self, HANDLE_PTR hPassedHandle, IUnknown* pDebugApplication) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWebAppDiagnosticsObjectInitialization *self, HANDLE_PTR hPassedHandle, IUnknown* pDebugApplication) Initialize;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptWinRTErrorDebug : IActiveScriptError
 		{
 			public const new Guid IID = .(0x73a3f82a, 0x0fe9, 0x4b33, 0xba, 0x3b, 0xfe, 0x09, 0x5f, 0x69, 0x7e, 0x0a);
 			
-			public function HRESULT(IActiveScriptWinRTErrorDebug *self, BSTR* errorString) GetRestrictedErrorString;
-			public function HRESULT(IActiveScriptWinRTErrorDebug *self, BSTR* referenceString) GetRestrictedErrorReference;
-			public function HRESULT(IActiveScriptWinRTErrorDebug *self, BSTR* capabilitySid) GetCapabilitySid;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IActiveScriptError.VTable
+			{
+				public function HRESULT(IActiveScriptWinRTErrorDebug *self, BSTR* errorString) GetRestrictedErrorString;
+				public function HRESULT(IActiveScriptWinRTErrorDebug *self, BSTR* referenceString) GetRestrictedErrorReference;
+				public function HRESULT(IActiveScriptWinRTErrorDebug *self, BSTR* capabilitySid) GetCapabilitySid;
+			}
 		}
 		[CRepr]
 		public struct IActiveScriptErrorDebug110 : IUnknown
 		{
 			public const new Guid IID = .(0x516e42b6, 0x89a8, 0x4530, 0x93, 0x7b, 0x5f, 0x07, 0x08, 0x43, 0x14, 0x42);
 			
-			public function HRESULT(IActiveScriptErrorDebug110 *self, SCRIPT_ERROR_DEBUG_EXCEPTION_THROWN_KIND* pExceptionKind) GetExceptionThrownKind;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActiveScriptErrorDebug110 *self, SCRIPT_ERROR_DEBUG_EXCEPTION_THROWN_KIND* pExceptionKind) GetExceptionThrownKind;
+			}
 		}
 		[CRepr]
 		public struct IDebugApplicationThreadEvents110 : IUnknown
 		{
 			public const new Guid IID = .(0x84e5e468, 0xd5da, 0x48a8, 0x83, 0xf4, 0x40, 0x36, 0x64, 0x29, 0x00, 0x7b);
 			
-			public function HRESULT(IDebugApplicationThreadEvents110 *self) OnSuspendForBreakPoint;
-			public function HRESULT(IDebugApplicationThreadEvents110 *self) OnResumeFromBreakPoint;
-			public function HRESULT(IDebugApplicationThreadEvents110 *self) OnThreadRequestComplete;
-			public function HRESULT(IDebugApplicationThreadEvents110 *self) OnBeginThreadRequest;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugApplicationThreadEvents110 *self) OnSuspendForBreakPoint;
+				public function HRESULT(IDebugApplicationThreadEvents110 *self) OnResumeFromBreakPoint;
+				public function HRESULT(IDebugApplicationThreadEvents110 *self) OnThreadRequestComplete;
+				public function HRESULT(IDebugApplicationThreadEvents110 *self) OnBeginThreadRequest;
+			}
 		}
 		[CRepr]
 		public struct IDebugApplicationThread11032 : IUnknown
 		{
 			public const new Guid IID = .(0x2194ac5c, 0x6561, 0x404a, 0xa2, 0xe9, 0xf5, 0x7d, 0x72, 0xde, 0x37, 0x02);
 			
-			public function HRESULT(IDebugApplicationThread11032 *self, uint32* puiThreadRequests) GetActiveThreadRequestCount;
-			public function HRESULT(IDebugApplicationThread11032 *self, BOOL* pfIsSuspended) IsSuspendedForBreakPoint;
-			public function HRESULT(IDebugApplicationThread11032 *self, BOOL* pfIsCallable) IsThreadCallable;
-			public function HRESULT(IDebugApplicationThread11032 *self, IDebugThreadCall32* pptc, uint dwParam1, uint dwParam2, uint dwParam3) AsynchronousCallIntoThread;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugApplicationThread11032 *self, uint32* puiThreadRequests) GetActiveThreadRequestCount;
+				public function HRESULT(IDebugApplicationThread11032 *self, BOOL* pfIsSuspended) IsSuspendedForBreakPoint;
+				public function HRESULT(IDebugApplicationThread11032 *self, BOOL* pfIsCallable) IsThreadCallable;
+				public function HRESULT(IDebugApplicationThread11032 *self, IDebugThreadCall32* pptc, uint dwParam1, uint dwParam2, uint dwParam3) AsynchronousCallIntoThread;
+			}
 		}
 		[CRepr]
 		public struct IDebugApplicationThread11064 : IUnknown
 		{
 			public const new Guid IID = .(0x420aa4cc, 0xefd8, 0x4dac, 0x98, 0x3b, 0x47, 0x12, 0x78, 0x26, 0x91, 0x7d);
 			
-			public function HRESULT(IDebugApplicationThread11064 *self, uint32* puiThreadRequests) GetActiveThreadRequestCount;
-			public function HRESULT(IDebugApplicationThread11064 *self, BOOL* pfIsSuspended) IsSuspendedForBreakPoint;
-			public function HRESULT(IDebugApplicationThread11064 *self, BOOL* pfIsCallable) IsThreadCallable;
-			public function HRESULT(IDebugApplicationThread11064 *self, IDebugThreadCall64* pptc, uint dwParam1, uint dwParam2, uint dwParam3) AsynchronousCallIntoThread;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDebugApplicationThread11064 *self, uint32* puiThreadRequests) GetActiveThreadRequestCount;
+				public function HRESULT(IDebugApplicationThread11064 *self, BOOL* pfIsSuspended) IsSuspendedForBreakPoint;
+				public function HRESULT(IDebugApplicationThread11064 *self, BOOL* pfIsCallable) IsThreadCallable;
+				public function HRESULT(IDebugApplicationThread11064 *self, IDebugThreadCall64* pptc, uint dwParam1, uint dwParam2, uint dwParam3) AsynchronousCallIntoThread;
+			}
 		}
 		[CRepr]
 		public struct IRemoteDebugCriticalErrorEvent110 : IUnknown
 		{
 			public const new Guid IID = .(0x2f69c611, 0x6b14, 0x47e8, 0x92, 0x60, 0x4b, 0xb7, 0xc5, 0x2f, 0x50, 0x4b);
 			
-			public function HRESULT(IRemoteDebugCriticalErrorEvent110 *self, BSTR* pbstrSource, int32* pMessageId, BSTR* pbstrMessage, IDebugDocumentContext** ppLocation) GetErrorInfo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRemoteDebugCriticalErrorEvent110 *self, BSTR* pbstrSource, int32* pMessageId, BSTR* pbstrMessage, IDebugDocumentContext** ppLocation) GetErrorInfo;
+			}
 		}
 		[CRepr]
 		public struct IScriptInvocationContext : IUnknown
 		{
 			public const new Guid IID = .(0x5d7741b7, 0xaf7e, 0x4a2a, 0x85, 0xe5, 0xc7, 0x7f, 0x4d, 0x06, 0x59, 0xfb);
 			
-			public function HRESULT(IScriptInvocationContext *self, SCRIPT_INVOCATION_CONTEXT_TYPE* pInvocationContextType) GetContextType;
-			public function HRESULT(IScriptInvocationContext *self, BSTR* pDescription) GetContextDescription;
-			public function HRESULT(IScriptInvocationContext *self, IUnknown** ppContextObject) GetContextObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IScriptInvocationContext *self, SCRIPT_INVOCATION_CONTEXT_TYPE* pInvocationContextType) GetContextType;
+				public function HRESULT(IScriptInvocationContext *self, BSTR* pDescription) GetContextDescription;
+				public function HRESULT(IScriptInvocationContext *self, IUnknown** ppContextObject) GetContextObject;
+			}
 		}
 		[CRepr]
 		public struct IDebugStackFrame110 : IDebugStackFrame
 		{
 			public const new Guid IID = .(0x4b509611, 0xb6ea, 0x4b24, 0xad, 0xcb, 0xd0, 0xcc, 0xfd, 0x1a, 0x7e, 0x33);
 			
-			public function HRESULT(IDebugStackFrame110 *self, DEBUG_STACKFRAME_TYPE* pStackFrameKind) GetStackFrameType;
-			public function HRESULT(IDebugStackFrame110 *self, IScriptInvocationContext** ppInvocationContext) GetScriptInvocationContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDebugStackFrame.VTable
+			{
+				public function HRESULT(IDebugStackFrame110 *self, DEBUG_STACKFRAME_TYPE* pStackFrameKind) GetStackFrameType;
+				public function HRESULT(IDebugStackFrame110 *self, IScriptInvocationContext** ppInvocationContext) GetScriptInvocationContext;
+			}
 		}
 		[CRepr]
 		public struct IRemoteDebugInfoEvent110 : IUnknown
 		{
 			public const new Guid IID = .(0x9ff56bb6, 0xeb89, 0x4c0f, 0x88, 0x23, 0xcc, 0x2a, 0x4c, 0x0b, 0x7f, 0x26);
 			
-			public function HRESULT(IRemoteDebugInfoEvent110 *self, DEBUG_EVENT_INFO_TYPE* pMessageType, BSTR* pbstrMessage, BSTR* pbstrUrl, IDebugDocumentContext** ppLocation) GetEventInfo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRemoteDebugInfoEvent110 *self, DEBUG_EVENT_INFO_TYPE* pMessageType, BSTR* pbstrMessage, BSTR* pbstrUrl, IDebugDocumentContext** ppLocation) GetEventInfo;
+			}
 		}
 		[CRepr]
 		public struct IJsDebug : IUnknown
 		{
 			public const new Guid IID = .(0xbe0e89da, 0x2ac5, 0x4c04, 0xac, 0x5e, 0x59, 0x95, 0x6a, 0xae, 0x36, 0x13);
 			
-			public function HRESULT(IJsDebug *self, uint32 processId, uint64 runtimeJsBaseAddress, IJsDebugDataTarget* pDataTarget, IJsDebugProcess** ppProcess) OpenVirtualProcess;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IJsDebug *self, uint32 processId, uint64 runtimeJsBaseAddress, IJsDebugDataTarget* pDataTarget, IJsDebugProcess** ppProcess) OpenVirtualProcess;
+			}
 		}
 		[CRepr]
 		public struct IJsDebugProcess : IUnknown
 		{
 			public const new Guid IID = .(0x3d587168, 0x6a2d, 0x4041, 0xbd, 0x3b, 0x0d, 0xe6, 0x74, 0x50, 0x28, 0x62);
 			
-			public function HRESULT(IJsDebugProcess *self, uint32 threadId, IJsDebugStackWalker** ppStackWalker) CreateStackWalker;
-			public function HRESULT(IJsDebugProcess *self, uint64 documentId, uint32 characterOffset, uint32 characterCount, BOOL isEnabled, IJsDebugBreakPoint** ppDebugBreakPoint) CreateBreakPoint;
-			public function HRESULT(IJsDebugProcess *self, uint32 threadId) PerformAsyncBreak;
-			public function HRESULT(IJsDebugProcess *self, uint64* pCodeAddress) GetExternalStepAddress;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IJsDebugProcess *self, uint32 threadId, IJsDebugStackWalker** ppStackWalker) CreateStackWalker;
+				public function HRESULT(IJsDebugProcess *self, uint64 documentId, uint32 characterOffset, uint32 characterCount, BOOL isEnabled, IJsDebugBreakPoint** ppDebugBreakPoint) CreateBreakPoint;
+				public function HRESULT(IJsDebugProcess *self, uint32 threadId) PerformAsyncBreak;
+				public function HRESULT(IJsDebugProcess *self, uint64* pCodeAddress) GetExternalStepAddress;
+			}
 		}
 		[CRepr]
 		public struct IJsDebugStackWalker : IUnknown
 		{
 			public const new Guid IID = .(0xdb24b094, 0x73c4, 0x456c, 0xa4, 0xec, 0xe9, 0x0e, 0xa0, 0x0b, 0xdf, 0xe3);
 			
-			public function HRESULT(IJsDebugStackWalker *self, IJsDebugFrame** ppFrame) GetNext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IJsDebugStackWalker *self, IJsDebugFrame** ppFrame) GetNext;
+			}
 		}
 		[CRepr]
 		public struct IJsDebugFrame : IUnknown
 		{
 			public const new Guid IID = .(0xc9196637, 0xab9d, 0x44b2, 0xba, 0xd2, 0x13, 0xb9, 0x5b, 0x3f, 0x39, 0x0e);
 			
-			public function HRESULT(IJsDebugFrame *self, uint64* pStart, uint64* pEnd) GetStackRange;
-			public function HRESULT(IJsDebugFrame *self, BSTR* pName) GetName;
-			public function HRESULT(IJsDebugFrame *self, uint64* pDocumentId, uint32* pCharacterOffset, uint32* pStatementCharCount) GetDocumentPositionWithId;
-			public function HRESULT(IJsDebugFrame *self, BSTR* pDocumentName, uint32* pLine, uint32* pColumn) GetDocumentPositionWithName;
-			public function HRESULT(IJsDebugFrame *self, IJsDebugProperty** ppDebugProperty) GetDebugProperty;
-			public function HRESULT(IJsDebugFrame *self, uint64* pReturnAddress) GetReturnAddress;
-			public function HRESULT(IJsDebugFrame *self, PWSTR pExpressionText, IJsDebugProperty** ppDebugProperty, BSTR* pError) Evaluate;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IJsDebugFrame *self, uint64* pStart, uint64* pEnd) GetStackRange;
+				public function HRESULT(IJsDebugFrame *self, BSTR* pName) GetName;
+				public function HRESULT(IJsDebugFrame *self, uint64* pDocumentId, uint32* pCharacterOffset, uint32* pStatementCharCount) GetDocumentPositionWithId;
+				public function HRESULT(IJsDebugFrame *self, BSTR* pDocumentName, uint32* pLine, uint32* pColumn) GetDocumentPositionWithName;
+				public function HRESULT(IJsDebugFrame *self, IJsDebugProperty** ppDebugProperty) GetDebugProperty;
+				public function HRESULT(IJsDebugFrame *self, uint64* pReturnAddress) GetReturnAddress;
+				public function HRESULT(IJsDebugFrame *self, PWSTR pExpressionText, IJsDebugProperty** ppDebugProperty, BSTR* pError) Evaluate;
+			}
 		}
 		[CRepr]
 		public struct IJsDebugProperty : IUnknown
 		{
 			public const new Guid IID = .(0xf8ffcf2b, 0x3aa4, 0x4320, 0x85, 0xc3, 0x52, 0xa3, 0x12, 0xba, 0x96, 0x33);
 			
-			public function HRESULT(IJsDebugProperty *self, uint32 nRadix, JsDebugPropertyInfo* pPropertyInfo) GetPropertyInfo;
-			public function HRESULT(IJsDebugProperty *self, JS_PROPERTY_MEMBERS members, IJsEnumDebugProperty** ppEnum) GetMembers;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IJsDebugProperty *self, uint32 nRadix, JsDebugPropertyInfo* pPropertyInfo) GetPropertyInfo;
+				public function HRESULT(IJsDebugProperty *self, JS_PROPERTY_MEMBERS members, IJsEnumDebugProperty** ppEnum) GetMembers;
+			}
 		}
 		[CRepr]
 		public struct IJsEnumDebugProperty : IUnknown
 		{
 			public const new Guid IID = .(0x4092432f, 0x2f0f, 0x4fe1, 0xb6, 0x38, 0x5b, 0x74, 0xa5, 0x2c, 0xdc, 0xbe);
 			
-			public function HRESULT(IJsEnumDebugProperty *self, uint32 count, IJsDebugProperty** ppDebugProperty, uint32* pActualCount) Next;
-			public function HRESULT(IJsEnumDebugProperty *self, uint32* pCount) GetCount;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IJsEnumDebugProperty *self, uint32 count, IJsDebugProperty** ppDebugProperty, uint32* pActualCount) Next;
+				public function HRESULT(IJsEnumDebugProperty *self, uint32* pCount) GetCount;
+			}
 		}
 		[CRepr]
 		public struct IJsDebugBreakPoint : IUnknown
 		{
 			public const new Guid IID = .(0xdf6773e3, 0xed8d, 0x488b, 0x8a, 0x3e, 0x58, 0x12, 0x57, 0x7d, 0x15, 0x42);
 			
-			public function HRESULT(IJsDebugBreakPoint *self, BOOL* pIsEnabled) IsEnabled;
-			public function HRESULT(IJsDebugBreakPoint *self) Enable;
-			public function HRESULT(IJsDebugBreakPoint *self) Disable;
-			public function HRESULT(IJsDebugBreakPoint *self) Delete;
-			public function HRESULT(IJsDebugBreakPoint *self, uint64* pDocumentId, uint32* pCharacterOffset, uint32* pStatementCharCount) GetDocumentPosition;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IJsDebugBreakPoint *self, BOOL* pIsEnabled) IsEnabled;
+				public function HRESULT(IJsDebugBreakPoint *self) Enable;
+				public function HRESULT(IJsDebugBreakPoint *self) Disable;
+				public function HRESULT(IJsDebugBreakPoint *self) Delete;
+				public function HRESULT(IJsDebugBreakPoint *self, uint64* pDocumentId, uint32* pCharacterOffset, uint32* pStatementCharCount) GetDocumentPosition;
+			}
 		}
 		[CRepr]
 		public struct IEnumJsStackFrames : IUnknown
 		{
 			public const new Guid IID = .(0x5e7da34b, 0xfb51, 0x4791, 0xab, 0xe7, 0xcb, 0x5b, 0xdf, 0x41, 0x97, 0x55);
 			
-			public function HRESULT(IEnumJsStackFrames *self, uint32 cFrameCount, __MIDL___MIDL_itf_jscript9diag_0000_0007_0001* pFrames, uint32* pcFetched) Next;
-			public function HRESULT(IEnumJsStackFrames *self) Reset;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumJsStackFrames *self, uint32 cFrameCount, __MIDL___MIDL_itf_jscript9diag_0000_0007_0001* pFrames, uint32* pcFetched) Next;
+				public function HRESULT(IEnumJsStackFrames *self) Reset;
+			}
 		}
 		[CRepr]
 		public struct IJsDebugDataTarget : IUnknown
 		{
 			public const new Guid IID = .(0x53b28977, 0x53a1, 0x48e5, 0x90, 0x00, 0x5d, 0x0d, 0xfa, 0x89, 0x39, 0x31);
 			
-			public function HRESULT(IJsDebugDataTarget *self, uint64 address, JsDebugReadMemoryFlags flags, uint8* pBuffer, uint32 size, uint32* pBytesRead) ReadMemory;
-			public function HRESULT(IJsDebugDataTarget *self, uint64 address, uint8* pMemory, uint32 size) WriteMemory;
-			public function HRESULT(IJsDebugDataTarget *self, uint64 address, uint32 size, uint32 allocationType, uint32 pageProtection, uint64* pAllocatedAddress) AllocateVirtualMemory;
-			public function HRESULT(IJsDebugDataTarget *self, uint64 address, uint32 size, uint32 freeType) FreeVirtualMemory;
-			public function HRESULT(IJsDebugDataTarget *self, uint32 threadId, uint32 tlsIndex, uint64* pValue) GetTlsValue;
-			public function HRESULT(IJsDebugDataTarget *self, uint64 address, BSTR* pString) ReadBSTR;
-			public function HRESULT(IJsDebugDataTarget *self, uint64 address, uint16 characterSize, uint32 maxCharacters, BSTR* pString) ReadNullTerminatedString;
-			public function HRESULT(IJsDebugDataTarget *self, uint32 threadId, IEnumJsStackFrames** ppEnumerator) CreateStackFrameEnumerator;
-			public function HRESULT(IJsDebugDataTarget *self, uint32 threadId, uint32 contextFlags, uint32 contextSize, void* pContext) GetThreadContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IJsDebugDataTarget *self, uint64 address, JsDebugReadMemoryFlags flags, uint8* pBuffer, uint32 size, uint32* pBytesRead) ReadMemory;
+				public function HRESULT(IJsDebugDataTarget *self, uint64 address, uint8* pMemory, uint32 size) WriteMemory;
+				public function HRESULT(IJsDebugDataTarget *self, uint64 address, uint32 size, uint32 allocationType, uint32 pageProtection, uint64* pAllocatedAddress) AllocateVirtualMemory;
+				public function HRESULT(IJsDebugDataTarget *self, uint64 address, uint32 size, uint32 freeType) FreeVirtualMemory;
+				public function HRESULT(IJsDebugDataTarget *self, uint32 threadId, uint32 tlsIndex, uint64* pValue) GetTlsValue;
+				public function HRESULT(IJsDebugDataTarget *self, uint64 address, BSTR* pString) ReadBSTR;
+				public function HRESULT(IJsDebugDataTarget *self, uint64 address, uint16 characterSize, uint32 maxCharacters, BSTR* pString) ReadNullTerminatedString;
+				public function HRESULT(IJsDebugDataTarget *self, uint32 threadId, IEnumJsStackFrames** ppEnumerator) CreateStackFrameEnumerator;
+				public function HRESULT(IJsDebugDataTarget *self, uint32 threadId, uint32 contextFlags, uint32 contextSize, void* pContext) GetThreadContext;
+			}
 		}
 		[CRepr]
 		public struct IObjectSafety : IUnknown
 		{
 			public const new Guid IID = .(0xcb5bdc81, 0x93c1, 0x11cf, 0x8f, 0x20, 0x00, 0x80, 0x5f, 0x2c, 0xd0, 0x64);
 			
-			public function HRESULT(IObjectSafety *self, Guid* riid, uint32* pdwSupportedOptions, uint32* pdwEnabledOptions) GetInterfaceSafetyOptions;
-			public function HRESULT(IObjectSafety *self, Guid* riid, uint32 dwOptionSetMask, uint32 dwEnabledOptions) SetInterfaceSafetyOptions;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IObjectSafety *self, Guid* riid, uint32* pdwSupportedOptions, uint32* pdwEnabledOptions) GetInterfaceSafetyOptions;
+				public function HRESULT(IObjectSafety *self, Guid* riid, uint32 dwOptionSetMask, uint32 dwEnabledOptions) SetInterfaceSafetyOptions;
+			}
 		}
 		
 		// --- Functions ---

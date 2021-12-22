@@ -12,7 +12,12 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0e3da342, 0xb11c, 0x484b, 0x9c, 0x1c, 0xbe, 0x0d, 0x61, 0xc2, 0xf6, 0xc5);
 			
-			public function HRESULT(ICoreFrameworkInputViewInterop *self, HWND appWindow, Guid* riid, void** coreFrameworkInputView) GetForWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IInspectable.VTable
+			{
+				public function HRESULT(ICoreFrameworkInputViewInterop *self, HWND appWindow, Guid* riid, void** coreFrameworkInputView) GetForWindow;
+			}
 		}
 		
 	}

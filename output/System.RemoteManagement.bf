@@ -967,146 +967,206 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x190d8637, 0x5cd3, 0x496d, 0xad, 0x24, 0x69, 0x63, 0x6b, 0xb5, 0xa3, 0xb5);
 			
-			public function HRESULT(IWSMan *self, BSTR connection, int32 flags, IDispatch* connectionOptions, IDispatch** session) CreateSession;
-			public function HRESULT(IWSMan *self, IDispatch** connectionOptions) CreateConnectionOptions;
-			public function HRESULT(IWSMan *self, BSTR* value) get_CommandLine;
-			public function HRESULT(IWSMan *self, BSTR* value) get_Error;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWSMan *self, BSTR connection, int32 flags, IDispatch* connectionOptions, IDispatch** session) CreateSession;
+				public function HRESULT(IWSMan *self, IDispatch** connectionOptions) CreateConnectionOptions;
+				public function HRESULT(IWSMan *self, BSTR* value) get_CommandLine;
+				public function HRESULT(IWSMan *self, BSTR* value) get_Error;
+			}
 		}
 		[CRepr]
 		public struct IWSManEx : IWSMan
 		{
 			public const new Guid IID = .(0x2d53bdaa, 0x798e, 0x49e6, 0xa1, 0xaa, 0x74, 0xd0, 0x12, 0x56, 0xf4, 0x11);
 			
-			public function HRESULT(IWSManEx *self, BSTR strResourceLocator, IDispatch** newResourceLocator) CreateResourceLocator;
-			public function HRESULT(IWSManEx *self, int32* flags) SessionFlagUTF8;
-			public function HRESULT(IWSManEx *self, int32* flags) SessionFlagCredUsernamePassword;
-			public function HRESULT(IWSManEx *self, int32* flags) SessionFlagSkipCACheck;
-			public function HRESULT(IWSManEx *self, int32* flags) SessionFlagSkipCNCheck;
-			public function HRESULT(IWSManEx *self, int32* flags) SessionFlagUseDigest;
-			public function HRESULT(IWSManEx *self, int32* flags) SessionFlagUseNegotiate;
-			public function HRESULT(IWSManEx *self, int32* flags) SessionFlagUseBasic;
-			public function HRESULT(IWSManEx *self, int32* flags) SessionFlagUseKerberos;
-			public function HRESULT(IWSManEx *self, int32* flags) SessionFlagNoEncryption;
-			public function HRESULT(IWSManEx *self, int32* flags) SessionFlagEnableSPNServerPort;
-			public function HRESULT(IWSManEx *self, int32* flags) SessionFlagUseNoAuthentication;
-			public function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagNonXmlText;
-			public function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagReturnEPR;
-			public function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagReturnObjectAndEPR;
-			public function HRESULT(IWSManEx *self, uint32 errorNumber, BSTR* errorMessage) GetErrorMessage;
-			public function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagHierarchyDeep;
-			public function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagHierarchyShallow;
-			public function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagHierarchyDeepBasePropsOnly;
-			public function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagReturnObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWSMan.VTable
+			{
+				public function HRESULT(IWSManEx *self, BSTR strResourceLocator, IDispatch** newResourceLocator) CreateResourceLocator;
+				public function HRESULT(IWSManEx *self, int32* flags) SessionFlagUTF8;
+				public function HRESULT(IWSManEx *self, int32* flags) SessionFlagCredUsernamePassword;
+				public function HRESULT(IWSManEx *self, int32* flags) SessionFlagSkipCACheck;
+				public function HRESULT(IWSManEx *self, int32* flags) SessionFlagSkipCNCheck;
+				public function HRESULT(IWSManEx *self, int32* flags) SessionFlagUseDigest;
+				public function HRESULT(IWSManEx *self, int32* flags) SessionFlagUseNegotiate;
+				public function HRESULT(IWSManEx *self, int32* flags) SessionFlagUseBasic;
+				public function HRESULT(IWSManEx *self, int32* flags) SessionFlagUseKerberos;
+				public function HRESULT(IWSManEx *self, int32* flags) SessionFlagNoEncryption;
+				public function HRESULT(IWSManEx *self, int32* flags) SessionFlagEnableSPNServerPort;
+				public function HRESULT(IWSManEx *self, int32* flags) SessionFlagUseNoAuthentication;
+				public function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagNonXmlText;
+				public function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagReturnEPR;
+				public function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagReturnObjectAndEPR;
+				public function HRESULT(IWSManEx *self, uint32 errorNumber, BSTR* errorMessage) GetErrorMessage;
+				public function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagHierarchyDeep;
+				public function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagHierarchyShallow;
+				public function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagHierarchyDeepBasePropsOnly;
+				public function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagReturnObject;
+			}
 		}
 		[CRepr]
 		public struct IWSManEx2 : IWSManEx
 		{
 			public const new Guid IID = .(0x1d1b5ae0, 0x42d9, 0x4021, 0x82, 0x61, 0x39, 0x87, 0x61, 0x95, 0x12, 0xe9);
 			
-			public function HRESULT(IWSManEx2 *self, int32* flags) SessionFlagUseClientCertificate;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWSManEx.VTable
+			{
+				public function HRESULT(IWSManEx2 *self, int32* flags) SessionFlagUseClientCertificate;
+			}
 		}
 		[CRepr]
 		public struct IWSManEx3 : IWSManEx2
 		{
 			public const new Guid IID = .(0x6400e966, 0x011d, 0x4eac, 0x84, 0x74, 0x04, 0x9e, 0x08, 0x48, 0xaf, 0xad);
 			
-			public function HRESULT(IWSManEx3 *self, int32* flags) SessionFlagUTF16;
-			public function HRESULT(IWSManEx3 *self, int32* flags) SessionFlagUseCredSsp;
-			public function HRESULT(IWSManEx3 *self, int32* flags) EnumerationFlagAssociationInstance;
-			public function HRESULT(IWSManEx3 *self, int32* flags) EnumerationFlagAssociatedInstance;
-			public function HRESULT(IWSManEx3 *self, int32* flags) SessionFlagSkipRevocationCheck;
-			public function HRESULT(IWSManEx3 *self, int32* flags) SessionFlagAllowNegotiateImplicitCredentials;
-			public function HRESULT(IWSManEx3 *self, int32* flags) SessionFlagUseSsl;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWSManEx2.VTable
+			{
+				public function HRESULT(IWSManEx3 *self, int32* flags) SessionFlagUTF16;
+				public function HRESULT(IWSManEx3 *self, int32* flags) SessionFlagUseCredSsp;
+				public function HRESULT(IWSManEx3 *self, int32* flags) EnumerationFlagAssociationInstance;
+				public function HRESULT(IWSManEx3 *self, int32* flags) EnumerationFlagAssociatedInstance;
+				public function HRESULT(IWSManEx3 *self, int32* flags) SessionFlagSkipRevocationCheck;
+				public function HRESULT(IWSManEx3 *self, int32* flags) SessionFlagAllowNegotiateImplicitCredentials;
+				public function HRESULT(IWSManEx3 *self, int32* flags) SessionFlagUseSsl;
+			}
 		}
 		[CRepr]
 		public struct IWSManConnectionOptions : IDispatch
 		{
 			public const new Guid IID = .(0xf704e861, 0x9e52, 0x464f, 0xb7, 0x86, 0xda, 0x5e, 0xb2, 0x32, 0x0f, 0xdd);
 			
-			public function HRESULT(IWSManConnectionOptions *self, BSTR* name) get_UserName;
-			public function HRESULT(IWSManConnectionOptions *self, BSTR name) put_UserName;
-			public function HRESULT(IWSManConnectionOptions *self, BSTR password) put_Password;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWSManConnectionOptions *self, BSTR* name) get_UserName;
+				public function HRESULT(IWSManConnectionOptions *self, BSTR name) put_UserName;
+				public function HRESULT(IWSManConnectionOptions *self, BSTR password) put_Password;
+			}
 		}
 		[CRepr]
 		public struct IWSManConnectionOptionsEx : IWSManConnectionOptions
 		{
 			public const new Guid IID = .(0xef43edf7, 0x2a48, 0x4d93, 0x95, 0x26, 0x8b, 0xd6, 0xab, 0x6d, 0x4a, 0x6b);
 			
-			public function HRESULT(IWSManConnectionOptionsEx *self, BSTR* thumbprint) get_CertificateThumbprint;
-			public function HRESULT(IWSManConnectionOptionsEx *self, BSTR thumbprint) put_CertificateThumbprint;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWSManConnectionOptions.VTable
+			{
+				public function HRESULT(IWSManConnectionOptionsEx *self, BSTR* thumbprint) get_CertificateThumbprint;
+				public function HRESULT(IWSManConnectionOptionsEx *self, BSTR thumbprint) put_CertificateThumbprint;
+			}
 		}
 		[CRepr]
 		public struct IWSManConnectionOptionsEx2 : IWSManConnectionOptionsEx
 		{
 			public const new Guid IID = .(0xf500c9ec, 0x24ee, 0x48ab, 0xb3, 0x8d, 0xfc, 0x9a, 0x16, 0x4c, 0x65, 0x8e);
 			
-			public function HRESULT(IWSManConnectionOptionsEx2 *self, int32 accessType, int32 authenticationMechanism, BSTR userName, BSTR password) SetProxy;
-			public function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyIEConfig;
-			public function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyWinHttpConfig;
-			public function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyAutoDetect;
-			public function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyNoProxyServer;
-			public function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyAuthenticationUseNegotiate;
-			public function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyAuthenticationUseBasic;
-			public function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyAuthenticationUseDigest;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWSManConnectionOptionsEx.VTable
+			{
+				public function HRESULT(IWSManConnectionOptionsEx2 *self, int32 accessType, int32 authenticationMechanism, BSTR userName, BSTR password) SetProxy;
+				public function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyIEConfig;
+				public function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyWinHttpConfig;
+				public function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyAutoDetect;
+				public function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyNoProxyServer;
+				public function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyAuthenticationUseNegotiate;
+				public function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyAuthenticationUseBasic;
+				public function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyAuthenticationUseDigest;
+			}
 		}
 		[CRepr]
 		public struct IWSManSession : IDispatch
 		{
 			public const new Guid IID = .(0xfc84fc58, 0x1286, 0x40c4, 0x9d, 0xa0, 0xc8, 0xef, 0x6e, 0xc2, 0x41, 0xe0);
 			
-			public function HRESULT(IWSManSession *self, VARIANT resourceUri, int32 flags, BSTR* resource) Get;
-			public function HRESULT(IWSManSession *self, VARIANT resourceUri, BSTR resource, int32 flags, BSTR* resultResource) Put;
-			public function HRESULT(IWSManSession *self, VARIANT resourceUri, BSTR resource, int32 flags, BSTR* newUri) Create;
-			public function HRESULT(IWSManSession *self, VARIANT resourceUri, int32 flags) Delete;
-			public function HRESULT(IWSManSession *self, BSTR actionUri, VARIANT resourceUri, BSTR parameters, int32 flags, BSTR* result) Invoke;
-			public function HRESULT(IWSManSession *self, VARIANT resourceUri, BSTR filter, BSTR dialect, int32 flags, IDispatch** resultSet) Enumerate;
-			public function HRESULT(IWSManSession *self, int32 flags, BSTR* result) Identify;
-			public function HRESULT(IWSManSession *self, BSTR* value) get_Error;
-			public function HRESULT(IWSManSession *self, int32* value) get_BatchItems;
-			public function HRESULT(IWSManSession *self, int32 value) put_BatchItems;
-			public function HRESULT(IWSManSession *self, int32* value) get_Timeout;
-			public function HRESULT(IWSManSession *self, int32 value) put_Timeout;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWSManSession *self, VARIANT resourceUri, int32 flags, BSTR* resource) Get;
+				public function HRESULT(IWSManSession *self, VARIANT resourceUri, BSTR resource, int32 flags, BSTR* resultResource) Put;
+				public function HRESULT(IWSManSession *self, VARIANT resourceUri, BSTR resource, int32 flags, BSTR* newUri) Create;
+				public function HRESULT(IWSManSession *self, VARIANT resourceUri, int32 flags) Delete;
+				public function HRESULT(IWSManSession *self, BSTR actionUri, VARIANT resourceUri, BSTR parameters, int32 flags, BSTR* result) Invoke;
+				public function HRESULT(IWSManSession *self, VARIANT resourceUri, BSTR filter, BSTR dialect, int32 flags, IDispatch** resultSet) Enumerate;
+				public function HRESULT(IWSManSession *self, int32 flags, BSTR* result) Identify;
+				public function HRESULT(IWSManSession *self, BSTR* value) get_Error;
+				public function HRESULT(IWSManSession *self, int32* value) get_BatchItems;
+				public function HRESULT(IWSManSession *self, int32 value) put_BatchItems;
+				public function HRESULT(IWSManSession *self, int32* value) get_Timeout;
+				public function HRESULT(IWSManSession *self, int32 value) put_Timeout;
+			}
 		}
 		[CRepr]
 		public struct IWSManEnumerator : IDispatch
 		{
 			public const new Guid IID = .(0xf3457ca9, 0xabb9, 0x4fa5, 0xb8, 0x50, 0x90, 0xe8, 0xca, 0x30, 0x0e, 0x7f);
 			
-			public function HRESULT(IWSManEnumerator *self, BSTR* resource) ReadItem;
-			public function HRESULT(IWSManEnumerator *self, int16* eos) get_AtEndOfStream;
-			public function HRESULT(IWSManEnumerator *self, BSTR* value) get_Error;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWSManEnumerator *self, BSTR* resource) ReadItem;
+				public function HRESULT(IWSManEnumerator *self, int16* eos) get_AtEndOfStream;
+				public function HRESULT(IWSManEnumerator *self, BSTR* value) get_Error;
+			}
 		}
 		[CRepr]
 		public struct IWSManResourceLocator : IDispatch
 		{
 			public const new Guid IID = .(0xa7a1ba28, 0xde41, 0x466a, 0xad, 0x0a, 0xc4, 0x05, 0x9e, 0xad, 0x74, 0x28);
 			
-			public function HRESULT(IWSManResourceLocator *self, BSTR uri) put_ResourceURI;
-			public function HRESULT(IWSManResourceLocator *self, BSTR* uri) get_ResourceURI;
-			public function HRESULT(IWSManResourceLocator *self, BSTR resourceSelName, VARIANT selValue) AddSelector;
-			public function HRESULT(IWSManResourceLocator *self) ClearSelectors;
-			public function HRESULT(IWSManResourceLocator *self, BSTR* text) get_FragmentPath;
-			public function HRESULT(IWSManResourceLocator *self, BSTR text) put_FragmentPath;
-			public function HRESULT(IWSManResourceLocator *self, BSTR* text) get_FragmentDialect;
-			public function HRESULT(IWSManResourceLocator *self, BSTR text) put_FragmentDialect;
-			public function HRESULT(IWSManResourceLocator *self, BSTR OptionName, VARIANT OptionValue, BOOL mustComply) AddOption;
-			public function HRESULT(IWSManResourceLocator *self, BOOL mustUnderstand) put_MustUnderstandOptions;
-			public function HRESULT(IWSManResourceLocator *self, BOOL* mustUnderstand) get_MustUnderstandOptions;
-			public function HRESULT(IWSManResourceLocator *self) ClearOptions;
-			public function HRESULT(IWSManResourceLocator *self, BSTR* value) get_Error;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWSManResourceLocator *self, BSTR uri) put_ResourceURI;
+				public function HRESULT(IWSManResourceLocator *self, BSTR* uri) get_ResourceURI;
+				public function HRESULT(IWSManResourceLocator *self, BSTR resourceSelName, VARIANT selValue) AddSelector;
+				public function HRESULT(IWSManResourceLocator *self) ClearSelectors;
+				public function HRESULT(IWSManResourceLocator *self, BSTR* text) get_FragmentPath;
+				public function HRESULT(IWSManResourceLocator *self, BSTR text) put_FragmentPath;
+				public function HRESULT(IWSManResourceLocator *self, BSTR* text) get_FragmentDialect;
+				public function HRESULT(IWSManResourceLocator *self, BSTR text) put_FragmentDialect;
+				public function HRESULT(IWSManResourceLocator *self, BSTR OptionName, VARIANT OptionValue, BOOL mustComply) AddOption;
+				public function HRESULT(IWSManResourceLocator *self, BOOL mustUnderstand) put_MustUnderstandOptions;
+				public function HRESULT(IWSManResourceLocator *self, BOOL* mustUnderstand) get_MustUnderstandOptions;
+				public function HRESULT(IWSManResourceLocator *self) ClearOptions;
+				public function HRESULT(IWSManResourceLocator *self, BSTR* value) get_Error;
+			}
 		}
 		[CRepr]
 		public struct IWSManResourceLocatorInternal : IUnknown
 		{
 			public const new Guid IID = .(0xeffaead7, 0x7ec8, 0x4716, 0xb9, 0xbe, 0xf2, 0xe7, 0xe9, 0xfb, 0x4a, 0xdb);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IWSManInternal : IDispatch
 		{
 			public const new Guid IID = .(0x04ae2b1d, 0x9954, 0x4d99, 0x94, 0xa9, 0xa9, 0x61, 0xe7, 0x2c, 0x3a, 0x13);
 			
-			public function HRESULT(IWSManInternal *self, IDispatch* session, VARIANT resourceUri, int32 flags, BSTR* resource) ConfigSDDL;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWSManInternal *self, IDispatch* session, VARIANT resourceUri, int32 flags, BSTR* resource) ConfigSDDL;
+			}
 		}
 		
 		// --- Functions ---

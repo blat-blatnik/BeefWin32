@@ -112,33 +112,43 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd818fbd8, 0xfc46, 0x42f2, 0x87, 0xac, 0x1e, 0xa2, 0xd1, 0xf9, 0xbf, 0x32);
 			
-			public function HRESULT(IMFDeviceTransform *self, IMFAttributes* pAttributes) InitializeTransform;
-			public function HRESULT(IMFDeviceTransform *self, uint32 dwInputStreamID, uint32 dwTypeIndex, IMFMediaType** pMediaType) GetInputAvailableType;
-			public function HRESULT(IMFDeviceTransform *self, uint32 dwInputStreamID, IMFMediaType** pMediaType) GetInputCurrentType;
-			public function HRESULT(IMFDeviceTransform *self, uint32 dwInputStreamID, IMFAttributes** ppAttributes) GetInputStreamAttributes;
-			public function HRESULT(IMFDeviceTransform *self, uint32 dwOutputStreamID, uint32 dwTypeIndex, IMFMediaType** pMediaType) GetOutputAvailableType;
-			public function HRESULT(IMFDeviceTransform *self, uint32 dwOutputStreamID, IMFMediaType** pMediaType) GetOutputCurrentType;
-			public function HRESULT(IMFDeviceTransform *self, uint32 dwOutputStreamID, IMFAttributes** ppAttributes) GetOutputStreamAttributes;
-			public function HRESULT(IMFDeviceTransform *self, uint32* pcInputStreams, uint32* pcOutputStreams) GetStreamCount;
-			public function HRESULT(IMFDeviceTransform *self, uint32 dwInputIDArraySize, uint32* pdwInputStreamIds, uint32 dwOutputIDArraySize, uint32* pdwOutputStreamIds) GetStreamIDs;
-			public function HRESULT(IMFDeviceTransform *self, uint32 dwInputStreamID, IMFMediaEvent* pEvent) ProcessEvent;
-			public function HRESULT(IMFDeviceTransform *self, uint32 dwInputStreamID, IMFSample* pSample, uint32 dwFlags) ProcessInput;
-			public function HRESULT(IMFDeviceTransform *self, MFT_MESSAGE_TYPE eMessage, uint ulParam) ProcessMessage;
-			public function HRESULT(IMFDeviceTransform *self, uint32 dwFlags, uint32 cOutputBufferCount, MFT_OUTPUT_DATA_BUFFER* pOutputSample, uint32* pdwStatus) ProcessOutput;
-			public function HRESULT(IMFDeviceTransform *self, uint32 dwStreamID, IMFMediaType* pMediaType, DeviceStreamState value, uint32 dwFlags) SetInputStreamState;
-			public function HRESULT(IMFDeviceTransform *self, uint32 dwStreamID, DeviceStreamState* value) GetInputStreamState;
-			public function HRESULT(IMFDeviceTransform *self, uint32 dwStreamID, IMFMediaType* pMediaType, DeviceStreamState value, uint32 dwFlags) SetOutputStreamState;
-			public function HRESULT(IMFDeviceTransform *self, uint32 dwStreamID, DeviceStreamState* value) GetOutputStreamState;
-			public function HRESULT(IMFDeviceTransform *self, uint32 dwStreamID, DeviceStreamState* value, IMFMediaType** ppMediaType) GetInputStreamPreferredState;
-			public function HRESULT(IMFDeviceTransform *self, uint32 dwStreamIndex, uint32 dwFlags) FlushInputStream;
-			public function HRESULT(IMFDeviceTransform *self, uint32 dwStreamIndex, uint32 dwFlags) FlushOutputStream;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMFDeviceTransform *self, IMFAttributes* pAttributes) InitializeTransform;
+				public function HRESULT(IMFDeviceTransform *self, uint32 dwInputStreamID, uint32 dwTypeIndex, IMFMediaType** pMediaType) GetInputAvailableType;
+				public function HRESULT(IMFDeviceTransform *self, uint32 dwInputStreamID, IMFMediaType** pMediaType) GetInputCurrentType;
+				public function HRESULT(IMFDeviceTransform *self, uint32 dwInputStreamID, IMFAttributes** ppAttributes) GetInputStreamAttributes;
+				public function HRESULT(IMFDeviceTransform *self, uint32 dwOutputStreamID, uint32 dwTypeIndex, IMFMediaType** pMediaType) GetOutputAvailableType;
+				public function HRESULT(IMFDeviceTransform *self, uint32 dwOutputStreamID, IMFMediaType** pMediaType) GetOutputCurrentType;
+				public function HRESULT(IMFDeviceTransform *self, uint32 dwOutputStreamID, IMFAttributes** ppAttributes) GetOutputStreamAttributes;
+				public function HRESULT(IMFDeviceTransform *self, uint32* pcInputStreams, uint32* pcOutputStreams) GetStreamCount;
+				public function HRESULT(IMFDeviceTransform *self, uint32 dwInputIDArraySize, uint32* pdwInputStreamIds, uint32 dwOutputIDArraySize, uint32* pdwOutputStreamIds) GetStreamIDs;
+				public function HRESULT(IMFDeviceTransform *self, uint32 dwInputStreamID, IMFMediaEvent* pEvent) ProcessEvent;
+				public function HRESULT(IMFDeviceTransform *self, uint32 dwInputStreamID, IMFSample* pSample, uint32 dwFlags) ProcessInput;
+				public function HRESULT(IMFDeviceTransform *self, MFT_MESSAGE_TYPE eMessage, uint ulParam) ProcessMessage;
+				public function HRESULT(IMFDeviceTransform *self, uint32 dwFlags, uint32 cOutputBufferCount, MFT_OUTPUT_DATA_BUFFER* pOutputSample, uint32* pdwStatus) ProcessOutput;
+				public function HRESULT(IMFDeviceTransform *self, uint32 dwStreamID, IMFMediaType* pMediaType, DeviceStreamState value, uint32 dwFlags) SetInputStreamState;
+				public function HRESULT(IMFDeviceTransform *self, uint32 dwStreamID, DeviceStreamState* value) GetInputStreamState;
+				public function HRESULT(IMFDeviceTransform *self, uint32 dwStreamID, IMFMediaType* pMediaType, DeviceStreamState value, uint32 dwFlags) SetOutputStreamState;
+				public function HRESULT(IMFDeviceTransform *self, uint32 dwStreamID, DeviceStreamState* value) GetOutputStreamState;
+				public function HRESULT(IMFDeviceTransform *self, uint32 dwStreamID, DeviceStreamState* value, IMFMediaType** ppMediaType) GetInputStreamPreferredState;
+				public function HRESULT(IMFDeviceTransform *self, uint32 dwStreamIndex, uint32 dwFlags) FlushInputStream;
+				public function HRESULT(IMFDeviceTransform *self, uint32 dwStreamIndex, uint32 dwFlags) FlushOutputStream;
+			}
 		}
 		[CRepr]
 		public struct IMFDeviceTransformCallback : IUnknown
 		{
 			public const new Guid IID = .(0x6d5cb646, 0x29ec, 0x41fb, 0x81, 0x79, 0x8c, 0x4c, 0x6d, 0x75, 0x08, 0x11);
 			
-			public function HRESULT(IMFDeviceTransformCallback *self, IMFAttributes* pCallbackAttributes, uint32 pinId) OnBufferSent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMFDeviceTransformCallback *self, IMFAttributes* pCallbackAttributes, uint32 pinId) OnBufferSent;
+			}
 		}
 		
 	}

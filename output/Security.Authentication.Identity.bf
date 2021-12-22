@@ -5217,7 +5217,12 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6ecda518, 0x2010, 0x4437, 0x8b, 0xc3, 0x46, 0xe7, 0x52, 0xb7, 0xb1, 0x72);
 			
-			public function HRESULT(ICcgDomainAuthCredentials *self, PWSTR pluginInput, PWSTR* domainName, PWSTR* username, PWSTR* password) GetPasswordCredentials;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICcgDomainAuthCredentials *self, PWSTR pluginInput, PWSTR* domainName, PWSTR* username, PWSTR* password) GetPasswordCredentials;
+			}
 		}
 		
 		// --- Functions ---

@@ -172,186 +172,276 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfbf5d3b4, 0x70c7, 0x4163, 0x93, 0x22, 0x5a, 0x6f, 0x66, 0x0d, 0x6f, 0xbc);
 			
-			public function HRESULT(IDirectManipulationManager *self, HWND window) Activate;
-			public function HRESULT(IDirectManipulationManager *self, HWND window) Deactivate;
-			public function HRESULT(IDirectManipulationManager *self, HWND window, HWND hitTestWindow, DIRECTMANIPULATION_HITTEST_TYPE type) RegisterHitTestTarget;
-			public function HRESULT(IDirectManipulationManager *self, MSG* message, BOOL* handled) ProcessInput;
-			public function HRESULT(IDirectManipulationManager *self, Guid* riid, void** object) GetUpdateManager;
-			public function HRESULT(IDirectManipulationManager *self, IDirectManipulationFrameInfoProvider* frameInfo, HWND window, Guid* riid, void** object) CreateViewport;
-			public function HRESULT(IDirectManipulationManager *self, IDirectManipulationFrameInfoProvider* frameInfo, Guid* clsid, Guid* riid, void** object) CreateContent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectManipulationManager *self, HWND window) Activate;
+				public function HRESULT(IDirectManipulationManager *self, HWND window) Deactivate;
+				public function HRESULT(IDirectManipulationManager *self, HWND window, HWND hitTestWindow, DIRECTMANIPULATION_HITTEST_TYPE type) RegisterHitTestTarget;
+				public function HRESULT(IDirectManipulationManager *self, MSG* message, BOOL* handled) ProcessInput;
+				public function HRESULT(IDirectManipulationManager *self, Guid* riid, void** object) GetUpdateManager;
+				public function HRESULT(IDirectManipulationManager *self, IDirectManipulationFrameInfoProvider* frameInfo, HWND window, Guid* riid, void** object) CreateViewport;
+				public function HRESULT(IDirectManipulationManager *self, IDirectManipulationFrameInfoProvider* frameInfo, Guid* clsid, Guid* riid, void** object) CreateContent;
+			}
 		}
 		[CRepr]
 		public struct IDirectManipulationManager2 : IDirectManipulationManager
 		{
 			public const new Guid IID = .(0xfa1005e9, 0x3d16, 0x484c, 0xbf, 0xc9, 0x62, 0xb6, 0x1e, 0x56, 0xec, 0x4e);
 			
-			public function HRESULT(IDirectManipulationManager2 *self, Guid* clsid, Guid* riid, void** object) CreateBehavior;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDirectManipulationManager.VTable
+			{
+				public function HRESULT(IDirectManipulationManager2 *self, Guid* clsid, Guid* riid, void** object) CreateBehavior;
+			}
 		}
 		[CRepr]
 		public struct IDirectManipulationManager3 : IDirectManipulationManager2
 		{
 			public const new Guid IID = .(0x2cb6b33d, 0xffe8, 0x488c, 0xb7, 0x50, 0xfb, 0xdf, 0xe8, 0x8d, 0xca, 0x8c);
 			
-			public function HRESULT(IDirectManipulationManager3 *self, Guid* clsid, Guid* riid, void** object) GetService;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDirectManipulationManager2.VTable
+			{
+				public function HRESULT(IDirectManipulationManager3 *self, Guid* clsid, Guid* riid, void** object) GetService;
+			}
 		}
 		[CRepr]
 		public struct IDirectManipulationViewport : IUnknown
 		{
 			public const new Guid IID = .(0x28b85a3d, 0x60a0, 0x48bd, 0x9b, 0xa1, 0x5c, 0xe8, 0xd9, 0xea, 0x3a, 0x6d);
 			
-			public function HRESULT(IDirectManipulationViewport *self) Enable;
-			public function HRESULT(IDirectManipulationViewport *self) Disable;
-			public function HRESULT(IDirectManipulationViewport *self, uint32 pointerId) SetContact;
-			public function HRESULT(IDirectManipulationViewport *self, uint32 pointerId) ReleaseContact;
-			public function HRESULT(IDirectManipulationViewport *self) ReleaseAllContacts;
-			public function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_STATUS* status) GetStatus;
-			public function HRESULT(IDirectManipulationViewport *self, Guid* riid, void** object, uint32* id) GetTag;
-			public function HRESULT(IDirectManipulationViewport *self, IUnknown* object, uint32 id) SetTag;
-			public function HRESULT(IDirectManipulationViewport *self, RECT* viewport) GetViewportRect;
-			public function HRESULT(IDirectManipulationViewport *self, RECT* viewport) SetViewportRect;
-			public function HRESULT(IDirectManipulationViewport *self, float left, float top, float right, float bottom, BOOL animate) ZoomToRect;
-			public function HRESULT(IDirectManipulationViewport *self, float* matrix, uint32 pointCount) SetViewportTransform;
-			public function HRESULT(IDirectManipulationViewport *self, float* matrix, uint32 pointCount) SyncDisplayTransform;
-			public function HRESULT(IDirectManipulationViewport *self, Guid* riid, void** object) GetPrimaryContent;
-			public function HRESULT(IDirectManipulationViewport *self, IDirectManipulationContent* content) AddContent;
-			public function HRESULT(IDirectManipulationViewport *self, IDirectManipulationContent* content) RemoveContent;
-			public function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_VIEWPORT_OPTIONS options) SetViewportOptions;
-			public function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_CONFIGURATION configuration) AddConfiguration;
-			public function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_CONFIGURATION configuration) RemoveConfiguration;
-			public function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_CONFIGURATION configuration) ActivateConfiguration;
-			public function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_GESTURE_CONFIGURATION configuration) SetManualGesture;
-			public function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_MOTION_TYPES enabledTypes) SetChaining;
-			public function HRESULT(IDirectManipulationViewport *self, HWND window, IDirectManipulationViewportEventHandler* eventHandler, uint32* cookie) AddEventHandler;
-			public function HRESULT(IDirectManipulationViewport *self, uint32 cookie) RemoveEventHandler;
-			public function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_INPUT_MODE mode) SetInputMode;
-			public function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_INPUT_MODE mode) SetUpdateMode;
-			public function HRESULT(IDirectManipulationViewport *self) Stop;
-			public function HRESULT(IDirectManipulationViewport *self) Abandon;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectManipulationViewport *self) Enable;
+				public function HRESULT(IDirectManipulationViewport *self) Disable;
+				public function HRESULT(IDirectManipulationViewport *self, uint32 pointerId) SetContact;
+				public function HRESULT(IDirectManipulationViewport *self, uint32 pointerId) ReleaseContact;
+				public function HRESULT(IDirectManipulationViewport *self) ReleaseAllContacts;
+				public function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_STATUS* status) GetStatus;
+				public function HRESULT(IDirectManipulationViewport *self, Guid* riid, void** object, uint32* id) GetTag;
+				public function HRESULT(IDirectManipulationViewport *self, IUnknown* object, uint32 id) SetTag;
+				public function HRESULT(IDirectManipulationViewport *self, RECT* viewport) GetViewportRect;
+				public function HRESULT(IDirectManipulationViewport *self, RECT* viewport) SetViewportRect;
+				public function HRESULT(IDirectManipulationViewport *self, float left, float top, float right, float bottom, BOOL animate) ZoomToRect;
+				public function HRESULT(IDirectManipulationViewport *self, float* matrix, uint32 pointCount) SetViewportTransform;
+				public function HRESULT(IDirectManipulationViewport *self, float* matrix, uint32 pointCount) SyncDisplayTransform;
+				public function HRESULT(IDirectManipulationViewport *self, Guid* riid, void** object) GetPrimaryContent;
+				public function HRESULT(IDirectManipulationViewport *self, IDirectManipulationContent* content) AddContent;
+				public function HRESULT(IDirectManipulationViewport *self, IDirectManipulationContent* content) RemoveContent;
+				public function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_VIEWPORT_OPTIONS options) SetViewportOptions;
+				public function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_CONFIGURATION configuration) AddConfiguration;
+				public function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_CONFIGURATION configuration) RemoveConfiguration;
+				public function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_CONFIGURATION configuration) ActivateConfiguration;
+				public function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_GESTURE_CONFIGURATION configuration) SetManualGesture;
+				public function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_MOTION_TYPES enabledTypes) SetChaining;
+				public function HRESULT(IDirectManipulationViewport *self, HWND window, IDirectManipulationViewportEventHandler* eventHandler, uint32* cookie) AddEventHandler;
+				public function HRESULT(IDirectManipulationViewport *self, uint32 cookie) RemoveEventHandler;
+				public function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_INPUT_MODE mode) SetInputMode;
+				public function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_INPUT_MODE mode) SetUpdateMode;
+				public function HRESULT(IDirectManipulationViewport *self) Stop;
+				public function HRESULT(IDirectManipulationViewport *self) Abandon;
+			}
 		}
 		[CRepr]
 		public struct IDirectManipulationViewport2 : IDirectManipulationViewport
 		{
 			public const new Guid IID = .(0x923ccaac, 0x61e1, 0x4385, 0xb7, 0x26, 0x01, 0x7a, 0xf1, 0x89, 0x88, 0x2a);
 			
-			public function HRESULT(IDirectManipulationViewport2 *self, IUnknown* behavior, uint32* cookie) AddBehavior;
-			public function HRESULT(IDirectManipulationViewport2 *self, uint32 cookie) RemoveBehavior;
-			public function HRESULT(IDirectManipulationViewport2 *self) RemoveAllBehaviors;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDirectManipulationViewport.VTable
+			{
+				public function HRESULT(IDirectManipulationViewport2 *self, IUnknown* behavior, uint32* cookie) AddBehavior;
+				public function HRESULT(IDirectManipulationViewport2 *self, uint32 cookie) RemoveBehavior;
+				public function HRESULT(IDirectManipulationViewport2 *self) RemoveAllBehaviors;
+			}
 		}
 		[CRepr]
 		public struct IDirectManipulationViewportEventHandler : IUnknown
 		{
 			public const new Guid IID = .(0x952121da, 0xd69f, 0x45f9, 0xb0, 0xf9, 0xf2, 0x39, 0x44, 0x32, 0x1a, 0x6d);
 			
-			public function HRESULT(IDirectManipulationViewportEventHandler *self, IDirectManipulationViewport* viewport, DIRECTMANIPULATION_STATUS current, DIRECTMANIPULATION_STATUS previous) OnViewportStatusChanged;
-			public function HRESULT(IDirectManipulationViewportEventHandler *self, IDirectManipulationViewport* viewport) OnViewportUpdated;
-			public function HRESULT(IDirectManipulationViewportEventHandler *self, IDirectManipulationViewport* viewport, IDirectManipulationContent* content) OnContentUpdated;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectManipulationViewportEventHandler *self, IDirectManipulationViewport* viewport, DIRECTMANIPULATION_STATUS current, DIRECTMANIPULATION_STATUS previous) OnViewportStatusChanged;
+				public function HRESULT(IDirectManipulationViewportEventHandler *self, IDirectManipulationViewport* viewport) OnViewportUpdated;
+				public function HRESULT(IDirectManipulationViewportEventHandler *self, IDirectManipulationViewport* viewport, IDirectManipulationContent* content) OnContentUpdated;
+			}
 		}
 		[CRepr]
 		public struct IDirectManipulationContent : IUnknown
 		{
 			public const new Guid IID = .(0xb89962cb, 0x3d89, 0x442b, 0xbb, 0x58, 0x50, 0x98, 0xfa, 0x0f, 0x9f, 0x16);
 			
-			public function HRESULT(IDirectManipulationContent *self, RECT* contentSize) GetContentRect;
-			public function HRESULT(IDirectManipulationContent *self, RECT* contentSize) SetContentRect;
-			public function HRESULT(IDirectManipulationContent *self, Guid* riid, void** object) GetViewport;
-			public function HRESULT(IDirectManipulationContent *self, Guid* riid, void** object, uint32* id) GetTag;
-			public function HRESULT(IDirectManipulationContent *self, IUnknown* object, uint32 id) SetTag;
-			public function HRESULT(IDirectManipulationContent *self, float* matrix, uint32 pointCount) GetOutputTransform;
-			public function HRESULT(IDirectManipulationContent *self, float* matrix, uint32 pointCount) GetContentTransform;
-			public function HRESULT(IDirectManipulationContent *self, float* matrix, uint32 pointCount) SyncContentTransform;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectManipulationContent *self, RECT* contentSize) GetContentRect;
+				public function HRESULT(IDirectManipulationContent *self, RECT* contentSize) SetContentRect;
+				public function HRESULT(IDirectManipulationContent *self, Guid* riid, void** object) GetViewport;
+				public function HRESULT(IDirectManipulationContent *self, Guid* riid, void** object, uint32* id) GetTag;
+				public function HRESULT(IDirectManipulationContent *self, IUnknown* object, uint32 id) SetTag;
+				public function HRESULT(IDirectManipulationContent *self, float* matrix, uint32 pointCount) GetOutputTransform;
+				public function HRESULT(IDirectManipulationContent *self, float* matrix, uint32 pointCount) GetContentTransform;
+				public function HRESULT(IDirectManipulationContent *self, float* matrix, uint32 pointCount) SyncContentTransform;
+			}
 		}
 		[CRepr]
 		public struct IDirectManipulationPrimaryContent : IUnknown
 		{
 			public const new Guid IID = .(0xc12851e4, 0x1698, 0x4625, 0xb9, 0xb1, 0x7c, 0xa3, 0xec, 0x18, 0x63, 0x0b);
 			
-			public function HRESULT(IDirectManipulationPrimaryContent *self, DIRECTMANIPULATION_MOTION_TYPES motion, float interval, float offset) SetSnapInterval;
-			public function HRESULT(IDirectManipulationPrimaryContent *self, DIRECTMANIPULATION_MOTION_TYPES motion, float* points, uint32 pointCount) SetSnapPoints;
-			public function HRESULT(IDirectManipulationPrimaryContent *self, DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_TYPE type) SetSnapType;
-			public function HRESULT(IDirectManipulationPrimaryContent *self, DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_COORDINATE coordinate, float origin) SetSnapCoordinate;
-			public function HRESULT(IDirectManipulationPrimaryContent *self, float zoomMinimum, float zoomMaximum) SetZoomBoundaries;
-			public function HRESULT(IDirectManipulationPrimaryContent *self, DIRECTMANIPULATION_HORIZONTALALIGNMENT alignment) SetHorizontalAlignment;
-			public function HRESULT(IDirectManipulationPrimaryContent *self, DIRECTMANIPULATION_VERTICALALIGNMENT alignment) SetVerticalAlignment;
-			public function HRESULT(IDirectManipulationPrimaryContent *self, float* matrix, uint32 pointCount) GetInertiaEndTransform;
-			public function HRESULT(IDirectManipulationPrimaryContent *self, float* centerX, float* centerY) GetCenterPoint;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectManipulationPrimaryContent *self, DIRECTMANIPULATION_MOTION_TYPES motion, float interval, float offset) SetSnapInterval;
+				public function HRESULT(IDirectManipulationPrimaryContent *self, DIRECTMANIPULATION_MOTION_TYPES motion, float* points, uint32 pointCount) SetSnapPoints;
+				public function HRESULT(IDirectManipulationPrimaryContent *self, DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_TYPE type) SetSnapType;
+				public function HRESULT(IDirectManipulationPrimaryContent *self, DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_COORDINATE coordinate, float origin) SetSnapCoordinate;
+				public function HRESULT(IDirectManipulationPrimaryContent *self, float zoomMinimum, float zoomMaximum) SetZoomBoundaries;
+				public function HRESULT(IDirectManipulationPrimaryContent *self, DIRECTMANIPULATION_HORIZONTALALIGNMENT alignment) SetHorizontalAlignment;
+				public function HRESULT(IDirectManipulationPrimaryContent *self, DIRECTMANIPULATION_VERTICALALIGNMENT alignment) SetVerticalAlignment;
+				public function HRESULT(IDirectManipulationPrimaryContent *self, float* matrix, uint32 pointCount) GetInertiaEndTransform;
+				public function HRESULT(IDirectManipulationPrimaryContent *self, float* centerX, float* centerY) GetCenterPoint;
+			}
 		}
 		[CRepr]
 		public struct IDirectManipulationDragDropEventHandler : IUnknown
 		{
 			public const new Guid IID = .(0x1fa11b10, 0x701b, 0x41ae, 0xb5, 0xf2, 0x49, 0xe3, 0x6b, 0xd5, 0x95, 0xaa);
 			
-			public function HRESULT(IDirectManipulationDragDropEventHandler *self, IDirectManipulationViewport2* viewport, DIRECTMANIPULATION_DRAG_DROP_STATUS current, DIRECTMANIPULATION_DRAG_DROP_STATUS previous) OnDragDropStatusChange;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectManipulationDragDropEventHandler *self, IDirectManipulationViewport2* viewport, DIRECTMANIPULATION_DRAG_DROP_STATUS current, DIRECTMANIPULATION_DRAG_DROP_STATUS previous) OnDragDropStatusChange;
+			}
 		}
 		[CRepr]
 		public struct IDirectManipulationDragDropBehavior : IUnknown
 		{
 			public const new Guid IID = .(0x814b5af5, 0xc2c8, 0x4270, 0xa9, 0xb7, 0xa1, 0x98, 0xce, 0x8d, 0x02, 0xfa);
 			
-			public function HRESULT(IDirectManipulationDragDropBehavior *self, DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION configuration) SetConfiguration;
-			public function HRESULT(IDirectManipulationDragDropBehavior *self, DIRECTMANIPULATION_DRAG_DROP_STATUS* status) GetStatus;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectManipulationDragDropBehavior *self, DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION configuration) SetConfiguration;
+				public function HRESULT(IDirectManipulationDragDropBehavior *self, DIRECTMANIPULATION_DRAG_DROP_STATUS* status) GetStatus;
+			}
 		}
 		[CRepr]
 		public struct IDirectManipulationInteractionEventHandler : IUnknown
 		{
 			public const new Guid IID = .(0xe43f45b8, 0x42b4, 0x403e, 0xb1, 0xf2, 0x27, 0x3b, 0x8f, 0x51, 0x08, 0x30);
 			
-			public function HRESULT(IDirectManipulationInteractionEventHandler *self, IDirectManipulationViewport2* viewport, DIRECTMANIPULATION_INTERACTION_TYPE interaction) OnInteraction;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectManipulationInteractionEventHandler *self, IDirectManipulationViewport2* viewport, DIRECTMANIPULATION_INTERACTION_TYPE interaction) OnInteraction;
+			}
 		}
 		[CRepr]
 		public struct IDirectManipulationFrameInfoProvider : IUnknown
 		{
 			public const new Guid IID = .(0xfb759dba, 0x6f4c, 0x4c01, 0x87, 0x4e, 0x19, 0xc8, 0xa0, 0x59, 0x07, 0xf9);
 			
-			public function HRESULT(IDirectManipulationFrameInfoProvider *self, uint64* time, uint64* processTime, uint64* compositionTime) GetNextFrameInfo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectManipulationFrameInfoProvider *self, uint64* time, uint64* processTime, uint64* compositionTime) GetNextFrameInfo;
+			}
 		}
 		[CRepr]
 		public struct IDirectManipulationCompositor : IUnknown
 		{
 			public const new Guid IID = .(0x537a0825, 0x0387, 0x4efa, 0xb6, 0x2f, 0x71, 0xeb, 0x1f, 0x08, 0x5a, 0x7e);
 			
-			public function HRESULT(IDirectManipulationCompositor *self, IDirectManipulationContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual) AddContent;
-			public function HRESULT(IDirectManipulationCompositor *self, IDirectManipulationContent* content) RemoveContent;
-			public function HRESULT(IDirectManipulationCompositor *self, IDirectManipulationUpdateManager* updateManager) SetUpdateManager;
-			public function HRESULT(IDirectManipulationCompositor *self) Flush;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectManipulationCompositor *self, IDirectManipulationContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual) AddContent;
+				public function HRESULT(IDirectManipulationCompositor *self, IDirectManipulationContent* content) RemoveContent;
+				public function HRESULT(IDirectManipulationCompositor *self, IDirectManipulationUpdateManager* updateManager) SetUpdateManager;
+				public function HRESULT(IDirectManipulationCompositor *self) Flush;
+			}
 		}
 		[CRepr]
 		public struct IDirectManipulationCompositor2 : IDirectManipulationCompositor
 		{
 			public const new Guid IID = .(0xd38c7822, 0xf1cb, 0x43cb, 0xb4, 0xb9, 0xac, 0x0c, 0x76, 0x7a, 0x41, 0x2e);
 			
-			public function HRESULT(IDirectManipulationCompositor2 *self, IDirectManipulationPrimaryContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual) AddContentWithCrossProcessChaining;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDirectManipulationCompositor.VTable
+			{
+				public function HRESULT(IDirectManipulationCompositor2 *self, IDirectManipulationPrimaryContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual) AddContentWithCrossProcessChaining;
+			}
 		}
 		[CRepr]
 		public struct IDirectManipulationUpdateHandler : IUnknown
 		{
 			public const new Guid IID = .(0x790b6337, 0x64f8, 0x4ff5, 0xa2, 0x69, 0xb3, 0x2b, 0xc2, 0xaf, 0x27, 0xa7);
 			
-			public function HRESULT(IDirectManipulationUpdateHandler *self) Update;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectManipulationUpdateHandler *self) Update;
+			}
 		}
 		[CRepr]
 		public struct IDirectManipulationUpdateManager : IUnknown
 		{
 			public const new Guid IID = .(0xb0ae62fd, 0xbe34, 0x46e7, 0x9c, 0xaa, 0xd3, 0x61, 0xfa, 0xcb, 0xb9, 0xcc);
 			
-			public function HRESULT(IDirectManipulationUpdateManager *self, HANDLE handle, IDirectManipulationUpdateHandler* eventHandler, uint32* cookie) RegisterWaitHandleCallback;
-			public function HRESULT(IDirectManipulationUpdateManager *self, uint32 cookie) UnregisterWaitHandleCallback;
-			public function HRESULT(IDirectManipulationUpdateManager *self, IDirectManipulationFrameInfoProvider* frameInfo) Update;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectManipulationUpdateManager *self, HANDLE handle, IDirectManipulationUpdateHandler* eventHandler, uint32* cookie) RegisterWaitHandleCallback;
+				public function HRESULT(IDirectManipulationUpdateManager *self, uint32 cookie) UnregisterWaitHandleCallback;
+				public function HRESULT(IDirectManipulationUpdateManager *self, IDirectManipulationFrameInfoProvider* frameInfo) Update;
+			}
 		}
 		[CRepr]
 		public struct IDirectManipulationAutoScrollBehavior : IUnknown
 		{
 			public const new Guid IID = .(0x6d5954d4, 0x2003, 0x4356, 0x9b, 0x31, 0xd0, 0x51, 0xc9, 0xff, 0x0a, 0xf7);
 			
-			public function HRESULT(IDirectManipulationAutoScrollBehavior *self, DIRECTMANIPULATION_MOTION_TYPES motionTypes, DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION scrollMotion) SetConfiguration;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectManipulationAutoScrollBehavior *self, DIRECTMANIPULATION_MOTION_TYPES motionTypes, DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION scrollMotion) SetConfiguration;
+			}
 		}
 		[CRepr]
 		public struct IDirectManipulationDeferContactService : IUnknown
 		{
 			public const new Guid IID = .(0x652d5c71, 0xfe60, 0x4a98, 0xbe, 0x70, 0xe5, 0xf2, 0x12, 0x91, 0xe7, 0xf1);
 			
-			public function HRESULT(IDirectManipulationDeferContactService *self, uint32 pointerId, uint32 timeout) DeferContact;
-			public function HRESULT(IDirectManipulationDeferContactService *self, uint32 pointerId) CancelContact;
-			public function HRESULT(IDirectManipulationDeferContactService *self, uint32 pointerId) CancelDeferral;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectManipulationDeferContactService *self, uint32 pointerId, uint32 timeout) DeferContact;
+				public function HRESULT(IDirectManipulationDeferContactService *self, uint32 pointerId) CancelContact;
+				public function HRESULT(IDirectManipulationDeferContactService *self, uint32 pointerId) CancelDeferral;
+			}
 		}
 		
 	}

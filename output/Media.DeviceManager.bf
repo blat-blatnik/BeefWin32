@@ -694,582 +694,872 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xec3b0663, 0x0951, 0x460a, 0x9a, 0x80, 0x0d, 0xce, 0xed, 0x3c, 0x04, 0x3c);
 			
-			public function HRESULT(IWMDMMetaData *self, WMDM_TAG_DATATYPE Type, PWSTR pwszTagName, uint8* pValue, uint32 iLength) AddItem;
-			public function HRESULT(IWMDMMetaData *self, PWSTR pwszTagName, WMDM_TAG_DATATYPE* pType, uint8** pValue, uint32* pcbLength) QueryByName;
-			public function HRESULT(IWMDMMetaData *self, uint32 iIndex, uint16** ppwszName, WMDM_TAG_DATATYPE* pType, uint8** ppValue, uint32* pcbLength) QueryByIndex;
-			public function HRESULT(IWMDMMetaData *self, uint32* iCount) GetItemCount;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWMDMMetaData *self, WMDM_TAG_DATATYPE Type, PWSTR pwszTagName, uint8* pValue, uint32 iLength) AddItem;
+				public function HRESULT(IWMDMMetaData *self, PWSTR pwszTagName, WMDM_TAG_DATATYPE* pType, uint8** pValue, uint32* pcbLength) QueryByName;
+				public function HRESULT(IWMDMMetaData *self, uint32 iIndex, uint16** ppwszName, WMDM_TAG_DATATYPE* pType, uint8** ppValue, uint32* pcbLength) QueryByIndex;
+				public function HRESULT(IWMDMMetaData *self, uint32* iCount) GetItemCount;
+			}
 		}
 		[CRepr]
 		public struct IWMDeviceManager : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a00, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IWMDeviceManager *self, uint32* pdwRevision) GetRevision;
-			public function HRESULT(IWMDeviceManager *self, uint32* pdwCount) GetDeviceCount;
-			public function HRESULT(IWMDeviceManager *self, IWMDMEnumDevice** ppEnumDevice) EnumDevices;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWMDeviceManager *self, uint32* pdwRevision) GetRevision;
+				public function HRESULT(IWMDeviceManager *self, uint32* pdwCount) GetDeviceCount;
+				public function HRESULT(IWMDeviceManager *self, IWMDMEnumDevice** ppEnumDevice) EnumDevices;
+			}
 		}
 		[CRepr]
 		public struct IWMDeviceManager2 : IWMDeviceManager
 		{
 			public const new Guid IID = .(0x923e5249, 0x8731, 0x4c5b, 0x9b, 0x1c, 0xb8, 0xb6, 0x0b, 0x6e, 0x46, 0xaf);
 			
-			public function HRESULT(IWMDeviceManager2 *self, PWSTR pwszCanonicalName, IWMDMDevice** ppDevice) GetDeviceFromCanonicalName;
-			public function HRESULT(IWMDeviceManager2 *self, IWMDMEnumDevice** ppEnumDevice) EnumDevices2;
-			public function HRESULT(IWMDeviceManager2 *self) Reinitialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWMDeviceManager.VTable
+			{
+				public function HRESULT(IWMDeviceManager2 *self, PWSTR pwszCanonicalName, IWMDMDevice** ppDevice) GetDeviceFromCanonicalName;
+				public function HRESULT(IWMDeviceManager2 *self, IWMDMEnumDevice** ppEnumDevice) EnumDevices2;
+				public function HRESULT(IWMDeviceManager2 *self) Reinitialize;
+			}
 		}
 		[CRepr]
 		public struct IWMDeviceManager3 : IWMDeviceManager2
 		{
 			public const new Guid IID = .(0xaf185c41, 0x100d, 0x46ed, 0xbe, 0x2e, 0x9c, 0xe8, 0xc4, 0x45, 0x94, 0xef);
 			
-			public function HRESULT(IWMDeviceManager3 *self, uint32 dwEnumPref) SetDeviceEnumPreference;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWMDeviceManager2.VTable
+			{
+				public function HRESULT(IWMDeviceManager3 *self, uint32 dwEnumPref) SetDeviceEnumPreference;
+			}
 		}
 		[CRepr]
 		public struct IWMDMStorageGlobals : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a07, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IWMDMStorageGlobals *self, uint32* pdwCapabilities) GetCapabilities;
-			public function HRESULT(IWMDMStorageGlobals *self, WMDMID* pSerialNum, uint8* abMac) GetSerialNumber;
-			public function HRESULT(IWMDMStorageGlobals *self, uint32* pdwTotalSizeLow, uint32* pdwTotalSizeHigh) GetTotalSize;
-			public function HRESULT(IWMDMStorageGlobals *self, uint32* pdwFreeLow, uint32* pdwFreeHigh) GetTotalFree;
-			public function HRESULT(IWMDMStorageGlobals *self, uint32* pdwBadLow, uint32* pdwBadHigh) GetTotalBad;
-			public function HRESULT(IWMDMStorageGlobals *self, uint32* pdwStatus) GetStatus;
-			public function HRESULT(IWMDMStorageGlobals *self, uint32 fuMode, IWMDMProgress* pProgress) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWMDMStorageGlobals *self, uint32* pdwCapabilities) GetCapabilities;
+				public function HRESULT(IWMDMStorageGlobals *self, WMDMID* pSerialNum, uint8* abMac) GetSerialNumber;
+				public function HRESULT(IWMDMStorageGlobals *self, uint32* pdwTotalSizeLow, uint32* pdwTotalSizeHigh) GetTotalSize;
+				public function HRESULT(IWMDMStorageGlobals *self, uint32* pdwFreeLow, uint32* pdwFreeHigh) GetTotalFree;
+				public function HRESULT(IWMDMStorageGlobals *self, uint32* pdwBadLow, uint32* pdwBadHigh) GetTotalBad;
+				public function HRESULT(IWMDMStorageGlobals *self, uint32* pdwStatus) GetStatus;
+				public function HRESULT(IWMDMStorageGlobals *self, uint32 fuMode, IWMDMProgress* pProgress) Initialize;
+			}
 		}
 		[CRepr]
 		public struct IWMDMStorage : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a06, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IWMDMStorage *self, uint32 dwAttributes, _WAVEFORMATEX* pFormat) SetAttributes;
-			public function HRESULT(IWMDMStorage *self, IWMDMStorageGlobals** ppStorageGlobals) GetStorageGlobals;
-			public function HRESULT(IWMDMStorage *self, uint32* pdwAttributes, _WAVEFORMATEX* pFormat) GetAttributes;
-			public function HRESULT(IWMDMStorage *self, char16* pwszName, uint32 nMaxChars) GetName;
-			public function HRESULT(IWMDMStorage *self, WMDMDATETIME* pDateTimeUTC) GetDate;
-			public function HRESULT(IWMDMStorage *self, uint32* pdwSizeLow, uint32* pdwSizeHigh) GetSize;
-			public function HRESULT(IWMDMStorage *self, WMDMRIGHTS** ppRights, uint32* pnRightsCount, uint8* abMac) GetRights;
-			public function HRESULT(IWMDMStorage *self, IWMDMEnumStorage** pEnumStorage) EnumStorage;
-			public function HRESULT(IWMDMStorage *self, OPAQUECOMMAND* pCommand) SendOpaqueCommand;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWMDMStorage *self, uint32 dwAttributes, _WAVEFORMATEX* pFormat) SetAttributes;
+				public function HRESULT(IWMDMStorage *self, IWMDMStorageGlobals** ppStorageGlobals) GetStorageGlobals;
+				public function HRESULT(IWMDMStorage *self, uint32* pdwAttributes, _WAVEFORMATEX* pFormat) GetAttributes;
+				public function HRESULT(IWMDMStorage *self, char16* pwszName, uint32 nMaxChars) GetName;
+				public function HRESULT(IWMDMStorage *self, WMDMDATETIME* pDateTimeUTC) GetDate;
+				public function HRESULT(IWMDMStorage *self, uint32* pdwSizeLow, uint32* pdwSizeHigh) GetSize;
+				public function HRESULT(IWMDMStorage *self, WMDMRIGHTS** ppRights, uint32* pnRightsCount, uint8* abMac) GetRights;
+				public function HRESULT(IWMDMStorage *self, IWMDMEnumStorage** pEnumStorage) EnumStorage;
+				public function HRESULT(IWMDMStorage *self, OPAQUECOMMAND* pCommand) SendOpaqueCommand;
+			}
 		}
 		[CRepr]
 		public struct IWMDMStorage2 : IWMDMStorage
 		{
 			public const new Guid IID = .(0x1ed5a144, 0x5cd5, 0x4683, 0x9e, 0xff, 0x72, 0xcb, 0xdb, 0x2d, 0x95, 0x33);
 			
-			public function HRESULT(IWMDMStorage2 *self, PWSTR pszStorageName, IWMDMStorage** ppStorage) GetStorage;
-			public function HRESULT(IWMDMStorage2 *self, uint32 dwAttributes, uint32 dwAttributesEx, _WAVEFORMATEX* pFormat, _VIDEOINFOHEADER* pVideoFormat) SetAttributes2;
-			public function HRESULT(IWMDMStorage2 *self, uint32* pdwAttributes, uint32* pdwAttributesEx, _WAVEFORMATEX* pAudioFormat, _VIDEOINFOHEADER* pVideoFormat) GetAttributes2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWMDMStorage.VTable
+			{
+				public function HRESULT(IWMDMStorage2 *self, PWSTR pszStorageName, IWMDMStorage** ppStorage) GetStorage;
+				public function HRESULT(IWMDMStorage2 *self, uint32 dwAttributes, uint32 dwAttributesEx, _WAVEFORMATEX* pFormat, _VIDEOINFOHEADER* pVideoFormat) SetAttributes2;
+				public function HRESULT(IWMDMStorage2 *self, uint32* pdwAttributes, uint32* pdwAttributesEx, _WAVEFORMATEX* pAudioFormat, _VIDEOINFOHEADER* pVideoFormat) GetAttributes2;
+			}
 		}
 		[CRepr]
 		public struct IWMDMStorage3 : IWMDMStorage2
 		{
 			public const new Guid IID = .(0x97717eea, 0x926a, 0x464e, 0x96, 0xa4, 0x24, 0x7b, 0x02, 0x16, 0x02, 0x6e);
 			
-			public function HRESULT(IWMDMStorage3 *self, IWMDMMetaData** ppMetadata) GetMetadata;
-			public function HRESULT(IWMDMStorage3 *self, IWMDMMetaData* pMetadata) SetMetadata;
-			public function HRESULT(IWMDMStorage3 *self, IWMDMMetaData** ppMetadata) CreateEmptyMetadataObject;
-			public function HRESULT(IWMDMStorage3 *self, WMDM_STORAGE_ENUM_MODE* pMode, uint32 nViews, WMDMMetadataView* pViews) SetEnumPreference;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWMDMStorage2.VTable
+			{
+				public function HRESULT(IWMDMStorage3 *self, IWMDMMetaData** ppMetadata) GetMetadata;
+				public function HRESULT(IWMDMStorage3 *self, IWMDMMetaData* pMetadata) SetMetadata;
+				public function HRESULT(IWMDMStorage3 *self, IWMDMMetaData** ppMetadata) CreateEmptyMetadataObject;
+				public function HRESULT(IWMDMStorage3 *self, WMDM_STORAGE_ENUM_MODE* pMode, uint32 nViews, WMDMMetadataView* pViews) SetEnumPreference;
+			}
 		}
 		[CRepr]
 		public struct IWMDMStorage4 : IWMDMStorage3
 		{
 			public const new Guid IID = .(0xc225bac5, 0xa03a, 0x40b8, 0x9a, 0x23, 0x91, 0xcf, 0x47, 0x8c, 0x64, 0xa6);
 			
-			public function HRESULT(IWMDMStorage4 *self, uint32 dwRefs, IWMDMStorage** ppIWMDMStorage) SetReferences;
-			public function HRESULT(IWMDMStorage4 *self, uint32* pdwRefs, IWMDMStorage*** pppIWMDMStorage) GetReferences;
-			public function HRESULT(IWMDMStorage4 *self, IWMDMProgress3* pIProgressCallback, WMDMRIGHTS** ppRights, uint32* pnRightsCount) GetRightsWithProgress;
-			public function HRESULT(IWMDMStorage4 *self, uint32 cProperties, PWSTR* ppwszPropNames, IWMDMMetaData** ppMetadata) GetSpecifiedMetadata;
-			public function HRESULT(IWMDMStorage4 *self, WMDM_FIND_SCOPE findScope, PWSTR pwszUniqueID, IWMDMStorage** ppStorage) FindStorage;
-			public function HRESULT(IWMDMStorage4 *self, IWMDMStorage** ppStorage) GetParent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWMDMStorage3.VTable
+			{
+				public function HRESULT(IWMDMStorage4 *self, uint32 dwRefs, IWMDMStorage** ppIWMDMStorage) SetReferences;
+				public function HRESULT(IWMDMStorage4 *self, uint32* pdwRefs, IWMDMStorage*** pppIWMDMStorage) GetReferences;
+				public function HRESULT(IWMDMStorage4 *self, IWMDMProgress3* pIProgressCallback, WMDMRIGHTS** ppRights, uint32* pnRightsCount) GetRightsWithProgress;
+				public function HRESULT(IWMDMStorage4 *self, uint32 cProperties, PWSTR* ppwszPropNames, IWMDMMetaData** ppMetadata) GetSpecifiedMetadata;
+				public function HRESULT(IWMDMStorage4 *self, WMDM_FIND_SCOPE findScope, PWSTR pwszUniqueID, IWMDMStorage** ppStorage) FindStorage;
+				public function HRESULT(IWMDMStorage4 *self, IWMDMStorage** ppStorage) GetParent;
+			}
 		}
 		[CRepr]
 		public struct IWMDMOperation : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a0b, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IWMDMOperation *self) BeginRead;
-			public function HRESULT(IWMDMOperation *self) BeginWrite;
-			public function HRESULT(IWMDMOperation *self, char16* pwszName, uint32 nMaxChars) GetObjectName;
-			public function HRESULT(IWMDMOperation *self, char16* pwszName, uint32 nMaxChars) SetObjectName;
-			public function HRESULT(IWMDMOperation *self, uint32* pdwAttributes, _WAVEFORMATEX* pFormat) GetObjectAttributes;
-			public function HRESULT(IWMDMOperation *self, uint32 dwAttributes, _WAVEFORMATEX* pFormat) SetObjectAttributes;
-			public function HRESULT(IWMDMOperation *self, uint32* pdwSize, uint32* pdwSizeHigh) GetObjectTotalSize;
-			public function HRESULT(IWMDMOperation *self, uint32 dwSize, uint32 dwSizeHigh) SetObjectTotalSize;
-			public function HRESULT(IWMDMOperation *self, uint8* pData, uint32* pdwSize, uint8* abMac) TransferObjectData;
-			public function HRESULT(IWMDMOperation *self, HRESULT* phCompletionCode, IUnknown* pNewObject) End;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWMDMOperation *self) BeginRead;
+				public function HRESULT(IWMDMOperation *self) BeginWrite;
+				public function HRESULT(IWMDMOperation *self, char16* pwszName, uint32 nMaxChars) GetObjectName;
+				public function HRESULT(IWMDMOperation *self, char16* pwszName, uint32 nMaxChars) SetObjectName;
+				public function HRESULT(IWMDMOperation *self, uint32* pdwAttributes, _WAVEFORMATEX* pFormat) GetObjectAttributes;
+				public function HRESULT(IWMDMOperation *self, uint32 dwAttributes, _WAVEFORMATEX* pFormat) SetObjectAttributes;
+				public function HRESULT(IWMDMOperation *self, uint32* pdwSize, uint32* pdwSizeHigh) GetObjectTotalSize;
+				public function HRESULT(IWMDMOperation *self, uint32 dwSize, uint32 dwSizeHigh) SetObjectTotalSize;
+				public function HRESULT(IWMDMOperation *self, uint8* pData, uint32* pdwSize, uint8* abMac) TransferObjectData;
+				public function HRESULT(IWMDMOperation *self, HRESULT* phCompletionCode, IUnknown* pNewObject) End;
+			}
 		}
 		[CRepr]
 		public struct IWMDMOperation2 : IWMDMOperation
 		{
 			public const new Guid IID = .(0x33445b48, 0x7df7, 0x425c, 0xad, 0x8f, 0x0f, 0xc6, 0xd8, 0x2f, 0x9f, 0x75);
 			
-			public function HRESULT(IWMDMOperation2 *self, uint32 dwAttributes, uint32 dwAttributesEx, _WAVEFORMATEX* pFormat, _VIDEOINFOHEADER* pVideoFormat) SetObjectAttributes2;
-			public function HRESULT(IWMDMOperation2 *self, uint32* pdwAttributes, uint32* pdwAttributesEx, _WAVEFORMATEX* pAudioFormat, _VIDEOINFOHEADER* pVideoFormat) GetObjectAttributes2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWMDMOperation.VTable
+			{
+				public function HRESULT(IWMDMOperation2 *self, uint32 dwAttributes, uint32 dwAttributesEx, _WAVEFORMATEX* pFormat, _VIDEOINFOHEADER* pVideoFormat) SetObjectAttributes2;
+				public function HRESULT(IWMDMOperation2 *self, uint32* pdwAttributes, uint32* pdwAttributesEx, _WAVEFORMATEX* pAudioFormat, _VIDEOINFOHEADER* pVideoFormat) GetObjectAttributes2;
+			}
 		}
 		[CRepr]
 		public struct IWMDMOperation3 : IWMDMOperation
 		{
 			public const new Guid IID = .(0xd1f9b46a, 0x9ca8, 0x46d8, 0x9d, 0x0f, 0x1e, 0xc9, 0xba, 0xe5, 0x49, 0x19);
 			
-			public function HRESULT(IWMDMOperation3 *self, uint8* pData, uint32* pdwSize) TransferObjectDataOnClearChannel;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWMDMOperation.VTable
+			{
+				public function HRESULT(IWMDMOperation3 *self, uint8* pData, uint32* pdwSize) TransferObjectDataOnClearChannel;
+			}
 		}
 		[CRepr]
 		public struct IWMDMProgress : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a0c, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IWMDMProgress *self, uint32 dwEstimatedTicks) Begin;
-			public function HRESULT(IWMDMProgress *self, uint32 dwTranspiredTicks) Progress;
-			public function HRESULT(IWMDMProgress *self) End;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWMDMProgress *self, uint32 dwEstimatedTicks) Begin;
+				public function HRESULT(IWMDMProgress *self, uint32 dwTranspiredTicks) Progress;
+				public function HRESULT(IWMDMProgress *self) End;
+			}
 		}
 		[CRepr]
 		public struct IWMDMProgress2 : IWMDMProgress
 		{
 			public const new Guid IID = .(0x3a43f550, 0xb383, 0x4e92, 0xb0, 0x4a, 0xe6, 0xbb, 0xc6, 0x60, 0xfe, 0xfc);
 			
-			public function HRESULT(IWMDMProgress2 *self, HRESULT hrCompletionCode) End2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWMDMProgress.VTable
+			{
+				public function HRESULT(IWMDMProgress2 *self, HRESULT hrCompletionCode) End2;
+			}
 		}
 		[CRepr]
 		public struct IWMDMProgress3 : IWMDMProgress2
 		{
 			public const new Guid IID = .(0x21de01cb, 0x3bb4, 0x4929, 0xb2, 0x1a, 0x17, 0xaf, 0x3f, 0x80, 0xf6, 0x58);
 			
-			public function HRESULT(IWMDMProgress3 *self, Guid EventId, uint32 dwEstimatedTicks, OPAQUECOMMAND* pContext) Begin3;
-			public function HRESULT(IWMDMProgress3 *self, Guid EventId, uint32 dwTranspiredTicks, OPAQUECOMMAND* pContext) Progress3;
-			public function HRESULT(IWMDMProgress3 *self, Guid EventId, HRESULT hrCompletionCode, OPAQUECOMMAND* pContext) End3;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWMDMProgress2.VTable
+			{
+				public function HRESULT(IWMDMProgress3 *self, Guid EventId, uint32 dwEstimatedTicks, OPAQUECOMMAND* pContext) Begin3;
+				public function HRESULT(IWMDMProgress3 *self, Guid EventId, uint32 dwTranspiredTicks, OPAQUECOMMAND* pContext) Progress3;
+				public function HRESULT(IWMDMProgress3 *self, Guid EventId, HRESULT hrCompletionCode, OPAQUECOMMAND* pContext) End3;
+			}
 		}
 		[CRepr]
 		public struct IWMDMDevice : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a02, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IWMDMDevice *self, char16* pwszName, uint32 nMaxChars) GetName;
-			public function HRESULT(IWMDMDevice *self, char16* pwszName, uint32 nMaxChars) GetManufacturer;
-			public function HRESULT(IWMDMDevice *self, uint32* pdwVersion) GetVersion;
-			public function HRESULT(IWMDMDevice *self, uint32* pdwType) GetType;
-			public function HRESULT(IWMDMDevice *self, WMDMID* pSerialNumber, uint8* abMac) GetSerialNumber;
-			public function HRESULT(IWMDMDevice *self, uint32* pdwPowerSource, uint32* pdwPercentRemaining) GetPowerSource;
-			public function HRESULT(IWMDMDevice *self, uint32* pdwStatus) GetStatus;
-			public function HRESULT(IWMDMDevice *self, uint32* hIcon) GetDeviceIcon;
-			public function HRESULT(IWMDMDevice *self, IWMDMEnumStorage** ppEnumStorage) EnumStorage;
-			public function HRESULT(IWMDMDevice *self, _WAVEFORMATEX** ppFormatEx, uint32* pnFormatCount, PWSTR** pppwszMimeType, uint32* pnMimeTypeCount) GetFormatSupport;
-			public function HRESULT(IWMDMDevice *self, OPAQUECOMMAND* pCommand) SendOpaqueCommand;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWMDMDevice *self, char16* pwszName, uint32 nMaxChars) GetName;
+				public function HRESULT(IWMDMDevice *self, char16* pwszName, uint32 nMaxChars) GetManufacturer;
+				public function HRESULT(IWMDMDevice *self, uint32* pdwVersion) GetVersion;
+				public function HRESULT(IWMDMDevice *self, uint32* pdwType) GetType;
+				public function HRESULT(IWMDMDevice *self, WMDMID* pSerialNumber, uint8* abMac) GetSerialNumber;
+				public function HRESULT(IWMDMDevice *self, uint32* pdwPowerSource, uint32* pdwPercentRemaining) GetPowerSource;
+				public function HRESULT(IWMDMDevice *self, uint32* pdwStatus) GetStatus;
+				public function HRESULT(IWMDMDevice *self, uint32* hIcon) GetDeviceIcon;
+				public function HRESULT(IWMDMDevice *self, IWMDMEnumStorage** ppEnumStorage) EnumStorage;
+				public function HRESULT(IWMDMDevice *self, _WAVEFORMATEX** ppFormatEx, uint32* pnFormatCount, PWSTR** pppwszMimeType, uint32* pnMimeTypeCount) GetFormatSupport;
+				public function HRESULT(IWMDMDevice *self, OPAQUECOMMAND* pCommand) SendOpaqueCommand;
+			}
 		}
 		[CRepr]
 		public struct IWMDMDevice2 : IWMDMDevice
 		{
 			public const new Guid IID = .(0xe34f3d37, 0x9d67, 0x4fc1, 0x92, 0x52, 0x62, 0xd2, 0x8b, 0x2f, 0x8b, 0x55);
 			
-			public function HRESULT(IWMDMDevice2 *self, PWSTR pszStorageName, IWMDMStorage** ppStorage) GetStorage;
-			public function HRESULT(IWMDMDevice2 *self, uint32 dwFlags, _WAVEFORMATEX** ppAudioFormatEx, uint32* pnAudioFormatCount, _VIDEOINFOHEADER** ppVideoFormatEx, uint32* pnVideoFormatCount, WMFILECAPABILITIES** ppFileType, uint32* pnFileTypeCount) GetFormatSupport2;
-			public function HRESULT(IWMDMDevice2 *self, ISpecifyPropertyPages** ppSpecifyPropPages, IUnknown*** pppUnknowns, uint32* pcUnks) GetSpecifyPropertyPages;
-			public function HRESULT(IWMDMDevice2 *self, char16* pwszPnPName, uint32 nMaxChars) GetCanonicalName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWMDMDevice.VTable
+			{
+				public function HRESULT(IWMDMDevice2 *self, PWSTR pszStorageName, IWMDMStorage** ppStorage) GetStorage;
+				public function HRESULT(IWMDMDevice2 *self, uint32 dwFlags, _WAVEFORMATEX** ppAudioFormatEx, uint32* pnAudioFormatCount, _VIDEOINFOHEADER** ppVideoFormatEx, uint32* pnVideoFormatCount, WMFILECAPABILITIES** ppFileType, uint32* pnFileTypeCount) GetFormatSupport2;
+				public function HRESULT(IWMDMDevice2 *self, ISpecifyPropertyPages** ppSpecifyPropPages, IUnknown*** pppUnknowns, uint32* pcUnks) GetSpecifyPropertyPages;
+				public function HRESULT(IWMDMDevice2 *self, char16* pwszPnPName, uint32 nMaxChars) GetCanonicalName;
+			}
 		}
 		[CRepr]
 		public struct IWMDMDevice3 : IWMDMDevice2
 		{
 			public const new Guid IID = .(0x6c03e4fe, 0x05db, 0x4dda, 0x9e, 0x3c, 0x06, 0x23, 0x3a, 0x6d, 0x5d, 0x65);
 			
-			public function HRESULT(IWMDMDevice3 *self, PWSTR pwszPropName, PROPVARIANT* pValue) GetProperty;
-			public function HRESULT(IWMDMDevice3 *self, PWSTR pwszPropName, PROPVARIANT* pValue) SetProperty;
-			public function HRESULT(IWMDMDevice3 *self, WMDM_FORMATCODE format, WMDM_FORMAT_CAPABILITY* pFormatSupport) GetFormatCapability;
-			public function HRESULT(IWMDMDevice3 *self, uint32 dwIoControlCode, uint8* lpInBuffer, uint32 nInBufferSize, uint8* lpOutBuffer, uint32* pnOutBufferSize) DeviceIoControl;
-			public function HRESULT(IWMDMDevice3 *self, WMDM_FIND_SCOPE findScope, PWSTR pwszUniqueID, IWMDMStorage** ppStorage) FindStorage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWMDMDevice2.VTable
+			{
+				public function HRESULT(IWMDMDevice3 *self, PWSTR pwszPropName, PROPVARIANT* pValue) GetProperty;
+				public function HRESULT(IWMDMDevice3 *self, PWSTR pwszPropName, PROPVARIANT* pValue) SetProperty;
+				public function HRESULT(IWMDMDevice3 *self, WMDM_FORMATCODE format, WMDM_FORMAT_CAPABILITY* pFormatSupport) GetFormatCapability;
+				public function HRESULT(IWMDMDevice3 *self, uint32 dwIoControlCode, uint8* lpInBuffer, uint32 nInBufferSize, uint8* lpOutBuffer, uint32* pnOutBufferSize) DeviceIoControl;
+				public function HRESULT(IWMDMDevice3 *self, WMDM_FIND_SCOPE findScope, PWSTR pwszUniqueID, IWMDMStorage** ppStorage) FindStorage;
+			}
 		}
 		[CRepr]
 		public struct IWMDMDeviceSession : IUnknown
 		{
 			public const new Guid IID = .(0x82af0a65, 0x9d96, 0x412c, 0x83, 0xe5, 0x3c, 0x43, 0xe4, 0xb0, 0x6c, 0xc7);
 			
-			public function HRESULT(IWMDMDeviceSession *self, WMDM_SESSION_TYPE type, uint8* pCtx, uint32 dwSizeCtx) BeginSession;
-			public function HRESULT(IWMDMDeviceSession *self, WMDM_SESSION_TYPE type, uint8* pCtx, uint32 dwSizeCtx) EndSession;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWMDMDeviceSession *self, WMDM_SESSION_TYPE type, uint8* pCtx, uint32 dwSizeCtx) BeginSession;
+				public function HRESULT(IWMDMDeviceSession *self, WMDM_SESSION_TYPE type, uint8* pCtx, uint32 dwSizeCtx) EndSession;
+			}
 		}
 		[CRepr]
 		public struct IWMDMEnumDevice : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a01, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IWMDMEnumDevice *self, uint32 celt, IWMDMDevice** ppDevice, uint32* pceltFetched) Next;
-			public function HRESULT(IWMDMEnumDevice *self, uint32 celt, uint32* pceltFetched) Skip;
-			public function HRESULT(IWMDMEnumDevice *self) Reset;
-			public function HRESULT(IWMDMEnumDevice *self, IWMDMEnumDevice** ppEnumDevice) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWMDMEnumDevice *self, uint32 celt, IWMDMDevice** ppDevice, uint32* pceltFetched) Next;
+				public function HRESULT(IWMDMEnumDevice *self, uint32 celt, uint32* pceltFetched) Skip;
+				public function HRESULT(IWMDMEnumDevice *self) Reset;
+				public function HRESULT(IWMDMEnumDevice *self, IWMDMEnumDevice** ppEnumDevice) Clone;
+			}
 		}
 		[CRepr]
 		public struct IWMDMDeviceControl : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a04, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IWMDMDeviceControl *self, uint32* pdwStatus) GetStatus;
-			public function HRESULT(IWMDMDeviceControl *self, uint32* pdwCapabilitiesMask) GetCapabilities;
-			public function HRESULT(IWMDMDeviceControl *self) Play;
-			public function HRESULT(IWMDMDeviceControl *self, _WAVEFORMATEX* pFormat) Record;
-			public function HRESULT(IWMDMDeviceControl *self) Pause;
-			public function HRESULT(IWMDMDeviceControl *self) Resume;
-			public function HRESULT(IWMDMDeviceControl *self) Stop;
-			public function HRESULT(IWMDMDeviceControl *self, uint32 fuMode, int32 nOffset) Seek;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWMDMDeviceControl *self, uint32* pdwStatus) GetStatus;
+				public function HRESULT(IWMDMDeviceControl *self, uint32* pdwCapabilitiesMask) GetCapabilities;
+				public function HRESULT(IWMDMDeviceControl *self) Play;
+				public function HRESULT(IWMDMDeviceControl *self, _WAVEFORMATEX* pFormat) Record;
+				public function HRESULT(IWMDMDeviceControl *self) Pause;
+				public function HRESULT(IWMDMDeviceControl *self) Resume;
+				public function HRESULT(IWMDMDeviceControl *self) Stop;
+				public function HRESULT(IWMDMDeviceControl *self, uint32 fuMode, int32 nOffset) Seek;
+			}
 		}
 		[CRepr]
 		public struct IWMDMEnumStorage : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a05, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IWMDMEnumStorage *self, uint32 celt, IWMDMStorage** ppStorage, uint32* pceltFetched) Next;
-			public function HRESULT(IWMDMEnumStorage *self, uint32 celt, uint32* pceltFetched) Skip;
-			public function HRESULT(IWMDMEnumStorage *self) Reset;
-			public function HRESULT(IWMDMEnumStorage *self, IWMDMEnumStorage** ppEnumStorage) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWMDMEnumStorage *self, uint32 celt, IWMDMStorage** ppStorage, uint32* pceltFetched) Next;
+				public function HRESULT(IWMDMEnumStorage *self, uint32 celt, uint32* pceltFetched) Skip;
+				public function HRESULT(IWMDMEnumStorage *self) Reset;
+				public function HRESULT(IWMDMEnumStorage *self, IWMDMEnumStorage** ppEnumStorage) Clone;
+			}
 		}
 		[CRepr]
 		public struct IWMDMStorageControl : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a08, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IWMDMStorageControl *self, uint32 fuMode, PWSTR pwszFile, IWMDMOperation* pOperation, IWMDMProgress* pProgress, IWMDMStorage** ppNewObject) Insert;
-			public function HRESULT(IWMDMStorageControl *self, uint32 fuMode, IWMDMProgress* pProgress) Delete;
-			public function HRESULT(IWMDMStorageControl *self, uint32 fuMode, PWSTR pwszNewName, IWMDMProgress* pProgress) Rename;
-			public function HRESULT(IWMDMStorageControl *self, uint32 fuMode, PWSTR pwszFile, IWMDMProgress* pProgress, IWMDMOperation* pOperation) Read;
-			public function HRESULT(IWMDMStorageControl *self, uint32 fuMode, IWMDMStorage* pTargetObject, IWMDMProgress* pProgress) Move;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWMDMStorageControl *self, uint32 fuMode, PWSTR pwszFile, IWMDMOperation* pOperation, IWMDMProgress* pProgress, IWMDMStorage** ppNewObject) Insert;
+				public function HRESULT(IWMDMStorageControl *self, uint32 fuMode, IWMDMProgress* pProgress) Delete;
+				public function HRESULT(IWMDMStorageControl *self, uint32 fuMode, PWSTR pwszNewName, IWMDMProgress* pProgress) Rename;
+				public function HRESULT(IWMDMStorageControl *self, uint32 fuMode, PWSTR pwszFile, IWMDMProgress* pProgress, IWMDMOperation* pOperation) Read;
+				public function HRESULT(IWMDMStorageControl *self, uint32 fuMode, IWMDMStorage* pTargetObject, IWMDMProgress* pProgress) Move;
+			}
 		}
 		[CRepr]
 		public struct IWMDMStorageControl2 : IWMDMStorageControl
 		{
 			public const new Guid IID = .(0x972c2e88, 0xbd6c, 0x4125, 0x8e, 0x09, 0x84, 0xf8, 0x37, 0xe6, 0x37, 0xb6);
 			
-			public function HRESULT(IWMDMStorageControl2 *self, uint32 fuMode, PWSTR pwszFileSource, PWSTR pwszFileDest, IWMDMOperation* pOperation, IWMDMProgress* pProgress, IUnknown* pUnknown, IWMDMStorage** ppNewObject) Insert2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWMDMStorageControl.VTable
+			{
+				public function HRESULT(IWMDMStorageControl2 *self, uint32 fuMode, PWSTR pwszFileSource, PWSTR pwszFileDest, IWMDMOperation* pOperation, IWMDMProgress* pProgress, IUnknown* pUnknown, IWMDMStorage** ppNewObject) Insert2;
+			}
 		}
 		[CRepr]
 		public struct IWMDMStorageControl3 : IWMDMStorageControl2
 		{
 			public const new Guid IID = .(0xb3266365, 0xd4f3, 0x4696, 0x8d, 0x53, 0xbd, 0x27, 0xec, 0x60, 0x99, 0x3a);
 			
-			public function HRESULT(IWMDMStorageControl3 *self, uint32 fuMode, uint32 fuType, PWSTR pwszFileSource, PWSTR pwszFileDest, IWMDMOperation* pOperation, IWMDMProgress* pProgress, IWMDMMetaData* pMetaData, IUnknown* pUnknown, IWMDMStorage** ppNewObject) Insert3;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWMDMStorageControl2.VTable
+			{
+				public function HRESULT(IWMDMStorageControl3 *self, uint32 fuMode, uint32 fuType, PWSTR pwszFileSource, PWSTR pwszFileDest, IWMDMOperation* pOperation, IWMDMProgress* pProgress, IWMDMMetaData* pMetaData, IUnknown* pUnknown, IWMDMStorage** ppNewObject) Insert3;
+			}
 		}
 		[CRepr]
 		public struct IWMDMObjectInfo : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a09, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IWMDMObjectInfo *self, uint32* pdwLength) GetPlayLength;
-			public function HRESULT(IWMDMObjectInfo *self, uint32 dwLength) SetPlayLength;
-			public function HRESULT(IWMDMObjectInfo *self, uint32* pdwOffset) GetPlayOffset;
-			public function HRESULT(IWMDMObjectInfo *self, uint32 dwOffset) SetPlayOffset;
-			public function HRESULT(IWMDMObjectInfo *self, uint32* pdwLength) GetTotalLength;
-			public function HRESULT(IWMDMObjectInfo *self, uint32* pdwLastPos) GetLastPlayPosition;
-			public function HRESULT(IWMDMObjectInfo *self, uint32* pdwLongestPos) GetLongestPlayPosition;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWMDMObjectInfo *self, uint32* pdwLength) GetPlayLength;
+				public function HRESULT(IWMDMObjectInfo *self, uint32 dwLength) SetPlayLength;
+				public function HRESULT(IWMDMObjectInfo *self, uint32* pdwOffset) GetPlayOffset;
+				public function HRESULT(IWMDMObjectInfo *self, uint32 dwOffset) SetPlayOffset;
+				public function HRESULT(IWMDMObjectInfo *self, uint32* pdwLength) GetTotalLength;
+				public function HRESULT(IWMDMObjectInfo *self, uint32* pdwLastPos) GetLastPlayPosition;
+				public function HRESULT(IWMDMObjectInfo *self, uint32* pdwLongestPos) GetLongestPlayPosition;
+			}
 		}
 		[CRepr]
 		public struct IWMDMRevoked : IUnknown
 		{
 			public const new Guid IID = .(0xebeccedb, 0x88ee, 0x4e55, 0xb6, 0xa4, 0x8d, 0x9f, 0x07, 0xd6, 0x96, 0xaa);
 			
-			public function HRESULT(IWMDMRevoked *self, PWSTR* ppwszRevocationURL, uint32* pdwBufferLen, uint32* pdwRevokedBitFlag) GetRevocationURL;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWMDMRevoked *self, PWSTR* ppwszRevocationURL, uint32* pdwBufferLen, uint32* pdwRevokedBitFlag) GetRevocationURL;
+			}
 		}
 		[CRepr]
 		public struct IWMDMNotification : IUnknown
 		{
 			public const new Guid IID = .(0x3f5e95c0, 0x0f43, 0x4ed4, 0x93, 0xd2, 0xc8, 0x9a, 0x45, 0xd5, 0x9b, 0x81);
 			
-			public function HRESULT(IWMDMNotification *self, uint32 dwMessageType, PWSTR pwszCanonicalName) WMDMMessage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWMDMNotification *self, uint32 dwMessageType, PWSTR pwszCanonicalName) WMDMMessage;
+			}
 		}
 		[CRepr]
 		public struct IMDServiceProvider : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a10, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IMDServiceProvider *self, uint32* pdwCount) GetDeviceCount;
-			public function HRESULT(IMDServiceProvider *self, IMDSPEnumDevice** ppEnumDevice) EnumDevices;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMDServiceProvider *self, uint32* pdwCount) GetDeviceCount;
+				public function HRESULT(IMDServiceProvider *self, IMDSPEnumDevice** ppEnumDevice) EnumDevices;
+			}
 		}
 		[CRepr]
 		public struct IMDServiceProvider2 : IMDServiceProvider
 		{
 			public const new Guid IID = .(0xb2fa24b7, 0xcda3, 0x4694, 0x98, 0x62, 0x41, 0x3a, 0xe1, 0xa3, 0x48, 0x19);
 			
-			public function HRESULT(IMDServiceProvider2 *self, PWSTR pwszDevicePath, uint32* pdwCount, IMDSPDevice*** pppDeviceArray) CreateDevice;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMDServiceProvider.VTable
+			{
+				public function HRESULT(IMDServiceProvider2 *self, PWSTR pwszDevicePath, uint32* pdwCount, IMDSPDevice*** pppDeviceArray) CreateDevice;
+			}
 		}
 		[CRepr]
 		public struct IMDServiceProvider3 : IMDServiceProvider2
 		{
 			public const new Guid IID = .(0x4ed13ef3, 0xa971, 0x4d19, 0x9f, 0x51, 0x0e, 0x18, 0x26, 0xb2, 0xda, 0x57);
 			
-			public function HRESULT(IMDServiceProvider3 *self, uint32 dwEnumPref) SetDeviceEnumPreference;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMDServiceProvider2.VTable
+			{
+				public function HRESULT(IMDServiceProvider3 *self, uint32 dwEnumPref) SetDeviceEnumPreference;
+			}
 		}
 		[CRepr]
 		public struct IMDSPEnumDevice : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a11, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IMDSPEnumDevice *self, uint32 celt, IMDSPDevice** ppDevice, uint32* pceltFetched) Next;
-			public function HRESULT(IMDSPEnumDevice *self, uint32 celt, uint32* pceltFetched) Skip;
-			public function HRESULT(IMDSPEnumDevice *self) Reset;
-			public function HRESULT(IMDSPEnumDevice *self, IMDSPEnumDevice** ppEnumDevice) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMDSPEnumDevice *self, uint32 celt, IMDSPDevice** ppDevice, uint32* pceltFetched) Next;
+				public function HRESULT(IMDSPEnumDevice *self, uint32 celt, uint32* pceltFetched) Skip;
+				public function HRESULT(IMDSPEnumDevice *self) Reset;
+				public function HRESULT(IMDSPEnumDevice *self, IMDSPEnumDevice** ppEnumDevice) Clone;
+			}
 		}
 		[CRepr]
 		public struct IMDSPDevice : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a12, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IMDSPDevice *self, char16* pwszName, uint32 nMaxChars) GetName;
-			public function HRESULT(IMDSPDevice *self, char16* pwszName, uint32 nMaxChars) GetManufacturer;
-			public function HRESULT(IMDSPDevice *self, uint32* pdwVersion) GetVersion;
-			public function HRESULT(IMDSPDevice *self, uint32* pdwType) GetType;
-			public function HRESULT(IMDSPDevice *self, WMDMID* pSerialNumber, uint8* abMac) GetSerialNumber;
-			public function HRESULT(IMDSPDevice *self, uint32* pdwPowerSource, uint32* pdwPercentRemaining) GetPowerSource;
-			public function HRESULT(IMDSPDevice *self, uint32* pdwStatus) GetStatus;
-			public function HRESULT(IMDSPDevice *self, uint32* hIcon) GetDeviceIcon;
-			public function HRESULT(IMDSPDevice *self, IMDSPEnumStorage** ppEnumStorage) EnumStorage;
-			public function HRESULT(IMDSPDevice *self, _WAVEFORMATEX** pFormatEx, uint32* pnFormatCount, PWSTR** pppwszMimeType, uint32* pnMimeTypeCount) GetFormatSupport;
-			public function HRESULT(IMDSPDevice *self, OPAQUECOMMAND* pCommand) SendOpaqueCommand;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMDSPDevice *self, char16* pwszName, uint32 nMaxChars) GetName;
+				public function HRESULT(IMDSPDevice *self, char16* pwszName, uint32 nMaxChars) GetManufacturer;
+				public function HRESULT(IMDSPDevice *self, uint32* pdwVersion) GetVersion;
+				public function HRESULT(IMDSPDevice *self, uint32* pdwType) GetType;
+				public function HRESULT(IMDSPDevice *self, WMDMID* pSerialNumber, uint8* abMac) GetSerialNumber;
+				public function HRESULT(IMDSPDevice *self, uint32* pdwPowerSource, uint32* pdwPercentRemaining) GetPowerSource;
+				public function HRESULT(IMDSPDevice *self, uint32* pdwStatus) GetStatus;
+				public function HRESULT(IMDSPDevice *self, uint32* hIcon) GetDeviceIcon;
+				public function HRESULT(IMDSPDevice *self, IMDSPEnumStorage** ppEnumStorage) EnumStorage;
+				public function HRESULT(IMDSPDevice *self, _WAVEFORMATEX** pFormatEx, uint32* pnFormatCount, PWSTR** pppwszMimeType, uint32* pnMimeTypeCount) GetFormatSupport;
+				public function HRESULT(IMDSPDevice *self, OPAQUECOMMAND* pCommand) SendOpaqueCommand;
+			}
 		}
 		[CRepr]
 		public struct IMDSPDevice2 : IMDSPDevice
 		{
 			public const new Guid IID = .(0x420d16ad, 0xc97d, 0x4e00, 0x82, 0xaa, 0x00, 0xe9, 0xf4, 0x33, 0x5d, 0xdd);
 			
-			public function HRESULT(IMDSPDevice2 *self, PWSTR pszStorageName, IMDSPStorage** ppStorage) GetStorage;
-			public function HRESULT(IMDSPDevice2 *self, uint32 dwFlags, _WAVEFORMATEX** ppAudioFormatEx, uint32* pnAudioFormatCount, _VIDEOINFOHEADER** ppVideoFormatEx, uint32* pnVideoFormatCount, WMFILECAPABILITIES** ppFileType, uint32* pnFileTypeCount) GetFormatSupport2;
-			public function HRESULT(IMDSPDevice2 *self, ISpecifyPropertyPages** ppSpecifyPropPages, IUnknown*** pppUnknowns, uint32* pcUnks) GetSpecifyPropertyPages;
-			public function HRESULT(IMDSPDevice2 *self, char16* pwszPnPName, uint32 nMaxChars) GetCanonicalName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMDSPDevice.VTable
+			{
+				public function HRESULT(IMDSPDevice2 *self, PWSTR pszStorageName, IMDSPStorage** ppStorage) GetStorage;
+				public function HRESULT(IMDSPDevice2 *self, uint32 dwFlags, _WAVEFORMATEX** ppAudioFormatEx, uint32* pnAudioFormatCount, _VIDEOINFOHEADER** ppVideoFormatEx, uint32* pnVideoFormatCount, WMFILECAPABILITIES** ppFileType, uint32* pnFileTypeCount) GetFormatSupport2;
+				public function HRESULT(IMDSPDevice2 *self, ISpecifyPropertyPages** ppSpecifyPropPages, IUnknown*** pppUnknowns, uint32* pcUnks) GetSpecifyPropertyPages;
+				public function HRESULT(IMDSPDevice2 *self, char16* pwszPnPName, uint32 nMaxChars) GetCanonicalName;
+			}
 		}
 		[CRepr]
 		public struct IMDSPDevice3 : IMDSPDevice2
 		{
 			public const new Guid IID = .(0x1a839845, 0xfc55, 0x487c, 0x97, 0x6f, 0xee, 0x38, 0xac, 0x0e, 0x8c, 0x4e);
 			
-			public function HRESULT(IMDSPDevice3 *self, PWSTR pwszPropName, PROPVARIANT* pValue) GetProperty;
-			public function HRESULT(IMDSPDevice3 *self, PWSTR pwszPropName, PROPVARIANT* pValue) SetProperty;
-			public function HRESULT(IMDSPDevice3 *self, WMDM_FORMATCODE format, WMDM_FORMAT_CAPABILITY* pFormatSupport) GetFormatCapability;
-			public function HRESULT(IMDSPDevice3 *self, uint32 dwIoControlCode, uint8* lpInBuffer, uint32 nInBufferSize, uint8* lpOutBuffer, uint32* pnOutBufferSize) DeviceIoControl;
-			public function HRESULT(IMDSPDevice3 *self, WMDM_FIND_SCOPE findScope, PWSTR pwszUniqueID, IMDSPStorage** ppStorage) FindStorage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMDSPDevice2.VTable
+			{
+				public function HRESULT(IMDSPDevice3 *self, PWSTR pwszPropName, PROPVARIANT* pValue) GetProperty;
+				public function HRESULT(IMDSPDevice3 *self, PWSTR pwszPropName, PROPVARIANT* pValue) SetProperty;
+				public function HRESULT(IMDSPDevice3 *self, WMDM_FORMATCODE format, WMDM_FORMAT_CAPABILITY* pFormatSupport) GetFormatCapability;
+				public function HRESULT(IMDSPDevice3 *self, uint32 dwIoControlCode, uint8* lpInBuffer, uint32 nInBufferSize, uint8* lpOutBuffer, uint32* pnOutBufferSize) DeviceIoControl;
+				public function HRESULT(IMDSPDevice3 *self, WMDM_FIND_SCOPE findScope, PWSTR pwszUniqueID, IMDSPStorage** ppStorage) FindStorage;
+			}
 		}
 		[CRepr]
 		public struct IMDSPDeviceControl : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a14, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IMDSPDeviceControl *self, uint32* pdwStatus) GetDCStatus;
-			public function HRESULT(IMDSPDeviceControl *self, uint32* pdwCapabilitiesMask) GetCapabilities;
-			public function HRESULT(IMDSPDeviceControl *self) Play;
-			public function HRESULT(IMDSPDeviceControl *self, _WAVEFORMATEX* pFormat) Record;
-			public function HRESULT(IMDSPDeviceControl *self) Pause;
-			public function HRESULT(IMDSPDeviceControl *self) Resume;
-			public function HRESULT(IMDSPDeviceControl *self) Stop;
-			public function HRESULT(IMDSPDeviceControl *self, uint32 fuMode, int32 nOffset) Seek;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMDSPDeviceControl *self, uint32* pdwStatus) GetDCStatus;
+				public function HRESULT(IMDSPDeviceControl *self, uint32* pdwCapabilitiesMask) GetCapabilities;
+				public function HRESULT(IMDSPDeviceControl *self) Play;
+				public function HRESULT(IMDSPDeviceControl *self, _WAVEFORMATEX* pFormat) Record;
+				public function HRESULT(IMDSPDeviceControl *self) Pause;
+				public function HRESULT(IMDSPDeviceControl *self) Resume;
+				public function HRESULT(IMDSPDeviceControl *self) Stop;
+				public function HRESULT(IMDSPDeviceControl *self, uint32 fuMode, int32 nOffset) Seek;
+			}
 		}
 		[CRepr]
 		public struct IMDSPEnumStorage : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a15, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IMDSPEnumStorage *self, uint32 celt, IMDSPStorage** ppStorage, uint32* pceltFetched) Next;
-			public function HRESULT(IMDSPEnumStorage *self, uint32 celt, uint32* pceltFetched) Skip;
-			public function HRESULT(IMDSPEnumStorage *self) Reset;
-			public function HRESULT(IMDSPEnumStorage *self, IMDSPEnumStorage** ppEnumStorage) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMDSPEnumStorage *self, uint32 celt, IMDSPStorage** ppStorage, uint32* pceltFetched) Next;
+				public function HRESULT(IMDSPEnumStorage *self, uint32 celt, uint32* pceltFetched) Skip;
+				public function HRESULT(IMDSPEnumStorage *self) Reset;
+				public function HRESULT(IMDSPEnumStorage *self, IMDSPEnumStorage** ppEnumStorage) Clone;
+			}
 		}
 		[CRepr]
 		public struct IMDSPStorage : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a16, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IMDSPStorage *self, uint32 dwAttributes, _WAVEFORMATEX* pFormat) SetAttributes;
-			public function HRESULT(IMDSPStorage *self, IMDSPStorageGlobals** ppStorageGlobals) GetStorageGlobals;
-			public function HRESULT(IMDSPStorage *self, uint32* pdwAttributes, _WAVEFORMATEX* pFormat) GetAttributes;
-			public function HRESULT(IMDSPStorage *self, char16* pwszName, uint32 nMaxChars) GetName;
-			public function HRESULT(IMDSPStorage *self, WMDMDATETIME* pDateTimeUTC) GetDate;
-			public function HRESULT(IMDSPStorage *self, uint32* pdwSizeLow, uint32* pdwSizeHigh) GetSize;
-			public function HRESULT(IMDSPStorage *self, WMDMRIGHTS** ppRights, uint32* pnRightsCount, uint8* abMac) GetRights;
-			public function HRESULT(IMDSPStorage *self, uint32 dwAttributes, _WAVEFORMATEX* pFormat, PWSTR pwszName, IMDSPStorage** ppNewStorage) CreateStorage;
-			public function HRESULT(IMDSPStorage *self, IMDSPEnumStorage** ppEnumStorage) EnumStorage;
-			public function HRESULT(IMDSPStorage *self, OPAQUECOMMAND* pCommand) SendOpaqueCommand;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMDSPStorage *self, uint32 dwAttributes, _WAVEFORMATEX* pFormat) SetAttributes;
+				public function HRESULT(IMDSPStorage *self, IMDSPStorageGlobals** ppStorageGlobals) GetStorageGlobals;
+				public function HRESULT(IMDSPStorage *self, uint32* pdwAttributes, _WAVEFORMATEX* pFormat) GetAttributes;
+				public function HRESULT(IMDSPStorage *self, char16* pwszName, uint32 nMaxChars) GetName;
+				public function HRESULT(IMDSPStorage *self, WMDMDATETIME* pDateTimeUTC) GetDate;
+				public function HRESULT(IMDSPStorage *self, uint32* pdwSizeLow, uint32* pdwSizeHigh) GetSize;
+				public function HRESULT(IMDSPStorage *self, WMDMRIGHTS** ppRights, uint32* pnRightsCount, uint8* abMac) GetRights;
+				public function HRESULT(IMDSPStorage *self, uint32 dwAttributes, _WAVEFORMATEX* pFormat, PWSTR pwszName, IMDSPStorage** ppNewStorage) CreateStorage;
+				public function HRESULT(IMDSPStorage *self, IMDSPEnumStorage** ppEnumStorage) EnumStorage;
+				public function HRESULT(IMDSPStorage *self, OPAQUECOMMAND* pCommand) SendOpaqueCommand;
+			}
 		}
 		[CRepr]
 		public struct IMDSPStorage2 : IMDSPStorage
 		{
 			public const new Guid IID = .(0x0a5e07a5, 0x6454, 0x4451, 0x9c, 0x36, 0x1c, 0x6a, 0xe7, 0xe2, 0xb1, 0xd6);
 			
-			public function HRESULT(IMDSPStorage2 *self, PWSTR pszStorageName, IMDSPStorage** ppStorage) GetStorage;
-			public function HRESULT(IMDSPStorage2 *self, uint32 dwAttributes, uint32 dwAttributesEx, _WAVEFORMATEX* pAudioFormat, _VIDEOINFOHEADER* pVideoFormat, PWSTR pwszName, uint64 qwFileSize, IMDSPStorage** ppNewStorage) CreateStorage2;
-			public function HRESULT(IMDSPStorage2 *self, uint32 dwAttributes, uint32 dwAttributesEx, _WAVEFORMATEX* pAudioFormat, _VIDEOINFOHEADER* pVideoFormat) SetAttributes2;
-			public function HRESULT(IMDSPStorage2 *self, uint32* pdwAttributes, uint32* pdwAttributesEx, _WAVEFORMATEX* pAudioFormat, _VIDEOINFOHEADER* pVideoFormat) GetAttributes2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMDSPStorage.VTable
+			{
+				public function HRESULT(IMDSPStorage2 *self, PWSTR pszStorageName, IMDSPStorage** ppStorage) GetStorage;
+				public function HRESULT(IMDSPStorage2 *self, uint32 dwAttributes, uint32 dwAttributesEx, _WAVEFORMATEX* pAudioFormat, _VIDEOINFOHEADER* pVideoFormat, PWSTR pwszName, uint64 qwFileSize, IMDSPStorage** ppNewStorage) CreateStorage2;
+				public function HRESULT(IMDSPStorage2 *self, uint32 dwAttributes, uint32 dwAttributesEx, _WAVEFORMATEX* pAudioFormat, _VIDEOINFOHEADER* pVideoFormat) SetAttributes2;
+				public function HRESULT(IMDSPStorage2 *self, uint32* pdwAttributes, uint32* pdwAttributesEx, _WAVEFORMATEX* pAudioFormat, _VIDEOINFOHEADER* pVideoFormat) GetAttributes2;
+			}
 		}
 		[CRepr]
 		public struct IMDSPStorage3 : IMDSPStorage2
 		{
 			public const new Guid IID = .(0x6c669867, 0x97ed, 0x4a67, 0x97, 0x06, 0x1c, 0x55, 0x29, 0xd2, 0xa4, 0x14);
 			
-			public function HRESULT(IMDSPStorage3 *self, IWMDMMetaData* pMetadata) GetMetadata;
-			public function HRESULT(IMDSPStorage3 *self, IWMDMMetaData* pMetadata) SetMetadata;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMDSPStorage2.VTable
+			{
+				public function HRESULT(IMDSPStorage3 *self, IWMDMMetaData* pMetadata) GetMetadata;
+				public function HRESULT(IMDSPStorage3 *self, IWMDMMetaData* pMetadata) SetMetadata;
+			}
 		}
 		[CRepr]
 		public struct IMDSPStorage4 : IMDSPStorage3
 		{
 			public const new Guid IID = .(0x3133b2c4, 0x515c, 0x481b, 0xb1, 0xce, 0x39, 0x32, 0x7e, 0xcb, 0x4f, 0x74);
 			
-			public function HRESULT(IMDSPStorage4 *self, uint32 dwRefs, IMDSPStorage** ppISPStorage) SetReferences;
-			public function HRESULT(IMDSPStorage4 *self, uint32* pdwRefs, IMDSPStorage*** pppISPStorage) GetReferences;
-			public function HRESULT(IMDSPStorage4 *self, uint32 dwAttributes, PWSTR pwszName, IWMDMMetaData* pMetadata, uint64 qwFileSize, IMDSPStorage** ppNewStorage) CreateStorageWithMetadata;
-			public function HRESULT(IMDSPStorage4 *self, uint32 cProperties, PWSTR* ppwszPropNames, IWMDMMetaData* pMetadata) GetSpecifiedMetadata;
-			public function HRESULT(IMDSPStorage4 *self, WMDM_FIND_SCOPE findScope, PWSTR pwszUniqueID, IMDSPStorage** ppStorage) FindStorage;
-			public function HRESULT(IMDSPStorage4 *self, IMDSPStorage** ppStorage) GetParent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMDSPStorage3.VTable
+			{
+				public function HRESULT(IMDSPStorage4 *self, uint32 dwRefs, IMDSPStorage** ppISPStorage) SetReferences;
+				public function HRESULT(IMDSPStorage4 *self, uint32* pdwRefs, IMDSPStorage*** pppISPStorage) GetReferences;
+				public function HRESULT(IMDSPStorage4 *self, uint32 dwAttributes, PWSTR pwszName, IWMDMMetaData* pMetadata, uint64 qwFileSize, IMDSPStorage** ppNewStorage) CreateStorageWithMetadata;
+				public function HRESULT(IMDSPStorage4 *self, uint32 cProperties, PWSTR* ppwszPropNames, IWMDMMetaData* pMetadata) GetSpecifiedMetadata;
+				public function HRESULT(IMDSPStorage4 *self, WMDM_FIND_SCOPE findScope, PWSTR pwszUniqueID, IMDSPStorage** ppStorage) FindStorage;
+				public function HRESULT(IMDSPStorage4 *self, IMDSPStorage** ppStorage) GetParent;
+			}
 		}
 		[CRepr]
 		public struct IMDSPStorageGlobals : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a17, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IMDSPStorageGlobals *self, uint32* pdwCapabilities) GetCapabilities;
-			public function HRESULT(IMDSPStorageGlobals *self, WMDMID* pSerialNum, uint8* abMac) GetSerialNumber;
-			public function HRESULT(IMDSPStorageGlobals *self, uint32* pdwTotalSizeLow, uint32* pdwTotalSizeHigh) GetTotalSize;
-			public function HRESULT(IMDSPStorageGlobals *self, uint32* pdwFreeLow, uint32* pdwFreeHigh) GetTotalFree;
-			public function HRESULT(IMDSPStorageGlobals *self, uint32* pdwBadLow, uint32* pdwBadHigh) GetTotalBad;
-			public function HRESULT(IMDSPStorageGlobals *self, uint32* pdwStatus) GetStatus;
-			public function HRESULT(IMDSPStorageGlobals *self, uint32 fuMode, IWMDMProgress* pProgress) Initialize;
-			public function HRESULT(IMDSPStorageGlobals *self, IMDSPDevice** ppDevice) GetDevice;
-			public function HRESULT(IMDSPStorageGlobals *self, IMDSPStorage** ppRoot) GetRootStorage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMDSPStorageGlobals *self, uint32* pdwCapabilities) GetCapabilities;
+				public function HRESULT(IMDSPStorageGlobals *self, WMDMID* pSerialNum, uint8* abMac) GetSerialNumber;
+				public function HRESULT(IMDSPStorageGlobals *self, uint32* pdwTotalSizeLow, uint32* pdwTotalSizeHigh) GetTotalSize;
+				public function HRESULT(IMDSPStorageGlobals *self, uint32* pdwFreeLow, uint32* pdwFreeHigh) GetTotalFree;
+				public function HRESULT(IMDSPStorageGlobals *self, uint32* pdwBadLow, uint32* pdwBadHigh) GetTotalBad;
+				public function HRESULT(IMDSPStorageGlobals *self, uint32* pdwStatus) GetStatus;
+				public function HRESULT(IMDSPStorageGlobals *self, uint32 fuMode, IWMDMProgress* pProgress) Initialize;
+				public function HRESULT(IMDSPStorageGlobals *self, IMDSPDevice** ppDevice) GetDevice;
+				public function HRESULT(IMDSPStorageGlobals *self, IMDSPStorage** ppRoot) GetRootStorage;
+			}
 		}
 		[CRepr]
 		public struct IMDSPObjectInfo : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a19, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IMDSPObjectInfo *self, uint32* pdwLength) GetPlayLength;
-			public function HRESULT(IMDSPObjectInfo *self, uint32 dwLength) SetPlayLength;
-			public function HRESULT(IMDSPObjectInfo *self, uint32* pdwOffset) GetPlayOffset;
-			public function HRESULT(IMDSPObjectInfo *self, uint32 dwOffset) SetPlayOffset;
-			public function HRESULT(IMDSPObjectInfo *self, uint32* pdwLength) GetTotalLength;
-			public function HRESULT(IMDSPObjectInfo *self, uint32* pdwLastPos) GetLastPlayPosition;
-			public function HRESULT(IMDSPObjectInfo *self, uint32* pdwLongestPos) GetLongestPlayPosition;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMDSPObjectInfo *self, uint32* pdwLength) GetPlayLength;
+				public function HRESULT(IMDSPObjectInfo *self, uint32 dwLength) SetPlayLength;
+				public function HRESULT(IMDSPObjectInfo *self, uint32* pdwOffset) GetPlayOffset;
+				public function HRESULT(IMDSPObjectInfo *self, uint32 dwOffset) SetPlayOffset;
+				public function HRESULT(IMDSPObjectInfo *self, uint32* pdwLength) GetTotalLength;
+				public function HRESULT(IMDSPObjectInfo *self, uint32* pdwLastPos) GetLastPlayPosition;
+				public function HRESULT(IMDSPObjectInfo *self, uint32* pdwLongestPos) GetLongestPlayPosition;
+			}
 		}
 		[CRepr]
 		public struct IMDSPObject : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a18, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IMDSPObject *self, uint32 fuMode) Open;
-			public function HRESULT(IMDSPObject *self, uint8* pData, uint32* pdwSize, uint8* abMac) Read;
-			public function HRESULT(IMDSPObject *self, uint8* pData, uint32* pdwSize, uint8* abMac) Write;
-			public function HRESULT(IMDSPObject *self, uint32 fuMode, IWMDMProgress* pProgress) Delete;
-			public function HRESULT(IMDSPObject *self, uint32 fuFlags, uint32 dwOffset) Seek;
-			public function HRESULT(IMDSPObject *self, PWSTR pwszNewName, IWMDMProgress* pProgress) Rename;
-			public function HRESULT(IMDSPObject *self, uint32 fuMode, IWMDMProgress* pProgress, IMDSPStorage* pTarget) Move;
-			public function HRESULT(IMDSPObject *self) Close;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMDSPObject *self, uint32 fuMode) Open;
+				public function HRESULT(IMDSPObject *self, uint8* pData, uint32* pdwSize, uint8* abMac) Read;
+				public function HRESULT(IMDSPObject *self, uint8* pData, uint32* pdwSize, uint8* abMac) Write;
+				public function HRESULT(IMDSPObject *self, uint32 fuMode, IWMDMProgress* pProgress) Delete;
+				public function HRESULT(IMDSPObject *self, uint32 fuFlags, uint32 dwOffset) Seek;
+				public function HRESULT(IMDSPObject *self, PWSTR pwszNewName, IWMDMProgress* pProgress) Rename;
+				public function HRESULT(IMDSPObject *self, uint32 fuMode, IWMDMProgress* pProgress, IMDSPStorage* pTarget) Move;
+				public function HRESULT(IMDSPObject *self) Close;
+			}
 		}
 		[CRepr]
 		public struct IMDSPObject2 : IMDSPObject
 		{
 			public const new Guid IID = .(0x3f34cd3e, 0x5907, 0x4341, 0x9a, 0xf9, 0x97, 0xf4, 0x18, 0x7c, 0x3a, 0xa5);
 			
-			public function HRESULT(IMDSPObject2 *self, uint8* pData, uint32* pdwSize) ReadOnClearChannel;
-			public function HRESULT(IMDSPObject2 *self, uint8* pData, uint32* pdwSize) WriteOnClearChannel;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IMDSPObject.VTable
+			{
+				public function HRESULT(IMDSPObject2 *self, uint8* pData, uint32* pdwSize) ReadOnClearChannel;
+				public function HRESULT(IMDSPObject2 *self, uint8* pData, uint32* pdwSize) WriteOnClearChannel;
+			}
 		}
 		[CRepr]
 		public struct IMDSPDirectTransfer : IUnknown
 		{
 			public const new Guid IID = .(0xc2fe57a8, 0x9304, 0x478c, 0x9e, 0xe4, 0x47, 0xe3, 0x97, 0xb9, 0x12, 0xd7);
 			
-			public function HRESULT(IMDSPDirectTransfer *self, PWSTR pwszSourceFilePath, IWMDMOperation* pSourceOperation, uint32 fuFlags, PWSTR pwszDestinationName, IWMDMMetaData* pSourceMetaData, IWMDMProgress* pTransferProgress, IMDSPStorage** ppNewObject) TransferToDevice;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMDSPDirectTransfer *self, PWSTR pwszSourceFilePath, IWMDMOperation* pSourceOperation, uint32 fuFlags, PWSTR pwszDestinationName, IWMDMMetaData* pSourceMetaData, IWMDMProgress* pTransferProgress, IMDSPStorage** ppNewObject) TransferToDevice;
+			}
 		}
 		[CRepr]
 		public struct IMDSPRevoked : IUnknown
 		{
 			public const new Guid IID = .(0xa4e8f2d4, 0x3f31, 0x464d, 0xb5, 0x3d, 0x4f, 0xc3, 0x35, 0x99, 0x81, 0x84);
 			
-			public function HRESULT(IMDSPRevoked *self, PWSTR* ppwszRevocationURL, uint32* pdwBufferLen) GetRevocationURL;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMDSPRevoked *self, PWSTR* ppwszRevocationURL, uint32* pdwBufferLen) GetRevocationURL;
+			}
 		}
 		[CRepr]
 		public struct ISCPSecureAuthenticate : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a0f, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(ISCPSecureAuthenticate *self, ISCPSecureQuery** ppSecureQuery) GetSecureQuery;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISCPSecureAuthenticate *self, ISCPSecureQuery** ppSecureQuery) GetSecureQuery;
+			}
 		}
 		[CRepr]
 		public struct ISCPSecureAuthenticate2 : ISCPSecureAuthenticate
 		{
 			public const new Guid IID = .(0xb580cfae, 0x1672, 0x47e2, 0xac, 0xaa, 0x44, 0xbb, 0xec, 0xbc, 0xae, 0x5b);
 			
-			public function HRESULT(ISCPSecureAuthenticate2 *self, ISCPSession** ppSCPSession) GetSCPSession;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ISCPSecureAuthenticate.VTable
+			{
+				public function HRESULT(ISCPSecureAuthenticate2 *self, ISCPSession** ppSCPSession) GetSCPSession;
+			}
 		}
 		[CRepr]
 		public struct ISCPSecureQuery : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a0d, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(ISCPSecureQuery *self, uint32* pfuFlags, uint32* pdwMinRightsData, uint32* pdwMinExamineData, uint32* pdwMinDecideData, uint8* abMac) GetDataDemands;
-			public function HRESULT(ISCPSecureQuery *self, uint32 fuFlags, PWSTR pwszExtension, uint8* pData, uint32 dwSize, uint8* abMac) ExamineData;
-			public function HRESULT(ISCPSecureQuery *self, uint32 fuFlags, uint8* pData, uint32 dwSize, uint32 dwAppSec, uint8* pbSPSessionKey, uint32 dwSessionKeyLen, IMDSPStorageGlobals* pStorageGlobals, ISCPSecureExchange** ppExchange, uint8* abMac) MakeDecision;
-			public function HRESULT(ISCPSecureQuery *self, uint8* pData, uint32 dwSize, uint8* pbSPSessionKey, uint32 dwSessionKeyLen, IMDSPStorageGlobals* pStgGlobals, WMDMRIGHTS** ppRights, uint32* pnRightsCount, uint8* abMac) GetRights;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISCPSecureQuery *self, uint32* pfuFlags, uint32* pdwMinRightsData, uint32* pdwMinExamineData, uint32* pdwMinDecideData, uint8* abMac) GetDataDemands;
+				public function HRESULT(ISCPSecureQuery *self, uint32 fuFlags, PWSTR pwszExtension, uint8* pData, uint32 dwSize, uint8* abMac) ExamineData;
+				public function HRESULT(ISCPSecureQuery *self, uint32 fuFlags, uint8* pData, uint32 dwSize, uint32 dwAppSec, uint8* pbSPSessionKey, uint32 dwSessionKeyLen, IMDSPStorageGlobals* pStorageGlobals, ISCPSecureExchange** ppExchange, uint8* abMac) MakeDecision;
+				public function HRESULT(ISCPSecureQuery *self, uint8* pData, uint32 dwSize, uint8* pbSPSessionKey, uint32 dwSessionKeyLen, IMDSPStorageGlobals* pStgGlobals, WMDMRIGHTS** ppRights, uint32* pnRightsCount, uint8* abMac) GetRights;
+			}
 		}
 		[CRepr]
 		public struct ISCPSecureQuery2 : ISCPSecureQuery
 		{
 			public const new Guid IID = .(0xebe17e25, 0x4fd7, 0x4632, 0xaf, 0x46, 0x6d, 0x93, 0xd4, 0xfc, 0xc7, 0x2e);
 			
-			public function HRESULT(ISCPSecureQuery2 *self, uint32 fuFlags, uint8* pData, uint32 dwSize, uint32 dwAppSec, uint8* pbSPSessionKey, uint32 dwSessionKeyLen, IMDSPStorageGlobals* pStorageGlobals, uint8* pAppCertApp, uint32 dwAppCertAppLen, uint8* pAppCertSP, uint32 dwAppCertSPLen, PWSTR* pszRevocationURL, uint32* pdwRevocationURLLen, uint32* pdwRevocationBitFlag, uint64* pqwFileSize, IUnknown* pUnknown, ISCPSecureExchange** ppExchange, uint8* abMac) MakeDecision2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ISCPSecureQuery.VTable
+			{
+				public function HRESULT(ISCPSecureQuery2 *self, uint32 fuFlags, uint8* pData, uint32 dwSize, uint32 dwAppSec, uint8* pbSPSessionKey, uint32 dwSessionKeyLen, IMDSPStorageGlobals* pStorageGlobals, uint8* pAppCertApp, uint32 dwAppCertAppLen, uint8* pAppCertSP, uint32 dwAppCertSPLen, PWSTR* pszRevocationURL, uint32* pdwRevocationURLLen, uint32* pdwRevocationBitFlag, uint64* pqwFileSize, IUnknown* pUnknown, ISCPSecureExchange** ppExchange, uint8* abMac) MakeDecision2;
+			}
 		}
 		[CRepr]
 		public struct ISCPSecureExchange : IUnknown
 		{
 			public const new Guid IID = .(0x1dcb3a0e, 0x33ed, 0x11d3, 0x84, 0x70, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(ISCPSecureExchange *self, uint8* pData, uint32 dwSize, uint32* pfuReadyFlags, uint8* abMac) TransferContainerData;
-			public function HRESULT(ISCPSecureExchange *self, uint8* pData, uint32* pdwSize, uint8* abMac) ObjectData;
-			public function HRESULT(ISCPSecureExchange *self) TransferComplete;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISCPSecureExchange *self, uint8* pData, uint32 dwSize, uint32* pfuReadyFlags, uint8* abMac) TransferContainerData;
+				public function HRESULT(ISCPSecureExchange *self, uint8* pData, uint32* pdwSize, uint8* abMac) ObjectData;
+				public function HRESULT(ISCPSecureExchange *self) TransferComplete;
+			}
 		}
 		[CRepr]
 		public struct ISCPSecureExchange2 : ISCPSecureExchange
 		{
 			public const new Guid IID = .(0x6c62fc7b, 0x2690, 0x483f, 0x9d, 0x44, 0x0a, 0x20, 0xcb, 0x35, 0x57, 0x7c);
 			
-			public function HRESULT(ISCPSecureExchange2 *self, uint8* pData, uint32 dwSize, IWMDMProgress3* pProgressCallback, uint32* pfuReadyFlags, uint8* abMac) TransferContainerData2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ISCPSecureExchange.VTable
+			{
+				public function HRESULT(ISCPSecureExchange2 *self, uint8* pData, uint32 dwSize, IWMDMProgress3* pProgressCallback, uint32* pfuReadyFlags, uint8* abMac) TransferContainerData2;
+			}
 		}
 		[CRepr]
 		public struct ISCPSecureExchange3 : ISCPSecureExchange2
 		{
 			public const new Guid IID = .(0xab4e77e4, 0x8908, 0x4b17, 0xbd, 0x2a, 0xb1, 0xdb, 0xe6, 0xdd, 0x69, 0xe1);
 			
-			public function HRESULT(ISCPSecureExchange3 *self, IMDSPDevice* pDevice, uint8* pData, uint32 dwSize, IWMDMProgress3* pProgressCallback, uint32* pfuReadyFlags) TransferContainerDataOnClearChannel;
-			public function HRESULT(ISCPSecureExchange3 *self, IMDSPDevice* pDevice, uint8* pData, uint32* pdwSize) GetObjectDataOnClearChannel;
-			public function HRESULT(ISCPSecureExchange3 *self, IMDSPDevice* pDevice) TransferCompleteForDevice;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ISCPSecureExchange2.VTable
+			{
+				public function HRESULT(ISCPSecureExchange3 *self, IMDSPDevice* pDevice, uint8* pData, uint32 dwSize, IWMDMProgress3* pProgressCallback, uint32* pfuReadyFlags) TransferContainerDataOnClearChannel;
+				public function HRESULT(ISCPSecureExchange3 *self, IMDSPDevice* pDevice, uint8* pData, uint32* pdwSize) GetObjectDataOnClearChannel;
+				public function HRESULT(ISCPSecureExchange3 *self, IMDSPDevice* pDevice) TransferCompleteForDevice;
+			}
 		}
 		[CRepr]
 		public struct ISCPSession : IUnknown
 		{
 			public const new Guid IID = .(0x88a3e6ed, 0xeee4, 0x4619, 0xbb, 0xb3, 0xfd, 0x4f, 0xb6, 0x27, 0x15, 0xd1);
 			
-			public function HRESULT(ISCPSession *self, IMDSPDevice* pIDevice, uint8* pCtx, uint32 dwSizeCtx) BeginSession;
-			public function HRESULT(ISCPSession *self, uint8* pCtx, uint32 dwSizeCtx) EndSession;
-			public function HRESULT(ISCPSession *self, ISCPSecureQuery** ppSecureQuery) GetSecureQuery;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISCPSession *self, IMDSPDevice* pIDevice, uint8* pCtx, uint32 dwSizeCtx) BeginSession;
+				public function HRESULT(ISCPSession *self, uint8* pCtx, uint32 dwSizeCtx) EndSession;
+				public function HRESULT(ISCPSession *self, ISCPSecureQuery** ppSecureQuery) GetSecureQuery;
+			}
 		}
 		[CRepr]
 		public struct ISCPSecureQuery3 : ISCPSecureQuery2
 		{
 			public const new Guid IID = .(0xb7edd1a2, 0x4dab, 0x484b, 0xb3, 0xc5, 0xad, 0x39, 0xb8, 0xb4, 0xc0, 0xb1);
 			
-			public function HRESULT(ISCPSecureQuery3 *self, uint8* pData, uint32 dwSize, uint8* pbSPSessionKey, uint32 dwSessionKeyLen, IMDSPStorageGlobals* pStgGlobals, IWMDMProgress3* pProgressCallback, WMDMRIGHTS** ppRights, uint32* pnRightsCount) GetRightsOnClearChannel;
-			public function HRESULT(ISCPSecureQuery3 *self, uint32 fuFlags, uint8* pData, uint32 dwSize, uint32 dwAppSec, uint8* pbSPSessionKey, uint32 dwSessionKeyLen, IMDSPStorageGlobals* pStorageGlobals, IWMDMProgress3* pProgressCallback, uint8* pAppCertApp, uint32 dwAppCertAppLen, uint8* pAppCertSP, uint32 dwAppCertSPLen, PWSTR* pszRevocationURL, uint32* pdwRevocationURLLen, uint32* pdwRevocationBitFlag, uint64* pqwFileSize, IUnknown* pUnknown, ISCPSecureExchange** ppExchange) MakeDecisionOnClearChannel;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ISCPSecureQuery2.VTable
+			{
+				public function HRESULT(ISCPSecureQuery3 *self, uint8* pData, uint32 dwSize, uint8* pbSPSessionKey, uint32 dwSessionKeyLen, IMDSPStorageGlobals* pStgGlobals, IWMDMProgress3* pProgressCallback, WMDMRIGHTS** ppRights, uint32* pnRightsCount) GetRightsOnClearChannel;
+				public function HRESULT(ISCPSecureQuery3 *self, uint32 fuFlags, uint8* pData, uint32 dwSize, uint32 dwAppSec, uint8* pbSPSessionKey, uint32 dwSessionKeyLen, IMDSPStorageGlobals* pStorageGlobals, IWMDMProgress3* pProgressCallback, uint8* pAppCertApp, uint32 dwAppCertAppLen, uint8* pAppCertSP, uint32 dwAppCertSPLen, PWSTR* pszRevocationURL, uint32* pdwRevocationURLLen, uint32* pdwRevocationBitFlag, uint64* pqwFileSize, IUnknown* pUnknown, ISCPSecureExchange** ppExchange) MakeDecisionOnClearChannel;
+			}
 		}
 		[CRepr]
 		public struct IComponentAuthenticate : IUnknown
 		{
 			public const new Guid IID = .(0xa9889c00, 0x6d2b, 0x11d3, 0x84, 0x96, 0x00, 0xc0, 0x4f, 0x79, 0xdb, 0xc0);
 			
-			public function HRESULT(IComponentAuthenticate *self, uint32 dwProtocolID, uint32 dwPass, uint8* pbDataIn, uint32 dwDataInLen, uint8** ppbDataOut, uint32* pdwDataOutLen) SACAuth;
-			public function HRESULT(IComponentAuthenticate *self, uint32** ppdwProtocols, uint32* pdwProtocolCount) SACGetProtocols;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IComponentAuthenticate *self, uint32 dwProtocolID, uint32 dwPass, uint8* pbDataIn, uint32 dwDataInLen, uint8** ppbDataOut, uint32* pdwDataOutLen) SACAuth;
+				public function HRESULT(IComponentAuthenticate *self, uint32** ppdwProtocols, uint32* pdwProtocolCount) SACGetProtocols;
+			}
 		}
 		[CRepr]
 		public struct IWMDMLogger : IUnknown
 		{
 			public const new Guid IID = .(0x110a3200, 0x5a79, 0x11d3, 0x8d, 0x78, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
 			
-			public function HRESULT(IWMDMLogger *self, BOOL* pfEnabled) IsEnabled;
-			public function HRESULT(IWMDMLogger *self, BOOL fEnable) Enable;
-			public function HRESULT(IWMDMLogger *self, PSTR pszFilename, uint32 nMaxChars) GetLogFileName;
-			public function HRESULT(IWMDMLogger *self, PSTR pszFilename) SetLogFileName;
-			public function HRESULT(IWMDMLogger *self, uint32 dwFlags, PSTR pszSrcName, PSTR pszLog) LogString;
-			public function HRESULT(IWMDMLogger *self, uint32 dwFlags, PSTR pszSrcName, PSTR pszLogFormat, uint32 dwLog) LogDword;
-			public function HRESULT(IWMDMLogger *self) Reset;
-			public function HRESULT(IWMDMLogger *self, uint32* pdwMaxSize, uint32* pdwShrinkToSize) GetSizeParams;
-			public function HRESULT(IWMDMLogger *self, uint32 dwMaxSize, uint32 dwShrinkToSize) SetSizeParams;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWMDMLogger *self, BOOL* pfEnabled) IsEnabled;
+				public function HRESULT(IWMDMLogger *self, BOOL fEnable) Enable;
+				public function HRESULT(IWMDMLogger *self, PSTR pszFilename, uint32 nMaxChars) GetLogFileName;
+				public function HRESULT(IWMDMLogger *self, PSTR pszFilename) SetLogFileName;
+				public function HRESULT(IWMDMLogger *self, uint32 dwFlags, PSTR pszSrcName, PSTR pszLog) LogString;
+				public function HRESULT(IWMDMLogger *self, uint32 dwFlags, PSTR pszSrcName, PSTR pszLogFormat, uint32 dwLog) LogDword;
+				public function HRESULT(IWMDMLogger *self) Reset;
+				public function HRESULT(IWMDMLogger *self, uint32* pdwMaxSize, uint32* pdwShrinkToSize) GetSizeParams;
+				public function HRESULT(IWMDMLogger *self, uint32 dwMaxSize, uint32 dwShrinkToSize) SetSizeParams;
+			}
 		}
 		
 	}

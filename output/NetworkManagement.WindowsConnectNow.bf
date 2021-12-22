@@ -394,25 +394,35 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc100be9c, 0xd33a, 0x4a4b, 0xbf, 0x23, 0xbb, 0xef, 0x46, 0x63, 0xd0, 0x17);
 			
-			public function HRESULT(IWCNDevice *self, WCN_PASSWORD_TYPE Type, uint32 dwPasswordLength, uint8* pbPassword) SetPassword;
-			public function HRESULT(IWCNDevice *self, IWCNConnectNotify* pNotify) Connect;
-			public function HRESULT(IWCNDevice *self, WCN_ATTRIBUTE_TYPE AttributeType, uint32 dwMaxBufferSize, uint8* pbBuffer, uint32* pdwBufferUsed) GetAttribute;
-			public function HRESULT(IWCNDevice *self, WCN_ATTRIBUTE_TYPE AttributeType, uint32* puInteger) GetIntegerAttribute;
-			public function HRESULT(IWCNDevice *self, WCN_ATTRIBUTE_TYPE AttributeType, uint32 cchMaxString, char16* wszString) GetStringAttribute;
-			public function HRESULT(IWCNDevice *self, uint32 cchMaxStringLength, char16* wszProfile) GetNetworkProfile;
-			public function HRESULT(IWCNDevice *self, PWSTR pszProfileXml) SetNetworkProfile;
-			public function HRESULT(IWCNDevice *self, WCN_VENDOR_EXTENSION_SPEC* pVendorExtSpec, uint32 dwMaxBufferSize, uint8* pbBuffer, uint32* pdwBufferUsed) GetVendorExtension;
-			public function HRESULT(IWCNDevice *self, WCN_VENDOR_EXTENSION_SPEC* pVendorExtSpec, uint32 cbBuffer, uint8* pbBuffer) SetVendorExtension;
-			public function HRESULT(IWCNDevice *self) Unadvise;
-			public function HRESULT(IWCNDevice *self, WCN_PASSWORD_TYPE Type, uint32 dwOOBPasswordID, uint32 dwPasswordLength, uint8* pbPassword, uint32 dwRemotePublicKeyHashLength, uint8* pbRemotePublicKeyHash, uint32 dwDHKeyBlobLength, uint8* pbDHKeyBlob) SetNFCPasswordParams;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWCNDevice *self, WCN_PASSWORD_TYPE Type, uint32 dwPasswordLength, uint8* pbPassword) SetPassword;
+				public function HRESULT(IWCNDevice *self, IWCNConnectNotify* pNotify) Connect;
+				public function HRESULT(IWCNDevice *self, WCN_ATTRIBUTE_TYPE AttributeType, uint32 dwMaxBufferSize, uint8* pbBuffer, uint32* pdwBufferUsed) GetAttribute;
+				public function HRESULT(IWCNDevice *self, WCN_ATTRIBUTE_TYPE AttributeType, uint32* puInteger) GetIntegerAttribute;
+				public function HRESULT(IWCNDevice *self, WCN_ATTRIBUTE_TYPE AttributeType, uint32 cchMaxString, char16* wszString) GetStringAttribute;
+				public function HRESULT(IWCNDevice *self, uint32 cchMaxStringLength, char16* wszProfile) GetNetworkProfile;
+				public function HRESULT(IWCNDevice *self, PWSTR pszProfileXml) SetNetworkProfile;
+				public function HRESULT(IWCNDevice *self, WCN_VENDOR_EXTENSION_SPEC* pVendorExtSpec, uint32 dwMaxBufferSize, uint8* pbBuffer, uint32* pdwBufferUsed) GetVendorExtension;
+				public function HRESULT(IWCNDevice *self, WCN_VENDOR_EXTENSION_SPEC* pVendorExtSpec, uint32 cbBuffer, uint8* pbBuffer) SetVendorExtension;
+				public function HRESULT(IWCNDevice *self) Unadvise;
+				public function HRESULT(IWCNDevice *self, WCN_PASSWORD_TYPE Type, uint32 dwOOBPasswordID, uint32 dwPasswordLength, uint8* pbPassword, uint32 dwRemotePublicKeyHashLength, uint8* pbRemotePublicKeyHash, uint32 dwDHKeyBlobLength, uint8* pbDHKeyBlob) SetNFCPasswordParams;
+			}
 		}
 		[CRepr]
 		public struct IWCNConnectNotify : IUnknown
 		{
 			public const new Guid IID = .(0xc100be9f, 0xd33a, 0x4a4b, 0xbf, 0x23, 0xbb, 0xef, 0x46, 0x63, 0xd0, 0x17);
 			
-			public function HRESULT(IWCNConnectNotify *self) ConnectSucceeded;
-			public function HRESULT(IWCNConnectNotify *self, HRESULT hrFailure) ConnectFailed;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWCNConnectNotify *self) ConnectSucceeded;
+				public function HRESULT(IWCNConnectNotify *self, HRESULT hrFailure) ConnectFailed;
+			}
 		}
 		
 	}

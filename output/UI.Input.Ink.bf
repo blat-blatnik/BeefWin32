@@ -27,48 +27,78 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfabea3fc, 0xb108, 0x45b6, 0xa9, 0xfc, 0x8d, 0x08, 0xfa, 0x9f, 0x85, 0xcf);
 			
-			public function HRESULT(IInkCommitRequestHandler *self) OnCommitRequested;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInkCommitRequestHandler *self) OnCommitRequested;
+			}
 		}
 		[CRepr]
 		public struct IInkPresenterDesktop : IUnknown
 		{
 			public const new Guid IID = .(0x73f3c0d9, 0x2e8b, 0x48f3, 0x89, 0x5e, 0x20, 0xcb, 0xd2, 0x7b, 0x72, 0x3b);
 			
-			public function HRESULT(IInkPresenterDesktop *self, IUnknown* rootVisual, IUnknown* device) SetRootVisual;
-			public function HRESULT(IInkPresenterDesktop *self, IInkCommitRequestHandler* handler) SetCommitRequestHandler;
-			public function HRESULT(IInkPresenterDesktop *self, float* width, float* height) GetSize;
-			public function HRESULT(IInkPresenterDesktop *self, float width, float height) SetSize;
-			public function HRESULT(IInkPresenterDesktop *self) OnHighContrastChanged;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInkPresenterDesktop *self, IUnknown* rootVisual, IUnknown* device) SetRootVisual;
+				public function HRESULT(IInkPresenterDesktop *self, IInkCommitRequestHandler* handler) SetCommitRequestHandler;
+				public function HRESULT(IInkPresenterDesktop *self, float* width, float* height) GetSize;
+				public function HRESULT(IInkPresenterDesktop *self, float width, float height) SetSize;
+				public function HRESULT(IInkPresenterDesktop *self) OnHighContrastChanged;
+			}
 		}
 		[CRepr]
 		public struct IInkHostWorkItem : IUnknown
 		{
 			public const new Guid IID = .(0xccda0a9a, 0x1b78, 0x4632, 0xbb, 0x96, 0x97, 0x80, 0x06, 0x62, 0xe2, 0x6c);
 			
-			public function HRESULT(IInkHostWorkItem *self) Invoke;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInkHostWorkItem *self) Invoke;
+			}
 		}
 		[CRepr]
 		public struct IInkDesktopHost : IUnknown
 		{
 			public const new Guid IID = .(0x4ce7d875, 0xa981, 0x4140, 0xa1, 0xff, 0xad, 0x93, 0x25, 0x8e, 0x8d, 0x59);
 			
-			public function HRESULT(IInkDesktopHost *self, IInkHostWorkItem* workItem) QueueWorkItem;
-			public function HRESULT(IInkDesktopHost *self, Guid* riid, void** ppv) CreateInkPresenter;
-			public function HRESULT(IInkDesktopHost *self, IUnknown* rootVisual, float width, float height, Guid* riid, void** ppv) CreateAndInitializeInkPresenter;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInkDesktopHost *self, IInkHostWorkItem* workItem) QueueWorkItem;
+				public function HRESULT(IInkDesktopHost *self, Guid* riid, void** ppv) CreateInkPresenter;
+				public function HRESULT(IInkDesktopHost *self, IUnknown* rootVisual, float width, float height, Guid* riid, void** ppv) CreateAndInitializeInkPresenter;
+			}
 		}
 		[CRepr]
 		public struct IInkD2DRenderer : IUnknown
 		{
 			public const new Guid IID = .(0x407fb1de, 0xf85a, 0x4150, 0x97, 0xcf, 0xb7, 0xfb, 0x27, 0x4f, 0xb4, 0xf8);
 			
-			public function HRESULT(IInkD2DRenderer *self, IUnknown* pD2D1DeviceContext, IUnknown* pInkStrokeIterable, BOOL fHighContrast) Draw;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInkD2DRenderer *self, IUnknown* pD2D1DeviceContext, IUnknown* pInkStrokeIterable, BOOL fHighContrast) Draw;
+			}
 		}
 		[CRepr]
 		public struct IInkD2DRenderer2 : IUnknown
 		{
 			public const new Guid IID = .(0x0a95dcd9, 0x4578, 0x4b71, 0xb2, 0x0b, 0xbf, 0x66, 0x4d, 0x4b, 0xfe, 0xee);
 			
-			public function HRESULT(IInkD2DRenderer2 *self, IUnknown* pD2D1DeviceContext, IUnknown* pInkStrokeIterable, INK_HIGH_CONTRAST_ADJUSTMENT highContrastAdjustment) Draw;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInkD2DRenderer2 *self, IUnknown* pD2D1DeviceContext, IUnknown* pInkStrokeIterable, INK_HIGH_CONTRAST_ADJUSTMENT highContrastAdjustment) Draw;
+			}
 		}
 		
 	}

@@ -1976,2088 +1976,2823 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9c735be2, 0x57a5, 0x11d1, 0x9b, 0xdb, 0x00, 0xc0, 0x4f, 0xb6, 0x83, 0xfa);
 			
-			public function HRESULT(IEnumCERTVIEWCOLUMN *self, int32* pIndex) Next;
-			public function HRESULT(IEnumCERTVIEWCOLUMN *self, BSTR* pstrOut) GetName;
-			public function HRESULT(IEnumCERTVIEWCOLUMN *self, BSTR* pstrOut) GetDisplayName;
-			public function HRESULT(IEnumCERTVIEWCOLUMN *self, int32* pType) GetType;
-			public function HRESULT(IEnumCERTVIEWCOLUMN *self, int32* pIndexed) IsIndexed;
-			public function HRESULT(IEnumCERTVIEWCOLUMN *self, int32* pMaxLength) GetMaxLength;
-			public function HRESULT(IEnumCERTVIEWCOLUMN *self, ENUM_CERT_COLUMN_VALUE_FLAGS Flags, VARIANT* pvarValue) GetValue;
-			public function HRESULT(IEnumCERTVIEWCOLUMN *self, int32 celt) Skip;
-			public function HRESULT(IEnumCERTVIEWCOLUMN *self) Reset;
-			public function HRESULT(IEnumCERTVIEWCOLUMN *self, IEnumCERTVIEWCOLUMN** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IEnumCERTVIEWCOLUMN *self, int32* pIndex) Next;
+				public function HRESULT(IEnumCERTVIEWCOLUMN *self, BSTR* pstrOut) GetName;
+				public function HRESULT(IEnumCERTVIEWCOLUMN *self, BSTR* pstrOut) GetDisplayName;
+				public function HRESULT(IEnumCERTVIEWCOLUMN *self, int32* pType) GetType;
+				public function HRESULT(IEnumCERTVIEWCOLUMN *self, int32* pIndexed) IsIndexed;
+				public function HRESULT(IEnumCERTVIEWCOLUMN *self, int32* pMaxLength) GetMaxLength;
+				public function HRESULT(IEnumCERTVIEWCOLUMN *self, ENUM_CERT_COLUMN_VALUE_FLAGS Flags, VARIANT* pvarValue) GetValue;
+				public function HRESULT(IEnumCERTVIEWCOLUMN *self, int32 celt) Skip;
+				public function HRESULT(IEnumCERTVIEWCOLUMN *self) Reset;
+				public function HRESULT(IEnumCERTVIEWCOLUMN *self, IEnumCERTVIEWCOLUMN** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IEnumCERTVIEWATTRIBUTE : IDispatch
 		{
 			public const new Guid IID = .(0xe77db656, 0x7653, 0x11d1, 0x9b, 0xde, 0x00, 0xc0, 0x4f, 0xb6, 0x83, 0xfa);
 			
-			public function HRESULT(IEnumCERTVIEWATTRIBUTE *self, int32* pIndex) Next;
-			public function HRESULT(IEnumCERTVIEWATTRIBUTE *self, BSTR* pstrOut) GetName;
-			public function HRESULT(IEnumCERTVIEWATTRIBUTE *self, BSTR* pstrOut) GetValue;
-			public function HRESULT(IEnumCERTVIEWATTRIBUTE *self, int32 celt) Skip;
-			public function HRESULT(IEnumCERTVIEWATTRIBUTE *self) Reset;
-			public function HRESULT(IEnumCERTVIEWATTRIBUTE *self, IEnumCERTVIEWATTRIBUTE** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IEnumCERTVIEWATTRIBUTE *self, int32* pIndex) Next;
+				public function HRESULT(IEnumCERTVIEWATTRIBUTE *self, BSTR* pstrOut) GetName;
+				public function HRESULT(IEnumCERTVIEWATTRIBUTE *self, BSTR* pstrOut) GetValue;
+				public function HRESULT(IEnumCERTVIEWATTRIBUTE *self, int32 celt) Skip;
+				public function HRESULT(IEnumCERTVIEWATTRIBUTE *self) Reset;
+				public function HRESULT(IEnumCERTVIEWATTRIBUTE *self, IEnumCERTVIEWATTRIBUTE** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IEnumCERTVIEWEXTENSION : IDispatch
 		{
 			public const new Guid IID = .(0xe7dd1466, 0x7653, 0x11d1, 0x9b, 0xde, 0x00, 0xc0, 0x4f, 0xb6, 0x83, 0xfa);
 			
-			public function HRESULT(IEnumCERTVIEWEXTENSION *self, int32* pIndex) Next;
-			public function HRESULT(IEnumCERTVIEWEXTENSION *self, BSTR* pstrOut) GetName;
-			public function HRESULT(IEnumCERTVIEWEXTENSION *self, int32* pFlags) GetFlags;
-			public function HRESULT(IEnumCERTVIEWEXTENSION *self, CERT_PROPERTY_TYPE Type, ENUM_CERT_COLUMN_VALUE_FLAGS Flags, VARIANT* pvarValue) GetValue;
-			public function HRESULT(IEnumCERTVIEWEXTENSION *self, int32 celt) Skip;
-			public function HRESULT(IEnumCERTVIEWEXTENSION *self) Reset;
-			public function HRESULT(IEnumCERTVIEWEXTENSION *self, IEnumCERTVIEWEXTENSION** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IEnumCERTVIEWEXTENSION *self, int32* pIndex) Next;
+				public function HRESULT(IEnumCERTVIEWEXTENSION *self, BSTR* pstrOut) GetName;
+				public function HRESULT(IEnumCERTVIEWEXTENSION *self, int32* pFlags) GetFlags;
+				public function HRESULT(IEnumCERTVIEWEXTENSION *self, CERT_PROPERTY_TYPE Type, ENUM_CERT_COLUMN_VALUE_FLAGS Flags, VARIANT* pvarValue) GetValue;
+				public function HRESULT(IEnumCERTVIEWEXTENSION *self, int32 celt) Skip;
+				public function HRESULT(IEnumCERTVIEWEXTENSION *self) Reset;
+				public function HRESULT(IEnumCERTVIEWEXTENSION *self, IEnumCERTVIEWEXTENSION** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IEnumCERTVIEWROW : IDispatch
 		{
 			public const new Guid IID = .(0xd1157f4c, 0x5af2, 0x11d1, 0x9b, 0xdc, 0x00, 0xc0, 0x4f, 0xb6, 0x83, 0xfa);
 			
-			public function HRESULT(IEnumCERTVIEWROW *self, int32* pIndex) Next;
-			public function HRESULT(IEnumCERTVIEWROW *self, IEnumCERTVIEWCOLUMN** ppenum) EnumCertViewColumn;
-			public function HRESULT(IEnumCERTVIEWROW *self, int32 Flags, IEnumCERTVIEWATTRIBUTE** ppenum) EnumCertViewAttribute;
-			public function HRESULT(IEnumCERTVIEWROW *self, int32 Flags, IEnumCERTVIEWEXTENSION** ppenum) EnumCertViewExtension;
-			public function HRESULT(IEnumCERTVIEWROW *self, int32 celt) Skip;
-			public function HRESULT(IEnumCERTVIEWROW *self) Reset;
-			public function HRESULT(IEnumCERTVIEWROW *self, IEnumCERTVIEWROW** ppenum) Clone;
-			public function HRESULT(IEnumCERTVIEWROW *self, int32* pIndex) GetMaxIndex;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IEnumCERTVIEWROW *self, int32* pIndex) Next;
+				public function HRESULT(IEnumCERTVIEWROW *self, IEnumCERTVIEWCOLUMN** ppenum) EnumCertViewColumn;
+				public function HRESULT(IEnumCERTVIEWROW *self, int32 Flags, IEnumCERTVIEWATTRIBUTE** ppenum) EnumCertViewAttribute;
+				public function HRESULT(IEnumCERTVIEWROW *self, int32 Flags, IEnumCERTVIEWEXTENSION** ppenum) EnumCertViewExtension;
+				public function HRESULT(IEnumCERTVIEWROW *self, int32 celt) Skip;
+				public function HRESULT(IEnumCERTVIEWROW *self) Reset;
+				public function HRESULT(IEnumCERTVIEWROW *self, IEnumCERTVIEWROW** ppenum) Clone;
+				public function HRESULT(IEnumCERTVIEWROW *self, int32* pIndex) GetMaxIndex;
+			}
 		}
 		[CRepr]
 		public struct ICertView : IDispatch
 		{
 			public const new Guid IID = .(0xc3fac344, 0x1e84, 0x11d1, 0x9b, 0xd6, 0x00, 0xc0, 0x4f, 0xb6, 0x83, 0xfa);
 			
-			public function HRESULT(ICertView *self, BSTR strConfig) OpenConnection;
-			public function HRESULT(ICertView *self, CVRC_COLUMN fResultColumn, IEnumCERTVIEWCOLUMN** ppenum) EnumCertViewColumn;
-			public function HRESULT(ICertView *self, CVRC_COLUMN fResultColumn, int32* pcColumn) GetColumnCount;
-			public function HRESULT(ICertView *self, CVRC_COLUMN fResultColumn, BSTR strColumnName, int32* pColumnIndex) GetColumnIndex;
-			public function HRESULT(ICertView *self, int32 cResultColumn) SetResultColumnCount;
-			public function HRESULT(ICertView *self, int32 ColumnIndex) SetResultColumn;
-			public function HRESULT(ICertView *self, CERT_VIEW_COLUMN_INDEX ColumnIndex, CERT_VIEW_SEEK_OPERATOR_FLAGS SeekOperator, int32 SortOrder, VARIANT* pvarValue) SetRestriction;
-			public function HRESULT(ICertView *self, IEnumCERTVIEWROW** ppenum) OpenView;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertView *self, BSTR strConfig) OpenConnection;
+				public function HRESULT(ICertView *self, CVRC_COLUMN fResultColumn, IEnumCERTVIEWCOLUMN** ppenum) EnumCertViewColumn;
+				public function HRESULT(ICertView *self, CVRC_COLUMN fResultColumn, int32* pcColumn) GetColumnCount;
+				public function HRESULT(ICertView *self, CVRC_COLUMN fResultColumn, BSTR strColumnName, int32* pColumnIndex) GetColumnIndex;
+				public function HRESULT(ICertView *self, int32 cResultColumn) SetResultColumnCount;
+				public function HRESULT(ICertView *self, int32 ColumnIndex) SetResultColumn;
+				public function HRESULT(ICertView *self, CERT_VIEW_COLUMN_INDEX ColumnIndex, CERT_VIEW_SEEK_OPERATOR_FLAGS SeekOperator, int32 SortOrder, VARIANT* pvarValue) SetRestriction;
+				public function HRESULT(ICertView *self, IEnumCERTVIEWROW** ppenum) OpenView;
+			}
 		}
 		[CRepr]
 		public struct ICertView2 : ICertView
 		{
 			public const new Guid IID = .(0xd594b282, 0x8851, 0x4b61, 0x9c, 0x66, 0x3e, 0xda, 0xdf, 0x84, 0x88, 0x63);
 			
-			public function HRESULT(ICertView2 *self, CVRC_TABLE Table) SetTable;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertView.VTable
+			{
+				public function HRESULT(ICertView2 *self, CVRC_TABLE Table) SetTable;
+			}
 		}
 		[CRepr]
 		public struct ICertAdmin : IDispatch
 		{
 			public const new Guid IID = .(0x34df6950, 0x7fb6, 0x11d0, 0x88, 0x17, 0x00, 0xa0, 0xc9, 0x03, 0xb8, 0x3c);
 			
-			public function HRESULT(ICertAdmin *self, BSTR strConfig, BSTR strSerialNumber, int32* pDisposition) IsValidCertificate;
-			public function HRESULT(ICertAdmin *self, int32* pReason) GetRevocationReason;
-			public function HRESULT(ICertAdmin *self, BSTR strConfig, BSTR strSerialNumber, int32 Reason, double Date) RevokeCertificate;
-			public function HRESULT(ICertAdmin *self, BSTR strConfig, int32 RequestId, BSTR strAttributes) SetRequestAttributes;
-			public function HRESULT(ICertAdmin *self, BSTR strConfig, int32 RequestId, BSTR strExtensionName, CERT_PROPERTY_TYPE Type, int32 Flags, VARIANT* pvarValue) SetCertificateExtension;
-			public function HRESULT(ICertAdmin *self, BSTR strConfig, int32 RequestId) DenyRequest;
-			public function HRESULT(ICertAdmin *self, BSTR strConfig, int32 RequestId, int32* pDisposition) ResubmitRequest;
-			public function HRESULT(ICertAdmin *self, BSTR strConfig, double Date) PublishCRL;
-			public function HRESULT(ICertAdmin *self, BSTR strConfig, int32 Flags, BSTR* pstrCRL) GetCRL;
-			public function HRESULT(ICertAdmin *self, BSTR strConfig, BSTR strCertificate, CERT_IMPORT_FLAGS Flags, int32* pRequestId) ImportCertificate;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertAdmin *self, BSTR strConfig, BSTR strSerialNumber, int32* pDisposition) IsValidCertificate;
+				public function HRESULT(ICertAdmin *self, int32* pReason) GetRevocationReason;
+				public function HRESULT(ICertAdmin *self, BSTR strConfig, BSTR strSerialNumber, int32 Reason, double Date) RevokeCertificate;
+				public function HRESULT(ICertAdmin *self, BSTR strConfig, int32 RequestId, BSTR strAttributes) SetRequestAttributes;
+				public function HRESULT(ICertAdmin *self, BSTR strConfig, int32 RequestId, BSTR strExtensionName, CERT_PROPERTY_TYPE Type, int32 Flags, VARIANT* pvarValue) SetCertificateExtension;
+				public function HRESULT(ICertAdmin *self, BSTR strConfig, int32 RequestId) DenyRequest;
+				public function HRESULT(ICertAdmin *self, BSTR strConfig, int32 RequestId, int32* pDisposition) ResubmitRequest;
+				public function HRESULT(ICertAdmin *self, BSTR strConfig, double Date) PublishCRL;
+				public function HRESULT(ICertAdmin *self, BSTR strConfig, int32 Flags, BSTR* pstrCRL) GetCRL;
+				public function HRESULT(ICertAdmin *self, BSTR strConfig, BSTR strCertificate, CERT_IMPORT_FLAGS Flags, int32* pRequestId) ImportCertificate;
+			}
 		}
 		[CRepr]
 		public struct ICertAdmin2 : ICertAdmin
 		{
 			public const new Guid IID = .(0xf7c3ac41, 0xb8ce, 0x4fb4, 0xaa, 0x58, 0x3d, 0x1d, 0xc0, 0xe3, 0x6b, 0x39);
 			
-			public function HRESULT(ICertAdmin2 *self, BSTR strConfig, double Date, int32 CRLFlags) PublishCRLs;
-			public function HRESULT(ICertAdmin2 *self, BSTR strConfig, int32 PropId, int32 PropIndex, int32 PropType, int32 Flags, VARIANT* pvarPropertyValue) GetCAProperty;
-			public function HRESULT(ICertAdmin2 *self, BSTR strConfig, int32 PropId, int32 PropIndex, CERT_PROPERTY_TYPE PropType, VARIANT* pvarPropertyValue) SetCAProperty;
-			public function HRESULT(ICertAdmin2 *self, BSTR strConfig, int32 PropId, int32* pPropFlags) GetCAPropertyFlags;
-			public function HRESULT(ICertAdmin2 *self, BSTR strConfig, int32 PropId, BSTR* pstrDisplayName) GetCAPropertyDisplayName;
-			public function HRESULT(ICertAdmin2 *self, BSTR strConfig, int32 RequestId, int32 Flags, BSTR* pstrArchivedKey) GetArchivedKey;
-			public function HRESULT(ICertAdmin2 *self, BSTR strConfig, BSTR strNodePath, BSTR strEntryName, VARIANT* pvarEntry) GetConfigEntry;
-			public function HRESULT(ICertAdmin2 *self, BSTR strConfig, BSTR strNodePath, BSTR strEntryName, VARIANT* pvarEntry) SetConfigEntry;
-			public function HRESULT(ICertAdmin2 *self, BSTR strConfig, int32 RequestId, BSTR strCertHash, CERT_IMPORT_FLAGS Flags, BSTR strKey) ImportKey;
-			public function HRESULT(ICertAdmin2 *self, BSTR strConfig, CERTADMIN_GET_ROLES_FLAGS* pRoles) GetMyRoles;
-			public function HRESULT(ICertAdmin2 *self, BSTR strConfig, CERT_DELETE_ROW_FLAGS Flags, double Date, CVRC_TABLE Table, int32 RowId, int32* pcDeleted) DeleteRow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertAdmin.VTable
+			{
+				public function HRESULT(ICertAdmin2 *self, BSTR strConfig, double Date, int32 CRLFlags) PublishCRLs;
+				public function HRESULT(ICertAdmin2 *self, BSTR strConfig, int32 PropId, int32 PropIndex, int32 PropType, int32 Flags, VARIANT* pvarPropertyValue) GetCAProperty;
+				public function HRESULT(ICertAdmin2 *self, BSTR strConfig, int32 PropId, int32 PropIndex, CERT_PROPERTY_TYPE PropType, VARIANT* pvarPropertyValue) SetCAProperty;
+				public function HRESULT(ICertAdmin2 *self, BSTR strConfig, int32 PropId, int32* pPropFlags) GetCAPropertyFlags;
+				public function HRESULT(ICertAdmin2 *self, BSTR strConfig, int32 PropId, BSTR* pstrDisplayName) GetCAPropertyDisplayName;
+				public function HRESULT(ICertAdmin2 *self, BSTR strConfig, int32 RequestId, int32 Flags, BSTR* pstrArchivedKey) GetArchivedKey;
+				public function HRESULT(ICertAdmin2 *self, BSTR strConfig, BSTR strNodePath, BSTR strEntryName, VARIANT* pvarEntry) GetConfigEntry;
+				public function HRESULT(ICertAdmin2 *self, BSTR strConfig, BSTR strNodePath, BSTR strEntryName, VARIANT* pvarEntry) SetConfigEntry;
+				public function HRESULT(ICertAdmin2 *self, BSTR strConfig, int32 RequestId, BSTR strCertHash, CERT_IMPORT_FLAGS Flags, BSTR strKey) ImportKey;
+				public function HRESULT(ICertAdmin2 *self, BSTR strConfig, CERTADMIN_GET_ROLES_FLAGS* pRoles) GetMyRoles;
+				public function HRESULT(ICertAdmin2 *self, BSTR strConfig, CERT_DELETE_ROW_FLAGS Flags, double Date, CVRC_TABLE Table, int32 RowId, int32* pcDeleted) DeleteRow;
+			}
 		}
 		[CRepr]
 		public struct IOCSPProperty : IDispatch
 		{
 			public const new Guid IID = .(0x66fb7839, 0x5f04, 0x4c25, 0xad, 0x18, 0x9f, 0xf1, 0xa8, 0x37, 0x6e, 0xe0);
 			
-			public function HRESULT(IOCSPProperty *self, BSTR* pVal) get_Name;
-			public function HRESULT(IOCSPProperty *self, VARIANT* pVal) get_Value;
-			public function HRESULT(IOCSPProperty *self, VARIANT newVal) put_Value;
-			public function HRESULT(IOCSPProperty *self, int16* pVal) get_Modified;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IOCSPProperty *self, BSTR* pVal) get_Name;
+				public function HRESULT(IOCSPProperty *self, VARIANT* pVal) get_Value;
+				public function HRESULT(IOCSPProperty *self, VARIANT newVal) put_Value;
+				public function HRESULT(IOCSPProperty *self, int16* pVal) get_Modified;
+			}
 		}
 		[CRepr]
 		public struct IOCSPPropertyCollection : IDispatch
 		{
 			public const new Guid IID = .(0x2597c18d, 0x54e6, 0x4b74, 0x9f, 0xa9, 0xa6, 0xbf, 0xda, 0x99, 0xcb, 0xbe);
 			
-			public function HRESULT(IOCSPPropertyCollection *self, IUnknown** ppVal) get__NewEnum;
-			public function HRESULT(IOCSPPropertyCollection *self, int32 Index, VARIANT* pVal) get_Item;
-			public function HRESULT(IOCSPPropertyCollection *self, int32* pVal) get_Count;
-			public function HRESULT(IOCSPPropertyCollection *self, BSTR bstrPropName, VARIANT* pVal) get_ItemByName;
-			public function HRESULT(IOCSPPropertyCollection *self, BSTR bstrPropName, VARIANT* pVarPropValue, IOCSPProperty** ppVal) CreateProperty;
-			public function HRESULT(IOCSPPropertyCollection *self, BSTR bstrPropName) DeleteProperty;
-			public function HRESULT(IOCSPPropertyCollection *self, VARIANT* pVarProperties) InitializeFromProperties;
-			public function HRESULT(IOCSPPropertyCollection *self, VARIANT* pVarProperties) GetAllProperties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IOCSPPropertyCollection *self, IUnknown** ppVal) get__NewEnum;
+				public function HRESULT(IOCSPPropertyCollection *self, int32 Index, VARIANT* pVal) get_Item;
+				public function HRESULT(IOCSPPropertyCollection *self, int32* pVal) get_Count;
+				public function HRESULT(IOCSPPropertyCollection *self, BSTR bstrPropName, VARIANT* pVal) get_ItemByName;
+				public function HRESULT(IOCSPPropertyCollection *self, BSTR bstrPropName, VARIANT* pVarPropValue, IOCSPProperty** ppVal) CreateProperty;
+				public function HRESULT(IOCSPPropertyCollection *self, BSTR bstrPropName) DeleteProperty;
+				public function HRESULT(IOCSPPropertyCollection *self, VARIANT* pVarProperties) InitializeFromProperties;
+				public function HRESULT(IOCSPPropertyCollection *self, VARIANT* pVarProperties) GetAllProperties;
+			}
 		}
 		[CRepr]
 		public struct IOCSPCAConfiguration : IDispatch
 		{
 			public const new Guid IID = .(0xaec92b40, 0x3d46, 0x433f, 0x87, 0xd1, 0xb8, 0x4d, 0x5c, 0x1e, 0x79, 0x0d);
 			
-			public function HRESULT(IOCSPCAConfiguration *self, BSTR* pVal) get_Identifier;
-			public function HRESULT(IOCSPCAConfiguration *self, VARIANT* pVal) get_CACertificate;
-			public function HRESULT(IOCSPCAConfiguration *self, BSTR* pVal) get_HashAlgorithm;
-			public function HRESULT(IOCSPCAConfiguration *self, BSTR newVal) put_HashAlgorithm;
-			public function HRESULT(IOCSPCAConfiguration *self, uint32* pVal) get_SigningFlags;
-			public function HRESULT(IOCSPCAConfiguration *self, uint32 newVal) put_SigningFlags;
-			public function HRESULT(IOCSPCAConfiguration *self, VARIANT* pVal) get_SigningCertificate;
-			public function HRESULT(IOCSPCAConfiguration *self, VARIANT newVal) put_SigningCertificate;
-			public function HRESULT(IOCSPCAConfiguration *self, uint32* pVal) get_ReminderDuration;
-			public function HRESULT(IOCSPCAConfiguration *self, uint32 newVal) put_ReminderDuration;
-			public function HRESULT(IOCSPCAConfiguration *self, uint32* pVal) get_ErrorCode;
-			public function HRESULT(IOCSPCAConfiguration *self, BSTR* pVal) get_CSPName;
-			public function HRESULT(IOCSPCAConfiguration *self, uint32* pVal) get_KeySpec;
-			public function HRESULT(IOCSPCAConfiguration *self, BSTR* pVal) get_ProviderCLSID;
-			public function HRESULT(IOCSPCAConfiguration *self, BSTR newVal) put_ProviderCLSID;
-			public function HRESULT(IOCSPCAConfiguration *self, VARIANT* pVal) get_ProviderProperties;
-			public function HRESULT(IOCSPCAConfiguration *self, VARIANT newVal) put_ProviderProperties;
-			public function HRESULT(IOCSPCAConfiguration *self, int16* pVal) get_Modified;
-			public function HRESULT(IOCSPCAConfiguration *self, VARIANT* pVal) get_LocalRevocationInformation;
-			public function HRESULT(IOCSPCAConfiguration *self, VARIANT newVal) put_LocalRevocationInformation;
-			public function HRESULT(IOCSPCAConfiguration *self, BSTR* pVal) get_SigningCertificateTemplate;
-			public function HRESULT(IOCSPCAConfiguration *self, BSTR newVal) put_SigningCertificateTemplate;
-			public function HRESULT(IOCSPCAConfiguration *self, BSTR* pVal) get_CAConfig;
-			public function HRESULT(IOCSPCAConfiguration *self, BSTR newVal) put_CAConfig;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IOCSPCAConfiguration *self, BSTR* pVal) get_Identifier;
+				public function HRESULT(IOCSPCAConfiguration *self, VARIANT* pVal) get_CACertificate;
+				public function HRESULT(IOCSPCAConfiguration *self, BSTR* pVal) get_HashAlgorithm;
+				public function HRESULT(IOCSPCAConfiguration *self, BSTR newVal) put_HashAlgorithm;
+				public function HRESULT(IOCSPCAConfiguration *self, uint32* pVal) get_SigningFlags;
+				public function HRESULT(IOCSPCAConfiguration *self, uint32 newVal) put_SigningFlags;
+				public function HRESULT(IOCSPCAConfiguration *self, VARIANT* pVal) get_SigningCertificate;
+				public function HRESULT(IOCSPCAConfiguration *self, VARIANT newVal) put_SigningCertificate;
+				public function HRESULT(IOCSPCAConfiguration *self, uint32* pVal) get_ReminderDuration;
+				public function HRESULT(IOCSPCAConfiguration *self, uint32 newVal) put_ReminderDuration;
+				public function HRESULT(IOCSPCAConfiguration *self, uint32* pVal) get_ErrorCode;
+				public function HRESULT(IOCSPCAConfiguration *self, BSTR* pVal) get_CSPName;
+				public function HRESULT(IOCSPCAConfiguration *self, uint32* pVal) get_KeySpec;
+				public function HRESULT(IOCSPCAConfiguration *self, BSTR* pVal) get_ProviderCLSID;
+				public function HRESULT(IOCSPCAConfiguration *self, BSTR newVal) put_ProviderCLSID;
+				public function HRESULT(IOCSPCAConfiguration *self, VARIANT* pVal) get_ProviderProperties;
+				public function HRESULT(IOCSPCAConfiguration *self, VARIANT newVal) put_ProviderProperties;
+				public function HRESULT(IOCSPCAConfiguration *self, int16* pVal) get_Modified;
+				public function HRESULT(IOCSPCAConfiguration *self, VARIANT* pVal) get_LocalRevocationInformation;
+				public function HRESULT(IOCSPCAConfiguration *self, VARIANT newVal) put_LocalRevocationInformation;
+				public function HRESULT(IOCSPCAConfiguration *self, BSTR* pVal) get_SigningCertificateTemplate;
+				public function HRESULT(IOCSPCAConfiguration *self, BSTR newVal) put_SigningCertificateTemplate;
+				public function HRESULT(IOCSPCAConfiguration *self, BSTR* pVal) get_CAConfig;
+				public function HRESULT(IOCSPCAConfiguration *self, BSTR newVal) put_CAConfig;
+			}
 		}
 		[CRepr]
 		public struct IOCSPCAConfigurationCollection : IDispatch
 		{
 			public const new Guid IID = .(0x2bebea0b, 0x5ece, 0x4f28, 0xa9, 0x1c, 0x86, 0xb4, 0xbb, 0x20, 0xf0, 0xd3);
 			
-			public function HRESULT(IOCSPCAConfigurationCollection *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(IOCSPCAConfigurationCollection *self, int32 Index, VARIANT* pVal) get_Item;
-			public function HRESULT(IOCSPCAConfigurationCollection *self, int32* pVal) get_Count;
-			public function HRESULT(IOCSPCAConfigurationCollection *self, BSTR bstrIdentifier, VARIANT* pVal) get_ItemByName;
-			public function HRESULT(IOCSPCAConfigurationCollection *self, BSTR bstrIdentifier, VARIANT varCACert, IOCSPCAConfiguration** ppVal) CreateCAConfiguration;
-			public function HRESULT(IOCSPCAConfigurationCollection *self, BSTR bstrIdentifier) DeleteCAConfiguration;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IOCSPCAConfigurationCollection *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(IOCSPCAConfigurationCollection *self, int32 Index, VARIANT* pVal) get_Item;
+				public function HRESULT(IOCSPCAConfigurationCollection *self, int32* pVal) get_Count;
+				public function HRESULT(IOCSPCAConfigurationCollection *self, BSTR bstrIdentifier, VARIANT* pVal) get_ItemByName;
+				public function HRESULT(IOCSPCAConfigurationCollection *self, BSTR bstrIdentifier, VARIANT varCACert, IOCSPCAConfiguration** ppVal) CreateCAConfiguration;
+				public function HRESULT(IOCSPCAConfigurationCollection *self, BSTR bstrIdentifier) DeleteCAConfiguration;
+			}
 		}
 		[CRepr]
 		public struct IOCSPAdmin : IDispatch
 		{
 			public const new Guid IID = .(0x322e830d, 0x67db, 0x4fe9, 0x95, 0x77, 0x45, 0x96, 0xd9, 0xf0, 0x92, 0x94);
 			
-			public function HRESULT(IOCSPAdmin *self, IOCSPPropertyCollection** ppVal) get_OCSPServiceProperties;
-			public function HRESULT(IOCSPAdmin *self, IOCSPCAConfigurationCollection** pVal) get_OCSPCAConfigurationCollection;
-			public function HRESULT(IOCSPAdmin *self, BSTR bstrServerName, int16 bForce) GetConfiguration;
-			public function HRESULT(IOCSPAdmin *self, BSTR bstrServerName, int16 bForce) SetConfiguration;
-			public function HRESULT(IOCSPAdmin *self, BSTR bstrServerName, int32* pRoles) GetMyRoles;
-			public function HRESULT(IOCSPAdmin *self, BSTR bstrServerName) Ping;
-			public function HRESULT(IOCSPAdmin *self, BSTR bstrServerName, BSTR bstrVal) SetSecurity;
-			public function HRESULT(IOCSPAdmin *self, BSTR bstrServerName, BSTR* pVal) GetSecurity;
-			public function HRESULT(IOCSPAdmin *self, BSTR bstrServerName, VARIANT* pCACertVar, VARIANT* pVal) GetSigningCertificates;
-			public function HRESULT(IOCSPAdmin *self, BSTR bstrServerName, BSTR bstrCAId, VARIANT* pVal) GetHashAlgorithms;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IOCSPAdmin *self, IOCSPPropertyCollection** ppVal) get_OCSPServiceProperties;
+				public function HRESULT(IOCSPAdmin *self, IOCSPCAConfigurationCollection** pVal) get_OCSPCAConfigurationCollection;
+				public function HRESULT(IOCSPAdmin *self, BSTR bstrServerName, int16 bForce) GetConfiguration;
+				public function HRESULT(IOCSPAdmin *self, BSTR bstrServerName, int16 bForce) SetConfiguration;
+				public function HRESULT(IOCSPAdmin *self, BSTR bstrServerName, int32* pRoles) GetMyRoles;
+				public function HRESULT(IOCSPAdmin *self, BSTR bstrServerName) Ping;
+				public function HRESULT(IOCSPAdmin *self, BSTR bstrServerName, BSTR bstrVal) SetSecurity;
+				public function HRESULT(IOCSPAdmin *self, BSTR bstrServerName, BSTR* pVal) GetSecurity;
+				public function HRESULT(IOCSPAdmin *self, BSTR bstrServerName, VARIANT* pCACertVar, VARIANT* pVal) GetSigningCertificates;
+				public function HRESULT(IOCSPAdmin *self, BSTR bstrServerName, BSTR bstrCAId, VARIANT* pVal) GetHashAlgorithms;
+			}
 		}
 		[CRepr]
 		public struct ICertServerPolicy : IDispatch
 		{
 			public const new Guid IID = .(0xaa000922, 0xffbe, 0x11cf, 0x88, 0x00, 0x00, 0xa0, 0xc9, 0x03, 0xb8, 0x3c);
 			
-			public function HRESULT(ICertServerPolicy *self, int32 Context) SetContext;
-			public function HRESULT(ICertServerPolicy *self, BSTR strPropertyName, int32 PropertyType, VARIANT* pvarPropertyValue) GetRequestProperty;
-			public function HRESULT(ICertServerPolicy *self, BSTR strAttributeName, BSTR* pstrAttributeValue) GetRequestAttribute;
-			public function HRESULT(ICertServerPolicy *self, BSTR strPropertyName, CERT_PROPERTY_TYPE PropertyType, VARIANT* pvarPropertyValue) GetCertificateProperty;
-			public function HRESULT(ICertServerPolicy *self, BSTR strPropertyName, int32 PropertyType, VARIANT* pvarPropertyValue) SetCertificateProperty;
-			public function HRESULT(ICertServerPolicy *self, BSTR strExtensionName, CERT_PROPERTY_TYPE Type, VARIANT* pvarValue) GetCertificateExtension;
-			public function HRESULT(ICertServerPolicy *self, int32* pExtFlags) GetCertificateExtensionFlags;
-			public function HRESULT(ICertServerPolicy *self, BSTR strExtensionName, int32 Type, int32 ExtFlags, VARIANT* pvarValue) SetCertificateExtension;
-			public function HRESULT(ICertServerPolicy *self, int32 Flags) EnumerateExtensionsSetup;
-			public function HRESULT(ICertServerPolicy *self, BSTR* pstrExtensionName) EnumerateExtensions;
-			public function HRESULT(ICertServerPolicy *self) EnumerateExtensionsClose;
-			public function HRESULT(ICertServerPolicy *self, int32 Flags) EnumerateAttributesSetup;
-			public function HRESULT(ICertServerPolicy *self, BSTR* pstrAttributeName) EnumerateAttributes;
-			public function HRESULT(ICertServerPolicy *self) EnumerateAttributesClose;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertServerPolicy *self, int32 Context) SetContext;
+				public function HRESULT(ICertServerPolicy *self, BSTR strPropertyName, int32 PropertyType, VARIANT* pvarPropertyValue) GetRequestProperty;
+				public function HRESULT(ICertServerPolicy *self, BSTR strAttributeName, BSTR* pstrAttributeValue) GetRequestAttribute;
+				public function HRESULT(ICertServerPolicy *self, BSTR strPropertyName, CERT_PROPERTY_TYPE PropertyType, VARIANT* pvarPropertyValue) GetCertificateProperty;
+				public function HRESULT(ICertServerPolicy *self, BSTR strPropertyName, int32 PropertyType, VARIANT* pvarPropertyValue) SetCertificateProperty;
+				public function HRESULT(ICertServerPolicy *self, BSTR strExtensionName, CERT_PROPERTY_TYPE Type, VARIANT* pvarValue) GetCertificateExtension;
+				public function HRESULT(ICertServerPolicy *self, int32* pExtFlags) GetCertificateExtensionFlags;
+				public function HRESULT(ICertServerPolicy *self, BSTR strExtensionName, int32 Type, int32 ExtFlags, VARIANT* pvarValue) SetCertificateExtension;
+				public function HRESULT(ICertServerPolicy *self, int32 Flags) EnumerateExtensionsSetup;
+				public function HRESULT(ICertServerPolicy *self, BSTR* pstrExtensionName) EnumerateExtensions;
+				public function HRESULT(ICertServerPolicy *self) EnumerateExtensionsClose;
+				public function HRESULT(ICertServerPolicy *self, int32 Flags) EnumerateAttributesSetup;
+				public function HRESULT(ICertServerPolicy *self, BSTR* pstrAttributeName) EnumerateAttributes;
+				public function HRESULT(ICertServerPolicy *self) EnumerateAttributesClose;
+			}
 		}
 		[CRepr]
 		public struct ICertServerExit : IDispatch
 		{
 			public const new Guid IID = .(0x4ba9eb90, 0x732c, 0x11d0, 0x88, 0x16, 0x00, 0xa0, 0xc9, 0x03, 0xb8, 0x3c);
 			
-			public function HRESULT(ICertServerExit *self, int32 Context) SetContext;
-			public function HRESULT(ICertServerExit *self, BSTR strPropertyName, int32 PropertyType, VARIANT* pvarPropertyValue) GetRequestProperty;
-			public function HRESULT(ICertServerExit *self, BSTR strAttributeName, BSTR* pstrAttributeValue) GetRequestAttribute;
-			public function HRESULT(ICertServerExit *self, BSTR strPropertyName, int32 PropertyType, VARIANT* pvarPropertyValue) GetCertificateProperty;
-			public function HRESULT(ICertServerExit *self, BSTR strExtensionName, int32 Type, VARIANT* pvarValue) GetCertificateExtension;
-			public function HRESULT(ICertServerExit *self, int32* pExtFlags) GetCertificateExtensionFlags;
-			public function HRESULT(ICertServerExit *self, int32 Flags) EnumerateExtensionsSetup;
-			public function HRESULT(ICertServerExit *self, BSTR* pstrExtensionName) EnumerateExtensions;
-			public function HRESULT(ICertServerExit *self) EnumerateExtensionsClose;
-			public function HRESULT(ICertServerExit *self, int32 Flags) EnumerateAttributesSetup;
-			public function HRESULT(ICertServerExit *self, BSTR* pstrAttributeName) EnumerateAttributes;
-			public function HRESULT(ICertServerExit *self) EnumerateAttributesClose;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertServerExit *self, int32 Context) SetContext;
+				public function HRESULT(ICertServerExit *self, BSTR strPropertyName, int32 PropertyType, VARIANT* pvarPropertyValue) GetRequestProperty;
+				public function HRESULT(ICertServerExit *self, BSTR strAttributeName, BSTR* pstrAttributeValue) GetRequestAttribute;
+				public function HRESULT(ICertServerExit *self, BSTR strPropertyName, int32 PropertyType, VARIANT* pvarPropertyValue) GetCertificateProperty;
+				public function HRESULT(ICertServerExit *self, BSTR strExtensionName, int32 Type, VARIANT* pvarValue) GetCertificateExtension;
+				public function HRESULT(ICertServerExit *self, int32* pExtFlags) GetCertificateExtensionFlags;
+				public function HRESULT(ICertServerExit *self, int32 Flags) EnumerateExtensionsSetup;
+				public function HRESULT(ICertServerExit *self, BSTR* pstrExtensionName) EnumerateExtensions;
+				public function HRESULT(ICertServerExit *self) EnumerateExtensionsClose;
+				public function HRESULT(ICertServerExit *self, int32 Flags) EnumerateAttributesSetup;
+				public function HRESULT(ICertServerExit *self, BSTR* pstrAttributeName) EnumerateAttributes;
+				public function HRESULT(ICertServerExit *self) EnumerateAttributesClose;
+			}
 		}
 		[CRepr]
 		public struct ICertGetConfig : IDispatch
 		{
 			public const new Guid IID = .(0xc7ea09c0, 0xce17, 0x11d0, 0x88, 0x33, 0x00, 0xa0, 0xc9, 0x03, 0xb8, 0x3c);
 			
-			public function HRESULT(ICertGetConfig *self, CERT_GET_CONFIG_FLAGS Flags, BSTR* pstrOut) GetConfig;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertGetConfig *self, CERT_GET_CONFIG_FLAGS Flags, BSTR* pstrOut) GetConfig;
+			}
 		}
 		[CRepr]
 		public struct ICertConfig : IDispatch
 		{
 			public const new Guid IID = .(0x372fce34, 0x4324, 0x11d0, 0x88, 0x10, 0x00, 0xa0, 0xc9, 0x03, 0xb8, 0x3c);
 			
-			public function HRESULT(ICertConfig *self, int32 Index, int32* pCount) Reset;
-			public function HRESULT(ICertConfig *self, int32* pIndex) Next;
-			public function HRESULT(ICertConfig *self, BSTR strFieldName, BSTR* pstrOut) GetField;
-			public function HRESULT(ICertConfig *self, int32 Flags, BSTR* pstrOut) GetConfig;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertConfig *self, int32 Index, int32* pCount) Reset;
+				public function HRESULT(ICertConfig *self, int32* pIndex) Next;
+				public function HRESULT(ICertConfig *self, BSTR strFieldName, BSTR* pstrOut) GetField;
+				public function HRESULT(ICertConfig *self, int32 Flags, BSTR* pstrOut) GetConfig;
+			}
 		}
 		[CRepr]
 		public struct ICertConfig2 : ICertConfig
 		{
 			public const new Guid IID = .(0x7a18edde, 0x7e78, 0x4163, 0x8d, 0xed, 0x78, 0xe2, 0xc9, 0xce, 0xe9, 0x24);
 			
-			public function HRESULT(ICertConfig2 *self, BSTR strSharedFolder) SetSharedFolder;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertConfig.VTable
+			{
+				public function HRESULT(ICertConfig2 *self, BSTR strSharedFolder) SetSharedFolder;
+			}
 		}
 		[CRepr]
 		public struct ICertRequest : IDispatch
 		{
 			public const new Guid IID = .(0x014e4840, 0x5523, 0x11d0, 0x88, 0x12, 0x00, 0xa0, 0xc9, 0x03, 0xb8, 0x3c);
 			
-			public function HRESULT(ICertRequest *self, int32 Flags, BSTR strRequest, BSTR strAttributes, BSTR strConfig, int32* pDisposition) Submit;
-			public function HRESULT(ICertRequest *self, int32 RequestId, BSTR strConfig, int32* pDisposition) RetrievePending;
-			public function HRESULT(ICertRequest *self, int32* pStatus) GetLastStatus;
-			public function HRESULT(ICertRequest *self, int32* pRequestId) GetRequestId;
-			public function HRESULT(ICertRequest *self, BSTR* pstrDispositionMessage) GetDispositionMessage;
-			public function HRESULT(ICertRequest *self, int32 fExchangeCertificate, BSTR strConfig, int32 Flags, BSTR* pstrCertificate) GetCACertificate;
-			public function HRESULT(ICertRequest *self, int32 Flags, BSTR* pstrCertificate) GetCertificate;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertRequest *self, int32 Flags, BSTR strRequest, BSTR strAttributes, BSTR strConfig, int32* pDisposition) Submit;
+				public function HRESULT(ICertRequest *self, int32 RequestId, BSTR strConfig, int32* pDisposition) RetrievePending;
+				public function HRESULT(ICertRequest *self, int32* pStatus) GetLastStatus;
+				public function HRESULT(ICertRequest *self, int32* pRequestId) GetRequestId;
+				public function HRESULT(ICertRequest *self, BSTR* pstrDispositionMessage) GetDispositionMessage;
+				public function HRESULT(ICertRequest *self, int32 fExchangeCertificate, BSTR strConfig, int32 Flags, BSTR* pstrCertificate) GetCACertificate;
+				public function HRESULT(ICertRequest *self, int32 Flags, BSTR* pstrCertificate) GetCertificate;
+			}
 		}
 		[CRepr]
 		public struct ICertRequest2 : ICertRequest
 		{
 			public const new Guid IID = .(0xa4772988, 0x4a85, 0x4fa9, 0x82, 0x4e, 0xb5, 0xcf, 0x5c, 0x16, 0x40, 0x5a);
 			
-			public function HRESULT(ICertRequest2 *self, BSTR strConfig, int32 RequestId, BSTR strSerialNumber, CR_DISP* pDisposition) GetIssuedCertificate;
-			public function HRESULT(ICertRequest2 *self, int32 hrMessage, int32 Flags, BSTR* pstrErrorMessageText) GetErrorMessageText;
-			public function HRESULT(ICertRequest2 *self, BSTR strConfig, int32 PropId, int32 PropIndex, int32 PropType, int32 Flags, VARIANT* pvarPropertyValue) GetCAProperty;
-			public function HRESULT(ICertRequest2 *self, BSTR strConfig, int32 PropId, int32* pPropFlags) GetCAPropertyFlags;
-			public function HRESULT(ICertRequest2 *self, BSTR strConfig, int32 PropId, BSTR* pstrDisplayName) GetCAPropertyDisplayName;
-			public function HRESULT(ICertRequest2 *self, FULL_RESPONSE_PROPERTY_ID PropId, int32 PropIndex, CERT_PROPERTY_TYPE PropType, CERT_REQUEST_OUT_TYPE Flags, VARIANT* pvarPropertyValue) GetFullResponseProperty;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertRequest.VTable
+			{
+				public function HRESULT(ICertRequest2 *self, BSTR strConfig, int32 RequestId, BSTR strSerialNumber, CR_DISP* pDisposition) GetIssuedCertificate;
+				public function HRESULT(ICertRequest2 *self, int32 hrMessage, int32 Flags, BSTR* pstrErrorMessageText) GetErrorMessageText;
+				public function HRESULT(ICertRequest2 *self, BSTR strConfig, int32 PropId, int32 PropIndex, int32 PropType, int32 Flags, VARIANT* pvarPropertyValue) GetCAProperty;
+				public function HRESULT(ICertRequest2 *self, BSTR strConfig, int32 PropId, int32* pPropFlags) GetCAPropertyFlags;
+				public function HRESULT(ICertRequest2 *self, BSTR strConfig, int32 PropId, BSTR* pstrDisplayName) GetCAPropertyDisplayName;
+				public function HRESULT(ICertRequest2 *self, FULL_RESPONSE_PROPERTY_ID PropId, int32 PropIndex, CERT_PROPERTY_TYPE PropType, CERT_REQUEST_OUT_TYPE Flags, VARIANT* pvarPropertyValue) GetFullResponseProperty;
+			}
 		}
 		[CRepr]
 		public struct ICertRequest3 : ICertRequest2
 		{
 			public const new Guid IID = .(0xafc8f92b, 0x33a2, 0x4861, 0xbf, 0x36, 0x29, 0x33, 0xb7, 0xcd, 0x67, 0xb3);
 			
-			public function HRESULT(ICertRequest3 *self, int32 hWnd, X509EnrollmentAuthFlags AuthType, BSTR strCredential, BSTR strPassword) SetCredential;
-			public function HRESULT(ICertRequest3 *self, BSTR* pstrRequestId) GetRequestIdString;
-			public function HRESULT(ICertRequest3 *self, BSTR strConfig, BSTR strRequestId, BSTR strSerialNumber, CR_DISP* pDisposition) GetIssuedCertificate2;
-			public function HRESULT(ICertRequest3 *self, int16* pValue) GetRefreshPolicy;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertRequest2.VTable
+			{
+				public function HRESULT(ICertRequest3 *self, int32 hWnd, X509EnrollmentAuthFlags AuthType, BSTR strCredential, BSTR strPassword) SetCredential;
+				public function HRESULT(ICertRequest3 *self, BSTR* pstrRequestId) GetRequestIdString;
+				public function HRESULT(ICertRequest3 *self, BSTR strConfig, BSTR strRequestId, BSTR strSerialNumber, CR_DISP* pDisposition) GetIssuedCertificate2;
+				public function HRESULT(ICertRequest3 *self, int16* pValue) GetRefreshPolicy;
+			}
 		}
 		[CRepr]
 		public struct ICertManageModule : IDispatch
 		{
 			public const new Guid IID = .(0xe7d7ad42, 0xbd3d, 0x11d1, 0x9a, 0x4d, 0x00, 0xc0, 0x4f, 0xc2, 0x97, 0xeb);
 			
-			public function HRESULT(ICertManageModule *self, BSTR strConfig, BSTR strStorageLocation, BSTR strPropertyName, int32 Flags, VARIANT* pvarProperty) GetProperty;
-			public function HRESULT(ICertManageModule *self, BSTR strConfig, BSTR strStorageLocation, BSTR strPropertyName, int32 Flags, VARIANT* pvarProperty) SetProperty;
-			public function HRESULT(ICertManageModule *self, BSTR strConfig, BSTR strStorageLocation, int32 Flags) Configure;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertManageModule *self, BSTR strConfig, BSTR strStorageLocation, BSTR strPropertyName, int32 Flags, VARIANT* pvarProperty) GetProperty;
+				public function HRESULT(ICertManageModule *self, BSTR strConfig, BSTR strStorageLocation, BSTR strPropertyName, int32 Flags, VARIANT* pvarProperty) SetProperty;
+				public function HRESULT(ICertManageModule *self, BSTR strConfig, BSTR strStorageLocation, int32 Flags) Configure;
+			}
 		}
 		[CRepr]
 		public struct ICertPolicy : IDispatch
 		{
 			public const new Guid IID = .(0x38bb5a00, 0x7636, 0x11d0, 0xb4, 0x13, 0x00, 0xa0, 0xc9, 0x1b, 0xbf, 0x8c);
 			
-			public function HRESULT(ICertPolicy *self, BSTR strConfig) Initialize;
-			public function HRESULT(ICertPolicy *self, BSTR strConfig, int32 Context, int32 bNewRequest, int32 Flags, int32* pDisposition) VerifyRequest;
-			public function HRESULT(ICertPolicy *self, BSTR* pstrDescription) GetDescription;
-			public function HRESULT(ICertPolicy *self) ShutDown;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertPolicy *self, BSTR strConfig) Initialize;
+				public function HRESULT(ICertPolicy *self, BSTR strConfig, int32 Context, int32 bNewRequest, int32 Flags, int32* pDisposition) VerifyRequest;
+				public function HRESULT(ICertPolicy *self, BSTR* pstrDescription) GetDescription;
+				public function HRESULT(ICertPolicy *self) ShutDown;
+			}
 		}
 		[CRepr]
 		public struct ICertPolicy2 : ICertPolicy
 		{
 			public const new Guid IID = .(0x3db4910e, 0x8001, 0x4bf1, 0xaa, 0x1b, 0xf4, 0x3a, 0x80, 0x83, 0x17, 0xa0);
 			
-			public function HRESULT(ICertPolicy2 *self, ICertManageModule** ppManageModule) GetManageModule;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertPolicy.VTable
+			{
+				public function HRESULT(ICertPolicy2 *self, ICertManageModule** ppManageModule) GetManageModule;
+			}
 		}
 		[CRepr]
 		public struct INDESPolicy : IUnknown
 		{
 			public const new Guid IID = .(0x13ca515d, 0x431d, 0x46cc, 0x8c, 0x2e, 0x1d, 0xa2, 0x69, 0xbb, 0xd6, 0x25);
 			
-			public function HRESULT(INDESPolicy *self) Initialize;
-			public function HRESULT(INDESPolicy *self) Uninitialize;
-			public function HRESULT(INDESPolicy *self, PWSTR pwszTemplate, PWSTR pwszParams, PWSTR* ppwszResponse) GenerateChallenge;
-			public function HRESULT(INDESPolicy *self, CERTTRANSBLOB* pctbRequest, CERTTRANSBLOB* pctbSigningCertEncoded, PWSTR pwszTemplate, PWSTR pwszTransactionId, BOOL* pfVerified) VerifyRequest;
-			public function HRESULT(INDESPolicy *self, PWSTR pwszChallenge, PWSTR pwszTransactionId, X509SCEPDisposition disposition, int32 lastHResult, CERTTRANSBLOB* pctbIssuedCertEncoded) Notify;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INDESPolicy *self) Initialize;
+				public function HRESULT(INDESPolicy *self) Uninitialize;
+				public function HRESULT(INDESPolicy *self, PWSTR pwszTemplate, PWSTR pwszParams, PWSTR* ppwszResponse) GenerateChallenge;
+				public function HRESULT(INDESPolicy *self, CERTTRANSBLOB* pctbRequest, CERTTRANSBLOB* pctbSigningCertEncoded, PWSTR pwszTemplate, PWSTR pwszTransactionId, BOOL* pfVerified) VerifyRequest;
+				public function HRESULT(INDESPolicy *self, PWSTR pwszChallenge, PWSTR pwszTransactionId, X509SCEPDisposition disposition, int32 lastHResult, CERTTRANSBLOB* pctbIssuedCertEncoded) Notify;
+			}
 		}
 		[CRepr]
 		public struct IObjectId : IDispatch
 		{
 			public const new Guid IID = .(0x728ab300, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IObjectId *self, CERTENROLL_OBJECTID Name) InitializeFromName;
-			public function HRESULT(IObjectId *self, BSTR strValue) InitializeFromValue;
-			public function HRESULT(IObjectId *self, ObjectIdGroupId GroupId, ObjectIdPublicKeyFlags KeyFlags, AlgorithmFlags AlgFlags, BSTR strAlgorithmName) InitializeFromAlgorithmName;
-			public function HRESULT(IObjectId *self, CERTENROLL_OBJECTID* pValue) get_Name;
-			public function HRESULT(IObjectId *self, BSTR* pValue) get_FriendlyName;
-			public function HRESULT(IObjectId *self, BSTR Value) put_FriendlyName;
-			public function HRESULT(IObjectId *self, BSTR* pValue) get_Value;
-			public function HRESULT(IObjectId *self, ObjectIdGroupId GroupId, ObjectIdPublicKeyFlags KeyFlags, BSTR* pstrAlgorithmName) GetAlgorithmName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IObjectId *self, CERTENROLL_OBJECTID Name) InitializeFromName;
+				public function HRESULT(IObjectId *self, BSTR strValue) InitializeFromValue;
+				public function HRESULT(IObjectId *self, ObjectIdGroupId GroupId, ObjectIdPublicKeyFlags KeyFlags, AlgorithmFlags AlgFlags, BSTR strAlgorithmName) InitializeFromAlgorithmName;
+				public function HRESULT(IObjectId *self, CERTENROLL_OBJECTID* pValue) get_Name;
+				public function HRESULT(IObjectId *self, BSTR* pValue) get_FriendlyName;
+				public function HRESULT(IObjectId *self, BSTR Value) put_FriendlyName;
+				public function HRESULT(IObjectId *self, BSTR* pValue) get_Value;
+				public function HRESULT(IObjectId *self, ObjectIdGroupId GroupId, ObjectIdPublicKeyFlags KeyFlags, BSTR* pstrAlgorithmName) GetAlgorithmName;
+			}
 		}
 		[CRepr]
 		public struct IObjectIds : IDispatch
 		{
 			public const new Guid IID = .(0x728ab301, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IObjectIds *self, int32 Index, IObjectId** pVal) get_ItemByIndex;
-			public function HRESULT(IObjectIds *self, int32* pVal) get_Count;
-			public function HRESULT(IObjectIds *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(IObjectIds *self, IObjectId* pVal) Add;
-			public function HRESULT(IObjectIds *self, int32 Index) Remove;
-			public function HRESULT(IObjectIds *self) Clear;
-			public function HRESULT(IObjectIds *self, IObjectIds* pValue) AddRange;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IObjectIds *self, int32 Index, IObjectId** pVal) get_ItemByIndex;
+				public function HRESULT(IObjectIds *self, int32* pVal) get_Count;
+				public function HRESULT(IObjectIds *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(IObjectIds *self, IObjectId* pVal) Add;
+				public function HRESULT(IObjectIds *self, int32 Index) Remove;
+				public function HRESULT(IObjectIds *self) Clear;
+				public function HRESULT(IObjectIds *self, IObjectIds* pValue) AddRange;
+			}
 		}
 		[CRepr]
 		public struct IBinaryConverter : IDispatch
 		{
 			public const new Guid IID = .(0x728ab302, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IBinaryConverter *self, BSTR strEncodedIn, EncodingType EncodingIn, EncodingType Encoding, BSTR* pstrEncoded) StringToString;
-			public function HRESULT(IBinaryConverter *self, VARIANT* pvarByteArray, EncodingType Encoding, BSTR* pstrEncoded) VariantByteArrayToString;
-			public function HRESULT(IBinaryConverter *self, BSTR strEncoded, EncodingType Encoding, VARIANT* pvarByteArray) StringToVariantByteArray;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IBinaryConverter *self, BSTR strEncodedIn, EncodingType EncodingIn, EncodingType Encoding, BSTR* pstrEncoded) StringToString;
+				public function HRESULT(IBinaryConverter *self, VARIANT* pvarByteArray, EncodingType Encoding, BSTR* pstrEncoded) VariantByteArrayToString;
+				public function HRESULT(IBinaryConverter *self, BSTR strEncoded, EncodingType Encoding, VARIANT* pvarByteArray) StringToVariantByteArray;
+			}
 		}
 		[CRepr]
 		public struct IBinaryConverter2 : IBinaryConverter
 		{
 			public const new Guid IID = .(0x8d7928b4, 0x4e17, 0x428d, 0x9a, 0x17, 0x72, 0x8d, 0xf0, 0x0d, 0x1b, 0x2b);
 			
-			public function HRESULT(IBinaryConverter2 *self, VARIANT* pvarStringArray, VARIANT* pvarVariantArray) StringArrayToVariantArray;
-			public function HRESULT(IBinaryConverter2 *self, VARIANT* pvarVariantArray, VARIANT* pvarStringArray) VariantArrayToStringArray;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IBinaryConverter.VTable
+			{
+				public function HRESULT(IBinaryConverter2 *self, VARIANT* pvarStringArray, VARIANT* pvarVariantArray) StringArrayToVariantArray;
+				public function HRESULT(IBinaryConverter2 *self, VARIANT* pvarVariantArray, VARIANT* pvarStringArray) VariantArrayToStringArray;
+			}
 		}
 		[CRepr]
 		public struct IX500DistinguishedName : IDispatch
 		{
 			public const new Guid IID = .(0x728ab303, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX500DistinguishedName *self, BSTR strEncodedName, EncodingType Encoding, X500NameFlags NameFlags) Decode;
-			public function HRESULT(IX500DistinguishedName *self, BSTR strName, X500NameFlags NameFlags) Encode;
-			public function HRESULT(IX500DistinguishedName *self, BSTR* pValue) get_Name;
-			public function HRESULT(IX500DistinguishedName *self, EncodingType Encoding, BSTR* pValue) get_EncodedName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX500DistinguishedName *self, BSTR strEncodedName, EncodingType Encoding, X500NameFlags NameFlags) Decode;
+				public function HRESULT(IX500DistinguishedName *self, BSTR strName, X500NameFlags NameFlags) Encode;
+				public function HRESULT(IX500DistinguishedName *self, BSTR* pValue) get_Name;
+				public function HRESULT(IX500DistinguishedName *self, EncodingType Encoding, BSTR* pValue) get_EncodedName;
+			}
 		}
 		[CRepr]
 		public struct IX509EnrollmentStatus : IDispatch
 		{
 			public const new Guid IID = .(0x728ab304, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509EnrollmentStatus *self, BSTR strText) AppendText;
-			public function HRESULT(IX509EnrollmentStatus *self, BSTR* pValue) get_Text;
-			public function HRESULT(IX509EnrollmentStatus *self, BSTR Value) put_Text;
-			public function HRESULT(IX509EnrollmentStatus *self, EnrollmentSelectionStatus* pValue) get_Selected;
-			public function HRESULT(IX509EnrollmentStatus *self, EnrollmentSelectionStatus Value) put_Selected;
-			public function HRESULT(IX509EnrollmentStatus *self, EnrollmentDisplayStatus* pValue) get_Display;
-			public function HRESULT(IX509EnrollmentStatus *self, EnrollmentDisplayStatus Value) put_Display;
-			public function HRESULT(IX509EnrollmentStatus *self, EnrollmentEnrollStatus* pValue) get_Status;
-			public function HRESULT(IX509EnrollmentStatus *self, EnrollmentEnrollStatus Value) put_Status;
-			public function HRESULT(IX509EnrollmentStatus *self, HRESULT* pValue) get_Error;
-			public function HRESULT(IX509EnrollmentStatus *self, HRESULT Value) put_Error;
-			public function HRESULT(IX509EnrollmentStatus *self, BSTR* pValue) get_ErrorText;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509EnrollmentStatus *self, BSTR strText) AppendText;
+				public function HRESULT(IX509EnrollmentStatus *self, BSTR* pValue) get_Text;
+				public function HRESULT(IX509EnrollmentStatus *self, BSTR Value) put_Text;
+				public function HRESULT(IX509EnrollmentStatus *self, EnrollmentSelectionStatus* pValue) get_Selected;
+				public function HRESULT(IX509EnrollmentStatus *self, EnrollmentSelectionStatus Value) put_Selected;
+				public function HRESULT(IX509EnrollmentStatus *self, EnrollmentDisplayStatus* pValue) get_Display;
+				public function HRESULT(IX509EnrollmentStatus *self, EnrollmentDisplayStatus Value) put_Display;
+				public function HRESULT(IX509EnrollmentStatus *self, EnrollmentEnrollStatus* pValue) get_Status;
+				public function HRESULT(IX509EnrollmentStatus *self, EnrollmentEnrollStatus Value) put_Status;
+				public function HRESULT(IX509EnrollmentStatus *self, HRESULT* pValue) get_Error;
+				public function HRESULT(IX509EnrollmentStatus *self, HRESULT Value) put_Error;
+				public function HRESULT(IX509EnrollmentStatus *self, BSTR* pValue) get_ErrorText;
+			}
 		}
 		[CRepr]
 		public struct ICspAlgorithm : IDispatch
 		{
 			public const new Guid IID = .(0x728ab305, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICspAlgorithm *self, int32 Length, AlgorithmFlags AlgFlags, IObjectId** ppValue) GetAlgorithmOid;
-			public function HRESULT(ICspAlgorithm *self, int32* pValue) get_DefaultLength;
-			public function HRESULT(ICspAlgorithm *self, int32* pValue) get_IncrementLength;
-			public function HRESULT(ICspAlgorithm *self, BSTR* pValue) get_LongName;
-			public function HRESULT(ICspAlgorithm *self, int16* pValue) get_Valid;
-			public function HRESULT(ICspAlgorithm *self, int32* pValue) get_MaxLength;
-			public function HRESULT(ICspAlgorithm *self, int32* pValue) get_MinLength;
-			public function HRESULT(ICspAlgorithm *self, BSTR* pValue) get_Name;
-			public function HRESULT(ICspAlgorithm *self, AlgorithmType* pValue) get_Type;
-			public function HRESULT(ICspAlgorithm *self, AlgorithmOperationFlags* pValue) get_Operations;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICspAlgorithm *self, int32 Length, AlgorithmFlags AlgFlags, IObjectId** ppValue) GetAlgorithmOid;
+				public function HRESULT(ICspAlgorithm *self, int32* pValue) get_DefaultLength;
+				public function HRESULT(ICspAlgorithm *self, int32* pValue) get_IncrementLength;
+				public function HRESULT(ICspAlgorithm *self, BSTR* pValue) get_LongName;
+				public function HRESULT(ICspAlgorithm *self, int16* pValue) get_Valid;
+				public function HRESULT(ICspAlgorithm *self, int32* pValue) get_MaxLength;
+				public function HRESULT(ICspAlgorithm *self, int32* pValue) get_MinLength;
+				public function HRESULT(ICspAlgorithm *self, BSTR* pValue) get_Name;
+				public function HRESULT(ICspAlgorithm *self, AlgorithmType* pValue) get_Type;
+				public function HRESULT(ICspAlgorithm *self, AlgorithmOperationFlags* pValue) get_Operations;
+			}
 		}
 		[CRepr]
 		public struct ICspAlgorithms : IDispatch
 		{
 			public const new Guid IID = .(0x728ab306, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICspAlgorithms *self, int32 Index, ICspAlgorithm** pVal) get_ItemByIndex;
-			public function HRESULT(ICspAlgorithms *self, int32* pVal) get_Count;
-			public function HRESULT(ICspAlgorithms *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(ICspAlgorithms *self, ICspAlgorithm* pVal) Add;
-			public function HRESULT(ICspAlgorithms *self, int32 Index) Remove;
-			public function HRESULT(ICspAlgorithms *self) Clear;
-			public function HRESULT(ICspAlgorithms *self, BSTR strName, ICspAlgorithm** ppValue) get_ItemByName;
-			public function HRESULT(ICspAlgorithms *self, IObjectId* pObjectId, int32* pIndex) get_IndexByObjectId;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICspAlgorithms *self, int32 Index, ICspAlgorithm** pVal) get_ItemByIndex;
+				public function HRESULT(ICspAlgorithms *self, int32* pVal) get_Count;
+				public function HRESULT(ICspAlgorithms *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(ICspAlgorithms *self, ICspAlgorithm* pVal) Add;
+				public function HRESULT(ICspAlgorithms *self, int32 Index) Remove;
+				public function HRESULT(ICspAlgorithms *self) Clear;
+				public function HRESULT(ICspAlgorithms *self, BSTR strName, ICspAlgorithm** ppValue) get_ItemByName;
+				public function HRESULT(ICspAlgorithms *self, IObjectId* pObjectId, int32* pIndex) get_IndexByObjectId;
+			}
 		}
 		[CRepr]
 		public struct ICspInformation : IDispatch
 		{
 			public const new Guid IID = .(0x728ab307, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICspInformation *self, BSTR strName) InitializeFromName;
-			public function HRESULT(ICspInformation *self, X509ProviderType Type, IObjectId* pAlgorithm, int16 MachineContext) InitializeFromType;
-			public function HRESULT(ICspInformation *self, ICspAlgorithms** ppValue) get_CspAlgorithms;
-			public function HRESULT(ICspInformation *self, int16* pValue) get_HasHardwareRandomNumberGenerator;
-			public function HRESULT(ICspInformation *self, int16* pValue) get_IsHardwareDevice;
-			public function HRESULT(ICspInformation *self, int16* pValue) get_IsRemovable;
-			public function HRESULT(ICspInformation *self, int16* pValue) get_IsSoftwareDevice;
-			public function HRESULT(ICspInformation *self, int16* pValue) get_Valid;
-			public function HRESULT(ICspInformation *self, int32* pValue) get_MaxKeyContainerNameLength;
-			public function HRESULT(ICspInformation *self, BSTR* pValue) get_Name;
-			public function HRESULT(ICspInformation *self, X509ProviderType* pValue) get_Type;
-			public function HRESULT(ICspInformation *self, int32* pValue) get_Version;
-			public function HRESULT(ICspInformation *self, X509KeySpec* pValue) get_KeySpec;
-			public function HRESULT(ICspInformation *self, int16* pValue) get_IsSmartCard;
-			public function HRESULT(ICspInformation *self, int16 MachineContext, BSTR* pValue) GetDefaultSecurityDescriptor;
-			public function HRESULT(ICspInformation *self, int16* pValue) get_LegacyCsp;
-			public function HRESULT(ICspInformation *self, IObjectId* pAlgorithm, AlgorithmOperationFlags Operations, ICspStatus** ppValue) GetCspStatusFromOperations;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICspInformation *self, BSTR strName) InitializeFromName;
+				public function HRESULT(ICspInformation *self, X509ProviderType Type, IObjectId* pAlgorithm, int16 MachineContext) InitializeFromType;
+				public function HRESULT(ICspInformation *self, ICspAlgorithms** ppValue) get_CspAlgorithms;
+				public function HRESULT(ICspInformation *self, int16* pValue) get_HasHardwareRandomNumberGenerator;
+				public function HRESULT(ICspInformation *self, int16* pValue) get_IsHardwareDevice;
+				public function HRESULT(ICspInformation *self, int16* pValue) get_IsRemovable;
+				public function HRESULT(ICspInformation *self, int16* pValue) get_IsSoftwareDevice;
+				public function HRESULT(ICspInformation *self, int16* pValue) get_Valid;
+				public function HRESULT(ICspInformation *self, int32* pValue) get_MaxKeyContainerNameLength;
+				public function HRESULT(ICspInformation *self, BSTR* pValue) get_Name;
+				public function HRESULT(ICspInformation *self, X509ProviderType* pValue) get_Type;
+				public function HRESULT(ICspInformation *self, int32* pValue) get_Version;
+				public function HRESULT(ICspInformation *self, X509KeySpec* pValue) get_KeySpec;
+				public function HRESULT(ICspInformation *self, int16* pValue) get_IsSmartCard;
+				public function HRESULT(ICspInformation *self, int16 MachineContext, BSTR* pValue) GetDefaultSecurityDescriptor;
+				public function HRESULT(ICspInformation *self, int16* pValue) get_LegacyCsp;
+				public function HRESULT(ICspInformation *self, IObjectId* pAlgorithm, AlgorithmOperationFlags Operations, ICspStatus** ppValue) GetCspStatusFromOperations;
+			}
 		}
 		[CRepr]
 		public struct ICspInformations : IDispatch
 		{
 			public const new Guid IID = .(0x728ab308, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICspInformations *self, int32 Index, ICspInformation** pVal) get_ItemByIndex;
-			public function HRESULT(ICspInformations *self, int32* pVal) get_Count;
-			public function HRESULT(ICspInformations *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(ICspInformations *self, ICspInformation* pVal) Add;
-			public function HRESULT(ICspInformations *self, int32 Index) Remove;
-			public function HRESULT(ICspInformations *self) Clear;
-			public function HRESULT(ICspInformations *self) AddAvailableCsps;
-			public function HRESULT(ICspInformations *self, BSTR strName, ICspInformation** ppCspInformation) get_ItemByName;
-			public function HRESULT(ICspInformations *self, BSTR strProviderName, X509KeySpec LegacyKeySpec, ICspStatus** ppValue) GetCspStatusFromProviderName;
-			public function HRESULT(ICspInformations *self, AlgorithmOperationFlags Operations, ICspInformation* pCspInformation, ICspStatuses** ppValue) GetCspStatusesFromOperations;
-			public function HRESULT(ICspInformations *self, ICspInformation* pCspInformation, ICspAlgorithms** ppValue) GetEncryptionCspAlgorithms;
-			public function HRESULT(ICspInformations *self, ICspInformation* pCspInformation, IObjectIds** ppValue) GetHashAlgorithms;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICspInformations *self, int32 Index, ICspInformation** pVal) get_ItemByIndex;
+				public function HRESULT(ICspInformations *self, int32* pVal) get_Count;
+				public function HRESULT(ICspInformations *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(ICspInformations *self, ICspInformation* pVal) Add;
+				public function HRESULT(ICspInformations *self, int32 Index) Remove;
+				public function HRESULT(ICspInformations *self) Clear;
+				public function HRESULT(ICspInformations *self) AddAvailableCsps;
+				public function HRESULT(ICspInformations *self, BSTR strName, ICspInformation** ppCspInformation) get_ItemByName;
+				public function HRESULT(ICspInformations *self, BSTR strProviderName, X509KeySpec LegacyKeySpec, ICspStatus** ppValue) GetCspStatusFromProviderName;
+				public function HRESULT(ICspInformations *self, AlgorithmOperationFlags Operations, ICspInformation* pCspInformation, ICspStatuses** ppValue) GetCspStatusesFromOperations;
+				public function HRESULT(ICspInformations *self, ICspInformation* pCspInformation, ICspAlgorithms** ppValue) GetEncryptionCspAlgorithms;
+				public function HRESULT(ICspInformations *self, ICspInformation* pCspInformation, IObjectIds** ppValue) GetHashAlgorithms;
+			}
 		}
 		[CRepr]
 		public struct ICspStatus : IDispatch
 		{
 			public const new Guid IID = .(0x728ab309, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICspStatus *self, ICspInformation* pCsp, ICspAlgorithm* pAlgorithm) Initialize;
-			public function HRESULT(ICspStatus *self, int32* pValue) get_Ordinal;
-			public function HRESULT(ICspStatus *self, int32 Value) put_Ordinal;
-			public function HRESULT(ICspStatus *self, ICspAlgorithm** ppValue) get_CspAlgorithm;
-			public function HRESULT(ICspStatus *self, ICspInformation** ppValue) get_CspInformation;
-			public function HRESULT(ICspStatus *self, IX509EnrollmentStatus** ppValue) get_EnrollmentStatus;
-			public function HRESULT(ICspStatus *self, BSTR* pValue) get_DisplayName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICspStatus *self, ICspInformation* pCsp, ICspAlgorithm* pAlgorithm) Initialize;
+				public function HRESULT(ICspStatus *self, int32* pValue) get_Ordinal;
+				public function HRESULT(ICspStatus *self, int32 Value) put_Ordinal;
+				public function HRESULT(ICspStatus *self, ICspAlgorithm** ppValue) get_CspAlgorithm;
+				public function HRESULT(ICspStatus *self, ICspInformation** ppValue) get_CspInformation;
+				public function HRESULT(ICspStatus *self, IX509EnrollmentStatus** ppValue) get_EnrollmentStatus;
+				public function HRESULT(ICspStatus *self, BSTR* pValue) get_DisplayName;
+			}
 		}
 		[CRepr]
 		public struct ICspStatuses : IDispatch
 		{
 			public const new Guid IID = .(0x728ab30a, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICspStatuses *self, int32 Index, ICspStatus** pVal) get_ItemByIndex;
-			public function HRESULT(ICspStatuses *self, int32* pVal) get_Count;
-			public function HRESULT(ICspStatuses *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(ICspStatuses *self, ICspStatus* pVal) Add;
-			public function HRESULT(ICspStatuses *self, int32 Index) Remove;
-			public function HRESULT(ICspStatuses *self) Clear;
-			public function HRESULT(ICspStatuses *self, BSTR strCspName, BSTR strAlgorithmName, ICspStatus** ppValue) get_ItemByName;
-			public function HRESULT(ICspStatuses *self, int32 Ordinal, ICspStatus** ppValue) get_ItemByOrdinal;
-			public function HRESULT(ICspStatuses *self, BSTR strCspName, BSTR strAlgorithmName, AlgorithmOperationFlags Operations, ICspStatus** ppValue) get_ItemByOperations;
-			public function HRESULT(ICspStatuses *self, ICspStatus* pCspStatus, ICspStatus** ppValue) get_ItemByProvider;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICspStatuses *self, int32 Index, ICspStatus** pVal) get_ItemByIndex;
+				public function HRESULT(ICspStatuses *self, int32* pVal) get_Count;
+				public function HRESULT(ICspStatuses *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(ICspStatuses *self, ICspStatus* pVal) Add;
+				public function HRESULT(ICspStatuses *self, int32 Index) Remove;
+				public function HRESULT(ICspStatuses *self) Clear;
+				public function HRESULT(ICspStatuses *self, BSTR strCspName, BSTR strAlgorithmName, ICspStatus** ppValue) get_ItemByName;
+				public function HRESULT(ICspStatuses *self, int32 Ordinal, ICspStatus** ppValue) get_ItemByOrdinal;
+				public function HRESULT(ICspStatuses *self, BSTR strCspName, BSTR strAlgorithmName, AlgorithmOperationFlags Operations, ICspStatus** ppValue) get_ItemByOperations;
+				public function HRESULT(ICspStatuses *self, ICspStatus* pCspStatus, ICspStatus** ppValue) get_ItemByProvider;
+			}
 		}
 		[CRepr]
 		public struct IX509PublicKey : IDispatch
 		{
 			public const new Guid IID = .(0x728ab30b, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509PublicKey *self, IObjectId* pObjectId, BSTR strEncodedKey, BSTR strEncodedParameters, EncodingType Encoding) Initialize;
-			public function HRESULT(IX509PublicKey *self, BSTR strEncodedPublicKeyInfo, EncodingType Encoding) InitializeFromEncodedPublicKeyInfo;
-			public function HRESULT(IX509PublicKey *self, IObjectId** ppValue) get_Algorithm;
-			public function HRESULT(IX509PublicKey *self, int32* pValue) get_Length;
-			public function HRESULT(IX509PublicKey *self, EncodingType Encoding, BSTR* pValue) get_EncodedKey;
-			public function HRESULT(IX509PublicKey *self, EncodingType Encoding, BSTR* pValue) get_EncodedParameters;
-			public function HRESULT(IX509PublicKey *self, KeyIdentifierHashAlgorithm Algorithm, EncodingType Encoding, BSTR* pValue) ComputeKeyIdentifier;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509PublicKey *self, IObjectId* pObjectId, BSTR strEncodedKey, BSTR strEncodedParameters, EncodingType Encoding) Initialize;
+				public function HRESULT(IX509PublicKey *self, BSTR strEncodedPublicKeyInfo, EncodingType Encoding) InitializeFromEncodedPublicKeyInfo;
+				public function HRESULT(IX509PublicKey *self, IObjectId** ppValue) get_Algorithm;
+				public function HRESULT(IX509PublicKey *self, int32* pValue) get_Length;
+				public function HRESULT(IX509PublicKey *self, EncodingType Encoding, BSTR* pValue) get_EncodedKey;
+				public function HRESULT(IX509PublicKey *self, EncodingType Encoding, BSTR* pValue) get_EncodedParameters;
+				public function HRESULT(IX509PublicKey *self, KeyIdentifierHashAlgorithm Algorithm, EncodingType Encoding, BSTR* pValue) ComputeKeyIdentifier;
+			}
 		}
 		[CRepr]
 		public struct IX509PrivateKey : IDispatch
 		{
 			public const new Guid IID = .(0x728ab30c, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509PrivateKey *self) Open;
-			public function HRESULT(IX509PrivateKey *self) Create;
-			public function HRESULT(IX509PrivateKey *self) Close;
-			public function HRESULT(IX509PrivateKey *self) Delete;
-			public function HRESULT(IX509PrivateKey *self, X509PrivateKeyVerify VerifyType) Verify;
-			public function HRESULT(IX509PrivateKey *self, BSTR strExportType, BSTR strEncodedKey, EncodingType Encoding) Import;
-			public function HRESULT(IX509PrivateKey *self, BSTR strExportType, EncodingType Encoding, BSTR* pstrEncodedKey) Export;
-			public function HRESULT(IX509PrivateKey *self, IX509PublicKey** ppPublicKey) ExportPublicKey;
-			public function HRESULT(IX509PrivateKey *self, BSTR* pValue) get_ContainerName;
-			public function HRESULT(IX509PrivateKey *self, BSTR Value) put_ContainerName;
-			public function HRESULT(IX509PrivateKey *self, BSTR* pValue) get_ContainerNamePrefix;
-			public function HRESULT(IX509PrivateKey *self, BSTR Value) put_ContainerNamePrefix;
-			public function HRESULT(IX509PrivateKey *self, BSTR* pValue) get_ReaderName;
-			public function HRESULT(IX509PrivateKey *self, BSTR Value) put_ReaderName;
-			public function HRESULT(IX509PrivateKey *self, ICspInformations** ppValue) get_CspInformations;
-			public function HRESULT(IX509PrivateKey *self, ICspInformations* pValue) put_CspInformations;
-			public function HRESULT(IX509PrivateKey *self, ICspStatus** ppValue) get_CspStatus;
-			public function HRESULT(IX509PrivateKey *self, ICspStatus* pValue) put_CspStatus;
-			public function HRESULT(IX509PrivateKey *self, BSTR* pValue) get_ProviderName;
-			public function HRESULT(IX509PrivateKey *self, BSTR Value) put_ProviderName;
-			public function HRESULT(IX509PrivateKey *self, X509ProviderType* pValue) get_ProviderType;
-			public function HRESULT(IX509PrivateKey *self, X509ProviderType Value) put_ProviderType;
-			public function HRESULT(IX509PrivateKey *self, int16* pValue) get_LegacyCsp;
-			public function HRESULT(IX509PrivateKey *self, int16 Value) put_LegacyCsp;
-			public function HRESULT(IX509PrivateKey *self, IObjectId** ppValue) get_Algorithm;
-			public function HRESULT(IX509PrivateKey *self, IObjectId* pValue) put_Algorithm;
-			public function HRESULT(IX509PrivateKey *self, X509KeySpec* pValue) get_KeySpec;
-			public function HRESULT(IX509PrivateKey *self, X509KeySpec Value) put_KeySpec;
-			public function HRESULT(IX509PrivateKey *self, int32* pValue) get_Length;
-			public function HRESULT(IX509PrivateKey *self, int32 Value) put_Length;
-			public function HRESULT(IX509PrivateKey *self, X509PrivateKeyExportFlags* pValue) get_ExportPolicy;
-			public function HRESULT(IX509PrivateKey *self, X509PrivateKeyExportFlags Value) put_ExportPolicy;
-			public function HRESULT(IX509PrivateKey *self, X509PrivateKeyUsageFlags* pValue) get_KeyUsage;
-			public function HRESULT(IX509PrivateKey *self, X509PrivateKeyUsageFlags Value) put_KeyUsage;
-			public function HRESULT(IX509PrivateKey *self, X509PrivateKeyProtection* pValue) get_KeyProtection;
-			public function HRESULT(IX509PrivateKey *self, X509PrivateKeyProtection Value) put_KeyProtection;
-			public function HRESULT(IX509PrivateKey *self, int16* pValue) get_MachineContext;
-			public function HRESULT(IX509PrivateKey *self, int16 Value) put_MachineContext;
-			public function HRESULT(IX509PrivateKey *self, BSTR* pValue) get_SecurityDescriptor;
-			public function HRESULT(IX509PrivateKey *self, BSTR Value) put_SecurityDescriptor;
-			public function HRESULT(IX509PrivateKey *self, EncodingType Encoding, BSTR* pValue) get_Certificate;
-			public function HRESULT(IX509PrivateKey *self, EncodingType Encoding, BSTR Value) put_Certificate;
-			public function HRESULT(IX509PrivateKey *self, BSTR* pValue) get_UniqueContainerName;
-			public function HRESULT(IX509PrivateKey *self, int16* pValue) get_Opened;
-			public function HRESULT(IX509PrivateKey *self, int16* pValue) get_DefaultContainer;
-			public function HRESULT(IX509PrivateKey *self, int16* pValue) get_Existing;
-			public function HRESULT(IX509PrivateKey *self, int16 Value) put_Existing;
-			public function HRESULT(IX509PrivateKey *self, int16* pValue) get_Silent;
-			public function HRESULT(IX509PrivateKey *self, int16 Value) put_Silent;
-			public function HRESULT(IX509PrivateKey *self, int32* pValue) get_ParentWindow;
-			public function HRESULT(IX509PrivateKey *self, int32 Value) put_ParentWindow;
-			public function HRESULT(IX509PrivateKey *self, BSTR* pValue) get_UIContextMessage;
-			public function HRESULT(IX509PrivateKey *self, BSTR Value) put_UIContextMessage;
-			public function HRESULT(IX509PrivateKey *self, BSTR Value) put_Pin;
-			public function HRESULT(IX509PrivateKey *self, BSTR* pValue) get_FriendlyName;
-			public function HRESULT(IX509PrivateKey *self, BSTR Value) put_FriendlyName;
-			public function HRESULT(IX509PrivateKey *self, BSTR* pValue) get_Description;
-			public function HRESULT(IX509PrivateKey *self, BSTR Value) put_Description;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509PrivateKey *self) Open;
+				public function HRESULT(IX509PrivateKey *self) Create;
+				public function HRESULT(IX509PrivateKey *self) Close;
+				public function HRESULT(IX509PrivateKey *self) Delete;
+				public function HRESULT(IX509PrivateKey *self, X509PrivateKeyVerify VerifyType) Verify;
+				public function HRESULT(IX509PrivateKey *self, BSTR strExportType, BSTR strEncodedKey, EncodingType Encoding) Import;
+				public function HRESULT(IX509PrivateKey *self, BSTR strExportType, EncodingType Encoding, BSTR* pstrEncodedKey) Export;
+				public function HRESULT(IX509PrivateKey *self, IX509PublicKey** ppPublicKey) ExportPublicKey;
+				public function HRESULT(IX509PrivateKey *self, BSTR* pValue) get_ContainerName;
+				public function HRESULT(IX509PrivateKey *self, BSTR Value) put_ContainerName;
+				public function HRESULT(IX509PrivateKey *self, BSTR* pValue) get_ContainerNamePrefix;
+				public function HRESULT(IX509PrivateKey *self, BSTR Value) put_ContainerNamePrefix;
+				public function HRESULT(IX509PrivateKey *self, BSTR* pValue) get_ReaderName;
+				public function HRESULT(IX509PrivateKey *self, BSTR Value) put_ReaderName;
+				public function HRESULT(IX509PrivateKey *self, ICspInformations** ppValue) get_CspInformations;
+				public function HRESULT(IX509PrivateKey *self, ICspInformations* pValue) put_CspInformations;
+				public function HRESULT(IX509PrivateKey *self, ICspStatus** ppValue) get_CspStatus;
+				public function HRESULT(IX509PrivateKey *self, ICspStatus* pValue) put_CspStatus;
+				public function HRESULT(IX509PrivateKey *self, BSTR* pValue) get_ProviderName;
+				public function HRESULT(IX509PrivateKey *self, BSTR Value) put_ProviderName;
+				public function HRESULT(IX509PrivateKey *self, X509ProviderType* pValue) get_ProviderType;
+				public function HRESULT(IX509PrivateKey *self, X509ProviderType Value) put_ProviderType;
+				public function HRESULT(IX509PrivateKey *self, int16* pValue) get_LegacyCsp;
+				public function HRESULT(IX509PrivateKey *self, int16 Value) put_LegacyCsp;
+				public function HRESULT(IX509PrivateKey *self, IObjectId** ppValue) get_Algorithm;
+				public function HRESULT(IX509PrivateKey *self, IObjectId* pValue) put_Algorithm;
+				public function HRESULT(IX509PrivateKey *self, X509KeySpec* pValue) get_KeySpec;
+				public function HRESULT(IX509PrivateKey *self, X509KeySpec Value) put_KeySpec;
+				public function HRESULT(IX509PrivateKey *self, int32* pValue) get_Length;
+				public function HRESULT(IX509PrivateKey *self, int32 Value) put_Length;
+				public function HRESULT(IX509PrivateKey *self, X509PrivateKeyExportFlags* pValue) get_ExportPolicy;
+				public function HRESULT(IX509PrivateKey *self, X509PrivateKeyExportFlags Value) put_ExportPolicy;
+				public function HRESULT(IX509PrivateKey *self, X509PrivateKeyUsageFlags* pValue) get_KeyUsage;
+				public function HRESULT(IX509PrivateKey *self, X509PrivateKeyUsageFlags Value) put_KeyUsage;
+				public function HRESULT(IX509PrivateKey *self, X509PrivateKeyProtection* pValue) get_KeyProtection;
+				public function HRESULT(IX509PrivateKey *self, X509PrivateKeyProtection Value) put_KeyProtection;
+				public function HRESULT(IX509PrivateKey *self, int16* pValue) get_MachineContext;
+				public function HRESULT(IX509PrivateKey *self, int16 Value) put_MachineContext;
+				public function HRESULT(IX509PrivateKey *self, BSTR* pValue) get_SecurityDescriptor;
+				public function HRESULT(IX509PrivateKey *self, BSTR Value) put_SecurityDescriptor;
+				public function HRESULT(IX509PrivateKey *self, EncodingType Encoding, BSTR* pValue) get_Certificate;
+				public function HRESULT(IX509PrivateKey *self, EncodingType Encoding, BSTR Value) put_Certificate;
+				public function HRESULT(IX509PrivateKey *self, BSTR* pValue) get_UniqueContainerName;
+				public function HRESULT(IX509PrivateKey *self, int16* pValue) get_Opened;
+				public function HRESULT(IX509PrivateKey *self, int16* pValue) get_DefaultContainer;
+				public function HRESULT(IX509PrivateKey *self, int16* pValue) get_Existing;
+				public function HRESULT(IX509PrivateKey *self, int16 Value) put_Existing;
+				public function HRESULT(IX509PrivateKey *self, int16* pValue) get_Silent;
+				public function HRESULT(IX509PrivateKey *self, int16 Value) put_Silent;
+				public function HRESULT(IX509PrivateKey *self, int32* pValue) get_ParentWindow;
+				public function HRESULT(IX509PrivateKey *self, int32 Value) put_ParentWindow;
+				public function HRESULT(IX509PrivateKey *self, BSTR* pValue) get_UIContextMessage;
+				public function HRESULT(IX509PrivateKey *self, BSTR Value) put_UIContextMessage;
+				public function HRESULT(IX509PrivateKey *self, BSTR Value) put_Pin;
+				public function HRESULT(IX509PrivateKey *self, BSTR* pValue) get_FriendlyName;
+				public function HRESULT(IX509PrivateKey *self, BSTR Value) put_FriendlyName;
+				public function HRESULT(IX509PrivateKey *self, BSTR* pValue) get_Description;
+				public function HRESULT(IX509PrivateKey *self, BSTR Value) put_Description;
+			}
 		}
 		[CRepr]
 		public struct IX509PrivateKey2 : IX509PrivateKey
 		{
 			public const new Guid IID = .(0x728ab362, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509PrivateKey2 *self, X509HardwareKeyUsageFlags* pValue) get_HardwareKeyUsage;
-			public function HRESULT(IX509PrivateKey2 *self, X509HardwareKeyUsageFlags Value) put_HardwareKeyUsage;
-			public function HRESULT(IX509PrivateKey2 *self, BSTR* pValue) get_AlternateStorageLocation;
-			public function HRESULT(IX509PrivateKey2 *self, BSTR Value) put_AlternateStorageLocation;
-			public function HRESULT(IX509PrivateKey2 *self, BSTR* pValue) get_AlgorithmName;
-			public function HRESULT(IX509PrivateKey2 *self, BSTR Value) put_AlgorithmName;
-			public function HRESULT(IX509PrivateKey2 *self, EncodingType Encoding, BSTR* pValue) get_AlgorithmParameters;
-			public function HRESULT(IX509PrivateKey2 *self, EncodingType Encoding, BSTR Value) put_AlgorithmParameters;
-			public function HRESULT(IX509PrivateKey2 *self, X509KeyParametersExportType* pValue) get_ParametersExportType;
-			public function HRESULT(IX509PrivateKey2 *self, X509KeyParametersExportType Value) put_ParametersExportType;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509PrivateKey.VTable
+			{
+				public function HRESULT(IX509PrivateKey2 *self, X509HardwareKeyUsageFlags* pValue) get_HardwareKeyUsage;
+				public function HRESULT(IX509PrivateKey2 *self, X509HardwareKeyUsageFlags Value) put_HardwareKeyUsage;
+				public function HRESULT(IX509PrivateKey2 *self, BSTR* pValue) get_AlternateStorageLocation;
+				public function HRESULT(IX509PrivateKey2 *self, BSTR Value) put_AlternateStorageLocation;
+				public function HRESULT(IX509PrivateKey2 *self, BSTR* pValue) get_AlgorithmName;
+				public function HRESULT(IX509PrivateKey2 *self, BSTR Value) put_AlgorithmName;
+				public function HRESULT(IX509PrivateKey2 *self, EncodingType Encoding, BSTR* pValue) get_AlgorithmParameters;
+				public function HRESULT(IX509PrivateKey2 *self, EncodingType Encoding, BSTR Value) put_AlgorithmParameters;
+				public function HRESULT(IX509PrivateKey2 *self, X509KeyParametersExportType* pValue) get_ParametersExportType;
+				public function HRESULT(IX509PrivateKey2 *self, X509KeyParametersExportType Value) put_ParametersExportType;
+			}
 		}
 		[CRepr]
 		public struct IX509EndorsementKey : IDispatch
 		{
 			public const new Guid IID = .(0xb11cd855, 0xf4c4, 0x4fc6, 0xb7, 0x10, 0x44, 0x22, 0x23, 0x7f, 0x09, 0xe9);
 			
-			public function HRESULT(IX509EndorsementKey *self, BSTR* pValue) get_ProviderName;
-			public function HRESULT(IX509EndorsementKey *self, BSTR Value) put_ProviderName;
-			public function HRESULT(IX509EndorsementKey *self, int32* pValue) get_Length;
-			public function HRESULT(IX509EndorsementKey *self, int16* pValue) get_Opened;
-			public function HRESULT(IX509EndorsementKey *self, EncodingType Encoding, BSTR strCertificate) AddCertificate;
-			public function HRESULT(IX509EndorsementKey *self, EncodingType Encoding, BSTR strCertificate) RemoveCertificate;
-			public function HRESULT(IX509EndorsementKey *self, int16 ManufacturerOnly, int32 dwIndex, EncodingType Encoding, BSTR* pValue) GetCertificateByIndex;
-			public function HRESULT(IX509EndorsementKey *self, int16 ManufacturerOnly, int32* pCount) GetCertificateCount;
-			public function HRESULT(IX509EndorsementKey *self, IX509PublicKey** ppPublicKey) ExportPublicKey;
-			public function HRESULT(IX509EndorsementKey *self) Open;
-			public function HRESULT(IX509EndorsementKey *self) Close;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509EndorsementKey *self, BSTR* pValue) get_ProviderName;
+				public function HRESULT(IX509EndorsementKey *self, BSTR Value) put_ProviderName;
+				public function HRESULT(IX509EndorsementKey *self, int32* pValue) get_Length;
+				public function HRESULT(IX509EndorsementKey *self, int16* pValue) get_Opened;
+				public function HRESULT(IX509EndorsementKey *self, EncodingType Encoding, BSTR strCertificate) AddCertificate;
+				public function HRESULT(IX509EndorsementKey *self, EncodingType Encoding, BSTR strCertificate) RemoveCertificate;
+				public function HRESULT(IX509EndorsementKey *self, int16 ManufacturerOnly, int32 dwIndex, EncodingType Encoding, BSTR* pValue) GetCertificateByIndex;
+				public function HRESULT(IX509EndorsementKey *self, int16 ManufacturerOnly, int32* pCount) GetCertificateCount;
+				public function HRESULT(IX509EndorsementKey *self, IX509PublicKey** ppPublicKey) ExportPublicKey;
+				public function HRESULT(IX509EndorsementKey *self) Open;
+				public function HRESULT(IX509EndorsementKey *self) Close;
+			}
 		}
 		[CRepr]
 		public struct IX509Extension : IDispatch
 		{
 			public const new Guid IID = .(0x728ab30d, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509Extension *self, IObjectId* pObjectId, EncodingType Encoding, BSTR strEncodedData) Initialize;
-			public function HRESULT(IX509Extension *self, IObjectId** ppValue) get_ObjectId;
-			public function HRESULT(IX509Extension *self, EncodingType Encoding, BSTR* pValue) get_RawData;
-			public function HRESULT(IX509Extension *self, int16* pValue) get_Critical;
-			public function HRESULT(IX509Extension *self, int16 Value) put_Critical;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509Extension *self, IObjectId* pObjectId, EncodingType Encoding, BSTR strEncodedData) Initialize;
+				public function HRESULT(IX509Extension *self, IObjectId** ppValue) get_ObjectId;
+				public function HRESULT(IX509Extension *self, EncodingType Encoding, BSTR* pValue) get_RawData;
+				public function HRESULT(IX509Extension *self, int16* pValue) get_Critical;
+				public function HRESULT(IX509Extension *self, int16 Value) put_Critical;
+			}
 		}
 		[CRepr]
 		public struct IX509Extensions : IDispatch
 		{
 			public const new Guid IID = .(0x728ab30e, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509Extensions *self, int32 Index, IX509Extension** pVal) get_ItemByIndex;
-			public function HRESULT(IX509Extensions *self, int32* pVal) get_Count;
-			public function HRESULT(IX509Extensions *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(IX509Extensions *self, IX509Extension* pVal) Add;
-			public function HRESULT(IX509Extensions *self, int32 Index) Remove;
-			public function HRESULT(IX509Extensions *self) Clear;
-			public function HRESULT(IX509Extensions *self, IObjectId* pObjectId, int32* pIndex) get_IndexByObjectId;
-			public function HRESULT(IX509Extensions *self, IX509Extensions* pValue) AddRange;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509Extensions *self, int32 Index, IX509Extension** pVal) get_ItemByIndex;
+				public function HRESULT(IX509Extensions *self, int32* pVal) get_Count;
+				public function HRESULT(IX509Extensions *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(IX509Extensions *self, IX509Extension* pVal) Add;
+				public function HRESULT(IX509Extensions *self, int32 Index) Remove;
+				public function HRESULT(IX509Extensions *self) Clear;
+				public function HRESULT(IX509Extensions *self, IObjectId* pObjectId, int32* pIndex) get_IndexByObjectId;
+				public function HRESULT(IX509Extensions *self, IX509Extensions* pValue) AddRange;
+			}
 		}
 		[CRepr]
 		public struct IX509ExtensionKeyUsage : IX509Extension
 		{
 			public const new Guid IID = .(0x728ab30f, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509ExtensionKeyUsage *self, X509KeyUsageFlags UsageFlags) InitializeEncode;
-			public function HRESULT(IX509ExtensionKeyUsage *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(IX509ExtensionKeyUsage *self, X509KeyUsageFlags* pValue) get_KeyUsage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Extension.VTable
+			{
+				public function HRESULT(IX509ExtensionKeyUsage *self, X509KeyUsageFlags UsageFlags) InitializeEncode;
+				public function HRESULT(IX509ExtensionKeyUsage *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(IX509ExtensionKeyUsage *self, X509KeyUsageFlags* pValue) get_KeyUsage;
+			}
 		}
 		[CRepr]
 		public struct IX509ExtensionEnhancedKeyUsage : IX509Extension
 		{
 			public const new Guid IID = .(0x728ab310, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509ExtensionEnhancedKeyUsage *self, IObjectIds* pValue) InitializeEncode;
-			public function HRESULT(IX509ExtensionEnhancedKeyUsage *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(IX509ExtensionEnhancedKeyUsage *self, IObjectIds** ppValue) get_EnhancedKeyUsage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Extension.VTable
+			{
+				public function HRESULT(IX509ExtensionEnhancedKeyUsage *self, IObjectIds* pValue) InitializeEncode;
+				public function HRESULT(IX509ExtensionEnhancedKeyUsage *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(IX509ExtensionEnhancedKeyUsage *self, IObjectIds** ppValue) get_EnhancedKeyUsage;
+			}
 		}
 		[CRepr]
 		public struct IX509ExtensionTemplateName : IX509Extension
 		{
 			public const new Guid IID = .(0x728ab311, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509ExtensionTemplateName *self, BSTR strTemplateName) InitializeEncode;
-			public function HRESULT(IX509ExtensionTemplateName *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(IX509ExtensionTemplateName *self, BSTR* pValue) get_TemplateName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Extension.VTable
+			{
+				public function HRESULT(IX509ExtensionTemplateName *self, BSTR strTemplateName) InitializeEncode;
+				public function HRESULT(IX509ExtensionTemplateName *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(IX509ExtensionTemplateName *self, BSTR* pValue) get_TemplateName;
+			}
 		}
 		[CRepr]
 		public struct IX509ExtensionTemplate : IX509Extension
 		{
 			public const new Guid IID = .(0x728ab312, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509ExtensionTemplate *self, IObjectId* pTemplateOid, int32 MajorVersion, int32 MinorVersion) InitializeEncode;
-			public function HRESULT(IX509ExtensionTemplate *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(IX509ExtensionTemplate *self, IObjectId** ppValue) get_TemplateOid;
-			public function HRESULT(IX509ExtensionTemplate *self, int32* pValue) get_MajorVersion;
-			public function HRESULT(IX509ExtensionTemplate *self, int32* pValue) get_MinorVersion;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Extension.VTable
+			{
+				public function HRESULT(IX509ExtensionTemplate *self, IObjectId* pTemplateOid, int32 MajorVersion, int32 MinorVersion) InitializeEncode;
+				public function HRESULT(IX509ExtensionTemplate *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(IX509ExtensionTemplate *self, IObjectId** ppValue) get_TemplateOid;
+				public function HRESULT(IX509ExtensionTemplate *self, int32* pValue) get_MajorVersion;
+				public function HRESULT(IX509ExtensionTemplate *self, int32* pValue) get_MinorVersion;
+			}
 		}
 		[CRepr]
 		public struct IAlternativeName : IDispatch
 		{
 			public const new Guid IID = .(0x728ab313, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IAlternativeName *self, AlternativeNameType Type, BSTR strValue) InitializeFromString;
-			public function HRESULT(IAlternativeName *self, AlternativeNameType Type, EncodingType Encoding, BSTR strRawData) InitializeFromRawData;
-			public function HRESULT(IAlternativeName *self, IObjectId* pObjectId, EncodingType Encoding, BSTR strRawData, int16 ToBeWrapped) InitializeFromOtherName;
-			public function HRESULT(IAlternativeName *self, AlternativeNameType* pValue) get_Type;
-			public function HRESULT(IAlternativeName *self, BSTR* pValue) get_StrValue;
-			public function HRESULT(IAlternativeName *self, IObjectId** ppValue) get_ObjectId;
-			public function HRESULT(IAlternativeName *self, EncodingType Encoding, BSTR* pValue) get_RawData;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IAlternativeName *self, AlternativeNameType Type, BSTR strValue) InitializeFromString;
+				public function HRESULT(IAlternativeName *self, AlternativeNameType Type, EncodingType Encoding, BSTR strRawData) InitializeFromRawData;
+				public function HRESULT(IAlternativeName *self, IObjectId* pObjectId, EncodingType Encoding, BSTR strRawData, int16 ToBeWrapped) InitializeFromOtherName;
+				public function HRESULT(IAlternativeName *self, AlternativeNameType* pValue) get_Type;
+				public function HRESULT(IAlternativeName *self, BSTR* pValue) get_StrValue;
+				public function HRESULT(IAlternativeName *self, IObjectId** ppValue) get_ObjectId;
+				public function HRESULT(IAlternativeName *self, EncodingType Encoding, BSTR* pValue) get_RawData;
+			}
 		}
 		[CRepr]
 		public struct IAlternativeNames : IDispatch
 		{
 			public const new Guid IID = .(0x728ab314, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IAlternativeNames *self, int32 Index, IAlternativeName** pVal) get_ItemByIndex;
-			public function HRESULT(IAlternativeNames *self, int32* pVal) get_Count;
-			public function HRESULT(IAlternativeNames *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(IAlternativeNames *self, IAlternativeName* pVal) Add;
-			public function HRESULT(IAlternativeNames *self, int32 Index) Remove;
-			public function HRESULT(IAlternativeNames *self) Clear;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IAlternativeNames *self, int32 Index, IAlternativeName** pVal) get_ItemByIndex;
+				public function HRESULT(IAlternativeNames *self, int32* pVal) get_Count;
+				public function HRESULT(IAlternativeNames *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(IAlternativeNames *self, IAlternativeName* pVal) Add;
+				public function HRESULT(IAlternativeNames *self, int32 Index) Remove;
+				public function HRESULT(IAlternativeNames *self) Clear;
+			}
 		}
 		[CRepr]
 		public struct IX509ExtensionAlternativeNames : IX509Extension
 		{
 			public const new Guid IID = .(0x728ab315, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509ExtensionAlternativeNames *self, IAlternativeNames* pValue) InitializeEncode;
-			public function HRESULT(IX509ExtensionAlternativeNames *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(IX509ExtensionAlternativeNames *self, IAlternativeNames** ppValue) get_AlternativeNames;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Extension.VTable
+			{
+				public function HRESULT(IX509ExtensionAlternativeNames *self, IAlternativeNames* pValue) InitializeEncode;
+				public function HRESULT(IX509ExtensionAlternativeNames *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(IX509ExtensionAlternativeNames *self, IAlternativeNames** ppValue) get_AlternativeNames;
+			}
 		}
 		[CRepr]
 		public struct IX509ExtensionBasicConstraints : IX509Extension
 		{
 			public const new Guid IID = .(0x728ab316, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509ExtensionBasicConstraints *self, int16 IsCA, int32 PathLenConstraint) InitializeEncode;
-			public function HRESULT(IX509ExtensionBasicConstraints *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(IX509ExtensionBasicConstraints *self, int16* pValue) get_IsCA;
-			public function HRESULT(IX509ExtensionBasicConstraints *self, int32* pValue) get_PathLenConstraint;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Extension.VTable
+			{
+				public function HRESULT(IX509ExtensionBasicConstraints *self, int16 IsCA, int32 PathLenConstraint) InitializeEncode;
+				public function HRESULT(IX509ExtensionBasicConstraints *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(IX509ExtensionBasicConstraints *self, int16* pValue) get_IsCA;
+				public function HRESULT(IX509ExtensionBasicConstraints *self, int32* pValue) get_PathLenConstraint;
+			}
 		}
 		[CRepr]
 		public struct IX509ExtensionSubjectKeyIdentifier : IX509Extension
 		{
 			public const new Guid IID = .(0x728ab317, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509ExtensionSubjectKeyIdentifier *self, EncodingType Encoding, BSTR strKeyIdentifier) InitializeEncode;
-			public function HRESULT(IX509ExtensionSubjectKeyIdentifier *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(IX509ExtensionSubjectKeyIdentifier *self, EncodingType Encoding, BSTR* pValue) get_SubjectKeyIdentifier;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Extension.VTable
+			{
+				public function HRESULT(IX509ExtensionSubjectKeyIdentifier *self, EncodingType Encoding, BSTR strKeyIdentifier) InitializeEncode;
+				public function HRESULT(IX509ExtensionSubjectKeyIdentifier *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(IX509ExtensionSubjectKeyIdentifier *self, EncodingType Encoding, BSTR* pValue) get_SubjectKeyIdentifier;
+			}
 		}
 		[CRepr]
 		public struct IX509ExtensionAuthorityKeyIdentifier : IX509Extension
 		{
 			public const new Guid IID = .(0x728ab318, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509ExtensionAuthorityKeyIdentifier *self, EncodingType Encoding, BSTR strKeyIdentifier) InitializeEncode;
-			public function HRESULT(IX509ExtensionAuthorityKeyIdentifier *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(IX509ExtensionAuthorityKeyIdentifier *self, EncodingType Encoding, BSTR* pValue) get_AuthorityKeyIdentifier;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Extension.VTable
+			{
+				public function HRESULT(IX509ExtensionAuthorityKeyIdentifier *self, EncodingType Encoding, BSTR strKeyIdentifier) InitializeEncode;
+				public function HRESULT(IX509ExtensionAuthorityKeyIdentifier *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(IX509ExtensionAuthorityKeyIdentifier *self, EncodingType Encoding, BSTR* pValue) get_AuthorityKeyIdentifier;
+			}
 		}
 		[CRepr]
 		public struct ISmimeCapability : IDispatch
 		{
 			public const new Guid IID = .(0x728ab319, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ISmimeCapability *self, IObjectId* pObjectId, int32 BitCount) Initialize;
-			public function HRESULT(ISmimeCapability *self, IObjectId** ppValue) get_ObjectId;
-			public function HRESULT(ISmimeCapability *self, int32* pValue) get_BitCount;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ISmimeCapability *self, IObjectId* pObjectId, int32 BitCount) Initialize;
+				public function HRESULT(ISmimeCapability *self, IObjectId** ppValue) get_ObjectId;
+				public function HRESULT(ISmimeCapability *self, int32* pValue) get_BitCount;
+			}
 		}
 		[CRepr]
 		public struct ISmimeCapabilities : IDispatch
 		{
 			public const new Guid IID = .(0x728ab31a, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ISmimeCapabilities *self, int32 Index, ISmimeCapability** pVal) get_ItemByIndex;
-			public function HRESULT(ISmimeCapabilities *self, int32* pVal) get_Count;
-			public function HRESULT(ISmimeCapabilities *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(ISmimeCapabilities *self, ISmimeCapability* pVal) Add;
-			public function HRESULT(ISmimeCapabilities *self, int32 Index) Remove;
-			public function HRESULT(ISmimeCapabilities *self) Clear;
-			public function HRESULT(ISmimeCapabilities *self, ICspInformation* pValue) AddFromCsp;
-			public function HRESULT(ISmimeCapabilities *self, int16 MachineContext) AddAvailableSmimeCapabilities;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ISmimeCapabilities *self, int32 Index, ISmimeCapability** pVal) get_ItemByIndex;
+				public function HRESULT(ISmimeCapabilities *self, int32* pVal) get_Count;
+				public function HRESULT(ISmimeCapabilities *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(ISmimeCapabilities *self, ISmimeCapability* pVal) Add;
+				public function HRESULT(ISmimeCapabilities *self, int32 Index) Remove;
+				public function HRESULT(ISmimeCapabilities *self) Clear;
+				public function HRESULT(ISmimeCapabilities *self, ICspInformation* pValue) AddFromCsp;
+				public function HRESULT(ISmimeCapabilities *self, int16 MachineContext) AddAvailableSmimeCapabilities;
+			}
 		}
 		[CRepr]
 		public struct IX509ExtensionSmimeCapabilities : IX509Extension
 		{
 			public const new Guid IID = .(0x728ab31b, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509ExtensionSmimeCapabilities *self, ISmimeCapabilities* pValue) InitializeEncode;
-			public function HRESULT(IX509ExtensionSmimeCapabilities *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(IX509ExtensionSmimeCapabilities *self, ISmimeCapabilities** ppValue) get_SmimeCapabilities;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Extension.VTable
+			{
+				public function HRESULT(IX509ExtensionSmimeCapabilities *self, ISmimeCapabilities* pValue) InitializeEncode;
+				public function HRESULT(IX509ExtensionSmimeCapabilities *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(IX509ExtensionSmimeCapabilities *self, ISmimeCapabilities** ppValue) get_SmimeCapabilities;
+			}
 		}
 		[CRepr]
 		public struct IPolicyQualifier : IDispatch
 		{
 			public const new Guid IID = .(0x728ab31c, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IPolicyQualifier *self, BSTR strQualifier, PolicyQualifierType Type) InitializeEncode;
-			public function HRESULT(IPolicyQualifier *self, IObjectId** ppValue) get_ObjectId;
-			public function HRESULT(IPolicyQualifier *self, BSTR* pValue) get_Qualifier;
-			public function HRESULT(IPolicyQualifier *self, PolicyQualifierType* pValue) get_Type;
-			public function HRESULT(IPolicyQualifier *self, EncodingType Encoding, BSTR* pValue) get_RawData;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IPolicyQualifier *self, BSTR strQualifier, PolicyQualifierType Type) InitializeEncode;
+				public function HRESULT(IPolicyQualifier *self, IObjectId** ppValue) get_ObjectId;
+				public function HRESULT(IPolicyQualifier *self, BSTR* pValue) get_Qualifier;
+				public function HRESULT(IPolicyQualifier *self, PolicyQualifierType* pValue) get_Type;
+				public function HRESULT(IPolicyQualifier *self, EncodingType Encoding, BSTR* pValue) get_RawData;
+			}
 		}
 		[CRepr]
 		public struct IPolicyQualifiers : IDispatch
 		{
 			public const new Guid IID = .(0x728ab31d, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IPolicyQualifiers *self, int32 Index, IPolicyQualifier** pVal) get_ItemByIndex;
-			public function HRESULT(IPolicyQualifiers *self, int32* pVal) get_Count;
-			public function HRESULT(IPolicyQualifiers *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(IPolicyQualifiers *self, IPolicyQualifier* pVal) Add;
-			public function HRESULT(IPolicyQualifiers *self, int32 Index) Remove;
-			public function HRESULT(IPolicyQualifiers *self) Clear;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IPolicyQualifiers *self, int32 Index, IPolicyQualifier** pVal) get_ItemByIndex;
+				public function HRESULT(IPolicyQualifiers *self, int32* pVal) get_Count;
+				public function HRESULT(IPolicyQualifiers *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(IPolicyQualifiers *self, IPolicyQualifier* pVal) Add;
+				public function HRESULT(IPolicyQualifiers *self, int32 Index) Remove;
+				public function HRESULT(IPolicyQualifiers *self) Clear;
+			}
 		}
 		[CRepr]
 		public struct ICertificatePolicy : IDispatch
 		{
 			public const new Guid IID = .(0x728ab31e, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICertificatePolicy *self, IObjectId* pValue) Initialize;
-			public function HRESULT(ICertificatePolicy *self, IObjectId** ppValue) get_ObjectId;
-			public function HRESULT(ICertificatePolicy *self, IPolicyQualifiers** ppValue) get_PolicyQualifiers;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertificatePolicy *self, IObjectId* pValue) Initialize;
+				public function HRESULT(ICertificatePolicy *self, IObjectId** ppValue) get_ObjectId;
+				public function HRESULT(ICertificatePolicy *self, IPolicyQualifiers** ppValue) get_PolicyQualifiers;
+			}
 		}
 		[CRepr]
 		public struct ICertificatePolicies : IDispatch
 		{
 			public const new Guid IID = .(0x728ab31f, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICertificatePolicies *self, int32 Index, ICertificatePolicy** pVal) get_ItemByIndex;
-			public function HRESULT(ICertificatePolicies *self, int32* pVal) get_Count;
-			public function HRESULT(ICertificatePolicies *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(ICertificatePolicies *self, ICertificatePolicy* pVal) Add;
-			public function HRESULT(ICertificatePolicies *self, int32 Index) Remove;
-			public function HRESULT(ICertificatePolicies *self) Clear;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertificatePolicies *self, int32 Index, ICertificatePolicy** pVal) get_ItemByIndex;
+				public function HRESULT(ICertificatePolicies *self, int32* pVal) get_Count;
+				public function HRESULT(ICertificatePolicies *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(ICertificatePolicies *self, ICertificatePolicy* pVal) Add;
+				public function HRESULT(ICertificatePolicies *self, int32 Index) Remove;
+				public function HRESULT(ICertificatePolicies *self) Clear;
+			}
 		}
 		[CRepr]
 		public struct IX509ExtensionCertificatePolicies : IX509Extension
 		{
 			public const new Guid IID = .(0x728ab320, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509ExtensionCertificatePolicies *self, ICertificatePolicies* pValue) InitializeEncode;
-			public function HRESULT(IX509ExtensionCertificatePolicies *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(IX509ExtensionCertificatePolicies *self, ICertificatePolicies** ppValue) get_Policies;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Extension.VTable
+			{
+				public function HRESULT(IX509ExtensionCertificatePolicies *self, ICertificatePolicies* pValue) InitializeEncode;
+				public function HRESULT(IX509ExtensionCertificatePolicies *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(IX509ExtensionCertificatePolicies *self, ICertificatePolicies** ppValue) get_Policies;
+			}
 		}
 		[CRepr]
 		public struct IX509ExtensionMSApplicationPolicies : IX509Extension
 		{
 			public const new Guid IID = .(0x728ab321, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509ExtensionMSApplicationPolicies *self, ICertificatePolicies* pValue) InitializeEncode;
-			public function HRESULT(IX509ExtensionMSApplicationPolicies *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(IX509ExtensionMSApplicationPolicies *self, ICertificatePolicies** ppValue) get_Policies;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Extension.VTable
+			{
+				public function HRESULT(IX509ExtensionMSApplicationPolicies *self, ICertificatePolicies* pValue) InitializeEncode;
+				public function HRESULT(IX509ExtensionMSApplicationPolicies *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(IX509ExtensionMSApplicationPolicies *self, ICertificatePolicies** ppValue) get_Policies;
+			}
 		}
 		[CRepr]
 		public struct IX509Attribute : IDispatch
 		{
 			public const new Guid IID = .(0x728ab322, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509Attribute *self, IObjectId* pObjectId, EncodingType Encoding, BSTR strEncodedData) Initialize;
-			public function HRESULT(IX509Attribute *self, IObjectId** ppValue) get_ObjectId;
-			public function HRESULT(IX509Attribute *self, EncodingType Encoding, BSTR* pValue) get_RawData;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509Attribute *self, IObjectId* pObjectId, EncodingType Encoding, BSTR strEncodedData) Initialize;
+				public function HRESULT(IX509Attribute *self, IObjectId** ppValue) get_ObjectId;
+				public function HRESULT(IX509Attribute *self, EncodingType Encoding, BSTR* pValue) get_RawData;
+			}
 		}
 		[CRepr]
 		public struct IX509Attributes : IDispatch
 		{
 			public const new Guid IID = .(0x728ab323, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509Attributes *self, int32 Index, IX509Attribute** pVal) get_ItemByIndex;
-			public function HRESULT(IX509Attributes *self, int32* pVal) get_Count;
-			public function HRESULT(IX509Attributes *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(IX509Attributes *self, IX509Attribute* pVal) Add;
-			public function HRESULT(IX509Attributes *self, int32 Index) Remove;
-			public function HRESULT(IX509Attributes *self) Clear;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509Attributes *self, int32 Index, IX509Attribute** pVal) get_ItemByIndex;
+				public function HRESULT(IX509Attributes *self, int32* pVal) get_Count;
+				public function HRESULT(IX509Attributes *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(IX509Attributes *self, IX509Attribute* pVal) Add;
+				public function HRESULT(IX509Attributes *self, int32 Index) Remove;
+				public function HRESULT(IX509Attributes *self) Clear;
+			}
 		}
 		[CRepr]
 		public struct IX509AttributeExtensions : IX509Attribute
 		{
 			public const new Guid IID = .(0x728ab324, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509AttributeExtensions *self, IX509Extensions* pExtensions) InitializeEncode;
-			public function HRESULT(IX509AttributeExtensions *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(IX509AttributeExtensions *self, IX509Extensions** ppValue) get_X509Extensions;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Attribute.VTable
+			{
+				public function HRESULT(IX509AttributeExtensions *self, IX509Extensions* pExtensions) InitializeEncode;
+				public function HRESULT(IX509AttributeExtensions *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(IX509AttributeExtensions *self, IX509Extensions** ppValue) get_X509Extensions;
+			}
 		}
 		[CRepr]
 		public struct IX509AttributeClientId : IX509Attribute
 		{
 			public const new Guid IID = .(0x728ab325, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509AttributeClientId *self, RequestClientInfoClientId ClientId, BSTR strMachineDnsName, BSTR strUserSamName, BSTR strProcessName) InitializeEncode;
-			public function HRESULT(IX509AttributeClientId *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(IX509AttributeClientId *self, RequestClientInfoClientId* pValue) get_ClientId;
-			public function HRESULT(IX509AttributeClientId *self, BSTR* pValue) get_MachineDnsName;
-			public function HRESULT(IX509AttributeClientId *self, BSTR* pValue) get_UserSamName;
-			public function HRESULT(IX509AttributeClientId *self, BSTR* pValue) get_ProcessName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Attribute.VTable
+			{
+				public function HRESULT(IX509AttributeClientId *self, RequestClientInfoClientId ClientId, BSTR strMachineDnsName, BSTR strUserSamName, BSTR strProcessName) InitializeEncode;
+				public function HRESULT(IX509AttributeClientId *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(IX509AttributeClientId *self, RequestClientInfoClientId* pValue) get_ClientId;
+				public function HRESULT(IX509AttributeClientId *self, BSTR* pValue) get_MachineDnsName;
+				public function HRESULT(IX509AttributeClientId *self, BSTR* pValue) get_UserSamName;
+				public function HRESULT(IX509AttributeClientId *self, BSTR* pValue) get_ProcessName;
+			}
 		}
 		[CRepr]
 		public struct IX509AttributeRenewalCertificate : IX509Attribute
 		{
 			public const new Guid IID = .(0x728ab326, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509AttributeRenewalCertificate *self, EncodingType Encoding, BSTR strCert) InitializeEncode;
-			public function HRESULT(IX509AttributeRenewalCertificate *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(IX509AttributeRenewalCertificate *self, EncodingType Encoding, BSTR* pValue) get_RenewalCertificate;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Attribute.VTable
+			{
+				public function HRESULT(IX509AttributeRenewalCertificate *self, EncodingType Encoding, BSTR strCert) InitializeEncode;
+				public function HRESULT(IX509AttributeRenewalCertificate *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(IX509AttributeRenewalCertificate *self, EncodingType Encoding, BSTR* pValue) get_RenewalCertificate;
+			}
 		}
 		[CRepr]
 		public struct IX509AttributeArchiveKey : IX509Attribute
 		{
 			public const new Guid IID = .(0x728ab327, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509AttributeArchiveKey *self, IX509PrivateKey* pKey, EncodingType Encoding, BSTR strCAXCert, IObjectId* pAlgorithm, int32 EncryptionStrength) InitializeEncode;
-			public function HRESULT(IX509AttributeArchiveKey *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(IX509AttributeArchiveKey *self, EncodingType Encoding, BSTR* pValue) get_EncryptedKeyBlob;
-			public function HRESULT(IX509AttributeArchiveKey *self, IObjectId** ppValue) get_EncryptionAlgorithm;
-			public function HRESULT(IX509AttributeArchiveKey *self, int32* pValue) get_EncryptionStrength;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Attribute.VTable
+			{
+				public function HRESULT(IX509AttributeArchiveKey *self, IX509PrivateKey* pKey, EncodingType Encoding, BSTR strCAXCert, IObjectId* pAlgorithm, int32 EncryptionStrength) InitializeEncode;
+				public function HRESULT(IX509AttributeArchiveKey *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(IX509AttributeArchiveKey *self, EncodingType Encoding, BSTR* pValue) get_EncryptedKeyBlob;
+				public function HRESULT(IX509AttributeArchiveKey *self, IObjectId** ppValue) get_EncryptionAlgorithm;
+				public function HRESULT(IX509AttributeArchiveKey *self, int32* pValue) get_EncryptionStrength;
+			}
 		}
 		[CRepr]
 		public struct IX509AttributeArchiveKeyHash : IX509Attribute
 		{
 			public const new Guid IID = .(0x728ab328, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509AttributeArchiveKeyHash *self, EncodingType Encoding, BSTR strEncryptedKeyBlob) InitializeEncodeFromEncryptedKeyBlob;
-			public function HRESULT(IX509AttributeArchiveKeyHash *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(IX509AttributeArchiveKeyHash *self, EncodingType Encoding, BSTR* pValue) get_EncryptedKeyHashBlob;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Attribute.VTable
+			{
+				public function HRESULT(IX509AttributeArchiveKeyHash *self, EncodingType Encoding, BSTR strEncryptedKeyBlob) InitializeEncodeFromEncryptedKeyBlob;
+				public function HRESULT(IX509AttributeArchiveKeyHash *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(IX509AttributeArchiveKeyHash *self, EncodingType Encoding, BSTR* pValue) get_EncryptedKeyHashBlob;
+			}
 		}
 		[CRepr]
 		public struct IX509AttributeOSVersion : IX509Attribute
 		{
 			public const new Guid IID = .(0x728ab32a, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509AttributeOSVersion *self, BSTR strOSVersion) InitializeEncode;
-			public function HRESULT(IX509AttributeOSVersion *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(IX509AttributeOSVersion *self, BSTR* pValue) get_OSVersion;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Attribute.VTable
+			{
+				public function HRESULT(IX509AttributeOSVersion *self, BSTR strOSVersion) InitializeEncode;
+				public function HRESULT(IX509AttributeOSVersion *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(IX509AttributeOSVersion *self, BSTR* pValue) get_OSVersion;
+			}
 		}
 		[CRepr]
 		public struct IX509AttributeCspProvider : IX509Attribute
 		{
 			public const new Guid IID = .(0x728ab32b, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509AttributeCspProvider *self, X509KeySpec KeySpec, BSTR strProviderName, EncodingType Encoding, BSTR strSignature) InitializeEncode;
-			public function HRESULT(IX509AttributeCspProvider *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(IX509AttributeCspProvider *self, X509KeySpec* pValue) get_KeySpec;
-			public function HRESULT(IX509AttributeCspProvider *self, BSTR* pValue) get_ProviderName;
-			public function HRESULT(IX509AttributeCspProvider *self, EncodingType Encoding, BSTR* pValue) get_Signature;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Attribute.VTable
+			{
+				public function HRESULT(IX509AttributeCspProvider *self, X509KeySpec KeySpec, BSTR strProviderName, EncodingType Encoding, BSTR strSignature) InitializeEncode;
+				public function HRESULT(IX509AttributeCspProvider *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(IX509AttributeCspProvider *self, X509KeySpec* pValue) get_KeySpec;
+				public function HRESULT(IX509AttributeCspProvider *self, BSTR* pValue) get_ProviderName;
+				public function HRESULT(IX509AttributeCspProvider *self, EncodingType Encoding, BSTR* pValue) get_Signature;
+			}
 		}
 		[CRepr]
 		public struct ICryptAttribute : IDispatch
 		{
 			public const new Guid IID = .(0x728ab32c, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICryptAttribute *self, IObjectId* pObjectId) InitializeFromObjectId;
-			public function HRESULT(ICryptAttribute *self, IX509Attributes* pAttributes) InitializeFromValues;
-			public function HRESULT(ICryptAttribute *self, IObjectId** ppValue) get_ObjectId;
-			public function HRESULT(ICryptAttribute *self, IX509Attributes** ppValue) get_Values;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICryptAttribute *self, IObjectId* pObjectId) InitializeFromObjectId;
+				public function HRESULT(ICryptAttribute *self, IX509Attributes* pAttributes) InitializeFromValues;
+				public function HRESULT(ICryptAttribute *self, IObjectId** ppValue) get_ObjectId;
+				public function HRESULT(ICryptAttribute *self, IX509Attributes** ppValue) get_Values;
+			}
 		}
 		[CRepr]
 		public struct ICryptAttributes : IDispatch
 		{
 			public const new Guid IID = .(0x728ab32d, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICryptAttributes *self, int32 Index, ICryptAttribute** pVal) get_ItemByIndex;
-			public function HRESULT(ICryptAttributes *self, int32* pVal) get_Count;
-			public function HRESULT(ICryptAttributes *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(ICryptAttributes *self, ICryptAttribute* pVal) Add;
-			public function HRESULT(ICryptAttributes *self, int32 Index) Remove;
-			public function HRESULT(ICryptAttributes *self) Clear;
-			public function HRESULT(ICryptAttributes *self, IObjectId* pObjectId, int32* pIndex) get_IndexByObjectId;
-			public function HRESULT(ICryptAttributes *self, ICryptAttributes* pValue) AddRange;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICryptAttributes *self, int32 Index, ICryptAttribute** pVal) get_ItemByIndex;
+				public function HRESULT(ICryptAttributes *self, int32* pVal) get_Count;
+				public function HRESULT(ICryptAttributes *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(ICryptAttributes *self, ICryptAttribute* pVal) Add;
+				public function HRESULT(ICryptAttributes *self, int32 Index) Remove;
+				public function HRESULT(ICryptAttributes *self) Clear;
+				public function HRESULT(ICryptAttributes *self, IObjectId* pObjectId, int32* pIndex) get_IndexByObjectId;
+				public function HRESULT(ICryptAttributes *self, ICryptAttributes* pValue) AddRange;
+			}
 		}
 		[CRepr]
 		public struct ICertProperty : IDispatch
 		{
 			public const new Guid IID = .(0x728ab32e, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICertProperty *self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) InitializeFromCertificate;
-			public function HRESULT(ICertProperty *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
-			public function HRESULT(ICertProperty *self, CERTENROLL_PROPERTYID* pValue) get_PropertyId;
-			public function HRESULT(ICertProperty *self, CERTENROLL_PROPERTYID Value) put_PropertyId;
-			public function HRESULT(ICertProperty *self, EncodingType Encoding, BSTR* pValue) get_RawData;
-			public function HRESULT(ICertProperty *self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) RemoveFromCertificate;
-			public function HRESULT(ICertProperty *self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) SetValueOnCertificate;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertProperty *self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) InitializeFromCertificate;
+				public function HRESULT(ICertProperty *self, EncodingType Encoding, BSTR strEncodedData) InitializeDecode;
+				public function HRESULT(ICertProperty *self, CERTENROLL_PROPERTYID* pValue) get_PropertyId;
+				public function HRESULT(ICertProperty *self, CERTENROLL_PROPERTYID Value) put_PropertyId;
+				public function HRESULT(ICertProperty *self, EncodingType Encoding, BSTR* pValue) get_RawData;
+				public function HRESULT(ICertProperty *self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) RemoveFromCertificate;
+				public function HRESULT(ICertProperty *self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) SetValueOnCertificate;
+			}
 		}
 		[CRepr]
 		public struct ICertProperties : IDispatch
 		{
 			public const new Guid IID = .(0x728ab32f, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICertProperties *self, int32 Index, ICertProperty** pVal) get_ItemByIndex;
-			public function HRESULT(ICertProperties *self, int32* pVal) get_Count;
-			public function HRESULT(ICertProperties *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(ICertProperties *self, ICertProperty* pVal) Add;
-			public function HRESULT(ICertProperties *self, int32 Index) Remove;
-			public function HRESULT(ICertProperties *self) Clear;
-			public function HRESULT(ICertProperties *self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) InitializeFromCertificate;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertProperties *self, int32 Index, ICertProperty** pVal) get_ItemByIndex;
+				public function HRESULT(ICertProperties *self, int32* pVal) get_Count;
+				public function HRESULT(ICertProperties *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(ICertProperties *self, ICertProperty* pVal) Add;
+				public function HRESULT(ICertProperties *self, int32 Index) Remove;
+				public function HRESULT(ICertProperties *self) Clear;
+				public function HRESULT(ICertProperties *self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) InitializeFromCertificate;
+			}
 		}
 		[CRepr]
 		public struct ICertPropertyFriendlyName : ICertProperty
 		{
 			public const new Guid IID = .(0x728ab330, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICertPropertyFriendlyName *self, BSTR strFriendlyName) Initialize;
-			public function HRESULT(ICertPropertyFriendlyName *self, BSTR* pValue) get_FriendlyName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertProperty.VTable
+			{
+				public function HRESULT(ICertPropertyFriendlyName *self, BSTR strFriendlyName) Initialize;
+				public function HRESULT(ICertPropertyFriendlyName *self, BSTR* pValue) get_FriendlyName;
+			}
 		}
 		[CRepr]
 		public struct ICertPropertyDescription : ICertProperty
 		{
 			public const new Guid IID = .(0x728ab331, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICertPropertyDescription *self, BSTR strDescription) Initialize;
-			public function HRESULT(ICertPropertyDescription *self, BSTR* pValue) get_Description;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertProperty.VTable
+			{
+				public function HRESULT(ICertPropertyDescription *self, BSTR strDescription) Initialize;
+				public function HRESULT(ICertPropertyDescription *self, BSTR* pValue) get_Description;
+			}
 		}
 		[CRepr]
 		public struct ICertPropertyAutoEnroll : ICertProperty
 		{
 			public const new Guid IID = .(0x728ab332, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICertPropertyAutoEnroll *self, BSTR strTemplateName) Initialize;
-			public function HRESULT(ICertPropertyAutoEnroll *self, BSTR* pValue) get_TemplateName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertProperty.VTable
+			{
+				public function HRESULT(ICertPropertyAutoEnroll *self, BSTR strTemplateName) Initialize;
+				public function HRESULT(ICertPropertyAutoEnroll *self, BSTR* pValue) get_TemplateName;
+			}
 		}
 		[CRepr]
 		public struct ICertPropertyRequestOriginator : ICertProperty
 		{
 			public const new Guid IID = .(0x728ab333, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICertPropertyRequestOriginator *self, BSTR strRequestOriginator) Initialize;
-			public function HRESULT(ICertPropertyRequestOriginator *self) InitializeFromLocalRequestOriginator;
-			public function HRESULT(ICertPropertyRequestOriginator *self, BSTR* pValue) get_RequestOriginator;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertProperty.VTable
+			{
+				public function HRESULT(ICertPropertyRequestOriginator *self, BSTR strRequestOriginator) Initialize;
+				public function HRESULT(ICertPropertyRequestOriginator *self) InitializeFromLocalRequestOriginator;
+				public function HRESULT(ICertPropertyRequestOriginator *self, BSTR* pValue) get_RequestOriginator;
+			}
 		}
 		[CRepr]
 		public struct ICertPropertySHA1Hash : ICertProperty
 		{
 			public const new Guid IID = .(0x728ab334, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICertPropertySHA1Hash *self, EncodingType Encoding, BSTR strRenewalValue) Initialize;
-			public function HRESULT(ICertPropertySHA1Hash *self, EncodingType Encoding, BSTR* pValue) get_SHA1Hash;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertProperty.VTable
+			{
+				public function HRESULT(ICertPropertySHA1Hash *self, EncodingType Encoding, BSTR strRenewalValue) Initialize;
+				public function HRESULT(ICertPropertySHA1Hash *self, EncodingType Encoding, BSTR* pValue) get_SHA1Hash;
+			}
 		}
 		[CRepr]
 		public struct ICertPropertyKeyProvInfo : ICertProperty
 		{
 			public const new Guid IID = .(0x728ab336, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICertPropertyKeyProvInfo *self, IX509PrivateKey* pValue) Initialize;
-			public function HRESULT(ICertPropertyKeyProvInfo *self, IX509PrivateKey** ppValue) get_PrivateKey;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertProperty.VTable
+			{
+				public function HRESULT(ICertPropertyKeyProvInfo *self, IX509PrivateKey* pValue) Initialize;
+				public function HRESULT(ICertPropertyKeyProvInfo *self, IX509PrivateKey** ppValue) get_PrivateKey;
+			}
 		}
 		[CRepr]
 		public struct ICertPropertyArchived : ICertProperty
 		{
 			public const new Guid IID = .(0x728ab337, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICertPropertyArchived *self, int16 ArchivedValue) Initialize;
-			public function HRESULT(ICertPropertyArchived *self, int16* pValue) get_Archived;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertProperty.VTable
+			{
+				public function HRESULT(ICertPropertyArchived *self, int16 ArchivedValue) Initialize;
+				public function HRESULT(ICertPropertyArchived *self, int16* pValue) get_Archived;
+			}
 		}
 		[CRepr]
 		public struct ICertPropertyBackedUp : ICertProperty
 		{
 			public const new Guid IID = .(0x728ab338, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICertPropertyBackedUp *self, int16 BackedUpValue) InitializeFromCurrentTime;
-			public function HRESULT(ICertPropertyBackedUp *self, int16 BackedUpValue, double Date) Initialize;
-			public function HRESULT(ICertPropertyBackedUp *self, int16* pValue) get_BackedUpValue;
-			public function HRESULT(ICertPropertyBackedUp *self, double* pDate) get_BackedUpTime;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertProperty.VTable
+			{
+				public function HRESULT(ICertPropertyBackedUp *self, int16 BackedUpValue) InitializeFromCurrentTime;
+				public function HRESULT(ICertPropertyBackedUp *self, int16 BackedUpValue, double Date) Initialize;
+				public function HRESULT(ICertPropertyBackedUp *self, int16* pValue) get_BackedUpValue;
+				public function HRESULT(ICertPropertyBackedUp *self, double* pDate) get_BackedUpTime;
+			}
 		}
 		[CRepr]
 		public struct ICertPropertyEnrollment : ICertProperty
 		{
 			public const new Guid IID = .(0x728ab339, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICertPropertyEnrollment *self, int32 RequestId, BSTR strCADnsName, BSTR strCAName, BSTR strFriendlyName) Initialize;
-			public function HRESULT(ICertPropertyEnrollment *self, int32* pValue) get_RequestId;
-			public function HRESULT(ICertPropertyEnrollment *self, BSTR* pValue) get_CADnsName;
-			public function HRESULT(ICertPropertyEnrollment *self, BSTR* pValue) get_CAName;
-			public function HRESULT(ICertPropertyEnrollment *self, BSTR* pValue) get_FriendlyName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertProperty.VTable
+			{
+				public function HRESULT(ICertPropertyEnrollment *self, int32 RequestId, BSTR strCADnsName, BSTR strCAName, BSTR strFriendlyName) Initialize;
+				public function HRESULT(ICertPropertyEnrollment *self, int32* pValue) get_RequestId;
+				public function HRESULT(ICertPropertyEnrollment *self, BSTR* pValue) get_CADnsName;
+				public function HRESULT(ICertPropertyEnrollment *self, BSTR* pValue) get_CAName;
+				public function HRESULT(ICertPropertyEnrollment *self, BSTR* pValue) get_FriendlyName;
+			}
 		}
 		[CRepr]
 		public struct ICertPropertyRenewal : ICertProperty
 		{
 			public const new Guid IID = .(0x728ab33a, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICertPropertyRenewal *self, EncodingType Encoding, BSTR strRenewalValue) Initialize;
-			public function HRESULT(ICertPropertyRenewal *self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) InitializeFromCertificateHash;
-			public function HRESULT(ICertPropertyRenewal *self, EncodingType Encoding, BSTR* pValue) get_Renewal;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertProperty.VTable
+			{
+				public function HRESULT(ICertPropertyRenewal *self, EncodingType Encoding, BSTR strRenewalValue) Initialize;
+				public function HRESULT(ICertPropertyRenewal *self, int16 MachineContext, EncodingType Encoding, BSTR strCertificate) InitializeFromCertificateHash;
+				public function HRESULT(ICertPropertyRenewal *self, EncodingType Encoding, BSTR* pValue) get_Renewal;
+			}
 		}
 		[CRepr]
 		public struct ICertPropertyArchivedKeyHash : ICertProperty
 		{
 			public const new Guid IID = .(0x728ab33b, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICertPropertyArchivedKeyHash *self, EncodingType Encoding, BSTR strArchivedKeyHashValue) Initialize;
-			public function HRESULT(ICertPropertyArchivedKeyHash *self, EncodingType Encoding, BSTR* pValue) get_ArchivedKeyHash;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertProperty.VTable
+			{
+				public function HRESULT(ICertPropertyArchivedKeyHash *self, EncodingType Encoding, BSTR strArchivedKeyHashValue) Initialize;
+				public function HRESULT(ICertPropertyArchivedKeyHash *self, EncodingType Encoding, BSTR* pValue) get_ArchivedKeyHash;
+			}
 		}
 		[CRepr]
 		public struct ICertPropertyEnrollmentPolicyServer : ICertProperty
 		{
 			public const new Guid IID = .(0x728ab34a, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICertPropertyEnrollmentPolicyServer *self, EnrollmentPolicyServerPropertyFlags PropertyFlags, X509EnrollmentAuthFlags AuthFlags, X509EnrollmentAuthFlags EnrollmentServerAuthFlags, PolicyServerUrlFlags UrlFlags, BSTR strRequestId, BSTR strUrl, BSTR strId, BSTR strEnrollmentServerUrl) Initialize;
-			public function HRESULT(ICertPropertyEnrollmentPolicyServer *self, BSTR* pValue) GetPolicyServerUrl;
-			public function HRESULT(ICertPropertyEnrollmentPolicyServer *self, BSTR* pValue) GetPolicyServerId;
-			public function HRESULT(ICertPropertyEnrollmentPolicyServer *self, BSTR* pValue) GetEnrollmentServerUrl;
-			public function HRESULT(ICertPropertyEnrollmentPolicyServer *self, BSTR* pValue) GetRequestIdString;
-			public function HRESULT(ICertPropertyEnrollmentPolicyServer *self, EnrollmentPolicyServerPropertyFlags* pValue) GetPropertyFlags;
-			public function HRESULT(ICertPropertyEnrollmentPolicyServer *self, PolicyServerUrlFlags* pValue) GetUrlFlags;
-			public function HRESULT(ICertPropertyEnrollmentPolicyServer *self, X509EnrollmentAuthFlags* pValue) GetAuthentication;
-			public function HRESULT(ICertPropertyEnrollmentPolicyServer *self, X509EnrollmentAuthFlags* pValue) GetEnrollmentServerAuthentication;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertProperty.VTable
+			{
+				public function HRESULT(ICertPropertyEnrollmentPolicyServer *self, EnrollmentPolicyServerPropertyFlags PropertyFlags, X509EnrollmentAuthFlags AuthFlags, X509EnrollmentAuthFlags EnrollmentServerAuthFlags, PolicyServerUrlFlags UrlFlags, BSTR strRequestId, BSTR strUrl, BSTR strId, BSTR strEnrollmentServerUrl) Initialize;
+				public function HRESULT(ICertPropertyEnrollmentPolicyServer *self, BSTR* pValue) GetPolicyServerUrl;
+				public function HRESULT(ICertPropertyEnrollmentPolicyServer *self, BSTR* pValue) GetPolicyServerId;
+				public function HRESULT(ICertPropertyEnrollmentPolicyServer *self, BSTR* pValue) GetEnrollmentServerUrl;
+				public function HRESULT(ICertPropertyEnrollmentPolicyServer *self, BSTR* pValue) GetRequestIdString;
+				public function HRESULT(ICertPropertyEnrollmentPolicyServer *self, EnrollmentPolicyServerPropertyFlags* pValue) GetPropertyFlags;
+				public function HRESULT(ICertPropertyEnrollmentPolicyServer *self, PolicyServerUrlFlags* pValue) GetUrlFlags;
+				public function HRESULT(ICertPropertyEnrollmentPolicyServer *self, X509EnrollmentAuthFlags* pValue) GetAuthentication;
+				public function HRESULT(ICertPropertyEnrollmentPolicyServer *self, X509EnrollmentAuthFlags* pValue) GetEnrollmentServerAuthentication;
+			}
 		}
 		[CRepr]
 		public struct IX509SignatureInformation : IDispatch
 		{
 			public const new Guid IID = .(0x728ab33c, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509SignatureInformation *self, IObjectId** ppValue) get_HashAlgorithm;
-			public function HRESULT(IX509SignatureInformation *self, IObjectId* pValue) put_HashAlgorithm;
-			public function HRESULT(IX509SignatureInformation *self, IObjectId** ppValue) get_PublicKeyAlgorithm;
-			public function HRESULT(IX509SignatureInformation *self, IObjectId* pValue) put_PublicKeyAlgorithm;
-			public function HRESULT(IX509SignatureInformation *self, EncodingType Encoding, BSTR* pValue) get_Parameters;
-			public function HRESULT(IX509SignatureInformation *self, EncodingType Encoding, BSTR Value) put_Parameters;
-			public function HRESULT(IX509SignatureInformation *self, int16* pValue) get_AlternateSignatureAlgorithm;
-			public function HRESULT(IX509SignatureInformation *self, int16 Value) put_AlternateSignatureAlgorithm;
-			public function HRESULT(IX509SignatureInformation *self, int16* pValue) get_AlternateSignatureAlgorithmSet;
-			public function HRESULT(IX509SignatureInformation *self, int16* pValue) get_NullSigned;
-			public function HRESULT(IX509SignatureInformation *self, int16 Value) put_NullSigned;
-			public function HRESULT(IX509SignatureInformation *self, int16 Pkcs7Signature, int16 SignatureKey, IObjectId** ppValue) GetSignatureAlgorithm;
-			public function HRESULT(IX509SignatureInformation *self) SetDefaultValues;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509SignatureInformation *self, IObjectId** ppValue) get_HashAlgorithm;
+				public function HRESULT(IX509SignatureInformation *self, IObjectId* pValue) put_HashAlgorithm;
+				public function HRESULT(IX509SignatureInformation *self, IObjectId** ppValue) get_PublicKeyAlgorithm;
+				public function HRESULT(IX509SignatureInformation *self, IObjectId* pValue) put_PublicKeyAlgorithm;
+				public function HRESULT(IX509SignatureInformation *self, EncodingType Encoding, BSTR* pValue) get_Parameters;
+				public function HRESULT(IX509SignatureInformation *self, EncodingType Encoding, BSTR Value) put_Parameters;
+				public function HRESULT(IX509SignatureInformation *self, int16* pValue) get_AlternateSignatureAlgorithm;
+				public function HRESULT(IX509SignatureInformation *self, int16 Value) put_AlternateSignatureAlgorithm;
+				public function HRESULT(IX509SignatureInformation *self, int16* pValue) get_AlternateSignatureAlgorithmSet;
+				public function HRESULT(IX509SignatureInformation *self, int16* pValue) get_NullSigned;
+				public function HRESULT(IX509SignatureInformation *self, int16 Value) put_NullSigned;
+				public function HRESULT(IX509SignatureInformation *self, int16 Pkcs7Signature, int16 SignatureKey, IObjectId** ppValue) GetSignatureAlgorithm;
+				public function HRESULT(IX509SignatureInformation *self) SetDefaultValues;
+			}
 		}
 		[CRepr]
 		public struct ISignerCertificate : IDispatch
 		{
 			public const new Guid IID = .(0x728ab33d, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ISignerCertificate *self, int16 MachineContext, X509PrivateKeyVerify VerifyType, EncodingType Encoding, BSTR strCertificate) Initialize;
-			public function HRESULT(ISignerCertificate *self, EncodingType Encoding, BSTR* pValue) get_Certificate;
-			public function HRESULT(ISignerCertificate *self, IX509PrivateKey** ppValue) get_PrivateKey;
-			public function HRESULT(ISignerCertificate *self, int16* pValue) get_Silent;
-			public function HRESULT(ISignerCertificate *self, int16 Value) put_Silent;
-			public function HRESULT(ISignerCertificate *self, int32* pValue) get_ParentWindow;
-			public function HRESULT(ISignerCertificate *self, int32 Value) put_ParentWindow;
-			public function HRESULT(ISignerCertificate *self, BSTR* pValue) get_UIContextMessage;
-			public function HRESULT(ISignerCertificate *self, BSTR Value) put_UIContextMessage;
-			public function HRESULT(ISignerCertificate *self, BSTR Value) put_Pin;
-			public function HRESULT(ISignerCertificate *self, IX509SignatureInformation** ppValue) get_SignatureInformation;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ISignerCertificate *self, int16 MachineContext, X509PrivateKeyVerify VerifyType, EncodingType Encoding, BSTR strCertificate) Initialize;
+				public function HRESULT(ISignerCertificate *self, EncodingType Encoding, BSTR* pValue) get_Certificate;
+				public function HRESULT(ISignerCertificate *self, IX509PrivateKey** ppValue) get_PrivateKey;
+				public function HRESULT(ISignerCertificate *self, int16* pValue) get_Silent;
+				public function HRESULT(ISignerCertificate *self, int16 Value) put_Silent;
+				public function HRESULT(ISignerCertificate *self, int32* pValue) get_ParentWindow;
+				public function HRESULT(ISignerCertificate *self, int32 Value) put_ParentWindow;
+				public function HRESULT(ISignerCertificate *self, BSTR* pValue) get_UIContextMessage;
+				public function HRESULT(ISignerCertificate *self, BSTR Value) put_UIContextMessage;
+				public function HRESULT(ISignerCertificate *self, BSTR Value) put_Pin;
+				public function HRESULT(ISignerCertificate *self, IX509SignatureInformation** ppValue) get_SignatureInformation;
+			}
 		}
 		[CRepr]
 		public struct ISignerCertificates : IDispatch
 		{
 			public const new Guid IID = .(0x728ab33e, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ISignerCertificates *self, int32 Index, ISignerCertificate** pVal) get_ItemByIndex;
-			public function HRESULT(ISignerCertificates *self, int32* pVal) get_Count;
-			public function HRESULT(ISignerCertificates *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(ISignerCertificates *self, ISignerCertificate* pVal) Add;
-			public function HRESULT(ISignerCertificates *self, int32 Index) Remove;
-			public function HRESULT(ISignerCertificates *self) Clear;
-			public function HRESULT(ISignerCertificates *self, ISignerCertificate* pSignerCert, int32* piSignerCert) Find;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ISignerCertificates *self, int32 Index, ISignerCertificate** pVal) get_ItemByIndex;
+				public function HRESULT(ISignerCertificates *self, int32* pVal) get_Count;
+				public function HRESULT(ISignerCertificates *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(ISignerCertificates *self, ISignerCertificate* pVal) Add;
+				public function HRESULT(ISignerCertificates *self, int32 Index) Remove;
+				public function HRESULT(ISignerCertificates *self) Clear;
+				public function HRESULT(ISignerCertificates *self, ISignerCertificate* pSignerCert, int32* piSignerCert) Find;
+			}
 		}
 		[CRepr]
 		public struct IX509NameValuePair : IDispatch
 		{
 			public const new Guid IID = .(0x728ab33f, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509NameValuePair *self, BSTR strName, BSTR strValue) Initialize;
-			public function HRESULT(IX509NameValuePair *self, BSTR* pValue) get_Value;
-			public function HRESULT(IX509NameValuePair *self, BSTR* pValue) get_Name;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509NameValuePair *self, BSTR strName, BSTR strValue) Initialize;
+				public function HRESULT(IX509NameValuePair *self, BSTR* pValue) get_Value;
+				public function HRESULT(IX509NameValuePair *self, BSTR* pValue) get_Name;
+			}
 		}
 		[CRepr]
 		public struct IX509NameValuePairs : IDispatch
 		{
 			public const new Guid IID = .(0x728ab340, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509NameValuePairs *self, int32 Index, IX509NameValuePair** pVal) get_ItemByIndex;
-			public function HRESULT(IX509NameValuePairs *self, int32* pVal) get_Count;
-			public function HRESULT(IX509NameValuePairs *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(IX509NameValuePairs *self, IX509NameValuePair* pVal) Add;
-			public function HRESULT(IX509NameValuePairs *self, int32 Index) Remove;
-			public function HRESULT(IX509NameValuePairs *self) Clear;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509NameValuePairs *self, int32 Index, IX509NameValuePair** pVal) get_ItemByIndex;
+				public function HRESULT(IX509NameValuePairs *self, int32* pVal) get_Count;
+				public function HRESULT(IX509NameValuePairs *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(IX509NameValuePairs *self, IX509NameValuePair* pVal) Add;
+				public function HRESULT(IX509NameValuePairs *self, int32 Index) Remove;
+				public function HRESULT(IX509NameValuePairs *self) Clear;
+			}
 		}
 		[CRepr]
 		public struct IX509CertificateTemplate : IDispatch
 		{
 			public const new Guid IID = .(0x54244a13, 0x555a, 0x4e22, 0x89, 0x6d, 0x1b, 0x0e, 0x52, 0xf7, 0x64, 0x06);
 			
-			public function HRESULT(IX509CertificateTemplate *self, EnrollmentTemplateProperty property, VARIANT* pValue) get_Property;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509CertificateTemplate *self, EnrollmentTemplateProperty property, VARIANT* pValue) get_Property;
+			}
 		}
 		[CRepr]
 		public struct IX509CertificateTemplates : IDispatch
 		{
 			public const new Guid IID = .(0x13b79003, 0x2181, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509CertificateTemplates *self, int32 Index, IX509CertificateTemplate** pVal) get_ItemByIndex;
-			public function HRESULT(IX509CertificateTemplates *self, int32* pVal) get_Count;
-			public function HRESULT(IX509CertificateTemplates *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(IX509CertificateTemplates *self, IX509CertificateTemplate* pVal) Add;
-			public function HRESULT(IX509CertificateTemplates *self, int32 Index) Remove;
-			public function HRESULT(IX509CertificateTemplates *self) Clear;
-			public function HRESULT(IX509CertificateTemplates *self, BSTR bstrName, IX509CertificateTemplate** ppValue) get_ItemByName;
-			public function HRESULT(IX509CertificateTemplates *self, IObjectId* pOid, IX509CertificateTemplate** ppValue) get_ItemByOid;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509CertificateTemplates *self, int32 Index, IX509CertificateTemplate** pVal) get_ItemByIndex;
+				public function HRESULT(IX509CertificateTemplates *self, int32* pVal) get_Count;
+				public function HRESULT(IX509CertificateTemplates *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(IX509CertificateTemplates *self, IX509CertificateTemplate* pVal) Add;
+				public function HRESULT(IX509CertificateTemplates *self, int32 Index) Remove;
+				public function HRESULT(IX509CertificateTemplates *self) Clear;
+				public function HRESULT(IX509CertificateTemplates *self, BSTR bstrName, IX509CertificateTemplate** ppValue) get_ItemByName;
+				public function HRESULT(IX509CertificateTemplates *self, IObjectId* pOid, IX509CertificateTemplate** ppValue) get_ItemByOid;
+			}
 		}
 		[CRepr]
 		public struct IX509CertificateTemplateWritable : IDispatch
 		{
 			public const new Guid IID = .(0xf49466a7, 0x395a, 0x4e9e, 0xb6, 0xe7, 0x32, 0xb3, 0x31, 0x60, 0x0d, 0xc0);
 			
-			public function HRESULT(IX509CertificateTemplateWritable *self, IX509CertificateTemplate* pValue) Initialize;
-			public function HRESULT(IX509CertificateTemplateWritable *self, CommitTemplateFlags commitFlags, BSTR strServerContext) Commit;
-			public function HRESULT(IX509CertificateTemplateWritable *self, EnrollmentTemplateProperty property, VARIANT* pValue) get_Property;
-			public function HRESULT(IX509CertificateTemplateWritable *self, EnrollmentTemplateProperty property, VARIANT value) put_Property;
-			public function HRESULT(IX509CertificateTemplateWritable *self, IX509CertificateTemplate** ppValue) get_Template;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509CertificateTemplateWritable *self, IX509CertificateTemplate* pValue) Initialize;
+				public function HRESULT(IX509CertificateTemplateWritable *self, CommitTemplateFlags commitFlags, BSTR strServerContext) Commit;
+				public function HRESULT(IX509CertificateTemplateWritable *self, EnrollmentTemplateProperty property, VARIANT* pValue) get_Property;
+				public function HRESULT(IX509CertificateTemplateWritable *self, EnrollmentTemplateProperty property, VARIANT value) put_Property;
+				public function HRESULT(IX509CertificateTemplateWritable *self, IX509CertificateTemplate** ppValue) get_Template;
+			}
 		}
 		[CRepr]
 		public struct ICertificationAuthority : IDispatch
 		{
 			public const new Guid IID = .(0x835d1f61, 0x1e95, 0x4bc8, 0xb4, 0xd3, 0x97, 0x6c, 0x42, 0xb9, 0x68, 0xf7);
 			
-			public function HRESULT(ICertificationAuthority *self, EnrollmentCAProperty property, VARIANT* pValue) get_Property;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertificationAuthority *self, EnrollmentCAProperty property, VARIANT* pValue) get_Property;
+			}
 		}
 		[CRepr]
 		public struct ICertificationAuthorities : IDispatch
 		{
 			public const new Guid IID = .(0x13b79005, 0x2181, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(ICertificationAuthorities *self, int32 Index, ICertificationAuthority** pVal) get_ItemByIndex;
-			public function HRESULT(ICertificationAuthorities *self, int32* pVal) get_Count;
-			public function HRESULT(ICertificationAuthorities *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(ICertificationAuthorities *self, ICertificationAuthority* pVal) Add;
-			public function HRESULT(ICertificationAuthorities *self, int32 Index) Remove;
-			public function HRESULT(ICertificationAuthorities *self) Clear;
-			public function HRESULT(ICertificationAuthorities *self) ComputeSiteCosts;
-			public function HRESULT(ICertificationAuthorities *self, BSTR strName, ICertificationAuthority** ppValue) get_ItemByName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertificationAuthorities *self, int32 Index, ICertificationAuthority** pVal) get_ItemByIndex;
+				public function HRESULT(ICertificationAuthorities *self, int32* pVal) get_Count;
+				public function HRESULT(ICertificationAuthorities *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(ICertificationAuthorities *self, ICertificationAuthority* pVal) Add;
+				public function HRESULT(ICertificationAuthorities *self, int32 Index) Remove;
+				public function HRESULT(ICertificationAuthorities *self) Clear;
+				public function HRESULT(ICertificationAuthorities *self) ComputeSiteCosts;
+				public function HRESULT(ICertificationAuthorities *self, BSTR strName, ICertificationAuthority** ppValue) get_ItemByName;
+			}
 		}
 		[CRepr]
 		public struct IX509EnrollmentPolicyServer : IDispatch
 		{
 			public const new Guid IID = .(0x13b79026, 0x2181, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509EnrollmentPolicyServer *self, BSTR bstrPolicyServerUrl, BSTR bstrPolicyServerId, X509EnrollmentAuthFlags authFlags, int16 fIsUnTrusted, X509CertificateEnrollmentContext context) Initialize;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, X509EnrollmentPolicyLoadOption option) LoadPolicy;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, IX509CertificateTemplates** pTemplates) GetTemplates;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, IX509CertificateTemplate* pTemplate, ICertificationAuthorities** ppCAs) GetCAsForTemplate;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, ICertificationAuthorities** ppCAs) GetCAs;
-			public function HRESULT(IX509EnrollmentPolicyServer *self) Validate;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, IObjectIds** ppObjectIds) GetCustomOids;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, double* pDate) GetNextUpdateTime;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, double* pDate) GetLastUpdateTime;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, BSTR* pValue) GetPolicyServerUrl;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, BSTR* pValue) GetPolicyServerId;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, BSTR* pValue) GetFriendlyName;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, int16* pValue) GetIsDefaultCEP;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, int16* pValue) GetUseClientId;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, int16* pValue) GetAllowUnTrustedCA;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, BSTR* pValue) GetCachePath;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, BSTR* pValue) GetCacheDir;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, X509EnrollmentAuthFlags* pValue) GetAuthFlags;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, int32 hWndParent, X509EnrollmentAuthFlags flag, BSTR strCredential, BSTR strPassword) SetCredential;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, int16* pValue) QueryChanges;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, VARIANT val) InitializeImport;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, X509EnrollmentPolicyExportFlags exportFlags, VARIANT* pVal) Export;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, uint32* pValue) get_Cost;
-			public function HRESULT(IX509EnrollmentPolicyServer *self, uint32 value) put_Cost;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509EnrollmentPolicyServer *self, BSTR bstrPolicyServerUrl, BSTR bstrPolicyServerId, X509EnrollmentAuthFlags authFlags, int16 fIsUnTrusted, X509CertificateEnrollmentContext context) Initialize;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, X509EnrollmentPolicyLoadOption option) LoadPolicy;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, IX509CertificateTemplates** pTemplates) GetTemplates;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, IX509CertificateTemplate* pTemplate, ICertificationAuthorities** ppCAs) GetCAsForTemplate;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, ICertificationAuthorities** ppCAs) GetCAs;
+				public function HRESULT(IX509EnrollmentPolicyServer *self) Validate;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, IObjectIds** ppObjectIds) GetCustomOids;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, double* pDate) GetNextUpdateTime;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, double* pDate) GetLastUpdateTime;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, BSTR* pValue) GetPolicyServerUrl;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, BSTR* pValue) GetPolicyServerId;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, BSTR* pValue) GetFriendlyName;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, int16* pValue) GetIsDefaultCEP;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, int16* pValue) GetUseClientId;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, int16* pValue) GetAllowUnTrustedCA;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, BSTR* pValue) GetCachePath;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, BSTR* pValue) GetCacheDir;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, X509EnrollmentAuthFlags* pValue) GetAuthFlags;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, int32 hWndParent, X509EnrollmentAuthFlags flag, BSTR strCredential, BSTR strPassword) SetCredential;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, int16* pValue) QueryChanges;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, VARIANT val) InitializeImport;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, X509EnrollmentPolicyExportFlags exportFlags, VARIANT* pVal) Export;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, uint32* pValue) get_Cost;
+				public function HRESULT(IX509EnrollmentPolicyServer *self, uint32 value) put_Cost;
+			}
 		}
 		[CRepr]
 		public struct IX509PolicyServerUrl : IDispatch
 		{
 			public const new Guid IID = .(0x884e204a, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509PolicyServerUrl *self, X509CertificateEnrollmentContext context) Initialize;
-			public function HRESULT(IX509PolicyServerUrl *self, BSTR* ppValue) get_Url;
-			public function HRESULT(IX509PolicyServerUrl *self, BSTR pValue) put_Url;
-			public function HRESULT(IX509PolicyServerUrl *self, int16* pValue) get_Default;
-			public function HRESULT(IX509PolicyServerUrl *self, int16 value) put_Default;
-			public function HRESULT(IX509PolicyServerUrl *self, PolicyServerUrlFlags* pValue) get_Flags;
-			public function HRESULT(IX509PolicyServerUrl *self, PolicyServerUrlFlags Flags) put_Flags;
-			public function HRESULT(IX509PolicyServerUrl *self, X509EnrollmentAuthFlags* pValue) get_AuthFlags;
-			public function HRESULT(IX509PolicyServerUrl *self, X509EnrollmentAuthFlags Flags) put_AuthFlags;
-			public function HRESULT(IX509PolicyServerUrl *self, uint32* pValue) get_Cost;
-			public function HRESULT(IX509PolicyServerUrl *self, uint32 value) put_Cost;
-			public function HRESULT(IX509PolicyServerUrl *self, PolicyServerUrlPropertyID propertyId, BSTR* ppValue) GetStringProperty;
-			public function HRESULT(IX509PolicyServerUrl *self, PolicyServerUrlPropertyID propertyId, BSTR pValue) SetStringProperty;
-			public function HRESULT(IX509PolicyServerUrl *self, X509CertificateEnrollmentContext context) UpdateRegistry;
-			public function HRESULT(IX509PolicyServerUrl *self, X509CertificateEnrollmentContext context) RemoveFromRegistry;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509PolicyServerUrl *self, X509CertificateEnrollmentContext context) Initialize;
+				public function HRESULT(IX509PolicyServerUrl *self, BSTR* ppValue) get_Url;
+				public function HRESULT(IX509PolicyServerUrl *self, BSTR pValue) put_Url;
+				public function HRESULT(IX509PolicyServerUrl *self, int16* pValue) get_Default;
+				public function HRESULT(IX509PolicyServerUrl *self, int16 value) put_Default;
+				public function HRESULT(IX509PolicyServerUrl *self, PolicyServerUrlFlags* pValue) get_Flags;
+				public function HRESULT(IX509PolicyServerUrl *self, PolicyServerUrlFlags Flags) put_Flags;
+				public function HRESULT(IX509PolicyServerUrl *self, X509EnrollmentAuthFlags* pValue) get_AuthFlags;
+				public function HRESULT(IX509PolicyServerUrl *self, X509EnrollmentAuthFlags Flags) put_AuthFlags;
+				public function HRESULT(IX509PolicyServerUrl *self, uint32* pValue) get_Cost;
+				public function HRESULT(IX509PolicyServerUrl *self, uint32 value) put_Cost;
+				public function HRESULT(IX509PolicyServerUrl *self, PolicyServerUrlPropertyID propertyId, BSTR* ppValue) GetStringProperty;
+				public function HRESULT(IX509PolicyServerUrl *self, PolicyServerUrlPropertyID propertyId, BSTR pValue) SetStringProperty;
+				public function HRESULT(IX509PolicyServerUrl *self, X509CertificateEnrollmentContext context) UpdateRegistry;
+				public function HRESULT(IX509PolicyServerUrl *self, X509CertificateEnrollmentContext context) RemoveFromRegistry;
+			}
 		}
 		[CRepr]
 		public struct IX509PolicyServerListManager : IDispatch
 		{
 			public const new Guid IID = .(0x884e204b, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509PolicyServerListManager *self, int32 Index, IX509PolicyServerUrl** pVal) get_ItemByIndex;
-			public function HRESULT(IX509PolicyServerListManager *self, int32* pVal) get_Count;
-			public function HRESULT(IX509PolicyServerListManager *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(IX509PolicyServerListManager *self, IX509PolicyServerUrl* pVal) Add;
-			public function HRESULT(IX509PolicyServerListManager *self, int32 Index) Remove;
-			public function HRESULT(IX509PolicyServerListManager *self) Clear;
-			public function HRESULT(IX509PolicyServerListManager *self, X509CertificateEnrollmentContext context, PolicyServerUrlFlags Flags) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509PolicyServerListManager *self, int32 Index, IX509PolicyServerUrl** pVal) get_ItemByIndex;
+				public function HRESULT(IX509PolicyServerListManager *self, int32* pVal) get_Count;
+				public function HRESULT(IX509PolicyServerListManager *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(IX509PolicyServerListManager *self, IX509PolicyServerUrl* pVal) Add;
+				public function HRESULT(IX509PolicyServerListManager *self, int32 Index) Remove;
+				public function HRESULT(IX509PolicyServerListManager *self) Clear;
+				public function HRESULT(IX509PolicyServerListManager *self, X509CertificateEnrollmentContext context, PolicyServerUrlFlags Flags) Initialize;
+			}
 		}
 		[CRepr]
 		public struct IX509CertificateRequest : IDispatch
 		{
 			public const new Guid IID = .(0x728ab341, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509CertificateRequest *self, X509CertificateEnrollmentContext Context) Initialize;
-			public function HRESULT(IX509CertificateRequest *self) Encode;
-			public function HRESULT(IX509CertificateRequest *self) ResetForEncode;
-			public function HRESULT(IX509CertificateRequest *self, InnerRequestLevel Level, IX509CertificateRequest** ppValue) GetInnerRequest;
-			public function HRESULT(IX509CertificateRequest *self, X509RequestType* pValue) get_Type;
-			public function HRESULT(IX509CertificateRequest *self, X509CertificateEnrollmentContext* pValue) get_EnrollmentContext;
-			public function HRESULT(IX509CertificateRequest *self, int16* pValue) get_Silent;
-			public function HRESULT(IX509CertificateRequest *self, int16 Value) put_Silent;
-			public function HRESULT(IX509CertificateRequest *self, int32* pValue) get_ParentWindow;
-			public function HRESULT(IX509CertificateRequest *self, int32 Value) put_ParentWindow;
-			public function HRESULT(IX509CertificateRequest *self, BSTR* pValue) get_UIContextMessage;
-			public function HRESULT(IX509CertificateRequest *self, BSTR Value) put_UIContextMessage;
-			public function HRESULT(IX509CertificateRequest *self, int16* pValue) get_SuppressDefaults;
-			public function HRESULT(IX509CertificateRequest *self, int16 Value) put_SuppressDefaults;
-			public function HRESULT(IX509CertificateRequest *self, EncodingType Encoding, BSTR* pValue) get_RenewalCertificate;
-			public function HRESULT(IX509CertificateRequest *self, EncodingType Encoding, BSTR Value) put_RenewalCertificate;
-			public function HRESULT(IX509CertificateRequest *self, RequestClientInfoClientId* pValue) get_ClientId;
-			public function HRESULT(IX509CertificateRequest *self, RequestClientInfoClientId Value) put_ClientId;
-			public function HRESULT(IX509CertificateRequest *self, ICspInformations** ppValue) get_CspInformations;
-			public function HRESULT(IX509CertificateRequest *self, ICspInformations* pValue) put_CspInformations;
-			public function HRESULT(IX509CertificateRequest *self, IObjectId** ppValue) get_HashAlgorithm;
-			public function HRESULT(IX509CertificateRequest *self, IObjectId* pValue) put_HashAlgorithm;
-			public function HRESULT(IX509CertificateRequest *self, int16* pValue) get_AlternateSignatureAlgorithm;
-			public function HRESULT(IX509CertificateRequest *self, int16 Value) put_AlternateSignatureAlgorithm;
-			public function HRESULT(IX509CertificateRequest *self, EncodingType Encoding, BSTR* pValue) get_RawData;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509CertificateRequest *self, X509CertificateEnrollmentContext Context) Initialize;
+				public function HRESULT(IX509CertificateRequest *self) Encode;
+				public function HRESULT(IX509CertificateRequest *self) ResetForEncode;
+				public function HRESULT(IX509CertificateRequest *self, InnerRequestLevel Level, IX509CertificateRequest** ppValue) GetInnerRequest;
+				public function HRESULT(IX509CertificateRequest *self, X509RequestType* pValue) get_Type;
+				public function HRESULT(IX509CertificateRequest *self, X509CertificateEnrollmentContext* pValue) get_EnrollmentContext;
+				public function HRESULT(IX509CertificateRequest *self, int16* pValue) get_Silent;
+				public function HRESULT(IX509CertificateRequest *self, int16 Value) put_Silent;
+				public function HRESULT(IX509CertificateRequest *self, int32* pValue) get_ParentWindow;
+				public function HRESULT(IX509CertificateRequest *self, int32 Value) put_ParentWindow;
+				public function HRESULT(IX509CertificateRequest *self, BSTR* pValue) get_UIContextMessage;
+				public function HRESULT(IX509CertificateRequest *self, BSTR Value) put_UIContextMessage;
+				public function HRESULT(IX509CertificateRequest *self, int16* pValue) get_SuppressDefaults;
+				public function HRESULT(IX509CertificateRequest *self, int16 Value) put_SuppressDefaults;
+				public function HRESULT(IX509CertificateRequest *self, EncodingType Encoding, BSTR* pValue) get_RenewalCertificate;
+				public function HRESULT(IX509CertificateRequest *self, EncodingType Encoding, BSTR Value) put_RenewalCertificate;
+				public function HRESULT(IX509CertificateRequest *self, RequestClientInfoClientId* pValue) get_ClientId;
+				public function HRESULT(IX509CertificateRequest *self, RequestClientInfoClientId Value) put_ClientId;
+				public function HRESULT(IX509CertificateRequest *self, ICspInformations** ppValue) get_CspInformations;
+				public function HRESULT(IX509CertificateRequest *self, ICspInformations* pValue) put_CspInformations;
+				public function HRESULT(IX509CertificateRequest *self, IObjectId** ppValue) get_HashAlgorithm;
+				public function HRESULT(IX509CertificateRequest *self, IObjectId* pValue) put_HashAlgorithm;
+				public function HRESULT(IX509CertificateRequest *self, int16* pValue) get_AlternateSignatureAlgorithm;
+				public function HRESULT(IX509CertificateRequest *self, int16 Value) put_AlternateSignatureAlgorithm;
+				public function HRESULT(IX509CertificateRequest *self, EncodingType Encoding, BSTR* pValue) get_RawData;
+			}
 		}
 		[CRepr]
 		public struct IX509CertificateRequestPkcs10 : IX509CertificateRequest
 		{
 			public const new Guid IID = .(0x728ab342, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, X509CertificateEnrollmentContext Context, BSTR strTemplateName) InitializeFromTemplateName;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, X509CertificateEnrollmentContext Context, IX509PrivateKey* pPrivateKey, BSTR strTemplateName) InitializeFromPrivateKey;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, X509CertificateEnrollmentContext Context, IX509PublicKey* pPublicKey, BSTR strTemplateName) InitializeFromPublicKey;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, X509CertificateEnrollmentContext Context, BSTR strCertificate, EncodingType Encoding, X509RequestInheritOptions InheritOptions) InitializeFromCertificate;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, BSTR strEncodedData, EncodingType Encoding) InitializeDecode;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, Pkcs10AllowedSignatureTypes AllowedSignatureTypes) CheckSignature;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, int16* pValue) IsSmartCard;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, IObjectId** ppValue) get_TemplateObjectId;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, IX509PublicKey** ppValue) get_PublicKey;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, IX509PrivateKey** ppValue) get_PrivateKey;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, int16* pValue) get_NullSigned;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, int16* pValue) get_ReuseKey;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, EncodingType Encoding, BSTR* pValue) get_OldCertificate;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, IX500DistinguishedName** ppValue) get_Subject;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, IX500DistinguishedName* pValue) put_Subject;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, ICspStatuses** ppValue) get_CspStatuses;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, int16* pValue) get_SmimeCapabilities;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, int16 Value) put_SmimeCapabilities;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, IX509SignatureInformation** ppValue) get_SignatureInformation;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, BSTR* pValue) get_KeyContainerNamePrefix;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, BSTR Value) put_KeyContainerNamePrefix;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, ICryptAttributes** ppValue) get_CryptAttributes;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, IX509Extensions** ppValue) get_X509Extensions;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, IObjectIds** ppValue) get_CriticalExtensions;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, IObjectIds** ppValue) get_SuppressOids;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, EncodingType Encoding, BSTR* pValue) get_RawDataToBeSigned;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, EncodingType Encoding, BSTR* pValue) get_Signature;
-			public function HRESULT(IX509CertificateRequestPkcs10 *self, X509KeySpec KeySpec, ICspStatuses** ppCspStatuses) GetCspStatuses;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509CertificateRequest.VTable
+			{
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, X509CertificateEnrollmentContext Context, BSTR strTemplateName) InitializeFromTemplateName;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, X509CertificateEnrollmentContext Context, IX509PrivateKey* pPrivateKey, BSTR strTemplateName) InitializeFromPrivateKey;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, X509CertificateEnrollmentContext Context, IX509PublicKey* pPublicKey, BSTR strTemplateName) InitializeFromPublicKey;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, X509CertificateEnrollmentContext Context, BSTR strCertificate, EncodingType Encoding, X509RequestInheritOptions InheritOptions) InitializeFromCertificate;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, BSTR strEncodedData, EncodingType Encoding) InitializeDecode;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, Pkcs10AllowedSignatureTypes AllowedSignatureTypes) CheckSignature;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, int16* pValue) IsSmartCard;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, IObjectId** ppValue) get_TemplateObjectId;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, IX509PublicKey** ppValue) get_PublicKey;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, IX509PrivateKey** ppValue) get_PrivateKey;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, int16* pValue) get_NullSigned;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, int16* pValue) get_ReuseKey;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, EncodingType Encoding, BSTR* pValue) get_OldCertificate;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, IX500DistinguishedName** ppValue) get_Subject;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, IX500DistinguishedName* pValue) put_Subject;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, ICspStatuses** ppValue) get_CspStatuses;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, int16* pValue) get_SmimeCapabilities;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, int16 Value) put_SmimeCapabilities;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, IX509SignatureInformation** ppValue) get_SignatureInformation;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, BSTR* pValue) get_KeyContainerNamePrefix;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, BSTR Value) put_KeyContainerNamePrefix;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, ICryptAttributes** ppValue) get_CryptAttributes;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, IX509Extensions** ppValue) get_X509Extensions;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, IObjectIds** ppValue) get_CriticalExtensions;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, IObjectIds** ppValue) get_SuppressOids;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, EncodingType Encoding, BSTR* pValue) get_RawDataToBeSigned;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, EncodingType Encoding, BSTR* pValue) get_Signature;
+				public function HRESULT(IX509CertificateRequestPkcs10 *self, X509KeySpec KeySpec, ICspStatuses** ppCspStatuses) GetCspStatuses;
+			}
 		}
 		[CRepr]
 		public struct IX509CertificateRequestPkcs10V2 : IX509CertificateRequestPkcs10
 		{
 			public const new Guid IID = .(0x728ab35b, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509CertificateRequestPkcs10V2 *self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
-			public function HRESULT(IX509CertificateRequestPkcs10V2 *self, X509CertificateEnrollmentContext Context, IX509PrivateKey* pPrivateKey, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromPrivateKeyTemplate;
-			public function HRESULT(IX509CertificateRequestPkcs10V2 *self, X509CertificateEnrollmentContext Context, IX509PublicKey* pPublicKey, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromPublicKeyTemplate;
-			public function HRESULT(IX509CertificateRequestPkcs10V2 *self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
-			public function HRESULT(IX509CertificateRequestPkcs10V2 *self, IX509CertificateTemplate** ppTemplate) get_Template;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509CertificateRequestPkcs10.VTable
+			{
+				public function HRESULT(IX509CertificateRequestPkcs10V2 *self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
+				public function HRESULT(IX509CertificateRequestPkcs10V2 *self, X509CertificateEnrollmentContext Context, IX509PrivateKey* pPrivateKey, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromPrivateKeyTemplate;
+				public function HRESULT(IX509CertificateRequestPkcs10V2 *self, X509CertificateEnrollmentContext Context, IX509PublicKey* pPublicKey, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromPublicKeyTemplate;
+				public function HRESULT(IX509CertificateRequestPkcs10V2 *self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
+				public function HRESULT(IX509CertificateRequestPkcs10V2 *self, IX509CertificateTemplate** ppTemplate) get_Template;
+			}
 		}
 		[CRepr]
 		public struct IX509CertificateRequestPkcs10V3 : IX509CertificateRequestPkcs10V2
 		{
 			public const new Guid IID = .(0x54ea9942, 0x3d66, 0x4530, 0xb7, 0x6e, 0x7c, 0x91, 0x70, 0xd3, 0xec, 0x52);
 			
-			public function HRESULT(IX509CertificateRequestPkcs10V3 *self, int16* pValue) get_AttestPrivateKey;
-			public function HRESULT(IX509CertificateRequestPkcs10V3 *self, int16 Value) put_AttestPrivateKey;
-			public function HRESULT(IX509CertificateRequestPkcs10V3 *self, EncodingType Encoding, BSTR* pValue) get_AttestationEncryptionCertificate;
-			public function HRESULT(IX509CertificateRequestPkcs10V3 *self, EncodingType Encoding, BSTR Value) put_AttestationEncryptionCertificate;
-			public function HRESULT(IX509CertificateRequestPkcs10V3 *self, IObjectId** ppValue) get_EncryptionAlgorithm;
-			public function HRESULT(IX509CertificateRequestPkcs10V3 *self, IObjectId* pValue) put_EncryptionAlgorithm;
-			public function HRESULT(IX509CertificateRequestPkcs10V3 *self, int32* pValue) get_EncryptionStrength;
-			public function HRESULT(IX509CertificateRequestPkcs10V3 *self, int32 Value) put_EncryptionStrength;
-			public function HRESULT(IX509CertificateRequestPkcs10V3 *self, BSTR* pValue) get_ChallengePassword;
-			public function HRESULT(IX509CertificateRequestPkcs10V3 *self, BSTR Value) put_ChallengePassword;
-			public function HRESULT(IX509CertificateRequestPkcs10V3 *self, IX509NameValuePairs** ppValue) get_NameValuePairs;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509CertificateRequestPkcs10V2.VTable
+			{
+				public function HRESULT(IX509CertificateRequestPkcs10V3 *self, int16* pValue) get_AttestPrivateKey;
+				public function HRESULT(IX509CertificateRequestPkcs10V3 *self, int16 Value) put_AttestPrivateKey;
+				public function HRESULT(IX509CertificateRequestPkcs10V3 *self, EncodingType Encoding, BSTR* pValue) get_AttestationEncryptionCertificate;
+				public function HRESULT(IX509CertificateRequestPkcs10V3 *self, EncodingType Encoding, BSTR Value) put_AttestationEncryptionCertificate;
+				public function HRESULT(IX509CertificateRequestPkcs10V3 *self, IObjectId** ppValue) get_EncryptionAlgorithm;
+				public function HRESULT(IX509CertificateRequestPkcs10V3 *self, IObjectId* pValue) put_EncryptionAlgorithm;
+				public function HRESULT(IX509CertificateRequestPkcs10V3 *self, int32* pValue) get_EncryptionStrength;
+				public function HRESULT(IX509CertificateRequestPkcs10V3 *self, int32 Value) put_EncryptionStrength;
+				public function HRESULT(IX509CertificateRequestPkcs10V3 *self, BSTR* pValue) get_ChallengePassword;
+				public function HRESULT(IX509CertificateRequestPkcs10V3 *self, BSTR Value) put_ChallengePassword;
+				public function HRESULT(IX509CertificateRequestPkcs10V3 *self, IX509NameValuePairs** ppValue) get_NameValuePairs;
+			}
 		}
 		[CRepr]
 		public struct IX509CertificateRequestPkcs10V4 : IX509CertificateRequestPkcs10V3
 		{
 			public const new Guid IID = .(0x728ab363, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509CertificateRequestPkcs10V4 *self, KeyAttestationClaimType* pValue) get_ClaimType;
-			public function HRESULT(IX509CertificateRequestPkcs10V4 *self, KeyAttestationClaimType Value) put_ClaimType;
-			public function HRESULT(IX509CertificateRequestPkcs10V4 *self, int16* pValue) get_AttestPrivateKeyPreferred;
-			public function HRESULT(IX509CertificateRequestPkcs10V4 *self, int16 Value) put_AttestPrivateKeyPreferred;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509CertificateRequestPkcs10V3.VTable
+			{
+				public function HRESULT(IX509CertificateRequestPkcs10V4 *self, KeyAttestationClaimType* pValue) get_ClaimType;
+				public function HRESULT(IX509CertificateRequestPkcs10V4 *self, KeyAttestationClaimType Value) put_ClaimType;
+				public function HRESULT(IX509CertificateRequestPkcs10V4 *self, int16* pValue) get_AttestPrivateKeyPreferred;
+				public function HRESULT(IX509CertificateRequestPkcs10V4 *self, int16 Value) put_AttestPrivateKeyPreferred;
+			}
 		}
 		[CRepr]
 		public struct IX509CertificateRequestCertificate : IX509CertificateRequestPkcs10
 		{
 			public const new Guid IID = .(0x728ab343, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509CertificateRequestCertificate *self, IX509PublicKey* pPublicKey) CheckPublicKeySignature;
-			public function HRESULT(IX509CertificateRequestCertificate *self, IX500DistinguishedName** ppValue) get_Issuer;
-			public function HRESULT(IX509CertificateRequestCertificate *self, IX500DistinguishedName* pValue) put_Issuer;
-			public function HRESULT(IX509CertificateRequestCertificate *self, double* pValue) get_NotBefore;
-			public function HRESULT(IX509CertificateRequestCertificate *self, double Value) put_NotBefore;
-			public function HRESULT(IX509CertificateRequestCertificate *self, double* pValue) get_NotAfter;
-			public function HRESULT(IX509CertificateRequestCertificate *self, double Value) put_NotAfter;
-			public function HRESULT(IX509CertificateRequestCertificate *self, EncodingType Encoding, BSTR* pValue) get_SerialNumber;
-			public function HRESULT(IX509CertificateRequestCertificate *self, EncodingType Encoding, BSTR Value) put_SerialNumber;
-			public function HRESULT(IX509CertificateRequestCertificate *self, ISignerCertificate** ppValue) get_SignerCertificate;
-			public function HRESULT(IX509CertificateRequestCertificate *self, ISignerCertificate* pValue) put_SignerCertificate;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509CertificateRequestPkcs10.VTable
+			{
+				public function HRESULT(IX509CertificateRequestCertificate *self, IX509PublicKey* pPublicKey) CheckPublicKeySignature;
+				public function HRESULT(IX509CertificateRequestCertificate *self, IX500DistinguishedName** ppValue) get_Issuer;
+				public function HRESULT(IX509CertificateRequestCertificate *self, IX500DistinguishedName* pValue) put_Issuer;
+				public function HRESULT(IX509CertificateRequestCertificate *self, double* pValue) get_NotBefore;
+				public function HRESULT(IX509CertificateRequestCertificate *self, double Value) put_NotBefore;
+				public function HRESULT(IX509CertificateRequestCertificate *self, double* pValue) get_NotAfter;
+				public function HRESULT(IX509CertificateRequestCertificate *self, double Value) put_NotAfter;
+				public function HRESULT(IX509CertificateRequestCertificate *self, EncodingType Encoding, BSTR* pValue) get_SerialNumber;
+				public function HRESULT(IX509CertificateRequestCertificate *self, EncodingType Encoding, BSTR Value) put_SerialNumber;
+				public function HRESULT(IX509CertificateRequestCertificate *self, ISignerCertificate** ppValue) get_SignerCertificate;
+				public function HRESULT(IX509CertificateRequestCertificate *self, ISignerCertificate* pValue) put_SignerCertificate;
+			}
 		}
 		[CRepr]
 		public struct IX509CertificateRequestCertificate2 : IX509CertificateRequestCertificate
 		{
 			public const new Guid IID = .(0x728ab35a, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509CertificateRequestCertificate2 *self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
-			public function HRESULT(IX509CertificateRequestCertificate2 *self, X509CertificateEnrollmentContext Context, IX509PrivateKey* pPrivateKey, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromPrivateKeyTemplate;
-			public function HRESULT(IX509CertificateRequestCertificate2 *self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
-			public function HRESULT(IX509CertificateRequestCertificate2 *self, IX509CertificateTemplate** ppTemplate) get_Template;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509CertificateRequestCertificate.VTable
+			{
+				public function HRESULT(IX509CertificateRequestCertificate2 *self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
+				public function HRESULT(IX509CertificateRequestCertificate2 *self, X509CertificateEnrollmentContext Context, IX509PrivateKey* pPrivateKey, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromPrivateKeyTemplate;
+				public function HRESULT(IX509CertificateRequestCertificate2 *self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
+				public function HRESULT(IX509CertificateRequestCertificate2 *self, IX509CertificateTemplate** ppTemplate) get_Template;
+			}
 		}
 		[CRepr]
 		public struct IX509CertificateRequestPkcs7 : IX509CertificateRequest
 		{
 			public const new Guid IID = .(0x728ab344, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509CertificateRequestPkcs7 *self, X509CertificateEnrollmentContext Context, BSTR strTemplateName) InitializeFromTemplateName;
-			public function HRESULT(IX509CertificateRequestPkcs7 *self, X509CertificateEnrollmentContext Context, int16 RenewalRequest, BSTR strCertificate, EncodingType Encoding, X509RequestInheritOptions InheritOptions) InitializeFromCertificate;
-			public function HRESULT(IX509CertificateRequestPkcs7 *self, IX509CertificateRequest* pInnerRequest) InitializeFromInnerRequest;
-			public function HRESULT(IX509CertificateRequestPkcs7 *self, BSTR strEncodedData, EncodingType Encoding) InitializeDecode;
-			public function HRESULT(IX509CertificateRequestPkcs7 *self, BSTR* pValue) get_RequesterName;
-			public function HRESULT(IX509CertificateRequestPkcs7 *self, BSTR Value) put_RequesterName;
-			public function HRESULT(IX509CertificateRequestPkcs7 *self, ISignerCertificate** ppValue) get_SignerCertificate;
-			public function HRESULT(IX509CertificateRequestPkcs7 *self, ISignerCertificate* pValue) put_SignerCertificate;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509CertificateRequest.VTable
+			{
+				public function HRESULT(IX509CertificateRequestPkcs7 *self, X509CertificateEnrollmentContext Context, BSTR strTemplateName) InitializeFromTemplateName;
+				public function HRESULT(IX509CertificateRequestPkcs7 *self, X509CertificateEnrollmentContext Context, int16 RenewalRequest, BSTR strCertificate, EncodingType Encoding, X509RequestInheritOptions InheritOptions) InitializeFromCertificate;
+				public function HRESULT(IX509CertificateRequestPkcs7 *self, IX509CertificateRequest* pInnerRequest) InitializeFromInnerRequest;
+				public function HRESULT(IX509CertificateRequestPkcs7 *self, BSTR strEncodedData, EncodingType Encoding) InitializeDecode;
+				public function HRESULT(IX509CertificateRequestPkcs7 *self, BSTR* pValue) get_RequesterName;
+				public function HRESULT(IX509CertificateRequestPkcs7 *self, BSTR Value) put_RequesterName;
+				public function HRESULT(IX509CertificateRequestPkcs7 *self, ISignerCertificate** ppValue) get_SignerCertificate;
+				public function HRESULT(IX509CertificateRequestPkcs7 *self, ISignerCertificate* pValue) put_SignerCertificate;
+			}
 		}
 		[CRepr]
 		public struct IX509CertificateRequestPkcs7V2 : IX509CertificateRequestPkcs7
 		{
 			public const new Guid IID = .(0x728ab35c, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509CertificateRequestPkcs7V2 *self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
-			public function HRESULT(IX509CertificateRequestPkcs7V2 *self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
-			public function HRESULT(IX509CertificateRequestPkcs7V2 *self, IX509CertificateTemplate** ppTemplate) get_Template;
-			public function HRESULT(IX509CertificateRequestPkcs7V2 *self, int16 ValidateCertificateChain) CheckCertificateSignature;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509CertificateRequestPkcs7.VTable
+			{
+				public function HRESULT(IX509CertificateRequestPkcs7V2 *self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
+				public function HRESULT(IX509CertificateRequestPkcs7V2 *self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
+				public function HRESULT(IX509CertificateRequestPkcs7V2 *self, IX509CertificateTemplate** ppTemplate) get_Template;
+				public function HRESULT(IX509CertificateRequestPkcs7V2 *self, int16 ValidateCertificateChain) CheckCertificateSignature;
+			}
 		}
 		[CRepr]
 		public struct IX509CertificateRequestCmc : IX509CertificateRequestPkcs7
 		{
 			public const new Guid IID = .(0x728ab345, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509CertificateRequestCmc *self, IX509CertificateRequest* pInnerRequest, BSTR strTemplateName) InitializeFromInnerRequestTemplateName;
-			public function HRESULT(IX509CertificateRequestCmc *self, IObjectId** ppValue) get_TemplateObjectId;
-			public function HRESULT(IX509CertificateRequestCmc *self, int16* pValue) get_NullSigned;
-			public function HRESULT(IX509CertificateRequestCmc *self, ICryptAttributes** ppValue) get_CryptAttributes;
-			public function HRESULT(IX509CertificateRequestCmc *self, IX509NameValuePairs** ppValue) get_NameValuePairs;
-			public function HRESULT(IX509CertificateRequestCmc *self, IX509Extensions** ppValue) get_X509Extensions;
-			public function HRESULT(IX509CertificateRequestCmc *self, IObjectIds** ppValue) get_CriticalExtensions;
-			public function HRESULT(IX509CertificateRequestCmc *self, IObjectIds** ppValue) get_SuppressOids;
-			public function HRESULT(IX509CertificateRequestCmc *self, int32* pValue) get_TransactionId;
-			public function HRESULT(IX509CertificateRequestCmc *self, int32 Value) put_TransactionId;
-			public function HRESULT(IX509CertificateRequestCmc *self, EncodingType Encoding, BSTR* pValue) get_SenderNonce;
-			public function HRESULT(IX509CertificateRequestCmc *self, EncodingType Encoding, BSTR Value) put_SenderNonce;
-			public function HRESULT(IX509CertificateRequestCmc *self, IX509SignatureInformation** ppValue) get_SignatureInformation;
-			public function HRESULT(IX509CertificateRequestCmc *self, int16* pValue) get_ArchivePrivateKey;
-			public function HRESULT(IX509CertificateRequestCmc *self, int16 Value) put_ArchivePrivateKey;
-			public function HRESULT(IX509CertificateRequestCmc *self, EncodingType Encoding, BSTR* pValue) get_KeyArchivalCertificate;
-			public function HRESULT(IX509CertificateRequestCmc *self, EncodingType Encoding, BSTR Value) put_KeyArchivalCertificate;
-			public function HRESULT(IX509CertificateRequestCmc *self, IObjectId** ppValue) get_EncryptionAlgorithm;
-			public function HRESULT(IX509CertificateRequestCmc *self, IObjectId* pValue) put_EncryptionAlgorithm;
-			public function HRESULT(IX509CertificateRequestCmc *self, int32* pValue) get_EncryptionStrength;
-			public function HRESULT(IX509CertificateRequestCmc *self, int32 Value) put_EncryptionStrength;
-			public function HRESULT(IX509CertificateRequestCmc *self, EncodingType Encoding, BSTR* pValue) get_EncryptedKeyHash;
-			public function HRESULT(IX509CertificateRequestCmc *self, ISignerCertificates** ppValue) get_SignerCertificates;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509CertificateRequestPkcs7.VTable
+			{
+				public function HRESULT(IX509CertificateRequestCmc *self, IX509CertificateRequest* pInnerRequest, BSTR strTemplateName) InitializeFromInnerRequestTemplateName;
+				public function HRESULT(IX509CertificateRequestCmc *self, IObjectId** ppValue) get_TemplateObjectId;
+				public function HRESULT(IX509CertificateRequestCmc *self, int16* pValue) get_NullSigned;
+				public function HRESULT(IX509CertificateRequestCmc *self, ICryptAttributes** ppValue) get_CryptAttributes;
+				public function HRESULT(IX509CertificateRequestCmc *self, IX509NameValuePairs** ppValue) get_NameValuePairs;
+				public function HRESULT(IX509CertificateRequestCmc *self, IX509Extensions** ppValue) get_X509Extensions;
+				public function HRESULT(IX509CertificateRequestCmc *self, IObjectIds** ppValue) get_CriticalExtensions;
+				public function HRESULT(IX509CertificateRequestCmc *self, IObjectIds** ppValue) get_SuppressOids;
+				public function HRESULT(IX509CertificateRequestCmc *self, int32* pValue) get_TransactionId;
+				public function HRESULT(IX509CertificateRequestCmc *self, int32 Value) put_TransactionId;
+				public function HRESULT(IX509CertificateRequestCmc *self, EncodingType Encoding, BSTR* pValue) get_SenderNonce;
+				public function HRESULT(IX509CertificateRequestCmc *self, EncodingType Encoding, BSTR Value) put_SenderNonce;
+				public function HRESULT(IX509CertificateRequestCmc *self, IX509SignatureInformation** ppValue) get_SignatureInformation;
+				public function HRESULT(IX509CertificateRequestCmc *self, int16* pValue) get_ArchivePrivateKey;
+				public function HRESULT(IX509CertificateRequestCmc *self, int16 Value) put_ArchivePrivateKey;
+				public function HRESULT(IX509CertificateRequestCmc *self, EncodingType Encoding, BSTR* pValue) get_KeyArchivalCertificate;
+				public function HRESULT(IX509CertificateRequestCmc *self, EncodingType Encoding, BSTR Value) put_KeyArchivalCertificate;
+				public function HRESULT(IX509CertificateRequestCmc *self, IObjectId** ppValue) get_EncryptionAlgorithm;
+				public function HRESULT(IX509CertificateRequestCmc *self, IObjectId* pValue) put_EncryptionAlgorithm;
+				public function HRESULT(IX509CertificateRequestCmc *self, int32* pValue) get_EncryptionStrength;
+				public function HRESULT(IX509CertificateRequestCmc *self, int32 Value) put_EncryptionStrength;
+				public function HRESULT(IX509CertificateRequestCmc *self, EncodingType Encoding, BSTR* pValue) get_EncryptedKeyHash;
+				public function HRESULT(IX509CertificateRequestCmc *self, ISignerCertificates** ppValue) get_SignerCertificates;
+			}
 		}
 		[CRepr]
 		public struct IX509CertificateRequestCmc2 : IX509CertificateRequestCmc
 		{
 			public const new Guid IID = .(0x728ab35d, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509CertificateRequestCmc2 *self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
-			public function HRESULT(IX509CertificateRequestCmc2 *self, IX509CertificateRequest* pInnerRequest, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromInnerRequestTemplate;
-			public function HRESULT(IX509CertificateRequestCmc2 *self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
-			public function HRESULT(IX509CertificateRequestCmc2 *self, IX509CertificateTemplate** ppTemplate) get_Template;
-			public function HRESULT(IX509CertificateRequestCmc2 *self, Pkcs10AllowedSignatureTypes AllowedSignatureTypes) CheckSignature;
-			public function HRESULT(IX509CertificateRequestCmc2 *self, ISignerCertificate* pSignerCertificate, int16 ValidateCertificateChain) CheckCertificateSignature;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509CertificateRequestCmc.VTable
+			{
+				public function HRESULT(IX509CertificateRequestCmc2 *self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
+				public function HRESULT(IX509CertificateRequestCmc2 *self, IX509CertificateRequest* pInnerRequest, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromInnerRequestTemplate;
+				public function HRESULT(IX509CertificateRequestCmc2 *self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
+				public function HRESULT(IX509CertificateRequestCmc2 *self, IX509CertificateTemplate** ppTemplate) get_Template;
+				public function HRESULT(IX509CertificateRequestCmc2 *self, Pkcs10AllowedSignatureTypes AllowedSignatureTypes) CheckSignature;
+				public function HRESULT(IX509CertificateRequestCmc2 *self, ISignerCertificate* pSignerCertificate, int16 ValidateCertificateChain) CheckCertificateSignature;
+			}
 		}
 		[CRepr]
 		public struct IX509Enrollment : IDispatch
 		{
 			public const new Guid IID = .(0x728ab346, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509Enrollment *self, X509CertificateEnrollmentContext Context) Initialize;
-			public function HRESULT(IX509Enrollment *self, X509CertificateEnrollmentContext Context, BSTR strTemplateName) InitializeFromTemplateName;
-			public function HRESULT(IX509Enrollment *self, IX509CertificateRequest* pRequest) InitializeFromRequest;
-			public function HRESULT(IX509Enrollment *self, EncodingType Encoding, BSTR* pValue) CreateRequest;
-			public function HRESULT(IX509Enrollment *self) Enroll;
-			public function HRESULT(IX509Enrollment *self, InstallResponseRestrictionFlags Restrictions, BSTR strResponse, EncodingType Encoding, BSTR strPassword) InstallResponse;
-			public function HRESULT(IX509Enrollment *self, BSTR strPassword, PFXExportOptions ExportOptions, EncodingType Encoding, BSTR* pValue) CreatePFX;
-			public function HRESULT(IX509Enrollment *self, IX509CertificateRequest** pValue) get_Request;
-			public function HRESULT(IX509Enrollment *self, int16* pValue) get_Silent;
-			public function HRESULT(IX509Enrollment *self, int16 Value) put_Silent;
-			public function HRESULT(IX509Enrollment *self, int32* pValue) get_ParentWindow;
-			public function HRESULT(IX509Enrollment *self, int32 Value) put_ParentWindow;
-			public function HRESULT(IX509Enrollment *self, IX509NameValuePairs** ppValue) get_NameValuePairs;
-			public function HRESULT(IX509Enrollment *self, X509CertificateEnrollmentContext* pValue) get_EnrollmentContext;
-			public function HRESULT(IX509Enrollment *self, IX509EnrollmentStatus** ppValue) get_Status;
-			public function HRESULT(IX509Enrollment *self, EncodingType Encoding, BSTR* pValue) get_Certificate;
-			public function HRESULT(IX509Enrollment *self, EncodingType Encoding, BSTR* pValue) get_Response;
-			public function HRESULT(IX509Enrollment *self, BSTR* pValue) get_CertificateFriendlyName;
-			public function HRESULT(IX509Enrollment *self, BSTR strValue) put_CertificateFriendlyName;
-			public function HRESULT(IX509Enrollment *self, BSTR* pValue) get_CertificateDescription;
-			public function HRESULT(IX509Enrollment *self, BSTR strValue) put_CertificateDescription;
-			public function HRESULT(IX509Enrollment *self, int32* pValue) get_RequestId;
-			public function HRESULT(IX509Enrollment *self, BSTR* pValue) get_CAConfigString;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509Enrollment *self, X509CertificateEnrollmentContext Context) Initialize;
+				public function HRESULT(IX509Enrollment *self, X509CertificateEnrollmentContext Context, BSTR strTemplateName) InitializeFromTemplateName;
+				public function HRESULT(IX509Enrollment *self, IX509CertificateRequest* pRequest) InitializeFromRequest;
+				public function HRESULT(IX509Enrollment *self, EncodingType Encoding, BSTR* pValue) CreateRequest;
+				public function HRESULT(IX509Enrollment *self) Enroll;
+				public function HRESULT(IX509Enrollment *self, InstallResponseRestrictionFlags Restrictions, BSTR strResponse, EncodingType Encoding, BSTR strPassword) InstallResponse;
+				public function HRESULT(IX509Enrollment *self, BSTR strPassword, PFXExportOptions ExportOptions, EncodingType Encoding, BSTR* pValue) CreatePFX;
+				public function HRESULT(IX509Enrollment *self, IX509CertificateRequest** pValue) get_Request;
+				public function HRESULT(IX509Enrollment *self, int16* pValue) get_Silent;
+				public function HRESULT(IX509Enrollment *self, int16 Value) put_Silent;
+				public function HRESULT(IX509Enrollment *self, int32* pValue) get_ParentWindow;
+				public function HRESULT(IX509Enrollment *self, int32 Value) put_ParentWindow;
+				public function HRESULT(IX509Enrollment *self, IX509NameValuePairs** ppValue) get_NameValuePairs;
+				public function HRESULT(IX509Enrollment *self, X509CertificateEnrollmentContext* pValue) get_EnrollmentContext;
+				public function HRESULT(IX509Enrollment *self, IX509EnrollmentStatus** ppValue) get_Status;
+				public function HRESULT(IX509Enrollment *self, EncodingType Encoding, BSTR* pValue) get_Certificate;
+				public function HRESULT(IX509Enrollment *self, EncodingType Encoding, BSTR* pValue) get_Response;
+				public function HRESULT(IX509Enrollment *self, BSTR* pValue) get_CertificateFriendlyName;
+				public function HRESULT(IX509Enrollment *self, BSTR strValue) put_CertificateFriendlyName;
+				public function HRESULT(IX509Enrollment *self, BSTR* pValue) get_CertificateDescription;
+				public function HRESULT(IX509Enrollment *self, BSTR strValue) put_CertificateDescription;
+				public function HRESULT(IX509Enrollment *self, int32* pValue) get_RequestId;
+				public function HRESULT(IX509Enrollment *self, BSTR* pValue) get_CAConfigString;
+			}
 		}
 		[CRepr]
 		public struct IX509Enrollment2 : IX509Enrollment
 		{
 			public const new Guid IID = .(0x728ab350, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509Enrollment2 *self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
-			public function HRESULT(IX509Enrollment2 *self, InstallResponseRestrictionFlags Restrictions, BSTR strResponse, EncodingType Encoding, BSTR strPassword, BSTR strEnrollmentPolicyServerUrl, BSTR strEnrollmentPolicyServerID, PolicyServerUrlFlags EnrollmentPolicyServerFlags, X509EnrollmentAuthFlags authFlags) InstallResponse2;
-			public function HRESULT(IX509Enrollment2 *self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
-			public function HRESULT(IX509Enrollment2 *self, IX509CertificateTemplate** ppTemplate) get_Template;
-			public function HRESULT(IX509Enrollment2 *self, BSTR* pValue) get_RequestIdString;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509Enrollment.VTable
+			{
+				public function HRESULT(IX509Enrollment2 *self, X509CertificateEnrollmentContext context, IX509EnrollmentPolicyServer* pPolicyServer, IX509CertificateTemplate* pTemplate) InitializeFromTemplate;
+				public function HRESULT(IX509Enrollment2 *self, InstallResponseRestrictionFlags Restrictions, BSTR strResponse, EncodingType Encoding, BSTR strPassword, BSTR strEnrollmentPolicyServerUrl, BSTR strEnrollmentPolicyServerID, PolicyServerUrlFlags EnrollmentPolicyServerFlags, X509EnrollmentAuthFlags authFlags) InstallResponse2;
+				public function HRESULT(IX509Enrollment2 *self, IX509EnrollmentPolicyServer** ppPolicyServer) get_PolicyServer;
+				public function HRESULT(IX509Enrollment2 *self, IX509CertificateTemplate** ppTemplate) get_Template;
+				public function HRESULT(IX509Enrollment2 *self, BSTR* pValue) get_RequestIdString;
+			}
 		}
 		[CRepr]
 		public struct IX509EnrollmentHelper : IDispatch
 		{
 			public const new Guid IID = .(0x728ab351, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509EnrollmentHelper *self, BSTR strEnrollmentPolicyServerURI, BSTR strEnrollmentPolicyID, PolicyServerUrlFlags EnrollmentPolicyServerFlags, X509EnrollmentAuthFlags authFlags, BSTR strCredential, BSTR strPassword) AddPolicyServer;
-			public function HRESULT(IX509EnrollmentHelper *self, BSTR strEnrollmentServerURI, X509EnrollmentAuthFlags authFlags, BSTR strCredential, BSTR strPassword) AddEnrollmentServer;
-			public function HRESULT(IX509EnrollmentHelper *self, BSTR strEnrollmentPolicyServerURI, BSTR strTemplateName, EncodingType Encoding, WebEnrollmentFlags enrollFlags, BSTR* pstrCertificate) Enroll;
-			public function HRESULT(IX509EnrollmentHelper *self, X509CertificateEnrollmentContext Context) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509EnrollmentHelper *self, BSTR strEnrollmentPolicyServerURI, BSTR strEnrollmentPolicyID, PolicyServerUrlFlags EnrollmentPolicyServerFlags, X509EnrollmentAuthFlags authFlags, BSTR strCredential, BSTR strPassword) AddPolicyServer;
+				public function HRESULT(IX509EnrollmentHelper *self, BSTR strEnrollmentServerURI, X509EnrollmentAuthFlags authFlags, BSTR strCredential, BSTR strPassword) AddEnrollmentServer;
+				public function HRESULT(IX509EnrollmentHelper *self, BSTR strEnrollmentPolicyServerURI, BSTR strTemplateName, EncodingType Encoding, WebEnrollmentFlags enrollFlags, BSTR* pstrCertificate) Enroll;
+				public function HRESULT(IX509EnrollmentHelper *self, X509CertificateEnrollmentContext Context) Initialize;
+			}
 		}
 		[CRepr]
 		public struct IX509EnrollmentWebClassFactory : IDispatch
 		{
 			public const new Guid IID = .(0x728ab349, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509EnrollmentWebClassFactory *self, BSTR strProgID, IUnknown** ppIUnknown) CreateObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509EnrollmentWebClassFactory *self, BSTR strProgID, IUnknown** ppIUnknown) CreateObject;
+			}
 		}
 		[CRepr]
 		public struct IX509MachineEnrollmentFactory : IDispatch
 		{
 			public const new Guid IID = .(0x728ab352, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509MachineEnrollmentFactory *self, BSTR strProgID, IX509EnrollmentHelper** ppIHelper) CreateObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509MachineEnrollmentFactory *self, BSTR strProgID, IX509EnrollmentHelper** ppIHelper) CreateObject;
+			}
 		}
 		[CRepr]
 		public struct IX509CertificateRevocationListEntry : IDispatch
 		{
 			public const new Guid IID = .(0x728ab35e, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509CertificateRevocationListEntry *self, EncodingType Encoding, BSTR SerialNumber, double RevocationDate) Initialize;
-			public function HRESULT(IX509CertificateRevocationListEntry *self, EncodingType Encoding, BSTR* pValue) get_SerialNumber;
-			public function HRESULT(IX509CertificateRevocationListEntry *self, double* pValue) get_RevocationDate;
-			public function HRESULT(IX509CertificateRevocationListEntry *self, CRLRevocationReason* pValue) get_RevocationReason;
-			public function HRESULT(IX509CertificateRevocationListEntry *self, CRLRevocationReason Value) put_RevocationReason;
-			public function HRESULT(IX509CertificateRevocationListEntry *self, IX509Extensions** ppValue) get_X509Extensions;
-			public function HRESULT(IX509CertificateRevocationListEntry *self, IObjectIds** ppValue) get_CriticalExtensions;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509CertificateRevocationListEntry *self, EncodingType Encoding, BSTR SerialNumber, double RevocationDate) Initialize;
+				public function HRESULT(IX509CertificateRevocationListEntry *self, EncodingType Encoding, BSTR* pValue) get_SerialNumber;
+				public function HRESULT(IX509CertificateRevocationListEntry *self, double* pValue) get_RevocationDate;
+				public function HRESULT(IX509CertificateRevocationListEntry *self, CRLRevocationReason* pValue) get_RevocationReason;
+				public function HRESULT(IX509CertificateRevocationListEntry *self, CRLRevocationReason Value) put_RevocationReason;
+				public function HRESULT(IX509CertificateRevocationListEntry *self, IX509Extensions** ppValue) get_X509Extensions;
+				public function HRESULT(IX509CertificateRevocationListEntry *self, IObjectIds** ppValue) get_CriticalExtensions;
+			}
 		}
 		[CRepr]
 		public struct IX509CertificateRevocationListEntries : IDispatch
 		{
 			public const new Guid IID = .(0x728ab35f, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509CertificateRevocationListEntries *self, int32 Index, IX509CertificateRevocationListEntry** pVal) get_ItemByIndex;
-			public function HRESULT(IX509CertificateRevocationListEntries *self, int32* pVal) get_Count;
-			public function HRESULT(IX509CertificateRevocationListEntries *self, IUnknown** pVal) get__NewEnum;
-			public function HRESULT(IX509CertificateRevocationListEntries *self, IX509CertificateRevocationListEntry* pVal) Add;
-			public function HRESULT(IX509CertificateRevocationListEntries *self, int32 Index) Remove;
-			public function HRESULT(IX509CertificateRevocationListEntries *self) Clear;
-			public function HRESULT(IX509CertificateRevocationListEntries *self, EncodingType Encoding, BSTR SerialNumber, int32* pIndex) get_IndexBySerialNumber;
-			public function HRESULT(IX509CertificateRevocationListEntries *self, IX509CertificateRevocationListEntries* pValue) AddRange;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509CertificateRevocationListEntries *self, int32 Index, IX509CertificateRevocationListEntry** pVal) get_ItemByIndex;
+				public function HRESULT(IX509CertificateRevocationListEntries *self, int32* pVal) get_Count;
+				public function HRESULT(IX509CertificateRevocationListEntries *self, IUnknown** pVal) get__NewEnum;
+				public function HRESULT(IX509CertificateRevocationListEntries *self, IX509CertificateRevocationListEntry* pVal) Add;
+				public function HRESULT(IX509CertificateRevocationListEntries *self, int32 Index) Remove;
+				public function HRESULT(IX509CertificateRevocationListEntries *self) Clear;
+				public function HRESULT(IX509CertificateRevocationListEntries *self, EncodingType Encoding, BSTR SerialNumber, int32* pIndex) get_IndexBySerialNumber;
+				public function HRESULT(IX509CertificateRevocationListEntries *self, IX509CertificateRevocationListEntries* pValue) AddRange;
+			}
 		}
 		[CRepr]
 		public struct IX509CertificateRevocationList : IDispatch
 		{
 			public const new Guid IID = .(0x728ab360, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509CertificateRevocationList *self) Initialize;
-			public function HRESULT(IX509CertificateRevocationList *self, BSTR strEncodedData, EncodingType Encoding) InitializeDecode;
-			public function HRESULT(IX509CertificateRevocationList *self) Encode;
-			public function HRESULT(IX509CertificateRevocationList *self) ResetForEncode;
-			public function HRESULT(IX509CertificateRevocationList *self, IX509PublicKey* pPublicKey) CheckPublicKeySignature;
-			public function HRESULT(IX509CertificateRevocationList *self) CheckSignature;
-			public function HRESULT(IX509CertificateRevocationList *self, IX500DistinguishedName** ppValue) get_Issuer;
-			public function HRESULT(IX509CertificateRevocationList *self, IX500DistinguishedName* pValue) put_Issuer;
-			public function HRESULT(IX509CertificateRevocationList *self, double* pValue) get_ThisUpdate;
-			public function HRESULT(IX509CertificateRevocationList *self, double Value) put_ThisUpdate;
-			public function HRESULT(IX509CertificateRevocationList *self, double* pValue) get_NextUpdate;
-			public function HRESULT(IX509CertificateRevocationList *self, double Value) put_NextUpdate;
-			public function HRESULT(IX509CertificateRevocationList *self, IX509CertificateRevocationListEntries** ppValue) get_X509CRLEntries;
-			public function HRESULT(IX509CertificateRevocationList *self, IX509Extensions** ppValue) get_X509Extensions;
-			public function HRESULT(IX509CertificateRevocationList *self, IObjectIds** ppValue) get_CriticalExtensions;
-			public function HRESULT(IX509CertificateRevocationList *self, ISignerCertificate** ppValue) get_SignerCertificate;
-			public function HRESULT(IX509CertificateRevocationList *self, ISignerCertificate* pValue) put_SignerCertificate;
-			public function HRESULT(IX509CertificateRevocationList *self, EncodingType Encoding, BSTR* pValue) get_CRLNumber;
-			public function HRESULT(IX509CertificateRevocationList *self, EncodingType Encoding, BSTR Value) put_CRLNumber;
-			public function HRESULT(IX509CertificateRevocationList *self, int32* pValue) get_CAVersion;
-			public function HRESULT(IX509CertificateRevocationList *self, int32 pValue) put_CAVersion;
-			public function HRESULT(IX509CertificateRevocationList *self, int16* pValue) get_BaseCRL;
-			public function HRESULT(IX509CertificateRevocationList *self, int16* pValue) get_NullSigned;
-			public function HRESULT(IX509CertificateRevocationList *self, IObjectId** ppValue) get_HashAlgorithm;
-			public function HRESULT(IX509CertificateRevocationList *self, IObjectId* pValue) put_HashAlgorithm;
-			public function HRESULT(IX509CertificateRevocationList *self, int16* pValue) get_AlternateSignatureAlgorithm;
-			public function HRESULT(IX509CertificateRevocationList *self, int16 Value) put_AlternateSignatureAlgorithm;
-			public function HRESULT(IX509CertificateRevocationList *self, IX509SignatureInformation** ppValue) get_SignatureInformation;
-			public function HRESULT(IX509CertificateRevocationList *self, EncodingType Encoding, BSTR* pValue) get_RawData;
-			public function HRESULT(IX509CertificateRevocationList *self, EncodingType Encoding, BSTR* pValue) get_RawDataToBeSigned;
-			public function HRESULT(IX509CertificateRevocationList *self, EncodingType Encoding, BSTR* pValue) get_Signature;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509CertificateRevocationList *self) Initialize;
+				public function HRESULT(IX509CertificateRevocationList *self, BSTR strEncodedData, EncodingType Encoding) InitializeDecode;
+				public function HRESULT(IX509CertificateRevocationList *self) Encode;
+				public function HRESULT(IX509CertificateRevocationList *self) ResetForEncode;
+				public function HRESULT(IX509CertificateRevocationList *self, IX509PublicKey* pPublicKey) CheckPublicKeySignature;
+				public function HRESULT(IX509CertificateRevocationList *self) CheckSignature;
+				public function HRESULT(IX509CertificateRevocationList *self, IX500DistinguishedName** ppValue) get_Issuer;
+				public function HRESULT(IX509CertificateRevocationList *self, IX500DistinguishedName* pValue) put_Issuer;
+				public function HRESULT(IX509CertificateRevocationList *self, double* pValue) get_ThisUpdate;
+				public function HRESULT(IX509CertificateRevocationList *self, double Value) put_ThisUpdate;
+				public function HRESULT(IX509CertificateRevocationList *self, double* pValue) get_NextUpdate;
+				public function HRESULT(IX509CertificateRevocationList *self, double Value) put_NextUpdate;
+				public function HRESULT(IX509CertificateRevocationList *self, IX509CertificateRevocationListEntries** ppValue) get_X509CRLEntries;
+				public function HRESULT(IX509CertificateRevocationList *self, IX509Extensions** ppValue) get_X509Extensions;
+				public function HRESULT(IX509CertificateRevocationList *self, IObjectIds** ppValue) get_CriticalExtensions;
+				public function HRESULT(IX509CertificateRevocationList *self, ISignerCertificate** ppValue) get_SignerCertificate;
+				public function HRESULT(IX509CertificateRevocationList *self, ISignerCertificate* pValue) put_SignerCertificate;
+				public function HRESULT(IX509CertificateRevocationList *self, EncodingType Encoding, BSTR* pValue) get_CRLNumber;
+				public function HRESULT(IX509CertificateRevocationList *self, EncodingType Encoding, BSTR Value) put_CRLNumber;
+				public function HRESULT(IX509CertificateRevocationList *self, int32* pValue) get_CAVersion;
+				public function HRESULT(IX509CertificateRevocationList *self, int32 pValue) put_CAVersion;
+				public function HRESULT(IX509CertificateRevocationList *self, int16* pValue) get_BaseCRL;
+				public function HRESULT(IX509CertificateRevocationList *self, int16* pValue) get_NullSigned;
+				public function HRESULT(IX509CertificateRevocationList *self, IObjectId** ppValue) get_HashAlgorithm;
+				public function HRESULT(IX509CertificateRevocationList *self, IObjectId* pValue) put_HashAlgorithm;
+				public function HRESULT(IX509CertificateRevocationList *self, int16* pValue) get_AlternateSignatureAlgorithm;
+				public function HRESULT(IX509CertificateRevocationList *self, int16 Value) put_AlternateSignatureAlgorithm;
+				public function HRESULT(IX509CertificateRevocationList *self, IX509SignatureInformation** ppValue) get_SignatureInformation;
+				public function HRESULT(IX509CertificateRevocationList *self, EncodingType Encoding, BSTR* pValue) get_RawData;
+				public function HRESULT(IX509CertificateRevocationList *self, EncodingType Encoding, BSTR* pValue) get_RawDataToBeSigned;
+				public function HRESULT(IX509CertificateRevocationList *self, EncodingType Encoding, BSTR* pValue) get_Signature;
+			}
 		}
 		[CRepr]
 		public struct ICertificateAttestationChallenge : IDispatch
 		{
 			public const new Guid IID = .(0x6f175a7c, 0x4a3a, 0x40ae, 0x9d, 0xba, 0x59, 0x2f, 0xd6, 0xbb, 0xf9, 0xb8);
 			
-			public function HRESULT(ICertificateAttestationChallenge *self, EncodingType Encoding, BSTR strPendingFullCmcResponseWithChallenge) Initialize;
-			public function HRESULT(ICertificateAttestationChallenge *self, EncodingType Encoding, BSTR* pstrEnvelopedPkcs7ReencryptedToCA) DecryptChallenge;
-			public function HRESULT(ICertificateAttestationChallenge *self, BSTR* pstrRequestID) get_RequestID;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertificateAttestationChallenge *self, EncodingType Encoding, BSTR strPendingFullCmcResponseWithChallenge) Initialize;
+				public function HRESULT(ICertificateAttestationChallenge *self, EncodingType Encoding, BSTR* pstrEnvelopedPkcs7ReencryptedToCA) DecryptChallenge;
+				public function HRESULT(ICertificateAttestationChallenge *self, BSTR* pstrRequestID) get_RequestID;
+			}
 		}
 		[CRepr]
 		public struct ICertificateAttestationChallenge2 : ICertificateAttestationChallenge
 		{
 			public const new Guid IID = .(0x4631334d, 0xe266, 0x47d6, 0xbd, 0x79, 0xbe, 0x53, 0xcb, 0x2e, 0x27, 0x53);
 			
-			public function HRESULT(ICertificateAttestationChallenge2 *self, BSTR Value) put_KeyContainerName;
-			public function HRESULT(ICertificateAttestationChallenge2 *self, EncodingType Encoding, BSTR Value) put_KeyBlob;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertificateAttestationChallenge.VTable
+			{
+				public function HRESULT(ICertificateAttestationChallenge2 *self, BSTR Value) put_KeyContainerName;
+				public function HRESULT(ICertificateAttestationChallenge2 *self, EncodingType Encoding, BSTR Value) put_KeyBlob;
+			}
 		}
 		[CRepr]
 		public struct IX509SCEPEnrollment : IDispatch
 		{
 			public const new Guid IID = .(0x728ab361, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509SCEPEnrollment *self, IX509CertificateRequestPkcs10* pRequest, BSTR strThumbprint, EncodingType ThumprintEncoding, BSTR strServerCertificates, EncodingType Encoding) Initialize;
-			public function HRESULT(IX509SCEPEnrollment *self, X509CertificateEnrollmentContext Context) InitializeForPending;
-			public function HRESULT(IX509SCEPEnrollment *self, EncodingType Encoding, BSTR* pValue) CreateRequestMessage;
-			public function HRESULT(IX509SCEPEnrollment *self, EncodingType Encoding, BSTR* pValue) CreateRetrievePendingMessage;
-			public function HRESULT(IX509SCEPEnrollment *self, X509CertificateEnrollmentContext Context, BSTR strIssuer, EncodingType IssuerEncoding, BSTR strSerialNumber, EncodingType SerialNumberEncoding, EncodingType Encoding, BSTR* pValue) CreateRetrieveCertificateMessage;
-			public function HRESULT(IX509SCEPEnrollment *self, BSTR strResponse, EncodingType Encoding, X509SCEPDisposition* pDisposition) ProcessResponseMessage;
-			public function HRESULT(IX509SCEPEnrollment *self, BSTR Value) put_ServerCapabilities;
-			public function HRESULT(IX509SCEPEnrollment *self, X509SCEPFailInfo* pValue) get_FailInfo;
-			public function HRESULT(IX509SCEPEnrollment *self, ISignerCertificate** ppValue) get_SignerCertificate;
-			public function HRESULT(IX509SCEPEnrollment *self, ISignerCertificate* pValue) put_SignerCertificate;
-			public function HRESULT(IX509SCEPEnrollment *self, ISignerCertificate** ppValue) get_OldCertificate;
-			public function HRESULT(IX509SCEPEnrollment *self, ISignerCertificate* pValue) put_OldCertificate;
-			public function HRESULT(IX509SCEPEnrollment *self, EncodingType Encoding, BSTR* pValue) get_TransactionId;
-			public function HRESULT(IX509SCEPEnrollment *self, EncodingType Encoding, BSTR Value) put_TransactionId;
-			public function HRESULT(IX509SCEPEnrollment *self, IX509CertificateRequestPkcs10** ppValue) get_Request;
-			public function HRESULT(IX509SCEPEnrollment *self, BSTR* pValue) get_CertificateFriendlyName;
-			public function HRESULT(IX509SCEPEnrollment *self, BSTR Value) put_CertificateFriendlyName;
-			public function HRESULT(IX509SCEPEnrollment *self, IX509EnrollmentStatus** ppValue) get_Status;
-			public function HRESULT(IX509SCEPEnrollment *self, EncodingType Encoding, BSTR* pValue) get_Certificate;
-			public function HRESULT(IX509SCEPEnrollment *self, int16* pValue) get_Silent;
-			public function HRESULT(IX509SCEPEnrollment *self, int16 Value) put_Silent;
-			public function HRESULT(IX509SCEPEnrollment *self) DeleteRequest;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509SCEPEnrollment *self, IX509CertificateRequestPkcs10* pRequest, BSTR strThumbprint, EncodingType ThumprintEncoding, BSTR strServerCertificates, EncodingType Encoding) Initialize;
+				public function HRESULT(IX509SCEPEnrollment *self, X509CertificateEnrollmentContext Context) InitializeForPending;
+				public function HRESULT(IX509SCEPEnrollment *self, EncodingType Encoding, BSTR* pValue) CreateRequestMessage;
+				public function HRESULT(IX509SCEPEnrollment *self, EncodingType Encoding, BSTR* pValue) CreateRetrievePendingMessage;
+				public function HRESULT(IX509SCEPEnrollment *self, X509CertificateEnrollmentContext Context, BSTR strIssuer, EncodingType IssuerEncoding, BSTR strSerialNumber, EncodingType SerialNumberEncoding, EncodingType Encoding, BSTR* pValue) CreateRetrieveCertificateMessage;
+				public function HRESULT(IX509SCEPEnrollment *self, BSTR strResponse, EncodingType Encoding, X509SCEPDisposition* pDisposition) ProcessResponseMessage;
+				public function HRESULT(IX509SCEPEnrollment *self, BSTR Value) put_ServerCapabilities;
+				public function HRESULT(IX509SCEPEnrollment *self, X509SCEPFailInfo* pValue) get_FailInfo;
+				public function HRESULT(IX509SCEPEnrollment *self, ISignerCertificate** ppValue) get_SignerCertificate;
+				public function HRESULT(IX509SCEPEnrollment *self, ISignerCertificate* pValue) put_SignerCertificate;
+				public function HRESULT(IX509SCEPEnrollment *self, ISignerCertificate** ppValue) get_OldCertificate;
+				public function HRESULT(IX509SCEPEnrollment *self, ISignerCertificate* pValue) put_OldCertificate;
+				public function HRESULT(IX509SCEPEnrollment *self, EncodingType Encoding, BSTR* pValue) get_TransactionId;
+				public function HRESULT(IX509SCEPEnrollment *self, EncodingType Encoding, BSTR Value) put_TransactionId;
+				public function HRESULT(IX509SCEPEnrollment *self, IX509CertificateRequestPkcs10** ppValue) get_Request;
+				public function HRESULT(IX509SCEPEnrollment *self, BSTR* pValue) get_CertificateFriendlyName;
+				public function HRESULT(IX509SCEPEnrollment *self, BSTR Value) put_CertificateFriendlyName;
+				public function HRESULT(IX509SCEPEnrollment *self, IX509EnrollmentStatus** ppValue) get_Status;
+				public function HRESULT(IX509SCEPEnrollment *self, EncodingType Encoding, BSTR* pValue) get_Certificate;
+				public function HRESULT(IX509SCEPEnrollment *self, int16* pValue) get_Silent;
+				public function HRESULT(IX509SCEPEnrollment *self, int16 Value) put_Silent;
+				public function HRESULT(IX509SCEPEnrollment *self) DeleteRequest;
+			}
 		}
 		[CRepr]
 		public struct IX509SCEPEnrollment2 : IX509SCEPEnrollment
 		{
 			public const new Guid IID = .(0x728ab364, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509SCEPEnrollment2 *self, EncodingType Encoding, BSTR* pValue) CreateChallengeAnswerMessage;
-			public function HRESULT(IX509SCEPEnrollment2 *self, X509SCEPProcessMessageFlags Flags, BSTR strResponse, EncodingType Encoding, X509SCEPDisposition* pDisposition) ProcessResponseMessage2;
-			public function HRESULT(IX509SCEPEnrollment2 *self, BSTR* pValue) get_ResultMessageText;
-			public function HRESULT(IX509SCEPEnrollment2 *self, DelayRetryAction* pValue) get_DelayRetry;
-			public function HRESULT(IX509SCEPEnrollment2 *self, BSTR* pValue) get_ActivityId;
-			public function HRESULT(IX509SCEPEnrollment2 *self, BSTR Value) put_ActivityId;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IX509SCEPEnrollment.VTable
+			{
+				public function HRESULT(IX509SCEPEnrollment2 *self, EncodingType Encoding, BSTR* pValue) CreateChallengeAnswerMessage;
+				public function HRESULT(IX509SCEPEnrollment2 *self, X509SCEPProcessMessageFlags Flags, BSTR strResponse, EncodingType Encoding, X509SCEPDisposition* pDisposition) ProcessResponseMessage2;
+				public function HRESULT(IX509SCEPEnrollment2 *self, BSTR* pValue) get_ResultMessageText;
+				public function HRESULT(IX509SCEPEnrollment2 *self, DelayRetryAction* pValue) get_DelayRetry;
+				public function HRESULT(IX509SCEPEnrollment2 *self, BSTR* pValue) get_ActivityId;
+				public function HRESULT(IX509SCEPEnrollment2 *self, BSTR Value) put_ActivityId;
+			}
 		}
 		[CRepr]
 		public struct IX509SCEPEnrollmentHelper : IDispatch
 		{
 			public const new Guid IID = .(0x728ab365, 0x217d, 0x11da, 0xb2, 0xa4, 0x00, 0x0e, 0x7b, 0xbb, 0x2b, 0x09);
 			
-			public function HRESULT(IX509SCEPEnrollmentHelper *self, BSTR strServerUrl, BSTR strRequestHeaders, IX509CertificateRequestPkcs10* pRequest, BSTR strCACertificateThumbprint) Initialize;
-			public function HRESULT(IX509SCEPEnrollmentHelper *self, BSTR strServerUrl, BSTR strRequestHeaders, X509CertificateEnrollmentContext Context, BSTR strTransactionId) InitializeForPending;
-			public function HRESULT(IX509SCEPEnrollmentHelper *self, X509SCEPProcessMessageFlags ProcessFlags, X509SCEPDisposition* pDisposition) Enroll;
-			public function HRESULT(IX509SCEPEnrollmentHelper *self, X509SCEPProcessMessageFlags ProcessFlags, X509SCEPDisposition* pDisposition) FetchPending;
-			public function HRESULT(IX509SCEPEnrollmentHelper *self, IX509SCEPEnrollment** ppValue) get_X509SCEPEnrollment;
-			public function HRESULT(IX509SCEPEnrollmentHelper *self, BSTR* pValue) get_ResultMessageText;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IX509SCEPEnrollmentHelper *self, BSTR strServerUrl, BSTR strRequestHeaders, IX509CertificateRequestPkcs10* pRequest, BSTR strCACertificateThumbprint) Initialize;
+				public function HRESULT(IX509SCEPEnrollmentHelper *self, BSTR strServerUrl, BSTR strRequestHeaders, X509CertificateEnrollmentContext Context, BSTR strTransactionId) InitializeForPending;
+				public function HRESULT(IX509SCEPEnrollmentHelper *self, X509SCEPProcessMessageFlags ProcessFlags, X509SCEPDisposition* pDisposition) Enroll;
+				public function HRESULT(IX509SCEPEnrollmentHelper *self, X509SCEPProcessMessageFlags ProcessFlags, X509SCEPDisposition* pDisposition) FetchPending;
+				public function HRESULT(IX509SCEPEnrollmentHelper *self, IX509SCEPEnrollment** ppValue) get_X509SCEPEnrollment;
+				public function HRESULT(IX509SCEPEnrollmentHelper *self, BSTR* pValue) get_ResultMessageText;
+			}
 		}
 		[CRepr]
 		public struct ICertEncodeStringArray : IDispatch
 		{
 			public const new Guid IID = .(0x12a88820, 0x7494, 0x11d0, 0x88, 0x16, 0x00, 0xa0, 0xc9, 0x03, 0xb8, 0x3c);
 			
-			public function HRESULT(ICertEncodeStringArray *self, BSTR strBinary) Decode;
-			public function HRESULT(ICertEncodeStringArray *self, int32* pStringType) GetStringType;
-			public function HRESULT(ICertEncodeStringArray *self, int32* pCount) GetCount;
-			public function HRESULT(ICertEncodeStringArray *self, int32 Index, BSTR* pstr) GetValue;
-			public function HRESULT(ICertEncodeStringArray *self, int32 Count, CERT_RDN_ATTR_VALUE_TYPE StringType) Reset;
-			public function HRESULT(ICertEncodeStringArray *self, int32 Index, BSTR str) SetValue;
-			public function HRESULT(ICertEncodeStringArray *self, BSTR* pstrBinary) Encode;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertEncodeStringArray *self, BSTR strBinary) Decode;
+				public function HRESULT(ICertEncodeStringArray *self, int32* pStringType) GetStringType;
+				public function HRESULT(ICertEncodeStringArray *self, int32* pCount) GetCount;
+				public function HRESULT(ICertEncodeStringArray *self, int32 Index, BSTR* pstr) GetValue;
+				public function HRESULT(ICertEncodeStringArray *self, int32 Count, CERT_RDN_ATTR_VALUE_TYPE StringType) Reset;
+				public function HRESULT(ICertEncodeStringArray *self, int32 Index, BSTR str) SetValue;
+				public function HRESULT(ICertEncodeStringArray *self, BSTR* pstrBinary) Encode;
+			}
 		}
 		[CRepr]
 		public struct ICertEncodeStringArray2 : ICertEncodeStringArray
 		{
 			public const new Guid IID = .(0x9c680d93, 0x9b7d, 0x4e95, 0x90, 0x18, 0x4f, 0xfe, 0x10, 0xba, 0x5a, 0xda);
 			
-			public function HRESULT(ICertEncodeStringArray2 *self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
-			public function HRESULT(ICertEncodeStringArray2 *self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertEncodeStringArray.VTable
+			{
+				public function HRESULT(ICertEncodeStringArray2 *self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
+				public function HRESULT(ICertEncodeStringArray2 *self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
+			}
 		}
 		[CRepr]
 		public struct ICertEncodeLongArray : IDispatch
 		{
 			public const new Guid IID = .(0x15e2f230, 0xa0a2, 0x11d0, 0x88, 0x21, 0x00, 0xa0, 0xc9, 0x03, 0xb8, 0x3c);
 			
-			public function HRESULT(ICertEncodeLongArray *self, BSTR strBinary) Decode;
-			public function HRESULT(ICertEncodeLongArray *self, int32* pCount) GetCount;
-			public function HRESULT(ICertEncodeLongArray *self, int32 Index, int32* pValue) GetValue;
-			public function HRESULT(ICertEncodeLongArray *self, int32 Count) Reset;
-			public function HRESULT(ICertEncodeLongArray *self, int32 Index, int32 Value) SetValue;
-			public function HRESULT(ICertEncodeLongArray *self, BSTR* pstrBinary) Encode;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertEncodeLongArray *self, BSTR strBinary) Decode;
+				public function HRESULT(ICertEncodeLongArray *self, int32* pCount) GetCount;
+				public function HRESULT(ICertEncodeLongArray *self, int32 Index, int32* pValue) GetValue;
+				public function HRESULT(ICertEncodeLongArray *self, int32 Count) Reset;
+				public function HRESULT(ICertEncodeLongArray *self, int32 Index, int32 Value) SetValue;
+				public function HRESULT(ICertEncodeLongArray *self, BSTR* pstrBinary) Encode;
+			}
 		}
 		[CRepr]
 		public struct ICertEncodeLongArray2 : ICertEncodeLongArray
 		{
 			public const new Guid IID = .(0x4efde84a, 0xbd9b, 0x4fc2, 0xa1, 0x08, 0xc3, 0x47, 0xd4, 0x78, 0x84, 0x0f);
 			
-			public function HRESULT(ICertEncodeLongArray2 *self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
-			public function HRESULT(ICertEncodeLongArray2 *self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertEncodeLongArray.VTable
+			{
+				public function HRESULT(ICertEncodeLongArray2 *self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
+				public function HRESULT(ICertEncodeLongArray2 *self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
+			}
 		}
 		[CRepr]
 		public struct ICertEncodeDateArray : IDispatch
 		{
 			public const new Guid IID = .(0x2f9469a0, 0xa470, 0x11d0, 0x88, 0x21, 0x00, 0xa0, 0xc9, 0x03, 0xb8, 0x3c);
 			
-			public function HRESULT(ICertEncodeDateArray *self, BSTR strBinary) Decode;
-			public function HRESULT(ICertEncodeDateArray *self, int32* pCount) GetCount;
-			public function HRESULT(ICertEncodeDateArray *self, int32 Index, double* pValue) GetValue;
-			public function HRESULT(ICertEncodeDateArray *self, int32 Count) Reset;
-			public function HRESULT(ICertEncodeDateArray *self, int32 Index, double Value) SetValue;
-			public function HRESULT(ICertEncodeDateArray *self, BSTR* pstrBinary) Encode;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertEncodeDateArray *self, BSTR strBinary) Decode;
+				public function HRESULT(ICertEncodeDateArray *self, int32* pCount) GetCount;
+				public function HRESULT(ICertEncodeDateArray *self, int32 Index, double* pValue) GetValue;
+				public function HRESULT(ICertEncodeDateArray *self, int32 Count) Reset;
+				public function HRESULT(ICertEncodeDateArray *self, int32 Index, double Value) SetValue;
+				public function HRESULT(ICertEncodeDateArray *self, BSTR* pstrBinary) Encode;
+			}
 		}
 		[CRepr]
 		public struct ICertEncodeDateArray2 : ICertEncodeDateArray
 		{
 			public const new Guid IID = .(0x99a4edb5, 0x2b8e, 0x448d, 0xbf, 0x95, 0xbb, 0xa8, 0xd7, 0x78, 0x9d, 0xc8);
 			
-			public function HRESULT(ICertEncodeDateArray2 *self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
-			public function HRESULT(ICertEncodeDateArray2 *self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertEncodeDateArray.VTable
+			{
+				public function HRESULT(ICertEncodeDateArray2 *self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
+				public function HRESULT(ICertEncodeDateArray2 *self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
+			}
 		}
 		[CRepr]
 		public struct ICertEncodeCRLDistInfo : IDispatch
 		{
 			public const new Guid IID = .(0x01958640, 0xbbff, 0x11d0, 0x88, 0x25, 0x00, 0xa0, 0xc9, 0x03, 0xb8, 0x3c);
 			
-			public function HRESULT(ICertEncodeCRLDistInfo *self, BSTR strBinary) Decode;
-			public function HRESULT(ICertEncodeCRLDistInfo *self, int32* pDistPointCount) GetDistPointCount;
-			public function HRESULT(ICertEncodeCRLDistInfo *self, int32 DistPointIndex, int32* pNameCount) GetNameCount;
-			public function HRESULT(ICertEncodeCRLDistInfo *self, int32 DistPointIndex, int32 NameIndex, int32* pNameChoice) GetNameChoice;
-			public function HRESULT(ICertEncodeCRLDistInfo *self, int32 DistPointIndex, int32 NameIndex, BSTR* pstrName) GetName;
-			public function HRESULT(ICertEncodeCRLDistInfo *self, int32 DistPointCount) Reset;
-			public function HRESULT(ICertEncodeCRLDistInfo *self, int32 DistPointIndex, int32 NameCount) SetNameCount;
-			public function HRESULT(ICertEncodeCRLDistInfo *self, int32 DistPointIndex, int32 NameIndex, CERT_ALT_NAME NameChoice, BSTR strName) SetNameEntry;
-			public function HRESULT(ICertEncodeCRLDistInfo *self, BSTR* pstrBinary) Encode;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertEncodeCRLDistInfo *self, BSTR strBinary) Decode;
+				public function HRESULT(ICertEncodeCRLDistInfo *self, int32* pDistPointCount) GetDistPointCount;
+				public function HRESULT(ICertEncodeCRLDistInfo *self, int32 DistPointIndex, int32* pNameCount) GetNameCount;
+				public function HRESULT(ICertEncodeCRLDistInfo *self, int32 DistPointIndex, int32 NameIndex, int32* pNameChoice) GetNameChoice;
+				public function HRESULT(ICertEncodeCRLDistInfo *self, int32 DistPointIndex, int32 NameIndex, BSTR* pstrName) GetName;
+				public function HRESULT(ICertEncodeCRLDistInfo *self, int32 DistPointCount) Reset;
+				public function HRESULT(ICertEncodeCRLDistInfo *self, int32 DistPointIndex, int32 NameCount) SetNameCount;
+				public function HRESULT(ICertEncodeCRLDistInfo *self, int32 DistPointIndex, int32 NameIndex, CERT_ALT_NAME NameChoice, BSTR strName) SetNameEntry;
+				public function HRESULT(ICertEncodeCRLDistInfo *self, BSTR* pstrBinary) Encode;
+			}
 		}
 		[CRepr]
 		public struct ICertEncodeCRLDistInfo2 : ICertEncodeCRLDistInfo
 		{
 			public const new Guid IID = .(0xb4275d4b, 0x3e30, 0x446f, 0xad, 0x36, 0x09, 0xd0, 0x31, 0x20, 0xb0, 0x78);
 			
-			public function HRESULT(ICertEncodeCRLDistInfo2 *self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
-			public function HRESULT(ICertEncodeCRLDistInfo2 *self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertEncodeCRLDistInfo.VTable
+			{
+				public function HRESULT(ICertEncodeCRLDistInfo2 *self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
+				public function HRESULT(ICertEncodeCRLDistInfo2 *self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
+			}
 		}
 		[CRepr]
 		public struct ICertEncodeAltName : IDispatch
 		{
 			public const new Guid IID = .(0x1c9a8c70, 0x1271, 0x11d1, 0x9b, 0xd4, 0x00, 0xc0, 0x4f, 0xb6, 0x83, 0xfa);
 			
-			public function HRESULT(ICertEncodeAltName *self, BSTR strBinary) Decode;
-			public function HRESULT(ICertEncodeAltName *self, int32* pNameCount) GetNameCount;
-			public function HRESULT(ICertEncodeAltName *self, int32 NameIndex, int32* pNameChoice) GetNameChoice;
-			public function HRESULT(ICertEncodeAltName *self, int32 NameIndex, BSTR* pstrName) GetName;
-			public function HRESULT(ICertEncodeAltName *self, int32 NameCount) Reset;
-			public function HRESULT(ICertEncodeAltName *self, int32 NameIndex, CERT_ALT_NAME NameChoice, BSTR strName) SetNameEntry;
-			public function HRESULT(ICertEncodeAltName *self, BSTR* pstrBinary) Encode;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertEncodeAltName *self, BSTR strBinary) Decode;
+				public function HRESULT(ICertEncodeAltName *self, int32* pNameCount) GetNameCount;
+				public function HRESULT(ICertEncodeAltName *self, int32 NameIndex, int32* pNameChoice) GetNameChoice;
+				public function HRESULT(ICertEncodeAltName *self, int32 NameIndex, BSTR* pstrName) GetName;
+				public function HRESULT(ICertEncodeAltName *self, int32 NameCount) Reset;
+				public function HRESULT(ICertEncodeAltName *self, int32 NameIndex, CERT_ALT_NAME NameChoice, BSTR strName) SetNameEntry;
+				public function HRESULT(ICertEncodeAltName *self, BSTR* pstrBinary) Encode;
+			}
 		}
 		[CRepr]
 		public struct ICertEncodeAltName2 : ICertEncodeAltName
 		{
 			public const new Guid IID = .(0xf67fe177, 0x5ef1, 0x4535, 0xb4, 0xce, 0x29, 0xdf, 0x15, 0xe2, 0xe0, 0xc3);
 			
-			public function HRESULT(ICertEncodeAltName2 *self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
-			public function HRESULT(ICertEncodeAltName2 *self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
-			public function HRESULT(ICertEncodeAltName2 *self, int32 NameIndex, EncodingType Encoding, BSTR* pstrName) GetNameBlob;
-			public function HRESULT(ICertEncodeAltName2 *self, int32 NameIndex, int32 NameChoice, BSTR strName, EncodingType Encoding) SetNameEntryBlob;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertEncodeAltName.VTable
+			{
+				public function HRESULT(ICertEncodeAltName2 *self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
+				public function HRESULT(ICertEncodeAltName2 *self, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
+				public function HRESULT(ICertEncodeAltName2 *self, int32 NameIndex, EncodingType Encoding, BSTR* pstrName) GetNameBlob;
+				public function HRESULT(ICertEncodeAltName2 *self, int32 NameIndex, int32 NameChoice, BSTR strName, EncodingType Encoding) SetNameEntryBlob;
+			}
 		}
 		[CRepr]
 		public struct ICertEncodeBitString : IDispatch
 		{
 			public const new Guid IID = .(0x6db525be, 0x1278, 0x11d1, 0x9b, 0xd4, 0x00, 0xc0, 0x4f, 0xb6, 0x83, 0xfa);
 			
-			public function HRESULT(ICertEncodeBitString *self, BSTR strBinary) Decode;
-			public function HRESULT(ICertEncodeBitString *self, int32* pBitCount) GetBitCount;
-			public function HRESULT(ICertEncodeBitString *self, BSTR* pstrBitString) GetBitString;
-			public function HRESULT(ICertEncodeBitString *self, int32 BitCount, BSTR strBitString, BSTR* pstrBinary) Encode;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertEncodeBitString *self, BSTR strBinary) Decode;
+				public function HRESULT(ICertEncodeBitString *self, int32* pBitCount) GetBitCount;
+				public function HRESULT(ICertEncodeBitString *self, BSTR* pstrBitString) GetBitString;
+				public function HRESULT(ICertEncodeBitString *self, int32 BitCount, BSTR strBitString, BSTR* pstrBinary) Encode;
+			}
 		}
 		[CRepr]
 		public struct ICertEncodeBitString2 : ICertEncodeBitString
 		{
 			public const new Guid IID = .(0xe070d6e7, 0x23ef, 0x4dd2, 0x82, 0x42, 0xeb, 0xd9, 0xc9, 0x28, 0xcb, 0x30);
 			
-			public function HRESULT(ICertEncodeBitString2 *self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
-			public function HRESULT(ICertEncodeBitString2 *self, int32 BitCount, BSTR strBitString, EncodingType EncodingIn, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
-			public function HRESULT(ICertEncodeBitString2 *self, EncodingType Encoding, BSTR* pstrBitString) GetBitStringBlob;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertEncodeBitString.VTable
+			{
+				public function HRESULT(ICertEncodeBitString2 *self, BSTR strEncodedData, EncodingType Encoding) DecodeBlob;
+				public function HRESULT(ICertEncodeBitString2 *self, int32 BitCount, BSTR strBitString, EncodingType EncodingIn, EncodingType Encoding, BSTR* pstrEncodedData) EncodeBlob;
+				public function HRESULT(ICertEncodeBitString2 *self, EncodingType Encoding, BSTR* pstrBitString) GetBitStringBlob;
+			}
 		}
 		[CRepr]
 		public struct ICertExit : IDispatch
 		{
 			public const new Guid IID = .(0xe19ae1a0, 0x7364, 0x11d0, 0x88, 0x16, 0x00, 0xa0, 0xc9, 0x03, 0xb8, 0x3c);
 			
-			public function HRESULT(ICertExit *self, BSTR strConfig, CERT_EXIT_EVENT_MASK* pEventMask) Initialize;
-			public function HRESULT(ICertExit *self, int32 ExitEvent, int32 Context) Notify;
-			public function HRESULT(ICertExit *self, BSTR* pstrDescription) GetDescription;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICertExit *self, BSTR strConfig, CERT_EXIT_EVENT_MASK* pEventMask) Initialize;
+				public function HRESULT(ICertExit *self, int32 ExitEvent, int32 Context) Notify;
+				public function HRESULT(ICertExit *self, BSTR* pstrDescription) GetDescription;
+			}
 		}
 		[CRepr]
 		public struct ICertExit2 : ICertExit
 		{
 			public const new Guid IID = .(0x0abf484b, 0xd049, 0x464d, 0xa7, 0xed, 0x55, 0x2e, 0x75, 0x29, 0xb0, 0xff);
 			
-			public function HRESULT(ICertExit2 *self, ICertManageModule** ppManageModule) GetManageModule;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertExit.VTable
+			{
+				public function HRESULT(ICertExit2 *self, ICertManageModule** ppManageModule) GetManageModule;
+			}
 		}
 		[CRepr]
 		public struct ICEnroll : IDispatch
 		{
 			public const new Guid IID = .(0x43f8f288, 0x7a20, 0x11d0, 0x8f, 0x06, 0x00, 0xc0, 0x4f, 0xc2, 0x95, 0xe1);
 			
-			public function HRESULT(ICEnroll *self, BSTR DNName, BSTR Usage, BSTR wszPKCS10FileName) createFilePKCS10;
-			public function HRESULT(ICEnroll *self, BSTR wszPKCS7FileName) acceptFilePKCS7;
-			public function HRESULT(ICEnroll *self, BSTR DNName, BSTR Usage, BSTR* pPKCS10) createPKCS10;
-			public function HRESULT(ICEnroll *self, BSTR PKCS7) acceptPKCS7;
-			public function HRESULT(ICEnroll *self, BSTR wszPKCS7, BSTR* pbstrCert) getCertFromPKCS7;
-			public function HRESULT(ICEnroll *self, int32 dwIndex, int32 dwFlags, BSTR* pbstrProvName) enumProviders;
-			public function HRESULT(ICEnroll *self, int32 dwIndex, BSTR* pbstr) enumContainers;
-			public function HRESULT(ICEnroll *self, BSTR PKCS7OrPKCS10) freeRequestInfo;
-			public function HRESULT(ICEnroll *self, BSTR* pbstrName) get_MyStoreName;
-			public function HRESULT(ICEnroll *self, BSTR bstrName) put_MyStoreName;
-			public function HRESULT(ICEnroll *self, BSTR* pbstrType) get_MyStoreType;
-			public function HRESULT(ICEnroll *self, BSTR bstrType) put_MyStoreType;
-			public function HRESULT(ICEnroll *self, int32* pdwFlags) get_MyStoreFlags;
-			public function HRESULT(ICEnroll *self, int32 dwFlags) put_MyStoreFlags;
-			public function HRESULT(ICEnroll *self, BSTR* pbstrName) get_CAStoreName;
-			public function HRESULT(ICEnroll *self, BSTR bstrName) put_CAStoreName;
-			public function HRESULT(ICEnroll *self, BSTR* pbstrType) get_CAStoreType;
-			public function HRESULT(ICEnroll *self, BSTR bstrType) put_CAStoreType;
-			public function HRESULT(ICEnroll *self, int32* pdwFlags) get_CAStoreFlags;
-			public function HRESULT(ICEnroll *self, int32 dwFlags) put_CAStoreFlags;
-			public function HRESULT(ICEnroll *self, BSTR* pbstrName) get_RootStoreName;
-			public function HRESULT(ICEnroll *self, BSTR bstrName) put_RootStoreName;
-			public function HRESULT(ICEnroll *self, BSTR* pbstrType) get_RootStoreType;
-			public function HRESULT(ICEnroll *self, BSTR bstrType) put_RootStoreType;
-			public function HRESULT(ICEnroll *self, int32* pdwFlags) get_RootStoreFlags;
-			public function HRESULT(ICEnroll *self, int32 dwFlags) put_RootStoreFlags;
-			public function HRESULT(ICEnroll *self, BSTR* pbstrName) get_RequestStoreName;
-			public function HRESULT(ICEnroll *self, BSTR bstrName) put_RequestStoreName;
-			public function HRESULT(ICEnroll *self, BSTR* pbstrType) get_RequestStoreType;
-			public function HRESULT(ICEnroll *self, BSTR bstrType) put_RequestStoreType;
-			public function HRESULT(ICEnroll *self, int32* pdwFlags) get_RequestStoreFlags;
-			public function HRESULT(ICEnroll *self, int32 dwFlags) put_RequestStoreFlags;
-			public function HRESULT(ICEnroll *self, BSTR* pbstrContainer) get_ContainerName;
-			public function HRESULT(ICEnroll *self, BSTR bstrContainer) put_ContainerName;
-			public function HRESULT(ICEnroll *self, BSTR* pbstrProvider) get_ProviderName;
-			public function HRESULT(ICEnroll *self, BSTR bstrProvider) put_ProviderName;
-			public function HRESULT(ICEnroll *self, int32* pdwType) get_ProviderType;
-			public function HRESULT(ICEnroll *self, int32 dwType) put_ProviderType;
-			public function HRESULT(ICEnroll *self, int32* pdw) get_KeySpec;
-			public function HRESULT(ICEnroll *self, int32 dw) put_KeySpec;
-			public function HRESULT(ICEnroll *self, int32* pdwFlags) get_ProviderFlags;
-			public function HRESULT(ICEnroll *self, int32 dwFlags) put_ProviderFlags;
-			public function HRESULT(ICEnroll *self, BOOL* fUseExistingKeys) get_UseExistingKeySet;
-			public function HRESULT(ICEnroll *self, BOOL fUseExistingKeys) put_UseExistingKeySet;
-			public function HRESULT(ICEnroll *self, int32* pdwFlags) get_GenKeyFlags;
-			public function HRESULT(ICEnroll *self, int32 dwFlags) put_GenKeyFlags;
-			public function HRESULT(ICEnroll *self, BOOL* fDelete) get_DeleteRequestCert;
-			public function HRESULT(ICEnroll *self, BOOL fDelete) put_DeleteRequestCert;
-			public function HRESULT(ICEnroll *self, BOOL* fBool) get_WriteCertToCSP;
-			public function HRESULT(ICEnroll *self, BOOL fBool) put_WriteCertToCSP;
-			public function HRESULT(ICEnroll *self, BSTR* pbstr) get_SPCFileName;
-			public function HRESULT(ICEnroll *self, BSTR bstr) put_SPCFileName;
-			public function HRESULT(ICEnroll *self, BSTR* pbstr) get_PVKFileName;
-			public function HRESULT(ICEnroll *self, BSTR bstr) put_PVKFileName;
-			public function HRESULT(ICEnroll *self, BSTR* pbstr) get_HashAlgorithm;
-			public function HRESULT(ICEnroll *self, BSTR bstr) put_HashAlgorithm;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(ICEnroll *self, BSTR DNName, BSTR Usage, BSTR wszPKCS10FileName) createFilePKCS10;
+				public function HRESULT(ICEnroll *self, BSTR wszPKCS7FileName) acceptFilePKCS7;
+				public function HRESULT(ICEnroll *self, BSTR DNName, BSTR Usage, BSTR* pPKCS10) createPKCS10;
+				public function HRESULT(ICEnroll *self, BSTR PKCS7) acceptPKCS7;
+				public function HRESULT(ICEnroll *self, BSTR wszPKCS7, BSTR* pbstrCert) getCertFromPKCS7;
+				public function HRESULT(ICEnroll *self, int32 dwIndex, int32 dwFlags, BSTR* pbstrProvName) enumProviders;
+				public function HRESULT(ICEnroll *self, int32 dwIndex, BSTR* pbstr) enumContainers;
+				public function HRESULT(ICEnroll *self, BSTR PKCS7OrPKCS10) freeRequestInfo;
+				public function HRESULT(ICEnroll *self, BSTR* pbstrName) get_MyStoreName;
+				public function HRESULT(ICEnroll *self, BSTR bstrName) put_MyStoreName;
+				public function HRESULT(ICEnroll *self, BSTR* pbstrType) get_MyStoreType;
+				public function HRESULT(ICEnroll *self, BSTR bstrType) put_MyStoreType;
+				public function HRESULT(ICEnroll *self, int32* pdwFlags) get_MyStoreFlags;
+				public function HRESULT(ICEnroll *self, int32 dwFlags) put_MyStoreFlags;
+				public function HRESULT(ICEnroll *self, BSTR* pbstrName) get_CAStoreName;
+				public function HRESULT(ICEnroll *self, BSTR bstrName) put_CAStoreName;
+				public function HRESULT(ICEnroll *self, BSTR* pbstrType) get_CAStoreType;
+				public function HRESULT(ICEnroll *self, BSTR bstrType) put_CAStoreType;
+				public function HRESULT(ICEnroll *self, int32* pdwFlags) get_CAStoreFlags;
+				public function HRESULT(ICEnroll *self, int32 dwFlags) put_CAStoreFlags;
+				public function HRESULT(ICEnroll *self, BSTR* pbstrName) get_RootStoreName;
+				public function HRESULT(ICEnroll *self, BSTR bstrName) put_RootStoreName;
+				public function HRESULT(ICEnroll *self, BSTR* pbstrType) get_RootStoreType;
+				public function HRESULT(ICEnroll *self, BSTR bstrType) put_RootStoreType;
+				public function HRESULT(ICEnroll *self, int32* pdwFlags) get_RootStoreFlags;
+				public function HRESULT(ICEnroll *self, int32 dwFlags) put_RootStoreFlags;
+				public function HRESULT(ICEnroll *self, BSTR* pbstrName) get_RequestStoreName;
+				public function HRESULT(ICEnroll *self, BSTR bstrName) put_RequestStoreName;
+				public function HRESULT(ICEnroll *self, BSTR* pbstrType) get_RequestStoreType;
+				public function HRESULT(ICEnroll *self, BSTR bstrType) put_RequestStoreType;
+				public function HRESULT(ICEnroll *self, int32* pdwFlags) get_RequestStoreFlags;
+				public function HRESULT(ICEnroll *self, int32 dwFlags) put_RequestStoreFlags;
+				public function HRESULT(ICEnroll *self, BSTR* pbstrContainer) get_ContainerName;
+				public function HRESULT(ICEnroll *self, BSTR bstrContainer) put_ContainerName;
+				public function HRESULT(ICEnroll *self, BSTR* pbstrProvider) get_ProviderName;
+				public function HRESULT(ICEnroll *self, BSTR bstrProvider) put_ProviderName;
+				public function HRESULT(ICEnroll *self, int32* pdwType) get_ProviderType;
+				public function HRESULT(ICEnroll *self, int32 dwType) put_ProviderType;
+				public function HRESULT(ICEnroll *self, int32* pdw) get_KeySpec;
+				public function HRESULT(ICEnroll *self, int32 dw) put_KeySpec;
+				public function HRESULT(ICEnroll *self, int32* pdwFlags) get_ProviderFlags;
+				public function HRESULT(ICEnroll *self, int32 dwFlags) put_ProviderFlags;
+				public function HRESULT(ICEnroll *self, BOOL* fUseExistingKeys) get_UseExistingKeySet;
+				public function HRESULT(ICEnroll *self, BOOL fUseExistingKeys) put_UseExistingKeySet;
+				public function HRESULT(ICEnroll *self, int32* pdwFlags) get_GenKeyFlags;
+				public function HRESULT(ICEnroll *self, int32 dwFlags) put_GenKeyFlags;
+				public function HRESULT(ICEnroll *self, BOOL* fDelete) get_DeleteRequestCert;
+				public function HRESULT(ICEnroll *self, BOOL fDelete) put_DeleteRequestCert;
+				public function HRESULT(ICEnroll *self, BOOL* fBool) get_WriteCertToCSP;
+				public function HRESULT(ICEnroll *self, BOOL fBool) put_WriteCertToCSP;
+				public function HRESULT(ICEnroll *self, BSTR* pbstr) get_SPCFileName;
+				public function HRESULT(ICEnroll *self, BSTR bstr) put_SPCFileName;
+				public function HRESULT(ICEnroll *self, BSTR* pbstr) get_PVKFileName;
+				public function HRESULT(ICEnroll *self, BSTR bstr) put_PVKFileName;
+				public function HRESULT(ICEnroll *self, BSTR* pbstr) get_HashAlgorithm;
+				public function HRESULT(ICEnroll *self, BSTR bstr) put_HashAlgorithm;
+			}
 		}
 		[CRepr]
 		public struct ICEnroll2 : ICEnroll
 		{
 			public const new Guid IID = .(0x704ca730, 0xc90b, 0x11d1, 0x9b, 0xec, 0x00, 0xc0, 0x4f, 0xc2, 0x95, 0xe1);
 			
-			public function HRESULT(ICEnroll2 *self, BSTR CertType) addCertTypeToRequest;
-			public function HRESULT(ICEnroll2 *self, BSTR Name, BSTR Value) addNameValuePairToSignature;
-			public function HRESULT(ICEnroll2 *self, BOOL* fBool) get_WriteCertToUserDS;
-			public function HRESULT(ICEnroll2 *self, BOOL fBool) put_WriteCertToUserDS;
-			public function HRESULT(ICEnroll2 *self, BOOL* fBool) get_EnableT61DNEncoding;
-			public function HRESULT(ICEnroll2 *self, BOOL fBool) put_EnableT61DNEncoding;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICEnroll.VTable
+			{
+				public function HRESULT(ICEnroll2 *self, BSTR CertType) addCertTypeToRequest;
+				public function HRESULT(ICEnroll2 *self, BSTR Name, BSTR Value) addNameValuePairToSignature;
+				public function HRESULT(ICEnroll2 *self, BOOL* fBool) get_WriteCertToUserDS;
+				public function HRESULT(ICEnroll2 *self, BOOL fBool) put_WriteCertToUserDS;
+				public function HRESULT(ICEnroll2 *self, BOOL* fBool) get_EnableT61DNEncoding;
+				public function HRESULT(ICEnroll2 *self, BOOL fBool) put_EnableT61DNEncoding;
+			}
 		}
 		[CRepr]
 		public struct ICEnroll3 : ICEnroll2
 		{
 			public const new Guid IID = .(0xc28c2d95, 0xb7de, 0x11d2, 0xa4, 0x21, 0x00, 0xc0, 0x4f, 0x79, 0xfe, 0x8e);
 			
-			public function HRESULT(ICEnroll3 *self, BSTR PKCS7) InstallPKCS7;
-			public function HRESULT(ICEnroll3 *self) Reset;
-			public function HRESULT(ICEnroll3 *self, int32* pdwKeySpec) GetSupportedKeySpec;
-			public function HRESULT(ICEnroll3 *self, BOOL fMin, BOOL fExchange, int32* pdwKeySize) GetKeyLen;
-			public function HRESULT(ICEnroll3 *self, int32 dwIndex, int32 algClass, int32* pdwAlgID) EnumAlgs;
-			public function HRESULT(ICEnroll3 *self, int32 algID, BSTR* pbstr) GetAlgName;
-			public function HRESULT(ICEnroll3 *self, BOOL fReuseHardwareKeyIfUnableToGenNew) put_ReuseHardwareKeyIfUnableToGenNew;
-			public function HRESULT(ICEnroll3 *self, BOOL* fReuseHardwareKeyIfUnableToGenNew) get_ReuseHardwareKeyIfUnableToGenNew;
-			public function HRESULT(ICEnroll3 *self, int32 hashAlgID) put_HashAlgID;
-			public function HRESULT(ICEnroll3 *self, int32* hashAlgID) get_HashAlgID;
-			public function HRESULT(ICEnroll3 *self, BOOL fLimitExchangeKeyToEncipherment) put_LimitExchangeKeyToEncipherment;
-			public function HRESULT(ICEnroll3 *self, BOOL* fLimitExchangeKeyToEncipherment) get_LimitExchangeKeyToEncipherment;
-			public function HRESULT(ICEnroll3 *self, BOOL fEnableSMIMECapabilities) put_EnableSMIMECapabilities;
-			public function HRESULT(ICEnroll3 *self, BOOL* fEnableSMIMECapabilities) get_EnableSMIMECapabilities;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICEnroll2.VTable
+			{
+				public function HRESULT(ICEnroll3 *self, BSTR PKCS7) InstallPKCS7;
+				public function HRESULT(ICEnroll3 *self) Reset;
+				public function HRESULT(ICEnroll3 *self, int32* pdwKeySpec) GetSupportedKeySpec;
+				public function HRESULT(ICEnroll3 *self, BOOL fMin, BOOL fExchange, int32* pdwKeySize) GetKeyLen;
+				public function HRESULT(ICEnroll3 *self, int32 dwIndex, int32 algClass, int32* pdwAlgID) EnumAlgs;
+				public function HRESULT(ICEnroll3 *self, int32 algID, BSTR* pbstr) GetAlgName;
+				public function HRESULT(ICEnroll3 *self, BOOL fReuseHardwareKeyIfUnableToGenNew) put_ReuseHardwareKeyIfUnableToGenNew;
+				public function HRESULT(ICEnroll3 *self, BOOL* fReuseHardwareKeyIfUnableToGenNew) get_ReuseHardwareKeyIfUnableToGenNew;
+				public function HRESULT(ICEnroll3 *self, int32 hashAlgID) put_HashAlgID;
+				public function HRESULT(ICEnroll3 *self, int32* hashAlgID) get_HashAlgID;
+				public function HRESULT(ICEnroll3 *self, BOOL fLimitExchangeKeyToEncipherment) put_LimitExchangeKeyToEncipherment;
+				public function HRESULT(ICEnroll3 *self, BOOL* fLimitExchangeKeyToEncipherment) get_LimitExchangeKeyToEncipherment;
+				public function HRESULT(ICEnroll3 *self, BOOL fEnableSMIMECapabilities) put_EnableSMIMECapabilities;
+				public function HRESULT(ICEnroll3 *self, BOOL* fEnableSMIMECapabilities) get_EnableSMIMECapabilities;
+			}
 		}
 		[CRepr]
 		public struct ICEnroll4 : ICEnroll3
 		{
 			public const new Guid IID = .(0xc1f1188a, 0x2eb5, 0x4a80, 0x84, 0x1b, 0x7e, 0x72, 0x9a, 0x35, 0x6d, 0x90);
 			
-			public function HRESULT(ICEnroll4 *self, BSTR bstrCert) put_PrivateKeyArchiveCertificate;
-			public function HRESULT(ICEnroll4 *self, BSTR* pbstrCert) get_PrivateKeyArchiveCertificate;
-			public function HRESULT(ICEnroll4 *self, BSTR bstrThumbPrint) put_ThumbPrint;
-			public function HRESULT(ICEnroll4 *self, BSTR* pbstrThumbPrint) get_ThumbPrint;
-			public function HRESULT(ICEnroll4 *self, int32 Flags, BSTR strBinary, BSTR* pstrEncoded) binaryToString;
-			public function HRESULT(ICEnroll4 *self, int32 Flags, BSTR strEncoded, BSTR* pstrBinary) stringToBinary;
-			public function HRESULT(ICEnroll4 *self, int32 Flags, BSTR strName, BSTR strValue) addExtensionToRequest;
-			public function HRESULT(ICEnroll4 *self, int32 Flags, BSTR strName, BSTR strValue) addAttributeToRequest;
-			public function HRESULT(ICEnroll4 *self, int32 Flags, BSTR strName, BSTR strValue) addNameValuePairToRequest;
-			public function HRESULT(ICEnroll4 *self) resetExtensions;
-			public function HRESULT(ICEnroll4 *self) resetAttributes;
-			public function HRESULT(ICEnroll4 *self, CERT_CREATE_REQUEST_FLAGS Flags, BSTR strDNName, BSTR Usage, BSTR* pstrRequest) createRequest;
-			public function HRESULT(ICEnroll4 *self, CERT_CREATE_REQUEST_FLAGS Flags, BSTR strDNName, BSTR strUsage, BSTR strRequestFileName) createFileRequest;
-			public function HRESULT(ICEnroll4 *self, BSTR strResponse) acceptResponse;
-			public function HRESULT(ICEnroll4 *self, BSTR strResponseFileName) acceptFileResponse;
-			public function HRESULT(ICEnroll4 *self, BSTR strResponse, BSTR* pstrCert) getCertFromResponse;
-			public function HRESULT(ICEnroll4 *self, BSTR strResponseFileName, BSTR* pstrCert) getCertFromFileResponse;
-			public function HRESULT(ICEnroll4 *self, BSTR strPassword, BSTR* pstrPFX) createPFX;
-			public function HRESULT(ICEnroll4 *self, BSTR strPassword, BSTR strPFXFileName) createFilePFX;
-			public function HRESULT(ICEnroll4 *self, int32 lRequestID, BSTR strCADNS, BSTR strCAName, BSTR strFriendlyName) setPendingRequestInfo;
-			public function HRESULT(ICEnroll4 *self, int32 lIndex, PENDING_REQUEST_DESIRED_PROPERTY lDesiredProperty, VARIANT* pvarProperty) enumPendingRequest;
-			public function HRESULT(ICEnroll4 *self, BSTR strThumbprint) removePendingRequest;
-			public function HRESULT(ICEnroll4 *self, XEKL_KEYSIZE lSizeSpec, XEKL_KEYSPEC lKeySpec, int32* pdwKeySize) GetKeyLenEx;
-			public function HRESULT(ICEnroll4 *self, BSTR PKCS7, int32* plCertInstalled) InstallPKCS7Ex;
-			public function HRESULT(ICEnroll4 *self, ADDED_CERT_TYPE lType, BSTR bstrOIDOrName, int32 lMajorVersion, BOOL fMinorVersion, int32 lMinorVersion) addCertTypeToRequestEx;
-			public function HRESULT(ICEnroll4 *self, BSTR strProvName, int32* plProvType) getProviderType;
-			public function HRESULT(ICEnroll4 *self, BSTR bstrCert) put_SignerCertificate;
-			public function HRESULT(ICEnroll4 *self, int32 lClientId) put_ClientId;
-			public function HRESULT(ICEnroll4 *self, int32* plClientId) get_ClientId;
-			public function HRESULT(ICEnroll4 *self, int32 lPropertyId, int32 lReserved, BSTR bstrProperty) addBlobPropertyToCertificate;
-			public function HRESULT(ICEnroll4 *self) resetBlobProperties;
-			public function HRESULT(ICEnroll4 *self, BOOL fInclude) put_IncludeSubjectKeyID;
-			public function HRESULT(ICEnroll4 *self, BOOL* pfInclude) get_IncludeSubjectKeyID;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICEnroll3.VTable
+			{
+				public function HRESULT(ICEnroll4 *self, BSTR bstrCert) put_PrivateKeyArchiveCertificate;
+				public function HRESULT(ICEnroll4 *self, BSTR* pbstrCert) get_PrivateKeyArchiveCertificate;
+				public function HRESULT(ICEnroll4 *self, BSTR bstrThumbPrint) put_ThumbPrint;
+				public function HRESULT(ICEnroll4 *self, BSTR* pbstrThumbPrint) get_ThumbPrint;
+				public function HRESULT(ICEnroll4 *self, int32 Flags, BSTR strBinary, BSTR* pstrEncoded) binaryToString;
+				public function HRESULT(ICEnroll4 *self, int32 Flags, BSTR strEncoded, BSTR* pstrBinary) stringToBinary;
+				public function HRESULT(ICEnroll4 *self, int32 Flags, BSTR strName, BSTR strValue) addExtensionToRequest;
+				public function HRESULT(ICEnroll4 *self, int32 Flags, BSTR strName, BSTR strValue) addAttributeToRequest;
+				public function HRESULT(ICEnroll4 *self, int32 Flags, BSTR strName, BSTR strValue) addNameValuePairToRequest;
+				public function HRESULT(ICEnroll4 *self) resetExtensions;
+				public function HRESULT(ICEnroll4 *self) resetAttributes;
+				public function HRESULT(ICEnroll4 *self, CERT_CREATE_REQUEST_FLAGS Flags, BSTR strDNName, BSTR Usage, BSTR* pstrRequest) createRequest;
+				public function HRESULT(ICEnroll4 *self, CERT_CREATE_REQUEST_FLAGS Flags, BSTR strDNName, BSTR strUsage, BSTR strRequestFileName) createFileRequest;
+				public function HRESULT(ICEnroll4 *self, BSTR strResponse) acceptResponse;
+				public function HRESULT(ICEnroll4 *self, BSTR strResponseFileName) acceptFileResponse;
+				public function HRESULT(ICEnroll4 *self, BSTR strResponse, BSTR* pstrCert) getCertFromResponse;
+				public function HRESULT(ICEnroll4 *self, BSTR strResponseFileName, BSTR* pstrCert) getCertFromFileResponse;
+				public function HRESULT(ICEnroll4 *self, BSTR strPassword, BSTR* pstrPFX) createPFX;
+				public function HRESULT(ICEnroll4 *self, BSTR strPassword, BSTR strPFXFileName) createFilePFX;
+				public function HRESULT(ICEnroll4 *self, int32 lRequestID, BSTR strCADNS, BSTR strCAName, BSTR strFriendlyName) setPendingRequestInfo;
+				public function HRESULT(ICEnroll4 *self, int32 lIndex, PENDING_REQUEST_DESIRED_PROPERTY lDesiredProperty, VARIANT* pvarProperty) enumPendingRequest;
+				public function HRESULT(ICEnroll4 *self, BSTR strThumbprint) removePendingRequest;
+				public function HRESULT(ICEnroll4 *self, XEKL_KEYSIZE lSizeSpec, XEKL_KEYSPEC lKeySpec, int32* pdwKeySize) GetKeyLenEx;
+				public function HRESULT(ICEnroll4 *self, BSTR PKCS7, int32* plCertInstalled) InstallPKCS7Ex;
+				public function HRESULT(ICEnroll4 *self, ADDED_CERT_TYPE lType, BSTR bstrOIDOrName, int32 lMajorVersion, BOOL fMinorVersion, int32 lMinorVersion) addCertTypeToRequestEx;
+				public function HRESULT(ICEnroll4 *self, BSTR strProvName, int32* plProvType) getProviderType;
+				public function HRESULT(ICEnroll4 *self, BSTR bstrCert) put_SignerCertificate;
+				public function HRESULT(ICEnroll4 *self, int32 lClientId) put_ClientId;
+				public function HRESULT(ICEnroll4 *self, int32* plClientId) get_ClientId;
+				public function HRESULT(ICEnroll4 *self, int32 lPropertyId, int32 lReserved, BSTR bstrProperty) addBlobPropertyToCertificate;
+				public function HRESULT(ICEnroll4 *self) resetBlobProperties;
+				public function HRESULT(ICEnroll4 *self, BOOL fInclude) put_IncludeSubjectKeyID;
+				public function HRESULT(ICEnroll4 *self, BOOL* pfInclude) get_IncludeSubjectKeyID;
+			}
 		}
 		[CRepr]
 		public struct IEnroll : IUnknown
 		{
 			public const new Guid IID = .(0xacaa7838, 0x4585, 0x11d1, 0xab, 0x57, 0x00, 0xc0, 0x4f, 0xc2, 0x95, 0xe1);
 			
-			public function HRESULT(IEnroll *self, PWSTR DNName, PWSTR Usage, PWSTR wszPKCS10FileName) createFilePKCS10WStr;
-			public function HRESULT(IEnroll *self, PWSTR wszPKCS7FileName) acceptFilePKCS7WStr;
-			public function HRESULT(IEnroll *self, PWSTR DNName, PWSTR Usage, CRYPTOAPI_BLOB* pPkcs10Blob) createPKCS10WStr;
-			public function HRESULT(IEnroll *self, CRYPTOAPI_BLOB* pBlobPKCS7) acceptPKCS7Blob;
-			public function CERT_CONTEXT*(IEnroll *self, CRYPTOAPI_BLOB* pBlobPKCS7) getCertContextFromPKCS7;
-			public function void*(IEnroll *self) getMyStore;
-			public function void*(IEnroll *self) getCAStore;
-			public function void*(IEnroll *self) getROOTHStore;
-			public function HRESULT(IEnroll *self, int32 dwIndex, int32 dwFlags, PWSTR* pbstrProvName) enumProvidersWStr;
-			public function HRESULT(IEnroll *self, int32 dwIndex, PWSTR* pbstr) enumContainersWStr;
-			public function HRESULT(IEnroll *self, CRYPTOAPI_BLOB pkcs7OrPkcs10) freeRequestInfoBlob;
-			public function HRESULT(IEnroll *self, PWSTR* szwName) get_MyStoreNameWStr;
-			public function HRESULT(IEnroll *self, PWSTR szwName) put_MyStoreNameWStr;
-			public function HRESULT(IEnroll *self, PWSTR* szwType) get_MyStoreTypeWStr;
-			public function HRESULT(IEnroll *self, PWSTR szwType) put_MyStoreTypeWStr;
-			public function HRESULT(IEnroll *self, int32* pdwFlags) get_MyStoreFlags;
-			public function HRESULT(IEnroll *self, int32 dwFlags) put_MyStoreFlags;
-			public function HRESULT(IEnroll *self, PWSTR* szwName) get_CAStoreNameWStr;
-			public function HRESULT(IEnroll *self, PWSTR szwName) put_CAStoreNameWStr;
-			public function HRESULT(IEnroll *self, PWSTR* szwType) get_CAStoreTypeWStr;
-			public function HRESULT(IEnroll *self, PWSTR szwType) put_CAStoreTypeWStr;
-			public function HRESULT(IEnroll *self, int32* pdwFlags) get_CAStoreFlags;
-			public function HRESULT(IEnroll *self, int32 dwFlags) put_CAStoreFlags;
-			public function HRESULT(IEnroll *self, PWSTR* szwName) get_RootStoreNameWStr;
-			public function HRESULT(IEnroll *self, PWSTR szwName) put_RootStoreNameWStr;
-			public function HRESULT(IEnroll *self, PWSTR* szwType) get_RootStoreTypeWStr;
-			public function HRESULT(IEnroll *self, PWSTR szwType) put_RootStoreTypeWStr;
-			public function HRESULT(IEnroll *self, int32* pdwFlags) get_RootStoreFlags;
-			public function HRESULT(IEnroll *self, int32 dwFlags) put_RootStoreFlags;
-			public function HRESULT(IEnroll *self, PWSTR* szwName) get_RequestStoreNameWStr;
-			public function HRESULT(IEnroll *self, PWSTR szwName) put_RequestStoreNameWStr;
-			public function HRESULT(IEnroll *self, PWSTR* szwType) get_RequestStoreTypeWStr;
-			public function HRESULT(IEnroll *self, PWSTR szwType) put_RequestStoreTypeWStr;
-			public function HRESULT(IEnroll *self, int32* pdwFlags) get_RequestStoreFlags;
-			public function HRESULT(IEnroll *self, int32 dwFlags) put_RequestStoreFlags;
-			public function HRESULT(IEnroll *self, PWSTR* szwContainer) get_ContainerNameWStr;
-			public function HRESULT(IEnroll *self, PWSTR szwContainer) put_ContainerNameWStr;
-			public function HRESULT(IEnroll *self, PWSTR* szwProvider) get_ProviderNameWStr;
-			public function HRESULT(IEnroll *self, PWSTR szwProvider) put_ProviderNameWStr;
-			public function HRESULT(IEnroll *self, int32* pdwType) get_ProviderType;
-			public function HRESULT(IEnroll *self, int32 dwType) put_ProviderType;
-			public function HRESULT(IEnroll *self, int32* pdw) get_KeySpec;
-			public function HRESULT(IEnroll *self, int32 dw) put_KeySpec;
-			public function HRESULT(IEnroll *self, int32* pdwFlags) get_ProviderFlags;
-			public function HRESULT(IEnroll *self, int32 dwFlags) put_ProviderFlags;
-			public function HRESULT(IEnroll *self, BOOL* fUseExistingKeys) get_UseExistingKeySet;
-			public function HRESULT(IEnroll *self, BOOL fUseExistingKeys) put_UseExistingKeySet;
-			public function HRESULT(IEnroll *self, int32* pdwFlags) get_GenKeyFlags;
-			public function HRESULT(IEnroll *self, int32 dwFlags) put_GenKeyFlags;
-			public function HRESULT(IEnroll *self, BOOL* fDelete) get_DeleteRequestCert;
-			public function HRESULT(IEnroll *self, BOOL fDelete) put_DeleteRequestCert;
-			public function HRESULT(IEnroll *self, BOOL* fBool) get_WriteCertToUserDS;
-			public function HRESULT(IEnroll *self, BOOL fBool) put_WriteCertToUserDS;
-			public function HRESULT(IEnroll *self, BOOL* fBool) get_EnableT61DNEncoding;
-			public function HRESULT(IEnroll *self, BOOL fBool) put_EnableT61DNEncoding;
-			public function HRESULT(IEnroll *self, BOOL* fBool) get_WriteCertToCSP;
-			public function HRESULT(IEnroll *self, BOOL fBool) put_WriteCertToCSP;
-			public function HRESULT(IEnroll *self, PWSTR* szw) get_SPCFileNameWStr;
-			public function HRESULT(IEnroll *self, PWSTR szw) put_SPCFileNameWStr;
-			public function HRESULT(IEnroll *self, PWSTR* szw) get_PVKFileNameWStr;
-			public function HRESULT(IEnroll *self, PWSTR szw) put_PVKFileNameWStr;
-			public function HRESULT(IEnroll *self, PWSTR* szw) get_HashAlgorithmWStr;
-			public function HRESULT(IEnroll *self, PWSTR szw) put_HashAlgorithmWStr;
-			public function HRESULT(IEnroll *self, CERT_CONTEXT** ppCertContext) get_RenewalCertificate;
-			public function HRESULT(IEnroll *self, CERT_CONTEXT* pCertContext) put_RenewalCertificate;
-			public function HRESULT(IEnroll *self, PWSTR szw) AddCertTypeToRequestWStr;
-			public function HRESULT(IEnroll *self, PWSTR Name, PWSTR Value) AddNameValuePairToSignatureWStr;
-			public function HRESULT(IEnroll *self, CERT_EXTENSIONS* pCertExtensions) AddExtensionsToRequest;
-			public function HRESULT(IEnroll *self, CRYPT_ATTRIBUTES* pAttributes) AddAuthenticatedAttributesToPKCS7Request;
-			public function HRESULT(IEnroll *self, CRYPTOAPI_BLOB* pRequest, CERT_CONTEXT* pSigningCertContext, CRYPTOAPI_BLOB* pPkcs7Blob) CreatePKCS7RequestFromRequest;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnroll *self, PWSTR DNName, PWSTR Usage, PWSTR wszPKCS10FileName) createFilePKCS10WStr;
+				public function HRESULT(IEnroll *self, PWSTR wszPKCS7FileName) acceptFilePKCS7WStr;
+				public function HRESULT(IEnroll *self, PWSTR DNName, PWSTR Usage, CRYPTOAPI_BLOB* pPkcs10Blob) createPKCS10WStr;
+				public function HRESULT(IEnroll *self, CRYPTOAPI_BLOB* pBlobPKCS7) acceptPKCS7Blob;
+				public function CERT_CONTEXT*(IEnroll *self, CRYPTOAPI_BLOB* pBlobPKCS7) getCertContextFromPKCS7;
+				public function void*(IEnroll *self) getMyStore;
+				public function void*(IEnroll *self) getCAStore;
+				public function void*(IEnroll *self) getROOTHStore;
+				public function HRESULT(IEnroll *self, int32 dwIndex, int32 dwFlags, PWSTR* pbstrProvName) enumProvidersWStr;
+				public function HRESULT(IEnroll *self, int32 dwIndex, PWSTR* pbstr) enumContainersWStr;
+				public function HRESULT(IEnroll *self, CRYPTOAPI_BLOB pkcs7OrPkcs10) freeRequestInfoBlob;
+				public function HRESULT(IEnroll *self, PWSTR* szwName) get_MyStoreNameWStr;
+				public function HRESULT(IEnroll *self, PWSTR szwName) put_MyStoreNameWStr;
+				public function HRESULT(IEnroll *self, PWSTR* szwType) get_MyStoreTypeWStr;
+				public function HRESULT(IEnroll *self, PWSTR szwType) put_MyStoreTypeWStr;
+				public function HRESULT(IEnroll *self, int32* pdwFlags) get_MyStoreFlags;
+				public function HRESULT(IEnroll *self, int32 dwFlags) put_MyStoreFlags;
+				public function HRESULT(IEnroll *self, PWSTR* szwName) get_CAStoreNameWStr;
+				public function HRESULT(IEnroll *self, PWSTR szwName) put_CAStoreNameWStr;
+				public function HRESULT(IEnroll *self, PWSTR* szwType) get_CAStoreTypeWStr;
+				public function HRESULT(IEnroll *self, PWSTR szwType) put_CAStoreTypeWStr;
+				public function HRESULT(IEnroll *self, int32* pdwFlags) get_CAStoreFlags;
+				public function HRESULT(IEnroll *self, int32 dwFlags) put_CAStoreFlags;
+				public function HRESULT(IEnroll *self, PWSTR* szwName) get_RootStoreNameWStr;
+				public function HRESULT(IEnroll *self, PWSTR szwName) put_RootStoreNameWStr;
+				public function HRESULT(IEnroll *self, PWSTR* szwType) get_RootStoreTypeWStr;
+				public function HRESULT(IEnroll *self, PWSTR szwType) put_RootStoreTypeWStr;
+				public function HRESULT(IEnroll *self, int32* pdwFlags) get_RootStoreFlags;
+				public function HRESULT(IEnroll *self, int32 dwFlags) put_RootStoreFlags;
+				public function HRESULT(IEnroll *self, PWSTR* szwName) get_RequestStoreNameWStr;
+				public function HRESULT(IEnroll *self, PWSTR szwName) put_RequestStoreNameWStr;
+				public function HRESULT(IEnroll *self, PWSTR* szwType) get_RequestStoreTypeWStr;
+				public function HRESULT(IEnroll *self, PWSTR szwType) put_RequestStoreTypeWStr;
+				public function HRESULT(IEnroll *self, int32* pdwFlags) get_RequestStoreFlags;
+				public function HRESULT(IEnroll *self, int32 dwFlags) put_RequestStoreFlags;
+				public function HRESULT(IEnroll *self, PWSTR* szwContainer) get_ContainerNameWStr;
+				public function HRESULT(IEnroll *self, PWSTR szwContainer) put_ContainerNameWStr;
+				public function HRESULT(IEnroll *self, PWSTR* szwProvider) get_ProviderNameWStr;
+				public function HRESULT(IEnroll *self, PWSTR szwProvider) put_ProviderNameWStr;
+				public function HRESULT(IEnroll *self, int32* pdwType) get_ProviderType;
+				public function HRESULT(IEnroll *self, int32 dwType) put_ProviderType;
+				public function HRESULT(IEnroll *self, int32* pdw) get_KeySpec;
+				public function HRESULT(IEnroll *self, int32 dw) put_KeySpec;
+				public function HRESULT(IEnroll *self, int32* pdwFlags) get_ProviderFlags;
+				public function HRESULT(IEnroll *self, int32 dwFlags) put_ProviderFlags;
+				public function HRESULT(IEnroll *self, BOOL* fUseExistingKeys) get_UseExistingKeySet;
+				public function HRESULT(IEnroll *self, BOOL fUseExistingKeys) put_UseExistingKeySet;
+				public function HRESULT(IEnroll *self, int32* pdwFlags) get_GenKeyFlags;
+				public function HRESULT(IEnroll *self, int32 dwFlags) put_GenKeyFlags;
+				public function HRESULT(IEnroll *self, BOOL* fDelete) get_DeleteRequestCert;
+				public function HRESULT(IEnroll *self, BOOL fDelete) put_DeleteRequestCert;
+				public function HRESULT(IEnroll *self, BOOL* fBool) get_WriteCertToUserDS;
+				public function HRESULT(IEnroll *self, BOOL fBool) put_WriteCertToUserDS;
+				public function HRESULT(IEnroll *self, BOOL* fBool) get_EnableT61DNEncoding;
+				public function HRESULT(IEnroll *self, BOOL fBool) put_EnableT61DNEncoding;
+				public function HRESULT(IEnroll *self, BOOL* fBool) get_WriteCertToCSP;
+				public function HRESULT(IEnroll *self, BOOL fBool) put_WriteCertToCSP;
+				public function HRESULT(IEnroll *self, PWSTR* szw) get_SPCFileNameWStr;
+				public function HRESULT(IEnroll *self, PWSTR szw) put_SPCFileNameWStr;
+				public function HRESULT(IEnroll *self, PWSTR* szw) get_PVKFileNameWStr;
+				public function HRESULT(IEnroll *self, PWSTR szw) put_PVKFileNameWStr;
+				public function HRESULT(IEnroll *self, PWSTR* szw) get_HashAlgorithmWStr;
+				public function HRESULT(IEnroll *self, PWSTR szw) put_HashAlgorithmWStr;
+				public function HRESULT(IEnroll *self, CERT_CONTEXT** ppCertContext) get_RenewalCertificate;
+				public function HRESULT(IEnroll *self, CERT_CONTEXT* pCertContext) put_RenewalCertificate;
+				public function HRESULT(IEnroll *self, PWSTR szw) AddCertTypeToRequestWStr;
+				public function HRESULT(IEnroll *self, PWSTR Name, PWSTR Value) AddNameValuePairToSignatureWStr;
+				public function HRESULT(IEnroll *self, CERT_EXTENSIONS* pCertExtensions) AddExtensionsToRequest;
+				public function HRESULT(IEnroll *self, CRYPT_ATTRIBUTES* pAttributes) AddAuthenticatedAttributesToPKCS7Request;
+				public function HRESULT(IEnroll *self, CRYPTOAPI_BLOB* pRequest, CERT_CONTEXT* pSigningCertContext, CRYPTOAPI_BLOB* pPkcs7Blob) CreatePKCS7RequestFromRequest;
+			}
 		}
 		[CRepr]
 		public struct IEnroll2 : IEnroll
 		{
 			public const new Guid IID = .(0xc080e199, 0xb7df, 0x11d2, 0xa4, 0x21, 0x00, 0xc0, 0x4f, 0x79, 0xfe, 0x8e);
 			
-			public function HRESULT(IEnroll2 *self, CRYPTOAPI_BLOB* pBlobPKCS7) InstallPKCS7Blob;
-			public function HRESULT(IEnroll2 *self) Reset;
-			public function HRESULT(IEnroll2 *self, int32* pdwKeySpec) GetSupportedKeySpec;
-			public function HRESULT(IEnroll2 *self, BOOL fMin, BOOL fExchange, int32* pdwKeySize) GetKeyLen;
-			public function HRESULT(IEnroll2 *self, int32 dwIndex, int32 algClass, int32* pdwAlgID) EnumAlgs;
-			public function HRESULT(IEnroll2 *self, int32 algID, PWSTR* ppwsz) GetAlgNameWStr;
-			public function HRESULT(IEnroll2 *self, BOOL fReuseHardwareKeyIfUnableToGenNew) put_ReuseHardwareKeyIfUnableToGenNew;
-			public function HRESULT(IEnroll2 *self, BOOL* fReuseHardwareKeyIfUnableToGenNew) get_ReuseHardwareKeyIfUnableToGenNew;
-			public function HRESULT(IEnroll2 *self, int32 hashAlgID) put_HashAlgID;
-			public function HRESULT(IEnroll2 *self, int32* hashAlgID) get_HashAlgID;
-			public function HRESULT(IEnroll2 *self, void* hStore) SetHStoreMy;
-			public function HRESULT(IEnroll2 *self, void* hStore) SetHStoreCA;
-			public function HRESULT(IEnroll2 *self, void* hStore) SetHStoreROOT;
-			public function HRESULT(IEnroll2 *self, void* hStore) SetHStoreRequest;
-			public function HRESULT(IEnroll2 *self, BOOL fLimitExchangeKeyToEncipherment) put_LimitExchangeKeyToEncipherment;
-			public function HRESULT(IEnroll2 *self, BOOL* fLimitExchangeKeyToEncipherment) get_LimitExchangeKeyToEncipherment;
-			public function HRESULT(IEnroll2 *self, BOOL fEnableSMIMECapabilities) put_EnableSMIMECapabilities;
-			public function HRESULT(IEnroll2 *self, BOOL* fEnableSMIMECapabilities) get_EnableSMIMECapabilities;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IEnroll.VTable
+			{
+				public function HRESULT(IEnroll2 *self, CRYPTOAPI_BLOB* pBlobPKCS7) InstallPKCS7Blob;
+				public function HRESULT(IEnroll2 *self) Reset;
+				public function HRESULT(IEnroll2 *self, int32* pdwKeySpec) GetSupportedKeySpec;
+				public function HRESULT(IEnroll2 *self, BOOL fMin, BOOL fExchange, int32* pdwKeySize) GetKeyLen;
+				public function HRESULT(IEnroll2 *self, int32 dwIndex, int32 algClass, int32* pdwAlgID) EnumAlgs;
+				public function HRESULT(IEnroll2 *self, int32 algID, PWSTR* ppwsz) GetAlgNameWStr;
+				public function HRESULT(IEnroll2 *self, BOOL fReuseHardwareKeyIfUnableToGenNew) put_ReuseHardwareKeyIfUnableToGenNew;
+				public function HRESULT(IEnroll2 *self, BOOL* fReuseHardwareKeyIfUnableToGenNew) get_ReuseHardwareKeyIfUnableToGenNew;
+				public function HRESULT(IEnroll2 *self, int32 hashAlgID) put_HashAlgID;
+				public function HRESULT(IEnroll2 *self, int32* hashAlgID) get_HashAlgID;
+				public function HRESULT(IEnroll2 *self, void* hStore) SetHStoreMy;
+				public function HRESULT(IEnroll2 *self, void* hStore) SetHStoreCA;
+				public function HRESULT(IEnroll2 *self, void* hStore) SetHStoreROOT;
+				public function HRESULT(IEnroll2 *self, void* hStore) SetHStoreRequest;
+				public function HRESULT(IEnroll2 *self, BOOL fLimitExchangeKeyToEncipherment) put_LimitExchangeKeyToEncipherment;
+				public function HRESULT(IEnroll2 *self, BOOL* fLimitExchangeKeyToEncipherment) get_LimitExchangeKeyToEncipherment;
+				public function HRESULT(IEnroll2 *self, BOOL fEnableSMIMECapabilities) put_EnableSMIMECapabilities;
+				public function HRESULT(IEnroll2 *self, BOOL* fEnableSMIMECapabilities) get_EnableSMIMECapabilities;
+			}
 		}
 		[CRepr]
 		public struct IEnroll4 : IEnroll2
 		{
 			public const new Guid IID = .(0xf8053fe5, 0x78f4, 0x448f, 0xa0, 0xdb, 0x41, 0xd6, 0x1b, 0x73, 0x44, 0x6b);
 			
-			public function HRESULT(IEnroll4 *self, CRYPTOAPI_BLOB thumbPrintBlob) put_ThumbPrintWStr;
-			public function HRESULT(IEnroll4 *self, CRYPTOAPI_BLOB* thumbPrintBlob) get_ThumbPrintWStr;
-			public function HRESULT(IEnroll4 *self, CERT_CONTEXT* pPrivateKeyArchiveCert) SetPrivateKeyArchiveCertificate;
-			public function CERT_CONTEXT*(IEnroll4 *self) GetPrivateKeyArchiveCertificate;
-			public function HRESULT(IEnroll4 *self, int32 Flags, CRYPTOAPI_BLOB* pblobBinary, PWSTR* ppwszString) binaryBlobToString;
-			public function HRESULT(IEnroll4 *self, int32 Flags, PWSTR pwszString, CRYPTOAPI_BLOB* pblobBinary, int32* pdwSkip, int32* pdwFlags) stringToBinaryBlob;
-			public function HRESULT(IEnroll4 *self, int32 Flags, PWSTR pwszName, CRYPTOAPI_BLOB* pblobValue) addExtensionToRequestWStr;
-			public function HRESULT(IEnroll4 *self, int32 Flags, PWSTR pwszName, CRYPTOAPI_BLOB* pblobValue) addAttributeToRequestWStr;
-			public function HRESULT(IEnroll4 *self, int32 Flags, PWSTR pwszName, PWSTR pwszValue) addNameValuePairToRequestWStr;
-			public function HRESULT(IEnroll4 *self) resetExtensions;
-			public function HRESULT(IEnroll4 *self) resetAttributes;
-			public function HRESULT(IEnroll4 *self, CERT_CREATE_REQUEST_FLAGS Flags, PWSTR pwszDNName, PWSTR pwszUsage, CRYPTOAPI_BLOB* pblobRequest) createRequestWStr;
-			public function HRESULT(IEnroll4 *self, CERT_CREATE_REQUEST_FLAGS Flags, PWSTR pwszDNName, PWSTR pwszUsage, PWSTR pwszRequestFileName) createFileRequestWStr;
-			public function HRESULT(IEnroll4 *self, CRYPTOAPI_BLOB* pblobResponse) acceptResponseBlob;
-			public function HRESULT(IEnroll4 *self, PWSTR pwszResponseFileName) acceptFileResponseWStr;
-			public function HRESULT(IEnroll4 *self, CRYPTOAPI_BLOB* pblobResponse, CERT_CONTEXT** ppCertContext) getCertContextFromResponseBlob;
-			public function HRESULT(IEnroll4 *self, PWSTR pwszResponseFileName, CERT_CONTEXT** ppCertContext) getCertContextFromFileResponseWStr;
-			public function HRESULT(IEnroll4 *self, PWSTR pwszPassword, CRYPTOAPI_BLOB* pblobPFX) createPFXWStr;
-			public function HRESULT(IEnroll4 *self, PWSTR pwszPassword, PWSTR pwszPFXFileName) createFilePFXWStr;
-			public function HRESULT(IEnroll4 *self, int32 lRequestID, PWSTR pwszCADNS, PWSTR pwszCAName, PWSTR pwszFriendlyName) setPendingRequestInfoWStr;
-			public function HRESULT(IEnroll4 *self, int32 lIndex, PENDING_REQUEST_DESIRED_PROPERTY lDesiredProperty, void* ppProperty) enumPendingRequestWStr;
-			public function HRESULT(IEnroll4 *self, CRYPTOAPI_BLOB thumbPrintBlob) removePendingRequestWStr;
-			public function HRESULT(IEnroll4 *self, XEKL_KEYSIZE lSizeSpec, XEKL_KEYSPEC lKeySpec, int32* pdwKeySize) GetKeyLenEx;
-			public function HRESULT(IEnroll4 *self, CRYPTOAPI_BLOB* pBlobPKCS7, int32* plCertInstalled) InstallPKCS7BlobEx;
-			public function HRESULT(IEnroll4 *self, ADDED_CERT_TYPE lType, PWSTR pwszOIDOrName, int32 lMajorVersion, BOOL fMinorVersion, int32 lMinorVersion) AddCertTypeToRequestWStrEx;
-			public function HRESULT(IEnroll4 *self, PWSTR pwszProvName, int32* plProvType) getProviderTypeWStr;
-			public function HRESULT(IEnroll4 *self, int32 lPropertyId, int32 lReserved, CRYPTOAPI_BLOB* pBlobProperty) addBlobPropertyToCertificateWStr;
-			public function HRESULT(IEnroll4 *self, CERT_CONTEXT* pSignerCert) SetSignerCertificate;
-			public function HRESULT(IEnroll4 *self, int32 lClientId) put_ClientId;
-			public function HRESULT(IEnroll4 *self, int32* plClientId) get_ClientId;
-			public function HRESULT(IEnroll4 *self, BOOL fInclude) put_IncludeSubjectKeyID;
-			public function HRESULT(IEnroll4 *self, BOOL* pfInclude) get_IncludeSubjectKeyID;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IEnroll2.VTable
+			{
+				public function HRESULT(IEnroll4 *self, CRYPTOAPI_BLOB thumbPrintBlob) put_ThumbPrintWStr;
+				public function HRESULT(IEnroll4 *self, CRYPTOAPI_BLOB* thumbPrintBlob) get_ThumbPrintWStr;
+				public function HRESULT(IEnroll4 *self, CERT_CONTEXT* pPrivateKeyArchiveCert) SetPrivateKeyArchiveCertificate;
+				public function CERT_CONTEXT*(IEnroll4 *self) GetPrivateKeyArchiveCertificate;
+				public function HRESULT(IEnroll4 *self, int32 Flags, CRYPTOAPI_BLOB* pblobBinary, PWSTR* ppwszString) binaryBlobToString;
+				public function HRESULT(IEnroll4 *self, int32 Flags, PWSTR pwszString, CRYPTOAPI_BLOB* pblobBinary, int32* pdwSkip, int32* pdwFlags) stringToBinaryBlob;
+				public function HRESULT(IEnroll4 *self, int32 Flags, PWSTR pwszName, CRYPTOAPI_BLOB* pblobValue) addExtensionToRequestWStr;
+				public function HRESULT(IEnroll4 *self, int32 Flags, PWSTR pwszName, CRYPTOAPI_BLOB* pblobValue) addAttributeToRequestWStr;
+				public function HRESULT(IEnroll4 *self, int32 Flags, PWSTR pwszName, PWSTR pwszValue) addNameValuePairToRequestWStr;
+				public function HRESULT(IEnroll4 *self) resetExtensions;
+				public function HRESULT(IEnroll4 *self) resetAttributes;
+				public function HRESULT(IEnroll4 *self, CERT_CREATE_REQUEST_FLAGS Flags, PWSTR pwszDNName, PWSTR pwszUsage, CRYPTOAPI_BLOB* pblobRequest) createRequestWStr;
+				public function HRESULT(IEnroll4 *self, CERT_CREATE_REQUEST_FLAGS Flags, PWSTR pwszDNName, PWSTR pwszUsage, PWSTR pwszRequestFileName) createFileRequestWStr;
+				public function HRESULT(IEnroll4 *self, CRYPTOAPI_BLOB* pblobResponse) acceptResponseBlob;
+				public function HRESULT(IEnroll4 *self, PWSTR pwszResponseFileName) acceptFileResponseWStr;
+				public function HRESULT(IEnroll4 *self, CRYPTOAPI_BLOB* pblobResponse, CERT_CONTEXT** ppCertContext) getCertContextFromResponseBlob;
+				public function HRESULT(IEnroll4 *self, PWSTR pwszResponseFileName, CERT_CONTEXT** ppCertContext) getCertContextFromFileResponseWStr;
+				public function HRESULT(IEnroll4 *self, PWSTR pwszPassword, CRYPTOAPI_BLOB* pblobPFX) createPFXWStr;
+				public function HRESULT(IEnroll4 *self, PWSTR pwszPassword, PWSTR pwszPFXFileName) createFilePFXWStr;
+				public function HRESULT(IEnroll4 *self, int32 lRequestID, PWSTR pwszCADNS, PWSTR pwszCAName, PWSTR pwszFriendlyName) setPendingRequestInfoWStr;
+				public function HRESULT(IEnroll4 *self, int32 lIndex, PENDING_REQUEST_DESIRED_PROPERTY lDesiredProperty, void* ppProperty) enumPendingRequestWStr;
+				public function HRESULT(IEnroll4 *self, CRYPTOAPI_BLOB thumbPrintBlob) removePendingRequestWStr;
+				public function HRESULT(IEnroll4 *self, XEKL_KEYSIZE lSizeSpec, XEKL_KEYSPEC lKeySpec, int32* pdwKeySize) GetKeyLenEx;
+				public function HRESULT(IEnroll4 *self, CRYPTOAPI_BLOB* pBlobPKCS7, int32* plCertInstalled) InstallPKCS7BlobEx;
+				public function HRESULT(IEnroll4 *self, ADDED_CERT_TYPE lType, PWSTR pwszOIDOrName, int32 lMajorVersion, BOOL fMinorVersion, int32 lMinorVersion) AddCertTypeToRequestWStrEx;
+				public function HRESULT(IEnroll4 *self, PWSTR pwszProvName, int32* plProvType) getProviderTypeWStr;
+				public function HRESULT(IEnroll4 *self, int32 lPropertyId, int32 lReserved, CRYPTOAPI_BLOB* pBlobProperty) addBlobPropertyToCertificateWStr;
+				public function HRESULT(IEnroll4 *self, CERT_CONTEXT* pSignerCert) SetSignerCertificate;
+				public function HRESULT(IEnroll4 *self, int32 lClientId) put_ClientId;
+				public function HRESULT(IEnroll4 *self, int32* plClientId) get_ClientId;
+				public function HRESULT(IEnroll4 *self, BOOL fInclude) put_IncludeSubjectKeyID;
+				public function HRESULT(IEnroll4 *self, BOOL* pfInclude) get_IncludeSubjectKeyID;
+			}
 		}
 		[CRepr]
 		public struct ICertRequestD : IUnknown
 		{
 			public const new Guid IID = .(0xd99e6e70, 0xfc88, 0x11d0, 0xb4, 0x98, 0x00, 0xa0, 0xc9, 0x03, 0x12, 0xf3);
 			
-			public function HRESULT(ICertRequestD *self, uint32 dwFlags, PWSTR pwszAuthority, uint32* pdwRequestId, uint32* pdwDisposition, PWSTR pwszAttributes, CERTTRANSBLOB* pctbRequest, CERTTRANSBLOB* pctbCertChain, CERTTRANSBLOB* pctbEncodedCert, CERTTRANSBLOB* pctbDispositionMessage) Request;
-			public function HRESULT(ICertRequestD *self, uint32 fchain, PWSTR pwszAuthority, CERTTRANSBLOB* pctbOut) GetCACert;
-			public function HRESULT(ICertRequestD *self, PWSTR pwszAuthority) Ping;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICertRequestD *self, uint32 dwFlags, PWSTR pwszAuthority, uint32* pdwRequestId, uint32* pdwDisposition, PWSTR pwszAttributes, CERTTRANSBLOB* pctbRequest, CERTTRANSBLOB* pctbCertChain, CERTTRANSBLOB* pctbEncodedCert, CERTTRANSBLOB* pctbDispositionMessage) Request;
+				public function HRESULT(ICertRequestD *self, uint32 fchain, PWSTR pwszAuthority, CERTTRANSBLOB* pctbOut) GetCACert;
+				public function HRESULT(ICertRequestD *self, PWSTR pwszAuthority) Ping;
+			}
 		}
 		[CRepr]
 		public struct ICertRequestD2 : ICertRequestD
 		{
 			public const new Guid IID = .(0x5422fd3a, 0xd4b8, 0x4cef, 0xa1, 0x2e, 0xe8, 0x7d, 0x4c, 0xa2, 0x2e, 0x90);
 			
-			public function HRESULT(ICertRequestD2 *self, PWSTR pwszAuthority, uint32 dwFlags, PWSTR pwszSerialNumber, uint32* pdwRequestId, uint32* pdwDisposition, PWSTR pwszAttributes, CERTTRANSBLOB* pctbRequest, CERTTRANSBLOB* pctbFullResponse, CERTTRANSBLOB* pctbEncodedCert, CERTTRANSBLOB* pctbDispositionMessage) Request2;
-			public function HRESULT(ICertRequestD2 *self, PWSTR pwszAuthority, int32 PropId, int32 PropIndex, int32 PropType, CERTTRANSBLOB* pctbPropertyValue) GetCAProperty;
-			public function HRESULT(ICertRequestD2 *self, PWSTR pwszAuthority, int32* pcProperty, CERTTRANSBLOB* pctbPropInfo) GetCAPropertyInfo;
-			public function HRESULT(ICertRequestD2 *self, PWSTR pwszAuthority) Ping2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICertRequestD.VTable
+			{
+				public function HRESULT(ICertRequestD2 *self, PWSTR pwszAuthority, uint32 dwFlags, PWSTR pwszSerialNumber, uint32* pdwRequestId, uint32* pdwDisposition, PWSTR pwszAttributes, CERTTRANSBLOB* pctbRequest, CERTTRANSBLOB* pctbFullResponse, CERTTRANSBLOB* pctbEncodedCert, CERTTRANSBLOB* pctbDispositionMessage) Request2;
+				public function HRESULT(ICertRequestD2 *self, PWSTR pwszAuthority, int32 PropId, int32 PropIndex, int32 PropType, CERTTRANSBLOB* pctbPropertyValue) GetCAProperty;
+				public function HRESULT(ICertRequestD2 *self, PWSTR pwszAuthority, int32* pcProperty, CERTTRANSBLOB* pctbPropInfo) GetCAPropertyInfo;
+				public function HRESULT(ICertRequestD2 *self, PWSTR pwszAuthority) Ping2;
+			}
 		}
 		
 		// --- Functions ---

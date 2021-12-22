@@ -280,57 +280,87 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x09b224bd, 0x1335, 0x4631, 0xa7, 0xff, 0xcf, 0xd3, 0xa9, 0x26, 0x46, 0xd7);
 			
-			public function HRESULT(IEnumEnhancedStorageACT *self, IEnhancedStorageACT*** pppIEnhancedStorageACTs, uint32* pcEnhancedStorageACTs) GetACTs;
-			public function HRESULT(IEnumEnhancedStorageACT *self, PWSTR szVolume, IEnhancedStorageACT** ppIEnhancedStorageACT) GetMatchingACT;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumEnhancedStorageACT *self, IEnhancedStorageACT*** pppIEnhancedStorageACTs, uint32* pcEnhancedStorageACTs) GetACTs;
+				public function HRESULT(IEnumEnhancedStorageACT *self, PWSTR szVolume, IEnhancedStorageACT** ppIEnhancedStorageACT) GetMatchingACT;
+			}
 		}
 		[CRepr]
 		public struct IEnhancedStorageACT : IUnknown
 		{
 			public const new Guid IID = .(0x6e7781f4, 0xe0f2, 0x4239, 0xb9, 0x76, 0xa0, 0x1a, 0xba, 0xb5, 0x29, 0x30);
 			
-			public function HRESULT(IEnhancedStorageACT *self, uint32 hwndParent, uint32 dwFlags) Authorize;
-			public function HRESULT(IEnhancedStorageACT *self) Unauthorize;
-			public function HRESULT(IEnhancedStorageACT *self, ACT_AUTHORIZATION_STATE* pState) GetAuthorizationState;
-			public function HRESULT(IEnhancedStorageACT *self, PWSTR* ppwszVolume) GetMatchingVolume;
-			public function HRESULT(IEnhancedStorageACT *self, PWSTR* ppwszIdentity) GetUniqueIdentity;
-			public function HRESULT(IEnhancedStorageACT *self, IEnhancedStorageSilo*** pppIEnhancedStorageSilos, uint32* pcEnhancedStorageSilos) GetSilos;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnhancedStorageACT *self, uint32 hwndParent, uint32 dwFlags) Authorize;
+				public function HRESULT(IEnhancedStorageACT *self) Unauthorize;
+				public function HRESULT(IEnhancedStorageACT *self, ACT_AUTHORIZATION_STATE* pState) GetAuthorizationState;
+				public function HRESULT(IEnhancedStorageACT *self, PWSTR* ppwszVolume) GetMatchingVolume;
+				public function HRESULT(IEnhancedStorageACT *self, PWSTR* ppwszIdentity) GetUniqueIdentity;
+				public function HRESULT(IEnhancedStorageACT *self, IEnhancedStorageSilo*** pppIEnhancedStorageSilos, uint32* pcEnhancedStorageSilos) GetSilos;
+			}
 		}
 		[CRepr]
 		public struct IEnhancedStorageACT2 : IEnhancedStorageACT
 		{
 			public const new Guid IID = .(0x4da57d2e, 0x8eb3, 0x41f6, 0xa0, 0x7e, 0x98, 0xb5, 0x2b, 0x88, 0x24, 0x2b);
 			
-			public function HRESULT(IEnhancedStorageACT2 *self, PWSTR* ppwszDeviceName) GetDeviceName;
-			public function HRESULT(IEnhancedStorageACT2 *self, BOOL* pIsDeviceRemovable) IsDeviceRemovable;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IEnhancedStorageACT.VTable
+			{
+				public function HRESULT(IEnhancedStorageACT2 *self, PWSTR* ppwszDeviceName) GetDeviceName;
+				public function HRESULT(IEnhancedStorageACT2 *self, BOOL* pIsDeviceRemovable) IsDeviceRemovable;
+			}
 		}
 		[CRepr]
 		public struct IEnhancedStorageACT3 : IEnhancedStorageACT2
 		{
 			public const new Guid IID = .(0x022150a1, 0x113d, 0x11df, 0xbb, 0x61, 0x00, 0x1a, 0xa0, 0x1b, 0xbc, 0x58);
 			
-			public function HRESULT(IEnhancedStorageACT3 *self, uint32 dwFlags) UnauthorizeEx;
-			public function HRESULT(IEnhancedStorageACT3 *self, BOOL* pIsQueueFrozen) IsQueueFrozen;
-			public function HRESULT(IEnhancedStorageACT3 *self, BOOL* pShellExtSupport) GetShellExtSupport;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IEnhancedStorageACT2.VTable
+			{
+				public function HRESULT(IEnhancedStorageACT3 *self, uint32 dwFlags) UnauthorizeEx;
+				public function HRESULT(IEnhancedStorageACT3 *self, BOOL* pIsQueueFrozen) IsQueueFrozen;
+				public function HRESULT(IEnhancedStorageACT3 *self, BOOL* pShellExtSupport) GetShellExtSupport;
+			}
 		}
 		[CRepr]
 		public struct IEnhancedStorageSilo : IUnknown
 		{
 			public const new Guid IID = .(0x5aef78c6, 0x2242, 0x4703, 0xbf, 0x49, 0x44, 0xb2, 0x93, 0x57, 0xa3, 0x59);
 			
-			public function HRESULT(IEnhancedStorageSilo *self, SILO_INFO* pSiloInfo) GetInfo;
-			public function HRESULT(IEnhancedStorageSilo *self, IEnhancedStorageSiloAction*** pppIEnhancedStorageSiloActions, uint32* pcEnhancedStorageSiloActions) GetActions;
-			public function HRESULT(IEnhancedStorageSilo *self, uint8 Command, uint8* pbCommandBuffer, uint32 cbCommandBuffer, uint8* pbResponseBuffer, uint32* pcbResponseBuffer) SendCommand;
-			public function HRESULT(IEnhancedStorageSilo *self, IPortableDevice** ppIPortableDevice) GetPortableDevice;
-			public function HRESULT(IEnhancedStorageSilo *self, PWSTR* ppwszSiloDevicePath) GetDevicePath;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnhancedStorageSilo *self, SILO_INFO* pSiloInfo) GetInfo;
+				public function HRESULT(IEnhancedStorageSilo *self, IEnhancedStorageSiloAction*** pppIEnhancedStorageSiloActions, uint32* pcEnhancedStorageSiloActions) GetActions;
+				public function HRESULT(IEnhancedStorageSilo *self, uint8 Command, uint8* pbCommandBuffer, uint32 cbCommandBuffer, uint8* pbResponseBuffer, uint32* pcbResponseBuffer) SendCommand;
+				public function HRESULT(IEnhancedStorageSilo *self, IPortableDevice** ppIPortableDevice) GetPortableDevice;
+				public function HRESULT(IEnhancedStorageSilo *self, PWSTR* ppwszSiloDevicePath) GetDevicePath;
+			}
 		}
 		[CRepr]
 		public struct IEnhancedStorageSiloAction : IUnknown
 		{
 			public const new Guid IID = .(0xb6f7f311, 0x206f, 0x4ff8, 0x9c, 0x4b, 0x27, 0xef, 0xee, 0x77, 0xa8, 0x6f);
 			
-			public function HRESULT(IEnhancedStorageSiloAction *self, PWSTR* ppwszActionName) GetName;
-			public function HRESULT(IEnhancedStorageSiloAction *self, PWSTR* ppwszActionDescription) GetDescription;
-			public function HRESULT(IEnhancedStorageSiloAction *self) Invoke;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnhancedStorageSiloAction *self, PWSTR* ppwszActionName) GetName;
+				public function HRESULT(IEnhancedStorageSiloAction *self, PWSTR* ppwszActionDescription) GetDescription;
+				public function HRESULT(IEnhancedStorageSiloAction *self) Invoke;
+			}
 		}
 		
 	}

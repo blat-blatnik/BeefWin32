@@ -349,13 +349,18 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2cd9069e, 0x12e2, 0x11dc, 0x9f, 0xed, 0x00, 0x11, 0x43, 0xa0, 0x55, 0xf9);
 			
-			public function void(ID2D1SimplifiedGeometrySink *self, D2D1_FILL_MODE fillMode) SetFillMode;
-			public function void(ID2D1SimplifiedGeometrySink *self, D2D1_PATH_SEGMENT vertexFlags) SetSegmentFlags;
-			public function void(ID2D1SimplifiedGeometrySink *self, D2D_POINT_2F startPoint, D2D1_FIGURE_BEGIN figureBegin) BeginFigure;
-			public function void(ID2D1SimplifiedGeometrySink *self, D2D_POINT_2F* points, uint32 pointsCount) AddLines;
-			public function void(ID2D1SimplifiedGeometrySink *self, D2D1_BEZIER_SEGMENT* beziers, uint32 beziersCount) AddBeziers;
-			public function void(ID2D1SimplifiedGeometrySink *self, D2D1_FIGURE_END figureEnd) EndFigure;
-			public function HRESULT(ID2D1SimplifiedGeometrySink *self) Close;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function void(ID2D1SimplifiedGeometrySink *self, D2D1_FILL_MODE fillMode) SetFillMode;
+				public function void(ID2D1SimplifiedGeometrySink *self, D2D1_PATH_SEGMENT vertexFlags) SetSegmentFlags;
+				public function void(ID2D1SimplifiedGeometrySink *self, D2D_POINT_2F startPoint, D2D1_FIGURE_BEGIN figureBegin) BeginFigure;
+				public function void(ID2D1SimplifiedGeometrySink *self, D2D_POINT_2F* points, uint32 pointsCount) AddLines;
+				public function void(ID2D1SimplifiedGeometrySink *self, D2D1_BEZIER_SEGMENT* beziers, uint32 beziersCount) AddBeziers;
+				public function void(ID2D1SimplifiedGeometrySink *self, D2D1_FIGURE_END figureEnd) EndFigure;
+				public function HRESULT(ID2D1SimplifiedGeometrySink *self) Close;
+			}
 		}
 		
 	}

@@ -248,54 +248,79 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc0b35746, 0xebf5, 0x11d8, 0xbb, 0xe9, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(INetDiagHelper *self, uint32 celt, HELPER_ATTRIBUTE* rgAttributes) Initialize;
-			public function HRESULT(INetDiagHelper *self, DiagnosticsInfo** ppInfo) GetDiagnosticsInfo;
-			public function HRESULT(INetDiagHelper *self, uint32* pcelt, HELPER_ATTRIBUTE** pprgAttributes) GetKeyAttributes;
-			public function HRESULT(INetDiagHelper *self, PWSTR pwszInstanceDescription, PWSTR* ppwszDescription, int32* pDeferredTime, DIAGNOSIS_STATUS* pStatus) LowHealth;
-			public function HRESULT(INetDiagHelper *self, PWSTR pwszInstanceDescription, PWSTR* ppwszDescription, int32* pDeferredTime, DIAGNOSIS_STATUS* pStatus) HighUtilization;
-			public function HRESULT(INetDiagHelper *self, uint32* pcelt, HYPOTHESIS** pprgHypotheses) GetLowerHypotheses;
-			public function HRESULT(INetDiagHelper *self, uint32* pcelt, HYPOTHESIS** pprgHypotheses) GetDownStreamHypotheses;
-			public function HRESULT(INetDiagHelper *self, uint32* pcelt, HYPOTHESIS** pprgHypotheses) GetHigherHypotheses;
-			public function HRESULT(INetDiagHelper *self, uint32* pcelt, HYPOTHESIS** pprgHypotheses) GetUpStreamHypotheses;
-			public function HRESULT(INetDiagHelper *self, RepairInfo* pInfo, int32* pDeferredTime, REPAIR_STATUS* pStatus) Repair;
-			public function HRESULT(INetDiagHelper *self, PROBLEM_TYPE problem, int32* pDeferredTime, REPAIR_STATUS* pStatus) Validate;
-			public function HRESULT(INetDiagHelper *self, PROBLEM_TYPE problem, uint32* pcelt, RepairInfo** ppInfo) GetRepairInfo;
-			public function HRESULT(INetDiagHelper *self, LIFE_TIME* pLifeTime) GetLifeTime;
-			public function HRESULT(INetDiagHelper *self, LIFE_TIME lifeTime) SetLifeTime;
-			public function HRESULT(INetDiagHelper *self, FILETIME* pCacheTime) GetCacheTime;
-			public function HRESULT(INetDiagHelper *self, uint32* pcelt, HELPER_ATTRIBUTE** pprgAttributes) GetAttributes;
-			public function HRESULT(INetDiagHelper *self) Cancel;
-			public function HRESULT(INetDiagHelper *self) Cleanup;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INetDiagHelper *self, uint32 celt, HELPER_ATTRIBUTE* rgAttributes) Initialize;
+				public function HRESULT(INetDiagHelper *self, DiagnosticsInfo** ppInfo) GetDiagnosticsInfo;
+				public function HRESULT(INetDiagHelper *self, uint32* pcelt, HELPER_ATTRIBUTE** pprgAttributes) GetKeyAttributes;
+				public function HRESULT(INetDiagHelper *self, PWSTR pwszInstanceDescription, PWSTR* ppwszDescription, int32* pDeferredTime, DIAGNOSIS_STATUS* pStatus) LowHealth;
+				public function HRESULT(INetDiagHelper *self, PWSTR pwszInstanceDescription, PWSTR* ppwszDescription, int32* pDeferredTime, DIAGNOSIS_STATUS* pStatus) HighUtilization;
+				public function HRESULT(INetDiagHelper *self, uint32* pcelt, HYPOTHESIS** pprgHypotheses) GetLowerHypotheses;
+				public function HRESULT(INetDiagHelper *self, uint32* pcelt, HYPOTHESIS** pprgHypotheses) GetDownStreamHypotheses;
+				public function HRESULT(INetDiagHelper *self, uint32* pcelt, HYPOTHESIS** pprgHypotheses) GetHigherHypotheses;
+				public function HRESULT(INetDiagHelper *self, uint32* pcelt, HYPOTHESIS** pprgHypotheses) GetUpStreamHypotheses;
+				public function HRESULT(INetDiagHelper *self, RepairInfo* pInfo, int32* pDeferredTime, REPAIR_STATUS* pStatus) Repair;
+				public function HRESULT(INetDiagHelper *self, PROBLEM_TYPE problem, int32* pDeferredTime, REPAIR_STATUS* pStatus) Validate;
+				public function HRESULT(INetDiagHelper *self, PROBLEM_TYPE problem, uint32* pcelt, RepairInfo** ppInfo) GetRepairInfo;
+				public function HRESULT(INetDiagHelper *self, LIFE_TIME* pLifeTime) GetLifeTime;
+				public function HRESULT(INetDiagHelper *self, LIFE_TIME lifeTime) SetLifeTime;
+				public function HRESULT(INetDiagHelper *self, FILETIME* pCacheTime) GetCacheTime;
+				public function HRESULT(INetDiagHelper *self, uint32* pcelt, HELPER_ATTRIBUTE** pprgAttributes) GetAttributes;
+				public function HRESULT(INetDiagHelper *self) Cancel;
+				public function HRESULT(INetDiagHelper *self) Cleanup;
+			}
 		}
 		[CRepr]
 		public struct INetDiagHelperUtilFactory : IUnknown
 		{
 			public const new Guid IID = .(0x104613fb, 0xbc57, 0x4178, 0x95, 0xba, 0x88, 0x80, 0x96, 0x98, 0x35, 0x4a);
 			
-			public function HRESULT(INetDiagHelperUtilFactory *self, Guid* riid, void** ppvObject) CreateUtilityInstance;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INetDiagHelperUtilFactory *self, Guid* riid, void** ppvObject) CreateUtilityInstance;
+			}
 		}
 		[CRepr]
 		public struct INetDiagHelperEx : IUnknown
 		{
 			public const new Guid IID = .(0x972dab4d, 0xe4e3, 0x4fc6, 0xae, 0x54, 0x5f, 0x65, 0xcc, 0xde, 0x4a, 0x15);
 			
-			public function HRESULT(INetDiagHelperEx *self, uint32 celt, HypothesisResult* pResults, PWSTR* ppwszUpdatedDescription, DIAGNOSIS_STATUS* pUpdatedStatus) ReconfirmLowHealth;
-			public function HRESULT(INetDiagHelperEx *self, INetDiagHelperUtilFactory* pUtilities) SetUtilities;
-			public function HRESULT(INetDiagHelperEx *self) ReproduceFailure;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INetDiagHelperEx *self, uint32 celt, HypothesisResult* pResults, PWSTR* ppwszUpdatedDescription, DIAGNOSIS_STATUS* pUpdatedStatus) ReconfirmLowHealth;
+				public function HRESULT(INetDiagHelperEx *self, INetDiagHelperUtilFactory* pUtilities) SetUtilities;
+				public function HRESULT(INetDiagHelperEx *self) ReproduceFailure;
+			}
 		}
 		[CRepr]
 		public struct INetDiagHelperInfo : IUnknown
 		{
 			public const new Guid IID = .(0xc0b35747, 0xebf5, 0x11d8, 0xbb, 0xe9, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(INetDiagHelperInfo *self, uint32* pcelt, HelperAttributeInfo** pprgAttributeInfos) GetAttributeInfo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INetDiagHelperInfo *self, uint32* pcelt, HelperAttributeInfo** pprgAttributeInfos) GetAttributeInfo;
+			}
 		}
 		[CRepr]
 		public struct INetDiagExtensibleHelper : IUnknown
 		{
 			public const new Guid IID = .(0xc0b35748, 0xebf5, 0x11d8, 0xbb, 0xe9, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public function HRESULT(INetDiagExtensibleHelper *self, uint32 celt, HELPER_ATTRIBUTE* rgKeyAttributes, uint32* pcelt, HELPER_ATTRIBUTE** prgMatchValues) ResolveAttributes;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INetDiagExtensibleHelper *self, uint32 celt, HELPER_ATTRIBUTE* rgKeyAttributes, uint32* pcelt, HELPER_ATTRIBUTE** prgMatchValues) ResolveAttributes;
+			}
 		}
 		
 		// --- Functions ---

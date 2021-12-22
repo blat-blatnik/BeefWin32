@@ -6186,4415 +6186,6495 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x99180163, 0xda16, 0x101a, 0x93, 0x5c, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
 			
-			public function HRESULT(INotifyReplica *self, uint32 ulcOtherReplicas, IMoniker** rgpmkOtherReplicas) YouAreAReplica;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INotifyReplica *self, uint32 ulcOtherReplicas, IMoniker** rgpmkOtherReplicas) YouAreAReplica;
+			}
 		}
 		[CRepr]
 		public struct IContextMenu : IUnknown
 		{
 			public const new Guid IID = .(0x000214e4, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IContextMenu *self, HMENU hmenu, uint32 indexMenu, uint32 idCmdFirst, uint32 idCmdLast, uint32 uFlags) QueryContextMenu;
-			public function HRESULT(IContextMenu *self, CMINVOKECOMMANDINFO* pici) InvokeCommand;
-			public function HRESULT(IContextMenu *self, uint idCmd, uint32 uType, uint32* pReserved, PSTR pszName, uint32 cchMax) GetCommandString;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IContextMenu *self, HMENU hmenu, uint32 indexMenu, uint32 idCmdFirst, uint32 idCmdLast, uint32 uFlags) QueryContextMenu;
+				public function HRESULT(IContextMenu *self, CMINVOKECOMMANDINFO* pici) InvokeCommand;
+				public function HRESULT(IContextMenu *self, uint idCmd, uint32 uType, uint32* pReserved, PSTR pszName, uint32 cchMax) GetCommandString;
+			}
 		}
 		[CRepr]
 		public struct IContextMenu2 : IContextMenu
 		{
 			public const new Guid IID = .(0x000214f4, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IContextMenu2 *self, uint32 uMsg, WPARAM wParam, LPARAM lParam) HandleMenuMsg;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IContextMenu.VTable
+			{
+				public function HRESULT(IContextMenu2 *self, uint32 uMsg, WPARAM wParam, LPARAM lParam) HandleMenuMsg;
+			}
 		}
 		[CRepr]
 		public struct IContextMenu3 : IContextMenu2
 		{
 			public const new Guid IID = .(0xbcfce0a0, 0xec17, 0x11d0, 0x8d, 0x10, 0x00, 0xa0, 0xc9, 0x0f, 0x27, 0x19);
 			
-			public function HRESULT(IContextMenu3 *self, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult) HandleMenuMsg2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IContextMenu2.VTable
+			{
+				public function HRESULT(IContextMenu3 *self, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult) HandleMenuMsg2;
+			}
 		}
 		[CRepr]
 		public struct IExecuteCommand : IUnknown
 		{
 			public const new Guid IID = .(0x7f9185b0, 0xcb92, 0x43c5, 0x80, 0xa9, 0x92, 0x27, 0x7a, 0x4f, 0x7b, 0x54);
 			
-			public function HRESULT(IExecuteCommand *self, uint32 grfKeyState) SetKeyState;
-			public function HRESULT(IExecuteCommand *self, PWSTR pszParameters) SetParameters;
-			public function HRESULT(IExecuteCommand *self, POINT pt) SetPosition;
-			public function HRESULT(IExecuteCommand *self, int32 nShow) SetShowWindow;
-			public function HRESULT(IExecuteCommand *self, BOOL fNoShowUI) SetNoShowUI;
-			public function HRESULT(IExecuteCommand *self, PWSTR pszDirectory) SetDirectory;
-			public function HRESULT(IExecuteCommand *self) Execute;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IExecuteCommand *self, uint32 grfKeyState) SetKeyState;
+				public function HRESULT(IExecuteCommand *self, PWSTR pszParameters) SetParameters;
+				public function HRESULT(IExecuteCommand *self, POINT pt) SetPosition;
+				public function HRESULT(IExecuteCommand *self, int32 nShow) SetShowWindow;
+				public function HRESULT(IExecuteCommand *self, BOOL fNoShowUI) SetNoShowUI;
+				public function HRESULT(IExecuteCommand *self, PWSTR pszDirectory) SetDirectory;
+				public function HRESULT(IExecuteCommand *self) Execute;
+			}
 		}
 		[CRepr]
 		public struct IPersistFolder : IPersist
 		{
 			public const new Guid IID = .(0x000214ea, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IPersistFolder *self, ITEMIDLIST* pidl) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IPersist.VTable
+			{
+				public function HRESULT(IPersistFolder *self, ITEMIDLIST* pidl) Initialize;
+			}
 		}
 		[CRepr]
 		public struct IRunnableTask : IUnknown
 		{
 			public const new Guid IID = .(0x85788d00, 0x6807, 0x11d0, 0xb8, 0x10, 0x00, 0xc0, 0x4f, 0xd7, 0x06, 0xec);
 			
-			public function HRESULT(IRunnableTask *self) Run;
-			public function HRESULT(IRunnableTask *self, BOOL bWait) Kill;
-			public function HRESULT(IRunnableTask *self) Suspend;
-			public function HRESULT(IRunnableTask *self) Resume;
-			public function uint32(IRunnableTask *self) IsRunning;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRunnableTask *self) Run;
+				public function HRESULT(IRunnableTask *self, BOOL bWait) Kill;
+				public function HRESULT(IRunnableTask *self) Suspend;
+				public function HRESULT(IRunnableTask *self) Resume;
+				public function uint32(IRunnableTask *self) IsRunning;
+			}
 		}
 		[CRepr]
 		public struct IShellTaskScheduler : IUnknown
 		{
 			public const new Guid IID = .(0x6ccb7be0, 0x6807, 0x11d0, 0xb8, 0x10, 0x00, 0xc0, 0x4f, 0xd7, 0x06, 0xec);
 			
-			public function HRESULT(IShellTaskScheduler *self, IRunnableTask* prt, Guid* rtoid, uint lParam, uint32 dwPriority) AddTask;
-			public function HRESULT(IShellTaskScheduler *self, Guid* rtoid, uint lParam, BOOL bWaitIfRunning) RemoveTasks;
-			public function uint32(IShellTaskScheduler *self, Guid* rtoid) CountTasks;
-			public function HRESULT(IShellTaskScheduler *self, uint32 dwReleaseStatus, uint32 dwThreadTimeout) Status;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellTaskScheduler *self, IRunnableTask* prt, Guid* rtoid, uint lParam, uint32 dwPriority) AddTask;
+				public function HRESULT(IShellTaskScheduler *self, Guid* rtoid, uint lParam, BOOL bWaitIfRunning) RemoveTasks;
+				public function uint32(IShellTaskScheduler *self, Guid* rtoid) CountTasks;
+				public function HRESULT(IShellTaskScheduler *self, uint32 dwReleaseStatus, uint32 dwThreadTimeout) Status;
+			}
 		}
 		[CRepr]
 		public struct IPersistFolder2 : IPersistFolder
 		{
 			public const new Guid IID = .(0x1ac3d9f0, 0x175c, 0x11d1, 0x95, 0xbe, 0x00, 0x60, 0x97, 0x97, 0xea, 0x4f);
 			
-			public function HRESULT(IPersistFolder2 *self, ITEMIDLIST** ppidl) GetCurFolder;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IPersistFolder.VTable
+			{
+				public function HRESULT(IPersistFolder2 *self, ITEMIDLIST** ppidl) GetCurFolder;
+			}
 		}
 		[CRepr]
 		public struct IPersistFolder3 : IPersistFolder2
 		{
 			public const new Guid IID = .(0xcef04fdf, 0xfe72, 0x11d2, 0x87, 0xa5, 0x00, 0xc0, 0x4f, 0x68, 0x37, 0xcf);
 			
-			public function HRESULT(IPersistFolder3 *self, IBindCtx* pbc, ITEMIDLIST* pidlRoot, PERSIST_FOLDER_TARGET_INFO* ppfti) InitializeEx;
-			public function HRESULT(IPersistFolder3 *self, PERSIST_FOLDER_TARGET_INFO* ppfti) GetFolderTargetInfo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IPersistFolder2.VTable
+			{
+				public function HRESULT(IPersistFolder3 *self, IBindCtx* pbc, ITEMIDLIST* pidlRoot, PERSIST_FOLDER_TARGET_INFO* ppfti) InitializeEx;
+				public function HRESULT(IPersistFolder3 *self, PERSIST_FOLDER_TARGET_INFO* ppfti) GetFolderTargetInfo;
+			}
 		}
 		[CRepr]
 		public struct IPersistIDList : IPersist
 		{
 			public const new Guid IID = .(0x1079acfc, 0x29bd, 0x11d3, 0x8e, 0x0d, 0x00, 0xc0, 0x4f, 0x68, 0x37, 0xd5);
 			
-			public function HRESULT(IPersistIDList *self, ITEMIDLIST* pidl) SetIDList;
-			public function HRESULT(IPersistIDList *self, ITEMIDLIST** ppidl) GetIDList;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IPersist.VTable
+			{
+				public function HRESULT(IPersistIDList *self, ITEMIDLIST* pidl) SetIDList;
+				public function HRESULT(IPersistIDList *self, ITEMIDLIST** ppidl) GetIDList;
+			}
 		}
 		[CRepr]
 		public struct IEnumIDList : IUnknown
 		{
 			public const new Guid IID = .(0x000214f2, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IEnumIDList *self, uint32 celt, ITEMIDLIST** rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumIDList *self, uint32 celt) Skip;
-			public function HRESULT(IEnumIDList *self) Reset;
-			public function HRESULT(IEnumIDList *self, IEnumIDList** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumIDList *self, uint32 celt, ITEMIDLIST** rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumIDList *self, uint32 celt) Skip;
+				public function HRESULT(IEnumIDList *self) Reset;
+				public function HRESULT(IEnumIDList *self, IEnumIDList** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IEnumFullIDList : IUnknown
 		{
 			public const new Guid IID = .(0xd0191542, 0x7954, 0x4908, 0xbc, 0x06, 0xb2, 0x36, 0x0b, 0xbe, 0x45, 0xba);
 			
-			public function HRESULT(IEnumFullIDList *self, uint32 celt, ITEMIDLIST** rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumFullIDList *self, uint32 celt) Skip;
-			public function HRESULT(IEnumFullIDList *self) Reset;
-			public function HRESULT(IEnumFullIDList *self, IEnumFullIDList** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumFullIDList *self, uint32 celt, ITEMIDLIST** rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumFullIDList *self, uint32 celt) Skip;
+				public function HRESULT(IEnumFullIDList *self) Reset;
+				public function HRESULT(IEnumFullIDList *self, IEnumFullIDList** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IFileSyncMergeHandler : IUnknown
 		{
 			public const new Guid IID = .(0xd97b5aac, 0xc792, 0x433c, 0x97, 0x5d, 0x35, 0xc4, 0xea, 0xdc, 0x7a, 0x9d);
 			
-			public function HRESULT(IFileSyncMergeHandler *self, PWSTR localFilePath, PWSTR serverFilePath, MERGE_UPDATE_STATUS* updateStatus) Merge;
-			public function HRESULT(IFileSyncMergeHandler *self, PWSTR localFilePath, HMONITOR monitorToDisplayOn) ShowResolveConflictUIAsync;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IFileSyncMergeHandler *self, PWSTR localFilePath, PWSTR serverFilePath, MERGE_UPDATE_STATUS* updateStatus) Merge;
+				public function HRESULT(IFileSyncMergeHandler *self, PWSTR localFilePath, HMONITOR monitorToDisplayOn) ShowResolveConflictUIAsync;
+			}
 		}
 		[CRepr]
 		public struct IObjectWithFolderEnumMode : IUnknown
 		{
 			public const new Guid IID = .(0x6a9d9026, 0x0e6e, 0x464c, 0xb0, 0x00, 0x42, 0xec, 0xc0, 0x7d, 0xe6, 0x73);
 			
-			public function HRESULT(IObjectWithFolderEnumMode *self, FOLDER_ENUM_MODE feMode) SetMode;
-			public function HRESULT(IObjectWithFolderEnumMode *self, FOLDER_ENUM_MODE* pfeMode) GetMode;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IObjectWithFolderEnumMode *self, FOLDER_ENUM_MODE feMode) SetMode;
+				public function HRESULT(IObjectWithFolderEnumMode *self, FOLDER_ENUM_MODE* pfeMode) GetMode;
+			}
 		}
 		[CRepr]
 		public struct IParseAndCreateItem : IUnknown
 		{
 			public const new Guid IID = .(0x67efed0e, 0xe827, 0x4408, 0xb4, 0x93, 0x78, 0xf3, 0x98, 0x2b, 0x68, 0x5c);
 			
-			public function HRESULT(IParseAndCreateItem *self, IShellItem* psi) SetItem;
-			public function HRESULT(IParseAndCreateItem *self, Guid* riid, void** ppv) GetItem;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IParseAndCreateItem *self, IShellItem* psi) SetItem;
+				public function HRESULT(IParseAndCreateItem *self, Guid* riid, void** ppv) GetItem;
+			}
 		}
 		[CRepr]
 		public struct IShellFolder : IUnknown
 		{
 			public const new Guid IID = .(0x000214e6, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IShellFolder *self, HWND hwnd, IBindCtx* pbc, PWSTR pszDisplayName, uint32* pchEaten, ITEMIDLIST** ppidl, uint32* pdwAttributes) ParseDisplayName;
-			public function HRESULT(IShellFolder *self, HWND hwnd, uint32 grfFlags, IEnumIDList** ppenumIDList) EnumObjects;
-			public function HRESULT(IShellFolder *self, ITEMIDLIST* pidl, IBindCtx* pbc, Guid* riid, void** ppv) BindToObject;
-			public function HRESULT(IShellFolder *self, ITEMIDLIST* pidl, IBindCtx* pbc, Guid* riid, void** ppv) BindToStorage;
-			public function HRESULT(IShellFolder *self, LPARAM lParam, ITEMIDLIST* pidl1, ITEMIDLIST* pidl2) CompareIDs;
-			public function HRESULT(IShellFolder *self, HWND hwndOwner, Guid* riid, void** ppv) CreateViewObject;
-			public function HRESULT(IShellFolder *self, uint32 cidl, ITEMIDLIST** apidl, uint32* rgfInOut) GetAttributesOf;
-			public function HRESULT(IShellFolder *self, HWND hwndOwner, uint32 cidl, ITEMIDLIST** apidl, Guid* riid, uint32* rgfReserved, void** ppv) GetUIObjectOf;
-			public function HRESULT(IShellFolder *self, ITEMIDLIST* pidl, uint32 uFlags, STRRET* pName) GetDisplayNameOf;
-			public function HRESULT(IShellFolder *self, HWND hwnd, ITEMIDLIST* pidl, PWSTR pszName, uint32 uFlags, ITEMIDLIST** ppidlOut) SetNameOf;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellFolder *self, HWND hwnd, IBindCtx* pbc, PWSTR pszDisplayName, uint32* pchEaten, ITEMIDLIST** ppidl, uint32* pdwAttributes) ParseDisplayName;
+				public function HRESULT(IShellFolder *self, HWND hwnd, uint32 grfFlags, IEnumIDList** ppenumIDList) EnumObjects;
+				public function HRESULT(IShellFolder *self, ITEMIDLIST* pidl, IBindCtx* pbc, Guid* riid, void** ppv) BindToObject;
+				public function HRESULT(IShellFolder *self, ITEMIDLIST* pidl, IBindCtx* pbc, Guid* riid, void** ppv) BindToStorage;
+				public function HRESULT(IShellFolder *self, LPARAM lParam, ITEMIDLIST* pidl1, ITEMIDLIST* pidl2) CompareIDs;
+				public function HRESULT(IShellFolder *self, HWND hwndOwner, Guid* riid, void** ppv) CreateViewObject;
+				public function HRESULT(IShellFolder *self, uint32 cidl, ITEMIDLIST** apidl, uint32* rgfInOut) GetAttributesOf;
+				public function HRESULT(IShellFolder *self, HWND hwndOwner, uint32 cidl, ITEMIDLIST** apidl, Guid* riid, uint32* rgfReserved, void** ppv) GetUIObjectOf;
+				public function HRESULT(IShellFolder *self, ITEMIDLIST* pidl, uint32 uFlags, STRRET* pName) GetDisplayNameOf;
+				public function HRESULT(IShellFolder *self, HWND hwnd, ITEMIDLIST* pidl, PWSTR pszName, uint32 uFlags, ITEMIDLIST** ppidlOut) SetNameOf;
+			}
 		}
 		[CRepr]
 		public struct IEnumExtraSearch : IUnknown
 		{
 			public const new Guid IID = .(0x0e700be1, 0x9db6, 0x11d1, 0xa1, 0xce, 0x00, 0xc0, 0x4f, 0xd7, 0x5d, 0x13);
 			
-			public function HRESULT(IEnumExtraSearch *self, uint32 celt, EXTRASEARCH* rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumExtraSearch *self, uint32 celt) Skip;
-			public function HRESULT(IEnumExtraSearch *self) Reset;
-			public function HRESULT(IEnumExtraSearch *self, IEnumExtraSearch** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumExtraSearch *self, uint32 celt, EXTRASEARCH* rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumExtraSearch *self, uint32 celt) Skip;
+				public function HRESULT(IEnumExtraSearch *self) Reset;
+				public function HRESULT(IEnumExtraSearch *self, IEnumExtraSearch** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IShellFolder2 : IShellFolder
 		{
 			public const new Guid IID = .(0x93f2f68c, 0x1d1b, 0x11d3, 0xa3, 0x0e, 0x00, 0xc0, 0x4f, 0x79, 0xab, 0xd1);
 			
-			public function HRESULT(IShellFolder2 *self, Guid* pguid) GetDefaultSearchGUID;
-			public function HRESULT(IShellFolder2 *self, IEnumExtraSearch** ppenum) EnumSearches;
-			public function HRESULT(IShellFolder2 *self, uint32 dwRes, uint32* pSort, uint32* pDisplay) GetDefaultColumn;
-			public function HRESULT(IShellFolder2 *self, uint32 iColumn, uint32* pcsFlags) GetDefaultColumnState;
-			public function HRESULT(IShellFolder2 *self, ITEMIDLIST* pidl, PROPERTYKEY* pscid, VARIANT* pv) GetDetailsEx;
-			public function HRESULT(IShellFolder2 *self, ITEMIDLIST* pidl, uint32 iColumn, SHELLDETAILS* psd) GetDetailsOf;
-			public function HRESULT(IShellFolder2 *self, uint32 iColumn, PROPERTYKEY* pscid) MapColumnToSCID;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellFolder.VTable
+			{
+				public function HRESULT(IShellFolder2 *self, Guid* pguid) GetDefaultSearchGUID;
+				public function HRESULT(IShellFolder2 *self, IEnumExtraSearch** ppenum) EnumSearches;
+				public function HRESULT(IShellFolder2 *self, uint32 dwRes, uint32* pSort, uint32* pDisplay) GetDefaultColumn;
+				public function HRESULT(IShellFolder2 *self, uint32 iColumn, uint32* pcsFlags) GetDefaultColumnState;
+				public function HRESULT(IShellFolder2 *self, ITEMIDLIST* pidl, PROPERTYKEY* pscid, VARIANT* pv) GetDetailsEx;
+				public function HRESULT(IShellFolder2 *self, ITEMIDLIST* pidl, uint32 iColumn, SHELLDETAILS* psd) GetDetailsOf;
+				public function HRESULT(IShellFolder2 *self, uint32 iColumn, PROPERTYKEY* pscid) MapColumnToSCID;
+			}
 		}
 		[CRepr]
 		public struct IShellView : IOleWindow
 		{
 			public const new Guid IID = .(0x000214e3, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IShellView *self, MSG* pmsg) TranslateAccelerator;
-			public function HRESULT(IShellView *self, BOOL fEnable) EnableModeless;
-			public function HRESULT(IShellView *self, uint32 uState) UIActivate;
-			public function HRESULT(IShellView *self) Refresh;
-			public function HRESULT(IShellView *self, IShellView* psvPrevious, FOLDERSETTINGS* pfs, IShellBrowser* psb, RECT* prcView, HWND* phWnd) CreateViewWindow;
-			public function HRESULT(IShellView *self) DestroyViewWindow;
-			public function HRESULT(IShellView *self, FOLDERSETTINGS* pfs) GetCurrentInfo;
-			public function HRESULT(IShellView *self, uint32 dwReserved, LPFNSVADDPROPSHEETPAGE pfn, LPARAM lparam) AddPropertySheetPages;
-			public function HRESULT(IShellView *self) SaveViewState;
-			public function HRESULT(IShellView *self, ITEMIDLIST* pidlItem, uint32 uFlags) SelectItem;
-			public function HRESULT(IShellView *self, uint32 uItem, Guid* riid, void** ppv) GetItemObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IOleWindow.VTable
+			{
+				public function HRESULT(IShellView *self, MSG* pmsg) TranslateAccelerator;
+				public function HRESULT(IShellView *self, BOOL fEnable) EnableModeless;
+				public function HRESULT(IShellView *self, uint32 uState) UIActivate;
+				public function HRESULT(IShellView *self) Refresh;
+				public function HRESULT(IShellView *self, IShellView* psvPrevious, FOLDERSETTINGS* pfs, IShellBrowser* psb, RECT* prcView, HWND* phWnd) CreateViewWindow;
+				public function HRESULT(IShellView *self) DestroyViewWindow;
+				public function HRESULT(IShellView *self, FOLDERSETTINGS* pfs) GetCurrentInfo;
+				public function HRESULT(IShellView *self, uint32 dwReserved, LPFNSVADDPROPSHEETPAGE pfn, LPARAM lparam) AddPropertySheetPages;
+				public function HRESULT(IShellView *self) SaveViewState;
+				public function HRESULT(IShellView *self, ITEMIDLIST* pidlItem, uint32 uFlags) SelectItem;
+				public function HRESULT(IShellView *self, uint32 uItem, Guid* riid, void** ppv) GetItemObject;
+			}
 		}
 		[CRepr]
 		public struct IShellView2 : IShellView
 		{
 			public const new Guid IID = .(0x88e39e80, 0x3578, 0x11cf, 0xae, 0x69, 0x08, 0x00, 0x2b, 0x2e, 0x12, 0x62);
 			
-			public function HRESULT(IShellView2 *self, Guid* pvid, uint32 uView) GetView;
-			public function HRESULT(IShellView2 *self, SV2CVW2_PARAMS* lpParams) CreateViewWindow2;
-			public function HRESULT(IShellView2 *self, ITEMIDLIST* pidlNew) HandleRename;
-			public function HRESULT(IShellView2 *self, ITEMIDLIST* pidlItem, uint32 uFlags, POINT* ppt) SelectAndPositionItem;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellView.VTable
+			{
+				public function HRESULT(IShellView2 *self, Guid* pvid, uint32 uView) GetView;
+				public function HRESULT(IShellView2 *self, SV2CVW2_PARAMS* lpParams) CreateViewWindow2;
+				public function HRESULT(IShellView2 *self, ITEMIDLIST* pidlNew) HandleRename;
+				public function HRESULT(IShellView2 *self, ITEMIDLIST* pidlItem, uint32 uFlags, POINT* ppt) SelectAndPositionItem;
+			}
 		}
 		[CRepr]
 		public struct IFolderView : IUnknown
 		{
 			public const new Guid IID = .(0xcde725b0, 0xccc9, 0x4519, 0x91, 0x7e, 0x32, 0x5d, 0x72, 0xfa, 0xb4, 0xce);
 			
-			public function HRESULT(IFolderView *self, uint32* pViewMode) GetCurrentViewMode;
-			public function HRESULT(IFolderView *self, uint32 ViewMode) SetCurrentViewMode;
-			public function HRESULT(IFolderView *self, Guid* riid, void** ppv) GetFolder;
-			public function HRESULT(IFolderView *self, int32 iItemIndex, ITEMIDLIST** ppidl) Item;
-			public function HRESULT(IFolderView *self, uint32 uFlags, int32* pcItems) ItemCount;
-			public function HRESULT(IFolderView *self, uint32 uFlags, Guid* riid, void** ppv) Items;
-			public function HRESULT(IFolderView *self, int32* piItem) GetSelectionMarkedItem;
-			public function HRESULT(IFolderView *self, int32* piItem) GetFocusedItem;
-			public function HRESULT(IFolderView *self, ITEMIDLIST* pidl, POINT* ppt) GetItemPosition;
-			public function HRESULT(IFolderView *self, POINT* ppt) GetSpacing;
-			public function HRESULT(IFolderView *self, POINT* ppt) GetDefaultSpacing;
-			public function HRESULT(IFolderView *self) GetAutoArrange;
-			public function HRESULT(IFolderView *self, int32 iItem, uint32 dwFlags) SelectItem;
-			public function HRESULT(IFolderView *self, uint32 cidl, ITEMIDLIST** apidl, POINT* apt, uint32 dwFlags) SelectAndPositionItems;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IFolderView *self, uint32* pViewMode) GetCurrentViewMode;
+				public function HRESULT(IFolderView *self, uint32 ViewMode) SetCurrentViewMode;
+				public function HRESULT(IFolderView *self, Guid* riid, void** ppv) GetFolder;
+				public function HRESULT(IFolderView *self, int32 iItemIndex, ITEMIDLIST** ppidl) Item;
+				public function HRESULT(IFolderView *self, uint32 uFlags, int32* pcItems) ItemCount;
+				public function HRESULT(IFolderView *self, uint32 uFlags, Guid* riid, void** ppv) Items;
+				public function HRESULT(IFolderView *self, int32* piItem) GetSelectionMarkedItem;
+				public function HRESULT(IFolderView *self, int32* piItem) GetFocusedItem;
+				public function HRESULT(IFolderView *self, ITEMIDLIST* pidl, POINT* ppt) GetItemPosition;
+				public function HRESULT(IFolderView *self, POINT* ppt) GetSpacing;
+				public function HRESULT(IFolderView *self, POINT* ppt) GetDefaultSpacing;
+				public function HRESULT(IFolderView *self) GetAutoArrange;
+				public function HRESULT(IFolderView *self, int32 iItem, uint32 dwFlags) SelectItem;
+				public function HRESULT(IFolderView *self, uint32 cidl, ITEMIDLIST** apidl, POINT* apt, uint32 dwFlags) SelectAndPositionItems;
+			}
 		}
 		[CRepr]
 		public struct IFolderView2 : IFolderView
 		{
 			public const new Guid IID = .(0x1af3a467, 0x214f, 0x4298, 0x90, 0x8e, 0x06, 0xb0, 0x3e, 0x0b, 0x39, 0xf9);
 			
-			public function HRESULT(IFolderView2 *self, PROPERTYKEY* key, BOOL fAscending) SetGroupBy;
-			public function HRESULT(IFolderView2 *self, PROPERTYKEY* pkey, BOOL* pfAscending) GetGroupBy;
-			public function HRESULT(IFolderView2 *self, ITEMIDLIST* pidl, PROPERTYKEY* propkey, PROPVARIANT* propvar) SetViewProperty;
-			public function HRESULT(IFolderView2 *self, ITEMIDLIST* pidl, PROPERTYKEY* propkey, PROPVARIANT* ppropvar) GetViewProperty;
-			public function HRESULT(IFolderView2 *self, ITEMIDLIST* pidl, PWSTR pszPropList) SetTileViewProperties;
-			public function HRESULT(IFolderView2 *self, ITEMIDLIST* pidl, PWSTR pszPropList) SetExtendedTileViewProperties;
-			public function HRESULT(IFolderView2 *self, FVTEXTTYPE iType, PWSTR pwszText) SetText;
-			public function HRESULT(IFolderView2 *self, uint32 dwMask, uint32 dwFlags) SetCurrentFolderFlags;
-			public function HRESULT(IFolderView2 *self, uint32* pdwFlags) GetCurrentFolderFlags;
-			public function HRESULT(IFolderView2 *self, int32* pcColumns) GetSortColumnCount;
-			public function HRESULT(IFolderView2 *self, SORTCOLUMN* rgSortColumns, int32 cColumns) SetSortColumns;
-			public function HRESULT(IFolderView2 *self, SORTCOLUMN* rgSortColumns, int32 cColumns) GetSortColumns;
-			public function HRESULT(IFolderView2 *self, int32 iItem, Guid* riid, void** ppv) GetItem;
-			public function HRESULT(IFolderView2 *self, int32 iStart, BOOL fPrevious, int32* piItem) GetVisibleItem;
-			public function HRESULT(IFolderView2 *self, int32 iStart, int32* piItem) GetSelectedItem;
-			public function HRESULT(IFolderView2 *self, BOOL fNoneImpliesFolder, IShellItemArray** ppsia) GetSelection;
-			public function HRESULT(IFolderView2 *self, ITEMIDLIST* pidl, uint32* pdwFlags) GetSelectionState;
-			public function HRESULT(IFolderView2 *self, PSTR pszVerb) InvokeVerbOnSelection;
-			public function HRESULT(IFolderView2 *self, FOLDERVIEWMODE uViewMode, int32 iImageSize) SetViewModeAndIconSize;
-			public function HRESULT(IFolderView2 *self, FOLDERVIEWMODE* puViewMode, int32* piImageSize) GetViewModeAndIconSize;
-			public function HRESULT(IFolderView2 *self, uint32 cVisibleRows) SetGroupSubsetCount;
-			public function HRESULT(IFolderView2 *self, uint32* pcVisibleRows) GetGroupSubsetCount;
-			public function HRESULT(IFolderView2 *self, BOOL fRedrawOn) SetRedraw;
-			public function HRESULT(IFolderView2 *self) IsMoveInSameFolder;
-			public function HRESULT(IFolderView2 *self) DoRename;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IFolderView.VTable
+			{
+				public function HRESULT(IFolderView2 *self, PROPERTYKEY* key, BOOL fAscending) SetGroupBy;
+				public function HRESULT(IFolderView2 *self, PROPERTYKEY* pkey, BOOL* pfAscending) GetGroupBy;
+				public function HRESULT(IFolderView2 *self, ITEMIDLIST* pidl, PROPERTYKEY* propkey, PROPVARIANT* propvar) SetViewProperty;
+				public function HRESULT(IFolderView2 *self, ITEMIDLIST* pidl, PROPERTYKEY* propkey, PROPVARIANT* ppropvar) GetViewProperty;
+				public function HRESULT(IFolderView2 *self, ITEMIDLIST* pidl, PWSTR pszPropList) SetTileViewProperties;
+				public function HRESULT(IFolderView2 *self, ITEMIDLIST* pidl, PWSTR pszPropList) SetExtendedTileViewProperties;
+				public function HRESULT(IFolderView2 *self, FVTEXTTYPE iType, PWSTR pwszText) SetText;
+				public function HRESULT(IFolderView2 *self, uint32 dwMask, uint32 dwFlags) SetCurrentFolderFlags;
+				public function HRESULT(IFolderView2 *self, uint32* pdwFlags) GetCurrentFolderFlags;
+				public function HRESULT(IFolderView2 *self, int32* pcColumns) GetSortColumnCount;
+				public function HRESULT(IFolderView2 *self, SORTCOLUMN* rgSortColumns, int32 cColumns) SetSortColumns;
+				public function HRESULT(IFolderView2 *self, SORTCOLUMN* rgSortColumns, int32 cColumns) GetSortColumns;
+				public function HRESULT(IFolderView2 *self, int32 iItem, Guid* riid, void** ppv) GetItem;
+				public function HRESULT(IFolderView2 *self, int32 iStart, BOOL fPrevious, int32* piItem) GetVisibleItem;
+				public function HRESULT(IFolderView2 *self, int32 iStart, int32* piItem) GetSelectedItem;
+				public function HRESULT(IFolderView2 *self, BOOL fNoneImpliesFolder, IShellItemArray** ppsia) GetSelection;
+				public function HRESULT(IFolderView2 *self, ITEMIDLIST* pidl, uint32* pdwFlags) GetSelectionState;
+				public function HRESULT(IFolderView2 *self, PSTR pszVerb) InvokeVerbOnSelection;
+				public function HRESULT(IFolderView2 *self, FOLDERVIEWMODE uViewMode, int32 iImageSize) SetViewModeAndIconSize;
+				public function HRESULT(IFolderView2 *self, FOLDERVIEWMODE* puViewMode, int32* piImageSize) GetViewModeAndIconSize;
+				public function HRESULT(IFolderView2 *self, uint32 cVisibleRows) SetGroupSubsetCount;
+				public function HRESULT(IFolderView2 *self, uint32* pcVisibleRows) GetGroupSubsetCount;
+				public function HRESULT(IFolderView2 *self, BOOL fRedrawOn) SetRedraw;
+				public function HRESULT(IFolderView2 *self) IsMoveInSameFolder;
+				public function HRESULT(IFolderView2 *self) DoRename;
+			}
 		}
 		[CRepr]
 		public struct IFolderViewSettings : IUnknown
 		{
 			public const new Guid IID = .(0xae8c987d, 0x8797, 0x4ed3, 0xbe, 0x72, 0x2a, 0x47, 0xdd, 0x93, 0x8d, 0xb0);
 			
-			public function HRESULT(IFolderViewSettings *self, Guid* riid, void** ppv) GetColumnPropertyList;
-			public function HRESULT(IFolderViewSettings *self, PROPERTYKEY* pkey, BOOL* pfGroupAscending) GetGroupByProperty;
-			public function HRESULT(IFolderViewSettings *self, FOLDERLOGICALVIEWMODE* plvm) GetViewMode;
-			public function HRESULT(IFolderViewSettings *self, uint32* puIconSize) GetIconSize;
-			public function HRESULT(IFolderViewSettings *self, FOLDERFLAGS* pfolderMask, FOLDERFLAGS* pfolderFlags) GetFolderFlags;
-			public function HRESULT(IFolderViewSettings *self, SORTCOLUMN* rgSortColumns, uint32 cColumnsIn, uint32* pcColumnsOut) GetSortColumns;
-			public function HRESULT(IFolderViewSettings *self, uint32* pcVisibleRows) GetGroupSubsetCount;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IFolderViewSettings *self, Guid* riid, void** ppv) GetColumnPropertyList;
+				public function HRESULT(IFolderViewSettings *self, PROPERTYKEY* pkey, BOOL* pfGroupAscending) GetGroupByProperty;
+				public function HRESULT(IFolderViewSettings *self, FOLDERLOGICALVIEWMODE* plvm) GetViewMode;
+				public function HRESULT(IFolderViewSettings *self, uint32* puIconSize) GetIconSize;
+				public function HRESULT(IFolderViewSettings *self, FOLDERFLAGS* pfolderMask, FOLDERFLAGS* pfolderFlags) GetFolderFlags;
+				public function HRESULT(IFolderViewSettings *self, SORTCOLUMN* rgSortColumns, uint32 cColumnsIn, uint32* pcColumnsOut) GetSortColumns;
+				public function HRESULT(IFolderViewSettings *self, uint32* pcVisibleRows) GetGroupSubsetCount;
+			}
 		}
 		[CRepr]
 		public struct IInitializeNetworkFolder : IUnknown
 		{
 			public const new Guid IID = .(0x6e0f9881, 0x42a8, 0x4f2a, 0x97, 0xf8, 0x8a, 0xf4, 0xe0, 0x26, 0xd9, 0x2d);
 			
-			public function HRESULT(IInitializeNetworkFolder *self, ITEMIDLIST* pidl, ITEMIDLIST* pidlTarget, uint32 uDisplayType, PWSTR pszResName, PWSTR pszProvider) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInitializeNetworkFolder *self, ITEMIDLIST* pidl, ITEMIDLIST* pidlTarget, uint32 uDisplayType, PWSTR pszResName, PWSTR pszProvider) Initialize;
+			}
 		}
 		[CRepr]
 		public struct INetworkFolderInternal : IUnknown
 		{
 			public const new Guid IID = .(0xceb38218, 0xc971, 0x47bb, 0xa7, 0x03, 0xf0, 0xbc, 0x99, 0xcc, 0xdb, 0x81);
 			
-			public function HRESULT(INetworkFolderInternal *self, uint32* displayType) GetResourceDisplayType;
-			public function HRESULT(INetworkFolderInternal *self, ITEMIDLIST** idList) GetIDList;
-			public function HRESULT(INetworkFolderInternal *self, uint32 itemIdCount, ITEMIDLIST** itemIds, uint32 providerMaxLength, char16* provider) GetProvider;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INetworkFolderInternal *self, uint32* displayType) GetResourceDisplayType;
+				public function HRESULT(INetworkFolderInternal *self, ITEMIDLIST** idList) GetIDList;
+				public function HRESULT(INetworkFolderInternal *self, uint32 itemIdCount, ITEMIDLIST** itemIds, uint32 providerMaxLength, char16* provider) GetProvider;
+			}
 		}
 		[CRepr]
 		public struct IPreviewHandlerVisuals : IUnknown
 		{
 			public const new Guid IID = .(0x196bf9a5, 0xb346, 0x4ef0, 0xaa, 0x1e, 0x5d, 0xcd, 0xb7, 0x67, 0x68, 0xb1);
 			
-			public function HRESULT(IPreviewHandlerVisuals *self, uint32 color) SetBackgroundColor;
-			public function HRESULT(IPreviewHandlerVisuals *self, LOGFONTW* plf) SetFont;
-			public function HRESULT(IPreviewHandlerVisuals *self, uint32 color) SetTextColor;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPreviewHandlerVisuals *self, uint32 color) SetBackgroundColor;
+				public function HRESULT(IPreviewHandlerVisuals *self, LOGFONTW* plf) SetFont;
+				public function HRESULT(IPreviewHandlerVisuals *self, uint32 color) SetTextColor;
+			}
 		}
 		[CRepr]
 		public struct ICommDlgBrowser : IUnknown
 		{
 			public const new Guid IID = .(0x000214f1, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(ICommDlgBrowser *self, IShellView* ppshv) OnDefaultCommand;
-			public function HRESULT(ICommDlgBrowser *self, IShellView* ppshv, uint32 uChange) OnStateChange;
-			public function HRESULT(ICommDlgBrowser *self, IShellView* ppshv, ITEMIDLIST* pidl) IncludeObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICommDlgBrowser *self, IShellView* ppshv) OnDefaultCommand;
+				public function HRESULT(ICommDlgBrowser *self, IShellView* ppshv, uint32 uChange) OnStateChange;
+				public function HRESULT(ICommDlgBrowser *self, IShellView* ppshv, ITEMIDLIST* pidl) IncludeObject;
+			}
 		}
 		[CRepr]
 		public struct ICommDlgBrowser2 : ICommDlgBrowser
 		{
 			public const new Guid IID = .(0x10339516, 0x2894, 0x11d2, 0x90, 0x39, 0x00, 0xc0, 0x4f, 0x8e, 0xeb, 0x3e);
 			
-			public function HRESULT(ICommDlgBrowser2 *self, IShellView* ppshv, uint32 dwNotifyType) Notify;
-			public function HRESULT(ICommDlgBrowser2 *self, IShellView* ppshv, char16* pszText, int32 cchMax) GetDefaultMenuText;
-			public function HRESULT(ICommDlgBrowser2 *self, uint32* pdwFlags) GetViewFlags;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICommDlgBrowser.VTable
+			{
+				public function HRESULT(ICommDlgBrowser2 *self, IShellView* ppshv, uint32 dwNotifyType) Notify;
+				public function HRESULT(ICommDlgBrowser2 *self, IShellView* ppshv, char16* pszText, int32 cchMax) GetDefaultMenuText;
+				public function HRESULT(ICommDlgBrowser2 *self, uint32* pdwFlags) GetViewFlags;
+			}
 		}
 		[CRepr]
 		public struct IColumnManager : IUnknown
 		{
 			public const new Guid IID = .(0xd8ec27bb, 0x3f3b, 0x4042, 0xb1, 0x0a, 0x4a, 0xcf, 0xd9, 0x24, 0xd4, 0x53);
 			
-			public function HRESULT(IColumnManager *self, PROPERTYKEY* propkey, CM_COLUMNINFO* pcmci) SetColumnInfo;
-			public function HRESULT(IColumnManager *self, PROPERTYKEY* propkey, CM_COLUMNINFO* pcmci) GetColumnInfo;
-			public function HRESULT(IColumnManager *self, CM_ENUM_FLAGS dwFlags, uint32* puCount) GetColumnCount;
-			public function HRESULT(IColumnManager *self, CM_ENUM_FLAGS dwFlags, PROPERTYKEY* rgkeyOrder, uint32 cColumns) GetColumns;
-			public function HRESULT(IColumnManager *self, PROPERTYKEY* rgkeyOrder, uint32 cVisible) SetColumns;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IColumnManager *self, PROPERTYKEY* propkey, CM_COLUMNINFO* pcmci) SetColumnInfo;
+				public function HRESULT(IColumnManager *self, PROPERTYKEY* propkey, CM_COLUMNINFO* pcmci) GetColumnInfo;
+				public function HRESULT(IColumnManager *self, CM_ENUM_FLAGS dwFlags, uint32* puCount) GetColumnCount;
+				public function HRESULT(IColumnManager *self, CM_ENUM_FLAGS dwFlags, PROPERTYKEY* rgkeyOrder, uint32 cColumns) GetColumns;
+				public function HRESULT(IColumnManager *self, PROPERTYKEY* rgkeyOrder, uint32 cVisible) SetColumns;
+			}
 		}
 		[CRepr]
 		public struct IFolderFilterSite : IUnknown
 		{
 			public const new Guid IID = .(0xc0a651f5, 0xb48b, 0x11d2, 0xb5, 0xed, 0x00, 0x60, 0x97, 0xc6, 0x86, 0xf6);
 			
-			public function HRESULT(IFolderFilterSite *self, IUnknown* punk) SetFilter;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IFolderFilterSite *self, IUnknown* punk) SetFilter;
+			}
 		}
 		[CRepr]
 		public struct IFolderFilter : IUnknown
 		{
 			public const new Guid IID = .(0x9cc22886, 0xdc8e, 0x11d2, 0xb1, 0xd0, 0x00, 0xc0, 0x4f, 0x8e, 0xeb, 0x3e);
 			
-			public function HRESULT(IFolderFilter *self, IShellFolder* psf, ITEMIDLIST* pidlFolder, ITEMIDLIST* pidlItem) ShouldShow;
-			public function HRESULT(IFolderFilter *self, IShellFolder* psf, ITEMIDLIST* pidlFolder, HWND* phwnd, uint32* pgrfFlags) GetEnumFlags;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IFolderFilter *self, IShellFolder* psf, ITEMIDLIST* pidlFolder, ITEMIDLIST* pidlItem) ShouldShow;
+				public function HRESULT(IFolderFilter *self, IShellFolder* psf, ITEMIDLIST* pidlFolder, HWND* phwnd, uint32* pgrfFlags) GetEnumFlags;
+			}
 		}
 		[CRepr]
 		public struct IInputObjectSite : IUnknown
 		{
 			public const new Guid IID = .(0xf1db8392, 0x7331, 0x11d0, 0x8c, 0x99, 0x00, 0xa0, 0xc9, 0x2d, 0xbf, 0xe8);
 			
-			public function HRESULT(IInputObjectSite *self, IUnknown* punkObj, BOOL fSetFocus) OnFocusChangeIS;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInputObjectSite *self, IUnknown* punkObj, BOOL fSetFocus) OnFocusChangeIS;
+			}
 		}
 		[CRepr]
 		public struct IInputObject : IUnknown
 		{
 			public const new Guid IID = .(0x68284faa, 0x6a48, 0x11d0, 0x8c, 0x78, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0xb4);
 			
-			public function HRESULT(IInputObject *self, BOOL fActivate, MSG* pMsg) UIActivateIO;
-			public function HRESULT(IInputObject *self) HasFocusIO;
-			public function HRESULT(IInputObject *self, MSG* pMsg) TranslateAcceleratorIO;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInputObject *self, BOOL fActivate, MSG* pMsg) UIActivateIO;
+				public function HRESULT(IInputObject *self) HasFocusIO;
+				public function HRESULT(IInputObject *self, MSG* pMsg) TranslateAcceleratorIO;
+			}
 		}
 		[CRepr]
 		public struct IInputObject2 : IInputObject
 		{
 			public const new Guid IID = .(0x6915c085, 0x510b, 0x44cd, 0x94, 0xaf, 0x28, 0xdf, 0xa5, 0x6c, 0xf9, 0x2b);
 			
-			public function HRESULT(IInputObject2 *self, MSG* pMsg) TranslateAcceleratorGlobal;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IInputObject.VTable
+			{
+				public function HRESULT(IInputObject2 *self, MSG* pMsg) TranslateAcceleratorGlobal;
+			}
 		}
 		[CRepr]
 		public struct IShellIcon : IUnknown
 		{
 			public const new Guid IID = .(0x000214e5, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IShellIcon *self, ITEMIDLIST* pidl, uint32 flags, int32* pIconIndex) GetIconOf;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellIcon *self, ITEMIDLIST* pidl, uint32 flags, int32* pIconIndex) GetIconOf;
+			}
 		}
 		[CRepr]
 		public struct IShellBrowser : IOleWindow
 		{
 			public const new Guid IID = .(0x000214e2, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IShellBrowser *self, HMENU hmenuShared, OleMenuGroupWidths* lpMenuWidths) InsertMenusSB;
-			public function HRESULT(IShellBrowser *self, HMENU hmenuShared, int holemenuRes, HWND hwndActiveObject) SetMenuSB;
-			public function HRESULT(IShellBrowser *self, HMENU hmenuShared) RemoveMenusSB;
-			public function HRESULT(IShellBrowser *self, PWSTR pszStatusText) SetStatusTextSB;
-			public function HRESULT(IShellBrowser *self, BOOL fEnable) EnableModelessSB;
-			public function HRESULT(IShellBrowser *self, MSG* pmsg, uint16 wID) TranslateAcceleratorSB;
-			public function HRESULT(IShellBrowser *self, ITEMIDLIST* pidl, uint32 wFlags) BrowseObject;
-			public function HRESULT(IShellBrowser *self, uint32 grfMode, IStream** ppStrm) GetViewStateStream;
-			public function HRESULT(IShellBrowser *self, uint32 id, HWND* phwnd) GetControlWindow;
-			public function HRESULT(IShellBrowser *self, uint32 id, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* pret) SendControlMsg;
-			public function HRESULT(IShellBrowser *self, IShellView** ppshv) QueryActiveShellView;
-			public function HRESULT(IShellBrowser *self, IShellView* pshv) OnViewWindowActive;
-			public function HRESULT(IShellBrowser *self, TBBUTTON* lpButtons, uint32 nButtons, uint32 uFlags) SetToolbarItems;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IOleWindow.VTable
+			{
+				public function HRESULT(IShellBrowser *self, HMENU hmenuShared, OleMenuGroupWidths* lpMenuWidths) InsertMenusSB;
+				public function HRESULT(IShellBrowser *self, HMENU hmenuShared, int holemenuRes, HWND hwndActiveObject) SetMenuSB;
+				public function HRESULT(IShellBrowser *self, HMENU hmenuShared) RemoveMenusSB;
+				public function HRESULT(IShellBrowser *self, PWSTR pszStatusText) SetStatusTextSB;
+				public function HRESULT(IShellBrowser *self, BOOL fEnable) EnableModelessSB;
+				public function HRESULT(IShellBrowser *self, MSG* pmsg, uint16 wID) TranslateAcceleratorSB;
+				public function HRESULT(IShellBrowser *self, ITEMIDLIST* pidl, uint32 wFlags) BrowseObject;
+				public function HRESULT(IShellBrowser *self, uint32 grfMode, IStream** ppStrm) GetViewStateStream;
+				public function HRESULT(IShellBrowser *self, uint32 id, HWND* phwnd) GetControlWindow;
+				public function HRESULT(IShellBrowser *self, uint32 id, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* pret) SendControlMsg;
+				public function HRESULT(IShellBrowser *self, IShellView** ppshv) QueryActiveShellView;
+				public function HRESULT(IShellBrowser *self, IShellView* pshv) OnViewWindowActive;
+				public function HRESULT(IShellBrowser *self, TBBUTTON* lpButtons, uint32 nButtons, uint32 uFlags) SetToolbarItems;
+			}
 		}
 		[CRepr]
 		public struct IProfferService : IUnknown
 		{
 			public const new Guid IID = .(0xcb728b20, 0xf786, 0x11ce, 0x92, 0xad, 0x00, 0xaa, 0x00, 0xa7, 0x4c, 0xd0);
 			
-			public function HRESULT(IProfferService *self, Guid* serviceId, IServiceProvider* serviceProvider, uint32* cookie) ProfferService;
-			public function HRESULT(IProfferService *self, uint32 cookie) RevokeService;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IProfferService *self, Guid* serviceId, IServiceProvider* serviceProvider, uint32* cookie) ProfferService;
+				public function HRESULT(IProfferService *self, uint32 cookie) RevokeService;
+			}
 		}
 		[CRepr]
 		public struct IGetServiceIds : IUnknown
 		{
 			public const new Guid IID = .(0x4a073526, 0x6103, 0x4e21, 0xb7, 0xbc, 0xf5, 0x19, 0xd1, 0x52, 0x4e, 0x5d);
 			
-			public function HRESULT(IGetServiceIds *self, uint32* serviceIdCount, Guid** serviceIds) GetServiceIds;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IGetServiceIds *self, uint32* serviceIdCount, Guid** serviceIds) GetServiceIds;
+			}
 		}
 		[CRepr]
 		public struct IShellItem : IUnknown
 		{
 			public const new Guid IID = .(0x43826d1e, 0xe718, 0x42ee, 0xbc, 0x55, 0xa1, 0xe2, 0x61, 0xc3, 0x7b, 0xfe);
 			
-			public function HRESULT(IShellItem *self, IBindCtx* pbc, Guid* bhid, Guid* riid, void** ppv) BindToHandler;
-			public function HRESULT(IShellItem *self, IShellItem** ppsi) GetParent;
-			public function HRESULT(IShellItem *self, SIGDN sigdnName, PWSTR* ppszName) GetDisplayName;
-			public function HRESULT(IShellItem *self, uint32 sfgaoMask, uint32* psfgaoAttribs) GetAttributes;
-			public function HRESULT(IShellItem *self, IShellItem* psi, uint32 hint, int32* piOrder) Compare;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellItem *self, IBindCtx* pbc, Guid* bhid, Guid* riid, void** ppv) BindToHandler;
+				public function HRESULT(IShellItem *self, IShellItem** ppsi) GetParent;
+				public function HRESULT(IShellItem *self, SIGDN sigdnName, PWSTR* ppszName) GetDisplayName;
+				public function HRESULT(IShellItem *self, uint32 sfgaoMask, uint32* psfgaoAttribs) GetAttributes;
+				public function HRESULT(IShellItem *self, IShellItem* psi, uint32 hint, int32* piOrder) Compare;
+			}
 		}
 		[CRepr]
 		public struct IShellItem2 : IShellItem
 		{
 			public const new Guid IID = .(0x7e9fb0d3, 0x919f, 0x4307, 0xab, 0x2e, 0x9b, 0x18, 0x60, 0x31, 0x0c, 0x93);
 			
-			public function HRESULT(IShellItem2 *self, GETPROPERTYSTOREFLAGS flags, Guid* riid, void** ppv) GetPropertyStore;
-			public function HRESULT(IShellItem2 *self, GETPROPERTYSTOREFLAGS flags, IUnknown* punkCreateObject, Guid* riid, void** ppv) GetPropertyStoreWithCreateObject;
-			public function HRESULT(IShellItem2 *self, PROPERTYKEY* rgKeys, uint32 cKeys, GETPROPERTYSTOREFLAGS flags, Guid* riid, void** ppv) GetPropertyStoreForKeys;
-			public function HRESULT(IShellItem2 *self, PROPERTYKEY* keyType, Guid* riid, void** ppv) GetPropertyDescriptionList;
-			public function HRESULT(IShellItem2 *self, IBindCtx* pbc) Update;
-			public function HRESULT(IShellItem2 *self, PROPERTYKEY* key, PROPVARIANT* ppropvar) GetProperty;
-			public function HRESULT(IShellItem2 *self, PROPERTYKEY* key, Guid* pclsid) GetCLSID;
-			public function HRESULT(IShellItem2 *self, PROPERTYKEY* key, FILETIME* pft) GetFileTime;
-			public function HRESULT(IShellItem2 *self, PROPERTYKEY* key, int32* pi) GetInt32;
-			public function HRESULT(IShellItem2 *self, PROPERTYKEY* key, PWSTR* ppsz) GetString;
-			public function HRESULT(IShellItem2 *self, PROPERTYKEY* key, uint32* pui) GetUInt32;
-			public function HRESULT(IShellItem2 *self, PROPERTYKEY* key, uint64* pull) GetUInt64;
-			public function HRESULT(IShellItem2 *self, PROPERTYKEY* key, BOOL* pf) GetBool;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellItem.VTable
+			{
+				public function HRESULT(IShellItem2 *self, GETPROPERTYSTOREFLAGS flags, Guid* riid, void** ppv) GetPropertyStore;
+				public function HRESULT(IShellItem2 *self, GETPROPERTYSTOREFLAGS flags, IUnknown* punkCreateObject, Guid* riid, void** ppv) GetPropertyStoreWithCreateObject;
+				public function HRESULT(IShellItem2 *self, PROPERTYKEY* rgKeys, uint32 cKeys, GETPROPERTYSTOREFLAGS flags, Guid* riid, void** ppv) GetPropertyStoreForKeys;
+				public function HRESULT(IShellItem2 *self, PROPERTYKEY* keyType, Guid* riid, void** ppv) GetPropertyDescriptionList;
+				public function HRESULT(IShellItem2 *self, IBindCtx* pbc) Update;
+				public function HRESULT(IShellItem2 *self, PROPERTYKEY* key, PROPVARIANT* ppropvar) GetProperty;
+				public function HRESULT(IShellItem2 *self, PROPERTYKEY* key, Guid* pclsid) GetCLSID;
+				public function HRESULT(IShellItem2 *self, PROPERTYKEY* key, FILETIME* pft) GetFileTime;
+				public function HRESULT(IShellItem2 *self, PROPERTYKEY* key, int32* pi) GetInt32;
+				public function HRESULT(IShellItem2 *self, PROPERTYKEY* key, PWSTR* ppsz) GetString;
+				public function HRESULT(IShellItem2 *self, PROPERTYKEY* key, uint32* pui) GetUInt32;
+				public function HRESULT(IShellItem2 *self, PROPERTYKEY* key, uint64* pull) GetUInt64;
+				public function HRESULT(IShellItem2 *self, PROPERTYKEY* key, BOOL* pf) GetBool;
+			}
 		}
 		[CRepr]
 		public struct IShellItemImageFactory : IUnknown
 		{
 			public const new Guid IID = .(0xbcc18b79, 0xba16, 0x442f, 0x80, 0xc4, 0x8a, 0x59, 0xc3, 0x0c, 0x46, 0x3b);
 			
-			public function HRESULT(IShellItemImageFactory *self, SIZE size, SIIGBF flags, HBITMAP* phbm) GetImage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellItemImageFactory *self, SIZE size, SIIGBF flags, HBITMAP* phbm) GetImage;
+			}
 		}
 		[CRepr]
 		public struct IEnumShellItems : IUnknown
 		{
 			public const new Guid IID = .(0x70629033, 0xe363, 0x4a28, 0xa5, 0x67, 0x0d, 0xb7, 0x80, 0x06, 0xe6, 0xd7);
 			
-			public function HRESULT(IEnumShellItems *self, uint32 celt, IShellItem** rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumShellItems *self, uint32 celt) Skip;
-			public function HRESULT(IEnumShellItems *self) Reset;
-			public function HRESULT(IEnumShellItems *self, IEnumShellItems** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumShellItems *self, uint32 celt, IShellItem** rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumShellItems *self, uint32 celt) Skip;
+				public function HRESULT(IEnumShellItems *self) Reset;
+				public function HRESULT(IEnumShellItems *self, IEnumShellItems** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct ITransferAdviseSink : IUnknown
 		{
 			public const new Guid IID = .(0xd594d0d8, 0x8da7, 0x457b, 0xb3, 0xb4, 0xce, 0x5d, 0xba, 0xac, 0x0b, 0x88);
 			
-			public function HRESULT(ITransferAdviseSink *self, uint64 ullSizeCurrent, uint64 ullSizeTotal, int32 nFilesCurrent, int32 nFilesTotal, int32 nFoldersCurrent, int32 nFoldersTotal) UpdateProgress;
-			public function HRESULT(ITransferAdviseSink *self, uint32 ts) UpdateTransferState;
-			public function HRESULT(ITransferAdviseSink *self, IShellItem* psiSource, IShellItem* psiDestParent, PWSTR pszName) ConfirmOverwrite;
-			public function HRESULT(ITransferAdviseSink *self, IShellItem* psiSource) ConfirmEncryptionLoss;
-			public function HRESULT(ITransferAdviseSink *self, IShellItem* psi, PWSTR pszItem, HRESULT hrError, char16* pszRename, uint32 cchRename) FileFailure;
-			public function HRESULT(ITransferAdviseSink *self, IShellItem* psi, PWSTR pszStreamName, HRESULT hrError) SubStreamFailure;
-			public function HRESULT(ITransferAdviseSink *self, IShellItem* psi, PROPERTYKEY* pkey, HRESULT hrError) PropertyFailure;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITransferAdviseSink *self, uint64 ullSizeCurrent, uint64 ullSizeTotal, int32 nFilesCurrent, int32 nFilesTotal, int32 nFoldersCurrent, int32 nFoldersTotal) UpdateProgress;
+				public function HRESULT(ITransferAdviseSink *self, uint32 ts) UpdateTransferState;
+				public function HRESULT(ITransferAdviseSink *self, IShellItem* psiSource, IShellItem* psiDestParent, PWSTR pszName) ConfirmOverwrite;
+				public function HRESULT(ITransferAdviseSink *self, IShellItem* psiSource) ConfirmEncryptionLoss;
+				public function HRESULT(ITransferAdviseSink *self, IShellItem* psi, PWSTR pszItem, HRESULT hrError, char16* pszRename, uint32 cchRename) FileFailure;
+				public function HRESULT(ITransferAdviseSink *self, IShellItem* psi, PWSTR pszStreamName, HRESULT hrError) SubStreamFailure;
+				public function HRESULT(ITransferAdviseSink *self, IShellItem* psi, PROPERTYKEY* pkey, HRESULT hrError) PropertyFailure;
+			}
 		}
 		[CRepr]
 		public struct ITransferSource : IUnknown
 		{
 			public const new Guid IID = .(0x00adb003, 0xbde9, 0x45c6, 0x8e, 0x29, 0xd0, 0x9f, 0x93, 0x53, 0xe1, 0x08);
 			
-			public function HRESULT(ITransferSource *self, ITransferAdviseSink* psink, uint32* pdwCookie) Advise;
-			public function HRESULT(ITransferSource *self, uint32 dwCookie) Unadvise;
-			public function HRESULT(ITransferSource *self, IPropertyChangeArray* pproparray) SetProperties;
-			public function HRESULT(ITransferSource *self, IShellItem* psi, uint32 flags, Guid* riid, void** ppv) OpenItem;
-			public function HRESULT(ITransferSource *self, IShellItem* psi, IShellItem* psiParentDst, PWSTR pszNameDst, uint32 flags, IShellItem** ppsiNew) MoveItem;
-			public function HRESULT(ITransferSource *self, IShellItem* psiSource, IShellItem* psiParentDest, uint32 flags, IShellItem** ppsiNewDest) RecycleItem;
-			public function HRESULT(ITransferSource *self, IShellItem* psiSource, uint32 flags) RemoveItem;
-			public function HRESULT(ITransferSource *self, IShellItem* psiSource, PWSTR pszNewName, uint32 flags, IShellItem** ppsiNewDest) RenameItem;
-			public function HRESULT(ITransferSource *self, IShellItem* psiSource, IShellItem* psiParentDest, PWSTR pszNewName, uint32 flags, IShellItem** ppsiNewDest) LinkItem;
-			public function HRESULT(ITransferSource *self, IShellItem* psiSource, IShellItem** ppsiNew) ApplyPropertiesToItem;
-			public function HRESULT(ITransferSource *self, IShellItem* psiSource, IShellItem* psiParentDest, PWSTR* ppszDestinationName) GetDefaultDestinationName;
-			public function HRESULT(ITransferSource *self, IShellItem* psiChildFolderDest) EnterFolder;
-			public function HRESULT(ITransferSource *self, IShellItem* psiChildFolderDest) LeaveFolder;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITransferSource *self, ITransferAdviseSink* psink, uint32* pdwCookie) Advise;
+				public function HRESULT(ITransferSource *self, uint32 dwCookie) Unadvise;
+				public function HRESULT(ITransferSource *self, IPropertyChangeArray* pproparray) SetProperties;
+				public function HRESULT(ITransferSource *self, IShellItem* psi, uint32 flags, Guid* riid, void** ppv) OpenItem;
+				public function HRESULT(ITransferSource *self, IShellItem* psi, IShellItem* psiParentDst, PWSTR pszNameDst, uint32 flags, IShellItem** ppsiNew) MoveItem;
+				public function HRESULT(ITransferSource *self, IShellItem* psiSource, IShellItem* psiParentDest, uint32 flags, IShellItem** ppsiNewDest) RecycleItem;
+				public function HRESULT(ITransferSource *self, IShellItem* psiSource, uint32 flags) RemoveItem;
+				public function HRESULT(ITransferSource *self, IShellItem* psiSource, PWSTR pszNewName, uint32 flags, IShellItem** ppsiNewDest) RenameItem;
+				public function HRESULT(ITransferSource *self, IShellItem* psiSource, IShellItem* psiParentDest, PWSTR pszNewName, uint32 flags, IShellItem** ppsiNewDest) LinkItem;
+				public function HRESULT(ITransferSource *self, IShellItem* psiSource, IShellItem** ppsiNew) ApplyPropertiesToItem;
+				public function HRESULT(ITransferSource *self, IShellItem* psiSource, IShellItem* psiParentDest, PWSTR* ppszDestinationName) GetDefaultDestinationName;
+				public function HRESULT(ITransferSource *self, IShellItem* psiChildFolderDest) EnterFolder;
+				public function HRESULT(ITransferSource *self, IShellItem* psiChildFolderDest) LeaveFolder;
+			}
 		}
 		[CRepr]
 		public struct IEnumResources : IUnknown
 		{
 			public const new Guid IID = .(0x2dd81fe3, 0xa83c, 0x4da9, 0xa3, 0x30, 0x47, 0x24, 0x9d, 0x34, 0x5b, 0xa1);
 			
-			public function HRESULT(IEnumResources *self, uint32 celt, SHELL_ITEM_RESOURCE* psir, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumResources *self, uint32 celt) Skip;
-			public function HRESULT(IEnumResources *self) Reset;
-			public function HRESULT(IEnumResources *self, IEnumResources** ppenumr) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumResources *self, uint32 celt, SHELL_ITEM_RESOURCE* psir, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumResources *self, uint32 celt) Skip;
+				public function HRESULT(IEnumResources *self) Reset;
+				public function HRESULT(IEnumResources *self, IEnumResources** ppenumr) Clone;
+			}
 		}
 		[CRepr]
 		public struct IShellItemResources : IUnknown
 		{
 			public const new Guid IID = .(0xff5693be, 0x2ce0, 0x4d48, 0xb5, 0xc5, 0x40, 0x81, 0x7d, 0x1a, 0xcd, 0xb9);
 			
-			public function HRESULT(IShellItemResources *self, uint32* pdwAttributes) GetAttributes;
-			public function HRESULT(IShellItemResources *self, uint64* pullSize) GetSize;
-			public function HRESULT(IShellItemResources *self, FILETIME* pftCreation, FILETIME* pftWrite, FILETIME* pftAccess) GetTimes;
-			public function HRESULT(IShellItemResources *self, FILETIME* pftCreation, FILETIME* pftWrite, FILETIME* pftAccess) SetTimes;
-			public function HRESULT(IShellItemResources *self, SHELL_ITEM_RESOURCE* pcsir, PWSTR* ppszDescription) GetResourceDescription;
-			public function HRESULT(IShellItemResources *self, IEnumResources** ppenumr) EnumResources;
-			public function HRESULT(IShellItemResources *self, SHELL_ITEM_RESOURCE* pcsir) SupportsResource;
-			public function HRESULT(IShellItemResources *self, SHELL_ITEM_RESOURCE* pcsir, Guid* riid, void** ppv) OpenResource;
-			public function HRESULT(IShellItemResources *self, SHELL_ITEM_RESOURCE* pcsir, Guid* riid, void** ppv) CreateResource;
-			public function HRESULT(IShellItemResources *self) MarkForDelete;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellItemResources *self, uint32* pdwAttributes) GetAttributes;
+				public function HRESULT(IShellItemResources *self, uint64* pullSize) GetSize;
+				public function HRESULT(IShellItemResources *self, FILETIME* pftCreation, FILETIME* pftWrite, FILETIME* pftAccess) GetTimes;
+				public function HRESULT(IShellItemResources *self, FILETIME* pftCreation, FILETIME* pftWrite, FILETIME* pftAccess) SetTimes;
+				public function HRESULT(IShellItemResources *self, SHELL_ITEM_RESOURCE* pcsir, PWSTR* ppszDescription) GetResourceDescription;
+				public function HRESULT(IShellItemResources *self, IEnumResources** ppenumr) EnumResources;
+				public function HRESULT(IShellItemResources *self, SHELL_ITEM_RESOURCE* pcsir) SupportsResource;
+				public function HRESULT(IShellItemResources *self, SHELL_ITEM_RESOURCE* pcsir, Guid* riid, void** ppv) OpenResource;
+				public function HRESULT(IShellItemResources *self, SHELL_ITEM_RESOURCE* pcsir, Guid* riid, void** ppv) CreateResource;
+				public function HRESULT(IShellItemResources *self) MarkForDelete;
+			}
 		}
 		[CRepr]
 		public struct ITransferDestination : IUnknown
 		{
 			public const new Guid IID = .(0x48addd32, 0x3ca5, 0x4124, 0xab, 0xe3, 0xb5, 0xa7, 0x25, 0x31, 0xb2, 0x07);
 			
-			public function HRESULT(ITransferDestination *self, ITransferAdviseSink* psink, uint32* pdwCookie) Advise;
-			public function HRESULT(ITransferDestination *self, uint32 dwCookie) Unadvise;
-			public function HRESULT(ITransferDestination *self, PWSTR pszName, uint32 dwAttributes, uint64 ullSize, uint32 flags, Guid* riidItem, void** ppvItem, Guid* riidResources, void** ppvResources) CreateItem;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITransferDestination *self, ITransferAdviseSink* psink, uint32* pdwCookie) Advise;
+				public function HRESULT(ITransferDestination *self, uint32 dwCookie) Unadvise;
+				public function HRESULT(ITransferDestination *self, PWSTR pszName, uint32 dwAttributes, uint64 ullSize, uint32 flags, Guid* riidItem, void** ppvItem, Guid* riidResources, void** ppvResources) CreateItem;
+			}
 		}
 		[CRepr]
 		public struct IFileOperationProgressSink : IUnknown
 		{
 			public const new Guid IID = .(0x04b0f1a7, 0x9490, 0x44bc, 0x96, 0xe1, 0x42, 0x96, 0xa3, 0x12, 0x52, 0xe2);
 			
-			public function HRESULT(IFileOperationProgressSink *self) StartOperations;
-			public function HRESULT(IFileOperationProgressSink *self, HRESULT hrResult) FinishOperations;
-			public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiItem, PWSTR pszNewName) PreRenameItem;
-			public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiItem, PWSTR pszNewName, HRESULT hrRename, IShellItem* psiNewlyCreated) PostRenameItem;
-			public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, PWSTR pszNewName) PreMoveItem;
-			public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, PWSTR pszNewName, HRESULT hrMove, IShellItem* psiNewlyCreated) PostMoveItem;
-			public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, PWSTR pszNewName) PreCopyItem;
-			public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, PWSTR pszNewName, HRESULT hrCopy, IShellItem* psiNewlyCreated) PostCopyItem;
-			public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiItem) PreDeleteItem;
-			public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiItem, HRESULT hrDelete, IShellItem* psiNewlyCreated) PostDeleteItem;
-			public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiDestinationFolder, PWSTR pszNewName) PreNewItem;
-			public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiDestinationFolder, PWSTR pszNewName, PWSTR pszTemplateName, uint32 dwFileAttributes, HRESULT hrNew, IShellItem* psiNewItem) PostNewItem;
-			public function HRESULT(IFileOperationProgressSink *self, uint32 iWorkTotal, uint32 iWorkSoFar) UpdateProgress;
-			public function HRESULT(IFileOperationProgressSink *self) ResetTimer;
-			public function HRESULT(IFileOperationProgressSink *self) PauseTimer;
-			public function HRESULT(IFileOperationProgressSink *self) ResumeTimer;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IFileOperationProgressSink *self) StartOperations;
+				public function HRESULT(IFileOperationProgressSink *self, HRESULT hrResult) FinishOperations;
+				public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiItem, PWSTR pszNewName) PreRenameItem;
+				public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiItem, PWSTR pszNewName, HRESULT hrRename, IShellItem* psiNewlyCreated) PostRenameItem;
+				public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, PWSTR pszNewName) PreMoveItem;
+				public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, PWSTR pszNewName, HRESULT hrMove, IShellItem* psiNewlyCreated) PostMoveItem;
+				public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, PWSTR pszNewName) PreCopyItem;
+				public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, PWSTR pszNewName, HRESULT hrCopy, IShellItem* psiNewlyCreated) PostCopyItem;
+				public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiItem) PreDeleteItem;
+				public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiItem, HRESULT hrDelete, IShellItem* psiNewlyCreated) PostDeleteItem;
+				public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiDestinationFolder, PWSTR pszNewName) PreNewItem;
+				public function HRESULT(IFileOperationProgressSink *self, uint32 dwFlags, IShellItem* psiDestinationFolder, PWSTR pszNewName, PWSTR pszTemplateName, uint32 dwFileAttributes, HRESULT hrNew, IShellItem* psiNewItem) PostNewItem;
+				public function HRESULT(IFileOperationProgressSink *self, uint32 iWorkTotal, uint32 iWorkSoFar) UpdateProgress;
+				public function HRESULT(IFileOperationProgressSink *self) ResetTimer;
+				public function HRESULT(IFileOperationProgressSink *self) PauseTimer;
+				public function HRESULT(IFileOperationProgressSink *self) ResumeTimer;
+			}
 		}
 		[CRepr]
 		public struct IShellItemArray : IUnknown
 		{
 			public const new Guid IID = .(0xb63ea76d, 0x1f85, 0x456f, 0xa1, 0x9c, 0x48, 0x15, 0x9e, 0xfa, 0x85, 0x8b);
 			
-			public function HRESULT(IShellItemArray *self, IBindCtx* pbc, Guid* bhid, Guid* riid, void** ppvOut) BindToHandler;
-			public function HRESULT(IShellItemArray *self, GETPROPERTYSTOREFLAGS flags, Guid* riid, void** ppv) GetPropertyStore;
-			public function HRESULT(IShellItemArray *self, PROPERTYKEY* keyType, Guid* riid, void** ppv) GetPropertyDescriptionList;
-			public function HRESULT(IShellItemArray *self, SIATTRIBFLAGS AttribFlags, uint32 sfgaoMask, uint32* psfgaoAttribs) GetAttributes;
-			public function HRESULT(IShellItemArray *self, uint32* pdwNumItems) GetCount;
-			public function HRESULT(IShellItemArray *self, uint32 dwIndex, IShellItem** ppsi) GetItemAt;
-			public function HRESULT(IShellItemArray *self, IEnumShellItems** ppenumShellItems) EnumItems;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellItemArray *self, IBindCtx* pbc, Guid* bhid, Guid* riid, void** ppvOut) BindToHandler;
+				public function HRESULT(IShellItemArray *self, GETPROPERTYSTOREFLAGS flags, Guid* riid, void** ppv) GetPropertyStore;
+				public function HRESULT(IShellItemArray *self, PROPERTYKEY* keyType, Guid* riid, void** ppv) GetPropertyDescriptionList;
+				public function HRESULT(IShellItemArray *self, SIATTRIBFLAGS AttribFlags, uint32 sfgaoMask, uint32* psfgaoAttribs) GetAttributes;
+				public function HRESULT(IShellItemArray *self, uint32* pdwNumItems) GetCount;
+				public function HRESULT(IShellItemArray *self, uint32 dwIndex, IShellItem** ppsi) GetItemAt;
+				public function HRESULT(IShellItemArray *self, IEnumShellItems** ppenumShellItems) EnumItems;
+			}
 		}
 		[CRepr]
 		public struct IInitializeWithItem : IUnknown
 		{
 			public const new Guid IID = .(0x7f73be3f, 0xfb79, 0x493c, 0xa6, 0xc7, 0x7e, 0xe1, 0x4e, 0x24, 0x58, 0x41);
 			
-			public function HRESULT(IInitializeWithItem *self, IShellItem* psi, uint32 grfMode) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInitializeWithItem *self, IShellItem* psi, uint32 grfMode) Initialize;
+			}
 		}
 		[CRepr]
 		public struct IObjectWithSelection : IUnknown
 		{
 			public const new Guid IID = .(0x1c9cd5bb, 0x98e9, 0x4491, 0xa6, 0x0f, 0x31, 0xaa, 0xcc, 0x72, 0xb8, 0x3c);
 			
-			public function HRESULT(IObjectWithSelection *self, IShellItemArray* psia) SetSelection;
-			public function HRESULT(IObjectWithSelection *self, Guid* riid, void** ppv) GetSelection;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IObjectWithSelection *self, IShellItemArray* psia) SetSelection;
+				public function HRESULT(IObjectWithSelection *self, Guid* riid, void** ppv) GetSelection;
+			}
 		}
 		[CRepr]
 		public struct IObjectWithBackReferences : IUnknown
 		{
 			public const new Guid IID = .(0x321a6a6a, 0xd61f, 0x4bf3, 0x97, 0xae, 0x14, 0xbe, 0x29, 0x86, 0xbb, 0x36);
 			
-			public function HRESULT(IObjectWithBackReferences *self) RemoveBackReferences;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IObjectWithBackReferences *self) RemoveBackReferences;
+			}
 		}
 		[CRepr]
 		public struct ICategoryProvider : IUnknown
 		{
 			public const new Guid IID = .(0x9af64809, 0x5864, 0x4c26, 0xa7, 0x20, 0xc1, 0xf7, 0x8c, 0x08, 0x6e, 0xe3);
 			
-			public function HRESULT(ICategoryProvider *self, PROPERTYKEY* pscid) CanCategorizeOnSCID;
-			public function HRESULT(ICategoryProvider *self, Guid* pguid, PROPERTYKEY* pscid) GetDefaultCategory;
-			public function HRESULT(ICategoryProvider *self, PROPERTYKEY* pscid, Guid* pguid) GetCategoryForSCID;
-			public function HRESULT(ICategoryProvider *self, IEnumGUID** penum) EnumCategories;
-			public function HRESULT(ICategoryProvider *self, Guid* pguid, char16* pszName, uint32 cch) GetCategoryName;
-			public function HRESULT(ICategoryProvider *self, Guid* pguid, Guid* riid, void** ppv) CreateCategory;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICategoryProvider *self, PROPERTYKEY* pscid) CanCategorizeOnSCID;
+				public function HRESULT(ICategoryProvider *self, Guid* pguid, PROPERTYKEY* pscid) GetDefaultCategory;
+				public function HRESULT(ICategoryProvider *self, PROPERTYKEY* pscid, Guid* pguid) GetCategoryForSCID;
+				public function HRESULT(ICategoryProvider *self, IEnumGUID** penum) EnumCategories;
+				public function HRESULT(ICategoryProvider *self, Guid* pguid, char16* pszName, uint32 cch) GetCategoryName;
+				public function HRESULT(ICategoryProvider *self, Guid* pguid, Guid* riid, void** ppv) CreateCategory;
+			}
 		}
 		[CRepr]
 		public struct ICategorizer : IUnknown
 		{
 			public const new Guid IID = .(0xa3b14589, 0x9174, 0x49a8, 0x89, 0xa3, 0x06, 0xa1, 0xae, 0x2b, 0x9b, 0xa7);
 			
-			public function HRESULT(ICategorizer *self, char16* pszDesc, uint32 cch) GetDescription;
-			public function HRESULT(ICategorizer *self, uint32 cidl, ITEMIDLIST** apidl, uint32* rgCategoryIds) GetCategory;
-			public function HRESULT(ICategorizer *self, uint32 dwCategoryId, CATEGORY_INFO* pci) GetCategoryInfo;
-			public function HRESULT(ICategorizer *self, CATSORT_FLAGS csfFlags, uint32 dwCategoryId1, uint32 dwCategoryId2) CompareCategory;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICategorizer *self, char16* pszDesc, uint32 cch) GetDescription;
+				public function HRESULT(ICategorizer *self, uint32 cidl, ITEMIDLIST** apidl, uint32* rgCategoryIds) GetCategory;
+				public function HRESULT(ICategorizer *self, uint32 dwCategoryId, CATEGORY_INFO* pci) GetCategoryInfo;
+				public function HRESULT(ICategorizer *self, CATSORT_FLAGS csfFlags, uint32 dwCategoryId1, uint32 dwCategoryId2) CompareCategory;
+			}
 		}
 		[CRepr]
 		public struct IDropTargetHelper : IUnknown
 		{
 			public const new Guid IID = .(0x4657278b, 0x411b, 0x11d2, 0x83, 0x9a, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0xd0);
 			
-			public function HRESULT(IDropTargetHelper *self, HWND hwndTarget, IDataObject* pDataObject, POINT* ppt, uint32 dwEffect) DragEnter;
-			public function HRESULT(IDropTargetHelper *self) DragLeave;
-			public function HRESULT(IDropTargetHelper *self, POINT* ppt, uint32 dwEffect) DragOver;
-			public function HRESULT(IDropTargetHelper *self, IDataObject* pDataObject, POINT* ppt, uint32 dwEffect) Drop;
-			public function HRESULT(IDropTargetHelper *self, BOOL fShow) Show;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDropTargetHelper *self, HWND hwndTarget, IDataObject* pDataObject, POINT* ppt, uint32 dwEffect) DragEnter;
+				public function HRESULT(IDropTargetHelper *self) DragLeave;
+				public function HRESULT(IDropTargetHelper *self, POINT* ppt, uint32 dwEffect) DragOver;
+				public function HRESULT(IDropTargetHelper *self, IDataObject* pDataObject, POINT* ppt, uint32 dwEffect) Drop;
+				public function HRESULT(IDropTargetHelper *self, BOOL fShow) Show;
+			}
 		}
 		[CRepr]
 		public struct IDragSourceHelper : IUnknown
 		{
 			public const new Guid IID = .(0xde5bf786, 0x477a, 0x11d2, 0x83, 0x9d, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0xd0);
 			
-			public function HRESULT(IDragSourceHelper *self, SHDRAGIMAGE* pshdi, IDataObject* pDataObject) InitializeFromBitmap;
-			public function HRESULT(IDragSourceHelper *self, HWND hwnd, POINT* ppt, IDataObject* pDataObject) InitializeFromWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDragSourceHelper *self, SHDRAGIMAGE* pshdi, IDataObject* pDataObject) InitializeFromBitmap;
+				public function HRESULT(IDragSourceHelper *self, HWND hwnd, POINT* ppt, IDataObject* pDataObject) InitializeFromWindow;
+			}
 		}
 		[CRepr]
 		public struct IShellLinkA : IUnknown
 		{
 			public const new Guid IID = .(0x000214ee, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IShellLinkA *self, uint8* pszFile, int32 cch, WIN32_FIND_DATAA* pfd, uint32 fFlags) GetPath;
-			public function HRESULT(IShellLinkA *self, ITEMIDLIST** ppidl) GetIDList;
-			public function HRESULT(IShellLinkA *self, ITEMIDLIST* pidl) SetIDList;
-			public function HRESULT(IShellLinkA *self, uint8* pszName, int32 cch) GetDescription;
-			public function HRESULT(IShellLinkA *self, PSTR pszName) SetDescription;
-			public function HRESULT(IShellLinkA *self, uint8* pszDir, int32 cch) GetWorkingDirectory;
-			public function HRESULT(IShellLinkA *self, PSTR pszDir) SetWorkingDirectory;
-			public function HRESULT(IShellLinkA *self, uint8* pszArgs, int32 cch) GetArguments;
-			public function HRESULT(IShellLinkA *self, PSTR pszArgs) SetArguments;
-			public function HRESULT(IShellLinkA *self, uint16* pwHotkey) GetHotkey;
-			public function HRESULT(IShellLinkA *self, uint16 wHotkey) SetHotkey;
-			public function HRESULT(IShellLinkA *self, int32* piShowCmd) GetShowCmd;
-			public function HRESULT(IShellLinkA *self, int32 iShowCmd) SetShowCmd;
-			public function HRESULT(IShellLinkA *self, uint8* pszIconPath, int32 cch, int32* piIcon) GetIconLocation;
-			public function HRESULT(IShellLinkA *self, PSTR pszIconPath, int32 iIcon) SetIconLocation;
-			public function HRESULT(IShellLinkA *self, PSTR pszPathRel, uint32 dwReserved) SetRelativePath;
-			public function HRESULT(IShellLinkA *self, HWND hwnd, uint32 fFlags) Resolve;
-			public function HRESULT(IShellLinkA *self, PSTR pszFile) SetPath;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellLinkA *self, uint8* pszFile, int32 cch, WIN32_FIND_DATAA* pfd, uint32 fFlags) GetPath;
+				public function HRESULT(IShellLinkA *self, ITEMIDLIST** ppidl) GetIDList;
+				public function HRESULT(IShellLinkA *self, ITEMIDLIST* pidl) SetIDList;
+				public function HRESULT(IShellLinkA *self, uint8* pszName, int32 cch) GetDescription;
+				public function HRESULT(IShellLinkA *self, PSTR pszName) SetDescription;
+				public function HRESULT(IShellLinkA *self, uint8* pszDir, int32 cch) GetWorkingDirectory;
+				public function HRESULT(IShellLinkA *self, PSTR pszDir) SetWorkingDirectory;
+				public function HRESULT(IShellLinkA *self, uint8* pszArgs, int32 cch) GetArguments;
+				public function HRESULT(IShellLinkA *self, PSTR pszArgs) SetArguments;
+				public function HRESULT(IShellLinkA *self, uint16* pwHotkey) GetHotkey;
+				public function HRESULT(IShellLinkA *self, uint16 wHotkey) SetHotkey;
+				public function HRESULT(IShellLinkA *self, int32* piShowCmd) GetShowCmd;
+				public function HRESULT(IShellLinkA *self, int32 iShowCmd) SetShowCmd;
+				public function HRESULT(IShellLinkA *self, uint8* pszIconPath, int32 cch, int32* piIcon) GetIconLocation;
+				public function HRESULT(IShellLinkA *self, PSTR pszIconPath, int32 iIcon) SetIconLocation;
+				public function HRESULT(IShellLinkA *self, PSTR pszPathRel, uint32 dwReserved) SetRelativePath;
+				public function HRESULT(IShellLinkA *self, HWND hwnd, uint32 fFlags) Resolve;
+				public function HRESULT(IShellLinkA *self, PSTR pszFile) SetPath;
+			}
 		}
 		[CRepr]
 		public struct IShellLinkW : IUnknown
 		{
 			public const new Guid IID = .(0x000214f9, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IShellLinkW *self, char16* pszFile, int32 cch, WIN32_FIND_DATAW* pfd, uint32 fFlags) GetPath;
-			public function HRESULT(IShellLinkW *self, ITEMIDLIST** ppidl) GetIDList;
-			public function HRESULT(IShellLinkW *self, ITEMIDLIST* pidl) SetIDList;
-			public function HRESULT(IShellLinkW *self, char16* pszName, int32 cch) GetDescription;
-			public function HRESULT(IShellLinkW *self, PWSTR pszName) SetDescription;
-			public function HRESULT(IShellLinkW *self, char16* pszDir, int32 cch) GetWorkingDirectory;
-			public function HRESULT(IShellLinkW *self, PWSTR pszDir) SetWorkingDirectory;
-			public function HRESULT(IShellLinkW *self, char16* pszArgs, int32 cch) GetArguments;
-			public function HRESULT(IShellLinkW *self, PWSTR pszArgs) SetArguments;
-			public function HRESULT(IShellLinkW *self, uint16* pwHotkey) GetHotkey;
-			public function HRESULT(IShellLinkW *self, uint16 wHotkey) SetHotkey;
-			public function HRESULT(IShellLinkW *self, int32* piShowCmd) GetShowCmd;
-			public function HRESULT(IShellLinkW *self, int32 iShowCmd) SetShowCmd;
-			public function HRESULT(IShellLinkW *self, char16* pszIconPath, int32 cch, int32* piIcon) GetIconLocation;
-			public function HRESULT(IShellLinkW *self, PWSTR pszIconPath, int32 iIcon) SetIconLocation;
-			public function HRESULT(IShellLinkW *self, PWSTR pszPathRel, uint32 dwReserved) SetRelativePath;
-			public function HRESULT(IShellLinkW *self, HWND hwnd, uint32 fFlags) Resolve;
-			public function HRESULT(IShellLinkW *self, PWSTR pszFile) SetPath;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellLinkW *self, char16* pszFile, int32 cch, WIN32_FIND_DATAW* pfd, uint32 fFlags) GetPath;
+				public function HRESULT(IShellLinkW *self, ITEMIDLIST** ppidl) GetIDList;
+				public function HRESULT(IShellLinkW *self, ITEMIDLIST* pidl) SetIDList;
+				public function HRESULT(IShellLinkW *self, char16* pszName, int32 cch) GetDescription;
+				public function HRESULT(IShellLinkW *self, PWSTR pszName) SetDescription;
+				public function HRESULT(IShellLinkW *self, char16* pszDir, int32 cch) GetWorkingDirectory;
+				public function HRESULT(IShellLinkW *self, PWSTR pszDir) SetWorkingDirectory;
+				public function HRESULT(IShellLinkW *self, char16* pszArgs, int32 cch) GetArguments;
+				public function HRESULT(IShellLinkW *self, PWSTR pszArgs) SetArguments;
+				public function HRESULT(IShellLinkW *self, uint16* pwHotkey) GetHotkey;
+				public function HRESULT(IShellLinkW *self, uint16 wHotkey) SetHotkey;
+				public function HRESULT(IShellLinkW *self, int32* piShowCmd) GetShowCmd;
+				public function HRESULT(IShellLinkW *self, int32 iShowCmd) SetShowCmd;
+				public function HRESULT(IShellLinkW *self, char16* pszIconPath, int32 cch, int32* piIcon) GetIconLocation;
+				public function HRESULT(IShellLinkW *self, PWSTR pszIconPath, int32 iIcon) SetIconLocation;
+				public function HRESULT(IShellLinkW *self, PWSTR pszPathRel, uint32 dwReserved) SetRelativePath;
+				public function HRESULT(IShellLinkW *self, HWND hwnd, uint32 fFlags) Resolve;
+				public function HRESULT(IShellLinkW *self, PWSTR pszFile) SetPath;
+			}
 		}
 		[CRepr]
 		public struct IShellLinkDataList : IUnknown
 		{
 			public const new Guid IID = .(0x45e2b4ae, 0xb1c3, 0x11d0, 0xb9, 0x2f, 0x00, 0xa0, 0xc9, 0x03, 0x12, 0xe1);
 			
-			public function HRESULT(IShellLinkDataList *self, void* pDataBlock) AddDataBlock;
-			public function HRESULT(IShellLinkDataList *self, uint32 dwSig, void** ppDataBlock) CopyDataBlock;
-			public function HRESULT(IShellLinkDataList *self, uint32 dwSig) RemoveDataBlock;
-			public function HRESULT(IShellLinkDataList *self, uint32* pdwFlags) GetFlags;
-			public function HRESULT(IShellLinkDataList *self, uint32 dwFlags) SetFlags;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellLinkDataList *self, void* pDataBlock) AddDataBlock;
+				public function HRESULT(IShellLinkDataList *self, uint32 dwSig, void** ppDataBlock) CopyDataBlock;
+				public function HRESULT(IShellLinkDataList *self, uint32 dwSig) RemoveDataBlock;
+				public function HRESULT(IShellLinkDataList *self, uint32* pdwFlags) GetFlags;
+				public function HRESULT(IShellLinkDataList *self, uint32 dwFlags) SetFlags;
+			}
 		}
 		[CRepr]
 		public struct IResolveShellLink : IUnknown
 		{
 			public const new Guid IID = .(0x5cd52983, 0x9449, 0x11d2, 0x96, 0x3a, 0x00, 0xc0, 0x4f, 0x79, 0xad, 0xf0);
 			
-			public function HRESULT(IResolveShellLink *self, IUnknown* punkLink, HWND hwnd, uint32 fFlags) ResolveShellLink;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IResolveShellLink *self, IUnknown* punkLink, HWND hwnd, uint32 fFlags) ResolveShellLink;
+			}
 		}
 		[CRepr]
 		public struct IActionProgressDialog : IUnknown
 		{
 			public const new Guid IID = .(0x49ff1172, 0xeadc, 0x446d, 0x92, 0x85, 0x15, 0x64, 0x53, 0xa6, 0x43, 0x1c);
 			
-			public function HRESULT(IActionProgressDialog *self, uint32 flags, PWSTR pszTitle, PWSTR pszCancel) Initialize;
-			public function HRESULT(IActionProgressDialog *self) Stop;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActionProgressDialog *self, uint32 flags, PWSTR pszTitle, PWSTR pszCancel) Initialize;
+				public function HRESULT(IActionProgressDialog *self) Stop;
+			}
 		}
 		[CRepr]
 		public struct IActionProgress : IUnknown
 		{
 			public const new Guid IID = .(0x49ff1173, 0xeadc, 0x446d, 0x92, 0x85, 0x15, 0x64, 0x53, 0xa6, 0x43, 0x1c);
 			
-			public function HRESULT(IActionProgress *self, SPACTION action, uint32 flags) Begin;
-			public function HRESULT(IActionProgress *self, uint64 ulCompleted, uint64 ulTotal) UpdateProgress;
-			public function HRESULT(IActionProgress *self, SPTEXT sptext, PWSTR pszText, BOOL fMayCompact) UpdateText;
-			public function HRESULT(IActionProgress *self, BOOL* pfCancelled) QueryCancel;
-			public function HRESULT(IActionProgress *self) ResetCancel;
-			public function HRESULT(IActionProgress *self) End;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IActionProgress *self, SPACTION action, uint32 flags) Begin;
+				public function HRESULT(IActionProgress *self, uint64 ulCompleted, uint64 ulTotal) UpdateProgress;
+				public function HRESULT(IActionProgress *self, SPTEXT sptext, PWSTR pszText, BOOL fMayCompact) UpdateText;
+				public function HRESULT(IActionProgress *self, BOOL* pfCancelled) QueryCancel;
+				public function HRESULT(IActionProgress *self) ResetCancel;
+				public function HRESULT(IActionProgress *self) End;
+			}
 		}
 		[CRepr]
 		public struct IShellExtInit : IUnknown
 		{
 			public const new Guid IID = .(0x000214e8, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IShellExtInit *self, ITEMIDLIST* pidlFolder, IDataObject* pdtobj, HKEY hkeyProgID) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellExtInit *self, ITEMIDLIST* pidlFolder, IDataObject* pdtobj, HKEY hkeyProgID) Initialize;
+			}
 		}
 		[CRepr]
 		public struct IShellPropSheetExt : IUnknown
 		{
 			public const new Guid IID = .(0x000214e9, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IShellPropSheetExt *self, LPFNSVADDPROPSHEETPAGE pfnAddPage, LPARAM lParam) AddPages;
-			public function HRESULT(IShellPropSheetExt *self, uint32 uPageID, LPFNSVADDPROPSHEETPAGE pfnReplaceWith, LPARAM lParam) ReplacePage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellPropSheetExt *self, LPFNSVADDPROPSHEETPAGE pfnAddPage, LPARAM lParam) AddPages;
+				public function HRESULT(IShellPropSheetExt *self, uint32 uPageID, LPFNSVADDPROPSHEETPAGE pfnReplaceWith, LPARAM lParam) ReplacePage;
+			}
 		}
 		[CRepr]
 		public struct IRemoteComputer : IUnknown
 		{
 			public const new Guid IID = .(0x000214fe, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IRemoteComputer *self, PWSTR pszMachine, BOOL bEnumerating) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRemoteComputer *self, PWSTR pszMachine, BOOL bEnumerating) Initialize;
+			}
 		}
 		[CRepr]
 		public struct IQueryContinue : IUnknown
 		{
 			public const new Guid IID = .(0x7307055c, 0xb24a, 0x486b, 0x9f, 0x25, 0x16, 0x3e, 0x59, 0x7a, 0x28, 0xa9);
 			
-			public function HRESULT(IQueryContinue *self) QueryContinue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IQueryContinue *self) QueryContinue;
+			}
 		}
 		[CRepr]
 		public struct IObjectWithCancelEvent : IUnknown
 		{
 			public const new Guid IID = .(0xf279b885, 0x0ae9, 0x4b85, 0xac, 0x06, 0xdd, 0xec, 0xf9, 0x40, 0x89, 0x41);
 			
-			public function HRESULT(IObjectWithCancelEvent *self, HANDLE* phEvent) GetCancelEvent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IObjectWithCancelEvent *self, HANDLE* phEvent) GetCancelEvent;
+			}
 		}
 		[CRepr]
 		public struct IUserNotification : IUnknown
 		{
 			public const new Guid IID = .(0xba9711ba, 0x5893, 0x4787, 0xa7, 0xe1, 0x41, 0x27, 0x71, 0x51, 0x55, 0x0b);
 			
-			public function HRESULT(IUserNotification *self, PWSTR pszTitle, PWSTR pszText, uint32 dwInfoFlags) SetBalloonInfo;
-			public function HRESULT(IUserNotification *self, uint32 dwShowTime, uint32 dwInterval, uint32 cRetryCount) SetBalloonRetry;
-			public function HRESULT(IUserNotification *self, HICON hIcon, PWSTR pszToolTip) SetIconInfo;
-			public function HRESULT(IUserNotification *self, IQueryContinue* pqc, uint32 dwContinuePollInterval) Show;
-			public function HRESULT(IUserNotification *self, PWSTR pszSoundName) PlaySound;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IUserNotification *self, PWSTR pszTitle, PWSTR pszText, uint32 dwInfoFlags) SetBalloonInfo;
+				public function HRESULT(IUserNotification *self, uint32 dwShowTime, uint32 dwInterval, uint32 cRetryCount) SetBalloonRetry;
+				public function HRESULT(IUserNotification *self, HICON hIcon, PWSTR pszToolTip) SetIconInfo;
+				public function HRESULT(IUserNotification *self, IQueryContinue* pqc, uint32 dwContinuePollInterval) Show;
+				public function HRESULT(IUserNotification *self, PWSTR pszSoundName) PlaySound;
+			}
 		}
 		[CRepr]
 		public struct IItemNameLimits : IUnknown
 		{
 			public const new Guid IID = .(0x1df0d7f1, 0xb267, 0x4d28, 0x8b, 0x10, 0x12, 0xe2, 0x32, 0x02, 0xa5, 0xc4);
 			
-			public function HRESULT(IItemNameLimits *self, PWSTR* ppwszValidChars, PWSTR* ppwszInvalidChars) GetValidCharacters;
-			public function HRESULT(IItemNameLimits *self, PWSTR pszName, int32* piMaxNameLen) GetMaxLength;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IItemNameLimits *self, PWSTR* ppwszValidChars, PWSTR* ppwszInvalidChars) GetValidCharacters;
+				public function HRESULT(IItemNameLimits *self, PWSTR pszName, int32* piMaxNameLen) GetMaxLength;
+			}
 		}
 		[CRepr]
 		public struct ISearchFolderItemFactory : IUnknown
 		{
 			public const new Guid IID = .(0xa0ffbc28, 0x5482, 0x4366, 0xbe, 0x27, 0x3e, 0x81, 0xe7, 0x8e, 0x06, 0xc2);
 			
-			public function HRESULT(ISearchFolderItemFactory *self, PWSTR pszDisplayName) SetDisplayName;
-			public function HRESULT(ISearchFolderItemFactory *self, Guid ftid) SetFolderTypeID;
-			public function HRESULT(ISearchFolderItemFactory *self, FOLDERLOGICALVIEWMODE flvm) SetFolderLogicalViewMode;
-			public function HRESULT(ISearchFolderItemFactory *self, int32 iIconSize) SetIconSize;
-			public function HRESULT(ISearchFolderItemFactory *self, uint32 cVisibleColumns, PROPERTYKEY* rgKey) SetVisibleColumns;
-			public function HRESULT(ISearchFolderItemFactory *self, uint32 cSortColumns, SORTCOLUMN* rgSortColumns) SetSortColumns;
-			public function HRESULT(ISearchFolderItemFactory *self, PROPERTYKEY* keyGroup) SetGroupColumn;
-			public function HRESULT(ISearchFolderItemFactory *self, uint32 cStackKeys, PROPERTYKEY* rgStackKeys) SetStacks;
-			public function HRESULT(ISearchFolderItemFactory *self, IShellItemArray* psiaScope) SetScope;
-			public function HRESULT(ISearchFolderItemFactory *self, ICondition* pCondition) SetCondition;
-			public function HRESULT(ISearchFolderItemFactory *self, Guid* riid, void** ppv) GetShellItem;
-			public function HRESULT(ISearchFolderItemFactory *self, ITEMIDLIST** ppidl) GetIDList;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISearchFolderItemFactory *self, PWSTR pszDisplayName) SetDisplayName;
+				public function HRESULT(ISearchFolderItemFactory *self, Guid ftid) SetFolderTypeID;
+				public function HRESULT(ISearchFolderItemFactory *self, FOLDERLOGICALVIEWMODE flvm) SetFolderLogicalViewMode;
+				public function HRESULT(ISearchFolderItemFactory *self, int32 iIconSize) SetIconSize;
+				public function HRESULT(ISearchFolderItemFactory *self, uint32 cVisibleColumns, PROPERTYKEY* rgKey) SetVisibleColumns;
+				public function HRESULT(ISearchFolderItemFactory *self, uint32 cSortColumns, SORTCOLUMN* rgSortColumns) SetSortColumns;
+				public function HRESULT(ISearchFolderItemFactory *self, PROPERTYKEY* keyGroup) SetGroupColumn;
+				public function HRESULT(ISearchFolderItemFactory *self, uint32 cStackKeys, PROPERTYKEY* rgStackKeys) SetStacks;
+				public function HRESULT(ISearchFolderItemFactory *self, IShellItemArray* psiaScope) SetScope;
+				public function HRESULT(ISearchFolderItemFactory *self, ICondition* pCondition) SetCondition;
+				public function HRESULT(ISearchFolderItemFactory *self, Guid* riid, void** ppv) GetShellItem;
+				public function HRESULT(ISearchFolderItemFactory *self, ITEMIDLIST** ppidl) GetIDList;
+			}
 		}
 		[CRepr]
 		public struct IExtractImage : IUnknown
 		{
 			public const new Guid IID = .(0xbb2e617c, 0x0920, 0x11d1, 0x9a, 0x0b, 0x00, 0xc0, 0x4f, 0xc2, 0xd6, 0xc1);
 			
-			public function HRESULT(IExtractImage *self, char16* pszPathBuffer, uint32 cch, uint32* pdwPriority, SIZE* prgSize, uint32 dwRecClrDepth, uint32* pdwFlags) GetLocation;
-			public function HRESULT(IExtractImage *self, HBITMAP* phBmpThumbnail) Extract;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IExtractImage *self, char16* pszPathBuffer, uint32 cch, uint32* pdwPriority, SIZE* prgSize, uint32 dwRecClrDepth, uint32* pdwFlags) GetLocation;
+				public function HRESULT(IExtractImage *self, HBITMAP* phBmpThumbnail) Extract;
+			}
 		}
 		[CRepr]
 		public struct IExtractImage2 : IExtractImage
 		{
 			public const new Guid IID = .(0x953bb1ee, 0x93b4, 0x11d1, 0x98, 0xa3, 0x00, 0xc0, 0x4f, 0xb6, 0x87, 0xda);
 			
-			public function HRESULT(IExtractImage2 *self, FILETIME* pDateStamp) GetDateStamp;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IExtractImage.VTable
+			{
+				public function HRESULT(IExtractImage2 *self, FILETIME* pDateStamp) GetDateStamp;
+			}
 		}
 		[CRepr]
 		public struct IThumbnailHandlerFactory : IUnknown
 		{
 			public const new Guid IID = .(0xe35b4b2e, 0x00da, 0x4bc1, 0x9f, 0x13, 0x38, 0xbc, 0x11, 0xf5, 0xd4, 0x17);
 			
-			public function HRESULT(IThumbnailHandlerFactory *self, ITEMIDLIST* pidlChild, IBindCtx* pbc, Guid* riid, void** ppv) GetThumbnailHandler;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IThumbnailHandlerFactory *self, ITEMIDLIST* pidlChild, IBindCtx* pbc, Guid* riid, void** ppv) GetThumbnailHandler;
+			}
 		}
 		[CRepr]
 		public struct IParentAndItem : IUnknown
 		{
 			public const new Guid IID = .(0xb3a4b685, 0xb685, 0x4805, 0x99, 0xd9, 0x5d, 0xea, 0xd2, 0x87, 0x32, 0x36);
 			
-			public function HRESULT(IParentAndItem *self, ITEMIDLIST* pidlParent, IShellFolder* psf, ITEMIDLIST* pidlChild) SetParentAndItem;
-			public function HRESULT(IParentAndItem *self, ITEMIDLIST** ppidlParent, IShellFolder** ppsf, ITEMIDLIST** ppidlChild) GetParentAndItem;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IParentAndItem *self, ITEMIDLIST* pidlParent, IShellFolder* psf, ITEMIDLIST* pidlChild) SetParentAndItem;
+				public function HRESULT(IParentAndItem *self, ITEMIDLIST** ppidlParent, IShellFolder** ppsf, ITEMIDLIST** ppidlChild) GetParentAndItem;
+			}
 		}
 		[CRepr]
 		public struct IDockingWindow : IOleWindow
 		{
 			public const new Guid IID = .(0x012dd920, 0x7b26, 0x11d0, 0x8c, 0xa9, 0x00, 0xa0, 0xc9, 0x2d, 0xbf, 0xe8);
 			
-			public function HRESULT(IDockingWindow *self, BOOL fShow) ShowDW;
-			public function HRESULT(IDockingWindow *self, uint32 dwReserved) CloseDW;
-			public function HRESULT(IDockingWindow *self, RECT* prcBorder, IUnknown* punkToolbarSite, BOOL fReserved) ResizeBorderDW;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IOleWindow.VTable
+			{
+				public function HRESULT(IDockingWindow *self, BOOL fShow) ShowDW;
+				public function HRESULT(IDockingWindow *self, uint32 dwReserved) CloseDW;
+				public function HRESULT(IDockingWindow *self, RECT* prcBorder, IUnknown* punkToolbarSite, BOOL fReserved) ResizeBorderDW;
+			}
 		}
 		[CRepr]
 		public struct IDeskBand : IDockingWindow
 		{
 			public const new Guid IID = .(0xeb0fe172, 0x1a3a, 0x11d0, 0x89, 0xb3, 0x00, 0xa0, 0xc9, 0x0a, 0x90, 0xac);
 			
-			public function HRESULT(IDeskBand *self, uint32 dwBandID, uint32 dwViewMode, DESKBANDINFO* pdbi) GetBandInfo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDockingWindow.VTable
+			{
+				public function HRESULT(IDeskBand *self, uint32 dwBandID, uint32 dwViewMode, DESKBANDINFO* pdbi) GetBandInfo;
+			}
 		}
 		[CRepr]
 		public struct IDeskBandInfo : IUnknown
 		{
 			public const new Guid IID = .(0x77e425fc, 0xcbf9, 0x4307, 0xba, 0x6a, 0xbb, 0x57, 0x27, 0x74, 0x56, 0x61);
 			
-			public function HRESULT(IDeskBandInfo *self, uint32 dwBandID, uint32 dwViewMode, int32* pnWidth) GetDefaultBandWidth;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDeskBandInfo *self, uint32 dwBandID, uint32 dwViewMode, int32* pnWidth) GetDefaultBandWidth;
+			}
 		}
 		[CRepr]
 		public struct ITaskbarList : IUnknown
 		{
 			public const new Guid IID = .(0x56fdf342, 0xfd6d, 0x11d0, 0x95, 0x8a, 0x00, 0x60, 0x97, 0xc9, 0xa0, 0x90);
 			
-			public function HRESULT(ITaskbarList *self) HrInit;
-			public function HRESULT(ITaskbarList *self, HWND hwnd) AddTab;
-			public function HRESULT(ITaskbarList *self, HWND hwnd) DeleteTab;
-			public function HRESULT(ITaskbarList *self, HWND hwnd) ActivateTab;
-			public function HRESULT(ITaskbarList *self, HWND hwnd) SetActiveAlt;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITaskbarList *self) HrInit;
+				public function HRESULT(ITaskbarList *self, HWND hwnd) AddTab;
+				public function HRESULT(ITaskbarList *self, HWND hwnd) DeleteTab;
+				public function HRESULT(ITaskbarList *self, HWND hwnd) ActivateTab;
+				public function HRESULT(ITaskbarList *self, HWND hwnd) SetActiveAlt;
+			}
 		}
 		[CRepr]
 		public struct ITaskbarList2 : ITaskbarList
 		{
 			public const new Guid IID = .(0x602d4995, 0xb13a, 0x429b, 0xa6, 0x6e, 0x19, 0x35, 0xe4, 0x4f, 0x43, 0x17);
 			
-			public function HRESULT(ITaskbarList2 *self, HWND hwnd, BOOL fFullscreen) MarkFullscreenWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ITaskbarList.VTable
+			{
+				public function HRESULT(ITaskbarList2 *self, HWND hwnd, BOOL fFullscreen) MarkFullscreenWindow;
+			}
 		}
 		[CRepr]
 		public struct ITaskbarList3 : ITaskbarList2
 		{
 			public const new Guid IID = .(0xea1afb91, 0x9e28, 0x4b86, 0x90, 0xe9, 0x9e, 0x9f, 0x8a, 0x5e, 0xef, 0xaf);
 			
-			public function HRESULT(ITaskbarList3 *self, HWND hwnd, uint64 ullCompleted, uint64 ullTotal) SetProgressValue;
-			public function HRESULT(ITaskbarList3 *self, HWND hwnd, TBPFLAG tbpFlags) SetProgressState;
-			public function HRESULT(ITaskbarList3 *self, HWND hwndTab, HWND hwndMDI) RegisterTab;
-			public function HRESULT(ITaskbarList3 *self, HWND hwndTab) UnregisterTab;
-			public function HRESULT(ITaskbarList3 *self, HWND hwndTab, HWND hwndInsertBefore) SetTabOrder;
-			public function HRESULT(ITaskbarList3 *self, HWND hwndTab, HWND hwndMDI, uint32 dwReserved) SetTabActive;
-			public function HRESULT(ITaskbarList3 *self, HWND hwnd, uint32 cButtons, THUMBBUTTON* pButton) ThumbBarAddButtons;
-			public function HRESULT(ITaskbarList3 *self, HWND hwnd, uint32 cButtons, THUMBBUTTON* pButton) ThumbBarUpdateButtons;
-			public function HRESULT(ITaskbarList3 *self, HWND hwnd, HIMAGELIST himl) ThumbBarSetImageList;
-			public function HRESULT(ITaskbarList3 *self, HWND hwnd, HICON hIcon, PWSTR pszDescription) SetOverlayIcon;
-			public function HRESULT(ITaskbarList3 *self, HWND hwnd, PWSTR pszTip) SetThumbnailTooltip;
-			public function HRESULT(ITaskbarList3 *self, HWND hwnd, RECT* prcClip) SetThumbnailClip;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ITaskbarList2.VTable
+			{
+				public function HRESULT(ITaskbarList3 *self, HWND hwnd, uint64 ullCompleted, uint64 ullTotal) SetProgressValue;
+				public function HRESULT(ITaskbarList3 *self, HWND hwnd, TBPFLAG tbpFlags) SetProgressState;
+				public function HRESULT(ITaskbarList3 *self, HWND hwndTab, HWND hwndMDI) RegisterTab;
+				public function HRESULT(ITaskbarList3 *self, HWND hwndTab) UnregisterTab;
+				public function HRESULT(ITaskbarList3 *self, HWND hwndTab, HWND hwndInsertBefore) SetTabOrder;
+				public function HRESULT(ITaskbarList3 *self, HWND hwndTab, HWND hwndMDI, uint32 dwReserved) SetTabActive;
+				public function HRESULT(ITaskbarList3 *self, HWND hwnd, uint32 cButtons, THUMBBUTTON* pButton) ThumbBarAddButtons;
+				public function HRESULT(ITaskbarList3 *self, HWND hwnd, uint32 cButtons, THUMBBUTTON* pButton) ThumbBarUpdateButtons;
+				public function HRESULT(ITaskbarList3 *self, HWND hwnd, HIMAGELIST himl) ThumbBarSetImageList;
+				public function HRESULT(ITaskbarList3 *self, HWND hwnd, HICON hIcon, PWSTR pszDescription) SetOverlayIcon;
+				public function HRESULT(ITaskbarList3 *self, HWND hwnd, PWSTR pszTip) SetThumbnailTooltip;
+				public function HRESULT(ITaskbarList3 *self, HWND hwnd, RECT* prcClip) SetThumbnailClip;
+			}
 		}
 		[CRepr]
 		public struct ITaskbarList4 : ITaskbarList3
 		{
 			public const new Guid IID = .(0xc43dc798, 0x95d1, 0x4bea, 0x90, 0x30, 0xbb, 0x99, 0xe2, 0x98, 0x3a, 0x1a);
 			
-			public function HRESULT(ITaskbarList4 *self, HWND hwndTab, STPFLAG stpFlags) SetTabProperties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ITaskbarList3.VTable
+			{
+				public function HRESULT(ITaskbarList4 *self, HWND hwndTab, STPFLAG stpFlags) SetTabProperties;
+			}
 		}
 		[CRepr]
 		public struct IExplorerBrowserEvents : IUnknown
 		{
 			public const new Guid IID = .(0x361bbdc7, 0xe6ee, 0x4e13, 0xbe, 0x58, 0x58, 0xe2, 0x24, 0x0c, 0x81, 0x0f);
 			
-			public function HRESULT(IExplorerBrowserEvents *self, ITEMIDLIST* pidlFolder) OnNavigationPending;
-			public function HRESULT(IExplorerBrowserEvents *self, IShellView* psv) OnViewCreated;
-			public function HRESULT(IExplorerBrowserEvents *self, ITEMIDLIST* pidlFolder) OnNavigationComplete;
-			public function HRESULT(IExplorerBrowserEvents *self, ITEMIDLIST* pidlFolder) OnNavigationFailed;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IExplorerBrowserEvents *self, ITEMIDLIST* pidlFolder) OnNavigationPending;
+				public function HRESULT(IExplorerBrowserEvents *self, IShellView* psv) OnViewCreated;
+				public function HRESULT(IExplorerBrowserEvents *self, ITEMIDLIST* pidlFolder) OnNavigationComplete;
+				public function HRESULT(IExplorerBrowserEvents *self, ITEMIDLIST* pidlFolder) OnNavigationFailed;
+			}
 		}
 		[CRepr]
 		public struct IExplorerBrowser : IUnknown
 		{
 			public const new Guid IID = .(0xdfd3b6b5, 0xc10c, 0x4be9, 0x85, 0xf6, 0xa6, 0x69, 0x69, 0xf4, 0x02, 0xf6);
 			
-			public function HRESULT(IExplorerBrowser *self, HWND hwndParent, RECT* prc, FOLDERSETTINGS* pfs) Initialize;
-			public function HRESULT(IExplorerBrowser *self) Destroy;
-			public function HRESULT(IExplorerBrowser *self, int* phdwp, RECT rcBrowser) SetRect;
-			public function HRESULT(IExplorerBrowser *self, PWSTR pszPropertyBag) SetPropertyBag;
-			public function HRESULT(IExplorerBrowser *self, PWSTR pszEmptyText) SetEmptyText;
-			public function HRESULT(IExplorerBrowser *self, FOLDERSETTINGS* pfs) SetFolderSettings;
-			public function HRESULT(IExplorerBrowser *self, IExplorerBrowserEvents* psbe, uint32* pdwCookie) Advise;
-			public function HRESULT(IExplorerBrowser *self, uint32 dwCookie) Unadvise;
-			public function HRESULT(IExplorerBrowser *self, EXPLORER_BROWSER_OPTIONS dwFlag) SetOptions;
-			public function HRESULT(IExplorerBrowser *self, EXPLORER_BROWSER_OPTIONS* pdwFlag) GetOptions;
-			public function HRESULT(IExplorerBrowser *self, ITEMIDLIST* pidl, uint32 uFlags) BrowseToIDList;
-			public function HRESULT(IExplorerBrowser *self, IUnknown* punk, uint32 uFlags) BrowseToObject;
-			public function HRESULT(IExplorerBrowser *self, IUnknown* punk, EXPLORER_BROWSER_FILL_FLAGS dwFlags) FillFromObject;
-			public function HRESULT(IExplorerBrowser *self) RemoveAll;
-			public function HRESULT(IExplorerBrowser *self, Guid* riid, void** ppv) GetCurrentView;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IExplorerBrowser *self, HWND hwndParent, RECT* prc, FOLDERSETTINGS* pfs) Initialize;
+				public function HRESULT(IExplorerBrowser *self) Destroy;
+				public function HRESULT(IExplorerBrowser *self, int* phdwp, RECT rcBrowser) SetRect;
+				public function HRESULT(IExplorerBrowser *self, PWSTR pszPropertyBag) SetPropertyBag;
+				public function HRESULT(IExplorerBrowser *self, PWSTR pszEmptyText) SetEmptyText;
+				public function HRESULT(IExplorerBrowser *self, FOLDERSETTINGS* pfs) SetFolderSettings;
+				public function HRESULT(IExplorerBrowser *self, IExplorerBrowserEvents* psbe, uint32* pdwCookie) Advise;
+				public function HRESULT(IExplorerBrowser *self, uint32 dwCookie) Unadvise;
+				public function HRESULT(IExplorerBrowser *self, EXPLORER_BROWSER_OPTIONS dwFlag) SetOptions;
+				public function HRESULT(IExplorerBrowser *self, EXPLORER_BROWSER_OPTIONS* pdwFlag) GetOptions;
+				public function HRESULT(IExplorerBrowser *self, ITEMIDLIST* pidl, uint32 uFlags) BrowseToIDList;
+				public function HRESULT(IExplorerBrowser *self, IUnknown* punk, uint32 uFlags) BrowseToObject;
+				public function HRESULT(IExplorerBrowser *self, IUnknown* punk, EXPLORER_BROWSER_FILL_FLAGS dwFlags) FillFromObject;
+				public function HRESULT(IExplorerBrowser *self) RemoveAll;
+				public function HRESULT(IExplorerBrowser *self, Guid* riid, void** ppv) GetCurrentView;
+			}
 		}
 		[CRepr]
 		public struct IEnumObjects : IUnknown
 		{
 			public const new Guid IID = .(0x2c1c7e2e, 0x2d0e, 0x4059, 0x83, 0x1e, 0x1e, 0x6f, 0x82, 0x33, 0x5c, 0x2e);
 			
-			public function HRESULT(IEnumObjects *self, uint32 celt, Guid* riid, void** rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumObjects *self, uint32 celt) Skip;
-			public function HRESULT(IEnumObjects *self) Reset;
-			public function HRESULT(IEnumObjects *self, IEnumObjects** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumObjects *self, uint32 celt, Guid* riid, void** rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumObjects *self, uint32 celt) Skip;
+				public function HRESULT(IEnumObjects *self) Reset;
+				public function HRESULT(IEnumObjects *self, IEnumObjects** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IOperationsProgressDialog : IUnknown
 		{
 			public const new Guid IID = .(0x0c9fb851, 0xe5c9, 0x43eb, 0xa3, 0x70, 0xf0, 0x67, 0x7b, 0x13, 0x87, 0x4c);
 			
-			public function HRESULT(IOperationsProgressDialog *self, HWND hwndOwner, uint32 flags) StartProgressDialog;
-			public function HRESULT(IOperationsProgressDialog *self) StopProgressDialog;
-			public function HRESULT(IOperationsProgressDialog *self, SPACTION action) SetOperation;
-			public function HRESULT(IOperationsProgressDialog *self, uint32 mode) SetMode;
-			public function HRESULT(IOperationsProgressDialog *self, uint64 ullPointsCurrent, uint64 ullPointsTotal, uint64 ullSizeCurrent, uint64 ullSizeTotal, uint64 ullItemsCurrent, uint64 ullItemsTotal) UpdateProgress;
-			public function HRESULT(IOperationsProgressDialog *self, IShellItem* psiSource, IShellItem* psiTarget, IShellItem* psiItem) UpdateLocations;
-			public function HRESULT(IOperationsProgressDialog *self) ResetTimer;
-			public function HRESULT(IOperationsProgressDialog *self) PauseTimer;
-			public function HRESULT(IOperationsProgressDialog *self) ResumeTimer;
-			public function HRESULT(IOperationsProgressDialog *self, uint64* pullElapsed, uint64* pullRemaining) GetMilliseconds;
-			public function HRESULT(IOperationsProgressDialog *self, PDOPSTATUS* popstatus) GetOperationStatus;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IOperationsProgressDialog *self, HWND hwndOwner, uint32 flags) StartProgressDialog;
+				public function HRESULT(IOperationsProgressDialog *self) StopProgressDialog;
+				public function HRESULT(IOperationsProgressDialog *self, SPACTION action) SetOperation;
+				public function HRESULT(IOperationsProgressDialog *self, uint32 mode) SetMode;
+				public function HRESULT(IOperationsProgressDialog *self, uint64 ullPointsCurrent, uint64 ullPointsTotal, uint64 ullSizeCurrent, uint64 ullSizeTotal, uint64 ullItemsCurrent, uint64 ullItemsTotal) UpdateProgress;
+				public function HRESULT(IOperationsProgressDialog *self, IShellItem* psiSource, IShellItem* psiTarget, IShellItem* psiItem) UpdateLocations;
+				public function HRESULT(IOperationsProgressDialog *self) ResetTimer;
+				public function HRESULT(IOperationsProgressDialog *self) PauseTimer;
+				public function HRESULT(IOperationsProgressDialog *self) ResumeTimer;
+				public function HRESULT(IOperationsProgressDialog *self, uint64* pullElapsed, uint64* pullRemaining) GetMilliseconds;
+				public function HRESULT(IOperationsProgressDialog *self, PDOPSTATUS* popstatus) GetOperationStatus;
+			}
 		}
 		[CRepr]
 		public struct IIOCancelInformation : IUnknown
 		{
 			public const new Guid IID = .(0xf5b0bf81, 0x8cb5, 0x4b1b, 0x94, 0x49, 0x1a, 0x15, 0x9e, 0x0c, 0x73, 0x3c);
 			
-			public function HRESULT(IIOCancelInformation *self, uint32 dwThreadID, uint32 uMsgCancel) SetCancelInformation;
-			public function HRESULT(IIOCancelInformation *self, uint32* pdwThreadID, uint32* puMsgCancel) GetCancelInformation;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IIOCancelInformation *self, uint32 dwThreadID, uint32 uMsgCancel) SetCancelInformation;
+				public function HRESULT(IIOCancelInformation *self, uint32* pdwThreadID, uint32* puMsgCancel) GetCancelInformation;
+			}
 		}
 		[CRepr]
 		public struct IFileOperation : IUnknown
 		{
 			public const new Guid IID = .(0x947aab5f, 0x0a5c, 0x4c13, 0xb4, 0xd6, 0x4b, 0xf7, 0x83, 0x6f, 0xc9, 0xf8);
 			
-			public function HRESULT(IFileOperation *self, IFileOperationProgressSink* pfops, uint32* pdwCookie) Advise;
-			public function HRESULT(IFileOperation *self, uint32 dwCookie) Unadvise;
-			public function HRESULT(IFileOperation *self, uint32 dwOperationFlags) SetOperationFlags;
-			public function HRESULT(IFileOperation *self, PWSTR pszMessage) SetProgressMessage;
-			public function HRESULT(IFileOperation *self, IOperationsProgressDialog* popd) SetProgressDialog;
-			public function HRESULT(IFileOperation *self, IPropertyChangeArray* pproparray) SetProperties;
-			public function HRESULT(IFileOperation *self, HWND hwndOwner) SetOwnerWindow;
-			public function HRESULT(IFileOperation *self, IShellItem* psiItem) ApplyPropertiesToItem;
-			public function HRESULT(IFileOperation *self, IUnknown* punkItems) ApplyPropertiesToItems;
-			public function HRESULT(IFileOperation *self, IShellItem* psiItem, PWSTR pszNewName, IFileOperationProgressSink* pfopsItem) RenameItem;
-			public function HRESULT(IFileOperation *self, IUnknown* pUnkItems, PWSTR pszNewName) RenameItems;
-			public function HRESULT(IFileOperation *self, IShellItem* psiItem, IShellItem* psiDestinationFolder, PWSTR pszNewName, IFileOperationProgressSink* pfopsItem) MoveItem;
-			public function HRESULT(IFileOperation *self, IUnknown* punkItems, IShellItem* psiDestinationFolder) MoveItems;
-			public function HRESULT(IFileOperation *self, IShellItem* psiItem, IShellItem* psiDestinationFolder, PWSTR pszCopyName, IFileOperationProgressSink* pfopsItem) CopyItem;
-			public function HRESULT(IFileOperation *self, IUnknown* punkItems, IShellItem* psiDestinationFolder) CopyItems;
-			public function HRESULT(IFileOperation *self, IShellItem* psiItem, IFileOperationProgressSink* pfopsItem) DeleteItem;
-			public function HRESULT(IFileOperation *self, IUnknown* punkItems) DeleteItems;
-			public function HRESULT(IFileOperation *self, IShellItem* psiDestinationFolder, uint32 dwFileAttributes, PWSTR pszName, PWSTR pszTemplateName, IFileOperationProgressSink* pfopsItem) NewItem;
-			public function HRESULT(IFileOperation *self) PerformOperations;
-			public function HRESULT(IFileOperation *self, BOOL* pfAnyOperationsAborted) GetAnyOperationsAborted;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IFileOperation *self, IFileOperationProgressSink* pfops, uint32* pdwCookie) Advise;
+				public function HRESULT(IFileOperation *self, uint32 dwCookie) Unadvise;
+				public function HRESULT(IFileOperation *self, uint32 dwOperationFlags) SetOperationFlags;
+				public function HRESULT(IFileOperation *self, PWSTR pszMessage) SetProgressMessage;
+				public function HRESULT(IFileOperation *self, IOperationsProgressDialog* popd) SetProgressDialog;
+				public function HRESULT(IFileOperation *self, IPropertyChangeArray* pproparray) SetProperties;
+				public function HRESULT(IFileOperation *self, HWND hwndOwner) SetOwnerWindow;
+				public function HRESULT(IFileOperation *self, IShellItem* psiItem) ApplyPropertiesToItem;
+				public function HRESULT(IFileOperation *self, IUnknown* punkItems) ApplyPropertiesToItems;
+				public function HRESULT(IFileOperation *self, IShellItem* psiItem, PWSTR pszNewName, IFileOperationProgressSink* pfopsItem) RenameItem;
+				public function HRESULT(IFileOperation *self, IUnknown* pUnkItems, PWSTR pszNewName) RenameItems;
+				public function HRESULT(IFileOperation *self, IShellItem* psiItem, IShellItem* psiDestinationFolder, PWSTR pszNewName, IFileOperationProgressSink* pfopsItem) MoveItem;
+				public function HRESULT(IFileOperation *self, IUnknown* punkItems, IShellItem* psiDestinationFolder) MoveItems;
+				public function HRESULT(IFileOperation *self, IShellItem* psiItem, IShellItem* psiDestinationFolder, PWSTR pszCopyName, IFileOperationProgressSink* pfopsItem) CopyItem;
+				public function HRESULT(IFileOperation *self, IUnknown* punkItems, IShellItem* psiDestinationFolder) CopyItems;
+				public function HRESULT(IFileOperation *self, IShellItem* psiItem, IFileOperationProgressSink* pfopsItem) DeleteItem;
+				public function HRESULT(IFileOperation *self, IUnknown* punkItems) DeleteItems;
+				public function HRESULT(IFileOperation *self, IShellItem* psiDestinationFolder, uint32 dwFileAttributes, PWSTR pszName, PWSTR pszTemplateName, IFileOperationProgressSink* pfopsItem) NewItem;
+				public function HRESULT(IFileOperation *self) PerformOperations;
+				public function HRESULT(IFileOperation *self, BOOL* pfAnyOperationsAborted) GetAnyOperationsAborted;
+			}
 		}
 		[CRepr]
 		public struct IFileOperation2 : IFileOperation
 		{
 			public const new Guid IID = .(0xcd8f23c1, 0x8f61, 0x4916, 0x90, 0x9d, 0x55, 0xbd, 0xd0, 0x91, 0x87, 0x53);
 			
-			public function HRESULT(IFileOperation2 *self, FILE_OPERATION_FLAGS2 operationFlags2) SetOperationFlags2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IFileOperation.VTable
+			{
+				public function HRESULT(IFileOperation2 *self, FILE_OPERATION_FLAGS2 operationFlags2) SetOperationFlags2;
+			}
 		}
 		[CRepr]
 		public struct IObjectProvider : IUnknown
 		{
 			public const new Guid IID = .(0xa6087428, 0x3be3, 0x4d73, 0xb3, 0x08, 0x7c, 0x04, 0xa5, 0x40, 0xbf, 0x1a);
 			
-			public function HRESULT(IObjectProvider *self, Guid* guidObject, Guid* riid, void** ppvOut) QueryObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IObjectProvider *self, Guid* guidObject, Guid* riid, void** ppvOut) QueryObject;
+			}
 		}
 		[CRepr]
 		public struct INamespaceWalkCB : IUnknown
 		{
 			public const new Guid IID = .(0xd92995f8, 0xcf5e, 0x4a76, 0xbf, 0x59, 0xea, 0xd3, 0x9e, 0xa2, 0xb9, 0x7e);
 			
-			public function HRESULT(INamespaceWalkCB *self, IShellFolder* psf, ITEMIDLIST* pidl) FoundItem;
-			public function HRESULT(INamespaceWalkCB *self, IShellFolder* psf, ITEMIDLIST* pidl) EnterFolder;
-			public function HRESULT(INamespaceWalkCB *self, IShellFolder* psf, ITEMIDLIST* pidl) LeaveFolder;
-			public function HRESULT(INamespaceWalkCB *self, PWSTR* ppszTitle, PWSTR* ppszCancel) InitializeProgressDialog;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INamespaceWalkCB *self, IShellFolder* psf, ITEMIDLIST* pidl) FoundItem;
+				public function HRESULT(INamespaceWalkCB *self, IShellFolder* psf, ITEMIDLIST* pidl) EnterFolder;
+				public function HRESULT(INamespaceWalkCB *self, IShellFolder* psf, ITEMIDLIST* pidl) LeaveFolder;
+				public function HRESULT(INamespaceWalkCB *self, PWSTR* ppszTitle, PWSTR* ppszCancel) InitializeProgressDialog;
+			}
 		}
 		[CRepr]
 		public struct INamespaceWalkCB2 : INamespaceWalkCB
 		{
 			public const new Guid IID = .(0x7ac7492b, 0xc38e, 0x438a, 0x87, 0xdb, 0x68, 0x73, 0x78, 0x44, 0xff, 0x70);
 			
-			public function HRESULT(INamespaceWalkCB2 *self, HRESULT hr) WalkComplete;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : INamespaceWalkCB.VTable
+			{
+				public function HRESULT(INamespaceWalkCB2 *self, HRESULT hr) WalkComplete;
+			}
 		}
 		[CRepr]
 		public struct INamespaceWalk : IUnknown
 		{
 			public const new Guid IID = .(0x57ced8a7, 0x3f4a, 0x432c, 0x93, 0x50, 0x30, 0xf2, 0x44, 0x83, 0xf7, 0x4f);
 			
-			public function HRESULT(INamespaceWalk *self, IUnknown* punkToWalk, uint32 dwFlags, int32 cDepth, INamespaceWalkCB* pnswcb) Walk;
-			public function HRESULT(INamespaceWalk *self, uint32* pcItems, ITEMIDLIST*** prgpidl) GetIDArrayResult;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INamespaceWalk *self, IUnknown* punkToWalk, uint32 dwFlags, int32 cDepth, INamespaceWalkCB* pnswcb) Walk;
+				public function HRESULT(INamespaceWalk *self, uint32* pcItems, ITEMIDLIST*** prgpidl) GetIDArrayResult;
+			}
 		}
 		[CRepr]
 		public struct IBandSite : IUnknown
 		{
 			public const new Guid IID = .(0x4cf504b0, 0xde96, 0x11d0, 0x8b, 0x3f, 0x00, 0xa0, 0xc9, 0x11, 0xe8, 0xe5);
 			
-			public function HRESULT(IBandSite *self, IUnknown* punk) AddBand;
-			public function HRESULT(IBandSite *self, uint32 uBand, uint32* pdwBandID) EnumBands;
-			public function HRESULT(IBandSite *self, uint32 dwBandID, IDeskBand** ppstb, uint32* pdwState, char16* pszName, int32 cchName) QueryBand;
-			public function HRESULT(IBandSite *self, uint32 dwBandID, uint32 dwMask, uint32 dwState) SetBandState;
-			public function HRESULT(IBandSite *self, uint32 dwBandID) RemoveBand;
-			public function HRESULT(IBandSite *self, uint32 dwBandID, Guid* riid, void** ppv) GetBandObject;
-			public function HRESULT(IBandSite *self, BANDSITEINFO* pbsinfo) SetBandSiteInfo;
-			public function HRESULT(IBandSite *self, BANDSITEINFO* pbsinfo) GetBandSiteInfo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IBandSite *self, IUnknown* punk) AddBand;
+				public function HRESULT(IBandSite *self, uint32 uBand, uint32* pdwBandID) EnumBands;
+				public function HRESULT(IBandSite *self, uint32 dwBandID, IDeskBand** ppstb, uint32* pdwState, char16* pszName, int32 cchName) QueryBand;
+				public function HRESULT(IBandSite *self, uint32 dwBandID, uint32 dwMask, uint32 dwState) SetBandState;
+				public function HRESULT(IBandSite *self, uint32 dwBandID) RemoveBand;
+				public function HRESULT(IBandSite *self, uint32 dwBandID, Guid* riid, void** ppv) GetBandObject;
+				public function HRESULT(IBandSite *self, BANDSITEINFO* pbsinfo) SetBandSiteInfo;
+				public function HRESULT(IBandSite *self, BANDSITEINFO* pbsinfo) GetBandSiteInfo;
+			}
 		}
 		[CRepr]
 		public struct IModalWindow : IUnknown
 		{
 			public const new Guid IID = .(0xb4db1657, 0x70d7, 0x485e, 0x8e, 0x3e, 0x6f, 0xcb, 0x5a, 0x5c, 0x18, 0x02);
 			
-			public function HRESULT(IModalWindow *self, HWND hwndOwner) Show;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IModalWindow *self, HWND hwndOwner) Show;
+			}
 		}
 		[CRepr]
 		public struct IContextMenuSite : IUnknown
 		{
 			public const new Guid IID = .(0x0811aebe, 0x0b87, 0x4c54, 0x9e, 0x72, 0x54, 0x8c, 0xf6, 0x49, 0x01, 0x6b);
 			
-			public function HRESULT(IContextMenuSite *self, IUnknown* punkContextMenu, uint32 fFlags, POINT pt) DoContextMenuPopup;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IContextMenuSite *self, IUnknown* punkContextMenu, uint32 fFlags, POINT pt) DoContextMenuPopup;
+			}
 		}
 		[CRepr]
 		public struct IMenuBand : IUnknown
 		{
 			public const new Guid IID = .(0x568804cd, 0xcbd7, 0x11d0, 0x98, 0x16, 0x00, 0xc0, 0x4f, 0xd9, 0x19, 0x72);
 			
-			public function HRESULT(IMenuBand *self, MSG* pmsg) IsMenuMessage;
-			public function HRESULT(IMenuBand *self, MSG* pmsg, LRESULT* plRet) TranslateMenuMessage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMenuBand *self, MSG* pmsg) IsMenuMessage;
+				public function HRESULT(IMenuBand *self, MSG* pmsg, LRESULT* plRet) TranslateMenuMessage;
+			}
 		}
 		[CRepr]
 		public struct IRegTreeItem : IUnknown
 		{
 			public const new Guid IID = .(0xa9521922, 0x0812, 0x4d44, 0x9e, 0xc3, 0x7f, 0xd3, 0x8c, 0x72, 0x6f, 0x3d);
 			
-			public function HRESULT(IRegTreeItem *self, BOOL* pbCheck) GetCheckState;
-			public function HRESULT(IRegTreeItem *self, BOOL bCheck) SetCheckState;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRegTreeItem *self, BOOL* pbCheck) GetCheckState;
+				public function HRESULT(IRegTreeItem *self, BOOL bCheck) SetCheckState;
+			}
 		}
 		[CRepr]
 		public struct IDeskBar : IOleWindow
 		{
 			public const new Guid IID = .(0xeb0fe173, 0x1a3a, 0x11d0, 0x89, 0xb3, 0x00, 0xa0, 0xc9, 0x0a, 0x90, 0xac);
 			
-			public function HRESULT(IDeskBar *self, IUnknown* punkClient) SetClient;
-			public function HRESULT(IDeskBar *self, IUnknown** ppunkClient) GetClient;
-			public function HRESULT(IDeskBar *self, RECT* prc) OnPosRectChangeDB;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IOleWindow.VTable
+			{
+				public function HRESULT(IDeskBar *self, IUnknown* punkClient) SetClient;
+				public function HRESULT(IDeskBar *self, IUnknown** ppunkClient) GetClient;
+				public function HRESULT(IDeskBar *self, RECT* prc) OnPosRectChangeDB;
+			}
 		}
 		[CRepr]
 		public struct IMenuPopup : IDeskBar
 		{
 			public const new Guid IID = .(0xd1e7afeb, 0x6a2e, 0x11d0, 0x8c, 0x78, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0xb4);
 			
-			public function HRESULT(IMenuPopup *self, POINTL* ppt, RECTL* prcExclude, int32 dwFlags) Popup;
-			public function HRESULT(IMenuPopup *self, uint32 dwSelectType) OnSelect;
-			public function HRESULT(IMenuPopup *self, IMenuPopup* pmp, BOOL fSet) SetSubMenu;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDeskBar.VTable
+			{
+				public function HRESULT(IMenuPopup *self, POINTL* ppt, RECTL* prcExclude, int32 dwFlags) Popup;
+				public function HRESULT(IMenuPopup *self, uint32 dwSelectType) OnSelect;
+				public function HRESULT(IMenuPopup *self, IMenuPopup* pmp, BOOL fSet) SetSubMenu;
+			}
 		}
 		[CRepr]
 		public struct IFileIsInUse : IUnknown
 		{
 			public const new Guid IID = .(0x64a1cbf0, 0x3a1a, 0x4461, 0x91, 0x58, 0x37, 0x69, 0x69, 0x69, 0x39, 0x50);
 			
-			public function HRESULT(IFileIsInUse *self, PWSTR* ppszName) GetAppName;
-			public function HRESULT(IFileIsInUse *self, FILE_USAGE_TYPE* pfut) GetUsage;
-			public function HRESULT(IFileIsInUse *self, uint32* pdwCapFlags) GetCapabilities;
-			public function HRESULT(IFileIsInUse *self, HWND* phwnd) GetSwitchToHWND;
-			public function HRESULT(IFileIsInUse *self) CloseFile;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IFileIsInUse *self, PWSTR* ppszName) GetAppName;
+				public function HRESULT(IFileIsInUse *self, FILE_USAGE_TYPE* pfut) GetUsage;
+				public function HRESULT(IFileIsInUse *self, uint32* pdwCapFlags) GetCapabilities;
+				public function HRESULT(IFileIsInUse *self, HWND* phwnd) GetSwitchToHWND;
+				public function HRESULT(IFileIsInUse *self) CloseFile;
+			}
 		}
 		[CRepr]
 		public struct IFileDialogEvents : IUnknown
 		{
 			public const new Guid IID = .(0x973510db, 0x7d7f, 0x452b, 0x89, 0x75, 0x74, 0xa8, 0x58, 0x28, 0xd3, 0x54);
 			
-			public function HRESULT(IFileDialogEvents *self, IFileDialog* pfd) OnFileOk;
-			public function HRESULT(IFileDialogEvents *self, IFileDialog* pfd, IShellItem* psiFolder) OnFolderChanging;
-			public function HRESULT(IFileDialogEvents *self, IFileDialog* pfd) OnFolderChange;
-			public function HRESULT(IFileDialogEvents *self, IFileDialog* pfd) OnSelectionChange;
-			public function HRESULT(IFileDialogEvents *self, IFileDialog* pfd, IShellItem* psi, FDE_SHAREVIOLATION_RESPONSE* pResponse) OnShareViolation;
-			public function HRESULT(IFileDialogEvents *self, IFileDialog* pfd) OnTypeChange;
-			public function HRESULT(IFileDialogEvents *self, IFileDialog* pfd, IShellItem* psi, FDE_OVERWRITE_RESPONSE* pResponse) OnOverwrite;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IFileDialogEvents *self, IFileDialog* pfd) OnFileOk;
+				public function HRESULT(IFileDialogEvents *self, IFileDialog* pfd, IShellItem* psiFolder) OnFolderChanging;
+				public function HRESULT(IFileDialogEvents *self, IFileDialog* pfd) OnFolderChange;
+				public function HRESULT(IFileDialogEvents *self, IFileDialog* pfd) OnSelectionChange;
+				public function HRESULT(IFileDialogEvents *self, IFileDialog* pfd, IShellItem* psi, FDE_SHAREVIOLATION_RESPONSE* pResponse) OnShareViolation;
+				public function HRESULT(IFileDialogEvents *self, IFileDialog* pfd) OnTypeChange;
+				public function HRESULT(IFileDialogEvents *self, IFileDialog* pfd, IShellItem* psi, FDE_OVERWRITE_RESPONSE* pResponse) OnOverwrite;
+			}
 		}
 		[CRepr]
 		public struct IFileDialog : IModalWindow
 		{
 			public const new Guid IID = .(0x42f85136, 0xdb7e, 0x439c, 0x85, 0xf1, 0xe4, 0x07, 0x5d, 0x13, 0x5f, 0xc8);
 			
-			public function HRESULT(IFileDialog *self, uint32 cFileTypes, COMDLG_FILTERSPEC* rgFilterSpec) SetFileTypes;
-			public function HRESULT(IFileDialog *self, uint32 iFileType) SetFileTypeIndex;
-			public function HRESULT(IFileDialog *self, uint32* piFileType) GetFileTypeIndex;
-			public function HRESULT(IFileDialog *self, IFileDialogEvents* pfde, uint32* pdwCookie) Advise;
-			public function HRESULT(IFileDialog *self, uint32 dwCookie) Unadvise;
-			public function HRESULT(IFileDialog *self, uint32 fos) SetOptions;
-			public function HRESULT(IFileDialog *self, uint32* pfos) GetOptions;
-			public function HRESULT(IFileDialog *self, IShellItem* psi) SetDefaultFolder;
-			public function HRESULT(IFileDialog *self, IShellItem* psi) SetFolder;
-			public function HRESULT(IFileDialog *self, IShellItem** ppsi) GetFolder;
-			public function HRESULT(IFileDialog *self, IShellItem** ppsi) GetCurrentSelection;
-			public function HRESULT(IFileDialog *self, PWSTR pszName) SetFileName;
-			public function HRESULT(IFileDialog *self, PWSTR* pszName) GetFileName;
-			public function HRESULT(IFileDialog *self, PWSTR pszTitle) SetTitle;
-			public function HRESULT(IFileDialog *self, PWSTR pszText) SetOkButtonLabel;
-			public function HRESULT(IFileDialog *self, PWSTR pszLabel) SetFileNameLabel;
-			public function HRESULT(IFileDialog *self, IShellItem** ppsi) GetResult;
-			public function HRESULT(IFileDialog *self, IShellItem* psi, FDAP fdap) AddPlace;
-			public function HRESULT(IFileDialog *self, PWSTR pszDefaultExtension) SetDefaultExtension;
-			public function HRESULT(IFileDialog *self, HRESULT hr) Close;
-			public function HRESULT(IFileDialog *self, Guid* guid) SetClientGuid;
-			public function HRESULT(IFileDialog *self) ClearClientData;
-			public function HRESULT(IFileDialog *self, IShellItemFilter* pFilter) SetFilter;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IModalWindow.VTable
+			{
+				public function HRESULT(IFileDialog *self, uint32 cFileTypes, COMDLG_FILTERSPEC* rgFilterSpec) SetFileTypes;
+				public function HRESULT(IFileDialog *self, uint32 iFileType) SetFileTypeIndex;
+				public function HRESULT(IFileDialog *self, uint32* piFileType) GetFileTypeIndex;
+				public function HRESULT(IFileDialog *self, IFileDialogEvents* pfde, uint32* pdwCookie) Advise;
+				public function HRESULT(IFileDialog *self, uint32 dwCookie) Unadvise;
+				public function HRESULT(IFileDialog *self, uint32 fos) SetOptions;
+				public function HRESULT(IFileDialog *self, uint32* pfos) GetOptions;
+				public function HRESULT(IFileDialog *self, IShellItem* psi) SetDefaultFolder;
+				public function HRESULT(IFileDialog *self, IShellItem* psi) SetFolder;
+				public function HRESULT(IFileDialog *self, IShellItem** ppsi) GetFolder;
+				public function HRESULT(IFileDialog *self, IShellItem** ppsi) GetCurrentSelection;
+				public function HRESULT(IFileDialog *self, PWSTR pszName) SetFileName;
+				public function HRESULT(IFileDialog *self, PWSTR* pszName) GetFileName;
+				public function HRESULT(IFileDialog *self, PWSTR pszTitle) SetTitle;
+				public function HRESULT(IFileDialog *self, PWSTR pszText) SetOkButtonLabel;
+				public function HRESULT(IFileDialog *self, PWSTR pszLabel) SetFileNameLabel;
+				public function HRESULT(IFileDialog *self, IShellItem** ppsi) GetResult;
+				public function HRESULT(IFileDialog *self, IShellItem* psi, FDAP fdap) AddPlace;
+				public function HRESULT(IFileDialog *self, PWSTR pszDefaultExtension) SetDefaultExtension;
+				public function HRESULT(IFileDialog *self, HRESULT hr) Close;
+				public function HRESULT(IFileDialog *self, Guid* guid) SetClientGuid;
+				public function HRESULT(IFileDialog *self) ClearClientData;
+				public function HRESULT(IFileDialog *self, IShellItemFilter* pFilter) SetFilter;
+			}
 		}
 		[CRepr]
 		public struct IFileSaveDialog : IFileDialog
 		{
 			public const new Guid IID = .(0x84bccd23, 0x5fde, 0x4cdb, 0xae, 0xa4, 0xaf, 0x64, 0xb8, 0x3d, 0x78, 0xab);
 			
-			public function HRESULT(IFileSaveDialog *self, IShellItem* psi) SetSaveAsItem;
-			public function HRESULT(IFileSaveDialog *self, IPropertyStore* pStore) SetProperties;
-			public function HRESULT(IFileSaveDialog *self, IPropertyDescriptionList* pList, BOOL fAppendDefault) SetCollectedProperties;
-			public function HRESULT(IFileSaveDialog *self, IPropertyStore** ppStore) GetProperties;
-			public function HRESULT(IFileSaveDialog *self, IShellItem* psi, IPropertyStore* pStore, HWND hwnd, IFileOperationProgressSink* pSink) ApplyProperties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IFileDialog.VTable
+			{
+				public function HRESULT(IFileSaveDialog *self, IShellItem* psi) SetSaveAsItem;
+				public function HRESULT(IFileSaveDialog *self, IPropertyStore* pStore) SetProperties;
+				public function HRESULT(IFileSaveDialog *self, IPropertyDescriptionList* pList, BOOL fAppendDefault) SetCollectedProperties;
+				public function HRESULT(IFileSaveDialog *self, IPropertyStore** ppStore) GetProperties;
+				public function HRESULT(IFileSaveDialog *self, IShellItem* psi, IPropertyStore* pStore, HWND hwnd, IFileOperationProgressSink* pSink) ApplyProperties;
+			}
 		}
 		[CRepr]
 		public struct IFileOpenDialog : IFileDialog
 		{
 			public const new Guid IID = .(0xd57c7288, 0xd4ad, 0x4768, 0xbe, 0x02, 0x9d, 0x96, 0x95, 0x32, 0xd9, 0x60);
 			
-			public function HRESULT(IFileOpenDialog *self, IShellItemArray** ppenum) GetResults;
-			public function HRESULT(IFileOpenDialog *self, IShellItemArray** ppsai) GetSelectedItems;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IFileDialog.VTable
+			{
+				public function HRESULT(IFileOpenDialog *self, IShellItemArray** ppenum) GetResults;
+				public function HRESULT(IFileOpenDialog *self, IShellItemArray** ppsai) GetSelectedItems;
+			}
 		}
 		[CRepr]
 		public struct IFileDialogCustomize : IUnknown
 		{
 			public const new Guid IID = .(0xe6fdd21a, 0x163f, 0x4975, 0x9c, 0x8c, 0xa6, 0x9f, 0x1b, 0xa3, 0x70, 0x34);
 			
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl) EnableOpenDropDown;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, PWSTR pszLabel) AddMenu;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, PWSTR pszLabel) AddPushButton;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl) AddComboBox;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl) AddRadioButtonList;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, PWSTR pszLabel, BOOL bChecked) AddCheckButton;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, PWSTR pszText) AddEditBox;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl) AddSeparator;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, PWSTR pszText) AddText;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, PWSTR pszLabel) SetControlLabel;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, CDCONTROLSTATEF* pdwState) GetControlState;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, CDCONTROLSTATEF dwState) SetControlState;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, uint16** ppszText) GetEditBoxText;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, PWSTR pszText) SetEditBoxText;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, BOOL* pbChecked) GetCheckButtonState;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, BOOL bChecked) SetCheckButtonState;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, uint32 dwIDItem, PWSTR pszLabel) AddControlItem;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, uint32 dwIDItem) RemoveControlItem;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl) RemoveAllControlItems;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, uint32 dwIDItem, CDCONTROLSTATEF* pdwState) GetControlItemState;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, uint32 dwIDItem, CDCONTROLSTATEF dwState) SetControlItemState;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, uint32* pdwIDItem) GetSelectedControlItem;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, uint32 dwIDItem) SetSelectedControlItem;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, PWSTR pszLabel) StartVisualGroup;
-			public function HRESULT(IFileDialogCustomize *self) EndVisualGroup;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl) MakeProminent;
-			public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, uint32 dwIDItem, PWSTR pszLabel) SetControlItemText;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl) EnableOpenDropDown;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, PWSTR pszLabel) AddMenu;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, PWSTR pszLabel) AddPushButton;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl) AddComboBox;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl) AddRadioButtonList;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, PWSTR pszLabel, BOOL bChecked) AddCheckButton;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, PWSTR pszText) AddEditBox;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl) AddSeparator;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, PWSTR pszText) AddText;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, PWSTR pszLabel) SetControlLabel;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, CDCONTROLSTATEF* pdwState) GetControlState;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, CDCONTROLSTATEF dwState) SetControlState;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, uint16** ppszText) GetEditBoxText;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, PWSTR pszText) SetEditBoxText;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, BOOL* pbChecked) GetCheckButtonState;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, BOOL bChecked) SetCheckButtonState;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, uint32 dwIDItem, PWSTR pszLabel) AddControlItem;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, uint32 dwIDItem) RemoveControlItem;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl) RemoveAllControlItems;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, uint32 dwIDItem, CDCONTROLSTATEF* pdwState) GetControlItemState;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, uint32 dwIDItem, CDCONTROLSTATEF dwState) SetControlItemState;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, uint32* pdwIDItem) GetSelectedControlItem;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, uint32 dwIDItem) SetSelectedControlItem;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, PWSTR pszLabel) StartVisualGroup;
+				public function HRESULT(IFileDialogCustomize *self) EndVisualGroup;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl) MakeProminent;
+				public function HRESULT(IFileDialogCustomize *self, uint32 dwIDCtl, uint32 dwIDItem, PWSTR pszLabel) SetControlItemText;
+			}
 		}
 		[CRepr]
 		public struct IApplicationAssociationRegistration : IUnknown
 		{
 			public const new Guid IID = .(0x4e530b0a, 0xe611, 0x4c77, 0xa3, 0xac, 0x90, 0x31, 0xd0, 0x22, 0x28, 0x1b);
 			
-			public function HRESULT(IApplicationAssociationRegistration *self, PWSTR pszQuery, ASSOCIATIONTYPE atQueryType, ASSOCIATIONLEVEL alQueryLevel, PWSTR* ppszAssociation) QueryCurrentDefault;
-			public function HRESULT(IApplicationAssociationRegistration *self, PWSTR pszQuery, ASSOCIATIONTYPE atQueryType, ASSOCIATIONLEVEL alQueryLevel, PWSTR pszAppRegistryName, BOOL* pfDefault) QueryAppIsDefault;
-			public function HRESULT(IApplicationAssociationRegistration *self, ASSOCIATIONLEVEL alQueryLevel, PWSTR pszAppRegistryName, BOOL* pfDefault) QueryAppIsDefaultAll;
-			public function HRESULT(IApplicationAssociationRegistration *self, PWSTR pszAppRegistryName, PWSTR pszSet, ASSOCIATIONTYPE atSetType) SetAppAsDefault;
-			public function HRESULT(IApplicationAssociationRegistration *self, PWSTR pszAppRegistryName) SetAppAsDefaultAll;
-			public function HRESULT(IApplicationAssociationRegistration *self) ClearUserAssociations;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IApplicationAssociationRegistration *self, PWSTR pszQuery, ASSOCIATIONTYPE atQueryType, ASSOCIATIONLEVEL alQueryLevel, PWSTR* ppszAssociation) QueryCurrentDefault;
+				public function HRESULT(IApplicationAssociationRegistration *self, PWSTR pszQuery, ASSOCIATIONTYPE atQueryType, ASSOCIATIONLEVEL alQueryLevel, PWSTR pszAppRegistryName, BOOL* pfDefault) QueryAppIsDefault;
+				public function HRESULT(IApplicationAssociationRegistration *self, ASSOCIATIONLEVEL alQueryLevel, PWSTR pszAppRegistryName, BOOL* pfDefault) QueryAppIsDefaultAll;
+				public function HRESULT(IApplicationAssociationRegistration *self, PWSTR pszAppRegistryName, PWSTR pszSet, ASSOCIATIONTYPE atSetType) SetAppAsDefault;
+				public function HRESULT(IApplicationAssociationRegistration *self, PWSTR pszAppRegistryName) SetAppAsDefaultAll;
+				public function HRESULT(IApplicationAssociationRegistration *self) ClearUserAssociations;
+			}
 		}
 		[CRepr]
 		public struct IDelegateFolder : IUnknown
 		{
 			public const new Guid IID = .(0xadd8ba80, 0x002b, 0x11d0, 0x8f, 0x0f, 0x00, 0xc0, 0x4f, 0xd7, 0xd0, 0x62);
 			
-			public function HRESULT(IDelegateFolder *self, IMalloc* pmalloc) SetItemAlloc;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDelegateFolder *self, IMalloc* pmalloc) SetItemAlloc;
+			}
 		}
 		[CRepr]
 		public struct IBrowserFrameOptions : IUnknown
 		{
 			public const new Guid IID = .(0x10df43c8, 0x1dbe, 0x11d3, 0x8b, 0x34, 0x00, 0x60, 0x97, 0xdf, 0x5b, 0xd4);
 			
-			public function HRESULT(IBrowserFrameOptions *self, uint32 dwMask, uint32* pdwOptions) GetFrameOptions;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IBrowserFrameOptions *self, uint32 dwMask, uint32* pdwOptions) GetFrameOptions;
+			}
 		}
 		[CRepr]
 		public struct INewWindowManager : IUnknown
 		{
 			public const new Guid IID = .(0xd2bc4c84, 0x3f72, 0x4a52, 0xa6, 0x04, 0x7b, 0xcb, 0xf3, 0x98, 0x2c, 0xbb);
 			
-			public function HRESULT(INewWindowManager *self, PWSTR pszUrl, PWSTR pszName, PWSTR pszUrlContext, PWSTR pszFeatures, BOOL fReplace, uint32 dwFlags, uint32 dwUserActionTime) EvaluateNewWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INewWindowManager *self, PWSTR pszUrl, PWSTR pszName, PWSTR pszUrlContext, PWSTR pszFeatures, BOOL fReplace, uint32 dwFlags, uint32 dwUserActionTime) EvaluateNewWindow;
+			}
 		}
 		[CRepr]
 		public struct IAttachmentExecute : IUnknown
 		{
 			public const new Guid IID = .(0x73db1241, 0x1e85, 0x4581, 0x8e, 0x4f, 0xa8, 0x1e, 0x1d, 0x0f, 0x8c, 0x57);
 			
-			public function HRESULT(IAttachmentExecute *self, PWSTR pszTitle) SetClientTitle;
-			public function HRESULT(IAttachmentExecute *self, Guid* guid) SetClientGuid;
-			public function HRESULT(IAttachmentExecute *self, PWSTR pszLocalPath) SetLocalPath;
-			public function HRESULT(IAttachmentExecute *self, PWSTR pszFileName) SetFileName;
-			public function HRESULT(IAttachmentExecute *self, PWSTR pszSource) SetSource;
-			public function HRESULT(IAttachmentExecute *self, PWSTR pszReferrer) SetReferrer;
-			public function HRESULT(IAttachmentExecute *self) CheckPolicy;
-			public function HRESULT(IAttachmentExecute *self, HWND hwnd, ATTACHMENT_PROMPT prompt, ATTACHMENT_ACTION* paction) Prompt;
-			public function HRESULT(IAttachmentExecute *self) Save;
-			public function HRESULT(IAttachmentExecute *self, HWND hwnd, PWSTR pszVerb, HANDLE* phProcess) Execute;
-			public function HRESULT(IAttachmentExecute *self, HWND hwnd) SaveWithUI;
-			public function HRESULT(IAttachmentExecute *self) ClearClientState;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAttachmentExecute *self, PWSTR pszTitle) SetClientTitle;
+				public function HRESULT(IAttachmentExecute *self, Guid* guid) SetClientGuid;
+				public function HRESULT(IAttachmentExecute *self, PWSTR pszLocalPath) SetLocalPath;
+				public function HRESULT(IAttachmentExecute *self, PWSTR pszFileName) SetFileName;
+				public function HRESULT(IAttachmentExecute *self, PWSTR pszSource) SetSource;
+				public function HRESULT(IAttachmentExecute *self, PWSTR pszReferrer) SetReferrer;
+				public function HRESULT(IAttachmentExecute *self) CheckPolicy;
+				public function HRESULT(IAttachmentExecute *self, HWND hwnd, ATTACHMENT_PROMPT prompt, ATTACHMENT_ACTION* paction) Prompt;
+				public function HRESULT(IAttachmentExecute *self) Save;
+				public function HRESULT(IAttachmentExecute *self, HWND hwnd, PWSTR pszVerb, HANDLE* phProcess) Execute;
+				public function HRESULT(IAttachmentExecute *self, HWND hwnd) SaveWithUI;
+				public function HRESULT(IAttachmentExecute *self) ClearClientState;
+			}
 		}
 		[CRepr]
 		public struct IShellMenuCallback : IUnknown
 		{
 			public const new Guid IID = .(0x4ca300a1, 0x9b8d, 0x11d1, 0x8b, 0x22, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0xd0);
 			
-			public function HRESULT(IShellMenuCallback *self, SMDATA* psmd, uint32 uMsg, WPARAM wParam, LPARAM lParam) CallbackSM;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellMenuCallback *self, SMDATA* psmd, uint32 uMsg, WPARAM wParam, LPARAM lParam) CallbackSM;
+			}
 		}
 		[CRepr]
 		public struct IShellMenu : IUnknown
 		{
 			public const new Guid IID = .(0xee1f7637, 0xe138, 0x11d1, 0x83, 0x79, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0xd0);
 			
-			public function HRESULT(IShellMenu *self, IShellMenuCallback* psmc, uint32 uId, uint32 uIdAncestor, uint32 dwFlags) Initialize;
-			public function HRESULT(IShellMenu *self, IShellMenuCallback** ppsmc, uint32* puId, uint32* puIdAncestor, uint32* pdwFlags) GetMenuInfo;
-			public function HRESULT(IShellMenu *self, IShellFolder* psf, ITEMIDLIST* pidlFolder, HKEY hKey, uint32 dwFlags) SetShellFolder;
-			public function HRESULT(IShellMenu *self, uint32* pdwFlags, ITEMIDLIST** ppidl, Guid* riid, void** ppv) GetShellFolder;
-			public function HRESULT(IShellMenu *self, HMENU hmenu, HWND hwnd, uint32 dwFlags) SetMenu;
-			public function HRESULT(IShellMenu *self, HMENU* phmenu, HWND* phwnd, uint32* pdwFlags) GetMenu;
-			public function HRESULT(IShellMenu *self, SMDATA* psmd, uint32 dwFlags) InvalidateItem;
-			public function HRESULT(IShellMenu *self, SMDATA* psmd) GetState;
-			public function HRESULT(IShellMenu *self, IUnknown* punk, uint32 dwFlags) SetMenuToolbar;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellMenu *self, IShellMenuCallback* psmc, uint32 uId, uint32 uIdAncestor, uint32 dwFlags) Initialize;
+				public function HRESULT(IShellMenu *self, IShellMenuCallback** ppsmc, uint32* puId, uint32* puIdAncestor, uint32* pdwFlags) GetMenuInfo;
+				public function HRESULT(IShellMenu *self, IShellFolder* psf, ITEMIDLIST* pidlFolder, HKEY hKey, uint32 dwFlags) SetShellFolder;
+				public function HRESULT(IShellMenu *self, uint32* pdwFlags, ITEMIDLIST** ppidl, Guid* riid, void** ppv) GetShellFolder;
+				public function HRESULT(IShellMenu *self, HMENU hmenu, HWND hwnd, uint32 dwFlags) SetMenu;
+				public function HRESULT(IShellMenu *self, HMENU* phmenu, HWND* phwnd, uint32* pdwFlags) GetMenu;
+				public function HRESULT(IShellMenu *self, SMDATA* psmd, uint32 dwFlags) InvalidateItem;
+				public function HRESULT(IShellMenu *self, SMDATA* psmd) GetState;
+				public function HRESULT(IShellMenu *self, IUnknown* punk, uint32 dwFlags) SetMenuToolbar;
+			}
 		}
 		[CRepr]
 		public struct IKnownFolder : IUnknown
 		{
 			public const new Guid IID = .(0x3aa7af7e, 0x9b36, 0x420c, 0xa8, 0xe3, 0xf7, 0x7d, 0x46, 0x74, 0xa4, 0x88);
 			
-			public function HRESULT(IKnownFolder *self, Guid* pkfid) GetId;
-			public function HRESULT(IKnownFolder *self, KF_CATEGORY* pCategory) GetCategory;
-			public function HRESULT(IKnownFolder *self, uint32 dwFlags, Guid* riid, void** ppv) GetShellItem;
-			public function HRESULT(IKnownFolder *self, uint32 dwFlags, PWSTR* ppszPath) GetPath;
-			public function HRESULT(IKnownFolder *self, uint32 dwFlags, PWSTR pszPath) SetPath;
-			public function HRESULT(IKnownFolder *self, uint32 dwFlags, ITEMIDLIST** ppidl) GetIDList;
-			public function HRESULT(IKnownFolder *self, Guid* pftid) GetFolderType;
-			public function HRESULT(IKnownFolder *self, uint32* pCapabilities) GetRedirectionCapabilities;
-			public function HRESULT(IKnownFolder *self, KNOWNFOLDER_DEFINITION* pKFD) GetFolderDefinition;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IKnownFolder *self, Guid* pkfid) GetId;
+				public function HRESULT(IKnownFolder *self, KF_CATEGORY* pCategory) GetCategory;
+				public function HRESULT(IKnownFolder *self, uint32 dwFlags, Guid* riid, void** ppv) GetShellItem;
+				public function HRESULT(IKnownFolder *self, uint32 dwFlags, PWSTR* ppszPath) GetPath;
+				public function HRESULT(IKnownFolder *self, uint32 dwFlags, PWSTR pszPath) SetPath;
+				public function HRESULT(IKnownFolder *self, uint32 dwFlags, ITEMIDLIST** ppidl) GetIDList;
+				public function HRESULT(IKnownFolder *self, Guid* pftid) GetFolderType;
+				public function HRESULT(IKnownFolder *self, uint32* pCapabilities) GetRedirectionCapabilities;
+				public function HRESULT(IKnownFolder *self, KNOWNFOLDER_DEFINITION* pKFD) GetFolderDefinition;
+			}
 		}
 		[CRepr]
 		public struct IKnownFolderManager : IUnknown
 		{
 			public const new Guid IID = .(0x8be2d872, 0x86aa, 0x4d47, 0xb7, 0x76, 0x32, 0xcc, 0xa4, 0x0c, 0x70, 0x18);
 			
-			public function HRESULT(IKnownFolderManager *self, int32 nCsidl, Guid* pfid) FolderIdFromCsidl;
-			public function HRESULT(IKnownFolderManager *self, Guid* rfid, int32* pnCsidl) FolderIdToCsidl;
-			public function HRESULT(IKnownFolderManager *self, Guid** ppKFId, uint32* pCount) GetFolderIds;
-			public function HRESULT(IKnownFolderManager *self, Guid* rfid, IKnownFolder** ppkf) GetFolder;
-			public function HRESULT(IKnownFolderManager *self, PWSTR pszCanonicalName, IKnownFolder** ppkf) GetFolderByName;
-			public function HRESULT(IKnownFolderManager *self, Guid* rfid, KNOWNFOLDER_DEFINITION* pKFD) RegisterFolder;
-			public function HRESULT(IKnownFolderManager *self, Guid* rfid) UnregisterFolder;
-			public function HRESULT(IKnownFolderManager *self, PWSTR pszPath, FFFP_MODE mode, IKnownFolder** ppkf) FindFolderFromPath;
-			public function HRESULT(IKnownFolderManager *self, ITEMIDLIST* pidl, IKnownFolder** ppkf) FindFolderFromIDList;
-			public function HRESULT(IKnownFolderManager *self, Guid* rfid, HWND hwnd, uint32 flags, PWSTR pszTargetPath, uint32 cFolders, Guid* pExclusion, PWSTR* ppszError) Redirect;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IKnownFolderManager *self, int32 nCsidl, Guid* pfid) FolderIdFromCsidl;
+				public function HRESULT(IKnownFolderManager *self, Guid* rfid, int32* pnCsidl) FolderIdToCsidl;
+				public function HRESULT(IKnownFolderManager *self, Guid** ppKFId, uint32* pCount) GetFolderIds;
+				public function HRESULT(IKnownFolderManager *self, Guid* rfid, IKnownFolder** ppkf) GetFolder;
+				public function HRESULT(IKnownFolderManager *self, PWSTR pszCanonicalName, IKnownFolder** ppkf) GetFolderByName;
+				public function HRESULT(IKnownFolderManager *self, Guid* rfid, KNOWNFOLDER_DEFINITION* pKFD) RegisterFolder;
+				public function HRESULT(IKnownFolderManager *self, Guid* rfid) UnregisterFolder;
+				public function HRESULT(IKnownFolderManager *self, PWSTR pszPath, FFFP_MODE mode, IKnownFolder** ppkf) FindFolderFromPath;
+				public function HRESULT(IKnownFolderManager *self, ITEMIDLIST* pidl, IKnownFolder** ppkf) FindFolderFromIDList;
+				public function HRESULT(IKnownFolderManager *self, Guid* rfid, HWND hwnd, uint32 flags, PWSTR pszTargetPath, uint32 cFolders, Guid* pExclusion, PWSTR* ppszError) Redirect;
+			}
 		}
 		[CRepr]
 		public struct ISharingConfigurationManager : IUnknown
 		{
 			public const new Guid IID = .(0xb4cd448a, 0x9c86, 0x4466, 0x92, 0x01, 0x2e, 0x62, 0x10, 0x5b, 0x87, 0xae);
 			
-			public function HRESULT(ISharingConfigurationManager *self, DEF_SHARE_ID dsid, SHARE_ROLE role) CreateShare;
-			public function HRESULT(ISharingConfigurationManager *self, DEF_SHARE_ID dsid) DeleteShare;
-			public function HRESULT(ISharingConfigurationManager *self, DEF_SHARE_ID dsid) ShareExists;
-			public function HRESULT(ISharingConfigurationManager *self, DEF_SHARE_ID dsid, SHARE_ROLE* pRole) GetSharePermissions;
-			public function HRESULT(ISharingConfigurationManager *self) SharePrinters;
-			public function HRESULT(ISharingConfigurationManager *self) StopSharingPrinters;
-			public function HRESULT(ISharingConfigurationManager *self) ArePrintersShared;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISharingConfigurationManager *self, DEF_SHARE_ID dsid, SHARE_ROLE role) CreateShare;
+				public function HRESULT(ISharingConfigurationManager *self, DEF_SHARE_ID dsid) DeleteShare;
+				public function HRESULT(ISharingConfigurationManager *self, DEF_SHARE_ID dsid) ShareExists;
+				public function HRESULT(ISharingConfigurationManager *self, DEF_SHARE_ID dsid, SHARE_ROLE* pRole) GetSharePermissions;
+				public function HRESULT(ISharingConfigurationManager *self) SharePrinters;
+				public function HRESULT(ISharingConfigurationManager *self) StopSharingPrinters;
+				public function HRESULT(ISharingConfigurationManager *self) ArePrintersShared;
+			}
 		}
 		[CRepr]
 		public struct IRelatedItem : IUnknown
 		{
 			public const new Guid IID = .(0xa73ce67a, 0x8ab1, 0x44f1, 0x8d, 0x43, 0xd2, 0xfc, 0xbf, 0x6b, 0x1c, 0xd0);
 			
-			public function HRESULT(IRelatedItem *self, ITEMIDLIST** ppidl) GetItemIDList;
-			public function HRESULT(IRelatedItem *self, IShellItem** ppsi) GetItem;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRelatedItem *self, ITEMIDLIST** ppidl) GetItemIDList;
+				public function HRESULT(IRelatedItem *self, IShellItem** ppsi) GetItem;
+			}
 		}
 		[CRepr]
 		public struct IIdentityName : IRelatedItem
 		{
 			public const new Guid IID = .(0x7d903fca, 0xd6f9, 0x4810, 0x83, 0x32, 0x94, 0x6c, 0x01, 0x77, 0xe2, 0x47);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IRelatedItem.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IDelegateItem : IRelatedItem
 		{
 			public const new Guid IID = .(0x3c5a1c94, 0xc951, 0x4cb7, 0xbb, 0x6d, 0x3b, 0x93, 0xf3, 0x0c, 0xce, 0x93);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IRelatedItem.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct ICurrentItem : IRelatedItem
 		{
 			public const new Guid IID = .(0x240a7174, 0xd653, 0x4a1d, 0xa6, 0xd3, 0xd4, 0x94, 0x3c, 0xfb, 0xfe, 0x3d);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IRelatedItem.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct ITransferMediumItem : IRelatedItem
 		{
 			public const new Guid IID = .(0x77f295d5, 0x2d6f, 0x4e19, 0xb8, 0xae, 0x32, 0x2f, 0x3e, 0x72, 0x1a, 0xb5);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IRelatedItem.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IDisplayItem : IRelatedItem
 		{
 			public const new Guid IID = .(0xc6fd5997, 0x9f6b, 0x4888, 0x87, 0x03, 0x94, 0xe8, 0x0e, 0x8c, 0xde, 0x3f);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IRelatedItem.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IViewStateIdentityItem : IRelatedItem
 		{
 			public const new Guid IID = .(0x9d264146, 0xa94f, 0x4195, 0x9f, 0x9f, 0x3b, 0xb1, 0x2c, 0xe0, 0xc9, 0x55);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IRelatedItem.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IPreviewItem : IRelatedItem
 		{
 			public const new Guid IID = .(0x36149969, 0x0a8f, 0x49c8, 0x8b, 0x00, 0x4a, 0xec, 0xb2, 0x02, 0x22, 0xfb);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IRelatedItem.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IDestinationStreamFactory : IUnknown
 		{
 			public const new Guid IID = .(0x8a87781b, 0x39a7, 0x4a1f, 0xaa, 0xb3, 0xa3, 0x9b, 0x9c, 0x34, 0xa7, 0xd9);
 			
-			public function HRESULT(IDestinationStreamFactory *self, IStream** ppstm) GetDestinationStream;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDestinationStreamFactory *self, IStream** ppstm) GetDestinationStream;
+			}
 		}
 		[CRepr]
 		public struct ICreateProcessInputs : IUnknown
 		{
 			public const new Guid IID = .(0xf6ef6140, 0xe26f, 0x4d82, 0xba, 0xc4, 0xe9, 0xba, 0x5f, 0xd2, 0x39, 0xa8);
 			
-			public function HRESULT(ICreateProcessInputs *self, uint32* pdwCreationFlags) GetCreateFlags;
-			public function HRESULT(ICreateProcessInputs *self, uint32 dwCreationFlags) SetCreateFlags;
-			public function HRESULT(ICreateProcessInputs *self, uint32 dwCreationFlags) AddCreateFlags;
-			public function HRESULT(ICreateProcessInputs *self, uint16 wHotKey) SetHotKey;
-			public function HRESULT(ICreateProcessInputs *self, uint32 dwStartupInfoFlags) AddStartupFlags;
-			public function HRESULT(ICreateProcessInputs *self, PWSTR pszTitle) SetTitle;
-			public function HRESULT(ICreateProcessInputs *self, PWSTR pszName, PWSTR pszValue) SetEnvironmentVariable;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICreateProcessInputs *self, uint32* pdwCreationFlags) GetCreateFlags;
+				public function HRESULT(ICreateProcessInputs *self, uint32 dwCreationFlags) SetCreateFlags;
+				public function HRESULT(ICreateProcessInputs *self, uint32 dwCreationFlags) AddCreateFlags;
+				public function HRESULT(ICreateProcessInputs *self, uint16 wHotKey) SetHotKey;
+				public function HRESULT(ICreateProcessInputs *self, uint32 dwStartupInfoFlags) AddStartupFlags;
+				public function HRESULT(ICreateProcessInputs *self, PWSTR pszTitle) SetTitle;
+				public function HRESULT(ICreateProcessInputs *self, PWSTR pszName, PWSTR pszValue) SetEnvironmentVariable;
+			}
 		}
 		[CRepr]
 		public struct ICreatingProcess : IUnknown
 		{
 			public const new Guid IID = .(0xc2b937a9, 0x3110, 0x4398, 0x8a, 0x56, 0xf3, 0x4c, 0x63, 0x42, 0xd2, 0x44);
 			
-			public function HRESULT(ICreatingProcess *self, ICreateProcessInputs* pcpi) OnCreating;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICreatingProcess *self, ICreateProcessInputs* pcpi) OnCreating;
+			}
 		}
 		[CRepr]
 		public struct ILaunchUIContext : IUnknown
 		{
 			public const new Guid IID = .(0x1791e8f6, 0x21c7, 0x4340, 0x88, 0x2a, 0xa6, 0xa9, 0x3e, 0x3f, 0xd7, 0x3b);
 			
-			public function HRESULT(ILaunchUIContext *self, HWND value) SetAssociatedWindow;
-			public function HRESULT(ILaunchUIContext *self, uint32 value) SetTabGroupingPreference;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ILaunchUIContext *self, HWND value) SetAssociatedWindow;
+				public function HRESULT(ILaunchUIContext *self, uint32 value) SetTabGroupingPreference;
+			}
 		}
 		[CRepr]
 		public struct ILaunchUIContextProvider : IUnknown
 		{
 			public const new Guid IID = .(0x0d12c4c8, 0xa3d9, 0x4e24, 0x94, 0xc1, 0x0e, 0x20, 0xc5, 0xa9, 0x56, 0xc4);
 			
-			public function HRESULT(ILaunchUIContextProvider *self, ILaunchUIContext* context) UpdateContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ILaunchUIContextProvider *self, ILaunchUIContext* context) UpdateContext;
+			}
 		}
 		[CRepr]
 		public struct INewMenuClient : IUnknown
 		{
 			public const new Guid IID = .(0xdcb07fdc, 0x3bb5, 0x451c, 0x90, 0xbe, 0x96, 0x66, 0x44, 0xfe, 0xd7, 0xb0);
 			
-			public function HRESULT(INewMenuClient *self, int32* pflags) IncludeItems;
-			public function HRESULT(INewMenuClient *self, ITEMIDLIST* pidlItem, int32 flags) SelectAndEditItem;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INewMenuClient *self, int32* pflags) IncludeItems;
+				public function HRESULT(INewMenuClient *self, ITEMIDLIST* pidlItem, int32 flags) SelectAndEditItem;
+			}
 		}
 		[CRepr]
 		public struct IInitializeWithBindCtx : IUnknown
 		{
 			public const new Guid IID = .(0x71c0d2bc, 0x726d, 0x45cc, 0xa6, 0xc0, 0x2e, 0x31, 0xc1, 0xdb, 0x21, 0x59);
 			
-			public function HRESULT(IInitializeWithBindCtx *self, IBindCtx* pbc) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInitializeWithBindCtx *self, IBindCtx* pbc) Initialize;
+			}
 		}
 		[CRepr]
 		public struct IShellItemFilter : IUnknown
 		{
 			public const new Guid IID = .(0x2659b475, 0xeeb8, 0x48b7, 0x8f, 0x07, 0xb3, 0x78, 0x81, 0x0f, 0x48, 0xcf);
 			
-			public function HRESULT(IShellItemFilter *self, IShellItem* psi) IncludeItem;
-			public function HRESULT(IShellItemFilter *self, IShellItem* psi, uint32* pgrfFlags) GetEnumFlagsForItem;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellItemFilter *self, IShellItem* psi) IncludeItem;
+				public function HRESULT(IShellItemFilter *self, IShellItem* psi, uint32* pgrfFlags) GetEnumFlagsForItem;
+			}
 		}
 		[CRepr]
 		public struct INameSpaceTreeControl : IUnknown
 		{
 			public const new Guid IID = .(0x028212a3, 0xb627, 0x47e9, 0x88, 0x56, 0xc1, 0x42, 0x65, 0x55, 0x4e, 0x4f);
 			
-			public function HRESULT(INameSpaceTreeControl *self, HWND hwndParent, RECT* prc, uint32 nsctsFlags) Initialize;
-			public function HRESULT(INameSpaceTreeControl *self, IUnknown* punk, uint32* pdwCookie) TreeAdvise;
-			public function HRESULT(INameSpaceTreeControl *self, uint32 dwCookie) TreeUnadvise;
-			public function HRESULT(INameSpaceTreeControl *self, IShellItem* psiRoot, uint32 grfEnumFlags, uint32 grfRootStyle, IShellItemFilter* pif) AppendRoot;
-			public function HRESULT(INameSpaceTreeControl *self, int32 iIndex, IShellItem* psiRoot, uint32 grfEnumFlags, uint32 grfRootStyle, IShellItemFilter* pif) InsertRoot;
-			public function HRESULT(INameSpaceTreeControl *self, IShellItem* psiRoot) RemoveRoot;
-			public function HRESULT(INameSpaceTreeControl *self) RemoveAllRoots;
-			public function HRESULT(INameSpaceTreeControl *self, IShellItemArray** ppsiaRootItems) GetRootItems;
-			public function HRESULT(INameSpaceTreeControl *self, IShellItem* psi, uint32 nstcisMask, uint32 nstcisFlags) SetItemState;
-			public function HRESULT(INameSpaceTreeControl *self, IShellItem* psi, uint32 nstcisMask, uint32* pnstcisFlags) GetItemState;
-			public function HRESULT(INameSpaceTreeControl *self, IShellItemArray** psiaItems) GetSelectedItems;
-			public function HRESULT(INameSpaceTreeControl *self, IShellItem* psi, int32* piStateNumber) GetItemCustomState;
-			public function HRESULT(INameSpaceTreeControl *self, IShellItem* psi, int32 iStateNumber) SetItemCustomState;
-			public function HRESULT(INameSpaceTreeControl *self, IShellItem* psi) EnsureItemVisible;
-			public function HRESULT(INameSpaceTreeControl *self, PWSTR pszTheme) SetTheme;
-			public function HRESULT(INameSpaceTreeControl *self, IShellItem* psi, NSTCGNI nstcgi, IShellItem** ppsiNext) GetNextItem;
-			public function HRESULT(INameSpaceTreeControl *self, POINT* ppt, IShellItem** ppsiOut) HitTest;
-			public function HRESULT(INameSpaceTreeControl *self, IShellItem* psi, RECT* prect) GetItemRect;
-			public function HRESULT(INameSpaceTreeControl *self) CollapseAll;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INameSpaceTreeControl *self, HWND hwndParent, RECT* prc, uint32 nsctsFlags) Initialize;
+				public function HRESULT(INameSpaceTreeControl *self, IUnknown* punk, uint32* pdwCookie) TreeAdvise;
+				public function HRESULT(INameSpaceTreeControl *self, uint32 dwCookie) TreeUnadvise;
+				public function HRESULT(INameSpaceTreeControl *self, IShellItem* psiRoot, uint32 grfEnumFlags, uint32 grfRootStyle, IShellItemFilter* pif) AppendRoot;
+				public function HRESULT(INameSpaceTreeControl *self, int32 iIndex, IShellItem* psiRoot, uint32 grfEnumFlags, uint32 grfRootStyle, IShellItemFilter* pif) InsertRoot;
+				public function HRESULT(INameSpaceTreeControl *self, IShellItem* psiRoot) RemoveRoot;
+				public function HRESULT(INameSpaceTreeControl *self) RemoveAllRoots;
+				public function HRESULT(INameSpaceTreeControl *self, IShellItemArray** ppsiaRootItems) GetRootItems;
+				public function HRESULT(INameSpaceTreeControl *self, IShellItem* psi, uint32 nstcisMask, uint32 nstcisFlags) SetItemState;
+				public function HRESULT(INameSpaceTreeControl *self, IShellItem* psi, uint32 nstcisMask, uint32* pnstcisFlags) GetItemState;
+				public function HRESULT(INameSpaceTreeControl *self, IShellItemArray** psiaItems) GetSelectedItems;
+				public function HRESULT(INameSpaceTreeControl *self, IShellItem* psi, int32* piStateNumber) GetItemCustomState;
+				public function HRESULT(INameSpaceTreeControl *self, IShellItem* psi, int32 iStateNumber) SetItemCustomState;
+				public function HRESULT(INameSpaceTreeControl *self, IShellItem* psi) EnsureItemVisible;
+				public function HRESULT(INameSpaceTreeControl *self, PWSTR pszTheme) SetTheme;
+				public function HRESULT(INameSpaceTreeControl *self, IShellItem* psi, NSTCGNI nstcgi, IShellItem** ppsiNext) GetNextItem;
+				public function HRESULT(INameSpaceTreeControl *self, POINT* ppt, IShellItem** ppsiOut) HitTest;
+				public function HRESULT(INameSpaceTreeControl *self, IShellItem* psi, RECT* prect) GetItemRect;
+				public function HRESULT(INameSpaceTreeControl *self) CollapseAll;
+			}
 		}
 		[CRepr]
 		public struct INameSpaceTreeControlFolderCapabilities : IUnknown
 		{
 			public const new Guid IID = .(0xe9701183, 0xe6b3, 0x4ff2, 0x85, 0x68, 0x81, 0x36, 0x15, 0xfe, 0xc7, 0xbe);
 			
-			public function HRESULT(INameSpaceTreeControlFolderCapabilities *self, NSTCFOLDERCAPABILITIES nfcMask, NSTCFOLDERCAPABILITIES* pnfcValue) GetFolderCapabilities;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INameSpaceTreeControlFolderCapabilities *self, NSTCFOLDERCAPABILITIES nfcMask, NSTCFOLDERCAPABILITIES* pnfcValue) GetFolderCapabilities;
+			}
 		}
 		[CRepr]
 		public struct IPreviewHandler : IUnknown
 		{
 			public const new Guid IID = .(0x8895b1c6, 0xb41f, 0x4c1c, 0xa5, 0x62, 0x0d, 0x56, 0x42, 0x50, 0x83, 0x6f);
 			
-			public function HRESULT(IPreviewHandler *self, HWND hwnd, RECT* prc) SetWindow;
-			public function HRESULT(IPreviewHandler *self, RECT* prc) SetRect;
-			public function HRESULT(IPreviewHandler *self) DoPreview;
-			public function HRESULT(IPreviewHandler *self) Unload;
-			public function HRESULT(IPreviewHandler *self) SetFocus;
-			public function HRESULT(IPreviewHandler *self, HWND* phwnd) QueryFocus;
-			public function HRESULT(IPreviewHandler *self, MSG* pmsg) TranslateAccelerator;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPreviewHandler *self, HWND hwnd, RECT* prc) SetWindow;
+				public function HRESULT(IPreviewHandler *self, RECT* prc) SetRect;
+				public function HRESULT(IPreviewHandler *self) DoPreview;
+				public function HRESULT(IPreviewHandler *self) Unload;
+				public function HRESULT(IPreviewHandler *self) SetFocus;
+				public function HRESULT(IPreviewHandler *self, HWND* phwnd) QueryFocus;
+				public function HRESULT(IPreviewHandler *self, MSG* pmsg) TranslateAccelerator;
+			}
 		}
 		[CRepr]
 		public struct IPreviewHandlerFrame : IUnknown
 		{
 			public const new Guid IID = .(0xfec87aaf, 0x35f9, 0x447a, 0xad, 0xb7, 0x20, 0x23, 0x44, 0x91, 0x40, 0x1a);
 			
-			public function HRESULT(IPreviewHandlerFrame *self, PREVIEWHANDLERFRAMEINFO* pinfo) GetWindowContext;
-			public function HRESULT(IPreviewHandlerFrame *self, MSG* pmsg) TranslateAccelerator;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPreviewHandlerFrame *self, PREVIEWHANDLERFRAMEINFO* pinfo) GetWindowContext;
+				public function HRESULT(IPreviewHandlerFrame *self, MSG* pmsg) TranslateAccelerator;
+			}
 		}
 		[CRepr]
 		public struct IExplorerPaneVisibility : IUnknown
 		{
 			public const new Guid IID = .(0xe07010ec, 0xbc17, 0x44c0, 0x97, 0xb0, 0x46, 0xc7, 0xc9, 0x5b, 0x9e, 0xdc);
 			
-			public function HRESULT(IExplorerPaneVisibility *self, Guid* ep, uint32* peps) GetPaneState;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IExplorerPaneVisibility *self, Guid* ep, uint32* peps) GetPaneState;
+			}
 		}
 		[CRepr]
 		public struct IContextMenuCB : IUnknown
 		{
 			public const new Guid IID = .(0x3409e930, 0x5a39, 0x11d1, 0x83, 0xfa, 0x00, 0xa0, 0xc9, 0x0d, 0xc8, 0x49);
 			
-			public function HRESULT(IContextMenuCB *self, IShellFolder* psf, HWND hwndOwner, IDataObject* pdtobj, uint32 uMsg, WPARAM wParam, LPARAM lParam) CallBack;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IContextMenuCB *self, IShellFolder* psf, HWND hwndOwner, IDataObject* pdtobj, uint32 uMsg, WPARAM wParam, LPARAM lParam) CallBack;
+			}
 		}
 		[CRepr]
 		public struct IDefaultExtractIconInit : IUnknown
 		{
 			public const new Guid IID = .(0x41ded17d, 0xd6b3, 0x4261, 0x99, 0x7d, 0x88, 0xc6, 0x0e, 0x4b, 0x1d, 0x58);
 			
-			public function HRESULT(IDefaultExtractIconInit *self, uint32 uFlags) SetFlags;
-			public function HRESULT(IDefaultExtractIconInit *self, HKEY hkey) SetKey;
-			public function HRESULT(IDefaultExtractIconInit *self, PWSTR pszFile, int32 iIcon) SetNormalIcon;
-			public function HRESULT(IDefaultExtractIconInit *self, PWSTR pszFile, int32 iIcon) SetOpenIcon;
-			public function HRESULT(IDefaultExtractIconInit *self, PWSTR pszFile, int32 iIcon) SetShortcutIcon;
-			public function HRESULT(IDefaultExtractIconInit *self, PWSTR pszFile, int32 iIcon) SetDefaultIcon;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDefaultExtractIconInit *self, uint32 uFlags) SetFlags;
+				public function HRESULT(IDefaultExtractIconInit *self, HKEY hkey) SetKey;
+				public function HRESULT(IDefaultExtractIconInit *self, PWSTR pszFile, int32 iIcon) SetNormalIcon;
+				public function HRESULT(IDefaultExtractIconInit *self, PWSTR pszFile, int32 iIcon) SetOpenIcon;
+				public function HRESULT(IDefaultExtractIconInit *self, PWSTR pszFile, int32 iIcon) SetShortcutIcon;
+				public function HRESULT(IDefaultExtractIconInit *self, PWSTR pszFile, int32 iIcon) SetDefaultIcon;
+			}
 		}
 		[CRepr]
 		public struct IExplorerCommand : IUnknown
 		{
 			public const new Guid IID = .(0xa08ce4d0, 0xfa25, 0x44ab, 0xb5, 0x7c, 0xc7, 0xb1, 0xc3, 0x23, 0xe0, 0xb9);
 			
-			public function HRESULT(IExplorerCommand *self, IShellItemArray* psiItemArray, PWSTR* ppszName) GetTitle;
-			public function HRESULT(IExplorerCommand *self, IShellItemArray* psiItemArray, PWSTR* ppszIcon) GetIcon;
-			public function HRESULT(IExplorerCommand *self, IShellItemArray* psiItemArray, PWSTR* ppszInfotip) GetToolTip;
-			public function HRESULT(IExplorerCommand *self, Guid* pguidCommandName) GetCanonicalName;
-			public function HRESULT(IExplorerCommand *self, IShellItemArray* psiItemArray, BOOL fOkToBeSlow, uint32* pCmdState) GetState;
-			public function HRESULT(IExplorerCommand *self, IShellItemArray* psiItemArray, IBindCtx* pbc) Invoke;
-			public function HRESULT(IExplorerCommand *self, uint32* pFlags) GetFlags;
-			public function HRESULT(IExplorerCommand *self, IEnumExplorerCommand** ppEnum) EnumSubCommands;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IExplorerCommand *self, IShellItemArray* psiItemArray, PWSTR* ppszName) GetTitle;
+				public function HRESULT(IExplorerCommand *self, IShellItemArray* psiItemArray, PWSTR* ppszIcon) GetIcon;
+				public function HRESULT(IExplorerCommand *self, IShellItemArray* psiItemArray, PWSTR* ppszInfotip) GetToolTip;
+				public function HRESULT(IExplorerCommand *self, Guid* pguidCommandName) GetCanonicalName;
+				public function HRESULT(IExplorerCommand *self, IShellItemArray* psiItemArray, BOOL fOkToBeSlow, uint32* pCmdState) GetState;
+				public function HRESULT(IExplorerCommand *self, IShellItemArray* psiItemArray, IBindCtx* pbc) Invoke;
+				public function HRESULT(IExplorerCommand *self, uint32* pFlags) GetFlags;
+				public function HRESULT(IExplorerCommand *self, IEnumExplorerCommand** ppEnum) EnumSubCommands;
+			}
 		}
 		[CRepr]
 		public struct IExplorerCommandState : IUnknown
 		{
 			public const new Guid IID = .(0xbddacb60, 0x7657, 0x47ae, 0x84, 0x45, 0xd2, 0x3e, 0x1a, 0xcf, 0x82, 0xae);
 			
-			public function HRESULT(IExplorerCommandState *self, IShellItemArray* psiItemArray, BOOL fOkToBeSlow, uint32* pCmdState) GetState;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IExplorerCommandState *self, IShellItemArray* psiItemArray, BOOL fOkToBeSlow, uint32* pCmdState) GetState;
+			}
 		}
 		[CRepr]
 		public struct IInitializeCommand : IUnknown
 		{
 			public const new Guid IID = .(0x85075acf, 0x231f, 0x40ea, 0x96, 0x10, 0xd2, 0x6b, 0x7b, 0x58, 0xf6, 0x38);
 			
-			public function HRESULT(IInitializeCommand *self, PWSTR pszCommandName, IPropertyBag* ppb) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInitializeCommand *self, PWSTR pszCommandName, IPropertyBag* ppb) Initialize;
+			}
 		}
 		[CRepr]
 		public struct IEnumExplorerCommand : IUnknown
 		{
 			public const new Guid IID = .(0xa88826f8, 0x186f, 0x4987, 0xaa, 0xde, 0xea, 0x0c, 0xef, 0x8f, 0xbf, 0xe8);
 			
-			public function HRESULT(IEnumExplorerCommand *self, uint32 celt, IExplorerCommand** pUICommand, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumExplorerCommand *self, uint32 celt) Skip;
-			public function HRESULT(IEnumExplorerCommand *self) Reset;
-			public function HRESULT(IEnumExplorerCommand *self, IEnumExplorerCommand** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumExplorerCommand *self, uint32 celt, IExplorerCommand** pUICommand, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumExplorerCommand *self, uint32 celt) Skip;
+				public function HRESULT(IEnumExplorerCommand *self) Reset;
+				public function HRESULT(IEnumExplorerCommand *self, IEnumExplorerCommand** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IExplorerCommandProvider : IUnknown
 		{
 			public const new Guid IID = .(0x64961751, 0x0835, 0x43c0, 0x8f, 0xfe, 0xd5, 0x76, 0x86, 0x53, 0x0e, 0x64);
 			
-			public function HRESULT(IExplorerCommandProvider *self, IUnknown* punkSite, Guid* riid, void** ppv) GetCommands;
-			public function HRESULT(IExplorerCommandProvider *self, Guid* rguidCommandId, Guid* riid, void** ppv) GetCommand;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IExplorerCommandProvider *self, IUnknown* punkSite, Guid* riid, void** ppv) GetCommands;
+				public function HRESULT(IExplorerCommandProvider *self, Guid* rguidCommandId, Guid* riid, void** ppv) GetCommand;
+			}
 		}
 		[CRepr]
 		public struct IOpenControlPanel : IUnknown
 		{
 			public const new Guid IID = .(0xd11ad862, 0x66de, 0x4df4, 0xbf, 0x6c, 0x1f, 0x56, 0x21, 0x99, 0x6a, 0xf1);
 			
-			public function HRESULT(IOpenControlPanel *self, PWSTR pszName, PWSTR pszPage, IUnknown* punkSite) Open;
-			public function HRESULT(IOpenControlPanel *self, PWSTR pszName, char16* pszPath, uint32 cchPath) GetPath;
-			public function HRESULT(IOpenControlPanel *self, CPVIEW* pView) GetCurrentView;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IOpenControlPanel *self, PWSTR pszName, PWSTR pszPage, IUnknown* punkSite) Open;
+				public function HRESULT(IOpenControlPanel *self, PWSTR pszName, char16* pszPath, uint32 cchPath) GetPath;
+				public function HRESULT(IOpenControlPanel *self, CPVIEW* pView) GetCurrentView;
+			}
 		}
 		[CRepr]
 		public struct IFileSystemBindData : IUnknown
 		{
 			public const new Guid IID = .(0x01e18d10, 0x4d8b, 0x11d2, 0x85, 0x5d, 0x00, 0x60, 0x08, 0x05, 0x93, 0x67);
 			
-			public function HRESULT(IFileSystemBindData *self, WIN32_FIND_DATAW* pfd) SetFindData;
-			public function HRESULT(IFileSystemBindData *self, WIN32_FIND_DATAW* pfd) GetFindData;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IFileSystemBindData *self, WIN32_FIND_DATAW* pfd) SetFindData;
+				public function HRESULT(IFileSystemBindData *self, WIN32_FIND_DATAW* pfd) GetFindData;
+			}
 		}
 		[CRepr]
 		public struct IFileSystemBindData2 : IFileSystemBindData
 		{
 			public const new Guid IID = .(0x3acf075f, 0x71db, 0x4afa, 0x81, 0xf0, 0x3f, 0xc4, 0xfd, 0xf2, 0xa5, 0xb8);
 			
-			public function HRESULT(IFileSystemBindData2 *self, LARGE_INTEGER liFileID) SetFileID;
-			public function HRESULT(IFileSystemBindData2 *self, LARGE_INTEGER* pliFileID) GetFileID;
-			public function HRESULT(IFileSystemBindData2 *self, Guid* clsid) SetJunctionCLSID;
-			public function HRESULT(IFileSystemBindData2 *self, Guid* pclsid) GetJunctionCLSID;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IFileSystemBindData.VTable
+			{
+				public function HRESULT(IFileSystemBindData2 *self, LARGE_INTEGER liFileID) SetFileID;
+				public function HRESULT(IFileSystemBindData2 *self, LARGE_INTEGER* pliFileID) GetFileID;
+				public function HRESULT(IFileSystemBindData2 *self, Guid* clsid) SetJunctionCLSID;
+				public function HRESULT(IFileSystemBindData2 *self, Guid* pclsid) GetJunctionCLSID;
+			}
 		}
 		[CRepr]
 		public struct ICustomDestinationList : IUnknown
 		{
 			public const new Guid IID = .(0x6332debf, 0x87b5, 0x4670, 0x90, 0xc0, 0x5e, 0x57, 0xb4, 0x08, 0xa4, 0x9e);
 			
-			public function HRESULT(ICustomDestinationList *self, PWSTR pszAppID) SetAppID;
-			public function HRESULT(ICustomDestinationList *self, uint32* pcMinSlots, Guid* riid, void** ppv) BeginList;
-			public function HRESULT(ICustomDestinationList *self, PWSTR pszCategory, IObjectArray* poa) AppendCategory;
-			public function HRESULT(ICustomDestinationList *self, KNOWNDESTCATEGORY category) AppendKnownCategory;
-			public function HRESULT(ICustomDestinationList *self, IObjectArray* poa) AddUserTasks;
-			public function HRESULT(ICustomDestinationList *self) CommitList;
-			public function HRESULT(ICustomDestinationList *self, Guid* riid, void** ppv) GetRemovedDestinations;
-			public function HRESULT(ICustomDestinationList *self, PWSTR pszAppID) DeleteList;
-			public function HRESULT(ICustomDestinationList *self) AbortList;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICustomDestinationList *self, PWSTR pszAppID) SetAppID;
+				public function HRESULT(ICustomDestinationList *self, uint32* pcMinSlots, Guid* riid, void** ppv) BeginList;
+				public function HRESULT(ICustomDestinationList *self, PWSTR pszCategory, IObjectArray* poa) AppendCategory;
+				public function HRESULT(ICustomDestinationList *self, KNOWNDESTCATEGORY category) AppendKnownCategory;
+				public function HRESULT(ICustomDestinationList *self, IObjectArray* poa) AddUserTasks;
+				public function HRESULT(ICustomDestinationList *self) CommitList;
+				public function HRESULT(ICustomDestinationList *self, Guid* riid, void** ppv) GetRemovedDestinations;
+				public function HRESULT(ICustomDestinationList *self, PWSTR pszAppID) DeleteList;
+				public function HRESULT(ICustomDestinationList *self) AbortList;
+			}
 		}
 		[CRepr]
 		public struct IApplicationDestinations : IUnknown
 		{
 			public const new Guid IID = .(0x12337d35, 0x94c6, 0x48a0, 0xbc, 0xe7, 0x6a, 0x9c, 0x69, 0xd4, 0xd6, 0x00);
 			
-			public function HRESULT(IApplicationDestinations *self, PWSTR pszAppID) SetAppID;
-			public function HRESULT(IApplicationDestinations *self, IUnknown* punk) RemoveDestination;
-			public function HRESULT(IApplicationDestinations *self) RemoveAllDestinations;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IApplicationDestinations *self, PWSTR pszAppID) SetAppID;
+				public function HRESULT(IApplicationDestinations *self, IUnknown* punk) RemoveDestination;
+				public function HRESULT(IApplicationDestinations *self) RemoveAllDestinations;
+			}
 		}
 		[CRepr]
 		public struct IApplicationDocumentLists : IUnknown
 		{
 			public const new Guid IID = .(0x3c594f9f, 0x9f30, 0x47a1, 0x97, 0x9a, 0xc9, 0xe8, 0x3d, 0x3d, 0x0a, 0x06);
 			
-			public function HRESULT(IApplicationDocumentLists *self, PWSTR pszAppID) SetAppID;
-			public function HRESULT(IApplicationDocumentLists *self, APPDOCLISTTYPE listtype, uint32 cItemsDesired, Guid* riid, void** ppv) GetList;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IApplicationDocumentLists *self, PWSTR pszAppID) SetAppID;
+				public function HRESULT(IApplicationDocumentLists *self, APPDOCLISTTYPE listtype, uint32 cItemsDesired, Guid* riid, void** ppv) GetList;
+			}
 		}
 		[CRepr]
 		public struct IObjectWithAppUserModelID : IUnknown
 		{
 			public const new Guid IID = .(0x36db0196, 0x9665, 0x46d1, 0x9b, 0xa7, 0xd3, 0x70, 0x9e, 0xec, 0xf9, 0xed);
 			
-			public function HRESULT(IObjectWithAppUserModelID *self, PWSTR pszAppID) SetAppID;
-			public function HRESULT(IObjectWithAppUserModelID *self, PWSTR* ppszAppID) GetAppID;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IObjectWithAppUserModelID *self, PWSTR pszAppID) SetAppID;
+				public function HRESULT(IObjectWithAppUserModelID *self, PWSTR* ppszAppID) GetAppID;
+			}
 		}
 		[CRepr]
 		public struct IObjectWithProgID : IUnknown
 		{
 			public const new Guid IID = .(0x71e806fb, 0x8dee, 0x46fc, 0xbf, 0x8c, 0x77, 0x48, 0xa8, 0xa1, 0xae, 0x13);
 			
-			public function HRESULT(IObjectWithProgID *self, PWSTR pszProgID) SetProgID;
-			public function HRESULT(IObjectWithProgID *self, PWSTR* ppszProgID) GetProgID;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IObjectWithProgID *self, PWSTR pszProgID) SetProgID;
+				public function HRESULT(IObjectWithProgID *self, PWSTR* ppszProgID) GetProgID;
+			}
 		}
 		[CRepr]
 		public struct IUpdateIDList : IUnknown
 		{
 			public const new Guid IID = .(0x6589b6d2, 0x5f8d, 0x4b9e, 0xb7, 0xe0, 0x23, 0xcd, 0xd9, 0x71, 0x7d, 0x8c);
 			
-			public function HRESULT(IUpdateIDList *self, IBindCtx* pbc, ITEMIDLIST* pidlIn, ITEMIDLIST** ppidlOut) Update;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IUpdateIDList *self, IBindCtx* pbc, ITEMIDLIST* pidlIn, ITEMIDLIST** ppidlOut) Update;
+			}
 		}
 		[CRepr]
 		public struct IDesktopWallpaper : IUnknown
 		{
 			public const new Guid IID = .(0xb92b56a9, 0x8b55, 0x4e14, 0x9a, 0x89, 0x01, 0x99, 0xbb, 0xb6, 0xf9, 0x3b);
 			
-			public function HRESULT(IDesktopWallpaper *self, PWSTR monitorID, PWSTR wallpaper) SetWallpaper;
-			public function HRESULT(IDesktopWallpaper *self, PWSTR monitorID, PWSTR* wallpaper) GetWallpaper;
-			public function HRESULT(IDesktopWallpaper *self, uint32 monitorIndex, PWSTR* monitorID) GetMonitorDevicePathAt;
-			public function HRESULT(IDesktopWallpaper *self, uint32* count) GetMonitorDevicePathCount;
-			public function HRESULT(IDesktopWallpaper *self, PWSTR monitorID, RECT* displayRect) GetMonitorRECT;
-			public function HRESULT(IDesktopWallpaper *self, uint32 color) SetBackgroundColor;
-			public function HRESULT(IDesktopWallpaper *self, uint32* color) GetBackgroundColor;
-			public function HRESULT(IDesktopWallpaper *self, DESKTOP_WALLPAPER_POSITION position) SetPosition;
-			public function HRESULT(IDesktopWallpaper *self, DESKTOP_WALLPAPER_POSITION* position) GetPosition;
-			public function HRESULT(IDesktopWallpaper *self, IShellItemArray* items) SetSlideshow;
-			public function HRESULT(IDesktopWallpaper *self, IShellItemArray** items) GetSlideshow;
-			public function HRESULT(IDesktopWallpaper *self, DESKTOP_SLIDESHOW_OPTIONS options, uint32 slideshowTick) SetSlideshowOptions;
-			public function HRESULT(IDesktopWallpaper *self, DESKTOP_SLIDESHOW_OPTIONS* options, uint32* slideshowTick) GetSlideshowOptions;
-			public function HRESULT(IDesktopWallpaper *self, PWSTR monitorID, DESKTOP_SLIDESHOW_DIRECTION direction) AdvanceSlideshow;
-			public function HRESULT(IDesktopWallpaper *self, DESKTOP_SLIDESHOW_STATE* state) GetStatus;
-			public function HRESULT(IDesktopWallpaper *self, BOOL enable) Enable;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDesktopWallpaper *self, PWSTR monitorID, PWSTR wallpaper) SetWallpaper;
+				public function HRESULT(IDesktopWallpaper *self, PWSTR monitorID, PWSTR* wallpaper) GetWallpaper;
+				public function HRESULT(IDesktopWallpaper *self, uint32 monitorIndex, PWSTR* monitorID) GetMonitorDevicePathAt;
+				public function HRESULT(IDesktopWallpaper *self, uint32* count) GetMonitorDevicePathCount;
+				public function HRESULT(IDesktopWallpaper *self, PWSTR monitorID, RECT* displayRect) GetMonitorRECT;
+				public function HRESULT(IDesktopWallpaper *self, uint32 color) SetBackgroundColor;
+				public function HRESULT(IDesktopWallpaper *self, uint32* color) GetBackgroundColor;
+				public function HRESULT(IDesktopWallpaper *self, DESKTOP_WALLPAPER_POSITION position) SetPosition;
+				public function HRESULT(IDesktopWallpaper *self, DESKTOP_WALLPAPER_POSITION* position) GetPosition;
+				public function HRESULT(IDesktopWallpaper *self, IShellItemArray* items) SetSlideshow;
+				public function HRESULT(IDesktopWallpaper *self, IShellItemArray** items) GetSlideshow;
+				public function HRESULT(IDesktopWallpaper *self, DESKTOP_SLIDESHOW_OPTIONS options, uint32 slideshowTick) SetSlideshowOptions;
+				public function HRESULT(IDesktopWallpaper *self, DESKTOP_SLIDESHOW_OPTIONS* options, uint32* slideshowTick) GetSlideshowOptions;
+				public function HRESULT(IDesktopWallpaper *self, PWSTR monitorID, DESKTOP_SLIDESHOW_DIRECTION direction) AdvanceSlideshow;
+				public function HRESULT(IDesktopWallpaper *self, DESKTOP_SLIDESHOW_STATE* state) GetStatus;
+				public function HRESULT(IDesktopWallpaper *self, BOOL enable) Enable;
+			}
 		}
 		[CRepr]
 		public struct IHomeGroup : IUnknown
 		{
 			public const new Guid IID = .(0x7a3bd1d9, 0x35a9, 0x4fb3, 0xa4, 0x67, 0xf4, 0x8c, 0xac, 0x35, 0xe2, 0xd0);
 			
-			public function HRESULT(IHomeGroup *self, BOOL* member) IsMember;
-			public function HRESULT(IHomeGroup *self, HWND owner, HOMEGROUPSHARINGCHOICES* sharingchoices) ShowSharingWizard;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IHomeGroup *self, BOOL* member) IsMember;
+				public function HRESULT(IHomeGroup *self, HWND owner, HOMEGROUPSHARINGCHOICES* sharingchoices) ShowSharingWizard;
+			}
 		}
 		[CRepr]
 		public struct IInitializeWithPropertyStore : IUnknown
 		{
 			public const new Guid IID = .(0xc3e12eb5, 0x7d8d, 0x44f8, 0xb6, 0xdd, 0x0e, 0x77, 0xb3, 0x4d, 0x6d, 0xe4);
 			
-			public function HRESULT(IInitializeWithPropertyStore *self, IPropertyStore* pps) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInitializeWithPropertyStore *self, IPropertyStore* pps) Initialize;
+			}
 		}
 		[CRepr]
 		public struct IOpenSearchSource : IUnknown
 		{
 			public const new Guid IID = .(0xf0ee7333, 0xe6fc, 0x479b, 0x9f, 0x25, 0xa8, 0x60, 0xc2, 0x34, 0xa3, 0x8e);
 			
-			public function HRESULT(IOpenSearchSource *self, HWND hwnd, PWSTR pszQuery, uint32 dwStartIndex, uint32 dwCount, Guid* riid, void** ppv) GetResults;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IOpenSearchSource *self, HWND hwnd, PWSTR pszQuery, uint32 dwStartIndex, uint32 dwCount, Guid* riid, void** ppv) GetResults;
+			}
 		}
 		[CRepr]
 		public struct IShellLibrary : IUnknown
 		{
 			public const new Guid IID = .(0x11a66efa, 0x382e, 0x451a, 0x92, 0x34, 0x1e, 0x0e, 0x12, 0xef, 0x30, 0x85);
 			
-			public function HRESULT(IShellLibrary *self, IShellItem* psiLibrary, uint32 grfMode) LoadLibraryFromItem;
-			public function HRESULT(IShellLibrary *self, Guid* kfidLibrary, uint32 grfMode) LoadLibraryFromKnownFolder;
-			public function HRESULT(IShellLibrary *self, IShellItem* psiLocation) AddFolder;
-			public function HRESULT(IShellLibrary *self, IShellItem* psiLocation) RemoveFolder;
-			public function HRESULT(IShellLibrary *self, LIBRARYFOLDERFILTER lff, Guid* riid, void** ppv) GetFolders;
-			public function HRESULT(IShellLibrary *self, IShellItem* psiFolderToResolve, uint32 dwTimeout, Guid* riid, void** ppv) ResolveFolder;
-			public function HRESULT(IShellLibrary *self, DEFAULTSAVEFOLDERTYPE dsft, Guid* riid, void** ppv) GetDefaultSaveFolder;
-			public function HRESULT(IShellLibrary *self, DEFAULTSAVEFOLDERTYPE dsft, IShellItem* psi) SetDefaultSaveFolder;
-			public function HRESULT(IShellLibrary *self, LIBRARYOPTIONFLAGS* plofOptions) GetOptions;
-			public function HRESULT(IShellLibrary *self, LIBRARYOPTIONFLAGS lofMask, LIBRARYOPTIONFLAGS lofOptions) SetOptions;
-			public function HRESULT(IShellLibrary *self, Guid* pftid) GetFolderType;
-			public function HRESULT(IShellLibrary *self, Guid* ftid) SetFolderType;
-			public function HRESULT(IShellLibrary *self, PWSTR* ppszIcon) GetIcon;
-			public function HRESULT(IShellLibrary *self, PWSTR pszIcon) SetIcon;
-			public function HRESULT(IShellLibrary *self) Commit;
-			public function HRESULT(IShellLibrary *self, IShellItem* psiFolderToSaveIn, PWSTR pszLibraryName, LIBRARYSAVEFLAGS lsf, IShellItem** ppsiSavedTo) Save;
-			public function HRESULT(IShellLibrary *self, Guid* kfidToSaveIn, PWSTR pszLibraryName, LIBRARYSAVEFLAGS lsf, IShellItem** ppsiSavedTo) SaveInKnownFolder;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellLibrary *self, IShellItem* psiLibrary, uint32 grfMode) LoadLibraryFromItem;
+				public function HRESULT(IShellLibrary *self, Guid* kfidLibrary, uint32 grfMode) LoadLibraryFromKnownFolder;
+				public function HRESULT(IShellLibrary *self, IShellItem* psiLocation) AddFolder;
+				public function HRESULT(IShellLibrary *self, IShellItem* psiLocation) RemoveFolder;
+				public function HRESULT(IShellLibrary *self, LIBRARYFOLDERFILTER lff, Guid* riid, void** ppv) GetFolders;
+				public function HRESULT(IShellLibrary *self, IShellItem* psiFolderToResolve, uint32 dwTimeout, Guid* riid, void** ppv) ResolveFolder;
+				public function HRESULT(IShellLibrary *self, DEFAULTSAVEFOLDERTYPE dsft, Guid* riid, void** ppv) GetDefaultSaveFolder;
+				public function HRESULT(IShellLibrary *self, DEFAULTSAVEFOLDERTYPE dsft, IShellItem* psi) SetDefaultSaveFolder;
+				public function HRESULT(IShellLibrary *self, LIBRARYOPTIONFLAGS* plofOptions) GetOptions;
+				public function HRESULT(IShellLibrary *self, LIBRARYOPTIONFLAGS lofMask, LIBRARYOPTIONFLAGS lofOptions) SetOptions;
+				public function HRESULT(IShellLibrary *self, Guid* pftid) GetFolderType;
+				public function HRESULT(IShellLibrary *self, Guid* ftid) SetFolderType;
+				public function HRESULT(IShellLibrary *self, PWSTR* ppszIcon) GetIcon;
+				public function HRESULT(IShellLibrary *self, PWSTR pszIcon) SetIcon;
+				public function HRESULT(IShellLibrary *self) Commit;
+				public function HRESULT(IShellLibrary *self, IShellItem* psiFolderToSaveIn, PWSTR pszLibraryName, LIBRARYSAVEFLAGS lsf, IShellItem** ppsiSavedTo) Save;
+				public function HRESULT(IShellLibrary *self, Guid* kfidToSaveIn, PWSTR pszLibraryName, LIBRARYSAVEFLAGS lsf, IShellItem** ppsiSavedTo) SaveInKnownFolder;
+			}
 		}
 		[CRepr]
 		public struct IDefaultFolderMenuInitialize : IUnknown
 		{
 			public const new Guid IID = .(0x7690aa79, 0xf8fc, 0x4615, 0xa3, 0x27, 0x36, 0xf7, 0xd1, 0x8f, 0x5d, 0x91);
 			
-			public function HRESULT(IDefaultFolderMenuInitialize *self, HWND hwnd, IContextMenuCB* pcmcb, ITEMIDLIST* pidlFolder, IShellFolder* psf, uint32 cidl, ITEMIDLIST** apidl, IUnknown* punkAssociation, uint32 cKeys, HKEY* aKeys) Initialize;
-			public function HRESULT(IDefaultFolderMenuInitialize *self, DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrValues) SetMenuRestrictions;
-			public function HRESULT(IDefaultFolderMenuInitialize *self, DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrMask, DEFAULT_FOLDER_MENU_RESTRICTIONS* pdfmrValues) GetMenuRestrictions;
-			public function HRESULT(IDefaultFolderMenuInitialize *self, Guid* rclsid) SetHandlerClsid;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDefaultFolderMenuInitialize *self, HWND hwnd, IContextMenuCB* pcmcb, ITEMIDLIST* pidlFolder, IShellFolder* psf, uint32 cidl, ITEMIDLIST** apidl, IUnknown* punkAssociation, uint32 cKeys, HKEY* aKeys) Initialize;
+				public function HRESULT(IDefaultFolderMenuInitialize *self, DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrValues) SetMenuRestrictions;
+				public function HRESULT(IDefaultFolderMenuInitialize *self, DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrMask, DEFAULT_FOLDER_MENU_RESTRICTIONS* pdfmrValues) GetMenuRestrictions;
+				public function HRESULT(IDefaultFolderMenuInitialize *self, Guid* rclsid) SetHandlerClsid;
+			}
 		}
 		[CRepr]
 		public struct IApplicationActivationManager : IUnknown
 		{
 			public const new Guid IID = .(0x2e941141, 0x7f97, 0x4756, 0xba, 0x1d, 0x9d, 0xec, 0xde, 0x89, 0x4a, 0x3d);
 			
-			public function HRESULT(IApplicationActivationManager *self, PWSTR appUserModelId, PWSTR arguments, ACTIVATEOPTIONS options, uint32* processId) ActivateApplication;
-			public function HRESULT(IApplicationActivationManager *self, PWSTR appUserModelId, IShellItemArray* itemArray, PWSTR verb, uint32* processId) ActivateForFile;
-			public function HRESULT(IApplicationActivationManager *self, PWSTR appUserModelId, IShellItemArray* itemArray, uint32* processId) ActivateForProtocol;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IApplicationActivationManager *self, PWSTR appUserModelId, PWSTR arguments, ACTIVATEOPTIONS options, uint32* processId) ActivateApplication;
+				public function HRESULT(IApplicationActivationManager *self, PWSTR appUserModelId, IShellItemArray* itemArray, PWSTR verb, uint32* processId) ActivateForFile;
+				public function HRESULT(IApplicationActivationManager *self, PWSTR appUserModelId, IShellItemArray* itemArray, uint32* processId) ActivateForProtocol;
+			}
 		}
 		[CRepr]
 		public struct IVirtualDesktopManager : IUnknown
 		{
 			public const new Guid IID = .(0xa5cd92ff, 0x29be, 0x454c, 0x8d, 0x04, 0xd8, 0x28, 0x79, 0xfb, 0x3f, 0x1b);
 			
-			public function HRESULT(IVirtualDesktopManager *self, HWND topLevelWindow, BOOL* onCurrentDesktop) IsWindowOnCurrentVirtualDesktop;
-			public function HRESULT(IVirtualDesktopManager *self, HWND topLevelWindow, Guid* desktopId) GetWindowDesktopId;
-			public function HRESULT(IVirtualDesktopManager *self, HWND topLevelWindow, Guid* desktopId) MoveWindowToDesktop;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVirtualDesktopManager *self, HWND topLevelWindow, BOOL* onCurrentDesktop) IsWindowOnCurrentVirtualDesktop;
+				public function HRESULT(IVirtualDesktopManager *self, HWND topLevelWindow, Guid* desktopId) GetWindowDesktopId;
+				public function HRESULT(IVirtualDesktopManager *self, HWND topLevelWindow, Guid* desktopId) MoveWindowToDesktop;
+			}
 		}
 		[CRepr]
 		public struct IAssocHandlerInvoker : IUnknown
 		{
 			public const new Guid IID = .(0x92218cab, 0xecaa, 0x4335, 0x81, 0x33, 0x80, 0x7f, 0xd2, 0x34, 0xc2, 0xee);
 			
-			public function HRESULT(IAssocHandlerInvoker *self) SupportsSelection;
-			public function HRESULT(IAssocHandlerInvoker *self) Invoke;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAssocHandlerInvoker *self) SupportsSelection;
+				public function HRESULT(IAssocHandlerInvoker *self) Invoke;
+			}
 		}
 		[CRepr]
 		public struct IAssocHandler : IUnknown
 		{
 			public const new Guid IID = .(0xf04061ac, 0x1659, 0x4a3f, 0xa9, 0x54, 0x77, 0x5a, 0xa5, 0x7f, 0xc0, 0x83);
 			
-			public function HRESULT(IAssocHandler *self, PWSTR* ppsz) GetName;
-			public function HRESULT(IAssocHandler *self, PWSTR* ppsz) GetUIName;
-			public function HRESULT(IAssocHandler *self, PWSTR* ppszPath, int32* pIndex) GetIconLocation;
-			public function HRESULT(IAssocHandler *self) IsRecommended;
-			public function HRESULT(IAssocHandler *self, PWSTR pszDescription) MakeDefault;
-			public function HRESULT(IAssocHandler *self, IDataObject* pdo) Invoke;
-			public function HRESULT(IAssocHandler *self, IDataObject* pdo, IAssocHandlerInvoker** ppInvoker) CreateInvoker;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAssocHandler *self, PWSTR* ppsz) GetName;
+				public function HRESULT(IAssocHandler *self, PWSTR* ppsz) GetUIName;
+				public function HRESULT(IAssocHandler *self, PWSTR* ppszPath, int32* pIndex) GetIconLocation;
+				public function HRESULT(IAssocHandler *self) IsRecommended;
+				public function HRESULT(IAssocHandler *self, PWSTR pszDescription) MakeDefault;
+				public function HRESULT(IAssocHandler *self, IDataObject* pdo) Invoke;
+				public function HRESULT(IAssocHandler *self, IDataObject* pdo, IAssocHandlerInvoker** ppInvoker) CreateInvoker;
+			}
 		}
 		[CRepr]
 		public struct IEnumAssocHandlers : IUnknown
 		{
 			public const new Guid IID = .(0x973810ae, 0x9599, 0x4b88, 0x9e, 0x4d, 0x6e, 0xe9, 0x8c, 0x95, 0x52, 0xda);
 			
-			public function HRESULT(IEnumAssocHandlers *self, uint32 celt, IAssocHandler** rgelt, uint32* pceltFetched) Next;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumAssocHandlers *self, uint32 celt, IAssocHandler** rgelt, uint32* pceltFetched) Next;
+			}
 		}
 		[CRepr]
 		public struct IDataObjectProvider : IUnknown
 		{
 			public const new Guid IID = .(0x3d25f6d6, 0x4b2a, 0x433c, 0x91, 0x84, 0x7c, 0x33, 0xad, 0x35, 0xd0, 0x01);
 			
-			public function HRESULT(IDataObjectProvider *self, IDataObject** dataObject) GetDataObject;
-			public function HRESULT(IDataObjectProvider *self, IDataObject* dataObject) SetDataObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataObjectProvider *self, IDataObject** dataObject) GetDataObject;
+				public function HRESULT(IDataObjectProvider *self, IDataObject* dataObject) SetDataObject;
+			}
 		}
 		[CRepr]
 		public struct IDataTransferManagerInterop : IUnknown
 		{
 			public const new Guid IID = .(0x3a3dcd6c, 0x3eab, 0x43dc, 0xbc, 0xde, 0x45, 0x67, 0x1c, 0xe8, 0x00, 0xc8);
 			
-			public function HRESULT(IDataTransferManagerInterop *self, HWND appWindow, Guid* riid, void** dataTransferManager) GetForWindow;
-			public function HRESULT(IDataTransferManagerInterop *self, HWND appWindow) ShowShareUIForWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataTransferManagerInterop *self, HWND appWindow, Guid* riid, void** dataTransferManager) GetForWindow;
+				public function HRESULT(IDataTransferManagerInterop *self, HWND appWindow) ShowShareUIForWindow;
+			}
 		}
 		[CRepr]
 		public struct IFrameworkInputPaneHandler : IUnknown
 		{
 			public const new Guid IID = .(0x226c537b, 0x1e76, 0x4d9e, 0xa7, 0x60, 0x33, 0xdb, 0x29, 0x92, 0x2f, 0x18);
 			
-			public function HRESULT(IFrameworkInputPaneHandler *self, RECT* prcInputPaneScreenLocation, BOOL fEnsureFocusedElementInView) Showing;
-			public function HRESULT(IFrameworkInputPaneHandler *self, BOOL fEnsureFocusedElementInView) Hiding;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IFrameworkInputPaneHandler *self, RECT* prcInputPaneScreenLocation, BOOL fEnsureFocusedElementInView) Showing;
+				public function HRESULT(IFrameworkInputPaneHandler *self, BOOL fEnsureFocusedElementInView) Hiding;
+			}
 		}
 		[CRepr]
 		public struct IFrameworkInputPane : IUnknown
 		{
 			public const new Guid IID = .(0x5752238b, 0x24f0, 0x495a, 0x82, 0xf1, 0x2f, 0xd5, 0x93, 0x05, 0x67, 0x96);
 			
-			public function HRESULT(IFrameworkInputPane *self, IUnknown* pWindow, IFrameworkInputPaneHandler* pHandler, uint32* pdwCookie) Advise;
-			public function HRESULT(IFrameworkInputPane *self, HWND hwnd, IFrameworkInputPaneHandler* pHandler, uint32* pdwCookie) AdviseWithHWND;
-			public function HRESULT(IFrameworkInputPane *self, uint32 dwCookie) Unadvise;
-			public function HRESULT(IFrameworkInputPane *self, RECT* prcInputPaneScreenLocation) Location;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IFrameworkInputPane *self, IUnknown* pWindow, IFrameworkInputPaneHandler* pHandler, uint32* pdwCookie) Advise;
+				public function HRESULT(IFrameworkInputPane *self, HWND hwnd, IFrameworkInputPaneHandler* pHandler, uint32* pdwCookie) AdviseWithHWND;
+				public function HRESULT(IFrameworkInputPane *self, uint32 dwCookie) Unadvise;
+				public function HRESULT(IFrameworkInputPane *self, RECT* prcInputPaneScreenLocation) Location;
+			}
 		}
 		[CRepr]
 		public struct IAppVisibilityEvents : IUnknown
 		{
 			public const new Guid IID = .(0x6584ce6b, 0x7d82, 0x49c2, 0x89, 0xc9, 0xc6, 0xbc, 0x02, 0xba, 0x8c, 0x38);
 			
-			public function HRESULT(IAppVisibilityEvents *self, HMONITOR hMonitor, MONITOR_APP_VISIBILITY previousMode, MONITOR_APP_VISIBILITY currentMode) AppVisibilityOnMonitorChanged;
-			public function HRESULT(IAppVisibilityEvents *self, BOOL currentVisibleState) LauncherVisibilityChange;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAppVisibilityEvents *self, HMONITOR hMonitor, MONITOR_APP_VISIBILITY previousMode, MONITOR_APP_VISIBILITY currentMode) AppVisibilityOnMonitorChanged;
+				public function HRESULT(IAppVisibilityEvents *self, BOOL currentVisibleState) LauncherVisibilityChange;
+			}
 		}
 		[CRepr]
 		public struct IAppVisibility : IUnknown
 		{
 			public const new Guid IID = .(0x2246ea2d, 0xcaea, 0x4444, 0xa3, 0xc4, 0x6d, 0xe8, 0x27, 0xe4, 0x43, 0x13);
 			
-			public function HRESULT(IAppVisibility *self, HMONITOR hMonitor, MONITOR_APP_VISIBILITY* pMode) GetAppVisibilityOnMonitor;
-			public function HRESULT(IAppVisibility *self, BOOL* pfVisible) IsLauncherVisible;
-			public function HRESULT(IAppVisibility *self, IAppVisibilityEvents* pCallback, uint32* pdwCookie) Advise;
-			public function HRESULT(IAppVisibility *self, uint32 dwCookie) Unadvise;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAppVisibility *self, HMONITOR hMonitor, MONITOR_APP_VISIBILITY* pMode) GetAppVisibilityOnMonitor;
+				public function HRESULT(IAppVisibility *self, BOOL* pfVisible) IsLauncherVisible;
+				public function HRESULT(IAppVisibility *self, IAppVisibilityEvents* pCallback, uint32* pdwCookie) Advise;
+				public function HRESULT(IAppVisibility *self, uint32 dwCookie) Unadvise;
+			}
 		}
 		[CRepr]
 		public struct IPackageExecutionStateChangeNotification : IUnknown
 		{
 			public const new Guid IID = .(0x1bb12a62, 0x2ad8, 0x432b, 0x8c, 0xcf, 0x0c, 0x2c, 0x52, 0xaf, 0xcd, 0x5b);
 			
-			public function HRESULT(IPackageExecutionStateChangeNotification *self, PWSTR pszPackageFullName, PACKAGE_EXECUTION_STATE pesNewState) OnStateChanged;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPackageExecutionStateChangeNotification *self, PWSTR pszPackageFullName, PACKAGE_EXECUTION_STATE pesNewState) OnStateChanged;
+			}
 		}
 		[CRepr]
 		public struct IPackageDebugSettings : IUnknown
 		{
 			public const new Guid IID = .(0xf27c3930, 0x8029, 0x4ad1, 0x94, 0xe3, 0x3d, 0xba, 0x41, 0x78, 0x10, 0xc1);
 			
-			public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName, PWSTR debuggerCommandLine, PWSTR environment) EnableDebugging;
-			public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName) DisableDebugging;
-			public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName) Suspend;
-			public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName) Resume;
-			public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName) TerminateAllProcesses;
-			public function HRESULT(IPackageDebugSettings *self, uint32 sessionId) SetTargetSessionId;
-			public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName, uint32* taskCount, Guid** taskIds, PWSTR** taskNames) EnumerateBackgroundTasks;
-			public function HRESULT(IPackageDebugSettings *self, Guid* taskId) ActivateBackgroundTask;
-			public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName) StartServicing;
-			public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName) StopServicing;
-			public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName, uint32 sessionId) StartSessionRedirection;
-			public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName) StopSessionRedirection;
-			public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName, PACKAGE_EXECUTION_STATE* packageExecutionState) GetPackageExecutionState;
-			public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName, IPackageExecutionStateChangeNotification* pPackageExecutionStateChangeNotification, uint32* pdwCookie) RegisterForPackageStateChanges;
-			public function HRESULT(IPackageDebugSettings *self, uint32 dwCookie) UnregisterForPackageStateChanges;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName, PWSTR debuggerCommandLine, PWSTR environment) EnableDebugging;
+				public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName) DisableDebugging;
+				public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName) Suspend;
+				public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName) Resume;
+				public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName) TerminateAllProcesses;
+				public function HRESULT(IPackageDebugSettings *self, uint32 sessionId) SetTargetSessionId;
+				public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName, uint32* taskCount, Guid** taskIds, PWSTR** taskNames) EnumerateBackgroundTasks;
+				public function HRESULT(IPackageDebugSettings *self, Guid* taskId) ActivateBackgroundTask;
+				public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName) StartServicing;
+				public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName) StopServicing;
+				public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName, uint32 sessionId) StartSessionRedirection;
+				public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName) StopSessionRedirection;
+				public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName, PACKAGE_EXECUTION_STATE* packageExecutionState) GetPackageExecutionState;
+				public function HRESULT(IPackageDebugSettings *self, PWSTR packageFullName, IPackageExecutionStateChangeNotification* pPackageExecutionStateChangeNotification, uint32* pdwCookie) RegisterForPackageStateChanges;
+				public function HRESULT(IPackageDebugSettings *self, uint32 dwCookie) UnregisterForPackageStateChanges;
+			}
 		}
 		[CRepr]
 		public struct IPackageDebugSettings2 : IPackageDebugSettings
 		{
 			public const new Guid IID = .(0x6e3194bb, 0xab82, 0x4d22, 0x93, 0xf5, 0xfa, 0xbd, 0xa4, 0x0e, 0x7b, 0x16);
 			
-			public function HRESULT(IPackageDebugSettings2 *self, PWSTR packageFullName, uint32* appCount, PWSTR** appUserModelIds, PWSTR** appDisplayNames) EnumerateApps;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IPackageDebugSettings.VTable
+			{
+				public function HRESULT(IPackageDebugSettings2 *self, PWSTR packageFullName, uint32* appCount, PWSTR** appUserModelIds, PWSTR** appDisplayNames) EnumerateApps;
+			}
 		}
 		[CRepr]
 		public struct ISuspensionDependencyManager : IUnknown
 		{
 			public const new Guid IID = .(0x52b83a42, 0x2543, 0x416a, 0x81, 0xd9, 0xc0, 0xde, 0x79, 0x69, 0xc8, 0xb3);
 			
-			public function HRESULT(ISuspensionDependencyManager *self, HANDLE processHandle) RegisterAsChild;
-			public function HRESULT(ISuspensionDependencyManager *self, HANDLE childProcessHandle) GroupChildWithParent;
-			public function HRESULT(ISuspensionDependencyManager *self, HANDLE childProcessHandle) UngroupChildFromParent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISuspensionDependencyManager *self, HANDLE processHandle) RegisterAsChild;
+				public function HRESULT(ISuspensionDependencyManager *self, HANDLE childProcessHandle) GroupChildWithParent;
+				public function HRESULT(ISuspensionDependencyManager *self, HANDLE childProcessHandle) UngroupChildFromParent;
+			}
 		}
 		[CRepr]
 		public struct IExecuteCommandApplicationHostEnvironment : IUnknown
 		{
 			public const new Guid IID = .(0x18b21aa9, 0xe184, 0x4ff0, 0x9f, 0x5e, 0xf8, 0x82, 0xd0, 0x37, 0x71, 0xb3);
 			
-			public function HRESULT(IExecuteCommandApplicationHostEnvironment *self, AHE_TYPE* pahe) GetValue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IExecuteCommandApplicationHostEnvironment *self, AHE_TYPE* pahe) GetValue;
+			}
 		}
 		[CRepr]
 		public struct IExecuteCommandHost : IUnknown
 		{
 			public const new Guid IID = .(0x4b6832a2, 0x5f04, 0x4c9d, 0xb8, 0x9d, 0x72, 0x7a, 0x15, 0xd1, 0x03, 0xe7);
 			
-			public function HRESULT(IExecuteCommandHost *self, EC_HOST_UI_MODE* pUIMode) GetUIMode;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IExecuteCommandHost *self, EC_HOST_UI_MODE* pUIMode) GetUIMode;
+			}
 		}
 		[CRepr]
 		public struct IApplicationDesignModeSettings : IUnknown
 		{
 			public const new Guid IID = .(0x2a3dee9a, 0xe31d, 0x46d6, 0x85, 0x08, 0xbc, 0xc5, 0x97, 0xdb, 0x35, 0x57);
 			
-			public function HRESULT(IApplicationDesignModeSettings *self, SIZE nativeDisplaySizePixels) SetNativeDisplaySize;
-			public function HRESULT(IApplicationDesignModeSettings *self, DEVICE_SCALE_FACTOR scaleFactor) SetScaleFactor;
-			public function HRESULT(IApplicationDesignModeSettings *self, APPLICATION_VIEW_STATE viewState) SetApplicationViewState;
-			public function HRESULT(IApplicationDesignModeSettings *self, SIZE* applicationSizePixels) ComputeApplicationSize;
-			public function HRESULT(IApplicationDesignModeSettings *self, APPLICATION_VIEW_STATE viewState, SIZE nativeDisplaySizePixels, DEVICE_SCALE_FACTOR scaleFactor, BOOL* supported) IsApplicationViewStateSupported;
-			public function HRESULT(IApplicationDesignModeSettings *self, EDGE_GESTURE_KIND edgeGestureKind) TriggerEdgeGesture;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IApplicationDesignModeSettings *self, SIZE nativeDisplaySizePixels) SetNativeDisplaySize;
+				public function HRESULT(IApplicationDesignModeSettings *self, DEVICE_SCALE_FACTOR scaleFactor) SetScaleFactor;
+				public function HRESULT(IApplicationDesignModeSettings *self, APPLICATION_VIEW_STATE viewState) SetApplicationViewState;
+				public function HRESULT(IApplicationDesignModeSettings *self, SIZE* applicationSizePixels) ComputeApplicationSize;
+				public function HRESULT(IApplicationDesignModeSettings *self, APPLICATION_VIEW_STATE viewState, SIZE nativeDisplaySizePixels, DEVICE_SCALE_FACTOR scaleFactor, BOOL* supported) IsApplicationViewStateSupported;
+				public function HRESULT(IApplicationDesignModeSettings *self, EDGE_GESTURE_KIND edgeGestureKind) TriggerEdgeGesture;
+			}
 		}
 		[CRepr]
 		public struct IApplicationDesignModeSettings2 : IApplicationDesignModeSettings
 		{
 			public const new Guid IID = .(0x490514e1, 0x675a, 0x4d6e, 0xa5, 0x8d, 0xe5, 0x49, 0x01, 0xb4, 0xca, 0x2f);
 			
-			public function HRESULT(IApplicationDesignModeSettings2 *self, NATIVE_DISPLAY_ORIENTATION nativeDisplayOrientation) SetNativeDisplayOrientation;
-			public function HRESULT(IApplicationDesignModeSettings2 *self, APPLICATION_VIEW_ORIENTATION viewOrientation) SetApplicationViewOrientation;
-			public function HRESULT(IApplicationDesignModeSettings2 *self, ADJACENT_DISPLAY_EDGES adjacentDisplayEdges) SetAdjacentDisplayEdges;
-			public function HRESULT(IApplicationDesignModeSettings2 *self, BOOL isOnLockScreen) SetIsOnLockScreen;
-			public function HRESULT(IApplicationDesignModeSettings2 *self, APPLICATION_VIEW_MIN_WIDTH viewMinWidth) SetApplicationViewMinWidth;
-			public function HRESULT(IApplicationDesignModeSettings2 *self, SIZE* minApplicationSizePixels, SIZE* maxApplicationSizePixels) GetApplicationSizeBounds;
-			public function HRESULT(IApplicationDesignModeSettings2 *self, SIZE applicationSizePixels, APPLICATION_VIEW_ORIENTATION* viewOrientation) GetApplicationViewOrientation;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IApplicationDesignModeSettings.VTable
+			{
+				public function HRESULT(IApplicationDesignModeSettings2 *self, NATIVE_DISPLAY_ORIENTATION nativeDisplayOrientation) SetNativeDisplayOrientation;
+				public function HRESULT(IApplicationDesignModeSettings2 *self, APPLICATION_VIEW_ORIENTATION viewOrientation) SetApplicationViewOrientation;
+				public function HRESULT(IApplicationDesignModeSettings2 *self, ADJACENT_DISPLAY_EDGES adjacentDisplayEdges) SetAdjacentDisplayEdges;
+				public function HRESULT(IApplicationDesignModeSettings2 *self, BOOL isOnLockScreen) SetIsOnLockScreen;
+				public function HRESULT(IApplicationDesignModeSettings2 *self, APPLICATION_VIEW_MIN_WIDTH viewMinWidth) SetApplicationViewMinWidth;
+				public function HRESULT(IApplicationDesignModeSettings2 *self, SIZE* minApplicationSizePixels, SIZE* maxApplicationSizePixels) GetApplicationSizeBounds;
+				public function HRESULT(IApplicationDesignModeSettings2 *self, SIZE applicationSizePixels, APPLICATION_VIEW_ORIENTATION* viewOrientation) GetApplicationViewOrientation;
+			}
 		}
 		[CRepr]
 		public struct ILaunchTargetMonitor : IUnknown
 		{
 			public const new Guid IID = .(0x266fbc7e, 0x490d, 0x46ed, 0xa9, 0x6b, 0x22, 0x74, 0xdb, 0x25, 0x20, 0x03);
 			
-			public function HRESULT(ILaunchTargetMonitor *self, HMONITOR* monitor) GetMonitor;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ILaunchTargetMonitor *self, HMONITOR* monitor) GetMonitor;
+			}
 		}
 		[CRepr]
 		public struct ILaunchSourceViewSizePreference : IUnknown
 		{
 			public const new Guid IID = .(0xe5aa01f7, 0x1fb8, 0x4830, 0x87, 0x20, 0x4e, 0x67, 0x34, 0xcb, 0xd5, 0xf3);
 			
-			public function HRESULT(ILaunchSourceViewSizePreference *self, HWND* hwnd) GetSourceViewToPosition;
-			public function HRESULT(ILaunchSourceViewSizePreference *self, APPLICATION_VIEW_SIZE_PREFERENCE* sourceSizeAfterLaunch) GetSourceViewSizePreference;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ILaunchSourceViewSizePreference *self, HWND* hwnd) GetSourceViewToPosition;
+				public function HRESULT(ILaunchSourceViewSizePreference *self, APPLICATION_VIEW_SIZE_PREFERENCE* sourceSizeAfterLaunch) GetSourceViewSizePreference;
+			}
 		}
 		[CRepr]
 		public struct ILaunchTargetViewSizePreference : IUnknown
 		{
 			public const new Guid IID = .(0x2f0666c6, 0x12f7, 0x4360, 0xb5, 0x11, 0xa3, 0x94, 0xa0, 0x55, 0x37, 0x25);
 			
-			public function HRESULT(ILaunchTargetViewSizePreference *self, APPLICATION_VIEW_SIZE_PREFERENCE* targetSizeOnLaunch) GetTargetViewSizePreference;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ILaunchTargetViewSizePreference *self, APPLICATION_VIEW_SIZE_PREFERENCE* targetSizeOnLaunch) GetTargetViewSizePreference;
+			}
 		}
 		[CRepr]
 		public struct ILaunchSourceAppUserModelId : IUnknown
 		{
 			public const new Guid IID = .(0x989191ac, 0x28ff, 0x4cf0, 0x95, 0x84, 0xe0, 0xd0, 0x78, 0xbc, 0x23, 0x96);
 			
-			public function HRESULT(ILaunchSourceAppUserModelId *self, PWSTR* launchingApp) GetAppUserModelId;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ILaunchSourceAppUserModelId *self, PWSTR* launchingApp) GetAppUserModelId;
+			}
 		}
 		[CRepr]
 		public struct IInitializeWithWindow : IUnknown
 		{
 			public const new Guid IID = .(0x3e68d4bd, 0x7135, 0x4d10, 0x80, 0x18, 0x9f, 0xb6, 0xd9, 0xf3, 0x3f, 0xa1);
 			
-			public function HRESULT(IInitializeWithWindow *self, HWND hwnd) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInitializeWithWindow *self, HWND hwnd) Initialize;
+			}
 		}
 		[CRepr]
 		public struct IHandlerInfo : IUnknown
 		{
 			public const new Guid IID = .(0x997706ef, 0xf880, 0x453b, 0x81, 0x18, 0x39, 0xe1, 0xa2, 0xd2, 0x65, 0x5a);
 			
-			public function HRESULT(IHandlerInfo *self, PWSTR* value) GetApplicationDisplayName;
-			public function HRESULT(IHandlerInfo *self, PWSTR* value) GetApplicationPublisher;
-			public function HRESULT(IHandlerInfo *self, PWSTR* value) GetApplicationIconReference;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IHandlerInfo *self, PWSTR* value) GetApplicationDisplayName;
+				public function HRESULT(IHandlerInfo *self, PWSTR* value) GetApplicationPublisher;
+				public function HRESULT(IHandlerInfo *self, PWSTR* value) GetApplicationIconReference;
+			}
 		}
 		[CRepr]
 		public struct IHandlerInfo2 : IHandlerInfo
 		{
 			public const new Guid IID = .(0x31cca04c, 0x04d3, 0x4ea9, 0x90, 0xde, 0x97, 0xb1, 0x5e, 0x87, 0xa5, 0x32);
 			
-			public function HRESULT(IHandlerInfo2 *self, PWSTR* value) GetApplicationId;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IHandlerInfo.VTable
+			{
+				public function HRESULT(IHandlerInfo2 *self, PWSTR* value) GetApplicationId;
+			}
 		}
 		[CRepr]
 		public struct IHandlerActivationHost : IUnknown
 		{
 			public const new Guid IID = .(0x35094a87, 0x8bb1, 0x4237, 0x96, 0xc6, 0xc4, 0x17, 0xee, 0xbd, 0xb0, 0x78);
 			
-			public function HRESULT(IHandlerActivationHost *self, Guid* clsidHandler, IShellItemArray* itemsBeingActivated, IHandlerInfo* handlerInfo) BeforeCoCreateInstance;
-			public function HRESULT(IHandlerActivationHost *self, PWSTR applicationPath, PWSTR commandLine, IHandlerInfo* handlerInfo) BeforeCreateProcess;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IHandlerActivationHost *self, Guid* clsidHandler, IShellItemArray* itemsBeingActivated, IHandlerInfo* handlerInfo) BeforeCoCreateInstance;
+				public function HRESULT(IHandlerActivationHost *self, PWSTR applicationPath, PWSTR commandLine, IHandlerInfo* handlerInfo) BeforeCreateProcess;
+			}
 		}
 		[CRepr]
 		public struct IAppActivationUIInfo : IUnknown
 		{
 			public const new Guid IID = .(0xabad189d, 0x9fa3, 0x4278, 0xb3, 0xca, 0x8c, 0xa4, 0x48, 0xa8, 0x8d, 0xcb);
 			
-			public function HRESULT(IAppActivationUIInfo *self, HMONITOR* value) GetMonitor;
-			public function HRESULT(IAppActivationUIInfo *self, POINT* value) GetInvokePoint;
-			public function HRESULT(IAppActivationUIInfo *self, int32* value) GetShowCommand;
-			public function HRESULT(IAppActivationUIInfo *self, BOOL* value) GetShowUI;
-			public function HRESULT(IAppActivationUIInfo *self, uint32* value) GetKeyState;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAppActivationUIInfo *self, HMONITOR* value) GetMonitor;
+				public function HRESULT(IAppActivationUIInfo *self, POINT* value) GetInvokePoint;
+				public function HRESULT(IAppActivationUIInfo *self, int32* value) GetShowCommand;
+				public function HRESULT(IAppActivationUIInfo *self, BOOL* value) GetShowUI;
+				public function HRESULT(IAppActivationUIInfo *self, uint32* value) GetKeyState;
+			}
 		}
 		[CRepr]
 		public struct IContactManagerInterop : IUnknown
 		{
 			public const new Guid IID = .(0x99eacba7, 0xe073, 0x43b6, 0xa8, 0x96, 0x55, 0xaf, 0xe4, 0x8a, 0x08, 0x33);
 			
-			public function HRESULT(IContactManagerInterop *self, HWND appWindow, IUnknown* contact, RECT* selection, FLYOUT_PLACEMENT preferredPlacement) ShowContactCardForWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IContactManagerInterop *self, HWND appWindow, IUnknown* contact, RECT* selection, FLYOUT_PLACEMENT preferredPlacement) ShowContactCardForWindow;
+			}
 		}
 		[CRepr]
 		public struct IShellIconOverlayIdentifier : IUnknown
 		{
 			public const new Guid IID = .(0x0c6c4200, 0xc589, 0x11d0, 0x99, 0x9a, 0x00, 0xc0, 0x4f, 0xd6, 0x55, 0xe1);
 			
-			public function HRESULT(IShellIconOverlayIdentifier *self, PWSTR pwszPath, uint32 dwAttrib) IsMemberOf;
-			public function HRESULT(IShellIconOverlayIdentifier *self, char16* pwszIconFile, int32 cchMax, int32* pIndex, uint32* pdwFlags) GetOverlayInfo;
-			public function HRESULT(IShellIconOverlayIdentifier *self, int32* pPriority) GetPriority;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellIconOverlayIdentifier *self, PWSTR pwszPath, uint32 dwAttrib) IsMemberOf;
+				public function HRESULT(IShellIconOverlayIdentifier *self, char16* pwszIconFile, int32 cchMax, int32* pIndex, uint32* pdwFlags) GetOverlayInfo;
+				public function HRESULT(IShellIconOverlayIdentifier *self, int32* pPriority) GetPriority;
+			}
 		}
 		[CRepr]
 		public struct IBannerNotificationHandler : IUnknown
 		{
 			public const new Guid IID = .(0x8d7b2ba7, 0xdb05, 0x46a8, 0x82, 0x3c, 0xd2, 0xb6, 0xde, 0x08, 0xee, 0x91);
 			
-			public function HRESULT(IBannerNotificationHandler *self, BANNER_NOTIFICATION* notification) OnBannerEvent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IBannerNotificationHandler *self, BANNER_NOTIFICATION* notification) OnBannerEvent;
+			}
 		}
 		[CRepr]
 		public struct ISortColumnArray : IUnknown
 		{
 			public const new Guid IID = .(0x6dfc60fb, 0xf2e9, 0x459b, 0xbe, 0xb5, 0x28, 0x8f, 0x1a, 0x7c, 0x7d, 0x54);
 			
-			public function HRESULT(ISortColumnArray *self, uint32* columnCount) GetCount;
-			public function HRESULT(ISortColumnArray *self, uint32 index, SORTCOLUMN* sortcolumn) GetAt;
-			public function HRESULT(ISortColumnArray *self, SORT_ORDER_TYPE* type) GetSortType;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISortColumnArray *self, uint32* columnCount) GetCount;
+				public function HRESULT(ISortColumnArray *self, uint32 index, SORTCOLUMN* sortcolumn) GetAt;
+				public function HRESULT(ISortColumnArray *self, SORT_ORDER_TYPE* type) GetSortType;
+			}
 		}
 		[CRepr]
 		public struct IPropertyKeyStore : IUnknown
 		{
 			public const new Guid IID = .(0x75bd59aa, 0xf23b, 0x4963, 0xab, 0xa4, 0x0b, 0x35, 0x57, 0x52, 0xa9, 0x1b);
 			
-			public function HRESULT(IPropertyKeyStore *self, int32* keyCount) GetKeyCount;
-			public function HRESULT(IPropertyKeyStore *self, int32 index, PROPERTYKEY* pkey) GetKeyAt;
-			public function HRESULT(IPropertyKeyStore *self, PROPERTYKEY* key) AppendKey;
-			public function HRESULT(IPropertyKeyStore *self, int32 index) DeleteKey;
-			public function HRESULT(IPropertyKeyStore *self, PROPERTYKEY* key) IsKeyInStore;
-			public function HRESULT(IPropertyKeyStore *self, PROPERTYKEY* key) RemoveKey;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPropertyKeyStore *self, int32* keyCount) GetKeyCount;
+				public function HRESULT(IPropertyKeyStore *self, int32 index, PROPERTYKEY* pkey) GetKeyAt;
+				public function HRESULT(IPropertyKeyStore *self, PROPERTYKEY* key) AppendKey;
+				public function HRESULT(IPropertyKeyStore *self, int32 index) DeleteKey;
+				public function HRESULT(IPropertyKeyStore *self, PROPERTYKEY* key) IsKeyInStore;
+				public function HRESULT(IPropertyKeyStore *self, PROPERTYKEY* key) RemoveKey;
+			}
 		}
 		[CRepr]
 		public struct IQueryCodePage : IUnknown
 		{
 			public const new Guid IID = .(0xc7b236ce, 0xee80, 0x11d0, 0x98, 0x5f, 0x00, 0x60, 0x08, 0x05, 0x93, 0x82);
 			
-			public function HRESULT(IQueryCodePage *self, uint32* puiCodePage) GetCodePage;
-			public function HRESULT(IQueryCodePage *self, uint32 uiCodePage) SetCodePage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IQueryCodePage *self, uint32* puiCodePage) GetCodePage;
+				public function HRESULT(IQueryCodePage *self, uint32 uiCodePage) SetCodePage;
+			}
 		}
 		[CRepr]
 		public struct IFolderViewOptions : IUnknown
 		{
 			public const new Guid IID = .(0x3cc974d2, 0xb302, 0x4d36, 0xad, 0x3e, 0x06, 0xd9, 0x3f, 0x69, 0x5d, 0x3f);
 			
-			public function HRESULT(IFolderViewOptions *self, FOLDERVIEWOPTIONS fvoMask, FOLDERVIEWOPTIONS fvoFlags) SetFolderViewOptions;
-			public function HRESULT(IFolderViewOptions *self, FOLDERVIEWOPTIONS* pfvoFlags) GetFolderViewOptions;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IFolderViewOptions *self, FOLDERVIEWOPTIONS fvoMask, FOLDERVIEWOPTIONS fvoFlags) SetFolderViewOptions;
+				public function HRESULT(IFolderViewOptions *self, FOLDERVIEWOPTIONS* pfvoFlags) GetFolderViewOptions;
+			}
 		}
 		[CRepr]
 		public struct IShellView3 : IShellView2
 		{
 			public const new Guid IID = .(0xec39fa88, 0xf8af, 0x41c5, 0x84, 0x21, 0x38, 0xbe, 0xd2, 0x8f, 0x46, 0x73);
 			
-			public function HRESULT(IShellView3 *self, IShellBrowser* psbOwner, IShellView* psvPrev, uint32 dwViewFlags, FOLDERFLAGS dwMask, FOLDERFLAGS dwFlags, FOLDERVIEWMODE fvMode, Guid* pvid, RECT* prcView, HWND* phwndView) CreateViewWindow3;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellView2.VTable
+			{
+				public function HRESULT(IShellView3 *self, IShellBrowser* psbOwner, IShellView* psvPrev, uint32 dwViewFlags, FOLDERFLAGS dwMask, FOLDERFLAGS dwFlags, FOLDERVIEWMODE fvMode, Guid* pvid, RECT* prcView, HWND* phwndView) CreateViewWindow3;
+			}
 		}
 		[CRepr]
 		public struct ISearchBoxInfo : IUnknown
 		{
 			public const new Guid IID = .(0x6af6e03f, 0xd664, 0x4ef4, 0x96, 0x26, 0xf7, 0xe0, 0xed, 0x36, 0x75, 0x5e);
 			
-			public function HRESULT(ISearchBoxInfo *self, Guid* riid, void** ppv) GetCondition;
-			public function HRESULT(ISearchBoxInfo *self, PWSTR* ppsz) GetText;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISearchBoxInfo *self, Guid* riid, void** ppv) GetCondition;
+				public function HRESULT(ISearchBoxInfo *self, PWSTR* ppsz) GetText;
+			}
 		}
 		[CRepr]
 		public struct IVisualProperties : IUnknown
 		{
 			public const new Guid IID = .(0xe693cf68, 0xd967, 0x4112, 0x87, 0x63, 0x99, 0x17, 0x2a, 0xee, 0x5e, 0x5a);
 			
-			public function HRESULT(IVisualProperties *self, HBITMAP hbmp, VPWATERMARKFLAGS vpwf) SetWatermark;
-			public function HRESULT(IVisualProperties *self, VPCOLORFLAGS vpcf, uint32 cr) SetColor;
-			public function HRESULT(IVisualProperties *self, VPCOLORFLAGS vpcf, uint32* pcr) GetColor;
-			public function HRESULT(IVisualProperties *self, int32 cyItemInPixels) SetItemHeight;
-			public function HRESULT(IVisualProperties *self, int32* cyItemInPixels) GetItemHeight;
-			public function HRESULT(IVisualProperties *self, LOGFONTW* plf, BOOL bRedraw) SetFont;
-			public function HRESULT(IVisualProperties *self, LOGFONTW* plf) GetFont;
-			public function HRESULT(IVisualProperties *self, PWSTR pszSubAppName, PWSTR pszSubIdList) SetTheme;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVisualProperties *self, HBITMAP hbmp, VPWATERMARKFLAGS vpwf) SetWatermark;
+				public function HRESULT(IVisualProperties *self, VPCOLORFLAGS vpcf, uint32 cr) SetColor;
+				public function HRESULT(IVisualProperties *self, VPCOLORFLAGS vpcf, uint32* pcr) GetColor;
+				public function HRESULT(IVisualProperties *self, int32 cyItemInPixels) SetItemHeight;
+				public function HRESULT(IVisualProperties *self, int32* cyItemInPixels) GetItemHeight;
+				public function HRESULT(IVisualProperties *self, LOGFONTW* plf, BOOL bRedraw) SetFont;
+				public function HRESULT(IVisualProperties *self, LOGFONTW* plf) GetFont;
+				public function HRESULT(IVisualProperties *self, PWSTR pszSubAppName, PWSTR pszSubIdList) SetTheme;
+			}
 		}
 		[CRepr]
 		public struct ICommDlgBrowser3 : ICommDlgBrowser2
 		{
 			public const new Guid IID = .(0xc8ad25a1, 0x3294, 0x41ee, 0x81, 0x65, 0x71, 0x17, 0x4b, 0xd0, 0x1c, 0x57);
 			
-			public function HRESULT(ICommDlgBrowser3 *self, IShellView* ppshv, int32 iColumn) OnColumnClicked;
-			public function HRESULT(ICommDlgBrowser3 *self, char16* pszFileSpec, int32 cchFileSpec) GetCurrentFilter;
-			public function HRESULT(ICommDlgBrowser3 *self, IShellView* ppshv) OnPreViewCreated;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICommDlgBrowser2.VTable
+			{
+				public function HRESULT(ICommDlgBrowser3 *self, IShellView* ppshv, int32 iColumn) OnColumnClicked;
+				public function HRESULT(ICommDlgBrowser3 *self, char16* pszFileSpec, int32 cchFileSpec) GetCurrentFilter;
+				public function HRESULT(ICommDlgBrowser3 *self, IShellView* ppshv) OnPreViewCreated;
+			}
 		}
 		[CRepr]
 		public struct IUserAccountChangeCallback : IUnknown
 		{
 			public const new Guid IID = .(0xa561e69a, 0xb4b8, 0x4113, 0x91, 0xa5, 0x64, 0xc6, 0xbc, 0xca, 0x34, 0x30);
 			
-			public function HRESULT(IUserAccountChangeCallback *self, PWSTR pszUserName) OnPictureChange;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IUserAccountChangeCallback *self, PWSTR pszUserName) OnPictureChange;
+			}
 		}
 		[CRepr]
 		public struct IStreamAsync : IStream
 		{
 			public const new Guid IID = .(0xfe0b6665, 0xe0ca, 0x49b9, 0xa1, 0x78, 0x2b, 0x5c, 0xb4, 0x8d, 0x92, 0xa5);
 			
-			public function HRESULT(IStreamAsync *self, void* pv, uint32 cb, uint32* pcbRead, OVERLAPPED* lpOverlapped) ReadAsync;
-			public function HRESULT(IStreamAsync *self, void* lpBuffer, uint32 cb, uint32* pcbWritten, OVERLAPPED* lpOverlapped) WriteAsync;
-			public function HRESULT(IStreamAsync *self, OVERLAPPED* lpOverlapped, uint32* lpNumberOfBytesTransferred, BOOL bWait) OverlappedResult;
-			public function HRESULT(IStreamAsync *self) CancelIo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IStream.VTable
+			{
+				public function HRESULT(IStreamAsync *self, void* pv, uint32 cb, uint32* pcbRead, OVERLAPPED* lpOverlapped) ReadAsync;
+				public function HRESULT(IStreamAsync *self, void* lpBuffer, uint32 cb, uint32* pcbWritten, OVERLAPPED* lpOverlapped) WriteAsync;
+				public function HRESULT(IStreamAsync *self, OVERLAPPED* lpOverlapped, uint32* lpNumberOfBytesTransferred, BOOL bWait) OverlappedResult;
+				public function HRESULT(IStreamAsync *self) CancelIo;
+			}
 		}
 		[CRepr]
 		public struct IStreamUnbufferedInfo : IUnknown
 		{
 			public const new Guid IID = .(0x8a68fdda, 0x1fdc, 0x4c20, 0x8c, 0xeb, 0x41, 0x66, 0x43, 0xb5, 0xa6, 0x25);
 			
-			public function HRESULT(IStreamUnbufferedInfo *self, uint32* pcbSectorSize) GetSectorSize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IStreamUnbufferedInfo *self, uint32* pcbSectorSize) GetSectorSize;
+			}
 		}
 		[CRepr]
 		public struct IDragSourceHelper2 : IDragSourceHelper
 		{
 			public const new Guid IID = .(0x83e07d0d, 0x0c5f, 0x4163, 0xbf, 0x1a, 0x60, 0xb2, 0x74, 0x05, 0x1e, 0x40);
 			
-			public function HRESULT(IDragSourceHelper2 *self, uint32 dwFlags) SetFlags;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDragSourceHelper.VTable
+			{
+				public function HRESULT(IDragSourceHelper2 *self, uint32 dwFlags) SetFlags;
+			}
 		}
 		[CRepr]
 		public struct IHWEventHandler : IUnknown
 		{
 			public const new Guid IID = .(0xc1fb73d0, 0xec3a, 0x4ba2, 0xb5, 0x12, 0x8c, 0xdb, 0x91, 0x87, 0xb6, 0xd1);
 			
-			public function HRESULT(IHWEventHandler *self, PWSTR pszParams) Initialize;
-			public function HRESULT(IHWEventHandler *self, PWSTR pszDeviceID, PWSTR pszAltDeviceID, PWSTR pszEventType) HandleEvent;
-			public function HRESULT(IHWEventHandler *self, PWSTR pszDeviceID, PWSTR pszAltDeviceID, PWSTR pszEventType, PWSTR pszContentTypeHandler, IDataObject* pdataobject) HandleEventWithContent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IHWEventHandler *self, PWSTR pszParams) Initialize;
+				public function HRESULT(IHWEventHandler *self, PWSTR pszDeviceID, PWSTR pszAltDeviceID, PWSTR pszEventType) HandleEvent;
+				public function HRESULT(IHWEventHandler *self, PWSTR pszDeviceID, PWSTR pszAltDeviceID, PWSTR pszEventType, PWSTR pszContentTypeHandler, IDataObject* pdataobject) HandleEventWithContent;
+			}
 		}
 		[CRepr]
 		public struct IHWEventHandler2 : IHWEventHandler
 		{
 			public const new Guid IID = .(0xcfcc809f, 0x295d, 0x42e8, 0x9f, 0xfc, 0x42, 0x4b, 0x33, 0xc4, 0x87, 0xe6);
 			
-			public function HRESULT(IHWEventHandler2 *self, PWSTR pszDeviceID, PWSTR pszAltDeviceID, PWSTR pszEventType, HWND hwndOwner) HandleEventWithHWND;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IHWEventHandler.VTable
+			{
+				public function HRESULT(IHWEventHandler2 *self, PWSTR pszDeviceID, PWSTR pszAltDeviceID, PWSTR pszEventType, HWND hwndOwner) HandleEventWithHWND;
+			}
 		}
 		[CRepr]
 		public struct IQueryCancelAutoPlay : IUnknown
 		{
 			public const new Guid IID = .(0xddefe873, 0x6997, 0x4e68, 0xbe, 0x26, 0x39, 0xb6, 0x33, 0xad, 0xbe, 0x12);
 			
-			public function HRESULT(IQueryCancelAutoPlay *self, PWSTR pszPath, uint32 dwContentType, PWSTR pszLabel, uint32 dwSerialNumber) AllowAutoPlay;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IQueryCancelAutoPlay *self, PWSTR pszPath, uint32 dwContentType, PWSTR pszLabel, uint32 dwSerialNumber) AllowAutoPlay;
+			}
 		}
 		[CRepr]
 		public struct IDynamicHWHandler : IUnknown
 		{
 			public const new Guid IID = .(0xdc2601d7, 0x059e, 0x42fc, 0xa0, 0x9d, 0x2a, 0xfd, 0x21, 0xb6, 0xd5, 0xf7);
 			
-			public function HRESULT(IDynamicHWHandler *self, PWSTR pszDeviceID, uint32 dwContentType, PWSTR* ppszAction) GetDynamicInfo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDynamicHWHandler *self, PWSTR pszDeviceID, uint32 dwContentType, PWSTR* ppszAction) GetDynamicInfo;
+			}
 		}
 		[CRepr]
 		public struct IUserNotificationCallback : IUnknown
 		{
 			public const new Guid IID = .(0x19108294, 0x0441, 0x4aff, 0x80, 0x13, 0xfa, 0x0a, 0x73, 0x0b, 0x0b, 0xea);
 			
-			public function HRESULT(IUserNotificationCallback *self, POINT* pt) OnBalloonUserClick;
-			public function HRESULT(IUserNotificationCallback *self, POINT* pt) OnLeftClick;
-			public function HRESULT(IUserNotificationCallback *self, POINT* pt) OnContextMenu;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IUserNotificationCallback *self, POINT* pt) OnBalloonUserClick;
+				public function HRESULT(IUserNotificationCallback *self, POINT* pt) OnLeftClick;
+				public function HRESULT(IUserNotificationCallback *self, POINT* pt) OnContextMenu;
+			}
 		}
 		[CRepr]
 		public struct IUserNotification2 : IUnknown
 		{
 			public const new Guid IID = .(0x215913cc, 0x57eb, 0x4fab, 0xab, 0x5a, 0xe5, 0xfa, 0x7b, 0xea, 0x2a, 0x6c);
 			
-			public function HRESULT(IUserNotification2 *self, PWSTR pszTitle, PWSTR pszText, uint32 dwInfoFlags) SetBalloonInfo;
-			public function HRESULT(IUserNotification2 *self, uint32 dwShowTime, uint32 dwInterval, uint32 cRetryCount) SetBalloonRetry;
-			public function HRESULT(IUserNotification2 *self, HICON hIcon, PWSTR pszToolTip) SetIconInfo;
-			public function HRESULT(IUserNotification2 *self, IQueryContinue* pqc, uint32 dwContinuePollInterval, IUserNotificationCallback* pSink) Show;
-			public function HRESULT(IUserNotification2 *self, PWSTR pszSoundName) PlaySound;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IUserNotification2 *self, PWSTR pszTitle, PWSTR pszText, uint32 dwInfoFlags) SetBalloonInfo;
+				public function HRESULT(IUserNotification2 *self, uint32 dwShowTime, uint32 dwInterval, uint32 cRetryCount) SetBalloonRetry;
+				public function HRESULT(IUserNotification2 *self, HICON hIcon, PWSTR pszToolTip) SetIconInfo;
+				public function HRESULT(IUserNotification2 *self, IQueryContinue* pqc, uint32 dwContinuePollInterval, IUserNotificationCallback* pSink) Show;
+				public function HRESULT(IUserNotification2 *self, PWSTR pszSoundName) PlaySound;
+			}
 		}
 		[CRepr]
 		public struct IDeskBand2 : IDeskBand
 		{
 			public const new Guid IID = .(0x79d16de4, 0xabee, 0x4021, 0x8d, 0x9d, 0x91, 0x69, 0xb2, 0x61, 0xd6, 0x57);
 			
-			public function HRESULT(IDeskBand2 *self, BOOL* pfCanRenderComposited) CanRenderComposited;
-			public function HRESULT(IDeskBand2 *self, BOOL fCompositionEnabled) SetCompositionState;
-			public function HRESULT(IDeskBand2 *self, BOOL* pfCompositionEnabled) GetCompositionState;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDeskBand.VTable
+			{
+				public function HRESULT(IDeskBand2 *self, BOOL* pfCanRenderComposited) CanRenderComposited;
+				public function HRESULT(IDeskBand2 *self, BOOL fCompositionEnabled) SetCompositionState;
+				public function HRESULT(IDeskBand2 *self, BOOL* pfCompositionEnabled) GetCompositionState;
+			}
 		}
 		[CRepr]
 		public struct IStartMenuPinnedList : IUnknown
 		{
 			public const new Guid IID = .(0x4cd19ada, 0x25a5, 0x4a32, 0xb3, 0xb7, 0x34, 0x7b, 0xee, 0x5b, 0xe3, 0x6b);
 			
-			public function HRESULT(IStartMenuPinnedList *self, IShellItem* pitem) RemoveFromList;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IStartMenuPinnedList *self, IShellItem* pitem) RemoveFromList;
+			}
 		}
 		[CRepr]
 		public struct ICDBurn : IUnknown
 		{
 			public const new Guid IID = .(0x3d73a659, 0xe5d0, 0x4d42, 0xaf, 0xc0, 0x51, 0x21, 0xba, 0x42, 0x5c, 0x8d);
 			
-			public function HRESULT(ICDBurn *self, char16* pszDrive, uint32 cch) GetRecorderDriveLetter;
-			public function HRESULT(ICDBurn *self, HWND hwnd) Burn;
-			public function HRESULT(ICDBurn *self, BOOL* pfHasRecorder) HasRecordableDrive;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICDBurn *self, char16* pszDrive, uint32 cch) GetRecorderDriveLetter;
+				public function HRESULT(ICDBurn *self, HWND hwnd) Burn;
+				public function HRESULT(ICDBurn *self, BOOL* pfHasRecorder) HasRecordableDrive;
+			}
 		}
 		[CRepr]
 		public struct IWizardSite : IUnknown
 		{
 			public const new Guid IID = .(0x88960f5b, 0x422f, 0x4e7b, 0x80, 0x13, 0x73, 0x41, 0x53, 0x81, 0xc3, 0xc3);
 			
-			public function HRESULT(IWizardSite *self, HPROPSHEETPAGE* phpage) GetPreviousPage;
-			public function HRESULT(IWizardSite *self, HPROPSHEETPAGE* phpage) GetNextPage;
-			public function HRESULT(IWizardSite *self, HPROPSHEETPAGE* phpage) GetCancelledPage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWizardSite *self, HPROPSHEETPAGE* phpage) GetPreviousPage;
+				public function HRESULT(IWizardSite *self, HPROPSHEETPAGE* phpage) GetNextPage;
+				public function HRESULT(IWizardSite *self, HPROPSHEETPAGE* phpage) GetCancelledPage;
+			}
 		}
 		[CRepr]
 		public struct IWizardExtension : IUnknown
 		{
 			public const new Guid IID = .(0xc02ea696, 0x86cc, 0x491e, 0x9b, 0x23, 0x74, 0x39, 0x4a, 0x04, 0x44, 0xa8);
 			
-			public function HRESULT(IWizardExtension *self, HPROPSHEETPAGE* aPages, uint32 cPages, uint32* pnPagesAdded) AddPages;
-			public function HRESULT(IWizardExtension *self, HPROPSHEETPAGE* phpage) GetFirstPage;
-			public function HRESULT(IWizardExtension *self, HPROPSHEETPAGE* phpage) GetLastPage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWizardExtension *self, HPROPSHEETPAGE* aPages, uint32 cPages, uint32* pnPagesAdded) AddPages;
+				public function HRESULT(IWizardExtension *self, HPROPSHEETPAGE* phpage) GetFirstPage;
+				public function HRESULT(IWizardExtension *self, HPROPSHEETPAGE* phpage) GetLastPage;
+			}
 		}
 		[CRepr]
 		public struct IWebWizardExtension : IWizardExtension
 		{
 			public const new Guid IID = .(0x0e6b3f66, 0x98d1, 0x48c0, 0xa2, 0x22, 0xfb, 0xde, 0x74, 0xe2, 0xfb, 0xc5);
 			
-			public function HRESULT(IWebWizardExtension *self, PWSTR pszURL) SetInitialURL;
-			public function HRESULT(IWebWizardExtension *self, PWSTR pszErrorURL) SetErrorURL;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWizardExtension.VTable
+			{
+				public function HRESULT(IWebWizardExtension *self, PWSTR pszURL) SetInitialURL;
+				public function HRESULT(IWebWizardExtension *self, PWSTR pszErrorURL) SetErrorURL;
+			}
 		}
 		[CRepr]
 		public struct IPublishingWizard : IWizardExtension
 		{
 			public const new Guid IID = .(0xaa9198bb, 0xccec, 0x472d, 0xbe, 0xed, 0x19, 0xa4, 0xf6, 0x73, 0x3f, 0x7a);
 			
-			public function HRESULT(IPublishingWizard *self, IDataObject* pdo, uint32 dwOptions, PWSTR pszServiceScope) Initialize;
-			public function HRESULT(IPublishingWizard *self, HRESULT* phrFromTransfer, IXMLDOMDocument** pdocManifest) GetTransferManifest;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWizardExtension.VTable
+			{
+				public function HRESULT(IPublishingWizard *self, IDataObject* pdo, uint32 dwOptions, PWSTR pszServiceScope) Initialize;
+				public function HRESULT(IPublishingWizard *self, HRESULT* phrFromTransfer, IXMLDOMDocument** pdocManifest) GetTransferManifest;
+			}
 		}
 		[CRepr]
 		public struct IFolderViewHost : IUnknown
 		{
 			public const new Guid IID = .(0x1ea58f02, 0xd55a, 0x411d, 0xb0, 0x9e, 0x9e, 0x65, 0xac, 0x21, 0x60, 0x5b);
 			
-			public function HRESULT(IFolderViewHost *self, HWND hwndParent, IDataObject* pdo, RECT* prc) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IFolderViewHost *self, HWND hwndParent, IDataObject* pdo, RECT* prc) Initialize;
+			}
 		}
 		[CRepr]
 		public struct IAccessibleObject : IUnknown
 		{
 			public const new Guid IID = .(0x95a391c5, 0x9ed4, 0x4c28, 0x84, 0x01, 0xab, 0x9e, 0x06, 0x71, 0x9e, 0x11);
 			
-			public function HRESULT(IAccessibleObject *self, PWSTR pszName) SetAccessibleName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAccessibleObject *self, PWSTR pszName) SetAccessibleName;
+			}
 		}
 		[CRepr]
 		public struct IResultsFolder : IUnknown
 		{
 			public const new Guid IID = .(0x96e5ae6d, 0x6ae1, 0x4b1c, 0x90, 0x0c, 0xc6, 0x48, 0x0e, 0xaa, 0x88, 0x28);
 			
-			public function HRESULT(IResultsFolder *self, IShellItem* psi) AddItem;
-			public function HRESULT(IResultsFolder *self, ITEMIDLIST* pidl, ITEMIDLIST** ppidlAdded) AddIDList;
-			public function HRESULT(IResultsFolder *self, IShellItem* psi) RemoveItem;
-			public function HRESULT(IResultsFolder *self, ITEMIDLIST* pidl) RemoveIDList;
-			public function HRESULT(IResultsFolder *self) RemoveAll;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IResultsFolder *self, IShellItem* psi) AddItem;
+				public function HRESULT(IResultsFolder *self, ITEMIDLIST* pidl, ITEMIDLIST** ppidlAdded) AddIDList;
+				public function HRESULT(IResultsFolder *self, IShellItem* psi) RemoveItem;
+				public function HRESULT(IResultsFolder *self, ITEMIDLIST* pidl) RemoveIDList;
+				public function HRESULT(IResultsFolder *self) RemoveAll;
+			}
 		}
 		[CRepr]
 		public struct IAutoCompleteDropDown : IUnknown
 		{
 			public const new Guid IID = .(0x3cd141f4, 0x3c6a, 0x11d2, 0xbc, 0xaa, 0x00, 0xc0, 0x4f, 0xd9, 0x29, 0xdb);
 			
-			public function HRESULT(IAutoCompleteDropDown *self, uint32* pdwFlags, PWSTR* ppwszString) GetDropDownStatus;
-			public function HRESULT(IAutoCompleteDropDown *self) ResetEnumerator;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAutoCompleteDropDown *self, uint32* pdwFlags, PWSTR* ppwszString) GetDropDownStatus;
+				public function HRESULT(IAutoCompleteDropDown *self) ResetEnumerator;
+			}
 		}
 		[CRepr]
 		public struct ICDBurnExt : IUnknown
 		{
 			public const new Guid IID = .(0x2271dcca, 0x74fc, 0x4414, 0x8f, 0xb7, 0xc5, 0x6b, 0x05, 0xac, 0xe2, 0xd7);
 			
-			public function HRESULT(ICDBurnExt *self, uint32* pdwActions) GetSupportedActionTypes;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICDBurnExt *self, uint32* pdwActions) GetSupportedActionTypes;
+			}
 		}
 		[CRepr]
 		public struct IEnumReadyCallback : IUnknown
 		{
 			public const new Guid IID = .(0x61e00d45, 0x8fff, 0x4e60, 0x92, 0x4e, 0x65, 0x37, 0xb6, 0x16, 0x12, 0xdd);
 			
-			public function HRESULT(IEnumReadyCallback *self) EnumReady;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumReadyCallback *self) EnumReady;
+			}
 		}
 		[CRepr]
 		public struct IEnumerableView : IUnknown
 		{
 			public const new Guid IID = .(0x8c8bf236, 0x1aec, 0x495f, 0x98, 0x94, 0x91, 0xd5, 0x7c, 0x3c, 0x68, 0x6f);
 			
-			public function HRESULT(IEnumerableView *self, IEnumReadyCallback* percb) SetEnumReadyCallback;
-			public function HRESULT(IEnumerableView *self, ITEMIDLIST* pidlFolder, uint32 dwEnumFlags, IEnumIDList** ppEnumIDList) CreateEnumIDListFromContents;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumerableView *self, IEnumReadyCallback* percb) SetEnumReadyCallback;
+				public function HRESULT(IEnumerableView *self, ITEMIDLIST* pidlFolder, uint32 dwEnumFlags, IEnumIDList** ppEnumIDList) CreateEnumIDListFromContents;
+			}
 		}
 		[CRepr]
 		public struct IInsertItem : IUnknown
 		{
 			public const new Guid IID = .(0xd2b57227, 0x3d23, 0x4b95, 0x93, 0xc0, 0x49, 0x2b, 0xd4, 0x54, 0xc3, 0x56);
 			
-			public function HRESULT(IInsertItem *self, ITEMIDLIST* pidl) InsertItem;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInsertItem *self, ITEMIDLIST* pidl) InsertItem;
+			}
 		}
 		[CRepr]
 		public struct IFolderBandPriv : IUnknown
 		{
 			public const new Guid IID = .(0x47c01f95, 0xe185, 0x412c, 0xb5, 0xc5, 0x4f, 0x27, 0xdf, 0x96, 0x5a, 0xea);
 			
-			public function HRESULT(IFolderBandPriv *self, BOOL fCascade) SetCascade;
-			public function HRESULT(IFolderBandPriv *self, BOOL fAccelerators) SetAccelerators;
-			public function HRESULT(IFolderBandPriv *self, BOOL fNoIcons) SetNoIcons;
-			public function HRESULT(IFolderBandPriv *self, BOOL fNoText) SetNoText;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IFolderBandPriv *self, BOOL fCascade) SetCascade;
+				public function HRESULT(IFolderBandPriv *self, BOOL fAccelerators) SetAccelerators;
+				public function HRESULT(IFolderBandPriv *self, BOOL fNoIcons) SetNoIcons;
+				public function HRESULT(IFolderBandPriv *self, BOOL fNoText) SetNoText;
+			}
 		}
 		[CRepr]
 		public struct IImageRecompress : IUnknown
 		{
 			public const new Guid IID = .(0x505f1513, 0x6b3e, 0x4892, 0xa2, 0x72, 0x59, 0xf8, 0x88, 0x9a, 0x4d, 0x3e);
 			
-			public function HRESULT(IImageRecompress *self, IShellItem* psi, int32 cx, int32 cy, int32 iQuality, IStorage* pstg, IStream** ppstrmOut) RecompressImage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IImageRecompress *self, IShellItem* psi, int32 cx, int32 cy, int32 iQuality, IStorage* pstg, IStream** ppstrmOut) RecompressImage;
+			}
 		}
 		[CRepr]
 		public struct IFileDialogControlEvents : IUnknown
 		{
 			public const new Guid IID = .(0x36116642, 0xd713, 0x4b97, 0x9b, 0x83, 0x74, 0x84, 0xa9, 0xd0, 0x04, 0x33);
 			
-			public function HRESULT(IFileDialogControlEvents *self, IFileDialogCustomize* pfdc, uint32 dwIDCtl, uint32 dwIDItem) OnItemSelected;
-			public function HRESULT(IFileDialogControlEvents *self, IFileDialogCustomize* pfdc, uint32 dwIDCtl) OnButtonClicked;
-			public function HRESULT(IFileDialogControlEvents *self, IFileDialogCustomize* pfdc, uint32 dwIDCtl, BOOL bChecked) OnCheckButtonToggled;
-			public function HRESULT(IFileDialogControlEvents *self, IFileDialogCustomize* pfdc, uint32 dwIDCtl) OnControlActivating;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IFileDialogControlEvents *self, IFileDialogCustomize* pfdc, uint32 dwIDCtl, uint32 dwIDItem) OnItemSelected;
+				public function HRESULT(IFileDialogControlEvents *self, IFileDialogCustomize* pfdc, uint32 dwIDCtl) OnButtonClicked;
+				public function HRESULT(IFileDialogControlEvents *self, IFileDialogCustomize* pfdc, uint32 dwIDCtl, BOOL bChecked) OnCheckButtonToggled;
+				public function HRESULT(IFileDialogControlEvents *self, IFileDialogCustomize* pfdc, uint32 dwIDCtl) OnControlActivating;
+			}
 		}
 		[CRepr]
 		public struct IFileDialog2 : IFileDialog
 		{
 			public const new Guid IID = .(0x61744fc7, 0x85b5, 0x4791, 0xa9, 0xb0, 0x27, 0x22, 0x76, 0x30, 0x9b, 0x13);
 			
-			public function HRESULT(IFileDialog2 *self, PWSTR pszLabel) SetCancelButtonLabel;
-			public function HRESULT(IFileDialog2 *self, IShellItem* psi) SetNavigationRoot;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IFileDialog.VTable
+			{
+				public function HRESULT(IFileDialog2 *self, PWSTR pszLabel) SetCancelButtonLabel;
+				public function HRESULT(IFileDialog2 *self, IShellItem* psi) SetNavigationRoot;
+			}
 		}
 		[CRepr]
 		public struct IApplicationAssociationRegistrationUI : IUnknown
 		{
 			public const new Guid IID = .(0x1f76a169, 0xf994, 0x40ac, 0x8f, 0xc8, 0x09, 0x59, 0xe8, 0x87, 0x47, 0x10);
 			
-			public function HRESULT(IApplicationAssociationRegistrationUI *self, PWSTR pszAppRegistryName) LaunchAdvancedAssociationUI;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IApplicationAssociationRegistrationUI *self, PWSTR pszAppRegistryName) LaunchAdvancedAssociationUI;
+			}
 		}
 		[CRepr]
 		public struct IShellRunDll : IUnknown
 		{
 			public const new Guid IID = .(0xfce4bde0, 0x4b68, 0x4b80, 0x8e, 0x9c, 0x74, 0x26, 0x31, 0x5a, 0x73, 0x88);
 			
-			public function HRESULT(IShellRunDll *self, PWSTR pszArgs) Run;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellRunDll *self, PWSTR pszArgs) Run;
+			}
 		}
 		[CRepr]
 		public struct IPreviousVersionsInfo : IUnknown
 		{
 			public const new Guid IID = .(0x76e54780, 0xad74, 0x48e3, 0xa6, 0x95, 0x3b, 0xa9, 0xa0, 0xaf, 0xf1, 0x0d);
 			
-			public function HRESULT(IPreviousVersionsInfo *self, PWSTR pszPath, BOOL fOkToBeSlow, BOOL* pfAvailable) AreSnapshotsAvailable;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPreviousVersionsInfo *self, PWSTR pszPath, BOOL fOkToBeSlow, BOOL* pfAvailable) AreSnapshotsAvailable;
+			}
 		}
 		[CRepr]
 		public struct IUseToBrowseItem : IRelatedItem
 		{
 			public const new Guid IID = .(0x05edda5c, 0x98a3, 0x4717, 0x8a, 0xdb, 0xc5, 0xe7, 0xda, 0x99, 0x1e, 0xb1);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IRelatedItem.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct INameSpaceTreeControl2 : INameSpaceTreeControl
 		{
 			public const new Guid IID = .(0x7cc7aed8, 0x290e, 0x49bc, 0x89, 0x45, 0xc1, 0x40, 0x1c, 0xc9, 0x30, 0x6c);
 			
-			public function HRESULT(INameSpaceTreeControl2 *self, uint32 nstcsMask, uint32 nstcsStyle) SetControlStyle;
-			public function HRESULT(INameSpaceTreeControl2 *self, uint32 nstcsMask, uint32* pnstcsStyle) GetControlStyle;
-			public function HRESULT(INameSpaceTreeControl2 *self, NSTCSTYLE2 nstcsMask, NSTCSTYLE2 nstcsStyle) SetControlStyle2;
-			public function HRESULT(INameSpaceTreeControl2 *self, NSTCSTYLE2 nstcsMask, NSTCSTYLE2* pnstcsStyle) GetControlStyle2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : INameSpaceTreeControl.VTable
+			{
+				public function HRESULT(INameSpaceTreeControl2 *self, uint32 nstcsMask, uint32 nstcsStyle) SetControlStyle;
+				public function HRESULT(INameSpaceTreeControl2 *self, uint32 nstcsMask, uint32* pnstcsStyle) GetControlStyle;
+				public function HRESULT(INameSpaceTreeControl2 *self, NSTCSTYLE2 nstcsMask, NSTCSTYLE2 nstcsStyle) SetControlStyle2;
+				public function HRESULT(INameSpaceTreeControl2 *self, NSTCSTYLE2 nstcsMask, NSTCSTYLE2* pnstcsStyle) GetControlStyle2;
+			}
 		}
 		[CRepr]
 		public struct INameSpaceTreeControlEvents : IUnknown
 		{
 			public const new Guid IID = .(0x93d77985, 0xb3d8, 0x4484, 0x83, 0x18, 0x67, 0x2c, 0xdd, 0xa0, 0x02, 0xce);
 			
-			public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi, uint32 nstceHitTest, uint32 nstceClickType) OnItemClick;
-			public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi) OnPropertyItemCommit;
-			public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi, uint32 nstcisMask, uint32 nstcisState) OnItemStateChanging;
-			public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi, uint32 nstcisMask, uint32 nstcisState) OnItemStateChanged;
-			public function HRESULT(INameSpaceTreeControlEvents *self, IShellItemArray* psiaSelection) OnSelectionChanged;
-			public function HRESULT(INameSpaceTreeControlEvents *self, uint32 uMsg, WPARAM wParam, LPARAM lParam) OnKeyboardInput;
-			public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi) OnBeforeExpand;
-			public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi) OnAfterExpand;
-			public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi) OnBeginLabelEdit;
-			public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi) OnEndLabelEdit;
-			public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi, char16* pszTip, int32 cchTip) OnGetToolTip;
-			public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi) OnBeforeItemDelete;
-			public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi, BOOL fIsRoot) OnItemAdded;
-			public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi, BOOL fIsRoot) OnItemDeleted;
-			public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi, Guid* riid, void** ppv) OnBeforeContextMenu;
-			public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi, IContextMenu* pcmIn, Guid* riid, void** ppv) OnAfterContextMenu;
-			public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi) OnBeforeStateImageChange;
-			public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi, int32* piDefaultIcon, int32* piOpenIcon) OnGetDefaultIconIndex;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi, uint32 nstceHitTest, uint32 nstceClickType) OnItemClick;
+				public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi) OnPropertyItemCommit;
+				public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi, uint32 nstcisMask, uint32 nstcisState) OnItemStateChanging;
+				public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi, uint32 nstcisMask, uint32 nstcisState) OnItemStateChanged;
+				public function HRESULT(INameSpaceTreeControlEvents *self, IShellItemArray* psiaSelection) OnSelectionChanged;
+				public function HRESULT(INameSpaceTreeControlEvents *self, uint32 uMsg, WPARAM wParam, LPARAM lParam) OnKeyboardInput;
+				public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi) OnBeforeExpand;
+				public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi) OnAfterExpand;
+				public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi) OnBeginLabelEdit;
+				public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi) OnEndLabelEdit;
+				public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi, char16* pszTip, int32 cchTip) OnGetToolTip;
+				public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi) OnBeforeItemDelete;
+				public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi, BOOL fIsRoot) OnItemAdded;
+				public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi, BOOL fIsRoot) OnItemDeleted;
+				public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi, Guid* riid, void** ppv) OnBeforeContextMenu;
+				public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi, IContextMenu* pcmIn, Guid* riid, void** ppv) OnAfterContextMenu;
+				public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi) OnBeforeStateImageChange;
+				public function HRESULT(INameSpaceTreeControlEvents *self, IShellItem* psi, int32* piDefaultIcon, int32* piOpenIcon) OnGetDefaultIconIndex;
+			}
 		}
 		[CRepr]
 		public struct INameSpaceTreeControlDropHandler : IUnknown
 		{
 			public const new Guid IID = .(0xf9c665d6, 0xc2f2, 0x4c19, 0xbf, 0x33, 0x83, 0x22, 0xd7, 0x35, 0x2f, 0x51);
 			
-			public function HRESULT(INameSpaceTreeControlDropHandler *self, IShellItem* psiOver, IShellItemArray* psiaData, BOOL fOutsideSource, uint32 grfKeyState, uint32* pdwEffect) OnDragEnter;
-			public function HRESULT(INameSpaceTreeControlDropHandler *self, IShellItem* psiOver, IShellItemArray* psiaData, uint32 grfKeyState, uint32* pdwEffect) OnDragOver;
-			public function HRESULT(INameSpaceTreeControlDropHandler *self, IShellItem* psiOver, IShellItemArray* psiaData, int32 iNewPosition, int32 iOldPosition) OnDragPosition;
-			public function HRESULT(INameSpaceTreeControlDropHandler *self, IShellItem* psiOver, IShellItemArray* psiaData, int32 iPosition, uint32 grfKeyState, uint32* pdwEffect) OnDrop;
-			public function HRESULT(INameSpaceTreeControlDropHandler *self, IShellItem* psiOver, IShellItemArray* psiaData, int32 iNewPosition, int32 iOldPosition) OnDropPosition;
-			public function HRESULT(INameSpaceTreeControlDropHandler *self, IShellItem* psiOver) OnDragLeave;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INameSpaceTreeControlDropHandler *self, IShellItem* psiOver, IShellItemArray* psiaData, BOOL fOutsideSource, uint32 grfKeyState, uint32* pdwEffect) OnDragEnter;
+				public function HRESULT(INameSpaceTreeControlDropHandler *self, IShellItem* psiOver, IShellItemArray* psiaData, uint32 grfKeyState, uint32* pdwEffect) OnDragOver;
+				public function HRESULT(INameSpaceTreeControlDropHandler *self, IShellItem* psiOver, IShellItemArray* psiaData, int32 iNewPosition, int32 iOldPosition) OnDragPosition;
+				public function HRESULT(INameSpaceTreeControlDropHandler *self, IShellItem* psiOver, IShellItemArray* psiaData, int32 iPosition, uint32 grfKeyState, uint32* pdwEffect) OnDrop;
+				public function HRESULT(INameSpaceTreeControlDropHandler *self, IShellItem* psiOver, IShellItemArray* psiaData, int32 iNewPosition, int32 iOldPosition) OnDropPosition;
+				public function HRESULT(INameSpaceTreeControlDropHandler *self, IShellItem* psiOver) OnDragLeave;
+			}
 		}
 		[CRepr]
 		public struct INameSpaceTreeAccessible : IUnknown
 		{
 			public const new Guid IID = .(0x71f312de, 0x43ed, 0x4190, 0x84, 0x77, 0xe9, 0x53, 0x6b, 0x82, 0x35, 0x0b);
 			
-			public function HRESULT(INameSpaceTreeAccessible *self, IShellItem* psi, BSTR* pbstrDefaultAction) OnGetDefaultAccessibilityAction;
-			public function HRESULT(INameSpaceTreeAccessible *self, IShellItem* psi) OnDoDefaultAccessibilityAction;
-			public function HRESULT(INameSpaceTreeAccessible *self, IShellItem* psi, VARIANT* pvarRole) OnGetAccessibilityRole;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INameSpaceTreeAccessible *self, IShellItem* psi, BSTR* pbstrDefaultAction) OnGetDefaultAccessibilityAction;
+				public function HRESULT(INameSpaceTreeAccessible *self, IShellItem* psi) OnDoDefaultAccessibilityAction;
+				public function HRESULT(INameSpaceTreeAccessible *self, IShellItem* psi, VARIANT* pvarRole) OnGetAccessibilityRole;
+			}
 		}
 		[CRepr]
 		public struct INameSpaceTreeControlCustomDraw : IUnknown
 		{
 			public const new Guid IID = .(0x2d3ba758, 0x33ee, 0x42d5, 0xbb, 0x7b, 0x5f, 0x34, 0x31, 0xd8, 0x6c, 0x78);
 			
-			public function HRESULT(INameSpaceTreeControlCustomDraw *self, HDC hdc, RECT* prc, LRESULT* plres) PrePaint;
-			public function HRESULT(INameSpaceTreeControlCustomDraw *self, HDC hdc, RECT* prc) PostPaint;
-			public function HRESULT(INameSpaceTreeControlCustomDraw *self, HDC hdc, RECT* prc, NSTCCUSTOMDRAW* pnstccdItem, uint32* pclrText, uint32* pclrTextBk, LRESULT* plres) ItemPrePaint;
-			public function HRESULT(INameSpaceTreeControlCustomDraw *self, HDC hdc, RECT* prc, NSTCCUSTOMDRAW* pnstccdItem) ItemPostPaint;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INameSpaceTreeControlCustomDraw *self, HDC hdc, RECT* prc, LRESULT* plres) PrePaint;
+				public function HRESULT(INameSpaceTreeControlCustomDraw *self, HDC hdc, RECT* prc) PostPaint;
+				public function HRESULT(INameSpaceTreeControlCustomDraw *self, HDC hdc, RECT* prc, NSTCCUSTOMDRAW* pnstccdItem, uint32* pclrText, uint32* pclrTextBk, LRESULT* plres) ItemPrePaint;
+				public function HRESULT(INameSpaceTreeControlCustomDraw *self, HDC hdc, RECT* prc, NSTCCUSTOMDRAW* pnstccdItem) ItemPostPaint;
+			}
 		}
 		[CRepr]
 		public struct ITrayDeskBand : IUnknown
 		{
 			public const new Guid IID = .(0x6d67e846, 0x5b9c, 0x4db8, 0x9c, 0xbc, 0xdd, 0xe1, 0x2f, 0x42, 0x54, 0xf1);
 			
-			public function HRESULT(ITrayDeskBand *self, Guid* clsid) ShowDeskBand;
-			public function HRESULT(ITrayDeskBand *self, Guid* clsid) HideDeskBand;
-			public function HRESULT(ITrayDeskBand *self, Guid* clsid) IsDeskBandShown;
-			public function HRESULT(ITrayDeskBand *self) DeskBandRegistrationChanged;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITrayDeskBand *self, Guid* clsid) ShowDeskBand;
+				public function HRESULT(ITrayDeskBand *self, Guid* clsid) HideDeskBand;
+				public function HRESULT(ITrayDeskBand *self, Guid* clsid) IsDeskBandShown;
+				public function HRESULT(ITrayDeskBand *self) DeskBandRegistrationChanged;
+			}
 		}
 		[CRepr]
 		public struct IBandHost : IUnknown
 		{
 			public const new Guid IID = .(0xb9075c7c, 0xd48e, 0x403f, 0xab, 0x99, 0xd6, 0xc7, 0x7a, 0x10, 0x84, 0xac);
 			
-			public function HRESULT(IBandHost *self, Guid* rclsidBand, BOOL fAvailable, BOOL fVisible, Guid* riid, void** ppv) CreateBand;
-			public function HRESULT(IBandHost *self, Guid* rclsidBand, BOOL fAvailable) SetBandAvailability;
-			public function HRESULT(IBandHost *self, Guid* rclsidBand) DestroyBand;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IBandHost *self, Guid* rclsidBand, BOOL fAvailable, BOOL fVisible, Guid* riid, void** ppv) CreateBand;
+				public function HRESULT(IBandHost *self, Guid* rclsidBand, BOOL fAvailable) SetBandAvailability;
+				public function HRESULT(IBandHost *self, Guid* rclsidBand) DestroyBand;
+			}
 		}
 		[CRepr]
 		public struct IComputerInfoChangeNotify : IUnknown
 		{
 			public const new Guid IID = .(0x0df60d92, 0x6818, 0x46d6, 0xb3, 0x58, 0xd6, 0x61, 0x70, 0xdd, 0xe4, 0x66);
 			
-			public function HRESULT(IComputerInfoChangeNotify *self) ComputerInfoChanged;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IComputerInfoChangeNotify *self) ComputerInfoChanged;
+			}
 		}
 		[CRepr]
 		public struct IDesktopGadget : IUnknown
 		{
 			public const new Guid IID = .(0xc1646bc4, 0xf298, 0x4f91, 0xa2, 0x04, 0xeb, 0x2d, 0xd1, 0x70, 0x9d, 0x1a);
 			
-			public function HRESULT(IDesktopGadget *self, PWSTR gadgetPath) RunGadget;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDesktopGadget *self, PWSTR gadgetPath) RunGadget;
+			}
 		}
 		[CRepr]
 		public struct IAccessibilityDockingServiceCallback : IUnknown
 		{
 			public const new Guid IID = .(0x157733fd, 0xa592, 0x42e5, 0xb5, 0x94, 0x24, 0x84, 0x68, 0xc5, 0xa8, 0x1b);
 			
-			public function HRESULT(IAccessibilityDockingServiceCallback *self, UNDOCK_REASON undockReason) Undocked;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAccessibilityDockingServiceCallback *self, UNDOCK_REASON undockReason) Undocked;
+			}
 		}
 		[CRepr]
 		public struct IAccessibilityDockingService : IUnknown
 		{
 			public const new Guid IID = .(0x8849dc22, 0xcedf, 0x4c95, 0x99, 0x8d, 0x05, 0x14, 0x19, 0xdd, 0x3f, 0x76);
 			
-			public function HRESULT(IAccessibilityDockingService *self, HMONITOR hMonitor, uint32* pcxFixed, uint32* pcyMax) GetAvailableSize;
-			public function HRESULT(IAccessibilityDockingService *self, HWND hwnd, HMONITOR hMonitor, uint32 cyRequested, IAccessibilityDockingServiceCallback* pCallback) DockWindow;
-			public function HRESULT(IAccessibilityDockingService *self, HWND hwnd) UndockWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAccessibilityDockingService *self, HMONITOR hMonitor, uint32* pcxFixed, uint32* pcyMax) GetAvailableSize;
+				public function HRESULT(IAccessibilityDockingService *self, HWND hwnd, HMONITOR hMonitor, uint32 cyRequested, IAccessibilityDockingServiceCallback* pCallback) DockWindow;
+				public function HRESULT(IAccessibilityDockingService *self, HWND hwnd) UndockWindow;
+			}
 		}
 		[CRepr]
 		public struct IStorageProviderBanners : IUnknown
 		{
 			public const new Guid IID = .(0x5efb46d7, 0x47c0, 0x4b68, 0xac, 0xda, 0xde, 0xd4, 0x7c, 0x90, 0xec, 0x91);
 			
-			public function HRESULT(IStorageProviderBanners *self, PWSTR providerIdentity, PWSTR subscriptionId, PWSTR contentId) SetBanner;
-			public function HRESULT(IStorageProviderBanners *self, PWSTR providerIdentity, PWSTR subscriptionId) ClearBanner;
-			public function HRESULT(IStorageProviderBanners *self, PWSTR providerIdentity) ClearAllBanners;
-			public function HRESULT(IStorageProviderBanners *self, PWSTR providerIdentity, PWSTR subscriptionId, PWSTR* contentId) GetBanner;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IStorageProviderBanners *self, PWSTR providerIdentity, PWSTR subscriptionId, PWSTR contentId) SetBanner;
+				public function HRESULT(IStorageProviderBanners *self, PWSTR providerIdentity, PWSTR subscriptionId) ClearBanner;
+				public function HRESULT(IStorageProviderBanners *self, PWSTR providerIdentity) ClearAllBanners;
+				public function HRESULT(IStorageProviderBanners *self, PWSTR providerIdentity, PWSTR subscriptionId, PWSTR* contentId) GetBanner;
+			}
 		}
 		[CRepr]
 		public struct IStorageProviderCopyHook : IUnknown
 		{
 			public const new Guid IID = .(0x7bf992a9, 0xaf7a, 0x4dba, 0xb2, 0xe5, 0x4d, 0x08, 0x0b, 0x1e, 0xcb, 0xc6);
 			
-			public function HRESULT(IStorageProviderCopyHook *self, HWND hwnd, uint32 operation, uint32 flags, PWSTR srcFile, uint32 srcAttribs, PWSTR destFile, uint32 destAttribs, uint32* result) CopyCallback;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IStorageProviderCopyHook *self, HWND hwnd, uint32 operation, uint32 flags, PWSTR srcFile, uint32 srcAttribs, PWSTR destFile, uint32 destAttribs, uint32* result) CopyCallback;
+			}
 		}
 		[CRepr]
 		public struct IWebBrowser : IDispatch
 		{
 			public const new Guid IID = .(0xeab22ac1, 0x30c1, 0x11cf, 0xa7, 0xeb, 0x00, 0x00, 0xc0, 0x5b, 0xae, 0x0b);
 			
-			public function HRESULT(IWebBrowser *self) GoBack;
-			public function HRESULT(IWebBrowser *self) GoForward;
-			public function HRESULT(IWebBrowser *self) GoHome;
-			public function HRESULT(IWebBrowser *self) GoSearch;
-			public function HRESULT(IWebBrowser *self, BSTR URL, VARIANT* Flags, VARIANT* TargetFrameName, VARIANT* PostData, VARIANT* Headers) Navigate;
-			public function HRESULT(IWebBrowser *self) Refresh;
-			public function HRESULT(IWebBrowser *self, VARIANT* Level) Refresh2;
-			public function HRESULT(IWebBrowser *self) Stop;
-			public function HRESULT(IWebBrowser *self, IDispatch** ppDisp) get_Application;
-			public function HRESULT(IWebBrowser *self, IDispatch** ppDisp) get_Parent;
-			public function HRESULT(IWebBrowser *self, IDispatch** ppDisp) get_Container;
-			public function HRESULT(IWebBrowser *self, IDispatch** ppDisp) get_Document;
-			public function HRESULT(IWebBrowser *self, int16* pBool) get_TopLevelContainer;
-			public function HRESULT(IWebBrowser *self, BSTR* Type) get_Type;
-			public function HRESULT(IWebBrowser *self, int32* pl) get_Left;
-			public function HRESULT(IWebBrowser *self, int32 Left) put_Left;
-			public function HRESULT(IWebBrowser *self, int32* pl) get_Top;
-			public function HRESULT(IWebBrowser *self, int32 Top) put_Top;
-			public function HRESULT(IWebBrowser *self, int32* pl) get_Width;
-			public function HRESULT(IWebBrowser *self, int32 Width) put_Width;
-			public function HRESULT(IWebBrowser *self, int32* pl) get_Height;
-			public function HRESULT(IWebBrowser *self, int32 Height) put_Height;
-			public function HRESULT(IWebBrowser *self, BSTR* LocationName) get_LocationName;
-			public function HRESULT(IWebBrowser *self, BSTR* LocationURL) get_LocationURL;
-			public function HRESULT(IWebBrowser *self, int16* pBool) get_Busy;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWebBrowser *self) GoBack;
+				public function HRESULT(IWebBrowser *self) GoForward;
+				public function HRESULT(IWebBrowser *self) GoHome;
+				public function HRESULT(IWebBrowser *self) GoSearch;
+				public function HRESULT(IWebBrowser *self, BSTR URL, VARIANT* Flags, VARIANT* TargetFrameName, VARIANT* PostData, VARIANT* Headers) Navigate;
+				public function HRESULT(IWebBrowser *self) Refresh;
+				public function HRESULT(IWebBrowser *self, VARIANT* Level) Refresh2;
+				public function HRESULT(IWebBrowser *self) Stop;
+				public function HRESULT(IWebBrowser *self, IDispatch** ppDisp) get_Application;
+				public function HRESULT(IWebBrowser *self, IDispatch** ppDisp) get_Parent;
+				public function HRESULT(IWebBrowser *self, IDispatch** ppDisp) get_Container;
+				public function HRESULT(IWebBrowser *self, IDispatch** ppDisp) get_Document;
+				public function HRESULT(IWebBrowser *self, int16* pBool) get_TopLevelContainer;
+				public function HRESULT(IWebBrowser *self, BSTR* Type) get_Type;
+				public function HRESULT(IWebBrowser *self, int32* pl) get_Left;
+				public function HRESULT(IWebBrowser *self, int32 Left) put_Left;
+				public function HRESULT(IWebBrowser *self, int32* pl) get_Top;
+				public function HRESULT(IWebBrowser *self, int32 Top) put_Top;
+				public function HRESULT(IWebBrowser *self, int32* pl) get_Width;
+				public function HRESULT(IWebBrowser *self, int32 Width) put_Width;
+				public function HRESULT(IWebBrowser *self, int32* pl) get_Height;
+				public function HRESULT(IWebBrowser *self, int32 Height) put_Height;
+				public function HRESULT(IWebBrowser *self, BSTR* LocationName) get_LocationName;
+				public function HRESULT(IWebBrowser *self, BSTR* LocationURL) get_LocationURL;
+				public function HRESULT(IWebBrowser *self, int16* pBool) get_Busy;
+			}
 		}
 		[CRepr]
 		public struct DWebBrowserEvents : IDispatch
 		{
 			public const new Guid IID = .(0xeab22ac2, 0x30c1, 0x11cf, 0xa7, 0xeb, 0x00, 0x00, 0xc0, 0x5b, 0xae, 0x0b);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IWebBrowserApp : IWebBrowser
 		{
 			public const new Guid IID = .(0x0002df05, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IWebBrowserApp *self) Quit;
-			public function HRESULT(IWebBrowserApp *self, int32* pcx, int32* pcy) ClientToWindow;
-			public function HRESULT(IWebBrowserApp *self, BSTR Property, VARIANT vtValue) PutProperty;
-			public function HRESULT(IWebBrowserApp *self, BSTR Property, VARIANT* pvtValue) GetProperty;
-			public function HRESULT(IWebBrowserApp *self, BSTR* Name) get_Name;
-			public function HRESULT(IWebBrowserApp *self, SHANDLE_PTR* pHWND) get_HWND;
-			public function HRESULT(IWebBrowserApp *self, BSTR* FullName) get_FullName;
-			public function HRESULT(IWebBrowserApp *self, BSTR* Path) get_Path;
-			public function HRESULT(IWebBrowserApp *self, int16* pBool) get_Visible;
-			public function HRESULT(IWebBrowserApp *self, int16 Value) put_Visible;
-			public function HRESULT(IWebBrowserApp *self, int16* pBool) get_StatusBar;
-			public function HRESULT(IWebBrowserApp *self, int16 Value) put_StatusBar;
-			public function HRESULT(IWebBrowserApp *self, BSTR* StatusText) get_StatusText;
-			public function HRESULT(IWebBrowserApp *self, BSTR StatusText) put_StatusText;
-			public function HRESULT(IWebBrowserApp *self, int32* Value) get_ToolBar;
-			public function HRESULT(IWebBrowserApp *self, int32 Value) put_ToolBar;
-			public function HRESULT(IWebBrowserApp *self, int16* Value) get_MenuBar;
-			public function HRESULT(IWebBrowserApp *self, int16 Value) put_MenuBar;
-			public function HRESULT(IWebBrowserApp *self, int16* pbFullScreen) get_FullScreen;
-			public function HRESULT(IWebBrowserApp *self, int16 bFullScreen) put_FullScreen;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWebBrowser.VTable
+			{
+				public function HRESULT(IWebBrowserApp *self) Quit;
+				public function HRESULT(IWebBrowserApp *self, int32* pcx, int32* pcy) ClientToWindow;
+				public function HRESULT(IWebBrowserApp *self, BSTR Property, VARIANT vtValue) PutProperty;
+				public function HRESULT(IWebBrowserApp *self, BSTR Property, VARIANT* pvtValue) GetProperty;
+				public function HRESULT(IWebBrowserApp *self, BSTR* Name) get_Name;
+				public function HRESULT(IWebBrowserApp *self, SHANDLE_PTR* pHWND) get_HWND;
+				public function HRESULT(IWebBrowserApp *self, BSTR* FullName) get_FullName;
+				public function HRESULT(IWebBrowserApp *self, BSTR* Path) get_Path;
+				public function HRESULT(IWebBrowserApp *self, int16* pBool) get_Visible;
+				public function HRESULT(IWebBrowserApp *self, int16 Value) put_Visible;
+				public function HRESULT(IWebBrowserApp *self, int16* pBool) get_StatusBar;
+				public function HRESULT(IWebBrowserApp *self, int16 Value) put_StatusBar;
+				public function HRESULT(IWebBrowserApp *self, BSTR* StatusText) get_StatusText;
+				public function HRESULT(IWebBrowserApp *self, BSTR StatusText) put_StatusText;
+				public function HRESULT(IWebBrowserApp *self, int32* Value) get_ToolBar;
+				public function HRESULT(IWebBrowserApp *self, int32 Value) put_ToolBar;
+				public function HRESULT(IWebBrowserApp *self, int16* Value) get_MenuBar;
+				public function HRESULT(IWebBrowserApp *self, int16 Value) put_MenuBar;
+				public function HRESULT(IWebBrowserApp *self, int16* pbFullScreen) get_FullScreen;
+				public function HRESULT(IWebBrowserApp *self, int16 bFullScreen) put_FullScreen;
+			}
 		}
 		[CRepr]
 		public struct IWebBrowser2 : IWebBrowserApp
 		{
 			public const new Guid IID = .(0xd30c1661, 0xcdaf, 0x11d0, 0x8a, 0x3e, 0x00, 0xc0, 0x4f, 0xc9, 0xe2, 0x6e);
 			
-			public function HRESULT(IWebBrowser2 *self, VARIANT* URL, VARIANT* Flags, VARIANT* TargetFrameName, VARIANT* PostData, VARIANT* Headers) Navigate2;
-			public function HRESULT(IWebBrowser2 *self, OLECMDID cmdID, OLECMDF* pcmdf) QueryStatusWB;
-			public function HRESULT(IWebBrowser2 *self, OLECMDID cmdID, OLECMDEXECOPT cmdexecopt, VARIANT* pvaIn, VARIANT* pvaOut) ExecWB;
-			public function HRESULT(IWebBrowser2 *self, VARIANT* pvaClsid, VARIANT* pvarShow, VARIANT* pvarSize) ShowBrowserBar;
-			public function HRESULT(IWebBrowser2 *self, READYSTATE* plReadyState) get_ReadyState;
-			public function HRESULT(IWebBrowser2 *self, int16* pbOffline) get_Offline;
-			public function HRESULT(IWebBrowser2 *self, int16 bOffline) put_Offline;
-			public function HRESULT(IWebBrowser2 *self, int16* pbSilent) get_Silent;
-			public function HRESULT(IWebBrowser2 *self, int16 bSilent) put_Silent;
-			public function HRESULT(IWebBrowser2 *self, int16* pbRegister) get_RegisterAsBrowser;
-			public function HRESULT(IWebBrowser2 *self, int16 bRegister) put_RegisterAsBrowser;
-			public function HRESULT(IWebBrowser2 *self, int16* pbRegister) get_RegisterAsDropTarget;
-			public function HRESULT(IWebBrowser2 *self, int16 bRegister) put_RegisterAsDropTarget;
-			public function HRESULT(IWebBrowser2 *self, int16* pbRegister) get_TheaterMode;
-			public function HRESULT(IWebBrowser2 *self, int16 bRegister) put_TheaterMode;
-			public function HRESULT(IWebBrowser2 *self, int16* Value) get_AddressBar;
-			public function HRESULT(IWebBrowser2 *self, int16 Value) put_AddressBar;
-			public function HRESULT(IWebBrowser2 *self, int16* Value) get_Resizable;
-			public function HRESULT(IWebBrowser2 *self, int16 Value) put_Resizable;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWebBrowserApp.VTable
+			{
+				public function HRESULT(IWebBrowser2 *self, VARIANT* URL, VARIANT* Flags, VARIANT* TargetFrameName, VARIANT* PostData, VARIANT* Headers) Navigate2;
+				public function HRESULT(IWebBrowser2 *self, OLECMDID cmdID, OLECMDF* pcmdf) QueryStatusWB;
+				public function HRESULT(IWebBrowser2 *self, OLECMDID cmdID, OLECMDEXECOPT cmdexecopt, VARIANT* pvaIn, VARIANT* pvaOut) ExecWB;
+				public function HRESULT(IWebBrowser2 *self, VARIANT* pvaClsid, VARIANT* pvarShow, VARIANT* pvarSize) ShowBrowserBar;
+				public function HRESULT(IWebBrowser2 *self, READYSTATE* plReadyState) get_ReadyState;
+				public function HRESULT(IWebBrowser2 *self, int16* pbOffline) get_Offline;
+				public function HRESULT(IWebBrowser2 *self, int16 bOffline) put_Offline;
+				public function HRESULT(IWebBrowser2 *self, int16* pbSilent) get_Silent;
+				public function HRESULT(IWebBrowser2 *self, int16 bSilent) put_Silent;
+				public function HRESULT(IWebBrowser2 *self, int16* pbRegister) get_RegisterAsBrowser;
+				public function HRESULT(IWebBrowser2 *self, int16 bRegister) put_RegisterAsBrowser;
+				public function HRESULT(IWebBrowser2 *self, int16* pbRegister) get_RegisterAsDropTarget;
+				public function HRESULT(IWebBrowser2 *self, int16 bRegister) put_RegisterAsDropTarget;
+				public function HRESULT(IWebBrowser2 *self, int16* pbRegister) get_TheaterMode;
+				public function HRESULT(IWebBrowser2 *self, int16 bRegister) put_TheaterMode;
+				public function HRESULT(IWebBrowser2 *self, int16* Value) get_AddressBar;
+				public function HRESULT(IWebBrowser2 *self, int16 Value) put_AddressBar;
+				public function HRESULT(IWebBrowser2 *self, int16* Value) get_Resizable;
+				public function HRESULT(IWebBrowser2 *self, int16 Value) put_Resizable;
+			}
 		}
 		[CRepr]
 		public struct DWebBrowserEvents2 : IDispatch
 		{
 			public const new Guid IID = .(0x34a715a0, 0x6587, 0x11d0, 0x92, 0x4a, 0x00, 0x20, 0xaf, 0xc7, 0xac, 0x4d);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct DShellWindowsEvents : IDispatch
 		{
 			public const new Guid IID = .(0xfe4106e0, 0x399a, 0x11d0, 0xa4, 0x8c, 0x00, 0xa0, 0xc9, 0x0a, 0x8f, 0x39);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IShellWindows : IDispatch
 		{
 			public const new Guid IID = .(0x85cb6900, 0x4d95, 0x11cf, 0x96, 0x0c, 0x00, 0x80, 0xc7, 0xf4, 0xee, 0x85);
 			
-			public function HRESULT(IShellWindows *self, int32* Count) get_Count;
-			public function HRESULT(IShellWindows *self, VARIANT index, IDispatch** Folder) Item;
-			public function HRESULT(IShellWindows *self, IUnknown** ppunk) _NewEnum;
-			public function HRESULT(IShellWindows *self, IDispatch* pid, int32 hwnd, int32 swClass, int32* plCookie) Register;
-			public function HRESULT(IShellWindows *self, int32 lThreadId, VARIANT* pvarloc, VARIANT* pvarlocRoot, int32 swClass, int32* plCookie) RegisterPending;
-			public function HRESULT(IShellWindows *self, int32 lCookie) Revoke;
-			public function HRESULT(IShellWindows *self, int32 lCookie, VARIANT* pvarLoc) OnNavigate;
-			public function HRESULT(IShellWindows *self, int32 lCookie, int16 fActive) OnActivated;
-			public function HRESULT(IShellWindows *self, VARIANT* pvarLoc, VARIANT* pvarLocRoot, int32 swClass, int32* phwnd, int32 swfwOptions, IDispatch** ppdispOut) FindWindowSW;
-			public function HRESULT(IShellWindows *self, int32 lCookie, IUnknown* punk) OnCreated;
-			public function HRESULT(IShellWindows *self, int16 fAttach) ProcessAttachDetach;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IShellWindows *self, int32* Count) get_Count;
+				public function HRESULT(IShellWindows *self, VARIANT index, IDispatch** Folder) Item;
+				public function HRESULT(IShellWindows *self, IUnknown** ppunk) _NewEnum;
+				public function HRESULT(IShellWindows *self, IDispatch* pid, int32 hwnd, int32 swClass, int32* plCookie) Register;
+				public function HRESULT(IShellWindows *self, int32 lThreadId, VARIANT* pvarloc, VARIANT* pvarlocRoot, int32 swClass, int32* plCookie) RegisterPending;
+				public function HRESULT(IShellWindows *self, int32 lCookie) Revoke;
+				public function HRESULT(IShellWindows *self, int32 lCookie, VARIANT* pvarLoc) OnNavigate;
+				public function HRESULT(IShellWindows *self, int32 lCookie, int16 fActive) OnActivated;
+				public function HRESULT(IShellWindows *self, VARIANT* pvarLoc, VARIANT* pvarLocRoot, int32 swClass, int32* phwnd, int32 swfwOptions, IDispatch** ppdispOut) FindWindowSW;
+				public function HRESULT(IShellWindows *self, int32 lCookie, IUnknown* punk) OnCreated;
+				public function HRESULT(IShellWindows *self, int16 fAttach) ProcessAttachDetach;
+			}
 		}
 		[CRepr]
 		public struct IShellUIHelper : IDispatch
 		{
 			public const new Guid IID = .(0x729fe2f8, 0x1ea8, 0x11d1, 0x8f, 0x85, 0x00, 0xc0, 0x4f, 0xc2, 0xfb, 0xe1);
 			
-			public function HRESULT(IShellUIHelper *self) ResetFirstBootMode;
-			public function HRESULT(IShellUIHelper *self) ResetSafeMode;
-			public function HRESULT(IShellUIHelper *self) RefreshOfflineDesktop;
-			public function HRESULT(IShellUIHelper *self, BSTR URL, VARIANT* Title) AddFavorite;
-			public function HRESULT(IShellUIHelper *self, BSTR URL) AddChannel;
-			public function HRESULT(IShellUIHelper *self, BSTR URL, BSTR Type, VARIANT* Left, VARIANT* Top, VARIANT* Width, VARIANT* Height) AddDesktopComponent;
-			public function HRESULT(IShellUIHelper *self, BSTR URL, int16* pBool) IsSubscribed;
-			public function HRESULT(IShellUIHelper *self, BSTR URL, BSTR strQuery, VARIANT* varTargetFrame) NavigateAndFind;
-			public function HRESULT(IShellUIHelper *self, int16 fImport, BSTR strImpExpPath) ImportExportFavorites;
-			public function HRESULT(IShellUIHelper *self, VARIANT* Form) AutoCompleteSaveForm;
-			public function HRESULT(IShellUIHelper *self, BSTR strSearch, BSTR strFailureUrl, VARIANT* pvarTargetFrame) AutoScan;
-			public function HRESULT(IShellUIHelper *self, VARIANT* Reserved) AutoCompleteAttach;
-			public function HRESULT(IShellUIHelper *self, BSTR bstrName, VARIANT* pvarIn, VARIANT* pvarOut) ShowBrowserUI;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IShellUIHelper *self) ResetFirstBootMode;
+				public function HRESULT(IShellUIHelper *self) ResetSafeMode;
+				public function HRESULT(IShellUIHelper *self) RefreshOfflineDesktop;
+				public function HRESULT(IShellUIHelper *self, BSTR URL, VARIANT* Title) AddFavorite;
+				public function HRESULT(IShellUIHelper *self, BSTR URL) AddChannel;
+				public function HRESULT(IShellUIHelper *self, BSTR URL, BSTR Type, VARIANT* Left, VARIANT* Top, VARIANT* Width, VARIANT* Height) AddDesktopComponent;
+				public function HRESULT(IShellUIHelper *self, BSTR URL, int16* pBool) IsSubscribed;
+				public function HRESULT(IShellUIHelper *self, BSTR URL, BSTR strQuery, VARIANT* varTargetFrame) NavigateAndFind;
+				public function HRESULT(IShellUIHelper *self, int16 fImport, BSTR strImpExpPath) ImportExportFavorites;
+				public function HRESULT(IShellUIHelper *self, VARIANT* Form) AutoCompleteSaveForm;
+				public function HRESULT(IShellUIHelper *self, BSTR strSearch, BSTR strFailureUrl, VARIANT* pvarTargetFrame) AutoScan;
+				public function HRESULT(IShellUIHelper *self, VARIANT* Reserved) AutoCompleteAttach;
+				public function HRESULT(IShellUIHelper *self, BSTR bstrName, VARIANT* pvarIn, VARIANT* pvarOut) ShowBrowserUI;
+			}
 		}
 		[CRepr]
 		public struct IShellUIHelper2 : IShellUIHelper
 		{
 			public const new Guid IID = .(0xa7fe6eda, 0x1932, 0x4281, 0xb8, 0x81, 0x87, 0xb3, 0x1b, 0x8b, 0xc5, 0x2c);
 			
-			public function HRESULT(IShellUIHelper2 *self, BSTR URL) AddSearchProvider;
-			public function HRESULT(IShellUIHelper2 *self) RunOnceShown;
-			public function HRESULT(IShellUIHelper2 *self) SkipRunOnce;
-			public function HRESULT(IShellUIHelper2 *self, int16 fSQM, int16 fPhishing, BSTR bstrLocale) CustomizeSettings;
-			public function HRESULT(IShellUIHelper2 *self, int16* pfEnabled) SqmEnabled;
-			public function HRESULT(IShellUIHelper2 *self, int16* pfEnabled) PhishingEnabled;
-			public function HRESULT(IShellUIHelper2 *self, BSTR* pbstrUri) BrandImageUri;
-			public function HRESULT(IShellUIHelper2 *self) SkipTabsWelcome;
-			public function HRESULT(IShellUIHelper2 *self) DiagnoseConnection;
-			public function HRESULT(IShellUIHelper2 *self, int16 fSet) CustomizeClearType;
-			public function HRESULT(IShellUIHelper2 *self, BSTR URL, uint32* pdwResult) IsSearchProviderInstalled;
-			public function HRESULT(IShellUIHelper2 *self, int16* pfMigrated) IsSearchMigrated;
-			public function HRESULT(IShellUIHelper2 *self, BSTR* pbstrName) DefaultSearchProvider;
-			public function HRESULT(IShellUIHelper2 *self, int16 fComplete) RunOnceRequiredSettingsComplete;
-			public function HRESULT(IShellUIHelper2 *self, int16* pfShown) RunOnceHasShown;
-			public function HRESULT(IShellUIHelper2 *self, BSTR* pbstrUrl) SearchGuideUrl;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellUIHelper.VTable
+			{
+				public function HRESULT(IShellUIHelper2 *self, BSTR URL) AddSearchProvider;
+				public function HRESULT(IShellUIHelper2 *self) RunOnceShown;
+				public function HRESULT(IShellUIHelper2 *self) SkipRunOnce;
+				public function HRESULT(IShellUIHelper2 *self, int16 fSQM, int16 fPhishing, BSTR bstrLocale) CustomizeSettings;
+				public function HRESULT(IShellUIHelper2 *self, int16* pfEnabled) SqmEnabled;
+				public function HRESULT(IShellUIHelper2 *self, int16* pfEnabled) PhishingEnabled;
+				public function HRESULT(IShellUIHelper2 *self, BSTR* pbstrUri) BrandImageUri;
+				public function HRESULT(IShellUIHelper2 *self) SkipTabsWelcome;
+				public function HRESULT(IShellUIHelper2 *self) DiagnoseConnection;
+				public function HRESULT(IShellUIHelper2 *self, int16 fSet) CustomizeClearType;
+				public function HRESULT(IShellUIHelper2 *self, BSTR URL, uint32* pdwResult) IsSearchProviderInstalled;
+				public function HRESULT(IShellUIHelper2 *self, int16* pfMigrated) IsSearchMigrated;
+				public function HRESULT(IShellUIHelper2 *self, BSTR* pbstrName) DefaultSearchProvider;
+				public function HRESULT(IShellUIHelper2 *self, int16 fComplete) RunOnceRequiredSettingsComplete;
+				public function HRESULT(IShellUIHelper2 *self, int16* pfShown) RunOnceHasShown;
+				public function HRESULT(IShellUIHelper2 *self, BSTR* pbstrUrl) SearchGuideUrl;
+			}
 		}
 		[CRepr]
 		public struct IShellUIHelper3 : IShellUIHelper2
 		{
 			public const new Guid IID = .(0x528df2ec, 0xd419, 0x40bc, 0x9b, 0x6d, 0xdc, 0xdb, 0xf9, 0xc1, 0xb2, 0x5d);
 			
-			public function HRESULT(IShellUIHelper3 *self, BSTR URL) AddService;
-			public function HRESULT(IShellUIHelper3 *self, BSTR URL, BSTR Verb, uint32* pdwResult) IsServiceInstalled;
-			public function HRESULT(IShellUIHelper3 *self, int16* pfEnabled) InPrivateFilteringEnabled;
-			public function HRESULT(IShellUIHelper3 *self, BSTR URL, BSTR Title, VARIANT* Type) AddToFavoritesBar;
-			public function HRESULT(IShellUIHelper3 *self) BuildNewTabPage;
-			public function HRESULT(IShellUIHelper3 *self, int16 fVisible) SetRecentlyClosedVisible;
-			public function HRESULT(IShellUIHelper3 *self, int16 fVisible) SetActivitiesVisible;
-			public function HRESULT(IShellUIHelper3 *self) ContentDiscoveryReset;
-			public function HRESULT(IShellUIHelper3 *self, int16* pfEnabled) IsSuggestedSitesEnabled;
-			public function HRESULT(IShellUIHelper3 *self, int16 fEnable) EnableSuggestedSites;
-			public function HRESULT(IShellUIHelper3 *self, BSTR bstrRelativeUrl) NavigateToSuggestedSites;
-			public function HRESULT(IShellUIHelper3 *self) ShowTabsHelp;
-			public function HRESULT(IShellUIHelper3 *self) ShowInPrivateHelp;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellUIHelper2.VTable
+			{
+				public function HRESULT(IShellUIHelper3 *self, BSTR URL) AddService;
+				public function HRESULT(IShellUIHelper3 *self, BSTR URL, BSTR Verb, uint32* pdwResult) IsServiceInstalled;
+				public function HRESULT(IShellUIHelper3 *self, int16* pfEnabled) InPrivateFilteringEnabled;
+				public function HRESULT(IShellUIHelper3 *self, BSTR URL, BSTR Title, VARIANT* Type) AddToFavoritesBar;
+				public function HRESULT(IShellUIHelper3 *self) BuildNewTabPage;
+				public function HRESULT(IShellUIHelper3 *self, int16 fVisible) SetRecentlyClosedVisible;
+				public function HRESULT(IShellUIHelper3 *self, int16 fVisible) SetActivitiesVisible;
+				public function HRESULT(IShellUIHelper3 *self) ContentDiscoveryReset;
+				public function HRESULT(IShellUIHelper3 *self, int16* pfEnabled) IsSuggestedSitesEnabled;
+				public function HRESULT(IShellUIHelper3 *self, int16 fEnable) EnableSuggestedSites;
+				public function HRESULT(IShellUIHelper3 *self, BSTR bstrRelativeUrl) NavigateToSuggestedSites;
+				public function HRESULT(IShellUIHelper3 *self) ShowTabsHelp;
+				public function HRESULT(IShellUIHelper3 *self) ShowInPrivateHelp;
+			}
 		}
 		[CRepr]
 		public struct IShellUIHelper4 : IShellUIHelper3
 		{
 			public const new Guid IID = .(0xb36e6a53, 0x8073, 0x499e, 0x82, 0x4c, 0xd7, 0x76, 0x33, 0x0a, 0x33, 0x3e);
 			
-			public function HRESULT(IShellUIHelper4 *self, int16* pfSiteMode) msIsSiteMode;
-			public function HRESULT(IShellUIHelper4 *self) msSiteModeShowThumbBar;
-			public function HRESULT(IShellUIHelper4 *self, BSTR bstrIconURL, BSTR bstrTooltip, VARIANT* pvarButtonID) msSiteModeAddThumbBarButton;
-			public function HRESULT(IShellUIHelper4 *self, VARIANT ButtonID, int16 fEnabled, int16 fVisible) msSiteModeUpdateThumbBarButton;
-			public function HRESULT(IShellUIHelper4 *self, BSTR IconUrl, VARIANT* pvarDescription) msSiteModeSetIconOverlay;
-			public function HRESULT(IShellUIHelper4 *self) msSiteModeClearIconOverlay;
-			public function HRESULT(IShellUIHelper4 *self) msAddSiteMode;
-			public function HRESULT(IShellUIHelper4 *self, BSTR bstrHeader) msSiteModeCreateJumpList;
-			public function HRESULT(IShellUIHelper4 *self, BSTR bstrName, BSTR bstrActionUri, BSTR bstrIconUri, VARIANT* pvarWindowType) msSiteModeAddJumpListItem;
-			public function HRESULT(IShellUIHelper4 *self) msSiteModeClearJumpList;
-			public function HRESULT(IShellUIHelper4 *self) msSiteModeShowJumpList;
-			public function HRESULT(IShellUIHelper4 *self, VARIANT uiButtonID, BSTR bstrIconUrl, BSTR bstrTooltip, VARIANT* pvarStyleID) msSiteModeAddButtonStyle;
-			public function HRESULT(IShellUIHelper4 *self, VARIANT uiButtonID, VARIANT uiStyleID) msSiteModeShowButtonStyle;
-			public function HRESULT(IShellUIHelper4 *self) msSiteModeActivate;
-			public function HRESULT(IShellUIHelper4 *self, int16 fPreserveState, VARIANT* puiFirstRun) msIsSiteModeFirstRun;
-			public function HRESULT(IShellUIHelper4 *self, BSTR URL, BSTR bstrFilterName) msAddTrackingProtectionList;
-			public function HRESULT(IShellUIHelper4 *self, int16* pfEnabled) msTrackingProtectionEnabled;
-			public function HRESULT(IShellUIHelper4 *self, int16* pfEnabled) msActiveXFilteringEnabled;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellUIHelper3.VTable
+			{
+				public function HRESULT(IShellUIHelper4 *self, int16* pfSiteMode) msIsSiteMode;
+				public function HRESULT(IShellUIHelper4 *self) msSiteModeShowThumbBar;
+				public function HRESULT(IShellUIHelper4 *self, BSTR bstrIconURL, BSTR bstrTooltip, VARIANT* pvarButtonID) msSiteModeAddThumbBarButton;
+				public function HRESULT(IShellUIHelper4 *self, VARIANT ButtonID, int16 fEnabled, int16 fVisible) msSiteModeUpdateThumbBarButton;
+				public function HRESULT(IShellUIHelper4 *self, BSTR IconUrl, VARIANT* pvarDescription) msSiteModeSetIconOverlay;
+				public function HRESULT(IShellUIHelper4 *self) msSiteModeClearIconOverlay;
+				public function HRESULT(IShellUIHelper4 *self) msAddSiteMode;
+				public function HRESULT(IShellUIHelper4 *self, BSTR bstrHeader) msSiteModeCreateJumpList;
+				public function HRESULT(IShellUIHelper4 *self, BSTR bstrName, BSTR bstrActionUri, BSTR bstrIconUri, VARIANT* pvarWindowType) msSiteModeAddJumpListItem;
+				public function HRESULT(IShellUIHelper4 *self) msSiteModeClearJumpList;
+				public function HRESULT(IShellUIHelper4 *self) msSiteModeShowJumpList;
+				public function HRESULT(IShellUIHelper4 *self, VARIANT uiButtonID, BSTR bstrIconUrl, BSTR bstrTooltip, VARIANT* pvarStyleID) msSiteModeAddButtonStyle;
+				public function HRESULT(IShellUIHelper4 *self, VARIANT uiButtonID, VARIANT uiStyleID) msSiteModeShowButtonStyle;
+				public function HRESULT(IShellUIHelper4 *self) msSiteModeActivate;
+				public function HRESULT(IShellUIHelper4 *self, int16 fPreserveState, VARIANT* puiFirstRun) msIsSiteModeFirstRun;
+				public function HRESULT(IShellUIHelper4 *self, BSTR URL, BSTR bstrFilterName) msAddTrackingProtectionList;
+				public function HRESULT(IShellUIHelper4 *self, int16* pfEnabled) msTrackingProtectionEnabled;
+				public function HRESULT(IShellUIHelper4 *self, int16* pfEnabled) msActiveXFilteringEnabled;
+			}
 		}
 		[CRepr]
 		public struct IShellUIHelper5 : IShellUIHelper4
 		{
 			public const new Guid IID = .(0xa2a08b09, 0x103d, 0x4d3f, 0xb9, 0x1c, 0xea, 0x45, 0x5c, 0xa8, 0x2e, 0xfa);
 			
-			public function HRESULT(IShellUIHelper5 *self, BSTR bstrProvisioningXml, VARIANT* puiResult) msProvisionNetworks;
-			public function HRESULT(IShellUIHelper5 *self) msReportSafeUrl;
-			public function HRESULT(IShellUIHelper5 *self) msSiteModeRefreshBadge;
-			public function HRESULT(IShellUIHelper5 *self) msSiteModeClearBadge;
-			public function HRESULT(IShellUIHelper5 *self) msDiagnoseConnectionUILess;
-			public function HRESULT(IShellUIHelper5 *self) msLaunchNetworkClientHelp;
-			public function HRESULT(IShellUIHelper5 *self, int16 fChange) msChangeDefaultBrowser;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellUIHelper4.VTable
+			{
+				public function HRESULT(IShellUIHelper5 *self, BSTR bstrProvisioningXml, VARIANT* puiResult) msProvisionNetworks;
+				public function HRESULT(IShellUIHelper5 *self) msReportSafeUrl;
+				public function HRESULT(IShellUIHelper5 *self) msSiteModeRefreshBadge;
+				public function HRESULT(IShellUIHelper5 *self) msSiteModeClearBadge;
+				public function HRESULT(IShellUIHelper5 *self) msDiagnoseConnectionUILess;
+				public function HRESULT(IShellUIHelper5 *self) msLaunchNetworkClientHelp;
+				public function HRESULT(IShellUIHelper5 *self, int16 fChange) msChangeDefaultBrowser;
+			}
 		}
 		[CRepr]
 		public struct IShellUIHelper6 : IShellUIHelper5
 		{
 			public const new Guid IID = .(0x987a573e, 0x46ee, 0x4e89, 0x96, 0xab, 0xdd, 0xf7, 0xf8, 0xfd, 0xc9, 0x8c);
 			
-			public function HRESULT(IShellUIHelper6 *self) msStopPeriodicTileUpdate;
-			public function HRESULT(IShellUIHelper6 *self, VARIANT pollingUris, VARIANT startTime, VARIANT uiUpdateRecurrence) msStartPeriodicTileUpdate;
-			public function HRESULT(IShellUIHelper6 *self, VARIANT pollingUris, VARIANT startTime, VARIANT uiUpdateRecurrence) msStartPeriodicTileUpdateBatch;
-			public function HRESULT(IShellUIHelper6 *self) msClearTile;
-			public function HRESULT(IShellUIHelper6 *self, int16 fChange) msEnableTileNotificationQueue;
-			public function HRESULT(IShellUIHelper6 *self, VARIANT* pvarSiteState) msPinnedSiteState;
-			public function HRESULT(IShellUIHelper6 *self, int16 fChange) msEnableTileNotificationQueueForSquare150x150;
-			public function HRESULT(IShellUIHelper6 *self, int16 fChange) msEnableTileNotificationQueueForWide310x150;
-			public function HRESULT(IShellUIHelper6 *self, int16 fChange) msEnableTileNotificationQueueForSquare310x310;
-			public function HRESULT(IShellUIHelper6 *self, BSTR bstrNotificationXml, BSTR bstrNotificationId, BSTR bstrNotificationTag, VARIANT startTime, VARIANT expirationTime) msScheduledTileNotification;
-			public function HRESULT(IShellUIHelper6 *self, BSTR bstrNotificationId) msRemoveScheduledTileNotification;
-			public function HRESULT(IShellUIHelper6 *self, BSTR pollingUri, VARIANT startTime, VARIANT uiUpdateRecurrence) msStartPeriodicBadgeUpdate;
-			public function HRESULT(IShellUIHelper6 *self) msStopPeriodicBadgeUpdate;
-			public function HRESULT(IShellUIHelper6 *self) msLaunchInternetOptions;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellUIHelper5.VTable
+			{
+				public function HRESULT(IShellUIHelper6 *self) msStopPeriodicTileUpdate;
+				public function HRESULT(IShellUIHelper6 *self, VARIANT pollingUris, VARIANT startTime, VARIANT uiUpdateRecurrence) msStartPeriodicTileUpdate;
+				public function HRESULT(IShellUIHelper6 *self, VARIANT pollingUris, VARIANT startTime, VARIANT uiUpdateRecurrence) msStartPeriodicTileUpdateBatch;
+				public function HRESULT(IShellUIHelper6 *self) msClearTile;
+				public function HRESULT(IShellUIHelper6 *self, int16 fChange) msEnableTileNotificationQueue;
+				public function HRESULT(IShellUIHelper6 *self, VARIANT* pvarSiteState) msPinnedSiteState;
+				public function HRESULT(IShellUIHelper6 *self, int16 fChange) msEnableTileNotificationQueueForSquare150x150;
+				public function HRESULT(IShellUIHelper6 *self, int16 fChange) msEnableTileNotificationQueueForWide310x150;
+				public function HRESULT(IShellUIHelper6 *self, int16 fChange) msEnableTileNotificationQueueForSquare310x310;
+				public function HRESULT(IShellUIHelper6 *self, BSTR bstrNotificationXml, BSTR bstrNotificationId, BSTR bstrNotificationTag, VARIANT startTime, VARIANT expirationTime) msScheduledTileNotification;
+				public function HRESULT(IShellUIHelper6 *self, BSTR bstrNotificationId) msRemoveScheduledTileNotification;
+				public function HRESULT(IShellUIHelper6 *self, BSTR pollingUri, VARIANT startTime, VARIANT uiUpdateRecurrence) msStartPeriodicBadgeUpdate;
+				public function HRESULT(IShellUIHelper6 *self) msStopPeriodicBadgeUpdate;
+				public function HRESULT(IShellUIHelper6 *self) msLaunchInternetOptions;
+			}
 		}
 		[CRepr]
 		public struct IShellUIHelper7 : IShellUIHelper6
 		{
 			public const new Guid IID = .(0x60e567c8, 0x9573, 0x4ab2, 0xa2, 0x64, 0x63, 0x7c, 0x6c, 0x16, 0x1c, 0xb1);
 			
-			public function HRESULT(IShellUIHelper7 *self, BSTR bstrFlagString, int16 vfFlag) SetExperimentalFlag;
-			public function HRESULT(IShellUIHelper7 *self, BSTR bstrFlagString, int16* vfFlag) GetExperimentalFlag;
-			public function HRESULT(IShellUIHelper7 *self, BSTR bstrValueString, uint32 dwValue) SetExperimentalValue;
-			public function HRESULT(IShellUIHelper7 *self, BSTR bstrValueString, uint32* pdwValue) GetExperimentalValue;
-			public function HRESULT(IShellUIHelper7 *self) ResetAllExperimentalFlagsAndValues;
-			public function HRESULT(IShellUIHelper7 *self, BSTR bstrUrl, int16* flag) GetNeedIEAutoLaunchFlag;
-			public function HRESULT(IShellUIHelper7 *self, BSTR bstrUrl, int16 flag) SetNeedIEAutoLaunchFlag;
-			public function HRESULT(IShellUIHelper7 *self, BSTR bstrUrl, int16* exists) HasNeedIEAutoLaunchFlag;
-			public function HRESULT(IShellUIHelper7 *self, BSTR bstrUrl, int16 automated) LaunchIE;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellUIHelper6.VTable
+			{
+				public function HRESULT(IShellUIHelper7 *self, BSTR bstrFlagString, int16 vfFlag) SetExperimentalFlag;
+				public function HRESULT(IShellUIHelper7 *self, BSTR bstrFlagString, int16* vfFlag) GetExperimentalFlag;
+				public function HRESULT(IShellUIHelper7 *self, BSTR bstrValueString, uint32 dwValue) SetExperimentalValue;
+				public function HRESULT(IShellUIHelper7 *self, BSTR bstrValueString, uint32* pdwValue) GetExperimentalValue;
+				public function HRESULT(IShellUIHelper7 *self) ResetAllExperimentalFlagsAndValues;
+				public function HRESULT(IShellUIHelper7 *self, BSTR bstrUrl, int16* flag) GetNeedIEAutoLaunchFlag;
+				public function HRESULT(IShellUIHelper7 *self, BSTR bstrUrl, int16 flag) SetNeedIEAutoLaunchFlag;
+				public function HRESULT(IShellUIHelper7 *self, BSTR bstrUrl, int16* exists) HasNeedIEAutoLaunchFlag;
+				public function HRESULT(IShellUIHelper7 *self, BSTR bstrUrl, int16 automated) LaunchIE;
+			}
 		}
 		[CRepr]
 		public struct IShellUIHelper8 : IShellUIHelper7
 		{
 			public const new Guid IID = .(0x66debcf2, 0x05b0, 0x4f07, 0xb4, 0x9b, 0xb9, 0x62, 0x41, 0xa6, 0x5d, 0xb2);
 			
-			public function HRESULT(IShellUIHelper8 *self, BSTR* pbstrResult) GetCVListData;
-			public function HRESULT(IShellUIHelper8 *self, BSTR* pbstrResult) GetCVListLocalData;
-			public function HRESULT(IShellUIHelper8 *self, BSTR* pbstrResult) GetEMIEListData;
-			public function HRESULT(IShellUIHelper8 *self, BSTR* pbstrResult) GetEMIEListLocalData;
-			public function HRESULT(IShellUIHelper8 *self) OpenFavoritesPane;
-			public function HRESULT(IShellUIHelper8 *self) OpenFavoritesSettings;
-			public function HRESULT(IShellUIHelper8 *self, BSTR bstrUrl) LaunchInHVSI;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellUIHelper7.VTable
+			{
+				public function HRESULT(IShellUIHelper8 *self, BSTR* pbstrResult) GetCVListData;
+				public function HRESULT(IShellUIHelper8 *self, BSTR* pbstrResult) GetCVListLocalData;
+				public function HRESULT(IShellUIHelper8 *self, BSTR* pbstrResult) GetEMIEListData;
+				public function HRESULT(IShellUIHelper8 *self, BSTR* pbstrResult) GetEMIEListLocalData;
+				public function HRESULT(IShellUIHelper8 *self) OpenFavoritesPane;
+				public function HRESULT(IShellUIHelper8 *self) OpenFavoritesSettings;
+				public function HRESULT(IShellUIHelper8 *self, BSTR bstrUrl) LaunchInHVSI;
+			}
 		}
 		[CRepr]
 		public struct IShellUIHelper9 : IShellUIHelper8
 		{
 			public const new Guid IID = .(0x6cdf73b0, 0x7f2f, 0x451f, 0xbc, 0x0f, 0x63, 0xe0, 0xf3, 0x28, 0x4e, 0x54);
 			
-			public function HRESULT(IShellUIHelper9 *self, uint32* pdwResult) GetOSSku;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellUIHelper8.VTable
+			{
+				public function HRESULT(IShellUIHelper9 *self, uint32* pdwResult) GetOSSku;
+			}
 		}
 		[CRepr]
 		public struct DShellNameSpaceEvents : IDispatch
 		{
 			public const new Guid IID = .(0x55136806, 0xb2de, 0x11d1, 0xb9, 0xf2, 0x00, 0xa0, 0xc9, 0x8b, 0xc5, 0x47);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IShellFavoritesNameSpace : IDispatch
 		{
 			public const new Guid IID = .(0x55136804, 0xb2de, 0x11d1, 0xb9, 0xf2, 0x00, 0xa0, 0xc9, 0x8b, 0xc5, 0x47);
 			
-			public function HRESULT(IShellFavoritesNameSpace *self) MoveSelectionUp;
-			public function HRESULT(IShellFavoritesNameSpace *self) MoveSelectionDown;
-			public function HRESULT(IShellFavoritesNameSpace *self) ResetSort;
-			public function HRESULT(IShellFavoritesNameSpace *self) NewFolder;
-			public function HRESULT(IShellFavoritesNameSpace *self) Synchronize;
-			public function HRESULT(IShellFavoritesNameSpace *self) Import;
-			public function HRESULT(IShellFavoritesNameSpace *self) Export;
-			public function HRESULT(IShellFavoritesNameSpace *self, BSTR strCommand) InvokeContextMenuCommand;
-			public function HRESULT(IShellFavoritesNameSpace *self) MoveSelectionTo;
-			public function HRESULT(IShellFavoritesNameSpace *self, int16* pBool) get_SubscriptionsEnabled;
-			public function HRESULT(IShellFavoritesNameSpace *self, int16* pBool) CreateSubscriptionForSelection;
-			public function HRESULT(IShellFavoritesNameSpace *self, int16* pBool) DeleteSubscriptionForSelection;
-			public function HRESULT(IShellFavoritesNameSpace *self, BSTR bstrFullPath) SetRoot;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IShellFavoritesNameSpace *self) MoveSelectionUp;
+				public function HRESULT(IShellFavoritesNameSpace *self) MoveSelectionDown;
+				public function HRESULT(IShellFavoritesNameSpace *self) ResetSort;
+				public function HRESULT(IShellFavoritesNameSpace *self) NewFolder;
+				public function HRESULT(IShellFavoritesNameSpace *self) Synchronize;
+				public function HRESULT(IShellFavoritesNameSpace *self) Import;
+				public function HRESULT(IShellFavoritesNameSpace *self) Export;
+				public function HRESULT(IShellFavoritesNameSpace *self, BSTR strCommand) InvokeContextMenuCommand;
+				public function HRESULT(IShellFavoritesNameSpace *self) MoveSelectionTo;
+				public function HRESULT(IShellFavoritesNameSpace *self, int16* pBool) get_SubscriptionsEnabled;
+				public function HRESULT(IShellFavoritesNameSpace *self, int16* pBool) CreateSubscriptionForSelection;
+				public function HRESULT(IShellFavoritesNameSpace *self, int16* pBool) DeleteSubscriptionForSelection;
+				public function HRESULT(IShellFavoritesNameSpace *self, BSTR bstrFullPath) SetRoot;
+			}
 		}
 		[CRepr]
 		public struct IShellNameSpace : IShellFavoritesNameSpace
 		{
 			public const new Guid IID = .(0xe572d3c9, 0x37be, 0x4ae2, 0x82, 0x5d, 0xd5, 0x21, 0x76, 0x3e, 0x31, 0x08);
 			
-			public function HRESULT(IShellNameSpace *self, int32* pgrfEnumFlags) get_EnumOptions;
-			public function HRESULT(IShellNameSpace *self, int32 lVal) put_EnumOptions;
-			public function HRESULT(IShellNameSpace *self, IDispatch** pItem) get_SelectedItem;
-			public function HRESULT(IShellNameSpace *self, IDispatch* pItem) put_SelectedItem;
-			public function HRESULT(IShellNameSpace *self, VARIANT* pvar) get_Root;
-			public function HRESULT(IShellNameSpace *self, VARIANT @var) put_Root;
-			public function HRESULT(IShellNameSpace *self, int32* piDepth) get_Depth;
-			public function HRESULT(IShellNameSpace *self, int32 iDepth) put_Depth;
-			public function HRESULT(IShellNameSpace *self, uint32* puMode) get_Mode;
-			public function HRESULT(IShellNameSpace *self, uint32 uMode) put_Mode;
-			public function HRESULT(IShellNameSpace *self, uint32* pdwFlags) get_Flags;
-			public function HRESULT(IShellNameSpace *self, uint32 dwFlags) put_Flags;
-			public function HRESULT(IShellNameSpace *self, uint32 dwFlags) put_TVFlags;
-			public function HRESULT(IShellNameSpace *self, uint32* dwFlags) get_TVFlags;
-			public function HRESULT(IShellNameSpace *self, BSTR* bstrColumns) get_Columns;
-			public function HRESULT(IShellNameSpace *self, BSTR bstrColumns) put_Columns;
-			public function HRESULT(IShellNameSpace *self, int32* piTypes) get_CountViewTypes;
-			public function HRESULT(IShellNameSpace *self, int32 iType) SetViewType;
-			public function HRESULT(IShellNameSpace *self, IDispatch** ppid) SelectedItems;
-			public function HRESULT(IShellNameSpace *self, VARIANT @var, int32 iDepth) Expand;
-			public function HRESULT(IShellNameSpace *self) UnselectAll;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellFavoritesNameSpace.VTable
+			{
+				public function HRESULT(IShellNameSpace *self, int32* pgrfEnumFlags) get_EnumOptions;
+				public function HRESULT(IShellNameSpace *self, int32 lVal) put_EnumOptions;
+				public function HRESULT(IShellNameSpace *self, IDispatch** pItem) get_SelectedItem;
+				public function HRESULT(IShellNameSpace *self, IDispatch* pItem) put_SelectedItem;
+				public function HRESULT(IShellNameSpace *self, VARIANT* pvar) get_Root;
+				public function HRESULT(IShellNameSpace *self, VARIANT @var) put_Root;
+				public function HRESULT(IShellNameSpace *self, int32* piDepth) get_Depth;
+				public function HRESULT(IShellNameSpace *self, int32 iDepth) put_Depth;
+				public function HRESULT(IShellNameSpace *self, uint32* puMode) get_Mode;
+				public function HRESULT(IShellNameSpace *self, uint32 uMode) put_Mode;
+				public function HRESULT(IShellNameSpace *self, uint32* pdwFlags) get_Flags;
+				public function HRESULT(IShellNameSpace *self, uint32 dwFlags) put_Flags;
+				public function HRESULT(IShellNameSpace *self, uint32 dwFlags) put_TVFlags;
+				public function HRESULT(IShellNameSpace *self, uint32* dwFlags) get_TVFlags;
+				public function HRESULT(IShellNameSpace *self, BSTR* bstrColumns) get_Columns;
+				public function HRESULT(IShellNameSpace *self, BSTR bstrColumns) put_Columns;
+				public function HRESULT(IShellNameSpace *self, int32* piTypes) get_CountViewTypes;
+				public function HRESULT(IShellNameSpace *self, int32 iType) SetViewType;
+				public function HRESULT(IShellNameSpace *self, IDispatch** ppid) SelectedItems;
+				public function HRESULT(IShellNameSpace *self, VARIANT @var, int32 iDepth) Expand;
+				public function HRESULT(IShellNameSpace *self) UnselectAll;
+			}
 		}
 		[CRepr]
 		public struct IScriptErrorList : IDispatch
 		{
 			public const new Guid IID = .(0xf3470f24, 0x15fd, 0x11d2, 0xbb, 0x2e, 0x00, 0x80, 0x5f, 0xf7, 0xef, 0xca);
 			
-			public function HRESULT(IScriptErrorList *self) advanceError;
-			public function HRESULT(IScriptErrorList *self) retreatError;
-			public function HRESULT(IScriptErrorList *self, BOOL* pfCanAdvance) canAdvanceError;
-			public function HRESULT(IScriptErrorList *self, BOOL* pfCanRetreat) canRetreatError;
-			public function HRESULT(IScriptErrorList *self, int32* plLine) getErrorLine;
-			public function HRESULT(IScriptErrorList *self, int32* plChar) getErrorChar;
-			public function HRESULT(IScriptErrorList *self, int32* plCode) getErrorCode;
-			public function HRESULT(IScriptErrorList *self, BSTR* pstr) getErrorMsg;
-			public function HRESULT(IScriptErrorList *self, BSTR* pstr) getErrorUrl;
-			public function HRESULT(IScriptErrorList *self, BOOL* pfAlwaysShowLocked) getAlwaysShowLockState;
-			public function HRESULT(IScriptErrorList *self, BOOL* pfDetailsPaneOpen) getDetailsPaneOpen;
-			public function HRESULT(IScriptErrorList *self, BOOL fDetailsPaneOpen) setDetailsPaneOpen;
-			public function HRESULT(IScriptErrorList *self, BOOL* pfPerErrorDisplay) getPerErrorDisplay;
-			public function HRESULT(IScriptErrorList *self, BOOL fPerErrorDisplay) setPerErrorDisplay;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IScriptErrorList *self) advanceError;
+				public function HRESULT(IScriptErrorList *self) retreatError;
+				public function HRESULT(IScriptErrorList *self, BOOL* pfCanAdvance) canAdvanceError;
+				public function HRESULT(IScriptErrorList *self, BOOL* pfCanRetreat) canRetreatError;
+				public function HRESULT(IScriptErrorList *self, int32* plLine) getErrorLine;
+				public function HRESULT(IScriptErrorList *self, int32* plChar) getErrorChar;
+				public function HRESULT(IScriptErrorList *self, int32* plCode) getErrorCode;
+				public function HRESULT(IScriptErrorList *self, BSTR* pstr) getErrorMsg;
+				public function HRESULT(IScriptErrorList *self, BSTR* pstr) getErrorUrl;
+				public function HRESULT(IScriptErrorList *self, BOOL* pfAlwaysShowLocked) getAlwaysShowLockState;
+				public function HRESULT(IScriptErrorList *self, BOOL* pfDetailsPaneOpen) getDetailsPaneOpen;
+				public function HRESULT(IScriptErrorList *self, BOOL fDetailsPaneOpen) setDetailsPaneOpen;
+				public function HRESULT(IScriptErrorList *self, BOOL* pfPerErrorDisplay) getPerErrorDisplay;
+				public function HRESULT(IScriptErrorList *self, BOOL fPerErrorDisplay) setPerErrorDisplay;
+			}
 		}
 		[CRepr]
 		public struct IFolderViewOC : IDispatch
 		{
 			public const new Guid IID = .(0x9ba05970, 0xf6a8, 0x11cf, 0xa4, 0x42, 0x00, 0xa0, 0xc9, 0x0a, 0x8f, 0x39);
 			
-			public function HRESULT(IFolderViewOC *self, IDispatch* pdisp) SetFolderView;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IFolderViewOC *self, IDispatch* pdisp) SetFolderView;
+			}
 		}
 		[CRepr]
 		public struct DShellFolderViewEvents : IDispatch
 		{
 			public const new Guid IID = .(0x62112aa2, 0xebe4, 0x11cf, 0xa5, 0xfb, 0x00, 0x20, 0xaf, 0xe7, 0x29, 0x2d);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct DFConstraint : IDispatch
 		{
 			public const new Guid IID = .(0x4a3df050, 0x23bd, 0x11d2, 0x93, 0x9f, 0x00, 0xa0, 0xc9, 0x1e, 0xed, 0xba);
 			
-			public function HRESULT(DFConstraint *self, BSTR* pbs) get_Name;
-			public function HRESULT(DFConstraint *self, VARIANT* pv) get_Value;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(DFConstraint *self, BSTR* pbs) get_Name;
+				public function HRESULT(DFConstraint *self, VARIANT* pv) get_Value;
+			}
 		}
 		[CRepr]
 		public struct FolderItem : IDispatch
 		{
 			public const new Guid IID = .(0xfac32c80, 0xcbe4, 0x11ce, 0x83, 0x50, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
 			
-			public function HRESULT(FolderItem *self, IDispatch** ppid) get_Application;
-			public function HRESULT(FolderItem *self, IDispatch** ppid) get_Parent;
-			public function HRESULT(FolderItem *self, BSTR* pbs) get_Name;
-			public function HRESULT(FolderItem *self, BSTR bs) put_Name;
-			public function HRESULT(FolderItem *self, BSTR* pbs) get_Path;
-			public function HRESULT(FolderItem *self, IDispatch** ppid) get_GetLink;
-			public function HRESULT(FolderItem *self, IDispatch** ppid) get_GetFolder;
-			public function HRESULT(FolderItem *self, int16* pb) get_IsLink;
-			public function HRESULT(FolderItem *self, int16* pb) get_IsFolder;
-			public function HRESULT(FolderItem *self, int16* pb) get_IsFileSystem;
-			public function HRESULT(FolderItem *self, int16* pb) get_IsBrowsable;
-			public function HRESULT(FolderItem *self, double* pdt) get_ModifyDate;
-			public function HRESULT(FolderItem *self, double dt) put_ModifyDate;
-			public function HRESULT(FolderItem *self, int32* pul) get_Size;
-			public function HRESULT(FolderItem *self, BSTR* pbs) get_Type;
-			public function HRESULT(FolderItem *self, FolderItemVerbs** ppfic) Verbs;
-			public function HRESULT(FolderItem *self, VARIANT vVerb) InvokeVerb;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(FolderItem *self, IDispatch** ppid) get_Application;
+				public function HRESULT(FolderItem *self, IDispatch** ppid) get_Parent;
+				public function HRESULT(FolderItem *self, BSTR* pbs) get_Name;
+				public function HRESULT(FolderItem *self, BSTR bs) put_Name;
+				public function HRESULT(FolderItem *self, BSTR* pbs) get_Path;
+				public function HRESULT(FolderItem *self, IDispatch** ppid) get_GetLink;
+				public function HRESULT(FolderItem *self, IDispatch** ppid) get_GetFolder;
+				public function HRESULT(FolderItem *self, int16* pb) get_IsLink;
+				public function HRESULT(FolderItem *self, int16* pb) get_IsFolder;
+				public function HRESULT(FolderItem *self, int16* pb) get_IsFileSystem;
+				public function HRESULT(FolderItem *self, int16* pb) get_IsBrowsable;
+				public function HRESULT(FolderItem *self, double* pdt) get_ModifyDate;
+				public function HRESULT(FolderItem *self, double dt) put_ModifyDate;
+				public function HRESULT(FolderItem *self, int32* pul) get_Size;
+				public function HRESULT(FolderItem *self, BSTR* pbs) get_Type;
+				public function HRESULT(FolderItem *self, FolderItemVerbs** ppfic) Verbs;
+				public function HRESULT(FolderItem *self, VARIANT vVerb) InvokeVerb;
+			}
 		}
 		[CRepr]
 		public struct FolderItems : IDispatch
 		{
 			public const new Guid IID = .(0x744129e0, 0xcbe5, 0x11ce, 0x83, 0x50, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
 			
-			public function HRESULT(FolderItems *self, int32* plCount) get_Count;
-			public function HRESULT(FolderItems *self, IDispatch** ppid) get_Application;
-			public function HRESULT(FolderItems *self, IDispatch** ppid) get_Parent;
-			public function HRESULT(FolderItems *self, VARIANT index, FolderItem** ppid) Item;
-			public function HRESULT(FolderItems *self, IUnknown** ppunk) _NewEnum;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(FolderItems *self, int32* plCount) get_Count;
+				public function HRESULT(FolderItems *self, IDispatch** ppid) get_Application;
+				public function HRESULT(FolderItems *self, IDispatch** ppid) get_Parent;
+				public function HRESULT(FolderItems *self, VARIANT index, FolderItem** ppid) Item;
+				public function HRESULT(FolderItems *self, IUnknown** ppunk) _NewEnum;
+			}
 		}
 		[CRepr]
 		public struct FolderItemVerb : IDispatch
 		{
 			public const new Guid IID = .(0x08ec3e00, 0x50b0, 0x11cf, 0x96, 0x0c, 0x00, 0x80, 0xc7, 0xf4, 0xee, 0x85);
 			
-			public function HRESULT(FolderItemVerb *self, IDispatch** ppid) get_Application;
-			public function HRESULT(FolderItemVerb *self, IDispatch** ppid) get_Parent;
-			public function HRESULT(FolderItemVerb *self, BSTR* pbs) get_Name;
-			public function HRESULT(FolderItemVerb *self) DoIt;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(FolderItemVerb *self, IDispatch** ppid) get_Application;
+				public function HRESULT(FolderItemVerb *self, IDispatch** ppid) get_Parent;
+				public function HRESULT(FolderItemVerb *self, BSTR* pbs) get_Name;
+				public function HRESULT(FolderItemVerb *self) DoIt;
+			}
 		}
 		[CRepr]
 		public struct FolderItemVerbs : IDispatch
 		{
 			public const new Guid IID = .(0x1f8352c0, 0x50b0, 0x11cf, 0x96, 0x0c, 0x00, 0x80, 0xc7, 0xf4, 0xee, 0x85);
 			
-			public function HRESULT(FolderItemVerbs *self, int32* plCount) get_Count;
-			public function HRESULT(FolderItemVerbs *self, IDispatch** ppid) get_Application;
-			public function HRESULT(FolderItemVerbs *self, IDispatch** ppid) get_Parent;
-			public function HRESULT(FolderItemVerbs *self, VARIANT index, FolderItemVerb** ppid) Item;
-			public function HRESULT(FolderItemVerbs *self, IUnknown** ppunk) _NewEnum;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(FolderItemVerbs *self, int32* plCount) get_Count;
+				public function HRESULT(FolderItemVerbs *self, IDispatch** ppid) get_Application;
+				public function HRESULT(FolderItemVerbs *self, IDispatch** ppid) get_Parent;
+				public function HRESULT(FolderItemVerbs *self, VARIANT index, FolderItemVerb** ppid) Item;
+				public function HRESULT(FolderItemVerbs *self, IUnknown** ppunk) _NewEnum;
+			}
 		}
 		[CRepr]
 		public struct Folder : IDispatch
 		{
 			public const new Guid IID = .(0xbbcbde60, 0xc3ff, 0x11ce, 0x83, 0x50, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
 			
-			public function HRESULT(Folder *self, BSTR* pbs) get_Title;
-			public function HRESULT(Folder *self, IDispatch** ppid) get_Application;
-			public function HRESULT(Folder *self, IDispatch** ppid) get_Parent;
-			public function HRESULT(Folder *self, Folder** ppsf) get_ParentFolder;
-			public function HRESULT(Folder *self, FolderItems** ppid) Items;
-			public function HRESULT(Folder *self, BSTR bName, FolderItem** ppid) ParseName;
-			public function HRESULT(Folder *self, BSTR bName, VARIANT vOptions) NewFolder;
-			public function HRESULT(Folder *self, VARIANT vItem, VARIANT vOptions) MoveHere;
-			public function HRESULT(Folder *self, VARIANT vItem, VARIANT vOptions) CopyHere;
-			public function HRESULT(Folder *self, VARIANT vItem, int32 iColumn, BSTR* pbs) GetDetailsOf;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(Folder *self, BSTR* pbs) get_Title;
+				public function HRESULT(Folder *self, IDispatch** ppid) get_Application;
+				public function HRESULT(Folder *self, IDispatch** ppid) get_Parent;
+				public function HRESULT(Folder *self, Folder** ppsf) get_ParentFolder;
+				public function HRESULT(Folder *self, FolderItems** ppid) Items;
+				public function HRESULT(Folder *self, BSTR bName, FolderItem** ppid) ParseName;
+				public function HRESULT(Folder *self, BSTR bName, VARIANT vOptions) NewFolder;
+				public function HRESULT(Folder *self, VARIANT vItem, VARIANT vOptions) MoveHere;
+				public function HRESULT(Folder *self, VARIANT vItem, VARIANT vOptions) CopyHere;
+				public function HRESULT(Folder *self, VARIANT vItem, int32 iColumn, BSTR* pbs) GetDetailsOf;
+			}
 		}
 		[CRepr]
 		public struct Folder2 : Folder
 		{
 			public const new Guid IID = .(0xf0d2d8ef, 0x3890, 0x11d2, 0xbf, 0x8b, 0x00, 0xc0, 0x4f, 0xb9, 0x36, 0x61);
 			
-			public function HRESULT(Folder2 *self, FolderItem** ppfi) get_Self;
-			public function HRESULT(Folder2 *self, int32* pul) get_OfflineStatus;
-			public function HRESULT(Folder2 *self) Synchronize;
-			public function HRESULT(Folder2 *self, int16* pbHaveToShowWebViewBarricade) get_HaveToShowWebViewBarricade;
-			public function HRESULT(Folder2 *self) DismissedWebViewBarricade;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : Folder.VTable
+			{
+				public function HRESULT(Folder2 *self, FolderItem** ppfi) get_Self;
+				public function HRESULT(Folder2 *self, int32* pul) get_OfflineStatus;
+				public function HRESULT(Folder2 *self) Synchronize;
+				public function HRESULT(Folder2 *self, int16* pbHaveToShowWebViewBarricade) get_HaveToShowWebViewBarricade;
+				public function HRESULT(Folder2 *self) DismissedWebViewBarricade;
+			}
 		}
 		[CRepr]
 		public struct Folder3 : Folder2
 		{
 			public const new Guid IID = .(0xa7ae5f64, 0xc4d7, 0x4d7f, 0x93, 0x07, 0x4d, 0x24, 0xee, 0x54, 0xb8, 0x41);
 			
-			public function HRESULT(Folder3 *self, int16* pbShowWebViewBarricade) get_ShowWebViewBarricade;
-			public function HRESULT(Folder3 *self, int16 bShowWebViewBarricade) put_ShowWebViewBarricade;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : Folder2.VTable
+			{
+				public function HRESULT(Folder3 *self, int16* pbShowWebViewBarricade) get_ShowWebViewBarricade;
+				public function HRESULT(Folder3 *self, int16 bShowWebViewBarricade) put_ShowWebViewBarricade;
+			}
 		}
 		[CRepr]
 		public struct FolderItem2 : FolderItem
 		{
 			public const new Guid IID = .(0xedc817aa, 0x92b8, 0x11d1, 0xb0, 0x75, 0x00, 0xc0, 0x4f, 0xc3, 0x3a, 0xa5);
 			
-			public function HRESULT(FolderItem2 *self, VARIANT vVerb, VARIANT vArgs) InvokeVerbEx;
-			public function HRESULT(FolderItem2 *self, BSTR bstrPropName, VARIANT* pvRet) ExtendedProperty;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : FolderItem.VTable
+			{
+				public function HRESULT(FolderItem2 *self, VARIANT vVerb, VARIANT vArgs) InvokeVerbEx;
+				public function HRESULT(FolderItem2 *self, BSTR bstrPropName, VARIANT* pvRet) ExtendedProperty;
+			}
 		}
 		[CRepr]
 		public struct FolderItems2 : FolderItems
 		{
 			public const new Guid IID = .(0xc94f0ad0, 0xf363, 0x11d2, 0xa3, 0x27, 0x00, 0xc0, 0x4f, 0x8e, 0xec, 0x7f);
 			
-			public function HRESULT(FolderItems2 *self, VARIANT vVerb, VARIANT vArgs) InvokeVerbEx;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : FolderItems.VTable
+			{
+				public function HRESULT(FolderItems2 *self, VARIANT vVerb, VARIANT vArgs) InvokeVerbEx;
+			}
 		}
 		[CRepr]
 		public struct FolderItems3 : FolderItems2
 		{
 			public const new Guid IID = .(0xeaa7c309, 0xbbec, 0x49d5, 0x82, 0x1d, 0x64, 0xd9, 0x66, 0xcb, 0x66, 0x7f);
 			
-			public function HRESULT(FolderItems3 *self, int32 grfFlags, BSTR bstrFileSpec) Filter;
-			public function HRESULT(FolderItems3 *self, FolderItemVerbs** ppfic) get_Verbs;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : FolderItems2.VTable
+			{
+				public function HRESULT(FolderItems3 *self, int32 grfFlags, BSTR bstrFileSpec) Filter;
+				public function HRESULT(FolderItems3 *self, FolderItemVerbs** ppfic) get_Verbs;
+			}
 		}
 		[CRepr]
 		public struct IShellLinkDual : IDispatch
 		{
 			public const new Guid IID = .(0x88a05c00, 0xf000, 0x11ce, 0x83, 0x50, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
 			
-			public function HRESULT(IShellLinkDual *self, BSTR* pbs) get_Path;
-			public function HRESULT(IShellLinkDual *self, BSTR bs) put_Path;
-			public function HRESULT(IShellLinkDual *self, BSTR* pbs) get_Description;
-			public function HRESULT(IShellLinkDual *self, BSTR bs) put_Description;
-			public function HRESULT(IShellLinkDual *self, BSTR* pbs) get_WorkingDirectory;
-			public function HRESULT(IShellLinkDual *self, BSTR bs) put_WorkingDirectory;
-			public function HRESULT(IShellLinkDual *self, BSTR* pbs) get_Arguments;
-			public function HRESULT(IShellLinkDual *self, BSTR bs) put_Arguments;
-			public function HRESULT(IShellLinkDual *self, int32* piHK) get_Hotkey;
-			public function HRESULT(IShellLinkDual *self, int32 iHK) put_Hotkey;
-			public function HRESULT(IShellLinkDual *self, int32* piShowCommand) get_ShowCommand;
-			public function HRESULT(IShellLinkDual *self, int32 iShowCommand) put_ShowCommand;
-			public function HRESULT(IShellLinkDual *self, int32 fFlags) Resolve;
-			public function HRESULT(IShellLinkDual *self, BSTR* pbs, int32* piIcon) GetIconLocation;
-			public function HRESULT(IShellLinkDual *self, BSTR bs, int32 iIcon) SetIconLocation;
-			public function HRESULT(IShellLinkDual *self, VARIANT vWhere) Save;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IShellLinkDual *self, BSTR* pbs) get_Path;
+				public function HRESULT(IShellLinkDual *self, BSTR bs) put_Path;
+				public function HRESULT(IShellLinkDual *self, BSTR* pbs) get_Description;
+				public function HRESULT(IShellLinkDual *self, BSTR bs) put_Description;
+				public function HRESULT(IShellLinkDual *self, BSTR* pbs) get_WorkingDirectory;
+				public function HRESULT(IShellLinkDual *self, BSTR bs) put_WorkingDirectory;
+				public function HRESULT(IShellLinkDual *self, BSTR* pbs) get_Arguments;
+				public function HRESULT(IShellLinkDual *self, BSTR bs) put_Arguments;
+				public function HRESULT(IShellLinkDual *self, int32* piHK) get_Hotkey;
+				public function HRESULT(IShellLinkDual *self, int32 iHK) put_Hotkey;
+				public function HRESULT(IShellLinkDual *self, int32* piShowCommand) get_ShowCommand;
+				public function HRESULT(IShellLinkDual *self, int32 iShowCommand) put_ShowCommand;
+				public function HRESULT(IShellLinkDual *self, int32 fFlags) Resolve;
+				public function HRESULT(IShellLinkDual *self, BSTR* pbs, int32* piIcon) GetIconLocation;
+				public function HRESULT(IShellLinkDual *self, BSTR bs, int32 iIcon) SetIconLocation;
+				public function HRESULT(IShellLinkDual *self, VARIANT vWhere) Save;
+			}
 		}
 		[CRepr]
 		public struct IShellLinkDual2 : IShellLinkDual
 		{
 			public const new Guid IID = .(0x317ee249, 0xf12e, 0x11d2, 0xb1, 0xe4, 0x00, 0xc0, 0x4f, 0x8e, 0xeb, 0x3e);
 			
-			public function HRESULT(IShellLinkDual2 *self, FolderItem** ppfi) get_Target;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellLinkDual.VTable
+			{
+				public function HRESULT(IShellLinkDual2 *self, FolderItem** ppfi) get_Target;
+			}
 		}
 		[CRepr]
 		public struct IShellFolderViewDual : IDispatch
 		{
 			public const new Guid IID = .(0xe7a1af80, 0x4d96, 0x11cf, 0x96, 0x0c, 0x00, 0x80, 0xc7, 0xf4, 0xee, 0x85);
 			
-			public function HRESULT(IShellFolderViewDual *self, IDispatch** ppid) get_Application;
-			public function HRESULT(IShellFolderViewDual *self, IDispatch** ppid) get_Parent;
-			public function HRESULT(IShellFolderViewDual *self, Folder** ppid) get_Folder;
-			public function HRESULT(IShellFolderViewDual *self, FolderItems** ppid) SelectedItems;
-			public function HRESULT(IShellFolderViewDual *self, FolderItem** ppid) get_FocusedItem;
-			public function HRESULT(IShellFolderViewDual *self, VARIANT* pvfi, int32 dwFlags) SelectItem;
-			public function HRESULT(IShellFolderViewDual *self, FolderItem* pfi, VARIANT vx, VARIANT vy, BSTR* pbs) PopupItemMenu;
-			public function HRESULT(IShellFolderViewDual *self, IDispatch** ppDisp) get_Script;
-			public function HRESULT(IShellFolderViewDual *self, int32* plViewOptions) get_ViewOptions;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IShellFolderViewDual *self, IDispatch** ppid) get_Application;
+				public function HRESULT(IShellFolderViewDual *self, IDispatch** ppid) get_Parent;
+				public function HRESULT(IShellFolderViewDual *self, Folder** ppid) get_Folder;
+				public function HRESULT(IShellFolderViewDual *self, FolderItems** ppid) SelectedItems;
+				public function HRESULT(IShellFolderViewDual *self, FolderItem** ppid) get_FocusedItem;
+				public function HRESULT(IShellFolderViewDual *self, VARIANT* pvfi, int32 dwFlags) SelectItem;
+				public function HRESULT(IShellFolderViewDual *self, FolderItem* pfi, VARIANT vx, VARIANT vy, BSTR* pbs) PopupItemMenu;
+				public function HRESULT(IShellFolderViewDual *self, IDispatch** ppDisp) get_Script;
+				public function HRESULT(IShellFolderViewDual *self, int32* plViewOptions) get_ViewOptions;
+			}
 		}
 		[CRepr]
 		public struct IShellFolderViewDual2 : IShellFolderViewDual
 		{
 			public const new Guid IID = .(0x31c147b6, 0x0ade, 0x4a3c, 0xb5, 0x14, 0xdd, 0xf9, 0x32, 0xef, 0x6d, 0x17);
 			
-			public function HRESULT(IShellFolderViewDual2 *self, uint32* pViewMode) get_CurrentViewMode;
-			public function HRESULT(IShellFolderViewDual2 *self, uint32 ViewMode) put_CurrentViewMode;
-			public function HRESULT(IShellFolderViewDual2 *self, int32 iRelative) SelectItemRelative;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellFolderViewDual.VTable
+			{
+				public function HRESULT(IShellFolderViewDual2 *self, uint32* pViewMode) get_CurrentViewMode;
+				public function HRESULT(IShellFolderViewDual2 *self, uint32 ViewMode) put_CurrentViewMode;
+				public function HRESULT(IShellFolderViewDual2 *self, int32 iRelative) SelectItemRelative;
+			}
 		}
 		[CRepr]
 		public struct IShellFolderViewDual3 : IShellFolderViewDual2
 		{
 			public const new Guid IID = .(0x29ec8e6c, 0x46d3, 0x411f, 0xba, 0xaa, 0x61, 0x1a, 0x6c, 0x9c, 0xac, 0x66);
 			
-			public function HRESULT(IShellFolderViewDual3 *self, BSTR* pbstrGroupBy) get_GroupBy;
-			public function HRESULT(IShellFolderViewDual3 *self, BSTR bstrGroupBy) put_GroupBy;
-			public function HRESULT(IShellFolderViewDual3 *self, uint32* pdwFlags) get_FolderFlags;
-			public function HRESULT(IShellFolderViewDual3 *self, uint32 dwFlags) put_FolderFlags;
-			public function HRESULT(IShellFolderViewDual3 *self, BSTR* pbstrSortColumns) get_SortColumns;
-			public function HRESULT(IShellFolderViewDual3 *self, BSTR bstrSortColumns) put_SortColumns;
-			public function HRESULT(IShellFolderViewDual3 *self, int32 iIconSize) put_IconSize;
-			public function HRESULT(IShellFolderViewDual3 *self, int32* piIconSize) get_IconSize;
-			public function HRESULT(IShellFolderViewDual3 *self, BSTR bstrFilterText) FilterView;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellFolderViewDual2.VTable
+			{
+				public function HRESULT(IShellFolderViewDual3 *self, BSTR* pbstrGroupBy) get_GroupBy;
+				public function HRESULT(IShellFolderViewDual3 *self, BSTR bstrGroupBy) put_GroupBy;
+				public function HRESULT(IShellFolderViewDual3 *self, uint32* pdwFlags) get_FolderFlags;
+				public function HRESULT(IShellFolderViewDual3 *self, uint32 dwFlags) put_FolderFlags;
+				public function HRESULT(IShellFolderViewDual3 *self, BSTR* pbstrSortColumns) get_SortColumns;
+				public function HRESULT(IShellFolderViewDual3 *self, BSTR bstrSortColumns) put_SortColumns;
+				public function HRESULT(IShellFolderViewDual3 *self, int32 iIconSize) put_IconSize;
+				public function HRESULT(IShellFolderViewDual3 *self, int32* piIconSize) get_IconSize;
+				public function HRESULT(IShellFolderViewDual3 *self, BSTR bstrFilterText) FilterView;
+			}
 		}
 		[CRepr]
 		public struct IShellDispatch : IDispatch
 		{
 			public const new Guid IID = .(0xd8f015c0, 0xc278, 0x11ce, 0xa4, 0x9e, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
 			
-			public function HRESULT(IShellDispatch *self, IDispatch** ppid) get_Application;
-			public function HRESULT(IShellDispatch *self, IDispatch** ppid) get_Parent;
-			public function HRESULT(IShellDispatch *self, VARIANT vDir, Folder** ppsdf) NameSpace;
-			public function HRESULT(IShellDispatch *self, int32 Hwnd, BSTR Title, int32 Options, VARIANT RootFolder, Folder** ppsdf) BrowseForFolder;
-			public function HRESULT(IShellDispatch *self, IDispatch** ppid) Windows;
-			public function HRESULT(IShellDispatch *self, VARIANT vDir) Open;
-			public function HRESULT(IShellDispatch *self, VARIANT vDir) Explore;
-			public function HRESULT(IShellDispatch *self) MinimizeAll;
-			public function HRESULT(IShellDispatch *self) UndoMinimizeALL;
-			public function HRESULT(IShellDispatch *self) FileRun;
-			public function HRESULT(IShellDispatch *self) CascadeWindows;
-			public function HRESULT(IShellDispatch *self) TileVertically;
-			public function HRESULT(IShellDispatch *self) TileHorizontally;
-			public function HRESULT(IShellDispatch *self) ShutdownWindows;
-			public function HRESULT(IShellDispatch *self) Suspend;
-			public function HRESULT(IShellDispatch *self) EjectPC;
-			public function HRESULT(IShellDispatch *self) SetTime;
-			public function HRESULT(IShellDispatch *self) TrayProperties;
-			public function HRESULT(IShellDispatch *self) Help;
-			public function HRESULT(IShellDispatch *self) FindFiles;
-			public function HRESULT(IShellDispatch *self) FindComputer;
-			public function HRESULT(IShellDispatch *self) RefreshMenu;
-			public function HRESULT(IShellDispatch *self, BSTR bstrDir) ControlPanelItem;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IShellDispatch *self, IDispatch** ppid) get_Application;
+				public function HRESULT(IShellDispatch *self, IDispatch** ppid) get_Parent;
+				public function HRESULT(IShellDispatch *self, VARIANT vDir, Folder** ppsdf) NameSpace;
+				public function HRESULT(IShellDispatch *self, int32 Hwnd, BSTR Title, int32 Options, VARIANT RootFolder, Folder** ppsdf) BrowseForFolder;
+				public function HRESULT(IShellDispatch *self, IDispatch** ppid) Windows;
+				public function HRESULT(IShellDispatch *self, VARIANT vDir) Open;
+				public function HRESULT(IShellDispatch *self, VARIANT vDir) Explore;
+				public function HRESULT(IShellDispatch *self) MinimizeAll;
+				public function HRESULT(IShellDispatch *self) UndoMinimizeALL;
+				public function HRESULT(IShellDispatch *self) FileRun;
+				public function HRESULT(IShellDispatch *self) CascadeWindows;
+				public function HRESULT(IShellDispatch *self) TileVertically;
+				public function HRESULT(IShellDispatch *self) TileHorizontally;
+				public function HRESULT(IShellDispatch *self) ShutdownWindows;
+				public function HRESULT(IShellDispatch *self) Suspend;
+				public function HRESULT(IShellDispatch *self) EjectPC;
+				public function HRESULT(IShellDispatch *self) SetTime;
+				public function HRESULT(IShellDispatch *self) TrayProperties;
+				public function HRESULT(IShellDispatch *self) Help;
+				public function HRESULT(IShellDispatch *self) FindFiles;
+				public function HRESULT(IShellDispatch *self) FindComputer;
+				public function HRESULT(IShellDispatch *self) RefreshMenu;
+				public function HRESULT(IShellDispatch *self, BSTR bstrDir) ControlPanelItem;
+			}
 		}
 		[CRepr]
 		public struct IShellDispatch2 : IShellDispatch
 		{
 			public const new Guid IID = .(0xa4c6892c, 0x3ba9, 0x11d2, 0x9d, 0xea, 0x00, 0xc0, 0x4f, 0xb1, 0x61, 0x62);
 			
-			public function HRESULT(IShellDispatch2 *self, BSTR Group, BSTR Restriction, int32* plRestrictValue) IsRestricted;
-			public function HRESULT(IShellDispatch2 *self, BSTR File, VARIANT vArgs, VARIANT vDir, VARIANT vOperation, VARIANT vShow) ShellExecute;
-			public function HRESULT(IShellDispatch2 *self, BSTR name, BSTR location, BSTR model) FindPrinter;
-			public function HRESULT(IShellDispatch2 *self, BSTR name, VARIANT* pv) GetSystemInformation;
-			public function HRESULT(IShellDispatch2 *self, BSTR ServiceName, VARIANT Persistent, VARIANT* pSuccess) ServiceStart;
-			public function HRESULT(IShellDispatch2 *self, BSTR ServiceName, VARIANT Persistent, VARIANT* pSuccess) ServiceStop;
-			public function HRESULT(IShellDispatch2 *self, BSTR ServiceName, VARIANT* pRunning) IsServiceRunning;
-			public function HRESULT(IShellDispatch2 *self, BSTR ServiceName, VARIANT* pCanStartStop) CanStartStopService;
-			public function HRESULT(IShellDispatch2 *self, BSTR bstrClsid, VARIANT bShow, VARIANT* pSuccess) ShowBrowserBar;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellDispatch.VTable
+			{
+				public function HRESULT(IShellDispatch2 *self, BSTR Group, BSTR Restriction, int32* plRestrictValue) IsRestricted;
+				public function HRESULT(IShellDispatch2 *self, BSTR File, VARIANT vArgs, VARIANT vDir, VARIANT vOperation, VARIANT vShow) ShellExecute;
+				public function HRESULT(IShellDispatch2 *self, BSTR name, BSTR location, BSTR model) FindPrinter;
+				public function HRESULT(IShellDispatch2 *self, BSTR name, VARIANT* pv) GetSystemInformation;
+				public function HRESULT(IShellDispatch2 *self, BSTR ServiceName, VARIANT Persistent, VARIANT* pSuccess) ServiceStart;
+				public function HRESULT(IShellDispatch2 *self, BSTR ServiceName, VARIANT Persistent, VARIANT* pSuccess) ServiceStop;
+				public function HRESULT(IShellDispatch2 *self, BSTR ServiceName, VARIANT* pRunning) IsServiceRunning;
+				public function HRESULT(IShellDispatch2 *self, BSTR ServiceName, VARIANT* pCanStartStop) CanStartStopService;
+				public function HRESULT(IShellDispatch2 *self, BSTR bstrClsid, VARIANT bShow, VARIANT* pSuccess) ShowBrowserBar;
+			}
 		}
 		[CRepr]
 		public struct IShellDispatch3 : IShellDispatch2
 		{
 			public const new Guid IID = .(0x177160ca, 0xbb5a, 0x411c, 0x84, 0x1d, 0xbd, 0x38, 0xfa, 0xcd, 0xea, 0xa0);
 			
-			public function HRESULT(IShellDispatch3 *self, VARIANT varFile, BSTR bstrCategory) AddToRecent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellDispatch2.VTable
+			{
+				public function HRESULT(IShellDispatch3 *self, VARIANT varFile, BSTR bstrCategory) AddToRecent;
+			}
 		}
 		[CRepr]
 		public struct IShellDispatch4 : IShellDispatch3
 		{
 			public const new Guid IID = .(0xefd84b2d, 0x4bcf, 0x4298, 0xbe, 0x25, 0xeb, 0x54, 0x2a, 0x59, 0xfb, 0xda);
 			
-			public function HRESULT(IShellDispatch4 *self) WindowsSecurity;
-			public function HRESULT(IShellDispatch4 *self) ToggleDesktop;
-			public function HRESULT(IShellDispatch4 *self, BSTR bstrPolicyName, VARIANT* pValue) ExplorerPolicy;
-			public function HRESULT(IShellDispatch4 *self, int32 lSetting, int16* pResult) GetSetting;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellDispatch3.VTable
+			{
+				public function HRESULT(IShellDispatch4 *self) WindowsSecurity;
+				public function HRESULT(IShellDispatch4 *self) ToggleDesktop;
+				public function HRESULT(IShellDispatch4 *self, BSTR bstrPolicyName, VARIANT* pValue) ExplorerPolicy;
+				public function HRESULT(IShellDispatch4 *self, int32 lSetting, int16* pResult) GetSetting;
+			}
 		}
 		[CRepr]
 		public struct IShellDispatch5 : IShellDispatch4
 		{
 			public const new Guid IID = .(0x866738b9, 0x6cf2, 0x4de8, 0x87, 0x67, 0xf7, 0x94, 0xeb, 0xe7, 0x4f, 0x4e);
 			
-			public function HRESULT(IShellDispatch5 *self) WindowSwitcher;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellDispatch4.VTable
+			{
+				public function HRESULT(IShellDispatch5 *self) WindowSwitcher;
+			}
 		}
 		[CRepr]
 		public struct IShellDispatch6 : IShellDispatch5
 		{
 			public const new Guid IID = .(0x286e6f1b, 0x7113, 0x4355, 0x95, 0x62, 0x96, 0xb7, 0xe9, 0xd6, 0x4c, 0x54);
 			
-			public function HRESULT(IShellDispatch6 *self) SearchCommand;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellDispatch5.VTable
+			{
+				public function HRESULT(IShellDispatch6 *self) SearchCommand;
+			}
 		}
 		[CRepr]
 		public struct IFileSearchBand : IDispatch
 		{
 			public const new Guid IID = .(0x2d91eea1, 0x9932, 0x11d2, 0xbe, 0x86, 0x00, 0xa0, 0xc9, 0xa8, 0x3d, 0xa1);
 			
-			public function HRESULT(IFileSearchBand *self) SetFocus;
-			public function HRESULT(IFileSearchBand *self, BSTR* pbstrSearchID, int16 bNavToResults, VARIANT* pvarScope, VARIANT* pvarQueryFile) SetSearchParameters;
-			public function HRESULT(IFileSearchBand *self, BSTR* pbstrSearchID) get_SearchID;
-			public function HRESULT(IFileSearchBand *self, VARIANT* pvarScope) get_Scope;
-			public function HRESULT(IFileSearchBand *self, VARIANT* pvarFile) get_QueryFile;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IFileSearchBand *self) SetFocus;
+				public function HRESULT(IFileSearchBand *self, BSTR* pbstrSearchID, int16 bNavToResults, VARIANT* pvarScope, VARIANT* pvarQueryFile) SetSearchParameters;
+				public function HRESULT(IFileSearchBand *self, BSTR* pbstrSearchID) get_SearchID;
+				public function HRESULT(IFileSearchBand *self, VARIANT* pvarScope) get_Scope;
+				public function HRESULT(IFileSearchBand *self, VARIANT* pvarFile) get_QueryFile;
+			}
 		}
 		[CRepr]
 		public struct IWebWizardHost : IDispatch
 		{
 			public const new Guid IID = .(0x18bcc359, 0x4990, 0x4bfb, 0xb9, 0x51, 0x3c, 0x83, 0x70, 0x2b, 0xe5, 0xf9);
 			
-			public function HRESULT(IWebWizardHost *self) FinalBack;
-			public function HRESULT(IWebWizardHost *self) FinalNext;
-			public function HRESULT(IWebWizardHost *self) Cancel;
-			public function HRESULT(IWebWizardHost *self, BSTR bstrCaption) put_Caption;
-			public function HRESULT(IWebWizardHost *self, BSTR* pbstrCaption) get_Caption;
-			public function HRESULT(IWebWizardHost *self, BSTR bstrPropertyName, VARIANT* pvProperty) put_Property;
-			public function HRESULT(IWebWizardHost *self, BSTR bstrPropertyName, VARIANT* pvProperty) get_Property;
-			public function HRESULT(IWebWizardHost *self, int16 vfEnableBack, int16 vfEnableNext, int16 vfLastPage) SetWizardButtons;
-			public function HRESULT(IWebWizardHost *self, BSTR bstrHeaderTitle, BSTR bstrHeaderSubtitle) SetHeaderText;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWebWizardHost *self) FinalBack;
+				public function HRESULT(IWebWizardHost *self) FinalNext;
+				public function HRESULT(IWebWizardHost *self) Cancel;
+				public function HRESULT(IWebWizardHost *self, BSTR bstrCaption) put_Caption;
+				public function HRESULT(IWebWizardHost *self, BSTR* pbstrCaption) get_Caption;
+				public function HRESULT(IWebWizardHost *self, BSTR bstrPropertyName, VARIANT* pvProperty) put_Property;
+				public function HRESULT(IWebWizardHost *self, BSTR bstrPropertyName, VARIANT* pvProperty) get_Property;
+				public function HRESULT(IWebWizardHost *self, int16 vfEnableBack, int16 vfEnableNext, int16 vfLastPage) SetWizardButtons;
+				public function HRESULT(IWebWizardHost *self, BSTR bstrHeaderTitle, BSTR bstrHeaderSubtitle) SetHeaderText;
+			}
 		}
 		[CRepr]
 		public struct IWebWizardHost2 : IWebWizardHost
 		{
 			public const new Guid IID = .(0xf9c013dc, 0x3c23, 0x4041, 0x8e, 0x39, 0xcf, 0xb4, 0x02, 0xf7, 0xea, 0x59);
 			
-			public function HRESULT(IWebWizardHost2 *self, BSTR value, BSTR* signedValue) SignString;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWebWizardHost.VTable
+			{
+				public function HRESULT(IWebWizardHost2 *self, BSTR value, BSTR* signedValue) SignString;
+			}
 		}
 		[CRepr]
 		public struct INewWDEvents : IWebWizardHost
 		{
 			public const new Guid IID = .(0x0751c551, 0x7568, 0x41c9, 0x8e, 0x5b, 0xe2, 0x2e, 0x38, 0x91, 0x92, 0x36);
 			
-			public function HRESULT(INewWDEvents *self, BSTR bstrSignInUrl, int16* pvfAuthenitcated) PassportAuthenticate;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWebWizardHost.VTable
+			{
+				public function HRESULT(INewWDEvents *self, BSTR bstrSignInUrl, int16* pvfAuthenitcated) PassportAuthenticate;
+			}
 		}
 		[CRepr]
 		public struct IAutoComplete : IUnknown
 		{
 			public const new Guid IID = .(0x00bb2762, 0x6a77, 0x11d0, 0xa5, 0x35, 0x00, 0xc0, 0x4f, 0xd7, 0xd0, 0x62);
 			
-			public function HRESULT(IAutoComplete *self, HWND hwndEdit, IUnknown* punkACL, PWSTR pwszRegKeyPath, PWSTR pwszQuickComplete) Init;
-			public function HRESULT(IAutoComplete *self, BOOL fEnable) Enable;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAutoComplete *self, HWND hwndEdit, IUnknown* punkACL, PWSTR pwszRegKeyPath, PWSTR pwszQuickComplete) Init;
+				public function HRESULT(IAutoComplete *self, BOOL fEnable) Enable;
+			}
 		}
 		[CRepr]
 		public struct IAutoComplete2 : IAutoComplete
 		{
 			public const new Guid IID = .(0xeac04bc0, 0x3791, 0x11d2, 0xbb, 0x95, 0x00, 0x60, 0x97, 0x7b, 0x46, 0x4c);
 			
-			public function HRESULT(IAutoComplete2 *self, uint32 dwFlag) SetOptions;
-			public function HRESULT(IAutoComplete2 *self, uint32* pdwFlag) GetOptions;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IAutoComplete.VTable
+			{
+				public function HRESULT(IAutoComplete2 *self, uint32 dwFlag) SetOptions;
+				public function HRESULT(IAutoComplete2 *self, uint32* pdwFlag) GetOptions;
+			}
 		}
 		[CRepr]
 		public struct IEnumACString : IEnumString
 		{
 			public const new Guid IID = .(0x8e74c210, 0xcf9d, 0x4eaf, 0xa4, 0x03, 0x73, 0x56, 0x42, 0x8f, 0x0a, 0x5a);
 			
-			public function HRESULT(IEnumACString *self, char16* pszUrl, uint32 cchMax, uint32* pulSortIndex) NextItem;
-			public function HRESULT(IEnumACString *self, uint32 dwOptions) SetEnumOptions;
-			public function HRESULT(IEnumACString *self, uint32* pdwOptions) GetEnumOptions;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IEnumString.VTable
+			{
+				public function HRESULT(IEnumACString *self, char16* pszUrl, uint32 cchMax, uint32* pulSortIndex) NextItem;
+				public function HRESULT(IEnumACString *self, uint32 dwOptions) SetEnumOptions;
+				public function HRESULT(IEnumACString *self, uint32* pdwOptions) GetEnumOptions;
+			}
 		}
 		[CRepr]
 		public struct IDataObjectAsyncCapability : IUnknown
 		{
 			public const new Guid IID = .(0x3d8b0590, 0xf691, 0x11d2, 0x8e, 0xa9, 0x00, 0x60, 0x97, 0xdf, 0x5b, 0xd4);
 			
-			public function HRESULT(IDataObjectAsyncCapability *self, BOOL fDoOpAsync) SetAsyncMode;
-			public function HRESULT(IDataObjectAsyncCapability *self, BOOL* pfIsOpAsync) GetAsyncMode;
-			public function HRESULT(IDataObjectAsyncCapability *self, IBindCtx* pbcReserved) StartOperation;
-			public function HRESULT(IDataObjectAsyncCapability *self, BOOL* pfInAsyncOp) InOperation;
-			public function HRESULT(IDataObjectAsyncCapability *self, HRESULT hResult, IBindCtx* pbcReserved, uint32 dwEffects) EndOperation;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDataObjectAsyncCapability *self, BOOL fDoOpAsync) SetAsyncMode;
+				public function HRESULT(IDataObjectAsyncCapability *self, BOOL* pfIsOpAsync) GetAsyncMode;
+				public function HRESULT(IDataObjectAsyncCapability *self, IBindCtx* pbcReserved) StartOperation;
+				public function HRESULT(IDataObjectAsyncCapability *self, BOOL* pfInAsyncOp) InOperation;
+				public function HRESULT(IDataObjectAsyncCapability *self, HRESULT hResult, IBindCtx* pbcReserved, uint32 dwEffects) EndOperation;
+			}
 		}
 		[CRepr]
 		public struct IExtractIconA : IUnknown
 		{
 			public const new Guid IID = .(0x000214eb, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IExtractIconA *self, uint32 uFlags, uint8* pszIconFile, uint32 cchMax, int32* piIndex, uint32* pwFlags) GetIconLocation;
-			public function HRESULT(IExtractIconA *self, PSTR pszFile, uint32 nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint32 nIconSize) Extract;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IExtractIconA *self, uint32 uFlags, uint8* pszIconFile, uint32 cchMax, int32* piIndex, uint32* pwFlags) GetIconLocation;
+				public function HRESULT(IExtractIconA *self, PSTR pszFile, uint32 nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint32 nIconSize) Extract;
+			}
 		}
 		[CRepr]
 		public struct IExtractIconW : IUnknown
 		{
 			public const new Guid IID = .(0x000214fa, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IExtractIconW *self, uint32 uFlags, char16* pszIconFile, uint32 cchMax, int32* piIndex, uint32* pwFlags) GetIconLocation;
-			public function HRESULT(IExtractIconW *self, PWSTR pszFile, uint32 nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint32 nIconSize) Extract;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IExtractIconW *self, uint32 uFlags, char16* pszIconFile, uint32 cchMax, int32* piIndex, uint32* pwFlags) GetIconLocation;
+				public function HRESULT(IExtractIconW *self, PWSTR pszFile, uint32 nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint32 nIconSize) Extract;
+			}
 		}
 		[CRepr]
 		public struct IShellIconOverlayManager : IUnknown
 		{
 			public const new Guid IID = .(0xf10b5e34, 0xdd3b, 0x42a7, 0xaa, 0x7d, 0x2f, 0x4e, 0xc5, 0x4b, 0xb0, 0x9b);
 			
-			public function HRESULT(IShellIconOverlayManager *self, PWSTR pwszPath, uint32 dwAttrib, int32* pIndex, uint32 dwflags) GetFileOverlayInfo;
-			public function HRESULT(IShellIconOverlayManager *self, PWSTR pwszPath, uint32 dwAttrib, int32* pIndex, uint32 dwflags, int32 iReservedID) GetReservedOverlayInfo;
-			public function HRESULT(IShellIconOverlayManager *self, uint32 dwFlags) RefreshOverlayImages;
-			public function HRESULT(IShellIconOverlayManager *self) LoadNonloadedOverlayIdentifiers;
-			public function HRESULT(IShellIconOverlayManager *self, int32 iImage, int32* piIndex, BOOL fAdd) OverlayIndexFromImageIndex;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellIconOverlayManager *self, PWSTR pwszPath, uint32 dwAttrib, int32* pIndex, uint32 dwflags) GetFileOverlayInfo;
+				public function HRESULT(IShellIconOverlayManager *self, PWSTR pwszPath, uint32 dwAttrib, int32* pIndex, uint32 dwflags, int32 iReservedID) GetReservedOverlayInfo;
+				public function HRESULT(IShellIconOverlayManager *self, uint32 dwFlags) RefreshOverlayImages;
+				public function HRESULT(IShellIconOverlayManager *self) LoadNonloadedOverlayIdentifiers;
+				public function HRESULT(IShellIconOverlayManager *self, int32 iImage, int32* piIndex, BOOL fAdd) OverlayIndexFromImageIndex;
+			}
 		}
 		[CRepr]
 		public struct IShellIconOverlay : IUnknown
 		{
 			public const new Guid IID = .(0x7d688a70, 0xc613, 0x11d0, 0x99, 0x9b, 0x00, 0xc0, 0x4f, 0xd6, 0x55, 0xe1);
 			
-			public function HRESULT(IShellIconOverlay *self, ITEMIDLIST* pidl, int32* pIndex) GetOverlayIndex;
-			public function HRESULT(IShellIconOverlay *self, ITEMIDLIST* pidl, int32* pIconIndex) GetOverlayIconIndex;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellIconOverlay *self, ITEMIDLIST* pidl, int32* pIndex) GetOverlayIndex;
+				public function HRESULT(IShellIconOverlay *self, ITEMIDLIST* pidl, int32* pIconIndex) GetOverlayIconIndex;
+			}
 		}
 		[CRepr]
 		public struct IURLSearchHook : IUnknown
 		{
 			public const new Guid IID = .(0xac60f6a0, 0x0fd9, 0x11d0, 0x99, 0xcb, 0x00, 0xc0, 0x4f, 0xd6, 0x44, 0x97);
 			
-			public function HRESULT(IURLSearchHook *self, char16* pwszSearchURL, uint32 cchBufferSize) Translate;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IURLSearchHook *self, char16* pwszSearchURL, uint32 cchBufferSize) Translate;
+			}
 		}
 		[CRepr]
 		public struct ISearchContext : IUnknown
 		{
 			public const new Guid IID = .(0x09f656a2, 0x41af, 0x480c, 0x88, 0xf7, 0x16, 0xcc, 0x0d, 0x16, 0x46, 0x15);
 			
-			public function HRESULT(ISearchContext *self, BSTR* pbstrSearchUrl) GetSearchUrl;
-			public function HRESULT(ISearchContext *self, BSTR* pbstrSearchText) GetSearchText;
-			public function HRESULT(ISearchContext *self, uint32* pdwSearchStyle) GetSearchStyle;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISearchContext *self, BSTR* pbstrSearchUrl) GetSearchUrl;
+				public function HRESULT(ISearchContext *self, BSTR* pbstrSearchText) GetSearchText;
+				public function HRESULT(ISearchContext *self, uint32* pdwSearchStyle) GetSearchStyle;
+			}
 		}
 		[CRepr]
 		public struct IURLSearchHook2 : IURLSearchHook
 		{
 			public const new Guid IID = .(0x5ee44da4, 0x6d32, 0x46e3, 0x86, 0xbc, 0x07, 0x54, 0x0d, 0xed, 0xd0, 0xe0);
 			
-			public function HRESULT(IURLSearchHook2 *self, char16* pwszSearchURL, uint32 cchBufferSize, ISearchContext* pSearchContext) TranslateWithSearchContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IURLSearchHook.VTable
+			{
+				public function HRESULT(IURLSearchHook2 *self, char16* pwszSearchURL, uint32 cchBufferSize, ISearchContext* pSearchContext) TranslateWithSearchContext;
+			}
 		}
 		[CRepr]
 		public struct IShellDetails : IUnknown
 		{
 			public const new Guid IID = .(0x000214ec, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IShellDetails *self, ITEMIDLIST* pidl, uint32 iColumn, SHELLDETAILS* pDetails) GetDetailsOf;
-			public function HRESULT(IShellDetails *self, uint32 iColumn) ColumnClick;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellDetails *self, ITEMIDLIST* pidl, uint32 iColumn, SHELLDETAILS* pDetails) GetDetailsOf;
+				public function HRESULT(IShellDetails *self, uint32 iColumn) ColumnClick;
+			}
 		}
 		[CRepr]
 		public struct IObjMgr : IUnknown
 		{
 			public const new Guid IID = .(0x00bb2761, 0x6a77, 0x11d0, 0xa5, 0x35, 0x00, 0xc0, 0x4f, 0xd7, 0xd0, 0x62);
 			
-			public function HRESULT(IObjMgr *self, IUnknown* punk) Append;
-			public function HRESULT(IObjMgr *self, IUnknown* punk) Remove;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IObjMgr *self, IUnknown* punk) Append;
+				public function HRESULT(IObjMgr *self, IUnknown* punk) Remove;
+			}
 		}
 		[CRepr]
 		public struct IACList : IUnknown
 		{
 			public const new Guid IID = .(0x77a130b0, 0x94fd, 0x11d0, 0xa5, 0x44, 0x00, 0xc0, 0x4f, 0xd7, 0xd0, 0x62);
 			
-			public function HRESULT(IACList *self, PWSTR pszExpand) Expand;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IACList *self, PWSTR pszExpand) Expand;
+			}
 		}
 		[CRepr]
 		public struct IACList2 : IACList
 		{
 			public const new Guid IID = .(0x470141a0, 0x5186, 0x11d2, 0xbb, 0xb6, 0x00, 0x60, 0x97, 0x7b, 0x46, 0x4c);
 			
-			public function HRESULT(IACList2 *self, uint32 dwFlag) SetOptions;
-			public function HRESULT(IACList2 *self, uint32* pdwFlag) GetOptions;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IACList.VTable
+			{
+				public function HRESULT(IACList2 *self, uint32 dwFlag) SetOptions;
+				public function HRESULT(IACList2 *self, uint32* pdwFlag) GetOptions;
+			}
 		}
 		[CRepr]
 		public struct IProgressDialog : IUnknown
 		{
 			public const new Guid IID = .(0xebbc7c04, 0x315e, 0x11d2, 0xb6, 0x2f, 0x00, 0x60, 0x97, 0xdf, 0x5b, 0xd4);
 			
-			public function HRESULT(IProgressDialog *self, HWND hwndParent, IUnknown* punkEnableModless, uint32 dwFlags, void* pvResevered) StartProgressDialog;
-			public function HRESULT(IProgressDialog *self) StopProgressDialog;
-			public function HRESULT(IProgressDialog *self, PWSTR pwzTitle) SetTitle;
-			public function HRESULT(IProgressDialog *self, HINSTANCE hInstAnimation, uint32 idAnimation) SetAnimation;
-			public function BOOL(IProgressDialog *self) HasUserCancelled;
-			public function HRESULT(IProgressDialog *self, uint32 dwCompleted, uint32 dwTotal) SetProgress;
-			public function HRESULT(IProgressDialog *self, uint64 ullCompleted, uint64 ullTotal) SetProgress64;
-			public function HRESULT(IProgressDialog *self, uint32 dwLineNum, PWSTR pwzString, BOOL fCompactPath, void* pvResevered) SetLine;
-			public function HRESULT(IProgressDialog *self, PWSTR pwzCancelMsg, void* pvResevered) SetCancelMsg;
-			public function HRESULT(IProgressDialog *self, uint32 dwTimerAction, void* pvResevered) Timer;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IProgressDialog *self, HWND hwndParent, IUnknown* punkEnableModless, uint32 dwFlags, void* pvResevered) StartProgressDialog;
+				public function HRESULT(IProgressDialog *self) StopProgressDialog;
+				public function HRESULT(IProgressDialog *self, PWSTR pwzTitle) SetTitle;
+				public function HRESULT(IProgressDialog *self, HINSTANCE hInstAnimation, uint32 idAnimation) SetAnimation;
+				public function BOOL(IProgressDialog *self) HasUserCancelled;
+				public function HRESULT(IProgressDialog *self, uint32 dwCompleted, uint32 dwTotal) SetProgress;
+				public function HRESULT(IProgressDialog *self, uint64 ullCompleted, uint64 ullTotal) SetProgress64;
+				public function HRESULT(IProgressDialog *self, uint32 dwLineNum, PWSTR pwzString, BOOL fCompactPath, void* pvResevered) SetLine;
+				public function HRESULT(IProgressDialog *self, PWSTR pwzCancelMsg, void* pvResevered) SetCancelMsg;
+				public function HRESULT(IProgressDialog *self, uint32 dwTimerAction, void* pvResevered) Timer;
+			}
 		}
 		[CRepr]
 		public struct IDockingWindowSite : IOleWindow
 		{
 			public const new Guid IID = .(0x2a342fc2, 0x7b26, 0x11d0, 0x8c, 0xa9, 0x00, 0xa0, 0xc9, 0x2d, 0xbf, 0xe8);
 			
-			public function HRESULT(IDockingWindowSite *self, IUnknown* punkObj, RECT* prcBorder) GetBorderDW;
-			public function HRESULT(IDockingWindowSite *self, IUnknown* punkObj, RECT* pbw) RequestBorderSpaceDW;
-			public function HRESULT(IDockingWindowSite *self, IUnknown* punkObj, RECT* pbw) SetBorderSpaceDW;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IOleWindow.VTable
+			{
+				public function HRESULT(IDockingWindowSite *self, IUnknown* punkObj, RECT* prcBorder) GetBorderDW;
+				public function HRESULT(IDockingWindowSite *self, IUnknown* punkObj, RECT* pbw) RequestBorderSpaceDW;
+				public function HRESULT(IDockingWindowSite *self, IUnknown* punkObj, RECT* pbw) SetBorderSpaceDW;
+			}
 		}
 		[CRepr]
 		public struct IShellChangeNotify : IUnknown
 		{
 			public const new Guid IID = .(0xd82be2b1, 0x5764, 0x11d0, 0xa9, 0x6e, 0x00, 0xc0, 0x4f, 0xd7, 0x05, 0xa2);
 			
-			public function HRESULT(IShellChangeNotify *self, int32 lEvent, ITEMIDLIST* pidl1, ITEMIDLIST* pidl2) OnChange;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellChangeNotify *self, int32 lEvent, ITEMIDLIST* pidl1, ITEMIDLIST* pidl2) OnChange;
+			}
 		}
 		[CRepr]
 		public struct IQueryInfo : IUnknown
 		{
 			public const new Guid IID = .(0x00021500, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IQueryInfo *self, QITIPF_FLAGS dwFlags, PWSTR* ppwszTip) GetInfoTip;
-			public function HRESULT(IQueryInfo *self, uint32* pdwFlags) GetInfoFlags;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IQueryInfo *self, QITIPF_FLAGS dwFlags, PWSTR* ppwszTip) GetInfoTip;
+				public function HRESULT(IQueryInfo *self, uint32* pdwFlags) GetInfoFlags;
+			}
 		}
 		[CRepr]
 		public struct IShellFolderViewCB : IUnknown
 		{
 			public const new Guid IID = .(0x2047e320, 0xf2a9, 0x11ce, 0xae, 0x65, 0x08, 0x00, 0x2b, 0x2e, 0x12, 0x62);
 			
-			public function HRESULT(IShellFolderViewCB *self, SFVM_MESSAGE_ID uMsg, WPARAM wParam, LPARAM lParam) MessageSFVCB;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellFolderViewCB *self, SFVM_MESSAGE_ID uMsg, WPARAM wParam, LPARAM lParam) MessageSFVCB;
+			}
 		}
 		[CRepr]
 		public struct IShellFolderView : IUnknown
 		{
 			public const new Guid IID = .(0x37a378c0, 0xf82d, 0x11ce, 0xae, 0x65, 0x08, 0x00, 0x2b, 0x2e, 0x12, 0x62);
 			
-			public function HRESULT(IShellFolderView *self, LPARAM lParamSort) Rearrange;
-			public function HRESULT(IShellFolderView *self, LPARAM* plParamSort) GetArrangeParam;
-			public function HRESULT(IShellFolderView *self) ArrangeGrid;
-			public function HRESULT(IShellFolderView *self) AutoArrange;
-			public function HRESULT(IShellFolderView *self) GetAutoArrange;
-			public function HRESULT(IShellFolderView *self, ITEMIDLIST* pidl, uint32* puItem) AddObject;
-			public function HRESULT(IShellFolderView *self, ITEMIDLIST** ppidl, uint32 uItem) GetObject;
-			public function HRESULT(IShellFolderView *self, ITEMIDLIST* pidl, uint32* puItem) RemoveObject;
-			public function HRESULT(IShellFolderView *self, uint32* puCount) GetObjectCount;
-			public function HRESULT(IShellFolderView *self, uint32 uCount, uint32 dwFlags) SetObjectCount;
-			public function HRESULT(IShellFolderView *self, ITEMIDLIST* pidlOld, ITEMIDLIST* pidlNew, uint32* puItem) UpdateObject;
-			public function HRESULT(IShellFolderView *self, ITEMIDLIST* pidl, uint32* puItem) RefreshObject;
-			public function HRESULT(IShellFolderView *self, BOOL bRedraw) SetRedraw;
-			public function HRESULT(IShellFolderView *self, uint32* puSelected) GetSelectedCount;
-			public function HRESULT(IShellFolderView *self, ITEMIDLIST*** pppidl, uint32* puItems) GetSelectedObjects;
-			public function HRESULT(IShellFolderView *self, IDropTarget* pDropTarget) IsDropOnSource;
-			public function HRESULT(IShellFolderView *self, POINT* ppt) GetDragPoint;
-			public function HRESULT(IShellFolderView *self, POINT* ppt) GetDropPoint;
-			public function HRESULT(IShellFolderView *self, IDataObject* pDataObject) MoveIcons;
-			public function HRESULT(IShellFolderView *self, ITEMIDLIST* pidl, POINT* ppt) SetItemPos;
-			public function HRESULT(IShellFolderView *self, IDropTarget* pDropTarget) IsBkDropTarget;
-			public function HRESULT(IShellFolderView *self, BOOL bMove) SetClipboard;
-			public function HRESULT(IShellFolderView *self, IDataObject* pDataObject) SetPoints;
-			public function HRESULT(IShellFolderView *self, ITEMSPACING* pSpacing) GetItemSpacing;
-			public function HRESULT(IShellFolderView *self, IShellFolderViewCB* pNewCB, IShellFolderViewCB** ppOldCB) SetCallback;
-			public function HRESULT(IShellFolderView *self, SFVS_SELECT dwFlags) Select;
-			public function HRESULT(IShellFolderView *self, uint32* pdwSupport) QuerySupport;
-			public function HRESULT(IShellFolderView *self, IDispatch* pdisp) SetAutomationObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellFolderView *self, LPARAM lParamSort) Rearrange;
+				public function HRESULT(IShellFolderView *self, LPARAM* plParamSort) GetArrangeParam;
+				public function HRESULT(IShellFolderView *self) ArrangeGrid;
+				public function HRESULT(IShellFolderView *self) AutoArrange;
+				public function HRESULT(IShellFolderView *self) GetAutoArrange;
+				public function HRESULT(IShellFolderView *self, ITEMIDLIST* pidl, uint32* puItem) AddObject;
+				public function HRESULT(IShellFolderView *self, ITEMIDLIST** ppidl, uint32 uItem) GetObject;
+				public function HRESULT(IShellFolderView *self, ITEMIDLIST* pidl, uint32* puItem) RemoveObject;
+				public function HRESULT(IShellFolderView *self, uint32* puCount) GetObjectCount;
+				public function HRESULT(IShellFolderView *self, uint32 uCount, uint32 dwFlags) SetObjectCount;
+				public function HRESULT(IShellFolderView *self, ITEMIDLIST* pidlOld, ITEMIDLIST* pidlNew, uint32* puItem) UpdateObject;
+				public function HRESULT(IShellFolderView *self, ITEMIDLIST* pidl, uint32* puItem) RefreshObject;
+				public function HRESULT(IShellFolderView *self, BOOL bRedraw) SetRedraw;
+				public function HRESULT(IShellFolderView *self, uint32* puSelected) GetSelectedCount;
+				public function HRESULT(IShellFolderView *self, ITEMIDLIST*** pppidl, uint32* puItems) GetSelectedObjects;
+				public function HRESULT(IShellFolderView *self, IDropTarget* pDropTarget) IsDropOnSource;
+				public function HRESULT(IShellFolderView *self, POINT* ppt) GetDragPoint;
+				public function HRESULT(IShellFolderView *self, POINT* ppt) GetDropPoint;
+				public function HRESULT(IShellFolderView *self, IDataObject* pDataObject) MoveIcons;
+				public function HRESULT(IShellFolderView *self, ITEMIDLIST* pidl, POINT* ppt) SetItemPos;
+				public function HRESULT(IShellFolderView *self, IDropTarget* pDropTarget) IsBkDropTarget;
+				public function HRESULT(IShellFolderView *self, BOOL bMove) SetClipboard;
+				public function HRESULT(IShellFolderView *self, IDataObject* pDataObject) SetPoints;
+				public function HRESULT(IShellFolderView *self, ITEMSPACING* pSpacing) GetItemSpacing;
+				public function HRESULT(IShellFolderView *self, IShellFolderViewCB* pNewCB, IShellFolderViewCB** ppOldCB) SetCallback;
+				public function HRESULT(IShellFolderView *self, SFVS_SELECT dwFlags) Select;
+				public function HRESULT(IShellFolderView *self, uint32* pdwSupport) QuerySupport;
+				public function HRESULT(IShellFolderView *self, IDispatch* pdisp) SetAutomationObject;
+			}
 		}
 		[CRepr]
 		public struct INamedPropertyBag : IUnknown
 		{
 			public const new Guid IID = .(0xfb700430, 0x952c, 0x11d1, 0x94, 0x6f, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
 			
-			public function HRESULT(INamedPropertyBag *self, PWSTR pszBagname, PWSTR pszPropName, PROPVARIANT* pVar) ReadPropertyNPB;
-			public function HRESULT(INamedPropertyBag *self, PWSTR pszBagname, PWSTR pszPropName, PROPVARIANT* pVar) WritePropertyNPB;
-			public function HRESULT(INamedPropertyBag *self, PWSTR pszBagname, PWSTR pszPropName) RemovePropertyNPB;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INamedPropertyBag *self, PWSTR pszBagname, PWSTR pszPropName, PROPVARIANT* pVar) ReadPropertyNPB;
+				public function HRESULT(INamedPropertyBag *self, PWSTR pszBagname, PWSTR pszPropName, PROPVARIANT* pVar) WritePropertyNPB;
+				public function HRESULT(INamedPropertyBag *self, PWSTR pszBagname, PWSTR pszPropName) RemovePropertyNPB;
+			}
 		}
 		[CRepr]
 		public struct INewShortcutHookA : IUnknown
 		{
 			public const new Guid IID = .(0x000214e1, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(INewShortcutHookA *self, PSTR pcszReferent, HWND hwnd) SetReferent;
-			public function HRESULT(INewShortcutHookA *self, uint8* pszReferent, int32 cchReferent) GetReferent;
-			public function HRESULT(INewShortcutHookA *self, PSTR pcszFolder) SetFolder;
-			public function HRESULT(INewShortcutHookA *self, uint8* pszFolder, int32 cchFolder) GetFolder;
-			public function HRESULT(INewShortcutHookA *self, uint8* pszName, int32 cchName) GetName;
-			public function HRESULT(INewShortcutHookA *self, uint8* pszExtension, int32 cchExtension) GetExtension;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INewShortcutHookA *self, PSTR pcszReferent, HWND hwnd) SetReferent;
+				public function HRESULT(INewShortcutHookA *self, uint8* pszReferent, int32 cchReferent) GetReferent;
+				public function HRESULT(INewShortcutHookA *self, PSTR pcszFolder) SetFolder;
+				public function HRESULT(INewShortcutHookA *self, uint8* pszFolder, int32 cchFolder) GetFolder;
+				public function HRESULT(INewShortcutHookA *self, uint8* pszName, int32 cchName) GetName;
+				public function HRESULT(INewShortcutHookA *self, uint8* pszExtension, int32 cchExtension) GetExtension;
+			}
 		}
 		[CRepr]
 		public struct INewShortcutHookW : IUnknown
 		{
 			public const new Guid IID = .(0x000214f7, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(INewShortcutHookW *self, PWSTR pcszReferent, HWND hwnd) SetReferent;
-			public function HRESULT(INewShortcutHookW *self, char16* pszReferent, int32 cchReferent) GetReferent;
-			public function HRESULT(INewShortcutHookW *self, PWSTR pcszFolder) SetFolder;
-			public function HRESULT(INewShortcutHookW *self, char16* pszFolder, int32 cchFolder) GetFolder;
-			public function HRESULT(INewShortcutHookW *self, char16* pszName, int32 cchName) GetName;
-			public function HRESULT(INewShortcutHookW *self, char16* pszExtension, int32 cchExtension) GetExtension;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(INewShortcutHookW *self, PWSTR pcszReferent, HWND hwnd) SetReferent;
+				public function HRESULT(INewShortcutHookW *self, char16* pszReferent, int32 cchReferent) GetReferent;
+				public function HRESULT(INewShortcutHookW *self, PWSTR pcszFolder) SetFolder;
+				public function HRESULT(INewShortcutHookW *self, char16* pszFolder, int32 cchFolder) GetFolder;
+				public function HRESULT(INewShortcutHookW *self, char16* pszName, int32 cchName) GetName;
+				public function HRESULT(INewShortcutHookW *self, char16* pszExtension, int32 cchExtension) GetExtension;
+			}
 		}
 		[CRepr]
 		public struct ICopyHookA : IUnknown
 		{
 			public const new Guid IID = .(0x000214ef, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function uint32(ICopyHookA *self, HWND hwnd, uint32 wFunc, uint32 wFlags, PSTR pszSrcFile, uint32 dwSrcAttribs, PSTR pszDestFile, uint32 dwDestAttribs) CopyCallback;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function uint32(ICopyHookA *self, HWND hwnd, uint32 wFunc, uint32 wFlags, PSTR pszSrcFile, uint32 dwSrcAttribs, PSTR pszDestFile, uint32 dwDestAttribs) CopyCallback;
+			}
 		}
 		[CRepr]
 		public struct ICopyHookW : IUnknown
 		{
 			public const new Guid IID = .(0x000214fc, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function uint32(ICopyHookW *self, HWND hwnd, uint32 wFunc, uint32 wFlags, PWSTR pszSrcFile, uint32 dwSrcAttribs, PWSTR pszDestFile, uint32 dwDestAttribs) CopyCallback;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function uint32(ICopyHookW *self, HWND hwnd, uint32 wFunc, uint32 wFlags, PWSTR pszSrcFile, uint32 dwSrcAttribs, PWSTR pszDestFile, uint32 dwDestAttribs) CopyCallback;
+			}
 		}
 		[CRepr]
 		public struct ICurrentWorkingDirectory : IUnknown
 		{
 			public const new Guid IID = .(0x91956d21, 0x9276, 0x11d1, 0x92, 0x1a, 0x00, 0x60, 0x97, 0xdf, 0x5b, 0xd4);
 			
-			public function HRESULT(ICurrentWorkingDirectory *self, char16* pwzPath, uint32 cchSize) GetDirectory;
-			public function HRESULT(ICurrentWorkingDirectory *self, PWSTR pwzPath) SetDirectory;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICurrentWorkingDirectory *self, char16* pwzPath, uint32 cchSize) GetDirectory;
+				public function HRESULT(ICurrentWorkingDirectory *self, PWSTR pwzPath) SetDirectory;
+			}
 		}
 		[CRepr]
 		public struct IDockingWindowFrame : IOleWindow
 		{
 			public const new Guid IID = .(0x47d2657a, 0x7b27, 0x11d0, 0x8c, 0xa9, 0x00, 0xa0, 0xc9, 0x2d, 0xbf, 0xe8);
 			
-			public function HRESULT(IDockingWindowFrame *self, IUnknown* punkSrc, PWSTR pwszItem, uint32 dwAddFlags) AddToolbar;
-			public function HRESULT(IDockingWindowFrame *self, IUnknown* punkSrc, uint32 dwRemoveFlags) RemoveToolbar;
-			public function HRESULT(IDockingWindowFrame *self, PWSTR pwszItem, Guid* riid, void** ppv) FindToolbar;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IOleWindow.VTable
+			{
+				public function HRESULT(IDockingWindowFrame *self, IUnknown* punkSrc, PWSTR pwszItem, uint32 dwAddFlags) AddToolbar;
+				public function HRESULT(IDockingWindowFrame *self, IUnknown* punkSrc, uint32 dwRemoveFlags) RemoveToolbar;
+				public function HRESULT(IDockingWindowFrame *self, PWSTR pwszItem, Guid* riid, void** ppv) FindToolbar;
+			}
 		}
 		[CRepr]
 		public struct IThumbnailCapture : IUnknown
 		{
 			public const new Guid IID = .(0x4ea39266, 0x7211, 0x409f, 0xb6, 0x22, 0xf6, 0x3d, 0xbd, 0x16, 0xc5, 0x33);
 			
-			public function HRESULT(IThumbnailCapture *self, SIZE* pMaxSize, IUnknown* pHTMLDoc2, HBITMAP* phbmThumbnail) CaptureThumbnail;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IThumbnailCapture *self, SIZE* pMaxSize, IUnknown* pHTMLDoc2, HBITMAP* phbmThumbnail) CaptureThumbnail;
+			}
 		}
 		[CRepr]
 		public struct IShellFolderBand : IUnknown
 		{
 			public const new Guid IID = .(0x7fe80cc8, 0xc247, 0x11d0, 0xb9, 0x3a, 0x00, 0xa0, 0xc9, 0x03, 0x12, 0xe1);
 			
-			public function HRESULT(IShellFolderBand *self, IShellFolder* psf, ITEMIDLIST* pidl) InitializeSFB;
-			public function HRESULT(IShellFolderBand *self, BANDINFOSFB* pbi) SetBandInfoSFB;
-			public function HRESULT(IShellFolderBand *self, BANDINFOSFB* pbi) GetBandInfoSFB;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellFolderBand *self, IShellFolder* psf, ITEMIDLIST* pidl) InitializeSFB;
+				public function HRESULT(IShellFolderBand *self, BANDINFOSFB* pbi) SetBandInfoSFB;
+				public function HRESULT(IShellFolderBand *self, BANDINFOSFB* pbi) GetBandInfoSFB;
+			}
 		}
 		[CRepr]
 		public struct IDeskBarClient : IOleWindow
 		{
 			public const new Guid IID = .(0xeb0fe175, 0x1a3a, 0x11d0, 0x89, 0xb3, 0x00, 0xa0, 0xc9, 0x0a, 0x90, 0xac);
 			
-			public function HRESULT(IDeskBarClient *self, IUnknown* punkSite) SetDeskBarSite;
-			public function HRESULT(IDeskBarClient *self, uint32 dwMode) SetModeDBC;
-			public function HRESULT(IDeskBarClient *self, uint32 dwState) UIActivateDBC;
-			public function HRESULT(IDeskBarClient *self, uint32 dwWhich, RECT* prc) GetSize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IOleWindow.VTable
+			{
+				public function HRESULT(IDeskBarClient *self, IUnknown* punkSite) SetDeskBarSite;
+				public function HRESULT(IDeskBarClient *self, uint32 dwMode) SetModeDBC;
+				public function HRESULT(IDeskBarClient *self, uint32 dwState) UIActivateDBC;
+				public function HRESULT(IDeskBarClient *self, uint32 dwWhich, RECT* prc) GetSize;
+			}
 		}
 		[CRepr]
 		public struct IColumnProvider : IUnknown
 		{
 			public const new Guid IID = .(0xe8025004, 0x1c42, 0x11d2, 0xbe, 0x2c, 0x00, 0xa0, 0xc9, 0xa8, 0x3d, 0xa1);
 			
-			public function HRESULT(IColumnProvider *self, SHCOLUMNINIT* psci) Initialize;
-			public function HRESULT(IColumnProvider *self, uint32 dwIndex, SHCOLUMNINFO* psci) GetColumnInfo;
-			public function HRESULT(IColumnProvider *self, PROPERTYKEY* pscid, SHCOLUMNDATA* pscd, VARIANT* pvarData) GetItemData;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IColumnProvider *self, SHCOLUMNINIT* psci) Initialize;
+				public function HRESULT(IColumnProvider *self, uint32 dwIndex, SHCOLUMNINFO* psci) GetColumnInfo;
+				public function HRESULT(IColumnProvider *self, PROPERTYKEY* pscid, SHCOLUMNDATA* pscd, VARIANT* pvarData) GetItemData;
+			}
 		}
 		[CRepr]
 		public struct IDocViewSite : IUnknown
 		{
 			public const new Guid IID = .(0x87d605e0, 0xc511, 0x11cf, 0x89, 0xa9, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x29);
 			
-			public function HRESULT(IDocViewSite *self, VARIANT* pvTitle) OnSetTitle;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDocViewSite *self, VARIANT* pvTitle) OnSetTitle;
+			}
 		}
 		[CRepr]
 		public struct IInitializeObject : IUnknown
 		{
 			public const new Guid IID = .(0x4622ad16, 0xff23, 0x11d0, 0x8d, 0x34, 0x00, 0xa0, 0xc9, 0x0f, 0x27, 0x19);
 			
-			public function HRESULT(IInitializeObject *self) Initialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInitializeObject *self) Initialize;
+			}
 		}
 		[CRepr]
 		public struct IBanneredBar : IUnknown
 		{
 			public const new Guid IID = .(0x596a9a94, 0x013e, 0x11d1, 0x8d, 0x34, 0x00, 0xa0, 0xc9, 0x0f, 0x27, 0x19);
 			
-			public function HRESULT(IBanneredBar *self, uint32 iIcon) SetIconSize;
-			public function HRESULT(IBanneredBar *self, uint32* piIcon) GetIconSize;
-			public function HRESULT(IBanneredBar *self, HBITMAP hBitmap) SetBitmap;
-			public function HRESULT(IBanneredBar *self, HBITMAP* phBitmap) GetBitmap;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IBanneredBar *self, uint32 iIcon) SetIconSize;
+				public function HRESULT(IBanneredBar *self, uint32* piIcon) GetIconSize;
+				public function HRESULT(IBanneredBar *self, HBITMAP hBitmap) SetBitmap;
+				public function HRESULT(IBanneredBar *self, HBITMAP* phBitmap) GetBitmap;
+			}
 		}
 		[CRepr]
 		public struct IQueryAssociations : IUnknown
 		{
 			public const new Guid IID = .(0xc46ca590, 0x3c3f, 0x11d2, 0xbe, 0xe6, 0x00, 0x00, 0xf8, 0x05, 0xca, 0x57);
 			
-			public function HRESULT(IQueryAssociations *self, uint32 flags, PWSTR pszAssoc, HKEY hkProgid, HWND hwnd) Init;
-			public function HRESULT(IQueryAssociations *self, uint32 flags, ASSOCSTR str, PWSTR pszExtra, char16* pszOut, uint32* pcchOut) GetString;
-			public function HRESULT(IQueryAssociations *self, uint32 flags, ASSOCKEY key, PWSTR pszExtra, HKEY* phkeyOut) GetKey;
-			public function HRESULT(IQueryAssociations *self, uint32 flags, ASSOCDATA data, PWSTR pszExtra, void* pvOut, uint32* pcbOut) GetData;
-			public function HRESULT(IQueryAssociations *self, uint32 flags, ASSOCENUM assocenum, PWSTR pszExtra, Guid* riid, void** ppvOut) GetEnum;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IQueryAssociations *self, uint32 flags, PWSTR pszAssoc, HKEY hkProgid, HWND hwnd) Init;
+				public function HRESULT(IQueryAssociations *self, uint32 flags, ASSOCSTR str, PWSTR pszExtra, char16* pszOut, uint32* pcchOut) GetString;
+				public function HRESULT(IQueryAssociations *self, uint32 flags, ASSOCKEY key, PWSTR pszExtra, HKEY* phkeyOut) GetKey;
+				public function HRESULT(IQueryAssociations *self, uint32 flags, ASSOCDATA data, PWSTR pszExtra, void* pvOut, uint32* pcbOut) GetData;
+				public function HRESULT(IQueryAssociations *self, uint32 flags, ASSOCENUM assocenum, PWSTR pszExtra, Guid* riid, void** ppvOut) GetEnum;
+			}
 		}
 		[CRepr]
 		public struct IShellApp : IUnknown
 		{
 			public const new Guid IID = .(0xa3e14960, 0x935f, 0x11d1, 0xb8, 0xb8, 0x00, 0x60, 0x08, 0x05, 0x93, 0x82);
 			
-			public function HRESULT(IShellApp *self, APPINFODATA* pai) GetAppInfo;
-			public function HRESULT(IShellApp *self, uint32* pdwActions) GetPossibleActions;
-			public function HRESULT(IShellApp *self, SLOWAPPINFO* psaid) GetSlowAppInfo;
-			public function HRESULT(IShellApp *self, SLOWAPPINFO* psaid) GetCachedSlowAppInfo;
-			public function HRESULT(IShellApp *self) IsInstalled;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellApp *self, APPINFODATA* pai) GetAppInfo;
+				public function HRESULT(IShellApp *self, uint32* pdwActions) GetPossibleActions;
+				public function HRESULT(IShellApp *self, SLOWAPPINFO* psaid) GetSlowAppInfo;
+				public function HRESULT(IShellApp *self, SLOWAPPINFO* psaid) GetCachedSlowAppInfo;
+				public function HRESULT(IShellApp *self) IsInstalled;
+			}
 		}
 		[CRepr]
 		public struct IPublishedApp : IShellApp
 		{
 			public const new Guid IID = .(0x1bc752e0, 0x9046, 0x11d1, 0xb8, 0xb3, 0x00, 0x60, 0x08, 0x05, 0x93, 0x82);
 			
-			public function HRESULT(IPublishedApp *self, SYSTEMTIME* pstInstall) Install;
-			public function HRESULT(IPublishedApp *self, PUBAPPINFO* ppai) GetPublishedAppInfo;
-			public function HRESULT(IPublishedApp *self) Unschedule;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellApp.VTable
+			{
+				public function HRESULT(IPublishedApp *self, SYSTEMTIME* pstInstall) Install;
+				public function HRESULT(IPublishedApp *self, PUBAPPINFO* ppai) GetPublishedAppInfo;
+				public function HRESULT(IPublishedApp *self) Unschedule;
+			}
 		}
 		[CRepr]
 		public struct IPublishedApp2 : IPublishedApp
 		{
 			public const new Guid IID = .(0x12b81347, 0x1b3a, 0x4a04, 0xaa, 0x61, 0x3f, 0x76, 0x8b, 0x67, 0xfd, 0x7e);
 			
-			public function HRESULT(IPublishedApp2 *self, SYSTEMTIME* pstInstall, HWND hwndParent) Install2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IPublishedApp.VTable
+			{
+				public function HRESULT(IPublishedApp2 *self, SYSTEMTIME* pstInstall, HWND hwndParent) Install2;
+			}
 		}
 		[CRepr]
 		public struct IEnumPublishedApps : IUnknown
 		{
 			public const new Guid IID = .(0x0b124f8c, 0x91f0, 0x11d1, 0xb8, 0xb5, 0x00, 0x60, 0x08, 0x05, 0x93, 0x82);
 			
-			public function HRESULT(IEnumPublishedApps *self, IPublishedApp** pia) Next;
-			public function HRESULT(IEnumPublishedApps *self) Reset;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumPublishedApps *self, IPublishedApp** pia) Next;
+				public function HRESULT(IEnumPublishedApps *self) Reset;
+			}
 		}
 		[CRepr]
 		public struct IAppPublisher : IUnknown
 		{
 			public const new Guid IID = .(0x07250a10, 0x9cf9, 0x11d1, 0x90, 0x76, 0x00, 0x60, 0x08, 0x05, 0x93, 0x82);
 			
-			public function HRESULT(IAppPublisher *self, uint32* pdwCat) GetNumberOfCategories;
-			public function HRESULT(IAppPublisher *self, APPCATEGORYINFOLIST* pAppCategoryList) GetCategories;
-			public function HRESULT(IAppPublisher *self, uint32* pdwApps) GetNumberOfApps;
-			public function HRESULT(IAppPublisher *self, Guid* pAppCategoryId, IEnumPublishedApps** ppepa) EnumApps;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAppPublisher *self, uint32* pdwCat) GetNumberOfCategories;
+				public function HRESULT(IAppPublisher *self, APPCATEGORYINFOLIST* pAppCategoryList) GetCategories;
+				public function HRESULT(IAppPublisher *self, uint32* pdwApps) GetNumberOfApps;
+				public function HRESULT(IAppPublisher *self, Guid* pAppCategoryId, IEnumPublishedApps** ppepa) EnumApps;
+			}
 		}
 		[CRepr]
 		public struct ICredentialProviderCredential : IUnknown
 		{
 			public const new Guid IID = .(0x63913a93, 0x40c1, 0x481a, 0x81, 0x8d, 0x40, 0x72, 0xff, 0x8c, 0x70, 0xcc);
 			
-			public function HRESULT(ICredentialProviderCredential *self, ICredentialProviderCredentialEvents* pcpce) Advise;
-			public function HRESULT(ICredentialProviderCredential *self) UnAdvise;
-			public function HRESULT(ICredentialProviderCredential *self, BOOL* pbAutoLogon) SetSelected;
-			public function HRESULT(ICredentialProviderCredential *self) SetDeselected;
-			public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, CREDENTIAL_PROVIDER_FIELD_STATE* pcpfs, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE* pcpfis) GetFieldState;
-			public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, PWSTR* ppsz) GetStringValue;
-			public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, HBITMAP* phbmp) GetBitmapValue;
-			public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, BOOL* pbChecked, PWSTR* ppszLabel) GetCheckboxValue;
-			public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, uint32* pdwAdjacentTo) GetSubmitButtonValue;
-			public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, uint32* pcItems, uint32* pdwSelectedItem) GetComboBoxValueCount;
-			public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, uint32 dwItem, PWSTR* ppszItem) GetComboBoxValueAt;
-			public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, PWSTR psz) SetStringValue;
-			public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, BOOL bChecked) SetCheckboxValue;
-			public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, uint32 dwSelectedItem) SetComboBoxSelectedValue;
-			public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID) CommandLinkClicked;
-			public function HRESULT(ICredentialProviderCredential *self, CREDENTIAL_PROVIDER_GET_SERIALIZATION_RESPONSE* pcpgsr, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcs, PWSTR* ppszOptionalStatusText, CREDENTIAL_PROVIDER_STATUS_ICON* pcpsiOptionalStatusIcon) GetSerialization;
-			public function HRESULT(ICredentialProviderCredential *self, NTSTATUS ntsStatus, NTSTATUS ntsSubstatus, PWSTR* ppszOptionalStatusText, CREDENTIAL_PROVIDER_STATUS_ICON* pcpsiOptionalStatusIcon) ReportResult;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICredentialProviderCredential *self, ICredentialProviderCredentialEvents* pcpce) Advise;
+				public function HRESULT(ICredentialProviderCredential *self) UnAdvise;
+				public function HRESULT(ICredentialProviderCredential *self, BOOL* pbAutoLogon) SetSelected;
+				public function HRESULT(ICredentialProviderCredential *self) SetDeselected;
+				public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, CREDENTIAL_PROVIDER_FIELD_STATE* pcpfs, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE* pcpfis) GetFieldState;
+				public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, PWSTR* ppsz) GetStringValue;
+				public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, HBITMAP* phbmp) GetBitmapValue;
+				public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, BOOL* pbChecked, PWSTR* ppszLabel) GetCheckboxValue;
+				public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, uint32* pdwAdjacentTo) GetSubmitButtonValue;
+				public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, uint32* pcItems, uint32* pdwSelectedItem) GetComboBoxValueCount;
+				public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, uint32 dwItem, PWSTR* ppszItem) GetComboBoxValueAt;
+				public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, PWSTR psz) SetStringValue;
+				public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, BOOL bChecked) SetCheckboxValue;
+				public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID, uint32 dwSelectedItem) SetComboBoxSelectedValue;
+				public function HRESULT(ICredentialProviderCredential *self, uint32 dwFieldID) CommandLinkClicked;
+				public function HRESULT(ICredentialProviderCredential *self, CREDENTIAL_PROVIDER_GET_SERIALIZATION_RESPONSE* pcpgsr, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcs, PWSTR* ppszOptionalStatusText, CREDENTIAL_PROVIDER_STATUS_ICON* pcpsiOptionalStatusIcon) GetSerialization;
+				public function HRESULT(ICredentialProviderCredential *self, NTSTATUS ntsStatus, NTSTATUS ntsSubstatus, PWSTR* ppszOptionalStatusText, CREDENTIAL_PROVIDER_STATUS_ICON* pcpsiOptionalStatusIcon) ReportResult;
+			}
 		}
 		[CRepr]
 		public struct IQueryContinueWithStatus : IQueryContinue
 		{
 			public const new Guid IID = .(0x9090be5b, 0x502b, 0x41fb, 0xbc, 0xcc, 0x00, 0x49, 0xa6, 0xc7, 0x25, 0x4b);
 			
-			public function HRESULT(IQueryContinueWithStatus *self, PWSTR psz) SetStatusMessage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IQueryContinue.VTable
+			{
+				public function HRESULT(IQueryContinueWithStatus *self, PWSTR psz) SetStatusMessage;
+			}
 		}
 		[CRepr]
 		public struct IConnectableCredentialProviderCredential : ICredentialProviderCredential
 		{
 			public const new Guid IID = .(0x9387928b, 0xac75, 0x4bf9, 0x8a, 0xb2, 0x2b, 0x93, 0xc4, 0xa5, 0x52, 0x90);
 			
-			public function HRESULT(IConnectableCredentialProviderCredential *self, IQueryContinueWithStatus* pqcws) Connect;
-			public function HRESULT(IConnectableCredentialProviderCredential *self) Disconnect;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICredentialProviderCredential.VTable
+			{
+				public function HRESULT(IConnectableCredentialProviderCredential *self, IQueryContinueWithStatus* pqcws) Connect;
+				public function HRESULT(IConnectableCredentialProviderCredential *self) Disconnect;
+			}
 		}
 		[CRepr]
 		public struct ICredentialProviderCredentialEvents : IUnknown
 		{
 			public const new Guid IID = .(0xfa6fa76b, 0x66b7, 0x4b11, 0x95, 0xf1, 0x86, 0x17, 0x11, 0x18, 0xe8, 0x16);
 			
-			public function HRESULT(ICredentialProviderCredentialEvents *self, ICredentialProviderCredential* pcpc, uint32 dwFieldID, CREDENTIAL_PROVIDER_FIELD_STATE cpfs) SetFieldState;
-			public function HRESULT(ICredentialProviderCredentialEvents *self, ICredentialProviderCredential* pcpc, uint32 dwFieldID, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE cpfis) SetFieldInteractiveState;
-			public function HRESULT(ICredentialProviderCredentialEvents *self, ICredentialProviderCredential* pcpc, uint32 dwFieldID, PWSTR psz) SetFieldString;
-			public function HRESULT(ICredentialProviderCredentialEvents *self, ICredentialProviderCredential* pcpc, uint32 dwFieldID, BOOL bChecked, PWSTR pszLabel) SetFieldCheckbox;
-			public function HRESULT(ICredentialProviderCredentialEvents *self, ICredentialProviderCredential* pcpc, uint32 dwFieldID, HBITMAP hbmp) SetFieldBitmap;
-			public function HRESULT(ICredentialProviderCredentialEvents *self, ICredentialProviderCredential* pcpc, uint32 dwFieldID, uint32 dwSelectedItem) SetFieldComboBoxSelectedItem;
-			public function HRESULT(ICredentialProviderCredentialEvents *self, ICredentialProviderCredential* pcpc, uint32 dwFieldID, uint32 dwItem) DeleteFieldComboBoxItem;
-			public function HRESULT(ICredentialProviderCredentialEvents *self, ICredentialProviderCredential* pcpc, uint32 dwFieldID, PWSTR pszItem) AppendFieldComboBoxItem;
-			public function HRESULT(ICredentialProviderCredentialEvents *self, ICredentialProviderCredential* pcpc, uint32 dwFieldID, uint32 dwAdjacentTo) SetFieldSubmitButton;
-			public function HRESULT(ICredentialProviderCredentialEvents *self, HWND* phwndOwner) OnCreatingWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICredentialProviderCredentialEvents *self, ICredentialProviderCredential* pcpc, uint32 dwFieldID, CREDENTIAL_PROVIDER_FIELD_STATE cpfs) SetFieldState;
+				public function HRESULT(ICredentialProviderCredentialEvents *self, ICredentialProviderCredential* pcpc, uint32 dwFieldID, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE cpfis) SetFieldInteractiveState;
+				public function HRESULT(ICredentialProviderCredentialEvents *self, ICredentialProviderCredential* pcpc, uint32 dwFieldID, PWSTR psz) SetFieldString;
+				public function HRESULT(ICredentialProviderCredentialEvents *self, ICredentialProviderCredential* pcpc, uint32 dwFieldID, BOOL bChecked, PWSTR pszLabel) SetFieldCheckbox;
+				public function HRESULT(ICredentialProviderCredentialEvents *self, ICredentialProviderCredential* pcpc, uint32 dwFieldID, HBITMAP hbmp) SetFieldBitmap;
+				public function HRESULT(ICredentialProviderCredentialEvents *self, ICredentialProviderCredential* pcpc, uint32 dwFieldID, uint32 dwSelectedItem) SetFieldComboBoxSelectedItem;
+				public function HRESULT(ICredentialProviderCredentialEvents *self, ICredentialProviderCredential* pcpc, uint32 dwFieldID, uint32 dwItem) DeleteFieldComboBoxItem;
+				public function HRESULT(ICredentialProviderCredentialEvents *self, ICredentialProviderCredential* pcpc, uint32 dwFieldID, PWSTR pszItem) AppendFieldComboBoxItem;
+				public function HRESULT(ICredentialProviderCredentialEvents *self, ICredentialProviderCredential* pcpc, uint32 dwFieldID, uint32 dwAdjacentTo) SetFieldSubmitButton;
+				public function HRESULT(ICredentialProviderCredentialEvents *self, HWND* phwndOwner) OnCreatingWindow;
+			}
 		}
 		[CRepr]
 		public struct ICredentialProvider : IUnknown
 		{
 			public const new Guid IID = .(0xd27c3481, 0x5a1c, 0x45b2, 0x8a, 0xaa, 0xc2, 0x0e, 0xbb, 0xe8, 0x22, 0x9e);
 			
-			public function HRESULT(ICredentialProvider *self, CREDENTIAL_PROVIDER_USAGE_SCENARIO cpus, uint32 dwFlags) SetUsageScenario;
-			public function HRESULT(ICredentialProvider *self, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcs) SetSerialization;
-			public function HRESULT(ICredentialProvider *self, ICredentialProviderEvents* pcpe, uint upAdviseContext) Advise;
-			public function HRESULT(ICredentialProvider *self) UnAdvise;
-			public function HRESULT(ICredentialProvider *self, uint32* pdwCount) GetFieldDescriptorCount;
-			public function HRESULT(ICredentialProvider *self, uint32 dwIndex, CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR** ppcpfd) GetFieldDescriptorAt;
-			public function HRESULT(ICredentialProvider *self, uint32* pdwCount, uint32* pdwDefault, BOOL* pbAutoLogonWithDefault) GetCredentialCount;
-			public function HRESULT(ICredentialProvider *self, uint32 dwIndex, ICredentialProviderCredential** ppcpc) GetCredentialAt;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICredentialProvider *self, CREDENTIAL_PROVIDER_USAGE_SCENARIO cpus, uint32 dwFlags) SetUsageScenario;
+				public function HRESULT(ICredentialProvider *self, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcs) SetSerialization;
+				public function HRESULT(ICredentialProvider *self, ICredentialProviderEvents* pcpe, uint upAdviseContext) Advise;
+				public function HRESULT(ICredentialProvider *self) UnAdvise;
+				public function HRESULT(ICredentialProvider *self, uint32* pdwCount) GetFieldDescriptorCount;
+				public function HRESULT(ICredentialProvider *self, uint32 dwIndex, CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR** ppcpfd) GetFieldDescriptorAt;
+				public function HRESULT(ICredentialProvider *self, uint32* pdwCount, uint32* pdwDefault, BOOL* pbAutoLogonWithDefault) GetCredentialCount;
+				public function HRESULT(ICredentialProvider *self, uint32 dwIndex, ICredentialProviderCredential** ppcpc) GetCredentialAt;
+			}
 		}
 		[CRepr]
 		public struct ICredentialProviderEvents : IUnknown
 		{
 			public const new Guid IID = .(0x34201e5a, 0xa787, 0x41a3, 0xa5, 0xa4, 0xbd, 0x6d, 0xcf, 0x2a, 0x85, 0x4e);
 			
-			public function HRESULT(ICredentialProviderEvents *self, uint upAdviseContext) CredentialsChanged;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICredentialProviderEvents *self, uint upAdviseContext) CredentialsChanged;
+			}
 		}
 		[CRepr]
 		public struct ICredentialProviderFilter : IUnknown
 		{
 			public const new Guid IID = .(0xa5da53f9, 0xd475, 0x4080, 0xa1, 0x20, 0x91, 0x0c, 0x4a, 0x73, 0x98, 0x80);
 			
-			public function HRESULT(ICredentialProviderFilter *self, CREDENTIAL_PROVIDER_USAGE_SCENARIO cpus, uint32 dwFlags, Guid* rgclsidProviders, BOOL* rgbAllow, uint32 cProviders) Filter;
-			public function HRESULT(ICredentialProviderFilter *self, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcsIn, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcsOut) UpdateRemoteCredential;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICredentialProviderFilter *self, CREDENTIAL_PROVIDER_USAGE_SCENARIO cpus, uint32 dwFlags, Guid* rgclsidProviders, BOOL* rgbAllow, uint32 cProviders) Filter;
+				public function HRESULT(ICredentialProviderFilter *self, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcsIn, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcsOut) UpdateRemoteCredential;
+			}
 		}
 		[CRepr]
 		public struct ICredentialProviderCredential2 : ICredentialProviderCredential
 		{
 			public const new Guid IID = .(0xfd672c54, 0x40ea, 0x4d6e, 0x9b, 0x49, 0xcf, 0xb1, 0xa7, 0x50, 0x7b, 0xd7);
 			
-			public function HRESULT(ICredentialProviderCredential2 *self, PWSTR* sid) GetUserSid;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICredentialProviderCredential.VTable
+			{
+				public function HRESULT(ICredentialProviderCredential2 *self, PWSTR* sid) GetUserSid;
+			}
 		}
 		[CRepr]
 		public struct ICredentialProviderCredentialWithFieldOptions : IUnknown
 		{
 			public const new Guid IID = .(0xdbc6fb30, 0xc843, 0x49e3, 0xa6, 0x45, 0x57, 0x3e, 0x6f, 0x39, 0x44, 0x6a);
 			
-			public function HRESULT(ICredentialProviderCredentialWithFieldOptions *self, uint32 fieldID, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS* options) GetFieldOptions;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICredentialProviderCredentialWithFieldOptions *self, uint32 fieldID, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS* options) GetFieldOptions;
+			}
 		}
 		[CRepr]
 		public struct ICredentialProviderCredentialEvents2 : ICredentialProviderCredentialEvents
 		{
 			public const new Guid IID = .(0xb53c00b6, 0x9922, 0x4b78, 0xb1, 0xf4, 0xdd, 0xfe, 0x77, 0x4d, 0xc3, 0x9b);
 			
-			public function HRESULT(ICredentialProviderCredentialEvents2 *self) BeginFieldUpdates;
-			public function HRESULT(ICredentialProviderCredentialEvents2 *self) EndFieldUpdates;
-			public function HRESULT(ICredentialProviderCredentialEvents2 *self, ICredentialProviderCredential* credential, uint32 fieldID, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS options) SetFieldOptions;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ICredentialProviderCredentialEvents.VTable
+			{
+				public function HRESULT(ICredentialProviderCredentialEvents2 *self) BeginFieldUpdates;
+				public function HRESULT(ICredentialProviderCredentialEvents2 *self) EndFieldUpdates;
+				public function HRESULT(ICredentialProviderCredentialEvents2 *self, ICredentialProviderCredential* credential, uint32 fieldID, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS options) SetFieldOptions;
+			}
 		}
 		[CRepr]
 		public struct ICredentialProviderUser : IUnknown
 		{
 			public const new Guid IID = .(0x13793285, 0x3ea6, 0x40fd, 0xb4, 0x20, 0x15, 0xf4, 0x7d, 0xa4, 0x1f, 0xbb);
 			
-			public function HRESULT(ICredentialProviderUser *self, PWSTR* sid) GetSid;
-			public function HRESULT(ICredentialProviderUser *self, Guid* providerID) GetProviderID;
-			public function HRESULT(ICredentialProviderUser *self, PROPERTYKEY* key, PWSTR* stringValue) GetStringValue;
-			public function HRESULT(ICredentialProviderUser *self, PROPERTYKEY* key, PROPVARIANT* value) GetValue;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICredentialProviderUser *self, PWSTR* sid) GetSid;
+				public function HRESULT(ICredentialProviderUser *self, Guid* providerID) GetProviderID;
+				public function HRESULT(ICredentialProviderUser *self, PROPERTYKEY* key, PWSTR* stringValue) GetStringValue;
+				public function HRESULT(ICredentialProviderUser *self, PROPERTYKEY* key, PROPVARIANT* value) GetValue;
+			}
 		}
 		[CRepr]
 		public struct ICredentialProviderUserArray : IUnknown
 		{
 			public const new Guid IID = .(0x90c119ae, 0x0f18, 0x4520, 0xa1, 0xf1, 0x11, 0x43, 0x66, 0xa4, 0x0f, 0xe8);
 			
-			public function HRESULT(ICredentialProviderUserArray *self, Guid* guidProviderToFilterTo) SetProviderFilter;
-			public function HRESULT(ICredentialProviderUserArray *self, CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS* credentialProviderAccountOptions) GetAccountOptions;
-			public function HRESULT(ICredentialProviderUserArray *self, uint32* userCount) GetCount;
-			public function HRESULT(ICredentialProviderUserArray *self, uint32 userIndex, ICredentialProviderUser** user) GetAt;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICredentialProviderUserArray *self, Guid* guidProviderToFilterTo) SetProviderFilter;
+				public function HRESULT(ICredentialProviderUserArray *self, CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS* credentialProviderAccountOptions) GetAccountOptions;
+				public function HRESULT(ICredentialProviderUserArray *self, uint32* userCount) GetCount;
+				public function HRESULT(ICredentialProviderUserArray *self, uint32 userIndex, ICredentialProviderUser** user) GetAt;
+			}
 		}
 		[CRepr]
 		public struct ICredentialProviderSetUserArray : IUnknown
 		{
 			public const new Guid IID = .(0x095c1484, 0x1c0c, 0x4388, 0x9c, 0x6d, 0x50, 0x0e, 0x61, 0xbf, 0x84, 0xbd);
 			
-			public function HRESULT(ICredentialProviderSetUserArray *self, ICredentialProviderUserArray* users) SetUserArray;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICredentialProviderSetUserArray *self, ICredentialProviderUserArray* users) SetUserArray;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrHandlerCollection : IUnknown
 		{
 			public const new Guid IID = .(0xa7f337a3, 0xd20b, 0x45cb, 0x9e, 0xd7, 0x87, 0xd0, 0x94, 0xca, 0x50, 0x45);
 			
-			public function HRESULT(ISyncMgrHandlerCollection *self, IEnumString** ppenum) GetHandlerEnumerator;
-			public function HRESULT(ISyncMgrHandlerCollection *self, PWSTR pszHandlerID, Guid* riid, void** ppv) BindToHandler;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrHandlerCollection *self, IEnumString** ppenum) GetHandlerEnumerator;
+				public function HRESULT(ISyncMgrHandlerCollection *self, PWSTR pszHandlerID, Guid* riid, void** ppv) BindToHandler;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrHandler : IUnknown
 		{
 			public const new Guid IID = .(0x04ec2e43, 0xac77, 0x49f9, 0x9b, 0x98, 0x03, 0x07, 0xef, 0x7a, 0x72, 0xa2);
 			
-			public function HRESULT(ISyncMgrHandler *self, PWSTR* ppszName) GetName;
-			public function HRESULT(ISyncMgrHandler *self, ISyncMgrHandlerInfo** ppHandlerInfo) GetHandlerInfo;
-			public function HRESULT(ISyncMgrHandler *self, Guid* rguidObjectID, Guid* riid, void** ppv) GetObject;
-			public function HRESULT(ISyncMgrHandler *self, SYNCMGR_HANDLER_CAPABILITIES* pmCapabilities) GetCapabilities;
-			public function HRESULT(ISyncMgrHandler *self, SYNCMGR_HANDLER_POLICIES* pmPolicies) GetPolicies;
-			public function HRESULT(ISyncMgrHandler *self, BOOL fActivate) Activate;
-			public function HRESULT(ISyncMgrHandler *self, BOOL fEnable) Enable;
-			public function HRESULT(ISyncMgrHandler *self, PWSTR* ppszItemIDs, uint32 cItems, HWND hwndOwner, ISyncMgrSessionCreator* pSessionCreator, IUnknown* punk) Synchronize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrHandler *self, PWSTR* ppszName) GetName;
+				public function HRESULT(ISyncMgrHandler *self, ISyncMgrHandlerInfo** ppHandlerInfo) GetHandlerInfo;
+				public function HRESULT(ISyncMgrHandler *self, Guid* rguidObjectID, Guid* riid, void** ppv) GetObject;
+				public function HRESULT(ISyncMgrHandler *self, SYNCMGR_HANDLER_CAPABILITIES* pmCapabilities) GetCapabilities;
+				public function HRESULT(ISyncMgrHandler *self, SYNCMGR_HANDLER_POLICIES* pmPolicies) GetPolicies;
+				public function HRESULT(ISyncMgrHandler *self, BOOL fActivate) Activate;
+				public function HRESULT(ISyncMgrHandler *self, BOOL fEnable) Enable;
+				public function HRESULT(ISyncMgrHandler *self, PWSTR* ppszItemIDs, uint32 cItems, HWND hwndOwner, ISyncMgrSessionCreator* pSessionCreator, IUnknown* punk) Synchronize;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrHandlerInfo : IUnknown
 		{
 			public const new Guid IID = .(0x4ff1d798, 0xecf7, 0x4524, 0xaa, 0x81, 0x1e, 0x36, 0x2a, 0x0a, 0xef, 0x3a);
 			
-			public function HRESULT(ISyncMgrHandlerInfo *self, SYNCMGR_HANDLER_TYPE* pnType) GetType;
-			public function HRESULT(ISyncMgrHandlerInfo *self, PWSTR* ppszTypeLabel) GetTypeLabel;
-			public function HRESULT(ISyncMgrHandlerInfo *self, PWSTR* ppszComment) GetComment;
-			public function HRESULT(ISyncMgrHandlerInfo *self, FILETIME* pftLastSync) GetLastSyncTime;
-			public function HRESULT(ISyncMgrHandlerInfo *self) IsActive;
-			public function HRESULT(ISyncMgrHandlerInfo *self) IsEnabled;
-			public function HRESULT(ISyncMgrHandlerInfo *self) IsConnected;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrHandlerInfo *self, SYNCMGR_HANDLER_TYPE* pnType) GetType;
+				public function HRESULT(ISyncMgrHandlerInfo *self, PWSTR* ppszTypeLabel) GetTypeLabel;
+				public function HRESULT(ISyncMgrHandlerInfo *self, PWSTR* ppszComment) GetComment;
+				public function HRESULT(ISyncMgrHandlerInfo *self, FILETIME* pftLastSync) GetLastSyncTime;
+				public function HRESULT(ISyncMgrHandlerInfo *self) IsActive;
+				public function HRESULT(ISyncMgrHandlerInfo *self) IsEnabled;
+				public function HRESULT(ISyncMgrHandlerInfo *self) IsConnected;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrSyncItemContainer : IUnknown
 		{
 			public const new Guid IID = .(0x90701133, 0xbe32, 0x4129, 0xa6, 0x5c, 0x99, 0xe6, 0x16, 0xca, 0xff, 0xf4);
 			
-			public function HRESULT(ISyncMgrSyncItemContainer *self, PWSTR pszItemID, ISyncMgrSyncItem** ppItem) GetSyncItem;
-			public function HRESULT(ISyncMgrSyncItemContainer *self, IEnumSyncMgrSyncItems** ppenum) GetSyncItemEnumerator;
-			public function HRESULT(ISyncMgrSyncItemContainer *self, uint32* pcItems) GetSyncItemCount;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrSyncItemContainer *self, PWSTR pszItemID, ISyncMgrSyncItem** ppItem) GetSyncItem;
+				public function HRESULT(ISyncMgrSyncItemContainer *self, IEnumSyncMgrSyncItems** ppenum) GetSyncItemEnumerator;
+				public function HRESULT(ISyncMgrSyncItemContainer *self, uint32* pcItems) GetSyncItemCount;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrSyncItem : IUnknown
 		{
 			public const new Guid IID = .(0xb20b24ce, 0x2593, 0x4f04, 0xbd, 0x8b, 0x7a, 0xd6, 0xc4, 0x50, 0x51, 0xcd);
 			
-			public function HRESULT(ISyncMgrSyncItem *self, PWSTR* ppszItemID) GetItemID;
-			public function HRESULT(ISyncMgrSyncItem *self, PWSTR* ppszName) GetName;
-			public function HRESULT(ISyncMgrSyncItem *self, ISyncMgrSyncItemInfo** ppItemInfo) GetItemInfo;
-			public function HRESULT(ISyncMgrSyncItem *self, Guid* rguidObjectID, Guid* riid, void** ppv) GetObject;
-			public function HRESULT(ISyncMgrSyncItem *self, SYNCMGR_ITEM_CAPABILITIES* pmCapabilities) GetCapabilities;
-			public function HRESULT(ISyncMgrSyncItem *self, SYNCMGR_ITEM_POLICIES* pmPolicies) GetPolicies;
-			public function HRESULT(ISyncMgrSyncItem *self, BOOL fEnable) Enable;
-			public function HRESULT(ISyncMgrSyncItem *self) Delete;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrSyncItem *self, PWSTR* ppszItemID) GetItemID;
+				public function HRESULT(ISyncMgrSyncItem *self, PWSTR* ppszName) GetName;
+				public function HRESULT(ISyncMgrSyncItem *self, ISyncMgrSyncItemInfo** ppItemInfo) GetItemInfo;
+				public function HRESULT(ISyncMgrSyncItem *self, Guid* rguidObjectID, Guid* riid, void** ppv) GetObject;
+				public function HRESULT(ISyncMgrSyncItem *self, SYNCMGR_ITEM_CAPABILITIES* pmCapabilities) GetCapabilities;
+				public function HRESULT(ISyncMgrSyncItem *self, SYNCMGR_ITEM_POLICIES* pmPolicies) GetPolicies;
+				public function HRESULT(ISyncMgrSyncItem *self, BOOL fEnable) Enable;
+				public function HRESULT(ISyncMgrSyncItem *self) Delete;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrSyncItemInfo : IUnknown
 		{
 			public const new Guid IID = .(0xe7fd9502, 0xbe0c, 0x4464, 0x90, 0xa1, 0x2b, 0x52, 0x77, 0x03, 0x12, 0x32);
 			
-			public function HRESULT(ISyncMgrSyncItemInfo *self, PWSTR* ppszTypeLabel) GetTypeLabel;
-			public function HRESULT(ISyncMgrSyncItemInfo *self, PWSTR* ppszComment) GetComment;
-			public function HRESULT(ISyncMgrSyncItemInfo *self, FILETIME* pftLastSync) GetLastSyncTime;
-			public function HRESULT(ISyncMgrSyncItemInfo *self) IsEnabled;
-			public function HRESULT(ISyncMgrSyncItemInfo *self) IsConnected;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrSyncItemInfo *self, PWSTR* ppszTypeLabel) GetTypeLabel;
+				public function HRESULT(ISyncMgrSyncItemInfo *self, PWSTR* ppszComment) GetComment;
+				public function HRESULT(ISyncMgrSyncItemInfo *self, FILETIME* pftLastSync) GetLastSyncTime;
+				public function HRESULT(ISyncMgrSyncItemInfo *self) IsEnabled;
+				public function HRESULT(ISyncMgrSyncItemInfo *self) IsConnected;
+			}
 		}
 		[CRepr]
 		public struct IEnumSyncMgrSyncItems : IUnknown
 		{
 			public const new Guid IID = .(0x54b3abf3, 0xf085, 0x4181, 0xb5, 0x46, 0xe2, 0x9c, 0x40, 0x3c, 0x72, 0x6b);
 			
-			public function HRESULT(IEnumSyncMgrSyncItems *self, uint32 celt, ISyncMgrSyncItem** rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumSyncMgrSyncItems *self, uint32 celt) Skip;
-			public function HRESULT(IEnumSyncMgrSyncItems *self) Reset;
-			public function HRESULT(IEnumSyncMgrSyncItems *self, IEnumSyncMgrSyncItems** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumSyncMgrSyncItems *self, uint32 celt, ISyncMgrSyncItem** rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumSyncMgrSyncItems *self, uint32 celt) Skip;
+				public function HRESULT(IEnumSyncMgrSyncItems *self) Reset;
+				public function HRESULT(IEnumSyncMgrSyncItems *self, IEnumSyncMgrSyncItems** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrSessionCreator : IUnknown
 		{
 			public const new Guid IID = .(0x17f48517, 0xf305, 0x4321, 0xa0, 0x8d, 0xb2, 0x5a, 0x83, 0x49, 0x18, 0xfd);
 			
-			public function HRESULT(ISyncMgrSessionCreator *self, PWSTR pszHandlerID, PWSTR* ppszItemIDs, uint32 cItems, ISyncMgrSyncCallback** ppCallback) CreateSession;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrSessionCreator *self, PWSTR pszHandlerID, PWSTR* ppszItemIDs, uint32 cItems, ISyncMgrSyncCallback** ppCallback) CreateSession;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrSyncCallback : IUnknown
 		{
 			public const new Guid IID = .(0x884ccd87, 0xb139, 0x4937, 0xa4, 0xba, 0x4f, 0x8e, 0x19, 0x51, 0x3f, 0xbe);
 			
-			public function HRESULT(ISyncMgrSyncCallback *self, PWSTR pszItemID, PWSTR pszProgressText, SYNCMGR_PROGRESS_STATUS nStatus, uint32 uCurrentStep, uint32 uMaxStep, SYNCMGR_CANCEL_REQUEST* pnCancelRequest) ReportProgress;
-			public function HRESULT(ISyncMgrSyncCallback *self, PWSTR pszProgressText, SYNCMGR_CANCEL_REQUEST* pnCancelRequest) SetHandlerProgressText;
-			public function HRESULT(ISyncMgrSyncCallback *self, PWSTR pszItemID, SYNCMGR_EVENT_LEVEL nLevel, SYNCMGR_EVENT_FLAGS nFlags, PWSTR pszName, PWSTR pszDescription, PWSTR pszLinkText, PWSTR pszLinkReference, PWSTR pszContext, Guid* pguidEventID) ReportEvent;
-			public function HRESULT(ISyncMgrSyncCallback *self, PWSTR pszItemID) CanContinue;
-			public function HRESULT(ISyncMgrSyncCallback *self, IEnumString** ppenumItemIDs, IEnumUnknown** ppenumPunks) QueryForAdditionalItems;
-			public function HRESULT(ISyncMgrSyncCallback *self, PWSTR pszItemID) AddItemToSession;
-			public function HRESULT(ISyncMgrSyncCallback *self, IUnknown* punk) AddIUnknownToSession;
-			public function HRESULT(ISyncMgrSyncCallback *self, ISyncMgrSyncItem* pNewItem) ProposeItem;
-			public function HRESULT(ISyncMgrSyncCallback *self, PWSTR pszItemID) CommitItem;
-			public function HRESULT(ISyncMgrSyncCallback *self) ReportManualSync;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrSyncCallback *self, PWSTR pszItemID, PWSTR pszProgressText, SYNCMGR_PROGRESS_STATUS nStatus, uint32 uCurrentStep, uint32 uMaxStep, SYNCMGR_CANCEL_REQUEST* pnCancelRequest) ReportProgress;
+				public function HRESULT(ISyncMgrSyncCallback *self, PWSTR pszProgressText, SYNCMGR_CANCEL_REQUEST* pnCancelRequest) SetHandlerProgressText;
+				public function HRESULT(ISyncMgrSyncCallback *self, PWSTR pszItemID, SYNCMGR_EVENT_LEVEL nLevel, SYNCMGR_EVENT_FLAGS nFlags, PWSTR pszName, PWSTR pszDescription, PWSTR pszLinkText, PWSTR pszLinkReference, PWSTR pszContext, Guid* pguidEventID) ReportEvent;
+				public function HRESULT(ISyncMgrSyncCallback *self, PWSTR pszItemID) CanContinue;
+				public function HRESULT(ISyncMgrSyncCallback *self, IEnumString** ppenumItemIDs, IEnumUnknown** ppenumPunks) QueryForAdditionalItems;
+				public function HRESULT(ISyncMgrSyncCallback *self, PWSTR pszItemID) AddItemToSession;
+				public function HRESULT(ISyncMgrSyncCallback *self, IUnknown* punk) AddIUnknownToSession;
+				public function HRESULT(ISyncMgrSyncCallback *self, ISyncMgrSyncItem* pNewItem) ProposeItem;
+				public function HRESULT(ISyncMgrSyncCallback *self, PWSTR pszItemID) CommitItem;
+				public function HRESULT(ISyncMgrSyncCallback *self) ReportManualSync;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrUIOperation : IUnknown
 		{
 			public const new Guid IID = .(0xfc7cfa47, 0xdfe1, 0x45b5, 0xa0, 0x49, 0x8c, 0xfd, 0x82, 0xbe, 0xc2, 0x71);
 			
-			public function HRESULT(ISyncMgrUIOperation *self, HWND hwndOwner) Run;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrUIOperation *self, HWND hwndOwner) Run;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrEventLinkUIOperation : ISyncMgrUIOperation
 		{
 			public const new Guid IID = .(0x64522e52, 0x848b, 0x4015, 0x89, 0xce, 0x5a, 0x36, 0xf0, 0x0b, 0x94, 0xff);
 			
-			public function HRESULT(ISyncMgrEventLinkUIOperation *self, Guid* rguidEventID, ISyncMgrEvent* pEvent) Init;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ISyncMgrUIOperation.VTable
+			{
+				public function HRESULT(ISyncMgrEventLinkUIOperation *self, Guid* rguidEventID, ISyncMgrEvent* pEvent) Init;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrScheduleWizardUIOperation : ISyncMgrUIOperation
 		{
 			public const new Guid IID = .(0x459a6c84, 0x21d2, 0x4ddc, 0x8a, 0x53, 0xf0, 0x23, 0xa4, 0x60, 0x66, 0xf2);
 			
-			public function HRESULT(ISyncMgrScheduleWizardUIOperation *self, PWSTR pszHandlerID) InitWizard;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ISyncMgrUIOperation.VTable
+			{
+				public function HRESULT(ISyncMgrScheduleWizardUIOperation *self, PWSTR pszHandlerID) InitWizard;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrSyncResult : IUnknown
 		{
 			public const new Guid IID = .(0x2b90f17e, 0x5a3e, 0x4b33, 0xbb, 0x7f, 0x1b, 0xc4, 0x80, 0x56, 0xb9, 0x4d);
 			
-			public function HRESULT(ISyncMgrSyncResult *self, SYNCMGR_PROGRESS_STATUS nStatus, uint32 cError, uint32 cConflicts) Result;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrSyncResult *self, SYNCMGR_PROGRESS_STATUS nStatus, uint32 cError, uint32 cConflicts) Result;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrControl : IUnknown
 		{
 			public const new Guid IID = .(0x9b63616c, 0x36b2, 0x46bc, 0x95, 0x9f, 0xc1, 0x59, 0x39, 0x52, 0xd1, 0x9b);
 			
-			public function HRESULT(ISyncMgrControl *self, PWSTR pszHandlerID, HWND hwndOwner, IUnknown* punk, SYNCMGR_SYNC_CONTROL_FLAGS nSyncControlFlags, ISyncMgrSyncResult* pResult) StartHandlerSync;
-			public function HRESULT(ISyncMgrControl *self, PWSTR pszHandlerID, PWSTR* ppszItemIDs, uint32 cItems, HWND hwndOwner, IUnknown* punk, SYNCMGR_SYNC_CONTROL_FLAGS nSyncControlFlags, ISyncMgrSyncResult* pResult) StartItemSync;
-			public function HRESULT(ISyncMgrControl *self, HWND hwndOwner) StartSyncAll;
-			public function HRESULT(ISyncMgrControl *self, PWSTR pszHandlerID) StopHandlerSync;
-			public function HRESULT(ISyncMgrControl *self, PWSTR pszHandlerID, PWSTR* ppszItemIDs, uint32 cItems) StopItemSync;
-			public function HRESULT(ISyncMgrControl *self) StopSyncAll;
-			public function HRESULT(ISyncMgrControl *self, Guid* rclsidCollectionID, SYNCMGR_CONTROL_FLAGS nControlFlags) UpdateHandlerCollection;
-			public function HRESULT(ISyncMgrControl *self, PWSTR pszHandlerID, SYNCMGR_CONTROL_FLAGS nControlFlags) UpdateHandler;
-			public function HRESULT(ISyncMgrControl *self, PWSTR pszHandlerID, PWSTR pszItemID, SYNCMGR_CONTROL_FLAGS nControlFlags) UpdateItem;
-			public function HRESULT(ISyncMgrControl *self, PWSTR pszHandlerID, PWSTR pszItemID, SYNCMGR_CONTROL_FLAGS nControlFlags) UpdateEvents;
-			public function HRESULT(ISyncMgrControl *self, PWSTR pszHandlerID, PWSTR pszItemID, ISyncMgrConflict* pConflict, SYNCMGR_UPDATE_REASON nReason) UpdateConflict;
-			public function HRESULT(ISyncMgrControl *self, PWSTR pszHandlerID, PWSTR pszItemID, SYNCMGR_CONTROL_FLAGS nControlFlags) UpdateConflicts;
-			public function HRESULT(ISyncMgrControl *self, BOOL fActivate, PWSTR pszHandlerID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags) ActivateHandler;
-			public function HRESULT(ISyncMgrControl *self, BOOL fEnable, PWSTR pszHandlerID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags) EnableHandler;
-			public function HRESULT(ISyncMgrControl *self, BOOL fEnable, PWSTR pszHandlerID, PWSTR pszItemID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags) EnableItem;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrControl *self, PWSTR pszHandlerID, HWND hwndOwner, IUnknown* punk, SYNCMGR_SYNC_CONTROL_FLAGS nSyncControlFlags, ISyncMgrSyncResult* pResult) StartHandlerSync;
+				public function HRESULT(ISyncMgrControl *self, PWSTR pszHandlerID, PWSTR* ppszItemIDs, uint32 cItems, HWND hwndOwner, IUnknown* punk, SYNCMGR_SYNC_CONTROL_FLAGS nSyncControlFlags, ISyncMgrSyncResult* pResult) StartItemSync;
+				public function HRESULT(ISyncMgrControl *self, HWND hwndOwner) StartSyncAll;
+				public function HRESULT(ISyncMgrControl *self, PWSTR pszHandlerID) StopHandlerSync;
+				public function HRESULT(ISyncMgrControl *self, PWSTR pszHandlerID, PWSTR* ppszItemIDs, uint32 cItems) StopItemSync;
+				public function HRESULT(ISyncMgrControl *self) StopSyncAll;
+				public function HRESULT(ISyncMgrControl *self, Guid* rclsidCollectionID, SYNCMGR_CONTROL_FLAGS nControlFlags) UpdateHandlerCollection;
+				public function HRESULT(ISyncMgrControl *self, PWSTR pszHandlerID, SYNCMGR_CONTROL_FLAGS nControlFlags) UpdateHandler;
+				public function HRESULT(ISyncMgrControl *self, PWSTR pszHandlerID, PWSTR pszItemID, SYNCMGR_CONTROL_FLAGS nControlFlags) UpdateItem;
+				public function HRESULT(ISyncMgrControl *self, PWSTR pszHandlerID, PWSTR pszItemID, SYNCMGR_CONTROL_FLAGS nControlFlags) UpdateEvents;
+				public function HRESULT(ISyncMgrControl *self, PWSTR pszHandlerID, PWSTR pszItemID, ISyncMgrConflict* pConflict, SYNCMGR_UPDATE_REASON nReason) UpdateConflict;
+				public function HRESULT(ISyncMgrControl *self, PWSTR pszHandlerID, PWSTR pszItemID, SYNCMGR_CONTROL_FLAGS nControlFlags) UpdateConflicts;
+				public function HRESULT(ISyncMgrControl *self, BOOL fActivate, PWSTR pszHandlerID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags) ActivateHandler;
+				public function HRESULT(ISyncMgrControl *self, BOOL fEnable, PWSTR pszHandlerID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags) EnableHandler;
+				public function HRESULT(ISyncMgrControl *self, BOOL fEnable, PWSTR pszHandlerID, PWSTR pszItemID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags) EnableItem;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrEventStore : IUnknown
 		{
 			public const new Guid IID = .(0x37e412f9, 0x016e, 0x44c2, 0x81, 0xff, 0xdb, 0x3a, 0xdd, 0x77, 0x42, 0x66);
 			
-			public function HRESULT(ISyncMgrEventStore *self, IEnumSyncMgrEvents** ppenum) GetEventEnumerator;
-			public function HRESULT(ISyncMgrEventStore *self, uint32* pcEvents) GetEventCount;
-			public function HRESULT(ISyncMgrEventStore *self, Guid* rguidEventID, ISyncMgrEvent** ppEvent) GetEvent;
-			public function HRESULT(ISyncMgrEventStore *self, Guid* pguidEventIDs, uint32 cEvents) RemoveEvent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrEventStore *self, IEnumSyncMgrEvents** ppenum) GetEventEnumerator;
+				public function HRESULT(ISyncMgrEventStore *self, uint32* pcEvents) GetEventCount;
+				public function HRESULT(ISyncMgrEventStore *self, Guid* rguidEventID, ISyncMgrEvent** ppEvent) GetEvent;
+				public function HRESULT(ISyncMgrEventStore *self, Guid* pguidEventIDs, uint32 cEvents) RemoveEvent;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrEvent : IUnknown
 		{
 			public const new Guid IID = .(0xfee0ef8b, 0x46bd, 0x4db4, 0xb7, 0xe6, 0xff, 0x2c, 0x68, 0x73, 0x13, 0xbc);
 			
-			public function HRESULT(ISyncMgrEvent *self, Guid* pguidEventID) GetEventID;
-			public function HRESULT(ISyncMgrEvent *self, PWSTR* ppszHandlerID) GetHandlerID;
-			public function HRESULT(ISyncMgrEvent *self, PWSTR* ppszItemID) GetItemID;
-			public function HRESULT(ISyncMgrEvent *self, SYNCMGR_EVENT_LEVEL* pnLevel) GetLevel;
-			public function HRESULT(ISyncMgrEvent *self, SYNCMGR_EVENT_FLAGS* pnFlags) GetFlags;
-			public function HRESULT(ISyncMgrEvent *self, FILETIME* pfCreationTime) GetTime;
-			public function HRESULT(ISyncMgrEvent *self, PWSTR* ppszName) GetName;
-			public function HRESULT(ISyncMgrEvent *self, PWSTR* ppszDescription) GetDescription;
-			public function HRESULT(ISyncMgrEvent *self, PWSTR* ppszLinkText) GetLinkText;
-			public function HRESULT(ISyncMgrEvent *self, PWSTR* ppszLinkReference) GetLinkReference;
-			public function HRESULT(ISyncMgrEvent *self, PWSTR* ppszContext) GetContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrEvent *self, Guid* pguidEventID) GetEventID;
+				public function HRESULT(ISyncMgrEvent *self, PWSTR* ppszHandlerID) GetHandlerID;
+				public function HRESULT(ISyncMgrEvent *self, PWSTR* ppszItemID) GetItemID;
+				public function HRESULT(ISyncMgrEvent *self, SYNCMGR_EVENT_LEVEL* pnLevel) GetLevel;
+				public function HRESULT(ISyncMgrEvent *self, SYNCMGR_EVENT_FLAGS* pnFlags) GetFlags;
+				public function HRESULT(ISyncMgrEvent *self, FILETIME* pfCreationTime) GetTime;
+				public function HRESULT(ISyncMgrEvent *self, PWSTR* ppszName) GetName;
+				public function HRESULT(ISyncMgrEvent *self, PWSTR* ppszDescription) GetDescription;
+				public function HRESULT(ISyncMgrEvent *self, PWSTR* ppszLinkText) GetLinkText;
+				public function HRESULT(ISyncMgrEvent *self, PWSTR* ppszLinkReference) GetLinkReference;
+				public function HRESULT(ISyncMgrEvent *self, PWSTR* ppszContext) GetContext;
+			}
 		}
 		[CRepr]
 		public struct IEnumSyncMgrEvents : IUnknown
 		{
 			public const new Guid IID = .(0xc81a1d4e, 0x8cf7, 0x4683, 0x80, 0xe0, 0xbc, 0xae, 0x88, 0xd6, 0x77, 0xb6);
 			
-			public function HRESULT(IEnumSyncMgrEvents *self, uint32 celt, ISyncMgrEvent** rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumSyncMgrEvents *self, uint32 celt) Skip;
-			public function HRESULT(IEnumSyncMgrEvents *self) Reset;
-			public function HRESULT(IEnumSyncMgrEvents *self, IEnumSyncMgrEvents** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumSyncMgrEvents *self, uint32 celt, ISyncMgrEvent** rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumSyncMgrEvents *self, uint32 celt) Skip;
+				public function HRESULT(IEnumSyncMgrEvents *self) Reset;
+				public function HRESULT(IEnumSyncMgrEvents *self, IEnumSyncMgrEvents** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrConflictStore : IUnknown
 		{
 			public const new Guid IID = .(0xcf8fc579, 0xc396, 0x4774, 0x85, 0xf1, 0xd9, 0x08, 0xa8, 0x31, 0x15, 0x6e);
 			
-			public function HRESULT(ISyncMgrConflictStore *self, PWSTR pszHandlerID, PWSTR pszItemID, IEnumSyncMgrConflict** ppEnum) EnumConflicts;
-			public function HRESULT(ISyncMgrConflictStore *self, SYNCMGR_CONFLICT_ID_INFO* pConflictIdInfo, Guid* riid, void** ppv) BindToConflict;
-			public function HRESULT(ISyncMgrConflictStore *self, SYNCMGR_CONFLICT_ID_INFO* rgConflictIdInfo, uint32 cConflicts) RemoveConflicts;
-			public function HRESULT(ISyncMgrConflictStore *self, PWSTR pszHandlerID, PWSTR pszItemID, uint32* pnConflicts) GetCount;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrConflictStore *self, PWSTR pszHandlerID, PWSTR pszItemID, IEnumSyncMgrConflict** ppEnum) EnumConflicts;
+				public function HRESULT(ISyncMgrConflictStore *self, SYNCMGR_CONFLICT_ID_INFO* pConflictIdInfo, Guid* riid, void** ppv) BindToConflict;
+				public function HRESULT(ISyncMgrConflictStore *self, SYNCMGR_CONFLICT_ID_INFO* rgConflictIdInfo, uint32 cConflicts) RemoveConflicts;
+				public function HRESULT(ISyncMgrConflictStore *self, PWSTR pszHandlerID, PWSTR pszItemID, uint32* pnConflicts) GetCount;
+			}
 		}
 		[CRepr]
 		public struct IEnumSyncMgrConflict : IUnknown
 		{
 			public const new Guid IID = .(0x82705914, 0xdda3, 0x4893, 0xba, 0x99, 0x49, 0xde, 0x6c, 0x8c, 0x80, 0x36);
 			
-			public function HRESULT(IEnumSyncMgrConflict *self, uint32 celt, ISyncMgrConflict** rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumSyncMgrConflict *self, uint32 celt) Skip;
-			public function HRESULT(IEnumSyncMgrConflict *self) Reset;
-			public function HRESULT(IEnumSyncMgrConflict *self, IEnumSyncMgrConflict** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumSyncMgrConflict *self, uint32 celt, ISyncMgrConflict** rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumSyncMgrConflict *self, uint32 celt) Skip;
+				public function HRESULT(IEnumSyncMgrConflict *self) Reset;
+				public function HRESULT(IEnumSyncMgrConflict *self, IEnumSyncMgrConflict** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrConflict : IUnknown
 		{
 			public const new Guid IID = .(0x9c204249, 0xc443, 0x4ba4, 0x85, 0xed, 0xc9, 0x72, 0x68, 0x1d, 0xb1, 0x37);
 			
-			public function HRESULT(ISyncMgrConflict *self, PROPERTYKEY* propkey, PROPVARIANT* ppropvar) GetProperty;
-			public function HRESULT(ISyncMgrConflict *self, SYNCMGR_CONFLICT_ID_INFO* pConflictIdInfo) GetConflictIdInfo;
-			public function HRESULT(ISyncMgrConflict *self, ISyncMgrConflictItems** ppArray) GetItemsArray;
-			public function HRESULT(ISyncMgrConflict *self, ISyncMgrConflictResolveInfo* pResolveInfo) Resolve;
-			public function HRESULT(ISyncMgrConflict *self, Guid* riid, void** ppvResolutionHandler) GetResolutionHandler;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrConflict *self, PROPERTYKEY* propkey, PROPVARIANT* ppropvar) GetProperty;
+				public function HRESULT(ISyncMgrConflict *self, SYNCMGR_CONFLICT_ID_INFO* pConflictIdInfo) GetConflictIdInfo;
+				public function HRESULT(ISyncMgrConflict *self, ISyncMgrConflictItems** ppArray) GetItemsArray;
+				public function HRESULT(ISyncMgrConflict *self, ISyncMgrConflictResolveInfo* pResolveInfo) Resolve;
+				public function HRESULT(ISyncMgrConflict *self, Guid* riid, void** ppvResolutionHandler) GetResolutionHandler;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrResolutionHandler : IUnknown
 		{
 			public const new Guid IID = .(0x40a3d052, 0x8bff, 0x4c4b, 0xa3, 0x38, 0xd4, 0xa3, 0x95, 0x70, 0x0d, 0xe9);
 			
-			public function HRESULT(ISyncMgrResolutionHandler *self, uint32* pdwAbilities) QueryAbilities;
-			public function HRESULT(ISyncMgrResolutionHandler *self, IShellItem* psiOther, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback) KeepOther;
-			public function HRESULT(ISyncMgrResolutionHandler *self, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback) KeepRecent;
-			public function HRESULT(ISyncMgrResolutionHandler *self, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback) RemoveFromSyncSet;
-			public function HRESULT(ISyncMgrResolutionHandler *self, ISyncMgrConflictResolutionItems* pArray, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback) KeepItems;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrResolutionHandler *self, uint32* pdwAbilities) QueryAbilities;
+				public function HRESULT(ISyncMgrResolutionHandler *self, IShellItem* psiOther, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback) KeepOther;
+				public function HRESULT(ISyncMgrResolutionHandler *self, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback) KeepRecent;
+				public function HRESULT(ISyncMgrResolutionHandler *self, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback) RemoveFromSyncSet;
+				public function HRESULT(ISyncMgrResolutionHandler *self, ISyncMgrConflictResolutionItems* pArray, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback) KeepItems;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrConflictPresenter : IUnknown
 		{
 			public const new Guid IID = .(0x0b4f5353, 0xfd2b, 0x42cd, 0x87, 0x63, 0x47, 0x79, 0xf2, 0xd5, 0x08, 0xa3);
 			
-			public function HRESULT(ISyncMgrConflictPresenter *self, ISyncMgrConflict* pConflict, ISyncMgrConflictResolveInfo* pResolveInfo) PresentConflict;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrConflictPresenter *self, ISyncMgrConflict* pConflict, ISyncMgrConflictResolveInfo* pResolveInfo) PresentConflict;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrConflictResolveInfo : IUnknown
 		{
 			public const new Guid IID = .(0xc405a219, 0x25a2, 0x442e, 0x87, 0x43, 0xb8, 0x45, 0xa2, 0xce, 0xe9, 0x3f);
 			
-			public function HRESULT(ISyncMgrConflictResolveInfo *self, uint32* pnCurrentConflict, uint32* pcConflicts, uint32* pcRemainingForApplyToAll) GetIterationInfo;
-			public function HRESULT(ISyncMgrConflictResolveInfo *self, SYNCMGR_PRESENTER_NEXT_STEP* pnPresenterNextStep) GetPresenterNextStep;
-			public function HRESULT(ISyncMgrConflictResolveInfo *self, SYNCMGR_PRESENTER_CHOICE* pnPresenterChoice, BOOL* pfApplyToAll) GetPresenterChoice;
-			public function HRESULT(ISyncMgrConflictResolveInfo *self, uint32* pcChoices) GetItemChoiceCount;
-			public function HRESULT(ISyncMgrConflictResolveInfo *self, uint32 iChoice, uint32* piChoiceIndex) GetItemChoice;
-			public function HRESULT(ISyncMgrConflictResolveInfo *self, SYNCMGR_PRESENTER_NEXT_STEP nPresenterNextStep) SetPresenterNextStep;
-			public function HRESULT(ISyncMgrConflictResolveInfo *self, SYNCMGR_PRESENTER_CHOICE nPresenterChoice, BOOL fApplyToAll) SetPresenterChoice;
-			public function HRESULT(ISyncMgrConflictResolveInfo *self, uint32* prgiConflictItemIndexes, uint32 cChoices) SetItemChoices;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrConflictResolveInfo *self, uint32* pnCurrentConflict, uint32* pcConflicts, uint32* pcRemainingForApplyToAll) GetIterationInfo;
+				public function HRESULT(ISyncMgrConflictResolveInfo *self, SYNCMGR_PRESENTER_NEXT_STEP* pnPresenterNextStep) GetPresenterNextStep;
+				public function HRESULT(ISyncMgrConflictResolveInfo *self, SYNCMGR_PRESENTER_CHOICE* pnPresenterChoice, BOOL* pfApplyToAll) GetPresenterChoice;
+				public function HRESULT(ISyncMgrConflictResolveInfo *self, uint32* pcChoices) GetItemChoiceCount;
+				public function HRESULT(ISyncMgrConflictResolveInfo *self, uint32 iChoice, uint32* piChoiceIndex) GetItemChoice;
+				public function HRESULT(ISyncMgrConflictResolveInfo *self, SYNCMGR_PRESENTER_NEXT_STEP nPresenterNextStep) SetPresenterNextStep;
+				public function HRESULT(ISyncMgrConflictResolveInfo *self, SYNCMGR_PRESENTER_CHOICE nPresenterChoice, BOOL fApplyToAll) SetPresenterChoice;
+				public function HRESULT(ISyncMgrConflictResolveInfo *self, uint32* prgiConflictItemIndexes, uint32 cChoices) SetItemChoices;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrConflictFolder : IUnknown
 		{
 			public const new Guid IID = .(0x59287f5e, 0xbc81, 0x4fca, 0xa7, 0xf1, 0xe5, 0xa8, 0xec, 0xdb, 0x1d, 0x69);
 			
-			public function HRESULT(ISyncMgrConflictFolder *self, ISyncMgrConflict* pConflict, ITEMIDLIST** ppidlConflict) GetConflictIDList;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrConflictFolder *self, ISyncMgrConflict* pConflict, ITEMIDLIST** ppidlConflict) GetConflictIDList;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrConflictItems : IUnknown
 		{
 			public const new Guid IID = .(0x9c7ead52, 0x8023, 0x4936, 0xa4, 0xdb, 0xd2, 0xa9, 0xa9, 0x9e, 0x43, 0x6a);
 			
-			public function HRESULT(ISyncMgrConflictItems *self, uint32* pCount) GetCount;
-			public function HRESULT(ISyncMgrConflictItems *self, uint32 iIndex, CONFIRM_CONFLICT_ITEM* pItemInfo) GetItem;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrConflictItems *self, uint32* pCount) GetCount;
+				public function HRESULT(ISyncMgrConflictItems *self, uint32 iIndex, CONFIRM_CONFLICT_ITEM* pItemInfo) GetItem;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrConflictResolutionItems : IUnknown
 		{
 			public const new Guid IID = .(0x458725b9, 0x129d, 0x4135, 0xa9, 0x98, 0x9c, 0xea, 0xfe, 0xc2, 0x70, 0x07);
 			
-			public function HRESULT(ISyncMgrConflictResolutionItems *self, uint32* pCount) GetCount;
-			public function HRESULT(ISyncMgrConflictResolutionItems *self, uint32 iIndex, CONFIRM_CONFLICT_RESULT_INFO* pItemInfo) GetItem;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrConflictResolutionItems *self, uint32* pCount) GetCount;
+				public function HRESULT(ISyncMgrConflictResolutionItems *self, uint32 iIndex, CONFIRM_CONFLICT_RESULT_INFO* pItemInfo) GetItem;
+			}
 		}
 		[CRepr]
 		public struct IInputPanelConfiguration : IUnknown
 		{
 			public const new Guid IID = .(0x41c81592, 0x514c, 0x48bd, 0xa2, 0x2e, 0xe6, 0xaf, 0x63, 0x85, 0x21, 0xa6);
 			
-			public function HRESULT(IInputPanelConfiguration *self) EnableFocusTracking;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInputPanelConfiguration *self) EnableFocusTracking;
+			}
 		}
 		[CRepr]
 		public struct IInputPanelInvocationConfiguration : IUnknown
 		{
 			public const new Guid IID = .(0xa213f136, 0x3b45, 0x4362, 0xa3, 0x32, 0xef, 0xb6, 0x54, 0x7c, 0xd4, 0x32);
 			
-			public function HRESULT(IInputPanelInvocationConfiguration *self) RequireTouchInEditControl;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInputPanelInvocationConfiguration *self) RequireTouchInEditControl;
+			}
 		}
 		[CRepr]
 		public struct ISharedBitmap : IUnknown
 		{
 			public const new Guid IID = .(0x091162a4, 0xbc96, 0x411f, 0xaa, 0xe8, 0xc5, 0x12, 0x2c, 0xd0, 0x33, 0x63);
 			
-			public function HRESULT(ISharedBitmap *self, HBITMAP* phbm) GetSharedBitmap;
-			public function HRESULT(ISharedBitmap *self, SIZE* pSize) GetSize;
-			public function HRESULT(ISharedBitmap *self, WTS_ALPHATYPE* pat) GetFormat;
-			public function HRESULT(ISharedBitmap *self, HBITMAP hbm, WTS_ALPHATYPE wtsAT) InitializeBitmap;
-			public function HRESULT(ISharedBitmap *self, HBITMAP* phbm) Detach;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISharedBitmap *self, HBITMAP* phbm) GetSharedBitmap;
+				public function HRESULT(ISharedBitmap *self, SIZE* pSize) GetSize;
+				public function HRESULT(ISharedBitmap *self, WTS_ALPHATYPE* pat) GetFormat;
+				public function HRESULT(ISharedBitmap *self, HBITMAP hbm, WTS_ALPHATYPE wtsAT) InitializeBitmap;
+				public function HRESULT(ISharedBitmap *self, HBITMAP* phbm) Detach;
+			}
 		}
 		[CRepr]
 		public struct IThumbnailCache : IUnknown
 		{
 			public const new Guid IID = .(0xf676c15d, 0x596a, 0x4ce2, 0x82, 0x34, 0x33, 0x99, 0x6f, 0x44, 0x5d, 0xb1);
 			
-			public function HRESULT(IThumbnailCache *self, IShellItem* pShellItem, uint32 cxyRequestedThumbSize, WTS_FLAGS flags, ISharedBitmap** ppvThumb, WTS_CACHEFLAGS* pOutFlags, WTS_THUMBNAILID* pThumbnailID) GetThumbnail;
-			public function HRESULT(IThumbnailCache *self, WTS_THUMBNAILID thumbnailID, uint32 cxyRequestedThumbSize, ISharedBitmap** ppvThumb, WTS_CACHEFLAGS* pOutFlags) GetThumbnailByID;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IThumbnailCache *self, IShellItem* pShellItem, uint32 cxyRequestedThumbSize, WTS_FLAGS flags, ISharedBitmap** ppvThumb, WTS_CACHEFLAGS* pOutFlags, WTS_THUMBNAILID* pThumbnailID) GetThumbnail;
+				public function HRESULT(IThumbnailCache *self, WTS_THUMBNAILID thumbnailID, uint32 cxyRequestedThumbSize, ISharedBitmap** ppvThumb, WTS_CACHEFLAGS* pOutFlags) GetThumbnailByID;
+			}
 		}
 		[CRepr]
 		public struct IThumbnailProvider : IUnknown
 		{
 			public const new Guid IID = .(0xe357fccd, 0xa995, 0x4576, 0xb0, 0x1f, 0x23, 0x46, 0x30, 0x15, 0x4e, 0x96);
 			
-			public function HRESULT(IThumbnailProvider *self, uint32 cx, HBITMAP* phbmp, WTS_ALPHATYPE* pdwAlpha) GetThumbnail;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IThumbnailProvider *self, uint32 cx, HBITMAP* phbmp, WTS_ALPHATYPE* pdwAlpha) GetThumbnail;
+			}
 		}
 		[CRepr]
 		public struct IThumbnailSettings : IUnknown
 		{
 			public const new Guid IID = .(0xf4376f00, 0xbef5, 0x4d45, 0x80, 0xf3, 0x1e, 0x02, 0x3b, 0xbf, 0x12, 0x09);
 			
-			public function HRESULT(IThumbnailSettings *self, WTS_CONTEXTFLAGS dwContext) SetContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IThumbnailSettings *self, WTS_CONTEXTFLAGS dwContext) SetContext;
+			}
 		}
 		[CRepr]
 		public struct IThumbnailCachePrimer : IUnknown
 		{
 			public const new Guid IID = .(0x0f03f8fe, 0x2b26, 0x46f0, 0x96, 0x5a, 0x21, 0x2a, 0xa8, 0xd6, 0x6b, 0x76);
 			
-			public function HRESULT(IThumbnailCachePrimer *self, IShellItem* psi, WTS_FLAGS wtsFlags, uint32 cxyRequestedThumbSize) PageInThumbnail;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IThumbnailCachePrimer *self, IShellItem* psi, WTS_FLAGS wtsFlags, uint32 cxyRequestedThumbSize) PageInThumbnail;
+			}
 		}
 		[CRepr]
 		public struct IShellImageDataFactory : IUnknown
 		{
 			public const new Guid IID = .(0x9be8ed5c, 0xedab, 0x4d75, 0x90, 0xf3, 0xbd, 0x5b, 0xdb, 0xb2, 0x1c, 0x82);
 			
-			public function HRESULT(IShellImageDataFactory *self, IShellImageData** ppshimg) CreateIShellImageData;
-			public function HRESULT(IShellImageDataFactory *self, PWSTR pszPath, IShellImageData** ppshimg) CreateImageFromFile;
-			public function HRESULT(IShellImageDataFactory *self, IStream* pStream, IShellImageData** ppshimg) CreateImageFromStream;
-			public function HRESULT(IShellImageDataFactory *self, PWSTR pszPath, Guid* pDataFormat) GetDataFormatFromPath;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellImageDataFactory *self, IShellImageData** ppshimg) CreateIShellImageData;
+				public function HRESULT(IShellImageDataFactory *self, PWSTR pszPath, IShellImageData** ppshimg) CreateImageFromFile;
+				public function HRESULT(IShellImageDataFactory *self, IStream* pStream, IShellImageData** ppshimg) CreateImageFromStream;
+				public function HRESULT(IShellImageDataFactory *self, PWSTR pszPath, Guid* pDataFormat) GetDataFormatFromPath;
+			}
 		}
 		[CRepr]
 		public struct IShellImageData : IUnknown
 		{
 			public const new Guid IID = .(0xbfdeec12, 0x8040, 0x4403, 0xa5, 0xea, 0x9e, 0x07, 0xda, 0xfc, 0xf5, 0x30);
 			
-			public function HRESULT(IShellImageData *self, uint32 dwFlags, uint32 cxDesired, uint32 cyDesired) Decode;
-			public function HRESULT(IShellImageData *self, HDC hdc, RECT* prcDest, RECT* prcSrc) Draw;
-			public function HRESULT(IShellImageData *self) NextFrame;
-			public function HRESULT(IShellImageData *self) NextPage;
-			public function HRESULT(IShellImageData *self) PrevPage;
-			public function HRESULT(IShellImageData *self) IsTransparent;
-			public function HRESULT(IShellImageData *self) IsAnimated;
-			public function HRESULT(IShellImageData *self) IsVector;
-			public function HRESULT(IShellImageData *self) IsMultipage;
-			public function HRESULT(IShellImageData *self) IsEditable;
-			public function HRESULT(IShellImageData *self) IsPrintable;
-			public function HRESULT(IShellImageData *self) IsDecoded;
-			public function HRESULT(IShellImageData *self, uint32* pnPage) GetCurrentPage;
-			public function HRESULT(IShellImageData *self, uint32* pcPages) GetPageCount;
-			public function HRESULT(IShellImageData *self, uint32 iPage) SelectPage;
-			public function HRESULT(IShellImageData *self, SIZE* pSize) GetSize;
-			public function HRESULT(IShellImageData *self, Guid* pDataFormat) GetRawDataFormat;
-			public function HRESULT(IShellImageData *self, uint32* pFormat) GetPixelFormat;
-			public function HRESULT(IShellImageData *self, uint32* pdwDelay) GetDelay;
-			public function HRESULT(IShellImageData *self, uint32 dwMode, IPropertySetStorage** ppPropSet) GetProperties;
-			public function HRESULT(IShellImageData *self, uint32 dwAngle) Rotate;
-			public function HRESULT(IShellImageData *self, uint32 cx, uint32 cy, uint32 hints) Scale;
-			public function HRESULT(IShellImageData *self) DiscardEdit;
-			public function HRESULT(IShellImageData *self, IPropertyBag* pbagEnc) SetEncoderParams;
-			public function HRESULT(IShellImageData *self, PWSTR wszName, uint32 cch) DisplayName;
-			public function HRESULT(IShellImageData *self, uint32* puResolutionX, uint32* puResolutionY) GetResolution;
-			public function HRESULT(IShellImageData *self, Guid* pguidFmt, uint8** ppEncParams) GetEncoderParams;
-			public function HRESULT(IShellImageData *self, IShellImageDataAbort* pAbort, IShellImageDataAbort** ppAbortPrev) RegisterAbort;
-			public function HRESULT(IShellImageData *self, uint8** ppImg) CloneFrame;
-			public function HRESULT(IShellImageData *self, uint8* pImg) ReplaceFrame;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellImageData *self, uint32 dwFlags, uint32 cxDesired, uint32 cyDesired) Decode;
+				public function HRESULT(IShellImageData *self, HDC hdc, RECT* prcDest, RECT* prcSrc) Draw;
+				public function HRESULT(IShellImageData *self) NextFrame;
+				public function HRESULT(IShellImageData *self) NextPage;
+				public function HRESULT(IShellImageData *self) PrevPage;
+				public function HRESULT(IShellImageData *self) IsTransparent;
+				public function HRESULT(IShellImageData *self) IsAnimated;
+				public function HRESULT(IShellImageData *self) IsVector;
+				public function HRESULT(IShellImageData *self) IsMultipage;
+				public function HRESULT(IShellImageData *self) IsEditable;
+				public function HRESULT(IShellImageData *self) IsPrintable;
+				public function HRESULT(IShellImageData *self) IsDecoded;
+				public function HRESULT(IShellImageData *self, uint32* pnPage) GetCurrentPage;
+				public function HRESULT(IShellImageData *self, uint32* pcPages) GetPageCount;
+				public function HRESULT(IShellImageData *self, uint32 iPage) SelectPage;
+				public function HRESULT(IShellImageData *self, SIZE* pSize) GetSize;
+				public function HRESULT(IShellImageData *self, Guid* pDataFormat) GetRawDataFormat;
+				public function HRESULT(IShellImageData *self, uint32* pFormat) GetPixelFormat;
+				public function HRESULT(IShellImageData *self, uint32* pdwDelay) GetDelay;
+				public function HRESULT(IShellImageData *self, uint32 dwMode, IPropertySetStorage** ppPropSet) GetProperties;
+				public function HRESULT(IShellImageData *self, uint32 dwAngle) Rotate;
+				public function HRESULT(IShellImageData *self, uint32 cx, uint32 cy, uint32 hints) Scale;
+				public function HRESULT(IShellImageData *self) DiscardEdit;
+				public function HRESULT(IShellImageData *self, IPropertyBag* pbagEnc) SetEncoderParams;
+				public function HRESULT(IShellImageData *self, PWSTR wszName, uint32 cch) DisplayName;
+				public function HRESULT(IShellImageData *self, uint32* puResolutionX, uint32* puResolutionY) GetResolution;
+				public function HRESULT(IShellImageData *self, Guid* pguidFmt, uint8** ppEncParams) GetEncoderParams;
+				public function HRESULT(IShellImageData *self, IShellImageDataAbort* pAbort, IShellImageDataAbort** ppAbortPrev) RegisterAbort;
+				public function HRESULT(IShellImageData *self, uint8** ppImg) CloneFrame;
+				public function HRESULT(IShellImageData *self, uint8* pImg) ReplaceFrame;
+			}
 		}
 		[CRepr]
 		public struct IShellImageDataAbort : IUnknown
 		{
 			public const new Guid IID = .(0x53fb8e58, 0x50c0, 0x4003, 0xb4, 0xaa, 0x0c, 0x8d, 0xf2, 0x8e, 0x7f, 0x3a);
 			
-			public function HRESULT(IShellImageDataAbort *self) QueryAbort;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellImageDataAbort *self) QueryAbort;
+			}
 		}
 		[CRepr]
 		public struct IStorageProviderPropertyHandler : IUnknown
 		{
 			public const new Guid IID = .(0x301dfbe5, 0x524c, 0x4b0f, 0x8b, 0x2d, 0x21, 0xc4, 0x0b, 0x3a, 0x29, 0x88);
 			
-			public function HRESULT(IStorageProviderPropertyHandler *self, PROPERTYKEY* propertiesToRetrieve, uint32 propertiesToRetrieveCount, IPropertyStore** retrievedProperties) RetrieveProperties;
-			public function HRESULT(IStorageProviderPropertyHandler *self, IPropertyStore* propertiesToSave) SaveProperties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IStorageProviderPropertyHandler *self, PROPERTYKEY* propertiesToRetrieve, uint32 propertiesToRetrieveCount, IPropertyStore** retrievedProperties) RetrieveProperties;
+				public function HRESULT(IStorageProviderPropertyHandler *self, IPropertyStore* propertiesToSave) SaveProperties;
+			}
 		}
 		[CRepr]
 		public struct IStorageProviderHandler : IUnknown
 		{
 			public const new Guid IID = .(0x162c6fb5, 0x44d3, 0x435b, 0x90, 0x3d, 0xe6, 0x13, 0xfa, 0x09, 0x3f, 0xb5);
 			
-			public function HRESULT(IStorageProviderHandler *self, PWSTR path, IStorageProviderPropertyHandler** propertyHandler) GetPropertyHandlerFromPath;
-			public function HRESULT(IStorageProviderHandler *self, PWSTR uri, IStorageProviderPropertyHandler** propertyHandler) GetPropertyHandlerFromUri;
-			public function HRESULT(IStorageProviderHandler *self, PWSTR fileId, IStorageProviderPropertyHandler** propertyHandler) GetPropertyHandlerFromFileId;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IStorageProviderHandler *self, PWSTR path, IStorageProviderPropertyHandler** propertyHandler) GetPropertyHandlerFromPath;
+				public function HRESULT(IStorageProviderHandler *self, PWSTR uri, IStorageProviderPropertyHandler** propertyHandler) GetPropertyHandlerFromUri;
+				public function HRESULT(IStorageProviderHandler *self, PWSTR fileId, IStorageProviderPropertyHandler** propertyHandler) GetPropertyHandlerFromFileId;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrSynchronizeCallback : IUnknown
 		{
 			public const new Guid IID = .(0x6295df41, 0x35ee, 0x11d1, 0x87, 0x07, 0x00, 0xc0, 0x4f, 0xd9, 0x33, 0x27);
 			
-			public function HRESULT(ISyncMgrSynchronizeCallback *self, HRESULT hr) ShowPropertiesCompleted;
-			public function HRESULT(ISyncMgrSynchronizeCallback *self, HRESULT hr) PrepareForSyncCompleted;
-			public function HRESULT(ISyncMgrSynchronizeCallback *self, HRESULT hr) SynchronizeCompleted;
-			public function HRESULT(ISyncMgrSynchronizeCallback *self, HRESULT hr, uint32 cItems, Guid* pItemIDs) ShowErrorCompleted;
-			public function HRESULT(ISyncMgrSynchronizeCallback *self, BOOL fEnable) EnableModeless;
-			public function HRESULT(ISyncMgrSynchronizeCallback *self, Guid* ItemID, SYNCMGRPROGRESSITEM* pSyncProgressItem) Progress;
-			public function HRESULT(ISyncMgrSynchronizeCallback *self, uint32 dwErrorLevel, PWSTR pszErrorText, SYNCMGRLOGERRORINFO* pSyncLogError) LogError;
-			public function HRESULT(ISyncMgrSynchronizeCallback *self, Guid* ErrorID, uint32 dwReserved) DeleteLogError;
-			public function HRESULT(ISyncMgrSynchronizeCallback *self, PWSTR pwszConnection, uint32 dwReserved) EstablishConnection;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrSynchronizeCallback *self, HRESULT hr) ShowPropertiesCompleted;
+				public function HRESULT(ISyncMgrSynchronizeCallback *self, HRESULT hr) PrepareForSyncCompleted;
+				public function HRESULT(ISyncMgrSynchronizeCallback *self, HRESULT hr) SynchronizeCompleted;
+				public function HRESULT(ISyncMgrSynchronizeCallback *self, HRESULT hr, uint32 cItems, Guid* pItemIDs) ShowErrorCompleted;
+				public function HRESULT(ISyncMgrSynchronizeCallback *self, BOOL fEnable) EnableModeless;
+				public function HRESULT(ISyncMgrSynchronizeCallback *self, Guid* ItemID, SYNCMGRPROGRESSITEM* pSyncProgressItem) Progress;
+				public function HRESULT(ISyncMgrSynchronizeCallback *self, uint32 dwErrorLevel, PWSTR pszErrorText, SYNCMGRLOGERRORINFO* pSyncLogError) LogError;
+				public function HRESULT(ISyncMgrSynchronizeCallback *self, Guid* ErrorID, uint32 dwReserved) DeleteLogError;
+				public function HRESULT(ISyncMgrSynchronizeCallback *self, PWSTR pwszConnection, uint32 dwReserved) EstablishConnection;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrEnumItems : IUnknown
 		{
 			public const new Guid IID = .(0x6295df2a, 0x35ee, 0x11d1, 0x87, 0x07, 0x00, 0xc0, 0x4f, 0xd9, 0x33, 0x27);
 			
-			public function HRESULT(ISyncMgrEnumItems *self, uint32 celt, SYNCMGRITEM* rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(ISyncMgrEnumItems *self, uint32 celt) Skip;
-			public function HRESULT(ISyncMgrEnumItems *self) Reset;
-			public function HRESULT(ISyncMgrEnumItems *self, ISyncMgrEnumItems** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrEnumItems *self, uint32 celt, SYNCMGRITEM* rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(ISyncMgrEnumItems *self, uint32 celt) Skip;
+				public function HRESULT(ISyncMgrEnumItems *self) Reset;
+				public function HRESULT(ISyncMgrEnumItems *self, ISyncMgrEnumItems** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrSynchronize : IUnknown
 		{
 			public const new Guid IID = .(0x6295df40, 0x35ee, 0x11d1, 0x87, 0x07, 0x00, 0xc0, 0x4f, 0xd9, 0x33, 0x27);
 			
-			public function HRESULT(ISyncMgrSynchronize *self, uint32 dwReserved, uint32 dwSyncMgrFlags, uint32 cbCookie, uint8* lpCookie) Initialize;
-			public function HRESULT(ISyncMgrSynchronize *self, SYNCMGRHANDLERINFO** ppSyncMgrHandlerInfo) GetHandlerInfo;
-			public function HRESULT(ISyncMgrSynchronize *self, ISyncMgrEnumItems** ppSyncMgrEnumItems) EnumSyncMgrItems;
-			public function HRESULT(ISyncMgrSynchronize *self, Guid* ItemID, Guid* riid, void** ppv) GetItemObject;
-			public function HRESULT(ISyncMgrSynchronize *self, HWND hWndParent, Guid* ItemID) ShowProperties;
-			public function HRESULT(ISyncMgrSynchronize *self, ISyncMgrSynchronizeCallback* lpCallBack) SetProgressCallback;
-			public function HRESULT(ISyncMgrSynchronize *self, uint32 cbNumItems, Guid* pItemIDs, HWND hWndParent, uint32 dwReserved) PrepareForSync;
-			public function HRESULT(ISyncMgrSynchronize *self, HWND hWndParent) Synchronize;
-			public function HRESULT(ISyncMgrSynchronize *self, Guid* pItemID, uint32 dwSyncMgrStatus) SetItemStatus;
-			public function HRESULT(ISyncMgrSynchronize *self, HWND hWndParent, Guid* ErrorID) ShowError;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrSynchronize *self, uint32 dwReserved, uint32 dwSyncMgrFlags, uint32 cbCookie, uint8* lpCookie) Initialize;
+				public function HRESULT(ISyncMgrSynchronize *self, SYNCMGRHANDLERINFO** ppSyncMgrHandlerInfo) GetHandlerInfo;
+				public function HRESULT(ISyncMgrSynchronize *self, ISyncMgrEnumItems** ppSyncMgrEnumItems) EnumSyncMgrItems;
+				public function HRESULT(ISyncMgrSynchronize *self, Guid* ItemID, Guid* riid, void** ppv) GetItemObject;
+				public function HRESULT(ISyncMgrSynchronize *self, HWND hWndParent, Guid* ItemID) ShowProperties;
+				public function HRESULT(ISyncMgrSynchronize *self, ISyncMgrSynchronizeCallback* lpCallBack) SetProgressCallback;
+				public function HRESULT(ISyncMgrSynchronize *self, uint32 cbNumItems, Guid* pItemIDs, HWND hWndParent, uint32 dwReserved) PrepareForSync;
+				public function HRESULT(ISyncMgrSynchronize *self, HWND hWndParent) Synchronize;
+				public function HRESULT(ISyncMgrSynchronize *self, Guid* pItemID, uint32 dwSyncMgrStatus) SetItemStatus;
+				public function HRESULT(ISyncMgrSynchronize *self, HWND hWndParent, Guid* ErrorID) ShowError;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrSynchronizeInvoke : IUnknown
 		{
 			public const new Guid IID = .(0x6295df2c, 0x35ee, 0x11d1, 0x87, 0x07, 0x00, 0xc0, 0x4f, 0xd9, 0x33, 0x27);
 			
-			public function HRESULT(ISyncMgrSynchronizeInvoke *self, uint32 dwInvokeFlags, Guid* clsid, uint32 cbCookie, uint8* pCookie) UpdateItems;
-			public function HRESULT(ISyncMgrSynchronizeInvoke *self) UpdateAll;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrSynchronizeInvoke *self, uint32 dwInvokeFlags, Guid* clsid, uint32 cbCookie, uint8* pCookie) UpdateItems;
+				public function HRESULT(ISyncMgrSynchronizeInvoke *self) UpdateAll;
+			}
 		}
 		[CRepr]
 		public struct ISyncMgrRegister : IUnknown
 		{
 			public const new Guid IID = .(0x6295df42, 0x35ee, 0x11d1, 0x87, 0x07, 0x00, 0xc0, 0x4f, 0xd9, 0x33, 0x27);
 			
-			public function HRESULT(ISyncMgrRegister *self, Guid* clsidHandler, PWSTR pwszDescription, uint32 dwSyncMgrRegisterFlags) RegisterSyncMgrHandler;
-			public function HRESULT(ISyncMgrRegister *self, Guid* clsidHandler, uint32 dwReserved) UnregisterSyncMgrHandler;
-			public function HRESULT(ISyncMgrRegister *self, Guid* clsidHandler, uint32* pdwSyncMgrRegisterFlags) GetHandlerRegistrationInfo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ISyncMgrRegister *self, Guid* clsidHandler, PWSTR pwszDescription, uint32 dwSyncMgrRegisterFlags) RegisterSyncMgrHandler;
+				public function HRESULT(ISyncMgrRegister *self, Guid* clsidHandler, uint32 dwReserved) UnregisterSyncMgrHandler;
+				public function HRESULT(ISyncMgrRegister *self, Guid* clsidHandler, uint32* pdwSyncMgrRegisterFlags) GetHandlerRegistrationInfo;
+			}
 		}
 		[CRepr]
 		public struct IThumbnailStreamCache : IUnknown
 		{
 			public const new Guid IID = .(0x90e11430, 0x9569, 0x41d8, 0xae, 0x75, 0x6d, 0x4d, 0x2a, 0xe7, 0xcc, 0xa0);
 			
-			public function HRESULT(IThumbnailStreamCache *self, PWSTR path, uint64 cacheId, ThumbnailStreamCacheOptions options, uint32 requestedThumbnailSize, SIZE* thumbnailSize, IStream** thumbnailStream) GetThumbnailStream;
-			public function HRESULT(IThumbnailStreamCache *self, PWSTR path, uint64 cacheId, SIZE thumbnailSize, IStream* thumbnailStream) SetThumbnailStream;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IThumbnailStreamCache *self, PWSTR path, uint64 cacheId, ThumbnailStreamCacheOptions options, uint32 requestedThumbnailSize, SIZE* thumbnailSize, IStream** thumbnailStream) GetThumbnailStream;
+				public function HRESULT(IThumbnailStreamCache *self, PWSTR path, uint64 cacheId, SIZE thumbnailSize, IStream* thumbnailStream) SetThumbnailStream;
+			}
 		}
 		[CRepr]
 		public struct ITravelLogEntry : IUnknown
 		{
 			public const new Guid IID = .(0x7ebfdd87, 0xad18, 0x11d3, 0xa4, 0xc5, 0x00, 0xc0, 0x4f, 0x72, 0xd6, 0xb8);
 			
-			public function HRESULT(ITravelLogEntry *self, PWSTR* ppszTitle) GetTitle;
-			public function HRESULT(ITravelLogEntry *self, PWSTR* ppszURL) GetURL;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITravelLogEntry *self, PWSTR* ppszTitle) GetTitle;
+				public function HRESULT(ITravelLogEntry *self, PWSTR* ppszURL) GetURL;
+			}
 		}
 		[CRepr]
 		public struct ITravelLogClient : IUnknown
 		{
 			public const new Guid IID = .(0x241c033e, 0xe659, 0x43da, 0xaa, 0x4d, 0x40, 0x86, 0xdb, 0xc4, 0x75, 0x8d);
 			
-			public function HRESULT(ITravelLogClient *self, uint32 dwID, IUnknown** ppunk) FindWindowByIndex;
-			public function HRESULT(ITravelLogClient *self, IStream* pStream, WINDOWDATA* pWinData) GetWindowData;
-			public function HRESULT(ITravelLogClient *self, PWSTR pszUrlLocation, uint32 dwPosition) LoadHistoryPosition;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITravelLogClient *self, uint32 dwID, IUnknown** ppunk) FindWindowByIndex;
+				public function HRESULT(ITravelLogClient *self, IStream* pStream, WINDOWDATA* pWinData) GetWindowData;
+				public function HRESULT(ITravelLogClient *self, PWSTR pszUrlLocation, uint32 dwPosition) LoadHistoryPosition;
+			}
 		}
 		[CRepr]
 		public struct IEnumTravelLogEntry : IUnknown
 		{
 			public const new Guid IID = .(0x7ebfdd85, 0xad18, 0x11d3, 0xa4, 0xc5, 0x00, 0xc0, 0x4f, 0x72, 0xd6, 0xb8);
 			
-			public function HRESULT(IEnumTravelLogEntry *self, uint32 cElt, ITravelLogEntry** rgElt, uint32* pcEltFetched) Next;
-			public function HRESULT(IEnumTravelLogEntry *self, uint32 cElt) Skip;
-			public function HRESULT(IEnumTravelLogEntry *self) Reset;
-			public function HRESULT(IEnumTravelLogEntry *self, IEnumTravelLogEntry** ppEnum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumTravelLogEntry *self, uint32 cElt, ITravelLogEntry** rgElt, uint32* pcEltFetched) Next;
+				public function HRESULT(IEnumTravelLogEntry *self, uint32 cElt) Skip;
+				public function HRESULT(IEnumTravelLogEntry *self) Reset;
+				public function HRESULT(IEnumTravelLogEntry *self, IEnumTravelLogEntry** ppEnum) Clone;
+			}
 		}
 		[CRepr]
 		public struct ITravelLogStg : IUnknown
 		{
 			public const new Guid IID = .(0x7ebfdd80, 0xad18, 0x11d3, 0xa4, 0xc5, 0x00, 0xc0, 0x4f, 0x72, 0xd6, 0xb8);
 			
-			public function HRESULT(ITravelLogStg *self, PWSTR pszUrl, PWSTR pszTitle, ITravelLogEntry* ptleRelativeTo, BOOL fPrepend, ITravelLogEntry** pptle) CreateEntry;
-			public function HRESULT(ITravelLogStg *self, ITravelLogEntry* ptle) TravelTo;
-			public function HRESULT(ITravelLogStg *self, TLENUMF flags, IEnumTravelLogEntry** ppenum) EnumEntries;
-			public function HRESULT(ITravelLogStg *self, TLENUMF flags, PWSTR pszUrl, IEnumTravelLogEntry** ppenum) FindEntries;
-			public function HRESULT(ITravelLogStg *self, TLENUMF flags, uint32* pcEntries) GetCount;
-			public function HRESULT(ITravelLogStg *self, ITravelLogEntry* ptle) RemoveEntry;
-			public function HRESULT(ITravelLogStg *self, int32 iOffset, ITravelLogEntry** ptle) GetRelativeEntry;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITravelLogStg *self, PWSTR pszUrl, PWSTR pszTitle, ITravelLogEntry* ptleRelativeTo, BOOL fPrepend, ITravelLogEntry** pptle) CreateEntry;
+				public function HRESULT(ITravelLogStg *self, ITravelLogEntry* ptle) TravelTo;
+				public function HRESULT(ITravelLogStg *self, TLENUMF flags, IEnumTravelLogEntry** ppenum) EnumEntries;
+				public function HRESULT(ITravelLogStg *self, TLENUMF flags, PWSTR pszUrl, IEnumTravelLogEntry** ppenum) FindEntries;
+				public function HRESULT(ITravelLogStg *self, TLENUMF flags, uint32* pcEntries) GetCount;
+				public function HRESULT(ITravelLogStg *self, ITravelLogEntry* ptle) RemoveEntry;
+				public function HRESULT(ITravelLogStg *self, int32 iOffset, ITravelLogEntry** ptle) GetRelativeEntry;
+			}
 		}
 		[CRepr]
 		public struct IHlink : IUnknown
 		{
 			public const new Guid IID = .(0x79eac9c3, 0xbaf9, 0x11ce, 0x8c, 0x82, 0x00, 0xaa, 0x00, 0x4b, 0xa9, 0x0b);
 			
-			public function HRESULT(IHlink *self, IHlinkSite* pihlSite, uint32 dwSiteData) SetHlinkSite;
-			public function HRESULT(IHlink *self, IHlinkSite** ppihlSite, uint32* pdwSiteData) GetHlinkSite;
-			public function HRESULT(IHlink *self, uint32 grfHLSETF, IMoniker* pimkTarget, PWSTR pwzLocation) SetMonikerReference;
-			public function HRESULT(IHlink *self, uint32 dwWhichRef, IMoniker** ppimkTarget, PWSTR* ppwzLocation) GetMonikerReference;
-			public function HRESULT(IHlink *self, uint32 grfHLSETF, PWSTR pwzTarget, PWSTR pwzLocation) SetStringReference;
-			public function HRESULT(IHlink *self, uint32 dwWhichRef, PWSTR* ppwzTarget, PWSTR* ppwzLocation) GetStringReference;
-			public function HRESULT(IHlink *self, PWSTR pwzFriendlyName) SetFriendlyName;
-			public function HRESULT(IHlink *self, uint32 grfHLFNAMEF, PWSTR* ppwzFriendlyName) GetFriendlyName;
-			public function HRESULT(IHlink *self, PWSTR pwzTargetFrameName) SetTargetFrameName;
-			public function HRESULT(IHlink *self, PWSTR* ppwzTargetFrameName) GetTargetFrameName;
-			public function HRESULT(IHlink *self, uint32* pdwStatus) GetMiscStatus;
-			public function HRESULT(IHlink *self, uint32 grfHLNF, IBindCtx* pibc, IBindStatusCallback* pibsc, IHlinkBrowseContext* pihlbc) Navigate;
-			public function HRESULT(IHlink *self, PWSTR pwzAdditionalParams) SetAdditionalParams;
-			public function HRESULT(IHlink *self, PWSTR* ppwzAdditionalParams) GetAdditionalParams;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IHlink *self, IHlinkSite* pihlSite, uint32 dwSiteData) SetHlinkSite;
+				public function HRESULT(IHlink *self, IHlinkSite** ppihlSite, uint32* pdwSiteData) GetHlinkSite;
+				public function HRESULT(IHlink *self, uint32 grfHLSETF, IMoniker* pimkTarget, PWSTR pwzLocation) SetMonikerReference;
+				public function HRESULT(IHlink *self, uint32 dwWhichRef, IMoniker** ppimkTarget, PWSTR* ppwzLocation) GetMonikerReference;
+				public function HRESULT(IHlink *self, uint32 grfHLSETF, PWSTR pwzTarget, PWSTR pwzLocation) SetStringReference;
+				public function HRESULT(IHlink *self, uint32 dwWhichRef, PWSTR* ppwzTarget, PWSTR* ppwzLocation) GetStringReference;
+				public function HRESULT(IHlink *self, PWSTR pwzFriendlyName) SetFriendlyName;
+				public function HRESULT(IHlink *self, uint32 grfHLFNAMEF, PWSTR* ppwzFriendlyName) GetFriendlyName;
+				public function HRESULT(IHlink *self, PWSTR pwzTargetFrameName) SetTargetFrameName;
+				public function HRESULT(IHlink *self, PWSTR* ppwzTargetFrameName) GetTargetFrameName;
+				public function HRESULT(IHlink *self, uint32* pdwStatus) GetMiscStatus;
+				public function HRESULT(IHlink *self, uint32 grfHLNF, IBindCtx* pibc, IBindStatusCallback* pibsc, IHlinkBrowseContext* pihlbc) Navigate;
+				public function HRESULT(IHlink *self, PWSTR pwzAdditionalParams) SetAdditionalParams;
+				public function HRESULT(IHlink *self, PWSTR* ppwzAdditionalParams) GetAdditionalParams;
+			}
 		}
 		[CRepr]
 		public struct IHlinkSite : IUnknown
 		{
 			public const new Guid IID = .(0x79eac9c2, 0xbaf9, 0x11ce, 0x8c, 0x82, 0x00, 0xaa, 0x00, 0x4b, 0xa9, 0x0b);
 			
-			public function HRESULT(IHlinkSite *self, uint32 dwSiteData, Guid* guidService, Guid* riid, IUnknown** ppiunk) QueryService;
-			public function HRESULT(IHlinkSite *self, uint32 dwSiteData, uint32 dwAssign, uint32 dwWhich, IMoniker** ppimk) GetMoniker;
-			public function HRESULT(IHlinkSite *self, uint32 dwSiteData, uint32 dwReserved) ReadyToNavigate;
-			public function HRESULT(IHlinkSite *self, uint32 dwSiteData, uint32 dwreserved, HRESULT hrError, PWSTR pwzError) OnNavigationComplete;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IHlinkSite *self, uint32 dwSiteData, Guid* guidService, Guid* riid, IUnknown** ppiunk) QueryService;
+				public function HRESULT(IHlinkSite *self, uint32 dwSiteData, uint32 dwAssign, uint32 dwWhich, IMoniker** ppimk) GetMoniker;
+				public function HRESULT(IHlinkSite *self, uint32 dwSiteData, uint32 dwReserved) ReadyToNavigate;
+				public function HRESULT(IHlinkSite *self, uint32 dwSiteData, uint32 dwreserved, HRESULT hrError, PWSTR pwzError) OnNavigationComplete;
+			}
 		}
 		[CRepr]
 		public struct IHlinkTarget : IUnknown
 		{
 			public const new Guid IID = .(0x79eac9c4, 0xbaf9, 0x11ce, 0x8c, 0x82, 0x00, 0xaa, 0x00, 0x4b, 0xa9, 0x0b);
 			
-			public function HRESULT(IHlinkTarget *self, IHlinkBrowseContext* pihlbc) SetBrowseContext;
-			public function HRESULT(IHlinkTarget *self, IHlinkBrowseContext** ppihlbc) GetBrowseContext;
-			public function HRESULT(IHlinkTarget *self, uint32 grfHLNF, PWSTR pwzJumpLocation) Navigate;
-			public function HRESULT(IHlinkTarget *self, PWSTR pwzLocation, uint32 dwAssign, IMoniker** ppimkLocation) GetMoniker;
-			public function HRESULT(IHlinkTarget *self, PWSTR pwzLocation, PWSTR* ppwzFriendlyName) GetFriendlyName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IHlinkTarget *self, IHlinkBrowseContext* pihlbc) SetBrowseContext;
+				public function HRESULT(IHlinkTarget *self, IHlinkBrowseContext** ppihlbc) GetBrowseContext;
+				public function HRESULT(IHlinkTarget *self, uint32 grfHLNF, PWSTR pwzJumpLocation) Navigate;
+				public function HRESULT(IHlinkTarget *self, PWSTR pwzLocation, uint32 dwAssign, IMoniker** ppimkLocation) GetMoniker;
+				public function HRESULT(IHlinkTarget *self, PWSTR pwzLocation, PWSTR* ppwzFriendlyName) GetFriendlyName;
+			}
 		}
 		[CRepr]
 		public struct IHlinkFrame : IUnknown
 		{
 			public const new Guid IID = .(0x79eac9c5, 0xbaf9, 0x11ce, 0x8c, 0x82, 0x00, 0xaa, 0x00, 0x4b, 0xa9, 0x0b);
 			
-			public function HRESULT(IHlinkFrame *self, IHlinkBrowseContext* pihlbc) SetBrowseContext;
-			public function HRESULT(IHlinkFrame *self, IHlinkBrowseContext** ppihlbc) GetBrowseContext;
-			public function HRESULT(IHlinkFrame *self, uint32 grfHLNF, IBindCtx* pbc, IBindStatusCallback* pibsc, IHlink* pihlNavigate) Navigate;
-			public function HRESULT(IHlinkFrame *self, uint32 grfHLNF, IMoniker* pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName, uint32 dwreserved) OnNavigate;
-			public function HRESULT(IHlinkFrame *self, uint32 uHLID, IMoniker* pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName) UpdateHlink;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IHlinkFrame *self, IHlinkBrowseContext* pihlbc) SetBrowseContext;
+				public function HRESULT(IHlinkFrame *self, IHlinkBrowseContext** ppihlbc) GetBrowseContext;
+				public function HRESULT(IHlinkFrame *self, uint32 grfHLNF, IBindCtx* pbc, IBindStatusCallback* pibsc, IHlink* pihlNavigate) Navigate;
+				public function HRESULT(IHlinkFrame *self, uint32 grfHLNF, IMoniker* pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName, uint32 dwreserved) OnNavigate;
+				public function HRESULT(IHlinkFrame *self, uint32 uHLID, IMoniker* pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName) UpdateHlink;
+			}
 		}
 		[CRepr]
 		public struct IEnumHLITEM : IUnknown
 		{
 			public const new Guid IID = .(0x79eac9c6, 0xbaf9, 0x11ce, 0x8c, 0x82, 0x00, 0xaa, 0x00, 0x4b, 0xa9, 0x0b);
 			
-			public function HRESULT(IEnumHLITEM *self, uint32 celt, HLITEM* rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumHLITEM *self, uint32 celt) Skip;
-			public function HRESULT(IEnumHLITEM *self) Reset;
-			public function HRESULT(IEnumHLITEM *self, IEnumHLITEM** ppienumhlitem) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumHLITEM *self, uint32 celt, HLITEM* rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumHLITEM *self, uint32 celt) Skip;
+				public function HRESULT(IEnumHLITEM *self) Reset;
+				public function HRESULT(IEnumHLITEM *self, IEnumHLITEM** ppienumhlitem) Clone;
+			}
 		}
 		[CRepr]
 		public struct IHlinkBrowseContext : IUnknown
 		{
 			public const new Guid IID = .(0x79eac9c7, 0xbaf9, 0x11ce, 0x8c, 0x82, 0x00, 0xaa, 0x00, 0x4b, 0xa9, 0x0b);
 			
-			public function HRESULT(IHlinkBrowseContext *self, uint32 reserved, IUnknown* piunk, IMoniker* pimk, uint32* pdwRegister) Register;
-			public function HRESULT(IHlinkBrowseContext *self, IMoniker* pimk, BOOL fBindIfRootRegistered, IUnknown** ppiunk) GetObject;
-			public function HRESULT(IHlinkBrowseContext *self, uint32 dwRegister) Revoke;
-			public function HRESULT(IHlinkBrowseContext *self, HLBWINFO* phlbwi) SetBrowseWindowInfo;
-			public function HRESULT(IHlinkBrowseContext *self, HLBWINFO* phlbwi) GetBrowseWindowInfo;
-			public function HRESULT(IHlinkBrowseContext *self, IMoniker* pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName) SetInitialHlink;
-			public function HRESULT(IHlinkBrowseContext *self, uint32 grfHLNF, IMoniker* pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName, uint32* puHLID) OnNavigateHlink;
-			public function HRESULT(IHlinkBrowseContext *self, uint32 uHLID, IMoniker* pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName) UpdateHlink;
-			public function HRESULT(IHlinkBrowseContext *self, uint32 dwReserved, uint32 grfHLFNAMEF, IEnumHLITEM** ppienumhlitem) EnumNavigationStack;
-			public function HRESULT(IHlinkBrowseContext *self, uint32 grfHLQF, uint32 uHLID) QueryHlink;
-			public function HRESULT(IHlinkBrowseContext *self, uint32 uHLID, IHlink** ppihl) GetHlink;
-			public function HRESULT(IHlinkBrowseContext *self, uint32 uHLID) SetCurrentHlink;
-			public function HRESULT(IHlinkBrowseContext *self, IUnknown* piunkOuter, Guid* riid, IUnknown** ppiunkObj) Clone;
-			public function HRESULT(IHlinkBrowseContext *self, uint32 reserved) Close;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IHlinkBrowseContext *self, uint32 reserved, IUnknown* piunk, IMoniker* pimk, uint32* pdwRegister) Register;
+				public function HRESULT(IHlinkBrowseContext *self, IMoniker* pimk, BOOL fBindIfRootRegistered, IUnknown** ppiunk) GetObject;
+				public function HRESULT(IHlinkBrowseContext *self, uint32 dwRegister) Revoke;
+				public function HRESULT(IHlinkBrowseContext *self, HLBWINFO* phlbwi) SetBrowseWindowInfo;
+				public function HRESULT(IHlinkBrowseContext *self, HLBWINFO* phlbwi) GetBrowseWindowInfo;
+				public function HRESULT(IHlinkBrowseContext *self, IMoniker* pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName) SetInitialHlink;
+				public function HRESULT(IHlinkBrowseContext *self, uint32 grfHLNF, IMoniker* pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName, uint32* puHLID) OnNavigateHlink;
+				public function HRESULT(IHlinkBrowseContext *self, uint32 uHLID, IMoniker* pimkTarget, PWSTR pwzLocation, PWSTR pwzFriendlyName) UpdateHlink;
+				public function HRESULT(IHlinkBrowseContext *self, uint32 dwReserved, uint32 grfHLFNAMEF, IEnumHLITEM** ppienumhlitem) EnumNavigationStack;
+				public function HRESULT(IHlinkBrowseContext *self, uint32 grfHLQF, uint32 uHLID) QueryHlink;
+				public function HRESULT(IHlinkBrowseContext *self, uint32 uHLID, IHlink** ppihl) GetHlink;
+				public function HRESULT(IHlinkBrowseContext *self, uint32 uHLID) SetCurrentHlink;
+				public function HRESULT(IHlinkBrowseContext *self, IUnknown* piunkOuter, Guid* riid, IUnknown** ppiunkObj) Clone;
+				public function HRESULT(IHlinkBrowseContext *self, uint32 reserved) Close;
+			}
 		}
 		[CRepr]
 		public struct IExtensionServices : IUnknown
 		{
 			public const new Guid IID = .(0x79eac9cb, 0xbaf9, 0x11ce, 0x8c, 0x82, 0x00, 0xaa, 0x00, 0x4b, 0xa9, 0x0b);
 			
-			public function HRESULT(IExtensionServices *self, PWSTR pwzAdditionalHeaders) SetAdditionalHeaders;
-			public function HRESULT(IExtensionServices *self, HWND phwnd, PWSTR pwzUsername, PWSTR pwzPassword) SetAuthenticateData;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IExtensionServices *self, PWSTR pwzAdditionalHeaders) SetAdditionalHeaders;
+				public function HRESULT(IExtensionServices *self, HWND phwnd, PWSTR pwzUsername, PWSTR pwzPassword) SetAuthenticateData;
+			}
 		}
 		[CRepr]
 		public struct ITravelEntry : IUnknown
 		{
 			public const new Guid IID = .(0xf46edb3b, 0xbc2f, 0x11d0, 0x94, 0x12, 0x00, 0xaa, 0x00, 0xa3, 0xeb, 0xd3);
 			
-			public function HRESULT(ITravelEntry *self, IUnknown* punk) Invoke;
-			public function HRESULT(ITravelEntry *self, IUnknown* punk, BOOL fIsLocalAnchor) Update;
-			public function HRESULT(ITravelEntry *self, ITEMIDLIST** ppidl) GetPidl;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITravelEntry *self, IUnknown* punk) Invoke;
+				public function HRESULT(ITravelEntry *self, IUnknown* punk, BOOL fIsLocalAnchor) Update;
+				public function HRESULT(ITravelEntry *self, ITEMIDLIST** ppidl) GetPidl;
+			}
 		}
 		[CRepr]
 		public struct ITravelLog : IUnknown
 		{
 			public const new Guid IID = .(0x66a9cb08, 0x4802, 0x11d2, 0xa5, 0x61, 0x00, 0xa0, 0xc9, 0x2d, 0xbf, 0xe8);
 			
-			public function HRESULT(ITravelLog *self, IUnknown* punk, BOOL fIsLocalAnchor) AddEntry;
-			public function HRESULT(ITravelLog *self, IUnknown* punk, BOOL fIsLocalAnchor) UpdateEntry;
-			public function HRESULT(ITravelLog *self, IUnknown* punk, IUnknown* punkHLBrowseContext) UpdateExternal;
-			public function HRESULT(ITravelLog *self, IUnknown* punk, int32 iOffset) Travel;
-			public function HRESULT(ITravelLog *self, IUnknown* punk, int32 iOffset, ITravelEntry** ppte) GetTravelEntry;
-			public function HRESULT(ITravelLog *self, IUnknown* punk, ITEMIDLIST* pidl, ITravelEntry** ppte) FindTravelEntry;
-			public function HRESULT(ITravelLog *self, IUnknown* punk, int32 iOffset, int32 idsTemplate, char16* pwzText, uint32 cchText) GetToolTipText;
-			public function HRESULT(ITravelLog *self, IUnknown* punk, HMENU hmenu, int32 nPos, int32 idFirst, int32 idLast, uint32 dwFlags) InsertMenuEntries;
-			public function HRESULT(ITravelLog *self, ITravelLog** pptl) Clone;
-			public function uint32(ITravelLog *self, IUnknown* punk) CountEntries;
-			public function HRESULT(ITravelLog *self) Revert;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITravelLog *self, IUnknown* punk, BOOL fIsLocalAnchor) AddEntry;
+				public function HRESULT(ITravelLog *self, IUnknown* punk, BOOL fIsLocalAnchor) UpdateEntry;
+				public function HRESULT(ITravelLog *self, IUnknown* punk, IUnknown* punkHLBrowseContext) UpdateExternal;
+				public function HRESULT(ITravelLog *self, IUnknown* punk, int32 iOffset) Travel;
+				public function HRESULT(ITravelLog *self, IUnknown* punk, int32 iOffset, ITravelEntry** ppte) GetTravelEntry;
+				public function HRESULT(ITravelLog *self, IUnknown* punk, ITEMIDLIST* pidl, ITravelEntry** ppte) FindTravelEntry;
+				public function HRESULT(ITravelLog *self, IUnknown* punk, int32 iOffset, int32 idsTemplate, char16* pwzText, uint32 cchText) GetToolTipText;
+				public function HRESULT(ITravelLog *self, IUnknown* punk, HMENU hmenu, int32 nPos, int32 idFirst, int32 idLast, uint32 dwFlags) InsertMenuEntries;
+				public function HRESULT(ITravelLog *self, ITravelLog** pptl) Clone;
+				public function uint32(ITravelLog *self, IUnknown* punk) CountEntries;
+				public function HRESULT(ITravelLog *self) Revert;
+			}
 		}
 		[CRepr]
 		public struct CIE4ConnectionPoint : IConnectionPoint
 		{
-			public function HRESULT(CIE4ConnectionPoint *self, BOOL* pf, void** ppv, int32 dispid, DISPPARAMS* pdispparams) DoInvokeIE4;
-			public function HRESULT(CIE4ConnectionPoint *self, int32 dispid, ITEMIDLIST* pidl, BOOL fCanCancel) DoInvokePIDLIE4;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IConnectionPoint.VTable
+			{
+				public function HRESULT(CIE4ConnectionPoint *self, BOOL* pf, void** ppv, int32 dispid, DISPPARAMS* pdispparams) DoInvokeIE4;
+				public function HRESULT(CIE4ConnectionPoint *self, int32 dispid, ITEMIDLIST* pidl, BOOL fCanCancel) DoInvokePIDLIE4;
+			}
 		}
 		[CRepr]
 		public struct IExpDispSupportXP : IUnknown
 		{
 			public const new Guid IID = .(0x2f0dd58c, 0xf789, 0x4f14, 0x99, 0xfb, 0x92, 0x93, 0xb3, 0xc9, 0xc2, 0x12);
 			
-			public function HRESULT(IExpDispSupportXP *self, Guid* riid, CIE4ConnectionPoint** ppccp) FindCIE4ConnectionPoint;
-			public function HRESULT(IExpDispSupportXP *self, MSG* pMsg, uint32 grfModifiers) OnTranslateAccelerator;
-			public function HRESULT(IExpDispSupportXP *self, int32 dispidMember, Guid* iid, uint32 lcid, uint16 wFlags, DISPPARAMS* pdispparams, VARIANT* pVarResult, EXCEPINFO* pexcepinfo, uint32* puArgErr) OnInvoke;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IExpDispSupportXP *self, Guid* riid, CIE4ConnectionPoint** ppccp) FindCIE4ConnectionPoint;
+				public function HRESULT(IExpDispSupportXP *self, MSG* pMsg, uint32 grfModifiers) OnTranslateAccelerator;
+				public function HRESULT(IExpDispSupportXP *self, int32 dispidMember, Guid* iid, uint32 lcid, uint16 wFlags, DISPPARAMS* pdispparams, VARIANT* pVarResult, EXCEPINFO* pexcepinfo, uint32* puArgErr) OnInvoke;
+			}
 		}
 		[CRepr]
 		public struct IExpDispSupport : IUnknown
 		{
 			public const new Guid IID = .(0x0d7d1d00, 0x6fc0, 0x11d0, 0xa9, 0x74, 0x00, 0xc0, 0x4f, 0xd7, 0x05, 0xa2);
 			
-			public function HRESULT(IExpDispSupport *self, Guid* riid, IConnectionPoint** ppccp) FindConnectionPoint;
-			public function HRESULT(IExpDispSupport *self, MSG* pMsg, uint32 grfModifiers) OnTranslateAccelerator;
-			public function HRESULT(IExpDispSupport *self, int32 dispidMember, Guid* iid, uint32 lcid, uint16 wFlags, DISPPARAMS* pdispparams, VARIANT* pVarResult, EXCEPINFO* pexcepinfo, uint32* puArgErr) OnInvoke;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IExpDispSupport *self, Guid* riid, IConnectionPoint** ppccp) FindConnectionPoint;
+				public function HRESULT(IExpDispSupport *self, MSG* pMsg, uint32 grfModifiers) OnTranslateAccelerator;
+				public function HRESULT(IExpDispSupport *self, int32 dispidMember, Guid* iid, uint32 lcid, uint16 wFlags, DISPPARAMS* pdispparams, VARIANT* pVarResult, EXCEPINFO* pexcepinfo, uint32* puArgErr) OnInvoke;
+			}
 		}
 		[CRepr]
 		public struct IBrowserService : IUnknown
 		{
 			public const new Guid IID = .(0x02ba3b52, 0x0547, 0x11d1, 0xb8, 0x33, 0x00, 0xc0, 0x4f, 0xc9, 0xb3, 0x1f);
 			
-			public function HRESULT(IBrowserService *self, IOleInPlaceSite** ppipsite) GetParentSite;
-			public function HRESULT(IBrowserService *self, IShellView* psv, PWSTR pszName) SetTitle;
-			public function HRESULT(IBrowserService *self, IShellView* psv, char16* pszName, uint32 cchName) GetTitle;
-			public function HRESULT(IBrowserService *self, IOleObject** ppobjv) GetOleObject;
-			public function HRESULT(IBrowserService *self, ITravelLog** pptl) GetTravelLog;
-			public function HRESULT(IBrowserService *self, uint32 id, BOOL fShow) ShowControlWindow;
-			public function HRESULT(IBrowserService *self, uint32 id, BOOL* pfShown) IsControlWindowShown;
-			public function HRESULT(IBrowserService *self, ITEMIDLIST* pidl, PWSTR pwszName, uint32 uFlags) IEGetDisplayName;
-			public function HRESULT(IBrowserService *self, uint32 uiCP, PWSTR pwszPath, ITEMIDLIST** ppidlOut) IEParseDisplayName;
-			public function HRESULT(IBrowserService *self, HRESULT hres, PWSTR pwszPath) DisplayParseError;
-			public function HRESULT(IBrowserService *self, ITEMIDLIST* pidl, uint32 grfHLNF) NavigateToPidl;
-			public function HRESULT(IBrowserService *self, BNSTATE bnstate) SetNavigateState;
-			public function HRESULT(IBrowserService *self, BNSTATE* pbnstate) GetNavigateState;
-			public function HRESULT(IBrowserService *self, IShellView* psv, ITEMIDLIST* pidl, BOOL* pfDidBrowse) NotifyRedirect;
-			public function HRESULT(IBrowserService *self) UpdateWindowList;
-			public function HRESULT(IBrowserService *self) UpdateBackForwardState;
-			public function HRESULT(IBrowserService *self, uint32 dwFlags, uint32 dwFlagMask) SetFlags;
-			public function HRESULT(IBrowserService *self, uint32* pdwFlags) GetFlags;
-			public function HRESULT(IBrowserService *self) CanNavigateNow;
-			public function HRESULT(IBrowserService *self, ITEMIDLIST** ppidl) GetPidl;
-			public function HRESULT(IBrowserService *self, ITEMIDLIST* pidl) SetReferrer;
-			public function uint32(IBrowserService *self) GetBrowserIndex;
-			public function HRESULT(IBrowserService *self, uint32 dwID, IUnknown** ppunk) GetBrowserByIndex;
-			public function HRESULT(IBrowserService *self, IOleObject** ppole, IStream** pstm, IBindCtx** ppbc) GetHistoryObject;
-			public function HRESULT(IBrowserService *self, IOleObject* pole, BOOL fIsLocalAnchor) SetHistoryObject;
-			public function HRESULT(IBrowserService *self, IOleObject* pole) CacheOLEServer;
-			public function HRESULT(IBrowserService *self, VARIANT* pvarIn, VARIANT* pvarOut) GetSetCodePage;
-			public function HRESULT(IBrowserService *self, IShellView* psv, BOOL fDone, VARIANT* pvarargIn, VARIANT* pvarargOut) OnHttpEquiv;
-			public function HRESULT(IBrowserService *self, HPALETTE* hpal) GetPalette;
-			public function HRESULT(IBrowserService *self, BOOL fForceRegister, int32 swc) RegisterWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IBrowserService *self, IOleInPlaceSite** ppipsite) GetParentSite;
+				public function HRESULT(IBrowserService *self, IShellView* psv, PWSTR pszName) SetTitle;
+				public function HRESULT(IBrowserService *self, IShellView* psv, char16* pszName, uint32 cchName) GetTitle;
+				public function HRESULT(IBrowserService *self, IOleObject** ppobjv) GetOleObject;
+				public function HRESULT(IBrowserService *self, ITravelLog** pptl) GetTravelLog;
+				public function HRESULT(IBrowserService *self, uint32 id, BOOL fShow) ShowControlWindow;
+				public function HRESULT(IBrowserService *self, uint32 id, BOOL* pfShown) IsControlWindowShown;
+				public function HRESULT(IBrowserService *self, ITEMIDLIST* pidl, PWSTR pwszName, uint32 uFlags) IEGetDisplayName;
+				public function HRESULT(IBrowserService *self, uint32 uiCP, PWSTR pwszPath, ITEMIDLIST** ppidlOut) IEParseDisplayName;
+				public function HRESULT(IBrowserService *self, HRESULT hres, PWSTR pwszPath) DisplayParseError;
+				public function HRESULT(IBrowserService *self, ITEMIDLIST* pidl, uint32 grfHLNF) NavigateToPidl;
+				public function HRESULT(IBrowserService *self, BNSTATE bnstate) SetNavigateState;
+				public function HRESULT(IBrowserService *self, BNSTATE* pbnstate) GetNavigateState;
+				public function HRESULT(IBrowserService *self, IShellView* psv, ITEMIDLIST* pidl, BOOL* pfDidBrowse) NotifyRedirect;
+				public function HRESULT(IBrowserService *self) UpdateWindowList;
+				public function HRESULT(IBrowserService *self) UpdateBackForwardState;
+				public function HRESULT(IBrowserService *self, uint32 dwFlags, uint32 dwFlagMask) SetFlags;
+				public function HRESULT(IBrowserService *self, uint32* pdwFlags) GetFlags;
+				public function HRESULT(IBrowserService *self) CanNavigateNow;
+				public function HRESULT(IBrowserService *self, ITEMIDLIST** ppidl) GetPidl;
+				public function HRESULT(IBrowserService *self, ITEMIDLIST* pidl) SetReferrer;
+				public function uint32(IBrowserService *self) GetBrowserIndex;
+				public function HRESULT(IBrowserService *self, uint32 dwID, IUnknown** ppunk) GetBrowserByIndex;
+				public function HRESULT(IBrowserService *self, IOleObject** ppole, IStream** pstm, IBindCtx** ppbc) GetHistoryObject;
+				public function HRESULT(IBrowserService *self, IOleObject* pole, BOOL fIsLocalAnchor) SetHistoryObject;
+				public function HRESULT(IBrowserService *self, IOleObject* pole) CacheOLEServer;
+				public function HRESULT(IBrowserService *self, VARIANT* pvarIn, VARIANT* pvarOut) GetSetCodePage;
+				public function HRESULT(IBrowserService *self, IShellView* psv, BOOL fDone, VARIANT* pvarargIn, VARIANT* pvarargOut) OnHttpEquiv;
+				public function HRESULT(IBrowserService *self, HPALETTE* hpal) GetPalette;
+				public function HRESULT(IBrowserService *self, BOOL fForceRegister, int32 swc) RegisterWindow;
+			}
 		}
 		[CRepr]
 		public struct IShellService : IUnknown
 		{
 			public const new Guid IID = .(0x5836fb00, 0x8187, 0x11cf, 0xa1, 0x2b, 0x00, 0xaa, 0x00, 0x4a, 0xe8, 0x37);
 			
-			public function HRESULT(IShellService *self, IUnknown* punkOwner) SetOwner;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShellService *self, IUnknown* punkOwner) SetOwner;
+			}
 		}
 		[CRepr]
 		public struct IBrowserService2 : IBrowserService
 		{
 			public const new Guid IID = .(0x68bd21cc, 0x438b, 0x11d2, 0xa5, 0x60, 0x00, 0xa0, 0xc9, 0x2d, 0xbf, 0xe8);
 			
-			public function LRESULT(IBrowserService2 *self, HWND hwnd, uint32 uMsg, WPARAM wParam, LPARAM lParam) WndProcBS;
-			public function HRESULT(IBrowserService2 *self) SetAsDefFolderSettings;
-			public function HRESULT(IBrowserService2 *self, RECT* prc) GetViewRect;
-			public function HRESULT(IBrowserService2 *self, WPARAM wParam) OnSize;
-			public function HRESULT(IBrowserService2 *self, CREATESTRUCTW* pcs) OnCreate;
-			public function LRESULT(IBrowserService2 *self, WPARAM wParam, LPARAM lParam) OnCommand;
-			public function HRESULT(IBrowserService2 *self) OnDestroy;
-			public function LRESULT(IBrowserService2 *self, NMHDR* pnm) OnNotify;
-			public function HRESULT(IBrowserService2 *self) OnSetFocus;
-			public function HRESULT(IBrowserService2 *self, BOOL fActive) OnFrameWindowActivateBS;
-			public function HRESULT(IBrowserService2 *self) ReleaseShellView;
-			public function HRESULT(IBrowserService2 *self) ActivatePendingView;
-			public function HRESULT(IBrowserService2 *self, IShellView* psvNew, IShellView* psvOld, RECT* prcView, HWND* phwnd) CreateViewWindow;
-			public function HRESULT(IBrowserService2 *self, Guid* riid, void** ppv) CreateBrowserPropSheetExt;
-			public function HRESULT(IBrowserService2 *self, HWND* phwndView) GetViewWindow;
-			public function HRESULT(IBrowserService2 *self, BASEBROWSERDATALH** pbbd) GetBaseBrowserData;
-			public function BASEBROWSERDATALH*(IBrowserService2 *self) PutBaseBrowserData;
-			public function HRESULT(IBrowserService2 *self, ITravelLog* ptl, uint32 dw) InitializeTravelLog;
-			public function HRESULT(IBrowserService2 *self) SetTopBrowser;
-			public function HRESULT(IBrowserService2 *self, int32 iCmd) Offline;
-			public function HRESULT(IBrowserService2 *self, BOOL f) AllowViewResize;
-			public function HRESULT(IBrowserService2 *self, uint32 u) SetActivateState;
-			public function HRESULT(IBrowserService2 *self, int32 eSecureLock) UpdateSecureLockIcon;
-			public function HRESULT(IBrowserService2 *self) InitializeDownloadManager;
-			public function HRESULT(IBrowserService2 *self) InitializeTransitionSite;
-			public function HRESULT(IBrowserService2 *self, HWND hwnd, IUnknown* pauto) _Initialize;
-			public function HRESULT(IBrowserService2 *self) _CancelPendingNavigationAsync;
-			public function HRESULT(IBrowserService2 *self) _CancelPendingView;
-			public function HRESULT(IBrowserService2 *self) _MaySaveChanges;
-			public function HRESULT(IBrowserService2 *self, BOOL fPaused) _PauseOrResumeView;
-			public function HRESULT(IBrowserService2 *self) _DisableModeless;
-			public function HRESULT(IBrowserService2 *self, ITEMIDLIST* pidl, uint32 grfHLNF, uint32 dwFlags) _NavigateToPidl2;
-			public function HRESULT(IBrowserService2 *self, IShellView* psv, ITEMIDLIST* pidlNew) _TryShell2Rename;
-			public function HRESULT(IBrowserService2 *self) _SwitchActivationNow;
-			public function HRESULT(IBrowserService2 *self, IUnknown* punkBar, BOOL fBroadcast, Guid* pguidCmdGroup, uint32 nCmdID, uint32 nCmdexecopt, VARIANT* pvarargIn, VARIANT* pvarargOut) _ExecChildren;
-			public function HRESULT(IBrowserService2 *self, HWND hwndBar, BOOL fBroadcast, uint32 uMsg, WPARAM wParam, LPARAM lParam) _SendChildren;
-			public function HRESULT(IBrowserService2 *self, FOLDERSETDATA* pfsd) GetFolderSetData;
-			public function HRESULT(IBrowserService2 *self, uint32 itb) _OnFocusChange;
-			public function HRESULT(IBrowserService2 *self, BOOL fChildOnly) v_ShowHideChildWindows;
-			public function uint32(IBrowserService2 *self) _get_itbLastFocus;
-			public function HRESULT(IBrowserService2 *self, uint32 itbLastFocus) _put_itbLastFocus;
-			public function HRESULT(IBrowserService2 *self, uint32 uState) _UIActivateView;
-			public function HRESULT(IBrowserService2 *self, RECT* prc) _GetViewBorderRect;
-			public function HRESULT(IBrowserService2 *self) _UpdateViewRectSize;
-			public function HRESULT(IBrowserService2 *self, uint32 itb) _ResizeNextBorder;
-			public function HRESULT(IBrowserService2 *self) _ResizeView;
-			public function HRESULT(IBrowserService2 *self, RECT* lprectBorder, HMONITOR hmon) _GetEffectiveClientArea;
-			public function IStream*(IBrowserService2 *self, ITEMIDLIST* pidl, uint32 grfMode, PWSTR pwszName) v_GetViewStream;
-			public function LRESULT(IBrowserService2 *self, uint32 uMsg, WPARAM wParam, LPARAM lParam) ForwardViewMsg;
-			public function HRESULT(IBrowserService2 *self, HACCEL hacc) SetAcceleratorMenu;
-			public function int32(IBrowserService2 *self) _GetToolbarCount;
-			public function TOOLBARITEM*(IBrowserService2 *self, int32 itb) _GetToolbarItem;
-			public function HRESULT(IBrowserService2 *self, IStream* pstm) _SaveToolbars;
-			public function HRESULT(IBrowserService2 *self, IStream* pstm) _LoadToolbars;
-			public function HRESULT(IBrowserService2 *self, BOOL fClose) _CloseAndReleaseToolbars;
-			public function HRESULT(IBrowserService2 *self, MSG* lpMsg, uint32 itbNext, int32 citb, TOOLBARITEM** pptbi, HWND* phwnd) v_MayGetNextToolbarFocus;
-			public function HRESULT(IBrowserService2 *self, uint32 itb, BOOL bUseHmonitor) _ResizeNextBorderHelper;
-			public function uint32(IBrowserService2 *self, IUnknown* punkSrc) _FindTBar;
-			public function HRESULT(IBrowserService2 *self, TOOLBARITEM* ptbi, HWND hwnd, MSG* lpMsg) _SetFocus;
-			public function HRESULT(IBrowserService2 *self, MSG* pmsg) v_MayTranslateAccelerator;
-			public function HRESULT(IBrowserService2 *self, IUnknown* punkSrc, RECT* lprectBorder, BOOL bUseHmonitor) _GetBorderDWHelper;
-			public function HRESULT(IBrowserService2 *self, ITEMIDLIST* pidl) v_CheckZoneCrossing;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IBrowserService.VTable
+			{
+				public function LRESULT(IBrowserService2 *self, HWND hwnd, uint32 uMsg, WPARAM wParam, LPARAM lParam) WndProcBS;
+				public function HRESULT(IBrowserService2 *self) SetAsDefFolderSettings;
+				public function HRESULT(IBrowserService2 *self, RECT* prc) GetViewRect;
+				public function HRESULT(IBrowserService2 *self, WPARAM wParam) OnSize;
+				public function HRESULT(IBrowserService2 *self, CREATESTRUCTW* pcs) OnCreate;
+				public function LRESULT(IBrowserService2 *self, WPARAM wParam, LPARAM lParam) OnCommand;
+				public function HRESULT(IBrowserService2 *self) OnDestroy;
+				public function LRESULT(IBrowserService2 *self, NMHDR* pnm) OnNotify;
+				public function HRESULT(IBrowserService2 *self) OnSetFocus;
+				public function HRESULT(IBrowserService2 *self, BOOL fActive) OnFrameWindowActivateBS;
+				public function HRESULT(IBrowserService2 *self) ReleaseShellView;
+				public function HRESULT(IBrowserService2 *self) ActivatePendingView;
+				public function HRESULT(IBrowserService2 *self, IShellView* psvNew, IShellView* psvOld, RECT* prcView, HWND* phwnd) CreateViewWindow;
+				public function HRESULT(IBrowserService2 *self, Guid* riid, void** ppv) CreateBrowserPropSheetExt;
+				public function HRESULT(IBrowserService2 *self, HWND* phwndView) GetViewWindow;
+				public function HRESULT(IBrowserService2 *self, BASEBROWSERDATALH** pbbd) GetBaseBrowserData;
+				public function BASEBROWSERDATALH*(IBrowserService2 *self) PutBaseBrowserData;
+				public function HRESULT(IBrowserService2 *self, ITravelLog* ptl, uint32 dw) InitializeTravelLog;
+				public function HRESULT(IBrowserService2 *self) SetTopBrowser;
+				public function HRESULT(IBrowserService2 *self, int32 iCmd) Offline;
+				public function HRESULT(IBrowserService2 *self, BOOL f) AllowViewResize;
+				public function HRESULT(IBrowserService2 *self, uint32 u) SetActivateState;
+				public function HRESULT(IBrowserService2 *self, int32 eSecureLock) UpdateSecureLockIcon;
+				public function HRESULT(IBrowserService2 *self) InitializeDownloadManager;
+				public function HRESULT(IBrowserService2 *self) InitializeTransitionSite;
+				public function HRESULT(IBrowserService2 *self, HWND hwnd, IUnknown* pauto) _Initialize;
+				public function HRESULT(IBrowserService2 *self) _CancelPendingNavigationAsync;
+				public function HRESULT(IBrowserService2 *self) _CancelPendingView;
+				public function HRESULT(IBrowserService2 *self) _MaySaveChanges;
+				public function HRESULT(IBrowserService2 *self, BOOL fPaused) _PauseOrResumeView;
+				public function HRESULT(IBrowserService2 *self) _DisableModeless;
+				public function HRESULT(IBrowserService2 *self, ITEMIDLIST* pidl, uint32 grfHLNF, uint32 dwFlags) _NavigateToPidl2;
+				public function HRESULT(IBrowserService2 *self, IShellView* psv, ITEMIDLIST* pidlNew) _TryShell2Rename;
+				public function HRESULT(IBrowserService2 *self) _SwitchActivationNow;
+				public function HRESULT(IBrowserService2 *self, IUnknown* punkBar, BOOL fBroadcast, Guid* pguidCmdGroup, uint32 nCmdID, uint32 nCmdexecopt, VARIANT* pvarargIn, VARIANT* pvarargOut) _ExecChildren;
+				public function HRESULT(IBrowserService2 *self, HWND hwndBar, BOOL fBroadcast, uint32 uMsg, WPARAM wParam, LPARAM lParam) _SendChildren;
+				public function HRESULT(IBrowserService2 *self, FOLDERSETDATA* pfsd) GetFolderSetData;
+				public function HRESULT(IBrowserService2 *self, uint32 itb) _OnFocusChange;
+				public function HRESULT(IBrowserService2 *self, BOOL fChildOnly) v_ShowHideChildWindows;
+				public function uint32(IBrowserService2 *self) _get_itbLastFocus;
+				public function HRESULT(IBrowserService2 *self, uint32 itbLastFocus) _put_itbLastFocus;
+				public function HRESULT(IBrowserService2 *self, uint32 uState) _UIActivateView;
+				public function HRESULT(IBrowserService2 *self, RECT* prc) _GetViewBorderRect;
+				public function HRESULT(IBrowserService2 *self) _UpdateViewRectSize;
+				public function HRESULT(IBrowserService2 *self, uint32 itb) _ResizeNextBorder;
+				public function HRESULT(IBrowserService2 *self) _ResizeView;
+				public function HRESULT(IBrowserService2 *self, RECT* lprectBorder, HMONITOR hmon) _GetEffectiveClientArea;
+				public function IStream*(IBrowserService2 *self, ITEMIDLIST* pidl, uint32 grfMode, PWSTR pwszName) v_GetViewStream;
+				public function LRESULT(IBrowserService2 *self, uint32 uMsg, WPARAM wParam, LPARAM lParam) ForwardViewMsg;
+				public function HRESULT(IBrowserService2 *self, HACCEL hacc) SetAcceleratorMenu;
+				public function int32(IBrowserService2 *self) _GetToolbarCount;
+				public function TOOLBARITEM*(IBrowserService2 *self, int32 itb) _GetToolbarItem;
+				public function HRESULT(IBrowserService2 *self, IStream* pstm) _SaveToolbars;
+				public function HRESULT(IBrowserService2 *self, IStream* pstm) _LoadToolbars;
+				public function HRESULT(IBrowserService2 *self, BOOL fClose) _CloseAndReleaseToolbars;
+				public function HRESULT(IBrowserService2 *self, MSG* lpMsg, uint32 itbNext, int32 citb, TOOLBARITEM** pptbi, HWND* phwnd) v_MayGetNextToolbarFocus;
+				public function HRESULT(IBrowserService2 *self, uint32 itb, BOOL bUseHmonitor) _ResizeNextBorderHelper;
+				public function uint32(IBrowserService2 *self, IUnknown* punkSrc) _FindTBar;
+				public function HRESULT(IBrowserService2 *self, TOOLBARITEM* ptbi, HWND hwnd, MSG* lpMsg) _SetFocus;
+				public function HRESULT(IBrowserService2 *self, MSG* pmsg) v_MayTranslateAccelerator;
+				public function HRESULT(IBrowserService2 *self, IUnknown* punkSrc, RECT* lprectBorder, BOOL bUseHmonitor) _GetBorderDWHelper;
+				public function HRESULT(IBrowserService2 *self, ITEMIDLIST* pidl) v_CheckZoneCrossing;
+			}
 		}
 		[CRepr]
 		public struct IBrowserService3 : IBrowserService2
 		{
 			public const new Guid IID = .(0x27d7ce21, 0x762d, 0x48f3, 0x86, 0xf3, 0x40, 0xe2, 0xfd, 0x37, 0x49, 0xc4);
 			
-			public function HRESULT(IBrowserService3 *self, HWND hwnd, RECT* prc) _PositionViewWindow;
-			public function HRESULT(IBrowserService3 *self, uint32 uiCP, PWSTR pwszPath, uint32 dwFlags, ITEMIDLIST** ppidlOut) IEParseDisplayNameEx;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IBrowserService2.VTable
+			{
+				public function HRESULT(IBrowserService3 *self, HWND hwnd, RECT* prc) _PositionViewWindow;
+				public function HRESULT(IBrowserService3 *self, uint32 uiCP, PWSTR pwszPath, uint32 dwFlags, ITEMIDLIST** ppidlOut) IEParseDisplayNameEx;
+			}
 		}
 		[CRepr]
 		public struct IBrowserService4 : IBrowserService3
 		{
 			public const new Guid IID = .(0x639f1bff, 0xe135, 0x4096, 0xab, 0xd8, 0xe0, 0xf5, 0x04, 0xd6, 0x49, 0xa4);
 			
-			public function HRESULT(IBrowserService4 *self, BOOL fPendingView) ActivateView;
-			public function HRESULT(IBrowserService4 *self) SaveViewState;
-			public function HRESULT(IBrowserService4 *self) _ResizeAllBorders;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IBrowserService3.VTable
+			{
+				public function HRESULT(IBrowserService4 *self, BOOL fPendingView) ActivateView;
+				public function HRESULT(IBrowserService4 *self) SaveViewState;
+				public function HRESULT(IBrowserService4 *self) _ResizeAllBorders;
+			}
 		}
 		[CRepr]
 		public struct ITrackShellMenu : IShellMenu
 		{
 			public const new Guid IID = .(0x8278f932, 0x2a3e, 0x11d2, 0x83, 0x8f, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0xd0);
 			
-			public function HRESULT(ITrackShellMenu *self, HWND hwndTB, IUnknown* punkBand, uint32 dwSMSetFlags) SetObscured;
-			public function HRESULT(ITrackShellMenu *self, HWND hwnd, POINTL* ppt, RECTL* prcExclude, int32 dwFlags) Popup;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IShellMenu.VTable
+			{
+				public function HRESULT(ITrackShellMenu *self, HWND hwndTB, IUnknown* punkBand, uint32 dwSMSetFlags) SetObscured;
+				public function HRESULT(ITrackShellMenu *self, HWND hwnd, POINTL* ppt, RECTL* prcExclude, int32 dwFlags) Popup;
+			}
 		}
 		[CRepr]
 		public struct ITranscodeImage : IUnknown
 		{
 			public const new Guid IID = .(0xbae86ddd, 0xdc11, 0x421c, 0xb7, 0xab, 0xcc, 0x55, 0xd1, 0xd6, 0x5c, 0x44);
 			
-			public function HRESULT(ITranscodeImage *self, IShellItem* pShellItem, uint32 uiMaxWidth, uint32 uiMaxHeight, uint32 flags, IStream* pvImage, uint32* puiWidth, uint32* puiHeight) TranscodeImage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ITranscodeImage *self, IShellItem* pShellItem, uint32 uiMaxWidth, uint32 uiMaxHeight, uint32 flags, IStream* pvImage, uint32* puiWidth, uint32* puiHeight) TranscodeImage;
+			}
 		}
 		[CRepr]
 		public struct IUniformResourceLocatorA : IUnknown
 		{
 			public const new Guid IID = .(0xfbf23b80, 0xe3f0, 0x101b, 0x84, 0x88, 0x00, 0xaa, 0x00, 0x3e, 0x56, 0xf8);
 			
-			public function HRESULT(IUniformResourceLocatorA *self, PSTR pcszURL, uint32 dwInFlags) SetURL;
-			public function HRESULT(IUniformResourceLocatorA *self, PSTR* ppszURL) GetURL;
-			public function HRESULT(IUniformResourceLocatorA *self, urlinvokecommandinfoA* purlici) InvokeCommand;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IUniformResourceLocatorA *self, PSTR pcszURL, uint32 dwInFlags) SetURL;
+				public function HRESULT(IUniformResourceLocatorA *self, PSTR* ppszURL) GetURL;
+				public function HRESULT(IUniformResourceLocatorA *self, urlinvokecommandinfoA* purlici) InvokeCommand;
+			}
 		}
 		[CRepr]
 		public struct IUniformResourceLocatorW : IUnknown
 		{
 			public const new Guid IID = .(0xcabb0da0, 0xda57, 0x11cf, 0x99, 0x74, 0x00, 0x20, 0xaf, 0xd7, 0x97, 0x62);
 			
-			public function HRESULT(IUniformResourceLocatorW *self, PWSTR pcszURL, uint32 dwInFlags) SetURL;
-			public function HRESULT(IUniformResourceLocatorW *self, PWSTR* ppszURL) GetURL;
-			public function HRESULT(IUniformResourceLocatorW *self, urlinvokecommandinfoW* purlici) InvokeCommand;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IUniformResourceLocatorW *self, PWSTR pcszURL, uint32 dwInFlags) SetURL;
+				public function HRESULT(IUniformResourceLocatorW *self, PWSTR* ppszURL) GetURL;
+				public function HRESULT(IUniformResourceLocatorW *self, urlinvokecommandinfoW* purlici) InvokeCommand;
+			}
 		}
 		[CRepr]
 		public struct IInputPaneAnimationCoordinator : IUnknown
 		{
 			public const new Guid IID = .(0x2af16ba9, 0x2de5, 0x4b75, 0x82, 0xd9, 0x01, 0x37, 0x2a, 0xfb, 0xff, 0xb4);
 			
-			public function HRESULT(IInputPaneAnimationCoordinator *self, IUnknown* device, IDCompositionAnimation* animation) AddAnimation;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInputPaneAnimationCoordinator *self, IUnknown* device, IDCompositionAnimation* animation) AddAnimation;
+			}
 		}
 		
 		// --- Functions ---

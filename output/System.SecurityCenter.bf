@@ -70,48 +70,73 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8c38232e, 0x3a45, 0x4a27, 0x92, 0xb0, 0x1a, 0x16, 0xa9, 0x75, 0xf6, 0x69);
 			
-			public function HRESULT(IWscProduct *self, BSTR* pVal) get_ProductName;
-			public function HRESULT(IWscProduct *self, WSC_SECURITY_PRODUCT_STATE* pVal) get_ProductState;
-			public function HRESULT(IWscProduct *self, WSC_SECURITY_SIGNATURE_STATUS* pVal) get_SignatureStatus;
-			public function HRESULT(IWscProduct *self, BSTR* pVal) get_RemediationPath;
-			public function HRESULT(IWscProduct *self, BSTR* pVal) get_ProductStateTimestamp;
-			public function HRESULT(IWscProduct *self, BSTR* pVal) get_ProductGuid;
-			public function HRESULT(IWscProduct *self, BOOL* pVal) get_ProductIsDefault;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWscProduct *self, BSTR* pVal) get_ProductName;
+				public function HRESULT(IWscProduct *self, WSC_SECURITY_PRODUCT_STATE* pVal) get_ProductState;
+				public function HRESULT(IWscProduct *self, WSC_SECURITY_SIGNATURE_STATUS* pVal) get_SignatureStatus;
+				public function HRESULT(IWscProduct *self, BSTR* pVal) get_RemediationPath;
+				public function HRESULT(IWscProduct *self, BSTR* pVal) get_ProductStateTimestamp;
+				public function HRESULT(IWscProduct *self, BSTR* pVal) get_ProductGuid;
+				public function HRESULT(IWscProduct *self, BOOL* pVal) get_ProductIsDefault;
+			}
 		}
 		[CRepr]
 		public struct IWscProduct2 : IWscProduct
 		{
 			public const new Guid IID = .(0xf896ca54, 0xfe09, 0x4403, 0x86, 0xd4, 0x23, 0xcb, 0x48, 0x8d, 0x81, 0xd8);
 			
-			public function HRESULT(IWscProduct2 *self, WSC_SECURITY_PRODUCT_SUBSTATUS* peStatus) get_AntivirusScanSubstatus;
-			public function HRESULT(IWscProduct2 *self, WSC_SECURITY_PRODUCT_SUBSTATUS* peStatus) get_AntivirusSettingsSubstatus;
-			public function HRESULT(IWscProduct2 *self, WSC_SECURITY_PRODUCT_SUBSTATUS* peStatus) get_AntivirusProtectionUpdateSubstatus;
-			public function HRESULT(IWscProduct2 *self, WSC_SECURITY_PRODUCT_SUBSTATUS* peStatus) get_FirewallDomainProfileSubstatus;
-			public function HRESULT(IWscProduct2 *self, WSC_SECURITY_PRODUCT_SUBSTATUS* peStatus) get_FirewallPrivateProfileSubstatus;
-			public function HRESULT(IWscProduct2 *self, WSC_SECURITY_PRODUCT_SUBSTATUS* peStatus) get_FirewallPublicProfileSubstatus;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWscProduct.VTable
+			{
+				public function HRESULT(IWscProduct2 *self, WSC_SECURITY_PRODUCT_SUBSTATUS* peStatus) get_AntivirusScanSubstatus;
+				public function HRESULT(IWscProduct2 *self, WSC_SECURITY_PRODUCT_SUBSTATUS* peStatus) get_AntivirusSettingsSubstatus;
+				public function HRESULT(IWscProduct2 *self, WSC_SECURITY_PRODUCT_SUBSTATUS* peStatus) get_AntivirusProtectionUpdateSubstatus;
+				public function HRESULT(IWscProduct2 *self, WSC_SECURITY_PRODUCT_SUBSTATUS* peStatus) get_FirewallDomainProfileSubstatus;
+				public function HRESULT(IWscProduct2 *self, WSC_SECURITY_PRODUCT_SUBSTATUS* peStatus) get_FirewallPrivateProfileSubstatus;
+				public function HRESULT(IWscProduct2 *self, WSC_SECURITY_PRODUCT_SUBSTATUS* peStatus) get_FirewallPublicProfileSubstatus;
+			}
 		}
 		[CRepr]
 		public struct IWscProduct3 : IWscProduct2
 		{
 			public const new Guid IID = .(0x55536524, 0xd1d1, 0x4726, 0x8c, 0x7c, 0x04, 0x99, 0x6a, 0x19, 0x04, 0xe7);
 			
-			public function HRESULT(IWscProduct3 *self, uint32* pdwDays) get_AntivirusDaysUntilExpired;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWscProduct2.VTable
+			{
+				public function HRESULT(IWscProduct3 *self, uint32* pdwDays) get_AntivirusDaysUntilExpired;
+			}
 		}
 		[CRepr]
 		public struct IWSCProductList : IDispatch
 		{
 			public const new Guid IID = .(0x722a338c, 0x6e8e, 0x4e72, 0xac, 0x27, 0x14, 0x17, 0xfb, 0x0c, 0x81, 0xc2);
 			
-			public function HRESULT(IWSCProductList *self, WSC_SECURITY_PROVIDER provider) Initialize;
-			public function HRESULT(IWSCProductList *self, int32* pVal) get_Count;
-			public function HRESULT(IWSCProductList *self, uint32 index, IWscProduct** pVal) get_Item;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWSCProductList *self, WSC_SECURITY_PROVIDER provider) Initialize;
+				public function HRESULT(IWSCProductList *self, int32* pVal) get_Count;
+				public function HRESULT(IWSCProductList *self, uint32 index, IWscProduct** pVal) get_Item;
+			}
 		}
 		[CRepr]
 		public struct IWSCDefaultProduct : IDispatch
 		{
 			public const new Guid IID = .(0x0476d69c, 0xf21a, 0x11e5, 0x9c, 0xe9, 0x5e, 0x55, 0x17, 0x50, 0x7c, 0x66);
 			
-			public function HRESULT(IWSCDefaultProduct *self, SECURITY_PRODUCT_TYPE eType, BSTR pGuid) SetDefaultProduct;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWSCDefaultProduct *self, SECURITY_PRODUCT_TYPE eType, BSTR pGuid) SetDefaultProduct;
+			}
 		}
 		
 		// --- Functions ---

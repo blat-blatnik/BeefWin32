@@ -489,160 +489,230 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0000000d, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IEnumSTATSTG *self, uint32 celt, STATSTG* rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumSTATSTG *self, uint32 celt) Skip;
-			public function HRESULT(IEnumSTATSTG *self) Reset;
-			public function HRESULT(IEnumSTATSTG *self, IEnumSTATSTG** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumSTATSTG *self, uint32 celt, STATSTG* rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumSTATSTG *self, uint32 celt) Skip;
+				public function HRESULT(IEnumSTATSTG *self) Reset;
+				public function HRESULT(IEnumSTATSTG *self, IEnumSTATSTG** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IStorage : IUnknown
 		{
 			public const new Guid IID = .(0x0000000b, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IStorage *self, PWSTR pwcsName, uint32 grfMode, uint32 reserved1, uint32 reserved2, IStream** ppstm) CreateStream;
-			public function HRESULT(IStorage *self, PWSTR pwcsName, void* reserved1, uint32 grfMode, uint32 reserved2, IStream** ppstm) OpenStream;
-			public function HRESULT(IStorage *self, PWSTR pwcsName, uint32 grfMode, uint32 reserved1, uint32 reserved2, IStorage** ppstg) CreateStorage;
-			public function HRESULT(IStorage *self, PWSTR pwcsName, IStorage* pstgPriority, uint32 grfMode, uint16** snbExclude, uint32 reserved, IStorage** ppstg) OpenStorage;
-			public function HRESULT(IStorage *self, uint32 ciidExclude, Guid* rgiidExclude, uint16** snbExclude, IStorage* pstgDest) CopyTo;
-			public function HRESULT(IStorage *self, PWSTR pwcsName, IStorage* pstgDest, PWSTR pwcsNewName, uint32 grfFlags) MoveElementTo;
-			public function HRESULT(IStorage *self, uint32 grfCommitFlags) Commit;
-			public function HRESULT(IStorage *self) Revert;
-			public function HRESULT(IStorage *self, uint32 reserved1, void* reserved2, uint32 reserved3, IEnumSTATSTG** ppenum) EnumElements;
-			public function HRESULT(IStorage *self, PWSTR pwcsName) DestroyElement;
-			public function HRESULT(IStorage *self, PWSTR pwcsOldName, PWSTR pwcsNewName) RenameElement;
-			public function HRESULT(IStorage *self, PWSTR pwcsName, FILETIME* pctime, FILETIME* patime, FILETIME* pmtime) SetElementTimes;
-			public function HRESULT(IStorage *self, Guid* clsid) SetClass;
-			public function HRESULT(IStorage *self, uint32 grfStateBits, uint32 grfMask) SetStateBits;
-			public function HRESULT(IStorage *self, STATSTG* pstatstg, uint32 grfStatFlag) Stat;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IStorage *self, PWSTR pwcsName, uint32 grfMode, uint32 reserved1, uint32 reserved2, IStream** ppstm) CreateStream;
+				public function HRESULT(IStorage *self, PWSTR pwcsName, void* reserved1, uint32 grfMode, uint32 reserved2, IStream** ppstm) OpenStream;
+				public function HRESULT(IStorage *self, PWSTR pwcsName, uint32 grfMode, uint32 reserved1, uint32 reserved2, IStorage** ppstg) CreateStorage;
+				public function HRESULT(IStorage *self, PWSTR pwcsName, IStorage* pstgPriority, uint32 grfMode, uint16** snbExclude, uint32 reserved, IStorage** ppstg) OpenStorage;
+				public function HRESULT(IStorage *self, uint32 ciidExclude, Guid* rgiidExclude, uint16** snbExclude, IStorage* pstgDest) CopyTo;
+				public function HRESULT(IStorage *self, PWSTR pwcsName, IStorage* pstgDest, PWSTR pwcsNewName, uint32 grfFlags) MoveElementTo;
+				public function HRESULT(IStorage *self, uint32 grfCommitFlags) Commit;
+				public function HRESULT(IStorage *self) Revert;
+				public function HRESULT(IStorage *self, uint32 reserved1, void* reserved2, uint32 reserved3, IEnumSTATSTG** ppenum) EnumElements;
+				public function HRESULT(IStorage *self, PWSTR pwcsName) DestroyElement;
+				public function HRESULT(IStorage *self, PWSTR pwcsOldName, PWSTR pwcsNewName) RenameElement;
+				public function HRESULT(IStorage *self, PWSTR pwcsName, FILETIME* pctime, FILETIME* patime, FILETIME* pmtime) SetElementTimes;
+				public function HRESULT(IStorage *self, Guid* clsid) SetClass;
+				public function HRESULT(IStorage *self, uint32 grfStateBits, uint32 grfMask) SetStateBits;
+				public function HRESULT(IStorage *self, STATSTG* pstatstg, uint32 grfStatFlag) Stat;
+			}
 		}
 		[CRepr]
 		public struct IPersistStorage : IPersist
 		{
 			public const new Guid IID = .(0x0000010a, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IPersistStorage *self) IsDirty;
-			public function HRESULT(IPersistStorage *self, IStorage* pStg) InitNew;
-			public function HRESULT(IPersistStorage *self, IStorage* pStg) Load;
-			public function HRESULT(IPersistStorage *self, IStorage* pStgSave, BOOL fSameAsLoad) Save;
-			public function HRESULT(IPersistStorage *self, IStorage* pStgNew) SaveCompleted;
-			public function HRESULT(IPersistStorage *self) HandsOffStorage;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IPersist.VTable
+			{
+				public function HRESULT(IPersistStorage *self) IsDirty;
+				public function HRESULT(IPersistStorage *self, IStorage* pStg) InitNew;
+				public function HRESULT(IPersistStorage *self, IStorage* pStg) Load;
+				public function HRESULT(IPersistStorage *self, IStorage* pStgSave, BOOL fSameAsLoad) Save;
+				public function HRESULT(IPersistStorage *self, IStorage* pStgNew) SaveCompleted;
+				public function HRESULT(IPersistStorage *self) HandsOffStorage;
+			}
 		}
 		[CRepr]
 		public struct ILockBytes : IUnknown
 		{
 			public const new Guid IID = .(0x0000000a, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(ILockBytes *self, ULARGE_INTEGER ulOffset, void* pv, uint32 cb, uint32* pcbRead) ReadAt;
-			public function HRESULT(ILockBytes *self, ULARGE_INTEGER ulOffset, void* pv, uint32 cb, uint32* pcbWritten) WriteAt;
-			public function HRESULT(ILockBytes *self) Flush;
-			public function HRESULT(ILockBytes *self, ULARGE_INTEGER cb) SetSize;
-			public function HRESULT(ILockBytes *self, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) LockRegion;
-			public function HRESULT(ILockBytes *self, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) UnlockRegion;
-			public function HRESULT(ILockBytes *self, STATSTG* pstatstg, uint32 grfStatFlag) Stat;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ILockBytes *self, ULARGE_INTEGER ulOffset, void* pv, uint32 cb, uint32* pcbRead) ReadAt;
+				public function HRESULT(ILockBytes *self, ULARGE_INTEGER ulOffset, void* pv, uint32 cb, uint32* pcbWritten) WriteAt;
+				public function HRESULT(ILockBytes *self) Flush;
+				public function HRESULT(ILockBytes *self, ULARGE_INTEGER cb) SetSize;
+				public function HRESULT(ILockBytes *self, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) LockRegion;
+				public function HRESULT(ILockBytes *self, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) UnlockRegion;
+				public function HRESULT(ILockBytes *self, STATSTG* pstatstg, uint32 grfStatFlag) Stat;
+			}
 		}
 		[CRepr]
 		public struct IRootStorage : IUnknown
 		{
 			public const new Guid IID = .(0x00000012, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IRootStorage *self, PWSTR pszFile) SwitchToFile;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRootStorage *self, PWSTR pszFile) SwitchToFile;
+			}
 		}
 		[CRepr]
 		public struct IFillLockBytes : IUnknown
 		{
 			public const new Guid IID = .(0x99caf010, 0x415e, 0x11cf, 0x88, 0x14, 0x00, 0xaa, 0x00, 0xb5, 0x69, 0xf5);
 			
-			public function HRESULT(IFillLockBytes *self, void* pv, uint32 cb, uint32* pcbWritten) FillAppend;
-			public function HRESULT(IFillLockBytes *self, ULARGE_INTEGER ulOffset, void* pv, uint32 cb, uint32* pcbWritten) FillAt;
-			public function HRESULT(IFillLockBytes *self, ULARGE_INTEGER ulSize) SetFillSize;
-			public function HRESULT(IFillLockBytes *self, BOOL bCanceled) Terminate;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IFillLockBytes *self, void* pv, uint32 cb, uint32* pcbWritten) FillAppend;
+				public function HRESULT(IFillLockBytes *self, ULARGE_INTEGER ulOffset, void* pv, uint32 cb, uint32* pcbWritten) FillAt;
+				public function HRESULT(IFillLockBytes *self, ULARGE_INTEGER ulSize) SetFillSize;
+				public function HRESULT(IFillLockBytes *self, BOOL bCanceled) Terminate;
+			}
 		}
 		[CRepr]
 		public struct ILayoutStorage : IUnknown
 		{
 			public const new Guid IID = .(0x0e6d4d90, 0x6738, 0x11cf, 0x96, 0x08, 0x00, 0xaa, 0x00, 0x68, 0x0d, 0xb4);
 			
-			public function HRESULT(ILayoutStorage *self, StorageLayout* pStorageLayout, uint32 nEntries, uint32 glfInterleavedFlag) LayoutScript;
-			public function HRESULT(ILayoutStorage *self) BeginMonitor;
-			public function HRESULT(ILayoutStorage *self) EndMonitor;
-			public function HRESULT(ILayoutStorage *self, PWSTR pwcsNewDfName) ReLayoutDocfile;
-			public function HRESULT(ILayoutStorage *self, ILockBytes* pILockBytes) ReLayoutDocfileOnILockBytes;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ILayoutStorage *self, StorageLayout* pStorageLayout, uint32 nEntries, uint32 glfInterleavedFlag) LayoutScript;
+				public function HRESULT(ILayoutStorage *self) BeginMonitor;
+				public function HRESULT(ILayoutStorage *self) EndMonitor;
+				public function HRESULT(ILayoutStorage *self, PWSTR pwcsNewDfName) ReLayoutDocfile;
+				public function HRESULT(ILayoutStorage *self, ILockBytes* pILockBytes) ReLayoutDocfileOnILockBytes;
+			}
 		}
 		[CRepr]
 		public struct IDirectWriterLock : IUnknown
 		{
 			public const new Guid IID = .(0x0e6d4d92, 0x6738, 0x11cf, 0x96, 0x08, 0x00, 0xaa, 0x00, 0x68, 0x0d, 0xb4);
 			
-			public function HRESULT(IDirectWriterLock *self, uint32 dwTimeout) WaitForWriteAccess;
-			public function HRESULT(IDirectWriterLock *self) ReleaseWriteAccess;
-			public function HRESULT(IDirectWriterLock *self) HaveWriteAccess;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDirectWriterLock *self, uint32 dwTimeout) WaitForWriteAccess;
+				public function HRESULT(IDirectWriterLock *self) ReleaseWriteAccess;
+				public function HRESULT(IDirectWriterLock *self) HaveWriteAccess;
+			}
 		}
 		[CRepr]
 		public struct IPropertyStorage : IUnknown
 		{
 			public const new Guid IID = .(0x00000138, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar) ReadMultiple;
-			public function HRESULT(IPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar, uint32 propidNameFirst) WriteMultiple;
-			public function HRESULT(IPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec) DeleteMultiple;
-			public function HRESULT(IPropertyStorage *self, uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) ReadPropertyNames;
-			public function HRESULT(IPropertyStorage *self, uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) WritePropertyNames;
-			public function HRESULT(IPropertyStorage *self, uint32 cpropid, uint32* rgpropid) DeletePropertyNames;
-			public function HRESULT(IPropertyStorage *self, uint32 grfCommitFlags) Commit;
-			public function HRESULT(IPropertyStorage *self) Revert;
-			public function HRESULT(IPropertyStorage *self, IEnumSTATPROPSTG** ppenum) Enum;
-			public function HRESULT(IPropertyStorage *self, FILETIME* pctime, FILETIME* patime, FILETIME* pmtime) SetTimes;
-			public function HRESULT(IPropertyStorage *self, Guid* clsid) SetClass;
-			public function HRESULT(IPropertyStorage *self, STATPROPSETSTG* pstatpsstg) Stat;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar) ReadMultiple;
+				public function HRESULT(IPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar, uint32 propidNameFirst) WriteMultiple;
+				public function HRESULT(IPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec) DeleteMultiple;
+				public function HRESULT(IPropertyStorage *self, uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) ReadPropertyNames;
+				public function HRESULT(IPropertyStorage *self, uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) WritePropertyNames;
+				public function HRESULT(IPropertyStorage *self, uint32 cpropid, uint32* rgpropid) DeletePropertyNames;
+				public function HRESULT(IPropertyStorage *self, uint32 grfCommitFlags) Commit;
+				public function HRESULT(IPropertyStorage *self) Revert;
+				public function HRESULT(IPropertyStorage *self, IEnumSTATPROPSTG** ppenum) Enum;
+				public function HRESULT(IPropertyStorage *self, FILETIME* pctime, FILETIME* patime, FILETIME* pmtime) SetTimes;
+				public function HRESULT(IPropertyStorage *self, Guid* clsid) SetClass;
+				public function HRESULT(IPropertyStorage *self, STATPROPSETSTG* pstatpsstg) Stat;
+			}
 		}
 		[CRepr]
 		public struct IPropertySetStorage : IUnknown
 		{
 			public const new Guid IID = .(0x0000013a, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IPropertySetStorage *self, Guid* rfmtid, Guid* pclsid, uint32 grfFlags, uint32 grfMode, IPropertyStorage** ppprstg) Create;
-			public function HRESULT(IPropertySetStorage *self, Guid* rfmtid, uint32 grfMode, IPropertyStorage** ppprstg) Open;
-			public function HRESULT(IPropertySetStorage *self, Guid* rfmtid) Delete;
-			public function HRESULT(IPropertySetStorage *self, IEnumSTATPROPSETSTG** ppenum) Enum;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPropertySetStorage *self, Guid* rfmtid, Guid* pclsid, uint32 grfFlags, uint32 grfMode, IPropertyStorage** ppprstg) Create;
+				public function HRESULT(IPropertySetStorage *self, Guid* rfmtid, uint32 grfMode, IPropertyStorage** ppprstg) Open;
+				public function HRESULT(IPropertySetStorage *self, Guid* rfmtid) Delete;
+				public function HRESULT(IPropertySetStorage *self, IEnumSTATPROPSETSTG** ppenum) Enum;
+			}
 		}
 		[CRepr]
 		public struct IEnumSTATPROPSTG : IUnknown
 		{
 			public const new Guid IID = .(0x00000139, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IEnumSTATPROPSTG *self, uint32 celt, STATPROPSTG* rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumSTATPROPSTG *self, uint32 celt) Skip;
-			public function HRESULT(IEnumSTATPROPSTG *self) Reset;
-			public function HRESULT(IEnumSTATPROPSTG *self, IEnumSTATPROPSTG** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumSTATPROPSTG *self, uint32 celt, STATPROPSTG* rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumSTATPROPSTG *self, uint32 celt) Skip;
+				public function HRESULT(IEnumSTATPROPSTG *self) Reset;
+				public function HRESULT(IEnumSTATPROPSTG *self, IEnumSTATPROPSTG** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IEnumSTATPROPSETSTG : IUnknown
 		{
 			public const new Guid IID = .(0x0000013b, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IEnumSTATPROPSETSTG *self, uint32 celt, STATPROPSETSTG* rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IEnumSTATPROPSETSTG *self, uint32 celt) Skip;
-			public function HRESULT(IEnumSTATPROPSETSTG *self) Reset;
-			public function HRESULT(IEnumSTATPROPSETSTG *self, IEnumSTATPROPSETSTG** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IEnumSTATPROPSETSTG *self, uint32 celt, STATPROPSETSTG* rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IEnumSTATPROPSETSTG *self, uint32 celt) Skip;
+				public function HRESULT(IEnumSTATPROPSETSTG *self) Reset;
+				public function HRESULT(IEnumSTATPROPSETSTG *self, IEnumSTATPROPSETSTG** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IPropertyBag : IUnknown
 		{
 			public const new Guid IID = .(0x55272a00, 0x42cb, 0x11ce, 0x81, 0x35, 0x00, 0xaa, 0x00, 0x4b, 0xb8, 0x51);
 			
-			public function HRESULT(IPropertyBag *self, PWSTR pszPropName, VARIANT* pVar, IErrorLog* pErrorLog) Read;
-			public function HRESULT(IPropertyBag *self, PWSTR pszPropName, VARIANT* pVar) Write;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPropertyBag *self, PWSTR pszPropName, VARIANT* pVar, IErrorLog* pErrorLog) Read;
+				public function HRESULT(IPropertyBag *self, PWSTR pszPropName, VARIANT* pVar) Write;
+			}
 		}
 		[CRepr]
 		public struct IPropertyBag2 : IUnknown
 		{
 			public const new Guid IID = .(0x22f55882, 0x280b, 0x11d0, 0xa8, 0xa9, 0x00, 0xa0, 0xc9, 0x0c, 0x20, 0x04);
 			
-			public function HRESULT(IPropertyBag2 *self, uint32 cProperties, PROPBAG2* pPropBag, IErrorLog* pErrLog, VARIANT* pvarValue, HRESULT* phrError) Read;
-			public function HRESULT(IPropertyBag2 *self, uint32 cProperties, PROPBAG2* pPropBag, VARIANT* pvarValue) Write;
-			public function HRESULT(IPropertyBag2 *self, uint32* pcProperties) CountProperties;
-			public function HRESULT(IPropertyBag2 *self, uint32 iProperty, uint32 cProperties, PROPBAG2* pPropBag, uint32* pcProperties) GetPropertyInfo;
-			public function HRESULT(IPropertyBag2 *self, PWSTR pstrName, uint32 dwHint, IUnknown* pUnkObject, IErrorLog* pErrLog) LoadObject;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IPropertyBag2 *self, uint32 cProperties, PROPBAG2* pPropBag, IErrorLog* pErrLog, VARIANT* pvarValue, HRESULT* phrError) Read;
+				public function HRESULT(IPropertyBag2 *self, uint32 cProperties, PROPBAG2* pPropBag, VARIANT* pvarValue) Write;
+				public function HRESULT(IPropertyBag2 *self, uint32* pcProperties) CountProperties;
+				public function HRESULT(IPropertyBag2 *self, uint32 iProperty, uint32 cProperties, PROPBAG2* pPropBag, uint32* pcProperties) GetPropertyInfo;
+				public function HRESULT(IPropertyBag2 *self, PWSTR pstrName, uint32 dwHint, IUnknown* pUnkObject, IErrorLog* pErrLog) LoadObject;
+			}
 		}
 		
 		// --- Functions ---

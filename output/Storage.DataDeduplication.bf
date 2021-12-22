@@ -143,63 +143,93 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7bacc67a, 0x2f1d, 0x42d0, 0x89, 0x7e, 0x6f, 0xf6, 0x2d, 0xd5, 0x33, 0xbb);
 			
-			public function HRESULT(IDedupReadFileCallback *self, BSTR FileFullPath, int64 FileOffset, uint32 SizeToRead, uint8* FileBuffer, uint32* ReturnedSize, uint32 Flags) ReadBackupFile;
-			public function HRESULT(IDedupReadFileCallback *self, uint32 NumberOfContainers, BSTR* ContainerPaths, uint32* ReadPlanEntries, DEDUP_CONTAINER_EXTENT** ReadPlan) OrderContainersRestore;
-			public function HRESULT(IDedupReadFileCallback *self, BSTR FileFullPath, uint32 NumberOfReads, DDP_FILE_EXTENT* ReadOffsets) PreviewContainerRead;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDedupReadFileCallback *self, BSTR FileFullPath, int64 FileOffset, uint32 SizeToRead, uint8* FileBuffer, uint32* ReturnedSize, uint32 Flags) ReadBackupFile;
+				public function HRESULT(IDedupReadFileCallback *self, uint32 NumberOfContainers, BSTR* ContainerPaths, uint32* ReadPlanEntries, DEDUP_CONTAINER_EXTENT** ReadPlan) OrderContainersRestore;
+				public function HRESULT(IDedupReadFileCallback *self, BSTR FileFullPath, uint32 NumberOfReads, DDP_FILE_EXTENT* ReadOffsets) PreviewContainerRead;
+			}
 		}
 		[CRepr]
 		public struct IDedupBackupSupport : IUnknown
 		{
 			public const new Guid IID = .(0xc719d963, 0x2b2d, 0x415e, 0xac, 0xf7, 0x7e, 0xb7, 0xca, 0x59, 0x6f, 0xf4);
 			
-			public function HRESULT(IDedupBackupSupport *self, uint32 NumberOfFiles, BSTR* FileFullPaths, IDedupReadFileCallback* Store, uint32 Flags, HRESULT* FileResults) RestoreFiles;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDedupBackupSupport *self, uint32 NumberOfFiles, BSTR* FileFullPaths, IDedupReadFileCallback* Store, uint32 Flags, HRESULT* FileResults) RestoreFiles;
+			}
 		}
 		[CRepr]
 		public struct IDedupChunkLibrary : IUnknown
 		{
 			public const new Guid IID = .(0xbb5144d7, 0x2720, 0x4dcc, 0x87, 0x77, 0x78, 0x59, 0x74, 0x16, 0xec, 0x23);
 			
-			public function HRESULT(IDedupChunkLibrary *self) InitializeForPushBuffers;
-			public function HRESULT(IDedupChunkLibrary *self) Uninitialize;
-			public function HRESULT(IDedupChunkLibrary *self, uint32 dwParamType, VARIANT vParamValue) SetParameter;
-			public function HRESULT(IDedupChunkLibrary *self, Guid iidIteratorInterfaceID, IUnknown** ppChunksEnum) StartChunking;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDedupChunkLibrary *self) InitializeForPushBuffers;
+				public function HRESULT(IDedupChunkLibrary *self) Uninitialize;
+				public function HRESULT(IDedupChunkLibrary *self, uint32 dwParamType, VARIANT vParamValue) SetParameter;
+				public function HRESULT(IDedupChunkLibrary *self, Guid iidIteratorInterfaceID, IUnknown** ppChunksEnum) StartChunking;
+			}
 		}
 		[CRepr]
 		public struct IDedupIterateChunksHash32 : IUnknown
 		{
 			public const new Guid IID = .(0x90b584d3, 0x72aa, 0x400f, 0x97, 0x67, 0xca, 0xd8, 0x66, 0xa5, 0xa2, 0xd8);
 			
-			public function HRESULT(IDedupIterateChunksHash32 *self, uint8* pBuffer, uint32 ulBufferLength) PushBuffer;
-			public function HRESULT(IDedupIterateChunksHash32 *self, uint32 ulMaxChunks, DEDUP_CHUNK_INFO_HASH32* pArrChunks, uint32* pulFetched) Next;
-			public function HRESULT(IDedupIterateChunksHash32 *self) Drain;
-			public function HRESULT(IDedupIterateChunksHash32 *self) Reset;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDedupIterateChunksHash32 *self, uint8* pBuffer, uint32 ulBufferLength) PushBuffer;
+				public function HRESULT(IDedupIterateChunksHash32 *self, uint32 ulMaxChunks, DEDUP_CHUNK_INFO_HASH32* pArrChunks, uint32* pulFetched) Next;
+				public function HRESULT(IDedupIterateChunksHash32 *self) Drain;
+				public function HRESULT(IDedupIterateChunksHash32 *self) Reset;
+			}
 		}
 		[CRepr]
 		public struct IDedupDataPort : IUnknown
 		{
 			public const new Guid IID = .(0x7963d734, 0x40a9, 0x4ea3, 0xbb, 0xf6, 0x5a, 0x89, 0xd2, 0x6f, 0x7a, 0xe8);
 			
-			public function HRESULT(IDedupDataPort *self, DedupDataPortVolumeStatus* pStatus, uint32* pDataHeadroomMb) GetStatus;
-			public function HRESULT(IDedupDataPort *self, uint32 Count, DedupHash* pHashes, Guid* pRequestId) LookupChunks;
-			public function HRESULT(IDedupDataPort *self, uint32 ChunkCount, DedupChunk* pChunkMetadata, uint32 DataByteCount, uint8* pChunkData, Guid* pRequestId) InsertChunks;
-			public function HRESULT(IDedupDataPort *self, uint32 ChunkCount, DedupChunk* pChunkMetadata, uint32 DataByteCount, IStream* pChunkDataStream, Guid* pRequestId) InsertChunksWithStream;
-			public function HRESULT(IDedupDataPort *self, uint32 StreamCount, DedupStream* pStreams, uint32 EntryCount, DedupStreamEntry* pEntries, Guid* pRequestId) CommitStreams;
-			public function HRESULT(IDedupDataPort *self, uint32 StreamCount, DedupStream* pStreams, uint32 EntryCount, IStream* pEntriesStream, Guid* pRequestId) CommitStreamsWithStream;
-			public function HRESULT(IDedupDataPort *self, uint32 StreamCount, BSTR* pStreamPaths, Guid* pRequestId) GetStreams;
-			public function HRESULT(IDedupDataPort *self, Guid RequestId, uint32 MaxWaitMs, uint32 StreamEntryIndex, uint32* pStreamCount, DedupStream** ppStreams, uint32* pEntryCount, DedupStreamEntry** ppEntries, DedupDataPortRequestStatus* pStatus, HRESULT** ppItemResults) GetStreamsResults;
-			public function HRESULT(IDedupDataPort *self, uint32 Count, DedupHash* pHashes, Guid* pRequestId) GetChunks;
-			public function HRESULT(IDedupDataPort *self, Guid RequestId, uint32 MaxWaitMs, uint32 ChunkIndex, uint32* pChunkCount, DedupChunk** ppChunkMetadata, uint32* pDataByteCount, uint8** ppChunkData, DedupDataPortRequestStatus* pStatus, HRESULT** ppItemResults) GetChunksResults;
-			public function HRESULT(IDedupDataPort *self, Guid RequestId, DedupDataPortRequestStatus* pStatus) GetRequestStatus;
-			public function HRESULT(IDedupDataPort *self, Guid RequestId, uint32 MaxWaitMs, HRESULT* pBatchResult, uint32* pBatchCount, DedupDataPortRequestStatus* pStatus, HRESULT** ppItemResults) GetRequestResults;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDedupDataPort *self, DedupDataPortVolumeStatus* pStatus, uint32* pDataHeadroomMb) GetStatus;
+				public function HRESULT(IDedupDataPort *self, uint32 Count, DedupHash* pHashes, Guid* pRequestId) LookupChunks;
+				public function HRESULT(IDedupDataPort *self, uint32 ChunkCount, DedupChunk* pChunkMetadata, uint32 DataByteCount, uint8* pChunkData, Guid* pRequestId) InsertChunks;
+				public function HRESULT(IDedupDataPort *self, uint32 ChunkCount, DedupChunk* pChunkMetadata, uint32 DataByteCount, IStream* pChunkDataStream, Guid* pRequestId) InsertChunksWithStream;
+				public function HRESULT(IDedupDataPort *self, uint32 StreamCount, DedupStream* pStreams, uint32 EntryCount, DedupStreamEntry* pEntries, Guid* pRequestId) CommitStreams;
+				public function HRESULT(IDedupDataPort *self, uint32 StreamCount, DedupStream* pStreams, uint32 EntryCount, IStream* pEntriesStream, Guid* pRequestId) CommitStreamsWithStream;
+				public function HRESULT(IDedupDataPort *self, uint32 StreamCount, BSTR* pStreamPaths, Guid* pRequestId) GetStreams;
+				public function HRESULT(IDedupDataPort *self, Guid RequestId, uint32 MaxWaitMs, uint32 StreamEntryIndex, uint32* pStreamCount, DedupStream** ppStreams, uint32* pEntryCount, DedupStreamEntry** ppEntries, DedupDataPortRequestStatus* pStatus, HRESULT** ppItemResults) GetStreamsResults;
+				public function HRESULT(IDedupDataPort *self, uint32 Count, DedupHash* pHashes, Guid* pRequestId) GetChunks;
+				public function HRESULT(IDedupDataPort *self, Guid RequestId, uint32 MaxWaitMs, uint32 ChunkIndex, uint32* pChunkCount, DedupChunk** ppChunkMetadata, uint32* pDataByteCount, uint8** ppChunkData, DedupDataPortRequestStatus* pStatus, HRESULT** ppItemResults) GetChunksResults;
+				public function HRESULT(IDedupDataPort *self, Guid RequestId, DedupDataPortRequestStatus* pStatus) GetRequestStatus;
+				public function HRESULT(IDedupDataPort *self, Guid RequestId, uint32 MaxWaitMs, HRESULT* pBatchResult, uint32* pBatchCount, DedupDataPortRequestStatus* pStatus, HRESULT** ppItemResults) GetRequestResults;
+			}
 		}
 		[CRepr]
 		public struct IDedupDataPortManager : IUnknown
 		{
 			public const new Guid IID = .(0x44677452, 0xb90a, 0x445e, 0x81, 0x92, 0xcd, 0xcf, 0xe8, 0x15, 0x11, 0xfb);
 			
-			public function HRESULT(IDedupDataPortManager *self, uint32* pMinChunkSize, uint32* pMaxChunkSize, DedupChunkingAlgorithm* pChunkingAlgorithm, DedupHashingAlgorithm* pHashingAlgorithm, DedupCompressionAlgorithm* pCompressionAlgorithm) GetConfiguration;
-			public function HRESULT(IDedupDataPortManager *self, uint32 Options, BSTR Path, DedupDataPortVolumeStatus* pStatus) GetVolumeStatus;
-			public function HRESULT(IDedupDataPortManager *self, uint32 Options, BSTR Path, IDedupDataPort** ppDataPort) GetVolumeDataPort;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IDedupDataPortManager *self, uint32* pMinChunkSize, uint32* pMaxChunkSize, DedupChunkingAlgorithm* pChunkingAlgorithm, DedupHashingAlgorithm* pHashingAlgorithm, DedupCompressionAlgorithm* pCompressionAlgorithm) GetConfiguration;
+				public function HRESULT(IDedupDataPortManager *self, uint32 Options, BSTR Path, DedupDataPortVolumeStatus* pStatus) GetVolumeStatus;
+				public function HRESULT(IDedupDataPortManager *self, uint32 Options, BSTR Path, IDedupDataPort** ppDataPort) GetVolumeDataPort;
+			}
 		}
 		
 	}

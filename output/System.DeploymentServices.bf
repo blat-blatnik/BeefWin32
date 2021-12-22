@@ -558,277 +558,402 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x46ad894b, 0x0bab, 0x47dc, 0x84, 0xb2, 0x7b, 0x55, 0x3f, 0x1d, 0x8f, 0x80);
 			
-			public function HRESULT(IWdsTransportCacheable *self, int16* pbDirty) get_Dirty;
-			public function HRESULT(IWdsTransportCacheable *self) Discard;
-			public function HRESULT(IWdsTransportCacheable *self) Refresh;
-			public function HRESULT(IWdsTransportCacheable *self) Commit;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWdsTransportCacheable *self, int16* pbDirty) get_Dirty;
+				public function HRESULT(IWdsTransportCacheable *self) Discard;
+				public function HRESULT(IWdsTransportCacheable *self) Refresh;
+				public function HRESULT(IWdsTransportCacheable *self) Commit;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportCollection : IDispatch
 		{
 			public const new Guid IID = .(0xb8ba4b1a, 0x2ff4, 0x43ab, 0x99, 0x6c, 0xb2, 0xb1, 0x0a, 0x91, 0xa6, 0xeb);
 			
-			public function HRESULT(IWdsTransportCollection *self, uint32* pulCount) get_Count;
-			public function HRESULT(IWdsTransportCollection *self, uint32 ulIndex, IDispatch** ppVal) get_Item;
-			public function HRESULT(IWdsTransportCollection *self, IUnknown** ppVal) get__NewEnum;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWdsTransportCollection *self, uint32* pulCount) get_Count;
+				public function HRESULT(IWdsTransportCollection *self, uint32 ulIndex, IDispatch** ppVal) get_Item;
+				public function HRESULT(IWdsTransportCollection *self, IUnknown** ppVal) get__NewEnum;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportManager : IDispatch
 		{
 			public const new Guid IID = .(0x5b0d35f5, 0x1b13, 0x4afd, 0xb8, 0x78, 0x65, 0x26, 0xdc, 0x34, 0x0b, 0x5d);
 			
-			public function HRESULT(IWdsTransportManager *self, BSTR bszServerName, IWdsTransportServer** ppWdsTransportServer) GetWdsTransportServer;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWdsTransportManager *self, BSTR bszServerName, IWdsTransportServer** ppWdsTransportServer) GetWdsTransportServer;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportServer : IDispatch
 		{
 			public const new Guid IID = .(0x09ccd093, 0x830d, 0x4344, 0xa3, 0x0a, 0x73, 0xae, 0x8e, 0x8f, 0xca, 0x90);
 			
-			public function HRESULT(IWdsTransportServer *self, BSTR* pbszName) get_Name;
-			public function HRESULT(IWdsTransportServer *self, IWdsTransportSetupManager** ppWdsTransportSetupManager) get_SetupManager;
-			public function HRESULT(IWdsTransportServer *self, IWdsTransportConfigurationManager** ppWdsTransportConfigurationManager) get_ConfigurationManager;
-			public function HRESULT(IWdsTransportServer *self, IWdsTransportNamespaceManager** ppWdsTransportNamespaceManager) get_NamespaceManager;
-			public function HRESULT(IWdsTransportServer *self, uint32 ulClientId, WDSTRANSPORT_DISCONNECT_TYPE DisconnectionType) DisconnectClient;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWdsTransportServer *self, BSTR* pbszName) get_Name;
+				public function HRESULT(IWdsTransportServer *self, IWdsTransportSetupManager** ppWdsTransportSetupManager) get_SetupManager;
+				public function HRESULT(IWdsTransportServer *self, IWdsTransportConfigurationManager** ppWdsTransportConfigurationManager) get_ConfigurationManager;
+				public function HRESULT(IWdsTransportServer *self, IWdsTransportNamespaceManager** ppWdsTransportNamespaceManager) get_NamespaceManager;
+				public function HRESULT(IWdsTransportServer *self, uint32 ulClientId, WDSTRANSPORT_DISCONNECT_TYPE DisconnectionType) DisconnectClient;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportServer2 : IWdsTransportServer
 		{
 			public const new Guid IID = .(0x256e999f, 0x6df4, 0x4538, 0x81, 0xb9, 0x85, 0x7b, 0x9a, 0xb8, 0xfb, 0x47);
 			
-			public function HRESULT(IWdsTransportServer2 *self, IWdsTransportTftpManager** ppWdsTransportTftpManager) get_TftpManager;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWdsTransportServer.VTable
+			{
+				public function HRESULT(IWdsTransportServer2 *self, IWdsTransportTftpManager** ppWdsTransportTftpManager) get_TftpManager;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportSetupManager : IDispatch
 		{
 			public const new Guid IID = .(0xf7238425, 0xefa8, 0x40a4, 0xae, 0xf9, 0xc9, 0x8d, 0x96, 0x9c, 0x0b, 0x75);
 			
-			public function HRESULT(IWdsTransportSetupManager *self, uint64* pullVersion) get_Version;
-			public function HRESULT(IWdsTransportSetupManager *self, uint32* pulInstalledFeatures) get_InstalledFeatures;
-			public function HRESULT(IWdsTransportSetupManager *self, uint32* pulProtocols) get_Protocols;
-			public function HRESULT(IWdsTransportSetupManager *self, BSTR bszName, BSTR bszDescription, BSTR bszFilePath, BSTR bszInitializationRoutine) RegisterContentProvider;
-			public function HRESULT(IWdsTransportSetupManager *self, BSTR bszName) DeregisterContentProvider;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWdsTransportSetupManager *self, uint64* pullVersion) get_Version;
+				public function HRESULT(IWdsTransportSetupManager *self, uint32* pulInstalledFeatures) get_InstalledFeatures;
+				public function HRESULT(IWdsTransportSetupManager *self, uint32* pulProtocols) get_Protocols;
+				public function HRESULT(IWdsTransportSetupManager *self, BSTR bszName, BSTR bszDescription, BSTR bszFilePath, BSTR bszInitializationRoutine) RegisterContentProvider;
+				public function HRESULT(IWdsTransportSetupManager *self, BSTR bszName) DeregisterContentProvider;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportSetupManager2 : IWdsTransportSetupManager
 		{
 			public const new Guid IID = .(0x02be79da, 0x7e9e, 0x4366, 0x8b, 0x6e, 0x2a, 0xa9, 0xa9, 0x1b, 0xe4, 0x7f);
 			
-			public function HRESULT(IWdsTransportSetupManager2 *self, uint32* pulTftpCapabilities) get_TftpCapabilities;
-			public function HRESULT(IWdsTransportSetupManager2 *self, IWdsTransportCollection** ppProviderCollection) get_ContentProviders;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWdsTransportSetupManager.VTable
+			{
+				public function HRESULT(IWdsTransportSetupManager2 *self, uint32* pulTftpCapabilities) get_TftpCapabilities;
+				public function HRESULT(IWdsTransportSetupManager2 *self, IWdsTransportCollection** ppProviderCollection) get_ContentProviders;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportConfigurationManager : IDispatch
 		{
 			public const new Guid IID = .(0x84cc4779, 0x42dd, 0x4792, 0x89, 0x1e, 0x13, 0x21, 0xd6, 0xd7, 0x4b, 0x44);
 			
-			public function HRESULT(IWdsTransportConfigurationManager *self, IWdsTransportServicePolicy** ppWdsTransportServicePolicy) get_ServicePolicy;
-			public function HRESULT(IWdsTransportConfigurationManager *self, IWdsTransportDiagnosticsPolicy** ppWdsTransportDiagnosticsPolicy) get_DiagnosticsPolicy;
-			public function HRESULT(IWdsTransportConfigurationManager *self, int16 bRealtimeStatus, int16* pbServicesRunning) get_WdsTransportServicesRunning;
-			public function HRESULT(IWdsTransportConfigurationManager *self) EnableWdsTransportServices;
-			public function HRESULT(IWdsTransportConfigurationManager *self) DisableWdsTransportServices;
-			public function HRESULT(IWdsTransportConfigurationManager *self) StartWdsTransportServices;
-			public function HRESULT(IWdsTransportConfigurationManager *self) StopWdsTransportServices;
-			public function HRESULT(IWdsTransportConfigurationManager *self) RestartWdsTransportServices;
-			public function HRESULT(IWdsTransportConfigurationManager *self, WDSTRANSPORT_SERVICE_NOTIFICATION ServiceNotification) NotifyWdsTransportServices;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWdsTransportConfigurationManager *self, IWdsTransportServicePolicy** ppWdsTransportServicePolicy) get_ServicePolicy;
+				public function HRESULT(IWdsTransportConfigurationManager *self, IWdsTransportDiagnosticsPolicy** ppWdsTransportDiagnosticsPolicy) get_DiagnosticsPolicy;
+				public function HRESULT(IWdsTransportConfigurationManager *self, int16 bRealtimeStatus, int16* pbServicesRunning) get_WdsTransportServicesRunning;
+				public function HRESULT(IWdsTransportConfigurationManager *self) EnableWdsTransportServices;
+				public function HRESULT(IWdsTransportConfigurationManager *self) DisableWdsTransportServices;
+				public function HRESULT(IWdsTransportConfigurationManager *self) StartWdsTransportServices;
+				public function HRESULT(IWdsTransportConfigurationManager *self) StopWdsTransportServices;
+				public function HRESULT(IWdsTransportConfigurationManager *self) RestartWdsTransportServices;
+				public function HRESULT(IWdsTransportConfigurationManager *self, WDSTRANSPORT_SERVICE_NOTIFICATION ServiceNotification) NotifyWdsTransportServices;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportConfigurationManager2 : IWdsTransportConfigurationManager
 		{
 			public const new Guid IID = .(0xd0d85caf, 0xa153, 0x4f1d, 0xa9, 0xdd, 0x96, 0xf4, 0x31, 0xc5, 0x07, 0x17);
 			
-			public function HRESULT(IWdsTransportConfigurationManager2 *self, IWdsTransportMulticastSessionPolicy** ppWdsTransportMulticastSessionPolicy) get_MulticastSessionPolicy;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWdsTransportConfigurationManager.VTable
+			{
+				public function HRESULT(IWdsTransportConfigurationManager2 *self, IWdsTransportMulticastSessionPolicy** ppWdsTransportMulticastSessionPolicy) get_MulticastSessionPolicy;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportNamespaceManager : IDispatch
 		{
 			public const new Guid IID = .(0x3e22d9f6, 0x3777, 0x4d98, 0x83, 0xe1, 0xf9, 0x86, 0x96, 0x71, 0x7b, 0xa3);
 			
-			public function HRESULT(IWdsTransportNamespaceManager *self, WDSTRANSPORT_NAMESPACE_TYPE NamespaceType, BSTR bszNamespaceName, BSTR bszContentProvider, BSTR bszConfiguration, IWdsTransportNamespace** ppWdsTransportNamespace) CreateNamespace;
-			public function HRESULT(IWdsTransportNamespaceManager *self, BSTR bszNamespaceName, IWdsTransportNamespace** ppWdsTransportNamespace) RetrieveNamespace;
-			public function HRESULT(IWdsTransportNamespaceManager *self, BSTR bszContentProvider, BSTR bszNamespaceName, int16 bIncludeTombstones, IWdsTransportCollection** ppWdsTransportNamespaces) RetrieveNamespaces;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWdsTransportNamespaceManager *self, WDSTRANSPORT_NAMESPACE_TYPE NamespaceType, BSTR bszNamespaceName, BSTR bszContentProvider, BSTR bszConfiguration, IWdsTransportNamespace** ppWdsTransportNamespace) CreateNamespace;
+				public function HRESULT(IWdsTransportNamespaceManager *self, BSTR bszNamespaceName, IWdsTransportNamespace** ppWdsTransportNamespace) RetrieveNamespace;
+				public function HRESULT(IWdsTransportNamespaceManager *self, BSTR bszContentProvider, BSTR bszNamespaceName, int16 bIncludeTombstones, IWdsTransportCollection** ppWdsTransportNamespaces) RetrieveNamespaces;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportTftpManager : IDispatch
 		{
 			public const new Guid IID = .(0x1327a7c8, 0xae8a, 0x4fb3, 0x81, 0x50, 0x13, 0x62, 0x27, 0xc3, 0x7e, 0x9a);
 			
-			public function HRESULT(IWdsTransportTftpManager *self, IWdsTransportCollection** ppWdsTransportTftpClients) RetrieveTftpClients;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWdsTransportTftpManager *self, IWdsTransportCollection** ppWdsTransportTftpClients) RetrieveTftpClients;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportServicePolicy : IWdsTransportCacheable
 		{
 			public const new Guid IID = .(0xb9468578, 0x9f2b, 0x48cc, 0xb2, 0x7a, 0xa6, 0x07, 0x99, 0xc2, 0x75, 0x0c);
 			
-			public function HRESULT(IWdsTransportServicePolicy *self, WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE* pSourceType) get_IpAddressSource;
-			public function HRESULT(IWdsTransportServicePolicy *self, WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE SourceType) put_IpAddressSource;
-			public function HRESULT(IWdsTransportServicePolicy *self, WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, BSTR* pbszStartIpAddress) get_StartIpAddress;
-			public function HRESULT(IWdsTransportServicePolicy *self, WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, BSTR bszStartIpAddress) put_StartIpAddress;
-			public function HRESULT(IWdsTransportServicePolicy *self, WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, BSTR* pbszEndIpAddress) get_EndIpAddress;
-			public function HRESULT(IWdsTransportServicePolicy *self, WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, BSTR bszEndIpAddress) put_EndIpAddress;
-			public function HRESULT(IWdsTransportServicePolicy *self, uint32* pulStartPort) get_StartPort;
-			public function HRESULT(IWdsTransportServicePolicy *self, uint32 ulStartPort) put_StartPort;
-			public function HRESULT(IWdsTransportServicePolicy *self, uint32* pulEndPort) get_EndPort;
-			public function HRESULT(IWdsTransportServicePolicy *self, uint32 ulEndPort) put_EndPort;
-			public function HRESULT(IWdsTransportServicePolicy *self, WDSTRANSPORT_NETWORK_PROFILE_TYPE* pProfileType) get_NetworkProfile;
-			public function HRESULT(IWdsTransportServicePolicy *self, WDSTRANSPORT_NETWORK_PROFILE_TYPE ProfileType) put_NetworkProfile;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWdsTransportCacheable.VTable
+			{
+				public function HRESULT(IWdsTransportServicePolicy *self, WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE* pSourceType) get_IpAddressSource;
+				public function HRESULT(IWdsTransportServicePolicy *self, WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE SourceType) put_IpAddressSource;
+				public function HRESULT(IWdsTransportServicePolicy *self, WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, BSTR* pbszStartIpAddress) get_StartIpAddress;
+				public function HRESULT(IWdsTransportServicePolicy *self, WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, BSTR bszStartIpAddress) put_StartIpAddress;
+				public function HRESULT(IWdsTransportServicePolicy *self, WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, BSTR* pbszEndIpAddress) get_EndIpAddress;
+				public function HRESULT(IWdsTransportServicePolicy *self, WDSTRANSPORT_IP_ADDRESS_TYPE AddressType, BSTR bszEndIpAddress) put_EndIpAddress;
+				public function HRESULT(IWdsTransportServicePolicy *self, uint32* pulStartPort) get_StartPort;
+				public function HRESULT(IWdsTransportServicePolicy *self, uint32 ulStartPort) put_StartPort;
+				public function HRESULT(IWdsTransportServicePolicy *self, uint32* pulEndPort) get_EndPort;
+				public function HRESULT(IWdsTransportServicePolicy *self, uint32 ulEndPort) put_EndPort;
+				public function HRESULT(IWdsTransportServicePolicy *self, WDSTRANSPORT_NETWORK_PROFILE_TYPE* pProfileType) get_NetworkProfile;
+				public function HRESULT(IWdsTransportServicePolicy *self, WDSTRANSPORT_NETWORK_PROFILE_TYPE ProfileType) put_NetworkProfile;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportServicePolicy2 : IWdsTransportServicePolicy
 		{
 			public const new Guid IID = .(0x65c19e5c, 0xaa7e, 0x4b91, 0x89, 0x44, 0x91, 0xe0, 0xe5, 0x57, 0x27, 0x97);
 			
-			public function HRESULT(IWdsTransportServicePolicy2 *self, WDSTRANSPORT_UDP_PORT_POLICY* pUdpPortPolicy) get_UdpPortPolicy;
-			public function HRESULT(IWdsTransportServicePolicy2 *self, WDSTRANSPORT_UDP_PORT_POLICY UdpPortPolicy) put_UdpPortPolicy;
-			public function HRESULT(IWdsTransportServicePolicy2 *self, uint32* pulTftpMaximumBlockSize) get_TftpMaximumBlockSize;
-			public function HRESULT(IWdsTransportServicePolicy2 *self, uint32 ulTftpMaximumBlockSize) put_TftpMaximumBlockSize;
-			public function HRESULT(IWdsTransportServicePolicy2 *self, int16* pbEnableTftpVariableWindowExtension) get_EnableTftpVariableWindowExtension;
-			public function HRESULT(IWdsTransportServicePolicy2 *self, int16 bEnableTftpVariableWindowExtension) put_EnableTftpVariableWindowExtension;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWdsTransportServicePolicy.VTable
+			{
+				public function HRESULT(IWdsTransportServicePolicy2 *self, WDSTRANSPORT_UDP_PORT_POLICY* pUdpPortPolicy) get_UdpPortPolicy;
+				public function HRESULT(IWdsTransportServicePolicy2 *self, WDSTRANSPORT_UDP_PORT_POLICY UdpPortPolicy) put_UdpPortPolicy;
+				public function HRESULT(IWdsTransportServicePolicy2 *self, uint32* pulTftpMaximumBlockSize) get_TftpMaximumBlockSize;
+				public function HRESULT(IWdsTransportServicePolicy2 *self, uint32 ulTftpMaximumBlockSize) put_TftpMaximumBlockSize;
+				public function HRESULT(IWdsTransportServicePolicy2 *self, int16* pbEnableTftpVariableWindowExtension) get_EnableTftpVariableWindowExtension;
+				public function HRESULT(IWdsTransportServicePolicy2 *self, int16 bEnableTftpVariableWindowExtension) put_EnableTftpVariableWindowExtension;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportDiagnosticsPolicy : IWdsTransportCacheable
 		{
 			public const new Guid IID = .(0x13b33efc, 0x7856, 0x4f61, 0x9a, 0x59, 0x8d, 0xe6, 0x7b, 0x6b, 0x87, 0xb6);
 			
-			public function HRESULT(IWdsTransportDiagnosticsPolicy *self, int16* pbEnabled) get_Enabled;
-			public function HRESULT(IWdsTransportDiagnosticsPolicy *self, int16 bEnabled) put_Enabled;
-			public function HRESULT(IWdsTransportDiagnosticsPolicy *self, uint32* pulComponents) get_Components;
-			public function HRESULT(IWdsTransportDiagnosticsPolicy *self, uint32 ulComponents) put_Components;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWdsTransportCacheable.VTable
+			{
+				public function HRESULT(IWdsTransportDiagnosticsPolicy *self, int16* pbEnabled) get_Enabled;
+				public function HRESULT(IWdsTransportDiagnosticsPolicy *self, int16 bEnabled) put_Enabled;
+				public function HRESULT(IWdsTransportDiagnosticsPolicy *self, uint32* pulComponents) get_Components;
+				public function HRESULT(IWdsTransportDiagnosticsPolicy *self, uint32 ulComponents) put_Components;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportMulticastSessionPolicy : IWdsTransportCacheable
 		{
 			public const new Guid IID = .(0x4e5753cf, 0x68ec, 0x4504, 0xa9, 0x51, 0x4a, 0x00, 0x32, 0x66, 0x60, 0x6b);
 			
-			public function HRESULT(IWdsTransportMulticastSessionPolicy *self, WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE* pSlowClientHandling) get_SlowClientHandling;
-			public function HRESULT(IWdsTransportMulticastSessionPolicy *self, WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE SlowClientHandling) put_SlowClientHandling;
-			public function HRESULT(IWdsTransportMulticastSessionPolicy *self, uint32* pulThreshold) get_AutoDisconnectThreshold;
-			public function HRESULT(IWdsTransportMulticastSessionPolicy *self, uint32 ulThreshold) put_AutoDisconnectThreshold;
-			public function HRESULT(IWdsTransportMulticastSessionPolicy *self, uint32* pulStreamCount) get_MultistreamStreamCount;
-			public function HRESULT(IWdsTransportMulticastSessionPolicy *self, uint32 ulStreamCount) put_MultistreamStreamCount;
-			public function HRESULT(IWdsTransportMulticastSessionPolicy *self, int16* pbClientFallback) get_SlowClientFallback;
-			public function HRESULT(IWdsTransportMulticastSessionPolicy *self, int16 bClientFallback) put_SlowClientFallback;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWdsTransportCacheable.VTable
+			{
+				public function HRESULT(IWdsTransportMulticastSessionPolicy *self, WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE* pSlowClientHandling) get_SlowClientHandling;
+				public function HRESULT(IWdsTransportMulticastSessionPolicy *self, WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE SlowClientHandling) put_SlowClientHandling;
+				public function HRESULT(IWdsTransportMulticastSessionPolicy *self, uint32* pulThreshold) get_AutoDisconnectThreshold;
+				public function HRESULT(IWdsTransportMulticastSessionPolicy *self, uint32 ulThreshold) put_AutoDisconnectThreshold;
+				public function HRESULT(IWdsTransportMulticastSessionPolicy *self, uint32* pulStreamCount) get_MultistreamStreamCount;
+				public function HRESULT(IWdsTransportMulticastSessionPolicy *self, uint32 ulStreamCount) put_MultistreamStreamCount;
+				public function HRESULT(IWdsTransportMulticastSessionPolicy *self, int16* pbClientFallback) get_SlowClientFallback;
+				public function HRESULT(IWdsTransportMulticastSessionPolicy *self, int16 bClientFallback) put_SlowClientFallback;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportNamespace : IDispatch
 		{
 			public const new Guid IID = .(0xfa561f57, 0xfbef, 0x4ed3, 0xb0, 0x56, 0x12, 0x7c, 0xb1, 0xb3, 0x3b, 0x84);
 			
-			public function HRESULT(IWdsTransportNamespace *self, WDSTRANSPORT_NAMESPACE_TYPE* pType) get_Type;
-			public function HRESULT(IWdsTransportNamespace *self, uint32* pulId) get_Id;
-			public function HRESULT(IWdsTransportNamespace *self, BSTR* pbszName) get_Name;
-			public function HRESULT(IWdsTransportNamespace *self, BSTR bszName) put_Name;
-			public function HRESULT(IWdsTransportNamespace *self, BSTR* pbszFriendlyName) get_FriendlyName;
-			public function HRESULT(IWdsTransportNamespace *self, BSTR bszFriendlyName) put_FriendlyName;
-			public function HRESULT(IWdsTransportNamespace *self, BSTR* pbszDescription) get_Description;
-			public function HRESULT(IWdsTransportNamespace *self, BSTR bszDescription) put_Description;
-			public function HRESULT(IWdsTransportNamespace *self, BSTR* pbszContentProvider) get_ContentProvider;
-			public function HRESULT(IWdsTransportNamespace *self, BSTR bszContentProvider) put_ContentProvider;
-			public function HRESULT(IWdsTransportNamespace *self, BSTR* pbszConfiguration) get_Configuration;
-			public function HRESULT(IWdsTransportNamespace *self, BSTR bszConfiguration) put_Configuration;
-			public function HRESULT(IWdsTransportNamespace *self, int16* pbRegistered) get_Registered;
-			public function HRESULT(IWdsTransportNamespace *self, int16* pbTombstoned) get_Tombstoned;
-			public function HRESULT(IWdsTransportNamespace *self, double* pTombstoneTime) get_TombstoneTime;
-			public function HRESULT(IWdsTransportNamespace *self, int16* pbTransmissionStarted) get_TransmissionStarted;
-			public function HRESULT(IWdsTransportNamespace *self) Register;
-			public function HRESULT(IWdsTransportNamespace *self, int16 bTerminateSessions) Deregister;
-			public function HRESULT(IWdsTransportNamespace *self, IWdsTransportNamespace** ppWdsTransportNamespaceClone) Clone;
-			public function HRESULT(IWdsTransportNamespace *self) Refresh;
-			public function HRESULT(IWdsTransportNamespace *self, IWdsTransportCollection** ppWdsTransportContents) RetrieveContents;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWdsTransportNamespace *self, WDSTRANSPORT_NAMESPACE_TYPE* pType) get_Type;
+				public function HRESULT(IWdsTransportNamespace *self, uint32* pulId) get_Id;
+				public function HRESULT(IWdsTransportNamespace *self, BSTR* pbszName) get_Name;
+				public function HRESULT(IWdsTransportNamespace *self, BSTR bszName) put_Name;
+				public function HRESULT(IWdsTransportNamespace *self, BSTR* pbszFriendlyName) get_FriendlyName;
+				public function HRESULT(IWdsTransportNamespace *self, BSTR bszFriendlyName) put_FriendlyName;
+				public function HRESULT(IWdsTransportNamespace *self, BSTR* pbszDescription) get_Description;
+				public function HRESULT(IWdsTransportNamespace *self, BSTR bszDescription) put_Description;
+				public function HRESULT(IWdsTransportNamespace *self, BSTR* pbszContentProvider) get_ContentProvider;
+				public function HRESULT(IWdsTransportNamespace *self, BSTR bszContentProvider) put_ContentProvider;
+				public function HRESULT(IWdsTransportNamespace *self, BSTR* pbszConfiguration) get_Configuration;
+				public function HRESULT(IWdsTransportNamespace *self, BSTR bszConfiguration) put_Configuration;
+				public function HRESULT(IWdsTransportNamespace *self, int16* pbRegistered) get_Registered;
+				public function HRESULT(IWdsTransportNamespace *self, int16* pbTombstoned) get_Tombstoned;
+				public function HRESULT(IWdsTransportNamespace *self, double* pTombstoneTime) get_TombstoneTime;
+				public function HRESULT(IWdsTransportNamespace *self, int16* pbTransmissionStarted) get_TransmissionStarted;
+				public function HRESULT(IWdsTransportNamespace *self) Register;
+				public function HRESULT(IWdsTransportNamespace *self, int16 bTerminateSessions) Deregister;
+				public function HRESULT(IWdsTransportNamespace *self, IWdsTransportNamespace** ppWdsTransportNamespaceClone) Clone;
+				public function HRESULT(IWdsTransportNamespace *self) Refresh;
+				public function HRESULT(IWdsTransportNamespace *self, IWdsTransportCollection** ppWdsTransportContents) RetrieveContents;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportNamespaceAutoCast : IWdsTransportNamespace
 		{
 			public const new Guid IID = .(0xad931a72, 0xc4bd, 0x4c41, 0x8f, 0xbc, 0x59, 0xc9, 0xc7, 0x48, 0xdf, 0x9e);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWdsTransportNamespace.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportNamespaceScheduledCast : IWdsTransportNamespace
 		{
 			public const new Guid IID = .(0x3840cecf, 0xd76c, 0x416e, 0xa4, 0xcc, 0x31, 0xc7, 0x41, 0xd2, 0x87, 0x4b);
 			
-			public function HRESULT(IWdsTransportNamespaceScheduledCast *self) StartTransmission;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWdsTransportNamespace.VTable
+			{
+				public function HRESULT(IWdsTransportNamespaceScheduledCast *self) StartTransmission;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportNamespaceScheduledCastManualStart : IWdsTransportNamespaceScheduledCast
 		{
 			public const new Guid IID = .(0x013e6e4c, 0xe6a7, 0x4fb5, 0xb7, 0xff, 0xd9, 0xf5, 0xda, 0x80, 0x5c, 0x31);
 			
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWdsTransportNamespaceScheduledCast.VTable
+			{
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportNamespaceScheduledCastAutoStart : IWdsTransportNamespaceScheduledCast
 		{
 			public const new Guid IID = .(0xd606af3d, 0xea9c, 0x4219, 0x96, 0x1e, 0x74, 0x91, 0xd6, 0x18, 0xd9, 0xb9);
 			
-			public function HRESULT(IWdsTransportNamespaceScheduledCastAutoStart *self, uint32* pulMinimumClients) get_MinimumClients;
-			public function HRESULT(IWdsTransportNamespaceScheduledCastAutoStart *self, uint32 ulMinimumClients) put_MinimumClients;
-			public function HRESULT(IWdsTransportNamespaceScheduledCastAutoStart *self, double* pStartTime) get_StartTime;
-			public function HRESULT(IWdsTransportNamespaceScheduledCastAutoStart *self, double StartTime) put_StartTime;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IWdsTransportNamespaceScheduledCast.VTable
+			{
+				public function HRESULT(IWdsTransportNamespaceScheduledCastAutoStart *self, uint32* pulMinimumClients) get_MinimumClients;
+				public function HRESULT(IWdsTransportNamespaceScheduledCastAutoStart *self, uint32 ulMinimumClients) put_MinimumClients;
+				public function HRESULT(IWdsTransportNamespaceScheduledCastAutoStart *self, double* pStartTime) get_StartTime;
+				public function HRESULT(IWdsTransportNamespaceScheduledCastAutoStart *self, double StartTime) put_StartTime;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportContent : IDispatch
 		{
 			public const new Guid IID = .(0xd405d711, 0x0296, 0x4ab4, 0xa8, 0x60, 0xac, 0x7d, 0x32, 0xe6, 0x57, 0x98);
 			
-			public function HRESULT(IWdsTransportContent *self, IWdsTransportNamespace** ppWdsTransportNamespace) get_Namespace;
-			public function HRESULT(IWdsTransportContent *self, uint32* pulId) get_Id;
-			public function HRESULT(IWdsTransportContent *self, BSTR* pbszName) get_Name;
-			public function HRESULT(IWdsTransportContent *self, IWdsTransportCollection** ppWdsTransportSessions) RetrieveSessions;
-			public function HRESULT(IWdsTransportContent *self) Terminate;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWdsTransportContent *self, IWdsTransportNamespace** ppWdsTransportNamespace) get_Namespace;
+				public function HRESULT(IWdsTransportContent *self, uint32* pulId) get_Id;
+				public function HRESULT(IWdsTransportContent *self, BSTR* pbszName) get_Name;
+				public function HRESULT(IWdsTransportContent *self, IWdsTransportCollection** ppWdsTransportSessions) RetrieveSessions;
+				public function HRESULT(IWdsTransportContent *self) Terminate;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportSession : IDispatch
 		{
 			public const new Guid IID = .(0xf4efea88, 0x65b1, 0x4f30, 0xa4, 0xb9, 0x27, 0x93, 0x98, 0x77, 0x96, 0xfb);
 			
-			public function HRESULT(IWdsTransportSession *self, IWdsTransportContent** ppWdsTransportContent) get_Content;
-			public function HRESULT(IWdsTransportSession *self, uint32* pulId) get_Id;
-			public function HRESULT(IWdsTransportSession *self, BSTR* pbszNetworkInterfaceName) get_NetworkInterfaceName;
-			public function HRESULT(IWdsTransportSession *self, BSTR* pbszNetworkInterfaceAddress) get_NetworkInterfaceAddress;
-			public function HRESULT(IWdsTransportSession *self, uint32* pulTransferRate) get_TransferRate;
-			public function HRESULT(IWdsTransportSession *self, uint32* pulMasterClientId) get_MasterClientId;
-			public function HRESULT(IWdsTransportSession *self, IWdsTransportCollection** ppWdsTransportClients) RetrieveClients;
-			public function HRESULT(IWdsTransportSession *self) Terminate;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWdsTransportSession *self, IWdsTransportContent** ppWdsTransportContent) get_Content;
+				public function HRESULT(IWdsTransportSession *self, uint32* pulId) get_Id;
+				public function HRESULT(IWdsTransportSession *self, BSTR* pbszNetworkInterfaceName) get_NetworkInterfaceName;
+				public function HRESULT(IWdsTransportSession *self, BSTR* pbszNetworkInterfaceAddress) get_NetworkInterfaceAddress;
+				public function HRESULT(IWdsTransportSession *self, uint32* pulTransferRate) get_TransferRate;
+				public function HRESULT(IWdsTransportSession *self, uint32* pulMasterClientId) get_MasterClientId;
+				public function HRESULT(IWdsTransportSession *self, IWdsTransportCollection** ppWdsTransportClients) RetrieveClients;
+				public function HRESULT(IWdsTransportSession *self) Terminate;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportClient : IDispatch
 		{
 			public const new Guid IID = .(0xb5dbc93a, 0xcabe, 0x46ca, 0x83, 0x7f, 0x3e, 0x44, 0xe9, 0x3c, 0x65, 0x45);
 			
-			public function HRESULT(IWdsTransportClient *self, IWdsTransportSession** ppWdsTransportSession) get_Session;
-			public function HRESULT(IWdsTransportClient *self, uint32* pulId) get_Id;
-			public function HRESULT(IWdsTransportClient *self, BSTR* pbszName) get_Name;
-			public function HRESULT(IWdsTransportClient *self, BSTR* pbszMacAddress) get_MacAddress;
-			public function HRESULT(IWdsTransportClient *self, BSTR* pbszIpAddress) get_IpAddress;
-			public function HRESULT(IWdsTransportClient *self, uint32* pulPercentCompletion) get_PercentCompletion;
-			public function HRESULT(IWdsTransportClient *self, uint32* pulJoinDuration) get_JoinDuration;
-			public function HRESULT(IWdsTransportClient *self, uint32* pulCpuUtilization) get_CpuUtilization;
-			public function HRESULT(IWdsTransportClient *self, uint32* pulMemoryUtilization) get_MemoryUtilization;
-			public function HRESULT(IWdsTransportClient *self, uint32* pulNetworkUtilization) get_NetworkUtilization;
-			public function HRESULT(IWdsTransportClient *self, BSTR* pbszUserIdentity) get_UserIdentity;
-			public function HRESULT(IWdsTransportClient *self, WDSTRANSPORT_DISCONNECT_TYPE DisconnectionType) Disconnect;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWdsTransportClient *self, IWdsTransportSession** ppWdsTransportSession) get_Session;
+				public function HRESULT(IWdsTransportClient *self, uint32* pulId) get_Id;
+				public function HRESULT(IWdsTransportClient *self, BSTR* pbszName) get_Name;
+				public function HRESULT(IWdsTransportClient *self, BSTR* pbszMacAddress) get_MacAddress;
+				public function HRESULT(IWdsTransportClient *self, BSTR* pbszIpAddress) get_IpAddress;
+				public function HRESULT(IWdsTransportClient *self, uint32* pulPercentCompletion) get_PercentCompletion;
+				public function HRESULT(IWdsTransportClient *self, uint32* pulJoinDuration) get_JoinDuration;
+				public function HRESULT(IWdsTransportClient *self, uint32* pulCpuUtilization) get_CpuUtilization;
+				public function HRESULT(IWdsTransportClient *self, uint32* pulMemoryUtilization) get_MemoryUtilization;
+				public function HRESULT(IWdsTransportClient *self, uint32* pulNetworkUtilization) get_NetworkUtilization;
+				public function HRESULT(IWdsTransportClient *self, BSTR* pbszUserIdentity) get_UserIdentity;
+				public function HRESULT(IWdsTransportClient *self, WDSTRANSPORT_DISCONNECT_TYPE DisconnectionType) Disconnect;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportTftpClient : IDispatch
 		{
 			public const new Guid IID = .(0xb022d3ae, 0x884d, 0x4d85, 0xb1, 0x46, 0x53, 0x32, 0x0e, 0x76, 0xef, 0x62);
 			
-			public function HRESULT(IWdsTransportTftpClient *self, BSTR* pbszFileName) get_FileName;
-			public function HRESULT(IWdsTransportTftpClient *self, BSTR* pbszIpAddress) get_IpAddress;
-			public function HRESULT(IWdsTransportTftpClient *self, uint32* pulTimeout) get_Timeout;
-			public function HRESULT(IWdsTransportTftpClient *self, uint64* pul64CurrentOffset) get_CurrentFileOffset;
-			public function HRESULT(IWdsTransportTftpClient *self, uint64* pul64FileSize) get_FileSize;
-			public function HRESULT(IWdsTransportTftpClient *self, uint32* pulBlockSize) get_BlockSize;
-			public function HRESULT(IWdsTransportTftpClient *self, uint32* pulWindowSize) get_WindowSize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWdsTransportTftpClient *self, BSTR* pbszFileName) get_FileName;
+				public function HRESULT(IWdsTransportTftpClient *self, BSTR* pbszIpAddress) get_IpAddress;
+				public function HRESULT(IWdsTransportTftpClient *self, uint32* pulTimeout) get_Timeout;
+				public function HRESULT(IWdsTransportTftpClient *self, uint64* pul64CurrentOffset) get_CurrentFileOffset;
+				public function HRESULT(IWdsTransportTftpClient *self, uint64* pul64FileSize) get_FileSize;
+				public function HRESULT(IWdsTransportTftpClient *self, uint32* pulBlockSize) get_BlockSize;
+				public function HRESULT(IWdsTransportTftpClient *self, uint32* pulWindowSize) get_WindowSize;
+			}
 		}
 		[CRepr]
 		public struct IWdsTransportContentProvider : IDispatch
 		{
 			public const new Guid IID = .(0xb9489f24, 0xf219, 0x4acf, 0xaa, 0xd7, 0x26, 0x5c, 0x7c, 0x08, 0xa6, 0xae);
 			
-			public function HRESULT(IWdsTransportContentProvider *self, BSTR* pbszName) get_Name;
-			public function HRESULT(IWdsTransportContentProvider *self, BSTR* pbszDescription) get_Description;
-			public function HRESULT(IWdsTransportContentProvider *self, BSTR* pbszFilePath) get_FilePath;
-			public function HRESULT(IWdsTransportContentProvider *self, BSTR* pbszInitializationRoutine) get_InitializationRoutine;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IDispatch.VTable
+			{
+				public function HRESULT(IWdsTransportContentProvider *self, BSTR* pbszName) get_Name;
+				public function HRESULT(IWdsTransportContentProvider *self, BSTR* pbszDescription) get_Description;
+				public function HRESULT(IWdsTransportContentProvider *self, BSTR* pbszFilePath) get_FilePath;
+				public function HRESULT(IWdsTransportContentProvider *self, BSTR* pbszInitializationRoutine) get_InitializationRoutine;
+			}
 		}
 		
 		// --- Functions ---

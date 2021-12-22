@@ -150,281 +150,468 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc03f6a43, 0x65a4, 0x9818, 0x98, 0x7e, 0xe0, 0xb8, 0x10, 0xd2, 0xa6, 0xf2);
 			
-			public function HRESULT(IAgileReference *self, Guid* riid, void** ppvObjectReference) Resolve;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAgileReference *self, Guid* riid, void** ppvObjectReference) Resolve;
+			}
 		}
 		[CRepr]
 		public struct IApartmentShutdown : IUnknown
 		{
 			public const new Guid IID = .(0xa2f05a09, 0x27a2, 0x42b5, 0xbc, 0x0e, 0xac, 0x16, 0x3e, 0xf4, 0x9d, 0x9b);
 			
-			public function void(IApartmentShutdown *self, uint64 ui64ApartmentIdentifier) OnUninitialize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function void(IApartmentShutdown *self, uint64 ui64ApartmentIdentifier) OnUninitialize;
+			}
 		}
 		[CRepr]
 		public struct ISpatialInteractionManagerInterop : IInspectable
 		{
 			public const new Guid IID = .(0x5c4ee536, 0x6a98, 0x4b86, 0xa1, 0x70, 0x58, 0x70, 0x13, 0xd6, 0xfd, 0x4b);
 			
-			public function HRESULT(ISpatialInteractionManagerInterop *self, HWND window, Guid* riid, void** spatialInteractionManager) GetForWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IInspectable.VTable
+			{
+				public function HRESULT(ISpatialInteractionManagerInterop *self, HWND window, Guid* riid, void** spatialInteractionManager) GetForWindow;
+			}
 		}
 		[CRepr]
 		public struct IHolographicSpaceInterop : IInspectable
 		{
 			public const new Guid IID = .(0x5c4ee536, 0x6a98, 0x4b86, 0xa1, 0x70, 0x58, 0x70, 0x13, 0xd6, 0xfd, 0x4b);
 			
-			public function HRESULT(IHolographicSpaceInterop *self, HWND window, Guid* riid, void** holographicSpace) CreateForWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IInspectable.VTable
+			{
+				public function HRESULT(IHolographicSpaceInterop *self, HWND window, Guid* riid, void** holographicSpace) CreateForWindow;
+			}
 		}
 		[CRepr]
 		public struct IInspectable : IUnknown
 		{
 			public const new Guid IID = .(0xaf86e2e0, 0xb12d, 0x4c6a, 0x9c, 0x5a, 0xd7, 0xaa, 0x65, 0x10, 0x1e, 0x90);
 			
-			public function HRESULT(IInspectable *self, uint32* iidCount, Guid** iids) GetIids;
-			public function HRESULT(IInspectable *self, HSTRING* className) GetRuntimeClassName;
-			public function HRESULT(IInspectable *self, TrustLevel* trustLevel) GetTrustLevel;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IInspectable *self, uint32* iidCount, Guid** iids) GetIids;
+				public function HRESULT(IInspectable *self, HSTRING* className) GetRuntimeClassName;
+				public function HRESULT(IInspectable *self, TrustLevel* trustLevel) GetTrustLevel;
+			}
 		}
 		[CRepr]
 		public struct IAccountsSettingsPaneInterop : IInspectable
 		{
 			public const new Guid IID = .(0xd3ee12ad, 0x3865, 0x4362, 0x97, 0x46, 0xb7, 0x5a, 0x68, 0x2d, 0xf0, 0xe6);
 			
-			public function HRESULT(IAccountsSettingsPaneInterop *self, HWND appWindow, Guid* riid, void** accountsSettingsPane) GetForWindow;
-			public function HRESULT(IAccountsSettingsPaneInterop *self, HWND appWindow, Guid* riid, void** asyncAction) ShowManageAccountsForWindowAsync;
-			public function HRESULT(IAccountsSettingsPaneInterop *self, HWND appWindow, Guid* riid, void** asyncAction) ShowAddAccountForWindowAsync;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IInspectable.VTable
+			{
+				public function HRESULT(IAccountsSettingsPaneInterop *self, HWND appWindow, Guid* riid, void** accountsSettingsPane) GetForWindow;
+				public function HRESULT(IAccountsSettingsPaneInterop *self, HWND appWindow, Guid* riid, void** asyncAction) ShowManageAccountsForWindowAsync;
+				public function HRESULT(IAccountsSettingsPaneInterop *self, HWND appWindow, Guid* riid, void** asyncAction) ShowAddAccountForWindowAsync;
+			}
 		}
 		[CRepr]
 		public struct IAppServiceConnectionExtendedExecution : IUnknown
 		{
 			public const new Guid IID = .(0x65219584, 0xf9cb, 0x4ae3, 0x81, 0xf9, 0xa2, 0x8a, 0x6c, 0xa4, 0x50, 0xd9);
 			
-			public function HRESULT(IAppServiceConnectionExtendedExecution *self, Guid* riid, void** operation) OpenForExtendedExecutionAsync;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IAppServiceConnectionExtendedExecution *self, Guid* riid, void** operation) OpenForExtendedExecutionAsync;
+			}
 		}
 		[CRepr]
 		public struct ICorrelationVectorSource : IUnknown
 		{
 			public const new Guid IID = .(0x152b8a3b, 0xb9b9, 0x4685, 0xb5, 0x6e, 0x97, 0x48, 0x47, 0xbc, 0x75, 0x45);
 			
-			public function HRESULT(ICorrelationVectorSource *self, HSTRING* cv) get_CorrelationVector;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICorrelationVectorSource *self, HSTRING* cv) get_CorrelationVector;
+			}
 		}
 		[CRepr]
 		public struct ICastingEventHandler : IUnknown
 		{
 			public const new Guid IID = .(0xc79a6cb7, 0xbebd, 0x47a6, 0xa2, 0xad, 0x4d, 0x45, 0xad, 0x79, 0xc7, 0xbc);
 			
-			public function HRESULT(ICastingEventHandler *self, CASTING_CONNECTION_STATE newState) OnStateChanged;
-			public function HRESULT(ICastingEventHandler *self, CASTING_CONNECTION_ERROR_STATUS errorStatus, PWSTR errorMessage) OnError;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICastingEventHandler *self, CASTING_CONNECTION_STATE newState) OnStateChanged;
+				public function HRESULT(ICastingEventHandler *self, CASTING_CONNECTION_ERROR_STATUS errorStatus, PWSTR errorMessage) OnError;
+			}
 		}
 		[CRepr]
 		public struct ICastingController : IUnknown
 		{
 			public const new Guid IID = .(0xf0a56423, 0xa664, 0x4fbd, 0x8b, 0x43, 0x40, 0x9a, 0x45, 0xe8, 0xd9, 0xa1);
 			
-			public function HRESULT(ICastingController *self, IUnknown* castingEngine, IUnknown* castingSource) Initialize;
-			public function HRESULT(ICastingController *self) Connect;
-			public function HRESULT(ICastingController *self) Disconnect;
-			public function HRESULT(ICastingController *self, ICastingEventHandler* eventHandler, uint32* cookie) Advise;
-			public function HRESULT(ICastingController *self, uint32 cookie) UnAdvise;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICastingController *self, IUnknown* castingEngine, IUnknown* castingSource) Initialize;
+				public function HRESULT(ICastingController *self) Connect;
+				public function HRESULT(ICastingController *self) Disconnect;
+				public function HRESULT(ICastingController *self, ICastingEventHandler* eventHandler, uint32* cookie) Advise;
+				public function HRESULT(ICastingController *self, uint32 cookie) UnAdvise;
+			}
 		}
 		[CRepr]
 		public struct ICastingSourceInfo : IUnknown
 		{
 			public const new Guid IID = .(0x45101ab7, 0x7c3a, 0x4bce, 0x95, 0x00, 0x12, 0xc0, 0x90, 0x24, 0xb2, 0x98);
 			
-			public function HRESULT(ICastingSourceInfo *self, ICastingController** controller) GetController;
-			public function HRESULT(ICastingSourceInfo *self, INamedPropertyStore** props) GetProperties;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ICastingSourceInfo *self, ICastingController** controller) GetController;
+				public function HRESULT(ICastingSourceInfo *self, INamedPropertyStore** props) GetProperties;
+			}
 		}
 		[CRepr]
 		public struct IDragDropManagerInterop : IInspectable
 		{
 			public const new Guid IID = .(0x5ad8cba7, 0x4c01, 0x4dac, 0x90, 0x74, 0x82, 0x78, 0x94, 0x29, 0x2d, 0x63);
 			
-			public function HRESULT(IDragDropManagerInterop *self, HWND hwnd, Guid* riid, void** ppv) GetForWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IInspectable.VTable
+			{
+				public function HRESULT(IDragDropManagerInterop *self, HWND hwnd, Guid* riid, void** ppv) GetForWindow;
+			}
 		}
 		[CRepr]
 		public struct IInputPaneInterop : IInspectable
 		{
 			public const new Guid IID = .(0x75cf2c57, 0x9195, 0x4931, 0x83, 0x32, 0xf0, 0xb4, 0x09, 0xe9, 0x16, 0xaf);
 			
-			public function HRESULT(IInputPaneInterop *self, HWND appWindow, Guid* riid, void** inputPane) GetForWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IInspectable.VTable
+			{
+				public function HRESULT(IInputPaneInterop *self, HWND appWindow, Guid* riid, void** inputPane) GetForWindow;
+			}
 		}
 		[CRepr]
 		public struct IPlayToManagerInterop : IInspectable
 		{
 			public const new Guid IID = .(0x24394699, 0x1f2c, 0x4eb3, 0x8c, 0xd7, 0x0e, 0xc1, 0xda, 0x42, 0xa5, 0x40);
 			
-			public function HRESULT(IPlayToManagerInterop *self, HWND appWindow, Guid* riid, void** playToManager) GetForWindow;
-			public function HRESULT(IPlayToManagerInterop *self, HWND appWindow) ShowPlayToUIForWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IInspectable.VTable
+			{
+				public function HRESULT(IPlayToManagerInterop *self, HWND appWindow, Guid* riid, void** playToManager) GetForWindow;
+				public function HRESULT(IPlayToManagerInterop *self, HWND appWindow) ShowPlayToUIForWindow;
+			}
 		}
 		[CRepr]
 		public struct ICorrelationVectorInformation : IInspectable
 		{
 			public const new Guid IID = .(0x83c78b3c, 0xd88b, 0x4950, 0xaa, 0x6e, 0x22, 0xb8, 0xd2, 0x2a, 0xab, 0xd3);
 			
-			public function HRESULT(ICorrelationVectorInformation *self, HSTRING* cv) get_LastCorrelationVectorForThread;
-			public function HRESULT(ICorrelationVectorInformation *self, HSTRING* cv) get_NextCorrelationVectorForThread;
-			public function HRESULT(ICorrelationVectorInformation *self, HSTRING cv) put_NextCorrelationVectorForThread;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IInspectable.VTable
+			{
+				public function HRESULT(ICorrelationVectorInformation *self, HSTRING* cv) get_LastCorrelationVectorForThread;
+				public function HRESULT(ICorrelationVectorInformation *self, HSTRING* cv) get_NextCorrelationVectorForThread;
+				public function HRESULT(ICorrelationVectorInformation *self, HSTRING cv) put_NextCorrelationVectorForThread;
+			}
 		}
 		[CRepr]
 		public struct IUIViewSettingsInterop : IInspectable
 		{
 			public const new Guid IID = .(0x3694dbf9, 0x8f68, 0x44be, 0x8f, 0xf5, 0x19, 0x5c, 0x98, 0xed, 0xe8, 0xa6);
 			
-			public function HRESULT(IUIViewSettingsInterop *self, HWND hwnd, Guid* riid, void** ppv) GetForWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IInspectable.VTable
+			{
+				public function HRESULT(IUIViewSettingsInterop *self, HWND hwnd, Guid* riid, void** ppv) GetForWindow;
+			}
 		}
 		[CRepr]
 		public struct IUserActivityInterop : IInspectable
 		{
 			public const new Guid IID = .(0x1ade314d, 0x0e0a, 0x40d9, 0x82, 0x4c, 0x9a, 0x08, 0x8a, 0x50, 0x05, 0x9f);
 			
-			public function HRESULT(IUserActivityInterop *self, HWND window, Guid* iid, void** value) CreateSessionForWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IInspectable.VTable
+			{
+				public function HRESULT(IUserActivityInterop *self, HWND window, Guid* iid, void** value) CreateSessionForWindow;
+			}
 		}
 		[CRepr]
 		public struct IUserActivitySourceHostInterop : IInspectable
 		{
 			public const new Guid IID = .(0xc15df8bc, 0x8844, 0x487a, 0xb8, 0x5b, 0x75, 0x78, 0xe0, 0xf6, 0x14, 0x19);
 			
-			public function HRESULT(IUserActivitySourceHostInterop *self, HSTRING activitySourceHost) SetActivitySourceHost;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IInspectable.VTable
+			{
+				public function HRESULT(IUserActivitySourceHostInterop *self, HSTRING activitySourceHost) SetActivitySourceHost;
+			}
 		}
 		[CRepr]
 		public struct IUserActivityRequestManagerInterop : IInspectable
 		{
 			public const new Guid IID = .(0xdd69f876, 0x9699, 0x4715, 0x90, 0x95, 0xe3, 0x7e, 0xa3, 0x0d, 0xfa, 0x1b);
 			
-			public function HRESULT(IUserActivityRequestManagerInterop *self, HWND window, Guid* iid, void** value) GetForWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IInspectable.VTable
+			{
+				public function HRESULT(IUserActivityRequestManagerInterop *self, HWND window, Guid* iid, void** value) GetForWindow;
+			}
 		}
 		[CRepr]
 		public struct IUserConsentVerifierInterop : IInspectable
 		{
 			public const new Guid IID = .(0x39e050c3, 0x4e74, 0x441a, 0x8d, 0xc0, 0xb8, 0x11, 0x04, 0xdf, 0x94, 0x9c);
 			
-			public function HRESULT(IUserConsentVerifierInterop *self, HWND appWindow, HSTRING message, Guid* riid, void** asyncOperation) RequestVerificationForWindowAsync;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IInspectable.VTable
+			{
+				public function HRESULT(IUserConsentVerifierInterop *self, HWND appWindow, HSTRING message, Guid* riid, void** asyncOperation) RequestVerificationForWindowAsync;
+			}
 		}
 		[CRepr]
 		public struct IWebAuthenticationCoreManagerInterop : IInspectable
 		{
 			public const new Guid IID = .(0xf4b8e804, 0x811e, 0x4436, 0xb6, 0x9c, 0x44, 0xcb, 0x67, 0xb7, 0x20, 0x84);
 			
-			public function HRESULT(IWebAuthenticationCoreManagerInterop *self, HWND appWindow, IInspectable* request, Guid* riid, void** asyncInfo) RequestTokenForWindowAsync;
-			public function HRESULT(IWebAuthenticationCoreManagerInterop *self, HWND appWindow, IInspectable* request, IInspectable* webAccount, Guid* riid, void** asyncInfo) RequestTokenWithWebAccountForWindowAsync;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IInspectable.VTable
+			{
+				public function HRESULT(IWebAuthenticationCoreManagerInterop *self, HWND appWindow, IInspectable* request, Guid* riid, void** asyncInfo) RequestTokenForWindowAsync;
+				public function HRESULT(IWebAuthenticationCoreManagerInterop *self, HWND appWindow, IInspectable* request, IInspectable* webAccount, Guid* riid, void** asyncInfo) RequestTokenWithWebAccountForWindowAsync;
+			}
 		}
 		[CRepr]
 		public struct IRestrictedErrorInfo : IUnknown
 		{
 			public const new Guid IID = .(0x82ba7092, 0x4c88, 0x427d, 0xa7, 0xbc, 0x16, 0xdd, 0x93, 0xfe, 0xb6, 0x7e);
 			
-			public function HRESULT(IRestrictedErrorInfo *self, BSTR* description, HRESULT* error, BSTR* restrictedDescription, BSTR* capabilitySid) GetErrorDetails;
-			public function HRESULT(IRestrictedErrorInfo *self, BSTR* reference) GetReference;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IRestrictedErrorInfo *self, BSTR* description, HRESULT* error, BSTR* restrictedDescription, BSTR* capabilitySid) GetErrorDetails;
+				public function HRESULT(IRestrictedErrorInfo *self, BSTR* reference) GetReference;
+			}
 		}
 		[CRepr]
 		public struct ILanguageExceptionErrorInfo : IUnknown
 		{
 			public const new Guid IID = .(0x04a2dbf3, 0xdf83, 0x116c, 0x09, 0x46, 0x08, 0x12, 0xab, 0xf6, 0xe0, 0x7d);
 			
-			public function HRESULT(ILanguageExceptionErrorInfo *self, IUnknown** languageException) GetLanguageException;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ILanguageExceptionErrorInfo *self, IUnknown** languageException) GetLanguageException;
+			}
 		}
 		[CRepr]
 		public struct ILanguageExceptionTransform : IUnknown
 		{
 			public const new Guid IID = .(0xfeb5a271, 0xa6cd, 0x45ce, 0x88, 0x0a, 0x69, 0x67, 0x06, 0xba, 0xdc, 0x65);
 			
-			public function HRESULT(ILanguageExceptionTransform *self, IRestrictedErrorInfo** restrictedErrorInfo) GetTransformedRestrictedErrorInfo;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ILanguageExceptionTransform *self, IRestrictedErrorInfo** restrictedErrorInfo) GetTransformedRestrictedErrorInfo;
+			}
 		}
 		[CRepr]
 		public struct ILanguageExceptionStackBackTrace : IUnknown
 		{
 			public const new Guid IID = .(0xcbe53fb5, 0xf967, 0x4258, 0x8d, 0x34, 0x42, 0xf5, 0xe2, 0x58, 0x33, 0xde);
 			
-			public function HRESULT(ILanguageExceptionStackBackTrace *self, uint32 maxFramesToCapture, uint* stackBackTrace, uint32* framesCaptured) GetStackBackTrace;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(ILanguageExceptionStackBackTrace *self, uint32 maxFramesToCapture, uint* stackBackTrace, uint32* framesCaptured) GetStackBackTrace;
+			}
 		}
 		[CRepr]
 		public struct ILanguageExceptionErrorInfo2 : ILanguageExceptionErrorInfo
 		{
 			public const new Guid IID = .(0x5746e5c4, 0x5b97, 0x424c, 0xb6, 0x20, 0x28, 0x22, 0x91, 0x57, 0x34, 0xdd);
 			
-			public function HRESULT(ILanguageExceptionErrorInfo2 *self, ILanguageExceptionErrorInfo2** previousLanguageExceptionErrorInfo) GetPreviousLanguageExceptionErrorInfo;
-			public function HRESULT(ILanguageExceptionErrorInfo2 *self, IUnknown* languageException) CapturePropagationContext;
-			public function HRESULT(ILanguageExceptionErrorInfo2 *self, ILanguageExceptionErrorInfo2** propagatedLanguageExceptionErrorInfoHead) GetPropagationContextHead;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : ILanguageExceptionErrorInfo.VTable
+			{
+				public function HRESULT(ILanguageExceptionErrorInfo2 *self, ILanguageExceptionErrorInfo2** previousLanguageExceptionErrorInfo) GetPreviousLanguageExceptionErrorInfo;
+				public function HRESULT(ILanguageExceptionErrorInfo2 *self, IUnknown* languageException) CapturePropagationContext;
+				public function HRESULT(ILanguageExceptionErrorInfo2 *self, ILanguageExceptionErrorInfo2** propagatedLanguageExceptionErrorInfoHead) GetPropagationContextHead;
+			}
 		}
 		[CRepr]
 		public struct IActivationFactory : IInspectable
 		{
 			public const new Guid IID = .(0x00000035, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IActivationFactory *self, IInspectable** instance) ActivateInstance;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IInspectable.VTable
+			{
+				public function HRESULT(IActivationFactory *self, IInspectable** instance) ActivateInstance;
+			}
 		}
 		[CRepr]
 		public struct IBufferByteAccess : IUnknown
 		{
 			public const new Guid IID = .(0x905a0fef, 0xbc53, 0x11df, 0x8c, 0x49, 0x00, 0x1e, 0x4f, 0xc6, 0x86, 0xda);
 			
-			public function HRESULT(IBufferByteAccess *self, uint8** value) Buffer;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IBufferByteAccess *self, uint8** value) Buffer;
+			}
 		}
 		[CRepr]
 		public struct IRoSimpleMetaDataBuilder
 		{
-			public function HRESULT(IRoSimpleMetaDataBuilder *self, Guid iid) SetWinRtInterface;
-			public function HRESULT(IRoSimpleMetaDataBuilder *self, Guid iid) SetDelegate;
-			public function HRESULT(IRoSimpleMetaDataBuilder *self, PWSTR name, PWSTR defaultInterfaceName, Guid* defaultInterfaceIID) SetInterfaceGroupSimpleDefault;
-			public function HRESULT(IRoSimpleMetaDataBuilder *self, PWSTR name, uint32 elementCount, PWSTR* defaultInterfaceNameElements) SetInterfaceGroupParameterizedDefault;
-			public function HRESULT(IRoSimpleMetaDataBuilder *self, PWSTR name, PWSTR defaultInterfaceName, Guid* defaultInterfaceIID) SetRuntimeClassSimpleDefault;
-			public function HRESULT(IRoSimpleMetaDataBuilder *self, PWSTR name, uint32 elementCount, PWSTR* defaultInterfaceNameElements) SetRuntimeClassParameterizedDefault;
-			public function HRESULT(IRoSimpleMetaDataBuilder *self, PWSTR name, uint32 numFields, PWSTR* fieldTypeNames) SetStruct;
-			public function HRESULT(IRoSimpleMetaDataBuilder *self, PWSTR name, PWSTR baseType) SetEnum;
-			public function HRESULT(IRoSimpleMetaDataBuilder *self, Guid piid, uint32 numArgs) SetParameterizedInterface;
-			public function HRESULT(IRoSimpleMetaDataBuilder *self, Guid piid, uint32 numArgs) SetParameterizedDelegate;
+			protected VTable* vt;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable
+			{
+				public function HRESULT(IRoSimpleMetaDataBuilder *self, Guid iid) SetWinRtInterface;
+				public function HRESULT(IRoSimpleMetaDataBuilder *self, Guid iid) SetDelegate;
+				public function HRESULT(IRoSimpleMetaDataBuilder *self, PWSTR name, PWSTR defaultInterfaceName, Guid* defaultInterfaceIID) SetInterfaceGroupSimpleDefault;
+				public function HRESULT(IRoSimpleMetaDataBuilder *self, PWSTR name, uint32 elementCount, PWSTR* defaultInterfaceNameElements) SetInterfaceGroupParameterizedDefault;
+				public function HRESULT(IRoSimpleMetaDataBuilder *self, PWSTR name, PWSTR defaultInterfaceName, Guid* defaultInterfaceIID) SetRuntimeClassSimpleDefault;
+				public function HRESULT(IRoSimpleMetaDataBuilder *self, PWSTR name, uint32 elementCount, PWSTR* defaultInterfaceNameElements) SetRuntimeClassParameterizedDefault;
+				public function HRESULT(IRoSimpleMetaDataBuilder *self, PWSTR name, uint32 numFields, PWSTR* fieldTypeNames) SetStruct;
+				public function HRESULT(IRoSimpleMetaDataBuilder *self, PWSTR name, PWSTR baseType) SetEnum;
+				public function HRESULT(IRoSimpleMetaDataBuilder *self, Guid piid, uint32 numArgs) SetParameterizedInterface;
+				public function HRESULT(IRoSimpleMetaDataBuilder *self, Guid piid, uint32 numArgs) SetParameterizedDelegate;
+			}
 		}
 		[CRepr]
 		public struct IRoMetaDataLocator
 		{
-			public function HRESULT(IRoMetaDataLocator *self, PWSTR nameElement, IRoSimpleMetaDataBuilder* metaDataDestination) Locate;
+			protected VTable* vt;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable
+			{
+				public function HRESULT(IRoMetaDataLocator *self, PWSTR nameElement, IRoSimpleMetaDataBuilder* metaDataDestination) Locate;
+			}
 		}
 		[CRepr]
 		public struct IMemoryBufferByteAccess : IUnknown
 		{
 			public const new Guid IID = .(0x5b0d3235, 0x4dba, 0x4d44, 0x86, 0x5e, 0x8f, 0x1d, 0x0e, 0x4f, 0xd0, 0x4d);
 			
-			public function HRESULT(IMemoryBufferByteAccess *self, uint8** value, uint32* capacity) GetBuffer;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IMemoryBufferByteAccess *self, uint8** value, uint32* capacity) GetBuffer;
+			}
 		}
 		[CRepr]
 		public struct IWeakReference : IUnknown
 		{
 			public const new Guid IID = .(0x00000037, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IWeakReference *self, Guid* riid, void** objectReference) Resolve;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWeakReference *self, Guid* riid, void** objectReference) Resolve;
+			}
 		}
 		[CRepr]
 		public struct IWeakReferenceSource : IUnknown
 		{
 			public const new Guid IID = .(0x00000038, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public function HRESULT(IWeakReferenceSource *self, IWeakReference** weakReference) GetWeakReference;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IWeakReferenceSource *self, IWeakReference** weakReference) GetWeakReference;
+			}
 		}
 		[CRepr]
 		public struct ISystemMediaTransportControlsInterop : IInspectable
 		{
 			public const new Guid IID = .(0xddb0472d, 0xc911, 0x4a1f, 0x86, 0xd9, 0xdc, 0x3d, 0x71, 0xa9, 0x5f, 0x5a);
 			
-			public function HRESULT(ISystemMediaTransportControlsInterop *self, HWND appWindow, Guid* riid, void** mediaTransportControl) GetForWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IInspectable.VTable
+			{
+				public function HRESULT(ISystemMediaTransportControlsInterop *self, HWND appWindow, Guid* riid, void** mediaTransportControl) GetForWindow;
+			}
 		}
 		[CRepr]
 		public struct IShareWindowCommandEventArgsInterop : IUnknown
 		{
 			public const new Guid IID = .(0x6571a721, 0x643d, 0x43d4, 0xac, 0xa4, 0x6b, 0x6f, 0x5f, 0x30, 0xf1, 0xad);
 			
-			public function HRESULT(IShareWindowCommandEventArgsInterop *self, HWND* value) GetWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShareWindowCommandEventArgsInterop *self, HWND* value) GetWindow;
+			}
 		}
 		[CRepr]
 		public struct IShareWindowCommandSourceInterop : IUnknown
 		{
 			public const new Guid IID = .(0x461a191f, 0x8424, 0x43a6, 0xa0, 0xfa, 0x34, 0x51, 0xa2, 0x2f, 0x56, 0xab);
 			
-			public function HRESULT(IShareWindowCommandSourceInterop *self, HWND appWindow, Guid* riid, void** shareWindowCommandSource) GetForWindow;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IShareWindowCommandSourceInterop *self, HWND appWindow, Guid* riid, void** shareWindowCommandSource) GetForWindow;
+			}
 		}
 		[CRepr]
 		public struct IMessageDispatcher : IInspectable
 		{
 			public const new Guid IID = .(0xf5f84c8f, 0xcfd0, 0x4cd6, 0xb6, 0x6b, 0xc5, 0xd2, 0x6f, 0xf1, 0x68, 0x9d);
 			
-			public function HRESULT(IMessageDispatcher *self) PumpMessages;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IInspectable.VTable
+			{
+				public function HRESULT(IMessageDispatcher *self) PumpMessages;
+			}
 		}
 		
 		// --- Functions ---

@@ -542,323 +542,455 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xae1c7110, 0x2f60, 0x11d3, 0x8a, 0x39, 0x00, 0xc0, 0x4f, 0x72, 0xd8, 0xe3);
 			
-			public function HRESULT(IVssEnumObject *self, uint32 celt, VSS_OBJECT_PROP* rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IVssEnumObject *self, uint32 celt) Skip;
-			public function HRESULT(IVssEnumObject *self) Reset;
-			public function HRESULT(IVssEnumObject *self, IVssEnumObject** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVssEnumObject *self, uint32 celt, VSS_OBJECT_PROP* rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IVssEnumObject *self, uint32 celt) Skip;
+				public function HRESULT(IVssEnumObject *self) Reset;
+				public function HRESULT(IVssEnumObject *self, IVssEnumObject** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IVssAsync : IUnknown
 		{
 			public const new Guid IID = .(0x507c37b4, 0xcf5b, 0x4e95, 0xb0, 0xaf, 0x14, 0xeb, 0x97, 0x67, 0x46, 0x7e);
 			
-			public function HRESULT(IVssAsync *self) Cancel;
-			public function HRESULT(IVssAsync *self, uint32 dwMilliseconds) Wait;
-			public function HRESULT(IVssAsync *self, HRESULT* pHrResult, int32* pReserved) QueryStatus;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVssAsync *self) Cancel;
+				public function HRESULT(IVssAsync *self, uint32 dwMilliseconds) Wait;
+				public function HRESULT(IVssAsync *self, HRESULT* pHrResult, int32* pReserved) QueryStatus;
+			}
 		}
 		[CRepr]
 		public struct IVssWMFiledesc : IUnknown
 		{
-			public function HRESULT(IVssWMFiledesc *self, BSTR* pbstrPath) GetPath;
-			public function HRESULT(IVssWMFiledesc *self, BSTR* pbstrFilespec) GetFilespec;
-			public function HRESULT(IVssWMFiledesc *self, Boolean* pbRecursive) GetRecursive;
-			public function HRESULT(IVssWMFiledesc *self, BSTR* pbstrAlternateLocation) GetAlternateLocation;
-			public function HRESULT(IVssWMFiledesc *self, uint32* pdwTypeMask) GetBackupTypeMask;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVssWMFiledesc *self, BSTR* pbstrPath) GetPath;
+				public function HRESULT(IVssWMFiledesc *self, BSTR* pbstrFilespec) GetFilespec;
+				public function HRESULT(IVssWMFiledesc *self, Boolean* pbRecursive) GetRecursive;
+				public function HRESULT(IVssWMFiledesc *self, BSTR* pbstrAlternateLocation) GetAlternateLocation;
+				public function HRESULT(IVssWMFiledesc *self, uint32* pdwTypeMask) GetBackupTypeMask;
+			}
 		}
 		[CRepr]
 		public struct IVssWMDependency : IUnknown
 		{
-			public function HRESULT(IVssWMDependency *self, Guid* pWriterId) GetWriterId;
-			public function HRESULT(IVssWMDependency *self, BSTR* pbstrLogicalPath) GetLogicalPath;
-			public function HRESULT(IVssWMDependency *self, BSTR* pbstrComponentName) GetComponentName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVssWMDependency *self, Guid* pWriterId) GetWriterId;
+				public function HRESULT(IVssWMDependency *self, BSTR* pbstrLogicalPath) GetLogicalPath;
+				public function HRESULT(IVssWMDependency *self, BSTR* pbstrComponentName) GetComponentName;
+			}
 		}
 		[CRepr]
 		public struct IVssComponent : IUnknown
 		{
 			public const new Guid IID = .(0xd2c72c96, 0xc121, 0x4518, 0xb6, 0x27, 0xe5, 0xa9, 0x3d, 0x01, 0x0e, 0xad);
 			
-			public function HRESULT(IVssComponent *self, BSTR* pbstrPath) GetLogicalPath;
-			public function HRESULT(IVssComponent *self, VSS_COMPONENT_TYPE* pct) GetComponentType;
-			public function HRESULT(IVssComponent *self, BSTR* pbstrName) GetComponentName;
-			public function HRESULT(IVssComponent *self, Boolean* pbSucceeded) GetBackupSucceeded;
-			public function HRESULT(IVssComponent *self, uint32* pcMappings) GetAlternateLocationMappingCount;
-			public function HRESULT(IVssComponent *self, uint32 iMapping, IVssWMFiledesc** ppFiledesc) GetAlternateLocationMapping;
-			public function HRESULT(IVssComponent *self, PWSTR wszData) SetBackupMetadata;
-			public function HRESULT(IVssComponent *self, BSTR* pbstrData) GetBackupMetadata;
-			public function HRESULT(IVssComponent *self, PWSTR wszPath, PWSTR wszFilename, PWSTR wszRanges, PWSTR wszMetadata) AddPartialFile;
-			public function HRESULT(IVssComponent *self, uint32* pcPartialFiles) GetPartialFileCount;
-			public function HRESULT(IVssComponent *self, uint32 iPartialFile, BSTR* pbstrPath, BSTR* pbstrFilename, BSTR* pbstrRange, BSTR* pbstrMetadata) GetPartialFile;
-			public function HRESULT(IVssComponent *self, Boolean* pbSelectedForRestore) IsSelectedForRestore;
-			public function HRESULT(IVssComponent *self, Boolean* pbAdditionalRestores) GetAdditionalRestores;
-			public function HRESULT(IVssComponent *self, uint32* pcNewTarget) GetNewTargetCount;
-			public function HRESULT(IVssComponent *self, uint32 iNewTarget, IVssWMFiledesc** ppFiledesc) GetNewTarget;
-			public function HRESULT(IVssComponent *self, PWSTR wszSourcePath, PWSTR wszSourceFilename, PWSTR wszSourceRangeList, PWSTR wszDestinationPath, PWSTR wszDestinationFilename, PWSTR wszDestinationRangeList) AddDirectedTarget;
-			public function HRESULT(IVssComponent *self, uint32* pcDirectedTarget) GetDirectedTargetCount;
-			public function HRESULT(IVssComponent *self, uint32 iDirectedTarget, BSTR* pbstrSourcePath, BSTR* pbstrSourceFileName, BSTR* pbstrSourceRangeList, BSTR* pbstrDestinationPath, BSTR* pbstrDestinationFilename, BSTR* pbstrDestinationRangeList) GetDirectedTarget;
-			public function HRESULT(IVssComponent *self, PWSTR wszRestoreMetadata) SetRestoreMetadata;
-			public function HRESULT(IVssComponent *self, BSTR* pbstrRestoreMetadata) GetRestoreMetadata;
-			public function HRESULT(IVssComponent *self, VSS_RESTORE_TARGET target) SetRestoreTarget;
-			public function HRESULT(IVssComponent *self, VSS_RESTORE_TARGET* pTarget) GetRestoreTarget;
-			public function HRESULT(IVssComponent *self, PWSTR wszPreRestoreFailureMsg) SetPreRestoreFailureMsg;
-			public function HRESULT(IVssComponent *self, BSTR* pbstrPreRestoreFailureMsg) GetPreRestoreFailureMsg;
-			public function HRESULT(IVssComponent *self, PWSTR wszPostRestoreFailureMsg) SetPostRestoreFailureMsg;
-			public function HRESULT(IVssComponent *self, BSTR* pbstrPostRestoreFailureMsg) GetPostRestoreFailureMsg;
-			public function HRESULT(IVssComponent *self, PWSTR wszBackupStamp) SetBackupStamp;
-			public function HRESULT(IVssComponent *self, BSTR* pbstrBackupStamp) GetBackupStamp;
-			public function HRESULT(IVssComponent *self, BSTR* pbstrBackupStamp) GetPreviousBackupStamp;
-			public function HRESULT(IVssComponent *self, BSTR* pbstrBackupOptions) GetBackupOptions;
-			public function HRESULT(IVssComponent *self, BSTR* pbstrRestoreOptions) GetRestoreOptions;
-			public function HRESULT(IVssComponent *self, uint32* pcRestoreSubcomponent) GetRestoreSubcomponentCount;
-			public function HRESULT(IVssComponent *self, uint32 iComponent, BSTR* pbstrLogicalPath, BSTR* pbstrComponentName, Boolean* pbRepair) GetRestoreSubcomponent;
-			public function HRESULT(IVssComponent *self, VSS_FILE_RESTORE_STATUS* pStatus) GetFileRestoreStatus;
-			public function HRESULT(IVssComponent *self, PWSTR wszPath, PWSTR wszFilespec, BOOL bRecursive, FILETIME ftLastModifyTime) AddDifferencedFilesByLastModifyTime;
-			public function HRESULT(IVssComponent *self, PWSTR wszPath, PWSTR wszFilespec, BOOL bRecursive, BSTR bstrLsnString) AddDifferencedFilesByLastModifyLSN;
-			public function HRESULT(IVssComponent *self, uint32* pcDifferencedFiles) GetDifferencedFilesCount;
-			public function HRESULT(IVssComponent *self, uint32 iDifferencedFile, BSTR* pbstrPath, BSTR* pbstrFilespec, BOOL* pbRecursive, BSTR* pbstrLsnString, FILETIME* pftLastModifyTime) GetDifferencedFile;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVssComponent *self, BSTR* pbstrPath) GetLogicalPath;
+				public function HRESULT(IVssComponent *self, VSS_COMPONENT_TYPE* pct) GetComponentType;
+				public function HRESULT(IVssComponent *self, BSTR* pbstrName) GetComponentName;
+				public function HRESULT(IVssComponent *self, Boolean* pbSucceeded) GetBackupSucceeded;
+				public function HRESULT(IVssComponent *self, uint32* pcMappings) GetAlternateLocationMappingCount;
+				public function HRESULT(IVssComponent *self, uint32 iMapping, IVssWMFiledesc** ppFiledesc) GetAlternateLocationMapping;
+				public function HRESULT(IVssComponent *self, PWSTR wszData) SetBackupMetadata;
+				public function HRESULT(IVssComponent *self, BSTR* pbstrData) GetBackupMetadata;
+				public function HRESULT(IVssComponent *self, PWSTR wszPath, PWSTR wszFilename, PWSTR wszRanges, PWSTR wszMetadata) AddPartialFile;
+				public function HRESULT(IVssComponent *self, uint32* pcPartialFiles) GetPartialFileCount;
+				public function HRESULT(IVssComponent *self, uint32 iPartialFile, BSTR* pbstrPath, BSTR* pbstrFilename, BSTR* pbstrRange, BSTR* pbstrMetadata) GetPartialFile;
+				public function HRESULT(IVssComponent *self, Boolean* pbSelectedForRestore) IsSelectedForRestore;
+				public function HRESULT(IVssComponent *self, Boolean* pbAdditionalRestores) GetAdditionalRestores;
+				public function HRESULT(IVssComponent *self, uint32* pcNewTarget) GetNewTargetCount;
+				public function HRESULT(IVssComponent *self, uint32 iNewTarget, IVssWMFiledesc** ppFiledesc) GetNewTarget;
+				public function HRESULT(IVssComponent *self, PWSTR wszSourcePath, PWSTR wszSourceFilename, PWSTR wszSourceRangeList, PWSTR wszDestinationPath, PWSTR wszDestinationFilename, PWSTR wszDestinationRangeList) AddDirectedTarget;
+				public function HRESULT(IVssComponent *self, uint32* pcDirectedTarget) GetDirectedTargetCount;
+				public function HRESULT(IVssComponent *self, uint32 iDirectedTarget, BSTR* pbstrSourcePath, BSTR* pbstrSourceFileName, BSTR* pbstrSourceRangeList, BSTR* pbstrDestinationPath, BSTR* pbstrDestinationFilename, BSTR* pbstrDestinationRangeList) GetDirectedTarget;
+				public function HRESULT(IVssComponent *self, PWSTR wszRestoreMetadata) SetRestoreMetadata;
+				public function HRESULT(IVssComponent *self, BSTR* pbstrRestoreMetadata) GetRestoreMetadata;
+				public function HRESULT(IVssComponent *self, VSS_RESTORE_TARGET target) SetRestoreTarget;
+				public function HRESULT(IVssComponent *self, VSS_RESTORE_TARGET* pTarget) GetRestoreTarget;
+				public function HRESULT(IVssComponent *self, PWSTR wszPreRestoreFailureMsg) SetPreRestoreFailureMsg;
+				public function HRESULT(IVssComponent *self, BSTR* pbstrPreRestoreFailureMsg) GetPreRestoreFailureMsg;
+				public function HRESULT(IVssComponent *self, PWSTR wszPostRestoreFailureMsg) SetPostRestoreFailureMsg;
+				public function HRESULT(IVssComponent *self, BSTR* pbstrPostRestoreFailureMsg) GetPostRestoreFailureMsg;
+				public function HRESULT(IVssComponent *self, PWSTR wszBackupStamp) SetBackupStamp;
+				public function HRESULT(IVssComponent *self, BSTR* pbstrBackupStamp) GetBackupStamp;
+				public function HRESULT(IVssComponent *self, BSTR* pbstrBackupStamp) GetPreviousBackupStamp;
+				public function HRESULT(IVssComponent *self, BSTR* pbstrBackupOptions) GetBackupOptions;
+				public function HRESULT(IVssComponent *self, BSTR* pbstrRestoreOptions) GetRestoreOptions;
+				public function HRESULT(IVssComponent *self, uint32* pcRestoreSubcomponent) GetRestoreSubcomponentCount;
+				public function HRESULT(IVssComponent *self, uint32 iComponent, BSTR* pbstrLogicalPath, BSTR* pbstrComponentName, Boolean* pbRepair) GetRestoreSubcomponent;
+				public function HRESULT(IVssComponent *self, VSS_FILE_RESTORE_STATUS* pStatus) GetFileRestoreStatus;
+				public function HRESULT(IVssComponent *self, PWSTR wszPath, PWSTR wszFilespec, BOOL bRecursive, FILETIME ftLastModifyTime) AddDifferencedFilesByLastModifyTime;
+				public function HRESULT(IVssComponent *self, PWSTR wszPath, PWSTR wszFilespec, BOOL bRecursive, BSTR bstrLsnString) AddDifferencedFilesByLastModifyLSN;
+				public function HRESULT(IVssComponent *self, uint32* pcDifferencedFiles) GetDifferencedFilesCount;
+				public function HRESULT(IVssComponent *self, uint32 iDifferencedFile, BSTR* pbstrPath, BSTR* pbstrFilespec, BOOL* pbRecursive, BSTR* pbstrLsnString, FILETIME* pftLastModifyTime) GetDifferencedFile;
+			}
 		}
 		[CRepr]
 		public struct IVssWriterComponents
 		{
-			public function HRESULT(IVssWriterComponents *self, uint32* pcComponents) GetComponentCount;
-			public function HRESULT(IVssWriterComponents *self, Guid* pidInstance, Guid* pidWriter) GetWriterInfo;
-			public function HRESULT(IVssWriterComponents *self, uint32 iComponent, IVssComponent** ppComponent) GetComponent;
+			protected VTable* vt;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable
+			{
+				public function HRESULT(IVssWriterComponents *self, uint32* pcComponents) GetComponentCount;
+				public function HRESULT(IVssWriterComponents *self, Guid* pidInstance, Guid* pidWriter) GetWriterInfo;
+				public function HRESULT(IVssWriterComponents *self, uint32 iComponent, IVssComponent** ppComponent) GetComponent;
+			}
 		}
 		[CRepr]
 		public struct IVssComponentEx : IVssComponent
 		{
 			public const new Guid IID = .(0x156c8b5e, 0xf131, 0x4bd7, 0x9c, 0x97, 0xd1, 0x92, 0x3b, 0xe7, 0xe1, 0xfa);
 			
-			public function HRESULT(IVssComponentEx *self, PWSTR wszFailureMsg) SetPrepareForBackupFailureMsg;
-			public function HRESULT(IVssComponentEx *self, PWSTR wszFailureMsg) SetPostSnapshotFailureMsg;
-			public function HRESULT(IVssComponentEx *self, BSTR* pbstrFailureMsg) GetPrepareForBackupFailureMsg;
-			public function HRESULT(IVssComponentEx *self, BSTR* pbstrFailureMsg) GetPostSnapshotFailureMsg;
-			public function HRESULT(IVssComponentEx *self, Boolean* pbAuth) GetAuthoritativeRestore;
-			public function HRESULT(IVssComponentEx *self, VSS_ROLLFORWARD_TYPE* pRollType, BSTR* pbstrPoint) GetRollForward;
-			public function HRESULT(IVssComponentEx *self, BSTR* pbstrName) GetRestoreName;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IVssComponent.VTable
+			{
+				public function HRESULT(IVssComponentEx *self, PWSTR wszFailureMsg) SetPrepareForBackupFailureMsg;
+				public function HRESULT(IVssComponentEx *self, PWSTR wszFailureMsg) SetPostSnapshotFailureMsg;
+				public function HRESULT(IVssComponentEx *self, BSTR* pbstrFailureMsg) GetPrepareForBackupFailureMsg;
+				public function HRESULT(IVssComponentEx *self, BSTR* pbstrFailureMsg) GetPostSnapshotFailureMsg;
+				public function HRESULT(IVssComponentEx *self, Boolean* pbAuth) GetAuthoritativeRestore;
+				public function HRESULT(IVssComponentEx *self, VSS_ROLLFORWARD_TYPE* pRollType, BSTR* pbstrPoint) GetRollForward;
+				public function HRESULT(IVssComponentEx *self, BSTR* pbstrName) GetRestoreName;
+			}
 		}
 		[CRepr]
 		public struct IVssComponentEx2 : IVssComponentEx
 		{
 			public const new Guid IID = .(0x3b5be0f2, 0x07a9, 0x4e4b, 0xbd, 0xd3, 0xcf, 0xdc, 0x8e, 0x2c, 0x0d, 0x2d);
 			
-			public function HRESULT(IVssComponentEx2 *self, HRESULT hr, HRESULT hrApplication, PWSTR wszApplicationMessage, uint32 dwReserved) SetFailure;
-			public function HRESULT(IVssComponentEx2 *self, HRESULT* phr, HRESULT* phrApplication, BSTR* pbstrApplicationMessage, uint32* pdwReserved) GetFailure;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IVssComponentEx.VTable
+			{
+				public function HRESULT(IVssComponentEx2 *self, HRESULT hr, HRESULT hrApplication, PWSTR wszApplicationMessage, uint32 dwReserved) SetFailure;
+				public function HRESULT(IVssComponentEx2 *self, HRESULT* phr, HRESULT* phrApplication, BSTR* pbstrApplicationMessage, uint32* pdwReserved) GetFailure;
+			}
 		}
 		[CRepr]
 		public struct IVssCreateWriterMetadata
 		{
-			public function HRESULT(IVssCreateWriterMetadata *self, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive, PWSTR wszAlternateLocation) AddIncludeFiles;
-			public function HRESULT(IVssCreateWriterMetadata *self, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive) AddExcludeFiles;
-			public function HRESULT(IVssCreateWriterMetadata *self, VSS_COMPONENT_TYPE ct, PWSTR wszLogicalPath, PWSTR wszComponentName, PWSTR wszCaption, uint8* pbIcon, uint32 cbIcon, uint8 bRestoreMetadata, uint8 bNotifyOnBackupComplete, uint8 bSelectable, uint8 bSelectableForRestore, uint32 dwComponentFlags) AddComponent;
-			public function HRESULT(IVssCreateWriterMetadata *self, PWSTR wszLogicalPath, PWSTR wszDatabaseName, PWSTR wszPath, PWSTR wszFilespec, uint32 dwBackupTypeMask) AddDatabaseFiles;
-			public function HRESULT(IVssCreateWriterMetadata *self, PWSTR wszLogicalPath, PWSTR wszDatabaseName, PWSTR wszPath, PWSTR wszFilespec, uint32 dwBackupTypeMask) AddDatabaseLogFiles;
-			public function HRESULT(IVssCreateWriterMetadata *self, PWSTR wszLogicalPath, PWSTR wszGroupName, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive, PWSTR wszAlternateLocation, uint32 dwBackupTypeMask) AddFilesToFileGroup;
-			public function HRESULT(IVssCreateWriterMetadata *self, VSS_RESTOREMETHOD_ENUM method, PWSTR wszService, PWSTR wszUserProcedure, VSS_WRITERRESTORE_ENUM writerRestore, uint8 bRebootRequired) SetRestoreMethod;
-			public function HRESULT(IVssCreateWriterMetadata *self, PWSTR wszSourcePath, PWSTR wszSourceFilespec, uint8 bRecursive, PWSTR wszDestination) AddAlternateLocationMapping;
-			public function HRESULT(IVssCreateWriterMetadata *self, PWSTR wszForLogicalPath, PWSTR wszForComponentName, Guid onWriterId, PWSTR wszOnLogicalPath, PWSTR wszOnComponentName) AddComponentDependency;
-			public function HRESULT(IVssCreateWriterMetadata *self, uint32 dwSchemaMask) SetBackupSchema;
-			public function HRESULT(IVssCreateWriterMetadata *self, IXMLDOMDocument** pDoc) GetDocument;
-			public function HRESULT(IVssCreateWriterMetadata *self, BSTR* pbstrXML) SaveAsXML;
+			protected VTable* vt;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable
+			{
+				public function HRESULT(IVssCreateWriterMetadata *self, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive, PWSTR wszAlternateLocation) AddIncludeFiles;
+				public function HRESULT(IVssCreateWriterMetadata *self, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive) AddExcludeFiles;
+				public function HRESULT(IVssCreateWriterMetadata *self, VSS_COMPONENT_TYPE ct, PWSTR wszLogicalPath, PWSTR wszComponentName, PWSTR wszCaption, uint8* pbIcon, uint32 cbIcon, uint8 bRestoreMetadata, uint8 bNotifyOnBackupComplete, uint8 bSelectable, uint8 bSelectableForRestore, uint32 dwComponentFlags) AddComponent;
+				public function HRESULT(IVssCreateWriterMetadata *self, PWSTR wszLogicalPath, PWSTR wszDatabaseName, PWSTR wszPath, PWSTR wszFilespec, uint32 dwBackupTypeMask) AddDatabaseFiles;
+				public function HRESULT(IVssCreateWriterMetadata *self, PWSTR wszLogicalPath, PWSTR wszDatabaseName, PWSTR wszPath, PWSTR wszFilespec, uint32 dwBackupTypeMask) AddDatabaseLogFiles;
+				public function HRESULT(IVssCreateWriterMetadata *self, PWSTR wszLogicalPath, PWSTR wszGroupName, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive, PWSTR wszAlternateLocation, uint32 dwBackupTypeMask) AddFilesToFileGroup;
+				public function HRESULT(IVssCreateWriterMetadata *self, VSS_RESTOREMETHOD_ENUM method, PWSTR wszService, PWSTR wszUserProcedure, VSS_WRITERRESTORE_ENUM writerRestore, uint8 bRebootRequired) SetRestoreMethod;
+				public function HRESULT(IVssCreateWriterMetadata *self, PWSTR wszSourcePath, PWSTR wszSourceFilespec, uint8 bRecursive, PWSTR wszDestination) AddAlternateLocationMapping;
+				public function HRESULT(IVssCreateWriterMetadata *self, PWSTR wszForLogicalPath, PWSTR wszForComponentName, Guid onWriterId, PWSTR wszOnLogicalPath, PWSTR wszOnComponentName) AddComponentDependency;
+				public function HRESULT(IVssCreateWriterMetadata *self, uint32 dwSchemaMask) SetBackupSchema;
+				public function HRESULT(IVssCreateWriterMetadata *self, IXMLDOMDocument** pDoc) GetDocument;
+				public function HRESULT(IVssCreateWriterMetadata *self, BSTR* pbstrXML) SaveAsXML;
+			}
 		}
 		[CRepr]
 		public struct IVssWriterImpl : IUnknown
 		{
-			public function HRESULT(IVssWriterImpl *self, Guid writerId, PWSTR wszWriterName, PWSTR wszWriterInstanceName, uint32 dwMajorVersion, uint32 dwMinorVersion, VSS_USAGE_TYPE ut, VSS_SOURCE_TYPE st, VSS_APPLICATION_LEVEL nLevel, uint32 dwTimeout, VSS_ALTERNATE_WRITER_STATE aws, uint8 bIOThrottlingOnly) Initialize;
-			public function HRESULT(IVssWriterImpl *self, uint32 dwSubscribeTimeout, uint32 dwEventFlags) Subscribe;
-			public function HRESULT(IVssWriterImpl *self) Unsubscribe;
-			public function void(IVssWriterImpl *self) Uninitialize;
-			public function PWSTR*(IVssWriterImpl *self) GetCurrentVolumeArray;
-			public function uint32(IVssWriterImpl *self) GetCurrentVolumeCount;
-			public function HRESULT(IVssWriterImpl *self, PWSTR wszOriginalVolume, PWSTR* ppwszSnapshotDevice) GetSnapshotDeviceName;
-			public function Guid(IVssWriterImpl *self) GetCurrentSnapshotSetId;
-			public function int32(IVssWriterImpl *self) GetContext;
-			public function VSS_APPLICATION_LEVEL(IVssWriterImpl *self) GetCurrentLevel;
-			public function Boolean(IVssWriterImpl *self, PWSTR wszPath) IsPathAffected;
-			public function Boolean(IVssWriterImpl *self) IsBootableSystemStateBackedUp;
-			public function Boolean(IVssWriterImpl *self) AreComponentsSelected;
-			public function VSS_BACKUP_TYPE(IVssWriterImpl *self) GetBackupType;
-			public function VSS_RESTORE_TYPE(IVssWriterImpl *self) GetRestoreType;
-			public function HRESULT(IVssWriterImpl *self, HRESULT hr) SetWriterFailure;
-			public function Boolean(IVssWriterImpl *self) IsPartialFileSupportEnabled;
-			public function HRESULT(IVssWriterImpl *self, Guid idWriter, Guid clsid) InstallAlternateWriter;
-			public function IVssExamineWriterMetadata*(IVssWriterImpl *self) GetIdentityInformation;
-			public function HRESULT(IVssWriterImpl *self, HRESULT hr, HRESULT hrApplication, PWSTR wszApplicationMessage) SetWriterFailureEx;
-			public function HRESULT(IVssWriterImpl *self, Guid* idSession) GetSessionId;
-			public function Boolean(IVssWriterImpl *self) IsWriterShuttingDown;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVssWriterImpl *self, Guid writerId, PWSTR wszWriterName, PWSTR wszWriterInstanceName, uint32 dwMajorVersion, uint32 dwMinorVersion, VSS_USAGE_TYPE ut, VSS_SOURCE_TYPE st, VSS_APPLICATION_LEVEL nLevel, uint32 dwTimeout, VSS_ALTERNATE_WRITER_STATE aws, uint8 bIOThrottlingOnly) Initialize;
+				public function HRESULT(IVssWriterImpl *self, uint32 dwSubscribeTimeout, uint32 dwEventFlags) Subscribe;
+				public function HRESULT(IVssWriterImpl *self) Unsubscribe;
+				public function void(IVssWriterImpl *self) Uninitialize;
+				public function PWSTR*(IVssWriterImpl *self) GetCurrentVolumeArray;
+				public function uint32(IVssWriterImpl *self) GetCurrentVolumeCount;
+				public function HRESULT(IVssWriterImpl *self, PWSTR wszOriginalVolume, PWSTR* ppwszSnapshotDevice) GetSnapshotDeviceName;
+				public function Guid(IVssWriterImpl *self) GetCurrentSnapshotSetId;
+				public function int32(IVssWriterImpl *self) GetContext;
+				public function VSS_APPLICATION_LEVEL(IVssWriterImpl *self) GetCurrentLevel;
+				public function Boolean(IVssWriterImpl *self, PWSTR wszPath) IsPathAffected;
+				public function Boolean(IVssWriterImpl *self) IsBootableSystemStateBackedUp;
+				public function Boolean(IVssWriterImpl *self) AreComponentsSelected;
+				public function VSS_BACKUP_TYPE(IVssWriterImpl *self) GetBackupType;
+				public function VSS_RESTORE_TYPE(IVssWriterImpl *self) GetRestoreType;
+				public function HRESULT(IVssWriterImpl *self, HRESULT hr) SetWriterFailure;
+				public function Boolean(IVssWriterImpl *self) IsPartialFileSupportEnabled;
+				public function HRESULT(IVssWriterImpl *self, Guid idWriter, Guid clsid) InstallAlternateWriter;
+				public function IVssExamineWriterMetadata*(IVssWriterImpl *self) GetIdentityInformation;
+				public function HRESULT(IVssWriterImpl *self, HRESULT hr, HRESULT hrApplication, PWSTR wszApplicationMessage) SetWriterFailureEx;
+				public function HRESULT(IVssWriterImpl *self, Guid* idSession) GetSessionId;
+				public function Boolean(IVssWriterImpl *self) IsWriterShuttingDown;
+			}
 		}
 		[CRepr]
 		public struct IVssCreateExpressWriterMetadata : IUnknown
 		{
 			public const new Guid IID = .(0x9c772e77, 0xb26e, 0x427f, 0x92, 0xdd, 0xc9, 0x96, 0xf4, 0x1e, 0xa5, 0xe3);
 			
-			public function HRESULT(IVssCreateExpressWriterMetadata *self, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive) AddExcludeFiles;
-			public function HRESULT(IVssCreateExpressWriterMetadata *self, VSS_COMPONENT_TYPE ct, PWSTR wszLogicalPath, PWSTR wszComponentName, PWSTR wszCaption, uint8* pbIcon, uint32 cbIcon, uint8 bRestoreMetadata, uint8 bNotifyOnBackupComplete, uint8 bSelectable, uint8 bSelectableForRestore, uint32 dwComponentFlags) AddComponent;
-			public function HRESULT(IVssCreateExpressWriterMetadata *self, PWSTR wszLogicalPath, PWSTR wszGroupName, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive, PWSTR wszAlternateLocation, uint32 dwBackupTypeMask) AddFilesToFileGroup;
-			public function HRESULT(IVssCreateExpressWriterMetadata *self, VSS_RESTOREMETHOD_ENUM method, PWSTR wszService, PWSTR wszUserProcedure, VSS_WRITERRESTORE_ENUM writerRestore, uint8 bRebootRequired) SetRestoreMethod;
-			public function HRESULT(IVssCreateExpressWriterMetadata *self, PWSTR wszForLogicalPath, PWSTR wszForComponentName, Guid onWriterId, PWSTR wszOnLogicalPath, PWSTR wszOnComponentName) AddComponentDependency;
-			public function HRESULT(IVssCreateExpressWriterMetadata *self, uint32 dwSchemaMask) SetBackupSchema;
-			public function HRESULT(IVssCreateExpressWriterMetadata *self, BSTR* pbstrXML) SaveAsXML;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVssCreateExpressWriterMetadata *self, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive) AddExcludeFiles;
+				public function HRESULT(IVssCreateExpressWriterMetadata *self, VSS_COMPONENT_TYPE ct, PWSTR wszLogicalPath, PWSTR wszComponentName, PWSTR wszCaption, uint8* pbIcon, uint32 cbIcon, uint8 bRestoreMetadata, uint8 bNotifyOnBackupComplete, uint8 bSelectable, uint8 bSelectableForRestore, uint32 dwComponentFlags) AddComponent;
+				public function HRESULT(IVssCreateExpressWriterMetadata *self, PWSTR wszLogicalPath, PWSTR wszGroupName, PWSTR wszPath, PWSTR wszFilespec, uint8 bRecursive, PWSTR wszAlternateLocation, uint32 dwBackupTypeMask) AddFilesToFileGroup;
+				public function HRESULT(IVssCreateExpressWriterMetadata *self, VSS_RESTOREMETHOD_ENUM method, PWSTR wszService, PWSTR wszUserProcedure, VSS_WRITERRESTORE_ENUM writerRestore, uint8 bRebootRequired) SetRestoreMethod;
+				public function HRESULT(IVssCreateExpressWriterMetadata *self, PWSTR wszForLogicalPath, PWSTR wszForComponentName, Guid onWriterId, PWSTR wszOnLogicalPath, PWSTR wszOnComponentName) AddComponentDependency;
+				public function HRESULT(IVssCreateExpressWriterMetadata *self, uint32 dwSchemaMask) SetBackupSchema;
+				public function HRESULT(IVssCreateExpressWriterMetadata *self, BSTR* pbstrXML) SaveAsXML;
+			}
 		}
 		[CRepr]
 		public struct IVssExpressWriter : IUnknown
 		{
 			public const new Guid IID = .(0xe33affdc, 0x59c7, 0x47b1, 0x97, 0xd5, 0x42, 0x66, 0x59, 0x8f, 0x62, 0x35);
 			
-			public function HRESULT(IVssExpressWriter *self, Guid writerId, PWSTR writerName, VSS_USAGE_TYPE usageType, uint32 versionMajor, uint32 versionMinor, uint32 reserved, IVssCreateExpressWriterMetadata** ppMetadata) CreateMetadata;
-			public function HRESULT(IVssExpressWriter *self, PWSTR metadata, uint32 reserved) LoadMetadata;
-			public function HRESULT(IVssExpressWriter *self) Register;
-			public function HRESULT(IVssExpressWriter *self, Guid writerId) Unregister;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVssExpressWriter *self, Guid writerId, PWSTR writerName, VSS_USAGE_TYPE usageType, uint32 versionMajor, uint32 versionMinor, uint32 reserved, IVssCreateExpressWriterMetadata** ppMetadata) CreateMetadata;
+				public function HRESULT(IVssExpressWriter *self, PWSTR metadata, uint32 reserved) LoadMetadata;
+				public function HRESULT(IVssExpressWriter *self) Register;
+				public function HRESULT(IVssExpressWriter *self, Guid writerId) Unregister;
+			}
 		}
 		[CRepr]
 		public struct IVssSnapshotMgmt : IUnknown
 		{
 			public const new Guid IID = .(0xfa7df749, 0x66e7, 0x4986, 0xa2, 0x7f, 0xe2, 0xf0, 0x4a, 0xe5, 0x37, 0x72);
 			
-			public function HRESULT(IVssSnapshotMgmt *self, Guid ProviderId, Guid* InterfaceId, IUnknown** ppItf) GetProviderMgmtInterface;
-			public function HRESULT(IVssSnapshotMgmt *self, Guid ProviderId, int32 lContext, IVssEnumMgmtObject** ppEnum) QueryVolumesSupportedForSnapshots;
-			public function HRESULT(IVssSnapshotMgmt *self, uint16* pwszVolumeName, Guid ProviderId, IVssEnumObject** ppEnum) QuerySnapshotsByVolume;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVssSnapshotMgmt *self, Guid ProviderId, Guid* InterfaceId, IUnknown** ppItf) GetProviderMgmtInterface;
+				public function HRESULT(IVssSnapshotMgmt *self, Guid ProviderId, int32 lContext, IVssEnumMgmtObject** ppEnum) QueryVolumesSupportedForSnapshots;
+				public function HRESULT(IVssSnapshotMgmt *self, uint16* pwszVolumeName, Guid ProviderId, IVssEnumObject** ppEnum) QuerySnapshotsByVolume;
+			}
 		}
 		[CRepr]
 		public struct IVssSnapshotMgmt2 : IUnknown
 		{
 			public const new Guid IID = .(0x0f61ec39, 0xfe82, 0x45f2, 0xa3, 0xf0, 0x76, 0x8b, 0x5d, 0x42, 0x71, 0x02);
 			
-			public function HRESULT(IVssSnapshotMgmt2 *self, int64* pllMinDiffAreaSize) GetMinDiffAreaSize;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVssSnapshotMgmt2 *self, int64* pllMinDiffAreaSize) GetMinDiffAreaSize;
+			}
 		}
 		[CRepr]
 		public struct IVssDifferentialSoftwareSnapshotMgmt : IUnknown
 		{
 			public const new Guid IID = .(0x214a0f28, 0xb737, 0x4026, 0xb8, 0x47, 0x4f, 0x9e, 0x37, 0xd7, 0x95, 0x29);
 			
-			public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt *self, uint16* pwszVolumeName, uint16* pwszDiffAreaVolumeName, int64 llMaximumDiffSpace) AddDiffArea;
-			public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt *self, uint16* pwszVolumeName, uint16* pwszDiffAreaVolumeName, int64 llMaximumDiffSpace) ChangeDiffAreaMaximumSize;
-			public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt *self, uint16* pwszOriginalVolumeName, IVssEnumMgmtObject** ppEnum) QueryVolumesSupportedForDiffAreas;
-			public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt *self, uint16* pwszVolumeName, IVssEnumMgmtObject** ppEnum) QueryDiffAreasForVolume;
-			public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt *self, uint16* pwszVolumeName, IVssEnumMgmtObject** ppEnum) QueryDiffAreasOnVolume;
-			public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt *self, Guid SnapshotId, IVssEnumMgmtObject** ppEnum) QueryDiffAreasForSnapshot;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt *self, uint16* pwszVolumeName, uint16* pwszDiffAreaVolumeName, int64 llMaximumDiffSpace) AddDiffArea;
+				public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt *self, uint16* pwszVolumeName, uint16* pwszDiffAreaVolumeName, int64 llMaximumDiffSpace) ChangeDiffAreaMaximumSize;
+				public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt *self, uint16* pwszOriginalVolumeName, IVssEnumMgmtObject** ppEnum) QueryVolumesSupportedForDiffAreas;
+				public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt *self, uint16* pwszVolumeName, IVssEnumMgmtObject** ppEnum) QueryDiffAreasForVolume;
+				public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt *self, uint16* pwszVolumeName, IVssEnumMgmtObject** ppEnum) QueryDiffAreasOnVolume;
+				public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt *self, Guid SnapshotId, IVssEnumMgmtObject** ppEnum) QueryDiffAreasForSnapshot;
+			}
 		}
 		[CRepr]
 		public struct IVssDifferentialSoftwareSnapshotMgmt2 : IVssDifferentialSoftwareSnapshotMgmt
 		{
 			public const new Guid IID = .(0x949d7353, 0x675f, 0x4275, 0x89, 0x69, 0xf0, 0x44, 0xc6, 0x27, 0x78, 0x15);
 			
-			public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt2 *self, uint16* pwszVolumeName, uint16* pwszDiffAreaVolumeName, int64 llMaximumDiffSpace, BOOL bVolatile) ChangeDiffAreaMaximumSizeEx;
-			public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt2 *self, uint16* pwszVolumeName, uint16* pwszDiffAreaVolumeName, uint16* pwszNewDiffAreaVolumeName) MigrateDiffAreas;
-			public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt2 *self, uint16* pwszVolumeName, uint16* pwszDiffAreaVolumeName, IVssAsync** ppAsync) QueryMigrationStatus;
-			public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt2 *self, Guid idSnapshot, uint8 priority) SetSnapshotPriority;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IVssDifferentialSoftwareSnapshotMgmt.VTable
+			{
+				public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt2 *self, uint16* pwszVolumeName, uint16* pwszDiffAreaVolumeName, int64 llMaximumDiffSpace, BOOL bVolatile) ChangeDiffAreaMaximumSizeEx;
+				public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt2 *self, uint16* pwszVolumeName, uint16* pwszDiffAreaVolumeName, uint16* pwszNewDiffAreaVolumeName) MigrateDiffAreas;
+				public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt2 *self, uint16* pwszVolumeName, uint16* pwszDiffAreaVolumeName, IVssAsync** ppAsync) QueryMigrationStatus;
+				public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt2 *self, Guid idSnapshot, uint8 priority) SetSnapshotPriority;
+			}
 		}
 		[CRepr]
 		public struct IVssDifferentialSoftwareSnapshotMgmt3 : IVssDifferentialSoftwareSnapshotMgmt2
 		{
 			public const new Guid IID = .(0x383f7e71, 0xa4c5, 0x401f, 0xb2, 0x7f, 0xf8, 0x26, 0x28, 0x9f, 0x84, 0x58);
 			
-			public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt3 *self, uint16* pwszVolumeName, VSS_PROTECTION_LEVEL protectionLevel) SetVolumeProtectLevel;
-			public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt3 *self, uint16* pwszVolumeName, VSS_VOLUME_PROTECTION_INFO* protectionLevel) GetVolumeProtectLevel;
-			public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt3 *self, uint16* pwszVolumeName) ClearVolumeProtectFault;
-			public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt3 *self, uint16* pwszDiffAreaVolumeName) DeleteUnusedDiffAreas;
-			public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt3 *self, Guid idSnapshotOlder, Guid idSnapshotYounger, uint32* pcBlockSizePerBit, uint32* pcBitmapLength, uint8** ppbBitmap) QuerySnapshotDeltaBitmap;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IVssDifferentialSoftwareSnapshotMgmt2.VTable
+			{
+				public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt3 *self, uint16* pwszVolumeName, VSS_PROTECTION_LEVEL protectionLevel) SetVolumeProtectLevel;
+				public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt3 *self, uint16* pwszVolumeName, VSS_VOLUME_PROTECTION_INFO* protectionLevel) GetVolumeProtectLevel;
+				public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt3 *self, uint16* pwszVolumeName) ClearVolumeProtectFault;
+				public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt3 *self, uint16* pwszDiffAreaVolumeName) DeleteUnusedDiffAreas;
+				public function HRESULT(IVssDifferentialSoftwareSnapshotMgmt3 *self, Guid idSnapshotOlder, Guid idSnapshotYounger, uint32* pcBlockSizePerBit, uint32* pcBitmapLength, uint8** ppbBitmap) QuerySnapshotDeltaBitmap;
+			}
 		}
 		[CRepr]
 		public struct IVssEnumMgmtObject : IUnknown
 		{
 			public const new Guid IID = .(0x01954e6b, 0x9254, 0x4e6e, 0x80, 0x8c, 0xc9, 0xe0, 0x5d, 0x00, 0x76, 0x96);
 			
-			public function HRESULT(IVssEnumMgmtObject *self, uint32 celt, VSS_MGMT_OBJECT_PROP* rgelt, uint32* pceltFetched) Next;
-			public function HRESULT(IVssEnumMgmtObject *self, uint32 celt) Skip;
-			public function HRESULT(IVssEnumMgmtObject *self) Reset;
-			public function HRESULT(IVssEnumMgmtObject *self, IVssEnumMgmtObject** ppenum) Clone;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVssEnumMgmtObject *self, uint32 celt, VSS_MGMT_OBJECT_PROP* rgelt, uint32* pceltFetched) Next;
+				public function HRESULT(IVssEnumMgmtObject *self, uint32 celt) Skip;
+				public function HRESULT(IVssEnumMgmtObject *self) Reset;
+				public function HRESULT(IVssEnumMgmtObject *self, IVssEnumMgmtObject** ppenum) Clone;
+			}
 		}
 		[CRepr]
 		public struct IVssAdmin : IUnknown
 		{
 			public const new Guid IID = .(0x77ed5996, 0x2f63, 0x11d3, 0x8a, 0x39, 0x00, 0xc0, 0x4f, 0x72, 0xd8, 0xe3);
 			
-			public function HRESULT(IVssAdmin *self, Guid pProviderId, Guid ClassId, uint16* pwszProviderName, VSS_PROVIDER_TYPE eProviderType, uint16* pwszProviderVersion, Guid ProviderVersionId) RegisterProvider;
-			public function HRESULT(IVssAdmin *self, Guid ProviderId) UnregisterProvider;
-			public function HRESULT(IVssAdmin *self, IVssEnumObject** ppEnum) QueryProviders;
-			public function HRESULT(IVssAdmin *self) AbortAllSnapshotsInProgress;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVssAdmin *self, Guid pProviderId, Guid ClassId, uint16* pwszProviderName, VSS_PROVIDER_TYPE eProviderType, uint16* pwszProviderVersion, Guid ProviderVersionId) RegisterProvider;
+				public function HRESULT(IVssAdmin *self, Guid ProviderId) UnregisterProvider;
+				public function HRESULT(IVssAdmin *self, IVssEnumObject** ppEnum) QueryProviders;
+				public function HRESULT(IVssAdmin *self) AbortAllSnapshotsInProgress;
+			}
 		}
 		[CRepr]
 		public struct IVssAdminEx : IVssAdmin
 		{
 			public const new Guid IID = .(0x7858a9f8, 0xb1fa, 0x41a6, 0x96, 0x4f, 0xb9, 0xb3, 0x6b, 0x8c, 0xd8, 0xd8);
 			
-			public function HRESULT(IVssAdminEx *self, Guid pProviderId, uint64* pllOriginalCapabilityMask) GetProviderCapability;
-			public function HRESULT(IVssAdminEx *self, Guid ProviderId, int32* plContext) GetProviderContext;
-			public function HRESULT(IVssAdminEx *self, Guid ProviderId, int32 lContext) SetProviderContext;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IVssAdmin.VTable
+			{
+				public function HRESULT(IVssAdminEx *self, Guid pProviderId, uint64* pllOriginalCapabilityMask) GetProviderCapability;
+				public function HRESULT(IVssAdminEx *self, Guid ProviderId, int32* plContext) GetProviderContext;
+				public function HRESULT(IVssAdminEx *self, Guid ProviderId, int32 lContext) SetProviderContext;
+			}
 		}
 		[CRepr]
 		public struct IVssSoftwareSnapshotProvider : IUnknown
 		{
 			public const new Guid IID = .(0x609e123e, 0x2c5a, 0x44d3, 0x8f, 0x01, 0x0b, 0x1d, 0x9a, 0x47, 0xd1, 0xff);
 			
-			public function HRESULT(IVssSoftwareSnapshotProvider *self, int32 lContext) SetContext;
-			public function HRESULT(IVssSoftwareSnapshotProvider *self, Guid SnapshotId, VSS_SNAPSHOT_PROP* pProp) GetSnapshotProperties;
-			public function HRESULT(IVssSoftwareSnapshotProvider *self, Guid QueriedObjectId, VSS_OBJECT_TYPE eQueriedObjectType, VSS_OBJECT_TYPE eReturnedObjectsType, IVssEnumObject** ppEnum) Query;
-			public function HRESULT(IVssSoftwareSnapshotProvider *self, Guid SourceObjectId, VSS_OBJECT_TYPE eSourceObjectType, BOOL bForceDelete, int32* plDeletedSnapshots, Guid* pNondeletedSnapshotID) DeleteSnapshots;
-			public function HRESULT(IVssSoftwareSnapshotProvider *self, Guid SnapshotSetId, Guid SnapshotId, uint16* pwszVolumeName, int32 lNewContext) BeginPrepareSnapshot;
-			public function HRESULT(IVssSoftwareSnapshotProvider *self, uint16* pwszVolumeName, BOOL* pbSupportedByThisProvider) IsVolumeSupported;
-			public function HRESULT(IVssSoftwareSnapshotProvider *self, uint16* pwszVolumeName, BOOL* pbSnapshotsPresent, int32* plSnapshotCompatibility) IsVolumeSnapshotted;
-			public function HRESULT(IVssSoftwareSnapshotProvider *self, Guid SnapshotId, VSS_SNAPSHOT_PROPERTY_ID eSnapshotPropertyId, VARIANT vProperty) SetSnapshotProperty;
-			public function HRESULT(IVssSoftwareSnapshotProvider *self, Guid SnapshotId) RevertToSnapshot;
-			public function HRESULT(IVssSoftwareSnapshotProvider *self, uint16* pwszVolume, IVssAsync** ppAsync) QueryRevertStatus;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVssSoftwareSnapshotProvider *self, int32 lContext) SetContext;
+				public function HRESULT(IVssSoftwareSnapshotProvider *self, Guid SnapshotId, VSS_SNAPSHOT_PROP* pProp) GetSnapshotProperties;
+				public function HRESULT(IVssSoftwareSnapshotProvider *self, Guid QueriedObjectId, VSS_OBJECT_TYPE eQueriedObjectType, VSS_OBJECT_TYPE eReturnedObjectsType, IVssEnumObject** ppEnum) Query;
+				public function HRESULT(IVssSoftwareSnapshotProvider *self, Guid SourceObjectId, VSS_OBJECT_TYPE eSourceObjectType, BOOL bForceDelete, int32* plDeletedSnapshots, Guid* pNondeletedSnapshotID) DeleteSnapshots;
+				public function HRESULT(IVssSoftwareSnapshotProvider *self, Guid SnapshotSetId, Guid SnapshotId, uint16* pwszVolumeName, int32 lNewContext) BeginPrepareSnapshot;
+				public function HRESULT(IVssSoftwareSnapshotProvider *self, uint16* pwszVolumeName, BOOL* pbSupportedByThisProvider) IsVolumeSupported;
+				public function HRESULT(IVssSoftwareSnapshotProvider *self, uint16* pwszVolumeName, BOOL* pbSnapshotsPresent, int32* plSnapshotCompatibility) IsVolumeSnapshotted;
+				public function HRESULT(IVssSoftwareSnapshotProvider *self, Guid SnapshotId, VSS_SNAPSHOT_PROPERTY_ID eSnapshotPropertyId, VARIANT vProperty) SetSnapshotProperty;
+				public function HRESULT(IVssSoftwareSnapshotProvider *self, Guid SnapshotId) RevertToSnapshot;
+				public function HRESULT(IVssSoftwareSnapshotProvider *self, uint16* pwszVolume, IVssAsync** ppAsync) QueryRevertStatus;
+			}
 		}
 		[CRepr]
 		public struct IVssProviderCreateSnapshotSet : IUnknown
 		{
 			public const new Guid IID = .(0x5f894e5b, 0x1e39, 0x4778, 0x8e, 0x23, 0x9a, 0xba, 0xd9, 0xf0, 0xe0, 0x8c);
 			
-			public function HRESULT(IVssProviderCreateSnapshotSet *self, Guid SnapshotSetId) EndPrepareSnapshots;
-			public function HRESULT(IVssProviderCreateSnapshotSet *self, Guid SnapshotSetId) PreCommitSnapshots;
-			public function HRESULT(IVssProviderCreateSnapshotSet *self, Guid SnapshotSetId) CommitSnapshots;
-			public function HRESULT(IVssProviderCreateSnapshotSet *self, Guid SnapshotSetId, int32 lSnapshotsCount) PostCommitSnapshots;
-			public function HRESULT(IVssProviderCreateSnapshotSet *self, Guid SnapshotSetId) PreFinalCommitSnapshots;
-			public function HRESULT(IVssProviderCreateSnapshotSet *self, Guid SnapshotSetId) PostFinalCommitSnapshots;
-			public function HRESULT(IVssProviderCreateSnapshotSet *self, Guid SnapshotSetId) AbortSnapshots;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVssProviderCreateSnapshotSet *self, Guid SnapshotSetId) EndPrepareSnapshots;
+				public function HRESULT(IVssProviderCreateSnapshotSet *self, Guid SnapshotSetId) PreCommitSnapshots;
+				public function HRESULT(IVssProviderCreateSnapshotSet *self, Guid SnapshotSetId) CommitSnapshots;
+				public function HRESULT(IVssProviderCreateSnapshotSet *self, Guid SnapshotSetId, int32 lSnapshotsCount) PostCommitSnapshots;
+				public function HRESULT(IVssProviderCreateSnapshotSet *self, Guid SnapshotSetId) PreFinalCommitSnapshots;
+				public function HRESULT(IVssProviderCreateSnapshotSet *self, Guid SnapshotSetId) PostFinalCommitSnapshots;
+				public function HRESULT(IVssProviderCreateSnapshotSet *self, Guid SnapshotSetId) AbortSnapshots;
+			}
 		}
 		[CRepr]
 		public struct IVssProviderNotifications : IUnknown
 		{
 			public const new Guid IID = .(0xe561901f, 0x03a5, 0x4afe, 0x86, 0xd0, 0x72, 0xba, 0xee, 0xce, 0x70, 0x04);
 			
-			public function HRESULT(IVssProviderNotifications *self, IUnknown* pCallback) OnLoad;
-			public function HRESULT(IVssProviderNotifications *self, BOOL bForceUnload) OnUnload;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVssProviderNotifications *self, IUnknown* pCallback) OnLoad;
+				public function HRESULT(IVssProviderNotifications *self, BOOL bForceUnload) OnUnload;
+			}
 		}
 		[CRepr]
 		public struct IVssHardwareSnapshotProvider : IUnknown
 		{
 			public const new Guid IID = .(0x9593a157, 0x44e9, 0x4344, 0xbb, 0xeb, 0x44, 0xfb, 0xf9, 0xb0, 0x6b, 0x10);
 			
-			public function HRESULT(IVssHardwareSnapshotProvider *self, int32 lLunCount, int32 lContext, uint16** rgwszDevices, VDS_LUN_INFORMATION* pLunInformation, BOOL* pbIsSupported) AreLunsSupported;
-			public function HRESULT(IVssHardwareSnapshotProvider *self, uint16* wszDeviceName, VDS_LUN_INFORMATION* pLunInfo, BOOL* pbIsSupported) FillInLunInfo;
-			public function HRESULT(IVssHardwareSnapshotProvider *self, Guid SnapshotSetId, Guid SnapshotId, int32 lContext, int32 lLunCount, uint16** rgDeviceNames, VDS_LUN_INFORMATION* rgLunInformation) BeginPrepareSnapshot;
-			public function HRESULT(IVssHardwareSnapshotProvider *self, int32 lLunCount, uint16** rgDeviceNames, VDS_LUN_INFORMATION* rgSourceLuns, VDS_LUN_INFORMATION* rgDestinationLuns) GetTargetLuns;
-			public function HRESULT(IVssHardwareSnapshotProvider *self, int32 lLunCount, VDS_LUN_INFORMATION* rgSourceLuns) LocateLuns;
-			public function HRESULT(IVssHardwareSnapshotProvider *self, uint16* wszDeviceName, VDS_LUN_INFORMATION* pInformation) OnLunEmpty;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVssHardwareSnapshotProvider *self, int32 lLunCount, int32 lContext, uint16** rgwszDevices, VDS_LUN_INFORMATION* pLunInformation, BOOL* pbIsSupported) AreLunsSupported;
+				public function HRESULT(IVssHardwareSnapshotProvider *self, uint16* wszDeviceName, VDS_LUN_INFORMATION* pLunInfo, BOOL* pbIsSupported) FillInLunInfo;
+				public function HRESULT(IVssHardwareSnapshotProvider *self, Guid SnapshotSetId, Guid SnapshotId, int32 lContext, int32 lLunCount, uint16** rgDeviceNames, VDS_LUN_INFORMATION* rgLunInformation) BeginPrepareSnapshot;
+				public function HRESULT(IVssHardwareSnapshotProvider *self, int32 lLunCount, uint16** rgDeviceNames, VDS_LUN_INFORMATION* rgSourceLuns, VDS_LUN_INFORMATION* rgDestinationLuns) GetTargetLuns;
+				public function HRESULT(IVssHardwareSnapshotProvider *self, int32 lLunCount, VDS_LUN_INFORMATION* rgSourceLuns) LocateLuns;
+				public function HRESULT(IVssHardwareSnapshotProvider *self, uint16* wszDeviceName, VDS_LUN_INFORMATION* pInformation) OnLunEmpty;
+			}
 		}
 		[CRepr]
 		public struct IVssHardwareSnapshotProviderEx : IVssHardwareSnapshotProvider
 		{
 			public const new Guid IID = .(0x7f5ba925, 0xcdb1, 0x4d11, 0xa7, 0x1f, 0x33, 0x9e, 0xb7, 0xe7, 0x09, 0xfd);
 			
-			public function HRESULT(IVssHardwareSnapshotProviderEx *self, uint64* pllOriginalCapabilityMask) GetProviderCapabilities;
-			public function HRESULT(IVssHardwareSnapshotProviderEx *self, VDS_LUN_INFORMATION* pSnapshotLuns, VDS_LUN_INFORMATION* pOriginalLuns, uint32 dwCount, uint32 dwFlags) OnLunStateChange;
-			public function HRESULT(IVssHardwareSnapshotProviderEx *self, VDS_LUN_INFORMATION* pSourceLuns, VDS_LUN_INFORMATION* pTargetLuns, uint32 dwCount, IVssAsync** ppAsync) ResyncLuns;
-			public function HRESULT(IVssHardwareSnapshotProviderEx *self, VDS_LUN_INFORMATION* pSnapshotLuns, VDS_LUN_INFORMATION* pOriginalLuns, uint32 dwCount) OnReuseLuns;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IVssHardwareSnapshotProvider.VTable
+			{
+				public function HRESULT(IVssHardwareSnapshotProviderEx *self, uint64* pllOriginalCapabilityMask) GetProviderCapabilities;
+				public function HRESULT(IVssHardwareSnapshotProviderEx *self, VDS_LUN_INFORMATION* pSnapshotLuns, VDS_LUN_INFORMATION* pOriginalLuns, uint32 dwCount, uint32 dwFlags) OnLunStateChange;
+				public function HRESULT(IVssHardwareSnapshotProviderEx *self, VDS_LUN_INFORMATION* pSourceLuns, VDS_LUN_INFORMATION* pTargetLuns, uint32 dwCount, IVssAsync** ppAsync) ResyncLuns;
+				public function HRESULT(IVssHardwareSnapshotProviderEx *self, VDS_LUN_INFORMATION* pSnapshotLuns, VDS_LUN_INFORMATION* pOriginalLuns, uint32 dwCount) OnReuseLuns;
+			}
 		}
 		[CRepr]
 		public struct IVssFileShareSnapshotProvider : IUnknown
 		{
 			public const new Guid IID = .(0xc8636060, 0x7c2e, 0x11df, 0x8c, 0x4a, 0x08, 0x00, 0x20, 0x0c, 0x9a, 0x66);
 			
-			public function HRESULT(IVssFileShareSnapshotProvider *self, int32 lContext) SetContext;
-			public function HRESULT(IVssFileShareSnapshotProvider *self, Guid SnapshotId, VSS_SNAPSHOT_PROP* pProp) GetSnapshotProperties;
-			public function HRESULT(IVssFileShareSnapshotProvider *self, Guid QueriedObjectId, VSS_OBJECT_TYPE eQueriedObjectType, VSS_OBJECT_TYPE eReturnedObjectsType, IVssEnumObject** ppEnum) Query;
-			public function HRESULT(IVssFileShareSnapshotProvider *self, Guid SourceObjectId, VSS_OBJECT_TYPE eSourceObjectType, BOOL bForceDelete, int32* plDeletedSnapshots, Guid* pNondeletedSnapshotID) DeleteSnapshots;
-			public function HRESULT(IVssFileShareSnapshotProvider *self, Guid SnapshotSetId, Guid SnapshotId, uint16* pwszSharePath, int32 lNewContext, Guid ProviderId) BeginPrepareSnapshot;
-			public function HRESULT(IVssFileShareSnapshotProvider *self, uint16* pwszSharePath, BOOL* pbSupportedByThisProvider) IsPathSupported;
-			public function HRESULT(IVssFileShareSnapshotProvider *self, uint16* pwszSharePath, BOOL* pbSnapshotsPresent, int32* plSnapshotCompatibility) IsPathSnapshotted;
-			public function HRESULT(IVssFileShareSnapshotProvider *self, Guid SnapshotId, VSS_SNAPSHOT_PROPERTY_ID eSnapshotPropertyId, VARIANT vProperty) SetSnapshotProperty;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IVssFileShareSnapshotProvider *self, int32 lContext) SetContext;
+				public function HRESULT(IVssFileShareSnapshotProvider *self, Guid SnapshotId, VSS_SNAPSHOT_PROP* pProp) GetSnapshotProperties;
+				public function HRESULT(IVssFileShareSnapshotProvider *self, Guid QueriedObjectId, VSS_OBJECT_TYPE eQueriedObjectType, VSS_OBJECT_TYPE eReturnedObjectsType, IVssEnumObject** ppEnum) Query;
+				public function HRESULT(IVssFileShareSnapshotProvider *self, Guid SourceObjectId, VSS_OBJECT_TYPE eSourceObjectType, BOOL bForceDelete, int32* plDeletedSnapshots, Guid* pNondeletedSnapshotID) DeleteSnapshots;
+				public function HRESULT(IVssFileShareSnapshotProvider *self, Guid SnapshotSetId, Guid SnapshotId, uint16* pwszSharePath, int32 lNewContext, Guid ProviderId) BeginPrepareSnapshot;
+				public function HRESULT(IVssFileShareSnapshotProvider *self, uint16* pwszSharePath, BOOL* pbSupportedByThisProvider) IsPathSupported;
+				public function HRESULT(IVssFileShareSnapshotProvider *self, uint16* pwszSharePath, BOOL* pbSnapshotsPresent, int32* plSnapshotCompatibility) IsPathSnapshotted;
+				public function HRESULT(IVssFileShareSnapshotProvider *self, Guid SnapshotId, VSS_SNAPSHOT_PROPERTY_ID eSnapshotPropertyId, VARIANT vProperty) SetSnapshotProperty;
+			}
 		}
 		
 		// --- Functions ---

@@ -5747,71 +5747,116 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x28f54685, 0x06fd, 0x11d2, 0xb2, 0x7a, 0x00, 0xa0, 0xc9, 0x22, 0x31, 0x96);
 			
-			public function HRESULT(IKsControl *self, KSIDENTIFIER* Property, uint32 PropertyLength, void* PropertyData, uint32 DataLength, uint32* BytesReturned) KsProperty;
-			public function HRESULT(IKsControl *self, KSIDENTIFIER* Method, uint32 MethodLength, void* MethodData, uint32 DataLength, uint32* BytesReturned) KsMethod;
-			public function HRESULT(IKsControl *self, KSIDENTIFIER* Event, uint32 EventLength, void* EventData, uint32 DataLength, uint32* BytesReturned) KsEvent;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IKsControl *self, KSIDENTIFIER* Property, uint32 PropertyLength, void* PropertyData, uint32 DataLength, uint32* BytesReturned) KsProperty;
+				public function HRESULT(IKsControl *self, KSIDENTIFIER* Method, uint32 MethodLength, void* MethodData, uint32 DataLength, uint32* BytesReturned) KsMethod;
+				public function HRESULT(IKsControl *self, KSIDENTIFIER* Event, uint32 EventLength, void* EventData, uint32 DataLength, uint32* BytesReturned) KsEvent;
+			}
 		}
 		[CRepr]
 		public struct IKsFormatSupport : IUnknown
 		{
 			public const new Guid IID = .(0x3cb4a69d, 0xbb6f, 0x4d2b, 0x95, 0xb7, 0x45, 0x2d, 0x2c, 0x15, 0x5d, 0xb5);
 			
-			public function HRESULT(IKsFormatSupport *self, KSDATAFORMAT* pKsFormat, uint32 cbFormat, BOOL* pbSupported) IsFormatSupported;
-			public function HRESULT(IKsFormatSupport *self, KSDATAFORMAT** ppKsFormat) GetDevicePreferredFormat;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IKsFormatSupport *self, KSDATAFORMAT* pKsFormat, uint32 cbFormat, BOOL* pbSupported) IsFormatSupported;
+				public function HRESULT(IKsFormatSupport *self, KSDATAFORMAT** ppKsFormat) GetDevicePreferredFormat;
+			}
 		}
 		[CRepr]
 		public struct IKsJackDescription : IUnknown
 		{
 			public const new Guid IID = .(0x4509f757, 0x2d46, 0x4637, 0x8e, 0x62, 0xce, 0x7d, 0xb9, 0x44, 0xf5, 0x7b);
 			
-			public function HRESULT(IKsJackDescription *self, uint32* pcJacks) GetJackCount;
-			public function HRESULT(IKsJackDescription *self, uint32 nJack, KSJACK_DESCRIPTION* pDescription) GetJackDescription;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IKsJackDescription *self, uint32* pcJacks) GetJackCount;
+				public function HRESULT(IKsJackDescription *self, uint32 nJack, KSJACK_DESCRIPTION* pDescription) GetJackDescription;
+			}
 		}
 		[CRepr]
 		public struct IKsJackDescription2 : IUnknown
 		{
 			public const new Guid IID = .(0x478f3a9b, 0xe0c9, 0x4827, 0x92, 0x28, 0x6f, 0x55, 0x05, 0xff, 0xe7, 0x6a);
 			
-			public function HRESULT(IKsJackDescription2 *self, uint32* pcJacks) GetJackCount;
-			public function HRESULT(IKsJackDescription2 *self, uint32 nJack, KSJACK_DESCRIPTION2* pDescription2) GetJackDescription2;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IKsJackDescription2 *self, uint32* pcJacks) GetJackCount;
+				public function HRESULT(IKsJackDescription2 *self, uint32 nJack, KSJACK_DESCRIPTION2* pDescription2) GetJackDescription2;
+			}
 		}
 		[CRepr]
 		public struct IKsJackSinkInformation : IUnknown
 		{
 			public const new Guid IID = .(0xd9bd72ed, 0x290f, 0x4581, 0x9f, 0xf3, 0x61, 0x02, 0x7a, 0x8f, 0xe5, 0x32);
 			
-			public function HRESULT(IKsJackSinkInformation *self, KSJACK_SINK_INFORMATION* pJackSinkInformation) GetJackSinkInformation;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IKsJackSinkInformation *self, KSJACK_SINK_INFORMATION* pJackSinkInformation) GetJackSinkInformation;
+			}
 		}
 		[CRepr]
 		public struct IKsJackContainerId : IUnknown
 		{
 			public const new Guid IID = .(0xc99af463, 0xd629, 0x4ec4, 0x8c, 0x00, 0xe5, 0x4d, 0x68, 0x15, 0x42, 0x48);
 			
-			public function HRESULT(IKsJackContainerId *self, Guid* pJackContainerId) GetJackContainerId;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IKsJackContainerId *self, Guid* pJackContainerId) GetJackContainerId;
+			}
 		}
 		[CRepr]
 		public struct IKsPropertySet : IUnknown
 		{
 			public const new Guid IID = .(0x31efac30, 0x515c, 0x11d0, 0xa9, 0xaa, 0x00, 0xaa, 0x00, 0x61, 0xbe, 0x93);
 			
-			public function HRESULT(IKsPropertySet *self, Guid* PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength) Set;
-			public function HRESULT(IKsPropertySet *self, Guid* PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength, uint32* BytesReturned) Get;
-			public function HRESULT(IKsPropertySet *self, Guid* PropSet, uint32 Id, uint32* TypeSupport) QuerySupported;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IKsPropertySet *self, Guid* PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength) Set;
+				public function HRESULT(IKsPropertySet *self, Guid* PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength, uint32* BytesReturned) Get;
+				public function HRESULT(IKsPropertySet *self, Guid* PropSet, uint32 Id, uint32* TypeSupport) QuerySupported;
+			}
 		}
 		[CRepr]
 		public struct IKsAggregateControl : IUnknown
 		{
 			public const new Guid IID = .(0x7f40eac0, 0x3947, 0x11d2, 0x87, 0x4e, 0x00, 0xa0, 0xc9, 0x22, 0x31, 0x96);
 			
-			public function HRESULT(IKsAggregateControl *self, Guid* AggregateClass) KsAddAggregate;
-			public function HRESULT(IKsAggregateControl *self, Guid* AggregateClass) KsRemoveAggregate;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IKsAggregateControl *self, Guid* AggregateClass) KsAddAggregate;
+				public function HRESULT(IKsAggregateControl *self, Guid* AggregateClass) KsRemoveAggregate;
+			}
 		}
 		[CRepr]
 		public struct IKsTopology : IUnknown
 		{
 			public const new Guid IID = .(0x28f54683, 0x06fd, 0x11d2, 0xb2, 0x7a, 0x00, 0xa0, 0xc9, 0x22, 0x31, 0x96);
 			
-			public function HRESULT(IKsTopology *self, uint32 NodeId, uint32 Flags, uint32 DesiredAccess, IUnknown* UnkOuter, Guid* InterfaceId, void** Interface) CreateNodeInstance;
+			public VTable* VT { get => (.)vt; }			
+			[CRepr]
+			public struct VTable : IUnknown.VTable
+			{
+				public function HRESULT(IKsTopology *self, uint32 NodeId, uint32 Flags, uint32 DesiredAccess, IUnknown* UnkOuter, Guid* InterfaceId, void** Interface) CreateNodeInstance;
+			}
 		}
 		
 		// --- Functions ---
