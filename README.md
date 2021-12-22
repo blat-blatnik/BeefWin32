@@ -19,6 +19,29 @@ This is a **mostly untested work in progress**. Use at your own peril.
 
 Copy the `output` directory into your Beef project's `src` directory (You can also rename it to `Win32` instead of `output` if you want). You can then access all of the Win32 types, constants, and functions through the `Win32` class inside of the `Win32` namespace.
 
+Here's an example using QueryPerformanceCounter:
+
+```c#
+using System;
+using Win32;
+namespace Test {
+    class Program {
+        public static void Main() {
+            Win32.LARGE_INTEGER qpc = ?, first = ?;
+            Win32.LARGE_INTEGER qpf = ?;
+            Win32.QueryPerformanceFrequency(&qpf);
+            Win32.QueryPerformanceCounter(&first);
+            while (true) {
+                Win32.QueryPerformanceCounter(&qpc);
+                int64 delta = qpc.QuadPart - first.QuadPart;
+                double seconds = delta / (double)qpf.QuadPart;
+                Console.WriteLine(seconds);
+            }
+        }
+    }
+}
+```
+
 Here's a full example using COM classes that makes an Open Folder Dialog:
 
 ```c#
