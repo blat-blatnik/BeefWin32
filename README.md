@@ -14,6 +14,7 @@ This is a **mostly untested work in progress**. Use at your own peril.
 - Some functions and COM methods take parameters with types that are never defined in the metadata. For now, I've changed their signature so they all take `void*` instead.
 - Structs and unions with anonymous members are very annoying to access since Beef doesn't support anonymous members yet. I plan to add properties to make this easier.
 - Currently I ignore `[In]`/`[Out]`/`[Optional]` attributes on function parameters, but I plan to make use of them to add `in`/`out`/`ref` qualifiers at some point.
+- Bitfields are just smushed into an integral type in the metadata. Which makes working with some structures very tedious. The only way to fix this would be to manually add in properties for them.
 
 ## How to use
 
