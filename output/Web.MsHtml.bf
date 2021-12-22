@@ -6593,1939 +6593,1939 @@ namespace Win32
 		[AllowDuplicates]
 		public enum htmlDesignMode : int32
 		{
-			htmlDesignModeInherit = -2,
-			htmlDesignModeOn = -1,
-			htmlDesignModeOff = 0,
-			htmlDesignMode_Max = 2147483647,
+			Inherit = -2,
+			On = -1,
+			Off = 0,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlZOrder : int32
 		{
-			htmlZOrderFront = 0,
-			htmlZOrderBack = 1,
-			htmlZOrder_Max = 2147483647,
+			Front = 0,
+			Back = 1,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlClear : int32
 		{
-			htmlClearNotSet = 0,
-			htmlClearAll = 1,
-			htmlClearLeft = 2,
-			htmlClearRight = 3,
-			htmlClearBoth = 4,
-			htmlClearNone = 5,
-			htmlClear_Max = 2147483647,
+			NotSet = 0,
+			All = 1,
+			Left = 2,
+			Right = 3,
+			Both = 4,
+			None = 5,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlControlAlign : int32
 		{
-			htmlControlAlignNotSet = 0,
-			htmlControlAlignLeft = 1,
-			htmlControlAlignCenter = 2,
-			htmlControlAlignRight = 3,
-			htmlControlAlignTextTop = 4,
-			htmlControlAlignAbsMiddle = 5,
-			htmlControlAlignBaseline = 6,
-			htmlControlAlignAbsBottom = 7,
-			htmlControlAlignBottom = 8,
-			htmlControlAlignMiddle = 9,
-			htmlControlAlignTop = 10,
-			htmlControlAlign_Max = 2147483647,
+			NotSet = 0,
+			Left = 1,
+			Center = 2,
+			Right = 3,
+			TextTop = 4,
+			AbsMiddle = 5,
+			Baseline = 6,
+			AbsBottom = 7,
+			Bottom = 8,
+			Middle = 9,
+			Top = 10,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlBlockAlign : int32
 		{
-			htmlBlockAlignNotSet = 0,
-			htmlBlockAlignLeft = 1,
-			htmlBlockAlignCenter = 2,
-			htmlBlockAlignRight = 3,
-			htmlBlockAlignJustify = 4,
-			htmlBlockAlign_Max = 2147483647,
+			NotSet = 0,
+			Left = 1,
+			Center = 2,
+			Right = 3,
+			Justify = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlReadyState : int32
 		{
-			htmlReadyStateuninitialized = 0,
-			htmlReadyStateloading = 1,
-			htmlReadyStateloaded = 2,
-			htmlReadyStateinteractive = 3,
-			htmlReadyStatecomplete = 4,
-			htmlReadyState_Max = 2147483647,
+			uninitialized = 0,
+			loading = 1,
+			loaded = 2,
+			interactive = 3,
+			complete = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlLoop : int32
 		{
-			htmlLoopLoopInfinite = -1,
-			htmlLoop_Max = 2147483647,
+			LoopInfinite = -1,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum mediaType : int32
 		{
-			mediaTypeNotSet = 0,
-			mediaTypeAll = 511,
-			mediaTypeAural = 1,
-			mediaTypeBraille = 2,
-			mediaTypeEmbossed = 4,
-			mediaTypeHandheld = 8,
-			mediaTypePrint = 16,
-			mediaTypeProjection = 32,
-			mediaTypeScreen = 64,
-			mediaTypeTty = 128,
-			mediaTypeTv = 256,
-			mediaType_Max = 2147483647,
+			NotSet = 0,
+			All = 511,
+			Aural = 1,
+			Braille = 2,
+			Embossed = 4,
+			Handheld = 8,
+			Print = 16,
+			Projection = 32,
+			Screen = 64,
+			Tty = 128,
+			Tv = 256,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum DomConstructor : int32
 		{
-			DomConstructorObject = 0,
-			DomConstructorAttr = 1,
-			DomConstructorBehaviorUrnsCollection = 2,
-			DomConstructorBookmarkCollection = 3,
-			DomConstructorCompatibleInfo = 4,
-			DomConstructorCompatibleInfoCollection = 5,
-			DomConstructorControlRangeCollection = 6,
-			DomConstructorCSSCurrentStyleDeclaration = 7,
-			DomConstructorCSSRuleList = 8,
-			DomConstructorCSSRuleStyleDeclaration = 9,
-			DomConstructorCSSStyleDeclaration = 10,
-			DomConstructorCSSStyleRule = 11,
-			DomConstructorCSSStyleSheet = 12,
-			DomConstructorDataTransfer = 13,
-			DomConstructorDOMImplementation = 14,
-			DomConstructorElement = 15,
-			DomConstructorEvent = 16,
-			DomConstructorHistory = 17,
-			DomConstructorHTCElementBehaviorDefaults = 18,
-			DomConstructorHTMLAnchorElement = 19,
-			DomConstructorHTMLAreaElement = 20,
-			DomConstructorHTMLAreasCollection = 21,
-			DomConstructorHTMLBaseElement = 22,
-			DomConstructorHTMLBaseFontElement = 23,
-			DomConstructorHTMLBGSoundElement = 24,
-			DomConstructorHTMLBlockElement = 25,
-			DomConstructorHTMLBodyElement = 26,
-			DomConstructorHTMLBRElement = 27,
-			DomConstructorHTMLButtonElement = 28,
-			DomConstructorHTMLCollection = 29,
-			DomConstructorHTMLCommentElement = 30,
-			DomConstructorHTMLDDElement = 31,
-			DomConstructorHTMLDivElement = 32,
-			DomConstructorHTMLDocument = 33,
-			DomConstructorHTMLDListElement = 34,
-			DomConstructorHTMLDTElement = 35,
-			DomConstructorHTMLEmbedElement = 36,
-			DomConstructorHTMLFieldSetElement = 37,
-			DomConstructorHTMLFontElement = 38,
-			DomConstructorHTMLFormElement = 39,
-			DomConstructorHTMLFrameElement = 40,
-			DomConstructorHTMLFrameSetElement = 41,
-			DomConstructorHTMLGenericElement = 42,
-			DomConstructorHTMLHeadElement = 43,
-			DomConstructorHTMLHeadingElement = 44,
-			DomConstructorHTMLHRElement = 45,
-			DomConstructorHTMLHtmlElement = 46,
-			DomConstructorHTMLIFrameElement = 47,
-			DomConstructorHTMLImageElement = 48,
-			DomConstructorHTMLInputElement = 49,
-			DomConstructorHTMLIsIndexElement = 50,
-			DomConstructorHTMLLabelElement = 51,
-			DomConstructorHTMLLegendElement = 52,
-			DomConstructorHTMLLIElement = 53,
-			DomConstructorHTMLLinkElement = 54,
-			DomConstructorHTMLMapElement = 55,
-			DomConstructorHTMLMarqueeElement = 56,
-			DomConstructorHTMLMetaElement = 57,
-			DomConstructorHTMLModelessDialog = 58,
-			DomConstructorHTMLNamespaceInfo = 59,
-			DomConstructorHTMLNamespaceInfoCollection = 60,
-			DomConstructorHTMLNextIdElement = 61,
-			DomConstructorHTMLNoShowElement = 62,
-			DomConstructorHTMLObjectElement = 63,
-			DomConstructorHTMLOListElement = 64,
-			DomConstructorHTMLOptionElement = 65,
-			DomConstructorHTMLParagraphElement = 66,
-			DomConstructorHTMLParamElement = 67,
-			DomConstructorHTMLPhraseElement = 68,
-			DomConstructorHTMLPluginsCollection = 69,
-			DomConstructorHTMLPopup = 70,
-			DomConstructorHTMLScriptElement = 71,
-			DomConstructorHTMLSelectElement = 72,
-			DomConstructorHTMLSpanElement = 73,
-			DomConstructorHTMLStyleElement = 74,
-			DomConstructorHTMLTableCaptionElement = 75,
-			DomConstructorHTMLTableCellElement = 76,
-			DomConstructorHTMLTableColElement = 77,
-			DomConstructorHTMLTableElement = 78,
-			DomConstructorHTMLTableRowElement = 79,
-			DomConstructorHTMLTableSectionElement = 80,
-			DomConstructorHTMLTextAreaElement = 81,
-			DomConstructorHTMLTextElement = 82,
-			DomConstructorHTMLTitleElement = 83,
-			DomConstructorHTMLUListElement = 84,
-			DomConstructorHTMLUnknownElement = 85,
-			DomConstructorImage = 86,
-			DomConstructorLocation = 87,
-			DomConstructorNamedNodeMap = 88,
-			DomConstructorNavigator = 89,
-			DomConstructorNodeList = 90,
-			DomConstructorOption = 91,
-			DomConstructorScreen = 92,
-			DomConstructorSelection = 93,
-			DomConstructorStaticNodeList = 94,
-			DomConstructorStorage = 95,
-			DomConstructorStyleSheetList = 96,
-			DomConstructorStyleSheetPage = 97,
-			DomConstructorStyleSheetPageList = 98,
-			DomConstructorText = 99,
-			DomConstructorTextRange = 100,
-			DomConstructorTextRangeCollection = 101,
-			DomConstructorTextRectangle = 102,
-			DomConstructorTextRectangleList = 103,
-			DomConstructorWindow = 104,
-			DomConstructorXDomainRequest = 105,
-			DomConstructorXMLHttpRequest = 106,
-			DomConstructorMax = 107,
-			DomConstructor_Max = 2147483647,
+			Object = 0,
+			Attr = 1,
+			BehaviorUrnsCollection = 2,
+			BookmarkCollection = 3,
+			CompatibleInfo = 4,
+			CompatibleInfoCollection = 5,
+			ControlRangeCollection = 6,
+			CSSCurrentStyleDeclaration = 7,
+			CSSRuleList = 8,
+			CSSRuleStyleDeclaration = 9,
+			CSSStyleDeclaration = 10,
+			CSSStyleRule = 11,
+			CSSStyleSheet = 12,
+			DataTransfer = 13,
+			DOMImplementation = 14,
+			Element = 15,
+			Event = 16,
+			History = 17,
+			HTCElementBehaviorDefaults = 18,
+			HTMLAnchorElement = 19,
+			HTMLAreaElement = 20,
+			HTMLAreasCollection = 21,
+			HTMLBaseElement = 22,
+			HTMLBaseFontElement = 23,
+			HTMLBGSoundElement = 24,
+			HTMLBlockElement = 25,
+			HTMLBodyElement = 26,
+			HTMLBRElement = 27,
+			HTMLButtonElement = 28,
+			HTMLCollection = 29,
+			HTMLCommentElement = 30,
+			HTMLDDElement = 31,
+			HTMLDivElement = 32,
+			HTMLDocument = 33,
+			HTMLDListElement = 34,
+			HTMLDTElement = 35,
+			HTMLEmbedElement = 36,
+			HTMLFieldSetElement = 37,
+			HTMLFontElement = 38,
+			HTMLFormElement = 39,
+			HTMLFrameElement = 40,
+			HTMLFrameSetElement = 41,
+			HTMLGenericElement = 42,
+			HTMLHeadElement = 43,
+			HTMLHeadingElement = 44,
+			HTMLHRElement = 45,
+			HTMLHtmlElement = 46,
+			HTMLIFrameElement = 47,
+			HTMLImageElement = 48,
+			HTMLInputElement = 49,
+			HTMLIsIndexElement = 50,
+			HTMLLabelElement = 51,
+			HTMLLegendElement = 52,
+			HTMLLIElement = 53,
+			HTMLLinkElement = 54,
+			HTMLMapElement = 55,
+			HTMLMarqueeElement = 56,
+			HTMLMetaElement = 57,
+			HTMLModelessDialog = 58,
+			HTMLNamespaceInfo = 59,
+			HTMLNamespaceInfoCollection = 60,
+			HTMLNextIdElement = 61,
+			HTMLNoShowElement = 62,
+			HTMLObjectElement = 63,
+			HTMLOListElement = 64,
+			HTMLOptionElement = 65,
+			HTMLParagraphElement = 66,
+			HTMLParamElement = 67,
+			HTMLPhraseElement = 68,
+			HTMLPluginsCollection = 69,
+			HTMLPopup = 70,
+			HTMLScriptElement = 71,
+			HTMLSelectElement = 72,
+			HTMLSpanElement = 73,
+			HTMLStyleElement = 74,
+			HTMLTableCaptionElement = 75,
+			HTMLTableCellElement = 76,
+			HTMLTableColElement = 77,
+			HTMLTableElement = 78,
+			HTMLTableRowElement = 79,
+			HTMLTableSectionElement = 80,
+			HTMLTextAreaElement = 81,
+			HTMLTextElement = 82,
+			HTMLTitleElement = 83,
+			HTMLUListElement = 84,
+			HTMLUnknownElement = 85,
+			Image = 86,
+			Location = 87,
+			NamedNodeMap = 88,
+			Navigator = 89,
+			NodeList = 90,
+			Option = 91,
+			Screen = 92,
+			Selection = 93,
+			StaticNodeList = 94,
+			Storage = 95,
+			StyleSheetList = 96,
+			StyleSheetPage = 97,
+			StyleSheetPageList = 98,
+			Text = 99,
+			TextRange = 100,
+			TextRangeCollection = 101,
+			TextRectangle = 102,
+			TextRectangleList = 103,
+			Window = 104,
+			XDomainRequest = 105,
+			XMLHttpRequest = 106,
+			Max = 107,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleTextTransform : int32
 		{
-			styleTextTransformNotSet = 0,
-			styleTextTransformCapitalize = 1,
-			styleTextTransformLowercase = 2,
-			styleTextTransformUppercase = 3,
-			styleTextTransformNone = 4,
-			styleTextTransform_Max = 2147483647,
+			NotSet = 0,
+			Capitalize = 1,
+			Lowercase = 2,
+			Uppercase = 3,
+			None = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleDataRepeat : int32
 		{
-			styleDataRepeatNone = 0,
-			styleDataRepeatInner = 1,
-			styleDataRepeat_Max = 2147483647,
+			None = 0,
+			Inner = 1,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleOverflow : int32
 		{
-			styleOverflowNotSet = 0,
-			styleOverflowAuto = 1,
-			styleOverflowHidden = 2,
-			styleOverflowVisible = 3,
-			styleOverflowScroll = 4,
-			styleOverflow_Max = 2147483647,
+			NotSet = 0,
+			Auto = 1,
+			Hidden = 2,
+			Visible = 3,
+			Scroll = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsOverflowStyle : int32
 		{
-			styleMsOverflowStyleNotSet = 0,
-			styleMsOverflowStyleAuto = 1,
-			styleMsOverflowStyleNone = 2,
-			styleMsOverflowStyleScrollbar = 3,
-			styleMsOverflowStyleMsAutoHidingScrollbar = 4,
-			styleMsOverflowStyle_Max = 2147483647,
+			NotSet = 0,
+			Auto = 1,
+			None = 2,
+			Scrollbar = 3,
+			MsAutoHidingScrollbar = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleTableLayout : int32
 		{
-			styleTableLayoutNotSet = 0,
-			styleTableLayoutAuto = 1,
-			styleTableLayoutFixed = 2,
-			styleTableLayout_Max = 2147483647,
+			NotSet = 0,
+			Auto = 1,
+			Fixed = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleBorderCollapse : int32
 		{
-			styleBorderCollapseNotSet = 0,
-			styleBorderCollapseSeparate = 1,
-			styleBorderCollapseCollapse = 2,
-			styleBorderCollapse_Max = 2147483647,
+			NotSet = 0,
+			Separate = 1,
+			Collapse = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleCaptionSide : int32
 		{
-			styleCaptionSideNotSet = 0,
-			styleCaptionSideTop = 1,
-			styleCaptionSideBottom = 2,
-			styleCaptionSideLeft = 3,
-			styleCaptionSideRight = 4,
-			styleCaptionSide_Max = 2147483647,
+			NotSet = 0,
+			Top = 1,
+			Bottom = 2,
+			Left = 3,
+			Right = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleEmptyCells : int32
 		{
-			styleEmptyCellsNotSet = 0,
-			styleEmptyCellsShow = 1,
-			styleEmptyCellsHide = 2,
-			styleEmptyCells_Max = 2147483647,
+			NotSet = 0,
+			Show = 1,
+			Hide = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleFontStyle : int32
 		{
-			styleFontStyleNotSet = 0,
-			styleFontStyleItalic = 1,
-			styleFontStyleOblique = 2,
-			styleFontStyleNormal = 3,
-			styleFontStyle_Max = 2147483647,
+			NotSet = 0,
+			Italic = 1,
+			Oblique = 2,
+			Normal = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleFontVariant : int32
 		{
-			styleFontVariantNotSet = 0,
-			styleFontVariantSmallCaps = 1,
-			styleFontVariantNormal = 2,
-			styleFontVariant_Max = 2147483647,
+			NotSet = 0,
+			SmallCaps = 1,
+			Normal = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleBackgroundRepeat : int32
 		{
-			styleBackgroundRepeatRepeat = 0,
-			styleBackgroundRepeatRepeatX = 1,
-			styleBackgroundRepeatRepeatY = 2,
-			styleBackgroundRepeatNoRepeat = 3,
-			styleBackgroundRepeatNotSet = 4,
-			styleBackgroundRepeat_Max = 2147483647,
+			Repeat = 0,
+			RepeatX = 1,
+			RepeatY = 2,
+			NoRepeat = 3,
+			NotSet = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleBackgroundAttachment : int32
 		{
-			styleBackgroundAttachmentFixed = 0,
-			styleBackgroundAttachmentScroll = 1,
-			styleBackgroundAttachmentNotSet = 2,
-			styleBackgroundAttachment_Max = 2147483647,
+			Fixed = 0,
+			Scroll = 1,
+			NotSet = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleBackgroundAttachment3 : int32
 		{
-			styleBackgroundAttachment3Fixed = 0,
-			styleBackgroundAttachment3Scroll = 1,
-			styleBackgroundAttachment3Local = 2,
-			styleBackgroundAttachment3NotSet = 3,
-			styleBackgroundAttachment3_Max = 2147483647,
+			Fixed = 0,
+			Scroll = 1,
+			Local = 2,
+			NotSet = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleBackgroundClip : int32
 		{
-			styleBackgroundClipBorderBox = 0,
-			styleBackgroundClipPaddingBox = 1,
-			styleBackgroundClipContentBox = 2,
-			styleBackgroundClipNotSet = 3,
-			styleBackgroundClip_Max = 2147483647,
+			BorderBox = 0,
+			PaddingBox = 1,
+			ContentBox = 2,
+			NotSet = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleBackgroundOrigin : int32
 		{
-			styleBackgroundOriginBorderBox = 0,
-			styleBackgroundOriginPaddingBox = 1,
-			styleBackgroundOriginContentBox = 2,
-			styleBackgroundOriginNotSet = 3,
-			styleBackgroundOrigin_Max = 2147483647,
+			BorderBox = 0,
+			PaddingBox = 1,
+			ContentBox = 2,
+			NotSet = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleVerticalAlign : int32
 		{
-			styleVerticalAlignAuto = 0,
-			styleVerticalAlignBaseline = 1,
-			styleVerticalAlignSub = 2,
-			styleVerticalAlignSuper = 3,
-			styleVerticalAlignTop = 4,
-			styleVerticalAlignTextTop = 5,
-			styleVerticalAlignMiddle = 6,
-			styleVerticalAlignBottom = 7,
-			styleVerticalAlignTextBottom = 8,
-			styleVerticalAlignInherit = 9,
-			styleVerticalAlignNotSet = 10,
-			styleVerticalAlign_Max = 2147483647,
+			Auto = 0,
+			Baseline = 1,
+			Sub = 2,
+			Super = 3,
+			Top = 4,
+			TextTop = 5,
+			Middle = 6,
+			Bottom = 7,
+			TextBottom = 8,
+			Inherit = 9,
+			NotSet = 10,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleFontWeight : int32
 		{
-			styleFontWeightNotSet = 0,
-			styleFontWeight100 = 1,
-			styleFontWeight200 = 2,
-			styleFontWeight300 = 3,
-			styleFontWeight400 = 4,
-			styleFontWeight500 = 5,
-			styleFontWeight600 = 6,
-			styleFontWeight700 = 7,
-			styleFontWeight800 = 8,
-			styleFontWeight900 = 9,
-			styleFontWeightNormal = 10,
-			styleFontWeightBold = 11,
-			styleFontWeightBolder = 12,
-			styleFontWeightLighter = 13,
-			styleFontWeight_Max = 2147483647,
+			NotSet = 0,
+			_100 = 1,
+			_200 = 2,
+			_300 = 3,
+			_400 = 4,
+			_500 = 5,
+			_600 = 6,
+			_700 = 7,
+			_800 = 8,
+			_900 = 9,
+			Normal = 10,
+			Bold = 11,
+			Bolder = 12,
+			Lighter = 13,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleFontSize : int32
 		{
-			styleFontSizeXXSmall = 0,
-			styleFontSizeXSmall = 1,
-			styleFontSizeSmall = 2,
-			styleFontSizeMedium = 3,
-			styleFontSizeLarge = 4,
-			styleFontSizeXLarge = 5,
-			styleFontSizeXXLarge = 6,
-			styleFontSizeSmaller = 7,
-			styleFontSizeLarger = 8,
-			styleFontSize_Max = 2147483647,
+			XXSmall = 0,
+			XSmall = 1,
+			Small = 2,
+			Medium = 3,
+			Large = 4,
+			XLarge = 5,
+			XXLarge = 6,
+			Smaller = 7,
+			Larger = 8,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleZIndex : int32
 		{
-			styleZIndexAuto = -2147483647,
-			styleZIndex_Max = 2147483647,
+			Auto = -2147483647,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleWidowsOrphans : int32
 		{
-			styleWidowsOrphansNotSet = -2147483647,
-			styleWidowsOrphans_Max = 2147483647,
+			NotSet = -2147483647,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleAuto : int32
 		{
-			styleAutoAuto = 0,
-			styleAuto_Max = 2147483647,
+			Auto = 0,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleNone : int32
 		{
-			styleNoneNone = 0,
-			styleNone_Max = 2147483647,
+			None = 0,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleNormal : int32
 		{
-			styleNormalNormal = 0,
-			styleNormal_Max = 2147483647,
+			Normal = 0,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleBorderWidth : int32
 		{
-			styleBorderWidthThin = 0,
-			styleBorderWidthMedium = 1,
-			styleBorderWidthThick = 2,
-			styleBorderWidth_Max = 2147483647,
+			Thin = 0,
+			Medium = 1,
+			Thick = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum stylePosition : int32
 		{
-			stylePositionNotSet = 0,
-			stylePositionstatic = 1,
-			stylePositionrelative = 2,
-			stylePositionabsolute = 3,
-			stylePositionfixed = 4,
-			stylePositionMsPage = 5,
-			stylePositionMsDeviceFixed = 6,
-			stylePosition_Max = 2147483647,
+			NotSet = 0,
+			@static = 1,
+			relative = 2,
+			absolute = 3,
+			@fixed = 4,
+			MsPage = 5,
+			MsDeviceFixed = 6,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleBorderStyle : int32
 		{
-			styleBorderStyleNotSet = 0,
-			styleBorderStyleDotted = 1,
-			styleBorderStyleDashed = 2,
-			styleBorderStyleSolid = 3,
-			styleBorderStyleDouble = 4,
-			styleBorderStyleGroove = 5,
-			styleBorderStyleRidge = 6,
-			styleBorderStyleInset = 7,
-			styleBorderStyleOutset = 8,
-			styleBorderStyleWindowInset = 9,
-			styleBorderStyleNone = 10,
-			styleBorderStyleHidden = 11,
-			styleBorderStyle_Max = 2147483647,
+			NotSet = 0,
+			Dotted = 1,
+			Dashed = 2,
+			Solid = 3,
+			Double = 4,
+			Groove = 5,
+			Ridge = 6,
+			Inset = 7,
+			Outset = 8,
+			WindowInset = 9,
+			None = 10,
+			Hidden = 11,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleOutlineStyle : int32
 		{
-			styleOutlineStyleNotSet = 0,
-			styleOutlineStyleDotted = 1,
-			styleOutlineStyleDashed = 2,
-			styleOutlineStyleSolid = 3,
-			styleOutlineStyleDouble = 4,
-			styleOutlineStyleGroove = 5,
-			styleOutlineStyleRidge = 6,
-			styleOutlineStyleInset = 7,
-			styleOutlineStyleOutset = 8,
-			styleOutlineStyleWindowInset = 9,
-			styleOutlineStyleNone = 10,
-			styleOutlineStyle_Max = 2147483647,
+			NotSet = 0,
+			Dotted = 1,
+			Dashed = 2,
+			Solid = 3,
+			Double = 4,
+			Groove = 5,
+			Ridge = 6,
+			Inset = 7,
+			Outset = 8,
+			WindowInset = 9,
+			None = 10,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleStyleFloat : int32
 		{
-			styleStyleFloatNotSet = 0,
-			styleStyleFloatLeft = 1,
-			styleStyleFloatRight = 2,
-			styleStyleFloatNone = 3,
-			styleStyleFloat_Max = 2147483647,
+			NotSet = 0,
+			Left = 1,
+			Right = 2,
+			None = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleDisplay : int32
 		{
-			styleDisplayNotSet = 0,
-			styleDisplayBlock = 1,
-			styleDisplayInline = 2,
-			styleDisplayListItem = 3,
-			styleDisplayNone = 4,
-			styleDisplayTableHeaderGroup = 5,
-			styleDisplayTableFooterGroup = 6,
-			styleDisplayInlineBlock = 7,
-			styleDisplayTable = 8,
-			styleDisplayInlineTable = 9,
-			styleDisplayTableRow = 10,
-			styleDisplayTableRowGroup = 11,
-			styleDisplayTableColumn = 12,
-			styleDisplayTableColumnGroup = 13,
-			styleDisplayTableCell = 14,
-			styleDisplayTableCaption = 15,
-			styleDisplayRunIn = 16,
-			styleDisplayRuby = 17,
-			styleDisplayRubyBase = 18,
-			styleDisplayRubyText = 19,
-			styleDisplayRubyBaseContainer = 20,
-			styleDisplayRubyTextContainer = 21,
-			styleDisplayMsFlexbox = 22,
-			styleDisplayMsInlineFlexbox = 23,
-			styleDisplayMsGrid = 24,
-			styleDisplayMsInlineGrid = 25,
-			styleDisplayFlex = 26,
-			styleDisplayInlineFlex = 27,
-			styleDisplayWebkitBox = 28,
-			styleDisplayWebkitInlineBox = 29,
-			styleDisplay_Max = 2147483647,
+			NotSet = 0,
+			Block = 1,
+			Inline = 2,
+			ListItem = 3,
+			None = 4,
+			TableHeaderGroup = 5,
+			TableFooterGroup = 6,
+			InlineBlock = 7,
+			Table = 8,
+			InlineTable = 9,
+			TableRow = 10,
+			TableRowGroup = 11,
+			TableColumn = 12,
+			TableColumnGroup = 13,
+			TableCell = 14,
+			TableCaption = 15,
+			RunIn = 16,
+			Ruby = 17,
+			RubyBase = 18,
+			RubyText = 19,
+			RubyBaseContainer = 20,
+			RubyTextContainer = 21,
+			MsFlexbox = 22,
+			MsInlineFlexbox = 23,
+			MsGrid = 24,
+			MsInlineGrid = 25,
+			Flex = 26,
+			InlineFlex = 27,
+			WebkitBox = 28,
+			WebkitInlineBox = 29,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleVisibility : int32
 		{
-			styleVisibilityNotSet = 0,
-			styleVisibilityInherit = 1,
-			styleVisibilityVisible = 2,
-			styleVisibilityHidden = 3,
-			styleVisibilityCollapse = 4,
-			styleVisibility_Max = 2147483647,
+			NotSet = 0,
+			Inherit = 1,
+			Visible = 2,
+			Hidden = 3,
+			Collapse = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleListStyleType : int32
 		{
-			styleListStyleTypeNotSet = 0,
-			styleListStyleTypeDisc = 1,
-			styleListStyleTypeCircle = 2,
-			styleListStyleTypeSquare = 3,
-			styleListStyleTypeDecimal = 4,
-			styleListStyleTypeLowerRoman = 5,
-			styleListStyleTypeUpperRoman = 6,
-			styleListStyleTypeLowerAlpha = 7,
-			styleListStyleTypeUpperAlpha = 8,
-			styleListStyleTypeNone = 9,
-			styleListStyleTypeDecimalLeadingZero = 10,
-			styleListStyleTypeGeorgian = 11,
-			styleListStyleTypeArmenian = 12,
-			styleListStyleTypeUpperLatin = 13,
-			styleListStyleTypeLowerLatin = 14,
-			styleListStyleTypeUpperGreek = 15,
-			styleListStyleTypeLowerGreek = 16,
-			styleListStyleType_Max = 2147483647,
+			NotSet = 0,
+			Disc = 1,
+			Circle = 2,
+			Square = 3,
+			Decimal = 4,
+			LowerRoman = 5,
+			UpperRoman = 6,
+			LowerAlpha = 7,
+			UpperAlpha = 8,
+			None = 9,
+			DecimalLeadingZero = 10,
+			Georgian = 11,
+			Armenian = 12,
+			UpperLatin = 13,
+			LowerLatin = 14,
+			UpperGreek = 15,
+			LowerGreek = 16,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleListStylePosition : int32
 		{
-			styleListStylePositionNotSet = 0,
-			styleListStylePositionInside = 1,
-			styleListStylePositionOutSide = 2,
-			styleListStylePosition_Max = 2147483647,
+			NotSet = 0,
+			Inside = 1,
+			OutSide = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleWhiteSpace : int32
 		{
-			styleWhiteSpaceNotSet = 0,
-			styleWhiteSpaceNormal = 1,
-			styleWhiteSpacePre = 2,
-			styleWhiteSpaceNowrap = 3,
-			styleWhiteSpacePreline = 4,
-			styleWhiteSpacePrewrap = 5,
-			styleWhiteSpace_Max = 2147483647,
+			NotSet = 0,
+			Normal = 1,
+			Pre = 2,
+			Nowrap = 3,
+			Preline = 4,
+			Prewrap = 5,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum stylePageBreak : int32
 		{
-			stylePageBreakNotSet = 0,
-			stylePageBreakAuto = 1,
-			stylePageBreakAlways = 2,
-			stylePageBreakLeft = 3,
-			stylePageBreakRight = 4,
-			stylePageBreakAvoid = 5,
-			stylePageBreak_Max = 2147483647,
+			NotSet = 0,
+			Auto = 1,
+			Always = 2,
+			Left = 3,
+			Right = 4,
+			Avoid = 5,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum stylePageBreakInside : int32
 		{
-			stylePageBreakInsideNotSet = 0,
-			stylePageBreakInsideAuto = 1,
-			stylePageBreakInsideAvoid = 2,
-			stylePageBreakInside_Max = 2147483647,
+			NotSet = 0,
+			Auto = 1,
+			Avoid = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleCursor : int32
 		{
-			styleCursorAuto = 0,
-			styleCursorCrosshair = 1,
-			styleCursorDefault = 2,
-			styleCursorHand = 3,
-			styleCursorMove = 4,
-			styleCursorE_resize = 5,
-			styleCursorNe_resize = 6,
-			styleCursorNw_resize = 7,
-			styleCursorN_resize = 8,
-			styleCursorSe_resize = 9,
-			styleCursorSw_resize = 10,
-			styleCursorS_resize = 11,
-			styleCursorW_resize = 12,
-			styleCursorText = 13,
-			styleCursorWait = 14,
-			styleCursorHelp = 15,
-			styleCursorPointer = 16,
-			styleCursorProgress = 17,
-			styleCursorNot_allowed = 18,
-			styleCursorNo_drop = 19,
-			styleCursorVertical_text = 20,
-			styleCursorall_scroll = 21,
-			styleCursorcol_resize = 22,
-			styleCursorrow_resize = 23,
-			styleCursorNone = 24,
-			styleCursorContext_menu = 25,
-			styleCursorEw_resize = 26,
-			styleCursorNs_resize = 27,
-			styleCursorNesw_resize = 28,
-			styleCursorNwse_resize = 29,
-			styleCursorCell = 30,
-			styleCursorCopy = 31,
-			styleCursorAlias = 32,
-			styleCursorcustom = 33,
-			styleCursorNotSet = 34,
-			styleCursor_Max = 2147483647,
+			Auto = 0,
+			Crosshair = 1,
+			Default = 2,
+			Hand = 3,
+			Move = 4,
+			E_resize = 5,
+			Ne_resize = 6,
+			Nw_resize = 7,
+			N_resize = 8,
+			Se_resize = 9,
+			Sw_resize = 10,
+			S_resize = 11,
+			W_resize = 12,
+			Text = 13,
+			Wait = 14,
+			Help = 15,
+			Pointer = 16,
+			Progress = 17,
+			Not_allowed = 18,
+			No_drop = 19,
+			Vertical_text = 20,
+			all_scroll = 21,
+			col_resize = 22,
+			row_resize = 23,
+			None = 24,
+			Context_menu = 25,
+			Ew_resize = 26,
+			Ns_resize = 27,
+			Nesw_resize = 28,
+			Nwse_resize = 29,
+			Cell = 30,
+			Copy = 31,
+			Alias = 32,
+			custom = 33,
+			NotSet = 34,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleDir : int32
 		{
-			styleDirNotSet = 0,
-			styleDirLeftToRight = 1,
-			styleDirRightToLeft = 2,
-			styleDirInherit = 3,
-			styleDir_Max = 2147483647,
+			NotSet = 0,
+			LeftToRight = 1,
+			RightToLeft = 2,
+			Inherit = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleBidi : int32
 		{
-			styleBidiNotSet = 0,
-			styleBidiNormal = 1,
-			styleBidiEmbed = 2,
-			styleBidiOverride = 3,
-			styleBidiInherit = 4,
-			styleBidi_Max = 2147483647,
+			NotSet = 0,
+			Normal = 1,
+			Embed = 2,
+			Override = 3,
+			Inherit = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleImeMode : int32
 		{
-			styleImeModeAuto = 0,
-			styleImeModeActive = 1,
-			styleImeModeInactive = 2,
-			styleImeModeDisabled = 3,
-			styleImeModeNotSet = 4,
-			styleImeMode_Max = 2147483647,
+			Auto = 0,
+			Active = 1,
+			Inactive = 2,
+			Disabled = 3,
+			NotSet = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleRubyAlign : int32
 		{
-			styleRubyAlignNotSet = 0,
-			styleRubyAlignAuto = 1,
-			styleRubyAlignLeft = 2,
-			styleRubyAlignCenter = 3,
-			styleRubyAlignRight = 4,
-			styleRubyAlignDistributeLetter = 5,
-			styleRubyAlignDistributeSpace = 6,
-			styleRubyAlignLineEdge = 7,
-			styleRubyAlign_Max = 2147483647,
+			NotSet = 0,
+			Auto = 1,
+			Left = 2,
+			Center = 3,
+			Right = 4,
+			DistributeLetter = 5,
+			DistributeSpace = 6,
+			LineEdge = 7,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleRubyPosition : int32
 		{
-			styleRubyPositionNotSet = 0,
-			styleRubyPositionAbove = 1,
-			styleRubyPositionInline = 2,
-			styleRubyPosition_Max = 2147483647,
+			NotSet = 0,
+			Above = 1,
+			Inline = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleRubyOverhang : int32
 		{
-			styleRubyOverhangNotSet = 0,
-			styleRubyOverhangAuto = 1,
-			styleRubyOverhangWhitespace = 2,
-			styleRubyOverhangNone = 3,
-			styleRubyOverhang_Max = 2147483647,
+			NotSet = 0,
+			Auto = 1,
+			Whitespace = 2,
+			None = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleLayoutGridChar : int32
 		{
-			styleLayoutGridCharNotSet = 0,
-			styleLayoutGridCharAuto = 1,
-			styleLayoutGridCharNone = 2,
-			styleLayoutGridChar_Max = 2147483647,
+			NotSet = 0,
+			Auto = 1,
+			None = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleLayoutGridLine : int32
 		{
-			styleLayoutGridLineNotSet = 0,
-			styleLayoutGridLineAuto = 1,
-			styleLayoutGridLineNone = 2,
-			styleLayoutGridLine_Max = 2147483647,
+			NotSet = 0,
+			Auto = 1,
+			None = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleLayoutGridMode : int32
 		{
-			styleLayoutGridModeNotSet = 0,
-			styleLayoutGridModeChar = 1,
-			styleLayoutGridModeLine = 2,
-			styleLayoutGridModeBoth = 3,
-			styleLayoutGridModeNone = 4,
-			styleLayoutGridMode_Max = 2147483647,
+			NotSet = 0,
+			Char = 1,
+			Line = 2,
+			Both = 3,
+			None = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleLayoutGridType : int32
 		{
-			styleLayoutGridTypeNotSet = 0,
-			styleLayoutGridTypeLoose = 1,
-			styleLayoutGridTypeStrict = 2,
-			styleLayoutGridTypeFixed = 3,
-			styleLayoutGridType_Max = 2147483647,
+			NotSet = 0,
+			Loose = 1,
+			Strict = 2,
+			Fixed = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleLineBreak : int32
 		{
-			styleLineBreakNotSet = 0,
-			styleLineBreakNormal = 1,
-			styleLineBreakStrict = 2,
-			styleLineBreak_Max = 2147483647,
+			NotSet = 0,
+			Normal = 1,
+			Strict = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleWordBreak : int32
 		{
-			styleWordBreakNotSet = 0,
-			styleWordBreakNormal = 1,
-			styleWordBreakBreakAll = 2,
-			styleWordBreakKeepAll = 3,
-			styleWordBreak_Max = 2147483647,
+			NotSet = 0,
+			Normal = 1,
+			BreakAll = 2,
+			KeepAll = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleWordWrap : int32
 		{
-			styleWordWrapNotSet = 0,
-			styleWordWrapOff = 1,
-			styleWordWrapOn = 2,
-			styleWordWrap_Max = 2147483647,
+			NotSet = 0,
+			Off = 1,
+			On = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleTextJustify : int32
 		{
-			styleTextJustifyNotSet = 0,
-			styleTextJustifyInterWord = 1,
-			styleTextJustifyNewspaper = 2,
-			styleTextJustifyDistribute = 3,
-			styleTextJustifyDistributeAllLines = 4,
-			styleTextJustifyInterIdeograph = 5,
-			styleTextJustifyInterCluster = 6,
-			styleTextJustifyKashida = 7,
-			styleTextJustifyAuto = 8,
-			styleTextJustify_Max = 2147483647,
+			NotSet = 0,
+			InterWord = 1,
+			Newspaper = 2,
+			Distribute = 3,
+			DistributeAllLines = 4,
+			InterIdeograph = 5,
+			InterCluster = 6,
+			Kashida = 7,
+			Auto = 8,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleTextAlignLast : int32
 		{
-			styleTextAlignLastNotSet = 0,
-			styleTextAlignLastLeft = 1,
-			styleTextAlignLastCenter = 2,
-			styleTextAlignLastRight = 3,
-			styleTextAlignLastJustify = 4,
-			styleTextAlignLastAuto = 5,
-			styleTextAlignLast_Max = 2147483647,
+			NotSet = 0,
+			Left = 1,
+			Center = 2,
+			Right = 3,
+			Justify = 4,
+			Auto = 5,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleTextJustifyTrim : int32
 		{
-			styleTextJustifyTrimNotSet = 0,
-			styleTextJustifyTrimNone = 1,
-			styleTextJustifyTrimPunctuation = 2,
-			styleTextJustifyTrimPunctAndKana = 3,
-			styleTextJustifyTrim_Max = 2147483647,
+			NotSet = 0,
+			None = 1,
+			Punctuation = 2,
+			PunctAndKana = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleAccelerator : int32
 		{
-			styleAcceleratorFalse = 0,
-			styleAcceleratorTrue = 1,
-			styleAccelerator_Max = 2147483647,
+			False = 0,
+			True = 1,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleLayoutFlow : int32
 		{
-			styleLayoutFlowHorizontal = 0,
-			styleLayoutFlowVerticalIdeographic = 1,
-			styleLayoutFlowNotSet = 2,
-			styleLayoutFlow_Max = 2147483647,
+			Horizontal = 0,
+			VerticalIdeographic = 1,
+			NotSet = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleBlockProgression : int32
 		{
-			styleBlockProgressionTb = 0,
-			styleBlockProgressionRl = 1,
-			styleBlockProgressionBt = 2,
-			styleBlockProgressionLr = 3,
-			styleBlockProgressionNotSet = 4,
-			styleBlockProgression_Max = 2147483647,
+			Tb = 0,
+			Rl = 1,
+			Bt = 2,
+			Lr = 3,
+			NotSet = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleWritingMode : int32
 		{
-			styleWritingModeLrtb = 0,
-			styleWritingModeTbrl = 1,
-			styleWritingModeRltb = 2,
-			styleWritingModeBtrl = 3,
-			styleWritingModeNotSet = 4,
-			styleWritingModeTblr = 5,
-			styleWritingModeBtlr = 6,
-			styleWritingModeLrbt = 7,
-			styleWritingModeRlbt = 8,
-			styleWritingModeLr = 9,
-			styleWritingModeRl = 10,
-			styleWritingModeTb = 11,
-			styleWritingMode_Max = 2147483647,
+			Lrtb = 0,
+			Tbrl = 1,
+			Rltb = 2,
+			Btrl = 3,
+			NotSet = 4,
+			Tblr = 5,
+			Btlr = 6,
+			Lrbt = 7,
+			Rlbt = 8,
+			Lr = 9,
+			Rl = 10,
+			Tb = 11,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleBool : int32
 		{
-			styleBoolFalse = 0,
-			styleBoolTrue = 1,
-			styleBool_Max = 2147483647,
+			False = 0,
+			True = 1,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleTextUnderlinePosition : int32
 		{
-			styleTextUnderlinePositionBelow = 0,
-			styleTextUnderlinePositionAbove = 1,
-			styleTextUnderlinePositionAuto = 2,
-			styleTextUnderlinePositionNotSet = 3,
-			styleTextUnderlinePosition_Max = 2147483647,
+			Below = 0,
+			Above = 1,
+			Auto = 2,
+			NotSet = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleTextOverflow : int32
 		{
-			styleTextOverflowClip = 0,
-			styleTextOverflowEllipsis = 1,
-			styleTextOverflowNotSet = 2,
-			styleTextOverflow_Max = 2147483647,
+			Clip = 0,
+			Ellipsis = 1,
+			NotSet = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleInterpolation : int32
 		{
-			styleInterpolationNotSet = 0,
-			styleInterpolationNN = 1,
-			styleInterpolationBCH = 2,
-			styleInterpolation_Max = 2147483647,
+			NotSet = 0,
+			NN = 1,
+			BCH = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleBoxSizing : int32
 		{
-			styleBoxSizingNotSet = 0,
-			styleBoxSizingContentBox = 1,
-			styleBoxSizingBorderBox = 2,
-			styleBoxSizing_Max = 2147483647,
+			NotSet = 0,
+			ContentBox = 1,
+			BorderBox = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleFlex : int32
 		{
-			styleFlexNone = 0,
-			styleFlexNotSet = 1,
-			styleFlex_Max = 2147483647,
+			None = 0,
+			NotSet = 1,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleFlexBasis : int32
 		{
-			styleFlexBasisAuto = 0,
-			styleFlexBasisNotSet = 1,
-			styleFlexBasis_Max = 2147483647,
+			Auto = 0,
+			NotSet = 1,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleFlexDirection : int32
 		{
-			styleFlexDirectionRow = 0,
-			styleFlexDirectionRowReverse = 1,
-			styleFlexDirectionColumn = 2,
-			styleFlexDirectionColumnReverse = 3,
-			styleFlexDirectionNotSet = 4,
-			styleFlexDirection_Max = 2147483647,
+			Row = 0,
+			RowReverse = 1,
+			Column = 2,
+			ColumnReverse = 3,
+			NotSet = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleWebkitBoxOrient : int32
 		{
-			styleWebkitBoxOrientHorizontal = 0,
-			styleWebkitBoxOrientInlineAxis = 1,
-			styleWebkitBoxOrientVertical = 2,
-			styleWebkitBoxOrientBlockAxis = 3,
-			styleWebkitBoxOrientNotSet = 4,
-			styleWebkitBoxOrient_Max = 2147483647,
+			Horizontal = 0,
+			InlineAxis = 1,
+			Vertical = 2,
+			BlockAxis = 3,
+			NotSet = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleWebkitBoxDirection : int32
 		{
-			styleWebkitBoxDirectionNormal = 0,
-			styleWebkitBoxDirectionReverse = 1,
-			styleWebkitBoxDirectionNotSet = 2,
-			styleWebkitBoxDirection_Max = 2147483647,
+			Normal = 0,
+			Reverse = 1,
+			NotSet = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleFlexWrap : int32
 		{
-			styleFlexWrapNowrap = 0,
-			styleFlexWrapWrap = 1,
-			styleFlexWrapWrapReverse = 2,
-			styleFlexWrapNotSet = 3,
-			styleFlexWrap_Max = 2147483647,
+			Nowrap = 0,
+			Wrap = 1,
+			WrapReverse = 2,
+			NotSet = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleAlignItems : int32
 		{
-			styleAlignItemsFlexStart = 0,
-			styleAlignItemsFlexEnd = 1,
-			styleAlignItemsCenter = 2,
-			styleAlignItemsBaseline = 3,
-			styleAlignItemsStretch = 4,
-			styleAlignItemsNotSet = 5,
-			styleAlignItems_Max = 2147483647,
+			FlexStart = 0,
+			FlexEnd = 1,
+			Center = 2,
+			Baseline = 3,
+			Stretch = 4,
+			NotSet = 5,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsFlexAlign : int32
 		{
-			styleMsFlexAlignStart = 0,
-			styleMsFlexAlignEnd = 1,
-			styleMsFlexAlignCenter = 2,
-			styleMsFlexAlignBaseline = 3,
-			styleMsFlexAlignStretch = 4,
-			styleMsFlexAlignNotSet = 5,
-			styleMsFlexAlign_Max = 2147483647,
+			Start = 0,
+			End = 1,
+			Center = 2,
+			Baseline = 3,
+			Stretch = 4,
+			NotSet = 5,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsFlexItemAlign : int32
 		{
-			styleMsFlexItemAlignStart = 0,
-			styleMsFlexItemAlignEnd = 1,
-			styleMsFlexItemAlignCenter = 2,
-			styleMsFlexItemAlignBaseline = 3,
-			styleMsFlexItemAlignStretch = 4,
-			styleMsFlexItemAlignAuto = 5,
-			styleMsFlexItemAlignNotSet = 6,
-			styleMsFlexItemAlign_Max = 2147483647,
+			Start = 0,
+			End = 1,
+			Center = 2,
+			Baseline = 3,
+			Stretch = 4,
+			Auto = 5,
+			NotSet = 6,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleAlignSelf : int32
 		{
-			styleAlignSelfFlexStart = 0,
-			styleAlignSelfFlexEnd = 1,
-			styleAlignSelfCenter = 2,
-			styleAlignSelfBaseline = 3,
-			styleAlignSelfStretch = 4,
-			styleAlignSelfAuto = 5,
-			styleAlignSelfNotSet = 6,
-			styleAlignSelf_Max = 2147483647,
+			FlexStart = 0,
+			FlexEnd = 1,
+			Center = 2,
+			Baseline = 3,
+			Stretch = 4,
+			Auto = 5,
+			NotSet = 6,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleJustifyContent : int32
 		{
-			styleJustifyContentFlexStart = 0,
-			styleJustifyContentFlexEnd = 1,
-			styleJustifyContentCenter = 2,
-			styleJustifyContentSpaceBetween = 3,
-			styleJustifyContentSpaceAround = 4,
-			styleJustifyContentNotSet = 5,
-			styleJustifyContent_Max = 2147483647,
+			FlexStart = 0,
+			FlexEnd = 1,
+			Center = 2,
+			SpaceBetween = 3,
+			SpaceAround = 4,
+			NotSet = 5,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsFlexPack : int32
 		{
-			styleMsFlexPackStart = 0,
-			styleMsFlexPackEnd = 1,
-			styleMsFlexPackCenter = 2,
-			styleMsFlexPackJustify = 3,
-			styleMsFlexPackDistribute = 4,
-			styleMsFlexPackNotSet = 5,
-			styleMsFlexPack_Max = 2147483647,
+			Start = 0,
+			End = 1,
+			Center = 2,
+			Justify = 3,
+			Distribute = 4,
+			NotSet = 5,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleWebkitBoxPack : int32
 		{
-			styleWebkitBoxPackStart = 0,
-			styleWebkitBoxPackEnd = 1,
-			styleWebkitBoxPackCenter = 2,
-			styleWebkitBoxPackJustify = 3,
-			styleWebkitBoxPackNotSet = 5,
-			styleWebkitBoxPack_Max = 2147483647,
+			Start = 0,
+			End = 1,
+			Center = 2,
+			Justify = 3,
+			NotSet = 5,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsFlexLinePack : int32
 		{
-			styleMsFlexLinePackStart = 0,
-			styleMsFlexLinePackEnd = 1,
-			styleMsFlexLinePackCenter = 2,
-			styleMsFlexLinePackJustify = 3,
-			styleMsFlexLinePackDistribute = 4,
-			styleMsFlexLinePackStretch = 5,
-			styleMsFlexLinePackNotSet = 6,
-			styleMsFlexLinePack_Max = 2147483647,
+			Start = 0,
+			End = 1,
+			Center = 2,
+			Justify = 3,
+			Distribute = 4,
+			Stretch = 5,
+			NotSet = 6,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleAlignContent : int32
 		{
-			styleAlignContentFlexStart = 0,
-			styleAlignContentFlexEnd = 1,
-			styleAlignContentCenter = 2,
-			styleAlignContentSpaceBetween = 3,
-			styleAlignContentSpaceAround = 4,
-			styleAlignContentStretch = 5,
-			styleAlignContentNotSet = 6,
-			styleAlignContent_Max = 2147483647,
+			FlexStart = 0,
+			FlexEnd = 1,
+			Center = 2,
+			SpaceBetween = 3,
+			SpaceAround = 4,
+			Stretch = 5,
+			NotSet = 6,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleColumnFill : int32
 		{
-			styleColumnFillAuto = 0,
-			styleColumnFillBalance = 1,
-			styleColumnFillNotSet = 2,
-			styleColumnFill_Max = 2147483647,
+			Auto = 0,
+			Balance = 1,
+			NotSet = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleColumnSpan : int32
 		{
-			styleColumnSpanNone = 0,
-			styleColumnSpanAll = 1,
-			styleColumnSpanOne = 2,
-			styleColumnSpanNotSet = 3,
-			styleColumnSpan_Max = 2147483647,
+			None = 0,
+			All = 1,
+			One = 2,
+			NotSet = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleBreak : int32
 		{
-			styleBreakNotSet = 0,
-			styleBreakAuto = 1,
-			styleBreakAlways = 2,
-			styleBreakAvoid = 3,
-			styleBreakLeft = 4,
-			styleBreakRight = 5,
-			styleBreakPage = 6,
-			styleBreakColumn = 7,
-			styleBreakAvoidPage = 8,
-			styleBreakAvoidColumn = 9,
-			styleBreak_Max = 2147483647,
+			NotSet = 0,
+			Auto = 1,
+			Always = 2,
+			Avoid = 3,
+			Left = 4,
+			Right = 5,
+			Page = 6,
+			Column = 7,
+			AvoidPage = 8,
+			AvoidColumn = 9,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleBreakInside : int32
 		{
-			styleBreakInsideNotSet = 0,
-			styleBreakInsideAuto = 1,
-			styleBreakInsideAvoid = 2,
-			styleBreakInsideAvoidPage = 3,
-			styleBreakInsideAvoidColumn = 4,
-			styleBreakInside_Max = 2147483647,
+			NotSet = 0,
+			Auto = 1,
+			Avoid = 2,
+			AvoidPage = 3,
+			AvoidColumn = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsScrollChaining : int32
 		{
-			styleMsScrollChainingNotSet = 0,
-			styleMsScrollChainingNone = 1,
-			styleMsScrollChainingChained = 2,
-			styleMsScrollChaining_Max = 2147483647,
+			NotSet = 0,
+			None = 1,
+			Chained = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsContentZooming : int32
 		{
-			styleMsContentZoomingNotSet = 0,
-			styleMsContentZoomingNone = 1,
-			styleMsContentZoomingZoom = 2,
-			styleMsContentZooming_Max = 2147483647,
+			NotSet = 0,
+			None = 1,
+			Zoom = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsContentZoomSnapType : int32
 		{
-			styleMsContentZoomSnapTypeNotSet = 0,
-			styleMsContentZoomSnapTypeNone = 1,
-			styleMsContentZoomSnapTypeMandatory = 2,
-			styleMsContentZoomSnapTypeProximity = 3,
-			styleMsContentZoomSnapType_Max = 2147483647,
+			NotSet = 0,
+			None = 1,
+			Mandatory = 2,
+			Proximity = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsScrollRails : int32
 		{
-			styleMsScrollRailsNotSet = 0,
-			styleMsScrollRailsNone = 1,
-			styleMsScrollRailsRailed = 2,
-			styleMsScrollRails_Max = 2147483647,
+			NotSet = 0,
+			None = 1,
+			Railed = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsContentZoomChaining : int32
 		{
-			styleMsContentZoomChainingNotSet = 0,
-			styleMsContentZoomChainingNone = 1,
-			styleMsContentZoomChainingChained = 2,
-			styleMsContentZoomChaining_Max = 2147483647,
+			NotSet = 0,
+			None = 1,
+			Chained = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsScrollSnapType : int32
 		{
-			styleMsScrollSnapTypeNotSet = 0,
-			styleMsScrollSnapTypeNone = 1,
-			styleMsScrollSnapTypeMandatory = 2,
-			styleMsScrollSnapTypeProximity = 3,
-			styleMsScrollSnapType_Max = 2147483647,
+			NotSet = 0,
+			None = 1,
+			Mandatory = 2,
+			Proximity = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleGridColumn : int32
 		{
-			styleGridColumnNotSet = 0,
-			styleGridColumn_Max = 2147483647,
+			NotSet = 0,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleGridColumnAlign : int32
 		{
-			styleGridColumnAlignCenter = 0,
-			styleGridColumnAlignEnd = 1,
-			styleGridColumnAlignStart = 2,
-			styleGridColumnAlignStretch = 3,
-			styleGridColumnAlignNotSet = 4,
-			styleGridColumnAlign_Max = 2147483647,
+			Center = 0,
+			End = 1,
+			Start = 2,
+			Stretch = 3,
+			NotSet = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleGridColumnSpan : int32
 		{
-			styleGridColumnSpanNotSet = 0,
-			styleGridColumnSpan_Max = 2147483647,
+			NotSet = 0,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleGridRow : int32
 		{
-			styleGridRowNotSet = 0,
-			styleGridRow_Max = 2147483647,
+			NotSet = 0,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleGridRowAlign : int32
 		{
-			styleGridRowAlignCenter = 0,
-			styleGridRowAlignEnd = 1,
-			styleGridRowAlignStart = 2,
-			styleGridRowAlignStretch = 3,
-			styleGridRowAlignNotSet = 4,
-			styleGridRowAlign_Max = 2147483647,
+			Center = 0,
+			End = 1,
+			Start = 2,
+			Stretch = 3,
+			NotSet = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleGridRowSpan : int32
 		{
-			styleGridRowSpanNotSet = 0,
-			styleGridRowSpan_Max = 2147483647,
+			NotSet = 0,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleWrapThrough : int32
 		{
-			styleWrapThroughNotSet = 0,
-			styleWrapThroughWrap = 1,
-			styleWrapThroughNone = 2,
-			styleWrapThrough_Max = 2147483647,
+			NotSet = 0,
+			Wrap = 1,
+			None = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleWrapFlow : int32
 		{
-			styleWrapFlowNotSet = 0,
-			styleWrapFlowAuto = 1,
-			styleWrapFlowBoth = 2,
-			styleWrapFlowStart = 3,
-			styleWrapFlowEnd = 4,
-			styleWrapFlowClear = 5,
-			styleWrapFlowMinimum = 6,
-			styleWrapFlowMaximum = 7,
-			styleWrapFlow_Max = 2147483647,
+			NotSet = 0,
+			Auto = 1,
+			Both = 2,
+			Start = 3,
+			End = 4,
+			Clear = 5,
+			Minimum = 6,
+			Maximum = 7,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleAlignmentBaseline : int32
 		{
-			styleAlignmentBaselineNotSet = 0,
-			styleAlignmentBaselineAfterEdge = 1,
-			styleAlignmentBaselineAlphabetic = 2,
-			styleAlignmentBaselineAuto = 3,
-			styleAlignmentBaselineBaseline = 4,
-			styleAlignmentBaselineBeforeEdge = 5,
-			styleAlignmentBaselineCentral = 6,
-			styleAlignmentBaselineHanging = 7,
-			styleAlignmentBaselineMathematical = 8,
-			styleAlignmentBaselineMiddle = 9,
-			styleAlignmentBaselineTextAfterEdge = 10,
-			styleAlignmentBaselineTextBeforeEdge = 11,
-			styleAlignmentBaselineIdeographic = 12,
-			styleAlignmentBaseline_Max = 2147483647,
+			NotSet = 0,
+			AfterEdge = 1,
+			Alphabetic = 2,
+			Auto = 3,
+			Baseline = 4,
+			BeforeEdge = 5,
+			Central = 6,
+			Hanging = 7,
+			Mathematical = 8,
+			Middle = 9,
+			TextAfterEdge = 10,
+			TextBeforeEdge = 11,
+			Ideographic = 12,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleBaselineShift : int32
 		{
-			styleBaselineShiftBaseline = 0,
-			styleBaselineShiftSub = 1,
-			styleBaselineShiftSuper = 2,
-			styleBaselineShift_Max = 2147483647,
+			Baseline = 0,
+			Sub = 1,
+			Super = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleClipRule : int32
 		{
-			styleClipRuleNotSet = 0,
-			styleClipRuleNonZero = 1,
-			styleClipRuleEvenOdd = 2,
-			styleClipRule_Max = 2147483647,
+			NotSet = 0,
+			NonZero = 1,
+			EvenOdd = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleDominantBaseline : int32
 		{
-			styleDominantBaselineNotSet = 0,
-			styleDominantBaselineAlphabetic = 1,
-			styleDominantBaselineAuto = 2,
-			styleDominantBaselineCentral = 3,
-			styleDominantBaselineHanging = 4,
-			styleDominantBaselineIdeographic = 5,
-			styleDominantBaselineMathematical = 6,
-			styleDominantBaselineMiddle = 7,
-			styleDominantBaselineNoChange = 8,
-			styleDominantBaselineResetSize = 9,
-			styleDominantBaselineTextAfterEdge = 10,
-			styleDominantBaselineTextBeforeEdge = 11,
-			styleDominantBaselineUseScript = 12,
-			styleDominantBaseline_Max = 2147483647,
+			NotSet = 0,
+			Alphabetic = 1,
+			Auto = 2,
+			Central = 3,
+			Hanging = 4,
+			Ideographic = 5,
+			Mathematical = 6,
+			Middle = 7,
+			NoChange = 8,
+			ResetSize = 9,
+			TextAfterEdge = 10,
+			TextBeforeEdge = 11,
+			UseScript = 12,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleFillRule : int32
 		{
-			styleFillRuleNotSet = 0,
-			styleFillRuleNonZero = 1,
-			styleFillRuleEvenOdd = 2,
-			styleFillRule_Max = 2147483647,
+			NotSet = 0,
+			NonZero = 1,
+			EvenOdd = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleFontStretch : int32
 		{
-			styleFontStretchNotSet = 0,
-			styleFontStretchWider = 1,
-			styleFontStretchNarrower = 2,
-			styleFontStretchUltraCondensed = 3,
-			styleFontStretchExtraCondensed = 4,
-			styleFontStretchCondensed = 5,
-			styleFontStretchSemiCondensed = 6,
-			styleFontStretchNormal = 7,
-			styleFontStretchSemiExpanded = 8,
-			styleFontStretchExpanded = 9,
-			styleFontStretchExtraExpanded = 10,
-			styleFontStretchUltraExpanded = 11,
-			styleFontStretch_Max = 2147483647,
+			NotSet = 0,
+			Wider = 1,
+			Narrower = 2,
+			UltraCondensed = 3,
+			ExtraCondensed = 4,
+			Condensed = 5,
+			SemiCondensed = 6,
+			Normal = 7,
+			SemiExpanded = 8,
+			Expanded = 9,
+			ExtraExpanded = 10,
+			UltraExpanded = 11,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum stylePointerEvents : int32
 		{
-			stylePointerEventsNotSet = 0,
-			stylePointerEventsVisiblePainted = 1,
-			stylePointerEventsVisibleFill = 2,
-			stylePointerEventsVisibleStroke = 3,
-			stylePointerEventsVisible = 4,
-			stylePointerEventsPainted = 5,
-			stylePointerEventsFill = 6,
-			stylePointerEventsStroke = 7,
-			stylePointerEventsAll = 8,
-			stylePointerEventsNone = 9,
-			stylePointerEventsInitial = 10,
-			stylePointerEventsAuto = 11,
-			stylePointerEvents_Max = 2147483647,
+			NotSet = 0,
+			VisiblePainted = 1,
+			VisibleFill = 2,
+			VisibleStroke = 3,
+			Visible = 4,
+			Painted = 5,
+			Fill = 6,
+			Stroke = 7,
+			All = 8,
+			None = 9,
+			Initial = 10,
+			Auto = 11,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleEnableBackground : int32
 		{
-			styleEnableBackgroundNotSet = 0,
-			styleEnableBackgroundAccumulate = 1,
-			styleEnableBackgroundNew = 2,
-			styleEnableBackgroundInherit = 3,
-			styleEnableBackground_Max = 2147483647,
+			NotSet = 0,
+			Accumulate = 1,
+			New = 2,
+			Inherit = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleStrokeLinecap : int32
 		{
-			styleStrokeLinecapNotSet = 0,
-			styleStrokeLinecapButt = 1,
-			styleStrokeLinecapRound = 2,
-			styleStrokeLinecapSquare = 3,
-			styleStrokeLinecap_Max = 2147483647,
+			NotSet = 0,
+			Butt = 1,
+			Round = 2,
+			Square = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleStrokeLinejoin : int32
 		{
-			styleStrokeLinejoinNotSet = 0,
-			styleStrokeLinejoinMiter = 1,
-			styleStrokeLinejoinRound = 2,
-			styleStrokeLinejoinBevel = 3,
-			styleStrokeLinejoin_Max = 2147483647,
+			NotSet = 0,
+			Miter = 1,
+			Round = 2,
+			Bevel = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleTextAnchor : int32
 		{
-			styleTextAnchorNotSet = 0,
-			styleTextAnchorStart = 1,
-			styleTextAnchorMiddle = 2,
-			styleTextAnchorEnd = 3,
-			styleTextAnchor_Max = 2147483647,
+			NotSet = 0,
+			Start = 1,
+			Middle = 2,
+			End = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleAttrType : int32
 		{
-			styleAttrTypeString = 0,
-			styleAttrTypeColor = 1,
-			styleAttrTypeUrl = 2,
-			styleAttrTypeInteger = 3,
-			styleAttrTypeNumber = 4,
-			styleAttrTypeLength = 5,
-			styleAttrTypePx = 6,
-			styleAttrTypeEm = 7,
-			styleAttrTypeEx = 8,
-			styleAttrTypeIn = 9,
-			styleAttrTypeCm = 10,
-			styleAttrTypeMm = 11,
-			styleAttrTypePt = 12,
-			styleAttrTypePc = 13,
-			styleAttrTypeRem = 14,
-			styleAttrTypeCh = 15,
-			styleAttrTypeVh = 16,
-			styleAttrTypeVw = 17,
-			styleAttrTypeVmin = 18,
-			styleAttrTypePercentage = 19,
-			styleAttrTypeAngle = 20,
-			styleAttrTypeDeg = 21,
-			styleAttrTypeRad = 22,
-			styleAttrTypeGrad = 23,
-			styleAttrTypeTime = 24,
-			styleAttrTypeS = 25,
-			styleAttrTypeMs = 26,
-			styleAttrType_Max = 2147483647,
+			String = 0,
+			Color = 1,
+			Url = 2,
+			Integer = 3,
+			Number = 4,
+			Length = 5,
+			Px = 6,
+			Em = 7,
+			Ex = 8,
+			In = 9,
+			Cm = 10,
+			Mm = 11,
+			Pt = 12,
+			Pc = 13,
+			Rem = 14,
+			Ch = 15,
+			Vh = 16,
+			Vw = 17,
+			Vmin = 18,
+			Percentage = 19,
+			Angle = 20,
+			Deg = 21,
+			Rad = 22,
+			Grad = 23,
+			Time = 24,
+			S = 25,
+			Ms = 26,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleInitialColor : int32
 		{
-			styleInitialColorNoInitial = 0,
-			styleInitialColorColorProperty = 1,
-			styleInitialColorTransparent = 2,
-			styleInitialColorInvert = 3,
-			styleInitialColor_Max = 2147483647,
+			NoInitial = 0,
+			ColorProperty = 1,
+			Transparent = 2,
+			Invert = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleInitialString : int32
 		{
-			styleInitialStringNoInitial = 0,
-			styleInitialStringNone = 1,
-			styleInitialStringAuto = 2,
-			styleInitialStringNormal = 3,
-			styleInitialString_Max = 2147483647,
+			NoInitial = 0,
+			None = 1,
+			Auto = 2,
+			Normal = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleTransformOriginX : int32
 		{
-			styleTransformOriginXNotSet = 0,
-			styleTransformOriginXLeft = 1,
-			styleTransformOriginXCenter = 2,
-			styleTransformOriginXRight = 3,
-			styleTransformOriginX_Max = 2147483647,
+			NotSet = 0,
+			Left = 1,
+			Center = 2,
+			Right = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleTransformOriginY : int32
 		{
-			styleTransformOriginYNotSet = 0,
-			styleTransformOriginYTop = 1,
-			styleTransformOriginYCenter = 2,
-			styleTransformOriginYBottom = 3,
-			styleTransformOriginY_Max = 2147483647,
+			NotSet = 0,
+			Top = 1,
+			Center = 2,
+			Bottom = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum stylePerspectiveOriginX : int32
 		{
-			stylePerspectiveOriginXNotSet = 0,
-			stylePerspectiveOriginXLeft = 1,
-			stylePerspectiveOriginXCenter = 2,
-			stylePerspectiveOriginXRight = 3,
-			stylePerspectiveOriginX_Max = 2147483647,
+			NotSet = 0,
+			Left = 1,
+			Center = 2,
+			Right = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum stylePerspectiveOriginY : int32
 		{
-			stylePerspectiveOriginYNotSet = 0,
-			stylePerspectiveOriginYTop = 1,
-			stylePerspectiveOriginYCenter = 2,
-			stylePerspectiveOriginYBottom = 3,
-			stylePerspectiveOriginY_Max = 2147483647,
+			NotSet = 0,
+			Top = 1,
+			Center = 2,
+			Bottom = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleTransformStyle : int32
 		{
-			styleTransformStyleFlat = 0,
-			styleTransformStylePreserve3D = 1,
-			styleTransformStyleNotSet = 2,
-			styleTransformStyle_Max = 2147483647,
+			Flat = 0,
+			Preserve3D = 1,
+			NotSet = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleBackfaceVisibility : int32
 		{
-			styleBackfaceVisibilityVisible = 0,
-			styleBackfaceVisibilityHidden = 1,
-			styleBackfaceVisibilityNotSet = 2,
-			styleBackfaceVisibility_Max = 2147483647,
+			Visible = 0,
+			Hidden = 1,
+			NotSet = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleTextSizeAdjust : int32
 		{
-			styleTextSizeAdjustNone = 0,
-			styleTextSizeAdjustAuto = 1,
-			styleTextSizeAdjust_Max = 2147483647,
+			None = 0,
+			Auto = 1,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleColorInterpolationFilters : int32
 		{
-			styleColorInterpolationFiltersAuto = 0,
-			styleColorInterpolationFiltersSRgb = 1,
-			styleColorInterpolationFiltersLinearRgb = 2,
-			styleColorInterpolationFiltersNotSet = 3,
-			styleColorInterpolationFilters_Max = 2147483647,
+			Auto = 0,
+			SRgb = 1,
+			LinearRgb = 2,
+			NotSet = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleHyphens : int32
 		{
-			styleHyphensNone = 0,
-			styleHyphensManual = 1,
-			styleHyphensAuto = 2,
-			styleHyphensNotSet = 3,
-			styleHyphens_Max = 2147483647,
+			None = 0,
+			Manual = 1,
+			Auto = 2,
+			NotSet = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleHyphenateLimitLines : int32
 		{
-			styleHyphenateLimitLinesNoLimit = 0,
-			styleHyphenateLimitLines_Max = 2147483647,
+			NoLimit = 0,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsAnimationPlayState : int32
 		{
-			styleMsAnimationPlayStateRunning = 0,
-			styleMsAnimationPlayStatePaused = 1,
-			styleMsAnimationPlayStateNotSet = 2,
-			styleMsAnimationPlayState_Max = 2147483647,
+			Running = 0,
+			Paused = 1,
+			NotSet = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsAnimationDirection : int32
 		{
-			styleMsAnimationDirectionNormal = 0,
-			styleMsAnimationDirectionAlternate = 1,
-			styleMsAnimationDirectionReverse = 2,
-			styleMsAnimationDirectionAlternateReverse = 3,
-			styleMsAnimationDirectionNotSet = 4,
-			styleMsAnimationDirection_Max = 2147483647,
+			Normal = 0,
+			Alternate = 1,
+			Reverse = 2,
+			AlternateReverse = 3,
+			NotSet = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsAnimationFillMode : int32
 		{
-			styleMsAnimationFillModeNone = 0,
-			styleMsAnimationFillModeForwards = 1,
-			styleMsAnimationFillModeBackwards = 2,
-			styleMsAnimationFillModeBoth = 3,
-			styleMsAnimationFillModeNotSet = 4,
-			styleMsAnimationFillMode_Max = 2147483647,
+			None = 0,
+			Forwards = 1,
+			Backwards = 2,
+			Both = 3,
+			NotSet = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsHighContrastAdjust : int32
 		{
-			styleMsHighContrastAdjustNotSet = 0,
-			styleMsHighContrastAdjustAuto = 1,
-			styleMsHighContrastAdjustNone = 2,
-			styleMsHighContrastAdjust_Max = 2147483647,
+			NotSet = 0,
+			Auto = 1,
+			None = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsUserSelect : int32
 		{
-			styleMsUserSelectAuto = 0,
-			styleMsUserSelectText = 1,
-			styleMsUserSelectElement = 2,
-			styleMsUserSelectNone = 3,
-			styleMsUserSelectNotSet = 4,
-			styleMsUserSelect_Max = 2147483647,
+			Auto = 0,
+			Text = 1,
+			Element = 2,
+			None = 3,
+			NotSet = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsTouchAction : int32
 		{
-			styleMsTouchActionNotSet = -1,
-			styleMsTouchActionNone = 0,
-			styleMsTouchActionAuto = 1,
-			styleMsTouchActionManipulation = 2,
-			styleMsTouchActionDoubleTapZoom = 4,
-			styleMsTouchActionPanX = 8,
-			styleMsTouchActionPanY = 16,
-			styleMsTouchActionPinchZoom = 32,
-			styleMsTouchActionCrossSlideX = 64,
-			styleMsTouchActionCrossSlideY = 128,
-			styleMsTouchAction_Max = 2147483647,
+			NotSet = -1,
+			None = 0,
+			Auto = 1,
+			Manipulation = 2,
+			DoubleTapZoom = 4,
+			PanX = 8,
+			PanY = 16,
+			PinchZoom = 32,
+			CrossSlideX = 64,
+			CrossSlideY = 128,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsTouchSelect : int32
 		{
-			styleMsTouchSelectGrippers = 0,
-			styleMsTouchSelectNone = 1,
-			styleMsTouchSelectNotSet = 2,
-			styleMsTouchSelect_Max = 2147483647,
+			Grippers = 0,
+			None = 1,
+			NotSet = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsScrollTranslation : int32
 		{
-			styleMsScrollTranslationNotSet = 0,
-			styleMsScrollTranslationNone = 1,
-			styleMsScrollTranslationVtoH = 2,
-			styleMsScrollTranslation_Max = 2147483647,
+			NotSet = 0,
+			None = 1,
+			VtoH = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleBorderImageRepeat : int32
 		{
-			styleBorderImageRepeatStretch = 0,
-			styleBorderImageRepeatRepeat = 1,
-			styleBorderImageRepeatRound = 2,
-			styleBorderImageRepeatSpace = 3,
-			styleBorderImageRepeatNotSet = 4,
-			styleBorderImageRepeat_Max = 2147483647,
+			Stretch = 0,
+			Repeat = 1,
+			Round = 2,
+			Space = 3,
+			NotSet = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleBorderImageSliceFill : int32
 		{
-			styleBorderImageSliceFillNotSet = 0,
-			styleBorderImageSliceFillFill = 1,
-			styleBorderImageSliceFill_Max = 2147483647,
+			NotSet = 0,
+			Fill = 1,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsImeAlign : int32
 		{
-			styleMsImeAlignAuto = 0,
-			styleMsImeAlignAfter = 1,
-			styleMsImeAlignNotSet = 2,
-			styleMsImeAlign_Max = 2147483647,
+			Auto = 0,
+			After = 1,
+			NotSet = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleMsTextCombineHorizontal : int32
 		{
-			styleMsTextCombineHorizontalNone = 0,
-			styleMsTextCombineHorizontalAll = 1,
-			styleMsTextCombineHorizontalDigits = 2,
-			styleMsTextCombineHorizontalNotSet = 3,
-			styleMsTextCombineHorizontal_Max = 2147483647,
+			None = 0,
+			All = 1,
+			Digits = 2,
+			NotSet = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleWebkitAppearance : int32
 		{
-			styleWebkitAppearanceNone = 0,
-			styleWebkitAppearanceCapsLockIndicator = 1,
-			styleWebkitAppearanceButton = 2,
-			styleWebkitAppearanceButtonBevel = 3,
-			styleWebkitAppearanceCaret = 4,
-			styleWebkitAppearanceCheckbox = 5,
-			styleWebkitAppearanceDefaultButton = 6,
-			styleWebkitAppearanceListbox = 7,
-			styleWebkitAppearanceListitem = 8,
-			styleWebkitAppearanceMediaFullscreenButton = 9,
-			styleWebkitAppearanceMediaMuteButton = 10,
-			styleWebkitAppearanceMediaPlayButton = 11,
-			styleWebkitAppearanceMediaSeekBackButton = 12,
-			styleWebkitAppearanceMediaSeekForwardButton = 13,
-			styleWebkitAppearanceMediaSlider = 14,
-			styleWebkitAppearanceMediaSliderthumb = 15,
-			styleWebkitAppearanceMenulist = 16,
-			styleWebkitAppearanceMenulistButton = 17,
-			styleWebkitAppearanceMenulistText = 18,
-			styleWebkitAppearanceMenulistTextfield = 19,
-			styleWebkitAppearancePushButton = 20,
-			styleWebkitAppearanceRadio = 21,
-			styleWebkitAppearanceSearchfield = 22,
-			styleWebkitAppearanceSearchfieldCancelButton = 23,
-			styleWebkitAppearanceSearchfieldDecoration = 24,
-			styleWebkitAppearanceSearchfieldResultsButton = 25,
-			styleWebkitAppearanceSearchfieldResultsDecoration = 26,
-			styleWebkitAppearanceSliderHorizontal = 27,
-			styleWebkitAppearanceSliderVertical = 28,
-			styleWebkitAppearanceSliderthumbHorizontal = 29,
-			styleWebkitAppearanceSliderthumbVertical = 30,
-			styleWebkitAppearanceSquareButton = 31,
-			styleWebkitAppearanceTextarea = 32,
-			styleWebkitAppearanceTextfield = 33,
-			styleWebkitAppearanceNotSet = 34,
-			styleWebkitAppearance_Max = 2147483647,
+			None = 0,
+			CapsLockIndicator = 1,
+			Button = 2,
+			ButtonBevel = 3,
+			Caret = 4,
+			Checkbox = 5,
+			DefaultButton = 6,
+			Listbox = 7,
+			Listitem = 8,
+			MediaFullscreenButton = 9,
+			MediaMuteButton = 10,
+			MediaPlayButton = 11,
+			MediaSeekBackButton = 12,
+			MediaSeekForwardButton = 13,
+			MediaSlider = 14,
+			MediaSliderthumb = 15,
+			Menulist = 16,
+			MenulistButton = 17,
+			MenulistText = 18,
+			MenulistTextfield = 19,
+			PushButton = 20,
+			Radio = 21,
+			Searchfield = 22,
+			SearchfieldCancelButton = 23,
+			SearchfieldDecoration = 24,
+			SearchfieldResultsButton = 25,
+			SearchfieldResultsDecoration = 26,
+			SliderHorizontal = 27,
+			SliderVertical = 28,
+			SliderthumbHorizontal = 29,
+			SliderthumbVertical = 30,
+			SquareButton = 31,
+			Textarea = 32,
+			Textfield = 33,
+			NotSet = 34,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleViewportSize : int32
 		{
-			styleViewportSizeAuto = 0,
-			styleViewportSizeDeviceWidth = 1,
-			styleViewportSizeDeviceHeight = 2,
-			styleViewportSize_Max = 2147483647,
+			Auto = 0,
+			DeviceWidth = 1,
+			DeviceHeight = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleUserZoom : int32
 		{
-			styleUserZoomNotSet = 0,
-			styleUserZoomZoom = 1,
-			styleUserZoomFixed = 2,
-			styleUserZoom_Max = 2147483647,
+			NotSet = 0,
+			Zoom = 1,
+			Fixed = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleTextLineThroughStyle : int32
 		{
-			styleTextLineThroughStyleUndefined = 0,
-			styleTextLineThroughStyleSingle = 1,
-			styleTextLineThroughStyleDouble = 2,
-			styleTextLineThroughStyle_Max = 2147483647,
+			Undefined = 0,
+			Single = 1,
+			Double = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleTextUnderlineStyle : int32
 		{
-			styleTextUnderlineStyleUndefined = 0,
-			styleTextUnderlineStyleSingle = 1,
-			styleTextUnderlineStyleDouble = 2,
-			styleTextUnderlineStyleWords = 3,
-			styleTextUnderlineStyleDotted = 4,
-			styleTextUnderlineStyleThick = 5,
-			styleTextUnderlineStyleDash = 6,
-			styleTextUnderlineStyleDotDash = 7,
-			styleTextUnderlineStyleDotDotDash = 8,
-			styleTextUnderlineStyleWave = 9,
-			styleTextUnderlineStyleSingleAccounting = 10,
-			styleTextUnderlineStyleDoubleAccounting = 11,
-			styleTextUnderlineStyleThickDash = 12,
-			styleTextUnderlineStyle_Max = 2147483647,
+			Undefined = 0,
+			Single = 1,
+			Double = 2,
+			Words = 3,
+			Dotted = 4,
+			Thick = 5,
+			Dash = 6,
+			DotDash = 7,
+			DotDotDash = 8,
+			Wave = 9,
+			SingleAccounting = 10,
+			DoubleAccounting = 11,
+			ThickDash = 12,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleTextEffect : int32
 		{
-			styleTextEffectNone = 0,
-			styleTextEffectEmboss = 1,
-			styleTextEffectEngrave = 2,
-			styleTextEffectOutline = 3,
-			styleTextEffect_Max = 2147483647,
+			None = 0,
+			Emboss = 1,
+			Engrave = 2,
+			Outline = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleDefaultTextSelection : int32
 		{
-			styleDefaultTextSelectionFalse = 0,
-			styleDefaultTextSelectionTrue = 1,
-			styleDefaultTextSelection_Max = 2147483647,
+			False = 0,
+			True = 1,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum styleTextDecoration : int32
 		{
-			styleTextDecorationNone = 0,
-			styleTextDecorationUnderline = 1,
-			styleTextDecorationOverline = 2,
-			styleTextDecorationLineThrough = 3,
-			styleTextDecorationBlink = 4,
-			styleTextDecoration_Max = 2147483647,
+			None = 0,
+			Underline = 1,
+			Overline = 2,
+			LineThrough = 3,
+			Blink = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum textDecoration : int32
 		{
-			textDecorationNone = 0,
-			textDecorationUnderline = 1,
-			textDecorationOverline = 2,
-			textDecorationLineThrough = 3,
-			textDecorationBlink = 4,
-			textDecoration_Max = 2147483647,
+			None = 0,
+			Underline = 1,
+			Overline = 2,
+			LineThrough = 3,
+			Blink = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlListType : int32
 		{
-			htmlListTypeNotSet = 0,
-			htmlListTypeLargeAlpha = 1,
-			htmlListTypeSmallAlpha = 2,
-			htmlListTypeLargeRoman = 3,
-			htmlListTypeSmallRoman = 4,
-			htmlListTypeNumbers = 5,
-			htmlListTypeDisc = 6,
-			htmlListTypeCircle = 7,
-			htmlListTypeSquare = 8,
-			htmlListType_Max = 2147483647,
+			NotSet = 0,
+			LargeAlpha = 1,
+			SmallAlpha = 2,
+			LargeRoman = 3,
+			SmallRoman = 4,
+			Numbers = 5,
+			Disc = 6,
+			Circle = 7,
+			Square = 8,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlMethod : int32
 		{
-			htmlMethodNotSet = 0,
-			htmlMethodGet = 1,
-			htmlMethodPost = 2,
-			htmlMethod_Max = 2147483647,
+			NotSet = 0,
+			Get = 1,
+			Post = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlWrap : int32
 		{
-			htmlWrapOff = 1,
-			htmlWrapSoft = 2,
-			htmlWrapHard = 3,
-			htmlWrap_Max = 2147483647,
+			Off = 1,
+			Soft = 2,
+			Hard = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlDir : int32
 		{
-			htmlDirNotSet = 0,
-			htmlDirLeftToRight = 1,
-			htmlDirRightToLeft = 2,
-			htmlDir_Max = 2147483647,
+			NotSet = 0,
+			LeftToRight = 1,
+			RightToLeft = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlEditable : int32
 		{
-			htmlEditableInherit = 0,
-			htmlEditableTrue = 1,
-			htmlEditableFalse = 2,
-			htmlEditable_Max = 2147483647,
+			Inherit = 0,
+			True = 1,
+			False = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlInput : int32
 		{
-			htmlInputNotSet = 0,
-			htmlInputButton = 1,
-			htmlInputCheckbox = 2,
-			htmlInputFile = 3,
-			htmlInputHidden = 4,
-			htmlInputImage = 5,
-			htmlInputPassword = 6,
-			htmlInputRadio = 7,
-			htmlInputReset = 8,
-			htmlInputSelectOne = 9,
-			htmlInputSelectMultiple = 10,
-			htmlInputSubmit = 11,
-			htmlInputText = 12,
-			htmlInputTextarea = 13,
-			htmlInputRichtext = 14,
-			htmlInputRange = 15,
-			htmlInputUrl = 16,
-			htmlInputEmail = 17,
-			htmlInputNumber = 18,
-			htmlInputTel = 19,
-			htmlInputSearch = 20,
-			htmlInput_Max = 2147483647,
+			NotSet = 0,
+			Button = 1,
+			Checkbox = 2,
+			File = 3,
+			Hidden = 4,
+			Image = 5,
+			Password = 6,
+			Radio = 7,
+			Reset = 8,
+			SelectOne = 9,
+			SelectMultiple = 10,
+			Submit = 11,
+			Text = 12,
+			Textarea = 13,
+			Richtext = 14,
+			Range = 15,
+			Url = 16,
+			Email = 17,
+			Number = 18,
+			Tel = 19,
+			Search = 20,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlSpellCheck : int32
 		{
-			htmlSpellCheckNotSet = 0,
-			htmlSpellCheckTrue = 1,
-			htmlSpellCheckFalse = 2,
-			htmlSpellCheckDefault = 3,
-			htmlSpellCheck_Max = 2147483647,
+			NotSet = 0,
+			True = 1,
+			False = 2,
+			Default = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlEncoding : int32
 		{
-			htmlEncodingURL = 0,
-			htmlEncodingMultipart = 1,
-			htmlEncodingText = 2,
-			htmlEncoding_Max = 2147483647,
+			URL = 0,
+			Multipart = 1,
+			Text = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlAdjacency : int32
 		{
-			htmlAdjacencyBeforeBegin = 1,
-			htmlAdjacencyAfterBegin = 2,
-			htmlAdjacencyBeforeEnd = 3,
-			htmlAdjacencyAfterEnd = 4,
-			htmlAdjacency_Max = 2147483647,
+			BeforeBegin = 1,
+			AfterBegin = 2,
+			BeforeEnd = 3,
+			AfterEnd = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlTabIndex : int32
 		{
-			htmlTabIndexNotSet = -32768,
-			htmlTabIndex_Max = 2147483647,
+			NotSet = -32768,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlComponent : int32
 		{
-			htmlComponentClient = 0,
-			htmlComponentSbLeft = 1,
-			htmlComponentSbPageLeft = 2,
-			htmlComponentSbHThumb = 3,
-			htmlComponentSbPageRight = 4,
-			htmlComponentSbRight = 5,
-			htmlComponentSbUp = 6,
-			htmlComponentSbPageUp = 7,
-			htmlComponentSbVThumb = 8,
-			htmlComponentSbPageDown = 9,
-			htmlComponentSbDown = 10,
-			htmlComponentSbLeft2 = 11,
-			htmlComponentSbPageLeft2 = 12,
-			htmlComponentSbRight2 = 13,
-			htmlComponentSbPageRight2 = 14,
-			htmlComponentSbUp2 = 15,
-			htmlComponentSbPageUp2 = 16,
-			htmlComponentSbDown2 = 17,
-			htmlComponentSbPageDown2 = 18,
-			htmlComponentSbTop = 19,
-			htmlComponentSbBottom = 20,
-			htmlComponentOutside = 21,
-			htmlComponentGHTopLeft = 22,
-			htmlComponentGHLeft = 23,
-			htmlComponentGHTop = 24,
-			htmlComponentGHBottomLeft = 25,
-			htmlComponentGHTopRight = 26,
-			htmlComponentGHBottom = 27,
-			htmlComponentGHRight = 28,
-			htmlComponentGHBottomRight = 29,
-			htmlComponent_Max = 2147483647,
+			Client = 0,
+			SbLeft = 1,
+			SbPageLeft = 2,
+			SbHThumb = 3,
+			SbPageRight = 4,
+			SbRight = 5,
+			SbUp = 6,
+			SbPageUp = 7,
+			SbVThumb = 8,
+			SbPageDown = 9,
+			SbDown = 10,
+			SbLeft2 = 11,
+			SbPageLeft2 = 12,
+			SbRight2 = 13,
+			SbPageRight2 = 14,
+			SbUp2 = 15,
+			SbPageUp2 = 16,
+			SbDown2 = 17,
+			SbPageDown2 = 18,
+			SbTop = 19,
+			SbBottom = 20,
+			Outside = 21,
+			GHTopLeft = 22,
+			GHLeft = 23,
+			GHTop = 24,
+			GHBottomLeft = 25,
+			GHTopRight = 26,
+			GHBottom = 27,
+			GHRight = 28,
+			GHBottomRight = 29,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlApplyLocation : int32
 		{
-			htmlApplyLocationInside = 0,
-			htmlApplyLocationOutside = 1,
-			htmlApplyLocation_Max = 2147483647,
+			Inside = 0,
+			Outside = 1,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlGlyphMode : int32
 		{
-			htmlGlyphModeNone = 0,
-			htmlGlyphModeBegin = 1,
-			htmlGlyphModeEnd = 2,
-			htmlGlyphModeBoth = 3,
-			htmlGlyphMode_Max = 2147483647,
+			None = 0,
+			Begin = 1,
+			End = 2,
+			Both = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlDraggable : int32
 		{
-			htmlDraggableAuto = 0,
-			htmlDraggableTrue = 1,
-			htmlDraggableFalse = 2,
-			htmlDraggable_Max = 2147483647,
+			Auto = 0,
+			True = 1,
+			False = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlUnit : int32
 		{
-			htmlUnitCharacter = 1,
-			htmlUnitWord = 2,
-			htmlUnitSentence = 3,
-			htmlUnitTextEdit = 6,
-			htmlUnit_Max = 2147483647,
+			Character = 1,
+			Word = 2,
+			Sentence = 3,
+			TextEdit = 6,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlEndPoints : int32
 		{
-			htmlEndPointsStartToStart = 1,
-			htmlEndPointsStartToEnd = 2,
-			htmlEndPointsEndToStart = 3,
-			htmlEndPointsEndToEnd = 4,
-			htmlEndPoints_Max = 2147483647,
+			StartToStart = 1,
+			StartToEnd = 2,
+			EndToStart = 3,
+			EndToEnd = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlDirection : int32
 		{
-			htmlDirectionForward = 99999,
-			htmlDirectionBackward = -99999,
-			htmlDirection_Max = 2147483647,
+			Forward = 99999,
+			Backward = -99999,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlStart : int32
 		{
-			htmlStartfileopen = 0,
-			htmlStartmouseover = 1,
-			htmlStart_Max = 2147483647,
+			fileopen = 0,
+			mouseover = 1,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum bodyScroll : int32
 		{
-			bodyScrollyes = 1,
-			bodyScrollno = 2,
-			bodyScrollauto = 4,
-			bodyScrolldefault = 3,
-			bodyScroll_Max = 2147483647,
+			yes = 1,
+			no = 2,
+			auto = 4,
+			@default = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlSelectType : int32
 		{
-			htmlSelectTypeSelectOne = 1,
-			htmlSelectTypeSelectMultiple = 2,
-			htmlSelectType_Max = 2147483647,
+			SelectOne = 1,
+			SelectMultiple = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlSelectExFlag : int32
 		{
-			htmlSelectExFlagNone = 0,
-			htmlSelectExFlagHideSelectionInDesign = 1,
-			htmlSelectExFlag_Max = 2147483647,
+			None = 0,
+			HideSelectionInDesign = 1,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlSelection : int32
 		{
-			htmlSelectionNone = 0,
-			htmlSelectionText = 1,
-			htmlSelectionControl = 2,
-			htmlSelectionTable = 3,
-			htmlSelection_Max = 2147483647,
+			None = 0,
+			Text = 1,
+			Control = 2,
+			Table = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlMarqueeBehavior : int32
 		{
-			htmlMarqueeBehaviorscroll = 1,
-			htmlMarqueeBehaviorslide = 2,
-			htmlMarqueeBehavioralternate = 3,
-			htmlMarqueeBehavior_Max = 2147483647,
+			scroll = 1,
+			slide = 2,
+			alternate = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlMarqueeDirection : int32
 		{
-			htmlMarqueeDirectionleft = 1,
-			htmlMarqueeDirectionright = 3,
-			htmlMarqueeDirectionup = 5,
-			htmlMarqueeDirectiondown = 7,
-			htmlMarqueeDirection_Max = 2147483647,
+			left = 1,
+			right = 3,
+			up = 5,
+			down = 7,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlPersistState : int32
 		{
-			htmlPersistStateNormal = 0,
-			htmlPersistStateFavorite = 1,
-			htmlPersistStateHistory = 2,
-			htmlPersistStateSnapshot = 3,
-			htmlPersistStateUserData = 4,
-			htmlPersistState_Max = 2147483647,
+			Normal = 0,
+			Favorite = 1,
+			History = 2,
+			Snapshot = 3,
+			UserData = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlDropEffect : int32
 		{
-			htmlDropEffectCopy = 0,
-			htmlDropEffectLink = 1,
-			htmlDropEffectMove = 2,
-			htmlDropEffectNone = 3,
-			htmlDropEffect_Max = 2147483647,
+			Copy = 0,
+			Link = 1,
+			Move = 2,
+			None = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlEffectAllowed : int32
 		{
-			htmlEffectAllowedCopy = 0,
-			htmlEffectAllowedLink = 1,
-			htmlEffectAllowedMove = 2,
-			htmlEffectAllowedCopyLink = 3,
-			htmlEffectAllowedCopyMove = 4,
-			htmlEffectAllowedLinkMove = 5,
-			htmlEffectAllowedAll = 6,
-			htmlEffectAllowedNone = 7,
-			htmlEffectAllowedUninitialized = 8,
-			htmlEffectAllowed_Max = 2147483647,
+			Copy = 0,
+			Link = 1,
+			Move = 2,
+			CopyLink = 3,
+			CopyMove = 4,
+			LinkMove = 5,
+			All = 6,
+			None = 7,
+			Uninitialized = 8,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlCompatMode : int32
 		{
-			htmlCompatModeBackCompat = 0,
-			htmlCompatModeCSS1Compat = 1,
-			htmlCompatMode_Max = 2147483647,
+			BackCompat = 0,
+			CSS1Compat = 1,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum BoolValue : int32
@@ -8537,87 +8537,87 @@ namespace Win32
 		[AllowDuplicates]
 		public enum htmlCaptionAlign : int32
 		{
-			htmlCaptionAlignNotSet = 0,
-			htmlCaptionAlignLeft = 1,
-			htmlCaptionAlignCenter = 2,
-			htmlCaptionAlignRight = 3,
-			htmlCaptionAlignJustify = 4,
-			htmlCaptionAlignTop = 5,
-			htmlCaptionAlignBottom = 6,
-			htmlCaptionAlign_Max = 2147483647,
+			NotSet = 0,
+			Left = 1,
+			Center = 2,
+			Right = 3,
+			Justify = 4,
+			Top = 5,
+			Bottom = 6,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlCaptionVAlign : int32
 		{
-			htmlCaptionVAlignNotSet = 0,
-			htmlCaptionVAlignTop = 1,
-			htmlCaptionVAlignBottom = 2,
-			htmlCaptionVAlign_Max = 2147483647,
+			NotSet = 0,
+			Top = 1,
+			Bottom = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlFrame : int32
 		{
-			htmlFrameNotSet = 0,
-			htmlFramevoid = 1,
-			htmlFrameabove = 2,
-			htmlFramebelow = 3,
-			htmlFramehsides = 4,
-			htmlFramelhs = 5,
-			htmlFramerhs = 6,
-			htmlFramevsides = 7,
-			htmlFramebox = 8,
-			htmlFrameborder = 9,
-			htmlFrame_Max = 2147483647,
+			NotSet = 0,
+			@void = 1,
+			above = 2,
+			below = 3,
+			hsides = 4,
+			lhs = 5,
+			rhs = 6,
+			vsides = 7,
+			@box = 8,
+			border = 9,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlRules : int32
 		{
-			htmlRulesNotSet = 0,
-			htmlRulesnone = 1,
-			htmlRulesgroups = 2,
-			htmlRulesrows = 3,
-			htmlRulescols = 4,
-			htmlRulesall = 5,
-			htmlRules_Max = 2147483647,
+			NotSet = 0,
+			none = 1,
+			groups = 2,
+			rows = 3,
+			cols = 4,
+			all = 5,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlCellAlign : int32
 		{
-			htmlCellAlignNotSet = 0,
-			htmlCellAlignLeft = 1,
-			htmlCellAlignCenter = 2,
-			htmlCellAlignRight = 3,
-			htmlCellAlignMiddle = 2,
-			htmlCellAlign_Max = 2147483647,
+			NotSet = 0,
+			Left = 1,
+			Center = 2,
+			Right = 3,
+			Middle = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlCellVAlign : int32
 		{
-			htmlCellVAlignNotSet = 0,
-			htmlCellVAlignTop = 1,
-			htmlCellVAlignMiddle = 2,
-			htmlCellVAlignBottom = 3,
-			htmlCellVAlignBaseline = 4,
-			htmlCellVAlignCenter = 2,
-			htmlCellVAlign_Max = 2147483647,
+			NotSet = 0,
+			Top = 1,
+			Middle = 2,
+			Bottom = 3,
+			Baseline = 4,
+			Center = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum frameScrolling : int32
 		{
-			frameScrollingyes = 1,
-			frameScrollingno = 2,
-			frameScrollingauto = 4,
-			frameScrolling_Max = 2147483647,
+			yes = 1,
+			no = 2,
+			auto = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum sandboxAllow : int32
 		{
-			sandboxAllowScripts = 0,
-			sandboxAllowSameOrigin = 1,
-			sandboxAllowTopNavigation = 2,
-			sandboxAllowForms = 3,
-			sandboxAllowPopups = 4,
-			sandboxAllow_Max = 2147483647,
+			Scripts = 0,
+			SameOrigin = 1,
+			TopNavigation = 2,
+			Forms = 3,
+			Popups = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum svgAngleType : int32
@@ -8632,18 +8632,18 @@ namespace Win32
 		[AllowDuplicates]
 		public enum svgExternalResourcesRequired : int32
 		{
-			svgExternalResourcesRequiredFalse = 0,
-			svgExternalResourcesRequiredTrue = 1,
-			svgExternalResourcesRequired_Max = 2147483647,
+			False = 0,
+			True = 1,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum svgFocusable : int32
 		{
-			svgFocusableNotSet = 0,
-			svgFocusableAuto = 1,
-			svgFocusableTrue = 2,
-			svgFocusableFalse = 3,
-			svgFocusable_Max = 2147483647,
+			NotSet = 0,
+			Auto = 1,
+			True = 2,
+			False = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum svgLengthType : int32
@@ -8852,36 +8852,36 @@ namespace Win32
 		[AllowDuplicates]
 		public enum svgMarkerOrientAttribute : int32
 		{
-			svgMarkerOrientAttributeAuto = 0,
-			svgMarkerOrientAttribute_Max = 2147483647,
+			Auto = 0,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlMediaNetworkState : int32
 		{
-			htmlMediaNetworkStateEmpty = 0,
-			htmlMediaNetworkStateIdle = 1,
-			htmlMediaNetworkStateLoading = 2,
-			htmlMediaNetworkStateNoSource = 3,
-			htmlMediaNetworkState_Max = 2147483647,
+			Empty = 0,
+			Idle = 1,
+			Loading = 2,
+			NoSource = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlMediaReadyState : int32
 		{
-			htmlMediaReadyStateHaveNothing = 0,
-			htmlMediaReadyStateHaveMetadata = 1,
-			htmlMediaReadyStateHaveCurrentData = 2,
-			htmlMediaReadyStateHaveFutureData = 3,
-			htmlMediaReadyStateHaveEnoughData = 4,
-			htmlMediaReadyState_Max = 2147483647,
+			HaveNothing = 0,
+			HaveMetadata = 1,
+			HaveCurrentData = 2,
+			HaveFutureData = 3,
+			HaveEnoughData = 4,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum htmlMediaErr : int32
 		{
-			htmlMediaErrAborted = 0,
-			htmlMediaErrNetwork = 1,
-			htmlMediaErrDecode = 2,
-			htmlMediaErrSrcNotSupported = 3,
-			htmlMediaErr_Max = 2147483647,
+			Aborted = 0,
+			Network = 1,
+			Decode = 2,
+			SrcNotSupported = 3,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum lengthAdjust : int32
@@ -8910,40 +8910,40 @@ namespace Win32
 		[AllowDuplicates]
 		public enum ELEMENT_CORNER : int32
 		{
-			ELEMENT_CORNER_NONE = 0,
-			ELEMENT_CORNER_TOP = 1,
-			ELEMENT_CORNER_LEFT = 2,
-			ELEMENT_CORNER_BOTTOM = 3,
-			ELEMENT_CORNER_RIGHT = 4,
-			ELEMENT_CORNER_TOPLEFT = 5,
-			ELEMENT_CORNER_TOPRIGHT = 6,
-			ELEMENT_CORNER_BOTTOMLEFT = 7,
-			ELEMENT_CORNER_BOTTOMRIGHT = 8,
-			ELEMENT_CORNER_Max = 2147483647,
+			NONE = 0,
+			TOP = 1,
+			LEFT = 2,
+			BOTTOM = 3,
+			RIGHT = 4,
+			TOPLEFT = 5,
+			TOPRIGHT = 6,
+			BOTTOMLEFT = 7,
+			BOTTOMRIGHT = 8,
+			Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum SECUREURLHOSTVALIDATE_FLAGS : int32
 		{
-			SUHV_PROMPTBEFORENO = 1,
-			SUHV_SILENTYES = 2,
-			SUHV_UNSECURESOURCE = 4,
-			SECUREURLHOSTVALIDATE_FLAGS_Max = 2147483647,
+			UHV_PROMPTBEFORENO = 1,
+			UHV_SILENTYES = 2,
+			UHV_UNSECURESOURCE = 4,
+			ECUREURLHOSTVALIDATE_FLAGS_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum POINTER_GRAVITY : int32
 		{
-			POINTER_GRAVITY_Left = 0,
-			POINTER_GRAVITY_Right = 1,
-			POINTER_GRAVITY_Max = 2147483647,
+			Left = 0,
+			Right = 1,
+			Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum ELEMENT_ADJACENCY : int32
 		{
-			ELEM_ADJ_BeforeBegin = 0,
-			ELEM_ADJ_AfterBegin = 1,
-			ELEM_ADJ_BeforeEnd = 2,
-			ELEM_ADJ_AfterEnd = 3,
-			ELEMENT_ADJACENCY_Max = 2147483647,
+			_ADJ_BeforeBegin = 0,
+			_ADJ_AfterBegin = 1,
+			_ADJ_BeforeEnd = 2,
+			_ADJ_AfterEnd = 3,
+			ENT_ADJACENCY_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum MARKUP_CONTEXT_TYPE : int32
@@ -8958,47 +8958,47 @@ namespace Win32
 		[AllowDuplicates]
 		public enum FINDTEXT_FLAGS : int32
 		{
-			FINDTEXT_BACKWARDS = 1,
-			FINDTEXT_WHOLEWORD = 2,
-			FINDTEXT_MATCHCASE = 4,
-			FINDTEXT_RAW = 131072,
-			FINDTEXT_MATCHREPEATEDWHITESPACE = 262144,
-			FINDTEXT_MATCHDIAC = 536870912,
-			FINDTEXT_MATCHKASHIDA = 1073741824,
-			FINDTEXT_MATCHALEFHAMZA = -2147483648,
-			FINDTEXT_FLAGS_Max = 2147483647,
+			BACKWARDS = 1,
+			WHOLEWORD = 2,
+			MATCHCASE = 4,
+			RAW = 131072,
+			MATCHREPEATEDWHITESPACE = 262144,
+			MATCHDIAC = 536870912,
+			MATCHKASHIDA = 1073741824,
+			MATCHALEFHAMZA = -2147483648,
+			FLAGS_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum MOVEUNIT_ACTION : int32
 		{
-			MOVEUNIT_PREVCHAR = 0,
-			MOVEUNIT_NEXTCHAR = 1,
-			MOVEUNIT_PREVCLUSTERBEGIN = 2,
-			MOVEUNIT_NEXTCLUSTERBEGIN = 3,
-			MOVEUNIT_PREVCLUSTEREND = 4,
-			MOVEUNIT_NEXTCLUSTEREND = 5,
-			MOVEUNIT_PREVWORDBEGIN = 6,
-			MOVEUNIT_NEXTWORDBEGIN = 7,
-			MOVEUNIT_PREVWORDEND = 8,
-			MOVEUNIT_NEXTWORDEND = 9,
-			MOVEUNIT_PREVPROOFWORD = 10,
-			MOVEUNIT_NEXTPROOFWORD = 11,
-			MOVEUNIT_NEXTURLBEGIN = 12,
-			MOVEUNIT_PREVURLBEGIN = 13,
-			MOVEUNIT_NEXTURLEND = 14,
-			MOVEUNIT_PREVURLEND = 15,
-			MOVEUNIT_PREVSENTENCE = 16,
-			MOVEUNIT_NEXTSENTENCE = 17,
-			MOVEUNIT_PREVBLOCK = 18,
-			MOVEUNIT_NEXTBLOCK = 19,
-			MOVEUNIT_ACTION_Max = 2147483647,
+			PREVCHAR = 0,
+			NEXTCHAR = 1,
+			PREVCLUSTERBEGIN = 2,
+			NEXTCLUSTERBEGIN = 3,
+			PREVCLUSTEREND = 4,
+			NEXTCLUSTEREND = 5,
+			PREVWORDBEGIN = 6,
+			NEXTWORDBEGIN = 7,
+			PREVWORDEND = 8,
+			NEXTWORDEND = 9,
+			PREVPROOFWORD = 10,
+			NEXTPROOFWORD = 11,
+			NEXTURLBEGIN = 12,
+			PREVURLBEGIN = 13,
+			NEXTURLEND = 14,
+			PREVURLEND = 15,
+			PREVSENTENCE = 16,
+			NEXTSENTENCE = 17,
+			PREVBLOCK = 18,
+			NEXTBLOCK = 19,
+			ACTION_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum PARSE_FLAGS : int32
 		{
-			PARSE_ABSOLUTIFYIE40URLS = 1,
-			PARSE_DISABLEVML = 2,
-			PARSE_FLAGS_Max = 2147483647,
+			ABSOLUTIFYIE40URLS = 1,
+			DISABLEVML = 2,
+			FLAGS_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum ELEMENT_TAG_ID : int32
@@ -9234,510 +9234,510 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SELECTION_TYPE : int32
 		{
-			SELECTION_TYPE_None = 0,
-			SELECTION_TYPE_Caret = 1,
-			SELECTION_TYPE_Text = 2,
-			SELECTION_TYPE_Control = 3,
-			SELECTION_TYPE_Max = 2147483647,
+			None = 0,
+			Caret = 1,
+			Text = 2,
+			Control = 3,
+			Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum SAVE_SEGMENTS_FLAGS : int32
 		{
-			SAVE_SEGMENTS_NoIE4SelectionCompat = 1,
-			SAVE_SEGMENTS_FLAGS_Max = 2147483647,
+			NoIE4SelectionCompat = 1,
+			FLAGS_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum CARET_DIRECTION : int32
 		{
-			CARET_DIRECTION_INDETERMINATE = 0,
-			CARET_DIRECTION_SAME = 1,
-			CARET_DIRECTION_BACKWARD = 2,
-			CARET_DIRECTION_FORWARD = 3,
-			CARET_DIRECTION_Max = 2147483647,
+			INDETERMINATE = 0,
+			SAME = 1,
+			BACKWARD = 2,
+			FORWARD = 3,
+			Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum LINE_DIRECTION : int32
 		{
-			LINE_DIRECTION_RightToLeft = 1,
-			LINE_DIRECTION_LeftToRight = 2,
-			LINE_DIRECTION_Max = 2147483647,
+			RightToLeft = 1,
+			LeftToRight = 2,
+			Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HT_OPTIONS : int32
 		{
-			HT_OPT_AllowAfterEOL = 1,
-			HT_OPTIONS_Max = 2147483647,
+			_AllowAfterEOL = 1,
+			IONS_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HT_RESULTS : int32
 		{
-			HT_RESULTS_Glyph = 1,
-			HT_RESULTS_Max = 2147483647,
+			Glyph = 1,
+			Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum DISPLAY_MOVEUNIT : int32
 		{
-			DISPLAY_MOVEUNIT_PreviousLine = 1,
-			DISPLAY_MOVEUNIT_NextLine = 2,
-			DISPLAY_MOVEUNIT_CurrentLineStart = 3,
-			DISPLAY_MOVEUNIT_CurrentLineEnd = 4,
-			DISPLAY_MOVEUNIT_TopOfWindow = 5,
-			DISPLAY_MOVEUNIT_BottomOfWindow = 6,
-			DISPLAY_MOVEUNIT_Max = 2147483647,
+			PreviousLine = 1,
+			NextLine = 2,
+			CurrentLineStart = 3,
+			CurrentLineEnd = 4,
+			TopOfWindow = 5,
+			BottomOfWindow = 6,
+			Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum DISPLAY_GRAVITY : int32
 		{
-			DISPLAY_GRAVITY_PreviousLine = 1,
-			DISPLAY_GRAVITY_NextLine = 2,
-			DISPLAY_GRAVITY_Max = 2147483647,
+			PreviousLine = 1,
+			NextLine = 2,
+			Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum DISPLAY_BREAK : int32
 		{
-			DISPLAY_BREAK_None = 0,
-			DISPLAY_BREAK_Block = 1,
-			DISPLAY_BREAK_Break = 2,
-			DISPLAY_BREAK_Max = 2147483647,
+			None = 0,
+			Block = 1,
+			Break = 2,
+			Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum COORD_SYSTEM : int32
 		{
-			COORD_SYSTEM_GLOBAL = 0,
-			COORD_SYSTEM_PARENT = 1,
-			COORD_SYSTEM_CONTAINER = 2,
-			COORD_SYSTEM_CONTENT = 3,
-			COORD_SYSTEM_FRAME = 4,
-			COORD_SYSTEM_CLIENT = 5,
-			COORD_SYSTEM_Max = 2147483647,
+			GLOBAL = 0,
+			PARENT = 1,
+			CONTAINER = 2,
+			CONTENT = 3,
+			FRAME = 4,
+			CLIENT = 5,
+			Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum DEV_CONSOLE_MESSAGE_LEVEL : int32
 		{
-			DCML_INFORMATIONAL = 0,
-			DCML_WARNING = 1,
-			DCML_ERROR = 2,
-			DEV_CONSOLE_MESSAGE_LEVEL_Max = 2147483647,
+			CML_INFORMATIONAL = 0,
+			CML_WARNING = 1,
+			CML_ERROR = 2,
+			EV_CONSOLE_MESSAGE_LEVEL_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum DOM_EVENT_PHASE : int32
 		{
-			DEP_CAPTURING_PHASE = 1,
-			DEP_AT_TARGET = 2,
-			DEP_BUBBLING_PHASE = 3,
-			DOM_EVENT_PHASE_Max = 2147483647,
+			EP_CAPTURING_PHASE = 1,
+			EP_AT_TARGET = 2,
+			EP_BUBBLING_PHASE = 3,
+			OM_EVENT_PHASE_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum SCRIPT_TIMER_TYPE : int32
 		{
-			STT_TIMEOUT = 0,
-			STT_INTERVAL = 1,
-			STT_IMMEDIATE = 2,
-			STT_ANIMATION_FRAME = 3,
-			SCRIPT_TIMER_TYPE_Max = 2147483647,
+			TT_TIMEOUT = 0,
+			TT_INTERVAL = 1,
+			TT_IMMEDIATE = 2,
+			TT_ANIMATION_FRAME = 3,
+			CRIPT_TIMER_TYPE_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HTML_PAINTER : int32
 		{
-			HTMLPAINTER_OPAQUE = 1,
-			HTMLPAINTER_TRANSPARENT = 2,
-			HTMLPAINTER_ALPHA = 4,
-			HTMLPAINTER_COMPLEX = 8,
-			HTMLPAINTER_OVERLAY = 16,
-			HTMLPAINTER_HITTEST = 32,
-			HTMLPAINTER_SURFACE = 256,
-			HTMLPAINTER_3DSURFACE = 512,
-			HTMLPAINTER_NOBAND = 1024,
-			HTMLPAINTER_NODC = 4096,
-			HTMLPAINTER_NOPHYSICALCLIP = 8192,
-			HTMLPAINTER_NOSAVEDC = 16384,
-			HTMLPAINTER_SUPPORTS_XFORM = 32768,
-			HTMLPAINTER_EXPAND = 65536,
-			HTMLPAINTER_NOSCROLLBITS = 131072,
-			HTML_PAINTER_Max = 2147483647,
+			PAINTER_OPAQUE = 1,
+			PAINTER_TRANSPARENT = 2,
+			PAINTER_ALPHA = 4,
+			PAINTER_COMPLEX = 8,
+			PAINTER_OVERLAY = 16,
+			PAINTER_HITTEST = 32,
+			PAINTER_SURFACE = 256,
+			PAINTER_3DSURFACE = 512,
+			PAINTER_NOBAND = 1024,
+			PAINTER_NODC = 4096,
+			PAINTER_NOPHYSICALCLIP = 8192,
+			PAINTER_NOSAVEDC = 16384,
+			PAINTER_SUPPORTS_XFORM = 32768,
+			PAINTER_EXPAND = 65536,
+			PAINTER_NOSCROLLBITS = 131072,
+			_PAINTER_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HTML_PAINT_ZORDER : int32
 		{
-			HTMLPAINT_ZORDER_NONE = 0,
-			HTMLPAINT_ZORDER_REPLACE_ALL = 1,
-			HTMLPAINT_ZORDER_REPLACE_CONTENT = 2,
-			HTMLPAINT_ZORDER_REPLACE_BACKGROUND = 3,
-			HTMLPAINT_ZORDER_BELOW_CONTENT = 4,
-			HTMLPAINT_ZORDER_BELOW_FLOW = 5,
-			HTMLPAINT_ZORDER_ABOVE_FLOW = 6,
-			HTMLPAINT_ZORDER_ABOVE_CONTENT = 7,
-			HTMLPAINT_ZORDER_WINDOW_TOP = 8,
-			HTML_PAINT_ZORDER_Max = 2147483647,
+			PAINT_ZORDER_NONE = 0,
+			PAINT_ZORDER_REPLACE_ALL = 1,
+			PAINT_ZORDER_REPLACE_CONTENT = 2,
+			PAINT_ZORDER_REPLACE_BACKGROUND = 3,
+			PAINT_ZORDER_BELOW_CONTENT = 4,
+			PAINT_ZORDER_BELOW_FLOW = 5,
+			PAINT_ZORDER_ABOVE_FLOW = 6,
+			PAINT_ZORDER_ABOVE_CONTENT = 7,
+			PAINT_ZORDER_WINDOW_TOP = 8,
+			_PAINT_ZORDER_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HTML_PAINT_DRAW_FLAGS : int32
 		{
-			HTMLPAINT_DRAW_UPDATEREGION = 1,
-			HTMLPAINT_DRAW_USE_XFORM = 2,
-			HTML_PAINT_DRAW_FLAGS_Max = 2147483647,
+			PAINT_DRAW_UPDATEREGION = 1,
+			PAINT_DRAW_USE_XFORM = 2,
+			_PAINT_DRAW_FLAGS_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HTML_PAINT_EVENT_FLAGS : int32
 		{
-			HTMLPAINT_EVENT_TARGET = 1,
-			HTMLPAINT_EVENT_SETCURSOR = 2,
-			HTML_PAINT_EVENT_FLAGS_Max = 2147483647,
+			PAINT_EVENT_TARGET = 1,
+			PAINT_EVENT_SETCURSOR = 2,
+			_PAINT_EVENT_FLAGS_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HTML_PAINT_DRAW_INFO_FLAGS : int32
 		{
-			HTMLPAINT_DRAWINFO_VIEWPORT = 1,
-			HTMLPAINT_DRAWINFO_UPDATEREGION = 2,
-			HTMLPAINT_DRAWINFO_XFORM = 4,
-			HTML_PAINT_DRAW_INFO_FLAGS_Max = 2147483647,
+			PAINT_DRAWINFO_VIEWPORT = 1,
+			PAINT_DRAWINFO_UPDATEREGION = 2,
+			PAINT_DRAWINFO_XFORM = 4,
+			_PAINT_DRAW_INFO_FLAGS_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HTMLDlgFlag : int32
 		{
-			HTMLDlgFlagNo = 0,
-			HTMLDlgFlagOff = 0,
-			HTMLDlgFlag0 = 0,
-			HTMLDlgFlagYes = 1,
-			HTMLDlgFlagOn = 1,
-			HTMLDlgFlag1 = 1,
-			HTMLDlgFlagNotSet = -1,
-			HTMLDlgFlag_Max = 2147483647,
+			No = 0,
+			Off = 0,
+			_0 = 0,
+			Yes = 1,
+			On = 1,
+			_1 = 1,
+			NotSet = -1,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HTMLDlgBorder : int32
 		{
-			HTMLDlgBorderThin = 0,
-			HTMLDlgBorderThick = 262144,
-			HTMLDlgBorder_Max = 2147483647,
+			Thin = 0,
+			Thick = 262144,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HTMLDlgEdge : int32
 		{
-			HTMLDlgEdgeSunken = 0,
-			HTMLDlgEdgeRaised = 16,
-			HTMLDlgEdge_Max = 2147483647,
+			Sunken = 0,
+			Raised = 16,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HTMLDlgCenter : int32
 		{
-			HTMLDlgCenterNo = 0,
-			HTMLDlgCenterOff = 0,
-			HTMLDlgCenter0 = 0,
-			HTMLDlgCenterYes = 1,
-			HTMLDlgCenterOn = 1,
-			HTMLDlgCenter1 = 1,
-			HTMLDlgCenterParent = 1,
-			HTMLDlgCenterDesktop = 2,
-			HTMLDlgCenter_Max = 2147483647,
+			No = 0,
+			Off = 0,
+			_0 = 0,
+			Yes = 1,
+			On = 1,
+			_1 = 1,
+			Parent = 1,
+			Desktop = 2,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HTMLAppFlag : int32
 		{
-			HTMLAppFlagNo = 0,
-			HTMLAppFlagOff = 0,
-			HTMLAppFlag0 = 0,
-			HTMLAppFlagYes = 1,
-			HTMLAppFlagOn = 1,
-			HTMLAppFlag1 = 1,
-			HTMLAppFlag_Max = 2147483647,
+			No = 0,
+			Off = 0,
+			_0 = 0,
+			Yes = 1,
+			On = 1,
+			_1 = 1,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HTMLMinimizeFlag : int32
 		{
-			HTMLMinimizeFlagNo = 0,
-			HTMLMinimizeFlagYes = 131072,
-			HTMLMinimizeFlag_Max = 2147483647,
+			No = 0,
+			Yes = 131072,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HTMLMaximizeFlag : int32
 		{
-			HTMLMaximizeFlagNo = 0,
-			HTMLMaximizeFlagYes = 65536,
-			HTMLMaximizeFlag_Max = 2147483647,
+			No = 0,
+			Yes = 65536,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HTMLCaptionFlag : int32
 		{
-			HTMLCaptionFlagNo = 0,
-			HTMLCaptionFlagYes = 12582912,
-			HTMLCaptionFlag_Max = 2147483647,
+			No = 0,
+			Yes = 12582912,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HTMLSysMenuFlag : int32
 		{
-			HTMLSysMenuFlagNo = 0,
-			HTMLSysMenuFlagYes = 524288,
-			HTMLSysMenuFlag_Max = 2147483647,
+			No = 0,
+			Yes = 524288,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HTMLBorder : int32
 		{
-			HTMLBorderNone = 0,
-			HTMLBorderThick = 262144,
-			HTMLBorderDialog = 4194304,
-			HTMLBorderThin = 8388608,
-			HTMLBorder_Max = 2147483647,
+			None = 0,
+			Thick = 262144,
+			Dialog = 4194304,
+			Thin = 8388608,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HTMLBorderStyle : int32
 		{
-			HTMLBorderStyleNormal = 0,
-			HTMLBorderStyleRaised = 256,
-			HTMLBorderStyleSunken = 512,
-			HTMLBorderStylecombined = 768,
-			HTMLBorderStyleStatic = 131072,
-			HTMLBorderStyle_Max = 2147483647,
+			Normal = 0,
+			Raised = 256,
+			Sunken = 512,
+			combined = 768,
+			Static = 131072,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum HTMLWindowState : int32
 		{
-			HTMLWindowStateNormal = 1,
-			HTMLWindowStateMaximize = 3,
-			HTMLWindowStateMinimize = 6,
-			HTMLWindowState_Max = 2147483647,
+			Normal = 1,
+			Maximize = 3,
+			Minimize = 6,
+			_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum BEHAVIOR_EVENT : int32
 		{
-			BEHAVIOREVENT_FIRST = 0,
-			BEHAVIOREVENT_CONTENTREADY = 0,
-			BEHAVIOREVENT_DOCUMENTREADY = 1,
-			BEHAVIOREVENT_APPLYSTYLE = 2,
-			BEHAVIOREVENT_DOCUMENTCONTEXTCHANGE = 3,
-			BEHAVIOREVENT_CONTENTSAVE = 4,
-			BEHAVIOREVENT_LAST = 4,
-			BEHAVIOR_EVENT_Max = 2147483647,
+			EVENT_FIRST = 0,
+			EVENT_CONTENTREADY = 0,
+			EVENT_DOCUMENTREADY = 1,
+			EVENT_APPLYSTYLE = 2,
+			EVENT_DOCUMENTCONTEXTCHANGE = 3,
+			EVENT_CONTENTSAVE = 4,
+			EVENT_LAST = 4,
+			_EVENT_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum BEHAVIOR_EVENT_FLAGS : int32
 		{
-			BEHAVIOREVENTFLAGS_BUBBLE = 1,
-			BEHAVIOREVENTFLAGS_STANDARDADDITIVE = 2,
-			BEHAVIOR_EVENT_FLAGS_Max = 2147483647,
+			EVENTFLAGS_BUBBLE = 1,
+			EVENTFLAGS_STANDARDADDITIVE = 2,
+			_EVENT_FLAGS_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum BEHAVIOR_RENDER_INFO : int32
 		{
-			BEHAVIORRENDERINFO_BEFOREBACKGROUND = 1,
-			BEHAVIORRENDERINFO_AFTERBACKGROUND = 2,
-			BEHAVIORRENDERINFO_BEFORECONTENT = 4,
-			BEHAVIORRENDERINFO_AFTERCONTENT = 8,
-			BEHAVIORRENDERINFO_AFTERFOREGROUND = 32,
-			BEHAVIORRENDERINFO_ABOVECONTENT = 40,
-			BEHAVIORRENDERINFO_ALLLAYERS = 255,
-			BEHAVIORRENDERINFO_DISABLEBACKGROUND = 256,
-			BEHAVIORRENDERINFO_DISABLENEGATIVEZ = 512,
-			BEHAVIORRENDERINFO_DISABLECONTENT = 1024,
-			BEHAVIORRENDERINFO_DISABLEPOSITIVEZ = 2048,
-			BEHAVIORRENDERINFO_DISABLEALLLAYERS = 3840,
-			BEHAVIORRENDERINFO_HITTESTING = 4096,
-			BEHAVIORRENDERINFO_SURFACE = 1048576,
-			BEHAVIORRENDERINFO_3DSURFACE = 2097152,
-			BEHAVIOR_RENDER_INFO_Max = 2147483647,
+			RENDERINFO_BEFOREBACKGROUND = 1,
+			RENDERINFO_AFTERBACKGROUND = 2,
+			RENDERINFO_BEFORECONTENT = 4,
+			RENDERINFO_AFTERCONTENT = 8,
+			RENDERINFO_AFTERFOREGROUND = 32,
+			RENDERINFO_ABOVECONTENT = 40,
+			RENDERINFO_ALLLAYERS = 255,
+			RENDERINFO_DISABLEBACKGROUND = 256,
+			RENDERINFO_DISABLENEGATIVEZ = 512,
+			RENDERINFO_DISABLECONTENT = 1024,
+			RENDERINFO_DISABLEPOSITIVEZ = 2048,
+			RENDERINFO_DISABLEALLLAYERS = 3840,
+			RENDERINFO_HITTESTING = 4096,
+			RENDERINFO_SURFACE = 1048576,
+			RENDERINFO_3DSURFACE = 2097152,
+			_RENDER_INFO_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum BEHAVIOR_RELATION : int32
 		{
-			BEHAVIOR_FIRSTRELATION = 0,
-			BEHAVIOR_SAMEELEMENT = 0,
-			BEHAVIOR_PARENT = 1,
-			BEHAVIOR_CHILD = 2,
-			BEHAVIOR_SIBLING = 3,
-			BEHAVIOR_LASTRELATION = 3,
-			BEHAVIOR_RELATION_Max = 2147483647,
+			FIRSTRELATION = 0,
+			SAMEELEMENT = 0,
+			PARENT = 1,
+			CHILD = 2,
+			SIBLING = 3,
+			LASTRELATION = 3,
+			RELATION_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum BEHAVIOR_LAYOUT_INFO : int32
 		{
-			BEHAVIORLAYOUTINFO_FULLDELEGATION = 1,
-			BEHAVIORLAYOUTINFO_MODIFYNATURAL = 2,
-			BEHAVIORLAYOUTINFO_MAPSIZE = 4,
-			BEHAVIOR_LAYOUT_INFO_Max = 2147483647,
+			LAYOUTINFO_FULLDELEGATION = 1,
+			LAYOUTINFO_MODIFYNATURAL = 2,
+			LAYOUTINFO_MAPSIZE = 4,
+			_LAYOUT_INFO_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum BEHAVIOR_LAYOUT_MODE : int32
 		{
-			BEHAVIORLAYOUTMODE_NATURAL = 1,
-			BEHAVIORLAYOUTMODE_MINWIDTH = 2,
-			BEHAVIORLAYOUTMODE_MAXWIDTH = 4,
-			BEHAVIORLAYOUTMODE_MEDIA_RESOLUTION = 16384,
-			BEHAVIORLAYOUTMODE_FINAL_PERCENT = 32768,
-			BEHAVIOR_LAYOUT_MODE_Max = 2147483647,
+			LAYOUTMODE_NATURAL = 1,
+			LAYOUTMODE_MINWIDTH = 2,
+			LAYOUTMODE_MAXWIDTH = 4,
+			LAYOUTMODE_MEDIA_RESOLUTION = 16384,
+			LAYOUTMODE_FINAL_PERCENT = 32768,
+			_LAYOUT_MODE_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum ELEMENTDESCRIPTOR_FLAGS : int32
 		{
-			ELEMENTDESCRIPTORFLAGS_LITERAL = 1,
-			ELEMENTDESCRIPTORFLAGS_NESTED_LITERAL = 2,
-			ELEMENTDESCRIPTOR_FLAGS_Max = 2147483647,
+			FLAGS_LITERAL = 1,
+			FLAGS_NESTED_LITERAL = 2,
+			_FLAGS_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum ELEMENTNAMESPACE_FLAGS : int32
 		{
-			ELEMENTNAMESPACEFLAGS_ALLOWANYTAG = 1,
-			ELEMENTNAMESPACEFLAGS_QUERYFORUNKNOWNTAGS = 2,
-			ELEMENTNAMESPACE_FLAGS_Max = 2147483647,
+			FLAGS_ALLOWANYTAG = 1,
+			FLAGS_QUERYFORUNKNOWNTAGS = 2,
+			_FLAGS_Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum VIEW_OBJECT_ALPHA_MODE : int32
 		{
-			VIEW_OBJECT_ALPHA_MODE_IGNORE = 0,
-			VIEW_OBJECT_ALPHA_MODE_PREMULTIPLIED = 1,
-			VIEW_OBJECT_ALPHA_MODE_Max = 2147483647,
+			IGNORE = 0,
+			PREMULTIPLIED = 1,
+			Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum VIEW_OBJECT_COMPOSITION_MODE : int32
 		{
-			VIEW_OBJECT_COMPOSITION_MODE_LEGACY = 0,
-			VIEW_OBJECT_COMPOSITION_MODE_SURFACEPRESENTER = 1,
-			VIEW_OBJECT_COMPOSITION_MODE_Max = 2147483647,
+			LEGACY = 0,
+			SURFACEPRESENTER = 1,
+			Max = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum ExtensionValidationContexts : int32
 		{
-			ExtensionValidationContextNone = 0,
-			ExtensionValidationContextDynamic = 1,
-			ExtensionValidationContextParsed = 2,
+			None = 0,
+			Dynamic = 1,
+			Parsed = 2,
 		}
 		[AllowDuplicates]
 		public enum ExtensionValidationResults : int32
 		{
-			ExtensionValidationResultNone = 0,
-			ExtensionValidationResultDoNotInstantiate = 1,
-			ExtensionValidationResultArrestPageLoad = 2,
+			None = 0,
+			DoNotInstantiate = 1,
+			ArrestPageLoad = 2,
 		}
 		[AllowDuplicates]
 		public enum __MIDL_ITargetFrame2_0001 : int32
 		{
-			FINDFRAME_NONE = 0,
-			FINDFRAME_JUSTTESTEXISTENCE = 1,
-			FINDFRAME_INTERNAL = -2147483648,
+			NONE = 0,
+			JUSTTESTEXISTENCE = 1,
+			INTERNAL = -2147483648,
 		}
 		[AllowDuplicates]
 		public enum __MIDL_ITargetFrame2_0002 : int32
 		{
-			FRAMEOPTIONS_SCROLL_YES = 1,
-			FRAMEOPTIONS_SCROLL_NO = 2,
-			FRAMEOPTIONS_SCROLL_AUTO = 4,
-			FRAMEOPTIONS_NORESIZE = 8,
-			FRAMEOPTIONS_NO3DBORDER = 16,
-			FRAMEOPTIONS_DESKTOP = 32,
-			FRAMEOPTIONS_BROWSERBAND = 64,
+			SCROLL_YES = 1,
+			SCROLL_NO = 2,
+			SCROLL_AUTO = 4,
+			NORESIZE = 8,
+			NO3DBORDER = 16,
+			DESKTOP = 32,
+			BROWSERBAND = 64,
 		}
 		[AllowDuplicates]
 		public enum __MIDL_ITargetFrame_0001 : int32
 		{
-			NAVIGATEFRAME_FL_RECORD = 1,
-			NAVIGATEFRAME_FL_POST = 2,
-			NAVIGATEFRAME_FL_NO_DOC_CACHE = 4,
-			NAVIGATEFRAME_FL_NO_IMAGE_CACHE = 8,
-			NAVIGATEFRAME_FL_AUTH_FAIL_CACHE_OK = 16,
-			NAVIGATEFRAME_FL_SENDING_FROM_FORM = 32,
-			NAVIGATEFRAME_FL_REALLY_SENDING_FROM_FORM = 64,
+			RECORD = 1,
+			POST = 2,
+			NO_DOC_CACHE = 4,
+			NO_IMAGE_CACHE = 8,
+			AUTH_FAIL_CACHE_OK = 16,
+			SENDING_FROM_FORM = 32,
+			REALLY_SENDING_FROM_FORM = 64,
 		}
 		[AllowDuplicates]
 		public enum MediaActivityNotifyType : int32
 		{
-			MediaPlayback = 0,
-			MediaRecording = 1,
-			MediaCasting = 2,
+			Playback = 0,
+			Recording = 1,
+			Casting = 2,
 		}
 		[AllowDuplicates]
 		public enum SCROLLABLECONTEXTMENU_PLACEMENT : int32
 		{
-			SCMP_TOP = 0,
-			SCMP_BOTTOM = 1,
-			SCMP_LEFT = 2,
-			SCMP_RIGHT = 3,
-			SCMP_FULL = 4,
+			TOP = 0,
+			BOTTOM = 1,
+			LEFT = 2,
+			RIGHT = 3,
+			FULL = 4,
 		}
 		[AllowDuplicates]
 		public enum INTERNETEXPLORERCONFIGURATION : int32
 		{
-			INTERNETEXPLORERCONFIGURATION_HOST = 1,
-			INTERNETEXPLORERCONFIGURATION_WEB_DRIVER = 2,
-			INTERNETEXPLORERCONFIGURATION_WEB_DRIVER_EDGE = 4,
+			HOST = 1,
+			WEB_DRIVER = 2,
+			WEB_DRIVER_EDGE = 4,
 		}
 		[AllowDuplicates]
 		public enum IELAUNCHOPTION_FLAGS : int32
 		{
-			IELAUNCHOPTION_SCRIPTDEBUG = 1,
-			IELAUNCHOPTION_FORCE_COMPAT = 2,
-			IELAUNCHOPTION_FORCE_EDGE = 4,
-			IELAUNCHOPTION_LOCK_ENGINE = 8,
+			SCRIPTDEBUG = 1,
+			FORCE_COMPAT = 2,
+			FORCE_EDGE = 4,
+			LOCK_ENGINE = 8,
 		}
 		[AllowDuplicates]
 		public enum DOCHOSTUITYPE : int32
 		{
-			DOCHOSTUITYPE_BROWSE = 0,
-			DOCHOSTUITYPE_AUTHOR = 1,
+			BROWSE = 0,
+			AUTHOR = 1,
 		}
 		[AllowDuplicates]
 		public enum DOCHOSTUIDBLCLK : int32
 		{
-			DOCHOSTUIDBLCLK_DEFAULT = 0,
-			DOCHOSTUIDBLCLK_SHOWPROPERTIES = 1,
-			DOCHOSTUIDBLCLK_SHOWCODE = 2,
+			DEFAULT = 0,
+			SHOWPROPERTIES = 1,
+			SHOWCODE = 2,
 		}
 		[AllowDuplicates]
 		public enum DOCHOSTUIFLAG : int32
 		{
-			DOCHOSTUIFLAG_DIALOG = 1,
-			DOCHOSTUIFLAG_DISABLE_HELP_MENU = 2,
-			DOCHOSTUIFLAG_NO3DBORDER = 4,
-			DOCHOSTUIFLAG_SCROLL_NO = 8,
-			DOCHOSTUIFLAG_DISABLE_SCRIPT_INACTIVE = 16,
-			DOCHOSTUIFLAG_OPENNEWWIN = 32,
-			DOCHOSTUIFLAG_DISABLE_OFFSCREEN = 64,
-			DOCHOSTUIFLAG_FLAT_SCROLLBAR = 128,
-			DOCHOSTUIFLAG_DIV_BLOCKDEFAULT = 256,
-			DOCHOSTUIFLAG_ACTIVATE_CLIENTHIT_ONLY = 512,
-			DOCHOSTUIFLAG_OVERRIDEBEHAVIORFACTORY = 1024,
-			DOCHOSTUIFLAG_CODEPAGELINKEDFONTS = 2048,
-			DOCHOSTUIFLAG_URL_ENCODING_DISABLE_UTF8 = 4096,
-			DOCHOSTUIFLAG_URL_ENCODING_ENABLE_UTF8 = 8192,
-			DOCHOSTUIFLAG_ENABLE_FORMS_AUTOCOMPLETE = 16384,
-			DOCHOSTUIFLAG_ENABLE_INPLACE_NAVIGATION = 65536,
-			DOCHOSTUIFLAG_IME_ENABLE_RECONVERSION = 131072,
-			DOCHOSTUIFLAG_THEME = 262144,
-			DOCHOSTUIFLAG_NOTHEME = 524288,
-			DOCHOSTUIFLAG_NOPICS = 1048576,
-			DOCHOSTUIFLAG_NO3DOUTERBORDER = 2097152,
-			DOCHOSTUIFLAG_DISABLE_EDIT_NS_FIXUP = 4194304,
-			DOCHOSTUIFLAG_LOCAL_MACHINE_ACCESS_CHECK = 8388608,
-			DOCHOSTUIFLAG_DISABLE_UNTRUSTEDPROTOCOL = 16777216,
-			DOCHOSTUIFLAG_HOST_NAVIGATES = 33554432,
-			DOCHOSTUIFLAG_ENABLE_REDIRECT_NOTIFICATION = 67108864,
-			DOCHOSTUIFLAG_USE_WINDOWLESS_SELECTCONTROL = 134217728,
-			DOCHOSTUIFLAG_USE_WINDOWED_SELECTCONTROL = 268435456,
-			DOCHOSTUIFLAG_ENABLE_ACTIVEX_INACTIVATE_MODE = 536870912,
-			DOCHOSTUIFLAG_DPI_AWARE = 1073741824,
+			DIALOG = 1,
+			DISABLE_HELP_MENU = 2,
+			NO3DBORDER = 4,
+			SCROLL_NO = 8,
+			DISABLE_SCRIPT_INACTIVE = 16,
+			OPENNEWWIN = 32,
+			DISABLE_OFFSCREEN = 64,
+			FLAT_SCROLLBAR = 128,
+			DIV_BLOCKDEFAULT = 256,
+			ACTIVATE_CLIENTHIT_ONLY = 512,
+			OVERRIDEBEHAVIORFACTORY = 1024,
+			CODEPAGELINKEDFONTS = 2048,
+			URL_ENCODING_DISABLE_UTF8 = 4096,
+			URL_ENCODING_ENABLE_UTF8 = 8192,
+			ENABLE_FORMS_AUTOCOMPLETE = 16384,
+			ENABLE_INPLACE_NAVIGATION = 65536,
+			IME_ENABLE_RECONVERSION = 131072,
+			THEME = 262144,
+			NOTHEME = 524288,
+			NOPICS = 1048576,
+			NO3DOUTERBORDER = 2097152,
+			DISABLE_EDIT_NS_FIXUP = 4194304,
+			LOCAL_MACHINE_ACCESS_CHECK = 8388608,
+			DISABLE_UNTRUSTEDPROTOCOL = 16777216,
+			HOST_NAVIGATES = 33554432,
+			ENABLE_REDIRECT_NOTIFICATION = 67108864,
+			USE_WINDOWLESS_SELECTCONTROL = 134217728,
+			USE_WINDOWED_SELECTCONTROL = 268435456,
+			ENABLE_ACTIVEX_INACTIVATE_MODE = 536870912,
+			DPI_AWARE = 1073741824,
 		}
 		[AllowDuplicates]
 		public enum OpenServiceErrors : int32
 		{
-			OS_E_NOTFOUND = -2147287038,
-			OS_E_NOTSUPPORTED = -2147467231,
-			OS_E_CANCELLED = -2147471631,
-			OS_E_GPDISABLED = -1072886820,
+			NOTFOUND = -2147287038,
+			NOTSUPPORTED = -2147467231,
+			CANCELLED = -2147471631,
+			GPDISABLED = -1072886820,
 		}
 		[AllowDuplicates]
 		public enum OpenServiceActivityContentType : int32
 		{
-			ActivityContentNone = -1,
-			ActivityContentDocument = 0,
-			ActivityContentSelection = 1,
-			ActivityContentLink = 2,
-			ActivityContentCount = 3,
+			None = -1,
+			Document = 0,
+			Selection = 1,
+			Link = 2,
+			Count = 3,
 		}
 		[AllowDuplicates]
 		public enum ADDURL_FLAG : int32
 		{
-			ADDURL_FIRST = 0,
-			ADDURL_ADDTOHISTORYANDCACHE = 0,
-			ADDURL_ADDTOCACHE = 1,
-			ADDURL_Max = 2147483647,
+			FIRST = 0,
+			ADDTOHISTORYANDCACHE = 0,
+			ADDTOCACHE = 1,
+			Max = 2147483647,
 		}
 		
 		// --- Function Pointers ---

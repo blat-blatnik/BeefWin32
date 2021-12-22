@@ -14,8 +14,8 @@ namespace Win32
 		[AllowDuplicates]
 		public enum XAML_REFERENCETRACKER_DISCONNECT : int32
 		{
-			XAML_REFERENCETRACKER_DISCONNECT_DEFAULT = 0,
-			XAML_REFERENCETRACKER_DISCONNECT_SUSPEND = 1,
+			DEFAULT = 0,
+			SUSPEND = 1,
 		}
 		
 		// --- Structs ---

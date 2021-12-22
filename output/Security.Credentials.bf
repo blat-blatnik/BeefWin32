@@ -136,63 +136,63 @@ namespace Win32
 		[AllowDuplicates]
 		public enum CRED_FLAGS : uint32
 		{
-			CRED_FLAGS_PASSWORD_FOR_CERT = 1,
-			CRED_FLAGS_PROMPT_NOW = 2,
-			CRED_FLAGS_USERNAME_TARGET = 4,
-			CRED_FLAGS_OWF_CRED_BLOB = 8,
-			CRED_FLAGS_REQUIRE_CONFIRMATION = 16,
-			CRED_FLAGS_WILDCARD_MATCH = 32,
-			CRED_FLAGS_VSM_PROTECTED = 64,
-			CRED_FLAGS_NGC_CERT = 128,
-			CRED_FLAGS_VALID_FLAGS = 61695,
-			CRED_FLAGS_VALID_INPUT_FLAGS = 61599,
+			PASSWORD_FOR_CERT = 1,
+			PROMPT_NOW = 2,
+			USERNAME_TARGET = 4,
+			OWF_CRED_BLOB = 8,
+			REQUIRE_CONFIRMATION = 16,
+			WILDCARD_MATCH = 32,
+			VSM_PROTECTED = 64,
+			NGC_CERT = 128,
+			VALID_FLAGS = 61695,
+			VALID_INPUT_FLAGS = 61599,
 		}
 		[AllowDuplicates]
 		public enum CRED_TYPE : uint32
 		{
-			CRED_TYPE_GENERIC = 1,
-			CRED_TYPE_DOMAIN_PASSWORD = 2,
-			CRED_TYPE_DOMAIN_CERTIFICATE = 3,
-			CRED_TYPE_DOMAIN_VISIBLE_PASSWORD = 4,
-			CRED_TYPE_GENERIC_CERTIFICATE = 5,
-			CRED_TYPE_DOMAIN_EXTENDED = 6,
-			CRED_TYPE_MAXIMUM = 7,
-			CRED_TYPE_MAXIMUM_EX = 1007,
+			GENERIC = 1,
+			DOMAIN_PASSWORD = 2,
+			DOMAIN_CERTIFICATE = 3,
+			DOMAIN_VISIBLE_PASSWORD = 4,
+			GENERIC_CERTIFICATE = 5,
+			DOMAIN_EXTENDED = 6,
+			MAXIMUM = 7,
+			MAXIMUM_EX = 1007,
 		}
 		[AllowDuplicates]
 		public enum CRED_PERSIST : uint32
 		{
-			CRED_PERSIST_NONE = 0,
-			CRED_PERSIST_SESSION = 1,
-			CRED_PERSIST_LOCAL_MACHINE = 2,
-			CRED_PERSIST_ENTERPRISE = 3,
+			NONE = 0,
+			SESSION = 1,
+			LOCAL_MACHINE = 2,
+			ENTERPRISE = 3,
 		}
 		[AllowDuplicates]
 		public enum CREDUI_FLAGS : uint32
 		{
-			CREDUI_FLAGS_ALWAYS_SHOW_UI = 128,
-			CREDUI_FLAGS_COMPLETE_USERNAME = 2048,
-			CREDUI_FLAGS_DO_NOT_PERSIST = 2,
-			CREDUI_FLAGS_EXCLUDE_CERTIFICATES = 8,
-			CREDUI_FLAGS_EXPECT_CONFIRMATION = 131072,
-			CREDUI_FLAGS_GENERIC_CREDENTIALS = 262144,
-			CREDUI_FLAGS_INCORRECT_PASSWORD = 1,
-			CREDUI_FLAGS_KEEP_USERNAME = 1048576,
-			CREDUI_FLAGS_PASSWORD_ONLY_OK = 512,
-			CREDUI_FLAGS_PERSIST = 4096,
-			CREDUI_FLAGS_REQUEST_ADMINISTRATOR = 4,
-			CREDUI_FLAGS_REQUIRE_CERTIFICATE = 16,
-			CREDUI_FLAGS_REQUIRE_SMARTCARD = 256,
-			CREDUI_FLAGS_SERVER_CREDENTIAL = 16384,
-			CREDUI_FLAGS_SHOW_SAVE_CHECK_BOX = 64,
-			CREDUI_FLAGS_USERNAME_TARGET_CREDENTIALS = 524288,
-			CREDUI_FLAGS_VALIDATE_USERNAME = 1024,
+			ALWAYS_SHOW_UI = 128,
+			COMPLETE_USERNAME = 2048,
+			DO_NOT_PERSIST = 2,
+			EXCLUDE_CERTIFICATES = 8,
+			EXPECT_CONFIRMATION = 131072,
+			GENERIC_CREDENTIALS = 262144,
+			INCORRECT_PASSWORD = 1,
+			KEEP_USERNAME = 1048576,
+			PASSWORD_ONLY_OK = 512,
+			PERSIST = 4096,
+			REQUEST_ADMINISTRATOR = 4,
+			REQUIRE_CERTIFICATE = 16,
+			REQUIRE_SMARTCARD = 256,
+			SERVER_CREDENTIAL = 16384,
+			SHOW_SAVE_CHECK_BOX = 64,
+			USERNAME_TARGET_CREDENTIALS = 524288,
+			VALIDATE_USERNAME = 1024,
 		}
 		[AllowDuplicates]
 		public enum SCARD_SCOPE : uint32
 		{
-			SCARD_SCOPE_USER = 0,
-			SCARD_SCOPE_SYSTEM = 2,
+			USER = 0,
+			SYSTEM = 2,
 		}
 		[AllowDuplicates]
 		public enum CRED_ENUMERATE_FLAGS : uint32
@@ -202,57 +202,57 @@ namespace Win32
 		[AllowDuplicates]
 		public enum CREDUIWIN_FLAGS : uint32
 		{
-			CREDUIWIN_GENERIC = 1,
-			CREDUIWIN_CHECKBOX = 2,
-			CREDUIWIN_AUTHPACKAGE_ONLY = 16,
-			CREDUIWIN_IN_CRED_ONLY = 32,
-			CREDUIWIN_ENUMERATE_ADMINS = 256,
-			CREDUIWIN_ENUMERATE_CURRENT_USER = 512,
-			CREDUIWIN_SECURE_PROMPT = 4096,
-			CREDUIWIN_PREPROMPTING = 8192,
-			CREDUIWIN_PACK_32_WOW = 268435456,
+			GENERIC = 1,
+			CHECKBOX = 2,
+			AUTHPACKAGE_ONLY = 16,
+			IN_CRED_ONLY = 32,
+			ENUMERATE_ADMINS = 256,
+			ENUMERATE_CURRENT_USER = 512,
+			SECURE_PROMPT = 4096,
+			PREPROMPTING = 8192,
+			PACK_32_WOW = 268435456,
 		}
 		[AllowDuplicates]
 		public enum SCARD_STATE : uint32
 		{
-			SCARD_STATE_UNAWARE = 0,
-			SCARD_STATE_IGNORE = 1,
-			SCARD_STATE_UNAVAILABLE = 8,
-			SCARD_STATE_EMPTY = 16,
-			SCARD_STATE_PRESENT = 32,
-			SCARD_STATE_ATRMATCH = 64,
-			SCARD_STATE_EXCLUSIVE = 128,
-			SCARD_STATE_INUSE = 256,
-			SCARD_STATE_MUTE = 512,
-			SCARD_STATE_CHANGED = 2,
-			SCARD_STATE_UNKNOWN = 4,
+			UNAWARE = 0,
+			IGNORE = 1,
+			UNAVAILABLE = 8,
+			EMPTY = 16,
+			PRESENT = 32,
+			ATRMATCH = 64,
+			EXCLUSIVE = 128,
+			INUSE = 256,
+			MUTE = 512,
+			CHANGED = 2,
+			UNKNOWN = 4,
 		}
 		[AllowDuplicates]
 		public enum CRED_PACK_FLAGS : uint32
 		{
-			CRED_PACK_PROTECTED_CREDENTIALS = 1,
-			CRED_PACK_WOW_BUFFER = 2,
-			CRED_PACK_GENERIC_CREDENTIALS = 4,
-			CRED_PACK_ID_PROVIDER_CREDENTIALS = 8,
+			PROTECTED_CREDENTIALS = 1,
+			WOW_BUFFER = 2,
+			GENERIC_CREDENTIALS = 4,
+			ID_PROVIDER_CREDENTIALS = 8,
 		}
 		[AllowDuplicates]
 		public enum KeyCredentialManagerOperationErrorStates : uint32
 		{
-			KeyCredentialManagerOperationErrorStateNone = 0,
-			KeyCredentialManagerOperationErrorStateDeviceJoinFailure = 1,
-			KeyCredentialManagerOperationErrorStateTokenFailure = 2,
-			KeyCredentialManagerOperationErrorStateCertificateFailure = 4,
-			KeyCredentialManagerOperationErrorStateRemoteSessionFailure = 8,
-			KeyCredentialManagerOperationErrorStatePolicyFailure = 16,
-			KeyCredentialManagerOperationErrorStateHardwareFailure = 32,
-			KeyCredentialManagerOperationErrorStatePinExistsFailure = 64,
+			None = 0,
+			DeviceJoinFailure = 1,
+			TokenFailure = 2,
+			CertificateFailure = 4,
+			RemoteSessionFailure = 8,
+			PolicyFailure = 16,
+			HardwareFailure = 32,
+			PinExistsFailure = 64,
 		}
 		[AllowDuplicates]
 		public enum KeyCredentialManagerOperationType : int32
 		{
-			KeyCredentialManagerProvisioning = 0,
-			KeyCredentialManagerPinChange = 1,
-			KeyCredentialManagerPinReset = 2,
+			rovisioning = 0,
+			inChange = 1,
+			inReset = 2,
 		}
 		[AllowDuplicates]
 		public enum CRED_MARSHAL_TYPE : int32
@@ -266,27 +266,27 @@ namespace Win32
 		[AllowDuplicates]
 		public enum CRED_PROTECTION_TYPE : int32
 		{
-			CredUnprotected = 0,
-			CredUserProtection = 1,
-			CredTrustedProtection = 2,
-			CredForSystemProtection = 3,
+			Unprotected = 0,
+			UserProtection = 1,
+			TrustedProtection = 2,
+			ForSystemProtection = 3,
 		}
 		[AllowDuplicates]
 		public enum READER_SEL_REQUEST_MATCH_TYPE : int32
 		{
-			RSR_MATCH_TYPE_READER_AND_CONTAINER = 1,
-			RSR_MATCH_TYPE_SERIAL_NUMBER = 2,
-			RSR_MATCH_TYPE_ALL_CARDS = 3,
+			READER_AND_CONTAINER = 1,
+			SERIAL_NUMBER = 2,
+			ALL_CARDS = 3,
 		}
 		[AllowDuplicates]
 		public enum CREDSPP_SUBMIT_TYPE : int32
 		{
-			CredsspPasswordCreds = 2,
-			CredsspSchannelCreds = 4,
-			CredsspCertificateCreds = 13,
-			CredsspSubmitBufferBoth = 50,
-			CredsspSubmitBufferBothOld = 51,
-			CredsspCredEx = 100,
+			PasswordCreds = 2,
+			SchannelCreds = 4,
+			CertificateCreds = 13,
+			SubmitBufferBoth = 50,
+			SubmitBufferBothOld = 51,
+			CredEx = 100,
 		}
 		
 		// --- Function Pointers ---

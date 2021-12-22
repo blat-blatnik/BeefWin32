@@ -10,26 +10,26 @@ namespace Win32
 		[AllowDuplicates]
 		public enum UpdateImpactLevel : int32
 		{
-			UpdateImpactLevel_None = 0,
-			UpdateImpactLevel_Low = 1,
-			UpdateImpactLevel_Medium = 2,
-			UpdateImpactLevel_High = 3,
+			None = 0,
+			Low = 1,
+			Medium = 2,
+			High = 3,
 		}
 		[AllowDuplicates]
 		public enum UpdateAssessmentStatus : int32
 		{
-			UpdateAssessmentStatus_Latest = 0,
-			UpdateAssessmentStatus_NotLatestSoftRestriction = 1,
-			UpdateAssessmentStatus_NotLatestHardRestriction = 2,
-			UpdateAssessmentStatus_NotLatestEndOfSupport = 3,
-			UpdateAssessmentStatus_NotLatestServicingTrain = 4,
-			UpdateAssessmentStatus_NotLatestDeferredFeature = 5,
-			UpdateAssessmentStatus_NotLatestDeferredQuality = 6,
-			UpdateAssessmentStatus_NotLatestPausedFeature = 7,
-			UpdateAssessmentStatus_NotLatestPausedQuality = 8,
-			UpdateAssessmentStatus_NotLatestManaged = 9,
-			UpdateAssessmentStatus_NotLatestUnknown = 10,
-			UpdateAssessmentStatus_NotLatestTargetedVersion = 11,
+			Latest = 0,
+			NotLatestSoftRestriction = 1,
+			NotLatestHardRestriction = 2,
+			NotLatestEndOfSupport = 3,
+			NotLatestServicingTrain = 4,
+			NotLatestDeferredFeature = 5,
+			NotLatestDeferredQuality = 6,
+			NotLatestPausedFeature = 7,
+			NotLatestPausedQuality = 8,
+			NotLatestManaged = 9,
+			NotLatestUnknown = 10,
+			NotLatestTargetedVersion = 11,
 		}
 		
 		// --- Structs ---

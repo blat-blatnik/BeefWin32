@@ -958,45 +958,45 @@ namespace Win32
 		[AllowDuplicates]
 		public enum JET_RELOP : int32
 		{
-			JET_relopEquals = 0,
-			JET_relopPrefixEquals = 1,
-			JET_relopNotEquals = 2,
-			JET_relopLessThanOrEqual = 3,
-			JET_relopLessThan = 4,
-			JET_relopGreaterThanOrEqual = 5,
-			JET_relopGreaterThan = 6,
-			JET_relopBitmaskEqualsZero = 7,
-			JET_relopBitmaskNotEqualsZero = 8,
+			Equals = 0,
+			PrefixEquals = 1,
+			NotEquals = 2,
+			LessThanOrEqual = 3,
+			LessThan = 4,
+			GreaterThanOrEqual = 5,
+			GreaterThan = 6,
+			BitmaskEqualsZero = 7,
+			BitmaskNotEqualsZero = 8,
 		}
 		[AllowDuplicates]
 		public enum JET_ERRCAT : int32
 		{
-			JET_errcatUnknown = 0,
-			JET_errcatError = 1,
-			JET_errcatOperation = 2,
-			JET_errcatFatal = 3,
-			JET_errcatIO = 4,
-			JET_errcatResource = 5,
-			JET_errcatMemory = 6,
-			JET_errcatQuota = 7,
-			JET_errcatDisk = 8,
-			JET_errcatData = 9,
-			JET_errcatCorruption = 10,
-			JET_errcatInconsistent = 11,
-			JET_errcatFragmentation = 12,
-			JET_errcatApi = 13,
-			JET_errcatUsage = 14,
-			JET_errcatState = 15,
-			JET_errcatObsolete = 16,
-			JET_errcatMax = 17,
+			Unknown = 0,
+			Error = 1,
+			Operation = 2,
+			Fatal = 3,
+			IO = 4,
+			Resource = 5,
+			Memory = 6,
+			Quota = 7,
+			Disk = 8,
+			Data = 9,
+			Corruption = 10,
+			Inconsistent = 11,
+			Fragmentation = 12,
+			Api = 13,
+			Usage = 14,
+			State = 15,
+			Obsolete = 16,
+			Max = 17,
 		}
 		[AllowDuplicates]
 		public enum JET_INDEXCHECKING : int32
 		{
-			JET_IndexCheckingOff = 0,
-			JET_IndexCheckingOn = 1,
-			JET_IndexCheckingDeferToOpenTable = 2,
-			JET_IndexCheckingMax = 3,
+			Off = 0,
+			On = 1,
+			DeferToOpenTable = 2,
+			Max = 3,
 		}
 		
 		// --- Function Pointers ---

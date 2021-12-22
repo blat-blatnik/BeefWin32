@@ -201,255 +201,255 @@ namespace Win32
 		[AllowDuplicates]
 		public enum PERF_DETAIL : uint32
 		{
-			PERF_DETAIL_NOVICE = 100,
-			PERF_DETAIL_ADVANCED = 200,
-			PERF_DETAIL_EXPERT = 300,
-			PERF_DETAIL_WIZARD = 400,
+			NOVICE = 100,
+			ADVANCED = 200,
+			EXPERT = 300,
+			WIZARD = 400,
 		}
 		[AllowDuplicates]
 		public enum REAL_TIME_DATA_SOURCE_ID_FLAGS : uint32
 		{
-			DATA_SOURCE_REGISTRY = 1,
-			DATA_SOURCE_WBEM = 4,
+			REGISTRY = 1,
+			WBEM = 4,
 		}
 		[AllowDuplicates]
 		public enum PDH_PATH_FLAGS : uint32
 		{
-			PDH_PATH_WBEM_RESULT = 1,
-			PDH_PATH_WBEM_INPUT = 2,
-			PDH_PATH_WBEM_NONE = 0,
+			RESULT = 1,
+			INPUT = 2,
+			NONE = 0,
 		}
 		[AllowDuplicates]
 		public enum PDH_FMT : uint32
 		{
-			PDH_FMT_DOUBLE = 512,
-			PDH_FMT_LARGE = 1024,
-			PDH_FMT_LONG = 256,
+			DOUBLE = 512,
+			LARGE = 1024,
+			LONG = 256,
 		}
 		[AllowDuplicates]
 		public enum PDH_LOG_TYPE : uint32
 		{
-			PDH_LOG_TYPE_UNDEFINED = 0,
-			PDH_LOG_TYPE_CSV = 1,
-			PDH_LOG_TYPE_SQL = 7,
-			PDH_LOG_TYPE_TSV = 2,
-			PDH_LOG_TYPE_BINARY = 8,
-			PDH_LOG_TYPE_PERFMON = 6,
+			UNDEFINED = 0,
+			CSV = 1,
+			SQL = 7,
+			TSV = 2,
+			BINARY = 8,
+			PERFMON = 6,
 		}
 		[AllowDuplicates]
 		public enum PDH_LOG : uint32
 		{
-			PDH_LOG_READ_ACCESS = 65536,
-			PDH_LOG_WRITE_ACCESS = 131072,
-			PDH_LOG_UPDATE_ACCESS = 262144,
+			READ_ACCESS = 65536,
+			WRITE_ACCESS = 131072,
+			UPDATE_ACCESS = 262144,
 		}
 		[AllowDuplicates]
 		public enum PDH_SELECT_DATA_SOURCE_FLAGS : uint32
 		{
-			PDH_FLAGS_FILE_BROWSER_ONLY = 1,
-			PDH_FLAGS_NONE = 0,
+			FILE_BROWSER_ONLY = 1,
+			NONE = 0,
 		}
 		[AllowDuplicates]
 		public enum PDH_DLL_VERSION : uint32
 		{
-			PDH_CVERSION_WIN50 = 1280,
-			PDH_VERSION = 1283,
+			CVERSION_WIN50 = 1280,
+			VERSION = 1283,
 		}
 		[AllowDuplicates]
 		public enum PERF_COUNTER_AGGREGATE_FUNC : uint32
 		{
-			PERF_AGGREGATE_UNDEFINED = 0,
-			PERF_AGGREGATE_TOTAL = 1,
-			PERF_AGGREGATE_AVG = 2,
-			PERF_AGGREGATE_MIN = 3,
+			UNDEFINED = 0,
+			TOTAL = 1,
+			AVG = 2,
+			MIN = 3,
 		}
 		[AllowDuplicates]
 		public enum DataCollectorType : int32
 		{
-			plaPerformanceCounter = 0,
-			plaTrace = 1,
-			plaConfiguration = 2,
-			plaAlert = 3,
-			plaApiTrace = 4,
+			PerformanceCounter = 0,
+			Trace = 1,
+			Configuration = 2,
+			Alert = 3,
+			ApiTrace = 4,
 		}
 		[AllowDuplicates]
 		public enum FileFormat : int32
 		{
-			plaCommaSeparated = 0,
-			plaTabSeparated = 1,
-			plaSql = 2,
-			plaBinary = 3,
+			CommaSeparated = 0,
+			TabSeparated = 1,
+			Sql = 2,
+			Binary = 3,
 		}
 		[AllowDuplicates]
 		public enum AutoPathFormat : int32
 		{
-			plaNone = 0,
-			plaPattern = 1,
-			plaComputer = 2,
-			plaMonthDayHour = 256,
-			plaSerialNumber = 512,
-			plaYearDayOfYear = 1024,
-			plaYearMonth = 2048,
-			plaYearMonthDay = 4096,
-			plaYearMonthDayHour = 8192,
-			plaMonthDayHourMinute = 16384,
+			None = 0,
+			Pattern = 1,
+			Computer = 2,
+			MonthDayHour = 256,
+			SerialNumber = 512,
+			YearDayOfYear = 1024,
+			YearMonth = 2048,
+			YearMonthDay = 4096,
+			YearMonthDayHour = 8192,
+			MonthDayHourMinute = 16384,
 		}
 		[AllowDuplicates]
 		public enum DataCollectorSetStatus : int32
 		{
-			plaStopped = 0,
-			plaRunning = 1,
-			plaCompiling = 2,
-			plaPending = 3,
-			plaUndefined = 4,
+			Stopped = 0,
+			Running = 1,
+			Compiling = 2,
+			Pending = 3,
+			Undefined = 4,
 		}
 		[AllowDuplicates]
 		public enum ClockType : int32
 		{
-			plaTimeStamp = 0,
-			plaPerformance = 1,
-			plaSystem = 2,
-			plaCycle = 3,
+			TimeStamp = 0,
+			Performance = 1,
+			System = 2,
+			Cycle = 3,
 		}
 		[AllowDuplicates]
 		public enum StreamMode : int32
 		{
-			plaFile = 1,
-			plaRealTime = 2,
-			plaBoth = 3,
-			plaBuffering = 4,
+			File = 1,
+			RealTime = 2,
+			Both = 3,
+			Buffering = 4,
 		}
 		[AllowDuplicates]
 		public enum CommitMode : int32
 		{
-			plaCreateNew = 1,
-			plaModify = 2,
-			plaCreateOrModify = 3,
-			plaUpdateRunningInstance = 16,
-			plaFlushTrace = 32,
-			plaValidateOnly = 4096,
+			CreateNew = 1,
+			Modify = 2,
+			CreateOrModify = 3,
+			UpdateRunningInstance = 16,
+			FlushTrace = 32,
+			ValidateOnly = 4096,
 		}
 		[AllowDuplicates]
 		public enum ValueMapType : int32
 		{
-			plaIndex = 1,
-			plaFlag = 2,
-			plaFlagArray = 3,
-			plaValidation = 4,
+			Index = 1,
+			Flag = 2,
+			FlagArray = 3,
+			Validation = 4,
 		}
 		[AllowDuplicates]
 		public enum WeekDays : int32
 		{
-			plaRunOnce = 0,
-			plaSunday = 1,
-			plaMonday = 2,
-			plaTuesday = 4,
-			plaWednesday = 8,
-			plaThursday = 16,
-			plaFriday = 32,
-			plaSaturday = 64,
-			plaEveryday = 127,
+			RunOnce = 0,
+			Sunday = 1,
+			Monday = 2,
+			Tuesday = 4,
+			Wednesday = 8,
+			Thursday = 16,
+			Friday = 32,
+			Saturday = 64,
+			Everyday = 127,
 		}
 		[AllowDuplicates]
 		public enum ResourcePolicy : int32
 		{
-			plaDeleteLargest = 0,
-			plaDeleteOldest = 1,
+			Largest = 0,
+			Oldest = 1,
 		}
 		[AllowDuplicates]
 		public enum DataManagerSteps : int32
 		{
-			plaCreateReport = 1,
-			plaRunRules = 2,
-			plaCreateHtml = 4,
-			plaFolderActions = 8,
-			plaResourceFreeing = 16,
+			CreateReport = 1,
+			RunRules = 2,
+			CreateHtml = 4,
+			FolderActions = 8,
+			ResourceFreeing = 16,
 		}
 		[AllowDuplicates]
 		public enum FolderActionSteps : int32
 		{
-			plaCreateCab = 1,
-			plaDeleteData = 2,
-			plaSendCab = 4,
-			plaDeleteCab = 8,
-			plaDeleteReport = 16,
+			CreateCab = 1,
+			DeleteData = 2,
+			SendCab = 4,
+			DeleteCab = 8,
+			DeleteReport = 16,
 		}
 		[AllowDuplicates]
 		public enum PerfRegInfoType : int32
 		{
-			PERF_REG_COUNTERSET_STRUCT = 1,
-			PERF_REG_COUNTER_STRUCT = 2,
-			PERF_REG_COUNTERSET_NAME_STRING = 3,
-			PERF_REG_COUNTERSET_HELP_STRING = 4,
-			PERF_REG_COUNTER_NAME_STRINGS = 5,
-			PERF_REG_COUNTER_HELP_STRINGS = 6,
-			PERF_REG_PROVIDER_NAME = 7,
-			PERF_REG_PROVIDER_GUID = 8,
-			PERF_REG_COUNTERSET_ENGLISH_NAME = 9,
-			PERF_REG_COUNTER_ENGLISH_NAMES = 10,
+			COUNTERSET_STRUCT = 1,
+			COUNTER_STRUCT = 2,
+			COUNTERSET_NAME_STRING = 3,
+			COUNTERSET_HELP_STRING = 4,
+			COUNTER_NAME_STRINGS = 5,
+			COUNTER_HELP_STRINGS = 6,
+			PROVIDER_NAME = 7,
+			PROVIDER_GUID = 8,
+			COUNTERSET_ENGLISH_NAME = 9,
+			COUNTER_ENGLISH_NAMES = 10,
 		}
 		[AllowDuplicates]
 		public enum PerfCounterDataType : int32
 		{
-			PERF_ERROR_RETURN = 0,
-			PERF_SINGLE_COUNTER = 1,
-			PERF_MULTIPLE_COUNTERS = 2,
-			PERF_MULTIPLE_INSTANCES = 4,
-			PERF_COUNTERSET = 6,
+			ERROR_RETURN = 0,
+			SINGLE_COUNTER = 1,
+			MULTIPLE_COUNTERS = 2,
+			MULTIPLE_INSTANCES = 4,
+			COUNTERSET = 6,
 		}
 		[AllowDuplicates]
 		public enum DisplayTypeConstants : int32
 		{
-			sysmonLineGraph = 1,
-			sysmonHistogram = 2,
-			sysmonReport = 3,
-			sysmonChartArea = 4,
-			sysmonChartStackedArea = 5,
+			LineGraph = 1,
+			Histogram = 2,
+			Report = 3,
+			ChartArea = 4,
+			ChartStackedArea = 5,
 		}
 		[AllowDuplicates]
 		public enum ReportValueTypeConstants : int32
 		{
-			sysmonDefaultValue = 0,
-			sysmonCurrentValue = 1,
-			sysmonAverage = 2,
-			sysmonMinimum = 3,
-			sysmonMaximum = 4,
+			DefaultValue = 0,
+			CurrentValue = 1,
+			Average = 2,
+			Minimum = 3,
+			Maximum = 4,
 		}
 		[AllowDuplicates]
 		public enum DataSourceTypeConstants : int32
 		{
-			sysmonNullDataSource = -1,
-			sysmonCurrentActivity = 1,
-			sysmonLogFiles = 2,
-			sysmonSqlLog = 3,
+			NullDataSource = -1,
+			CurrentActivity = 1,
+			LogFiles = 2,
+			SqlLog = 3,
 		}
 		[AllowDuplicates]
 		public enum SysmonFileType : int32
 		{
-			sysmonFileHtml = 1,
-			sysmonFileReport = 2,
-			sysmonFileCsv = 3,
-			sysmonFileTsv = 4,
-			sysmonFileBlg = 5,
-			sysmonFileRetiredBlg = 6,
-			sysmonFileGif = 7,
+			Html = 1,
+			Report = 2,
+			Csv = 3,
+			Tsv = 4,
+			Blg = 5,
+			RetiredBlg = 6,
+			Gif = 7,
 		}
 		[AllowDuplicates]
 		public enum SysmonDataType : int32
 		{
-			sysmonDataAvg = 1,
-			sysmonDataMin = 2,
-			sysmonDataMax = 3,
-			sysmonDataTime = 4,
-			sysmonDataCount = 5,
+			Avg = 1,
+			Min = 2,
+			Max = 3,
+			Time = 4,
+			Count = 5,
 		}
 		[AllowDuplicates]
 		public enum SysmonBatchReason : int32
 		{
-			sysmonBatchNone = 0,
-			sysmonBatchAddFiles = 1,
-			sysmonBatchAddCounters = 2,
-			sysmonBatchAddFilesAutoCounters = 3,
+			None = 0,
+			AddFiles = 1,
+			AddCounters = 2,
+			AddFilesAutoCounters = 3,
 		}
 		
 		// --- Function Pointers ---

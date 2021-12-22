@@ -35,104 +35,104 @@ namespace Win32
 		[AllowDuplicates]
 		public enum APPX_COMPRESSION_OPTION : int32
 		{
-			APPX_COMPRESSION_OPTION_NONE = 0,
-			APPX_COMPRESSION_OPTION_NORMAL = 1,
-			APPX_COMPRESSION_OPTION_MAXIMUM = 2,
-			APPX_COMPRESSION_OPTION_FAST = 3,
-			APPX_COMPRESSION_OPTION_SUPERFAST = 4,
+			NONE = 0,
+			NORMAL = 1,
+			MAXIMUM = 2,
+			FAST = 3,
+			SUPERFAST = 4,
 		}
 		[AllowDuplicates]
 		public enum APPX_FOOTPRINT_FILE_TYPE : int32
 		{
-			APPX_FOOTPRINT_FILE_TYPE_MANIFEST = 0,
-			APPX_FOOTPRINT_FILE_TYPE_BLOCKMAP = 1,
-			APPX_FOOTPRINT_FILE_TYPE_SIGNATURE = 2,
-			APPX_FOOTPRINT_FILE_TYPE_CODEINTEGRITY = 3,
-			APPX_FOOTPRINT_FILE_TYPE_CONTENTGROUPMAP = 4,
+			MANIFEST = 0,
+			BLOCKMAP = 1,
+			SIGNATURE = 2,
+			CODEINTEGRITY = 3,
+			CONTENTGROUPMAP = 4,
 		}
 		[AllowDuplicates]
 		public enum APPX_BUNDLE_FOOTPRINT_FILE_TYPE : int32
 		{
-			APPX_BUNDLE_FOOTPRINT_FILE_TYPE_FIRST = 0,
-			APPX_BUNDLE_FOOTPRINT_FILE_TYPE_MANIFEST = 0,
-			APPX_BUNDLE_FOOTPRINT_FILE_TYPE_BLOCKMAP = 1,
-			APPX_BUNDLE_FOOTPRINT_FILE_TYPE_SIGNATURE = 2,
-			APPX_BUNDLE_FOOTPRINT_FILE_TYPE_LAST = 2,
+			FIRST = 0,
+			MANIFEST = 0,
+			BLOCKMAP = 1,
+			SIGNATURE = 2,
+			LAST = 2,
 		}
 		[AllowDuplicates]
 		public enum APPX_CAPABILITIES : uint32
 		{
-			APPX_CAPABILITY_INTERNET_CLIENT = 1,
-			APPX_CAPABILITY_INTERNET_CLIENT_SERVER = 2,
-			APPX_CAPABILITY_PRIVATE_NETWORK_CLIENT_SERVER = 4,
-			APPX_CAPABILITY_DOCUMENTS_LIBRARY = 8,
-			APPX_CAPABILITY_PICTURES_LIBRARY = 16,
-			APPX_CAPABILITY_VIDEOS_LIBRARY = 32,
-			APPX_CAPABILITY_MUSIC_LIBRARY = 64,
-			APPX_CAPABILITY_ENTERPRISE_AUTHENTICATION = 128,
-			APPX_CAPABILITY_SHARED_USER_CERTIFICATES = 256,
-			APPX_CAPABILITY_REMOVABLE_STORAGE = 512,
-			APPX_CAPABILITY_APPOINTMENTS = 1024,
-			APPX_CAPABILITY_CONTACTS = 2048,
+			INTERNET_CLIENT = 1,
+			INTERNET_CLIENT_SERVER = 2,
+			PRIVATE_NETWORK_CLIENT_SERVER = 4,
+			DOCUMENTS_LIBRARY = 8,
+			PICTURES_LIBRARY = 16,
+			VIDEOS_LIBRARY = 32,
+			MUSIC_LIBRARY = 64,
+			ENTERPRISE_AUTHENTICATION = 128,
+			SHARED_USER_CERTIFICATES = 256,
+			REMOVABLE_STORAGE = 512,
+			APPOINTMENTS = 1024,
+			CONTACTS = 2048,
 		}
 		[AllowDuplicates]
 		public enum APPX_PACKAGE_ARCHITECTURE : int32
 		{
-			APPX_PACKAGE_ARCHITECTURE_X86 = 0,
-			APPX_PACKAGE_ARCHITECTURE_ARM = 5,
-			APPX_PACKAGE_ARCHITECTURE_X64 = 9,
-			APPX_PACKAGE_ARCHITECTURE_NEUTRAL = 11,
-			APPX_PACKAGE_ARCHITECTURE_ARM64 = 12,
+			X86 = 0,
+			ARM = 5,
+			X64 = 9,
+			NEUTRAL = 11,
+			ARM64 = 12,
 		}
 		[AllowDuplicates]
 		public enum APPX_PACKAGE_ARCHITECTURE2 : int32
 		{
-			APPX_PACKAGE_ARCHITECTURE2_X86 = 0,
-			APPX_PACKAGE_ARCHITECTURE2_ARM = 5,
-			APPX_PACKAGE_ARCHITECTURE2_X64 = 9,
-			APPX_PACKAGE_ARCHITECTURE2_NEUTRAL = 11,
-			APPX_PACKAGE_ARCHITECTURE2_ARM64 = 12,
-			APPX_PACKAGE_ARCHITECTURE2_X86_ON_ARM64 = 14,
-			APPX_PACKAGE_ARCHITECTURE2_UNKNOWN = 65535,
+			X86 = 0,
+			ARM = 5,
+			X64 = 9,
+			NEUTRAL = 11,
+			ARM64 = 12,
+			X86_ON_ARM64 = 14,
+			UNKNOWN = 65535,
 		}
 		[AllowDuplicates]
 		public enum APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE : int32
 		{
-			APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE_APPLICATION = 0,
-			APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE_RESOURCE = 1,
+			APPLICATION = 0,
+			RESOURCE = 1,
 		}
 		[AllowDuplicates]
 		public enum DX_FEATURE_LEVEL : int32
 		{
-			DX_FEATURE_LEVEL_UNSPECIFIED = 0,
-			DX_FEATURE_LEVEL_9 = 1,
-			DX_FEATURE_LEVEL_10 = 2,
-			DX_FEATURE_LEVEL_11 = 3,
+			UNSPECIFIED = 0,
+			_9 = 1,
+			_10 = 2,
+			_11 = 3,
 		}
 		[AllowDuplicates]
 		public enum APPX_CAPABILITY_CLASS_TYPE : int32
 		{
-			APPX_CAPABILITY_CLASS_DEFAULT = 0,
-			APPX_CAPABILITY_CLASS_GENERAL = 1,
-			APPX_CAPABILITY_CLASS_RESTRICTED = 2,
-			APPX_CAPABILITY_CLASS_WINDOWS = 4,
-			APPX_CAPABILITY_CLASS_ALL = 7,
-			APPX_CAPABILITY_CLASS_CUSTOM = 8,
+			DEFAULT = 0,
+			GENERAL = 1,
+			RESTRICTED = 2,
+			WINDOWS = 4,
+			ALL = 7,
+			CUSTOM = 8,
 		}
 		[AllowDuplicates]
 		public enum APPX_PACKAGING_CONTEXT_CHANGE_TYPE : int32
 		{
-			APPX_PACKAGING_CONTEXT_CHANGE_TYPE_START = 0,
-			APPX_PACKAGING_CONTEXT_CHANGE_TYPE_CHANGE = 1,
-			APPX_PACKAGING_CONTEXT_CHANGE_TYPE_DETAILS = 2,
-			APPX_PACKAGING_CONTEXT_CHANGE_TYPE_END = 3,
+			START = 0,
+			CHANGE = 1,
+			DETAILS = 2,
+			END = 3,
 		}
 		[AllowDuplicates]
 		public enum APPX_ENCRYPTED_PACKAGE_OPTIONS : uint32
 		{
-			APPX_ENCRYPTED_PACKAGE_OPTION_NONE = 0,
-			APPX_ENCRYPTED_PACKAGE_OPTION_DIFFUSION = 1,
-			APPX_ENCRYPTED_PACKAGE_OPTION_PAGE_HASHING = 2,
+			NONE = 0,
+			DIFFUSION = 1,
+			PAGE_HASHING = 2,
 		}
 		[AllowDuplicates]
 		public enum APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION : int32
@@ -142,113 +142,113 @@ namespace Win32
 		[AllowDuplicates]
 		public enum APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS : uint32
 		{
-			APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTION_NONE = 0,
-			APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTION_SKIP_VALIDATION = 1,
-			APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTION_LOCALIZED = 2,
+			NONE = 0,
+			SKIP_VALIDATION = 1,
+			LOCALIZED = 2,
 		}
 		[AllowDuplicates]
 		public enum PackagePathType : int32
 		{
-			PackagePathType_Install = 0,
-			PackagePathType_Mutable = 1,
-			PackagePathType_Effective = 2,
-			PackagePathType_MachineExternal = 3,
-			PackagePathType_UserExternal = 4,
-			PackagePathType_EffectiveExternal = 5,
+			Install = 0,
+			Mutable = 1,
+			Effective = 2,
+			MachineExternal = 3,
+			UserExternal = 4,
+			EffectiveExternal = 5,
 		}
 		[AllowDuplicates]
 		public enum PackageOrigin : int32
 		{
-			PackageOrigin_Unknown = 0,
-			PackageOrigin_Unsigned = 1,
-			PackageOrigin_Inbox = 2,
-			PackageOrigin_Store = 3,
-			PackageOrigin_DeveloperUnsigned = 4,
-			PackageOrigin_DeveloperSigned = 5,
-			PackageOrigin_LineOfBusiness = 6,
+			Unknown = 0,
+			Unsigned = 1,
+			Inbox = 2,
+			Store = 3,
+			DeveloperUnsigned = 4,
+			DeveloperSigned = 5,
+			LineOfBusiness = 6,
 		}
 		[AllowDuplicates]
 		public enum CreatePackageDependencyOptions : int32
 		{
-			CreatePackageDependencyOptions_None = 0,
-			CreatePackageDependencyOptions_DoNotVerifyDependencyResolution = 1,
-			CreatePackageDependencyOptions_ScopeIsSystem = 2,
+			None = 0,
+			DoNotVerifyDependencyResolution = 1,
+			ScopeIsSystem = 2,
 		}
 		[AllowDuplicates]
 		public enum PackageDependencyLifetimeKind : int32
 		{
-			PackageDependencyLifetimeKind_Process = 0,
-			PackageDependencyLifetimeKind_FilePath = 1,
-			PackageDependencyLifetimeKind_RegistryKey = 2,
+			Process = 0,
+			FilePath = 1,
+			RegistryKey = 2,
 		}
 		[AllowDuplicates]
 		public enum AddPackageDependencyOptions : int32
 		{
-			AddPackageDependencyOptions_None = 0,
-			AddPackageDependencyOptions_PrependIfRankCollision = 1,
+			None = 0,
+			PrependIfRankCollision = 1,
 		}
 		[AllowDuplicates]
 		public enum PackageDependencyProcessorArchitectures : int32
 		{
-			PackageDependencyProcessorArchitectures_None = 0,
-			PackageDependencyProcessorArchitectures_Neutral = 1,
-			PackageDependencyProcessorArchitectures_X86 = 2,
-			PackageDependencyProcessorArchitectures_X64 = 4,
-			PackageDependencyProcessorArchitectures_Arm = 8,
-			PackageDependencyProcessorArchitectures_Arm64 = 16,
-			PackageDependencyProcessorArchitectures_X86A64 = 32,
+			None = 0,
+			Neutral = 1,
+			X86 = 2,
+			X64 = 4,
+			Arm = 8,
+			Arm64 = 16,
+			X86A64 = 32,
 		}
 		[AllowDuplicates]
 		public enum AppPolicyLifecycleManagement : int32
 		{
-			AppPolicyLifecycleManagement_Unmanaged = 0,
-			AppPolicyLifecycleManagement_Managed = 1,
+			Unmanaged = 0,
+			Managed = 1,
 		}
 		[AllowDuplicates]
 		public enum AppPolicyWindowingModel : int32
 		{
-			AppPolicyWindowingModel_None = 0,
-			AppPolicyWindowingModel_Universal = 1,
-			AppPolicyWindowingModel_ClassicDesktop = 2,
-			AppPolicyWindowingModel_ClassicPhone = 3,
+			None = 0,
+			Universal = 1,
+			ClassicDesktop = 2,
+			ClassicPhone = 3,
 		}
 		[AllowDuplicates]
 		public enum AppPolicyMediaFoundationCodecLoading : int32
 		{
-			AppPolicyMediaFoundationCodecLoading_All = 0,
-			AppPolicyMediaFoundationCodecLoading_InboxOnly = 1,
+			All = 0,
+			InboxOnly = 1,
 		}
 		[AllowDuplicates]
 		public enum AppPolicyClrCompat : int32
 		{
-			AppPolicyClrCompat_Other = 0,
-			AppPolicyClrCompat_ClassicDesktop = 1,
-			AppPolicyClrCompat_Universal = 2,
-			AppPolicyClrCompat_PackagedDesktop = 3,
+			Other = 0,
+			ClassicDesktop = 1,
+			Universal = 2,
+			PackagedDesktop = 3,
 		}
 		[AllowDuplicates]
 		public enum AppPolicyThreadInitializationType : int32
 		{
-			AppPolicyThreadInitializationType_None = 0,
-			AppPolicyThreadInitializationType_InitializeWinRT = 1,
+			None = 0,
+			InitializeWinRT = 1,
 		}
 		[AllowDuplicates]
 		public enum AppPolicyShowDeveloperDiagnostic : int32
 		{
-			AppPolicyShowDeveloperDiagnostic_None = 0,
-			AppPolicyShowDeveloperDiagnostic_ShowUI = 1,
+			None = 0,
+			ShowUI = 1,
 		}
 		[AllowDuplicates]
 		public enum AppPolicyProcessTerminationMethod : int32
 		{
-			AppPolicyProcessTerminationMethod_ExitProcess = 0,
-			AppPolicyProcessTerminationMethod_TerminateProcess = 1,
+			ExitProcess = 0,
+			TerminateProcess = 1,
 		}
 		[AllowDuplicates]
 		public enum AppPolicyCreateFileAccess : int32
 		{
-			AppPolicyCreateFileAccess_Full = 0,
-			AppPolicyCreateFileAccess_Limited = 1,
+			Full = 0,
+			Limited = 1,
 		}
 		
 		// --- Structs ---

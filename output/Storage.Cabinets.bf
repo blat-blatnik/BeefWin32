@@ -23,56 +23,56 @@ namespace Win32
 		[AllowDuplicates]
 		public enum FDICREATE_CPU_TYPE : uint32
 		{
-			cpu80286 = 0,
-			cpu80386 = 1,
+			_286 = 0,
+			_386 = 1,
 		}
 		[AllowDuplicates]
 		public enum FCIERROR : int32
 		{
-			FCIERR_NONE = 0,
-			FCIERR_OPEN_SRC = 1,
-			FCIERR_READ_SRC = 2,
-			FCIERR_ALLOC_FAIL = 3,
-			FCIERR_TEMP_FILE = 4,
-			FCIERR_BAD_COMPR_TYPE = 5,
-			FCIERR_CAB_FILE = 6,
-			FCIERR_USER_ABORT = 7,
-			FCIERR_MCI_FAIL = 8,
-			FCIERR_CAB_FORMAT_LIMIT = 9,
+			NONE = 0,
+			OPEN_SRC = 1,
+			READ_SRC = 2,
+			ALLOC_FAIL = 3,
+			TEMP_FILE = 4,
+			BAD_COMPR_TYPE = 5,
+			CAB_FILE = 6,
+			USER_ABORT = 7,
+			MCI_FAIL = 8,
+			CAB_FORMAT_LIMIT = 9,
 		}
 		[AllowDuplicates]
 		public enum FDIERROR : int32
 		{
-			FDIERROR_NONE = 0,
-			FDIERROR_CABINET_NOT_FOUND = 1,
-			FDIERROR_NOT_A_CABINET = 2,
-			FDIERROR_UNKNOWN_CABINET_VERSION = 3,
-			FDIERROR_CORRUPT_CABINET = 4,
-			FDIERROR_ALLOC_FAIL = 5,
-			FDIERROR_BAD_COMPR_TYPE = 6,
-			FDIERROR_MDI_FAIL = 7,
-			FDIERROR_TARGET_FILE = 8,
-			FDIERROR_RESERVE_MISMATCH = 9,
-			FDIERROR_WRONG_CABINET = 10,
-			FDIERROR_USER_ABORT = 11,
-			FDIERROR_EOF = 12,
+			NONE = 0,
+			CABINET_NOT_FOUND = 1,
+			NOT_A_CABINET = 2,
+			UNKNOWN_CABINET_VERSION = 3,
+			CORRUPT_CABINET = 4,
+			ALLOC_FAIL = 5,
+			BAD_COMPR_TYPE = 6,
+			MDI_FAIL = 7,
+			TARGET_FILE = 8,
+			RESERVE_MISMATCH = 9,
+			WRONG_CABINET = 10,
+			USER_ABORT = 11,
+			EOF = 12,
 		}
 		[AllowDuplicates]
 		public enum FDIDECRYPTTYPE : int32
 		{
-			fdidtNEW_CABINET = 0,
-			fdidtNEW_FOLDER = 1,
-			fdidtDECRYPT = 2,
+			NEW_CABINET = 0,
+			NEW_FOLDER = 1,
+			DECRYPT = 2,
 		}
 		[AllowDuplicates]
 		public enum FDINOTIFICATIONTYPE : int32
 		{
-			fdintCABINET_INFO = 0,
-			fdintPARTIAL_FILE = 1,
-			fdintCOPY_FILE = 2,
-			fdintCLOSE_FILE_INFO = 3,
-			fdintNEXT_CABINET = 4,
-			fdintENUMERATE = 5,
+			CABINET_INFO = 0,
+			PARTIAL_FILE = 1,
+			COPY_FILE = 2,
+			CLOSE_FILE_INFO = 3,
+			NEXT_CABINET = 4,
+			ENUMERATE = 5,
 		}
 		
 		// --- Function Pointers ---

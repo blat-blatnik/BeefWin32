@@ -1315,244 +1315,244 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SECPKG_ATTR : uint32
 		{
-			SECPKG_ATTR_C_ACCESS_TOKEN = 2147483666,
-			SECPKG_ATTR_C_FULL_ACCESS_TOKEN = 2147483778,
-			SECPKG_ATTR_CERT_TRUST_STATUS = 2147483780,
-			SECPKG_ATTR_CREDS = 2147483776,
-			SECPKG_ATTR_CREDS_2 = 2147483782,
-			SECPKG_ATTR_NEGOTIATION_PACKAGE = 2147483777,
-			SECPKG_ATTR_PACKAGE_INFO = 10,
-			SECPKG_ATTR_SERVER_AUTH_FLAGS = 2147483779,
-			SECPKG_ATTR_SIZES = 0,
-			SECPKG_ATTR_SUBJECT_SECURITY_ATTRIBUTES = 124,
-			SECPKG_ATTR_APP_DATA = 94,
-			SECPKG_ATTR_EAP_PRF_INFO = 101,
-			SECPKG_ATTR_EARLY_START = 105,
-			SECPKG_ATTR_DTLS_MTU = 34,
-			SECPKG_ATTR_KEYING_MATERIAL_INFO = 106,
-			SECPKG_ATTR_ACCESS_TOKEN = 18,
-			SECPKG_ATTR_AUTHORITY = 6,
-			SECPKG_ATTR_CLIENT_SPECIFIED_TARGET = 27,
-			SECPKG_ATTR_CONNECTION_INFO = 90,
-			SECPKG_ATTR_DCE_INFO = 3,
-			SECPKG_ATTR_ENDPOINT_BINDINGS = 26,
-			SECPKG_ATTR_EAP_KEY_BLOCK = 91,
-			SECPKG_ATTR_FLAGS = 14,
-			SECPKG_ATTR_ISSUER_LIST_EX = 89,
-			SECPKG_ATTR_KEY_INFO = 5,
-			SECPKG_ATTR_LAST_CLIENT_TOKEN_STATUS = 30,
-			SECPKG_ATTR_LIFESPAN = 2,
-			SECPKG_ATTR_LOCAL_CERT_CONTEXT = 84,
-			SECPKG_ATTR_LOCAL_CRED = 82,
-			SECPKG_ATTR_NAMES = 1,
-			SECPKG_ATTR_NATIVE_NAMES = 13,
-			SECPKG_ATTR_NEGOTIATION_INFO = 12,
-			SECPKG_ATTR_PASSWORD_EXPIRY = 8,
-			SECPKG_ATTR_REMOTE_CERT_CONTEXT = 83,
-			SECPKG_ATTR_ROOT_STORE = 85,
-			SECPKG_ATTR_SESSION_KEY = 9,
-			SECPKG_ATTR_SESSION_INFO = 93,
-			SECPKG_ATTR_STREAM_SIZES = 4,
-			SECPKG_ATTR_SUPPORTED_SIGNATURES = 102,
-			SECPKG_ATTR_TARGET_INFORMATION = 17,
-			SECPKG_ATTR_UNIQUE_BINDINGS = 25,
+			C_ACCESS_TOKEN = 2147483666,
+			C_FULL_ACCESS_TOKEN = 2147483778,
+			CERT_TRUST_STATUS = 2147483780,
+			CREDS = 2147483776,
+			CREDS_2 = 2147483782,
+			NEGOTIATION_PACKAGE = 2147483777,
+			PACKAGE_INFO = 10,
+			SERVER_AUTH_FLAGS = 2147483779,
+			SIZES = 0,
+			SUBJECT_SECURITY_ATTRIBUTES = 124,
+			APP_DATA = 94,
+			EAP_PRF_INFO = 101,
+			EARLY_START = 105,
+			DTLS_MTU = 34,
+			KEYING_MATERIAL_INFO = 106,
+			ACCESS_TOKEN = 18,
+			AUTHORITY = 6,
+			CLIENT_SPECIFIED_TARGET = 27,
+			CONNECTION_INFO = 90,
+			DCE_INFO = 3,
+			ENDPOINT_BINDINGS = 26,
+			EAP_KEY_BLOCK = 91,
+			FLAGS = 14,
+			ISSUER_LIST_EX = 89,
+			KEY_INFO = 5,
+			LAST_CLIENT_TOKEN_STATUS = 30,
+			LIFESPAN = 2,
+			LOCAL_CERT_CONTEXT = 84,
+			LOCAL_CRED = 82,
+			NAMES = 1,
+			NATIVE_NAMES = 13,
+			NEGOTIATION_INFO = 12,
+			PASSWORD_EXPIRY = 8,
+			REMOTE_CERT_CONTEXT = 83,
+			ROOT_STORE = 85,
+			SESSION_KEY = 9,
+			SESSION_INFO = 93,
+			STREAM_SIZES = 4,
+			SUPPORTED_SIGNATURES = 102,
+			TARGET_INFORMATION = 17,
+			UNIQUE_BINDINGS = 25,
 		}
 		[AllowDuplicates]
 		public enum MSV1_0 : uint32
 		{
-			MSV1_0_PASSTHRU = 1,
-			MSV1_0_GUEST_LOGON = 2,
+			PASSTHRU = 1,
+			GUEST_LOGON = 2,
 		}
 		[AllowDuplicates]
 		public enum SECPKG_CRED : uint32
 		{
-			SECPKG_CRED_INBOUND = 1,
-			SECPKG_CRED_OUTBOUND = 2,
+			INBOUND = 1,
+			OUTBOUND = 2,
 		}
 		[AllowDuplicates]
 		public enum MSV_SUB_AUTHENTICATION_FILTER : uint32
 		{
-			LOGON_GUEST = 1,
-			LOGON_NOENCRYPTION = 2,
-			LOGON_CACHED_ACCOUNT = 4,
-			LOGON_USED_LM_PASSWORD = 8,
-			LOGON_EXTRA_SIDS = 32,
-			LOGON_SUBAUTH_SESSION_KEY = 64,
-			LOGON_SERVER_TRUST_ACCOUNT = 128,
-			LOGON_PROFILE_PATH_RETURNED = 1024,
-			LOGON_RESOURCE_GROUPS = 512,
+			GUEST = 1,
+			NOENCRYPTION = 2,
+			CACHED_ACCOUNT = 4,
+			USED_LM_PASSWORD = 8,
+			EXTRA_SIDS = 32,
+			SUBAUTH_SESSION_KEY = 64,
+			SERVER_TRUST_ACCOUNT = 128,
+			PROFILE_PATH_RETURNED = 1024,
+			RESOURCE_GROUPS = 512,
 		}
 		[AllowDuplicates]
 		public enum EXPORT_SECURITY_CONTEXT_FLAGS : uint32
 		{
-			SECPKG_CONTEXT_EXPORT_RESET_NEW = 1,
-			SECPKG_CONTEXT_EXPORT_DELETE_OLD = 2,
-			SECPKG_CONTEXT_EXPORT_TO_KERNEL = 4,
+			RESET_NEW = 1,
+			DELETE_OLD = 2,
+			TO_KERNEL = 4,
 		}
 		[AllowDuplicates]
 		public enum ACCEPT_SECURITY_CONTEXT_CONTEXT_REQ : uint32
 		{
-			ASC_REQ_ALLOCATE_MEMORY = 256,
-			ASC_REQ_CONNECTION = 2048,
-			ASC_REQ_DELEGATE = 1,
-			ASC_REQ_EXTENDED_ERROR = 32768,
-			ASC_REQ_REPLAY_DETECT = 4,
-			ASC_REQ_SEQUENCE_DETECT = 8,
-			ASC_REQ_STREAM = 65536,
+			ALLOCATE_MEMORY = 256,
+			CONNECTION = 2048,
+			DELEGATE = 1,
+			EXTENDED_ERROR = 32768,
+			REPLAY_DETECT = 4,
+			SEQUENCE_DETECT = 8,
+			STREAM = 65536,
 		}
 		[AllowDuplicates]
 		public enum KERB_TICKET_FLAGS : uint32
 		{
-			KERB_TICKET_FLAGS_forwardable = 1073741824,
-			KERB_TICKET_FLAGS_forwarded = 536870912,
-			KERB_TICKET_FLAGS_hw_authent = 1048576,
-			KERB_TICKET_FLAGS_initial = 4194304,
-			KERB_TICKET_FLAGS_invalid = 16777216,
-			KERB_TICKET_FLAGS_may_postdate = 67108864,
-			KERB_TICKET_FLAGS_ok_as_delegate = 262144,
-			KERB_TICKET_FLAGS_postdated = 33554432,
-			KERB_TICKET_FLAGS_pre_authent = 2097152,
-			KERB_TICKET_FLAGS_proxiable = 268435456,
-			KERB_TICKET_FLAGS_proxy = 134217728,
-			KERB_TICKET_FLAGS_renewable = 8388608,
-			KERB_TICKET_FLAGS_reserved = 2147483648,
-			KERB_TICKET_FLAGS_reserved1 = 1,
+			forwardable = 1073741824,
+			forwarded = 536870912,
+			hw_authent = 1048576,
+			initial = 4194304,
+			invalid = 16777216,
+			may_postdate = 67108864,
+			ok_as_delegate = 262144,
+			postdated = 33554432,
+			pre_authent = 2097152,
+			proxiable = 268435456,
+			proxy = 134217728,
+			renewable = 8388608,
+			reserved = 2147483648,
+			reserved1 = 1,
 		}
 		[AllowDuplicates]
 		public enum KERB_ADDRESS_TYPE : uint32
 		{
-			DS_INET_ADDRESS = 1,
-			DS_NETBIOS_ADDRESS = 2,
+			INET_ADDRESS = 1,
+			NETBIOS_ADDRESS = 2,
 		}
 		[AllowDuplicates]
 		public enum SCHANNEL_CRED_FLAGS : uint32
 		{
-			SCH_CRED_AUTO_CRED_VALIDATION = 32,
-			SCH_CRED_CACHE_ONLY_URL_RETRIEVAL_ON_CREATE = 131072,
-			SCH_DISABLE_RECONNECTS = 128,
-			SCH_CRED_IGNORE_NO_REVOCATION_CHECK = 2048,
-			SCH_CRED_IGNORE_REVOCATION_OFFLINE = 4096,
-			SCH_CRED_MANUAL_CRED_VALIDATION = 8,
-			SCH_CRED_NO_DEFAULT_CREDS = 16,
-			SCH_CRED_NO_SERVERNAME_CHECK = 4,
-			SCH_CRED_NO_SYSTEM_MAPPER = 2,
-			SCH_CRED_REVOCATION_CHECK_CHAIN = 512,
-			SCH_CRED_REVOCATION_CHECK_CHAIN_EXCLUDE_ROOT = 1024,
-			SCH_CRED_REVOCATION_CHECK_END_CERT = 256,
-			SCH_CRED_USE_DEFAULT_CREDS = 64,
-			SCH_SEND_AUX_RECORD = 2097152,
-			SCH_SEND_ROOT_CERT = 262144,
-			SCH_USE_STRONG_CRYPTO = 4194304,
-			SCH_USE_PRESHAREDKEY_ONLY = 8388608,
+			CRED_AUTO_CRED_VALIDATION = 32,
+			CRED_CACHE_ONLY_URL_RETRIEVAL_ON_CREATE = 131072,
+			DISABLE_RECONNECTS = 128,
+			CRED_IGNORE_NO_REVOCATION_CHECK = 2048,
+			CRED_IGNORE_REVOCATION_OFFLINE = 4096,
+			CRED_MANUAL_CRED_VALIDATION = 8,
+			CRED_NO_DEFAULT_CREDS = 16,
+			CRED_NO_SERVERNAME_CHECK = 4,
+			CRED_NO_SYSTEM_MAPPER = 2,
+			CRED_REVOCATION_CHECK_CHAIN = 512,
+			CRED_REVOCATION_CHECK_CHAIN_EXCLUDE_ROOT = 1024,
+			CRED_REVOCATION_CHECK_END_CERT = 256,
+			CRED_USE_DEFAULT_CREDS = 64,
+			SEND_AUX_RECORD = 2097152,
+			SEND_ROOT_CERT = 262144,
+			USE_STRONG_CRYPTO = 4194304,
+			USE_PRESHAREDKEY_ONLY = 8388608,
 		}
 		[AllowDuplicates]
 		public enum DOMAIN_PASSWORD_PROPERTIES : uint32
 		{
-			DOMAIN_PASSWORD_COMPLEX = 1,
-			DOMAIN_PASSWORD_NO_ANON_CHANGE = 2,
-			DOMAIN_PASSWORD_NO_CLEAR_CHANGE = 4,
-			DOMAIN_LOCKOUT_ADMINS = 8,
-			DOMAIN_PASSWORD_STORE_CLEARTEXT = 16,
-			DOMAIN_REFUSE_PASSWORD_CHANGE = 32,
+			PASSWORD_COMPLEX = 1,
+			PASSWORD_NO_ANON_CHANGE = 2,
+			PASSWORD_NO_CLEAR_CHANGE = 4,
+			LOCKOUT_ADMINS = 8,
+			PASSWORD_STORE_CLEARTEXT = 16,
+			REFUSE_PASSWORD_CHANGE = 32,
 		}
 		[AllowDuplicates]
 		public enum SCHANNEL_ALERT_TOKEN_ALERT_TYPE : uint32
 		{
-			TLS1_ALERT_WARNING = 1,
-			TLS1_ALERT_FATAL = 2,
+			WARNING = 1,
+			FATAL = 2,
 		}
 		[AllowDuplicates]
 		public enum TRUSTED_DOMAIN_TRUST_TYPE : uint32
 		{
-			TRUST_TYPE_DOWNLEVEL = 1,
-			TRUST_TYPE_UPLEVEL = 2,
-			TRUST_TYPE_MIT = 3,
-			TRUST_TYPE_DCE = 4,
+			DOWNLEVEL = 1,
+			UPLEVEL = 2,
+			MIT = 3,
+			DCE = 4,
 		}
 		[AllowDuplicates]
 		public enum MSV_SUBAUTH_LOGON_PARAMETER_CONTROL : uint32
 		{
-			MSV1_0_CLEARTEXT_PASSWORD_ALLOWED = 2,
-			MSV1_0_UPDATE_LOGON_STATISTICS = 4,
-			MSV1_0_RETURN_USER_PARAMETERS = 8,
-			MSV1_0_DONT_TRY_GUEST_ACCOUNT = 16,
-			MSV1_0_ALLOW_SERVER_TRUST_ACCOUNT = 32,
-			MSV1_0_RETURN_PASSWORD_EXPIRY = 64,
-			MSV1_0_ALLOW_WORKSTATION_TRUST_ACCOUNT = 2048,
-			MSV1_0_TRY_GUEST_ACCOUNT_ONLY = 256,
-			MSV1_0_RETURN_PROFILE_PATH = 512,
-			MSV1_0_TRY_SPECIFIED_DOMAIN_ONLY = 1024,
+			CLEARTEXT_PASSWORD_ALLOWED = 2,
+			UPDATE_LOGON_STATISTICS = 4,
+			RETURN_USER_PARAMETERS = 8,
+			DONT_TRY_GUEST_ACCOUNT = 16,
+			ALLOW_SERVER_TRUST_ACCOUNT = 32,
+			RETURN_PASSWORD_EXPIRY = 64,
+			ALLOW_WORKSTATION_TRUST_ACCOUNT = 2048,
+			TRY_GUEST_ACCOUNT_ONLY = 256,
+			RETURN_PROFILE_PATH = 512,
+			TRY_SPECIFIED_DOMAIN_ONLY = 1024,
 		}
 		[AllowDuplicates]
 		public enum KERB_REQUEST_FLAGS : uint32
 		{
-			KERB_REQUEST_ADD_CREDENTIAL = 1,
-			KERB_REQUEST_REPLACE_CREDENTIAL = 2,
-			KERB_REQUEST_REMOVE_CREDENTIAL = 4,
+			ADD_CREDENTIAL = 1,
+			REPLACE_CREDENTIAL = 2,
+			REMOVE_CREDENTIAL = 4,
 		}
 		[AllowDuplicates]
 		public enum TRUSTED_DOMAIN_TRUST_DIRECTION : uint32
 		{
-			TRUST_DIRECTION_DISABLED = 0,
-			TRUST_DIRECTION_INBOUND = 1,
-			TRUST_DIRECTION_OUTBOUND = 2,
-			TRUST_DIRECTION_BIDIRECTIONAL = 3,
+			DISABLED = 0,
+			INBOUND = 1,
+			OUTBOUND = 2,
+			BIDIRECTIONAL = 3,
 		}
 		[AllowDuplicates]
 		public enum MSV_SUPPLEMENTAL_CREDENTIAL_FLAGS : uint32
 		{
-			MSV1_0_CRED_LM_PRESENT = 1,
-			MSV1_0_CRED_NT_PRESENT = 2,
-			MSV1_0_CRED_VERSION = 0,
+			LM_PRESENT = 1,
+			NT_PRESENT = 2,
+			VERSION = 0,
 		}
 		[AllowDuplicates]
 		public enum SECURITY_PACKAGE_OPTIONS_TYPE : uint32
 		{
-			SECPKG_OPTIONS_TYPE_UNKNOWN = 0,
-			SECPKG_OPTIONS_TYPE_LSA = 1,
-			SECPKG_OPTIONS_TYPE_SSPI = 2,
+			UNKNOWN = 0,
+			LSA = 1,
+			SSPI = 2,
 		}
 		[AllowDuplicates]
 		public enum SCHANNEL_SESSION_TOKEN_FLAGS : uint32
 		{
-			SSL_SESSION_ENABLE_RECONNECTS = 1,
-			SSL_SESSION_DISABLE_RECONNECTS = 2,
+			ENABLE_RECONNECTS = 1,
+			DISABLE_RECONNECTS = 2,
 		}
 		[AllowDuplicates]
 		public enum KERB_CRYPTO_KEY_TYPE : int32
 		{
-			KERB_ETYPE_DES_CBC_CRC = 1,
-			KERB_ETYPE_DES_CBC_MD4 = 2,
-			KERB_ETYPE_DES_CBC_MD5 = 3,
-			KERB_ETYPE_NULL = 0,
-			KERB_ETYPE_RC4_HMAC_NT = 23,
-			KERB_ETYPE_RC4_MD4 = -128,
+			DES_CBC_CRC = 1,
+			DES_CBC_MD4 = 2,
+			DES_CBC_MD5 = 3,
+			NULL = 0,
+			RC4_HMAC_NT = 23,
+			RC4_MD4 = -128,
 		}
 		[AllowDuplicates]
 		public enum LSA_AUTH_INFORMATION_AUTH_TYPE : uint32
 		{
-			TRUST_AUTH_TYPE_NONE = 0,
-			TRUST_AUTH_TYPE_NT4OWF = 1,
-			TRUST_AUTH_TYPE_CLEAR = 2,
-			TRUST_AUTH_TYPE_VERSION = 3,
+			NONE = 0,
+			NT4OWF = 1,
+			CLEAR = 2,
+			VERSION = 3,
 		}
 		[AllowDuplicates]
 		public enum SECPKG_PACKAGE_CHANGE_TYPE : uint32
 		{
-			SECPKG_PACKAGE_CHANGE_LOAD = 0,
-			SECPKG_PACKAGE_CHANGE_UNLOAD = 1,
-			SECPKG_PACKAGE_CHANGE_SELECT = 2,
+			LOAD = 0,
+			UNLOAD = 1,
+			SELECT = 2,
 		}
 		[AllowDuplicates]
 		public enum TRUSTED_DOMAIN_TRUST_ATTRIBUTES : uint32
 		{
-			TRUST_ATTRIBUTE_NON_TRANSITIVE = 1,
-			TRUST_ATTRIBUTE_UPLEVEL_ONLY = 2,
-			TRUST_ATTRIBUTE_FILTER_SIDS = 4,
-			TRUST_ATTRIBUTE_FOREST_TRANSITIVE = 8,
-			TRUST_ATTRIBUTE_CROSS_ORGANIZATION = 16,
-			TRUST_ATTRIBUTE_TREAT_AS_EXTERNAL = 64,
-			TRUST_ATTRIBUTE_WITHIN_FOREST = 32,
+			NON_TRANSITIVE = 1,
+			UPLEVEL_ONLY = 2,
+			FILTER_SIDS = 4,
+			FOREST_TRANSITIVE = 8,
+			CROSS_ORGANIZATION = 16,
+			TREAT_AS_EXTERNAL = 64,
+			WITHIN_FOREST = 32,
 		}
 		[AllowDuplicates]
 		public enum LSA_LOOKUP_DOMAIN_INFO_CLASS : int32
@@ -1580,161 +1580,161 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SE_ADT_PARAMETER_TYPE : int32
 		{
-			SeAdtParmTypeNone = 0,
-			SeAdtParmTypeString = 1,
-			SeAdtParmTypeFileSpec = 2,
-			SeAdtParmTypeUlong = 3,
-			SeAdtParmTypeSid = 4,
-			SeAdtParmTypeLogonId = 5,
-			SeAdtParmTypeNoLogonId = 6,
-			SeAdtParmTypeAccessMask = 7,
-			SeAdtParmTypePrivs = 8,
-			SeAdtParmTypeObjectTypes = 9,
-			SeAdtParmTypeHexUlong = 10,
-			SeAdtParmTypePtr = 11,
-			SeAdtParmTypeTime = 12,
-			SeAdtParmTypeGuid = 13,
-			SeAdtParmTypeLuid = 14,
-			SeAdtParmTypeHexInt64 = 15,
-			SeAdtParmTypeStringList = 16,
-			SeAdtParmTypeSidList = 17,
-			SeAdtParmTypeDuration = 18,
-			SeAdtParmTypeUserAccountControl = 19,
-			SeAdtParmTypeNoUac = 20,
-			SeAdtParmTypeMessage = 21,
-			SeAdtParmTypeDateTime = 22,
-			SeAdtParmTypeSockAddr = 23,
-			SeAdtParmTypeSD = 24,
-			SeAdtParmTypeLogonHours = 25,
-			SeAdtParmTypeLogonIdNoSid = 26,
-			SeAdtParmTypeUlongNoConv = 27,
-			SeAdtParmTypeSockAddrNoPort = 28,
-			SeAdtParmTypeAccessReason = 29,
-			SeAdtParmTypeStagingReason = 30,
-			SeAdtParmTypeResourceAttribute = 31,
-			SeAdtParmTypeClaims = 32,
-			SeAdtParmTypeLogonIdAsSid = 33,
-			SeAdtParmTypeMultiSzString = 34,
-			SeAdtParmTypeLogonIdEx = 35,
+			None = 0,
+			String = 1,
+			FileSpec = 2,
+			Ulong = 3,
+			Sid = 4,
+			LogonId = 5,
+			NoLogonId = 6,
+			AccessMask = 7,
+			Privs = 8,
+			ObjectTypes = 9,
+			HexUlong = 10,
+			Ptr = 11,
+			Time = 12,
+			Guid = 13,
+			Luid = 14,
+			HexInt64 = 15,
+			StringList = 16,
+			SidList = 17,
+			Duration = 18,
+			UserAccountControl = 19,
+			NoUac = 20,
+			Message = 21,
+			DateTime = 22,
+			SockAddr = 23,
+			SD = 24,
+			LogonHours = 25,
+			LogonIdNoSid = 26,
+			UlongNoConv = 27,
+			SockAddrNoPort = 28,
+			AccessReason = 29,
+			StagingReason = 30,
+			ResourceAttribute = 31,
+			Claims = 32,
+			LogonIdAsSid = 33,
+			MultiSzString = 34,
+			LogonIdEx = 35,
 		}
 		[AllowDuplicates]
 		public enum POLICY_AUDIT_EVENT_TYPE : int32
 		{
-			AuditCategorySystem = 0,
-			AuditCategoryLogon = 1,
-			AuditCategoryObjectAccess = 2,
-			AuditCategoryPrivilegeUse = 3,
-			AuditCategoryDetailedTracking = 4,
-			AuditCategoryPolicyChange = 5,
-			AuditCategoryAccountManagement = 6,
-			AuditCategoryDirectoryServiceAccess = 7,
-			AuditCategoryAccountLogon = 8,
+			System = 0,
+			Logon = 1,
+			ObjectAccess = 2,
+			PrivilegeUse = 3,
+			DetailedTracking = 4,
+			PolicyChange = 5,
+			AccountManagement = 6,
+			DirectoryServiceAccess = 7,
+			AccountLogon = 8,
 		}
 		[AllowDuplicates]
 		public enum POLICY_LSA_SERVER_ROLE : int32
 		{
-			PolicyServerRoleBackup = 2,
-			PolicyServerRolePrimary = 3,
+			Backup = 2,
+			Primary = 3,
 		}
 		[AllowDuplicates]
 		public enum POLICY_INFORMATION_CLASS : int32
 		{
-			PolicyAuditLogInformation = 1,
-			PolicyAuditEventsInformation = 2,
-			PolicyPrimaryDomainInformation = 3,
-			PolicyPdAccountInformation = 4,
-			PolicyAccountDomainInformation = 5,
-			PolicyLsaServerRoleInformation = 6,
-			PolicyReplicaSourceInformation = 7,
-			PolicyDefaultQuotaInformation = 8,
-			PolicyModificationInformation = 9,
-			PolicyAuditFullSetInformation = 10,
-			PolicyAuditFullQueryInformation = 11,
-			PolicyDnsDomainInformation = 12,
-			PolicyDnsDomainInformationInt = 13,
-			PolicyLocalAccountDomainInformation = 14,
-			PolicyMachineAccountInformation = 15,
-			PolicyLastEntry = 16,
+			AuditLogInformation = 1,
+			AuditEventsInformation = 2,
+			PrimaryDomainInformation = 3,
+			PdAccountInformation = 4,
+			AccountDomainInformation = 5,
+			LsaServerRoleInformation = 6,
+			ReplicaSourceInformation = 7,
+			DefaultQuotaInformation = 8,
+			ModificationInformation = 9,
+			AuditFullSetInformation = 10,
+			AuditFullQueryInformation = 11,
+			DnsDomainInformation = 12,
+			DnsDomainInformationInt = 13,
+			LocalAccountDomainInformation = 14,
+			MachineAccountInformation = 15,
+			LastEntry = 16,
 		}
 		[AllowDuplicates]
 		public enum POLICY_DOMAIN_INFORMATION_CLASS : int32
 		{
-			PolicyDomainEfsInformation = 2,
-			PolicyDomainKerberosTicketInformation = 3,
+			EfsInformation = 2,
+			KerberosTicketInformation = 3,
 		}
 		[AllowDuplicates]
 		public enum POLICY_NOTIFICATION_INFORMATION_CLASS : int32
 		{
-			PolicyNotifyAuditEventsInformation = 1,
-			PolicyNotifyAccountDomainInformation = 2,
-			PolicyNotifyServerRoleInformation = 3,
-			PolicyNotifyDnsDomainInformation = 4,
-			PolicyNotifyDomainEfsInformation = 5,
-			PolicyNotifyDomainKerberosTicketInformation = 6,
-			PolicyNotifyMachineAccountPasswordInformation = 7,
-			PolicyNotifyGlobalSaclInformation = 8,
-			PolicyNotifyMax = 9,
+			AuditEventsInformation = 1,
+			AccountDomainInformation = 2,
+			ServerRoleInformation = 3,
+			DnsDomainInformation = 4,
+			DomainEfsInformation = 5,
+			DomainKerberosTicketInformation = 6,
+			MachineAccountPasswordInformation = 7,
+			GlobalSaclInformation = 8,
+			Max = 9,
 		}
 		[AllowDuplicates]
 		public enum TRUSTED_INFORMATION_CLASS : int32
 		{
-			TrustedDomainNameInformation = 1,
-			TrustedControllersInformation = 2,
-			TrustedPosixOffsetInformation = 3,
-			TrustedPasswordInformation = 4,
-			TrustedDomainInformationBasic = 5,
-			TrustedDomainInformationEx = 6,
-			TrustedDomainAuthInformation = 7,
-			TrustedDomainFullInformation = 8,
-			TrustedDomainAuthInformationInternal = 9,
-			TrustedDomainFullInformationInternal = 10,
-			TrustedDomainInformationEx2Internal = 11,
-			TrustedDomainFullInformation2Internal = 12,
-			TrustedDomainSupportedEncryptionTypes = 13,
+			DomainNameInformation = 1,
+			ControllersInformation = 2,
+			PosixOffsetInformation = 3,
+			PasswordInformation = 4,
+			DomainInformationBasic = 5,
+			DomainInformationEx = 6,
+			DomainAuthInformation = 7,
+			DomainFullInformation = 8,
+			DomainAuthInformationInternal = 9,
+			DomainFullInformationInternal = 10,
+			DomainInformationEx2Internal = 11,
+			DomainFullInformation2Internal = 12,
+			DomainSupportedEncryptionTypes = 13,
 		}
 		[AllowDuplicates]
 		public enum LSA_FOREST_TRUST_RECORD_TYPE : int32
 		{
-			ForestTrustTopLevelName = 0,
-			ForestTrustTopLevelNameEx = 1,
-			ForestTrustDomainInfo = 2,
-			ForestTrustRecordTypeLast = 2,
+			TopLevelName = 0,
+			TopLevelNameEx = 1,
+			DomainInfo = 2,
+			RecordTypeLast = 2,
 		}
 		[AllowDuplicates]
 		public enum LSA_FOREST_TRUST_COLLISION_RECORD_TYPE : int32
 		{
-			CollisionTdo = 0,
-			CollisionXref = 1,
-			CollisionOther = 2,
+			Tdo = 0,
+			Xref = 1,
+			Other = 2,
 		}
 		[AllowDuplicates]
 		public enum NEGOTIATE_MESSAGES : int32
 		{
-			NegEnumPackagePrefixes = 0,
-			NegGetCallerName = 1,
-			NegTransferCredentials = 2,
-			NegMsgReserved1 = 3,
-			NegCallPackageMax = 4,
+			EnumPackagePrefixes = 0,
+			GetCallerName = 1,
+			TransferCredentials = 2,
+			MsgReserved1 = 3,
+			CallPackageMax = 4,
 		}
 		[AllowDuplicates]
 		public enum MSV1_0_LOGON_SUBMIT_TYPE : int32
 		{
-			MsV1_0InteractiveLogon = 2,
-			MsV1_0Lm20Logon = 3,
-			MsV1_0NetworkLogon = 4,
-			MsV1_0SubAuthLogon = 5,
-			MsV1_0WorkstationUnlockLogon = 7,
-			MsV1_0S4ULogon = 12,
-			MsV1_0VirtualLogon = 82,
-			MsV1_0NoElevationLogon = 83,
-			MsV1_0LuidLogon = 84,
+			InteractiveLogon = 2,
+			Lm20Logon = 3,
+			NetworkLogon = 4,
+			SubAuthLogon = 5,
+			WorkstationUnlockLogon = 7,
+			S4ULogon = 12,
+			VirtualLogon = 82,
+			NoElevationLogon = 83,
+			LuidLogon = 84,
 		}
 		[AllowDuplicates]
 		public enum MSV1_0_PROFILE_BUFFER_TYPE : int32
 		{
-			MsV1_0InteractiveProfile = 2,
-			MsV1_0Lm20LogonProfile = 3,
-			MsV1_0SmartCardProfile = 4,
+			InteractiveProfile = 2,
+			Lm20LogonProfile = 3,
+			SmartCardProfile = 4,
 		}
 		[AllowDuplicates]
 		public enum MSV1_0_CREDENTIAL_KEY_TYPE : int32
@@ -1748,111 +1748,111 @@ namespace Win32
 		[AllowDuplicates]
 		public enum MSV1_0_AVID : int32
 		{
-			MsvAvEOL = 0,
-			MsvAvNbComputerName = 1,
-			MsvAvNbDomainName = 2,
-			MsvAvDnsComputerName = 3,
-			MsvAvDnsDomainName = 4,
-			MsvAvDnsTreeName = 5,
-			MsvAvFlags = 6,
-			MsvAvTimestamp = 7,
-			MsvAvRestrictions = 8,
-			MsvAvTargetName = 9,
-			MsvAvChannelBindings = 10,
+			EOL = 0,
+			NbComputerName = 1,
+			NbDomainName = 2,
+			DnsComputerName = 3,
+			DnsDomainName = 4,
+			DnsTreeName = 5,
+			Flags = 6,
+			Timestamp = 7,
+			Restrictions = 8,
+			TargetName = 9,
+			ChannelBindings = 10,
 		}
 		[AllowDuplicates]
 		public enum MSV1_0_PROTOCOL_MESSAGE_TYPE : int32
 		{
-			MsV1_0Lm20ChallengeRequest = 0,
-			MsV1_0Lm20GetChallengeResponse = 1,
-			MsV1_0EnumerateUsers = 2,
-			MsV1_0GetUserInfo = 3,
-			MsV1_0ReLogonUsers = 4,
-			MsV1_0ChangePassword = 5,
-			MsV1_0ChangeCachedPassword = 6,
-			MsV1_0GenericPassthrough = 7,
-			MsV1_0CacheLogon = 8,
-			MsV1_0SubAuth = 9,
-			MsV1_0DeriveCredential = 10,
-			MsV1_0CacheLookup = 11,
-			MsV1_0SetProcessOption = 12,
-			MsV1_0ConfigLocalAliases = 13,
-			MsV1_0ClearCachedCredentials = 14,
-			MsV1_0LookupToken = 15,
-			MsV1_0ValidateAuth = 16,
-			MsV1_0CacheLookupEx = 17,
-			MsV1_0GetCredentialKey = 18,
-			MsV1_0SetThreadOption = 19,
-			MsV1_0DecryptDpapiMasterKey = 20,
-			MsV1_0GetStrongCredentialKey = 21,
-			MsV1_0TransferCred = 22,
-			MsV1_0ProvisionTbal = 23,
-			MsV1_0DeleteTbalSecrets = 24,
+			Lm20ChallengeRequest = 0,
+			Lm20GetChallengeResponse = 1,
+			EnumerateUsers = 2,
+			GetUserInfo = 3,
+			ReLogonUsers = 4,
+			ChangePassword = 5,
+			ChangeCachedPassword = 6,
+			GenericPassthrough = 7,
+			CacheLogon = 8,
+			SubAuth = 9,
+			DeriveCredential = 10,
+			CacheLookup = 11,
+			SetProcessOption = 12,
+			ConfigLocalAliases = 13,
+			ClearCachedCredentials = 14,
+			LookupToken = 15,
+			ValidateAuth = 16,
+			CacheLookupEx = 17,
+			GetCredentialKey = 18,
+			SetThreadOption = 19,
+			DecryptDpapiMasterKey = 20,
+			GetStrongCredentialKey = 21,
+			TransferCred = 22,
+			ProvisionTbal = 23,
+			DeleteTbalSecrets = 24,
 		}
 		[AllowDuplicates]
 		public enum KERB_LOGON_SUBMIT_TYPE : int32
 		{
-			KerbInteractiveLogon = 2,
-			KerbSmartCardLogon = 6,
-			KerbWorkstationUnlockLogon = 7,
-			KerbSmartCardUnlockLogon = 8,
-			KerbProxyLogon = 9,
-			KerbTicketLogon = 10,
-			KerbTicketUnlockLogon = 11,
-			KerbS4ULogon = 12,
-			KerbCertificateLogon = 13,
-			KerbCertificateS4ULogon = 14,
-			KerbCertificateUnlockLogon = 15,
-			KerbNoElevationLogon = 83,
-			KerbLuidLogon = 84,
+			InteractiveLogon = 2,
+			SmartCardLogon = 6,
+			WorkstationUnlockLogon = 7,
+			SmartCardUnlockLogon = 8,
+			ProxyLogon = 9,
+			TicketLogon = 10,
+			TicketUnlockLogon = 11,
+			S4ULogon = 12,
+			CertificateLogon = 13,
+			CertificateS4ULogon = 14,
+			CertificateUnlockLogon = 15,
+			NoElevationLogon = 83,
+			LuidLogon = 84,
 		}
 		[AllowDuplicates]
 		public enum KERB_PROFILE_BUFFER_TYPE : int32
 		{
-			KerbInteractiveProfile = 2,
-			KerbSmartCardProfile = 4,
-			KerbTicketProfile = 6,
+			InteractiveProfile = 2,
+			SmartCardProfile = 4,
+			TicketProfile = 6,
 		}
 		[AllowDuplicates]
 		public enum KERB_PROTOCOL_MESSAGE_TYPE : int32
 		{
-			KerbDebugRequestMessage = 0,
-			KerbQueryTicketCacheMessage = 1,
-			KerbChangeMachinePasswordMessage = 2,
-			KerbVerifyPacMessage = 3,
-			KerbRetrieveTicketMessage = 4,
-			KerbUpdateAddressesMessage = 5,
-			KerbPurgeTicketCacheMessage = 6,
-			KerbChangePasswordMessage = 7,
-			KerbRetrieveEncodedTicketMessage = 8,
-			KerbDecryptDataMessage = 9,
-			KerbAddBindingCacheEntryMessage = 10,
-			KerbSetPasswordMessage = 11,
-			KerbSetPasswordExMessage = 12,
-			KerbVerifyCredentialsMessage = 13,
-			KerbQueryTicketCacheExMessage = 14,
-			KerbPurgeTicketCacheExMessage = 15,
-			KerbRefreshSmartcardCredentialsMessage = 16,
-			KerbAddExtraCredentialsMessage = 17,
-			KerbQuerySupplementalCredentialsMessage = 18,
-			KerbTransferCredentialsMessage = 19,
-			KerbQueryTicketCacheEx2Message = 20,
-			KerbSubmitTicketMessage = 21,
-			KerbAddExtraCredentialsExMessage = 22,
-			KerbQueryKdcProxyCacheMessage = 23,
-			KerbPurgeKdcProxyCacheMessage = 24,
-			KerbQueryTicketCacheEx3Message = 25,
-			KerbCleanupMachinePkinitCredsMessage = 26,
-			KerbAddBindingCacheEntryExMessage = 27,
-			KerbQueryBindingCacheMessage = 28,
-			KerbPurgeBindingCacheMessage = 29,
-			KerbPinKdcMessage = 30,
-			KerbUnpinAllKdcsMessage = 31,
-			KerbQueryDomainExtendedPoliciesMessage = 32,
-			KerbQueryS4U2ProxyCacheMessage = 33,
-			KerbRetrieveKeyTabMessage = 34,
-			KerbRefreshPolicyMessage = 35,
-			KerbPrintCloudKerberosDebugMessage = 36,
+			DebugRequestMessage = 0,
+			QueryTicketCacheMessage = 1,
+			ChangeMachinePasswordMessage = 2,
+			VerifyPacMessage = 3,
+			RetrieveTicketMessage = 4,
+			UpdateAddressesMessage = 5,
+			PurgeTicketCacheMessage = 6,
+			ChangePasswordMessage = 7,
+			RetrieveEncodedTicketMessage = 8,
+			DecryptDataMessage = 9,
+			AddBindingCacheEntryMessage = 10,
+			SetPasswordMessage = 11,
+			SetPasswordExMessage = 12,
+			VerifyCredentialsMessage = 13,
+			QueryTicketCacheExMessage = 14,
+			PurgeTicketCacheExMessage = 15,
+			RefreshSmartcardCredentialsMessage = 16,
+			AddExtraCredentialsMessage = 17,
+			QuerySupplementalCredentialsMessage = 18,
+			TransferCredentialsMessage = 19,
+			QueryTicketCacheEx2Message = 20,
+			SubmitTicketMessage = 21,
+			AddExtraCredentialsExMessage = 22,
+			QueryKdcProxyCacheMessage = 23,
+			PurgeKdcProxyCacheMessage = 24,
+			QueryTicketCacheEx3Message = 25,
+			CleanupMachinePkinitCredsMessage = 26,
+			AddBindingCacheEntryExMessage = 27,
+			QueryBindingCacheMessage = 28,
+			PurgeBindingCacheMessage = 29,
+			PinKdcMessage = 30,
+			UnpinAllKdcsMessage = 31,
+			QueryDomainExtendedPoliciesMessage = 32,
+			QueryS4U2ProxyCacheMessage = 33,
+			RetrieveKeyTabMessage = 34,
+			RefreshPolicyMessage = 35,
+			PrintCloudKerberosDebugMessage = 36,
 		}
 		[AllowDuplicates]
 		public enum KERB_CERTIFICATE_INFO_TYPE : int32
@@ -1867,82 +1867,82 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SEC_APPLICATION_PROTOCOL_NEGOTIATION_EXT : int32
 		{
-			SecApplicationProtocolNegotiationExt_None = 0,
-			SecApplicationProtocolNegotiationExt_NPN = 1,
-			SecApplicationProtocolNegotiationExt_ALPN = 2,
+			None = 0,
+			NPN = 1,
+			ALPN = 2,
 		}
 		[AllowDuplicates]
 		public enum SEC_TRAFFIC_SECRET_TYPE : int32
 		{
-			SecTrafficSecret_None = 0,
-			SecTrafficSecret_Client = 1,
-			SecTrafficSecret_Server = 2,
+			None = 0,
+			Client = 1,
+			Server = 2,
 		}
 		[AllowDuplicates]
 		public enum SECPKG_CRED_CLASS : int32
 		{
-			SecPkgCredClass_None = 0,
-			SecPkgCredClass_Ephemeral = 10,
-			SecPkgCredClass_PersistedGeneric = 20,
-			SecPkgCredClass_PersistedSpecific = 30,
-			SecPkgCredClass_Explicit = 40,
+			None = 0,
+			Ephemeral = 10,
+			PersistedGeneric = 20,
+			PersistedSpecific = 30,
+			Explicit = 40,
 		}
 		[AllowDuplicates]
 		public enum SECPKG_ATTR_LCT_STATUS : int32
 		{
-			SecPkgAttrLastClientTokenYes = 0,
-			SecPkgAttrLastClientTokenNo = 1,
-			SecPkgAttrLastClientTokenMaybe = 2,
+			Yes = 0,
+			No = 1,
+			Maybe = 2,
 		}
 		[AllowDuplicates]
 		public enum SEC_APPLICATION_PROTOCOL_NEGOTIATION_STATUS : int32
 		{
-			SecApplicationProtocolNegotiationStatus_None = 0,
-			SecApplicationProtocolNegotiationStatus_Success = 1,
-			SecApplicationProtocolNegotiationStatus_SelectedClientOnly = 2,
+			None = 0,
+			Success = 1,
+			SelectedClientOnly = 2,
 		}
 		[AllowDuplicates]
 		public enum SecDelegationType : int32
 		{
-			SecFull = 0,
-			SecService = 1,
-			SecTree = 2,
-			SecDirectory = 3,
-			SecObject = 4,
+			Full = 0,
+			Service = 1,
+			Tree = 2,
+			Directory = 3,
+			Object = 4,
 		}
 		[AllowDuplicates]
 		public enum SASL_AUTHZID_STATE : int32
 		{
-			Sasl_AuthZIDForbidden = 0,
-			Sasl_AuthZIDProcessed = 1,
+			Forbidden = 0,
+			Processed = 1,
 		}
 		[AllowDuplicates]
 		public enum LSA_TOKEN_INFORMATION_TYPE : int32
 		{
-			LsaTokenInformationNull = 0,
-			LsaTokenInformationV1 = 1,
-			LsaTokenInformationV2 = 2,
-			LsaTokenInformationV3 = 3,
+			Null = 0,
+			V1 = 1,
+			V2 = 2,
+			V3 = 3,
 		}
 		[AllowDuplicates]
 		public enum SECPKG_EXTENDED_INFORMATION_CLASS : int32
 		{
-			SecpkgGssInfo = 1,
-			SecpkgContextThunks = 2,
-			SecpkgMutualAuthLevel = 3,
-			SecpkgWowClientDll = 4,
-			SecpkgExtraOids = 5,
-			SecpkgMaxInfo = 6,
-			SecpkgNego2Info = 7,
+			GssInfo = 1,
+			ContextThunks = 2,
+			MutualAuthLevel = 3,
+			WowClientDll = 4,
+			ExtraOids = 5,
+			MaxInfo = 6,
+			Nego2Info = 7,
 		}
 		[AllowDuplicates]
 		public enum SECPKG_CALL_PACKAGE_MESSAGE_TYPE : int32
 		{
-			SecPkgCallPackageMinMessage = 1024,
-			SecPkgCallPackagePinDcMessage = 1024,
-			SecPkgCallPackageUnpinAllDcsMessage = 1025,
-			SecPkgCallPackageTransferCredMessage = 1026,
-			SecPkgCallPackageMaxMessage = 1026,
+			MinMessage = 1024,
+			PinDcMessage = 1024,
+			UnpinAllDcsMessage = 1025,
+			TransferCredMessage = 1026,
+			MaxMessage = 1026,
 		}
 		[AllowDuplicates]
 		public enum SECPKG_SESSIONINFO_TYPE : int32
@@ -1952,66 +1952,66 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SECPKG_NAME_TYPE : int32
 		{
-			SecNameSamCompatible = 0,
-			SecNameAlternateId = 1,
-			SecNameFlat = 2,
-			SecNameDN = 3,
-			SecNameSPN = 4,
+			SamCompatible = 0,
+			AlternateId = 1,
+			Flat = 2,
+			DN = 3,
+			SPN = 4,
 		}
 		[AllowDuplicates]
 		public enum CRED_FETCH : int32
 		{
-			CredFetchDefault = 0,
-			CredFetchDPAPI = 1,
-			CredFetchForced = 2,
+			Default = 0,
+			DPAPI = 1,
+			Forced = 2,
 		}
 		[AllowDuplicates]
 		public enum KSEC_CONTEXT_TYPE : int32
 		{
-			KSecPaged = 0,
-			KSecNonPaged = 1,
+			Paged = 0,
+			NonPaged = 1,
 		}
 		[AllowDuplicates]
 		public enum eTlsSignatureAlgorithm : int32
 		{
-			TlsSignatureAlgorithm_Anonymous = 0,
-			TlsSignatureAlgorithm_Rsa = 1,
-			TlsSignatureAlgorithm_Dsa = 2,
-			TlsSignatureAlgorithm_Ecdsa = 3,
+			Anonymous = 0,
+			Rsa = 1,
+			Dsa = 2,
+			Ecdsa = 3,
 		}
 		[AllowDuplicates]
 		public enum eTlsHashAlgorithm : int32
 		{
-			TlsHashAlgorithm_None = 0,
-			TlsHashAlgorithm_Md5 = 1,
-			TlsHashAlgorithm_Sha1 = 2,
-			TlsHashAlgorithm_Sha224 = 3,
-			TlsHashAlgorithm_Sha256 = 4,
-			TlsHashAlgorithm_Sha384 = 5,
-			TlsHashAlgorithm_Sha512 = 6,
+			None = 0,
+			Md5 = 1,
+			Sha1 = 2,
+			Sha224 = 3,
+			Sha256 = 4,
+			Sha384 = 5,
+			Sha512 = 6,
 		}
 		[AllowDuplicates]
 		public enum SchGetExtensionsOptions : uint32
 		{
-			SCH_EXTENSIONS_OPTIONS_NONE = 0,
-			SCH_NO_RECORD_HEADER = 1,
+			EXTENSIONS_OPTIONS_NONE = 0,
+			NO_RECORD_HEADER = 1,
 		}
 		[AllowDuplicates]
 		public enum NETLOGON_LOGON_INFO_CLASS : int32
 		{
-			NetlogonInteractiveInformation = 1,
-			NetlogonNetworkInformation = 2,
-			NetlogonServiceInformation = 3,
-			NetlogonGenericInformation = 4,
-			NetlogonInteractiveTransitiveInformation = 5,
-			NetlogonNetworkTransitiveInformation = 6,
-			NetlogonServiceTransitiveInformation = 7,
+			InteractiveInformation = 1,
+			NetworkInformation = 2,
+			ServiceInformation = 3,
+			GenericInformation = 4,
+			InteractiveTransitiveInformation = 5,
+			NetworkTransitiveInformation = 6,
+			ServiceTransitiveInformation = 7,
 		}
 		[AllowDuplicates]
 		public enum TOKENBINDING_TYPE : int32
 		{
-			TOKENBINDING_TYPE_PROVIDED = 0,
-			TOKENBINDING_TYPE_REFERRED = 1,
+			PROVIDED = 0,
+			REFERRED = 1,
 		}
 		[AllowDuplicates]
 		public enum TOKENBINDING_EXTENSION_FORMAT : int32
@@ -2021,82 +2021,82 @@ namespace Win32
 		[AllowDuplicates]
 		public enum TOKENBINDING_KEY_PARAMETERS_TYPE : int32
 		{
-			TOKENBINDING_KEY_PARAMETERS_TYPE_RSA2048_PKCS = 0,
-			TOKENBINDING_KEY_PARAMETERS_TYPE_RSA2048_PSS = 1,
-			TOKENBINDING_KEY_PARAMETERS_TYPE_ECDSAP256 = 2,
-			TOKENBINDING_KEY_PARAMETERS_TYPE_ANYEXISTING = 255,
+			RSA2048_PKCS = 0,
+			RSA2048_PSS = 1,
+			ECDSAP256 = 2,
+			ANYEXISTING = 255,
 		}
 		[AllowDuplicates]
 		public enum EXTENDED_NAME_FORMAT : int32
 		{
-			NameUnknown = 0,
-			NameFullyQualifiedDN = 1,
-			NameSamCompatible = 2,
-			NameDisplay = 3,
-			NameUniqueId = 6,
-			NameCanonical = 7,
-			NameUserPrincipal = 8,
-			NameCanonicalEx = 9,
-			NameServicePrincipal = 10,
-			NameDnsDomain = 12,
-			NameGivenName = 13,
-			NameSurname = 14,
+			Unknown = 0,
+			FullyQualifiedDN = 1,
+			SamCompatible = 2,
+			Display = 3,
+			UniqueId = 6,
+			Canonical = 7,
+			UserPrincipal = 8,
+			CanonicalEx = 9,
+			ServicePrincipal = 10,
+			DnsDomain = 12,
+			GivenName = 13,
+			Surname = 14,
 		}
 		[AllowDuplicates]
 		public enum SLDATATYPE : uint32
 		{
-			SL_DATA_NONE = 0,
-			SL_DATA_SZ = 1,
-			SL_DATA_DWORD = 4,
-			SL_DATA_BINARY = 3,
-			SL_DATA_MULTI_SZ = 7,
-			SL_DATA_SUM = 100,
+			NONE = 0,
+			SZ = 1,
+			DWORD = 4,
+			BINARY = 3,
+			MULTI_SZ = 7,
+			SUM = 100,
 		}
 		[AllowDuplicates]
 		public enum SLIDTYPE : int32
 		{
-			SL_ID_APPLICATION = 0,
-			SL_ID_PRODUCT_SKU = 1,
-			SL_ID_LICENSE_FILE = 2,
-			SL_ID_LICENSE = 3,
-			SL_ID_PKEY = 4,
-			SL_ID_ALL_LICENSES = 5,
-			SL_ID_ALL_LICENSE_FILES = 6,
-			SL_ID_STORE_TOKEN = 7,
-			SL_ID_LAST = 8,
+			APPLICATION = 0,
+			PRODUCT_SKU = 1,
+			LICENSE_FILE = 2,
+			LICENSE = 3,
+			PKEY = 4,
+			ALL_LICENSES = 5,
+			ALL_LICENSE_FILES = 6,
+			STORE_TOKEN = 7,
+			LAST = 8,
 		}
 		[AllowDuplicates]
 		public enum SLLICENSINGSTATUS : int32
 		{
-			SL_LICENSING_STATUS_UNLICENSED = 0,
-			SL_LICENSING_STATUS_LICENSED = 1,
-			SL_LICENSING_STATUS_IN_GRACE_PERIOD = 2,
-			SL_LICENSING_STATUS_NOTIFICATION = 3,
-			SL_LICENSING_STATUS_LAST = 4,
+			UNLICENSED = 0,
+			LICENSED = 1,
+			IN_GRACE_PERIOD = 2,
+			NOTIFICATION = 3,
+			LAST = 4,
 		}
 		[AllowDuplicates]
 		public enum SL_ACTIVATION_TYPE : int32
 		{
-			SL_ACTIVATION_TYPE_DEFAULT = 0,
-			SL_ACTIVATION_TYPE_ACTIVE_DIRECTORY = 1,
+			DEFAULT = 0,
+			ACTIVE_DIRECTORY = 1,
 		}
 		[AllowDuplicates]
 		public enum SLREFERRALTYPE : int32
 		{
-			SL_REFERRALTYPE_SKUID = 0,
-			SL_REFERRALTYPE_APPID = 1,
-			SL_REFERRALTYPE_OVERRIDE_SKUID = 2,
-			SL_REFERRALTYPE_OVERRIDE_APPID = 3,
-			SL_REFERRALTYPE_BEST_MATCH = 4,
+			SKUID = 0,
+			APPID = 1,
+			OVERRIDE_SKUID = 2,
+			OVERRIDE_APPID = 3,
+			BEST_MATCH = 4,
 		}
 		[AllowDuplicates]
 		public enum SL_GENUINE_STATE : int32
 		{
-			SL_GEN_STATE_IS_GENUINE = 0,
-			SL_GEN_STATE_INVALID_LICENSE = 1,
-			SL_GEN_STATE_TAMPERED = 2,
-			SL_GEN_STATE_OFFLINE = 3,
-			SL_GEN_STATE_LAST = 4,
+			IS_GENUINE = 0,
+			INVALID_LICENSE = 1,
+			TAMPERED = 2,
+			OFFLINE = 3,
+			LAST = 4,
 		}
 		
 		// --- Function Pointers ---

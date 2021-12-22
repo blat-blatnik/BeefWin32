@@ -708,248 +708,248 @@ namespace Win32
 		[AllowDuplicates]
 		public enum MPR_INTERFACE_DIAL_MODE : uint32
 		{
-			MPRDM_DialFirst = 0,
-			MPRDM_DialAll = 1,
-			MPRDM_DialAsNeeded = 2,
+			First = 0,
+			All = 1,
+			AsNeeded = 2,
 		}
 		[AllowDuplicates]
 		public enum RASENTRY_DIAL_MODE : uint32
 		{
-			RASEDM_DialAll = 1,
-			RASEDM_DialAsNeeded = 2,
+			ll = 1,
+			sNeeded = 2,
 		}
 		[AllowDuplicates]
 		public enum RAS_FLAGS : uint32
 		{
-			RAS_FLAGS_PPP_CONNECTION = 1,
-			RAS_FLAGS_MESSENGER_PRESENT = 2,
-			RAS_FLAGS_QUARANTINE_PRESENT = 8,
-			RAS_FLAGS_ARAP_CONNECTION = 16,
-			RAS_FLAGS_IKEV2_CONNECTION = 16,
-			RAS_FLAGS_DORMANT = 32,
+			PPP_CONNECTION = 1,
+			MESSENGER_PRESENT = 2,
+			QUARANTINE_PRESENT = 8,
+			ARAP_CONNECTION = 16,
+			IKEV2_CONNECTION = 16,
+			DORMANT = 32,
 		}
 		[AllowDuplicates]
 		public enum MPR_ET : uint32
 		{
-			MPR_ET_None = 0,
-			MPR_ET_Require = 1,
-			MPR_ET_RequireMax = 2,
-			MPR_ET_Optional = 3,
+			None = 0,
+			Require = 1,
+			RequireMax = 2,
+			Optional = 3,
 		}
 		[AllowDuplicates]
 		public enum RASPPP_PROJECTION_INFO_SERVER_AUTH_DATA : uint32
 		{
-			RASLCPAD_CHAP_MD5 = 5,
-			RASLCPAD_CHAP_MS = 128,
-			RASLCPAD_CHAP_MSV2 = 129,
+			D5 = 5,
+			S = 128,
+			SV2 = 129,
 		}
 		[AllowDuplicates]
 		public enum PPP_LCP : uint32
 		{
-			PPP_LCP_PAP = 49187,
-			PPP_LCP_CHAP = 49699,
-			PPP_LCP_EAP = 49703,
-			PPP_LCP_SPAP = 49191,
+			PAP = 49187,
+			CHAP = 49699,
+			EAP = 49703,
+			SPAP = 49191,
 		}
 		[AllowDuplicates]
 		public enum RASPPP_PROJECTION_INFO_SERVER_AUTH_PROTOCOL : uint32
 		{
-			RASLCPAP_PAP = 49187,
-			RASLCPAP_SPAP = 49191,
-			RASLCPAP_CHAP = 49699,
-			RASLCPAP_EAP = 49703,
+			PAP = 49187,
+			SPAP = 49191,
+			CHAP = 49699,
+			EAP = 49703,
 		}
 		[AllowDuplicates]
 		public enum PPP_LCP_INFO_AUTH_DATA : uint32
 		{
-			PPP_LCP_CHAP_MD5 = 5,
-			PPP_LCP_CHAP_MS = 128,
-			PPP_LCP_CHAP_MSV2 = 129,
+			D5 = 5,
+			S = 128,
+			SV2 = 129,
 		}
 		[AllowDuplicates]
 		public enum RASIKEV_PROJECTION_INFO_FLAGS : uint32
 		{
-			RASIKEv2_FLAGS_MOBIKESUPPORTED = 1,
-			RASIKEv2_FLAGS_BEHIND_NAT = 2,
-			RASIKEv2_FLAGS_SERVERBEHIND_NAT = 4,
+			MOBIKESUPPORTED = 1,
+			BEHIND_NAT = 2,
+			SERVERBEHIND_NAT = 4,
 		}
 		[AllowDuplicates]
 		public enum MPR_VS : uint32
 		{
-			MPR_VS_Default = 0,
-			MPR_VS_PptpOnly = 1,
-			MPR_VS_PptpFirst = 2,
-			MPR_VS_L2tpOnly = 3,
-			MPR_VS_L2tpFirst = 4,
+			Default = 0,
+			PptpOnly = 1,
+			PptpFirst = 2,
+			L2tpOnly = 3,
+			L2tpFirst = 4,
 		}
 		[AllowDuplicates]
 		public enum SECURITY_MESSAGE_MSG_ID : uint32
 		{
-			SECURITYMSG_SUCCESS = 1,
-			SECURITYMSG_FAILURE = 2,
-			SECURITYMSG_ERROR = 3,
+			SUCCESS = 1,
+			FAILURE = 2,
+			ERROR = 3,
 		}
 		[AllowDuplicates]
 		public enum RASAPIVERSION : int32
 		{
-			RASAPIVERSION_500 = 1,
-			RASAPIVERSION_501 = 2,
-			RASAPIVERSION_600 = 3,
-			RASAPIVERSION_601 = 4,
+			_500 = 1,
+			_501 = 2,
+			_600 = 3,
+			_601 = 4,
 		}
 		[AllowDuplicates]
 		public enum RASCONNSTATE : int32
 		{
-			RASCS_OpenPort = 0,
-			RASCS_PortOpened = 1,
-			RASCS_ConnectDevice = 2,
-			RASCS_DeviceConnected = 3,
-			RASCS_AllDevicesConnected = 4,
-			RASCS_Authenticate = 5,
-			RASCS_AuthNotify = 6,
-			RASCS_AuthRetry = 7,
-			RASCS_AuthCallback = 8,
-			RASCS_AuthChangePassword = 9,
-			RASCS_AuthProject = 10,
-			RASCS_AuthLinkSpeed = 11,
-			RASCS_AuthAck = 12,
-			RASCS_ReAuthenticate = 13,
-			RASCS_Authenticated = 14,
-			RASCS_PrepareForCallback = 15,
-			RASCS_WaitForModemReset = 16,
-			RASCS_WaitForCallback = 17,
-			RASCS_Projected = 18,
-			RASCS_StartAuthentication = 19,
-			RASCS_CallbackComplete = 20,
-			RASCS_LogonNetwork = 21,
-			RASCS_SubEntryConnected = 22,
-			RASCS_SubEntryDisconnected = 23,
-			RASCS_ApplySettings = 24,
-			RASCS_Interactive = 4096,
-			RASCS_RetryAuthentication = 4097,
-			RASCS_CallbackSetByCaller = 4098,
-			RASCS_PasswordExpired = 4099,
-			RASCS_InvokeEapUI = 4100,
-			RASCS_Connected = 8192,
-			RASCS_Disconnected = 8193,
+			OpenPort = 0,
+			PortOpened = 1,
+			ConnectDevice = 2,
+			DeviceConnected = 3,
+			AllDevicesConnected = 4,
+			Authenticate = 5,
+			AuthNotify = 6,
+			AuthRetry = 7,
+			AuthCallback = 8,
+			AuthChangePassword = 9,
+			AuthProject = 10,
+			AuthLinkSpeed = 11,
+			AuthAck = 12,
+			ReAuthenticate = 13,
+			Authenticated = 14,
+			PrepareForCallback = 15,
+			WaitForModemReset = 16,
+			WaitForCallback = 17,
+			Projected = 18,
+			StartAuthentication = 19,
+			CallbackComplete = 20,
+			LogonNetwork = 21,
+			SubEntryConnected = 22,
+			SubEntryDisconnected = 23,
+			ApplySettings = 24,
+			Interactive = 4096,
+			RetryAuthentication = 4097,
+			CallbackSetByCaller = 4098,
+			PasswordExpired = 4099,
+			InvokeEapUI = 4100,
+			Connected = 8192,
+			Disconnected = 8193,
 		}
 		[AllowDuplicates]
 		public enum RASCONNSUBSTATE : int32
 		{
-			RASCSS_None = 0,
-			RASCSS_Dormant = 1,
-			RASCSS_Reconnecting = 2,
-			RASCSS_Reconnected = 8192,
+			None = 0,
+			Dormant = 1,
+			Reconnecting = 2,
+			Reconnected = 8192,
 		}
 		[AllowDuplicates]
 		public enum RASPROJECTION : int32
 		{
-			RASP_Amb = 65536,
-			RASP_PppNbf = 32831,
-			RASP_PppIpx = 32811,
-			RASP_PppIp = 32801,
-			RASP_PppCcp = 33021,
-			RASP_PppLcp = 49185,
-			RASP_PppIpv6 = 32855,
+			Amb = 65536,
+			PppNbf = 32831,
+			PppIpx = 32811,
+			PppIp = 32801,
+			PppCcp = 33021,
+			PppLcp = 49185,
+			PppIpv6 = 32855,
 		}
 		[AllowDuplicates]
 		public enum RASPROJECTION_INFO_TYPE : int32
 		{
-			PROJECTION_INFO_TYPE_PPP = 1,
-			PROJECTION_INFO_TYPE_IKEv2 = 2,
+			PPP = 1,
+			IKEv2 = 2,
 		}
 		[AllowDuplicates]
 		public enum IKEV2_ID_PAYLOAD_TYPE : int32
 		{
-			IKEV2_ID_PAYLOAD_TYPE_INVALID = 0,
-			IKEV2_ID_PAYLOAD_TYPE_IPV4_ADDR = 1,
-			IKEV2_ID_PAYLOAD_TYPE_FQDN = 2,
-			IKEV2_ID_PAYLOAD_TYPE_RFC822_ADDR = 3,
-			IKEV2_ID_PAYLOAD_TYPE_RESERVED1 = 4,
-			IKEV2_ID_PAYLOAD_TYPE_ID_IPV6_ADDR = 5,
-			IKEV2_ID_PAYLOAD_TYPE_RESERVED2 = 6,
-			IKEV2_ID_PAYLOAD_TYPE_RESERVED3 = 7,
-			IKEV2_ID_PAYLOAD_TYPE_RESERVED4 = 8,
-			IKEV2_ID_PAYLOAD_TYPE_DER_ASN1_DN = 9,
-			IKEV2_ID_PAYLOAD_TYPE_DER_ASN1_GN = 10,
-			IKEV2_ID_PAYLOAD_TYPE_KEY_ID = 11,
-			IKEV2_ID_PAYLOAD_TYPE_MAX = 12,
+			INVALID = 0,
+			IPV4_ADDR = 1,
+			FQDN = 2,
+			RFC822_ADDR = 3,
+			RESERVED1 = 4,
+			ID_IPV6_ADDR = 5,
+			RESERVED2 = 6,
+			RESERVED3 = 7,
+			RESERVED4 = 8,
+			DER_ASN1_DN = 9,
+			DER_ASN1_GN = 10,
+			KEY_ID = 11,
+			MAX = 12,
 		}
 		[AllowDuplicates]
 		public enum ROUTER_INTERFACE_TYPE : int32
 		{
-			ROUTER_IF_TYPE_CLIENT = 0,
-			ROUTER_IF_TYPE_HOME_ROUTER = 1,
-			ROUTER_IF_TYPE_FULL_ROUTER = 2,
-			ROUTER_IF_TYPE_DEDICATED = 3,
-			ROUTER_IF_TYPE_INTERNAL = 4,
-			ROUTER_IF_TYPE_LOOPBACK = 5,
-			ROUTER_IF_TYPE_TUNNEL1 = 6,
-			ROUTER_IF_TYPE_DIALOUT = 7,
-			ROUTER_IF_TYPE_MAX = 8,
+			CLIENT = 0,
+			HOME_ROUTER = 1,
+			FULL_ROUTER = 2,
+			DEDICATED = 3,
+			INTERNAL = 4,
+			LOOPBACK = 5,
+			TUNNEL1 = 6,
+			DIALOUT = 7,
+			MAX = 8,
 		}
 		[AllowDuplicates]
 		public enum ROUTER_CONNECTION_STATE : int32
 		{
-			ROUTER_IF_STATE_UNREACHABLE = 0,
-			ROUTER_IF_STATE_DISCONNECTED = 1,
-			ROUTER_IF_STATE_CONNECTING = 2,
-			ROUTER_IF_STATE_CONNECTED = 3,
+			UNREACHABLE = 0,
+			DISCONNECTED = 1,
+			CONNECTING = 2,
+			CONNECTED = 3,
 		}
 		[AllowDuplicates]
 		public enum RAS_PORT_CONDITION : int32
 		{
-			RAS_PORT_NON_OPERATIONAL = 0,
-			RAS_PORT_DISCONNECTED = 1,
-			RAS_PORT_CALLING_BACK = 2,
-			RAS_PORT_LISTENING = 3,
-			RAS_PORT_AUTHENTICATING = 4,
-			RAS_PORT_AUTHENTICATED = 5,
-			RAS_PORT_INITIALIZING = 6,
+			NON_OPERATIONAL = 0,
+			DISCONNECTED = 1,
+			CALLING_BACK = 2,
+			LISTENING = 3,
+			AUTHENTICATING = 4,
+			AUTHENTICATED = 5,
+			INITIALIZING = 6,
 		}
 		[AllowDuplicates]
 		public enum RAS_HARDWARE_CONDITION : int32
 		{
-			RAS_HARDWARE_OPERATIONAL = 0,
-			RAS_HARDWARE_FAILURE = 1,
+			OPERATIONAL = 0,
+			FAILURE = 1,
 		}
 		[AllowDuplicates]
 		public enum RAS_QUARANTINE_STATE : int32
 		{
-			RAS_QUAR_STATE_NORMAL = 0,
-			RAS_QUAR_STATE_QUARANTINE = 1,
-			RAS_QUAR_STATE_PROBATION = 2,
-			RAS_QUAR_STATE_NOT_CAPABLE = 3,
+			NORMAL = 0,
+			QUARANTINE = 1,
+			PROBATION = 2,
+			NOT_CAPABLE = 3,
 		}
 		[AllowDuplicates]
 		public enum MPRAPI_OBJECT_TYPE : int32
 		{
-			MPRAPI_OBJECT_TYPE_RAS_CONNECTION_OBJECT = 1,
-			MPRAPI_OBJECT_TYPE_MPR_SERVER_OBJECT = 2,
-			MPRAPI_OBJECT_TYPE_MPR_SERVER_SET_CONFIG_OBJECT = 3,
-			MPRAPI_OBJECT_TYPE_AUTH_VALIDATION_OBJECT = 4,
-			MPRAPI_OBJECT_TYPE_UPDATE_CONNECTION_OBJECT = 5,
-			MPRAPI_OBJECT_TYPE_IF_CUSTOM_CONFIG_OBJECT = 6,
+			RAS_CONNECTION_OBJECT = 1,
+			MPR_SERVER_OBJECT = 2,
+			MPR_SERVER_SET_CONFIG_OBJECT = 3,
+			AUTH_VALIDATION_OBJECT = 4,
+			UPDATE_CONNECTION_OBJECT = 5,
+			IF_CUSTOM_CONFIG_OBJECT = 6,
 		}
 		[AllowDuplicates]
 		public enum MPR_VPN_TS_TYPE : int32
 		{
-			MPR_VPN_TS_IPv4_ADDR_RANGE = 7,
-			MPR_VPN_TS_IPv6_ADDR_RANGE = 8,
+			_4_ADDR_RANGE = 7,
+			_6_ADDR_RANGE = 8,
 		}
 		[AllowDuplicates]
 		public enum MGM_ENUM_TYPES : int32
 		{
-			ANY_SOURCE = 0,
-			ALL_SOURCES = 1,
+			NY_SOURCE = 0,
+			LL_SOURCES = 1,
 		}
 		[AllowDuplicates]
 		public enum RTM_EVENT_TYPE : int32
 		{
-			RTM_ENTITY_REGISTERED = 0,
-			RTM_ENTITY_DEREGISTERED = 1,
-			RTM_ROUTE_EXPIRED = 2,
-			RTM_CHANGE_NOTIFICATION = 3,
+			ENTITY_REGISTERED = 0,
+			ENTITY_DEREGISTERED = 1,
+			ROUTE_EXPIRED = 2,
+			CHANGE_NOTIFICATION = 3,
 		}
 		
 		// --- Function Pointers ---

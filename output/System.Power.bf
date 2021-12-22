@@ -151,115 +151,115 @@ namespace Win32
 		[AllowDuplicates]
 		public enum POWER_PLATFORM_ROLE_VERSION : uint32
 		{
-			POWER_PLATFORM_ROLE_V1 = 1,
-			POWER_PLATFORM_ROLE_V2 = 2,
+			_1 = 1,
+			_2 = 2,
 		}
 		[AllowDuplicates]
 		public enum POWER_SETTING_REGISTER_NOTIFICATION_FLAGS : uint32
 		{
-			DEVICE_NOTIFY_SERVICE_HANDLE = 1,
-			DEVICE_NOTIFY_CALLBACK = 2,
-			DEVICE_NOTIFY_WINDOW_HANDLE = 0,
+			SERVICE_HANDLE = 1,
+			CALLBACK = 2,
+			WINDOW_HANDLE = 0,
 		}
 		[AllowDuplicates]
 		public enum EXECUTION_STATE : uint32
 		{
-			ES_AWAYMODE_REQUIRED = 64,
-			ES_CONTINUOUS = 2147483648,
-			ES_DISPLAY_REQUIRED = 2,
-			ES_SYSTEM_REQUIRED = 1,
-			ES_USER_PRESENT = 4,
+			AWAYMODE_REQUIRED = 64,
+			CONTINUOUS = 2147483648,
+			DISPLAY_REQUIRED = 2,
+			SYSTEM_REQUIRED = 1,
+			USER_PRESENT = 4,
 		}
 		[AllowDuplicates]
 		public enum POWER_ACTION_POLICY_EVENT_CODE : uint32
 		{
-			POWER_FORCE_TRIGGER_RESET = 2147483648,
-			POWER_LEVEL_USER_NOTIFY_EXEC = 4,
-			POWER_LEVEL_USER_NOTIFY_SOUND = 2,
-			POWER_LEVEL_USER_NOTIFY_TEXT = 1,
-			POWER_USER_NOTIFY_BUTTON = 8,
-			POWER_USER_NOTIFY_SHUTDOWN = 16,
+			FORCE_TRIGGER_RESET = 2147483648,
+			LEVEL_USER_NOTIFY_EXEC = 4,
+			LEVEL_USER_NOTIFY_SOUND = 2,
+			LEVEL_USER_NOTIFY_TEXT = 1,
+			USER_NOTIFY_BUTTON = 8,
+			USER_NOTIFY_SHUTDOWN = 16,
 		}
 		[AllowDuplicates]
 		public enum EFFECTIVE_POWER_MODE : int32
 		{
-			EffectivePowerModeBatterySaver = 0,
-			EffectivePowerModeBetterBattery = 1,
-			EffectivePowerModeBalanced = 2,
-			EffectivePowerModeHighPerformance = 3,
-			EffectivePowerModeMaxPerformance = 4,
-			EffectivePowerModeGameMode = 5,
-			EffectivePowerModeMixedReality = 6,
+			BatterySaver = 0,
+			BetterBattery = 1,
+			Balanced = 2,
+			HighPerformance = 3,
+			MaxPerformance = 4,
+			GameMode = 5,
+			MixedReality = 6,
 		}
 		[AllowDuplicates]
 		public enum POWER_DATA_ACCESSOR : int32
 		{
-			ACCESS_AC_POWER_SETTING_INDEX = 0,
-			ACCESS_DC_POWER_SETTING_INDEX = 1,
-			ACCESS_FRIENDLY_NAME = 2,
-			ACCESS_DESCRIPTION = 3,
-			ACCESS_POSSIBLE_POWER_SETTING = 4,
-			ACCESS_POSSIBLE_POWER_SETTING_FRIENDLY_NAME = 5,
-			ACCESS_POSSIBLE_POWER_SETTING_DESCRIPTION = 6,
-			ACCESS_DEFAULT_AC_POWER_SETTING = 7,
-			ACCESS_DEFAULT_DC_POWER_SETTING = 8,
-			ACCESS_POSSIBLE_VALUE_MIN = 9,
-			ACCESS_POSSIBLE_VALUE_MAX = 10,
-			ACCESS_POSSIBLE_VALUE_INCREMENT = 11,
-			ACCESS_POSSIBLE_VALUE_UNITS = 12,
-			ACCESS_ICON_RESOURCE = 13,
-			ACCESS_DEFAULT_SECURITY_DESCRIPTOR = 14,
-			ACCESS_ATTRIBUTES = 15,
-			ACCESS_SCHEME = 16,
-			ACCESS_SUBGROUP = 17,
-			ACCESS_INDIVIDUAL_SETTING = 18,
-			ACCESS_ACTIVE_SCHEME = 19,
-			ACCESS_CREATE_SCHEME = 20,
-			ACCESS_AC_POWER_SETTING_MAX = 21,
-			ACCESS_DC_POWER_SETTING_MAX = 22,
-			ACCESS_AC_POWER_SETTING_MIN = 23,
-			ACCESS_DC_POWER_SETTING_MIN = 24,
-			ACCESS_PROFILE = 25,
-			ACCESS_OVERLAY_SCHEME = 26,
-			ACCESS_ACTIVE_OVERLAY_SCHEME = 27,
+			AC_POWER_SETTING_INDEX = 0,
+			DC_POWER_SETTING_INDEX = 1,
+			FRIENDLY_NAME = 2,
+			DESCRIPTION = 3,
+			POSSIBLE_POWER_SETTING = 4,
+			POSSIBLE_POWER_SETTING_FRIENDLY_NAME = 5,
+			POSSIBLE_POWER_SETTING_DESCRIPTION = 6,
+			DEFAULT_AC_POWER_SETTING = 7,
+			DEFAULT_DC_POWER_SETTING = 8,
+			POSSIBLE_VALUE_MIN = 9,
+			POSSIBLE_VALUE_MAX = 10,
+			POSSIBLE_VALUE_INCREMENT = 11,
+			POSSIBLE_VALUE_UNITS = 12,
+			ICON_RESOURCE = 13,
+			DEFAULT_SECURITY_DESCRIPTOR = 14,
+			ATTRIBUTES = 15,
+			SCHEME = 16,
+			SUBGROUP = 17,
+			INDIVIDUAL_SETTING = 18,
+			ACTIVE_SCHEME = 19,
+			CREATE_SCHEME = 20,
+			AC_POWER_SETTING_MAX = 21,
+			DC_POWER_SETTING_MAX = 22,
+			AC_POWER_SETTING_MIN = 23,
+			DC_POWER_SETTING_MIN = 24,
+			PROFILE = 25,
+			OVERLAY_SCHEME = 26,
+			ACTIVE_OVERLAY_SCHEME = 27,
 		}
 		[AllowDuplicates]
 		public enum BATTERY_QUERY_INFORMATION_LEVEL : int32
 		{
-			BatteryInformation = 0,
-			BatteryGranularityInformation = 1,
-			BatteryTemperature = 2,
-			BatteryEstimatedTime = 3,
-			BatteryDeviceName = 4,
-			BatteryManufactureDate = 5,
-			BatteryManufactureName = 6,
-			BatteryUniqueID = 7,
-			BatterySerialNumber = 8,
+			Information = 0,
+			GranularityInformation = 1,
+			Temperature = 2,
+			EstimatedTime = 3,
+			DeviceName = 4,
+			ManufactureDate = 5,
+			ManufactureName = 6,
+			UniqueID = 7,
+			SerialNumber = 8,
 		}
 		[AllowDuplicates]
 		public enum BATTERY_CHARGING_SOURCE_TYPE : int32
 		{
-			BatteryChargingSourceType_AC = 1,
-			BatteryChargingSourceType_USB = 2,
-			BatteryChargingSourceType_Wireless = 3,
-			BatteryChargingSourceType_Max = 4,
+			AC = 1,
+			USB = 2,
+			Wireless = 3,
+			Max = 4,
 		}
 		[AllowDuplicates]
 		public enum USB_CHARGER_PORT : int32
 		{
-			UsbChargerPort_Legacy = 0,
-			UsbChargerPort_TypeC = 1,
-			UsbChargerPort_Max = 2,
+			Legacy = 0,
+			TypeC = 1,
+			Max = 2,
 		}
 		[AllowDuplicates]
 		public enum BATTERY_SET_INFORMATION_LEVEL : int32
 		{
-			BatteryCriticalBias = 0,
-			BatteryCharge = 1,
-			BatteryDischarge = 2,
-			BatteryChargingSource = 3,
-			BatteryChargerId = 4,
-			BatteryChargerStatus = 5,
+			CriticalBias = 0,
+			Charge = 1,
+			Discharge = 2,
+			ChargingSource = 3,
+			ChargerId = 4,
+			ChargerStatus = 5,
 		}
 		[AllowDuplicates]
 		public enum EMI_MEASUREMENT_UNIT : int32
@@ -269,51 +269,51 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SYSTEM_POWER_STATE : int32
 		{
-			PowerSystemUnspecified = 0,
-			PowerSystemWorking = 1,
-			PowerSystemSleeping1 = 2,
-			PowerSystemSleeping2 = 3,
-			PowerSystemSleeping3 = 4,
-			PowerSystemHibernate = 5,
-			PowerSystemShutdown = 6,
-			PowerSystemMaximum = 7,
+			Unspecified = 0,
+			Working = 1,
+			Sleeping1 = 2,
+			Sleeping2 = 3,
+			Sleeping3 = 4,
+			Hibernate = 5,
+			Shutdown = 6,
+			Maximum = 7,
 		}
 		[AllowDuplicates]
 		public enum POWER_ACTION : int32
 		{
-			PowerActionNone = 0,
-			PowerActionReserved = 1,
-			PowerActionSleep = 2,
-			PowerActionHibernate = 3,
-			PowerActionShutdown = 4,
-			PowerActionShutdownReset = 5,
-			PowerActionShutdownOff = 6,
-			PowerActionWarmEject = 7,
-			PowerActionDisplayOff = 8,
+			None = 0,
+			Reserved = 1,
+			Sleep = 2,
+			Hibernate = 3,
+			Shutdown = 4,
+			ShutdownReset = 5,
+			ShutdownOff = 6,
+			WarmEject = 7,
+			DisplayOff = 8,
 		}
 		[AllowDuplicates]
 		public enum DEVICE_POWER_STATE : int32
 		{
-			PowerDeviceUnspecified = 0,
-			PowerDeviceD0 = 1,
-			PowerDeviceD1 = 2,
-			PowerDeviceD2 = 3,
-			PowerDeviceD3 = 4,
-			PowerDeviceMaximum = 5,
+			Unspecified = 0,
+			D0 = 1,
+			D1 = 2,
+			D2 = 3,
+			D3 = 4,
+			Maximum = 5,
 		}
 		[AllowDuplicates]
 		public enum LATENCY_TIME : int32
 		{
-			LT_DONT_CARE = 0,
-			LT_LOWEST_LATENCY = 1,
+			DONT_CARE = 0,
+			LOWEST_LATENCY = 1,
 		}
 		[AllowDuplicates]
 		public enum POWER_REQUEST_TYPE : int32
 		{
-			PowerRequestDisplayRequired = 0,
-			PowerRequestSystemRequired = 1,
-			PowerRequestAwayModeRequired = 2,
-			PowerRequestExecutionRequired = 3,
+			DisplayRequired = 0,
+			SystemRequired = 1,
+			AwayModeRequired = 2,
+			ExecutionRequired = 3,
 		}
 		[AllowDuplicates]
 		public enum POWER_INFORMATION_LEVEL : int32
@@ -420,24 +420,24 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SYSTEM_POWER_CONDITION : int32
 		{
-			PoAc = 0,
-			PoDc = 1,
-			PoHot = 2,
-			PoConditionMaximum = 3,
+			Ac = 0,
+			Dc = 1,
+			Hot = 2,
+			ConditionMaximum = 3,
 		}
 		[AllowDuplicates]
 		public enum POWER_PLATFORM_ROLE : int32
 		{
-			PlatformRoleUnspecified = 0,
-			PlatformRoleDesktop = 1,
-			PlatformRoleMobile = 2,
-			PlatformRoleWorkstation = 3,
-			PlatformRoleEnterpriseServer = 4,
-			PlatformRoleSOHOServer = 5,
-			PlatformRoleAppliancePC = 6,
-			PlatformRolePerformanceServer = 7,
-			PlatformRoleSlate = 8,
-			PlatformRoleMaximum = 9,
+			Unspecified = 0,
+			Desktop = 1,
+			Mobile = 2,
+			Workstation = 3,
+			EnterpriseServer = 4,
+			SOHOServer = 5,
+			AppliancePC = 6,
+			PerformanceServer = 7,
+			Slate = 8,
+			Maximum = 9,
 		}
 		
 		// --- Function Pointers ---

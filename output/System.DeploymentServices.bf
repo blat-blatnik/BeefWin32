@@ -210,158 +210,158 @@ namespace Win32
 		[AllowDuplicates]
 		public enum CPU_ARCHITECTURE : uint32
 		{
-			CPU_ARCHITECTURE_AMD64 = 9,
-			CPU_ARCHITECTURE_IA64 = 6,
-			CPU_ARCHITECTURE_INTEL = 0,
+			AMD64 = 9,
+			IA64 = 6,
+			INTEL = 0,
 		}
 		[AllowDuplicates]
 		public enum PFN_WDS_CLI_CALLBACK_MESSAGE_ID : uint32
 		{
-			WDS_CLI_MSG_START = 0,
-			WDS_CLI_MSG_COMPLETE = 1,
-			WDS_CLI_MSG_PROGRESS = 2,
-			WDS_CLI_MSG_TEXT = 3,
+			START = 0,
+			COMPLETE = 1,
+			PROGRESS = 2,
+			TEXT = 3,
 		}
 		[AllowDuplicates]
 		public enum WDS_TRANSPORTCLIENT_REQUEST_AUTH_LEVEL : uint32
 		{
-			WDS_TRANSPORTCLIENT_AUTH = 1,
-			WDS_TRANSPORTCLIENT_NO_AUTH = 2,
+			AUTH = 1,
+			NO_AUTH = 2,
 		}
 		[AllowDuplicates]
 		public enum WDS_CLI_IMAGE_TYPE : int32
 		{
-			WDS_CLI_IMAGE_TYPE_UNKNOWN = 0,
-			WDS_CLI_IMAGE_TYPE_WIM = 1,
-			WDS_CLI_IMAGE_TYPE_VHD = 2,
-			WDS_CLI_IMAGE_TYPE_VHDX = 3,
+			UNKNOWN = 0,
+			WIM = 1,
+			VHD = 2,
+			VHDX = 3,
 		}
 		[AllowDuplicates]
 		public enum WDS_CLI_FIRMWARE_TYPE : int32
 		{
-			WDS_CLI_FIRMWARE_UNKNOWN = 0,
-			WDS_CLI_FIRMWARE_BIOS = 1,
-			WDS_CLI_FIRMWARE_EFI = 2,
+			UNKNOWN = 0,
+			BIOS = 1,
+			EFI = 2,
 		}
 		[AllowDuplicates]
 		public enum WDS_CLI_IMAGE_PARAM_TYPE : int32
 		{
-			WDS_CLI_IMAGE_PARAM_UNKNOWN = 0,
-			WDS_CLI_IMAGE_PARAM_SPARSE_FILE = 1,
-			WDS_CLI_IMAGE_PARAM_SUPPORTED_FIRMWARES = 2,
+			UNKNOWN = 0,
+			SPARSE_FILE = 1,
+			SUPPORTED_FIRMWARES = 2,
 		}
 		[AllowDuplicates]
 		public enum TRANSPORTPROVIDER_CALLBACK_ID : int32
 		{
-			WDS_TRANSPORTPROVIDER_CREATE_INSTANCE = 0,
-			WDS_TRANSPORTPROVIDER_COMPARE_CONTENT = 1,
-			WDS_TRANSPORTPROVIDER_OPEN_CONTENT = 2,
-			WDS_TRANSPORTPROVIDER_USER_ACCESS_CHECK = 3,
-			WDS_TRANSPORTPROVIDER_GET_CONTENT_SIZE = 4,
-			WDS_TRANSPORTPROVIDER_READ_CONTENT = 5,
-			WDS_TRANSPORTPROVIDER_CLOSE_CONTENT = 6,
-			WDS_TRANSPORTPROVIDER_CLOSE_INSTANCE = 7,
-			WDS_TRANSPORTPROVIDER_SHUTDOWN = 8,
-			WDS_TRANSPORTPROVIDER_DUMP_STATE = 9,
-			WDS_TRANSPORTPROVIDER_REFRESH_SETTINGS = 10,
-			WDS_TRANSPORTPROVIDER_GET_CONTENT_METADATA = 11,
-			WDS_TRANSPORTPROVIDER_MAX_CALLBACKS = 12,
+			CREATE_INSTANCE = 0,
+			COMPARE_CONTENT = 1,
+			OPEN_CONTENT = 2,
+			USER_ACCESS_CHECK = 3,
+			GET_CONTENT_SIZE = 4,
+			READ_CONTENT = 5,
+			CLOSE_CONTENT = 6,
+			CLOSE_INSTANCE = 7,
+			SHUTDOWN = 8,
+			DUMP_STATE = 9,
+			REFRESH_SETTINGS = 10,
+			GET_CONTENT_METADATA = 11,
+			MAX_CALLBACKS = 12,
 		}
 		[AllowDuplicates]
 		public enum TRANSPORTCLIENT_CALLBACK_ID : int32
 		{
-			WDS_TRANSPORTCLIENT_SESSION_START = 0,
-			WDS_TRANSPORTCLIENT_RECEIVE_CONTENTS = 1,
-			WDS_TRANSPORTCLIENT_SESSION_COMPLETE = 2,
-			WDS_TRANSPORTCLIENT_RECEIVE_METADATA = 3,
-			WDS_TRANSPORTCLIENT_SESSION_STARTEX = 4,
-			WDS_TRANSPORTCLIENT_SESSION_NEGOTIATE = 5,
-			WDS_TRANSPORTCLIENT_MAX_CALLBACKS = 6,
+			SESSION_START = 0,
+			RECEIVE_CONTENTS = 1,
+			SESSION_COMPLETE = 2,
+			RECEIVE_METADATA = 3,
+			SESSION_STARTEX = 4,
+			SESSION_NEGOTIATE = 5,
+			MAX_CALLBACKS = 6,
 		}
 		[AllowDuplicates]
 		public enum WDSTRANSPORT_FEATURE_FLAGS : int32
 		{
-			WdsTptFeatureAdminPack = 1,
-			WdsTptFeatureTransportServer = 2,
-			WdsTptFeatureDeploymentServer = 4,
+			AdminPack = 1,
+			TransportServer = 2,
+			DeploymentServer = 4,
 		}
 		[AllowDuplicates]
 		public enum WDSTRANSPORT_PROTOCOL_FLAGS : int32
 		{
-			WdsTptProtocolUnicast = 1,
-			WdsTptProtocolMulticast = 2,
+			Unicast = 1,
+			Multicast = 2,
 		}
 		[AllowDuplicates]
 		public enum WDSTRANSPORT_NAMESPACE_TYPE : int32
 		{
-			WdsTptNamespaceTypeUnknown = 0,
-			WdsTptNamespaceTypeAutoCast = 1,
-			WdsTptNamespaceTypeScheduledCastManualStart = 2,
-			WdsTptNamespaceTypeScheduledCastAutoStart = 3,
+			Unknown = 0,
+			AutoCast = 1,
+			ScheduledCastManualStart = 2,
+			ScheduledCastAutoStart = 3,
 		}
 		[AllowDuplicates]
 		public enum WDSTRANSPORT_DISCONNECT_TYPE : int32
 		{
-			WdsTptDisconnectUnknown = 0,
-			WdsTptDisconnectFallback = 1,
-			WdsTptDisconnectAbort = 2,
+			Unknown = 0,
+			Fallback = 1,
+			Abort = 2,
 		}
 		[AllowDuplicates]
 		public enum WDSTRANSPORT_SERVICE_NOTIFICATION : int32
 		{
-			WdsTptServiceNotifyUnknown = 0,
-			WdsTptServiceNotifyReadSettings = 1,
+			Unknown = 0,
+			ReadSettings = 1,
 		}
 		[AllowDuplicates]
 		public enum WDSTRANSPORT_IP_ADDRESS_TYPE : int32
 		{
-			WdsTptIpAddressUnknown = 0,
-			WdsTptIpAddressIpv4 = 1,
-			WdsTptIpAddressIpv6 = 2,
+			Unknown = 0,
+			Ipv4 = 1,
+			Ipv6 = 2,
 		}
 		[AllowDuplicates]
 		public enum WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE : int32
 		{
-			WdsTptIpAddressSourceUnknown = 0,
-			WdsTptIpAddressSourceDhcp = 1,
-			WdsTptIpAddressSourceRange = 2,
+			Unknown = 0,
+			Dhcp = 1,
+			Range = 2,
 		}
 		[AllowDuplicates]
 		public enum WDSTRANSPORT_NETWORK_PROFILE_TYPE : int32
 		{
-			WdsTptNetworkProfileUnknown = 0,
-			WdsTptNetworkProfileCustom = 1,
-			WdsTptNetworkProfile10Mbps = 2,
-			WdsTptNetworkProfile100Mbps = 3,
-			WdsTptNetworkProfile1Gbps = 4,
+			Unknown = 0,
+			Custom = 1,
+			_10Mbps = 2,
+			_100Mbps = 3,
+			_1Gbps = 4,
 		}
 		[AllowDuplicates]
 		public enum WDSTRANSPORT_DIAGNOSTICS_COMPONENT_FLAGS : int32
 		{
-			WdsTptDiagnosticsComponentPxe = 1,
-			WdsTptDiagnosticsComponentTftp = 2,
-			WdsTptDiagnosticsComponentImageServer = 4,
-			WdsTptDiagnosticsComponentMulticast = 8,
+			Pxe = 1,
+			Tftp = 2,
+			ImageServer = 4,
+			Multicast = 8,
 		}
 		[AllowDuplicates]
 		public enum WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE : int32
 		{
-			WdsTptSlowClientHandlingUnknown = 0,
-			WdsTptSlowClientHandlingNone = 1,
-			WdsTptSlowClientHandlingAutoDisconnect = 2,
-			WdsTptSlowClientHandlingMultistream = 3,
+			Unknown = 0,
+			None = 1,
+			AutoDisconnect = 2,
+			Multistream = 3,
 		}
 		[AllowDuplicates]
 		public enum WDSTRANSPORT_UDP_PORT_POLICY : int32
 		{
-			WdsTptUdpPortPolicyDynamic = 0,
-			WdsTptUdpPortPolicyFixed = 1,
+			Dynamic = 0,
+			Fixed = 1,
 		}
 		[AllowDuplicates]
 		public enum WDSTRANSPORT_TFTP_CAPABILITY : int32
 		{
-			WdsTptTftpCapMaximumBlockSize = 1,
-			WdsTptTftpCapVariableWindow = 2,
+			MaximumBlockSize = 1,
+			VariableWindow = 2,
 		}
 		
 		// --- Function Pointers ---

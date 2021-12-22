@@ -46,19 +46,19 @@ namespace Win32
 		[AllowDuplicates]
 		public enum DFS_TARGET_PRIORITY_CLASS : int32
 		{
-			DfsInvalidPriorityClass = -1,
-			DfsSiteCostNormalPriorityClass = 0,
-			DfsGlobalHighPriorityClass = 1,
-			DfsSiteCostHighPriorityClass = 2,
-			DfsSiteCostLowPriorityClass = 3,
-			DfsGlobalLowPriorityClass = 4,
+			InvalidPriorityClass = -1,
+			SiteCostNormalPriorityClass = 0,
+			GlobalHighPriorityClass = 1,
+			SiteCostHighPriorityClass = 2,
+			SiteCostLowPriorityClass = 3,
+			GlobalLowPriorityClass = 4,
 		}
 		[AllowDuplicates]
 		public enum DFS_NAMESPACE_VERSION_ORIGIN : int32
 		{
-			DFS_NAMESPACE_VERSION_ORIGIN_COMBINED = 0,
-			DFS_NAMESPACE_VERSION_ORIGIN_SERVER = 1,
-			DFS_NAMESPACE_VERSION_ORIGIN_DOMAIN = 2,
+			COMBINED = 0,
+			SERVER = 1,
+			DOMAIN = 2,
 		}
 		
 		// --- Structs ---

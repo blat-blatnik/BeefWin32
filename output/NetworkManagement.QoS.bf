@@ -503,69 +503,69 @@ namespace Win32
 		[AllowDuplicates]
 		public enum int_serv_wkp : int32
 		{
-			IS_WKP_HOP_CNT = 4,
-			IS_WKP_PATH_BW = 6,
-			IS_WKP_MIN_LATENCY = 8,
-			IS_WKP_COMPOSED_MTU = 10,
-			IS_WKP_TB_TSPEC = 127,
-			IS_WKP_Q_TSPEC = 128,
+			HOP_CNT = 4,
+			PATH_BW = 6,
+			MIN_LATENCY = 8,
+			COMPOSED_MTU = 10,
+			TB_TSPEC = 127,
+			Q_TSPEC = 128,
 		}
 		[AllowDuplicates]
 		public enum QOS_TRAFFIC_TYPE : int32
 		{
-			QOSTrafficTypeBestEffort = 0,
-			QOSTrafficTypeBackground = 1,
-			QOSTrafficTypeExcellentEffort = 2,
-			QOSTrafficTypeAudioVideo = 3,
-			QOSTrafficTypeVoice = 4,
-			QOSTrafficTypeControl = 5,
+			BestEffort = 0,
+			Background = 1,
+			ExcellentEffort = 2,
+			AudioVideo = 3,
+			Voice = 4,
+			Control = 5,
 		}
 		[AllowDuplicates]
 		public enum QOS_SET_FLOW : int32
 		{
-			QOSSetTrafficType = 0,
-			QOSSetOutgoingRate = 1,
-			QOSSetOutgoingDSCPValue = 2,
+			TrafficType = 0,
+			OutgoingRate = 1,
+			OutgoingDSCPValue = 2,
 		}
 		[AllowDuplicates]
 		public enum QOS_FLOWRATE_REASON : int32
 		{
-			QOSFlowRateNotApplicable = 0,
-			QOSFlowRateContentChange = 1,
-			QOSFlowRateCongestion = 2,
-			QOSFlowRateHigherContentEncoding = 3,
-			QOSFlowRateUserCaused = 4,
+			NotApplicable = 0,
+			ContentChange = 1,
+			Congestion = 2,
+			HigherContentEncoding = 3,
+			UserCaused = 4,
 		}
 		[AllowDuplicates]
 		public enum QOS_SHAPING : int32
 		{
-			QOSShapeOnly = 0,
-			QOSShapeAndMark = 1,
-			QOSUseNonConformantMarkings = 2,
+			ShapeOnly = 0,
+			ShapeAndMark = 1,
+			UseNonConformantMarkings = 2,
 		}
 		[AllowDuplicates]
 		public enum QOS_QUERY_FLOW : int32
 		{
-			QOSQueryFlowFundamentals = 0,
-			QOSQueryPacketPriority = 1,
-			QOSQueryOutgoingRate = 2,
+			FlowFundamentals = 0,
+			PacketPriority = 1,
+			OutgoingRate = 2,
 		}
 		[AllowDuplicates]
 		public enum QOS_NOTIFY_FLOW : int32
 		{
-			QOSNotifyCongested = 0,
-			QOSNotifyUncongested = 1,
-			QOSNotifyAvailable = 2,
+			Congested = 0,
+			Uncongested = 1,
+			Available = 2,
 		}
 		[AllowDuplicates]
 		public enum FilterType : int32
 		{
-			FILTERSPECV4 = 1,
-			FILTERSPECV6 = 2,
-			FILTERSPECV6_FLOW = 3,
-			FILTERSPECV4_GPI = 4,
-			FILTERSPECV6_GPI = 5,
-			FILTERSPEC_END = 6,
+			V4 = 1,
+			V6 = 2,
+			V6_FLOW = 3,
+			V4_GPI = 4,
+			V6_GPI = 5,
+			_END = 6,
 		}
 		
 		// --- Function Pointers ---

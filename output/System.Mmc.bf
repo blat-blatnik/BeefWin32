@@ -101,57 +101,57 @@ namespace Win32
 		[AllowDuplicates]
 		public enum MMC_PROPERTY_ACTION : int32
 		{
-			MMC_PROPACT_DELETING = 1,
-			MMC_PROPACT_CHANGING = 2,
-			MMC_PROPACT_INITIALIZED = 3,
+			DELETING = 1,
+			CHANGING = 2,
+			INITIALIZED = 3,
 		}
 		[AllowDuplicates]
 		public enum _DocumentMode : int32
 		{
-			DocumentMode_Author = 0,
-			DocumentMode_User = 1,
-			DocumentMode_User_MDI = 2,
-			DocumentMode_User_SDI = 3,
+			Author = 0,
+			User = 1,
+			User_MDI = 2,
+			User_SDI = 3,
 		}
 		[AllowDuplicates]
 		public enum _ListViewMode : int32
 		{
-			ListMode_Small_Icons = 0,
-			ListMode_Large_Icons = 1,
-			ListMode_List = 2,
-			ListMode_Detail = 3,
-			ListMode_Filtered = 4,
+			Small_Icons = 0,
+			Large_Icons = 1,
+			List = 2,
+			Detail = 3,
+			Filtered = 4,
 		}
 		[AllowDuplicates]
 		public enum _ViewOptions : int32
 		{
-			ViewOption_Default = 0,
-			ViewOption_ScopeTreeHidden = 1,
-			ViewOption_NoToolBars = 2,
-			ViewOption_NotPersistable = 4,
-			ViewOption_ActionPaneHidden = 8,
+			Default = 0,
+			ScopeTreeHidden = 1,
+			NoToolBars = 2,
+			NotPersistable = 4,
+			ActionPaneHidden = 8,
 		}
 		[AllowDuplicates]
 		public enum _ExportListOptions : int32
 		{
-			ExportListOptions_Default = 0,
-			ExportListOptions_Unicode = 1,
-			ExportListOptions_TabDelimited = 2,
-			ExportListOptions_SelectedItemsOnly = 4,
+			Default = 0,
+			Unicode = 1,
+			TabDelimited = 2,
+			SelectedItemsOnly = 4,
 		}
 		[AllowDuplicates]
 		public enum _ColumnSortOrder : int32
 		{
-			SortOrder_Ascending = 0,
-			SortOrder_Descending = 1,
+			Ascending = 0,
+			Descending = 1,
 		}
 		[AllowDuplicates]
 		public enum MMC_RESULT_VIEW_STYLE : int32
 		{
-			MMC_SINGLESEL = 1,
-			MMC_SHOWSELALWAYS = 2,
-			MMC_NOSORTHEADER = 4,
-			MMC_ENSUREFOCUSVISIBLE = 8,
+			SINGLESEL = 1,
+			SHOWSELALWAYS = 2,
+			NOSORTHEADER = 4,
+			ENSUREFOCUSVISIBLE = 8,
 		}
 		[AllowDuplicates]
 		public enum MMC_CONTROL_TYPE : int32
@@ -163,19 +163,19 @@ namespace Win32
 		[AllowDuplicates]
 		public enum MMC_CONSOLE_VERB : int32
 		{
-			MMC_VERB_NONE = 0,
-			MMC_VERB_OPEN = 32768,
-			MMC_VERB_COPY = 32769,
-			MMC_VERB_PASTE = 32770,
-			MMC_VERB_DELETE = 32771,
-			MMC_VERB_PROPERTIES = 32772,
-			MMC_VERB_RENAME = 32773,
-			MMC_VERB_REFRESH = 32774,
-			MMC_VERB_PRINT = 32775,
-			MMC_VERB_CUT = 32776,
-			MMC_VERB_MAX = 32777,
-			MMC_VERB_FIRST = 32768,
-			MMC_VERB_LAST = 32776,
+			NONE = 0,
+			OPEN = 32768,
+			COPY = 32769,
+			PASTE = 32770,
+			DELETE = 32771,
+			PROPERTIES = 32772,
+			RENAME = 32773,
+			REFRESH = 32774,
+			PRINT = 32775,
+			CUT = 32776,
+			MAX = 32777,
+			FIRST = 32768,
+			LAST = 32776,
 		}
 		[AllowDuplicates]
 		public enum MMC_BUTTON_STATE : int32
@@ -189,9 +189,9 @@ namespace Win32
 		[AllowDuplicates]
 		public enum MMC_SCOPE_ITEM_STATE : int32
 		{
-			MMC_SCOPE_ITEM_STATE_NORMAL = 1,
-			MMC_SCOPE_ITEM_STATE_BOLD = 2,
-			MMC_SCOPE_ITEM_STATE_EXPANDEDONCE = 3,
+			NORMAL = 1,
+			BOLD = 2,
+			EXPANDEDONCE = 3,
 		}
 		[AllowDuplicates]
 		public enum MMC_MENU_COMMAND_IDS : int32
@@ -201,90 +201,90 @@ namespace Win32
 		[AllowDuplicates]
 		public enum MMC_FILTER_TYPE : int32
 		{
-			MMC_STRING_FILTER = 0,
-			MMC_INT_FILTER = 1,
-			MMC_FILTER_NOVALUE = 32768,
+			STRING_FILTER = 0,
+			INT_FILTER = 1,
+			FILTER_NOVALUE = 32768,
 		}
 		[AllowDuplicates]
 		public enum MMC_FILTER_CHANGE_CODE : int32
 		{
-			MFCC_DISABLE = 0,
-			MFCC_ENABLE = 1,
-			MFCC_VALUE_CHANGE = 2,
+			DISABLE = 0,
+			ENABLE = 1,
+			VALUE_CHANGE = 2,
 		}
 		[AllowDuplicates]
 		public enum MMC_NOTIFY_TYPE : int32
 		{
-			MMCN_ACTIVATE = 32769,
-			MMCN_ADD_IMAGES = 32770,
-			MMCN_BTN_CLICK = 32771,
-			MMCN_CLICK = 32772,
-			MMCN_COLUMN_CLICK = 32773,
-			MMCN_CONTEXTMENU = 32774,
-			MMCN_CUTORMOVE = 32775,
-			MMCN_DBLCLICK = 32776,
-			MMCN_DELETE = 32777,
-			MMCN_DESELECT_ALL = 32778,
-			MMCN_EXPAND = 32779,
-			MMCN_HELP = 32780,
-			MMCN_MENU_BTNCLICK = 32781,
-			MMCN_MINIMIZED = 32782,
-			MMCN_PASTE = 32783,
-			MMCN_PROPERTY_CHANGE = 32784,
-			MMCN_QUERY_PASTE = 32785,
-			MMCN_REFRESH = 32786,
-			MMCN_REMOVE_CHILDREN = 32787,
-			MMCN_RENAME = 32788,
-			MMCN_SELECT = 32789,
-			MMCN_SHOW = 32790,
-			MMCN_VIEW_CHANGE = 32791,
-			MMCN_SNAPINHELP = 32792,
-			MMCN_CONTEXTHELP = 32793,
-			MMCN_INITOCX = 32794,
-			MMCN_FILTER_CHANGE = 32795,
-			MMCN_FILTERBTN_CLICK = 32796,
-			MMCN_RESTORE_VIEW = 32797,
-			MMCN_PRINT = 32798,
-			MMCN_PRELOAD = 32799,
-			MMCN_LISTPAD = 32800,
-			MMCN_EXPANDSYNC = 32801,
-			MMCN_COLUMNS_CHANGED = 32802,
-			MMCN_CANPASTE_OUTOFPROC = 32803,
+			ACTIVATE = 32769,
+			ADD_IMAGES = 32770,
+			BTN_CLICK = 32771,
+			CLICK = 32772,
+			COLUMN_CLICK = 32773,
+			CONTEXTMENU = 32774,
+			CUTORMOVE = 32775,
+			DBLCLICK = 32776,
+			DELETE = 32777,
+			DESELECT_ALL = 32778,
+			EXPAND = 32779,
+			HELP = 32780,
+			MENU_BTNCLICK = 32781,
+			MINIMIZED = 32782,
+			PASTE = 32783,
+			PROPERTY_CHANGE = 32784,
+			QUERY_PASTE = 32785,
+			REFRESH = 32786,
+			REMOVE_CHILDREN = 32787,
+			RENAME = 32788,
+			SELECT = 32789,
+			SHOW = 32790,
+			VIEW_CHANGE = 32791,
+			SNAPINHELP = 32792,
+			CONTEXTHELP = 32793,
+			INITOCX = 32794,
+			FILTER_CHANGE = 32795,
+			FILTERBTN_CLICK = 32796,
+			RESTORE_VIEW = 32797,
+			PRINT = 32798,
+			PRELOAD = 32799,
+			LISTPAD = 32800,
+			EXPANDSYNC = 32801,
+			COLUMNS_CHANGED = 32802,
+			CANPASTE_OUTOFPROC = 32803,
 		}
 		[AllowDuplicates]
 		public enum DATA_OBJECT_TYPES : int32
 		{
-			CCT_SCOPE = 32768,
-			CCT_RESULT = 32769,
-			CCT_SNAPIN_MANAGER = 32770,
-			CCT_UNINITIALIZED = 65535,
+			SCOPE = 32768,
+			RESULT = 32769,
+			SNAPIN_MANAGER = 32770,
+			UNINITIALIZED = 65535,
 		}
 		[AllowDuplicates]
 		public enum CCM_INSERTIONPOINTID : int32
 		{
-			CCM_INSERTIONPOINTID_MASK_SPECIAL = -65536,
-			CCM_INSERTIONPOINTID_MASK_SHARED = -2147483648,
-			CCM_INSERTIONPOINTID_MASK_CREATE_PRIMARY = 1073741824,
-			CCM_INSERTIONPOINTID_MASK_ADD_PRIMARY = 536870912,
-			CCM_INSERTIONPOINTID_MASK_ADD_3RDPARTY = 268435456,
-			CCM_INSERTIONPOINTID_MASK_RESERVED = 268369920,
-			CCM_INSERTIONPOINTID_MASK_FLAGINDEX = 31,
-			CCM_INSERTIONPOINTID_PRIMARY_TOP = -1610612736,
-			CCM_INSERTIONPOINTID_PRIMARY_NEW = -1610612735,
-			CCM_INSERTIONPOINTID_PRIMARY_TASK = -1610612734,
-			CCM_INSERTIONPOINTID_PRIMARY_VIEW = -1610612733,
-			CCM_INSERTIONPOINTID_PRIMARY_HELP = -1610612732,
-			CCM_INSERTIONPOINTID_3RDPARTY_NEW = -1879048191,
-			CCM_INSERTIONPOINTID_3RDPARTY_TASK = -1879048190,
-			CCM_INSERTIONPOINTID_ROOT_MENU = -2147483648,
+			MASK_SPECIAL = -65536,
+			MASK_SHARED = -2147483648,
+			MASK_CREATE_PRIMARY = 1073741824,
+			MASK_ADD_PRIMARY = 536870912,
+			MASK_ADD_3RDPARTY = 268435456,
+			MASK_RESERVED = 268369920,
+			MASK_FLAGINDEX = 31,
+			PRIMARY_TOP = -1610612736,
+			PRIMARY_NEW = -1610612735,
+			PRIMARY_TASK = -1610612734,
+			PRIMARY_VIEW = -1610612733,
+			PRIMARY_HELP = -1610612732,
+			_3RDPARTY_NEW = -1879048191,
+			_3RDPARTY_TASK = -1879048190,
+			ROOT_MENU = -2147483648,
 		}
 		[AllowDuplicates]
 		public enum CCM_INSERTIONALLOWED : int32
 		{
-			CCM_INSERTIONALLOWED_TOP = 1,
-			CCM_INSERTIONALLOWED_NEW = 2,
-			CCM_INSERTIONALLOWED_TASK = 4,
-			CCM_INSERTIONALLOWED_VIEW = 8,
+			TOP = 1,
+			NEW = 2,
+			TASK = 4,
+			VIEW = 8,
 		}
 		[AllowDuplicates]
 		public enum CCM_COMMANDID_MASK_CONSTANTS : uint32
@@ -294,46 +294,46 @@ namespace Win32
 		[AllowDuplicates]
 		public enum CCM_SPECIAL : int32
 		{
-			CCM_SPECIAL_SEPARATOR = 1,
-			CCM_SPECIAL_SUBMENU = 2,
-			CCM_SPECIAL_DEFAULT_ITEM = 4,
-			CCM_SPECIAL_INSERTION_POINT = 8,
-			CCM_SPECIAL_TESTONLY = 16,
+			SEPARATOR = 1,
+			SUBMENU = 2,
+			DEFAULT_ITEM = 4,
+			INSERTION_POINT = 8,
+			TESTONLY = 16,
 		}
 		[AllowDuplicates]
 		public enum MMC_TASK_DISPLAY_TYPE : int32
 		{
-			MMC_TASK_DISPLAY_UNINITIALIZED = 0,
-			MMC_TASK_DISPLAY_TYPE_SYMBOL = 1,
-			MMC_TASK_DISPLAY_TYPE_VANILLA_GIF = 2,
-			MMC_TASK_DISPLAY_TYPE_CHOCOLATE_GIF = 3,
-			MMC_TASK_DISPLAY_TYPE_BITMAP = 4,
+			UNINITIALIZED = 0,
+			TYPE_SYMBOL = 1,
+			TYPE_VANILLA_GIF = 2,
+			TYPE_CHOCOLATE_GIF = 3,
+			TYPE_BITMAP = 4,
 		}
 		[AllowDuplicates]
 		public enum MMC_ACTION_TYPE : int32
 		{
-			MMC_ACTION_UNINITIALIZED = -1,
-			MMC_ACTION_ID = 0,
-			MMC_ACTION_LINK = 1,
-			MMC_ACTION_SCRIPT = 2,
+			UNINITIALIZED = -1,
+			ID = 0,
+			LINK = 1,
+			SCRIPT = 2,
 		}
 		[AllowDuplicates]
 		public enum IconIdentifier : int32
 		{
-			Icon_None = 0,
-			Icon_Error = 32513,
-			Icon_Question = 32514,
-			Icon_Warning = 32515,
-			Icon_Information = 32516,
-			Icon_First = 32513,
-			Icon_Last = 32516,
+			None = 0,
+			Error = 32513,
+			Question = 32514,
+			Warning = 32515,
+			Information = 32516,
+			First = 32513,
+			Last = 32516,
 		}
 		[AllowDuplicates]
 		public enum MMC_VIEW_TYPE : int32
 		{
-			MMC_VIEW_TYPE_LIST = 0,
-			MMC_VIEW_TYPE_HTML = 1,
-			MMC_VIEW_TYPE_OCX = 2,
+			LIST = 0,
+			HTML = 1,
+			OCX = 2,
 		}
 		
 		// --- Structs ---

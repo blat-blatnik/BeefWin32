@@ -62,18 +62,18 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SW_DEVICE_CAPABILITIES : int32
 		{
-			SWDeviceCapabilitiesNone = 0,
-			SWDeviceCapabilitiesRemovable = 1,
-			SWDeviceCapabilitiesSilentInstall = 2,
-			SWDeviceCapabilitiesNoDisplayInUI = 4,
-			SWDeviceCapabilitiesDriverRequired = 8,
+			None = 0,
+			Removable = 1,
+			SilentInstall = 2,
+			NoDisplayInUI = 4,
+			DriverRequired = 8,
 		}
 		[AllowDuplicates]
 		public enum SW_DEVICE_LIFETIME : int32
 		{
-			SWDeviceLifetimeHandle = 0,
-			SWDeviceLifetimeParentPresent = 1,
-			SWDeviceLifetimeMax = 2,
+			Handle = 0,
+			ParentPresent = 1,
+			Max = 2,
 		}
 		
 		// --- Function Pointers ---

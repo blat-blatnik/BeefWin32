@@ -231,8 +231,8 @@ namespace Win32
 		[AllowDuplicates]
 		public enum XAPO_BUFFER_FLAGS : int32
 		{
-			XAPO_BUFFER_SILENT = 0,
-			XAPO_BUFFER_VALID = 1,
+			SILENT = 0,
+			VALID = 1,
 		}
 		[AllowDuplicates]
 		public enum XAUDIO2_FILTER_TYPE : int32

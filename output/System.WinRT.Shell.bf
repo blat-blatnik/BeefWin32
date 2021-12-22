@@ -10,9 +10,9 @@ namespace Win32
 		[AllowDuplicates]
 		public enum CreateProcessMethod : int32
 		{
-			CpCreateProcess = 0,
-			CpCreateProcessAsUser = 1,
-			CpAicLaunchAdminProcess = 2,
+			CreateProcess = 0,
+			CreateProcessAsUser = 1,
+			AicLaunchAdminProcess = 2,
 		}
 		
 		// --- COM Interfaces ---

@@ -1196,60 +1196,60 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SP_COPY_STYLE : uint32
 		{
-			SP_COPY_DELETESOURCE = 1,
-			SP_COPY_REPLACEONLY = 2,
-			SP_COPY_NEWER_OR_SAME = 4,
-			SP_COPY_NEWER_ONLY = 65536,
-			SP_COPY_NOOVERWRITE = 8,
-			SP_COPY_NODECOMP = 16,
-			SP_COPY_LANGUAGEAWARE = 32,
-			SP_COPY_SOURCE_ABSOLUTE = 64,
-			SP_COPY_SOURCEPATH_ABSOLUTE = 128,
-			SP_COPY_FORCE_IN_USE = 512,
-			SP_COPY_IN_USE_NEEDS_REBOOT = 256,
-			SP_COPY_NOSKIP = 1024,
-			SP_COPY_FORCE_NOOVERWRITE = 4096,
-			SP_COPY_FORCE_NEWER = 8192,
-			SP_COPY_WARNIFSKIP = 16384,
-			SP_COPY_NOBROWSE = 32768,
-			SP_COPY_NEWER = 4,
-			SP_COPY_RESERVED = 131072,
-			SP_COPY_OEMINF_CATALOG_ONLY = 262144,
-			SP_COPY_REPLACE_BOOT_FILE = 524288,
-			SP_COPY_NOPRUNE = 1048576,
-			SP_COPY_OEM_F6_INF = 2097152,
-			SP_COPY_ALREADYDECOMP = 4194304,
-			SP_COPY_WINDOWS_SIGNED = 16777216,
-			SP_COPY_PNPLOCKED = 33554432,
-			SP_COPY_IN_USE_TRY_RENAME = 67108864,
-			SP_COPY_INBOX_INF = 134217728,
-			SP_COPY_HARDLINK = 268435456,
+			DELETESOURCE = 1,
+			REPLACEONLY = 2,
+			NEWER_OR_SAME = 4,
+			NEWER_ONLY = 65536,
+			NOOVERWRITE = 8,
+			NODECOMP = 16,
+			LANGUAGEAWARE = 32,
+			SOURCE_ABSOLUTE = 64,
+			SOURCEPATH_ABSOLUTE = 128,
+			FORCE_IN_USE = 512,
+			IN_USE_NEEDS_REBOOT = 256,
+			NOSKIP = 1024,
+			FORCE_NOOVERWRITE = 4096,
+			FORCE_NEWER = 8192,
+			WARNIFSKIP = 16384,
+			NOBROWSE = 32768,
+			NEWER = 4,
+			RESERVED = 131072,
+			OEMINF_CATALOG_ONLY = 262144,
+			REPLACE_BOOT_FILE = 524288,
+			NOPRUNE = 1048576,
+			OEM_F6_INF = 2097152,
+			ALREADYDECOMP = 4194304,
+			WINDOWS_SIGNED = 16777216,
+			PNPLOCKED = 33554432,
+			IN_USE_TRY_RENAME = 67108864,
+			INBOX_INF = 134217728,
+			HARDLINK = 268435456,
 		}
 		[AllowDuplicates]
 		public enum SETUP_FILE_OPERATION : uint32
 		{
-			FILEOP_DELETE = 2,
-			FILEOP_COPY = 0,
+			DELETE = 2,
+			COPY = 0,
 		}
 		[AllowDuplicates]
 		public enum OEM_SOURCE_MEDIA_TYPE : uint32
 		{
-			SPOST_NONE = 0,
-			SPOST_PATH = 1,
-			SPOST_URL = 2,
+			NONE = 0,
+			PATH = 1,
+			URL = 2,
 		}
 		[AllowDuplicates]
 		public enum SETUP_DI_BUILD_DRIVER_DRIVER_TYPE : uint32
 		{
-			SPDIT_CLASSDRIVER = 1,
-			SPDIT_COMPATDRIVER = 2,
+			LASSDRIVER = 1,
+			OMPATDRIVER = 2,
 		}
 		[AllowDuplicates]
 		public enum SP_INF_STYLE : uint32
 		{
-			INF_STYLE_NONE = 0,
-			INF_STYLE_OLDNT = 1,
-			INF_STYLE_WIN4 = 2,
+			NONE = 0,
+			OLDNT = 1,
+			WIN4 = 2,
 		}
 		[AllowDuplicates]
 		public enum CONFIGRET : uint32
@@ -1323,53 +1323,53 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SetupFileLogInfo : int32
 		{
-			SetupFileLogSourceFilename = 0,
-			SetupFileLogChecksum = 1,
-			SetupFileLogDiskTagfile = 2,
-			SetupFileLogDiskDescription = 3,
-			SetupFileLogOtherInfo = 4,
-			SetupFileLogMax = 5,
+			SourceFilename = 0,
+			Checksum = 1,
+			DiskTagfile = 2,
+			DiskDescription = 3,
+			OtherInfo = 4,
+			Max = 5,
 		}
 		[AllowDuplicates]
 		public enum PNP_VETO_TYPE : int32
 		{
-			PNP_VetoTypeUnknown = 0,
-			PNP_VetoLegacyDevice = 1,
-			PNP_VetoPendingClose = 2,
-			PNP_VetoWindowsApp = 3,
-			PNP_VetoWindowsService = 4,
-			PNP_VetoOutstandingOpen = 5,
-			PNP_VetoDevice = 6,
-			PNP_VetoDriver = 7,
-			PNP_VetoIllegalDeviceRequest = 8,
-			PNP_VetoInsufficientPower = 9,
-			PNP_VetoNonDisableable = 10,
-			PNP_VetoLegacyDriver = 11,
-			PNP_VetoInsufficientRights = 12,
-			PNP_VetoAlreadyRemoved = 13,
+			TypeUnknown = 0,
+			LegacyDevice = 1,
+			PendingClose = 2,
+			WindowsApp = 3,
+			WindowsService = 4,
+			OutstandingOpen = 5,
+			Device = 6,
+			Driver = 7,
+			IllegalDeviceRequest = 8,
+			InsufficientPower = 9,
+			NonDisableable = 10,
+			LegacyDriver = 11,
+			InsufficientRights = 12,
+			AlreadyRemoved = 13,
 		}
 		[AllowDuplicates]
 		public enum CM_NOTIFY_FILTER_TYPE : int32
 		{
-			CM_NOTIFY_FILTER_TYPE_DEVICEINTERFACE = 0,
-			CM_NOTIFY_FILTER_TYPE_DEVICEHANDLE = 1,
-			CM_NOTIFY_FILTER_TYPE_DEVICEINSTANCE = 2,
-			CM_NOTIFY_FILTER_TYPE_MAX = 3,
+			DEVICEINTERFACE = 0,
+			DEVICEHANDLE = 1,
+			DEVICEINSTANCE = 2,
+			MAX = 3,
 		}
 		[AllowDuplicates]
 		public enum CM_NOTIFY_ACTION : int32
 		{
-			CM_NOTIFY_ACTION_DEVICEINTERFACEARRIVAL = 0,
-			CM_NOTIFY_ACTION_DEVICEINTERFACEREMOVAL = 1,
-			CM_NOTIFY_ACTION_DEVICEQUERYREMOVE = 2,
-			CM_NOTIFY_ACTION_DEVICEQUERYREMOVEFAILED = 3,
-			CM_NOTIFY_ACTION_DEVICEREMOVEPENDING = 4,
-			CM_NOTIFY_ACTION_DEVICEREMOVECOMPLETE = 5,
-			CM_NOTIFY_ACTION_DEVICECUSTOMEVENT = 6,
-			CM_NOTIFY_ACTION_DEVICEINSTANCEENUMERATED = 7,
-			CM_NOTIFY_ACTION_DEVICEINSTANCESTARTED = 8,
-			CM_NOTIFY_ACTION_DEVICEINSTANCEREMOVED = 9,
-			CM_NOTIFY_ACTION_MAX = 10,
+			DEVICEINTERFACEARRIVAL = 0,
+			DEVICEINTERFACEREMOVAL = 1,
+			DEVICEQUERYREMOVE = 2,
+			DEVICEQUERYREMOVEFAILED = 3,
+			DEVICEREMOVEPENDING = 4,
+			DEVICEREMOVECOMPLETE = 5,
+			DEVICECUSTOMEVENT = 6,
+			DEVICEINSTANCEENUMERATED = 7,
+			DEVICEINSTANCESTARTED = 8,
+			DEVICEINSTANCEREMOVED = 9,
+			MAX = 10,
 		}
 		
 		// --- Function Pointers ---

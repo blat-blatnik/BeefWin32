@@ -20,15 +20,15 @@ namespace Win32
 		[AllowDuplicates]
 		public enum CONTACT_AGGREGATION_CREATE_OR_OPEN_OPTIONS : int32
 		{
-			CA_CREATE_LOCAL = 0,
-			CA_CREATE_EXTERNAL = 1,
+			LOCAL = 0,
+			EXTERNAL = 1,
 		}
 		[AllowDuplicates]
 		public enum CONTACT_AGGREGATION_COLLECTION_OPTIONS : int32
 		{
-			CACO_DEFAULT = 0,
-			CACO_INCLUDE_EXTERNAL = 1,
-			CACO_EXTERNAL_ONLY = 2,
+			DEFAULT = 0,
+			INCLUDE_EXTERNAL = 1,
+			EXTERNAL_ONLY = 2,
 		}
 		
 		// --- Structs ---

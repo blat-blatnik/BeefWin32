@@ -18,57 +18,57 @@ namespace Win32
 		[AllowDuplicates]
 		public enum RM_APP_TYPE : int32
 		{
-			RmUnknownApp = 0,
-			RmMainWindow = 1,
-			RmOtherWindow = 2,
-			RmService = 3,
-			RmExplorer = 4,
-			RmConsole = 5,
-			RmCritical = 1000,
+			UnknownApp = 0,
+			MainWindow = 1,
+			OtherWindow = 2,
+			Service = 3,
+			Explorer = 4,
+			Console = 5,
+			Critical = 1000,
 		}
 		[AllowDuplicates]
 		public enum RM_SHUTDOWN_TYPE : int32
 		{
-			RmForceShutdown = 1,
-			RmShutdownOnlyRegistered = 16,
+			ForceShutdown = 1,
+			ShutdownOnlyRegistered = 16,
 		}
 		[AllowDuplicates]
 		public enum RM_APP_STATUS : int32
 		{
-			RmStatusUnknown = 0,
-			RmStatusRunning = 1,
-			RmStatusStopped = 2,
-			RmStatusStoppedOther = 4,
-			RmStatusRestarted = 8,
-			RmStatusErrorOnStop = 16,
-			RmStatusErrorOnRestart = 32,
-			RmStatusShutdownMasked = 64,
-			RmStatusRestartMasked = 128,
+			Unknown = 0,
+			Running = 1,
+			Stopped = 2,
+			StoppedOther = 4,
+			Restarted = 8,
+			ErrorOnStop = 16,
+			ErrorOnRestart = 32,
+			ShutdownMasked = 64,
+			RestartMasked = 128,
 		}
 		[AllowDuplicates]
 		public enum RM_REBOOT_REASON : int32
 		{
-			RmRebootReasonNone = 0,
-			RmRebootReasonPermissionDenied = 1,
-			RmRebootReasonSessionMismatch = 2,
-			RmRebootReasonCriticalProcess = 4,
-			RmRebootReasonCriticalService = 8,
-			RmRebootReasonDetectedSelf = 16,
+			None = 0,
+			PermissionDenied = 1,
+			SessionMismatch = 2,
+			CriticalProcess = 4,
+			CriticalService = 8,
+			DetectedSelf = 16,
 		}
 		[AllowDuplicates]
 		public enum RM_FILTER_TRIGGER : int32
 		{
-			RmFilterTriggerInvalid = 0,
-			RmFilterTriggerFile = 1,
-			RmFilterTriggerProcess = 2,
-			RmFilterTriggerService = 3,
+			Invalid = 0,
+			File = 1,
+			Process = 2,
+			Service = 3,
 		}
 		[AllowDuplicates]
 		public enum RM_FILTER_ACTION : int32
 		{
-			RmInvalidFilterAction = 0,
-			RmNoRestart = 1,
-			RmNoShutdown = 2,
+			InvalidFilterAction = 0,
+			NoRestart = 1,
+			NoShutdown = 2,
 		}
 		
 		// --- Function Pointers ---

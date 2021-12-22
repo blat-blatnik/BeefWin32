@@ -1020,99 +1020,99 @@ namespace Win32
 		[AllowDuplicates]
 		public enum OA_BOOL : int32
 		{
-			OATRUE = -1,
-			OAFALSE = 0,
+			TRUE = -1,
+			FALSE = 0,
 		}
 		[AllowDuplicates]
 		public enum MPEG2VIDEOINFO_FLAGS : uint32
 		{
-			AMMPEG2_DoPanScan = 1,
-			AMMPEG2_DVDLine21Field1 = 2,
-			AMMPEG2_DVDLine21Field2 = 4,
-			AMMPEG2_SourceIsLetterboxed = 8,
-			AMMPEG2_FilmCameraMode = 16,
-			AMMPEG2_LetterboxAnalogOut = 32,
-			AMMPEG2_DSS_UserData = 64,
-			AMMPEG2_DVB_UserData = 128,
-			AMMPEG2_27MhzTimebase = 256,
-			AMMPEG2_WidescreenAnalogOut = 512,
+			DoPanScan = 1,
+			DVDLine21Field1 = 2,
+			DVDLine21Field2 = 4,
+			SourceIsLetterboxed = 8,
+			FilmCameraMode = 16,
+			LetterboxAnalogOut = 32,
+			DSS_UserData = 64,
+			DVB_UserData = 128,
+			_27MhzTimebase = 256,
+			WidescreenAnalogOut = 512,
 		}
 		[AllowDuplicates]
 		public enum MPEGLAYER3WAVEFORMAT_FLAGS : uint32
 		{
-			MPEGLAYER3_FLAG_PADDING_ISO = 0,
-			MPEGLAYER3_FLAG_PADDING_ON = 1,
-			MPEGLAYER3_FLAG_PADDING_OFF = 2,
+			ISO = 0,
+			ON = 1,
+			OFF = 2,
 		}
 		[AllowDuplicates]
 		public enum AMVP_SELECT_FORMAT_BY : int32
 		{
-			AMVP_DO_NOT_CARE = 0,
-			AMVP_BEST_BANDWIDTH = 1,
-			AMVP_INPUT_SAME_AS_OUTPUT = 2,
+			DO_NOT_CARE = 0,
+			BEST_BANDWIDTH = 1,
+			INPUT_SAME_AS_OUTPUT = 2,
 		}
 		[AllowDuplicates]
 		public enum AMVP_MODE : int32
 		{
-			AMVP_MODE_WEAVE = 0,
-			AMVP_MODE_BOBINTERLEAVED = 1,
-			AMVP_MODE_BOBNONINTERLEAVED = 2,
-			AMVP_MODE_SKIPEVEN = 3,
-			AMVP_MODE_SKIPODD = 4,
+			WEAVE = 0,
+			BOBINTERLEAVED = 1,
+			BOBNONINTERLEAVED = 2,
+			SKIPEVEN = 3,
+			SKIPODD = 4,
 		}
 		[AllowDuplicates]
 		public enum PIN_DIRECTION : int32
 		{
-			PINDIR_INPUT = 0,
-			PINDIR_OUTPUT = 1,
+			INPUT = 0,
+			OUTPUT = 1,
 		}
 		[AllowDuplicates]
 		public enum FILTER_STATE : int32
 		{
-			State_Stopped = 0,
-			State_Paused = 1,
-			State_Running = 2,
+			Stopped = 0,
+			Paused = 1,
+			Running = 2,
 		}
 		[AllowDuplicates]
 		public enum AM_SAMPLE_PROPERTY_FLAGS : int32
 		{
-			AM_SAMPLE_SPLICEPOINT = 1,
-			AM_SAMPLE_PREROLL = 2,
-			AM_SAMPLE_DATADISCONTINUITY = 4,
-			AM_SAMPLE_TYPECHANGED = 8,
-			AM_SAMPLE_TIMEVALID = 16,
-			AM_SAMPLE_TIMEDISCONTINUITY = 64,
-			AM_SAMPLE_FLUSH_ON_PAUSE = 128,
-			AM_SAMPLE_STOPVALID = 256,
-			AM_SAMPLE_ENDOFSTREAM = 512,
-			AM_STREAM_MEDIA = 0,
-			AM_STREAM_CONTROL = 1,
+			AMPLE_SPLICEPOINT = 1,
+			AMPLE_PREROLL = 2,
+			AMPLE_DATADISCONTINUITY = 4,
+			AMPLE_TYPECHANGED = 8,
+			AMPLE_TIMEVALID = 16,
+			AMPLE_TIMEDISCONTINUITY = 64,
+			AMPLE_FLUSH_ON_PAUSE = 128,
+			AMPLE_STOPVALID = 256,
+			AMPLE_ENDOFSTREAM = 512,
+			TREAM_MEDIA = 0,
+			TREAM_CONTROL = 1,
 		}
 		[AllowDuplicates]
 		public enum AM_SEEKING_SeekingFlags : int32
 		{
-			AM_SEEKING_NoPositioning = 0,
-			AM_SEEKING_AbsolutePositioning = 1,
-			AM_SEEKING_RelativePositioning = 2,
-			AM_SEEKING_IncrementalPositioning = 3,
-			AM_SEEKING_PositioningBitsMask = 3,
-			AM_SEEKING_SeekToKeyFrame = 4,
-			AM_SEEKING_ReturnTime = 8,
-			AM_SEEKING_Segment = 16,
-			AM_SEEKING_NoFlush = 32,
+			NoPositioning = 0,
+			AbsolutePositioning = 1,
+			RelativePositioning = 2,
+			IncrementalPositioning = 3,
+			PositioningBitsMask = 3,
+			SeekToKeyFrame = 4,
+			ReturnTime = 8,
+			Segment = 16,
+			NoFlush = 32,
 		}
 		[AllowDuplicates]
 		public enum AM_SEEKING_SEEKING_CAPABILITIES : int32
 		{
-			AM_SEEKING_CanSeekAbsolute = 1,
-			AM_SEEKING_CanSeekForwards = 2,
-			AM_SEEKING_CanSeekBackwards = 4,
-			AM_SEEKING_CanGetCurrentPos = 8,
-			AM_SEEKING_CanGetStopPos = 16,
-			AM_SEEKING_CanGetDuration = 32,
-			AM_SEEKING_CanPlayBackwards = 64,
-			AM_SEEKING_CanDoSegments = 128,
-			AM_SEEKING_Source = 256,
+			CanSeekAbsolute = 1,
+			CanSeekForwards = 2,
+			CanSeekBackwards = 4,
+			CanGetCurrentPos = 8,
+			CanGetStopPos = 16,
+			CanGetDuration = 32,
+			CanPlayBackwards = 64,
+			CanDoSegments = 128,
+			Source = 256,
 		}
 		[AllowDuplicates]
 		public enum AM_MEDIAEVENT_FLAGS : int32
@@ -1122,43 +1122,43 @@ namespace Win32
 		[AllowDuplicates]
 		public enum IFILTERMAPPER_MERIT : int32
 		{
-			MERIT_PREFERRED = 8388608,
-			MERIT_NORMAL = 6291456,
-			MERIT_UNLIKELY = 4194304,
-			MERIT_DO_NOT_USE = 2097152,
-			MERIT_SW_COMPRESSOR = 1048576,
-			MERIT_HW_COMPRESSOR = 1048656,
+			PREFERRED = 8388608,
+			NORMAL = 6291456,
+			UNLIKELY = 4194304,
+			DO_NOT_USE = 2097152,
+			SW_COMPRESSOR = 1048576,
+			HW_COMPRESSOR = 1048656,
 		}
 		[AllowDuplicates]
 		public enum REG_PINFLAG : uint32
 		{
-			REG_PINFLAG_B_ZERO = 1,
-			REG_PINFLAG_B_RENDERER = 2,
-			REG_PINFLAG_B_MANY = 4,
-			REG_PINFLAG_B_OUTPUT = 8,
+			ZERO = 1,
+			RENDERER = 2,
+			MANY = 4,
+			OUTPUT = 8,
 		}
 		[AllowDuplicates]
 		public enum QualityMessageType : int32
 		{
-			Famine = 0,
-			Flood = 1,
+			amine = 0,
+			lood = 1,
 		}
 		[AllowDuplicates]
 		public enum COLORKEY_TYPE : int32
 		{
-			CK_NOCOLORKEY = 0,
-			CK_INDEX = 1,
-			CK_RGB = 2,
+			NOCOLORKEY = 0,
+			INDEX = 1,
+			RGB = 2,
 		}
 		[AllowDuplicates]
 		public enum ADVISE_TYPE : uint32
 		{
-			ADVISE_NONE = 0,
-			ADVISE_CLIPPING = 1,
-			ADVISE_PALETTE = 2,
-			ADVISE_COLORKEY = 4,
-			ADVISE_POSITION = 8,
-			ADVISE_DISPLAY_CHANGE = 16,
+			NONE = 0,
+			CLIPPING = 1,
+			PALETTE = 2,
+			COLORKEY = 4,
+			POSITION = 8,
+			DISPLAY_CHANGE = 16,
 		}
 		[AllowDuplicates]
 		public enum AM_FILESINK_FLAGS : int32
@@ -1173,178 +1173,178 @@ namespace Win32
 		[AllowDuplicates]
 		public enum AM_STREAM_INFO_FLAGS : int32
 		{
-			AM_STREAM_INFO_START_DEFINED = 1,
-			AM_STREAM_INFO_STOP_DEFINED = 2,
-			AM_STREAM_INFO_DISCARDING = 4,
-			AM_STREAM_INFO_STOP_SEND_EXTRA = 16,
+			START_DEFINED = 1,
+			STOP_DEFINED = 2,
+			DISCARDING = 4,
+			STOP_SEND_EXTRA = 16,
 		}
 		[AllowDuplicates]
 		public enum InterleavingMode : int32
 		{
-			INTERLEAVE_NONE = 0,
-			INTERLEAVE_CAPTURE = 1,
-			INTERLEAVE_FULL = 2,
-			INTERLEAVE_NONE_BUFFERED = 3,
+			NONE = 0,
+			CAPTURE = 1,
+			FULL = 2,
+			NONE_BUFFERED = 3,
 		}
 		[AllowDuplicates]
 		public enum CompressionCaps : int32
 		{
-			CompressionCaps_CanQuality = 1,
-			CompressionCaps_CanCrunch = 2,
-			CompressionCaps_CanKeyFrame = 4,
-			CompressionCaps_CanBFrame = 8,
-			CompressionCaps_CanWindow = 16,
+			Quality = 1,
+			Crunch = 2,
+			KeyFrame = 4,
+			BFrame = 8,
+			Window = 16,
 		}
 		[AllowDuplicates]
 		public enum VfwCaptureDialogs : int32
 		{
-			VfwCaptureDialog_Source = 1,
-			VfwCaptureDialog_Format = 2,
-			VfwCaptureDialog_Display = 4,
+			Source = 1,
+			Format = 2,
+			Display = 4,
 		}
 		[AllowDuplicates]
 		public enum VfwCompressDialogs : int32
 		{
-			VfwCompressDialog_Config = 1,
-			VfwCompressDialog_About = 2,
-			VfwCompressDialog_QueryConfig = 4,
-			VfwCompressDialog_QueryAbout = 8,
+			Config = 1,
+			About = 2,
+			QueryConfig = 4,
+			QueryAbout = 8,
 		}
 		[AllowDuplicates]
 		public enum AnalogVideoStandard : int32
 		{
-			AnalogVideo_None = 0,
-			AnalogVideo_NTSC_M = 1,
-			AnalogVideo_NTSC_M_J = 2,
-			AnalogVideo_NTSC_433 = 4,
-			AnalogVideo_PAL_B = 16,
-			AnalogVideo_PAL_D = 32,
-			AnalogVideo_PAL_G = 64,
-			AnalogVideo_PAL_H = 128,
-			AnalogVideo_PAL_I = 256,
-			AnalogVideo_PAL_M = 512,
-			AnalogVideo_PAL_N = 1024,
-			AnalogVideo_PAL_60 = 2048,
-			AnalogVideo_SECAM_B = 4096,
-			AnalogVideo_SECAM_D = 8192,
-			AnalogVideo_SECAM_G = 16384,
-			AnalogVideo_SECAM_H = 32768,
-			AnalogVideo_SECAM_K = 65536,
-			AnalogVideo_SECAM_K1 = 131072,
-			AnalogVideo_SECAM_L = 262144,
-			AnalogVideo_SECAM_L1 = 524288,
-			AnalogVideo_PAL_N_COMBO = 1048576,
-			AnalogVideoMask_MCE_NTSC = 1052167,
-			AnalogVideoMask_MCE_PAL = 496,
-			AnalogVideoMask_MCE_SECAM = 1044480,
+			_None = 0,
+			_NTSC_M = 1,
+			_NTSC_M_J = 2,
+			_NTSC_433 = 4,
+			_PAL_B = 16,
+			_PAL_D = 32,
+			_PAL_G = 64,
+			_PAL_H = 128,
+			_PAL_I = 256,
+			_PAL_M = 512,
+			_PAL_N = 1024,
+			_PAL_60 = 2048,
+			_SECAM_B = 4096,
+			_SECAM_D = 8192,
+			_SECAM_G = 16384,
+			_SECAM_H = 32768,
+			_SECAM_K = 65536,
+			_SECAM_K1 = 131072,
+			_SECAM_L = 262144,
+			_SECAM_L1 = 524288,
+			_PAL_N_COMBO = 1048576,
+			Mask_MCE_NTSC = 1052167,
+			Mask_MCE_PAL = 496,
+			Mask_MCE_SECAM = 1044480,
 		}
 		[AllowDuplicates]
 		public enum TunerInputType : int32
 		{
-			TunerInputCable = 0,
-			TunerInputAntenna = 1,
+			Cable = 0,
+			Antenna = 1,
 		}
 		[AllowDuplicates]
 		public enum VideoCopyProtectionType : int32
 		{
-			VideoCopyProtectionMacrovisionBasic = 0,
-			VideoCopyProtectionMacrovisionCBI = 1,
+			Basic = 0,
+			CBI = 1,
 		}
 		[AllowDuplicates]
 		public enum PhysicalConnectorType : int32
 		{
-			PhysConn_Video_Tuner = 1,
-			PhysConn_Video_Composite = 2,
-			PhysConn_Video_SVideo = 3,
-			PhysConn_Video_RGB = 4,
-			PhysConn_Video_YRYBY = 5,
-			PhysConn_Video_SerialDigital = 6,
-			PhysConn_Video_ParallelDigital = 7,
-			PhysConn_Video_SCSI = 8,
-			PhysConn_Video_AUX = 9,
-			PhysConn_Video_1394 = 10,
-			PhysConn_Video_USB = 11,
-			PhysConn_Video_VideoDecoder = 12,
-			PhysConn_Video_VideoEncoder = 13,
-			PhysConn_Video_SCART = 14,
-			PhysConn_Video_Black = 15,
-			PhysConn_Audio_Tuner = 4096,
-			PhysConn_Audio_Line = 4097,
-			PhysConn_Audio_Mic = 4098,
-			PhysConn_Audio_AESDigital = 4099,
-			PhysConn_Audio_SPDIFDigital = 4100,
-			PhysConn_Audio_SCSI = 4101,
-			PhysConn_Audio_AUX = 4102,
-			PhysConn_Audio_1394 = 4103,
-			PhysConn_Audio_USB = 4104,
-			PhysConn_Audio_AudioDecoder = 4105,
+			Video_Tuner = 1,
+			Video_Composite = 2,
+			Video_SVideo = 3,
+			Video_RGB = 4,
+			Video_YRYBY = 5,
+			Video_SerialDigital = 6,
+			Video_ParallelDigital = 7,
+			Video_SCSI = 8,
+			Video_AUX = 9,
+			Video_1394 = 10,
+			Video_USB = 11,
+			Video_VideoDecoder = 12,
+			Video_VideoEncoder = 13,
+			Video_SCART = 14,
+			Video_Black = 15,
+			Audio_Tuner = 4096,
+			Audio_Line = 4097,
+			Audio_Mic = 4098,
+			Audio_AESDigital = 4099,
+			Audio_SPDIFDigital = 4100,
+			Audio_SCSI = 4101,
+			Audio_AUX = 4102,
+			Audio_1394 = 4103,
+			Audio_USB = 4104,
+			Audio_AudioDecoder = 4105,
 		}
 		[AllowDuplicates]
 		public enum VideoProcAmpProperty : int32
 		{
-			VideoProcAmp_Brightness = 0,
-			VideoProcAmp_Contrast = 1,
-			VideoProcAmp_Hue = 2,
-			VideoProcAmp_Saturation = 3,
-			VideoProcAmp_Sharpness = 4,
-			VideoProcAmp_Gamma = 5,
-			VideoProcAmp_ColorEnable = 6,
-			VideoProcAmp_WhiteBalance = 7,
-			VideoProcAmp_BacklightCompensation = 8,
-			VideoProcAmp_Gain = 9,
+			Brightness = 0,
+			Contrast = 1,
+			Hue = 2,
+			Saturation = 3,
+			Sharpness = 4,
+			Gamma = 5,
+			ColorEnable = 6,
+			WhiteBalance = 7,
+			BacklightCompensation = 8,
+			Gain = 9,
 		}
 		[AllowDuplicates]
 		public enum VideoProcAmpFlags : int32
 		{
-			VideoProcAmp_Flags_Auto = 1,
-			VideoProcAmp_Flags_Manual = 2,
+			Auto = 1,
+			Manual = 2,
 		}
 		[AllowDuplicates]
 		public enum CameraControlProperty : int32
 		{
-			CameraControl_Pan = 0,
-			CameraControl_Tilt = 1,
-			CameraControl_Roll = 2,
-			CameraControl_Zoom = 3,
-			CameraControl_Exposure = 4,
-			CameraControl_Iris = 5,
-			CameraControl_Focus = 6,
+			Pan = 0,
+			Tilt = 1,
+			Roll = 2,
+			Zoom = 3,
+			Exposure = 4,
+			Iris = 5,
+			Focus = 6,
 		}
 		[AllowDuplicates]
 		public enum CameraControlFlags : int32
 		{
-			CameraControl_Flags_Auto = 1,
-			CameraControl_Flags_Manual = 2,
+			Auto = 1,
+			Manual = 2,
 		}
 		[AllowDuplicates]
 		public enum VideoControlFlags : int32
 		{
-			VideoControlFlag_FlipHorizontal = 1,
-			VideoControlFlag_FlipVertical = 2,
-			VideoControlFlag_ExternalTriggerEnable = 4,
-			VideoControlFlag_Trigger = 8,
+			FlipHorizontal = 1,
+			FlipVertical = 2,
+			ExternalTriggerEnable = 4,
+			Trigger = 8,
 		}
 		[AllowDuplicates]
 		public enum AMTunerSubChannel : int32
 		{
-			AMTUNER_SUBCHAN_NO_TUNE = -2,
-			AMTUNER_SUBCHAN_DEFAULT = -1,
+			NO_TUNE = -2,
+			DEFAULT = -1,
 		}
 		[AllowDuplicates]
 		public enum AMTunerSignalStrength : int32
 		{
-			AMTUNER_HASNOSIGNALSTRENGTH = -1,
-			AMTUNER_NOSIGNAL = 0,
-			AMTUNER_SIGNALPRESENT = 1,
+			HASNOSIGNALSTRENGTH = -1,
+			NOSIGNAL = 0,
+			SIGNALPRESENT = 1,
 		}
 		[AllowDuplicates]
 		public enum AMTunerModeType : int32
 		{
-			AMTUNER_MODE_DEFAULT = 0,
-			AMTUNER_MODE_TV = 1,
-			AMTUNER_MODE_FM_RADIO = 2,
-			AMTUNER_MODE_AM_RADIO = 4,
-			AMTUNER_MODE_DSS = 8,
+			DEFAULT = 0,
+			TV = 1,
+			FM_RADIO = 2,
+			AM_RADIO = 4,
+			DSS = 8,
 		}
 		[AllowDuplicates]
 		public enum AMTunerEventType : int32
@@ -1354,15 +1354,15 @@ namespace Win32
 		[AllowDuplicates]
 		public enum TVAudioMode : int32
 		{
-			AMTVAUDIO_MODE_MONO = 1,
-			AMTVAUDIO_MODE_STEREO = 2,
-			AMTVAUDIO_MODE_LANG_A = 16,
-			AMTVAUDIO_MODE_LANG_B = 32,
-			AMTVAUDIO_MODE_LANG_C = 64,
-			AMTVAUDIO_PRESET_STEREO = 512,
-			AMTVAUDIO_PRESET_LANG_A = 4096,
-			AMTVAUDIO_PRESET_LANG_B = 8192,
-			AMTVAUDIO_PRESET_LANG_C = 16384,
+			MODE_MONO = 1,
+			MODE_STEREO = 2,
+			MODE_LANG_A = 16,
+			MODE_LANG_B = 32,
+			MODE_LANG_C = 64,
+			PRESET_STEREO = 512,
+			PRESET_LANG_A = 4096,
+			PRESET_LANG_B = 8192,
+			PRESET_LANG_C = 16384,
 		}
 		[AllowDuplicates]
 		public enum AMTVAudioEventType : int32
@@ -1372,118 +1372,118 @@ namespace Win32
 		[AllowDuplicates]
 		public enum AMPROPERTY_PIN : int32
 		{
-			AMPROPERTY_PIN_CATEGORY = 0,
-			AMPROPERTY_PIN_MEDIUM = 1,
+			CATEGORY = 0,
+			MEDIUM = 1,
 		}
 		[AllowDuplicates]
 		public enum _AMSTREAMSELECTINFOFLAGS : int32
 		{
-			AMSTREAMSELECTINFO_ENABLED = 1,
-			AMSTREAMSELECTINFO_EXCLUSIVE = 2,
+			NABLED = 1,
+			XCLUSIVE = 2,
 		}
 		[AllowDuplicates]
 		public enum _AMSTREAMSELECTENABLEFLAGS : int32
 		{
-			AMSTREAMSELECTENABLE_ENABLE = 1,
-			AMSTREAMSELECTENABLE_ENABLEALL = 2,
+			E = 1,
+			EALL = 2,
 		}
 		[AllowDuplicates]
 		public enum _AMRESCTL_RESERVEFLAGS : int32
 		{
-			AMRESCTL_RESERVEFLAGS_RESERVE = 0,
-			AMRESCTL_RESERVEFLAGS_UNRESERVE = 1,
+			RESERVE = 0,
+			UNRESERVE = 1,
 		}
 		[AllowDuplicates]
 		public enum _AM_FILTER_MISC_FLAGS : int32
 		{
-			AM_FILTER_MISC_FLAGS_IS_RENDERER = 1,
-			AM_FILTER_MISC_FLAGS_IS_SOURCE = 2,
+			RENDERER = 1,
+			SOURCE = 2,
 		}
 		[AllowDuplicates]
 		public enum DECIMATION_USAGE : int32
 		{
-			DECIMATION_LEGACY = 0,
-			DECIMATION_USE_DECODER_ONLY = 1,
-			DECIMATION_USE_VIDEOPORT_ONLY = 2,
-			DECIMATION_USE_OVERLAY_ONLY = 3,
-			DECIMATION_DEFAULT = 4,
+			LEGACY = 0,
+			USE_DECODER_ONLY = 1,
+			USE_VIDEOPORT_ONLY = 2,
+			USE_OVERLAY_ONLY = 3,
+			DEFAULT = 4,
 		}
 		[AllowDuplicates]
 		public enum _AM_PUSHSOURCE_FLAGS : int32
 		{
-			AM_PUSHSOURCECAPS_INTERNAL_RM = 1,
-			AM_PUSHSOURCECAPS_NOT_LIVE = 2,
-			AM_PUSHSOURCECAPS_PRIVATE_CLOCK = 4,
-			AM_PUSHSOURCEREQS_USE_STREAM_CLOCK = 65536,
-			AM_PUSHSOURCEREQS_USE_CLOCK_CHAIN = 131072,
+			CAPS_INTERNAL_RM = 1,
+			CAPS_NOT_LIVE = 2,
+			CAPS_PRIVATE_CLOCK = 4,
+			REQS_USE_STREAM_CLOCK = 65536,
+			REQS_USE_CLOCK_CHAIN = 131072,
 		}
 		[AllowDuplicates]
 		public enum _DVENCODERRESOLUTION : int32
 		{
-			DVENCODERRESOLUTION_720x480 = 2012,
-			DVENCODERRESOLUTION_360x240 = 2013,
-			DVENCODERRESOLUTION_180x120 = 2014,
-			DVENCODERRESOLUTION_88x60 = 2015,
+			_720x480 = 2012,
+			_360x240 = 2013,
+			_180x120 = 2014,
+			_88x60 = 2015,
 		}
 		[AllowDuplicates]
 		public enum _DVENCODERVIDEOFORMAT : int32
 		{
-			DVENCODERVIDEOFORMAT_NTSC = 2000,
-			DVENCODERVIDEOFORMAT_PAL = 2001,
+			NTSC = 2000,
+			PAL = 2001,
 		}
 		[AllowDuplicates]
 		public enum _DVENCODERFORMAT : int32
 		{
-			DVENCODERFORMAT_DVSD = 2007,
-			DVENCODERFORMAT_DVHD = 2008,
-			DVENCODERFORMAT_DVSL = 2009,
+			SD = 2007,
+			HD = 2008,
+			SL = 2009,
 		}
 		[AllowDuplicates]
 		public enum _DVDECODERRESOLUTION : int32
 		{
-			DVDECODERRESOLUTION_720x480 = 1000,
-			DVDECODERRESOLUTION_360x240 = 1001,
-			DVDECODERRESOLUTION_180x120 = 1002,
-			DVDECODERRESOLUTION_88x60 = 1003,
+			_720x480 = 1000,
+			_360x240 = 1001,
+			_180x120 = 1002,
+			_88x60 = 1003,
 		}
 		[AllowDuplicates]
 		public enum _DVRESOLUTION : int32
 		{
-			DVRESOLUTION_FULL = 1000,
-			DVRESOLUTION_HALF = 1001,
-			DVRESOLUTION_QUARTER = 1002,
-			DVRESOLUTION_DC = 1003,
+			FULL = 1000,
+			HALF = 1001,
+			QUARTER = 1002,
+			DC = 1003,
 		}
 		[AllowDuplicates]
 		public enum _AM_AUDIO_RENDERER_STAT_PARAM : int32
 		{
-			AM_AUDREND_STAT_PARAM_BREAK_COUNT = 1,
-			AM_AUDREND_STAT_PARAM_SLAVE_MODE = 2,
-			AM_AUDREND_STAT_PARAM_SILENCE_DUR = 3,
-			AM_AUDREND_STAT_PARAM_LAST_BUFFER_DUR = 4,
-			AM_AUDREND_STAT_PARAM_DISCONTINUITIES = 5,
-			AM_AUDREND_STAT_PARAM_SLAVE_RATE = 6,
-			AM_AUDREND_STAT_PARAM_SLAVE_DROPWRITE_DUR = 7,
-			AM_AUDREND_STAT_PARAM_SLAVE_HIGHLOWERROR = 8,
-			AM_AUDREND_STAT_PARAM_SLAVE_LASTHIGHLOWERROR = 9,
-			AM_AUDREND_STAT_PARAM_SLAVE_ACCUMERROR = 10,
-			AM_AUDREND_STAT_PARAM_BUFFERFULLNESS = 11,
-			AM_AUDREND_STAT_PARAM_JITTER = 12,
+			BREAK_COUNT = 1,
+			SLAVE_MODE = 2,
+			SILENCE_DUR = 3,
+			LAST_BUFFER_DUR = 4,
+			DISCONTINUITIES = 5,
+			SLAVE_RATE = 6,
+			SLAVE_DROPWRITE_DUR = 7,
+			SLAVE_HIGHLOWERROR = 8,
+			SLAVE_LASTHIGHLOWERROR = 9,
+			SLAVE_ACCUMERROR = 10,
+			BUFFERFULLNESS = 11,
+			JITTER = 12,
 		}
 		[AllowDuplicates]
 		public enum _AM_INTF_SEARCH_FLAGS : int32
 		{
-			AM_INTF_SEARCH_INPUT_PIN = 1,
-			AM_INTF_SEARCH_OUTPUT_PIN = 2,
-			AM_INTF_SEARCH_FILTER = 4,
+			INPUT_PIN = 1,
+			OUTPUT_PIN = 2,
+			FILTER = 4,
 		}
 		[AllowDuplicates]
 		public enum AMOVERLAYFX : int32
 		{
-			AMOVERFX_NOFX = 0,
-			AMOVERFX_MIRRORLEFTRIGHT = 2,
-			AMOVERFX_MIRRORUPDOWN = 4,
-			AMOVERFX_DEINTERLACE = 8,
+			NOFX = 0,
+			MIRRORLEFTRIGHT = 2,
+			MIRRORUPDOWN = 4,
+			DEINTERLACE = 8,
 		}
 		[AllowDuplicates]
 		public enum _AM_PIN_FLOW_CONTROL_BLOCK_FLAGS : int32
@@ -1493,9 +1493,9 @@ namespace Win32
 		[AllowDuplicates]
 		public enum AM_GRAPH_CONFIG_RECONNECT_FLAGS : int32
 		{
-			AM_GRAPH_CONFIG_RECONNECT_DIRECTCONNECT = 1,
-			AM_GRAPH_CONFIG_RECONNECT_CACHE_REMOVED_FILTERS = 2,
-			AM_GRAPH_CONFIG_RECONNECT_USE_ONLY_CACHED_FILTERS = 4,
+			DIRECTCONNECT = 1,
+			CACHE_REMOVED_FILTERS = 2,
+			USE_ONLY_CACHED_FILTERS = 4,
 		}
 		[AllowDuplicates]
 		public enum _REM_FILTER_FLAGS : int32
@@ -1510,71 +1510,71 @@ namespace Win32
 		[AllowDuplicates]
 		public enum VMRPresentationFlags : int32
 		{
-			VMRSample_SyncPoint = 1,
-			VMRSample_Preroll = 2,
-			VMRSample_Discontinuity = 4,
-			VMRSample_TimeValid = 8,
-			VMRSample_SrcDstRectsValid = 16,
+			SyncPoint = 1,
+			Preroll = 2,
+			Discontinuity = 4,
+			TimeValid = 8,
+			SrcDstRectsValid = 16,
 		}
 		[AllowDuplicates]
 		public enum VMRSurfaceAllocationFlags : int32
 		{
-			AMAP_PIXELFORMAT_VALID = 1,
-			AMAP_3D_TARGET = 2,
-			AMAP_ALLOW_SYSMEM = 4,
-			AMAP_FORCE_SYSMEM = 8,
-			AMAP_DIRECTED_FLIP = 16,
-			AMAP_DXVA_TARGET = 32,
+			PIXELFORMAT_VALID = 1,
+			_3D_TARGET = 2,
+			ALLOW_SYSMEM = 4,
+			FORCE_SYSMEM = 8,
+			DIRECTED_FLIP = 16,
+			DXVA_TARGET = 32,
 		}
 		[AllowDuplicates]
 		public enum VMR_ASPECT_RATIO_MODE : int32
 		{
-			VMR_ARMODE_NONE = 0,
-			VMR_ARMODE_LETTER_BOX = 1,
+			NONE = 0,
+			LETTER_BOX = 1,
 		}
 		[AllowDuplicates]
 		public enum VMRMixerPrefs : int32
 		{
-			MixerPref_NoDecimation = 1,
-			MixerPref_DecimateOutput = 2,
-			MixerPref_ARAdjustXorY = 4,
-			MixerPref_DecimationReserved = 8,
-			MixerPref_DecimateMask = 15,
-			MixerPref_BiLinearFiltering = 16,
-			MixerPref_PointFiltering = 32,
-			MixerPref_FilteringMask = 240,
-			MixerPref_RenderTargetRGB = 256,
-			MixerPref_RenderTargetYUV = 4096,
-			MixerPref_RenderTargetYUV420 = 512,
-			MixerPref_RenderTargetYUV422 = 1024,
-			MixerPref_RenderTargetYUV444 = 2048,
-			MixerPref_RenderTargetReserved = 57344,
-			MixerPref_RenderTargetMask = 65280,
-			MixerPref_DynamicSwitchToBOB = 65536,
-			MixerPref_DynamicDecimateBy2 = 131072,
-			MixerPref_DynamicReserved = 786432,
-			MixerPref_DynamicMask = 983040,
+			NoDecimation = 1,
+			DecimateOutput = 2,
+			ARAdjustXorY = 4,
+			DecimationReserved = 8,
+			DecimateMask = 15,
+			BiLinearFiltering = 16,
+			PointFiltering = 32,
+			FilteringMask = 240,
+			RenderTargetRGB = 256,
+			RenderTargetYUV = 4096,
+			RenderTargetYUV420 = 512,
+			RenderTargetYUV422 = 1024,
+			RenderTargetYUV444 = 2048,
+			RenderTargetReserved = 57344,
+			RenderTargetMask = 65280,
+			DynamicSwitchToBOB = 65536,
+			DynamicDecimateBy2 = 131072,
+			DynamicReserved = 786432,
+			DynamicMask = 983040,
 		}
 		[AllowDuplicates]
 		public enum VMRRenderPrefs : int32
 		{
-			RenderPrefs_RestrictToInitialMonitor = 0,
-			RenderPrefs_ForceOffscreen = 1,
-			RenderPrefs_ForceOverlays = 2,
-			RenderPrefs_AllowOverlays = 0,
-			RenderPrefs_AllowOffscreen = 0,
-			RenderPrefs_DoNotRenderColorKeyAndBorder = 8,
-			RenderPrefs_Reserved = 16,
-			RenderPrefs_PreferAGPMemWhenMixing = 32,
-			RenderPrefs_Mask = 63,
+			RestrictToInitialMonitor = 0,
+			ForceOffscreen = 1,
+			ForceOverlays = 2,
+			AllowOverlays = 0,
+			AllowOffscreen = 0,
+			DoNotRenderColorKeyAndBorder = 8,
+			Reserved = 16,
+			PreferAGPMemWhenMixing = 32,
+			Mask = 63,
 		}
 		[AllowDuplicates]
 		public enum VMRMode : int32
 		{
-			VMRMode_Windowed = 1,
-			VMRMode_Windowless = 2,
-			VMRMode_Renderless = 4,
-			VMRMode_Mask = 7,
+			Windowed = 1,
+			Windowless = 2,
+			Renderless = 4,
+			Mask = 7,
 		}
 		[AllowDuplicates]
 		public enum STREAMIF_CONSTANTS : int32
@@ -1584,413 +1584,413 @@ namespace Win32
 		[AllowDuplicates]
 		public enum VMRDeinterlacePrefs : int32
 		{
-			DeinterlacePref_NextBest = 1,
-			DeinterlacePref_BOB = 2,
-			DeinterlacePref_Weave = 4,
-			DeinterlacePref_Mask = 7,
+			NextBest = 1,
+			BOB = 2,
+			Weave = 4,
+			Mask = 7,
 		}
 		[AllowDuplicates]
 		public enum VMRDeinterlaceTech : int32
 		{
-			DeinterlaceTech_Unknown = 0,
-			DeinterlaceTech_BOBLineReplicate = 1,
-			DeinterlaceTech_BOBVerticalStretch = 2,
-			DeinterlaceTech_MedianFiltering = 4,
-			DeinterlaceTech_EdgeFiltering = 16,
-			DeinterlaceTech_FieldAdaptive = 32,
-			DeinterlaceTech_PixelAdaptive = 64,
-			DeinterlaceTech_MotionVectorSteered = 128,
+			Unknown = 0,
+			BOBLineReplicate = 1,
+			BOBVerticalStretch = 2,
+			MedianFiltering = 4,
+			EdgeFiltering = 16,
+			FieldAdaptive = 32,
+			PixelAdaptive = 64,
+			MotionVectorSteered = 128,
 		}
 		[AllowDuplicates]
 		public enum DVD_DOMAIN : int32
 		{
-			DVD_DOMAIN_FirstPlay = 1,
-			DVD_DOMAIN_VideoManagerMenu = 2,
-			DVD_DOMAIN_VideoTitleSetMenu = 3,
-			DVD_DOMAIN_Title = 4,
-			DVD_DOMAIN_Stop = 5,
+			FirstPlay = 1,
+			VideoManagerMenu = 2,
+			VideoTitleSetMenu = 3,
+			Title = 4,
+			Stop = 5,
 		}
 		[AllowDuplicates]
 		public enum DVD_MENU_ID : int32
 		{
-			DVD_MENU_Title = 2,
-			DVD_MENU_Root = 3,
-			DVD_MENU_Subpicture = 4,
-			DVD_MENU_Audio = 5,
-			DVD_MENU_Angle = 6,
-			DVD_MENU_Chapter = 7,
+			Title = 2,
+			Root = 3,
+			Subpicture = 4,
+			Audio = 5,
+			Angle = 6,
+			Chapter = 7,
 		}
 		[AllowDuplicates]
 		public enum DVD_DISC_SIDE : int32
 		{
-			DVD_SIDE_A = 1,
-			DVD_SIDE_B = 2,
+			A = 1,
+			B = 2,
 		}
 		[AllowDuplicates]
 		public enum DVD_PREFERRED_DISPLAY_MODE : int32
 		{
-			DISPLAY_CONTENT_DEFAULT = 0,
-			DISPLAY_16x9 = 1,
-			DISPLAY_4x3_PANSCAN_PREFERRED = 2,
-			DISPLAY_4x3_LETTERBOX_PREFERRED = 3,
+			CONTENT_DEFAULT = 0,
+			_16x9 = 1,
+			_4x3_PANSCAN_PREFERRED = 2,
+			_4x3_LETTERBOX_PREFERRED = 3,
 		}
 		[AllowDuplicates]
 		public enum DVD_FRAMERATE : int32
 		{
-			DVD_FPS_25 = 1,
-			DVD_FPS_30NonDrop = 3,
+			_25 = 1,
+			_30NonDrop = 3,
 		}
 		[AllowDuplicates]
 		public enum DVD_NavCmdType : int32
 		{
-			DVD_NavCmdType_Pre = 1,
-			DVD_NavCmdType_Post = 2,
-			DVD_NavCmdType_Cell = 3,
-			DVD_NavCmdType_Button = 4,
+			Pre = 1,
+			Post = 2,
+			Cell = 3,
+			Button = 4,
 		}
 		[AllowDuplicates]
 		public enum DVD_TIMECODE_FLAGS : int32
 		{
-			DVD_TC_FLAG_25fps = 1,
-			DVD_TC_FLAG_30fps = 2,
-			DVD_TC_FLAG_DropFrame = 4,
-			DVD_TC_FLAG_Interpolated = 8,
+			_25fps = 1,
+			_30fps = 2,
+			DropFrame = 4,
+			Interpolated = 8,
 		}
 		[AllowDuplicates]
 		public enum VALID_UOP_FLAG : int32
 		{
-			UOP_FLAG_Play_Title_Or_AtTime = 1,
-			UOP_FLAG_Play_Chapter = 2,
-			UOP_FLAG_Play_Title = 4,
-			UOP_FLAG_Stop = 8,
-			UOP_FLAG_ReturnFromSubMenu = 16,
-			UOP_FLAG_Play_Chapter_Or_AtTime = 32,
-			UOP_FLAG_PlayPrev_Or_Replay_Chapter = 64,
-			UOP_FLAG_PlayNext_Chapter = 128,
-			UOP_FLAG_Play_Forwards = 256,
-			UOP_FLAG_Play_Backwards = 512,
-			UOP_FLAG_ShowMenu_Title = 1024,
-			UOP_FLAG_ShowMenu_Root = 2048,
-			UOP_FLAG_ShowMenu_SubPic = 4096,
-			UOP_FLAG_ShowMenu_Audio = 8192,
-			UOP_FLAG_ShowMenu_Angle = 16384,
-			UOP_FLAG_ShowMenu_Chapter = 32768,
-			UOP_FLAG_Resume = 65536,
-			UOP_FLAG_Select_Or_Activate_Button = 131072,
-			UOP_FLAG_Still_Off = 262144,
-			UOP_FLAG_Pause_On = 524288,
-			UOP_FLAG_Select_Audio_Stream = 1048576,
-			UOP_FLAG_Select_SubPic_Stream = 2097152,
-			UOP_FLAG_Select_Angle = 4194304,
-			UOP_FLAG_Select_Karaoke_Audio_Presentation_Mode = 8388608,
-			UOP_FLAG_Select_Video_Mode_Preference = 16777216,
+			Play_Title_Or_AtTime = 1,
+			Play_Chapter = 2,
+			Play_Title = 4,
+			Stop = 8,
+			ReturnFromSubMenu = 16,
+			Play_Chapter_Or_AtTime = 32,
+			PlayPrev_Or_Replay_Chapter = 64,
+			PlayNext_Chapter = 128,
+			Play_Forwards = 256,
+			Play_Backwards = 512,
+			ShowMenu_Title = 1024,
+			ShowMenu_Root = 2048,
+			ShowMenu_SubPic = 4096,
+			ShowMenu_Audio = 8192,
+			ShowMenu_Angle = 16384,
+			ShowMenu_Chapter = 32768,
+			Resume = 65536,
+			Select_Or_Activate_Button = 131072,
+			Still_Off = 262144,
+			Pause_On = 524288,
+			Select_Audio_Stream = 1048576,
+			Select_SubPic_Stream = 2097152,
+			Select_Angle = 4194304,
+			Select_Karaoke_Audio_Presentation_Mode = 8388608,
+			Select_Video_Mode_Preference = 16777216,
 		}
 		[AllowDuplicates]
 		public enum DVD_CMD_FLAGS : int32
 		{
-			DVD_CMD_FLAG_None = 0,
-			DVD_CMD_FLAG_Flush = 1,
-			DVD_CMD_FLAG_SendEvents = 2,
-			DVD_CMD_FLAG_Block = 4,
-			DVD_CMD_FLAG_StartWhenRendered = 8,
-			DVD_CMD_FLAG_EndAfterRendered = 16,
+			None = 0,
+			Flush = 1,
+			SendEvents = 2,
+			Block = 4,
+			StartWhenRendered = 8,
+			EndAfterRendered = 16,
 		}
 		[AllowDuplicates]
 		public enum DVD_OPTION_FLAG : int32
 		{
-			DVD_ResetOnStop = 1,
-			DVD_NotifyParentalLevelChange = 2,
-			DVD_HMSF_TimeCodeEvents = 3,
-			DVD_AudioDuringFFwdRew = 4,
-			DVD_EnableNonblockingAPIs = 5,
-			DVD_CacheSizeInMB = 6,
-			DVD_EnablePortableBookmarks = 7,
-			DVD_EnableExtendedCopyProtectErrors = 8,
-			DVD_NotifyPositionChange = 9,
-			DVD_IncreaseOutputControl = 10,
-			DVD_EnableStreaming = 11,
-			DVD_EnableESOutput = 12,
-			DVD_EnableTitleLength = 13,
-			DVD_DisableStillThrottle = 14,
-			DVD_EnableLoggingEvents = 15,
-			DVD_MaxReadBurstInKB = 16,
-			DVD_ReadBurstPeriodInMS = 17,
-			DVD_RestartDisc = 18,
-			DVD_EnableCC = 19,
+			ResetOnStop = 1,
+			NotifyParentalLevelChange = 2,
+			HMSF_TimeCodeEvents = 3,
+			AudioDuringFFwdRew = 4,
+			EnableNonblockingAPIs = 5,
+			CacheSizeInMB = 6,
+			EnablePortableBookmarks = 7,
+			EnableExtendedCopyProtectErrors = 8,
+			NotifyPositionChange = 9,
+			IncreaseOutputControl = 10,
+			EnableStreaming = 11,
+			EnableESOutput = 12,
+			EnableTitleLength = 13,
+			DisableStillThrottle = 14,
+			EnableLoggingEvents = 15,
+			MaxReadBurstInKB = 16,
+			ReadBurstPeriodInMS = 17,
+			RestartDisc = 18,
+			EnableCC = 19,
 		}
 		[AllowDuplicates]
 		public enum DVD_RELATIVE_BUTTON : int32
 		{
-			DVD_Relative_Upper = 1,
-			DVD_Relative_Lower = 2,
-			DVD_Relative_Left = 3,
-			DVD_Relative_Right = 4,
+			Upper = 1,
+			Lower = 2,
+			Left = 3,
+			Right = 4,
 		}
 		[AllowDuplicates]
 		public enum DVD_PARENTAL_LEVEL : int32
 		{
-			DVD_PARENTAL_LEVEL_8 = 32768,
-			DVD_PARENTAL_LEVEL_7 = 16384,
-			DVD_PARENTAL_LEVEL_6 = 8192,
-			DVD_PARENTAL_LEVEL_5 = 4096,
-			DVD_PARENTAL_LEVEL_4 = 2048,
-			DVD_PARENTAL_LEVEL_3 = 1024,
-			DVD_PARENTAL_LEVEL_2 = 512,
-			DVD_PARENTAL_LEVEL_1 = 256,
+			_8 = 32768,
+			_7 = 16384,
+			_6 = 8192,
+			_5 = 4096,
+			_4 = 2048,
+			_3 = 1024,
+			_2 = 512,
+			_1 = 256,
 		}
 		[AllowDuplicates]
 		public enum DVD_AUDIO_LANG_EXT : int32
 		{
-			DVD_AUD_EXT_NotSpecified = 0,
-			DVD_AUD_EXT_Captions = 1,
-			DVD_AUD_EXT_VisuallyImpaired = 2,
-			DVD_AUD_EXT_DirectorComments1 = 3,
-			DVD_AUD_EXT_DirectorComments2 = 4,
+			NotSpecified = 0,
+			Captions = 1,
+			VisuallyImpaired = 2,
+			DirectorComments1 = 3,
+			DirectorComments2 = 4,
 		}
 		[AllowDuplicates]
 		public enum DVD_SUBPICTURE_LANG_EXT : int32
 		{
-			DVD_SP_EXT_NotSpecified = 0,
-			DVD_SP_EXT_Caption_Normal = 1,
-			DVD_SP_EXT_Caption_Big = 2,
-			DVD_SP_EXT_Caption_Children = 3,
-			DVD_SP_EXT_CC_Normal = 5,
-			DVD_SP_EXT_CC_Big = 6,
-			DVD_SP_EXT_CC_Children = 7,
-			DVD_SP_EXT_Forced = 9,
-			DVD_SP_EXT_DirectorComments_Normal = 13,
-			DVD_SP_EXT_DirectorComments_Big = 14,
-			DVD_SP_EXT_DirectorComments_Children = 15,
+			NotSpecified = 0,
+			Caption_Normal = 1,
+			Caption_Big = 2,
+			Caption_Children = 3,
+			CC_Normal = 5,
+			CC_Big = 6,
+			CC_Children = 7,
+			Forced = 9,
+			DirectorComments_Normal = 13,
+			DirectorComments_Big = 14,
+			DirectorComments_Children = 15,
 		}
 		[AllowDuplicates]
 		public enum DVD_AUDIO_APPMODE : int32
 		{
-			DVD_AudioMode_None = 0,
-			DVD_AudioMode_Karaoke = 1,
-			DVD_AudioMode_Surround = 2,
-			DVD_AudioMode_Other = 3,
+			None = 0,
+			Karaoke = 1,
+			Surround = 2,
+			Other = 3,
 		}
 		[AllowDuplicates]
 		public enum DVD_AUDIO_FORMAT : int32
 		{
-			DVD_AudioFormat_AC3 = 0,
-			DVD_AudioFormat_MPEG1 = 1,
-			DVD_AudioFormat_MPEG1_DRC = 2,
-			DVD_AudioFormat_MPEG2 = 3,
-			DVD_AudioFormat_MPEG2_DRC = 4,
-			DVD_AudioFormat_LPCM = 5,
-			DVD_AudioFormat_DTS = 6,
-			DVD_AudioFormat_SDDS = 7,
-			DVD_AudioFormat_Other = 8,
+			AC3 = 0,
+			MPEG1 = 1,
+			MPEG1_DRC = 2,
+			MPEG2 = 3,
+			MPEG2_DRC = 4,
+			LPCM = 5,
+			DTS = 6,
+			SDDS = 7,
+			Other = 8,
 		}
 		[AllowDuplicates]
 		public enum DVD_KARAOKE_DOWNMIX : int32
 		{
-			DVD_Mix_0to0 = 1,
-			DVD_Mix_1to0 = 2,
-			DVD_Mix_2to0 = 4,
-			DVD_Mix_3to0 = 8,
-			DVD_Mix_4to0 = 16,
-			DVD_Mix_Lto0 = 32,
-			DVD_Mix_Rto0 = 64,
-			DVD_Mix_0to1 = 256,
-			DVD_Mix_1to1 = 512,
-			DVD_Mix_2to1 = 1024,
-			DVD_Mix_3to1 = 2048,
-			DVD_Mix_4to1 = 4096,
-			DVD_Mix_Lto1 = 8192,
-			DVD_Mix_Rto1 = 16384,
+			_0to0 = 1,
+			_1to0 = 2,
+			_2to0 = 4,
+			_3to0 = 8,
+			_4to0 = 16,
+			Lto0 = 32,
+			Rto0 = 64,
+			_0to1 = 256,
+			_1to1 = 512,
+			_2to1 = 1024,
+			_3to1 = 2048,
+			_4to1 = 4096,
+			Lto1 = 8192,
+			Rto1 = 16384,
 		}
 		[AllowDuplicates]
 		public enum DVD_KARAOKE_CONTENTS : int32
 		{
-			DVD_Karaoke_GuideVocal1 = 1,
-			DVD_Karaoke_GuideVocal2 = 2,
-			DVD_Karaoke_GuideMelody1 = 4,
-			DVD_Karaoke_GuideMelody2 = 8,
-			DVD_Karaoke_GuideMelodyA = 16,
-			DVD_Karaoke_GuideMelodyB = 32,
-			DVD_Karaoke_SoundEffectA = 64,
-			DVD_Karaoke_SoundEffectB = 128,
+			GuideVocal1 = 1,
+			GuideVocal2 = 2,
+			GuideMelody1 = 4,
+			GuideMelody2 = 8,
+			GuideMelodyA = 16,
+			GuideMelodyB = 32,
+			SoundEffectA = 64,
+			SoundEffectB = 128,
 		}
 		[AllowDuplicates]
 		public enum DVD_KARAOKE_ASSIGNMENT : int32
 		{
-			DVD_Assignment_reserved0 = 0,
-			DVD_Assignment_reserved1 = 1,
-			DVD_Assignment_LR = 2,
-			DVD_Assignment_LRM = 3,
-			DVD_Assignment_LR1 = 4,
-			DVD_Assignment_LRM1 = 5,
-			DVD_Assignment_LR12 = 6,
-			DVD_Assignment_LRM12 = 7,
+			reserved0 = 0,
+			reserved1 = 1,
+			LR = 2,
+			LRM = 3,
+			LR1 = 4,
+			LRM1 = 5,
+			LR12 = 6,
+			LRM12 = 7,
 		}
 		[AllowDuplicates]
 		public enum DVD_VIDEO_COMPRESSION : int32
 		{
-			DVD_VideoCompression_Other = 0,
-			DVD_VideoCompression_MPEG1 = 1,
-			DVD_VideoCompression_MPEG2 = 2,
+			Other = 0,
+			MPEG1 = 1,
+			MPEG2 = 2,
 		}
 		[AllowDuplicates]
 		public enum DVD_SUBPICTURE_TYPE : int32
 		{
-			DVD_SPType_NotSpecified = 0,
-			DVD_SPType_Language = 1,
-			DVD_SPType_Other = 2,
+			NotSpecified = 0,
+			Language = 1,
+			Other = 2,
 		}
 		[AllowDuplicates]
 		public enum DVD_SUBPICTURE_CODING : int32
 		{
-			DVD_SPCoding_RunLength = 0,
-			DVD_SPCoding_Extended = 1,
-			DVD_SPCoding_Other = 2,
+			RunLength = 0,
+			Extended = 1,
+			Other = 2,
 		}
 		[AllowDuplicates]
 		public enum DVD_TITLE_APPMODE : int32
 		{
-			DVD_AppMode_Not_Specified = 0,
-			DVD_AppMode_Karaoke = 1,
-			DVD_AppMode_Other = 3,
+			Not_Specified = 0,
+			Karaoke = 1,
+			Other = 3,
 		}
 		[AllowDuplicates]
 		public enum DVD_TextStringType : int32
 		{
-			DVD_Struct_Volume = 1,
-			DVD_Struct_Title = 2,
-			DVD_Struct_ParentalID = 3,
-			DVD_Struct_PartOfTitle = 4,
-			DVD_Struct_Cell = 5,
-			DVD_Stream_Audio = 16,
-			DVD_Stream_Subpicture = 17,
-			DVD_Stream_Angle = 18,
-			DVD_Channel_Audio = 32,
-			DVD_General_Name = 48,
-			DVD_General_Comments = 49,
-			DVD_Title_Series = 56,
-			DVD_Title_Movie = 57,
-			DVD_Title_Video = 58,
-			DVD_Title_Album = 59,
-			DVD_Title_Song = 60,
-			DVD_Title_Other = 63,
-			DVD_Title_Sub_Series = 64,
-			DVD_Title_Sub_Movie = 65,
-			DVD_Title_Sub_Video = 66,
-			DVD_Title_Sub_Album = 67,
-			DVD_Title_Sub_Song = 68,
-			DVD_Title_Sub_Other = 71,
-			DVD_Title_Orig_Series = 72,
-			DVD_Title_Orig_Movie = 73,
-			DVD_Title_Orig_Video = 74,
-			DVD_Title_Orig_Album = 75,
-			DVD_Title_Orig_Song = 76,
-			DVD_Title_Orig_Other = 79,
-			DVD_Other_Scene = 80,
-			DVD_Other_Cut = 81,
-			DVD_Other_Take = 82,
+			Struct_Volume = 1,
+			Struct_Title = 2,
+			Struct_ParentalID = 3,
+			Struct_PartOfTitle = 4,
+			Struct_Cell = 5,
+			Stream_Audio = 16,
+			Stream_Subpicture = 17,
+			Stream_Angle = 18,
+			Channel_Audio = 32,
+			General_Name = 48,
+			General_Comments = 49,
+			Title_Series = 56,
+			Title_Movie = 57,
+			Title_Video = 58,
+			Title_Album = 59,
+			Title_Song = 60,
+			Title_Other = 63,
+			Title_Sub_Series = 64,
+			Title_Sub_Movie = 65,
+			Title_Sub_Video = 66,
+			Title_Sub_Album = 67,
+			Title_Sub_Song = 68,
+			Title_Sub_Other = 71,
+			Title_Orig_Series = 72,
+			Title_Orig_Movie = 73,
+			Title_Orig_Video = 74,
+			Title_Orig_Album = 75,
+			Title_Orig_Song = 76,
+			Title_Orig_Other = 79,
+			Other_Scene = 80,
+			Other_Cut = 81,
+			Other_Take = 82,
 		}
 		[AllowDuplicates]
 		public enum DVD_TextCharSet : int32
 		{
-			DVD_CharSet_Unicode = 0,
-			DVD_CharSet_ISO646 = 1,
-			DVD_CharSet_JIS_Roman_Kanji = 2,
-			DVD_CharSet_ISO8859_1 = 3,
-			DVD_CharSet_ShiftJIS_Kanji_Roman_Katakana = 4,
+			Unicode = 0,
+			ISO646 = 1,
+			JIS_Roman_Kanji = 2,
+			ISO8859_1 = 3,
+			ShiftJIS_Kanji_Roman_Katakana = 4,
 		}
 		[AllowDuplicates]
 		public enum AM_DVD_GRAPH_FLAGS : int32
 		{
-			AM_DVD_HWDEC_PREFER = 1,
-			AM_DVD_HWDEC_ONLY = 2,
-			AM_DVD_SWDEC_PREFER = 4,
-			AM_DVD_SWDEC_ONLY = 8,
-			AM_DVD_NOVPE = 256,
-			AM_DVD_DO_NOT_CLEAR = 512,
-			AM_DVD_VMR9_ONLY = 2048,
-			AM_DVD_EVR_ONLY = 4096,
-			AM_DVD_EVR_QOS = 8192,
-			AM_DVD_ADAPT_GRAPH = 16384,
-			AM_DVD_MASK = 65535,
+			HWDEC_PREFER = 1,
+			HWDEC_ONLY = 2,
+			SWDEC_PREFER = 4,
+			SWDEC_ONLY = 8,
+			NOVPE = 256,
+			DO_NOT_CLEAR = 512,
+			VMR9_ONLY = 2048,
+			EVR_ONLY = 4096,
+			EVR_QOS = 8192,
+			ADAPT_GRAPH = 16384,
+			MASK = 65535,
 		}
 		[AllowDuplicates]
 		public enum AM_DVD_STREAM_FLAGS : int32
 		{
-			AM_DVD_STREAM_VIDEO = 1,
-			AM_DVD_STREAM_AUDIO = 2,
-			AM_DVD_STREAM_SUBPIC = 4,
+			VIDEO = 1,
+			AUDIO = 2,
+			SUBPIC = 4,
 		}
 		[AllowDuplicates]
 		public enum _AM_OVERLAY_NOTIFY_FLAGS : int32
 		{
-			AM_OVERLAY_NOTIFY_VISIBLE_CHANGE = 1,
-			AM_OVERLAY_NOTIFY_SOURCE_CHANGE = 2,
-			AM_OVERLAY_NOTIFY_DEST_CHANGE = 4,
+			VISIBLE_CHANGE = 1,
+			SOURCE_CHANGE = 2,
+			DEST_CHANGE = 4,
 		}
 		[AllowDuplicates]
 		public enum BDA_EVENT_ID : int32
 		{
-			BDA_EVENT_SIGNAL_LOSS = 0,
-			BDA_EVENT_SIGNAL_LOCK = 1,
-			BDA_EVENT_DATA_START = 2,
-			BDA_EVENT_DATA_STOP = 3,
-			BDA_EVENT_CHANNEL_ACQUIRED = 4,
-			BDA_EVENT_CHANNEL_LOST = 5,
-			BDA_EVENT_CHANNEL_SOURCE_CHANGED = 6,
-			BDA_EVENT_CHANNEL_ACTIVATED = 7,
-			BDA_EVENT_CHANNEL_DEACTIVATED = 8,
-			BDA_EVENT_SUBCHANNEL_ACQUIRED = 9,
-			BDA_EVENT_SUBCHANNEL_LOST = 10,
-			BDA_EVENT_SUBCHANNEL_SOURCE_CHANGED = 11,
-			BDA_EVENT_SUBCHANNEL_ACTIVATED = 12,
-			BDA_EVENT_SUBCHANNEL_DEACTIVATED = 13,
-			BDA_EVENT_ACCESS_GRANTED = 14,
-			BDA_EVENT_ACCESS_DENIED = 15,
-			BDA_EVENT_OFFER_EXTENDED = 16,
-			BDA_EVENT_PURCHASE_COMPLETED = 17,
-			BDA_EVENT_SMART_CARD_INSERTED = 18,
-			BDA_EVENT_SMART_CARD_REMOVED = 19,
+			SIGNAL_LOSS = 0,
+			SIGNAL_LOCK = 1,
+			DATA_START = 2,
+			DATA_STOP = 3,
+			CHANNEL_ACQUIRED = 4,
+			CHANNEL_LOST = 5,
+			CHANNEL_SOURCE_CHANGED = 6,
+			CHANNEL_ACTIVATED = 7,
+			CHANNEL_DEACTIVATED = 8,
+			SUBCHANNEL_ACQUIRED = 9,
+			SUBCHANNEL_LOST = 10,
+			SUBCHANNEL_SOURCE_CHANGED = 11,
+			SUBCHANNEL_ACTIVATED = 12,
+			SUBCHANNEL_DEACTIVATED = 13,
+			ACCESS_GRANTED = 14,
+			ACCESS_DENIED = 15,
+			OFFER_EXTENDED = 16,
+			PURCHASE_COMPLETED = 17,
+			SMART_CARD_INSERTED = 18,
+			SMART_CARD_REMOVED = 19,
 		}
 		[AllowDuplicates]
 		public enum BDA_MULTICAST_MODE : int32
 		{
-			BDA_PROMISCUOUS_MULTICAST = 0,
-			BDA_FILTERED_MULTICAST = 1,
-			BDA_NO_MULTICAST = 2,
+			PROMISCUOUS_MULTICAST = 0,
+			FILTERED_MULTICAST = 1,
+			NO_MULTICAST = 2,
 		}
 		[AllowDuplicates]
 		public enum BDA_SIGNAL_STATE : int32
 		{
-			BDA_SIGNAL_UNAVAILABLE = 0,
-			BDA_SIGNAL_INACTIVE = 1,
-			BDA_SIGNAL_ACTIVE = 2,
+			UNAVAILABLE = 0,
+			INACTIVE = 1,
+			ACTIVE = 2,
 		}
 		[AllowDuplicates]
 		public enum BDA_CHANGE_STATE : int32
 		{
-			BDA_CHANGES_COMPLETE = 0,
-			BDA_CHANGES_PENDING = 1,
+			COMPLETE = 0,
+			PENDING = 1,
 		}
 		[AllowDuplicates]
 		public enum MEDIA_SAMPLE_CONTENT : int32
 		{
-			MEDIA_TRANSPORT_PACKET = 0,
-			MEDIA_ELEMENTARY_STREAM = 1,
-			MEDIA_MPEG2_PSI = 2,
-			MEDIA_TRANSPORT_PAYLOAD = 3,
+			TRANSPORT_PACKET = 0,
+			ELEMENTARY_STREAM = 1,
+			MPEG2_PSI = 2,
+			TRANSPORT_PAYLOAD = 3,
 		}
 		[AllowDuplicates]
 		public enum ISDBCAS_REQUEST_ID : int32
 		{
-			ISDBCAS_REQUEST_ID_EMG = 56,
-			ISDBCAS_REQUEST_ID_EMD = 58,
+			G = 56,
+			D = 58,
 		}
 		[AllowDuplicates]
 		public enum MUX_PID_TYPE : int32
 		{
-			PID_OTHER = -1,
-			PID_ELEMENTARY_STREAM = 0,
-			PID_MPEG2_SECTION_PSI_SI = 1,
+			OTHER = -1,
+			ELEMENTARY_STREAM = 0,
+			MPEG2_SECTION_PSI_SI = 1,
 		}
 		[AllowDuplicates]
 		public enum DVBSystemType : int32
@@ -2009,23 +2009,23 @@ namespace Win32
 		[AllowDuplicates]
 		public enum ComponentCategory : int32
 		{
-			CategoryNotSet = -1,
-			CategoryOther = 0,
-			CategoryVideo = 1,
-			CategoryAudio = 2,
-			CategoryText = 3,
-			CategorySubtitles = 4,
-			CategoryCaptions = 5,
-			CategorySuperimpose = 6,
-			CategoryData = 7,
-			CATEGORY_COUNT = 8,
+			ategoryNotSet = -1,
+			ategoryOther = 0,
+			ategoryVideo = 1,
+			ategoryAudio = 2,
+			ategoryText = 3,
+			ategorySubtitles = 4,
+			ategoryCaptions = 5,
+			ategorySuperimpose = 6,
+			ategoryData = 7,
+			ATEGORY_COUNT = 8,
 		}
 		[AllowDuplicates]
 		public enum ComponentStatus : int32
 		{
-			StatusActive = 0,
-			StatusInactive = 1,
-			StatusUnavailable = 2,
+			Active = 0,
+			Inactive = 1,
+			Unavailable = 2,
 		}
 		[AllowDuplicates]
 		public enum MPEG2StreamType : int32
@@ -2075,77 +2075,77 @@ namespace Win32
 		[AllowDuplicates]
 		public enum BinaryConvolutionCodeRate : int32
 		{
-			BDA_BCC_RATE_NOT_SET = -1,
-			BDA_BCC_RATE_NOT_DEFINED = 0,
-			BDA_BCC_RATE_1_2 = 1,
-			BDA_BCC_RATE_2_3 = 2,
-			BDA_BCC_RATE_3_4 = 3,
-			BDA_BCC_RATE_3_5 = 4,
-			BDA_BCC_RATE_4_5 = 5,
-			BDA_BCC_RATE_5_6 = 6,
-			BDA_BCC_RATE_5_11 = 7,
-			BDA_BCC_RATE_7_8 = 8,
-			BDA_BCC_RATE_1_4 = 9,
-			BDA_BCC_RATE_1_3 = 10,
-			BDA_BCC_RATE_2_5 = 11,
-			BDA_BCC_RATE_6_7 = 12,
-			BDA_BCC_RATE_8_9 = 13,
-			BDA_BCC_RATE_9_10 = 14,
-			BDA_BCC_RATE_MAX = 15,
+			NOT_SET = -1,
+			NOT_DEFINED = 0,
+			_1_2 = 1,
+			_2_3 = 2,
+			_3_4 = 3,
+			_3_5 = 4,
+			_4_5 = 5,
+			_5_6 = 6,
+			_5_11 = 7,
+			_7_8 = 8,
+			_1_4 = 9,
+			_1_3 = 10,
+			_2_5 = 11,
+			_6_7 = 12,
+			_8_9 = 13,
+			_9_10 = 14,
+			MAX = 15,
 		}
 		[AllowDuplicates]
 		public enum FECMethod : int32
 		{
-			BDA_FEC_METHOD_NOT_SET = -1,
-			BDA_FEC_METHOD_NOT_DEFINED = 0,
-			BDA_FEC_VITERBI = 1,
-			BDA_FEC_RS_204_188 = 2,
-			BDA_FEC_LDPC = 3,
-			BDA_FEC_BCH = 4,
-			BDA_FEC_RS_147_130 = 5,
-			BDA_FEC_MAX = 6,
+			METHOD_NOT_SET = -1,
+			METHOD_NOT_DEFINED = 0,
+			VITERBI = 1,
+			RS_204_188 = 2,
+			LDPC = 3,
+			BCH = 4,
+			RS_147_130 = 5,
+			MAX = 6,
 		}
 		[AllowDuplicates]
 		public enum ModulationType : int32
 		{
-			BDA_MOD_NOT_SET = -1,
-			BDA_MOD_NOT_DEFINED = 0,
-			BDA_MOD_16QAM = 1,
-			BDA_MOD_32QAM = 2,
-			BDA_MOD_64QAM = 3,
-			BDA_MOD_80QAM = 4,
-			BDA_MOD_96QAM = 5,
-			BDA_MOD_112QAM = 6,
-			BDA_MOD_128QAM = 7,
-			BDA_MOD_160QAM = 8,
-			BDA_MOD_192QAM = 9,
-			BDA_MOD_224QAM = 10,
-			BDA_MOD_256QAM = 11,
-			BDA_MOD_320QAM = 12,
-			BDA_MOD_384QAM = 13,
-			BDA_MOD_448QAM = 14,
-			BDA_MOD_512QAM = 15,
-			BDA_MOD_640QAM = 16,
-			BDA_MOD_768QAM = 17,
-			BDA_MOD_896QAM = 18,
-			BDA_MOD_1024QAM = 19,
-			BDA_MOD_QPSK = 20,
-			BDA_MOD_BPSK = 21,
-			BDA_MOD_OQPSK = 22,
-			BDA_MOD_8VSB = 23,
-			BDA_MOD_16VSB = 24,
-			BDA_MOD_ANALOG_AMPLITUDE = 25,
-			BDA_MOD_ANALOG_FREQUENCY = 26,
-			BDA_MOD_8PSK = 27,
-			BDA_MOD_RF = 28,
-			BDA_MOD_16APSK = 29,
-			BDA_MOD_32APSK = 30,
-			BDA_MOD_NBC_QPSK = 31,
-			BDA_MOD_NBC_8PSK = 32,
-			BDA_MOD_DIRECTV = 33,
-			BDA_MOD_ISDB_T_TMCC = 34,
-			BDA_MOD_ISDB_S_TMCC = 35,
-			BDA_MOD_MAX = 36,
+			NOT_SET = -1,
+			NOT_DEFINED = 0,
+			_16QAM = 1,
+			_32QAM = 2,
+			_64QAM = 3,
+			_80QAM = 4,
+			_96QAM = 5,
+			_112QAM = 6,
+			_128QAM = 7,
+			_160QAM = 8,
+			_192QAM = 9,
+			_224QAM = 10,
+			_256QAM = 11,
+			_320QAM = 12,
+			_384QAM = 13,
+			_448QAM = 14,
+			_512QAM = 15,
+			_640QAM = 16,
+			_768QAM = 17,
+			_896QAM = 18,
+			_1024QAM = 19,
+			QPSK = 20,
+			BPSK = 21,
+			OQPSK = 22,
+			_8VSB = 23,
+			_16VSB = 24,
+			ANALOG_AMPLITUDE = 25,
+			ANALOG_FREQUENCY = 26,
+			_8PSK = 27,
+			RF = 28,
+			_16APSK = 29,
+			_32APSK = 30,
+			NBC_QPSK = 31,
+			NBC_8PSK = 32,
+			DIRECTV = 33,
+			ISDB_T_TMCC = 34,
+			ISDB_S_TMCC = 35,
+			MAX = 36,
 		}
 		[AllowDuplicates]
 		public enum ScanModulationTypes : int32
@@ -2189,179 +2189,179 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SpectralInversion : int32
 		{
-			BDA_SPECTRAL_INVERSION_NOT_SET = -1,
-			BDA_SPECTRAL_INVERSION_NOT_DEFINED = 0,
-			BDA_SPECTRAL_INVERSION_AUTOMATIC = 1,
-			BDA_SPECTRAL_INVERSION_NORMAL = 2,
-			BDA_SPECTRAL_INVERSION_INVERTED = 3,
-			BDA_SPECTRAL_INVERSION_MAX = 4,
+			NOT_SET = -1,
+			NOT_DEFINED = 0,
+			AUTOMATIC = 1,
+			NORMAL = 2,
+			INVERTED = 3,
+			MAX = 4,
 		}
 		[AllowDuplicates]
 		public enum Polarisation : int32
 		{
-			BDA_POLARISATION_NOT_SET = -1,
-			BDA_POLARISATION_NOT_DEFINED = 0,
-			BDA_POLARISATION_LINEAR_H = 1,
-			BDA_POLARISATION_LINEAR_V = 2,
-			BDA_POLARISATION_CIRCULAR_L = 3,
-			BDA_POLARISATION_CIRCULAR_R = 4,
-			BDA_POLARISATION_MAX = 5,
+			NOT_SET = -1,
+			NOT_DEFINED = 0,
+			LINEAR_H = 1,
+			LINEAR_V = 2,
+			CIRCULAR_L = 3,
+			CIRCULAR_R = 4,
+			MAX = 5,
 		}
 		[AllowDuplicates]
 		public enum LNB_Source : int32
 		{
-			BDA_LNB_SOURCE_NOT_SET = -1,
-			BDA_LNB_SOURCE_NOT_DEFINED = 0,
-			BDA_LNB_SOURCE_A = 1,
-			BDA_LNB_SOURCE_B = 2,
-			BDA_LNB_SOURCE_C = 3,
-			BDA_LNB_SOURCE_D = 4,
-			BDA_LNB_SOURCE_MAX = 5,
+			NOT_SET = -1,
+			NOT_DEFINED = 0,
+			A = 1,
+			B = 2,
+			C = 3,
+			D = 4,
+			MAX = 5,
 		}
 		[AllowDuplicates]
 		public enum GuardInterval : int32
 		{
-			BDA_GUARD_NOT_SET = -1,
-			BDA_GUARD_NOT_DEFINED = 0,
-			BDA_GUARD_1_32 = 1,
-			BDA_GUARD_1_16 = 2,
-			BDA_GUARD_1_8 = 3,
-			BDA_GUARD_1_4 = 4,
-			BDA_GUARD_1_128 = 5,
-			BDA_GUARD_19_128 = 6,
-			BDA_GUARD_19_256 = 7,
-			BDA_GUARD_MAX = 8,
+			NOT_SET = -1,
+			NOT_DEFINED = 0,
+			_1_32 = 1,
+			_1_16 = 2,
+			_1_8 = 3,
+			_1_4 = 4,
+			_1_128 = 5,
+			_19_128 = 6,
+			_19_256 = 7,
+			MAX = 8,
 		}
 		[AllowDuplicates]
 		public enum HierarchyAlpha : int32
 		{
-			BDA_HALPHA_NOT_SET = -1,
-			BDA_HALPHA_NOT_DEFINED = 0,
-			BDA_HALPHA_1 = 1,
-			BDA_HALPHA_2 = 2,
-			BDA_HALPHA_4 = 3,
-			BDA_HALPHA_MAX = 4,
+			NOT_SET = -1,
+			NOT_DEFINED = 0,
+			_1 = 1,
+			_2 = 2,
+			_4 = 3,
+			MAX = 4,
 		}
 		[AllowDuplicates]
 		public enum TransmissionMode : int32
 		{
-			BDA_XMIT_MODE_NOT_SET = -1,
-			BDA_XMIT_MODE_NOT_DEFINED = 0,
-			BDA_XMIT_MODE_2K = 1,
-			BDA_XMIT_MODE_8K = 2,
-			BDA_XMIT_MODE_4K = 3,
-			BDA_XMIT_MODE_2K_INTERLEAVED = 4,
-			BDA_XMIT_MODE_4K_INTERLEAVED = 5,
-			BDA_XMIT_MODE_1K = 6,
-			BDA_XMIT_MODE_16K = 7,
-			BDA_XMIT_MODE_32K = 8,
-			BDA_XMIT_MODE_MAX = 9,
+			NOT_SET = -1,
+			NOT_DEFINED = 0,
+			_2K = 1,
+			_8K = 2,
+			_4K = 3,
+			_2K_INTERLEAVED = 4,
+			_4K_INTERLEAVED = 5,
+			_1K = 6,
+			_16K = 7,
+			_32K = 8,
+			MAX = 9,
 		}
 		[AllowDuplicates]
 		public enum RollOff : int32
 		{
-			BDA_ROLL_OFF_NOT_SET = -1,
-			BDA_ROLL_OFF_NOT_DEFINED = 0,
-			BDA_ROLL_OFF_20 = 1,
-			BDA_ROLL_OFF_25 = 2,
-			BDA_ROLL_OFF_35 = 3,
-			BDA_ROLL_OFF_MAX = 4,
+			NOT_SET = -1,
+			NOT_DEFINED = 0,
+			_20 = 1,
+			_25 = 2,
+			_35 = 3,
+			MAX = 4,
 		}
 		[AllowDuplicates]
 		public enum Pilot : int32
 		{
-			BDA_PILOT_NOT_SET = -1,
-			BDA_PILOT_NOT_DEFINED = 0,
-			BDA_PILOT_OFF = 1,
-			BDA_PILOT_ON = 2,
-			BDA_PILOT_MAX = 3,
+			NOT_SET = -1,
+			NOT_DEFINED = 0,
+			OFF = 1,
+			ON = 2,
+			MAX = 3,
 		}
 		[AllowDuplicates]
 		public enum BDA_Frequency : int32
 		{
-			BDA_FREQUENCY_NOT_SET = -1,
-			BDA_FREQUENCY_NOT_DEFINED = 0,
+			SET = -1,
+			DEFINED = 0,
 		}
 		[AllowDuplicates]
 		public enum BDA_Range : int32
 		{
-			BDA_RANGE_NOT_SET = -1,
-			BDA_RANGE_NOT_DEFINED = 0,
+			SET = -1,
+			DEFINED = 0,
 		}
 		[AllowDuplicates]
 		public enum BDA_Channel_Bandwidth : int32
 		{
-			BDA_CHAN_BANDWITH_NOT_SET = -1,
-			BDA_CHAN_BANDWITH_NOT_DEFINED = 0,
+			SET = -1,
+			DEFINED = 0,
 		}
 		[AllowDuplicates]
 		public enum BDA_Frequency_Multiplier : int32
 		{
-			BDA_FREQUENCY_MULTIPLIER_NOT_SET = -1,
-			BDA_FREQUENCY_MULTIPLIER_NOT_DEFINED = 0,
+			SET = -1,
+			DEFINED = 0,
 		}
 		[AllowDuplicates]
 		public enum BDA_Comp_Flags : int32
 		{
-			BDACOMP_NOT_DEFINED = 0,
-			BDACOMP_EXCLUDE_TS_FROM_TR = 1,
-			BDACOMP_INCLUDE_LOCATOR_IN_TR = 2,
-			BDACOMP_INCLUDE_COMPONENTS_IN_TR = 4,
+			NOT_DEFINED = 0,
+			EXCLUDE_TS_FROM_TR = 1,
+			INCLUDE_LOCATOR_IN_TR = 2,
+			INCLUDE_COMPONENTS_IN_TR = 4,
 		}
 		[AllowDuplicates]
 		public enum ApplicationTypeType : int32
 		{
-			SCTE28_ConditionalAccess = 0,
-			SCTE28_POD_Host_Binding_Information = 1,
-			SCTE28_IPService = 2,
-			SCTE28_NetworkInterface_SCTE55_2 = 3,
-			SCTE28_NetworkInterface_SCTE55_1 = 4,
-			SCTE28_CopyProtection = 5,
-			SCTE28_Diagnostic = 6,
-			SCTE28_Undesignated = 7,
-			SCTE28_Reserved = 8,
+			ConditionalAccess = 0,
+			POD_Host_Binding_Information = 1,
+			IPService = 2,
+			NetworkInterface_SCTE55_2 = 3,
+			NetworkInterface_SCTE55_1 = 4,
+			CopyProtection = 5,
+			Diagnostic = 6,
+			Undesignated = 7,
+			Reserved = 8,
 		}
 		[AllowDuplicates]
 		public enum BDA_CONDITIONALACCESS_REQUESTTYPE : int32
 		{
-			CONDITIONALACCESS_ACCESS_UNSPECIFIED = 0,
-			CONDITIONALACCESS_ACCESS_NOT_POSSIBLE = 1,
-			CONDITIONALACCESS_ACCESS_POSSIBLE = 2,
-			CONDITIONALACCESS_ACCESS_POSSIBLE_NO_STREAMING_DISRUPTION = 3,
+			UNSPECIFIED = 0,
+			NOT_POSSIBLE = 1,
+			POSSIBLE = 2,
+			POSSIBLE_NO_STREAMING_DISRUPTION = 3,
 		}
 		[AllowDuplicates]
 		public enum BDA_CONDITIONALACCESS_MMICLOSEREASON : int32
 		{
-			CONDITIONALACCESS_UNSPECIFIED = 0,
-			CONDITIONALACCESS_CLOSED_ITSELF = 1,
-			CONDITIONALACCESS_TUNER_REQUESTED_CLOSE = 2,
-			CONDITIONALACCESS_DIALOG_TIMEOUT = 3,
-			CONDITIONALACCESS_DIALOG_FOCUS_CHANGE = 4,
-			CONDITIONALACCESS_DIALOG_USER_DISMISSED = 5,
-			CONDITIONALACCESS_DIALOG_USER_NOT_AVAILABLE = 6,
+			UNSPECIFIED = 0,
+			CLOSED_ITSELF = 1,
+			TUNER_REQUESTED_CLOSE = 2,
+			DIALOG_TIMEOUT = 3,
+			DIALOG_FOCUS_CHANGE = 4,
+			DIALOG_USER_DISMISSED = 5,
+			DIALOG_USER_NOT_AVAILABLE = 6,
 		}
 		[AllowDuplicates]
 		public enum BDA_CONDITIONALACCESS_SESSION_RESULT : int32
 		{
-			CONDITIONALACCESS_SUCCESSFULL = 0,
-			CONDITIONALACCESS_ENDED_NOCHANGE = 1,
-			CONDITIONALACCESS_ABORTED = 2,
+			SUCCESSFULL = 0,
+			ENDED_NOCHANGE = 1,
+			ABORTED = 2,
 		}
 		[AllowDuplicates]
 		public enum BDA_DISCOVERY_STATE : int32
 		{
-			BDA_DISCOVERY_UNSPECIFIED = 0,
-			BDA_DISCOVERY_REQUIRED = 1,
-			BDA_DISCOVERY_COMPLETE = 2,
+			UNSPECIFIED = 0,
+			REQUIRED = 1,
+			COMPLETE = 2,
 		}
 		[AllowDuplicates]
 		public enum SmartCardStatusType : int32
 		{
-			CardInserted = 0,
-			CardRemoved = 1,
-			CardError = 2,
-			CardDataChanged = 3,
-			CardFirmwareUpgrade = 4,
+			Inserted = 0,
+			Removed = 1,
+			Error = 2,
+			DataChanged = 3,
+			FirmwareUpgrade = 4,
 		}
 		[AllowDuplicates]
 		public enum SmartCardAssociationType : int32
@@ -2394,34 +2394,34 @@ namespace Win32
 		[AllowDuplicates]
 		public enum BDA_DrmPairingError : int32
 		{
-			BDA_DrmPairing_Succeeded = 0,
-			BDA_DrmPairing_HardwareFailure = 1,
-			BDA_DrmPairing_NeedRevocationData = 2,
-			BDA_DrmPairing_NeedIndiv = 3,
-			BDA_DrmPairing_Other = 4,
-			BDA_DrmPairing_DrmInitFailed = 5,
-			BDA_DrmPairing_DrmNotPaired = 6,
-			BDA_DrmPairing_DrmRePairSoon = 7,
-			BDA_DrmPairing_Aborted = 8,
-			BDA_DrmPairing_NeedSDKUpdate = 9,
+			Succeeded = 0,
+			HardwareFailure = 1,
+			NeedRevocationData = 2,
+			NeedIndiv = 3,
+			Other = 4,
+			DrmInitFailed = 5,
+			DrmNotPaired = 6,
+			DrmRePairSoon = 7,
+			Aborted = 8,
+			NeedSDKUpdate = 9,
 		}
 		[AllowDuplicates]
 		public enum KSPROPERTY_IPSINK : uint32
 		{
-			KSPROPERTY_IPSINK_MULTICASTLIST = 0,
-			KSPROPERTY_IPSINK_ADAPTER_DESCRIPTION = 1,
-			KSPROPERTY_IPSINK_ADAPTER_ADDRESS = 2,
+			MULTICASTLIST = 0,
+			ADAPTER_DESCRIPTION = 1,
+			ADAPTER_ADDRESS = 2,
 		}
 		[AllowDuplicates]
 		public enum AMExtendedSeekingCapabilities : int32
 		{
-			AM_EXSEEK_CANSEEK = 1,
-			AM_EXSEEK_CANSCAN = 2,
-			AM_EXSEEK_MARKERSEEK = 4,
-			AM_EXSEEK_SCANWITHOUTCLOCK = 8,
-			AM_EXSEEK_NOSTANDARDREPAINT = 16,
-			AM_EXSEEK_BUFFERING = 32,
-			AM_EXSEEK_SENDS_VIDEOFRAMEREADY = 64,
+			CANSEEK = 1,
+			CANSCAN = 2,
+			MARKERSEEK = 4,
+			SCANWITHOUTCLOCK = 8,
+			NOSTANDARDREPAINT = 16,
+			BUFFERING = 32,
+			SENDS_VIDEOFRAMEREADY = 64,
 		}
 		[AllowDuplicates]
 		public enum AM_LINE21_CCLEVEL : int32
@@ -2431,34 +2431,34 @@ namespace Win32
 		[AllowDuplicates]
 		public enum AM_LINE21_CCSERVICE : int32
 		{
-			AM_L21_CCSERVICE_None = 0,
-			AM_L21_CCSERVICE_Caption1 = 1,
-			AM_L21_CCSERVICE_Caption2 = 2,
-			AM_L21_CCSERVICE_Text1 = 3,
-			AM_L21_CCSERVICE_Text2 = 4,
-			AM_L21_CCSERVICE_XDS = 5,
-			AM_L21_CCSERVICE_DefChannel = 10,
-			AM_L21_CCSERVICE_Invalid = 11,
+			None = 0,
+			Caption1 = 1,
+			Caption2 = 2,
+			Text1 = 3,
+			Text2 = 4,
+			XDS = 5,
+			DefChannel = 10,
+			Invalid = 11,
 		}
 		[AllowDuplicates]
 		public enum AM_LINE21_CCSTATE : int32
 		{
-			AM_L21_CCSTATE_Off = 0,
-			AM_L21_CCSTATE_On = 1,
+			ff = 0,
+			n = 1,
 		}
 		[AllowDuplicates]
 		public enum AM_LINE21_CCSTYLE : int32
 		{
-			AM_L21_CCSTYLE_None = 0,
-			AM_L21_CCSTYLE_PopOn = 1,
-			AM_L21_CCSTYLE_PaintOn = 2,
-			AM_L21_CCSTYLE_RollUp = 3,
+			None = 0,
+			PopOn = 1,
+			PaintOn = 2,
+			RollUp = 3,
 		}
 		[AllowDuplicates]
 		public enum AM_LINE21_DRAWBGMODE : int32
 		{
-			AM_L21_DRAWBGMODE_Opaque = 0,
-			AM_L21_DRAWBGMODE_Transparent = 1,
+			Opaque = 0,
+			Transparent = 1,
 		}
 		[AllowDuplicates]
 		public enum AM_WST_LEVEL : int32
@@ -2468,61 +2468,61 @@ namespace Win32
 		[AllowDuplicates]
 		public enum AM_WST_SERVICE : int32
 		{
-			AM_WST_SERVICE_None = 0,
-			AM_WST_SERVICE_Text = 1,
-			AM_WST_SERVICE_IDS = 2,
-			AM_WST_SERVICE_Invalid = 3,
+			None = 0,
+			Text = 1,
+			IDS = 2,
+			Invalid = 3,
 		}
 		[AllowDuplicates]
 		public enum AM_WST_STATE : int32
 		{
-			AM_WST_STATE_Off = 0,
-			AM_WST_STATE_On = 1,
+			ff = 0,
+			n = 1,
 		}
 		[AllowDuplicates]
 		public enum AM_WST_STYLE : int32
 		{
-			AM_WST_STYLE_None = 0,
-			AM_WST_STYLE_Invers = 1,
+			None = 0,
+			Invers = 1,
 		}
 		[AllowDuplicates]
 		public enum AM_WST_DRAWBGMODE : int32
 		{
-			AM_WST_DRAWBGMODE_Opaque = 0,
-			AM_WST_DRAWBGMODE_Transparent = 1,
+			Opaque = 0,
+			Transparent = 1,
 		}
 		[AllowDuplicates]
 		public enum STREAM_TYPE : int32
 		{
-			STREAMTYPE_READ = 0,
-			STREAMTYPE_WRITE = 1,
-			STREAMTYPE_TRANSFORM = 2,
+			READ = 0,
+			WRITE = 1,
+			TRANSFORM = 2,
 		}
 		[AllowDuplicates]
 		public enum STREAM_STATE : int32
 		{
-			STREAMSTATE_STOP = 0,
-			STREAMSTATE_RUN = 1,
+			STOP = 0,
+			RUN = 1,
 		}
 		[AllowDuplicates]
 		public enum COMPLETION_STATUS_FLAGS : int32
 		{
-			COMPSTAT_NOUPDATEOK = 1,
-			COMPSTAT_WAIT = 2,
-			COMPSTAT_ABORT = 4,
+			NOUPDATEOK = 1,
+			WAIT = 2,
+			ABORT = 4,
 		}
 		[AllowDuplicates]
 		public enum MMSSF_GET_INFORMATION_FLAGS : uint32
 		{
-			MMSSF_HASCLOCK = 1,
-			MMSSF_SUPPORTSEEK = 2,
-			MMSSF_ASYNCHRONOUS = 4,
+			HASCLOCK = 1,
+			SUPPORTSEEK = 2,
+			ASYNCHRONOUS = 4,
 		}
 		[AllowDuplicates]
 		public enum SSUPDATE_TYPE : int32
 		{
-			SSUPDATE_ASYNC = 1,
-			SSUPDATE_CONTINUOUS = 2,
+			ASYNC = 1,
+			CONTINUOUS = 2,
 		}
 		[AllowDuplicates]
 		public enum DDSFF_FLAGS : uint32
@@ -2537,20 +2537,20 @@ namespace Win32
 		[AllowDuplicates]
 		public enum AMMSF_MS_FLAGS : uint32
 		{
-			AMMSF_ADDDEFAULTRENDERER = 1,
-			AMMSF_CREATEPEER = 2,
-			AMMSF_STOPIFNOSAMPLES = 4,
-			AMMSF_NOSTALL = 8,
+			ADDDEFAULTRENDERER = 1,
+			CREATEPEER = 2,
+			STOPIFNOSAMPLES = 4,
+			NOSTALL = 8,
 		}
 		[AllowDuplicates]
 		public enum AMMSF_RENDER_FLAGS : uint32
 		{
-			AMMSF_RENDERTYPEMASK = 3,
-			AMMSF_RENDERTOEXISTING = 0,
-			AMMSF_RENDERALLSTREAMS = 1,
-			AMMSF_NORENDER = 2,
-			AMMSF_NOCLOCK = 4,
-			AMMSF_RUN = 8,
+			RENDERTYPEMASK = 3,
+			RENDERTOEXISTING = 0,
+			RENDERALLSTREAMS = 1,
+			NORENDER = 2,
+			NOCLOCK = 4,
+			RUN = 8,
 		}
 		[AllowDuplicates]
 		public enum OUTPUT_STATE : uint32
@@ -2562,484 +2562,484 @@ namespace Win32
 		[AllowDuplicates]
 		public enum AM_PROPERTY_FRAMESTEP : int32
 		{
-			AM_PROPERTY_FRAMESTEP_STEP = 1,
-			AM_PROPERTY_FRAMESTEP_CANCEL = 2,
-			AM_PROPERTY_FRAMESTEP_CANSTEP = 3,
-			AM_PROPERTY_FRAMESTEP_CANSTEPMULTIPLE = 4,
+			STEP = 1,
+			CANCEL = 2,
+			CANSTEP = 3,
+			CANSTEPMULTIPLE = 4,
 		}
 		[AllowDuplicates]
 		public enum AM_ASPECT_RATIO_MODE : int32
 		{
-			AM_ARMODE_STRETCHED = 0,
-			AM_ARMODE_LETTER_BOX = 1,
-			AM_ARMODE_CROP = 2,
-			AM_ARMODE_STRETCHED_AS_PRIMARY = 3,
+			STRETCHED = 0,
+			LETTER_BOX = 1,
+			CROP = 2,
+			STRETCHED_AS_PRIMARY = 3,
 		}
 		[AllowDuplicates]
 		public enum VMR9PresentationFlags : int32
 		{
-			VMR9Sample_SyncPoint = 1,
-			VMR9Sample_Preroll = 2,
-			VMR9Sample_Discontinuity = 4,
-			VMR9Sample_TimeValid = 8,
-			VMR9Sample_SrcDstRectsValid = 16,
+			SyncPoint = 1,
+			Preroll = 2,
+			Discontinuity = 4,
+			TimeValid = 8,
+			SrcDstRectsValid = 16,
 		}
 		[AllowDuplicates]
 		public enum VMR9SurfaceAllocationFlags : int32
 		{
-			VMR9AllocFlag_3DRenderTarget = 1,
-			VMR9AllocFlag_DXVATarget = 2,
-			VMR9AllocFlag_TextureSurface = 4,
-			VMR9AllocFlag_OffscreenSurface = 8,
-			VMR9AllocFlag_RGBDynamicSwitch = 16,
-			VMR9AllocFlag_UsageReserved = 224,
-			VMR9AllocFlag_UsageMask = 255,
+			_3DRenderTarget = 1,
+			DXVATarget = 2,
+			TextureSurface = 4,
+			OffscreenSurface = 8,
+			RGBDynamicSwitch = 16,
+			UsageReserved = 224,
+			UsageMask = 255,
 		}
 		[AllowDuplicates]
 		public enum VMR9AspectRatioMode : int32
 		{
-			VMR9ARMode_None = 0,
-			VMR9ARMode_LetterBox = 1,
+			None = 0,
+			LetterBox = 1,
 		}
 		[AllowDuplicates]
 		public enum VMR9MixerPrefs : int32
 		{
-			MixerPref9_NoDecimation = 1,
-			MixerPref9_DecimateOutput = 2,
-			MixerPref9_ARAdjustXorY = 4,
-			MixerPref9_NonSquareMixing = 8,
-			MixerPref9_DecimateMask = 15,
-			MixerPref9_BiLinearFiltering = 16,
-			MixerPref9_PointFiltering = 32,
-			MixerPref9_AnisotropicFiltering = 64,
-			MixerPref9_PyramidalQuadFiltering = 128,
-			MixerPref9_GaussianQuadFiltering = 256,
-			MixerPref9_FilteringReserved = 3584,
-			MixerPref9_FilteringMask = 4080,
-			MixerPref9_RenderTargetRGB = 4096,
-			MixerPref9_RenderTargetYUV = 8192,
-			MixerPref9_RenderTargetReserved = 1032192,
-			MixerPref9_RenderTargetMask = 1044480,
-			MixerPref9_DynamicSwitchToBOB = 1048576,
-			MixerPref9_DynamicDecimateBy2 = 2097152,
-			MixerPref9_DynamicReserved = 12582912,
-			MixerPref9_DynamicMask = 15728640,
+			NoDecimation = 1,
+			DecimateOutput = 2,
+			ARAdjustXorY = 4,
+			NonSquareMixing = 8,
+			DecimateMask = 15,
+			BiLinearFiltering = 16,
+			PointFiltering = 32,
+			AnisotropicFiltering = 64,
+			PyramidalQuadFiltering = 128,
+			GaussianQuadFiltering = 256,
+			FilteringReserved = 3584,
+			FilteringMask = 4080,
+			RenderTargetRGB = 4096,
+			RenderTargetYUV = 8192,
+			RenderTargetReserved = 1032192,
+			RenderTargetMask = 1044480,
+			DynamicSwitchToBOB = 1048576,
+			DynamicDecimateBy2 = 2097152,
+			DynamicReserved = 12582912,
+			DynamicMask = 15728640,
 		}
 		[AllowDuplicates]
 		public enum VMR9ProcAmpControlFlags : int32
 		{
-			ProcAmpControl9_Brightness = 1,
-			ProcAmpControl9_Contrast = 2,
-			ProcAmpControl9_Hue = 4,
-			ProcAmpControl9_Saturation = 8,
-			ProcAmpControl9_Mask = 15,
+			Brightness = 1,
+			Contrast = 2,
+			Hue = 4,
+			Saturation = 8,
+			Mask = 15,
 		}
 		[AllowDuplicates]
 		public enum VMR9AlphaBitmapFlags : int32
 		{
-			VMR9AlphaBitmap_Disable = 1,
-			VMR9AlphaBitmap_hDC = 2,
-			VMR9AlphaBitmap_EntireDDS = 4,
-			VMR9AlphaBitmap_SrcColorKey = 8,
-			VMR9AlphaBitmap_SrcRect = 16,
-			VMR9AlphaBitmap_FilterMode = 32,
+			Disable = 1,
+			hDC = 2,
+			EntireDDS = 4,
+			SrcColorKey = 8,
+			SrcRect = 16,
+			FilterMode = 32,
 		}
 		[AllowDuplicates]
 		public enum VMR9RenderPrefs : int32
 		{
-			RenderPrefs9_DoNotRenderBorder = 1,
-			RenderPrefs9_Mask = 1,
+			DoNotRenderBorder = 1,
+			Mask = 1,
 		}
 		[AllowDuplicates]
 		public enum VMR9Mode : int32
 		{
-			VMR9Mode_Windowed = 1,
-			VMR9Mode_Windowless = 2,
-			VMR9Mode_Renderless = 4,
-			VMR9Mode_Mask = 7,
+			Windowed = 1,
+			Windowless = 2,
+			Renderless = 4,
+			Mask = 7,
 		}
 		[AllowDuplicates]
 		public enum VMR9DeinterlacePrefs : int32
 		{
-			DeinterlacePref9_NextBest = 1,
-			DeinterlacePref9_BOB = 2,
-			DeinterlacePref9_Weave = 4,
-			DeinterlacePref9_Mask = 7,
+			NextBest = 1,
+			BOB = 2,
+			Weave = 4,
+			Mask = 7,
 		}
 		[AllowDuplicates]
 		public enum VMR9DeinterlaceTech : int32
 		{
-			DeinterlaceTech9_Unknown = 0,
-			DeinterlaceTech9_BOBLineReplicate = 1,
-			DeinterlaceTech9_BOBVerticalStretch = 2,
-			DeinterlaceTech9_MedianFiltering = 4,
-			DeinterlaceTech9_EdgeFiltering = 16,
-			DeinterlaceTech9_FieldAdaptive = 32,
-			DeinterlaceTech9_PixelAdaptive = 64,
-			DeinterlaceTech9_MotionVectorSteered = 128,
+			Unknown = 0,
+			BOBLineReplicate = 1,
+			BOBVerticalStretch = 2,
+			MedianFiltering = 4,
+			EdgeFiltering = 16,
+			FieldAdaptive = 32,
+			PixelAdaptive = 64,
+			MotionVectorSteered = 128,
 		}
 		[AllowDuplicates]
 		public enum VMR9_SampleFormat : int32
 		{
-			VMR9_SampleReserved = 1,
-			VMR9_SampleProgressiveFrame = 2,
-			VMR9_SampleFieldInterleavedEvenFirst = 3,
-			VMR9_SampleFieldInterleavedOddFirst = 4,
-			VMR9_SampleFieldSingleEven = 5,
-			VMR9_SampleFieldSingleOdd = 6,
+			Reserved = 1,
+			ProgressiveFrame = 2,
+			FieldInterleavedEvenFirst = 3,
+			FieldInterleavedOddFirst = 4,
+			FieldSingleEven = 5,
+			FieldSingleOdd = 6,
 		}
 		[AllowDuplicates]
 		public enum AM_PROPERTY_AC3 : int32
 		{
-			AM_PROPERTY_AC3_ERROR_CONCEALMENT = 1,
-			AM_PROPERTY_AC3_ALTERNATE_AUDIO = 2,
-			AM_PROPERTY_AC3_DOWNMIX = 3,
-			AM_PROPERTY_AC3_BIT_STREAM_MODE = 4,
-			AM_PROPERTY_AC3_DIALOGUE_LEVEL = 5,
-			AM_PROPERTY_AC3_LANGUAGE_CODE = 6,
-			AM_PROPERTY_AC3_ROOM_TYPE = 7,
+			ERROR_CONCEALMENT = 1,
+			ALTERNATE_AUDIO = 2,
+			DOWNMIX = 3,
+			BIT_STREAM_MODE = 4,
+			DIALOGUE_LEVEL = 5,
+			LANGUAGE_CODE = 6,
+			ROOM_TYPE = 7,
 		}
 		[AllowDuplicates]
 		public enum AM_PROPERTY_DVDSUBPIC : int32
 		{
-			AM_PROPERTY_DVDSUBPIC_PALETTE = 0,
-			AM_PROPERTY_DVDSUBPIC_HLI = 1,
-			AM_PROPERTY_DVDSUBPIC_COMPOSIT_ON = 2,
+			PALETTE = 0,
+			HLI = 1,
+			COMPOSIT_ON = 2,
 		}
 		[AllowDuplicates]
 		public enum AM_PROPERTY_DVDCOPYPROT : int32
 		{
-			AM_PROPERTY_DVDCOPY_CHLG_KEY = 1,
-			AM_PROPERTY_DVDCOPY_DVD_KEY1 = 2,
-			AM_PROPERTY_DVDCOPY_DEC_KEY2 = 3,
-			AM_PROPERTY_DVDCOPY_TITLE_KEY = 4,
-			AM_PROPERTY_COPY_MACROVISION = 5,
-			AM_PROPERTY_DVDCOPY_REGION = 6,
-			AM_PROPERTY_DVDCOPY_SET_COPY_STATE = 7,
-			AM_PROPERTY_COPY_ANALOG_COMPONENT = 8,
-			AM_PROPERTY_COPY_DIGITAL_CP = 9,
-			AM_PROPERTY_COPY_DVD_SRM = 10,
-			AM_PROPERTY_DVDCOPY_SUPPORTS_NEW_KEYCOUNT = 11,
-			AM_PROPERTY_DVDCOPY_DISC_KEY = 128,
+			DVDCOPY_CHLG_KEY = 1,
+			DVDCOPY_DVD_KEY1 = 2,
+			DVDCOPY_DEC_KEY2 = 3,
+			DVDCOPY_TITLE_KEY = 4,
+			COPY_MACROVISION = 5,
+			DVDCOPY_REGION = 6,
+			DVDCOPY_SET_COPY_STATE = 7,
+			COPY_ANALOG_COMPONENT = 8,
+			COPY_DIGITAL_CP = 9,
+			COPY_DVD_SRM = 10,
+			DVDCOPY_SUPPORTS_NEW_KEYCOUNT = 11,
+			DVDCOPY_DISC_KEY = 128,
 		}
 		[AllowDuplicates]
 		public enum AM_DIGITAL_CP : int32
 		{
-			AM_DIGITAL_CP_OFF = 0,
-			AM_DIGITAL_CP_ON = 1,
-			AM_DIGITAL_CP_DVD_COMPLIANT = 2,
+			OFF = 0,
+			ON = 1,
+			DVD_COMPLIANT = 2,
 		}
 		[AllowDuplicates]
 		public enum AM_DVDCOPYSTATE : int32
 		{
-			AM_DVDCOPYSTATE_INITIALIZE = 0,
-			AM_DVDCOPYSTATE_INITIALIZE_TITLE = 1,
-			AM_DVDCOPYSTATE_AUTHENTICATION_NOT_REQUIRED = 2,
-			AM_DVDCOPYSTATE_AUTHENTICATION_REQUIRED = 3,
-			AM_DVDCOPYSTATE_DONE = 4,
+			INITIALIZE = 0,
+			INITIALIZE_TITLE = 1,
+			AUTHENTICATION_NOT_REQUIRED = 2,
+			AUTHENTICATION_REQUIRED = 3,
+			DONE = 4,
 		}
 		[AllowDuplicates]
 		public enum AM_COPY_MACROVISION_LEVEL : int32
 		{
-			AM_MACROVISION_DISABLED = 0,
-			AM_MACROVISION_LEVEL1 = 1,
-			AM_MACROVISION_LEVEL2 = 2,
-			AM_MACROVISION_LEVEL3 = 3,
+			DISABLED = 0,
+			LEVEL1 = 1,
+			LEVEL2 = 2,
+			LEVEL3 = 3,
 		}
 		[AllowDuplicates]
 		public enum AM_MPEG2Level : int32
 		{
-			AM_MPEG2Level_Low = 1,
-			AM_MPEG2Level_Main = 2,
-			AM_MPEG2Level_High1440 = 3,
-			AM_MPEG2Level_High = 4,
+			Low = 1,
+			Main = 2,
+			High1440 = 3,
+			High = 4,
 		}
 		[AllowDuplicates]
 		public enum AM_MPEG2Profile : int32
 		{
-			AM_MPEG2Profile_Simple = 1,
-			AM_MPEG2Profile_Main = 2,
-			AM_MPEG2Profile_SNRScalable = 3,
-			AM_MPEG2Profile_SpatiallyScalable = 4,
-			AM_MPEG2Profile_High = 5,
+			Simple = 1,
+			Main = 2,
+			SNRScalable = 3,
+			SpatiallyScalable = 4,
+			High = 5,
 		}
 		[AllowDuplicates]
 		public enum AM_PROPERTY_DVDKARAOKE : int32
 		{
-			AM_PROPERTY_DVDKARAOKE_ENABLE = 0,
-			AM_PROPERTY_DVDKARAOKE_DATA = 1,
+			ENABLE = 0,
+			DATA = 1,
 		}
 		[AllowDuplicates]
 		public enum AM_PROPERTY_TS_RATE_CHANGE : int32
 		{
-			AM_RATE_SimpleRateChange = 1,
-			AM_RATE_ExactRateChange = 2,
-			AM_RATE_MaxFullDataRate = 3,
-			AM_RATE_Step = 4,
-			AM_RATE_UseRateVersion = 5,
-			AM_RATE_QueryFullFrameRate = 6,
-			AM_RATE_QueryLastRateSegPTS = 7,
-			AM_RATE_CorrectTS = 8,
-			AM_RATE_ReverseMaxFullDataRate = 9,
-			AM_RATE_ResetOnTimeDisc = 10,
-			AM_RATE_QueryMapping = 11,
+			SimpleRateChange = 1,
+			ExactRateChange = 2,
+			MaxFullDataRate = 3,
+			Step = 4,
+			UseRateVersion = 5,
+			QueryFullFrameRate = 6,
+			QueryLastRateSegPTS = 7,
+			CorrectTS = 8,
+			ReverseMaxFullDataRate = 9,
+			ResetOnTimeDisc = 10,
+			QueryMapping = 11,
 		}
 		[AllowDuplicates]
 		public enum AM_PROPERTY_DVD_RATE_CHANGE : int32
 		{
-			AM_RATE_ChangeRate = 1,
-			AM_RATE_FullDataRateMax = 2,
-			AM_RATE_ReverseDecode = 3,
-			AM_RATE_DecoderPosition = 4,
-			AM_RATE_DecoderVersion = 5,
+			ChangeRate = 1,
+			FullDataRateMax = 2,
+			ReverseDecode = 3,
+			DecoderPosition = 4,
+			DecoderVersion = 5,
 		}
 		[AllowDuplicates]
 		public enum DVD_PLAY_DIRECTION : int32
 		{
-			DVD_DIR_FORWARD = 0,
-			DVD_DIR_BACKWARD = 1,
+			FORWARD = 0,
+			BACKWARD = 1,
 		}
 		[AllowDuplicates]
 		public enum DVD_ERROR : int32
 		{
-			DVD_ERROR_Unexpected = 1,
-			DVD_ERROR_CopyProtectFail = 2,
-			DVD_ERROR_InvalidDVD1_0Disc = 3,
-			DVD_ERROR_InvalidDiscRegion = 4,
-			DVD_ERROR_LowParentalLevel = 5,
-			DVD_ERROR_MacrovisionFail = 6,
-			DVD_ERROR_IncompatibleSystemAndDecoderRegions = 7,
-			DVD_ERROR_IncompatibleDiscAndDecoderRegions = 8,
-			DVD_ERROR_CopyProtectOutputFail = 9,
-			DVD_ERROR_CopyProtectOutputNotSupported = 10,
+			Unexpected = 1,
+			CopyProtectFail = 2,
+			InvalidDVD1_0Disc = 3,
+			InvalidDiscRegion = 4,
+			LowParentalLevel = 5,
+			MacrovisionFail = 6,
+			IncompatibleSystemAndDecoderRegions = 7,
+			IncompatibleDiscAndDecoderRegions = 8,
+			CopyProtectOutputFail = 9,
+			CopyProtectOutputNotSupported = 10,
 		}
 		[AllowDuplicates]
 		public enum DVD_WARNING : int32
 		{
-			DVD_WARNING_InvalidDVD1_0Disc = 1,
-			DVD_WARNING_FormatNotSupported = 2,
-			DVD_WARNING_IllegalNavCommand = 3,
-			DVD_WARNING_Open = 4,
-			DVD_WARNING_Seek = 5,
-			DVD_WARNING_Read = 6,
+			InvalidDVD1_0Disc = 1,
+			FormatNotSupported = 2,
+			IllegalNavCommand = 3,
+			Open = 4,
+			Seek = 5,
+			Read = 6,
 		}
 		[AllowDuplicates]
 		public enum DVD_PB_STOPPED : int32
 		{
-			DVD_PB_STOPPED_Other = 0,
-			DVD_PB_STOPPED_NoBranch = 1,
-			DVD_PB_STOPPED_NoFirstPlayDomain = 2,
-			DVD_PB_STOPPED_StopCommand = 3,
-			DVD_PB_STOPPED_Reset = 4,
-			DVD_PB_STOPPED_DiscEjected = 5,
-			DVD_PB_STOPPED_IllegalNavCommand = 6,
-			DVD_PB_STOPPED_PlayPeriodAutoStop = 7,
-			DVD_PB_STOPPED_PlayChapterAutoStop = 8,
-			DVD_PB_STOPPED_ParentalFailure = 9,
-			DVD_PB_STOPPED_RegionFailure = 10,
-			DVD_PB_STOPPED_MacrovisionFailure = 11,
-			DVD_PB_STOPPED_DiscReadError = 12,
-			DVD_PB_STOPPED_CopyProtectFailure = 13,
-			DVD_PB_STOPPED_CopyProtectOutputFailure = 14,
-			DVD_PB_STOPPED_CopyProtectOutputNotSupported = 15,
+			Other = 0,
+			NoBranch = 1,
+			NoFirstPlayDomain = 2,
+			StopCommand = 3,
+			Reset = 4,
+			DiscEjected = 5,
+			IllegalNavCommand = 6,
+			PlayPeriodAutoStop = 7,
+			PlayChapterAutoStop = 8,
+			ParentalFailure = 9,
+			RegionFailure = 10,
+			MacrovisionFailure = 11,
+			DiscReadError = 12,
+			CopyProtectFailure = 13,
+			CopyProtectOutputFailure = 14,
+			CopyProtectOutputNotSupported = 15,
 		}
 		[AllowDuplicates]
 		public enum SNDDEV_ERR : int32
 		{
-			SNDDEV_ERROR_Open = 1,
-			SNDDEV_ERROR_Close = 2,
-			SNDDEV_ERROR_GetCaps = 3,
-			SNDDEV_ERROR_PrepareHeader = 4,
-			SNDDEV_ERROR_UnprepareHeader = 5,
-			SNDDEV_ERROR_Reset = 6,
-			SNDDEV_ERROR_Restart = 7,
-			SNDDEV_ERROR_GetPosition = 8,
-			SNDDEV_ERROR_Write = 9,
-			SNDDEV_ERROR_Pause = 10,
-			SNDDEV_ERROR_Stop = 11,
-			SNDDEV_ERROR_Start = 12,
-			SNDDEV_ERROR_AddBuffer = 13,
-			SNDDEV_ERROR_Query = 14,
+			Open = 1,
+			Close = 2,
+			GetCaps = 3,
+			PrepareHeader = 4,
+			UnprepareHeader = 5,
+			Reset = 6,
+			Restart = 7,
+			GetPosition = 8,
+			Write = 9,
+			Pause = 10,
+			Stop = 11,
+			Start = 12,
+			AddBuffer = 13,
+			Query = 14,
 		}
 		[AllowDuplicates]
 		public enum MP_TYPE : int32
 		{
-			MPT_INT = 0,
-			MPT_FLOAT = 1,
-			MPT_BOOL = 2,
-			MPT_ENUM = 3,
-			MPT_MAX = 4,
+			INT = 0,
+			FLOAT = 1,
+			BOOL = 2,
+			ENUM = 3,
+			MAX = 4,
 		}
 		[AllowDuplicates]
 		public enum MP_CURVE_TYPE : int32
 		{
-			MP_CURVE_JUMP = 1,
-			MP_CURVE_LINEAR = 2,
-			MP_CURVE_SQUARE = 4,
-			MP_CURVE_INVSQUARE = 8,
-			MP_CURVE_SINE = 16,
+			JUMP = 1,
+			LINEAR = 2,
+			SQUARE = 4,
+			INVSQUARE = 8,
+			SINE = 16,
 		}
 		[AllowDuplicates]
 		public enum DXVA2_SampleFlags : int32
 		{
-			DXVA2_SampleFlag_Palette_Changed = 1,
-			DXVA2_SampleFlag_SrcRect_Changed = 2,
-			DXVA2_SampleFlag_DstRect_Changed = 4,
-			DXVA2_SampleFlag_ColorData_Changed = 8,
-			DXVA2_SampleFlag_PlanarAlpha_Changed = 16,
-			DXVA2_SampleFlag_RFF = 65536,
-			DXVA2_SampleFlag_TFF = 131072,
-			DXVA2_SampleFlag_RFF_TFF_Present = 262144,
-			DXVA2_SampleFlagsMask = -65505,
+			_Palette_Changed = 1,
+			_SrcRect_Changed = 2,
+			_DstRect_Changed = 4,
+			_ColorData_Changed = 8,
+			_PlanarAlpha_Changed = 16,
+			_RFF = 65536,
+			_TFF = 131072,
+			_RFF_TFF_Present = 262144,
+			sMask = -65505,
 		}
 		[AllowDuplicates]
 		public enum DXVA2_DestinationFlags : int32
 		{
-			DXVA2_DestinationFlag_Background_Changed = 1,
-			DXVA2_DestinationFlag_TargetRect_Changed = 2,
-			DXVA2_DestinationFlag_ColorData_Changed = 4,
-			DXVA2_DestinationFlag_Alpha_Changed = 8,
-			DXVA2_DestinationFlag_RFF = 65536,
-			DXVA2_DestinationFlag_TFF = 131072,
-			DXVA2_DestinationFlag_RFF_TFF_Present = 262144,
-			DXVA2_DestinationFlagMask = -65521,
+			_Background_Changed = 1,
+			_TargetRect_Changed = 2,
+			_ColorData_Changed = 4,
+			_Alpha_Changed = 8,
+			_RFF = 65536,
+			_TFF = 131072,
+			_RFF_TFF_Present = 262144,
+			Mask = -65521,
 		}
 		[AllowDuplicates]
 		public enum AMPlayListItemFlags : int32
 		{
-			AMPLAYLISTITEM_CANSKIP = 1,
-			AMPLAYLISTITEM_CANBIND = 2,
+			SKIP = 1,
+			BIND = 2,
 		}
 		[AllowDuplicates]
 		public enum AMPlayListFlags : int32
 		{
-			AMPLAYLIST_STARTINSCANMODE = 1,
-			AMPLAYLIST_FORCEBANNER = 2,
+			STARTINSCANMODE = 1,
+			FORCEBANNER = 2,
 		}
 		[AllowDuplicates]
 		public enum AMPlayListEventFlags : int32
 		{
-			AMPLAYLISTEVENT_RESUME = 0,
-			AMPLAYLISTEVENT_BREAK = 1,
-			AMPLAYLISTEVENT_NEXT = 2,
-			AMPLAYLISTEVENT_MASK = 15,
-			AMPLAYLISTEVENT_REFRESH = 16,
+			RESUME = 0,
+			BREAK = 1,
+			NEXT = 2,
+			MASK = 15,
+			REFRESH = 16,
 		}
 		[AllowDuplicates]
 		public enum DISPID_TUNER : int32
 		{
-			DISPID_TUNER_TS_UNIQUENAME = 1,
-			DISPID_TUNER_TS_FRIENDLYNAME = 2,
-			DISPID_TUNER_TS_CLSID = 3,
-			DISPID_TUNER_TS_NETWORKTYPE = 4,
-			DISPID_TUNER_TS__NETWORKTYPE = 5,
-			DISPID_TUNER_TS_CREATETUNEREQUEST = 6,
-			DISPID_TUNER_TS_ENUMCATEGORYGUIDS = 7,
-			DISPID_TUNER_TS_ENUMDEVICEMONIKERS = 8,
-			DISPID_TUNER_TS_DEFAULTPREFERREDCOMPONENTTYPES = 9,
-			DISPID_TUNER_TS_FREQMAP = 10,
-			DISPID_TUNER_TS_DEFLOCATOR = 11,
-			DISPID_TUNER_TS_CLONE = 12,
-			DISPID_TUNER_TR_TUNINGSPACE = 1,
-			DISPID_TUNER_TR_COMPONENTS = 2,
-			DISPID_TUNER_TR_CLONE = 3,
-			DISPID_TUNER_TR_LOCATOR = 4,
-			DISPID_TUNER_CT_CATEGORY = 1,
-			DISPID_TUNER_CT_MEDIAMAJORTYPE = 2,
-			DISPID_TUNER_CT__MEDIAMAJORTYPE = 3,
-			DISPID_TUNER_CT_MEDIASUBTYPE = 4,
-			DISPID_TUNER_CT__MEDIASUBTYPE = 5,
-			DISPID_TUNER_CT_MEDIAFORMATTYPE = 6,
-			DISPID_TUNER_CT__MEDIAFORMATTYPE = 7,
-			DISPID_TUNER_CT_MEDIATYPE = 8,
-			DISPID_TUNER_CT_CLONE = 9,
-			DISPID_TUNER_LCT_LANGID = 100,
-			DISPID_TUNER_MP2CT_TYPE = 200,
-			DISPID_TUNER_ATSCCT_FLAGS = 300,
-			DISPID_TUNER_L_CARRFREQ = 1,
-			DISPID_TUNER_L_INNERFECMETHOD = 2,
-			DISPID_TUNER_L_INNERFECRATE = 3,
-			DISPID_TUNER_L_OUTERFECMETHOD = 4,
-			DISPID_TUNER_L_OUTERFECRATE = 5,
-			DISPID_TUNER_L_MOD = 6,
-			DISPID_TUNER_L_SYMRATE = 7,
-			DISPID_TUNER_L_CLONE = 8,
-			DISPID_TUNER_L_ATSC_PHYS_CHANNEL = 201,
-			DISPID_TUNER_L_ATSC_TSID = 202,
-			DISPID_TUNER_L_ATSC_MP2_PROGNO = 203,
-			DISPID_TUNER_L_DVBT_BANDWIDTH = 301,
-			DISPID_TUNER_L_DVBT_LPINNERFECMETHOD = 302,
-			DISPID_TUNER_L_DVBT_LPINNERFECRATE = 303,
-			DISPID_TUNER_L_DVBT_GUARDINTERVAL = 304,
-			DISPID_TUNER_L_DVBT_HALPHA = 305,
-			DISPID_TUNER_L_DVBT_TRANSMISSIONMODE = 306,
-			DISPID_TUNER_L_DVBT_INUSE = 307,
-			DISPID_TUNER_L_DVBT2_PHYSICALLAYERPIPEID = 351,
-			DISPID_TUNER_L_DVBS_POLARISATION = 401,
-			DISPID_TUNER_L_DVBS_WEST = 402,
-			DISPID_TUNER_L_DVBS_ORBITAL = 403,
-			DISPID_TUNER_L_DVBS_AZIMUTH = 404,
-			DISPID_TUNER_L_DVBS_ELEVATION = 405,
-			DISPID_TUNER_L_DVBS2_DISEQ_LNB_SOURCE = 406,
-			DISPID_TUNER_TS_DVBS2_LOW_OSC_FREQ_OVERRIDE = 407,
-			DISPID_TUNER_TS_DVBS2_HI_OSC_FREQ_OVERRIDE = 408,
-			DISPID_TUNER_TS_DVBS2_LNB_SWITCH_FREQ_OVERRIDE = 409,
-			DISPID_TUNER_TS_DVBS2_SPECTRAL_INVERSION_OVERRIDE = 410,
-			DISPID_TUNER_L_DVBS2_ROLLOFF = 411,
-			DISPID_TUNER_L_DVBS2_PILOT = 412,
-			DISPID_TUNER_L_ANALOG_STANDARD = 601,
-			DISPID_TUNER_L_DTV_O_MAJOR_CHANNEL = 701,
-			DISPID_TUNER_C_TYPE = 1,
-			DISPID_TUNER_C_STATUS = 2,
-			DISPID_TUNER_C_LANGID = 3,
-			DISPID_TUNER_C_DESCRIPTION = 4,
-			DISPID_TUNER_C_CLONE = 5,
-			DISPID_TUNER_C_MP2_PID = 101,
-			DISPID_TUNER_C_MP2_PCRPID = 102,
-			DISPID_TUNER_C_MP2_PROGNO = 103,
-			DISPID_TUNER_C_ANALOG_AUDIO = 201,
-			DISPID_TUNER_TS_DVB_SYSTEMTYPE = 101,
-			DISPID_TUNER_TS_DVB2_NETWORK_ID = 102,
-			DISPID_TUNER_TS_DVBS_LOW_OSC_FREQ = 1001,
-			DISPID_TUNER_TS_DVBS_HI_OSC_FREQ = 1002,
-			DISPID_TUNER_TS_DVBS_LNB_SWITCH_FREQ = 1003,
-			DISPID_TUNER_TS_DVBS_INPUT_RANGE = 1004,
-			DISPID_TUNER_TS_DVBS_SPECTRAL_INVERSION = 1005,
-			DISPID_TUNER_TS_AR_MINFREQUENCY = 101,
-			DISPID_TUNER_TS_AR_MAXFREQUENCY = 102,
-			DISPID_TUNER_TS_AR_STEP = 103,
-			DISPID_TUNER_TS_AR_COUNTRYCODE = 104,
-			DISPID_TUNER_TS_AUX_COUNTRYCODE = 101,
-			DISPID_TUNER_TS_ATV_MINCHANNEL = 101,
-			DISPID_TUNER_TS_ATV_MAXCHANNEL = 102,
-			DISPID_TUNER_TS_ATV_INPUTTYPE = 103,
-			DISPID_TUNER_TS_ATV_COUNTRYCODE = 104,
-			DISPID_TUNER_TS_ATSC_MINMINORCHANNEL = 201,
-			DISPID_TUNER_TS_ATSC_MAXMINORCHANNEL = 202,
-			DISPID_TUNER_TS_ATSC_MINPHYSCHANNEL = 203,
-			DISPID_TUNER_TS_ATSC_MAXPHYSCHANNEL = 204,
-			DISPID_TUNER_TS_DC_MINMAJORCHANNEL = 301,
-			DISPID_TUNER_TS_DC_MAXMAJORCHANNEL = 302,
-			DISPID_TUNER_TS_DC_MINSOURCEID = 303,
-			DISPID_TUNER_TS_DC_MAXSOURCEID = 304,
-			DISPID_CHTUNER_ATVAC_CHANNEL = 101,
-			DISPID_CHTUNER_ATVDC_SYSTEM = 101,
-			DISPID_CHTUNER_ATVDC_CONTENT = 102,
-			DISPID_CHTUNER_CIDTR_CHANNELID = 101,
-			DISPID_CHTUNER_CTR_CHANNEL = 101,
-			DISPID_CHTUNER_ACTR_MINOR_CHANNEL = 201,
-			DISPID_CHTUNER_DCTR_MAJOR_CHANNEL = 301,
-			DISPID_CHTUNER_DCTR_SRCID = 302,
-			DISPID_DVBTUNER_DVBC_ATTRIBUTESVALID = 101,
-			DISPID_DVBTUNER_DVBC_PID = 102,
-			DISPID_DVBTUNER_DVBC_TAG = 103,
-			DISPID_DVBTUNER_DVBC_COMPONENTTYPE = 104,
-			DISPID_DVBTUNER_ONID = 101,
-			DISPID_DVBTUNER_TSID = 102,
-			DISPID_DVBTUNER_SID = 103,
-			DISPID_MP2TUNER_TSID = 101,
-			DISPID_MP2TUNER_PROGNO = 102,
-			DISPID_MP2TUNERFACTORY_CREATETUNEREQUEST = 1,
+			TUNER_TS_UNIQUENAME = 1,
+			TUNER_TS_FRIENDLYNAME = 2,
+			TUNER_TS_CLSID = 3,
+			TUNER_TS_NETWORKTYPE = 4,
+			TUNER_TS__NETWORKTYPE = 5,
+			TUNER_TS_CREATETUNEREQUEST = 6,
+			TUNER_TS_ENUMCATEGORYGUIDS = 7,
+			TUNER_TS_ENUMDEVICEMONIKERS = 8,
+			TUNER_TS_DEFAULTPREFERREDCOMPONENTTYPES = 9,
+			TUNER_TS_FREQMAP = 10,
+			TUNER_TS_DEFLOCATOR = 11,
+			TUNER_TS_CLONE = 12,
+			TUNER_TR_TUNINGSPACE = 1,
+			TUNER_TR_COMPONENTS = 2,
+			TUNER_TR_CLONE = 3,
+			TUNER_TR_LOCATOR = 4,
+			TUNER_CT_CATEGORY = 1,
+			TUNER_CT_MEDIAMAJORTYPE = 2,
+			TUNER_CT__MEDIAMAJORTYPE = 3,
+			TUNER_CT_MEDIASUBTYPE = 4,
+			TUNER_CT__MEDIASUBTYPE = 5,
+			TUNER_CT_MEDIAFORMATTYPE = 6,
+			TUNER_CT__MEDIAFORMATTYPE = 7,
+			TUNER_CT_MEDIATYPE = 8,
+			TUNER_CT_CLONE = 9,
+			TUNER_LCT_LANGID = 100,
+			TUNER_MP2CT_TYPE = 200,
+			TUNER_ATSCCT_FLAGS = 300,
+			TUNER_L_CARRFREQ = 1,
+			TUNER_L_INNERFECMETHOD = 2,
+			TUNER_L_INNERFECRATE = 3,
+			TUNER_L_OUTERFECMETHOD = 4,
+			TUNER_L_OUTERFECRATE = 5,
+			TUNER_L_MOD = 6,
+			TUNER_L_SYMRATE = 7,
+			TUNER_L_CLONE = 8,
+			TUNER_L_ATSC_PHYS_CHANNEL = 201,
+			TUNER_L_ATSC_TSID = 202,
+			TUNER_L_ATSC_MP2_PROGNO = 203,
+			TUNER_L_DVBT_BANDWIDTH = 301,
+			TUNER_L_DVBT_LPINNERFECMETHOD = 302,
+			TUNER_L_DVBT_LPINNERFECRATE = 303,
+			TUNER_L_DVBT_GUARDINTERVAL = 304,
+			TUNER_L_DVBT_HALPHA = 305,
+			TUNER_L_DVBT_TRANSMISSIONMODE = 306,
+			TUNER_L_DVBT_INUSE = 307,
+			TUNER_L_DVBT2_PHYSICALLAYERPIPEID = 351,
+			TUNER_L_DVBS_POLARISATION = 401,
+			TUNER_L_DVBS_WEST = 402,
+			TUNER_L_DVBS_ORBITAL = 403,
+			TUNER_L_DVBS_AZIMUTH = 404,
+			TUNER_L_DVBS_ELEVATION = 405,
+			TUNER_L_DVBS2_DISEQ_LNB_SOURCE = 406,
+			TUNER_TS_DVBS2_LOW_OSC_FREQ_OVERRIDE = 407,
+			TUNER_TS_DVBS2_HI_OSC_FREQ_OVERRIDE = 408,
+			TUNER_TS_DVBS2_LNB_SWITCH_FREQ_OVERRIDE = 409,
+			TUNER_TS_DVBS2_SPECTRAL_INVERSION_OVERRIDE = 410,
+			TUNER_L_DVBS2_ROLLOFF = 411,
+			TUNER_L_DVBS2_PILOT = 412,
+			TUNER_L_ANALOG_STANDARD = 601,
+			TUNER_L_DTV_O_MAJOR_CHANNEL = 701,
+			TUNER_C_TYPE = 1,
+			TUNER_C_STATUS = 2,
+			TUNER_C_LANGID = 3,
+			TUNER_C_DESCRIPTION = 4,
+			TUNER_C_CLONE = 5,
+			TUNER_C_MP2_PID = 101,
+			TUNER_C_MP2_PCRPID = 102,
+			TUNER_C_MP2_PROGNO = 103,
+			TUNER_C_ANALOG_AUDIO = 201,
+			TUNER_TS_DVB_SYSTEMTYPE = 101,
+			TUNER_TS_DVB2_NETWORK_ID = 102,
+			TUNER_TS_DVBS_LOW_OSC_FREQ = 1001,
+			TUNER_TS_DVBS_HI_OSC_FREQ = 1002,
+			TUNER_TS_DVBS_LNB_SWITCH_FREQ = 1003,
+			TUNER_TS_DVBS_INPUT_RANGE = 1004,
+			TUNER_TS_DVBS_SPECTRAL_INVERSION = 1005,
+			TUNER_TS_AR_MINFREQUENCY = 101,
+			TUNER_TS_AR_MAXFREQUENCY = 102,
+			TUNER_TS_AR_STEP = 103,
+			TUNER_TS_AR_COUNTRYCODE = 104,
+			TUNER_TS_AUX_COUNTRYCODE = 101,
+			TUNER_TS_ATV_MINCHANNEL = 101,
+			TUNER_TS_ATV_MAXCHANNEL = 102,
+			TUNER_TS_ATV_INPUTTYPE = 103,
+			TUNER_TS_ATV_COUNTRYCODE = 104,
+			TUNER_TS_ATSC_MINMINORCHANNEL = 201,
+			TUNER_TS_ATSC_MAXMINORCHANNEL = 202,
+			TUNER_TS_ATSC_MINPHYSCHANNEL = 203,
+			TUNER_TS_ATSC_MAXPHYSCHANNEL = 204,
+			TUNER_TS_DC_MINMAJORCHANNEL = 301,
+			TUNER_TS_DC_MAXMAJORCHANNEL = 302,
+			TUNER_TS_DC_MINSOURCEID = 303,
+			TUNER_TS_DC_MAXSOURCEID = 304,
+			CHTUNER_ATVAC_CHANNEL = 101,
+			CHTUNER_ATVDC_SYSTEM = 101,
+			CHTUNER_ATVDC_CONTENT = 102,
+			CHTUNER_CIDTR_CHANNELID = 101,
+			CHTUNER_CTR_CHANNEL = 101,
+			CHTUNER_ACTR_MINOR_CHANNEL = 201,
+			CHTUNER_DCTR_MAJOR_CHANNEL = 301,
+			CHTUNER_DCTR_SRCID = 302,
+			DVBTUNER_DVBC_ATTRIBUTESVALID = 101,
+			DVBTUNER_DVBC_PID = 102,
+			DVBTUNER_DVBC_TAG = 103,
+			DVBTUNER_DVBC_COMPONENTTYPE = 104,
+			DVBTUNER_ONID = 101,
+			DVBTUNER_TSID = 102,
+			DVBTUNER_SID = 103,
+			MP2TUNER_TSID = 101,
+			MP2TUNER_PROGNO = 102,
+			MP2TUNERFACTORY_CREATETUNEREQUEST = 1,
 		}
 		[AllowDuplicates]
 		public enum EnTvRat_System : int32
@@ -3060,228 +3060,228 @@ namespace Win32
 		[AllowDuplicates]
 		public enum EnTvRat_GenericLevel : int32
 		{
-			TvRat_0 = 0,
-			TvRat_1 = 1,
-			TvRat_2 = 2,
-			TvRat_3 = 3,
-			TvRat_4 = 4,
-			TvRat_5 = 5,
-			TvRat_6 = 6,
-			TvRat_7 = 7,
-			TvRat_8 = 8,
-			TvRat_9 = 9,
-			TvRat_10 = 10,
-			TvRat_11 = 11,
-			TvRat_12 = 12,
-			TvRat_13 = 13,
-			TvRat_14 = 14,
-			TvRat_15 = 15,
-			TvRat_16 = 16,
-			TvRat_17 = 17,
-			TvRat_18 = 18,
-			TvRat_19 = 19,
-			TvRat_20 = 20,
-			TvRat_21 = 21,
-			TvRat_kLevels = 22,
-			TvRat_Unblock = -1,
-			TvRat_LevelDontKnow = 255,
+			_0 = 0,
+			_1 = 1,
+			_2 = 2,
+			_3 = 3,
+			_4 = 4,
+			_5 = 5,
+			_6 = 6,
+			_7 = 7,
+			_8 = 8,
+			_9 = 9,
+			_10 = 10,
+			_11 = 11,
+			_12 = 12,
+			_13 = 13,
+			_14 = 14,
+			_15 = 15,
+			_16 = 16,
+			_17 = 17,
+			_18 = 18,
+			_19 = 19,
+			_20 = 20,
+			_21 = 21,
+			kLevels = 22,
+			Unblock = -1,
+			LevelDontKnow = 255,
 		}
 		[AllowDuplicates]
 		public enum EnTvRat_MPAA : int32
 		{
-			MPAA_NotApplicable = 0,
-			MPAA_G = 1,
-			MPAA_PG = 2,
-			MPAA_PG13 = 3,
-			MPAA_R = 4,
-			MPAA_NC17 = 5,
-			MPAA_X = 6,
-			MPAA_NotRated = 7,
+			NotApplicable = 0,
+			G = 1,
+			PG = 2,
+			PG13 = 3,
+			R = 4,
+			NC17 = 5,
+			X = 6,
+			NotRated = 7,
 		}
 		[AllowDuplicates]
 		public enum EnTvRat_US_TV : int32
 		{
-			US_TV_None = 0,
-			US_TV_Y = 1,
-			US_TV_Y7 = 2,
-			US_TV_G = 3,
-			US_TV_PG = 4,
-			US_TV_14 = 5,
-			US_TV_MA = 6,
-			US_TV_None7 = 7,
+			None = 0,
+			Y = 1,
+			Y7 = 2,
+			G = 3,
+			PG = 4,
+			_14 = 5,
+			MA = 6,
+			None7 = 7,
 		}
 		[AllowDuplicates]
 		public enum EnTvRat_CAE_TV : int32
 		{
-			CAE_TV_Exempt = 0,
-			CAE_TV_C = 1,
-			CAE_TV_C8 = 2,
-			CAE_TV_G = 3,
-			CAE_TV_PG = 4,
-			CAE_TV_14 = 5,
-			CAE_TV_18 = 6,
-			CAE_TV_Reserved = 7,
+			Exempt = 0,
+			C = 1,
+			C8 = 2,
+			G = 3,
+			PG = 4,
+			_14 = 5,
+			_18 = 6,
+			Reserved = 7,
 		}
 		[AllowDuplicates]
 		public enum EnTvRat_CAF_TV : int32
 		{
-			CAF_TV_Exempt = 0,
-			CAF_TV_G = 1,
-			CAF_TV_8 = 2,
-			CAF_TV_13 = 3,
-			CAF_TV_16 = 4,
-			CAF_TV_18 = 5,
-			CAF_TV_Reserved6 = 6,
-			CAF_TV_Reserved = 7,
+			Exempt = 0,
+			G = 1,
+			_8 = 2,
+			_13 = 3,
+			_16 = 4,
+			_18 = 5,
+			Reserved6 = 6,
+			Reserved = 7,
 		}
 		[AllowDuplicates]
 		public enum BfEnTvRat_GenericAttributes : int32
 		{
-			BfAttrNone = 0,
-			BfIsBlocked = 1,
-			BfIsAttr_1 = 2,
-			BfIsAttr_2 = 4,
-			BfIsAttr_3 = 8,
-			BfIsAttr_4 = 16,
-			BfIsAttr_5 = 32,
-			BfIsAttr_6 = 64,
-			BfIsAttr_7 = 128,
-			BfValidAttrSubmask = 255,
+			AttrNone = 0,
+			IsBlocked = 1,
+			IsAttr_1 = 2,
+			IsAttr_2 = 4,
+			IsAttr_3 = 8,
+			IsAttr_4 = 16,
+			IsAttr_5 = 32,
+			IsAttr_6 = 64,
+			IsAttr_7 = 128,
+			ValidAttrSubmask = 255,
 		}
 		[AllowDuplicates]
 		public enum BfEnTvRat_Attributes_US_TV : int32
 		{
-			US_TV_IsBlocked = 1,
-			US_TV_IsViolent = 2,
-			US_TV_IsSexualSituation = 4,
-			US_TV_IsAdultLanguage = 8,
-			US_TV_IsSexuallySuggestiveDialog = 16,
-			US_TV_ValidAttrSubmask = 31,
+			IsBlocked = 1,
+			IsViolent = 2,
+			IsSexualSituation = 4,
+			IsAdultLanguage = 8,
+			IsSexuallySuggestiveDialog = 16,
+			ValidAttrSubmask = 31,
 		}
 		[AllowDuplicates]
 		public enum BfEnTvRat_Attributes_MPAA : int32
 		{
-			MPAA_IsBlocked = 1,
-			MPAA_ValidAttrSubmask = 1,
+			IsBlocked = 1,
+			ValidAttrSubmask = 1,
 		}
 		[AllowDuplicates]
 		public enum BfEnTvRat_Attributes_CAE_TV : int32
 		{
-			CAE_IsBlocked = 1,
-			CAE_ValidAttrSubmask = 1,
+			IsBlocked = 1,
+			ValidAttrSubmask = 1,
 		}
 		[AllowDuplicates]
 		public enum BfEnTvRat_Attributes_CAF_TV : int32
 		{
-			CAF_IsBlocked = 1,
-			CAF_ValidAttrSubmask = 1,
+			IsBlocked = 1,
+			ValidAttrSubmask = 1,
 		}
 		[AllowDuplicates]
 		public enum FormatNotSupportedEvents : int32
 		{
-			FORMATNOTSUPPORTED_CLEAR = 0,
-			FORMATNOTSUPPORTED_NOTSUPPORTED = 1,
+			CLEAR = 0,
+			NOTSUPPORTED = 1,
 		}
 		[AllowDuplicates]
 		public enum ProtType : int32
 		{
-			PROT_COPY_FREE = 1,
-			PROT_COPY_ONCE = 2,
-			PROT_COPY_NEVER = 3,
-			PROT_COPY_NEVER_REALLY = 4,
-			PROT_COPY_NO_MORE = 5,
-			PROT_COPY_FREE_CIT = 6,
-			PROT_COPY_BF = 7,
-			PROT_COPY_CN_RECORDING_STOP = 8,
-			PROT_COPY_FREE_SECURE = 9,
-			PROT_COPY_INVALID = 50,
+			FREE = 1,
+			ONCE = 2,
+			NEVER = 3,
+			NEVER_REALLY = 4,
+			NO_MORE = 5,
+			FREE_CIT = 6,
+			BF = 7,
+			CN_RECORDING_STOP = 8,
+			FREE_SECURE = 9,
+			INVALID = 50,
 		}
 		[AllowDuplicates]
 		public enum EncDecEvents : int32
 		{
-			ENCDEC_CPEVENT = 0,
-			ENCDEC_RECORDING_STATUS = 1,
+			CPEVENT = 0,
+			RECORDING_STATUS = 1,
 		}
 		[AllowDuplicates]
 		public enum CPRecordingStatus : int32
 		{
-			RECORDING_STOPPED = 0,
-			RECORDING_STARTED = 1,
+			OPPED = 0,
+			ARTED = 1,
 		}
 		[AllowDuplicates]
 		public enum CPEventBitShift : int32
 		{
-			CPEVENT_BITSHIFT_RATINGS = 0,
-			CPEVENT_BITSHIFT_COPP = 1,
-			CPEVENT_BITSHIFT_LICENSE = 2,
-			CPEVENT_BITSHIFT_ROLLBACK = 3,
-			CPEVENT_BITSHIFT_SAC = 4,
-			CPEVENT_BITSHIFT_DOWNRES = 5,
-			CPEVENT_BITSHIFT_STUBLIB = 6,
-			CPEVENT_BITSHIFT_UNTRUSTEDGRAPH = 7,
-			CPEVENT_BITSHIFT_PENDING_CERTIFICATE = 8,
-			CPEVENT_BITSHIFT_NO_PLAYREADY = 9,
+			RATINGS = 0,
+			COPP = 1,
+			LICENSE = 2,
+			ROLLBACK = 3,
+			SAC = 4,
+			DOWNRES = 5,
+			STUBLIB = 6,
+			UNTRUSTEDGRAPH = 7,
+			PENDING_CERTIFICATE = 8,
+			NO_PLAYREADY = 9,
 		}
 		[AllowDuplicates]
 		public enum CPEvents : int32
 		{
-			CPEVENT_NONE = 0,
-			CPEVENT_RATINGS = 1,
-			CPEVENT_COPP = 2,
-			CPEVENT_LICENSE = 3,
-			CPEVENT_ROLLBACK = 4,
-			CPEVENT_SAC = 5,
-			CPEVENT_DOWNRES = 6,
-			CPEVENT_STUBLIB = 7,
-			CPEVENT_UNTRUSTEDGRAPH = 8,
-			CPEVENT_PROTECTWINDOWED = 9,
+			NONE = 0,
+			RATINGS = 1,
+			COPP = 2,
+			LICENSE = 3,
+			ROLLBACK = 4,
+			SAC = 5,
+			DOWNRES = 6,
+			STUBLIB = 7,
+			UNTRUSTEDGRAPH = 8,
+			PROTECTWINDOWED = 9,
 		}
 		[AllowDuplicates]
 		public enum RevokedComponent : int32
 		{
-			REVOKED_COPP = 0,
-			REVOKED_SAC = 1,
-			REVOKED_APP_STUB = 2,
-			REVOKED_SECURE_PIPELINE = 3,
-			REVOKED_MAX_TYPES = 4,
+			COPP = 0,
+			SAC = 1,
+			APP_STUB = 2,
+			SECURE_PIPELINE = 3,
+			MAX_TYPES = 4,
 		}
 		[AllowDuplicates]
 		public enum EnTag_Mode : int32
 		{
-			EnTag_Remove = 0,
-			EnTag_Once = 1,
-			EnTag_Repeat = 2,
+			Remove = 0,
+			Once = 1,
+			Repeat = 2,
 		}
 		[AllowDuplicates]
 		public enum COPPEventBlockReason : int32
 		{
-			COPP_Unknown = -1,
-			COPP_BadDriver = 0,
-			COPP_NoCardHDCPSupport = 1,
-			COPP_NoMonitorHDCPSupport = 2,
-			COPP_BadCertificate = 3,
-			COPP_InvalidBusProtection = 4,
-			COPP_AeroGlassOff = 5,
-			COPP_RogueApp = 6,
-			COPP_ForbiddenVideo = 7,
-			COPP_Activate = 8,
-			COPP_DigitalAudioUnprotected = 9,
+			Unknown = -1,
+			BadDriver = 0,
+			NoCardHDCPSupport = 1,
+			NoMonitorHDCPSupport = 2,
+			BadCertificate = 3,
+			InvalidBusProtection = 4,
+			AeroGlassOff = 5,
+			RogueApp = 6,
+			ForbiddenVideo = 7,
+			Activate = 8,
+			DigitalAudioUnprotected = 9,
 		}
 		[AllowDuplicates]
 		public enum LicenseEventBlockReason : int32
 		{
-			LIC_BadLicense = 0,
-			LIC_NeedIndiv = 1,
-			LIC_Expired = 2,
-			LIC_NeedActivation = 3,
-			LIC_ExtenderBlocked = 4,
+			BadLicense = 0,
+			NeedIndiv = 1,
+			Expired = 2,
+			NeedActivation = 3,
+			ExtenderBlocked = 4,
 		}
 		[AllowDuplicates]
 		public enum DownResEventParam : int32
 		{
-			DOWNRES_Always = 0,
-			DOWNRES_InWindowOnly = 1,
-			DOWNRES_Undefined = 2,
+			Always = 0,
+			InWindowOnly = 1,
+			Undefined = 2,
 		}
 		[AllowDuplicates]
 		public enum SegDispidList : int32
@@ -3598,436 +3598,436 @@ namespace Win32
 		[AllowDuplicates]
 		public enum MSVidSinkStreams : int32
 		{
-			MSVidSink_Video = 1,
-			MSVidSink_Audio = 2,
-			MSVidSink_Other = 4,
+			Video = 1,
+			Audio = 2,
+			Other = 4,
 		}
 		[AllowDuplicates]
 		public enum MSVidSegmentType : int32
 		{
-			MSVidSEG_SOURCE = 0,
-			MSVidSEG_XFORM = 1,
-			MSVidSEG_DEST = 2,
+			SOURCE = 0,
+			XFORM = 1,
+			DEST = 2,
 		}
 		[AllowDuplicates]
 		public enum MSVidCtlButtonstate : int32
 		{
-			MSVIDCTL_LEFT_BUTTON = 1,
-			MSVIDCTL_RIGHT_BUTTON = 2,
-			MSVIDCTL_MIDDLE_BUTTON = 4,
-			MSVIDCTL_X_BUTTON1 = 8,
-			MSVIDCTL_X_BUTTON2 = 16,
-			MSVIDCTL_SHIFT = 1,
-			MSVIDCTL_CTRL = 2,
-			MSVIDCTL_ALT = 4,
+			LEFT_BUTTON = 1,
+			RIGHT_BUTTON = 2,
+			MIDDLE_BUTTON = 4,
+			X_BUTTON1 = 8,
+			X_BUTTON2 = 16,
+			SHIFT = 1,
+			CTRL = 2,
+			ALT = 4,
 		}
 		[AllowDuplicates]
 		public enum DVDMenuIDConstants : int32
 		{
-			dvdMenu_Title = 2,
-			dvdMenu_Root = 3,
-			dvdMenu_Subpicture = 4,
-			dvdMenu_Audio = 5,
-			dvdMenu_Angle = 6,
-			dvdMenu_Chapter = 7,
+			Title = 2,
+			Root = 3,
+			Subpicture = 4,
+			Audio = 5,
+			Angle = 6,
+			Chapter = 7,
 		}
 		[AllowDuplicates]
 		public enum DVDFilterState : int32
 		{
-			dvdState_Undefined = -2,
-			dvdState_Unitialized = -1,
-			dvdState_Stopped = 0,
-			dvdState_Paused = 1,
-			dvdState_Running = 2,
+			Undefined = -2,
+			Unitialized = -1,
+			Stopped = 0,
+			Paused = 1,
+			Running = 2,
 		}
 		[AllowDuplicates]
 		public enum DVDTextStringType : int32
 		{
-			dvdStruct_Volume = 1,
-			dvdStruct_Title = 2,
-			dvdStruct_ParentalID = 3,
-			dvdStruct_PartOfTitle = 4,
-			dvdStruct_Cell = 5,
-			dvdStream_Audio = 16,
-			dvdStream_Subpicture = 17,
-			dvdStream_Angle = 18,
-			dvdChannel_Audio = 32,
-			dvdGeneral_Name = 48,
-			dvdGeneral_Comments = 49,
-			dvdTitle_Series = 56,
-			dvdTitle_Movie = 57,
-			dvdTitle_Video = 58,
-			dvdTitle_Album = 59,
-			dvdTitle_Song = 60,
-			dvdTitle_Other = 63,
-			dvdTitle_Sub_Series = 64,
-			dvdTitle_Sub_Movie = 65,
-			dvdTitle_Sub_Video = 66,
-			dvdTitle_Sub_Album = 67,
-			dvdTitle_Sub_Song = 68,
-			dvdTitle_Sub_Other = 71,
-			dvdTitle_Orig_Series = 72,
-			dvdTitle_Orig_Movie = 73,
-			dvdTitle_Orig_Video = 74,
-			dvdTitle_Orig_Album = 75,
-			dvdTitle_Orig_Song = 76,
-			dvdTitle_Orig_Other = 79,
-			dvdOther_Scene = 80,
-			dvdOther_Cut = 81,
-			dvdOther_Take = 82,
+			Struct_Volume = 1,
+			Struct_Title = 2,
+			Struct_ParentalID = 3,
+			Struct_PartOfTitle = 4,
+			Struct_Cell = 5,
+			Stream_Audio = 16,
+			Stream_Subpicture = 17,
+			Stream_Angle = 18,
+			Channel_Audio = 32,
+			General_Name = 48,
+			General_Comments = 49,
+			Title_Series = 56,
+			Title_Movie = 57,
+			Title_Video = 58,
+			Title_Album = 59,
+			Title_Song = 60,
+			Title_Other = 63,
+			Title_Sub_Series = 64,
+			Title_Sub_Movie = 65,
+			Title_Sub_Video = 66,
+			Title_Sub_Album = 67,
+			Title_Sub_Song = 68,
+			Title_Sub_Other = 71,
+			Title_Orig_Series = 72,
+			Title_Orig_Movie = 73,
+			Title_Orig_Video = 74,
+			Title_Orig_Album = 75,
+			Title_Orig_Song = 76,
+			Title_Orig_Other = 79,
+			Other_Scene = 80,
+			Other_Cut = 81,
+			Other_Take = 82,
 		}
 		[AllowDuplicates]
 		public enum DVDSPExt : int32
 		{
-			dvdSPExt_NotSpecified = 0,
-			dvdSPExt_Caption_Normal = 1,
-			dvdSPExt_Caption_Big = 2,
-			dvdSPExt_Caption_Children = 3,
-			dvdSPExt_CC_Normal = 5,
-			dvdSPExt_CC_Big = 6,
-			dvdSPExt_CC_Children = 7,
-			dvdSPExt_Forced = 9,
-			dvdSPExt_DirectorComments_Normal = 13,
-			dvdSPExt_DirectorComments_Big = 14,
-			dvdSPExt_DirectorComments_Children = 15,
+			NotSpecified = 0,
+			Caption_Normal = 1,
+			Caption_Big = 2,
+			Caption_Children = 3,
+			CC_Normal = 5,
+			CC_Big = 6,
+			CC_Children = 7,
+			Forced = 9,
+			DirectorComments_Normal = 13,
+			DirectorComments_Big = 14,
+			DirectorComments_Children = 15,
 		}
 		[AllowDuplicates]
 		public enum SourceSizeList : int32
 		{
-			sslFullSize = 0,
-			sslClipByOverScan = 1,
-			sslClipByClipRect = 2,
+			FullSize = 0,
+			ClipByOverScan = 1,
+			ClipByClipRect = 2,
 		}
 		[AllowDuplicates]
 		public enum MSViddispidList : int32
 		{
-			dispidInputs = 0,
-			dispidOutputs = 1,
-			dispid_Inputs = 2,
-			dispid_Outputs = 3,
-			dispidVideoRenderers = 4,
-			dispidAudioRenderers = 5,
-			dispidFeatures = 6,
-			dispidInput = 7,
-			dispidOutput = 8,
-			dispidVideoRenderer = 9,
-			dispidAudioRenderer = 10,
-			dispidSelectedFeatures = 11,
-			dispidView = 12,
-			dispidBuild = 13,
-			dispidPause = 14,
-			dispidRun = 15,
-			dispidStop = 16,
-			dispidDecompose = 17,
-			dispidDisplaySize = 18,
-			dispidMaintainAspectRatio = 19,
-			dispidColorKey = 20,
-			dispidStateChange = 21,
-			dispidgetState = 22,
-			dispidunbind = 23,
-			dispidbind = 24,
-			dispidDisableVideo = 25,
-			dispidDisableAudio = 26,
-			dispidViewNext = 27,
-			dispidServiceP = 28,
+			Inputs = 0,
+			Outputs = 1,
+			_Inputs = 2,
+			_Outputs = 3,
+			VideoRenderers = 4,
+			AudioRenderers = 5,
+			Features = 6,
+			Input = 7,
+			Output = 8,
+			VideoRenderer = 9,
+			AudioRenderer = 10,
+			SelectedFeatures = 11,
+			View = 12,
+			Build = 13,
+			Pause = 14,
+			Run = 15,
+			Stop = 16,
+			Decompose = 17,
+			DisplaySize = 18,
+			MaintainAspectRatio = 19,
+			ColorKey = 20,
+			StateChange = 21,
+			getState = 22,
+			unbind = 23,
+			bind = 24,
+			DisableVideo = 25,
+			DisableAudio = 26,
+			ViewNext = 27,
+			ServiceP = 28,
 		}
 		[AllowDuplicates]
 		public enum DisplaySizeList : int32
 		{
-			dslDefaultSize = 0,
-			dslSourceSize = 0,
-			dslHalfSourceSize = 1,
-			dslDoubleSourceSize = 2,
-			dslFullScreen = 3,
-			dslHalfScreen = 4,
-			dslQuarterScreen = 5,
-			dslSixteenthScreen = 6,
+			DefaultSize = 0,
+			SourceSize = 0,
+			HalfSourceSize = 1,
+			DoubleSourceSize = 2,
+			FullScreen = 3,
+			HalfScreen = 4,
+			QuarterScreen = 5,
+			SixteenthScreen = 6,
 		}
 		[AllowDuplicates]
 		public enum MSVidCtlStateList : int32
 		{
-			STATE_UNBUILT = -1,
-			STATE_STOP = 0,
-			STATE_PAUSE = 1,
-			STATE_PLAY = 2,
+			UNBUILT = -1,
+			STOP = 0,
+			PAUSE = 1,
+			PLAY = 2,
 		}
 		[AllowDuplicates]
 		public enum RECORDING_TYPE : int32
 		{
-			RECORDING_TYPE_CONTENT = 0,
-			RECORDING_TYPE_REFERENCE = 1,
+			CONTENT = 0,
+			REFERENCE = 1,
 		}
 		[AllowDuplicates]
 		public enum STREAMBUFFER_ATTR_DATATYPE : int32
 		{
-			STREAMBUFFER_TYPE_DWORD = 0,
-			STREAMBUFFER_TYPE_STRING = 1,
-			STREAMBUFFER_TYPE_BINARY = 2,
-			STREAMBUFFER_TYPE_BOOL = 3,
-			STREAMBUFFER_TYPE_QWORD = 4,
-			STREAMBUFFER_TYPE_WORD = 5,
-			STREAMBUFFER_TYPE_GUID = 6,
+			DWORD = 0,
+			STRING = 1,
+			BINARY = 2,
+			BOOL = 3,
+			QWORD = 4,
+			WORD = 5,
+			GUID = 6,
 		}
 		[AllowDuplicates]
 		public enum CROSSBAR_DEFAULT_FLAGS : int32
 		{
-			DEF_MODE_PROFILE = 1,
-			DEF_MODE_STREAMS = 2,
+			PROFILE = 1,
+			STREAMS = 2,
 		}
 		[AllowDuplicates]
 		public enum MPEG_CURRENT_NEXT_BIT : int32
 		{
-			MPEG_SECTION_IS_NEXT = 0,
-			MPEG_SECTION_IS_CURRENT = 1,
+			NEXT = 0,
+			CURRENT = 1,
 		}
 		[AllowDuplicates]
 		public enum MPEG_CONTEXT_TYPE : int32
 		{
-			MPEG_CONTEXT_BCS_DEMUX = 0,
-			MPEG_CONTEXT_WINSOCK = 1,
+			BCS_DEMUX = 0,
+			WINSOCK = 1,
 		}
 		[AllowDuplicates]
 		public enum MPEG_REQUEST_TYPE : int32
 		{
-			MPEG_RQST_UNKNOWN = 0,
-			MPEG_RQST_GET_SECTION = 1,
-			MPEG_RQST_GET_SECTION_ASYNC = 2,
-			MPEG_RQST_GET_TABLE = 3,
-			MPEG_RQST_GET_TABLE_ASYNC = 4,
-			MPEG_RQST_GET_SECTIONS_STREAM = 5,
-			MPEG_RQST_GET_PES_STREAM = 6,
-			MPEG_RQST_GET_TS_STREAM = 7,
-			MPEG_RQST_START_MPE_STREAM = 8,
+			UNKNOWN = 0,
+			GET_SECTION = 1,
+			GET_SECTION_ASYNC = 2,
+			GET_TABLE = 3,
+			GET_TABLE_ASYNC = 4,
+			GET_SECTIONS_STREAM = 5,
+			GET_PES_STREAM = 6,
+			GET_TS_STREAM = 7,
+			START_MPE_STREAM = 8,
 		}
 		[AllowDuplicates]
 		public enum VA_VIDEO_FORMAT : int32
 		{
-			VA_VIDEO_COMPONENT = 0,
-			VA_VIDEO_PAL = 1,
-			VA_VIDEO_NTSC = 2,
-			VA_VIDEO_SECAM = 3,
-			VA_VIDEO_MAC = 4,
-			VA_VIDEO_UNSPECIFIED = 5,
+			COMPONENT = 0,
+			PAL = 1,
+			NTSC = 2,
+			SECAM = 3,
+			MAC = 4,
+			UNSPECIFIED = 5,
 		}
 		[AllowDuplicates]
 		public enum VA_COLOR_PRIMARIES : int32
 		{
-			VA_PRIMARIES_ITU_R_BT_709 = 1,
-			VA_PRIMARIES_UNSPECIFIED = 2,
-			VA_PRIMARIES_ITU_R_BT_470_SYSTEM_M = 4,
-			VA_PRIMARIES_ITU_R_BT_470_SYSTEM_B_G = 5,
-			VA_PRIMARIES_SMPTE_170M = 6,
-			VA_PRIMARIES_SMPTE_240M = 7,
-			VA_PRIMARIES_H264_GENERIC_FILM = 8,
+			ITU_R_BT_709 = 1,
+			UNSPECIFIED = 2,
+			ITU_R_BT_470_SYSTEM_M = 4,
+			ITU_R_BT_470_SYSTEM_B_G = 5,
+			SMPTE_170M = 6,
+			SMPTE_240M = 7,
+			H264_GENERIC_FILM = 8,
 		}
 		[AllowDuplicates]
 		public enum VA_TRANSFER_CHARACTERISTICS : int32
 		{
-			VA_TRANSFER_CHARACTERISTICS_ITU_R_BT_709 = 1,
-			VA_TRANSFER_CHARACTERISTICS_UNSPECIFIED = 2,
-			VA_TRANSFER_CHARACTERISTICS_ITU_R_BT_470_SYSTEM_M = 4,
-			VA_TRANSFER_CHARACTERISTICS_ITU_R_BT_470_SYSTEM_B_G = 5,
-			VA_TRANSFER_CHARACTERISTICS_SMPTE_170M = 6,
-			VA_TRANSFER_CHARACTERISTICS_SMPTE_240M = 7,
-			VA_TRANSFER_CHARACTERISTICS_LINEAR = 8,
-			VA_TRANSFER_CHARACTERISTICS_H264_LOG_100_TO_1 = 9,
-			VA_TRANSFER_CHARACTERISTICS_H264_LOG_316_TO_1 = 10,
+			ITU_R_BT_709 = 1,
+			UNSPECIFIED = 2,
+			ITU_R_BT_470_SYSTEM_M = 4,
+			ITU_R_BT_470_SYSTEM_B_G = 5,
+			SMPTE_170M = 6,
+			SMPTE_240M = 7,
+			LINEAR = 8,
+			H264_LOG_100_TO_1 = 9,
+			H264_LOG_316_TO_1 = 10,
 		}
 		[AllowDuplicates]
 		public enum VA_MATRIX_COEFFICIENTS : int32
 		{
-			VA_MATRIX_COEFF_H264_RGB = 0,
-			VA_MATRIX_COEFF_ITU_R_BT_709 = 1,
-			VA_MATRIX_COEFF_UNSPECIFIED = 2,
-			VA_MATRIX_COEFF_FCC = 4,
-			VA_MATRIX_COEFF_ITU_R_BT_470_SYSTEM_B_G = 5,
-			VA_MATRIX_COEFF_SMPTE_170M = 6,
-			VA_MATRIX_COEFF_SMPTE_240M = 7,
-			VA_MATRIX_COEFF_H264_YCgCo = 8,
+			H264_RGB = 0,
+			ITU_R_BT_709 = 1,
+			UNSPECIFIED = 2,
+			FCC = 4,
+			ITU_R_BT_470_SYSTEM_B_G = 5,
+			SMPTE_170M = 6,
+			SMPTE_240M = 7,
+			H264_YCgCo = 8,
 		}
 		[AllowDuplicates]
 		public enum DVB_STRCONV_MODE : int32
 		{
-			STRCONV_MODE_DVB = 0,
-			STRCONV_MODE_DVB_EMPHASIS = 1,
-			STRCONV_MODE_DVB_WITHOUT_EMPHASIS = 2,
-			STRCONV_MODE_ISDB = 3,
+			DVB = 0,
+			DVB_EMPHASIS = 1,
+			DVB_WITHOUT_EMPHASIS = 2,
+			ISDB = 3,
 		}
 		[AllowDuplicates]
 		public enum CRID_LOCATION : int32
 		{
-			CRID_LOCATION_IN_DESCRIPTOR = 0,
-			CRID_LOCATION_IN_CIT = 1,
-			CRID_LOCATION_DVB_RESERVED1 = 2,
-			CRID_LOCATION_DVB_RESERVED2 = 3,
+			IN_DESCRIPTOR = 0,
+			IN_CIT = 1,
+			DVB_RESERVED1 = 2,
+			DVB_RESERVED2 = 3,
 		}
 		[AllowDuplicates]
 		public enum DESC_LINKAGE_TYPE : int32
 		{
-			DESC_LINKAGE_RESERVED0 = 0,
-			DESC_LINKAGE_INFORMATION = 1,
-			DESC_LINKAGE_EPG = 2,
-			DESC_LINKAGE_CA_REPLACEMENT = 3,
-			DESC_LINKAGE_COMPLETE_NET_BOUQUET_SI = 4,
-			DESC_LINKAGE_REPLACEMENT = 5,
-			DESC_LINKAGE_DATA = 6,
-			DESC_LINKAGE_RESERVED1 = 7,
-			DESC_LINKAGE_USER = 8,
-			DESC_LINKAGE_RESERVED2 = 255,
+			RESERVED0 = 0,
+			INFORMATION = 1,
+			EPG = 2,
+			CA_REPLACEMENT = 3,
+			COMPLETE_NET_BOUQUET_SI = 4,
+			REPLACEMENT = 5,
+			DATA = 6,
+			RESERVED1 = 7,
+			USER = 8,
+			RESERVED2 = 255,
 		}
 		[AllowDuplicates]
 		public enum ChannelChangeSpanningEvent_State : int32
 		{
-			ChannelChangeSpanningEvent_Start = 0,
-			ChannelChangeSpanningEvent_End = 2,
+			Start = 0,
+			End = 2,
 		}
 		[AllowDuplicates]
 		public enum ChannelType : int32
 		{
-			ChannelTypeNone = 0,
-			ChannelTypeOther = 1,
-			ChannelTypeVideo = 2,
-			ChannelTypeAudio = 4,
-			ChannelTypeText = 8,
-			ChannelTypeSubtitles = 16,
-			ChannelTypeCaptions = 32,
-			ChannelTypeSuperimpose = 64,
-			ChannelTypeData = 128,
+			None = 0,
+			Other = 1,
+			Video = 2,
+			Audio = 4,
+			Text = 8,
+			Subtitles = 16,
+			Captions = 32,
+			Superimpose = 64,
+			Data = 128,
 		}
 		[AllowDuplicates]
 		public enum SignalAndServiceStatusSpanningEvent_State : int32
 		{
-			SignalAndServiceStatusSpanningEvent_None = -1,
-			SignalAndServiceStatusSpanningEvent_Clear = 0,
-			SignalAndServiceStatusSpanningEvent_NoTVSignal = 1,
-			SignalAndServiceStatusSpanningEvent_ServiceOffAir = 2,
-			SignalAndServiceStatusSpanningEvent_WeakTVSignal = 3,
-			SignalAndServiceStatusSpanningEvent_NoSubscription = 4,
-			SignalAndServiceStatusSpanningEvent_AllAVScrambled = 5,
+			None = -1,
+			Clear = 0,
+			NoTVSignal = 1,
+			ServiceOffAir = 2,
+			WeakTVSignal = 3,
+			NoSubscription = 4,
+			AllAVScrambled = 5,
 		}
 		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_ETHERNET_FILTER : int32
 		{
-			KSPROPERTY_BDA_ETHERNET_FILTER_MULTICAST_LIST_SIZE = 0,
-			KSPROPERTY_BDA_ETHERNET_FILTER_MULTICAST_LIST = 1,
-			KSPROPERTY_BDA_ETHERNET_FILTER_MULTICAST_MODE = 2,
+			LIST_SIZE = 0,
+			LIST = 1,
+			MODE = 2,
 		}
 		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_IPv4_FILTER : int32
 		{
-			KSPROPERTY_BDA_IPv4_FILTER_MULTICAST_LIST_SIZE = 0,
-			KSPROPERTY_BDA_IPv4_FILTER_MULTICAST_LIST = 1,
-			KSPROPERTY_BDA_IPv4_FILTER_MULTICAST_MODE = 2,
+			LIST_SIZE = 0,
+			LIST = 1,
+			MODE = 2,
 		}
 		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_IPv6_FILTER : int32
 		{
-			KSPROPERTY_BDA_IPv6_FILTER_MULTICAST_LIST_SIZE = 0,
-			KSPROPERTY_BDA_IPv6_FILTER_MULTICAST_LIST = 1,
-			KSPROPERTY_BDA_IPv6_FILTER_MULTICAST_MODE = 2,
+			LIST_SIZE = 0,
+			LIST = 1,
+			MODE = 2,
 		}
 		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_SIGNAL_STATS : int32
 		{
-			KSPROPERTY_BDA_SIGNAL_STRENGTH = 0,
-			KSPROPERTY_BDA_SIGNAL_QUALITY = 1,
-			KSPROPERTY_BDA_SIGNAL_PRESENT = 2,
-			KSPROPERTY_BDA_SIGNAL_LOCKED = 3,
-			KSPROPERTY_BDA_SAMPLE_TIME = 4,
-			KSPROPERTY_BDA_SIGNAL_LOCK_CAPS = 5,
-			KSPROPERTY_BDA_SIGNAL_LOCK_TYPE = 6,
+			IGNAL_STRENGTH = 0,
+			IGNAL_QUALITY = 1,
+			IGNAL_PRESENT = 2,
+			IGNAL_LOCKED = 3,
+			AMPLE_TIME = 4,
+			IGNAL_LOCK_CAPS = 5,
+			IGNAL_LOCK_TYPE = 6,
 		}
 		[AllowDuplicates]
 		public enum BDA_LockType : int32
 		{
-			Bda_LockType_None = 0,
-			Bda_LockType_PLL = 1,
-			Bda_LockType_DecoderDemod = 2,
-			Bda_LockType_Complete = 128,
+			None = 0,
+			PLL = 1,
+			DecoderDemod = 2,
+			Complete = 128,
 		}
 		[AllowDuplicates]
 		public enum KSMETHOD_BDA_CHANGE_SYNC : int32
 		{
-			KSMETHOD_BDA_START_CHANGES = 0,
-			KSMETHOD_BDA_CHECK_CHANGES = 1,
-			KSMETHOD_BDA_COMMIT_CHANGES = 2,
-			KSMETHOD_BDA_GET_CHANGE_STATE = 3,
+			START_CHANGES = 0,
+			CHECK_CHANGES = 1,
+			COMMIT_CHANGES = 2,
+			GET_CHANGE_STATE = 3,
 		}
 		[AllowDuplicates]
 		public enum KSMETHOD_BDA_DEVICE_CONFIGURATION : int32
 		{
-			KSMETHOD_BDA_CREATE_PIN_FACTORY = 0,
-			KSMETHOD_BDA_DELETE_PIN_FACTORY = 1,
-			KSMETHOD_BDA_CREATE_TOPOLOGY = 2,
+			CREATE_PIN_FACTORY = 0,
+			DELETE_PIN_FACTORY = 1,
+			CREATE_TOPOLOGY = 2,
 		}
 		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_TOPOLOGY : int32
 		{
-			KSPROPERTY_BDA_NODE_TYPES = 0,
-			KSPROPERTY_BDA_PIN_TYPES = 1,
-			KSPROPERTY_BDA_TEMPLATE_CONNECTIONS = 2,
-			KSPROPERTY_BDA_NODE_METHODS = 3,
-			KSPROPERTY_BDA_NODE_PROPERTIES = 4,
-			KSPROPERTY_BDA_NODE_EVENTS = 5,
-			KSPROPERTY_BDA_CONTROLLING_PIN_ID = 6,
-			KSPROPERTY_BDA_NODE_DESCRIPTORS = 7,
+			NODE_TYPES = 0,
+			PIN_TYPES = 1,
+			TEMPLATE_CONNECTIONS = 2,
+			NODE_METHODS = 3,
+			NODE_PROPERTIES = 4,
+			NODE_EVENTS = 5,
+			CONTROLLING_PIN_ID = 6,
+			NODE_DESCRIPTORS = 7,
 		}
 		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_PIN_CONTROL : int32
 		{
-			KSPROPERTY_BDA_PIN_ID = 0,
-			KSPROPERTY_BDA_PIN_TYPE = 1,
+			ID = 0,
+			TYPE = 1,
 		}
 		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_PIN_EVENT : int32
 		{
-			KSEVENT_BDA_PIN_CONNECTED = 0,
-			KSEVENT_BDA_PIN_DISCONNECTED = 1,
+			CONNECTED = 0,
+			DISCONNECTED = 1,
 		}
 		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_VOID_TRANSFORM : int32
 		{
-			KSPROPERTY_BDA_VOID_TRANSFORM_START = 0,
-			KSPROPERTY_BDA_VOID_TRANSFORM_STOP = 1,
+			ART = 0,
+			OP = 1,
 		}
 		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_NULL_TRANSFORM : int32
 		{
-			KSPROPERTY_BDA_NULL_TRANSFORM_START = 0,
-			KSPROPERTY_BDA_NULL_TRANSFORM_STOP = 1,
+			ART = 0,
+			OP = 1,
 		}
 		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_FREQUENCY_FILTER : int32
 		{
-			KSPROPERTY_BDA_RF_TUNER_FREQUENCY = 0,
-			KSPROPERTY_BDA_RF_TUNER_POLARITY = 1,
-			KSPROPERTY_BDA_RF_TUNER_RANGE = 2,
-			KSPROPERTY_BDA_RF_TUNER_TRANSPONDER = 3,
-			KSPROPERTY_BDA_RF_TUNER_BANDWIDTH = 4,
-			KSPROPERTY_BDA_RF_TUNER_FREQUENCY_MULTIPLIER = 5,
-			KSPROPERTY_BDA_RF_TUNER_CAPS = 6,
-			KSPROPERTY_BDA_RF_TUNER_SCAN_STATUS = 7,
-			KSPROPERTY_BDA_RF_TUNER_STANDARD = 8,
-			KSPROPERTY_BDA_RF_TUNER_STANDARD_MODE = 9,
+			FREQUENCY = 0,
+			POLARITY = 1,
+			RANGE = 2,
+			TRANSPONDER = 3,
+			BANDWIDTH = 4,
+			FREQUENCY_MULTIPLIER = 5,
+			CAPS = 6,
+			SCAN_STATUS = 7,
+			STANDARD = 8,
+			STANDARD_MODE = 9,
 		}
 		[AllowDuplicates]
 		public enum BDA_SignalType : int32
 		{
-			Bda_SignalType_Unknown = 0,
-			Bda_SignalType_Analog = 1,
-			Bda_SignalType_Digital = 2,
+			Unknown = 0,
+			Analog = 1,
+			Digital = 2,
 		}
 		[AllowDuplicates]
 		public enum BDA_DigitalSignalStandard : int32
 		{
-			Bda_DigitalStandard_None = 0,
-			Bda_DigitalStandard_DVB_T = 1,
-			Bda_DigitalStandard_DVB_S = 2,
-			Bda_DigitalStandard_DVB_C = 4,
-			Bda_DigitalStandard_ATSC = 8,
-			Bda_DigitalStandard_ISDB_T = 16,
-			Bda_DigitalStandard_ISDB_S = 32,
-			Bda_DigitalStandard_ISDB_C = 64,
+			None = 0,
+			DVB_T = 1,
+			DVB_S = 2,
+			DVB_C = 4,
+			ATSC = 8,
+			ISDB_T = 16,
+			ISDB_S = 32,
+			ISDB_C = 64,
 		}
 		[AllowDuplicates]
 		public enum KSEVENT_BDA_TUNER : int32
@@ -4037,19 +4037,19 @@ namespace Win32
 		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_LNB_INFO : int32
 		{
-			KSPROPERTY_BDA_LNB_LOF_LOW_BAND = 0,
-			KSPROPERTY_BDA_LNB_LOF_HIGH_BAND = 1,
-			KSPROPERTY_BDA_LNB_SWITCH_FREQUENCY = 2,
+			LOF_LOW_BAND = 0,
+			LOF_HIGH_BAND = 1,
+			SWITCH_FREQUENCY = 2,
 		}
 		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_DISEQC_COMMAND : int32
 		{
-			KSPROPERTY_BDA_DISEQC_ENABLE = 0,
-			KSPROPERTY_BDA_DISEQC_LNB_SOURCE = 1,
-			KSPROPERTY_BDA_DISEQC_USETONEBURST = 2,
-			KSPROPERTY_BDA_DISEQC_REPEATS = 3,
-			KSPROPERTY_BDA_DISEQC_SEND = 4,
-			KSPROPERTY_BDA_DISEQC_RESPONSE = 5,
+			ENABLE = 0,
+			LNB_SOURCE = 1,
+			USETONEBURST = 2,
+			REPEATS = 3,
+			SEND = 4,
+			RESPONSE = 5,
 		}
 		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_DISEQC_EVENT : int32
@@ -4059,25 +4059,25 @@ namespace Win32
 		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_DIGITAL_DEMODULATOR : int32
 		{
-			KSPROPERTY_BDA_MODULATION_TYPE = 0,
-			KSPROPERTY_BDA_INNER_FEC_TYPE = 1,
-			KSPROPERTY_BDA_INNER_FEC_RATE = 2,
-			KSPROPERTY_BDA_OUTER_FEC_TYPE = 3,
-			KSPROPERTY_BDA_OUTER_FEC_RATE = 4,
-			KSPROPERTY_BDA_SYMBOL_RATE = 5,
-			KSPROPERTY_BDA_SPECTRAL_INVERSION = 6,
-			KSPROPERTY_BDA_GUARD_INTERVAL = 7,
-			KSPROPERTY_BDA_TRANSMISSION_MODE = 8,
-			KSPROPERTY_BDA_ROLL_OFF = 9,
-			KSPROPERTY_BDA_PILOT = 10,
-			KSPROPERTY_BDA_SIGNALTIMEOUTS = 11,
-			KSPROPERTY_BDA_PLP_NUMBER = 12,
+			MODULATION_TYPE = 0,
+			INNER_FEC_TYPE = 1,
+			INNER_FEC_RATE = 2,
+			OUTER_FEC_TYPE = 3,
+			OUTER_FEC_RATE = 4,
+			SYMBOL_RATE = 5,
+			SPECTRAL_INVERSION = 6,
+			GUARD_INTERVAL = 7,
+			TRANSMISSION_MODE = 8,
+			ROLL_OFF = 9,
+			PILOT = 10,
+			SIGNALTIMEOUTS = 11,
+			PLP_NUMBER = 12,
 		}
 		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_AUTODEMODULATE : int32
 		{
-			KSPROPERTY_BDA_AUTODEMODULATE_START = 0,
-			KSPROPERTY_BDA_AUTODEMODULATE_STOP = 1,
+			ART = 0,
+			OP = 1,
 		}
 		[AllowDuplicates]
 		public enum KSPROPERTY_IDS_BDA_TABLE : int32
@@ -4087,61 +4087,61 @@ namespace Win32
 		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_PIDFILTER : int32
 		{
-			KSPROPERTY_BDA_PIDFILTER_MAP_PIDS = 0,
-			KSPROPERTY_BDA_PIDFILTER_UNMAP_PIDS = 1,
-			KSPROPERTY_BDA_PIDFILTER_LIST_PIDS = 2,
+			MAP_PIDS = 0,
+			UNMAP_PIDS = 1,
+			LIST_PIDS = 2,
 		}
 		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_CA : int32
 		{
-			KSPROPERTY_BDA_ECM_MAP_STATUS = 0,
-			KSPROPERTY_BDA_CA_MODULE_STATUS = 1,
-			KSPROPERTY_BDA_CA_SMART_CARD_STATUS = 2,
-			KSPROPERTY_BDA_CA_MODULE_UI = 3,
-			KSPROPERTY_BDA_CA_SET_PROGRAM_PIDS = 4,
-			KSPROPERTY_BDA_CA_REMOVE_PROGRAM = 5,
+			ECM_MAP_STATUS = 0,
+			CA_MODULE_STATUS = 1,
+			CA_SMART_CARD_STATUS = 2,
+			CA_MODULE_UI = 3,
+			CA_SET_PROGRAM_PIDS = 4,
+			CA_REMOVE_PROGRAM = 5,
 		}
 		[AllowDuplicates]
 		public enum KSPROPERTY_BDA_CA_EVENT : int32
 		{
-			KSEVENT_BDA_PROGRAM_FLOW_STATUS_CHANGED = 0,
-			KSEVENT_BDA_CA_MODULE_STATUS_CHANGED = 1,
-			KSEVENT_BDA_CA_SMART_CARD_STATUS_CHANGED = 2,
-			KSEVENT_BDA_CA_MODULE_UI_REQUESTED = 3,
+			PROGRAM_FLOW_STATUS_CHANGED = 0,
+			CA_MODULE_STATUS_CHANGED = 1,
+			CA_SMART_CARD_STATUS_CHANGED = 2,
+			CA_MODULE_UI_REQUESTED = 3,
 		}
 		[AllowDuplicates]
 		public enum KSMETHOD_BDA_DRM : int32
 		{
-			KSMETHOD_BDA_DRM_CURRENT = 0,
-			KSMETHOD_BDA_DRM_DRMSTATUS = 1,
+			CURRENT = 0,
+			DRMSTATUS = 1,
 		}
 		[AllowDuplicates]
 		public enum KSMETHOD_BDA_WMDRM : int32
 		{
-			KSMETHOD_BDA_WMDRM_STATUS = 0,
-			KSMETHOD_BDA_WMDRM_REVINFO = 1,
-			KSMETHOD_BDA_WMDRM_CRL = 2,
-			KSMETHOD_BDA_WMDRM_MESSAGE = 3,
-			KSMETHOD_BDA_WMDRM_REISSUELICENSE = 4,
-			KSMETHOD_BDA_WMDRM_RENEWLICENSE = 5,
-			KSMETHOD_BDA_WMDRM_LICENSE = 6,
-			KSMETHOD_BDA_WMDRM_KEYINFO = 7,
+			STATUS = 0,
+			REVINFO = 1,
+			CRL = 2,
+			MESSAGE = 3,
+			REISSUELICENSE = 4,
+			RENEWLICENSE = 5,
+			LICENSE = 6,
+			KEYINFO = 7,
 		}
 		[AllowDuplicates]
 		public enum KSMETHOD_BDA_WMDRM_TUNER : int32
 		{
-			KSMETHOD_BDA_WMDRMTUNER_CANCELCAPTURETOKEN = 0,
-			KSMETHOD_BDA_WMDRMTUNER_SETPIDPROTECTION = 1,
-			KSMETHOD_BDA_WMDRMTUNER_GETPIDPROTECTION = 2,
-			KSMETHOD_BDA_WMDRMTUNER_SETSYNCVALUE = 3,
-			KSMETHOD_BDA_WMDRMTUNER_STARTCODEPROFILE = 4,
-			KSMETHOD_BDA_WMDRMTUNER_PURCHASE_ENTITLEMENT = 5,
+			CANCELCAPTURETOKEN = 0,
+			SETPIDPROTECTION = 1,
+			GETPIDPROTECTION = 2,
+			SETSYNCVALUE = 3,
+			STARTCODEPROFILE = 4,
+			PURCHASE_ENTITLEMENT = 5,
 		}
 		[AllowDuplicates]
 		public enum KSMETHOD_BDA_EVENTING_SERVICE : int32
 		{
-			KSMETHOD_BDA_EVENT_DATA = 0,
-			KSMETHOD_BDA_EVENT_COMPLETE = 1,
+			DATA = 0,
+			COMPLETE = 1,
 		}
 		[AllowDuplicates]
 		public enum KSEVENT_BDA_EVENT_TYPE : int32
@@ -4151,76 +4151,76 @@ namespace Win32
 		[AllowDuplicates]
 		public enum KSMETHOD_BDA_DEBUG_SERVICE : int32
 		{
-			KSMETHOD_BDA_DEBUG_LEVEL = 0,
-			KSMETHOD_BDA_DEBUG_DATA = 1,
+			LEVEL = 0,
+			DATA = 1,
 		}
 		[AllowDuplicates]
 		public enum KSMETHOD_BDA_TUNER_SERVICE : int32
 		{
-			KSMETHOD_BDA_TUNER_SETTUNER = 0,
-			KSMETHOD_BDA_TUNER_GETTUNERSTATE = 1,
-			KSMETHOD_BDA_TUNER_SIGNALNOISERATIO = 2,
+			SETTUNER = 0,
+			GETTUNERSTATE = 1,
+			SIGNALNOISERATIO = 2,
 		}
 		[AllowDuplicates]
 		public enum KSMETHOD_BDA_GPNV_SERVICE : int32
 		{
-			KSMETHOD_BDA_GPNV_GETVALUE = 0,
-			KSMETHOD_BDA_GPNV_SETVALUE = 1,
-			KSMETHOD_BDA_GPNV_NAMEFROMINDEX = 2,
-			KSMETHOD_BDA_GPNV_GETVALUEUPDATENAME = 3,
+			GETVALUE = 0,
+			SETVALUE = 1,
+			NAMEFROMINDEX = 2,
+			GETVALUEUPDATENAME = 3,
 		}
 		[AllowDuplicates]
 		public enum KSMETHOD_BDA_MUX_SERVICE : int32
 		{
-			KSMETHOD_BDA_MUX_GETPIDLIST = 0,
-			KSMETHOD_BDA_MUX_SETPIDLIST = 1,
+			GETPIDLIST = 0,
+			SETPIDLIST = 1,
 		}
 		[AllowDuplicates]
 		public enum KSMETHOD_BDA_SCAN_SERVICE : int32
 		{
-			KSMETHOD_BDA_SCAN_CAPABILTIES = 0,
-			KSMETHOD_BDA_SCANNING_STATE = 1,
-			KSMETHOD_BDA_SCAN_FILTER = 2,
-			KSMETHOD_BDA_SCAN_START = 3,
-			KSMETHOD_BDA_SCAN_RESUME = 4,
-			KSMETHOD_BDA_SCAN_STOP = 5,
+			_CAPABILTIES = 0,
+			NING_STATE = 1,
+			_FILTER = 2,
+			_START = 3,
+			_RESUME = 4,
+			_STOP = 5,
 		}
 		[AllowDuplicates]
 		public enum KSMETHOD_BDA_GDDS_SERVICE : int32
 		{
-			KSMETHOD_BDA_GDDS_DATATYPE = 0,
-			KSMETHOD_BDA_GDDS_DATA = 1,
-			KSMETHOD_BDA_GDDS_TUNEXMLFROMIDX = 2,
-			KSMETHOD_BDA_GDDS_GETSERVICES = 3,
-			KSMETHOD_BDA_GDDS_SERVICEFROMTUNEXML = 4,
-			KSMETHOD_BDA_GDDS_DATAUPDATE = 5,
+			DATATYPE = 0,
+			DATA = 1,
+			TUNEXMLFROMIDX = 2,
+			GETSERVICES = 3,
+			SERVICEFROMTUNEXML = 4,
+			DATAUPDATE = 5,
 		}
 		[AllowDuplicates]
 		public enum KSMETHOD_BDA_CAS_SERVICE : int32
 		{
-			KSMETHOD_BDA_CAS_CHECKENTITLEMENTTOKEN = 0,
-			KSMETHOD_BDA_CAS_SETCAPTURETOKEN = 1,
-			KSMETHOD_BDA_CAS_OPENBROADCASTMMI = 2,
-			KSMETHOD_BDA_CAS_CLOSEMMIDIALOG = 3,
+			CHECKENTITLEMENTTOKEN = 0,
+			SETCAPTURETOKEN = 1,
+			OPENBROADCASTMMI = 2,
+			CLOSEMMIDIALOG = 3,
 		}
 		[AllowDuplicates]
 		public enum KSMETHOD_BDA_ISDB_CAS : int32
 		{
-			KSMETHOD_BDA_ISDBCAS_SETREQUEST = 0,
-			KSMETHOD_BDA_ISDBCAS_RESPONSEDATA = 1,
+			SETREQUEST = 0,
+			RESPONSEDATA = 1,
 		}
 		[AllowDuplicates]
 		public enum KSMETHOD_BDA_TS_SELECTOR : int32
 		{
-			KSMETHOD_BDA_TS_SELECTOR_SETTSID = 0,
-			KSMETHOD_BDA_TS_SELECTOR_GETTSINFORMATION = 1,
+			SETTSID = 0,
+			GETTSINFORMATION = 1,
 		}
 		[AllowDuplicates]
 		public enum KSMETHOD_BDA_USERACTIVITY_SERVICE : int32
 		{
-			KSMETHOD_BDA_USERACTIVITY_USEREASON = 0,
-			KSMETHOD_BDA_USERACTIVITY_INTERVAL = 1,
-			KSMETHOD_BDA_USERACTIVITY_DETECTED = 2,
+			USEREASON = 0,
+			INTERVAL = 1,
+			DETECTED = 2,
 		}
 		[AllowDuplicates]
 		public enum VIDEOENCODER_BITRATE_MODE : int32
@@ -4232,112 +4232,112 @@ namespace Win32
 		[AllowDuplicates]
 		public enum COPP_HDCP_Protection_Level : int32
 		{
-			COPP_HDCP_Level0 = 0,
-			COPP_HDCP_LevelMin = 0,
-			COPP_HDCP_Level1 = 1,
-			COPP_HDCP_LevelMax = 1,
-			COPP_HDCP_ForceDWORD = 2147483647,
+			Level0 = 0,
+			LevelMin = 0,
+			Level1 = 1,
+			LevelMax = 1,
+			ForceDWORD = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum COPP_CGMSA_Protection_Level : int32
 		{
-			COPP_CGMSA_Disabled = 0,
-			COPP_CGMSA_LevelMin = 0,
-			COPP_CGMSA_CopyFreely = 1,
-			COPP_CGMSA_CopyNoMore = 2,
-			COPP_CGMSA_CopyOneGeneration = 3,
-			COPP_CGMSA_CopyNever = 4,
-			COPP_CGMSA_RedistributionControlRequired = 8,
-			COPP_CGMSA_LevelMax = 12,
-			COPP_CGMSA_ForceDWORD = 2147483647,
+			Disabled = 0,
+			LevelMin = 0,
+			CopyFreely = 1,
+			CopyNoMore = 2,
+			CopyOneGeneration = 3,
+			CopyNever = 4,
+			RedistributionControlRequired = 8,
+			LevelMax = 12,
+			ForceDWORD = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum COPP_ACP_Protection_Level : int32
 		{
-			COPP_ACP_Level0 = 0,
-			COPP_ACP_LevelMin = 0,
-			COPP_ACP_Level1 = 1,
-			COPP_ACP_Level2 = 2,
-			COPP_ACP_Level3 = 3,
-			COPP_ACP_LevelMax = 3,
-			COPP_ACP_ForceDWORD = 2147483647,
+			Level0 = 0,
+			LevelMin = 0,
+			Level1 = 1,
+			Level2 = 2,
+			Level3 = 3,
+			LevelMax = 3,
+			ForceDWORD = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum COPP_TVProtectionStandard : int32
 		{
-			COPP_ProtectionStandard_Unknown = -2147483648,
-			COPP_ProtectionStandard_None = 0,
-			COPP_ProtectionStandard_IEC61880_525i = 1,
-			COPP_ProtectionStandard_IEC61880_2_525i = 2,
-			COPP_ProtectionStandard_IEC62375_625p = 4,
-			COPP_ProtectionStandard_EIA608B_525 = 8,
-			COPP_ProtectionStandard_EN300294_625i = 16,
-			COPP_ProtectionStandard_CEA805A_TypeA_525p = 32,
-			COPP_ProtectionStandard_CEA805A_TypeA_750p = 64,
-			COPP_ProtectionStandard_CEA805A_TypeA_1125i = 128,
-			COPP_ProtectionStandard_CEA805A_TypeB_525p = 256,
-			COPP_ProtectionStandard_CEA805A_TypeB_750p = 512,
-			COPP_ProtectionStandard_CEA805A_TypeB_1125i = 1024,
-			COPP_ProtectionStandard_ARIBTRB15_525i = 2048,
-			COPP_ProtectionStandard_ARIBTRB15_525p = 4096,
-			COPP_ProtectionStandard_ARIBTRB15_750p = 8192,
-			COPP_ProtectionStandard_ARIBTRB15_1125i = 16384,
-			COPP_ProtectionStandard_Mask = -2147450881,
-			COPP_ProtectionStandard_Reserved = 2147450880,
+			Unknown = -2147483648,
+			None = 0,
+			IEC61880_525i = 1,
+			IEC61880_2_525i = 2,
+			IEC62375_625p = 4,
+			EIA608B_525 = 8,
+			EN300294_625i = 16,
+			CEA805A_TypeA_525p = 32,
+			CEA805A_TypeA_750p = 64,
+			CEA805A_TypeA_1125i = 128,
+			CEA805A_TypeB_525p = 256,
+			CEA805A_TypeB_750p = 512,
+			CEA805A_TypeB_1125i = 1024,
+			ARIBTRB15_525i = 2048,
+			ARIBTRB15_525p = 4096,
+			ARIBTRB15_750p = 8192,
+			ARIBTRB15_1125i = 16384,
+			Mask = -2147450881,
+			Reserved = 2147450880,
 		}
 		[AllowDuplicates]
 		public enum COPP_ImageAspectRatio_EN300294 : int32
 		{
-			COPP_AspectRatio_EN300294_FullFormat4by3 = 0,
-			COPP_AspectRatio_EN300294_Box14by9Center = 1,
-			COPP_AspectRatio_EN300294_Box14by9Top = 2,
-			COPP_AspectRatio_EN300294_Box16by9Center = 3,
-			COPP_AspectRatio_EN300294_Box16by9Top = 4,
-			COPP_AspectRatio_EN300294_BoxGT16by9Center = 5,
-			COPP_AspectRatio_EN300294_FullFormat4by3ProtectedCenter = 6,
-			COPP_AspectRatio_EN300294_FullFormat16by9Anamorphic = 7,
-			COPP_AspectRatio_ForceDWORD = 2147483647,
+			EN300294_FullFormat4by3 = 0,
+			EN300294_Box14by9Center = 1,
+			EN300294_Box14by9Top = 2,
+			EN300294_Box16by9Center = 3,
+			EN300294_Box16by9Top = 4,
+			EN300294_BoxGT16by9Center = 5,
+			EN300294_FullFormat4by3ProtectedCenter = 6,
+			EN300294_FullFormat16by9Anamorphic = 7,
+			ForceDWORD = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum COPP_StatusFlags : int32
 		{
-			COPP_StatusNormal = 0,
-			COPP_LinkLost = 1,
-			COPP_RenegotiationRequired = 2,
-			COPP_StatusFlagsReserved = -4,
+			StatusNormal = 0,
+			LinkLost = 1,
+			RenegotiationRequired = 2,
+			StatusFlagsReserved = -4,
 		}
 		[AllowDuplicates]
 		public enum COPP_StatusHDCPFlags : int32
 		{
-			COPP_HDCPRepeater = 1,
-			COPP_HDCPFlagsReserved = -2,
+			Repeater = 1,
+			FlagsReserved = -2,
 		}
 		[AllowDuplicates]
 		public enum COPP_ConnectorType : int32
 		{
-			COPP_ConnectorType_Unknown = -1,
-			COPP_ConnectorType_VGA = 0,
-			COPP_ConnectorType_SVideo = 1,
-			COPP_ConnectorType_CompositeVideo = 2,
-			COPP_ConnectorType_ComponentVideo = 3,
-			COPP_ConnectorType_DVI = 4,
-			COPP_ConnectorType_HDMI = 5,
-			COPP_ConnectorType_LVDS = 6,
-			COPP_ConnectorType_TMDS = 7,
-			COPP_ConnectorType_D_JPN = 8,
-			COPP_ConnectorType_Internal = -2147483648,
-			COPP_ConnectorType_ForceDWORD = 2147483647,
+			Unknown = -1,
+			VGA = 0,
+			SVideo = 1,
+			CompositeVideo = 2,
+			ComponentVideo = 3,
+			DVI = 4,
+			HDMI = 5,
+			LVDS = 6,
+			TMDS = 7,
+			D_JPN = 8,
+			Internal = -2147483648,
+			ForceDWORD = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum COPP_BusType : int32
 		{
-			COPP_BusType_Unknown = 0,
-			COPP_BusType_PCI = 1,
-			COPP_BusType_PCIX = 2,
-			COPP_BusType_PCIExpress = 3,
-			COPP_BusType_AGP = 4,
-			COPP_BusType_Integrated = -2147483648,
-			COPP_BusType_ForceDWORD = 2147483647,
+			Unknown = 0,
+			PCI = 1,
+			PCIX = 2,
+			PCIExpress = 3,
+			AGP = 4,
+			Integrated = -2147483648,
+			ForceDWORD = 2147483647,
 		}
 		
 		// --- Function Pointers ---

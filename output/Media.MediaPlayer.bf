@@ -691,144 +691,144 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WMPOpenState : int32
 		{
-			wmposUndefined = 0,
-			wmposPlaylistChanging = 1,
-			wmposPlaylistLocating = 2,
-			wmposPlaylistConnecting = 3,
-			wmposPlaylistLoading = 4,
-			wmposPlaylistOpening = 5,
-			wmposPlaylistOpenNoMedia = 6,
-			wmposPlaylistChanged = 7,
-			wmposMediaChanging = 8,
-			wmposMediaLocating = 9,
-			wmposMediaConnecting = 10,
-			wmposMediaLoading = 11,
-			wmposMediaOpening = 12,
-			wmposMediaOpen = 13,
-			wmposBeginCodecAcquisition = 14,
-			wmposEndCodecAcquisition = 15,
-			wmposBeginLicenseAcquisition = 16,
-			wmposEndLicenseAcquisition = 17,
-			wmposBeginIndividualization = 18,
-			wmposEndIndividualization = 19,
-			wmposMediaWaiting = 20,
-			wmposOpeningUnknownURL = 21,
+			Undefined = 0,
+			PlaylistChanging = 1,
+			PlaylistLocating = 2,
+			PlaylistConnecting = 3,
+			PlaylistLoading = 4,
+			PlaylistOpening = 5,
+			PlaylistOpenNoMedia = 6,
+			PlaylistChanged = 7,
+			MediaChanging = 8,
+			MediaLocating = 9,
+			MediaConnecting = 10,
+			MediaLoading = 11,
+			MediaOpening = 12,
+			MediaOpen = 13,
+			BeginCodecAcquisition = 14,
+			EndCodecAcquisition = 15,
+			BeginLicenseAcquisition = 16,
+			EndLicenseAcquisition = 17,
+			BeginIndividualization = 18,
+			EndIndividualization = 19,
+			MediaWaiting = 20,
+			OpeningUnknownURL = 21,
 		}
 		[AllowDuplicates]
 		public enum WMPPlayState : int32
 		{
-			wmppsUndefined = 0,
-			wmppsStopped = 1,
-			wmppsPaused = 2,
-			wmppsPlaying = 3,
-			wmppsScanForward = 4,
-			wmppsScanReverse = 5,
-			wmppsBuffering = 6,
-			wmppsWaiting = 7,
-			wmppsMediaEnded = 8,
-			wmppsTransitioning = 9,
-			wmppsReady = 10,
-			wmppsReconnecting = 11,
-			wmppsLast = 12,
+			Undefined = 0,
+			Stopped = 1,
+			Paused = 2,
+			Playing = 3,
+			ScanForward = 4,
+			ScanReverse = 5,
+			Buffering = 6,
+			Waiting = 7,
+			MediaEnded = 8,
+			Transitioning = 9,
+			Ready = 10,
+			Reconnecting = 11,
+			Last = 12,
 		}
 		[AllowDuplicates]
 		public enum WMPPlaylistChangeEventType : int32
 		{
-			wmplcUnknown = 0,
-			wmplcClear = 1,
-			wmplcInfoChange = 2,
-			wmplcMove = 3,
-			wmplcDelete = 4,
-			wmplcInsert = 5,
-			wmplcAppend = 6,
-			wmplcPrivate = 7,
-			wmplcNameChange = 8,
-			wmplcMorph = 9,
-			wmplcSort = 10,
-			wmplcLast = 11,
+			Unknown = 0,
+			Clear = 1,
+			InfoChange = 2,
+			Move = 3,
+			Delete = 4,
+			Insert = 5,
+			Append = 6,
+			Private = 7,
+			NameChange = 8,
+			Morph = 9,
+			Sort = 10,
+			Last = 11,
 		}
 		[AllowDuplicates]
 		public enum WMPSyncState : int32
 		{
-			wmpssUnknown = 0,
-			wmpssSynchronizing = 1,
-			wmpssStopped = 2,
-			wmpssEstimating = 3,
-			wmpssLast = 4,
+			Unknown = 0,
+			Synchronizing = 1,
+			Stopped = 2,
+			Estimating = 3,
+			Last = 4,
 		}
 		[AllowDuplicates]
 		public enum WMPDeviceStatus : int32
 		{
-			wmpdsUnknown = 0,
-			wmpdsPartnershipExists = 1,
-			wmpdsPartnershipDeclined = 2,
-			wmpdsPartnershipAnother = 3,
-			wmpdsManualDevice = 4,
-			wmpdsNewDevice = 5,
-			wmpdsLast = 6,
+			Unknown = 0,
+			PartnershipExists = 1,
+			PartnershipDeclined = 2,
+			PartnershipAnother = 3,
+			ManualDevice = 4,
+			NewDevice = 5,
+			Last = 6,
 		}
 		[AllowDuplicates]
 		public enum WMPRipState : int32
 		{
-			wmprsUnknown = 0,
-			wmprsRipping = 1,
-			wmprsStopped = 2,
+			Unknown = 0,
+			Ripping = 1,
+			Stopped = 2,
 		}
 		[AllowDuplicates]
 		public enum WMPBurnFormat : int32
 		{
-			wmpbfAudioCD = 0,
-			wmpbfDataCD = 1,
+			AudioCD = 0,
+			DataCD = 1,
 		}
 		[AllowDuplicates]
 		public enum WMPBurnState : int32
 		{
-			wmpbsUnknown = 0,
-			wmpbsBusy = 1,
-			wmpbsReady = 2,
-			wmpbsWaitingForDisc = 3,
-			wmpbsRefreshStatusPending = 4,
-			wmpbsPreparingToBurn = 5,
-			wmpbsBurning = 6,
-			wmpbsStopped = 7,
-			wmpbsErasing = 8,
-			wmpbsDownloading = 9,
+			Unknown = 0,
+			Busy = 1,
+			Ready = 2,
+			WaitingForDisc = 3,
+			RefreshStatusPending = 4,
+			PreparingToBurn = 5,
+			Burning = 6,
+			Stopped = 7,
+			Erasing = 8,
+			Downloading = 9,
 		}
 		[AllowDuplicates]
 		public enum WMPStringCollectionChangeEventType : int32
 		{
-			wmpsccetUnknown = 0,
-			wmpsccetInsert = 1,
-			wmpsccetChange = 2,
-			wmpsccetDelete = 3,
-			wmpsccetClear = 4,
-			wmpsccetBeginUpdates = 5,
-			wmpsccetEndUpdates = 6,
+			Unknown = 0,
+			Insert = 1,
+			Change = 2,
+			Delete = 3,
+			Clear = 4,
+			BeginUpdates = 5,
+			EndUpdates = 6,
 		}
 		[AllowDuplicates]
 		public enum WMPLibraryType : int32
 		{
-			wmpltUnknown = 0,
-			wmpltAll = 1,
-			wmpltLocal = 2,
-			wmpltRemote = 3,
-			wmpltDisc = 4,
-			wmpltPortableDevice = 5,
+			Unknown = 0,
+			All = 1,
+			Local = 2,
+			Remote = 3,
+			Disc = 4,
+			PortableDevice = 5,
 		}
 		[AllowDuplicates]
 		public enum WMPFolderScanState : int32
 		{
-			wmpfssUnknown = 0,
-			wmpfssScanning = 1,
-			wmpfssUpdating = 2,
-			wmpfssStopped = 3,
+			Unknown = 0,
+			Scanning = 1,
+			Updating = 2,
+			Stopped = 3,
 		}
 		[AllowDuplicates]
 		public enum WMPServices_StreamState : int32
 		{
-			WMPServices_StreamState_Stop = 0,
-			WMPServices_StreamState_Pause = 1,
-			WMPServices_StreamState_Play = 2,
+			Stop = 0,
+			Pause = 1,
+			Play = 2,
 		}
 		[AllowDuplicates]
 		public enum WMPPlugin_Caps : int32
@@ -838,105 +838,105 @@ namespace Win32
 		[AllowDuplicates]
 		public enum FEEDS_BACKGROUNDSYNC_ACTION : int32
 		{
-			FBSA_DISABLE = 0,
-			FBSA_ENABLE = 1,
-			FBSA_RUNNOW = 2,
+			DISABLE = 0,
+			ENABLE = 1,
+			RUNNOW = 2,
 		}
 		[AllowDuplicates]
 		public enum FEEDS_BACKGROUNDSYNC_STATUS : int32
 		{
-			FBSS_DISABLED = 0,
-			FBSS_ENABLED = 1,
+			DISABLED = 0,
+			ENABLED = 1,
 		}
 		[AllowDuplicates]
 		public enum FEEDS_EVENTS_SCOPE : int32
 		{
-			FES_ALL = 0,
-			FES_SELF_ONLY = 1,
-			FES_SELF_AND_CHILDREN_ONLY = 2,
+			ALL = 0,
+			SELF_ONLY = 1,
+			SELF_AND_CHILDREN_ONLY = 2,
 		}
 		[AllowDuplicates]
 		public enum FEEDS_EVENTS_MASK : int32
 		{
-			FEM_FOLDEREVENTS = 1,
-			FEM_FEEDEVENTS = 2,
+			OLDEREVENTS = 1,
+			EEDEVENTS = 2,
 		}
 		[AllowDuplicates]
 		public enum FEEDS_XML_SORT_PROPERTY : int32
 		{
-			FXSP_NONE = 0,
-			FXSP_PUBDATE = 1,
-			FXSP_DOWNLOADTIME = 2,
+			NONE = 0,
+			PUBDATE = 1,
+			DOWNLOADTIME = 2,
 		}
 		[AllowDuplicates]
 		public enum FEEDS_XML_SORT_ORDER : int32
 		{
-			FXSO_NONE = 0,
-			FXSO_ASCENDING = 1,
-			FXSO_DESCENDING = 2,
+			NONE = 0,
+			ASCENDING = 1,
+			DESCENDING = 2,
 		}
 		[AllowDuplicates]
 		public enum FEEDS_XML_FILTER_FLAGS : int32
 		{
-			FXFF_ALL = 0,
-			FXFF_UNREAD = 1,
-			FXFF_READ = 2,
+			ALL = 0,
+			UNREAD = 1,
+			READ = 2,
 		}
 		[AllowDuplicates]
 		public enum FEEDS_XML_INCLUDE_FLAGS : int32
 		{
-			FXIF_NONE = 0,
-			FXIF_CF_EXTENSIONS = 1,
+			NONE = 0,
+			CF_EXTENSIONS = 1,
 		}
 		[AllowDuplicates]
 		public enum FEEDS_DOWNLOAD_STATUS : int32
 		{
-			FDS_NONE = 0,
-			FDS_PENDING = 1,
-			FDS_DOWNLOADING = 2,
-			FDS_DOWNLOADED = 3,
-			FDS_DOWNLOAD_FAILED = 4,
+			NONE = 0,
+			PENDING = 1,
+			DOWNLOADING = 2,
+			DOWNLOADED = 3,
+			DOWNLOAD_FAILED = 4,
 		}
 		[AllowDuplicates]
 		public enum FEEDS_SYNC_SETTING : int32
 		{
-			FSS_DEFAULT = 0,
-			FSS_INTERVAL = 1,
-			FSS_MANUAL = 2,
-			FSS_SUGGESTED = 3,
+			DEFAULT = 0,
+			INTERVAL = 1,
+			MANUAL = 2,
+			SUGGESTED = 3,
 		}
 		[AllowDuplicates]
 		public enum FEEDS_DOWNLOAD_ERROR : int32
 		{
-			FDE_NONE = 0,
-			FDE_DOWNLOAD_FAILED = 1,
-			FDE_INVALID_FEED_FORMAT = 2,
-			FDE_NORMALIZATION_FAILED = 3,
-			FDE_PERSISTENCE_FAILED = 4,
-			FDE_DOWNLOAD_BLOCKED = 5,
-			FDE_CANCELED = 6,
-			FDE_UNSUPPORTED_AUTH = 7,
-			FDE_BACKGROUND_DOWNLOAD_DISABLED = 8,
-			FDE_NOT_EXIST = 9,
-			FDE_UNSUPPORTED_MSXML = 10,
-			FDE_UNSUPPORTED_DTD = 11,
-			FDE_DOWNLOAD_SIZE_LIMIT_EXCEEDED = 12,
-			FDE_ACCESS_DENIED = 13,
-			FDE_AUTH_FAILED = 14,
-			FDE_INVALID_AUTH = 15,
+			NONE = 0,
+			DOWNLOAD_FAILED = 1,
+			INVALID_FEED_FORMAT = 2,
+			NORMALIZATION_FAILED = 3,
+			PERSISTENCE_FAILED = 4,
+			DOWNLOAD_BLOCKED = 5,
+			CANCELED = 6,
+			UNSUPPORTED_AUTH = 7,
+			BACKGROUND_DOWNLOAD_DISABLED = 8,
+			NOT_EXIST = 9,
+			UNSUPPORTED_MSXML = 10,
+			UNSUPPORTED_DTD = 11,
+			DOWNLOAD_SIZE_LIMIT_EXCEEDED = 12,
+			ACCESS_DENIED = 13,
+			AUTH_FAILED = 14,
+			INVALID_AUTH = 15,
 		}
 		[AllowDuplicates]
 		public enum FEEDS_EVENTS_ITEM_COUNT_FLAGS : int32
 		{
-			FEICF_READ_ITEM_COUNT_CHANGED = 1,
-			FEICF_UNREAD_ITEM_COUNT_CHANGED = 2,
+			READ_ITEM_COUNT_CHANGED = 1,
+			UNREAD_ITEM_COUNT_CHANGED = 2,
 		}
 		[AllowDuplicates]
 		public enum FEEDS_ERROR_CODE : int32
 		{
-			FEC_E_ERRORBASE = -1073479168,
-			FEC_E_INVALIDMSXMLPROPERTY = -1073479168,
-			FEC_E_DOWNLOADSIZELIMITEXCEEDED = -1073479167,
+			ERRORBASE = -1073479168,
+			INVALIDMSXMLPROPERTY = -1073479168,
+			DOWNLOADSIZELIMITEXCEEDED = -1073479167,
 		}
 		[AllowDuplicates]
 		public enum PlayerState : int32
@@ -948,74 +948,74 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WMPPartnerNotification : int32
 		{
-			wmpsnBackgroundProcessingBegin = 1,
-			wmpsnBackgroundProcessingEnd = 2,
-			wmpsnCatalogDownloadFailure = 3,
-			wmpsnCatalogDownloadComplete = 4,
+			BackgroundProcessingBegin = 1,
+			BackgroundProcessingEnd = 2,
+			CatalogDownloadFailure = 3,
+			CatalogDownloadComplete = 4,
 		}
 		[AllowDuplicates]
 		public enum WMPCallbackNotification : int32
 		{
-			wmpcnLoginStateChange = 1,
-			wmpcnAuthResult = 2,
-			wmpcnLicenseUpdated = 3,
-			wmpcnNewCatalogAvailable = 4,
-			wmpcnNewPluginAvailable = 5,
-			wmpcnDisableRadioSkipping = 6,
+			LoginStateChange = 1,
+			AuthResult = 2,
+			LicenseUpdated = 3,
+			NewCatalogAvailable = 4,
+			NewPluginAvailable = 5,
+			DisableRadioSkipping = 6,
 		}
 		[AllowDuplicates]
 		public enum WMPTaskType : int32
 		{
-			wmpttBrowse = 1,
-			wmpttSync = 2,
-			wmpttBurn = 3,
-			wmpttCurrent = 4,
+			Browse = 1,
+			Sync = 2,
+			Burn = 3,
+			Current = 4,
 		}
 		[AllowDuplicates]
 		public enum WMPTransactionType : int32
 		{
-			wmpttNoTransaction = 0,
-			wmpttDownload = 1,
-			wmpttBuy = 2,
+			NoTransaction = 0,
+			Download = 1,
+			Buy = 2,
 		}
 		[AllowDuplicates]
 		public enum WMPTemplateSize : int32
 		{
-			wmptsSmall = 0,
-			wmptsMedium = 1,
-			wmptsLarge = 2,
+			Small = 0,
+			Medium = 1,
+			Large = 2,
 		}
 		[AllowDuplicates]
 		public enum WMPStreamingType : int32
 		{
-			wmpstUnknown = 0,
-			wmpstMusic = 1,
-			wmpstVideo = 2,
-			wmpstRadio = 3,
+			Unknown = 0,
+			Music = 1,
+			Video = 2,
+			Radio = 3,
 		}
 		[AllowDuplicates]
 		public enum WMPAccountType : int32
 		{
-			wmpatBuyOnly = 1,
-			wmpatSubscription = 2,
-			wmpatJanus = 3,
+			BuyOnly = 1,
+			Subscription = 2,
+			Janus = 3,
 		}
 		[AllowDuplicates]
 		public enum WMPSubscriptionServiceEvent : int32
 		{
-			wmpsseCurrentBegin = 1,
-			wmpsseCurrentEnd = 2,
-			wmpsseFullBegin = 3,
-			wmpsseFullEnd = 4,
+			CurrentBegin = 1,
+			CurrentEnd = 2,
+			FullBegin = 3,
+			FullEnd = 4,
 		}
 		[AllowDuplicates]
 		public enum WMPSubscriptionDownloadState : int32
 		{
-			wmpsdlsDownloading = 0,
-			wmpsdlsPaused = 1,
-			wmpsdlsProcessing = 2,
-			wmpsdlsCompleted = 3,
-			wmpsdlsCancelled = 4,
+			Downloading = 0,
+			Paused = 1,
+			Processing = 2,
+			Completed = 3,
+			Cancelled = 4,
 		}
 		
 		// --- Structs ---

@@ -108,51 +108,51 @@ namespace Win32
 		[AllowDuplicates]
 		public enum HTTP_RECEIVE_HTTP_REQUEST_FLAGS : uint32
 		{
-			HTTP_RECEIVE_REQUEST_FLAG_COPY_BODY = 1,
-			HTTP_RECEIVE_REQUEST_FLAG_FLUSH_BODY = 2,
+			COPY_BODY = 1,
+			FLUSH_BODY = 2,
 		}
 		[AllowDuplicates]
 		public enum HTTP_INITIALIZE : uint32
 		{
-			HTTP_INITIALIZE_CONFIG = 2,
-			HTTP_INITIALIZE_SERVER = 1,
+			CONFIG = 2,
+			SERVER = 1,
 		}
 		[AllowDuplicates]
 		public enum HTTP_SERVER_PROPERTY : int32
 		{
-			HttpServerAuthenticationProperty = 0,
-			HttpServerLoggingProperty = 1,
-			HttpServerQosProperty = 2,
-			HttpServerTimeoutsProperty = 3,
-			HttpServerQueueLengthProperty = 4,
-			HttpServerStateProperty = 5,
-			HttpServer503VerbosityProperty = 6,
-			HttpServerBindingProperty = 7,
-			HttpServerExtendedAuthenticationProperty = 8,
-			HttpServerListenEndpointProperty = 9,
-			HttpServerChannelBindProperty = 10,
-			HttpServerProtectionLevelProperty = 11,
-			HttpServerDelegationProperty = 16,
+			AuthenticationProperty = 0,
+			LoggingProperty = 1,
+			QosProperty = 2,
+			TimeoutsProperty = 3,
+			QueueLengthProperty = 4,
+			StateProperty = 5,
+			_503VerbosityProperty = 6,
+			BindingProperty = 7,
+			ExtendedAuthenticationProperty = 8,
+			ListenEndpointProperty = 9,
+			ChannelBindProperty = 10,
+			ProtectionLevelProperty = 11,
+			DelegationProperty = 16,
 		}
 		[AllowDuplicates]
 		public enum HTTP_ENABLED_STATE : int32
 		{
-			HttpEnabledStateActive = 0,
-			HttpEnabledStateInactive = 1,
+			Active = 0,
+			Inactive = 1,
 		}
 		[AllowDuplicates]
 		public enum HTTP_503_RESPONSE_VERBOSITY : int32
 		{
-			Http503ResponseVerbosityBasic = 0,
-			Http503ResponseVerbosityLimited = 1,
-			Http503ResponseVerbosityFull = 2,
+			Basic = 0,
+			Limited = 1,
+			Full = 2,
 		}
 		[AllowDuplicates]
 		public enum HTTP_QOS_SETTING_TYPE : int32
 		{
-			HttpQosSettingTypeBandwidth = 0,
-			HttpQosSettingTypeConnectionLimit = 1,
-			HttpQosSettingTypeFlowRate = 2,
+			Bandwidth = 0,
+			ConnectionLimit = 1,
+			FlowRate = 2,
 		}
 		[AllowDuplicates]
 		public enum HTTP_SERVICE_CONFIG_TIMEOUT_KEY : int32
@@ -163,136 +163,136 @@ namespace Win32
 		[AllowDuplicates]
 		public enum HTTP_SERVICE_CONFIG_SETTING_KEY : int32
 		{
-			HttpNone = 0,
-			HttpTlsThrottle = 1,
+			None = 0,
+			TlsThrottle = 1,
 		}
 		[AllowDuplicates]
 		public enum HTTP_SERVICE_BINDING_TYPE : int32
 		{
-			HttpServiceBindingTypeNone = 0,
-			HttpServiceBindingTypeW = 1,
-			HttpServiceBindingTypeA = 2,
+			None = 0,
+			W = 1,
+			A = 2,
 		}
 		[AllowDuplicates]
 		public enum HTTP_AUTHENTICATION_HARDENING_LEVELS : int32
 		{
-			HttpAuthenticationHardeningLegacy = 0,
-			HttpAuthenticationHardeningMedium = 1,
-			HttpAuthenticationHardeningStrict = 2,
+			Legacy = 0,
+			Medium = 1,
+			Strict = 2,
 		}
 		[AllowDuplicates]
 		public enum HTTP_LOGGING_TYPE : int32
 		{
-			HttpLoggingTypeW3C = 0,
-			HttpLoggingTypeIIS = 1,
-			HttpLoggingTypeNCSA = 2,
-			HttpLoggingTypeRaw = 3,
+			W3C = 0,
+			IIS = 1,
+			NCSA = 2,
+			Raw = 3,
 		}
 		[AllowDuplicates]
 		public enum HTTP_LOGGING_ROLLOVER_TYPE : int32
 		{
-			HttpLoggingRolloverSize = 0,
-			HttpLoggingRolloverDaily = 1,
-			HttpLoggingRolloverWeekly = 2,
-			HttpLoggingRolloverMonthly = 3,
-			HttpLoggingRolloverHourly = 4,
+			Size = 0,
+			Daily = 1,
+			Weekly = 2,
+			Monthly = 3,
+			Hourly = 4,
 		}
 		[AllowDuplicates]
 		public enum HTTP_PROTECTION_LEVEL_TYPE : int32
 		{
-			HttpProtectionLevelUnrestricted = 0,
-			HttpProtectionLevelEdgeRestricted = 1,
-			HttpProtectionLevelRestricted = 2,
+			Unrestricted = 0,
+			EdgeRestricted = 1,
+			Restricted = 2,
 		}
 		[AllowDuplicates]
 		public enum HTTP_SCHEME : int32
 		{
-			HttpSchemeHttp = 0,
-			HttpSchemeHttps = 1,
-			HttpSchemeMaximum = 2,
+			Http = 0,
+			Https = 1,
+			Maximum = 2,
 		}
 		[AllowDuplicates]
 		public enum HTTP_VERB : int32
 		{
-			HttpVerbUnparsed = 0,
-			HttpVerbUnknown = 1,
-			HttpVerbInvalid = 2,
-			HttpVerbOPTIONS = 3,
-			HttpVerbGET = 4,
-			HttpVerbHEAD = 5,
-			HttpVerbPOST = 6,
-			HttpVerbPUT = 7,
-			HttpVerbDELETE = 8,
-			HttpVerbTRACE = 9,
-			HttpVerbCONNECT = 10,
-			HttpVerbTRACK = 11,
-			HttpVerbMOVE = 12,
-			HttpVerbCOPY = 13,
-			HttpVerbPROPFIND = 14,
-			HttpVerbPROPPATCH = 15,
-			HttpVerbMKCOL = 16,
-			HttpVerbLOCK = 17,
-			HttpVerbUNLOCK = 18,
-			HttpVerbSEARCH = 19,
-			HttpVerbMaximum = 20,
+			Unparsed = 0,
+			Unknown = 1,
+			Invalid = 2,
+			OPTIONS = 3,
+			GET = 4,
+			HEAD = 5,
+			POST = 6,
+			PUT = 7,
+			DELETE = 8,
+			TRACE = 9,
+			CONNECT = 10,
+			TRACK = 11,
+			MOVE = 12,
+			COPY = 13,
+			PROPFIND = 14,
+			PROPPATCH = 15,
+			MKCOL = 16,
+			LOCK = 17,
+			UNLOCK = 18,
+			SEARCH = 19,
+			Maximum = 20,
 		}
 		[AllowDuplicates]
 		public enum HTTP_HEADER_ID : int32
 		{
-			HttpHeaderCacheControl = 0,
-			HttpHeaderConnection = 1,
-			HttpHeaderDate = 2,
-			HttpHeaderKeepAlive = 3,
-			HttpHeaderPragma = 4,
-			HttpHeaderTrailer = 5,
-			HttpHeaderTransferEncoding = 6,
-			HttpHeaderUpgrade = 7,
-			HttpHeaderVia = 8,
-			HttpHeaderWarning = 9,
-			HttpHeaderAllow = 10,
-			HttpHeaderContentLength = 11,
-			HttpHeaderContentType = 12,
-			HttpHeaderContentEncoding = 13,
-			HttpHeaderContentLanguage = 14,
-			HttpHeaderContentLocation = 15,
-			HttpHeaderContentMd5 = 16,
-			HttpHeaderContentRange = 17,
-			HttpHeaderExpires = 18,
-			HttpHeaderLastModified = 19,
-			HttpHeaderAccept = 20,
-			HttpHeaderAcceptCharset = 21,
-			HttpHeaderAcceptEncoding = 22,
-			HttpHeaderAcceptLanguage = 23,
-			HttpHeaderAuthorization = 24,
-			HttpHeaderCookie = 25,
-			HttpHeaderExpect = 26,
-			HttpHeaderFrom = 27,
-			HttpHeaderHost = 28,
-			HttpHeaderIfMatch = 29,
-			HttpHeaderIfModifiedSince = 30,
-			HttpHeaderIfNoneMatch = 31,
-			HttpHeaderIfRange = 32,
-			HttpHeaderIfUnmodifiedSince = 33,
-			HttpHeaderMaxForwards = 34,
-			HttpHeaderProxyAuthorization = 35,
-			HttpHeaderReferer = 36,
-			HttpHeaderRange = 37,
-			HttpHeaderTe = 38,
-			HttpHeaderTranslate = 39,
-			HttpHeaderUserAgent = 40,
-			HttpHeaderRequestMaximum = 41,
-			HttpHeaderAcceptRanges = 20,
-			HttpHeaderAge = 21,
-			HttpHeaderEtag = 22,
-			HttpHeaderLocation = 23,
-			HttpHeaderProxyAuthenticate = 24,
-			HttpHeaderRetryAfter = 25,
-			HttpHeaderServer = 26,
-			HttpHeaderSetCookie = 27,
-			HttpHeaderVary = 28,
-			HttpHeaderWwwAuthenticate = 29,
-			HttpHeaderResponseMaximum = 30,
-			HttpHeaderMaximum = 41,
+			CacheControl = 0,
+			Connection = 1,
+			Date = 2,
+			KeepAlive = 3,
+			Pragma = 4,
+			Trailer = 5,
+			TransferEncoding = 6,
+			Upgrade = 7,
+			Via = 8,
+			Warning = 9,
+			Allow = 10,
+			ContentLength = 11,
+			ContentType = 12,
+			ContentEncoding = 13,
+			ContentLanguage = 14,
+			ContentLocation = 15,
+			ContentMd5 = 16,
+			ContentRange = 17,
+			Expires = 18,
+			LastModified = 19,
+			Accept = 20,
+			AcceptCharset = 21,
+			AcceptEncoding = 22,
+			AcceptLanguage = 23,
+			Authorization = 24,
+			Cookie = 25,
+			Expect = 26,
+			From = 27,
+			Host = 28,
+			IfMatch = 29,
+			IfModifiedSince = 30,
+			IfNoneMatch = 31,
+			IfRange = 32,
+			IfUnmodifiedSince = 33,
+			MaxForwards = 34,
+			ProxyAuthorization = 35,
+			Referer = 36,
+			Range = 37,
+			Te = 38,
+			Translate = 39,
+			UserAgent = 40,
+			RequestMaximum = 41,
+			AcceptRanges = 20,
+			Age = 21,
+			Etag = 22,
+			Location = 23,
+			ProxyAuthenticate = 24,
+			RetryAfter = 25,
+			Server = 26,
+			SetCookie = 27,
+			Vary = 28,
+			WwwAuthenticate = 29,
+			ResponseMaximum = 30,
+			Maximum = 41,
 		}
 		[AllowDuplicates]
 		public enum HTTP_LOG_DATA_TYPE : int32
@@ -302,163 +302,163 @@ namespace Win32
 		[AllowDuplicates]
 		public enum HTTP_DATA_CHUNK_TYPE : int32
 		{
-			HttpDataChunkFromMemory = 0,
-			HttpDataChunkFromFileHandle = 1,
-			HttpDataChunkFromFragmentCache = 2,
-			HttpDataChunkFromFragmentCacheEx = 3,
-			HttpDataChunkTrailers = 4,
-			HttpDataChunkMaximum = 5,
+			FromMemory = 0,
+			FromFileHandle = 1,
+			FromFragmentCache = 2,
+			FromFragmentCacheEx = 3,
+			Trailers = 4,
+			Maximum = 5,
 		}
 		[AllowDuplicates]
 		public enum HTTP_DELEGATE_REQUEST_PROPERTY_ID : int32
 		{
-			DelegateRequestReservedProperty = 0,
-			DelegateRequestDelegateUrlProperty = 1,
+			ReservedProperty = 0,
+			DelegateUrlProperty = 1,
 		}
 		[AllowDuplicates]
 		public enum HTTP_CREATE_REQUEST_QUEUE_PROPERTY_ID : int32
 		{
-			CreateRequestQueueExternalIdProperty = 1,
-			CreateRequestQueueMax = 2,
+			ExternalIdProperty = 1,
+			Max = 2,
 		}
 		[AllowDuplicates]
 		public enum HTTP_AUTH_STATUS : int32
 		{
-			HttpAuthStatusSuccess = 0,
-			HttpAuthStatusNotAuthenticated = 1,
-			HttpAuthStatusFailure = 2,
+			Success = 0,
+			NotAuthenticated = 1,
+			Failure = 2,
 		}
 		[AllowDuplicates]
 		public enum HTTP_REQUEST_AUTH_TYPE : int32
 		{
-			HttpRequestAuthTypeNone = 0,
-			HttpRequestAuthTypeBasic = 1,
-			HttpRequestAuthTypeDigest = 2,
-			HttpRequestAuthTypeNTLM = 3,
-			HttpRequestAuthTypeNegotiate = 4,
-			HttpRequestAuthTypeKerberos = 5,
+			None = 0,
+			Basic = 1,
+			Digest = 2,
+			NTLM = 3,
+			Negotiate = 4,
+			Kerberos = 5,
 		}
 		[AllowDuplicates]
 		public enum HTTP_REQUEST_SIZING_TYPE : int32
 		{
-			HttpRequestSizingTypeTlsHandshakeLeg1ClientData = 0,
-			HttpRequestSizingTypeTlsHandshakeLeg1ServerData = 1,
-			HttpRequestSizingTypeTlsHandshakeLeg2ClientData = 2,
-			HttpRequestSizingTypeTlsHandshakeLeg2ServerData = 3,
-			HttpRequestSizingTypeHeaders = 4,
-			HttpRequestSizingTypeMax = 5,
+			TlsHandshakeLeg1ClientData = 0,
+			TlsHandshakeLeg1ServerData = 1,
+			TlsHandshakeLeg2ClientData = 2,
+			TlsHandshakeLeg2ServerData = 3,
+			Headers = 4,
+			Max = 5,
 		}
 		[AllowDuplicates]
 		public enum HTTP_REQUEST_TIMING_TYPE : int32
 		{
-			HttpRequestTimingTypeConnectionStart = 0,
-			HttpRequestTimingTypeDataStart = 1,
-			HttpRequestTimingTypeTlsCertificateLoadStart = 2,
-			HttpRequestTimingTypeTlsCertificateLoadEnd = 3,
-			HttpRequestTimingTypeTlsHandshakeLeg1Start = 4,
-			HttpRequestTimingTypeTlsHandshakeLeg1End = 5,
-			HttpRequestTimingTypeTlsHandshakeLeg2Start = 6,
-			HttpRequestTimingTypeTlsHandshakeLeg2End = 7,
-			HttpRequestTimingTypeTlsAttributesQueryStart = 8,
-			HttpRequestTimingTypeTlsAttributesQueryEnd = 9,
-			HttpRequestTimingTypeTlsClientCertQueryStart = 10,
-			HttpRequestTimingTypeTlsClientCertQueryEnd = 11,
-			HttpRequestTimingTypeHttp2StreamStart = 12,
-			HttpRequestTimingTypeHttp2HeaderDecodeStart = 13,
-			HttpRequestTimingTypeHttp2HeaderDecodeEnd = 14,
-			HttpRequestTimingTypeRequestHeaderParseStart = 15,
-			HttpRequestTimingTypeRequestHeaderParseEnd = 16,
-			HttpRequestTimingTypeRequestRoutingStart = 17,
-			HttpRequestTimingTypeRequestRoutingEnd = 18,
-			HttpRequestTimingTypeRequestQueuedForInspection = 19,
-			HttpRequestTimingTypeRequestDeliveredForInspection = 20,
-			HttpRequestTimingTypeRequestReturnedAfterInspection = 21,
-			HttpRequestTimingTypeRequestQueuedForDelegation = 22,
-			HttpRequestTimingTypeRequestDeliveredForDelegation = 23,
-			HttpRequestTimingTypeRequestReturnedAfterDelegation = 24,
-			HttpRequestTimingTypeRequestQueuedForIO = 25,
-			HttpRequestTimingTypeRequestDeliveredForIO = 26,
-			HttpRequestTimingTypeHttp3StreamStart = 27,
-			HttpRequestTimingTypeHttp3HeaderDecodeStart = 28,
-			HttpRequestTimingTypeHttp3HeaderDecodeEnd = 29,
-			HttpRequestTimingTypeMax = 30,
+			ConnectionStart = 0,
+			DataStart = 1,
+			TlsCertificateLoadStart = 2,
+			TlsCertificateLoadEnd = 3,
+			TlsHandshakeLeg1Start = 4,
+			TlsHandshakeLeg1End = 5,
+			TlsHandshakeLeg2Start = 6,
+			TlsHandshakeLeg2End = 7,
+			TlsAttributesQueryStart = 8,
+			TlsAttributesQueryEnd = 9,
+			TlsClientCertQueryStart = 10,
+			TlsClientCertQueryEnd = 11,
+			Http2StreamStart = 12,
+			Http2HeaderDecodeStart = 13,
+			Http2HeaderDecodeEnd = 14,
+			RequestHeaderParseStart = 15,
+			RequestHeaderParseEnd = 16,
+			RequestRoutingStart = 17,
+			RequestRoutingEnd = 18,
+			RequestQueuedForInspection = 19,
+			RequestDeliveredForInspection = 20,
+			RequestReturnedAfterInspection = 21,
+			RequestQueuedForDelegation = 22,
+			RequestDeliveredForDelegation = 23,
+			RequestReturnedAfterDelegation = 24,
+			RequestQueuedForIO = 25,
+			RequestDeliveredForIO = 26,
+			Http3StreamStart = 27,
+			Http3HeaderDecodeStart = 28,
+			Http3HeaderDecodeEnd = 29,
+			Max = 30,
 		}
 		[AllowDuplicates]
 		public enum HTTP_REQUEST_INFO_TYPE : int32
 		{
-			HttpRequestInfoTypeAuth = 0,
-			HttpRequestInfoTypeChannelBind = 1,
-			HttpRequestInfoTypeSslProtocol = 2,
-			HttpRequestInfoTypeSslTokenBindingDraft = 3,
-			HttpRequestInfoTypeSslTokenBinding = 4,
-			HttpRequestInfoTypeRequestTiming = 5,
-			HttpRequestInfoTypeTcpInfoV0 = 6,
-			HttpRequestInfoTypeRequestSizing = 7,
-			HttpRequestInfoTypeQuicStats = 8,
-			HttpRequestInfoTypeTcpInfoV1 = 9,
+			Auth = 0,
+			ChannelBind = 1,
+			SslProtocol = 2,
+			SslTokenBindingDraft = 3,
+			SslTokenBinding = 4,
+			RequestTiming = 5,
+			TcpInfoV0 = 6,
+			RequestSizing = 7,
+			QuicStats = 8,
+			TcpInfoV1 = 9,
 		}
 		[AllowDuplicates]
 		public enum HTTP_RESPONSE_INFO_TYPE : int32
 		{
-			HttpResponseInfoTypeMultipleKnownHeaders = 0,
-			HttpResponseInfoTypeAuthenticationProperty = 1,
-			HttpResponseInfoTypeQoSProperty = 2,
-			HttpResponseInfoTypeChannelBind = 3,
+			MultipleKnownHeaders = 0,
+			AuthenticationProperty = 1,
+			QoSProperty = 2,
+			ChannelBind = 3,
 		}
 		[AllowDuplicates]
 		public enum HTTP_CACHE_POLICY_TYPE : int32
 		{
-			HttpCachePolicyNocache = 0,
-			HttpCachePolicyUserInvalidates = 1,
-			HttpCachePolicyTimeToLive = 2,
-			HttpCachePolicyMaximum = 3,
+			Nocache = 0,
+			UserInvalidates = 1,
+			TimeToLive = 2,
+			Maximum = 3,
 		}
 		[AllowDuplicates]
 		public enum HTTP_SERVICE_CONFIG_ID : int32
 		{
-			HttpServiceConfigIPListenList = 0,
-			HttpServiceConfigSSLCertInfo = 1,
-			HttpServiceConfigUrlAclInfo = 2,
-			HttpServiceConfigTimeout = 3,
-			HttpServiceConfigCache = 4,
-			HttpServiceConfigSslSniCertInfo = 5,
-			HttpServiceConfigSslCcsCertInfo = 6,
-			HttpServiceConfigSetting = 7,
-			HttpServiceConfigSslCertInfoEx = 8,
-			HttpServiceConfigSslSniCertInfoEx = 9,
-			HttpServiceConfigSslCcsCertInfoEx = 10,
-			HttpServiceConfigSslScopedCcsCertInfo = 11,
-			HttpServiceConfigSslScopedCcsCertInfoEx = 12,
-			HttpServiceConfigMax = 13,
+			IPListenList = 0,
+			SSLCertInfo = 1,
+			UrlAclInfo = 2,
+			Timeout = 3,
+			Cache = 4,
+			SslSniCertInfo = 5,
+			SslCcsCertInfo = 6,
+			Setting = 7,
+			SslCertInfoEx = 8,
+			SslSniCertInfoEx = 9,
+			SslCcsCertInfoEx = 10,
+			SslScopedCcsCertInfo = 11,
+			SslScopedCcsCertInfoEx = 12,
+			Max = 13,
 		}
 		[AllowDuplicates]
 		public enum HTTP_SERVICE_CONFIG_QUERY_TYPE : int32
 		{
-			HttpServiceConfigQueryExact = 0,
-			HttpServiceConfigQueryNext = 1,
-			HttpServiceConfigQueryMax = 2,
+			Exact = 0,
+			Next = 1,
+			Max = 2,
 		}
 		[AllowDuplicates]
 		public enum HTTP_SSL_SERVICE_CONFIG_EX_PARAM_TYPE : int32
 		{
-			ExParamTypeHttp2Window = 0,
-			ExParamTypeHttp2SettingsLimits = 1,
-			ExParamTypeHttpPerformance = 2,
-			ExParamTypeTlsRestrictions = 3,
-			ExParamTypeErrorHeaders = 4,
-			ExParamTypeTlsSessionTicketKeys = 5,
-			ExParamTypeMax = 6,
+			Http2Window = 0,
+			Http2SettingsLimits = 1,
+			HttpPerformance = 2,
+			TlsRestrictions = 3,
+			ErrorHeaders = 4,
+			TlsSessionTicketKeys = 5,
+			Max = 6,
 		}
 		[AllowDuplicates]
 		public enum HTTP_PERFORMANCE_PARAM_TYPE : int32
 		{
-			PerformanceParamSendBufferingFlags = 0,
-			PerformanceParamAggressiveICW = 1,
-			PerformanceParamMaxSendBufferSize = 2,
-			PerformanceParamMaxConcurrentClientStreams = 3,
-			PerformanceParamMaxReceiveBufferSize = 4,
-			PerformanceParamDecryptOnSspiThread = 5,
-			PerformanceParamMax = 6,
+			SendBufferingFlags = 0,
+			AggressiveICW = 1,
+			MaxSendBufferSize = 2,
+			MaxConcurrentClientStreams = 3,
+			MaxReceiveBufferSize = 4,
+			DecryptOnSspiThread = 5,
+			Max = 6,
 		}
 		[AllowDuplicates]
 		public enum HTTP_SERVICE_CONFIG_CACHE_KEY : int32
@@ -469,24 +469,24 @@ namespace Win32
 		[AllowDuplicates]
 		public enum HTTP_REQUEST_PROPERTY : int32
 		{
-			HttpRequestPropertyIsb = 0,
-			HttpRequestPropertyTcpInfoV0 = 1,
-			HttpRequestPropertyQuicStats = 2,
-			HttpRequestPropertyTcpInfoV1 = 3,
-			HttpRequestPropertySni = 4,
-			HttpRequestPropertyStreamError = 5,
-			HttpRequestPropertyWskApiTimings = 6,
-			HttpRequestPropertyQuicApiTimings = 7,
+			Isb = 0,
+			TcpInfoV0 = 1,
+			QuicStats = 2,
+			TcpInfoV1 = 3,
+			Sni = 4,
+			StreamError = 5,
+			WskApiTimings = 6,
+			QuicApiTimings = 7,
 		}
 		[AllowDuplicates]
 		public enum HTTP_FEATURE_ID : int32
 		{
-			HttpFeatureUnknown = 0,
-			HttpFeatureResponseTrailers = 1,
-			HttpFeatureApiTimings = 2,
-			HttpFeatureDelegateEx = 3,
-			HttpFeatureHttp3 = 4,
-			HttpFeaturemax = -1,
+			Unknown = 0,
+			ResponseTrailers = 1,
+			ApiTimings = 2,
+			DelegateEx = 3,
+			Http3 = 4,
+			max = -1,
 		}
 		
 		// --- Structs ---

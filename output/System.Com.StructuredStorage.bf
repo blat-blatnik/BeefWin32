@@ -103,52 +103,52 @@ namespace Win32
 		[AllowDuplicates]
 		public enum PROPSPEC_KIND : uint32
 		{
-			PRSPEC_LPWSTR = 0,
-			PRSPEC_PROPID = 1,
+			LPWSTR = 0,
+			PROPID = 1,
 		}
 		[AllowDuplicates]
 		public enum STGC : int32
 		{
-			STGC_DEFAULT = 0,
-			STGC_OVERWRITE = 1,
-			STGC_ONLYIFCURRENT = 2,
-			STGC_DANGEROUSLYCOMMITMERELYTODISKCACHE = 4,
-			STGC_CONSOLIDATE = 8,
+			DEFAULT = 0,
+			OVERWRITE = 1,
+			ONLYIFCURRENT = 2,
+			DANGEROUSLYCOMMITMERELYTODISKCACHE = 4,
+			CONSOLIDATE = 8,
 		}
 		[AllowDuplicates]
 		public enum STGMOVE : int32
 		{
-			STGMOVE_MOVE = 0,
-			STGMOVE_COPY = 1,
-			STGMOVE_SHALLOWCOPY = 2,
+			MOVE = 0,
+			COPY = 1,
+			SHALLOWCOPY = 2,
 		}
 		[AllowDuplicates]
 		public enum STATFLAG : int32
 		{
-			STATFLAG_DEFAULT = 0,
-			STATFLAG_NONAME = 1,
-			STATFLAG_NOOPEN = 2,
+			DEFAULT = 0,
+			NONAME = 1,
+			NOOPEN = 2,
 		}
 		[AllowDuplicates]
 		public enum LOCKTYPE : int32
 		{
-			LOCK_WRITE = 1,
-			LOCK_EXCLUSIVE = 2,
-			LOCK_ONLYONCE = 4,
+			WRITE = 1,
+			EXCLUSIVE = 2,
+			ONLYONCE = 4,
 		}
 		[AllowDuplicates]
 		public enum PIDMSI_STATUS_VALUE : int32
 		{
-			PIDMSI_STATUS_NORMAL = 0,
-			PIDMSI_STATUS_NEW = 1,
-			PIDMSI_STATUS_PRELIM = 2,
-			PIDMSI_STATUS_DRAFT = 3,
-			PIDMSI_STATUS_INPROGRESS = 4,
-			PIDMSI_STATUS_EDIT = 5,
-			PIDMSI_STATUS_REVIEW = 6,
-			PIDMSI_STATUS_PROOF = 7,
-			PIDMSI_STATUS_FINAL = 8,
-			PIDMSI_STATUS_OTHER = 32767,
+			NORMAL = 0,
+			NEW = 1,
+			PRELIM = 2,
+			DRAFT = 3,
+			INPROGRESS = 4,
+			EDIT = 5,
+			REVIEW = 6,
+			PROOF = 7,
+			FINAL = 8,
+			OTHER = 32767,
 		}
 		
 		// --- Structs ---

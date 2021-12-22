@@ -10,11 +10,11 @@ namespace Win32
 		[AllowDuplicates]
 		public enum EndpointConnectorType : int32
 		{
-			eHostProcessConnector = 0,
-			eOffloadConnector = 1,
-			eLoopbackConnector = 2,
-			eKeywordDetectorConnector = 3,
-			eConnectorCount = 4,
+			HostProcessConnector = 0,
+			OffloadConnector = 1,
+			LoopbackConnector = 2,
+			KeywordDetectorConnector = 3,
+			ConnectorCount = 4,
 		}
 		
 		// --- Structs ---

@@ -15,55 +15,55 @@ namespace Win32
 		[AllowDuplicates]
 		public enum IsolationState : int32
 		{
-			isolationStateNotRestricted = 1,
-			isolationStateInProbation = 2,
-			isolationStateRestrictedAccess = 3,
+			NotRestricted = 1,
+			InProbation = 2,
+			RestrictedAccess = 3,
 		}
 		[AllowDuplicates]
 		public enum ExtendedIsolationState : int32
 		{
-			extendedIsolationStateNoData = 0,
-			extendedIsolationStateTransition = 1,
-			extendedIsolationStateInfected = 2,
-			extendedIsolationStateUnknown = 3,
+			NoData = 0,
+			Transition = 1,
+			Infected = 2,
+			Unknown = 3,
 		}
 		[AllowDuplicates]
 		public enum NapTracingLevel : int32
 		{
-			tracingLevelUndefined = 0,
-			tracingLevelBasic = 1,
-			tracingLevelAdvanced = 2,
-			tracingLevelDebug = 3,
+			Undefined = 0,
+			Basic = 1,
+			Advanced = 2,
+			Debug = 3,
 		}
 		[AllowDuplicates]
 		public enum FailureCategory : int32
 		{
-			failureCategoryNone = 0,
-			failureCategoryOther = 1,
-			failureCategoryClientComponent = 2,
-			failureCategoryClientCommunication = 3,
-			failureCategoryServerComponent = 4,
-			failureCategoryServerCommunication = 5,
+			None = 0,
+			Other = 1,
+			ClientComponent = 2,
+			ClientCommunication = 3,
+			ServerComponent = 4,
+			ServerCommunication = 5,
 		}
 		[AllowDuplicates]
 		public enum FixupState : int32
 		{
-			fixupStateSuccess = 0,
-			fixupStateInProgress = 1,
-			fixupStateCouldNotUpdate = 2,
+			Success = 0,
+			InProgress = 1,
+			CouldNotUpdate = 2,
 		}
 		[AllowDuplicates]
 		public enum NapNotifyType : int32
 		{
-			napNotifyTypeUnknown = 0,
-			napNotifyTypeServiceState = 1,
-			napNotifyTypeQuarState = 2,
+			Unknown = 0,
+			ServiceState = 1,
+			QuarState = 2,
 		}
 		[AllowDuplicates]
 		public enum RemoteConfigurationType : int32
 		{
-			remoteConfigTypeMachine = 1,
-			remoteConfigTypeConfigBlob = 2,
+			Machine = 1,
+			ConfigBlob = 2,
 		}
 		
 		// --- Structs ---

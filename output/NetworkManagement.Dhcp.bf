@@ -333,38 +333,38 @@ namespace Win32
 		[AllowDuplicates]
 		public enum StatusCode : int32
 		{
-			STATUS_NO_ERROR = 0,
-			STATUS_UNSPECIFIED_FAILURE = 1,
-			STATUS_NO_BINDING = 3,
-			STATUS_NOPREFIX_AVAIL = 6,
+			NO_ERROR = 0,
+			UNSPECIFIED_FAILURE = 1,
+			NO_BINDING = 3,
+			NOPREFIX_AVAIL = 6,
 		}
 		[AllowDuplicates]
 		public enum DHCP_FORCE_FLAG : int32
 		{
-			DhcpFullForce = 0,
-			DhcpNoForce = 1,
-			DhcpFailoverForce = 2,
+			FullForce = 0,
+			NoForce = 1,
+			FailoverForce = 2,
 		}
 		[AllowDuplicates]
 		public enum DHCP_SUBNET_STATE : int32
 		{
-			DhcpSubnetEnabled = 0,
-			DhcpSubnetDisabled = 1,
-			DhcpSubnetEnabledSwitched = 2,
-			DhcpSubnetDisabledSwitched = 3,
-			DhcpSubnetInvalidState = 4,
+			Enabled = 0,
+			Disabled = 1,
+			EnabledSwitched = 2,
+			DisabledSwitched = 3,
+			InvalidState = 4,
 		}
 		[AllowDuplicates]
 		public enum DHCP_SUBNET_ELEMENT_TYPE : int32
 		{
-			DhcpIpRanges = 0,
-			DhcpSecondaryHosts = 1,
-			DhcpReservedIps = 2,
-			DhcpExcludedIpRanges = 3,
-			DhcpIpUsedClusters = 4,
-			DhcpIpRangesDhcpOnly = 5,
-			DhcpIpRangesDhcpBootp = 6,
-			DhcpIpRangesBootpOnly = 7,
+			IpRanges = 0,
+			SecondaryHosts = 1,
+			ReservedIps = 2,
+			ExcludedIpRanges = 3,
+			IpUsedClusters = 4,
+			IpRangesDhcpOnly = 5,
+			IpRangesDhcpBootp = 6,
+			IpRangesBootpOnly = 7,
 		}
 		[AllowDuplicates]
 		public enum DHCP_FILTER_LIST_TYPE : int32
@@ -375,38 +375,38 @@ namespace Win32
 		[AllowDuplicates]
 		public enum DHCP_OPTION_DATA_TYPE : int32
 		{
-			DhcpByteOption = 0,
-			DhcpWordOption = 1,
-			DhcpDWordOption = 2,
-			DhcpDWordDWordOption = 3,
-			DhcpIpAddressOption = 4,
-			DhcpStringDataOption = 5,
-			DhcpBinaryDataOption = 6,
-			DhcpEncapsulatedDataOption = 7,
-			DhcpIpv6AddressOption = 8,
+			ByteOption = 0,
+			WordOption = 1,
+			DWordOption = 2,
+			DWordDWordOption = 3,
+			IpAddressOption = 4,
+			StringDataOption = 5,
+			BinaryDataOption = 6,
+			EncapsulatedDataOption = 7,
+			Ipv6AddressOption = 8,
 		}
 		[AllowDuplicates]
 		public enum DHCP_OPTION_TYPE : int32
 		{
-			DhcpUnaryElementTypeOption = 0,
-			DhcpArrayTypeOption = 1,
+			UnaryElementTypeOption = 0,
+			ArrayTypeOption = 1,
 		}
 		[AllowDuplicates]
 		public enum DHCP_OPTION_SCOPE_TYPE : int32
 		{
-			DhcpDefaultOptions = 0,
-			DhcpGlobalOptions = 1,
-			DhcpSubnetOptions = 2,
-			DhcpReservedOptions = 3,
-			DhcpMScopeOptions = 4,
+			DefaultOptions = 0,
+			GlobalOptions = 1,
+			SubnetOptions = 2,
+			ReservedOptions = 3,
+			MScopeOptions = 4,
 		}
 		[AllowDuplicates]
 		public enum DHCP_OPTION_SCOPE_TYPE6 : int32
 		{
-			DhcpDefaultOptions6 = 0,
-			DhcpScopeOptions6 = 1,
-			DhcpReservedOptions6 = 2,
-			DhcpGlobalOptions6 = 3,
+			DefaultOptions6 = 0,
+			ScopeOptions6 = 1,
+			ReservedOptions6 = 2,
+			GlobalOptions6 = 3,
 		}
 		[AllowDuplicates]
 		public enum QuarantineStatus : int32
@@ -422,86 +422,86 @@ namespace Win32
 		[AllowDuplicates]
 		public enum DHCP_SEARCH_INFO_TYPE : int32
 		{
-			DhcpClientIpAddress = 0,
-			DhcpClientHardwareAddress = 1,
-			DhcpClientName = 2,
+			IpAddress = 0,
+			HardwareAddress = 1,
+			Name = 2,
 		}
 		[AllowDuplicates]
 		public enum DHCP_PROPERTY_TYPE : int32
 		{
-			DhcpPropTypeByte = 0,
-			DhcpPropTypeWord = 1,
-			DhcpPropTypeDword = 2,
-			DhcpPropTypeString = 3,
-			DhcpPropTypeBinary = 4,
+			Byte = 0,
+			Word = 1,
+			Dword = 2,
+			String = 3,
+			Binary = 4,
 		}
 		[AllowDuplicates]
 		public enum DHCP_PROPERTY_ID : int32
 		{
-			DhcpPropIdPolicyDnsSuffix = 0,
-			DhcpPropIdClientAddressStateEx = 1,
+			PolicyDnsSuffix = 0,
+			ClientAddressStateEx = 1,
 		}
 		[AllowDuplicates]
 		public enum DHCP_SCAN_FLAG : int32
 		{
-			DhcpRegistryFix = 0,
-			DhcpDatabaseFix = 1,
+			RegistryFix = 0,
+			DatabaseFix = 1,
 		}
 		[AllowDuplicates]
 		public enum DHCP_SUBNET_ELEMENT_TYPE_V6 : int32
 		{
-			Dhcpv6IpRanges = 0,
-			Dhcpv6ReservedIps = 1,
-			Dhcpv6ExcludedIpRanges = 2,
+			IpRanges = 0,
+			ReservedIps = 1,
+			ExcludedIpRanges = 2,
 		}
 		[AllowDuplicates]
 		public enum DHCP_SEARCH_INFO_TYPE_V6 : int32
 		{
-			Dhcpv6ClientIpAddress = 0,
-			Dhcpv6ClientDUID = 1,
-			Dhcpv6ClientName = 2,
+			IpAddress = 0,
+			DUID = 1,
+			Name = 2,
 		}
 		[AllowDuplicates]
 		public enum DHCP_POL_ATTR_TYPE : int32
 		{
-			DhcpAttrHWAddr = 0,
-			DhcpAttrOption = 1,
-			DhcpAttrSubOption = 2,
-			DhcpAttrFqdn = 3,
-			DhcpAttrFqdnSingleLabel = 4,
+			HWAddr = 0,
+			Option = 1,
+			SubOption = 2,
+			Fqdn = 3,
+			FqdnSingleLabel = 4,
 		}
 		[AllowDuplicates]
 		public enum DHCP_POL_COMPARATOR : int32
 		{
-			DhcpCompEqual = 0,
-			DhcpCompNotEqual = 1,
-			DhcpCompBeginsWith = 2,
-			DhcpCompNotBeginWith = 3,
-			DhcpCompEndsWith = 4,
-			DhcpCompNotEndWith = 5,
+			Equal = 0,
+			NotEqual = 1,
+			BeginsWith = 2,
+			NotBeginWith = 3,
+			EndsWith = 4,
+			NotEndWith = 5,
 		}
 		[AllowDuplicates]
 		public enum DHCP_POL_LOGIC_OPER : int32
 		{
-			DhcpLogicalOr = 0,
-			DhcpLogicalAnd = 1,
+			Or = 0,
+			And = 1,
 		}
 		[AllowDuplicates]
 		public enum DHCP_POLICY_FIELDS_TO_UPDATE : int32
 		{
-			DhcpUpdatePolicyName = 1,
-			DhcpUpdatePolicyOrder = 2,
-			DhcpUpdatePolicyExpr = 4,
-			DhcpUpdatePolicyRanges = 8,
-			DhcpUpdatePolicyDescr = 16,
-			DhcpUpdatePolicyStatus = 32,
-			DhcpUpdatePolicyDnsSuffix = 64,
+			Name = 1,
+			Order = 2,
+			Expr = 4,
+			Ranges = 8,
+			Descr = 16,
+			Status = 32,
+			DnsSuffix = 64,
 		}
 		[AllowDuplicates]
 		public enum DHCPV6_STATELESS_PARAM_TYPE : int32
 		{
-			DhcpStatelessPurgeInterval = 1,
-			DhcpStatelessStatus = 2,
+			PurgeInterval = 1,
+			Status = 2,
 		}
 		[AllowDuplicates]
 		public enum DHCP_FAILOVER_MODE : int32

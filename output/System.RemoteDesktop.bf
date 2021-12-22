@@ -276,41 +276,41 @@ namespace Win32
 		[AllowDuplicates]
 		public enum AE_POSITION_FLAGS : int32
 		{
-			POSITION_INVALID = 0,
-			POSITION_DISCONTINUOUS = 1,
-			POSITION_CONTINUOUS = 2,
-			POSITION_QPC_ERROR = 4,
+			INVALID = 0,
+			DISCONTINUOUS = 1,
+			CONTINUOUS = 2,
+			QPC_ERROR = 4,
 		}
 		[AllowDuplicates]
 		public enum AAAuthSchemes : int32
 		{
-			AA_AUTH_MIN = 0,
-			AA_AUTH_BASIC = 1,
-			AA_AUTH_NTLM = 2,
-			AA_AUTH_SC = 3,
-			AA_AUTH_LOGGEDONCREDENTIALS = 4,
-			AA_AUTH_NEGOTIATE = 5,
-			AA_AUTH_ANY = 6,
-			AA_AUTH_COOKIE = 7,
-			AA_AUTH_DIGEST = 8,
-			AA_AUTH_ORGID = 9,
-			AA_AUTH_CONID = 10,
-			AA_AUTH_SSPI_NTLM = 11,
-			AA_AUTH_MAX = 12,
+			MIN = 0,
+			BASIC = 1,
+			NTLM = 2,
+			SC = 3,
+			LOGGEDONCREDENTIALS = 4,
+			NEGOTIATE = 5,
+			ANY = 6,
+			COOKIE = 7,
+			DIGEST = 8,
+			ORGID = 9,
+			CONID = 10,
+			SSPI_NTLM = 11,
+			MAX = 12,
 		}
 		[AllowDuplicates]
 		public enum AAAccountingDataType : int32
 		{
-			AA_MAIN_SESSION_CREATION = 0,
-			AA_SUB_SESSION_CREATION = 1,
-			AA_SUB_SESSION_CLOSED = 2,
-			AA_MAIN_SESSION_CLOSED = 3,
+			MAIN_SESSION_CREATION = 0,
+			SUB_SESSION_CREATION = 1,
+			SUB_SESSION_CLOSED = 2,
+			MAIN_SESSION_CLOSED = 3,
 		}
 		[AllowDuplicates]
 		public enum SESSION_TIMEOUT_ACTION_TYPE : int32
 		{
-			SESSION_TIMEOUT_ACTION_DISCONNECT = 0,
-			SESSION_TIMEOUT_ACTION_SILENT_REAUTH = 1,
+			DISCONNECT = 0,
+			SILENT_REAUTH = 1,
 		}
 		[AllowDuplicates]
 		public enum PolicyAttributeType : int32
@@ -327,81 +327,81 @@ namespace Win32
 		[AllowDuplicates]
 		public enum AATrustClassID : int32
 		{
-			AA_UNTRUSTED = 0,
-			AA_TRUSTEDUSER_UNTRUSTEDCLIENT = 1,
-			AA_TRUSTEDUSER_TRUSTEDCLIENT = 2,
+			UNTRUSTED = 0,
+			TRUSTEDUSER_UNTRUSTEDCLIENT = 1,
+			TRUSTEDUSER_TRUSTEDCLIENT = 2,
 		}
 		[AllowDuplicates]
 		public enum WTS_CONNECTSTATE_CLASS : int32
 		{
-			WTSActive = 0,
-			WTSConnected = 1,
-			WTSConnectQuery = 2,
-			WTSShadow = 3,
-			WTSDisconnected = 4,
-			WTSIdle = 5,
-			WTSListen = 6,
-			WTSReset = 7,
-			WTSDown = 8,
-			WTSInit = 9,
+			Active = 0,
+			Connected = 1,
+			ConnectQuery = 2,
+			Shadow = 3,
+			Disconnected = 4,
+			Idle = 5,
+			Listen = 6,
+			Reset = 7,
+			Down = 8,
+			Init = 9,
 		}
 		[AllowDuplicates]
 		public enum WTS_INFO_CLASS : int32
 		{
-			WTSInitialProgram = 0,
-			WTSApplicationName = 1,
-			WTSWorkingDirectory = 2,
-			WTSOEMId = 3,
-			WTSSessionId = 4,
-			WTSUserName = 5,
-			WTSWinStationName = 6,
-			WTSDomainName = 7,
-			WTSConnectState = 8,
-			WTSClientBuildNumber = 9,
-			WTSClientName = 10,
-			WTSClientDirectory = 11,
-			WTSClientProductId = 12,
-			WTSClientHardwareId = 13,
-			WTSClientAddress = 14,
-			WTSClientDisplay = 15,
-			WTSClientProtocolType = 16,
-			WTSIdleTime = 17,
-			WTSLogonTime = 18,
-			WTSIncomingBytes = 19,
-			WTSOutgoingBytes = 20,
-			WTSIncomingFrames = 21,
-			WTSOutgoingFrames = 22,
-			WTSClientInfo = 23,
-			WTSSessionInfo = 24,
-			WTSSessionInfoEx = 25,
-			WTSConfigInfo = 26,
-			WTSValidationInfo = 27,
-			WTSSessionAddressV4 = 28,
-			WTSIsRemoteSession = 29,
+			InitialProgram = 0,
+			ApplicationName = 1,
+			WorkingDirectory = 2,
+			OEMId = 3,
+			SessionId = 4,
+			UserName = 5,
+			WinStationName = 6,
+			DomainName = 7,
+			ConnectState = 8,
+			ClientBuildNumber = 9,
+			ClientName = 10,
+			ClientDirectory = 11,
+			ClientProductId = 12,
+			ClientHardwareId = 13,
+			ClientAddress = 14,
+			ClientDisplay = 15,
+			ClientProtocolType = 16,
+			IdleTime = 17,
+			LogonTime = 18,
+			IncomingBytes = 19,
+			OutgoingBytes = 20,
+			IncomingFrames = 21,
+			OutgoingFrames = 22,
+			ClientInfo = 23,
+			SessionInfo = 24,
+			SessionInfoEx = 25,
+			ConfigInfo = 26,
+			ValidationInfo = 27,
+			SessionAddressV4 = 28,
+			IsRemoteSession = 29,
 		}
 		[AllowDuplicates]
 		public enum WTS_CONFIG_CLASS : int32
 		{
-			WTSUserConfigInitialProgram = 0,
-			WTSUserConfigWorkingDirectory = 1,
-			WTSUserConfigfInheritInitialProgram = 2,
-			WTSUserConfigfAllowLogonTerminalServer = 3,
-			WTSUserConfigTimeoutSettingsConnections = 4,
-			WTSUserConfigTimeoutSettingsDisconnections = 5,
-			WTSUserConfigTimeoutSettingsIdle = 6,
-			WTSUserConfigfDeviceClientDrives = 7,
-			WTSUserConfigfDeviceClientPrinters = 8,
-			WTSUserConfigfDeviceClientDefaultPrinter = 9,
-			WTSUserConfigBrokenTimeoutSettings = 10,
-			WTSUserConfigReconnectSettings = 11,
-			WTSUserConfigModemCallbackSettings = 12,
-			WTSUserConfigModemCallbackPhoneNumber = 13,
-			WTSUserConfigShadowingSettings = 14,
-			WTSUserConfigTerminalServerProfilePath = 15,
-			WTSUserConfigTerminalServerHomeDir = 16,
-			WTSUserConfigTerminalServerHomeDirDrive = 17,
-			WTSUserConfigfTerminalServerRemoteHomeDir = 18,
-			WTSUserConfigUser = 19,
+			InitialProgram = 0,
+			WorkingDirectory = 1,
+			fInheritInitialProgram = 2,
+			fAllowLogonTerminalServer = 3,
+			TimeoutSettingsConnections = 4,
+			TimeoutSettingsDisconnections = 5,
+			TimeoutSettingsIdle = 6,
+			fDeviceClientDrives = 7,
+			fDeviceClientPrinters = 8,
+			fDeviceClientDefaultPrinter = 9,
+			BrokenTimeoutSettings = 10,
+			ReconnectSettings = 11,
+			ModemCallbackSettings = 12,
+			ModemCallbackPhoneNumber = 13,
+			ShadowingSettings = 14,
+			TerminalServerProfilePath = 15,
+			TerminalServerHomeDir = 16,
+			TerminalServerHomeDirDrive = 17,
+			fTerminalServerRemoteHomeDir = 18,
+			User = 19,
 		}
 		[AllowDuplicates]
 		public enum WTS_CONFIG_SOURCE : int32
@@ -411,105 +411,105 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WTS_VIRTUAL_CLASS : int32
 		{
-			WTSVirtualClientData = 0,
-			WTSVirtualFileHandle = 1,
+			ClientData = 0,
+			FileHandle = 1,
 		}
 		[AllowDuplicates]
 		public enum WTS_TYPE_CLASS : int32
 		{
-			WTSTypeProcessInfoLevel0 = 0,
-			WTSTypeProcessInfoLevel1 = 1,
-			WTSTypeSessionInfoLevel1 = 2,
+			ProcessInfoLevel0 = 0,
+			ProcessInfoLevel1 = 1,
+			SessionInfoLevel1 = 2,
 		}
 		[AllowDuplicates]
 		public enum WTSSBX_MACHINE_DRAIN : int32
 		{
-			WTSSBX_MACHINE_DRAIN_UNSPEC = 0,
-			WTSSBX_MACHINE_DRAIN_OFF = 1,
-			WTSSBX_MACHINE_DRAIN_ON = 2,
+			UNSPEC = 0,
+			OFF = 1,
+			ON = 2,
 		}
 		[AllowDuplicates]
 		public enum WTSSBX_MACHINE_SESSION_MODE : int32
 		{
-			WTSSBX_MACHINE_SESSION_MODE_UNSPEC = 0,
-			WTSSBX_MACHINE_SESSION_MODE_SINGLE = 1,
-			WTSSBX_MACHINE_SESSION_MODE_MULTIPLE = 2,
+			UNSPEC = 0,
+			SINGLE = 1,
+			MULTIPLE = 2,
 		}
 		[AllowDuplicates]
 		public enum WTSSBX_ADDRESS_FAMILY : int32
 		{
-			WTSSBX_ADDRESS_FAMILY_AF_UNSPEC = 0,
-			WTSSBX_ADDRESS_FAMILY_AF_INET = 1,
-			WTSSBX_ADDRESS_FAMILY_AF_INET6 = 2,
-			WTSSBX_ADDRESS_FAMILY_AF_IPX = 3,
-			WTSSBX_ADDRESS_FAMILY_AF_NETBIOS = 4,
+			UNSPEC = 0,
+			INET = 1,
+			INET6 = 2,
+			IPX = 3,
+			NETBIOS = 4,
 		}
 		[AllowDuplicates]
 		public enum WTSSBX_MACHINE_STATE : int32
 		{
-			WTSSBX_MACHINE_STATE_UNSPEC = 0,
-			WTSSBX_MACHINE_STATE_READY = 1,
-			WTSSBX_MACHINE_STATE_SYNCHRONIZING = 2,
+			UNSPEC = 0,
+			READY = 1,
+			SYNCHRONIZING = 2,
 		}
 		[AllowDuplicates]
 		public enum WTSSBX_SESSION_STATE : int32
 		{
-			WTSSBX_SESSION_STATE_UNSPEC = 0,
-			WTSSBX_SESSION_STATE_ACTIVE = 1,
-			WTSSBX_SESSION_STATE_DISCONNECTED = 2,
+			UNSPEC = 0,
+			ACTIVE = 1,
+			DISCONNECTED = 2,
 		}
 		[AllowDuplicates]
 		public enum WTSSBX_NOTIFICATION_TYPE : int32
 		{
-			WTSSBX_NOTIFICATION_REMOVED = 1,
-			WTSSBX_NOTIFICATION_CHANGED = 2,
-			WTSSBX_NOTIFICATION_ADDED = 4,
-			WTSSBX_NOTIFICATION_RESYNC = 8,
+			REMOVED = 1,
+			CHANGED = 2,
+			ADDED = 4,
+			RESYNC = 8,
 		}
 		[AllowDuplicates]
 		public enum TSSD_AddrV46Type : int32
 		{
-			TSSD_ADDR_UNDEFINED = 0,
-			TSSD_ADDR_IPv4 = 4,
-			TSSD_ADDR_IPv6 = 6,
+			UNDEFINED = 0,
+			IPv4 = 4,
+			IPv6 = 6,
 		}
 		[AllowDuplicates]
 		public enum TSSB_NOTIFICATION_TYPE : int32
 		{
-			TSSB_NOTIFY_INVALID = 0,
-			TSSB_NOTIFY_TARGET_CHANGE = 1,
-			TSSB_NOTIFY_SESSION_CHANGE = 2,
-			TSSB_NOTIFY_CONNECTION_REQUEST_CHANGE = 4,
+			INVALID = 0,
+			TARGET_CHANGE = 1,
+			SESSION_CHANGE = 2,
+			CONNECTION_REQUEST_CHANGE = 4,
 		}
 		[AllowDuplicates]
 		public enum TARGET_STATE : int32
 		{
-			TARGET_UNKNOWN = 1,
-			TARGET_INITIALIZING = 2,
-			TARGET_RUNNING = 3,
-			TARGET_DOWN = 4,
-			TARGET_HIBERNATED = 5,
-			TARGET_CHECKED_OUT = 6,
-			TARGET_STOPPED = 7,
-			TARGET_INVALID = 8,
-			TARGET_STARTING = 9,
-			TARGET_STOPPING = 10,
-			TARGET_MAXSTATE = 11,
+			UNKNOWN = 1,
+			INITIALIZING = 2,
+			RUNNING = 3,
+			DOWN = 4,
+			HIBERNATED = 5,
+			CHECKED_OUT = 6,
+			STOPPED = 7,
+			INVALID = 8,
+			STARTING = 9,
+			STOPPING = 10,
+			MAXSTATE = 11,
 		}
 		[AllowDuplicates]
 		public enum TARGET_CHANGE_TYPE : int32
 		{
-			TARGET_CHANGE_UNSPEC = 1,
-			TARGET_EXTERNALIP_CHANGED = 2,
-			TARGET_INTERNALIP_CHANGED = 4,
-			TARGET_JOINED = 8,
-			TARGET_REMOVED = 16,
-			TARGET_STATE_CHANGED = 32,
-			TARGET_IDLE = 64,
-			TARGET_PENDING = 128,
-			TARGET_INUSE = 256,
-			TARGET_PATCH_STATE_CHANGED = 512,
-			TARGET_FARM_MEMBERSHIP_CHANGED = 1024,
+			CHANGE_UNSPEC = 1,
+			EXTERNALIP_CHANGED = 2,
+			INTERNALIP_CHANGED = 4,
+			JOINED = 8,
+			REMOVED = 16,
+			STATE_CHANGED = 32,
+			IDLE = 64,
+			PENDING = 128,
+			INUSE = 256,
+			PATCH_STATE_CHANGED = 512,
+			FARM_MEMBERSHIP_CHANGED = 1024,
 		}
 		[AllowDuplicates]
 		public enum TARGET_TYPE : int32
@@ -521,42 +521,42 @@ namespace Win32
 		[AllowDuplicates]
 		public enum TARGET_PATCH_STATE : int32
 		{
-			TARGET_PATCH_UNKNOWN = 0,
-			TARGET_PATCH_NOT_STARTED = 1,
-			TARGET_PATCH_IN_PROGRESS = 2,
-			TARGET_PATCH_COMPLETED = 3,
-			TARGET_PATCH_FAILED = 4,
+			UNKNOWN = 0,
+			NOT_STARTED = 1,
+			IN_PROGRESS = 2,
+			COMPLETED = 3,
+			FAILED = 4,
 		}
 		[AllowDuplicates]
 		public enum CLIENT_MESSAGE_TYPE : int32
 		{
-			CLIENT_MESSAGE_CONNECTION_INVALID = 0,
-			CLIENT_MESSAGE_CONNECTION_STATUS = 1,
-			CLIENT_MESSAGE_CONNECTION_ERROR = 2,
+			INVALID = 0,
+			STATUS = 1,
+			ERROR = 2,
 		}
 		[AllowDuplicates]
 		public enum CONNECTION_CHANGE_NOTIFICATION : int32
 		{
-			CONNECTION_REQUEST_INVALID = 0,
-			CONNECTION_REQUEST_PENDING = 1,
-			CONNECTION_REQUEST_FAILED = 2,
-			CONNECTION_REQUEST_TIMEDOUT = 3,
-			CONNECTION_REQUEST_SUCCEEDED = 4,
-			CONNECTION_REQUEST_CANCELLED = 5,
-			CONNECTION_REQUEST_LB_COMPLETED = 6,
-			CONNECTION_REQUEST_QUERY_PL_COMPLETED = 7,
-			CONNECTION_REQUEST_ORCH_COMPLETED = 8,
+			INVALID = 0,
+			PENDING = 1,
+			FAILED = 2,
+			TIMEDOUT = 3,
+			SUCCEEDED = 4,
+			CANCELLED = 5,
+			LB_COMPLETED = 6,
+			QUERY_PL_COMPLETED = 7,
+			ORCH_COMPLETED = 8,
 		}
 		[AllowDuplicates]
 		public enum RD_FARM_TYPE : int32
 		{
-			RD_FARM_RDSH = 0,
-			RD_FARM_TEMP_VM = 1,
-			RD_FARM_MANUAL_PERSONAL_VM = 2,
-			RD_FARM_AUTO_PERSONAL_VM = 3,
-			RD_FARM_MANUAL_PERSONAL_RDSH = 4,
-			RD_FARM_AUTO_PERSONAL_RDSH = 5,
-			RD_FARM_TYPE_UNKNOWN = -1,
+			RDSH = 0,
+			TEMP_VM = 1,
+			MANUAL_PERSONAL_VM = 2,
+			AUTO_PERSONAL_VM = 3,
+			MANUAL_PERSONAL_RDSH = 4,
+			AUTO_PERSONAL_RDSH = 5,
+			TYPE_UNKNOWN = -1,
 		}
 		[AllowDuplicates]
 		public enum PLUGIN_TYPE : int32
@@ -573,160 +573,160 @@ namespace Win32
 		[AllowDuplicates]
 		public enum TSSESSION_STATE : int32
 		{
-			STATE_INVALID = -1,
-			STATE_ACTIVE = 0,
-			STATE_CONNECTED = 1,
-			STATE_CONNECTQUERY = 2,
-			STATE_SHADOW = 3,
-			STATE_DISCONNECTED = 4,
-			STATE_IDLE = 5,
-			STATE_LISTEN = 6,
-			STATE_RESET = 7,
-			STATE_DOWN = 8,
-			STATE_INIT = 9,
-			STATE_MAX = 10,
+			INVALID = -1,
+			ACTIVE = 0,
+			CONNECTED = 1,
+			CONNECTQUERY = 2,
+			SHADOW = 3,
+			DISCONNECTED = 4,
+			IDLE = 5,
+			LISTEN = 6,
+			RESET = 7,
+			DOWN = 8,
+			INIT = 9,
+			MAX = 10,
 		}
 		[AllowDuplicates]
 		public enum TARGET_OWNER : int32
 		{
-			OWNER_UNKNOWN = 0,
-			OWNER_MS_TS_PLUGIN = 1,
-			OWNER_MS_VM_PLUGIN = 2,
+			UNKNOWN = 0,
+			MS_TS_PLUGIN = 1,
+			MS_VM_PLUGIN = 2,
 		}
 		[AllowDuplicates]
 		public enum VM_NOTIFY_STATUS : int32
 		{
-			VM_NOTIFY_STATUS_PENDING = 0,
-			VM_NOTIFY_STATUS_IN_PROGRESS = 1,
-			VM_NOTIFY_STATUS_COMPLETE = 2,
-			VM_NOTIFY_STATUS_FAILED = 3,
-			VM_NOTIFY_STATUS_CANCELED = 4,
+			PENDING = 0,
+			IN_PROGRESS = 1,
+			COMPLETE = 2,
+			FAILED = 3,
+			CANCELED = 4,
 		}
 		[AllowDuplicates]
 		public enum VM_HOST_NOTIFY_STATUS : int32
 		{
-			VM_HOST_STATUS_INIT_PENDING = 0,
-			VM_HOST_STATUS_INIT_IN_PROGRESS = 1,
-			VM_HOST_STATUS_INIT_COMPLETE = 2,
-			VM_HOST_STATUS_INIT_FAILED = 3,
+			PENDING = 0,
+			IN_PROGRESS = 1,
+			COMPLETE = 2,
+			FAILED = 3,
 		}
 		[AllowDuplicates]
 		public enum RDV_TASK_STATUS : int32
 		{
-			RDV_TASK_STATUS_UNKNOWN = 0,
-			RDV_TASK_STATUS_SEARCHING = 1,
-			RDV_TASK_STATUS_DOWNLOADING = 2,
-			RDV_TASK_STATUS_APPLYING = 3,
-			RDV_TASK_STATUS_REBOOTING = 4,
-			RDV_TASK_STATUS_REBOOTED = 5,
-			RDV_TASK_STATUS_SUCCESS = 6,
-			RDV_TASK_STATUS_FAILED = 7,
-			RDV_TASK_STATUS_TIMEOUT = 8,
+			UNKNOWN = 0,
+			SEARCHING = 1,
+			DOWNLOADING = 2,
+			APPLYING = 3,
+			REBOOTING = 4,
+			REBOOTED = 5,
+			SUCCESS = 6,
+			FAILED = 7,
+			TIMEOUT = 8,
 		}
 		[AllowDuplicates]
 		public enum TS_SB_SORT_BY : int32
 		{
-			TS_SB_SORT_BY_NONE = 0,
-			TS_SB_SORT_BY_NAME = 1,
-			TS_SB_SORT_BY_PROP = 2,
+			NONE = 0,
+			NAME = 1,
+			PROP = 2,
 		}
 		[AllowDuplicates]
 		public enum TSPUB_PLUGIN_PD_RESOLUTION_TYPE : int32
 		{
-			TSPUB_PLUGIN_PD_QUERY_OR_CREATE = 0,
-			TSPUB_PLUGIN_PD_QUERY_EXISTING = 1,
+			OR_CREATE = 0,
+			EXISTING = 1,
 		}
 		[AllowDuplicates]
 		public enum TSPUB_PLUGIN_PD_ASSIGNMENT_TYPE : int32
 		{
-			TSPUB_PLUGIN_PD_ASSIGNMENT_NEW = 0,
-			TSPUB_PLUGIN_PD_ASSIGNMENT_EXISTING = 1,
+			NEW = 0,
+			EXISTING = 1,
 		}
 		[AllowDuplicates]
 		public enum WRdsGraphicsChannelType : int32
 		{
-			WRdsGraphicsChannelType_GuaranteedDelivery = 0,
-			WRdsGraphicsChannelType_BestEffortDelivery = 1,
+			GuaranteedDelivery = 0,
+			BestEffortDelivery = 1,
 		}
 		[AllowDuplicates]
 		public enum WTS_RCM_SERVICE_STATE : int32
 		{
-			WTS_SERVICE_NONE = 0,
-			WTS_SERVICE_START = 1,
-			WTS_SERVICE_STOP = 2,
+			NONE = 0,
+			START = 1,
+			STOP = 2,
 		}
 		[AllowDuplicates]
 		public enum WTS_RCM_DRAIN_STATE : int32
 		{
-			WTS_DRAIN_STATE_NONE = 0,
-			WTS_DRAIN_IN_DRAIN = 1,
-			WTS_DRAIN_NOT_IN_DRAIN = 2,
+			STATE_NONE = 0,
+			IN_DRAIN = 1,
+			NOT_IN_DRAIN = 2,
 		}
 		[AllowDuplicates]
 		public enum WTS_LOGON_ERROR_REDIRECTOR_RESPONSE : int32
 		{
-			WTS_LOGON_ERR_INVALID = 0,
-			WTS_LOGON_ERR_NOT_HANDLED = 1,
-			WTS_LOGON_ERR_HANDLED_SHOW = 2,
-			WTS_LOGON_ERR_HANDLED_DONT_SHOW = 3,
-			WTS_LOGON_ERR_HANDLED_DONT_SHOW_START_OVER = 4,
+			INVALID = 0,
+			NOT_HANDLED = 1,
+			HANDLED_SHOW = 2,
+			HANDLED_DONT_SHOW = 3,
+			HANDLED_DONT_SHOW_START_OVER = 4,
 		}
 		[AllowDuplicates]
 		public enum WTS_CERT_TYPE : int32
 		{
-			WTS_CERT_TYPE_INVALID = 0,
-			WTS_CERT_TYPE_PROPRIETORY = 1,
-			WTS_CERT_TYPE_X509 = 2,
+			INVALID = 0,
+			PROPRIETORY = 1,
+			X509 = 2,
 		}
 		[AllowDuplicates]
 		public enum WRDS_CONNECTION_SETTING_LEVEL : int32
 		{
-			WRDS_CONNECTION_SETTING_LEVEL_INVALID = 0,
-			WRDS_CONNECTION_SETTING_LEVEL_1 = 1,
+			INVALID = 0,
+			_1 = 1,
 		}
 		[AllowDuplicates]
 		public enum WRDS_LISTENER_SETTING_LEVEL : int32
 		{
-			WRDS_LISTENER_SETTING_LEVEL_INVALID = 0,
-			WRDS_LISTENER_SETTING_LEVEL_1 = 1,
+			INVALID = 0,
+			_1 = 1,
 		}
 		[AllowDuplicates]
 		public enum WRDS_SETTING_TYPE : int32
 		{
-			WRDS_SETTING_TYPE_INVALID = 0,
-			WRDS_SETTING_TYPE_MACHINE = 1,
-			WRDS_SETTING_TYPE_USER = 2,
-			WRDS_SETTING_TYPE_SAM = 3,
+			INVALID = 0,
+			MACHINE = 1,
+			USER = 2,
+			SAM = 3,
 		}
 		[AllowDuplicates]
 		public enum WRDS_SETTING_STATUS : int32
 		{
-			WRDS_SETTING_STATUS_NOTAPPLICABLE = -1,
-			WRDS_SETTING_STATUS_DISABLED = 0,
-			WRDS_SETTING_STATUS_ENABLED = 1,
-			WRDS_SETTING_STATUS_NOTCONFIGURED = 2,
+			NOTAPPLICABLE = -1,
+			DISABLED = 0,
+			ENABLED = 1,
+			NOTCONFIGURED = 2,
 		}
 		[AllowDuplicates]
 		public enum WRDS_SETTING_LEVEL : int32
 		{
-			WRDS_SETTING_LEVEL_INVALID = 0,
-			WRDS_SETTING_LEVEL_1 = 1,
+			INVALID = 0,
+			_1 = 1,
 		}
 		[AllowDuplicates]
 		public enum PasswordEncodingType : int32
 		{
-			PasswordEncodingUTF8 = 0,
-			PasswordEncodingUTF16LE = 1,
-			PasswordEncodingUTF16BE = 2,
+			_8 = 0,
+			_16LE = 1,
+			_16BE = 2,
 		}
 		[AllowDuplicates]
 		public enum RemoteActionType : int32
 		{
-			RemoteActionCharms = 0,
-			RemoteActionAppbar = 1,
-			RemoteActionSnap = 2,
-			RemoteActionStartScreen = 3,
-			RemoteActionAppSwitch = 4,
+			Charms = 0,
+			Appbar = 1,
+			Snap = 2,
+			StartScreen = 3,
+			AppSwitch = 4,
 		}
 		[AllowDuplicates]
 		public enum SnapshotEncodingType : int32
@@ -736,19 +736,19 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SnapshotFormatType : int32
 		{
-			SnapshotFormatPng = 0,
-			SnapshotFormatJpeg = 1,
-			SnapshotFormatBmp = 2,
+			Png = 0,
+			Jpeg = 1,
+			Bmp = 2,
 		}
 		[AllowDuplicates]
 		public enum KeyCombinationType : int32
 		{
-			KeyCombinationHome = 0,
-			KeyCombinationLeft = 1,
-			KeyCombinationUp = 2,
-			KeyCombinationRight = 3,
-			KeyCombinationDown = 4,
-			KeyCombinationScroll = 5,
+			Home = 0,
+			Left = 1,
+			Up = 2,
+			Right = 3,
+			Down = 4,
+			Scroll = 5,
 		}
 		
 		// --- Function Pointers ---

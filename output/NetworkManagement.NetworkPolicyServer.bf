@@ -261,27 +261,27 @@ namespace Win32
 		[AllowDuplicates]
 		public enum NEW_LOG_FILE_FREQUENCY : int32
 		{
-			IAS_LOGGING_UNLIMITED_SIZE = 0,
-			IAS_LOGGING_DAILY = 1,
-			IAS_LOGGING_WEEKLY = 2,
-			IAS_LOGGING_MONTHLY = 3,
-			IAS_LOGGING_WHEN_FILE_SIZE_REACHES = 4,
+			UNLIMITED_SIZE = 0,
+			DAILY = 1,
+			WEEKLY = 2,
+			MONTHLY = 3,
+			WHEN_FILE_SIZE_REACHES = 4,
 		}
 		[AllowDuplicates]
 		public enum AUTHENTICATION_TYPE : int32
 		{
-			IAS_AUTH_INVALID = 0,
-			IAS_AUTH_PAP = 1,
-			IAS_AUTH_MD5CHAP = 2,
-			IAS_AUTH_MSCHAP = 3,
-			IAS_AUTH_MSCHAP2 = 4,
-			IAS_AUTH_EAP = 5,
-			IAS_AUTH_ARAP = 6,
-			IAS_AUTH_NONE = 7,
-			IAS_AUTH_CUSTOM = 8,
-			IAS_AUTH_MSCHAP_CPW = 9,
-			IAS_AUTH_MSCHAP2_CPW = 10,
-			IAS_AUTH_PEAP = 11,
+			INVALID = 0,
+			PAP = 1,
+			MD5CHAP = 2,
+			MSCHAP = 3,
+			MSCHAP2 = 4,
+			EAP = 5,
+			ARAP = 6,
+			NONE = 7,
+			CUSTOM = 8,
+			MSCHAP_CPW = 9,
+			MSCHAP2_CPW = 10,
+			PEAP = 11,
 		}
 		[AllowDuplicates]
 		public enum IDENTITY_TYPE_ALT : int32
@@ -291,16 +291,16 @@ namespace Win32
 		[AllowDuplicates]
 		public enum ATTRIBUTESYNTAX : int32
 		{
-			IAS_SYNTAX_BOOLEAN = 1,
-			IAS_SYNTAX_INTEGER = 2,
-			IAS_SYNTAX_ENUMERATOR = 3,
-			IAS_SYNTAX_INETADDR = 4,
-			IAS_SYNTAX_STRING = 5,
-			IAS_SYNTAX_OCTETSTRING = 6,
-			IAS_SYNTAX_UTCTIME = 7,
-			IAS_SYNTAX_PROVIDERSPECIFIC = 8,
-			IAS_SYNTAX_UNSIGNEDINTEGER = 9,
-			IAS_SYNTAX_INETADDR6 = 10,
+			BOOLEAN = 1,
+			INTEGER = 2,
+			ENUMERATOR = 3,
+			INETADDR = 4,
+			STRING = 5,
+			OCTETSTRING = 6,
+			UTCTIME = 7,
+			PROVIDERSPECIFIC = 8,
+			UNSIGNEDINTEGER = 9,
+			INETADDR6 = 10,
 		}
 		[AllowDuplicates]
 		public enum ATTRIBUTERESTRICTIONS : int32
@@ -316,9 +316,9 @@ namespace Win32
 		[AllowDuplicates]
 		public enum ATTRIBUTEFILTER : int32
 		{
-			ATTRIBUTE_FILTER_NONE = 0,
-			ATTRIBUTE_FILTER_VPN_DIALUP = 1,
-			ATTRIBUTE_FILTER_IEEE_802_1x = 2,
+			NONE = 0,
+			VPN_DIALUP = 1,
+			IEEE_802_1x = 2,
 		}
 		[AllowDuplicates]
 		public enum ATTRIBUTEINFO : int32
@@ -334,105 +334,105 @@ namespace Win32
 		[AllowDuplicates]
 		public enum IASCOMMONPROPERTIES : int32
 		{
-			PROPERTY_SDO_RESERVED = 0,
-			PROPERTY_SDO_CLASS = 1,
-			PROPERTY_SDO_NAME = 2,
-			PROPERTY_SDO_DESCRIPTION = 3,
-			PROPERTY_SDO_ID = 4,
-			PROPERTY_SDO_DATASTORE_NAME = 5,
-			PROPERTY_SDO_TEMPLATE_GUID = 6,
-			PROPERTY_SDO_OPAQUE = 7,
-			PROPERTY_SDO_START = 1024,
+			RESERVED = 0,
+			CLASS = 1,
+			NAME = 2,
+			DESCRIPTION = 3,
+			ID = 4,
+			DATASTORE_NAME = 5,
+			TEMPLATE_GUID = 6,
+			OPAQUE = 7,
+			START = 1024,
 		}
 		[AllowDuplicates]
 		public enum USERPROPERTIES : int32
 		{
-			PROPERTY_USER_CALLING_STATION_ID = 1024,
-			PROPERTY_USER_SAVED_CALLING_STATION_ID = 1025,
-			PROPERTY_USER_RADIUS_CALLBACK_NUMBER = 1026,
-			PROPERTY_USER_RADIUS_FRAMED_ROUTE = 1027,
-			PROPERTY_USER_RADIUS_FRAMED_IP_ADDRESS = 1028,
-			PROPERTY_USER_SAVED_RADIUS_CALLBACK_NUMBER = 1029,
-			PROPERTY_USER_SAVED_RADIUS_FRAMED_ROUTE = 1030,
-			PROPERTY_USER_SAVED_RADIUS_FRAMED_IP_ADDRESS = 1031,
-			PROPERTY_USER_ALLOW_DIALIN = 1032,
-			PROPERTY_USER_SERVICE_TYPE = 1033,
-			PROPERTY_USER_RADIUS_FRAMED_IPV6_ROUTE = 1034,
-			PROPERTY_USER_SAVED_RADIUS_FRAMED_IPV6_ROUTE = 1035,
-			PROPERTY_USER_RADIUS_FRAMED_INTERFACE_ID = 1036,
-			PROPERTY_USER_SAVED_RADIUS_FRAMED_INTERFACE_ID = 1037,
-			PROPERTY_USER_RADIUS_FRAMED_IPV6_PREFIX = 1038,
-			PROPERTY_USER_SAVED_RADIUS_FRAMED_IPV6_PREFIX = 1039,
+			CALLING_STATION_ID = 1024,
+			SAVED_CALLING_STATION_ID = 1025,
+			RADIUS_CALLBACK_NUMBER = 1026,
+			RADIUS_FRAMED_ROUTE = 1027,
+			RADIUS_FRAMED_IP_ADDRESS = 1028,
+			SAVED_RADIUS_CALLBACK_NUMBER = 1029,
+			SAVED_RADIUS_FRAMED_ROUTE = 1030,
+			SAVED_RADIUS_FRAMED_IP_ADDRESS = 1031,
+			ALLOW_DIALIN = 1032,
+			SERVICE_TYPE = 1033,
+			RADIUS_FRAMED_IPV6_ROUTE = 1034,
+			SAVED_RADIUS_FRAMED_IPV6_ROUTE = 1035,
+			RADIUS_FRAMED_INTERFACE_ID = 1036,
+			SAVED_RADIUS_FRAMED_INTERFACE_ID = 1037,
+			RADIUS_FRAMED_IPV6_PREFIX = 1038,
+			SAVED_RADIUS_FRAMED_IPV6_PREFIX = 1039,
 		}
 		[AllowDuplicates]
 		public enum DICTIONARYPROPERTIES : int32
 		{
-			PROPERTY_DICTIONARY_ATTRIBUTES_COLLECTION = 1024,
-			PROPERTY_DICTIONARY_LOCATION = 1025,
+			ATTRIBUTES_COLLECTION = 1024,
+			LOCATION = 1025,
 		}
 		[AllowDuplicates]
 		public enum ATTRIBUTEPROPERTIES : int32
 		{
-			PROPERTY_ATTRIBUTE_ID = 1024,
-			PROPERTY_ATTRIBUTE_VENDOR_ID = 1025,
-			PROPERTY_ATTRIBUTE_VENDOR_TYPE_ID = 1026,
-			PROPERTY_ATTRIBUTE_IS_ENUMERABLE = 1027,
-			PROPERTY_ATTRIBUTE_ENUM_NAMES = 1028,
-			PROPERTY_ATTRIBUTE_ENUM_VALUES = 1029,
-			PROPERTY_ATTRIBUTE_SYNTAX = 1030,
-			PROPERTY_ATTRIBUTE_ALLOW_MULTIPLE = 1031,
-			PROPERTY_ATTRIBUTE_ALLOW_LOG_ORDINAL = 1032,
-			PROPERTY_ATTRIBUTE_ALLOW_IN_PROFILE = 1033,
-			PROPERTY_ATTRIBUTE_ALLOW_IN_CONDITION = 1034,
-			PROPERTY_ATTRIBUTE_DISPLAY_NAME = 1035,
-			PROPERTY_ATTRIBUTE_VALUE = 1036,
-			PROPERTY_ATTRIBUTE_ALLOW_IN_PROXY_PROFILE = 1037,
-			PROPERTY_ATTRIBUTE_ALLOW_IN_PROXY_CONDITION = 1038,
-			PROPERTY_ATTRIBUTE_ALLOW_IN_VPNDIALUP = 1039,
-			PROPERTY_ATTRIBUTE_ALLOW_IN_8021X = 1040,
-			PROPERTY_ATTRIBUTE_ENUM_FILTERS = 1041,
+			ID = 1024,
+			VENDOR_ID = 1025,
+			VENDOR_TYPE_ID = 1026,
+			IS_ENUMERABLE = 1027,
+			ENUM_NAMES = 1028,
+			ENUM_VALUES = 1029,
+			SYNTAX = 1030,
+			ALLOW_MULTIPLE = 1031,
+			ALLOW_LOG_ORDINAL = 1032,
+			ALLOW_IN_PROFILE = 1033,
+			ALLOW_IN_CONDITION = 1034,
+			DISPLAY_NAME = 1035,
+			VALUE = 1036,
+			ALLOW_IN_PROXY_PROFILE = 1037,
+			ALLOW_IN_PROXY_CONDITION = 1038,
+			ALLOW_IN_VPNDIALUP = 1039,
+			ALLOW_IN_8021X = 1040,
+			ENUM_FILTERS = 1041,
 		}
 		[AllowDuplicates]
 		public enum IASPROPERTIES : int32
 		{
-			PROPERTY_IAS_RADIUSSERVERGROUPS_COLLECTION = 1024,
-			PROPERTY_IAS_POLICIES_COLLECTION = 1025,
-			PROPERTY_IAS_PROFILES_COLLECTION = 1026,
-			PROPERTY_IAS_PROTOCOLS_COLLECTION = 1027,
-			PROPERTY_IAS_AUDITORS_COLLECTION = 1028,
-			PROPERTY_IAS_REQUESTHANDLERS_COLLECTION = 1029,
-			PROPERTY_IAS_PROXYPOLICIES_COLLECTION = 1030,
-			PROPERTY_IAS_PROXYPROFILES_COLLECTION = 1031,
-			PROPERTY_IAS_REMEDIATIONSERVERGROUPS_COLLECTION = 1032,
-			PROPERTY_IAS_SHVTEMPLATES_COLLECTION = 1033,
+			RADIUSSERVERGROUPS_COLLECTION = 1024,
+			POLICIES_COLLECTION = 1025,
+			PROFILES_COLLECTION = 1026,
+			PROTOCOLS_COLLECTION = 1027,
+			AUDITORS_COLLECTION = 1028,
+			REQUESTHANDLERS_COLLECTION = 1029,
+			PROXYPOLICIES_COLLECTION = 1030,
+			PROXYPROFILES_COLLECTION = 1031,
+			REMEDIATIONSERVERGROUPS_COLLECTION = 1032,
+			SHVTEMPLATES_COLLECTION = 1033,
 		}
 		[AllowDuplicates]
 		public enum TEMPLATESPROPERTIES : int32
 		{
-			PROPERTY_TEMPLATES_POLICIES_TEMPLATES = 1024,
-			PROPERTY_TEMPLATES_PROFILES_TEMPLATES = 1025,
-			PROPERTY_TEMPLATES_PROFILES_COLLECTION = 1026,
-			PROPERTY_TEMPLATES_PROXYPOLICIES_TEMPLATES = 1027,
-			PROPERTY_TEMPLATES_PROXYPROFILES_TEMPLATES = 1028,
-			PROPERTY_TEMPLATES_PROXYPROFILES_COLLECTION = 1029,
-			PROPERTY_TEMPLATES_REMEDIATIONSERVERGROUPS_TEMPLATES = 1030,
-			PROPERTY_TEMPLATES_SHVTEMPLATES_TEMPLATES = 1031,
-			PROPERTY_TEMPLATES_CLIENTS_TEMPLATES = 1032,
-			PROPERTY_TEMPLATES_RADIUSSERVERS_TEMPLATES = 1033,
-			PROPERTY_TEMPLATES_SHAREDSECRETS_TEMPLATES = 1034,
-			PROPERTY_TEMPLATES_IPFILTERS_TEMPLATES = 1035,
+			POLICIES_TEMPLATES = 1024,
+			PROFILES_TEMPLATES = 1025,
+			PROFILES_COLLECTION = 1026,
+			PROXYPOLICIES_TEMPLATES = 1027,
+			PROXYPROFILES_TEMPLATES = 1028,
+			PROXYPROFILES_COLLECTION = 1029,
+			REMEDIATIONSERVERGROUPS_TEMPLATES = 1030,
+			SHVTEMPLATES_TEMPLATES = 1031,
+			CLIENTS_TEMPLATES = 1032,
+			RADIUSSERVERS_TEMPLATES = 1033,
+			SHAREDSECRETS_TEMPLATES = 1034,
+			IPFILTERS_TEMPLATES = 1035,
 		}
 		[AllowDuplicates]
 		public enum CLIENTPROPERTIES : int32
 		{
-			PROPERTY_CLIENT_REQUIRE_SIGNATURE = 1024,
-			PROPERTY_CLIENT_UNUSED = 1025,
-			PROPERTY_CLIENT_SHARED_SECRET = 1026,
-			PROPERTY_CLIENT_NAS_MANUFACTURER = 1027,
-			PROPERTY_CLIENT_ADDRESS = 1028,
-			PROPERTY_CLIENT_QUARANTINE_COMPATIBLE = 1029,
-			PROPERTY_CLIENT_ENABLED = 1030,
-			PROPERTY_CLIENT_SECRET_TEMPLATE_GUID = 1031,
+			REQUIRE_SIGNATURE = 1024,
+			UNUSED = 1025,
+			SHARED_SECRET = 1026,
+			NAS_MANUFACTURER = 1027,
+			ADDRESS = 1028,
+			QUARANTINE_COMPATIBLE = 1029,
+			ENABLED = 1030,
+			SECRET_TEMPLATE_GUID = 1031,
 		}
 		[AllowDuplicates]
 		public enum VENDORPROPERTIES : int32
@@ -442,21 +442,21 @@ namespace Win32
 		[AllowDuplicates]
 		public enum PROFILEPROPERTIES : int32
 		{
-			PROPERTY_PROFILE_ATTRIBUTES_COLLECTION = 1024,
-			PROPERTY_PROFILE_IPFILTER_TEMPLATE_GUID = 1025,
+			ATTRIBUTES_COLLECTION = 1024,
+			IPFILTER_TEMPLATE_GUID = 1025,
 		}
 		[AllowDuplicates]
 		public enum POLICYPROPERTIES : int32
 		{
-			PROPERTY_POLICY_CONSTRAINT = 1024,
-			PROPERTY_POLICY_MERIT = 1025,
-			PROPERTY_POLICY_UNUSED0 = 1026,
-			PROPERTY_POLICY_UNUSED1 = 1027,
-			PROPERTY_POLICY_PROFILE_NAME = 1028,
-			PROPERTY_POLICY_ACTION = 1029,
-			PROPERTY_POLICY_CONDITIONS_COLLECTION = 1030,
-			PROPERTY_POLICY_ENABLED = 1031,
-			PROPERTY_POLICY_SOURCETAG = 1032,
+			CONSTRAINT = 1024,
+			MERIT = 1025,
+			UNUSED0 = 1026,
+			UNUSED1 = 1027,
+			PROFILE_NAME = 1028,
+			ACTION = 1029,
+			CONDITIONS_COLLECTION = 1030,
+			ENABLED = 1031,
+			SOURCETAG = 1032,
 		}
 		[AllowDuplicates]
 		public enum CONDITIONPROPERTIES : int32
@@ -471,20 +471,20 @@ namespace Win32
 		[AllowDuplicates]
 		public enum RADIUSSERVERPROPERTIES : int32
 		{
-			PROPERTY_RADIUSSERVER_AUTH_PORT = 1024,
-			PROPERTY_RADIUSSERVER_AUTH_SECRET = 1025,
-			PROPERTY_RADIUSSERVER_ACCT_PORT = 1026,
-			PROPERTY_RADIUSSERVER_ACCT_SECRET = 1027,
-			PROPERTY_RADIUSSERVER_ADDRESS = 1028,
-			PROPERTY_RADIUSSERVER_FORWARD_ACCT_ONOFF = 1029,
-			PROPERTY_RADIUSSERVER_PRIORITY = 1030,
-			PROPERTY_RADIUSSERVER_WEIGHT = 1031,
-			PROPERTY_RADIUSSERVER_TIMEOUT = 1032,
-			PROPERTY_RADIUSSERVER_MAX_LOST = 1033,
-			PROPERTY_RADIUSSERVER_BLACKOUT = 1034,
-			PROPERTY_RADIUSSERVER_SEND_SIGNATURE = 1035,
-			PROPERTY_RADIUSSERVER_AUTH_SECRET_TEMPLATE_GUID = 1036,
-			PROPERTY_RADIUSSERVER_ACCT_SECRET_TEMPLATE_GUID = 1037,
+			AUTH_PORT = 1024,
+			AUTH_SECRET = 1025,
+			ACCT_PORT = 1026,
+			ACCT_SECRET = 1027,
+			ADDRESS = 1028,
+			FORWARD_ACCT_ONOFF = 1029,
+			PRIORITY = 1030,
+			WEIGHT = 1031,
+			TIMEOUT = 1032,
+			MAX_LOST = 1033,
+			BLACKOUT = 1034,
+			SEND_SIGNATURE = 1035,
+			AUTH_SECRET_TEMPLATE_GUID = 1036,
+			ACCT_SECRET_TEMPLATE_GUID = 1037,
 		}
 		[AllowDuplicates]
 		public enum REMEDIATIONSERVERGROUPPROPERTIES : int32
@@ -494,15 +494,15 @@ namespace Win32
 		[AllowDuplicates]
 		public enum REMEDIATIONSERVERPROPERTIES : int32
 		{
-			PROPERTY_REMEDIATIONSERVER_ADDRESS = 1024,
-			PROPERTY_REMEDIATIONSERVER_FRIENDLY_NAME = 1025,
+			ADDRESS = 1024,
+			FRIENDLY_NAME = 1025,
 		}
 		[AllowDuplicates]
 		public enum SHVTEMPLATEPROPERTIES : int32
 		{
-			PROPERTY_SHV_COMBINATION_TYPE = 1024,
-			PROPERTY_SHV_LIST = 1025,
-			PROPERTY_SHVCONFIG_LIST = 1026,
+			_COMBINATION_TYPE = 1024,
+			_LIST = 1025,
+			CONFIG_LIST = 1026,
 		}
 		[AllowDuplicates]
 		public enum IPFILTERPROPERTIES : int32
@@ -517,30 +517,30 @@ namespace Win32
 		[AllowDuplicates]
 		public enum IASCOMPONENTPROPERTIES : int32
 		{
-			PROPERTY_COMPONENT_ID = 1024,
-			PROPERTY_COMPONENT_PROG_ID = 1025,
-			PROPERTY_COMPONENT_START = 1026,
+			ID = 1024,
+			PROG_ID = 1025,
+			START = 1026,
 		}
 		[AllowDuplicates]
 		public enum PROTOCOLPROPERTIES : int32
 		{
-			PROPERTY_PROTOCOL_REQUEST_HANDLER = 1026,
-			PROPERTY_PROTOCOL_START = 1027,
+			REQUEST_HANDLER = 1026,
+			START = 1027,
 		}
 		[AllowDuplicates]
 		public enum RADIUSPROPERTIES : int32
 		{
-			PROPERTY_RADIUS_ACCOUNTING_PORT = 1027,
-			PROPERTY_RADIUS_AUTHENTICATION_PORT = 1028,
-			PROPERTY_RADIUS_CLIENTS_COLLECTION = 1029,
-			PROPERTY_RADIUS_VENDORS_COLLECTION = 1030,
+			ACCOUNTING_PORT = 1027,
+			AUTHENTICATION_PORT = 1028,
+			CLIENTS_COLLECTION = 1029,
+			VENDORS_COLLECTION = 1030,
 		}
 		[AllowDuplicates]
 		public enum NTEVENTLOGPROPERTIES : int32
 		{
-			PROPERTY_EVENTLOG_LOG_APPLICATION_EVENTS = 1026,
-			PROPERTY_EVENTLOG_LOG_MALFORMED = 1027,
-			PROPERTY_EVENTLOG_LOG_DEBUG = 1028,
+			APPLICATION_EVENTS = 1026,
+			MALFORMED = 1027,
+			DEBUG = 1028,
 		}
 		[AllowDuplicates]
 		public enum NAMESPROPERTIES : int32
@@ -555,25 +555,25 @@ namespace Win32
 		[AllowDuplicates]
 		public enum ACCOUNTINGPROPERTIES : int32
 		{
-			PROPERTY_ACCOUNTING_LOG_ACCOUNTING = 1026,
-			PROPERTY_ACCOUNTING_LOG_ACCOUNTING_INTERIM = 1027,
-			PROPERTY_ACCOUNTING_LOG_AUTHENTICATION = 1028,
-			PROPERTY_ACCOUNTING_LOG_OPEN_NEW_FREQUENCY = 1029,
-			PROPERTY_ACCOUNTING_LOG_OPEN_NEW_SIZE = 1030,
-			PROPERTY_ACCOUNTING_LOG_FILE_DIRECTORY = 1031,
-			PROPERTY_ACCOUNTING_LOG_IAS1_FORMAT = 1032,
-			PROPERTY_ACCOUNTING_LOG_ENABLE_LOGGING = 1033,
-			PROPERTY_ACCOUNTING_LOG_DELETE_IF_FULL = 1034,
-			PROPERTY_ACCOUNTING_SQL_MAX_SESSIONS = 1035,
-			PROPERTY_ACCOUNTING_LOG_AUTHENTICATION_INTERIM = 1036,
-			PROPERTY_ACCOUNTING_LOG_FILE_IS_BACKUP = 1037,
-			PROPERTY_ACCOUNTING_DISCARD_REQUEST_ON_FAILURE = 1038,
+			LOG_ACCOUNTING = 1026,
+			LOG_ACCOUNTING_INTERIM = 1027,
+			LOG_AUTHENTICATION = 1028,
+			LOG_OPEN_NEW_FREQUENCY = 1029,
+			LOG_OPEN_NEW_SIZE = 1030,
+			LOG_FILE_DIRECTORY = 1031,
+			LOG_IAS1_FORMAT = 1032,
+			LOG_ENABLE_LOGGING = 1033,
+			LOG_DELETE_IF_FULL = 1034,
+			SQL_MAX_SESSIONS = 1035,
+			LOG_AUTHENTICATION_INTERIM = 1036,
+			LOG_FILE_IS_BACKUP = 1037,
+			DISCARD_REQUEST_ON_FAILURE = 1038,
 		}
 		[AllowDuplicates]
 		public enum NAPPROPERTIES : int32
 		{
-			PROPERTY_NAP_POLICIES_COLLECTION = 1026,
-			PROPERTY_SHV_TEMPLATES_COLLECTION = 1027,
+			NAP_POLICIES_COLLECTION = 1026,
+			SHV_TEMPLATES_COLLECTION = 1027,
 		}
 		[AllowDuplicates]
 		public enum RADIUSPROXYPROPERTIES : int32
@@ -588,192 +588,192 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SHV_COMBINATION_TYPE : int32
 		{
-			SHV_COMBINATION_TYPE_ALL_PASS = 0,
-			SHV_COMBINATION_TYPE_ALL_FAIL = 1,
-			SHV_COMBINATION_TYPE_ONE_OR_MORE_PASS = 2,
-			SHV_COMBINATION_TYPE_ONE_OR_MORE_FAIL = 3,
-			SHV_COMBINATION_TYPE_ONE_OR_MORE_INFECTED = 4,
-			SHV_COMBINATION_TYPE_ONE_OR_MORE_TRANSITIONAL = 5,
-			SHV_COMBINATION_TYPE_ONE_OR_MORE_UNKNOWN = 6,
-			SHV_COMBINATION_TYPE_MAX = 7,
+			ALL_PASS = 0,
+			ALL_FAIL = 1,
+			ONE_OR_MORE_PASS = 2,
+			ONE_OR_MORE_FAIL = 3,
+			ONE_OR_MORE_INFECTED = 4,
+			ONE_OR_MORE_TRANSITIONAL = 5,
+			ONE_OR_MORE_UNKNOWN = 6,
+			MAX = 7,
 		}
 		[AllowDuplicates]
 		public enum SERVICE_TYPE : int32
 		{
-			SERVICE_TYPE_IAS = 0,
-			SERVICE_TYPE_RAS = 1,
-			SERVICE_TYPE_RAMGMTSVC = 2,
-			SERVICE_TYPE_MAX = 3,
+			IAS = 0,
+			RAS = 1,
+			RAMGMTSVC = 2,
+			MAX = 3,
 		}
 		[AllowDuplicates]
 		public enum IASOSTYPE : int32
 		{
-			SYSTEM_TYPE_NT4_WORKSTATION = 0,
-			SYSTEM_TYPE_NT5_WORKSTATION = 1,
-			SYSTEM_TYPE_NT6_WORKSTATION = 2,
-			SYSTEM_TYPE_NT6_1_WORKSTATION = 3,
-			SYSTEM_TYPE_NT6_2_WORKSTATION = 4,
-			SYSTEM_TYPE_NT6_3_WORKSTATION = 5,
-			SYSTEM_TYPE_NT10_0_WORKSTATION = 6,
-			SYSTEM_TYPE_NT4_SERVER = 7,
-			SYSTEM_TYPE_NT5_SERVER = 8,
-			SYSTEM_TYPE_NT6_SERVER = 9,
-			SYSTEM_TYPE_NT6_1_SERVER = 10,
-			SYSTEM_TYPE_NT6_2_SERVER = 11,
-			SYSTEM_TYPE_NT6_3_SERVER = 12,
-			SYSTEM_TYPE_NT10_0_SERVER = 13,
+			_4_WORKSTATION = 0,
+			_5_WORKSTATION = 1,
+			_6_WORKSTATION = 2,
+			_6_1_WORKSTATION = 3,
+			_6_2_WORKSTATION = 4,
+			_6_3_WORKSTATION = 5,
+			_10_0_WORKSTATION = 6,
+			_4_SERVER = 7,
+			_5_SERVER = 8,
+			_6_SERVER = 9,
+			_6_1_SERVER = 10,
+			_6_2_SERVER = 11,
+			_6_3_SERVER = 12,
+			_10_0_SERVER = 13,
 		}
 		[AllowDuplicates]
 		public enum IASDOMAINTYPE : int32
 		{
-			DOMAIN_TYPE_NONE = 0,
-			DOMAIN_TYPE_NT4 = 1,
-			DOMAIN_TYPE_NT5 = 2,
-			DOMAIN_TYPE_MIXED = 3,
+			NONE = 0,
+			NT4 = 1,
+			NT5 = 2,
+			MIXED = 3,
 		}
 		[AllowDuplicates]
 		public enum IASDATASTORE : int32
 		{
-			DATA_STORE_LOCAL = 0,
-			DATA_STORE_DIRECTORY = 1,
+			LOCAL = 0,
+			DIRECTORY = 1,
 		}
 		[AllowDuplicates]
 		public enum RADIUS_ATTRIBUTE_TYPE : int32
 		{
-			ratMinimum = 0,
-			ratUserName = 1,
-			ratUserPassword = 2,
-			ratCHAPPassword = 3,
-			ratNASIPAddress = 4,
-			ratNASPort = 5,
-			ratServiceType = 6,
-			ratFramedProtocol = 7,
-			ratFramedIPAddress = 8,
-			ratFramedIPNetmask = 9,
-			ratFramedRouting = 10,
-			ratFilterId = 11,
-			ratFramedMTU = 12,
-			ratFramedCompression = 13,
-			ratLoginIPHost = 14,
-			ratLoginService = 15,
-			ratLoginPort = 16,
-			ratReplyMessage = 18,
-			ratCallbackNumber = 19,
-			ratCallbackId = 20,
-			ratFramedRoute = 22,
-			ratFramedIPXNetwork = 23,
-			ratState = 24,
-			ratClass = 25,
-			ratVendorSpecific = 26,
-			ratSessionTimeout = 27,
-			ratIdleTimeout = 28,
-			ratTerminationAction = 29,
-			ratCalledStationId = 30,
-			ratCallingStationId = 31,
-			ratNASIdentifier = 32,
-			ratProxyState = 33,
-			ratLoginLATService = 34,
-			ratLoginLATNode = 35,
-			ratLoginLATGroup = 36,
-			ratFramedAppleTalkLink = 37,
-			ratFramedAppleTalkNetwork = 38,
-			ratFramedAppleTalkZone = 39,
-			ratAcctStatusType = 40,
-			ratAcctDelayTime = 41,
-			ratAcctInputOctets = 42,
-			ratAcctOutputOctets = 43,
-			ratAcctSessionId = 44,
-			ratAcctAuthentic = 45,
-			ratAcctSessionTime = 46,
-			ratAcctInputPackets = 47,
-			ratAcctOutputPackets = 48,
-			ratAcctTerminationCause = 49,
-			ratCHAPChallenge = 60,
-			ratNASPortType = 61,
-			ratPortLimit = 62,
-			ratTunnelType = 64,
-			ratMediumType = 65,
-			ratTunnelPassword = 69,
-			ratTunnelPrivateGroupID = 81,
-			ratNASIPv6Address = 95,
-			ratFramedInterfaceId = 96,
-			ratFramedIPv6Prefix = 97,
-			ratLoginIPv6Host = 98,
-			ratFramedIPv6Route = 99,
-			ratFramedIPv6Pool = 100,
-			ratCode = 262,
-			ratIdentifier = 263,
-			ratAuthenticator = 264,
-			ratSrcIPAddress = 265,
-			ratSrcPort = 266,
-			ratProvider = 267,
-			ratStrippedUserName = 268,
-			ratFQUserName = 269,
-			ratPolicyName = 270,
-			ratUniqueId = 271,
-			ratExtensionState = 272,
-			ratEAPTLV = 273,
-			ratRejectReasonCode = 274,
-			ratCRPPolicyName = 275,
-			ratProviderName = 276,
-			ratClearTextPassword = 277,
-			ratSrcIPv6Address = 278,
-			ratCertificateThumbprint = 279,
+			Minimum = 0,
+			UserName = 1,
+			UserPassword = 2,
+			CHAPPassword = 3,
+			NASIPAddress = 4,
+			NASPort = 5,
+			ServiceType = 6,
+			FramedProtocol = 7,
+			FramedIPAddress = 8,
+			FramedIPNetmask = 9,
+			FramedRouting = 10,
+			FilterId = 11,
+			FramedMTU = 12,
+			FramedCompression = 13,
+			LoginIPHost = 14,
+			LoginService = 15,
+			LoginPort = 16,
+			ReplyMessage = 18,
+			CallbackNumber = 19,
+			CallbackId = 20,
+			FramedRoute = 22,
+			FramedIPXNetwork = 23,
+			State = 24,
+			Class = 25,
+			VendorSpecific = 26,
+			SessionTimeout = 27,
+			IdleTimeout = 28,
+			TerminationAction = 29,
+			CalledStationId = 30,
+			CallingStationId = 31,
+			NASIdentifier = 32,
+			ProxyState = 33,
+			LoginLATService = 34,
+			LoginLATNode = 35,
+			LoginLATGroup = 36,
+			FramedAppleTalkLink = 37,
+			FramedAppleTalkNetwork = 38,
+			FramedAppleTalkZone = 39,
+			AcctStatusType = 40,
+			AcctDelayTime = 41,
+			AcctInputOctets = 42,
+			AcctOutputOctets = 43,
+			AcctSessionId = 44,
+			AcctAuthentic = 45,
+			AcctSessionTime = 46,
+			AcctInputPackets = 47,
+			AcctOutputPackets = 48,
+			AcctTerminationCause = 49,
+			CHAPChallenge = 60,
+			NASPortType = 61,
+			PortLimit = 62,
+			TunnelType = 64,
+			MediumType = 65,
+			TunnelPassword = 69,
+			TunnelPrivateGroupID = 81,
+			NASIPv6Address = 95,
+			FramedInterfaceId = 96,
+			FramedIPv6Prefix = 97,
+			LoginIPv6Host = 98,
+			FramedIPv6Route = 99,
+			FramedIPv6Pool = 100,
+			Code = 262,
+			Identifier = 263,
+			Authenticator = 264,
+			SrcIPAddress = 265,
+			SrcPort = 266,
+			Provider = 267,
+			StrippedUserName = 268,
+			FQUserName = 269,
+			PolicyName = 270,
+			UniqueId = 271,
+			ExtensionState = 272,
+			EAPTLV = 273,
+			RejectReasonCode = 274,
+			CRPPolicyName = 275,
+			ProviderName = 276,
+			ClearTextPassword = 277,
+			SrcIPv6Address = 278,
+			CertificateThumbprint = 279,
 		}
 		[AllowDuplicates]
 		public enum RADIUS_CODE : int32
 		{
-			rcUnknown = 0,
-			rcAccessRequest = 1,
-			rcAccessAccept = 2,
-			rcAccessReject = 3,
-			rcAccountingRequest = 4,
-			rcAccountingResponse = 5,
-			rcAccessChallenge = 11,
-			rcDiscard = 256,
+			Unknown = 0,
+			AccessRequest = 1,
+			AccessAccept = 2,
+			AccessReject = 3,
+			AccountingRequest = 4,
+			AccountingResponse = 5,
+			AccessChallenge = 11,
+			Discard = 256,
 		}
 		[AllowDuplicates]
 		public enum RADIUS_AUTHENTICATION_PROVIDER : int32
 		{
-			rapUnknown = 0,
-			rapUsersFile = 1,
-			rapProxy = 2,
-			rapWindowsNT = 3,
-			rapMCIS = 4,
-			rapODBC = 5,
-			rapNone = 6,
+			Unknown = 0,
+			UsersFile = 1,
+			Proxy = 2,
+			WindowsNT = 3,
+			MCIS = 4,
+			ODBC = 5,
+			None = 6,
 		}
 		[AllowDuplicates]
 		public enum RADIUS_REJECT_REASON_CODE : int32
 		{
-			rrrcUndefined = 0,
-			rrrcAccountUnknown = 1,
-			rrrcAccountDisabled = 2,
-			rrrcAccountExpired = 3,
-			rrrcAuthenticationFailure = 4,
+			Undefined = 0,
+			AccountUnknown = 1,
+			AccountDisabled = 2,
+			AccountExpired = 3,
+			AuthenticationFailure = 4,
 		}
 		[AllowDuplicates]
 		public enum RADIUS_DATA_TYPE : int32
 		{
-			rdtUnknown = 0,
-			rdtString = 1,
-			rdtAddress = 2,
-			rdtInteger = 3,
-			rdtTime = 4,
-			rdtIpv6Address = 5,
+			Unknown = 0,
+			String = 1,
+			Address = 2,
+			Integer = 3,
+			Time = 4,
+			Ipv6Address = 5,
 		}
 		[AllowDuplicates]
 		public enum RADIUS_ACTION : int32
 		{
-			raContinue = 0,
-			raReject = 1,
-			raAccept = 2,
+			Continue = 0,
+			Reject = 1,
+			Accept = 2,
 		}
 		[AllowDuplicates]
 		public enum RADIUS_EXTENSION_POINT : int32
 		{
-			repAuthentication = 0,
-			repAuthorization = 1,
+			entication = 0,
+			orization = 1,
 		}
 		
 		// --- Function Pointers ---

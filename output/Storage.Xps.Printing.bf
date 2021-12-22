@@ -16,18 +16,18 @@ namespace Win32
 		[AllowDuplicates]
 		public enum XPS_JOB_COMPLETION : int32
 		{
-			XPS_JOB_IN_PROGRESS = 0,
-			XPS_JOB_COMPLETED = 1,
-			XPS_JOB_CANCELLED = 2,
-			XPS_JOB_FAILED = 3,
+			IN_PROGRESS = 0,
+			COMPLETED = 1,
+			CANCELLED = 2,
+			FAILED = 3,
 		}
 		[AllowDuplicates]
 		public enum PrintDocumentPackageCompletion : int32
 		{
-			PrintDocumentPackageCompletion_InProgress = 0,
-			PrintDocumentPackageCompletion_Completed = 1,
-			PrintDocumentPackageCompletion_Canceled = 2,
-			PrintDocumentPackageCompletion_Failed = 3,
+			InProgress = 0,
+			Completed = 1,
+			Canceled = 2,
+			Failed = 3,
 		}
 		
 		// --- Structs ---

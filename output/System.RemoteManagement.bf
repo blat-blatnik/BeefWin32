@@ -551,129 +551,129 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WSManDataType : int32
 		{
-			WSMAN_DATA_NONE = 0,
-			WSMAN_DATA_TYPE_TEXT = 1,
-			WSMAN_DATA_TYPE_BINARY = 2,
-			WSMAN_DATA_TYPE_DWORD = 4,
+			NONE = 0,
+			TYPE_TEXT = 1,
+			TYPE_BINARY = 2,
+			TYPE_DWORD = 4,
 		}
 		[AllowDuplicates]
 		public enum WSManAuthenticationFlags : int32
 		{
-			WSMAN_FLAG_DEFAULT_AUTHENTICATION = 0,
-			WSMAN_FLAG_NO_AUTHENTICATION = 1,
-			WSMAN_FLAG_AUTH_DIGEST = 2,
-			WSMAN_FLAG_AUTH_NEGOTIATE = 4,
-			WSMAN_FLAG_AUTH_BASIC = 8,
-			WSMAN_FLAG_AUTH_KERBEROS = 16,
-			WSMAN_FLAG_AUTH_CREDSSP = 128,
-			WSMAN_FLAG_AUTH_CLIENT_CERTIFICATE = 32,
+			DEFAULT_AUTHENTICATION = 0,
+			NO_AUTHENTICATION = 1,
+			AUTH_DIGEST = 2,
+			AUTH_NEGOTIATE = 4,
+			AUTH_BASIC = 8,
+			AUTH_KERBEROS = 16,
+			AUTH_CREDSSP = 128,
+			AUTH_CLIENT_CERTIFICATE = 32,
 		}
 		[AllowDuplicates]
 		public enum WSManProxyAccessType : int32
 		{
-			WSMAN_OPTION_PROXY_IE_PROXY_CONFIG = 1,
-			WSMAN_OPTION_PROXY_WINHTTP_PROXY_CONFIG = 2,
-			WSMAN_OPTION_PROXY_AUTO_DETECT = 4,
-			WSMAN_OPTION_PROXY_NO_PROXY_SERVER = 8,
+			IE_PROXY_CONFIG = 1,
+			WINHTTP_PROXY_CONFIG = 2,
+			AUTO_DETECT = 4,
+			NO_PROXY_SERVER = 8,
 		}
 		[AllowDuplicates]
 		public enum WSManSessionOption : int32
 		{
-			WSMAN_OPTION_DEFAULT_OPERATION_TIMEOUTMS = 1,
-			WSMAN_OPTION_MAX_RETRY_TIME = 11,
-			WSMAN_OPTION_TIMEOUTMS_CREATE_SHELL = 12,
-			WSMAN_OPTION_TIMEOUTMS_RUN_SHELL_COMMAND = 13,
-			WSMAN_OPTION_TIMEOUTMS_RECEIVE_SHELL_OUTPUT = 14,
-			WSMAN_OPTION_TIMEOUTMS_SEND_SHELL_INPUT = 15,
-			WSMAN_OPTION_TIMEOUTMS_SIGNAL_SHELL = 16,
-			WSMAN_OPTION_TIMEOUTMS_CLOSE_SHELL = 17,
-			WSMAN_OPTION_SKIP_CA_CHECK = 18,
-			WSMAN_OPTION_SKIP_CN_CHECK = 19,
-			WSMAN_OPTION_UNENCRYPTED_MESSAGES = 20,
-			WSMAN_OPTION_UTF16 = 21,
-			WSMAN_OPTION_ENABLE_SPN_SERVER_PORT = 22,
-			WSMAN_OPTION_MACHINE_ID = 23,
-			WSMAN_OPTION_LOCALE = 25,
-			WSMAN_OPTION_UI_LANGUAGE = 26,
-			WSMAN_OPTION_MAX_ENVELOPE_SIZE_KB = 28,
-			WSMAN_OPTION_SHELL_MAX_DATA_SIZE_PER_MESSAGE_KB = 29,
-			WSMAN_OPTION_REDIRECT_LOCATION = 30,
-			WSMAN_OPTION_SKIP_REVOCATION_CHECK = 31,
-			WSMAN_OPTION_ALLOW_NEGOTIATE_IMPLICIT_CREDENTIALS = 32,
-			WSMAN_OPTION_USE_SSL = 33,
-			WSMAN_OPTION_USE_INTEARACTIVE_TOKEN = 34,
+			DEFAULT_OPERATION_TIMEOUTMS = 1,
+			MAX_RETRY_TIME = 11,
+			TIMEOUTMS_CREATE_SHELL = 12,
+			TIMEOUTMS_RUN_SHELL_COMMAND = 13,
+			TIMEOUTMS_RECEIVE_SHELL_OUTPUT = 14,
+			TIMEOUTMS_SEND_SHELL_INPUT = 15,
+			TIMEOUTMS_SIGNAL_SHELL = 16,
+			TIMEOUTMS_CLOSE_SHELL = 17,
+			SKIP_CA_CHECK = 18,
+			SKIP_CN_CHECK = 19,
+			UNENCRYPTED_MESSAGES = 20,
+			UTF16 = 21,
+			ENABLE_SPN_SERVER_PORT = 22,
+			MACHINE_ID = 23,
+			LOCALE = 25,
+			UI_LANGUAGE = 26,
+			MAX_ENVELOPE_SIZE_KB = 28,
+			SHELL_MAX_DATA_SIZE_PER_MESSAGE_KB = 29,
+			REDIRECT_LOCATION = 30,
+			SKIP_REVOCATION_CHECK = 31,
+			ALLOW_NEGOTIATE_IMPLICIT_CREDENTIALS = 32,
+			USE_SSL = 33,
+			USE_INTEARACTIVE_TOKEN = 34,
 		}
 		[AllowDuplicates]
 		public enum WSManCallbackFlags : int32
 		{
-			WSMAN_FLAG_CALLBACK_END_OF_OPERATION = 1,
-			WSMAN_FLAG_CALLBACK_END_OF_STREAM = 8,
-			WSMAN_FLAG_CALLBACK_SHELL_SUPPORTS_DISCONNECT = 32,
-			WSMAN_FLAG_CALLBACK_SHELL_AUTODISCONNECTED = 64,
-			WSMAN_FLAG_CALLBACK_NETWORK_FAILURE_DETECTED = 256,
-			WSMAN_FLAG_CALLBACK_RETRYING_AFTER_NETWORK_FAILURE = 512,
-			WSMAN_FLAG_CALLBACK_RECONNECTED_AFTER_NETWORK_FAILURE = 1024,
-			WSMAN_FLAG_CALLBACK_SHELL_AUTODISCONNECTING = 2048,
-			WSMAN_FLAG_CALLBACK_RETRY_ABORTED_DUE_TO_INTERNAL_ERROR = 4096,
-			WSMAN_FLAG_CALLBACK_RECEIVE_DELAY_STREAM_REQUEST_PROCESSED = 8192,
+			END_OF_OPERATION = 1,
+			END_OF_STREAM = 8,
+			SHELL_SUPPORTS_DISCONNECT = 32,
+			SHELL_AUTODISCONNECTED = 64,
+			NETWORK_FAILURE_DETECTED = 256,
+			RETRYING_AFTER_NETWORK_FAILURE = 512,
+			RECONNECTED_AFTER_NETWORK_FAILURE = 1024,
+			SHELL_AUTODISCONNECTING = 2048,
+			RETRY_ABORTED_DUE_TO_INTERNAL_ERROR = 4096,
+			RECEIVE_DELAY_STREAM_REQUEST_PROCESSED = 8192,
 		}
 		[AllowDuplicates]
 		public enum WSManShellFlag : int32
 		{
-			WSMAN_FLAG_NO_COMPRESSION = 1,
-			WSMAN_FLAG_DELETE_SERVER_SESSION = 2,
-			WSMAN_FLAG_SERVER_BUFFERING_MODE_DROP = 4,
-			WSMAN_FLAG_SERVER_BUFFERING_MODE_BLOCK = 8,
-			WSMAN_FLAG_RECEIVE_DELAY_OUTPUT_STREAM = 16,
+			NO_COMPRESSION = 1,
+			DELETE_SERVER_SESSION = 2,
+			SERVER_BUFFERING_MODE_DROP = 4,
+			SERVER_BUFFERING_MODE_BLOCK = 8,
+			RECEIVE_DELAY_OUTPUT_STREAM = 16,
 		}
 		[AllowDuplicates]
 		public enum WSManSessionFlags : int32
 		{
-			WSManFlagUTF8 = 1,
-			WSManFlagCredUsernamePassword = 4096,
-			WSManFlagSkipCACheck = 8192,
-			WSManFlagSkipCNCheck = 16384,
-			WSManFlagUseNoAuthentication = 32768,
-			WSManFlagUseDigest = 65536,
-			WSManFlagUseNegotiate = 131072,
-			WSManFlagUseBasic = 262144,
-			WSManFlagUseKerberos = 524288,
-			WSManFlagNoEncryption = 1048576,
-			WSManFlagUseClientCertificate = 2097152,
-			WSManFlagEnableSPNServerPort = 4194304,
-			WSManFlagUTF16 = 8388608,
-			WSManFlagUseCredSsp = 16777216,
-			WSManFlagSkipRevocationCheck = 33554432,
-			WSManFlagAllowNegotiateImplicitCredentials = 67108864,
-			WSManFlagUseSsl = 134217728,
+			UTF8 = 1,
+			CredUsernamePassword = 4096,
+			SkipCACheck = 8192,
+			SkipCNCheck = 16384,
+			UseNoAuthentication = 32768,
+			UseDigest = 65536,
+			UseNegotiate = 131072,
+			UseBasic = 262144,
+			UseKerberos = 524288,
+			NoEncryption = 1048576,
+			UseClientCertificate = 2097152,
+			EnableSPNServerPort = 4194304,
+			UTF16 = 8388608,
+			UseCredSsp = 16777216,
+			SkipRevocationCheck = 33554432,
+			AllowNegotiateImplicitCredentials = 67108864,
+			UseSsl = 134217728,
 		}
 		[AllowDuplicates]
 		public enum WSManEnumFlags : int32
 		{
-			WSManFlagNonXmlText = 1,
-			WSManFlagReturnObject = 0,
-			WSManFlagReturnEPR = 2,
-			WSManFlagReturnObjectAndEPR = 4,
-			WSManFlagHierarchyDeep = 0,
-			WSManFlagHierarchyShallow = 32,
-			WSManFlagHierarchyDeepBasePropsOnly = 64,
-			WSManFlagAssociatedInstance = 0,
-			WSManFlagAssociationInstance = 128,
+			NonXmlText = 1,
+			ReturnObject = 0,
+			ReturnEPR = 2,
+			ReturnObjectAndEPR = 4,
+			HierarchyDeep = 0,
+			HierarchyShallow = 32,
+			HierarchyDeepBasePropsOnly = 64,
+			AssociatedInstance = 0,
+			AssociationInstance = 128,
 		}
 		[AllowDuplicates]
 		public enum WSManProxyAccessTypeFlags : int32
 		{
-			WSManProxyIEConfig = 1,
-			WSManProxyWinHttpConfig = 2,
-			WSManProxyAutoDetect = 4,
-			WSManProxyNoProxyServer = 8,
+			IEConfig = 1,
+			WinHttpConfig = 2,
+			AutoDetect = 4,
+			NoProxyServer = 8,
 		}
 		[AllowDuplicates]
 		public enum WSManProxyAuthenticationFlags : int32
 		{
-			WSManFlagProxyAuthenticationUseNegotiate = 1,
-			WSManFlagProxyAuthenticationUseBasic = 2,
-			WSManFlagProxyAuthenticationUseDigest = 4,
+			Negotiate = 1,
+			Basic = 2,
+			Digest = 4,
 		}
 		
 		// --- Function Pointers ---

@@ -118,9 +118,9 @@ namespace Win32
 		[AllowDuplicates]
 		public enum TIMECODE_SAMPLE_FLAGS : uint32
 		{
-			ED_DEVCAP_TIMECODE_READ = 4121,
-			ED_DEVCAP_ATN_READ = 5047,
-			ED_DEVCAP_RTC_READ = 5050,
+			TIMECODE_READ = 4121,
+			ATN_READ = 5047,
+			RTC_READ = 5050,
 		}
 		
 		// --- Function Pointers ---

@@ -56,35 +56,35 @@ namespace Win32
 		[AllowDuplicates]
 		public enum PropertyConstraint : int32
 		{
-			QC_EQUALS = 0,
-			QC_NOTEQUAL = 1,
-			QC_LESSTHAN = 2,
-			QC_LESSTHANOREQUAL = 3,
-			QC_GREATERTHAN = 4,
-			QC_GREATERTHANOREQUAL = 5,
-			QC_STARTSWITH = 6,
-			QC_EXISTS = 7,
-			QC_DOESNOTEXIST = 8,
-			QC_CONTAINS = 9,
+			EQUALS = 0,
+			NOTEQUAL = 1,
+			LESSTHAN = 2,
+			LESSTHANOREQUAL = 3,
+			GREATERTHAN = 4,
+			GREATERTHANOREQUAL = 5,
+			STARTSWITH = 6,
+			EXISTS = 7,
+			DOESNOTEXIST = 8,
+			CONTAINS = 9,
 		}
 		[AllowDuplicates]
 		public enum SystemVisibilityFlags : int32
 		{
-			SVF_SYSTEM = 0,
-			SVF_USER = 1,
+			SYSTEM = 0,
+			USER = 1,
 		}
 		[AllowDuplicates]
 		public enum QueryUpdateAction : int32
 		{
-			QUA_ADD = 0,
-			QUA_REMOVE = 1,
-			QUA_CHANGE = 2,
+			ADD = 0,
+			REMOVE = 1,
+			CHANGE = 2,
 		}
 		[AllowDuplicates]
 		public enum QueryCategoryType : int32
 		{
-			QCT_PROVIDER = 0,
-			QCT_LAYERED = 1,
+			PROVIDER = 0,
+			LAYERED = 1,
 		}
 		
 		// --- COM Class IDs ---

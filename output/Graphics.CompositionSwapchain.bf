@@ -10,23 +10,23 @@ namespace Win32
 		[AllowDuplicates]
 		public enum PresentStatisticsKind : int32
 		{
-			PresentStatisticsKind_PresentStatus = 1,
-			PresentStatisticsKind_CompositionFrame = 2,
-			PresentStatisticsKind_IndependentFlipFrame = 3,
+			PresentStatus = 1,
+			CompositionFrame = 2,
+			IndependentFlipFrame = 3,
 		}
 		[AllowDuplicates]
 		public enum PresentStatus : int32
 		{
-			PresentStatus_Queued = 0,
-			PresentStatus_Skipped = 1,
-			PresentStatus_Canceled = 2,
+			Queued = 0,
+			Skipped = 1,
+			Canceled = 2,
 		}
 		[AllowDuplicates]
 		public enum CompositionFrameInstanceKind : int32
 		{
-			CompositionFrameInstanceKind_ComposedOnScreen = 0,
-			CompositionFrameInstanceKind_ScanoutOnScreen = 1,
-			CompositionFrameInstanceKind_ComposedToIntermediate = 2,
+			ComposedOnScreen = 0,
+			ScanoutOnScreen = 1,
+			ComposedToIntermediate = 2,
 		}
 		
 		// --- Structs ---

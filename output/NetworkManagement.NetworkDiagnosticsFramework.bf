@@ -43,75 +43,75 @@ namespace Win32
 		[AllowDuplicates]
 		public enum ATTRIBUTE_TYPE : int32
 		{
-			AT_INVALID = 0,
-			AT_BOOLEAN = 1,
-			AT_INT8 = 2,
-			AT_UINT8 = 3,
-			AT_INT16 = 4,
-			AT_UINT16 = 5,
-			AT_INT32 = 6,
-			AT_UINT32 = 7,
-			AT_INT64 = 8,
-			AT_UINT64 = 9,
-			AT_STRING = 10,
-			AT_GUID = 11,
-			AT_LIFE_TIME = 12,
-			AT_SOCKADDR = 13,
-			AT_OCTET_STRING = 14,
+			INVALID = 0,
+			BOOLEAN = 1,
+			INT8 = 2,
+			UINT8 = 3,
+			INT16 = 4,
+			UINT16 = 5,
+			INT32 = 6,
+			UINT32 = 7,
+			INT64 = 8,
+			UINT64 = 9,
+			STRING = 10,
+			GUID = 11,
+			LIFE_TIME = 12,
+			SOCKADDR = 13,
+			OCTET_STRING = 14,
 		}
 		[AllowDuplicates]
 		public enum REPAIR_SCOPE : int32
 		{
-			RS_SYSTEM = 0,
-			RS_USER = 1,
-			RS_APPLICATION = 2,
-			RS_PROCESS = 3,
+			SYSTEM = 0,
+			USER = 1,
+			APPLICATION = 2,
+			PROCESS = 3,
 		}
 		[AllowDuplicates]
 		public enum REPAIR_RISK : int32
 		{
-			RR_NOROLLBACK = 0,
-			RR_ROLLBACK = 1,
-			RR_NORISK = 2,
+			NOROLLBACK = 0,
+			ROLLBACK = 1,
+			NORISK = 2,
 		}
 		[AllowDuplicates]
 		public enum UI_INFO_TYPE : int32
 		{
-			UIT_INVALID = 0,
-			UIT_NONE = 1,
-			UIT_SHELL_COMMAND = 2,
-			UIT_HELP_PANE = 3,
-			UIT_DUI = 4,
+			INVALID = 0,
+			NONE = 1,
+			SHELL_COMMAND = 2,
+			HELP_PANE = 3,
+			DUI = 4,
 		}
 		[AllowDuplicates]
 		public enum DIAGNOSIS_STATUS : int32
 		{
-			DS_NOT_IMPLEMENTED = 0,
-			DS_CONFIRMED = 1,
-			DS_REJECTED = 2,
-			DS_INDETERMINATE = 3,
-			DS_DEFERRED = 4,
-			DS_PASSTHROUGH = 5,
+			NOT_IMPLEMENTED = 0,
+			CONFIRMED = 1,
+			REJECTED = 2,
+			INDETERMINATE = 3,
+			DEFERRED = 4,
+			PASSTHROUGH = 5,
 		}
 		[AllowDuplicates]
 		public enum REPAIR_STATUS : int32
 		{
-			RS_NOT_IMPLEMENTED = 0,
-			RS_REPAIRED = 1,
-			RS_UNREPAIRED = 2,
-			RS_DEFERRED = 3,
-			RS_USER_ACTION = 4,
+			NOT_IMPLEMENTED = 0,
+			REPAIRED = 1,
+			UNREPAIRED = 2,
+			DEFERRED = 3,
+			USER_ACTION = 4,
 		}
 		[AllowDuplicates]
 		public enum PROBLEM_TYPE : int32
 		{
-			PT_INVALID = 0,
-			PT_LOW_HEALTH = 1,
-			PT_LOWER_HEALTH = 2,
-			PT_DOWN_STREAM_HEALTH = 4,
-			PT_HIGH_UTILIZATION = 8,
-			PT_HIGHER_UTILIZATION = 16,
-			PT_UP_STREAM_UTILIZATION = 32,
+			INVALID = 0,
+			LOW_HEALTH = 1,
+			LOWER_HEALTH = 2,
+			DOWN_STREAM_HEALTH = 4,
+			HIGH_UTILIZATION = 8,
+			HIGHER_UTILIZATION = 16,
+			UP_STREAM_UTILIZATION = 32,
 		}
 		
 		// --- Structs ---

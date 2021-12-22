@@ -117,65 +117,65 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WINBIO_SETTING_SOURCE : uint32
 		{
-			WINBIO_SETTING_SOURCE_INVALID = 0,
-			WINBIO_SETTING_SOURCE_DEFAULT = 1,
-			WINBIO_SETTING_SOURCE_LOCAL = 3,
-			WINBIO_SETTING_SOURCE_POLICY = 2,
+			INVALID = 0,
+			DEFAULT = 1,
+			LOCAL = 3,
+			POLICY = 2,
 		}
 		[AllowDuplicates]
 		public enum WINBIO_COMPONENT : uint32
 		{
-			WINBIO_COMPONENT_SENSOR = 1,
-			WINBIO_COMPONENT_ENGINE = 2,
-			WINBIO_COMPONENT_STORAGE = 3,
+			SENSOR = 1,
+			ENGINE = 2,
+			STORAGE = 3,
 		}
 		[AllowDuplicates]
 		public enum WINBIO_POOL : uint32
 		{
-			WINBIO_POOL_SYSTEM = 1,
-			WINBIO_POOL_PRIVATE = 2,
+			SYSTEM = 1,
+			PRIVATE = 2,
 		}
 		[AllowDuplicates]
 		public enum WINBIO_ANTI_SPOOF_POLICY_ACTION : int32
 		{
-			WINBIO_ANTI_SPOOF_DISABLE = 0,
-			WINBIO_ANTI_SPOOF_ENABLE = 1,
-			WINBIO_ANTI_SPOOF_REMOVE = 2,
+			DISABLE = 0,
+			ENABLE = 1,
+			REMOVE = 2,
 		}
 		[AllowDuplicates]
 		public enum WINBIO_POLICY_SOURCE : int32
 		{
-			WINBIO_POLICY_UNKNOWN = 0,
-			WINBIO_POLICY_DEFAULT = 1,
-			WINBIO_POLICY_LOCAL = 2,
-			WINBIO_POLICY_ADMIN = 3,
+			UNKNOWN = 0,
+			DEFAULT = 1,
+			LOCAL = 2,
+			ADMIN = 3,
 		}
 		[AllowDuplicates]
 		public enum WINBIO_CREDENTIAL_TYPE : int32
 		{
-			WINBIO_CREDENTIAL_PASSWORD = 1,
-			WINBIO_CREDENTIAL_ALL = -1,
+			PASSWORD = 1,
+			ALL = -1,
 		}
 		[AllowDuplicates]
 		public enum WINBIO_CREDENTIAL_FORMAT : int32
 		{
-			WINBIO_PASSWORD_GENERIC = 1,
-			WINBIO_PASSWORD_PACKED = 2,
-			WINBIO_PASSWORD_PROTECTED = 3,
+			GENERIC = 1,
+			PACKED = 2,
+			PROTECTED = 3,
 		}
 		[AllowDuplicates]
 		public enum WINBIO_CREDENTIAL_STATE : int32
 		{
-			WINBIO_CREDENTIAL_NOT_SET = 1,
-			WINBIO_CREDENTIAL_SET = 2,
+			NOT_SET = 1,
+			SET = 2,
 		}
 		[AllowDuplicates]
 		public enum WINBIO_ASYNC_NOTIFICATION_METHOD : int32
 		{
-			WINBIO_ASYNC_NOTIFY_NONE = 0,
-			WINBIO_ASYNC_NOTIFY_CALLBACK = 1,
-			WINBIO_ASYNC_NOTIFY_MESSAGE = 2,
-			WINBIO_ASYNC_NOTIFY_MAXIMUM_VALUE = 3,
+			NONE = 0,
+			CALLBACK = 1,
+			MESSAGE = 2,
+			MAXIMUM_VALUE = 3,
 		}
 		
 		// --- Function Pointers ---

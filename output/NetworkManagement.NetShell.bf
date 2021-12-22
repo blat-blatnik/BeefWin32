@@ -41,39 +41,39 @@ namespace Win32
 		[AllowDuplicates]
 		public enum NS_CMD_FLAGS : int32
 		{
-			CMD_FLAG_PRIVATE = 1,
-			CMD_FLAG_INTERACTIVE = 2,
-			CMD_FLAG_LOCAL = 8,
-			CMD_FLAG_ONLINE = 16,
-			CMD_FLAG_HIDDEN = 32,
-			CMD_FLAG_LIMIT_MASK = 65535,
-			CMD_FLAG_PRIORITY = -2147483648,
+			PRIVATE = 1,
+			INTERACTIVE = 2,
+			LOCAL = 8,
+			ONLINE = 16,
+			HIDDEN = 32,
+			LIMIT_MASK = 65535,
+			PRIORITY = -2147483648,
 		}
 		[AllowDuplicates]
 		public enum NS_REQS : int32
 		{
-			NS_REQ_ZERO = 0,
-			NS_REQ_PRESENT = 1,
-			NS_REQ_ALLOW_MULTIPLE = 2,
-			NS_REQ_ONE_OR_MORE = 3,
+			ZERO = 0,
+			PRESENT = 1,
+			ALLOW_MULTIPLE = 2,
+			ONE_OR_MORE = 3,
 		}
 		[AllowDuplicates]
 		public enum NS_EVENTS : int32
 		{
-			NS_EVENT_LOOP = 65536,
-			NS_EVENT_LAST_N = 1,
-			NS_EVENT_LAST_SECS = 2,
-			NS_EVENT_FROM_N = 4,
-			NS_EVENT_FROM_START = 8,
+			LOOP = 65536,
+			LAST_N = 1,
+			LAST_SECS = 2,
+			FROM_N = 4,
+			FROM_START = 8,
 		}
 		[AllowDuplicates]
 		public enum NS_MODE_CHANGE : int32
 		{
-			NETSH_COMMIT = 0,
-			NETSH_UNCOMMIT = 1,
-			NETSH_FLUSH = 2,
-			NETSH_COMMIT_STATE = 3,
-			NETSH_SAVE = 4,
+			COMMIT = 0,
+			UNCOMMIT = 1,
+			FLUSH = 2,
+			COMMIT_STATE = 3,
+			SAVE = 4,
 		}
 		
 		// --- Function Pointers ---

@@ -15,49 +15,49 @@ namespace Win32
 		[AllowDuplicates]
 		public enum GESTURECONFIG_ID : uint32
 		{
-			GID_BEGIN = 1,
-			GID_END = 2,
-			GID_ZOOM = 3,
-			GID_PAN = 4,
-			GID_ROTATE = 5,
-			GID_TWOFINGERTAP = 6,
-			GID_PRESSANDTAP = 7,
-			GID_ROLLOVER = 7,
+			BEGIN = 1,
+			END = 2,
+			ZOOM = 3,
+			PAN = 4,
+			ROTATE = 5,
+			TWOFINGERTAP = 6,
+			PRESSANDTAP = 7,
+			ROLLOVER = 7,
 		}
 		[AllowDuplicates]
 		public enum TOUCHEVENTF_FLAGS : uint32
 		{
-			TOUCHEVENTF_MOVE = 1,
-			TOUCHEVENTF_DOWN = 2,
-			TOUCHEVENTF_UP = 4,
-			TOUCHEVENTF_INRANGE = 8,
-			TOUCHEVENTF_PRIMARY = 16,
-			TOUCHEVENTF_NOCOALESCE = 32,
-			TOUCHEVENTF_PEN = 64,
-			TOUCHEVENTF_PALM = 128,
+			MOVE = 1,
+			DOWN = 2,
+			UP = 4,
+			INRANGE = 8,
+			PRIMARY = 16,
+			NOCOALESCE = 32,
+			PEN = 64,
+			PALM = 128,
 		}
 		[AllowDuplicates]
 		public enum TOUCHINPUTMASKF_MASK : uint32
 		{
-			TOUCHINPUTMASKF_TIMEFROMSYSTEM = 1,
-			TOUCHINPUTMASKF_EXTRAINFO = 2,
-			TOUCHINPUTMASKF_CONTACTAREA = 4,
+			TIMEFROMSYSTEM = 1,
+			EXTRAINFO = 2,
+			CONTACTAREA = 4,
 		}
 		[AllowDuplicates]
 		public enum REGISTER_TOUCH_WINDOW_FLAGS : uint32
 		{
-			TWF_FINETOUCH = 1,
-			TWF_WANTPALM = 2,
+			FINETOUCH = 1,
+			WANTPALM = 2,
 		}
 		[AllowDuplicates]
 		public enum MANIPULATION_PROCESSOR_MANIPULATIONS : int32
 		{
-			MANIPULATION_NONE = 0,
-			MANIPULATION_TRANSLATE_X = 1,
-			MANIPULATION_TRANSLATE_Y = 2,
-			MANIPULATION_SCALE = 4,
-			MANIPULATION_ROTATE = 8,
-			MANIPULATION_ALL = 15,
+			NONE = 0,
+			TRANSLATE_X = 1,
+			TRANSLATE_Y = 2,
+			SCALE = 4,
+			ROTATE = 8,
+			ALL = 15,
 		}
 		
 		// --- Structs ---

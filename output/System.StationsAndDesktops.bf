@@ -15,34 +15,34 @@ namespace Win32
 		[AllowDuplicates]
 		public enum BROADCAST_SYSTEM_MESSAGE_FLAGS : uint32
 		{
-			BSF_ALLOWSFW = 128,
-			BSF_FLUSHDISK = 4,
-			BSF_FORCEIFHUNG = 32,
-			BSF_IGNORECURRENTTASK = 2,
-			BSF_NOHANG = 8,
-			BSF_NOTIMEOUTIFNOTHUNG = 64,
-			BSF_POSTMESSAGE = 16,
-			BSF_QUERY = 1,
-			BSF_SENDNOTIFYMESSAGE = 256,
-			BSF_LUID = 1024,
-			BSF_RETURNHDESK = 512,
+			ALLOWSFW = 128,
+			FLUSHDISK = 4,
+			FORCEIFHUNG = 32,
+			IGNORECURRENTTASK = 2,
+			NOHANG = 8,
+			NOTIMEOUTIFNOTHUNG = 64,
+			POSTMESSAGE = 16,
+			QUERY = 1,
+			SENDNOTIFYMESSAGE = 256,
+			LUID = 1024,
+			RETURNHDESK = 512,
 		}
 		[AllowDuplicates]
 		public enum BROADCAST_SYSTEM_MESSAGE_INFO : uint32
 		{
-			BSM_ALLCOMPONENTS = 0,
-			BSM_ALLDESKTOPS = 16,
-			BSM_APPLICATIONS = 8,
+			LLCOMPONENTS = 0,
+			LLDESKTOPS = 16,
+			PPLICATIONS = 8,
 		}
 		[AllowDuplicates]
 		public enum USER_OBJECT_INFORMATION_INDEX : uint32
 		{
-			UOI_FLAGS = 1,
-			UOI_HEAPSIZE = 5,
-			UOI_IO = 6,
-			UOI_NAME = 2,
-			UOI_TYPE = 3,
-			UOI_USER_SID = 4,
+			FLAGS = 1,
+			HEAPSIZE = 5,
+			IO = 6,
+			NAME = 2,
+			TYPE = 3,
+			USER_SID = 4,
 		}
 		
 		// --- Function Pointers ---

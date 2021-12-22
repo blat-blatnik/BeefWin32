@@ -10,34 +10,34 @@ namespace Win32
 		[AllowDuplicates]
 		public enum HCN_NOTIFICATIONS : int32
 		{
-			HcnNotificationInvalid = 0,
-			HcnNotificationNetworkPreCreate = 1,
-			HcnNotificationNetworkCreate = 2,
-			HcnNotificationNetworkPreDelete = 3,
-			HcnNotificationNetworkDelete = 4,
-			HcnNotificationNamespaceCreate = 5,
-			HcnNotificationNamespaceDelete = 6,
-			HcnNotificationGuestNetworkServiceCreate = 7,
-			HcnNotificationGuestNetworkServiceDelete = 8,
-			HcnNotificationNetworkEndpointAttached = 9,
-			HcnNotificationNetworkEndpointDetached = 16,
-			HcnNotificationGuestNetworkServiceStateChanged = 17,
-			HcnNotificationGuestNetworkServiceInterfaceStateChanged = 18,
-			HcnNotificationServiceDisconnect = 16777216,
-			HcnNotificationFlagsReserved = -268435456,
+			Invalid = 0,
+			NetworkPreCreate = 1,
+			NetworkCreate = 2,
+			NetworkPreDelete = 3,
+			NetworkDelete = 4,
+			NamespaceCreate = 5,
+			NamespaceDelete = 6,
+			GuestNetworkServiceCreate = 7,
+			GuestNetworkServiceDelete = 8,
+			NetworkEndpointAttached = 9,
+			NetworkEndpointDetached = 16,
+			GuestNetworkServiceStateChanged = 17,
+			GuestNetworkServiceInterfaceStateChanged = 18,
+			ServiceDisconnect = 16777216,
+			FlagsReserved = -268435456,
 		}
 		[AllowDuplicates]
 		public enum HCN_PORT_PROTOCOL : int32
 		{
-			HCN_PORT_PROTOCOL_TCP = 1,
-			HCN_PORT_PROTOCOL_UDP = 2,
-			HCN_PORT_PROTOCOL_BOTH = 3,
+			TCP = 1,
+			UDP = 2,
+			BOTH = 3,
 		}
 		[AllowDuplicates]
 		public enum HCN_PORT_ACCESS : int32
 		{
-			HCN_PORT_ACCESS_EXCLUSIVE = 1,
-			HCN_PORT_ACCESS_SHARED = 2,
+			EXCLUSIVE = 1,
+			SHARED = 2,
 		}
 		
 		// --- Function Pointers ---

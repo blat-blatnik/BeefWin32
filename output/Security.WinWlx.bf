@@ -72,9 +72,9 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WLX_SHUTDOWN_TYPE : uint32
 		{
-			WLX_SAS_ACTION_SHUTDOWN = 5,
-			WLX_SAS_ACTION_SHUTDOWN_REBOOT = 11,
-			WLX_SAS_ACTION_SHUTDOWN_POWER_OFF = 10,
+			N = 5,
+			N_REBOOT = 11,
+			N_POWER_OFF = 10,
 		}
 		
 		// --- Function Pointers ---

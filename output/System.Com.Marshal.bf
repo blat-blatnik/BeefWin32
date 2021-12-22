@@ -10,8 +10,8 @@ namespace Win32
 		[AllowDuplicates]
 		public enum STDMSHLFLAGS : int32
 		{
-			SMEXF_SERVER = 1,
-			SMEXF_HANDLER = 2,
+			SERVER = 1,
+			HANDLER = 2,
 		}
 		
 		// --- COM Interfaces ---

@@ -25,8 +25,8 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SENS_CONNECTION_TYPE : uint32
 		{
-			CONNECTION_LAN = 0,
-			CONNECTION_WAN = 1,
+			LAN = 0,
+			WAN = 1,
 		}
 		
 		// --- Structs ---

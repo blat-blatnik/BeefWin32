@@ -957,234 +957,234 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WSA_ERROR : int32
 		{
-			WSA_IO_PENDING = 997,
-			WSA_IO_INCOMPLETE = 996,
-			WSA_INVALID_HANDLE = 6,
-			WSA_INVALID_PARAMETER = 87,
-			WSA_NOT_ENOUGH_MEMORY = 8,
-			WSA_OPERATION_ABORTED = 995,
-			WSABASEERR = 10000,
-			WSAEINTR = 10004,
-			WSAEBADF = 10009,
-			WSAEACCES = 10013,
-			WSAEFAULT = 10014,
-			WSAEINVAL = 10022,
-			WSAEMFILE = 10024,
-			WSAEWOULDBLOCK = 10035,
-			WSAEINPROGRESS = 10036,
-			WSAEALREADY = 10037,
-			WSAENOTSOCK = 10038,
-			WSAEDESTADDRREQ = 10039,
-			WSAEMSGSIZE = 10040,
-			WSAEPROTOTYPE = 10041,
-			WSAENOPROTOOPT = 10042,
-			WSAEPROTONOSUPPORT = 10043,
-			WSAESOCKTNOSUPPORT = 10044,
-			WSAEOPNOTSUPP = 10045,
-			WSAEPFNOSUPPORT = 10046,
-			WSAEAFNOSUPPORT = 10047,
-			WSAEADDRINUSE = 10048,
-			WSAEADDRNOTAVAIL = 10049,
-			WSAENETDOWN = 10050,
-			WSAENETUNREACH = 10051,
-			WSAENETRESET = 10052,
-			WSAECONNABORTED = 10053,
-			WSAECONNRESET = 10054,
-			WSAENOBUFS = 10055,
-			WSAEISCONN = 10056,
-			WSAENOTCONN = 10057,
-			WSAESHUTDOWN = 10058,
-			WSAETOOMANYREFS = 10059,
-			WSAETIMEDOUT = 10060,
-			WSAECONNREFUSED = 10061,
-			WSAELOOP = 10062,
-			WSAENAMETOOLONG = 10063,
-			WSAEHOSTDOWN = 10064,
-			WSAEHOSTUNREACH = 10065,
-			WSAENOTEMPTY = 10066,
-			WSAEPROCLIM = 10067,
-			WSAEUSERS = 10068,
-			WSAEDQUOT = 10069,
-			WSAESTALE = 10070,
-			WSAEREMOTE = 10071,
-			WSASYSNOTREADY = 10091,
-			WSAVERNOTSUPPORTED = 10092,
-			WSANOTINITIALISED = 10093,
-			WSAEDISCON = 10101,
-			WSAENOMORE = 10102,
-			WSAECANCELLED = 10103,
-			WSAEINVALIDPROCTABLE = 10104,
-			WSAEINVALIDPROVIDER = 10105,
-			WSAEPROVIDERFAILEDINIT = 10106,
-			WSASYSCALLFAILURE = 10107,
-			WSASERVICE_NOT_FOUND = 10108,
-			WSATYPE_NOT_FOUND = 10109,
-			WSA_E_NO_MORE = 10110,
-			WSA_E_CANCELLED = 10111,
-			WSAEREFUSED = 10112,
-			WSAHOST_NOT_FOUND = 11001,
-			WSATRY_AGAIN = 11002,
-			WSANO_RECOVERY = 11003,
-			WSANO_DATA = 11004,
-			WSA_QOS_RECEIVERS = 11005,
-			WSA_QOS_SENDERS = 11006,
-			WSA_QOS_NO_SENDERS = 11007,
-			WSA_QOS_NO_RECEIVERS = 11008,
-			WSA_QOS_REQUEST_CONFIRMED = 11009,
-			WSA_QOS_ADMISSION_FAILURE = 11010,
-			WSA_QOS_POLICY_FAILURE = 11011,
-			WSA_QOS_BAD_STYLE = 11012,
-			WSA_QOS_BAD_OBJECT = 11013,
-			WSA_QOS_TRAFFIC_CTRL_ERROR = 11014,
-			WSA_QOS_GENERIC_ERROR = 11015,
-			WSA_QOS_ESERVICETYPE = 11016,
-			WSA_QOS_EFLOWSPEC = 11017,
-			WSA_QOS_EPROVSPECBUF = 11018,
-			WSA_QOS_EFILTERSTYLE = 11019,
-			WSA_QOS_EFILTERTYPE = 11020,
-			WSA_QOS_EFILTERCOUNT = 11021,
-			WSA_QOS_EOBJLENGTH = 11022,
-			WSA_QOS_EFLOWCOUNT = 11023,
-			WSA_QOS_EUNKOWNPSOBJ = 11024,
-			WSA_QOS_EPOLICYOBJ = 11025,
-			WSA_QOS_EFLOWDESC = 11026,
-			WSA_QOS_EPSFLOWSPEC = 11027,
-			WSA_QOS_EPSFILTERSPEC = 11028,
-			WSA_QOS_ESDMODEOBJ = 11029,
-			WSA_QOS_ESHAPERATEOBJ = 11030,
-			WSA_QOS_RESERVED_PETYPE = 11031,
-			WSA_SECURE_HOST_NOT_FOUND = 11032,
-			WSA_IPSEC_NAME_POLICY_ERROR = 11033,
+			_IO_PENDING = 997,
+			_IO_INCOMPLETE = 996,
+			_INVALID_HANDLE = 6,
+			_INVALID_PARAMETER = 87,
+			_NOT_ENOUGH_MEMORY = 8,
+			_OPERATION_ABORTED = 995,
+			BASEERR = 10000,
+			EINTR = 10004,
+			EBADF = 10009,
+			EACCES = 10013,
+			EFAULT = 10014,
+			EINVAL = 10022,
+			EMFILE = 10024,
+			EWOULDBLOCK = 10035,
+			EINPROGRESS = 10036,
+			EALREADY = 10037,
+			ENOTSOCK = 10038,
+			EDESTADDRREQ = 10039,
+			EMSGSIZE = 10040,
+			EPROTOTYPE = 10041,
+			ENOPROTOOPT = 10042,
+			EPROTONOSUPPORT = 10043,
+			ESOCKTNOSUPPORT = 10044,
+			EOPNOTSUPP = 10045,
+			EPFNOSUPPORT = 10046,
+			EAFNOSUPPORT = 10047,
+			EADDRINUSE = 10048,
+			EADDRNOTAVAIL = 10049,
+			ENETDOWN = 10050,
+			ENETUNREACH = 10051,
+			ENETRESET = 10052,
+			ECONNABORTED = 10053,
+			ECONNRESET = 10054,
+			ENOBUFS = 10055,
+			EISCONN = 10056,
+			ENOTCONN = 10057,
+			ESHUTDOWN = 10058,
+			ETOOMANYREFS = 10059,
+			ETIMEDOUT = 10060,
+			ECONNREFUSED = 10061,
+			ELOOP = 10062,
+			ENAMETOOLONG = 10063,
+			EHOSTDOWN = 10064,
+			EHOSTUNREACH = 10065,
+			ENOTEMPTY = 10066,
+			EPROCLIM = 10067,
+			EUSERS = 10068,
+			EDQUOT = 10069,
+			ESTALE = 10070,
+			EREMOTE = 10071,
+			SYSNOTREADY = 10091,
+			VERNOTSUPPORTED = 10092,
+			NOTINITIALISED = 10093,
+			EDISCON = 10101,
+			ENOMORE = 10102,
+			ECANCELLED = 10103,
+			EINVALIDPROCTABLE = 10104,
+			EINVALIDPROVIDER = 10105,
+			EPROVIDERFAILEDINIT = 10106,
+			SYSCALLFAILURE = 10107,
+			SERVICE_NOT_FOUND = 10108,
+			TYPE_NOT_FOUND = 10109,
+			_E_NO_MORE = 10110,
+			_E_CANCELLED = 10111,
+			EREFUSED = 10112,
+			HOST_NOT_FOUND = 11001,
+			TRY_AGAIN = 11002,
+			NO_RECOVERY = 11003,
+			NO_DATA = 11004,
+			_QOS_RECEIVERS = 11005,
+			_QOS_SENDERS = 11006,
+			_QOS_NO_SENDERS = 11007,
+			_QOS_NO_RECEIVERS = 11008,
+			_QOS_REQUEST_CONFIRMED = 11009,
+			_QOS_ADMISSION_FAILURE = 11010,
+			_QOS_POLICY_FAILURE = 11011,
+			_QOS_BAD_STYLE = 11012,
+			_QOS_BAD_OBJECT = 11013,
+			_QOS_TRAFFIC_CTRL_ERROR = 11014,
+			_QOS_GENERIC_ERROR = 11015,
+			_QOS_ESERVICETYPE = 11016,
+			_QOS_EFLOWSPEC = 11017,
+			_QOS_EPROVSPECBUF = 11018,
+			_QOS_EFILTERSTYLE = 11019,
+			_QOS_EFILTERTYPE = 11020,
+			_QOS_EFILTERCOUNT = 11021,
+			_QOS_EOBJLENGTH = 11022,
+			_QOS_EFLOWCOUNT = 11023,
+			_QOS_EUNKOWNPSOBJ = 11024,
+			_QOS_EPOLICYOBJ = 11025,
+			_QOS_EFLOWDESC = 11026,
+			_QOS_EPSFLOWSPEC = 11027,
+			_QOS_EPSFILTERSPEC = 11028,
+			_QOS_ESDMODEOBJ = 11029,
+			_QOS_ESHAPERATEOBJ = 11030,
+			_QOS_RESERVED_PETYPE = 11031,
+			_SECURE_HOST_NOT_FOUND = 11032,
+			_IPSEC_NAME_POLICY_ERROR = 11033,
 		}
 		[AllowDuplicates]
 		public enum SET_SERVICE_OPERATION : uint32
 		{
-			SERVICE_REGISTER = 1,
-			SERVICE_DEREGISTER = 2,
-			SERVICE_FLUSH = 3,
-			SERVICE_ADD_TYPE = 4,
-			SERVICE_DELETE_TYPE = 5,
+			REGISTER = 1,
+			DEREGISTER = 2,
+			FLUSH = 3,
+			ADD_TYPE = 4,
+			DELETE_TYPE = 5,
 		}
 		[AllowDuplicates]
 		public enum SEND_FLAGS : uint32
 		{
-			MSG_DONTROUTE = 4,
-			MSG_OOB = 1,
+			DONTROUTE = 4,
+			OOB = 1,
 		}
 		[AllowDuplicates]
 		public enum RESOURCE_DISPLAY_TYPE : uint32
 		{
-			RESOURCEDISPLAYTYPE_DOMAIN = 1,
-			RESOURCEDISPLAYTYPE_FILE = 4,
-			RESOURCEDISPLAYTYPE_GENERIC = 0,
-			RESOURCEDISPLAYTYPE_GROUP = 5,
-			RESOURCEDISPLAYTYPE_SERVER = 2,
-			RESOURCEDISPLAYTYPE_SHARE = 3,
-			RESOURCEDISPLAYTYPE_TREE = 10,
+			DOMAIN = 1,
+			FILE = 4,
+			GENERIC = 0,
+			GROUP = 5,
+			SERVER = 2,
+			SHARE = 3,
+			TREE = 10,
 		}
 		[AllowDuplicates]
 		public enum IPPROTO : int32
 		{
-			IPPROTO_HOPOPTS = 0,
-			IPPROTO_ICMP = 1,
-			IPPROTO_IGMP = 2,
-			IPPROTO_GGP = 3,
-			IPPROTO_IPV4 = 4,
-			IPPROTO_ST = 5,
-			IPPROTO_TCP = 6,
-			IPPROTO_CBT = 7,
-			IPPROTO_EGP = 8,
-			IPPROTO_IGP = 9,
-			IPPROTO_PUP = 12,
-			IPPROTO_UDP = 17,
-			IPPROTO_IDP = 22,
-			IPPROTO_RDP = 27,
-			IPPROTO_IPV6 = 41,
-			IPPROTO_ROUTING = 43,
-			IPPROTO_FRAGMENT = 44,
-			IPPROTO_ESP = 50,
-			IPPROTO_AH = 51,
-			IPPROTO_ICMPV6 = 58,
-			IPPROTO_NONE = 59,
-			IPPROTO_DSTOPTS = 60,
-			IPPROTO_ND = 77,
-			IPPROTO_ICLFXBM = 78,
-			IPPROTO_PIM = 103,
-			IPPROTO_PGM = 113,
-			IPPROTO_L2TP = 115,
-			IPPROTO_SCTP = 132,
-			IPPROTO_RAW = 255,
-			IPPROTO_MAX = 256,
-			IPPROTO_RESERVED_RAW = 257,
-			IPPROTO_RESERVED_IPSEC = 258,
-			IPPROTO_RESERVED_IPSECOFFLOAD = 259,
-			IPPROTO_RESERVED_WNV = 260,
-			IPPROTO_RESERVED_MAX = 261,
+			HOPOPTS = 0,
+			ICMP = 1,
+			IGMP = 2,
+			GGP = 3,
+			IPV4 = 4,
+			ST = 5,
+			TCP = 6,
+			CBT = 7,
+			EGP = 8,
+			IGP = 9,
+			PUP = 12,
+			UDP = 17,
+			IDP = 22,
+			RDP = 27,
+			IPV6 = 41,
+			ROUTING = 43,
+			FRAGMENT = 44,
+			ESP = 50,
+			AH = 51,
+			ICMPV6 = 58,
+			NONE = 59,
+			DSTOPTS = 60,
+			ND = 77,
+			ICLFXBM = 78,
+			PIM = 103,
+			PGM = 113,
+			L2TP = 115,
+			SCTP = 132,
+			RAW = 255,
+			MAX = 256,
+			RESERVED_RAW = 257,
+			RESERVED_IPSEC = 258,
+			RESERVED_IPSECOFFLOAD = 259,
+			RESERVED_WNV = 260,
+			RESERVED_MAX = 261,
 		}
 		[AllowDuplicates]
 		public enum SCOPE_LEVEL : int32
 		{
-			ScopeLevelInterface = 1,
-			ScopeLevelLink = 2,
-			ScopeLevelSubnet = 3,
-			ScopeLevelAdmin = 4,
-			ScopeLevelSite = 5,
-			ScopeLevelOrganization = 8,
-			ScopeLevelGlobal = 14,
-			ScopeLevelCount = 16,
+			Interface = 1,
+			Link = 2,
+			Subnet = 3,
+			Admin = 4,
+			Site = 5,
+			Organization = 8,
+			Global = 14,
+			Count = 16,
 		}
 		[AllowDuplicates]
 		public enum WSACOMPLETIONTYPE : int32
 		{
-			NSP_NOTIFY_IMMEDIATELY = 0,
-			NSP_NOTIFY_HWND = 1,
-			NSP_NOTIFY_EVENT = 2,
-			NSP_NOTIFY_PORT = 3,
-			NSP_NOTIFY_APC = 4,
+			IMMEDIATELY = 0,
+			HWND = 1,
+			EVENT = 2,
+			PORT = 3,
+			APC = 4,
 		}
 		[AllowDuplicates]
 		public enum WSAECOMPARATOR : int32
 		{
-			COMP_EQUAL = 0,
-			COMP_NOTLESS = 1,
+			EQUAL = 0,
+			NOTLESS = 1,
 		}
 		[AllowDuplicates]
 		public enum WSAESETSERVICEOP : int32
 		{
-			RNRSERVICE_REGISTER = 0,
-			RNRSERVICE_DEREGISTER = 1,
-			RNRSERVICE_DELETE = 2,
+			REGISTER = 0,
+			DEREGISTER = 1,
+			DELETE = 2,
 		}
 		[AllowDuplicates]
 		public enum PMTUD_STATE : int32
 		{
-			IP_PMTUDISC_NOT_SET = 0,
-			IP_PMTUDISC_DO = 1,
-			IP_PMTUDISC_DONT = 2,
-			IP_PMTUDISC_PROBE = 3,
-			IP_PMTUDISC_MAX = 4,
+			NOT_SET = 0,
+			DO = 1,
+			DONT = 2,
+			PROBE = 3,
+			MAX = 4,
 		}
 		[AllowDuplicates]
 		public enum MULTICAST_MODE_TYPE : int32
 		{
-			MCAST_INCLUDE = 0,
-			MCAST_EXCLUDE = 1,
+			INCLUDE = 0,
+			EXCLUDE = 1,
 		}
 		[AllowDuplicates]
 		public enum eWINDOW_ADVANCE_METHOD : int32
 		{
-			E_WINDOW_ADVANCE_BY_TIME = 1,
-			E_WINDOW_USE_AS_DATA_CACHE = 2,
+			ADVANCE_BY_TIME = 1,
+			USE_AS_DATA_CACHE = 2,
 		}
 		[AllowDuplicates]
 		public enum NL_PREFIX_ORIGIN : int32
 		{
-			IpPrefixOriginOther = 0,
-			IpPrefixOriginManual = 1,
-			IpPrefixOriginWellKnown = 2,
-			IpPrefixOriginDhcp = 3,
-			IpPrefixOriginRouterAdvertisement = 4,
-			IpPrefixOriginUnchanged = 16,
+			Other = 0,
+			Manual = 1,
+			WellKnown = 2,
+			Dhcp = 3,
+			RouterAdvertisement = 4,
+			Unchanged = 16,
 		}
 		[AllowDuplicates]
 		public enum NL_SUFFIX_ORIGIN : int32
@@ -1287,146 +1287,146 @@ namespace Win32
 		[AllowDuplicates]
 		public enum NL_ADDRESS_TYPE : int32
 		{
-			NlatUnspecified = 0,
-			NlatUnicast = 1,
-			NlatAnycast = 2,
-			NlatMulticast = 3,
-			NlatBroadcast = 4,
-			NlatInvalid = 5,
+			Unspecified = 0,
+			Unicast = 1,
+			Anycast = 2,
+			Multicast = 3,
+			Broadcast = 4,
+			Invalid = 5,
 		}
 		[AllowDuplicates]
 		public enum NL_ROUTE_ORIGIN : int32
 		{
-			NlroManual = 0,
-			NlroWellKnown = 1,
-			NlroDHCP = 2,
-			NlroRouterAdvertisement = 3,
-			Nlro6to4 = 4,
+			Manual = 0,
+			WellKnown = 1,
+			DHCP = 2,
+			RouterAdvertisement = 3,
+			_6to4 = 4,
 		}
 		[AllowDuplicates]
 		public enum NL_NEIGHBOR_STATE : int32
 		{
-			NlnsUnreachable = 0,
-			NlnsIncomplete = 1,
-			NlnsProbe = 2,
-			NlnsDelay = 3,
-			NlnsStale = 4,
-			NlnsReachable = 5,
-			NlnsPermanent = 6,
-			NlnsMaximum = 7,
+			Unreachable = 0,
+			Incomplete = 1,
+			Probe = 2,
+			Delay = 3,
+			Stale = 4,
+			Reachable = 5,
+			Permanent = 6,
+			Maximum = 7,
 		}
 		[AllowDuplicates]
 		public enum NL_LINK_LOCAL_ADDRESS_BEHAVIOR : int32
 		{
-			LinkLocalAlwaysOff = 0,
-			LinkLocalDelayed = 1,
-			LinkLocalAlwaysOn = 2,
-			LinkLocalUnchanged = -1,
+			AlwaysOff = 0,
+			Delayed = 1,
+			AlwaysOn = 2,
+			Unchanged = -1,
 		}
 		[AllowDuplicates]
 		public enum NL_ROUTER_DISCOVERY_BEHAVIOR : int32
 		{
-			RouterDiscoveryDisabled = 0,
-			RouterDiscoveryEnabled = 1,
-			RouterDiscoveryDhcp = 2,
-			RouterDiscoveryUnchanged = -1,
+			Disabled = 0,
+			Enabled = 1,
+			Dhcp = 2,
+			Unchanged = -1,
 		}
 		[AllowDuplicates]
 		public enum NL_BANDWIDTH_FLAG : int32
 		{
-			NlbwDisabled = 0,
-			NlbwEnabled = 1,
-			NlbwUnchanged = -1,
+			Disabled = 0,
+			Enabled = 1,
+			Unchanged = -1,
 		}
 		[AllowDuplicates]
 		public enum NL_NETWORK_CATEGORY : int32
 		{
-			NetworkCategoryPublic = 0,
-			NetworkCategoryPrivate = 1,
-			NetworkCategoryDomainAuthenticated = 2,
-			NetworkCategoryUnchanged = -1,
-			NetworkCategoryUnknown = -1,
+			Public = 0,
+			Private = 1,
+			DomainAuthenticated = 2,
+			Unchanged = -1,
+			Unknown = -1,
 		}
 		[AllowDuplicates]
 		public enum NL_INTERFACE_NETWORK_CATEGORY_STATE : int32
 		{
-			NlincCategoryUnknown = 0,
-			NlincPublic = 1,
-			NlincPrivate = 2,
-			NlincDomainAuthenticated = 3,
-			NlincCategoryStateMax = 4,
+			CategoryUnknown = 0,
+			Public = 1,
+			Private = 2,
+			DomainAuthenticated = 3,
+			CategoryStateMax = 4,
 		}
 		[AllowDuplicates]
 		public enum NL_NETWORK_CONNECTIVITY_LEVEL_HINT : int32
 		{
-			NetworkConnectivityLevelHintUnknown = 0,
-			NetworkConnectivityLevelHintNone = 1,
-			NetworkConnectivityLevelHintLocalAccess = 2,
-			NetworkConnectivityLevelHintInternetAccess = 3,
-			NetworkConnectivityLevelHintConstrainedInternetAccess = 4,
-			NetworkConnectivityLevelHintHidden = 5,
+			Unknown = 0,
+			None = 1,
+			LocalAccess = 2,
+			InternetAccess = 3,
+			ConstrainedInternetAccess = 4,
+			Hidden = 5,
 		}
 		[AllowDuplicates]
 		public enum NL_NETWORK_CONNECTIVITY_COST_HINT : int32
 		{
-			NetworkConnectivityCostHintUnknown = 0,
-			NetworkConnectivityCostHintUnrestricted = 1,
-			NetworkConnectivityCostHintFixed = 2,
-			NetworkConnectivityCostHintVariable = 3,
+			Unknown = 0,
+			Unrestricted = 1,
+			Fixed = 2,
+			Variable = 3,
 		}
 		[AllowDuplicates]
 		public enum TCPSTATE : int32
 		{
-			TCPSTATE_CLOSED = 0,
-			TCPSTATE_LISTEN = 1,
-			TCPSTATE_SYN_SENT = 2,
-			TCPSTATE_SYN_RCVD = 3,
-			TCPSTATE_ESTABLISHED = 4,
-			TCPSTATE_FIN_WAIT_1 = 5,
-			TCPSTATE_FIN_WAIT_2 = 6,
-			TCPSTATE_CLOSE_WAIT = 7,
-			TCPSTATE_CLOSING = 8,
-			TCPSTATE_LAST_ACK = 9,
-			TCPSTATE_TIME_WAIT = 10,
-			TCPSTATE_MAX = 11,
+			CLOSED = 0,
+			LISTEN = 1,
+			SYN_SENT = 2,
+			SYN_RCVD = 3,
+			ESTABLISHED = 4,
+			FIN_WAIT_1 = 5,
+			FIN_WAIT_2 = 6,
+			CLOSE_WAIT = 7,
+			CLOSING = 8,
+			LAST_ACK = 9,
+			TIME_WAIT = 10,
+			MAX = 11,
 		}
 		[AllowDuplicates]
 		public enum CONTROL_CHANNEL_TRIGGER_STATUS : int32
 		{
-			CONTROL_CHANNEL_TRIGGER_STATUS_INVALID = 0,
-			CONTROL_CHANNEL_TRIGGER_STATUS_SOFTWARE_SLOT_ALLOCATED = 1,
-			CONTROL_CHANNEL_TRIGGER_STATUS_HARDWARE_SLOT_ALLOCATED = 2,
-			CONTROL_CHANNEL_TRIGGER_STATUS_POLICY_ERROR = 3,
-			CONTROL_CHANNEL_TRIGGER_STATUS_SYSTEM_ERROR = 4,
-			CONTROL_CHANNEL_TRIGGER_STATUS_TRANSPORT_DISCONNECTED = 5,
-			CONTROL_CHANNEL_TRIGGER_STATUS_SERVICE_UNAVAILABLE = 6,
+			INVALID = 0,
+			SOFTWARE_SLOT_ALLOCATED = 1,
+			HARDWARE_SLOT_ALLOCATED = 2,
+			POLICY_ERROR = 3,
+			SYSTEM_ERROR = 4,
+			TRANSPORT_DISCONNECTED = 5,
+			SERVICE_UNAVAILABLE = 6,
 		}
 		[AllowDuplicates]
 		public enum SOCKET_PRIORITY_HINT : int32
 		{
-			SocketPriorityHintVeryLow = 0,
-			SocketPriorityHintLow = 1,
-			SocketPriorityHintNormal = 2,
-			SocketMaximumPriorityHintType = 3,
+			PriorityHintVeryLow = 0,
+			PriorityHintLow = 1,
+			PriorityHintNormal = 2,
+			MaximumPriorityHintType = 3,
 		}
 		[AllowDuplicates]
 		public enum RCVALL_VALUE : int32
 		{
-			RCVALL_OFF = 0,
-			RCVALL_ON = 1,
-			RCVALL_SOCKETLEVELONLY = 2,
-			RCVALL_IPLEVEL = 3,
+			OFF = 0,
+			ON = 1,
+			SOCKETLEVELONLY = 2,
+			IPLEVEL = 3,
 		}
 		[AllowDuplicates]
 		public enum TCP_ICW_LEVEL : int32
 		{
-			TCP_ICW_LEVEL_DEFAULT = 0,
-			TCP_ICW_LEVEL_HIGH = 1,
-			TCP_ICW_LEVEL_VERY_HIGH = 2,
-			TCP_ICW_LEVEL_AGGRESSIVE = 3,
-			TCP_ICW_LEVEL_EXPERIMENTAL = 4,
-			TCP_ICW_LEVEL_COMPAT = 254,
-			TCP_ICW_LEVEL_MAX = 255,
+			DEFAULT = 0,
+			HIGH = 1,
+			VERY_HIGH = 2,
+			AGGRESSIVE = 3,
+			EXPERIMENTAL = 4,
+			COMPAT = 254,
+			MAX = 255,
 		}
 		[AllowDuplicates]
 		public enum SOCKET_USAGE_TYPE : int32
@@ -1436,88 +1436,88 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SOCKET_SECURITY_PROTOCOL : int32
 		{
-			SOCKET_SECURITY_PROTOCOL_DEFAULT = 0,
-			SOCKET_SECURITY_PROTOCOL_IPSEC = 1,
-			SOCKET_SECURITY_PROTOCOL_IPSEC2 = 2,
-			SOCKET_SECURITY_PROTOCOL_INVALID = 3,
+			DEFAULT = 0,
+			IPSEC = 1,
+			IPSEC2 = 2,
+			INVALID = 3,
 		}
 		[AllowDuplicates]
 		public enum WSA_COMPATIBILITY_BEHAVIOR_ID : int32
 		{
-			WsaBehaviorAll = 0,
-			WsaBehaviorReceiveBuffering = 1,
-			WsaBehaviorAutoTuning = 2,
+			All = 0,
+			ReceiveBuffering = 1,
+			AutoTuning = 2,
 		}
 		[AllowDuplicates]
 		public enum Q2931_IE_TYPE : int32
 		{
-			IE_AALParameters = 0,
-			IE_TrafficDescriptor = 1,
-			IE_BroadbandBearerCapability = 2,
-			IE_BHLI = 3,
-			IE_BLLI = 4,
-			IE_CalledPartyNumber = 5,
-			IE_CalledPartySubaddress = 6,
-			IE_CallingPartyNumber = 7,
-			IE_CallingPartySubaddress = 8,
-			IE_Cause = 9,
-			IE_QOSClass = 10,
-			IE_TransitNetworkSelection = 11,
+			AALParameters = 0,
+			TrafficDescriptor = 1,
+			BroadbandBearerCapability = 2,
+			BHLI = 3,
+			BLLI = 4,
+			CalledPartyNumber = 5,
+			CalledPartySubaddress = 6,
+			CallingPartyNumber = 7,
+			CallingPartySubaddress = 8,
+			Cause = 9,
+			QOSClass = 10,
+			TransitNetworkSelection = 11,
 		}
 		[AllowDuplicates]
 		public enum AAL_TYPE : int32
 		{
-			AALTYPE_5 = 5,
-			AALTYPE_USER = 16,
+			_5 = 5,
+			USER = 16,
 		}
 		[AllowDuplicates]
 		public enum NAPI_PROVIDER_TYPE : int32
 		{
-			ProviderType_Application = 1,
-			ProviderType_Service = 2,
+			Application = 1,
+			Service = 2,
 		}
 		[AllowDuplicates]
 		public enum NAPI_PROVIDER_LEVEL : int32
 		{
-			ProviderLevel_None = 0,
-			ProviderLevel_Secondary = 1,
-			ProviderLevel_Primary = 2,
+			None = 0,
+			Secondary = 1,
+			Primary = 2,
 		}
 		[AllowDuplicates]
 		public enum NLA_BLOB_DATA_TYPE : int32
 		{
-			NLA_RAW_DATA = 0,
-			NLA_INTERFACE = 1,
-			NLA_802_1X_LOCATION = 2,
-			NLA_CONNECTIVITY = 3,
-			NLA_ICS = 4,
+			RAW_DATA = 0,
+			INTERFACE = 1,
+			_802_1X_LOCATION = 2,
+			CONNECTIVITY = 3,
+			ICS = 4,
 		}
 		[AllowDuplicates]
 		public enum NLA_CONNECTIVITY_TYPE : int32
 		{
-			NLA_NETWORK_AD_HOC = 0,
-			NLA_NETWORK_MANAGED = 1,
-			NLA_NETWORK_UNMANAGED = 2,
-			NLA_NETWORK_UNKNOWN = 3,
+			AD_HOC = 0,
+			MANAGED = 1,
+			UNMANAGED = 2,
+			UNKNOWN = 3,
 		}
 		[AllowDuplicates]
 		public enum NLA_INTERNET : int32
 		{
-			NLA_INTERNET_UNKNOWN = 0,
-			NLA_INTERNET_NO = 1,
-			NLA_INTERNET_YES = 2,
+			UNKNOWN = 0,
+			NO = 1,
+			YES = 2,
 		}
 		[AllowDuplicates]
 		public enum RIO_NOTIFICATION_COMPLETION_TYPE : int32
 		{
-			RIO_EVENT_COMPLETION = 1,
-			RIO_IOCP_COMPLETION = 2,
+			EVENT_COMPLETION = 1,
+			IOCP_COMPLETION = 2,
 		}
 		[AllowDuplicates]
 		public enum WSC_PROVIDER_INFO_TYPE : int32
 		{
-			ProviderInfoLspCategories = 0,
-			ProviderInfoAudit = 1,
+			LspCategories = 0,
+			Audit = 1,
 		}
 		
 		// --- Function Pointers ---

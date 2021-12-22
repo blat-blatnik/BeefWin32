@@ -16,13 +16,13 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WSB_OB_STATUS_ENTRY_PAIR_TYPE : int32
 		{
-			WSB_OB_ET_UNDEFINED = 0,
-			WSB_OB_ET_STRING = 1,
-			WSB_OB_ET_NUMBER = 2,
-			WSB_OB_ET_DATETIME = 3,
-			WSB_OB_ET_TIME = 4,
-			WSB_OB_ET_SIZE = 5,
-			WSB_OB_ET_MAX = 6,
+			UNDEFINED = 0,
+			STRING = 1,
+			NUMBER = 2,
+			DATETIME = 3,
+			TIME = 4,
+			SIZE = 5,
+			MAX = 6,
 		}
 		
 		// --- Structs ---

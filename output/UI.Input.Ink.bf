@@ -10,9 +10,9 @@ namespace Win32
 		[AllowDuplicates]
 		public enum INK_HIGH_CONTRAST_ADJUSTMENT : int32
 		{
-			USE_SYSTEM_COLORS_WHEN_NECESSARY = 0,
-			USE_SYSTEM_COLORS = 1,
-			USE_ORIGINAL_COLORS = 2,
+			SYSTEM_COLORS_WHEN_NECESSARY = 0,
+			SYSTEM_COLORS = 1,
+			ORIGINAL_COLORS = 2,
 		}
 		
 		// --- COM Class IDs ---

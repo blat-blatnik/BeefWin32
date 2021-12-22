@@ -164,10 +164,10 @@ namespace Win32
 		[AllowDuplicates]
 		public enum FsrmQuotaFlags : int32
 		{
-			FsrmQuotaFlags_Enforce = 256,
-			FsrmQuotaFlags_Disable = 512,
-			FsrmQuotaFlags_StatusIncomplete = 65536,
-			FsrmQuotaFlags_StatusRebuilding = 131072,
+			Enforce = 256,
+			Disable = 512,
+			StatusIncomplete = 65536,
+			StatusRebuilding = 131072,
 		}
 		[AllowDuplicates]
 		public enum FsrmFileScreenFlags : int32
@@ -177,362 +177,362 @@ namespace Win32
 		[AllowDuplicates]
 		public enum FsrmCollectionState : int32
 		{
-			FsrmCollectionState_Fetching = 1,
-			FsrmCollectionState_Committing = 2,
-			FsrmCollectionState_Complete = 3,
-			FsrmCollectionState_Cancelled = 4,
+			Fetching = 1,
+			Committing = 2,
+			Complete = 3,
+			Cancelled = 4,
 		}
 		[AllowDuplicates]
 		public enum FsrmEnumOptions : int32
 		{
-			FsrmEnumOptions_None = 0,
-			FsrmEnumOptions_Asynchronous = 1,
-			FsrmEnumOptions_CheckRecycleBin = 2,
-			FsrmEnumOptions_IncludeClusterNodes = 4,
-			FsrmEnumOptions_IncludeDeprecatedObjects = 8,
+			None = 0,
+			Asynchronous = 1,
+			CheckRecycleBin = 2,
+			IncludeClusterNodes = 4,
+			IncludeDeprecatedObjects = 8,
 		}
 		[AllowDuplicates]
 		public enum FsrmCommitOptions : int32
 		{
-			FsrmCommitOptions_None = 0,
-			FsrmCommitOptions_Asynchronous = 1,
+			None = 0,
+			Asynchronous = 1,
 		}
 		[AllowDuplicates]
 		public enum FsrmTemplateApplyOptions : int32
 		{
-			FsrmTemplateApplyOptions_ApplyToDerivedMatching = 1,
-			FsrmTemplateApplyOptions_ApplyToDerivedAll = 2,
+			Matching = 1,
+			All = 2,
 		}
 		[AllowDuplicates]
 		public enum FsrmActionType : int32
 		{
-			FsrmActionType_Unknown = 0,
-			FsrmActionType_EventLog = 1,
-			FsrmActionType_Email = 2,
-			FsrmActionType_Command = 3,
-			FsrmActionType_Report = 4,
+			Unknown = 0,
+			EventLog = 1,
+			Email = 2,
+			Command = 3,
+			Report = 4,
 		}
 		[AllowDuplicates]
 		public enum FsrmEventType : int32
 		{
-			FsrmEventType_Unknown = 0,
-			FsrmEventType_Information = 1,
-			FsrmEventType_Warning = 2,
-			FsrmEventType_Error = 3,
+			Unknown = 0,
+			Information = 1,
+			Warning = 2,
+			Error = 3,
 		}
 		[AllowDuplicates]
 		public enum FsrmAccountType : int32
 		{
-			FsrmAccountType_Unknown = 0,
-			FsrmAccountType_NetworkService = 1,
-			FsrmAccountType_LocalService = 2,
-			FsrmAccountType_LocalSystem = 3,
-			FsrmAccountType_InProc = 4,
-			FsrmAccountType_External = 5,
-			FsrmAccountType_Automatic = 500,
+			Unknown = 0,
+			NetworkService = 1,
+			LocalService = 2,
+			LocalSystem = 3,
+			InProc = 4,
+			External = 5,
+			Automatic = 500,
 		}
 		[AllowDuplicates]
 		public enum FsrmReportType : int32
 		{
-			FsrmReportType_Unknown = 0,
-			FsrmReportType_LargeFiles = 1,
-			FsrmReportType_FilesByType = 2,
-			FsrmReportType_LeastRecentlyAccessed = 3,
-			FsrmReportType_MostRecentlyAccessed = 4,
-			FsrmReportType_QuotaUsage = 5,
-			FsrmReportType_FilesByOwner = 6,
-			FsrmReportType_ExportReport = 7,
-			FsrmReportType_DuplicateFiles = 8,
-			FsrmReportType_FileScreenAudit = 9,
-			FsrmReportType_FilesByProperty = 10,
-			FsrmReportType_AutomaticClassification = 11,
-			FsrmReportType_Expiration = 12,
-			FsrmReportType_FoldersByProperty = 13,
+			Unknown = 0,
+			LargeFiles = 1,
+			FilesByType = 2,
+			LeastRecentlyAccessed = 3,
+			MostRecentlyAccessed = 4,
+			QuotaUsage = 5,
+			FilesByOwner = 6,
+			ExportReport = 7,
+			DuplicateFiles = 8,
+			FileScreenAudit = 9,
+			FilesByProperty = 10,
+			AutomaticClassification = 11,
+			Expiration = 12,
+			FoldersByProperty = 13,
 		}
 		[AllowDuplicates]
 		public enum FsrmReportFormat : int32
 		{
-			FsrmReportFormat_Unknown = 0,
-			FsrmReportFormat_DHtml = 1,
-			FsrmReportFormat_Html = 2,
-			FsrmReportFormat_Txt = 3,
-			FsrmReportFormat_Csv = 4,
-			FsrmReportFormat_Xml = 5,
+			Unknown = 0,
+			DHtml = 1,
+			Html = 2,
+			Txt = 3,
+			Csv = 4,
+			Xml = 5,
 		}
 		[AllowDuplicates]
 		public enum FsrmReportRunningStatus : int32
 		{
-			FsrmReportRunningStatus_Unknown = 0,
-			FsrmReportRunningStatus_NotRunning = 1,
-			FsrmReportRunningStatus_Queued = 2,
-			FsrmReportRunningStatus_Running = 3,
+			Unknown = 0,
+			NotRunning = 1,
+			Queued = 2,
+			Running = 3,
 		}
 		[AllowDuplicates]
 		public enum FsrmReportGenerationContext : int32
 		{
-			FsrmReportGenerationContext_Undefined = 1,
-			FsrmReportGenerationContext_ScheduledReport = 2,
-			FsrmReportGenerationContext_InteractiveReport = 3,
-			FsrmReportGenerationContext_IncidentReport = 4,
+			Undefined = 1,
+			ScheduledReport = 2,
+			InteractiveReport = 3,
+			IncidentReport = 4,
 		}
 		[AllowDuplicates]
 		public enum FsrmReportFilter : int32
 		{
-			FsrmReportFilter_MinSize = 1,
-			FsrmReportFilter_MinAgeDays = 2,
-			FsrmReportFilter_MaxAgeDays = 3,
-			FsrmReportFilter_MinQuotaUsage = 4,
-			FsrmReportFilter_FileGroups = 5,
-			FsrmReportFilter_Owners = 6,
-			FsrmReportFilter_NamePattern = 7,
-			FsrmReportFilter_Property = 8,
+			MinSize = 1,
+			MinAgeDays = 2,
+			MaxAgeDays = 3,
+			MinQuotaUsage = 4,
+			FileGroups = 5,
+			Owners = 6,
+			NamePattern = 7,
+			Property = 8,
 		}
 		[AllowDuplicates]
 		public enum FsrmReportLimit : int32
 		{
-			FsrmReportLimit_MaxFiles = 1,
-			FsrmReportLimit_MaxFileGroups = 2,
-			FsrmReportLimit_MaxOwners = 3,
-			FsrmReportLimit_MaxFilesPerFileGroup = 4,
-			FsrmReportLimit_MaxFilesPerOwner = 5,
-			FsrmReportLimit_MaxFilesPerDuplGroup = 6,
-			FsrmReportLimit_MaxDuplicateGroups = 7,
-			FsrmReportLimit_MaxQuotas = 8,
-			FsrmReportLimit_MaxFileScreenEvents = 9,
-			FsrmReportLimit_MaxPropertyValues = 10,
-			FsrmReportLimit_MaxFilesPerPropertyValue = 11,
-			FsrmReportLimit_MaxFolders = 12,
+			Files = 1,
+			FileGroups = 2,
+			Owners = 3,
+			FilesPerFileGroup = 4,
+			FilesPerOwner = 5,
+			FilesPerDuplGroup = 6,
+			DuplicateGroups = 7,
+			Quotas = 8,
+			FileScreenEvents = 9,
+			PropertyValues = 10,
+			FilesPerPropertyValue = 11,
+			Folders = 12,
 		}
 		[AllowDuplicates]
 		public enum FsrmPropertyDefinitionType : int32
 		{
-			FsrmPropertyDefinitionType_Unknown = 0,
-			FsrmPropertyDefinitionType_OrderedList = 1,
-			FsrmPropertyDefinitionType_MultiChoiceList = 2,
-			FsrmPropertyDefinitionType_SingleChoiceList = 3,
-			FsrmPropertyDefinitionType_String = 4,
-			FsrmPropertyDefinitionType_MultiString = 5,
-			FsrmPropertyDefinitionType_Int = 6,
-			FsrmPropertyDefinitionType_Bool = 7,
-			FsrmPropertyDefinitionType_Date = 8,
+			Unknown = 0,
+			OrderedList = 1,
+			MultiChoiceList = 2,
+			SingleChoiceList = 3,
+			String = 4,
+			MultiString = 5,
+			Int = 6,
+			Bool = 7,
+			Date = 8,
 		}
 		[AllowDuplicates]
 		public enum FsrmPropertyDefinitionFlags : int32
 		{
-			FsrmPropertyDefinitionFlags_Global = 1,
-			FsrmPropertyDefinitionFlags_Deprecated = 2,
-			FsrmPropertyDefinitionFlags_Secure = 4,
+			Global = 1,
+			Deprecated = 2,
+			Secure = 4,
 		}
 		[AllowDuplicates]
 		public enum FsrmPropertyDefinitionAppliesTo : int32
 		{
-			FsrmPropertyDefinitionAppliesTo_Files = 1,
-			FsrmPropertyDefinitionAppliesTo_Folders = 2,
+			iles = 1,
+			olders = 2,
 		}
 		[AllowDuplicates]
 		public enum FsrmRuleType : int32
 		{
-			FsrmRuleType_Unknown = 0,
-			FsrmRuleType_Classification = 1,
-			FsrmRuleType_Generic = 2,
+			Unknown = 0,
+			Classification = 1,
+			Generic = 2,
 		}
 		[AllowDuplicates]
 		public enum FsrmRuleFlags : int32
 		{
-			FsrmRuleFlags_Disabled = 256,
-			FsrmRuleFlags_ClearAutomaticallyClassifiedProperty = 1024,
-			FsrmRuleFlags_ClearManuallyClassifiedProperty = 2048,
-			FsrmRuleFlags_Invalid = 4096,
+			Disabled = 256,
+			ClearAutomaticallyClassifiedProperty = 1024,
+			ClearManuallyClassifiedProperty = 2048,
+			Invalid = 4096,
 		}
 		[AllowDuplicates]
 		public enum FsrmClassificationLoggingFlags : int32
 		{
-			FsrmClassificationLoggingFlags_None = 0,
-			FsrmClassificationLoggingFlags_ClassificationsInLogFile = 1,
-			FsrmClassificationLoggingFlags_ErrorsInLogFile = 2,
-			FsrmClassificationLoggingFlags_ClassificationsInSystemLog = 4,
-			FsrmClassificationLoggingFlags_ErrorsInSystemLog = 8,
+			None = 0,
+			ClassificationsInLogFile = 1,
+			ErrorsInLogFile = 2,
+			ClassificationsInSystemLog = 4,
+			ErrorsInSystemLog = 8,
 		}
 		[AllowDuplicates]
 		public enum FsrmExecutionOption : int32
 		{
-			FsrmExecutionOption_Unknown = 0,
-			FsrmExecutionOption_EvaluateUnset = 1,
-			FsrmExecutionOption_ReEvaluate_ConsiderExistingValue = 2,
-			FsrmExecutionOption_ReEvaluate_IgnoreExistingValue = 3,
+			Unknown = 0,
+			EvaluateUnset = 1,
+			ReEvaluate_ConsiderExistingValue = 2,
+			ReEvaluate_IgnoreExistingValue = 3,
 		}
 		[AllowDuplicates]
 		public enum FsrmStorageModuleCaps : int32
 		{
-			FsrmStorageModuleCaps_Unknown = 0,
-			FsrmStorageModuleCaps_CanGet = 1,
-			FsrmStorageModuleCaps_CanSet = 2,
-			FsrmStorageModuleCaps_CanHandleDirectories = 4,
-			FsrmStorageModuleCaps_CanHandleFiles = 8,
+			Unknown = 0,
+			CanGet = 1,
+			CanSet = 2,
+			CanHandleDirectories = 4,
+			CanHandleFiles = 8,
 		}
 		[AllowDuplicates]
 		public enum FsrmStorageModuleType : int32
 		{
-			FsrmStorageModuleType_Unknown = 0,
-			FsrmStorageModuleType_Cache = 1,
-			FsrmStorageModuleType_InFile = 2,
-			FsrmStorageModuleType_Database = 3,
-			FsrmStorageModuleType_System = 100,
+			Unknown = 0,
+			Cache = 1,
+			InFile = 2,
+			Database = 3,
+			System = 100,
 		}
 		[AllowDuplicates]
 		public enum FsrmPropertyBagFlags : int32
 		{
-			FsrmPropertyBagFlags_UpdatedByClassifier = 1,
-			FsrmPropertyBagFlags_FailedLoadingProperties = 2,
-			FsrmPropertyBagFlags_FailedSavingProperties = 4,
-			FsrmPropertyBagFlags_FailedClassifyingProperties = 8,
+			UpdatedByClassifier = 1,
+			FailedLoadingProperties = 2,
+			FailedSavingProperties = 4,
+			FailedClassifyingProperties = 8,
 		}
 		[AllowDuplicates]
 		public enum FsrmPropertyBagField : int32
 		{
-			FsrmPropertyBagField_AccessVolume = 0,
-			FsrmPropertyBagField_VolumeGuidName = 1,
+			AccessVolume = 0,
+			VolumeGuidName = 1,
 		}
 		[AllowDuplicates]
 		public enum FsrmPropertyFlags : int32
 		{
-			FsrmPropertyFlags_None = 0,
-			FsrmPropertyFlags_Orphaned = 1,
-			FsrmPropertyFlags_RetrievedFromCache = 2,
-			FsrmPropertyFlags_RetrievedFromStorage = 4,
-			FsrmPropertyFlags_SetByClassifier = 8,
-			FsrmPropertyFlags_Deleted = 16,
-			FsrmPropertyFlags_Reclassified = 32,
-			FsrmPropertyFlags_AggregationFailed = 64,
-			FsrmPropertyFlags_Existing = 128,
-			FsrmPropertyFlags_FailedLoadingProperties = 256,
-			FsrmPropertyFlags_FailedClassifyingProperties = 512,
-			FsrmPropertyFlags_FailedSavingProperties = 1024,
-			FsrmPropertyFlags_Secure = 2048,
-			FsrmPropertyFlags_PolicyDerived = 4096,
-			FsrmPropertyFlags_Inherited = 8192,
-			FsrmPropertyFlags_Manual = 16384,
-			FsrmPropertyFlags_ExplicitValueDeleted = 32768,
-			FsrmPropertyFlags_PropertyDeletedFromClear = 65536,
-			FsrmPropertyFlags_PropertySourceMask = 14,
-			FsrmPropertyFlags_PersistentMask = 20480,
+			None = 0,
+			Orphaned = 1,
+			RetrievedFromCache = 2,
+			RetrievedFromStorage = 4,
+			SetByClassifier = 8,
+			Deleted = 16,
+			Reclassified = 32,
+			AggregationFailed = 64,
+			Existing = 128,
+			FailedLoadingProperties = 256,
+			FailedClassifyingProperties = 512,
+			FailedSavingProperties = 1024,
+			Secure = 2048,
+			PolicyDerived = 4096,
+			Inherited = 8192,
+			Manual = 16384,
+			ExplicitValueDeleted = 32768,
+			PropertyDeletedFromClear = 65536,
+			PropertySourceMask = 14,
+			PersistentMask = 20480,
 		}
 		[AllowDuplicates]
 		public enum FsrmPipelineModuleType : int32
 		{
-			FsrmPipelineModuleType_Unknown = 0,
-			FsrmPipelineModuleType_Storage = 1,
-			FsrmPipelineModuleType_Classifier = 2,
+			Unknown = 0,
+			Storage = 1,
+			Classifier = 2,
 		}
 		[AllowDuplicates]
 		public enum FsrmGetFilePropertyOptions : int32
 		{
-			FsrmGetFilePropertyOptions_None = 0,
-			FsrmGetFilePropertyOptions_NoRuleEvaluation = 1,
-			FsrmGetFilePropertyOptions_Persistent = 2,
-			FsrmGetFilePropertyOptions_FailOnPersistErrors = 4,
-			FsrmGetFilePropertyOptions_SkipOrphaned = 8,
+			None = 0,
+			NoRuleEvaluation = 1,
+			Persistent = 2,
+			FailOnPersistErrors = 4,
+			SkipOrphaned = 8,
 		}
 		[AllowDuplicates]
 		public enum FsrmFileManagementType : int32
 		{
-			FsrmFileManagementType_Unknown = 0,
-			FsrmFileManagementType_Expiration = 1,
-			FsrmFileManagementType_Custom = 2,
-			FsrmFileManagementType_Rms = 3,
+			Unknown = 0,
+			Expiration = 1,
+			Custom = 2,
+			Rms = 3,
 		}
 		[AllowDuplicates]
 		public enum FsrmFileManagementLoggingFlags : int32
 		{
-			FsrmFileManagementLoggingFlags_None = 0,
-			FsrmFileManagementLoggingFlags_Error = 1,
-			FsrmFileManagementLoggingFlags_Information = 2,
-			FsrmFileManagementLoggingFlags_Audit = 4,
+			None = 0,
+			Error = 1,
+			Information = 2,
+			Audit = 4,
 		}
 		[AllowDuplicates]
 		public enum FsrmPropertyConditionType : int32
 		{
-			FsrmPropertyConditionType_Unknown = 0,
-			FsrmPropertyConditionType_Equal = 1,
-			FsrmPropertyConditionType_NotEqual = 2,
-			FsrmPropertyConditionType_GreaterThan = 3,
-			FsrmPropertyConditionType_LessThan = 4,
-			FsrmPropertyConditionType_Contain = 5,
-			FsrmPropertyConditionType_Exist = 6,
-			FsrmPropertyConditionType_NotExist = 7,
-			FsrmPropertyConditionType_StartWith = 8,
-			FsrmPropertyConditionType_EndWith = 9,
-			FsrmPropertyConditionType_ContainedIn = 10,
-			FsrmPropertyConditionType_PrefixOf = 11,
-			FsrmPropertyConditionType_SuffixOf = 12,
-			FsrmPropertyConditionType_MatchesPattern = 13,
+			Unknown = 0,
+			Equal = 1,
+			NotEqual = 2,
+			GreaterThan = 3,
+			LessThan = 4,
+			Contain = 5,
+			Exist = 6,
+			NotExist = 7,
+			StartWith = 8,
+			EndWith = 9,
+			ContainedIn = 10,
+			PrefixOf = 11,
+			SuffixOf = 12,
+			MatchesPattern = 13,
 		}
 		[AllowDuplicates]
 		public enum FsrmFileStreamingMode : int32
 		{
-			FsrmFileStreamingMode_Unknown = 0,
-			FsrmFileStreamingMode_Read = 1,
-			FsrmFileStreamingMode_Write = 2,
+			Unknown = 0,
+			Read = 1,
+			Write = 2,
 		}
 		[AllowDuplicates]
 		public enum FsrmFileStreamingInterfaceType : int32
 		{
-			FsrmFileStreamingInterfaceType_Unknown = 0,
-			FsrmFileStreamingInterfaceType_ILockBytes = 1,
-			FsrmFileStreamingInterfaceType_IStream = 2,
+			Unknown = 0,
+			ILockBytes = 1,
+			IStream = 2,
 		}
 		[AllowDuplicates]
 		public enum FsrmFileConditionType : int32
 		{
-			FsrmFileConditionType_Unknown = 0,
-			FsrmFileConditionType_Property = 1,
+			Unknown = 0,
+			Property = 1,
 		}
 		[AllowDuplicates]
 		public enum FsrmFileSystemPropertyId : int32
 		{
-			FsrmFileSystemPropertyId_Undefined = 0,
-			FsrmFileSystemPropertyId_FileName = 1,
-			FsrmFileSystemPropertyId_DateCreated = 2,
-			FsrmFileSystemPropertyId_DateLastAccessed = 3,
-			FsrmFileSystemPropertyId_DateLastModified = 4,
-			FsrmFileSystemPropertyId_DateNow = 5,
+			Undefined = 0,
+			FileName = 1,
+			DateCreated = 2,
+			DateLastAccessed = 3,
+			DateLastModified = 4,
+			DateNow = 5,
 		}
 		[AllowDuplicates]
 		public enum FsrmPropertyValueType : int32
 		{
-			FsrmPropertyValueType_Undefined = 0,
-			FsrmPropertyValueType_Literal = 1,
-			FsrmPropertyValueType_DateOffset = 2,
+			Undefined = 0,
+			Literal = 1,
+			DateOffset = 2,
 		}
 		[AllowDuplicates]
 		public enum AdrClientDisplayFlags : int32
 		{
-			AdrClientDisplayFlags_AllowEmailRequests = 1,
-			AdrClientDisplayFlags_ShowDeviceTroubleshooting = 2,
+			AllowEmailRequests = 1,
+			ShowDeviceTroubleshooting = 2,
 		}
 		[AllowDuplicates]
 		public enum AdrEmailFlags : int32
 		{
-			AdrEmailFlags_PutDataOwnerOnToLine = 1,
-			AdrEmailFlags_PutAdminOnToLine = 2,
-			AdrEmailFlags_IncludeDeviceClaims = 4,
-			AdrEmailFlags_IncludeUserInfo = 8,
-			AdrEmailFlags_GenerateEventLog = 16,
+			PutDataOwnerOnToLine = 1,
+			PutAdminOnToLine = 2,
+			IncludeDeviceClaims = 4,
+			IncludeUserInfo = 8,
+			GenerateEventLog = 16,
 		}
 		[AllowDuplicates]
 		public enum AdrClientErrorType : int32
 		{
-			AdrClientErrorType_Unknown = 0,
-			AdrClientErrorType_AccessDenied = 1,
-			AdrClientErrorType_FileNotFound = 2,
+			Unknown = 0,
+			AccessDenied = 1,
+			FileNotFound = 2,
 		}
 		[AllowDuplicates]
 		public enum AdrClientFlags : int32
 		{
-			AdrClientFlags_None = 0,
-			AdrClientFlags_FailForLocalPaths = 1,
-			AdrClientFlags_FailIfNotSupportedByServer = 2,
-			AdrClientFlags_FailIfNotDomainJoined = 4,
+			None = 0,
+			FailForLocalPaths = 1,
+			FailIfNotSupportedByServer = 2,
+			FailIfNotDomainJoined = 4,
 		}
 		
 		// --- COM Class IDs ---

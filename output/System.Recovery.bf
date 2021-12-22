@@ -10,10 +10,10 @@ namespace Win32
 		[AllowDuplicates]
 		public enum REGISTER_APPLICATION_RESTART_FLAGS : uint32
 		{
-			RESTART_NO_CRASH = 1,
-			RESTART_NO_HANG = 2,
-			RESTART_NO_PATCH = 4,
-			RESTART_NO_REBOOT = 8,
+			CRASH = 1,
+			HANG = 2,
+			PATCH = 4,
+			REBOOT = 8,
 		}
 		
 		// --- Functions ---

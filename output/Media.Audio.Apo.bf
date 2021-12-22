@@ -36,66 +36,66 @@ namespace Win32
 		[AllowDuplicates]
 		public enum APO_BUFFER_FLAGS : int32
 		{
-			BUFFER_INVALID = 0,
-			BUFFER_VALID = 1,
-			BUFFER_SILENT = 2,
+			INVALID = 0,
+			VALID = 1,
+			SILENT = 2,
 		}
 		[AllowDuplicates]
 		public enum APO_CONNECTION_BUFFER_TYPE : int32
 		{
-			APO_CONNECTION_BUFFER_TYPE_ALLOCATED = 0,
-			APO_CONNECTION_BUFFER_TYPE_EXTERNAL = 1,
-			APO_CONNECTION_BUFFER_TYPE_DEPENDANT = 2,
+			ALLOCATED = 0,
+			EXTERNAL = 1,
+			DEPENDANT = 2,
 		}
 		[AllowDuplicates]
 		public enum APO_FLAG : int32
 		{
-			APO_FLAG_NONE = 0,
-			APO_FLAG_INPLACE = 1,
-			APO_FLAG_SAMPLESPERFRAME_MUST_MATCH = 2,
-			APO_FLAG_FRAMESPERSECOND_MUST_MATCH = 4,
-			APO_FLAG_BITSPERSAMPLE_MUST_MATCH = 8,
-			APO_FLAG_MIXER = 16,
-			APO_FLAG_DEFAULT = 14,
+			NONE = 0,
+			INPLACE = 1,
+			SAMPLESPERFRAME_MUST_MATCH = 2,
+			FRAMESPERSECOND_MUST_MATCH = 4,
+			BITSPERSAMPLE_MUST_MATCH = 8,
+			MIXER = 16,
+			DEFAULT = 14,
 		}
 		[AllowDuplicates]
 		public enum AUDIO_FLOW_TYPE : int32
 		{
-			AUDIO_FLOW_PULL = 0,
-			AUDIO_FLOW_PUSH = 1,
+			LL = 0,
+			SH = 1,
 		}
 		[AllowDuplicates]
 		public enum EAudioConstriction : int32
 		{
-			eAudioConstrictionOff = 0,
-			eAudioConstriction48_16 = 1,
-			eAudioConstriction44_16 = 2,
-			eAudioConstriction14_14 = 3,
-			eAudioConstrictionMute = 4,
+			Off = 0,
+			_48_16 = 1,
+			_44_16 = 2,
+			_14_14 = 3,
+			Mute = 4,
 		}
 		[AllowDuplicates]
 		public enum AUDIO_SYSTEMEFFECT_STATE : int32
 		{
-			AUDIO_SYSTEMEFFECT_STATE_OFF = 0,
-			AUDIO_SYSTEMEFFECT_STATE_ON = 1,
+			FF = 0,
+			N = 1,
 		}
 		[AllowDuplicates]
 		public enum APO_LOG_LEVEL : int32
 		{
-			APO_LOG_LEVEL_ALWAYS = 0,
-			APO_LOG_LEVEL_CRITICAL = 1,
-			APO_LOG_LEVEL_ERROR = 2,
-			APO_LOG_LEVEL_WARNING = 3,
-			APO_LOG_LEVEL_INFO = 4,
-			APO_LOG_LEVEL_VERBOSE = 5,
+			ALWAYS = 0,
+			CRITICAL = 1,
+			ERROR = 2,
+			WARNING = 3,
+			INFO = 4,
+			VERBOSE = 5,
 		}
 		[AllowDuplicates]
 		public enum APO_NOTIFICATION_TYPE : int32
 		{
-			APO_NOTIFICATION_TYPE_NONE = 0,
-			APO_NOTIFICATION_TYPE_ENDPOINT_VOLUME = 1,
-			APO_NOTIFICATION_TYPE_ENDPOINT_PROPERTY_CHANGE = 2,
-			APO_NOTIFICATION_TYPE_SYSTEM_EFFECTS_PROPERTY_CHANGE = 3,
+			NONE = 0,
+			ENDPOINT_VOLUME = 1,
+			ENDPOINT_PROPERTY_CHANGE = 2,
+			SYSTEM_EFFECTS_PROPERTY_CHANGE = 3,
 		}
 		
 		// --- Function Pointers ---

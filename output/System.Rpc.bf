@@ -242,39 +242,39 @@ namespace Win32
 		[AllowDuplicates]
 		public enum RPC_C_QOS_CAPABILITIES : uint32
 		{
-			RPC_C_QOS_CAPABILITIES_DEFAULT = 0,
-			RPC_C_QOS_CAPABILITIES_MUTUAL_AUTH = 1,
-			RPC_C_QOS_CAPABILITIES_MAKE_FULLSIC = 2,
-			RPC_C_QOS_CAPABILITIES_ANY_AUTHORITY = 4,
-			RPC_C_QOS_CAPABILITIES_IGNORE_DELEGATE_FAILURE = 8,
-			RPC_C_QOS_CAPABILITIES_LOCAL_MA_HINT = 16,
-			RPC_C_QOS_CAPABILITIES_SCHANNEL_FULL_AUTH_IDENTITY = 32,
+			DEFAULT = 0,
+			MUTUAL_AUTH = 1,
+			MAKE_FULLSIC = 2,
+			ANY_AUTHORITY = 4,
+			IGNORE_DELEGATE_FAILURE = 8,
+			LOCAL_MA_HINT = 16,
+			SCHANNEL_FULL_AUTH_IDENTITY = 32,
 		}
 		[AllowDuplicates]
 		public enum RPC_C_QOS_IDENTITY : uint32
 		{
-			RPC_C_QOS_IDENTITY_STATIC = 0,
-			RPC_C_QOS_IDENTITY_DYNAMIC = 1,
+			STATIC = 0,
+			DYNAMIC = 1,
 		}
 		[AllowDuplicates]
 		public enum RPC_C_AUTHN_INFO_TYPE : uint32
 		{
-			RPC_C_AUTHN_INFO_NONE = 0,
-			RPC_C_AUTHN_INFO_TYPE_HTTP = 1,
+			NONE = 0,
+			TYPE_HTTP = 1,
 		}
 		[AllowDuplicates]
 		public enum RPC_C_HTTP_FLAGS : uint32
 		{
-			RPC_C_HTTP_FLAG_USE_SSL = 1,
-			RPC_C_HTTP_FLAG_USE_FIRST_AUTH_SCHEME = 2,
-			RPC_C_HTTP_FLAG_IGNORE_CERT_CN_INVALID = 8,
-			RPC_C_HTTP_FLAG_ENABLE_CERT_REVOCATION_CHECK = 16,
+			USE_SSL = 1,
+			USE_FIRST_AUTH_SCHEME = 2,
+			IGNORE_CERT_CN_INVALID = 8,
+			ENABLE_CERT_REVOCATION_CHECK = 16,
 		}
 		[AllowDuplicates]
 		public enum RPC_C_HTTP_AUTHN_TARGET : uint32
 		{
-			RPC_C_HTTP_AUTHN_TARGET_SERVER = 1,
-			RPC_C_HTTP_AUTHN_TARGET_PROXY = 2,
+			SERVER = 1,
+			PROXY = 2,
 		}
 		[AllowDuplicates]
 		public enum RPC_STATUS : int32
@@ -383,201 +383,201 @@ namespace Win32
 		[AllowDuplicates]
 		public enum GROUP_NAME_SYNTAX : uint32
 		{
-			RPC_C_NS_SYNTAX_DEFAULT = 0,
-			RPC_C_NS_SYNTAX_DCE = 3,
+			EFAULT = 0,
+			CE = 3,
 		}
 		[AllowDuplicates]
 		public enum SEC_WINNT_AUTH_IDENTITY : uint32
 		{
-			SEC_WINNT_AUTH_IDENTITY_ANSI = 1,
-			SEC_WINNT_AUTH_IDENTITY_UNICODE = 2,
+			ANSI = 1,
+			UNICODE = 2,
 		}
 		[AllowDuplicates]
 		public enum RPC_BINDING_HANDLE_OPTIONS_FLAGS : uint32
 		{
-			RPC_BHO_NONCAUSAL = 1,
-			RPC_BHO_DONTLINGER = 2,
+			NONCAUSAL = 1,
+			DONTLINGER = 2,
 		}
 		[AllowDuplicates]
 		public enum RPC_HTTP_REDIRECTOR_STAGE : int32
 		{
-			RPCHTTP_RS_REDIRECT = 1,
-			RPCHTTP_RS_ACCESS_1 = 2,
-			RPCHTTP_RS_SESSION = 3,
-			RPCHTTP_RS_ACCESS_2 = 4,
-			RPCHTTP_RS_INTERFACE = 5,
+			REDIRECT = 1,
+			ACCESS_1 = 2,
+			SESSION = 3,
+			ACCESS_2 = 4,
+			INTERFACE = 5,
 		}
 		[AllowDuplicates]
 		public enum RPC_ADDRESS_CHANGE_TYPE : int32
 		{
-			PROTOCOL_NOT_LOADED = 1,
-			PROTOCOL_LOADED = 2,
-			PROTOCOL_ADDRESS_CHANGE = 3,
+			NOT_LOADED = 1,
+			LOADED = 2,
+			ADDRESS_CHANGE = 3,
 		}
 		[AllowDuplicates]
 		public enum LRPC_SYSTEM_HANDLE_MARSHAL_DIRECTION : int32
 		{
-			MarshalDirectionMarshal = 0,
-			MarshalDirectionUnmarshal = 1,
+			Marshal = 0,
+			Unmarshal = 1,
 		}
 		[AllowDuplicates]
 		public enum RpcProxyPerfCounters : int32
 		{
-			RpcCurrentUniqueUser = 1,
-			RpcBackEndConnectionAttempts = 2,
-			RpcBackEndConnectionFailed = 3,
-			RpcRequestsPerSecond = 4,
-			RpcIncomingConnections = 5,
-			RpcIncomingBandwidth = 6,
-			RpcOutgoingBandwidth = 7,
-			RpcAttemptedLbsDecisions = 8,
-			RpcFailedLbsDecisions = 9,
-			RpcAttemptedLbsMessages = 10,
-			RpcFailedLbsMessages = 11,
-			RpcLastCounter = 12,
+			CurrentUniqueUser = 1,
+			BackEndConnectionAttempts = 2,
+			BackEndConnectionFailed = 3,
+			RequestsPerSecond = 4,
+			IncomingConnections = 5,
+			IncomingBandwidth = 6,
+			OutgoingBandwidth = 7,
+			AttemptedLbsDecisions = 8,
+			FailedLbsDecisions = 9,
+			AttemptedLbsMessages = 10,
+			FailedLbsMessages = 11,
+			LastCounter = 12,
 		}
 		[AllowDuplicates]
 		public enum RPC_NOTIFICATION_TYPES : int32
 		{
-			RpcNotificationTypeNone = 0,
-			RpcNotificationTypeEvent = 1,
-			RpcNotificationTypeApc = 2,
-			RpcNotificationTypeIoc = 3,
-			RpcNotificationTypeHwnd = 4,
-			RpcNotificationTypeCallback = 5,
+			None = 0,
+			Event = 1,
+			Apc = 2,
+			Ioc = 3,
+			Hwnd = 4,
+			Callback = 5,
 		}
 		[AllowDuplicates]
 		public enum RPC_ASYNC_EVENT : int32
 		{
-			RpcCallComplete = 0,
-			RpcSendComplete = 1,
-			RpcReceiveComplete = 2,
-			RpcClientDisconnect = 3,
-			RpcClientCancel = 4,
+			CallComplete = 0,
+			SendComplete = 1,
+			ReceiveComplete = 2,
+			ClientDisconnect = 3,
+			ClientCancel = 4,
 		}
 		[AllowDuplicates]
 		public enum ExtendedErrorParamTypes : int32
 		{
-			eeptAnsiString = 1,
-			eeptUnicodeString = 2,
-			eeptLongVal = 3,
-			eeptShortVal = 4,
-			eeptPointerVal = 5,
-			eeptNone = 6,
-			eeptBinary = 7,
+			AnsiString = 1,
+			UnicodeString = 2,
+			LongVal = 3,
+			ShortVal = 4,
+			PointerVal = 5,
+			None = 6,
+			Binary = 7,
 		}
 		[AllowDuplicates]
 		public enum RpcLocalAddressFormat : int32
 		{
-			rlafInvalid = 0,
-			rlafIPv4 = 1,
-			rlafIPv6 = 2,
+			nvalid = 0,
+			Pv4 = 1,
+			Pv6 = 2,
 		}
 		[AllowDuplicates]
 		public enum RpcCallType : int32
 		{
-			rctInvalid = 0,
-			rctNormal = 1,
-			rctTraining = 2,
-			rctGuaranteed = 3,
+			Invalid = 0,
+			Normal = 1,
+			Training = 2,
+			Guaranteed = 3,
 		}
 		[AllowDuplicates]
 		public enum RpcCallClientLocality : int32
 		{
-			rcclInvalid = 0,
-			rcclLocal = 1,
-			rcclRemote = 2,
-			rcclClientUnknownLocality = 3,
+			Invalid = 0,
+			Local = 1,
+			Remote = 2,
+			ClientUnknownLocality = 3,
 		}
 		[AllowDuplicates]
 		public enum RPC_NOTIFICATIONS : int32
 		{
-			RpcNotificationCallNone = 0,
-			RpcNotificationClientDisconnect = 1,
-			RpcNotificationCallCancel = 2,
+			allNone = 0,
+			lientDisconnect = 1,
+			allCancel = 2,
 		}
 		[AllowDuplicates]
 		public enum USER_MARSHAL_CB_TYPE : int32
 		{
-			USER_MARSHAL_CB_BUFFER_SIZE = 0,
-			USER_MARSHAL_CB_MARSHALL = 1,
-			USER_MARSHAL_CB_UNMARSHALL = 2,
-			USER_MARSHAL_CB_FREE = 3,
+			BUFFER_SIZE = 0,
+			MARSHALL = 1,
+			UNMARSHALL = 2,
+			FREE = 3,
 		}
 		[AllowDuplicates]
 		public enum IDL_CS_CONVERT : int32
 		{
-			IDL_CS_NO_CONVERT = 0,
-			IDL_CS_IN_PLACE_CONVERT = 1,
-			IDL_CS_NEW_BUFFER_CONVERT = 2,
+			NO_CONVERT = 0,
+			IN_PLACE_CONVERT = 1,
+			NEW_BUFFER_CONVERT = 2,
 		}
 		[AllowDuplicates]
 		public enum XLAT_SIDE : int32
 		{
-			XLAT_SERVER = 1,
-			XLAT_CLIENT = 2,
+			SERVER = 1,
+			CLIENT = 2,
 		}
 		[AllowDuplicates]
 		public enum system_handle_t : int32
 		{
-			SYSTEM_HANDLE_FILE = 0,
-			SYSTEM_HANDLE_SEMAPHORE = 1,
-			SYSTEM_HANDLE_EVENT = 2,
-			SYSTEM_HANDLE_MUTEX = 3,
-			SYSTEM_HANDLE_PROCESS = 4,
-			SYSTEM_HANDLE_TOKEN = 5,
-			SYSTEM_HANDLE_SECTION = 6,
-			SYSTEM_HANDLE_REG_KEY = 7,
-			SYSTEM_HANDLE_THREAD = 8,
-			SYSTEM_HANDLE_COMPOSITION_OBJECT = 9,
-			SYSTEM_HANDLE_SOCKET = 10,
-			SYSTEM_HANDLE_JOB = 11,
-			SYSTEM_HANDLE_PIPE = 12,
-			SYSTEM_HANDLE_MAX = 12,
-			SYSTEM_HANDLE_INVALID = 255,
+			FILE = 0,
+			SEMAPHORE = 1,
+			EVENT = 2,
+			MUTEX = 3,
+			PROCESS = 4,
+			TOKEN = 5,
+			SECTION = 6,
+			REG_KEY = 7,
+			THREAD = 8,
+			COMPOSITION_OBJECT = 9,
+			SOCKET = 10,
+			JOB = 11,
+			PIPE = 12,
+			MAX = 12,
+			INVALID = 255,
 		}
 		[AllowDuplicates]
 		public enum STUB_PHASE : int32
 		{
-			STUB_UNMARSHAL = 0,
-			STUB_CALL_SERVER = 1,
-			STUB_MARSHAL = 2,
-			STUB_CALL_SERVER_NO_HRESULT = 3,
+			UNMARSHAL = 0,
+			CALL_SERVER = 1,
+			MARSHAL = 2,
+			CALL_SERVER_NO_HRESULT = 3,
 		}
 		[AllowDuplicates]
 		public enum PROXY_PHASE : int32
 		{
-			PROXY_CALCSIZE = 0,
-			PROXY_GETBUFFER = 1,
-			PROXY_MARSHAL = 2,
-			PROXY_SENDRECEIVE = 3,
-			PROXY_UNMARSHAL = 4,
+			CALCSIZE = 0,
+			GETBUFFER = 1,
+			MARSHAL = 2,
+			SENDRECEIVE = 3,
+			UNMARSHAL = 4,
 		}
 		[AllowDuplicates]
 		public enum MIDL_ES_CODE : int32
 		{
-			MES_ENCODE = 0,
-			MES_DECODE = 1,
-			MES_ENCODE_NDR64 = 2,
+			ENCODE = 0,
+			DECODE = 1,
+			ENCODE_NDR64 = 2,
 		}
 		[AllowDuplicates]
 		public enum MIDL_ES_HANDLE_STYLE : int32
 		{
-			MES_INCREMENTAL_HANDLE = 0,
-			MES_FIXED_BUFFER_HANDLE = 1,
-			MES_DYNAMIC_BUFFER_HANDLE = 2,
+			INCREMENTAL_HANDLE = 0,
+			FIXED_BUFFER_HANDLE = 1,
+			DYNAMIC_BUFFER_HANDLE = 2,
 		}
 		[AllowDuplicates]
 		public enum EXPR_TOKEN : int32
 		{
-			FC_EXPR_START = 0,
-			FC_EXPR_ILLEGAL = 0,
-			FC_EXPR_CONST32 = 1,
-			FC_EXPR_CONST64 = 2,
-			FC_EXPR_VAR = 3,
-			FC_EXPR_OPER = 4,
-			FC_EXPR_NOOP = 5,
-			FC_EXPR_END = 6,
+			START = 0,
+			ILLEGAL = 0,
+			CONST32 = 1,
+			CONST64 = 2,
+			VAR = 3,
+			OPER = 4,
+			NOOP = 5,
+			END = 6,
 		}
 		
 		// --- Function Pointers ---

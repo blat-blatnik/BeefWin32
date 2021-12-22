@@ -24,46 +24,46 @@ namespace Win32
 		[AllowDuplicates]
 		public enum REPORT_EVENT_TYPE : uint16
 		{
-			EVENTLOG_SUCCESS = 0,
-			EVENTLOG_AUDIT_FAILURE = 16,
-			EVENTLOG_AUDIT_SUCCESS = 8,
-			EVENTLOG_ERROR_TYPE = 1,
-			EVENTLOG_INFORMATION_TYPE = 4,
-			EVENTLOG_WARNING_TYPE = 2,
+			SUCCESS = 0,
+			AUDIT_FAILURE = 16,
+			AUDIT_SUCCESS = 8,
+			ERROR_TYPE = 1,
+			INFORMATION_TYPE = 4,
+			WARNING_TYPE = 2,
 		}
 		[AllowDuplicates]
 		public enum READ_EVENT_LOG_READ_FLAGS : uint32
 		{
-			EVENTLOG_SEEK_READ = 2,
-			EVENTLOG_SEQUENTIAL_READ = 1,
+			EK_READ = 2,
+			QUENTIAL_READ = 1,
 		}
 		[AllowDuplicates]
 		public enum EVT_VARIANT_TYPE : int32
 		{
-			EvtVarTypeNull = 0,
-			EvtVarTypeString = 1,
-			EvtVarTypeAnsiString = 2,
-			EvtVarTypeSByte = 3,
-			EvtVarTypeByte = 4,
-			EvtVarTypeInt16 = 5,
-			EvtVarTypeUInt16 = 6,
-			EvtVarTypeInt32 = 7,
-			EvtVarTypeUInt32 = 8,
-			EvtVarTypeInt64 = 9,
-			EvtVarTypeUInt64 = 10,
-			EvtVarTypeSingle = 11,
-			EvtVarTypeDouble = 12,
-			EvtVarTypeBoolean = 13,
-			EvtVarTypeBinary = 14,
-			EvtVarTypeGuid = 15,
-			EvtVarTypeSizeT = 16,
-			EvtVarTypeFileTime = 17,
-			EvtVarTypeSysTime = 18,
-			EvtVarTypeSid = 19,
-			EvtVarTypeHexInt32 = 20,
-			EvtVarTypeHexInt64 = 21,
-			EvtVarTypeEvtHandle = 32,
-			EvtVarTypeEvtXml = 35,
+			Null = 0,
+			String = 1,
+			AnsiString = 2,
+			SByte = 3,
+			Byte = 4,
+			Int16 = 5,
+			UInt16 = 6,
+			Int32 = 7,
+			UInt32 = 8,
+			Int64 = 9,
+			UInt64 = 10,
+			Single = 11,
+			Double = 12,
+			Boolean = 13,
+			Binary = 14,
+			Guid = 15,
+			SizeT = 16,
+			FileTime = 17,
+			SysTime = 18,
+			Sid = 19,
+			HexInt32 = 20,
+			HexInt64 = 21,
+			EvtHandle = 32,
+			EvtXml = 35,
 		}
 		[AllowDuplicates]
 		public enum EVT_LOGIN_CLASS : int32
@@ -73,174 +73,174 @@ namespace Win32
 		[AllowDuplicates]
 		public enum EVT_RPC_LOGIN_FLAGS : int32
 		{
-			EvtRpcLoginAuthDefault = 0,
-			EvtRpcLoginAuthNegotiate = 1,
-			EvtRpcLoginAuthKerberos = 2,
-			EvtRpcLoginAuthNTLM = 3,
+			Default = 0,
+			Negotiate = 1,
+			Kerberos = 2,
+			NTLM = 3,
 		}
 		[AllowDuplicates]
 		public enum EVT_QUERY_FLAGS : int32
 		{
-			EvtQueryChannelPath = 1,
-			EvtQueryFilePath = 2,
-			EvtQueryForwardDirection = 256,
-			EvtQueryReverseDirection = 512,
-			EvtQueryTolerateQueryErrors = 4096,
+			ChannelPath = 1,
+			FilePath = 2,
+			ForwardDirection = 256,
+			ReverseDirection = 512,
+			TolerateQueryErrors = 4096,
 		}
 		[AllowDuplicates]
 		public enum EVT_SEEK_FLAGS : int32
 		{
-			EvtSeekRelativeToFirst = 1,
-			EvtSeekRelativeToLast = 2,
-			EvtSeekRelativeToCurrent = 3,
-			EvtSeekRelativeToBookmark = 4,
-			EvtSeekOriginMask = 7,
-			EvtSeekStrict = 65536,
+			RelativeToFirst = 1,
+			RelativeToLast = 2,
+			RelativeToCurrent = 3,
+			RelativeToBookmark = 4,
+			OriginMask = 7,
+			Strict = 65536,
 		}
 		[AllowDuplicates]
 		public enum EVT_SUBSCRIBE_FLAGS : int32
 		{
-			EvtSubscribeToFutureEvents = 1,
-			EvtSubscribeStartAtOldestRecord = 2,
-			EvtSubscribeStartAfterBookmark = 3,
-			EvtSubscribeOriginMask = 3,
-			EvtSubscribeTolerateQueryErrors = 4096,
-			EvtSubscribeStrict = 65536,
+			ToFutureEvents = 1,
+			StartAtOldestRecord = 2,
+			StartAfterBookmark = 3,
+			OriginMask = 3,
+			TolerateQueryErrors = 4096,
+			Strict = 65536,
 		}
 		[AllowDuplicates]
 		public enum EVT_SUBSCRIBE_NOTIFY_ACTION : int32
 		{
-			EvtSubscribeActionError = 0,
-			EvtSubscribeActionDeliver = 1,
+			Error = 0,
+			Deliver = 1,
 		}
 		[AllowDuplicates]
 		public enum EVT_SYSTEM_PROPERTY_ID : int32
 		{
-			EvtSystemProviderName = 0,
-			EvtSystemProviderGuid = 1,
-			EvtSystemEventID = 2,
-			EvtSystemQualifiers = 3,
-			EvtSystemLevel = 4,
-			EvtSystemTask = 5,
-			EvtSystemOpcode = 6,
-			EvtSystemKeywords = 7,
-			EvtSystemTimeCreated = 8,
-			EvtSystemEventRecordId = 9,
-			EvtSystemActivityID = 10,
-			EvtSystemRelatedActivityID = 11,
-			EvtSystemProcessID = 12,
-			EvtSystemThreadID = 13,
-			EvtSystemChannel = 14,
-			EvtSystemComputer = 15,
-			EvtSystemUserID = 16,
-			EvtSystemVersion = 17,
-			EvtSystemPropertyIdEND = 18,
+			ProviderName = 0,
+			ProviderGuid = 1,
+			EventID = 2,
+			Qualifiers = 3,
+			Level = 4,
+			Task = 5,
+			Opcode = 6,
+			Keywords = 7,
+			TimeCreated = 8,
+			EventRecordId = 9,
+			ActivityID = 10,
+			RelatedActivityID = 11,
+			ProcessID = 12,
+			ThreadID = 13,
+			Channel = 14,
+			Computer = 15,
+			UserID = 16,
+			Version = 17,
+			PropertyIdEND = 18,
 		}
 		[AllowDuplicates]
 		public enum EVT_RENDER_CONTEXT_FLAGS : int32
 		{
-			EvtRenderContextValues = 0,
-			EvtRenderContextSystem = 1,
-			EvtRenderContextUser = 2,
+			Values = 0,
+			System = 1,
+			User = 2,
 		}
 		[AllowDuplicates]
 		public enum EVT_RENDER_FLAGS : int32
 		{
-			EvtRenderEventValues = 0,
-			EvtRenderEventXml = 1,
-			EvtRenderBookmark = 2,
+			EventValues = 0,
+			EventXml = 1,
+			Bookmark = 2,
 		}
 		[AllowDuplicates]
 		public enum EVT_FORMAT_MESSAGE_FLAGS : int32
 		{
-			EvtFormatMessageEvent = 1,
-			EvtFormatMessageLevel = 2,
-			EvtFormatMessageTask = 3,
-			EvtFormatMessageOpcode = 4,
-			EvtFormatMessageKeyword = 5,
-			EvtFormatMessageChannel = 6,
-			EvtFormatMessageProvider = 7,
-			EvtFormatMessageId = 8,
-			EvtFormatMessageXml = 9,
+			Event = 1,
+			Level = 2,
+			Task = 3,
+			Opcode = 4,
+			Keyword = 5,
+			Channel = 6,
+			Provider = 7,
+			Id = 8,
+			Xml = 9,
 		}
 		[AllowDuplicates]
 		public enum EVT_OPEN_LOG_FLAGS : int32
 		{
-			EvtOpenChannelPath = 1,
-			EvtOpenFilePath = 2,
+			ChannelPath = 1,
+			FilePath = 2,
 		}
 		[AllowDuplicates]
 		public enum EVT_LOG_PROPERTY_ID : int32
 		{
-			EvtLogCreationTime = 0,
-			EvtLogLastAccessTime = 1,
-			EvtLogLastWriteTime = 2,
-			EvtLogFileSize = 3,
-			EvtLogAttributes = 4,
-			EvtLogNumberOfLogRecords = 5,
-			EvtLogOldestRecordNumber = 6,
-			EvtLogFull = 7,
+			CreationTime = 0,
+			LastAccessTime = 1,
+			LastWriteTime = 2,
+			FileSize = 3,
+			Attributes = 4,
+			NumberOfLogRecords = 5,
+			OldestRecordNumber = 6,
+			Full = 7,
 		}
 		[AllowDuplicates]
 		public enum EVT_EXPORTLOG_FLAGS : int32
 		{
-			EvtExportLogChannelPath = 1,
-			EvtExportLogFilePath = 2,
-			EvtExportLogTolerateQueryErrors = 4096,
-			EvtExportLogOverwrite = 8192,
+			ChannelPath = 1,
+			FilePath = 2,
+			TolerateQueryErrors = 4096,
+			Overwrite = 8192,
 		}
 		[AllowDuplicates]
 		public enum EVT_CHANNEL_CONFIG_PROPERTY_ID : int32
 		{
-			EvtChannelConfigEnabled = 0,
-			EvtChannelConfigIsolation = 1,
-			EvtChannelConfigType = 2,
-			EvtChannelConfigOwningPublisher = 3,
-			EvtChannelConfigClassicEventlog = 4,
-			EvtChannelConfigAccess = 5,
-			EvtChannelLoggingConfigRetention = 6,
-			EvtChannelLoggingConfigAutoBackup = 7,
-			EvtChannelLoggingConfigMaxSize = 8,
-			EvtChannelLoggingConfigLogFilePath = 9,
-			EvtChannelPublishingConfigLevel = 10,
-			EvtChannelPublishingConfigKeywords = 11,
-			EvtChannelPublishingConfigControlGuid = 12,
-			EvtChannelPublishingConfigBufferSize = 13,
-			EvtChannelPublishingConfigMinBuffers = 14,
-			EvtChannelPublishingConfigMaxBuffers = 15,
-			EvtChannelPublishingConfigLatency = 16,
-			EvtChannelPublishingConfigClockType = 17,
-			EvtChannelPublishingConfigSidType = 18,
-			EvtChannelPublisherList = 19,
-			EvtChannelPublishingConfigFileMax = 20,
-			EvtChannelConfigPropertyIdEND = 21,
+			ConfigEnabled = 0,
+			ConfigIsolation = 1,
+			ConfigType = 2,
+			ConfigOwningPublisher = 3,
+			ConfigClassicEventlog = 4,
+			ConfigAccess = 5,
+			LoggingConfigRetention = 6,
+			LoggingConfigAutoBackup = 7,
+			LoggingConfigMaxSize = 8,
+			LoggingConfigLogFilePath = 9,
+			PublishingConfigLevel = 10,
+			PublishingConfigKeywords = 11,
+			PublishingConfigControlGuid = 12,
+			PublishingConfigBufferSize = 13,
+			PublishingConfigMinBuffers = 14,
+			PublishingConfigMaxBuffers = 15,
+			PublishingConfigLatency = 16,
+			PublishingConfigClockType = 17,
+			PublishingConfigSidType = 18,
+			PublisherList = 19,
+			PublishingConfigFileMax = 20,
+			ConfigPropertyIdEND = 21,
 		}
 		[AllowDuplicates]
 		public enum EVT_CHANNEL_TYPE : int32
 		{
-			EvtChannelTypeAdmin = 0,
-			EvtChannelTypeOperational = 1,
-			EvtChannelTypeAnalytic = 2,
-			EvtChannelTypeDebug = 3,
+			Admin = 0,
+			Operational = 1,
+			Analytic = 2,
+			Debug = 3,
 		}
 		[AllowDuplicates]
 		public enum EVT_CHANNEL_ISOLATION_TYPE : int32
 		{
-			EvtChannelIsolationTypeApplication = 0,
-			EvtChannelIsolationTypeSystem = 1,
-			EvtChannelIsolationTypeCustom = 2,
+			Application = 0,
+			System = 1,
+			Custom = 2,
 		}
 		[AllowDuplicates]
 		public enum EVT_CHANNEL_CLOCK_TYPE : int32
 		{
-			EvtChannelClockTypeSystemTime = 0,
-			EvtChannelClockTypeQPC = 1,
+			SystemTime = 0,
+			QPC = 1,
 		}
 		[AllowDuplicates]
 		public enum EVT_CHANNEL_SID_TYPE : int32
 		{
-			EvtChannelSidTypeNone = 0,
-			EvtChannelSidTypePublishing = 1,
+			None = 0,
+			Publishing = 1,
 		}
 		[AllowDuplicates]
 		public enum EVT_CHANNEL_REFERENCE_FLAGS : int32
@@ -250,64 +250,64 @@ namespace Win32
 		[AllowDuplicates]
 		public enum EVT_PUBLISHER_METADATA_PROPERTY_ID : int32
 		{
-			EvtPublisherMetadataPublisherGuid = 0,
-			EvtPublisherMetadataResourceFilePath = 1,
-			EvtPublisherMetadataParameterFilePath = 2,
-			EvtPublisherMetadataMessageFilePath = 3,
-			EvtPublisherMetadataHelpLink = 4,
-			EvtPublisherMetadataPublisherMessageID = 5,
-			EvtPublisherMetadataChannelReferences = 6,
-			EvtPublisherMetadataChannelReferencePath = 7,
-			EvtPublisherMetadataChannelReferenceIndex = 8,
-			EvtPublisherMetadataChannelReferenceID = 9,
-			EvtPublisherMetadataChannelReferenceFlags = 10,
-			EvtPublisherMetadataChannelReferenceMessageID = 11,
-			EvtPublisherMetadataLevels = 12,
-			EvtPublisherMetadataLevelName = 13,
-			EvtPublisherMetadataLevelValue = 14,
-			EvtPublisherMetadataLevelMessageID = 15,
-			EvtPublisherMetadataTasks = 16,
-			EvtPublisherMetadataTaskName = 17,
-			EvtPublisherMetadataTaskEventGuid = 18,
-			EvtPublisherMetadataTaskValue = 19,
-			EvtPublisherMetadataTaskMessageID = 20,
-			EvtPublisherMetadataOpcodes = 21,
-			EvtPublisherMetadataOpcodeName = 22,
-			EvtPublisherMetadataOpcodeValue = 23,
-			EvtPublisherMetadataOpcodeMessageID = 24,
-			EvtPublisherMetadataKeywords = 25,
-			EvtPublisherMetadataKeywordName = 26,
-			EvtPublisherMetadataKeywordValue = 27,
-			EvtPublisherMetadataKeywordMessageID = 28,
-			EvtPublisherMetadataPropertyIdEND = 29,
+			PublisherGuid = 0,
+			ResourceFilePath = 1,
+			ParameterFilePath = 2,
+			MessageFilePath = 3,
+			HelpLink = 4,
+			PublisherMessageID = 5,
+			ChannelReferences = 6,
+			ChannelReferencePath = 7,
+			ChannelReferenceIndex = 8,
+			ChannelReferenceID = 9,
+			ChannelReferenceFlags = 10,
+			ChannelReferenceMessageID = 11,
+			Levels = 12,
+			LevelName = 13,
+			LevelValue = 14,
+			LevelMessageID = 15,
+			Tasks = 16,
+			TaskName = 17,
+			TaskEventGuid = 18,
+			TaskValue = 19,
+			TaskMessageID = 20,
+			Opcodes = 21,
+			OpcodeName = 22,
+			OpcodeValue = 23,
+			OpcodeMessageID = 24,
+			Keywords = 25,
+			KeywordName = 26,
+			KeywordValue = 27,
+			KeywordMessageID = 28,
+			PropertyIdEND = 29,
 		}
 		[AllowDuplicates]
 		public enum EVT_EVENT_METADATA_PROPERTY_ID : int32
 		{
-			EventMetadataEventID = 0,
-			EventMetadataEventVersion = 1,
-			EventMetadataEventChannel = 2,
-			EventMetadataEventLevel = 3,
-			EventMetadataEventOpcode = 4,
-			EventMetadataEventTask = 5,
-			EventMetadataEventKeyword = 6,
-			EventMetadataEventMessageID = 7,
-			EventMetadataEventTemplate = 8,
-			EvtEventMetadataPropertyIdEND = 9,
+			entMetadataEventID = 0,
+			entMetadataEventVersion = 1,
+			entMetadataEventChannel = 2,
+			entMetadataEventLevel = 3,
+			entMetadataEventOpcode = 4,
+			entMetadataEventTask = 5,
+			entMetadataEventKeyword = 6,
+			entMetadataEventMessageID = 7,
+			entMetadataEventTemplate = 8,
+			tEventMetadataPropertyIdEND = 9,
 		}
 		[AllowDuplicates]
 		public enum EVT_QUERY_PROPERTY_ID : int32
 		{
-			EvtQueryNames = 0,
-			EvtQueryStatuses = 1,
-			EvtQueryPropertyIdEND = 2,
+			Names = 0,
+			Statuses = 1,
+			PropertyIdEND = 2,
 		}
 		[AllowDuplicates]
 		public enum EVT_EVENT_PROPERTY_ID : int32
 		{
-			EvtEventQueryIDs = 0,
-			EvtEventPath = 1,
-			EvtEventPropertyIdEND = 2,
+			QueryIDs = 0,
+			Path = 1,
+			PropertyIdEND = 2,
 		}
 		
 		// --- Function Pointers ---

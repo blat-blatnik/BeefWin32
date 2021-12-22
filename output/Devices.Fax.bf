@@ -228,244 +228,244 @@ namespace Win32
 		[AllowDuplicates]
 		public enum FAX_ENUM_LOG_LEVELS : int32
 		{
-			FAXLOG_LEVEL_NONE = 0,
-			FAXLOG_LEVEL_MIN = 1,
-			FAXLOG_LEVEL_MED = 2,
-			FAXLOG_LEVEL_MAX = 3,
+			NONE = 0,
+			MIN = 1,
+			MED = 2,
+			MAX = 3,
 		}
 		[AllowDuplicates]
 		public enum FAX_ENUM_LOG_CATEGORIES : int32
 		{
-			FAXLOG_CATEGORY_INIT = 1,
-			FAXLOG_CATEGORY_OUTBOUND = 2,
-			FAXLOG_CATEGORY_INBOUND = 3,
-			FAXLOG_CATEGORY_UNKNOWN = 4,
+			INIT = 1,
+			OUTBOUND = 2,
+			INBOUND = 3,
+			UNKNOWN = 4,
 		}
 		[AllowDuplicates]
 		public enum FAX_ENUM_JOB_COMMANDS : int32
 		{
-			JC_UNKNOWN = 0,
-			JC_DELETE = 1,
-			JC_PAUSE = 2,
-			JC_RESUME = 3,
+			UNKNOWN = 0,
+			DELETE = 1,
+			PAUSE = 2,
+			RESUME = 3,
 		}
 		[AllowDuplicates]
 		public enum FAX_ENUM_JOB_SEND_ATTRIBUTES : int32
 		{
-			JSA_NOW = 0,
-			JSA_SPECIFIC_TIME = 1,
-			JSA_DISCOUNT_PERIOD = 2,
+			NOW = 0,
+			SPECIFIC_TIME = 1,
+			DISCOUNT_PERIOD = 2,
 		}
 		[AllowDuplicates]
 		public enum FAX_ENUM_DELIVERY_REPORT_TYPES : int32
 		{
-			DRT_NONE = 0,
-			DRT_EMAIL = 1,
-			DRT_INBOX = 2,
+			NONE = 0,
+			EMAIL = 1,
+			INBOX = 2,
 		}
 		[AllowDuplicates]
 		public enum FAX_ENUM_PORT_OPEN_TYPE : int32
 		{
-			PORT_OPEN_QUERY = 1,
-			PORT_OPEN_MODIFY = 2,
+			QUERY = 1,
+			MODIFY = 2,
 		}
 		[AllowDuplicates]
 		public enum FAX_JOB_STATUS_ENUM : int32
 		{
-			fjsPENDING = 1,
-			fjsINPROGRESS = 2,
-			fjsFAILED = 8,
-			fjsPAUSED = 16,
-			fjsNOLINE = 32,
-			fjsRETRYING = 64,
-			fjsRETRIES_EXCEEDED = 128,
-			fjsCOMPLETED = 256,
-			fjsCANCELED = 512,
-			fjsCANCELING = 1024,
-			fjsROUTING = 2048,
+			PENDING = 1,
+			INPROGRESS = 2,
+			FAILED = 8,
+			PAUSED = 16,
+			NOLINE = 32,
+			RETRYING = 64,
+			RETRIES_EXCEEDED = 128,
+			COMPLETED = 256,
+			CANCELED = 512,
+			CANCELING = 1024,
+			ROUTING = 2048,
 		}
 		[AllowDuplicates]
 		public enum FAX_JOB_EXTENDED_STATUS_ENUM : int32
 		{
-			fjesNONE = 0,
-			fjesDISCONNECTED = 1,
-			fjesINITIALIZING = 2,
-			fjesDIALING = 3,
-			fjesTRANSMITTING = 4,
-			fjesANSWERED = 5,
-			fjesRECEIVING = 6,
-			fjesLINE_UNAVAILABLE = 7,
-			fjesBUSY = 8,
-			fjesNO_ANSWER = 9,
-			fjesBAD_ADDRESS = 10,
-			fjesNO_DIAL_TONE = 11,
-			fjesFATAL_ERROR = 12,
-			fjesCALL_DELAYED = 13,
-			fjesCALL_BLACKLISTED = 14,
-			fjesNOT_FAX_CALL = 15,
-			fjesPARTIALLY_RECEIVED = 16,
-			fjesHANDLED = 17,
-			fjesCALL_COMPLETED = 18,
-			fjesCALL_ABORTED = 19,
-			fjesPROPRIETARY = 16777216,
+			NONE = 0,
+			DISCONNECTED = 1,
+			INITIALIZING = 2,
+			DIALING = 3,
+			TRANSMITTING = 4,
+			ANSWERED = 5,
+			RECEIVING = 6,
+			LINE_UNAVAILABLE = 7,
+			BUSY = 8,
+			NO_ANSWER = 9,
+			BAD_ADDRESS = 10,
+			NO_DIAL_TONE = 11,
+			FATAL_ERROR = 12,
+			CALL_DELAYED = 13,
+			CALL_BLACKLISTED = 14,
+			NOT_FAX_CALL = 15,
+			PARTIALLY_RECEIVED = 16,
+			HANDLED = 17,
+			CALL_COMPLETED = 18,
+			CALL_ABORTED = 19,
+			PROPRIETARY = 16777216,
 		}
 		[AllowDuplicates]
 		public enum FAX_JOB_OPERATIONS_ENUM : int32
 		{
-			fjoVIEW = 1,
-			fjoPAUSE = 2,
-			fjoRESUME = 4,
-			fjoRESTART = 8,
-			fjoDELETE = 16,
-			fjoRECIPIENT_INFO = 32,
-			fjoSENDER_INFO = 64,
+			VIEW = 1,
+			PAUSE = 2,
+			RESUME = 4,
+			RESTART = 8,
+			DELETE = 16,
+			RECIPIENT_INFO = 32,
+			SENDER_INFO = 64,
 		}
 		[AllowDuplicates]
 		public enum FAX_JOB_TYPE_ENUM : int32
 		{
-			fjtSEND = 0,
-			fjtRECEIVE = 1,
-			fjtROUTING = 2,
+			SEND = 0,
+			RECEIVE = 1,
+			ROUTING = 2,
 		}
 		[AllowDuplicates]
 		public enum FAX_SERVER_EVENTS_TYPE_ENUM : int32
 		{
-			fsetNONE = 0,
-			fsetIN_QUEUE = 1,
-			fsetOUT_QUEUE = 2,
-			fsetCONFIG = 4,
-			fsetACTIVITY = 8,
-			fsetQUEUE_STATE = 16,
-			fsetIN_ARCHIVE = 32,
-			fsetOUT_ARCHIVE = 64,
-			fsetFXSSVC_ENDED = 128,
-			fsetDEVICE_STATUS = 256,
-			fsetINCOMING_CALL = 512,
+			NONE = 0,
+			IN_QUEUE = 1,
+			OUT_QUEUE = 2,
+			CONFIG = 4,
+			ACTIVITY = 8,
+			QUEUE_STATE = 16,
+			IN_ARCHIVE = 32,
+			OUT_ARCHIVE = 64,
+			FXSSVC_ENDED = 128,
+			DEVICE_STATUS = 256,
+			INCOMING_CALL = 512,
 		}
 		[AllowDuplicates]
 		public enum FAX_SERVER_APIVERSION_ENUM : int32
 		{
-			fsAPI_VERSION_0 = 0,
-			fsAPI_VERSION_1 = 65536,
-			fsAPI_VERSION_2 = 131072,
-			fsAPI_VERSION_3 = 196608,
+			_0 = 0,
+			_1 = 65536,
+			_2 = 131072,
+			_3 = 196608,
 		}
 		[AllowDuplicates]
 		public enum FAX_SMTP_AUTHENTICATION_TYPE_ENUM : int32
 		{
-			fsatANONYMOUS = 0,
-			fsatBASIC = 1,
-			fsatNTLM = 2,
+			ANONYMOUS = 0,
+			BASIC = 1,
+			NTLM = 2,
 		}
 		[AllowDuplicates]
 		public enum FAX_RECEIPT_TYPE_ENUM : int32
 		{
-			frtNONE = 0,
-			frtMAIL = 1,
-			frtMSGBOX = 4,
+			NONE = 0,
+			MAIL = 1,
+			MSGBOX = 4,
 		}
 		[AllowDuplicates]
 		public enum FAX_ACCESS_RIGHTS_ENUM : int32
 		{
-			farSUBMIT_LOW = 1,
-			farSUBMIT_NORMAL = 2,
-			farSUBMIT_HIGH = 4,
-			farQUERY_JOBS = 8,
-			farMANAGE_JOBS = 16,
-			farQUERY_CONFIG = 32,
-			farMANAGE_CONFIG = 64,
-			farQUERY_IN_ARCHIVE = 128,
-			farMANAGE_IN_ARCHIVE = 256,
-			farQUERY_OUT_ARCHIVE = 512,
-			farMANAGE_OUT_ARCHIVE = 1024,
+			SUBMIT_LOW = 1,
+			SUBMIT_NORMAL = 2,
+			SUBMIT_HIGH = 4,
+			QUERY_JOBS = 8,
+			MANAGE_JOBS = 16,
+			QUERY_CONFIG = 32,
+			MANAGE_CONFIG = 64,
+			QUERY_IN_ARCHIVE = 128,
+			MANAGE_IN_ARCHIVE = 256,
+			QUERY_OUT_ARCHIVE = 512,
+			MANAGE_OUT_ARCHIVE = 1024,
 		}
 		[AllowDuplicates]
 		public enum FAX_PRIORITY_TYPE_ENUM : int32
 		{
-			fptLOW = 0,
-			fptNORMAL = 1,
-			fptHIGH = 2,
+			LOW = 0,
+			NORMAL = 1,
+			HIGH = 2,
 		}
 		[AllowDuplicates]
 		public enum FAX_COVERPAGE_TYPE_ENUM : int32
 		{
-			fcptNONE = 0,
-			fcptLOCAL = 1,
-			fcptSERVER = 2,
+			NONE = 0,
+			LOCAL = 1,
+			SERVER = 2,
 		}
 		[AllowDuplicates]
 		public enum FAX_SCHEDULE_TYPE_ENUM : int32
 		{
-			fstNOW = 0,
-			fstSPECIFIC_TIME = 1,
-			fstDISCOUNT_PERIOD = 2,
+			NOW = 0,
+			SPECIFIC_TIME = 1,
+			DISCOUNT_PERIOD = 2,
 		}
 		[AllowDuplicates]
 		public enum FAX_PROVIDER_STATUS_ENUM : int32
 		{
-			fpsSUCCESS = 0,
-			fpsSERVER_ERROR = 1,
-			fpsBAD_GUID = 2,
-			fpsBAD_VERSION = 3,
-			fpsCANT_LOAD = 4,
-			fpsCANT_LINK = 5,
-			fpsCANT_INIT = 6,
+			SUCCESS = 0,
+			SERVER_ERROR = 1,
+			BAD_GUID = 2,
+			BAD_VERSION = 3,
+			CANT_LOAD = 4,
+			CANT_LINK = 5,
+			CANT_INIT = 6,
 		}
 		[AllowDuplicates]
 		public enum FAX_DEVICE_RECEIVE_MODE_ENUM : int32
 		{
-			fdrmNO_ANSWER = 0,
-			fdrmAUTO_ANSWER = 1,
-			fdrmMANUAL_ANSWER = 2,
+			NO_ANSWER = 0,
+			AUTO_ANSWER = 1,
+			MANUAL_ANSWER = 2,
 		}
 		[AllowDuplicates]
 		public enum FAX_LOG_LEVEL_ENUM : int32
 		{
-			fllNONE = 0,
-			fllMIN = 1,
-			fllMED = 2,
-			fllMAX = 3,
+			NONE = 0,
+			MIN = 1,
+			MED = 2,
+			MAX = 3,
 		}
 		[AllowDuplicates]
 		public enum FAX_GROUP_STATUS_ENUM : int32
 		{
-			fgsALL_DEV_VALID = 0,
-			fgsEMPTY = 1,
-			fgsALL_DEV_NOT_VALID = 2,
-			fgsSOME_DEV_NOT_VALID = 3,
+			ALL_DEV_VALID = 0,
+			EMPTY = 1,
+			ALL_DEV_NOT_VALID = 2,
+			SOME_DEV_NOT_VALID = 3,
 		}
 		[AllowDuplicates]
 		public enum FAX_RULE_STATUS_ENUM : int32
 		{
-			frsVALID = 0,
-			frsEMPTY_GROUP = 1,
-			frsALL_GROUP_DEV_NOT_VALID = 2,
-			frsSOME_GROUP_DEV_NOT_VALID = 3,
-			frsBAD_DEVICE = 4,
+			VALID = 0,
+			EMPTY_GROUP = 1,
+			ALL_GROUP_DEV_NOT_VALID = 2,
+			SOME_GROUP_DEV_NOT_VALID = 3,
+			BAD_DEVICE = 4,
 		}
 		[AllowDuplicates]
 		public enum FAX_ACCOUNT_EVENTS_TYPE_ENUM : int32
 		{
-			faetNONE = 0,
-			faetIN_QUEUE = 1,
-			faetOUT_QUEUE = 2,
-			faetIN_ARCHIVE = 4,
-			faetOUT_ARCHIVE = 8,
-			faetFXSSVC_ENDED = 16,
+			NONE = 0,
+			IN_QUEUE = 1,
+			OUT_QUEUE = 2,
+			IN_ARCHIVE = 4,
+			OUT_ARCHIVE = 8,
+			FXSSVC_ENDED = 16,
 		}
 		[AllowDuplicates]
 		public enum FAX_ACCESS_RIGHTS_ENUM_2 : int32
 		{
-			far2SUBMIT_LOW = 1,
-			far2SUBMIT_NORMAL = 2,
-			far2SUBMIT_HIGH = 4,
-			far2QUERY_OUT_JOBS = 8,
-			far2MANAGE_OUT_JOBS = 16,
-			far2QUERY_CONFIG = 32,
-			far2MANAGE_CONFIG = 64,
-			far2QUERY_ARCHIVES = 128,
-			far2MANAGE_ARCHIVES = 256,
-			far2MANAGE_RECEIVE_FOLDER = 512,
+			SUBMIT_LOW = 1,
+			SUBMIT_NORMAL = 2,
+			SUBMIT_HIGH = 4,
+			QUERY_OUT_JOBS = 8,
+			MANAGE_OUT_JOBS = 16,
+			QUERY_CONFIG = 32,
+			MANAGE_CONFIG = 64,
+			QUERY_ARCHIVES = 128,
+			MANAGE_ARCHIVES = 256,
+			MANAGE_RECEIVE_FOLDER = 512,
 		}
 		[AllowDuplicates]
 		public enum FAX_ROUTING_RULE_CODE_ENUM : int32
@@ -482,8 +482,8 @@ namespace Win32
 		[AllowDuplicates]
 		public enum FAX_ENUM_DEVICE_ID_SOURCE : int32
 		{
-			DEV_ID_SRC_FAX = 0,
-			DEV_ID_SRC_TAPI = 1,
+			FAX = 0,
+			TAPI = 1,
 		}
 		[AllowDuplicates]
 		public enum SendToMode : int32
@@ -493,10 +493,10 @@ namespace Win32
 		[AllowDuplicates]
 		public enum STI_DEVICE_MJ_TYPE : int32
 		{
-			StiDeviceTypeDefault = 0,
-			StiDeviceTypeScanner = 1,
-			StiDeviceTypeDigitalCamera = 2,
-			StiDeviceTypeStreamingVideo = 3,
+			Default = 0,
+			Scanner = 1,
+			DigitalCamera = 2,
+			StreamingVideo = 3,
 		}
 		
 		// --- Function Pointers ---

@@ -289,18 +289,18 @@ namespace Win32
 		[AllowDuplicates]
 		public enum HH_GPROPID : int32
 		{
-			HH_GPROPID_SINGLETHREAD = 1,
-			HH_GPROPID_TOOLBAR_MARGIN = 2,
-			HH_GPROPID_UI_LANGUAGE = 3,
-			HH_GPROPID_CURRENT_SUBSET = 4,
-			HH_GPROPID_CONTENT_LANGUAGE = 5,
+			SINGLETHREAD = 1,
+			TOOLBAR_MARGIN = 2,
+			UI_LANGUAGE = 3,
+			CURRENT_SUBSET = 4,
+			CONTENT_LANGUAGE = 5,
 		}
 		[AllowDuplicates]
 		public enum PRIORITY : int32
 		{
-			PRIORITY_LOW = 0,
-			PRIORITY_NORMAL = 1,
-			PRIORITY_HIGH = 2,
+			LOW = 0,
+			NORMAL = 1,
+			HIGH = 2,
 		}
 		
 		// --- Function Pointers ---

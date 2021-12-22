@@ -589,26 +589,26 @@ namespace Win32
 		[AllowDuplicates]
 		public enum PROC_THREAD_ATTRIBUTE_NUM : int32
 		{
-			ProcThreadAttributeParentProcess = 0,
-			ProcThreadAttributeHandleList = 2,
-			ProcThreadAttributeGroupAffinity = 3,
-			ProcThreadAttributePreferredNode = 4,
-			ProcThreadAttributeIdealProcessor = 5,
-			ProcThreadAttributeUmsThread = 6,
-			ProcThreadAttributeMitigationPolicy = 7,
-			ProcThreadAttributeSecurityCapabilities = 9,
-			ProcThreadAttributeProtectionLevel = 11,
-			ProcThreadAttributeJobList = 13,
-			ProcThreadAttributeChildProcessPolicy = 14,
-			ProcThreadAttributeAllApplicationPackagesPolicy = 15,
-			ProcThreadAttributeWin32kFilter = 16,
-			ProcThreadAttributeSafeOpenPromptOriginClaim = 17,
-			ProcThreadAttributeDesktopAppPolicy = 18,
-			ProcThreadAttributePseudoConsole = 22,
-			ProcThreadAttributeMitigationAuditPolicy = 24,
-			ProcThreadAttributeMachineType = 25,
-			ProcThreadAttributeComponentFilter = 26,
-			ProcThreadAttributeEnableOptionalXStateFeatures = 27,
+			ParentProcess = 0,
+			HandleList = 2,
+			GroupAffinity = 3,
+			PreferredNode = 4,
+			IdealProcessor = 5,
+			UmsThread = 6,
+			MitigationPolicy = 7,
+			SecurityCapabilities = 9,
+			ProtectionLevel = 11,
+			JobList = 13,
+			ChildProcessPolicy = 14,
+			AllApplicationPackagesPolicy = 15,
+			Win32kFilter = 16,
+			SafeOpenPromptOriginClaim = 17,
+			DesktopAppPolicy = 18,
+			PseudoConsole = 22,
+			MitigationAuditPolicy = 24,
+			MachineType = 25,
+			ComponentFilter = 26,
+			EnableOptionalXStateFeatures = 27,
 		}
 		[AllowDuplicates]
 		public enum FILE_INFORMATION_CLASS : int32
@@ -618,23 +618,23 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SYSTEM_INFORMATION_CLASS : int32
 		{
-			SystemBasicInformation = 0,
-			SystemPerformanceInformation = 2,
-			SystemTimeOfDayInformation = 3,
-			SystemProcessInformation = 5,
-			SystemProcessorPerformanceInformation = 8,
-			SystemInterruptInformation = 23,
-			SystemExceptionInformation = 33,
-			SystemRegistryQuotaInformation = 37,
-			SystemLookasideInformation = 45,
-			SystemCodeIntegrityInformation = 103,
-			SystemPolicyInformation = 134,
+			BasicInformation = 0,
+			PerformanceInformation = 2,
+			TimeOfDayInformation = 3,
+			ProcessInformation = 5,
+			ProcessorPerformanceInformation = 8,
+			InterruptInformation = 23,
+			ExceptionInformation = 33,
+			RegistryQuotaInformation = 37,
+			LookasideInformation = 45,
+			CodeIntegrityInformation = 103,
+			PolicyInformation = 134,
 		}
 		[AllowDuplicates]
 		public enum OBJECT_INFORMATION_CLASS : int32
 		{
-			ObjectBasicInformation = 0,
-			ObjectTypeInformation = 2,
+			BasicInformation = 0,
+			TypeInformation = 2,
 		}
 		[AllowDuplicates]
 		public enum KEY_SET_INFORMATION_CLASS : int32
@@ -693,17 +693,17 @@ namespace Win32
 		[AllowDuplicates]
 		public enum FEATURE_CHANGE_TIME : int32
 		{
-			FEATURE_CHANGE_TIME_READ = 0,
-			FEATURE_CHANGE_TIME_MODULE_RELOAD = 1,
-			FEATURE_CHANGE_TIME_SESSION = 2,
-			FEATURE_CHANGE_TIME_REBOOT = 3,
+			READ = 0,
+			MODULE_RELOAD = 1,
+			SESSION = 2,
+			REBOOT = 3,
 		}
 		[AllowDuplicates]
 		public enum FEATURE_ENABLED_STATE : int32
 		{
-			FEATURE_ENABLED_STATE_DEFAULT = 0,
-			FEATURE_ENABLED_STATE_DISABLED = 1,
-			FEATURE_ENABLED_STATE_ENABLED = 2,
+			DEFAULT = 0,
+			DISABLED = 1,
+			ENABLED = 2,
 		}
 		[AllowDuplicates]
 		public enum TDI_TL_IO_CONTROL_TYPE : int32
@@ -716,66 +716,66 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WLDP_HOST : int32
 		{
-			WLDP_HOST_RUNDLL32 = 0,
-			WLDP_HOST_SVCHOST = 1,
-			WLDP_HOST_MAX = 2,
+			RUNDLL32 = 0,
+			SVCHOST = 1,
+			MAX = 2,
 		}
 		[AllowDuplicates]
 		public enum WLDP_HOST_ID : int32
 		{
-			WLDP_HOST_ID_UNKNOWN = 0,
-			WLDP_HOST_ID_GLOBAL = 1,
-			WLDP_HOST_ID_VBA = 2,
-			WLDP_HOST_ID_WSH = 3,
-			WLDP_HOST_ID_POWERSHELL = 4,
-			WLDP_HOST_ID_IE = 5,
-			WLDP_HOST_ID_MSI = 6,
-			WLDP_HOST_ID_ALL = 7,
-			WLDP_HOST_ID_MAX = 8,
+			UNKNOWN = 0,
+			GLOBAL = 1,
+			VBA = 2,
+			WSH = 3,
+			POWERSHELL = 4,
+			IE = 5,
+			MSI = 6,
+			ALL = 7,
+			MAX = 8,
 		}
 		[AllowDuplicates]
 		public enum DECISION_LOCATION : int32
 		{
-			DECISION_LOCATION_REFRESH_GLOBAL_DATA = 0,
-			DECISION_LOCATION_PARAMETER_VALIDATION = 1,
-			DECISION_LOCATION_AUDIT = 2,
-			DECISION_LOCATION_FAILED_CONVERT_GUID = 3,
-			DECISION_LOCATION_ENTERPRISE_DEFINED_CLASS_ID = 4,
-			DECISION_LOCATION_GLOBAL_BUILT_IN_LIST = 5,
-			DECISION_LOCATION_PROVIDER_BUILT_IN_LIST = 6,
-			DECISION_LOCATION_ENFORCE_STATE_LIST = 7,
-			DECISION_LOCATION_NOT_FOUND = 8,
-			DECISION_LOCATION_UNKNOWN = 9,
+			REFRESH_GLOBAL_DATA = 0,
+			PARAMETER_VALIDATION = 1,
+			AUDIT = 2,
+			FAILED_CONVERT_GUID = 3,
+			ENTERPRISE_DEFINED_CLASS_ID = 4,
+			GLOBAL_BUILT_IN_LIST = 5,
+			PROVIDER_BUILT_IN_LIST = 6,
+			ENFORCE_STATE_LIST = 7,
+			NOT_FOUND = 8,
+			UNKNOWN = 9,
 		}
 		[AllowDuplicates]
 		public enum WLDP_KEY : int32
 		{
-			KEY_UNKNOWN = 0,
-			KEY_OVERRIDE = 1,
-			KEY_ALL_KEYS = 2,
+			UNKNOWN = 0,
+			OVERRIDE = 1,
+			ALL_KEYS = 2,
 		}
 		[AllowDuplicates]
 		public enum VALUENAME : int32
 		{
-			VALUENAME_UNKNOWN = 0,
-			VALUENAME_ENTERPRISE_DEFINED_CLASS_ID = 1,
-			VALUENAME_BUILT_IN_LIST = 2,
+			UNKNOWN = 0,
+			ENTERPRISE_DEFINED_CLASS_ID = 1,
+			BUILT_IN_LIST = 2,
 		}
 		[AllowDuplicates]
 		public enum WLDP_WINDOWS_LOCKDOWN_MODE : int32
 		{
-			WLDP_WINDOWS_LOCKDOWN_MODE_UNLOCKED = 0,
-			WLDP_WINDOWS_LOCKDOWN_MODE_TRIAL = 1,
-			WLDP_WINDOWS_LOCKDOWN_MODE_LOCKED = 2,
-			WLDP_WINDOWS_LOCKDOWN_MODE_MAX = 3,
+			UNLOCKED = 0,
+			TRIAL = 1,
+			LOCKED = 2,
+			MAX = 3,
 		}
 		[AllowDuplicates]
 		public enum WLDP_WINDOWS_LOCKDOWN_RESTRICTION : int32
 		{
-			WLDP_WINDOWS_LOCKDOWN_RESTRICTION_NONE = 0,
-			WLDP_WINDOWS_LOCKDOWN_RESTRICTION_NOUNLOCK = 1,
-			WLDP_WINDOWS_LOCKDOWN_RESTRICTION_NOUNLOCK_PERMANENT = 2,
-			WLDP_WINDOWS_LOCKDOWN_RESTRICTION_MAX = 3,
+			NONE = 0,
+			NOUNLOCK = 1,
+			NOUNLOCK_PERMANENT = 2,
+			MAX = 3,
 		}
 		[AllowDuplicates]
 		public enum WLDP_POLICY_SETTING : int32

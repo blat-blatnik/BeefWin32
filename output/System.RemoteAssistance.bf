@@ -17,24 +17,24 @@ namespace Win32
 		[AllowDuplicates]
 		public enum RENDEZVOUS_SESSION_STATE : int32
 		{
-			RSS_UNKNOWN = 0,
-			RSS_READY = 1,
-			RSS_INVITATION = 2,
-			RSS_ACCEPTED = 3,
-			RSS_CONNECTED = 4,
-			RSS_CANCELLED = 5,
-			RSS_DECLINED = 6,
-			RSS_TERMINATED = 7,
+			UNKNOWN = 0,
+			READY = 1,
+			INVITATION = 2,
+			ACCEPTED = 3,
+			CONNECTED = 4,
+			CANCELLED = 5,
+			DECLINED = 6,
+			TERMINATED = 7,
 		}
 		[AllowDuplicates]
 		public enum RENDEZVOUS_SESSION_FLAGS : int32
 		{
-			RSF_NONE = 0,
-			RSF_INVITER = 1,
-			RSF_INVITEE = 2,
-			RSF_ORIGINAL_INVITER = 4,
-			RSF_REMOTE_LEGACYSESSION = 8,
-			RSF_REMOTE_WIN7SESSION = 16,
+			NONE = 0,
+			INVITER = 1,
+			INVITEE = 2,
+			ORIGINAL_INVITER = 4,
+			REMOTE_LEGACYSESSION = 8,
+			REMOTE_WIN7SESSION = 16,
 		}
 		
 		// --- COM Class IDs ---

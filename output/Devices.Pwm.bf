@@ -34,8 +34,8 @@ namespace Win32
 		[AllowDuplicates]
 		public enum PWM_POLARITY : int32
 		{
-			PWM_ACTIVE_HIGH = 0,
-			PWM_ACTIVE_LOW = 1,
+			HIGH = 0,
+			LOW = 1,
 		}
 		
 		// --- Structs ---

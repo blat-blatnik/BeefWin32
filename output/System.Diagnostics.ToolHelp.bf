@@ -16,20 +16,20 @@ namespace Win32
 		[AllowDuplicates]
 		public enum CREATE_TOOLHELP_SNAPSHOT_FLAGS : uint32
 		{
-			TH32CS_INHERIT = 2147483648,
-			TH32CS_SNAPALL = 15,
-			TH32CS_SNAPHEAPLIST = 1,
-			TH32CS_SNAPMODULE = 8,
-			TH32CS_SNAPMODULE32 = 16,
-			TH32CS_SNAPPROCESS = 2,
-			TH32CS_SNAPTHREAD = 4,
+			INHERIT = 2147483648,
+			SNAPALL = 15,
+			SNAPHEAPLIST = 1,
+			SNAPMODULE = 8,
+			SNAPMODULE32 = 16,
+			SNAPPROCESS = 2,
+			SNAPTHREAD = 4,
 		}
 		[AllowDuplicates]
 		public enum HEAPENTRY32_FLAGS : uint32
 		{
-			LF32_FIXED = 1,
-			LF32_FREE = 2,
-			LF32_MOVEABLE = 4,
+			FIXED = 1,
+			FREE = 2,
+			MOVEABLE = 4,
 		}
 		
 		// --- Structs ---

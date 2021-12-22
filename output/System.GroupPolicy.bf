@@ -108,32 +108,32 @@ namespace Win32
 		[AllowDuplicates]
 		public enum GPMRSOPMode : int32
 		{
-			rsopUnknown = 0,
-			rsopPlanning = 1,
-			rsopLogging = 2,
+			Unknown = 0,
+			Planning = 1,
+			Logging = 2,
 		}
 		[AllowDuplicates]
 		public enum GPMPermissionType : int32
 		{
-			permGPOApply = 65536,
-			permGPORead = 65792,
-			permGPOEdit = 65793,
-			permGPOEditSecurityAndDelete = 65794,
-			permGPOCustom = 65795,
-			permWMIFilterEdit = 131072,
-			permWMIFilterFullControl = 131073,
-			permWMIFilterCustom = 131074,
-			permSOMLink = 1835008,
-			permSOMLogging = 1573120,
-			permSOMPlanning = 1573376,
-			permSOMWMICreate = 1049344,
-			permSOMWMIFullControl = 1049345,
-			permSOMGPOCreate = 1049600,
-			permStarterGPORead = 197888,
-			permStarterGPOEdit = 197889,
-			permStarterGPOFullControl = 197890,
-			permStarterGPOCustom = 197891,
-			permSOMStarterGPOCreate = 1049856,
+			GPOApply = 65536,
+			GPORead = 65792,
+			GPOEdit = 65793,
+			GPOEditSecurityAndDelete = 65794,
+			GPOCustom = 65795,
+			WMIFilterEdit = 131072,
+			WMIFilterFullControl = 131073,
+			WMIFilterCustom = 131074,
+			SOMLink = 1835008,
+			SOMLogging = 1573120,
+			SOMPlanning = 1573376,
+			SOMWMICreate = 1049344,
+			SOMWMIFullControl = 1049345,
+			SOMGPOCreate = 1049600,
+			StarterGPORead = 197888,
+			StarterGPOEdit = 197889,
+			StarterGPOFullControl = 197890,
+			StarterGPOCustom = 197891,
+			SOMStarterGPOCreate = 1049856,
 		}
 		[AllowDuplicates]
 		public enum GPMSearchProperty : int32
@@ -157,82 +157,82 @@ namespace Win32
 		[AllowDuplicates]
 		public enum GPMSearchOperation : int32
 		{
-			opEquals = 0,
-			opContains = 1,
-			opNotContains = 2,
-			opNotEquals = 3,
+			Equals = 0,
+			Contains = 1,
+			NotContains = 2,
+			NotEquals = 3,
 		}
 		[AllowDuplicates]
 		public enum GPMReportType : int32
 		{
-			repXML = 0,
-			repHTML = 1,
-			repInfraXML = 2,
-			repInfraRefreshXML = 3,
-			repClientHealthXML = 4,
-			repClientHealthRefreshXML = 5,
+			XML = 0,
+			HTML = 1,
+			InfraXML = 2,
+			InfraRefreshXML = 3,
+			ClientHealthXML = 4,
+			ClientHealthRefreshXML = 5,
 		}
 		[AllowDuplicates]
 		public enum GPMEntryType : int32
 		{
-			typeUser = 0,
-			typeComputer = 1,
-			typeLocalGroup = 2,
-			typeGlobalGroup = 3,
-			typeUniversalGroup = 4,
-			typeUNCPath = 5,
-			typeUnknown = 6,
+			User = 0,
+			Computer = 1,
+			LocalGroup = 2,
+			GlobalGroup = 3,
+			UniversalGroup = 4,
+			UNCPath = 5,
+			Unknown = 6,
 		}
 		[AllowDuplicates]
 		public enum GPMDestinationOption : int32
 		{
-			opDestinationSameAsSource = 0,
-			opDestinationNone = 1,
-			opDestinationByRelativeName = 2,
-			opDestinationSet = 3,
+			SameAsSource = 0,
+			None = 1,
+			ByRelativeName = 2,
+			Set = 3,
 		}
 		[AllowDuplicates]
 		public enum GPMReportingOptions : int32
 		{
-			opReportLegacy = 0,
-			opReportComments = 1,
+			Legacy = 0,
+			Comments = 1,
 		}
 		[AllowDuplicates]
 		public enum GPMSOMType : int32
 		{
-			somSite = 0,
-			somDomain = 1,
-			somOU = 2,
+			Site = 0,
+			Domain = 1,
+			OU = 2,
 		}
 		[AllowDuplicates]
 		public enum GPMBackupType : int32
 		{
-			typeGPO = 0,
-			typeStarterGPO = 1,
+			GPO = 0,
+			StarterGPO = 1,
 		}
 		[AllowDuplicates]
 		public enum GPMStarterGPOType : int32
 		{
-			typeSystem = 0,
-			typeCustom = 1,
+			System = 0,
+			Custom = 1,
 		}
 		[AllowDuplicates]
 		public enum GPO_LINK : int32
 		{
-			GPLinkUnknown = 0,
-			GPLinkMachine = 1,
-			GPLinkSite = 2,
-			GPLinkDomain = 3,
-			GPLinkOrganizationalUnit = 4,
+			Unknown = 0,
+			Machine = 1,
+			Site = 2,
+			Domain = 3,
+			OrganizationalUnit = 4,
 		}
 		[AllowDuplicates]
 		public enum SETTINGSTATUS : int32
 		{
-			RSOPUnspecified = 0,
-			RSOPApplied = 1,
-			RSOPIgnored = 2,
-			RSOPFailed = 3,
-			RSOPSubsettingFailed = 4,
+			Unspecified = 0,
+			Applied = 1,
+			Ignored = 2,
+			Failed = 3,
+			SubsettingFailed = 4,
 		}
 		[AllowDuplicates]
 		public enum INSTALLSPECTYPE : int32
@@ -252,20 +252,20 @@ namespace Win32
 		[AllowDuplicates]
 		public enum GROUP_POLICY_OBJECT_TYPE : int32
 		{
-			GPOTypeLocal = 0,
-			GPOTypeRemote = 1,
-			GPOTypeDS = 2,
-			GPOTypeLocalUser = 3,
-			GPOTypeLocalGroup = 4,
+			Local = 0,
+			Remote = 1,
+			DS = 2,
+			LocalUser = 3,
+			LocalGroup = 4,
 		}
 		[AllowDuplicates]
 		public enum GROUP_POLICY_HINT_TYPE : int32
 		{
-			GPHintUnknown = 0,
-			GPHintMachine = 1,
-			GPHintSite = 2,
-			GPHintDomain = 3,
-			GPHintOrganizationalUnit = 4,
+			Unknown = 0,
+			Machine = 1,
+			Site = 2,
+			Domain = 3,
+			OrganizationalUnit = 4,
 		}
 		
 		// --- Function Pointers ---

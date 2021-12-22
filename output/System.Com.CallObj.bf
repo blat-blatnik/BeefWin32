@@ -10,34 +10,34 @@ namespace Win32
 		[AllowDuplicates]
 		public enum CALLFRAME_COPY : int32
 		{
-			CALLFRAME_COPY_NESTED = 1,
-			CALLFRAME_COPY_INDEPENDENT = 2,
+			NESTED = 1,
+			INDEPENDENT = 2,
 		}
 		[AllowDuplicates]
 		public enum CALLFRAME_FREE : int32
 		{
-			CALLFRAME_FREE_NONE = 0,
-			CALLFRAME_FREE_IN = 1,
-			CALLFRAME_FREE_INOUT = 2,
-			CALLFRAME_FREE_OUT = 4,
-			CALLFRAME_FREE_TOP_INOUT = 8,
-			CALLFRAME_FREE_TOP_OUT = 16,
-			CALLFRAME_FREE_ALL = 31,
+			NONE = 0,
+			IN = 1,
+			INOUT = 2,
+			OUT = 4,
+			TOP_INOUT = 8,
+			TOP_OUT = 16,
+			ALL = 31,
 		}
 		[AllowDuplicates]
 		public enum CALLFRAME_NULL : int32
 		{
-			CALLFRAME_NULL_NONE = 0,
-			CALLFRAME_NULL_INOUT = 2,
-			CALLFRAME_NULL_OUT = 4,
-			CALLFRAME_NULL_ALL = 6,
+			NONE = 0,
+			INOUT = 2,
+			OUT = 4,
+			ALL = 6,
 		}
 		[AllowDuplicates]
 		public enum CALLFRAME_WALK : int32
 		{
-			CALLFRAME_WALK_IN = 1,
-			CALLFRAME_WALK_INOUT = 2,
-			CALLFRAME_WALK_OUT = 4,
+			IN = 1,
+			INOUT = 2,
+			OUT = 4,
 		}
 		
 		// --- Structs ---

@@ -342,90 +342,90 @@ namespace Win32
 		[AllowDuplicates]
 		public enum DNS_CONFIG_TYPE : int32
 		{
-			DnsConfigPrimaryDomainName_W = 0,
-			DnsConfigPrimaryDomainName_A = 1,
-			DnsConfigPrimaryDomainName_UTF8 = 2,
-			DnsConfigAdapterDomainName_W = 3,
-			DnsConfigAdapterDomainName_A = 4,
-			DnsConfigAdapterDomainName_UTF8 = 5,
-			DnsConfigDnsServerList = 6,
-			DnsConfigSearchList = 7,
-			DnsConfigAdapterInfo = 8,
-			DnsConfigPrimaryHostNameRegistrationEnabled = 9,
-			DnsConfigAdapterHostNameRegistrationEnabled = 10,
-			DnsConfigAddressRegistrationMaxCount = 11,
-			DnsConfigHostName_W = 12,
-			DnsConfigHostName_A = 13,
-			DnsConfigHostName_UTF8 = 14,
-			DnsConfigFullHostName_W = 15,
-			DnsConfigFullHostName_A = 16,
-			DnsConfigFullHostName_UTF8 = 17,
-			DnsConfigNameServer = 18,
+			PrimaryDomainName_W = 0,
+			PrimaryDomainName_A = 1,
+			PrimaryDomainName_UTF8 = 2,
+			AdapterDomainName_W = 3,
+			AdapterDomainName_A = 4,
+			AdapterDomainName_UTF8 = 5,
+			DnsServerList = 6,
+			SearchList = 7,
+			AdapterInfo = 8,
+			PrimaryHostNameRegistrationEnabled = 9,
+			AdapterHostNameRegistrationEnabled = 10,
+			AddressRegistrationMaxCount = 11,
+			HostName_W = 12,
+			HostName_A = 13,
+			HostName_UTF8 = 14,
+			FullHostName_W = 15,
+			FullHostName_A = 16,
+			FullHostName_UTF8 = 17,
+			NameServer = 18,
 		}
 		[AllowDuplicates]
 		public enum DNS_SECTION : int32
 		{
-			DnsSectionQuestion = 0,
-			DnsSectionAnswer = 1,
-			DnsSectionAuthority = 2,
-			DnsSectionAddtional = 3,
+			Question = 0,
+			Answer = 1,
+			Authority = 2,
+			Addtional = 3,
 		}
 		[AllowDuplicates]
 		public enum DNS_PROXY_INFORMATION_TYPE : int32
 		{
-			DNS_PROXY_INFORMATION_DIRECT = 0,
-			DNS_PROXY_INFORMATION_DEFAULT_SETTINGS = 1,
-			DNS_PROXY_INFORMATION_PROXY_NAME = 2,
-			DNS_PROXY_INFORMATION_DOES_NOT_EXIST = 3,
+			DIRECT = 0,
+			DEFAULT_SETTINGS = 1,
+			PROXY_NAME = 2,
+			DOES_NOT_EXIST = 3,
 		}
 		[AllowDuplicates]
 		public enum DNS_CHARSET : int32
 		{
-			DnsCharSetUnknown = 0,
-			DnsCharSetUnicode = 1,
-			DnsCharSetUtf8 = 2,
-			DnsCharSetAnsi = 3,
+			Unknown = 0,
+			Unicode = 1,
+			Utf8 = 2,
+			Ansi = 3,
 		}
 		[AllowDuplicates]
 		public enum DNS_FREE_TYPE : int32
 		{
-			DnsFreeFlat = 0,
-			DnsFreeRecordList = 1,
-			DnsFreeParsedMessageFields = 2,
+			Flat = 0,
+			RecordList = 1,
+			ParsedMessageFields = 2,
 		}
 		[AllowDuplicates]
 		public enum DNS_NAME_FORMAT : int32
 		{
-			DnsNameDomain = 0,
-			DnsNameDomainLabel = 1,
-			DnsNameHostnameFull = 2,
-			DnsNameHostnameLabel = 3,
-			DnsNameWildcard = 4,
-			DnsNameSrvRecord = 5,
-			DnsNameValidateTld = 6,
+			Domain = 0,
+			DomainLabel = 1,
+			HostnameFull = 2,
+			HostnameLabel = 3,
+			Wildcard = 4,
+			SrvRecord = 5,
+			ValidateTld = 6,
 		}
 		[AllowDuplicates]
 		public enum DNS_CONNECTION_PROXY_TYPE : int32
 		{
-			DNS_CONNECTION_PROXY_TYPE_NULL = 0,
-			DNS_CONNECTION_PROXY_TYPE_HTTP = 1,
-			DNS_CONNECTION_PROXY_TYPE_WAP = 2,
-			DNS_CONNECTION_PROXY_TYPE_SOCKS4 = 4,
-			DNS_CONNECTION_PROXY_TYPE_SOCKS5 = 5,
+			NULL = 0,
+			HTTP = 1,
+			WAP = 2,
+			SOCKS4 = 4,
+			SOCKS5 = 5,
 		}
 		[AllowDuplicates]
 		public enum DNS_CONNECTION_PROXY_INFO_SWITCH : int32
 		{
-			DNS_CONNECTION_PROXY_INFO_SWITCH_CONFIG = 0,
-			DNS_CONNECTION_PROXY_INFO_SWITCH_SCRIPT = 1,
-			DNS_CONNECTION_PROXY_INFO_SWITCH_WPAD = 2,
+			CONFIG = 0,
+			SCRIPT = 1,
+			WPAD = 2,
 		}
 		[AllowDuplicates]
 		public enum DNS_CONNECTION_POLICY_TAG : int32
 		{
-			TAG_DNS_CONNECTION_POLICY_TAG_DEFAULT = 0,
-			TAG_DNS_CONNECTION_POLICY_TAG_CONNECTION_MANAGER = 1,
-			TAG_DNS_CONNECTION_POLICY_TAG_WWWPT = 2,
+			DEFAULT = 0,
+			CONNECTION_MANAGER = 1,
+			WWWPT = 2,
 		}
 		
 		// --- Function Pointers ---

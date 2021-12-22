@@ -14,43 +14,43 @@ namespace Win32
 		[AllowDuplicates]
 		public enum VERIFIER_ENUM_RESOURCE_FLAGS : uint32
 		{
-			AVRF_ENUM_RESOURCES_FLAGS_DONT_RESOLVE_TRACES = 2,
-			AVRF_ENUM_RESOURCES_FLAGS_SUSPEND = 1,
+			DONT_RESOLVE_TRACES = 2,
+			SUSPEND = 1,
 		}
 		[AllowDuplicates]
 		public enum eUserAllocationState : int32
 		{
-			AllocationStateUnknown = 0,
-			AllocationStateBusy = 1,
-			AllocationStateFree = 2,
+			Unknown = 0,
+			Busy = 1,
+			Free = 2,
 		}
 		[AllowDuplicates]
 		public enum eHeapAllocationState : int32
 		{
-			HeapFullPageHeap = 1073741824,
-			HeapMetadata = -2147483648,
-			HeapStateMask = -65536,
+			FullPageHeap = 1073741824,
+			Metadata = -2147483648,
+			StateMask = -65536,
 		}
 		[AllowDuplicates]
 		public enum eHeapEnumerationLevel : int32
 		{
-			HeapEnumerationEverything = 0,
-			HeapEnumerationStop = -1,
+			Everything = 0,
+			Stop = -1,
 		}
 		[AllowDuplicates]
 		public enum eHANDLE_TRACE_OPERATIONS : int32
 		{
-			OperationDbUnused = 0,
-			OperationDbOPEN = 1,
-			OperationDbCLOSE = 2,
-			OperationDbBADREF = 3,
+			Unused = 0,
+			OPEN = 1,
+			CLOSE = 2,
+			BADREF = 3,
 		}
 		[AllowDuplicates]
 		public enum eAvrfResourceTypes : int32
 		{
-			AvrfResourceHeapAllocation = 0,
-			AvrfResourceHandleTrace = 1,
-			AvrfResourceMax = 2,
+			HeapAllocation = 0,
+			HandleTrace = 1,
+			Max = 2,
 		}
 		
 		// --- Function Pointers ---

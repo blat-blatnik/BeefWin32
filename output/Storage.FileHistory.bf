@@ -63,10 +63,10 @@ namespace Win32
 		[AllowDuplicates]
 		public enum FH_TARGET_DRIVE_TYPES : int32
 		{
-			FH_DRIVE_UNKNOWN = 0,
-			FH_DRIVE_REMOVABLE = 2,
-			FH_DRIVE_FIXED = 3,
-			FH_DRIVE_REMOTE = 4,
+			UNKNOWN = 0,
+			REMOVABLE = 2,
+			FIXED = 3,
+			REMOTE = 4,
 		}
 		[AllowDuplicates]
 		public enum FH_PROTECTED_ITEM_CATEGORY : int32
@@ -115,11 +115,11 @@ namespace Win32
 		[AllowDuplicates]
 		public enum FhBackupStopReason : int32
 		{
-			BackupInvalidStopReason = 0,
-			BackupLimitUserBusyMachineOnAC = 1,
-			BackupLimitUserIdleMachineOnDC = 2,
-			BackupLimitUserBusyMachineOnDC = 3,
-			BackupCancelled = 4,
+			InvalidStopReason = 0,
+			LimitUserBusyMachineOnAC = 1,
+			LimitUserIdleMachineOnDC = 2,
+			LimitUserBusyMachineOnDC = 3,
+			Cancelled = 4,
 		}
 		
 		// --- COM Class IDs ---

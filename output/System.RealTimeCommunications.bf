@@ -265,363 +265,363 @@ namespace Win32
 		[AllowDuplicates]
 		public enum RTC_AUDIO_DEVICE : int32
 		{
-			RTCAD_SPEAKER = 0,
-			RTCAD_MICROPHONE = 1,
+			SPEAKER = 0,
+			MICROPHONE = 1,
 		}
 		[AllowDuplicates]
 		public enum RTC_VIDEO_DEVICE : int32
 		{
-			RTCVD_RECEIVE = 0,
-			RTCVD_PREVIEW = 1,
+			RECEIVE = 0,
+			PREVIEW = 1,
 		}
 		[AllowDuplicates]
 		public enum RTC_EVENT : int32
 		{
-			RTCE_CLIENT = 0,
-			RTCE_REGISTRATION_STATE_CHANGE = 1,
-			RTCE_SESSION_STATE_CHANGE = 2,
-			RTCE_SESSION_OPERATION_COMPLETE = 3,
-			RTCE_PARTICIPANT_STATE_CHANGE = 4,
-			RTCE_MEDIA = 5,
-			RTCE_INTENSITY = 6,
-			RTCE_MESSAGING = 7,
-			RTCE_BUDDY = 8,
-			RTCE_WATCHER = 9,
-			RTCE_PROFILE = 10,
-			RTCE_USERSEARCH = 11,
-			RTCE_INFO = 12,
-			RTCE_GROUP = 13,
-			RTCE_MEDIA_REQUEST = 14,
-			RTCE_ROAMING = 15,
-			RTCE_PRESENCE_PROPERTY = 16,
-			RTCE_PRESENCE_DATA = 17,
-			RTCE_PRESENCE_STATUS = 18,
-			RTCE_SESSION_REFER_STATUS = 19,
-			RTCE_SESSION_REFERRED = 20,
-			RTCE_REINVITE = 21,
+			CLIENT = 0,
+			REGISTRATION_STATE_CHANGE = 1,
+			SESSION_STATE_CHANGE = 2,
+			SESSION_OPERATION_COMPLETE = 3,
+			PARTICIPANT_STATE_CHANGE = 4,
+			MEDIA = 5,
+			INTENSITY = 6,
+			MESSAGING = 7,
+			BUDDY = 8,
+			WATCHER = 9,
+			PROFILE = 10,
+			USERSEARCH = 11,
+			INFO = 12,
+			GROUP = 13,
+			MEDIA_REQUEST = 14,
+			ROAMING = 15,
+			PRESENCE_PROPERTY = 16,
+			PRESENCE_DATA = 17,
+			PRESENCE_STATUS = 18,
+			SESSION_REFER_STATUS = 19,
+			SESSION_REFERRED = 20,
+			REINVITE = 21,
 		}
 		[AllowDuplicates]
 		public enum RTC_LISTEN_MODE : int32
 		{
-			RTCLM_NONE = 0,
-			RTCLM_DYNAMIC = 1,
-			RTCLM_BOTH = 2,
+			NONE = 0,
+			DYNAMIC = 1,
+			BOTH = 2,
 		}
 		[AllowDuplicates]
 		public enum RTC_CLIENT_EVENT_TYPE : int32
 		{
-			RTCCET_VOLUME_CHANGE = 0,
-			RTCCET_DEVICE_CHANGE = 1,
-			RTCCET_NETWORK_QUALITY_CHANGE = 2,
-			RTCCET_ASYNC_CLEANUP_DONE = 3,
+			VOLUME_CHANGE = 0,
+			DEVICE_CHANGE = 1,
+			NETWORK_QUALITY_CHANGE = 2,
+			ASYNC_CLEANUP_DONE = 3,
 		}
 		[AllowDuplicates]
 		public enum RTC_BUDDY_EVENT_TYPE : int32
 		{
-			RTCBET_BUDDY_ADD = 0,
-			RTCBET_BUDDY_REMOVE = 1,
-			RTCBET_BUDDY_UPDATE = 2,
-			RTCBET_BUDDY_STATE_CHANGE = 3,
-			RTCBET_BUDDY_ROAMED = 4,
-			RTCBET_BUDDY_SUBSCRIBED = 5,
+			ADD = 0,
+			REMOVE = 1,
+			UPDATE = 2,
+			STATE_CHANGE = 3,
+			ROAMED = 4,
+			SUBSCRIBED = 5,
 		}
 		[AllowDuplicates]
 		public enum RTC_WATCHER_EVENT_TYPE : int32
 		{
-			RTCWET_WATCHER_ADD = 0,
-			RTCWET_WATCHER_REMOVE = 1,
-			RTCWET_WATCHER_UPDATE = 2,
-			RTCWET_WATCHER_OFFERING = 3,
-			RTCWET_WATCHER_ROAMED = 4,
+			ADD = 0,
+			REMOVE = 1,
+			UPDATE = 2,
+			OFFERING = 3,
+			ROAMED = 4,
 		}
 		[AllowDuplicates]
 		public enum RTC_GROUP_EVENT_TYPE : int32
 		{
-			RTCGET_GROUP_ADD = 0,
-			RTCGET_GROUP_REMOVE = 1,
-			RTCGET_GROUP_UPDATE = 2,
-			RTCGET_GROUP_BUDDY_ADD = 3,
-			RTCGET_GROUP_BUDDY_REMOVE = 4,
-			RTCGET_GROUP_ROAMED = 5,
+			ADD = 0,
+			REMOVE = 1,
+			UPDATE = 2,
+			BUDDY_ADD = 3,
+			BUDDY_REMOVE = 4,
+			ROAMED = 5,
 		}
 		[AllowDuplicates]
 		public enum RTC_TERMINATE_REASON : int32
 		{
-			RTCTR_NORMAL = 0,
-			RTCTR_DND = 1,
-			RTCTR_BUSY = 2,
-			RTCTR_REJECT = 3,
-			RTCTR_TIMEOUT = 4,
-			RTCTR_SHUTDOWN = 5,
-			RTCTR_INSUFFICIENT_SECURITY_LEVEL = 6,
-			RTCTR_NOT_SUPPORTED = 7,
+			NORMAL = 0,
+			DND = 1,
+			BUSY = 2,
+			REJECT = 3,
+			TIMEOUT = 4,
+			SHUTDOWN = 5,
+			INSUFFICIENT_SECURITY_LEVEL = 6,
+			NOT_SUPPORTED = 7,
 		}
 		[AllowDuplicates]
 		public enum RTC_REGISTRATION_STATE : int32
 		{
-			RTCRS_NOT_REGISTERED = 0,
-			RTCRS_REGISTERING = 1,
-			RTCRS_REGISTERED = 2,
-			RTCRS_REJECTED = 3,
-			RTCRS_UNREGISTERING = 4,
-			RTCRS_ERROR = 5,
-			RTCRS_LOGGED_OFF = 6,
-			RTCRS_LOCAL_PA_LOGGED_OFF = 7,
-			RTCRS_REMOTE_PA_LOGGED_OFF = 8,
+			NOT_REGISTERED = 0,
+			REGISTERING = 1,
+			REGISTERED = 2,
+			REJECTED = 3,
+			UNREGISTERING = 4,
+			ERROR = 5,
+			LOGGED_OFF = 6,
+			LOCAL_PA_LOGGED_OFF = 7,
+			REMOTE_PA_LOGGED_OFF = 8,
 		}
 		[AllowDuplicates]
 		public enum RTC_SESSION_STATE : int32
 		{
-			RTCSS_IDLE = 0,
-			RTCSS_INCOMING = 1,
-			RTCSS_ANSWERING = 2,
-			RTCSS_INPROGRESS = 3,
-			RTCSS_CONNECTED = 4,
-			RTCSS_DISCONNECTED = 5,
-			RTCSS_HOLD = 6,
-			RTCSS_REFER = 7,
+			IDLE = 0,
+			INCOMING = 1,
+			ANSWERING = 2,
+			INPROGRESS = 3,
+			CONNECTED = 4,
+			DISCONNECTED = 5,
+			HOLD = 6,
+			REFER = 7,
 		}
 		[AllowDuplicates]
 		public enum RTC_PARTICIPANT_STATE : int32
 		{
-			RTCPS_IDLE = 0,
-			RTCPS_PENDING = 1,
-			RTCPS_INCOMING = 2,
-			RTCPS_ANSWERING = 3,
-			RTCPS_INPROGRESS = 4,
-			RTCPS_ALERTING = 5,
-			RTCPS_CONNECTED = 6,
-			RTCPS_DISCONNECTING = 7,
-			RTCPS_DISCONNECTED = 8,
+			IDLE = 0,
+			PENDING = 1,
+			INCOMING = 2,
+			ANSWERING = 3,
+			INPROGRESS = 4,
+			ALERTING = 5,
+			CONNECTED = 6,
+			DISCONNECTING = 7,
+			DISCONNECTED = 8,
 		}
 		[AllowDuplicates]
 		public enum RTC_WATCHER_STATE : int32
 		{
-			RTCWS_UNKNOWN = 0,
-			RTCWS_OFFERING = 1,
-			RTCWS_ALLOWED = 2,
-			RTCWS_BLOCKED = 3,
-			RTCWS_DENIED = 4,
-			RTCWS_PROMPT = 5,
+			UNKNOWN = 0,
+			OFFERING = 1,
+			ALLOWED = 2,
+			BLOCKED = 3,
+			DENIED = 4,
+			PROMPT = 5,
 		}
 		[AllowDuplicates]
 		public enum RTC_ACE_SCOPE : int32
 		{
-			RTCAS_SCOPE_USER = 0,
-			RTCAS_SCOPE_DOMAIN = 1,
-			RTCAS_SCOPE_ALL = 2,
+			USER = 0,
+			DOMAIN = 1,
+			ALL = 2,
 		}
 		[AllowDuplicates]
 		public enum RTC_OFFER_WATCHER_MODE : int32
 		{
-			RTCOWM_OFFER_WATCHER_EVENT = 0,
-			RTCOWM_AUTOMATICALLY_ADD_WATCHER = 1,
+			OFFER_WATCHER_EVENT = 0,
+			AUTOMATICALLY_ADD_WATCHER = 1,
 		}
 		[AllowDuplicates]
 		public enum RTC_WATCHER_MATCH_MODE : int32
 		{
-			RTCWMM_EXACT_MATCH = 0,
-			RTCWMM_BEST_ACE_MATCH = 1,
+			EXACT_MATCH = 0,
+			BEST_ACE_MATCH = 1,
 		}
 		[AllowDuplicates]
 		public enum RTC_PRIVACY_MODE : int32
 		{
-			RTCPM_BLOCK_LIST_EXCLUDED = 0,
-			RTCPM_ALLOW_LIST_ONLY = 1,
+			BLOCK_LIST_EXCLUDED = 0,
+			ALLOW_LIST_ONLY = 1,
 		}
 		[AllowDuplicates]
 		public enum RTC_SESSION_TYPE : int32
 		{
-			RTCST_PC_TO_PC = 0,
-			RTCST_PC_TO_PHONE = 1,
-			RTCST_PHONE_TO_PHONE = 2,
-			RTCST_IM = 3,
-			RTCST_MULTIPARTY_IM = 4,
-			RTCST_APPLICATION = 5,
+			PC_TO_PC = 0,
+			PC_TO_PHONE = 1,
+			PHONE_TO_PHONE = 2,
+			IM = 3,
+			MULTIPARTY_IM = 4,
+			APPLICATION = 5,
 		}
 		[AllowDuplicates]
 		public enum RTC_PRESENCE_STATUS : int32
 		{
-			RTCXS_PRESENCE_OFFLINE = 0,
-			RTCXS_PRESENCE_ONLINE = 1,
-			RTCXS_PRESENCE_AWAY = 2,
-			RTCXS_PRESENCE_IDLE = 3,
-			RTCXS_PRESENCE_BUSY = 4,
-			RTCXS_PRESENCE_BE_RIGHT_BACK = 5,
-			RTCXS_PRESENCE_ON_THE_PHONE = 6,
-			RTCXS_PRESENCE_OUT_TO_LUNCH = 7,
+			OFFLINE = 0,
+			ONLINE = 1,
+			AWAY = 2,
+			IDLE = 3,
+			BUSY = 4,
+			BE_RIGHT_BACK = 5,
+			ON_THE_PHONE = 6,
+			OUT_TO_LUNCH = 7,
 		}
 		[AllowDuplicates]
 		public enum RTC_BUDDY_SUBSCRIPTION_TYPE : int32
 		{
-			RTCBT_SUBSCRIBED = 0,
-			RTCBT_ALWAYS_OFFLINE = 1,
-			RTCBT_ALWAYS_ONLINE = 2,
-			RTCBT_POLL = 3,
+			SUBSCRIBED = 0,
+			ALWAYS_OFFLINE = 1,
+			ALWAYS_ONLINE = 2,
+			POLL = 3,
 		}
 		[AllowDuplicates]
 		public enum RTC_MEDIA_EVENT_TYPE : int32
 		{
-			RTCMET_STOPPED = 0,
-			RTCMET_STARTED = 1,
-			RTCMET_FAILED = 2,
+			STOPPED = 0,
+			STARTED = 1,
+			FAILED = 2,
 		}
 		[AllowDuplicates]
 		public enum RTC_MEDIA_EVENT_REASON : int32
 		{
-			RTCMER_NORMAL = 0,
-			RTCMER_HOLD = 1,
-			RTCMER_TIMEOUT = 2,
-			RTCMER_BAD_DEVICE = 3,
-			RTCMER_NO_PORT = 4,
-			RTCMER_PORT_MAPPING_FAILED = 5,
-			RTCMER_REMOTE_REQUEST = 6,
+			NORMAL = 0,
+			HOLD = 1,
+			TIMEOUT = 2,
+			BAD_DEVICE = 3,
+			NO_PORT = 4,
+			PORT_MAPPING_FAILED = 5,
+			REMOTE_REQUEST = 6,
 		}
 		[AllowDuplicates]
 		public enum RTC_MESSAGING_EVENT_TYPE : int32
 		{
-			RTCMSET_MESSAGE = 0,
-			RTCMSET_STATUS = 1,
+			MESSAGE = 0,
+			STATUS = 1,
 		}
 		[AllowDuplicates]
 		public enum RTC_MESSAGING_USER_STATUS : int32
 		{
-			RTCMUS_IDLE = 0,
-			RTCMUS_TYPING = 1,
+			IDLE = 0,
+			TYPING = 1,
 		}
 		[AllowDuplicates]
 		public enum RTC_DTMF : int32
 		{
-			RTC_DTMF_0 = 0,
-			RTC_DTMF_1 = 1,
-			RTC_DTMF_2 = 2,
-			RTC_DTMF_3 = 3,
-			RTC_DTMF_4 = 4,
-			RTC_DTMF_5 = 5,
-			RTC_DTMF_6 = 6,
-			RTC_DTMF_7 = 7,
-			RTC_DTMF_8 = 8,
-			RTC_DTMF_9 = 9,
-			RTC_DTMF_STAR = 10,
-			RTC_DTMF_POUND = 11,
-			RTC_DTMF_A = 12,
-			RTC_DTMF_B = 13,
-			RTC_DTMF_C = 14,
-			RTC_DTMF_D = 15,
-			RTC_DTMF_FLASH = 16,
+			_0 = 0,
+			_1 = 1,
+			_2 = 2,
+			_3 = 3,
+			_4 = 4,
+			_5 = 5,
+			_6 = 6,
+			_7 = 7,
+			_8 = 8,
+			_9 = 9,
+			STAR = 10,
+			POUND = 11,
+			A = 12,
+			B = 13,
+			C = 14,
+			D = 15,
+			FLASH = 16,
 		}
 		[AllowDuplicates]
 		public enum RTC_PROVIDER_URI : int32
 		{
-			RTCPU_URIHOMEPAGE = 0,
-			RTCPU_URIHELPDESK = 1,
-			RTCPU_URIPERSONALACCOUNT = 2,
-			RTCPU_URIDISPLAYDURINGCALL = 3,
-			RTCPU_URIDISPLAYDURINGIDLE = 4,
+			HOMEPAGE = 0,
+			HELPDESK = 1,
+			PERSONALACCOUNT = 2,
+			DISPLAYDURINGCALL = 3,
+			DISPLAYDURINGIDLE = 4,
 		}
 		[AllowDuplicates]
 		public enum RTC_RING_TYPE : int32
 		{
-			RTCRT_PHONE = 0,
-			RTCRT_MESSAGE = 1,
-			RTCRT_RINGBACK = 2,
+			PHONE = 0,
+			MESSAGE = 1,
+			RINGBACK = 2,
 		}
 		[AllowDuplicates]
 		public enum RTC_T120_APPLET : int32
 		{
-			RTCTA_WHITEBOARD = 0,
-			RTCTA_APPSHARING = 1,
+			WHITEBOARD = 0,
+			APPSHARING = 1,
 		}
 		[AllowDuplicates]
 		public enum RTC_PORT_TYPE : int32
 		{
-			RTCPT_AUDIO_RTP = 0,
-			RTCPT_AUDIO_RTCP = 1,
-			RTCPT_VIDEO_RTP = 2,
-			RTCPT_VIDEO_RTCP = 3,
-			RTCPT_SIP = 4,
+			AUDIO_RTP = 0,
+			AUDIO_RTCP = 1,
+			VIDEO_RTP = 2,
+			VIDEO_RTCP = 3,
+			SIP = 4,
 		}
 		[AllowDuplicates]
 		public enum RTC_USER_SEARCH_COLUMN : int32
 		{
-			RTCUSC_URI = 0,
-			RTCUSC_DISPLAYNAME = 1,
-			RTCUSC_TITLE = 2,
-			RTCUSC_OFFICE = 3,
-			RTCUSC_PHONE = 4,
-			RTCUSC_COMPANY = 5,
-			RTCUSC_CITY = 6,
-			RTCUSC_STATE = 7,
-			RTCUSC_COUNTRY = 8,
-			RTCUSC_EMAIL = 9,
+			URI = 0,
+			DISPLAYNAME = 1,
+			TITLE = 2,
+			OFFICE = 3,
+			PHONE = 4,
+			COMPANY = 5,
+			CITY = 6,
+			STATE = 7,
+			COUNTRY = 8,
+			EMAIL = 9,
 		}
 		[AllowDuplicates]
 		public enum RTC_USER_SEARCH_PREFERENCE : int32
 		{
-			RTCUSP_MAX_MATCHES = 0,
-			RTCUSP_TIME_LIMIT = 1,
+			MAX_MATCHES = 0,
+			TIME_LIMIT = 1,
 		}
 		[AllowDuplicates]
 		public enum RTC_ROAMING_EVENT_TYPE : int32
 		{
-			RTCRET_BUDDY_ROAMING = 0,
-			RTCRET_WATCHER_ROAMING = 1,
-			RTCRET_PRESENCE_ROAMING = 2,
-			RTCRET_PROFILE_ROAMING = 3,
-			RTCRET_WPENDING_ROAMING = 4,
+			BUDDY_ROAMING = 0,
+			WATCHER_ROAMING = 1,
+			PRESENCE_ROAMING = 2,
+			PROFILE_ROAMING = 3,
+			WPENDING_ROAMING = 4,
 		}
 		[AllowDuplicates]
 		public enum RTC_PROFILE_EVENT_TYPE : int32
 		{
-			RTCPFET_PROFILE_GET = 0,
-			RTCPFET_PROFILE_UPDATE = 1,
+			GET = 0,
+			UPDATE = 1,
 		}
 		[AllowDuplicates]
 		public enum RTC_ANSWER_MODE : int32
 		{
-			RTCAM_OFFER_SESSION_EVENT = 0,
-			RTCAM_AUTOMATICALLY_ACCEPT = 1,
-			RTCAM_AUTOMATICALLY_REJECT = 2,
-			RTCAM_NOT_SUPPORTED = 3,
+			OFFER_SESSION_EVENT = 0,
+			AUTOMATICALLY_ACCEPT = 1,
+			AUTOMATICALLY_REJECT = 2,
+			NOT_SUPPORTED = 3,
 		}
 		[AllowDuplicates]
 		public enum RTC_SESSION_REFER_STATUS : int32
 		{
-			RTCSRS_REFERRING = 0,
-			RTCSRS_ACCEPTED = 1,
-			RTCSRS_ERROR = 2,
-			RTCSRS_REJECTED = 3,
-			RTCSRS_DROPPED = 4,
-			RTCSRS_DONE = 5,
+			REFERRING = 0,
+			ACCEPTED = 1,
+			ERROR = 2,
+			REJECTED = 3,
+			DROPPED = 4,
+			DONE = 5,
 		}
 		[AllowDuplicates]
 		public enum RTC_PRESENCE_PROPERTY : int32
 		{
-			RTCPP_PHONENUMBER = 0,
-			RTCPP_DISPLAYNAME = 1,
-			RTCPP_EMAIL = 2,
-			RTCPP_DEVICE_NAME = 3,
-			RTCPP_MULTIPLE = 4,
+			PHONENUMBER = 0,
+			DISPLAYNAME = 1,
+			EMAIL = 2,
+			DEVICE_NAME = 3,
+			MULTIPLE = 4,
 		}
 		[AllowDuplicates]
 		public enum RTC_SECURITY_TYPE : int32
 		{
-			RTCSECT_AUDIO_VIDEO_MEDIA_ENCRYPTION = 0,
-			RTCSECT_T120_MEDIA_ENCRYPTION = 1,
+			AUDIO_VIDEO_MEDIA_ENCRYPTION = 0,
+			T120_MEDIA_ENCRYPTION = 1,
 		}
 		[AllowDuplicates]
 		public enum RTC_SECURITY_LEVEL : int32
 		{
-			RTCSECL_UNSUPPORTED = 1,
-			RTCSECL_SUPPORTED = 2,
-			RTCSECL_REQUIRED = 3,
+			UNSUPPORTED = 1,
+			SUPPORTED = 2,
+			REQUIRED = 3,
 		}
 		[AllowDuplicates]
 		public enum RTC_REINVITE_STATE : int32
 		{
-			RTCRIN_INCOMING = 0,
-			RTCRIN_SUCCEEDED = 1,
-			RTCRIN_FAIL = 2,
+			INCOMING = 0,
+			SUCCEEDED = 1,
+			FAIL = 2,
 		}
 		
 		// --- Structs ---

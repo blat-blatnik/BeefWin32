@@ -51,21 +51,21 @@ namespace Win32
 		[AllowDuplicates]
 		public enum RenderTargetBitmapOptions : int32
 		{
-			RenderTarget = 0,
-			RenderTargetAndChildren = 1,
+			t = 0,
+			tAndChildren = 1,
 		}
 		[AllowDuplicates]
 		public enum ResourceType : int32
 		{
-			ResourceTypeStatic = 0,
-			ResourceTypeTheme = 1,
+			Static = 0,
+			Theme = 1,
 		}
 		[AllowDuplicates]
 		public enum VisualElementState : int32
 		{
-			ErrorResolved = 0,
-			ErrorResourceNotFound = 1,
-			ErrorInvalidResource = 2,
+			Resolved = 0,
+			ResourceNotFound = 1,
+			InvalidResource = 2,
 		}
 		
 		// --- Structs ---

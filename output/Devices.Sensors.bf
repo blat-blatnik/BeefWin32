@@ -134,54 +134,54 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SensorState : int32
 		{
-			SENSOR_STATE_MIN = 0,
-			SENSOR_STATE_READY = 0,
-			SENSOR_STATE_NOT_AVAILABLE = 1,
-			SENSOR_STATE_NO_DATA = 2,
-			SENSOR_STATE_INITIALIZING = 3,
-			SENSOR_STATE_ACCESS_DENIED = 4,
-			SENSOR_STATE_ERROR = 5,
-			SENSOR_STATE_MAX = 5,
+			MIN = 0,
+			READY = 0,
+			NOT_AVAILABLE = 1,
+			NO_DATA = 2,
+			INITIALIZING = 3,
+			ACCESS_DENIED = 4,
+			ERROR = 5,
+			MAX = 5,
 		}
 		[AllowDuplicates]
 		public enum SensorConnectionType : int32
 		{
-			SENSOR_CONNECTION_TYPE_PC_INTEGRATED = 0,
-			SENSOR_CONNECTION_TYPE_PC_ATTACHED = 1,
-			SENSOR_CONNECTION_TYPE_PC_EXTERNAL = 2,
+			INTEGRATED = 0,
+			ATTACHED = 1,
+			EXTERNAL = 2,
 		}
 		[AllowDuplicates]
 		public enum LOCATION_DESIRED_ACCURACY : int32
 		{
-			LOCATION_DESIRED_ACCURACY_DEFAULT = 0,
-			LOCATION_DESIRED_ACCURACY_HIGH = 1,
+			DEFAULT = 0,
+			HIGH = 1,
 		}
 		[AllowDuplicates]
 		public enum LOCATION_POSITION_SOURCE : int32
 		{
-			LOCATION_POSITION_SOURCE_CELLULAR = 0,
-			LOCATION_POSITION_SOURCE_SATELLITE = 1,
-			LOCATION_POSITION_SOURCE_WIFI = 2,
-			LOCATION_POSITION_SOURCE_IPADDRESS = 3,
-			LOCATION_POSITION_SOURCE_UNKNOWN = 4,
+			CELLULAR = 0,
+			SATELLITE = 1,
+			WIFI = 2,
+			IPADDRESS = 3,
+			UNKNOWN = 4,
 		}
 		[AllowDuplicates]
 		public enum SimpleDeviceOrientation : int32
 		{
-			SIMPLE_DEVICE_ORIENTATION_NOT_ROTATED = 0,
-			SIMPLE_DEVICE_ORIENTATION_ROTATED_90 = 1,
-			SIMPLE_DEVICE_ORIENTATION_ROTATED_180 = 2,
-			SIMPLE_DEVICE_ORIENTATION_ROTATED_270 = 3,
-			SIMPLE_DEVICE_ORIENTATION_ROTATED_FACE_UP = 4,
-			SIMPLE_DEVICE_ORIENTATION_ROTATED_FACE_DOWN = 5,
+			NOT_ROTATED = 0,
+			ROTATED_90 = 1,
+			ROTATED_180 = 2,
+			ROTATED_270 = 3,
+			ROTATED_FACE_UP = 4,
+			ROTATED_FACE_DOWN = 5,
 		}
 		[AllowDuplicates]
 		public enum MagnetometerAccuracy : int32
 		{
-			MAGNETOMETER_ACCURACY_UNKNOWN = 0,
-			MAGNETOMETER_ACCURACY_UNRELIABLE = 1,
-			MAGNETOMETER_ACCURACY_APPROXIMATE = 2,
-			MAGNETOMETER_ACCURACY_HIGH = 3,
+			UNKNOWN = 0,
+			UNRELIABLE = 1,
+			APPROXIMATE = 2,
+			HIGH = 3,
 		}
 		[AllowDuplicates]
 		public enum ACTIVITY_STATE_COUNT : int32
@@ -191,33 +191,33 @@ namespace Win32
 		[AllowDuplicates]
 		public enum ACTIVITY_STATE : int32
 		{
-			ActivityState_Unknown = 1,
-			ActivityState_Stationary = 2,
-			ActivityState_Fidgeting = 4,
-			ActivityState_Walking = 8,
-			ActivityState_Running = 16,
-			ActivityState_InVehicle = 32,
-			ActivityState_Biking = 64,
-			ActivityState_Idle = 128,
-			ActivityState_Max = 256,
-			ActivityState_Force_Dword = -1,
+			Unknown = 1,
+			Stationary = 2,
+			Fidgeting = 4,
+			Walking = 8,
+			Running = 16,
+			InVehicle = 32,
+			Biking = 64,
+			Idle = 128,
+			Max = 256,
+			Force_Dword = -1,
 		}
 		[AllowDuplicates]
 		public enum ELEVATION_CHANGE_MODE : int32
 		{
-			ElevationChangeMode_Unknown = 0,
-			ElevationChangeMode_Elevator = 1,
-			ElevationChangeMode_Stepping = 2,
-			ElevationChangeMode_Max = 3,
-			ElevationChangeMode_Force_Dword = -1,
+			Unknown = 0,
+			Elevator = 1,
+			Stepping = 2,
+			Max = 3,
+			Force_Dword = -1,
 		}
 		[AllowDuplicates]
 		public enum MAGNETOMETER_ACCURACY : int32
 		{
-			MagnetometerAccuracy_Unknown = 0,
-			MagnetometerAccuracy_Unreliable = 1,
-			MagnetometerAccuracy_Approximate = 2,
-			MagnetometerAccuracy_High = 3,
+			Unknown = 0,
+			Unreliable = 1,
+			Approximate = 2,
+			High = 3,
 		}
 		[AllowDuplicates]
 		public enum PEDOMETER_STEP_TYPE_COUNT : int32
@@ -227,18 +227,18 @@ namespace Win32
 		[AllowDuplicates]
 		public enum PEDOMETER_STEP_TYPE : int32
 		{
-			PedometerStepType_Unknown = 1,
-			PedometerStepType_Walking = 2,
-			PedometerStepType_Running = 4,
-			PedometerStepType_Max = 8,
-			PedometerStepType_Force_Dword = -1,
+			Unknown = 1,
+			Walking = 2,
+			Running = 4,
+			Max = 8,
+			Force_Dword = -1,
 		}
 		[AllowDuplicates]
 		public enum PROXIMITY_TYPE : int32
 		{
-			ProximityType_ObjectProximity = 0,
-			ProximityType_HumanProximity = 1,
-			ProximityType_Force_Dword = -1,
+			ObjectProximity = 0,
+			HumanProximity = 1,
+			Force_Dword = -1,
 		}
 		[AllowDuplicates]
 		public enum HUMAN_PRESENCE_DETECTION_TYPE_COUNT : int32
@@ -248,44 +248,44 @@ namespace Win32
 		[AllowDuplicates]
 		public enum HUMAN_PRESENCE_DETECTION_TYPE : int32
 		{
-			HumanPresenceDetectionType_VendorDefinedNonBiometric = 1,
-			HumanPresenceDetectionType_VendorDefinedBiometric = 2,
-			HumanPresenceDetectionType_FacialBiometric = 4,
-			HumanPresenceDetectionType_AudioBiometric = 8,
-			HumanPresenceDetectionType_Force_Dword = -1,
+			VendorDefinedNonBiometric = 1,
+			VendorDefinedBiometric = 2,
+			FacialBiometric = 4,
+			AudioBiometric = 8,
+			Force_Dword = -1,
 		}
 		[AllowDuplicates]
 		public enum SIMPLE_DEVICE_ORIENTATION : int32
 		{
-			SimpleDeviceOrientation_NotRotated = 0,
-			SimpleDeviceOrientation_Rotated90DegreesCounterclockwise = 1,
-			SimpleDeviceOrientation_Rotated180DegreesCounterclockwise = 2,
-			SimpleDeviceOrientation_Rotated270DegreesCounterclockwise = 3,
-			SimpleDeviceOrientation_Faceup = 4,
-			SimpleDeviceOrientation_Facedown = 5,
+			NotRotated = 0,
+			Rotated90DegreesCounterclockwise = 1,
+			Rotated180DegreesCounterclockwise = 2,
+			Rotated270DegreesCounterclockwise = 3,
+			Faceup = 4,
+			Facedown = 5,
 		}
 		[AllowDuplicates]
 		public enum SENSOR_STATE : int32
 		{
-			SensorState_Initializing = 0,
-			SensorState_Idle = 1,
-			SensorState_Active = 2,
-			SensorState_Error = 3,
+			Initializing = 0,
+			Idle = 1,
+			Active = 2,
+			Error = 3,
 		}
 		[AllowDuplicates]
 		public enum SENSOR_CONNECTION_TYPES : int32
 		{
-			SensorConnectionType_Integrated = 0,
-			SensorConnectionType_Attached = 1,
-			SensorConnectionType_External = 2,
+			Integrated = 0,
+			Attached = 1,
+			External = 2,
 		}
 		[AllowDuplicates]
 		public enum AXIS : int32
 		{
-			AXIS_X = 0,
-			AXIS_Y = 1,
-			AXIS_Z = 2,
-			AXIS_MAX = 3,
+			X = 0,
+			Y = 1,
+			Z = 2,
+			MAX = 3,
 		}
 		
 		// --- Structs ---

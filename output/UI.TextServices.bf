@@ -451,267 +451,267 @@ namespace Win32
 		[AllowDuplicates]
 		public enum LANG_BAR_ITEM_ICON_MODE_FLAGS : uint32
 		{
-			TF_DTLBI_NONE = 0,
-			TF_DTLBI_USEPROFILEICON = 1,
+			NONE = 0,
+			USEPROFILEICON = 1,
 		}
 		[AllowDuplicates]
 		public enum TEXT_STORE_TEXT_CHANGE_FLAGS : uint32
 		{
-			TS_ST_NONE = 0,
-			TS_ST_CORRECTION = 1,
+			NONE = 0,
+			CORRECTION = 1,
 		}
 		[AllowDuplicates]
 		public enum TEXT_STORE_CHANGE_FLAGS : uint32
 		{
-			TS_TC_NONE = 0,
-			TS_TC_CORRECTION = 1,
+			NONE = 0,
+			CORRECTION = 1,
 		}
 		[AllowDuplicates]
 		public enum INSERT_TEXT_AT_SELECTION_FLAGS : uint32
 		{
-			TF_IAS_NOQUERY = 1,
-			TF_IAS_QUERYONLY = 2,
-			TF_IAS_NO_DEFAULT_COMPOSITION = 2147483648,
+			NOQUERY = 1,
+			QUERYONLY = 2,
+			NO_DEFAULT_COMPOSITION = 2147483648,
 		}
 		[AllowDuplicates]
 		public enum ANCHOR_CHANGE_HISTORY_FLAGS : uint32
 		{
-			TS_CH_PRECEDING_DEL = 1,
-			TS_CH_FOLLOWING_DEL = 2,
+			PRECEDING_DEL = 1,
+			FOLLOWING_DEL = 2,
 		}
 		[AllowDuplicates]
 		public enum TEXT_STORE_LOCK_FLAGS : uint32
 		{
-			TS_LF_READ = 2,
-			TS_LF_READWRITE = 6,
+			D = 2,
+			DWRITE = 6,
 		}
 		[AllowDuplicates]
 		public enum GET_TEXT_AND_PROPERTY_UPDATES_FLAGS : uint32
 		{
-			TF_GTP_NONE = 0,
-			TF_GTP_INCL_TEXT = 1,
+			NONE = 0,
+			INCL_TEXT = 1,
 		}
 		[AllowDuplicates]
 		public enum TF_CONTEXT_EDIT_CONTEXT_FLAGS : uint32
 		{
-			TF_ES_ASYNCDONTCARE = 0,
-			TF_ES_SYNC = 1,
-			TF_ES_READ = 2,
-			TF_ES_READWRITE = 6,
-			TF_ES_ASYNC = 8,
+			ASYNCDONTCARE = 0,
+			SYNC = 1,
+			READ = 2,
+			READWRITE = 6,
+			ASYNC = 8,
 		}
 		[AllowDuplicates]
 		public enum TsActiveSelEnd : int32
 		{
-			TS_AE_NONE = 0,
-			TS_AE_START = 1,
-			TS_AE_END = 2,
+			NONE = 0,
+			START = 1,
+			END = 2,
 		}
 		[AllowDuplicates]
 		public enum TsLayoutCode : int32
 		{
-			TS_LC_CREATE = 0,
-			TS_LC_CHANGE = 1,
-			TS_LC_DESTROY = 2,
+			CREATE = 0,
+			CHANGE = 1,
+			DESTROY = 2,
 		}
 		[AllowDuplicates]
 		public enum TsRunType : int32
 		{
-			TS_RT_PLAIN = 0,
-			TS_RT_HIDDEN = 1,
-			TS_RT_OPAQUE = 2,
+			PLAIN = 0,
+			HIDDEN = 1,
+			OPAQUE = 2,
 		}
 		[AllowDuplicates]
 		public enum TsGravity : int32
 		{
-			TS_GR_BACKWARD = 0,
-			TS_GR_FORWARD = 1,
+			BACKWARD = 0,
+			FORWARD = 1,
 		}
 		[AllowDuplicates]
 		public enum TsShiftDir : int32
 		{
-			TS_SD_BACKWARD = 0,
-			TS_SD_FORWARD = 1,
+			BACKWARD = 0,
+			FORWARD = 1,
 		}
 		[AllowDuplicates]
 		public enum TfLBIClick : int32
 		{
-			TF_LBI_CLK_RIGHT = 1,
-			TF_LBI_CLK_LEFT = 2,
+			RIGHT = 1,
+			LEFT = 2,
 		}
 		[AllowDuplicates]
 		public enum TfLBBalloonStyle : int32
 		{
-			TF_LB_BALLOON_RECO = 0,
-			TF_LB_BALLOON_SHOW = 1,
-			TF_LB_BALLOON_MISS = 2,
+			RECO = 0,
+			SHOW = 1,
+			MISS = 2,
 		}
 		[AllowDuplicates]
 		public enum TfAnchor : int32
 		{
-			TF_ANCHOR_START = 0,
-			TF_ANCHOR_END = 1,
+			START = 0,
+			END = 1,
 		}
 		[AllowDuplicates]
 		public enum TfActiveSelEnd : int32
 		{
-			TF_AE_NONE = 0,
-			TF_AE_START = 1,
-			TF_AE_END = 2,
+			NONE = 0,
+			START = 1,
+			END = 2,
 		}
 		[AllowDuplicates]
 		public enum TfLayoutCode : int32
 		{
-			TF_LC_CREATE = 0,
-			TF_LC_CHANGE = 1,
-			TF_LC_DESTROY = 2,
+			CREATE = 0,
+			CHANGE = 1,
+			DESTROY = 2,
 		}
 		[AllowDuplicates]
 		public enum TfGravity : int32
 		{
-			TF_GRAVITY_BACKWARD = 0,
-			TF_GRAVITY_FORWARD = 1,
+			BACKWARD = 0,
+			FORWARD = 1,
 		}
 		[AllowDuplicates]
 		public enum TfShiftDir : int32
 		{
-			TF_SD_BACKWARD = 0,
-			TF_SD_FORWARD = 1,
+			BACKWARD = 0,
+			FORWARD = 1,
 		}
 		[AllowDuplicates]
 		public enum TF_DA_LINESTYLE : int32
 		{
-			TF_LS_NONE = 0,
-			TF_LS_SOLID = 1,
-			TF_LS_DOT = 2,
-			TF_LS_DASH = 3,
-			TF_LS_SQUIGGLE = 4,
+			NONE = 0,
+			SOLID = 1,
+			DOT = 2,
+			DASH = 3,
+			SQUIGGLE = 4,
 		}
 		[AllowDuplicates]
 		public enum TF_DA_COLORTYPE : int32
 		{
-			TF_CT_NONE = 0,
-			TF_CT_SYSCOLOR = 1,
-			TF_CT_COLORREF = 2,
+			NONE = 0,
+			SYSCOLOR = 1,
+			COLORREF = 2,
 		}
 		[AllowDuplicates]
 		public enum TF_DA_ATTR_INFO : int32
 		{
-			TF_ATTR_INPUT = 0,
-			TF_ATTR_TARGET_CONVERTED = 1,
-			TF_ATTR_CONVERTED = 2,
-			TF_ATTR_TARGET_NOTCONVERTED = 3,
-			TF_ATTR_INPUT_ERROR = 4,
-			TF_ATTR_FIXEDCONVERTED = 5,
-			TF_ATTR_OTHER = -1,
+			INPUT = 0,
+			TARGET_CONVERTED = 1,
+			CONVERTED = 2,
+			TARGET_NOTCONVERTED = 3,
+			INPUT_ERROR = 4,
+			FIXEDCONVERTED = 5,
+			OTHER = -1,
 		}
 		[AllowDuplicates]
 		public enum TfCandidateResult : int32
 		{
-			CAND_FINALIZED = 0,
-			CAND_SELECTED = 1,
-			CAND_CANCELED = 2,
+			FINALIZED = 0,
+			SELECTED = 1,
+			CANCELED = 2,
 		}
 		[AllowDuplicates]
 		public enum TfSapiObject : int32
 		{
-			GETIF_RESMGR = 0,
-			GETIF_RECOCONTEXT = 1,
-			GETIF_RECOGNIZER = 2,
-			GETIF_VOICE = 3,
-			GETIF_DICTGRAM = 4,
-			GETIF_RECOGNIZERNOINIT = 5,
+			RESMGR = 0,
+			RECOCONTEXT = 1,
+			RECOGNIZER = 2,
+			VOICE = 3,
+			DICTGRAM = 4,
+			RECOGNIZERNOINIT = 5,
 		}
 		[AllowDuplicates]
 		public enum TfIntegratableCandidateListSelectionStyle : int32
 		{
-			STYLE_ACTIVE_SELECTION = 0,
-			STYLE_IMPLIED_SELECTION = 1,
+			ACTIVE_SELECTION = 0,
+			IMPLIED_SELECTION = 1,
 		}
 		[AllowDuplicates]
 		public enum TKBLayoutType : int32
 		{
-			TKBLT_UNDEFINED = 0,
-			TKBLT_CLASSIC = 1,
-			TKBLT_OPTIMIZED = 2,
+			UNDEFINED = 0,
+			CLASSIC = 1,
+			OPTIMIZED = 2,
 		}
 		[AllowDuplicates]
 		public enum InputScope : int32
 		{
-			IS_DEFAULT = 0,
-			IS_URL = 1,
-			IS_FILE_FULLFILEPATH = 2,
-			IS_FILE_FILENAME = 3,
-			IS_EMAIL_USERNAME = 4,
-			IS_EMAIL_SMTPEMAILADDRESS = 5,
-			IS_LOGINNAME = 6,
-			IS_PERSONALNAME_FULLNAME = 7,
-			IS_PERSONALNAME_PREFIX = 8,
-			IS_PERSONALNAME_GIVENNAME = 9,
-			IS_PERSONALNAME_MIDDLENAME = 10,
-			IS_PERSONALNAME_SURNAME = 11,
-			IS_PERSONALNAME_SUFFIX = 12,
-			IS_ADDRESS_FULLPOSTALADDRESS = 13,
-			IS_ADDRESS_POSTALCODE = 14,
-			IS_ADDRESS_STREET = 15,
-			IS_ADDRESS_STATEORPROVINCE = 16,
-			IS_ADDRESS_CITY = 17,
-			IS_ADDRESS_COUNTRYNAME = 18,
-			IS_ADDRESS_COUNTRYSHORTNAME = 19,
-			IS_CURRENCY_AMOUNTANDSYMBOL = 20,
-			IS_CURRENCY_AMOUNT = 21,
-			IS_DATE_FULLDATE = 22,
-			IS_DATE_MONTH = 23,
-			IS_DATE_DAY = 24,
-			IS_DATE_YEAR = 25,
-			IS_DATE_MONTHNAME = 26,
-			IS_DATE_DAYNAME = 27,
-			IS_DIGITS = 28,
-			IS_NUMBER = 29,
-			IS_ONECHAR = 30,
-			IS_PASSWORD = 31,
-			IS_TELEPHONE_FULLTELEPHONENUMBER = 32,
-			IS_TELEPHONE_COUNTRYCODE = 33,
-			IS_TELEPHONE_AREACODE = 34,
-			IS_TELEPHONE_LOCALNUMBER = 35,
-			IS_TIME_FULLTIME = 36,
-			IS_TIME_HOUR = 37,
-			IS_TIME_MINORSEC = 38,
-			IS_NUMBER_FULLWIDTH = 39,
-			IS_ALPHANUMERIC_HALFWIDTH = 40,
-			IS_ALPHANUMERIC_FULLWIDTH = 41,
-			IS_CURRENCY_CHINESE = 42,
-			IS_BOPOMOFO = 43,
-			IS_HIRAGANA = 44,
-			IS_KATAKANA_HALFWIDTH = 45,
-			IS_KATAKANA_FULLWIDTH = 46,
-			IS_HANJA = 47,
-			IS_HANGUL_HALFWIDTH = 48,
-			IS_HANGUL_FULLWIDTH = 49,
-			IS_SEARCH = 50,
-			IS_FORMULA = 51,
-			IS_SEARCH_INCREMENTAL = 52,
-			IS_CHINESE_HALFWIDTH = 53,
-			IS_CHINESE_FULLWIDTH = 54,
-			IS_NATIVE_SCRIPT = 55,
-			IS_YOMI = 56,
-			IS_TEXT = 57,
-			IS_CHAT = 58,
-			IS_NAME_OR_PHONENUMBER = 59,
-			IS_EMAILNAME_OR_ADDRESS = 60,
-			IS_PRIVATE = 61,
-			IS_MAPS = 62,
-			IS_NUMERIC_PASSWORD = 63,
-			IS_NUMERIC_PIN = 64,
-			IS_ALPHANUMERIC_PIN = 65,
-			IS_ALPHANUMERIC_PIN_SET = 66,
-			IS_FORMULA_NUMBER = 67,
-			IS_CHAT_WITHOUT_EMOJI = 68,
-			IS_PHRASELIST = -1,
-			IS_REGULAREXPRESSION = -2,
-			IS_SRGS = -3,
-			IS_XML = -4,
-			IS_ENUMSTRING = -5,
+			DEFAULT = 0,
+			URL = 1,
+			FILE_FULLFILEPATH = 2,
+			FILE_FILENAME = 3,
+			EMAIL_USERNAME = 4,
+			EMAIL_SMTPEMAILADDRESS = 5,
+			LOGINNAME = 6,
+			PERSONALNAME_FULLNAME = 7,
+			PERSONALNAME_PREFIX = 8,
+			PERSONALNAME_GIVENNAME = 9,
+			PERSONALNAME_MIDDLENAME = 10,
+			PERSONALNAME_SURNAME = 11,
+			PERSONALNAME_SUFFIX = 12,
+			ADDRESS_FULLPOSTALADDRESS = 13,
+			ADDRESS_POSTALCODE = 14,
+			ADDRESS_STREET = 15,
+			ADDRESS_STATEORPROVINCE = 16,
+			ADDRESS_CITY = 17,
+			ADDRESS_COUNTRYNAME = 18,
+			ADDRESS_COUNTRYSHORTNAME = 19,
+			CURRENCY_AMOUNTANDSYMBOL = 20,
+			CURRENCY_AMOUNT = 21,
+			DATE_FULLDATE = 22,
+			DATE_MONTH = 23,
+			DATE_DAY = 24,
+			DATE_YEAR = 25,
+			DATE_MONTHNAME = 26,
+			DATE_DAYNAME = 27,
+			DIGITS = 28,
+			NUMBER = 29,
+			ONECHAR = 30,
+			PASSWORD = 31,
+			TELEPHONE_FULLTELEPHONENUMBER = 32,
+			TELEPHONE_COUNTRYCODE = 33,
+			TELEPHONE_AREACODE = 34,
+			TELEPHONE_LOCALNUMBER = 35,
+			TIME_FULLTIME = 36,
+			TIME_HOUR = 37,
+			TIME_MINORSEC = 38,
+			NUMBER_FULLWIDTH = 39,
+			ALPHANUMERIC_HALFWIDTH = 40,
+			ALPHANUMERIC_FULLWIDTH = 41,
+			CURRENCY_CHINESE = 42,
+			BOPOMOFO = 43,
+			HIRAGANA = 44,
+			KATAKANA_HALFWIDTH = 45,
+			KATAKANA_FULLWIDTH = 46,
+			HANJA = 47,
+			HANGUL_HALFWIDTH = 48,
+			HANGUL_FULLWIDTH = 49,
+			SEARCH = 50,
+			FORMULA = 51,
+			SEARCH_INCREMENTAL = 52,
+			CHINESE_HALFWIDTH = 53,
+			CHINESE_FULLWIDTH = 54,
+			NATIVE_SCRIPT = 55,
+			YOMI = 56,
+			TEXT = 57,
+			CHAT = 58,
+			NAME_OR_PHONENUMBER = 59,
+			EMAILNAME_OR_ADDRESS = 60,
+			PRIVATE = 61,
+			MAPS = 62,
+			NUMERIC_PASSWORD = 63,
+			NUMERIC_PIN = 64,
+			ALPHANUMERIC_PIN = 65,
+			ALPHANUMERIC_PIN_SET = 66,
+			FORMULA_NUMBER = 67,
+			CHAT_WITHOUT_EMOJI = 68,
+			PHRASELIST = -1,
+			REGULAREXPRESSION = -2,
+			SRGS = -3,
+			XML = -4,
+			ENUMSTRING = -5,
 		}
 		
 		// --- Structs ---

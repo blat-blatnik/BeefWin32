@@ -814,462 +814,462 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WLAN_CONNECTION_NOTIFICATION_FLAGS : uint32
 		{
-			WLAN_CONNECTION_NOTIFICATION_ADHOC_NETWORK_FORMED = 1,
-			WLAN_CONNECTION_NOTIFICATION_CONSOLE_USER_PROFILE = 4,
+			ADHOC_NETWORK_FORMED = 1,
+			CONSOLE_USER_PROFILE = 4,
 		}
 		[AllowDuplicates]
 		public enum DOT11_BSS_TYPE : int32
 		{
-			dot11_BSS_type_infrastructure = 1,
-			dot11_BSS_type_independent = 2,
-			dot11_BSS_type_any = 3,
+			infrastructure = 1,
+			independent = 2,
+			any = 3,
 		}
 		[AllowDuplicates]
 		public enum DOT11_AUTH_ALGORITHM : int32
 		{
-			DOT11_AUTH_ALGO_80211_OPEN = 1,
-			DOT11_AUTH_ALGO_80211_SHARED_KEY = 2,
-			DOT11_AUTH_ALGO_WPA = 3,
-			DOT11_AUTH_ALGO_WPA_PSK = 4,
-			DOT11_AUTH_ALGO_WPA_NONE = 5,
-			DOT11_AUTH_ALGO_RSNA = 6,
-			DOT11_AUTH_ALGO_RSNA_PSK = 7,
-			DOT11_AUTH_ALGO_WPA3 = 8,
-			DOT11_AUTH_ALGO_WPA3_ENT_192 = 8,
-			DOT11_AUTH_ALGO_WPA3_SAE = 9,
-			DOT11_AUTH_ALGO_OWE = 10,
-			DOT11_AUTH_ALGO_WPA3_ENT = 11,
-			DOT11_AUTH_ALGO_IHV_START = -2147483648,
-			DOT11_AUTH_ALGO_IHV_END = -1,
+			_80211_OPEN = 1,
+			_80211_SHARED_KEY = 2,
+			WPA = 3,
+			WPA_PSK = 4,
+			WPA_NONE = 5,
+			RSNA = 6,
+			RSNA_PSK = 7,
+			WPA3 = 8,
+			WPA3_ENT_192 = 8,
+			WPA3_SAE = 9,
+			OWE = 10,
+			WPA3_ENT = 11,
+			IHV_START = -2147483648,
+			IHV_END = -1,
 		}
 		[AllowDuplicates]
 		public enum DOT11_CIPHER_ALGORITHM : int32
 		{
-			DOT11_CIPHER_ALGO_NONE = 0,
-			DOT11_CIPHER_ALGO_WEP40 = 1,
-			DOT11_CIPHER_ALGO_TKIP = 2,
-			DOT11_CIPHER_ALGO_CCMP = 4,
-			DOT11_CIPHER_ALGO_WEP104 = 5,
-			DOT11_CIPHER_ALGO_BIP = 6,
-			DOT11_CIPHER_ALGO_GCMP = 8,
-			DOT11_CIPHER_ALGO_GCMP_256 = 9,
-			DOT11_CIPHER_ALGO_CCMP_256 = 10,
-			DOT11_CIPHER_ALGO_BIP_GMAC_128 = 11,
-			DOT11_CIPHER_ALGO_BIP_GMAC_256 = 12,
-			DOT11_CIPHER_ALGO_BIP_CMAC_256 = 13,
-			DOT11_CIPHER_ALGO_WPA_USE_GROUP = 256,
-			DOT11_CIPHER_ALGO_RSN_USE_GROUP = 256,
-			DOT11_CIPHER_ALGO_WEP = 257,
-			DOT11_CIPHER_ALGO_IHV_START = -2147483648,
-			DOT11_CIPHER_ALGO_IHV_END = -1,
+			NONE = 0,
+			WEP40 = 1,
+			TKIP = 2,
+			CCMP = 4,
+			WEP104 = 5,
+			BIP = 6,
+			GCMP = 8,
+			GCMP_256 = 9,
+			CCMP_256 = 10,
+			BIP_GMAC_128 = 11,
+			BIP_GMAC_256 = 12,
+			BIP_CMAC_256 = 13,
+			WPA_USE_GROUP = 256,
+			RSN_USE_GROUP = 256,
+			WEP = 257,
+			IHV_START = -2147483648,
+			IHV_END = -1,
 		}
 		[AllowDuplicates]
 		public enum DOT11_PHY_TYPE : int32
 		{
-			dot11_phy_type_unknown = 0,
-			dot11_phy_type_any = 0,
-			dot11_phy_type_fhss = 1,
-			dot11_phy_type_dsss = 2,
-			dot11_phy_type_irbaseband = 3,
-			dot11_phy_type_ofdm = 4,
-			dot11_phy_type_hrdsss = 5,
-			dot11_phy_type_erp = 6,
-			dot11_phy_type_ht = 7,
-			dot11_phy_type_vht = 8,
-			dot11_phy_type_dmg = 9,
-			dot11_phy_type_he = 10,
-			dot11_phy_type_IHV_start = -2147483648,
-			dot11_phy_type_IHV_end = -1,
+			unknown = 0,
+			any = 0,
+			fhss = 1,
+			dsss = 2,
+			irbaseband = 3,
+			ofdm = 4,
+			hrdsss = 5,
+			erp = 6,
+			ht = 7,
+			vht = 8,
+			dmg = 9,
+			he = 10,
+			IHV_start = -2147483648,
+			IHV_end = -1,
 		}
 		[AllowDuplicates]
 		public enum DOT11_OFFLOAD_TYPE : int32
 		{
-			dot11_offload_type_wep = 1,
-			dot11_offload_type_auth = 2,
+			wep = 1,
+			auth = 2,
 		}
 		[AllowDuplicates]
 		public enum DOT11_KEY_DIRECTION : int32
 		{
-			dot11_key_direction_both = 1,
-			dot11_key_direction_inbound = 2,
-			dot11_key_direction_outbound = 3,
+			both = 1,
+			inbound = 2,
+			outbound = 3,
 		}
 		[AllowDuplicates]
 		public enum DOT11_SCAN_TYPE : int32
 		{
-			dot11_scan_type_active = 1,
-			dot11_scan_type_passive = 2,
-			dot11_scan_type_auto = 3,
-			dot11_scan_type_forced = -2147483648,
+			active = 1,
+			passive = 2,
+			auto = 3,
+			forced = -2147483648,
 		}
 		[AllowDuplicates]
 		public enum CH_DESCRIPTION_TYPE : int32
 		{
-			ch_description_type_logical = 1,
-			ch_description_type_center_frequency = 2,
-			ch_description_type_phy_specific = 3,
+			logical = 1,
+			center_frequency = 2,
+			phy_specific = 3,
 		}
 		[AllowDuplicates]
 		public enum DOT11_UPDATE_IE_OP : int32
 		{
-			dot11_update_ie_op_create_replace = 1,
-			dot11_update_ie_op_delete = 2,
+			create_replace = 1,
+			@delete = 2,
 		}
 		[AllowDuplicates]
 		public enum DOT11_RESET_TYPE : int32
 		{
-			dot11_reset_type_phy = 1,
-			dot11_reset_type_mac = 2,
-			dot11_reset_type_phy_and_mac = 3,
+			phy = 1,
+			mac = 2,
+			phy_and_mac = 3,
 		}
 		[AllowDuplicates]
 		public enum DOT11_POWER_MODE : int32
 		{
-			dot11_power_mode_unknown = 0,
-			dot11_power_mode_active = 1,
-			dot11_power_mode_powersave = 2,
+			unknown = 0,
+			active = 1,
+			powersave = 2,
 		}
 		[AllowDuplicates]
 		public enum DOT11_TEMP_TYPE : int32
 		{
-			dot11_temp_type_unknown = 0,
-			dot11_temp_type_1 = 1,
-			dot11_temp_type_2 = 2,
+			unknown = 0,
+			_1 = 1,
+			_2 = 2,
 		}
 		[AllowDuplicates]
 		public enum DOT11_DIVERSITY_SUPPORT : int32
 		{
-			dot11_diversity_support_unknown = 0,
-			dot11_diversity_support_fixedlist = 1,
-			dot11_diversity_support_notsupported = 2,
-			dot11_diversity_support_dynamic = 3,
+			unknown = 0,
+			fixedlist = 1,
+			notsupported = 2,
+			dynamic = 3,
 		}
 		[AllowDuplicates]
 		public enum DOT11_HOP_ALGO_ADOPTED : int32
 		{
-			dot11_hop_algo_current = 0,
-			dot11_hop_algo_hop_index = 1,
-			dot11_hop_algo_hcc = 2,
+			current = 0,
+			hop_index = 1,
+			hcc = 2,
 		}
 		[AllowDuplicates]
 		public enum DOT11_AC_PARAM : int32
 		{
-			dot11_AC_param_BE = 0,
-			dot11_AC_param_BK = 1,
-			dot11_AC_param_VI = 2,
-			dot11_AC_param_VO = 3,
-			dot11_AC_param_max = 4,
+			BE = 0,
+			BK = 1,
+			VI = 2,
+			VO = 3,
+			max = 4,
 		}
 		[AllowDuplicates]
 		public enum DOT11_DIRECTION : int32
 		{
-			DOT11_DIR_INBOUND = 1,
-			DOT11_DIR_OUTBOUND = 2,
-			DOT11_DIR_BOTH = 3,
+			INBOUND = 1,
+			OUTBOUND = 2,
+			BOTH = 3,
 		}
 		[AllowDuplicates]
 		public enum DOT11_ASSOCIATION_STATE : int32
 		{
-			dot11_assoc_state_zero = 0,
-			dot11_assoc_state_unauth_unassoc = 1,
-			dot11_assoc_state_auth_unassoc = 2,
-			dot11_assoc_state_auth_assoc = 3,
+			zero = 0,
+			unauth_unassoc = 1,
+			auth_unassoc = 2,
+			auth_assoc = 3,
 		}
 		[AllowDuplicates]
 		public enum DOT11_DS_INFO : int32
 		{
-			DOT11_DS_CHANGED = 0,
-			DOT11_DS_UNCHANGED = 1,
-			DOT11_DS_UNKNOWN = 2,
+			CHANGED = 0,
+			UNCHANGED = 1,
+			UNKNOWN = 2,
 		}
 		[AllowDuplicates]
 		public enum DOT11_WPS_CONFIG_METHOD : int32
 		{
-			DOT11_WPS_CONFIG_METHOD_NULL = 0,
-			DOT11_WPS_CONFIG_METHOD_DISPLAY = 8,
-			DOT11_WPS_CONFIG_METHOD_NFC_TAG = 32,
-			DOT11_WPS_CONFIG_METHOD_NFC_INTERFACE = 64,
-			DOT11_WPS_CONFIG_METHOD_PUSHBUTTON = 128,
-			DOT11_WPS_CONFIG_METHOD_KEYPAD = 256,
-			DOT11_WPS_CONFIG_METHOD_WFDS_DEFAULT = 4096,
+			NULL = 0,
+			DISPLAY = 8,
+			NFC_TAG = 32,
+			NFC_INTERFACE = 64,
+			PUSHBUTTON = 128,
+			KEYPAD = 256,
+			WFDS_DEFAULT = 4096,
 		}
 		[AllowDuplicates]
 		public enum DOT11_WPS_DEVICE_PASSWORD_ID : int32
 		{
-			DOT11_WPS_PASSWORD_ID_DEFAULT = 0,
-			DOT11_WPS_PASSWORD_ID_USER_SPECIFIED = 1,
-			DOT11_WPS_PASSWORD_ID_MACHINE_SPECIFIED = 2,
-			DOT11_WPS_PASSWORD_ID_REKEY = 3,
-			DOT11_WPS_PASSWORD_ID_PUSHBUTTON = 4,
-			DOT11_WPS_PASSWORD_ID_REGISTRAR_SPECIFIED = 5,
-			DOT11_WPS_PASSWORD_ID_NFC_CONNECTION_HANDOVER = 7,
-			DOT11_WPS_PASSWORD_ID_WFD_SERVICES = 8,
-			DOT11_WPS_PASSWORD_ID_OOB_RANGE_MIN = 16,
-			DOT11_WPS_PASSWORD_ID_OOB_RANGE_MAX = 65535,
+			DEFAULT = 0,
+			USER_SPECIFIED = 1,
+			MACHINE_SPECIFIED = 2,
+			REKEY = 3,
+			PUSHBUTTON = 4,
+			REGISTRAR_SPECIFIED = 5,
+			NFC_CONNECTION_HANDOVER = 7,
+			WFD_SERVICES = 8,
+			OOB_RANGE_MIN = 16,
+			OOB_RANGE_MAX = 65535,
 		}
 		[AllowDuplicates]
 		public enum DOT11_ANQP_QUERY_RESULT : int32
 		{
-			dot11_ANQP_query_result_success = 0,
-			dot11_ANQP_query_result_failure = 1,
-			dot11_ANQP_query_result_timed_out = 2,
-			dot11_ANQP_query_result_resources = 3,
-			dot11_ANQP_query_result_advertisement_protocol_not_supported_on_remote = 4,
-			dot11_ANQP_query_result_gas_protocol_failure = 5,
-			dot11_ANQP_query_result_advertisement_server_not_responding = 6,
-			dot11_ANQP_query_result_access_issues = 7,
+			success = 0,
+			failure = 1,
+			timed_out = 2,
+			resources = 3,
+			advertisement_protocol_not_supported_on_remote = 4,
+			gas_protocol_failure = 5,
+			advertisement_server_not_responding = 6,
+			access_issues = 7,
 		}
 		[AllowDuplicates]
 		public enum DOT11_WFD_DISCOVER_TYPE : int32
 		{
-			dot11_wfd_discover_type_scan_only = 1,
-			dot11_wfd_discover_type_find_only = 2,
-			dot11_wfd_discover_type_auto = 3,
-			dot11_wfd_discover_type_scan_social_channels = 4,
-			dot11_wfd_discover_type_forced = -2147483648,
+			scan_only = 1,
+			find_only = 2,
+			auto = 3,
+			scan_social_channels = 4,
+			forced = -2147483648,
 		}
 		[AllowDuplicates]
 		public enum DOT11_WFD_SCAN_TYPE : int32
 		{
-			dot11_wfd_scan_type_active = 1,
-			dot11_wfd_scan_type_passive = 2,
-			dot11_wfd_scan_type_auto = 3,
+			active = 1,
+			passive = 2,
+			auto = 3,
 		}
 		[AllowDuplicates]
 		public enum DOT11_POWER_MODE_REASON : int32
 		{
-			dot11_power_mode_reason_no_change = 0,
-			dot11_power_mode_reason_noncompliant_AP = 1,
-			dot11_power_mode_reason_legacy_WFD_device = 2,
-			dot11_power_mode_reason_compliant_AP = 3,
-			dot11_power_mode_reason_compliant_WFD_device = 4,
-			dot11_power_mode_reason_others = 5,
+			no_change = 0,
+			noncompliant_AP = 1,
+			legacy_WFD_device = 2,
+			compliant_AP = 3,
+			compliant_WFD_device = 4,
+			others = 5,
 		}
 		[AllowDuplicates]
 		public enum DOT11_MANUFACTURING_TEST_TYPE : int32
 		{
-			dot11_manufacturing_test_unknown = 0,
-			dot11_manufacturing_test_self_start = 1,
-			dot11_manufacturing_test_self_query_result = 2,
-			dot11_manufacturing_test_rx = 3,
-			dot11_manufacturing_test_tx = 4,
-			dot11_manufacturing_test_query_adc = 5,
-			dot11_manufacturing_test_set_data = 6,
-			dot11_manufacturing_test_query_data = 7,
-			dot11_manufacturing_test_sleep = 8,
-			dot11_manufacturing_test_awake = 9,
-			dot11_manufacturing_test_IHV_start = -2147483648,
-			dot11_manufacturing_test_IHV_end = -1,
+			unknown = 0,
+			self_start = 1,
+			self_query_result = 2,
+			rx = 3,
+			tx = 4,
+			query_adc = 5,
+			set_data = 6,
+			query_data = 7,
+			sleep = 8,
+			awake = 9,
+			IHV_start = -2147483648,
+			IHV_end = -1,
 		}
 		[AllowDuplicates]
 		public enum DOT11_MANUFACTURING_SELF_TEST_TYPE : int32
 		{
-			DOT11_MANUFACTURING_SELF_TEST_TYPE_INTERFACE = 1,
-			DOT11_MANUFACTURING_SELF_TEST_TYPE_RF_INTERFACE = 2,
-			DOT11_MANUFACTURING_SELF_TEST_TYPE_BT_COEXISTENCE = 3,
+			INTERFACE = 1,
+			RF_INTERFACE = 2,
+			BT_COEXISTENCE = 3,
 		}
 		[AllowDuplicates]
 		public enum DOT11_BAND : int32
 		{
-			dot11_band_2p4g = 1,
-			dot11_band_4p9g = 2,
-			dot11_band_5g = 3,
+			_2p4g = 1,
+			_4p9g = 2,
+			_5g = 3,
 		}
 		[AllowDuplicates]
 		public enum DOT11_MANUFACTURING_CALLBACK_TYPE : int32
 		{
-			dot11_manufacturing_callback_unknown = 0,
-			dot11_manufacturing_callback_self_test_complete = 1,
-			dot11_manufacturing_callback_sleep_complete = 2,
-			dot11_manufacturing_callback_IHV_start = -2147483648,
-			dot11_manufacturing_callback_IHV_end = -1,
+			unknown = 0,
+			self_test_complete = 1,
+			sleep_complete = 2,
+			IHV_start = -2147483648,
+			IHV_end = -1,
 		}
 		[AllowDuplicates]
 		public enum WLAN_CONNECTION_MODE : int32
 		{
-			wlan_connection_mode_profile = 0,
-			wlan_connection_mode_temporary_profile = 1,
-			wlan_connection_mode_discovery_secure = 2,
-			wlan_connection_mode_discovery_unsecure = 3,
-			wlan_connection_mode_auto = 4,
-			wlan_connection_mode_invalid = 5,
+			profile = 0,
+			temporary_profile = 1,
+			discovery_secure = 2,
+			discovery_unsecure = 3,
+			auto = 4,
+			invalid = 5,
 		}
 		[AllowDuplicates]
 		public enum WLAN_INTERFACE_STATE : int32
 		{
-			wlan_interface_state_not_ready = 0,
-			wlan_interface_state_connected = 1,
-			wlan_interface_state_ad_hoc_network_formed = 2,
-			wlan_interface_state_disconnecting = 3,
-			wlan_interface_state_disconnected = 4,
-			wlan_interface_state_associating = 5,
-			wlan_interface_state_discovering = 6,
-			wlan_interface_state_authenticating = 7,
+			not_ready = 0,
+			connected = 1,
+			ad_hoc_network_formed = 2,
+			disconnecting = 3,
+			disconnected = 4,
+			associating = 5,
+			discovering = 6,
+			authenticating = 7,
 		}
 		[AllowDuplicates]
 		public enum WLAN_ADHOC_NETWORK_STATE : int32
 		{
-			wlan_adhoc_network_state_formed = 0,
-			wlan_adhoc_network_state_connected = 1,
+			formed = 0,
+			connected = 1,
 		}
 		[AllowDuplicates]
 		public enum DOT11_RADIO_STATE : int32
 		{
-			dot11_radio_state_unknown = 0,
-			dot11_radio_state_on = 1,
-			dot11_radio_state_off = 2,
+			unknown = 0,
+			on = 1,
+			off = 2,
 		}
 		[AllowDuplicates]
 		public enum WLAN_OPERATIONAL_STATE : int32
 		{
-			wlan_operational_state_unknown = 0,
-			wlan_operational_state_off = 1,
-			wlan_operational_state_on = 2,
-			wlan_operational_state_going_off = 3,
-			wlan_operational_state_going_on = 4,
+			unknown = 0,
+			off = 1,
+			on = 2,
+			going_off = 3,
+			going_on = 4,
 		}
 		[AllowDuplicates]
 		public enum WLAN_INTERFACE_TYPE : int32
 		{
-			wlan_interface_type_emulated_802_11 = 0,
-			wlan_interface_type_native_802_11 = 1,
-			wlan_interface_type_invalid = 2,
+			emulated_802_11 = 0,
+			native_802_11 = 1,
+			invalid = 2,
 		}
 		[AllowDuplicates]
 		public enum WLAN_POWER_SETTING : int32
 		{
-			wlan_power_setting_no_saving = 0,
-			wlan_power_setting_low_saving = 1,
-			wlan_power_setting_medium_saving = 2,
-			wlan_power_setting_maximum_saving = 3,
-			wlan_power_setting_invalid = 4,
+			no_saving = 0,
+			low_saving = 1,
+			medium_saving = 2,
+			maximum_saving = 3,
+			invalid = 4,
 		}
 		[AllowDuplicates]
 		public enum WLAN_NOTIFICATION_ACM : int32
 		{
-			wlan_notification_acm_start = 0,
-			wlan_notification_acm_autoconf_enabled = 1,
-			wlan_notification_acm_autoconf_disabled = 2,
-			wlan_notification_acm_background_scan_enabled = 3,
-			wlan_notification_acm_background_scan_disabled = 4,
-			wlan_notification_acm_bss_type_change = 5,
-			wlan_notification_acm_power_setting_change = 6,
-			wlan_notification_acm_scan_complete = 7,
-			wlan_notification_acm_scan_fail = 8,
-			wlan_notification_acm_connection_start = 9,
-			wlan_notification_acm_connection_complete = 10,
-			wlan_notification_acm_connection_attempt_fail = 11,
-			wlan_notification_acm_filter_list_change = 12,
-			wlan_notification_acm_interface_arrival = 13,
-			wlan_notification_acm_interface_removal = 14,
-			wlan_notification_acm_profile_change = 15,
-			wlan_notification_acm_profile_name_change = 16,
-			wlan_notification_acm_profiles_exhausted = 17,
-			wlan_notification_acm_network_not_available = 18,
-			wlan_notification_acm_network_available = 19,
-			wlan_notification_acm_disconnecting = 20,
-			wlan_notification_acm_disconnected = 21,
-			wlan_notification_acm_adhoc_network_state_change = 22,
-			wlan_notification_acm_profile_unblocked = 23,
-			wlan_notification_acm_screen_power_change = 24,
-			wlan_notification_acm_profile_blocked = 25,
-			wlan_notification_acm_scan_list_refresh = 26,
-			wlan_notification_acm_operational_state_change = 27,
-			wlan_notification_acm_end = 28,
+			start = 0,
+			autoconf_enabled = 1,
+			autoconf_disabled = 2,
+			background_scan_enabled = 3,
+			background_scan_disabled = 4,
+			bss_type_change = 5,
+			power_setting_change = 6,
+			scan_complete = 7,
+			scan_fail = 8,
+			connection_start = 9,
+			connection_complete = 10,
+			connection_attempt_fail = 11,
+			filter_list_change = 12,
+			interface_arrival = 13,
+			interface_removal = 14,
+			profile_change = 15,
+			profile_name_change = 16,
+			profiles_exhausted = 17,
+			network_not_available = 18,
+			network_available = 19,
+			disconnecting = 20,
+			disconnected = 21,
+			adhoc_network_state_change = 22,
+			profile_unblocked = 23,
+			screen_power_change = 24,
+			profile_blocked = 25,
+			scan_list_refresh = 26,
+			operational_state_change = 27,
+			end = 28,
 		}
 		[AllowDuplicates]
 		public enum WLAN_NOTIFICATION_MSM : int32
 		{
-			wlan_notification_msm_start = 0,
-			wlan_notification_msm_associating = 1,
-			wlan_notification_msm_associated = 2,
-			wlan_notification_msm_authenticating = 3,
-			wlan_notification_msm_connected = 4,
-			wlan_notification_msm_roaming_start = 5,
-			wlan_notification_msm_roaming_end = 6,
-			wlan_notification_msm_radio_state_change = 7,
-			wlan_notification_msm_signal_quality_change = 8,
-			wlan_notification_msm_disassociating = 9,
-			wlan_notification_msm_disconnected = 10,
-			wlan_notification_msm_peer_join = 11,
-			wlan_notification_msm_peer_leave = 12,
-			wlan_notification_msm_adapter_removal = 13,
-			wlan_notification_msm_adapter_operation_mode_change = 14,
-			wlan_notification_msm_link_degraded = 15,
-			wlan_notification_msm_link_improved = 16,
-			wlan_notification_msm_end = 17,
+			start = 0,
+			associating = 1,
+			associated = 2,
+			authenticating = 3,
+			connected = 4,
+			roaming_start = 5,
+			roaming_end = 6,
+			radio_state_change = 7,
+			signal_quality_change = 8,
+			disassociating = 9,
+			disconnected = 10,
+			peer_join = 11,
+			peer_leave = 12,
+			adapter_removal = 13,
+			adapter_operation_mode_change = 14,
+			link_degraded = 15,
+			link_improved = 16,
+			end = 17,
 		}
 		[AllowDuplicates]
 		public enum WLAN_NOTIFICATION_SECURITY : int32
 		{
-			wlan_notification_security_start = 0,
-			wlan_notification_security_end = 1,
+			start = 0,
+			end = 1,
 		}
 		[AllowDuplicates]
 		public enum WLAN_OPCODE_VALUE_TYPE : int32
 		{
-			wlan_opcode_value_type_query_only = 0,
-			wlan_opcode_value_type_set_by_group_policy = 1,
-			wlan_opcode_value_type_set_by_user = 2,
-			wlan_opcode_value_type_invalid = 3,
+			query_only = 0,
+			set_by_group_policy = 1,
+			set_by_user = 2,
+			invalid = 3,
 		}
 		[AllowDuplicates]
 		public enum WLAN_INTF_OPCODE : int32
 		{
-			wlan_intf_opcode_autoconf_start = 0,
-			wlan_intf_opcode_autoconf_enabled = 1,
-			wlan_intf_opcode_background_scan_enabled = 2,
-			wlan_intf_opcode_media_streaming_mode = 3,
-			wlan_intf_opcode_radio_state = 4,
-			wlan_intf_opcode_bss_type = 5,
-			wlan_intf_opcode_interface_state = 6,
-			wlan_intf_opcode_current_connection = 7,
-			wlan_intf_opcode_channel_number = 8,
-			wlan_intf_opcode_supported_infrastructure_auth_cipher_pairs = 9,
-			wlan_intf_opcode_supported_adhoc_auth_cipher_pairs = 10,
-			wlan_intf_opcode_supported_country_or_region_string_list = 11,
-			wlan_intf_opcode_current_operation_mode = 12,
-			wlan_intf_opcode_supported_safe_mode = 13,
-			wlan_intf_opcode_certified_safe_mode = 14,
-			wlan_intf_opcode_hosted_network_capable = 15,
-			wlan_intf_opcode_management_frame_protection_capable = 16,
-			wlan_intf_opcode_secondary_sta_interfaces = 17,
-			wlan_intf_opcode_secondary_sta_synchronized_connections = 18,
-			wlan_intf_opcode_autoconf_end = 268435455,
-			wlan_intf_opcode_msm_start = 268435712,
-			wlan_intf_opcode_statistics = 268435713,
-			wlan_intf_opcode_rssi = 268435714,
-			wlan_intf_opcode_msm_end = 536870911,
-			wlan_intf_opcode_security_start = 536936448,
-			wlan_intf_opcode_security_end = 805306367,
-			wlan_intf_opcode_ihv_start = 805306368,
-			wlan_intf_opcode_ihv_end = 1073741823,
+			autoconf_start = 0,
+			autoconf_enabled = 1,
+			background_scan_enabled = 2,
+			media_streaming_mode = 3,
+			radio_state = 4,
+			bss_type = 5,
+			interface_state = 6,
+			current_connection = 7,
+			channel_number = 8,
+			supported_infrastructure_auth_cipher_pairs = 9,
+			supported_adhoc_auth_cipher_pairs = 10,
+			supported_country_or_region_string_list = 11,
+			current_operation_mode = 12,
+			supported_safe_mode = 13,
+			certified_safe_mode = 14,
+			hosted_network_capable = 15,
+			management_frame_protection_capable = 16,
+			secondary_sta_interfaces = 17,
+			secondary_sta_synchronized_connections = 18,
+			autoconf_end = 268435455,
+			msm_start = 268435712,
+			statistics = 268435713,
+			rssi = 268435714,
+			msm_end = 536870911,
+			security_start = 536936448,
+			security_end = 805306367,
+			ihv_start = 805306368,
+			ihv_end = 1073741823,
 		}
 		[AllowDuplicates]
 		public enum WLAN_AUTOCONF_OPCODE : int32
 		{
-			wlan_autoconf_opcode_start = 0,
-			wlan_autoconf_opcode_show_denied_networks = 1,
-			wlan_autoconf_opcode_power_setting = 2,
-			wlan_autoconf_opcode_only_use_gp_profiles_for_allowed_networks = 3,
-			wlan_autoconf_opcode_allow_explicit_creds = 4,
-			wlan_autoconf_opcode_block_period = 5,
-			wlan_autoconf_opcode_allow_virtual_station_extensibility = 6,
-			wlan_autoconf_opcode_end = 7,
+			start = 0,
+			show_denied_networks = 1,
+			power_setting = 2,
+			only_use_gp_profiles_for_allowed_networks = 3,
+			allow_explicit_creds = 4,
+			block_period = 5,
+			allow_virtual_station_extensibility = 6,
+			end = 7,
 		}
 		[AllowDuplicates]
 		public enum WLAN_IHV_CONTROL_TYPE : int32
 		{
-			wlan_ihv_control_type_service = 0,
-			wlan_ihv_control_type_driver = 1,
+			service = 0,
+			driver = 1,
 		}
 		[AllowDuplicates]
 		public enum WLAN_FILTER_LIST_TYPE : int32
 		{
-			wlan_filter_list_type_gp_permit = 0,
-			wlan_filter_list_type_gp_deny = 1,
-			wlan_filter_list_type_user_permit = 2,
-			wlan_filter_list_type_user_deny = 3,
+			gp_permit = 0,
+			gp_deny = 1,
+			user_permit = 2,
+			user_deny = 3,
 		}
 		[AllowDuplicates]
 		public enum WLAN_SECURABLE_OBJECT : int32
@@ -1296,185 +1296,185 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WFD_ROLE_TYPE : int32
 		{
-			WFD_ROLE_TYPE_NONE = 0,
-			WFD_ROLE_TYPE_DEVICE = 1,
-			WFD_ROLE_TYPE_GROUP_OWNER = 2,
-			WFD_ROLE_TYPE_CLIENT = 4,
-			WFD_ROLE_TYPE_MAX = 5,
+			NONE = 0,
+			DEVICE = 1,
+			GROUP_OWNER = 2,
+			CLIENT = 4,
+			MAX = 5,
 		}
 		[AllowDuplicates]
 		public enum WL_DISPLAY_PAGES : int32
 		{
-			WLConnectionPage = 0,
-			WLSecurityPage = 1,
-			WLAdvPage = 2,
+			ConnectionPage = 0,
+			SecurityPage = 1,
+			AdvPage = 2,
 		}
 		[AllowDuplicates]
 		public enum WLAN_HOSTED_NETWORK_STATE : int32
 		{
-			wlan_hosted_network_unavailable = 0,
-			wlan_hosted_network_idle = 1,
-			wlan_hosted_network_active = 2,
+			unavailable = 0,
+			idle = 1,
+			active = 2,
 		}
 		[AllowDuplicates]
 		public enum WLAN_HOSTED_NETWORK_REASON : int32
 		{
-			wlan_hosted_network_reason_success = 0,
-			wlan_hosted_network_reason_unspecified = 1,
-			wlan_hosted_network_reason_bad_parameters = 2,
-			wlan_hosted_network_reason_service_shutting_down = 3,
-			wlan_hosted_network_reason_insufficient_resources = 4,
-			wlan_hosted_network_reason_elevation_required = 5,
-			wlan_hosted_network_reason_read_only = 6,
-			wlan_hosted_network_reason_persistence_failed = 7,
-			wlan_hosted_network_reason_crypt_error = 8,
-			wlan_hosted_network_reason_impersonation = 9,
-			wlan_hosted_network_reason_stop_before_start = 10,
-			wlan_hosted_network_reason_interface_available = 11,
-			wlan_hosted_network_reason_interface_unavailable = 12,
-			wlan_hosted_network_reason_miniport_stopped = 13,
-			wlan_hosted_network_reason_miniport_started = 14,
-			wlan_hosted_network_reason_incompatible_connection_started = 15,
-			wlan_hosted_network_reason_incompatible_connection_stopped = 16,
-			wlan_hosted_network_reason_user_action = 17,
-			wlan_hosted_network_reason_client_abort = 18,
-			wlan_hosted_network_reason_ap_start_failed = 19,
-			wlan_hosted_network_reason_peer_arrived = 20,
-			wlan_hosted_network_reason_peer_departed = 21,
-			wlan_hosted_network_reason_peer_timeout = 22,
-			wlan_hosted_network_reason_gp_denied = 23,
-			wlan_hosted_network_reason_service_unavailable = 24,
-			wlan_hosted_network_reason_device_change = 25,
-			wlan_hosted_network_reason_properties_change = 26,
-			wlan_hosted_network_reason_virtual_station_blocking_use = 27,
-			wlan_hosted_network_reason_service_available_on_virtual_station = 28,
+			success = 0,
+			unspecified = 1,
+			bad_parameters = 2,
+			service_shutting_down = 3,
+			insufficient_resources = 4,
+			elevation_required = 5,
+			read_only = 6,
+			persistence_failed = 7,
+			crypt_error = 8,
+			impersonation = 9,
+			stop_before_start = 10,
+			interface_available = 11,
+			interface_unavailable = 12,
+			miniport_stopped = 13,
+			miniport_started = 14,
+			incompatible_connection_started = 15,
+			incompatible_connection_stopped = 16,
+			user_action = 17,
+			client_abort = 18,
+			ap_start_failed = 19,
+			peer_arrived = 20,
+			peer_departed = 21,
+			peer_timeout = 22,
+			gp_denied = 23,
+			service_unavailable = 24,
+			device_change = 25,
+			properties_change = 26,
+			virtual_station_blocking_use = 27,
+			service_available_on_virtual_station = 28,
 		}
 		[AllowDuplicates]
 		public enum WLAN_HOSTED_NETWORK_PEER_AUTH_STATE : int32
 		{
-			wlan_hosted_network_peer_state_invalid = 0,
-			wlan_hosted_network_peer_state_authenticated = 1,
+			invalid = 0,
+			authenticated = 1,
 		}
 		[AllowDuplicates]
 		public enum WLAN_HOSTED_NETWORK_NOTIFICATION_CODE : int32
 		{
-			wlan_hosted_network_state_change = 4096,
-			wlan_hosted_network_peer_state_change = 4097,
-			wlan_hosted_network_radio_state_change = 4098,
+			state_change = 4096,
+			peer_state_change = 4097,
+			radio_state_change = 4098,
 		}
 		[AllowDuplicates]
 		public enum WLAN_HOSTED_NETWORK_OPCODE : int32
 		{
-			wlan_hosted_network_opcode_connection_settings = 0,
-			wlan_hosted_network_opcode_security_settings = 1,
-			wlan_hosted_network_opcode_station_profile = 2,
-			wlan_hosted_network_opcode_enable = 3,
+			connection_settings = 0,
+			security_settings = 1,
+			station_profile = 2,
+			enable = 3,
 		}
 		[AllowDuplicates]
 		public enum ONEX_AUTH_IDENTITY : int32
 		{
-			OneXAuthIdentityNone = 0,
-			OneXAuthIdentityMachine = 1,
-			OneXAuthIdentityUser = 2,
-			OneXAuthIdentityExplicitUser = 3,
-			OneXAuthIdentityGuest = 4,
-			OneXAuthIdentityInvalid = 5,
+			None = 0,
+			Machine = 1,
+			User = 2,
+			ExplicitUser = 3,
+			Guest = 4,
+			Invalid = 5,
 		}
 		[AllowDuplicates]
 		public enum ONEX_AUTH_STATUS : int32
 		{
-			OneXAuthNotStarted = 0,
-			OneXAuthInProgress = 1,
-			OneXAuthNoAuthenticatorFound = 2,
-			OneXAuthSuccess = 3,
-			OneXAuthFailure = 4,
-			OneXAuthInvalid = 5,
+			NotStarted = 0,
+			InProgress = 1,
+			NoAuthenticatorFound = 2,
+			Success = 3,
+			Failure = 4,
+			Invalid = 5,
 		}
 		[AllowDuplicates]
 		public enum ONEX_REASON_CODE : int32
 		{
-			ONEX_REASON_CODE_SUCCESS = 0,
-			ONEX_REASON_START = 327680,
-			ONEX_UNABLE_TO_IDENTIFY_USER = 327681,
-			ONEX_IDENTITY_NOT_FOUND = 327682,
-			ONEX_UI_DISABLED = 327683,
-			ONEX_UI_FAILURE = 327684,
-			ONEX_EAP_FAILURE_RECEIVED = 327685,
-			ONEX_AUTHENTICATOR_NO_LONGER_PRESENT = 327686,
-			ONEX_NO_RESPONSE_TO_IDENTITY = 327687,
-			ONEX_PROFILE_VERSION_NOT_SUPPORTED = 327688,
-			ONEX_PROFILE_INVALID_LENGTH = 327689,
-			ONEX_PROFILE_DISALLOWED_EAP_TYPE = 327690,
-			ONEX_PROFILE_INVALID_EAP_TYPE_OR_FLAG = 327691,
-			ONEX_PROFILE_INVALID_ONEX_FLAGS = 327692,
-			ONEX_PROFILE_INVALID_TIMER_VALUE = 327693,
-			ONEX_PROFILE_INVALID_SUPPLICANT_MODE = 327694,
-			ONEX_PROFILE_INVALID_AUTH_MODE = 327695,
-			ONEX_PROFILE_INVALID_EAP_CONNECTION_PROPERTIES = 327696,
-			ONEX_UI_CANCELLED = 327697,
-			ONEX_PROFILE_INVALID_EXPLICIT_CREDENTIALS = 327698,
-			ONEX_PROFILE_EXPIRED_EXPLICIT_CREDENTIALS = 327699,
-			ONEX_UI_NOT_PERMITTED = 327700,
+			REASON_CODE_SUCCESS = 0,
+			REASON_START = 327680,
+			UNABLE_TO_IDENTIFY_USER = 327681,
+			IDENTITY_NOT_FOUND = 327682,
+			UI_DISABLED = 327683,
+			UI_FAILURE = 327684,
+			EAP_FAILURE_RECEIVED = 327685,
+			AUTHENTICATOR_NO_LONGER_PRESENT = 327686,
+			NO_RESPONSE_TO_IDENTITY = 327687,
+			PROFILE_VERSION_NOT_SUPPORTED = 327688,
+			PROFILE_INVALID_LENGTH = 327689,
+			PROFILE_DISALLOWED_EAP_TYPE = 327690,
+			PROFILE_INVALID_EAP_TYPE_OR_FLAG = 327691,
+			PROFILE_INVALID_ONEX_FLAGS = 327692,
+			PROFILE_INVALID_TIMER_VALUE = 327693,
+			PROFILE_INVALID_SUPPLICANT_MODE = 327694,
+			PROFILE_INVALID_AUTH_MODE = 327695,
+			PROFILE_INVALID_EAP_CONNECTION_PROPERTIES = 327696,
+			UI_CANCELLED = 327697,
+			PROFILE_INVALID_EXPLICIT_CREDENTIALS = 327698,
+			PROFILE_EXPIRED_EXPLICIT_CREDENTIALS = 327699,
+			UI_NOT_PERMITTED = 327700,
 		}
 		[AllowDuplicates]
 		public enum ONEX_NOTIFICATION_TYPE : int32
 		{
-			OneXPublicNotificationBase = 0,
-			OneXNotificationTypeResultUpdate = 1,
-			OneXNotificationTypeAuthRestarted = 2,
-			OneXNotificationTypeEventInvalid = 3,
-			OneXNumNotifications = 3,
+			PublicNotificationBase = 0,
+			NotificationTypeResultUpdate = 1,
+			NotificationTypeAuthRestarted = 2,
+			NotificationTypeEventInvalid = 3,
+			NumNotifications = 3,
 		}
 		[AllowDuplicates]
 		public enum ONEX_AUTH_RESTART_REASON : int32
 		{
-			OneXRestartReasonPeerInitiated = 0,
-			OneXRestartReasonMsmInitiated = 1,
-			OneXRestartReasonOneXHeldStateTimeout = 2,
-			OneXRestartReasonOneXAuthTimeout = 3,
-			OneXRestartReasonOneXConfigurationChanged = 4,
-			OneXRestartReasonOneXUserChanged = 5,
-			OneXRestartReasonQuarantineStateChanged = 6,
-			OneXRestartReasonAltCredsTrial = 7,
-			OneXRestartReasonInvalid = 8,
+			PeerInitiated = 0,
+			MsmInitiated = 1,
+			OneXHeldStateTimeout = 2,
+			OneXAuthTimeout = 3,
+			OneXConfigurationChanged = 4,
+			OneXUserChanged = 5,
+			QuarantineStateChanged = 6,
+			AltCredsTrial = 7,
+			Invalid = 8,
 		}
 		[AllowDuplicates]
 		public enum ONEX_EAP_METHOD_BACKEND_SUPPORT : int32
 		{
-			OneXEapMethodBackendSupportUnknown = 0,
-			OneXEapMethodBackendSupported = 1,
-			OneXEapMethodBackendUnsupported = 2,
+			SupportUnknown = 0,
+			Supported = 1,
+			Unsupported = 2,
 		}
 		[AllowDuplicates]
 		public enum DOT11_ADHOC_CIPHER_ALGORITHM : int32
 		{
-			DOT11_ADHOC_CIPHER_ALGO_INVALID = -1,
-			DOT11_ADHOC_CIPHER_ALGO_NONE = 0,
-			DOT11_ADHOC_CIPHER_ALGO_CCMP = 4,
-			DOT11_ADHOC_CIPHER_ALGO_WEP = 257,
+			INVALID = -1,
+			NONE = 0,
+			CCMP = 4,
+			WEP = 257,
 		}
 		[AllowDuplicates]
 		public enum DOT11_ADHOC_AUTH_ALGORITHM : int32
 		{
-			DOT11_ADHOC_AUTH_ALGO_INVALID = -1,
-			DOT11_ADHOC_AUTH_ALGO_80211_OPEN = 1,
-			DOT11_ADHOC_AUTH_ALGO_RSNA_PSK = 7,
+			INVALID = -1,
+			_80211_OPEN = 1,
+			RSNA_PSK = 7,
 		}
 		[AllowDuplicates]
 		public enum DOT11_ADHOC_NETWORK_CONNECTION_STATUS : int32
 		{
-			DOT11_ADHOC_NETWORK_CONNECTION_STATUS_INVALID = 0,
-			DOT11_ADHOC_NETWORK_CONNECTION_STATUS_DISCONNECTED = 11,
-			DOT11_ADHOC_NETWORK_CONNECTION_STATUS_CONNECTING = 12,
-			DOT11_ADHOC_NETWORK_CONNECTION_STATUS_CONNECTED = 13,
-			DOT11_ADHOC_NETWORK_CONNECTION_STATUS_FORMED = 14,
+			INVALID = 0,
+			DISCONNECTED = 11,
+			CONNECTING = 12,
+			CONNECTED = 13,
+			FORMED = 14,
 		}
 		[AllowDuplicates]
 		public enum DOT11_ADHOC_CONNECT_FAIL_REASON : int32
 		{
-			DOT11_ADHOC_CONNECT_FAIL_DOMAIN_MISMATCH = 0,
-			DOT11_ADHOC_CONNECT_FAIL_PASSPHRASE_MISMATCH = 1,
-			DOT11_ADHOC_CONNECT_FAIL_OTHER = 2,
+			DOMAIN_MISMATCH = 0,
+			PASSPHRASE_MISMATCH = 1,
+			OTHER = 2,
 		}
 		
 		// --- Function Pointers ---

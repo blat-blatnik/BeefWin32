@@ -10,9 +10,9 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WindowsMediaLibrarySharingDeviceAuthorizationStatus : int32
 		{
-			DEVICE_AUTHORIZATION_UNKNOWN = 0,
-			DEVICE_AUTHORIZATION_ALLOWED = 1,
-			DEVICE_AUTHORIZATION_DENIED = 2,
+			UNKNOWN = 0,
+			ALLOWED = 1,
+			DENIED = 2,
 		}
 		
 		// --- COM Class IDs ---

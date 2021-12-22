@@ -81,36 +81,36 @@ namespace Win32
 		[AllowDuplicates]
 		public enum LOCATION_REPORT_STATUS : int32
 		{
-			REPORT_NOT_SUPPORTED = 0,
-			REPORT_ERROR = 1,
-			REPORT_ACCESS_DENIED = 2,
-			REPORT_INITIALIZING = 3,
-			REPORT_RUNNING = 4,
+			NOT_SUPPORTED = 0,
+			ERROR = 1,
+			ACCESS_DENIED = 2,
+			INITIALIZING = 3,
+			RUNNING = 4,
 		}
 		[AllowDuplicates]
 		public enum GNSS_DRIVERCOMMAND_TYPE : int32
 		{
-			GNSS_SetLocationServiceEnabled = 1,
-			GNSS_SetLocationNIRequestAllowed = 2,
-			GNSS_ForceSatelliteSystem = 3,
-			GNSS_ForceOperationMode = 4,
-			GNSS_ResetEngine = 9,
-			GNSS_ClearAgnssData = 10,
-			GNSS_SetSuplVersion = 12,
-			GNSS_SetNMEALogging = 13,
-			GNSS_SetUplServerAccessInterval = 14,
-			GNSS_SetNiTimeoutInterval = 15,
-			GNSS_ResetGeofencesTracking = 16,
-			GNSS_SetSuplVersion2 = 17,
-			GNSS_CustomCommand = 256,
+			SetLocationServiceEnabled = 1,
+			SetLocationNIRequestAllowed = 2,
+			ForceSatelliteSystem = 3,
+			ForceOperationMode = 4,
+			ResetEngine = 9,
+			ClearAgnssData = 10,
+			SetSuplVersion = 12,
+			SetNMEALogging = 13,
+			SetUplServerAccessInterval = 14,
+			SetNiTimeoutInterval = 15,
+			ResetGeofencesTracking = 16,
+			SetSuplVersion2 = 17,
+			CustomCommand = 256,
 		}
 		[AllowDuplicates]
 		public enum GNSS_FIXSESSIONTYPE : int32
 		{
-			GNSS_FixSession_SingleShot = 1,
-			GNSS_FixSession_DistanceTracking = 2,
-			GNSS_FixSession_ContinuousTracking = 3,
-			GNSS_FixSession_LKG = 4,
+			SingleShot = 1,
+			DistanceTracking = 2,
+			ContinuousTracking = 3,
+			LKG = 4,
 		}
 		[AllowDuplicates]
 		public enum GNSS_GEOREGIONTYPE : int32
@@ -120,53 +120,53 @@ namespace Win32
 		[AllowDuplicates]
 		public enum GNSS_GEOFENCE_STATE : int32
 		{
-			GNSS_GeofenceState_Unknown = 0,
-			GNSS_GeofenceState_Entered = 1,
-			GNSS_GeofenceState_Exited = 2,
+			Unknown = 0,
+			Entered = 1,
+			Exited = 2,
 		}
 		[AllowDuplicates]
 		public enum GNSS_EVENT_TYPE : int32
 		{
-			GNSS_Event_FixAvailable = 1,
-			GNSS_Event_RequireAgnss = 2,
-			GNSS_Event_Error = 3,
-			GNSS_Event_NiRequest = 12,
-			GNSS_Event_NmeaData = 13,
-			GNSS_Event_GeofenceAlertData = 14,
-			GNSS_Event_GeofencesTrackingStatus = 15,
-			GNSS_Event_DriverRequest = 16,
-			GNSS_Event_BreadcrumbAlertEvent = 17,
-			GNSS_Event_FixAvailable_2 = 18,
-			GNSS_Event_Custom = 32768,
+			FixAvailable = 1,
+			RequireAgnss = 2,
+			Error = 3,
+			NiRequest = 12,
+			NmeaData = 13,
+			GeofenceAlertData = 14,
+			GeofencesTrackingStatus = 15,
+			DriverRequest = 16,
+			BreadcrumbAlertEvent = 17,
+			FixAvailable_2 = 18,
+			Custom = 32768,
 		}
 		[AllowDuplicates]
 		public enum GNSS_AGNSS_REQUEST_TYPE : int32
 		{
-			GNSS_AGNSS_TimeInjection = 1,
-			GNSS_AGNSS_PositionInjection = 2,
-			GNSS_AGNSS_BlobInjection = 3,
+			TimeInjection = 1,
+			PositionInjection = 2,
+			BlobInjection = 3,
 		}
 		[AllowDuplicates]
 		public enum GNSS_NI_PLANE_TYPE : int32
 		{
-			GNSS_NI_SUPL = 1,
-			GNSS_NI_CP = 2,
-			GNSS_NI_V2UPL = 3,
+			SUPL = 1,
+			CP = 2,
+			V2UPL = 3,
 		}
 		[AllowDuplicates]
 		public enum GNSS_NI_REQUEST_TYPE : int32
 		{
-			GNSS_NI_Request_SingleShot = 1,
-			GNSS_NI_Request_AreaTrigger = 2,
+			SingleShot = 1,
+			AreaTrigger = 2,
 		}
 		[AllowDuplicates]
 		public enum GNSS_NI_NOTIFICATION_TYPE : int32
 		{
-			GNSS_NI_NoNotifyNoVerify = 1,
-			GNSS_NI_NotifyOnly = 2,
-			GNSS_NI_NotifyVerifyDefaultAllow = 3,
-			GNSS_NI_NotifyVerifyDefaultNotAllow = 4,
-			GNSS_NI_PrivacyOverride = 5,
+			NoNotifyNoVerify = 1,
+			NotifyOnly = 2,
+			NotifyVerifyDefaultAllow = 3,
+			NotifyVerifyDefaultNotAllow = 4,
+			PrivacyOverride = 5,
 		}
 		[AllowDuplicates]
 		public enum GNSS_DRIVER_REQUEST : int32
@@ -176,16 +176,16 @@ namespace Win32
 		[AllowDuplicates]
 		public enum GNSS_SUPL_CERT_ACTION : int32
 		{
-			GNSS_Supl_Cert_Inject = 1,
-			GNSS_Supl_Cert_Delete = 2,
-			GNSS_Supl_Cert_Purge = 3,
+			Inject = 1,
+			Delete = 2,
+			Purge = 3,
 		}
 		[AllowDuplicates]
 		public enum GNSS_NI_USER_RESPONSE : int32
 		{
-			GNSS_Ni_UserResponseAccept = 1,
-			GNSS_Ni_UserResponseDeny = 2,
-			GNSS_Ni_UserResponseTimeout = 3,
+			Accept = 1,
+			Deny = 2,
+			Timeout = 3,
 		}
 		
 		// --- Structs ---

@@ -22,151 +22,151 @@ namespace Win32
 		[AllowDuplicates]
 		public enum COMAdminInUse : int32
 		{
-			COMAdminNotInUse = 0,
-			COMAdminInUseByCatalog = 1,
-			COMAdminInUseByRegistryUnknown = 2,
-			COMAdminInUseByRegistryProxyStub = 3,
-			COMAdminInUseByRegistryTypeLib = 4,
-			COMAdminInUseByRegistryClsid = 5,
+			NotInUse = 0,
+			InUseByCatalog = 1,
+			InUseByRegistryUnknown = 2,
+			InUseByRegistryProxyStub = 3,
+			InUseByRegistryTypeLib = 4,
+			InUseByRegistryClsid = 5,
 		}
 		[AllowDuplicates]
 		public enum COMAdminComponentType : int32
 		{
-			COMAdmin32BitComponent = 1,
-			COMAdmin64BitComponent = 2,
+			_32BitComponent = 1,
+			_64BitComponent = 2,
 		}
 		[AllowDuplicates]
 		public enum COMAdminApplicationInstallOptions : int32
 		{
-			COMAdminInstallNoUsers = 0,
-			COMAdminInstallUsers = 1,
-			COMAdminInstallForceOverwriteOfFiles = 2,
+			NoUsers = 0,
+			Users = 1,
+			ForceOverwriteOfFiles = 2,
 		}
 		[AllowDuplicates]
 		public enum COMAdminApplicationExportOptions : int32
 		{
-			COMAdminExportNoUsers = 0,
-			COMAdminExportUsers = 1,
-			COMAdminExportApplicationProxy = 2,
-			COMAdminExportForceOverwriteOfFiles = 4,
-			COMAdminExportIn10Format = 16,
+			NoUsers = 0,
+			Users = 1,
+			ApplicationProxy = 2,
+			ForceOverwriteOfFiles = 4,
+			In10Format = 16,
 		}
 		[AllowDuplicates]
 		public enum COMAdminThreadingModels : int32
 		{
-			COMAdminThreadingModelApartment = 0,
-			COMAdminThreadingModelFree = 1,
-			COMAdminThreadingModelMain = 2,
-			COMAdminThreadingModelBoth = 3,
-			COMAdminThreadingModelNeutral = 4,
-			COMAdminThreadingModelNotSpecified = 5,
+			Apartment = 0,
+			Free = 1,
+			Main = 2,
+			Both = 3,
+			Neutral = 4,
+			NotSpecified = 5,
 		}
 		[AllowDuplicates]
 		public enum COMAdminTransactionOptions : int32
 		{
-			COMAdminTransactionIgnored = 0,
-			COMAdminTransactionNone = 1,
-			COMAdminTransactionSupported = 2,
-			COMAdminTransactionRequired = 3,
-			COMAdminTransactionRequiresNew = 4,
+			Ignored = 0,
+			None = 1,
+			Supported = 2,
+			Required = 3,
+			RequiresNew = 4,
 		}
 		[AllowDuplicates]
 		public enum COMAdminTxIsolationLevelOptions : int32
 		{
-			COMAdminTxIsolationLevelAny = 0,
-			COMAdminTxIsolationLevelReadUnCommitted = 1,
-			COMAdminTxIsolationLevelReadCommitted = 2,
-			COMAdminTxIsolationLevelRepeatableRead = 3,
-			COMAdminTxIsolationLevelSerializable = 4,
+			Any = 0,
+			ReadUnCommitted = 1,
+			ReadCommitted = 2,
+			RepeatableRead = 3,
+			Serializable = 4,
 		}
 		[AllowDuplicates]
 		public enum COMAdminSynchronizationOptions : int32
 		{
-			COMAdminSynchronizationIgnored = 0,
-			COMAdminSynchronizationNone = 1,
-			COMAdminSynchronizationSupported = 2,
-			COMAdminSynchronizationRequired = 3,
-			COMAdminSynchronizationRequiresNew = 4,
+			Ignored = 0,
+			None = 1,
+			Supported = 2,
+			Required = 3,
+			RequiresNew = 4,
 		}
 		[AllowDuplicates]
 		public enum COMAdminActivationOptions : int32
 		{
-			COMAdminActivationInproc = 0,
-			COMAdminActivationLocal = 1,
+			Inproc = 0,
+			Local = 1,
 		}
 		[AllowDuplicates]
 		public enum COMAdminAccessChecksLevelOptions : int32
 		{
-			COMAdminAccessChecksApplicationLevel = 0,
-			COMAdminAccessChecksApplicationComponentLevel = 1,
+			Level = 0,
+			ComponentLevel = 1,
 		}
 		[AllowDuplicates]
 		public enum COMAdminAuthenticationLevelOptions : int32
 		{
-			COMAdminAuthenticationDefault = 0,
-			COMAdminAuthenticationNone = 1,
-			COMAdminAuthenticationConnect = 2,
-			COMAdminAuthenticationCall = 3,
-			COMAdminAuthenticationPacket = 4,
-			COMAdminAuthenticationIntegrity = 5,
-			COMAdminAuthenticationPrivacy = 6,
+			Default = 0,
+			None = 1,
+			Connect = 2,
+			Call = 3,
+			Packet = 4,
+			Integrity = 5,
+			Privacy = 6,
 		}
 		[AllowDuplicates]
 		public enum COMAdminImpersonationLevelOptions : int32
 		{
-			COMAdminImpersonationAnonymous = 1,
-			COMAdminImpersonationIdentify = 2,
-			COMAdminImpersonationImpersonate = 3,
-			COMAdminImpersonationDelegate = 4,
+			Anonymous = 1,
+			Identify = 2,
+			Impersonate = 3,
+			Delegate = 4,
 		}
 		[AllowDuplicates]
 		public enum COMAdminAuthenticationCapabilitiesOptions : int32
 		{
-			COMAdminAuthenticationCapabilitiesNone = 0,
-			COMAdminAuthenticationCapabilitiesSecureReference = 2,
-			COMAdminAuthenticationCapabilitiesStaticCloaking = 32,
-			COMAdminAuthenticationCapabilitiesDynamicCloaking = 64,
+			None = 0,
+			SecureReference = 2,
+			StaticCloaking = 32,
+			DynamicCloaking = 64,
 		}
 		[AllowDuplicates]
 		public enum COMAdminOS : int32
 		{
-			COMAdminOSNotInitialized = 0,
-			COMAdminOSWindows3_1 = 1,
-			COMAdminOSWindows9x = 2,
-			COMAdminOSWindows2000 = 3,
-			COMAdminOSWindows2000AdvancedServer = 4,
-			COMAdminOSWindows2000Unknown = 5,
-			COMAdminOSUnknown = 6,
-			COMAdminOSWindowsXPPersonal = 11,
-			COMAdminOSWindowsXPProfessional = 12,
-			COMAdminOSWindowsNETStandardServer = 13,
-			COMAdminOSWindowsNETEnterpriseServer = 14,
-			COMAdminOSWindowsNETDatacenterServer = 15,
-			COMAdminOSWindowsNETWebServer = 16,
-			COMAdminOSWindowsLonghornPersonal = 17,
-			COMAdminOSWindowsLonghornProfessional = 18,
-			COMAdminOSWindowsLonghornStandardServer = 19,
-			COMAdminOSWindowsLonghornEnterpriseServer = 20,
-			COMAdminOSWindowsLonghornDatacenterServer = 21,
-			COMAdminOSWindowsLonghornWebServer = 22,
-			COMAdminOSWindows7Personal = 23,
-			COMAdminOSWindows7Professional = 24,
-			COMAdminOSWindows7StandardServer = 25,
-			COMAdminOSWindows7EnterpriseServer = 26,
-			COMAdminOSWindows7DatacenterServer = 27,
-			COMAdminOSWindows7WebServer = 28,
-			COMAdminOSWindows8Personal = 29,
-			COMAdminOSWindows8Professional = 30,
-			COMAdminOSWindows8StandardServer = 31,
-			COMAdminOSWindows8EnterpriseServer = 32,
-			COMAdminOSWindows8DatacenterServer = 33,
-			COMAdminOSWindows8WebServer = 34,
-			COMAdminOSWindowsBluePersonal = 35,
-			COMAdminOSWindowsBlueProfessional = 36,
-			COMAdminOSWindowsBlueStandardServer = 37,
-			COMAdminOSWindowsBlueEnterpriseServer = 38,
-			COMAdminOSWindowsBlueDatacenterServer = 39,
-			COMAdminOSWindowsBlueWebServer = 40,
+			NotInitialized = 0,
+			Windows3_1 = 1,
+			Windows9x = 2,
+			Windows2000 = 3,
+			Windows2000AdvancedServer = 4,
+			Windows2000Unknown = 5,
+			Unknown = 6,
+			WindowsXPPersonal = 11,
+			WindowsXPProfessional = 12,
+			WindowsNETStandardServer = 13,
+			WindowsNETEnterpriseServer = 14,
+			WindowsNETDatacenterServer = 15,
+			WindowsNETWebServer = 16,
+			WindowsLonghornPersonal = 17,
+			WindowsLonghornProfessional = 18,
+			WindowsLonghornStandardServer = 19,
+			WindowsLonghornEnterpriseServer = 20,
+			WindowsLonghornDatacenterServer = 21,
+			WindowsLonghornWebServer = 22,
+			Windows7Personal = 23,
+			Windows7Professional = 24,
+			Windows7StandardServer = 25,
+			Windows7EnterpriseServer = 26,
+			Windows7DatacenterServer = 27,
+			Windows7WebServer = 28,
+			Windows8Personal = 29,
+			Windows8Professional = 30,
+			Windows8StandardServer = 31,
+			Windows8EnterpriseServer = 32,
+			Windows8DatacenterServer = 33,
+			Windows8WebServer = 34,
+			WindowsBluePersonal = 35,
+			WindowsBlueProfessional = 36,
+			WindowsBlueStandardServer = 37,
+			WindowsBlueEnterpriseServer = 38,
+			WindowsBlueDatacenterServer = 39,
+			WindowsBlueWebServer = 40,
 		}
 		[AllowDuplicates]
 		public enum COMAdminServiceOptions : int32
@@ -176,259 +176,259 @@ namespace Win32
 		[AllowDuplicates]
 		public enum COMAdminServiceStatusOptions : int32
 		{
-			COMAdminServiceStopped = 0,
-			COMAdminServiceStartPending = 1,
-			COMAdminServiceStopPending = 2,
-			COMAdminServiceRunning = 3,
-			COMAdminServiceContinuePending = 4,
-			COMAdminServicePausePending = 5,
-			COMAdminServicePaused = 6,
-			COMAdminServiceUnknownState = 7,
+			Stopped = 0,
+			StartPending = 1,
+			StopPending = 2,
+			Running = 3,
+			ContinuePending = 4,
+			PausePending = 5,
+			Paused = 6,
+			UnknownState = 7,
 		}
 		[AllowDuplicates]
 		public enum COMAdminQCMessageAuthenticateOptions : int32
 		{
-			COMAdminQCMessageAuthenticateSecureApps = 0,
-			COMAdminQCMessageAuthenticateOff = 1,
-			COMAdminQCMessageAuthenticateOn = 2,
+			SecureApps = 0,
+			Off = 1,
+			On = 2,
 		}
 		[AllowDuplicates]
 		public enum COMAdminFileFlags : int32
 		{
-			COMAdminFileFlagLoadable = 1,
-			COMAdminFileFlagCOM = 2,
-			COMAdminFileFlagContainsPS = 4,
-			COMAdminFileFlagContainsComp = 8,
-			COMAdminFileFlagContainsTLB = 16,
-			COMAdminFileFlagSelfReg = 32,
-			COMAdminFileFlagSelfUnReg = 64,
-			COMAdminFileFlagUnloadableDLL = 128,
-			COMAdminFileFlagDoesNotExist = 256,
-			COMAdminFileFlagAlreadyInstalled = 512,
-			COMAdminFileFlagBadTLB = 1024,
-			COMAdminFileFlagGetClassObjFailed = 2048,
-			COMAdminFileFlagClassNotAvailable = 4096,
-			COMAdminFileFlagRegistrar = 8192,
-			COMAdminFileFlagNoRegistrar = 16384,
-			COMAdminFileFlagDLLRegsvrFailed = 32768,
-			COMAdminFileFlagRegTLBFailed = 65536,
-			COMAdminFileFlagRegistrarFailed = 131072,
-			COMAdminFileFlagError = 262144,
+			Loadable = 1,
+			COM = 2,
+			ContainsPS = 4,
+			ContainsComp = 8,
+			ContainsTLB = 16,
+			SelfReg = 32,
+			SelfUnReg = 64,
+			UnloadableDLL = 128,
+			DoesNotExist = 256,
+			AlreadyInstalled = 512,
+			BadTLB = 1024,
+			GetClassObjFailed = 2048,
+			ClassNotAvailable = 4096,
+			Registrar = 8192,
+			NoRegistrar = 16384,
+			DLLRegsvrFailed = 32768,
+			RegTLBFailed = 65536,
+			RegistrarFailed = 131072,
+			Error = 262144,
 		}
 		[AllowDuplicates]
 		public enum COMAdminComponentFlags : int32
 		{
-			COMAdminCompFlagTypeInfoFound = 1,
-			COMAdminCompFlagCOMPlusPropertiesFound = 2,
-			COMAdminCompFlagProxyFound = 4,
-			COMAdminCompFlagInterfacesFound = 8,
-			COMAdminCompFlagAlreadyInstalled = 16,
-			COMAdminCompFlagNotInApplication = 32,
+			TypeInfoFound = 1,
+			COMPlusPropertiesFound = 2,
+			ProxyFound = 4,
+			InterfacesFound = 8,
+			AlreadyInstalled = 16,
+			NotInApplication = 32,
 		}
 		[AllowDuplicates]
 		public enum COMAdminErrorCodes : int32
 		{
-			COMAdminErrObjectErrors = -2146368511,
-			COMAdminErrObjectInvalid = -2146368510,
-			COMAdminErrKeyMissing = -2146368509,
-			COMAdminErrAlreadyInstalled = -2146368508,
-			COMAdminErrAppFileWriteFail = -2146368505,
-			COMAdminErrAppFileReadFail = -2146368504,
-			COMAdminErrAppFileVersion = -2146368503,
-			COMAdminErrBadPath = -2146368502,
-			COMAdminErrApplicationExists = -2146368501,
-			COMAdminErrRoleExists = -2146368500,
-			COMAdminErrCantCopyFile = -2146368499,
-			COMAdminErrNoUser = -2146368497,
-			COMAdminErrInvalidUserids = -2146368496,
-			COMAdminErrNoRegistryCLSID = -2146368495,
-			COMAdminErrBadRegistryProgID = -2146368494,
-			COMAdminErrAuthenticationLevel = -2146368493,
-			COMAdminErrUserPasswdNotValid = -2146368492,
-			COMAdminErrCLSIDOrIIDMismatch = -2146368488,
-			COMAdminErrRemoteInterface = -2146368487,
-			COMAdminErrDllRegisterServer = -2146368486,
-			COMAdminErrNoServerShare = -2146368485,
-			COMAdminErrDllLoadFailed = -2146368483,
-			COMAdminErrBadRegistryLibID = -2146368482,
-			COMAdminErrAppDirNotFound = -2146368481,
-			COMAdminErrRegistrarFailed = -2146368477,
-			COMAdminErrCompFileDoesNotExist = -2146368476,
-			COMAdminErrCompFileLoadDLLFail = -2146368475,
-			COMAdminErrCompFileGetClassObj = -2146368474,
-			COMAdminErrCompFileClassNotAvail = -2146368473,
-			COMAdminErrCompFileBadTLB = -2146368472,
-			COMAdminErrCompFileNotInstallable = -2146368471,
-			COMAdminErrNotChangeable = -2146368470,
-			COMAdminErrNotDeletable = -2146368469,
-			COMAdminErrSession = -2146368468,
-			COMAdminErrCompMoveLocked = -2146368467,
-			COMAdminErrCompMoveBadDest = -2146368466,
-			COMAdminErrRegisterTLB = -2146368464,
-			COMAdminErrSystemApp = -2146368461,
-			COMAdminErrCompFileNoRegistrar = -2146368460,
-			COMAdminErrCoReqCompInstalled = -2146368459,
-			COMAdminErrServiceNotInstalled = -2146368458,
-			COMAdminErrPropertySaveFailed = -2146368457,
-			COMAdminErrObjectExists = -2146368456,
-			COMAdminErrComponentExists = -2146368455,
-			COMAdminErrRegFileCorrupt = -2146368453,
-			COMAdminErrPropertyOverflow = -2146368452,
-			COMAdminErrNotInRegistry = -2146368450,
-			COMAdminErrObjectNotPoolable = -2146368449,
-			COMAdminErrApplidMatchesClsid = -2146368442,
-			COMAdminErrRoleDoesNotExist = -2146368441,
-			COMAdminErrStartAppNeedsComponents = -2146368440,
-			COMAdminErrRequiresDifferentPlatform = -2146368439,
-			COMAdminErrQueuingServiceNotAvailable = -2146367998,
-			COMAdminErrObjectParentMissing = -2146367480,
-			COMAdminErrObjectDoesNotExist = -2146367479,
-			COMAdminErrCanNotExportAppProxy = -2146368438,
-			COMAdminErrCanNotStartApp = -2146368437,
-			COMAdminErrCanNotExportSystemApp = -2146368436,
-			COMAdminErrCanNotSubscribeToComponent = -2146368435,
-			COMAdminErrAppNotRunning = -2146367478,
-			COMAdminErrEventClassCannotBeSubscriber = -2146368434,
-			COMAdminErrLibAppProxyIncompatible = -2146368433,
-			COMAdminErrBasePartitionOnly = -2146368432,
-			COMAdminErrDuplicatePartitionName = -2146368425,
-			COMAdminErrPartitionInUse = -2146368423,
-			COMAdminErrImportedComponentsNotAllowed = -2146368421,
-			COMAdminErrRegdbNotInitialized = -2146368398,
-			COMAdminErrRegdbNotOpen = -2146368397,
-			COMAdminErrRegdbSystemErr = -2146368396,
-			COMAdminErrRegdbAlreadyRunning = -2146368395,
-			COMAdminErrMigVersionNotSupported = -2146368384,
-			COMAdminErrMigSchemaNotFound = -2146368383,
-			COMAdminErrCatBitnessMismatch = -2146368382,
-			COMAdminErrCatUnacceptableBitness = -2146368381,
-			COMAdminErrCatWrongAppBitnessBitness = -2146368380,
-			COMAdminErrCatPauseResumeNotSupported = -2146368379,
-			COMAdminErrCatServerFault = -2146368378,
-			COMAdminErrCantRecycleLibraryApps = -2146367473,
-			COMAdminErrCantRecycleServiceApps = -2146367471,
-			COMAdminErrProcessAlreadyRecycled = -2146367470,
-			COMAdminErrPausedProcessMayNotBeRecycled = -2146367469,
-			COMAdminErrInvalidPartition = -2146367477,
-			COMAdminErrPartitionMsiOnly = -2146367463,
-			COMAdminErrStartAppDisabled = -2146368431,
-			COMAdminErrCompMoveSource = -2146367460,
-			COMAdminErrCompMoveDest = -2146367459,
-			COMAdminErrCompMovePrivate = -2146367458,
-			COMAdminErrCannotCopyEventClass = -2146367456,
+			ObjectErrors = -2146368511,
+			ObjectInvalid = -2146368510,
+			KeyMissing = -2146368509,
+			AlreadyInstalled = -2146368508,
+			AppFileWriteFail = -2146368505,
+			AppFileReadFail = -2146368504,
+			AppFileVersion = -2146368503,
+			BadPath = -2146368502,
+			ApplicationExists = -2146368501,
+			RoleExists = -2146368500,
+			CantCopyFile = -2146368499,
+			NoUser = -2146368497,
+			InvalidUserids = -2146368496,
+			NoRegistryCLSID = -2146368495,
+			BadRegistryProgID = -2146368494,
+			AuthenticationLevel = -2146368493,
+			UserPasswdNotValid = -2146368492,
+			CLSIDOrIIDMismatch = -2146368488,
+			RemoteInterface = -2146368487,
+			DllRegisterServer = -2146368486,
+			NoServerShare = -2146368485,
+			DllLoadFailed = -2146368483,
+			BadRegistryLibID = -2146368482,
+			AppDirNotFound = -2146368481,
+			RegistrarFailed = -2146368477,
+			CompFileDoesNotExist = -2146368476,
+			CompFileLoadDLLFail = -2146368475,
+			CompFileGetClassObj = -2146368474,
+			CompFileClassNotAvail = -2146368473,
+			CompFileBadTLB = -2146368472,
+			CompFileNotInstallable = -2146368471,
+			NotChangeable = -2146368470,
+			NotDeletable = -2146368469,
+			Session = -2146368468,
+			CompMoveLocked = -2146368467,
+			CompMoveBadDest = -2146368466,
+			RegisterTLB = -2146368464,
+			SystemApp = -2146368461,
+			CompFileNoRegistrar = -2146368460,
+			CoReqCompInstalled = -2146368459,
+			ServiceNotInstalled = -2146368458,
+			PropertySaveFailed = -2146368457,
+			ObjectExists = -2146368456,
+			ComponentExists = -2146368455,
+			RegFileCorrupt = -2146368453,
+			PropertyOverflow = -2146368452,
+			NotInRegistry = -2146368450,
+			ObjectNotPoolable = -2146368449,
+			ApplidMatchesClsid = -2146368442,
+			RoleDoesNotExist = -2146368441,
+			StartAppNeedsComponents = -2146368440,
+			RequiresDifferentPlatform = -2146368439,
+			QueuingServiceNotAvailable = -2146367998,
+			ObjectParentMissing = -2146367480,
+			ObjectDoesNotExist = -2146367479,
+			CanNotExportAppProxy = -2146368438,
+			CanNotStartApp = -2146368437,
+			CanNotExportSystemApp = -2146368436,
+			CanNotSubscribeToComponent = -2146368435,
+			AppNotRunning = -2146367478,
+			EventClassCannotBeSubscriber = -2146368434,
+			LibAppProxyIncompatible = -2146368433,
+			BasePartitionOnly = -2146368432,
+			DuplicatePartitionName = -2146368425,
+			PartitionInUse = -2146368423,
+			ImportedComponentsNotAllowed = -2146368421,
+			RegdbNotInitialized = -2146368398,
+			RegdbNotOpen = -2146368397,
+			RegdbSystemErr = -2146368396,
+			RegdbAlreadyRunning = -2146368395,
+			MigVersionNotSupported = -2146368384,
+			MigSchemaNotFound = -2146368383,
+			CatBitnessMismatch = -2146368382,
+			CatUnacceptableBitness = -2146368381,
+			CatWrongAppBitnessBitness = -2146368380,
+			CatPauseResumeNotSupported = -2146368379,
+			CatServerFault = -2146368378,
+			CantRecycleLibraryApps = -2146367473,
+			CantRecycleServiceApps = -2146367471,
+			ProcessAlreadyRecycled = -2146367470,
+			PausedProcessMayNotBeRecycled = -2146367469,
+			InvalidPartition = -2146367477,
+			PartitionMsiOnly = -2146367463,
+			StartAppDisabled = -2146368431,
+			CompMoveSource = -2146367460,
+			CompMoveDest = -2146367459,
+			CompMovePrivate = -2146367458,
+			CannotCopyEventClass = -2146367456,
 		}
 		[AllowDuplicates]
 		public enum TRACKING_COLL_TYPE : int32
 		{
-			TRKCOLL_PROCESSES = 0,
-			TRKCOLL_APPLICATIONS = 1,
-			TRKCOLL_COMPONENTS = 2,
+			PROCESSES = 0,
+			APPLICATIONS = 1,
+			COMPONENTS = 2,
 		}
 		[AllowDuplicates]
 		public enum DUMPTYPE : int32
 		{
-			DUMPTYPE_FULL = 0,
-			DUMPTYPE_MINI = 1,
-			DUMPTYPE_NONE = 2,
+			FULL = 0,
+			MINI = 1,
+			NONE = 2,
 		}
 		[AllowDuplicates]
 		public enum COMPLUS_APPTYPE : int32
 		{
-			APPTYPE_UNKNOWN = -1,
-			APPTYPE_SERVER = 1,
-			APPTYPE_LIBRARY = 0,
-			APPTYPE_SWC = 2,
+			UNKNOWN = -1,
+			SERVER = 1,
+			LIBRARY = 0,
+			SWC = 2,
 		}
 		[AllowDuplicates]
 		public enum GetAppTrackerDataFlags : int32
 		{
-			GATD_INCLUDE_PROCESS_EXE_NAME = 1,
-			GATD_INCLUDE_LIBRARY_APPS = 2,
-			GATD_INCLUDE_SWC = 4,
-			GATD_INCLUDE_CLASS_NAME = 8,
-			GATD_INCLUDE_APPLICATION_NAME = 16,
+			PROCESS_EXE_NAME = 1,
+			LIBRARY_APPS = 2,
+			SWC = 4,
+			CLASS_NAME = 8,
+			APPLICATION_NAME = 16,
 		}
 		[AllowDuplicates]
 		public enum TransactionVote : int32
 		{
-			TxCommit = 0,
-			TxAbort = 1,
+			Commit = 0,
+			Abort = 1,
 		}
 		[AllowDuplicates]
 		public enum CrmTransactionState : int32
 		{
-			TxState_Active = 0,
-			TxState_Committed = 1,
-			TxState_Aborted = 2,
-			TxState_Indoubt = 3,
+			Active = 0,
+			Committed = 1,
+			Aborted = 2,
+			Indoubt = 3,
 		}
 		[AllowDuplicates]
 		public enum CSC_InheritanceConfig : int32
 		{
-			CSC_Inherit = 0,
-			CSC_Ignore = 1,
+			nherit = 0,
+			gnore = 1,
 		}
 		[AllowDuplicates]
 		public enum CSC_ThreadPool : int32
 		{
-			CSC_ThreadPoolNone = 0,
-			CSC_ThreadPoolInherit = 1,
-			CSC_STAThreadPool = 2,
-			CSC_MTAThreadPool = 3,
+			ThreadPoolNone = 0,
+			ThreadPoolInherit = 1,
+			STAThreadPool = 2,
+			MTAThreadPool = 3,
 		}
 		[AllowDuplicates]
 		public enum CSC_Binding : int32
 		{
-			CSC_NoBinding = 0,
-			CSC_BindToPoolThread = 1,
+			NoBinding = 0,
+			BindToPoolThread = 1,
 		}
 		[AllowDuplicates]
 		public enum CSC_TransactionConfig : int32
 		{
-			CSC_NoTransaction = 0,
-			CSC_IfContainerIsTransactional = 1,
-			CSC_CreateTransactionIfNecessary = 2,
-			CSC_NewTransaction = 3,
+			NoTransaction = 0,
+			IfContainerIsTransactional = 1,
+			CreateTransactionIfNecessary = 2,
+			NewTransaction = 3,
 		}
 		[AllowDuplicates]
 		public enum CSC_SynchronizationConfig : int32
 		{
-			CSC_NoSynchronization = 0,
-			CSC_IfContainerIsSynchronized = 1,
-			CSC_NewSynchronizationIfNecessary = 2,
-			CSC_NewSynchronization = 3,
+			NoSynchronization = 0,
+			IfContainerIsSynchronized = 1,
+			NewSynchronizationIfNecessary = 2,
+			NewSynchronization = 3,
 		}
 		[AllowDuplicates]
 		public enum CSC_TrackerConfig : int32
 		{
-			CSC_DontUseTracker = 0,
-			CSC_UseTracker = 1,
+			DontUseTracker = 0,
+			UseTracker = 1,
 		}
 		[AllowDuplicates]
 		public enum CSC_PartitionConfig : int32
 		{
-			CSC_NoPartition = 0,
-			CSC_InheritPartition = 1,
-			CSC_NewPartition = 2,
+			NoPartition = 0,
+			InheritPartition = 1,
+			NewPartition = 2,
 		}
 		[AllowDuplicates]
 		public enum CSC_IISIntrinsicsConfig : int32
 		{
-			CSC_NoIISIntrinsics = 0,
-			CSC_InheritIISIntrinsics = 1,
+			NoIISIntrinsics = 0,
+			InheritIISIntrinsics = 1,
 		}
 		[AllowDuplicates]
 		public enum CSC_COMTIIntrinsicsConfig : int32
 		{
-			CSC_NoCOMTIIntrinsics = 0,
-			CSC_InheritCOMTIIntrinsics = 1,
+			NoCOMTIIntrinsics = 0,
+			InheritCOMTIIntrinsics = 1,
 		}
 		[AllowDuplicates]
 		public enum CSC_SxsConfig : int32
 		{
-			CSC_NoSxs = 0,
-			CSC_InheritSxs = 1,
-			CSC_NewSxs = 2,
+			NoSxs = 0,
+			InheritSxs = 1,
+			NewSxs = 2,
 		}
 		[AllowDuplicates]
 		public enum AutoSvcs_Error_Constants : uint32
@@ -463,8 +463,8 @@ namespace Win32
 		[AllowDuplicates]
 		public enum LockModes : int32
 		{
-			LockSetGet = 0,
-			LockMethod = 1,
+			SetGet = 0,
+			Method = 1,
 		}
 		[AllowDuplicates]
 		public enum ReleaseModes : int32
@@ -475,22 +475,22 @@ namespace Win32
 		[AllowDuplicates]
 		public enum CRMFLAGS : int32
 		{
-			CRMFLAG_FORGETTARGET = 1,
-			CRMFLAG_WRITTENDURINGPREPARE = 2,
-			CRMFLAG_WRITTENDURINGCOMMIT = 4,
-			CRMFLAG_WRITTENDURINGABORT = 8,
-			CRMFLAG_WRITTENDURINGRECOVERY = 16,
-			CRMFLAG_WRITTENDURINGREPLAY = 32,
-			CRMFLAG_REPLAYINPROGRESS = 64,
+			FORGETTARGET = 1,
+			WRITTENDURINGPREPARE = 2,
+			WRITTENDURINGCOMMIT = 4,
+			WRITTENDURINGABORT = 8,
+			WRITTENDURINGRECOVERY = 16,
+			WRITTENDURINGREPLAY = 32,
+			REPLAYINPROGRESS = 64,
 		}
 		[AllowDuplicates]
 		public enum CRMREGFLAGS : int32
 		{
-			CRMREGFLAG_PREPAREPHASE = 1,
-			CRMREGFLAG_COMMITPHASE = 2,
-			CRMREGFLAG_ABORTPHASE = 4,
-			CRMREGFLAG_ALLPHASES = 7,
-			CRMREGFLAG_FAILIFINDOUBTSREMAIN = 16,
+			PREPAREPHASE = 1,
+			COMMITPHASE = 2,
+			ABORTPHASE = 4,
+			ALLPHASES = 7,
+			FAILIFINDOUBTSREMAIN = 16,
 		}
 		
 		// --- Structs ---

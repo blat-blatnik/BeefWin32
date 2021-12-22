@@ -37,18 +37,18 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SCE_LOG_ERR_LEVEL : uint32
 		{
-			SCE_LOG_LEVEL_ALWAYS = 0,
-			SCE_LOG_LEVEL_ERROR = 1,
-			SCE_LOG_LEVEL_DETAIL = 2,
-			SCE_LOG_LEVEL_DEBUG = 3,
+			ALWAYS = 0,
+			ERROR = 1,
+			DETAIL = 2,
+			DEBUG = 3,
 		}
 		[AllowDuplicates]
 		public enum SCESVC_INFO_TYPE : int32
 		{
-			SceSvcConfigurationInfo = 0,
-			SceSvcMergedPolicyInfo = 1,
-			SceSvcAnalysisInfo = 2,
-			SceSvcInternalUse = 3,
+			ConfigurationInfo = 0,
+			MergedPolicyInfo = 1,
+			AnalysisInfo = 2,
+			InternalUse = 3,
 		}
 		
 		// --- Function Pointers ---

@@ -105,44 +105,44 @@ namespace Win32
 		[AllowDuplicates]
 		public enum MODEM_STATUS_FLAGS : uint32
 		{
-			MS_CTS_ON = 16,
-			MS_DSR_ON = 32,
-			MS_RING_ON = 64,
-			MS_RLSD_ON = 128,
+			CTS_ON = 16,
+			DSR_ON = 32,
+			RING_ON = 64,
+			RLSD_ON = 128,
 		}
 		[AllowDuplicates]
 		public enum CLEAR_COMM_ERROR_FLAGS : uint32
 		{
-			CE_BREAK = 16,
-			CE_FRAME = 8,
-			CE_OVERRUN = 2,
-			CE_RXOVER = 1,
-			CE_RXPARITY = 4,
+			BREAK = 16,
+			FRAME = 8,
+			OVERRUN = 2,
+			RXOVER = 1,
+			RXPARITY = 4,
 		}
 		[AllowDuplicates]
 		public enum PURGE_COMM_FLAGS : uint32
 		{
-			PURGE_RXABORT = 2,
-			PURGE_RXCLEAR = 8,
-			PURGE_TXABORT = 1,
-			PURGE_TXCLEAR = 4,
+			RXABORT = 2,
+			RXCLEAR = 8,
+			TXABORT = 1,
+			TXCLEAR = 4,
 		}
 		[AllowDuplicates]
 		public enum COMM_EVENT_MASK : uint32
 		{
-			EV_BREAK = 64,
-			EV_CTS = 8,
-			EV_DSR = 16,
-			EV_ERR = 128,
-			EV_EVENT1 = 2048,
-			EV_EVENT2 = 4096,
-			EV_PERR = 512,
-			EV_RING = 256,
-			EV_RLSD = 32,
-			EV_RX80FULL = 1024,
-			EV_RXCHAR = 1,
-			EV_RXFLAG = 2,
-			EV_TXEMPTY = 4,
+			BREAK = 64,
+			CTS = 8,
+			DSR = 16,
+			ERR = 128,
+			EVENT1 = 2048,
+			EVENT2 = 4096,
+			PERR = 512,
+			RING = 256,
+			RLSD = 32,
+			RX80FULL = 1024,
+			RXCHAR = 1,
+			RXFLAG = 2,
+			TXEMPTY = 4,
 		}
 		[AllowDuplicates]
 		public enum ESCAPE_COMM_FUNCTION : uint32
@@ -159,17 +159,17 @@ namespace Win32
 		[AllowDuplicates]
 		public enum MODEMDEVCAPS_DIAL_OPTIONS : uint32
 		{
-			DIALOPTION_BILLING = 64,
-			DIALOPTION_DIALTONE = 256,
-			DIALOPTION_QUIET = 128,
+			BILLING = 64,
+			DIALTONE = 256,
+			QUIET = 128,
 		}
 		[AllowDuplicates]
 		public enum MODEMSETTINGS_SPEAKER_MODE : uint32
 		{
-			MDMSPKR_CALLSETUP = 8,
-			MDMSPKR_DIAL = 2,
-			MDMSPKR_OFF = 1,
-			MDMSPKR_ON = 4,
+			CALLSETUP = 8,
+			DIAL = 2,
+			OFF = 1,
+			ON = 4,
 		}
 		[AllowDuplicates]
 		public enum COMMPROP_STOP_PARITY : uint16
@@ -186,24 +186,24 @@ namespace Win32
 		[AllowDuplicates]
 		public enum MODEM_SPEAKER_VOLUME : uint32
 		{
-			MDMVOL_HIGH = 2,
-			MDMVOL_LOW = 0,
-			MDMVOL_MEDIUM = 1,
+			HIGH = 2,
+			LOW = 0,
+			MEDIUM = 1,
 		}
 		[AllowDuplicates]
 		public enum MODEMDEVCAPS_SPEAKER_VOLUME : uint32
 		{
-			MDMVOLFLAG_HIGH = 4,
-			MDMVOLFLAG_LOW = 1,
-			MDMVOLFLAG_MEDIUM = 2,
+			HIGH = 4,
+			LOW = 1,
+			MEDIUM = 2,
 		}
 		[AllowDuplicates]
 		public enum MODEMDEVCAPS_SPEAKER_MODE : uint32
 		{
-			MDMSPKRFLAG_CALLSETUP = 8,
-			MDMSPKRFLAG_DIAL = 2,
-			MDMSPKRFLAG_OFF = 1,
-			MDMSPKRFLAG_ON = 4,
+			CALLSETUP = 8,
+			DIAL = 2,
+			OFF = 1,
+			ON = 4,
 		}
 		
 		// --- Structs ---

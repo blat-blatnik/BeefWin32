@@ -14,69 +14,69 @@ namespace Win32
 		[AllowDuplicates]
 		public enum DEDUP_BACKUP_SUPPORT_PARAM_TYPE : int32
 		{
-			DEDUP_RECONSTRUCT_UNOPTIMIZED = 1,
-			DEDUP_RECONSTRUCT_OPTIMIZED = 2,
+			UNOPTIMIZED = 1,
+			OPTIMIZED = 2,
 		}
 		[AllowDuplicates]
 		public enum DEDUP_SET_PARAM_TYPE : int32
 		{
-			DEDUP_PT_MinChunkSizeBytes = 1,
-			DEDUP_PT_MaxChunkSizeBytes = 2,
-			DEDUP_PT_AvgChunkSizeBytes = 3,
-			DEDUP_PT_InvariantChunking = 4,
-			DEDUP_PT_DisableStrongHashComputation = 5,
+			MinChunkSizeBytes = 1,
+			MaxChunkSizeBytes = 2,
+			AvgChunkSizeBytes = 3,
+			InvariantChunking = 4,
+			DisableStrongHashComputation = 5,
 		}
 		[AllowDuplicates]
 		public enum DedupDataPortManagerOption : int32
 		{
-			DedupDataPortManagerOption_None = 0,
-			DedupDataPortManagerOption_AutoStart = 1,
-			DedupDataPortManagerOption_SkipReconciliation = 2,
+			None = 0,
+			AutoStart = 1,
+			SkipReconciliation = 2,
 		}
 		[AllowDuplicates]
 		public enum DedupDataPortVolumeStatus : int32
 		{
-			DedupDataPortVolumeStatus_Unknown = 0,
-			DedupDataPortVolumeStatus_NotEnabled = 1,
-			DedupDataPortVolumeStatus_NotAvailable = 2,
-			DedupDataPortVolumeStatus_Initializing = 3,
-			DedupDataPortVolumeStatus_Ready = 4,
-			DedupDataPortVolumeStatus_Maintenance = 5,
-			DedupDataPortVolumeStatus_Shutdown = 6,
+			Unknown = 0,
+			NotEnabled = 1,
+			NotAvailable = 2,
+			Initializing = 3,
+			Ready = 4,
+			Maintenance = 5,
+			Shutdown = 6,
 		}
 		[AllowDuplicates]
 		public enum DedupDataPortRequestStatus : int32
 		{
-			DedupDataPortRequestStatus_Unknown = 0,
-			DedupDataPortRequestStatus_Queued = 1,
-			DedupDataPortRequestStatus_Processing = 2,
-			DedupDataPortRequestStatus_Partial = 3,
-			DedupDataPortRequestStatus_Complete = 4,
-			DedupDataPortRequestStatus_Failed = 5,
+			Unknown = 0,
+			Queued = 1,
+			Processing = 2,
+			Partial = 3,
+			Complete = 4,
+			Failed = 5,
 		}
 		[AllowDuplicates]
 		public enum DedupChunkFlags : int32
 		{
-			DedupChunkFlags_None = 0,
-			DedupChunkFlags_Compressed = 1,
+			None = 0,
+			Compressed = 1,
 		}
 		[AllowDuplicates]
 		public enum DedupChunkingAlgorithm : int32
 		{
-			DedupChunkingAlgorithm_Unknonwn = 0,
-			DedupChunkingAlgorithm_V1 = 1,
+			Unknonwn = 0,
+			V1 = 1,
 		}
 		[AllowDuplicates]
 		public enum DedupHashingAlgorithm : int32
 		{
-			DedupHashingAlgorithm_Unknonwn = 0,
-			DedupHashingAlgorithm_V1 = 1,
+			Unknonwn = 0,
+			V1 = 1,
 		}
 		[AllowDuplicates]
 		public enum DedupCompressionAlgorithm : int32
 		{
-			DedupCompressionAlgorithm_Unknonwn = 0,
-			DedupCompressionAlgorithm_Xpress = 1,
+			Unknonwn = 0,
+			Xpress = 1,
 		}
 		
 		// --- Structs ---

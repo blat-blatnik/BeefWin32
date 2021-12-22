@@ -20,15 +20,15 @@ namespace Win32
 		[AllowDuplicates]
 		public enum EDefaultDevmodeType : int32
 		{
-			kUserDefaultDevmode = 0,
-			kPrinterDefaultDevmode = 1,
+			UserDefaultDevmode = 0,
+			PrinterDefaultDevmode = 1,
 		}
 		[AllowDuplicates]
 		public enum EPrintTicketScope : int32
 		{
-			kPTPageScope = 0,
-			kPTDocumentScope = 1,
-			kPTJobScope = 2,
+			PageScope = 0,
+			DocumentScope = 1,
+			JobScope = 2,
 		}
 		
 		// --- Functions ---

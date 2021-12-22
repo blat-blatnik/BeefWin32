@@ -20,104 +20,104 @@ namespace Win32
 		[AllowDuplicates]
 		public enum EC_SUBSCRIPTION_PROPERTY_ID : int32
 		{
-			EcSubscriptionEnabled = 0,
-			EcSubscriptionEventSources = 1,
-			EcSubscriptionEventSourceAddress = 2,
-			EcSubscriptionEventSourceEnabled = 3,
-			EcSubscriptionEventSourceUserName = 4,
-			EcSubscriptionEventSourcePassword = 5,
-			EcSubscriptionDescription = 6,
-			EcSubscriptionURI = 7,
-			EcSubscriptionConfigurationMode = 8,
-			EcSubscriptionExpires = 9,
-			EcSubscriptionQuery = 10,
-			EcSubscriptionTransportName = 11,
-			EcSubscriptionTransportPort = 12,
-			EcSubscriptionDeliveryMode = 13,
-			EcSubscriptionDeliveryMaxItems = 14,
-			EcSubscriptionDeliveryMaxLatencyTime = 15,
-			EcSubscriptionHeartbeatInterval = 16,
-			EcSubscriptionLocale = 17,
-			EcSubscriptionContentFormat = 18,
-			EcSubscriptionLogFile = 19,
-			EcSubscriptionPublisherName = 20,
-			EcSubscriptionCredentialsType = 21,
-			EcSubscriptionCommonUserName = 22,
-			EcSubscriptionCommonPassword = 23,
-			EcSubscriptionHostName = 24,
-			EcSubscriptionReadExistingEvents = 25,
-			EcSubscriptionDialect = 26,
-			EcSubscriptionType = 27,
-			EcSubscriptionAllowedIssuerCAs = 28,
-			EcSubscriptionAllowedSubjects = 29,
-			EcSubscriptionDeniedSubjects = 30,
-			EcSubscriptionAllowedSourceDomainComputers = 31,
-			EcSubscriptionPropertyIdEND = 32,
+			Enabled = 0,
+			EventSources = 1,
+			EventSourceAddress = 2,
+			EventSourceEnabled = 3,
+			EventSourceUserName = 4,
+			EventSourcePassword = 5,
+			Description = 6,
+			URI = 7,
+			ConfigurationMode = 8,
+			Expires = 9,
+			Query = 10,
+			TransportName = 11,
+			TransportPort = 12,
+			DeliveryMode = 13,
+			DeliveryMaxItems = 14,
+			DeliveryMaxLatencyTime = 15,
+			HeartbeatInterval = 16,
+			Locale = 17,
+			ContentFormat = 18,
+			LogFile = 19,
+			PublisherName = 20,
+			CredentialsType = 21,
+			CommonUserName = 22,
+			CommonPassword = 23,
+			HostName = 24,
+			ReadExistingEvents = 25,
+			Dialect = 26,
+			Type = 27,
+			AllowedIssuerCAs = 28,
+			AllowedSubjects = 29,
+			DeniedSubjects = 30,
+			AllowedSourceDomainComputers = 31,
+			PropertyIdEND = 32,
 		}
 		[AllowDuplicates]
 		public enum EC_SUBSCRIPTION_CREDENTIALS_TYPE : int32
 		{
-			EcSubscriptionCredDefault = 0,
-			EcSubscriptionCredNegotiate = 1,
-			EcSubscriptionCredDigest = 2,
-			EcSubscriptionCredBasic = 3,
-			EcSubscriptionCredLocalMachine = 4,
+			Default = 0,
+			Negotiate = 1,
+			Digest = 2,
+			Basic = 3,
+			LocalMachine = 4,
 		}
 		[AllowDuplicates]
 		public enum EC_SUBSCRIPTION_TYPE : int32
 		{
-			EcSubscriptionTypeSourceInitiated = 0,
-			EcSubscriptionTypeCollectorInitiated = 1,
+			SourceInitiated = 0,
+			CollectorInitiated = 1,
 		}
 		[AllowDuplicates]
 		public enum EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID : int32
 		{
-			EcSubscriptionRunTimeStatusActive = 0,
-			EcSubscriptionRunTimeStatusLastError = 1,
-			EcSubscriptionRunTimeStatusLastErrorMessage = 2,
-			EcSubscriptionRunTimeStatusLastErrorTime = 3,
-			EcSubscriptionRunTimeStatusNextRetryTime = 4,
-			EcSubscriptionRunTimeStatusEventSources = 5,
-			EcSubscriptionRunTimeStatusLastHeartbeatTime = 6,
-			EcSubscriptionRunTimeStatusInfoIdEND = 7,
+			Active = 0,
+			LastError = 1,
+			LastErrorMessage = 2,
+			LastErrorTime = 3,
+			NextRetryTime = 4,
+			EventSources = 5,
+			LastHeartbeatTime = 6,
+			InfoIdEND = 7,
 		}
 		[AllowDuplicates]
 		public enum EC_VARIANT_TYPE : int32
 		{
-			EcVarTypeNull = 0,
-			EcVarTypeBoolean = 1,
-			EcVarTypeUInt32 = 2,
-			EcVarTypeDateTime = 3,
-			EcVarTypeString = 4,
-			EcVarObjectArrayPropertyHandle = 5,
+			TypeNull = 0,
+			TypeBoolean = 1,
+			TypeUInt32 = 2,
+			TypeDateTime = 3,
+			TypeString = 4,
+			ObjectArrayPropertyHandle = 5,
 		}
 		[AllowDuplicates]
 		public enum EC_SUBSCRIPTION_CONFIGURATION_MODE : int32
 		{
-			EcConfigurationModeNormal = 0,
-			EcConfigurationModeCustom = 1,
-			EcConfigurationModeMinLatency = 2,
-			EcConfigurationModeMinBandwidth = 3,
+			Normal = 0,
+			Custom = 1,
+			MinLatency = 2,
+			MinBandwidth = 3,
 		}
 		[AllowDuplicates]
 		public enum EC_SUBSCRIPTION_DELIVERY_MODE : int32
 		{
-			EcDeliveryModePull = 1,
-			EcDeliveryModePush = 2,
+			ll = 1,
+			sh = 2,
 		}
 		[AllowDuplicates]
 		public enum EC_SUBSCRIPTION_CONTENT_FORMAT : int32
 		{
-			EcContentFormatEvents = 1,
-			EcContentFormatRenderedText = 2,
+			Events = 1,
+			RenderedText = 2,
 		}
 		[AllowDuplicates]
 		public enum EC_SUBSCRIPTION_RUNTIME_STATUS_ACTIVE_STATUS : int32
 		{
-			EcRuntimeStatusActiveStatusDisabled = 1,
-			EcRuntimeStatusActiveStatusActive = 2,
-			EcRuntimeStatusActiveStatusInactive = 3,
-			EcRuntimeStatusActiveStatusTrying = 4,
+			Disabled = 1,
+			Active = 2,
+			Inactive = 3,
+			Trying = 4,
 		}
 		
 		// --- Structs ---

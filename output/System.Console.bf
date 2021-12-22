@@ -101,9 +101,9 @@ namespace Win32
 		[AllowDuplicates]
 		public enum STD_HANDLE : uint32
 		{
-			STD_INPUT_HANDLE = 4294967286,
-			STD_OUTPUT_HANDLE = 4294967285,
-			STD_ERROR_HANDLE = 4294967284,
+			INPUT_HANDLE = 4294967286,
+			OUTPUT_HANDLE = 4294967285,
+			ERROR_HANDLE = 4294967284,
 		}
 		
 		// --- Function Pointers ---

@@ -22,47 +22,47 @@ namespace Win32
 		[AllowDuplicates]
 		public enum DPI_AWARENESS : int32
 		{
-			DPI_AWARENESS_INVALID = -1,
-			DPI_AWARENESS_UNAWARE = 0,
-			DPI_AWARENESS_SYSTEM_AWARE = 1,
-			DPI_AWARENESS_PER_MONITOR_AWARE = 2,
+			INVALID = -1,
+			UNAWARE = 0,
+			SYSTEM_AWARE = 1,
+			PER_MONITOR_AWARE = 2,
 		}
 		[AllowDuplicates]
 		public enum DPI_HOSTING_BEHAVIOR : int32
 		{
-			DPI_HOSTING_BEHAVIOR_INVALID = -1,
-			DPI_HOSTING_BEHAVIOR_DEFAULT = 0,
-			DPI_HOSTING_BEHAVIOR_MIXED = 1,
+			INVALID = -1,
+			DEFAULT = 0,
+			MIXED = 1,
 		}
 		[AllowDuplicates]
 		public enum DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS : uint32
 		{
-			DCDC_DEFAULT = 0,
-			DCDC_DISABLE_FONT_UPDATE = 1,
-			DCDC_DISABLE_RELAYOUT = 2,
+			EFAULT = 0,
+			ISABLE_FONT_UPDATE = 1,
+			ISABLE_RELAYOUT = 2,
 		}
 		[AllowDuplicates]
 		public enum DIALOG_DPI_CHANGE_BEHAVIORS : uint32
 		{
-			DDC_DEFAULT = 0,
-			DDC_DISABLE_ALL = 1,
-			DDC_DISABLE_RESIZE = 2,
-			DDC_DISABLE_CONTROL_RELAYOUT = 4,
+			EFAULT = 0,
+			ISABLE_ALL = 1,
+			ISABLE_RESIZE = 2,
+			ISABLE_CONTROL_RELAYOUT = 4,
 		}
 		[AllowDuplicates]
 		public enum PROCESS_DPI_AWARENESS : int32
 		{
-			PROCESS_DPI_UNAWARE = 0,
-			PROCESS_SYSTEM_DPI_AWARE = 1,
-			PROCESS_PER_MONITOR_DPI_AWARE = 2,
+			DPI_UNAWARE = 0,
+			SYSTEM_DPI_AWARE = 1,
+			PER_MONITOR_DPI_AWARE = 2,
 		}
 		[AllowDuplicates]
 		public enum MONITOR_DPI_TYPE : int32
 		{
-			MDT_EFFECTIVE_DPI = 0,
-			MDT_ANGULAR_DPI = 1,
-			MDT_RAW_DPI = 2,
-			MDT_DEFAULT = 0,
+			EFFECTIVE_DPI = 0,
+			ANGULAR_DPI = 1,
+			RAW_DPI = 2,
+			DEFAULT = 0,
 		}
 		
 		// --- Functions ---

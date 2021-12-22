@@ -787,89 +787,89 @@ namespace Win32
 		[AllowDuplicates]
 		public enum NodeContainerType : int32
 		{
-			NodeContainerTypeSequence = 0,
-			NodeContainerTypeAlternative = 1,
+			Sequence = 0,
+			Alternative = 1,
 		}
 		[AllowDuplicates]
 		public enum SDP_TYPE : int32
 		{
-			SDP_TYPE_NIL = 0,
-			SDP_TYPE_UINT = 1,
-			SDP_TYPE_INT = 2,
-			SDP_TYPE_UUID = 3,
-			SDP_TYPE_STRING = 4,
-			SDP_TYPE_BOOLEAN = 5,
-			SDP_TYPE_SEQUENCE = 6,
-			SDP_TYPE_ALTERNATIVE = 7,
-			SDP_TYPE_URL = 8,
-			SDP_TYPE_CONTAINER = 32,
+			NIL = 0,
+			UINT = 1,
+			INT = 2,
+			UUID = 3,
+			STRING = 4,
+			BOOLEAN = 5,
+			SEQUENCE = 6,
+			ALTERNATIVE = 7,
+			URL = 8,
+			CONTAINER = 32,
 		}
 		[AllowDuplicates]
 		public enum SDP_SPECIFICTYPE : int32
 		{
-			SDP_ST_NONE = 0,
-			SDP_ST_UINT8 = 16,
-			SDP_ST_UINT16 = 272,
-			SDP_ST_UINT32 = 528,
-			SDP_ST_UINT64 = 784,
-			SDP_ST_UINT128 = 1040,
-			SDP_ST_INT8 = 32,
-			SDP_ST_INT16 = 288,
-			SDP_ST_INT32 = 544,
-			SDP_ST_INT64 = 800,
-			SDP_ST_INT128 = 1056,
-			SDP_ST_UUID16 = 304,
-			SDP_ST_UUID32 = 544,
-			SDP_ST_UUID128 = 1072,
+			NONE = 0,
+			UINT8 = 16,
+			UINT16 = 272,
+			UINT32 = 528,
+			UINT64 = 784,
+			UINT128 = 1040,
+			INT8 = 32,
+			INT16 = 288,
+			INT32 = 544,
+			INT64 = 800,
+			INT128 = 1056,
+			UUID16 = 304,
+			UUID32 = 544,
+			UUID128 = 1072,
 		}
 		[AllowDuplicates]
 		public enum IO_CAPABILITY : int32
 		{
-			IoCaps_DisplayOnly = 0,
-			IoCaps_DisplayYesNo = 1,
-			IoCaps_KeyboardOnly = 2,
-			IoCaps_NoInputNoOutput = 3,
-			IoCaps_Undefined = 255,
+			DisplayOnly = 0,
+			DisplayYesNo = 1,
+			KeyboardOnly = 2,
+			NoInputNoOutput = 3,
+			Undefined = 255,
 		}
 		[AllowDuplicates]
 		public enum AUTHENTICATION_REQUIREMENTS : int32
 		{
-			MITMProtectionNotRequired = 0,
-			MITMProtectionRequired = 1,
-			MITMProtectionNotRequiredBonding = 2,
-			MITMProtectionRequiredBonding = 3,
-			MITMProtectionNotRequiredGeneralBonding = 4,
-			MITMProtectionRequiredGeneralBonding = 5,
-			MITMProtectionNotDefined = 255,
+			NotRequired = 0,
+			Required = 1,
+			NotRequiredBonding = 2,
+			RequiredBonding = 3,
+			NotRequiredGeneralBonding = 4,
+			RequiredGeneralBonding = 5,
+			NotDefined = 255,
 		}
 		[AllowDuplicates]
 		public enum BLUETOOTH_AUTHENTICATION_METHOD : int32
 		{
-			BLUETOOTH_AUTHENTICATION_METHOD_LEGACY = 1,
-			BLUETOOTH_AUTHENTICATION_METHOD_OOB = 2,
-			BLUETOOTH_AUTHENTICATION_METHOD_NUMERIC_COMPARISON = 3,
-			BLUETOOTH_AUTHENTICATION_METHOD_PASSKEY_NOTIFICATION = 4,
-			BLUETOOTH_AUTHENTICATION_METHOD_PASSKEY = 5,
+			LEGACY = 1,
+			OOB = 2,
+			NUMERIC_COMPARISON = 3,
+			PASSKEY_NOTIFICATION = 4,
+			PASSKEY = 5,
 		}
 		[AllowDuplicates]
 		public enum BLUETOOTH_IO_CAPABILITY : int32
 		{
-			BLUETOOTH_IO_CAPABILITY_DISPLAYONLY = 0,
-			BLUETOOTH_IO_CAPABILITY_DISPLAYYESNO = 1,
-			BLUETOOTH_IO_CAPABILITY_KEYBOARDONLY = 2,
-			BLUETOOTH_IO_CAPABILITY_NOINPUTNOOUTPUT = 3,
-			BLUETOOTH_IO_CAPABILITY_UNDEFINED = 255,
+			DISPLAYONLY = 0,
+			DISPLAYYESNO = 1,
+			KEYBOARDONLY = 2,
+			NOINPUTNOOUTPUT = 3,
+			UNDEFINED = 255,
 		}
 		[AllowDuplicates]
 		public enum BLUETOOTH_AUTHENTICATION_REQUIREMENTS : int32
 		{
-			BLUETOOTH_MITM_ProtectionNotRequired = 0,
-			BLUETOOTH_MITM_ProtectionRequired = 1,
-			BLUETOOTH_MITM_ProtectionNotRequiredBonding = 2,
-			BLUETOOTH_MITM_ProtectionRequiredBonding = 3,
-			BLUETOOTH_MITM_ProtectionNotRequiredGeneralBonding = 4,
-			BLUETOOTH_MITM_ProtectionRequiredGeneralBonding = 5,
-			BLUETOOTH_MITM_ProtectionNotDefined = 255,
+			NotRequired = 0,
+			Required = 1,
+			NotRequiredBonding = 2,
+			RequiredBonding = 3,
+			NotRequiredGeneralBonding = 4,
+			RequiredGeneralBonding = 5,
+			NotDefined = 255,
 		}
 		
 		// --- Function Pointers ---

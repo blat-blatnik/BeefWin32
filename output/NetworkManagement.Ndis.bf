@@ -1844,99 +1844,99 @@ namespace Win32
 		[AllowDuplicates]
 		public enum NDIS_REQUEST_TYPE : int32
 		{
-			NdisRequestQueryInformation = 0,
-			NdisRequestSetInformation = 1,
-			NdisRequestQueryStatistics = 2,
-			NdisRequestOpen = 3,
-			NdisRequestClose = 4,
-			NdisRequestSend = 5,
-			NdisRequestTransferData = 6,
-			NdisRequestReset = 7,
-			NdisRequestGeneric1 = 8,
-			NdisRequestGeneric2 = 9,
-			NdisRequestGeneric3 = 10,
-			NdisRequestGeneric4 = 11,
+			QueryInformation = 0,
+			SetInformation = 1,
+			QueryStatistics = 2,
+			Open = 3,
+			Close = 4,
+			Send = 5,
+			TransferData = 6,
+			Reset = 7,
+			Generic1 = 8,
+			Generic2 = 9,
+			Generic3 = 10,
+			Generic4 = 11,
 		}
 		[AllowDuplicates]
 		public enum NDIS_INTERRUPT_MODERATION : int32
 		{
-			NdisInterruptModerationUnknown = 0,
-			NdisInterruptModerationNotSupported = 1,
-			NdisInterruptModerationEnabled = 2,
-			NdisInterruptModerationDisabled = 3,
+			Unknown = 0,
+			NotSupported = 1,
+			Enabled = 2,
+			Disabled = 3,
 		}
 		[AllowDuplicates]
 		public enum NDIS_802_11_STATUS_TYPE : int32
 		{
-			Ndis802_11StatusType_Authentication = 0,
-			Ndis802_11StatusType_MediaStreamMode = 1,
-			Ndis802_11StatusType_PMKID_CandidateList = 2,
-			Ndis802_11StatusTypeMax = 3,
+			_Authentication = 0,
+			_MediaStreamMode = 1,
+			_PMKID_CandidateList = 2,
+			Max = 3,
 		}
 		[AllowDuplicates]
 		public enum NDIS_802_11_NETWORK_TYPE : int32
 		{
-			Ndis802_11FH = 0,
-			Ndis802_11DS = 1,
-			Ndis802_11OFDM5 = 2,
-			Ndis802_11OFDM24 = 3,
-			Ndis802_11Automode = 4,
-			Ndis802_11NetworkTypeMax = 5,
+			FH = 0,
+			DS = 1,
+			OFDM5 = 2,
+			OFDM24 = 3,
+			Automode = 4,
+			NetworkTypeMax = 5,
 		}
 		[AllowDuplicates]
 		public enum NDIS_802_11_POWER_MODE : int32
 		{
-			Ndis802_11PowerModeCAM = 0,
-			Ndis802_11PowerModeMAX_PSP = 1,
-			Ndis802_11PowerModeFast_PSP = 2,
-			Ndis802_11PowerModeMax = 3,
+			CAM = 0,
+			MAX_PSP = 1,
+			Fast_PSP = 2,
+			Max = 3,
 		}
 		[AllowDuplicates]
 		public enum NDIS_802_11_NETWORK_INFRASTRUCTURE : int32
 		{
-			Ndis802_11IBSS = 0,
-			Ndis802_11Infrastructure = 1,
-			Ndis802_11AutoUnknown = 2,
-			Ndis802_11InfrastructureMax = 3,
+			IBSS = 0,
+			Infrastructure = 1,
+			AutoUnknown = 2,
+			InfrastructureMax = 3,
 		}
 		[AllowDuplicates]
 		public enum NDIS_802_11_AUTHENTICATION_MODE : int32
 		{
-			Ndis802_11AuthModeOpen = 0,
-			Ndis802_11AuthModeShared = 1,
-			Ndis802_11AuthModeAutoSwitch = 2,
-			Ndis802_11AuthModeWPA = 3,
-			Ndis802_11AuthModeWPAPSK = 4,
-			Ndis802_11AuthModeWPANone = 5,
-			Ndis802_11AuthModeWPA2 = 6,
-			Ndis802_11AuthModeWPA2PSK = 7,
-			Ndis802_11AuthModeWPA3 = 8,
-			Ndis802_11AuthModeWPA3Ent192 = 8,
-			Ndis802_11AuthModeWPA3SAE = 9,
-			Ndis802_11AuthModeWPA3Ent = 10,
-			Ndis802_11AuthModeMax = 11,
+			Open = 0,
+			Shared = 1,
+			AutoSwitch = 2,
+			WPA = 3,
+			WPAPSK = 4,
+			WPANone = 5,
+			WPA2 = 6,
+			WPA2PSK = 7,
+			WPA3 = 8,
+			WPA3Ent192 = 8,
+			WPA3SAE = 9,
+			WPA3Ent = 10,
+			Max = 11,
 		}
 		[AllowDuplicates]
 		public enum NDIS_802_11_PRIVACY_FILTER : int32
 		{
-			Ndis802_11PrivFilterAcceptAll = 0,
-			Ndis802_11PrivFilter8021xWEP = 1,
+			AcceptAll = 0,
+			_8021xWEP = 1,
 		}
 		[AllowDuplicates]
 		public enum NDIS_802_11_WEP_STATUS : int32
 		{
-			Ndis802_11WEPEnabled = 0,
-			Ndis802_11Encryption1Enabled = 0,
-			Ndis802_11WEPDisabled = 1,
-			Ndis802_11EncryptionDisabled = 1,
-			Ndis802_11WEPKeyAbsent = 2,
-			Ndis802_11Encryption1KeyAbsent = 2,
-			Ndis802_11WEPNotSupported = 3,
-			Ndis802_11EncryptionNotSupported = 3,
-			Ndis802_11Encryption2Enabled = 4,
-			Ndis802_11Encryption2KeyAbsent = 5,
-			Ndis802_11Encryption3Enabled = 6,
-			Ndis802_11Encryption3KeyAbsent = 7,
+			WEPEnabled = 0,
+			Encryption1Enabled = 0,
+			WEPDisabled = 1,
+			EncryptionDisabled = 1,
+			WEPKeyAbsent = 2,
+			Encryption1KeyAbsent = 2,
+			WEPNotSupported = 3,
+			EncryptionNotSupported = 3,
+			Encryption2Enabled = 4,
+			Encryption2KeyAbsent = 5,
+			Encryption3Enabled = 6,
+			Encryption3KeyAbsent = 7,
 		}
 		[AllowDuplicates]
 		public enum NDIS_802_11_RELOAD_DEFAULTS : int32
@@ -1946,17 +1946,17 @@ namespace Win32
 		[AllowDuplicates]
 		public enum NDIS_802_11_MEDIA_STREAM_MODE : int32
 		{
-			Ndis802_11MediaStreamOff = 0,
-			Ndis802_11MediaStreamOn = 1,
+			ff = 0,
+			n = 1,
 		}
 		[AllowDuplicates]
 		public enum NDIS_802_11_RADIO_STATUS : int32
 		{
-			Ndis802_11RadioStatusOn = 0,
-			Ndis802_11RadioStatusHardwareOff = 1,
-			Ndis802_11RadioStatusSoftwareOff = 2,
-			Ndis802_11RadioStatusHardwareSoftwareOff = 3,
-			Ndis802_11RadioStatusMax = 4,
+			On = 0,
+			HardwareOff = 1,
+			SoftwareOff = 2,
+			HardwareSoftwareOff = 3,
+			Max = 4,
 		}
 		[AllowDuplicates]
 		public enum OFFLOAD_OPERATION_E : int32
@@ -1967,270 +1967,270 @@ namespace Win32
 		[AllowDuplicates]
 		public enum OFFLOAD_CONF_ALGO : int32
 		{
-			OFFLOAD_IPSEC_CONF_NONE = 0,
-			OFFLOAD_IPSEC_CONF_DES = 1,
-			OFFLOAD_IPSEC_CONF_RESERVED = 2,
-			OFFLOAD_IPSEC_CONF_3_DES = 3,
-			OFFLOAD_IPSEC_CONF_MAX = 4,
+			NONE = 0,
+			DES = 1,
+			RESERVED = 2,
+			_3_DES = 3,
+			MAX = 4,
 		}
 		[AllowDuplicates]
 		public enum OFFLOAD_INTEGRITY_ALGO : int32
 		{
-			OFFLOAD_IPSEC_INTEGRITY_NONE = 0,
-			OFFLOAD_IPSEC_INTEGRITY_MD5 = 1,
-			OFFLOAD_IPSEC_INTEGRITY_SHA = 2,
-			OFFLOAD_IPSEC_INTEGRITY_MAX = 3,
+			NONE = 0,
+			MD5 = 1,
+			SHA = 2,
+			MAX = 3,
 		}
 		[AllowDuplicates]
 		public enum UDP_ENCAP_TYPE : int32
 		{
-			OFFLOAD_IPSEC_UDPESP_ENCAPTYPE_IKE = 0,
-			OFFLOAD_IPSEC_UDPESP_ENCAPTYPE_OTHER = 1,
+			IKE = 0,
+			OTHER = 1,
 		}
 		[AllowDuplicates]
 		public enum NDIS_MEDIUM : int32
 		{
-			NdisMedium802_3 = 0,
-			NdisMedium802_5 = 1,
-			NdisMediumFddi = 2,
-			NdisMediumWan = 3,
-			NdisMediumLocalTalk = 4,
-			NdisMediumDix = 5,
-			NdisMediumArcnetRaw = 6,
-			NdisMediumArcnet878_2 = 7,
-			NdisMediumAtm = 8,
-			NdisMediumWirelessWan = 9,
-			NdisMediumIrda = 10,
-			NdisMediumBpc = 11,
-			NdisMediumCoWan = 12,
-			NdisMedium1394 = 13,
-			NdisMediumInfiniBand = 14,
-			NdisMediumTunnel = 15,
-			NdisMediumNative802_11 = 16,
-			NdisMediumLoopback = 17,
-			NdisMediumWiMAX = 18,
-			NdisMediumIP = 19,
-			NdisMediumMax = 20,
+			_802_3 = 0,
+			_802_5 = 1,
+			Fddi = 2,
+			Wan = 3,
+			LocalTalk = 4,
+			Dix = 5,
+			ArcnetRaw = 6,
+			Arcnet878_2 = 7,
+			Atm = 8,
+			WirelessWan = 9,
+			Irda = 10,
+			Bpc = 11,
+			CoWan = 12,
+			_1394 = 13,
+			InfiniBand = 14,
+			Tunnel = 15,
+			Native802_11 = 16,
+			Loopback = 17,
+			WiMAX = 18,
+			IP = 19,
+			Max = 20,
 		}
 		[AllowDuplicates]
 		public enum NDIS_PHYSICAL_MEDIUM : int32
 		{
-			NdisPhysicalMediumUnspecified = 0,
-			NdisPhysicalMediumWirelessLan = 1,
-			NdisPhysicalMediumCableModem = 2,
-			NdisPhysicalMediumPhoneLine = 3,
-			NdisPhysicalMediumPowerLine = 4,
-			NdisPhysicalMediumDSL = 5,
-			NdisPhysicalMediumFibreChannel = 6,
-			NdisPhysicalMedium1394 = 7,
-			NdisPhysicalMediumWirelessWan = 8,
-			NdisPhysicalMediumNative802_11 = 9,
-			NdisPhysicalMediumBluetooth = 10,
-			NdisPhysicalMediumInfiniband = 11,
-			NdisPhysicalMediumWiMax = 12,
-			NdisPhysicalMediumUWB = 13,
-			NdisPhysicalMedium802_3 = 14,
-			NdisPhysicalMedium802_5 = 15,
-			NdisPhysicalMediumIrda = 16,
-			NdisPhysicalMediumWiredWAN = 17,
-			NdisPhysicalMediumWiredCoWan = 18,
-			NdisPhysicalMediumOther = 19,
-			NdisPhysicalMediumNative802_15_4 = 20,
-			NdisPhysicalMediumMax = 21,
+			Unspecified = 0,
+			WirelessLan = 1,
+			CableModem = 2,
+			PhoneLine = 3,
+			PowerLine = 4,
+			DSL = 5,
+			FibreChannel = 6,
+			_1394 = 7,
+			WirelessWan = 8,
+			Native802_11 = 9,
+			Bluetooth = 10,
+			Infiniband = 11,
+			WiMax = 12,
+			UWB = 13,
+			_802_3 = 14,
+			_802_5 = 15,
+			Irda = 16,
+			WiredWAN = 17,
+			WiredCoWan = 18,
+			Other = 19,
+			Native802_15_4 = 20,
+			Max = 21,
 		}
 		[AllowDuplicates]
 		public enum NDIS_HARDWARE_STATUS : int32
 		{
-			NdisHardwareStatusReady = 0,
-			NdisHardwareStatusInitializing = 1,
-			NdisHardwareStatusReset = 2,
-			NdisHardwareStatusClosing = 3,
-			NdisHardwareStatusNotReady = 4,
+			Ready = 0,
+			Initializing = 1,
+			Reset = 2,
+			Closing = 3,
+			NotReady = 4,
 		}
 		[AllowDuplicates]
 		public enum NDIS_DEVICE_POWER_STATE : int32
 		{
-			NdisDeviceStateUnspecified = 0,
-			NdisDeviceStateD0 = 1,
-			NdisDeviceStateD1 = 2,
-			NdisDeviceStateD2 = 3,
-			NdisDeviceStateD3 = 4,
-			NdisDeviceStateMaximum = 5,
+			Unspecified = 0,
+			D0 = 1,
+			D1 = 2,
+			D2 = 3,
+			D3 = 4,
+			Maximum = 5,
 		}
 		[AllowDuplicates]
 		public enum NDIS_FDDI_ATTACHMENT_TYPE : int32
 		{
-			NdisFddiTypeIsolated = 1,
-			NdisFddiTypeLocalA = 2,
-			NdisFddiTypeLocalB = 3,
-			NdisFddiTypeLocalAB = 4,
-			NdisFddiTypeLocalS = 5,
-			NdisFddiTypeWrapA = 6,
-			NdisFddiTypeWrapB = 7,
-			NdisFddiTypeWrapAB = 8,
-			NdisFddiTypeWrapS = 9,
-			NdisFddiTypeCWrapA = 10,
-			NdisFddiTypeCWrapB = 11,
-			NdisFddiTypeCWrapS = 12,
-			NdisFddiTypeThrough = 13,
+			Isolated = 1,
+			LocalA = 2,
+			LocalB = 3,
+			LocalAB = 4,
+			LocalS = 5,
+			WrapA = 6,
+			WrapB = 7,
+			WrapAB = 8,
+			WrapS = 9,
+			CWrapA = 10,
+			CWrapB = 11,
+			CWrapS = 12,
+			Through = 13,
 		}
 		[AllowDuplicates]
 		public enum NDIS_FDDI_RING_MGT_STATE : int32
 		{
-			NdisFddiRingIsolated = 1,
-			NdisFddiRingNonOperational = 2,
-			NdisFddiRingOperational = 3,
-			NdisFddiRingDetect = 4,
-			NdisFddiRingNonOperationalDup = 5,
-			NdisFddiRingOperationalDup = 6,
-			NdisFddiRingDirected = 7,
-			NdisFddiRingTrace = 8,
+			Isolated = 1,
+			NonOperational = 2,
+			Operational = 3,
+			Detect = 4,
+			NonOperationalDup = 5,
+			OperationalDup = 6,
+			Directed = 7,
+			Trace = 8,
 		}
 		[AllowDuplicates]
 		public enum NDIS_FDDI_LCONNECTION_STATE : int32
 		{
-			NdisFddiStateOff = 1,
-			NdisFddiStateBreak = 2,
-			NdisFddiStateTrace = 3,
-			NdisFddiStateConnect = 4,
-			NdisFddiStateNext = 5,
-			NdisFddiStateSignal = 6,
-			NdisFddiStateJoin = 7,
-			NdisFddiStateVerify = 8,
-			NdisFddiStateActive = 9,
-			NdisFddiStateMaintenance = 10,
+			Off = 1,
+			Break = 2,
+			Trace = 3,
+			Connect = 4,
+			Next = 5,
+			Signal = 6,
+			Join = 7,
+			Verify = 8,
+			Active = 9,
+			Maintenance = 10,
 		}
 		[AllowDuplicates]
 		public enum NDIS_WAN_MEDIUM_SUBTYPE : int32
 		{
-			NdisWanMediumHub = 0,
-			NdisWanMediumX_25 = 1,
-			NdisWanMediumIsdn = 2,
-			NdisWanMediumSerial = 3,
-			NdisWanMediumFrameRelay = 4,
-			NdisWanMediumAtm = 5,
-			NdisWanMediumSonet = 6,
-			NdisWanMediumSW56K = 7,
-			NdisWanMediumPPTP = 8,
-			NdisWanMediumL2TP = 9,
-			NdisWanMediumIrda = 10,
-			NdisWanMediumParallel = 11,
-			NdisWanMediumPppoe = 12,
-			NdisWanMediumSSTP = 13,
-			NdisWanMediumAgileVPN = 14,
-			NdisWanMediumGre = 15,
-			NdisWanMediumSubTypeMax = 16,
+			Hub = 0,
+			X_25 = 1,
+			Isdn = 2,
+			Serial = 3,
+			FrameRelay = 4,
+			Atm = 5,
+			Sonet = 6,
+			SW56K = 7,
+			PPTP = 8,
+			L2TP = 9,
+			Irda = 10,
+			Parallel = 11,
+			Pppoe = 12,
+			SSTP = 13,
+			AgileVPN = 14,
+			Gre = 15,
+			SubTypeMax = 16,
 		}
 		[AllowDuplicates]
 		public enum NDIS_WAN_HEADER_FORMAT : int32
 		{
-			NdisWanHeaderNative = 0,
-			NdisWanHeaderEthernet = 1,
+			Native = 0,
+			Ethernet = 1,
 		}
 		[AllowDuplicates]
 		public enum NDIS_WAN_QUALITY : int32
 		{
-			NdisWanRaw = 0,
-			NdisWanErrorControl = 1,
-			NdisWanReliable = 2,
+			Raw = 0,
+			ErrorControl = 1,
+			Reliable = 2,
 		}
 		[AllowDuplicates]
 		public enum NDIS_802_5_RING_STATE : int32
 		{
-			NdisRingStateOpened = 1,
-			NdisRingStateClosed = 2,
-			NdisRingStateOpening = 3,
-			NdisRingStateClosing = 4,
-			NdisRingStateOpenFailure = 5,
-			NdisRingStateRingFailure = 6,
+			Opened = 1,
+			Closed = 2,
+			Opening = 3,
+			Closing = 4,
+			OpenFailure = 5,
+			RingFailure = 6,
 		}
 		[AllowDuplicates]
 		public enum NDIS_MEDIA_STATE : int32
 		{
-			NdisMediaStateConnected = 0,
-			NdisMediaStateDisconnected = 1,
+			Connected = 0,
+			Disconnected = 1,
 		}
 		[AllowDuplicates]
 		public enum NDIS_SUPPORTED_PAUSE_FUNCTIONS : int32
 		{
-			NdisPauseFunctionsUnsupported = 0,
-			NdisPauseFunctionsSendOnly = 1,
-			NdisPauseFunctionsReceiveOnly = 2,
-			NdisPauseFunctionsSendAndReceive = 3,
-			NdisPauseFunctionsUnknown = 4,
+			Unsupported = 0,
+			SendOnly = 1,
+			ReceiveOnly = 2,
+			SendAndReceive = 3,
+			Unknown = 4,
 		}
 		[AllowDuplicates]
 		public enum NDIS_PORT_TYPE : int32
 		{
-			NdisPortTypeUndefined = 0,
-			NdisPortTypeBridge = 1,
-			NdisPortTypeRasConnection = 2,
-			NdisPortType8021xSupplicant = 3,
-			NdisPortTypeMax = 4,
+			Undefined = 0,
+			Bridge = 1,
+			RasConnection = 2,
+			_8021xSupplicant = 3,
+			Max = 4,
 		}
 		[AllowDuplicates]
 		public enum NDIS_PORT_AUTHORIZATION_STATE : int32
 		{
-			NdisPortAuthorizationUnknown = 0,
-			NdisPortAuthorized = 1,
-			NdisPortUnauthorized = 2,
-			NdisPortReauthorizing = 3,
+			AuthorizationUnknown = 0,
+			Authorized = 1,
+			Unauthorized = 2,
+			Reauthorizing = 3,
 		}
 		[AllowDuplicates]
 		public enum NDIS_PORT_CONTROL_STATE : int32
 		{
-			NdisPortControlStateUnknown = 0,
-			NdisPortControlStateControlled = 1,
-			NdisPortControlStateUncontrolled = 2,
+			Unknown = 0,
+			Controlled = 1,
+			Uncontrolled = 2,
 		}
 		[AllowDuplicates]
 		public enum NDIS_NETWORK_CHANGE_TYPE : int32
 		{
-			NdisPossibleNetworkChange = 1,
-			NdisDefinitelyNetworkChange = 2,
-			NdisNetworkChangeFromMediaConnect = 3,
-			NdisNetworkChangeMax = 4,
+			PossibleNetworkChange = 1,
+			DefinitelyNetworkChange = 2,
+			NetworkChangeFromMediaConnect = 3,
+			NetworkChangeMax = 4,
 		}
 		[AllowDuplicates]
 		public enum NDIS_PROCESSOR_VENDOR : int32
 		{
-			NdisProcessorVendorUnknown = 0,
-			NdisProcessorVendorGenuinIntel = 1,
-			NdisProcessorVendorGenuineIntel = 1,
-			NdisProcessorVendorAuthenticAMD = 2,
+			Unknown = 0,
+			GenuinIntel = 1,
+			GenuineIntel = 1,
+			AuthenticAMD = 2,
 		}
 		[AllowDuplicates]
 		public enum NDK_RDMA_TECHNOLOGY : int32
 		{
-			NdkUndefined = 0,
-			NdkiWarp = 1,
-			NdkInfiniBand = 2,
-			NdkRoCE = 3,
-			NdkRoCEv2 = 4,
-			NdkMaxTechnology = 5,
+			Undefined = 0,
+			iWarp = 1,
+			InfiniBand = 2,
+			RoCE = 3,
+			RoCEv2 = 4,
+			MaxTechnology = 5,
 		}
 		[AllowDuplicates]
 		public enum DOT11EXT_IHV_CONNECTION_PHASE : int32
 		{
-			connection_phase_any = 0,
-			connection_phase_initial_connection = 1,
-			connection_phase_post_l3_connection = 2,
+			any = 0,
+			initial_connection = 1,
+			post_l3_connection = 2,
 		}
 		[AllowDuplicates]
 		public enum DOT11_MSONEX_RESULT : int32
 		{
-			DOT11_MSONEX_SUCCESS = 0,
-			DOT11_MSONEX_FAILURE = 1,
-			DOT11_MSONEX_IN_PROGRESS = 2,
+			SUCCESS = 0,
+			FAILURE = 1,
+			IN_PROGRESS = 2,
 		}
 		[AllowDuplicates]
 		public enum DOT11EXT_IHV_INDICATION_TYPE : int32
 		{
-			IndicationTypeNicSpecificNotification = 0,
-			IndicationTypePmkidCandidateList = 1,
-			IndicationTypeTkipMicFailure = 2,
-			IndicationTypePhyStateChange = 3,
-			IndicationTypeLinkQuality = 4,
+			NicSpecificNotification = 0,
+			PmkidCandidateList = 1,
+			TkipMicFailure = 2,
+			PhyStateChange = 3,
+			LinkQuality = 4,
 		}
 		
 		// --- Function Pointers ---

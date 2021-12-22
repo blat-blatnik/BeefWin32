@@ -30,10 +30,10 @@ namespace Win32
 		[AllowDuplicates]
 		public enum EXCEPTION_DISPOSITION : int32
 		{
-			ExceptionContinueExecution = 0,
-			ExceptionContinueSearch = 1,
-			ExceptionNestedException = 2,
-			ExceptionCollidedUnwind = 3,
+			ContinueExecution = 0,
+			ContinueSearch = 1,
+			NestedException = 2,
+			CollidedUnwind = 3,
 		}
 		[AllowDuplicates]
 		public enum EVENT_TYPE : int32
@@ -50,18 +50,18 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WAIT_TYPE : int32
 		{
-			WaitAll = 0,
-			WaitAny = 1,
-			WaitNotification = 2,
-			WaitDequeue = 3,
-			WaitDpc = 4,
+			All = 0,
+			Any = 1,
+			Notification = 2,
+			Dequeue = 3,
+			Dpc = 4,
 		}
 		[AllowDuplicates]
 		public enum NT_PRODUCT_TYPE : int32
 		{
-			NtProductWinNt = 1,
-			NtProductLanManNt = 2,
-			NtProductServer = 3,
+			WinNt = 1,
+			LanManNt = 2,
+			Server = 3,
 		}
 		[AllowDuplicates]
 		public enum SUITE_TYPE : int32

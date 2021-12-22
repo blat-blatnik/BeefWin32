@@ -108,58 +108,58 @@ namespace Win32
 		[AllowDuplicates]
 		public enum FLT_FILESYSTEM_TYPE : int32
 		{
-			FLT_FSTYPE_UNKNOWN = 0,
-			FLT_FSTYPE_RAW = 1,
-			FLT_FSTYPE_NTFS = 2,
-			FLT_FSTYPE_FAT = 3,
-			FLT_FSTYPE_CDFS = 4,
-			FLT_FSTYPE_UDFS = 5,
-			FLT_FSTYPE_LANMAN = 6,
-			FLT_FSTYPE_WEBDAV = 7,
-			FLT_FSTYPE_RDPDR = 8,
-			FLT_FSTYPE_NFS = 9,
-			FLT_FSTYPE_MS_NETWARE = 10,
-			FLT_FSTYPE_NETWARE = 11,
-			FLT_FSTYPE_BSUDF = 12,
-			FLT_FSTYPE_MUP = 13,
-			FLT_FSTYPE_RSFX = 14,
-			FLT_FSTYPE_ROXIO_UDF1 = 15,
-			FLT_FSTYPE_ROXIO_UDF2 = 16,
-			FLT_FSTYPE_ROXIO_UDF3 = 17,
-			FLT_FSTYPE_TACIT = 18,
-			FLT_FSTYPE_FS_REC = 19,
-			FLT_FSTYPE_INCD = 20,
-			FLT_FSTYPE_INCD_FAT = 21,
-			FLT_FSTYPE_EXFAT = 22,
-			FLT_FSTYPE_PSFS = 23,
-			FLT_FSTYPE_GPFS = 24,
-			FLT_FSTYPE_NPFS = 25,
-			FLT_FSTYPE_MSFS = 26,
-			FLT_FSTYPE_CSVFS = 27,
-			FLT_FSTYPE_REFS = 28,
-			FLT_FSTYPE_OPENAFS = 29,
-			FLT_FSTYPE_CIMFS = 30,
+			UNKNOWN = 0,
+			RAW = 1,
+			NTFS = 2,
+			FAT = 3,
+			CDFS = 4,
+			UDFS = 5,
+			LANMAN = 6,
+			WEBDAV = 7,
+			RDPDR = 8,
+			NFS = 9,
+			MS_NETWARE = 10,
+			NETWARE = 11,
+			BSUDF = 12,
+			MUP = 13,
+			RSFX = 14,
+			ROXIO_UDF1 = 15,
+			ROXIO_UDF2 = 16,
+			ROXIO_UDF3 = 17,
+			TACIT = 18,
+			FS_REC = 19,
+			INCD = 20,
+			INCD_FAT = 21,
+			EXFAT = 22,
+			PSFS = 23,
+			GPFS = 24,
+			NPFS = 25,
+			MSFS = 26,
+			CSVFS = 27,
+			REFS = 28,
+			OPENAFS = 29,
+			CIMFS = 30,
 		}
 		[AllowDuplicates]
 		public enum FILTER_INFORMATION_CLASS : int32
 		{
-			FilterFullInformation = 0,
-			FilterAggregateBasicInformation = 1,
-			FilterAggregateStandardInformation = 2,
+			FullInformation = 0,
+			AggregateBasicInformation = 1,
+			AggregateStandardInformation = 2,
 		}
 		[AllowDuplicates]
 		public enum FILTER_VOLUME_INFORMATION_CLASS : int32
 		{
-			FilterVolumeBasicInformation = 0,
-			FilterVolumeStandardInformation = 1,
+			BasicInformation = 0,
+			StandardInformation = 1,
 		}
 		[AllowDuplicates]
 		public enum INSTANCE_INFORMATION_CLASS : int32
 		{
-			InstanceBasicInformation = 0,
-			InstancePartialInformation = 1,
-			InstanceFullInformation = 2,
-			InstanceAggregateStandardInformation = 3,
+			BasicInformation = 0,
+			PartialInformation = 1,
+			FullInformation = 2,
+			AggregateStandardInformation = 3,
 		}
 		
 		// --- Structs ---

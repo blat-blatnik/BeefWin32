@@ -10,17 +10,17 @@ namespace Win32
 		[AllowDuplicates]
 		public enum ENTERPRISE_DATA_POLICIES : uint32
 		{
-			ENTERPRISE_POLICY_NONE = 0,
-			ENTERPRISE_POLICY_ALLOWED = 1,
-			ENTERPRISE_POLICY_ENLIGHTENED = 2,
-			ENTERPRISE_POLICY_EXEMPT = 4,
+			NONE = 0,
+			ALLOWED = 1,
+			ENLIGHTENED = 2,
+			EXEMPT = 4,
 		}
 		[AllowDuplicates]
 		public enum SRPHOSTING_TYPE : int32
 		{
-			SRPHOSTING_TYPE_NONE = 0,
-			SRPHOSTING_TYPE_WINHTTP = 1,
-			SRPHOSTING_TYPE_WININET = 2,
+			NONE = 0,
+			WINHTTP = 1,
+			WININET = 2,
 		}
 		[AllowDuplicates]
 		public enum SRPHOSTING_VERSION : int32

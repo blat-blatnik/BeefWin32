@@ -47,11 +47,11 @@ namespace Win32
 		[AllowDuplicates]
 		public enum XmlReadState : int32
 		{
-			XmlReadState_Initial = 0,
-			XmlReadState_Interactive = 1,
-			XmlReadState_Error = 2,
-			XmlReadState_EndOfFile = 3,
-			XmlReadState_Closed = 4,
+			Initial = 0,
+			Interactive = 1,
+			Error = 2,
+			EndOfFile = 3,
+			Closed = 4,
 		}
 		[AllowDuplicates]
 		public enum XmlReaderProperty : int32

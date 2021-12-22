@@ -241,8 +241,8 @@ namespace Win32
 		[AllowDuplicates]
 		public enum DEVPROPSTORE : int32
 		{
-			DEVPROP_STORE_SYSTEM = 0,
-			DEVPROP_STORE_USER = 1,
+			SYSTEM = 0,
+			USER = 1,
 		}
 		
 		// --- Structs ---

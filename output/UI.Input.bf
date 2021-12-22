@@ -14,54 +14,54 @@ namespace Win32
 		[AllowDuplicates]
 		public enum RAW_INPUT_DATA_COMMAND_FLAGS : uint32
 		{
-			RID_HEADER = 268435461,
-			RID_INPUT = 268435459,
+			HEADER = 268435461,
+			INPUT = 268435459,
 		}
 		[AllowDuplicates]
 		public enum RAW_INPUT_DEVICE_INFO_COMMAND : uint32
 		{
-			RIDI_PREPARSEDDATA = 536870917,
-			RIDI_DEVICENAME = 536870919,
-			RIDI_DEVICEINFO = 536870923,
+			PREPARSEDDATA = 536870917,
+			DEVICENAME = 536870919,
+			DEVICEINFO = 536870923,
 		}
 		[AllowDuplicates]
 		public enum RID_DEVICE_INFO_TYPE : uint32
 		{
-			RIM_TYPEMOUSE = 0,
-			RIM_TYPEKEYBOARD = 1,
-			RIM_TYPEHID = 2,
+			MOUSE = 0,
+			KEYBOARD = 1,
+			HID = 2,
 		}
 		[AllowDuplicates]
 		public enum RAWINPUTDEVICE_FLAGS : uint32
 		{
-			RIDEV_REMOVE = 1,
-			RIDEV_EXCLUDE = 16,
-			RIDEV_PAGEONLY = 32,
-			RIDEV_NOLEGACY = 48,
-			RIDEV_INPUTSINK = 256,
-			RIDEV_CAPTUREMOUSE = 512,
-			RIDEV_NOHOTKEYS = 512,
-			RIDEV_APPKEYS = 1024,
-			RIDEV_EXINPUTSINK = 4096,
-			RIDEV_DEVNOTIFY = 8192,
+			REMOVE = 1,
+			EXCLUDE = 16,
+			PAGEONLY = 32,
+			NOLEGACY = 48,
+			INPUTSINK = 256,
+			CAPTUREMOUSE = 512,
+			NOHOTKEYS = 512,
+			APPKEYS = 1024,
+			EXINPUTSINK = 4096,
+			DEVNOTIFY = 8192,
 		}
 		[AllowDuplicates]
 		public enum INPUT_MESSAGE_DEVICE_TYPE : int32
 		{
-			IMDT_UNAVAILABLE = 0,
-			IMDT_KEYBOARD = 1,
-			IMDT_MOUSE = 2,
-			IMDT_TOUCH = 4,
-			IMDT_PEN = 8,
-			IMDT_TOUCHPAD = 16,
+			UNAVAILABLE = 0,
+			KEYBOARD = 1,
+			MOUSE = 2,
+			TOUCH = 4,
+			PEN = 8,
+			TOUCHPAD = 16,
 		}
 		[AllowDuplicates]
 		public enum INPUT_MESSAGE_ORIGIN_ID : int32
 		{
-			IMO_UNAVAILABLE = 0,
-			IMO_HARDWARE = 1,
-			IMO_INJECTED = 2,
-			IMO_SYSTEM = 4,
+			UNAVAILABLE = 0,
+			HARDWARE = 1,
+			INJECTED = 2,
+			SYSTEM = 4,
 		}
 		
 		// --- Structs ---

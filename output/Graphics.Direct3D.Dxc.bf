@@ -33,25 +33,25 @@ namespace Win32
 		[AllowDuplicates]
 		public enum DXC_CP : uint32
 		{
-			DXC_CP_ACP = 0,
-			DXC_CP_UTF16 = 1200,
-			DXC_CP_UTF8 = 65001,
+			ACP = 0,
+			UTF16 = 1200,
+			UTF8 = 65001,
 		}
 		[AllowDuplicates]
 		public enum DXC_OUT_KIND : int32
 		{
-			DXC_OUT_NONE = 0,
-			DXC_OUT_OBJECT = 1,
-			DXC_OUT_ERRORS = 2,
-			DXC_OUT_PDB = 3,
-			DXC_OUT_SHADER_HASH = 4,
-			DXC_OUT_DISASSEMBLY = 5,
-			DXC_OUT_HLSL = 6,
-			DXC_OUT_TEXT = 7,
-			DXC_OUT_REFLECTION = 8,
-			DXC_OUT_ROOT_SIGNATURE = 9,
-			DXC_OUT_EXTRA_OUTPUTS = 10,
-			DXC_OUT_FORCE_DWORD = -1,
+			NONE = 0,
+			OBJECT = 1,
+			ERRORS = 2,
+			PDB = 3,
+			SHADER_HASH = 4,
+			DISASSEMBLY = 5,
+			HLSL = 6,
+			TEXT = 7,
+			REFLECTION = 8,
+			ROOT_SIGNATURE = 9,
+			EXTRA_OUTPUTS = 10,
+			FORCE_DWORD = -1,
 		}
 		
 		// --- Function Pointers ---

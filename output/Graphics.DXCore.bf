@@ -48,10 +48,10 @@ namespace Win32
 		[AllowDuplicates]
 		public enum DXCoreNotificationType : uint32
 		{
-			AdapterListStale = 0,
-			AdapterNoLongerValid = 1,
-			AdapterBudgetChange = 2,
-			AdapterHardwareContentProtectionTeardown = 3,
+			ListStale = 0,
+			NoLongerValid = 1,
+			BudgetChange = 2,
+			HardwareContentProtectionTeardown = 3,
 		}
 		[AllowDuplicates]
 		public enum DXCoreAdapterPreference : uint32

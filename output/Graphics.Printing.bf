@@ -1305,195 +1305,195 @@ namespace Win32
 		[AllowDuplicates]
 		public enum EXpsCompressionOptions : int32
 		{
-			Compression_NotCompressed = 0,
-			Compression_Normal = 1,
-			Compression_Small = 2,
-			Compression_Fast = 3,
+			NotCompressed = 0,
+			Normal = 1,
+			Small = 2,
+			Fast = 3,
 		}
 		[AllowDuplicates]
 		public enum EXpsFontOptions : int32
 		{
-			Font_Normal = 0,
-			Font_Obfusticate = 1,
+			Normal = 0,
+			Obfusticate = 1,
 		}
 		[AllowDuplicates]
 		public enum EXpsJobConsumption : int32
 		{
-			XpsJob_DocumentSequenceAdded = 0,
-			XpsJob_FixedDocumentAdded = 1,
-			XpsJob_FixedPageAdded = 2,
+			DocumentSequenceAdded = 0,
+			FixedDocumentAdded = 1,
+			FixedPageAdded = 2,
 		}
 		[AllowDuplicates]
 		public enum EXpsFontRestriction : int32
 		{
-			Xps_Restricted_Font_Installable = 0,
-			Xps_Restricted_Font_NoEmbedding = 2,
-			Xps_Restricted_Font_PreviewPrint = 4,
-			Xps_Restricted_Font_Editable = 8,
+			Installable = 0,
+			NoEmbedding = 2,
+			PreviewPrint = 4,
+			Editable = 8,
 		}
 		[AllowDuplicates]
 		public enum BIDI_TYPE : int32
 		{
-			BIDI_NULL = 0,
-			BIDI_INT = 1,
-			BIDI_FLOAT = 2,
-			BIDI_BOOL = 3,
-			BIDI_STRING = 4,
-			BIDI_TEXT = 5,
-			BIDI_ENUM = 6,
-			BIDI_BLOB = 7,
+			NULL = 0,
+			INT = 1,
+			FLOAT = 2,
+			BOOL = 3,
+			STRING = 4,
+			TEXT = 5,
+			ENUM = 6,
+			BLOB = 7,
 		}
 		[AllowDuplicates]
 		public enum PRINTER_OPTION_FLAGS : int32
 		{
-			PRINTER_OPTION_NO_CACHE = 1,
-			PRINTER_OPTION_CACHE = 2,
-			PRINTER_OPTION_CLIENT_CHANGE = 4,
-			PRINTER_OPTION_NO_CLIENT_DATA = 8,
+			NO_CACHE = 1,
+			CACHE = 2,
+			CLIENT_CHANGE = 4,
+			NO_CLIENT_DATA = 8,
 		}
 		[AllowDuplicates]
 		public enum EPrintPropertyType : int32
 		{
-			kPropertyTypeString = 1,
-			kPropertyTypeInt32 = 2,
-			kPropertyTypeInt64 = 3,
-			kPropertyTypeByte = 4,
-			kPropertyTypeTime = 5,
-			kPropertyTypeDevMode = 6,
-			kPropertyTypeSD = 7,
-			kPropertyTypeNotificationReply = 8,
-			kPropertyTypeNotificationOptions = 9,
-			kPropertyTypeBuffer = 10,
+			String = 1,
+			Int32 = 2,
+			Int64 = 3,
+			Byte = 4,
+			Time = 5,
+			DevMode = 6,
+			SD = 7,
+			NotificationReply = 8,
+			NotificationOptions = 9,
+			Buffer = 10,
 		}
 		[AllowDuplicates]
 		public enum EPrintXPSJobProgress : int32
 		{
-			kAddingDocumentSequence = 0,
-			kDocumentSequenceAdded = 1,
-			kAddingFixedDocument = 2,
-			kFixedDocumentAdded = 3,
-			kAddingFixedPage = 4,
-			kFixedPageAdded = 5,
-			kResourceAdded = 6,
-			kFontAdded = 7,
-			kImageAdded = 8,
-			kXpsDocumentCommitted = 9,
+			AddingDocumentSequence = 0,
+			DocumentSequenceAdded = 1,
+			AddingFixedDocument = 2,
+			FixedDocumentAdded = 3,
+			AddingFixedPage = 4,
+			FixedPageAdded = 5,
+			ResourceAdded = 6,
+			FontAdded = 7,
+			ImageAdded = 8,
+			XpsDocumentCommitted = 9,
 		}
 		[AllowDuplicates]
 		public enum EPrintXPSJobOperation : int32
 		{
-			kJobProduction = 1,
-			kJobConsumption = 2,
+			Production = 1,
+			Consumption = 2,
 		}
 		[AllowDuplicates]
 		public enum PRINT_EXECUTION_CONTEXT : int32
 		{
-			PRINT_EXECUTION_CONTEXT_APPLICATION = 0,
-			PRINT_EXECUTION_CONTEXT_SPOOLER_SERVICE = 1,
-			PRINT_EXECUTION_CONTEXT_SPOOLER_ISOLATION_HOST = 2,
-			PRINT_EXECUTION_CONTEXT_FILTER_PIPELINE = 3,
-			PRINT_EXECUTION_CONTEXT_WOW64 = 4,
+			APPLICATION = 0,
+			SPOOLER_SERVICE = 1,
+			SPOOLER_ISOLATION_HOST = 2,
+			FILTER_PIPELINE = 3,
+			WOW64 = 4,
 		}
 		[AllowDuplicates]
 		public enum MxdcLandscapeRotationEnums : int32
 		{
-			MXDC_LANDSCAPE_ROTATE_COUNTERCLOCKWISE_90_DEGREES = 90,
-			MXDC_LANDSCAPE_ROTATE_NONE = 0,
-			MXDC_LANDSCAPE_ROTATE_COUNTERCLOCKWISE_270_DEGREES = -90,
+			COUNTERCLOCKWISE_90_DEGREES = 90,
+			NONE = 0,
+			COUNTERCLOCKWISE_270_DEGREES = -90,
 		}
 		[AllowDuplicates]
 		public enum MxdcImageTypeEnums : int32
 		{
-			MXDC_IMAGETYPE_JPEGHIGH_COMPRESSION = 1,
-			MXDC_IMAGETYPE_JPEGMEDIUM_COMPRESSION = 2,
-			MXDC_IMAGETYPE_JPEGLOW_COMPRESSION = 3,
-			MXDC_IMAGETYPE_PNG = 4,
+			JPEGHIGH_COMPRESSION = 1,
+			JPEGMEDIUM_COMPRESSION = 2,
+			JPEGLOW_COMPRESSION = 3,
+			PNG = 4,
 		}
 		[AllowDuplicates]
 		public enum MxdcS0PageEnums : int32
 		{
-			MXDC_RESOURCE_TTF = 0,
-			MXDC_RESOURCE_JPEG = 1,
-			MXDC_RESOURCE_PNG = 2,
-			MXDC_RESOURCE_TIFF = 3,
-			MXDC_RESOURCE_WDP = 4,
-			MXDC_RESOURCE_DICTIONARY = 5,
-			MXDC_RESOURCE_ICC_PROFILE = 6,
-			MXDC_RESOURCE_JPEG_THUMBNAIL = 7,
-			MXDC_RESOURCE_PNG_THUMBNAIL = 8,
-			MXDC_RESOURCE_MAX = 9,
+			TTF = 0,
+			JPEG = 1,
+			PNG = 2,
+			TIFF = 3,
+			WDP = 4,
+			DICTIONARY = 5,
+			ICC_PROFILE = 6,
+			JPEG_THUMBNAIL = 7,
+			PNG_THUMBNAIL = 8,
+			MAX = 9,
 		}
 		[AllowDuplicates]
 		public enum EATTRIBUTE_DATATYPE : int32
 		{
-			kADT_UNKNOWN = 0,
-			kADT_BOOL = 1,
-			kADT_INT = 2,
-			kADT_LONG = 3,
-			kADT_DWORD = 4,
-			kADT_ASCII = 5,
-			kADT_UNICODE = 6,
-			kADT_BINARY = 7,
-			kADT_SIZE = 8,
-			kADT_RECT = 9,
-			kADT_CUSTOMSIZEPARAMS = 10,
+			UNKNOWN = 0,
+			BOOL = 1,
+			INT = 2,
+			LONG = 3,
+			DWORD = 4,
+			ASCII = 5,
+			UNICODE = 6,
+			BINARY = 7,
+			SIZE = 8,
+			RECT = 9,
+			CUSTOMSIZEPARAMS = 10,
 		}
 		[AllowDuplicates]
 		public enum SHIMOPTS : int32
 		{
-			PTSHIM_DEFAULT = 0,
-			PTSHIM_NOSNAPSHOT = 1,
+			DEFAULT = 0,
+			NOSNAPSHOT = 1,
 		}
 		[AllowDuplicates]
 		public enum PrintSchemaConstrainedSetting : int32
 		{
-			PrintSchemaConstrainedSetting_None = 0,
-			PrintSchemaConstrainedSetting_PrintTicket = 1,
-			PrintSchemaConstrainedSetting_Admin = 2,
-			PrintSchemaConstrainedSetting_Device = 3,
+			None = 0,
+			PrintTicket = 1,
+			Admin = 2,
+			Device = 3,
 		}
 		[AllowDuplicates]
 		public enum PrintSchemaSelectionType : int32
 		{
-			PrintSchemaSelectionType_PickOne = 0,
-			PrintSchemaSelectionType_PickMany = 1,
+			One = 0,
+			Many = 1,
 		}
 		[AllowDuplicates]
 		public enum PrintSchemaParameterDataType : int32
 		{
-			PrintSchemaParameterDataType_Integer = 0,
-			PrintSchemaParameterDataType_NumericString = 1,
-			PrintSchemaParameterDataType_String = 2,
+			Integer = 0,
+			NumericString = 1,
+			String = 2,
 		}
 		[AllowDuplicates]
 		public enum PrintJobStatus : int32
 		{
-			PrintJobStatus_Paused = 1,
-			PrintJobStatus_Error = 2,
-			PrintJobStatus_Deleting = 4,
-			PrintJobStatus_Spooling = 8,
-			PrintJobStatus_Printing = 16,
-			PrintJobStatus_Offline = 32,
-			PrintJobStatus_PaperOut = 64,
-			PrintJobStatus_Printed = 128,
-			PrintJobStatus_Deleted = 256,
-			PrintJobStatus_BlockedDeviceQueue = 512,
-			PrintJobStatus_UserIntervention = 1024,
-			PrintJobStatus_Restarted = 2048,
-			PrintJobStatus_Complete = 4096,
-			PrintJobStatus_Retained = 8192,
+			Paused = 1,
+			Error = 2,
+			Deleting = 4,
+			Spooling = 8,
+			Printing = 16,
+			Offline = 32,
+			PaperOut = 64,
+			Printed = 128,
+			Deleted = 256,
+			BlockedDeviceQueue = 512,
+			UserIntervention = 1024,
+			Restarted = 2048,
+			Complete = 4096,
+			Retained = 8192,
 		}
 		[AllowDuplicates]
 		public enum PrintAsyncNotifyUserFilter : int32
 		{
-			kPerUser = 0,
-			kAllUsers = 1,
+			PerUser = 0,
+			AllUsers = 1,
 		}
 		[AllowDuplicates]
 		public enum PrintAsyncNotifyConversationStyle : int32
 		{
-			kBiDirectional = 0,
-			kUniDirectional = 1,
+			BiDirectional = 0,
+			UniDirectional = 1,
 		}
 		[AllowDuplicates]
 		public enum PrintAsyncNotifyError : int32
@@ -1526,27 +1526,27 @@ namespace Win32
 		[AllowDuplicates]
 		public enum EBranchOfficeJobEventType : int32
 		{
-			kInvalidJobState = 0,
-			kLogJobPrinted = 1,
-			kLogJobRendered = 2,
-			kLogJobError = 3,
-			kLogJobPipelineError = 4,
-			kLogOfflineFileFull = 5,
+			InvalidJobState = 0,
+			LogJobPrinted = 1,
+			LogJobRendered = 2,
+			LogJobError = 3,
+			LogJobPipelineError = 4,
+			LogOfflineFileFull = 5,
 		}
 		[AllowDuplicates]
 		public enum NOTIFICATION_CALLBACK_COMMANDS : int32
 		{
-			NOTIFICATION_COMMAND_NOTIFY = 0,
-			NOTIFICATION_COMMAND_CONTEXT_ACQUIRE = 1,
-			NOTIFICATION_COMMAND_CONTEXT_RELEASE = 2,
+			NOTIFY = 0,
+			CONTEXT_ACQUIRE = 1,
+			CONTEXT_RELEASE = 2,
 		}
 		[AllowDuplicates]
 		public enum NOTIFICATION_CONFIG_FLAGS : int32
 		{
-			NOTIFICATION_CONFIG_CREATE_EVENT = 1,
-			NOTIFICATION_CONFIG_REGISTER_CALLBACK = 2,
-			NOTIFICATION_CONFIG_EVENT_TRIGGER = 4,
-			NOTIFICATION_CONFIG_ASYNC_CHANNEL = 8,
+			CREATE_EVENT = 1,
+			REGISTER_CALLBACK = 2,
+			EVENT_TRIGGER = 4,
+			ASYNC_CHANNEL = 8,
 		}
 		[AllowDuplicates]
 		public enum UI_TYPE : int32
@@ -1556,21 +1556,21 @@ namespace Win32
 		[AllowDuplicates]
 		public enum XPSRAS_RENDERING_MODE : int32
 		{
-			XPSRAS_RENDERING_MODE_ANTIALIASED = 0,
-			XPSRAS_RENDERING_MODE_ALIASED = 1,
+			NTIALIASED = 0,
+			LIASED = 1,
 		}
 		[AllowDuplicates]
 		public enum XPSRAS_PIXEL_FORMAT : int32
 		{
-			XPSRAS_PIXEL_FORMAT_32BPP_PBGRA_UINT_SRGB = 1,
-			XPSRAS_PIXEL_FORMAT_64BPP_PRGBA_HALF_SCRGB = 2,
-			XPSRAS_PIXEL_FORMAT_128BPP_PRGBA_FLOAT_SCRGB = 3,
+			_32BPP_PBGRA_UINT_SRGB = 1,
+			_64BPP_PRGBA_HALF_SCRGB = 2,
+			_128BPP_PRGBA_FLOAT_SCRGB = 3,
 		}
 		[AllowDuplicates]
 		public enum XPSRAS_BACKGROUND_COLOR : int32
 		{
-			XPSRAS_BACKGROUND_COLOR_TRANSPARENT = 0,
-			XPSRAS_BACKGROUND_COLOR_OPAQUE = 1,
+			TRANSPARENT = 0,
+			OPAQUE = 1,
 		}
 		[AllowDuplicates]
 		public enum PageCountType : int32

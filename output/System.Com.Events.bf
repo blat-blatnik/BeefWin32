@@ -10,9 +10,9 @@ namespace Win32
 		[AllowDuplicates]
 		public enum EOC_ChangeType : int32
 		{
-			EOC_NewObject = 0,
-			EOC_ModifiedObject = 1,
-			EOC_DeletedObject = 2,
+			NewObject = 0,
+			ModifiedObject = 1,
+			DeletedObject = 2,
 		}
 		
 		// --- Structs ---

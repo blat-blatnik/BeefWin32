@@ -15,25 +15,25 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WNV_NOTIFICATION_TYPE : int32
 		{
-			WnvPolicyMismatchType = 0,
-			WnvRedirectType = 1,
-			WnvObjectChangeType = 2,
-			WnvNotificationTypeMax = 3,
+			PolicyMismatchType = 0,
+			RedirectType = 1,
+			ObjectChangeType = 2,
+			NotificationTypeMax = 3,
 		}
 		[AllowDuplicates]
 		public enum WNV_OBJECT_TYPE : int32
 		{
-			WnvProviderAddressType = 0,
-			WnvCustomerAddressType = 1,
-			WnvObjectTypeMax = 2,
+			ProviderAddressType = 0,
+			CustomerAddressType = 1,
+			ObjectTypeMax = 2,
 		}
 		[AllowDuplicates]
 		public enum WNV_CA_NOTIFICATION_TYPE : int32
 		{
-			WnvCustomerAddressAdded = 0,
-			WnvCustomerAddressDeleted = 1,
-			WnvCustomerAddressMoved = 2,
-			WnvCustomerAddressMax = 3,
+			Added = 0,
+			Deleted = 1,
+			Moved = 2,
+			Max = 3,
 		}
 		
 		// --- Structs ---

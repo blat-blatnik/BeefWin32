@@ -21,17 +21,17 @@ namespace Win32
 		[AllowDuplicates]
 		public enum COMPRESS_ALGORITHM : uint32
 		{
-			COMPRESS_ALGORITHM_MSZIP = 2,
-			COMPRESS_ALGORITHM_XPRESS = 3,
-			COMPRESS_ALGORITHM_XPRESS_HUFF = 4,
-			COMPRESS_ALGORITHM_LZMS = 5,
+			MSZIP = 2,
+			XPRESS = 3,
+			XPRESS_HUFF = 4,
+			LZMS = 5,
 		}
 		[AllowDuplicates]
 		public enum COMPRESS_INFORMATION_CLASS : int32
 		{
-			COMPRESS_INFORMATION_CLASS_INVALID = 0,
-			COMPRESS_INFORMATION_CLASS_BLOCK_SIZE = 1,
-			COMPRESS_INFORMATION_CLASS_LEVEL = 2,
+			INVALID = 0,
+			BLOCK_SIZE = 1,
+			LEVEL = 2,
 		}
 		
 		// --- Function Pointers ---

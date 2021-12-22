@@ -221,9 +221,9 @@ namespace Win32
 		[AllowDuplicates]
 		public enum Gender : int32
 		{
-			genderUnspecified = 0,
-			genderFemale = 1,
-			genderMale = 2,
+			Unspecified = 0,
+			Female = 1,
+			Male = 2,
 		}
 		
 		// --- Function Pointers ---

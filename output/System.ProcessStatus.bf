@@ -14,10 +14,10 @@ namespace Win32
 		[AllowDuplicates]
 		public enum ENUM_PROCESS_MODULES_EX_FLAGS : uint32
 		{
-			LIST_MODULES_ALL = 3,
-			LIST_MODULES_DEFAULT = 0,
-			LIST_MODULES_32BIT = 1,
-			LIST_MODULES_64BIT = 2,
+			ALL = 3,
+			DEFAULT = 0,
+			_32BIT = 1,
+			_64BIT = 2,
 		}
 		
 		// --- Function Pointers ---

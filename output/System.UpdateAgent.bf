@@ -480,146 +480,146 @@ namespace Win32
 		[AllowDuplicates]
 		public enum AutomaticUpdatesNotificationLevel : int32
 		{
-			aunlNotConfigured = 0,
-			aunlDisabled = 1,
-			aunlNotifyBeforeDownload = 2,
-			aunlNotifyBeforeInstallation = 3,
-			aunlScheduledInstallation = 4,
+			NotConfigured = 0,
+			Disabled = 1,
+			NotifyBeforeDownload = 2,
+			NotifyBeforeInstallation = 3,
+			ScheduledInstallation = 4,
 		}
 		[AllowDuplicates]
 		public enum AutomaticUpdatesScheduledInstallationDay : int32
 		{
-			ausidEveryDay = 0,
-			ausidEverySunday = 1,
-			ausidEveryMonday = 2,
-			ausidEveryTuesday = 3,
-			ausidEveryWednesday = 4,
-			ausidEveryThursday = 5,
-			ausidEveryFriday = 6,
-			ausidEverySaturday = 7,
+			Day = 0,
+			Sunday = 1,
+			Monday = 2,
+			Tuesday = 3,
+			Wednesday = 4,
+			Thursday = 5,
+			Friday = 6,
+			Saturday = 7,
 		}
 		[AllowDuplicates]
 		public enum DownloadPhase : int32
 		{
-			dphInitializing = 1,
-			dphDownloading = 2,
-			dphVerifying = 3,
+			Initializing = 1,
+			Downloading = 2,
+			Verifying = 3,
 		}
 		[AllowDuplicates]
 		public enum DownloadPriority : int32
 		{
-			dpLow = 1,
-			dpNormal = 2,
-			dpHigh = 3,
-			dpExtraHigh = 4,
+			Low = 1,
+			Normal = 2,
+			High = 3,
+			ExtraHigh = 4,
 		}
 		[AllowDuplicates]
 		public enum AutoSelectionMode : int32
 		{
-			asLetWindowsUpdateDecide = 0,
-			asAutoSelectIfDownloaded = 1,
-			asNeverAutoSelect = 2,
-			asAlwaysAutoSelect = 3,
+			LetWindowsUpdateDecide = 0,
+			AutoSelectIfDownloaded = 1,
+			NeverAutoSelect = 2,
+			AlwaysAutoSelect = 3,
 		}
 		[AllowDuplicates]
 		public enum AutoDownloadMode : int32
 		{
-			adLetWindowsUpdateDecide = 0,
-			adNeverAutoDownload = 1,
-			adAlwaysAutoDownload = 2,
+			LetWindowsUpdateDecide = 0,
+			NeverAutoDownload = 1,
+			AlwaysAutoDownload = 2,
 		}
 		[AllowDuplicates]
 		public enum InstallationImpact : int32
 		{
-			iiNormal = 0,
-			iiMinor = 1,
-			iiRequiresExclusiveHandling = 2,
+			Normal = 0,
+			Minor = 1,
+			RequiresExclusiveHandling = 2,
 		}
 		[AllowDuplicates]
 		public enum InstallationRebootBehavior : int32
 		{
-			irbNeverReboots = 0,
-			irbAlwaysRequiresReboot = 1,
-			irbCanRequestReboot = 2,
+			NeverReboots = 0,
+			AlwaysRequiresReboot = 1,
+			CanRequestReboot = 2,
 		}
 		[AllowDuplicates]
 		public enum OperationResultCode : int32
 		{
-			orcNotStarted = 0,
-			orcInProgress = 1,
-			orcSucceeded = 2,
-			orcSucceededWithErrors = 3,
-			orcFailed = 4,
-			orcAborted = 5,
+			NotStarted = 0,
+			InProgress = 1,
+			Succeeded = 2,
+			SucceededWithErrors = 3,
+			Failed = 4,
+			Aborted = 5,
 		}
 		[AllowDuplicates]
 		public enum ServerSelection : int32
 		{
-			ssDefault = 0,
-			ssManagedServer = 1,
-			ssWindowsUpdate = 2,
-			ssOthers = 3,
+			Default = 0,
+			ManagedServer = 1,
+			WindowsUpdate = 2,
+			Others = 3,
 		}
 		[AllowDuplicates]
 		public enum UpdateType : int32
 		{
-			utSoftware = 1,
-			utDriver = 2,
+			Software = 1,
+			Driver = 2,
 		}
 		[AllowDuplicates]
 		public enum UpdateOperation : int32
 		{
-			uoInstallation = 1,
-			uoUninstallation = 2,
+			Installation = 1,
+			Uninstallation = 2,
 		}
 		[AllowDuplicates]
 		public enum DeploymentAction : int32
 		{
-			daNone = 0,
-			daInstallation = 1,
-			daUninstallation = 2,
-			daDetection = 3,
-			daOptionalInstallation = 4,
+			None = 0,
+			Installation = 1,
+			Uninstallation = 2,
+			Detection = 3,
+			OptionalInstallation = 4,
 		}
 		[AllowDuplicates]
 		public enum UpdateExceptionContext : int32
 		{
-			uecGeneral = 1,
-			uecWindowsDriver = 2,
-			uecWindowsInstaller = 3,
-			uecSearchIncomplete = 4,
+			General = 1,
+			WindowsDriver = 2,
+			WindowsInstaller = 3,
+			SearchIncomplete = 4,
 		}
 		[AllowDuplicates]
 		public enum AutomaticUpdatesUserType : int32
 		{
-			auutCurrentUser = 1,
-			auutLocalAdministrator = 2,
+			CurrentUser = 1,
+			LocalAdministrator = 2,
 		}
 		[AllowDuplicates]
 		public enum AutomaticUpdatesPermissionType : int32
 		{
-			auptSetNotificationLevel = 1,
-			auptDisableAutomaticUpdates = 2,
-			auptSetIncludeRecommendedUpdates = 3,
-			auptSetFeaturedUpdatesEnabled = 4,
-			auptSetNonAdministratorsElevated = 5,
+			SetNotificationLevel = 1,
+			DisableAutomaticUpdates = 2,
+			SetIncludeRecommendedUpdates = 3,
+			SetFeaturedUpdatesEnabled = 4,
+			SetNonAdministratorsElevated = 5,
 		}
 		[AllowDuplicates]
 		public enum UpdateServiceRegistrationState : int32
 		{
-			usrsNotRegistered = 1,
-			usrsRegistrationPending = 2,
-			usrsRegistered = 3,
+			NotRegistered = 1,
+			RegistrationPending = 2,
+			Registered = 3,
 		}
 		[AllowDuplicates]
 		public enum SearchScope : int32
 		{
-			searchScopeDefault = 0,
-			searchScopeMachineOnly = 1,
-			searchScopeCurrentUserOnly = 2,
-			searchScopeMachineAndCurrentUser = 3,
-			searchScopeMachineAndAllUsers = 4,
-			searchScopeAllUsers = 5,
+			Default = 0,
+			MachineOnly = 1,
+			CurrentUserOnly = 2,
+			MachineAndCurrentUser = 3,
+			MachineAndAllUsers = 4,
+			AllUsers = 5,
 		}
 		[AllowDuplicates]
 		public enum UpdateLockdownOption : int32
@@ -629,9 +629,9 @@ namespace Win32
 		[AllowDuplicates]
 		public enum AddServiceFlag : int32
 		{
-			asfAllowPendingRegistration = 1,
-			asfAllowOnlineRegistration = 2,
-			asfRegisterServiceWithAU = 4,
+			AllowPendingRegistration = 1,
+			AllowOnlineRegistration = 2,
+			RegisterServiceWithAU = 4,
 		}
 		[AllowDuplicates]
 		public enum UpdateServiceOption : int32

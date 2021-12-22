@@ -943,264 +943,264 @@ namespace Win32
 		[AllowDuplicates]
 		public enum STICKYKEYS_FLAGS : uint32
 		{
-			SKF_STICKYKEYSON = 1,
-			SKF_AVAILABLE = 2,
-			SKF_HOTKEYACTIVE = 4,
-			SKF_CONFIRMHOTKEY = 8,
-			SKF_HOTKEYSOUND = 16,
-			SKF_INDICATOR = 32,
-			SKF_AUDIBLEFEEDBACK = 64,
-			SKF_TRISTATE = 128,
-			SKF_TWOKEYSOFF = 256,
-			SKF_LALTLATCHED = 268435456,
-			SKF_LCTLLATCHED = 67108864,
-			SKF_LSHIFTLATCHED = 16777216,
-			SKF_RALTLATCHED = 536870912,
-			SKF_RCTLLATCHED = 134217728,
-			SKF_RSHIFTLATCHED = 33554432,
-			SKF_LWINLATCHED = 1073741824,
-			SKF_RWINLATCHED = 2147483648,
-			SKF_LALTLOCKED = 1048576,
-			SKF_LCTLLOCKED = 262144,
-			SKF_LSHIFTLOCKED = 65536,
-			SKF_RALTLOCKED = 2097152,
-			SKF_RCTLLOCKED = 524288,
-			SKF_RSHIFTLOCKED = 131072,
-			SKF_LWINLOCKED = 4194304,
-			SKF_RWINLOCKED = 8388608,
+			STICKYKEYSON = 1,
+			AVAILABLE = 2,
+			HOTKEYACTIVE = 4,
+			CONFIRMHOTKEY = 8,
+			HOTKEYSOUND = 16,
+			INDICATOR = 32,
+			AUDIBLEFEEDBACK = 64,
+			TRISTATE = 128,
+			TWOKEYSOFF = 256,
+			LALTLATCHED = 268435456,
+			LCTLLATCHED = 67108864,
+			LSHIFTLATCHED = 16777216,
+			RALTLATCHED = 536870912,
+			RCTLLATCHED = 134217728,
+			RSHIFTLATCHED = 33554432,
+			LWINLATCHED = 1073741824,
+			RWINLATCHED = 2147483648,
+			LALTLOCKED = 1048576,
+			LCTLLOCKED = 262144,
+			LSHIFTLOCKED = 65536,
+			RALTLOCKED = 2097152,
+			RCTLLOCKED = 524288,
+			RSHIFTLOCKED = 131072,
+			LWINLOCKED = 4194304,
+			RWINLOCKED = 8388608,
 		}
 		[AllowDuplicates]
 		public enum SOUNDSENTRY_FLAGS : uint32
 		{
-			SSF_SOUNDSENTRYON = 1,
-			SSF_AVAILABLE = 2,
-			SSF_INDICATOR = 4,
+			SOUNDSENTRYON = 1,
+			AVAILABLE = 2,
+			INDICATOR = 4,
 		}
 		[AllowDuplicates]
 		public enum ACC_UTILITY_STATE_FLAGS : uint32
 		{
-			ANRUS_ON_SCREEN_KEYBOARD_ACTIVE = 1,
-			ANRUS_TOUCH_MODIFICATION_ACTIVE = 2,
-			ANRUS_PRIORITY_AUDIO_ACTIVE = 4,
-			ANRUS_PRIORITY_AUDIO_ACTIVE_NODUCK = 8,
+			ON_SCREEN_KEYBOARD_ACTIVE = 1,
+			TOUCH_MODIFICATION_ACTIVE = 2,
+			PRIORITY_AUDIO_ACTIVE = 4,
+			PRIORITY_AUDIO_ACTIVE_NODUCK = 8,
 		}
 		[AllowDuplicates]
 		public enum SOUND_SENTRY_GRAPHICS_EFFECT : uint32
 		{
-			SSGF_DISPLAY = 3,
-			SSGF_NONE = 0,
+			DISPLAY = 3,
+			NONE = 0,
 		}
 		[AllowDuplicates]
 		public enum SERIALKEYS_FLAGS : uint32
 		{
-			SERKF_AVAILABLE = 2,
-			SERKF_INDICATOR = 4,
-			SERKF_SERIALKEYSON = 1,
+			AVAILABLE = 2,
+			INDICATOR = 4,
+			SERIALKEYSON = 1,
 		}
 		[AllowDuplicates]
 		public enum HIGHCONTRASTW_FLAGS : uint32
 		{
-			HCF_HIGHCONTRASTON = 1,
-			HCF_AVAILABLE = 2,
-			HCF_HOTKEYACTIVE = 4,
-			HCF_CONFIRMHOTKEY = 8,
-			HCF_HOTKEYSOUND = 16,
-			HCF_INDICATOR = 32,
-			HCF_HOTKEYAVAILABLE = 64,
-			HCF_OPTION_NOTHEMECHANGE = 4096,
+			HIGHCONTRASTON = 1,
+			AVAILABLE = 2,
+			HOTKEYACTIVE = 4,
+			CONFIRMHOTKEY = 8,
+			HOTKEYSOUND = 16,
+			INDICATOR = 32,
+			HOTKEYAVAILABLE = 64,
+			OPTION_NOTHEMECHANGE = 4096,
 		}
 		[AllowDuplicates]
 		public enum SOUNDSENTRY_TEXT_EFFECT : uint32
 		{
-			SSTF_BORDER = 2,
-			SSTF_CHARS = 1,
-			SSTF_DISPLAY = 3,
-			SSTF_NONE = 0,
+			BORDER = 2,
+			CHARS = 1,
+			DISPLAY = 3,
+			NONE = 0,
 		}
 		[AllowDuplicates]
 		public enum SOUNDSENTRY_WINDOWS_EFFECT : uint32
 		{
-			SSWF_CUSTOM = 4,
-			SSWF_DISPLAY = 3,
-			SSWF_NONE = 0,
-			SSWF_TITLE = 1,
-			SSWF_WINDOW = 2,
+			CUSTOM = 4,
+			DISPLAY = 3,
+			NONE = 0,
+			TITLE = 1,
+			WINDOW = 2,
 		}
 		[AllowDuplicates]
 		public enum AnnoScope : int32
 		{
-			ANNO_THIS = 0,
-			ANNO_CONTAINER = 1,
+			THIS = 0,
+			CONTAINER = 1,
 		}
 		[AllowDuplicates]
 		public enum NavigateDirection : int32
 		{
-			NavigateDirection_Parent = 0,
-			NavigateDirection_NextSibling = 1,
-			NavigateDirection_PreviousSibling = 2,
-			NavigateDirection_FirstChild = 3,
-			NavigateDirection_LastChild = 4,
+			Parent = 0,
+			NextSibling = 1,
+			PreviousSibling = 2,
+			FirstChild = 3,
+			LastChild = 4,
 		}
 		[AllowDuplicates]
 		public enum ProviderOptions : int32
 		{
-			ProviderOptions_ClientSideProvider = 1,
-			ProviderOptions_ServerSideProvider = 2,
-			ProviderOptions_NonClientAreaProvider = 4,
-			ProviderOptions_OverrideProvider = 8,
-			ProviderOptions_ProviderOwnsSetFocus = 16,
-			ProviderOptions_UseComThreading = 32,
-			ProviderOptions_RefuseNonClientSupport = 64,
-			ProviderOptions_HasNativeIAccessible = 128,
-			ProviderOptions_UseClientCoordinates = 256,
+			ClientSideProvider = 1,
+			ServerSideProvider = 2,
+			NonClientAreaProvider = 4,
+			OverrideProvider = 8,
+			ProviderOwnsSetFocus = 16,
+			UseComThreading = 32,
+			RefuseNonClientSupport = 64,
+			HasNativeIAccessible = 128,
+			UseClientCoordinates = 256,
 		}
 		[AllowDuplicates]
 		public enum StructureChangeType : int32
 		{
-			StructureChangeType_ChildAdded = 0,
-			StructureChangeType_ChildRemoved = 1,
-			StructureChangeType_ChildrenInvalidated = 2,
-			StructureChangeType_ChildrenBulkAdded = 3,
-			StructureChangeType_ChildrenBulkRemoved = 4,
-			StructureChangeType_ChildrenReordered = 5,
+			Added = 0,
+			Removed = 1,
+			renInvalidated = 2,
+			renBulkAdded = 3,
+			renBulkRemoved = 4,
+			renReordered = 5,
 		}
 		[AllowDuplicates]
 		public enum TextEditChangeType : int32
 		{
-			TextEditChangeType_None = 0,
-			TextEditChangeType_AutoCorrect = 1,
-			TextEditChangeType_Composition = 2,
-			TextEditChangeType_CompositionFinalized = 3,
-			TextEditChangeType_AutoComplete = 4,
+			None = 0,
+			AutoCorrect = 1,
+			Composition = 2,
+			CompositionFinalized = 3,
+			AutoComplete = 4,
 		}
 		[AllowDuplicates]
 		public enum OrientationType : int32
 		{
-			OrientationType_None = 0,
-			OrientationType_Horizontal = 1,
-			OrientationType_Vertical = 2,
+			None = 0,
+			Horizontal = 1,
+			Vertical = 2,
 		}
 		[AllowDuplicates]
 		public enum DockPosition : int32
 		{
-			DockPosition_Top = 0,
-			DockPosition_Left = 1,
-			DockPosition_Bottom = 2,
-			DockPosition_Right = 3,
-			DockPosition_Fill = 4,
-			DockPosition_None = 5,
+			Top = 0,
+			Left = 1,
+			Bottom = 2,
+			Right = 3,
+			Fill = 4,
+			None = 5,
 		}
 		[AllowDuplicates]
 		public enum ExpandCollapseState : int32
 		{
-			ExpandCollapseState_Collapsed = 0,
-			ExpandCollapseState_Expanded = 1,
-			ExpandCollapseState_PartiallyExpanded = 2,
-			ExpandCollapseState_LeafNode = 3,
+			Collapsed = 0,
+			Expanded = 1,
+			PartiallyExpanded = 2,
+			LeafNode = 3,
 		}
 		[AllowDuplicates]
 		public enum ScrollAmount : int32
 		{
-			ScrollAmount_LargeDecrement = 0,
-			ScrollAmount_SmallDecrement = 1,
-			ScrollAmount_NoAmount = 2,
-			ScrollAmount_LargeIncrement = 3,
-			ScrollAmount_SmallIncrement = 4,
+			LargeDecrement = 0,
+			SmallDecrement = 1,
+			NoAmount = 2,
+			LargeIncrement = 3,
+			SmallIncrement = 4,
 		}
 		[AllowDuplicates]
 		public enum RowOrColumnMajor : int32
 		{
-			RowOrColumnMajor_RowMajor = 0,
-			RowOrColumnMajor_ColumnMajor = 1,
-			RowOrColumnMajor_Indeterminate = 2,
+			RowMajor = 0,
+			ColumnMajor = 1,
+			Indeterminate = 2,
 		}
 		[AllowDuplicates]
 		public enum ToggleState : int32
 		{
-			ToggleState_Off = 0,
-			ToggleState_On = 1,
-			ToggleState_Indeterminate = 2,
+			Off = 0,
+			On = 1,
+			Indeterminate = 2,
 		}
 		[AllowDuplicates]
 		public enum WindowVisualState : int32
 		{
-			WindowVisualState_Normal = 0,
-			WindowVisualState_Maximized = 1,
-			WindowVisualState_Minimized = 2,
+			Normal = 0,
+			Maximized = 1,
+			Minimized = 2,
 		}
 		[AllowDuplicates]
 		public enum SynchronizedInputType : int32
 		{
-			SynchronizedInputType_KeyUp = 1,
-			SynchronizedInputType_KeyDown = 2,
-			SynchronizedInputType_LeftMouseUp = 4,
-			SynchronizedInputType_LeftMouseDown = 8,
-			SynchronizedInputType_RightMouseUp = 16,
-			SynchronizedInputType_RightMouseDown = 32,
+			KeyUp = 1,
+			KeyDown = 2,
+			LeftMouseUp = 4,
+			LeftMouseDown = 8,
+			RightMouseUp = 16,
+			RightMouseDown = 32,
 		}
 		[AllowDuplicates]
 		public enum WindowInteractionState : int32
 		{
-			WindowInteractionState_Running = 0,
-			WindowInteractionState_Closing = 1,
-			WindowInteractionState_ReadyForUserInteraction = 2,
-			WindowInteractionState_BlockedByModalWindow = 3,
-			WindowInteractionState_NotResponding = 4,
+			Running = 0,
+			Closing = 1,
+			ReadyForUserInteraction = 2,
+			BlockedByModalWindow = 3,
+			NotResponding = 4,
 		}
 		[AllowDuplicates]
 		public enum SayAsInterpretAs : int32
 		{
-			SayAsInterpretAs_None = 0,
-			SayAsInterpretAs_Spell = 1,
-			SayAsInterpretAs_Cardinal = 2,
-			SayAsInterpretAs_Ordinal = 3,
-			SayAsInterpretAs_Number = 4,
-			SayAsInterpretAs_Date = 5,
-			SayAsInterpretAs_Time = 6,
-			SayAsInterpretAs_Telephone = 7,
-			SayAsInterpretAs_Currency = 8,
-			SayAsInterpretAs_Net = 9,
-			SayAsInterpretAs_Url = 10,
-			SayAsInterpretAs_Address = 11,
-			SayAsInterpretAs_Alphanumeric = 12,
-			SayAsInterpretAs_Name = 13,
-			SayAsInterpretAs_Media = 14,
-			SayAsInterpretAs_Date_MonthDayYear = 15,
-			SayAsInterpretAs_Date_DayMonthYear = 16,
-			SayAsInterpretAs_Date_YearMonthDay = 17,
-			SayAsInterpretAs_Date_YearMonth = 18,
-			SayAsInterpretAs_Date_MonthYear = 19,
-			SayAsInterpretAs_Date_DayMonth = 20,
-			SayAsInterpretAs_Date_MonthDay = 21,
-			SayAsInterpretAs_Date_Year = 22,
-			SayAsInterpretAs_Time_HoursMinutesSeconds12 = 23,
-			SayAsInterpretAs_Time_HoursMinutes12 = 24,
-			SayAsInterpretAs_Time_HoursMinutesSeconds24 = 25,
-			SayAsInterpretAs_Time_HoursMinutes24 = 26,
+			None = 0,
+			Spell = 1,
+			Cardinal = 2,
+			Ordinal = 3,
+			Number = 4,
+			Date = 5,
+			Time = 6,
+			Telephone = 7,
+			Currency = 8,
+			Net = 9,
+			Url = 10,
+			Address = 11,
+			Alphanumeric = 12,
+			Name = 13,
+			Media = 14,
+			Date_MonthDayYear = 15,
+			Date_DayMonthYear = 16,
+			Date_YearMonthDay = 17,
+			Date_YearMonth = 18,
+			Date_MonthYear = 19,
+			Date_DayMonth = 20,
+			Date_MonthDay = 21,
+			Date_Year = 22,
+			Time_HoursMinutesSeconds12 = 23,
+			Time_HoursMinutes12 = 24,
+			Time_HoursMinutesSeconds24 = 25,
+			Time_HoursMinutes24 = 26,
 		}
 		[AllowDuplicates]
 		public enum TextUnit : int32
 		{
-			TextUnit_Character = 0,
-			TextUnit_Format = 1,
-			TextUnit_Word = 2,
-			TextUnit_Line = 3,
-			TextUnit_Paragraph = 4,
-			TextUnit_Page = 5,
-			TextUnit_Document = 6,
+			Character = 0,
+			Format = 1,
+			Word = 2,
+			Line = 3,
+			Paragraph = 4,
+			Page = 5,
+			Document = 6,
 		}
 		[AllowDuplicates]
 		public enum TextPatternRangeEndpoint : int32
 		{
-			TextPatternRangeEndpoint_Start = 0,
-			TextPatternRangeEndpoint_End = 1,
+			Start = 0,
+			End = 1,
 		}
 		[AllowDuplicates]
 		public enum SupportedTextSelection : int32
 		{
-			SupportedTextSelection_None = 0,
-			SupportedTextSelection_Single = 1,
-			SupportedTextSelection_Multiple = 2,
+			None = 0,
+			Single = 1,
+			Multiple = 2,
 		}
 		[AllowDuplicates]
 		public enum LiveSetting : int32
@@ -1212,286 +1212,286 @@ namespace Win32
 		[AllowDuplicates]
 		public enum ActiveEnd : int32
 		{
-			ActiveEnd_None = 0,
-			ActiveEnd_Start = 1,
-			ActiveEnd_End = 2,
+			None = 0,
+			Start = 1,
+			End = 2,
 		}
 		[AllowDuplicates]
 		public enum CaretPosition : int32
 		{
-			CaretPosition_Unknown = 0,
-			CaretPosition_EndOfLine = 1,
-			CaretPosition_BeginningOfLine = 2,
+			Unknown = 0,
+			EndOfLine = 1,
+			BeginningOfLine = 2,
 		}
 		[AllowDuplicates]
 		public enum CaretBidiMode : int32
 		{
-			CaretBidiMode_LTR = 0,
-			CaretBidiMode_RTL = 1,
+			LTR = 0,
+			RTL = 1,
 		}
 		[AllowDuplicates]
 		public enum ZoomUnit : int32
 		{
-			ZoomUnit_NoAmount = 0,
-			ZoomUnit_LargeDecrement = 1,
-			ZoomUnit_SmallDecrement = 2,
-			ZoomUnit_LargeIncrement = 3,
-			ZoomUnit_SmallIncrement = 4,
+			NoAmount = 0,
+			LargeDecrement = 1,
+			SmallDecrement = 2,
+			LargeIncrement = 3,
+			SmallIncrement = 4,
 		}
 		[AllowDuplicates]
 		public enum AnimationStyle : int32
 		{
-			AnimationStyle_None = 0,
-			AnimationStyle_LasVegasLights = 1,
-			AnimationStyle_BlinkingBackground = 2,
-			AnimationStyle_SparkleText = 3,
-			AnimationStyle_MarchingBlackAnts = 4,
-			AnimationStyle_MarchingRedAnts = 5,
-			AnimationStyle_Shimmer = 6,
-			AnimationStyle_Other = -1,
+			None = 0,
+			LasVegasLights = 1,
+			BlinkingBackground = 2,
+			SparkleText = 3,
+			MarchingBlackAnts = 4,
+			MarchingRedAnts = 5,
+			Shimmer = 6,
+			Other = -1,
 		}
 		[AllowDuplicates]
 		public enum BulletStyle : int32
 		{
-			BulletStyle_None = 0,
-			BulletStyle_HollowRoundBullet = 1,
-			BulletStyle_FilledRoundBullet = 2,
-			BulletStyle_HollowSquareBullet = 3,
-			BulletStyle_FilledSquareBullet = 4,
-			BulletStyle_DashBullet = 5,
-			BulletStyle_Other = -1,
+			None = 0,
+			HollowRoundBullet = 1,
+			FilledRoundBullet = 2,
+			HollowSquareBullet = 3,
+			FilledSquareBullet = 4,
+			DashBullet = 5,
+			Other = -1,
 		}
 		[AllowDuplicates]
 		public enum CapStyle : int32
 		{
-			CapStyle_None = 0,
-			CapStyle_SmallCap = 1,
-			CapStyle_AllCap = 2,
-			CapStyle_AllPetiteCaps = 3,
-			CapStyle_PetiteCaps = 4,
-			CapStyle_Unicase = 5,
-			CapStyle_Titling = 6,
-			CapStyle_Other = -1,
+			None = 0,
+			SmallCap = 1,
+			AllCap = 2,
+			AllPetiteCaps = 3,
+			PetiteCaps = 4,
+			Unicase = 5,
+			Titling = 6,
+			Other = -1,
 		}
 		[AllowDuplicates]
 		public enum FillType : int32
 		{
-			FillType_None = 0,
-			FillType_Color = 1,
-			FillType_Gradient = 2,
-			FillType_Picture = 3,
-			FillType_Pattern = 4,
+			None = 0,
+			Color = 1,
+			Gradient = 2,
+			Picture = 3,
+			Pattern = 4,
 		}
 		[AllowDuplicates]
 		public enum FlowDirections : int32
 		{
-			FlowDirections_Default = 0,
-			FlowDirections_RightToLeft = 1,
-			FlowDirections_BottomToTop = 2,
-			FlowDirections_Vertical = 4,
+			Default = 0,
+			RightToLeft = 1,
+			BottomToTop = 2,
+			Vertical = 4,
 		}
 		[AllowDuplicates]
 		public enum HorizontalTextAlignment : int32
 		{
-			HorizontalTextAlignment_Left = 0,
-			HorizontalTextAlignment_Centered = 1,
-			HorizontalTextAlignment_Right = 2,
-			HorizontalTextAlignment_Justified = 3,
+			Left = 0,
+			Centered = 1,
+			Right = 2,
+			Justified = 3,
 		}
 		[AllowDuplicates]
 		public enum OutlineStyles : int32
 		{
-			OutlineStyles_None = 0,
-			OutlineStyles_Outline = 1,
-			OutlineStyles_Shadow = 2,
-			OutlineStyles_Engraved = 4,
-			OutlineStyles_Embossed = 8,
+			None = 0,
+			Outline = 1,
+			Shadow = 2,
+			Engraved = 4,
+			Embossed = 8,
 		}
 		[AllowDuplicates]
 		public enum TextDecorationLineStyle : int32
 		{
-			TextDecorationLineStyle_None = 0,
-			TextDecorationLineStyle_Single = 1,
-			TextDecorationLineStyle_WordsOnly = 2,
-			TextDecorationLineStyle_Double = 3,
-			TextDecorationLineStyle_Dot = 4,
-			TextDecorationLineStyle_Dash = 5,
-			TextDecorationLineStyle_DashDot = 6,
-			TextDecorationLineStyle_DashDotDot = 7,
-			TextDecorationLineStyle_Wavy = 8,
-			TextDecorationLineStyle_ThickSingle = 9,
-			TextDecorationLineStyle_DoubleWavy = 11,
-			TextDecorationLineStyle_ThickWavy = 12,
-			TextDecorationLineStyle_LongDash = 13,
-			TextDecorationLineStyle_ThickDash = 14,
-			TextDecorationLineStyle_ThickDashDot = 15,
-			TextDecorationLineStyle_ThickDashDotDot = 16,
-			TextDecorationLineStyle_ThickDot = 17,
-			TextDecorationLineStyle_ThickLongDash = 18,
-			TextDecorationLineStyle_Other = -1,
+			None = 0,
+			Single = 1,
+			WordsOnly = 2,
+			Double = 3,
+			Dot = 4,
+			Dash = 5,
+			DashDot = 6,
+			DashDotDot = 7,
+			Wavy = 8,
+			ThickSingle = 9,
+			DoubleWavy = 11,
+			ThickWavy = 12,
+			LongDash = 13,
+			ThickDash = 14,
+			ThickDashDot = 15,
+			ThickDashDotDot = 16,
+			ThickDot = 17,
+			ThickLongDash = 18,
+			Other = -1,
 		}
 		[AllowDuplicates]
 		public enum VisualEffects : int32
 		{
-			VisualEffects_None = 0,
-			VisualEffects_Shadow = 1,
-			VisualEffects_Reflection = 2,
-			VisualEffects_Glow = 4,
-			VisualEffects_SoftEdges = 8,
-			VisualEffects_Bevel = 16,
+			None = 0,
+			Shadow = 1,
+			Reflection = 2,
+			Glow = 4,
+			SoftEdges = 8,
+			Bevel = 16,
 		}
 		[AllowDuplicates]
 		public enum NotificationProcessing : int32
 		{
-			NotificationProcessing_ImportantAll = 0,
-			NotificationProcessing_ImportantMostRecent = 1,
-			NotificationProcessing_All = 2,
-			NotificationProcessing_MostRecent = 3,
-			NotificationProcessing_CurrentThenMostRecent = 4,
+			ImportantAll = 0,
+			ImportantMostRecent = 1,
+			All = 2,
+			MostRecent = 3,
+			CurrentThenMostRecent = 4,
 		}
 		[AllowDuplicates]
 		public enum NotificationKind : int32
 		{
-			NotificationKind_ItemAdded = 0,
-			NotificationKind_ItemRemoved = 1,
-			NotificationKind_ActionCompleted = 2,
-			NotificationKind_ActionAborted = 3,
-			NotificationKind_Other = 4,
+			ItemAdded = 0,
+			ItemRemoved = 1,
+			ActionCompleted = 2,
+			ActionAborted = 3,
+			Other = 4,
 		}
 		[AllowDuplicates]
 		public enum UIAutomationType : int32
 		{
-			UIAutomationType_Int = 1,
-			UIAutomationType_Bool = 2,
-			UIAutomationType_String = 3,
-			UIAutomationType_Double = 4,
-			UIAutomationType_Point = 5,
-			UIAutomationType_Rect = 6,
-			UIAutomationType_Element = 7,
-			UIAutomationType_Array = 65536,
-			UIAutomationType_Out = 131072,
-			UIAutomationType_IntArray = 65537,
-			UIAutomationType_BoolArray = 65538,
-			UIAutomationType_StringArray = 65539,
-			UIAutomationType_DoubleArray = 65540,
-			UIAutomationType_PointArray = 65541,
-			UIAutomationType_RectArray = 65542,
-			UIAutomationType_ElementArray = 65543,
-			UIAutomationType_OutInt = 131073,
-			UIAutomationType_OutBool = 131074,
-			UIAutomationType_OutString = 131075,
-			UIAutomationType_OutDouble = 131076,
-			UIAutomationType_OutPoint = 131077,
-			UIAutomationType_OutRect = 131078,
-			UIAutomationType_OutElement = 131079,
-			UIAutomationType_OutIntArray = 196609,
-			UIAutomationType_OutBoolArray = 196610,
-			UIAutomationType_OutStringArray = 196611,
-			UIAutomationType_OutDoubleArray = 196612,
-			UIAutomationType_OutPointArray = 196613,
-			UIAutomationType_OutRectArray = 196614,
-			UIAutomationType_OutElementArray = 196615,
+			Int = 1,
+			Bool = 2,
+			String = 3,
+			Double = 4,
+			Point = 5,
+			Rect = 6,
+			Element = 7,
+			Array = 65536,
+			Out = 131072,
+			IntArray = 65537,
+			BoolArray = 65538,
+			StringArray = 65539,
+			DoubleArray = 65540,
+			PointArray = 65541,
+			RectArray = 65542,
+			ElementArray = 65543,
+			OutInt = 131073,
+			OutBool = 131074,
+			OutString = 131075,
+			OutDouble = 131076,
+			OutPoint = 131077,
+			OutRect = 131078,
+			OutElement = 131079,
+			OutIntArray = 196609,
+			OutBoolArray = 196610,
+			OutStringArray = 196611,
+			OutDoubleArray = 196612,
+			OutPointArray = 196613,
+			OutRectArray = 196614,
+			OutElementArray = 196615,
 		}
 		[AllowDuplicates]
 		public enum TreeScope : int32
 		{
-			TreeScope_None = 0,
-			TreeScope_Element = 1,
-			TreeScope_Children = 2,
-			TreeScope_Descendants = 4,
-			TreeScope_Parent = 8,
-			TreeScope_Ancestors = 16,
-			TreeScope_Subtree = 7,
+			None = 0,
+			Element = 1,
+			Children = 2,
+			Descendants = 4,
+			Parent = 8,
+			Ancestors = 16,
+			Subtree = 7,
 		}
 		[AllowDuplicates]
 		public enum PropertyConditionFlags : int32
 		{
-			PropertyConditionFlags_None = 0,
-			PropertyConditionFlags_IgnoreCase = 1,
-			PropertyConditionFlags_MatchSubstring = 2,
+			None = 0,
+			IgnoreCase = 1,
+			MatchSubstring = 2,
 		}
 		[AllowDuplicates]
 		public enum AutomationElementMode : int32
 		{
-			AutomationElementMode_None = 0,
-			AutomationElementMode_Full = 1,
+			None = 0,
+			Full = 1,
 		}
 		[AllowDuplicates]
 		public enum TreeTraversalOptions : int32
 		{
-			TreeTraversalOptions_Default = 0,
-			TreeTraversalOptions_PostOrder = 1,
-			TreeTraversalOptions_LastToFirstOrder = 2,
+			Default = 0,
+			PostOrder = 1,
+			LastToFirstOrder = 2,
 		}
 		[AllowDuplicates]
 		public enum ConnectionRecoveryBehaviorOptions : int32
 		{
-			ConnectionRecoveryBehaviorOptions_Disabled = 0,
-			ConnectionRecoveryBehaviorOptions_Enabled = 1,
+			Disabled = 0,
+			Enabled = 1,
 		}
 		[AllowDuplicates]
 		public enum CoalesceEventsOptions : int32
 		{
-			CoalesceEventsOptions_Disabled = 0,
-			CoalesceEventsOptions_Enabled = 1,
+			Disabled = 0,
+			Enabled = 1,
 		}
 		[AllowDuplicates]
 		public enum ConditionType : int32
 		{
-			ConditionType_True = 0,
-			ConditionType_False = 1,
-			ConditionType_Property = 2,
-			ConditionType_And = 3,
-			ConditionType_Or = 4,
-			ConditionType_Not = 5,
+			True = 0,
+			False = 1,
+			Property = 2,
+			And = 3,
+			Or = 4,
+			Not = 5,
 		}
 		[AllowDuplicates]
 		public enum NormalizeState : int32
 		{
-			NormalizeState_None = 0,
-			NormalizeState_View = 1,
-			NormalizeState_Custom = 2,
+			None = 0,
+			View = 1,
+			Custom = 2,
 		}
 		[AllowDuplicates]
 		public enum ProviderType : int32
 		{
-			ProviderType_BaseHwnd = 0,
-			ProviderType_Proxy = 1,
-			ProviderType_NonClientArea = 2,
+			BaseHwnd = 0,
+			Proxy = 1,
+			NonClientArea = 2,
 		}
 		[AllowDuplicates]
 		public enum AutomationIdentifierType : int32
 		{
-			AutomationIdentifierType_Property = 0,
-			AutomationIdentifierType_Pattern = 1,
-			AutomationIdentifierType_Event = 2,
-			AutomationIdentifierType_ControlType = 3,
-			AutomationIdentifierType_TextAttribute = 4,
-			AutomationIdentifierType_LandmarkType = 5,
-			AutomationIdentifierType_Annotation = 6,
-			AutomationIdentifierType_Changes = 7,
-			AutomationIdentifierType_Style = 8,
+			Property = 0,
+			Pattern = 1,
+			Event = 2,
+			ControlType = 3,
+			TextAttribute = 4,
+			LandmarkType = 5,
+			Annotation = 6,
+			Changes = 7,
+			Style = 8,
 		}
 		[AllowDuplicates]
 		public enum EventArgsType : int32
 		{
-			EventArgsType_Simple = 0,
-			EventArgsType_PropertyChanged = 1,
-			EventArgsType_StructureChanged = 2,
-			EventArgsType_AsyncContentLoaded = 3,
-			EventArgsType_WindowClosed = 4,
-			EventArgsType_TextEditTextChanged = 5,
-			EventArgsType_Changes = 6,
-			EventArgsType_Notification = 7,
-			EventArgsType_ActiveTextPositionChanged = 8,
-			EventArgsType_StructuredMarkup = 9,
+			Simple = 0,
+			PropertyChanged = 1,
+			StructureChanged = 2,
+			AsyncContentLoaded = 3,
+			WindowClosed = 4,
+			TextEditTextChanged = 5,
+			Changes = 6,
+			Notification = 7,
+			ActiveTextPositionChanged = 8,
+			StructuredMarkup = 9,
 		}
 		[AllowDuplicates]
 		public enum AsyncContentLoadedState : int32
 		{
-			AsyncContentLoadedState_Beginning = 0,
-			AsyncContentLoadedState_Progress = 1,
-			AsyncContentLoadedState_Completed = 2,
+			Beginning = 0,
+			Progress = 1,
+			Completed = 2,
 		}
 		
 		// --- Function Pointers ---

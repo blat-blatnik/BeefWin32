@@ -68,8 +68,8 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WcmTargetMode : int32
 		{
-			OfflineMode = 1,
-			OnlineMode = 2,
+			fflineMode = 1,
+			nlineMode = 2,
 		}
 		[AllowDuplicates]
 		public enum WcmNamespaceEnumerationFlags : int32
@@ -81,47 +81,47 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WcmDataType : int32
 		{
-			dataTypeByte = 1,
-			dataTypeSByte = 2,
-			dataTypeUInt16 = 3,
-			dataTypeInt16 = 4,
-			dataTypeUInt32 = 5,
-			dataTypeInt32 = 6,
-			dataTypeUInt64 = 7,
-			dataTypeInt64 = 8,
-			dataTypeBoolean = 11,
-			dataTypeString = 12,
-			dataTypeFlagArray = 32768,
+			Byte = 1,
+			SByte = 2,
+			UInt16 = 3,
+			Int16 = 4,
+			UInt32 = 5,
+			Int32 = 6,
+			UInt64 = 7,
+			Int64 = 8,
+			Boolean = 11,
+			String = 12,
+			FlagArray = 32768,
 		}
 		[AllowDuplicates]
 		public enum WcmSettingType : int32
 		{
-			settingTypeScalar = 1,
-			settingTypeComplex = 2,
-			settingTypeList = 3,
+			Scalar = 1,
+			Complex = 2,
+			List = 3,
 		}
 		[AllowDuplicates]
 		public enum WcmRestrictionFacets : int32
 		{
-			restrictionFacetMaxLength = 1,
-			restrictionFacetEnumeration = 2,
-			restrictionFacetMaxInclusive = 4,
-			restrictionFacetMinInclusive = 8,
+			MaxLength = 1,
+			Enumeration = 2,
+			MaxInclusive = 4,
+			MinInclusive = 8,
 		}
 		[AllowDuplicates]
 		public enum WcmUserStatus : int32
 		{
-			UnknownStatus = 0,
-			UserRegistered = 1,
-			UserUnregistered = 2,
-			UserLoaded = 3,
-			UserUnloaded = 4,
+			nknownStatus = 0,
+			serRegistered = 1,
+			serUnregistered = 2,
+			serLoaded = 3,
+			serUnloaded = 4,
 		}
 		[AllowDuplicates]
 		public enum WcmNamespaceAccess : int32
 		{
-			ReadOnlyAccess = 1,
-			ReadWriteAccess = 2,
+			OnlyAccess = 1,
+			WriteAccess = 2,
 		}
 		
 		// --- COM Class IDs ---

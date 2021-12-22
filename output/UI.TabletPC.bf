@@ -289,384 +289,384 @@ namespace Win32
 		[AllowDuplicates]
 		public enum PROPERTY_UNITS : int32
 		{
-			PROPERTY_UNITS_DEFAULT = 0,
-			PROPERTY_UNITS_INCHES = 1,
-			PROPERTY_UNITS_CENTIMETERS = 2,
-			PROPERTY_UNITS_DEGREES = 3,
-			PROPERTY_UNITS_RADIANS = 4,
-			PROPERTY_UNITS_SECONDS = 5,
-			PROPERTY_UNITS_POUNDS = 6,
-			PROPERTY_UNITS_GRAMS = 7,
-			PROPERTY_UNITS_SILINEAR = 8,
-			PROPERTY_UNITS_SIROTATION = 9,
-			PROPERTY_UNITS_ENGLINEAR = 10,
-			PROPERTY_UNITS_ENGROTATION = 11,
-			PROPERTY_UNITS_SLUGS = 12,
-			PROPERTY_UNITS_KELVIN = 13,
-			PROPERTY_UNITS_FAHRENHEIT = 14,
-			PROPERTY_UNITS_AMPERE = 15,
-			PROPERTY_UNITS_CANDELA = 16,
+			DEFAULT = 0,
+			INCHES = 1,
+			CENTIMETERS = 2,
+			DEGREES = 3,
+			RADIANS = 4,
+			SECONDS = 5,
+			POUNDS = 6,
+			GRAMS = 7,
+			SILINEAR = 8,
+			SIROTATION = 9,
+			ENGLINEAR = 10,
+			ENGROTATION = 11,
+			SLUGS = 12,
+			KELVIN = 13,
+			FAHRENHEIT = 14,
+			AMPERE = 15,
+			CANDELA = 16,
 		}
 		[AllowDuplicates]
 		public enum enumINKMETRIC_FLAGS : int32
 		{
-			IMF_FONT_SELECTED_IN_HDC = 1,
-			IMF_ITALIC = 2,
-			IMF_BOLD = 4,
+			FONT_SELECTED_IN_HDC = 1,
+			ITALIC = 2,
+			BOLD = 4,
 		}
 		[AllowDuplicates]
 		public enum enumGetCandidateFlags : int32
 		{
-			TCF_ALLOW_RECOGNITION = 1,
-			TCF_FORCE_RECOGNITION = 2,
+			ALLOW_RECOGNITION = 1,
+			FORCE_RECOGNITION = 2,
 		}
 		[AllowDuplicates]
 		public enum InkSelectionConstants : int32
 		{
-			ISC_FirstElement = 0,
-			ISC_AllElements = -1,
+			FirstElement = 0,
+			AllElements = -1,
 		}
 		[AllowDuplicates]
 		public enum InkBoundingBoxMode : int32
 		{
-			IBBM_Default = 0,
-			IBBM_NoCurveFit = 1,
-			IBBM_CurveFit = 2,
-			IBBM_PointsOnly = 3,
-			IBBM_Union = 4,
+			Default = 0,
+			NoCurveFit = 1,
+			CurveFit = 2,
+			PointsOnly = 3,
+			Union = 4,
 		}
 		[AllowDuplicates]
 		public enum InkExtractFlags : int32
 		{
-			IEF_CopyFromOriginal = 0,
-			IEF_RemoveFromOriginal = 1,
-			IEF_Default = 1,
+			CopyFromOriginal = 0,
+			RemoveFromOriginal = 1,
+			Default = 1,
 		}
 		[AllowDuplicates]
 		public enum InkPersistenceFormat : int32
 		{
-			IPF_InkSerializedFormat = 0,
-			IPF_Base64InkSerializedFormat = 1,
-			IPF_GIF = 2,
-			IPF_Base64GIF = 3,
+			InkSerializedFormat = 0,
+			Base64InkSerializedFormat = 1,
+			GIF = 2,
+			Base64GIF = 3,
 		}
 		[AllowDuplicates]
 		public enum InkPersistenceCompressionMode : int32
 		{
-			IPCM_Default = 0,
-			IPCM_MaximumCompression = 1,
-			IPCM_NoCompression = 2,
+			Default = 0,
+			MaximumCompression = 1,
+			NoCompression = 2,
 		}
 		[AllowDuplicates]
 		public enum InkPenTip : int32
 		{
-			IPT_Ball = 0,
-			IPT_Rectangle = 1,
+			Ball = 0,
+			Rectangle = 1,
 		}
 		[AllowDuplicates]
 		public enum InkRasterOperation : int32
 		{
-			IRO_Black = 1,
-			IRO_NotMergePen = 2,
-			IRO_MaskNotPen = 3,
-			IRO_NotCopyPen = 4,
-			IRO_MaskPenNot = 5,
-			IRO_Not = 6,
-			IRO_XOrPen = 7,
-			IRO_NotMaskPen = 8,
-			IRO_MaskPen = 9,
-			IRO_NotXOrPen = 10,
-			IRO_NoOperation = 11,
-			IRO_MergeNotPen = 12,
-			IRO_CopyPen = 13,
-			IRO_MergePenNot = 14,
-			IRO_MergePen = 15,
-			IRO_White = 16,
+			Black = 1,
+			NotMergePen = 2,
+			MaskNotPen = 3,
+			NotCopyPen = 4,
+			MaskPenNot = 5,
+			Not = 6,
+			XOrPen = 7,
+			NotMaskPen = 8,
+			MaskPen = 9,
+			NotXOrPen = 10,
+			NoOperation = 11,
+			MergeNotPen = 12,
+			CopyPen = 13,
+			MergePenNot = 14,
+			MergePen = 15,
+			White = 16,
 		}
 		[AllowDuplicates]
 		public enum InkMousePointer : int32
 		{
-			IMP_Default = 0,
-			IMP_Arrow = 1,
-			IMP_Crosshair = 2,
-			IMP_Ibeam = 3,
-			IMP_SizeNESW = 4,
-			IMP_SizeNS = 5,
-			IMP_SizeNWSE = 6,
-			IMP_SizeWE = 7,
-			IMP_UpArrow = 8,
-			IMP_Hourglass = 9,
-			IMP_NoDrop = 10,
-			IMP_ArrowHourglass = 11,
-			IMP_ArrowQuestion = 12,
-			IMP_SizeAll = 13,
-			IMP_Hand = 14,
-			IMP_Custom = 99,
+			Default = 0,
+			Arrow = 1,
+			Crosshair = 2,
+			Ibeam = 3,
+			SizeNESW = 4,
+			SizeNS = 5,
+			SizeNWSE = 6,
+			SizeWE = 7,
+			UpArrow = 8,
+			Hourglass = 9,
+			NoDrop = 10,
+			ArrowHourglass = 11,
+			ArrowQuestion = 12,
+			SizeAll = 13,
+			Hand = 14,
+			Custom = 99,
 		}
 		[AllowDuplicates]
 		public enum InkClipboardModes : int32
 		{
-			ICB_Copy = 0,
-			ICB_Cut = 1,
-			ICB_ExtractOnly = 48,
-			ICB_DelayedCopy = 32,
-			ICB_Default = 0,
+			Copy = 0,
+			Cut = 1,
+			ExtractOnly = 48,
+			DelayedCopy = 32,
+			Default = 0,
 		}
 		[AllowDuplicates]
 		public enum InkClipboardFormats : int32
 		{
-			ICF_None = 0,
-			ICF_InkSerializedFormat = 1,
-			ICF_SketchInk = 2,
-			ICF_TextInk = 6,
-			ICF_EnhancedMetafile = 8,
-			ICF_Metafile = 32,
-			ICF_Bitmap = 64,
-			ICF_PasteMask = 7,
-			ICF_CopyMask = 127,
-			ICF_Default = 127,
+			None = 0,
+			InkSerializedFormat = 1,
+			SketchInk = 2,
+			TextInk = 6,
+			EnhancedMetafile = 8,
+			Metafile = 32,
+			Bitmap = 64,
+			PasteMask = 7,
+			CopyMask = 127,
+			Default = 127,
 		}
 		[AllowDuplicates]
 		public enum SelectionHitResult : int32
 		{
-			SHR_None = 0,
-			SHR_NW = 1,
-			SHR_SE = 2,
-			SHR_NE = 3,
-			SHR_SW = 4,
-			SHR_E = 5,
-			SHR_W = 6,
-			SHR_N = 7,
-			SHR_S = 8,
-			SHR_Selection = 9,
+			None = 0,
+			NW = 1,
+			SE = 2,
+			NE = 3,
+			SW = 4,
+			E = 5,
+			W = 6,
+			N = 7,
+			S = 8,
+			Selection = 9,
 		}
 		[AllowDuplicates]
 		public enum InkRecognitionStatus : int32
 		{
-			IRS_NoError = 0,
-			IRS_Interrupted = 1,
-			IRS_ProcessFailed = 2,
-			IRS_InkAddedFailed = 4,
-			IRS_SetAutoCompletionModeFailed = 8,
-			IRS_SetStrokesFailed = 16,
-			IRS_SetGuideFailed = 32,
-			IRS_SetFlagsFailed = 64,
-			IRS_SetFactoidFailed = 128,
-			IRS_SetPrefixSuffixFailed = 256,
-			IRS_SetWordListFailed = 512,
+			NoError = 0,
+			Interrupted = 1,
+			ProcessFailed = 2,
+			InkAddedFailed = 4,
+			SetAutoCompletionModeFailed = 8,
+			SetStrokesFailed = 16,
+			SetGuideFailed = 32,
+			SetFlagsFailed = 64,
+			SetFactoidFailed = 128,
+			SetPrefixSuffixFailed = 256,
+			SetWordListFailed = 512,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkRectangle : int32
 		{
-			DISPID_IRTop = 1,
-			DISPID_IRLeft = 2,
-			DISPID_IRBottom = 3,
-			DISPID_IRRight = 4,
-			DISPID_IRGetRectangle = 5,
-			DISPID_IRSetRectangle = 6,
-			DISPID_IRData = 7,
+			Top = 1,
+			Left = 2,
+			Bottom = 3,
+			Right = 4,
+			GetRectangle = 5,
+			SetRectangle = 6,
+			Data = 7,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkExtendedProperty : int32
 		{
-			DISPID_IEPGuid = 1,
-			DISPID_IEPData = 2,
+			Guid = 1,
+			Data = 2,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkExtendedProperties : int32
 		{
-			DISPID_IEPs_NewEnum = -4,
-			DISPID_IEPsItem = 0,
-			DISPID_IEPsCount = 1,
-			DISPID_IEPsAdd = 2,
-			DISPID_IEPsRemove = 3,
-			DISPID_IEPsClear = 4,
-			DISPID_IEPsDoesPropertyExist = 5,
+			_NewEnum = -4,
+			Item = 0,
+			Count = 1,
+			Add = 2,
+			Remove = 3,
+			Clear = 4,
+			DoesPropertyExist = 5,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkDrawingAttributes : int32
 		{
-			DISPID_DAHeight = 1,
-			DISPID_DAColor = 2,
-			DISPID_DAWidth = 3,
-			DISPID_DAFitToCurve = 4,
-			DISPID_DAIgnorePressure = 5,
-			DISPID_DAAntiAliased = 6,
-			DISPID_DATransparency = 7,
-			DISPID_DARasterOperation = 8,
-			DISPID_DAPenTip = 9,
-			DISPID_DAClone = 10,
-			DISPID_DAExtendedProperties = 11,
+			Height = 1,
+			Color = 2,
+			Width = 3,
+			FitToCurve = 4,
+			IgnorePressure = 5,
+			AntiAliased = 6,
+			Transparency = 7,
+			RasterOperation = 8,
+			PenTip = 9,
+			Clone = 10,
+			ExtendedProperties = 11,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkTransform : int32
 		{
-			DISPID_ITReset = 1,
-			DISPID_ITTranslate = 2,
-			DISPID_ITRotate = 3,
-			DISPID_ITReflect = 4,
-			DISPID_ITShear = 5,
-			DISPID_ITScale = 6,
-			DISPID_ITeM11 = 7,
-			DISPID_ITeM12 = 8,
-			DISPID_ITeM21 = 9,
-			DISPID_ITeM22 = 10,
-			DISPID_ITeDx = 11,
-			DISPID_ITeDy = 12,
-			DISPID_ITGetTransform = 13,
-			DISPID_ITSetTransform = 14,
-			DISPID_ITData = 15,
+			Reset = 1,
+			Translate = 2,
+			Rotate = 3,
+			Reflect = 4,
+			Shear = 5,
+			Scale = 6,
+			eM11 = 7,
+			eM12 = 8,
+			eM21 = 9,
+			eM22 = 10,
+			eDx = 11,
+			eDy = 12,
+			GetTransform = 13,
+			SetTransform = 14,
+			Data = 15,
 		}
 		[AllowDuplicates]
 		public enum InkApplicationGesture : int32
 		{
-			IAG_AllGestures = 0,
-			IAG_NoGesture = 61440,
-			IAG_Scratchout = 61441,
-			IAG_Triangle = 61442,
-			IAG_Square = 61443,
-			IAG_Star = 61444,
-			IAG_Check = 61445,
-			IAG_Curlicue = 61456,
-			IAG_DoubleCurlicue = 61457,
-			IAG_Circle = 61472,
-			IAG_DoubleCircle = 61473,
-			IAG_SemiCircleLeft = 61480,
-			IAG_SemiCircleRight = 61481,
-			IAG_ChevronUp = 61488,
-			IAG_ChevronDown = 61489,
-			IAG_ChevronLeft = 61490,
-			IAG_ChevronRight = 61491,
-			IAG_ArrowUp = 61496,
-			IAG_ArrowDown = 61497,
-			IAG_ArrowLeft = 61498,
-			IAG_ArrowRight = 61499,
-			IAG_Up = 61528,
-			IAG_Down = 61529,
-			IAG_Left = 61530,
-			IAG_Right = 61531,
-			IAG_UpDown = 61536,
-			IAG_DownUp = 61537,
-			IAG_LeftRight = 61538,
-			IAG_RightLeft = 61539,
-			IAG_UpLeftLong = 61540,
-			IAG_UpRightLong = 61541,
-			IAG_DownLeftLong = 61542,
-			IAG_DownRightLong = 61543,
-			IAG_UpLeft = 61544,
-			IAG_UpRight = 61545,
-			IAG_DownLeft = 61546,
-			IAG_DownRight = 61547,
-			IAG_LeftUp = 61548,
-			IAG_LeftDown = 61549,
-			IAG_RightUp = 61550,
-			IAG_RightDown = 61551,
-			IAG_Exclamation = 61604,
-			IAG_Tap = 61680,
-			IAG_DoubleTap = 61681,
+			AllGestures = 0,
+			NoGesture = 61440,
+			Scratchout = 61441,
+			Triangle = 61442,
+			Square = 61443,
+			Star = 61444,
+			Check = 61445,
+			Curlicue = 61456,
+			DoubleCurlicue = 61457,
+			Circle = 61472,
+			DoubleCircle = 61473,
+			SemiCircleLeft = 61480,
+			SemiCircleRight = 61481,
+			ChevronUp = 61488,
+			ChevronDown = 61489,
+			ChevronLeft = 61490,
+			ChevronRight = 61491,
+			ArrowUp = 61496,
+			ArrowDown = 61497,
+			ArrowLeft = 61498,
+			ArrowRight = 61499,
+			Up = 61528,
+			Down = 61529,
+			Left = 61530,
+			Right = 61531,
+			UpDown = 61536,
+			DownUp = 61537,
+			LeftRight = 61538,
+			RightLeft = 61539,
+			UpLeftLong = 61540,
+			UpRightLong = 61541,
+			DownLeftLong = 61542,
+			DownRightLong = 61543,
+			UpLeft = 61544,
+			UpRight = 61545,
+			DownLeft = 61546,
+			DownRight = 61547,
+			LeftUp = 61548,
+			LeftDown = 61549,
+			RightUp = 61550,
+			RightDown = 61551,
+			Exclamation = 61604,
+			Tap = 61680,
+			DoubleTap = 61681,
 		}
 		[AllowDuplicates]
 		public enum InkSystemGesture : int32
 		{
-			ISG_Tap = 16,
-			ISG_DoubleTap = 17,
-			ISG_RightTap = 18,
-			ISG_Drag = 19,
-			ISG_RightDrag = 20,
-			ISG_HoldEnter = 21,
-			ISG_HoldLeave = 22,
-			ISG_HoverEnter = 23,
-			ISG_HoverLeave = 24,
-			ISG_Flick = 31,
+			Tap = 16,
+			DoubleTap = 17,
+			RightTap = 18,
+			Drag = 19,
+			RightDrag = 20,
+			HoldEnter = 21,
+			HoldLeave = 22,
+			HoverEnter = 23,
+			HoverLeave = 24,
+			Flick = 31,
 		}
 		[AllowDuplicates]
 		public enum InkRecognitionConfidence : int32
 		{
-			IRC_Strong = 0,
-			IRC_Intermediate = 1,
-			IRC_Poor = 2,
+			Strong = 0,
+			Intermediate = 1,
+			Poor = 2,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkGesture : int32
 		{
-			DISPID_IGId = 0,
-			DISPID_IGGetHotPoint = 1,
-			DISPID_IGConfidence = 2,
+			Id = 0,
+			GetHotPoint = 1,
+			Confidence = 2,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkCursor : int32
 		{
-			DISPID_ICsrName = 0,
-			DISPID_ICsrId = 1,
-			DISPID_ICsrDrawingAttributes = 2,
-			DISPID_ICsrButtons = 3,
-			DISPID_ICsrInverted = 4,
-			DISPID_ICsrTablet = 5,
+			Name = 0,
+			Id = 1,
+			DrawingAttributes = 2,
+			Buttons = 3,
+			Inverted = 4,
+			Tablet = 5,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkCursors : int32
 		{
-			DISPID_ICs_NewEnum = -4,
-			DISPID_ICsItem = 0,
-			DISPID_ICsCount = 1,
+			_NewEnum = -4,
+			Item = 0,
+			Count = 1,
 		}
 		[AllowDuplicates]
 		public enum InkCursorButtonState : int32
 		{
-			ICBS_Unavailable = 0,
-			ICBS_Up = 1,
-			ICBS_Down = 2,
+			Unavailable = 0,
+			Up = 1,
+			Down = 2,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkCursorButton : int32
 		{
-			DISPID_ICBName = 0,
-			DISPID_ICBId = 1,
-			DISPID_ICBState = 2,
+			Name = 0,
+			Id = 1,
+			State = 2,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkCursorButtons : int32
 		{
-			DISPID_ICBs_NewEnum = -4,
-			DISPID_ICBsItem = 0,
-			DISPID_ICBsCount = 1,
+			_NewEnum = -4,
+			Item = 0,
+			Count = 1,
 		}
 		[AllowDuplicates]
 		public enum TabletHardwareCapabilities : int32
 		{
-			THWC_Integrated = 1,
-			THWC_CursorMustTouch = 2,
-			THWC_HardProximity = 4,
-			THWC_CursorsHavePhysicalIds = 8,
+			Integrated = 1,
+			CursorMustTouch = 2,
+			HardProximity = 4,
+			CursorsHavePhysicalIds = 8,
 		}
 		[AllowDuplicates]
 		public enum TabletPropertyMetricUnit : int32
 		{
-			TPMU_Default = 0,
-			TPMU_Inches = 1,
-			TPMU_Centimeters = 2,
-			TPMU_Degrees = 3,
-			TPMU_Radians = 4,
-			TPMU_Seconds = 5,
-			TPMU_Pounds = 6,
-			TPMU_Grams = 7,
+			Default = 0,
+			Inches = 1,
+			Centimeters = 2,
+			Degrees = 3,
+			Radians = 4,
+			Seconds = 5,
+			Pounds = 6,
+			Grams = 7,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkTablet : int32
 		{
-			DISPID_ITName = 0,
-			DISPID_ITPlugAndPlayId = 1,
-			DISPID_ITPropertyMetrics = 2,
-			DISPID_ITIsPacketPropertySupported = 3,
-			DISPID_ITMaximumInputRectangle = 4,
-			DISPID_ITHardwareCapabilities = 5,
+			Name = 0,
+			PlugAndPlayId = 1,
+			PropertyMetrics = 2,
+			IsPacketPropertySupported = 3,
+			MaximumInputRectangle = 4,
+			HardwareCapabilities = 5,
 		}
 		[AllowDuplicates]
 		public enum TabletDeviceKind : int32
 		{
-			TDK_Mouse = 0,
-			TDK_Pen = 1,
-			TDK_Touch = 2,
+			Mouse = 0,
+			Pen = 1,
+			Touch = 2,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkTablet2 : int32
@@ -676,406 +676,406 @@ namespace Win32
 		[AllowDuplicates]
 		public enum DISPID_InkTablet3 : int32
 		{
-			DISPID_IT3IsMultiTouch = 0,
-			DISPID_IT3MaximumCursors = 1,
+			IsMultiTouch = 0,
+			MaximumCursors = 1,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkTablets : int32
 		{
-			DISPID_ITs_NewEnum = -4,
-			DISPID_ITsItem = 0,
-			DISPID_ITsDefaultTablet = 1,
-			DISPID_ITsCount = 2,
-			DISPID_ITsIsPacketPropertySupported = 3,
+			_NewEnum = -4,
+			Item = 0,
+			DefaultTablet = 1,
+			Count = 2,
+			IsPacketPropertySupported = 3,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkStrokeDisp : int32
 		{
-			DISPID_ISDInkIndex = 1,
-			DISPID_ISDID = 2,
-			DISPID_ISDGetBoundingBox = 3,
-			DISPID_ISDDrawingAttributes = 4,
-			DISPID_ISDFindIntersections = 5,
-			DISPID_ISDGetRectangleIntersections = 6,
-			DISPID_ISDClip = 7,
-			DISPID_ISDHitTestCircle = 8,
-			DISPID_ISDNearestPoint = 9,
-			DISPID_ISDSplit = 10,
-			DISPID_ISDExtendedProperties = 11,
-			DISPID_ISDInk = 12,
-			DISPID_ISDBezierPoints = 13,
-			DISPID_ISDPolylineCusps = 14,
-			DISPID_ISDBezierCusps = 15,
-			DISPID_ISDSelfIntersections = 16,
-			DISPID_ISDPacketCount = 17,
-			DISPID_ISDPacketSize = 18,
-			DISPID_ISDPacketDescription = 19,
-			DISPID_ISDDeleted = 20,
-			DISPID_ISDGetPacketDescriptionPropertyMetrics = 21,
-			DISPID_ISDGetPoints = 22,
-			DISPID_ISDSetPoints = 23,
-			DISPID_ISDGetPacketData = 24,
-			DISPID_ISDGetPacketValuesByProperty = 25,
-			DISPID_ISDSetPacketValuesByProperty = 26,
-			DISPID_ISDGetFlattenedBezierPoints = 27,
-			DISPID_ISDScaleToRectangle = 28,
-			DISPID_ISDTransform = 29,
-			DISPID_ISDMove = 30,
-			DISPID_ISDRotate = 31,
-			DISPID_ISDShear = 32,
-			DISPID_ISDScale = 33,
+			InkIndex = 1,
+			ID = 2,
+			GetBoundingBox = 3,
+			DrawingAttributes = 4,
+			FindIntersections = 5,
+			GetRectangleIntersections = 6,
+			Clip = 7,
+			HitTestCircle = 8,
+			NearestPoint = 9,
+			Split = 10,
+			ExtendedProperties = 11,
+			Ink = 12,
+			BezierPoints = 13,
+			PolylineCusps = 14,
+			BezierCusps = 15,
+			SelfIntersections = 16,
+			PacketCount = 17,
+			PacketSize = 18,
+			PacketDescription = 19,
+			Deleted = 20,
+			GetPacketDescriptionPropertyMetrics = 21,
+			GetPoints = 22,
+			SetPoints = 23,
+			GetPacketData = 24,
+			GetPacketValuesByProperty = 25,
+			SetPacketValuesByProperty = 26,
+			GetFlattenedBezierPoints = 27,
+			ScaleToRectangle = 28,
+			Transform = 29,
+			Move = 30,
+			Rotate = 31,
+			Shear = 32,
+			Scale = 33,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkStrokes : int32
 		{
-			DISPID_ISs_NewEnum = -4,
-			DISPID_ISsItem = 0,
-			DISPID_ISsCount = 1,
-			DISPID_ISsValid = 2,
-			DISPID_ISsInk = 3,
-			DISPID_ISsAdd = 4,
-			DISPID_ISsAddStrokes = 5,
-			DISPID_ISsRemove = 6,
-			DISPID_ISsRemoveStrokes = 7,
-			DISPID_ISsToString = 8,
-			DISPID_ISsModifyDrawingAttributes = 9,
-			DISPID_ISsGetBoundingBox = 10,
-			DISPID_ISsScaleToRectangle = 11,
-			DISPID_ISsTransform = 12,
-			DISPID_ISsMove = 13,
-			DISPID_ISsRotate = 14,
-			DISPID_ISsShear = 15,
-			DISPID_ISsScale = 16,
-			DISPID_ISsClip = 17,
-			DISPID_ISsRecognitionResult = 18,
-			DISPID_ISsRemoveRecognitionResult = 19,
+			_NewEnum = -4,
+			Item = 0,
+			Count = 1,
+			Valid = 2,
+			Ink = 3,
+			Add = 4,
+			AddStrokes = 5,
+			Remove = 6,
+			RemoveStrokes = 7,
+			ToString = 8,
+			ModifyDrawingAttributes = 9,
+			GetBoundingBox = 10,
+			ScaleToRectangle = 11,
+			Transform = 12,
+			Move = 13,
+			Rotate = 14,
+			Shear = 15,
+			Scale = 16,
+			Clip = 17,
+			RecognitionResult = 18,
+			RemoveRecognitionResult = 19,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkCustomStrokes : int32
 		{
-			DISPID_ICSs_NewEnum = -4,
-			DISPID_ICSsItem = 0,
-			DISPID_ICSsCount = 1,
-			DISPID_ICSsAdd = 2,
-			DISPID_ICSsRemove = 3,
-			DISPID_ICSsClear = 4,
+			_NewEnum = -4,
+			Item = 0,
+			Count = 1,
+			Add = 2,
+			Remove = 3,
+			Clear = 4,
 		}
 		[AllowDuplicates]
 		public enum DISPID_StrokeEvent : int32
 		{
-			DISPID_SEStrokesAdded = 1,
-			DISPID_SEStrokesRemoved = 2,
+			Added = 1,
+			Removed = 2,
 		}
 		[AllowDuplicates]
 		public enum DISPID_Ink : int32
 		{
-			DISPID_IStrokes = 1,
-			DISPID_IExtendedProperties = 2,
-			DISPID_IGetBoundingBox = 3,
-			DISPID_IDeleteStrokes = 4,
-			DISPID_IDeleteStroke = 5,
-			DISPID_IExtractStrokes = 6,
-			DISPID_IExtractWithRectangle = 7,
-			DISPID_IDirty = 8,
-			DISPID_ICustomStrokes = 9,
-			DISPID_IClone = 10,
-			DISPID_IHitTestCircle = 11,
-			DISPID_IHitTestWithRectangle = 12,
-			DISPID_IHitTestWithLasso = 13,
-			DISPID_INearestPoint = 14,
-			DISPID_ICreateStrokes = 15,
-			DISPID_ICreateStroke = 16,
-			DISPID_IAddStrokesAtRectangle = 17,
-			DISPID_IClip = 18,
-			DISPID_ISave = 19,
-			DISPID_ILoad = 20,
-			DISPID_ICreateStrokeFromPoints = 21,
-			DISPID_IClipboardCopyWithRectangle = 22,
-			DISPID_IClipboardCopy = 23,
-			DISPID_ICanPaste = 24,
-			DISPID_IClipboardPaste = 25,
+			Strokes = 1,
+			ExtendedProperties = 2,
+			GetBoundingBox = 3,
+			DeleteStrokes = 4,
+			DeleteStroke = 5,
+			ExtractStrokes = 6,
+			ExtractWithRectangle = 7,
+			Dirty = 8,
+			CustomStrokes = 9,
+			Clone = 10,
+			HitTestCircle = 11,
+			HitTestWithRectangle = 12,
+			HitTestWithLasso = 13,
+			NearestPoint = 14,
+			CreateStrokes = 15,
+			CreateStroke = 16,
+			AddStrokesAtRectangle = 17,
+			Clip = 18,
+			Save = 19,
+			Load = 20,
+			CreateStrokeFromPoints = 21,
+			ClipboardCopyWithRectangle = 22,
+			ClipboardCopy = 23,
+			CanPaste = 24,
+			ClipboardPaste = 25,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkEvent : int32
 		{
-			DISPID_IEInkAdded = 1,
-			DISPID_IEInkDeleted = 2,
+			Added = 1,
+			Deleted = 2,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkRenderer : int32
 		{
-			DISPID_IRGetViewTransform = 1,
-			DISPID_IRSetViewTransform = 2,
-			DISPID_IRGetObjectTransform = 3,
-			DISPID_IRSetObjectTransform = 4,
-			DISPID_IRDraw = 5,
-			DISPID_IRDrawStroke = 6,
-			DISPID_IRPixelToInkSpace = 7,
-			DISPID_IRInkSpaceToPixel = 8,
-			DISPID_IRPixelToInkSpaceFromPoints = 9,
-			DISPID_IRInkSpaceToPixelFromPoints = 10,
-			DISPID_IRMeasure = 11,
-			DISPID_IRMeasureStroke = 12,
-			DISPID_IRMove = 13,
-			DISPID_IRRotate = 14,
-			DISPID_IRScale = 15,
+			GetViewTransform = 1,
+			SetViewTransform = 2,
+			GetObjectTransform = 3,
+			SetObjectTransform = 4,
+			Draw = 5,
+			DrawStroke = 6,
+			PixelToInkSpace = 7,
+			InkSpaceToPixel = 8,
+			PixelToInkSpaceFromPoints = 9,
+			InkSpaceToPixelFromPoints = 10,
+			Measure = 11,
+			MeasureStroke = 12,
+			Move = 13,
+			Rotate = 14,
+			Scale = 15,
 		}
 		[AllowDuplicates]
 		public enum InkCollectorEventInterest : int32
 		{
-			ICEI_DefaultEvents = -1,
-			ICEI_CursorDown = 0,
-			ICEI_Stroke = 1,
-			ICEI_NewPackets = 2,
-			ICEI_NewInAirPackets = 3,
-			ICEI_CursorButtonDown = 4,
-			ICEI_CursorButtonUp = 5,
-			ICEI_CursorInRange = 6,
-			ICEI_CursorOutOfRange = 7,
-			ICEI_SystemGesture = 8,
-			ICEI_TabletAdded = 9,
-			ICEI_TabletRemoved = 10,
-			ICEI_MouseDown = 11,
-			ICEI_MouseMove = 12,
-			ICEI_MouseUp = 13,
-			ICEI_MouseWheel = 14,
-			ICEI_DblClick = 15,
-			ICEI_AllEvents = 16,
+			DefaultEvents = -1,
+			CursorDown = 0,
+			Stroke = 1,
+			NewPackets = 2,
+			NewInAirPackets = 3,
+			CursorButtonDown = 4,
+			CursorButtonUp = 5,
+			CursorInRange = 6,
+			CursorOutOfRange = 7,
+			SystemGesture = 8,
+			TabletAdded = 9,
+			TabletRemoved = 10,
+			MouseDown = 11,
+			MouseMove = 12,
+			MouseUp = 13,
+			MouseWheel = 14,
+			DblClick = 15,
+			AllEvents = 16,
 		}
 		[AllowDuplicates]
 		public enum InkMouseButton : int32
 		{
-			IMF_Left = 1,
-			IMF_Right = 2,
-			IMF_Middle = 4,
+			Left = 1,
+			Right = 2,
+			Middle = 4,
 		}
 		[AllowDuplicates]
 		public enum InkShiftKeyModifierFlags : int32
 		{
-			IKM_Shift = 1,
-			IKM_Control = 2,
-			IKM_Alt = 4,
+			Shift = 1,
+			Control = 2,
+			Alt = 4,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkCollectorEvent : int32
 		{
-			DISPID_ICEStroke = 1,
-			DISPID_ICECursorDown = 2,
-			DISPID_ICENewPackets = 3,
-			DISPID_ICENewInAirPackets = 4,
-			DISPID_ICECursorButtonDown = 5,
-			DISPID_ICECursorButtonUp = 6,
-			DISPID_ICECursorInRange = 7,
-			DISPID_ICECursorOutOfRange = 8,
-			DISPID_ICESystemGesture = 9,
-			DISPID_ICEGesture = 10,
-			DISPID_ICETabletAdded = 11,
-			DISPID_ICETabletRemoved = 12,
-			DISPID_IOEPainting = 13,
-			DISPID_IOEPainted = 14,
-			DISPID_IOESelectionChanging = 15,
-			DISPID_IOESelectionChanged = 16,
-			DISPID_IOESelectionMoving = 17,
-			DISPID_IOESelectionMoved = 18,
-			DISPID_IOESelectionResizing = 19,
-			DISPID_IOESelectionResized = 20,
-			DISPID_IOEStrokesDeleting = 21,
-			DISPID_IOEStrokesDeleted = 22,
-			DISPID_IPEChangeUICues = 23,
-			DISPID_IPEClick = 24,
-			DISPID_IPEDblClick = 25,
-			DISPID_IPEInvalidated = 26,
-			DISPID_IPEMouseDown = 27,
-			DISPID_IPEMouseEnter = 28,
-			DISPID_IPEMouseHover = 29,
-			DISPID_IPEMouseLeave = 30,
-			DISPID_IPEMouseMove = 31,
-			DISPID_IPEMouseUp = 32,
-			DISPID_IPEMouseWheel = 33,
-			DISPID_IPESizeModeChanged = 34,
-			DISPID_IPEStyleChanged = 35,
-			DISPID_IPESystemColorsChanged = 36,
-			DISPID_IPEKeyDown = 37,
-			DISPID_IPEKeyPress = 38,
-			DISPID_IPEKeyUp = 39,
-			DISPID_IPEResize = 40,
-			DISPID_IPESizeChanged = 41,
+			CEStroke = 1,
+			CECursorDown = 2,
+			CENewPackets = 3,
+			CENewInAirPackets = 4,
+			CECursorButtonDown = 5,
+			CECursorButtonUp = 6,
+			CECursorInRange = 7,
+			CECursorOutOfRange = 8,
+			CESystemGesture = 9,
+			CEGesture = 10,
+			CETabletAdded = 11,
+			CETabletRemoved = 12,
+			OEPainting = 13,
+			OEPainted = 14,
+			OESelectionChanging = 15,
+			OESelectionChanged = 16,
+			OESelectionMoving = 17,
+			OESelectionMoved = 18,
+			OESelectionResizing = 19,
+			OESelectionResized = 20,
+			OEStrokesDeleting = 21,
+			OEStrokesDeleted = 22,
+			PEChangeUICues = 23,
+			PEClick = 24,
+			PEDblClick = 25,
+			PEInvalidated = 26,
+			PEMouseDown = 27,
+			PEMouseEnter = 28,
+			PEMouseHover = 29,
+			PEMouseLeave = 30,
+			PEMouseMove = 31,
+			PEMouseUp = 32,
+			PEMouseWheel = 33,
+			PESizeModeChanged = 34,
+			PEStyleChanged = 35,
+			PESystemColorsChanged = 36,
+			PEKeyDown = 37,
+			PEKeyPress = 38,
+			PEKeyUp = 39,
+			PEResize = 40,
+			PESizeChanged = 41,
 		}
 		[AllowDuplicates]
 		public enum InkOverlayEditingMode : int32
 		{
-			IOEM_Ink = 0,
-			IOEM_Delete = 1,
-			IOEM_Select = 2,
+			Ink = 0,
+			Delete = 1,
+			Select = 2,
 		}
 		[AllowDuplicates]
 		public enum InkOverlayAttachMode : int32
 		{
-			IOAM_Behind = 0,
-			IOAM_InFront = 1,
+			Behind = 0,
+			InFront = 1,
 		}
 		[AllowDuplicates]
 		public enum InkPictureSizeMode : int32
 		{
-			IPSM_AutoSize = 0,
-			IPSM_CenterImage = 1,
-			IPSM_Normal = 2,
-			IPSM_StretchImage = 3,
+			AutoSize = 0,
+			CenterImage = 1,
+			Normal = 2,
+			StretchImage = 3,
 		}
 		[AllowDuplicates]
 		public enum InkOverlayEraserMode : int32
 		{
-			IOERM_StrokeErase = 0,
-			IOERM_PointErase = 1,
+			StrokeErase = 0,
+			PointErase = 1,
 		}
 		[AllowDuplicates]
 		public enum InkCollectionMode : int32
 		{
-			ICM_InkOnly = 0,
-			ICM_GestureOnly = 1,
-			ICM_InkAndGesture = 2,
+			InkOnly = 0,
+			GestureOnly = 1,
+			InkAndGesture = 2,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkCollector : int32
 		{
-			DISPID_ICEnabled = 1,
-			DISPID_ICHwnd = 2,
-			DISPID_ICPaint = 3,
-			DISPID_ICText = 4,
-			DISPID_ICDefaultDrawingAttributes = 5,
-			DISPID_ICRenderer = 6,
-			DISPID_ICInk = 7,
-			DISPID_ICAutoRedraw = 8,
-			DISPID_ICCollectingInk = 9,
-			DISPID_ICSetEventInterest = 10,
-			DISPID_ICGetEventInterest = 11,
-			DISPID_IOEditingMode = 12,
-			DISPID_IOSelection = 13,
-			DISPID_IOAttachMode = 14,
-			DISPID_IOHitTestSelection = 15,
-			DISPID_IODraw = 16,
-			DISPID_IPPicture = 17,
-			DISPID_IPSizeMode = 18,
-			DISPID_IPBackColor = 19,
-			DISPID_ICCursors = 20,
-			DISPID_ICMarginX = 21,
-			DISPID_ICMarginY = 22,
-			DISPID_ICSetWindowInputRectangle = 23,
-			DISPID_ICGetWindowInputRectangle = 24,
-			DISPID_ICTablet = 25,
-			DISPID_ICSetAllTabletsMode = 26,
-			DISPID_ICSetSingleTabletIntegratedMode = 27,
-			DISPID_ICCollectionMode = 28,
-			DISPID_ICSetGestureStatus = 29,
-			DISPID_ICGetGestureStatus = 30,
-			DISPID_ICDynamicRendering = 31,
-			DISPID_ICDesiredPacketDescription = 32,
-			DISPID_IOEraserMode = 33,
-			DISPID_IOEraserWidth = 34,
-			DISPID_ICMouseIcon = 35,
-			DISPID_ICMousePointer = 36,
-			DISPID_IPInkEnabled = 37,
-			DISPID_ICSupportHighContrastInk = 38,
-			DISPID_IOSupportHighContrastSelectionUI = 39,
+			CEnabled = 1,
+			CHwnd = 2,
+			CPaint = 3,
+			CText = 4,
+			CDefaultDrawingAttributes = 5,
+			CRenderer = 6,
+			CInk = 7,
+			CAutoRedraw = 8,
+			CCollectingInk = 9,
+			CSetEventInterest = 10,
+			CGetEventInterest = 11,
+			OEditingMode = 12,
+			OSelection = 13,
+			OAttachMode = 14,
+			OHitTestSelection = 15,
+			ODraw = 16,
+			PPicture = 17,
+			PSizeMode = 18,
+			PBackColor = 19,
+			CCursors = 20,
+			CMarginX = 21,
+			CMarginY = 22,
+			CSetWindowInputRectangle = 23,
+			CGetWindowInputRectangle = 24,
+			CTablet = 25,
+			CSetAllTabletsMode = 26,
+			CSetSingleTabletIntegratedMode = 27,
+			CCollectionMode = 28,
+			CSetGestureStatus = 29,
+			CGetGestureStatus = 30,
+			CDynamicRendering = 31,
+			CDesiredPacketDescription = 32,
+			OEraserMode = 33,
+			OEraserWidth = 34,
+			CMouseIcon = 35,
+			CMousePointer = 36,
+			PInkEnabled = 37,
+			CSupportHighContrastInk = 38,
+			OSupportHighContrastSelectionUI = 39,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkRecognizer : int32
 		{
-			DISPID_RecoClsid = 1,
-			DISPID_RecoName = 2,
-			DISPID_RecoVendor = 3,
-			DISPID_RecoCapabilities = 4,
-			DISPID_RecoLanguageID = 5,
-			DISPID_RecoPreferredPacketDescription = 6,
-			DISPID_RecoCreateRecognizerContext = 7,
-			DISPID_RecoSupportedProperties = 8,
+			Clsid = 1,
+			Name = 2,
+			Vendor = 3,
+			Capabilities = 4,
+			LanguageID = 5,
+			PreferredPacketDescription = 6,
+			CreateRecognizerContext = 7,
+			SupportedProperties = 8,
 		}
 		[AllowDuplicates]
 		public enum InkRecognizerCapabilities : int32
 		{
-			IRC_DontCare = 1,
-			IRC_Object = 2,
-			IRC_FreeInput = 4,
-			IRC_LinedInput = 8,
-			IRC_BoxedInput = 16,
-			IRC_CharacterAutoCompletionInput = 32,
-			IRC_RightAndDown = 64,
-			IRC_LeftAndDown = 128,
-			IRC_DownAndLeft = 256,
-			IRC_DownAndRight = 512,
-			IRC_ArbitraryAngle = 1024,
-			IRC_Lattice = 2048,
-			IRC_AdviseInkChange = 4096,
-			IRC_StrokeReorder = 8192,
-			IRC_Personalizable = 16384,
-			IRC_PrefersArbitraryAngle = 32768,
-			IRC_PrefersParagraphBreaking = 65536,
-			IRC_PrefersSegmentation = 131072,
-			IRC_Cursive = 262144,
-			IRC_TextPrediction = 524288,
-			IRC_Alpha = 1048576,
-			IRC_Beta = 2097152,
+			DontCare = 1,
+			Object = 2,
+			FreeInput = 4,
+			LinedInput = 8,
+			BoxedInput = 16,
+			CharacterAutoCompletionInput = 32,
+			RightAndDown = 64,
+			LeftAndDown = 128,
+			DownAndLeft = 256,
+			DownAndRight = 512,
+			ArbitraryAngle = 1024,
+			Lattice = 2048,
+			AdviseInkChange = 4096,
+			StrokeReorder = 8192,
+			Personalizable = 16384,
+			PrefersArbitraryAngle = 32768,
+			PrefersParagraphBreaking = 65536,
+			PrefersSegmentation = 131072,
+			Cursive = 262144,
+			TextPrediction = 524288,
+			Alpha = 1048576,
+			Beta = 2097152,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkRecognizer2 : int32
 		{
-			DISPID_RecoId = 0,
-			DISPID_RecoUnicodeRanges = 1,
+			Id = 0,
+			UnicodeRanges = 1,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkRecognizers : int32
 		{
-			DISPID_IRecos_NewEnum = -4,
-			DISPID_IRecosItem = 0,
-			DISPID_IRecosCount = 1,
-			DISPID_IRecosGetDefaultRecognizer = 2,
+			_NewEnum = -4,
+			Item = 0,
+			Count = 1,
+			GetDefaultRecognizer = 2,
 		}
 		[AllowDuplicates]
 		public enum InkRecognizerCharacterAutoCompletionMode : int32
 		{
-			IRCACM_Full = 0,
-			IRCACM_Prefix = 1,
-			IRCACM_Random = 2,
+			Full = 0,
+			Prefix = 1,
+			Random = 2,
 		}
 		[AllowDuplicates]
 		public enum InkRecognitionModes : int32
 		{
-			IRM_None = 0,
-			IRM_WordModeOnly = 1,
-			IRM_Coerce = 2,
-			IRM_TopInkBreaksOnly = 4,
-			IRM_PrefixOk = 8,
-			IRM_LineMode = 16,
-			IRM_DisablePersonalization = 32,
-			IRM_AutoSpace = 64,
-			IRM_Max = 128,
+			None = 0,
+			WordModeOnly = 1,
+			Coerce = 2,
+			TopInkBreaksOnly = 4,
+			PrefixOk = 8,
+			LineMode = 16,
+			DisablePersonalization = 32,
+			AutoSpace = 64,
+			Max = 128,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkRecognitionEvent : int32
 		{
-			DISPID_IRERecognitionWithAlternates = 1,
-			DISPID_IRERecognition = 2,
+			nWithAlternates = 1,
+			n = 2,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkRecoContext : int32
 		{
-			DISPID_IRecoCtx_Strokes = 1,
-			DISPID_IRecoCtx_CharacterAutoCompletionMode = 2,
-			DISPID_IRecoCtx_Factoid = 3,
-			DISPID_IRecoCtx_WordList = 4,
-			DISPID_IRecoCtx_Recognizer = 5,
-			DISPID_IRecoCtx_Guide = 6,
-			DISPID_IRecoCtx_Flags = 7,
-			DISPID_IRecoCtx_PrefixText = 8,
-			DISPID_IRecoCtx_SuffixText = 9,
-			DISPID_IRecoCtx_StopRecognition = 10,
-			DISPID_IRecoCtx_Clone = 11,
-			DISPID_IRecoCtx_Recognize = 12,
-			DISPID_IRecoCtx_StopBackgroundRecognition = 13,
-			DISPID_IRecoCtx_EndInkInput = 14,
-			DISPID_IRecoCtx_BackgroundRecognize = 15,
-			DISPID_IRecoCtx_BackgroundRecognizeWithAlternates = 16,
-			DISPID_IRecoCtx_IsStringSupported = 17,
+			Strokes = 1,
+			CharacterAutoCompletionMode = 2,
+			Factoid = 3,
+			WordList = 4,
+			Recognizer = 5,
+			Guide = 6,
+			Flags = 7,
+			PrefixText = 8,
+			SuffixText = 9,
+			StopRecognition = 10,
+			Clone = 11,
+			Recognize = 12,
+			StopBackgroundRecognition = 13,
+			EndInkInput = 14,
+			BackgroundRecognize = 15,
+			BackgroundRecognizeWithAlternates = 16,
+			IsStringSupported = 17,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkRecoContext2 : int32
@@ -1085,64 +1085,64 @@ namespace Win32
 		[AllowDuplicates]
 		public enum InkRecognitionAlternatesSelection : int32
 		{
-			IRAS_Start = 0,
-			IRAS_DefaultCount = 10,
-			IRAS_All = -1,
+			Start = 0,
+			DefaultCount = 10,
+			All = -1,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkRecognitionResult : int32
 		{
-			DISPID_InkRecognitionResult_TopString = 1,
-			DISPID_InkRecognitionResult_TopAlternate = 2,
-			DISPID_InkRecognitionResult_Strokes = 3,
-			DISPID_InkRecognitionResult_TopConfidence = 4,
-			DISPID_InkRecognitionResult_AlternatesFromSelection = 5,
-			DISPID_InkRecognitionResult_ModifyTopAlternate = 6,
-			DISPID_InkRecognitionResult_SetResultOnStrokes = 7,
+			TopString = 1,
+			TopAlternate = 2,
+			Strokes = 3,
+			TopConfidence = 4,
+			AlternatesFromSelection = 5,
+			ModifyTopAlternate = 6,
+			SetResultOnStrokes = 7,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkRecoAlternate : int32
 		{
-			DISPID_InkRecoAlternate_String = 1,
-			DISPID_InkRecoAlternate_LineNumber = 2,
-			DISPID_InkRecoAlternate_Baseline = 3,
-			DISPID_InkRecoAlternate_Midline = 4,
-			DISPID_InkRecoAlternate_Ascender = 5,
-			DISPID_InkRecoAlternate_Descender = 6,
-			DISPID_InkRecoAlternate_Confidence = 7,
-			DISPID_InkRecoAlternate_Strokes = 8,
-			DISPID_InkRecoAlternate_GetStrokesFromStrokeRanges = 9,
-			DISPID_InkRecoAlternate_GetStrokesFromTextRange = 10,
-			DISPID_InkRecoAlternate_GetTextRangeFromStrokes = 11,
-			DISPID_InkRecoAlternate_GetPropertyValue = 12,
-			DISPID_InkRecoAlternate_LineAlternates = 13,
-			DISPID_InkRecoAlternate_ConfidenceAlternates = 14,
-			DISPID_InkRecoAlternate_AlternatesWithConstantPropertyValues = 15,
+			String = 1,
+			LineNumber = 2,
+			Baseline = 3,
+			Midline = 4,
+			Ascender = 5,
+			Descender = 6,
+			Confidence = 7,
+			Strokes = 8,
+			GetStrokesFromStrokeRanges = 9,
+			GetStrokesFromTextRange = 10,
+			GetTextRangeFromStrokes = 11,
+			GetPropertyValue = 12,
+			LineAlternates = 13,
+			ConfidenceAlternates = 14,
+			AlternatesWithConstantPropertyValues = 15,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkRecognitionAlternates : int32
 		{
-			DISPID_InkRecognitionAlternates_NewEnum = -4,
-			DISPID_InkRecognitionAlternates_Item = 0,
-			DISPID_InkRecognitionAlternates_Count = 1,
-			DISPID_InkRecognitionAlternates_Strokes = 2,
+			NewEnum = -4,
+			Item = 0,
+			Count = 1,
+			Strokes = 2,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkRecognizerGuide : int32
 		{
-			DISPID_IRGWritingBox = 1,
-			DISPID_IRGDrawnBox = 2,
-			DISPID_IRGRows = 3,
-			DISPID_IRGColumns = 4,
-			DISPID_IRGMidline = 5,
-			DISPID_IRGGuideData = 6,
+			WritingBox = 1,
+			DrawnBox = 2,
+			Rows = 3,
+			Columns = 4,
+			Midline = 5,
+			GuideData = 6,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkWordList : int32
 		{
-			DISPID_InkWordList_AddWord = 0,
-			DISPID_InkWordList_RemoveWord = 1,
-			DISPID_InkWordList_Merge = 2,
+			AddWord = 0,
+			RemoveWord = 1,
+			Merge = 2,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkWordList2 : int32
@@ -1152,68 +1152,68 @@ namespace Win32
 		[AllowDuplicates]
 		public enum InkDivisionType : int32
 		{
-			IDT_Segment = 0,
-			IDT_Line = 1,
-			IDT_Paragraph = 2,
-			IDT_Drawing = 3,
+			Segment = 0,
+			Line = 1,
+			Paragraph = 2,
+			Drawing = 3,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkDivider : int32
 		{
-			DISPID_IInkDivider_Strokes = 1,
-			DISPID_IInkDivider_RecognizerContext = 2,
-			DISPID_IInkDivider_LineHeight = 3,
-			DISPID_IInkDivider_Divide = 4,
+			Strokes = 1,
+			RecognizerContext = 2,
+			LineHeight = 3,
+			Divide = 4,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkDivisionResult : int32
 		{
-			DISPID_IInkDivisionResult_Strokes = 1,
-			DISPID_IInkDivisionResult_ResultByType = 2,
+			Strokes = 1,
+			ResultByType = 2,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkDivisionUnit : int32
 		{
-			DISPID_IInkDivisionUnit_Strokes = 1,
-			DISPID_IInkDivisionUnit_DivisionType = 2,
-			DISPID_IInkDivisionUnit_RecognizedString = 3,
-			DISPID_IInkDivisionUnit_RotationTransform = 4,
+			Strokes = 1,
+			DivisionType = 2,
+			RecognizedString = 3,
+			RotationTransform = 4,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkDivisionUnits : int32
 		{
-			DISPID_IInkDivisionUnits_NewEnum = -4,
-			DISPID_IInkDivisionUnits_Item = 0,
-			DISPID_IInkDivisionUnits_Count = 1,
+			NewEnum = -4,
+			Item = 0,
+			Count = 1,
 		}
 		[AllowDuplicates]
 		public enum DISPID_PenInputPanel : int32
 		{
-			DISPID_PIPAttachedEditWindow = 0,
-			DISPID_PIPFactoid = 1,
-			DISPID_PIPCurrentPanel = 2,
-			DISPID_PIPDefaultPanel = 3,
-			DISPID_PIPVisible = 4,
-			DISPID_PIPTop = 5,
-			DISPID_PIPLeft = 6,
-			DISPID_PIPWidth = 7,
-			DISPID_PIPHeight = 8,
-			DISPID_PIPMoveTo = 9,
-			DISPID_PIPCommitPendingInput = 10,
-			DISPID_PIPRefresh = 11,
-			DISPID_PIPBusy = 12,
-			DISPID_PIPVerticalOffset = 13,
-			DISPID_PIPHorizontalOffset = 14,
-			DISPID_PIPEnableTsf = 15,
-			DISPID_PIPAutoShow = 16,
+			AttachedEditWindow = 0,
+			Factoid = 1,
+			CurrentPanel = 2,
+			DefaultPanel = 3,
+			Visible = 4,
+			Top = 5,
+			Left = 6,
+			Width = 7,
+			Height = 8,
+			MoveTo = 9,
+			CommitPendingInput = 10,
+			Refresh = 11,
+			Busy = 12,
+			VerticalOffset = 13,
+			HorizontalOffset = 14,
+			EnableTsf = 15,
+			AutoShow = 16,
 		}
 		[AllowDuplicates]
 		public enum DISPID_PenInputPanelEvents : int32
 		{
-			DISPID_PIPEVisibleChanged = 0,
-			DISPID_PIPEPanelChanged = 1,
-			DISPID_PIPEInputFailed = 2,
-			DISPID_PIPEPanelMoving = 3,
+			VisibleChanged = 0,
+			PanelChanged = 1,
+			InputFailed = 2,
+			PanelMoving = 3,
 		}
 		[AllowDuplicates]
 		public enum VisualState : int32
@@ -1227,121 +1227,121 @@ namespace Win32
 		[AllowDuplicates]
 		public enum InteractionMode : int32
 		{
-			InteractionMode_InPlace = 0,
-			InteractionMode_Floating = 1,
-			InteractionMode_DockedTop = 2,
-			InteractionMode_DockedBottom = 3,
+			InPlace = 0,
+			Floating = 1,
+			DockedTop = 2,
+			DockedBottom = 3,
 		}
 		[AllowDuplicates]
 		public enum InPlaceState : int32
 		{
-			InPlaceState_Auto = 0,
-			InPlaceState_HoverTarget = 1,
-			InPlaceState_Expanded = 2,
+			Auto = 0,
+			HoverTarget = 1,
+			Expanded = 2,
 		}
 		[AllowDuplicates]
 		public enum PanelInputArea : int32
 		{
-			PanelInputArea_Auto = 0,
-			PanelInputArea_Keyboard = 1,
-			PanelInputArea_WritingPad = 2,
-			PanelInputArea_CharacterPad = 3,
+			Auto = 0,
+			Keyboard = 1,
+			WritingPad = 2,
+			CharacterPad = 3,
 		}
 		[AllowDuplicates]
 		public enum CorrectionMode : int32
 		{
-			CorrectionMode_NotVisible = 0,
-			CorrectionMode_PreInsertion = 1,
-			CorrectionMode_PostInsertionCollapsed = 2,
-			CorrectionMode_PostInsertionExpanded = 3,
+			NotVisible = 0,
+			PreInsertion = 1,
+			PostInsertionCollapsed = 2,
+			PostInsertionExpanded = 3,
 		}
 		[AllowDuplicates]
 		public enum CorrectionPosition : int32
 		{
-			CorrectionPosition_Auto = 0,
-			CorrectionPosition_Bottom = 1,
-			CorrectionPosition_Top = 2,
+			Auto = 0,
+			Bottom = 1,
+			Top = 2,
 		}
 		[AllowDuplicates]
 		public enum InPlaceDirection : int32
 		{
-			InPlaceDirection_Auto = 0,
-			InPlaceDirection_Bottom = 1,
-			InPlaceDirection_Top = 2,
+			Auto = 0,
+			Bottom = 1,
+			Top = 2,
 		}
 		[AllowDuplicates]
 		public enum EventMask : int32
 		{
-			EventMask_InPlaceStateChanging = 1,
-			EventMask_InPlaceStateChanged = 2,
-			EventMask_InPlaceSizeChanging = 4,
-			EventMask_InPlaceSizeChanged = 8,
-			EventMask_InputAreaChanging = 16,
-			EventMask_InputAreaChanged = 32,
-			EventMask_CorrectionModeChanging = 64,
-			EventMask_CorrectionModeChanged = 128,
-			EventMask_InPlaceVisibilityChanging = 256,
-			EventMask_InPlaceVisibilityChanged = 512,
-			EventMask_TextInserting = 1024,
-			EventMask_TextInserted = 2048,
-			EventMask_All = 4095,
+			InPlaceStateChanging = 1,
+			InPlaceStateChanged = 2,
+			InPlaceSizeChanging = 4,
+			InPlaceSizeChanged = 8,
+			InputAreaChanging = 16,
+			InputAreaChanged = 32,
+			CorrectionModeChanging = 64,
+			CorrectionModeChanged = 128,
+			InPlaceVisibilityChanging = 256,
+			InPlaceVisibilityChanged = 512,
+			TextInserting = 1024,
+			TextInserted = 2048,
+			All = 4095,
 		}
 		[AllowDuplicates]
 		public enum PanelType : int32
 		{
-			PT_Default = 0,
-			PT_Inactive = 1,
-			PT_Handwriting = 2,
-			PT_Keyboard = 3,
+			Default = 0,
+			Inactive = 1,
+			Handwriting = 2,
+			Keyboard = 3,
 		}
 		[AllowDuplicates]
 		public enum FLICKDIRECTION : int32
 		{
-			FLICKDIRECTION_MIN = 0,
-			FLICKDIRECTION_RIGHT = 0,
-			FLICKDIRECTION_UPRIGHT = 1,
-			FLICKDIRECTION_UP = 2,
-			FLICKDIRECTION_UPLEFT = 3,
-			FLICKDIRECTION_LEFT = 4,
-			FLICKDIRECTION_DOWNLEFT = 5,
-			FLICKDIRECTION_DOWN = 6,
-			FLICKDIRECTION_DOWNRIGHT = 7,
-			FLICKDIRECTION_INVALID = 8,
+			MIN = 0,
+			RIGHT = 0,
+			UPRIGHT = 1,
+			UP = 2,
+			UPLEFT = 3,
+			LEFT = 4,
+			DOWNLEFT = 5,
+			DOWN = 6,
+			DOWNRIGHT = 7,
+			INVALID = 8,
 		}
 		[AllowDuplicates]
 		public enum FLICKMODE : int32
 		{
-			FLICKMODE_MIN = 0,
-			FLICKMODE_OFF = 0,
-			FLICKMODE_ON = 1,
-			FLICKMODE_LEARNING = 2,
-			FLICKMODE_MAX = 2,
-			FLICKMODE_DEFAULT = 1,
+			MIN = 0,
+			OFF = 0,
+			ON = 1,
+			LEARNING = 2,
+			MAX = 2,
+			DEFAULT = 1,
 		}
 		[AllowDuplicates]
 		public enum FLICKACTION_COMMANDCODE : int32
 		{
-			FLICKACTION_COMMANDCODE_NULL = 0,
-			FLICKACTION_COMMANDCODE_SCROLL = 1,
-			FLICKACTION_COMMANDCODE_APPCOMMAND = 2,
-			FLICKACTION_COMMANDCODE_CUSTOMKEY = 3,
-			FLICKACTION_COMMANDCODE_KEYMODIFIER = 4,
+			NULL = 0,
+			SCROLL = 1,
+			APPCOMMAND = 2,
+			CUSTOMKEY = 3,
+			KEYMODIFIER = 4,
 		}
 		[AllowDuplicates]
 		public enum SCROLLDIRECTION : int32
 		{
-			SCROLLDIRECTION_UP = 0,
-			SCROLLDIRECTION_DOWN = 1,
+			UP = 0,
+			DOWN = 1,
 		}
 		[AllowDuplicates]
 		public enum KEYMODIFIER : int32
 		{
-			KEYMODIFIER_CONTROL = 1,
-			KEYMODIFIER_MENU = 2,
-			KEYMODIFIER_SHIFT = 4,
-			KEYMODIFIER_WIN = 8,
-			KEYMODIFIER_ALTGR = 16,
-			KEYMODIFIER_EXT = 32,
+			CONTROL = 1,
+			MENU = 2,
+			SHIFT = 4,
+			WIN = 8,
+			ALTGR = 16,
+			EXT = 32,
 		}
 		[AllowDuplicates]
 		public enum MouseButton : int32
@@ -1354,167 +1354,167 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SelAlignmentConstants : int32
 		{
-			rtfLeft = 0,
-			rtfRight = 1,
-			rtfCenter = 2,
+			Left = 0,
+			Right = 1,
+			Center = 2,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkEdit : int32
 		{
-			DISPID_Text = 0,
-			DISPID_TextRTF = 1,
-			DISPID_Hwnd = 2,
-			DISPID_DisableNoScroll = 3,
-			DISPID_Locked = 4,
-			DISPID_Enabled = 5,
-			DISPID_MaxLength = 6,
-			DISPID_MultiLine = 7,
-			DISPID_ScrollBars = 8,
-			DISPID_RTSelStart = 9,
-			DISPID_RTSelLength = 10,
-			DISPID_RTSelText = 11,
-			DISPID_SelAlignment = 12,
-			DISPID_SelBold = 13,
-			DISPID_SelCharOffset = 14,
-			DISPID_SelColor = 15,
-			DISPID_SelFontName = 16,
-			DISPID_SelFontSize = 17,
-			DISPID_SelItalic = 18,
-			DISPID_SelRTF = 19,
-			DISPID_SelUnderline = 20,
-			DISPID_DragIcon = 21,
-			DISPID_Status = 22,
-			DISPID_UseMouseForInput = 23,
-			DISPID_InkMode = 24,
-			DISPID_InkInsertMode = 25,
-			DISPID_RecoTimeout = 26,
-			DISPID_DrawAttr = 27,
-			DISPID_Recognizer = 28,
-			DISPID_Factoid = 29,
-			DISPID_SelInk = 30,
-			DISPID_SelInksDisplayMode = 31,
-			DISPID_Recognize = 32,
-			DISPID_GetGestStatus = 33,
-			DISPID_SetGestStatus = 34,
-			DISPID_Refresh = 35,
+			Text = 0,
+			TextRTF = 1,
+			Hwnd = 2,
+			DisableNoScroll = 3,
+			Locked = 4,
+			Enabled = 5,
+			MaxLength = 6,
+			MultiLine = 7,
+			ScrollBars = 8,
+			RTSelStart = 9,
+			RTSelLength = 10,
+			RTSelText = 11,
+			SelAlignment = 12,
+			SelBold = 13,
+			SelCharOffset = 14,
+			SelColor = 15,
+			SelFontName = 16,
+			SelFontSize = 17,
+			SelItalic = 18,
+			SelRTF = 19,
+			SelUnderline = 20,
+			DragIcon = 21,
+			Status = 22,
+			UseMouseForInput = 23,
+			InkMode = 24,
+			InkInsertMode = 25,
+			RecoTimeout = 26,
+			DrawAttr = 27,
+			Recognizer = 28,
+			Factoid = 29,
+			SelInk = 30,
+			SelInksDisplayMode = 31,
+			Recognize = 32,
+			GetGestStatus = 33,
+			SetGestStatus = 34,
+			Refresh = 35,
 		}
 		[AllowDuplicates]
 		public enum DISPID_InkEditEvents : int32
 		{
-			DISPID_IeeChange = 1,
-			DISPID_IeeSelChange = 2,
-			DISPID_IeeKeyDown = 3,
-			DISPID_IeeKeyUp = 4,
-			DISPID_IeeMouseUp = 5,
-			DISPID_IeeMouseDown = 6,
-			DISPID_IeeKeyPress = 7,
-			DISPID_IeeDblClick = 8,
-			DISPID_IeeClick = 9,
-			DISPID_IeeMouseMove = 10,
-			DISPID_IeeCursorDown = 21,
-			DISPID_IeeStroke = 22,
-			DISPID_IeeGesture = 23,
-			DISPID_IeeRecognitionResult = 24,
+			Change = 1,
+			SelChange = 2,
+			KeyDown = 3,
+			KeyUp = 4,
+			MouseUp = 5,
+			MouseDown = 6,
+			KeyPress = 7,
+			DblClick = 8,
+			Click = 9,
+			MouseMove = 10,
+			CursorDown = 21,
+			Stroke = 22,
+			Gesture = 23,
+			RecognitionResult = 24,
 		}
 		[AllowDuplicates]
 		public enum InkMode : int32
 		{
-			IEM_Disabled = 0,
-			IEM_Ink = 1,
-			IEM_InkAndGesture = 2,
+			Disabled = 0,
+			Ink = 1,
+			InkAndGesture = 2,
 		}
 		[AllowDuplicates]
 		public enum InkInsertMode : int32
 		{
-			IEM_InsertText = 0,
-			IEM_InsertInk = 1,
+			Text = 0,
+			Ink = 1,
 		}
 		[AllowDuplicates]
 		public enum InkEditStatus : int32
 		{
-			IES_Idle = 0,
-			IES_Collecting = 1,
-			IES_Recognizing = 2,
+			Idle = 0,
+			Collecting = 1,
+			Recognizing = 2,
 		}
 		[AllowDuplicates]
 		public enum InkDisplayMode : int32
 		{
-			IDM_Ink = 0,
-			IDM_Text = 1,
+			Ink = 0,
+			Text = 1,
 		}
 		[AllowDuplicates]
 		public enum AppearanceConstants : int32
 		{
-			rtfFlat = 0,
-			rtfThreeD = 1,
+			Flat = 0,
+			ThreeD = 1,
 		}
 		[AllowDuplicates]
 		public enum BorderStyleConstants : int32
 		{
-			rtfNoBorder = 0,
-			rtfFixedSingle = 1,
+			NoBorder = 0,
+			FixedSingle = 1,
 		}
 		[AllowDuplicates]
 		public enum ScrollBarsConstants : int32
 		{
-			rtfNone = 0,
-			rtfHorizontal = 1,
-			rtfVertical = 2,
-			rtfBoth = 3,
+			None = 0,
+			Horizontal = 1,
+			Vertical = 2,
+			Both = 3,
 		}
 		[AllowDuplicates]
 		public enum MICUIELEMENT : int32
 		{
-			MICUIELEMENT_BUTTON_WRITE = 1,
-			MICUIELEMENT_BUTTON_ERASE = 2,
-			MICUIELEMENT_BUTTON_CORRECT = 4,
-			MICUIELEMENT_BUTTON_CLEAR = 8,
-			MICUIELEMENT_BUTTON_UNDO = 16,
-			MICUIELEMENT_BUTTON_REDO = 32,
-			MICUIELEMENT_BUTTON_INSERT = 64,
-			MICUIELEMENT_BUTTON_CANCEL = 128,
-			MICUIELEMENT_INKPANEL_BACKGROUND = 256,
-			MICUIELEMENT_RESULTPANEL_BACKGROUND = 512,
+			BUTTON_WRITE = 1,
+			BUTTON_ERASE = 2,
+			BUTTON_CORRECT = 4,
+			BUTTON_CLEAR = 8,
+			BUTTON_UNDO = 16,
+			BUTTON_REDO = 32,
+			BUTTON_INSERT = 64,
+			BUTTON_CANCEL = 128,
+			INKPANEL_BACKGROUND = 256,
+			RESULTPANEL_BACKGROUND = 512,
 		}
 		[AllowDuplicates]
 		public enum MICUIELEMENTSTATE : int32
 		{
-			MICUIELEMENTSTATE_NORMAL = 1,
-			MICUIELEMENTSTATE_HOT = 2,
-			MICUIELEMENTSTATE_PRESSED = 3,
-			MICUIELEMENTSTATE_DISABLED = 4,
+			NORMAL = 1,
+			HOT = 2,
+			PRESSED = 3,
+			DISABLED = 4,
 		}
 		[AllowDuplicates]
 		public enum DISPID_MathInputControlEvents : int32
 		{
-			DISPID_MICInsert = 0,
-			DISPID_MICClose = 1,
-			DISPID_MICPaint = 2,
-			DISPID_MICClear = 3,
+			Insert = 0,
+			Close = 1,
+			Paint = 2,
+			Clear = 3,
 		}
 		[AllowDuplicates]
 		public enum RealTimeStylusDataInterest : int32
 		{
-			RTSDI_AllData = -1,
-			RTSDI_None = 0,
-			RTSDI_Error = 1,
-			RTSDI_RealTimeStylusEnabled = 2,
-			RTSDI_RealTimeStylusDisabled = 4,
-			RTSDI_StylusNew = 8,
-			RTSDI_StylusInRange = 16,
-			RTSDI_InAirPackets = 32,
-			RTSDI_StylusOutOfRange = 64,
-			RTSDI_StylusDown = 128,
-			RTSDI_Packets = 256,
-			RTSDI_StylusUp = 512,
-			RTSDI_StylusButtonUp = 1024,
-			RTSDI_StylusButtonDown = 2048,
-			RTSDI_SystemEvents = 4096,
-			RTSDI_TabletAdded = 8192,
-			RTSDI_TabletRemoved = 16384,
-			RTSDI_CustomStylusDataAdded = 32768,
-			RTSDI_UpdateMapping = 65536,
-			RTSDI_DefaultEvents = 37766,
+			AllData = -1,
+			None = 0,
+			Error = 1,
+			RealTimeStylusEnabled = 2,
+			RealTimeStylusDisabled = 4,
+			StylusNew = 8,
+			StylusInRange = 16,
+			InAirPackets = 32,
+			StylusOutOfRange = 64,
+			StylusDown = 128,
+			Packets = 256,
+			StylusUp = 512,
+			StylusButtonUp = 1024,
+			StylusButtonDown = 2048,
+			SystemEvents = 4096,
+			TabletAdded = 8192,
+			TabletRemoved = 16384,
+			CustomStylusDataAdded = 32768,
+			UpdateMapping = 65536,
+			DefaultEvents = 37766,
 		}
 		[AllowDuplicates]
 		public enum StylusQueue : int32
@@ -1526,40 +1526,40 @@ namespace Win32
 		[AllowDuplicates]
 		public enum RealTimeStylusLockType : int32
 		{
-			RTSLT_ObjLock = 1,
-			RTSLT_SyncEventLock = 2,
-			RTSLT_AsyncEventLock = 4,
-			RTSLT_ExcludeCallback = 8,
-			RTSLT_SyncObjLock = 11,
-			RTSLT_AsyncObjLock = 13,
+			ObjLock = 1,
+			SyncEventLock = 2,
+			AsyncEventLock = 4,
+			ExcludeCallback = 8,
+			SyncObjLock = 11,
+			AsyncObjLock = 13,
 		}
 		[AllowDuplicates]
 		public enum LINE_METRICS : int32
 		{
-			LM_BASELINE = 0,
-			LM_MIDLINE = 1,
-			LM_ASCENDER = 2,
-			LM_DESCENDER = 3,
+			BASELINE = 0,
+			MIDLINE = 1,
+			ASCENDER = 2,
+			DESCENDER = 3,
 		}
 		[AllowDuplicates]
 		public enum CONFIDENCE_LEVEL : int32
 		{
-			CFL_STRONG = 0,
-			CFL_INTERMEDIATE = 1,
-			CFL_POOR = 2,
+			STRONG = 0,
+			INTERMEDIATE = 1,
+			POOR = 2,
 		}
 		[AllowDuplicates]
 		public enum ALT_BREAKS : int32
 		{
-			ALT_BREAKS_SAME = 0,
-			ALT_BREAKS_UNIQUE = 1,
-			ALT_BREAKS_FULL = 2,
+			SAME = 0,
+			UNIQUE = 1,
+			FULL = 2,
 		}
 		[AllowDuplicates]
 		public enum enumRECO_TYPE : int32
 		{
-			RECO_TYPE_WSTRING = 0,
-			RECO_TYPE_WCHAR = 1,
+			STRING = 0,
+			CHAR = 1,
 		}
 		
 		// --- Function Pointers ---

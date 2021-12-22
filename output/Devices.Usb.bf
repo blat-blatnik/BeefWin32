@@ -556,16 +556,16 @@ namespace Win32
 		[AllowDuplicates]
 		public enum USB_DEVICE_SPEED : int32
 		{
-			UsbLowSpeed = 0,
-			UsbFullSpeed = 1,
-			UsbHighSpeed = 2,
-			UsbSuperSpeed = 3,
+			LowSpeed = 0,
+			FullSpeed = 1,
+			HighSpeed = 2,
+			SuperSpeed = 3,
 		}
 		[AllowDuplicates]
 		public enum USB_DEVICE_TYPE : int32
 		{
-			Usb11Device = 0,
-			Usb20Device = 1,
+			_11Device = 0,
+			_20Device = 1,
 		}
 		[AllowDuplicates]
 		public enum USB_CONTROLLER_FLAVOR : int32
@@ -601,108 +601,108 @@ namespace Win32
 		[AllowDuplicates]
 		public enum USBD_PIPE_TYPE : int32
 		{
-			UsbdPipeTypeControl = 0,
-			UsbdPipeTypeIsochronous = 1,
-			UsbdPipeTypeBulk = 2,
-			UsbdPipeTypeInterrupt = 3,
+			Control = 0,
+			Isochronous = 1,
+			Bulk = 2,
+			Interrupt = 3,
 		}
 		[AllowDuplicates]
 		public enum USBD_ENDPOINT_OFFLOAD_MODE : int32
 		{
-			UsbdEndpointOffloadModeNotSupported = 0,
-			UsbdEndpointOffloadSoftwareAssisted = 1,
-			UsbdEndpointOffloadHardwareAssisted = 2,
+			ModeNotSupported = 0,
+			SoftwareAssisted = 1,
+			HardwareAssisted = 2,
 		}
 		[AllowDuplicates]
 		public enum USB_USER_ERROR_CODE : int32
 		{
-			UsbUserSuccess = 0,
-			UsbUserNotSupported = 1,
-			UsbUserInvalidRequestCode = 2,
-			UsbUserFeatureDisabled = 3,
-			UsbUserInvalidHeaderParameter = 4,
-			UsbUserInvalidParameter = 5,
-			UsbUserMiniportError = 6,
-			UsbUserBufferTooSmall = 7,
-			UsbUserErrorNotMapped = 8,
-			UsbUserDeviceNotStarted = 9,
-			UsbUserNoDeviceConnected = 10,
+			Success = 0,
+			NotSupported = 1,
+			InvalidRequestCode = 2,
+			FeatureDisabled = 3,
+			InvalidHeaderParameter = 4,
+			InvalidParameter = 5,
+			MiniportError = 6,
+			BufferTooSmall = 7,
+			ErrorNotMapped = 8,
+			DeviceNotStarted = 9,
+			NoDeviceConnected = 10,
 		}
 		[AllowDuplicates]
 		public enum WDMUSB_POWER_STATE : int32
 		{
-			WdmUsbPowerNotMapped = 0,
-			WdmUsbPowerSystemUnspecified = 100,
-			WdmUsbPowerSystemWorking = 101,
-			WdmUsbPowerSystemSleeping1 = 102,
-			WdmUsbPowerSystemSleeping2 = 103,
-			WdmUsbPowerSystemSleeping3 = 104,
-			WdmUsbPowerSystemHibernate = 105,
-			WdmUsbPowerSystemShutdown = 106,
-			WdmUsbPowerDeviceUnspecified = 200,
-			WdmUsbPowerDeviceD0 = 201,
-			WdmUsbPowerDeviceD1 = 202,
-			WdmUsbPowerDeviceD2 = 203,
-			WdmUsbPowerDeviceD3 = 204,
+			NotMapped = 0,
+			SystemUnspecified = 100,
+			SystemWorking = 101,
+			SystemSleeping1 = 102,
+			SystemSleeping2 = 103,
+			SystemSleeping3 = 104,
+			SystemHibernate = 105,
+			SystemShutdown = 106,
+			DeviceUnspecified = 200,
+			DeviceD0 = 201,
+			DeviceD1 = 202,
+			DeviceD2 = 203,
+			DeviceD3 = 204,
 		}
 		[AllowDuplicates]
 		public enum USBFN_EVENT : int32
 		{
-			UsbfnEventMinimum = 0,
-			UsbfnEventAttach = 1,
-			UsbfnEventReset = 2,
-			UsbfnEventDetach = 3,
-			UsbfnEventSuspend = 4,
-			UsbfnEventResume = 5,
-			UsbfnEventSetupPacket = 6,
-			UsbfnEventConfigured = 7,
-			UsbfnEventUnConfigured = 8,
-			UsbfnEventPortType = 9,
-			UsbfnEventBusTearDown = 10,
-			UsbfnEventSetInterface = 11,
-			UsbfnEventMaximum = 12,
+			Minimum = 0,
+			Attach = 1,
+			Reset = 2,
+			Detach = 3,
+			Suspend = 4,
+			Resume = 5,
+			SetupPacket = 6,
+			Configured = 7,
+			UnConfigured = 8,
+			PortType = 9,
+			BusTearDown = 10,
+			SetInterface = 11,
+			Maximum = 12,
 		}
 		[AllowDuplicates]
 		public enum USBFN_PORT_TYPE : int32
 		{
-			UsbfnUnknownPort = 0,
-			UsbfnStandardDownstreamPort = 1,
-			UsbfnChargingDownstreamPort = 2,
-			UsbfnDedicatedChargingPort = 3,
-			UsbfnInvalidDedicatedChargingPort = 4,
-			UsbfnProprietaryDedicatedChargingPort = 5,
-			UsbfnPortTypeMaximum = 6,
+			UnknownPort = 0,
+			StandardDownstreamPort = 1,
+			ChargingDownstreamPort = 2,
+			DedicatedChargingPort = 3,
+			InvalidDedicatedChargingPort = 4,
+			ProprietaryDedicatedChargingPort = 5,
+			PortTypeMaximum = 6,
 		}
 		[AllowDuplicates]
 		public enum USBFN_BUS_SPEED : int32
 		{
-			UsbfnBusSpeedLow = 0,
-			UsbfnBusSpeedFull = 1,
-			UsbfnBusSpeedHigh = 2,
-			UsbfnBusSpeedSuper = 3,
-			UsbfnBusSpeedMaximum = 4,
+			Low = 0,
+			Full = 1,
+			High = 2,
+			Super = 3,
+			Maximum = 4,
 		}
 		[AllowDuplicates]
 		public enum USBFN_DIRECTION : int32
 		{
-			UsbfnDirectionMinimum = 0,
-			UsbfnDirectionIn = 1,
-			UsbfnDirectionOut = 2,
-			UsbfnDirectionTx = 1,
-			UsbfnDirectionRx = 2,
-			UsbfnDirectionMaximum = 3,
+			Minimum = 0,
+			In = 1,
+			Out = 2,
+			Tx = 1,
+			Rx = 2,
+			Maximum = 3,
 		}
 		[AllowDuplicates]
 		public enum USBFN_DEVICE_STATE : int32
 		{
-			UsbfnDeviceStateMinimum = 0,
-			UsbfnDeviceStateAttached = 1,
-			UsbfnDeviceStateDefault = 2,
-			UsbfnDeviceStateDetached = 3,
-			UsbfnDeviceStateAddressed = 4,
-			UsbfnDeviceStateConfigured = 5,
-			UsbfnDeviceStateSuspended = 6,
-			UsbfnDeviceStateStateMaximum = 7,
+			Minimum = 0,
+			Attached = 1,
+			Default = 2,
+			Detached = 3,
+			Addressed = 4,
+			Configured = 5,
+			Suspended = 6,
+			StateMaximum = 7,
 		}
 		[AllowDuplicates]
 		public enum PIPE_TYPE : int32
@@ -715,10 +715,10 @@ namespace Win32
 		[AllowDuplicates]
 		public enum RAW_PIPE_TYPE : int32
 		{
-			USBSCAN_PIPE_CONTROL = 0,
-			USBSCAN_PIPE_ISOCHRONOUS = 1,
-			USBSCAN_PIPE_BULK = 2,
-			USBSCAN_PIPE_INTERRUPT = 3,
+			CONTROL = 0,
+			ISOCHRONOUS = 1,
+			BULK = 2,
+			INTERRUPT = 3,
 		}
 		
 		// --- Function Pointers ---

@@ -43,50 +43,50 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SAFER_COMPUTE_TOKEN_FROM_LEVEL_FLAGS : uint32
 		{
-			SAFER_TOKEN_NULL_IF_EQUAL = 1,
-			SAFER_TOKEN_COMPARE_ONLY = 2,
-			SAFER_TOKEN_MAKE_INERT = 4,
-			SAFER_TOKEN_WANT_FLAGS = 8,
+			NULL_IF_EQUAL = 1,
+			COMPARE_ONLY = 2,
+			MAKE_INERT = 4,
+			WANT_FLAGS = 8,
 		}
 		[AllowDuplicates]
 		public enum SAFER_POLICY_INFO_CLASS : int32
 		{
-			SaferPolicyLevelList = 1,
-			SaferPolicyEnableTransparentEnforcement = 2,
-			SaferPolicyDefaultLevel = 3,
-			SaferPolicyEvaluateUserScope = 4,
-			SaferPolicyScopeFlags = 5,
-			SaferPolicyDefaultLevelFlags = 6,
-			SaferPolicyAuthenticodeEnabled = 7,
+			LevelList = 1,
+			EnableTransparentEnforcement = 2,
+			DefaultLevel = 3,
+			EvaluateUserScope = 4,
+			ScopeFlags = 5,
+			DefaultLevelFlags = 6,
+			AuthenticodeEnabled = 7,
 		}
 		[AllowDuplicates]
 		public enum SAFER_OBJECT_INFO_CLASS : int32
 		{
-			SaferObjectLevelId = 1,
-			SaferObjectScopeId = 2,
-			SaferObjectFriendlyName = 3,
-			SaferObjectDescription = 4,
-			SaferObjectBuiltin = 5,
-			SaferObjectDisallowed = 6,
-			SaferObjectDisableMaxPrivilege = 7,
-			SaferObjectInvertDeletedPrivileges = 8,
-			SaferObjectDeletedPrivileges = 9,
-			SaferObjectDefaultOwner = 10,
-			SaferObjectSidsToDisable = 11,
-			SaferObjectRestrictedSidsInverted = 12,
-			SaferObjectRestrictedSidsAdded = 13,
-			SaferObjectAllIdentificationGuids = 14,
-			SaferObjectSingleIdentification = 15,
-			SaferObjectExtendedError = 16,
+			LevelId = 1,
+			ScopeId = 2,
+			FriendlyName = 3,
+			Description = 4,
+			Builtin = 5,
+			Disallowed = 6,
+			DisableMaxPrivilege = 7,
+			InvertDeletedPrivileges = 8,
+			DeletedPrivileges = 9,
+			DefaultOwner = 10,
+			SidsToDisable = 11,
+			RestrictedSidsInverted = 12,
+			RestrictedSidsAdded = 13,
+			AllIdentificationGuids = 14,
+			SingleIdentification = 15,
+			ExtendedError = 16,
 		}
 		[AllowDuplicates]
 		public enum SAFER_IDENTIFICATION_TYPES : int32
 		{
-			SaferIdentityDefault = 0,
-			SaferIdentityTypeImageName = 1,
-			SaferIdentityTypeImageHash = 2,
-			SaferIdentityTypeUrlZone = 3,
-			SaferIdentityTypeCertificate = 4,
+			Default = 0,
+			TypeImageName = 1,
+			TypeImageHash = 2,
+			TypeUrlZone = 3,
+			TypeCertificate = 4,
 		}
 		
 		// --- Structs ---

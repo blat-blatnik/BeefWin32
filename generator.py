@@ -67,25 +67,30 @@ USE_LIB_INSTEAD_OF_DLL = {
 # If a name in the Json data is a Beef keyword, add it to this list and it will be prepended with '@' 
 # e.g. void Foo(int var) -> void Foo(int @var)
 REPLACE_KEYWORD_NAMES = {
-    'ref',
-    'var',
-    'override',
     'as',
     'append',
-    'scope',
-    'params',
-    'base',
-    'in',
-    'out',
-    'function',
-    'internal',
-    'defer',
-    'mut',
     'abstract',
-    'where',
-    'stack',
+    'base',
+    'box',
+    'default',
+    'defer',
+    'delete',
     'extension',
+    'function',
+    'fixed',
+    'in',
+    'internal',
+    'mut',
+    'out',
+    'override',
+    'params',
+    'ref',
     'repeat',
+    'stack',
+    'scope',
+    'static',
+    'var',
+    'where',
 }
 
 # Some APIs define the same names. To avoid name conflicts add one of them to this list along with a replacement.
@@ -112,19 +117,17 @@ def replace_type_name(typename: str, namespace: str = '') -> str:
     typename = REPLACE_TYPE_NAMES.get(typename, typename)
     return replace_name(typename, namespace)
 
-def remove_common_prefix(prefix: str, name: str) -> str:
-    if name.startswith(prefix + '_'):
-        return name.removeprefix(prefix + '_')
-    
-    initials = ''
-    for i in range(len(prefix)):
-        if i == 0 or prefix[i - 1] == '_':
-            initials += prefix[i].upper()
-
-    if name.startswith(initials + '_'):
-        return name.removeprefix(initials + '_')
-
-    return name
+def find_common_enum_prefix(enum_name: str, value_names: list[str]) -> str:
+    if len(value_names) == 0:
+        return ''
+    elif len(value_names) == 1:
+        return ''
+    else:
+        first_name = value_names[0]
+        index = 1
+        while all(index < len(name) and name.startswith(first_name[:index]) for name in value_names):
+            index += 1
+        return first_name[:index - 1]
 
 def get_type_name(type: dict) -> str:
     kind = type['Kind']
@@ -174,7 +177,7 @@ def remove_duplicate_names(objects: list[dict]) -> list[dict]:
             result.append(object)
     return result
 
-def process_guid(guid: str) -> str:
+def guid_literal(guid: str) -> str:
     guid_hex = ''
     for char in guid:
         if char != '-':
@@ -190,7 +193,7 @@ def process_guid(guid: str) -> str:
     i = '0x' + guid_hex[26:28]
     j = '0x' + guid_hex[28:30]
     k = '0x' + guid_hex[30:32]
-    return f'{a}, {b}, {c}, {d}, {e}, {f}, {g}, {h}, {i}, {j}, {k}'
+    return f'.({a}, {b}, {c}, {d}, {e}, {f}, {g}, {h}, {i}, {j}, {k})'
 
 
 try: os.mkdir(OUTPUT)
@@ -265,12 +268,12 @@ for filename in filenames:
                     name = replace_name(constant['Name'])
                     value = constant['Value']
                     if type == 'Guid':
-                        guid = process_guid(value)
-                        output.write(f'{indent}public const {type} {name} = .({guid});\n')
+                        guid = guid_literal(value)
+                        output.write(f'{indent}public const {type} {name} = {guid};\n')
                     elif type == 'PROPERTYKEY':
-                        fmtid = process_guid(value['Fmtid'])
+                        fmtid = guid_literal(value['Fmtid'])
                         pid = value['Pid']
-                        output.write(f'{indent}public const {type} {name} = .(.({fmtid}), {pid});\n')
+                        output.write(f'{indent}public const {type} {name} = .({fmtid}, {pid});\n')
                     elif type == 'String':
                         output.write(f'{indent}public const {type} {name} = "{value}";\n')
                     elif type == 'float':
@@ -316,9 +319,16 @@ for filename in filenames:
                     indent += '\t'
 
                     values = type['Values']
+                    common_prefix = find_common_enum_prefix(name, [value['Name'] for value in values])
                     for value in values:
-                        #value_name = remove_common_prefix(name, value['Name'])
-                        value_name = value['Name']
+                        # Sometimes stripping the prefix leaves names that start with numbers - we prefix those with '_'.
+                        value_name = value['Name'].removeprefix(common_prefix)
+                        if value_name[0].isnumeric():
+                            value_name = f'_{value_name}'
+                        value_name = replace_name(value_name)
+                        if value_name == 'void':
+                            # There is ONE enum value that when stripped is just 'void'..
+                            value_name = '@void'
                         if base_type is not None and base_type == 'uint64':
                             output.write(f'{indent}{value_name} = {value["Value"]}uL,\n')
                         else:
@@ -409,8 +419,8 @@ for filename in filenames:
 
                 for class_id in com_class_ids:
                     name = replace_type_name(class_id['Name'], namespace_name)
-                    guid = process_guid(class_id['Guid'])
-                    output.write(f'{indent}public const Guid CLSID_{name} = .({guid});\n')
+                    guid = guid_literal(class_id['Guid'])
+                    output.write(f'{indent}public const Guid CLSID_{name} = {guid};\n')
 
                 output.write(f'{indent}\n')
 
@@ -441,7 +451,7 @@ for filename in filenames:
 
                     guid = com['Guid']
                     if guid != None:
-                        output.write(f'{indent}public const new Guid IID = .({process_guid(guid)});\n')
+                        output.write(f'{indent}public const new Guid IID = {guid_literal(guid)};\n')
                         output.write(f'{indent}\n')
 
                     if base == None:

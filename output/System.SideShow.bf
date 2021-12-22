@@ -26,38 +26,38 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SIDESHOW_SCREEN_TYPE : int32
 		{
-			SIDESHOW_SCREEN_TYPE_BITMAP = 0,
-			SIDESHOW_SCREEN_TYPE_TEXT = 1,
+			BITMAP = 0,
+			TEXT = 1,
 		}
 		[AllowDuplicates]
 		public enum SIDESHOW_COLOR_TYPE : int32
 		{
-			SIDESHOW_COLOR_TYPE_COLOR = 0,
-			SIDESHOW_COLOR_TYPE_GREYSCALE = 1,
-			SIDESHOW_COLOR_TYPE_BLACK_AND_WHITE = 2,
+			COLOR = 0,
+			GREYSCALE = 1,
+			BLACK_AND_WHITE = 2,
 		}
 		[AllowDuplicates]
 		public enum SCF_EVENT_IDS : int32
 		{
-			SCF_EVENT_NAVIGATION = 1,
-			SCF_EVENT_MENUACTION = 2,
-			SCF_EVENT_CONTEXTMENU = 3,
+			NAVIGATION = 1,
+			MENUACTION = 2,
+			CONTEXTMENU = 3,
 		}
 		[AllowDuplicates]
 		public enum SCF_BUTTON_IDS : int32
 		{
-			SCF_BUTTON_MENU = 1,
-			SCF_BUTTON_SELECT = 2,
-			SCF_BUTTON_UP = 3,
-			SCF_BUTTON_DOWN = 4,
-			SCF_BUTTON_LEFT = 5,
-			SCF_BUTTON_RIGHT = 6,
-			SCF_BUTTON_PLAY = 7,
-			SCF_BUTTON_PAUSE = 8,
-			SCF_BUTTON_FASTFORWARD = 9,
-			SCF_BUTTON_REWIND = 10,
-			SCF_BUTTON_STOP = 11,
-			SCF_BUTTON_BACK = 65280,
+			MENU = 1,
+			SELECT = 2,
+			UP = 3,
+			DOWN = 4,
+			LEFT = 5,
+			RIGHT = 6,
+			PLAY = 7,
+			PAUSE = 8,
+			FASTFORWARD = 9,
+			REWIND = 10,
+			STOP = 11,
+			BACK = 65280,
 		}
 		
 		// --- Structs ---

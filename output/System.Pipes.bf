@@ -17,16 +17,16 @@ namespace Win32
 		[AllowDuplicates]
 		public enum NAMED_PIPE_MODE : uint32
 		{
-			PIPE_WAIT = 0,
-			PIPE_NOWAIT = 1,
-			PIPE_READMODE_BYTE = 0,
-			PIPE_READMODE_MESSAGE = 2,
-			PIPE_CLIENT_END = 0,
-			PIPE_SERVER_END = 1,
-			PIPE_TYPE_BYTE = 0,
-			PIPE_TYPE_MESSAGE = 4,
-			PIPE_ACCEPT_REMOTE_CLIENTS = 0,
-			PIPE_REJECT_REMOTE_CLIENTS = 8,
+			WAIT = 0,
+			NOWAIT = 1,
+			READMODE_BYTE = 0,
+			READMODE_MESSAGE = 2,
+			CLIENT_END = 0,
+			SERVER_END = 1,
+			TYPE_BYTE = 0,
+			TYPE_MESSAGE = 4,
+			ACCEPT_REMOTE_CLIENTS = 0,
+			REJECT_REMOTE_CLIENTS = 8,
 		}
 		
 		// --- Functions ---

@@ -2421,37 +2421,37 @@ namespace Win32
 		[AllowDuplicates]
 		public enum HIDP_REPORT_TYPE : int32
 		{
-			HidP_Input = 0,
-			HidP_Output = 1,
-			HidP_Feature = 2,
+			Input = 0,
+			Output = 1,
+			Feature = 2,
 		}
 		[AllowDuplicates]
 		public enum HIDP_KEYBOARD_DIRECTION : int32
 		{
-			HidP_Keyboard_Break = 0,
-			HidP_Keyboard_Make = 1,
+			Break = 0,
+			Make = 1,
 		}
 		[AllowDuplicates]
 		public enum GPIOBUTTONS_BUTTON_TYPE : int32
 		{
-			GPIO_BUTTON_POWER = 0,
-			GPIO_BUTTON_WINDOWS = 1,
-			GPIO_BUTTON_VOLUME_UP = 2,
-			GPIO_BUTTON_VOLUME_DOWN = 3,
-			GPIO_BUTTON_ROTATION_LOCK = 4,
-			GPIO_BUTTON_BACK = 5,
-			GPIO_BUTTON_SEARCH = 6,
-			GPIO_BUTTON_CAMERA_FOCUS = 7,
-			GPIO_BUTTON_CAMERA_SHUTTER = 8,
-			GPIO_BUTTON_RINGER_TOGGLE = 9,
-			GPIO_BUTTON_HEADSET = 10,
-			GPIO_BUTTON_HWKB_DEPLOY = 11,
-			GPIO_BUTTON_CAMERA_LENS = 12,
-			GPIO_BUTTON_OEM_CUSTOM = 13,
-			GPIO_BUTTON_OEM_CUSTOM2 = 14,
-			GPIO_BUTTON_OEM_CUSTOM3 = 15,
-			GPIO_BUTTON_COUNT_MIN = 5,
-			GPIO_BUTTON_COUNT = 16,
+			POWER = 0,
+			WINDOWS = 1,
+			VOLUME_UP = 2,
+			VOLUME_DOWN = 3,
+			ROTATION_LOCK = 4,
+			BACK = 5,
+			SEARCH = 6,
+			CAMERA_FOCUS = 7,
+			CAMERA_SHUTTER = 8,
+			RINGER_TOGGLE = 9,
+			HEADSET = 10,
+			HWKB_DEPLOY = 11,
+			CAMERA_LENS = 12,
+			OEM_CUSTOM = 13,
+			OEM_CUSTOM2 = 14,
+			OEM_CUSTOM3 = 15,
+			COUNT_MIN = 5,
+			COUNT = 16,
 		}
 		
 		// --- Function Pointers ---

@@ -1022,86 +1022,86 @@ namespace Win32
 		[AllowDuplicates]
 		public enum GPT_ATTRIBUTES : uint64
 		{
-			GPT_ATTRIBUTE_PLATFORM_REQUIRED = 1uL,
-			GPT_BASIC_DATA_ATTRIBUTE_NO_DRIVE_LETTER = 9223372036854775808uL,
-			GPT_BASIC_DATA_ATTRIBUTE_HIDDEN = 4611686018427387904uL,
-			GPT_BASIC_DATA_ATTRIBUTE_SHADOW_COPY = 2305843009213693952uL,
-			GPT_BASIC_DATA_ATTRIBUTE_READ_ONLY = 1152921504606846976uL,
+			ATTRIBUTE_PLATFORM_REQUIRED = 1uL,
+			BASIC_DATA_ATTRIBUTE_NO_DRIVE_LETTER = 9223372036854775808uL,
+			BASIC_DATA_ATTRIBUTE_HIDDEN = 4611686018427387904uL,
+			BASIC_DATA_ATTRIBUTE_SHADOW_COPY = 2305843009213693952uL,
+			BASIC_DATA_ATTRIBUTE_READ_ONLY = 1152921504606846976uL,
 		}
 		[AllowDuplicates]
 		public enum USN_DELETE_FLAGS : uint32
 		{
-			USN_DELETE_FLAG_DELETE = 1,
-			USN_DELETE_FLAG_NOTIFY = 2,
+			DELETE = 1,
+			NOTIFY = 2,
 		}
 		[AllowDuplicates]
 		public enum CHANGER_FEATURES : uint32
 		{
-			CHANGER_BAR_CODE_SCANNER_INSTALLED = 1,
-			CHANGER_CARTRIDGE_MAGAZINE = 256,
-			CHANGER_CLEANER_ACCESS_NOT_VALID = 262144,
-			CHANGER_CLEANER_SLOT = 64,
-			CHANGER_CLOSE_IEPORT = 4,
-			CHANGER_DEVICE_REINITIALIZE_CAPABLE = 134217728,
-			CHANGER_DRIVE_CLEANING_REQUIRED = 65536,
-			CHANGER_DRIVE_EMPTY_ON_DOOR_ACCESS = 536870912,
-			CHANGER_EXCHANGE_MEDIA = 32,
-			CHANGER_INIT_ELEM_STAT_WITH_RANGE = 2,
-			CHANGER_KEYPAD_ENABLE_DISABLE = 268435456,
-			CHANGER_LOCK_UNLOCK = 128,
-			CHANGER_MEDIUM_FLIP = 512,
-			CHANGER_OPEN_IEPORT = 8,
-			CHANGER_POSITION_TO_ELEMENT = 1024,
-			CHANGER_PREDISMOUNT_EJECT_REQUIRED = 131072,
-			CHANGER_PREMOUNT_EJECT_REQUIRED = 524288,
-			CHANGER_REPORT_IEPORT_STATE = 2048,
-			CHANGER_SERIAL_NUMBER_VALID = 67108864,
-			CHANGER_STATUS_NON_VOLATILE = 16,
-			CHANGER_STORAGE_DRIVE = 4096,
-			CHANGER_STORAGE_IEPORT = 8192,
-			CHANGER_STORAGE_SLOT = 16384,
-			CHANGER_STORAGE_TRANSPORT = 32768,
-			CHANGER_VOLUME_ASSERT = 4194304,
-			CHANGER_VOLUME_IDENTIFICATION = 1048576,
-			CHANGER_VOLUME_REPLACE = 8388608,
-			CHANGER_VOLUME_SEARCH = 2097152,
-			CHANGER_VOLUME_UNDEFINE = 16777216,
+			BAR_CODE_SCANNER_INSTALLED = 1,
+			CARTRIDGE_MAGAZINE = 256,
+			CLEANER_ACCESS_NOT_VALID = 262144,
+			CLEANER_SLOT = 64,
+			CLOSE_IEPORT = 4,
+			DEVICE_REINITIALIZE_CAPABLE = 134217728,
+			DRIVE_CLEANING_REQUIRED = 65536,
+			DRIVE_EMPTY_ON_DOOR_ACCESS = 536870912,
+			EXCHANGE_MEDIA = 32,
+			INIT_ELEM_STAT_WITH_RANGE = 2,
+			KEYPAD_ENABLE_DISABLE = 268435456,
+			LOCK_UNLOCK = 128,
+			MEDIUM_FLIP = 512,
+			OPEN_IEPORT = 8,
+			POSITION_TO_ELEMENT = 1024,
+			PREDISMOUNT_EJECT_REQUIRED = 131072,
+			PREMOUNT_EJECT_REQUIRED = 524288,
+			REPORT_IEPORT_STATE = 2048,
+			SERIAL_NUMBER_VALID = 67108864,
+			STATUS_NON_VOLATILE = 16,
+			STORAGE_DRIVE = 4096,
+			STORAGE_IEPORT = 8192,
+			STORAGE_SLOT = 16384,
+			STORAGE_TRANSPORT = 32768,
+			VOLUME_ASSERT = 4194304,
+			VOLUME_IDENTIFICATION = 1048576,
+			VOLUME_REPLACE = 8388608,
+			VOLUME_SEARCH = 2097152,
+			VOLUME_UNDEFINE = 16777216,
 		}
 		[AllowDuplicates]
 		public enum TXFS_RMF_LAGS : uint32
 		{
-			TXFS_RM_FLAG_LOGGING_MODE = 1,
-			TXFS_RM_FLAG_RENAME_RM = 2,
-			TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MAX = 4,
-			TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MIN = 8,
-			TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS = 16,
-			TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT = 32,
-			TXFS_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE = 64,
-			TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX = 128,
-			TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN = 256,
-			TXFS_RM_FLAG_GROW_LOG = 1024,
-			TXFS_RM_FLAG_SHRINK_LOG = 2048,
-			TXFS_RM_FLAG_ENFORCE_MINIMUM_SIZE = 4096,
-			TXFS_RM_FLAG_PRESERVE_CHANGES = 8192,
-			TXFS_RM_FLAG_RESET_RM_AT_NEXT_START = 16384,
-			TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START = 32768,
-			TXFS_RM_FLAG_PREFER_CONSISTENCY = 65536,
-			TXFS_RM_FLAG_PREFER_AVAILABILITY = 131072,
+			LOGGING_MODE = 1,
+			RENAME_RM = 2,
+			LOG_CONTAINER_COUNT_MAX = 4,
+			LOG_CONTAINER_COUNT_MIN = 8,
+			LOG_GROWTH_INCREMENT_NUM_CONTAINERS = 16,
+			LOG_GROWTH_INCREMENT_PERCENT = 32,
+			LOG_AUTO_SHRINK_PERCENTAGE = 64,
+			LOG_NO_CONTAINER_COUNT_MAX = 128,
+			LOG_NO_CONTAINER_COUNT_MIN = 256,
+			GROW_LOG = 1024,
+			SHRINK_LOG = 2048,
+			ENFORCE_MINIMUM_SIZE = 4096,
+			PRESERVE_CHANGES = 8192,
+			RESET_RM_AT_NEXT_START = 16384,
+			DO_NOT_RESET_RM_AT_NEXT_START = 32768,
+			PREFER_CONSISTENCY = 65536,
+			PREFER_AVAILABILITY = 131072,
 		}
 		[AllowDuplicates]
 		public enum FILESYSTEM_STATISTICS_TYPE : uint16
 		{
-			FILESYSTEM_STATISTICS_TYPE_EXFAT = 3,
-			FILESYSTEM_STATISTICS_TYPE_FAT = 2,
-			FILESYSTEM_STATISTICS_TYPE_NTFS = 1,
+			EXFAT = 3,
+			FAT = 2,
+			NTFS = 1,
 		}
 		[AllowDuplicates]
 		public enum USN_SOURCE_INFO_ID : uint32
 		{
-			USN_SOURCE_AUXILIARY_DATA = 2,
-			USN_SOURCE_DATA_MANAGEMENT = 1,
-			USN_SOURCE_REPLICATION_MANAGEMENT = 4,
-			USN_SOURCE_CLIENT_REPLICATION_MANAGEMENT = 8,
+			AUXILIARY_DATA = 2,
+			DATA_MANAGEMENT = 1,
+			REPLICATION_MANAGEMENT = 4,
+			CLIENT_REPLICATION_MANAGEMENT = 8,
 		}
 		[AllowDuplicates]
 		public enum FILE_STORAGE_TIER_FLAGS : uint32
@@ -1111,35 +1111,35 @@ namespace Win32
 		[AllowDuplicates]
 		public enum CHANGER_ELEMENT_STATUS_FLAGS : uint32
 		{
-			ELEMENT_STATUS_ACCESS = 8,
-			ELEMENT_STATUS_AVOLTAG = 536870912,
-			ELEMENT_STATUS_EXCEPT = 4,
-			ELEMENT_STATUS_EXENAB = 16,
-			ELEMENT_STATUS_FULL = 1,
-			ELEMENT_STATUS_ID_VALID = 8192,
-			ELEMENT_STATUS_IMPEXP = 2,
-			ELEMENT_STATUS_INENAB = 32,
-			ELEMENT_STATUS_INVERT = 4194304,
-			ELEMENT_STATUS_LUN_VALID = 4096,
-			ELEMENT_STATUS_NOT_BUS = 32768,
-			ELEMENT_STATUS_PVOLTAG = 268435456,
-			ELEMENT_STATUS_SVALID = 8388608,
-			ELEMENT_STATUS_PRODUCT_DATA = 64,
+			ACCESS = 8,
+			AVOLTAG = 536870912,
+			EXCEPT = 4,
+			EXENAB = 16,
+			FULL = 1,
+			ID_VALID = 8192,
+			IMPEXP = 2,
+			INENAB = 32,
+			INVERT = 4194304,
+			LUN_VALID = 4096,
+			NOT_BUS = 32768,
+			PVOLTAG = 268435456,
+			SVALID = 8388608,
+			PRODUCT_DATA = 64,
 		}
 		[AllowDuplicates]
 		public enum GET_CHANGER_PARAMETERS_FEATURES1 : uint32
 		{
-			CHANGER_CLEANER_AUTODISMOUNT = 2147483652,
-			CHANGER_CLEANER_OPS_NOT_SUPPORTED = 2147483712,
-			CHANGER_IEPORT_USER_CONTROL_CLOSE = 2147483904,
-			CHANGER_IEPORT_USER_CONTROL_OPEN = 2147483776,
-			CHANGER_MOVE_EXTENDS_IEPORT = 2147484160,
-			CHANGER_MOVE_RETRACTS_IEPORT = 2147484672,
-			CHANGER_PREDISMOUNT_ALIGN_TO_DRIVE = 2147483650,
-			CHANGER_PREDISMOUNT_ALIGN_TO_SLOT = 2147483649,
-			CHANGER_RTN_MEDIA_TO_ORIGINAL_ADDR = 2147483680,
-			CHANGER_SLOTS_USE_TRAYS = 2147483664,
-			CHANGER_TRUE_EXCHANGE_CAPABLE = 2147483656,
+			CLEANER_AUTODISMOUNT = 2147483652,
+			CLEANER_OPS_NOT_SUPPORTED = 2147483712,
+			IEPORT_USER_CONTROL_CLOSE = 2147483904,
+			IEPORT_USER_CONTROL_OPEN = 2147483776,
+			MOVE_EXTENDS_IEPORT = 2147484160,
+			MOVE_RETRACTS_IEPORT = 2147484672,
+			PREDISMOUNT_ALIGN_TO_DRIVE = 2147483650,
+			PREDISMOUNT_ALIGN_TO_SLOT = 2147483649,
+			RTN_MEDIA_TO_ORIGINAL_ADDR = 2147483680,
+			SLOTS_USE_TRAYS = 2147483664,
+			TRUE_EXCHANGE_CAPABLE = 2147483656,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_MEDIA_TYPE : int32
@@ -1211,568 +1211,568 @@ namespace Win32
 		[AllowDuplicates]
 		public enum STORAGE_QUERY_TYPE : int32
 		{
-			PropertyStandardQuery = 0,
-			PropertyExistsQuery = 1,
-			PropertyMaskQuery = 2,
-			PropertyQueryMaxDefined = 3,
+			StandardQuery = 0,
+			ExistsQuery = 1,
+			MaskQuery = 2,
+			QueryMaxDefined = 3,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_SET_TYPE : int32
 		{
-			PropertyStandardSet = 0,
-			PropertyExistsSet = 1,
-			PropertySetMaxDefined = 2,
+			StandardSet = 0,
+			ExistsSet = 1,
+			SetMaxDefined = 2,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_PROPERTY_ID : int32
 		{
-			StorageDeviceProperty = 0,
-			StorageAdapterProperty = 1,
-			StorageDeviceIdProperty = 2,
-			StorageDeviceUniqueIdProperty = 3,
-			StorageDeviceWriteCacheProperty = 4,
-			StorageMiniportProperty = 5,
-			StorageAccessAlignmentProperty = 6,
-			StorageDeviceSeekPenaltyProperty = 7,
-			StorageDeviceTrimProperty = 8,
-			StorageDeviceWriteAggregationProperty = 9,
-			StorageDeviceDeviceTelemetryProperty = 10,
-			StorageDeviceLBProvisioningProperty = 11,
-			StorageDevicePowerProperty = 12,
-			StorageDeviceCopyOffloadProperty = 13,
-			StorageDeviceResiliencyProperty = 14,
-			StorageDeviceMediumProductType = 15,
-			StorageAdapterRpmbProperty = 16,
-			StorageAdapterCryptoProperty = 17,
-			StorageDeviceIoCapabilityProperty = 48,
-			StorageAdapterProtocolSpecificProperty = 49,
-			StorageDeviceProtocolSpecificProperty = 50,
-			StorageAdapterTemperatureProperty = 51,
-			StorageDeviceTemperatureProperty = 52,
-			StorageAdapterPhysicalTopologyProperty = 53,
-			StorageDevicePhysicalTopologyProperty = 54,
-			StorageDeviceAttributesProperty = 55,
-			StorageDeviceManagementStatus = 56,
-			StorageAdapterSerialNumberProperty = 57,
-			StorageDeviceLocationProperty = 58,
-			StorageDeviceNumaProperty = 59,
-			StorageDeviceZonedDeviceProperty = 60,
-			StorageDeviceUnsafeShutdownCount = 61,
-			StorageDeviceEnduranceProperty = 62,
-			StorageDeviceLedStateProperty = 63,
-			StorageDeviceSelfEncryptionProperty = 64,
-			StorageFruIdProperty = 65,
+			DeviceProperty = 0,
+			AdapterProperty = 1,
+			DeviceIdProperty = 2,
+			DeviceUniqueIdProperty = 3,
+			DeviceWriteCacheProperty = 4,
+			MiniportProperty = 5,
+			AccessAlignmentProperty = 6,
+			DeviceSeekPenaltyProperty = 7,
+			DeviceTrimProperty = 8,
+			DeviceWriteAggregationProperty = 9,
+			DeviceDeviceTelemetryProperty = 10,
+			DeviceLBProvisioningProperty = 11,
+			DevicePowerProperty = 12,
+			DeviceCopyOffloadProperty = 13,
+			DeviceResiliencyProperty = 14,
+			DeviceMediumProductType = 15,
+			AdapterRpmbProperty = 16,
+			AdapterCryptoProperty = 17,
+			DeviceIoCapabilityProperty = 48,
+			AdapterProtocolSpecificProperty = 49,
+			DeviceProtocolSpecificProperty = 50,
+			AdapterTemperatureProperty = 51,
+			DeviceTemperatureProperty = 52,
+			AdapterPhysicalTopologyProperty = 53,
+			DevicePhysicalTopologyProperty = 54,
+			DeviceAttributesProperty = 55,
+			DeviceManagementStatus = 56,
+			AdapterSerialNumberProperty = 57,
+			DeviceLocationProperty = 58,
+			DeviceNumaProperty = 59,
+			DeviceZonedDeviceProperty = 60,
+			DeviceUnsafeShutdownCount = 61,
+			DeviceEnduranceProperty = 62,
+			DeviceLedStateProperty = 63,
+			DeviceSelfEncryptionProperty = 64,
+			FruIdProperty = 65,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_PORT_CODE_SET : int32
 		{
-			StoragePortCodeSetReserved = 0,
-			StoragePortCodeSetStorport = 1,
-			StoragePortCodeSetSCSIport = 2,
-			StoragePortCodeSetSpaceport = 3,
-			StoragePortCodeSetATAport = 4,
-			StoragePortCodeSetUSBport = 5,
-			StoragePortCodeSetSBP2port = 6,
-			StoragePortCodeSetSDport = 7,
+			Reserved = 0,
+			Storport = 1,
+			SCSIport = 2,
+			Spaceport = 3,
+			ATAport = 4,
+			USBport = 5,
+			SBP2port = 6,
+			SDport = 7,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_IDENTIFIER_CODE_SET : int32
 		{
-			StorageIdCodeSetReserved = 0,
-			StorageIdCodeSetBinary = 1,
-			StorageIdCodeSetAscii = 2,
-			StorageIdCodeSetUtf8 = 3,
+			Reserved = 0,
+			Binary = 1,
+			Ascii = 2,
+			Utf8 = 3,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_IDENTIFIER_TYPE : int32
 		{
-			StorageIdTypeVendorSpecific = 0,
-			StorageIdTypeVendorId = 1,
-			StorageIdTypeEUI64 = 2,
-			StorageIdTypeFCPHName = 3,
-			StorageIdTypePortRelative = 4,
-			StorageIdTypeTargetPortGroup = 5,
-			StorageIdTypeLogicalUnitGroup = 6,
-			StorageIdTypeMD5LogicalUnitIdentifier = 7,
-			StorageIdTypeScsiNameString = 8,
+			VendorSpecific = 0,
+			VendorId = 1,
+			EUI64 = 2,
+			FCPHName = 3,
+			PortRelative = 4,
+			TargetPortGroup = 5,
+			LogicalUnitGroup = 6,
+			MD5LogicalUnitIdentifier = 7,
+			ScsiNameString = 8,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_ID_NAA_FORMAT : int32
 		{
-			StorageIdNAAFormatIEEEExtended = 2,
-			StorageIdNAAFormatIEEERegistered = 3,
-			StorageIdNAAFormatIEEEERegisteredExtended = 5,
+			Extended = 2,
+			Registered = 3,
+			ERegisteredExtended = 5,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_ASSOCIATION_TYPE : int32
 		{
-			StorageIdAssocDevice = 0,
-			StorageIdAssocPort = 1,
-			StorageIdAssocTarget = 2,
+			Device = 0,
+			Port = 1,
+			Target = 2,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_RPMB_FRAME_TYPE : int32
 		{
-			StorageRpmbFrameTypeUnknown = 0,
-			StorageRpmbFrameTypeStandard = 1,
-			StorageRpmbFrameTypeMax = 2,
+			Unknown = 0,
+			Standard = 1,
+			Max = 2,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_CRYPTO_ALGORITHM_ID : int32
 		{
-			StorageCryptoAlgorithmUnknown = 0,
-			StorageCryptoAlgorithmXTSAES = 1,
-			StorageCryptoAlgorithmBitlockerAESCBC = 2,
-			StorageCryptoAlgorithmAESECB = 3,
-			StorageCryptoAlgorithmESSIVAESCBC = 4,
-			StorageCryptoAlgorithmMax = 5,
+			Unknown = 0,
+			XTSAES = 1,
+			BitlockerAESCBC = 2,
+			AESECB = 3,
+			ESSIVAESCBC = 4,
+			Max = 5,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_CRYPTO_KEY_SIZE : int32
 		{
-			StorageCryptoKeySizeUnknown = 0,
-			StorageCryptoKeySize128Bits = 1,
-			StorageCryptoKeySize192Bits = 2,
-			StorageCryptoKeySize256Bits = 3,
-			StorageCryptoKeySize512Bits = 4,
+			Unknown = 0,
+			_128Bits = 1,
+			_192Bits = 2,
+			_256Bits = 3,
+			_512Bits = 4,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_TIER_MEDIA_TYPE : int32
 		{
-			StorageTierMediaTypeUnspecified = 0,
-			StorageTierMediaTypeDisk = 1,
-			StorageTierMediaTypeSsd = 2,
-			StorageTierMediaTypeScm = 4,
-			StorageTierMediaTypeMax = 5,
+			Unspecified = 0,
+			Disk = 1,
+			Ssd = 2,
+			Scm = 4,
+			Max = 5,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_TIER_CLASS : int32
 		{
-			StorageTierClassUnspecified = 0,
-			StorageTierClassCapacity = 1,
-			StorageTierClassPerformance = 2,
-			StorageTierClassMax = 3,
+			Unspecified = 0,
+			Capacity = 1,
+			Performance = 2,
+			Max = 3,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_PROTOCOL_TYPE : int32
 		{
-			ProtocolTypeUnknown = 0,
-			ProtocolTypeScsi = 1,
-			ProtocolTypeAta = 2,
-			ProtocolTypeNvme = 3,
-			ProtocolTypeSd = 4,
-			ProtocolTypeUfs = 5,
-			ProtocolTypeProprietary = 126,
-			ProtocolTypeMaxReserved = 127,
+			Unknown = 0,
+			Scsi = 1,
+			Ata = 2,
+			Nvme = 3,
+			Sd = 4,
+			Ufs = 5,
+			Proprietary = 126,
+			MaxReserved = 127,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_PROTOCOL_NVME_DATA_TYPE : int32
 		{
-			NVMeDataTypeUnknown = 0,
-			NVMeDataTypeIdentify = 1,
-			NVMeDataTypeLogPage = 2,
-			NVMeDataTypeFeature = 3,
+			Unknown = 0,
+			Identify = 1,
+			LogPage = 2,
+			Feature = 3,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_PROTOCOL_ATA_DATA_TYPE : int32
 		{
-			AtaDataTypeUnknown = 0,
-			AtaDataTypeIdentify = 1,
-			AtaDataTypeLogPage = 2,
+			Unknown = 0,
+			Identify = 1,
+			LogPage = 2,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_PROTOCOL_UFS_DATA_TYPE : int32
 		{
-			UfsDataTypeUnknown = 0,
-			UfsDataTypeQueryDescriptor = 1,
-			UfsDataTypeQueryAttribute = 2,
-			UfsDataTypeQueryFlag = 3,
-			UfsDataTypeQueryDmeAttribute = 4,
-			UfsDataTypeQueryDmePeerAttribute = 5,
-			UfsDataTypeMax = 6,
+			Unknown = 0,
+			QueryDescriptor = 1,
+			QueryAttribute = 2,
+			QueryFlag = 3,
+			QueryDmeAttribute = 4,
+			QueryDmePeerAttribute = 5,
+			Max = 6,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_DEVICE_FORM_FACTOR : int32
 		{
-			FormFactorUnknown = 0,
-			FormFactor3_5 = 1,
-			FormFactor2_5 = 2,
-			FormFactor1_8 = 3,
-			FormFactor1_8Less = 4,
-			FormFactorEmbedded = 5,
-			FormFactorMemoryCard = 6,
-			FormFactormSata = 7,
-			FormFactorM_2 = 8,
-			FormFactorPCIeBoard = 9,
-			FormFactorDimm = 10,
+			Unknown = 0,
+			_3_5 = 1,
+			_2_5 = 2,
+			_1_8 = 3,
+			_1_8Less = 4,
+			Embedded = 5,
+			MemoryCard = 6,
+			mSata = 7,
+			M_2 = 8,
+			PCIeBoard = 9,
+			Dimm = 10,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_COMPONENT_HEALTH_STATUS : int32
 		{
-			HealthStatusUnknown = 0,
-			HealthStatusNormal = 1,
-			HealthStatusThrottled = 2,
-			HealthStatusWarning = 3,
-			HealthStatusDisabled = 4,
-			HealthStatusFailed = 5,
+			Unknown = 0,
+			Normal = 1,
+			Throttled = 2,
+			Warning = 3,
+			Disabled = 4,
+			Failed = 5,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_DISK_HEALTH_STATUS : int32
 		{
-			DiskHealthUnknown = 0,
-			DiskHealthUnhealthy = 1,
-			DiskHealthWarning = 2,
-			DiskHealthHealthy = 3,
-			DiskHealthMax = 4,
+			Unknown = 0,
+			Unhealthy = 1,
+			Warning = 2,
+			Healthy = 3,
+			Max = 4,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_DISK_OPERATIONAL_STATUS : int32
 		{
-			DiskOpStatusNone = 0,
-			DiskOpStatusUnknown = 1,
-			DiskOpStatusOk = 2,
-			DiskOpStatusPredictingFailure = 3,
-			DiskOpStatusInService = 4,
-			DiskOpStatusHardwareError = 5,
-			DiskOpStatusNotUsable = 6,
-			DiskOpStatusTransientError = 7,
-			DiskOpStatusMissing = 8,
+			None = 0,
+			Unknown = 1,
+			Ok = 2,
+			PredictingFailure = 3,
+			InService = 4,
+			HardwareError = 5,
+			NotUsable = 6,
+			TransientError = 7,
+			Missing = 8,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_OPERATIONAL_STATUS_REASON : int32
 		{
-			DiskOpReasonUnknown = 0,
-			DiskOpReasonScsiSenseCode = 1,
-			DiskOpReasonMedia = 2,
-			DiskOpReasonIo = 3,
-			DiskOpReasonThresholdExceeded = 4,
-			DiskOpReasonLostData = 5,
-			DiskOpReasonEnergySource = 6,
-			DiskOpReasonConfiguration = 7,
-			DiskOpReasonDeviceController = 8,
-			DiskOpReasonMediaController = 9,
-			DiskOpReasonComponent = 10,
-			DiskOpReasonNVDIMM_N = 11,
-			DiskOpReasonBackgroundOperation = 12,
-			DiskOpReasonInvalidFirmware = 13,
-			DiskOpReasonHealthCheck = 14,
-			DiskOpReasonLostDataPersistence = 15,
-			DiskOpReasonDisabledByPlatform = 16,
-			DiskOpReasonLostWritePersistence = 17,
-			DiskOpReasonDataPersistenceLossImminent = 18,
-			DiskOpReasonWritePersistenceLossImminent = 19,
-			DiskOpReasonMax = 20,
+			Unknown = 0,
+			ScsiSenseCode = 1,
+			Media = 2,
+			Io = 3,
+			ThresholdExceeded = 4,
+			LostData = 5,
+			EnergySource = 6,
+			Configuration = 7,
+			DeviceController = 8,
+			MediaController = 9,
+			Component = 10,
+			NVDIMM_N = 11,
+			BackgroundOperation = 12,
+			InvalidFirmware = 13,
+			HealthCheck = 14,
+			LostDataPersistence = 15,
+			DisabledByPlatform = 16,
+			LostWritePersistence = 17,
+			DataPersistenceLossImminent = 18,
+			WritePersistenceLossImminent = 19,
+			Max = 20,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_ZONED_DEVICE_TYPES : int32
 		{
-			ZonedDeviceTypeUnknown = 0,
-			ZonedDeviceTypeHostManaged = 1,
-			ZonedDeviceTypeHostAware = 2,
-			ZonedDeviceTypeDeviceManaged = 3,
+			Unknown = 0,
+			HostManaged = 1,
+			HostAware = 2,
+			DeviceManaged = 3,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_ZONE_TYPES : int32
 		{
-			ZoneTypeUnknown = 0,
-			ZoneTypeConventional = 1,
-			ZoneTypeSequentialWriteRequired = 2,
-			ZoneTypeSequentialWritePreferred = 3,
-			ZoneTypeMax = 4,
+			Unknown = 0,
+			Conventional = 1,
+			SequentialWriteRequired = 2,
+			SequentialWritePreferred = 3,
+			Max = 4,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_ZONES_ATTRIBUTES : int32
 		{
-			ZonesAttributeTypeAndLengthMayDifferent = 0,
-			ZonesAttributeTypeSameLengthSame = 1,
-			ZonesAttributeTypeSameLastZoneLengthDifferent = 2,
-			ZonesAttributeTypeMayDifferentLengthSame = 3,
+			AndLengthMayDifferent = 0,
+			SameLengthSame = 1,
+			SameLastZoneLengthDifferent = 2,
+			MayDifferentLengthSame = 3,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_ZONE_CONDITION : int32
 		{
-			ZoneConditionConventional = 0,
-			ZoneConditionEmpty = 1,
-			ZoneConditionImplicitlyOpened = 2,
-			ZoneConditionExplicitlyOpened = 3,
-			ZoneConditionClosed = 4,
-			ZoneConditionReadOnly = 13,
-			ZoneConditionFull = 14,
-			ZoneConditionOffline = 15,
+			Conventional = 0,
+			Empty = 1,
+			ImplicitlyOpened = 2,
+			ExplicitlyOpened = 3,
+			Closed = 4,
+			ReadOnly = 13,
+			Full = 14,
+			Offline = 15,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_DIAGNOSTIC_LEVEL : int32
 		{
-			StorageDiagnosticLevelDefault = 0,
-			StorageDiagnosticLevelMax = 1,
+			Default = 0,
+			Max = 1,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_DIAGNOSTIC_TARGET_TYPE : int32
 		{
-			StorageDiagnosticTargetTypeUndefined = 0,
-			StorageDiagnosticTargetTypePort = 1,
-			StorageDiagnosticTargetTypeMiniport = 2,
-			StorageDiagnosticTargetTypeHbaFirmware = 3,
-			StorageDiagnosticTargetTypeMax = 4,
+			Undefined = 0,
+			Port = 1,
+			Miniport = 2,
+			HbaFirmware = 3,
+			Max = 4,
 		}
 		[AllowDuplicates]
 		public enum DEVICE_INTERNAL_STATUS_DATA_REQUEST_TYPE : int32
 		{
-			DeviceInternalStatusDataRequestTypeUndefined = 0,
-			DeviceCurrentInternalStatusDataHeader = 1,
-			DeviceCurrentInternalStatusData = 2,
-			DeviceSavedInternalStatusDataHeader = 3,
-			DeviceSavedInternalStatusData = 4,
+			InternalStatusDataRequestTypeUndefined = 0,
+			CurrentInternalStatusDataHeader = 1,
+			CurrentInternalStatusData = 2,
+			SavedInternalStatusDataHeader = 3,
+			SavedInternalStatusData = 4,
 		}
 		[AllowDuplicates]
 		public enum DEVICE_INTERNAL_STATUS_DATA_SET : int32
 		{
-			DeviceStatusDataSetUndefined = 0,
-			DeviceStatusDataSet1 = 1,
-			DeviceStatusDataSet2 = 2,
-			DeviceStatusDataSet3 = 3,
-			DeviceStatusDataSet4 = 4,
-			DeviceStatusDataSetMax = 5,
+			Undefined = 0,
+			_1 = 1,
+			_2 = 2,
+			_3 = 3,
+			_4 = 4,
+			Max = 5,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_SANITIZE_METHOD : int32
 		{
-			StorageSanitizeMethodDefault = 0,
-			StorageSanitizeMethodBlockErase = 1,
-			StorageSanitizeMethodCryptoErase = 2,
+			Default = 0,
+			BlockErase = 1,
+			CryptoErase = 2,
 		}
 		[AllowDuplicates]
 		public enum WRITE_CACHE_TYPE : int32
 		{
-			WriteCacheTypeUnknown = 0,
-			WriteCacheTypeNone = 1,
-			WriteCacheTypeWriteBack = 2,
-			WriteCacheTypeWriteThrough = 3,
+			Unknown = 0,
+			None = 1,
+			WriteBack = 2,
+			WriteThrough = 3,
 		}
 		[AllowDuplicates]
 		public enum WRITE_CACHE_ENABLE : int32
 		{
-			WriteCacheEnableUnknown = 0,
-			WriteCacheDisabled = 1,
-			WriteCacheEnabled = 2,
+			EnableUnknown = 0,
+			Disabled = 1,
+			Enabled = 2,
 		}
 		[AllowDuplicates]
 		public enum WRITE_CACHE_CHANGE : int32
 		{
-			WriteCacheChangeUnknown = 0,
-			WriteCacheNotChangeable = 1,
-			WriteCacheChangeable = 2,
+			ChangeUnknown = 0,
+			NotChangeable = 1,
+			Changeable = 2,
 		}
 		[AllowDuplicates]
 		public enum WRITE_THROUGH : int32
 		{
-			WriteThroughUnknown = 0,
-			WriteThroughNotSupported = 1,
-			WriteThroughSupported = 2,
+			Unknown = 0,
+			NotSupported = 1,
+			Supported = 2,
 		}
 		[AllowDuplicates]
 		public enum _DEVICEDUMP_COLLECTION_TYPE : int32
 		{
-			TCCollectionBugCheck = 1,
-			TCCollectionApplicationRequested = 2,
-			TCCollectionDeviceRequested = 3,
+			BugCheck = 1,
+			ApplicationRequested = 2,
+			DeviceRequested = 3,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_POWERUP_REASON_TYPE : int32
 		{
-			StoragePowerupUnknown = 0,
-			StoragePowerupIO = 1,
-			StoragePowerupDeviceAttention = 2,
+			Unknown = 0,
+			IO = 1,
+			DeviceAttention = 2,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_DEVICE_POWER_CAP_UNITS : int32
 		{
-			StorageDevicePowerCapUnitsPercent = 0,
-			StorageDevicePowerCapUnitsMilliwatts = 1,
+			Percent = 0,
+			Milliwatts = 1,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_RPMB_COMMAND_TYPE : int32
 		{
-			StorRpmbProgramAuthKey = 1,
-			StorRpmbQueryWriteCounter = 2,
-			StorRpmbAuthenticatedWrite = 3,
-			StorRpmbAuthenticatedRead = 4,
-			StorRpmbReadResultRequest = 5,
-			StorRpmbAuthenticatedDeviceConfigWrite = 6,
-			StorRpmbAuthenticatedDeviceConfigRead = 7,
+			ProgramAuthKey = 1,
+			QueryWriteCounter = 2,
+			AuthenticatedWrite = 3,
+			AuthenticatedRead = 4,
+			ReadResultRequest = 5,
+			AuthenticatedDeviceConfigWrite = 6,
+			AuthenticatedDeviceConfigRead = 7,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_COUNTER_TYPE : int32
 		{
-			StorageCounterTypeUnknown = 0,
-			StorageCounterTypeTemperatureCelsius = 1,
-			StorageCounterTypeTemperatureCelsiusMax = 2,
-			StorageCounterTypeReadErrorsTotal = 3,
-			StorageCounterTypeReadErrorsCorrected = 4,
-			StorageCounterTypeReadErrorsUncorrected = 5,
-			StorageCounterTypeWriteErrorsTotal = 6,
-			StorageCounterTypeWriteErrorsCorrected = 7,
-			StorageCounterTypeWriteErrorsUncorrected = 8,
-			StorageCounterTypeManufactureDate = 9,
-			StorageCounterTypeStartStopCycleCount = 10,
-			StorageCounterTypeStartStopCycleCountMax = 11,
-			StorageCounterTypeLoadUnloadCycleCount = 12,
-			StorageCounterTypeLoadUnloadCycleCountMax = 13,
-			StorageCounterTypeWearPercentage = 14,
-			StorageCounterTypeWearPercentageWarning = 15,
-			StorageCounterTypeWearPercentageMax = 16,
-			StorageCounterTypePowerOnHours = 17,
-			StorageCounterTypeReadLatency100NSMax = 18,
-			StorageCounterTypeWriteLatency100NSMax = 19,
-			StorageCounterTypeFlushLatency100NSMax = 20,
-			StorageCounterTypeMax = 21,
+			Unknown = 0,
+			TemperatureCelsius = 1,
+			TemperatureCelsiusMax = 2,
+			ReadErrorsTotal = 3,
+			ReadErrorsCorrected = 4,
+			ReadErrorsUncorrected = 5,
+			WriteErrorsTotal = 6,
+			WriteErrorsCorrected = 7,
+			WriteErrorsUncorrected = 8,
+			ManufactureDate = 9,
+			StartStopCycleCount = 10,
+			StartStopCycleCountMax = 11,
+			LoadUnloadCycleCount = 12,
+			LoadUnloadCycleCountMax = 13,
+			WearPercentage = 14,
+			WearPercentageWarning = 15,
+			WearPercentageMax = 16,
+			PowerOnHours = 17,
+			ReadLatency100NSMax = 18,
+			WriteLatency100NSMax = 19,
+			FlushLatency100NSMax = 20,
+			Max = 21,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_ATTRIBUTE_MGMT_ACTION : int32
 		{
-			StorAttributeMgmt_ClearAttribute = 0,
-			StorAttributeMgmt_SetAttribute = 1,
-			StorAttributeMgmt_ResetAttribute = 2,
+			ClearAttribute = 0,
+			SetAttribute = 1,
+			ResetAttribute = 2,
 		}
 		[AllowDuplicates]
 		public enum SCM_REGION_FLAG : int32
 		{
-			ScmRegionFlagNone = 0,
-			ScmRegionFlagLabel = 1,
+			None = 0,
+			Label = 1,
 		}
 		[AllowDuplicates]
 		public enum SCM_BUS_QUERY_TYPE : int32
 		{
-			ScmBusQuery_Descriptor = 0,
-			ScmBusQuery_IsSupported = 1,
-			ScmBusQuery_Max = 2,
+			Descriptor = 0,
+			IsSupported = 1,
+			Max = 2,
 		}
 		[AllowDuplicates]
 		public enum SCM_BUS_SET_TYPE : int32
 		{
-			ScmBusSet_Descriptor = 0,
-			ScmBusSet_IsSupported = 1,
-			ScmBusSet_Max = 2,
+			Descriptor = 0,
+			IsSupported = 1,
+			Max = 2,
 		}
 		[AllowDuplicates]
 		public enum SCM_BUS_PROPERTY_ID : int32
 		{
-			ScmBusProperty_RuntimeFwActivationInfo = 0,
-			ScmBusProperty_DedicatedMemoryInfo = 1,
-			ScmBusProperty_DedicatedMemoryState = 2,
-			ScmBusProperty_Max = 3,
+			RuntimeFwActivationInfo = 0,
+			DedicatedMemoryInfo = 1,
+			DedicatedMemoryState = 2,
+			Max = 3,
 		}
 		[AllowDuplicates]
 		public enum SCM_BUS_FIRMWARE_ACTIVATION_STATE : int32
 		{
-			ScmBusFirmwareActivationState_Idle = 0,
-			ScmBusFirmwareActivationState_Armed = 1,
-			ScmBusFirmwareActivationState_Busy = 2,
+			Idle = 0,
+			Armed = 1,
+			Busy = 2,
 		}
 		[AllowDuplicates]
 		public enum SCM_PD_QUERY_TYPE : int32
 		{
-			ScmPhysicalDeviceQuery_Descriptor = 0,
-			ScmPhysicalDeviceQuery_IsSupported = 1,
-			ScmPhysicalDeviceQuery_Max = 2,
+			Descriptor = 0,
+			IsSupported = 1,
+			Max = 2,
 		}
 		[AllowDuplicates]
 		public enum SCM_PD_SET_TYPE : int32
 		{
-			ScmPhysicalDeviceSet_Descriptor = 0,
-			ScmPhysicalDeviceSet_IsSupported = 1,
-			ScmPhysicalDeviceSet_Max = 2,
+			Descriptor = 0,
+			IsSupported = 1,
+			Max = 2,
 		}
 		[AllowDuplicates]
 		public enum SCM_PD_PROPERTY_ID : int32
 		{
-			ScmPhysicalDeviceProperty_DeviceInfo = 0,
-			ScmPhysicalDeviceProperty_ManagementStatus = 1,
-			ScmPhysicalDeviceProperty_FirmwareInfo = 2,
-			ScmPhysicalDeviceProperty_LocationString = 3,
-			ScmPhysicalDeviceProperty_DeviceSpecificInfo = 4,
-			ScmPhysicalDeviceProperty_DeviceHandle = 5,
-			ScmPhysicalDeviceProperty_FruIdString = 6,
-			ScmPhysicalDeviceProperty_RuntimeFwActivationInfo = 7,
-			ScmPhysicalDeviceProperty_RuntimeFwActivationArmState = 8,
-			ScmPhysicalDeviceProperty_Max = 9,
+			DeviceInfo = 0,
+			ManagementStatus = 1,
+			FirmwareInfo = 2,
+			LocationString = 3,
+			DeviceSpecificInfo = 4,
+			DeviceHandle = 5,
+			FruIdString = 6,
+			RuntimeFwActivationInfo = 7,
+			RuntimeFwActivationArmState = 8,
+			Max = 9,
 		}
 		[AllowDuplicates]
 		public enum SCM_PD_HEALTH_STATUS : int32
 		{
-			ScmPhysicalDeviceHealth_Unknown = 0,
-			ScmPhysicalDeviceHealth_Unhealthy = 1,
-			ScmPhysicalDeviceHealth_Warning = 2,
-			ScmPhysicalDeviceHealth_Healthy = 3,
-			ScmPhysicalDeviceHealth_Max = 4,
+			Unknown = 0,
+			Unhealthy = 1,
+			Warning = 2,
+			Healthy = 3,
+			Max = 4,
 		}
 		[AllowDuplicates]
 		public enum SCM_PD_OPERATIONAL_STATUS : int32
 		{
-			ScmPhysicalDeviceOpStatus_Unknown = 0,
-			ScmPhysicalDeviceOpStatus_Ok = 1,
-			ScmPhysicalDeviceOpStatus_PredictingFailure = 2,
-			ScmPhysicalDeviceOpStatus_InService = 3,
-			ScmPhysicalDeviceOpStatus_HardwareError = 4,
-			ScmPhysicalDeviceOpStatus_NotUsable = 5,
-			ScmPhysicalDeviceOpStatus_TransientError = 6,
-			ScmPhysicalDeviceOpStatus_Missing = 7,
-			ScmPhysicalDeviceOpStatus_Max = 8,
+			Unknown = 0,
+			Ok = 1,
+			PredictingFailure = 2,
+			InService = 3,
+			HardwareError = 4,
+			NotUsable = 5,
+			TransientError = 6,
+			Missing = 7,
+			Max = 8,
 		}
 		[AllowDuplicates]
 		public enum SCM_PD_OPERATIONAL_STATUS_REASON : int32
 		{
-			ScmPhysicalDeviceOpReason_Unknown = 0,
-			ScmPhysicalDeviceOpReason_Media = 1,
-			ScmPhysicalDeviceOpReason_ThresholdExceeded = 2,
-			ScmPhysicalDeviceOpReason_LostData = 3,
-			ScmPhysicalDeviceOpReason_EnergySource = 4,
-			ScmPhysicalDeviceOpReason_Configuration = 5,
-			ScmPhysicalDeviceOpReason_DeviceController = 6,
-			ScmPhysicalDeviceOpReason_MediaController = 7,
-			ScmPhysicalDeviceOpReason_Component = 8,
-			ScmPhysicalDeviceOpReason_BackgroundOperation = 9,
-			ScmPhysicalDeviceOpReason_InvalidFirmware = 10,
-			ScmPhysicalDeviceOpReason_HealthCheck = 11,
-			ScmPhysicalDeviceOpReason_LostDataPersistence = 12,
-			ScmPhysicalDeviceOpReason_DisabledByPlatform = 13,
-			ScmPhysicalDeviceOpReason_PermanentError = 14,
-			ScmPhysicalDeviceOpReason_LostWritePersistence = 15,
-			ScmPhysicalDeviceOpReason_FatalError = 16,
-			ScmPhysicalDeviceOpReason_DataPersistenceLossImminent = 17,
-			ScmPhysicalDeviceOpReason_WritePersistenceLossImminent = 18,
-			ScmPhysicalDeviceOpReason_MediaRemainingSpareBlock = 19,
-			ScmPhysicalDeviceOpReason_PerformanceDegradation = 20,
-			ScmPhysicalDeviceOpReason_ExcessiveTemperature = 21,
-			ScmPhysicalDeviceOpReason_InternalFailure = 22,
-			ScmPhysicalDeviceOpReason_Max = 23,
+			Unknown = 0,
+			Media = 1,
+			ThresholdExceeded = 2,
+			LostData = 3,
+			EnergySource = 4,
+			Configuration = 5,
+			DeviceController = 6,
+			MediaController = 7,
+			Component = 8,
+			BackgroundOperation = 9,
+			InvalidFirmware = 10,
+			HealthCheck = 11,
+			LostDataPersistence = 12,
+			DisabledByPlatform = 13,
+			PermanentError = 14,
+			LostWritePersistence = 15,
+			FatalError = 16,
+			DataPersistenceLossImminent = 17,
+			WritePersistenceLossImminent = 18,
+			MediaRemainingSpareBlock = 19,
+			PerformanceDegradation = 20,
+			ExcessiveTemperature = 21,
+			InternalFailure = 22,
+			Max = 23,
 		}
 		[AllowDuplicates]
 		public enum SCM_PD_LAST_FW_ACTIVATION_STATUS : int32
 		{
-			ScmPdLastFwActivationStatus_None = 0,
-			ScmPdLastFwActivationStatus_Success = 1,
-			ScmPdLastFwActivationStatus_FwNotFound = 2,
-			ScmPdLastFwActivationStatus_ColdRebootRequired = 3,
-			ScmPdLastFwActivaitonStatus_ActivationInProgress = 4,
-			ScmPdLastFwActivaitonStatus_Retry = 5,
-			ScmPdLastFwActivaitonStatus_FwUnsupported = 6,
-			ScmPdLastFwActivaitonStatus_UnknownError = 7,
+			tionStatus_None = 0,
+			tionStatus_Success = 1,
+			tionStatus_FwNotFound = 2,
+			tionStatus_ColdRebootRequired = 3,
+			itonStatus_ActivationInProgress = 4,
+			itonStatus_Retry = 5,
+			itonStatus_FwUnsupported = 6,
+			itonStatus_UnknownError = 7,
 		}
 		[AllowDuplicates]
 		public enum SCM_PD_FIRMWARE_ACTIVATION_STATE : int32
 		{
-			ScmPdFirmwareActivationState_Idle = 0,
-			ScmPdFirmwareActivationState_Armed = 1,
-			ScmPdFirmwareActivationState_Busy = 2,
+			Idle = 0,
+			Armed = 1,
+			Busy = 2,
 		}
 		[AllowDuplicates]
 		public enum SCM_PD_MEDIA_REINITIALIZATION_STATUS : int32
 		{
-			ScmPhysicalDeviceReinit_Success = 0,
-			ScmPhysicalDeviceReinit_RebootNeeded = 1,
-			ScmPhysicalDeviceReinit_ColdBootNeeded = 2,
-			ScmPhysicalDeviceReinit_Max = 3,
+			Success = 0,
+			RebootNeeded = 1,
+			ColdBootNeeded = 2,
+			Max = 3,
 		}
 		[AllowDuplicates]
 		public enum MEDIA_TYPE : int32
@@ -1807,16 +1807,16 @@ namespace Win32
 		[AllowDuplicates]
 		public enum PARTITION_STYLE : int32
 		{
-			PARTITION_STYLE_MBR = 0,
-			PARTITION_STYLE_GPT = 1,
-			PARTITION_STYLE_RAW = 2,
+			MBR = 0,
+			GPT = 1,
+			RAW = 2,
 		}
 		[AllowDuplicates]
 		public enum DETECTION_TYPE : int32
 		{
-			DetectNone = 0,
-			DetectInt13 = 1,
-			DetectExInt13 = 2,
+			None = 0,
+			Int13 = 1,
+			ExInt13 = 2,
 		}
 		[AllowDuplicates]
 		public enum DISK_CACHE_RETENTION_PRIORITY : int32
@@ -1828,8 +1828,8 @@ namespace Win32
 		[AllowDuplicates]
 		public enum BIN_TYPES : int32
 		{
-			RequestSize = 0,
-			RequestLocation = 1,
+			Size = 0,
+			Location = 1,
 		}
 		[AllowDuplicates]
 		public enum ELEMENT_TYPE : int32
@@ -1846,159 +1846,159 @@ namespace Win32
 		[AllowDuplicates]
 		public enum CHANGER_DEVICE_PROBLEM_TYPE : int32
 		{
-			DeviceProblemNone = 0,
-			DeviceProblemHardware = 1,
-			DeviceProblemCHMError = 2,
-			DeviceProblemDoorOpen = 3,
-			DeviceProblemCalibrationError = 4,
-			DeviceProblemTargetFailure = 5,
-			DeviceProblemCHMMoveError = 6,
-			DeviceProblemCHMZeroError = 7,
-			DeviceProblemCartridgeInsertError = 8,
-			DeviceProblemPositionError = 9,
-			DeviceProblemSensorError = 10,
-			DeviceProblemCartridgeEjectError = 11,
-			DeviceProblemGripperError = 12,
-			DeviceProblemDriveError = 13,
+			None = 0,
+			Hardware = 1,
+			CHMError = 2,
+			DoorOpen = 3,
+			CalibrationError = 4,
+			TargetFailure = 5,
+			CHMMoveError = 6,
+			CHMZeroError = 7,
+			CartridgeInsertError = 8,
+			PositionError = 9,
+			SensorError = 10,
+			CartridgeEjectError = 11,
+			GripperError = 12,
+			DriveError = 13,
 		}
 		[AllowDuplicates]
 		public enum SHRINK_VOLUME_REQUEST_TYPES : int32
 		{
-			ShrinkPrepare = 1,
-			ShrinkCommit = 2,
-			ShrinkAbort = 3,
+			Prepare = 1,
+			Commit = 2,
+			Abort = 3,
 		}
 		[AllowDuplicates]
 		public enum CSV_CONTROL_OP : int32
 		{
-			CsvControlStartRedirectFile = 2,
-			CsvControlStopRedirectFile = 3,
-			CsvControlQueryRedirectState = 4,
-			CsvControlQueryFileRevision = 6,
-			CsvControlQueryMdsPath = 8,
-			CsvControlQueryFileRevisionFileId128 = 9,
-			CsvControlQueryVolumeRedirectState = 10,
-			CsvControlEnableUSNRangeModificationTracking = 13,
-			CsvControlMarkHandleLocalVolumeMount = 14,
-			CsvControlUnmarkHandleLocalVolumeMount = 15,
-			CsvControlGetCsvFsMdsPathV2 = 18,
-			CsvControlDisableCaching = 19,
-			CsvControlEnableCaching = 20,
-			CsvControlStartForceDFO = 21,
-			CsvControlStopForceDFO = 22,
-			CsvControlQueryMdsPathNoPause = 23,
-			CsvControlSetVolumeId = 24,
-			CsvControlQueryVolumeId = 25,
+			StartRedirectFile = 2,
+			StopRedirectFile = 3,
+			QueryRedirectState = 4,
+			QueryFileRevision = 6,
+			QueryMdsPath = 8,
+			QueryFileRevisionFileId128 = 9,
+			QueryVolumeRedirectState = 10,
+			EnableUSNRangeModificationTracking = 13,
+			MarkHandleLocalVolumeMount = 14,
+			UnmarkHandleLocalVolumeMount = 15,
+			GetCsvFsMdsPathV2 = 18,
+			DisableCaching = 19,
+			EnableCaching = 20,
+			StartForceDFO = 21,
+			StopForceDFO = 22,
+			QueryMdsPathNoPause = 23,
+			SetVolumeId = 24,
+			QueryVolumeId = 25,
 		}
 		[AllowDuplicates]
 		public enum CSVFS_DISK_CONNECTIVITY : int32
 		{
-			CsvFsDiskConnectivityNone = 0,
-			CsvFsDiskConnectivityMdsNodeOnly = 1,
-			CsvFsDiskConnectivitySubsetOfNodes = 2,
-			CsvFsDiskConnectivityAllNodes = 3,
+			None = 0,
+			MdsNodeOnly = 1,
+			SubsetOfNodes = 2,
+			AllNodes = 3,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_RESERVE_ID : int32
 		{
-			StorageReserveIdNone = 0,
-			StorageReserveIdHard = 1,
-			StorageReserveIdSoft = 2,
-			StorageReserveIdUpdateScratch = 3,
-			StorageReserveIdMax = 4,
+			None = 0,
+			Hard = 1,
+			Soft = 2,
+			UpdateScratch = 3,
+			Max = 4,
 		}
 		[AllowDuplicates]
 		public enum QUERY_FILE_LAYOUT_FILTER_TYPE : int32
 		{
-			QUERY_FILE_LAYOUT_FILTER_TYPE_NONE = 0,
-			QUERY_FILE_LAYOUT_FILTER_TYPE_CLUSTERS = 1,
-			QUERY_FILE_LAYOUT_FILTER_TYPE_FILEID = 2,
-			QUERY_FILE_LAYOUT_FILTER_TYPE_STORAGE_RESERVE_ID = 3,
-			QUERY_FILE_LAYOUT_NUM_FILTER_TYPES = 4,
+			FILTER_TYPE_NONE = 0,
+			FILTER_TYPE_CLUSTERS = 1,
+			FILTER_TYPE_FILEID = 2,
+			FILTER_TYPE_STORAGE_RESERVE_ID = 3,
+			NUM_FILTER_TYPES = 4,
 		}
 		[AllowDuplicates]
 		public enum FILE_STORAGE_TIER_MEDIA_TYPE : int32
 		{
-			FileStorageTierMediaTypeUnspecified = 0,
-			FileStorageTierMediaTypeDisk = 1,
-			FileStorageTierMediaTypeSsd = 2,
-			FileStorageTierMediaTypeScm = 4,
-			FileStorageTierMediaTypeMax = 5,
+			Unspecified = 0,
+			Disk = 1,
+			Ssd = 2,
+			Scm = 4,
+			Max = 5,
 		}
 		[AllowDuplicates]
 		public enum FILE_STORAGE_TIER_CLASS : int32
 		{
-			FileStorageTierClassUnspecified = 0,
-			FileStorageTierClassCapacity = 1,
-			FileStorageTierClassPerformance = 2,
-			FileStorageTierClassMax = 3,
+			Unspecified = 0,
+			Capacity = 1,
+			Performance = 2,
+			Max = 3,
 		}
 		[AllowDuplicates]
 		public enum DUPLICATE_EXTENTS_STATE : int32
 		{
-			FileSnapStateInactive = 0,
-			FileSnapStateSource = 1,
-			FileSnapStateTarget = 2,
+			Inactive = 0,
+			Source = 1,
+			Target = 2,
 		}
 		[AllowDuplicates]
 		public enum REFS_SMR_VOLUME_GC_STATE : int32
 		{
-			SmrGcStateInactive = 0,
-			SmrGcStatePaused = 1,
-			SmrGcStateActive = 2,
-			SmrGcStateActiveFullSpeed = 3,
+			Inactive = 0,
+			Paused = 1,
+			Active = 2,
+			ActiveFullSpeed = 3,
 		}
 		[AllowDuplicates]
 		public enum REFS_SMR_VOLUME_GC_ACTION : int32
 		{
-			SmrGcActionStart = 1,
-			SmrGcActionStartFullSpeed = 2,
-			SmrGcActionPause = 3,
-			SmrGcActionStop = 4,
+			Start = 1,
+			StartFullSpeed = 2,
+			Pause = 3,
+			Stop = 4,
 		}
 		[AllowDuplicates]
 		public enum REFS_SMR_VOLUME_GC_METHOD : int32
 		{
-			SmrGcMethodCompaction = 1,
-			SmrGcMethodCompression = 2,
-			SmrGcMethodRotation = 3,
+			Compaction = 1,
+			Compression = 2,
+			Rotation = 3,
 		}
 		[AllowDuplicates]
 		public enum VIRTUAL_STORAGE_BEHAVIOR_CODE : int32
 		{
-			VirtualStorageBehaviorUndefined = 0,
-			VirtualStorageBehaviorCacheWriteThrough = 1,
-			VirtualStorageBehaviorCacheWriteBack = 2,
-			VirtualStorageBehaviorStopIoProcessing = 3,
-			VirtualStorageBehaviorRestartIoProcessing = 4,
+			Undefined = 0,
+			CacheWriteThrough = 1,
+			CacheWriteBack = 2,
+			StopIoProcessing = 3,
+			RestartIoProcessing = 4,
 		}
 		[AllowDuplicates]
 		public enum FS_BPIO_OPERATIONS : int32
 		{
-			FS_BPIO_OP_ENABLE = 1,
-			FS_BPIO_OP_DISABLE = 2,
-			FS_BPIO_OP_QUERY = 3,
-			FS_BPIO_OP_VOLUME_STACK_PAUSE = 4,
-			FS_BPIO_OP_VOLUME_STACK_RESUME = 5,
-			FS_BPIO_OP_STREAM_PAUSE = 6,
-			FS_BPIO_OP_STREAM_RESUME = 7,
-			FS_BPIO_OP_GET_INFO = 8,
-			FS_BPIO_OP_MAX_OPERATION = 9,
+			ENABLE = 1,
+			DISABLE = 2,
+			QUERY = 3,
+			VOLUME_STACK_PAUSE = 4,
+			VOLUME_STACK_RESUME = 5,
+			STREAM_PAUSE = 6,
+			STREAM_RESUME = 7,
+			GET_INFO = 8,
+			MAX_OPERATION = 9,
 		}
 		[AllowDuplicates]
 		public enum FS_BPIO_INFLAGS : int32
 		{
-			FSBPIO_INFL_None = 0,
-			FSBPIO_INFL_SKIP_STORAGE_STACK_QUERY = 1,
+			None = 0,
+			SKIP_STORAGE_STACK_QUERY = 1,
 		}
 		[AllowDuplicates]
 		public enum FS_BPIO_OUTFLAGS : int32
 		{
-			FSBPIO_OUTFL_None = 0,
-			FSBPIO_OUTFL_VOLUME_STACK_BYPASS_PAUSED = 1,
-			FSBPIO_OUTFL_STREAM_BYPASS_PAUSED = 2,
-			FSBPIO_OUTFL_FILTER_ATTACH_BLOCKED = 4,
-			FSBPIO_OUTFL_COMPATIBLE_STORAGE_DRIVER = 8,
+			None = 0,
+			VOLUME_STACK_BYPASS_PAUSED = 1,
+			STREAM_BYPASS_PAUSED = 2,
+			FILTER_ATTACH_BLOCKED = 4,
+			COMPATIBLE_STORAGE_DRIVER = 8,
 		}
 		
 		// --- Function Pointers ---

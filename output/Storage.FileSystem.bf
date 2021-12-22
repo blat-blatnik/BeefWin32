@@ -292,18 +292,18 @@ namespace Win32
 		[AllowDuplicates]
 		public enum FIND_FIRST_EX_FLAGS : uint32
 		{
-			FIND_FIRST_EX_CASE_SENSITIVE = 1,
-			FIND_FIRST_EX_LARGE_FETCH = 2,
-			FIND_FIRST_EX_ON_DISK_ENTRIES_ONLY = 4,
+			CASE_SENSITIVE = 1,
+			LARGE_FETCH = 2,
+			ON_DISK_ENTRIES_ONLY = 4,
 		}
 		[AllowDuplicates]
 		public enum DEFINE_DOS_DEVICE_FLAGS : uint32
 		{
-			DDD_RAW_TARGET_PATH = 1,
-			DDD_REMOVE_DEFINITION = 2,
-			DDD_EXACT_MATCH_ON_REMOVE = 4,
-			DDD_NO_BROADCAST_SYSTEM = 8,
-			DDD_LUID_BROADCAST_DRIVE = 16,
+			RAW_TARGET_PATH = 1,
+			REMOVE_DEFINITION = 2,
+			EXACT_MATCH_ON_REMOVE = 4,
+			NO_BROADCAST_SYSTEM = 8,
+			LUID_BROADCAST_DRIVE = 16,
 		}
 		[AllowDuplicates]
 		public enum FILE_FLAGS_AND_ATTRIBUTES : uint32
@@ -387,9 +387,9 @@ namespace Win32
 		[AllowDuplicates]
 		public enum GET_FILE_VERSION_INFO_FLAGS : uint32
 		{
-			FILE_VER_GET_LOCALISED = 1,
-			FILE_VER_GET_NEUTRAL = 2,
-			FILE_VER_GET_PREFETCHED = 4,
+			LOCALISED = 1,
+			NEUTRAL = 2,
+			PREFETCHED = 4,
 		}
 		[AllowDuplicates]
 		public enum VER_FIND_FILE_FLAGS : uint32
@@ -399,101 +399,101 @@ namespace Win32
 		[AllowDuplicates]
 		public enum VER_FIND_FILE_STATUS : uint32
 		{
-			VFF_CURNEDEST = 1,
-			VFF_FILEINUSE = 2,
-			VFF_BUFFTOOSMALL = 4,
+			CURNEDEST = 1,
+			FILEINUSE = 2,
+			BUFFTOOSMALL = 4,
 		}
 		[AllowDuplicates]
 		public enum VER_INSTALL_FILE_FLAGS : uint32
 		{
-			VIFF_FORCEINSTALL = 1,
-			VIFF_DONTDELETEOLD = 2,
+			FORCEINSTALL = 1,
+			DONTDELETEOLD = 2,
 		}
 		[AllowDuplicates]
 		public enum VER_INSTALL_FILE_STATUS : uint32
 		{
-			VIF_TEMPFILE = 1,
-			VIF_MISMATCH = 2,
-			VIF_SRCOLD = 4,
-			VIF_DIFFLANG = 8,
-			VIF_DIFFCODEPG = 16,
-			VIF_DIFFTYPE = 32,
-			VIF_WRITEPROT = 64,
-			VIF_FILEINUSE = 128,
-			VIF_OUTOFSPACE = 256,
-			VIF_ACCESSVIOLATION = 512,
-			VIF_SHARINGVIOLATION = 1024,
-			VIF_CANNOTCREATE = 2048,
-			VIF_CANNOTDELETE = 4096,
-			VIF_CANNOTRENAME = 8192,
-			VIF_CANNOTDELETECUR = 16384,
-			VIF_OUTOFMEMORY = 32768,
-			VIF_CANNOTREADSRC = 65536,
-			VIF_CANNOTREADDST = 131072,
-			VIF_BUFFTOOSMALL = 262144,
-			VIF_CANNOTLOADLZ32 = 524288,
-			VIF_CANNOTLOADCABINET = 1048576,
+			TEMPFILE = 1,
+			MISMATCH = 2,
+			SRCOLD = 4,
+			DIFFLANG = 8,
+			DIFFCODEPG = 16,
+			DIFFTYPE = 32,
+			WRITEPROT = 64,
+			FILEINUSE = 128,
+			OUTOFSPACE = 256,
+			ACCESSVIOLATION = 512,
+			SHARINGVIOLATION = 1024,
+			CANNOTCREATE = 2048,
+			CANNOTDELETE = 4096,
+			CANNOTRENAME = 8192,
+			CANNOTDELETECUR = 16384,
+			OUTOFMEMORY = 32768,
+			CANNOTREADSRC = 65536,
+			CANNOTREADDST = 131072,
+			BUFFTOOSMALL = 262144,
+			CANNOTLOADLZ32 = 524288,
+			CANNOTLOADCABINET = 1048576,
 		}
 		[AllowDuplicates]
 		public enum VS_FIXEDFILEINFO_FILE_FLAGS : uint32
 		{
-			VS_FF_DEBUG = 1,
-			VS_FF_PRERELEASE = 2,
-			VS_FF_PATCHED = 4,
-			VS_FF_PRIVATEBUILD = 8,
-			VS_FF_INFOINFERRED = 16,
-			VS_FF_SPECIALBUILD = 32,
+			DEBUG = 1,
+			PRERELEASE = 2,
+			PATCHED = 4,
+			PRIVATEBUILD = 8,
+			INFOINFERRED = 16,
+			SPECIALBUILD = 32,
 		}
 		[AllowDuplicates]
 		public enum VS_FIXEDFILEINFO_FILE_OS : int32
 		{
-			VOS_UNKNOWN = 0,
-			VOS_DOS = 65536,
-			VOS_OS216 = 131072,
-			VOS_OS232 = 196608,
-			VOS_NT = 262144,
-			VOS_WINCE = 327680,
-			VOS__BASE = 0,
-			VOS__WINDOWS16 = 1,
-			VOS__PM16 = 2,
-			VOS__PM32 = 3,
-			VOS__WINDOWS32 = 4,
-			VOS_DOS_WINDOWS16 = 65537,
-			VOS_DOS_WINDOWS32 = 65540,
-			VOS_OS216_PM16 = 131074,
-			VOS_OS232_PM32 = 196611,
-			VOS_NT_WINDOWS32 = 262148,
+			UNKNOWN = 0,
+			DOS = 65536,
+			OS216 = 131072,
+			OS232 = 196608,
+			NT = 262144,
+			WINCE = 327680,
+			_BASE = 0,
+			_WINDOWS16 = 1,
+			_PM16 = 2,
+			_PM32 = 3,
+			_WINDOWS32 = 4,
+			DOS_WINDOWS16 = 65537,
+			DOS_WINDOWS32 = 65540,
+			OS216_PM16 = 131074,
+			OS232_PM32 = 196611,
+			NT_WINDOWS32 = 262148,
 		}
 		[AllowDuplicates]
 		public enum VS_FIXEDFILEINFO_FILE_TYPE : int32
 		{
-			VFT_UNKNOWN = 0,
-			VFT_APP = 1,
-			VFT_DLL = 2,
-			VFT_DRV = 3,
-			VFT_FONT = 4,
-			VFT_VXD = 5,
-			VFT_STATIC_LIB = 7,
+			UNKNOWN = 0,
+			APP = 1,
+			DLL = 2,
+			DRV = 3,
+			FONT = 4,
+			VXD = 5,
+			STATIC_LIB = 7,
 		}
 		[AllowDuplicates]
 		public enum VS_FIXEDFILEINFO_FILE_SUBTYPE : int32
 		{
-			VFT2_UNKNOWN = 0,
-			VFT2_DRV_PRINTER = 1,
-			VFT2_DRV_KEYBOARD = 2,
-			VFT2_DRV_LANGUAGE = 3,
-			VFT2_DRV_DISPLAY = 4,
-			VFT2_DRV_MOUSE = 5,
-			VFT2_DRV_NETWORK = 6,
-			VFT2_DRV_SYSTEM = 7,
-			VFT2_DRV_INSTALLABLE = 8,
-			VFT2_DRV_SOUND = 9,
-			VFT2_DRV_COMM = 10,
-			VFT2_DRV_INPUTMETHOD = 11,
-			VFT2_DRV_VERSIONED_PRINTER = 12,
-			VFT2_FONT_RASTER = 1,
-			VFT2_FONT_VECTOR = 2,
-			VFT2_FONT_TRUETYPE = 3,
+			UNKNOWN = 0,
+			DRV_PRINTER = 1,
+			DRV_KEYBOARD = 2,
+			DRV_LANGUAGE = 3,
+			DRV_DISPLAY = 4,
+			DRV_MOUSE = 5,
+			DRV_NETWORK = 6,
+			DRV_SYSTEM = 7,
+			DRV_INSTALLABLE = 8,
+			DRV_SOUND = 9,
+			DRV_COMM = 10,
+			DRV_INPUTMETHOD = 11,
+			DRV_VERSIONED_PRINTER = 12,
+			FONT_RASTER = 1,
+			FONT_VECTOR = 2,
+			FONT_TRUETYPE = 3,
 		}
 		[AllowDuplicates]
 		public enum FILE_CREATION_DISPOSITION : uint32
@@ -507,291 +507,291 @@ namespace Win32
 		[AllowDuplicates]
 		public enum FILE_SHARE_MODE : uint32
 		{
-			FILE_SHARE_NONE = 0,
-			FILE_SHARE_DELETE = 4,
-			FILE_SHARE_READ = 1,
-			FILE_SHARE_WRITE = 2,
+			NONE = 0,
+			DELETE = 4,
+			READ = 1,
+			WRITE = 2,
 		}
 		[AllowDuplicates]
 		public enum SHARE_TYPE : uint32
 		{
-			STYPE_DISKTREE = 0,
-			STYPE_PRINTQ = 1,
-			STYPE_DEVICE = 2,
-			STYPE_IPC = 3,
-			STYPE_SPECIAL = 2147483648,
-			STYPE_TEMPORARY = 1073741824,
-			STYPE_MASK = 255,
+			DISKTREE = 0,
+			PRINTQ = 1,
+			DEVICE = 2,
+			IPC = 3,
+			SPECIAL = 2147483648,
+			TEMPORARY = 1073741824,
+			MASK = 255,
 		}
 		[AllowDuplicates]
 		public enum CLFS_FLAG : uint32
 		{
-			CLFS_FLAG_FORCE_APPEND = 1,
-			CLFS_FLAG_FORCE_FLUSH = 2,
-			CLFS_FLAG_NO_FLAGS = 0,
-			CLFS_FLAG_USE_RESERVATION = 4,
+			FORCE_APPEND = 1,
+			FORCE_FLUSH = 2,
+			NO_FLAGS = 0,
+			USE_RESERVATION = 4,
 		}
 		[AllowDuplicates]
 		public enum SET_FILE_POINTER_MOVE_METHOD : uint32
 		{
-			FILE_BEGIN = 0,
-			FILE_CURRENT = 1,
-			FILE_END = 2,
+			BEGIN = 0,
+			CURRENT = 1,
+			END = 2,
 		}
 		[AllowDuplicates]
 		public enum MOVE_FILE_FLAGS : uint32
 		{
-			MOVEFILE_COPY_ALLOWED = 2,
-			MOVEFILE_CREATE_HARDLINK = 16,
-			MOVEFILE_DELAY_UNTIL_REBOOT = 4,
-			MOVEFILE_REPLACE_EXISTING = 1,
-			MOVEFILE_WRITE_THROUGH = 8,
-			MOVEFILE_FAIL_IF_NOT_TRACKABLE = 32,
+			COPY_ALLOWED = 2,
+			CREATE_HARDLINK = 16,
+			DELAY_UNTIL_REBOOT = 4,
+			REPLACE_EXISTING = 1,
+			WRITE_THROUGH = 8,
+			FAIL_IF_NOT_TRACKABLE = 32,
 		}
 		[AllowDuplicates]
 		public enum FILE_NAME : uint32
 		{
-			FILE_NAME_NORMALIZED = 0,
-			FILE_NAME_OPENED = 8,
+			NORMALIZED = 0,
+			OPENED = 8,
 		}
 		[AllowDuplicates]
 		public enum LZOPENFILE_STYLE : uint32
 		{
-			OF_CANCEL = 2048,
-			OF_CREATE = 4096,
-			OF_DELETE = 512,
-			OF_EXIST = 16384,
-			OF_PARSE = 256,
-			OF_PROMPT = 8192,
-			OF_READ = 0,
-			OF_READWRITE = 2,
-			OF_REOPEN = 32768,
-			OF_SHARE_DENY_NONE = 64,
-			OF_SHARE_DENY_READ = 48,
-			OF_SHARE_DENY_WRITE = 32,
-			OF_SHARE_EXCLUSIVE = 16,
-			OF_WRITE = 1,
-			OF_SHARE_COMPAT = 0,
-			OF_VERIFY = 1024,
+			CANCEL = 2048,
+			CREATE = 4096,
+			DELETE = 512,
+			EXIST = 16384,
+			PARSE = 256,
+			PROMPT = 8192,
+			READ = 0,
+			READWRITE = 2,
+			REOPEN = 32768,
+			SHARE_DENY_NONE = 64,
+			SHARE_DENY_READ = 48,
+			SHARE_DENY_WRITE = 32,
+			SHARE_EXCLUSIVE = 16,
+			WRITE = 1,
+			SHARE_COMPAT = 0,
+			VERIFY = 1024,
 		}
 		[AllowDuplicates]
 		public enum FILE_NOTIFY_CHANGE : uint32
 		{
-			FILE_NOTIFY_CHANGE_FILE_NAME = 1,
-			FILE_NOTIFY_CHANGE_DIR_NAME = 2,
-			FILE_NOTIFY_CHANGE_ATTRIBUTES = 4,
-			FILE_NOTIFY_CHANGE_SIZE = 8,
-			FILE_NOTIFY_CHANGE_LAST_WRITE = 16,
-			FILE_NOTIFY_CHANGE_LAST_ACCESS = 32,
-			FILE_NOTIFY_CHANGE_CREATION = 64,
-			FILE_NOTIFY_CHANGE_SECURITY = 256,
+			FILE_NAME = 1,
+			DIR_NAME = 2,
+			ATTRIBUTES = 4,
+			SIZE = 8,
+			LAST_WRITE = 16,
+			LAST_ACCESS = 32,
+			CREATION = 64,
+			SECURITY = 256,
 		}
 		[AllowDuplicates]
 		public enum TXFS_MINIVERSION : uint32
 		{
-			TXFS_MINIVERSION_COMMITTED_VIEW = 0,
-			TXFS_MINIVERSION_DIRTY_VIEW = 65535,
-			TXFS_MINIVERSION_DEFAULT_VIEW = 65534,
+			COMMITTED_VIEW = 0,
+			DIRTY_VIEW = 65535,
+			DEFAULT_VIEW = 65534,
 		}
 		[AllowDuplicates]
 		public enum TAPE_POSITION_TYPE : int32
 		{
-			TAPE_ABSOLUTE_POSITION = 0,
-			TAPE_LOGICAL_POSITION = 1,
+			ABSOLUTE_POSITION = 0,
+			LOGICAL_POSITION = 1,
 		}
 		[AllowDuplicates]
 		public enum CREATE_TAPE_PARTITION_METHOD : int32
 		{
-			TAPE_FIXED_PARTITIONS = 0,
-			TAPE_INITIATOR_PARTITIONS = 2,
-			TAPE_SELECT_PARTITIONS = 1,
+			FIXED_PARTITIONS = 0,
+			INITIATOR_PARTITIONS = 2,
+			SELECT_PARTITIONS = 1,
 		}
 		[AllowDuplicates]
 		public enum REPLACE_FILE_FLAGS : uint32
 		{
-			REPLACEFILE_WRITE_THROUGH = 1,
-			REPLACEFILE_IGNORE_MERGE_ERRORS = 2,
-			REPLACEFILE_IGNORE_ACL_ERRORS = 4,
+			WRITE_THROUGH = 1,
+			IGNORE_MERGE_ERRORS = 2,
+			IGNORE_ACL_ERRORS = 4,
 		}
 		[AllowDuplicates]
 		public enum TAPEMARK_TYPE : int32
 		{
-			TAPE_FILEMARKS = 1,
-			TAPE_LONG_FILEMARKS = 3,
-			TAPE_SETMARKS = 0,
-			TAPE_SHORT_FILEMARKS = 2,
+			FILEMARKS = 1,
+			LONG_FILEMARKS = 3,
+			SETMARKS = 0,
+			SHORT_FILEMARKS = 2,
 		}
 		[AllowDuplicates]
 		public enum DISKQUOTA_USERNAME_RESOLVE : uint32
 		{
-			DISKQUOTA_USERNAME_RESOLVE_ASYNC = 2,
-			DISKQUOTA_USERNAME_RESOLVE_NONE = 0,
-			DISKQUOTA_USERNAME_RESOLVE_SYNC = 1,
+			ASYNC = 2,
+			NONE = 0,
+			SYNC = 1,
 		}
 		[AllowDuplicates]
 		public enum TAPE_POSITION_METHOD : int32
 		{
-			TAPE_ABSOLUTE_BLOCK = 1,
-			TAPE_LOGICAL_BLOCK = 2,
-			TAPE_REWIND = 0,
-			TAPE_SPACE_END_OF_DATA = 4,
-			TAPE_SPACE_FILEMARKS = 6,
-			TAPE_SPACE_RELATIVE_BLOCKS = 5,
-			TAPE_SPACE_SEQUENTIAL_FMKS = 7,
-			TAPE_SPACE_SEQUENTIAL_SMKS = 9,
-			TAPE_SPACE_SETMARKS = 8,
+			ABSOLUTE_BLOCK = 1,
+			LOGICAL_BLOCK = 2,
+			REWIND = 0,
+			SPACE_END_OF_DATA = 4,
+			SPACE_FILEMARKS = 6,
+			SPACE_RELATIVE_BLOCKS = 5,
+			SPACE_SEQUENTIAL_FMKS = 7,
+			SPACE_SEQUENTIAL_SMKS = 9,
+			SPACE_SETMARKS = 8,
 		}
 		[AllowDuplicates]
 		public enum NT_CREATE_FILE_DISPOSITION : uint32
 		{
-			FILE_SUPERSEDE = 0,
-			FILE_CREATE = 2,
-			FILE_OPEN = 1,
-			FILE_OPEN_IF = 3,
-			FILE_OVERWRITE = 4,
-			FILE_OVERWRITE_IF = 5,
+			SUPERSEDE = 0,
+			CREATE = 2,
+			OPEN = 1,
+			OPEN_IF = 3,
+			OVERWRITE = 4,
+			OVERWRITE_IF = 5,
 		}
 		[AllowDuplicates]
 		public enum TAPE_INFORMATION_TYPE : uint32
 		{
-			SET_TAPE_DRIVE_INFORMATION = 1,
-			SET_TAPE_MEDIA_INFORMATION = 0,
+			DRIVE_INFORMATION = 1,
+			MEDIA_INFORMATION = 0,
 		}
 		[AllowDuplicates]
 		public enum NTMS_OMID_TYPE : uint32
 		{
-			NTMS_OMID_TYPE_FILESYSTEM_INFO = 2,
-			NTMS_OMID_TYPE_RAW_LABEL = 1,
+			FILESYSTEM_INFO = 2,
+			RAW_LABEL = 1,
 		}
 		[AllowDuplicates]
 		public enum LOCK_FILE_FLAGS : uint32
 		{
-			LOCKFILE_EXCLUSIVE_LOCK = 2,
-			LOCKFILE_FAIL_IMMEDIATELY = 1,
+			EXCLUSIVE_LOCK = 2,
+			FAIL_IMMEDIATELY = 1,
 		}
 		[AllowDuplicates]
 		public enum LPPROGRESS_ROUTINE_CALLBACK_REASON : uint32
 		{
-			CALLBACK_CHUNK_FINISHED = 0,
-			CALLBACK_STREAM_SWITCH = 1,
+			CHUNK_FINISHED = 0,
+			STREAM_SWITCH = 1,
 		}
 		[AllowDuplicates]
 		public enum PREPARE_TAPE_OPERATION : int32
 		{
-			TAPE_FORMAT = 5,
-			TAPE_LOAD = 0,
-			TAPE_LOCK = 3,
-			TAPE_TENSION = 2,
-			TAPE_UNLOAD = 1,
-			TAPE_UNLOCK = 4,
+			FORMAT = 5,
+			LOAD = 0,
+			LOCK = 3,
+			TENSION = 2,
+			UNLOAD = 1,
+			UNLOCK = 4,
 		}
 		[AllowDuplicates]
 		public enum GET_TAPE_DRIVE_PARAMETERS_OPERATION : uint32
 		{
-			GET_TAPE_DRIVE_INFORMATION = 1,
-			GET_TAPE_MEDIA_INFORMATION = 0,
+			DRIVE_INFORMATION = 1,
+			MEDIA_INFORMATION = 0,
 		}
 		[AllowDuplicates]
 		public enum ERASE_TAPE_TYPE : int32
 		{
-			TAPE_ERASE_LONG = 1,
-			TAPE_ERASE_SHORT = 0,
+			LONG = 1,
+			SHORT = 0,
 		}
 		[AllowDuplicates]
 		public enum FILE_ACTION : uint32
 		{
-			FILE_ACTION_ADDED = 1,
-			FILE_ACTION_REMOVED = 2,
-			FILE_ACTION_MODIFIED = 3,
-			FILE_ACTION_RENAMED_OLD_NAME = 4,
-			FILE_ACTION_RENAMED_NEW_NAME = 5,
+			ADDED = 1,
+			REMOVED = 2,
+			MODIFIED = 3,
+			RENAMED_OLD_NAME = 4,
+			RENAMED_NEW_NAME = 5,
 		}
 		[AllowDuplicates]
 		public enum SHARE_INFO_PERMISSIONS : uint32
 		{
-			ACCESS_READ = 1,
-			ACCESS_WRITE = 2,
-			ACCESS_CREATE = 4,
-			ACCESS_EXEC = 8,
-			ACCESS_DELETE = 16,
-			ACCESS_ATRIB = 32,
-			ACCESS_PERM = 64,
-			ACCESS_ALL = 32768,
+			READ = 1,
+			WRITE = 2,
+			CREATE = 4,
+			EXEC = 8,
+			DELETE = 16,
+			ATRIB = 32,
+			PERM = 64,
+			ALL = 32768,
 		}
 		[AllowDuplicates]
 		public enum FILE_DEVICE_TYPE : uint32
 		{
-			FILE_DEVICE_CD_ROM = 2,
-			FILE_DEVICE_DISK = 7,
-			FILE_DEVICE_TAPE = 31,
-			FILE_DEVICE_DVD = 51,
+			CD_ROM = 2,
+			DISK = 7,
+			TAPE = 31,
+			DVD = 51,
 		}
 		[AllowDuplicates]
 		public enum SESSION_INFO_USER_FLAGS : uint32
 		{
-			SESS_GUEST = 1,
-			SESS_NOENCRYPTION = 2,
+			GUEST = 1,
+			NOENCRYPTION = 2,
 		}
 		[AllowDuplicates]
 		public enum WIN_STREAM_ID : uint32
 		{
-			BACKUP_ALTERNATE_DATA = 4,
-			BACKUP_DATA = 1,
-			BACKUP_EA_DATA = 2,
-			BACKUP_LINK = 5,
-			BACKUP_OBJECT_ID = 7,
-			BACKUP_PROPERTY_DATA = 6,
-			BACKUP_REPARSE_DATA = 8,
-			BACKUP_SECURITY_DATA = 3,
-			BACKUP_SPARSE_BLOCK = 9,
-			BACKUP_TXFS_DATA = 10,
+			ALTERNATE_DATA = 4,
+			DATA = 1,
+			EA_DATA = 2,
+			LINK = 5,
+			OBJECT_ID = 7,
+			PROPERTY_DATA = 6,
+			REPARSE_DATA = 8,
+			SECURITY_DATA = 3,
+			SPARSE_BLOCK = 9,
+			TXFS_DATA = 10,
 		}
 		[AllowDuplicates]
 		public enum TXF_LOG_RECORD_TYPE : uint16
 		{
-			TXF_LOG_RECORD_TYPE_AFFECTED_FILE = 4,
-			TXF_LOG_RECORD_TYPE_TRUNCATE = 2,
-			TXF_LOG_RECORD_TYPE_WRITE = 1,
+			AFFECTED_FILE = 4,
+			TRUNCATE = 2,
+			WRITE = 1,
 		}
 		[AllowDuplicates]
 		public enum FILE_INFO_FLAGS_PERMISSIONS : uint32
 		{
-			PERM_FILE_READ = 1,
-			PERM_FILE_WRITE = 2,
-			PERM_FILE_CREATE = 4,
+			READ = 1,
+			WRITE = 2,
+			CREATE = 4,
 		}
 		[AllowDuplicates]
 		public enum SYMBOLIC_LINK_FLAGS : uint32
 		{
-			SYMBOLIC_LINK_FLAG_DIRECTORY = 1,
-			SYMBOLIC_LINK_FLAG_ALLOW_UNPRIVILEGED_CREATE = 2,
+			DIRECTORY = 1,
+			ALLOW_UNPRIVILEGED_CREATE = 2,
 		}
 		[AllowDuplicates]
 		public enum FINDEX_INFO_LEVELS : int32
 		{
-			FindExInfoStandard = 0,
-			FindExInfoBasic = 1,
-			FindExInfoMaxInfoLevel = 2,
+			Standard = 0,
+			Basic = 1,
+			MaxInfoLevel = 2,
 		}
 		[AllowDuplicates]
 		public enum FINDEX_SEARCH_OPS : int32
 		{
-			FindExSearchNameMatch = 0,
-			FindExSearchLimitToDirectories = 1,
-			FindExSearchLimitToDevices = 2,
-			FindExSearchMaxSearchOp = 3,
+			NameMatch = 0,
+			LimitToDirectories = 1,
+			LimitToDevices = 2,
+			MaxSearchOp = 3,
 		}
 		[AllowDuplicates]
 		public enum READ_DIRECTORY_NOTIFY_INFORMATION_CLASS : int32
 		{
-			ReadDirectoryNotifyInformation = 1,
-			ReadDirectoryNotifyExtendedInformation = 2,
+			Information = 1,
+			ExtendedInformation = 2,
 		}
 		[AllowDuplicates]
 		public enum GET_FILEEX_INFO_LEVELS : int32
 		{
-			GetFileExInfoStandard = 0,
-			GetFileExMaxInfoLevel = 1,
+			InfoStandard = 0,
+			MaxInfoLevel = 1,
 		}
 		[AllowDuplicates]
 		public enum FILE_INFO_BY_HANDLE_CLASS : int32
@@ -826,41 +826,41 @@ namespace Win32
 		[AllowDuplicates]
 		public enum STREAM_INFO_LEVELS : int32
 		{
-			FindStreamInfoStandard = 0,
-			FindStreamInfoMaxInfoLevel = 1,
+			Standard = 0,
+			MaxInfoLevel = 1,
 		}
 		[AllowDuplicates]
 		public enum NtmsObjectsTypes : int32
 		{
-			NTMS_UNKNOWN = 0,
-			NTMS_OBJECT = 1,
-			NTMS_CHANGER = 2,
-			NTMS_CHANGER_TYPE = 3,
-			NTMS_COMPUTER = 4,
-			NTMS_DRIVE = 5,
-			NTMS_DRIVE_TYPE = 6,
-			NTMS_IEDOOR = 7,
-			NTMS_IEPORT = 8,
-			NTMS_LIBRARY = 9,
-			NTMS_LIBREQUEST = 10,
-			NTMS_LOGICAL_MEDIA = 11,
-			NTMS_MEDIA_POOL = 12,
-			NTMS_MEDIA_TYPE = 13,
-			NTMS_PARTITION = 14,
-			NTMS_PHYSICAL_MEDIA = 15,
-			NTMS_STORAGESLOT = 16,
-			NTMS_OPREQUEST = 17,
-			NTMS_UI_DESTINATION = 18,
-			NTMS_NUMBER_OF_OBJECT_TYPES = 19,
+			UNKNOWN = 0,
+			OBJECT = 1,
+			CHANGER = 2,
+			CHANGER_TYPE = 3,
+			COMPUTER = 4,
+			DRIVE = 5,
+			DRIVE_TYPE = 6,
+			IEDOOR = 7,
+			IEPORT = 8,
+			LIBRARY = 9,
+			LIBREQUEST = 10,
+			LOGICAL_MEDIA = 11,
+			MEDIA_POOL = 12,
+			MEDIA_TYPE = 13,
+			PARTITION = 14,
+			PHYSICAL_MEDIA = 15,
+			STORAGESLOT = 16,
+			OPREQUEST = 17,
+			UI_DESTINATION = 18,
+			NUMBER_OF_OBJECT_TYPES = 19,
 		}
 		[AllowDuplicates]
 		public enum NtmsAsyncStatus : int32
 		{
-			NTMS_ASYNCSTATE_QUEUED = 0,
-			NTMS_ASYNCSTATE_WAIT_RESOURCE = 1,
-			NTMS_ASYNCSTATE_WAIT_OPERATOR = 2,
-			NTMS_ASYNCSTATE_INPROCESS = 3,
-			NTMS_ASYNCSTATE_COMPLETE = 4,
+			QUEUED = 0,
+			WAIT_RESOURCE = 1,
+			WAIT_OPERATOR = 2,
+			INPROCESS = 3,
+			COMPLETE = 4,
 		}
 		[AllowDuplicates]
 		public enum NtmsAsyncOperations : int32
@@ -875,152 +875,152 @@ namespace Win32
 		[AllowDuplicates]
 		public enum NtmsMountOptions : int32
 		{
-			NTMS_MOUNT_READ = 1,
-			NTMS_MOUNT_WRITE = 2,
-			NTMS_MOUNT_ERROR_NOT_AVAILABLE = 4,
-			NTMS_MOUNT_ERROR_IF_UNAVAILABLE = 4,
-			NTMS_MOUNT_ERROR_OFFLINE = 8,
-			NTMS_MOUNT_ERROR_IF_OFFLINE = 8,
-			NTMS_MOUNT_SPECIFIC_DRIVE = 16,
-			NTMS_MOUNT_NOWAIT = 32,
+			READ = 1,
+			WRITE = 2,
+			ERROR_NOT_AVAILABLE = 4,
+			ERROR_IF_UNAVAILABLE = 4,
+			ERROR_OFFLINE = 8,
+			ERROR_IF_OFFLINE = 8,
+			SPECIFIC_DRIVE = 16,
+			NOWAIT = 32,
 		}
 		[AllowDuplicates]
 		public enum NtmsDismountOptions : int32
 		{
-			NTMS_DISMOUNT_DEFERRED = 1,
-			NTMS_DISMOUNT_IMMEDIATE = 2,
+			DEFERRED = 1,
+			IMMEDIATE = 2,
 		}
 		[AllowDuplicates]
 		public enum NtmsMountPriority : int32
 		{
-			NTMS_PRIORITY_DEFAULT = 0,
-			NTMS_PRIORITY_HIGHEST = 15,
-			NTMS_PRIORITY_HIGH = 7,
-			NTMS_PRIORITY_NORMAL = 0,
-			NTMS_PRIORITY_LOW = -7,
-			NTMS_PRIORITY_LOWEST = -15,
+			DEFAULT = 0,
+			HIGHEST = 15,
+			HIGH = 7,
+			NORMAL = 0,
+			LOW = -7,
+			LOWEST = -15,
 		}
 		[AllowDuplicates]
 		public enum NtmsAllocateOptions : int32
 		{
-			NTMS_ALLOCATE_NEW = 1,
-			NTMS_ALLOCATE_NEXT = 2,
-			NTMS_ALLOCATE_ERROR_IF_UNAVAILABLE = 4,
+			NEW = 1,
+			NEXT = 2,
+			ERROR_IF_UNAVAILABLE = 4,
 		}
 		[AllowDuplicates]
 		public enum NtmsCreateOptions : int32
 		{
-			NTMS_OPEN_EXISTING = 1,
-			NTMS_CREATE_NEW = 2,
-			NTMS_OPEN_ALWAYS = 3,
+			OPEN_EXISTING = 1,
+			CREATE_NEW = 2,
+			OPEN_ALWAYS = 3,
 		}
 		[AllowDuplicates]
 		public enum NtmsDriveState : int32
 		{
-			NTMS_DRIVESTATE_DISMOUNTED = 0,
-			NTMS_DRIVESTATE_MOUNTED = 1,
-			NTMS_DRIVESTATE_LOADED = 2,
-			NTMS_DRIVESTATE_UNLOADED = 5,
-			NTMS_DRIVESTATE_BEING_CLEANED = 6,
-			NTMS_DRIVESTATE_DISMOUNTABLE = 7,
+			DISMOUNTED = 0,
+			MOUNTED = 1,
+			LOADED = 2,
+			UNLOADED = 5,
+			BEING_CLEANED = 6,
+			DISMOUNTABLE = 7,
 		}
 		[AllowDuplicates]
 		public enum NtmsLibraryType : int32
 		{
-			NTMS_LIBRARYTYPE_UNKNOWN = 0,
-			NTMS_LIBRARYTYPE_OFFLINE = 1,
-			NTMS_LIBRARYTYPE_ONLINE = 2,
-			NTMS_LIBRARYTYPE_STANDALONE = 3,
+			UNKNOWN = 0,
+			OFFLINE = 1,
+			ONLINE = 2,
+			STANDALONE = 3,
 		}
 		[AllowDuplicates]
 		public enum NtmsLibraryFlags : int32
 		{
-			NTMS_LIBRARYFLAG_FIXEDOFFLINE = 1,
-			NTMS_LIBRARYFLAG_CLEANERPRESENT = 2,
-			NTMS_LIBRARYFLAG_AUTODETECTCHANGE = 4,
-			NTMS_LIBRARYFLAG_IGNORECLEANERUSESREMAINING = 8,
-			NTMS_LIBRARYFLAG_RECOGNIZECLEANERBARCODE = 16,
+			FIXEDOFFLINE = 1,
+			CLEANERPRESENT = 2,
+			AUTODETECTCHANGE = 4,
+			IGNORECLEANERUSESREMAINING = 8,
+			RECOGNIZECLEANERBARCODE = 16,
 		}
 		[AllowDuplicates]
 		public enum NtmsInventoryMethod : int32
 		{
-			NTMS_INVENTORY_NONE = 0,
-			NTMS_INVENTORY_FAST = 1,
-			NTMS_INVENTORY_OMID = 2,
-			NTMS_INVENTORY_DEFAULT = 3,
-			NTMS_INVENTORY_SLOT = 4,
-			NTMS_INVENTORY_STOP = 5,
-			NTMS_INVENTORY_MAX = 6,
+			NONE = 0,
+			FAST = 1,
+			OMID = 2,
+			DEFAULT = 3,
+			SLOT = 4,
+			STOP = 5,
+			MAX = 6,
 		}
 		[AllowDuplicates]
 		public enum NtmsSlotState : int32
 		{
-			NTMS_SLOTSTATE_UNKNOWN = 0,
-			NTMS_SLOTSTATE_FULL = 1,
-			NTMS_SLOTSTATE_EMPTY = 2,
-			NTMS_SLOTSTATE_NOTPRESENT = 3,
-			NTMS_SLOTSTATE_NEEDSINVENTORY = 4,
+			UNKNOWN = 0,
+			FULL = 1,
+			EMPTY = 2,
+			NOTPRESENT = 3,
+			NEEDSINVENTORY = 4,
 		}
 		[AllowDuplicates]
 		public enum NtmsDoorState : int32
 		{
-			NTMS_DOORSTATE_UNKNOWN = 0,
-			NTMS_DOORSTATE_CLOSED = 1,
-			NTMS_DOORSTATE_OPEN = 2,
+			UNKNOWN = 0,
+			CLOSED = 1,
+			OPEN = 2,
 		}
 		[AllowDuplicates]
 		public enum NtmsPortPosition : int32
 		{
-			NTMS_PORTPOSITION_UNKNOWN = 0,
-			NTMS_PORTPOSITION_EXTENDED = 1,
-			NTMS_PORTPOSITION_RETRACTED = 2,
+			UNKNOWN = 0,
+			EXTENDED = 1,
+			RETRACTED = 2,
 		}
 		[AllowDuplicates]
 		public enum NtmsPortContent : int32
 		{
-			NTMS_PORTCONTENT_UNKNOWN = 0,
-			NTMS_PORTCONTENT_FULL = 1,
-			NTMS_PORTCONTENT_EMPTY = 2,
+			UNKNOWN = 0,
+			FULL = 1,
+			EMPTY = 2,
 		}
 		[AllowDuplicates]
 		public enum NtmsBarCodeState : int32
 		{
-			NTMS_BARCODESTATE_OK = 1,
-			NTMS_BARCODESTATE_UNREADABLE = 2,
+			OK = 1,
+			UNREADABLE = 2,
 		}
 		[AllowDuplicates]
 		public enum NtmsMediaState : int32
 		{
-			NTMS_MEDIASTATE_IDLE = 0,
-			NTMS_MEDIASTATE_INUSE = 1,
-			NTMS_MEDIASTATE_MOUNTED = 2,
-			NTMS_MEDIASTATE_LOADED = 3,
-			NTMS_MEDIASTATE_UNLOADED = 4,
-			NTMS_MEDIASTATE_OPERROR = 5,
-			NTMS_MEDIASTATE_OPREQ = 6,
+			IDLE = 0,
+			INUSE = 1,
+			MOUNTED = 2,
+			LOADED = 3,
+			UNLOADED = 4,
+			OPERROR = 5,
+			OPREQ = 6,
 		}
 		[AllowDuplicates]
 		public enum NtmsPartitionState : int32
 		{
-			NTMS_PARTSTATE_UNKNOWN = 0,
-			NTMS_PARTSTATE_UNPREPARED = 1,
-			NTMS_PARTSTATE_INCOMPATIBLE = 2,
-			NTMS_PARTSTATE_DECOMMISSIONED = 3,
-			NTMS_PARTSTATE_AVAILABLE = 4,
-			NTMS_PARTSTATE_ALLOCATED = 5,
-			NTMS_PARTSTATE_COMPLETE = 6,
-			NTMS_PARTSTATE_FOREIGN = 7,
-			NTMS_PARTSTATE_IMPORT = 8,
-			NTMS_PARTSTATE_RESERVED = 9,
+			UNKNOWN = 0,
+			UNPREPARED = 1,
+			INCOMPATIBLE = 2,
+			DECOMMISSIONED = 3,
+			AVAILABLE = 4,
+			ALLOCATED = 5,
+			COMPLETE = 6,
+			FOREIGN = 7,
+			IMPORT = 8,
+			RESERVED = 9,
 		}
 		[AllowDuplicates]
 		public enum NtmsPoolType : int32
 		{
-			NTMS_POOLTYPE_UNKNOWN = 0,
-			NTMS_POOLTYPE_SCRATCH = 1,
-			NTMS_POOLTYPE_FOREIGN = 2,
-			NTMS_POOLTYPE_IMPORT = 3,
-			NTMS_POOLTYPE_APPLICATION = 1000,
+			UNKNOWN = 0,
+			SCRATCH = 1,
+			FOREIGN = 2,
+			IMPORT = 3,
+			APPLICATION = 1000,
 		}
 		[AllowDuplicates]
 		public enum NtmsAllocationPolicy : int32
@@ -1035,101 +1035,101 @@ namespace Win32
 		[AllowDuplicates]
 		public enum NtmsReadWriteCharacteristics : int32
 		{
-			NTMS_MEDIARW_UNKNOWN = 0,
-			NTMS_MEDIARW_REWRITABLE = 1,
-			NTMS_MEDIARW_WRITEONCE = 2,
-			NTMS_MEDIARW_READONLY = 3,
+			UNKNOWN = 0,
+			REWRITABLE = 1,
+			WRITEONCE = 2,
+			READONLY = 3,
 		}
 		[AllowDuplicates]
 		public enum NtmsLmOperation : int32
 		{
-			NTMS_LM_REMOVE = 0,
-			NTMS_LM_DISABLECHANGER = 1,
-			NTMS_LM_DISABLELIBRARY = 1,
-			NTMS_LM_ENABLECHANGER = 2,
-			NTMS_LM_ENABLELIBRARY = 2,
-			NTMS_LM_DISABLEDRIVE = 3,
-			NTMS_LM_ENABLEDRIVE = 4,
-			NTMS_LM_DISABLEMEDIA = 5,
-			NTMS_LM_ENABLEMEDIA = 6,
-			NTMS_LM_UPDATEOMID = 7,
-			NTMS_LM_INVENTORY = 8,
-			NTMS_LM_DOORACCESS = 9,
-			NTMS_LM_EJECT = 10,
-			NTMS_LM_EJECTCLEANER = 11,
-			NTMS_LM_INJECT = 12,
-			NTMS_LM_INJECTCLEANER = 13,
-			NTMS_LM_PROCESSOMID = 14,
-			NTMS_LM_CLEANDRIVE = 15,
-			NTMS_LM_DISMOUNT = 16,
-			NTMS_LM_MOUNT = 17,
-			NTMS_LM_WRITESCRATCH = 18,
-			NTMS_LM_CLASSIFY = 19,
-			NTMS_LM_RESERVECLEANER = 20,
-			NTMS_LM_RELEASECLEANER = 21,
-			NTMS_LM_MAXWORKITEM = 22,
+			REMOVE = 0,
+			DISABLECHANGER = 1,
+			DISABLELIBRARY = 1,
+			ENABLECHANGER = 2,
+			ENABLELIBRARY = 2,
+			DISABLEDRIVE = 3,
+			ENABLEDRIVE = 4,
+			DISABLEMEDIA = 5,
+			ENABLEMEDIA = 6,
+			UPDATEOMID = 7,
+			INVENTORY = 8,
+			DOORACCESS = 9,
+			EJECT = 10,
+			EJECTCLEANER = 11,
+			INJECT = 12,
+			INJECTCLEANER = 13,
+			PROCESSOMID = 14,
+			CLEANDRIVE = 15,
+			DISMOUNT = 16,
+			MOUNT = 17,
+			WRITESCRATCH = 18,
+			CLASSIFY = 19,
+			RESERVECLEANER = 20,
+			RELEASECLEANER = 21,
+			MAXWORKITEM = 22,
 		}
 		[AllowDuplicates]
 		public enum NtmsLmState : int32
 		{
-			NTMS_LM_QUEUED = 0,
-			NTMS_LM_INPROCESS = 1,
-			NTMS_LM_PASSED = 2,
-			NTMS_LM_FAILED = 3,
-			NTMS_LM_INVALID = 4,
-			NTMS_LM_WAITING = 5,
-			NTMS_LM_DEFERRED = 6,
-			NTMS_LM_DEFFERED = 6,
-			NTMS_LM_CANCELLED = 7,
-			NTMS_LM_STOPPED = 8,
+			QUEUED = 0,
+			INPROCESS = 1,
+			PASSED = 2,
+			FAILED = 3,
+			INVALID = 4,
+			WAITING = 5,
+			DEFERRED = 6,
+			DEFFERED = 6,
+			CANCELLED = 7,
+			STOPPED = 8,
 		}
 		[AllowDuplicates]
 		public enum NtmsOpreqCommand : int32
 		{
-			NTMS_OPREQ_UNKNOWN = 0,
-			NTMS_OPREQ_NEWMEDIA = 1,
-			NTMS_OPREQ_CLEANER = 2,
-			NTMS_OPREQ_DEVICESERVICE = 3,
-			NTMS_OPREQ_MOVEMEDIA = 4,
-			NTMS_OPREQ_MESSAGE = 5,
+			UNKNOWN = 0,
+			NEWMEDIA = 1,
+			CLEANER = 2,
+			DEVICESERVICE = 3,
+			MOVEMEDIA = 4,
+			MESSAGE = 5,
 		}
 		[AllowDuplicates]
 		public enum NtmsOpreqState : int32
 		{
-			NTMS_OPSTATE_UNKNOWN = 0,
-			NTMS_OPSTATE_SUBMITTED = 1,
-			NTMS_OPSTATE_ACTIVE = 2,
-			NTMS_OPSTATE_INPROGRESS = 3,
-			NTMS_OPSTATE_REFUSED = 4,
-			NTMS_OPSTATE_COMPLETE = 5,
+			UNKNOWN = 0,
+			SUBMITTED = 1,
+			ACTIVE = 2,
+			INPROGRESS = 3,
+			REFUSED = 4,
+			COMPLETE = 5,
 		}
 		[AllowDuplicates]
 		public enum NtmsLibRequestFlags : int32
 		{
-			NTMS_LIBREQFLAGS_NOAUTOPURGE = 1,
-			NTMS_LIBREQFLAGS_NOFAILEDPURGE = 2,
+			AUTOPURGE = 1,
+			FAILEDPURGE = 2,
 		}
 		[AllowDuplicates]
 		public enum NtmsOpRequestFlags : int32
 		{
-			NTMS_OPREQFLAGS_NOAUTOPURGE = 1,
-			NTMS_OPREQFLAGS_NOFAILEDPURGE = 2,
-			NTMS_OPREQFLAGS_NOALERTS = 16,
-			NTMS_OPREQFLAGS_NOTRAYICON = 32,
+			AUTOPURGE = 1,
+			FAILEDPURGE = 2,
+			ALERTS = 16,
+			TRAYICON = 32,
 		}
 		[AllowDuplicates]
 		public enum NtmsMediaPoolPolicy : int32
 		{
-			NTMS_POOLPOLICY_PURGEOFFLINESCRATCH = 1,
-			NTMS_POOLPOLICY_KEEPOFFLINEIMPORT = 2,
+			PURGEOFFLINESCRATCH = 1,
+			KEEPOFFLINEIMPORT = 2,
 		}
 		[AllowDuplicates]
 		public enum NtmsOperationalState : int32
 		{
-			NTMS_READY = 0,
-			NTMS_INITIALIZING = 10,
-			NTMS_NEEDS_SERVICE = 20,
-			NTMS_NOT_PRESENT = 21,
+			READY = 0,
+			INITIALIZING = 10,
+			NEEDS_SERVICE = 20,
+			NOT_PRESENT = 21,
 		}
 		[AllowDuplicates]
 		public enum NtmsCreateNtmsMediaOptions : int32
@@ -1139,26 +1139,26 @@ namespace Win32
 		[AllowDuplicates]
 		public enum NtmsEnumerateOption : int32
 		{
-			NTMS_ENUM_DEFAULT = 0,
-			NTMS_ENUM_ROOTPOOL = 1,
+			DEFAULT = 0,
+			ROOTPOOL = 1,
 		}
 		[AllowDuplicates]
 		public enum NtmsEjectOperation : int32
 		{
-			NTMS_EJECT_START = 0,
-			NTMS_EJECT_STOP = 1,
-			NTMS_EJECT_QUEUE = 2,
-			NTMS_EJECT_FORCE = 3,
-			NTMS_EJECT_IMMEDIATE = 4,
-			NTMS_EJECT_ASK_USER = 5,
+			START = 0,
+			STOP = 1,
+			QUEUE = 2,
+			FORCE = 3,
+			IMMEDIATE = 4,
+			ASK_USER = 5,
 		}
 		[AllowDuplicates]
 		public enum NtmsInjectOperation : int32
 		{
-			NTMS_INJECT_START = 0,
-			NTMS_INJECT_STOP = 1,
-			NTMS_INJECT_RETRACT = 2,
-			NTMS_INJECT_STARTMANY = 3,
+			START = 0,
+			STOP = 1,
+			RETRACT = 2,
+			STARTMANY = 3,
 		}
 		[AllowDuplicates]
 		public enum NtmsDriveType : int32
@@ -1168,102 +1168,102 @@ namespace Win32
 		[AllowDuplicates]
 		public enum NtmsAccessMask : int32
 		{
-			NTMS_USE_ACCESS = 1,
-			NTMS_MODIFY_ACCESS = 2,
-			NTMS_CONTROL_ACCESS = 4,
+			USE_ACCESS = 1,
+			MODIFY_ACCESS = 2,
+			CONTROL_ACCESS = 4,
 		}
 		[AllowDuplicates]
 		public enum NtmsUITypes : int32
 		{
-			NTMS_UITYPE_INVALID = 0,
-			NTMS_UITYPE_INFO = 1,
-			NTMS_UITYPE_REQ = 2,
-			NTMS_UITYPE_ERR = 3,
-			NTMS_UITYPE_MAX = 4,
+			INVALID = 0,
+			INFO = 1,
+			REQ = 2,
+			ERR = 3,
+			MAX = 4,
 		}
 		[AllowDuplicates]
 		public enum NtmsUIOperations : int32
 		{
-			NTMS_UIDEST_ADD = 1,
-			NTMS_UIDEST_DELETE = 2,
-			NTMS_UIDEST_DELETEALL = 3,
-			NTMS_UIOPERATION_MAX = 4,
+			DEST_ADD = 1,
+			DEST_DELETE = 2,
+			DEST_DELETEALL = 3,
+			OPERATION_MAX = 4,
 		}
 		[AllowDuplicates]
 		public enum NtmsNotificationOperations : int32
 		{
-			NTMS_OBJ_UPDATE = 1,
-			NTMS_OBJ_INSERT = 2,
-			NTMS_OBJ_DELETE = 3,
-			NTMS_EVENT_SIGNAL = 4,
-			NTMS_EVENT_COMPLETE = 5,
+			OBJ_UPDATE = 1,
+			OBJ_INSERT = 2,
+			OBJ_DELETE = 3,
+			EVENT_SIGNAL = 4,
+			EVENT_COMPLETE = 5,
 		}
 		[AllowDuplicates]
 		public enum CLS_CONTEXT_MODE : int32
 		{
-			ClsContextNone = 0,
-			ClsContextUndoNext = 1,
-			ClsContextPrevious = 2,
-			ClsContextForward = 3,
+			None = 0,
+			UndoNext = 1,
+			Previous = 2,
+			Forward = 3,
 		}
 		[AllowDuplicates]
 		public enum CLFS_CONTEXT_MODE : int32
 		{
-			ClfsContextNone = 0,
-			ClfsContextUndoNext = 1,
-			ClfsContextPrevious = 2,
-			ClfsContextForward = 3,
+			None = 0,
+			UndoNext = 1,
+			Previous = 2,
+			Forward = 3,
 		}
 		[AllowDuplicates]
 		public enum CLS_LOG_INFORMATION_CLASS : int32
 		{
-			ClfsLogBasicInformation = 0,
-			ClfsLogBasicInformationPhysical = 1,
-			ClfsLogPhysicalNameInformation = 2,
-			ClfsLogStreamIdentifierInformation = 3,
-			ClfsLogSystemMarkingInformation = 4,
-			ClfsLogPhysicalLsnInformation = 5,
+			BasicInformation = 0,
+			BasicInformationPhysical = 1,
+			PhysicalNameInformation = 2,
+			StreamIdentifierInformation = 3,
+			SystemMarkingInformation = 4,
+			PhysicalLsnInformation = 5,
 		}
 		[AllowDuplicates]
 		public enum CLS_IOSTATS_CLASS : int32
 		{
-			ClsIoStatsDefault = 0,
-			ClsIoStatsMax = 65535,
+			Default = 0,
+			Max = 65535,
 		}
 		[AllowDuplicates]
 		public enum CLFS_IOSTATS_CLASS : int32
 		{
-			ClfsIoStatsDefault = 0,
-			ClfsIoStatsMax = 65535,
+			Default = 0,
+			Max = 65535,
 		}
 		[AllowDuplicates]
 		public enum CLFS_LOG_ARCHIVE_MODE : int32
 		{
-			ClfsLogArchiveEnabled = 1,
-			ClfsLogArchiveDisabled = 2,
+			Enabled = 1,
+			Disabled = 2,
 		}
 		[AllowDuplicates]
 		public enum CLFS_MGMT_POLICY_TYPE : int32
 		{
-			ClfsMgmtPolicyMaximumSize = 0,
-			ClfsMgmtPolicyMinimumSize = 1,
-			ClfsMgmtPolicyNewContainerSize = 2,
-			ClfsMgmtPolicyGrowthRate = 3,
-			ClfsMgmtPolicyLogTail = 4,
-			ClfsMgmtPolicyAutoShrink = 5,
-			ClfsMgmtPolicyAutoGrow = 6,
-			ClfsMgmtPolicyNewContainerPrefix = 7,
-			ClfsMgmtPolicyNewContainerSuffix = 8,
-			ClfsMgmtPolicyNewContainerExtension = 9,
-			ClfsMgmtPolicyInvalid = 10,
+			MaximumSize = 0,
+			MinimumSize = 1,
+			NewContainerSize = 2,
+			GrowthRate = 3,
+			LogTail = 4,
+			AutoShrink = 5,
+			AutoGrow = 6,
+			NewContainerPrefix = 7,
+			NewContainerSuffix = 8,
+			NewContainerExtension = 9,
+			Invalid = 10,
 		}
 		[AllowDuplicates]
 		public enum CLFS_MGMT_NOTIFICATION_TYPE : int32
 		{
-			ClfsMgmtAdvanceTailNotification = 0,
-			ClfsMgmtLogFullHandlerNotification = 1,
-			ClfsMgmtLogUnpinnedNotification = 2,
-			ClfsMgmtLogWriteNotification = 3,
+			AdvanceTailNotification = 0,
+			LogFullHandlerNotification = 1,
+			LogUnpinnedNotification = 2,
+			LogWriteNotification = 3,
 		}
 		[AllowDuplicates]
 		public enum SERVER_CERTIFICATE_TYPE : int32
@@ -1273,24 +1273,24 @@ namespace Win32
 		[AllowDuplicates]
 		public enum IORING_VERSION : int32
 		{
-			IORING_VERSION_INVALID = 0,
-			IORING_VERSION_1 = 1,
+			INVALID = 0,
+			_1 = 1,
 		}
 		[AllowDuplicates]
 		public enum IORING_FEATURE_FLAGS : int32
 		{
-			IORING_FEATURE_FLAGS_NONE = 0,
-			IORING_FEATURE_UM_EMULATION = 1,
-			IORING_FEATURE_SET_COMPLETION_EVENT = 2,
+			FLAGS_NONE = 0,
+			UM_EMULATION = 1,
+			SET_COMPLETION_EVENT = 2,
 		}
 		[AllowDuplicates]
 		public enum IORING_OP_CODE : int32
 		{
-			IORING_OP_NOP = 0,
-			IORING_OP_READ = 1,
-			IORING_OP_REGISTER_FILES = 2,
-			IORING_OP_REGISTER_BUFFERS = 3,
-			IORING_OP_CANCEL = 4,
+			NOP = 0,
+			READ = 1,
+			REGISTER_FILES = 2,
+			REGISTER_BUFFERS = 3,
+			CANCEL = 4,
 		}
 		[AllowDuplicates]
 		public enum IORING_SQE_FLAGS : int32
@@ -1310,74 +1310,74 @@ namespace Win32
 		[AllowDuplicates]
 		public enum IORING_REF_KIND : int32
 		{
-			IORING_REF_RAW = 0,
-			IORING_REF_REGISTERED = 1,
+			AW = 0,
+			EGISTERED = 1,
 		}
 		[AllowDuplicates]
 		public enum TRANSACTION_OUTCOME : int32
 		{
-			TransactionOutcomeUndetermined = 1,
-			TransactionOutcomeCommitted = 2,
-			TransactionOutcomeAborted = 3,
+			Undetermined = 1,
+			Committed = 2,
+			Aborted = 3,
 		}
 		[AllowDuplicates]
 		public enum STORAGE_BUS_TYPE : int32
 		{
-			BusTypeUnknown = 0,
-			BusTypeScsi = 1,
-			BusTypeAtapi = 2,
-			BusTypeAta = 3,
-			BusType1394 = 4,
-			BusTypeSsa = 5,
-			BusTypeFibre = 6,
-			BusTypeUsb = 7,
-			BusTypeRAID = 8,
-			BusTypeiScsi = 9,
-			BusTypeSas = 10,
-			BusTypeSata = 11,
-			BusTypeSd = 12,
-			BusTypeMmc = 13,
-			BusTypeVirtual = 14,
-			BusTypeFileBackedVirtual = 15,
-			BusTypeSpaces = 16,
-			BusTypeNvme = 17,
-			BusTypeSCM = 18,
-			BusTypeUfs = 19,
-			BusTypeMax = 20,
-			BusTypeMaxReserved = 127,
+			Unknown = 0,
+			Scsi = 1,
+			Atapi = 2,
+			Ata = 3,
+			_1394 = 4,
+			Ssa = 5,
+			Fibre = 6,
+			Usb = 7,
+			RAID = 8,
+			iScsi = 9,
+			Sas = 10,
+			Sata = 11,
+			Sd = 12,
+			Mmc = 13,
+			Virtual = 14,
+			FileBackedVirtual = 15,
+			Spaces = 16,
+			Nvme = 17,
+			SCM = 18,
+			Ufs = 19,
+			Max = 20,
+			MaxReserved = 127,
 		}
 		[AllowDuplicates]
 		public enum COPYFILE2_MESSAGE_TYPE : int32
 		{
-			COPYFILE2_CALLBACK_NONE = 0,
-			COPYFILE2_CALLBACK_CHUNK_STARTED = 1,
-			COPYFILE2_CALLBACK_CHUNK_FINISHED = 2,
-			COPYFILE2_CALLBACK_STREAM_STARTED = 3,
-			COPYFILE2_CALLBACK_STREAM_FINISHED = 4,
-			COPYFILE2_CALLBACK_POLL_CONTINUE = 5,
-			COPYFILE2_CALLBACK_ERROR = 6,
-			COPYFILE2_CALLBACK_MAX = 7,
+			NONE = 0,
+			CHUNK_STARTED = 1,
+			CHUNK_FINISHED = 2,
+			STREAM_STARTED = 3,
+			STREAM_FINISHED = 4,
+			POLL_CONTINUE = 5,
+			ERROR = 6,
+			MAX = 7,
 		}
 		[AllowDuplicates]
 		public enum COPYFILE2_MESSAGE_ACTION : int32
 		{
-			COPYFILE2_PROGRESS_CONTINUE = 0,
-			COPYFILE2_PROGRESS_CANCEL = 1,
-			COPYFILE2_PROGRESS_STOP = 2,
-			COPYFILE2_PROGRESS_QUIET = 3,
-			COPYFILE2_PROGRESS_PAUSE = 4,
+			CONTINUE = 0,
+			CANCEL = 1,
+			STOP = 2,
+			QUIET = 3,
+			PAUSE = 4,
 		}
 		[AllowDuplicates]
 		public enum COPYFILE2_COPY_PHASE : int32
 		{
-			COPYFILE2_PHASE_NONE = 0,
-			COPYFILE2_PHASE_PREPARE_SOURCE = 1,
-			COPYFILE2_PHASE_PREPARE_DEST = 2,
-			COPYFILE2_PHASE_READ_SOURCE = 3,
-			COPYFILE2_PHASE_WRITE_DESTINATION = 4,
-			COPYFILE2_PHASE_SERVER_COPY = 5,
-			COPYFILE2_PHASE_NAMEGRAFT_COPY = 6,
-			COPYFILE2_PHASE_MAX = 7,
+			NONE = 0,
+			PREPARE_SOURCE = 1,
+			PREPARE_DEST = 2,
+			READ_SOURCE = 3,
+			WRITE_DESTINATION = 4,
+			SERVER_COPY = 5,
+			NAMEGRAFT_COPY = 6,
+			MAX = 7,
 		}
 		[AllowDuplicates]
 		public enum PRIORITY_HINT : int32

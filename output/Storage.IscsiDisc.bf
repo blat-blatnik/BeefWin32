@@ -182,53 +182,53 @@ namespace Win32
 		[AllowDuplicates]
 		public enum NV_SEP_WRITE_CACHE_TYPE : int32
 		{
-			NVSEPWriteCacheTypeUnknown = 0,
-			NVSEPWriteCacheTypeNone = 1,
-			NVSEPWriteCacheTypeWriteBack = 2,
-			NVSEPWriteCacheTypeWriteThrough = 3,
+			Unknown = 0,
+			None = 1,
+			WriteBack = 2,
+			WriteThrough = 3,
 		}
 		[AllowDuplicates]
 		public enum MP_STORAGE_DIAGNOSTIC_LEVEL : int32
 		{
-			MpStorageDiagnosticLevelDefault = 0,
-			MpStorageDiagnosticLevelMax = 1,
+			Default = 0,
+			Max = 1,
 		}
 		[AllowDuplicates]
 		public enum MP_STORAGE_DIAGNOSTIC_TARGET_TYPE : int32
 		{
-			MpStorageDiagnosticTargetTypeUndefined = 0,
-			MpStorageDiagnosticTargetTypeMiniport = 2,
-			MpStorageDiagnosticTargetTypeHbaFirmware = 3,
-			MpStorageDiagnosticTargetTypeMax = 4,
+			Undefined = 0,
+			Miniport = 2,
+			HbaFirmware = 3,
+			Max = 4,
 		}
 		[AllowDuplicates]
 		public enum NVCACHE_TYPE : int32
 		{
-			NvCacheTypeUnknown = 0,
-			NvCacheTypeNone = 1,
-			NvCacheTypeWriteBack = 2,
-			NvCacheTypeWriteThrough = 3,
+			Unknown = 0,
+			None = 1,
+			WriteBack = 2,
+			WriteThrough = 3,
 		}
 		[AllowDuplicates]
 		public enum NVCACHE_STATUS : int32
 		{
-			NvCacheStatusUnknown = 0,
-			NvCacheStatusDisabling = 1,
-			NvCacheStatusDisabled = 2,
-			NvCacheStatusEnabled = 3,
+			Unknown = 0,
+			Disabling = 1,
+			Disabled = 2,
+			Enabled = 3,
 		}
 		[AllowDuplicates]
 		public enum ISCSI_DIGEST_TYPES : int32
 		{
-			ISCSI_DIGEST_TYPE_NONE = 0,
-			ISCSI_DIGEST_TYPE_CRC32C = 1,
+			NONE = 0,
+			CRC32C = 1,
 		}
 		[AllowDuplicates]
 		public enum ISCSI_AUTH_TYPES : int32
 		{
-			ISCSI_NO_AUTH_TYPE = 0,
-			ISCSI_CHAP_AUTH_TYPE = 1,
-			ISCSI_MUTUAL_CHAP_AUTH_TYPE = 2,
+			NO_AUTH_TYPE = 0,
+			CHAP_AUTH_TYPE = 1,
+			MUTUAL_CHAP_AUTH_TYPE = 2,
 		}
 		[AllowDuplicates]
 		public enum IKE_AUTHENTICATION_METHOD : int32

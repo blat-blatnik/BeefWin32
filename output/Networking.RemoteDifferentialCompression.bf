@@ -37,45 +37,45 @@ namespace Win32
 		[AllowDuplicates]
 		public enum RDC_ErrorCode : int32
 		{
-			RDC_NoError = 0,
-			RDC_HeaderVersionNewer = 1,
-			RDC_HeaderVersionOlder = 2,
-			RDC_HeaderMissingOrCorrupt = 3,
-			RDC_HeaderWrongType = 4,
-			RDC_DataMissingOrCorrupt = 5,
-			RDC_DataTooManyRecords = 6,
-			RDC_FileChecksumMismatch = 7,
-			RDC_ApplicationError = 8,
-			RDC_Aborted = 9,
-			RDC_Win32Error = 10,
+			NoError = 0,
+			HeaderVersionNewer = 1,
+			HeaderVersionOlder = 2,
+			HeaderMissingOrCorrupt = 3,
+			HeaderWrongType = 4,
+			DataMissingOrCorrupt = 5,
+			DataTooManyRecords = 6,
+			FileChecksumMismatch = 7,
+			ApplicationError = 8,
+			Aborted = 9,
+			Win32Error = 10,
 		}
 		[AllowDuplicates]
 		public enum GeneratorParametersType : int32
 		{
-			RDCGENTYPE_Unused = 0,
-			RDCGENTYPE_FilterMax = 1,
+			Unused = 0,
+			FilterMax = 1,
 		}
 		[AllowDuplicates]
 		public enum RdcNeedType : int32
 		{
-			RDCNEED_SOURCE = 0,
-			RDCNEED_TARGET = 1,
-			RDCNEED_SEED = 2,
-			RDCNEED_SEED_MAX = 255,
+			SOURCE = 0,
+			TARGET = 1,
+			SEED = 2,
+			SEED_MAX = 255,
 		}
 		[AllowDuplicates]
 		public enum RdcCreatedTables : int32
 		{
-			RDCTABLE_InvalidOrUnknown = 0,
-			RDCTABLE_Existing = 1,
-			RDCTABLE_New = 2,
+			InvalidOrUnknown = 0,
+			Existing = 1,
+			New = 2,
 		}
 		[AllowDuplicates]
 		public enum RdcMappingAccessMode : int32
 		{
-			RDCMAPPING_Undefined = 0,
-			RDCMAPPING_ReadOnly = 1,
-			RDCMAPPING_ReadWrite = 2,
+			Undefined = 0,
+			ReadOnly = 1,
+			ReadWrite = 2,
 		}
 		
 		// --- Structs ---

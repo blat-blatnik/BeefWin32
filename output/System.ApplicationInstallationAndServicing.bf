@@ -366,16 +366,16 @@ namespace Win32
 		[AllowDuplicates]
 		public enum MSIASSEMBLYINFO : uint32
 		{
-			MSIASSEMBLYINFO_NETASSEMBLY = 0,
-			MSIASSEMBLYINFO_WIN32ASSEMBLY = 1,
+			NETASSEMBLY = 0,
+			WIN32ASSEMBLY = 1,
 		}
 		[AllowDuplicates]
 		public enum IASSEMBLYCACHE_UNINSTALL_DISPOSITION : uint32
 		{
-			IASSEMBLYCACHE_UNINSTALL_DISPOSITION_UNINSTALLED = 1,
-			IASSEMBLYCACHE_UNINSTALL_DISPOSITION_STILL_IN_USE = 2,
-			IASSEMBLYCACHE_UNINSTALL_DISPOSITION_ALREADY_UNINSTALLED = 3,
-			IASSEMBLYCACHE_UNINSTALL_DISPOSITION_DELETE_PENDING = 4,
+			UNINSTALLED = 1,
+			STILL_IN_USE = 2,
+			ALREADY_UNINSTALLED = 3,
+			DELETE_PENDING = 4,
 		}
 		[AllowDuplicates]
 		public enum QUERYASMINFO_FLAGS : uint32
@@ -385,238 +385,238 @@ namespace Win32
 		[AllowDuplicates]
 		public enum RESULTTYPES : int32
 		{
-			ieUnknown = 0,
-			ieError = 1,
-			ieWarning = 2,
-			ieInfo = 3,
+			Unknown = 0,
+			Error = 1,
+			Warning = 2,
+			Info = 3,
 		}
 		[AllowDuplicates]
 		public enum STATUSTYPES : int32
 		{
-			ieStatusGetCUB = 0,
-			ieStatusICECount = 1,
-			ieStatusMerge = 2,
-			ieStatusSummaryInfo = 3,
-			ieStatusCreateEngine = 4,
-			ieStatusStarting = 5,
-			ieStatusRunICE = 6,
-			ieStatusShutdown = 7,
-			ieStatusSuccess = 8,
-			ieStatusFail = 9,
-			ieStatusCancel = 10,
+			GetCUB = 0,
+			ICECount = 1,
+			Merge = 2,
+			SummaryInfo = 3,
+			CreateEngine = 4,
+			Starting = 5,
+			RunICE = 6,
+			Shutdown = 7,
+			Success = 8,
+			Fail = 9,
+			Cancel = 10,
 		}
 		[AllowDuplicates]
 		public enum msmErrorType : int32
 		{
-			msmErrorLanguageUnsupported = 1,
-			msmErrorLanguageFailed = 2,
-			msmErrorExclusion = 3,
-			msmErrorTableMerge = 4,
-			msmErrorResequenceMerge = 5,
-			msmErrorFileCreate = 6,
-			msmErrorDirCreate = 7,
-			msmErrorFeatureRequired = 8,
+			LanguageUnsupported = 1,
+			LanguageFailed = 2,
+			Exclusion = 3,
+			TableMerge = 4,
+			ResequenceMerge = 5,
+			FileCreate = 6,
+			DirCreate = 7,
+			FeatureRequired = 8,
 		}
 		[AllowDuplicates]
 		public enum INSTALLMESSAGE : int32
 		{
-			INSTALLMESSAGE_FATALEXIT = 0,
-			INSTALLMESSAGE_ERROR = 16777216,
-			INSTALLMESSAGE_WARNING = 33554432,
-			INSTALLMESSAGE_USER = 50331648,
-			INSTALLMESSAGE_INFO = 67108864,
-			INSTALLMESSAGE_FILESINUSE = 83886080,
-			INSTALLMESSAGE_RESOLVESOURCE = 100663296,
-			INSTALLMESSAGE_OUTOFDISKSPACE = 117440512,
-			INSTALLMESSAGE_ACTIONSTART = 134217728,
-			INSTALLMESSAGE_ACTIONDATA = 150994944,
-			INSTALLMESSAGE_PROGRESS = 167772160,
-			INSTALLMESSAGE_COMMONDATA = 184549376,
-			INSTALLMESSAGE_INITIALIZE = 201326592,
-			INSTALLMESSAGE_TERMINATE = 218103808,
-			INSTALLMESSAGE_SHOWDIALOG = 234881024,
-			INSTALLMESSAGE_PERFORMANCE = 251658240,
-			INSTALLMESSAGE_RMFILESINUSE = 419430400,
-			INSTALLMESSAGE_INSTALLSTART = 436207616,
-			INSTALLMESSAGE_INSTALLEND = 452984832,
+			FATALEXIT = 0,
+			ERROR = 16777216,
+			WARNING = 33554432,
+			USER = 50331648,
+			INFO = 67108864,
+			FILESINUSE = 83886080,
+			RESOLVESOURCE = 100663296,
+			OUTOFDISKSPACE = 117440512,
+			ACTIONSTART = 134217728,
+			ACTIONDATA = 150994944,
+			PROGRESS = 167772160,
+			COMMONDATA = 184549376,
+			INITIALIZE = 201326592,
+			TERMINATE = 218103808,
+			SHOWDIALOG = 234881024,
+			PERFORMANCE = 251658240,
+			RMFILESINUSE = 419430400,
+			INSTALLSTART = 436207616,
+			INSTALLEND = 452984832,
 		}
 		[AllowDuplicates]
 		public enum INSTALLUILEVEL : int32
 		{
-			INSTALLUILEVEL_NOCHANGE = 0,
-			INSTALLUILEVEL_DEFAULT = 1,
-			INSTALLUILEVEL_NONE = 2,
-			INSTALLUILEVEL_BASIC = 3,
-			INSTALLUILEVEL_REDUCED = 4,
-			INSTALLUILEVEL_FULL = 5,
-			INSTALLUILEVEL_ENDDIALOG = 128,
-			INSTALLUILEVEL_PROGRESSONLY = 64,
-			INSTALLUILEVEL_HIDECANCEL = 32,
-			INSTALLUILEVEL_SOURCERESONLY = 256,
-			INSTALLUILEVEL_UACONLY = 512,
+			NOCHANGE = 0,
+			DEFAULT = 1,
+			NONE = 2,
+			BASIC = 3,
+			REDUCED = 4,
+			FULL = 5,
+			ENDDIALOG = 128,
+			PROGRESSONLY = 64,
+			HIDECANCEL = 32,
+			SOURCERESONLY = 256,
+			UACONLY = 512,
 		}
 		[AllowDuplicates]
 		public enum INSTALLSTATE : int32
 		{
-			INSTALLSTATE_NOTUSED = -7,
-			INSTALLSTATE_BADCONFIG = -6,
-			INSTALLSTATE_INCOMPLETE = -5,
-			INSTALLSTATE_SOURCEABSENT = -4,
-			INSTALLSTATE_MOREDATA = -3,
-			INSTALLSTATE_INVALIDARG = -2,
-			INSTALLSTATE_UNKNOWN = -1,
-			INSTALLSTATE_BROKEN = 0,
-			INSTALLSTATE_ADVERTISED = 1,
-			INSTALLSTATE_REMOVED = 1,
-			INSTALLSTATE_ABSENT = 2,
-			INSTALLSTATE_LOCAL = 3,
-			INSTALLSTATE_SOURCE = 4,
-			INSTALLSTATE_DEFAULT = 5,
+			NOTUSED = -7,
+			BADCONFIG = -6,
+			INCOMPLETE = -5,
+			SOURCEABSENT = -4,
+			MOREDATA = -3,
+			INVALIDARG = -2,
+			UNKNOWN = -1,
+			BROKEN = 0,
+			ADVERTISED = 1,
+			REMOVED = 1,
+			ABSENT = 2,
+			LOCAL = 3,
+			SOURCE = 4,
+			DEFAULT = 5,
 		}
 		[AllowDuplicates]
 		public enum USERINFOSTATE : int32
 		{
-			USERINFOSTATE_MOREDATA = -3,
-			USERINFOSTATE_INVALIDARG = -2,
-			USERINFOSTATE_UNKNOWN = -1,
-			USERINFOSTATE_ABSENT = 0,
-			USERINFOSTATE_PRESENT = 1,
+			MOREDATA = -3,
+			INVALIDARG = -2,
+			UNKNOWN = -1,
+			ABSENT = 0,
+			PRESENT = 1,
 		}
 		[AllowDuplicates]
 		public enum INSTALLLEVEL : int32
 		{
-			INSTALLLEVEL_DEFAULT = 0,
-			INSTALLLEVEL_MINIMUM = 1,
-			INSTALLLEVEL_MAXIMUM = 65535,
+			DEFAULT = 0,
+			MINIMUM = 1,
+			MAXIMUM = 65535,
 		}
 		[AllowDuplicates]
 		public enum REINSTALLMODE : int32
 		{
-			REINSTALLMODE_REPAIR = 1,
-			REINSTALLMODE_FILEMISSING = 2,
-			REINSTALLMODE_FILEOLDERVERSION = 4,
-			REINSTALLMODE_FILEEQUALVERSION = 8,
-			REINSTALLMODE_FILEEXACT = 16,
-			REINSTALLMODE_FILEVERIFY = 32,
-			REINSTALLMODE_FILEREPLACE = 64,
-			REINSTALLMODE_MACHINEDATA = 128,
-			REINSTALLMODE_USERDATA = 256,
-			REINSTALLMODE_SHORTCUT = 512,
-			REINSTALLMODE_PACKAGE = 1024,
+			REPAIR = 1,
+			FILEMISSING = 2,
+			FILEOLDERVERSION = 4,
+			FILEEQUALVERSION = 8,
+			FILEEXACT = 16,
+			FILEVERIFY = 32,
+			FILEREPLACE = 64,
+			MACHINEDATA = 128,
+			USERDATA = 256,
+			SHORTCUT = 512,
+			PACKAGE = 1024,
 		}
 		[AllowDuplicates]
 		public enum INSTALLOGMODE : int32
 		{
-			INSTALLLOGMODE_FATALEXIT = 1,
-			INSTALLLOGMODE_ERROR = 2,
-			INSTALLLOGMODE_WARNING = 4,
-			INSTALLLOGMODE_USER = 8,
-			INSTALLLOGMODE_INFO = 16,
-			INSTALLLOGMODE_RESOLVESOURCE = 64,
-			INSTALLLOGMODE_OUTOFDISKSPACE = 128,
-			INSTALLLOGMODE_ACTIONSTART = 256,
-			INSTALLLOGMODE_ACTIONDATA = 512,
-			INSTALLLOGMODE_COMMONDATA = 2048,
-			INSTALLLOGMODE_PROPERTYDUMP = 1024,
-			INSTALLLOGMODE_VERBOSE = 4096,
-			INSTALLLOGMODE_EXTRADEBUG = 8192,
-			INSTALLLOGMODE_LOGONLYONERROR = 16384,
-			INSTALLLOGMODE_LOGPERFORMANCE = 32768,
-			INSTALLLOGMODE_PROGRESS = 1024,
-			INSTALLLOGMODE_INITIALIZE = 4096,
-			INSTALLLOGMODE_TERMINATE = 8192,
-			INSTALLLOGMODE_SHOWDIALOG = 16384,
-			INSTALLLOGMODE_FILESINUSE = 32,
-			INSTALLLOGMODE_RMFILESINUSE = 33554432,
-			INSTALLLOGMODE_INSTALLSTART = 67108864,
-			INSTALLLOGMODE_INSTALLEND = 134217728,
+			FATALEXIT = 1,
+			ERROR = 2,
+			WARNING = 4,
+			USER = 8,
+			INFO = 16,
+			RESOLVESOURCE = 64,
+			OUTOFDISKSPACE = 128,
+			ACTIONSTART = 256,
+			ACTIONDATA = 512,
+			COMMONDATA = 2048,
+			PROPERTYDUMP = 1024,
+			VERBOSE = 4096,
+			EXTRADEBUG = 8192,
+			LOGONLYONERROR = 16384,
+			LOGPERFORMANCE = 32768,
+			PROGRESS = 1024,
+			INITIALIZE = 4096,
+			TERMINATE = 8192,
+			SHOWDIALOG = 16384,
+			FILESINUSE = 32,
+			RMFILESINUSE = 33554432,
+			INSTALLSTART = 67108864,
+			INSTALLEND = 134217728,
 		}
 		[AllowDuplicates]
 		public enum INSTALLLOGATTRIBUTES : int32
 		{
-			INSTALLLOGATTRIBUTES_APPEND = 1,
-			INSTALLLOGATTRIBUTES_FLUSHEACHLINE = 2,
+			APPEND = 1,
+			FLUSHEACHLINE = 2,
 		}
 		[AllowDuplicates]
 		public enum INSTALLFEATUREATTRIBUTE : int32
 		{
-			INSTALLFEATUREATTRIBUTE_FAVORLOCAL = 1,
-			INSTALLFEATUREATTRIBUTE_FAVORSOURCE = 2,
-			INSTALLFEATUREATTRIBUTE_FOLLOWPARENT = 4,
-			INSTALLFEATUREATTRIBUTE_FAVORADVERTISE = 8,
-			INSTALLFEATUREATTRIBUTE_DISALLOWADVERTISE = 16,
-			INSTALLFEATUREATTRIBUTE_NOUNSUPPORTEDADVERTISE = 32,
+			FAVORLOCAL = 1,
+			FAVORSOURCE = 2,
+			FOLLOWPARENT = 4,
+			FAVORADVERTISE = 8,
+			DISALLOWADVERTISE = 16,
+			NOUNSUPPORTEDADVERTISE = 32,
 		}
 		[AllowDuplicates]
 		public enum INSTALLMODE : int32
 		{
-			INSTALLMODE_NODETECTION_ANY = -4,
-			INSTALLMODE_NOSOURCERESOLUTION = -3,
-			INSTALLMODE_NODETECTION = -2,
-			INSTALLMODE_EXISTING = -1,
-			INSTALLMODE_DEFAULT = 0,
+			NODETECTION_ANY = -4,
+			NOSOURCERESOLUTION = -3,
+			NODETECTION = -2,
+			EXISTING = -1,
+			DEFAULT = 0,
 		}
 		[AllowDuplicates]
 		public enum MSIPATCHSTATE : int32
 		{
-			MSIPATCHSTATE_INVALID = 0,
-			MSIPATCHSTATE_APPLIED = 1,
-			MSIPATCHSTATE_SUPERSEDED = 2,
-			MSIPATCHSTATE_OBSOLETED = 4,
-			MSIPATCHSTATE_REGISTERED = 8,
-			MSIPATCHSTATE_ALL = 15,
+			INVALID = 0,
+			APPLIED = 1,
+			SUPERSEDED = 2,
+			OBSOLETED = 4,
+			REGISTERED = 8,
+			ALL = 15,
 		}
 		[AllowDuplicates]
 		public enum MSIINSTALLCONTEXT : int32
 		{
-			MSIINSTALLCONTEXT_FIRSTVISIBLE = 0,
-			MSIINSTALLCONTEXT_NONE = 0,
-			MSIINSTALLCONTEXT_USERMANAGED = 1,
-			MSIINSTALLCONTEXT_USERUNMANAGED = 2,
-			MSIINSTALLCONTEXT_MACHINE = 4,
-			MSIINSTALLCONTEXT_ALL = 7,
-			MSIINSTALLCONTEXT_ALLUSERMANAGED = 8,
+			FIRSTVISIBLE = 0,
+			NONE = 0,
+			USERMANAGED = 1,
+			USERUNMANAGED = 2,
+			MACHINE = 4,
+			ALL = 7,
+			ALLUSERMANAGED = 8,
 		}
 		[AllowDuplicates]
 		public enum MSIPATCHDATATYPE : int32
 		{
-			MSIPATCH_DATATYPE_PATCHFILE = 0,
-			MSIPATCH_DATATYPE_XMLPATH = 1,
-			MSIPATCH_DATATYPE_XMLBLOB = 2,
+			PATCHFILE = 0,
+			XMLPATH = 1,
+			XMLBLOB = 2,
 		}
 		[AllowDuplicates]
 		public enum SCRIPTFLAGS : int32
 		{
-			SCRIPTFLAGS_CACHEINFO = 1,
-			SCRIPTFLAGS_SHORTCUTS = 4,
-			SCRIPTFLAGS_MACHINEASSIGN = 8,
-			SCRIPTFLAGS_REGDATA_CNFGINFO = 32,
-			SCRIPTFLAGS_VALIDATE_TRANSFORMS_LIST = 64,
-			SCRIPTFLAGS_REGDATA_CLASSINFO = 128,
-			SCRIPTFLAGS_REGDATA_EXTENSIONINFO = 256,
-			SCRIPTFLAGS_REGDATA_APPINFO = 384,
-			SCRIPTFLAGS_REGDATA = 416,
+			CACHEINFO = 1,
+			SHORTCUTS = 4,
+			MACHINEASSIGN = 8,
+			REGDATA_CNFGINFO = 32,
+			VALIDATE_TRANSFORMS_LIST = 64,
+			REGDATA_CLASSINFO = 128,
+			REGDATA_EXTENSIONINFO = 256,
+			REGDATA_APPINFO = 384,
+			REGDATA = 416,
 		}
 		[AllowDuplicates]
 		public enum ADVERTISEFLAGS : int32
 		{
-			ADVERTISEFLAGS_MACHINEASSIGN = 0,
-			ADVERTISEFLAGS_USERASSIGN = 1,
+			MACHINEASSIGN = 0,
+			USERASSIGN = 1,
 		}
 		[AllowDuplicates]
 		public enum INSTALLTYPE : int32
 		{
-			INSTALLTYPE_DEFAULT = 0,
-			INSTALLTYPE_NETWORK_IMAGE = 1,
-			INSTALLTYPE_SINGLE_INSTANCE = 2,
+			DEFAULT = 0,
+			NETWORK_IMAGE = 1,
+			SINGLE_INSTANCE = 2,
 		}
 		[AllowDuplicates]
 		public enum MSIARCHITECTUREFLAGS : int32
 		{
-			MSIARCHITECTUREFLAGS_X86 = 1,
-			MSIARCHITECTUREFLAGS_IA64 = 2,
-			MSIARCHITECTUREFLAGS_AMD64 = 4,
-			MSIARCHITECTUREFLAGS_ARM = 8,
+			X86 = 1,
+			IA64 = 2,
+			AMD64 = 4,
+			ARM = 8,
 		}
 		[AllowDuplicates]
 		public enum MSIOPENPACKAGEFLAGS : int32
@@ -631,380 +631,380 @@ namespace Win32
 		[AllowDuplicates]
 		public enum MSISOURCETYPE : int32
 		{
-			MSISOURCETYPE_UNKNOWN = 0,
-			MSISOURCETYPE_NETWORK = 1,
-			MSISOURCETYPE_URL = 2,
-			MSISOURCETYPE_MEDIA = 4,
+			UNKNOWN = 0,
+			NETWORK = 1,
+			URL = 2,
+			MEDIA = 4,
 		}
 		[AllowDuplicates]
 		public enum MSICODE : int32
 		{
-			MSICODE_PRODUCT = 0,
-			MSICODE_PATCH = 1073741824,
+			RODUCT = 0,
+			ATCH = 1073741824,
 		}
 		[AllowDuplicates]
 		public enum MSITRANSACTION : int32
 		{
-			MSITRANSACTION_CHAIN_EMBEDDEDUI = 1,
-			MSITRANSACTION_JOIN_EXISTING_EMBEDDEDUI = 2,
+			CHAIN_EMBEDDEDUI = 1,
+			JOIN_EXISTING_EMBEDDEDUI = 2,
 		}
 		[AllowDuplicates]
 		public enum MSITRANSACTIONSTATE : uint32
 		{
-			MSITRANSACTIONSTATE_ROLLBACK = 0,
-			MSITRANSACTIONSTATE_COMMIT = 1,
+			ROLLBACK = 0,
+			COMMIT = 1,
 		}
 		[AllowDuplicates]
 		public enum MSIDBSTATE : int32
 		{
-			MSIDBSTATE_ERROR = -1,
-			MSIDBSTATE_READ = 0,
-			MSIDBSTATE_WRITE = 1,
+			ERROR = -1,
+			READ = 0,
+			WRITE = 1,
 		}
 		[AllowDuplicates]
 		public enum MSIMODIFY : int32
 		{
-			MSIMODIFY_SEEK = -1,
-			MSIMODIFY_REFRESH = 0,
-			MSIMODIFY_INSERT = 1,
-			MSIMODIFY_UPDATE = 2,
-			MSIMODIFY_ASSIGN = 3,
-			MSIMODIFY_REPLACE = 4,
-			MSIMODIFY_MERGE = 5,
-			MSIMODIFY_DELETE = 6,
-			MSIMODIFY_INSERT_TEMPORARY = 7,
-			MSIMODIFY_VALIDATE = 8,
-			MSIMODIFY_VALIDATE_NEW = 9,
-			MSIMODIFY_VALIDATE_FIELD = 10,
-			MSIMODIFY_VALIDATE_DELETE = 11,
+			SEEK = -1,
+			REFRESH = 0,
+			INSERT = 1,
+			UPDATE = 2,
+			ASSIGN = 3,
+			REPLACE = 4,
+			MERGE = 5,
+			DELETE = 6,
+			INSERT_TEMPORARY = 7,
+			VALIDATE = 8,
+			VALIDATE_NEW = 9,
+			VALIDATE_FIELD = 10,
+			VALIDATE_DELETE = 11,
 		}
 		[AllowDuplicates]
 		public enum MSICOLINFO : int32
 		{
-			MSICOLINFO_NAMES = 0,
-			MSICOLINFO_TYPES = 1,
+			NAMES = 0,
+			TYPES = 1,
 		}
 		[AllowDuplicates]
 		public enum MSICONDITION : int32
 		{
-			MSICONDITION_FALSE = 0,
-			MSICONDITION_TRUE = 1,
-			MSICONDITION_NONE = 2,
-			MSICONDITION_ERROR = 3,
+			FALSE = 0,
+			TRUE = 1,
+			NONE = 2,
+			ERROR = 3,
 		}
 		[AllowDuplicates]
 		public enum MSICOSTTREE : int32
 		{
-			MSICOSTTREE_SELFONLY = 0,
-			MSICOSTTREE_CHILDREN = 1,
-			MSICOSTTREE_PARENTS = 2,
-			MSICOSTTREE_RESERVED = 3,
+			SELFONLY = 0,
+			CHILDREN = 1,
+			PARENTS = 2,
+			RESERVED = 3,
 		}
 		[AllowDuplicates]
 		public enum MSIDBERROR : int32
 		{
-			MSIDBERROR_INVALIDARG = -3,
-			MSIDBERROR_MOREDATA = -2,
-			MSIDBERROR_FUNCTIONERROR = -1,
-			MSIDBERROR_NOERROR = 0,
-			MSIDBERROR_DUPLICATEKEY = 1,
-			MSIDBERROR_REQUIRED = 2,
-			MSIDBERROR_BADLINK = 3,
-			MSIDBERROR_OVERFLOW = 4,
-			MSIDBERROR_UNDERFLOW = 5,
-			MSIDBERROR_NOTINSET = 6,
-			MSIDBERROR_BADVERSION = 7,
-			MSIDBERROR_BADCASE = 8,
-			MSIDBERROR_BADGUID = 9,
-			MSIDBERROR_BADWILDCARD = 10,
-			MSIDBERROR_BADIDENTIFIER = 11,
-			MSIDBERROR_BADLANGUAGE = 12,
-			MSIDBERROR_BADFILENAME = 13,
-			MSIDBERROR_BADPATH = 14,
-			MSIDBERROR_BADCONDITION = 15,
-			MSIDBERROR_BADFORMATTED = 16,
-			MSIDBERROR_BADTEMPLATE = 17,
-			MSIDBERROR_BADDEFAULTDIR = 18,
-			MSIDBERROR_BADREGPATH = 19,
-			MSIDBERROR_BADCUSTOMSOURCE = 20,
-			MSIDBERROR_BADPROPERTY = 21,
-			MSIDBERROR_MISSINGDATA = 22,
-			MSIDBERROR_BADCATEGORY = 23,
-			MSIDBERROR_BADKEYTABLE = 24,
-			MSIDBERROR_BADMAXMINVALUES = 25,
-			MSIDBERROR_BADCABINET = 26,
-			MSIDBERROR_BADSHORTCUT = 27,
-			MSIDBERROR_STRINGOVERFLOW = 28,
-			MSIDBERROR_BADLOCALIZEATTRIB = 29,
+			INVALIDARG = -3,
+			MOREDATA = -2,
+			FUNCTIONERROR = -1,
+			NOERROR = 0,
+			DUPLICATEKEY = 1,
+			REQUIRED = 2,
+			BADLINK = 3,
+			OVERFLOW = 4,
+			UNDERFLOW = 5,
+			NOTINSET = 6,
+			BADVERSION = 7,
+			BADCASE = 8,
+			BADGUID = 9,
+			BADWILDCARD = 10,
+			BADIDENTIFIER = 11,
+			BADLANGUAGE = 12,
+			BADFILENAME = 13,
+			BADPATH = 14,
+			BADCONDITION = 15,
+			BADFORMATTED = 16,
+			BADTEMPLATE = 17,
+			BADDEFAULTDIR = 18,
+			BADREGPATH = 19,
+			BADCUSTOMSOURCE = 20,
+			BADPROPERTY = 21,
+			MISSINGDATA = 22,
+			BADCATEGORY = 23,
+			BADKEYTABLE = 24,
+			BADMAXMINVALUES = 25,
+			BADCABINET = 26,
+			BADSHORTCUT = 27,
+			STRINGOVERFLOW = 28,
+			BADLOCALIZEATTRIB = 29,
 		}
 		[AllowDuplicates]
 		public enum MSIRUNMODE : int32
 		{
-			MSIRUNMODE_ADMIN = 0,
-			MSIRUNMODE_ADVERTISE = 1,
-			MSIRUNMODE_MAINTENANCE = 2,
-			MSIRUNMODE_ROLLBACKENABLED = 3,
-			MSIRUNMODE_LOGENABLED = 4,
-			MSIRUNMODE_OPERATIONS = 5,
-			MSIRUNMODE_REBOOTATEND = 6,
-			MSIRUNMODE_REBOOTNOW = 7,
-			MSIRUNMODE_CABINET = 8,
-			MSIRUNMODE_SOURCESHORTNAMES = 9,
-			MSIRUNMODE_TARGETSHORTNAMES = 10,
-			MSIRUNMODE_RESERVED11 = 11,
-			MSIRUNMODE_WINDOWS9X = 12,
-			MSIRUNMODE_ZAWENABLED = 13,
-			MSIRUNMODE_RESERVED14 = 14,
-			MSIRUNMODE_RESERVED15 = 15,
-			MSIRUNMODE_SCHEDULED = 16,
-			MSIRUNMODE_ROLLBACK = 17,
-			MSIRUNMODE_COMMIT = 18,
+			ADMIN = 0,
+			ADVERTISE = 1,
+			MAINTENANCE = 2,
+			ROLLBACKENABLED = 3,
+			LOGENABLED = 4,
+			OPERATIONS = 5,
+			REBOOTATEND = 6,
+			REBOOTNOW = 7,
+			CABINET = 8,
+			SOURCESHORTNAMES = 9,
+			TARGETSHORTNAMES = 10,
+			RESERVED11 = 11,
+			WINDOWS9X = 12,
+			ZAWENABLED = 13,
+			RESERVED14 = 14,
+			RESERVED15 = 15,
+			SCHEDULED = 16,
+			ROLLBACK = 17,
+			COMMIT = 18,
 		}
 		[AllowDuplicates]
 		public enum MSITRANSFORM_ERROR : int32
 		{
-			MSITRANSFORM_ERROR_ADDEXISTINGROW = 1,
-			MSITRANSFORM_ERROR_DELMISSINGROW = 2,
-			MSITRANSFORM_ERROR_ADDEXISTINGTABLE = 4,
-			MSITRANSFORM_ERROR_DELMISSINGTABLE = 8,
-			MSITRANSFORM_ERROR_UPDATEMISSINGROW = 16,
-			MSITRANSFORM_ERROR_CHANGECODEPAGE = 32,
-			MSITRANSFORM_ERROR_VIEWTRANSFORM = 256,
-			MSITRANSFORM_ERROR_NONE = 0,
+			ADDEXISTINGROW = 1,
+			DELMISSINGROW = 2,
+			ADDEXISTINGTABLE = 4,
+			DELMISSINGTABLE = 8,
+			UPDATEMISSINGROW = 16,
+			CHANGECODEPAGE = 32,
+			VIEWTRANSFORM = 256,
+			NONE = 0,
 		}
 		[AllowDuplicates]
 		public enum MSITRANSFORM_VALIDATE : int32
 		{
-			MSITRANSFORM_VALIDATE_LANGUAGE = 1,
-			MSITRANSFORM_VALIDATE_PRODUCT = 2,
-			MSITRANSFORM_VALIDATE_PLATFORM = 4,
-			MSITRANSFORM_VALIDATE_MAJORVERSION = 8,
-			MSITRANSFORM_VALIDATE_MINORVERSION = 16,
-			MSITRANSFORM_VALIDATE_UPDATEVERSION = 32,
-			MSITRANSFORM_VALIDATE_NEWLESSBASEVERSION = 64,
-			MSITRANSFORM_VALIDATE_NEWLESSEQUALBASEVERSION = 128,
-			MSITRANSFORM_VALIDATE_NEWEQUALBASEVERSION = 256,
-			MSITRANSFORM_VALIDATE_NEWGREATEREQUALBASEVERSION = 512,
-			MSITRANSFORM_VALIDATE_NEWGREATERBASEVERSION = 1024,
-			MSITRANSFORM_VALIDATE_UPGRADECODE = 2048,
+			LANGUAGE = 1,
+			PRODUCT = 2,
+			PLATFORM = 4,
+			MAJORVERSION = 8,
+			MINORVERSION = 16,
+			UPDATEVERSION = 32,
+			NEWLESSBASEVERSION = 64,
+			NEWLESSEQUALBASEVERSION = 128,
+			NEWEQUALBASEVERSION = 256,
+			NEWGREATEREQUALBASEVERSION = 512,
+			NEWGREATERBASEVERSION = 1024,
+			UPGRADECODE = 2048,
 		}
 		[AllowDuplicates]
 		public enum ASM_NAME : int32
 		{
-			ASM_NAME_PUBLIC_KEY = 0,
-			ASM_NAME_PUBLIC_KEY_TOKEN = 1,
-			ASM_NAME_HASH_VALUE = 2,
-			ASM_NAME_NAME = 3,
-			ASM_NAME_MAJOR_VERSION = 4,
-			ASM_NAME_MINOR_VERSION = 5,
-			ASM_NAME_BUILD_NUMBER = 6,
-			ASM_NAME_REVISION_NUMBER = 7,
-			ASM_NAME_CULTURE = 8,
-			ASM_NAME_PROCESSOR_ID_ARRAY = 9,
-			ASM_NAME_OSINFO_ARRAY = 10,
-			ASM_NAME_HASH_ALGID = 11,
-			ASM_NAME_ALIAS = 12,
-			ASM_NAME_CODEBASE_URL = 13,
-			ASM_NAME_CODEBASE_LASTMOD = 14,
-			ASM_NAME_NULL_PUBLIC_KEY = 15,
-			ASM_NAME_NULL_PUBLIC_KEY_TOKEN = 16,
-			ASM_NAME_CUSTOM = 17,
-			ASM_NAME_NULL_CUSTOM = 18,
-			ASM_NAME_MVID = 19,
-			ASM_NAME_MAX_PARAMS = 20,
+			PUBLIC_KEY = 0,
+			PUBLIC_KEY_TOKEN = 1,
+			HASH_VALUE = 2,
+			NAME = 3,
+			MAJOR_VERSION = 4,
+			MINOR_VERSION = 5,
+			BUILD_NUMBER = 6,
+			REVISION_NUMBER = 7,
+			CULTURE = 8,
+			PROCESSOR_ID_ARRAY = 9,
+			OSINFO_ARRAY = 10,
+			HASH_ALGID = 11,
+			ALIAS = 12,
+			CODEBASE_URL = 13,
+			CODEBASE_LASTMOD = 14,
+			NULL_PUBLIC_KEY = 15,
+			NULL_PUBLIC_KEY_TOKEN = 16,
+			CUSTOM = 17,
+			NULL_CUSTOM = 18,
+			MVID = 19,
+			MAX_PARAMS = 20,
 		}
 		[AllowDuplicates]
 		public enum ASM_BIND_FLAGS : uint32
 		{
-			ASM_BINDF_FORCE_CACHE_INSTALL = 1,
-			ASM_BINDF_RFS_INTEGRITY_CHECK = 2,
-			ASM_BINDF_RFS_MODULE_CHECK = 4,
-			ASM_BINDF_BINPATH_PROBE_ONLY = 8,
-			ASM_BINDF_SHARED_BINPATH_HINT = 16,
-			ASM_BINDF_PARENT_ASM_HINT = 32,
+			FORCE_CACHE_INSTALL = 1,
+			RFS_INTEGRITY_CHECK = 2,
+			RFS_MODULE_CHECK = 4,
+			BINPATH_PROBE_ONLY = 8,
+			SHARED_BINPATH_HINT = 16,
+			PARENT_ASM_HINT = 32,
 		}
 		[AllowDuplicates]
 		public enum ASM_DISPLAY_FLAGS : int32
 		{
-			ASM_DISPLAYF_VERSION = 1,
-			ASM_DISPLAYF_CULTURE = 2,
-			ASM_DISPLAYF_PUBLIC_KEY_TOKEN = 4,
-			ASM_DISPLAYF_PUBLIC_KEY = 8,
-			ASM_DISPLAYF_CUSTOM = 16,
-			ASM_DISPLAYF_PROCESSORARCHITECTURE = 32,
-			ASM_DISPLAYF_LANGUAGEID = 64,
+			VERSION = 1,
+			CULTURE = 2,
+			PUBLIC_KEY_TOKEN = 4,
+			PUBLIC_KEY = 8,
+			CUSTOM = 16,
+			PROCESSORARCHITECTURE = 32,
+			LANGUAGEID = 64,
 		}
 		[AllowDuplicates]
 		public enum ASM_CMP_FLAGS : int32
 		{
-			ASM_CMPF_NAME = 1,
-			ASM_CMPF_MAJOR_VERSION = 2,
-			ASM_CMPF_MINOR_VERSION = 4,
-			ASM_CMPF_BUILD_NUMBER = 8,
-			ASM_CMPF_REVISION_NUMBER = 16,
-			ASM_CMPF_PUBLIC_KEY_TOKEN = 32,
-			ASM_CMPF_CULTURE = 64,
-			ASM_CMPF_CUSTOM = 128,
-			ASM_CMPF_ALL = 255,
-			ASM_CMPF_DEFAULT = 256,
+			NAME = 1,
+			MAJOR_VERSION = 2,
+			MINOR_VERSION = 4,
+			BUILD_NUMBER = 8,
+			REVISION_NUMBER = 16,
+			PUBLIC_KEY_TOKEN = 32,
+			CULTURE = 64,
+			CUSTOM = 128,
+			ALL = 255,
+			DEFAULT = 256,
 		}
 		[AllowDuplicates]
 		public enum CREATE_ASM_NAME_OBJ_FLAGS : int32
 		{
-			CANOF_PARSE_DISPLAY_NAME = 1,
-			CANOF_SET_DEFAULT_VALUES = 2,
+			PARSE_DISPLAY_NAME = 1,
+			SET_DEFAULT_VALUES = 2,
 		}
 		[AllowDuplicates]
 		public enum msidbControlAttributes : int32
 		{
-			msidbControlAttributesVisible = 1,
-			msidbControlAttributesEnabled = 2,
-			msidbControlAttributesSunken = 4,
-			msidbControlAttributesIndirect = 8,
-			msidbControlAttributesInteger = 16,
-			msidbControlAttributesRTLRO = 32,
-			msidbControlAttributesRightAligned = 64,
-			msidbControlAttributesLeftScroll = 128,
-			msidbControlAttributesBiDi = 224,
-			msidbControlAttributesTransparent = 65536,
-			msidbControlAttributesNoPrefix = 131072,
-			msidbControlAttributesNoWrap = 262144,
-			msidbControlAttributesFormatSize = 524288,
-			msidbControlAttributesUsersLanguage = 1048576,
-			msidbControlAttributesMultiline = 65536,
-			msidbControlAttributesPasswordInput = 2097152,
-			msidbControlAttributesProgress95 = 65536,
-			msidbControlAttributesRemovableVolume = 65536,
-			msidbControlAttributesFixedVolume = 131072,
-			msidbControlAttributesRemoteVolume = 262144,
-			msidbControlAttributesCDROMVolume = 524288,
-			msidbControlAttributesRAMDiskVolume = 1048576,
-			msidbControlAttributesFloppyVolume = 2097152,
-			msidbControlShowRollbackCost = 4194304,
-			msidbControlAttributesSorted = 65536,
-			msidbControlAttributesComboList = 131072,
-			msidbControlAttributesImageHandle = 65536,
-			msidbControlAttributesPushLike = 131072,
-			msidbControlAttributesBitmap = 262144,
-			msidbControlAttributesIcon = 524288,
-			msidbControlAttributesFixedSize = 1048576,
-			msidbControlAttributesIconSize16 = 2097152,
-			msidbControlAttributesIconSize32 = 4194304,
-			msidbControlAttributesIconSize48 = 6291456,
-			msidbControlAttributesElevationShield = 8388608,
-			msidbControlAttributesHasBorder = 16777216,
+			AttributesVisible = 1,
+			AttributesEnabled = 2,
+			AttributesSunken = 4,
+			AttributesIndirect = 8,
+			AttributesInteger = 16,
+			AttributesRTLRO = 32,
+			AttributesRightAligned = 64,
+			AttributesLeftScroll = 128,
+			AttributesBiDi = 224,
+			AttributesTransparent = 65536,
+			AttributesNoPrefix = 131072,
+			AttributesNoWrap = 262144,
+			AttributesFormatSize = 524288,
+			AttributesUsersLanguage = 1048576,
+			AttributesMultiline = 65536,
+			AttributesPasswordInput = 2097152,
+			AttributesProgress95 = 65536,
+			AttributesRemovableVolume = 65536,
+			AttributesFixedVolume = 131072,
+			AttributesRemoteVolume = 262144,
+			AttributesCDROMVolume = 524288,
+			AttributesRAMDiskVolume = 1048576,
+			AttributesFloppyVolume = 2097152,
+			ShowRollbackCost = 4194304,
+			AttributesSorted = 65536,
+			AttributesComboList = 131072,
+			AttributesImageHandle = 65536,
+			AttributesPushLike = 131072,
+			AttributesBitmap = 262144,
+			AttributesIcon = 524288,
+			AttributesFixedSize = 1048576,
+			AttributesIconSize16 = 2097152,
+			AttributesIconSize32 = 4194304,
+			AttributesIconSize48 = 6291456,
+			AttributesElevationShield = 8388608,
+			AttributesHasBorder = 16777216,
 		}
 		[AllowDuplicates]
 		public enum msidbLocatorType : int32
 		{
-			msidbLocatorTypeDirectory = 0,
-			msidbLocatorTypeFileName = 1,
-			msidbLocatorTypeRawValue = 2,
-			msidbLocatorType64bit = 16,
+			Directory = 0,
+			FileName = 1,
+			RawValue = 2,
+			_64bit = 16,
 		}
 		[AllowDuplicates]
 		public enum msidbComponentAttributes : int32
 		{
-			msidbComponentAttributesLocalOnly = 0,
-			msidbComponentAttributesSourceOnly = 1,
-			msidbComponentAttributesOptional = 2,
-			msidbComponentAttributesRegistryKeyPath = 4,
-			msidbComponentAttributesSharedDllRefCount = 8,
-			msidbComponentAttributesPermanent = 16,
-			msidbComponentAttributesODBCDataSource = 32,
-			msidbComponentAttributesTransitive = 64,
-			msidbComponentAttributesNeverOverwrite = 128,
-			msidbComponentAttributes64bit = 256,
-			msidbComponentAttributesDisableRegistryReflection = 512,
-			msidbComponentAttributesUninstallOnSupersedence = 1024,
-			msidbComponentAttributesShared = 2048,
+			LocalOnly = 0,
+			SourceOnly = 1,
+			Optional = 2,
+			RegistryKeyPath = 4,
+			SharedDllRefCount = 8,
+			Permanent = 16,
+			ODBCDataSource = 32,
+			Transitive = 64,
+			NeverOverwrite = 128,
+			_64bit = 256,
+			DisableRegistryReflection = 512,
+			UninstallOnSupersedence = 1024,
+			Shared = 2048,
 		}
 		[AllowDuplicates]
 		public enum msidbAssemblyAttributes : int32
 		{
-			msidbAssemblyAttributesURT = 0,
-			msidbAssemblyAttributesWin32 = 1,
+			URT = 0,
+			Win32 = 1,
 		}
 		[AllowDuplicates]
 		public enum msidbCustomActionType : int32
 		{
-			msidbCustomActionTypeDll = 1,
-			msidbCustomActionTypeExe = 2,
-			msidbCustomActionTypeTextData = 3,
-			msidbCustomActionTypeJScript = 5,
-			msidbCustomActionTypeVBScript = 6,
-			msidbCustomActionTypeInstall = 7,
-			msidbCustomActionTypeBinaryData = 0,
-			msidbCustomActionTypeSourceFile = 16,
-			msidbCustomActionTypeDirectory = 32,
-			msidbCustomActionTypeProperty = 48,
-			msidbCustomActionTypeContinue = 64,
-			msidbCustomActionTypeAsync = 128,
-			msidbCustomActionTypeFirstSequence = 256,
-			msidbCustomActionTypeOncePerProcess = 512,
-			msidbCustomActionTypeClientRepeat = 768,
-			msidbCustomActionTypeInScript = 1024,
-			msidbCustomActionTypeRollback = 256,
-			msidbCustomActionTypeCommit = 512,
-			msidbCustomActionTypeNoImpersonate = 2048,
-			msidbCustomActionTypeTSAware = 16384,
-			msidbCustomActionType64BitScript = 4096,
-			msidbCustomActionTypeHideTarget = 8192,
-			msidbCustomActionTypePatchUninstall = 32768,
+			Dll = 1,
+			Exe = 2,
+			TextData = 3,
+			JScript = 5,
+			VBScript = 6,
+			Install = 7,
+			BinaryData = 0,
+			SourceFile = 16,
+			Directory = 32,
+			Property = 48,
+			Continue = 64,
+			Async = 128,
+			FirstSequence = 256,
+			OncePerProcess = 512,
+			ClientRepeat = 768,
+			InScript = 1024,
+			Rollback = 256,
+			Commit = 512,
+			NoImpersonate = 2048,
+			TSAware = 16384,
+			_64BitScript = 4096,
+			HideTarget = 8192,
+			PatchUninstall = 32768,
 		}
 		[AllowDuplicates]
 		public enum msidbDialogAttributes : int32
 		{
-			msidbDialogAttributesVisible = 1,
-			msidbDialogAttributesModal = 2,
-			msidbDialogAttributesMinimize = 4,
-			msidbDialogAttributesSysModal = 8,
-			msidbDialogAttributesKeepModeless = 16,
-			msidbDialogAttributesTrackDiskSpace = 32,
-			msidbDialogAttributesUseCustomPalette = 64,
-			msidbDialogAttributesRTLRO = 128,
-			msidbDialogAttributesRightAligned = 256,
-			msidbDialogAttributesLeftScroll = 512,
-			msidbDialogAttributesBiDi = 896,
-			msidbDialogAttributesError = 65536,
+			Visible = 1,
+			Modal = 2,
+			Minimize = 4,
+			SysModal = 8,
+			KeepModeless = 16,
+			TrackDiskSpace = 32,
+			UseCustomPalette = 64,
+			RTLRO = 128,
+			RightAligned = 256,
+			LeftScroll = 512,
+			BiDi = 896,
+			Error = 65536,
 		}
 		[AllowDuplicates]
 		public enum msidbFeatureAttributes : int32
 		{
-			msidbFeatureAttributesFavorLocal = 0,
-			msidbFeatureAttributesFavorSource = 1,
-			msidbFeatureAttributesFollowParent = 2,
-			msidbFeatureAttributesFavorAdvertise = 4,
-			msidbFeatureAttributesDisallowAdvertise = 8,
-			msidbFeatureAttributesUIDisallowAbsent = 16,
-			msidbFeatureAttributesNoUnsupportedAdvertise = 32,
+			FavorLocal = 0,
+			FavorSource = 1,
+			FollowParent = 2,
+			FavorAdvertise = 4,
+			DisallowAdvertise = 8,
+			UIDisallowAbsent = 16,
+			NoUnsupportedAdvertise = 32,
 		}
 		[AllowDuplicates]
 		public enum msidbFileAttributes : int32
 		{
-			msidbFileAttributesReadOnly = 1,
-			msidbFileAttributesHidden = 2,
-			msidbFileAttributesSystem = 4,
-			msidbFileAttributesReserved0 = 8,
-			msidbFileAttributesIsolatedComp = 16,
-			msidbFileAttributesReserved1 = 64,
-			msidbFileAttributesReserved2 = 128,
-			msidbFileAttributesReserved3 = 256,
-			msidbFileAttributesVital = 512,
-			msidbFileAttributesChecksum = 1024,
-			msidbFileAttributesPatchAdded = 4096,
-			msidbFileAttributesNoncompressed = 8192,
-			msidbFileAttributesCompressed = 16384,
-			msidbFileAttributesReserved4 = 32768,
+			ReadOnly = 1,
+			Hidden = 2,
+			System = 4,
+			Reserved0 = 8,
+			IsolatedComp = 16,
+			Reserved1 = 64,
+			Reserved2 = 128,
+			Reserved3 = 256,
+			Vital = 512,
+			Checksum = 1024,
+			PatchAdded = 4096,
+			Noncompressed = 8192,
+			Compressed = 16384,
+			Reserved4 = 32768,
 		}
 		[AllowDuplicates]
 		public enum msidbIniFileAction : int32
 		{
-			msidbIniFileActionAddLine = 0,
-			msidbIniFileActionCreateLine = 1,
-			msidbIniFileActionRemoveLine = 2,
-			msidbIniFileActionAddTag = 3,
-			msidbIniFileActionRemoveTag = 4,
+			AddLine = 0,
+			CreateLine = 1,
+			RemoveLine = 2,
+			AddTag = 3,
+			RemoveTag = 4,
 		}
 		[AllowDuplicates]
 		public enum msidbMoveFileOptions : int32
@@ -1014,8 +1014,8 @@ namespace Win32
 		[AllowDuplicates]
 		public enum msidbODBCDataSourceRegistration : int32
 		{
-			msidbODBCDataSourceRegistrationPerMachine = 0,
-			msidbODBCDataSourceRegistrationPerUser = 1,
+			Machine = 0,
+			User = 1,
 		}
 		[AllowDuplicates]
 		public enum msidbClassAttributes : int32
@@ -1030,34 +1030,34 @@ namespace Win32
 		[AllowDuplicates]
 		public enum msidbRegistryRoot : int32
 		{
-			msidbRegistryRootClassesRoot = 0,
-			msidbRegistryRootCurrentUser = 1,
-			msidbRegistryRootLocalMachine = 2,
-			msidbRegistryRootUsers = 3,
+			ClassesRoot = 0,
+			CurrentUser = 1,
+			LocalMachine = 2,
+			Users = 3,
 		}
 		[AllowDuplicates]
 		public enum msidbRemoveFileInstallMode : int32
 		{
-			msidbRemoveFileInstallModeOnInstall = 1,
-			msidbRemoveFileInstallModeOnRemove = 2,
-			msidbRemoveFileInstallModeOnBoth = 3,
+			Install = 1,
+			Remove = 2,
+			Both = 3,
 		}
 		[AllowDuplicates]
 		public enum msidbServiceControlEvent : int32
 		{
-			msidbServiceControlEventStart = 1,
-			msidbServiceControlEventStop = 2,
-			msidbServiceControlEventDelete = 8,
-			msidbServiceControlEventUninstallStart = 16,
-			msidbServiceControlEventUninstallStop = 32,
-			msidbServiceControlEventUninstallDelete = 128,
+			Start = 1,
+			Stop = 2,
+			Delete = 8,
+			UninstallStart = 16,
+			UninstallStop = 32,
+			UninstallDelete = 128,
 		}
 		[AllowDuplicates]
 		public enum msidbServiceConfigEvent : int32
 		{
-			msidbServiceConfigEventInstall = 1,
-			msidbServiceConfigEventUninstall = 2,
-			msidbServiceConfigEventReinstall = 4,
+			Install = 1,
+			Uninstall = 2,
+			Reinstall = 4,
 		}
 		[AllowDuplicates]
 		public enum msidbServiceInstallErrorControl : int32
@@ -1067,332 +1067,332 @@ namespace Win32
 		[AllowDuplicates]
 		public enum msidbTextStyleStyleBits : int32
 		{
-			msidbTextStyleStyleBitsBold = 1,
-			msidbTextStyleStyleBitsItalic = 2,
-			msidbTextStyleStyleBitsUnderline = 4,
-			msidbTextStyleStyleBitsStrike = 8,
+			Bold = 1,
+			Italic = 2,
+			Underline = 4,
+			Strike = 8,
 		}
 		[AllowDuplicates]
 		public enum msidbUpgradeAttributes : int32
 		{
-			msidbUpgradeAttributesMigrateFeatures = 1,
-			msidbUpgradeAttributesOnlyDetect = 2,
-			msidbUpgradeAttributesIgnoreRemoveFailure = 4,
-			msidbUpgradeAttributesVersionMinInclusive = 256,
-			msidbUpgradeAttributesVersionMaxInclusive = 512,
-			msidbUpgradeAttributesLanguagesExclusive = 1024,
+			MigrateFeatures = 1,
+			OnlyDetect = 2,
+			IgnoreRemoveFailure = 4,
+			VersionMinInclusive = 256,
+			VersionMaxInclusive = 512,
+			LanguagesExclusive = 1024,
 		}
 		[AllowDuplicates]
 		public enum msidbEmbeddedUIAttributes : int32
 		{
-			msidbEmbeddedUI = 1,
-			msidbEmbeddedHandlesBasic = 2,
+			UI = 1,
+			HandlesBasic = 2,
 		}
 		[AllowDuplicates]
 		public enum msidbSumInfoSourceType : int32
 		{
-			msidbSumInfoSourceTypeSFN = 1,
-			msidbSumInfoSourceTypeCompressed = 2,
-			msidbSumInfoSourceTypeAdminImage = 4,
-			msidbSumInfoSourceTypeLUAPackage = 8,
+			SFN = 1,
+			Compressed = 2,
+			AdminImage = 4,
+			LUAPackage = 8,
 		}
 		[AllowDuplicates]
 		public enum msirbRebootType : int32
 		{
-			msirbRebootImmediate = 1,
-			msirbRebootDeferred = 2,
+			Immediate = 1,
+			Deferred = 2,
 		}
 		[AllowDuplicates]
 		public enum msirbRebootReason : int32
 		{
-			msirbRebootUndeterminedReason = 0,
-			msirbRebootInUseFilesReason = 1,
-			msirbRebootScheduleRebootReason = 2,
-			msirbRebootForceRebootReason = 3,
-			msirbRebootCustomActionReason = 4,
+			UndeterminedReason = 0,
+			InUseFilesReason = 1,
+			ScheduleRebootReason = 2,
+			ForceRebootReason = 3,
+			CustomActionReason = 4,
 		}
 		[AllowDuplicates]
 		public enum msifiFastInstallBits : int32
 		{
-			msifiFastInstallNoSR = 1,
-			msifiFastInstallQuickCosting = 2,
-			msifiFastInstallLessPrgMsg = 4,
+			NoSR = 1,
+			QuickCosting = 2,
+			LessPrgMsg = 4,
 		}
 		[AllowDuplicates]
 		public enum TILE_TEMPLATE_TYPE : int32
 		{
-			TILE_TEMPLATE_INVALID = 0,
-			TILE_TEMPLATE_FLIP = 5,
-			TILE_TEMPLATE_DEEPLINK = 13,
-			TILE_TEMPLATE_CYCLE = 14,
-			TILE_TEMPLATE_METROCOUNT = 1,
-			TILE_TEMPLATE_AGILESTORE = 2,
-			TILE_TEMPLATE_GAMES = 3,
-			TILE_TEMPLATE_CALENDAR = 4,
-			TILE_TEMPLATE_MUSICVIDEO = 7,
-			TILE_TEMPLATE_PEOPLE = 10,
-			TILE_TEMPLATE_CONTACT = 11,
-			TILE_TEMPLATE_GROUP = 12,
-			TILE_TEMPLATE_DEFAULT = 15,
-			TILE_TEMPLATE_BADGE = 16,
-			TILE_TEMPLATE_BLOCK = 17,
-			TILE_TEMPLATE_TEXT01 = 18,
-			TILE_TEMPLATE_TEXT02 = 19,
-			TILE_TEMPLATE_TEXT03 = 20,
-			TILE_TEMPLATE_TEXT04 = 21,
-			TILE_TEMPLATE_TEXT05 = 22,
-			TILE_TEMPLATE_TEXT06 = 23,
-			TILE_TEMPLATE_TEXT07 = 24,
-			TILE_TEMPLATE_TEXT08 = 25,
-			TILE_TEMPLATE_TEXT09 = 26,
-			TILE_TEMPLATE_TEXT10 = 27,
-			TILE_TEMPLATE_TEXT11 = 28,
-			TILE_TEMPLATE_IMAGE = 29,
-			TILE_TEMPLATE_IMAGECOLLECTION = 30,
-			TILE_TEMPLATE_IMAGEANDTEXT01 = 31,
-			TILE_TEMPLATE_IMAGEANDTEXT02 = 32,
-			TILE_TEMPLATE_BLOCKANDTEXT01 = 33,
-			TILE_TEMPLATE_BLOCKANDTEXT02 = 34,
-			TILE_TEMPLATE_PEEKIMAGEANDTEXT01 = 35,
-			TILE_TEMPLATE_PEEKIMAGEANDTEXT02 = 36,
-			TILE_TEMPLATE_PEEKIMAGEANDTEXT03 = 37,
-			TILE_TEMPLATE_PEEKIMAGEANDTEXT04 = 38,
-			TILE_TEMPLATE_PEEKIMAGE01 = 39,
-			TILE_TEMPLATE_PEEKIMAGE02 = 40,
-			TILE_TEMPLATE_PEEKIMAGE03 = 41,
-			TILE_TEMPLATE_PEEKIMAGE04 = 42,
-			TILE_TEMPLATE_PEEKIMAGE05 = 43,
-			TILE_TEMPLATE_PEEKIMAGE06 = 44,
-			TILE_TEMPLATE_PEEKIMAGECOLLECTION01 = 45,
-			TILE_TEMPLATE_PEEKIMAGECOLLECTION02 = 46,
-			TILE_TEMPLATE_PEEKIMAGECOLLECTION03 = 47,
-			TILE_TEMPLATE_PEEKIMAGECOLLECTION04 = 48,
-			TILE_TEMPLATE_PEEKIMAGECOLLECTION05 = 49,
-			TILE_TEMPLATE_PEEKIMAGECOLLECTION06 = 50,
-			TILE_TEMPLATE_SMALLIMAGEANDTEXT01 = 51,
-			TILE_TEMPLATE_SMALLIMAGEANDTEXT02 = 52,
-			TILE_TEMPLATE_SMALLIMAGEANDTEXT03 = 53,
-			TILE_TEMPLATE_SMALLIMAGEANDTEXT04 = 54,
-			TILE_TEMPLATE_SMALLIMAGEANDTEXT05 = 55,
-			TILE_TEMPLATE_METROCOUNTQUEUE = 56,
-			TILE_TEMPLATE_SEARCH = 57,
-			TILE_TEMPLATE_TILEFLYOUT01 = 58,
-			TILE_TEMPLATE_FOLDER = 59,
-			TILE_TEMPLATE_ALL = 100,
+			INVALID = 0,
+			FLIP = 5,
+			DEEPLINK = 13,
+			CYCLE = 14,
+			METROCOUNT = 1,
+			AGILESTORE = 2,
+			GAMES = 3,
+			CALENDAR = 4,
+			MUSICVIDEO = 7,
+			PEOPLE = 10,
+			CONTACT = 11,
+			GROUP = 12,
+			DEFAULT = 15,
+			BADGE = 16,
+			BLOCK = 17,
+			TEXT01 = 18,
+			TEXT02 = 19,
+			TEXT03 = 20,
+			TEXT04 = 21,
+			TEXT05 = 22,
+			TEXT06 = 23,
+			TEXT07 = 24,
+			TEXT08 = 25,
+			TEXT09 = 26,
+			TEXT10 = 27,
+			TEXT11 = 28,
+			IMAGE = 29,
+			IMAGECOLLECTION = 30,
+			IMAGEANDTEXT01 = 31,
+			IMAGEANDTEXT02 = 32,
+			BLOCKANDTEXT01 = 33,
+			BLOCKANDTEXT02 = 34,
+			PEEKIMAGEANDTEXT01 = 35,
+			PEEKIMAGEANDTEXT02 = 36,
+			PEEKIMAGEANDTEXT03 = 37,
+			PEEKIMAGEANDTEXT04 = 38,
+			PEEKIMAGE01 = 39,
+			PEEKIMAGE02 = 40,
+			PEEKIMAGE03 = 41,
+			PEEKIMAGE04 = 42,
+			PEEKIMAGE05 = 43,
+			PEEKIMAGE06 = 44,
+			PEEKIMAGECOLLECTION01 = 45,
+			PEEKIMAGECOLLECTION02 = 46,
+			PEEKIMAGECOLLECTION03 = 47,
+			PEEKIMAGECOLLECTION04 = 48,
+			PEEKIMAGECOLLECTION05 = 49,
+			PEEKIMAGECOLLECTION06 = 50,
+			SMALLIMAGEANDTEXT01 = 51,
+			SMALLIMAGEANDTEXT02 = 52,
+			SMALLIMAGEANDTEXT03 = 53,
+			SMALLIMAGEANDTEXT04 = 54,
+			SMALLIMAGEANDTEXT05 = 55,
+			METROCOUNTQUEUE = 56,
+			SEARCH = 57,
+			TILEFLYOUT01 = 58,
+			FOLDER = 59,
+			ALL = 100,
 		}
 		[AllowDuplicates]
 		public enum PM_APP_GENRE : int32
 		{
-			PM_APP_GENRE_GAMES = 0,
-			PM_APP_GENRE_OTHER = 1,
-			PM_APP_GENRE_INVALID = 2,
+			GAMES = 0,
+			OTHER = 1,
+			INVALID = 2,
 		}
 		[AllowDuplicates]
 		public enum PM_APPLICATION_INSTALL_TYPE : int32
 		{
-			PM_APPLICATION_INSTALL_NORMAL = 0,
-			PM_APPLICATION_INSTALL_IN_ROM = 1,
-			PM_APPLICATION_INSTALL_PA = 2,
-			PM_APPLICATION_INSTALL_DEBUG = 3,
-			PM_APPLICATION_INSTALL_ENTERPRISE = 4,
-			PM_APPLICATION_INSTALL_INVALID = 5,
+			NORMAL = 0,
+			IN_ROM = 1,
+			PA = 2,
+			DEBUG = 3,
+			ENTERPRISE = 4,
+			INVALID = 5,
 		}
 		[AllowDuplicates]
 		public enum PM_APPLICATION_STATE : int32
 		{
-			PM_APPLICATION_STATE_MIN = 0,
-			PM_APPLICATION_STATE_INSTALLED = 1,
-			PM_APPLICATION_STATE_INSTALLING = 2,
-			PM_APPLICATION_STATE_UPDATING = 3,
-			PM_APPLICATION_STATE_UNINSTALLING = 4,
-			PM_APPLICATION_STATE_LICENSE_UPDATING = 5,
-			PM_APPLICATION_STATE_MOVING = 6,
-			PM_APPLICATION_STATE_DISABLED_SD_CARD = 7,
-			PM_APPLICATION_STATE_DISABLED_ENTERPRISE = 8,
-			PM_APPLICATION_STATE_DISABLED_BACKING_UP = 9,
-			PM_APPLICATION_STATE_DISABLED_MDIL_BINDING = 10,
-			PM_APPLICATION_STATE_MAX = 10,
-			PM_APPLICATION_STATE_INVALID = 11,
+			MIN = 0,
+			INSTALLED = 1,
+			INSTALLING = 2,
+			UPDATING = 3,
+			UNINSTALLING = 4,
+			LICENSE_UPDATING = 5,
+			MOVING = 6,
+			DISABLED_SD_CARD = 7,
+			DISABLED_ENTERPRISE = 8,
+			DISABLED_BACKING_UP = 9,
+			DISABLED_MDIL_BINDING = 10,
+			MAX = 10,
+			INVALID = 11,
 		}
 		[AllowDuplicates]
 		public enum PM_APPLICATION_HUBTYPE : int32
 		{
-			PM_APPLICATION_HUBTYPE_NONMUSIC = 0,
-			PM_APPLICATION_HUBTYPE_MUSIC = 1,
-			PM_APPLICATION_HUBTYPE_INVALID = 2,
+			NONMUSIC = 0,
+			MUSIC = 1,
+			INVALID = 2,
 		}
 		[AllowDuplicates]
 		public enum PM_TILE_HUBTYPE : int32
 		{
-			PM_TILE_HUBTYPE_MUSIC = 1,
-			PM_TILE_HUBTYPE_MOSETTINGS = 268435456,
-			PM_TILE_HUBTYPE_GAMES = 536870912,
-			PM_TILE_HUBTYPE_APPLIST = 1073741824,
-			PM_TILE_HUBTYPE_STARTMENU = -2147483648,
-			PM_TILE_HUBTYPE_LOCKSCREEN = 16777216,
-			PM_TILE_HUBTYPE_KIDZONE = 33554432,
-			PM_TILE_HUBTYPE_CACHED = 67108864,
-			PM_TILE_HUBTYPE_INVALID = 67108865,
+			MUSIC = 1,
+			MOSETTINGS = 268435456,
+			GAMES = 536870912,
+			APPLIST = 1073741824,
+			STARTMENU = -2147483648,
+			LOCKSCREEN = 16777216,
+			KIDZONE = 33554432,
+			CACHED = 67108864,
+			INVALID = 67108865,
 		}
 		[AllowDuplicates]
 		public enum PM_STARTTILE_TYPE : int32
 		{
-			PM_STARTTILE_TYPE_PRIMARY = 1,
-			PM_STARTTILE_TYPE_SECONDARY = 2,
-			PM_STARTTILE_TYPE_APPLIST = 3,
-			PM_STARTTILE_TYPE_APPLISTPRIMARY = 4,
-			PM_STARTTILE_TYPE_INVALID = 5,
+			PRIMARY = 1,
+			SECONDARY = 2,
+			APPLIST = 3,
+			APPLISTPRIMARY = 4,
+			INVALID = 5,
 		}
 		[AllowDuplicates]
 		public enum PM_TASK_TYPE : int32
 		{
-			PM_TASK_TYPE_NORMAL = 0,
-			PM_TASK_TYPE_DEFAULT = 1,
-			PM_TASK_TYPE_SETTINGS = 2,
-			PM_TASK_TYPE_BACKGROUNDSERVICEAGENT = 3,
-			PM_TASK_TYPE_BACKGROUNDWORKER = 4,
-			PM_TASK_TYPE_INVALID = 5,
+			NORMAL = 0,
+			DEFAULT = 1,
+			SETTINGS = 2,
+			BACKGROUNDSERVICEAGENT = 3,
+			BACKGROUNDWORKER = 4,
+			INVALID = 5,
 		}
 		[AllowDuplicates]
 		public enum PACKMAN_RUNTIME : int32
 		{
-			PACKMAN_RUNTIME_NATIVE = 1,
-			PACKMAN_RUNTIME_SILVERLIGHTMOBILE = 2,
-			PACKMAN_RUNTIME_XNA = 3,
-			PACKMAN_RUNTIME_MODERN_NATIVE = 4,
-			PACKMAN_RUNTIME_JUPITER = 5,
-			PACKMAN_RUNTIME_INVALID = 6,
+			NATIVE = 1,
+			SILVERLIGHTMOBILE = 2,
+			XNA = 3,
+			MODERN_NATIVE = 4,
+			JUPITER = 5,
+			INVALID = 6,
 		}
 		[AllowDuplicates]
 		public enum PM_ACTIVATION_POLICY : int32
 		{
-			PM_ACTIVATION_POLICY_RESUME = 0,
-			PM_ACTIVATION_POLICY_RESUMESAMEPARAMS = 1,
-			PM_ACTIVATION_POLICY_REPLACE = 2,
-			PM_ACTIVATION_POLICY_REPLACESAMEPARAMS = 3,
-			PM_ACTIVATION_POLICY_MULTISESSION = 4,
-			PM_ACTIVATION_POLICY_REPLACE_IGNOREFOREGROUND = 5,
-			PM_ACTIVATION_POLICY_UNKNOWN = 6,
-			PM_ACTIVATION_POLICY_INVALID = 7,
+			RESUME = 0,
+			RESUMESAMEPARAMS = 1,
+			REPLACE = 2,
+			REPLACESAMEPARAMS = 3,
+			MULTISESSION = 4,
+			REPLACE_IGNOREFOREGROUND = 5,
+			UNKNOWN = 6,
+			INVALID = 7,
 		}
 		[AllowDuplicates]
 		public enum PM_TASK_TRANSITION : int32
 		{
-			PM_TASK_TRANSITION_DEFAULT = 0,
-			PM_TASK_TRANSITION_NONE = 1,
-			PM_TASK_TRANSITION_TURNSTILE = 2,
-			PM_TASK_TRANSITION_SLIDE = 3,
-			PM_TASK_TRANSITION_SWIVEL = 4,
-			PM_TASK_TRANSITION_READERBOARD = 5,
-			PM_TASK_TRANSITION_CUSTOM = 6,
-			PM_TASK_TRANSITION_INVALID = 7,
+			DEFAULT = 0,
+			NONE = 1,
+			TURNSTILE = 2,
+			SLIDE = 3,
+			SWIVEL = 4,
+			READERBOARD = 5,
+			CUSTOM = 6,
+			INVALID = 7,
 		}
 		[AllowDuplicates]
 		public enum PM_ENUM_APP_FILTER : int32
 		{
-			PM_APP_FILTER_ALL = 0,
-			PM_APP_FILTER_VISIBLE = 1,
-			PM_APP_FILTER_GENRE = 2,
-			PM_APP_FILTER_NONGAMES = 3,
-			PM_APP_FILTER_HUBTYPE = 4,
-			PM_APP_FILTER_PINABLEONKIDZONE = 5,
-			PM_APP_FILTER_ALL_INCLUDE_MODERN = 6,
-			PM_APP_FILTER_FRAMEWORK = 7,
-			PM_APP_FILTER_MAX = 8,
+			ALL = 0,
+			VISIBLE = 1,
+			GENRE = 2,
+			NONGAMES = 3,
+			HUBTYPE = 4,
+			PINABLEONKIDZONE = 5,
+			ALL_INCLUDE_MODERN = 6,
+			FRAMEWORK = 7,
+			MAX = 8,
 		}
 		[AllowDuplicates]
 		public enum PM_ENUM_TILE_FILTER : int32
 		{
-			PM_TILE_FILTER_APPLIST = 8,
-			PM_TILE_FILTER_PINNED = 9,
-			PM_TILE_FILTER_HUBTYPE = 10,
-			PM_TILE_FILTER_APP_ALL = 11,
-			PM_TILE_FILTER_MAX = 12,
+			APPLIST = 8,
+			PINNED = 9,
+			HUBTYPE = 10,
+			APP_ALL = 11,
+			MAX = 12,
 		}
 		[AllowDuplicates]
 		public enum PM_ENUM_TASK_FILTER : int32
 		{
-			PM_TASK_FILTER_APP_ALL = 12,
-			PM_TASK_FILTER_TASK_TYPE = 13,
-			PM_TASK_FILTER_DEHYD_SUPRESSING = 14,
-			PM_TASK_FILTER_APP_TASK_TYPE = 15,
-			PM_TASK_FILTER_BGEXECUTION = 16,
-			PM_TASK_FILTER_MAX = 17,
+			APP_ALL = 12,
+			TASK_TYPE = 13,
+			DEHYD_SUPRESSING = 14,
+			APP_TASK_TYPE = 15,
+			BGEXECUTION = 16,
+			MAX = 17,
 		}
 		[AllowDuplicates]
 		public enum PM_ENUM_EXTENSION_FILTER : int32
 		{
-			PM_ENUM_EXTENSION_FILTER_BY_CONSUMER = 17,
-			PM_ENUM_EXTENSION_FILTER_APPCONNECT = 17,
-			PM_ENUM_EXTENSION_FILTER_PROTOCOL_ALL = 18,
-			PM_ENUM_EXTENSION_FILTER_FTASSOC_FILETYPE_ALL = 19,
-			PM_ENUM_EXTENSION_FILTER_FTASSOC_CONTENTTYPE_ALL = 20,
-			PM_ENUM_EXTENSION_FILTER_FTASSOC_APPLICATION_ALL = 21,
-			PM_ENUM_EXTENSION_FILTER_SHARETARGET_ALL = 22,
-			PM_ENUM_EXTENSION_FILTER_FILEOPENPICKER_ALL = 23,
-			PM_ENUM_EXTENSION_FILTER_FILESAVEPICKER_ALL = 24,
-			PM_ENUM_EXTENSION_FILTER_CACHEDFILEUPDATER_ALL = 25,
-			PM_ENUM_EXTENSION_FILTER_MAX = 26,
+			BY_CONSUMER = 17,
+			APPCONNECT = 17,
+			PROTOCOL_ALL = 18,
+			FTASSOC_FILETYPE_ALL = 19,
+			FTASSOC_CONTENTTYPE_ALL = 20,
+			FTASSOC_APPLICATION_ALL = 21,
+			SHARETARGET_ALL = 22,
+			FILEOPENPICKER_ALL = 23,
+			FILESAVEPICKER_ALL = 24,
+			CACHEDFILEUPDATER_ALL = 25,
+			MAX = 26,
 		}
 		[AllowDuplicates]
 		public enum PM_ENUM_BSA_FILTER : int32
 		{
-			PM_ENUM_BSA_FILTER_ALL = 26,
-			PM_ENUM_BSA_FILTER_BY_TASKID = 27,
-			PM_ENUM_BSA_FILTER_BY_PRODUCTID = 28,
-			PM_ENUM_BSA_FILTER_BY_PERIODIC = 29,
-			PM_ENUM_BSA_FILTER_BY_ALL_LAUNCHONBOOT = 30,
-			PM_ENUM_BSA_FILTER_MAX = 31,
+			ALL = 26,
+			BY_TASKID = 27,
+			BY_PRODUCTID = 28,
+			BY_PERIODIC = 29,
+			BY_ALL_LAUNCHONBOOT = 30,
+			MAX = 31,
 		}
 		[AllowDuplicates]
 		public enum PM_ENUM_BW_FILTER : int32
 		{
-			PM_ENUM_BW_FILTER_BOOTWORKER_ALL = 31,
-			PM_ENUM_BW_FILTER_BY_TASKID = 32,
-			PM_ENUM_BW_FILTER_MAX = 33,
+			BOOTWORKER_ALL = 31,
+			BY_TASKID = 32,
+			MAX = 33,
 		}
 		[AllowDuplicates]
 		public enum PM_LIVETILE_RECURRENCE_TYPE : int32
 		{
-			PM_LIVETILE_RECURRENCE_TYPE_INSTANT = 0,
-			PM_LIVETILE_RECURRENCE_TYPE_ONETIME = 1,
-			PM_LIVETILE_RECURRENCE_TYPE_INTERVAL = 2,
-			PM_LIVETILE_RECURRENCE_TYPE_MAX = 2,
+			INSTANT = 0,
+			ONETIME = 1,
+			INTERVAL = 2,
+			MAX = 2,
 		}
 		[AllowDuplicates]
 		public enum PM_TILE_SIZE : int32
 		{
-			PM_TILE_SIZE_SMALL = 0,
-			PM_TILE_SIZE_MEDIUM = 1,
-			PM_TILE_SIZE_LARGE = 2,
-			PM_TILE_SIZE_SQUARE310X310 = 3,
-			PM_TILE_SIZE_TALL150X310 = 4,
-			PM_TILE_SIZE_INVALID = 5,
+			SMALL = 0,
+			MEDIUM = 1,
+			LARGE = 2,
+			SQUARE310X310 = 3,
+			TALL150X310 = 4,
+			INVALID = 5,
 		}
 		[AllowDuplicates]
 		public enum PM_LOGO_SIZE : int32
 		{
-			PM_LOGO_SIZE_SMALL = 0,
-			PM_LOGO_SIZE_MEDIUM = 1,
-			PM_LOGO_SIZE_LARGE = 2,
-			PM_LOGO_SIZE_INVALID = 3,
+			SMALL = 0,
+			MEDIUM = 1,
+			LARGE = 2,
+			INVALID = 3,
 		}
 		[AllowDuplicates]
 		public enum ACTCTX_REQUESTED_RUN_LEVEL : int32
 		{
-			ACTCTX_RUN_LEVEL_UNSPECIFIED = 0,
-			ACTCTX_RUN_LEVEL_AS_INVOKER = 1,
-			ACTCTX_RUN_LEVEL_HIGHEST_AVAILABLE = 2,
-			ACTCTX_RUN_LEVEL_REQUIRE_ADMIN = 3,
-			ACTCTX_RUN_LEVEL_NUMBERS = 4,
+			UNSPECIFIED = 0,
+			AS_INVOKER = 1,
+			HIGHEST_AVAILABLE = 2,
+			REQUIRE_ADMIN = 3,
+			NUMBERS = 4,
 		}
 		[AllowDuplicates]
 		public enum ACTCTX_COMPATIBILITY_ELEMENT_TYPE : int32
 		{
-			ACTCTX_COMPATIBILITY_ELEMENT_TYPE_UNKNOWN = 0,
-			ACTCTX_COMPATIBILITY_ELEMENT_TYPE_OS = 1,
-			ACTCTX_COMPATIBILITY_ELEMENT_TYPE_MITIGATION = 2,
-			ACTCTX_COMPATIBILITY_ELEMENT_TYPE_MAXVERSIONTESTED = 3,
+			UNKNOWN = 0,
+			OS = 1,
+			MITIGATION = 2,
+			MAXVERSIONTESTED = 3,
 		}
 		
 		// --- Function Pointers ---

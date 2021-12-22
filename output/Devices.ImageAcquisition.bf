@@ -982,12 +982,12 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WIAVIDEO_STATE : int32
 		{
-			WIAVIDEO_NO_VIDEO = 1,
-			WIAVIDEO_CREATING_VIDEO = 2,
-			WIAVIDEO_VIDEO_CREATED = 3,
-			WIAVIDEO_VIDEO_PLAYING = 4,
-			WIAVIDEO_VIDEO_PAUSED = 5,
-			WIAVIDEO_DESTROYING_VIDEO = 6,
+			NO_VIDEO = 1,
+			CREATING_VIDEO = 2,
+			VIDEO_CREATED = 3,
+			VIDEO_PLAYING = 4,
+			VIDEO_PAUSED = 5,
+			DESTROYING_VIDEO = 6,
 		}
 		
 		// --- Function Pointers ---

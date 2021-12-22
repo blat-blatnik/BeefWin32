@@ -58,141 +58,141 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WER_FILE : uint32
 		{
-			WER_FILE_ANONYMOUS_DATA = 2,
-			WER_FILE_DELETE_WHEN_DONE = 1,
+			ANONYMOUS_DATA = 2,
+			DELETE_WHEN_DONE = 1,
 		}
 		[AllowDuplicates]
 		public enum WER_SUBMIT_FLAGS : uint32
 		{
-			WER_SUBMIT_ADD_REGISTERED_DATA = 16,
-			WER_SUBMIT_HONOR_RECOVERY = 1,
-			WER_SUBMIT_HONOR_RESTART = 2,
-			WER_SUBMIT_NO_ARCHIVE = 256,
-			WER_SUBMIT_NO_CLOSE_UI = 64,
-			WER_SUBMIT_NO_QUEUE = 128,
-			WER_SUBMIT_OUTOFPROCESS = 32,
-			WER_SUBMIT_OUTOFPROCESS_ASYNC = 1024,
-			WER_SUBMIT_QUEUE = 4,
-			WER_SUBMIT_SHOW_DEBUG = 8,
-			WER_SUBMIT_START_MINIMIZED = 512,
-			WER_SUBMIT_BYPASS_DATA_THROTTLING = 2048,
-			WER_SUBMIT_ARCHIVE_PARAMETERS_ONLY = 4096,
-			WER_SUBMIT_REPORT_MACHINE_ID = 8192,
+			ADD_REGISTERED_DATA = 16,
+			HONOR_RECOVERY = 1,
+			HONOR_RESTART = 2,
+			NO_ARCHIVE = 256,
+			NO_CLOSE_UI = 64,
+			NO_QUEUE = 128,
+			OUTOFPROCESS = 32,
+			OUTOFPROCESS_ASYNC = 1024,
+			QUEUE = 4,
+			SHOW_DEBUG = 8,
+			START_MINIMIZED = 512,
+			BYPASS_DATA_THROTTLING = 2048,
+			ARCHIVE_PARAMETERS_ONLY = 4096,
+			REPORT_MACHINE_ID = 8192,
 		}
 		[AllowDuplicates]
 		public enum WER_FAULT_REPORTING : uint32
 		{
-			WER_FAULT_REPORTING_FLAG_DISABLE_THREAD_SUSPENSION = 4,
-			WER_FAULT_REPORTING_FLAG_NOHEAP = 1,
-			WER_FAULT_REPORTING_FLAG_QUEUE = 2,
-			WER_FAULT_REPORTING_FLAG_QUEUE_UPLOAD = 8,
-			WER_FAULT_REPORTING_ALWAYS_SHOW_UI = 16,
+			FLAG_DISABLE_THREAD_SUSPENSION = 4,
+			FLAG_NOHEAP = 1,
+			FLAG_QUEUE = 2,
+			FLAG_QUEUE_UPLOAD = 8,
+			ALWAYS_SHOW_UI = 16,
 		}
 		[AllowDuplicates]
 		public enum WER_REPORT_UI : int32
 		{
-			WerUIAdditionalDataDlgHeader = 1,
-			WerUIIconFilePath = 2,
-			WerUIConsentDlgHeader = 3,
-			WerUIConsentDlgBody = 4,
-			WerUIOnlineSolutionCheckText = 5,
-			WerUIOfflineSolutionCheckText = 6,
-			WerUICloseText = 7,
-			WerUICloseDlgHeader = 8,
-			WerUICloseDlgBody = 9,
-			WerUICloseDlgButtonText = 10,
-			WerUIMax = 11,
+			AdditionalDataDlgHeader = 1,
+			IconFilePath = 2,
+			ConsentDlgHeader = 3,
+			ConsentDlgBody = 4,
+			OnlineSolutionCheckText = 5,
+			OfflineSolutionCheckText = 6,
+			CloseText = 7,
+			CloseDlgHeader = 8,
+			CloseDlgBody = 9,
+			CloseDlgButtonText = 10,
+			Max = 11,
 		}
 		[AllowDuplicates]
 		public enum WER_REGISTER_FILE_TYPE : int32
 		{
-			WerRegFileTypeUserDocument = 1,
-			WerRegFileTypeOther = 2,
-			WerRegFileTypeMax = 3,
+			UserDocument = 1,
+			Other = 2,
+			Max = 3,
 		}
 		[AllowDuplicates]
 		public enum WER_FILE_TYPE : int32
 		{
-			WerFileTypeMicrodump = 1,
-			WerFileTypeMinidump = 2,
-			WerFileTypeHeapdump = 3,
-			WerFileTypeUserDocument = 4,
-			WerFileTypeOther = 5,
-			WerFileTypeTriagedump = 6,
-			WerFileTypeCustomDump = 7,
-			WerFileTypeAuxiliaryDump = 8,
-			WerFileTypeEtlTrace = 9,
-			WerFileTypeMax = 10,
+			Microdump = 1,
+			Minidump = 2,
+			Heapdump = 3,
+			UserDocument = 4,
+			Other = 5,
+			Triagedump = 6,
+			CustomDump = 7,
+			AuxiliaryDump = 8,
+			EtlTrace = 9,
+			Max = 10,
 		}
 		[AllowDuplicates]
 		public enum WER_SUBMIT_RESULT : int32
 		{
-			WerReportQueued = 1,
-			WerReportUploaded = 2,
-			WerReportDebug = 3,
-			WerReportFailed = 4,
-			WerDisabled = 5,
-			WerReportCancelled = 6,
-			WerDisabledQueue = 7,
-			WerReportAsync = 8,
-			WerCustomAction = 9,
-			WerThrottled = 10,
-			WerReportUploadedCab = 11,
-			WerStorageLocationNotFound = 12,
-			WerSubmitResultMax = 13,
+			ReportQueued = 1,
+			ReportUploaded = 2,
+			ReportDebug = 3,
+			ReportFailed = 4,
+			Disabled = 5,
+			ReportCancelled = 6,
+			DisabledQueue = 7,
+			ReportAsync = 8,
+			CustomAction = 9,
+			Throttled = 10,
+			ReportUploadedCab = 11,
+			StorageLocationNotFound = 12,
+			SubmitResultMax = 13,
 		}
 		[AllowDuplicates]
 		public enum WER_REPORT_TYPE : int32
 		{
-			WerReportNonCritical = 0,
-			WerReportCritical = 1,
-			WerReportApplicationCrash = 2,
-			WerReportApplicationHang = 3,
-			WerReportKernel = 4,
-			WerReportInvalid = 5,
+			NonCritical = 0,
+			Critical = 1,
+			ApplicationCrash = 2,
+			ApplicationHang = 3,
+			Kernel = 4,
+			Invalid = 5,
 		}
 		[AllowDuplicates]
 		public enum WER_CONSENT : int32
 		{
-			WerConsentNotAsked = 1,
-			WerConsentApproved = 2,
-			WerConsentDenied = 3,
-			WerConsentAlwaysPrompt = 4,
-			WerConsentMax = 5,
+			NotAsked = 1,
+			Approved = 2,
+			Denied = 3,
+			AlwaysPrompt = 4,
+			Max = 5,
 		}
 		[AllowDuplicates]
 		public enum WER_DUMP_TYPE : int32
 		{
-			WerDumpTypeNone = 0,
-			WerDumpTypeMicroDump = 1,
-			WerDumpTypeMiniDump = 2,
-			WerDumpTypeHeapDump = 3,
-			WerDumpTypeTriageDump = 4,
-			WerDumpTypeMax = 5,
+			None = 0,
+			MicroDump = 1,
+			MiniDump = 2,
+			HeapDump = 3,
+			TriageDump = 4,
+			Max = 5,
 		}
 		[AllowDuplicates]
 		public enum REPORT_STORE_TYPES : int32
 		{
-			E_STORE_USER_ARCHIVE = 0,
-			E_STORE_USER_QUEUE = 1,
-			E_STORE_MACHINE_ARCHIVE = 2,
-			E_STORE_MACHINE_QUEUE = 3,
-			E_STORE_INVALID = 4,
+			USER_ARCHIVE = 0,
+			USER_QUEUE = 1,
+			MACHINE_ARCHIVE = 2,
+			MACHINE_QUEUE = 3,
+			INVALID = 4,
 		}
 		[AllowDuplicates]
 		public enum EFaultRepRetVal : int32
 		{
-			frrvOk = 0,
-			frrvOkManifest = 1,
-			frrvOkQueued = 2,
-			frrvErr = 3,
-			frrvErrNoDW = 4,
-			frrvErrTimeout = 5,
-			frrvLaunchDebugger = 6,
-			frrvOkHeadless = 7,
-			frrvErrAnotherInstance = 8,
-			frrvErrNoMemory = 9,
-			frrvErrDoubleFault = 10,
+			Ok = 0,
+			OkManifest = 1,
+			OkQueued = 2,
+			Err = 3,
+			ErrNoDW = 4,
+			ErrTimeout = 5,
+			LaunchDebugger = 6,
+			OkHeadless = 7,
+			ErrAnotherInstance = 8,
+			ErrNoMemory = 9,
+			ErrDoubleFault = 10,
 		}
 		
 		// --- Function Pointers ---

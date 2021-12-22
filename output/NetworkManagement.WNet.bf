@@ -106,89 +106,89 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WNPERM_DLG : uint32
 		{
-			WNPERM_DLG_PERM = 0,
-			WNPERM_DLG_AUDIT = 1,
-			WNPERM_DLG_OWNER = 2,
+			PERM = 0,
+			AUDIT = 1,
+			OWNER = 2,
 		}
 		[AllowDuplicates]
 		public enum WNET_OPEN_ENUM_USAGE : uint32
 		{
-			RESOURCEUSAGE_NONE = 0,
-			RESOURCEUSAGE_CONNECTABLE = 1,
-			RESOURCEUSAGE_CONTAINER = 2,
-			RESOURCEUSAGE_ATTACHED = 16,
-			RESOURCEUSAGE_ALL = 19,
+			NONE = 0,
+			CONNECTABLE = 1,
+			CONTAINER = 2,
+			ATTACHED = 16,
+			ALL = 19,
 		}
 		[AllowDuplicates]
 		public enum NET_USE_CONNECT_FLAGS : uint32
 		{
-			CONNECT_INTERACTIVE = 8,
-			CONNECT_PROMPT = 16,
-			CONNECT_REDIRECT = 128,
-			CONNECT_UPDATE_PROFILE = 1,
-			CONNECT_COMMANDLINE = 2048,
-			CONNECT_CMD_SAVECRED = 4096,
-			CONNECT_TEMPORARY = 4,
-			CONNECT_DEFERRED = 1024,
-			CONNECT_UPDATE_RECENT = 2,
+			INTERACTIVE = 8,
+			PROMPT = 16,
+			REDIRECT = 128,
+			UPDATE_PROFILE = 1,
+			COMMANDLINE = 2048,
+			CMD_SAVECRED = 4096,
+			TEMPORARY = 4,
+			DEFERRED = 1024,
+			UPDATE_RECENT = 2,
 		}
 		[AllowDuplicates]
 		public enum NP_PROPERTY_DIALOG_SELECTION : uint32
 		{
-			WNPS_FILE = 0,
-			WNPS_DIR = 1,
-			WNPS_MULT = 2,
+			FILE = 0,
+			DIR = 1,
+			MULT = 2,
 		}
 		[AllowDuplicates]
 		public enum NPDIRECTORY_NOTIFY_OPERATION : uint32
 		{
-			WNDN_MKDIR = 1,
-			WNDN_RMDIR = 2,
-			WNDN_MVDIR = 3,
+			MKDIR = 1,
+			RMDIR = 2,
+			MVDIR = 3,
 		}
 		[AllowDuplicates]
 		public enum NET_RESOURCE_TYPE : uint32
 		{
-			RESOURCETYPE_ANY = 0,
-			RESOURCETYPE_DISK = 1,
-			RESOURCETYPE_PRINT = 2,
+			ANY = 0,
+			DISK = 1,
+			PRINT = 2,
 		}
 		[AllowDuplicates]
 		public enum NETWORK_NAME_FORMAT_FLAGS : uint32
 		{
-			WNFMT_MULTILINE = 1,
-			WNFMT_ABBREVIATED = 2,
+			MULTILINE = 1,
+			ABBREVIATED = 2,
 		}
 		[AllowDuplicates]
 		public enum NET_RESOURCE_SCOPE : uint32
 		{
-			RESOURCE_CONNECTED = 1,
-			RESOURCE_CONTEXT = 5,
-			RESOURCE_GLOBALNET = 2,
-			RESOURCE_REMEMBERED = 3,
+			CONNECTED = 1,
+			CONTEXT = 5,
+			GLOBALNET = 2,
+			REMEMBERED = 3,
 		}
 		[AllowDuplicates]
 		public enum NETINFOSTRUCT_CHARACTERISTICS : uint32
 		{
-			NETINFO_DLL16 = 1,
-			NETINFO_DISKRED = 4,
-			NETINFO_PRINTERRED = 8,
+			DLL16 = 1,
+			DISKRED = 4,
+			PRINTERRED = 8,
 		}
 		[AllowDuplicates]
 		public enum CONNECTDLGSTRUCT_FLAGS : uint32
 		{
-			CONNDLG_RO_PATH = 1,
-			CONNDLG_CONN_POINT = 2,
-			CONNDLG_USE_MRU = 4,
-			CONNDLG_HIDE_BOX = 8,
-			CONNDLG_PERSIST = 16,
-			CONNDLG_NOT_PERSIST = 32,
+			RO_PATH = 1,
+			CONN_POINT = 2,
+			USE_MRU = 4,
+			HIDE_BOX = 8,
+			PERSIST = 16,
+			NOT_PERSIST = 32,
 		}
 		[AllowDuplicates]
 		public enum DISCDLGSTRUCT_FLAGS : uint32
 		{
-			DISC_UPDATE_PROFILE = 1,
-			DISC_NO_FORCE = 64,
+			UPDATE_PROFILE = 1,
+			NO_FORCE = 64,
 		}
 		
 		// --- Function Pointers ---

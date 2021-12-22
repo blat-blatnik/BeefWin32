@@ -22,35 +22,35 @@ namespace Win32
 		[AllowDuplicates]
 		public enum FILE_MAP : uint32
 		{
-			FILE_MAP_WRITE = 2,
-			FILE_MAP_READ = 4,
-			FILE_MAP_ALL_ACCESS = 983071,
-			FILE_MAP_EXECUTE = 32,
-			FILE_MAP_COPY = 1,
-			FILE_MAP_RESERVE = 2147483648,
-			FILE_MAP_TARGETS_INVALID = 1073741824,
-			FILE_MAP_LARGE_PAGES = 536870912,
+			WRITE = 2,
+			READ = 4,
+			ALL_ACCESS = 983071,
+			EXECUTE = 32,
+			COPY = 1,
+			RESERVE = 2147483648,
+			TARGETS_INVALID = 1073741824,
+			LARGE_PAGES = 536870912,
 		}
 		[AllowDuplicates]
 		public enum HEAP_FLAGS : uint32
 		{
-			HEAP_NONE = 0,
-			HEAP_NO_SERIALIZE = 1,
-			HEAP_GROWABLE = 2,
-			HEAP_GENERATE_EXCEPTIONS = 4,
-			HEAP_ZERO_MEMORY = 8,
-			HEAP_REALLOC_IN_PLACE_ONLY = 16,
-			HEAP_TAIL_CHECKING_ENABLED = 32,
-			HEAP_FREE_CHECKING_ENABLED = 64,
-			HEAP_DISABLE_COALESCE_ON_FREE = 128,
-			HEAP_CREATE_ALIGN_16 = 65536,
-			HEAP_CREATE_ENABLE_TRACING = 131072,
-			HEAP_CREATE_ENABLE_EXECUTE = 262144,
-			HEAP_MAXIMUM_TAG = 4095,
-			HEAP_PSEUDO_TAG_FLAG = 32768,
-			HEAP_TAG_SHIFT = 18,
-			HEAP_CREATE_SEGMENT_HEAP = 256,
-			HEAP_CREATE_HARDENED = 512,
+			NONE = 0,
+			NO_SERIALIZE = 1,
+			GROWABLE = 2,
+			GENERATE_EXCEPTIONS = 4,
+			ZERO_MEMORY = 8,
+			REALLOC_IN_PLACE_ONLY = 16,
+			TAIL_CHECKING_ENABLED = 32,
+			FREE_CHECKING_ENABLED = 64,
+			DISABLE_COALESCE_ON_FREE = 128,
+			CREATE_ALIGN_16 = 65536,
+			CREATE_ENABLE_TRACING = 131072,
+			CREATE_ENABLE_EXECUTE = 262144,
+			MAXIMUM_TAG = 4095,
+			PSEUDO_TAG_FLAG = 32768,
+			TAG_SHIFT = 18,
+			CREATE_SEGMENT_HEAP = 256,
+			CREATE_HARDENED = 512,
 		}
 		[AllowDuplicates]
 		public enum PAGE_PROTECTION_FLAGS : uint32
@@ -98,27 +98,27 @@ namespace Win32
 		[AllowDuplicates]
 		public enum UNMAP_VIEW_OF_FILE_FLAGS : uint32
 		{
-			MEM_UNMAP_NONE = 0,
-			MEM_UNMAP_WITH_TRANSIENT_BOOST = 1,
-			MEM_PRESERVE_PLACEHOLDER = 2,
+			UNMAP_NONE = 0,
+			UNMAP_WITH_TRANSIENT_BOOST = 1,
+			PRESERVE_PLACEHOLDER = 2,
 		}
 		[AllowDuplicates]
 		public enum VIRTUAL_FREE_TYPE : uint32
 		{
-			MEM_DECOMMIT = 16384,
-			MEM_RELEASE = 32768,
+			DECOMMIT = 16384,
+			RELEASE = 32768,
 		}
 		[AllowDuplicates]
 		public enum VIRTUAL_ALLOCATION_TYPE : uint32
 		{
-			MEM_COMMIT = 4096,
-			MEM_RESERVE = 8192,
-			MEM_RESET = 524288,
-			MEM_RESET_UNDO = 16777216,
-			MEM_REPLACE_PLACEHOLDER = 16384,
-			MEM_LARGE_PAGES = 536870912,
-			MEM_RESERVE_PLACEHOLDER = 262144,
-			MEM_FREE = 65536,
+			COMMIT = 4096,
+			RESERVE = 8192,
+			RESET = 524288,
+			RESET_UNDO = 16777216,
+			REPLACE_PLACEHOLDER = 16384,
+			LARGE_PAGES = 536870912,
+			RESERVE_PLACEHOLDER = 262144,
+			FREE = 65536,
 		}
 		[AllowDuplicates]
 		public enum LOCAL_ALLOC_FLAGS : uint32
@@ -134,18 +134,18 @@ namespace Win32
 		[AllowDuplicates]
 		public enum GLOBAL_ALLOC_FLAGS : uint32
 		{
-			GHND = 66,
-			GMEM_FIXED = 0,
-			GMEM_MOVEABLE = 2,
-			GMEM_ZEROINIT = 64,
-			GPTR = 64,
+			HND = 66,
+			MEM_FIXED = 0,
+			MEM_MOVEABLE = 2,
+			MEM_ZEROINIT = 64,
+			PTR = 64,
 		}
 		[AllowDuplicates]
 		public enum PAGE_TYPE : uint32
 		{
-			MEM_PRIVATE = 131072,
-			MEM_MAPPED = 262144,
-			MEM_IMAGE = 16777216,
+			PRIVATE = 131072,
+			MAPPED = 262144,
+			IMAGE = 16777216,
 		}
 		[AllowDuplicates]
 		public enum MEMORY_RESOURCE_NOTIFICATION_TYPE : int32
@@ -156,10 +156,10 @@ namespace Win32
 		[AllowDuplicates]
 		public enum OFFER_PRIORITY : int32
 		{
-			VmOfferPriorityVeryLow = 1,
-			VmOfferPriorityLow = 2,
-			VmOfferPriorityBelowNormal = 3,
-			VmOfferPriorityNormal = 4,
+			VeryLow = 1,
+			Low = 2,
+			BelowNormal = 3,
+			Normal = 4,
 		}
 		[AllowDuplicates]
 		public enum WIN32_MEMORY_INFORMATION_CLASS : int32
@@ -169,28 +169,28 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WIN32_MEMORY_PARTITION_INFORMATION_CLASS : int32
 		{
-			MemoryPartitionInfo = 0,
-			MemoryPartitionDedicatedMemoryInfo = 1,
+			Info = 0,
+			DedicatedMemoryInfo = 1,
 		}
 		[AllowDuplicates]
 		public enum MEM_EXTENDED_PARAMETER_TYPE : int32
 		{
-			MemExtendedParameterInvalidType = 0,
-			MemExtendedParameterAddressRequirements = 1,
-			MemExtendedParameterNumaNode = 2,
-			MemExtendedParameterPartitionHandle = 3,
-			MemExtendedParameterUserPhysicalHandle = 4,
-			MemExtendedParameterAttributeFlags = 5,
-			MemExtendedParameterImageMachine = 6,
-			MemExtendedParameterMax = 7,
+			InvalidType = 0,
+			AddressRequirements = 1,
+			NumaNode = 2,
+			PartitionHandle = 3,
+			UserPhysicalHandle = 4,
+			AttributeFlags = 5,
+			ImageMachine = 6,
+			Max = 7,
 		}
 		[AllowDuplicates]
 		public enum HEAP_INFORMATION_CLASS : int32
 		{
-			HeapCompatibilityInformation = 0,
-			HeapEnableTerminationOnCorruption = 1,
-			HeapOptimizeResources = 3,
-			HeapTag = 7,
+			CompatibilityInformation = 0,
+			EnableTerminationOnCorruption = 1,
+			OptimizeResources = 3,
+			Tag = 7,
 		}
 		
 		// --- Function Pointers ---
