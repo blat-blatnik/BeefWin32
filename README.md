@@ -24,7 +24,7 @@ Here's a full example using COM classes that makes an Open Folder Dialog:
 ```c#
 using System;
 using Win32;
-namespace Test {
+namespace Example {
     class Program {
         static void Main() {
             Win32.IFileOpenDialog* dialog = null;
@@ -36,19 +36,19 @@ namespace Test {
             dialog.GetOptions((uint32*)&options);
             options |= .FOS_PICKFOLDERS | .FOS_PATHMUSTEXIST;
             dialog.SetOptions((uint32)options);
-
             dialog.SetTitle("Hello Win32".ToScopedNativeWChar!());
             dialog.Show(0);
-            Win32.IShellItem* result_folder = null;
-            if (0 < dialog.GetResult(&result_folder)) {
+            
+            Win32.IShellItem* resultFolder = null;
+            if (0 < dialog.GetResult(&resultFolder)) {
                 char16* result16 = null;
-                result_folder.GetDisplayName(.SIGDN_FILESYSPATH, &result16);
+                resultFolder.GetDisplayName(.SIGDN_FILESYSPATH, &result16);
 
                 String result = scope .(result16);
                 Console.WriteLine($"You chose '{result}'");
 
                 Win32.CoTaskMemFree(result16);
-                result_folder.Release();
+                resultFolder.Release();
             }
             dialog.Release();
         }
