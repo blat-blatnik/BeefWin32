@@ -454,12 +454,13 @@ for filename in filenames:
                     encountered_names = set()
                     for method in methods:
                         method_name = REPLACE_COM_METHOD_NAMES.get(method['Name'], method['Name'])
-                        if method_name in encountered_names:
+                        mangled_name = method_name
+                        if mangled_name in encountered_names:
                             i = 2
                             while f'{method_name}{i}' in encountered_names:
                                 i += 1
-                            method_name = f'{method_name}{i}'
-                        encountered_names.add(method_name)
+                            mangled_name = f'{method_name}{i}'
+                        encountered_names.add(mangled_name)
                         return_type = get_type_name(method['ReturnType'])
                         parameters = method['Params']
                         output.write(f'{indent}public {return_type} {method_name}(')
@@ -473,9 +474,9 @@ for filename in filenames:
                         output.write(f'{indent}{{\n')
                         indent += '\t'
                         if return_type == 'void':
-                            output.write(f'{indent}VT.{method_name}(&this')
+                            output.write(f'{indent}VT.{mangled_name}(&this')
                         else:
-                            output.write(f'{indent}return VT.{method_name}(&this')
+                            output.write(f'{indent}return VT.{mangled_name}(&this')
                         for param in parameters:
                             param_name = replace_name(param['Name'])
                             output.write(f', {param_name}')

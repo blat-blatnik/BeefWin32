@@ -3215,7 +3215,7 @@ namespace Win32
 			{
 				return VT.CreateFontFaceReference(&this, fontFile, faceIndex, fontSimulations, fontFaceReference);
 			}
-			public HRESULT CreateFontFaceReference2(PWSTR filePath, FILETIME* lastWriteTime, uint32 faceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, IDWriteFontFaceReference** fontFaceReference) mut
+			public HRESULT CreateFontFaceReference(PWSTR filePath, FILETIME* lastWriteTime, uint32 faceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, IDWriteFontFaceReference** fontFaceReference) mut
 			{
 				return VT.CreateFontFaceReference2(&this, filePath, lastWriteTime, faceIndex, fontSimulations, fontFaceReference);
 			}
@@ -3280,11 +3280,11 @@ namespace Win32
 			{
 				return VT.GetPropertyValues(&this, propertyID, values);
 			}
-			public HRESULT GetPropertyValues2(DWRITE_FONT_PROPERTY_ID propertyID, PWSTR preferredLocaleNames, IDWriteStringList** values) mut
+			public HRESULT GetPropertyValues(DWRITE_FONT_PROPERTY_ID propertyID, PWSTR preferredLocaleNames, IDWriteStringList** values) mut
 			{
 				return VT.GetPropertyValues2(&this, propertyID, preferredLocaleNames, values);
 			}
-			public HRESULT GetPropertyValues3(uint32 listIndex, DWRITE_FONT_PROPERTY_ID propertyId, BOOL* exists, IDWriteLocalizedStrings** values) mut
+			public HRESULT GetPropertyValues(uint32 listIndex, DWRITE_FONT_PROPERTY_ID propertyId, BOOL* exists, IDWriteLocalizedStrings** values) mut
 			{
 				return VT.GetPropertyValues3(&this, listIndex, propertyId, exists, values);
 			}
@@ -3296,7 +3296,7 @@ namespace Win32
 			{
 				return VT.GetMatchingFonts(&this, familyName, fontWeight, fontStretch, fontStyle, filteredSet);
 			}
-			public HRESULT GetMatchingFonts2(DWRITE_FONT_PROPERTY* properties, uint32 propertyCount, IDWriteFontSet** filteredSet) mut
+			public HRESULT GetMatchingFonts(DWRITE_FONT_PROPERTY* properties, uint32 propertyCount, IDWriteFontSet** filteredSet) mut
 			{
 				return VT.GetMatchingFonts2(&this, properties, propertyCount, filteredSet);
 			}
@@ -3326,7 +3326,7 @@ namespace Win32
 			{
 				return VT.AddFontFaceReference(&this, fontFaceReference, properties, propertyCount);
 			}
-			public HRESULT AddFontFaceReference2(IDWriteFontFaceReference* fontFaceReference) mut
+			public HRESULT AddFontFaceReference(IDWriteFontFaceReference* fontFaceReference) mut
 			{
 				return VT.AddFontFaceReference2(&this, fontFaceReference);
 			}
@@ -3735,7 +3735,7 @@ namespace Win32
 			{
 				return VT.GetFontSignature(&this, fontFace, fontSignature);
 			}
-			public HRESULT GetFontSignature2(IDWriteFont* font, FONTSIGNATURE* fontSignature) mut
+			public HRESULT GetFontSignature(IDWriteFont* font, FONTSIGNATURE* fontSignature) mut
 			{
 				return VT.GetFontSignature2(&this, font, fontSignature);
 			}
@@ -3834,7 +3834,7 @@ namespace Win32
 			{
 				return VT.GetGlyphImageFormats(&this, glyphId, pixelsPerEmFirst, pixelsPerEmLast, glyphImageFormats);
 			}
-			public DWRITE_GLYPH_IMAGE_FORMATS GetGlyphImageFormats2() mut
+			public DWRITE_GLYPH_IMAGE_FORMATS GetGlyphImageFormats() mut
 			{
 				return VT.GetGlyphImageFormats2(&this);
 			}
@@ -3870,7 +3870,7 @@ namespace Win32
 			{
 				return VT.ComputeGlyphOrigins(&this, glyphRun, baselineOrigin, glyphOrigins);
 			}
-			public HRESULT ComputeGlyphOrigins2(DWRITE_GLYPH_RUN* glyphRun, DWRITE_MEASURING_MODE measuringMode, D2D_POINT_2F baselineOrigin, DWRITE_MATRIX* worldAndDpiTransform, D2D_POINT_2F* glyphOrigins) mut
+			public HRESULT ComputeGlyphOrigins(DWRITE_GLYPH_RUN* glyphRun, DWRITE_MEASURING_MODE measuringMode, D2D_POINT_2F baselineOrigin, DWRITE_MATRIX* worldAndDpiTransform, D2D_POINT_2F* glyphOrigins) mut
 			{
 				return VT.ComputeGlyphOrigins2(&this, glyphRun, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOrigins);
 			}
@@ -4263,11 +4263,11 @@ namespace Win32
 			{
 				return VT.GetFilteredFonts(&this, indices, indexCount, filteredFontSet);
 			}
-			public HRESULT GetFilteredFonts2(DWRITE_FONT_AXIS_RANGE* fontAxisRanges, uint32 fontAxisRangeCount, BOOL selectAnyRange, IDWriteFontSet1** filteredFontSet) mut
+			public HRESULT GetFilteredFonts(DWRITE_FONT_AXIS_RANGE* fontAxisRanges, uint32 fontAxisRangeCount, BOOL selectAnyRange, IDWriteFontSet1** filteredFontSet) mut
 			{
 				return VT.GetFilteredFonts2(&this, fontAxisRanges, fontAxisRangeCount, selectAnyRange, filteredFontSet);
 			}
-			public HRESULT GetFilteredFonts3(DWRITE_FONT_PROPERTY* properties, uint32 propertyCount, BOOL selectAnyProperty, IDWriteFontSet1** filteredFontSet) mut
+			public HRESULT GetFilteredFonts(DWRITE_FONT_PROPERTY* properties, uint32 propertyCount, BOOL selectAnyProperty, IDWriteFontSet1** filteredFontSet) mut
 			{
 				return VT.GetFilteredFonts3(&this, properties, propertyCount, selectAnyProperty, filteredFontSet);
 			}
@@ -4275,7 +4275,7 @@ namespace Win32
 			{
 				return VT.GetFilteredFontIndices(&this, fontAxisRanges, fontAxisRangeCount, selectAnyRange, indices, maxIndexCount, actualIndexCount);
 			}
-			public HRESULT GetFilteredFontIndices2(DWRITE_FONT_PROPERTY* properties, uint32 propertyCount, BOOL selectAnyProperty, uint32* indices, uint32 maxIndexCount, uint32* actualIndexCount) mut
+			public HRESULT GetFilteredFontIndices(DWRITE_FONT_PROPERTY* properties, uint32 propertyCount, BOOL selectAnyProperty, uint32* indices, uint32 maxIndexCount, uint32* actualIndexCount) mut
 			{
 				return VT.GetFilteredFontIndices2(&this, properties, propertyCount, selectAnyProperty, indices, maxIndexCount, actualIndexCount);
 			}
@@ -4283,7 +4283,7 @@ namespace Win32
 			{
 				return VT.GetFontAxisRanges(&this, listIndex, fontAxisRanges, maxFontAxisRangeCount, actualFontAxisRangeCount);
 			}
-			public HRESULT GetFontAxisRanges2(DWRITE_FONT_AXIS_RANGE* fontAxisRanges, uint32 maxFontAxisRangeCount, uint32* actualFontAxisRangeCount) mut
+			public HRESULT GetFontAxisRanges(DWRITE_FONT_AXIS_RANGE* fontAxisRanges, uint32 maxFontAxisRangeCount, uint32* actualFontAxisRangeCount) mut
 			{
 				return VT.GetFontAxisRanges2(&this, fontAxisRanges, maxFontAxisRangeCount, actualFontAxisRangeCount);
 			}

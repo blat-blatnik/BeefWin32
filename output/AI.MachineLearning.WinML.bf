@@ -645,7 +645,7 @@ namespace Win32
 			{
 				return VT.GetOutputTensor(&this, outputIndex, dimensionCount, dimensionSizes, tensor);
 			}
-			public HRESULT GetOutputTensor2(uint32 outputIndex, IMLOperatorTensor** tensor) mut
+			public HRESULT GetOutputTensor(uint32 outputIndex, IMLOperatorTensor** tensor) mut
 			{
 				return VT.GetOutputTensor2(&this, outputIndex, tensor);
 			}

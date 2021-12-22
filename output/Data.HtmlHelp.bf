@@ -486,11 +486,11 @@ namespace Win32
 			{
 				return VT.Set(&this, PropID, lpszwString, dwOperation);
 			}
-			public HRESULT Set2(uint32 PropID, void* lpvData, uint32 cbData, uint32 dwOperation) mut
+			public HRESULT Set(uint32 PropID, void* lpvData, uint32 cbData, uint32 dwOperation) mut
 			{
 				return VT.Set2(&this, PropID, lpvData, cbData, dwOperation);
 			}
-			public HRESULT Set3(uint32 PropID, uint32 dwData, uint32 dwOperation) mut
+			public HRESULT Set(uint32 PropID, uint32 dwData, uint32 dwOperation) mut
 			{
 				return VT.Set3(&this, PropID, dwData, dwOperation);
 			}
@@ -510,7 +510,7 @@ namespace Win32
 			{
 				return VT.SetPersist(&this, fPersist);
 			}
-			public HRESULT SetPersist2(uint32 PropID, BOOL fPersist) mut
+			public HRESULT SetPersist(uint32 PropID, BOOL fPersist) mut
 			{
 				return VT.SetPersist2(&this, PropID, fPersist);
 			}
@@ -645,11 +645,11 @@ namespace Win32
 			{
 				return VT.Lookup(&this, lpcvPrefix, fExactMatch, plEntry);
 			}
-			public HRESULT Lookup2(int32 lEntry, IITResultSet* lpITResult, int32 cEntries) mut
+			public HRESULT Lookup(int32 lEntry, IITResultSet* lpITResult, int32 cEntries) mut
 			{
 				return VT.Lookup2(&this, lEntry, lpITResult, cEntries);
 			}
-			public HRESULT Lookup3(int32 lEntry, void* lpvKeyBuf, uint32 cbKeyBuf) mut
+			public HRESULT Lookup(int32 lEntry, void* lpvKeyBuf, uint32 cbKeyBuf) mut
 			{
 				return VT.Lookup3(&this, lEntry, lpvKeyBuf, cbKeyBuf);
 			}
@@ -830,15 +830,15 @@ namespace Win32
 			{
 				return VT.Add(&this, PropID, dwDefaultData, Priority);
 			}
-			public HRESULT Add2(uint32 PropID, PWSTR lpszwDefault, PRIORITY Priority) mut
+			public HRESULT Add(uint32 PropID, PWSTR lpszwDefault, PRIORITY Priority) mut
 			{
 				return VT.Add2(&this, PropID, lpszwDefault, Priority);
 			}
-			public HRESULT Add3(uint32 PropID, void* lpvDefaultData, uint32 cbData, PRIORITY Priority) mut
+			public HRESULT Add(uint32 PropID, void* lpvDefaultData, uint32 cbData, PRIORITY Priority) mut
 			{
 				return VT.Add3(&this, PropID, lpvDefaultData, cbData, Priority);
 			}
-			public HRESULT Add4(void* lpvHdr) mut
+			public HRESULT Add(void* lpvHdr) mut
 			{
 				return VT.Add4(&this, lpvHdr);
 			}
@@ -850,15 +850,15 @@ namespace Win32
 			{
 				return VT.Set(&this, lRowIndex, lColumnIndex, lpvData, cbData);
 			}
-			public HRESULT Set2(int32 lRowIndex, int32 lColumnIndex, PWSTR lpwStr) mut
+			public HRESULT Set(int32 lRowIndex, int32 lColumnIndex, PWSTR lpwStr) mut
 			{
 				return VT.Set2(&this, lRowIndex, lColumnIndex, lpwStr);
 			}
-			public HRESULT Set3(int32 lRowIndex, int32 lColumnIndex, uint dwData) mut
+			public HRESULT Set(int32 lRowIndex, int32 lColumnIndex, uint dwData) mut
 			{
 				return VT.Set3(&this, lRowIndex, lColumnIndex, dwData);
 			}
-			public HRESULT Set4(int32 lRowIndex, void* lpvHdr, void* lpvData) mut
+			public HRESULT Set(int32 lRowIndex, void* lpvHdr, void* lpvData) mut
 			{
 				return VT.Set4(&this, lRowIndex, lpvHdr, lpvData);
 			}
@@ -894,7 +894,7 @@ namespace Win32
 			{
 				return VT.GetColumn(&this, lColumnIndex, PropID, dwType, lpvDefaultValue, cbSize, ColumnPriority);
 			}
-			public HRESULT GetColumn2(int32 lColumnIndex, uint32* PropID) mut
+			public HRESULT GetColumn(int32 lColumnIndex, uint32* PropID) mut
 			{
 				return VT.GetColumn2(&this, lColumnIndex, PropID);
 			}

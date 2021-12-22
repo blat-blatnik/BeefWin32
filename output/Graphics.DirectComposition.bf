@@ -322,7 +322,7 @@ namespace Win32
 			{
 				return VT.SetOffsetX(&this, animation);
 			}
-			public HRESULT SetOffsetX2(float offsetX) mut
+			public HRESULT SetOffsetX(float offsetX) mut
 			{
 				return VT.SetOffsetX2(&this, offsetX);
 			}
@@ -330,7 +330,7 @@ namespace Win32
 			{
 				return VT.SetOffsetY(&this, animation);
 			}
-			public HRESULT SetOffsetY2(float offsetY) mut
+			public HRESULT SetOffsetY(float offsetY) mut
 			{
 				return VT.SetOffsetY2(&this, offsetY);
 			}
@@ -338,7 +338,7 @@ namespace Win32
 			{
 				return VT.SetTransform(&this, transform);
 			}
-			public HRESULT SetTransform2(D2D_MATRIX_3X2_F* matrix) mut
+			public HRESULT SetTransform(D2D_MATRIX_3X2_F* matrix) mut
 			{
 				return VT.SetTransform2(&this, matrix);
 			}
@@ -362,7 +362,7 @@ namespace Win32
 			{
 				return VT.SetClip(&this, clip);
 			}
-			public HRESULT SetClip2(D2D_RECT_F* rect) mut
+			public HRESULT SetClip(D2D_RECT_F* rect) mut
 			{
 				return VT.SetClip2(&this, rect);
 			}
@@ -455,7 +455,7 @@ namespace Win32
 			{
 				return VT.SetOffsetX(&this, animation);
 			}
-			public HRESULT SetOffsetX2(float offsetX) mut
+			public HRESULT SetOffsetX(float offsetX) mut
 			{
 				return VT.SetOffsetX2(&this, offsetX);
 			}
@@ -463,7 +463,7 @@ namespace Win32
 			{
 				return VT.SetOffsetY(&this, animation);
 			}
-			public HRESULT SetOffsetY2(float offsetY) mut
+			public HRESULT SetOffsetY(float offsetY) mut
 			{
 				return VT.SetOffsetY2(&this, offsetY);
 			}
@@ -487,7 +487,7 @@ namespace Win32
 			{
 				return VT.SetScaleX(&this, animation);
 			}
-			public HRESULT SetScaleX2(float scaleX) mut
+			public HRESULT SetScaleX(float scaleX) mut
 			{
 				return VT.SetScaleX2(&this, scaleX);
 			}
@@ -495,7 +495,7 @@ namespace Win32
 			{
 				return VT.SetScaleY(&this, animation);
 			}
-			public HRESULT SetScaleY2(float scaleY) mut
+			public HRESULT SetScaleY(float scaleY) mut
 			{
 				return VT.SetScaleY2(&this, scaleY);
 			}
@@ -503,7 +503,7 @@ namespace Win32
 			{
 				return VT.SetCenterX(&this, animation);
 			}
-			public HRESULT SetCenterX2(float centerX) mut
+			public HRESULT SetCenterX(float centerX) mut
 			{
 				return VT.SetCenterX2(&this, centerX);
 			}
@@ -511,7 +511,7 @@ namespace Win32
 			{
 				return VT.SetCenterY(&this, animation);
 			}
-			public HRESULT SetCenterY2(float centerY) mut
+			public HRESULT SetCenterY(float centerY) mut
 			{
 				return VT.SetCenterY2(&this, centerY);
 			}
@@ -539,7 +539,7 @@ namespace Win32
 			{
 				return VT.SetAngle(&this, animation);
 			}
-			public HRESULT SetAngle2(float angle) mut
+			public HRESULT SetAngle(float angle) mut
 			{
 				return VT.SetAngle2(&this, angle);
 			}
@@ -547,7 +547,7 @@ namespace Win32
 			{
 				return VT.SetCenterX(&this, animation);
 			}
-			public HRESULT SetCenterX2(float centerX) mut
+			public HRESULT SetCenterX(float centerX) mut
 			{
 				return VT.SetCenterX2(&this, centerX);
 			}
@@ -555,7 +555,7 @@ namespace Win32
 			{
 				return VT.SetCenterY(&this, animation);
 			}
-			public HRESULT SetCenterY2(float centerY) mut
+			public HRESULT SetCenterY(float centerY) mut
 			{
 				return VT.SetCenterY2(&this, centerY);
 			}
@@ -581,7 +581,7 @@ namespace Win32
 			{
 				return VT.SetAngleX(&this, animation);
 			}
-			public HRESULT SetAngleX2(float angleX) mut
+			public HRESULT SetAngleX(float angleX) mut
 			{
 				return VT.SetAngleX2(&this, angleX);
 			}
@@ -589,7 +589,7 @@ namespace Win32
 			{
 				return VT.SetAngleY(&this, animation);
 			}
-			public HRESULT SetAngleY2(float angleY) mut
+			public HRESULT SetAngleY(float angleY) mut
 			{
 				return VT.SetAngleY2(&this, angleY);
 			}
@@ -597,7 +597,7 @@ namespace Win32
 			{
 				return VT.SetCenterX(&this, animation);
 			}
-			public HRESULT SetCenterX2(float centerX) mut
+			public HRESULT SetCenterX(float centerX) mut
 			{
 				return VT.SetCenterX2(&this, centerX);
 			}
@@ -605,7 +605,7 @@ namespace Win32
 			{
 				return VT.SetCenterY(&this, animation);
 			}
-			public HRESULT SetCenterY2(float centerY) mut
+			public HRESULT SetCenterY(float centerY) mut
 			{
 				return VT.SetCenterY2(&this, centerY);
 			}
@@ -637,7 +637,7 @@ namespace Win32
 			{
 				return VT.SetMatrixElement(&this, row, column, animation);
 			}
-			public HRESULT SetMatrixElement2(int32 row, int32 column, float value) mut
+			public HRESULT SetMatrixElement(int32 row, int32 column, float value) mut
 			{
 				return VT.SetMatrixElement2(&this, row, column, value);
 			}
@@ -660,7 +660,7 @@ namespace Win32
 			{
 				return VT.SetOpacity(&this, animation);
 			}
-			public HRESULT SetOpacity2(float opacity) mut
+			public HRESULT SetOpacity(float opacity) mut
 			{
 				return VT.SetOpacity2(&this, opacity);
 			}
@@ -687,7 +687,7 @@ namespace Win32
 			{
 				return VT.SetOffsetX(&this, animation);
 			}
-			public HRESULT SetOffsetX2(float offsetX) mut
+			public HRESULT SetOffsetX(float offsetX) mut
 			{
 				return VT.SetOffsetX2(&this, offsetX);
 			}
@@ -695,7 +695,7 @@ namespace Win32
 			{
 				return VT.SetOffsetY(&this, animation);
 			}
-			public HRESULT SetOffsetY2(float offsetY) mut
+			public HRESULT SetOffsetY(float offsetY) mut
 			{
 				return VT.SetOffsetY2(&this, offsetY);
 			}
@@ -703,7 +703,7 @@ namespace Win32
 			{
 				return VT.SetOffsetZ(&this, animation);
 			}
-			public HRESULT SetOffsetZ2(float offsetZ) mut
+			public HRESULT SetOffsetZ(float offsetZ) mut
 			{
 				return VT.SetOffsetZ2(&this, offsetZ);
 			}
@@ -729,7 +729,7 @@ namespace Win32
 			{
 				return VT.SetScaleX(&this, animation);
 			}
-			public HRESULT SetScaleX2(float scaleX) mut
+			public HRESULT SetScaleX(float scaleX) mut
 			{
 				return VT.SetScaleX2(&this, scaleX);
 			}
@@ -737,7 +737,7 @@ namespace Win32
 			{
 				return VT.SetScaleY(&this, animation);
 			}
-			public HRESULT SetScaleY2(float scaleY) mut
+			public HRESULT SetScaleY(float scaleY) mut
 			{
 				return VT.SetScaleY2(&this, scaleY);
 			}
@@ -745,7 +745,7 @@ namespace Win32
 			{
 				return VT.SetScaleZ(&this, animation);
 			}
-			public HRESULT SetScaleZ2(float scaleZ) mut
+			public HRESULT SetScaleZ(float scaleZ) mut
 			{
 				return VT.SetScaleZ2(&this, scaleZ);
 			}
@@ -753,7 +753,7 @@ namespace Win32
 			{
 				return VT.SetCenterX(&this, animation);
 			}
-			public HRESULT SetCenterX2(float centerX) mut
+			public HRESULT SetCenterX(float centerX) mut
 			{
 				return VT.SetCenterX2(&this, centerX);
 			}
@@ -761,7 +761,7 @@ namespace Win32
 			{
 				return VT.SetCenterY(&this, animation);
 			}
-			public HRESULT SetCenterY2(float centerY) mut
+			public HRESULT SetCenterY(float centerY) mut
 			{
 				return VT.SetCenterY2(&this, centerY);
 			}
@@ -769,7 +769,7 @@ namespace Win32
 			{
 				return VT.SetCenterZ(&this, animation);
 			}
-			public HRESULT SetCenterZ2(float centerZ) mut
+			public HRESULT SetCenterZ(float centerZ) mut
 			{
 				return VT.SetCenterZ2(&this, centerZ);
 			}
@@ -801,7 +801,7 @@ namespace Win32
 			{
 				return VT.SetAngle(&this, animation);
 			}
-			public HRESULT SetAngle2(float angle) mut
+			public HRESULT SetAngle(float angle) mut
 			{
 				return VT.SetAngle2(&this, angle);
 			}
@@ -809,7 +809,7 @@ namespace Win32
 			{
 				return VT.SetAxisX(&this, animation);
 			}
-			public HRESULT SetAxisX2(float axisX) mut
+			public HRESULT SetAxisX(float axisX) mut
 			{
 				return VT.SetAxisX2(&this, axisX);
 			}
@@ -817,7 +817,7 @@ namespace Win32
 			{
 				return VT.SetAxisY(&this, animation);
 			}
-			public HRESULT SetAxisY2(float axisY) mut
+			public HRESULT SetAxisY(float axisY) mut
 			{
 				return VT.SetAxisY2(&this, axisY);
 			}
@@ -825,7 +825,7 @@ namespace Win32
 			{
 				return VT.SetAxisZ(&this, animation);
 			}
-			public HRESULT SetAxisZ2(float axisZ) mut
+			public HRESULT SetAxisZ(float axisZ) mut
 			{
 				return VT.SetAxisZ2(&this, axisZ);
 			}
@@ -833,7 +833,7 @@ namespace Win32
 			{
 				return VT.SetCenterX(&this, animation);
 			}
-			public HRESULT SetCenterX2(float centerX) mut
+			public HRESULT SetCenterX(float centerX) mut
 			{
 				return VT.SetCenterX2(&this, centerX);
 			}
@@ -841,7 +841,7 @@ namespace Win32
 			{
 				return VT.SetCenterY(&this, animation);
 			}
-			public HRESULT SetCenterY2(float centerY) mut
+			public HRESULT SetCenterY(float centerY) mut
 			{
 				return VT.SetCenterY2(&this, centerY);
 			}
@@ -849,7 +849,7 @@ namespace Win32
 			{
 				return VT.SetCenterZ(&this, animation);
 			}
-			public HRESULT SetCenterZ2(float centerZ) mut
+			public HRESULT SetCenterZ(float centerZ) mut
 			{
 				return VT.SetCenterZ2(&this, centerZ);
 			}
@@ -887,7 +887,7 @@ namespace Win32
 			{
 				return VT.SetMatrixElement(&this, row, column, animation);
 			}
-			public HRESULT SetMatrixElement2(int32 row, int32 column, float value) mut
+			public HRESULT SetMatrixElement(int32 row, int32 column, float value) mut
 			{
 				return VT.SetMatrixElement2(&this, row, column, value);
 			}
@@ -922,7 +922,7 @@ namespace Win32
 			{
 				return VT.SetLeft(&this, animation);
 			}
-			public HRESULT SetLeft2(float left) mut
+			public HRESULT SetLeft(float left) mut
 			{
 				return VT.SetLeft2(&this, left);
 			}
@@ -930,7 +930,7 @@ namespace Win32
 			{
 				return VT.SetTop(&this, animation);
 			}
-			public HRESULT SetTop2(float top) mut
+			public HRESULT SetTop(float top) mut
 			{
 				return VT.SetTop2(&this, top);
 			}
@@ -938,7 +938,7 @@ namespace Win32
 			{
 				return VT.SetRight(&this, animation);
 			}
-			public HRESULT SetRight2(float right) mut
+			public HRESULT SetRight(float right) mut
 			{
 				return VT.SetRight2(&this, right);
 			}
@@ -946,7 +946,7 @@ namespace Win32
 			{
 				return VT.SetBottom(&this, animation);
 			}
-			public HRESULT SetBottom2(float bottom) mut
+			public HRESULT SetBottom(float bottom) mut
 			{
 				return VT.SetBottom2(&this, bottom);
 			}
@@ -954,7 +954,7 @@ namespace Win32
 			{
 				return VT.SetTopLeftRadiusX(&this, animation);
 			}
-			public HRESULT SetTopLeftRadiusX2(float radius) mut
+			public HRESULT SetTopLeftRadiusX(float radius) mut
 			{
 				return VT.SetTopLeftRadiusX2(&this, radius);
 			}
@@ -962,7 +962,7 @@ namespace Win32
 			{
 				return VT.SetTopLeftRadiusY(&this, animation);
 			}
-			public HRESULT SetTopLeftRadiusY2(float radius) mut
+			public HRESULT SetTopLeftRadiusY(float radius) mut
 			{
 				return VT.SetTopLeftRadiusY2(&this, radius);
 			}
@@ -970,7 +970,7 @@ namespace Win32
 			{
 				return VT.SetTopRightRadiusX(&this, animation);
 			}
-			public HRESULT SetTopRightRadiusX2(float radius) mut
+			public HRESULT SetTopRightRadiusX(float radius) mut
 			{
 				return VT.SetTopRightRadiusX2(&this, radius);
 			}
@@ -978,7 +978,7 @@ namespace Win32
 			{
 				return VT.SetTopRightRadiusY(&this, animation);
 			}
-			public HRESULT SetTopRightRadiusY2(float radius) mut
+			public HRESULT SetTopRightRadiusY(float radius) mut
 			{
 				return VT.SetTopRightRadiusY2(&this, radius);
 			}
@@ -986,7 +986,7 @@ namespace Win32
 			{
 				return VT.SetBottomLeftRadiusX(&this, animation);
 			}
-			public HRESULT SetBottomLeftRadiusX2(float radius) mut
+			public HRESULT SetBottomLeftRadiusX(float radius) mut
 			{
 				return VT.SetBottomLeftRadiusX2(&this, radius);
 			}
@@ -994,7 +994,7 @@ namespace Win32
 			{
 				return VT.SetBottomLeftRadiusY(&this, animation);
 			}
-			public HRESULT SetBottomLeftRadiusY2(float radius) mut
+			public HRESULT SetBottomLeftRadiusY(float radius) mut
 			{
 				return VT.SetBottomLeftRadiusY2(&this, radius);
 			}
@@ -1002,7 +1002,7 @@ namespace Win32
 			{
 				return VT.SetBottomRightRadiusX(&this, animation);
 			}
-			public HRESULT SetBottomRightRadiusX2(float radius) mut
+			public HRESULT SetBottomRightRadiusX(float radius) mut
 			{
 				return VT.SetBottomRightRadiusX2(&this, radius);
 			}
@@ -1010,7 +1010,7 @@ namespace Win32
 			{
 				return VT.SetBottomRightRadiusY(&this, animation);
 			}
-			public HRESULT SetBottomRightRadiusY2(float radius) mut
+			public HRESULT SetBottomRightRadiusY(float radius) mut
 			{
 				return VT.SetBottomRightRadiusY2(&this, radius);
 			}
@@ -1359,7 +1359,7 @@ namespace Win32
 			{
 				return VT.SetOffsetZ(&this, animation);
 			}
-			public HRESULT SetOffsetZ2(float offsetZ) mut
+			public HRESULT SetOffsetZ(float offsetZ) mut
 			{
 				return VT.SetOffsetZ2(&this, offsetZ);
 			}
@@ -1367,7 +1367,7 @@ namespace Win32
 			{
 				return VT.SetOpacity(&this, animation);
 			}
-			public HRESULT SetOpacity2(float opacity) mut
+			public HRESULT SetOpacity(float opacity) mut
 			{
 				return VT.SetOpacity2(&this, opacity);
 			}
@@ -1375,7 +1375,7 @@ namespace Win32
 			{
 				return VT.SetTransform(&this, transform);
 			}
-			public HRESULT SetTransform2(D2D_MATRIX_4X4_F* matrix) mut
+			public HRESULT SetTransform(D2D_MATRIX_4X4_F* matrix) mut
 			{
 				return VT.SetTransform2(&this, matrix);
 			}
@@ -1501,7 +1501,7 @@ namespace Win32
 			{
 				return VT.SetStandardDeviation(&this, animation);
 			}
-			public HRESULT SetStandardDeviation2(float amount) mut
+			public HRESULT SetStandardDeviation(float amount) mut
 			{
 				return VT.SetStandardDeviation2(&this, amount);
 			}
@@ -1536,7 +1536,7 @@ namespace Win32
 			{
 				return VT.SetWhitePointX(&this, animation);
 			}
-			public HRESULT SetWhitePointX2(float whitePointX) mut
+			public HRESULT SetWhitePointX(float whitePointX) mut
 			{
 				return VT.SetWhitePointX2(&this, whitePointX);
 			}
@@ -1544,7 +1544,7 @@ namespace Win32
 			{
 				return VT.SetWhitePointY(&this, animation);
 			}
-			public HRESULT SetWhitePointY2(float whitePointY) mut
+			public HRESULT SetWhitePointY(float whitePointY) mut
 			{
 				return VT.SetWhitePointY2(&this, whitePointY);
 			}
@@ -1552,7 +1552,7 @@ namespace Win32
 			{
 				return VT.SetBlackPointX(&this, animation);
 			}
-			public HRESULT SetBlackPointX2(float blackPointX) mut
+			public HRESULT SetBlackPointX(float blackPointX) mut
 			{
 				return VT.SetBlackPointX2(&this, blackPointX);
 			}
@@ -1560,7 +1560,7 @@ namespace Win32
 			{
 				return VT.SetBlackPointY(&this, animation);
 			}
-			public HRESULT SetBlackPointY2(float blackPointY) mut
+			public HRESULT SetBlackPointY(float blackPointY) mut
 			{
 				return VT.SetBlackPointY2(&this, blackPointY);
 			}
@@ -1594,7 +1594,7 @@ namespace Win32
 			{
 				return VT.SetMatrixElement(&this, row, column, animation);
 			}
-			public HRESULT SetMatrixElement2(int32 row, int32 column, float value) mut
+			public HRESULT SetMatrixElement(int32 row, int32 column, float value) mut
 			{
 				return VT.SetMatrixElement2(&this, row, column, value);
 			}
@@ -1627,7 +1627,7 @@ namespace Win32
 			{
 				return VT.SetStandardDeviation(&this, animation);
 			}
-			public HRESULT SetStandardDeviation2(float amount) mut
+			public HRESULT SetStandardDeviation(float amount) mut
 			{
 				return VT.SetStandardDeviation2(&this, amount);
 			}
@@ -1639,7 +1639,7 @@ namespace Win32
 			{
 				return VT.SetRed(&this, animation);
 			}
-			public HRESULT SetRed2(float amount) mut
+			public HRESULT SetRed(float amount) mut
 			{
 				return VT.SetRed2(&this, amount);
 			}
@@ -1647,7 +1647,7 @@ namespace Win32
 			{
 				return VT.SetGreen(&this, animation);
 			}
-			public HRESULT SetGreen2(float amount) mut
+			public HRESULT SetGreen(float amount) mut
 			{
 				return VT.SetGreen2(&this, amount);
 			}
@@ -1655,7 +1655,7 @@ namespace Win32
 			{
 				return VT.SetBlue(&this, animation);
 			}
-			public HRESULT SetBlue2(float amount) mut
+			public HRESULT SetBlue(float amount) mut
 			{
 				return VT.SetBlue2(&this, amount);
 			}
@@ -1663,7 +1663,7 @@ namespace Win32
 			{
 				return VT.SetAlpha(&this, animation);
 			}
-			public HRESULT SetAlpha2(float amount) mut
+			public HRESULT SetAlpha(float amount) mut
 			{
 				return VT.SetAlpha2(&this, amount);
 			}
@@ -1694,7 +1694,7 @@ namespace Win32
 			{
 				return VT.SetAngle(&this, animation);
 			}
-			public HRESULT SetAngle2(float amountDegrees) mut
+			public HRESULT SetAngle(float amountDegrees) mut
 			{
 				return VT.SetAngle2(&this, amountDegrees);
 			}
@@ -1716,7 +1716,7 @@ namespace Win32
 			{
 				return VT.SetSaturation(&this, animation);
 			}
-			public HRESULT SetSaturation2(float ratio) mut
+			public HRESULT SetSaturation(float ratio) mut
 			{
 				return VT.SetSaturation2(&this, ratio);
 			}
@@ -1785,7 +1785,7 @@ namespace Win32
 			{
 				return VT.SetRedYIntercept(&this, animation);
 			}
-			public HRESULT SetRedYIntercept2(float redYIntercept) mut
+			public HRESULT SetRedYIntercept(float redYIntercept) mut
 			{
 				return VT.SetRedYIntercept2(&this, redYIntercept);
 			}
@@ -1793,7 +1793,7 @@ namespace Win32
 			{
 				return VT.SetRedSlope(&this, animation);
 			}
-			public HRESULT SetRedSlope2(float redSlope) mut
+			public HRESULT SetRedSlope(float redSlope) mut
 			{
 				return VT.SetRedSlope2(&this, redSlope);
 			}
@@ -1805,7 +1805,7 @@ namespace Win32
 			{
 				return VT.SetGreenYIntercept(&this, animation);
 			}
-			public HRESULT SetGreenYIntercept2(float greenYIntercept) mut
+			public HRESULT SetGreenYIntercept(float greenYIntercept) mut
 			{
 				return VT.SetGreenYIntercept2(&this, greenYIntercept);
 			}
@@ -1813,7 +1813,7 @@ namespace Win32
 			{
 				return VT.SetGreenSlope(&this, animation);
 			}
-			public HRESULT SetGreenSlope2(float greenSlope) mut
+			public HRESULT SetGreenSlope(float greenSlope) mut
 			{
 				return VT.SetGreenSlope2(&this, greenSlope);
 			}
@@ -1825,7 +1825,7 @@ namespace Win32
 			{
 				return VT.SetBlueYIntercept(&this, animation);
 			}
-			public HRESULT SetBlueYIntercept2(float blueYIntercept) mut
+			public HRESULT SetBlueYIntercept(float blueYIntercept) mut
 			{
 				return VT.SetBlueYIntercept2(&this, blueYIntercept);
 			}
@@ -1833,7 +1833,7 @@ namespace Win32
 			{
 				return VT.SetBlueSlope(&this, animation);
 			}
-			public HRESULT SetBlueSlope2(float blueSlope) mut
+			public HRESULT SetBlueSlope(float blueSlope) mut
 			{
 				return VT.SetBlueSlope2(&this, blueSlope);
 			}
@@ -1845,7 +1845,7 @@ namespace Win32
 			{
 				return VT.SetAlphaYIntercept(&this, animation);
 			}
-			public HRESULT SetAlphaYIntercept2(float alphaYIntercept) mut
+			public HRESULT SetAlphaYIntercept(float alphaYIntercept) mut
 			{
 				return VT.SetAlphaYIntercept2(&this, alphaYIntercept);
 			}
@@ -1853,7 +1853,7 @@ namespace Win32
 			{
 				return VT.SetAlphaSlope(&this, animation);
 			}
-			public HRESULT SetAlphaSlope2(float alphaSlope) mut
+			public HRESULT SetAlphaSlope(float alphaSlope) mut
 			{
 				return VT.SetAlphaSlope2(&this, alphaSlope);
 			}
@@ -1938,7 +1938,7 @@ namespace Win32
 			{
 				return VT.SetRedTableValue(&this, index, animation);
 			}
-			public HRESULT SetRedTableValue2(uint32 index, float value) mut
+			public HRESULT SetRedTableValue(uint32 index, float value) mut
 			{
 				return VT.SetRedTableValue2(&this, index, value);
 			}
@@ -1946,7 +1946,7 @@ namespace Win32
 			{
 				return VT.SetGreenTableValue(&this, index, animation);
 			}
-			public HRESULT SetGreenTableValue2(uint32 index, float value) mut
+			public HRESULT SetGreenTableValue(uint32 index, float value) mut
 			{
 				return VT.SetGreenTableValue2(&this, index, value);
 			}
@@ -1954,7 +1954,7 @@ namespace Win32
 			{
 				return VT.SetBlueTableValue(&this, index, animation);
 			}
-			public HRESULT SetBlueTableValue2(uint32 index, float value) mut
+			public HRESULT SetBlueTableValue(uint32 index, float value) mut
 			{
 				return VT.SetBlueTableValue2(&this, index, value);
 			}
@@ -1962,7 +1962,7 @@ namespace Win32
 			{
 				return VT.SetAlphaTableValue(&this, index, animation);
 			}
-			public HRESULT SetAlphaTableValue2(uint32 index, float value) mut
+			public HRESULT SetAlphaTableValue(uint32 index, float value) mut
 			{
 				return VT.SetAlphaTableValue2(&this, index, value);
 			}
@@ -2041,7 +2041,7 @@ namespace Win32
 			{
 				return VT.SetCoefficient1(&this, animation);
 			}
-			public HRESULT SetCoefficient12(float Coeffcient1) mut
+			public HRESULT SetCoefficient1(float Coeffcient1) mut
 			{
 				return VT.SetCoefficient12(&this, Coeffcient1);
 			}
@@ -2049,7 +2049,7 @@ namespace Win32
 			{
 				return VT.SetCoefficient2(&this, animation);
 			}
-			public HRESULT SetCoefficient22(float Coefficient2) mut
+			public HRESULT SetCoefficient2(float Coefficient2) mut
 			{
 				return VT.SetCoefficient22(&this, Coefficient2);
 			}
@@ -2057,7 +2057,7 @@ namespace Win32
 			{
 				return VT.SetCoefficient3(&this, animation);
 			}
-			public HRESULT SetCoefficient32(float Coefficient3) mut
+			public HRESULT SetCoefficient3(float Coefficient3) mut
 			{
 				return VT.SetCoefficient32(&this, Coefficient3);
 			}
@@ -2065,7 +2065,7 @@ namespace Win32
 			{
 				return VT.SetCoefficient4(&this, animation);
 			}
-			public HRESULT SetCoefficient42(float Coefficient4) mut
+			public HRESULT SetCoefficient4(float Coefficient4) mut
 			{
 				return VT.SetCoefficient42(&this, Coefficient4);
 			}
@@ -2107,7 +2107,7 @@ namespace Win32
 			{
 				return VT.SetTransformMatrixElement(&this, row, column, animation);
 			}
-			public HRESULT SetTransformMatrixElement2(int32 row, int32 column, float value) mut
+			public HRESULT SetTransformMatrixElement(int32 row, int32 column, float value) mut
 			{
 				return VT.SetTransformMatrixElement2(&this, row, column, value);
 			}
@@ -2115,7 +2115,7 @@ namespace Win32
 			{
 				return VT.SetSharpness(&this, animation);
 			}
-			public HRESULT SetSharpness2(float sharpness) mut
+			public HRESULT SetSharpness(float sharpness) mut
 			{
 				return VT.SetSharpness2(&this, sharpness);
 			}

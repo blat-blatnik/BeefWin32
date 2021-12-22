@@ -4784,7 +4784,7 @@ namespace Win32
 			{
 				return VT.UpdateDashes(&this, dashes, dashesCount, startIndex);
 			}
-			public HRESULT UpdateDashes2(float* dashes, uint32 dashesCount, uint32 startIndex) mut
+			public HRESULT UpdateDashes(float* dashes, uint32 dashesCount, uint32 startIndex) mut
 			{
 				return VT.UpdateDashes2(&this, dashes, dashesCount, startIndex);
 			}
@@ -4792,7 +4792,7 @@ namespace Win32
 			{
 				return VT.GetDashes(&this, dashes, dashesCount, startIndex);
 			}
-			public HRESULT GetDashes2(float* dashes, uint32 dashesCount, uint32 startIndex) mut
+			public HRESULT GetDashes(float* dashes, uint32 dashesCount, uint32 startIndex) mut
 			{
 				return VT.GetDashes2(&this, dashes, dashesCount, startIndex);
 			}
@@ -5003,11 +5003,11 @@ namespace Win32
 			{
 				return VT.SetAttributeValue(&this, name, value);
 			}
-			public HRESULT SetAttributeValue2(PWSTR name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, uint32 valueSizeInBytes) mut
+			public HRESULT SetAttributeValue(PWSTR name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, uint32 valueSizeInBytes) mut
 			{
 				return VT.SetAttributeValue2(&this, name, type, value, valueSizeInBytes);
 			}
-			public HRESULT SetAttributeValue3(PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, PWSTR value) mut
+			public HRESULT SetAttributeValue(PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, PWSTR value) mut
 			{
 				return VT.SetAttributeValue3(&this, name, type, value);
 			}
@@ -5015,11 +5015,11 @@ namespace Win32
 			{
 				return VT.GetAttributeValue(&this, name, riid, value);
 			}
-			public HRESULT GetAttributeValue2(PWSTR name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, uint32 valueSizeInBytes) mut
+			public HRESULT GetAttributeValue(PWSTR name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, uint32 valueSizeInBytes) mut
 			{
 				return VT.GetAttributeValue2(&this, name, type, value, valueSizeInBytes);
 			}
-			public HRESULT GetAttributeValue3(PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, char16* value, uint32 valueCount) mut
+			public HRESULT GetAttributeValue(PWSTR name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, char16* value, uint32 valueCount) mut
 			{
 				return VT.GetAttributeValue3(&this, name, type, value, valueCount);
 			}
