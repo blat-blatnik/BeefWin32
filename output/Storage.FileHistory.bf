@@ -134,12 +134,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd87965fd, 0x2bad, 0x4657, 0xbd, 0x3b, 0x95, 0x67, 0xeb, 0x30, 0x0c, 0xed);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetStringProperty(FH_TARGET_PROPERTY_TYPE PropertyType, BSTR* PropertyValue) mut
+			{
+				return VT.GetStringProperty(&this, PropertyType, PropertyValue);
+			}
+			public HRESULT GetNumericalProperty(FH_TARGET_PROPERTY_TYPE PropertyType, uint64* PropertyValue) mut
+			{
+				return VT.GetNumericalProperty(&this, PropertyType, PropertyValue);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IFhTarget *self, FH_TARGET_PROPERTY_TYPE PropertyType, BSTR* PropertyValue) GetStringProperty;
-				public function HRESULT(IFhTarget *self, FH_TARGET_PROPERTY_TYPE PropertyType, uint64* PropertyValue) GetNumericalProperty;
+				public new function HRESULT(IFhTarget *self, FH_TARGET_PROPERTY_TYPE PropertyType, BSTR* PropertyValue) GetStringProperty;
+				public new function HRESULT(IFhTarget *self, FH_TARGET_PROPERTY_TYPE PropertyType, uint64* PropertyValue) GetNumericalProperty;
 			}
 		}
 		[CRepr]
@@ -147,12 +156,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3197abce, 0x532a, 0x44c6, 0x86, 0x15, 0xf3, 0x66, 0x65, 0x66, 0xa7, 0x20);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT MoveToNextItem() mut
+			{
+				return VT.MoveToNextItem(&this);
+			}
+			public HRESULT GetItem(BSTR* Item) mut
+			{
+				return VT.GetItem(&this, Item);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IFhScopeIterator *self) MoveToNextItem;
-				public function HRESULT(IFhScopeIterator *self, BSTR* Item) GetItem;
+				public new function HRESULT(IFhScopeIterator *self) MoveToNextItem;
+				public new function HRESULT(IFhScopeIterator *self, BSTR* Item) GetItem;
 			}
 		}
 		[CRepr]
@@ -160,24 +178,81 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6a5fea5b, 0xbf8f, 0x4ee5, 0xb8, 0xc3, 0x44, 0xd8, 0xa0, 0xd7, 0x33, 0x1c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT LoadConfiguration() mut
+			{
+				return VT.LoadConfiguration(&this);
+			}
+			public HRESULT CreateDefaultConfiguration(BOOL OverwriteIfExists) mut
+			{
+				return VT.CreateDefaultConfiguration(&this, OverwriteIfExists);
+			}
+			public HRESULT SaveConfiguration() mut
+			{
+				return VT.SaveConfiguration(&this);
+			}
+			public HRESULT AddRemoveExcludeRule(BOOL Add, FH_PROTECTED_ITEM_CATEGORY Category, BSTR Item) mut
+			{
+				return VT.AddRemoveExcludeRule(&this, Add, Category, Item);
+			}
+			public HRESULT GetIncludeExcludeRules(BOOL Include, FH_PROTECTED_ITEM_CATEGORY Category, IFhScopeIterator** Iterator) mut
+			{
+				return VT.GetIncludeExcludeRules(&this, Include, Category, Iterator);
+			}
+			public HRESULT GetLocalPolicy(FH_LOCAL_POLICY_TYPE LocalPolicyType, uint64* PolicyValue) mut
+			{
+				return VT.GetLocalPolicy(&this, LocalPolicyType, PolicyValue);
+			}
+			public HRESULT SetLocalPolicy(FH_LOCAL_POLICY_TYPE LocalPolicyType, uint64 PolicyValue) mut
+			{
+				return VT.SetLocalPolicy(&this, LocalPolicyType, PolicyValue);
+			}
+			public HRESULT GetBackupStatus(FH_BACKUP_STATUS* BackupStatus) mut
+			{
+				return VT.GetBackupStatus(&this, BackupStatus);
+			}
+			public HRESULT SetBackupStatus(FH_BACKUP_STATUS BackupStatus) mut
+			{
+				return VT.SetBackupStatus(&this, BackupStatus);
+			}
+			public HRESULT GetDefaultTarget(IFhTarget** DefaultTarget) mut
+			{
+				return VT.GetDefaultTarget(&this, DefaultTarget);
+			}
+			public HRESULT ValidateTarget(BSTR TargetUrl, FH_DEVICE_VALIDATION_RESULT* ValidationResult) mut
+			{
+				return VT.ValidateTarget(&this, TargetUrl, ValidationResult);
+			}
+			public HRESULT ProvisionAndSetNewTarget(BSTR TargetUrl, BSTR TargetName) mut
+			{
+				return VT.ProvisionAndSetNewTarget(&this, TargetUrl, TargetName);
+			}
+			public HRESULT ChangeDefaultTargetRecommendation(BOOL Recommend) mut
+			{
+				return VT.ChangeDefaultTargetRecommendation(&this, Recommend);
+			}
+			public HRESULT QueryProtectionStatus(uint32* ProtectionState, BSTR* ProtectedUntilTime) mut
+			{
+				return VT.QueryProtectionStatus(&this, ProtectionState, ProtectedUntilTime);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IFhConfigMgr *self) LoadConfiguration;
-				public function HRESULT(IFhConfigMgr *self, BOOL OverwriteIfExists) CreateDefaultConfiguration;
-				public function HRESULT(IFhConfigMgr *self) SaveConfiguration;
-				public function HRESULT(IFhConfigMgr *self, BOOL Add, FH_PROTECTED_ITEM_CATEGORY Category, BSTR Item) AddRemoveExcludeRule;
-				public function HRESULT(IFhConfigMgr *self, BOOL Include, FH_PROTECTED_ITEM_CATEGORY Category, IFhScopeIterator** Iterator) GetIncludeExcludeRules;
-				public function HRESULT(IFhConfigMgr *self, FH_LOCAL_POLICY_TYPE LocalPolicyType, uint64* PolicyValue) GetLocalPolicy;
-				public function HRESULT(IFhConfigMgr *self, FH_LOCAL_POLICY_TYPE LocalPolicyType, uint64 PolicyValue) SetLocalPolicy;
-				public function HRESULT(IFhConfigMgr *self, FH_BACKUP_STATUS* BackupStatus) GetBackupStatus;
-				public function HRESULT(IFhConfigMgr *self, FH_BACKUP_STATUS BackupStatus) SetBackupStatus;
-				public function HRESULT(IFhConfigMgr *self, IFhTarget** DefaultTarget) GetDefaultTarget;
-				public function HRESULT(IFhConfigMgr *self, BSTR TargetUrl, FH_DEVICE_VALIDATION_RESULT* ValidationResult) ValidateTarget;
-				public function HRESULT(IFhConfigMgr *self, BSTR TargetUrl, BSTR TargetName) ProvisionAndSetNewTarget;
-				public function HRESULT(IFhConfigMgr *self, BOOL Recommend) ChangeDefaultTargetRecommendation;
-				public function HRESULT(IFhConfigMgr *self, uint32* ProtectionState, BSTR* ProtectedUntilTime) QueryProtectionStatus;
+				public new function HRESULT(IFhConfigMgr *self) LoadConfiguration;
+				public new function HRESULT(IFhConfigMgr *self, BOOL OverwriteIfExists) CreateDefaultConfiguration;
+				public new function HRESULT(IFhConfigMgr *self) SaveConfiguration;
+				public new function HRESULT(IFhConfigMgr *self, BOOL Add, FH_PROTECTED_ITEM_CATEGORY Category, BSTR Item) AddRemoveExcludeRule;
+				public new function HRESULT(IFhConfigMgr *self, BOOL Include, FH_PROTECTED_ITEM_CATEGORY Category, IFhScopeIterator** Iterator) GetIncludeExcludeRules;
+				public new function HRESULT(IFhConfigMgr *self, FH_LOCAL_POLICY_TYPE LocalPolicyType, uint64* PolicyValue) GetLocalPolicy;
+				public new function HRESULT(IFhConfigMgr *self, FH_LOCAL_POLICY_TYPE LocalPolicyType, uint64 PolicyValue) SetLocalPolicy;
+				public new function HRESULT(IFhConfigMgr *self, FH_BACKUP_STATUS* BackupStatus) GetBackupStatus;
+				public new function HRESULT(IFhConfigMgr *self, FH_BACKUP_STATUS BackupStatus) SetBackupStatus;
+				public new function HRESULT(IFhConfigMgr *self, IFhTarget** DefaultTarget) GetDefaultTarget;
+				public new function HRESULT(IFhConfigMgr *self, BSTR TargetUrl, FH_DEVICE_VALIDATION_RESULT* ValidationResult) ValidateTarget;
+				public new function HRESULT(IFhConfigMgr *self, BSTR TargetUrl, BSTR TargetName) ProvisionAndSetNewTarget;
+				public new function HRESULT(IFhConfigMgr *self, BOOL Recommend) ChangeDefaultTargetRecommendation;
+				public new function HRESULT(IFhConfigMgr *self, uint32* ProtectionState, BSTR* ProtectedUntilTime) QueryProtectionStatus;
 			}
 		}
 		[CRepr]
@@ -185,15 +260,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6544a28a, 0xf68d, 0x47ac, 0x91, 0xef, 0x16, 0xb2, 0xb3, 0x6a, 0xa3, 0xee);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ValidateTarget(BSTR TargetUrl, FH_DEVICE_VALIDATION_RESULT* ValidationResult) mut
+			{
+				return VT.ValidateTarget(&this, TargetUrl, ValidationResult);
+			}
+			public HRESULT ScanTargetForConfigurations(BSTR TargetUrl) mut
+			{
+				return VT.ScanTargetForConfigurations(&this, TargetUrl);
+			}
+			public HRESULT GetConfigurationDetails(uint32 Index, BSTR* UserName, BSTR* PcName, FILETIME* BackupTime) mut
+			{
+				return VT.GetConfigurationDetails(&this, Index, UserName, PcName, BackupTime);
+			}
+			public HRESULT SelectConfiguration(uint32 Index) mut
+			{
+				return VT.SelectConfiguration(&this, Index);
+			}
+			public HRESULT PerformReassociation(BOOL OverwriteIfExists) mut
+			{
+				return VT.PerformReassociation(&this, OverwriteIfExists);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IFhReassociation *self, BSTR TargetUrl, FH_DEVICE_VALIDATION_RESULT* ValidationResult) ValidateTarget;
-				public function HRESULT(IFhReassociation *self, BSTR TargetUrl) ScanTargetForConfigurations;
-				public function HRESULT(IFhReassociation *self, uint32 Index, BSTR* UserName, BSTR* PcName, FILETIME* BackupTime) GetConfigurationDetails;
-				public function HRESULT(IFhReassociation *self, uint32 Index) SelectConfiguration;
-				public function HRESULT(IFhReassociation *self, BOOL OverwriteIfExists) PerformReassociation;
+				public new function HRESULT(IFhReassociation *self, BSTR TargetUrl, FH_DEVICE_VALIDATION_RESULT* ValidationResult) ValidateTarget;
+				public new function HRESULT(IFhReassociation *self, BSTR TargetUrl) ScanTargetForConfigurations;
+				public new function HRESULT(IFhReassociation *self, uint32 Index, BSTR* UserName, BSTR* PcName, FILETIME* BackupTime) GetConfigurationDetails;
+				public new function HRESULT(IFhReassociation *self, uint32 Index) SelectConfiguration;
+				public new function HRESULT(IFhReassociation *self, BOOL OverwriteIfExists) PerformReassociation;
 			}
 		}
 		

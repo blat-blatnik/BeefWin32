@@ -1808,22 +1808,36 @@ namespace Win32
 		[CRepr]
 		public struct IRicheditWindowlessAccessibility : IUnknown
 		{
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateProvider(IRawElementProviderWindowlessSite* pSite, IRawElementProviderSimple** ppProvider) mut
+			{
+				return VT.CreateProvider(&this, pSite, ppProvider);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRicheditWindowlessAccessibility *self, IRawElementProviderWindowlessSite* pSite, IRawElementProviderSimple** ppProvider) CreateProvider;
+				public new function HRESULT(IRicheditWindowlessAccessibility *self, IRawElementProviderWindowlessSite* pSite, IRawElementProviderSimple** ppProvider) CreateProvider;
 			}
 		}
 		[CRepr]
 		public struct IRichEditUiaInformation : IUnknown
 		{
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetBoundaryRectangle(UiaRect* pUiaRect) mut
+			{
+				return VT.GetBoundaryRectangle(&this, pUiaRect);
+			}
+			public HRESULT IsVisible() mut
+			{
+				return VT.IsVisible(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRichEditUiaInformation *self, UiaRect* pUiaRect) GetBoundaryRectangle;
-				public function HRESULT(IRichEditUiaInformation *self) IsVisible;
+				public new function HRESULT(IRichEditUiaInformation *self, UiaRect* pUiaRect) GetBoundaryRectangle;
+				public new function HRESULT(IRichEditUiaInformation *self) IsVisible;
 			}
 		}
 		[CRepr]
@@ -1831,31 +1845,116 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x618736e0, 0x3c3d, 0x11cf, 0x81, 0x0c, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_accParent(IDispatch** ppdispParent) mut
+			{
+				return VT.get_accParent(&this, ppdispParent);
+			}
+			public HRESULT get_accChildCount(int32* pcountChildren) mut
+			{
+				return VT.get_accChildCount(&this, pcountChildren);
+			}
+			public HRESULT get_accChild(VARIANT varChild, IDispatch** ppdispChild) mut
+			{
+				return VT.get_accChild(&this, varChild, ppdispChild);
+			}
+			public HRESULT get_accName(VARIANT varChild, BSTR* pszName) mut
+			{
+				return VT.get_accName(&this, varChild, pszName);
+			}
+			public HRESULT get_accValue(VARIANT varChild, BSTR* pszValue) mut
+			{
+				return VT.get_accValue(&this, varChild, pszValue);
+			}
+			public HRESULT get_accDescription(VARIANT varChild, BSTR* pszDescription) mut
+			{
+				return VT.get_accDescription(&this, varChild, pszDescription);
+			}
+			public HRESULT get_accRole(VARIANT varChild, VARIANT* pvarRole) mut
+			{
+				return VT.get_accRole(&this, varChild, pvarRole);
+			}
+			public HRESULT get_accState(VARIANT varChild, VARIANT* pvarState) mut
+			{
+				return VT.get_accState(&this, varChild, pvarState);
+			}
+			public HRESULT get_accHelp(VARIANT varChild, BSTR* pszHelp) mut
+			{
+				return VT.get_accHelp(&this, varChild, pszHelp);
+			}
+			public HRESULT get_accHelpTopic(BSTR* pszHelpFile, VARIANT varChild, int32* pidTopic) mut
+			{
+				return VT.get_accHelpTopic(&this, pszHelpFile, varChild, pidTopic);
+			}
+			public HRESULT get_accKeyboardShortcut(VARIANT varChild, BSTR* pszKeyboardShortcut) mut
+			{
+				return VT.get_accKeyboardShortcut(&this, varChild, pszKeyboardShortcut);
+			}
+			public HRESULT get_accFocus(VARIANT* pvarChild) mut
+			{
+				return VT.get_accFocus(&this, pvarChild);
+			}
+			public HRESULT get_accSelection(VARIANT* pvarChildren) mut
+			{
+				return VT.get_accSelection(&this, pvarChildren);
+			}
+			public HRESULT get_accDefaultAction(VARIANT varChild, BSTR* pszDefaultAction) mut
+			{
+				return VT.get_accDefaultAction(&this, varChild, pszDefaultAction);
+			}
+			public HRESULT accSelect(int32 flagsSelect, VARIANT varChild) mut
+			{
+				return VT.accSelect(&this, flagsSelect, varChild);
+			}
+			public HRESULT accLocation(int32* pxLeft, int32* pyTop, int32* pcxWidth, int32* pcyHeight, VARIANT varChild) mut
+			{
+				return VT.accLocation(&this, pxLeft, pyTop, pcxWidth, pcyHeight, varChild);
+			}
+			public HRESULT accNavigate(int32 navDir, VARIANT varStart, VARIANT* pvarEndUpAt) mut
+			{
+				return VT.accNavigate(&this, navDir, varStart, pvarEndUpAt);
+			}
+			public HRESULT accHitTest(int32 xLeft, int32 yTop, VARIANT* pvarChild) mut
+			{
+				return VT.accHitTest(&this, xLeft, yTop, pvarChild);
+			}
+			public HRESULT accDoDefaultAction(VARIANT varChild) mut
+			{
+				return VT.accDoDefaultAction(&this, varChild);
+			}
+			public HRESULT put_accName(VARIANT varChild, BSTR szName) mut
+			{
+				return VT.put_accName(&this, varChild, szName);
+			}
+			public HRESULT put_accValue(VARIANT varChild, BSTR szValue) mut
+			{
+				return VT.put_accValue(&this, varChild, szValue);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAccessible *self, IDispatch** ppdispParent) get_accParent;
-				public function HRESULT(IAccessible *self, int32* pcountChildren) get_accChildCount;
-				public function HRESULT(IAccessible *self, VARIANT varChild, IDispatch** ppdispChild) get_accChild;
-				public function HRESULT(IAccessible *self, VARIANT varChild, BSTR* pszName) get_accName;
-				public function HRESULT(IAccessible *self, VARIANT varChild, BSTR* pszValue) get_accValue;
-				public function HRESULT(IAccessible *self, VARIANT varChild, BSTR* pszDescription) get_accDescription;
-				public function HRESULT(IAccessible *self, VARIANT varChild, VARIANT* pvarRole) get_accRole;
-				public function HRESULT(IAccessible *self, VARIANT varChild, VARIANT* pvarState) get_accState;
-				public function HRESULT(IAccessible *self, VARIANT varChild, BSTR* pszHelp) get_accHelp;
-				public function HRESULT(IAccessible *self, BSTR* pszHelpFile, VARIANT varChild, int32* pidTopic) get_accHelpTopic;
-				public function HRESULT(IAccessible *self, VARIANT varChild, BSTR* pszKeyboardShortcut) get_accKeyboardShortcut;
-				public function HRESULT(IAccessible *self, VARIANT* pvarChild) get_accFocus;
-				public function HRESULT(IAccessible *self, VARIANT* pvarChildren) get_accSelection;
-				public function HRESULT(IAccessible *self, VARIANT varChild, BSTR* pszDefaultAction) get_accDefaultAction;
-				public function HRESULT(IAccessible *self, int32 flagsSelect, VARIANT varChild) accSelect;
-				public function HRESULT(IAccessible *self, int32* pxLeft, int32* pyTop, int32* pcxWidth, int32* pcyHeight, VARIANT varChild) accLocation;
-				public function HRESULT(IAccessible *self, int32 navDir, VARIANT varStart, VARIANT* pvarEndUpAt) accNavigate;
-				public function HRESULT(IAccessible *self, int32 xLeft, int32 yTop, VARIANT* pvarChild) accHitTest;
-				public function HRESULT(IAccessible *self, VARIANT varChild) accDoDefaultAction;
-				public function HRESULT(IAccessible *self, VARIANT varChild, BSTR szName) put_accName;
-				public function HRESULT(IAccessible *self, VARIANT varChild, BSTR szValue) put_accValue;
+				public new function HRESULT(IAccessible *self, IDispatch** ppdispParent) get_accParent;
+				public new function HRESULT(IAccessible *self, int32* pcountChildren) get_accChildCount;
+				public new function HRESULT(IAccessible *self, VARIANT varChild, IDispatch** ppdispChild) get_accChild;
+				public new function HRESULT(IAccessible *self, VARIANT varChild, BSTR* pszName) get_accName;
+				public new function HRESULT(IAccessible *self, VARIANT varChild, BSTR* pszValue) get_accValue;
+				public new function HRESULT(IAccessible *self, VARIANT varChild, BSTR* pszDescription) get_accDescription;
+				public new function HRESULT(IAccessible *self, VARIANT varChild, VARIANT* pvarRole) get_accRole;
+				public new function HRESULT(IAccessible *self, VARIANT varChild, VARIANT* pvarState) get_accState;
+				public new function HRESULT(IAccessible *self, VARIANT varChild, BSTR* pszHelp) get_accHelp;
+				public new function HRESULT(IAccessible *self, BSTR* pszHelpFile, VARIANT varChild, int32* pidTopic) get_accHelpTopic;
+				public new function HRESULT(IAccessible *self, VARIANT varChild, BSTR* pszKeyboardShortcut) get_accKeyboardShortcut;
+				public new function HRESULT(IAccessible *self, VARIANT* pvarChild) get_accFocus;
+				public new function HRESULT(IAccessible *self, VARIANT* pvarChildren) get_accSelection;
+				public new function HRESULT(IAccessible *self, VARIANT varChild, BSTR* pszDefaultAction) get_accDefaultAction;
+				public new function HRESULT(IAccessible *self, int32 flagsSelect, VARIANT varChild) accSelect;
+				public new function HRESULT(IAccessible *self, int32* pxLeft, int32* pyTop, int32* pcxWidth, int32* pcyHeight, VARIANT varChild) accLocation;
+				public new function HRESULT(IAccessible *self, int32 navDir, VARIANT varStart, VARIANT* pvarEndUpAt) accNavigate;
+				public new function HRESULT(IAccessible *self, int32 xLeft, int32 yTop, VARIANT* pvarChild) accHitTest;
+				public new function HRESULT(IAccessible *self, VARIANT varChild) accDoDefaultAction;
+				public new function HRESULT(IAccessible *self, VARIANT varChild, BSTR szName) put_accName;
+				public new function HRESULT(IAccessible *self, VARIANT varChild, BSTR szValue) put_accValue;
 			}
 		}
 		[CRepr]
@@ -1863,11 +1962,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x03022430, 0xabc4, 0x11d0, 0xbd, 0xe2, 0x00, 0xaa, 0x00, 0x1a, 0x19, 0x53);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AccessibleObjectFromID(int32 hwnd, int32 lObjectID, IAccessible** pIAccessible) mut
+			{
+				return VT.AccessibleObjectFromID(&this, hwnd, lObjectID, pIAccessible);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAccessibleHandler *self, int32 hwnd, int32 lObjectID, IAccessible** pIAccessible) AccessibleObjectFromID;
+				public new function HRESULT(IAccessibleHandler *self, int32 hwnd, int32 lObjectID, IAccessible** pIAccessible) AccessibleObjectFromID;
 			}
 		}
 		[CRepr]
@@ -1875,14 +1979,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbf3abd9c, 0x76da, 0x4389, 0x9e, 0xb6, 0x14, 0x27, 0xd2, 0x5a, 0xba, 0xb7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AcquireObjectIdRange(int32 rangeSize, IAccessibleHandler* pRangeOwner, int32* pRangeBase) mut
+			{
+				return VT.AcquireObjectIdRange(&this, rangeSize, pRangeOwner, pRangeBase);
+			}
+			public HRESULT ReleaseObjectIdRange(int32 rangeBase, IAccessibleHandler* pRangeOwner) mut
+			{
+				return VT.ReleaseObjectIdRange(&this, rangeBase, pRangeOwner);
+			}
+			public HRESULT QueryObjectIdRanges(IAccessibleHandler* pRangesOwner, SAFEARRAY** psaRanges) mut
+			{
+				return VT.QueryObjectIdRanges(&this, pRangesOwner, psaRanges);
+			}
+			public HRESULT GetParentAccessible(IAccessible** ppParent) mut
+			{
+				return VT.GetParentAccessible(&this, ppParent);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAccessibleWindowlessSite *self, int32 rangeSize, IAccessibleHandler* pRangeOwner, int32* pRangeBase) AcquireObjectIdRange;
-				public function HRESULT(IAccessibleWindowlessSite *self, int32 rangeBase, IAccessibleHandler* pRangeOwner) ReleaseObjectIdRange;
-				public function HRESULT(IAccessibleWindowlessSite *self, IAccessibleHandler* pRangesOwner, SAFEARRAY** psaRanges) QueryObjectIdRanges;
-				public function HRESULT(IAccessibleWindowlessSite *self, IAccessible** ppParent) GetParentAccessible;
+				public new function HRESULT(IAccessibleWindowlessSite *self, int32 rangeSize, IAccessibleHandler* pRangeOwner, int32* pRangeBase) AcquireObjectIdRange;
+				public new function HRESULT(IAccessibleWindowlessSite *self, int32 rangeBase, IAccessibleHandler* pRangeOwner) ReleaseObjectIdRange;
+				public new function HRESULT(IAccessibleWindowlessSite *self, IAccessibleHandler* pRangesOwner, SAFEARRAY** psaRanges) QueryObjectIdRanges;
+				public new function HRESULT(IAccessibleWindowlessSite *self, IAccessible** ppParent) GetParentAccessible;
 			}
 		}
 		[CRepr]
@@ -1890,11 +2011,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7852b78d, 0x1cfd, 0x41c1, 0xa6, 0x15, 0x9c, 0x0c, 0x85, 0x96, 0x0b, 0x5f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetIdentityString(uint32 dwIDChild, uint8** ppIDString, uint32* pdwIDStringLen) mut
+			{
+				return VT.GetIdentityString(&this, dwIDChild, ppIDString, pdwIDStringLen);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAccIdentity *self, uint32 dwIDChild, uint8** ppIDString, uint32* pdwIDStringLen) GetIdentityString;
+				public new function HRESULT(IAccIdentity *self, uint32 dwIDChild, uint8** ppIDString, uint32* pdwIDStringLen) GetIdentityString;
 			}
 		}
 		[CRepr]
@@ -1902,11 +2028,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x76c0dbbb, 0x15e0, 0x4e7b, 0xb6, 0x1b, 0x20, 0xee, 0xea, 0x20, 0x01, 0xe0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPropValue(uint8* pIDString, uint32 dwIDStringLen, Guid idProp, VARIANT* pvarValue, BOOL* pfHasProp) mut
+			{
+				return VT.GetPropValue(&this, pIDString, dwIDStringLen, idProp, pvarValue, pfHasProp);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAccPropServer *self, uint8* pIDString, uint32 dwIDStringLen, Guid idProp, VARIANT* pvarValue, BOOL* pfHasProp) GetPropValue;
+				public new function HRESULT(IAccPropServer *self, uint8* pIDString, uint32 dwIDStringLen, Guid idProp, VARIANT* pvarValue, BOOL* pfHasProp) GetPropValue;
 			}
 		}
 		[CRepr]
@@ -1914,25 +2045,86 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6e26e776, 0x04f0, 0x495d, 0x80, 0xe4, 0x33, 0x30, 0x35, 0x2e, 0x31, 0x69);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetPropValue(uint8* pIDString, uint32 dwIDStringLen, Guid idProp, VARIANT @var) mut
+			{
+				return VT.SetPropValue(&this, pIDString, dwIDStringLen, idProp, @var);
+			}
+			public HRESULT SetPropServer(uint8* pIDString, uint32 dwIDStringLen, Guid* paProps, int32 cProps, IAccPropServer* pServer, AnnoScope annoScope) mut
+			{
+				return VT.SetPropServer(&this, pIDString, dwIDStringLen, paProps, cProps, pServer, annoScope);
+			}
+			public HRESULT ClearProps(uint8* pIDString, uint32 dwIDStringLen, Guid* paProps, int32 cProps) mut
+			{
+				return VT.ClearProps(&this, pIDString, dwIDStringLen, paProps, cProps);
+			}
+			public HRESULT SetHwndProp(HWND hwnd, uint32 idObject, uint32 idChild, Guid idProp, VARIANT @var) mut
+			{
+				return VT.SetHwndProp(&this, hwnd, idObject, idChild, idProp, @var);
+			}
+			public HRESULT SetHwndPropStr(HWND hwnd, uint32 idObject, uint32 idChild, Guid idProp, PWSTR str) mut
+			{
+				return VT.SetHwndPropStr(&this, hwnd, idObject, idChild, idProp, str);
+			}
+			public HRESULT SetHwndPropServer(HWND hwnd, uint32 idObject, uint32 idChild, Guid* paProps, int32 cProps, IAccPropServer* pServer, AnnoScope annoScope) mut
+			{
+				return VT.SetHwndPropServer(&this, hwnd, idObject, idChild, paProps, cProps, pServer, annoScope);
+			}
+			public HRESULT ClearHwndProps(HWND hwnd, uint32 idObject, uint32 idChild, Guid* paProps, int32 cProps) mut
+			{
+				return VT.ClearHwndProps(&this, hwnd, idObject, idChild, paProps, cProps);
+			}
+			public HRESULT ComposeHwndIdentityString(HWND hwnd, uint32 idObject, uint32 idChild, uint8** ppIDString, uint32* pdwIDStringLen) mut
+			{
+				return VT.ComposeHwndIdentityString(&this, hwnd, idObject, idChild, ppIDString, pdwIDStringLen);
+			}
+			public HRESULT DecomposeHwndIdentityString(uint8* pIDString, uint32 dwIDStringLen, HWND* phwnd, uint32* pidObject, uint32* pidChild) mut
+			{
+				return VT.DecomposeHwndIdentityString(&this, pIDString, dwIDStringLen, phwnd, pidObject, pidChild);
+			}
+			public HRESULT SetHmenuProp(HMENU hmenu, uint32 idChild, Guid idProp, VARIANT @var) mut
+			{
+				return VT.SetHmenuProp(&this, hmenu, idChild, idProp, @var);
+			}
+			public HRESULT SetHmenuPropStr(HMENU hmenu, uint32 idChild, Guid idProp, PWSTR str) mut
+			{
+				return VT.SetHmenuPropStr(&this, hmenu, idChild, idProp, str);
+			}
+			public HRESULT SetHmenuPropServer(HMENU hmenu, uint32 idChild, Guid* paProps, int32 cProps, IAccPropServer* pServer, AnnoScope annoScope) mut
+			{
+				return VT.SetHmenuPropServer(&this, hmenu, idChild, paProps, cProps, pServer, annoScope);
+			}
+			public HRESULT ClearHmenuProps(HMENU hmenu, uint32 idChild, Guid* paProps, int32 cProps) mut
+			{
+				return VT.ClearHmenuProps(&this, hmenu, idChild, paProps, cProps);
+			}
+			public HRESULT ComposeHmenuIdentityString(HMENU hmenu, uint32 idChild, uint8** ppIDString, uint32* pdwIDStringLen) mut
+			{
+				return VT.ComposeHmenuIdentityString(&this, hmenu, idChild, ppIDString, pdwIDStringLen);
+			}
+			public HRESULT DecomposeHmenuIdentityString(uint8* pIDString, uint32 dwIDStringLen, HMENU* phmenu, uint32* pidChild) mut
+			{
+				return VT.DecomposeHmenuIdentityString(&this, pIDString, dwIDStringLen, phmenu, pidChild);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAccPropServices *self, uint8* pIDString, uint32 dwIDStringLen, Guid idProp, VARIANT @var) SetPropValue;
-				public function HRESULT(IAccPropServices *self, uint8* pIDString, uint32 dwIDStringLen, Guid* paProps, int32 cProps, IAccPropServer* pServer, AnnoScope annoScope) SetPropServer;
-				public function HRESULT(IAccPropServices *self, uint8* pIDString, uint32 dwIDStringLen, Guid* paProps, int32 cProps) ClearProps;
-				public function HRESULT(IAccPropServices *self, HWND hwnd, uint32 idObject, uint32 idChild, Guid idProp, VARIANT @var) SetHwndProp;
-				public function HRESULT(IAccPropServices *self, HWND hwnd, uint32 idObject, uint32 idChild, Guid idProp, PWSTR str) SetHwndPropStr;
-				public function HRESULT(IAccPropServices *self, HWND hwnd, uint32 idObject, uint32 idChild, Guid* paProps, int32 cProps, IAccPropServer* pServer, AnnoScope annoScope) SetHwndPropServer;
-				public function HRESULT(IAccPropServices *self, HWND hwnd, uint32 idObject, uint32 idChild, Guid* paProps, int32 cProps) ClearHwndProps;
-				public function HRESULT(IAccPropServices *self, HWND hwnd, uint32 idObject, uint32 idChild, uint8** ppIDString, uint32* pdwIDStringLen) ComposeHwndIdentityString;
-				public function HRESULT(IAccPropServices *self, uint8* pIDString, uint32 dwIDStringLen, HWND* phwnd, uint32* pidObject, uint32* pidChild) DecomposeHwndIdentityString;
-				public function HRESULT(IAccPropServices *self, HMENU hmenu, uint32 idChild, Guid idProp, VARIANT @var) SetHmenuProp;
-				public function HRESULT(IAccPropServices *self, HMENU hmenu, uint32 idChild, Guid idProp, PWSTR str) SetHmenuPropStr;
-				public function HRESULT(IAccPropServices *self, HMENU hmenu, uint32 idChild, Guid* paProps, int32 cProps, IAccPropServer* pServer, AnnoScope annoScope) SetHmenuPropServer;
-				public function HRESULT(IAccPropServices *self, HMENU hmenu, uint32 idChild, Guid* paProps, int32 cProps) ClearHmenuProps;
-				public function HRESULT(IAccPropServices *self, HMENU hmenu, uint32 idChild, uint8** ppIDString, uint32* pdwIDStringLen) ComposeHmenuIdentityString;
-				public function HRESULT(IAccPropServices *self, uint8* pIDString, uint32 dwIDStringLen, HMENU* phmenu, uint32* pidChild) DecomposeHmenuIdentityString;
+				public new function HRESULT(IAccPropServices *self, uint8* pIDString, uint32 dwIDStringLen, Guid idProp, VARIANT @var) SetPropValue;
+				public new function HRESULT(IAccPropServices *self, uint8* pIDString, uint32 dwIDStringLen, Guid* paProps, int32 cProps, IAccPropServer* pServer, AnnoScope annoScope) SetPropServer;
+				public new function HRESULT(IAccPropServices *self, uint8* pIDString, uint32 dwIDStringLen, Guid* paProps, int32 cProps) ClearProps;
+				public new function HRESULT(IAccPropServices *self, HWND hwnd, uint32 idObject, uint32 idChild, Guid idProp, VARIANT @var) SetHwndProp;
+				public new function HRESULT(IAccPropServices *self, HWND hwnd, uint32 idObject, uint32 idChild, Guid idProp, PWSTR str) SetHwndPropStr;
+				public new function HRESULT(IAccPropServices *self, HWND hwnd, uint32 idObject, uint32 idChild, Guid* paProps, int32 cProps, IAccPropServer* pServer, AnnoScope annoScope) SetHwndPropServer;
+				public new function HRESULT(IAccPropServices *self, HWND hwnd, uint32 idObject, uint32 idChild, Guid* paProps, int32 cProps) ClearHwndProps;
+				public new function HRESULT(IAccPropServices *self, HWND hwnd, uint32 idObject, uint32 idChild, uint8** ppIDString, uint32* pdwIDStringLen) ComposeHwndIdentityString;
+				public new function HRESULT(IAccPropServices *self, uint8* pIDString, uint32 dwIDStringLen, HWND* phwnd, uint32* pidObject, uint32* pidChild) DecomposeHwndIdentityString;
+				public new function HRESULT(IAccPropServices *self, HMENU hmenu, uint32 idChild, Guid idProp, VARIANT @var) SetHmenuProp;
+				public new function HRESULT(IAccPropServices *self, HMENU hmenu, uint32 idChild, Guid idProp, PWSTR str) SetHmenuPropStr;
+				public new function HRESULT(IAccPropServices *self, HMENU hmenu, uint32 idChild, Guid* paProps, int32 cProps, IAccPropServer* pServer, AnnoScope annoScope) SetHmenuPropServer;
+				public new function HRESULT(IAccPropServices *self, HMENU hmenu, uint32 idChild, Guid* paProps, int32 cProps) ClearHmenuProps;
+				public new function HRESULT(IAccPropServices *self, HMENU hmenu, uint32 idChild, uint8** ppIDString, uint32* pdwIDStringLen) ComposeHmenuIdentityString;
+				public new function HRESULT(IAccPropServices *self, uint8* pIDString, uint32 dwIDStringLen, HMENU* phmenu, uint32* pidChild) DecomposeHmenuIdentityString;
 			}
 		}
 		[CRepr]
@@ -1940,14 +2132,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd6dd68d1, 0x86fd, 0x4332, 0x86, 0x66, 0x9a, 0xbe, 0xde, 0xa2, 0xd2, 0x4c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ProviderOptions(ProviderOptions* pRetVal) mut
+			{
+				return VT.get_ProviderOptions(&this, pRetVal);
+			}
+			public HRESULT GetPatternProvider(int32 patternId, IUnknown** pRetVal) mut
+			{
+				return VT.GetPatternProvider(&this, patternId, pRetVal);
+			}
+			public HRESULT GetPropertyValue(int32 propertyId, VARIANT* pRetVal) mut
+			{
+				return VT.GetPropertyValue(&this, propertyId, pRetVal);
+			}
+			public HRESULT get_HostRawElementProvider(IRawElementProviderSimple** pRetVal) mut
+			{
+				return VT.get_HostRawElementProvider(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRawElementProviderSimple *self, ProviderOptions* pRetVal) get_ProviderOptions;
-				public function HRESULT(IRawElementProviderSimple *self, int32 patternId, IUnknown** pRetVal) GetPatternProvider;
-				public function HRESULT(IRawElementProviderSimple *self, int32 propertyId, VARIANT* pRetVal) GetPropertyValue;
-				public function HRESULT(IRawElementProviderSimple *self, IRawElementProviderSimple** pRetVal) get_HostRawElementProvider;
+				public new function HRESULT(IRawElementProviderSimple *self, ProviderOptions* pRetVal) get_ProviderOptions;
+				public new function HRESULT(IRawElementProviderSimple *self, int32 patternId, IUnknown** pRetVal) GetPatternProvider;
+				public new function HRESULT(IRawElementProviderSimple *self, int32 propertyId, VARIANT* pRetVal) GetPropertyValue;
+				public new function HRESULT(IRawElementProviderSimple *self, IRawElementProviderSimple** pRetVal) get_HostRawElementProvider;
 			}
 		}
 		[CRepr]
@@ -1955,14 +2164,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf8b80ada, 0x2c44, 0x48d0, 0x89, 0xbe, 0x5f, 0xf2, 0x3c, 0x9c, 0xd8, 0x75);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetObjectForChild(int32 idChild, IAccessibleEx** pRetVal) mut
+			{
+				return VT.GetObjectForChild(&this, idChild, pRetVal);
+			}
+			public HRESULT GetIAccessiblePair(IAccessible** ppAcc, int32* pidChild) mut
+			{
+				return VT.GetIAccessiblePair(&this, ppAcc, pidChild);
+			}
+			public HRESULT GetRuntimeId(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetRuntimeId(&this, pRetVal);
+			}
+			public HRESULT ConvertReturnedElement(IRawElementProviderSimple* pIn, IAccessibleEx** ppRetValOut) mut
+			{
+				return VT.ConvertReturnedElement(&this, pIn, ppRetValOut);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAccessibleEx *self, int32 idChild, IAccessibleEx** pRetVal) GetObjectForChild;
-				public function HRESULT(IAccessibleEx *self, IAccessible** ppAcc, int32* pidChild) GetIAccessiblePair;
-				public function HRESULT(IAccessibleEx *self, SAFEARRAY** pRetVal) GetRuntimeId;
-				public function HRESULT(IAccessibleEx *self, IRawElementProviderSimple* pIn, IAccessibleEx** ppRetValOut) ConvertReturnedElement;
+				public new function HRESULT(IAccessibleEx *self, int32 idChild, IAccessibleEx** pRetVal) GetObjectForChild;
+				public new function HRESULT(IAccessibleEx *self, IAccessible** ppAcc, int32* pidChild) GetIAccessiblePair;
+				public new function HRESULT(IAccessibleEx *self, SAFEARRAY** pRetVal) GetRuntimeId;
+				public new function HRESULT(IAccessibleEx *self, IRawElementProviderSimple* pIn, IAccessibleEx** ppRetValOut) ConvertReturnedElement;
 			}
 		}
 		[CRepr]
@@ -1970,11 +2196,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa0a839a9, 0x8da1, 0x4a82, 0x80, 0x6a, 0x8e, 0x0d, 0x44, 0xe7, 0x9f, 0x56);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ShowContextMenu() mut
+			{
+				return VT.ShowContextMenu(&this);
+			}
 			[CRepr]
 			public struct VTable : IRawElementProviderSimple.VTable
 			{
-				public function HRESULT(IRawElementProviderSimple2 *self) ShowContextMenu;
+				public new function HRESULT(IRawElementProviderSimple2 *self) ShowContextMenu;
 			}
 		}
 		[CRepr]
@@ -1982,11 +2213,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfcf5d820, 0xd7ec, 0x4613, 0xbd, 0xf6, 0x42, 0xa8, 0x4c, 0xe7, 0xda, 0xaf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetMetadataValue(int32 targetId, int32 metadataId, VARIANT* returnVal) mut
+			{
+				return VT.GetMetadataValue(&this, targetId, metadataId, returnVal);
+			}
 			[CRepr]
 			public struct VTable : IRawElementProviderSimple2.VTable
 			{
-				public function HRESULT(IRawElementProviderSimple3 *self, int32 targetId, int32 metadataId, VARIANT* returnVal) GetMetadataValue;
+				public new function HRESULT(IRawElementProviderSimple3 *self, int32 targetId, int32 metadataId, VARIANT* returnVal) GetMetadataValue;
 			}
 		}
 		[CRepr]
@@ -1994,12 +2230,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x620ce2a5, 0xab8f, 0x40a9, 0x86, 0xcb, 0xde, 0x3c, 0x75, 0x59, 0x9b, 0x58);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ElementProviderFromPoint(double x, double y, IRawElementProviderFragment** pRetVal) mut
+			{
+				return VT.ElementProviderFromPoint(&this, x, y, pRetVal);
+			}
+			public HRESULT GetFocus(IRawElementProviderFragment** pRetVal) mut
+			{
+				return VT.GetFocus(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRawElementProviderFragmentRoot *self, double x, double y, IRawElementProviderFragment** pRetVal) ElementProviderFromPoint;
-				public function HRESULT(IRawElementProviderFragmentRoot *self, IRawElementProviderFragment** pRetVal) GetFocus;
+				public new function HRESULT(IRawElementProviderFragmentRoot *self, double x, double y, IRawElementProviderFragment** pRetVal) ElementProviderFromPoint;
+				public new function HRESULT(IRawElementProviderFragmentRoot *self, IRawElementProviderFragment** pRetVal) GetFocus;
 			}
 		}
 		[CRepr]
@@ -2007,16 +2252,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf7063da8, 0x8359, 0x439c, 0x92, 0x97, 0xbb, 0xc5, 0x29, 0x9a, 0x7d, 0x87);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Navigate(NavigateDirection direction, IRawElementProviderFragment** pRetVal) mut
+			{
+				return VT.Navigate(&this, direction, pRetVal);
+			}
+			public HRESULT GetRuntimeId(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetRuntimeId(&this, pRetVal);
+			}
+			public HRESULT get_BoundingRectangle(UiaRect* pRetVal) mut
+			{
+				return VT.get_BoundingRectangle(&this, pRetVal);
+			}
+			public HRESULT GetEmbeddedFragmentRoots(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetEmbeddedFragmentRoots(&this, pRetVal);
+			}
+			public HRESULT SetFocus() mut
+			{
+				return VT.SetFocus(&this);
+			}
+			public HRESULT get_FragmentRoot(IRawElementProviderFragmentRoot** pRetVal) mut
+			{
+				return VT.get_FragmentRoot(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRawElementProviderFragment *self, NavigateDirection direction, IRawElementProviderFragment** pRetVal) Navigate;
-				public function HRESULT(IRawElementProviderFragment *self, SAFEARRAY** pRetVal) GetRuntimeId;
-				public function HRESULT(IRawElementProviderFragment *self, UiaRect* pRetVal) get_BoundingRectangle;
-				public function HRESULT(IRawElementProviderFragment *self, SAFEARRAY** pRetVal) GetEmbeddedFragmentRoots;
-				public function HRESULT(IRawElementProviderFragment *self) SetFocus;
-				public function HRESULT(IRawElementProviderFragment *self, IRawElementProviderFragmentRoot** pRetVal) get_FragmentRoot;
+				public new function HRESULT(IRawElementProviderFragment *self, NavigateDirection direction, IRawElementProviderFragment** pRetVal) Navigate;
+				public new function HRESULT(IRawElementProviderFragment *self, SAFEARRAY** pRetVal) GetRuntimeId;
+				public new function HRESULT(IRawElementProviderFragment *self, UiaRect* pRetVal) get_BoundingRectangle;
+				public new function HRESULT(IRawElementProviderFragment *self, SAFEARRAY** pRetVal) GetEmbeddedFragmentRoots;
+				public new function HRESULT(IRawElementProviderFragment *self) SetFocus;
+				public new function HRESULT(IRawElementProviderFragment *self, IRawElementProviderFragmentRoot** pRetVal) get_FragmentRoot;
 			}
 		}
 		[CRepr]
@@ -2024,12 +2294,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa407b27b, 0x0f6d, 0x4427, 0x92, 0x92, 0x47, 0x3c, 0x7b, 0xf9, 0x32, 0x58);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AdviseEventAdded(int32 eventId, SAFEARRAY* propertyIDs) mut
+			{
+				return VT.AdviseEventAdded(&this, eventId, propertyIDs);
+			}
+			public HRESULT AdviseEventRemoved(int32 eventId, SAFEARRAY* propertyIDs) mut
+			{
+				return VT.AdviseEventRemoved(&this, eventId, propertyIDs);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRawElementProviderAdviseEvents *self, int32 eventId, SAFEARRAY* propertyIDs) AdviseEventAdded;
-				public function HRESULT(IRawElementProviderAdviseEvents *self, int32 eventId, SAFEARRAY* propertyIDs) AdviseEventRemoved;
+				public new function HRESULT(IRawElementProviderAdviseEvents *self, int32 eventId, SAFEARRAY* propertyIDs) AdviseEventAdded;
+				public new function HRESULT(IRawElementProviderAdviseEvents *self, int32 eventId, SAFEARRAY* propertyIDs) AdviseEventRemoved;
 			}
 		}
 		[CRepr]
@@ -2037,11 +2316,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1d5df27c, 0x8947, 0x4425, 0xb8, 0xd9, 0x79, 0x78, 0x7b, 0xb4, 0x60, 0xb8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetOverrideProviderForHwnd(HWND hwnd, IRawElementProviderSimple** pRetVal) mut
+			{
+				return VT.GetOverrideProviderForHwnd(&this, hwnd, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRawElementProviderHwndOverride *self, HWND hwnd, IRawElementProviderSimple** pRetVal) GetOverrideProviderForHwnd;
+				public new function HRESULT(IRawElementProviderHwndOverride *self, HWND hwnd, IRawElementProviderSimple** pRetVal) GetOverrideProviderForHwnd;
 			}
 		}
 		[CRepr]
@@ -2049,13 +2333,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4fd82b78, 0xa43e, 0x46ac, 0x98, 0x03, 0x0a, 0x69, 0x69, 0xc7, 0xc1, 0x83);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddAutomationPropertyChangedEvent(IRawElementProviderSimple* pProvider, int32 id, VARIANT newValue) mut
+			{
+				return VT.AddAutomationPropertyChangedEvent(&this, pProvider, id, newValue);
+			}
+			public HRESULT AddAutomationEvent(IRawElementProviderSimple* pProvider, int32 id) mut
+			{
+				return VT.AddAutomationEvent(&this, pProvider, id);
+			}
+			public HRESULT AddStructureChangedEvent(IRawElementProviderSimple* pProvider, StructureChangeType structureChangeType, SAFEARRAY* runtimeId) mut
+			{
+				return VT.AddStructureChangedEvent(&this, pProvider, structureChangeType, runtimeId);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IProxyProviderWinEventSink *self, IRawElementProviderSimple* pProvider, int32 id, VARIANT newValue) AddAutomationPropertyChangedEvent;
-				public function HRESULT(IProxyProviderWinEventSink *self, IRawElementProviderSimple* pProvider, int32 id) AddAutomationEvent;
-				public function HRESULT(IProxyProviderWinEventSink *self, IRawElementProviderSimple* pProvider, StructureChangeType structureChangeType, SAFEARRAY* runtimeId) AddStructureChangedEvent;
+				public new function HRESULT(IProxyProviderWinEventSink *self, IRawElementProviderSimple* pProvider, int32 id, VARIANT newValue) AddAutomationPropertyChangedEvent;
+				public new function HRESULT(IProxyProviderWinEventSink *self, IRawElementProviderSimple* pProvider, int32 id) AddAutomationEvent;
+				public new function HRESULT(IProxyProviderWinEventSink *self, IRawElementProviderSimple* pProvider, StructureChangeType structureChangeType, SAFEARRAY* runtimeId) AddStructureChangedEvent;
 			}
 		}
 		[CRepr]
@@ -2063,11 +2360,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x89592ad4, 0xf4e0, 0x43d5, 0xa3, 0xb6, 0xba, 0xd7, 0xe1, 0x11, 0xb4, 0x35);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RespondToWinEvent(uint32 idWinEvent, HWND hwnd, int32 idObject, int32 idChild, IProxyProviderWinEventSink* pSink) mut
+			{
+				return VT.RespondToWinEvent(&this, idWinEvent, hwnd, idObject, idChild, pSink);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IProxyProviderWinEventHandler *self, uint32 idWinEvent, HWND hwnd, int32 idObject, int32 idChild, IProxyProviderWinEventSink* pSink) RespondToWinEvent;
+				public new function HRESULT(IProxyProviderWinEventHandler *self, uint32 idWinEvent, HWND hwnd, int32 idObject, int32 idChild, IProxyProviderWinEventSink* pSink) RespondToWinEvent;
 			}
 		}
 		[CRepr]
@@ -2075,12 +2377,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0a2a93cc, 0xbfad, 0x42ac, 0x9b, 0x2e, 0x09, 0x91, 0xfb, 0x0d, 0x3e, 0xa0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetAdjacentFragment(NavigateDirection direction, IRawElementProviderFragment** ppParent) mut
+			{
+				return VT.GetAdjacentFragment(&this, direction, ppParent);
+			}
+			public HRESULT GetRuntimeIdPrefix(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetRuntimeIdPrefix(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRawElementProviderWindowlessSite *self, NavigateDirection direction, IRawElementProviderFragment** ppParent) GetAdjacentFragment;
-				public function HRESULT(IRawElementProviderWindowlessSite *self, SAFEARRAY** pRetVal) GetRuntimeIdPrefix;
+				public new function HRESULT(IRawElementProviderWindowlessSite *self, NavigateDirection direction, IRawElementProviderFragment** ppParent) GetAdjacentFragment;
+				public new function HRESULT(IRawElementProviderWindowlessSite *self, SAFEARRAY** pRetVal) GetRuntimeIdPrefix;
 			}
 		}
 		[CRepr]
@@ -2088,12 +2399,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x33ac331b, 0x943e, 0x4020, 0xb2, 0x95, 0xdb, 0x37, 0x78, 0x49, 0x74, 0xa3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetEmbeddedFragmentRoots(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetEmbeddedFragmentRoots(&this, pRetVal);
+			}
+			public HRESULT GetObjectIdForProvider(IRawElementProviderSimple* pProvider, int32* pidObject) mut
+			{
+				return VT.GetObjectIdForProvider(&this, pProvider, pidObject);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAccessibleHostingElementProviders *self, SAFEARRAY** pRetVal) GetEmbeddedFragmentRoots;
-				public function HRESULT(IAccessibleHostingElementProviders *self, IRawElementProviderSimple* pProvider, int32* pidObject) GetObjectIdForProvider;
+				public new function HRESULT(IAccessibleHostingElementProviders *self, SAFEARRAY** pRetVal) GetEmbeddedFragmentRoots;
+				public new function HRESULT(IAccessibleHostingElementProviders *self, IRawElementProviderSimple* pProvider, int32* pidObject) GetObjectIdForProvider;
 			}
 		}
 		[CRepr]
@@ -2101,11 +2421,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x24be0b07, 0xd37d, 0x487a, 0x98, 0xcf, 0xa1, 0x3e, 0xd4, 0x65, 0xe9, 0xb3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetEmbeddedAccessibles(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetEmbeddedAccessibles(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRawElementProviderHostingAccessibles *self, SAFEARRAY** pRetVal) GetEmbeddedAccessibles;
+				public new function HRESULT(IRawElementProviderHostingAccessibles *self, SAFEARRAY** pRetVal) GetEmbeddedAccessibles;
 			}
 		}
 		[CRepr]
@@ -2113,12 +2438,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x159bc72c, 0x4ad3, 0x485e, 0x96, 0x37, 0xd7, 0x05, 0x2e, 0xdf, 0x01, 0x46);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetDockPosition(DockPosition dockPosition) mut
+			{
+				return VT.SetDockPosition(&this, dockPosition);
+			}
+			public HRESULT get_DockPosition(DockPosition* pRetVal) mut
+			{
+				return VT.get_DockPosition(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDockProvider *self, DockPosition dockPosition) SetDockPosition;
-				public function HRESULT(IDockProvider *self, DockPosition* pRetVal) get_DockPosition;
+				public new function HRESULT(IDockProvider *self, DockPosition dockPosition) SetDockPosition;
+				public new function HRESULT(IDockProvider *self, DockPosition* pRetVal) get_DockPosition;
 			}
 		}
 		[CRepr]
@@ -2126,13 +2460,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd847d3a5, 0xcab0, 0x4a98, 0x8c, 0x32, 0xec, 0xb4, 0x5c, 0x59, 0xad, 0x24);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Expand() mut
+			{
+				return VT.Expand(&this);
+			}
+			public HRESULT Collapse() mut
+			{
+				return VT.Collapse(&this);
+			}
+			public HRESULT get_ExpandCollapseState(ExpandCollapseState* pRetVal) mut
+			{
+				return VT.get_ExpandCollapseState(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IExpandCollapseProvider *self) Expand;
-				public function HRESULT(IExpandCollapseProvider *self) Collapse;
-				public function HRESULT(IExpandCollapseProvider *self, ExpandCollapseState* pRetVal) get_ExpandCollapseState;
+				public new function HRESULT(IExpandCollapseProvider *self) Expand;
+				public new function HRESULT(IExpandCollapseProvider *self) Collapse;
+				public new function HRESULT(IExpandCollapseProvider *self, ExpandCollapseState* pRetVal) get_ExpandCollapseState;
 			}
 		}
 		[CRepr]
@@ -2140,13 +2487,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb17d6187, 0x0907, 0x464b, 0xa1, 0x68, 0x0e, 0xf1, 0x7a, 0x15, 0x72, 0xb1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetItem(int32 row, int32 column, IRawElementProviderSimple** pRetVal) mut
+			{
+				return VT.GetItem(&this, row, column, pRetVal);
+			}
+			public HRESULT get_RowCount(int32* pRetVal) mut
+			{
+				return VT.get_RowCount(&this, pRetVal);
+			}
+			public HRESULT get_ColumnCount(int32* pRetVal) mut
+			{
+				return VT.get_ColumnCount(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IGridProvider *self, int32 row, int32 column, IRawElementProviderSimple** pRetVal) GetItem;
-				public function HRESULT(IGridProvider *self, int32* pRetVal) get_RowCount;
-				public function HRESULT(IGridProvider *self, int32* pRetVal) get_ColumnCount;
+				public new function HRESULT(IGridProvider *self, int32 row, int32 column, IRawElementProviderSimple** pRetVal) GetItem;
+				public new function HRESULT(IGridProvider *self, int32* pRetVal) get_RowCount;
+				public new function HRESULT(IGridProvider *self, int32* pRetVal) get_ColumnCount;
 			}
 		}
 		[CRepr]
@@ -2154,15 +2514,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd02541f1, 0xfb81, 0x4d64, 0xae, 0x32, 0xf5, 0x20, 0xf8, 0xa6, 0xdb, 0xd1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Row(int32* pRetVal) mut
+			{
+				return VT.get_Row(&this, pRetVal);
+			}
+			public HRESULT get_Column(int32* pRetVal) mut
+			{
+				return VT.get_Column(&this, pRetVal);
+			}
+			public HRESULT get_RowSpan(int32* pRetVal) mut
+			{
+				return VT.get_RowSpan(&this, pRetVal);
+			}
+			public HRESULT get_ColumnSpan(int32* pRetVal) mut
+			{
+				return VT.get_ColumnSpan(&this, pRetVal);
+			}
+			public HRESULT get_ContainingGrid(IRawElementProviderSimple** pRetVal) mut
+			{
+				return VT.get_ContainingGrid(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IGridItemProvider *self, int32* pRetVal) get_Row;
-				public function HRESULT(IGridItemProvider *self, int32* pRetVal) get_Column;
-				public function HRESULT(IGridItemProvider *self, int32* pRetVal) get_RowSpan;
-				public function HRESULT(IGridItemProvider *self, int32* pRetVal) get_ColumnSpan;
-				public function HRESULT(IGridItemProvider *self, IRawElementProviderSimple** pRetVal) get_ContainingGrid;
+				public new function HRESULT(IGridItemProvider *self, int32* pRetVal) get_Row;
+				public new function HRESULT(IGridItemProvider *self, int32* pRetVal) get_Column;
+				public new function HRESULT(IGridItemProvider *self, int32* pRetVal) get_RowSpan;
+				public new function HRESULT(IGridItemProvider *self, int32* pRetVal) get_ColumnSpan;
+				public new function HRESULT(IGridItemProvider *self, IRawElementProviderSimple** pRetVal) get_ContainingGrid;
 			}
 		}
 		[CRepr]
@@ -2170,11 +2551,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x54fcb24b, 0xe18e, 0x47a2, 0xb4, 0xd3, 0xec, 0xcb, 0xe7, 0x75, 0x99, 0xa2);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Invoke() mut
+			{
+				return VT.Invoke(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IInvokeProvider *self) Invoke;
+				public new function HRESULT(IInvokeProvider *self) Invoke;
 			}
 		}
 		[CRepr]
@@ -2182,14 +2568,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6278cab1, 0xb556, 0x4a1a, 0xb4, 0xe0, 0x41, 0x8a, 0xcc, 0x52, 0x32, 0x01);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetViewName(int32 viewId, BSTR* pRetVal) mut
+			{
+				return VT.GetViewName(&this, viewId, pRetVal);
+			}
+			public HRESULT SetCurrentView(int32 viewId) mut
+			{
+				return VT.SetCurrentView(&this, viewId);
+			}
+			public HRESULT get_CurrentView(int32* pRetVal) mut
+			{
+				return VT.get_CurrentView(&this, pRetVal);
+			}
+			public HRESULT GetSupportedViews(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetSupportedViews(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IMultipleViewProvider *self, int32 viewId, BSTR* pRetVal) GetViewName;
-				public function HRESULT(IMultipleViewProvider *self, int32 viewId) SetCurrentView;
-				public function HRESULT(IMultipleViewProvider *self, int32* pRetVal) get_CurrentView;
-				public function HRESULT(IMultipleViewProvider *self, SAFEARRAY** pRetVal) GetSupportedViews;
+				public new function HRESULT(IMultipleViewProvider *self, int32 viewId, BSTR* pRetVal) GetViewName;
+				public new function HRESULT(IMultipleViewProvider *self, int32 viewId) SetCurrentView;
+				public new function HRESULT(IMultipleViewProvider *self, int32* pRetVal) get_CurrentView;
+				public new function HRESULT(IMultipleViewProvider *self, SAFEARRAY** pRetVal) GetSupportedViews;
 			}
 		}
 		[CRepr]
@@ -2197,17 +2600,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x36dc7aef, 0x33e6, 0x4691, 0xaf, 0xe1, 0x2b, 0xe7, 0x27, 0x4b, 0x3d, 0x33);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetValue(double val) mut
+			{
+				return VT.SetValue(&this, val);
+			}
+			public HRESULT get_Value(double* pRetVal) mut
+			{
+				return VT.get_Value(&this, pRetVal);
+			}
+			public HRESULT get_IsReadOnly(BOOL* pRetVal) mut
+			{
+				return VT.get_IsReadOnly(&this, pRetVal);
+			}
+			public HRESULT get_Maximum(double* pRetVal) mut
+			{
+				return VT.get_Maximum(&this, pRetVal);
+			}
+			public HRESULT get_Minimum(double* pRetVal) mut
+			{
+				return VT.get_Minimum(&this, pRetVal);
+			}
+			public HRESULT get_LargeChange(double* pRetVal) mut
+			{
+				return VT.get_LargeChange(&this, pRetVal);
+			}
+			public HRESULT get_SmallChange(double* pRetVal) mut
+			{
+				return VT.get_SmallChange(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRangeValueProvider *self, double val) SetValue;
-				public function HRESULT(IRangeValueProvider *self, double* pRetVal) get_Value;
-				public function HRESULT(IRangeValueProvider *self, BOOL* pRetVal) get_IsReadOnly;
-				public function HRESULT(IRangeValueProvider *self, double* pRetVal) get_Maximum;
-				public function HRESULT(IRangeValueProvider *self, double* pRetVal) get_Minimum;
-				public function HRESULT(IRangeValueProvider *self, double* pRetVal) get_LargeChange;
-				public function HRESULT(IRangeValueProvider *self, double* pRetVal) get_SmallChange;
+				public new function HRESULT(IRangeValueProvider *self, double val) SetValue;
+				public new function HRESULT(IRangeValueProvider *self, double* pRetVal) get_Value;
+				public new function HRESULT(IRangeValueProvider *self, BOOL* pRetVal) get_IsReadOnly;
+				public new function HRESULT(IRangeValueProvider *self, double* pRetVal) get_Maximum;
+				public new function HRESULT(IRangeValueProvider *self, double* pRetVal) get_Minimum;
+				public new function HRESULT(IRangeValueProvider *self, double* pRetVal) get_LargeChange;
+				public new function HRESULT(IRangeValueProvider *self, double* pRetVal) get_SmallChange;
 			}
 		}
 		[CRepr]
@@ -2215,11 +2647,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2360c714, 0x4bf1, 0x4b26, 0xba, 0x65, 0x9b, 0x21, 0x31, 0x61, 0x27, 0xeb);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ScrollIntoView() mut
+			{
+				return VT.ScrollIntoView(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IScrollItemProvider *self) ScrollIntoView;
+				public new function HRESULT(IScrollItemProvider *self) ScrollIntoView;
 			}
 		}
 		[CRepr]
@@ -2227,13 +2664,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfb8b03af, 0x3bdf, 0x48d4, 0xbd, 0x36, 0x1a, 0x65, 0x79, 0x3b, 0xe1, 0x68);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSelection(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetSelection(&this, pRetVal);
+			}
+			public HRESULT get_CanSelectMultiple(BOOL* pRetVal) mut
+			{
+				return VT.get_CanSelectMultiple(&this, pRetVal);
+			}
+			public HRESULT get_IsSelectionRequired(BOOL* pRetVal) mut
+			{
+				return VT.get_IsSelectionRequired(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISelectionProvider *self, SAFEARRAY** pRetVal) GetSelection;
-				public function HRESULT(ISelectionProvider *self, BOOL* pRetVal) get_CanSelectMultiple;
-				public function HRESULT(ISelectionProvider *self, BOOL* pRetVal) get_IsSelectionRequired;
+				public new function HRESULT(ISelectionProvider *self, SAFEARRAY** pRetVal) GetSelection;
+				public new function HRESULT(ISelectionProvider *self, BOOL* pRetVal) get_CanSelectMultiple;
+				public new function HRESULT(ISelectionProvider *self, BOOL* pRetVal) get_IsSelectionRequired;
 			}
 		}
 		[CRepr]
@@ -2241,14 +2691,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x14f68475, 0xee1c, 0x44f6, 0xa8, 0x69, 0xd2, 0x39, 0x38, 0x1f, 0x0f, 0xe7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_FirstSelectedItem(IRawElementProviderSimple** retVal) mut
+			{
+				return VT.get_FirstSelectedItem(&this, retVal);
+			}
+			public HRESULT get_LastSelectedItem(IRawElementProviderSimple** retVal) mut
+			{
+				return VT.get_LastSelectedItem(&this, retVal);
+			}
+			public HRESULT get_CurrentSelectedItem(IRawElementProviderSimple** retVal) mut
+			{
+				return VT.get_CurrentSelectedItem(&this, retVal);
+			}
+			public HRESULT get_ItemCount(int32* retVal) mut
+			{
+				return VT.get_ItemCount(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : ISelectionProvider.VTable
 			{
-				public function HRESULT(ISelectionProvider2 *self, IRawElementProviderSimple** retVal) get_FirstSelectedItem;
-				public function HRESULT(ISelectionProvider2 *self, IRawElementProviderSimple** retVal) get_LastSelectedItem;
-				public function HRESULT(ISelectionProvider2 *self, IRawElementProviderSimple** retVal) get_CurrentSelectedItem;
-				public function HRESULT(ISelectionProvider2 *self, int32* retVal) get_ItemCount;
+				public new function HRESULT(ISelectionProvider2 *self, IRawElementProviderSimple** retVal) get_FirstSelectedItem;
+				public new function HRESULT(ISelectionProvider2 *self, IRawElementProviderSimple** retVal) get_LastSelectedItem;
+				public new function HRESULT(ISelectionProvider2 *self, IRawElementProviderSimple** retVal) get_CurrentSelectedItem;
+				public new function HRESULT(ISelectionProvider2 *self, int32* retVal) get_ItemCount;
 			}
 		}
 		[CRepr]
@@ -2256,18 +2723,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb38b8077, 0x1fc3, 0x42a5, 0x8c, 0xae, 0xd4, 0x0c, 0x22, 0x15, 0x05, 0x5a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Scroll(ScrollAmount horizontalAmount, ScrollAmount verticalAmount) mut
+			{
+				return VT.Scroll(&this, horizontalAmount, verticalAmount);
+			}
+			public HRESULT SetScrollPercent(double horizontalPercent, double verticalPercent) mut
+			{
+				return VT.SetScrollPercent(&this, horizontalPercent, verticalPercent);
+			}
+			public HRESULT get_HorizontalScrollPercent(double* pRetVal) mut
+			{
+				return VT.get_HorizontalScrollPercent(&this, pRetVal);
+			}
+			public HRESULT get_VerticalScrollPercent(double* pRetVal) mut
+			{
+				return VT.get_VerticalScrollPercent(&this, pRetVal);
+			}
+			public HRESULT get_HorizontalViewSize(double* pRetVal) mut
+			{
+				return VT.get_HorizontalViewSize(&this, pRetVal);
+			}
+			public HRESULT get_VerticalViewSize(double* pRetVal) mut
+			{
+				return VT.get_VerticalViewSize(&this, pRetVal);
+			}
+			public HRESULT get_HorizontallyScrollable(BOOL* pRetVal) mut
+			{
+				return VT.get_HorizontallyScrollable(&this, pRetVal);
+			}
+			public HRESULT get_VerticallyScrollable(BOOL* pRetVal) mut
+			{
+				return VT.get_VerticallyScrollable(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IScrollProvider *self, ScrollAmount horizontalAmount, ScrollAmount verticalAmount) Scroll;
-				public function HRESULT(IScrollProvider *self, double horizontalPercent, double verticalPercent) SetScrollPercent;
-				public function HRESULT(IScrollProvider *self, double* pRetVal) get_HorizontalScrollPercent;
-				public function HRESULT(IScrollProvider *self, double* pRetVal) get_VerticalScrollPercent;
-				public function HRESULT(IScrollProvider *self, double* pRetVal) get_HorizontalViewSize;
-				public function HRESULT(IScrollProvider *self, double* pRetVal) get_VerticalViewSize;
-				public function HRESULT(IScrollProvider *self, BOOL* pRetVal) get_HorizontallyScrollable;
-				public function HRESULT(IScrollProvider *self, BOOL* pRetVal) get_VerticallyScrollable;
+				public new function HRESULT(IScrollProvider *self, ScrollAmount horizontalAmount, ScrollAmount verticalAmount) Scroll;
+				public new function HRESULT(IScrollProvider *self, double horizontalPercent, double verticalPercent) SetScrollPercent;
+				public new function HRESULT(IScrollProvider *self, double* pRetVal) get_HorizontalScrollPercent;
+				public new function HRESULT(IScrollProvider *self, double* pRetVal) get_VerticalScrollPercent;
+				public new function HRESULT(IScrollProvider *self, double* pRetVal) get_HorizontalViewSize;
+				public new function HRESULT(IScrollProvider *self, double* pRetVal) get_VerticalViewSize;
+				public new function HRESULT(IScrollProvider *self, BOOL* pRetVal) get_HorizontallyScrollable;
+				public new function HRESULT(IScrollProvider *self, BOOL* pRetVal) get_VerticallyScrollable;
 			}
 		}
 		[CRepr]
@@ -2275,15 +2775,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2acad808, 0xb2d4, 0x452d, 0xa4, 0x07, 0x91, 0xff, 0x1a, 0xd1, 0x67, 0xb2);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Select() mut
+			{
+				return VT.Select(&this);
+			}
+			public HRESULT AddToSelection() mut
+			{
+				return VT.AddToSelection(&this);
+			}
+			public HRESULT RemoveFromSelection() mut
+			{
+				return VT.RemoveFromSelection(&this);
+			}
+			public HRESULT get_IsSelected(BOOL* pRetVal) mut
+			{
+				return VT.get_IsSelected(&this, pRetVal);
+			}
+			public HRESULT get_SelectionContainer(IRawElementProviderSimple** pRetVal) mut
+			{
+				return VT.get_SelectionContainer(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISelectionItemProvider *self) Select;
-				public function HRESULT(ISelectionItemProvider *self) AddToSelection;
-				public function HRESULT(ISelectionItemProvider *self) RemoveFromSelection;
-				public function HRESULT(ISelectionItemProvider *self, BOOL* pRetVal) get_IsSelected;
-				public function HRESULT(ISelectionItemProvider *self, IRawElementProviderSimple** pRetVal) get_SelectionContainer;
+				public new function HRESULT(ISelectionItemProvider *self) Select;
+				public new function HRESULT(ISelectionItemProvider *self) AddToSelection;
+				public new function HRESULT(ISelectionItemProvider *self) RemoveFromSelection;
+				public new function HRESULT(ISelectionItemProvider *self, BOOL* pRetVal) get_IsSelected;
+				public new function HRESULT(ISelectionItemProvider *self, IRawElementProviderSimple** pRetVal) get_SelectionContainer;
 			}
 		}
 		[CRepr]
@@ -2291,12 +2812,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x29db1a06, 0x02ce, 0x4cf7, 0x9b, 0x42, 0x56, 0x5d, 0x4f, 0xab, 0x20, 0xee);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT StartListening(SynchronizedInputType inputType) mut
+			{
+				return VT.StartListening(&this, inputType);
+			}
+			public HRESULT Cancel() mut
+			{
+				return VT.Cancel(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISynchronizedInputProvider *self, SynchronizedInputType inputType) StartListening;
-				public function HRESULT(ISynchronizedInputProvider *self) Cancel;
+				public new function HRESULT(ISynchronizedInputProvider *self, SynchronizedInputType inputType) StartListening;
+				public new function HRESULT(ISynchronizedInputProvider *self) Cancel;
 			}
 		}
 		[CRepr]
@@ -2304,13 +2834,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9c860395, 0x97b3, 0x490a, 0xb5, 0x2a, 0x85, 0x8c, 0xc2, 0x2a, 0xf1, 0x66);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetRowHeaders(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetRowHeaders(&this, pRetVal);
+			}
+			public HRESULT GetColumnHeaders(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetColumnHeaders(&this, pRetVal);
+			}
+			public HRESULT get_RowOrColumnMajor(RowOrColumnMajor* pRetVal) mut
+			{
+				return VT.get_RowOrColumnMajor(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ITableProvider *self, SAFEARRAY** pRetVal) GetRowHeaders;
-				public function HRESULT(ITableProvider *self, SAFEARRAY** pRetVal) GetColumnHeaders;
-				public function HRESULT(ITableProvider *self, RowOrColumnMajor* pRetVal) get_RowOrColumnMajor;
+				public new function HRESULT(ITableProvider *self, SAFEARRAY** pRetVal) GetRowHeaders;
+				public new function HRESULT(ITableProvider *self, SAFEARRAY** pRetVal) GetColumnHeaders;
+				public new function HRESULT(ITableProvider *self, RowOrColumnMajor* pRetVal) get_RowOrColumnMajor;
 			}
 		}
 		[CRepr]
@@ -2318,12 +2861,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb9734fa6, 0x771f, 0x4d78, 0x9c, 0x90, 0x25, 0x17, 0x99, 0x93, 0x49, 0xcd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetRowHeaderItems(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetRowHeaderItems(&this, pRetVal);
+			}
+			public HRESULT GetColumnHeaderItems(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetColumnHeaderItems(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ITableItemProvider *self, SAFEARRAY** pRetVal) GetRowHeaderItems;
-				public function HRESULT(ITableItemProvider *self, SAFEARRAY** pRetVal) GetColumnHeaderItems;
+				public new function HRESULT(ITableItemProvider *self, SAFEARRAY** pRetVal) GetRowHeaderItems;
+				public new function HRESULT(ITableItemProvider *self, SAFEARRAY** pRetVal) GetColumnHeaderItems;
 			}
 		}
 		[CRepr]
@@ -2331,12 +2883,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x56d00bd0, 0xc4f4, 0x433c, 0xa8, 0x36, 0x1a, 0x52, 0xa5, 0x7e, 0x08, 0x92);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Toggle() mut
+			{
+				return VT.Toggle(&this);
+			}
+			public HRESULT get_ToggleState(ToggleState* pRetVal) mut
+			{
+				return VT.get_ToggleState(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IToggleProvider *self) Toggle;
-				public function HRESULT(IToggleProvider *self, ToggleState* pRetVal) get_ToggleState;
+				public new function HRESULT(IToggleProvider *self) Toggle;
+				public new function HRESULT(IToggleProvider *self, ToggleState* pRetVal) get_ToggleState;
 			}
 		}
 		[CRepr]
@@ -2344,16 +2905,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6829ddc4, 0x4f91, 0x4ffa, 0xb8, 0x6f, 0xbd, 0x3e, 0x29, 0x87, 0xcb, 0x4c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Move(double x, double y) mut
+			{
+				return VT.Move(&this, x, y);
+			}
+			public HRESULT Resize(double width, double height) mut
+			{
+				return VT.Resize(&this, width, height);
+			}
+			public HRESULT Rotate(double degrees) mut
+			{
+				return VT.Rotate(&this, degrees);
+			}
+			public HRESULT get_CanMove(BOOL* pRetVal) mut
+			{
+				return VT.get_CanMove(&this, pRetVal);
+			}
+			public HRESULT get_CanResize(BOOL* pRetVal) mut
+			{
+				return VT.get_CanResize(&this, pRetVal);
+			}
+			public HRESULT get_CanRotate(BOOL* pRetVal) mut
+			{
+				return VT.get_CanRotate(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ITransformProvider *self, double x, double y) Move;
-				public function HRESULT(ITransformProvider *self, double width, double height) Resize;
-				public function HRESULT(ITransformProvider *self, double degrees) Rotate;
-				public function HRESULT(ITransformProvider *self, BOOL* pRetVal) get_CanMove;
-				public function HRESULT(ITransformProvider *self, BOOL* pRetVal) get_CanResize;
-				public function HRESULT(ITransformProvider *self, BOOL* pRetVal) get_CanRotate;
+				public new function HRESULT(ITransformProvider *self, double x, double y) Move;
+				public new function HRESULT(ITransformProvider *self, double width, double height) Resize;
+				public new function HRESULT(ITransformProvider *self, double degrees) Rotate;
+				public new function HRESULT(ITransformProvider *self, BOOL* pRetVal) get_CanMove;
+				public new function HRESULT(ITransformProvider *self, BOOL* pRetVal) get_CanResize;
+				public new function HRESULT(ITransformProvider *self, BOOL* pRetVal) get_CanRotate;
 			}
 		}
 		[CRepr]
@@ -2361,13 +2947,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc7935180, 0x6fb3, 0x4201, 0xb1, 0x74, 0x7d, 0xf7, 0x3a, 0xdb, 0xf6, 0x4a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetValue(PWSTR val) mut
+			{
+				return VT.SetValue(&this, val);
+			}
+			public HRESULT get_Value(BSTR* pRetVal) mut
+			{
+				return VT.get_Value(&this, pRetVal);
+			}
+			public HRESULT get_IsReadOnly(BOOL* pRetVal) mut
+			{
+				return VT.get_IsReadOnly(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IValueProvider *self, PWSTR val) SetValue;
-				public function HRESULT(IValueProvider *self, BSTR* pRetVal) get_Value;
-				public function HRESULT(IValueProvider *self, BOOL* pRetVal) get_IsReadOnly;
+				public new function HRESULT(IValueProvider *self, PWSTR val) SetValue;
+				public new function HRESULT(IValueProvider *self, BSTR* pRetVal) get_Value;
+				public new function HRESULT(IValueProvider *self, BOOL* pRetVal) get_IsReadOnly;
 			}
 		}
 		[CRepr]
@@ -2375,19 +2974,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x987df77b, 0xdb06, 0x4d77, 0x8f, 0x8a, 0x86, 0xa9, 0xc3, 0xbb, 0x90, 0xb9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetVisualState(WindowVisualState state) mut
+			{
+				return VT.SetVisualState(&this, state);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
+			public HRESULT WaitForInputIdle(int32 milliseconds, BOOL* pRetVal) mut
+			{
+				return VT.WaitForInputIdle(&this, milliseconds, pRetVal);
+			}
+			public HRESULT get_CanMaximize(BOOL* pRetVal) mut
+			{
+				return VT.get_CanMaximize(&this, pRetVal);
+			}
+			public HRESULT get_CanMinimize(BOOL* pRetVal) mut
+			{
+				return VT.get_CanMinimize(&this, pRetVal);
+			}
+			public HRESULT get_IsModal(BOOL* pRetVal) mut
+			{
+				return VT.get_IsModal(&this, pRetVal);
+			}
+			public HRESULT get_WindowVisualState(WindowVisualState* pRetVal) mut
+			{
+				return VT.get_WindowVisualState(&this, pRetVal);
+			}
+			public HRESULT get_WindowInteractionState(WindowInteractionState* pRetVal) mut
+			{
+				return VT.get_WindowInteractionState(&this, pRetVal);
+			}
+			public HRESULT get_IsTopmost(BOOL* pRetVal) mut
+			{
+				return VT.get_IsTopmost(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWindowProvider *self, WindowVisualState state) SetVisualState;
-				public function HRESULT(IWindowProvider *self) Close;
-				public function HRESULT(IWindowProvider *self, int32 milliseconds, BOOL* pRetVal) WaitForInputIdle;
-				public function HRESULT(IWindowProvider *self, BOOL* pRetVal) get_CanMaximize;
-				public function HRESULT(IWindowProvider *self, BOOL* pRetVal) get_CanMinimize;
-				public function HRESULT(IWindowProvider *self, BOOL* pRetVal) get_IsModal;
-				public function HRESULT(IWindowProvider *self, WindowVisualState* pRetVal) get_WindowVisualState;
-				public function HRESULT(IWindowProvider *self, WindowInteractionState* pRetVal) get_WindowInteractionState;
-				public function HRESULT(IWindowProvider *self, BOOL* pRetVal) get_IsTopmost;
+				public new function HRESULT(IWindowProvider *self, WindowVisualState state) SetVisualState;
+				public new function HRESULT(IWindowProvider *self) Close;
+				public new function HRESULT(IWindowProvider *self, int32 milliseconds, BOOL* pRetVal) WaitForInputIdle;
+				public new function HRESULT(IWindowProvider *self, BOOL* pRetVal) get_CanMaximize;
+				public new function HRESULT(IWindowProvider *self, BOOL* pRetVal) get_CanMinimize;
+				public new function HRESULT(IWindowProvider *self, BOOL* pRetVal) get_IsModal;
+				public new function HRESULT(IWindowProvider *self, WindowVisualState* pRetVal) get_WindowVisualState;
+				public new function HRESULT(IWindowProvider *self, WindowInteractionState* pRetVal) get_WindowInteractionState;
+				public new function HRESULT(IWindowProvider *self, BOOL* pRetVal) get_IsTopmost;
 			}
 		}
 		[CRepr]
@@ -2395,24 +3031,81 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe44c3566, 0x915d, 0x4070, 0x99, 0xc6, 0x04, 0x7b, 0xff, 0x5a, 0x08, 0xf5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Select(int32 flagsSelect) mut
+			{
+				return VT.Select(&this, flagsSelect);
+			}
+			public HRESULT DoDefaultAction() mut
+			{
+				return VT.DoDefaultAction(&this);
+			}
+			public HRESULT SetValue(PWSTR szValue) mut
+			{
+				return VT.SetValue(&this, szValue);
+			}
+			public HRESULT GetIAccessible(IAccessible** ppAccessible) mut
+			{
+				return VT.GetIAccessible(&this, ppAccessible);
+			}
+			public HRESULT get_ChildId(int32* pRetVal) mut
+			{
+				return VT.get_ChildId(&this, pRetVal);
+			}
+			public HRESULT get_Name(BSTR* pszName) mut
+			{
+				return VT.get_Name(&this, pszName);
+			}
+			public HRESULT get_Value(BSTR* pszValue) mut
+			{
+				return VT.get_Value(&this, pszValue);
+			}
+			public HRESULT get_Description(BSTR* pszDescription) mut
+			{
+				return VT.get_Description(&this, pszDescription);
+			}
+			public HRESULT get_Role(uint32* pdwRole) mut
+			{
+				return VT.get_Role(&this, pdwRole);
+			}
+			public HRESULT get_State(uint32* pdwState) mut
+			{
+				return VT.get_State(&this, pdwState);
+			}
+			public HRESULT get_Help(BSTR* pszHelp) mut
+			{
+				return VT.get_Help(&this, pszHelp);
+			}
+			public HRESULT get_KeyboardShortcut(BSTR* pszKeyboardShortcut) mut
+			{
+				return VT.get_KeyboardShortcut(&this, pszKeyboardShortcut);
+			}
+			public HRESULT GetSelection(SAFEARRAY** pvarSelectedChildren) mut
+			{
+				return VT.GetSelection(&this, pvarSelectedChildren);
+			}
+			public HRESULT get_DefaultAction(BSTR* pszDefaultAction) mut
+			{
+				return VT.get_DefaultAction(&this, pszDefaultAction);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ILegacyIAccessibleProvider *self, int32 flagsSelect) Select;
-				public function HRESULT(ILegacyIAccessibleProvider *self) DoDefaultAction;
-				public function HRESULT(ILegacyIAccessibleProvider *self, PWSTR szValue) SetValue;
-				public function HRESULT(ILegacyIAccessibleProvider *self, IAccessible** ppAccessible) GetIAccessible;
-				public function HRESULT(ILegacyIAccessibleProvider *self, int32* pRetVal) get_ChildId;
-				public function HRESULT(ILegacyIAccessibleProvider *self, BSTR* pszName) get_Name;
-				public function HRESULT(ILegacyIAccessibleProvider *self, BSTR* pszValue) get_Value;
-				public function HRESULT(ILegacyIAccessibleProvider *self, BSTR* pszDescription) get_Description;
-				public function HRESULT(ILegacyIAccessibleProvider *self, uint32* pdwRole) get_Role;
-				public function HRESULT(ILegacyIAccessibleProvider *self, uint32* pdwState) get_State;
-				public function HRESULT(ILegacyIAccessibleProvider *self, BSTR* pszHelp) get_Help;
-				public function HRESULT(ILegacyIAccessibleProvider *self, BSTR* pszKeyboardShortcut) get_KeyboardShortcut;
-				public function HRESULT(ILegacyIAccessibleProvider *self, SAFEARRAY** pvarSelectedChildren) GetSelection;
-				public function HRESULT(ILegacyIAccessibleProvider *self, BSTR* pszDefaultAction) get_DefaultAction;
+				public new function HRESULT(ILegacyIAccessibleProvider *self, int32 flagsSelect) Select;
+				public new function HRESULT(ILegacyIAccessibleProvider *self) DoDefaultAction;
+				public new function HRESULT(ILegacyIAccessibleProvider *self, PWSTR szValue) SetValue;
+				public new function HRESULT(ILegacyIAccessibleProvider *self, IAccessible** ppAccessible) GetIAccessible;
+				public new function HRESULT(ILegacyIAccessibleProvider *self, int32* pRetVal) get_ChildId;
+				public new function HRESULT(ILegacyIAccessibleProvider *self, BSTR* pszName) get_Name;
+				public new function HRESULT(ILegacyIAccessibleProvider *self, BSTR* pszValue) get_Value;
+				public new function HRESULT(ILegacyIAccessibleProvider *self, BSTR* pszDescription) get_Description;
+				public new function HRESULT(ILegacyIAccessibleProvider *self, uint32* pdwRole) get_Role;
+				public new function HRESULT(ILegacyIAccessibleProvider *self, uint32* pdwState) get_State;
+				public new function HRESULT(ILegacyIAccessibleProvider *self, BSTR* pszHelp) get_Help;
+				public new function HRESULT(ILegacyIAccessibleProvider *self, BSTR* pszKeyboardShortcut) get_KeyboardShortcut;
+				public new function HRESULT(ILegacyIAccessibleProvider *self, SAFEARRAY** pvarSelectedChildren) GetSelection;
+				public new function HRESULT(ILegacyIAccessibleProvider *self, BSTR* pszDefaultAction) get_DefaultAction;
 			}
 		}
 		[CRepr]
@@ -2420,11 +3113,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe747770b, 0x39ce, 0x4382, 0xab, 0x30, 0xd8, 0xfb, 0x3f, 0x33, 0x6f, 0x24);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT FindItemByProperty(IRawElementProviderSimple* pStartAfter, int32 propertyId, VARIANT value, IRawElementProviderSimple** pFound) mut
+			{
+				return VT.FindItemByProperty(&this, pStartAfter, propertyId, value, pFound);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IItemContainerProvider *self, IRawElementProviderSimple* pStartAfter, int32 propertyId, VARIANT value, IRawElementProviderSimple** pFound) FindItemByProperty;
+				public new function HRESULT(IItemContainerProvider *self, IRawElementProviderSimple* pStartAfter, int32 propertyId, VARIANT value, IRawElementProviderSimple** pFound) FindItemByProperty;
 			}
 		}
 		[CRepr]
@@ -2432,11 +3130,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xcb98b665, 0x2d35, 0x4fac, 0xad, 0x35, 0xf3, 0xc6, 0x0d, 0x0c, 0x0b, 0x8b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Realize() mut
+			{
+				return VT.Realize(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IVirtualizedItemProvider *self) Realize;
+				public new function HRESULT(IVirtualizedItemProvider *self) Realize;
 			}
 		}
 		[CRepr]
@@ -2444,11 +3147,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3ad86ebd, 0xf5ef, 0x483d, 0xbb, 0x18, 0xb1, 0x04, 0x2a, 0x47, 0x5d, 0x64);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetUnderlyingObjectModel(IUnknown** ppUnknown) mut
+			{
+				return VT.GetUnderlyingObjectModel(&this, ppUnknown);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IObjectModelProvider *self, IUnknown** ppUnknown) GetUnderlyingObjectModel;
+				public new function HRESULT(IObjectModelProvider *self, IUnknown** ppUnknown) GetUnderlyingObjectModel;
 			}
 		}
 		[CRepr]
@@ -2456,15 +3164,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf95c7e80, 0xbd63, 0x4601, 0x97, 0x82, 0x44, 0x5e, 0xbf, 0xf0, 0x11, 0xfc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_AnnotationTypeId(int32* retVal) mut
+			{
+				return VT.get_AnnotationTypeId(&this, retVal);
+			}
+			public HRESULT get_AnnotationTypeName(BSTR* retVal) mut
+			{
+				return VT.get_AnnotationTypeName(&this, retVal);
+			}
+			public HRESULT get_Author(BSTR* retVal) mut
+			{
+				return VT.get_Author(&this, retVal);
+			}
+			public HRESULT get_DateTime(BSTR* retVal) mut
+			{
+				return VT.get_DateTime(&this, retVal);
+			}
+			public HRESULT get_Target(IRawElementProviderSimple** retVal) mut
+			{
+				return VT.get_Target(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAnnotationProvider *self, int32* retVal) get_AnnotationTypeId;
-				public function HRESULT(IAnnotationProvider *self, BSTR* retVal) get_AnnotationTypeName;
-				public function HRESULT(IAnnotationProvider *self, BSTR* retVal) get_Author;
-				public function HRESULT(IAnnotationProvider *self, BSTR* retVal) get_DateTime;
-				public function HRESULT(IAnnotationProvider *self, IRawElementProviderSimple** retVal) get_Target;
+				public new function HRESULT(IAnnotationProvider *self, int32* retVal) get_AnnotationTypeId;
+				public new function HRESULT(IAnnotationProvider *self, BSTR* retVal) get_AnnotationTypeName;
+				public new function HRESULT(IAnnotationProvider *self, BSTR* retVal) get_Author;
+				public new function HRESULT(IAnnotationProvider *self, BSTR* retVal) get_DateTime;
+				public new function HRESULT(IAnnotationProvider *self, IRawElementProviderSimple** retVal) get_Target;
 			}
 		}
 		[CRepr]
@@ -2472,17 +3201,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x19b6b649, 0xf5d7, 0x4a6d, 0xbd, 0xcb, 0x12, 0x92, 0x52, 0xbe, 0x58, 0x8a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_StyleId(int32* retVal) mut
+			{
+				return VT.get_StyleId(&this, retVal);
+			}
+			public HRESULT get_StyleName(BSTR* retVal) mut
+			{
+				return VT.get_StyleName(&this, retVal);
+			}
+			public HRESULT get_FillColor(int32* retVal) mut
+			{
+				return VT.get_FillColor(&this, retVal);
+			}
+			public HRESULT get_FillPatternStyle(BSTR* retVal) mut
+			{
+				return VT.get_FillPatternStyle(&this, retVal);
+			}
+			public HRESULT get_Shape(BSTR* retVal) mut
+			{
+				return VT.get_Shape(&this, retVal);
+			}
+			public HRESULT get_FillPatternColor(int32* retVal) mut
+			{
+				return VT.get_FillPatternColor(&this, retVal);
+			}
+			public HRESULT get_ExtendedProperties(BSTR* retVal) mut
+			{
+				return VT.get_ExtendedProperties(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IStylesProvider *self, int32* retVal) get_StyleId;
-				public function HRESULT(IStylesProvider *self, BSTR* retVal) get_StyleName;
-				public function HRESULT(IStylesProvider *self, int32* retVal) get_FillColor;
-				public function HRESULT(IStylesProvider *self, BSTR* retVal) get_FillPatternStyle;
-				public function HRESULT(IStylesProvider *self, BSTR* retVal) get_Shape;
-				public function HRESULT(IStylesProvider *self, int32* retVal) get_FillPatternColor;
-				public function HRESULT(IStylesProvider *self, BSTR* retVal) get_ExtendedProperties;
+				public new function HRESULT(IStylesProvider *self, int32* retVal) get_StyleId;
+				public new function HRESULT(IStylesProvider *self, BSTR* retVal) get_StyleName;
+				public new function HRESULT(IStylesProvider *self, int32* retVal) get_FillColor;
+				public new function HRESULT(IStylesProvider *self, BSTR* retVal) get_FillPatternStyle;
+				public new function HRESULT(IStylesProvider *self, BSTR* retVal) get_Shape;
+				public new function HRESULT(IStylesProvider *self, int32* retVal) get_FillPatternColor;
+				public new function HRESULT(IStylesProvider *self, BSTR* retVal) get_ExtendedProperties;
 			}
 		}
 		[CRepr]
@@ -2490,11 +3248,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6f6b5d35, 0x5525, 0x4f80, 0xb7, 0x58, 0x85, 0x47, 0x38, 0x32, 0xff, 0xc7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetItemByName(PWSTR name, IRawElementProviderSimple** pRetVal) mut
+			{
+				return VT.GetItemByName(&this, name, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISpreadsheetProvider *self, PWSTR name, IRawElementProviderSimple** pRetVal) GetItemByName;
+				public new function HRESULT(ISpreadsheetProvider *self, PWSTR name, IRawElementProviderSimple** pRetVal) GetItemByName;
 			}
 		}
 		[CRepr]
@@ -2502,13 +3265,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xeaed4660, 0x7b3d, 0x4879, 0xa2, 0xe6, 0x36, 0x5c, 0xe6, 0x03, 0xf3, 0xd0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Formula(BSTR* pRetVal) mut
+			{
+				return VT.get_Formula(&this, pRetVal);
+			}
+			public HRESULT GetAnnotationObjects(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetAnnotationObjects(&this, pRetVal);
+			}
+			public HRESULT GetAnnotationTypes(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetAnnotationTypes(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISpreadsheetItemProvider *self, BSTR* pRetVal) get_Formula;
-				public function HRESULT(ISpreadsheetItemProvider *self, SAFEARRAY** pRetVal) GetAnnotationObjects;
-				public function HRESULT(ISpreadsheetItemProvider *self, SAFEARRAY** pRetVal) GetAnnotationTypes;
+				public new function HRESULT(ISpreadsheetItemProvider *self, BSTR* pRetVal) get_Formula;
+				public new function HRESULT(ISpreadsheetItemProvider *self, SAFEARRAY** pRetVal) GetAnnotationObjects;
+				public new function HRESULT(ISpreadsheetItemProvider *self, SAFEARRAY** pRetVal) GetAnnotationTypes;
 			}
 		}
 		[CRepr]
@@ -2516,16 +3292,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4758742f, 0x7ac2, 0x460c, 0xbc, 0x48, 0x09, 0xfc, 0x09, 0x30, 0x8a, 0x93);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Zoom(double zoom) mut
+			{
+				return VT.Zoom(&this, zoom);
+			}
+			public HRESULT get_CanZoom(BOOL* pRetVal) mut
+			{
+				return VT.get_CanZoom(&this, pRetVal);
+			}
+			public HRESULT get_ZoomLevel(double* pRetVal) mut
+			{
+				return VT.get_ZoomLevel(&this, pRetVal);
+			}
+			public HRESULT get_ZoomMinimum(double* pRetVal) mut
+			{
+				return VT.get_ZoomMinimum(&this, pRetVal);
+			}
+			public HRESULT get_ZoomMaximum(double* pRetVal) mut
+			{
+				return VT.get_ZoomMaximum(&this, pRetVal);
+			}
+			public HRESULT ZoomByUnit(ZoomUnit zoomUnit) mut
+			{
+				return VT.ZoomByUnit(&this, zoomUnit);
+			}
 			[CRepr]
 			public struct VTable : ITransformProvider.VTable
 			{
-				public function HRESULT(ITransformProvider2 *self, double zoom) Zoom;
-				public function HRESULT(ITransformProvider2 *self, BOOL* pRetVal) get_CanZoom;
-				public function HRESULT(ITransformProvider2 *self, double* pRetVal) get_ZoomLevel;
-				public function HRESULT(ITransformProvider2 *self, double* pRetVal) get_ZoomMinimum;
-				public function HRESULT(ITransformProvider2 *self, double* pRetVal) get_ZoomMaximum;
-				public function HRESULT(ITransformProvider2 *self, ZoomUnit zoomUnit) ZoomByUnit;
+				public new function HRESULT(ITransformProvider2 *self, double zoom) Zoom;
+				public new function HRESULT(ITransformProvider2 *self, BOOL* pRetVal) get_CanZoom;
+				public new function HRESULT(ITransformProvider2 *self, double* pRetVal) get_ZoomLevel;
+				public new function HRESULT(ITransformProvider2 *self, double* pRetVal) get_ZoomMinimum;
+				public new function HRESULT(ITransformProvider2 *self, double* pRetVal) get_ZoomMaximum;
+				public new function HRESULT(ITransformProvider2 *self, ZoomUnit zoomUnit) ZoomByUnit;
 			}
 		}
 		[CRepr]
@@ -2533,14 +3334,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6aa7bbbb, 0x7ff9, 0x497d, 0x90, 0x4f, 0xd2, 0x0b, 0x89, 0x79, 0x29, 0xd8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_IsGrabbed(BOOL* pRetVal) mut
+			{
+				return VT.get_IsGrabbed(&this, pRetVal);
+			}
+			public HRESULT get_DropEffect(BSTR* pRetVal) mut
+			{
+				return VT.get_DropEffect(&this, pRetVal);
+			}
+			public HRESULT get_DropEffects(SAFEARRAY** pRetVal) mut
+			{
+				return VT.get_DropEffects(&this, pRetVal);
+			}
+			public HRESULT GetGrabbedItems(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetGrabbedItems(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDragProvider *self, BOOL* pRetVal) get_IsGrabbed;
-				public function HRESULT(IDragProvider *self, BSTR* pRetVal) get_DropEffect;
-				public function HRESULT(IDragProvider *self, SAFEARRAY** pRetVal) get_DropEffects;
-				public function HRESULT(IDragProvider *self, SAFEARRAY** pRetVal) GetGrabbedItems;
+				public new function HRESULT(IDragProvider *self, BOOL* pRetVal) get_IsGrabbed;
+				public new function HRESULT(IDragProvider *self, BSTR* pRetVal) get_DropEffect;
+				public new function HRESULT(IDragProvider *self, SAFEARRAY** pRetVal) get_DropEffects;
+				public new function HRESULT(IDragProvider *self, SAFEARRAY** pRetVal) GetGrabbedItems;
 			}
 		}
 		[CRepr]
@@ -2548,12 +3366,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbae82bfd, 0x358a, 0x481c, 0x85, 0xa0, 0xd8, 0xb4, 0xd9, 0x0a, 0x5d, 0x61);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_DropTargetEffect(BSTR* pRetVal) mut
+			{
+				return VT.get_DropTargetEffect(&this, pRetVal);
+			}
+			public HRESULT get_DropTargetEffects(SAFEARRAY** pRetVal) mut
+			{
+				return VT.get_DropTargetEffects(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDropTargetProvider *self, BSTR* pRetVal) get_DropTargetEffect;
-				public function HRESULT(IDropTargetProvider *self, SAFEARRAY** pRetVal) get_DropTargetEffects;
+				public new function HRESULT(IDropTargetProvider *self, BSTR* pRetVal) get_DropTargetEffect;
+				public new function HRESULT(IDropTargetProvider *self, SAFEARRAY** pRetVal) get_DropTargetEffects;
 			}
 		}
 		[CRepr]
@@ -2561,28 +3388,101 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5347ad7b, 0xc355, 0x46f8, 0xaf, 0xf5, 0x90, 0x90, 0x33, 0x58, 0x2f, 0x63);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Clone(ITextRangeProvider** pRetVal) mut
+			{
+				return VT.Clone(&this, pRetVal);
+			}
+			public HRESULT Compare(ITextRangeProvider* range, BOOL* pRetVal) mut
+			{
+				return VT.Compare(&this, range, pRetVal);
+			}
+			public HRESULT CompareEndpoints(TextPatternRangeEndpoint endpoint, ITextRangeProvider* targetRange, TextPatternRangeEndpoint targetEndpoint, int32* pRetVal) mut
+			{
+				return VT.CompareEndpoints(&this, endpoint, targetRange, targetEndpoint, pRetVal);
+			}
+			public HRESULT ExpandToEnclosingUnit(TextUnit unit) mut
+			{
+				return VT.ExpandToEnclosingUnit(&this, unit);
+			}
+			public HRESULT FindAttribute(int32 attributeId, VARIANT val, BOOL backward, ITextRangeProvider** pRetVal) mut
+			{
+				return VT.FindAttribute(&this, attributeId, val, backward, pRetVal);
+			}
+			public HRESULT FindText(BSTR text, BOOL backward, BOOL ignoreCase, ITextRangeProvider** pRetVal) mut
+			{
+				return VT.FindText(&this, text, backward, ignoreCase, pRetVal);
+			}
+			public HRESULT GetAttributeValue(int32 attributeId, VARIANT* pRetVal) mut
+			{
+				return VT.GetAttributeValue(&this, attributeId, pRetVal);
+			}
+			public HRESULT GetBoundingRectangles(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetBoundingRectangles(&this, pRetVal);
+			}
+			public HRESULT GetEnclosingElement(IRawElementProviderSimple** pRetVal) mut
+			{
+				return VT.GetEnclosingElement(&this, pRetVal);
+			}
+			public HRESULT GetText(int32 maxLength, BSTR* pRetVal) mut
+			{
+				return VT.GetText(&this, maxLength, pRetVal);
+			}
+			public HRESULT Move(TextUnit unit, int32 count, int32* pRetVal) mut
+			{
+				return VT.Move(&this, unit, count, pRetVal);
+			}
+			public HRESULT MoveEndpointByUnit(TextPatternRangeEndpoint endpoint, TextUnit unit, int32 count, int32* pRetVal) mut
+			{
+				return VT.MoveEndpointByUnit(&this, endpoint, unit, count, pRetVal);
+			}
+			public HRESULT MoveEndpointByRange(TextPatternRangeEndpoint endpoint, ITextRangeProvider* targetRange, TextPatternRangeEndpoint targetEndpoint) mut
+			{
+				return VT.MoveEndpointByRange(&this, endpoint, targetRange, targetEndpoint);
+			}
+			public HRESULT Select() mut
+			{
+				return VT.Select(&this);
+			}
+			public HRESULT AddToSelection() mut
+			{
+				return VT.AddToSelection(&this);
+			}
+			public HRESULT RemoveFromSelection() mut
+			{
+				return VT.RemoveFromSelection(&this);
+			}
+			public HRESULT ScrollIntoView(BOOL alignToTop) mut
+			{
+				return VT.ScrollIntoView(&this, alignToTop);
+			}
+			public HRESULT GetChildren(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetChildren(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ITextRangeProvider *self, ITextRangeProvider** pRetVal) Clone;
-				public function HRESULT(ITextRangeProvider *self, ITextRangeProvider* range, BOOL* pRetVal) Compare;
-				public function HRESULT(ITextRangeProvider *self, TextPatternRangeEndpoint endpoint, ITextRangeProvider* targetRange, TextPatternRangeEndpoint targetEndpoint, int32* pRetVal) CompareEndpoints;
-				public function HRESULT(ITextRangeProvider *self, TextUnit unit) ExpandToEnclosingUnit;
-				public function HRESULT(ITextRangeProvider *self, int32 attributeId, VARIANT val, BOOL backward, ITextRangeProvider** pRetVal) FindAttribute;
-				public function HRESULT(ITextRangeProvider *self, BSTR text, BOOL backward, BOOL ignoreCase, ITextRangeProvider** pRetVal) FindText;
-				public function HRESULT(ITextRangeProvider *self, int32 attributeId, VARIANT* pRetVal) GetAttributeValue;
-				public function HRESULT(ITextRangeProvider *self, SAFEARRAY** pRetVal) GetBoundingRectangles;
-				public function HRESULT(ITextRangeProvider *self, IRawElementProviderSimple** pRetVal) GetEnclosingElement;
-				public function HRESULT(ITextRangeProvider *self, int32 maxLength, BSTR* pRetVal) GetText;
-				public function HRESULT(ITextRangeProvider *self, TextUnit unit, int32 count, int32* pRetVal) Move;
-				public function HRESULT(ITextRangeProvider *self, TextPatternRangeEndpoint endpoint, TextUnit unit, int32 count, int32* pRetVal) MoveEndpointByUnit;
-				public function HRESULT(ITextRangeProvider *self, TextPatternRangeEndpoint endpoint, ITextRangeProvider* targetRange, TextPatternRangeEndpoint targetEndpoint) MoveEndpointByRange;
-				public function HRESULT(ITextRangeProvider *self) Select;
-				public function HRESULT(ITextRangeProvider *self) AddToSelection;
-				public function HRESULT(ITextRangeProvider *self) RemoveFromSelection;
-				public function HRESULT(ITextRangeProvider *self, BOOL alignToTop) ScrollIntoView;
-				public function HRESULT(ITextRangeProvider *self, SAFEARRAY** pRetVal) GetChildren;
+				public new function HRESULT(ITextRangeProvider *self, ITextRangeProvider** pRetVal) Clone;
+				public new function HRESULT(ITextRangeProvider *self, ITextRangeProvider* range, BOOL* pRetVal) Compare;
+				public new function HRESULT(ITextRangeProvider *self, TextPatternRangeEndpoint endpoint, ITextRangeProvider* targetRange, TextPatternRangeEndpoint targetEndpoint, int32* pRetVal) CompareEndpoints;
+				public new function HRESULT(ITextRangeProvider *self, TextUnit unit) ExpandToEnclosingUnit;
+				public new function HRESULT(ITextRangeProvider *self, int32 attributeId, VARIANT val, BOOL backward, ITextRangeProvider** pRetVal) FindAttribute;
+				public new function HRESULT(ITextRangeProvider *self, BSTR text, BOOL backward, BOOL ignoreCase, ITextRangeProvider** pRetVal) FindText;
+				public new function HRESULT(ITextRangeProvider *self, int32 attributeId, VARIANT* pRetVal) GetAttributeValue;
+				public new function HRESULT(ITextRangeProvider *self, SAFEARRAY** pRetVal) GetBoundingRectangles;
+				public new function HRESULT(ITextRangeProvider *self, IRawElementProviderSimple** pRetVal) GetEnclosingElement;
+				public new function HRESULT(ITextRangeProvider *self, int32 maxLength, BSTR* pRetVal) GetText;
+				public new function HRESULT(ITextRangeProvider *self, TextUnit unit, int32 count, int32* pRetVal) Move;
+				public new function HRESULT(ITextRangeProvider *self, TextPatternRangeEndpoint endpoint, TextUnit unit, int32 count, int32* pRetVal) MoveEndpointByUnit;
+				public new function HRESULT(ITextRangeProvider *self, TextPatternRangeEndpoint endpoint, ITextRangeProvider* targetRange, TextPatternRangeEndpoint targetEndpoint) MoveEndpointByRange;
+				public new function HRESULT(ITextRangeProvider *self) Select;
+				public new function HRESULT(ITextRangeProvider *self) AddToSelection;
+				public new function HRESULT(ITextRangeProvider *self) RemoveFromSelection;
+				public new function HRESULT(ITextRangeProvider *self, BOOL alignToTop) ScrollIntoView;
+				public new function HRESULT(ITextRangeProvider *self, SAFEARRAY** pRetVal) GetChildren;
 			}
 		}
 		[CRepr]
@@ -2590,16 +3490,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3589c92c, 0x63f3, 0x4367, 0x99, 0xbb, 0xad, 0xa6, 0x53, 0xb7, 0x7c, 0xf2);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSelection(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetSelection(&this, pRetVal);
+			}
+			public HRESULT GetVisibleRanges(SAFEARRAY** pRetVal) mut
+			{
+				return VT.GetVisibleRanges(&this, pRetVal);
+			}
+			public HRESULT RangeFromChild(IRawElementProviderSimple* childElement, ITextRangeProvider** pRetVal) mut
+			{
+				return VT.RangeFromChild(&this, childElement, pRetVal);
+			}
+			public HRESULT RangeFromPoint(UiaPoint point, ITextRangeProvider** pRetVal) mut
+			{
+				return VT.RangeFromPoint(&this, point, pRetVal);
+			}
+			public HRESULT get_DocumentRange(ITextRangeProvider** pRetVal) mut
+			{
+				return VT.get_DocumentRange(&this, pRetVal);
+			}
+			public HRESULT get_SupportedTextSelection(SupportedTextSelection* pRetVal) mut
+			{
+				return VT.get_SupportedTextSelection(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ITextProvider *self, SAFEARRAY** pRetVal) GetSelection;
-				public function HRESULT(ITextProvider *self, SAFEARRAY** pRetVal) GetVisibleRanges;
-				public function HRESULT(ITextProvider *self, IRawElementProviderSimple* childElement, ITextRangeProvider** pRetVal) RangeFromChild;
-				public function HRESULT(ITextProvider *self, UiaPoint point, ITextRangeProvider** pRetVal) RangeFromPoint;
-				public function HRESULT(ITextProvider *self, ITextRangeProvider** pRetVal) get_DocumentRange;
-				public function HRESULT(ITextProvider *self, SupportedTextSelection* pRetVal) get_SupportedTextSelection;
+				public new function HRESULT(ITextProvider *self, SAFEARRAY** pRetVal) GetSelection;
+				public new function HRESULT(ITextProvider *self, SAFEARRAY** pRetVal) GetVisibleRanges;
+				public new function HRESULT(ITextProvider *self, IRawElementProviderSimple* childElement, ITextRangeProvider** pRetVal) RangeFromChild;
+				public new function HRESULT(ITextProvider *self, UiaPoint point, ITextRangeProvider** pRetVal) RangeFromPoint;
+				public new function HRESULT(ITextProvider *self, ITextRangeProvider** pRetVal) get_DocumentRange;
+				public new function HRESULT(ITextProvider *self, SupportedTextSelection* pRetVal) get_SupportedTextSelection;
 			}
 		}
 		[CRepr]
@@ -2607,12 +3532,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0dc5e6ed, 0x3e16, 0x4bf1, 0x8f, 0x9a, 0xa9, 0x79, 0x87, 0x8b, 0xc1, 0x95);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RangeFromAnnotation(IRawElementProviderSimple* annotationElement, ITextRangeProvider** pRetVal) mut
+			{
+				return VT.RangeFromAnnotation(&this, annotationElement, pRetVal);
+			}
+			public HRESULT GetCaretRange(BOOL* isActive, ITextRangeProvider** pRetVal) mut
+			{
+				return VT.GetCaretRange(&this, isActive, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : ITextProvider.VTable
 			{
-				public function HRESULT(ITextProvider2 *self, IRawElementProviderSimple* annotationElement, ITextRangeProvider** pRetVal) RangeFromAnnotation;
-				public function HRESULT(ITextProvider2 *self, BOOL* isActive, ITextRangeProvider** pRetVal) GetCaretRange;
+				public new function HRESULT(ITextProvider2 *self, IRawElementProviderSimple* annotationElement, ITextRangeProvider** pRetVal) RangeFromAnnotation;
+				public new function HRESULT(ITextProvider2 *self, BOOL* isActive, ITextRangeProvider** pRetVal) GetCaretRange;
 			}
 		}
 		[CRepr]
@@ -2620,12 +3554,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xea3605b4, 0x3a05, 0x400e, 0xb5, 0xf9, 0x4e, 0x91, 0xb4, 0x0f, 0x61, 0x76);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetActiveComposition(ITextRangeProvider** pRetVal) mut
+			{
+				return VT.GetActiveComposition(&this, pRetVal);
+			}
+			public HRESULT GetConversionTarget(ITextRangeProvider** pRetVal) mut
+			{
+				return VT.GetConversionTarget(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : ITextProvider.VTable
 			{
-				public function HRESULT(ITextEditProvider *self, ITextRangeProvider** pRetVal) GetActiveComposition;
-				public function HRESULT(ITextEditProvider *self, ITextRangeProvider** pRetVal) GetConversionTarget;
+				public new function HRESULT(ITextEditProvider *self, ITextRangeProvider** pRetVal) GetActiveComposition;
+				public new function HRESULT(ITextEditProvider *self, ITextRangeProvider** pRetVal) GetConversionTarget;
 			}
 		}
 		[CRepr]
@@ -2633,11 +3576,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9bbce42c, 0x1921, 0x4f18, 0x89, 0xca, 0xdb, 0xa1, 0x91, 0x0a, 0x03, 0x86);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ShowContextMenu() mut
+			{
+				return VT.ShowContextMenu(&this);
+			}
 			[CRepr]
 			public struct VTable : ITextRangeProvider.VTable
 			{
-				public function HRESULT(ITextRangeProvider2 *self) ShowContextMenu;
+				public new function HRESULT(ITextRangeProvider2 *self) ShowContextMenu;
 			}
 		}
 		[CRepr]
@@ -2645,12 +3593,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4c2de2b9, 0xc88f, 0x4f88, 0xa1, 0x11, 0xf1, 0xd3, 0x36, 0xb7, 0xd1, 0xa9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_TextContainer(IRawElementProviderSimple** pRetVal) mut
+			{
+				return VT.get_TextContainer(&this, pRetVal);
+			}
+			public HRESULT get_TextRange(ITextRangeProvider** pRetVal) mut
+			{
+				return VT.get_TextRange(&this, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ITextChildProvider *self, IRawElementProviderSimple** pRetVal) get_TextContainer;
-				public function HRESULT(ITextChildProvider *self, ITextRangeProvider** pRetVal) get_TextRange;
+				public new function HRESULT(ITextChildProvider *self, IRawElementProviderSimple** pRetVal) get_TextContainer;
+				public new function HRESULT(ITextChildProvider *self, ITextRangeProvider** pRetVal) get_TextRange;
 			}
 		}
 		[CRepr]
@@ -2658,11 +3615,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2062a28a, 0x8c07, 0x4b94, 0x8e, 0x12, 0x70, 0x37, 0xc6, 0x22, 0xae, 0xb8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Navigate(NavigateDirection direction, IRawElementProviderSimple** pRetVal) mut
+			{
+				return VT.Navigate(&this, direction, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ICustomNavigationProvider *self, NavigateDirection direction, IRawElementProviderSimple** pRetVal) Navigate;
+				public new function HRESULT(ICustomNavigationProvider *self, NavigateDirection direction, IRawElementProviderSimple** pRetVal) Navigate;
 			}
 		}
 		[CRepr]
@@ -2670,12 +3632,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc03a7fe4, 0x9431, 0x409f, 0xbe, 0xd8, 0xae, 0x7c, 0x22, 0x99, 0xbc, 0x8d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetProperty(uint32 index, BOOL cached, UIAutomationType type, void* pPtr) mut
+			{
+				return VT.GetProperty(&this, index, cached, type, pPtr);
+			}
+			public HRESULT CallMethod(uint32 index, UIAutomationParameter* pParams, uint32 cParams) mut
+			{
+				return VT.CallMethod(&this, index, pParams, cParams);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationPatternInstance *self, uint32 index, BOOL cached, UIAutomationType type, void* pPtr) GetProperty;
-				public function HRESULT(IUIAutomationPatternInstance *self, uint32 index, UIAutomationParameter* pParams, uint32 cParams) CallMethod;
+				public new function HRESULT(IUIAutomationPatternInstance *self, uint32 index, BOOL cached, UIAutomationType type, void* pPtr) GetProperty;
+				public new function HRESULT(IUIAutomationPatternInstance *self, uint32 index, UIAutomationParameter* pParams, uint32 cParams) CallMethod;
 			}
 		}
 		[CRepr]
@@ -2683,12 +3654,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd97022f3, 0xa947, 0x465e, 0x8b, 0x2a, 0xac, 0x43, 0x15, 0xfa, 0x54, 0xe8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateClientWrapper(IUIAutomationPatternInstance* pPatternInstance, IUnknown** pClientWrapper) mut
+			{
+				return VT.CreateClientWrapper(&this, pPatternInstance, pClientWrapper);
+			}
+			public HRESULT Dispatch(IUnknown* pTarget, uint32 index, UIAutomationParameter* pParams, uint32 cParams) mut
+			{
+				return VT.Dispatch(&this, pTarget, index, pParams, cParams);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationPatternHandler *self, IUIAutomationPatternInstance* pPatternInstance, IUnknown** pClientWrapper) CreateClientWrapper;
-				public function HRESULT(IUIAutomationPatternHandler *self, IUnknown* pTarget, uint32 index, UIAutomationParameter* pParams, uint32 cParams) Dispatch;
+				public new function HRESULT(IUIAutomationPatternHandler *self, IUIAutomationPatternInstance* pPatternInstance, IUnknown** pClientWrapper) CreateClientWrapper;
+				public new function HRESULT(IUIAutomationPatternHandler *self, IUnknown* pTarget, uint32 index, UIAutomationParameter* pParams, uint32 cParams) Dispatch;
 			}
 		}
 		[CRepr]
@@ -2696,13 +3676,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8609c4ec, 0x4a1a, 0x4d88, 0xa3, 0x57, 0x5a, 0x66, 0xe0, 0x60, 0xe1, 0xcf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RegisterProperty(UIAutomationPropertyInfo* property, int32* propertyId) mut
+			{
+				return VT.RegisterProperty(&this, property, propertyId);
+			}
+			public HRESULT RegisterEvent(UIAutomationEventInfo* event, int32* eventId) mut
+			{
+				return VT.RegisterEvent(&this, event, eventId);
+			}
+			public HRESULT RegisterPattern(UIAutomationPatternInfo* pattern, int32* pPatternId, int32* pPatternAvailablePropertyId, uint32 propertyIdCount, int32* pPropertyIds, uint32 eventIdCount, int32* pEventIds) mut
+			{
+				return VT.RegisterPattern(&this, pattern, pPatternId, pPatternAvailablePropertyId, propertyIdCount, pPropertyIds, eventIdCount, pEventIds);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationRegistrar *self, UIAutomationPropertyInfo* property, int32* propertyId) RegisterProperty;
-				public function HRESULT(IUIAutomationRegistrar *self, UIAutomationEventInfo* event, int32* eventId) RegisterEvent;
-				public function HRESULT(IUIAutomationRegistrar *self, UIAutomationPatternInfo* pattern, int32* pPatternId, int32* pPatternAvailablePropertyId, uint32 propertyIdCount, int32* pPropertyIds, uint32 eventIdCount, int32* pEventIds) RegisterPattern;
+				public new function HRESULT(IUIAutomationRegistrar *self, UIAutomationPropertyInfo* property, int32* propertyId) RegisterProperty;
+				public new function HRESULT(IUIAutomationRegistrar *self, UIAutomationEventInfo* event, int32* eventId) RegisterEvent;
+				public new function HRESULT(IUIAutomationRegistrar *self, UIAutomationPatternInfo* pattern, int32* pPatternId, int32* pPatternAvailablePropertyId, uint32 propertyIdCount, int32* pPropertyIds, uint32 eventIdCount, int32* pEventIds) RegisterPattern;
 			}
 		}
 		[CRepr]
@@ -2710,92 +3703,421 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd22108aa, 0x8ac5, 0x49a5, 0x83, 0x7b, 0x37, 0xbb, 0xb3, 0xd7, 0x59, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetFocus() mut
+			{
+				return VT.SetFocus(&this);
+			}
+			public HRESULT GetRuntimeId(SAFEARRAY** runtimeId) mut
+			{
+				return VT.GetRuntimeId(&this, runtimeId);
+			}
+			public HRESULT FindFirst(TreeScope @scope, IUIAutomationCondition* condition, IUIAutomationElement** found) mut
+			{
+				return VT.FindFirst(&this, @scope, condition, found);
+			}
+			public HRESULT FindAll(TreeScope @scope, IUIAutomationCondition* condition, IUIAutomationElementArray** found) mut
+			{
+				return VT.FindAll(&this, @scope, condition, found);
+			}
+			public HRESULT FindFirstBuildCache(TreeScope @scope, IUIAutomationCondition* condition, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** found) mut
+			{
+				return VT.FindFirstBuildCache(&this, @scope, condition, cacheRequest, found);
+			}
+			public HRESULT FindAllBuildCache(TreeScope @scope, IUIAutomationCondition* condition, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElementArray** found) mut
+			{
+				return VT.FindAllBuildCache(&this, @scope, condition, cacheRequest, found);
+			}
+			public HRESULT BuildUpdatedCache(IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** updatedElement) mut
+			{
+				return VT.BuildUpdatedCache(&this, cacheRequest, updatedElement);
+			}
+			public HRESULT GetCurrentPropertyValue(int32 propertyId, VARIANT* retVal) mut
+			{
+				return VT.GetCurrentPropertyValue(&this, propertyId, retVal);
+			}
+			public HRESULT GetCurrentPropertyValueEx(int32 propertyId, BOOL ignoreDefaultValue, VARIANT* retVal) mut
+			{
+				return VT.GetCurrentPropertyValueEx(&this, propertyId, ignoreDefaultValue, retVal);
+			}
+			public HRESULT GetCachedPropertyValue(int32 propertyId, VARIANT* retVal) mut
+			{
+				return VT.GetCachedPropertyValue(&this, propertyId, retVal);
+			}
+			public HRESULT GetCachedPropertyValueEx(int32 propertyId, BOOL ignoreDefaultValue, VARIANT* retVal) mut
+			{
+				return VT.GetCachedPropertyValueEx(&this, propertyId, ignoreDefaultValue, retVal);
+			}
+			public HRESULT GetCurrentPatternAs(int32 patternId, Guid* riid, void** patternObject) mut
+			{
+				return VT.GetCurrentPatternAs(&this, patternId, riid, patternObject);
+			}
+			public HRESULT GetCachedPatternAs(int32 patternId, Guid* riid, void** patternObject) mut
+			{
+				return VT.GetCachedPatternAs(&this, patternId, riid, patternObject);
+			}
+			public HRESULT GetCurrentPattern(int32 patternId, IUnknown** patternObject) mut
+			{
+				return VT.GetCurrentPattern(&this, patternId, patternObject);
+			}
+			public HRESULT GetCachedPattern(int32 patternId, IUnknown** patternObject) mut
+			{
+				return VT.GetCachedPattern(&this, patternId, patternObject);
+			}
+			public HRESULT GetCachedParent(IUIAutomationElement** parent) mut
+			{
+				return VT.GetCachedParent(&this, parent);
+			}
+			public HRESULT GetCachedChildren(IUIAutomationElementArray** children) mut
+			{
+				return VT.GetCachedChildren(&this, children);
+			}
+			public HRESULT get_CurrentProcessId(int32* retVal) mut
+			{
+				return VT.get_CurrentProcessId(&this, retVal);
+			}
+			public HRESULT get_CurrentControlType(int32* retVal) mut
+			{
+				return VT.get_CurrentControlType(&this, retVal);
+			}
+			public HRESULT get_CurrentLocalizedControlType(BSTR* retVal) mut
+			{
+				return VT.get_CurrentLocalizedControlType(&this, retVal);
+			}
+			public HRESULT get_CurrentName(BSTR* retVal) mut
+			{
+				return VT.get_CurrentName(&this, retVal);
+			}
+			public HRESULT get_CurrentAcceleratorKey(BSTR* retVal) mut
+			{
+				return VT.get_CurrentAcceleratorKey(&this, retVal);
+			}
+			public HRESULT get_CurrentAccessKey(BSTR* retVal) mut
+			{
+				return VT.get_CurrentAccessKey(&this, retVal);
+			}
+			public HRESULT get_CurrentHasKeyboardFocus(BOOL* retVal) mut
+			{
+				return VT.get_CurrentHasKeyboardFocus(&this, retVal);
+			}
+			public HRESULT get_CurrentIsKeyboardFocusable(BOOL* retVal) mut
+			{
+				return VT.get_CurrentIsKeyboardFocusable(&this, retVal);
+			}
+			public HRESULT get_CurrentIsEnabled(BOOL* retVal) mut
+			{
+				return VT.get_CurrentIsEnabled(&this, retVal);
+			}
+			public HRESULT get_CurrentAutomationId(BSTR* retVal) mut
+			{
+				return VT.get_CurrentAutomationId(&this, retVal);
+			}
+			public HRESULT get_CurrentClassName(BSTR* retVal) mut
+			{
+				return VT.get_CurrentClassName(&this, retVal);
+			}
+			public HRESULT get_CurrentHelpText(BSTR* retVal) mut
+			{
+				return VT.get_CurrentHelpText(&this, retVal);
+			}
+			public HRESULT get_CurrentCulture(int32* retVal) mut
+			{
+				return VT.get_CurrentCulture(&this, retVal);
+			}
+			public HRESULT get_CurrentIsControlElement(BOOL* retVal) mut
+			{
+				return VT.get_CurrentIsControlElement(&this, retVal);
+			}
+			public HRESULT get_CurrentIsContentElement(BOOL* retVal) mut
+			{
+				return VT.get_CurrentIsContentElement(&this, retVal);
+			}
+			public HRESULT get_CurrentIsPassword(BOOL* retVal) mut
+			{
+				return VT.get_CurrentIsPassword(&this, retVal);
+			}
+			public HRESULT get_CurrentNativeWindowHandle(HWND retVal) mut
+			{
+				return VT.get_CurrentNativeWindowHandle(&this, retVal);
+			}
+			public HRESULT get_CurrentItemType(BSTR* retVal) mut
+			{
+				return VT.get_CurrentItemType(&this, retVal);
+			}
+			public HRESULT get_CurrentIsOffscreen(BOOL* retVal) mut
+			{
+				return VT.get_CurrentIsOffscreen(&this, retVal);
+			}
+			public HRESULT get_CurrentOrientation(OrientationType* retVal) mut
+			{
+				return VT.get_CurrentOrientation(&this, retVal);
+			}
+			public HRESULT get_CurrentFrameworkId(BSTR* retVal) mut
+			{
+				return VT.get_CurrentFrameworkId(&this, retVal);
+			}
+			public HRESULT get_CurrentIsRequiredForForm(BOOL* retVal) mut
+			{
+				return VT.get_CurrentIsRequiredForForm(&this, retVal);
+			}
+			public HRESULT get_CurrentItemStatus(BSTR* retVal) mut
+			{
+				return VT.get_CurrentItemStatus(&this, retVal);
+			}
+			public HRESULT get_CurrentBoundingRectangle(RECT* retVal) mut
+			{
+				return VT.get_CurrentBoundingRectangle(&this, retVal);
+			}
+			public HRESULT get_CurrentLabeledBy(IUIAutomationElement** retVal) mut
+			{
+				return VT.get_CurrentLabeledBy(&this, retVal);
+			}
+			public HRESULT get_CurrentAriaRole(BSTR* retVal) mut
+			{
+				return VT.get_CurrentAriaRole(&this, retVal);
+			}
+			public HRESULT get_CurrentAriaProperties(BSTR* retVal) mut
+			{
+				return VT.get_CurrentAriaProperties(&this, retVal);
+			}
+			public HRESULT get_CurrentIsDataValidForForm(BOOL* retVal) mut
+			{
+				return VT.get_CurrentIsDataValidForForm(&this, retVal);
+			}
+			public HRESULT get_CurrentControllerFor(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.get_CurrentControllerFor(&this, retVal);
+			}
+			public HRESULT get_CurrentDescribedBy(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.get_CurrentDescribedBy(&this, retVal);
+			}
+			public HRESULT get_CurrentFlowsTo(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.get_CurrentFlowsTo(&this, retVal);
+			}
+			public HRESULT get_CurrentProviderDescription(BSTR* retVal) mut
+			{
+				return VT.get_CurrentProviderDescription(&this, retVal);
+			}
+			public HRESULT get_CachedProcessId(int32* retVal) mut
+			{
+				return VT.get_CachedProcessId(&this, retVal);
+			}
+			public HRESULT get_CachedControlType(int32* retVal) mut
+			{
+				return VT.get_CachedControlType(&this, retVal);
+			}
+			public HRESULT get_CachedLocalizedControlType(BSTR* retVal) mut
+			{
+				return VT.get_CachedLocalizedControlType(&this, retVal);
+			}
+			public HRESULT get_CachedName(BSTR* retVal) mut
+			{
+				return VT.get_CachedName(&this, retVal);
+			}
+			public HRESULT get_CachedAcceleratorKey(BSTR* retVal) mut
+			{
+				return VT.get_CachedAcceleratorKey(&this, retVal);
+			}
+			public HRESULT get_CachedAccessKey(BSTR* retVal) mut
+			{
+				return VT.get_CachedAccessKey(&this, retVal);
+			}
+			public HRESULT get_CachedHasKeyboardFocus(BOOL* retVal) mut
+			{
+				return VT.get_CachedHasKeyboardFocus(&this, retVal);
+			}
+			public HRESULT get_CachedIsKeyboardFocusable(BOOL* retVal) mut
+			{
+				return VT.get_CachedIsKeyboardFocusable(&this, retVal);
+			}
+			public HRESULT get_CachedIsEnabled(BOOL* retVal) mut
+			{
+				return VT.get_CachedIsEnabled(&this, retVal);
+			}
+			public HRESULT get_CachedAutomationId(BSTR* retVal) mut
+			{
+				return VT.get_CachedAutomationId(&this, retVal);
+			}
+			public HRESULT get_CachedClassName(BSTR* retVal) mut
+			{
+				return VT.get_CachedClassName(&this, retVal);
+			}
+			public HRESULT get_CachedHelpText(BSTR* retVal) mut
+			{
+				return VT.get_CachedHelpText(&this, retVal);
+			}
+			public HRESULT get_CachedCulture(int32* retVal) mut
+			{
+				return VT.get_CachedCulture(&this, retVal);
+			}
+			public HRESULT get_CachedIsControlElement(BOOL* retVal) mut
+			{
+				return VT.get_CachedIsControlElement(&this, retVal);
+			}
+			public HRESULT get_CachedIsContentElement(BOOL* retVal) mut
+			{
+				return VT.get_CachedIsContentElement(&this, retVal);
+			}
+			public HRESULT get_CachedIsPassword(BOOL* retVal) mut
+			{
+				return VT.get_CachedIsPassword(&this, retVal);
+			}
+			public HRESULT get_CachedNativeWindowHandle(HWND retVal) mut
+			{
+				return VT.get_CachedNativeWindowHandle(&this, retVal);
+			}
+			public HRESULT get_CachedItemType(BSTR* retVal) mut
+			{
+				return VT.get_CachedItemType(&this, retVal);
+			}
+			public HRESULT get_CachedIsOffscreen(BOOL* retVal) mut
+			{
+				return VT.get_CachedIsOffscreen(&this, retVal);
+			}
+			public HRESULT get_CachedOrientation(OrientationType* retVal) mut
+			{
+				return VT.get_CachedOrientation(&this, retVal);
+			}
+			public HRESULT get_CachedFrameworkId(BSTR* retVal) mut
+			{
+				return VT.get_CachedFrameworkId(&this, retVal);
+			}
+			public HRESULT get_CachedIsRequiredForForm(BOOL* retVal) mut
+			{
+				return VT.get_CachedIsRequiredForForm(&this, retVal);
+			}
+			public HRESULT get_CachedItemStatus(BSTR* retVal) mut
+			{
+				return VT.get_CachedItemStatus(&this, retVal);
+			}
+			public HRESULT get_CachedBoundingRectangle(RECT* retVal) mut
+			{
+				return VT.get_CachedBoundingRectangle(&this, retVal);
+			}
+			public HRESULT get_CachedLabeledBy(IUIAutomationElement** retVal) mut
+			{
+				return VT.get_CachedLabeledBy(&this, retVal);
+			}
+			public HRESULT get_CachedAriaRole(BSTR* retVal) mut
+			{
+				return VT.get_CachedAriaRole(&this, retVal);
+			}
+			public HRESULT get_CachedAriaProperties(BSTR* retVal) mut
+			{
+				return VT.get_CachedAriaProperties(&this, retVal);
+			}
+			public HRESULT get_CachedIsDataValidForForm(BOOL* retVal) mut
+			{
+				return VT.get_CachedIsDataValidForForm(&this, retVal);
+			}
+			public HRESULT get_CachedControllerFor(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.get_CachedControllerFor(&this, retVal);
+			}
+			public HRESULT get_CachedDescribedBy(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.get_CachedDescribedBy(&this, retVal);
+			}
+			public HRESULT get_CachedFlowsTo(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.get_CachedFlowsTo(&this, retVal);
+			}
+			public HRESULT get_CachedProviderDescription(BSTR* retVal) mut
+			{
+				return VT.get_CachedProviderDescription(&this, retVal);
+			}
+			public HRESULT GetClickablePoint(POINT* clickable, BOOL* gotClickable) mut
+			{
+				return VT.GetClickablePoint(&this, clickable, gotClickable);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationElement *self) SetFocus;
-				public function HRESULT(IUIAutomationElement *self, SAFEARRAY** runtimeId) GetRuntimeId;
-				public function HRESULT(IUIAutomationElement *self, TreeScope @scope, IUIAutomationCondition* condition, IUIAutomationElement** found) FindFirst;
-				public function HRESULT(IUIAutomationElement *self, TreeScope @scope, IUIAutomationCondition* condition, IUIAutomationElementArray** found) FindAll;
-				public function HRESULT(IUIAutomationElement *self, TreeScope @scope, IUIAutomationCondition* condition, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** found) FindFirstBuildCache;
-				public function HRESULT(IUIAutomationElement *self, TreeScope @scope, IUIAutomationCondition* condition, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElementArray** found) FindAllBuildCache;
-				public function HRESULT(IUIAutomationElement *self, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** updatedElement) BuildUpdatedCache;
-				public function HRESULT(IUIAutomationElement *self, int32 propertyId, VARIANT* retVal) GetCurrentPropertyValue;
-				public function HRESULT(IUIAutomationElement *self, int32 propertyId, BOOL ignoreDefaultValue, VARIANT* retVal) GetCurrentPropertyValueEx;
-				public function HRESULT(IUIAutomationElement *self, int32 propertyId, VARIANT* retVal) GetCachedPropertyValue;
-				public function HRESULT(IUIAutomationElement *self, int32 propertyId, BOOL ignoreDefaultValue, VARIANT* retVal) GetCachedPropertyValueEx;
-				public function HRESULT(IUIAutomationElement *self, int32 patternId, Guid* riid, void** patternObject) GetCurrentPatternAs;
-				public function HRESULT(IUIAutomationElement *self, int32 patternId, Guid* riid, void** patternObject) GetCachedPatternAs;
-				public function HRESULT(IUIAutomationElement *self, int32 patternId, IUnknown** patternObject) GetCurrentPattern;
-				public function HRESULT(IUIAutomationElement *self, int32 patternId, IUnknown** patternObject) GetCachedPattern;
-				public function HRESULT(IUIAutomationElement *self, IUIAutomationElement** parent) GetCachedParent;
-				public function HRESULT(IUIAutomationElement *self, IUIAutomationElementArray** children) GetCachedChildren;
-				public function HRESULT(IUIAutomationElement *self, int32* retVal) get_CurrentProcessId;
-				public function HRESULT(IUIAutomationElement *self, int32* retVal) get_CurrentControlType;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentLocalizedControlType;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentName;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentAcceleratorKey;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentAccessKey;
-				public function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CurrentHasKeyboardFocus;
-				public function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CurrentIsKeyboardFocusable;
-				public function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CurrentIsEnabled;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentAutomationId;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentClassName;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentHelpText;
-				public function HRESULT(IUIAutomationElement *self, int32* retVal) get_CurrentCulture;
-				public function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CurrentIsControlElement;
-				public function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CurrentIsContentElement;
-				public function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CurrentIsPassword;
-				public function HRESULT(IUIAutomationElement *self, HWND retVal) get_CurrentNativeWindowHandle;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentItemType;
-				public function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CurrentIsOffscreen;
-				public function HRESULT(IUIAutomationElement *self, OrientationType* retVal) get_CurrentOrientation;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentFrameworkId;
-				public function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CurrentIsRequiredForForm;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentItemStatus;
-				public function HRESULT(IUIAutomationElement *self, RECT* retVal) get_CurrentBoundingRectangle;
-				public function HRESULT(IUIAutomationElement *self, IUIAutomationElement** retVal) get_CurrentLabeledBy;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentAriaRole;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentAriaProperties;
-				public function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CurrentIsDataValidForForm;
-				public function HRESULT(IUIAutomationElement *self, IUIAutomationElementArray** retVal) get_CurrentControllerFor;
-				public function HRESULT(IUIAutomationElement *self, IUIAutomationElementArray** retVal) get_CurrentDescribedBy;
-				public function HRESULT(IUIAutomationElement *self, IUIAutomationElementArray** retVal) get_CurrentFlowsTo;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentProviderDescription;
-				public function HRESULT(IUIAutomationElement *self, int32* retVal) get_CachedProcessId;
-				public function HRESULT(IUIAutomationElement *self, int32* retVal) get_CachedControlType;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedLocalizedControlType;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedName;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedAcceleratorKey;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedAccessKey;
-				public function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CachedHasKeyboardFocus;
-				public function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CachedIsKeyboardFocusable;
-				public function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CachedIsEnabled;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedAutomationId;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedClassName;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedHelpText;
-				public function HRESULT(IUIAutomationElement *self, int32* retVal) get_CachedCulture;
-				public function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CachedIsControlElement;
-				public function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CachedIsContentElement;
-				public function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CachedIsPassword;
-				public function HRESULT(IUIAutomationElement *self, HWND retVal) get_CachedNativeWindowHandle;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedItemType;
-				public function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CachedIsOffscreen;
-				public function HRESULT(IUIAutomationElement *self, OrientationType* retVal) get_CachedOrientation;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedFrameworkId;
-				public function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CachedIsRequiredForForm;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedItemStatus;
-				public function HRESULT(IUIAutomationElement *self, RECT* retVal) get_CachedBoundingRectangle;
-				public function HRESULT(IUIAutomationElement *self, IUIAutomationElement** retVal) get_CachedLabeledBy;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedAriaRole;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedAriaProperties;
-				public function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CachedIsDataValidForForm;
-				public function HRESULT(IUIAutomationElement *self, IUIAutomationElementArray** retVal) get_CachedControllerFor;
-				public function HRESULT(IUIAutomationElement *self, IUIAutomationElementArray** retVal) get_CachedDescribedBy;
-				public function HRESULT(IUIAutomationElement *self, IUIAutomationElementArray** retVal) get_CachedFlowsTo;
-				public function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedProviderDescription;
-				public function HRESULT(IUIAutomationElement *self, POINT* clickable, BOOL* gotClickable) GetClickablePoint;
+				public new function HRESULT(IUIAutomationElement *self) SetFocus;
+				public new function HRESULT(IUIAutomationElement *self, SAFEARRAY** runtimeId) GetRuntimeId;
+				public new function HRESULT(IUIAutomationElement *self, TreeScope @scope, IUIAutomationCondition* condition, IUIAutomationElement** found) FindFirst;
+				public new function HRESULT(IUIAutomationElement *self, TreeScope @scope, IUIAutomationCondition* condition, IUIAutomationElementArray** found) FindAll;
+				public new function HRESULT(IUIAutomationElement *self, TreeScope @scope, IUIAutomationCondition* condition, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** found) FindFirstBuildCache;
+				public new function HRESULT(IUIAutomationElement *self, TreeScope @scope, IUIAutomationCondition* condition, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElementArray** found) FindAllBuildCache;
+				public new function HRESULT(IUIAutomationElement *self, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** updatedElement) BuildUpdatedCache;
+				public new function HRESULT(IUIAutomationElement *self, int32 propertyId, VARIANT* retVal) GetCurrentPropertyValue;
+				public new function HRESULT(IUIAutomationElement *self, int32 propertyId, BOOL ignoreDefaultValue, VARIANT* retVal) GetCurrentPropertyValueEx;
+				public new function HRESULT(IUIAutomationElement *self, int32 propertyId, VARIANT* retVal) GetCachedPropertyValue;
+				public new function HRESULT(IUIAutomationElement *self, int32 propertyId, BOOL ignoreDefaultValue, VARIANT* retVal) GetCachedPropertyValueEx;
+				public new function HRESULT(IUIAutomationElement *self, int32 patternId, Guid* riid, void** patternObject) GetCurrentPatternAs;
+				public new function HRESULT(IUIAutomationElement *self, int32 patternId, Guid* riid, void** patternObject) GetCachedPatternAs;
+				public new function HRESULT(IUIAutomationElement *self, int32 patternId, IUnknown** patternObject) GetCurrentPattern;
+				public new function HRESULT(IUIAutomationElement *self, int32 patternId, IUnknown** patternObject) GetCachedPattern;
+				public new function HRESULT(IUIAutomationElement *self, IUIAutomationElement** parent) GetCachedParent;
+				public new function HRESULT(IUIAutomationElement *self, IUIAutomationElementArray** children) GetCachedChildren;
+				public new function HRESULT(IUIAutomationElement *self, int32* retVal) get_CurrentProcessId;
+				public new function HRESULT(IUIAutomationElement *self, int32* retVal) get_CurrentControlType;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentLocalizedControlType;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentName;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentAcceleratorKey;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentAccessKey;
+				public new function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CurrentHasKeyboardFocus;
+				public new function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CurrentIsKeyboardFocusable;
+				public new function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CurrentIsEnabled;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentAutomationId;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentClassName;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentHelpText;
+				public new function HRESULT(IUIAutomationElement *self, int32* retVal) get_CurrentCulture;
+				public new function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CurrentIsControlElement;
+				public new function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CurrentIsContentElement;
+				public new function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CurrentIsPassword;
+				public new function HRESULT(IUIAutomationElement *self, HWND retVal) get_CurrentNativeWindowHandle;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentItemType;
+				public new function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CurrentIsOffscreen;
+				public new function HRESULT(IUIAutomationElement *self, OrientationType* retVal) get_CurrentOrientation;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentFrameworkId;
+				public new function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CurrentIsRequiredForForm;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentItemStatus;
+				public new function HRESULT(IUIAutomationElement *self, RECT* retVal) get_CurrentBoundingRectangle;
+				public new function HRESULT(IUIAutomationElement *self, IUIAutomationElement** retVal) get_CurrentLabeledBy;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentAriaRole;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentAriaProperties;
+				public new function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CurrentIsDataValidForForm;
+				public new function HRESULT(IUIAutomationElement *self, IUIAutomationElementArray** retVal) get_CurrentControllerFor;
+				public new function HRESULT(IUIAutomationElement *self, IUIAutomationElementArray** retVal) get_CurrentDescribedBy;
+				public new function HRESULT(IUIAutomationElement *self, IUIAutomationElementArray** retVal) get_CurrentFlowsTo;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CurrentProviderDescription;
+				public new function HRESULT(IUIAutomationElement *self, int32* retVal) get_CachedProcessId;
+				public new function HRESULT(IUIAutomationElement *self, int32* retVal) get_CachedControlType;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedLocalizedControlType;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedName;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedAcceleratorKey;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedAccessKey;
+				public new function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CachedHasKeyboardFocus;
+				public new function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CachedIsKeyboardFocusable;
+				public new function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CachedIsEnabled;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedAutomationId;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedClassName;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedHelpText;
+				public new function HRESULT(IUIAutomationElement *self, int32* retVal) get_CachedCulture;
+				public new function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CachedIsControlElement;
+				public new function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CachedIsContentElement;
+				public new function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CachedIsPassword;
+				public new function HRESULT(IUIAutomationElement *self, HWND retVal) get_CachedNativeWindowHandle;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedItemType;
+				public new function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CachedIsOffscreen;
+				public new function HRESULT(IUIAutomationElement *self, OrientationType* retVal) get_CachedOrientation;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedFrameworkId;
+				public new function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CachedIsRequiredForForm;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedItemStatus;
+				public new function HRESULT(IUIAutomationElement *self, RECT* retVal) get_CachedBoundingRectangle;
+				public new function HRESULT(IUIAutomationElement *self, IUIAutomationElement** retVal) get_CachedLabeledBy;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedAriaRole;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedAriaProperties;
+				public new function HRESULT(IUIAutomationElement *self, BOOL* retVal) get_CachedIsDataValidForForm;
+				public new function HRESULT(IUIAutomationElement *self, IUIAutomationElementArray** retVal) get_CachedControllerFor;
+				public new function HRESULT(IUIAutomationElement *self, IUIAutomationElementArray** retVal) get_CachedDescribedBy;
+				public new function HRESULT(IUIAutomationElement *self, IUIAutomationElementArray** retVal) get_CachedFlowsTo;
+				public new function HRESULT(IUIAutomationElement *self, BSTR* retVal) get_CachedProviderDescription;
+				public new function HRESULT(IUIAutomationElement *self, POINT* clickable, BOOL* gotClickable) GetClickablePoint;
 			}
 		}
 		[CRepr]
@@ -2803,12 +4125,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x14314595, 0xb4bc, 0x4055, 0x95, 0xf2, 0x58, 0xf2, 0xe4, 0x2c, 0x98, 0x55);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Length(int32* length) mut
+			{
+				return VT.get_Length(&this, length);
+			}
+			public HRESULT GetElement(int32 index, IUIAutomationElement** element) mut
+			{
+				return VT.GetElement(&this, index, element);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationElementArray *self, int32* length) get_Length;
-				public function HRESULT(IUIAutomationElementArray *self, int32 index, IUIAutomationElement** element) GetElement;
+				public new function HRESULT(IUIAutomationElementArray *self, int32* length) get_Length;
+				public new function HRESULT(IUIAutomationElementArray *self, int32 index, IUIAutomationElement** element) GetElement;
 			}
 		}
 		[CRepr]
@@ -2816,7 +4147,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x352ffba8, 0x0973, 0x437c, 0xa6, 0x1f, 0xf6, 0x4c, 0xaf, 0xd8, 0x1d, 0xf9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2827,11 +4159,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1b4e1f2e, 0x75eb, 0x4d0b, 0x89, 0x52, 0x5a, 0x69, 0x98, 0x8e, 0x23, 0x07);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_BooleanValue(BOOL* boolVal) mut
+			{
+				return VT.get_BooleanValue(&this, boolVal);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationCondition.VTable
 			{
-				public function HRESULT(IUIAutomationBoolCondition *self, BOOL* boolVal) get_BooleanValue;
+				public new function HRESULT(IUIAutomationBoolCondition *self, BOOL* boolVal) get_BooleanValue;
 			}
 		}
 		[CRepr]
@@ -2839,13 +4176,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x99ebf2cb, 0x5578, 0x4267, 0x9a, 0xd4, 0xaf, 0xd6, 0xea, 0x77, 0xe9, 0x4b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_PropertyId(int32* propertyId) mut
+			{
+				return VT.get_PropertyId(&this, propertyId);
+			}
+			public HRESULT get_PropertyValue(VARIANT* propertyValue) mut
+			{
+				return VT.get_PropertyValue(&this, propertyValue);
+			}
+			public HRESULT get_PropertyConditionFlags(PropertyConditionFlags* flags) mut
+			{
+				return VT.get_PropertyConditionFlags(&this, flags);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationCondition.VTable
 			{
-				public function HRESULT(IUIAutomationPropertyCondition *self, int32* propertyId) get_PropertyId;
-				public function HRESULT(IUIAutomationPropertyCondition *self, VARIANT* propertyValue) get_PropertyValue;
-				public function HRESULT(IUIAutomationPropertyCondition *self, PropertyConditionFlags* flags) get_PropertyConditionFlags;
+				public new function HRESULT(IUIAutomationPropertyCondition *self, int32* propertyId) get_PropertyId;
+				public new function HRESULT(IUIAutomationPropertyCondition *self, VARIANT* propertyValue) get_PropertyValue;
+				public new function HRESULT(IUIAutomationPropertyCondition *self, PropertyConditionFlags* flags) get_PropertyConditionFlags;
 			}
 		}
 		[CRepr]
@@ -2853,13 +4203,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa7d0af36, 0xb912, 0x45fe, 0x98, 0x55, 0x09, 0x1d, 0xdc, 0x17, 0x4a, 0xec);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ChildCount(int32* childCount) mut
+			{
+				return VT.get_ChildCount(&this, childCount);
+			}
+			public HRESULT GetChildrenAsNativeArray(IUIAutomationCondition*** childArray, int32* childArrayCount) mut
+			{
+				return VT.GetChildrenAsNativeArray(&this, childArray, childArrayCount);
+			}
+			public HRESULT GetChildren(SAFEARRAY** childArray) mut
+			{
+				return VT.GetChildren(&this, childArray);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationCondition.VTable
 			{
-				public function HRESULT(IUIAutomationAndCondition *self, int32* childCount) get_ChildCount;
-				public function HRESULT(IUIAutomationAndCondition *self, IUIAutomationCondition*** childArray, int32* childArrayCount) GetChildrenAsNativeArray;
-				public function HRESULT(IUIAutomationAndCondition *self, SAFEARRAY** childArray) GetChildren;
+				public new function HRESULT(IUIAutomationAndCondition *self, int32* childCount) get_ChildCount;
+				public new function HRESULT(IUIAutomationAndCondition *self, IUIAutomationCondition*** childArray, int32* childArrayCount) GetChildrenAsNativeArray;
+				public new function HRESULT(IUIAutomationAndCondition *self, SAFEARRAY** childArray) GetChildren;
 			}
 		}
 		[CRepr]
@@ -2867,13 +4230,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8753f032, 0x3db1, 0x47b5, 0xa1, 0xfc, 0x6e, 0x34, 0xa2, 0x66, 0xc7, 0x12);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ChildCount(int32* childCount) mut
+			{
+				return VT.get_ChildCount(&this, childCount);
+			}
+			public HRESULT GetChildrenAsNativeArray(IUIAutomationCondition*** childArray, int32* childArrayCount) mut
+			{
+				return VT.GetChildrenAsNativeArray(&this, childArray, childArrayCount);
+			}
+			public HRESULT GetChildren(SAFEARRAY** childArray) mut
+			{
+				return VT.GetChildren(&this, childArray);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationCondition.VTable
 			{
-				public function HRESULT(IUIAutomationOrCondition *self, int32* childCount) get_ChildCount;
-				public function HRESULT(IUIAutomationOrCondition *self, IUIAutomationCondition*** childArray, int32* childArrayCount) GetChildrenAsNativeArray;
-				public function HRESULT(IUIAutomationOrCondition *self, SAFEARRAY** childArray) GetChildren;
+				public new function HRESULT(IUIAutomationOrCondition *self, int32* childCount) get_ChildCount;
+				public new function HRESULT(IUIAutomationOrCondition *self, IUIAutomationCondition*** childArray, int32* childArrayCount) GetChildrenAsNativeArray;
+				public new function HRESULT(IUIAutomationOrCondition *self, SAFEARRAY** childArray) GetChildren;
 			}
 		}
 		[CRepr]
@@ -2881,11 +4257,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf528b657, 0x847b, 0x498c, 0x88, 0x96, 0xd5, 0x2b, 0x56, 0x54, 0x07, 0xa1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetChild(IUIAutomationCondition** condition) mut
+			{
+				return VT.GetChild(&this, condition);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationCondition.VTable
 			{
-				public function HRESULT(IUIAutomationNotCondition *self, IUIAutomationCondition** condition) GetChild;
+				public new function HRESULT(IUIAutomationNotCondition *self, IUIAutomationCondition** condition) GetChild;
 			}
 		}
 		[CRepr]
@@ -2893,19 +4274,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb32a92b5, 0xbc25, 0x4078, 0x9c, 0x08, 0xd7, 0xee, 0x95, 0xc4, 0x8e, 0x03);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddProperty(int32 propertyId) mut
+			{
+				return VT.AddProperty(&this, propertyId);
+			}
+			public HRESULT AddPattern(int32 patternId) mut
+			{
+				return VT.AddPattern(&this, patternId);
+			}
+			public HRESULT Clone(IUIAutomationCacheRequest** clonedRequest) mut
+			{
+				return VT.Clone(&this, clonedRequest);
+			}
+			public HRESULT get_TreeScope(TreeScope* @scope) mut
+			{
+				return VT.get_TreeScope(&this, @scope);
+			}
+			public HRESULT put_TreeScope(TreeScope @scope) mut
+			{
+				return VT.put_TreeScope(&this, @scope);
+			}
+			public HRESULT get_TreeFilter(IUIAutomationCondition** filter) mut
+			{
+				return VT.get_TreeFilter(&this, filter);
+			}
+			public HRESULT put_TreeFilter(IUIAutomationCondition* filter) mut
+			{
+				return VT.put_TreeFilter(&this, filter);
+			}
+			public HRESULT get_AutomationElementMode(AutomationElementMode* mode) mut
+			{
+				return VT.get_AutomationElementMode(&this, mode);
+			}
+			public HRESULT put_AutomationElementMode(AutomationElementMode mode) mut
+			{
+				return VT.put_AutomationElementMode(&this, mode);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationCacheRequest *self, int32 propertyId) AddProperty;
-				public function HRESULT(IUIAutomationCacheRequest *self, int32 patternId) AddPattern;
-				public function HRESULT(IUIAutomationCacheRequest *self, IUIAutomationCacheRequest** clonedRequest) Clone;
-				public function HRESULT(IUIAutomationCacheRequest *self, TreeScope* @scope) get_TreeScope;
-				public function HRESULT(IUIAutomationCacheRequest *self, TreeScope @scope) put_TreeScope;
-				public function HRESULT(IUIAutomationCacheRequest *self, IUIAutomationCondition** filter) get_TreeFilter;
-				public function HRESULT(IUIAutomationCacheRequest *self, IUIAutomationCondition* filter) put_TreeFilter;
-				public function HRESULT(IUIAutomationCacheRequest *self, AutomationElementMode* mode) get_AutomationElementMode;
-				public function HRESULT(IUIAutomationCacheRequest *self, AutomationElementMode mode) put_AutomationElementMode;
+				public new function HRESULT(IUIAutomationCacheRequest *self, int32 propertyId) AddProperty;
+				public new function HRESULT(IUIAutomationCacheRequest *self, int32 patternId) AddPattern;
+				public new function HRESULT(IUIAutomationCacheRequest *self, IUIAutomationCacheRequest** clonedRequest) Clone;
+				public new function HRESULT(IUIAutomationCacheRequest *self, TreeScope* @scope) get_TreeScope;
+				public new function HRESULT(IUIAutomationCacheRequest *self, TreeScope @scope) put_TreeScope;
+				public new function HRESULT(IUIAutomationCacheRequest *self, IUIAutomationCondition** filter) get_TreeFilter;
+				public new function HRESULT(IUIAutomationCacheRequest *self, IUIAutomationCondition* filter) put_TreeFilter;
+				public new function HRESULT(IUIAutomationCacheRequest *self, AutomationElementMode* mode) get_AutomationElementMode;
+				public new function HRESULT(IUIAutomationCacheRequest *self, AutomationElementMode mode) put_AutomationElementMode;
 			}
 		}
 		[CRepr]
@@ -2913,23 +4331,76 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4042c624, 0x389c, 0x4afc, 0xa6, 0x30, 0x9d, 0xf8, 0x54, 0xa5, 0x41, 0xfc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetParentElement(IUIAutomationElement* element, IUIAutomationElement** parent) mut
+			{
+				return VT.GetParentElement(&this, element, parent);
+			}
+			public HRESULT GetFirstChildElement(IUIAutomationElement* element, IUIAutomationElement** first) mut
+			{
+				return VT.GetFirstChildElement(&this, element, first);
+			}
+			public HRESULT GetLastChildElement(IUIAutomationElement* element, IUIAutomationElement** last) mut
+			{
+				return VT.GetLastChildElement(&this, element, last);
+			}
+			public HRESULT GetNextSiblingElement(IUIAutomationElement* element, IUIAutomationElement** next) mut
+			{
+				return VT.GetNextSiblingElement(&this, element, next);
+			}
+			public HRESULT GetPreviousSiblingElement(IUIAutomationElement* element, IUIAutomationElement** previous) mut
+			{
+				return VT.GetPreviousSiblingElement(&this, element, previous);
+			}
+			public HRESULT NormalizeElement(IUIAutomationElement* element, IUIAutomationElement** normalized) mut
+			{
+				return VT.NormalizeElement(&this, element, normalized);
+			}
+			public HRESULT GetParentElementBuildCache(IUIAutomationElement* element, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** parent) mut
+			{
+				return VT.GetParentElementBuildCache(&this, element, cacheRequest, parent);
+			}
+			public HRESULT GetFirstChildElementBuildCache(IUIAutomationElement* element, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** first) mut
+			{
+				return VT.GetFirstChildElementBuildCache(&this, element, cacheRequest, first);
+			}
+			public HRESULT GetLastChildElementBuildCache(IUIAutomationElement* element, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** last) mut
+			{
+				return VT.GetLastChildElementBuildCache(&this, element, cacheRequest, last);
+			}
+			public HRESULT GetNextSiblingElementBuildCache(IUIAutomationElement* element, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** next) mut
+			{
+				return VT.GetNextSiblingElementBuildCache(&this, element, cacheRequest, next);
+			}
+			public HRESULT GetPreviousSiblingElementBuildCache(IUIAutomationElement* element, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** previous) mut
+			{
+				return VT.GetPreviousSiblingElementBuildCache(&this, element, cacheRequest, previous);
+			}
+			public HRESULT NormalizeElementBuildCache(IUIAutomationElement* element, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** normalized) mut
+			{
+				return VT.NormalizeElementBuildCache(&this, element, cacheRequest, normalized);
+			}
+			public HRESULT get_Condition(IUIAutomationCondition** condition) mut
+			{
+				return VT.get_Condition(&this, condition);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationElement** parent) GetParentElement;
-				public function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationElement** first) GetFirstChildElement;
-				public function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationElement** last) GetLastChildElement;
-				public function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationElement** next) GetNextSiblingElement;
-				public function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationElement** previous) GetPreviousSiblingElement;
-				public function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationElement** normalized) NormalizeElement;
-				public function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** parent) GetParentElementBuildCache;
-				public function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** first) GetFirstChildElementBuildCache;
-				public function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** last) GetLastChildElementBuildCache;
-				public function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** next) GetNextSiblingElementBuildCache;
-				public function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** previous) GetPreviousSiblingElementBuildCache;
-				public function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** normalized) NormalizeElementBuildCache;
-				public function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationCondition** condition) get_Condition;
+				public new function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationElement** parent) GetParentElement;
+				public new function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationElement** first) GetFirstChildElement;
+				public new function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationElement** last) GetLastChildElement;
+				public new function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationElement** next) GetNextSiblingElement;
+				public new function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationElement** previous) GetPreviousSiblingElement;
+				public new function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationElement** normalized) NormalizeElement;
+				public new function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** parent) GetParentElementBuildCache;
+				public new function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** first) GetFirstChildElementBuildCache;
+				public new function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** last) GetLastChildElementBuildCache;
+				public new function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** next) GetNextSiblingElementBuildCache;
+				public new function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** previous) GetPreviousSiblingElementBuildCache;
+				public new function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationElement* element, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** normalized) NormalizeElementBuildCache;
+				public new function HRESULT(IUIAutomationTreeWalker *self, IUIAutomationCondition** condition) get_Condition;
 			}
 		}
 		[CRepr]
@@ -2937,11 +4408,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x146c3c17, 0xf12e, 0x4e22, 0x8c, 0x27, 0xf8, 0x94, 0xb9, 0xb7, 0x9c, 0x69);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT HandleAutomationEvent(IUIAutomationElement* sender, int32 eventId) mut
+			{
+				return VT.HandleAutomationEvent(&this, sender, eventId);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationEventHandler *self, IUIAutomationElement* sender, int32 eventId) HandleAutomationEvent;
+				public new function HRESULT(IUIAutomationEventHandler *self, IUIAutomationElement* sender, int32 eventId) HandleAutomationEvent;
 			}
 		}
 		[CRepr]
@@ -2949,11 +4425,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x40cd37d4, 0xc756, 0x4b0c, 0x8c, 0x6f, 0xbd, 0xdf, 0xee, 0xb1, 0x3b, 0x50);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT HandlePropertyChangedEvent(IUIAutomationElement* sender, int32 propertyId, VARIANT newValue) mut
+			{
+				return VT.HandlePropertyChangedEvent(&this, sender, propertyId, newValue);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationPropertyChangedEventHandler *self, IUIAutomationElement* sender, int32 propertyId, VARIANT newValue) HandlePropertyChangedEvent;
+				public new function HRESULT(IUIAutomationPropertyChangedEventHandler *self, IUIAutomationElement* sender, int32 propertyId, VARIANT newValue) HandlePropertyChangedEvent;
 			}
 		}
 		[CRepr]
@@ -2961,11 +4442,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe81d1b4e, 0x11c5, 0x42f8, 0x97, 0x54, 0xe7, 0x03, 0x6c, 0x79, 0xf0, 0x54);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT HandleStructureChangedEvent(IUIAutomationElement* sender, StructureChangeType changeType, SAFEARRAY* runtimeId) mut
+			{
+				return VT.HandleStructureChangedEvent(&this, sender, changeType, runtimeId);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationStructureChangedEventHandler *self, IUIAutomationElement* sender, StructureChangeType changeType, SAFEARRAY* runtimeId) HandleStructureChangedEvent;
+				public new function HRESULT(IUIAutomationStructureChangedEventHandler *self, IUIAutomationElement* sender, StructureChangeType changeType, SAFEARRAY* runtimeId) HandleStructureChangedEvent;
 			}
 		}
 		[CRepr]
@@ -2973,11 +4459,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc270f6b5, 0x5c69, 0x4290, 0x97, 0x45, 0x7a, 0x7f, 0x97, 0x16, 0x94, 0x68);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT HandleFocusChangedEvent(IUIAutomationElement* sender) mut
+			{
+				return VT.HandleFocusChangedEvent(&this, sender);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationFocusChangedEventHandler *self, IUIAutomationElement* sender) HandleFocusChangedEvent;
+				public new function HRESULT(IUIAutomationFocusChangedEventHandler *self, IUIAutomationElement* sender) HandleFocusChangedEvent;
 			}
 		}
 		[CRepr]
@@ -2985,11 +4476,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x92faa680, 0xe704, 0x4156, 0x93, 0x1a, 0xe3, 0x2d, 0x5b, 0xb3, 0x8f, 0x3f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT HandleTextEditTextChangedEvent(IUIAutomationElement* sender, TextEditChangeType textEditChangeType, SAFEARRAY* eventStrings) mut
+			{
+				return VT.HandleTextEditTextChangedEvent(&this, sender, textEditChangeType, eventStrings);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationTextEditTextChangedEventHandler *self, IUIAutomationElement* sender, TextEditChangeType textEditChangeType, SAFEARRAY* eventStrings) HandleTextEditTextChangedEvent;
+				public new function HRESULT(IUIAutomationTextEditTextChangedEventHandler *self, IUIAutomationElement* sender, TextEditChangeType textEditChangeType, SAFEARRAY* eventStrings) HandleTextEditTextChangedEvent;
 			}
 		}
 		[CRepr]
@@ -2997,11 +4493,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x58edca55, 0x2c3e, 0x4980, 0xb1, 0xb9, 0x56, 0xc1, 0x7f, 0x27, 0xa2, 0xa0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT HandleChangesEvent(IUIAutomationElement* sender, UiaChangeInfo* uiaChanges, int32 changesCount) mut
+			{
+				return VT.HandleChangesEvent(&this, sender, uiaChanges, changesCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationChangesEventHandler *self, IUIAutomationElement* sender, UiaChangeInfo* uiaChanges, int32 changesCount) HandleChangesEvent;
+				public new function HRESULT(IUIAutomationChangesEventHandler *self, IUIAutomationElement* sender, UiaChangeInfo* uiaChanges, int32 changesCount) HandleChangesEvent;
 			}
 		}
 		[CRepr]
@@ -3009,11 +4510,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc7cb2637, 0xe6c2, 0x4d0c, 0x85, 0xde, 0x49, 0x48, 0xc0, 0x21, 0x75, 0xc7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT HandleNotificationEvent(IUIAutomationElement* sender, NotificationKind notificationKind, NotificationProcessing notificationProcessing, BSTR displayString, BSTR activityId) mut
+			{
+				return VT.HandleNotificationEvent(&this, sender, notificationKind, notificationProcessing, displayString, activityId);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationNotificationEventHandler *self, IUIAutomationElement* sender, NotificationKind notificationKind, NotificationProcessing notificationProcessing, BSTR displayString, BSTR activityId) HandleNotificationEvent;
+				public new function HRESULT(IUIAutomationNotificationEventHandler *self, IUIAutomationElement* sender, NotificationKind notificationKind, NotificationProcessing notificationProcessing, BSTR displayString, BSTR activityId) HandleNotificationEvent;
 			}
 		}
 		[CRepr]
@@ -3021,11 +4527,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfb377fbe, 0x8ea6, 0x46d5, 0x9c, 0x73, 0x64, 0x99, 0x64, 0x2d, 0x30, 0x59);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Invoke() mut
+			{
+				return VT.Invoke(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationInvokePattern *self) Invoke;
+				public new function HRESULT(IUIAutomationInvokePattern *self) Invoke;
 			}
 		}
 		[CRepr]
@@ -3033,13 +4544,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfde5ef97, 0x1464, 0x48f6, 0x90, 0xbf, 0x43, 0xd0, 0x94, 0x8e, 0x86, 0xec);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetDockPosition(DockPosition dockPos) mut
+			{
+				return VT.SetDockPosition(&this, dockPos);
+			}
+			public HRESULT get_CurrentDockPosition(DockPosition* retVal) mut
+			{
+				return VT.get_CurrentDockPosition(&this, retVal);
+			}
+			public HRESULT get_CachedDockPosition(DockPosition* retVal) mut
+			{
+				return VT.get_CachedDockPosition(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationDockPattern *self, DockPosition dockPos) SetDockPosition;
-				public function HRESULT(IUIAutomationDockPattern *self, DockPosition* retVal) get_CurrentDockPosition;
-				public function HRESULT(IUIAutomationDockPattern *self, DockPosition* retVal) get_CachedDockPosition;
+				public new function HRESULT(IUIAutomationDockPattern *self, DockPosition dockPos) SetDockPosition;
+				public new function HRESULT(IUIAutomationDockPattern *self, DockPosition* retVal) get_CurrentDockPosition;
+				public new function HRESULT(IUIAutomationDockPattern *self, DockPosition* retVal) get_CachedDockPosition;
 			}
 		}
 		[CRepr]
@@ -3047,14 +4571,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x619be086, 0x1f4e, 0x4ee4, 0xba, 0xfa, 0x21, 0x01, 0x28, 0x73, 0x87, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Expand() mut
+			{
+				return VT.Expand(&this);
+			}
+			public HRESULT Collapse() mut
+			{
+				return VT.Collapse(&this);
+			}
+			public HRESULT get_CurrentExpandCollapseState(ExpandCollapseState* retVal) mut
+			{
+				return VT.get_CurrentExpandCollapseState(&this, retVal);
+			}
+			public HRESULT get_CachedExpandCollapseState(ExpandCollapseState* retVal) mut
+			{
+				return VT.get_CachedExpandCollapseState(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationExpandCollapsePattern *self) Expand;
-				public function HRESULT(IUIAutomationExpandCollapsePattern *self) Collapse;
-				public function HRESULT(IUIAutomationExpandCollapsePattern *self, ExpandCollapseState* retVal) get_CurrentExpandCollapseState;
-				public function HRESULT(IUIAutomationExpandCollapsePattern *self, ExpandCollapseState* retVal) get_CachedExpandCollapseState;
+				public new function HRESULT(IUIAutomationExpandCollapsePattern *self) Expand;
+				public new function HRESULT(IUIAutomationExpandCollapsePattern *self) Collapse;
+				public new function HRESULT(IUIAutomationExpandCollapsePattern *self, ExpandCollapseState* retVal) get_CurrentExpandCollapseState;
+				public new function HRESULT(IUIAutomationExpandCollapsePattern *self, ExpandCollapseState* retVal) get_CachedExpandCollapseState;
 			}
 		}
 		[CRepr]
@@ -3062,15 +4603,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x414c3cdc, 0x856b, 0x4f5b, 0x85, 0x38, 0x31, 0x31, 0xc6, 0x30, 0x25, 0x50);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetItem(int32 row, int32 column, IUIAutomationElement** element) mut
+			{
+				return VT.GetItem(&this, row, column, element);
+			}
+			public HRESULT get_CurrentRowCount(int32* retVal) mut
+			{
+				return VT.get_CurrentRowCount(&this, retVal);
+			}
+			public HRESULT get_CurrentColumnCount(int32* retVal) mut
+			{
+				return VT.get_CurrentColumnCount(&this, retVal);
+			}
+			public HRESULT get_CachedRowCount(int32* retVal) mut
+			{
+				return VT.get_CachedRowCount(&this, retVal);
+			}
+			public HRESULT get_CachedColumnCount(int32* retVal) mut
+			{
+				return VT.get_CachedColumnCount(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationGridPattern *self, int32 row, int32 column, IUIAutomationElement** element) GetItem;
-				public function HRESULT(IUIAutomationGridPattern *self, int32* retVal) get_CurrentRowCount;
-				public function HRESULT(IUIAutomationGridPattern *self, int32* retVal) get_CurrentColumnCount;
-				public function HRESULT(IUIAutomationGridPattern *self, int32* retVal) get_CachedRowCount;
-				public function HRESULT(IUIAutomationGridPattern *self, int32* retVal) get_CachedColumnCount;
+				public new function HRESULT(IUIAutomationGridPattern *self, int32 row, int32 column, IUIAutomationElement** element) GetItem;
+				public new function HRESULT(IUIAutomationGridPattern *self, int32* retVal) get_CurrentRowCount;
+				public new function HRESULT(IUIAutomationGridPattern *self, int32* retVal) get_CurrentColumnCount;
+				public new function HRESULT(IUIAutomationGridPattern *self, int32* retVal) get_CachedRowCount;
+				public new function HRESULT(IUIAutomationGridPattern *self, int32* retVal) get_CachedColumnCount;
 			}
 		}
 		[CRepr]
@@ -3078,20 +4640,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x78f8ef57, 0x66c3, 0x4e09, 0xbd, 0x7c, 0xe7, 0x9b, 0x20, 0x04, 0x89, 0x4d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CurrentContainingGrid(IUIAutomationElement** retVal) mut
+			{
+				return VT.get_CurrentContainingGrid(&this, retVal);
+			}
+			public HRESULT get_CurrentRow(int32* retVal) mut
+			{
+				return VT.get_CurrentRow(&this, retVal);
+			}
+			public HRESULT get_CurrentColumn(int32* retVal) mut
+			{
+				return VT.get_CurrentColumn(&this, retVal);
+			}
+			public HRESULT get_CurrentRowSpan(int32* retVal) mut
+			{
+				return VT.get_CurrentRowSpan(&this, retVal);
+			}
+			public HRESULT get_CurrentColumnSpan(int32* retVal) mut
+			{
+				return VT.get_CurrentColumnSpan(&this, retVal);
+			}
+			public HRESULT get_CachedContainingGrid(IUIAutomationElement** retVal) mut
+			{
+				return VT.get_CachedContainingGrid(&this, retVal);
+			}
+			public HRESULT get_CachedRow(int32* retVal) mut
+			{
+				return VT.get_CachedRow(&this, retVal);
+			}
+			public HRESULT get_CachedColumn(int32* retVal) mut
+			{
+				return VT.get_CachedColumn(&this, retVal);
+			}
+			public HRESULT get_CachedRowSpan(int32* retVal) mut
+			{
+				return VT.get_CachedRowSpan(&this, retVal);
+			}
+			public HRESULT get_CachedColumnSpan(int32* retVal) mut
+			{
+				return VT.get_CachedColumnSpan(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationGridItemPattern *self, IUIAutomationElement** retVal) get_CurrentContainingGrid;
-				public function HRESULT(IUIAutomationGridItemPattern *self, int32* retVal) get_CurrentRow;
-				public function HRESULT(IUIAutomationGridItemPattern *self, int32* retVal) get_CurrentColumn;
-				public function HRESULT(IUIAutomationGridItemPattern *self, int32* retVal) get_CurrentRowSpan;
-				public function HRESULT(IUIAutomationGridItemPattern *self, int32* retVal) get_CurrentColumnSpan;
-				public function HRESULT(IUIAutomationGridItemPattern *self, IUIAutomationElement** retVal) get_CachedContainingGrid;
-				public function HRESULT(IUIAutomationGridItemPattern *self, int32* retVal) get_CachedRow;
-				public function HRESULT(IUIAutomationGridItemPattern *self, int32* retVal) get_CachedColumn;
-				public function HRESULT(IUIAutomationGridItemPattern *self, int32* retVal) get_CachedRowSpan;
-				public function HRESULT(IUIAutomationGridItemPattern *self, int32* retVal) get_CachedColumnSpan;
+				public new function HRESULT(IUIAutomationGridItemPattern *self, IUIAutomationElement** retVal) get_CurrentContainingGrid;
+				public new function HRESULT(IUIAutomationGridItemPattern *self, int32* retVal) get_CurrentRow;
+				public new function HRESULT(IUIAutomationGridItemPattern *self, int32* retVal) get_CurrentColumn;
+				public new function HRESULT(IUIAutomationGridItemPattern *self, int32* retVal) get_CurrentRowSpan;
+				public new function HRESULT(IUIAutomationGridItemPattern *self, int32* retVal) get_CurrentColumnSpan;
+				public new function HRESULT(IUIAutomationGridItemPattern *self, IUIAutomationElement** retVal) get_CachedContainingGrid;
+				public new function HRESULT(IUIAutomationGridItemPattern *self, int32* retVal) get_CachedRow;
+				public new function HRESULT(IUIAutomationGridItemPattern *self, int32* retVal) get_CachedColumn;
+				public new function HRESULT(IUIAutomationGridItemPattern *self, int32* retVal) get_CachedRowSpan;
+				public new function HRESULT(IUIAutomationGridItemPattern *self, int32* retVal) get_CachedColumnSpan;
 			}
 		}
 		[CRepr]
@@ -3099,16 +4702,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8d253c91, 0x1dc5, 0x4bb5, 0xb1, 0x8f, 0xad, 0xe1, 0x6f, 0xa4, 0x95, 0xe8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetViewName(int32 view, BSTR* name) mut
+			{
+				return VT.GetViewName(&this, view, name);
+			}
+			public HRESULT SetCurrentView(int32 view) mut
+			{
+				return VT.SetCurrentView(&this, view);
+			}
+			public HRESULT get_CurrentCurrentView(int32* retVal) mut
+			{
+				return VT.get_CurrentCurrentView(&this, retVal);
+			}
+			public HRESULT GetCurrentSupportedViews(SAFEARRAY** retVal) mut
+			{
+				return VT.GetCurrentSupportedViews(&this, retVal);
+			}
+			public HRESULT get_CachedCurrentView(int32* retVal) mut
+			{
+				return VT.get_CachedCurrentView(&this, retVal);
+			}
+			public HRESULT GetCachedSupportedViews(SAFEARRAY** retVal) mut
+			{
+				return VT.GetCachedSupportedViews(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationMultipleViewPattern *self, int32 view, BSTR* name) GetViewName;
-				public function HRESULT(IUIAutomationMultipleViewPattern *self, int32 view) SetCurrentView;
-				public function HRESULT(IUIAutomationMultipleViewPattern *self, int32* retVal) get_CurrentCurrentView;
-				public function HRESULT(IUIAutomationMultipleViewPattern *self, SAFEARRAY** retVal) GetCurrentSupportedViews;
-				public function HRESULT(IUIAutomationMultipleViewPattern *self, int32* retVal) get_CachedCurrentView;
-				public function HRESULT(IUIAutomationMultipleViewPattern *self, SAFEARRAY** retVal) GetCachedSupportedViews;
+				public new function HRESULT(IUIAutomationMultipleViewPattern *self, int32 view, BSTR* name) GetViewName;
+				public new function HRESULT(IUIAutomationMultipleViewPattern *self, int32 view) SetCurrentView;
+				public new function HRESULT(IUIAutomationMultipleViewPattern *self, int32* retVal) get_CurrentCurrentView;
+				public new function HRESULT(IUIAutomationMultipleViewPattern *self, SAFEARRAY** retVal) GetCurrentSupportedViews;
+				public new function HRESULT(IUIAutomationMultipleViewPattern *self, int32* retVal) get_CachedCurrentView;
+				public new function HRESULT(IUIAutomationMultipleViewPattern *self, SAFEARRAY** retVal) GetCachedSupportedViews;
 			}
 		}
 		[CRepr]
@@ -3116,11 +4744,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x71c284b3, 0xc14d, 0x4d14, 0x98, 0x1e, 0x19, 0x75, 0x1b, 0x0d, 0x75, 0x6d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetUnderlyingObjectModel(IUnknown** retVal) mut
+			{
+				return VT.GetUnderlyingObjectModel(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationObjectModelPattern *self, IUnknown** retVal) GetUnderlyingObjectModel;
+				public new function HRESULT(IUIAutomationObjectModelPattern *self, IUnknown** retVal) GetUnderlyingObjectModel;
 			}
 		}
 		[CRepr]
@@ -3128,23 +4761,76 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x59213f4f, 0x7346, 0x49e5, 0xb1, 0x20, 0x80, 0x55, 0x59, 0x87, 0xa1, 0x48);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetValue(double val) mut
+			{
+				return VT.SetValue(&this, val);
+			}
+			public HRESULT get_CurrentValue(double* retVal) mut
+			{
+				return VT.get_CurrentValue(&this, retVal);
+			}
+			public HRESULT get_CurrentIsReadOnly(BOOL* retVal) mut
+			{
+				return VT.get_CurrentIsReadOnly(&this, retVal);
+			}
+			public HRESULT get_CurrentMaximum(double* retVal) mut
+			{
+				return VT.get_CurrentMaximum(&this, retVal);
+			}
+			public HRESULT get_CurrentMinimum(double* retVal) mut
+			{
+				return VT.get_CurrentMinimum(&this, retVal);
+			}
+			public HRESULT get_CurrentLargeChange(double* retVal) mut
+			{
+				return VT.get_CurrentLargeChange(&this, retVal);
+			}
+			public HRESULT get_CurrentSmallChange(double* retVal) mut
+			{
+				return VT.get_CurrentSmallChange(&this, retVal);
+			}
+			public HRESULT get_CachedValue(double* retVal) mut
+			{
+				return VT.get_CachedValue(&this, retVal);
+			}
+			public HRESULT get_CachedIsReadOnly(BOOL* retVal) mut
+			{
+				return VT.get_CachedIsReadOnly(&this, retVal);
+			}
+			public HRESULT get_CachedMaximum(double* retVal) mut
+			{
+				return VT.get_CachedMaximum(&this, retVal);
+			}
+			public HRESULT get_CachedMinimum(double* retVal) mut
+			{
+				return VT.get_CachedMinimum(&this, retVal);
+			}
+			public HRESULT get_CachedLargeChange(double* retVal) mut
+			{
+				return VT.get_CachedLargeChange(&this, retVal);
+			}
+			public HRESULT get_CachedSmallChange(double* retVal) mut
+			{
+				return VT.get_CachedSmallChange(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationRangeValuePattern *self, double val) SetValue;
-				public function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CurrentValue;
-				public function HRESULT(IUIAutomationRangeValuePattern *self, BOOL* retVal) get_CurrentIsReadOnly;
-				public function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CurrentMaximum;
-				public function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CurrentMinimum;
-				public function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CurrentLargeChange;
-				public function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CurrentSmallChange;
-				public function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CachedValue;
-				public function HRESULT(IUIAutomationRangeValuePattern *self, BOOL* retVal) get_CachedIsReadOnly;
-				public function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CachedMaximum;
-				public function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CachedMinimum;
-				public function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CachedLargeChange;
-				public function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CachedSmallChange;
+				public new function HRESULT(IUIAutomationRangeValuePattern *self, double val) SetValue;
+				public new function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CurrentValue;
+				public new function HRESULT(IUIAutomationRangeValuePattern *self, BOOL* retVal) get_CurrentIsReadOnly;
+				public new function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CurrentMaximum;
+				public new function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CurrentMinimum;
+				public new function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CurrentLargeChange;
+				public new function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CurrentSmallChange;
+				public new function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CachedValue;
+				public new function HRESULT(IUIAutomationRangeValuePattern *self, BOOL* retVal) get_CachedIsReadOnly;
+				public new function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CachedMaximum;
+				public new function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CachedMinimum;
+				public new function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CachedLargeChange;
+				public new function HRESULT(IUIAutomationRangeValuePattern *self, double* retVal) get_CachedSmallChange;
 			}
 		}
 		[CRepr]
@@ -3152,24 +4838,81 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x88f4d42a, 0xe881, 0x459d, 0xa7, 0x7c, 0x73, 0xbb, 0xbb, 0x7e, 0x02, 0xdc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Scroll(ScrollAmount horizontalAmount, ScrollAmount verticalAmount) mut
+			{
+				return VT.Scroll(&this, horizontalAmount, verticalAmount);
+			}
+			public HRESULT SetScrollPercent(double horizontalPercent, double verticalPercent) mut
+			{
+				return VT.SetScrollPercent(&this, horizontalPercent, verticalPercent);
+			}
+			public HRESULT get_CurrentHorizontalScrollPercent(double* retVal) mut
+			{
+				return VT.get_CurrentHorizontalScrollPercent(&this, retVal);
+			}
+			public HRESULT get_CurrentVerticalScrollPercent(double* retVal) mut
+			{
+				return VT.get_CurrentVerticalScrollPercent(&this, retVal);
+			}
+			public HRESULT get_CurrentHorizontalViewSize(double* retVal) mut
+			{
+				return VT.get_CurrentHorizontalViewSize(&this, retVal);
+			}
+			public HRESULT get_CurrentVerticalViewSize(double* retVal) mut
+			{
+				return VT.get_CurrentVerticalViewSize(&this, retVal);
+			}
+			public HRESULT get_CurrentHorizontallyScrollable(BOOL* retVal) mut
+			{
+				return VT.get_CurrentHorizontallyScrollable(&this, retVal);
+			}
+			public HRESULT get_CurrentVerticallyScrollable(BOOL* retVal) mut
+			{
+				return VT.get_CurrentVerticallyScrollable(&this, retVal);
+			}
+			public HRESULT get_CachedHorizontalScrollPercent(double* retVal) mut
+			{
+				return VT.get_CachedHorizontalScrollPercent(&this, retVal);
+			}
+			public HRESULT get_CachedVerticalScrollPercent(double* retVal) mut
+			{
+				return VT.get_CachedVerticalScrollPercent(&this, retVal);
+			}
+			public HRESULT get_CachedHorizontalViewSize(double* retVal) mut
+			{
+				return VT.get_CachedHorizontalViewSize(&this, retVal);
+			}
+			public HRESULT get_CachedVerticalViewSize(double* retVal) mut
+			{
+				return VT.get_CachedVerticalViewSize(&this, retVal);
+			}
+			public HRESULT get_CachedHorizontallyScrollable(BOOL* retVal) mut
+			{
+				return VT.get_CachedHorizontallyScrollable(&this, retVal);
+			}
+			public HRESULT get_CachedVerticallyScrollable(BOOL* retVal) mut
+			{
+				return VT.get_CachedVerticallyScrollable(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationScrollPattern *self, ScrollAmount horizontalAmount, ScrollAmount verticalAmount) Scroll;
-				public function HRESULT(IUIAutomationScrollPattern *self, double horizontalPercent, double verticalPercent) SetScrollPercent;
-				public function HRESULT(IUIAutomationScrollPattern *self, double* retVal) get_CurrentHorizontalScrollPercent;
-				public function HRESULT(IUIAutomationScrollPattern *self, double* retVal) get_CurrentVerticalScrollPercent;
-				public function HRESULT(IUIAutomationScrollPattern *self, double* retVal) get_CurrentHorizontalViewSize;
-				public function HRESULT(IUIAutomationScrollPattern *self, double* retVal) get_CurrentVerticalViewSize;
-				public function HRESULT(IUIAutomationScrollPattern *self, BOOL* retVal) get_CurrentHorizontallyScrollable;
-				public function HRESULT(IUIAutomationScrollPattern *self, BOOL* retVal) get_CurrentVerticallyScrollable;
-				public function HRESULT(IUIAutomationScrollPattern *self, double* retVal) get_CachedHorizontalScrollPercent;
-				public function HRESULT(IUIAutomationScrollPattern *self, double* retVal) get_CachedVerticalScrollPercent;
-				public function HRESULT(IUIAutomationScrollPattern *self, double* retVal) get_CachedHorizontalViewSize;
-				public function HRESULT(IUIAutomationScrollPattern *self, double* retVal) get_CachedVerticalViewSize;
-				public function HRESULT(IUIAutomationScrollPattern *self, BOOL* retVal) get_CachedHorizontallyScrollable;
-				public function HRESULT(IUIAutomationScrollPattern *self, BOOL* retVal) get_CachedVerticallyScrollable;
+				public new function HRESULT(IUIAutomationScrollPattern *self, ScrollAmount horizontalAmount, ScrollAmount verticalAmount) Scroll;
+				public new function HRESULT(IUIAutomationScrollPattern *self, double horizontalPercent, double verticalPercent) SetScrollPercent;
+				public new function HRESULT(IUIAutomationScrollPattern *self, double* retVal) get_CurrentHorizontalScrollPercent;
+				public new function HRESULT(IUIAutomationScrollPattern *self, double* retVal) get_CurrentVerticalScrollPercent;
+				public new function HRESULT(IUIAutomationScrollPattern *self, double* retVal) get_CurrentHorizontalViewSize;
+				public new function HRESULT(IUIAutomationScrollPattern *self, double* retVal) get_CurrentVerticalViewSize;
+				public new function HRESULT(IUIAutomationScrollPattern *self, BOOL* retVal) get_CurrentHorizontallyScrollable;
+				public new function HRESULT(IUIAutomationScrollPattern *self, BOOL* retVal) get_CurrentVerticallyScrollable;
+				public new function HRESULT(IUIAutomationScrollPattern *self, double* retVal) get_CachedHorizontalScrollPercent;
+				public new function HRESULT(IUIAutomationScrollPattern *self, double* retVal) get_CachedVerticalScrollPercent;
+				public new function HRESULT(IUIAutomationScrollPattern *self, double* retVal) get_CachedHorizontalViewSize;
+				public new function HRESULT(IUIAutomationScrollPattern *self, double* retVal) get_CachedVerticalViewSize;
+				public new function HRESULT(IUIAutomationScrollPattern *self, BOOL* retVal) get_CachedHorizontallyScrollable;
+				public new function HRESULT(IUIAutomationScrollPattern *self, BOOL* retVal) get_CachedVerticallyScrollable;
 			}
 		}
 		[CRepr]
@@ -3177,11 +4920,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb488300f, 0xd015, 0x4f19, 0x9c, 0x29, 0xbb, 0x59, 0x5e, 0x36, 0x45, 0xef);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ScrollIntoView() mut
+			{
+				return VT.ScrollIntoView(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationScrollItemPattern *self) ScrollIntoView;
+				public new function HRESULT(IUIAutomationScrollItemPattern *self) ScrollIntoView;
 			}
 		}
 		[CRepr]
@@ -3189,16 +4937,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5ed5202e, 0xb2ac, 0x47a6, 0xb6, 0x38, 0x4b, 0x0b, 0xf1, 0x40, 0xd7, 0x8e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCurrentSelection(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.GetCurrentSelection(&this, retVal);
+			}
+			public HRESULT get_CurrentCanSelectMultiple(BOOL* retVal) mut
+			{
+				return VT.get_CurrentCanSelectMultiple(&this, retVal);
+			}
+			public HRESULT get_CurrentIsSelectionRequired(BOOL* retVal) mut
+			{
+				return VT.get_CurrentIsSelectionRequired(&this, retVal);
+			}
+			public HRESULT GetCachedSelection(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.GetCachedSelection(&this, retVal);
+			}
+			public HRESULT get_CachedCanSelectMultiple(BOOL* retVal) mut
+			{
+				return VT.get_CachedCanSelectMultiple(&this, retVal);
+			}
+			public HRESULT get_CachedIsSelectionRequired(BOOL* retVal) mut
+			{
+				return VT.get_CachedIsSelectionRequired(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationSelectionPattern *self, IUIAutomationElementArray** retVal) GetCurrentSelection;
-				public function HRESULT(IUIAutomationSelectionPattern *self, BOOL* retVal) get_CurrentCanSelectMultiple;
-				public function HRESULT(IUIAutomationSelectionPattern *self, BOOL* retVal) get_CurrentIsSelectionRequired;
-				public function HRESULT(IUIAutomationSelectionPattern *self, IUIAutomationElementArray** retVal) GetCachedSelection;
-				public function HRESULT(IUIAutomationSelectionPattern *self, BOOL* retVal) get_CachedCanSelectMultiple;
-				public function HRESULT(IUIAutomationSelectionPattern *self, BOOL* retVal) get_CachedIsSelectionRequired;
+				public new function HRESULT(IUIAutomationSelectionPattern *self, IUIAutomationElementArray** retVal) GetCurrentSelection;
+				public new function HRESULT(IUIAutomationSelectionPattern *self, BOOL* retVal) get_CurrentCanSelectMultiple;
+				public new function HRESULT(IUIAutomationSelectionPattern *self, BOOL* retVal) get_CurrentIsSelectionRequired;
+				public new function HRESULT(IUIAutomationSelectionPattern *self, IUIAutomationElementArray** retVal) GetCachedSelection;
+				public new function HRESULT(IUIAutomationSelectionPattern *self, BOOL* retVal) get_CachedCanSelectMultiple;
+				public new function HRESULT(IUIAutomationSelectionPattern *self, BOOL* retVal) get_CachedIsSelectionRequired;
 			}
 		}
 		[CRepr]
@@ -3206,18 +4979,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0532bfae, 0xc011, 0x4e32, 0xa3, 0x43, 0x6d, 0x64, 0x2d, 0x79, 0x85, 0x55);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CurrentFirstSelectedItem(IUIAutomationElement** retVal) mut
+			{
+				return VT.get_CurrentFirstSelectedItem(&this, retVal);
+			}
+			public HRESULT get_CurrentLastSelectedItem(IUIAutomationElement** retVal) mut
+			{
+				return VT.get_CurrentLastSelectedItem(&this, retVal);
+			}
+			public HRESULT get_CurrentCurrentSelectedItem(IUIAutomationElement** retVal) mut
+			{
+				return VT.get_CurrentCurrentSelectedItem(&this, retVal);
+			}
+			public HRESULT get_CurrentItemCount(int32* retVal) mut
+			{
+				return VT.get_CurrentItemCount(&this, retVal);
+			}
+			public HRESULT get_CachedFirstSelectedItem(IUIAutomationElement** retVal) mut
+			{
+				return VT.get_CachedFirstSelectedItem(&this, retVal);
+			}
+			public HRESULT get_CachedLastSelectedItem(IUIAutomationElement** retVal) mut
+			{
+				return VT.get_CachedLastSelectedItem(&this, retVal);
+			}
+			public HRESULT get_CachedCurrentSelectedItem(IUIAutomationElement** retVal) mut
+			{
+				return VT.get_CachedCurrentSelectedItem(&this, retVal);
+			}
+			public HRESULT get_CachedItemCount(int32* retVal) mut
+			{
+				return VT.get_CachedItemCount(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationSelectionPattern.VTable
 			{
-				public function HRESULT(IUIAutomationSelectionPattern2 *self, IUIAutomationElement** retVal) get_CurrentFirstSelectedItem;
-				public function HRESULT(IUIAutomationSelectionPattern2 *self, IUIAutomationElement** retVal) get_CurrentLastSelectedItem;
-				public function HRESULT(IUIAutomationSelectionPattern2 *self, IUIAutomationElement** retVal) get_CurrentCurrentSelectedItem;
-				public function HRESULT(IUIAutomationSelectionPattern2 *self, int32* retVal) get_CurrentItemCount;
-				public function HRESULT(IUIAutomationSelectionPattern2 *self, IUIAutomationElement** retVal) get_CachedFirstSelectedItem;
-				public function HRESULT(IUIAutomationSelectionPattern2 *self, IUIAutomationElement** retVal) get_CachedLastSelectedItem;
-				public function HRESULT(IUIAutomationSelectionPattern2 *self, IUIAutomationElement** retVal) get_CachedCurrentSelectedItem;
-				public function HRESULT(IUIAutomationSelectionPattern2 *self, int32* retVal) get_CachedItemCount;
+				public new function HRESULT(IUIAutomationSelectionPattern2 *self, IUIAutomationElement** retVal) get_CurrentFirstSelectedItem;
+				public new function HRESULT(IUIAutomationSelectionPattern2 *self, IUIAutomationElement** retVal) get_CurrentLastSelectedItem;
+				public new function HRESULT(IUIAutomationSelectionPattern2 *self, IUIAutomationElement** retVal) get_CurrentCurrentSelectedItem;
+				public new function HRESULT(IUIAutomationSelectionPattern2 *self, int32* retVal) get_CurrentItemCount;
+				public new function HRESULT(IUIAutomationSelectionPattern2 *self, IUIAutomationElement** retVal) get_CachedFirstSelectedItem;
+				public new function HRESULT(IUIAutomationSelectionPattern2 *self, IUIAutomationElement** retVal) get_CachedLastSelectedItem;
+				public new function HRESULT(IUIAutomationSelectionPattern2 *self, IUIAutomationElement** retVal) get_CachedCurrentSelectedItem;
+				public new function HRESULT(IUIAutomationSelectionPattern2 *self, int32* retVal) get_CachedItemCount;
 			}
 		}
 		[CRepr]
@@ -3225,17 +5031,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa8efa66a, 0x0fda, 0x421a, 0x91, 0x94, 0x38, 0x02, 0x1f, 0x35, 0x78, 0xea);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Select() mut
+			{
+				return VT.Select(&this);
+			}
+			public HRESULT AddToSelection() mut
+			{
+				return VT.AddToSelection(&this);
+			}
+			public HRESULT RemoveFromSelection() mut
+			{
+				return VT.RemoveFromSelection(&this);
+			}
+			public HRESULT get_CurrentIsSelected(BOOL* retVal) mut
+			{
+				return VT.get_CurrentIsSelected(&this, retVal);
+			}
+			public HRESULT get_CurrentSelectionContainer(IUIAutomationElement** retVal) mut
+			{
+				return VT.get_CurrentSelectionContainer(&this, retVal);
+			}
+			public HRESULT get_CachedIsSelected(BOOL* retVal) mut
+			{
+				return VT.get_CachedIsSelected(&this, retVal);
+			}
+			public HRESULT get_CachedSelectionContainer(IUIAutomationElement** retVal) mut
+			{
+				return VT.get_CachedSelectionContainer(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationSelectionItemPattern *self) Select;
-				public function HRESULT(IUIAutomationSelectionItemPattern *self) AddToSelection;
-				public function HRESULT(IUIAutomationSelectionItemPattern *self) RemoveFromSelection;
-				public function HRESULT(IUIAutomationSelectionItemPattern *self, BOOL* retVal) get_CurrentIsSelected;
-				public function HRESULT(IUIAutomationSelectionItemPattern *self, IUIAutomationElement** retVal) get_CurrentSelectionContainer;
-				public function HRESULT(IUIAutomationSelectionItemPattern *self, BOOL* retVal) get_CachedIsSelected;
-				public function HRESULT(IUIAutomationSelectionItemPattern *self, IUIAutomationElement** retVal) get_CachedSelectionContainer;
+				public new function HRESULT(IUIAutomationSelectionItemPattern *self) Select;
+				public new function HRESULT(IUIAutomationSelectionItemPattern *self) AddToSelection;
+				public new function HRESULT(IUIAutomationSelectionItemPattern *self) RemoveFromSelection;
+				public new function HRESULT(IUIAutomationSelectionItemPattern *self, BOOL* retVal) get_CurrentIsSelected;
+				public new function HRESULT(IUIAutomationSelectionItemPattern *self, IUIAutomationElement** retVal) get_CurrentSelectionContainer;
+				public new function HRESULT(IUIAutomationSelectionItemPattern *self, BOOL* retVal) get_CachedIsSelected;
+				public new function HRESULT(IUIAutomationSelectionItemPattern *self, IUIAutomationElement** retVal) get_CachedSelectionContainer;
 			}
 		}
 		[CRepr]
@@ -3243,12 +5078,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2233be0b, 0xafb7, 0x448b, 0x9f, 0xda, 0x3b, 0x37, 0x8a, 0xa5, 0xea, 0xe1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT StartListening(SynchronizedInputType inputType) mut
+			{
+				return VT.StartListening(&this, inputType);
+			}
+			public HRESULT Cancel() mut
+			{
+				return VT.Cancel(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationSynchronizedInputPattern *self, SynchronizedInputType inputType) StartListening;
-				public function HRESULT(IUIAutomationSynchronizedInputPattern *self) Cancel;
+				public new function HRESULT(IUIAutomationSynchronizedInputPattern *self, SynchronizedInputType inputType) StartListening;
+				public new function HRESULT(IUIAutomationSynchronizedInputPattern *self) Cancel;
 			}
 		}
 		[CRepr]
@@ -3256,16 +5100,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x620e691c, 0xea96, 0x4710, 0xa8, 0x50, 0x75, 0x4b, 0x24, 0xce, 0x24, 0x17);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCurrentRowHeaders(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.GetCurrentRowHeaders(&this, retVal);
+			}
+			public HRESULT GetCurrentColumnHeaders(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.GetCurrentColumnHeaders(&this, retVal);
+			}
+			public HRESULT get_CurrentRowOrColumnMajor(RowOrColumnMajor* retVal) mut
+			{
+				return VT.get_CurrentRowOrColumnMajor(&this, retVal);
+			}
+			public HRESULT GetCachedRowHeaders(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.GetCachedRowHeaders(&this, retVal);
+			}
+			public HRESULT GetCachedColumnHeaders(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.GetCachedColumnHeaders(&this, retVal);
+			}
+			public HRESULT get_CachedRowOrColumnMajor(RowOrColumnMajor* retVal) mut
+			{
+				return VT.get_CachedRowOrColumnMajor(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationTablePattern *self, IUIAutomationElementArray** retVal) GetCurrentRowHeaders;
-				public function HRESULT(IUIAutomationTablePattern *self, IUIAutomationElementArray** retVal) GetCurrentColumnHeaders;
-				public function HRESULT(IUIAutomationTablePattern *self, RowOrColumnMajor* retVal) get_CurrentRowOrColumnMajor;
-				public function HRESULT(IUIAutomationTablePattern *self, IUIAutomationElementArray** retVal) GetCachedRowHeaders;
-				public function HRESULT(IUIAutomationTablePattern *self, IUIAutomationElementArray** retVal) GetCachedColumnHeaders;
-				public function HRESULT(IUIAutomationTablePattern *self, RowOrColumnMajor* retVal) get_CachedRowOrColumnMajor;
+				public new function HRESULT(IUIAutomationTablePattern *self, IUIAutomationElementArray** retVal) GetCurrentRowHeaders;
+				public new function HRESULT(IUIAutomationTablePattern *self, IUIAutomationElementArray** retVal) GetCurrentColumnHeaders;
+				public new function HRESULT(IUIAutomationTablePattern *self, RowOrColumnMajor* retVal) get_CurrentRowOrColumnMajor;
+				public new function HRESULT(IUIAutomationTablePattern *self, IUIAutomationElementArray** retVal) GetCachedRowHeaders;
+				public new function HRESULT(IUIAutomationTablePattern *self, IUIAutomationElementArray** retVal) GetCachedColumnHeaders;
+				public new function HRESULT(IUIAutomationTablePattern *self, RowOrColumnMajor* retVal) get_CachedRowOrColumnMajor;
 			}
 		}
 		[CRepr]
@@ -3273,14 +5142,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0b964eb3, 0xef2e, 0x4464, 0x9c, 0x79, 0x61, 0xd6, 0x17, 0x37, 0xa2, 0x7e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCurrentRowHeaderItems(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.GetCurrentRowHeaderItems(&this, retVal);
+			}
+			public HRESULT GetCurrentColumnHeaderItems(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.GetCurrentColumnHeaderItems(&this, retVal);
+			}
+			public HRESULT GetCachedRowHeaderItems(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.GetCachedRowHeaderItems(&this, retVal);
+			}
+			public HRESULT GetCachedColumnHeaderItems(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.GetCachedColumnHeaderItems(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationTableItemPattern *self, IUIAutomationElementArray** retVal) GetCurrentRowHeaderItems;
-				public function HRESULT(IUIAutomationTableItemPattern *self, IUIAutomationElementArray** retVal) GetCurrentColumnHeaderItems;
-				public function HRESULT(IUIAutomationTableItemPattern *self, IUIAutomationElementArray** retVal) GetCachedRowHeaderItems;
-				public function HRESULT(IUIAutomationTableItemPattern *self, IUIAutomationElementArray** retVal) GetCachedColumnHeaderItems;
+				public new function HRESULT(IUIAutomationTableItemPattern *self, IUIAutomationElementArray** retVal) GetCurrentRowHeaderItems;
+				public new function HRESULT(IUIAutomationTableItemPattern *self, IUIAutomationElementArray** retVal) GetCurrentColumnHeaderItems;
+				public new function HRESULT(IUIAutomationTableItemPattern *self, IUIAutomationElementArray** retVal) GetCachedRowHeaderItems;
+				public new function HRESULT(IUIAutomationTableItemPattern *self, IUIAutomationElementArray** retVal) GetCachedColumnHeaderItems;
 			}
 		}
 		[CRepr]
@@ -3288,13 +5174,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x94cf8058, 0x9b8d, 0x4ab9, 0x8b, 0xfd, 0x4c, 0xd0, 0xa3, 0x3c, 0x8c, 0x70);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Toggle() mut
+			{
+				return VT.Toggle(&this);
+			}
+			public HRESULT get_CurrentToggleState(ToggleState* retVal) mut
+			{
+				return VT.get_CurrentToggleState(&this, retVal);
+			}
+			public HRESULT get_CachedToggleState(ToggleState* retVal) mut
+			{
+				return VT.get_CachedToggleState(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationTogglePattern *self) Toggle;
-				public function HRESULT(IUIAutomationTogglePattern *self, ToggleState* retVal) get_CurrentToggleState;
-				public function HRESULT(IUIAutomationTogglePattern *self, ToggleState* retVal) get_CachedToggleState;
+				public new function HRESULT(IUIAutomationTogglePattern *self) Toggle;
+				public new function HRESULT(IUIAutomationTogglePattern *self, ToggleState* retVal) get_CurrentToggleState;
+				public new function HRESULT(IUIAutomationTogglePattern *self, ToggleState* retVal) get_CachedToggleState;
 			}
 		}
 		[CRepr]
@@ -3302,19 +5201,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa9b55844, 0xa55d, 0x4ef0, 0x92, 0x6d, 0x56, 0x9c, 0x16, 0xff, 0x89, 0xbb);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Move(double x, double y) mut
+			{
+				return VT.Move(&this, x, y);
+			}
+			public HRESULT Resize(double width, double height) mut
+			{
+				return VT.Resize(&this, width, height);
+			}
+			public HRESULT Rotate(double degrees) mut
+			{
+				return VT.Rotate(&this, degrees);
+			}
+			public HRESULT get_CurrentCanMove(BOOL* retVal) mut
+			{
+				return VT.get_CurrentCanMove(&this, retVal);
+			}
+			public HRESULT get_CurrentCanResize(BOOL* retVal) mut
+			{
+				return VT.get_CurrentCanResize(&this, retVal);
+			}
+			public HRESULT get_CurrentCanRotate(BOOL* retVal) mut
+			{
+				return VT.get_CurrentCanRotate(&this, retVal);
+			}
+			public HRESULT get_CachedCanMove(BOOL* retVal) mut
+			{
+				return VT.get_CachedCanMove(&this, retVal);
+			}
+			public HRESULT get_CachedCanResize(BOOL* retVal) mut
+			{
+				return VT.get_CachedCanResize(&this, retVal);
+			}
+			public HRESULT get_CachedCanRotate(BOOL* retVal) mut
+			{
+				return VT.get_CachedCanRotate(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationTransformPattern *self, double x, double y) Move;
-				public function HRESULT(IUIAutomationTransformPattern *self, double width, double height) Resize;
-				public function HRESULT(IUIAutomationTransformPattern *self, double degrees) Rotate;
-				public function HRESULT(IUIAutomationTransformPattern *self, BOOL* retVal) get_CurrentCanMove;
-				public function HRESULT(IUIAutomationTransformPattern *self, BOOL* retVal) get_CurrentCanResize;
-				public function HRESULT(IUIAutomationTransformPattern *self, BOOL* retVal) get_CurrentCanRotate;
-				public function HRESULT(IUIAutomationTransformPattern *self, BOOL* retVal) get_CachedCanMove;
-				public function HRESULT(IUIAutomationTransformPattern *self, BOOL* retVal) get_CachedCanResize;
-				public function HRESULT(IUIAutomationTransformPattern *self, BOOL* retVal) get_CachedCanRotate;
+				public new function HRESULT(IUIAutomationTransformPattern *self, double x, double y) Move;
+				public new function HRESULT(IUIAutomationTransformPattern *self, double width, double height) Resize;
+				public new function HRESULT(IUIAutomationTransformPattern *self, double degrees) Rotate;
+				public new function HRESULT(IUIAutomationTransformPattern *self, BOOL* retVal) get_CurrentCanMove;
+				public new function HRESULT(IUIAutomationTransformPattern *self, BOOL* retVal) get_CurrentCanResize;
+				public new function HRESULT(IUIAutomationTransformPattern *self, BOOL* retVal) get_CurrentCanRotate;
+				public new function HRESULT(IUIAutomationTransformPattern *self, BOOL* retVal) get_CachedCanMove;
+				public new function HRESULT(IUIAutomationTransformPattern *self, BOOL* retVal) get_CachedCanResize;
+				public new function HRESULT(IUIAutomationTransformPattern *self, BOOL* retVal) get_CachedCanRotate;
 			}
 		}
 		[CRepr]
@@ -3322,15 +5258,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa94cd8b1, 0x0844, 0x4cd6, 0x9d, 0x2d, 0x64, 0x05, 0x37, 0xab, 0x39, 0xe9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetValue(BSTR val) mut
+			{
+				return VT.SetValue(&this, val);
+			}
+			public HRESULT get_CurrentValue(BSTR* retVal) mut
+			{
+				return VT.get_CurrentValue(&this, retVal);
+			}
+			public HRESULT get_CurrentIsReadOnly(BOOL* retVal) mut
+			{
+				return VT.get_CurrentIsReadOnly(&this, retVal);
+			}
+			public HRESULT get_CachedValue(BSTR* retVal) mut
+			{
+				return VT.get_CachedValue(&this, retVal);
+			}
+			public HRESULT get_CachedIsReadOnly(BOOL* retVal) mut
+			{
+				return VT.get_CachedIsReadOnly(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationValuePattern *self, BSTR val) SetValue;
-				public function HRESULT(IUIAutomationValuePattern *self, BSTR* retVal) get_CurrentValue;
-				public function HRESULT(IUIAutomationValuePattern *self, BOOL* retVal) get_CurrentIsReadOnly;
-				public function HRESULT(IUIAutomationValuePattern *self, BSTR* retVal) get_CachedValue;
-				public function HRESULT(IUIAutomationValuePattern *self, BOOL* retVal) get_CachedIsReadOnly;
+				public new function HRESULT(IUIAutomationValuePattern *self, BSTR val) SetValue;
+				public new function HRESULT(IUIAutomationValuePattern *self, BSTR* retVal) get_CurrentValue;
+				public new function HRESULT(IUIAutomationValuePattern *self, BOOL* retVal) get_CurrentIsReadOnly;
+				public new function HRESULT(IUIAutomationValuePattern *self, BSTR* retVal) get_CachedValue;
+				public new function HRESULT(IUIAutomationValuePattern *self, BOOL* retVal) get_CachedIsReadOnly;
 			}
 		}
 		[CRepr]
@@ -3338,25 +5295,86 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0faef453, 0x9208, 0x43ef, 0xbb, 0xb2, 0x3b, 0x48, 0x51, 0x77, 0x86, 0x4f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
+			public HRESULT WaitForInputIdle(int32 milliseconds, BOOL* success) mut
+			{
+				return VT.WaitForInputIdle(&this, milliseconds, success);
+			}
+			public HRESULT SetWindowVisualState(WindowVisualState state) mut
+			{
+				return VT.SetWindowVisualState(&this, state);
+			}
+			public HRESULT get_CurrentCanMaximize(BOOL* retVal) mut
+			{
+				return VT.get_CurrentCanMaximize(&this, retVal);
+			}
+			public HRESULT get_CurrentCanMinimize(BOOL* retVal) mut
+			{
+				return VT.get_CurrentCanMinimize(&this, retVal);
+			}
+			public HRESULT get_CurrentIsModal(BOOL* retVal) mut
+			{
+				return VT.get_CurrentIsModal(&this, retVal);
+			}
+			public HRESULT get_CurrentIsTopmost(BOOL* retVal) mut
+			{
+				return VT.get_CurrentIsTopmost(&this, retVal);
+			}
+			public HRESULT get_CurrentWindowVisualState(WindowVisualState* retVal) mut
+			{
+				return VT.get_CurrentWindowVisualState(&this, retVal);
+			}
+			public HRESULT get_CurrentWindowInteractionState(WindowInteractionState* retVal) mut
+			{
+				return VT.get_CurrentWindowInteractionState(&this, retVal);
+			}
+			public HRESULT get_CachedCanMaximize(BOOL* retVal) mut
+			{
+				return VT.get_CachedCanMaximize(&this, retVal);
+			}
+			public HRESULT get_CachedCanMinimize(BOOL* retVal) mut
+			{
+				return VT.get_CachedCanMinimize(&this, retVal);
+			}
+			public HRESULT get_CachedIsModal(BOOL* retVal) mut
+			{
+				return VT.get_CachedIsModal(&this, retVal);
+			}
+			public HRESULT get_CachedIsTopmost(BOOL* retVal) mut
+			{
+				return VT.get_CachedIsTopmost(&this, retVal);
+			}
+			public HRESULT get_CachedWindowVisualState(WindowVisualState* retVal) mut
+			{
+				return VT.get_CachedWindowVisualState(&this, retVal);
+			}
+			public HRESULT get_CachedWindowInteractionState(WindowInteractionState* retVal) mut
+			{
+				return VT.get_CachedWindowInteractionState(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationWindowPattern *self) Close;
-				public function HRESULT(IUIAutomationWindowPattern *self, int32 milliseconds, BOOL* success) WaitForInputIdle;
-				public function HRESULT(IUIAutomationWindowPattern *self, WindowVisualState state) SetWindowVisualState;
-				public function HRESULT(IUIAutomationWindowPattern *self, BOOL* retVal) get_CurrentCanMaximize;
-				public function HRESULT(IUIAutomationWindowPattern *self, BOOL* retVal) get_CurrentCanMinimize;
-				public function HRESULT(IUIAutomationWindowPattern *self, BOOL* retVal) get_CurrentIsModal;
-				public function HRESULT(IUIAutomationWindowPattern *self, BOOL* retVal) get_CurrentIsTopmost;
-				public function HRESULT(IUIAutomationWindowPattern *self, WindowVisualState* retVal) get_CurrentWindowVisualState;
-				public function HRESULT(IUIAutomationWindowPattern *self, WindowInteractionState* retVal) get_CurrentWindowInteractionState;
-				public function HRESULT(IUIAutomationWindowPattern *self, BOOL* retVal) get_CachedCanMaximize;
-				public function HRESULT(IUIAutomationWindowPattern *self, BOOL* retVal) get_CachedCanMinimize;
-				public function HRESULT(IUIAutomationWindowPattern *self, BOOL* retVal) get_CachedIsModal;
-				public function HRESULT(IUIAutomationWindowPattern *self, BOOL* retVal) get_CachedIsTopmost;
-				public function HRESULT(IUIAutomationWindowPattern *self, WindowVisualState* retVal) get_CachedWindowVisualState;
-				public function HRESULT(IUIAutomationWindowPattern *self, WindowInteractionState* retVal) get_CachedWindowInteractionState;
+				public new function HRESULT(IUIAutomationWindowPattern *self) Close;
+				public new function HRESULT(IUIAutomationWindowPattern *self, int32 milliseconds, BOOL* success) WaitForInputIdle;
+				public new function HRESULT(IUIAutomationWindowPattern *self, WindowVisualState state) SetWindowVisualState;
+				public new function HRESULT(IUIAutomationWindowPattern *self, BOOL* retVal) get_CurrentCanMaximize;
+				public new function HRESULT(IUIAutomationWindowPattern *self, BOOL* retVal) get_CurrentCanMinimize;
+				public new function HRESULT(IUIAutomationWindowPattern *self, BOOL* retVal) get_CurrentIsModal;
+				public new function HRESULT(IUIAutomationWindowPattern *self, BOOL* retVal) get_CurrentIsTopmost;
+				public new function HRESULT(IUIAutomationWindowPattern *self, WindowVisualState* retVal) get_CurrentWindowVisualState;
+				public new function HRESULT(IUIAutomationWindowPattern *self, WindowInteractionState* retVal) get_CurrentWindowInteractionState;
+				public new function HRESULT(IUIAutomationWindowPattern *self, BOOL* retVal) get_CachedCanMaximize;
+				public new function HRESULT(IUIAutomationWindowPattern *self, BOOL* retVal) get_CachedCanMinimize;
+				public new function HRESULT(IUIAutomationWindowPattern *self, BOOL* retVal) get_CachedIsModal;
+				public new function HRESULT(IUIAutomationWindowPattern *self, BOOL* retVal) get_CachedIsTopmost;
+				public new function HRESULT(IUIAutomationWindowPattern *self, WindowVisualState* retVal) get_CachedWindowVisualState;
+				public new function HRESULT(IUIAutomationWindowPattern *self, WindowInteractionState* retVal) get_CachedWindowInteractionState;
 			}
 		}
 		[CRepr]
@@ -3364,28 +5382,101 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa543cc6a, 0xf4ae, 0x494b, 0x82, 0x39, 0xc8, 0x14, 0x48, 0x11, 0x87, 0xa8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Clone(IUIAutomationTextRange** clonedRange) mut
+			{
+				return VT.Clone(&this, clonedRange);
+			}
+			public HRESULT Compare(IUIAutomationTextRange* range, BOOL* areSame) mut
+			{
+				return VT.Compare(&this, range, areSame);
+			}
+			public HRESULT CompareEndpoints(TextPatternRangeEndpoint srcEndPoint, IUIAutomationTextRange* range, TextPatternRangeEndpoint targetEndPoint, int32* compValue) mut
+			{
+				return VT.CompareEndpoints(&this, srcEndPoint, range, targetEndPoint, compValue);
+			}
+			public HRESULT ExpandToEnclosingUnit(TextUnit textUnit) mut
+			{
+				return VT.ExpandToEnclosingUnit(&this, textUnit);
+			}
+			public HRESULT FindAttribute(int32 attr, VARIANT val, BOOL backward, IUIAutomationTextRange** found) mut
+			{
+				return VT.FindAttribute(&this, attr, val, backward, found);
+			}
+			public HRESULT FindText(BSTR text, BOOL backward, BOOL ignoreCase, IUIAutomationTextRange** found) mut
+			{
+				return VT.FindText(&this, text, backward, ignoreCase, found);
+			}
+			public HRESULT GetAttributeValue(int32 attr, VARIANT* value) mut
+			{
+				return VT.GetAttributeValue(&this, attr, value);
+			}
+			public HRESULT GetBoundingRectangles(SAFEARRAY** boundingRects) mut
+			{
+				return VT.GetBoundingRectangles(&this, boundingRects);
+			}
+			public HRESULT GetEnclosingElement(IUIAutomationElement** enclosingElement) mut
+			{
+				return VT.GetEnclosingElement(&this, enclosingElement);
+			}
+			public HRESULT GetText(int32 maxLength, BSTR* text) mut
+			{
+				return VT.GetText(&this, maxLength, text);
+			}
+			public HRESULT Move(TextUnit unit, int32 count, int32* moved) mut
+			{
+				return VT.Move(&this, unit, count, moved);
+			}
+			public HRESULT MoveEndpointByUnit(TextPatternRangeEndpoint endpoint, TextUnit unit, int32 count, int32* moved) mut
+			{
+				return VT.MoveEndpointByUnit(&this, endpoint, unit, count, moved);
+			}
+			public HRESULT MoveEndpointByRange(TextPatternRangeEndpoint srcEndPoint, IUIAutomationTextRange* range, TextPatternRangeEndpoint targetEndPoint) mut
+			{
+				return VT.MoveEndpointByRange(&this, srcEndPoint, range, targetEndPoint);
+			}
+			public HRESULT Select() mut
+			{
+				return VT.Select(&this);
+			}
+			public HRESULT AddToSelection() mut
+			{
+				return VT.AddToSelection(&this);
+			}
+			public HRESULT RemoveFromSelection() mut
+			{
+				return VT.RemoveFromSelection(&this);
+			}
+			public HRESULT ScrollIntoView(BOOL alignToTop) mut
+			{
+				return VT.ScrollIntoView(&this, alignToTop);
+			}
+			public HRESULT GetChildren(IUIAutomationElementArray** children) mut
+			{
+				return VT.GetChildren(&this, children);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationTextRange *self, IUIAutomationTextRange** clonedRange) Clone;
-				public function HRESULT(IUIAutomationTextRange *self, IUIAutomationTextRange* range, BOOL* areSame) Compare;
-				public function HRESULT(IUIAutomationTextRange *self, TextPatternRangeEndpoint srcEndPoint, IUIAutomationTextRange* range, TextPatternRangeEndpoint targetEndPoint, int32* compValue) CompareEndpoints;
-				public function HRESULT(IUIAutomationTextRange *self, TextUnit textUnit) ExpandToEnclosingUnit;
-				public function HRESULT(IUIAutomationTextRange *self, int32 attr, VARIANT val, BOOL backward, IUIAutomationTextRange** found) FindAttribute;
-				public function HRESULT(IUIAutomationTextRange *self, BSTR text, BOOL backward, BOOL ignoreCase, IUIAutomationTextRange** found) FindText;
-				public function HRESULT(IUIAutomationTextRange *self, int32 attr, VARIANT* value) GetAttributeValue;
-				public function HRESULT(IUIAutomationTextRange *self, SAFEARRAY** boundingRects) GetBoundingRectangles;
-				public function HRESULT(IUIAutomationTextRange *self, IUIAutomationElement** enclosingElement) GetEnclosingElement;
-				public function HRESULT(IUIAutomationTextRange *self, int32 maxLength, BSTR* text) GetText;
-				public function HRESULT(IUIAutomationTextRange *self, TextUnit unit, int32 count, int32* moved) Move;
-				public function HRESULT(IUIAutomationTextRange *self, TextPatternRangeEndpoint endpoint, TextUnit unit, int32 count, int32* moved) MoveEndpointByUnit;
-				public function HRESULT(IUIAutomationTextRange *self, TextPatternRangeEndpoint srcEndPoint, IUIAutomationTextRange* range, TextPatternRangeEndpoint targetEndPoint) MoveEndpointByRange;
-				public function HRESULT(IUIAutomationTextRange *self) Select;
-				public function HRESULT(IUIAutomationTextRange *self) AddToSelection;
-				public function HRESULT(IUIAutomationTextRange *self) RemoveFromSelection;
-				public function HRESULT(IUIAutomationTextRange *self, BOOL alignToTop) ScrollIntoView;
-				public function HRESULT(IUIAutomationTextRange *self, IUIAutomationElementArray** children) GetChildren;
+				public new function HRESULT(IUIAutomationTextRange *self, IUIAutomationTextRange** clonedRange) Clone;
+				public new function HRESULT(IUIAutomationTextRange *self, IUIAutomationTextRange* range, BOOL* areSame) Compare;
+				public new function HRESULT(IUIAutomationTextRange *self, TextPatternRangeEndpoint srcEndPoint, IUIAutomationTextRange* range, TextPatternRangeEndpoint targetEndPoint, int32* compValue) CompareEndpoints;
+				public new function HRESULT(IUIAutomationTextRange *self, TextUnit textUnit) ExpandToEnclosingUnit;
+				public new function HRESULT(IUIAutomationTextRange *self, int32 attr, VARIANT val, BOOL backward, IUIAutomationTextRange** found) FindAttribute;
+				public new function HRESULT(IUIAutomationTextRange *self, BSTR text, BOOL backward, BOOL ignoreCase, IUIAutomationTextRange** found) FindText;
+				public new function HRESULT(IUIAutomationTextRange *self, int32 attr, VARIANT* value) GetAttributeValue;
+				public new function HRESULT(IUIAutomationTextRange *self, SAFEARRAY** boundingRects) GetBoundingRectangles;
+				public new function HRESULT(IUIAutomationTextRange *self, IUIAutomationElement** enclosingElement) GetEnclosingElement;
+				public new function HRESULT(IUIAutomationTextRange *self, int32 maxLength, BSTR* text) GetText;
+				public new function HRESULT(IUIAutomationTextRange *self, TextUnit unit, int32 count, int32* moved) Move;
+				public new function HRESULT(IUIAutomationTextRange *self, TextPatternRangeEndpoint endpoint, TextUnit unit, int32 count, int32* moved) MoveEndpointByUnit;
+				public new function HRESULT(IUIAutomationTextRange *self, TextPatternRangeEndpoint srcEndPoint, IUIAutomationTextRange* range, TextPatternRangeEndpoint targetEndPoint) MoveEndpointByRange;
+				public new function HRESULT(IUIAutomationTextRange *self) Select;
+				public new function HRESULT(IUIAutomationTextRange *self) AddToSelection;
+				public new function HRESULT(IUIAutomationTextRange *self) RemoveFromSelection;
+				public new function HRESULT(IUIAutomationTextRange *self, BOOL alignToTop) ScrollIntoView;
+				public new function HRESULT(IUIAutomationTextRange *self, IUIAutomationElementArray** children) GetChildren;
 			}
 		}
 		[CRepr]
@@ -3393,11 +5484,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbb9b40e0, 0x5e04, 0x46bd, 0x9b, 0xe0, 0x4b, 0x60, 0x1b, 0x9a, 0xfa, 0xd4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ShowContextMenu() mut
+			{
+				return VT.ShowContextMenu(&this);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationTextRange.VTable
 			{
-				public function HRESULT(IUIAutomationTextRange2 *self) ShowContextMenu;
+				public new function HRESULT(IUIAutomationTextRange2 *self) ShowContextMenu;
 			}
 		}
 		[CRepr]
@@ -3405,13 +5501,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6a315d69, 0x5512, 0x4c2e, 0x85, 0xf0, 0x53, 0xfc, 0xe6, 0xdd, 0x4b, 0xc2);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetEnclosingElementBuildCache(IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** enclosingElement) mut
+			{
+				return VT.GetEnclosingElementBuildCache(&this, cacheRequest, enclosingElement);
+			}
+			public HRESULT GetChildrenBuildCache(IUIAutomationCacheRequest* cacheRequest, IUIAutomationElementArray** children) mut
+			{
+				return VT.GetChildrenBuildCache(&this, cacheRequest, children);
+			}
+			public HRESULT GetAttributeValues(int32* attributeIds, int32 attributeIdCount, SAFEARRAY** attributeValues) mut
+			{
+				return VT.GetAttributeValues(&this, attributeIds, attributeIdCount, attributeValues);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationTextRange2.VTable
 			{
-				public function HRESULT(IUIAutomationTextRange3 *self, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** enclosingElement) GetEnclosingElementBuildCache;
-				public function HRESULT(IUIAutomationTextRange3 *self, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElementArray** children) GetChildrenBuildCache;
-				public function HRESULT(IUIAutomationTextRange3 *self, int32* attributeIds, int32 attributeIdCount, SAFEARRAY** attributeValues) GetAttributeValues;
+				public new function HRESULT(IUIAutomationTextRange3 *self, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** enclosingElement) GetEnclosingElementBuildCache;
+				public new function HRESULT(IUIAutomationTextRange3 *self, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElementArray** children) GetChildrenBuildCache;
+				public new function HRESULT(IUIAutomationTextRange3 *self, int32* attributeIds, int32 attributeIdCount, SAFEARRAY** attributeValues) GetAttributeValues;
 			}
 		}
 		[CRepr]
@@ -3419,12 +5528,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xce4ae76a, 0xe717, 0x4c98, 0x81, 0xea, 0x47, 0x37, 0x1d, 0x02, 0x8e, 0xb6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Length(int32* length) mut
+			{
+				return VT.get_Length(&this, length);
+			}
+			public HRESULT GetElement(int32 index, IUIAutomationTextRange** element) mut
+			{
+				return VT.GetElement(&this, index, element);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationTextRangeArray *self, int32* length) get_Length;
-				public function HRESULT(IUIAutomationTextRangeArray *self, int32 index, IUIAutomationTextRange** element) GetElement;
+				public new function HRESULT(IUIAutomationTextRangeArray *self, int32* length) get_Length;
+				public new function HRESULT(IUIAutomationTextRangeArray *self, int32 index, IUIAutomationTextRange** element) GetElement;
 			}
 		}
 		[CRepr]
@@ -3432,16 +5550,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x32eba289, 0x3583, 0x42c9, 0x9c, 0x59, 0x3b, 0x6d, 0x9a, 0x1e, 0x9b, 0x6a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RangeFromPoint(POINT pt, IUIAutomationTextRange** range) mut
+			{
+				return VT.RangeFromPoint(&this, pt, range);
+			}
+			public HRESULT RangeFromChild(IUIAutomationElement* child, IUIAutomationTextRange** range) mut
+			{
+				return VT.RangeFromChild(&this, child, range);
+			}
+			public HRESULT GetSelection(IUIAutomationTextRangeArray** ranges) mut
+			{
+				return VT.GetSelection(&this, ranges);
+			}
+			public HRESULT GetVisibleRanges(IUIAutomationTextRangeArray** ranges) mut
+			{
+				return VT.GetVisibleRanges(&this, ranges);
+			}
+			public HRESULT get_DocumentRange(IUIAutomationTextRange** range) mut
+			{
+				return VT.get_DocumentRange(&this, range);
+			}
+			public HRESULT get_SupportedTextSelection(SupportedTextSelection* supportedTextSelection) mut
+			{
+				return VT.get_SupportedTextSelection(&this, supportedTextSelection);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationTextPattern *self, POINT pt, IUIAutomationTextRange** range) RangeFromPoint;
-				public function HRESULT(IUIAutomationTextPattern *self, IUIAutomationElement* child, IUIAutomationTextRange** range) RangeFromChild;
-				public function HRESULT(IUIAutomationTextPattern *self, IUIAutomationTextRangeArray** ranges) GetSelection;
-				public function HRESULT(IUIAutomationTextPattern *self, IUIAutomationTextRangeArray** ranges) GetVisibleRanges;
-				public function HRESULT(IUIAutomationTextPattern *self, IUIAutomationTextRange** range) get_DocumentRange;
-				public function HRESULT(IUIAutomationTextPattern *self, SupportedTextSelection* supportedTextSelection) get_SupportedTextSelection;
+				public new function HRESULT(IUIAutomationTextPattern *self, POINT pt, IUIAutomationTextRange** range) RangeFromPoint;
+				public new function HRESULT(IUIAutomationTextPattern *self, IUIAutomationElement* child, IUIAutomationTextRange** range) RangeFromChild;
+				public new function HRESULT(IUIAutomationTextPattern *self, IUIAutomationTextRangeArray** ranges) GetSelection;
+				public new function HRESULT(IUIAutomationTextPattern *self, IUIAutomationTextRangeArray** ranges) GetVisibleRanges;
+				public new function HRESULT(IUIAutomationTextPattern *self, IUIAutomationTextRange** range) get_DocumentRange;
+				public new function HRESULT(IUIAutomationTextPattern *self, SupportedTextSelection* supportedTextSelection) get_SupportedTextSelection;
 			}
 		}
 		[CRepr]
@@ -3449,12 +5592,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x506a921a, 0xfcc9, 0x409f, 0xb2, 0x3b, 0x37, 0xeb, 0x74, 0x10, 0x68, 0x72);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RangeFromAnnotation(IUIAutomationElement* annotation, IUIAutomationTextRange** range) mut
+			{
+				return VT.RangeFromAnnotation(&this, annotation, range);
+			}
+			public HRESULT GetCaretRange(BOOL* isActive, IUIAutomationTextRange** range) mut
+			{
+				return VT.GetCaretRange(&this, isActive, range);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationTextPattern.VTable
 			{
-				public function HRESULT(IUIAutomationTextPattern2 *self, IUIAutomationElement* annotation, IUIAutomationTextRange** range) RangeFromAnnotation;
-				public function HRESULT(IUIAutomationTextPattern2 *self, BOOL* isActive, IUIAutomationTextRange** range) GetCaretRange;
+				public new function HRESULT(IUIAutomationTextPattern2 *self, IUIAutomationElement* annotation, IUIAutomationTextRange** range) RangeFromAnnotation;
+				public new function HRESULT(IUIAutomationTextPattern2 *self, BOOL* isActive, IUIAutomationTextRange** range) GetCaretRange;
 			}
 		}
 		[CRepr]
@@ -3462,12 +5614,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x17e21576, 0x996c, 0x4870, 0x99, 0xd9, 0xbf, 0xf3, 0x23, 0x38, 0x0c, 0x06);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetActiveComposition(IUIAutomationTextRange** range) mut
+			{
+				return VT.GetActiveComposition(&this, range);
+			}
+			public HRESULT GetConversionTarget(IUIAutomationTextRange** range) mut
+			{
+				return VT.GetConversionTarget(&this, range);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationTextPattern.VTable
 			{
-				public function HRESULT(IUIAutomationTextEditPattern *self, IUIAutomationTextRange** range) GetActiveComposition;
-				public function HRESULT(IUIAutomationTextEditPattern *self, IUIAutomationTextRange** range) GetConversionTarget;
+				public new function HRESULT(IUIAutomationTextEditPattern *self, IUIAutomationTextRange** range) GetActiveComposition;
+				public new function HRESULT(IUIAutomationTextEditPattern *self, IUIAutomationTextRange** range) GetConversionTarget;
 			}
 		}
 		[CRepr]
@@ -3475,11 +5636,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x01ea217a, 0x1766, 0x47ed, 0xa6, 0xcc, 0xac, 0xf4, 0x92, 0x85, 0x4b, 0x1f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Navigate(NavigateDirection direction, IUIAutomationElement** pRetVal) mut
+			{
+				return VT.Navigate(&this, direction, pRetVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationCustomNavigationPattern *self, NavigateDirection direction, IUIAutomationElement** pRetVal) Navigate;
+				public new function HRESULT(IUIAutomationCustomNavigationPattern *self, NavigateDirection direction, IUIAutomationElement** pRetVal) Navigate;
 			}
 		}
 		[CRepr]
@@ -3487,11 +5653,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf97933b0, 0x8dae, 0x4496, 0x89, 0x97, 0x5b, 0xa0, 0x15, 0xfe, 0x0d, 0x82);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT HandleActiveTextPositionChangedEvent(IUIAutomationElement* sender, IUIAutomationTextRange* range) mut
+			{
+				return VT.HandleActiveTextPositionChangedEvent(&this, sender, range);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationActiveTextPositionChangedEventHandler *self, IUIAutomationElement* sender, IUIAutomationTextRange* range) HandleActiveTextPositionChangedEvent;
+				public new function HRESULT(IUIAutomationActiveTextPositionChangedEventHandler *self, IUIAutomationElement* sender, IUIAutomationTextRange* range) HandleActiveTextPositionChangedEvent;
 			}
 		}
 		[CRepr]
@@ -3499,34 +5670,131 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x828055ad, 0x355b, 0x4435, 0x86, 0xd5, 0x3b, 0x51, 0xc1, 0x4a, 0x9b, 0x1b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Select(int32 flagsSelect) mut
+			{
+				return VT.Select(&this, flagsSelect);
+			}
+			public HRESULT DoDefaultAction() mut
+			{
+				return VT.DoDefaultAction(&this);
+			}
+			public HRESULT SetValue(PWSTR szValue) mut
+			{
+				return VT.SetValue(&this, szValue);
+			}
+			public HRESULT get_CurrentChildId(int32* pRetVal) mut
+			{
+				return VT.get_CurrentChildId(&this, pRetVal);
+			}
+			public HRESULT get_CurrentName(BSTR* pszName) mut
+			{
+				return VT.get_CurrentName(&this, pszName);
+			}
+			public HRESULT get_CurrentValue(BSTR* pszValue) mut
+			{
+				return VT.get_CurrentValue(&this, pszValue);
+			}
+			public HRESULT get_CurrentDescription(BSTR* pszDescription) mut
+			{
+				return VT.get_CurrentDescription(&this, pszDescription);
+			}
+			public HRESULT get_CurrentRole(uint32* pdwRole) mut
+			{
+				return VT.get_CurrentRole(&this, pdwRole);
+			}
+			public HRESULT get_CurrentState(uint32* pdwState) mut
+			{
+				return VT.get_CurrentState(&this, pdwState);
+			}
+			public HRESULT get_CurrentHelp(BSTR* pszHelp) mut
+			{
+				return VT.get_CurrentHelp(&this, pszHelp);
+			}
+			public HRESULT get_CurrentKeyboardShortcut(BSTR* pszKeyboardShortcut) mut
+			{
+				return VT.get_CurrentKeyboardShortcut(&this, pszKeyboardShortcut);
+			}
+			public HRESULT GetCurrentSelection(IUIAutomationElementArray** pvarSelectedChildren) mut
+			{
+				return VT.GetCurrentSelection(&this, pvarSelectedChildren);
+			}
+			public HRESULT get_CurrentDefaultAction(BSTR* pszDefaultAction) mut
+			{
+				return VT.get_CurrentDefaultAction(&this, pszDefaultAction);
+			}
+			public HRESULT get_CachedChildId(int32* pRetVal) mut
+			{
+				return VT.get_CachedChildId(&this, pRetVal);
+			}
+			public HRESULT get_CachedName(BSTR* pszName) mut
+			{
+				return VT.get_CachedName(&this, pszName);
+			}
+			public HRESULT get_CachedValue(BSTR* pszValue) mut
+			{
+				return VT.get_CachedValue(&this, pszValue);
+			}
+			public HRESULT get_CachedDescription(BSTR* pszDescription) mut
+			{
+				return VT.get_CachedDescription(&this, pszDescription);
+			}
+			public HRESULT get_CachedRole(uint32* pdwRole) mut
+			{
+				return VT.get_CachedRole(&this, pdwRole);
+			}
+			public HRESULT get_CachedState(uint32* pdwState) mut
+			{
+				return VT.get_CachedState(&this, pdwState);
+			}
+			public HRESULT get_CachedHelp(BSTR* pszHelp) mut
+			{
+				return VT.get_CachedHelp(&this, pszHelp);
+			}
+			public HRESULT get_CachedKeyboardShortcut(BSTR* pszKeyboardShortcut) mut
+			{
+				return VT.get_CachedKeyboardShortcut(&this, pszKeyboardShortcut);
+			}
+			public HRESULT GetCachedSelection(IUIAutomationElementArray** pvarSelectedChildren) mut
+			{
+				return VT.GetCachedSelection(&this, pvarSelectedChildren);
+			}
+			public HRESULT get_CachedDefaultAction(BSTR* pszDefaultAction) mut
+			{
+				return VT.get_CachedDefaultAction(&this, pszDefaultAction);
+			}
+			public HRESULT GetIAccessible(IAccessible** ppAccessible) mut
+			{
+				return VT.GetIAccessible(&this, ppAccessible);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, int32 flagsSelect) Select;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self) DoDefaultAction;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, PWSTR szValue) SetValue;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, int32* pRetVal) get_CurrentChildId;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszName) get_CurrentName;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszValue) get_CurrentValue;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszDescription) get_CurrentDescription;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, uint32* pdwRole) get_CurrentRole;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, uint32* pdwState) get_CurrentState;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszHelp) get_CurrentHelp;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszKeyboardShortcut) get_CurrentKeyboardShortcut;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, IUIAutomationElementArray** pvarSelectedChildren) GetCurrentSelection;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszDefaultAction) get_CurrentDefaultAction;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, int32* pRetVal) get_CachedChildId;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszName) get_CachedName;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszValue) get_CachedValue;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszDescription) get_CachedDescription;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, uint32* pdwRole) get_CachedRole;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, uint32* pdwState) get_CachedState;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszHelp) get_CachedHelp;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszKeyboardShortcut) get_CachedKeyboardShortcut;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, IUIAutomationElementArray** pvarSelectedChildren) GetCachedSelection;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszDefaultAction) get_CachedDefaultAction;
-				public function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, IAccessible** ppAccessible) GetIAccessible;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, int32 flagsSelect) Select;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self) DoDefaultAction;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, PWSTR szValue) SetValue;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, int32* pRetVal) get_CurrentChildId;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszName) get_CurrentName;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszValue) get_CurrentValue;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszDescription) get_CurrentDescription;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, uint32* pdwRole) get_CurrentRole;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, uint32* pdwState) get_CurrentState;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszHelp) get_CurrentHelp;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszKeyboardShortcut) get_CurrentKeyboardShortcut;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, IUIAutomationElementArray** pvarSelectedChildren) GetCurrentSelection;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszDefaultAction) get_CurrentDefaultAction;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, int32* pRetVal) get_CachedChildId;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszName) get_CachedName;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszValue) get_CachedValue;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszDescription) get_CachedDescription;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, uint32* pdwRole) get_CachedRole;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, uint32* pdwState) get_CachedState;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszHelp) get_CachedHelp;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszKeyboardShortcut) get_CachedKeyboardShortcut;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, IUIAutomationElementArray** pvarSelectedChildren) GetCachedSelection;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, BSTR* pszDefaultAction) get_CachedDefaultAction;
+				public new function HRESULT(IUIAutomationLegacyIAccessiblePattern *self, IAccessible** ppAccessible) GetIAccessible;
 			}
 		}
 		[CRepr]
@@ -3534,11 +5802,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc690fdb2, 0x27a8, 0x423c, 0x81, 0x2d, 0x42, 0x97, 0x73, 0xc9, 0x08, 0x4e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT FindItemByProperty(IUIAutomationElement* pStartAfter, int32 propertyId, VARIANT value, IUIAutomationElement** pFound) mut
+			{
+				return VT.FindItemByProperty(&this, pStartAfter, propertyId, value, pFound);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationItemContainerPattern *self, IUIAutomationElement* pStartAfter, int32 propertyId, VARIANT value, IUIAutomationElement** pFound) FindItemByProperty;
+				public new function HRESULT(IUIAutomationItemContainerPattern *self, IUIAutomationElement* pStartAfter, int32 propertyId, VARIANT value, IUIAutomationElement** pFound) FindItemByProperty;
 			}
 		}
 		[CRepr]
@@ -3546,11 +5819,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6ba3d7a6, 0x04cf, 0x4f11, 0x87, 0x93, 0xa8, 0xd1, 0xcd, 0xe9, 0x96, 0x9f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Realize() mut
+			{
+				return VT.Realize(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationVirtualizedItemPattern *self) Realize;
+				public new function HRESULT(IUIAutomationVirtualizedItemPattern *self) Realize;
 			}
 		}
 		[CRepr]
@@ -3558,20 +5836,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9a175b21, 0x339e, 0x41b1, 0x8e, 0x8b, 0x62, 0x3f, 0x6b, 0x68, 0x10, 0x98);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CurrentAnnotationTypeId(int32* retVal) mut
+			{
+				return VT.get_CurrentAnnotationTypeId(&this, retVal);
+			}
+			public HRESULT get_CurrentAnnotationTypeName(BSTR* retVal) mut
+			{
+				return VT.get_CurrentAnnotationTypeName(&this, retVal);
+			}
+			public HRESULT get_CurrentAuthor(BSTR* retVal) mut
+			{
+				return VT.get_CurrentAuthor(&this, retVal);
+			}
+			public HRESULT get_CurrentDateTime(BSTR* retVal) mut
+			{
+				return VT.get_CurrentDateTime(&this, retVal);
+			}
+			public HRESULT get_CurrentTarget(IUIAutomationElement** retVal) mut
+			{
+				return VT.get_CurrentTarget(&this, retVal);
+			}
+			public HRESULT get_CachedAnnotationTypeId(int32* retVal) mut
+			{
+				return VT.get_CachedAnnotationTypeId(&this, retVal);
+			}
+			public HRESULT get_CachedAnnotationTypeName(BSTR* retVal) mut
+			{
+				return VT.get_CachedAnnotationTypeName(&this, retVal);
+			}
+			public HRESULT get_CachedAuthor(BSTR* retVal) mut
+			{
+				return VT.get_CachedAuthor(&this, retVal);
+			}
+			public HRESULT get_CachedDateTime(BSTR* retVal) mut
+			{
+				return VT.get_CachedDateTime(&this, retVal);
+			}
+			public HRESULT get_CachedTarget(IUIAutomationElement** retVal) mut
+			{
+				return VT.get_CachedTarget(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationAnnotationPattern *self, int32* retVal) get_CurrentAnnotationTypeId;
-				public function HRESULT(IUIAutomationAnnotationPattern *self, BSTR* retVal) get_CurrentAnnotationTypeName;
-				public function HRESULT(IUIAutomationAnnotationPattern *self, BSTR* retVal) get_CurrentAuthor;
-				public function HRESULT(IUIAutomationAnnotationPattern *self, BSTR* retVal) get_CurrentDateTime;
-				public function HRESULT(IUIAutomationAnnotationPattern *self, IUIAutomationElement** retVal) get_CurrentTarget;
-				public function HRESULT(IUIAutomationAnnotationPattern *self, int32* retVal) get_CachedAnnotationTypeId;
-				public function HRESULT(IUIAutomationAnnotationPattern *self, BSTR* retVal) get_CachedAnnotationTypeName;
-				public function HRESULT(IUIAutomationAnnotationPattern *self, BSTR* retVal) get_CachedAuthor;
-				public function HRESULT(IUIAutomationAnnotationPattern *self, BSTR* retVal) get_CachedDateTime;
-				public function HRESULT(IUIAutomationAnnotationPattern *self, IUIAutomationElement** retVal) get_CachedTarget;
+				public new function HRESULT(IUIAutomationAnnotationPattern *self, int32* retVal) get_CurrentAnnotationTypeId;
+				public new function HRESULT(IUIAutomationAnnotationPattern *self, BSTR* retVal) get_CurrentAnnotationTypeName;
+				public new function HRESULT(IUIAutomationAnnotationPattern *self, BSTR* retVal) get_CurrentAuthor;
+				public new function HRESULT(IUIAutomationAnnotationPattern *self, BSTR* retVal) get_CurrentDateTime;
+				public new function HRESULT(IUIAutomationAnnotationPattern *self, IUIAutomationElement** retVal) get_CurrentTarget;
+				public new function HRESULT(IUIAutomationAnnotationPattern *self, int32* retVal) get_CachedAnnotationTypeId;
+				public new function HRESULT(IUIAutomationAnnotationPattern *self, BSTR* retVal) get_CachedAnnotationTypeName;
+				public new function HRESULT(IUIAutomationAnnotationPattern *self, BSTR* retVal) get_CachedAuthor;
+				public new function HRESULT(IUIAutomationAnnotationPattern *self, BSTR* retVal) get_CachedDateTime;
+				public new function HRESULT(IUIAutomationAnnotationPattern *self, IUIAutomationElement** retVal) get_CachedTarget;
 			}
 		}
 		[CRepr]
@@ -3579,26 +5898,91 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x85b5f0a2, 0xbd79, 0x484a, 0xad, 0x2b, 0x38, 0x8c, 0x98, 0x38, 0xd5, 0xfb);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CurrentStyleId(int32* retVal) mut
+			{
+				return VT.get_CurrentStyleId(&this, retVal);
+			}
+			public HRESULT get_CurrentStyleName(BSTR* retVal) mut
+			{
+				return VT.get_CurrentStyleName(&this, retVal);
+			}
+			public HRESULT get_CurrentFillColor(int32* retVal) mut
+			{
+				return VT.get_CurrentFillColor(&this, retVal);
+			}
+			public HRESULT get_CurrentFillPatternStyle(BSTR* retVal) mut
+			{
+				return VT.get_CurrentFillPatternStyle(&this, retVal);
+			}
+			public HRESULT get_CurrentShape(BSTR* retVal) mut
+			{
+				return VT.get_CurrentShape(&this, retVal);
+			}
+			public HRESULT get_CurrentFillPatternColor(int32* retVal) mut
+			{
+				return VT.get_CurrentFillPatternColor(&this, retVal);
+			}
+			public HRESULT get_CurrentExtendedProperties(BSTR* retVal) mut
+			{
+				return VT.get_CurrentExtendedProperties(&this, retVal);
+			}
+			public HRESULT GetCurrentExtendedPropertiesAsArray(ExtendedProperty** propertyArray, int32* propertyCount) mut
+			{
+				return VT.GetCurrentExtendedPropertiesAsArray(&this, propertyArray, propertyCount);
+			}
+			public HRESULT get_CachedStyleId(int32* retVal) mut
+			{
+				return VT.get_CachedStyleId(&this, retVal);
+			}
+			public HRESULT get_CachedStyleName(BSTR* retVal) mut
+			{
+				return VT.get_CachedStyleName(&this, retVal);
+			}
+			public HRESULT get_CachedFillColor(int32* retVal) mut
+			{
+				return VT.get_CachedFillColor(&this, retVal);
+			}
+			public HRESULT get_CachedFillPatternStyle(BSTR* retVal) mut
+			{
+				return VT.get_CachedFillPatternStyle(&this, retVal);
+			}
+			public HRESULT get_CachedShape(BSTR* retVal) mut
+			{
+				return VT.get_CachedShape(&this, retVal);
+			}
+			public HRESULT get_CachedFillPatternColor(int32* retVal) mut
+			{
+				return VT.get_CachedFillPatternColor(&this, retVal);
+			}
+			public HRESULT get_CachedExtendedProperties(BSTR* retVal) mut
+			{
+				return VT.get_CachedExtendedProperties(&this, retVal);
+			}
+			public HRESULT GetCachedExtendedPropertiesAsArray(ExtendedProperty** propertyArray, int32* propertyCount) mut
+			{
+				return VT.GetCachedExtendedPropertiesAsArray(&this, propertyArray, propertyCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationStylesPattern *self, int32* retVal) get_CurrentStyleId;
-				public function HRESULT(IUIAutomationStylesPattern *self, BSTR* retVal) get_CurrentStyleName;
-				public function HRESULT(IUIAutomationStylesPattern *self, int32* retVal) get_CurrentFillColor;
-				public function HRESULT(IUIAutomationStylesPattern *self, BSTR* retVal) get_CurrentFillPatternStyle;
-				public function HRESULT(IUIAutomationStylesPattern *self, BSTR* retVal) get_CurrentShape;
-				public function HRESULT(IUIAutomationStylesPattern *self, int32* retVal) get_CurrentFillPatternColor;
-				public function HRESULT(IUIAutomationStylesPattern *self, BSTR* retVal) get_CurrentExtendedProperties;
-				public function HRESULT(IUIAutomationStylesPattern *self, ExtendedProperty** propertyArray, int32* propertyCount) GetCurrentExtendedPropertiesAsArray;
-				public function HRESULT(IUIAutomationStylesPattern *self, int32* retVal) get_CachedStyleId;
-				public function HRESULT(IUIAutomationStylesPattern *self, BSTR* retVal) get_CachedStyleName;
-				public function HRESULT(IUIAutomationStylesPattern *self, int32* retVal) get_CachedFillColor;
-				public function HRESULT(IUIAutomationStylesPattern *self, BSTR* retVal) get_CachedFillPatternStyle;
-				public function HRESULT(IUIAutomationStylesPattern *self, BSTR* retVal) get_CachedShape;
-				public function HRESULT(IUIAutomationStylesPattern *self, int32* retVal) get_CachedFillPatternColor;
-				public function HRESULT(IUIAutomationStylesPattern *self, BSTR* retVal) get_CachedExtendedProperties;
-				public function HRESULT(IUIAutomationStylesPattern *self, ExtendedProperty** propertyArray, int32* propertyCount) GetCachedExtendedPropertiesAsArray;
+				public new function HRESULT(IUIAutomationStylesPattern *self, int32* retVal) get_CurrentStyleId;
+				public new function HRESULT(IUIAutomationStylesPattern *self, BSTR* retVal) get_CurrentStyleName;
+				public new function HRESULT(IUIAutomationStylesPattern *self, int32* retVal) get_CurrentFillColor;
+				public new function HRESULT(IUIAutomationStylesPattern *self, BSTR* retVal) get_CurrentFillPatternStyle;
+				public new function HRESULT(IUIAutomationStylesPattern *self, BSTR* retVal) get_CurrentShape;
+				public new function HRESULT(IUIAutomationStylesPattern *self, int32* retVal) get_CurrentFillPatternColor;
+				public new function HRESULT(IUIAutomationStylesPattern *self, BSTR* retVal) get_CurrentExtendedProperties;
+				public new function HRESULT(IUIAutomationStylesPattern *self, ExtendedProperty** propertyArray, int32* propertyCount) GetCurrentExtendedPropertiesAsArray;
+				public new function HRESULT(IUIAutomationStylesPattern *self, int32* retVal) get_CachedStyleId;
+				public new function HRESULT(IUIAutomationStylesPattern *self, BSTR* retVal) get_CachedStyleName;
+				public new function HRESULT(IUIAutomationStylesPattern *self, int32* retVal) get_CachedFillColor;
+				public new function HRESULT(IUIAutomationStylesPattern *self, BSTR* retVal) get_CachedFillPatternStyle;
+				public new function HRESULT(IUIAutomationStylesPattern *self, BSTR* retVal) get_CachedShape;
+				public new function HRESULT(IUIAutomationStylesPattern *self, int32* retVal) get_CachedFillPatternColor;
+				public new function HRESULT(IUIAutomationStylesPattern *self, BSTR* retVal) get_CachedExtendedProperties;
+				public new function HRESULT(IUIAutomationStylesPattern *self, ExtendedProperty** propertyArray, int32* propertyCount) GetCachedExtendedPropertiesAsArray;
 			}
 		}
 		[CRepr]
@@ -3606,11 +5990,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7517a7c8, 0xfaae, 0x4de9, 0x9f, 0x08, 0x29, 0xb9, 0x1e, 0x85, 0x95, 0xc1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetItemByName(BSTR name, IUIAutomationElement** element) mut
+			{
+				return VT.GetItemByName(&this, name, element);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationSpreadsheetPattern *self, BSTR name, IUIAutomationElement** element) GetItemByName;
+				public new function HRESULT(IUIAutomationSpreadsheetPattern *self, BSTR name, IUIAutomationElement** element) GetItemByName;
 			}
 		}
 		[CRepr]
@@ -3618,16 +6007,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7d4fb86c, 0x8d34, 0x40e1, 0x8e, 0x83, 0x62, 0xc1, 0x52, 0x04, 0xe3, 0x35);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CurrentFormula(BSTR* retVal) mut
+			{
+				return VT.get_CurrentFormula(&this, retVal);
+			}
+			public HRESULT GetCurrentAnnotationObjects(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.GetCurrentAnnotationObjects(&this, retVal);
+			}
+			public HRESULT GetCurrentAnnotationTypes(SAFEARRAY** retVal) mut
+			{
+				return VT.GetCurrentAnnotationTypes(&this, retVal);
+			}
+			public HRESULT get_CachedFormula(BSTR* retVal) mut
+			{
+				return VT.get_CachedFormula(&this, retVal);
+			}
+			public HRESULT GetCachedAnnotationObjects(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.GetCachedAnnotationObjects(&this, retVal);
+			}
+			public HRESULT GetCachedAnnotationTypes(SAFEARRAY** retVal) mut
+			{
+				return VT.GetCachedAnnotationTypes(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationSpreadsheetItemPattern *self, BSTR* retVal) get_CurrentFormula;
-				public function HRESULT(IUIAutomationSpreadsheetItemPattern *self, IUIAutomationElementArray** retVal) GetCurrentAnnotationObjects;
-				public function HRESULT(IUIAutomationSpreadsheetItemPattern *self, SAFEARRAY** retVal) GetCurrentAnnotationTypes;
-				public function HRESULT(IUIAutomationSpreadsheetItemPattern *self, BSTR* retVal) get_CachedFormula;
-				public function HRESULT(IUIAutomationSpreadsheetItemPattern *self, IUIAutomationElementArray** retVal) GetCachedAnnotationObjects;
-				public function HRESULT(IUIAutomationSpreadsheetItemPattern *self, SAFEARRAY** retVal) GetCachedAnnotationTypes;
+				public new function HRESULT(IUIAutomationSpreadsheetItemPattern *self, BSTR* retVal) get_CurrentFormula;
+				public new function HRESULT(IUIAutomationSpreadsheetItemPattern *self, IUIAutomationElementArray** retVal) GetCurrentAnnotationObjects;
+				public new function HRESULT(IUIAutomationSpreadsheetItemPattern *self, SAFEARRAY** retVal) GetCurrentAnnotationTypes;
+				public new function HRESULT(IUIAutomationSpreadsheetItemPattern *self, BSTR* retVal) get_CachedFormula;
+				public new function HRESULT(IUIAutomationSpreadsheetItemPattern *self, IUIAutomationElementArray** retVal) GetCachedAnnotationObjects;
+				public new function HRESULT(IUIAutomationSpreadsheetItemPattern *self, SAFEARRAY** retVal) GetCachedAnnotationTypes;
 			}
 		}
 		[CRepr]
@@ -3635,20 +6049,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6d74d017, 0x6ecb, 0x4381, 0xb3, 0x8b, 0x3c, 0x17, 0xa4, 0x8f, 0xf1, 0xc2);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Zoom(double zoomValue) mut
+			{
+				return VT.Zoom(&this, zoomValue);
+			}
+			public HRESULT ZoomByUnit(ZoomUnit zoomUnit) mut
+			{
+				return VT.ZoomByUnit(&this, zoomUnit);
+			}
+			public HRESULT get_CurrentCanZoom(BOOL* retVal) mut
+			{
+				return VT.get_CurrentCanZoom(&this, retVal);
+			}
+			public HRESULT get_CachedCanZoom(BOOL* retVal) mut
+			{
+				return VT.get_CachedCanZoom(&this, retVal);
+			}
+			public HRESULT get_CurrentZoomLevel(double* retVal) mut
+			{
+				return VT.get_CurrentZoomLevel(&this, retVal);
+			}
+			public HRESULT get_CachedZoomLevel(double* retVal) mut
+			{
+				return VT.get_CachedZoomLevel(&this, retVal);
+			}
+			public HRESULT get_CurrentZoomMinimum(double* retVal) mut
+			{
+				return VT.get_CurrentZoomMinimum(&this, retVal);
+			}
+			public HRESULT get_CachedZoomMinimum(double* retVal) mut
+			{
+				return VT.get_CachedZoomMinimum(&this, retVal);
+			}
+			public HRESULT get_CurrentZoomMaximum(double* retVal) mut
+			{
+				return VT.get_CurrentZoomMaximum(&this, retVal);
+			}
+			public HRESULT get_CachedZoomMaximum(double* retVal) mut
+			{
+				return VT.get_CachedZoomMaximum(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationTransformPattern.VTable
 			{
-				public function HRESULT(IUIAutomationTransformPattern2 *self, double zoomValue) Zoom;
-				public function HRESULT(IUIAutomationTransformPattern2 *self, ZoomUnit zoomUnit) ZoomByUnit;
-				public function HRESULT(IUIAutomationTransformPattern2 *self, BOOL* retVal) get_CurrentCanZoom;
-				public function HRESULT(IUIAutomationTransformPattern2 *self, BOOL* retVal) get_CachedCanZoom;
-				public function HRESULT(IUIAutomationTransformPattern2 *self, double* retVal) get_CurrentZoomLevel;
-				public function HRESULT(IUIAutomationTransformPattern2 *self, double* retVal) get_CachedZoomLevel;
-				public function HRESULT(IUIAutomationTransformPattern2 *self, double* retVal) get_CurrentZoomMinimum;
-				public function HRESULT(IUIAutomationTransformPattern2 *self, double* retVal) get_CachedZoomMinimum;
-				public function HRESULT(IUIAutomationTransformPattern2 *self, double* retVal) get_CurrentZoomMaximum;
-				public function HRESULT(IUIAutomationTransformPattern2 *self, double* retVal) get_CachedZoomMaximum;
+				public new function HRESULT(IUIAutomationTransformPattern2 *self, double zoomValue) Zoom;
+				public new function HRESULT(IUIAutomationTransformPattern2 *self, ZoomUnit zoomUnit) ZoomByUnit;
+				public new function HRESULT(IUIAutomationTransformPattern2 *self, BOOL* retVal) get_CurrentCanZoom;
+				public new function HRESULT(IUIAutomationTransformPattern2 *self, BOOL* retVal) get_CachedCanZoom;
+				public new function HRESULT(IUIAutomationTransformPattern2 *self, double* retVal) get_CurrentZoomLevel;
+				public new function HRESULT(IUIAutomationTransformPattern2 *self, double* retVal) get_CachedZoomLevel;
+				public new function HRESULT(IUIAutomationTransformPattern2 *self, double* retVal) get_CurrentZoomMinimum;
+				public new function HRESULT(IUIAutomationTransformPattern2 *self, double* retVal) get_CachedZoomMinimum;
+				public new function HRESULT(IUIAutomationTransformPattern2 *self, double* retVal) get_CurrentZoomMaximum;
+				public new function HRESULT(IUIAutomationTransformPattern2 *self, double* retVal) get_CachedZoomMaximum;
 			}
 		}
 		[CRepr]
@@ -3656,12 +6111,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6552b038, 0xae05, 0x40c8, 0xab, 0xfd, 0xaa, 0x08, 0x35, 0x2a, 0xab, 0x86);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_TextContainer(IUIAutomationElement** container) mut
+			{
+				return VT.get_TextContainer(&this, container);
+			}
+			public HRESULT get_TextRange(IUIAutomationTextRange** range) mut
+			{
+				return VT.get_TextRange(&this, range);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationTextChildPattern *self, IUIAutomationElement** container) get_TextContainer;
-				public function HRESULT(IUIAutomationTextChildPattern *self, IUIAutomationTextRange** range) get_TextRange;
+				public new function HRESULT(IUIAutomationTextChildPattern *self, IUIAutomationElement** container) get_TextContainer;
+				public new function HRESULT(IUIAutomationTextChildPattern *self, IUIAutomationTextRange** range) get_TextRange;
 			}
 		}
 		[CRepr]
@@ -3669,18 +6133,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1dc7b570, 0x1f54, 0x4bad, 0xbc, 0xda, 0xd3, 0x6a, 0x72, 0x2f, 0xb7, 0xbd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CurrentIsGrabbed(BOOL* retVal) mut
+			{
+				return VT.get_CurrentIsGrabbed(&this, retVal);
+			}
+			public HRESULT get_CachedIsGrabbed(BOOL* retVal) mut
+			{
+				return VT.get_CachedIsGrabbed(&this, retVal);
+			}
+			public HRESULT get_CurrentDropEffect(BSTR* retVal) mut
+			{
+				return VT.get_CurrentDropEffect(&this, retVal);
+			}
+			public HRESULT get_CachedDropEffect(BSTR* retVal) mut
+			{
+				return VT.get_CachedDropEffect(&this, retVal);
+			}
+			public HRESULT get_CurrentDropEffects(SAFEARRAY** retVal) mut
+			{
+				return VT.get_CurrentDropEffects(&this, retVal);
+			}
+			public HRESULT get_CachedDropEffects(SAFEARRAY** retVal) mut
+			{
+				return VT.get_CachedDropEffects(&this, retVal);
+			}
+			public HRESULT GetCurrentGrabbedItems(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.GetCurrentGrabbedItems(&this, retVal);
+			}
+			public HRESULT GetCachedGrabbedItems(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.GetCachedGrabbedItems(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationDragPattern *self, BOOL* retVal) get_CurrentIsGrabbed;
-				public function HRESULT(IUIAutomationDragPattern *self, BOOL* retVal) get_CachedIsGrabbed;
-				public function HRESULT(IUIAutomationDragPattern *self, BSTR* retVal) get_CurrentDropEffect;
-				public function HRESULT(IUIAutomationDragPattern *self, BSTR* retVal) get_CachedDropEffect;
-				public function HRESULT(IUIAutomationDragPattern *self, SAFEARRAY** retVal) get_CurrentDropEffects;
-				public function HRESULT(IUIAutomationDragPattern *self, SAFEARRAY** retVal) get_CachedDropEffects;
-				public function HRESULT(IUIAutomationDragPattern *self, IUIAutomationElementArray** retVal) GetCurrentGrabbedItems;
-				public function HRESULT(IUIAutomationDragPattern *self, IUIAutomationElementArray** retVal) GetCachedGrabbedItems;
+				public new function HRESULT(IUIAutomationDragPattern *self, BOOL* retVal) get_CurrentIsGrabbed;
+				public new function HRESULT(IUIAutomationDragPattern *self, BOOL* retVal) get_CachedIsGrabbed;
+				public new function HRESULT(IUIAutomationDragPattern *self, BSTR* retVal) get_CurrentDropEffect;
+				public new function HRESULT(IUIAutomationDragPattern *self, BSTR* retVal) get_CachedDropEffect;
+				public new function HRESULT(IUIAutomationDragPattern *self, SAFEARRAY** retVal) get_CurrentDropEffects;
+				public new function HRESULT(IUIAutomationDragPattern *self, SAFEARRAY** retVal) get_CachedDropEffects;
+				public new function HRESULT(IUIAutomationDragPattern *self, IUIAutomationElementArray** retVal) GetCurrentGrabbedItems;
+				public new function HRESULT(IUIAutomationDragPattern *self, IUIAutomationElementArray** retVal) GetCachedGrabbedItems;
 			}
 		}
 		[CRepr]
@@ -3688,14 +6185,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x69a095f7, 0xeee4, 0x430e, 0xa4, 0x6b, 0xfb, 0x73, 0xb1, 0xae, 0x39, 0xa5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CurrentDropTargetEffect(BSTR* retVal) mut
+			{
+				return VT.get_CurrentDropTargetEffect(&this, retVal);
+			}
+			public HRESULT get_CachedDropTargetEffect(BSTR* retVal) mut
+			{
+				return VT.get_CachedDropTargetEffect(&this, retVal);
+			}
+			public HRESULT get_CurrentDropTargetEffects(SAFEARRAY** retVal) mut
+			{
+				return VT.get_CurrentDropTargetEffects(&this, retVal);
+			}
+			public HRESULT get_CachedDropTargetEffects(SAFEARRAY** retVal) mut
+			{
+				return VT.get_CachedDropTargetEffects(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationDropTargetPattern *self, BSTR* retVal) get_CurrentDropTargetEffect;
-				public function HRESULT(IUIAutomationDropTargetPattern *self, BSTR* retVal) get_CachedDropTargetEffect;
-				public function HRESULT(IUIAutomationDropTargetPattern *self, SAFEARRAY** retVal) get_CurrentDropTargetEffects;
-				public function HRESULT(IUIAutomationDropTargetPattern *self, SAFEARRAY** retVal) get_CachedDropTargetEffects;
+				public new function HRESULT(IUIAutomationDropTargetPattern *self, BSTR* retVal) get_CurrentDropTargetEffect;
+				public new function HRESULT(IUIAutomationDropTargetPattern *self, BSTR* retVal) get_CachedDropTargetEffect;
+				public new function HRESULT(IUIAutomationDropTargetPattern *self, SAFEARRAY** retVal) get_CurrentDropTargetEffects;
+				public new function HRESULT(IUIAutomationDropTargetPattern *self, SAFEARRAY** retVal) get_CachedDropTargetEffects;
 			}
 		}
 		[CRepr]
@@ -3703,16 +6217,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6749c683, 0xf70d, 0x4487, 0xa6, 0x98, 0x5f, 0x79, 0xd5, 0x52, 0x90, 0xd6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CurrentOptimizeForVisualContent(BOOL* retVal) mut
+			{
+				return VT.get_CurrentOptimizeForVisualContent(&this, retVal);
+			}
+			public HRESULT get_CachedOptimizeForVisualContent(BOOL* retVal) mut
+			{
+				return VT.get_CachedOptimizeForVisualContent(&this, retVal);
+			}
+			public HRESULT get_CurrentLiveSetting(LiveSetting* retVal) mut
+			{
+				return VT.get_CurrentLiveSetting(&this, retVal);
+			}
+			public HRESULT get_CachedLiveSetting(LiveSetting* retVal) mut
+			{
+				return VT.get_CachedLiveSetting(&this, retVal);
+			}
+			public HRESULT get_CurrentFlowsFrom(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.get_CurrentFlowsFrom(&this, retVal);
+			}
+			public HRESULT get_CachedFlowsFrom(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.get_CachedFlowsFrom(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationElement.VTable
 			{
-				public function HRESULT(IUIAutomationElement2 *self, BOOL* retVal) get_CurrentOptimizeForVisualContent;
-				public function HRESULT(IUIAutomationElement2 *self, BOOL* retVal) get_CachedOptimizeForVisualContent;
-				public function HRESULT(IUIAutomationElement2 *self, LiveSetting* retVal) get_CurrentLiveSetting;
-				public function HRESULT(IUIAutomationElement2 *self, LiveSetting* retVal) get_CachedLiveSetting;
-				public function HRESULT(IUIAutomationElement2 *self, IUIAutomationElementArray** retVal) get_CurrentFlowsFrom;
-				public function HRESULT(IUIAutomationElement2 *self, IUIAutomationElementArray** retVal) get_CachedFlowsFrom;
+				public new function HRESULT(IUIAutomationElement2 *self, BOOL* retVal) get_CurrentOptimizeForVisualContent;
+				public new function HRESULT(IUIAutomationElement2 *self, BOOL* retVal) get_CachedOptimizeForVisualContent;
+				public new function HRESULT(IUIAutomationElement2 *self, LiveSetting* retVal) get_CurrentLiveSetting;
+				public new function HRESULT(IUIAutomationElement2 *self, LiveSetting* retVal) get_CachedLiveSetting;
+				public new function HRESULT(IUIAutomationElement2 *self, IUIAutomationElementArray** retVal) get_CurrentFlowsFrom;
+				public new function HRESULT(IUIAutomationElement2 *self, IUIAutomationElementArray** retVal) get_CachedFlowsFrom;
 			}
 		}
 		[CRepr]
@@ -3720,13 +6259,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8471df34, 0xaee0, 0x4a01, 0xa7, 0xde, 0x7d, 0xb9, 0xaf, 0x12, 0xc2, 0x96);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ShowContextMenu() mut
+			{
+				return VT.ShowContextMenu(&this);
+			}
+			public HRESULT get_CurrentIsPeripheral(BOOL* retVal) mut
+			{
+				return VT.get_CurrentIsPeripheral(&this, retVal);
+			}
+			public HRESULT get_CachedIsPeripheral(BOOL* retVal) mut
+			{
+				return VT.get_CachedIsPeripheral(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationElement2.VTable
 			{
-				public function HRESULT(IUIAutomationElement3 *self) ShowContextMenu;
-				public function HRESULT(IUIAutomationElement3 *self, BOOL* retVal) get_CurrentIsPeripheral;
-				public function HRESULT(IUIAutomationElement3 *self, BOOL* retVal) get_CachedIsPeripheral;
+				public new function HRESULT(IUIAutomationElement3 *self) ShowContextMenu;
+				public new function HRESULT(IUIAutomationElement3 *self, BOOL* retVal) get_CurrentIsPeripheral;
+				public new function HRESULT(IUIAutomationElement3 *self, BOOL* retVal) get_CachedIsPeripheral;
 			}
 		}
 		[CRepr]
@@ -3734,20 +6286,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3b6e233c, 0x52fb, 0x4063, 0xa4, 0xc9, 0x77, 0xc0, 0x75, 0xc2, 0xa0, 0x6b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CurrentPositionInSet(int32* retVal) mut
+			{
+				return VT.get_CurrentPositionInSet(&this, retVal);
+			}
+			public HRESULT get_CurrentSizeOfSet(int32* retVal) mut
+			{
+				return VT.get_CurrentSizeOfSet(&this, retVal);
+			}
+			public HRESULT get_CurrentLevel(int32* retVal) mut
+			{
+				return VT.get_CurrentLevel(&this, retVal);
+			}
+			public HRESULT get_CurrentAnnotationTypes(SAFEARRAY** retVal) mut
+			{
+				return VT.get_CurrentAnnotationTypes(&this, retVal);
+			}
+			public HRESULT get_CurrentAnnotationObjects(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.get_CurrentAnnotationObjects(&this, retVal);
+			}
+			public HRESULT get_CachedPositionInSet(int32* retVal) mut
+			{
+				return VT.get_CachedPositionInSet(&this, retVal);
+			}
+			public HRESULT get_CachedSizeOfSet(int32* retVal) mut
+			{
+				return VT.get_CachedSizeOfSet(&this, retVal);
+			}
+			public HRESULT get_CachedLevel(int32* retVal) mut
+			{
+				return VT.get_CachedLevel(&this, retVal);
+			}
+			public HRESULT get_CachedAnnotationTypes(SAFEARRAY** retVal) mut
+			{
+				return VT.get_CachedAnnotationTypes(&this, retVal);
+			}
+			public HRESULT get_CachedAnnotationObjects(IUIAutomationElementArray** retVal) mut
+			{
+				return VT.get_CachedAnnotationObjects(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationElement3.VTable
 			{
-				public function HRESULT(IUIAutomationElement4 *self, int32* retVal) get_CurrentPositionInSet;
-				public function HRESULT(IUIAutomationElement4 *self, int32* retVal) get_CurrentSizeOfSet;
-				public function HRESULT(IUIAutomationElement4 *self, int32* retVal) get_CurrentLevel;
-				public function HRESULT(IUIAutomationElement4 *self, SAFEARRAY** retVal) get_CurrentAnnotationTypes;
-				public function HRESULT(IUIAutomationElement4 *self, IUIAutomationElementArray** retVal) get_CurrentAnnotationObjects;
-				public function HRESULT(IUIAutomationElement4 *self, int32* retVal) get_CachedPositionInSet;
-				public function HRESULT(IUIAutomationElement4 *self, int32* retVal) get_CachedSizeOfSet;
-				public function HRESULT(IUIAutomationElement4 *self, int32* retVal) get_CachedLevel;
-				public function HRESULT(IUIAutomationElement4 *self, SAFEARRAY** retVal) get_CachedAnnotationTypes;
-				public function HRESULT(IUIAutomationElement4 *self, IUIAutomationElementArray** retVal) get_CachedAnnotationObjects;
+				public new function HRESULT(IUIAutomationElement4 *self, int32* retVal) get_CurrentPositionInSet;
+				public new function HRESULT(IUIAutomationElement4 *self, int32* retVal) get_CurrentSizeOfSet;
+				public new function HRESULT(IUIAutomationElement4 *self, int32* retVal) get_CurrentLevel;
+				public new function HRESULT(IUIAutomationElement4 *self, SAFEARRAY** retVal) get_CurrentAnnotationTypes;
+				public new function HRESULT(IUIAutomationElement4 *self, IUIAutomationElementArray** retVal) get_CurrentAnnotationObjects;
+				public new function HRESULT(IUIAutomationElement4 *self, int32* retVal) get_CachedPositionInSet;
+				public new function HRESULT(IUIAutomationElement4 *self, int32* retVal) get_CachedSizeOfSet;
+				public new function HRESULT(IUIAutomationElement4 *self, int32* retVal) get_CachedLevel;
+				public new function HRESULT(IUIAutomationElement4 *self, SAFEARRAY** retVal) get_CachedAnnotationTypes;
+				public new function HRESULT(IUIAutomationElement4 *self, IUIAutomationElementArray** retVal) get_CachedAnnotationObjects;
 			}
 		}
 		[CRepr]
@@ -3755,14 +6348,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x98141c1d, 0x0d0e, 0x4175, 0xbb, 0xe2, 0x6b, 0xff, 0x45, 0x58, 0x42, 0xa7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CurrentLandmarkType(int32* retVal) mut
+			{
+				return VT.get_CurrentLandmarkType(&this, retVal);
+			}
+			public HRESULT get_CurrentLocalizedLandmarkType(BSTR* retVal) mut
+			{
+				return VT.get_CurrentLocalizedLandmarkType(&this, retVal);
+			}
+			public HRESULT get_CachedLandmarkType(int32* retVal) mut
+			{
+				return VT.get_CachedLandmarkType(&this, retVal);
+			}
+			public HRESULT get_CachedLocalizedLandmarkType(BSTR* retVal) mut
+			{
+				return VT.get_CachedLocalizedLandmarkType(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationElement4.VTable
 			{
-				public function HRESULT(IUIAutomationElement5 *self, int32* retVal) get_CurrentLandmarkType;
-				public function HRESULT(IUIAutomationElement5 *self, BSTR* retVal) get_CurrentLocalizedLandmarkType;
-				public function HRESULT(IUIAutomationElement5 *self, int32* retVal) get_CachedLandmarkType;
-				public function HRESULT(IUIAutomationElement5 *self, BSTR* retVal) get_CachedLocalizedLandmarkType;
+				public new function HRESULT(IUIAutomationElement5 *self, int32* retVal) get_CurrentLandmarkType;
+				public new function HRESULT(IUIAutomationElement5 *self, BSTR* retVal) get_CurrentLocalizedLandmarkType;
+				public new function HRESULT(IUIAutomationElement5 *self, int32* retVal) get_CachedLandmarkType;
+				public new function HRESULT(IUIAutomationElement5 *self, BSTR* retVal) get_CachedLocalizedLandmarkType;
 			}
 		}
 		[CRepr]
@@ -3770,12 +6380,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4780d450, 0x8bca, 0x4977, 0xaf, 0xa5, 0xa4, 0xa5, 0x17, 0xf5, 0x55, 0xe3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CurrentFullDescription(BSTR* retVal) mut
+			{
+				return VT.get_CurrentFullDescription(&this, retVal);
+			}
+			public HRESULT get_CachedFullDescription(BSTR* retVal) mut
+			{
+				return VT.get_CachedFullDescription(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationElement5.VTable
 			{
-				public function HRESULT(IUIAutomationElement6 *self, BSTR* retVal) get_CurrentFullDescription;
-				public function HRESULT(IUIAutomationElement6 *self, BSTR* retVal) get_CachedFullDescription;
+				public new function HRESULT(IUIAutomationElement6 *self, BSTR* retVal) get_CurrentFullDescription;
+				public new function HRESULT(IUIAutomationElement6 *self, BSTR* retVal) get_CachedFullDescription;
 			}
 		}
 		[CRepr]
@@ -3783,15 +6402,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x204e8572, 0xcfc3, 0x4c11, 0xb0, 0xc8, 0x7d, 0xa7, 0x42, 0x07, 0x50, 0xb7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT FindFirstWithOptions(TreeScope @scope, IUIAutomationCondition* condition, TreeTraversalOptions traversalOptions, IUIAutomationElement* root, IUIAutomationElement** found) mut
+			{
+				return VT.FindFirstWithOptions(&this, @scope, condition, traversalOptions, root, found);
+			}
+			public HRESULT FindAllWithOptions(TreeScope @scope, IUIAutomationCondition* condition, TreeTraversalOptions traversalOptions, IUIAutomationElement* root, IUIAutomationElementArray** found) mut
+			{
+				return VT.FindAllWithOptions(&this, @scope, condition, traversalOptions, root, found);
+			}
+			public HRESULT FindFirstWithOptionsBuildCache(TreeScope @scope, IUIAutomationCondition* condition, IUIAutomationCacheRequest* cacheRequest, TreeTraversalOptions traversalOptions, IUIAutomationElement* root, IUIAutomationElement** found) mut
+			{
+				return VT.FindFirstWithOptionsBuildCache(&this, @scope, condition, cacheRequest, traversalOptions, root, found);
+			}
+			public HRESULT FindAllWithOptionsBuildCache(TreeScope @scope, IUIAutomationCondition* condition, IUIAutomationCacheRequest* cacheRequest, TreeTraversalOptions traversalOptions, IUIAutomationElement* root, IUIAutomationElementArray** found) mut
+			{
+				return VT.FindAllWithOptionsBuildCache(&this, @scope, condition, cacheRequest, traversalOptions, root, found);
+			}
+			public HRESULT GetCurrentMetadataValue(int32 targetId, int32 metadataId, VARIANT* returnVal) mut
+			{
+				return VT.GetCurrentMetadataValue(&this, targetId, metadataId, returnVal);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationElement6.VTable
 			{
-				public function HRESULT(IUIAutomationElement7 *self, TreeScope @scope, IUIAutomationCondition* condition, TreeTraversalOptions traversalOptions, IUIAutomationElement* root, IUIAutomationElement** found) FindFirstWithOptions;
-				public function HRESULT(IUIAutomationElement7 *self, TreeScope @scope, IUIAutomationCondition* condition, TreeTraversalOptions traversalOptions, IUIAutomationElement* root, IUIAutomationElementArray** found) FindAllWithOptions;
-				public function HRESULT(IUIAutomationElement7 *self, TreeScope @scope, IUIAutomationCondition* condition, IUIAutomationCacheRequest* cacheRequest, TreeTraversalOptions traversalOptions, IUIAutomationElement* root, IUIAutomationElement** found) FindFirstWithOptionsBuildCache;
-				public function HRESULT(IUIAutomationElement7 *self, TreeScope @scope, IUIAutomationCondition* condition, IUIAutomationCacheRequest* cacheRequest, TreeTraversalOptions traversalOptions, IUIAutomationElement* root, IUIAutomationElementArray** found) FindAllWithOptionsBuildCache;
-				public function HRESULT(IUIAutomationElement7 *self, int32 targetId, int32 metadataId, VARIANT* returnVal) GetCurrentMetadataValue;
+				public new function HRESULT(IUIAutomationElement7 *self, TreeScope @scope, IUIAutomationCondition* condition, TreeTraversalOptions traversalOptions, IUIAutomationElement* root, IUIAutomationElement** found) FindFirstWithOptions;
+				public new function HRESULT(IUIAutomationElement7 *self, TreeScope @scope, IUIAutomationCondition* condition, TreeTraversalOptions traversalOptions, IUIAutomationElement* root, IUIAutomationElementArray** found) FindAllWithOptions;
+				public new function HRESULT(IUIAutomationElement7 *self, TreeScope @scope, IUIAutomationCondition* condition, IUIAutomationCacheRequest* cacheRequest, TreeTraversalOptions traversalOptions, IUIAutomationElement* root, IUIAutomationElement** found) FindFirstWithOptionsBuildCache;
+				public new function HRESULT(IUIAutomationElement7 *self, TreeScope @scope, IUIAutomationCondition* condition, IUIAutomationCacheRequest* cacheRequest, TreeTraversalOptions traversalOptions, IUIAutomationElement* root, IUIAutomationElementArray** found) FindAllWithOptionsBuildCache;
+				public new function HRESULT(IUIAutomationElement7 *self, int32 targetId, int32 metadataId, VARIANT* returnVal) GetCurrentMetadataValue;
 			}
 		}
 		[CRepr]
@@ -3799,12 +6439,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8c60217d, 0x5411, 0x4cde, 0xbc, 0xc0, 0x1c, 0xed, 0xa2, 0x23, 0x83, 0x0c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CurrentHeadingLevel(int32* retVal) mut
+			{
+				return VT.get_CurrentHeadingLevel(&this, retVal);
+			}
+			public HRESULT get_CachedHeadingLevel(int32* retVal) mut
+			{
+				return VT.get_CachedHeadingLevel(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationElement7.VTable
 			{
-				public function HRESULT(IUIAutomationElement8 *self, int32* retVal) get_CurrentHeadingLevel;
-				public function HRESULT(IUIAutomationElement8 *self, int32* retVal) get_CachedHeadingLevel;
+				public new function HRESULT(IUIAutomationElement8 *self, int32* retVal) get_CurrentHeadingLevel;
+				public new function HRESULT(IUIAutomationElement8 *self, int32* retVal) get_CachedHeadingLevel;
 			}
 		}
 		[CRepr]
@@ -3812,12 +6461,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x39325fac, 0x039d, 0x440e, 0xa3, 0xa3, 0x5e, 0xb8, 0x1a, 0x5c, 0xec, 0xc3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CurrentIsDialog(BOOL* retVal) mut
+			{
+				return VT.get_CurrentIsDialog(&this, retVal);
+			}
+			public HRESULT get_CachedIsDialog(BOOL* retVal) mut
+			{
+				return VT.get_CachedIsDialog(&this, retVal);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomationElement8.VTable
 			{
-				public function HRESULT(IUIAutomationElement9 *self, BOOL* retVal) get_CurrentIsDialog;
-				public function HRESULT(IUIAutomationElement9 *self, BOOL* retVal) get_CachedIsDialog;
+				public new function HRESULT(IUIAutomationElement9 *self, BOOL* retVal) get_CurrentIsDialog;
+				public new function HRESULT(IUIAutomationElement9 *self, BOOL* retVal) get_CachedIsDialog;
 			}
 		}
 		[CRepr]
@@ -3825,12 +6483,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x85b94ecd, 0x849d, 0x42b6, 0xb9, 0x4d, 0xd6, 0xdb, 0x23, 0xfd, 0xf5, 0xa4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateProvider(HWND hwnd, int32 idObject, int32 idChild, IRawElementProviderSimple** provider) mut
+			{
+				return VT.CreateProvider(&this, hwnd, idObject, idChild, provider);
+			}
+			public HRESULT get_ProxyFactoryId(BSTR* factoryId) mut
+			{
+				return VT.get_ProxyFactoryId(&this, factoryId);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationProxyFactory *self, HWND hwnd, int32 idObject, int32 idChild, IRawElementProviderSimple** provider) CreateProvider;
-				public function HRESULT(IUIAutomationProxyFactory *self, BSTR* factoryId) get_ProxyFactoryId;
+				public new function HRESULT(IUIAutomationProxyFactory *self, HWND hwnd, int32 idObject, int32 idChild, IRawElementProviderSimple** provider) CreateProvider;
+				public new function HRESULT(IUIAutomationProxyFactory *self, BSTR* factoryId) get_ProxyFactoryId;
 			}
 		}
 		[CRepr]
@@ -3838,23 +6505,76 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd50e472e, 0xb64b, 0x490c, 0xbc, 0xa1, 0xd3, 0x06, 0x96, 0xf9, 0xf2, 0x89);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ProxyFactory(IUIAutomationProxyFactory** factory) mut
+			{
+				return VT.get_ProxyFactory(&this, factory);
+			}
+			public HRESULT get_ClassName(BSTR* className) mut
+			{
+				return VT.get_ClassName(&this, className);
+			}
+			public HRESULT get_ImageName(BSTR* imageName) mut
+			{
+				return VT.get_ImageName(&this, imageName);
+			}
+			public HRESULT get_AllowSubstringMatch(BOOL* allowSubstringMatch) mut
+			{
+				return VT.get_AllowSubstringMatch(&this, allowSubstringMatch);
+			}
+			public HRESULT get_CanCheckBaseClass(BOOL* canCheckBaseClass) mut
+			{
+				return VT.get_CanCheckBaseClass(&this, canCheckBaseClass);
+			}
+			public HRESULT get_NeedsAdviseEvents(BOOL* adviseEvents) mut
+			{
+				return VT.get_NeedsAdviseEvents(&this, adviseEvents);
+			}
+			public HRESULT put_ClassName(PWSTR className) mut
+			{
+				return VT.put_ClassName(&this, className);
+			}
+			public HRESULT put_ImageName(PWSTR imageName) mut
+			{
+				return VT.put_ImageName(&this, imageName);
+			}
+			public HRESULT put_AllowSubstringMatch(BOOL allowSubstringMatch) mut
+			{
+				return VT.put_AllowSubstringMatch(&this, allowSubstringMatch);
+			}
+			public HRESULT put_CanCheckBaseClass(BOOL canCheckBaseClass) mut
+			{
+				return VT.put_CanCheckBaseClass(&this, canCheckBaseClass);
+			}
+			public HRESULT put_NeedsAdviseEvents(BOOL adviseEvents) mut
+			{
+				return VT.put_NeedsAdviseEvents(&this, adviseEvents);
+			}
+			public HRESULT SetWinEventsForAutomationEvent(int32 eventId, int32 propertyId, SAFEARRAY* winEvents) mut
+			{
+				return VT.SetWinEventsForAutomationEvent(&this, eventId, propertyId, winEvents);
+			}
+			public HRESULT GetWinEventsForAutomationEvent(int32 eventId, int32 propertyId, SAFEARRAY** winEvents) mut
+			{
+				return VT.GetWinEventsForAutomationEvent(&this, eventId, propertyId, winEvents);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationProxyFactoryEntry *self, IUIAutomationProxyFactory** factory) get_ProxyFactory;
-				public function HRESULT(IUIAutomationProxyFactoryEntry *self, BSTR* className) get_ClassName;
-				public function HRESULT(IUIAutomationProxyFactoryEntry *self, BSTR* imageName) get_ImageName;
-				public function HRESULT(IUIAutomationProxyFactoryEntry *self, BOOL* allowSubstringMatch) get_AllowSubstringMatch;
-				public function HRESULT(IUIAutomationProxyFactoryEntry *self, BOOL* canCheckBaseClass) get_CanCheckBaseClass;
-				public function HRESULT(IUIAutomationProxyFactoryEntry *self, BOOL* adviseEvents) get_NeedsAdviseEvents;
-				public function HRESULT(IUIAutomationProxyFactoryEntry *self, PWSTR className) put_ClassName;
-				public function HRESULT(IUIAutomationProxyFactoryEntry *self, PWSTR imageName) put_ImageName;
-				public function HRESULT(IUIAutomationProxyFactoryEntry *self, BOOL allowSubstringMatch) put_AllowSubstringMatch;
-				public function HRESULT(IUIAutomationProxyFactoryEntry *self, BOOL canCheckBaseClass) put_CanCheckBaseClass;
-				public function HRESULT(IUIAutomationProxyFactoryEntry *self, BOOL adviseEvents) put_NeedsAdviseEvents;
-				public function HRESULT(IUIAutomationProxyFactoryEntry *self, int32 eventId, int32 propertyId, SAFEARRAY* winEvents) SetWinEventsForAutomationEvent;
-				public function HRESULT(IUIAutomationProxyFactoryEntry *self, int32 eventId, int32 propertyId, SAFEARRAY** winEvents) GetWinEventsForAutomationEvent;
+				public new function HRESULT(IUIAutomationProxyFactoryEntry *self, IUIAutomationProxyFactory** factory) get_ProxyFactory;
+				public new function HRESULT(IUIAutomationProxyFactoryEntry *self, BSTR* className) get_ClassName;
+				public new function HRESULT(IUIAutomationProxyFactoryEntry *self, BSTR* imageName) get_ImageName;
+				public new function HRESULT(IUIAutomationProxyFactoryEntry *self, BOOL* allowSubstringMatch) get_AllowSubstringMatch;
+				public new function HRESULT(IUIAutomationProxyFactoryEntry *self, BOOL* canCheckBaseClass) get_CanCheckBaseClass;
+				public new function HRESULT(IUIAutomationProxyFactoryEntry *self, BOOL* adviseEvents) get_NeedsAdviseEvents;
+				public new function HRESULT(IUIAutomationProxyFactoryEntry *self, PWSTR className) put_ClassName;
+				public new function HRESULT(IUIAutomationProxyFactoryEntry *self, PWSTR imageName) put_ImageName;
+				public new function HRESULT(IUIAutomationProxyFactoryEntry *self, BOOL allowSubstringMatch) put_AllowSubstringMatch;
+				public new function HRESULT(IUIAutomationProxyFactoryEntry *self, BOOL canCheckBaseClass) put_CanCheckBaseClass;
+				public new function HRESULT(IUIAutomationProxyFactoryEntry *self, BOOL adviseEvents) put_NeedsAdviseEvents;
+				public new function HRESULT(IUIAutomationProxyFactoryEntry *self, int32 eventId, int32 propertyId, SAFEARRAY* winEvents) SetWinEventsForAutomationEvent;
+				public new function HRESULT(IUIAutomationProxyFactoryEntry *self, int32 eventId, int32 propertyId, SAFEARRAY** winEvents) GetWinEventsForAutomationEvent;
 			}
 		}
 		[CRepr]
@@ -3862,19 +6582,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x09e31e18, 0x872d, 0x4873, 0x93, 0xd1, 0x1e, 0x54, 0x1e, 0xc1, 0x33, 0xfd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(uint32* count) mut
+			{
+				return VT.get_Count(&this, count);
+			}
+			public HRESULT GetTable(SAFEARRAY** table) mut
+			{
+				return VT.GetTable(&this, table);
+			}
+			public HRESULT GetEntry(uint32 index, IUIAutomationProxyFactoryEntry** entry) mut
+			{
+				return VT.GetEntry(&this, index, entry);
+			}
+			public HRESULT SetTable(SAFEARRAY* factoryList) mut
+			{
+				return VT.SetTable(&this, factoryList);
+			}
+			public HRESULT InsertEntries(uint32 before, SAFEARRAY* factoryList) mut
+			{
+				return VT.InsertEntries(&this, before, factoryList);
+			}
+			public HRESULT InsertEntry(uint32 before, IUIAutomationProxyFactoryEntry* factory) mut
+			{
+				return VT.InsertEntry(&this, before, factory);
+			}
+			public HRESULT RemoveEntry(uint32 index) mut
+			{
+				return VT.RemoveEntry(&this, index);
+			}
+			public HRESULT ClearTable() mut
+			{
+				return VT.ClearTable(&this);
+			}
+			public HRESULT RestoreDefaultTable() mut
+			{
+				return VT.RestoreDefaultTable(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationProxyFactoryMapping *self, uint32* count) get_Count;
-				public function HRESULT(IUIAutomationProxyFactoryMapping *self, SAFEARRAY** table) GetTable;
-				public function HRESULT(IUIAutomationProxyFactoryMapping *self, uint32 index, IUIAutomationProxyFactoryEntry** entry) GetEntry;
-				public function HRESULT(IUIAutomationProxyFactoryMapping *self, SAFEARRAY* factoryList) SetTable;
-				public function HRESULT(IUIAutomationProxyFactoryMapping *self, uint32 before, SAFEARRAY* factoryList) InsertEntries;
-				public function HRESULT(IUIAutomationProxyFactoryMapping *self, uint32 before, IUIAutomationProxyFactoryEntry* factory) InsertEntry;
-				public function HRESULT(IUIAutomationProxyFactoryMapping *self, uint32 index) RemoveEntry;
-				public function HRESULT(IUIAutomationProxyFactoryMapping *self) ClearTable;
-				public function HRESULT(IUIAutomationProxyFactoryMapping *self) RestoreDefaultTable;
+				public new function HRESULT(IUIAutomationProxyFactoryMapping *self, uint32* count) get_Count;
+				public new function HRESULT(IUIAutomationProxyFactoryMapping *self, SAFEARRAY** table) GetTable;
+				public new function HRESULT(IUIAutomationProxyFactoryMapping *self, uint32 index, IUIAutomationProxyFactoryEntry** entry) GetEntry;
+				public new function HRESULT(IUIAutomationProxyFactoryMapping *self, SAFEARRAY* factoryList) SetTable;
+				public new function HRESULT(IUIAutomationProxyFactoryMapping *self, uint32 before, SAFEARRAY* factoryList) InsertEntries;
+				public new function HRESULT(IUIAutomationProxyFactoryMapping *self, uint32 before, IUIAutomationProxyFactoryEntry* factory) InsertEntry;
+				public new function HRESULT(IUIAutomationProxyFactoryMapping *self, uint32 index) RemoveEntry;
+				public new function HRESULT(IUIAutomationProxyFactoryMapping *self) ClearTable;
+				public new function HRESULT(IUIAutomationProxyFactoryMapping *self) RestoreDefaultTable;
 			}
 		}
 		[CRepr]
@@ -3882,17 +6639,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc9ee12f2, 0xc13b, 0x4408, 0x99, 0x7c, 0x63, 0x99, 0x14, 0x37, 0x7f, 0x4e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddActiveTextPositionChangedEventHandler(TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationActiveTextPositionChangedEventHandler* handler) mut
+			{
+				return VT.AddActiveTextPositionChangedEventHandler(&this, @scope, cacheRequest, handler);
+			}
+			public HRESULT AddAutomationEventHandler(int32 eventId, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationEventHandler* handler) mut
+			{
+				return VT.AddAutomationEventHandler(&this, eventId, @scope, cacheRequest, handler);
+			}
+			public HRESULT AddChangesEventHandler(TreeScope @scope, int32* changeTypes, int32 changesCount, IUIAutomationCacheRequest* cacheRequest, IUIAutomationChangesEventHandler* handler) mut
+			{
+				return VT.AddChangesEventHandler(&this, @scope, changeTypes, changesCount, cacheRequest, handler);
+			}
+			public HRESULT AddNotificationEventHandler(TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationNotificationEventHandler* handler) mut
+			{
+				return VT.AddNotificationEventHandler(&this, @scope, cacheRequest, handler);
+			}
+			public HRESULT AddPropertyChangedEventHandler(TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationPropertyChangedEventHandler* handler, int32* propertyArray, int32 propertyCount) mut
+			{
+				return VT.AddPropertyChangedEventHandler(&this, @scope, cacheRequest, handler, propertyArray, propertyCount);
+			}
+			public HRESULT AddStructureChangedEventHandler(TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationStructureChangedEventHandler* handler) mut
+			{
+				return VT.AddStructureChangedEventHandler(&this, @scope, cacheRequest, handler);
+			}
+			public HRESULT AddTextEditTextChangedEventHandler(TreeScope @scope, TextEditChangeType textEditChangeType, IUIAutomationCacheRequest* cacheRequest, IUIAutomationTextEditTextChangedEventHandler* handler) mut
+			{
+				return VT.AddTextEditTextChangedEventHandler(&this, @scope, textEditChangeType, cacheRequest, handler);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomationEventHandlerGroup *self, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationActiveTextPositionChangedEventHandler* handler) AddActiveTextPositionChangedEventHandler;
-				public function HRESULT(IUIAutomationEventHandlerGroup *self, int32 eventId, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationEventHandler* handler) AddAutomationEventHandler;
-				public function HRESULT(IUIAutomationEventHandlerGroup *self, TreeScope @scope, int32* changeTypes, int32 changesCount, IUIAutomationCacheRequest* cacheRequest, IUIAutomationChangesEventHandler* handler) AddChangesEventHandler;
-				public function HRESULT(IUIAutomationEventHandlerGroup *self, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationNotificationEventHandler* handler) AddNotificationEventHandler;
-				public function HRESULT(IUIAutomationEventHandlerGroup *self, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationPropertyChangedEventHandler* handler, int32* propertyArray, int32 propertyCount) AddPropertyChangedEventHandler;
-				public function HRESULT(IUIAutomationEventHandlerGroup *self, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationStructureChangedEventHandler* handler) AddStructureChangedEventHandler;
-				public function HRESULT(IUIAutomationEventHandlerGroup *self, TreeScope @scope, TextEditChangeType textEditChangeType, IUIAutomationCacheRequest* cacheRequest, IUIAutomationTextEditTextChangedEventHandler* handler) AddTextEditTextChangedEventHandler;
+				public new function HRESULT(IUIAutomationEventHandlerGroup *self, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationActiveTextPositionChangedEventHandler* handler) AddActiveTextPositionChangedEventHandler;
+				public new function HRESULT(IUIAutomationEventHandlerGroup *self, int32 eventId, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationEventHandler* handler) AddAutomationEventHandler;
+				public new function HRESULT(IUIAutomationEventHandlerGroup *self, TreeScope @scope, int32* changeTypes, int32 changesCount, IUIAutomationCacheRequest* cacheRequest, IUIAutomationChangesEventHandler* handler) AddChangesEventHandler;
+				public new function HRESULT(IUIAutomationEventHandlerGroup *self, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationNotificationEventHandler* handler) AddNotificationEventHandler;
+				public new function HRESULT(IUIAutomationEventHandlerGroup *self, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationPropertyChangedEventHandler* handler, int32* propertyArray, int32 propertyCount) AddPropertyChangedEventHandler;
+				public new function HRESULT(IUIAutomationEventHandlerGroup *self, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationStructureChangedEventHandler* handler) AddStructureChangedEventHandler;
+				public new function HRESULT(IUIAutomationEventHandlerGroup *self, TreeScope @scope, TextEditChangeType textEditChangeType, IUIAutomationCacheRequest* cacheRequest, IUIAutomationTextEditTextChangedEventHandler* handler) AddTextEditTextChangedEventHandler;
 			}
 		}
 		[CRepr]
@@ -3900,65 +6686,286 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x30cbe57d, 0xd9d0, 0x452a, 0xab, 0x13, 0x7a, 0xc5, 0xac, 0x48, 0x25, 0xee);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CompareElements(IUIAutomationElement* el1, IUIAutomationElement* el2, BOOL* areSame) mut
+			{
+				return VT.CompareElements(&this, el1, el2, areSame);
+			}
+			public HRESULT CompareRuntimeIds(SAFEARRAY* runtimeId1, SAFEARRAY* runtimeId2, BOOL* areSame) mut
+			{
+				return VT.CompareRuntimeIds(&this, runtimeId1, runtimeId2, areSame);
+			}
+			public HRESULT GetRootElement(IUIAutomationElement** root) mut
+			{
+				return VT.GetRootElement(&this, root);
+			}
+			public HRESULT ElementFromHandle(HWND hwnd, IUIAutomationElement** element) mut
+			{
+				return VT.ElementFromHandle(&this, hwnd, element);
+			}
+			public HRESULT ElementFromPoint(POINT pt, IUIAutomationElement** element) mut
+			{
+				return VT.ElementFromPoint(&this, pt, element);
+			}
+			public HRESULT GetFocusedElement(IUIAutomationElement** element) mut
+			{
+				return VT.GetFocusedElement(&this, element);
+			}
+			public HRESULT GetRootElementBuildCache(IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** root) mut
+			{
+				return VT.GetRootElementBuildCache(&this, cacheRequest, root);
+			}
+			public HRESULT ElementFromHandleBuildCache(HWND hwnd, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** element) mut
+			{
+				return VT.ElementFromHandleBuildCache(&this, hwnd, cacheRequest, element);
+			}
+			public HRESULT ElementFromPointBuildCache(POINT pt, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** element) mut
+			{
+				return VT.ElementFromPointBuildCache(&this, pt, cacheRequest, element);
+			}
+			public HRESULT GetFocusedElementBuildCache(IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** element) mut
+			{
+				return VT.GetFocusedElementBuildCache(&this, cacheRequest, element);
+			}
+			public HRESULT CreateTreeWalker(IUIAutomationCondition* pCondition, IUIAutomationTreeWalker** walker) mut
+			{
+				return VT.CreateTreeWalker(&this, pCondition, walker);
+			}
+			public HRESULT get_ControlViewWalker(IUIAutomationTreeWalker** walker) mut
+			{
+				return VT.get_ControlViewWalker(&this, walker);
+			}
+			public HRESULT get_ContentViewWalker(IUIAutomationTreeWalker** walker) mut
+			{
+				return VT.get_ContentViewWalker(&this, walker);
+			}
+			public HRESULT get_RawViewWalker(IUIAutomationTreeWalker** walker) mut
+			{
+				return VT.get_RawViewWalker(&this, walker);
+			}
+			public HRESULT get_RawViewCondition(IUIAutomationCondition** condition) mut
+			{
+				return VT.get_RawViewCondition(&this, condition);
+			}
+			public HRESULT get_ControlViewCondition(IUIAutomationCondition** condition) mut
+			{
+				return VT.get_ControlViewCondition(&this, condition);
+			}
+			public HRESULT get_ContentViewCondition(IUIAutomationCondition** condition) mut
+			{
+				return VT.get_ContentViewCondition(&this, condition);
+			}
+			public HRESULT CreateCacheRequest(IUIAutomationCacheRequest** cacheRequest) mut
+			{
+				return VT.CreateCacheRequest(&this, cacheRequest);
+			}
+			public HRESULT CreateTrueCondition(IUIAutomationCondition** newCondition) mut
+			{
+				return VT.CreateTrueCondition(&this, newCondition);
+			}
+			public HRESULT CreateFalseCondition(IUIAutomationCondition** newCondition) mut
+			{
+				return VT.CreateFalseCondition(&this, newCondition);
+			}
+			public HRESULT CreatePropertyCondition(int32 propertyId, VARIANT value, IUIAutomationCondition** newCondition) mut
+			{
+				return VT.CreatePropertyCondition(&this, propertyId, value, newCondition);
+			}
+			public HRESULT CreatePropertyConditionEx(int32 propertyId, VARIANT value, PropertyConditionFlags flags, IUIAutomationCondition** newCondition) mut
+			{
+				return VT.CreatePropertyConditionEx(&this, propertyId, value, flags, newCondition);
+			}
+			public HRESULT CreateAndCondition(IUIAutomationCondition* condition1, IUIAutomationCondition* condition2, IUIAutomationCondition** newCondition) mut
+			{
+				return VT.CreateAndCondition(&this, condition1, condition2, newCondition);
+			}
+			public HRESULT CreateAndConditionFromArray(SAFEARRAY* conditions, IUIAutomationCondition** newCondition) mut
+			{
+				return VT.CreateAndConditionFromArray(&this, conditions, newCondition);
+			}
+			public HRESULT CreateAndConditionFromNativeArray(IUIAutomationCondition** conditions, int32 conditionCount, IUIAutomationCondition** newCondition) mut
+			{
+				return VT.CreateAndConditionFromNativeArray(&this, conditions, conditionCount, newCondition);
+			}
+			public HRESULT CreateOrCondition(IUIAutomationCondition* condition1, IUIAutomationCondition* condition2, IUIAutomationCondition** newCondition) mut
+			{
+				return VT.CreateOrCondition(&this, condition1, condition2, newCondition);
+			}
+			public HRESULT CreateOrConditionFromArray(SAFEARRAY* conditions, IUIAutomationCondition** newCondition) mut
+			{
+				return VT.CreateOrConditionFromArray(&this, conditions, newCondition);
+			}
+			public HRESULT CreateOrConditionFromNativeArray(IUIAutomationCondition** conditions, int32 conditionCount, IUIAutomationCondition** newCondition) mut
+			{
+				return VT.CreateOrConditionFromNativeArray(&this, conditions, conditionCount, newCondition);
+			}
+			public HRESULT CreateNotCondition(IUIAutomationCondition* condition, IUIAutomationCondition** newCondition) mut
+			{
+				return VT.CreateNotCondition(&this, condition, newCondition);
+			}
+			public HRESULT AddAutomationEventHandler(int32 eventId, IUIAutomationElement* element, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationEventHandler* handler) mut
+			{
+				return VT.AddAutomationEventHandler(&this, eventId, element, @scope, cacheRequest, handler);
+			}
+			public HRESULT RemoveAutomationEventHandler(int32 eventId, IUIAutomationElement* element, IUIAutomationEventHandler* handler) mut
+			{
+				return VT.RemoveAutomationEventHandler(&this, eventId, element, handler);
+			}
+			public HRESULT AddPropertyChangedEventHandlerNativeArray(IUIAutomationElement* element, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationPropertyChangedEventHandler* handler, int32* propertyArray, int32 propertyCount) mut
+			{
+				return VT.AddPropertyChangedEventHandlerNativeArray(&this, element, @scope, cacheRequest, handler, propertyArray, propertyCount);
+			}
+			public HRESULT AddPropertyChangedEventHandler(IUIAutomationElement* element, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationPropertyChangedEventHandler* handler, SAFEARRAY* propertyArray) mut
+			{
+				return VT.AddPropertyChangedEventHandler(&this, element, @scope, cacheRequest, handler, propertyArray);
+			}
+			public HRESULT RemovePropertyChangedEventHandler(IUIAutomationElement* element, IUIAutomationPropertyChangedEventHandler* handler) mut
+			{
+				return VT.RemovePropertyChangedEventHandler(&this, element, handler);
+			}
+			public HRESULT AddStructureChangedEventHandler(IUIAutomationElement* element, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationStructureChangedEventHandler* handler) mut
+			{
+				return VT.AddStructureChangedEventHandler(&this, element, @scope, cacheRequest, handler);
+			}
+			public HRESULT RemoveStructureChangedEventHandler(IUIAutomationElement* element, IUIAutomationStructureChangedEventHandler* handler) mut
+			{
+				return VT.RemoveStructureChangedEventHandler(&this, element, handler);
+			}
+			public HRESULT AddFocusChangedEventHandler(IUIAutomationCacheRequest* cacheRequest, IUIAutomationFocusChangedEventHandler* handler) mut
+			{
+				return VT.AddFocusChangedEventHandler(&this, cacheRequest, handler);
+			}
+			public HRESULT RemoveFocusChangedEventHandler(IUIAutomationFocusChangedEventHandler* handler) mut
+			{
+				return VT.RemoveFocusChangedEventHandler(&this, handler);
+			}
+			public HRESULT RemoveAllEventHandlers() mut
+			{
+				return VT.RemoveAllEventHandlers(&this);
+			}
+			public HRESULT IntNativeArrayToSafeArray(int32* array, int32 arrayCount, SAFEARRAY** safeArray) mut
+			{
+				return VT.IntNativeArrayToSafeArray(&this, array, arrayCount, safeArray);
+			}
+			public HRESULT IntSafeArrayToNativeArray(SAFEARRAY* intArray, int32** array, int32* arrayCount) mut
+			{
+				return VT.IntSafeArrayToNativeArray(&this, intArray, array, arrayCount);
+			}
+			public HRESULT RectToVariant(RECT rc, VARIANT* @var) mut
+			{
+				return VT.RectToVariant(&this, rc, @var);
+			}
+			public HRESULT VariantToRect(VARIANT @var, RECT* rc) mut
+			{
+				return VT.VariantToRect(&this, @var, rc);
+			}
+			public HRESULT SafeArrayToRectNativeArray(SAFEARRAY* rects, RECT** rectArray, int32* rectArrayCount) mut
+			{
+				return VT.SafeArrayToRectNativeArray(&this, rects, rectArray, rectArrayCount);
+			}
+			public HRESULT CreateProxyFactoryEntry(IUIAutomationProxyFactory* factory, IUIAutomationProxyFactoryEntry** factoryEntry) mut
+			{
+				return VT.CreateProxyFactoryEntry(&this, factory, factoryEntry);
+			}
+			public HRESULT get_ProxyFactoryMapping(IUIAutomationProxyFactoryMapping** factoryMapping) mut
+			{
+				return VT.get_ProxyFactoryMapping(&this, factoryMapping);
+			}
+			public HRESULT GetPropertyProgrammaticName(int32 property, BSTR* name) mut
+			{
+				return VT.GetPropertyProgrammaticName(&this, property, name);
+			}
+			public HRESULT GetPatternProgrammaticName(int32 pattern, BSTR* name) mut
+			{
+				return VT.GetPatternProgrammaticName(&this, pattern, name);
+			}
+			public HRESULT PollForPotentialSupportedPatterns(IUIAutomationElement* pElement, SAFEARRAY** patternIds, SAFEARRAY** patternNames) mut
+			{
+				return VT.PollForPotentialSupportedPatterns(&this, pElement, patternIds, patternNames);
+			}
+			public HRESULT PollForPotentialSupportedProperties(IUIAutomationElement* pElement, SAFEARRAY** propertyIds, SAFEARRAY** propertyNames) mut
+			{
+				return VT.PollForPotentialSupportedProperties(&this, pElement, propertyIds, propertyNames);
+			}
+			public HRESULT CheckNotSupported(VARIANT value, BOOL* isNotSupported) mut
+			{
+				return VT.CheckNotSupported(&this, value, isNotSupported);
+			}
+			public HRESULT get_ReservedNotSupportedValue(IUnknown** notSupportedValue) mut
+			{
+				return VT.get_ReservedNotSupportedValue(&this, notSupportedValue);
+			}
+			public HRESULT get_ReservedMixedAttributeValue(IUnknown** mixedAttributeValue) mut
+			{
+				return VT.get_ReservedMixedAttributeValue(&this, mixedAttributeValue);
+			}
+			public HRESULT ElementFromIAccessible(IAccessible* accessible, int32 childId, IUIAutomationElement** element) mut
+			{
+				return VT.ElementFromIAccessible(&this, accessible, childId, element);
+			}
+			public HRESULT ElementFromIAccessibleBuildCache(IAccessible* accessible, int32 childId, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** element) mut
+			{
+				return VT.ElementFromIAccessibleBuildCache(&this, accessible, childId, cacheRequest, element);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUIAutomation *self, IUIAutomationElement* el1, IUIAutomationElement* el2, BOOL* areSame) CompareElements;
-				public function HRESULT(IUIAutomation *self, SAFEARRAY* runtimeId1, SAFEARRAY* runtimeId2, BOOL* areSame) CompareRuntimeIds;
-				public function HRESULT(IUIAutomation *self, IUIAutomationElement** root) GetRootElement;
-				public function HRESULT(IUIAutomation *self, HWND hwnd, IUIAutomationElement** element) ElementFromHandle;
-				public function HRESULT(IUIAutomation *self, POINT pt, IUIAutomationElement** element) ElementFromPoint;
-				public function HRESULT(IUIAutomation *self, IUIAutomationElement** element) GetFocusedElement;
-				public function HRESULT(IUIAutomation *self, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** root) GetRootElementBuildCache;
-				public function HRESULT(IUIAutomation *self, HWND hwnd, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** element) ElementFromHandleBuildCache;
-				public function HRESULT(IUIAutomation *self, POINT pt, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** element) ElementFromPointBuildCache;
-				public function HRESULT(IUIAutomation *self, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** element) GetFocusedElementBuildCache;
-				public function HRESULT(IUIAutomation *self, IUIAutomationCondition* pCondition, IUIAutomationTreeWalker** walker) CreateTreeWalker;
-				public function HRESULT(IUIAutomation *self, IUIAutomationTreeWalker** walker) get_ControlViewWalker;
-				public function HRESULT(IUIAutomation *self, IUIAutomationTreeWalker** walker) get_ContentViewWalker;
-				public function HRESULT(IUIAutomation *self, IUIAutomationTreeWalker** walker) get_RawViewWalker;
-				public function HRESULT(IUIAutomation *self, IUIAutomationCondition** condition) get_RawViewCondition;
-				public function HRESULT(IUIAutomation *self, IUIAutomationCondition** condition) get_ControlViewCondition;
-				public function HRESULT(IUIAutomation *self, IUIAutomationCondition** condition) get_ContentViewCondition;
-				public function HRESULT(IUIAutomation *self, IUIAutomationCacheRequest** cacheRequest) CreateCacheRequest;
-				public function HRESULT(IUIAutomation *self, IUIAutomationCondition** newCondition) CreateTrueCondition;
-				public function HRESULT(IUIAutomation *self, IUIAutomationCondition** newCondition) CreateFalseCondition;
-				public function HRESULT(IUIAutomation *self, int32 propertyId, VARIANT value, IUIAutomationCondition** newCondition) CreatePropertyCondition;
-				public function HRESULT(IUIAutomation *self, int32 propertyId, VARIANT value, PropertyConditionFlags flags, IUIAutomationCondition** newCondition) CreatePropertyConditionEx;
-				public function HRESULT(IUIAutomation *self, IUIAutomationCondition* condition1, IUIAutomationCondition* condition2, IUIAutomationCondition** newCondition) CreateAndCondition;
-				public function HRESULT(IUIAutomation *self, SAFEARRAY* conditions, IUIAutomationCondition** newCondition) CreateAndConditionFromArray;
-				public function HRESULT(IUIAutomation *self, IUIAutomationCondition** conditions, int32 conditionCount, IUIAutomationCondition** newCondition) CreateAndConditionFromNativeArray;
-				public function HRESULT(IUIAutomation *self, IUIAutomationCondition* condition1, IUIAutomationCondition* condition2, IUIAutomationCondition** newCondition) CreateOrCondition;
-				public function HRESULT(IUIAutomation *self, SAFEARRAY* conditions, IUIAutomationCondition** newCondition) CreateOrConditionFromArray;
-				public function HRESULT(IUIAutomation *self, IUIAutomationCondition** conditions, int32 conditionCount, IUIAutomationCondition** newCondition) CreateOrConditionFromNativeArray;
-				public function HRESULT(IUIAutomation *self, IUIAutomationCondition* condition, IUIAutomationCondition** newCondition) CreateNotCondition;
-				public function HRESULT(IUIAutomation *self, int32 eventId, IUIAutomationElement* element, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationEventHandler* handler) AddAutomationEventHandler;
-				public function HRESULT(IUIAutomation *self, int32 eventId, IUIAutomationElement* element, IUIAutomationEventHandler* handler) RemoveAutomationEventHandler;
-				public function HRESULT(IUIAutomation *self, IUIAutomationElement* element, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationPropertyChangedEventHandler* handler, int32* propertyArray, int32 propertyCount) AddPropertyChangedEventHandlerNativeArray;
-				public function HRESULT(IUIAutomation *self, IUIAutomationElement* element, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationPropertyChangedEventHandler* handler, SAFEARRAY* propertyArray) AddPropertyChangedEventHandler;
-				public function HRESULT(IUIAutomation *self, IUIAutomationElement* element, IUIAutomationPropertyChangedEventHandler* handler) RemovePropertyChangedEventHandler;
-				public function HRESULT(IUIAutomation *self, IUIAutomationElement* element, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationStructureChangedEventHandler* handler) AddStructureChangedEventHandler;
-				public function HRESULT(IUIAutomation *self, IUIAutomationElement* element, IUIAutomationStructureChangedEventHandler* handler) RemoveStructureChangedEventHandler;
-				public function HRESULT(IUIAutomation *self, IUIAutomationCacheRequest* cacheRequest, IUIAutomationFocusChangedEventHandler* handler) AddFocusChangedEventHandler;
-				public function HRESULT(IUIAutomation *self, IUIAutomationFocusChangedEventHandler* handler) RemoveFocusChangedEventHandler;
-				public function HRESULT(IUIAutomation *self) RemoveAllEventHandlers;
-				public function HRESULT(IUIAutomation *self, int32* array, int32 arrayCount, SAFEARRAY** safeArray) IntNativeArrayToSafeArray;
-				public function HRESULT(IUIAutomation *self, SAFEARRAY* intArray, int32** array, int32* arrayCount) IntSafeArrayToNativeArray;
-				public function HRESULT(IUIAutomation *self, RECT rc, VARIANT* @var) RectToVariant;
-				public function HRESULT(IUIAutomation *self, VARIANT @var, RECT* rc) VariantToRect;
-				public function HRESULT(IUIAutomation *self, SAFEARRAY* rects, RECT** rectArray, int32* rectArrayCount) SafeArrayToRectNativeArray;
-				public function HRESULT(IUIAutomation *self, IUIAutomationProxyFactory* factory, IUIAutomationProxyFactoryEntry** factoryEntry) CreateProxyFactoryEntry;
-				public function HRESULT(IUIAutomation *self, IUIAutomationProxyFactoryMapping** factoryMapping) get_ProxyFactoryMapping;
-				public function HRESULT(IUIAutomation *self, int32 property, BSTR* name) GetPropertyProgrammaticName;
-				public function HRESULT(IUIAutomation *self, int32 pattern, BSTR* name) GetPatternProgrammaticName;
-				public function HRESULT(IUIAutomation *self, IUIAutomationElement* pElement, SAFEARRAY** patternIds, SAFEARRAY** patternNames) PollForPotentialSupportedPatterns;
-				public function HRESULT(IUIAutomation *self, IUIAutomationElement* pElement, SAFEARRAY** propertyIds, SAFEARRAY** propertyNames) PollForPotentialSupportedProperties;
-				public function HRESULT(IUIAutomation *self, VARIANT value, BOOL* isNotSupported) CheckNotSupported;
-				public function HRESULT(IUIAutomation *self, IUnknown** notSupportedValue) get_ReservedNotSupportedValue;
-				public function HRESULT(IUIAutomation *self, IUnknown** mixedAttributeValue) get_ReservedMixedAttributeValue;
-				public function HRESULT(IUIAutomation *self, IAccessible* accessible, int32 childId, IUIAutomationElement** element) ElementFromIAccessible;
-				public function HRESULT(IUIAutomation *self, IAccessible* accessible, int32 childId, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** element) ElementFromIAccessibleBuildCache;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationElement* el1, IUIAutomationElement* el2, BOOL* areSame) CompareElements;
+				public new function HRESULT(IUIAutomation *self, SAFEARRAY* runtimeId1, SAFEARRAY* runtimeId2, BOOL* areSame) CompareRuntimeIds;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationElement** root) GetRootElement;
+				public new function HRESULT(IUIAutomation *self, HWND hwnd, IUIAutomationElement** element) ElementFromHandle;
+				public new function HRESULT(IUIAutomation *self, POINT pt, IUIAutomationElement** element) ElementFromPoint;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationElement** element) GetFocusedElement;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** root) GetRootElementBuildCache;
+				public new function HRESULT(IUIAutomation *self, HWND hwnd, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** element) ElementFromHandleBuildCache;
+				public new function HRESULT(IUIAutomation *self, POINT pt, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** element) ElementFromPointBuildCache;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** element) GetFocusedElementBuildCache;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationCondition* pCondition, IUIAutomationTreeWalker** walker) CreateTreeWalker;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationTreeWalker** walker) get_ControlViewWalker;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationTreeWalker** walker) get_ContentViewWalker;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationTreeWalker** walker) get_RawViewWalker;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationCondition** condition) get_RawViewCondition;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationCondition** condition) get_ControlViewCondition;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationCondition** condition) get_ContentViewCondition;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationCacheRequest** cacheRequest) CreateCacheRequest;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationCondition** newCondition) CreateTrueCondition;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationCondition** newCondition) CreateFalseCondition;
+				public new function HRESULT(IUIAutomation *self, int32 propertyId, VARIANT value, IUIAutomationCondition** newCondition) CreatePropertyCondition;
+				public new function HRESULT(IUIAutomation *self, int32 propertyId, VARIANT value, PropertyConditionFlags flags, IUIAutomationCondition** newCondition) CreatePropertyConditionEx;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationCondition* condition1, IUIAutomationCondition* condition2, IUIAutomationCondition** newCondition) CreateAndCondition;
+				public new function HRESULT(IUIAutomation *self, SAFEARRAY* conditions, IUIAutomationCondition** newCondition) CreateAndConditionFromArray;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationCondition** conditions, int32 conditionCount, IUIAutomationCondition** newCondition) CreateAndConditionFromNativeArray;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationCondition* condition1, IUIAutomationCondition* condition2, IUIAutomationCondition** newCondition) CreateOrCondition;
+				public new function HRESULT(IUIAutomation *self, SAFEARRAY* conditions, IUIAutomationCondition** newCondition) CreateOrConditionFromArray;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationCondition** conditions, int32 conditionCount, IUIAutomationCondition** newCondition) CreateOrConditionFromNativeArray;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationCondition* condition, IUIAutomationCondition** newCondition) CreateNotCondition;
+				public new function HRESULT(IUIAutomation *self, int32 eventId, IUIAutomationElement* element, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationEventHandler* handler) AddAutomationEventHandler;
+				public new function HRESULT(IUIAutomation *self, int32 eventId, IUIAutomationElement* element, IUIAutomationEventHandler* handler) RemoveAutomationEventHandler;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationElement* element, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationPropertyChangedEventHandler* handler, int32* propertyArray, int32 propertyCount) AddPropertyChangedEventHandlerNativeArray;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationElement* element, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationPropertyChangedEventHandler* handler, SAFEARRAY* propertyArray) AddPropertyChangedEventHandler;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationElement* element, IUIAutomationPropertyChangedEventHandler* handler) RemovePropertyChangedEventHandler;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationElement* element, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationStructureChangedEventHandler* handler) AddStructureChangedEventHandler;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationElement* element, IUIAutomationStructureChangedEventHandler* handler) RemoveStructureChangedEventHandler;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationCacheRequest* cacheRequest, IUIAutomationFocusChangedEventHandler* handler) AddFocusChangedEventHandler;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationFocusChangedEventHandler* handler) RemoveFocusChangedEventHandler;
+				public new function HRESULT(IUIAutomation *self) RemoveAllEventHandlers;
+				public new function HRESULT(IUIAutomation *self, int32* array, int32 arrayCount, SAFEARRAY** safeArray) IntNativeArrayToSafeArray;
+				public new function HRESULT(IUIAutomation *self, SAFEARRAY* intArray, int32** array, int32* arrayCount) IntSafeArrayToNativeArray;
+				public new function HRESULT(IUIAutomation *self, RECT rc, VARIANT* @var) RectToVariant;
+				public new function HRESULT(IUIAutomation *self, VARIANT @var, RECT* rc) VariantToRect;
+				public new function HRESULT(IUIAutomation *self, SAFEARRAY* rects, RECT** rectArray, int32* rectArrayCount) SafeArrayToRectNativeArray;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationProxyFactory* factory, IUIAutomationProxyFactoryEntry** factoryEntry) CreateProxyFactoryEntry;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationProxyFactoryMapping** factoryMapping) get_ProxyFactoryMapping;
+				public new function HRESULT(IUIAutomation *self, int32 property, BSTR* name) GetPropertyProgrammaticName;
+				public new function HRESULT(IUIAutomation *self, int32 pattern, BSTR* name) GetPatternProgrammaticName;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationElement* pElement, SAFEARRAY** patternIds, SAFEARRAY** patternNames) PollForPotentialSupportedPatterns;
+				public new function HRESULT(IUIAutomation *self, IUIAutomationElement* pElement, SAFEARRAY** propertyIds, SAFEARRAY** propertyNames) PollForPotentialSupportedProperties;
+				public new function HRESULT(IUIAutomation *self, VARIANT value, BOOL* isNotSupported) CheckNotSupported;
+				public new function HRESULT(IUIAutomation *self, IUnknown** notSupportedValue) get_ReservedNotSupportedValue;
+				public new function HRESULT(IUIAutomation *self, IUnknown** mixedAttributeValue) get_ReservedMixedAttributeValue;
+				public new function HRESULT(IUIAutomation *self, IAccessible* accessible, int32 childId, IUIAutomationElement** element) ElementFromIAccessible;
+				public new function HRESULT(IUIAutomation *self, IAccessible* accessible, int32 childId, IUIAutomationCacheRequest* cacheRequest, IUIAutomationElement** element) ElementFromIAccessibleBuildCache;
 			}
 		}
 		[CRepr]
@@ -3966,16 +6973,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x34723aff, 0x0c9d, 0x49d0, 0x98, 0x96, 0x7a, 0xb5, 0x2d, 0xf8, 0xcd, 0x8a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_AutoSetFocus(BOOL* autoSetFocus) mut
+			{
+				return VT.get_AutoSetFocus(&this, autoSetFocus);
+			}
+			public HRESULT put_AutoSetFocus(BOOL autoSetFocus) mut
+			{
+				return VT.put_AutoSetFocus(&this, autoSetFocus);
+			}
+			public HRESULT get_ConnectionTimeout(uint32* timeout) mut
+			{
+				return VT.get_ConnectionTimeout(&this, timeout);
+			}
+			public HRESULT put_ConnectionTimeout(uint32 timeout) mut
+			{
+				return VT.put_ConnectionTimeout(&this, timeout);
+			}
+			public HRESULT get_TransactionTimeout(uint32* timeout) mut
+			{
+				return VT.get_TransactionTimeout(&this, timeout);
+			}
+			public HRESULT put_TransactionTimeout(uint32 timeout) mut
+			{
+				return VT.put_TransactionTimeout(&this, timeout);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomation.VTable
 			{
-				public function HRESULT(IUIAutomation2 *self, BOOL* autoSetFocus) get_AutoSetFocus;
-				public function HRESULT(IUIAutomation2 *self, BOOL autoSetFocus) put_AutoSetFocus;
-				public function HRESULT(IUIAutomation2 *self, uint32* timeout) get_ConnectionTimeout;
-				public function HRESULT(IUIAutomation2 *self, uint32 timeout) put_ConnectionTimeout;
-				public function HRESULT(IUIAutomation2 *self, uint32* timeout) get_TransactionTimeout;
-				public function HRESULT(IUIAutomation2 *self, uint32 timeout) put_TransactionTimeout;
+				public new function HRESULT(IUIAutomation2 *self, BOOL* autoSetFocus) get_AutoSetFocus;
+				public new function HRESULT(IUIAutomation2 *self, BOOL autoSetFocus) put_AutoSetFocus;
+				public new function HRESULT(IUIAutomation2 *self, uint32* timeout) get_ConnectionTimeout;
+				public new function HRESULT(IUIAutomation2 *self, uint32 timeout) put_ConnectionTimeout;
+				public new function HRESULT(IUIAutomation2 *self, uint32* timeout) get_TransactionTimeout;
+				public new function HRESULT(IUIAutomation2 *self, uint32 timeout) put_TransactionTimeout;
 			}
 		}
 		[CRepr]
@@ -3983,12 +7015,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x73d768da, 0x9b51, 0x4b89, 0x93, 0x6e, 0xc2, 0x09, 0x29, 0x09, 0x73, 0xe7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddTextEditTextChangedEventHandler(IUIAutomationElement* element, TreeScope @scope, TextEditChangeType textEditChangeType, IUIAutomationCacheRequest* cacheRequest, IUIAutomationTextEditTextChangedEventHandler* handler) mut
+			{
+				return VT.AddTextEditTextChangedEventHandler(&this, element, @scope, textEditChangeType, cacheRequest, handler);
+			}
+			public HRESULT RemoveTextEditTextChangedEventHandler(IUIAutomationElement* element, IUIAutomationTextEditTextChangedEventHandler* handler) mut
+			{
+				return VT.RemoveTextEditTextChangedEventHandler(&this, element, handler);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomation2.VTable
 			{
-				public function HRESULT(IUIAutomation3 *self, IUIAutomationElement* element, TreeScope @scope, TextEditChangeType textEditChangeType, IUIAutomationCacheRequest* cacheRequest, IUIAutomationTextEditTextChangedEventHandler* handler) AddTextEditTextChangedEventHandler;
-				public function HRESULT(IUIAutomation3 *self, IUIAutomationElement* element, IUIAutomationTextEditTextChangedEventHandler* handler) RemoveTextEditTextChangedEventHandler;
+				public new function HRESULT(IUIAutomation3 *self, IUIAutomationElement* element, TreeScope @scope, TextEditChangeType textEditChangeType, IUIAutomationCacheRequest* cacheRequest, IUIAutomationTextEditTextChangedEventHandler* handler) AddTextEditTextChangedEventHandler;
+				public new function HRESULT(IUIAutomation3 *self, IUIAutomationElement* element, IUIAutomationTextEditTextChangedEventHandler* handler) RemoveTextEditTextChangedEventHandler;
 			}
 		}
 		[CRepr]
@@ -3996,12 +7037,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1189c02a, 0x05f8, 0x4319, 0x8e, 0x21, 0xe8, 0x17, 0xe3, 0xdb, 0x28, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddChangesEventHandler(IUIAutomationElement* element, TreeScope @scope, int32* changeTypes, int32 changesCount, IUIAutomationCacheRequest* pCacheRequest, IUIAutomationChangesEventHandler* handler) mut
+			{
+				return VT.AddChangesEventHandler(&this, element, @scope, changeTypes, changesCount, pCacheRequest, handler);
+			}
+			public HRESULT RemoveChangesEventHandler(IUIAutomationElement* element, IUIAutomationChangesEventHandler* handler) mut
+			{
+				return VT.RemoveChangesEventHandler(&this, element, handler);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomation3.VTable
 			{
-				public function HRESULT(IUIAutomation4 *self, IUIAutomationElement* element, TreeScope @scope, int32* changeTypes, int32 changesCount, IUIAutomationCacheRequest* pCacheRequest, IUIAutomationChangesEventHandler* handler) AddChangesEventHandler;
-				public function HRESULT(IUIAutomation4 *self, IUIAutomationElement* element, IUIAutomationChangesEventHandler* handler) RemoveChangesEventHandler;
+				public new function HRESULT(IUIAutomation4 *self, IUIAutomationElement* element, TreeScope @scope, int32* changeTypes, int32 changesCount, IUIAutomationCacheRequest* pCacheRequest, IUIAutomationChangesEventHandler* handler) AddChangesEventHandler;
+				public new function HRESULT(IUIAutomation4 *self, IUIAutomationElement* element, IUIAutomationChangesEventHandler* handler) RemoveChangesEventHandler;
 			}
 		}
 		[CRepr]
@@ -4009,12 +7059,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x25f700c8, 0xd816, 0x4057, 0xa9, 0xdc, 0x3c, 0xbd, 0xee, 0x77, 0xe2, 0x56);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddNotificationEventHandler(IUIAutomationElement* element, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationNotificationEventHandler* handler) mut
+			{
+				return VT.AddNotificationEventHandler(&this, element, @scope, cacheRequest, handler);
+			}
+			public HRESULT RemoveNotificationEventHandler(IUIAutomationElement* element, IUIAutomationNotificationEventHandler* handler) mut
+			{
+				return VT.RemoveNotificationEventHandler(&this, element, handler);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomation4.VTable
 			{
-				public function HRESULT(IUIAutomation5 *self, IUIAutomationElement* element, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationNotificationEventHandler* handler) AddNotificationEventHandler;
-				public function HRESULT(IUIAutomation5 *self, IUIAutomationElement* element, IUIAutomationNotificationEventHandler* handler) RemoveNotificationEventHandler;
+				public new function HRESULT(IUIAutomation5 *self, IUIAutomationElement* element, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationNotificationEventHandler* handler) AddNotificationEventHandler;
+				public new function HRESULT(IUIAutomation5 *self, IUIAutomationElement* element, IUIAutomationNotificationEventHandler* handler) RemoveNotificationEventHandler;
 			}
 		}
 		[CRepr]
@@ -4022,19 +7081,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xaae072da, 0x29e3, 0x413d, 0x87, 0xa7, 0x19, 0x2d, 0xbf, 0x81, 0xed, 0x10);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateEventHandlerGroup(IUIAutomationEventHandlerGroup** handlerGroup) mut
+			{
+				return VT.CreateEventHandlerGroup(&this, handlerGroup);
+			}
+			public HRESULT AddEventHandlerGroup(IUIAutomationElement* element, IUIAutomationEventHandlerGroup* handlerGroup) mut
+			{
+				return VT.AddEventHandlerGroup(&this, element, handlerGroup);
+			}
+			public HRESULT RemoveEventHandlerGroup(IUIAutomationElement* element, IUIAutomationEventHandlerGroup* handlerGroup) mut
+			{
+				return VT.RemoveEventHandlerGroup(&this, element, handlerGroup);
+			}
+			public HRESULT get_ConnectionRecoveryBehavior(ConnectionRecoveryBehaviorOptions* connectionRecoveryBehaviorOptions) mut
+			{
+				return VT.get_ConnectionRecoveryBehavior(&this, connectionRecoveryBehaviorOptions);
+			}
+			public HRESULT put_ConnectionRecoveryBehavior(ConnectionRecoveryBehaviorOptions connectionRecoveryBehaviorOptions) mut
+			{
+				return VT.put_ConnectionRecoveryBehavior(&this, connectionRecoveryBehaviorOptions);
+			}
+			public HRESULT get_CoalesceEvents(CoalesceEventsOptions* coalesceEventsOptions) mut
+			{
+				return VT.get_CoalesceEvents(&this, coalesceEventsOptions);
+			}
+			public HRESULT put_CoalesceEvents(CoalesceEventsOptions coalesceEventsOptions) mut
+			{
+				return VT.put_CoalesceEvents(&this, coalesceEventsOptions);
+			}
+			public HRESULT AddActiveTextPositionChangedEventHandler(IUIAutomationElement* element, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationActiveTextPositionChangedEventHandler* handler) mut
+			{
+				return VT.AddActiveTextPositionChangedEventHandler(&this, element, @scope, cacheRequest, handler);
+			}
+			public HRESULT RemoveActiveTextPositionChangedEventHandler(IUIAutomationElement* element, IUIAutomationActiveTextPositionChangedEventHandler* handler) mut
+			{
+				return VT.RemoveActiveTextPositionChangedEventHandler(&this, element, handler);
+			}
 			[CRepr]
 			public struct VTable : IUIAutomation5.VTable
 			{
-				public function HRESULT(IUIAutomation6 *self, IUIAutomationEventHandlerGroup** handlerGroup) CreateEventHandlerGroup;
-				public function HRESULT(IUIAutomation6 *self, IUIAutomationElement* element, IUIAutomationEventHandlerGroup* handlerGroup) AddEventHandlerGroup;
-				public function HRESULT(IUIAutomation6 *self, IUIAutomationElement* element, IUIAutomationEventHandlerGroup* handlerGroup) RemoveEventHandlerGroup;
-				public function HRESULT(IUIAutomation6 *self, ConnectionRecoveryBehaviorOptions* connectionRecoveryBehaviorOptions) get_ConnectionRecoveryBehavior;
-				public function HRESULT(IUIAutomation6 *self, ConnectionRecoveryBehaviorOptions connectionRecoveryBehaviorOptions) put_ConnectionRecoveryBehavior;
-				public function HRESULT(IUIAutomation6 *self, CoalesceEventsOptions* coalesceEventsOptions) get_CoalesceEvents;
-				public function HRESULT(IUIAutomation6 *self, CoalesceEventsOptions coalesceEventsOptions) put_CoalesceEvents;
-				public function HRESULT(IUIAutomation6 *self, IUIAutomationElement* element, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationActiveTextPositionChangedEventHandler* handler) AddActiveTextPositionChangedEventHandler;
-				public function HRESULT(IUIAutomation6 *self, IUIAutomationElement* element, IUIAutomationActiveTextPositionChangedEventHandler* handler) RemoveActiveTextPositionChangedEventHandler;
+				public new function HRESULT(IUIAutomation6 *self, IUIAutomationEventHandlerGroup** handlerGroup) CreateEventHandlerGroup;
+				public new function HRESULT(IUIAutomation6 *self, IUIAutomationElement* element, IUIAutomationEventHandlerGroup* handlerGroup) AddEventHandlerGroup;
+				public new function HRESULT(IUIAutomation6 *self, IUIAutomationElement* element, IUIAutomationEventHandlerGroup* handlerGroup) RemoveEventHandlerGroup;
+				public new function HRESULT(IUIAutomation6 *self, ConnectionRecoveryBehaviorOptions* connectionRecoveryBehaviorOptions) get_ConnectionRecoveryBehavior;
+				public new function HRESULT(IUIAutomation6 *self, ConnectionRecoveryBehaviorOptions connectionRecoveryBehaviorOptions) put_ConnectionRecoveryBehavior;
+				public new function HRESULT(IUIAutomation6 *self, CoalesceEventsOptions* coalesceEventsOptions) get_CoalesceEvents;
+				public new function HRESULT(IUIAutomation6 *self, CoalesceEventsOptions coalesceEventsOptions) put_CoalesceEvents;
+				public new function HRESULT(IUIAutomation6 *self, IUIAutomationElement* element, TreeScope @scope, IUIAutomationCacheRequest* cacheRequest, IUIAutomationActiveTextPositionChangedEventHandler* handler) AddActiveTextPositionChangedEventHandler;
+				public new function HRESULT(IUIAutomation6 *self, IUIAutomationElement* element, IUIAutomationActiveTextPositionChangedEventHandler* handler) RemoveActiveTextPositionChangedEventHandler;
 			}
 		}
 		

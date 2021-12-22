@@ -34,6 +34,15 @@ REPLACE_TYPE_NAMES = {
     'DispatcherQueueController':'void',
 }
 
+# All Beef structs/classes have GetType(), GetFlags(), Equals(), and ToString() implicitly defined.
+# But some COM classes also have these methods, so we replace their names.
+REPLACE_COM_METHOD_NAMES = {
+    'GetType':'ComGetType',
+    'GetFlags':'ComGetFlags',
+    'Equals':'ComEquals',
+    'ToString':'ComToString'
+}
+
 # If you want to pull in a function from a .lib file instead of a .dll (dll is default)
 USE_LIB_INSTEAD_OF_DLL = {
     'kernel32',
@@ -100,8 +109,7 @@ def replace_name(name: str, namespace: str = '') -> str:
         return name
 
 def replace_type_name(typename: str, namespace: str = '') -> str:
-    if typename in REPLACE_TYPE_NAMES:
-        typename = REPLACE_TYPE_NAMES[typename]
+    typename = REPLACE_TYPE_NAMES.get(typename, typename)
     return replace_name(typename, namespace)
 
 def remove_common_prefix(prefix: str, name: str) -> str:
@@ -148,6 +156,7 @@ def get_type_name(type: dict) -> str:
         raise RuntimeError(f'Unexpected type kind "{kind}"')
 
 def get_param_type(param: dict) -> str:
+    #TODO: Attributes?
     name = param['Name']
     type = param['Type']
     kind = type['Kind']
@@ -437,8 +446,42 @@ for filename in filenames:
 
                     if base == None:
                         output.write(f'{indent}protected VTable* vt;\n')
-                    output.write(f'{indent}public VTable* VT {{ get => (.)vt; }}')
+                    output.write(f'{indent}public new VTable* VT {{ get => (.)vt; }}\n')
                     output.write(f'{indent}\n')
+
+                    methods = com['Methods']
+                    # Functions could be overloaded here, so we need to mangle the names somehow.
+                    encountered_names = set()
+                    for method in methods:
+                        method_name = REPLACE_COM_METHOD_NAMES.get(method['Name'], method['Name'])
+                        if method_name in encountered_names:
+                            i = 2
+                            while f'{method_name}{i}' in encountered_names:
+                                i += 1
+                            method_name = f'{method_name}{i}'
+                        encountered_names.add(method_name)
+                        return_type = get_type_name(method['ReturnType'])
+                        parameters = method['Params']
+                        output.write(f'{indent}public {return_type} {method_name}(')
+                        for i, param in enumerate(parameters):
+                            param_name = replace_name(param['Name'])
+                            param_type = get_param_type(param)
+                            output.write(f'{param_type} {param_name}')
+                            if i != len(parameters) - 1:
+                                output.write(', ')
+                        output.write(f') mut\n')
+                        output.write(f'{indent}{{\n')
+                        indent += '\t'
+                        if return_type == 'void':
+                            output.write(f'{indent}VT.{method_name}(&this')
+                        else:
+                            output.write(f'{indent}return VT.{method_name}(&this')
+                        for param in parameters:
+                            param_name = replace_name(param['Name'])
+                            output.write(f', {param_name}')
+                        output.write(f');\n')
+                        indent = indent[:-1]
+                        output.write(f'{indent}}}\n')
 
                     output.write(f'{indent}[CRepr]\n')
                     if base != None:
@@ -448,11 +491,10 @@ for filename in filenames:
                     
                     output.write(f'{indent}{{\n')
                     indent += '\t'
-                    methods = com['Methods']
                     # Functions could be overloaded here, so we need to mangle the names somehow.
                     encountered_names = set()
                     for method in methods:
-                        method_name = method['Name']
+                        method_name = REPLACE_COM_METHOD_NAMES.get(method['Name'], method['Name'])
                         if method_name in encountered_names:
                             i = 2
                             while f'{method_name}{i}' in encountered_names:
@@ -461,7 +503,7 @@ for filename in filenames:
                         encountered_names.add(method_name)
                         return_type = get_type_name(method['ReturnType'])
                         parameters = method['Params']
-                        output.write(f'{indent}public function {return_type}({name} *self')
+                        output.write(f'{indent}public new function {return_type}({name} *self')
                         for param in parameters:
                             param_name = replace_name(param['Name'])
                             param_type = get_param_type(param)

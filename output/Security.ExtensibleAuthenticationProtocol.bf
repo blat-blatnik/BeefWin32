@@ -975,12 +975,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x66a2db16, 0xd706, 0x11d0, 0xa3, 0x7b, 0x00, 0xc0, 0x4f, 0xc9, 0xda, 0x04);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddProtocol(PWSTR pszMachineName, uint32 dwTransportId, uint32 dwProtocolId, HWND hWnd, uint32 dwFlags, IUnknown* pRouter, uint uReserved1) mut
+			{
+				return VT.AddProtocol(&this, pszMachineName, dwTransportId, dwProtocolId, hWnd, dwFlags, pRouter, uReserved1);
+			}
+			public HRESULT RemoveProtocol(PWSTR pszMachineName, uint32 dwTransportId, uint32 dwProtocolId, HWND hWnd, uint32 dwFlags, IUnknown* pRouter, uint uReserved1) mut
+			{
+				return VT.RemoveProtocol(&this, pszMachineName, dwTransportId, dwProtocolId, hWnd, dwFlags, pRouter, uReserved1);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRouterProtocolConfig *self, PWSTR pszMachineName, uint32 dwTransportId, uint32 dwProtocolId, HWND hWnd, uint32 dwFlags, IUnknown* pRouter, uint uReserved1) AddProtocol;
-				public function HRESULT(IRouterProtocolConfig *self, PWSTR pszMachineName, uint32 dwTransportId, uint32 dwProtocolId, HWND hWnd, uint32 dwFlags, IUnknown* pRouter, uint uReserved1) RemoveProtocol;
+				public new function HRESULT(IRouterProtocolConfig *self, PWSTR pszMachineName, uint32 dwTransportId, uint32 dwProtocolId, HWND hWnd, uint32 dwFlags, IUnknown* pRouter, uint uReserved1) AddProtocol;
+				public new function HRESULT(IRouterProtocolConfig *self, PWSTR pszMachineName, uint32 dwTransportId, uint32 dwProtocolId, HWND hWnd, uint32 dwFlags, IUnknown* pRouter, uint uReserved1) RemoveProtocol;
 			}
 		}
 		[CRepr]
@@ -988,15 +997,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x66a2db17, 0xd706, 0x11d0, 0xa3, 0x7b, 0x00, 0xc0, 0x4f, 0xc9, 0xda, 0x04);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(PWSTR pszMachineName, uint* puConnectionParam) mut
+			{
+				return VT.Initialize(&this, pszMachineName, puConnectionParam);
+			}
+			public HRESULT Uninitialize(uint uConnectionParam) mut
+			{
+				return VT.Uninitialize(&this, uConnectionParam);
+			}
+			public HRESULT Configure(uint uConnectionParam, HWND hWnd, uint32 dwFlags, uint uReserved1, uint uReserved2) mut
+			{
+				return VT.Configure(&this, uConnectionParam, hWnd, dwFlags, uReserved1, uReserved2);
+			}
+			public HRESULT Activate(uint uConnectionParam, uint uReserved1, uint uReserved2) mut
+			{
+				return VT.Activate(&this, uConnectionParam, uReserved1, uReserved2);
+			}
+			public HRESULT Deactivate(uint uConnectionParam, uint uReserved1, uint uReserved2) mut
+			{
+				return VT.Deactivate(&this, uConnectionParam, uReserved1, uReserved2);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAuthenticationProviderConfig *self, PWSTR pszMachineName, uint* puConnectionParam) Initialize;
-				public function HRESULT(IAuthenticationProviderConfig *self, uint uConnectionParam) Uninitialize;
-				public function HRESULT(IAuthenticationProviderConfig *self, uint uConnectionParam, HWND hWnd, uint32 dwFlags, uint uReserved1, uint uReserved2) Configure;
-				public function HRESULT(IAuthenticationProviderConfig *self, uint uConnectionParam, uint uReserved1, uint uReserved2) Activate;
-				public function HRESULT(IAuthenticationProviderConfig *self, uint uConnectionParam, uint uReserved1, uint uReserved2) Deactivate;
+				public new function HRESULT(IAuthenticationProviderConfig *self, PWSTR pszMachineName, uint* puConnectionParam) Initialize;
+				public new function HRESULT(IAuthenticationProviderConfig *self, uint uConnectionParam) Uninitialize;
+				public new function HRESULT(IAuthenticationProviderConfig *self, uint uConnectionParam, HWND hWnd, uint32 dwFlags, uint uReserved1, uint uReserved2) Configure;
+				public new function HRESULT(IAuthenticationProviderConfig *self, uint uConnectionParam, uint uReserved1, uint uReserved2) Activate;
+				public new function HRESULT(IAuthenticationProviderConfig *self, uint uConnectionParam, uint uReserved1, uint uReserved2) Deactivate;
 			}
 		}
 		[CRepr]
@@ -1004,15 +1034,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x66a2db18, 0xd706, 0x11d0, 0xa3, 0x7b, 0x00, 0xc0, 0x4f, 0xc9, 0xda, 0x04);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(PWSTR pszMachineName, uint* puConnectionParam) mut
+			{
+				return VT.Initialize(&this, pszMachineName, puConnectionParam);
+			}
+			public HRESULT Uninitialize(uint uConnectionParam) mut
+			{
+				return VT.Uninitialize(&this, uConnectionParam);
+			}
+			public HRESULT Configure(uint uConnectionParam, HWND hWnd, uint32 dwFlags, uint uReserved1, uint uReserved2) mut
+			{
+				return VT.Configure(&this, uConnectionParam, hWnd, dwFlags, uReserved1, uReserved2);
+			}
+			public HRESULT Activate(uint uConnectionParam, uint uReserved1, uint uReserved2) mut
+			{
+				return VT.Activate(&this, uConnectionParam, uReserved1, uReserved2);
+			}
+			public HRESULT Deactivate(uint uConnectionParam, uint uReserved1, uint uReserved2) mut
+			{
+				return VT.Deactivate(&this, uConnectionParam, uReserved1, uReserved2);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAccountingProviderConfig *self, PWSTR pszMachineName, uint* puConnectionParam) Initialize;
-				public function HRESULT(IAccountingProviderConfig *self, uint uConnectionParam) Uninitialize;
-				public function HRESULT(IAccountingProviderConfig *self, uint uConnectionParam, HWND hWnd, uint32 dwFlags, uint uReserved1, uint uReserved2) Configure;
-				public function HRESULT(IAccountingProviderConfig *self, uint uConnectionParam, uint uReserved1, uint uReserved2) Activate;
-				public function HRESULT(IAccountingProviderConfig *self, uint uConnectionParam, uint uReserved1, uint uReserved2) Deactivate;
+				public new function HRESULT(IAccountingProviderConfig *self, PWSTR pszMachineName, uint* puConnectionParam) Initialize;
+				public new function HRESULT(IAccountingProviderConfig *self, uint uConnectionParam) Uninitialize;
+				public new function HRESULT(IAccountingProviderConfig *self, uint uConnectionParam, HWND hWnd, uint32 dwFlags, uint uReserved1, uint uReserved2) Configure;
+				public new function HRESULT(IAccountingProviderConfig *self, uint uConnectionParam, uint uReserved1, uint uReserved2) Activate;
+				public new function HRESULT(IAccountingProviderConfig *self, uint uConnectionParam, uint uReserved1, uint uReserved2) Deactivate;
 			}
 		}
 		[CRepr]
@@ -1020,15 +1071,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x66a2db19, 0xd706, 0x11d0, 0xa3, 0x7b, 0x00, 0xc0, 0x4f, 0xc9, 0xda, 0x04);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(PWSTR pszMachineName, uint32 dwEapTypeId, uint* puConnectionParam) mut
+			{
+				return VT.Initialize(&this, pszMachineName, dwEapTypeId, puConnectionParam);
+			}
+			public HRESULT Uninitialize(uint32 dwEapTypeId, uint uConnectionParam) mut
+			{
+				return VT.Uninitialize(&this, dwEapTypeId, uConnectionParam);
+			}
+			public HRESULT ServerInvokeConfigUI(uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, uint uReserved1, uint uReserved2) mut
+			{
+				return VT.ServerInvokeConfigUI(&this, dwEapTypeId, uConnectionParam, hWnd, uReserved1, uReserved2);
+			}
+			public HRESULT RouterInvokeConfigUI(uint32 dwEapTypeId, uint uConnectionParam, HWND hwndParent, uint32 dwFlags, uint8* pConnectionDataIn, uint32 dwSizeOfConnectionDataIn, uint8** ppConnectionDataOut, uint32* pdwSizeOfConnectionDataOut) mut
+			{
+				return VT.RouterInvokeConfigUI(&this, dwEapTypeId, uConnectionParam, hwndParent, dwFlags, pConnectionDataIn, dwSizeOfConnectionDataIn, ppConnectionDataOut, pdwSizeOfConnectionDataOut);
+			}
+			public HRESULT RouterInvokeCredentialsUI(uint32 dwEapTypeId, uint uConnectionParam, HWND hwndParent, uint32 dwFlags, uint8* pConnectionDataIn, uint32 dwSizeOfConnectionDataIn, uint8* pUserDataIn, uint32 dwSizeOfUserDataIn, uint8** ppUserDataOut, uint32* pdwSizeOfUserDataOut) mut
+			{
+				return VT.RouterInvokeCredentialsUI(&this, dwEapTypeId, uConnectionParam, hwndParent, dwFlags, pConnectionDataIn, dwSizeOfConnectionDataIn, pUserDataIn, dwSizeOfUserDataIn, ppUserDataOut, pdwSizeOfUserDataOut);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEAPProviderConfig *self, PWSTR pszMachineName, uint32 dwEapTypeId, uint* puConnectionParam) Initialize;
-				public function HRESULT(IEAPProviderConfig *self, uint32 dwEapTypeId, uint uConnectionParam) Uninitialize;
-				public function HRESULT(IEAPProviderConfig *self, uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, uint uReserved1, uint uReserved2) ServerInvokeConfigUI;
-				public function HRESULT(IEAPProviderConfig *self, uint32 dwEapTypeId, uint uConnectionParam, HWND hwndParent, uint32 dwFlags, uint8* pConnectionDataIn, uint32 dwSizeOfConnectionDataIn, uint8** ppConnectionDataOut, uint32* pdwSizeOfConnectionDataOut) RouterInvokeConfigUI;
-				public function HRESULT(IEAPProviderConfig *self, uint32 dwEapTypeId, uint uConnectionParam, HWND hwndParent, uint32 dwFlags, uint8* pConnectionDataIn, uint32 dwSizeOfConnectionDataIn, uint8* pUserDataIn, uint32 dwSizeOfUserDataIn, uint8** ppUserDataOut, uint32* pdwSizeOfUserDataOut) RouterInvokeCredentialsUI;
+				public new function HRESULT(IEAPProviderConfig *self, PWSTR pszMachineName, uint32 dwEapTypeId, uint* puConnectionParam) Initialize;
+				public new function HRESULT(IEAPProviderConfig *self, uint32 dwEapTypeId, uint uConnectionParam) Uninitialize;
+				public new function HRESULT(IEAPProviderConfig *self, uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, uint uReserved1, uint uReserved2) ServerInvokeConfigUI;
+				public new function HRESULT(IEAPProviderConfig *self, uint32 dwEapTypeId, uint uConnectionParam, HWND hwndParent, uint32 dwFlags, uint8* pConnectionDataIn, uint32 dwSizeOfConnectionDataIn, uint8** ppConnectionDataOut, uint32* pdwSizeOfConnectionDataOut) RouterInvokeConfigUI;
+				public new function HRESULT(IEAPProviderConfig *self, uint32 dwEapTypeId, uint uConnectionParam, HWND hwndParent, uint32 dwFlags, uint8* pConnectionDataIn, uint32 dwSizeOfConnectionDataIn, uint8* pUserDataIn, uint32 dwSizeOfUserDataIn, uint8** ppUserDataOut, uint32* pdwSizeOfUserDataOut) RouterInvokeCredentialsUI;
 			}
 		}
 		[CRepr]
@@ -1036,12 +1108,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd565917a, 0x85c4, 0x4466, 0x85, 0x6e, 0x67, 0x1c, 0x37, 0x42, 0xea, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ServerInvokeConfigUI2(uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, uint8* pConfigDataIn, uint32 dwSizeOfConfigDataIn, uint8** ppConfigDataOut, uint32* pdwSizeOfConfigDataOut) mut
+			{
+				return VT.ServerInvokeConfigUI2(&this, dwEapTypeId, uConnectionParam, hWnd, pConfigDataIn, dwSizeOfConfigDataIn, ppConfigDataOut, pdwSizeOfConfigDataOut);
+			}
+			public HRESULT GetGlobalConfig(uint32 dwEapTypeId, uint8** ppConfigDataOut, uint32* pdwSizeOfConfigDataOut) mut
+			{
+				return VT.GetGlobalConfig(&this, dwEapTypeId, ppConfigDataOut, pdwSizeOfConfigDataOut);
+			}
 			[CRepr]
 			public struct VTable : IEAPProviderConfig.VTable
 			{
-				public function HRESULT(IEAPProviderConfig2 *self, uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, uint8* pConfigDataIn, uint32 dwSizeOfConfigDataIn, uint8** ppConfigDataOut, uint32* pdwSizeOfConfigDataOut) ServerInvokeConfigUI2;
-				public function HRESULT(IEAPProviderConfig2 *self, uint32 dwEapTypeId, uint8** ppConfigDataOut, uint32* pdwSizeOfConfigDataOut) GetGlobalConfig;
+				public new function HRESULT(IEAPProviderConfig2 *self, uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, uint8* pConfigDataIn, uint32 dwSizeOfConfigDataIn, uint8** ppConfigDataOut, uint32* pdwSizeOfConfigDataOut) ServerInvokeConfigUI2;
+				public new function HRESULT(IEAPProviderConfig2 *self, uint32 dwEapTypeId, uint8** ppConfigDataOut, uint32* pdwSizeOfConfigDataOut) GetGlobalConfig;
 			}
 		}
 		[CRepr]
@@ -1049,11 +1130,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb78ecd12, 0x68bb, 0x4f86, 0x9b, 0xf0, 0x84, 0x38, 0xdd, 0x3b, 0xe9, 0x82);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ServerInvokeCertificateConfigUI(uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, uint8* pConfigDataIn, uint32 dwSizeOfConfigDataIn, uint8** ppConfigDataOut, uint32* pdwSizeOfConfigDataOut, uint uReserved) mut
+			{
+				return VT.ServerInvokeCertificateConfigUI(&this, dwEapTypeId, uConnectionParam, hWnd, pConfigDataIn, dwSizeOfConfigDataIn, ppConfigDataOut, pdwSizeOfConfigDataOut, uReserved);
+			}
 			[CRepr]
 			public struct VTable : IEAPProviderConfig2.VTable
 			{
-				public function HRESULT(IEAPProviderConfig3 *self, uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, uint8* pConfigDataIn, uint32 dwSizeOfConfigDataIn, uint8** ppConfigDataOut, uint32* pdwSizeOfConfigDataOut, uint uReserved) ServerInvokeCertificateConfigUI;
+				public new function HRESULT(IEAPProviderConfig3 *self, uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, uint8* pConfigDataIn, uint32 dwSizeOfConfigDataIn, uint8** ppConfigDataOut, uint32* pdwSizeOfConfigDataOut, uint uReserved) ServerInvokeCertificateConfigUI;
 			}
 		}
 		

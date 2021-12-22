@@ -2993,14 +2993,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf6a3d4c4, 0x5632, 0x4d83, 0xb0, 0xa1, 0xfb, 0x88, 0x71, 0x2b, 0x1e, 0xb7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetConnectedIDs(PWSTR wszAdaptorName, uint32* pulCount, uint32* pulID, uint32 ulFlags) mut
+			{
+				return VT.GetConnectedIDs(&this, wszAdaptorName, pulCount, pulID, ulFlags);
+			}
+			public HRESULT GetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, uint32* pulCount, uint32* pulTargetID) mut
+			{
+				return VT.GetActiveTopology(&this, wszAdaptorName, ulSourceID, pulCount, pulTargetID);
+			}
+			public HRESULT SetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, uint32* pulTargetID) mut
+			{
+				return VT.SetActiveTopology(&this, wszAdaptorName, ulSourceID, ulCount, pulTargetID);
+			}
+			public HRESULT Commit(BOOL fFinalCall) mut
+			{
+				return VT.Commit(&this, fFinalCall);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ICloneViewHelper *self, PWSTR wszAdaptorName, uint32* pulCount, uint32* pulID, uint32 ulFlags) GetConnectedIDs;
-				public function HRESULT(ICloneViewHelper *self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32* pulCount, uint32* pulTargetID) GetActiveTopology;
-				public function HRESULT(ICloneViewHelper *self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, uint32* pulTargetID) SetActiveTopology;
-				public function HRESULT(ICloneViewHelper *self, BOOL fFinalCall) Commit;
+				public new function HRESULT(ICloneViewHelper *self, PWSTR wszAdaptorName, uint32* pulCount, uint32* pulID, uint32 ulFlags) GetConnectedIDs;
+				public new function HRESULT(ICloneViewHelper *self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32* pulCount, uint32* pulTargetID) GetActiveTopology;
+				public new function HRESULT(ICloneViewHelper *self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, uint32* pulTargetID) SetActiveTopology;
+				public new function HRESULT(ICloneViewHelper *self, BOOL fFinalCall) Commit;
 			}
 		}
 		[CRepr]
@@ -3008,16 +3025,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe85ccef5, 0xaaaa, 0x47f0, 0xb5, 0xe3, 0x61, 0xf7, 0xae, 0xcd, 0xc4, 0xc1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetConnectedIDs(PWSTR wszAdaptorName, uint32* pulCount, uint32* pulID, uint32 ulFlags) mut
+			{
+				return VT.GetConnectedIDs(&this, wszAdaptorName, pulCount, pulID, ulFlags);
+			}
+			public HRESULT GetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, uint32* pulCount, uint32* pulTargetID) mut
+			{
+				return VT.GetActiveTopology(&this, wszAdaptorName, ulSourceID, pulCount, pulTargetID);
+			}
+			public HRESULT SetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, uint32* pulTargetID) mut
+			{
+				return VT.SetActiveTopology(&this, wszAdaptorName, ulSourceID, ulCount, pulTargetID);
+			}
+			public HRESULT Commit() mut
+			{
+				return VT.Commit(&this);
+			}
+			public HRESULT SetConfiguration(IStream* pIStream, uint32* pulStatus) mut
+			{
+				return VT.SetConfiguration(&this, pIStream, pulStatus);
+			}
+			public HRESULT GetProceedOnNewConfiguration() mut
+			{
+				return VT.GetProceedOnNewConfiguration(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IViewHelper *self, PWSTR wszAdaptorName, uint32* pulCount, uint32* pulID, uint32 ulFlags) GetConnectedIDs;
-				public function HRESULT(IViewHelper *self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32* pulCount, uint32* pulTargetID) GetActiveTopology;
-				public function HRESULT(IViewHelper *self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, uint32* pulTargetID) SetActiveTopology;
-				public function HRESULT(IViewHelper *self) Commit;
-				public function HRESULT(IViewHelper *self, IStream* pIStream, uint32* pulStatus) SetConfiguration;
-				public function HRESULT(IViewHelper *self) GetProceedOnNewConfiguration;
+				public new function HRESULT(IViewHelper *self, PWSTR wszAdaptorName, uint32* pulCount, uint32* pulID, uint32 ulFlags) GetConnectedIDs;
+				public new function HRESULT(IViewHelper *self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32* pulCount, uint32* pulTargetID) GetActiveTopology;
+				public new function HRESULT(IViewHelper *self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, uint32* pulTargetID) SetActiveTopology;
+				public new function HRESULT(IViewHelper *self) Commit;
+				public new function HRESULT(IViewHelper *self, IStream* pIStream, uint32* pulStatus) SetConfiguration;
+				public new function HRESULT(IViewHelper *self) GetProceedOnNewConfiguration;
 			}
 		}
 		

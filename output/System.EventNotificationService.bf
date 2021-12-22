@@ -59,15 +59,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd597bab1, 0x5b9f, 0x11d1, 0x8d, 0xd2, 0x00, 0xaa, 0x00, 0x4a, 0xbd, 0x5e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ConnectionMade(BSTR bstrConnection, uint32 ulType, SENS_QOCINFO* lpQOCInfo) mut
+			{
+				return VT.ConnectionMade(&this, bstrConnection, ulType, lpQOCInfo);
+			}
+			public HRESULT ConnectionMadeNoQOCInfo(BSTR bstrConnection, uint32 ulType) mut
+			{
+				return VT.ConnectionMadeNoQOCInfo(&this, bstrConnection, ulType);
+			}
+			public HRESULT ConnectionLost(BSTR bstrConnection, SENS_CONNECTION_TYPE ulType) mut
+			{
+				return VT.ConnectionLost(&this, bstrConnection, ulType);
+			}
+			public HRESULT DestinationReachable(BSTR bstrDestination, BSTR bstrConnection, uint32 ulType, SENS_QOCINFO* lpQOCInfo) mut
+			{
+				return VT.DestinationReachable(&this, bstrDestination, bstrConnection, ulType, lpQOCInfo);
+			}
+			public HRESULT DestinationReachableNoQOCInfo(BSTR bstrDestination, BSTR bstrConnection, uint32 ulType) mut
+			{
+				return VT.DestinationReachableNoQOCInfo(&this, bstrDestination, bstrConnection, ulType);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISensNetwork *self, BSTR bstrConnection, uint32 ulType, SENS_QOCINFO* lpQOCInfo) ConnectionMade;
-				public function HRESULT(ISensNetwork *self, BSTR bstrConnection, uint32 ulType) ConnectionMadeNoQOCInfo;
-				public function HRESULT(ISensNetwork *self, BSTR bstrConnection, SENS_CONNECTION_TYPE ulType) ConnectionLost;
-				public function HRESULT(ISensNetwork *self, BSTR bstrDestination, BSTR bstrConnection, uint32 ulType, SENS_QOCINFO* lpQOCInfo) DestinationReachable;
-				public function HRESULT(ISensNetwork *self, BSTR bstrDestination, BSTR bstrConnection, uint32 ulType) DestinationReachableNoQOCInfo;
+				public new function HRESULT(ISensNetwork *self, BSTR bstrConnection, uint32 ulType, SENS_QOCINFO* lpQOCInfo) ConnectionMade;
+				public new function HRESULT(ISensNetwork *self, BSTR bstrConnection, uint32 ulType) ConnectionMadeNoQOCInfo;
+				public new function HRESULT(ISensNetwork *self, BSTR bstrConnection, SENS_CONNECTION_TYPE ulType) ConnectionLost;
+				public new function HRESULT(ISensNetwork *self, BSTR bstrDestination, BSTR bstrConnection, uint32 ulType, SENS_QOCINFO* lpQOCInfo) DestinationReachable;
+				public new function HRESULT(ISensNetwork *self, BSTR bstrDestination, BSTR bstrConnection, uint32 ulType) DestinationReachableNoQOCInfo;
 			}
 		}
 		[CRepr]
@@ -75,13 +96,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd597bab2, 0x5b9f, 0x11d1, 0x8d, 0xd2, 0x00, 0xaa, 0x00, 0x4a, 0xbd, 0x5e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnACPower() mut
+			{
+				return VT.OnACPower(&this);
+			}
+			public HRESULT OnBatteryPower(uint32 dwBatteryLifePercent) mut
+			{
+				return VT.OnBatteryPower(&this, dwBatteryLifePercent);
+			}
+			public HRESULT BatteryLow(uint32 dwBatteryLifePercent) mut
+			{
+				return VT.BatteryLow(&this, dwBatteryLifePercent);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISensOnNow *self) OnACPower;
-				public function HRESULT(ISensOnNow *self, uint32 dwBatteryLifePercent) OnBatteryPower;
-				public function HRESULT(ISensOnNow *self, uint32 dwBatteryLifePercent) BatteryLow;
+				public new function HRESULT(ISensOnNow *self) OnACPower;
+				public new function HRESULT(ISensOnNow *self, uint32 dwBatteryLifePercent) OnBatteryPower;
+				public new function HRESULT(ISensOnNow *self, uint32 dwBatteryLifePercent) BatteryLow;
 			}
 		}
 		[CRepr]
@@ -89,17 +123,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd597bab3, 0x5b9f, 0x11d1, 0x8d, 0xd2, 0x00, 0xaa, 0x00, 0x4a, 0xbd, 0x5e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Logon(BSTR bstrUserName) mut
+			{
+				return VT.Logon(&this, bstrUserName);
+			}
+			public HRESULT Logoff(BSTR bstrUserName) mut
+			{
+				return VT.Logoff(&this, bstrUserName);
+			}
+			public HRESULT StartShell(BSTR bstrUserName) mut
+			{
+				return VT.StartShell(&this, bstrUserName);
+			}
+			public HRESULT DisplayLock(BSTR bstrUserName) mut
+			{
+				return VT.DisplayLock(&this, bstrUserName);
+			}
+			public HRESULT DisplayUnlock(BSTR bstrUserName) mut
+			{
+				return VT.DisplayUnlock(&this, bstrUserName);
+			}
+			public HRESULT StartScreenSaver(BSTR bstrUserName) mut
+			{
+				return VT.StartScreenSaver(&this, bstrUserName);
+			}
+			public HRESULT StopScreenSaver(BSTR bstrUserName) mut
+			{
+				return VT.StopScreenSaver(&this, bstrUserName);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISensLogon *self, BSTR bstrUserName) Logon;
-				public function HRESULT(ISensLogon *self, BSTR bstrUserName) Logoff;
-				public function HRESULT(ISensLogon *self, BSTR bstrUserName) StartShell;
-				public function HRESULT(ISensLogon *self, BSTR bstrUserName) DisplayLock;
-				public function HRESULT(ISensLogon *self, BSTR bstrUserName) DisplayUnlock;
-				public function HRESULT(ISensLogon *self, BSTR bstrUserName) StartScreenSaver;
-				public function HRESULT(ISensLogon *self, BSTR bstrUserName) StopScreenSaver;
+				public new function HRESULT(ISensLogon *self, BSTR bstrUserName) Logon;
+				public new function HRESULT(ISensLogon *self, BSTR bstrUserName) Logoff;
+				public new function HRESULT(ISensLogon *self, BSTR bstrUserName) StartShell;
+				public new function HRESULT(ISensLogon *self, BSTR bstrUserName) DisplayLock;
+				public new function HRESULT(ISensLogon *self, BSTR bstrUserName) DisplayUnlock;
+				public new function HRESULT(ISensLogon *self, BSTR bstrUserName) StartScreenSaver;
+				public new function HRESULT(ISensLogon *self, BSTR bstrUserName) StopScreenSaver;
 			}
 		}
 		[CRepr]
@@ -107,15 +170,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd597bab4, 0x5b9f, 0x11d1, 0x8d, 0xd2, 0x00, 0xaa, 0x00, 0x4a, 0xbd, 0x5e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Logon(BSTR bstrUserName, uint32 dwSessionId) mut
+			{
+				return VT.Logon(&this, bstrUserName, dwSessionId);
+			}
+			public HRESULT Logoff(BSTR bstrUserName, uint32 dwSessionId) mut
+			{
+				return VT.Logoff(&this, bstrUserName, dwSessionId);
+			}
+			public HRESULT SessionDisconnect(BSTR bstrUserName, uint32 dwSessionId) mut
+			{
+				return VT.SessionDisconnect(&this, bstrUserName, dwSessionId);
+			}
+			public HRESULT SessionReconnect(BSTR bstrUserName, uint32 dwSessionId) mut
+			{
+				return VT.SessionReconnect(&this, bstrUserName, dwSessionId);
+			}
+			public HRESULT PostShell(BSTR bstrUserName, uint32 dwSessionId) mut
+			{
+				return VT.PostShell(&this, bstrUserName, dwSessionId);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISensLogon2 *self, BSTR bstrUserName, uint32 dwSessionId) Logon;
-				public function HRESULT(ISensLogon2 *self, BSTR bstrUserName, uint32 dwSessionId) Logoff;
-				public function HRESULT(ISensLogon2 *self, BSTR bstrUserName, uint32 dwSessionId) SessionDisconnect;
-				public function HRESULT(ISensLogon2 *self, BSTR bstrUserName, uint32 dwSessionId) SessionReconnect;
-				public function HRESULT(ISensLogon2 *self, BSTR bstrUserName, uint32 dwSessionId) PostShell;
+				public new function HRESULT(ISensLogon2 *self, BSTR bstrUserName, uint32 dwSessionId) Logon;
+				public new function HRESULT(ISensLogon2 *self, BSTR bstrUserName, uint32 dwSessionId) Logoff;
+				public new function HRESULT(ISensLogon2 *self, BSTR bstrUserName, uint32 dwSessionId) SessionDisconnect;
+				public new function HRESULT(ISensLogon2 *self, BSTR bstrUserName, uint32 dwSessionId) SessionReconnect;
+				public new function HRESULT(ISensLogon2 *self, BSTR bstrUserName, uint32 dwSessionId) PostShell;
 			}
 		}
 		

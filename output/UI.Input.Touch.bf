@@ -118,13 +118,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4f62c8da, 0x9c53, 0x4b22, 0x93, 0xdf, 0x92, 0x7a, 0x86, 0x2b, 0xbb, 0x03);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ManipulationStarted(float x, float y) mut
+			{
+				return VT.ManipulationStarted(&this, x, y);
+			}
+			public HRESULT ManipulationDelta(float x, float y, float translationDeltaX, float translationDeltaY, float scaleDelta, float expansionDelta, float rotationDelta, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation) mut
+			{
+				return VT.ManipulationDelta(&this, x, y, translationDeltaX, translationDeltaY, scaleDelta, expansionDelta, rotationDelta, cumulativeTranslationX, cumulativeTranslationY, cumulativeScale, cumulativeExpansion, cumulativeRotation);
+			}
+			public HRESULT ManipulationCompleted(float x, float y, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation) mut
+			{
+				return VT.ManipulationCompleted(&this, x, y, cumulativeTranslationX, cumulativeTranslationY, cumulativeScale, cumulativeExpansion, cumulativeRotation);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(_IManipulationEvents *self, float x, float y) ManipulationStarted;
-				public function HRESULT(_IManipulationEvents *self, float x, float y, float translationDeltaX, float translationDeltaY, float scaleDelta, float expansionDelta, float rotationDelta, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation) ManipulationDelta;
-				public function HRESULT(_IManipulationEvents *self, float x, float y, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation) ManipulationCompleted;
+				public new function HRESULT(_IManipulationEvents *self, float x, float y) ManipulationStarted;
+				public new function HRESULT(_IManipulationEvents *self, float x, float y, float translationDeltaX, float translationDeltaY, float scaleDelta, float expansionDelta, float rotationDelta, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation) ManipulationDelta;
+				public new function HRESULT(_IManipulationEvents *self, float x, float y, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation) ManipulationCompleted;
 			}
 		}
 		[CRepr]
@@ -132,59 +145,256 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x18b00c6d, 0xc5ee, 0x41b1, 0x90, 0xa9, 0x9d, 0x4a, 0x92, 0x90, 0x95, 0xad);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_InitialOriginX(float* x) mut
+			{
+				return VT.get_InitialOriginX(&this, x);
+			}
+			public HRESULT put_InitialOriginX(float x) mut
+			{
+				return VT.put_InitialOriginX(&this, x);
+			}
+			public HRESULT get_InitialOriginY(float* y) mut
+			{
+				return VT.get_InitialOriginY(&this, y);
+			}
+			public HRESULT put_InitialOriginY(float y) mut
+			{
+				return VT.put_InitialOriginY(&this, y);
+			}
+			public HRESULT get_InitialVelocityX(float* x) mut
+			{
+				return VT.get_InitialVelocityX(&this, x);
+			}
+			public HRESULT put_InitialVelocityX(float x) mut
+			{
+				return VT.put_InitialVelocityX(&this, x);
+			}
+			public HRESULT get_InitialVelocityY(float* y) mut
+			{
+				return VT.get_InitialVelocityY(&this, y);
+			}
+			public HRESULT put_InitialVelocityY(float y) mut
+			{
+				return VT.put_InitialVelocityY(&this, y);
+			}
+			public HRESULT get_InitialAngularVelocity(float* velocity) mut
+			{
+				return VT.get_InitialAngularVelocity(&this, velocity);
+			}
+			public HRESULT put_InitialAngularVelocity(float velocity) mut
+			{
+				return VT.put_InitialAngularVelocity(&this, velocity);
+			}
+			public HRESULT get_InitialExpansionVelocity(float* velocity) mut
+			{
+				return VT.get_InitialExpansionVelocity(&this, velocity);
+			}
+			public HRESULT put_InitialExpansionVelocity(float velocity) mut
+			{
+				return VT.put_InitialExpansionVelocity(&this, velocity);
+			}
+			public HRESULT get_InitialRadius(float* radius) mut
+			{
+				return VT.get_InitialRadius(&this, radius);
+			}
+			public HRESULT put_InitialRadius(float radius) mut
+			{
+				return VT.put_InitialRadius(&this, radius);
+			}
+			public HRESULT get_BoundaryLeft(float* left) mut
+			{
+				return VT.get_BoundaryLeft(&this, left);
+			}
+			public HRESULT put_BoundaryLeft(float left) mut
+			{
+				return VT.put_BoundaryLeft(&this, left);
+			}
+			public HRESULT get_BoundaryTop(float* top) mut
+			{
+				return VT.get_BoundaryTop(&this, top);
+			}
+			public HRESULT put_BoundaryTop(float top) mut
+			{
+				return VT.put_BoundaryTop(&this, top);
+			}
+			public HRESULT get_BoundaryRight(float* right) mut
+			{
+				return VT.get_BoundaryRight(&this, right);
+			}
+			public HRESULT put_BoundaryRight(float right) mut
+			{
+				return VT.put_BoundaryRight(&this, right);
+			}
+			public HRESULT get_BoundaryBottom(float* bottom) mut
+			{
+				return VT.get_BoundaryBottom(&this, bottom);
+			}
+			public HRESULT put_BoundaryBottom(float bottom) mut
+			{
+				return VT.put_BoundaryBottom(&this, bottom);
+			}
+			public HRESULT get_ElasticMarginLeft(float* left) mut
+			{
+				return VT.get_ElasticMarginLeft(&this, left);
+			}
+			public HRESULT put_ElasticMarginLeft(float left) mut
+			{
+				return VT.put_ElasticMarginLeft(&this, left);
+			}
+			public HRESULT get_ElasticMarginTop(float* top) mut
+			{
+				return VT.get_ElasticMarginTop(&this, top);
+			}
+			public HRESULT put_ElasticMarginTop(float top) mut
+			{
+				return VT.put_ElasticMarginTop(&this, top);
+			}
+			public HRESULT get_ElasticMarginRight(float* right) mut
+			{
+				return VT.get_ElasticMarginRight(&this, right);
+			}
+			public HRESULT put_ElasticMarginRight(float right) mut
+			{
+				return VT.put_ElasticMarginRight(&this, right);
+			}
+			public HRESULT get_ElasticMarginBottom(float* bottom) mut
+			{
+				return VT.get_ElasticMarginBottom(&this, bottom);
+			}
+			public HRESULT put_ElasticMarginBottom(float bottom) mut
+			{
+				return VT.put_ElasticMarginBottom(&this, bottom);
+			}
+			public HRESULT get_DesiredDisplacement(float* displacement) mut
+			{
+				return VT.get_DesiredDisplacement(&this, displacement);
+			}
+			public HRESULT put_DesiredDisplacement(float displacement) mut
+			{
+				return VT.put_DesiredDisplacement(&this, displacement);
+			}
+			public HRESULT get_DesiredRotation(float* rotation) mut
+			{
+				return VT.get_DesiredRotation(&this, rotation);
+			}
+			public HRESULT put_DesiredRotation(float rotation) mut
+			{
+				return VT.put_DesiredRotation(&this, rotation);
+			}
+			public HRESULT get_DesiredExpansion(float* expansion) mut
+			{
+				return VT.get_DesiredExpansion(&this, expansion);
+			}
+			public HRESULT put_DesiredExpansion(float expansion) mut
+			{
+				return VT.put_DesiredExpansion(&this, expansion);
+			}
+			public HRESULT get_DesiredDeceleration(float* deceleration) mut
+			{
+				return VT.get_DesiredDeceleration(&this, deceleration);
+			}
+			public HRESULT put_DesiredDeceleration(float deceleration) mut
+			{
+				return VT.put_DesiredDeceleration(&this, deceleration);
+			}
+			public HRESULT get_DesiredAngularDeceleration(float* deceleration) mut
+			{
+				return VT.get_DesiredAngularDeceleration(&this, deceleration);
+			}
+			public HRESULT put_DesiredAngularDeceleration(float deceleration) mut
+			{
+				return VT.put_DesiredAngularDeceleration(&this, deceleration);
+			}
+			public HRESULT get_DesiredExpansionDeceleration(float* deceleration) mut
+			{
+				return VT.get_DesiredExpansionDeceleration(&this, deceleration);
+			}
+			public HRESULT put_DesiredExpansionDeceleration(float deceleration) mut
+			{
+				return VT.put_DesiredExpansionDeceleration(&this, deceleration);
+			}
+			public HRESULT get_InitialTimestamp(uint32* timestamp) mut
+			{
+				return VT.get_InitialTimestamp(&this, timestamp);
+			}
+			public HRESULT put_InitialTimestamp(uint32 timestamp) mut
+			{
+				return VT.put_InitialTimestamp(&this, timestamp);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Process(BOOL* completed) mut
+			{
+				return VT.Process(&this, completed);
+			}
+			public HRESULT ProcessTime(uint32 timestamp, BOOL* completed) mut
+			{
+				return VT.ProcessTime(&this, timestamp, completed);
+			}
+			public HRESULT Complete() mut
+			{
+				return VT.Complete(&this);
+			}
+			public HRESULT CompleteTime(uint32 timestamp) mut
+			{
+				return VT.CompleteTime(&this, timestamp);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IInertiaProcessor *self, float* x) get_InitialOriginX;
-				public function HRESULT(IInertiaProcessor *self, float x) put_InitialOriginX;
-				public function HRESULT(IInertiaProcessor *self, float* y) get_InitialOriginY;
-				public function HRESULT(IInertiaProcessor *self, float y) put_InitialOriginY;
-				public function HRESULT(IInertiaProcessor *self, float* x) get_InitialVelocityX;
-				public function HRESULT(IInertiaProcessor *self, float x) put_InitialVelocityX;
-				public function HRESULT(IInertiaProcessor *self, float* y) get_InitialVelocityY;
-				public function HRESULT(IInertiaProcessor *self, float y) put_InitialVelocityY;
-				public function HRESULT(IInertiaProcessor *self, float* velocity) get_InitialAngularVelocity;
-				public function HRESULT(IInertiaProcessor *self, float velocity) put_InitialAngularVelocity;
-				public function HRESULT(IInertiaProcessor *self, float* velocity) get_InitialExpansionVelocity;
-				public function HRESULT(IInertiaProcessor *self, float velocity) put_InitialExpansionVelocity;
-				public function HRESULT(IInertiaProcessor *self, float* radius) get_InitialRadius;
-				public function HRESULT(IInertiaProcessor *self, float radius) put_InitialRadius;
-				public function HRESULT(IInertiaProcessor *self, float* left) get_BoundaryLeft;
-				public function HRESULT(IInertiaProcessor *self, float left) put_BoundaryLeft;
-				public function HRESULT(IInertiaProcessor *self, float* top) get_BoundaryTop;
-				public function HRESULT(IInertiaProcessor *self, float top) put_BoundaryTop;
-				public function HRESULT(IInertiaProcessor *self, float* right) get_BoundaryRight;
-				public function HRESULT(IInertiaProcessor *self, float right) put_BoundaryRight;
-				public function HRESULT(IInertiaProcessor *self, float* bottom) get_BoundaryBottom;
-				public function HRESULT(IInertiaProcessor *self, float bottom) put_BoundaryBottom;
-				public function HRESULT(IInertiaProcessor *self, float* left) get_ElasticMarginLeft;
-				public function HRESULT(IInertiaProcessor *self, float left) put_ElasticMarginLeft;
-				public function HRESULT(IInertiaProcessor *self, float* top) get_ElasticMarginTop;
-				public function HRESULT(IInertiaProcessor *self, float top) put_ElasticMarginTop;
-				public function HRESULT(IInertiaProcessor *self, float* right) get_ElasticMarginRight;
-				public function HRESULT(IInertiaProcessor *self, float right) put_ElasticMarginRight;
-				public function HRESULT(IInertiaProcessor *self, float* bottom) get_ElasticMarginBottom;
-				public function HRESULT(IInertiaProcessor *self, float bottom) put_ElasticMarginBottom;
-				public function HRESULT(IInertiaProcessor *self, float* displacement) get_DesiredDisplacement;
-				public function HRESULT(IInertiaProcessor *self, float displacement) put_DesiredDisplacement;
-				public function HRESULT(IInertiaProcessor *self, float* rotation) get_DesiredRotation;
-				public function HRESULT(IInertiaProcessor *self, float rotation) put_DesiredRotation;
-				public function HRESULT(IInertiaProcessor *self, float* expansion) get_DesiredExpansion;
-				public function HRESULT(IInertiaProcessor *self, float expansion) put_DesiredExpansion;
-				public function HRESULT(IInertiaProcessor *self, float* deceleration) get_DesiredDeceleration;
-				public function HRESULT(IInertiaProcessor *self, float deceleration) put_DesiredDeceleration;
-				public function HRESULT(IInertiaProcessor *self, float* deceleration) get_DesiredAngularDeceleration;
-				public function HRESULT(IInertiaProcessor *self, float deceleration) put_DesiredAngularDeceleration;
-				public function HRESULT(IInertiaProcessor *self, float* deceleration) get_DesiredExpansionDeceleration;
-				public function HRESULT(IInertiaProcessor *self, float deceleration) put_DesiredExpansionDeceleration;
-				public function HRESULT(IInertiaProcessor *self, uint32* timestamp) get_InitialTimestamp;
-				public function HRESULT(IInertiaProcessor *self, uint32 timestamp) put_InitialTimestamp;
-				public function HRESULT(IInertiaProcessor *self) Reset;
-				public function HRESULT(IInertiaProcessor *self, BOOL* completed) Process;
-				public function HRESULT(IInertiaProcessor *self, uint32 timestamp, BOOL* completed) ProcessTime;
-				public function HRESULT(IInertiaProcessor *self) Complete;
-				public function HRESULT(IInertiaProcessor *self, uint32 timestamp) CompleteTime;
+				public new function HRESULT(IInertiaProcessor *self, float* x) get_InitialOriginX;
+				public new function HRESULT(IInertiaProcessor *self, float x) put_InitialOriginX;
+				public new function HRESULT(IInertiaProcessor *self, float* y) get_InitialOriginY;
+				public new function HRESULT(IInertiaProcessor *self, float y) put_InitialOriginY;
+				public new function HRESULT(IInertiaProcessor *self, float* x) get_InitialVelocityX;
+				public new function HRESULT(IInertiaProcessor *self, float x) put_InitialVelocityX;
+				public new function HRESULT(IInertiaProcessor *self, float* y) get_InitialVelocityY;
+				public new function HRESULT(IInertiaProcessor *self, float y) put_InitialVelocityY;
+				public new function HRESULT(IInertiaProcessor *self, float* velocity) get_InitialAngularVelocity;
+				public new function HRESULT(IInertiaProcessor *self, float velocity) put_InitialAngularVelocity;
+				public new function HRESULT(IInertiaProcessor *self, float* velocity) get_InitialExpansionVelocity;
+				public new function HRESULT(IInertiaProcessor *self, float velocity) put_InitialExpansionVelocity;
+				public new function HRESULT(IInertiaProcessor *self, float* radius) get_InitialRadius;
+				public new function HRESULT(IInertiaProcessor *self, float radius) put_InitialRadius;
+				public new function HRESULT(IInertiaProcessor *self, float* left) get_BoundaryLeft;
+				public new function HRESULT(IInertiaProcessor *self, float left) put_BoundaryLeft;
+				public new function HRESULT(IInertiaProcessor *self, float* top) get_BoundaryTop;
+				public new function HRESULT(IInertiaProcessor *self, float top) put_BoundaryTop;
+				public new function HRESULT(IInertiaProcessor *self, float* right) get_BoundaryRight;
+				public new function HRESULT(IInertiaProcessor *self, float right) put_BoundaryRight;
+				public new function HRESULT(IInertiaProcessor *self, float* bottom) get_BoundaryBottom;
+				public new function HRESULT(IInertiaProcessor *self, float bottom) put_BoundaryBottom;
+				public new function HRESULT(IInertiaProcessor *self, float* left) get_ElasticMarginLeft;
+				public new function HRESULT(IInertiaProcessor *self, float left) put_ElasticMarginLeft;
+				public new function HRESULT(IInertiaProcessor *self, float* top) get_ElasticMarginTop;
+				public new function HRESULT(IInertiaProcessor *self, float top) put_ElasticMarginTop;
+				public new function HRESULT(IInertiaProcessor *self, float* right) get_ElasticMarginRight;
+				public new function HRESULT(IInertiaProcessor *self, float right) put_ElasticMarginRight;
+				public new function HRESULT(IInertiaProcessor *self, float* bottom) get_ElasticMarginBottom;
+				public new function HRESULT(IInertiaProcessor *self, float bottom) put_ElasticMarginBottom;
+				public new function HRESULT(IInertiaProcessor *self, float* displacement) get_DesiredDisplacement;
+				public new function HRESULT(IInertiaProcessor *self, float displacement) put_DesiredDisplacement;
+				public new function HRESULT(IInertiaProcessor *self, float* rotation) get_DesiredRotation;
+				public new function HRESULT(IInertiaProcessor *self, float rotation) put_DesiredRotation;
+				public new function HRESULT(IInertiaProcessor *self, float* expansion) get_DesiredExpansion;
+				public new function HRESULT(IInertiaProcessor *self, float expansion) put_DesiredExpansion;
+				public new function HRESULT(IInertiaProcessor *self, float* deceleration) get_DesiredDeceleration;
+				public new function HRESULT(IInertiaProcessor *self, float deceleration) put_DesiredDeceleration;
+				public new function HRESULT(IInertiaProcessor *self, float* deceleration) get_DesiredAngularDeceleration;
+				public new function HRESULT(IInertiaProcessor *self, float deceleration) put_DesiredAngularDeceleration;
+				public new function HRESULT(IInertiaProcessor *self, float* deceleration) get_DesiredExpansionDeceleration;
+				public new function HRESULT(IInertiaProcessor *self, float deceleration) put_DesiredExpansionDeceleration;
+				public new function HRESULT(IInertiaProcessor *self, uint32* timestamp) get_InitialTimestamp;
+				public new function HRESULT(IInertiaProcessor *self, uint32 timestamp) put_InitialTimestamp;
+				public new function HRESULT(IInertiaProcessor *self) Reset;
+				public new function HRESULT(IInertiaProcessor *self, BOOL* completed) Process;
+				public new function HRESULT(IInertiaProcessor *self, uint32 timestamp, BOOL* completed) ProcessTime;
+				public new function HRESULT(IInertiaProcessor *self) Complete;
+				public new function HRESULT(IInertiaProcessor *self, uint32 timestamp) CompleteTime;
 			}
 		}
 		[CRepr]
@@ -192,31 +402,116 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa22ac519, 0x8300, 0x48a0, 0xbe, 0xf4, 0xf1, 0xbe, 0x87, 0x37, 0xdb, 0xa4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_SupportedManipulations(MANIPULATION_PROCESSOR_MANIPULATIONS* manipulations) mut
+			{
+				return VT.get_SupportedManipulations(&this, manipulations);
+			}
+			public HRESULT put_SupportedManipulations(MANIPULATION_PROCESSOR_MANIPULATIONS manipulations) mut
+			{
+				return VT.put_SupportedManipulations(&this, manipulations);
+			}
+			public HRESULT get_PivotPointX(float* pivotPointX) mut
+			{
+				return VT.get_PivotPointX(&this, pivotPointX);
+			}
+			public HRESULT put_PivotPointX(float pivotPointX) mut
+			{
+				return VT.put_PivotPointX(&this, pivotPointX);
+			}
+			public HRESULT get_PivotPointY(float* pivotPointY) mut
+			{
+				return VT.get_PivotPointY(&this, pivotPointY);
+			}
+			public HRESULT put_PivotPointY(float pivotPointY) mut
+			{
+				return VT.put_PivotPointY(&this, pivotPointY);
+			}
+			public HRESULT get_PivotRadius(float* pivotRadius) mut
+			{
+				return VT.get_PivotRadius(&this, pivotRadius);
+			}
+			public HRESULT put_PivotRadius(float pivotRadius) mut
+			{
+				return VT.put_PivotRadius(&this, pivotRadius);
+			}
+			public HRESULT CompleteManipulation() mut
+			{
+				return VT.CompleteManipulation(&this);
+			}
+			public HRESULT ProcessDown(uint32 manipulatorId, float x, float y) mut
+			{
+				return VT.ProcessDown(&this, manipulatorId, x, y);
+			}
+			public HRESULT ProcessMove(uint32 manipulatorId, float x, float y) mut
+			{
+				return VT.ProcessMove(&this, manipulatorId, x, y);
+			}
+			public HRESULT ProcessUp(uint32 manipulatorId, float x, float y) mut
+			{
+				return VT.ProcessUp(&this, manipulatorId, x, y);
+			}
+			public HRESULT ProcessDownWithTime(uint32 manipulatorId, float x, float y, uint32 timestamp) mut
+			{
+				return VT.ProcessDownWithTime(&this, manipulatorId, x, y, timestamp);
+			}
+			public HRESULT ProcessMoveWithTime(uint32 manipulatorId, float x, float y, uint32 timestamp) mut
+			{
+				return VT.ProcessMoveWithTime(&this, manipulatorId, x, y, timestamp);
+			}
+			public HRESULT ProcessUpWithTime(uint32 manipulatorId, float x, float y, uint32 timestamp) mut
+			{
+				return VT.ProcessUpWithTime(&this, manipulatorId, x, y, timestamp);
+			}
+			public HRESULT GetVelocityX(float* velocityX) mut
+			{
+				return VT.GetVelocityX(&this, velocityX);
+			}
+			public HRESULT GetVelocityY(float* velocityY) mut
+			{
+				return VT.GetVelocityY(&this, velocityY);
+			}
+			public HRESULT GetExpansionVelocity(float* expansionVelocity) mut
+			{
+				return VT.GetExpansionVelocity(&this, expansionVelocity);
+			}
+			public HRESULT GetAngularVelocity(float* angularVelocity) mut
+			{
+				return VT.GetAngularVelocity(&this, angularVelocity);
+			}
+			public HRESULT get_MinimumScaleRotateRadius(float* minRadius) mut
+			{
+				return VT.get_MinimumScaleRotateRadius(&this, minRadius);
+			}
+			public HRESULT put_MinimumScaleRotateRadius(float minRadius) mut
+			{
+				return VT.put_MinimumScaleRotateRadius(&this, minRadius);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IManipulationProcessor *self, MANIPULATION_PROCESSOR_MANIPULATIONS* manipulations) get_SupportedManipulations;
-				public function HRESULT(IManipulationProcessor *self, MANIPULATION_PROCESSOR_MANIPULATIONS manipulations) put_SupportedManipulations;
-				public function HRESULT(IManipulationProcessor *self, float* pivotPointX) get_PivotPointX;
-				public function HRESULT(IManipulationProcessor *self, float pivotPointX) put_PivotPointX;
-				public function HRESULT(IManipulationProcessor *self, float* pivotPointY) get_PivotPointY;
-				public function HRESULT(IManipulationProcessor *self, float pivotPointY) put_PivotPointY;
-				public function HRESULT(IManipulationProcessor *self, float* pivotRadius) get_PivotRadius;
-				public function HRESULT(IManipulationProcessor *self, float pivotRadius) put_PivotRadius;
-				public function HRESULT(IManipulationProcessor *self) CompleteManipulation;
-				public function HRESULT(IManipulationProcessor *self, uint32 manipulatorId, float x, float y) ProcessDown;
-				public function HRESULT(IManipulationProcessor *self, uint32 manipulatorId, float x, float y) ProcessMove;
-				public function HRESULT(IManipulationProcessor *self, uint32 manipulatorId, float x, float y) ProcessUp;
-				public function HRESULT(IManipulationProcessor *self, uint32 manipulatorId, float x, float y, uint32 timestamp) ProcessDownWithTime;
-				public function HRESULT(IManipulationProcessor *self, uint32 manipulatorId, float x, float y, uint32 timestamp) ProcessMoveWithTime;
-				public function HRESULT(IManipulationProcessor *self, uint32 manipulatorId, float x, float y, uint32 timestamp) ProcessUpWithTime;
-				public function HRESULT(IManipulationProcessor *self, float* velocityX) GetVelocityX;
-				public function HRESULT(IManipulationProcessor *self, float* velocityY) GetVelocityY;
-				public function HRESULT(IManipulationProcessor *self, float* expansionVelocity) GetExpansionVelocity;
-				public function HRESULT(IManipulationProcessor *self, float* angularVelocity) GetAngularVelocity;
-				public function HRESULT(IManipulationProcessor *self, float* minRadius) get_MinimumScaleRotateRadius;
-				public function HRESULT(IManipulationProcessor *self, float minRadius) put_MinimumScaleRotateRadius;
+				public new function HRESULT(IManipulationProcessor *self, MANIPULATION_PROCESSOR_MANIPULATIONS* manipulations) get_SupportedManipulations;
+				public new function HRESULT(IManipulationProcessor *self, MANIPULATION_PROCESSOR_MANIPULATIONS manipulations) put_SupportedManipulations;
+				public new function HRESULT(IManipulationProcessor *self, float* pivotPointX) get_PivotPointX;
+				public new function HRESULT(IManipulationProcessor *self, float pivotPointX) put_PivotPointX;
+				public new function HRESULT(IManipulationProcessor *self, float* pivotPointY) get_PivotPointY;
+				public new function HRESULT(IManipulationProcessor *self, float pivotPointY) put_PivotPointY;
+				public new function HRESULT(IManipulationProcessor *self, float* pivotRadius) get_PivotRadius;
+				public new function HRESULT(IManipulationProcessor *self, float pivotRadius) put_PivotRadius;
+				public new function HRESULT(IManipulationProcessor *self) CompleteManipulation;
+				public new function HRESULT(IManipulationProcessor *self, uint32 manipulatorId, float x, float y) ProcessDown;
+				public new function HRESULT(IManipulationProcessor *self, uint32 manipulatorId, float x, float y) ProcessMove;
+				public new function HRESULT(IManipulationProcessor *self, uint32 manipulatorId, float x, float y) ProcessUp;
+				public new function HRESULT(IManipulationProcessor *self, uint32 manipulatorId, float x, float y, uint32 timestamp) ProcessDownWithTime;
+				public new function HRESULT(IManipulationProcessor *self, uint32 manipulatorId, float x, float y, uint32 timestamp) ProcessMoveWithTime;
+				public new function HRESULT(IManipulationProcessor *self, uint32 manipulatorId, float x, float y, uint32 timestamp) ProcessUpWithTime;
+				public new function HRESULT(IManipulationProcessor *self, float* velocityX) GetVelocityX;
+				public new function HRESULT(IManipulationProcessor *self, float* velocityY) GetVelocityY;
+				public new function HRESULT(IManipulationProcessor *self, float* expansionVelocity) GetExpansionVelocity;
+				public new function HRESULT(IManipulationProcessor *self, float* angularVelocity) GetAngularVelocity;
+				public new function HRESULT(IManipulationProcessor *self, float* minRadius) get_MinimumScaleRotateRadius;
+				public new function HRESULT(IManipulationProcessor *self, float minRadius) put_MinimumScaleRotateRadius;
 			}
 		}
 		

@@ -1944,13 +1944,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x00000016, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public uint32 HandleInComingCall(uint32 dwCallType, HTASK htaskCaller, uint32 dwTickCount, INTERFACEINFO* lpInterfaceInfo) mut
+			{
+				return VT.HandleInComingCall(&this, dwCallType, htaskCaller, dwTickCount, lpInterfaceInfo);
+			}
+			public uint32 RetryRejectedCall(HTASK htaskCallee, uint32 dwTickCount, uint32 dwRejectType) mut
+			{
+				return VT.RetryRejectedCall(&this, htaskCallee, dwTickCount, dwRejectType);
+			}
+			public uint32 MessagePending(HTASK htaskCallee, uint32 dwTickCount, uint32 dwPendingType) mut
+			{
+				return VT.MessagePending(&this, htaskCallee, dwTickCount, dwPendingType);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function uint32(IMessageFilter *self, uint32 dwCallType, HTASK htaskCaller, uint32 dwTickCount, INTERFACEINFO* lpInterfaceInfo) HandleInComingCall;
-				public function uint32(IMessageFilter *self, HTASK htaskCallee, uint32 dwTickCount, uint32 dwRejectType) RetryRejectedCall;
-				public function uint32(IMessageFilter *self, HTASK htaskCallee, uint32 dwTickCount, uint32 dwPendingType) MessagePending;
+				public new function uint32(IMessageFilter *self, uint32 dwCallType, HTASK htaskCaller, uint32 dwTickCount, INTERFACEINFO* lpInterfaceInfo) HandleInComingCall;
+				public new function uint32(IMessageFilter *self, HTASK htaskCallee, uint32 dwTickCount, uint32 dwRejectType) RetryRejectedCall;
+				public new function uint32(IMessageFilter *self, HTASK htaskCallee, uint32 dwTickCount, uint32 dwPendingType) MessagePending;
 			}
 		}
 		[CRepr]
@@ -1958,22 +1971,71 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1cb9ad4c, 0xdbfa, 0x4c32, 0xb1, 0x78, 0xc2, 0xf5, 0x68, 0xa7, 0x03, 0xb2);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(AUDCLNT_SHAREMODE ShareMode, uint32 StreamFlags, int64 hnsBufferDuration, int64 hnsPeriodicity, WAVEFORMATEX* pFormat, Guid* AudioSessionGuid) mut
+			{
+				return VT.Initialize(&this, ShareMode, StreamFlags, hnsBufferDuration, hnsPeriodicity, pFormat, AudioSessionGuid);
+			}
+			public HRESULT GetBufferSize(uint32* pNumBufferFrames) mut
+			{
+				return VT.GetBufferSize(&this, pNumBufferFrames);
+			}
+			public HRESULT GetStreamLatency(int64* phnsLatency) mut
+			{
+				return VT.GetStreamLatency(&this, phnsLatency);
+			}
+			public HRESULT GetCurrentPadding(uint32* pNumPaddingFrames) mut
+			{
+				return VT.GetCurrentPadding(&this, pNumPaddingFrames);
+			}
+			public HRESULT IsFormatSupported(AUDCLNT_SHAREMODE ShareMode, WAVEFORMATEX* pFormat, WAVEFORMATEX** ppClosestMatch) mut
+			{
+				return VT.IsFormatSupported(&this, ShareMode, pFormat, ppClosestMatch);
+			}
+			public HRESULT GetMixFormat(WAVEFORMATEX** ppDeviceFormat) mut
+			{
+				return VT.GetMixFormat(&this, ppDeviceFormat);
+			}
+			public HRESULT GetDevicePeriod(int64* phnsDefaultDevicePeriod, int64* phnsMinimumDevicePeriod) mut
+			{
+				return VT.GetDevicePeriod(&this, phnsDefaultDevicePeriod, phnsMinimumDevicePeriod);
+			}
+			public HRESULT Start() mut
+			{
+				return VT.Start(&this);
+			}
+			public HRESULT Stop() mut
+			{
+				return VT.Stop(&this);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT SetEventHandle(HANDLE eventHandle) mut
+			{
+				return VT.SetEventHandle(&this, eventHandle);
+			}
+			public HRESULT GetService(Guid* riid, void** ppv) mut
+			{
+				return VT.GetService(&this, riid, ppv);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioClient *self, AUDCLNT_SHAREMODE ShareMode, uint32 StreamFlags, int64 hnsBufferDuration, int64 hnsPeriodicity, WAVEFORMATEX* pFormat, Guid* AudioSessionGuid) Initialize;
-				public function HRESULT(IAudioClient *self, uint32* pNumBufferFrames) GetBufferSize;
-				public function HRESULT(IAudioClient *self, int64* phnsLatency) GetStreamLatency;
-				public function HRESULT(IAudioClient *self, uint32* pNumPaddingFrames) GetCurrentPadding;
-				public function HRESULT(IAudioClient *self, AUDCLNT_SHAREMODE ShareMode, WAVEFORMATEX* pFormat, WAVEFORMATEX** ppClosestMatch) IsFormatSupported;
-				public function HRESULT(IAudioClient *self, WAVEFORMATEX** ppDeviceFormat) GetMixFormat;
-				public function HRESULT(IAudioClient *self, int64* phnsDefaultDevicePeriod, int64* phnsMinimumDevicePeriod) GetDevicePeriod;
-				public function HRESULT(IAudioClient *self) Start;
-				public function HRESULT(IAudioClient *self) Stop;
-				public function HRESULT(IAudioClient *self) Reset;
-				public function HRESULT(IAudioClient *self, HANDLE eventHandle) SetEventHandle;
-				public function HRESULT(IAudioClient *self, Guid* riid, void** ppv) GetService;
+				public new function HRESULT(IAudioClient *self, AUDCLNT_SHAREMODE ShareMode, uint32 StreamFlags, int64 hnsBufferDuration, int64 hnsPeriodicity, WAVEFORMATEX* pFormat, Guid* AudioSessionGuid) Initialize;
+				public new function HRESULT(IAudioClient *self, uint32* pNumBufferFrames) GetBufferSize;
+				public new function HRESULT(IAudioClient *self, int64* phnsLatency) GetStreamLatency;
+				public new function HRESULT(IAudioClient *self, uint32* pNumPaddingFrames) GetCurrentPadding;
+				public new function HRESULT(IAudioClient *self, AUDCLNT_SHAREMODE ShareMode, WAVEFORMATEX* pFormat, WAVEFORMATEX** ppClosestMatch) IsFormatSupported;
+				public new function HRESULT(IAudioClient *self, WAVEFORMATEX** ppDeviceFormat) GetMixFormat;
+				public new function HRESULT(IAudioClient *self, int64* phnsDefaultDevicePeriod, int64* phnsMinimumDevicePeriod) GetDevicePeriod;
+				public new function HRESULT(IAudioClient *self) Start;
+				public new function HRESULT(IAudioClient *self) Stop;
+				public new function HRESULT(IAudioClient *self) Reset;
+				public new function HRESULT(IAudioClient *self, HANDLE eventHandle) SetEventHandle;
+				public new function HRESULT(IAudioClient *self, Guid* riid, void** ppv) GetService;
 			}
 		}
 		[CRepr]
@@ -1981,13 +2043,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x726778cd, 0xf60a, 0x4eda, 0x82, 0xde, 0xe4, 0x76, 0x10, 0xcd, 0x78, 0xaa);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT IsOffloadCapable(AUDIO_STREAM_CATEGORY Category, BOOL* pbOffloadCapable) mut
+			{
+				return VT.IsOffloadCapable(&this, Category, pbOffloadCapable);
+			}
+			public HRESULT SetClientProperties(AudioClientProperties* pProperties) mut
+			{
+				return VT.SetClientProperties(&this, pProperties);
+			}
+			public HRESULT GetBufferSizeLimits(WAVEFORMATEX* pFormat, BOOL bEventDriven, int64* phnsMinBufferDuration, int64* phnsMaxBufferDuration) mut
+			{
+				return VT.GetBufferSizeLimits(&this, pFormat, bEventDriven, phnsMinBufferDuration, phnsMaxBufferDuration);
+			}
 			[CRepr]
 			public struct VTable : IAudioClient.VTable
 			{
-				public function HRESULT(IAudioClient2 *self, AUDIO_STREAM_CATEGORY Category, BOOL* pbOffloadCapable) IsOffloadCapable;
-				public function HRESULT(IAudioClient2 *self, AudioClientProperties* pProperties) SetClientProperties;
-				public function HRESULT(IAudioClient2 *self, WAVEFORMATEX* pFormat, BOOL bEventDriven, int64* phnsMinBufferDuration, int64* phnsMaxBufferDuration) GetBufferSizeLimits;
+				public new function HRESULT(IAudioClient2 *self, AUDIO_STREAM_CATEGORY Category, BOOL* pbOffloadCapable) IsOffloadCapable;
+				public new function HRESULT(IAudioClient2 *self, AudioClientProperties* pProperties) SetClientProperties;
+				public new function HRESULT(IAudioClient2 *self, WAVEFORMATEX* pFormat, BOOL bEventDriven, int64* phnsMinBufferDuration, int64* phnsMaxBufferDuration) GetBufferSizeLimits;
 			}
 		}
 		[CRepr]
@@ -1995,13 +2070,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7ed4ee07, 0x8e67, 0x4cd4, 0x8c, 0x1a, 0x2b, 0x7a, 0x59, 0x87, 0xad, 0x42);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSharedModeEnginePeriod(WAVEFORMATEX* pFormat, uint32* pDefaultPeriodInFrames, uint32* pFundamentalPeriodInFrames, uint32* pMinPeriodInFrames, uint32* pMaxPeriodInFrames) mut
+			{
+				return VT.GetSharedModeEnginePeriod(&this, pFormat, pDefaultPeriodInFrames, pFundamentalPeriodInFrames, pMinPeriodInFrames, pMaxPeriodInFrames);
+			}
+			public HRESULT GetCurrentSharedModeEnginePeriod(WAVEFORMATEX** ppFormat, uint32* pCurrentPeriodInFrames) mut
+			{
+				return VT.GetCurrentSharedModeEnginePeriod(&this, ppFormat, pCurrentPeriodInFrames);
+			}
+			public HRESULT InitializeSharedAudioStream(uint32 StreamFlags, uint32 PeriodInFrames, WAVEFORMATEX* pFormat, Guid* AudioSessionGuid) mut
+			{
+				return VT.InitializeSharedAudioStream(&this, StreamFlags, PeriodInFrames, pFormat, AudioSessionGuid);
+			}
 			[CRepr]
 			public struct VTable : IAudioClient2.VTable
 			{
-				public function HRESULT(IAudioClient3 *self, WAVEFORMATEX* pFormat, uint32* pDefaultPeriodInFrames, uint32* pFundamentalPeriodInFrames, uint32* pMinPeriodInFrames, uint32* pMaxPeriodInFrames) GetSharedModeEnginePeriod;
-				public function HRESULT(IAudioClient3 *self, WAVEFORMATEX** ppFormat, uint32* pCurrentPeriodInFrames) GetCurrentSharedModeEnginePeriod;
-				public function HRESULT(IAudioClient3 *self, uint32 StreamFlags, uint32 PeriodInFrames, WAVEFORMATEX* pFormat, Guid* AudioSessionGuid) InitializeSharedAudioStream;
+				public new function HRESULT(IAudioClient3 *self, WAVEFORMATEX* pFormat, uint32* pDefaultPeriodInFrames, uint32* pFundamentalPeriodInFrames, uint32* pMinPeriodInFrames, uint32* pMaxPeriodInFrames) GetSharedModeEnginePeriod;
+				public new function HRESULT(IAudioClient3 *self, WAVEFORMATEX** ppFormat, uint32* pCurrentPeriodInFrames) GetCurrentSharedModeEnginePeriod;
+				public new function HRESULT(IAudioClient3 *self, uint32 StreamFlags, uint32 PeriodInFrames, WAVEFORMATEX* pFormat, Guid* AudioSessionGuid) InitializeSharedAudioStream;
 			}
 		}
 		[CRepr]
@@ -2009,12 +2097,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf294acfc, 0x3146, 0x4483, 0xa7, 0xbf, 0xad, 0xdc, 0xa7, 0xc2, 0x60, 0xe2);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetBuffer(uint32 NumFramesRequested, uint8** ppData) mut
+			{
+				return VT.GetBuffer(&this, NumFramesRequested, ppData);
+			}
+			public HRESULT ReleaseBuffer(uint32 NumFramesWritten, uint32 dwFlags) mut
+			{
+				return VT.ReleaseBuffer(&this, NumFramesWritten, dwFlags);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioRenderClient *self, uint32 NumFramesRequested, uint8** ppData) GetBuffer;
-				public function HRESULT(IAudioRenderClient *self, uint32 NumFramesWritten, uint32 dwFlags) ReleaseBuffer;
+				public new function HRESULT(IAudioRenderClient *self, uint32 NumFramesRequested, uint8** ppData) GetBuffer;
+				public new function HRESULT(IAudioRenderClient *self, uint32 NumFramesWritten, uint32 dwFlags) ReleaseBuffer;
 			}
 		}
 		[CRepr]
@@ -2022,13 +2119,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc8adbd64, 0xe71e, 0x48a0, 0xa4, 0xde, 0x18, 0x5c, 0x39, 0x5c, 0xd3, 0x17);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetBuffer(uint8** ppData, uint32* pNumFramesToRead, uint32* pdwFlags, uint64* pu64DevicePosition, uint64* pu64QPCPosition) mut
+			{
+				return VT.GetBuffer(&this, ppData, pNumFramesToRead, pdwFlags, pu64DevicePosition, pu64QPCPosition);
+			}
+			public HRESULT ReleaseBuffer(uint32 NumFramesRead) mut
+			{
+				return VT.ReleaseBuffer(&this, NumFramesRead);
+			}
+			public HRESULT GetNextPacketSize(uint32* pNumFramesInNextPacket) mut
+			{
+				return VT.GetNextPacketSize(&this, pNumFramesInNextPacket);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioCaptureClient *self, uint8** ppData, uint32* pNumFramesToRead, uint32* pdwFlags, uint64* pu64DevicePosition, uint64* pu64QPCPosition) GetBuffer;
-				public function HRESULT(IAudioCaptureClient *self, uint32 NumFramesRead) ReleaseBuffer;
-				public function HRESULT(IAudioCaptureClient *self, uint32* pNumFramesInNextPacket) GetNextPacketSize;
+				public new function HRESULT(IAudioCaptureClient *self, uint8** ppData, uint32* pNumFramesToRead, uint32* pdwFlags, uint64* pu64DevicePosition, uint64* pu64QPCPosition) GetBuffer;
+				public new function HRESULT(IAudioCaptureClient *self, uint32 NumFramesRead) ReleaseBuffer;
+				public new function HRESULT(IAudioCaptureClient *self, uint32* pNumFramesInNextPacket) GetNextPacketSize;
 			}
 		}
 		[CRepr]
@@ -2036,13 +2146,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xcd63314f, 0x3fba, 0x4a1b, 0x81, 0x2c, 0xef, 0x96, 0x35, 0x87, 0x28, 0xe7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetFrequency(uint64* pu64Frequency) mut
+			{
+				return VT.GetFrequency(&this, pu64Frequency);
+			}
+			public HRESULT GetPosition(uint64* pu64Position, uint64* pu64QPCPosition) mut
+			{
+				return VT.GetPosition(&this, pu64Position, pu64QPCPosition);
+			}
+			public HRESULT GetCharacteristics(uint32* pdwCharacteristics) mut
+			{
+				return VT.GetCharacteristics(&this, pdwCharacteristics);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioClock *self, uint64* pu64Frequency) GetFrequency;
-				public function HRESULT(IAudioClock *self, uint64* pu64Position, uint64* pu64QPCPosition) GetPosition;
-				public function HRESULT(IAudioClock *self, uint32* pdwCharacteristics) GetCharacteristics;
+				public new function HRESULT(IAudioClock *self, uint64* pu64Frequency) GetFrequency;
+				public new function HRESULT(IAudioClock *self, uint64* pu64Position, uint64* pu64QPCPosition) GetPosition;
+				public new function HRESULT(IAudioClock *self, uint32* pdwCharacteristics) GetCharacteristics;
 			}
 		}
 		[CRepr]
@@ -2050,11 +2173,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6f49ff73, 0x6727, 0x49ac, 0xa0, 0x08, 0xd9, 0x8c, 0xf5, 0xe7, 0x00, 0x48);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDevicePosition(uint64* DevicePosition, uint64* QPCPosition) mut
+			{
+				return VT.GetDevicePosition(&this, DevicePosition, QPCPosition);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioClock2 *self, uint64* DevicePosition, uint64* QPCPosition) GetDevicePosition;
+				public new function HRESULT(IAudioClock2 *self, uint64* DevicePosition, uint64* QPCPosition) GetDevicePosition;
 			}
 		}
 		[CRepr]
@@ -2062,11 +2190,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf6e4c0a0, 0x46d9, 0x4fb8, 0xbe, 0x21, 0x57, 0xa3, 0xef, 0x2b, 0x62, 0x6c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetSampleRate(float flSampleRate) mut
+			{
+				return VT.SetSampleRate(&this, flSampleRate);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioClockAdjustment *self, float flSampleRate) SetSampleRate;
+				public new function HRESULT(IAudioClockAdjustment *self, float flSampleRate) SetSampleRate;
 			}
 		}
 		[CRepr]
@@ -2074,14 +2207,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x87ce5498, 0x68d6, 0x44e5, 0x92, 0x15, 0x6d, 0xa4, 0x7e, 0xf8, 0x83, 0xd8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetMasterVolume(float fLevel, Guid* EventContext) mut
+			{
+				return VT.SetMasterVolume(&this, fLevel, EventContext);
+			}
+			public HRESULT GetMasterVolume(float* pfLevel) mut
+			{
+				return VT.GetMasterVolume(&this, pfLevel);
+			}
+			public HRESULT SetMute(BOOL bMute, Guid* EventContext) mut
+			{
+				return VT.SetMute(&this, bMute, EventContext);
+			}
+			public HRESULT GetMute(BOOL* pbMute) mut
+			{
+				return VT.GetMute(&this, pbMute);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISimpleAudioVolume *self, float fLevel, Guid* EventContext) SetMasterVolume;
-				public function HRESULT(ISimpleAudioVolume *self, float* pfLevel) GetMasterVolume;
-				public function HRESULT(ISimpleAudioVolume *self, BOOL bMute, Guid* EventContext) SetMute;
-				public function HRESULT(ISimpleAudioVolume *self, BOOL* pbMute) GetMute;
+				public new function HRESULT(ISimpleAudioVolume *self, float fLevel, Guid* EventContext) SetMasterVolume;
+				public new function HRESULT(ISimpleAudioVolume *self, float* pfLevel) GetMasterVolume;
+				public new function HRESULT(ISimpleAudioVolume *self, BOOL bMute, Guid* EventContext) SetMute;
+				public new function HRESULT(ISimpleAudioVolume *self, BOOL* pbMute) GetMute;
 			}
 		}
 		[CRepr]
@@ -2089,11 +2239,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc789d381, 0xa28c, 0x4168, 0xb2, 0x8f, 0xd3, 0xa8, 0x37, 0x92, 0x4d, 0xc3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetDuckingOptionsForCurrentStream(AUDIO_DUCKING_OPTIONS options) mut
+			{
+				return VT.SetDuckingOptionsForCurrentStream(&this, options);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioClientDuckingControl *self, AUDIO_DUCKING_OPTIONS options) SetDuckingOptionsForCurrentStream;
+				public new function HRESULT(IAudioClientDuckingControl *self, AUDIO_DUCKING_OPTIONS options) SetDuckingOptionsForCurrentStream;
 			}
 		}
 		[CRepr]
@@ -2101,11 +2256,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa5ded44f, 0x3c5d, 0x4b2b, 0xbd, 0x1e, 0x5d, 0xc1, 0xee, 0x20, 0xbb, 0xf6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnAudioEffectsChanged() mut
+			{
+				return VT.OnAudioEffectsChanged(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioEffectsChangedNotificationClient *self) OnAudioEffectsChanged;
+				public new function HRESULT(IAudioEffectsChangedNotificationClient *self) OnAudioEffectsChanged;
 			}
 		}
 		[CRepr]
@@ -2113,14 +2273,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4460b3ae, 0x4b44, 0x4527, 0x86, 0x76, 0x75, 0x48, 0xa8, 0xac, 0xd2, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RegisterAudioEffectsChangedNotificationCallback(IAudioEffectsChangedNotificationClient* client) mut
+			{
+				return VT.RegisterAudioEffectsChangedNotificationCallback(&this, client);
+			}
+			public HRESULT UnregisterAudioEffectsChangedNotificationCallback(IAudioEffectsChangedNotificationClient* client) mut
+			{
+				return VT.UnregisterAudioEffectsChangedNotificationCallback(&this, client);
+			}
+			public HRESULT GetAudioEffects(AUDIO_EFFECT** effects, uint32* numEffects) mut
+			{
+				return VT.GetAudioEffects(&this, effects, numEffects);
+			}
+			public HRESULT SetAudioEffectState(Guid effectId, AUDIO_EFFECT_STATE state) mut
+			{
+				return VT.SetAudioEffectState(&this, effectId, state);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioEffectsManager *self, IAudioEffectsChangedNotificationClient* client) RegisterAudioEffectsChangedNotificationCallback;
-				public function HRESULT(IAudioEffectsManager *self, IAudioEffectsChangedNotificationClient* client) UnregisterAudioEffectsChangedNotificationCallback;
-				public function HRESULT(IAudioEffectsManager *self, AUDIO_EFFECT** effects, uint32* numEffects) GetAudioEffects;
-				public function HRESULT(IAudioEffectsManager *self, Guid effectId, AUDIO_EFFECT_STATE state) SetAudioEffectState;
+				public new function HRESULT(IAudioEffectsManager *self, IAudioEffectsChangedNotificationClient* client) RegisterAudioEffectsChangedNotificationCallback;
+				public new function HRESULT(IAudioEffectsManager *self, IAudioEffectsChangedNotificationClient* client) UnregisterAudioEffectsChangedNotificationCallback;
+				public new function HRESULT(IAudioEffectsManager *self, AUDIO_EFFECT** effects, uint32* numEffects) GetAudioEffects;
+				public new function HRESULT(IAudioEffectsManager *self, Guid effectId, AUDIO_EFFECT_STATE state) SetAudioEffectState;
 			}
 		}
 		[CRepr]
@@ -2128,15 +2305,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x93014887, 0x242d, 0x4068, 0x8a, 0x15, 0xcf, 0x5e, 0x93, 0xb9, 0x0f, 0xe3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetChannelCount(uint32* pdwCount) mut
+			{
+				return VT.GetChannelCount(&this, pdwCount);
+			}
+			public HRESULT SetChannelVolume(uint32 dwIndex, float fLevel) mut
+			{
+				return VT.SetChannelVolume(&this, dwIndex, fLevel);
+			}
+			public HRESULT GetChannelVolume(uint32 dwIndex, float* pfLevel) mut
+			{
+				return VT.GetChannelVolume(&this, dwIndex, pfLevel);
+			}
+			public HRESULT SetAllVolumes(uint32 dwCount, float* pfVolumes) mut
+			{
+				return VT.SetAllVolumes(&this, dwCount, pfVolumes);
+			}
+			public HRESULT GetAllVolumes(uint32 dwCount, float* pfVolumes) mut
+			{
+				return VT.GetAllVolumes(&this, dwCount, pfVolumes);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioStreamVolume *self, uint32* pdwCount) GetChannelCount;
-				public function HRESULT(IAudioStreamVolume *self, uint32 dwIndex, float fLevel) SetChannelVolume;
-				public function HRESULT(IAudioStreamVolume *self, uint32 dwIndex, float* pfLevel) GetChannelVolume;
-				public function HRESULT(IAudioStreamVolume *self, uint32 dwCount, float* pfVolumes) SetAllVolumes;
-				public function HRESULT(IAudioStreamVolume *self, uint32 dwCount, float* pfVolumes) GetAllVolumes;
+				public new function HRESULT(IAudioStreamVolume *self, uint32* pdwCount) GetChannelCount;
+				public new function HRESULT(IAudioStreamVolume *self, uint32 dwIndex, float fLevel) SetChannelVolume;
+				public new function HRESULT(IAudioStreamVolume *self, uint32 dwIndex, float* pfLevel) GetChannelVolume;
+				public new function HRESULT(IAudioStreamVolume *self, uint32 dwCount, float* pfVolumes) SetAllVolumes;
+				public new function HRESULT(IAudioStreamVolume *self, uint32 dwCount, float* pfVolumes) GetAllVolumes;
 			}
 		}
 		[CRepr]
@@ -2144,14 +2342,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x28724c91, 0xdf35, 0x4856, 0x9f, 0x76, 0xd6, 0xa2, 0x64, 0x13, 0xf3, 0xdf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetData(AMBISONICS_PARAMS* pAmbisonicsParams, uint32 cbAmbisonicsParams) mut
+			{
+				return VT.SetData(&this, pAmbisonicsParams, cbAmbisonicsParams);
+			}
+			public HRESULT SetHeadTracking(BOOL bEnableHeadTracking) mut
+			{
+				return VT.SetHeadTracking(&this, bEnableHeadTracking);
+			}
+			public HRESULT GetHeadTracking(BOOL* pbEnableHeadTracking) mut
+			{
+				return VT.GetHeadTracking(&this, pbEnableHeadTracking);
+			}
+			public HRESULT SetRotation(float X, float Y, float Z, float W) mut
+			{
+				return VT.SetRotation(&this, X, Y, Z, W);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioAmbisonicsControl *self, AMBISONICS_PARAMS* pAmbisonicsParams, uint32 cbAmbisonicsParams) SetData;
-				public function HRESULT(IAudioAmbisonicsControl *self, BOOL bEnableHeadTracking) SetHeadTracking;
-				public function HRESULT(IAudioAmbisonicsControl *self, BOOL* pbEnableHeadTracking) GetHeadTracking;
-				public function HRESULT(IAudioAmbisonicsControl *self, float X, float Y, float Z, float W) SetRotation;
+				public new function HRESULT(IAudioAmbisonicsControl *self, AMBISONICS_PARAMS* pAmbisonicsParams, uint32 cbAmbisonicsParams) SetData;
+				public new function HRESULT(IAudioAmbisonicsControl *self, BOOL bEnableHeadTracking) SetHeadTracking;
+				public new function HRESULT(IAudioAmbisonicsControl *self, BOOL* pbEnableHeadTracking) GetHeadTracking;
+				public new function HRESULT(IAudioAmbisonicsControl *self, float X, float Y, float Z, float W) SetRotation;
 			}
 		}
 		[CRepr]
@@ -2159,15 +2374,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1c158861, 0xb533, 0x4b30, 0xb1, 0xcf, 0xe8, 0x53, 0xe5, 0x1c, 0x59, 0xb8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetChannelCount(uint32* pdwCount) mut
+			{
+				return VT.GetChannelCount(&this, pdwCount);
+			}
+			public HRESULT SetChannelVolume(uint32 dwIndex, float fLevel, Guid* EventContext) mut
+			{
+				return VT.SetChannelVolume(&this, dwIndex, fLevel, EventContext);
+			}
+			public HRESULT GetChannelVolume(uint32 dwIndex, float* pfLevel) mut
+			{
+				return VT.GetChannelVolume(&this, dwIndex, pfLevel);
+			}
+			public HRESULT SetAllVolumes(uint32 dwCount, float* pfVolumes, Guid* EventContext) mut
+			{
+				return VT.SetAllVolumes(&this, dwCount, pfVolumes, EventContext);
+			}
+			public HRESULT GetAllVolumes(uint32 dwCount, float* pfVolumes) mut
+			{
+				return VT.GetAllVolumes(&this, dwCount, pfVolumes);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IChannelAudioVolume *self, uint32* pdwCount) GetChannelCount;
-				public function HRESULT(IChannelAudioVolume *self, uint32 dwIndex, float fLevel, Guid* EventContext) SetChannelVolume;
-				public function HRESULT(IChannelAudioVolume *self, uint32 dwIndex, float* pfLevel) GetChannelVolume;
-				public function HRESULT(IChannelAudioVolume *self, uint32 dwCount, float* pfVolumes, Guid* EventContext) SetAllVolumes;
-				public function HRESULT(IChannelAudioVolume *self, uint32 dwCount, float* pfVolumes) GetAllVolumes;
+				public new function HRESULT(IChannelAudioVolume *self, uint32* pdwCount) GetChannelCount;
+				public new function HRESULT(IChannelAudioVolume *self, uint32 dwIndex, float fLevel, Guid* EventContext) SetChannelVolume;
+				public new function HRESULT(IChannelAudioVolume *self, uint32 dwIndex, float* pfLevel) GetChannelVolume;
+				public new function HRESULT(IChannelAudioVolume *self, uint32 dwCount, float* pfVolumes, Guid* EventContext) SetAllVolumes;
+				public new function HRESULT(IChannelAudioVolume *self, uint32 dwCount, float* pfVolumes) GetAllVolumes;
 			}
 		}
 		[CRepr]
@@ -2175,12 +2411,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdcdaa858, 0x895a, 0x4a22, 0xa5, 0xeb, 0x67, 0xbd, 0xa5, 0x06, 0x09, 0x6d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCount(uint32* count) mut
+			{
+				return VT.GetCount(&this, count);
+			}
+			public HRESULT GetFormat(uint32 index, WAVEFORMATEX** format) mut
+			{
+				return VT.GetFormat(&this, index, format);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioFormatEnumerator *self, uint32* count) GetCount;
-				public function HRESULT(IAudioFormatEnumerator *self, uint32 index, WAVEFORMATEX** format) GetFormat;
+				public new function HRESULT(IAudioFormatEnumerator *self, uint32* count) GetCount;
+				public new function HRESULT(IAudioFormatEnumerator *self, uint32 index, WAVEFORMATEX** format) GetFormat;
 			}
 		}
 		[CRepr]
@@ -2188,14 +2433,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xcce0b8f2, 0x8d4d, 0x4efb, 0xa8, 0xcf, 0x3d, 0x6e, 0xcf, 0x1c, 0x30, 0xe0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetBuffer(uint8** buffer, uint32* bufferLength) mut
+			{
+				return VT.GetBuffer(&this, buffer, bufferLength);
+			}
+			public HRESULT SetEndOfStream(uint32 frameCount) mut
+			{
+				return VT.SetEndOfStream(&this, frameCount);
+			}
+			public HRESULT IsActive(BOOL* isActive) mut
+			{
+				return VT.IsActive(&this, isActive);
+			}
+			public HRESULT GetAudioObjectType(AudioObjectType* audioObjectType) mut
+			{
+				return VT.GetAudioObjectType(&this, audioObjectType);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISpatialAudioObjectBase *self, uint8** buffer, uint32* bufferLength) GetBuffer;
-				public function HRESULT(ISpatialAudioObjectBase *self, uint32 frameCount) SetEndOfStream;
-				public function HRESULT(ISpatialAudioObjectBase *self, BOOL* isActive) IsActive;
-				public function HRESULT(ISpatialAudioObjectBase *self, AudioObjectType* audioObjectType) GetAudioObjectType;
+				public new function HRESULT(ISpatialAudioObjectBase *self, uint8** buffer, uint32* bufferLength) GetBuffer;
+				public new function HRESULT(ISpatialAudioObjectBase *self, uint32 frameCount) SetEndOfStream;
+				public new function HRESULT(ISpatialAudioObjectBase *self, BOOL* isActive) IsActive;
+				public new function HRESULT(ISpatialAudioObjectBase *self, AudioObjectType* audioObjectType) GetAudioObjectType;
 			}
 		}
 		[CRepr]
@@ -2203,12 +2465,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdde28967, 0x521b, 0x46e5, 0x8f, 0x00, 0xbd, 0x6f, 0x2b, 0xc8, 0xab, 0x1d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetPosition(float x, float y, float z) mut
+			{
+				return VT.SetPosition(&this, x, y, z);
+			}
+			public HRESULT SetVolume(float volume) mut
+			{
+				return VT.SetVolume(&this, volume);
+			}
 			[CRepr]
 			public struct VTable : ISpatialAudioObjectBase.VTable
 			{
-				public function HRESULT(ISpatialAudioObject *self, float x, float y, float z) SetPosition;
-				public function HRESULT(ISpatialAudioObject *self, float volume) SetVolume;
+				public new function HRESULT(ISpatialAudioObject *self, float x, float y, float z) SetPosition;
+				public new function HRESULT(ISpatialAudioObject *self, float volume) SetVolume;
 			}
 		}
 		[CRepr]
@@ -2216,17 +2487,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfeaaf403, 0xc1d8, 0x450d, 0xaa, 0x05, 0xe0, 0xcc, 0xee, 0x75, 0x02, 0xa8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetAvailableDynamicObjectCount(uint32* value) mut
+			{
+				return VT.GetAvailableDynamicObjectCount(&this, value);
+			}
+			public HRESULT GetService(Guid* riid, void** service) mut
+			{
+				return VT.GetService(&this, riid, service);
+			}
+			public HRESULT Start() mut
+			{
+				return VT.Start(&this);
+			}
+			public HRESULT Stop() mut
+			{
+				return VT.Stop(&this);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT BeginUpdatingAudioObjects(uint32* availableDynamicObjectCount, uint32* frameCountPerBuffer) mut
+			{
+				return VT.BeginUpdatingAudioObjects(&this, availableDynamicObjectCount, frameCountPerBuffer);
+			}
+			public HRESULT EndUpdatingAudioObjects() mut
+			{
+				return VT.EndUpdatingAudioObjects(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISpatialAudioObjectRenderStreamBase *self, uint32* value) GetAvailableDynamicObjectCount;
-				public function HRESULT(ISpatialAudioObjectRenderStreamBase *self, Guid* riid, void** service) GetService;
-				public function HRESULT(ISpatialAudioObjectRenderStreamBase *self) Start;
-				public function HRESULT(ISpatialAudioObjectRenderStreamBase *self) Stop;
-				public function HRESULT(ISpatialAudioObjectRenderStreamBase *self) Reset;
-				public function HRESULT(ISpatialAudioObjectRenderStreamBase *self, uint32* availableDynamicObjectCount, uint32* frameCountPerBuffer) BeginUpdatingAudioObjects;
-				public function HRESULT(ISpatialAudioObjectRenderStreamBase *self) EndUpdatingAudioObjects;
+				public new function HRESULT(ISpatialAudioObjectRenderStreamBase *self, uint32* value) GetAvailableDynamicObjectCount;
+				public new function HRESULT(ISpatialAudioObjectRenderStreamBase *self, Guid* riid, void** service) GetService;
+				public new function HRESULT(ISpatialAudioObjectRenderStreamBase *self) Start;
+				public new function HRESULT(ISpatialAudioObjectRenderStreamBase *self) Stop;
+				public new function HRESULT(ISpatialAudioObjectRenderStreamBase *self) Reset;
+				public new function HRESULT(ISpatialAudioObjectRenderStreamBase *self, uint32* availableDynamicObjectCount, uint32* frameCountPerBuffer) BeginUpdatingAudioObjects;
+				public new function HRESULT(ISpatialAudioObjectRenderStreamBase *self) EndUpdatingAudioObjects;
 			}
 		}
 		[CRepr]
@@ -2234,11 +2534,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbab5f473, 0xb423, 0x477b, 0x85, 0xf5, 0xb5, 0xa3, 0x32, 0xa0, 0x41, 0x53);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ActivateSpatialAudioObject(AudioObjectType type, ISpatialAudioObject** audioObject) mut
+			{
+				return VT.ActivateSpatialAudioObject(&this, type, audioObject);
+			}
 			[CRepr]
 			public struct VTable : ISpatialAudioObjectRenderStreamBase.VTable
 			{
-				public function HRESULT(ISpatialAudioObjectRenderStream *self, AudioObjectType type, ISpatialAudioObject** audioObject) ActivateSpatialAudioObject;
+				public new function HRESULT(ISpatialAudioObjectRenderStream *self, AudioObjectType type, ISpatialAudioObject** audioObject) ActivateSpatialAudioObject;
 			}
 		}
 		[CRepr]
@@ -2246,11 +2551,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdddf83e6, 0x68d7, 0x4c70, 0x88, 0x3f, 0xa1, 0x83, 0x6a, 0xfb, 0x4a, 0x50);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnAvailableDynamicObjectCountChange(ISpatialAudioObjectRenderStreamBase* sender, int64 hnsComplianceDeadlineTime, uint32 availableDynamicObjectCountChange) mut
+			{
+				return VT.OnAvailableDynamicObjectCountChange(&this, sender, hnsComplianceDeadlineTime, availableDynamicObjectCountChange);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISpatialAudioObjectRenderStreamNotify *self, ISpatialAudioObjectRenderStreamBase* sender, int64 hnsComplianceDeadlineTime, uint32 availableDynamicObjectCountChange) OnAvailableDynamicObjectCountChange;
+				public new function HRESULT(ISpatialAudioObjectRenderStreamNotify *self, ISpatialAudioObjectRenderStreamBase* sender, int64 hnsComplianceDeadlineTime, uint32 availableDynamicObjectCountChange) OnAvailableDynamicObjectCountChange;
 			}
 		}
 		[CRepr]
@@ -2258,18 +2568,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbbf8e066, 0xaaaa, 0x49be, 0x9a, 0x4d, 0xfd, 0x2a, 0x85, 0x8e, 0xa2, 0x7f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetStaticObjectPosition(AudioObjectType type, float* x, float* y, float* z) mut
+			{
+				return VT.GetStaticObjectPosition(&this, type, x, y, z);
+			}
+			public HRESULT GetNativeStaticObjectTypeMask(AudioObjectType* mask) mut
+			{
+				return VT.GetNativeStaticObjectTypeMask(&this, mask);
+			}
+			public HRESULT GetMaxDynamicObjectCount(uint32* value) mut
+			{
+				return VT.GetMaxDynamicObjectCount(&this, value);
+			}
+			public HRESULT GetSupportedAudioObjectFormatEnumerator(IAudioFormatEnumerator** enumerator) mut
+			{
+				return VT.GetSupportedAudioObjectFormatEnumerator(&this, enumerator);
+			}
+			public HRESULT GetMaxFrameCount(WAVEFORMATEX* objectFormat, uint32* frameCountPerBuffer) mut
+			{
+				return VT.GetMaxFrameCount(&this, objectFormat, frameCountPerBuffer);
+			}
+			public HRESULT IsAudioObjectFormatSupported(WAVEFORMATEX* objectFormat) mut
+			{
+				return VT.IsAudioObjectFormatSupported(&this, objectFormat);
+			}
+			public HRESULT IsSpatialAudioStreamAvailable(Guid* streamUuid, PROPVARIANT* auxiliaryInfo) mut
+			{
+				return VT.IsSpatialAudioStreamAvailable(&this, streamUuid, auxiliaryInfo);
+			}
+			public HRESULT ActivateSpatialAudioStream(PROPVARIANT* activationParams, Guid* riid, void** stream) mut
+			{
+				return VT.ActivateSpatialAudioStream(&this, activationParams, riid, stream);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISpatialAudioClient *self, AudioObjectType type, float* x, float* y, float* z) GetStaticObjectPosition;
-				public function HRESULT(ISpatialAudioClient *self, AudioObjectType* mask) GetNativeStaticObjectTypeMask;
-				public function HRESULT(ISpatialAudioClient *self, uint32* value) GetMaxDynamicObjectCount;
-				public function HRESULT(ISpatialAudioClient *self, IAudioFormatEnumerator** enumerator) GetSupportedAudioObjectFormatEnumerator;
-				public function HRESULT(ISpatialAudioClient *self, WAVEFORMATEX* objectFormat, uint32* frameCountPerBuffer) GetMaxFrameCount;
-				public function HRESULT(ISpatialAudioClient *self, WAVEFORMATEX* objectFormat) IsAudioObjectFormatSupported;
-				public function HRESULT(ISpatialAudioClient *self, Guid* streamUuid, PROPVARIANT* auxiliaryInfo) IsSpatialAudioStreamAvailable;
-				public function HRESULT(ISpatialAudioClient *self, PROPVARIANT* activationParams, Guid* riid, void** stream) ActivateSpatialAudioStream;
+				public new function HRESULT(ISpatialAudioClient *self, AudioObjectType type, float* x, float* y, float* z) GetStaticObjectPosition;
+				public new function HRESULT(ISpatialAudioClient *self, AudioObjectType* mask) GetNativeStaticObjectTypeMask;
+				public new function HRESULT(ISpatialAudioClient *self, uint32* value) GetMaxDynamicObjectCount;
+				public new function HRESULT(ISpatialAudioClient *self, IAudioFormatEnumerator** enumerator) GetSupportedAudioObjectFormatEnumerator;
+				public new function HRESULT(ISpatialAudioClient *self, WAVEFORMATEX* objectFormat, uint32* frameCountPerBuffer) GetMaxFrameCount;
+				public new function HRESULT(ISpatialAudioClient *self, WAVEFORMATEX* objectFormat) IsAudioObjectFormatSupported;
+				public new function HRESULT(ISpatialAudioClient *self, Guid* streamUuid, PROPVARIANT* auxiliaryInfo) IsSpatialAudioStreamAvailable;
+				public new function HRESULT(ISpatialAudioClient *self, PROPVARIANT* activationParams, Guid* riid, void** stream) ActivateSpatialAudioStream;
 			}
 		}
 		[CRepr]
@@ -2277,12 +2620,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xcaabe452, 0xa66a, 0x4bee, 0xa9, 0x3e, 0xe3, 0x20, 0x46, 0x3f, 0x6a, 0x53);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT IsOffloadCapable(AUDIO_STREAM_CATEGORY category, BOOL* isOffloadCapable) mut
+			{
+				return VT.IsOffloadCapable(&this, category, isOffloadCapable);
+			}
+			public HRESULT GetMaxFrameCountForCategory(AUDIO_STREAM_CATEGORY category, BOOL offloadEnabled, WAVEFORMATEX* objectFormat, uint32* frameCountPerBuffer) mut
+			{
+				return VT.GetMaxFrameCountForCategory(&this, category, offloadEnabled, objectFormat, frameCountPerBuffer);
+			}
 			[CRepr]
 			public struct VTable : ISpatialAudioClient.VTable
 			{
-				public function HRESULT(ISpatialAudioClient2 *self, AUDIO_STREAM_CATEGORY category, BOOL* isOffloadCapable) IsOffloadCapable;
-				public function HRESULT(ISpatialAudioClient2 *self, AUDIO_STREAM_CATEGORY category, BOOL offloadEnabled, WAVEFORMATEX* objectFormat, uint32* frameCountPerBuffer) GetMaxFrameCountForCategory;
+				public new function HRESULT(ISpatialAudioClient2 *self, AUDIO_STREAM_CATEGORY category, BOOL* isOffloadCapable) IsOffloadCapable;
+				public new function HRESULT(ISpatialAudioClient2 *self, AUDIO_STREAM_CATEGORY category, BOOL offloadEnabled, WAVEFORMATEX* objectFormat, uint32* frameCountPerBuffer) GetMaxFrameCountForCategory;
 			}
 		}
 		[CRepr]
@@ -2290,16 +2642,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd7436ade, 0x1978, 0x4e14, 0xab, 0xa0, 0x55, 0x5b, 0xd8, 0xeb, 0x83, 0xb4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetPosition(float x, float y, float z) mut
+			{
+				return VT.SetPosition(&this, x, y, z);
+			}
+			public HRESULT SetGain(float gain) mut
+			{
+				return VT.SetGain(&this, gain);
+			}
+			public HRESULT SetOrientation(float** orientation) mut
+			{
+				return VT.SetOrientation(&this, orientation);
+			}
+			public HRESULT SetEnvironment(SpatialAudioHrtfEnvironmentType environment) mut
+			{
+				return VT.SetEnvironment(&this, environment);
+			}
+			public HRESULT SetDistanceDecay(SpatialAudioHrtfDistanceDecay* distanceDecay) mut
+			{
+				return VT.SetDistanceDecay(&this, distanceDecay);
+			}
+			public HRESULT SetDirectivity(SpatialAudioHrtfDirectivityUnion* directivity) mut
+			{
+				return VT.SetDirectivity(&this, directivity);
+			}
 			[CRepr]
 			public struct VTable : ISpatialAudioObjectBase.VTable
 			{
-				public function HRESULT(ISpatialAudioObjectForHrtf *self, float x, float y, float z) SetPosition;
-				public function HRESULT(ISpatialAudioObjectForHrtf *self, float gain) SetGain;
-				public function HRESULT(ISpatialAudioObjectForHrtf *self, float** orientation) SetOrientation;
-				public function HRESULT(ISpatialAudioObjectForHrtf *self, SpatialAudioHrtfEnvironmentType environment) SetEnvironment;
-				public function HRESULT(ISpatialAudioObjectForHrtf *self, SpatialAudioHrtfDistanceDecay* distanceDecay) SetDistanceDecay;
-				public function HRESULT(ISpatialAudioObjectForHrtf *self, SpatialAudioHrtfDirectivityUnion* directivity) SetDirectivity;
+				public new function HRESULT(ISpatialAudioObjectForHrtf *self, float x, float y, float z) SetPosition;
+				public new function HRESULT(ISpatialAudioObjectForHrtf *self, float gain) SetGain;
+				public new function HRESULT(ISpatialAudioObjectForHrtf *self, float** orientation) SetOrientation;
+				public new function HRESULT(ISpatialAudioObjectForHrtf *self, SpatialAudioHrtfEnvironmentType environment) SetEnvironment;
+				public new function HRESULT(ISpatialAudioObjectForHrtf *self, SpatialAudioHrtfDistanceDecay* distanceDecay) SetDistanceDecay;
+				public new function HRESULT(ISpatialAudioObjectForHrtf *self, SpatialAudioHrtfDirectivityUnion* directivity) SetDirectivity;
 			}
 		}
 		[CRepr]
@@ -2307,11 +2684,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe08deef9, 0x5363, 0x406e, 0x9f, 0xdc, 0x08, 0x0e, 0xe2, 0x47, 0xbb, 0xe0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ActivateSpatialAudioObjectForHrtf(AudioObjectType type, ISpatialAudioObjectForHrtf** audioObject) mut
+			{
+				return VT.ActivateSpatialAudioObjectForHrtf(&this, type, audioObject);
+			}
 			[CRepr]
 			public struct VTable : ISpatialAudioObjectRenderStreamBase.VTable
 			{
-				public function HRESULT(ISpatialAudioObjectRenderStreamForHrtf *self, AudioObjectType type, ISpatialAudioObjectForHrtf** audioObject) ActivateSpatialAudioObjectForHrtf;
+				public new function HRESULT(ISpatialAudioObjectRenderStreamForHrtf *self, AudioObjectType type, ISpatialAudioObjectForHrtf** audioObject) ActivateSpatialAudioObjectForHrtf;
 			}
 		}
 		[CRepr]
@@ -2319,15 +2701,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7991eec9, 0x7e89, 0x4d85, 0x83, 0x90, 0x6c, 0x70, 0x3c, 0xec, 0x60, 0xc0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnDeviceStateChanged(PWSTR pwstrDeviceId, uint32 dwNewState) mut
+			{
+				return VT.OnDeviceStateChanged(&this, pwstrDeviceId, dwNewState);
+			}
+			public HRESULT OnDeviceAdded(PWSTR pwstrDeviceId) mut
+			{
+				return VT.OnDeviceAdded(&this, pwstrDeviceId);
+			}
+			public HRESULT OnDeviceRemoved(PWSTR pwstrDeviceId) mut
+			{
+				return VT.OnDeviceRemoved(&this, pwstrDeviceId);
+			}
+			public HRESULT OnDefaultDeviceChanged(EDataFlow flow, ERole role, PWSTR pwstrDefaultDeviceId) mut
+			{
+				return VT.OnDefaultDeviceChanged(&this, flow, role, pwstrDefaultDeviceId);
+			}
+			public HRESULT OnPropertyValueChanged(PWSTR pwstrDeviceId, PROPERTYKEY key) mut
+			{
+				return VT.OnPropertyValueChanged(&this, pwstrDeviceId, key);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IMMNotificationClient *self, PWSTR pwstrDeviceId, uint32 dwNewState) OnDeviceStateChanged;
-				public function HRESULT(IMMNotificationClient *self, PWSTR pwstrDeviceId) OnDeviceAdded;
-				public function HRESULT(IMMNotificationClient *self, PWSTR pwstrDeviceId) OnDeviceRemoved;
-				public function HRESULT(IMMNotificationClient *self, EDataFlow flow, ERole role, PWSTR pwstrDefaultDeviceId) OnDefaultDeviceChanged;
-				public function HRESULT(IMMNotificationClient *self, PWSTR pwstrDeviceId, PROPERTYKEY key) OnPropertyValueChanged;
+				public new function HRESULT(IMMNotificationClient *self, PWSTR pwstrDeviceId, uint32 dwNewState) OnDeviceStateChanged;
+				public new function HRESULT(IMMNotificationClient *self, PWSTR pwstrDeviceId) OnDeviceAdded;
+				public new function HRESULT(IMMNotificationClient *self, PWSTR pwstrDeviceId) OnDeviceRemoved;
+				public new function HRESULT(IMMNotificationClient *self, EDataFlow flow, ERole role, PWSTR pwstrDefaultDeviceId) OnDefaultDeviceChanged;
+				public new function HRESULT(IMMNotificationClient *self, PWSTR pwstrDeviceId, PROPERTYKEY key) OnPropertyValueChanged;
 			}
 		}
 		[CRepr]
@@ -2335,14 +2738,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd666063f, 0x1587, 0x4e43, 0x81, 0xf1, 0xb9, 0x48, 0xe8, 0x07, 0x36, 0x3f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Activate(Guid* iid, uint32 dwClsCtx, PROPVARIANT* pActivationParams, void** ppInterface) mut
+			{
+				return VT.Activate(&this, iid, dwClsCtx, pActivationParams, ppInterface);
+			}
+			public HRESULT OpenPropertyStore(uint32 stgmAccess, IPropertyStore** ppProperties) mut
+			{
+				return VT.OpenPropertyStore(&this, stgmAccess, ppProperties);
+			}
+			public HRESULT GetId(PWSTR* ppstrId) mut
+			{
+				return VT.GetId(&this, ppstrId);
+			}
+			public HRESULT GetState(uint32* pdwState) mut
+			{
+				return VT.GetState(&this, pdwState);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IMMDevice *self, Guid* iid, uint32 dwClsCtx, PROPVARIANT* pActivationParams, void** ppInterface) Activate;
-				public function HRESULT(IMMDevice *self, uint32 stgmAccess, IPropertyStore** ppProperties) OpenPropertyStore;
-				public function HRESULT(IMMDevice *self, PWSTR* ppstrId) GetId;
-				public function HRESULT(IMMDevice *self, uint32* pdwState) GetState;
+				public new function HRESULT(IMMDevice *self, Guid* iid, uint32 dwClsCtx, PROPVARIANT* pActivationParams, void** ppInterface) Activate;
+				public new function HRESULT(IMMDevice *self, uint32 stgmAccess, IPropertyStore** ppProperties) OpenPropertyStore;
+				public new function HRESULT(IMMDevice *self, PWSTR* ppstrId) GetId;
+				public new function HRESULT(IMMDevice *self, uint32* pdwState) GetState;
 			}
 		}
 		[CRepr]
@@ -2350,12 +2770,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0bd7a1be, 0x7a1a, 0x44db, 0x83, 0x97, 0xcc, 0x53, 0x92, 0x38, 0x7b, 0x5e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCount(uint32* pcDevices) mut
+			{
+				return VT.GetCount(&this, pcDevices);
+			}
+			public HRESULT Item(uint32 nDevice, IMMDevice** ppDevice) mut
+			{
+				return VT.Item(&this, nDevice, ppDevice);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IMMDeviceCollection *self, uint32* pcDevices) GetCount;
-				public function HRESULT(IMMDeviceCollection *self, uint32 nDevice, IMMDevice** ppDevice) Item;
+				public new function HRESULT(IMMDeviceCollection *self, uint32* pcDevices) GetCount;
+				public new function HRESULT(IMMDeviceCollection *self, uint32 nDevice, IMMDevice** ppDevice) Item;
 			}
 		}
 		[CRepr]
@@ -2363,11 +2792,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1be09788, 0x6894, 0x4089, 0x85, 0x86, 0x9a, 0x2a, 0x6c, 0x26, 0x5a, 0xc5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDataFlow(EDataFlow* pDataFlow) mut
+			{
+				return VT.GetDataFlow(&this, pDataFlow);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IMMEndpoint *self, EDataFlow* pDataFlow) GetDataFlow;
+				public new function HRESULT(IMMEndpoint *self, EDataFlow* pDataFlow) GetDataFlow;
 			}
 		}
 		[CRepr]
@@ -2375,15 +2809,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa95664d2, 0x9614, 0x4f35, 0xa7, 0x46, 0xde, 0x8d, 0xb6, 0x36, 0x17, 0xe6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT EnumAudioEndpoints(EDataFlow dataFlow, uint32 dwStateMask, IMMDeviceCollection** ppDevices) mut
+			{
+				return VT.EnumAudioEndpoints(&this, dataFlow, dwStateMask, ppDevices);
+			}
+			public HRESULT GetDefaultAudioEndpoint(EDataFlow dataFlow, ERole role, IMMDevice** ppEndpoint) mut
+			{
+				return VT.GetDefaultAudioEndpoint(&this, dataFlow, role, ppEndpoint);
+			}
+			public HRESULT GetDevice(PWSTR pwstrId, IMMDevice** ppDevice) mut
+			{
+				return VT.GetDevice(&this, pwstrId, ppDevice);
+			}
+			public HRESULT RegisterEndpointNotificationCallback(IMMNotificationClient* pClient) mut
+			{
+				return VT.RegisterEndpointNotificationCallback(&this, pClient);
+			}
+			public HRESULT UnregisterEndpointNotificationCallback(IMMNotificationClient* pClient) mut
+			{
+				return VT.UnregisterEndpointNotificationCallback(&this, pClient);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IMMDeviceEnumerator *self, EDataFlow dataFlow, uint32 dwStateMask, IMMDeviceCollection** ppDevices) EnumAudioEndpoints;
-				public function HRESULT(IMMDeviceEnumerator *self, EDataFlow dataFlow, ERole role, IMMDevice** ppEndpoint) GetDefaultAudioEndpoint;
-				public function HRESULT(IMMDeviceEnumerator *self, PWSTR pwstrId, IMMDevice** ppDevice) GetDevice;
-				public function HRESULT(IMMDeviceEnumerator *self, IMMNotificationClient* pClient) RegisterEndpointNotificationCallback;
-				public function HRESULT(IMMDeviceEnumerator *self, IMMNotificationClient* pClient) UnregisterEndpointNotificationCallback;
+				public new function HRESULT(IMMDeviceEnumerator *self, EDataFlow dataFlow, uint32 dwStateMask, IMMDeviceCollection** ppDevices) EnumAudioEndpoints;
+				public new function HRESULT(IMMDeviceEnumerator *self, EDataFlow dataFlow, ERole role, IMMDevice** ppEndpoint) GetDefaultAudioEndpoint;
+				public new function HRESULT(IMMDeviceEnumerator *self, PWSTR pwstrId, IMMDevice** ppDevice) GetDevice;
+				public new function HRESULT(IMMDeviceEnumerator *self, IMMNotificationClient* pClient) RegisterEndpointNotificationCallback;
+				public new function HRESULT(IMMDeviceEnumerator *self, IMMNotificationClient* pClient) UnregisterEndpointNotificationCallback;
 			}
 		}
 		[CRepr]
@@ -2391,11 +2846,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3b0d0ea4, 0xd0a9, 0x4b0e, 0x93, 0x5b, 0x09, 0x51, 0x67, 0x46, 0xfa, 0xc0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Activate(Guid* iid, IMMDevice* pDevice, PROPVARIANT* pActivationParams, void** ppInterface) mut
+			{
+				return VT.Activate(&this, iid, pDevice, pActivationParams, ppInterface);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IMMDeviceActivator *self, Guid* iid, IMMDevice* pDevice, PROPVARIANT* pActivationParams, void** ppInterface) Activate;
+				public new function HRESULT(IMMDeviceActivator *self, Guid* iid, IMMDevice* pDevice, PROPVARIANT* pActivationParams, void** ppInterface) Activate;
 			}
 		}
 		[CRepr]
@@ -2403,11 +2863,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x41d949ab, 0x9862, 0x444a, 0x80, 0xf6, 0xc2, 0x61, 0x33, 0x4d, 0xa5, 0xeb);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ActivateCompleted(IActivateAudioInterfaceAsyncOperation* activateOperation) mut
+			{
+				return VT.ActivateCompleted(&this, activateOperation);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IActivateAudioInterfaceCompletionHandler *self, IActivateAudioInterfaceAsyncOperation* activateOperation) ActivateCompleted;
+				public new function HRESULT(IActivateAudioInterfaceCompletionHandler *self, IActivateAudioInterfaceAsyncOperation* activateOperation) ActivateCompleted;
 			}
 		}
 		[CRepr]
@@ -2415,11 +2880,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x72a22d78, 0xcde4, 0x431d, 0xb8, 0xcc, 0x84, 0x3a, 0x71, 0x19, 0x9b, 0x6d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetActivateResult(HRESULT* activateResult, IUnknown** activatedInterface) mut
+			{
+				return VT.GetActivateResult(&this, activateResult, activatedInterface);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IActivateAudioInterfaceAsyncOperation *self, HRESULT* activateResult, IUnknown** activatedInterface) GetActivateResult;
+				public new function HRESULT(IActivateAudioInterfaceAsyncOperation *self, HRESULT* activateResult, IUnknown** activatedInterface) GetActivateResult;
 			}
 		}
 		[CRepr]
@@ -2427,11 +2897,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x20049d40, 0x56d5, 0x400e, 0xa2, 0xef, 0x38, 0x55, 0x99, 0xfe, 0xed, 0x49);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnPropertyChanged(__MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002 type, PROPERTYKEY key) mut
+			{
+				return VT.OnPropertyChanged(&this, type, key);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioSystemEffectsPropertyChangeNotificationClient *self, __MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002 type, PROPERTYKEY key) OnPropertyChanged;
+				public new function HRESULT(IAudioSystemEffectsPropertyChangeNotificationClient *self, __MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002 type, PROPERTYKEY key) OnPropertyChanged;
 			}
 		}
 		[CRepr]
@@ -2439,17 +2914,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x302ae7f9, 0xd7e0, 0x43e4, 0x97, 0x1b, 0x1f, 0x82, 0x93, 0x61, 0x3d, 0x2a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OpenDefaultPropertyStore(uint32 stgmAccess, IPropertyStore** propStore) mut
+			{
+				return VT.OpenDefaultPropertyStore(&this, stgmAccess, propStore);
+			}
+			public HRESULT OpenUserPropertyStore(uint32 stgmAccess, IPropertyStore** propStore) mut
+			{
+				return VT.OpenUserPropertyStore(&this, stgmAccess, propStore);
+			}
+			public HRESULT OpenVolatilePropertyStore(uint32 stgmAccess, IPropertyStore** propStore) mut
+			{
+				return VT.OpenVolatilePropertyStore(&this, stgmAccess, propStore);
+			}
+			public HRESULT ResetUserPropertyStore() mut
+			{
+				return VT.ResetUserPropertyStore(&this);
+			}
+			public HRESULT ResetVolatilePropertyStore() mut
+			{
+				return VT.ResetVolatilePropertyStore(&this);
+			}
+			public HRESULT RegisterPropertyChangeNotification(IAudioSystemEffectsPropertyChangeNotificationClient* callback) mut
+			{
+				return VT.RegisterPropertyChangeNotification(&this, callback);
+			}
+			public HRESULT UnregisterPropertyChangeNotification(IAudioSystemEffectsPropertyChangeNotificationClient* callback) mut
+			{
+				return VT.UnregisterPropertyChangeNotification(&this, callback);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioSystemEffectsPropertyStore *self, uint32 stgmAccess, IPropertyStore** propStore) OpenDefaultPropertyStore;
-				public function HRESULT(IAudioSystemEffectsPropertyStore *self, uint32 stgmAccess, IPropertyStore** propStore) OpenUserPropertyStore;
-				public function HRESULT(IAudioSystemEffectsPropertyStore *self, uint32 stgmAccess, IPropertyStore** propStore) OpenVolatilePropertyStore;
-				public function HRESULT(IAudioSystemEffectsPropertyStore *self) ResetUserPropertyStore;
-				public function HRESULT(IAudioSystemEffectsPropertyStore *self) ResetVolatilePropertyStore;
-				public function HRESULT(IAudioSystemEffectsPropertyStore *self, IAudioSystemEffectsPropertyChangeNotificationClient* callback) RegisterPropertyChangeNotification;
-				public function HRESULT(IAudioSystemEffectsPropertyStore *self, IAudioSystemEffectsPropertyChangeNotificationClient* callback) UnregisterPropertyChangeNotification;
+				public new function HRESULT(IAudioSystemEffectsPropertyStore *self, uint32 stgmAccess, IPropertyStore** propStore) OpenDefaultPropertyStore;
+				public new function HRESULT(IAudioSystemEffectsPropertyStore *self, uint32 stgmAccess, IPropertyStore** propStore) OpenUserPropertyStore;
+				public new function HRESULT(IAudioSystemEffectsPropertyStore *self, uint32 stgmAccess, IPropertyStore** propStore) OpenVolatilePropertyStore;
+				public new function HRESULT(IAudioSystemEffectsPropertyStore *self) ResetUserPropertyStore;
+				public new function HRESULT(IAudioSystemEffectsPropertyStore *self) ResetVolatilePropertyStore;
+				public new function HRESULT(IAudioSystemEffectsPropertyStore *self, IAudioSystemEffectsPropertyChangeNotificationClient* callback) RegisterPropertyChangeNotification;
+				public new function HRESULT(IAudioSystemEffectsPropertyStore *self, IAudioSystemEffectsPropertyChangeNotificationClient* callback) UnregisterPropertyChangeNotification;
 			}
 		}
 		[CRepr]
@@ -2457,16 +2961,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc2f8e001, 0xf205, 0x4bc9, 0x99, 0xbc, 0xc1, 0x3b, 0x1e, 0x04, 0x8c, 0xcb);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetChannelCount(uint32* pcChannels) mut
+			{
+				return VT.GetChannelCount(&this, pcChannels);
+			}
+			public HRESULT GetLevelRange(uint32 nChannel, float* pfMinLevelDB, float* pfMaxLevelDB, float* pfStepping) mut
+			{
+				return VT.GetLevelRange(&this, nChannel, pfMinLevelDB, pfMaxLevelDB, pfStepping);
+			}
+			public HRESULT GetLevel(uint32 nChannel, float* pfLevelDB) mut
+			{
+				return VT.GetLevel(&this, nChannel, pfLevelDB);
+			}
+			public HRESULT SetLevel(uint32 nChannel, float fLevelDB, Guid* pguidEventContext) mut
+			{
+				return VT.SetLevel(&this, nChannel, fLevelDB, pguidEventContext);
+			}
+			public HRESULT SetLevelUniform(float fLevelDB, Guid* pguidEventContext) mut
+			{
+				return VT.SetLevelUniform(&this, fLevelDB, pguidEventContext);
+			}
+			public HRESULT SetLevelAllChannels(float* aLevelsDB, uint32 cChannels, Guid* pguidEventContext) mut
+			{
+				return VT.SetLevelAllChannels(&this, aLevelsDB, cChannels, pguidEventContext);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPerChannelDbLevel *self, uint32* pcChannels) GetChannelCount;
-				public function HRESULT(IPerChannelDbLevel *self, uint32 nChannel, float* pfMinLevelDB, float* pfMaxLevelDB, float* pfStepping) GetLevelRange;
-				public function HRESULT(IPerChannelDbLevel *self, uint32 nChannel, float* pfLevelDB) GetLevel;
-				public function HRESULT(IPerChannelDbLevel *self, uint32 nChannel, float fLevelDB, Guid* pguidEventContext) SetLevel;
-				public function HRESULT(IPerChannelDbLevel *self, float fLevelDB, Guid* pguidEventContext) SetLevelUniform;
-				public function HRESULT(IPerChannelDbLevel *self, float* aLevelsDB, uint32 cChannels, Guid* pguidEventContext) SetLevelAllChannels;
+				public new function HRESULT(IPerChannelDbLevel *self, uint32* pcChannels) GetChannelCount;
+				public new function HRESULT(IPerChannelDbLevel *self, uint32 nChannel, float* pfMinLevelDB, float* pfMaxLevelDB, float* pfStepping) GetLevelRange;
+				public new function HRESULT(IPerChannelDbLevel *self, uint32 nChannel, float* pfLevelDB) GetLevel;
+				public new function HRESULT(IPerChannelDbLevel *self, uint32 nChannel, float fLevelDB, Guid* pguidEventContext) SetLevel;
+				public new function HRESULT(IPerChannelDbLevel *self, float fLevelDB, Guid* pguidEventContext) SetLevelUniform;
+				public new function HRESULT(IPerChannelDbLevel *self, float* aLevelsDB, uint32 cChannels, Guid* pguidEventContext) SetLevelAllChannels;
 			}
 		}
 		[CRepr]
@@ -2474,7 +3003,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7fb7b48f, 0x531d, 0x44a2, 0xbc, 0xb3, 0x5a, 0xd5, 0xa1, 0x34, 0xb3, 0xdc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IPerChannelDbLevel.VTable
 			{
@@ -2485,12 +3015,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbb11c46f, 0xec28, 0x493c, 0xb8, 0x8a, 0x5d, 0xb8, 0x80, 0x62, 0xce, 0x98);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetChannelConfig(uint32 dwConfig, Guid* pguidEventContext) mut
+			{
+				return VT.SetChannelConfig(&this, dwConfig, pguidEventContext);
+			}
+			public HRESULT GetChannelConfig(uint32* pdwConfig) mut
+			{
+				return VT.GetChannelConfig(&this, pdwConfig);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioChannelConfig *self, uint32 dwConfig, Guid* pguidEventContext) SetChannelConfig;
-				public function HRESULT(IAudioChannelConfig *self, uint32* pdwConfig) GetChannelConfig;
+				public new function HRESULT(IAudioChannelConfig *self, uint32 dwConfig, Guid* pguidEventContext) SetChannelConfig;
+				public new function HRESULT(IAudioChannelConfig *self, uint32* pdwConfig) GetChannelConfig;
 			}
 		}
 		[CRepr]
@@ -2498,12 +3037,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7d8b1437, 0xdd53, 0x4350, 0x9c, 0x1b, 0x1e, 0xe2, 0x89, 0x0b, 0xd9, 0x38);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetEnabled(BOOL* pbEnabled) mut
+			{
+				return VT.GetEnabled(&this, pbEnabled);
+			}
+			public HRESULT SetEnabled(BOOL bEnable, Guid* pguidEventContext) mut
+			{
+				return VT.SetEnabled(&this, bEnable, pguidEventContext);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioLoudness *self, BOOL* pbEnabled) GetEnabled;
-				public function HRESULT(IAudioLoudness *self, BOOL bEnable, Guid* pguidEventContext) SetEnabled;
+				public new function HRESULT(IAudioLoudness *self, BOOL* pbEnabled) GetEnabled;
+				public new function HRESULT(IAudioLoudness *self, BOOL bEnable, Guid* pguidEventContext) SetEnabled;
 			}
 		}
 		[CRepr]
@@ -2511,12 +3059,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4f03dc02, 0x5e6e, 0x4653, 0x8f, 0x72, 0xa0, 0x30, 0xc1, 0x23, 0xd5, 0x98);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSelection(uint32* pnIdSelected) mut
+			{
+				return VT.GetSelection(&this, pnIdSelected);
+			}
+			public HRESULT SetSelection(uint32 nIdSelect, Guid* pguidEventContext) mut
+			{
+				return VT.SetSelection(&this, nIdSelect, pguidEventContext);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioInputSelector *self, uint32* pnIdSelected) GetSelection;
-				public function HRESULT(IAudioInputSelector *self, uint32 nIdSelect, Guid* pguidEventContext) SetSelection;
+				public new function HRESULT(IAudioInputSelector *self, uint32* pnIdSelected) GetSelection;
+				public new function HRESULT(IAudioInputSelector *self, uint32 nIdSelect, Guid* pguidEventContext) SetSelection;
 			}
 		}
 		[CRepr]
@@ -2524,12 +3081,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbb515f69, 0x94a7, 0x429e, 0x8b, 0x9c, 0x27, 0x1b, 0x3f, 0x11, 0xa3, 0xab);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSelection(uint32* pnIdSelected) mut
+			{
+				return VT.GetSelection(&this, pnIdSelected);
+			}
+			public HRESULT SetSelection(uint32 nIdSelect, Guid* pguidEventContext) mut
+			{
+				return VT.SetSelection(&this, nIdSelect, pguidEventContext);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioOutputSelector *self, uint32* pnIdSelected) GetSelection;
-				public function HRESULT(IAudioOutputSelector *self, uint32 nIdSelect, Guid* pguidEventContext) SetSelection;
+				public new function HRESULT(IAudioOutputSelector *self, uint32* pnIdSelected) GetSelection;
+				public new function HRESULT(IAudioOutputSelector *self, uint32 nIdSelect, Guid* pguidEventContext) SetSelection;
 			}
 		}
 		[CRepr]
@@ -2537,12 +3103,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdf45aeea, 0xb74a, 0x4b6b, 0xaf, 0xad, 0x23, 0x66, 0xb6, 0xaa, 0x01, 0x2e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetMute(BOOL bMuted, Guid* pguidEventContext) mut
+			{
+				return VT.SetMute(&this, bMuted, pguidEventContext);
+			}
+			public HRESULT GetMute(BOOL* pbMuted) mut
+			{
+				return VT.GetMute(&this, pbMuted);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioMute *self, BOOL bMuted, Guid* pguidEventContext) SetMute;
-				public function HRESULT(IAudioMute *self, BOOL* pbMuted) GetMute;
+				public new function HRESULT(IAudioMute *self, BOOL bMuted, Guid* pguidEventContext) SetMute;
+				public new function HRESULT(IAudioMute *self, BOOL* pbMuted) GetMute;
 			}
 		}
 		[CRepr]
@@ -2550,7 +3125,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa2b1a1d9, 0x4db3, 0x425d, 0xa2, 0xb2, 0xbd, 0x33, 0x5c, 0xb3, 0xe2, 0xe5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IPerChannelDbLevel.VTable
 			{
@@ -2561,7 +3137,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5e54b6d7, 0xb44b, 0x40d9, 0x9a, 0x9e, 0xe6, 0x91, 0xd9, 0xce, 0x6e, 0xdf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IPerChannelDbLevel.VTable
 			{
@@ -2572,7 +3149,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0a717812, 0x694e, 0x4907, 0xb7, 0x4b, 0xba, 0xfa, 0x5c, 0xfd, 0xca, 0x7b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IPerChannelDbLevel.VTable
 			{
@@ -2583,12 +3161,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x85401fd4, 0x6de4, 0x4b9d, 0x98, 0x69, 0x2d, 0x67, 0x53, 0xa8, 0x2f, 0x3c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetEnabled(BOOL* pbEnabled) mut
+			{
+				return VT.GetEnabled(&this, pbEnabled);
+			}
+			public HRESULT SetEnabled(BOOL bEnable, Guid* pguidEventContext) mut
+			{
+				return VT.SetEnabled(&this, bEnable, pguidEventContext);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioAutoGainControl *self, BOOL* pbEnabled) GetEnabled;
-				public function HRESULT(IAudioAutoGainControl *self, BOOL bEnable, Guid* pguidEventContext) SetEnabled;
+				public new function HRESULT(IAudioAutoGainControl *self, BOOL* pbEnabled) GetEnabled;
+				public new function HRESULT(IAudioAutoGainControl *self, BOOL bEnable, Guid* pguidEventContext) SetEnabled;
 			}
 		}
 		[CRepr]
@@ -2596,12 +3183,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdd79923c, 0x0599, 0x45e0, 0xb8, 0xb6, 0xc8, 0xdf, 0x7d, 0xb6, 0xe7, 0x96);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetChannelCount(uint32* pcChannels) mut
+			{
+				return VT.GetChannelCount(&this, pcChannels);
+			}
+			public HRESULT GetLevel(uint32 nChannel, float* pfLevel) mut
+			{
+				return VT.GetLevel(&this, nChannel, pfLevel);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioPeakMeter *self, uint32* pcChannels) GetChannelCount;
-				public function HRESULT(IAudioPeakMeter *self, uint32 nChannel, float* pfLevel) GetLevel;
+				public new function HRESULT(IAudioPeakMeter *self, uint32* pcChannels) GetChannelCount;
+				public new function HRESULT(IAudioPeakMeter *self, uint32 nChannel, float* pfLevel) GetLevel;
 			}
 		}
 		[CRepr]
@@ -2609,14 +3205,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3b22bcbf, 0x2586, 0x4af0, 0x85, 0x83, 0x20, 0x5d, 0x39, 0x1b, 0x80, 0x7c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ComGetType(uint16* pVType) mut
+			{
+				return VT.ComGetType(&this, pVType);
+			}
+			public HRESULT GetValue(void* pvValue, uint32* pcbValue) mut
+			{
+				return VT.GetValue(&this, pvValue, pcbValue);
+			}
+			public HRESULT SetValue(void* pvValue, uint32 cbValue, Guid* pguidEventContext) mut
+			{
+				return VT.SetValue(&this, pvValue, cbValue, pguidEventContext);
+			}
+			public HRESULT Get4BRange(int32* plMin, int32* plMax, int32* plStepping) mut
+			{
+				return VT.Get4BRange(&this, plMin, plMax, plStepping);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDeviceSpecificProperty *self, uint16* pVType) GetType;
-				public function HRESULT(IDeviceSpecificProperty *self, void* pvValue, uint32* pcbValue) GetValue;
-				public function HRESULT(IDeviceSpecificProperty *self, void* pvValue, uint32 cbValue, Guid* pguidEventContext) SetValue;
-				public function HRESULT(IDeviceSpecificProperty *self, int32* plMin, int32* plMax, int32* plStepping) Get4BRange;
+				public new function HRESULT(IDeviceSpecificProperty *self, uint16* pVType) ComGetType;
+				public new function HRESULT(IDeviceSpecificProperty *self, void* pvValue, uint32* pcbValue) GetValue;
+				public new function HRESULT(IDeviceSpecificProperty *self, void* pvValue, uint32 cbValue, Guid* pguidEventContext) SetValue;
+				public new function HRESULT(IDeviceSpecificProperty *self, int32* plMin, int32* plMax, int32* plStepping) Get4BRange;
 			}
 		}
 		[CRepr]
@@ -2624,12 +3237,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6daa848c, 0x5eb0, 0x45cc, 0xae, 0xa5, 0x99, 0x8a, 0x2c, 0xda, 0x1f, 0xfb);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCount(uint32* pCount) mut
+			{
+				return VT.GetCount(&this, pCount);
+			}
+			public HRESULT GetPart(uint32 nIndex, IPart** ppPart) mut
+			{
+				return VT.GetPart(&this, nIndex, ppPart);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPartsList *self, uint32* pCount) GetCount;
-				public function HRESULT(IPartsList *self, uint32 nIndex, IPart** ppPart) GetPart;
+				public new function HRESULT(IPartsList *self, uint32* pCount) GetCount;
+				public new function HRESULT(IPartsList *self, uint32 nIndex, IPart** ppPart) GetPart;
 			}
 		}
 		[CRepr]
@@ -2637,23 +3259,76 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xae2de0e4, 0x5bca, 0x4f2d, 0xaa, 0x46, 0x5d, 0x13, 0xf8, 0xfd, 0xb3, 0xa9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetName(PWSTR* ppwstrName) mut
+			{
+				return VT.GetName(&this, ppwstrName);
+			}
+			public HRESULT GetLocalId(uint32* pnId) mut
+			{
+				return VT.GetLocalId(&this, pnId);
+			}
+			public HRESULT GetGlobalId(PWSTR* ppwstrGlobalId) mut
+			{
+				return VT.GetGlobalId(&this, ppwstrGlobalId);
+			}
+			public HRESULT GetPartType(PartType* pPartType) mut
+			{
+				return VT.GetPartType(&this, pPartType);
+			}
+			public HRESULT GetSubType(Guid* pSubType) mut
+			{
+				return VT.GetSubType(&this, pSubType);
+			}
+			public HRESULT GetControlInterfaceCount(uint32* pCount) mut
+			{
+				return VT.GetControlInterfaceCount(&this, pCount);
+			}
+			public HRESULT GetControlInterface(uint32 nIndex, IControlInterface** ppInterfaceDesc) mut
+			{
+				return VT.GetControlInterface(&this, nIndex, ppInterfaceDesc);
+			}
+			public HRESULT EnumPartsIncoming(IPartsList** ppParts) mut
+			{
+				return VT.EnumPartsIncoming(&this, ppParts);
+			}
+			public HRESULT EnumPartsOutgoing(IPartsList** ppParts) mut
+			{
+				return VT.EnumPartsOutgoing(&this, ppParts);
+			}
+			public HRESULT GetTopologyObject(IDeviceTopology** ppTopology) mut
+			{
+				return VT.GetTopologyObject(&this, ppTopology);
+			}
+			public HRESULT Activate(uint32 dwClsContext, Guid* refiid, void** ppvObject) mut
+			{
+				return VT.Activate(&this, dwClsContext, refiid, ppvObject);
+			}
+			public HRESULT RegisterControlChangeCallback(Guid* riid, IControlChangeNotify* pNotify) mut
+			{
+				return VT.RegisterControlChangeCallback(&this, riid, pNotify);
+			}
+			public HRESULT UnregisterControlChangeCallback(IControlChangeNotify* pNotify) mut
+			{
+				return VT.UnregisterControlChangeCallback(&this, pNotify);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPart *self, PWSTR* ppwstrName) GetName;
-				public function HRESULT(IPart *self, uint32* pnId) GetLocalId;
-				public function HRESULT(IPart *self, PWSTR* ppwstrGlobalId) GetGlobalId;
-				public function HRESULT(IPart *self, PartType* pPartType) GetPartType;
-				public function HRESULT(IPart *self, Guid* pSubType) GetSubType;
-				public function HRESULT(IPart *self, uint32* pCount) GetControlInterfaceCount;
-				public function HRESULT(IPart *self, uint32 nIndex, IControlInterface** ppInterfaceDesc) GetControlInterface;
-				public function HRESULT(IPart *self, IPartsList** ppParts) EnumPartsIncoming;
-				public function HRESULT(IPart *self, IPartsList** ppParts) EnumPartsOutgoing;
-				public function HRESULT(IPart *self, IDeviceTopology** ppTopology) GetTopologyObject;
-				public function HRESULT(IPart *self, uint32 dwClsContext, Guid* refiid, void** ppvObject) Activate;
-				public function HRESULT(IPart *self, Guid* riid, IControlChangeNotify* pNotify) RegisterControlChangeCallback;
-				public function HRESULT(IPart *self, IControlChangeNotify* pNotify) UnregisterControlChangeCallback;
+				public new function HRESULT(IPart *self, PWSTR* ppwstrName) GetName;
+				public new function HRESULT(IPart *self, uint32* pnId) GetLocalId;
+				public new function HRESULT(IPart *self, PWSTR* ppwstrGlobalId) GetGlobalId;
+				public new function HRESULT(IPart *self, PartType* pPartType) GetPartType;
+				public new function HRESULT(IPart *self, Guid* pSubType) GetSubType;
+				public new function HRESULT(IPart *self, uint32* pCount) GetControlInterfaceCount;
+				public new function HRESULT(IPart *self, uint32 nIndex, IControlInterface** ppInterfaceDesc) GetControlInterface;
+				public new function HRESULT(IPart *self, IPartsList** ppParts) EnumPartsIncoming;
+				public new function HRESULT(IPart *self, IPartsList** ppParts) EnumPartsOutgoing;
+				public new function HRESULT(IPart *self, IDeviceTopology** ppTopology) GetTopologyObject;
+				public new function HRESULT(IPart *self, uint32 dwClsContext, Guid* refiid, void** ppvObject) Activate;
+				public new function HRESULT(IPart *self, Guid* riid, IControlChangeNotify* pNotify) RegisterControlChangeCallback;
+				public new function HRESULT(IPart *self, IControlChangeNotify* pNotify) UnregisterControlChangeCallback;
 			}
 		}
 		[CRepr]
@@ -2661,18 +3336,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9c2c4058, 0x23f5, 0x41de, 0x87, 0x7a, 0xdf, 0x3a, 0xf2, 0x36, 0xa0, 0x9e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ComGetType(ConnectorType* pType) mut
+			{
+				return VT.ComGetType(&this, pType);
+			}
+			public HRESULT GetDataFlow(DataFlow* pFlow) mut
+			{
+				return VT.GetDataFlow(&this, pFlow);
+			}
+			public HRESULT ConnectTo(IConnector* pConnectTo) mut
+			{
+				return VT.ConnectTo(&this, pConnectTo);
+			}
+			public HRESULT Disconnect() mut
+			{
+				return VT.Disconnect(&this);
+			}
+			public HRESULT IsConnected(BOOL* pbConnected) mut
+			{
+				return VT.IsConnected(&this, pbConnected);
+			}
+			public HRESULT GetConnectedTo(IConnector** ppConTo) mut
+			{
+				return VT.GetConnectedTo(&this, ppConTo);
+			}
+			public HRESULT GetConnectorIdConnectedTo(PWSTR* ppwstrConnectorId) mut
+			{
+				return VT.GetConnectorIdConnectedTo(&this, ppwstrConnectorId);
+			}
+			public HRESULT GetDeviceIdConnectedTo(PWSTR* ppwstrDeviceId) mut
+			{
+				return VT.GetDeviceIdConnectedTo(&this, ppwstrDeviceId);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IConnector *self, ConnectorType* pType) GetType;
-				public function HRESULT(IConnector *self, DataFlow* pFlow) GetDataFlow;
-				public function HRESULT(IConnector *self, IConnector* pConnectTo) ConnectTo;
-				public function HRESULT(IConnector *self) Disconnect;
-				public function HRESULT(IConnector *self, BOOL* pbConnected) IsConnected;
-				public function HRESULT(IConnector *self, IConnector** ppConTo) GetConnectedTo;
-				public function HRESULT(IConnector *self, PWSTR* ppwstrConnectorId) GetConnectorIdConnectedTo;
-				public function HRESULT(IConnector *self, PWSTR* ppwstrDeviceId) GetDeviceIdConnectedTo;
+				public new function HRESULT(IConnector *self, ConnectorType* pType) ComGetType;
+				public new function HRESULT(IConnector *self, DataFlow* pFlow) GetDataFlow;
+				public new function HRESULT(IConnector *self, IConnector* pConnectTo) ConnectTo;
+				public new function HRESULT(IConnector *self) Disconnect;
+				public new function HRESULT(IConnector *self, BOOL* pbConnected) IsConnected;
+				public new function HRESULT(IConnector *self, IConnector** ppConTo) GetConnectedTo;
+				public new function HRESULT(IConnector *self, PWSTR* ppwstrConnectorId) GetConnectorIdConnectedTo;
+				public new function HRESULT(IConnector *self, PWSTR* ppwstrDeviceId) GetDeviceIdConnectedTo;
 			}
 		}
 		[CRepr]
@@ -2680,7 +3388,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x82149a85, 0xdba6, 0x4487, 0x86, 0xbb, 0xea, 0x8f, 0x7f, 0xef, 0xcc, 0x71);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -2691,12 +3400,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x45d37c3f, 0x5140, 0x444a, 0xae, 0x24, 0x40, 0x07, 0x89, 0xf3, 0xcb, 0xf3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetName(PWSTR* ppwstrName) mut
+			{
+				return VT.GetName(&this, ppwstrName);
+			}
+			public HRESULT GetIID(Guid* pIID) mut
+			{
+				return VT.GetIID(&this, pIID);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IControlInterface *self, PWSTR* ppwstrName) GetName;
-				public function HRESULT(IControlInterface *self, Guid* pIID) GetIID;
+				public new function HRESULT(IControlInterface *self, PWSTR* ppwstrName) GetName;
+				public new function HRESULT(IControlInterface *self, Guid* pIID) GetIID;
 			}
 		}
 		[CRepr]
@@ -2704,11 +3422,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa09513ed, 0xc709, 0x4d21, 0xbd, 0x7b, 0x5f, 0x34, 0xc4, 0x7f, 0x39, 0x47);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnNotify(uint32 dwSenderProcessId, Guid* pguidEventContext) mut
+			{
+				return VT.OnNotify(&this, dwSenderProcessId, pguidEventContext);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IControlChangeNotify *self, uint32 dwSenderProcessId, Guid* pguidEventContext) OnNotify;
+				public new function HRESULT(IControlChangeNotify *self, uint32 dwSenderProcessId, Guid* pguidEventContext) OnNotify;
 			}
 		}
 		[CRepr]
@@ -2716,17 +3439,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2a07407e, 0x6497, 0x4a18, 0x97, 0x87, 0x32, 0xf7, 0x9b, 0xd0, 0xd9, 0x8f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetConnectorCount(uint32* pCount) mut
+			{
+				return VT.GetConnectorCount(&this, pCount);
+			}
+			public HRESULT GetConnector(uint32 nIndex, IConnector** ppConnector) mut
+			{
+				return VT.GetConnector(&this, nIndex, ppConnector);
+			}
+			public HRESULT GetSubunitCount(uint32* pCount) mut
+			{
+				return VT.GetSubunitCount(&this, pCount);
+			}
+			public HRESULT GetSubunit(uint32 nIndex, ISubunit** ppSubunit) mut
+			{
+				return VT.GetSubunit(&this, nIndex, ppSubunit);
+			}
+			public HRESULT GetPartById(uint32 nId, IPart** ppPart) mut
+			{
+				return VT.GetPartById(&this, nId, ppPart);
+			}
+			public HRESULT GetDeviceId(PWSTR* ppwstrDeviceId) mut
+			{
+				return VT.GetDeviceId(&this, ppwstrDeviceId);
+			}
+			public HRESULT GetSignalPath(IPart* pIPartFrom, IPart* pIPartTo, BOOL bRejectMixedPaths, IPartsList** ppParts) mut
+			{
+				return VT.GetSignalPath(&this, pIPartFrom, pIPartTo, bRejectMixedPaths, ppParts);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDeviceTopology *self, uint32* pCount) GetConnectorCount;
-				public function HRESULT(IDeviceTopology *self, uint32 nIndex, IConnector** ppConnector) GetConnector;
-				public function HRESULT(IDeviceTopology *self, uint32* pCount) GetSubunitCount;
-				public function HRESULT(IDeviceTopology *self, uint32 nIndex, ISubunit** ppSubunit) GetSubunit;
-				public function HRESULT(IDeviceTopology *self, uint32 nId, IPart** ppPart) GetPartById;
-				public function HRESULT(IDeviceTopology *self, PWSTR* ppwstrDeviceId) GetDeviceId;
-				public function HRESULT(IDeviceTopology *self, IPart* pIPartFrom, IPart* pIPartTo, BOOL bRejectMixedPaths, IPartsList** ppParts) GetSignalPath;
+				public new function HRESULT(IDeviceTopology *self, uint32* pCount) GetConnectorCount;
+				public new function HRESULT(IDeviceTopology *self, uint32 nIndex, IConnector** ppConnector) GetConnector;
+				public new function HRESULT(IDeviceTopology *self, uint32* pCount) GetSubunitCount;
+				public new function HRESULT(IDeviceTopology *self, uint32 nIndex, ISubunit** ppSubunit) GetSubunit;
+				public new function HRESULT(IDeviceTopology *self, uint32 nId, IPart** ppPart) GetPartById;
+				public new function HRESULT(IDeviceTopology *self, PWSTR* ppwstrDeviceId) GetDeviceId;
+				public new function HRESULT(IDeviceTopology *self, IPart* pIPartFrom, IPart* pIPartTo, BOOL bRejectMixedPaths, IPartsList** ppParts) GetSignalPath;
 			}
 		}
 		[CRepr]
@@ -2734,17 +3486,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x24918acc, 0x64b3, 0x37c1, 0x8c, 0xa9, 0x74, 0xa6, 0x6e, 0x99, 0x57, 0xa8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnDisplayNameChanged(PWSTR NewDisplayName, Guid* EventContext) mut
+			{
+				return VT.OnDisplayNameChanged(&this, NewDisplayName, EventContext);
+			}
+			public HRESULT OnIconPathChanged(PWSTR NewIconPath, Guid* EventContext) mut
+			{
+				return VT.OnIconPathChanged(&this, NewIconPath, EventContext);
+			}
+			public HRESULT OnSimpleVolumeChanged(float NewVolume, BOOL NewMute, Guid* EventContext) mut
+			{
+				return VT.OnSimpleVolumeChanged(&this, NewVolume, NewMute, EventContext);
+			}
+			public HRESULT OnChannelVolumeChanged(uint32 ChannelCount, float* NewChannelVolumeArray, uint32 ChangedChannel, Guid* EventContext) mut
+			{
+				return VT.OnChannelVolumeChanged(&this, ChannelCount, NewChannelVolumeArray, ChangedChannel, EventContext);
+			}
+			public HRESULT OnGroupingParamChanged(Guid* NewGroupingParam, Guid* EventContext) mut
+			{
+				return VT.OnGroupingParamChanged(&this, NewGroupingParam, EventContext);
+			}
+			public HRESULT OnStateChanged(AudioSessionState NewState) mut
+			{
+				return VT.OnStateChanged(&this, NewState);
+			}
+			public HRESULT OnSessionDisconnected(AudioSessionDisconnectReason DisconnectReason) mut
+			{
+				return VT.OnSessionDisconnected(&this, DisconnectReason);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioSessionEvents *self, PWSTR NewDisplayName, Guid* EventContext) OnDisplayNameChanged;
-				public function HRESULT(IAudioSessionEvents *self, PWSTR NewIconPath, Guid* EventContext) OnIconPathChanged;
-				public function HRESULT(IAudioSessionEvents *self, float NewVolume, BOOL NewMute, Guid* EventContext) OnSimpleVolumeChanged;
-				public function HRESULT(IAudioSessionEvents *self, uint32 ChannelCount, float* NewChannelVolumeArray, uint32 ChangedChannel, Guid* EventContext) OnChannelVolumeChanged;
-				public function HRESULT(IAudioSessionEvents *self, Guid* NewGroupingParam, Guid* EventContext) OnGroupingParamChanged;
-				public function HRESULT(IAudioSessionEvents *self, AudioSessionState NewState) OnStateChanged;
-				public function HRESULT(IAudioSessionEvents *self, AudioSessionDisconnectReason DisconnectReason) OnSessionDisconnected;
+				public new function HRESULT(IAudioSessionEvents *self, PWSTR NewDisplayName, Guid* EventContext) OnDisplayNameChanged;
+				public new function HRESULT(IAudioSessionEvents *self, PWSTR NewIconPath, Guid* EventContext) OnIconPathChanged;
+				public new function HRESULT(IAudioSessionEvents *self, float NewVolume, BOOL NewMute, Guid* EventContext) OnSimpleVolumeChanged;
+				public new function HRESULT(IAudioSessionEvents *self, uint32 ChannelCount, float* NewChannelVolumeArray, uint32 ChangedChannel, Guid* EventContext) OnChannelVolumeChanged;
+				public new function HRESULT(IAudioSessionEvents *self, Guid* NewGroupingParam, Guid* EventContext) OnGroupingParamChanged;
+				public new function HRESULT(IAudioSessionEvents *self, AudioSessionState NewState) OnStateChanged;
+				public new function HRESULT(IAudioSessionEvents *self, AudioSessionDisconnectReason DisconnectReason) OnSessionDisconnected;
 			}
 		}
 		[CRepr]
@@ -2752,19 +3533,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf4b1a599, 0x7266, 0x4319, 0xa8, 0xca, 0xe7, 0x0a, 0xcb, 0x11, 0xe8, 0xcd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetState(AudioSessionState* pRetVal) mut
+			{
+				return VT.GetState(&this, pRetVal);
+			}
+			public HRESULT GetDisplayName(PWSTR* pRetVal) mut
+			{
+				return VT.GetDisplayName(&this, pRetVal);
+			}
+			public HRESULT SetDisplayName(PWSTR Value, Guid* EventContext) mut
+			{
+				return VT.SetDisplayName(&this, Value, EventContext);
+			}
+			public HRESULT GetIconPath(PWSTR* pRetVal) mut
+			{
+				return VT.GetIconPath(&this, pRetVal);
+			}
+			public HRESULT SetIconPath(PWSTR Value, Guid* EventContext) mut
+			{
+				return VT.SetIconPath(&this, Value, EventContext);
+			}
+			public HRESULT GetGroupingParam(Guid* pRetVal) mut
+			{
+				return VT.GetGroupingParam(&this, pRetVal);
+			}
+			public HRESULT SetGroupingParam(Guid* Override, Guid* EventContext) mut
+			{
+				return VT.SetGroupingParam(&this, Override, EventContext);
+			}
+			public HRESULT RegisterAudioSessionNotification(IAudioSessionEvents* NewNotifications) mut
+			{
+				return VT.RegisterAudioSessionNotification(&this, NewNotifications);
+			}
+			public HRESULT UnregisterAudioSessionNotification(IAudioSessionEvents* NewNotifications) mut
+			{
+				return VT.UnregisterAudioSessionNotification(&this, NewNotifications);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioSessionControl *self, AudioSessionState* pRetVal) GetState;
-				public function HRESULT(IAudioSessionControl *self, PWSTR* pRetVal) GetDisplayName;
-				public function HRESULT(IAudioSessionControl *self, PWSTR Value, Guid* EventContext) SetDisplayName;
-				public function HRESULT(IAudioSessionControl *self, PWSTR* pRetVal) GetIconPath;
-				public function HRESULT(IAudioSessionControl *self, PWSTR Value, Guid* EventContext) SetIconPath;
-				public function HRESULT(IAudioSessionControl *self, Guid* pRetVal) GetGroupingParam;
-				public function HRESULT(IAudioSessionControl *self, Guid* Override, Guid* EventContext) SetGroupingParam;
-				public function HRESULT(IAudioSessionControl *self, IAudioSessionEvents* NewNotifications) RegisterAudioSessionNotification;
-				public function HRESULT(IAudioSessionControl *self, IAudioSessionEvents* NewNotifications) UnregisterAudioSessionNotification;
+				public new function HRESULT(IAudioSessionControl *self, AudioSessionState* pRetVal) GetState;
+				public new function HRESULT(IAudioSessionControl *self, PWSTR* pRetVal) GetDisplayName;
+				public new function HRESULT(IAudioSessionControl *self, PWSTR Value, Guid* EventContext) SetDisplayName;
+				public new function HRESULT(IAudioSessionControl *self, PWSTR* pRetVal) GetIconPath;
+				public new function HRESULT(IAudioSessionControl *self, PWSTR Value, Guid* EventContext) SetIconPath;
+				public new function HRESULT(IAudioSessionControl *self, Guid* pRetVal) GetGroupingParam;
+				public new function HRESULT(IAudioSessionControl *self, Guid* Override, Guid* EventContext) SetGroupingParam;
+				public new function HRESULT(IAudioSessionControl *self, IAudioSessionEvents* NewNotifications) RegisterAudioSessionNotification;
+				public new function HRESULT(IAudioSessionControl *self, IAudioSessionEvents* NewNotifications) UnregisterAudioSessionNotification;
 			}
 		}
 		[CRepr]
@@ -2772,15 +3590,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbfb7ff88, 0x7239, 0x4fc9, 0x8f, 0xa2, 0x07, 0xc9, 0x50, 0xbe, 0x9c, 0x6d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSessionIdentifier(PWSTR* pRetVal) mut
+			{
+				return VT.GetSessionIdentifier(&this, pRetVal);
+			}
+			public HRESULT GetSessionInstanceIdentifier(PWSTR* pRetVal) mut
+			{
+				return VT.GetSessionInstanceIdentifier(&this, pRetVal);
+			}
+			public HRESULT GetProcessId(uint32* pRetVal) mut
+			{
+				return VT.GetProcessId(&this, pRetVal);
+			}
+			public HRESULT IsSystemSoundsSession() mut
+			{
+				return VT.IsSystemSoundsSession(&this);
+			}
+			public HRESULT SetDuckingPreference(BOOL optOut) mut
+			{
+				return VT.SetDuckingPreference(&this, optOut);
+			}
 			[CRepr]
 			public struct VTable : IAudioSessionControl.VTable
 			{
-				public function HRESULT(IAudioSessionControl2 *self, PWSTR* pRetVal) GetSessionIdentifier;
-				public function HRESULT(IAudioSessionControl2 *self, PWSTR* pRetVal) GetSessionInstanceIdentifier;
-				public function HRESULT(IAudioSessionControl2 *self, uint32* pRetVal) GetProcessId;
-				public function HRESULT(IAudioSessionControl2 *self) IsSystemSoundsSession;
-				public function HRESULT(IAudioSessionControl2 *self, BOOL optOut) SetDuckingPreference;
+				public new function HRESULT(IAudioSessionControl2 *self, PWSTR* pRetVal) GetSessionIdentifier;
+				public new function HRESULT(IAudioSessionControl2 *self, PWSTR* pRetVal) GetSessionInstanceIdentifier;
+				public new function HRESULT(IAudioSessionControl2 *self, uint32* pRetVal) GetProcessId;
+				public new function HRESULT(IAudioSessionControl2 *self) IsSystemSoundsSession;
+				public new function HRESULT(IAudioSessionControl2 *self, BOOL optOut) SetDuckingPreference;
 			}
 		}
 		[CRepr]
@@ -2788,12 +3627,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbfa971f1, 0x4d5e, 0x40bb, 0x93, 0x5e, 0x96, 0x70, 0x39, 0xbf, 0xbe, 0xe4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetAudioSessionControl(Guid* AudioSessionGuid, uint32 StreamFlags, IAudioSessionControl** SessionControl) mut
+			{
+				return VT.GetAudioSessionControl(&this, AudioSessionGuid, StreamFlags, SessionControl);
+			}
+			public HRESULT GetSimpleAudioVolume(Guid* AudioSessionGuid, uint32 StreamFlags, ISimpleAudioVolume** AudioVolume) mut
+			{
+				return VT.GetSimpleAudioVolume(&this, AudioSessionGuid, StreamFlags, AudioVolume);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioSessionManager *self, Guid* AudioSessionGuid, uint32 StreamFlags, IAudioSessionControl** SessionControl) GetAudioSessionControl;
-				public function HRESULT(IAudioSessionManager *self, Guid* AudioSessionGuid, uint32 StreamFlags, ISimpleAudioVolume** AudioVolume) GetSimpleAudioVolume;
+				public new function HRESULT(IAudioSessionManager *self, Guid* AudioSessionGuid, uint32 StreamFlags, IAudioSessionControl** SessionControl) GetAudioSessionControl;
+				public new function HRESULT(IAudioSessionManager *self, Guid* AudioSessionGuid, uint32 StreamFlags, ISimpleAudioVolume** AudioVolume) GetSimpleAudioVolume;
 			}
 		}
 		[CRepr]
@@ -2801,12 +3649,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc3b284d4, 0x6d39, 0x4359, 0xb3, 0xcf, 0xb5, 0x6d, 0xdb, 0x3b, 0xb3, 0x9c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnVolumeDuckNotification(PWSTR sessionID, uint32 countCommunicationSessions) mut
+			{
+				return VT.OnVolumeDuckNotification(&this, sessionID, countCommunicationSessions);
+			}
+			public HRESULT OnVolumeUnduckNotification(PWSTR sessionID) mut
+			{
+				return VT.OnVolumeUnduckNotification(&this, sessionID);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioVolumeDuckNotification *self, PWSTR sessionID, uint32 countCommunicationSessions) OnVolumeDuckNotification;
-				public function HRESULT(IAudioVolumeDuckNotification *self, PWSTR sessionID) OnVolumeUnduckNotification;
+				public new function HRESULT(IAudioVolumeDuckNotification *self, PWSTR sessionID, uint32 countCommunicationSessions) OnVolumeDuckNotification;
+				public new function HRESULT(IAudioVolumeDuckNotification *self, PWSTR sessionID) OnVolumeUnduckNotification;
 			}
 		}
 		[CRepr]
@@ -2814,11 +3671,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x641dd20b, 0x4d41, 0x49cc, 0xab, 0xa3, 0x17, 0x4b, 0x94, 0x77, 0xbb, 0x08);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnSessionCreated(IAudioSessionControl* NewSession) mut
+			{
+				return VT.OnSessionCreated(&this, NewSession);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioSessionNotification *self, IAudioSessionControl* NewSession) OnSessionCreated;
+				public new function HRESULT(IAudioSessionNotification *self, IAudioSessionControl* NewSession) OnSessionCreated;
 			}
 		}
 		[CRepr]
@@ -2826,12 +3688,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe2f5bb11, 0x0570, 0x40ca, 0xac, 0xdd, 0x3a, 0xa0, 0x12, 0x77, 0xde, 0xe8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCount(int32* SessionCount) mut
+			{
+				return VT.GetCount(&this, SessionCount);
+			}
+			public HRESULT GetSession(int32 SessionCount, IAudioSessionControl** Session) mut
+			{
+				return VT.GetSession(&this, SessionCount, Session);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioSessionEnumerator *self, int32* SessionCount) GetCount;
-				public function HRESULT(IAudioSessionEnumerator *self, int32 SessionCount, IAudioSessionControl** Session) GetSession;
+				public new function HRESULT(IAudioSessionEnumerator *self, int32* SessionCount) GetCount;
+				public new function HRESULT(IAudioSessionEnumerator *self, int32 SessionCount, IAudioSessionControl** Session) GetSession;
 			}
 		}
 		[CRepr]
@@ -2839,15 +3710,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x77aa99a0, 0x1bd6, 0x484f, 0x8b, 0xc7, 0x2c, 0x65, 0x4c, 0x9a, 0x9b, 0x6f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSessionEnumerator(IAudioSessionEnumerator** SessionEnum) mut
+			{
+				return VT.GetSessionEnumerator(&this, SessionEnum);
+			}
+			public HRESULT RegisterSessionNotification(IAudioSessionNotification* SessionNotification) mut
+			{
+				return VT.RegisterSessionNotification(&this, SessionNotification);
+			}
+			public HRESULT UnregisterSessionNotification(IAudioSessionNotification* SessionNotification) mut
+			{
+				return VT.UnregisterSessionNotification(&this, SessionNotification);
+			}
+			public HRESULT RegisterDuckNotification(PWSTR sessionID, IAudioVolumeDuckNotification* duckNotification) mut
+			{
+				return VT.RegisterDuckNotification(&this, sessionID, duckNotification);
+			}
+			public HRESULT UnregisterDuckNotification(IAudioVolumeDuckNotification* duckNotification) mut
+			{
+				return VT.UnregisterDuckNotification(&this, duckNotification);
+			}
 			[CRepr]
 			public struct VTable : IAudioSessionManager.VTable
 			{
-				public function HRESULT(IAudioSessionManager2 *self, IAudioSessionEnumerator** SessionEnum) GetSessionEnumerator;
-				public function HRESULT(IAudioSessionManager2 *self, IAudioSessionNotification* SessionNotification) RegisterSessionNotification;
-				public function HRESULT(IAudioSessionManager2 *self, IAudioSessionNotification* SessionNotification) UnregisterSessionNotification;
-				public function HRESULT(IAudioSessionManager2 *self, PWSTR sessionID, IAudioVolumeDuckNotification* duckNotification) RegisterDuckNotification;
-				public function HRESULT(IAudioSessionManager2 *self, IAudioVolumeDuckNotification* duckNotification) UnregisterDuckNotification;
+				public new function HRESULT(IAudioSessionManager2 *self, IAudioSessionEnumerator** SessionEnum) GetSessionEnumerator;
+				public new function HRESULT(IAudioSessionManager2 *self, IAudioSessionNotification* SessionNotification) RegisterSessionNotification;
+				public new function HRESULT(IAudioSessionManager2 *self, IAudioSessionNotification* SessionNotification) UnregisterSessionNotification;
+				public new function HRESULT(IAudioSessionManager2 *self, PWSTR sessionID, IAudioVolumeDuckNotification* duckNotification) RegisterDuckNotification;
+				public new function HRESULT(IAudioSessionManager2 *self, IAudioVolumeDuckNotification* duckNotification) UnregisterDuckNotification;
 			}
 		}
 		[CRepr]
@@ -2855,15 +3747,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbcd7c78f, 0x3098, 0x4f22, 0xb5, 0x47, 0xa2, 0xf2, 0x5a, 0x38, 0x12, 0x69);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetFrameCount(uint16* frameCount) mut
+			{
+				return VT.GetFrameCount(&this, frameCount);
+			}
+			public HRESULT GetItemCount(uint16* itemCount) mut
+			{
+				return VT.GetItemCount(&this, itemCount);
+			}
+			public HRESULT GetMaxItemCount(uint16* maxItemCount) mut
+			{
+				return VT.GetMaxItemCount(&this, maxItemCount);
+			}
+			public HRESULT GetMaxValueBufferLength(uint32* maxValueBufferLength) mut
+			{
+				return VT.GetMaxValueBufferLength(&this, maxValueBufferLength);
+			}
+			public HRESULT GetInfo(SpatialAudioMetadataItemsInfo* info) mut
+			{
+				return VT.GetInfo(&this, info);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISpatialAudioMetadataItems *self, uint16* frameCount) GetFrameCount;
-				public function HRESULT(ISpatialAudioMetadataItems *self, uint16* itemCount) GetItemCount;
-				public function HRESULT(ISpatialAudioMetadataItems *self, uint16* maxItemCount) GetMaxItemCount;
-				public function HRESULT(ISpatialAudioMetadataItems *self, uint32* maxValueBufferLength) GetMaxValueBufferLength;
-				public function HRESULT(ISpatialAudioMetadataItems *self, SpatialAudioMetadataItemsInfo* info) GetInfo;
+				public new function HRESULT(ISpatialAudioMetadataItems *self, uint16* frameCount) GetFrameCount;
+				public new function HRESULT(ISpatialAudioMetadataItems *self, uint16* itemCount) GetItemCount;
+				public new function HRESULT(ISpatialAudioMetadataItems *self, uint16* maxItemCount) GetMaxItemCount;
+				public new function HRESULT(ISpatialAudioMetadataItems *self, uint32* maxValueBufferLength) GetMaxValueBufferLength;
+				public new function HRESULT(ISpatialAudioMetadataItems *self, SpatialAudioMetadataItemsInfo* info) GetInfo;
 			}
 		}
 		[CRepr]
@@ -2871,14 +3784,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1b17ca01, 0x2955, 0x444d, 0xa4, 0x30, 0x53, 0x7d, 0xc5, 0x89, 0xa8, 0x44);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Open(ISpatialAudioMetadataItems* metadataItems) mut
+			{
+				return VT.Open(&this, metadataItems);
+			}
+			public HRESULT WriteNextItem(uint16 frameOffset) mut
+			{
+				return VT.WriteNextItem(&this, frameOffset);
+			}
+			public HRESULT WriteNextItemCommand(uint8 commandID, void* valueBuffer, uint32 valueBufferLength) mut
+			{
+				return VT.WriteNextItemCommand(&this, commandID, valueBuffer, valueBufferLength);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISpatialAudioMetadataWriter *self, ISpatialAudioMetadataItems* metadataItems) Open;
-				public function HRESULT(ISpatialAudioMetadataWriter *self, uint16 frameOffset) WriteNextItem;
-				public function HRESULT(ISpatialAudioMetadataWriter *self, uint8 commandID, void* valueBuffer, uint32 valueBufferLength) WriteNextItemCommand;
-				public function HRESULT(ISpatialAudioMetadataWriter *self) Close;
+				public new function HRESULT(ISpatialAudioMetadataWriter *self, ISpatialAudioMetadataItems* metadataItems) Open;
+				public new function HRESULT(ISpatialAudioMetadataWriter *self, uint16 frameOffset) WriteNextItem;
+				public new function HRESULT(ISpatialAudioMetadataWriter *self, uint8 commandID, void* valueBuffer, uint32 valueBufferLength) WriteNextItemCommand;
+				public new function HRESULT(ISpatialAudioMetadataWriter *self) Close;
 			}
 		}
 		[CRepr]
@@ -2886,14 +3816,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb78e86a2, 0x31d9, 0x4c32, 0x94, 0xd2, 0x7d, 0xf4, 0x0f, 0xc7, 0xeb, 0xec);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Open(ISpatialAudioMetadataItems* metadataItems) mut
+			{
+				return VT.Open(&this, metadataItems);
+			}
+			public HRESULT ReadNextItem(uint8* commandCount, uint16* frameOffset) mut
+			{
+				return VT.ReadNextItem(&this, commandCount, frameOffset);
+			}
+			public HRESULT ReadNextItemCommand(uint8* commandID, void* valueBuffer, uint32 maxValueBufferLength, uint32* valueBufferLength) mut
+			{
+				return VT.ReadNextItemCommand(&this, commandID, valueBuffer, maxValueBufferLength, valueBufferLength);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISpatialAudioMetadataReader *self, ISpatialAudioMetadataItems* metadataItems) Open;
-				public function HRESULT(ISpatialAudioMetadataReader *self, uint8* commandCount, uint16* frameOffset) ReadNextItem;
-				public function HRESULT(ISpatialAudioMetadataReader *self, uint8* commandID, void* valueBuffer, uint32 maxValueBufferLength, uint32* valueBufferLength) ReadNextItemCommand;
-				public function HRESULT(ISpatialAudioMetadataReader *self) Close;
+				public new function HRESULT(ISpatialAudioMetadataReader *self, ISpatialAudioMetadataItems* metadataItems) Open;
+				public new function HRESULT(ISpatialAudioMetadataReader *self, uint8* commandCount, uint16* frameOffset) ReadNextItem;
+				public new function HRESULT(ISpatialAudioMetadataReader *self, uint8* commandID, void* valueBuffer, uint32 maxValueBufferLength, uint32* valueBufferLength) ReadNextItemCommand;
+				public new function HRESULT(ISpatialAudioMetadataReader *self) Close;
 			}
 		}
 		[CRepr]
@@ -2901,13 +3848,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd224b233, 0xe251, 0x4fd0, 0x9c, 0xa2, 0xd5, 0xec, 0xf9, 0xa6, 0x84, 0x04);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Open(ISpatialAudioMetadataItems* metadataItems) mut
+			{
+				return VT.Open(&this, metadataItems);
+			}
+			public HRESULT CopyMetadataForFrames(uint16 copyFrameCount, SpatialAudioMetadataCopyMode copyMode, ISpatialAudioMetadataItems* dstMetadataItems, uint16* itemsCopied) mut
+			{
+				return VT.CopyMetadataForFrames(&this, copyFrameCount, copyMode, dstMetadataItems, itemsCopied);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISpatialAudioMetadataCopier *self, ISpatialAudioMetadataItems* metadataItems) Open;
-				public function HRESULT(ISpatialAudioMetadataCopier *self, uint16 copyFrameCount, SpatialAudioMetadataCopyMode copyMode, ISpatialAudioMetadataItems* dstMetadataItems, uint16* itemsCopied) CopyMetadataForFrames;
-				public function HRESULT(ISpatialAudioMetadataCopier *self) Close;
+				public new function HRESULT(ISpatialAudioMetadataCopier *self, ISpatialAudioMetadataItems* metadataItems) Open;
+				public new function HRESULT(ISpatialAudioMetadataCopier *self, uint16 copyFrameCount, SpatialAudioMetadataCopyMode copyMode, ISpatialAudioMetadataItems* dstMetadataItems, uint16* itemsCopied) CopyMetadataForFrames;
+				public new function HRESULT(ISpatialAudioMetadataCopier *self) Close;
 			}
 		}
 		[CRepr]
@@ -2915,13 +3875,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x42640a16, 0xe1bd, 0x42d9, 0x9f, 0xf6, 0x03, 0x1a, 0xb7, 0x1a, 0x2d, 0xba);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AttachToBuffer(uint8* buffer, uint32 bufferLength) mut
+			{
+				return VT.AttachToBuffer(&this, buffer, bufferLength);
+			}
+			public HRESULT AttachToPopulatedBuffer(uint8* buffer, uint32 bufferLength) mut
+			{
+				return VT.AttachToPopulatedBuffer(&this, buffer, bufferLength);
+			}
+			public HRESULT DetachBuffer() mut
+			{
+				return VT.DetachBuffer(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISpatialAudioMetadataItemsBuffer *self, uint8* buffer, uint32 bufferLength) AttachToBuffer;
-				public function HRESULT(ISpatialAudioMetadataItemsBuffer *self, uint8* buffer, uint32 bufferLength) AttachToPopulatedBuffer;
-				public function HRESULT(ISpatialAudioMetadataItemsBuffer *self) DetachBuffer;
+				public new function HRESULT(ISpatialAudioMetadataItemsBuffer *self, uint8* buffer, uint32 bufferLength) AttachToBuffer;
+				public new function HRESULT(ISpatialAudioMetadataItemsBuffer *self, uint8* buffer, uint32 bufferLength) AttachToPopulatedBuffer;
+				public new function HRESULT(ISpatialAudioMetadataItemsBuffer *self) DetachBuffer;
 			}
 		}
 		[CRepr]
@@ -2929,15 +3902,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x777d4a3b, 0xf6ff, 0x4a26, 0x85, 0xdc, 0x68, 0xd7, 0xcd, 0xed, 0xa1, 0xd4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ActivateSpatialAudioMetadataItems(uint16 maxItemCount, uint16 frameCount, ISpatialAudioMetadataItemsBuffer** metadataItemsBuffer, ISpatialAudioMetadataItems** metadataItems) mut
+			{
+				return VT.ActivateSpatialAudioMetadataItems(&this, maxItemCount, frameCount, metadataItemsBuffer, metadataItems);
+			}
+			public HRESULT GetSpatialAudioMetadataItemsBufferLength(uint16 maxItemCount, uint32* bufferLength) mut
+			{
+				return VT.GetSpatialAudioMetadataItemsBufferLength(&this, maxItemCount, bufferLength);
+			}
+			public HRESULT ActivateSpatialAudioMetadataWriter(SpatialAudioMetadataWriterOverflowMode overflowMode, ISpatialAudioMetadataWriter** metadataWriter) mut
+			{
+				return VT.ActivateSpatialAudioMetadataWriter(&this, overflowMode, metadataWriter);
+			}
+			public HRESULT ActivateSpatialAudioMetadataCopier(ISpatialAudioMetadataCopier** metadataCopier) mut
+			{
+				return VT.ActivateSpatialAudioMetadataCopier(&this, metadataCopier);
+			}
+			public HRESULT ActivateSpatialAudioMetadataReader(ISpatialAudioMetadataReader** metadataReader) mut
+			{
+				return VT.ActivateSpatialAudioMetadataReader(&this, metadataReader);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISpatialAudioMetadataClient *self, uint16 maxItemCount, uint16 frameCount, ISpatialAudioMetadataItemsBuffer** metadataItemsBuffer, ISpatialAudioMetadataItems** metadataItems) ActivateSpatialAudioMetadataItems;
-				public function HRESULT(ISpatialAudioMetadataClient *self, uint16 maxItemCount, uint32* bufferLength) GetSpatialAudioMetadataItemsBufferLength;
-				public function HRESULT(ISpatialAudioMetadataClient *self, SpatialAudioMetadataWriterOverflowMode overflowMode, ISpatialAudioMetadataWriter** metadataWriter) ActivateSpatialAudioMetadataWriter;
-				public function HRESULT(ISpatialAudioMetadataClient *self, ISpatialAudioMetadataCopier** metadataCopier) ActivateSpatialAudioMetadataCopier;
-				public function HRESULT(ISpatialAudioMetadataClient *self, ISpatialAudioMetadataReader** metadataReader) ActivateSpatialAudioMetadataReader;
+				public new function HRESULT(ISpatialAudioMetadataClient *self, uint16 maxItemCount, uint16 frameCount, ISpatialAudioMetadataItemsBuffer** metadataItemsBuffer, ISpatialAudioMetadataItems** metadataItems) ActivateSpatialAudioMetadataItems;
+				public new function HRESULT(ISpatialAudioMetadataClient *self, uint16 maxItemCount, uint32* bufferLength) GetSpatialAudioMetadataItemsBufferLength;
+				public new function HRESULT(ISpatialAudioMetadataClient *self, SpatialAudioMetadataWriterOverflowMode overflowMode, ISpatialAudioMetadataWriter** metadataWriter) ActivateSpatialAudioMetadataWriter;
+				public new function HRESULT(ISpatialAudioMetadataClient *self, ISpatialAudioMetadataCopier** metadataCopier) ActivateSpatialAudioMetadataCopier;
+				public new function HRESULT(ISpatialAudioMetadataClient *self, ISpatialAudioMetadataReader** metadataReader) ActivateSpatialAudioMetadataReader;
 			}
 		}
 		[CRepr]
@@ -2945,11 +3939,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0df2c94b, 0xf5f9, 0x472d, 0xaf, 0x6b, 0xc4, 0x6e, 0x0a, 0xc9, 0xcd, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT WriteNextMetadataCommand(uint8 commandID, void* valueBuffer, uint32 valueBufferLength) mut
+			{
+				return VT.WriteNextMetadataCommand(&this, commandID, valueBuffer, valueBufferLength);
+			}
 			[CRepr]
 			public struct VTable : ISpatialAudioObjectBase.VTable
 			{
-				public function HRESULT(ISpatialAudioObjectForMetadataCommands *self, uint8 commandID, void* valueBuffer, uint32 valueBufferLength) WriteNextMetadataCommand;
+				public new function HRESULT(ISpatialAudioObjectForMetadataCommands *self, uint8 commandID, void* valueBuffer, uint32 valueBufferLength) WriteNextMetadataCommand;
 			}
 		}
 		[CRepr]
@@ -2957,11 +3956,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xddea49ff, 0x3bc0, 0x4377, 0x8a, 0xad, 0x9f, 0xbc, 0xfd, 0x80, 0x85, 0x66);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSpatialAudioMetadataItems(ISpatialAudioMetadataItems** metadataItems) mut
+			{
+				return VT.GetSpatialAudioMetadataItems(&this, metadataItems);
+			}
 			[CRepr]
 			public struct VTable : ISpatialAudioObjectBase.VTable
 			{
-				public function HRESULT(ISpatialAudioObjectForMetadataItems *self, ISpatialAudioMetadataItems** metadataItems) GetSpatialAudioMetadataItems;
+				public new function HRESULT(ISpatialAudioObjectForMetadataItems *self, ISpatialAudioMetadataItems** metadataItems) GetSpatialAudioMetadataItems;
 			}
 		}
 		[CRepr]
@@ -2969,12 +3973,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbbc9c907, 0x48d5, 0x4a2e, 0xa0, 0xc7, 0xf7, 0xf0, 0xd6, 0x7c, 0x1f, 0xb1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ActivateSpatialAudioObjectForMetadataCommands(AudioObjectType type, ISpatialAudioObjectForMetadataCommands** audioObject) mut
+			{
+				return VT.ActivateSpatialAudioObjectForMetadataCommands(&this, type, audioObject);
+			}
+			public HRESULT ActivateSpatialAudioObjectForMetadataItems(AudioObjectType type, ISpatialAudioObjectForMetadataItems** audioObject) mut
+			{
+				return VT.ActivateSpatialAudioObjectForMetadataItems(&this, type, audioObject);
+			}
 			[CRepr]
 			public struct VTable : ISpatialAudioObjectRenderStreamBase.VTable
 			{
-				public function HRESULT(ISpatialAudioObjectRenderStreamForMetadata *self, AudioObjectType type, ISpatialAudioObjectForMetadataCommands** audioObject) ActivateSpatialAudioObjectForMetadataCommands;
-				public function HRESULT(ISpatialAudioObjectRenderStreamForMetadata *self, AudioObjectType type, ISpatialAudioObjectForMetadataItems** audioObject) ActivateSpatialAudioObjectForMetadataItems;
+				public new function HRESULT(ISpatialAudioObjectRenderStreamForMetadata *self, AudioObjectType type, ISpatialAudioObjectForMetadataCommands** audioObject) ActivateSpatialAudioObjectForMetadataCommands;
+				public new function HRESULT(ISpatialAudioObjectRenderStreamForMetadata *self, AudioObjectType type, ISpatialAudioObjectForMetadataItems** audioObject) ActivateSpatialAudioObjectForMetadataItems;
 			}
 		}
 		[CRepr]
@@ -2982,13 +3995,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x63bd8738, 0xe30d, 0x4c77, 0xbf, 0x5c, 0x83, 0x4e, 0x87, 0xc6, 0x57, 0xe2);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RegisterCallback(PAudioStateMonitorCallback callback, void* context, int64* registration) mut
+			{
+				return VT.RegisterCallback(&this, callback, context, registration);
+			}
+			public void UnregisterCallback(int64 registration) mut
+			{
+				VT.UnregisterCallback(&this, registration);
+			}
+			public AudioStateMonitorSoundLevel GetSoundLevel() mut
+			{
+				return VT.GetSoundLevel(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAudioStateMonitor *self, PAudioStateMonitorCallback callback, void* context, int64* registration) RegisterCallback;
-				public function void(IAudioStateMonitor *self, int64 registration) UnregisterCallback;
-				public function AudioStateMonitorSoundLevel(IAudioStateMonitor *self) GetSoundLevel;
+				public new function HRESULT(IAudioStateMonitor *self, PAudioStateMonitorCallback callback, void* context, int64* registration) RegisterCallback;
+				public new function void(IAudioStateMonitor *self, int64 registration) UnregisterCallback;
+				public new function AudioStateMonitorSoundLevel(IAudioStateMonitor *self) GetSoundLevel;
 			}
 		}
 		

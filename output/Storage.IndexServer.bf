@@ -279,15 +279,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x89bcb740, 0x6119, 0x101a, 0xbc, 0xb7, 0x00, 0xdd, 0x01, 0x06, 0x55, 0xaf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public int32 Init(uint32 grfFlags, uint32 cAttributes, FULLPROPSPEC* aAttributes, uint32* pFlags) mut
+			{
+				return VT.Init(&this, grfFlags, cAttributes, aAttributes, pFlags);
+			}
+			public int32 GetChunk(STAT_CHUNK* pStat) mut
+			{
+				return VT.GetChunk(&this, pStat);
+			}
+			public int32 GetText(uint32* pcwcBuffer, char16* awcBuffer) mut
+			{
+				return VT.GetText(&this, pcwcBuffer, awcBuffer);
+			}
+			public int32 GetValue(PROPVARIANT** ppPropValue) mut
+			{
+				return VT.GetValue(&this, ppPropValue);
+			}
+			public int32 BindRegion(FILTERREGION origPos, Guid* riid, void** ppunk) mut
+			{
+				return VT.BindRegion(&this, origPos, riid, ppunk);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function int32(IFilter *self, uint32 grfFlags, uint32 cAttributes, FULLPROPSPEC* aAttributes, uint32* pFlags) Init;
-				public function int32(IFilter *self, STAT_CHUNK* pStat) GetChunk;
-				public function int32(IFilter *self, uint32* pcwcBuffer, char16* awcBuffer) GetText;
-				public function int32(IFilter *self, PROPVARIANT** ppPropValue) GetValue;
-				public function int32(IFilter *self, FILTERREGION origPos, Guid* riid, void** ppunk) BindRegion;
+				public new function int32(IFilter *self, uint32 grfFlags, uint32 cAttributes, FULLPROPSPEC* aAttributes, uint32* pFlags) Init;
+				public new function int32(IFilter *self, STAT_CHUNK* pStat) GetChunk;
+				public new function int32(IFilter *self, uint32* pcwcBuffer, char16* awcBuffer) GetText;
+				public new function int32(IFilter *self, PROPVARIANT** ppPropValue) GetValue;
+				public new function int32(IFilter *self, FILTERREGION origPos, Guid* riid, void** ppunk) BindRegion;
 			}
 		}
 		[CRepr]
@@ -295,12 +316,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xcc906ff0, 0xc058, 0x101a, 0xb5, 0x54, 0x08, 0x00, 0x2b, 0x33, 0xb0, 0xe6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT PutSmallPhrase(PWSTR pwcNoun, uint32 cwcNoun, PWSTR pwcModifier, uint32 cwcModifier, uint32 ulAttachmentType) mut
+			{
+				return VT.PutSmallPhrase(&this, pwcNoun, cwcNoun, pwcModifier, cwcModifier, ulAttachmentType);
+			}
+			public HRESULT PutPhrase(PWSTR pwcPhrase, uint32 cwcPhrase) mut
+			{
+				return VT.PutPhrase(&this, pwcPhrase, cwcPhrase);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPhraseSink *self, PWSTR pwcNoun, uint32 cwcNoun, PWSTR pwcModifier, uint32 cwcModifier, uint32 ulAttachmentType) PutSmallPhrase;
-				public function HRESULT(IPhraseSink *self, PWSTR pwcPhrase, uint32 cwcPhrase) PutPhrase;
+				public new function HRESULT(IPhraseSink *self, PWSTR pwcNoun, uint32 cwcNoun, PWSTR pwcModifier, uint32 cwcModifier, uint32 ulAttachmentType) PutSmallPhrase;
+				public new function HRESULT(IPhraseSink *self, PWSTR pwcPhrase, uint32 cwcPhrase) PutPhrase;
 			}
 		}
 		

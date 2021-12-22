@@ -5522,39 +5522,156 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x46eb5926, 0x582e, 0x4017, 0x9f, 0xdf, 0xe8, 0x99, 0x8d, 0xaa, 0x09, 0x50);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Add(HBITMAP hbmImage, HBITMAP hbmMask, int32* pi) mut
+			{
+				return VT.Add(&this, hbmImage, hbmMask, pi);
+			}
+			public HRESULT ReplaceIcon(int32 i, HICON hicon, int32* pi) mut
+			{
+				return VT.ReplaceIcon(&this, i, hicon, pi);
+			}
+			public HRESULT SetOverlayImage(int32 iImage, int32 iOverlay) mut
+			{
+				return VT.SetOverlayImage(&this, iImage, iOverlay);
+			}
+			public HRESULT Replace(int32 i, HBITMAP hbmImage, HBITMAP hbmMask) mut
+			{
+				return VT.Replace(&this, i, hbmImage, hbmMask);
+			}
+			public HRESULT AddMasked(HBITMAP hbmImage, uint32 crMask, int32* pi) mut
+			{
+				return VT.AddMasked(&this, hbmImage, crMask, pi);
+			}
+			public HRESULT Draw(IMAGELISTDRAWPARAMS* pimldp) mut
+			{
+				return VT.Draw(&this, pimldp);
+			}
+			public HRESULT Remove(int32 i) mut
+			{
+				return VT.Remove(&this, i);
+			}
+			public HRESULT GetIcon(int32 i, uint32 flags, HICON* picon) mut
+			{
+				return VT.GetIcon(&this, i, flags, picon);
+			}
+			public HRESULT GetImageInfo(int32 i, IMAGEINFO* pImageInfo) mut
+			{
+				return VT.GetImageInfo(&this, i, pImageInfo);
+			}
+			public HRESULT Copy(int32 iDst, IUnknown* punkSrc, int32 iSrc, uint32 uFlags) mut
+			{
+				return VT.Copy(&this, iDst, punkSrc, iSrc, uFlags);
+			}
+			public HRESULT Merge(int32 i1, IUnknown* punk2, int32 i2, int32 dx, int32 dy, Guid* riid, void** ppv) mut
+			{
+				return VT.Merge(&this, i1, punk2, i2, dx, dy, riid, ppv);
+			}
+			public HRESULT Clone(Guid* riid, void** ppv) mut
+			{
+				return VT.Clone(&this, riid, ppv);
+			}
+			public HRESULT GetImageRect(int32 i, RECT* prc) mut
+			{
+				return VT.GetImageRect(&this, i, prc);
+			}
+			public HRESULT GetIconSize(int32* cx, int32* cy) mut
+			{
+				return VT.GetIconSize(&this, cx, cy);
+			}
+			public HRESULT SetIconSize(int32 cx, int32 cy) mut
+			{
+				return VT.SetIconSize(&this, cx, cy);
+			}
+			public HRESULT GetImageCount(int32* pi) mut
+			{
+				return VT.GetImageCount(&this, pi);
+			}
+			public HRESULT SetImageCount(uint32 uNewCount) mut
+			{
+				return VT.SetImageCount(&this, uNewCount);
+			}
+			public HRESULT SetBkColor(uint32 clrBk, uint32* pclr) mut
+			{
+				return VT.SetBkColor(&this, clrBk, pclr);
+			}
+			public HRESULT GetBkColor(uint32* pclr) mut
+			{
+				return VT.GetBkColor(&this, pclr);
+			}
+			public HRESULT BeginDrag(int32 iTrack, int32 dxHotspot, int32 dyHotspot) mut
+			{
+				return VT.BeginDrag(&this, iTrack, dxHotspot, dyHotspot);
+			}
+			public HRESULT EndDrag() mut
+			{
+				return VT.EndDrag(&this);
+			}
+			public HRESULT DragEnter(HWND hwndLock, int32 x, int32 y) mut
+			{
+				return VT.DragEnter(&this, hwndLock, x, y);
+			}
+			public HRESULT DragLeave(HWND hwndLock) mut
+			{
+				return VT.DragLeave(&this, hwndLock);
+			}
+			public HRESULT DragMove(int32 x, int32 y) mut
+			{
+				return VT.DragMove(&this, x, y);
+			}
+			public HRESULT SetDragCursorImage(IUnknown* punk, int32 iDrag, int32 dxHotspot, int32 dyHotspot) mut
+			{
+				return VT.SetDragCursorImage(&this, punk, iDrag, dxHotspot, dyHotspot);
+			}
+			public HRESULT DragShowNolock(BOOL fShow) mut
+			{
+				return VT.DragShowNolock(&this, fShow);
+			}
+			public HRESULT GetDragImage(POINT* ppt, POINT* pptHotspot, Guid* riid, void** ppv) mut
+			{
+				return VT.GetDragImage(&this, ppt, pptHotspot, riid, ppv);
+			}
+			public HRESULT GetItemFlags(int32 i, IMAGE_LIST_ITEM_FLAGS* dwFlags) mut
+			{
+				return VT.GetItemFlags(&this, i, dwFlags);
+			}
+			public HRESULT GetOverlayImage(int32 iOverlay, int32* piIndex) mut
+			{
+				return VT.GetOverlayImage(&this, iOverlay, piIndex);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IImageList *self, HBITMAP hbmImage, HBITMAP hbmMask, int32* pi) Add;
-				public function HRESULT(IImageList *self, int32 i, HICON hicon, int32* pi) ReplaceIcon;
-				public function HRESULT(IImageList *self, int32 iImage, int32 iOverlay) SetOverlayImage;
-				public function HRESULT(IImageList *self, int32 i, HBITMAP hbmImage, HBITMAP hbmMask) Replace;
-				public function HRESULT(IImageList *self, HBITMAP hbmImage, uint32 crMask, int32* pi) AddMasked;
-				public function HRESULT(IImageList *self, IMAGELISTDRAWPARAMS* pimldp) Draw;
-				public function HRESULT(IImageList *self, int32 i) Remove;
-				public function HRESULT(IImageList *self, int32 i, uint32 flags, HICON* picon) GetIcon;
-				public function HRESULT(IImageList *self, int32 i, IMAGEINFO* pImageInfo) GetImageInfo;
-				public function HRESULT(IImageList *self, int32 iDst, IUnknown* punkSrc, int32 iSrc, uint32 uFlags) Copy;
-				public function HRESULT(IImageList *self, int32 i1, IUnknown* punk2, int32 i2, int32 dx, int32 dy, Guid* riid, void** ppv) Merge;
-				public function HRESULT(IImageList *self, Guid* riid, void** ppv) Clone;
-				public function HRESULT(IImageList *self, int32 i, RECT* prc) GetImageRect;
-				public function HRESULT(IImageList *self, int32* cx, int32* cy) GetIconSize;
-				public function HRESULT(IImageList *self, int32 cx, int32 cy) SetIconSize;
-				public function HRESULT(IImageList *self, int32* pi) GetImageCount;
-				public function HRESULT(IImageList *self, uint32 uNewCount) SetImageCount;
-				public function HRESULT(IImageList *self, uint32 clrBk, uint32* pclr) SetBkColor;
-				public function HRESULT(IImageList *self, uint32* pclr) GetBkColor;
-				public function HRESULT(IImageList *self, int32 iTrack, int32 dxHotspot, int32 dyHotspot) BeginDrag;
-				public function HRESULT(IImageList *self) EndDrag;
-				public function HRESULT(IImageList *self, HWND hwndLock, int32 x, int32 y) DragEnter;
-				public function HRESULT(IImageList *self, HWND hwndLock) DragLeave;
-				public function HRESULT(IImageList *self, int32 x, int32 y) DragMove;
-				public function HRESULT(IImageList *self, IUnknown* punk, int32 iDrag, int32 dxHotspot, int32 dyHotspot) SetDragCursorImage;
-				public function HRESULT(IImageList *self, BOOL fShow) DragShowNolock;
-				public function HRESULT(IImageList *self, POINT* ppt, POINT* pptHotspot, Guid* riid, void** ppv) GetDragImage;
-				public function HRESULT(IImageList *self, int32 i, IMAGE_LIST_ITEM_FLAGS* dwFlags) GetItemFlags;
-				public function HRESULT(IImageList *self, int32 iOverlay, int32* piIndex) GetOverlayImage;
+				public new function HRESULT(IImageList *self, HBITMAP hbmImage, HBITMAP hbmMask, int32* pi) Add;
+				public new function HRESULT(IImageList *self, int32 i, HICON hicon, int32* pi) ReplaceIcon;
+				public new function HRESULT(IImageList *self, int32 iImage, int32 iOverlay) SetOverlayImage;
+				public new function HRESULT(IImageList *self, int32 i, HBITMAP hbmImage, HBITMAP hbmMask) Replace;
+				public new function HRESULT(IImageList *self, HBITMAP hbmImage, uint32 crMask, int32* pi) AddMasked;
+				public new function HRESULT(IImageList *self, IMAGELISTDRAWPARAMS* pimldp) Draw;
+				public new function HRESULT(IImageList *self, int32 i) Remove;
+				public new function HRESULT(IImageList *self, int32 i, uint32 flags, HICON* picon) GetIcon;
+				public new function HRESULT(IImageList *self, int32 i, IMAGEINFO* pImageInfo) GetImageInfo;
+				public new function HRESULT(IImageList *self, int32 iDst, IUnknown* punkSrc, int32 iSrc, uint32 uFlags) Copy;
+				public new function HRESULT(IImageList *self, int32 i1, IUnknown* punk2, int32 i2, int32 dx, int32 dy, Guid* riid, void** ppv) Merge;
+				public new function HRESULT(IImageList *self, Guid* riid, void** ppv) Clone;
+				public new function HRESULT(IImageList *self, int32 i, RECT* prc) GetImageRect;
+				public new function HRESULT(IImageList *self, int32* cx, int32* cy) GetIconSize;
+				public new function HRESULT(IImageList *self, int32 cx, int32 cy) SetIconSize;
+				public new function HRESULT(IImageList *self, int32* pi) GetImageCount;
+				public new function HRESULT(IImageList *self, uint32 uNewCount) SetImageCount;
+				public new function HRESULT(IImageList *self, uint32 clrBk, uint32* pclr) SetBkColor;
+				public new function HRESULT(IImageList *self, uint32* pclr) GetBkColor;
+				public new function HRESULT(IImageList *self, int32 iTrack, int32 dxHotspot, int32 dyHotspot) BeginDrag;
+				public new function HRESULT(IImageList *self) EndDrag;
+				public new function HRESULT(IImageList *self, HWND hwndLock, int32 x, int32 y) DragEnter;
+				public new function HRESULT(IImageList *self, HWND hwndLock) DragLeave;
+				public new function HRESULT(IImageList *self, int32 x, int32 y) DragMove;
+				public new function HRESULT(IImageList *self, IUnknown* punk, int32 iDrag, int32 dxHotspot, int32 dyHotspot) SetDragCursorImage;
+				public new function HRESULT(IImageList *self, BOOL fShow) DragShowNolock;
+				public new function HRESULT(IImageList *self, POINT* ppt, POINT* pptHotspot, Guid* riid, void** ppv) GetDragImage;
+				public new function HRESULT(IImageList *self, int32 i, IMAGE_LIST_ITEM_FLAGS* dwFlags) GetItemFlags;
+				public new function HRESULT(IImageList *self, int32 iOverlay, int32* piIndex) GetOverlayImage;
 			}
 		}
 		[CRepr]
@@ -5562,22 +5679,71 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x192b9d83, 0x50fc, 0x457b, 0x90, 0xa0, 0x2b, 0x82, 0xa8, 0xb5, 0xda, 0xe1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Resize(int32 cxNewIconSize, int32 cyNewIconSize) mut
+			{
+				return VT.Resize(&this, cxNewIconSize, cyNewIconSize);
+			}
+			public HRESULT GetOriginalSize(int32 iImage, uint32 dwFlags, int32* pcx, int32* pcy) mut
+			{
+				return VT.GetOriginalSize(&this, iImage, dwFlags, pcx, pcy);
+			}
+			public HRESULT SetOriginalSize(int32 iImage, int32 cx, int32 cy) mut
+			{
+				return VT.SetOriginalSize(&this, iImage, cx, cy);
+			}
+			public HRESULT SetCallback(IUnknown* punk) mut
+			{
+				return VT.SetCallback(&this, punk);
+			}
+			public HRESULT GetCallback(Guid* riid, void** ppv) mut
+			{
+				return VT.GetCallback(&this, riid, ppv);
+			}
+			public HRESULT ForceImagePresent(int32 iImage, uint32 dwFlags) mut
+			{
+				return VT.ForceImagePresent(&this, iImage, dwFlags);
+			}
+			public HRESULT DiscardImages(int32 iFirstImage, int32 iLastImage, uint32 dwFlags) mut
+			{
+				return VT.DiscardImages(&this, iFirstImage, iLastImage, dwFlags);
+			}
+			public HRESULT PreloadImages(IMAGELISTDRAWPARAMS* pimldp) mut
+			{
+				return VT.PreloadImages(&this, pimldp);
+			}
+			public HRESULT GetStatistics(IMAGELISTSTATS* pils) mut
+			{
+				return VT.GetStatistics(&this, pils);
+			}
+			public HRESULT Initialize(int32 cx, int32 cy, IMAGELIST_CREATION_FLAGS flags, int32 cInitial, int32 cGrow) mut
+			{
+				return VT.Initialize(&this, cx, cy, flags, cInitial, cGrow);
+			}
+			public HRESULT Replace2(int32 i, HBITMAP hbmImage, HBITMAP hbmMask, IUnknown* punk, uint32 dwFlags) mut
+			{
+				return VT.Replace2(&this, i, hbmImage, hbmMask, punk, dwFlags);
+			}
+			public HRESULT ReplaceFromImageList(int32 i, IImageList* pil, int32 iSrc, IUnknown* punk, uint32 dwFlags) mut
+			{
+				return VT.ReplaceFromImageList(&this, i, pil, iSrc, punk, dwFlags);
+			}
 			[CRepr]
 			public struct VTable : IImageList.VTable
 			{
-				public function HRESULT(IImageList2 *self, int32 cxNewIconSize, int32 cyNewIconSize) Resize;
-				public function HRESULT(IImageList2 *self, int32 iImage, uint32 dwFlags, int32* pcx, int32* pcy) GetOriginalSize;
-				public function HRESULT(IImageList2 *self, int32 iImage, int32 cx, int32 cy) SetOriginalSize;
-				public function HRESULT(IImageList2 *self, IUnknown* punk) SetCallback;
-				public function HRESULT(IImageList2 *self, Guid* riid, void** ppv) GetCallback;
-				public function HRESULT(IImageList2 *self, int32 iImage, uint32 dwFlags) ForceImagePresent;
-				public function HRESULT(IImageList2 *self, int32 iFirstImage, int32 iLastImage, uint32 dwFlags) DiscardImages;
-				public function HRESULT(IImageList2 *self, IMAGELISTDRAWPARAMS* pimldp) PreloadImages;
-				public function HRESULT(IImageList2 *self, IMAGELISTSTATS* pils) GetStatistics;
-				public function HRESULT(IImageList2 *self, int32 cx, int32 cy, IMAGELIST_CREATION_FLAGS flags, int32 cInitial, int32 cGrow) Initialize;
-				public function HRESULT(IImageList2 *self, int32 i, HBITMAP hbmImage, HBITMAP hbmMask, IUnknown* punk, uint32 dwFlags) Replace2;
-				public function HRESULT(IImageList2 *self, int32 i, IImageList* pil, int32 iSrc, IUnknown* punk, uint32 dwFlags) ReplaceFromImageList;
+				public new function HRESULT(IImageList2 *self, int32 cxNewIconSize, int32 cyNewIconSize) Resize;
+				public new function HRESULT(IImageList2 *self, int32 iImage, uint32 dwFlags, int32* pcx, int32* pcy) GetOriginalSize;
+				public new function HRESULT(IImageList2 *self, int32 iImage, int32 cx, int32 cy) SetOriginalSize;
+				public new function HRESULT(IImageList2 *self, IUnknown* punk) SetCallback;
+				public new function HRESULT(IImageList2 *self, Guid* riid, void** ppv) GetCallback;
+				public new function HRESULT(IImageList2 *self, int32 iImage, uint32 dwFlags) ForceImagePresent;
+				public new function HRESULT(IImageList2 *self, int32 iFirstImage, int32 iLastImage, uint32 dwFlags) DiscardImages;
+				public new function HRESULT(IImageList2 *self, IMAGELISTDRAWPARAMS* pimldp) PreloadImages;
+				public new function HRESULT(IImageList2 *self, IMAGELISTSTATS* pils) GetStatistics;
+				public new function HRESULT(IImageList2 *self, int32 cx, int32 cy, IMAGELIST_CREATION_FLAGS flags, int32 cInitial, int32 cGrow) Initialize;
+				public new function HRESULT(IImageList2 *self, int32 i, HBITMAP hbmImage, HBITMAP hbmMask, IUnknown* punk, uint32 dwFlags) Replace2;
+				public new function HRESULT(IImageList2 *self, int32 i, IImageList* pil, int32 iSrc, IUnknown* punk, uint32 dwFlags) ReplaceFromImageList;
 			}
 		}
 		

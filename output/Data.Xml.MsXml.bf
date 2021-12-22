@@ -903,11 +903,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf8f, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT hasFeature(BSTR feature, BSTR version, int16* hasFeature) mut
+			{
+				return VT.hasFeature(&this, feature, version, hasFeature);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IXMLDOMImplementation *self, BSTR feature, BSTR version, int16* hasFeature) hasFeature;
+				public new function HRESULT(IXMLDOMImplementation *self, BSTR feature, BSTR version, int16* hasFeature) hasFeature;
 			}
 		}
 		[CRepr]
@@ -915,46 +920,191 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf80, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_nodeName(BSTR* name) mut
+			{
+				return VT.get_nodeName(&this, name);
+			}
+			public HRESULT get_nodeValue(VARIANT* value) mut
+			{
+				return VT.get_nodeValue(&this, value);
+			}
+			public HRESULT put_nodeValue(VARIANT value) mut
+			{
+				return VT.put_nodeValue(&this, value);
+			}
+			public HRESULT get_nodeType(DOMNodeType* type) mut
+			{
+				return VT.get_nodeType(&this, type);
+			}
+			public HRESULT get_parentNode(IXMLDOMNode** parent) mut
+			{
+				return VT.get_parentNode(&this, parent);
+			}
+			public HRESULT get_childNodes(IXMLDOMNodeList** childList) mut
+			{
+				return VT.get_childNodes(&this, childList);
+			}
+			public HRESULT get_firstChild(IXMLDOMNode** firstChild) mut
+			{
+				return VT.get_firstChild(&this, firstChild);
+			}
+			public HRESULT get_lastChild(IXMLDOMNode** lastChild) mut
+			{
+				return VT.get_lastChild(&this, lastChild);
+			}
+			public HRESULT get_previousSibling(IXMLDOMNode** previousSibling) mut
+			{
+				return VT.get_previousSibling(&this, previousSibling);
+			}
+			public HRESULT get_nextSibling(IXMLDOMNode** nextSibling) mut
+			{
+				return VT.get_nextSibling(&this, nextSibling);
+			}
+			public HRESULT get_attributes(IXMLDOMNamedNodeMap** attributeMap) mut
+			{
+				return VT.get_attributes(&this, attributeMap);
+			}
+			public HRESULT insertBefore(IXMLDOMNode* newChild, VARIANT refChild, IXMLDOMNode** outNewChild) mut
+			{
+				return VT.insertBefore(&this, newChild, refChild, outNewChild);
+			}
+			public HRESULT replaceChild(IXMLDOMNode* newChild, IXMLDOMNode* oldChild, IXMLDOMNode** outOldChild) mut
+			{
+				return VT.replaceChild(&this, newChild, oldChild, outOldChild);
+			}
+			public HRESULT removeChild(IXMLDOMNode* childNode, IXMLDOMNode** oldChild) mut
+			{
+				return VT.removeChild(&this, childNode, oldChild);
+			}
+			public HRESULT appendChild(IXMLDOMNode* newChild, IXMLDOMNode** outNewChild) mut
+			{
+				return VT.appendChild(&this, newChild, outNewChild);
+			}
+			public HRESULT hasChildNodes(int16* hasChild) mut
+			{
+				return VT.hasChildNodes(&this, hasChild);
+			}
+			public HRESULT get_ownerDocument(IXMLDOMDocument** XMLDOMDocument) mut
+			{
+				return VT.get_ownerDocument(&this, XMLDOMDocument);
+			}
+			public HRESULT cloneNode(int16 deep, IXMLDOMNode** cloneRoot) mut
+			{
+				return VT.cloneNode(&this, deep, cloneRoot);
+			}
+			public HRESULT get_nodeTypeString(BSTR* nodeType) mut
+			{
+				return VT.get_nodeTypeString(&this, nodeType);
+			}
+			public HRESULT get_text(BSTR* text) mut
+			{
+				return VT.get_text(&this, text);
+			}
+			public HRESULT put_text(BSTR text) mut
+			{
+				return VT.put_text(&this, text);
+			}
+			public HRESULT get_specified(int16* isSpecified) mut
+			{
+				return VT.get_specified(&this, isSpecified);
+			}
+			public HRESULT get_definition(IXMLDOMNode** definitionNode) mut
+			{
+				return VT.get_definition(&this, definitionNode);
+			}
+			public HRESULT get_nodeTypedValue(VARIANT* typedValue) mut
+			{
+				return VT.get_nodeTypedValue(&this, typedValue);
+			}
+			public HRESULT put_nodeTypedValue(VARIANT typedValue) mut
+			{
+				return VT.put_nodeTypedValue(&this, typedValue);
+			}
+			public HRESULT get_dataType(VARIANT* dataTypeName) mut
+			{
+				return VT.get_dataType(&this, dataTypeName);
+			}
+			public HRESULT put_dataType(BSTR dataTypeName) mut
+			{
+				return VT.put_dataType(&this, dataTypeName);
+			}
+			public HRESULT get_xml(BSTR* xmlString) mut
+			{
+				return VT.get_xml(&this, xmlString);
+			}
+			public HRESULT transformNode(IXMLDOMNode* stylesheet, BSTR* xmlString) mut
+			{
+				return VT.transformNode(&this, stylesheet, xmlString);
+			}
+			public HRESULT selectNodes(BSTR queryString, IXMLDOMNodeList** resultList) mut
+			{
+				return VT.selectNodes(&this, queryString, resultList);
+			}
+			public HRESULT selectSingleNode(BSTR queryString, IXMLDOMNode** resultNode) mut
+			{
+				return VT.selectSingleNode(&this, queryString, resultNode);
+			}
+			public HRESULT get_parsed(int16* isParsed) mut
+			{
+				return VT.get_parsed(&this, isParsed);
+			}
+			public HRESULT get_namespaceURI(BSTR* namespaceURI) mut
+			{
+				return VT.get_namespaceURI(&this, namespaceURI);
+			}
+			public HRESULT get_prefix(BSTR* prefixString) mut
+			{
+				return VT.get_prefix(&this, prefixString);
+			}
+			public HRESULT get_baseName(BSTR* nameString) mut
+			{
+				return VT.get_baseName(&this, nameString);
+			}
+			public HRESULT transformNodeToObject(IXMLDOMNode* stylesheet, VARIANT outputObject) mut
+			{
+				return VT.transformNodeToObject(&this, stylesheet, outputObject);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IXMLDOMNode *self, BSTR* name) get_nodeName;
-				public function HRESULT(IXMLDOMNode *self, VARIANT* value) get_nodeValue;
-				public function HRESULT(IXMLDOMNode *self, VARIANT value) put_nodeValue;
-				public function HRESULT(IXMLDOMNode *self, DOMNodeType* type) get_nodeType;
-				public function HRESULT(IXMLDOMNode *self, IXMLDOMNode** parent) get_parentNode;
-				public function HRESULT(IXMLDOMNode *self, IXMLDOMNodeList** childList) get_childNodes;
-				public function HRESULT(IXMLDOMNode *self, IXMLDOMNode** firstChild) get_firstChild;
-				public function HRESULT(IXMLDOMNode *self, IXMLDOMNode** lastChild) get_lastChild;
-				public function HRESULT(IXMLDOMNode *self, IXMLDOMNode** previousSibling) get_previousSibling;
-				public function HRESULT(IXMLDOMNode *self, IXMLDOMNode** nextSibling) get_nextSibling;
-				public function HRESULT(IXMLDOMNode *self, IXMLDOMNamedNodeMap** attributeMap) get_attributes;
-				public function HRESULT(IXMLDOMNode *self, IXMLDOMNode* newChild, VARIANT refChild, IXMLDOMNode** outNewChild) insertBefore;
-				public function HRESULT(IXMLDOMNode *self, IXMLDOMNode* newChild, IXMLDOMNode* oldChild, IXMLDOMNode** outOldChild) replaceChild;
-				public function HRESULT(IXMLDOMNode *self, IXMLDOMNode* childNode, IXMLDOMNode** oldChild) removeChild;
-				public function HRESULT(IXMLDOMNode *self, IXMLDOMNode* newChild, IXMLDOMNode** outNewChild) appendChild;
-				public function HRESULT(IXMLDOMNode *self, int16* hasChild) hasChildNodes;
-				public function HRESULT(IXMLDOMNode *self, IXMLDOMDocument** XMLDOMDocument) get_ownerDocument;
-				public function HRESULT(IXMLDOMNode *self, int16 deep, IXMLDOMNode** cloneRoot) cloneNode;
-				public function HRESULT(IXMLDOMNode *self, BSTR* nodeType) get_nodeTypeString;
-				public function HRESULT(IXMLDOMNode *self, BSTR* text) get_text;
-				public function HRESULT(IXMLDOMNode *self, BSTR text) put_text;
-				public function HRESULT(IXMLDOMNode *self, int16* isSpecified) get_specified;
-				public function HRESULT(IXMLDOMNode *self, IXMLDOMNode** definitionNode) get_definition;
-				public function HRESULT(IXMLDOMNode *self, VARIANT* typedValue) get_nodeTypedValue;
-				public function HRESULT(IXMLDOMNode *self, VARIANT typedValue) put_nodeTypedValue;
-				public function HRESULT(IXMLDOMNode *self, VARIANT* dataTypeName) get_dataType;
-				public function HRESULT(IXMLDOMNode *self, BSTR dataTypeName) put_dataType;
-				public function HRESULT(IXMLDOMNode *self, BSTR* xmlString) get_xml;
-				public function HRESULT(IXMLDOMNode *self, IXMLDOMNode* stylesheet, BSTR* xmlString) transformNode;
-				public function HRESULT(IXMLDOMNode *self, BSTR queryString, IXMLDOMNodeList** resultList) selectNodes;
-				public function HRESULT(IXMLDOMNode *self, BSTR queryString, IXMLDOMNode** resultNode) selectSingleNode;
-				public function HRESULT(IXMLDOMNode *self, int16* isParsed) get_parsed;
-				public function HRESULT(IXMLDOMNode *self, BSTR* namespaceURI) get_namespaceURI;
-				public function HRESULT(IXMLDOMNode *self, BSTR* prefixString) get_prefix;
-				public function HRESULT(IXMLDOMNode *self, BSTR* nameString) get_baseName;
-				public function HRESULT(IXMLDOMNode *self, IXMLDOMNode* stylesheet, VARIANT outputObject) transformNodeToObject;
+				public new function HRESULT(IXMLDOMNode *self, BSTR* name) get_nodeName;
+				public new function HRESULT(IXMLDOMNode *self, VARIANT* value) get_nodeValue;
+				public new function HRESULT(IXMLDOMNode *self, VARIANT value) put_nodeValue;
+				public new function HRESULT(IXMLDOMNode *self, DOMNodeType* type) get_nodeType;
+				public new function HRESULT(IXMLDOMNode *self, IXMLDOMNode** parent) get_parentNode;
+				public new function HRESULT(IXMLDOMNode *self, IXMLDOMNodeList** childList) get_childNodes;
+				public new function HRESULT(IXMLDOMNode *self, IXMLDOMNode** firstChild) get_firstChild;
+				public new function HRESULT(IXMLDOMNode *self, IXMLDOMNode** lastChild) get_lastChild;
+				public new function HRESULT(IXMLDOMNode *self, IXMLDOMNode** previousSibling) get_previousSibling;
+				public new function HRESULT(IXMLDOMNode *self, IXMLDOMNode** nextSibling) get_nextSibling;
+				public new function HRESULT(IXMLDOMNode *self, IXMLDOMNamedNodeMap** attributeMap) get_attributes;
+				public new function HRESULT(IXMLDOMNode *self, IXMLDOMNode* newChild, VARIANT refChild, IXMLDOMNode** outNewChild) insertBefore;
+				public new function HRESULT(IXMLDOMNode *self, IXMLDOMNode* newChild, IXMLDOMNode* oldChild, IXMLDOMNode** outOldChild) replaceChild;
+				public new function HRESULT(IXMLDOMNode *self, IXMLDOMNode* childNode, IXMLDOMNode** oldChild) removeChild;
+				public new function HRESULT(IXMLDOMNode *self, IXMLDOMNode* newChild, IXMLDOMNode** outNewChild) appendChild;
+				public new function HRESULT(IXMLDOMNode *self, int16* hasChild) hasChildNodes;
+				public new function HRESULT(IXMLDOMNode *self, IXMLDOMDocument** XMLDOMDocument) get_ownerDocument;
+				public new function HRESULT(IXMLDOMNode *self, int16 deep, IXMLDOMNode** cloneRoot) cloneNode;
+				public new function HRESULT(IXMLDOMNode *self, BSTR* nodeType) get_nodeTypeString;
+				public new function HRESULT(IXMLDOMNode *self, BSTR* text) get_text;
+				public new function HRESULT(IXMLDOMNode *self, BSTR text) put_text;
+				public new function HRESULT(IXMLDOMNode *self, int16* isSpecified) get_specified;
+				public new function HRESULT(IXMLDOMNode *self, IXMLDOMNode** definitionNode) get_definition;
+				public new function HRESULT(IXMLDOMNode *self, VARIANT* typedValue) get_nodeTypedValue;
+				public new function HRESULT(IXMLDOMNode *self, VARIANT typedValue) put_nodeTypedValue;
+				public new function HRESULT(IXMLDOMNode *self, VARIANT* dataTypeName) get_dataType;
+				public new function HRESULT(IXMLDOMNode *self, BSTR dataTypeName) put_dataType;
+				public new function HRESULT(IXMLDOMNode *self, BSTR* xmlString) get_xml;
+				public new function HRESULT(IXMLDOMNode *self, IXMLDOMNode* stylesheet, BSTR* xmlString) transformNode;
+				public new function HRESULT(IXMLDOMNode *self, BSTR queryString, IXMLDOMNodeList** resultList) selectNodes;
+				public new function HRESULT(IXMLDOMNode *self, BSTR queryString, IXMLDOMNode** resultNode) selectSingleNode;
+				public new function HRESULT(IXMLDOMNode *self, int16* isParsed) get_parsed;
+				public new function HRESULT(IXMLDOMNode *self, BSTR* namespaceURI) get_namespaceURI;
+				public new function HRESULT(IXMLDOMNode *self, BSTR* prefixString) get_prefix;
+				public new function HRESULT(IXMLDOMNode *self, BSTR* nameString) get_baseName;
+				public new function HRESULT(IXMLDOMNode *self, IXMLDOMNode* stylesheet, VARIANT outputObject) transformNodeToObject;
 			}
 		}
 		[CRepr]
@@ -962,7 +1112,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3efaa413, 0x272f, 0x11d2, 0x83, 0x6f, 0x00, 0x00, 0xf8, 0x7a, 0x77, 0x82);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IXMLDOMNode.VTable
 			{
@@ -973,43 +1124,176 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf81, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_doctype(IXMLDOMDocumentType** documentType) mut
+			{
+				return VT.get_doctype(&this, documentType);
+			}
+			public HRESULT get_implementation(IXMLDOMImplementation** impl) mut
+			{
+				return VT.get_implementation(&this, impl);
+			}
+			public HRESULT get_documentElement(IXMLDOMElement** DOMElement) mut
+			{
+				return VT.get_documentElement(&this, DOMElement);
+			}
+			public HRESULT putref_documentElement(IXMLDOMElement* DOMElement) mut
+			{
+				return VT.putref_documentElement(&this, DOMElement);
+			}
+			public HRESULT createElement(BSTR tagName, IXMLDOMElement** element) mut
+			{
+				return VT.createElement(&this, tagName, element);
+			}
+			public HRESULT createDocumentFragment(IXMLDOMDocumentFragment** docFrag) mut
+			{
+				return VT.createDocumentFragment(&this, docFrag);
+			}
+			public HRESULT createTextNode(BSTR data, IXMLDOMText** text) mut
+			{
+				return VT.createTextNode(&this, data, text);
+			}
+			public HRESULT createComment(BSTR data, IXMLDOMComment** comment) mut
+			{
+				return VT.createComment(&this, data, comment);
+			}
+			public HRESULT createCDATASection(BSTR data, IXMLDOMCDATASection** cdata) mut
+			{
+				return VT.createCDATASection(&this, data, cdata);
+			}
+			public HRESULT createProcessingInstruction(BSTR target, BSTR data, IXMLDOMProcessingInstruction** pi) mut
+			{
+				return VT.createProcessingInstruction(&this, target, data, pi);
+			}
+			public HRESULT createAttribute(BSTR name, IXMLDOMAttribute** attribute) mut
+			{
+				return VT.createAttribute(&this, name, attribute);
+			}
+			public HRESULT createEntityReference(BSTR name, IXMLDOMEntityReference** entityRef) mut
+			{
+				return VT.createEntityReference(&this, name, entityRef);
+			}
+			public HRESULT getElementsByTagName(BSTR tagName, IXMLDOMNodeList** resultList) mut
+			{
+				return VT.getElementsByTagName(&this, tagName, resultList);
+			}
+			public HRESULT createNode(VARIANT Type, BSTR name, BSTR namespaceURI, IXMLDOMNode** node) mut
+			{
+				return VT.createNode(&this, Type, name, namespaceURI, node);
+			}
+			public HRESULT nodeFromID(BSTR idString, IXMLDOMNode** node) mut
+			{
+				return VT.nodeFromID(&this, idString, node);
+			}
+			public HRESULT load(VARIANT xmlSource, int16* isSuccessful) mut
+			{
+				return VT.load(&this, xmlSource, isSuccessful);
+			}
+			public HRESULT get_readyState(int32* value) mut
+			{
+				return VT.get_readyState(&this, value);
+			}
+			public HRESULT get_parseError(IXMLDOMParseError** errorObj) mut
+			{
+				return VT.get_parseError(&this, errorObj);
+			}
+			public HRESULT get_url(BSTR* urlString) mut
+			{
+				return VT.get_url(&this, urlString);
+			}
+			public HRESULT get_async(int16* isAsync) mut
+			{
+				return VT.get_async(&this, isAsync);
+			}
+			public HRESULT put_async(int16 isAsync) mut
+			{
+				return VT.put_async(&this, isAsync);
+			}
+			public HRESULT abort() mut
+			{
+				return VT.abort(&this);
+			}
+			public HRESULT loadXML(BSTR bstrXML, int16* isSuccessful) mut
+			{
+				return VT.loadXML(&this, bstrXML, isSuccessful);
+			}
+			public HRESULT save(VARIANT destination) mut
+			{
+				return VT.save(&this, destination);
+			}
+			public HRESULT get_validateOnParse(int16* isValidating) mut
+			{
+				return VT.get_validateOnParse(&this, isValidating);
+			}
+			public HRESULT put_validateOnParse(int16 isValidating) mut
+			{
+				return VT.put_validateOnParse(&this, isValidating);
+			}
+			public HRESULT get_resolveExternals(int16* isResolving) mut
+			{
+				return VT.get_resolveExternals(&this, isResolving);
+			}
+			public HRESULT put_resolveExternals(int16 isResolving) mut
+			{
+				return VT.put_resolveExternals(&this, isResolving);
+			}
+			public HRESULT get_preserveWhiteSpace(int16* isPreserving) mut
+			{
+				return VT.get_preserveWhiteSpace(&this, isPreserving);
+			}
+			public HRESULT put_preserveWhiteSpace(int16 isPreserving) mut
+			{
+				return VT.put_preserveWhiteSpace(&this, isPreserving);
+			}
+			public HRESULT put_onreadystatechange(VARIANT readystatechangeSink) mut
+			{
+				return VT.put_onreadystatechange(&this, readystatechangeSink);
+			}
+			public HRESULT put_ondataavailable(VARIANT ondataavailableSink) mut
+			{
+				return VT.put_ondataavailable(&this, ondataavailableSink);
+			}
+			public HRESULT put_ontransformnode(VARIANT ontransformnodeSink) mut
+			{
+				return VT.put_ontransformnode(&this, ontransformnodeSink);
+			}
 			[CRepr]
 			public struct VTable : IXMLDOMNode.VTable
 			{
-				public function HRESULT(IXMLDOMDocument *self, IXMLDOMDocumentType** documentType) get_doctype;
-				public function HRESULT(IXMLDOMDocument *self, IXMLDOMImplementation** impl) get_implementation;
-				public function HRESULT(IXMLDOMDocument *self, IXMLDOMElement** DOMElement) get_documentElement;
-				public function HRESULT(IXMLDOMDocument *self, IXMLDOMElement* DOMElement) putref_documentElement;
-				public function HRESULT(IXMLDOMDocument *self, BSTR tagName, IXMLDOMElement** element) createElement;
-				public function HRESULT(IXMLDOMDocument *self, IXMLDOMDocumentFragment** docFrag) createDocumentFragment;
-				public function HRESULT(IXMLDOMDocument *self, BSTR data, IXMLDOMText** text) createTextNode;
-				public function HRESULT(IXMLDOMDocument *self, BSTR data, IXMLDOMComment** comment) createComment;
-				public function HRESULT(IXMLDOMDocument *self, BSTR data, IXMLDOMCDATASection** cdata) createCDATASection;
-				public function HRESULT(IXMLDOMDocument *self, BSTR target, BSTR data, IXMLDOMProcessingInstruction** pi) createProcessingInstruction;
-				public function HRESULT(IXMLDOMDocument *self, BSTR name, IXMLDOMAttribute** attribute) createAttribute;
-				public function HRESULT(IXMLDOMDocument *self, BSTR name, IXMLDOMEntityReference** entityRef) createEntityReference;
-				public function HRESULT(IXMLDOMDocument *self, BSTR tagName, IXMLDOMNodeList** resultList) getElementsByTagName;
-				public function HRESULT(IXMLDOMDocument *self, VARIANT Type, BSTR name, BSTR namespaceURI, IXMLDOMNode** node) createNode;
-				public function HRESULT(IXMLDOMDocument *self, BSTR idString, IXMLDOMNode** node) nodeFromID;
-				public function HRESULT(IXMLDOMDocument *self, VARIANT xmlSource, int16* isSuccessful) load;
-				public function HRESULT(IXMLDOMDocument *self, int32* value) get_readyState;
-				public function HRESULT(IXMLDOMDocument *self, IXMLDOMParseError** errorObj) get_parseError;
-				public function HRESULT(IXMLDOMDocument *self, BSTR* urlString) get_url;
-				public function HRESULT(IXMLDOMDocument *self, int16* isAsync) get_async;
-				public function HRESULT(IXMLDOMDocument *self, int16 isAsync) put_async;
-				public function HRESULT(IXMLDOMDocument *self) abort;
-				public function HRESULT(IXMLDOMDocument *self, BSTR bstrXML, int16* isSuccessful) loadXML;
-				public function HRESULT(IXMLDOMDocument *self, VARIANT destination) save;
-				public function HRESULT(IXMLDOMDocument *self, int16* isValidating) get_validateOnParse;
-				public function HRESULT(IXMLDOMDocument *self, int16 isValidating) put_validateOnParse;
-				public function HRESULT(IXMLDOMDocument *self, int16* isResolving) get_resolveExternals;
-				public function HRESULT(IXMLDOMDocument *self, int16 isResolving) put_resolveExternals;
-				public function HRESULT(IXMLDOMDocument *self, int16* isPreserving) get_preserveWhiteSpace;
-				public function HRESULT(IXMLDOMDocument *self, int16 isPreserving) put_preserveWhiteSpace;
-				public function HRESULT(IXMLDOMDocument *self, VARIANT readystatechangeSink) put_onreadystatechange;
-				public function HRESULT(IXMLDOMDocument *self, VARIANT ondataavailableSink) put_ondataavailable;
-				public function HRESULT(IXMLDOMDocument *self, VARIANT ontransformnodeSink) put_ontransformnode;
+				public new function HRESULT(IXMLDOMDocument *self, IXMLDOMDocumentType** documentType) get_doctype;
+				public new function HRESULT(IXMLDOMDocument *self, IXMLDOMImplementation** impl) get_implementation;
+				public new function HRESULT(IXMLDOMDocument *self, IXMLDOMElement** DOMElement) get_documentElement;
+				public new function HRESULT(IXMLDOMDocument *self, IXMLDOMElement* DOMElement) putref_documentElement;
+				public new function HRESULT(IXMLDOMDocument *self, BSTR tagName, IXMLDOMElement** element) createElement;
+				public new function HRESULT(IXMLDOMDocument *self, IXMLDOMDocumentFragment** docFrag) createDocumentFragment;
+				public new function HRESULT(IXMLDOMDocument *self, BSTR data, IXMLDOMText** text) createTextNode;
+				public new function HRESULT(IXMLDOMDocument *self, BSTR data, IXMLDOMComment** comment) createComment;
+				public new function HRESULT(IXMLDOMDocument *self, BSTR data, IXMLDOMCDATASection** cdata) createCDATASection;
+				public new function HRESULT(IXMLDOMDocument *self, BSTR target, BSTR data, IXMLDOMProcessingInstruction** pi) createProcessingInstruction;
+				public new function HRESULT(IXMLDOMDocument *self, BSTR name, IXMLDOMAttribute** attribute) createAttribute;
+				public new function HRESULT(IXMLDOMDocument *self, BSTR name, IXMLDOMEntityReference** entityRef) createEntityReference;
+				public new function HRESULT(IXMLDOMDocument *self, BSTR tagName, IXMLDOMNodeList** resultList) getElementsByTagName;
+				public new function HRESULT(IXMLDOMDocument *self, VARIANT Type, BSTR name, BSTR namespaceURI, IXMLDOMNode** node) createNode;
+				public new function HRESULT(IXMLDOMDocument *self, BSTR idString, IXMLDOMNode** node) nodeFromID;
+				public new function HRESULT(IXMLDOMDocument *self, VARIANT xmlSource, int16* isSuccessful) load;
+				public new function HRESULT(IXMLDOMDocument *self, int32* value) get_readyState;
+				public new function HRESULT(IXMLDOMDocument *self, IXMLDOMParseError** errorObj) get_parseError;
+				public new function HRESULT(IXMLDOMDocument *self, BSTR* urlString) get_url;
+				public new function HRESULT(IXMLDOMDocument *self, int16* isAsync) get_async;
+				public new function HRESULT(IXMLDOMDocument *self, int16 isAsync) put_async;
+				public new function HRESULT(IXMLDOMDocument *self) abort;
+				public new function HRESULT(IXMLDOMDocument *self, BSTR bstrXML, int16* isSuccessful) loadXML;
+				public new function HRESULT(IXMLDOMDocument *self, VARIANT destination) save;
+				public new function HRESULT(IXMLDOMDocument *self, int16* isValidating) get_validateOnParse;
+				public new function HRESULT(IXMLDOMDocument *self, int16 isValidating) put_validateOnParse;
+				public new function HRESULT(IXMLDOMDocument *self, int16* isResolving) get_resolveExternals;
+				public new function HRESULT(IXMLDOMDocument *self, int16 isResolving) put_resolveExternals;
+				public new function HRESULT(IXMLDOMDocument *self, int16* isPreserving) get_preserveWhiteSpace;
+				public new function HRESULT(IXMLDOMDocument *self, int16 isPreserving) put_preserveWhiteSpace;
+				public new function HRESULT(IXMLDOMDocument *self, VARIANT readystatechangeSink) put_onreadystatechange;
+				public new function HRESULT(IXMLDOMDocument *self, VARIANT ondataavailableSink) put_ondataavailable;
+				public new function HRESULT(IXMLDOMDocument *self, VARIANT ontransformnodeSink) put_ontransformnode;
 			}
 		}
 		[CRepr]
@@ -1017,15 +1301,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf82, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_item(int32 index, IXMLDOMNode** listItem) mut
+			{
+				return VT.get_item(&this, index, listItem);
+			}
+			public HRESULT get_length(int32* listLength) mut
+			{
+				return VT.get_length(&this, listLength);
+			}
+			public HRESULT nextNode(IXMLDOMNode** nextItem) mut
+			{
+				return VT.nextNode(&this, nextItem);
+			}
+			public HRESULT reset() mut
+			{
+				return VT.reset(&this);
+			}
+			public HRESULT get__newEnum(IUnknown** ppUnk) mut
+			{
+				return VT.get__newEnum(&this, ppUnk);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IXMLDOMNodeList *self, int32 index, IXMLDOMNode** listItem) get_item;
-				public function HRESULT(IXMLDOMNodeList *self, int32* listLength) get_length;
-				public function HRESULT(IXMLDOMNodeList *self, IXMLDOMNode** nextItem) nextNode;
-				public function HRESULT(IXMLDOMNodeList *self) reset;
-				public function HRESULT(IXMLDOMNodeList *self, IUnknown** ppUnk) get__newEnum;
+				public new function HRESULT(IXMLDOMNodeList *self, int32 index, IXMLDOMNode** listItem) get_item;
+				public new function HRESULT(IXMLDOMNodeList *self, int32* listLength) get_length;
+				public new function HRESULT(IXMLDOMNodeList *self, IXMLDOMNode** nextItem) nextNode;
+				public new function HRESULT(IXMLDOMNodeList *self) reset;
+				public new function HRESULT(IXMLDOMNodeList *self, IUnknown** ppUnk) get__newEnum;
 			}
 		}
 		[CRepr]
@@ -1033,20 +1338,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf83, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT getNamedItem(BSTR name, IXMLDOMNode** namedItem) mut
+			{
+				return VT.getNamedItem(&this, name, namedItem);
+			}
+			public HRESULT setNamedItem(IXMLDOMNode* newItem, IXMLDOMNode** nameItem) mut
+			{
+				return VT.setNamedItem(&this, newItem, nameItem);
+			}
+			public HRESULT removeNamedItem(BSTR name, IXMLDOMNode** namedItem) mut
+			{
+				return VT.removeNamedItem(&this, name, namedItem);
+			}
+			public HRESULT get_item(int32 index, IXMLDOMNode** listItem) mut
+			{
+				return VT.get_item(&this, index, listItem);
+			}
+			public HRESULT get_length(int32* listLength) mut
+			{
+				return VT.get_length(&this, listLength);
+			}
+			public HRESULT getQualifiedItem(BSTR baseName, BSTR namespaceURI, IXMLDOMNode** qualifiedItem) mut
+			{
+				return VT.getQualifiedItem(&this, baseName, namespaceURI, qualifiedItem);
+			}
+			public HRESULT removeQualifiedItem(BSTR baseName, BSTR namespaceURI, IXMLDOMNode** qualifiedItem) mut
+			{
+				return VT.removeQualifiedItem(&this, baseName, namespaceURI, qualifiedItem);
+			}
+			public HRESULT nextNode(IXMLDOMNode** nextItem) mut
+			{
+				return VT.nextNode(&this, nextItem);
+			}
+			public HRESULT reset() mut
+			{
+				return VT.reset(&this);
+			}
+			public HRESULT get__newEnum(IUnknown** ppUnk) mut
+			{
+				return VT.get__newEnum(&this, ppUnk);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IXMLDOMNamedNodeMap *self, BSTR name, IXMLDOMNode** namedItem) getNamedItem;
-				public function HRESULT(IXMLDOMNamedNodeMap *self, IXMLDOMNode* newItem, IXMLDOMNode** nameItem) setNamedItem;
-				public function HRESULT(IXMLDOMNamedNodeMap *self, BSTR name, IXMLDOMNode** namedItem) removeNamedItem;
-				public function HRESULT(IXMLDOMNamedNodeMap *self, int32 index, IXMLDOMNode** listItem) get_item;
-				public function HRESULT(IXMLDOMNamedNodeMap *self, int32* listLength) get_length;
-				public function HRESULT(IXMLDOMNamedNodeMap *self, BSTR baseName, BSTR namespaceURI, IXMLDOMNode** qualifiedItem) getQualifiedItem;
-				public function HRESULT(IXMLDOMNamedNodeMap *self, BSTR baseName, BSTR namespaceURI, IXMLDOMNode** qualifiedItem) removeQualifiedItem;
-				public function HRESULT(IXMLDOMNamedNodeMap *self, IXMLDOMNode** nextItem) nextNode;
-				public function HRESULT(IXMLDOMNamedNodeMap *self) reset;
-				public function HRESULT(IXMLDOMNamedNodeMap *self, IUnknown** ppUnk) get__newEnum;
+				public new function HRESULT(IXMLDOMNamedNodeMap *self, BSTR name, IXMLDOMNode** namedItem) getNamedItem;
+				public new function HRESULT(IXMLDOMNamedNodeMap *self, IXMLDOMNode* newItem, IXMLDOMNode** nameItem) setNamedItem;
+				public new function HRESULT(IXMLDOMNamedNodeMap *self, BSTR name, IXMLDOMNode** namedItem) removeNamedItem;
+				public new function HRESULT(IXMLDOMNamedNodeMap *self, int32 index, IXMLDOMNode** listItem) get_item;
+				public new function HRESULT(IXMLDOMNamedNodeMap *self, int32* listLength) get_length;
+				public new function HRESULT(IXMLDOMNamedNodeMap *self, BSTR baseName, BSTR namespaceURI, IXMLDOMNode** qualifiedItem) getQualifiedItem;
+				public new function HRESULT(IXMLDOMNamedNodeMap *self, BSTR baseName, BSTR namespaceURI, IXMLDOMNode** qualifiedItem) removeQualifiedItem;
+				public new function HRESULT(IXMLDOMNamedNodeMap *self, IXMLDOMNode** nextItem) nextNode;
+				public new function HRESULT(IXMLDOMNamedNodeMap *self) reset;
+				public new function HRESULT(IXMLDOMNamedNodeMap *self, IUnknown** ppUnk) get__newEnum;
 			}
 		}
 		[CRepr]
@@ -1054,18 +1400,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf84, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_data(BSTR* data) mut
+			{
+				return VT.get_data(&this, data);
+			}
+			public HRESULT put_data(BSTR data) mut
+			{
+				return VT.put_data(&this, data);
+			}
+			public HRESULT get_length(int32* dataLength) mut
+			{
+				return VT.get_length(&this, dataLength);
+			}
+			public HRESULT substringData(int32 offset, int32 count, BSTR* data) mut
+			{
+				return VT.substringData(&this, offset, count, data);
+			}
+			public HRESULT appendData(BSTR data) mut
+			{
+				return VT.appendData(&this, data);
+			}
+			public HRESULT insertData(int32 offset, BSTR data) mut
+			{
+				return VT.insertData(&this, offset, data);
+			}
+			public HRESULT deleteData(int32 offset, int32 count) mut
+			{
+				return VT.deleteData(&this, offset, count);
+			}
+			public HRESULT replaceData(int32 offset, int32 count, BSTR data) mut
+			{
+				return VT.replaceData(&this, offset, count, data);
+			}
 			[CRepr]
 			public struct VTable : IXMLDOMNode.VTable
 			{
-				public function HRESULT(IXMLDOMCharacterData *self, BSTR* data) get_data;
-				public function HRESULT(IXMLDOMCharacterData *self, BSTR data) put_data;
-				public function HRESULT(IXMLDOMCharacterData *self, int32* dataLength) get_length;
-				public function HRESULT(IXMLDOMCharacterData *self, int32 offset, int32 count, BSTR* data) substringData;
-				public function HRESULT(IXMLDOMCharacterData *self, BSTR data) appendData;
-				public function HRESULT(IXMLDOMCharacterData *self, int32 offset, BSTR data) insertData;
-				public function HRESULT(IXMLDOMCharacterData *self, int32 offset, int32 count) deleteData;
-				public function HRESULT(IXMLDOMCharacterData *self, int32 offset, int32 count, BSTR data) replaceData;
+				public new function HRESULT(IXMLDOMCharacterData *self, BSTR* data) get_data;
+				public new function HRESULT(IXMLDOMCharacterData *self, BSTR data) put_data;
+				public new function HRESULT(IXMLDOMCharacterData *self, int32* dataLength) get_length;
+				public new function HRESULT(IXMLDOMCharacterData *self, int32 offset, int32 count, BSTR* data) substringData;
+				public new function HRESULT(IXMLDOMCharacterData *self, BSTR data) appendData;
+				public new function HRESULT(IXMLDOMCharacterData *self, int32 offset, BSTR data) insertData;
+				public new function HRESULT(IXMLDOMCharacterData *self, int32 offset, int32 count) deleteData;
+				public new function HRESULT(IXMLDOMCharacterData *self, int32 offset, int32 count, BSTR data) replaceData;
 			}
 		}
 		[CRepr]
@@ -1073,13 +1452,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf85, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_name(BSTR* attributeName) mut
+			{
+				return VT.get_name(&this, attributeName);
+			}
+			public HRESULT get_value(VARIANT* attributeValue) mut
+			{
+				return VT.get_value(&this, attributeValue);
+			}
+			public HRESULT put_value(VARIANT attributeValue) mut
+			{
+				return VT.put_value(&this, attributeValue);
+			}
 			[CRepr]
 			public struct VTable : IXMLDOMNode.VTable
 			{
-				public function HRESULT(IXMLDOMAttribute *self, BSTR* attributeName) get_name;
-				public function HRESULT(IXMLDOMAttribute *self, VARIANT* attributeValue) get_value;
-				public function HRESULT(IXMLDOMAttribute *self, VARIANT attributeValue) put_value;
+				public new function HRESULT(IXMLDOMAttribute *self, BSTR* attributeName) get_name;
+				public new function HRESULT(IXMLDOMAttribute *self, VARIANT* attributeValue) get_value;
+				public new function HRESULT(IXMLDOMAttribute *self, VARIANT attributeValue) put_value;
 			}
 		}
 		[CRepr]
@@ -1087,19 +1479,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf86, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_tagName(BSTR* tagName) mut
+			{
+				return VT.get_tagName(&this, tagName);
+			}
+			public HRESULT getAttribute(BSTR name, VARIANT* value) mut
+			{
+				return VT.getAttribute(&this, name, value);
+			}
+			public HRESULT setAttribute(BSTR name, VARIANT value) mut
+			{
+				return VT.setAttribute(&this, name, value);
+			}
+			public HRESULT removeAttribute(BSTR name) mut
+			{
+				return VT.removeAttribute(&this, name);
+			}
+			public HRESULT getAttributeNode(BSTR name, IXMLDOMAttribute** attributeNode) mut
+			{
+				return VT.getAttributeNode(&this, name, attributeNode);
+			}
+			public HRESULT setAttributeNode(IXMLDOMAttribute* DOMAttribute, IXMLDOMAttribute** attributeNode) mut
+			{
+				return VT.setAttributeNode(&this, DOMAttribute, attributeNode);
+			}
+			public HRESULT removeAttributeNode(IXMLDOMAttribute* DOMAttribute, IXMLDOMAttribute** attributeNode) mut
+			{
+				return VT.removeAttributeNode(&this, DOMAttribute, attributeNode);
+			}
+			public HRESULT getElementsByTagName(BSTR tagName, IXMLDOMNodeList** resultList) mut
+			{
+				return VT.getElementsByTagName(&this, tagName, resultList);
+			}
+			public HRESULT normalize() mut
+			{
+				return VT.normalize(&this);
+			}
 			[CRepr]
 			public struct VTable : IXMLDOMNode.VTable
 			{
-				public function HRESULT(IXMLDOMElement *self, BSTR* tagName) get_tagName;
-				public function HRESULT(IXMLDOMElement *self, BSTR name, VARIANT* value) getAttribute;
-				public function HRESULT(IXMLDOMElement *self, BSTR name, VARIANT value) setAttribute;
-				public function HRESULT(IXMLDOMElement *self, BSTR name) removeAttribute;
-				public function HRESULT(IXMLDOMElement *self, BSTR name, IXMLDOMAttribute** attributeNode) getAttributeNode;
-				public function HRESULT(IXMLDOMElement *self, IXMLDOMAttribute* DOMAttribute, IXMLDOMAttribute** attributeNode) setAttributeNode;
-				public function HRESULT(IXMLDOMElement *self, IXMLDOMAttribute* DOMAttribute, IXMLDOMAttribute** attributeNode) removeAttributeNode;
-				public function HRESULT(IXMLDOMElement *self, BSTR tagName, IXMLDOMNodeList** resultList) getElementsByTagName;
-				public function HRESULT(IXMLDOMElement *self) normalize;
+				public new function HRESULT(IXMLDOMElement *self, BSTR* tagName) get_tagName;
+				public new function HRESULT(IXMLDOMElement *self, BSTR name, VARIANT* value) getAttribute;
+				public new function HRESULT(IXMLDOMElement *self, BSTR name, VARIANT value) setAttribute;
+				public new function HRESULT(IXMLDOMElement *self, BSTR name) removeAttribute;
+				public new function HRESULT(IXMLDOMElement *self, BSTR name, IXMLDOMAttribute** attributeNode) getAttributeNode;
+				public new function HRESULT(IXMLDOMElement *self, IXMLDOMAttribute* DOMAttribute, IXMLDOMAttribute** attributeNode) setAttributeNode;
+				public new function HRESULT(IXMLDOMElement *self, IXMLDOMAttribute* DOMAttribute, IXMLDOMAttribute** attributeNode) removeAttributeNode;
+				public new function HRESULT(IXMLDOMElement *self, BSTR tagName, IXMLDOMNodeList** resultList) getElementsByTagName;
+				public new function HRESULT(IXMLDOMElement *self) normalize;
 			}
 		}
 		[CRepr]
@@ -1107,11 +1536,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf87, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT splitText(int32 offset, IXMLDOMText** rightHandTextNode) mut
+			{
+				return VT.splitText(&this, offset, rightHandTextNode);
+			}
 			[CRepr]
 			public struct VTable : IXMLDOMCharacterData.VTable
 			{
-				public function HRESULT(IXMLDOMText *self, int32 offset, IXMLDOMText** rightHandTextNode) splitText;
+				public new function HRESULT(IXMLDOMText *self, int32 offset, IXMLDOMText** rightHandTextNode) splitText;
 			}
 		}
 		[CRepr]
@@ -1119,7 +1553,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf88, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IXMLDOMCharacterData.VTable
 			{
@@ -1130,13 +1565,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf89, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_target(BSTR* name) mut
+			{
+				return VT.get_target(&this, name);
+			}
+			public HRESULT get_data(BSTR* value) mut
+			{
+				return VT.get_data(&this, value);
+			}
+			public HRESULT put_data(BSTR value) mut
+			{
+				return VT.put_data(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IXMLDOMNode.VTable
 			{
-				public function HRESULT(IXMLDOMProcessingInstruction *self, BSTR* name) get_target;
-				public function HRESULT(IXMLDOMProcessingInstruction *self, BSTR* value) get_data;
-				public function HRESULT(IXMLDOMProcessingInstruction *self, BSTR value) put_data;
+				public new function HRESULT(IXMLDOMProcessingInstruction *self, BSTR* name) get_target;
+				public new function HRESULT(IXMLDOMProcessingInstruction *self, BSTR* value) get_data;
+				public new function HRESULT(IXMLDOMProcessingInstruction *self, BSTR value) put_data;
 			}
 		}
 		[CRepr]
@@ -1144,7 +1592,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf8a, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IXMLDOMText.VTable
 			{
@@ -1155,13 +1604,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf8b, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_name(BSTR* rootName) mut
+			{
+				return VT.get_name(&this, rootName);
+			}
+			public HRESULT get_entities(IXMLDOMNamedNodeMap** entityMap) mut
+			{
+				return VT.get_entities(&this, entityMap);
+			}
+			public HRESULT get_notations(IXMLDOMNamedNodeMap** notationMap) mut
+			{
+				return VT.get_notations(&this, notationMap);
+			}
 			[CRepr]
 			public struct VTable : IXMLDOMNode.VTable
 			{
-				public function HRESULT(IXMLDOMDocumentType *self, BSTR* rootName) get_name;
-				public function HRESULT(IXMLDOMDocumentType *self, IXMLDOMNamedNodeMap** entityMap) get_entities;
-				public function HRESULT(IXMLDOMDocumentType *self, IXMLDOMNamedNodeMap** notationMap) get_notations;
+				public new function HRESULT(IXMLDOMDocumentType *self, BSTR* rootName) get_name;
+				public new function HRESULT(IXMLDOMDocumentType *self, IXMLDOMNamedNodeMap** entityMap) get_entities;
+				public new function HRESULT(IXMLDOMDocumentType *self, IXMLDOMNamedNodeMap** notationMap) get_notations;
 			}
 		}
 		[CRepr]
@@ -1169,12 +1631,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf8c, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_publicId(VARIANT* publicID) mut
+			{
+				return VT.get_publicId(&this, publicID);
+			}
+			public HRESULT get_systemId(VARIANT* systemID) mut
+			{
+				return VT.get_systemId(&this, systemID);
+			}
 			[CRepr]
 			public struct VTable : IXMLDOMNode.VTable
 			{
-				public function HRESULT(IXMLDOMNotation *self, VARIANT* publicID) get_publicId;
-				public function HRESULT(IXMLDOMNotation *self, VARIANT* systemID) get_systemId;
+				public new function HRESULT(IXMLDOMNotation *self, VARIANT* publicID) get_publicId;
+				public new function HRESULT(IXMLDOMNotation *self, VARIANT* systemID) get_systemId;
 			}
 		}
 		[CRepr]
@@ -1182,13 +1653,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf8d, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_publicId(VARIANT* publicID) mut
+			{
+				return VT.get_publicId(&this, publicID);
+			}
+			public HRESULT get_systemId(VARIANT* systemID) mut
+			{
+				return VT.get_systemId(&this, systemID);
+			}
+			public HRESULT get_notationName(BSTR* name) mut
+			{
+				return VT.get_notationName(&this, name);
+			}
 			[CRepr]
 			public struct VTable : IXMLDOMNode.VTable
 			{
-				public function HRESULT(IXMLDOMEntity *self, VARIANT* publicID) get_publicId;
-				public function HRESULT(IXMLDOMEntity *self, VARIANT* systemID) get_systemId;
-				public function HRESULT(IXMLDOMEntity *self, BSTR* name) get_notationName;
+				public new function HRESULT(IXMLDOMEntity *self, VARIANT* publicID) get_publicId;
+				public new function HRESULT(IXMLDOMEntity *self, VARIANT* systemID) get_systemId;
+				public new function HRESULT(IXMLDOMEntity *self, BSTR* name) get_notationName;
 			}
 		}
 		[CRepr]
@@ -1196,7 +1680,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf8e, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IXMLDOMNode.VTable
 			{
@@ -1207,17 +1692,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3efaa426, 0x272f, 0x11d2, 0x83, 0x6f, 0x00, 0x00, 0xf8, 0x7a, 0x77, 0x82);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_errorCode(int32* errorCode) mut
+			{
+				return VT.get_errorCode(&this, errorCode);
+			}
+			public HRESULT get_url(BSTR* urlString) mut
+			{
+				return VT.get_url(&this, urlString);
+			}
+			public HRESULT get_reason(BSTR* reasonString) mut
+			{
+				return VT.get_reason(&this, reasonString);
+			}
+			public HRESULT get_srcText(BSTR* sourceString) mut
+			{
+				return VT.get_srcText(&this, sourceString);
+			}
+			public HRESULT get_line(int32* lineNumber) mut
+			{
+				return VT.get_line(&this, lineNumber);
+			}
+			public HRESULT get_linepos(int32* linePosition) mut
+			{
+				return VT.get_linepos(&this, linePosition);
+			}
+			public HRESULT get_filepos(int32* filePosition) mut
+			{
+				return VT.get_filepos(&this, filePosition);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IXMLDOMParseError *self, int32* errorCode) get_errorCode;
-				public function HRESULT(IXMLDOMParseError *self, BSTR* urlString) get_url;
-				public function HRESULT(IXMLDOMParseError *self, BSTR* reasonString) get_reason;
-				public function HRESULT(IXMLDOMParseError *self, BSTR* sourceString) get_srcText;
-				public function HRESULT(IXMLDOMParseError *self, int32* lineNumber) get_line;
-				public function HRESULT(IXMLDOMParseError *self, int32* linePosition) get_linepos;
-				public function HRESULT(IXMLDOMParseError *self, int32* filePosition) get_filepos;
+				public new function HRESULT(IXMLDOMParseError *self, int32* errorCode) get_errorCode;
+				public new function HRESULT(IXMLDOMParseError *self, BSTR* urlString) get_url;
+				public new function HRESULT(IXMLDOMParseError *self, BSTR* reasonString) get_reason;
+				public new function HRESULT(IXMLDOMParseError *self, BSTR* sourceString) get_srcText;
+				public new function HRESULT(IXMLDOMParseError *self, int32* lineNumber) get_line;
+				public new function HRESULT(IXMLDOMParseError *self, int32* linePosition) get_linepos;
+				public new function HRESULT(IXMLDOMParseError *self, int32* filePosition) get_filepos;
 			}
 		}
 		[CRepr]
@@ -1225,19 +1739,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3efaa425, 0x272f, 0x11d2, 0x83, 0x6f, 0x00, 0x00, 0xf8, 0x7a, 0x77, 0x82);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT uniqueID(IXMLDOMNode* pNode, int32* pID) mut
+			{
+				return VT.uniqueID(&this, pNode, pID);
+			}
+			public HRESULT depth(IXMLDOMNode* pNode, int32* pDepth) mut
+			{
+				return VT.depth(&this, pNode, pDepth);
+			}
+			public HRESULT childNumber(IXMLDOMNode* pNode, int32* pNumber) mut
+			{
+				return VT.childNumber(&this, pNode, pNumber);
+			}
+			public HRESULT ancestorChildNumber(BSTR bstrNodeName, IXMLDOMNode* pNode, int32* pNumber) mut
+			{
+				return VT.ancestorChildNumber(&this, bstrNodeName, pNode, pNumber);
+			}
+			public HRESULT absoluteChildNumber(IXMLDOMNode* pNode, int32* pNumber) mut
+			{
+				return VT.absoluteChildNumber(&this, pNode, pNumber);
+			}
+			public HRESULT formatIndex(int32 lIndex, BSTR bstrFormat, BSTR* pbstrFormattedString) mut
+			{
+				return VT.formatIndex(&this, lIndex, bstrFormat, pbstrFormattedString);
+			}
+			public HRESULT formatNumber(double dblNumber, BSTR bstrFormat, BSTR* pbstrFormattedString) mut
+			{
+				return VT.formatNumber(&this, dblNumber, bstrFormat, pbstrFormattedString);
+			}
+			public HRESULT formatDate(VARIANT varDate, BSTR bstrFormat, VARIANT varDestLocale, BSTR* pbstrFormattedString) mut
+			{
+				return VT.formatDate(&this, varDate, bstrFormat, varDestLocale, pbstrFormattedString);
+			}
+			public HRESULT formatTime(VARIANT varTime, BSTR bstrFormat, VARIANT varDestLocale, BSTR* pbstrFormattedString) mut
+			{
+				return VT.formatTime(&this, varTime, bstrFormat, varDestLocale, pbstrFormattedString);
+			}
 			[CRepr]
 			public struct VTable : IXMLDOMNode.VTable
 			{
-				public function HRESULT(IXTLRuntime *self, IXMLDOMNode* pNode, int32* pID) uniqueID;
-				public function HRESULT(IXTLRuntime *self, IXMLDOMNode* pNode, int32* pDepth) depth;
-				public function HRESULT(IXTLRuntime *self, IXMLDOMNode* pNode, int32* pNumber) childNumber;
-				public function HRESULT(IXTLRuntime *self, BSTR bstrNodeName, IXMLDOMNode* pNode, int32* pNumber) ancestorChildNumber;
-				public function HRESULT(IXTLRuntime *self, IXMLDOMNode* pNode, int32* pNumber) absoluteChildNumber;
-				public function HRESULT(IXTLRuntime *self, int32 lIndex, BSTR bstrFormat, BSTR* pbstrFormattedString) formatIndex;
-				public function HRESULT(IXTLRuntime *self, double dblNumber, BSTR bstrFormat, BSTR* pbstrFormattedString) formatNumber;
-				public function HRESULT(IXTLRuntime *self, VARIANT varDate, BSTR bstrFormat, VARIANT varDestLocale, BSTR* pbstrFormattedString) formatDate;
-				public function HRESULT(IXTLRuntime *self, VARIANT varTime, BSTR bstrFormat, VARIANT varDestLocale, BSTR* pbstrFormattedString) formatTime;
+				public new function HRESULT(IXTLRuntime *self, IXMLDOMNode* pNode, int32* pID) uniqueID;
+				public new function HRESULT(IXTLRuntime *self, IXMLDOMNode* pNode, int32* pDepth) depth;
+				public new function HRESULT(IXTLRuntime *self, IXMLDOMNode* pNode, int32* pNumber) childNumber;
+				public new function HRESULT(IXTLRuntime *self, BSTR bstrNodeName, IXMLDOMNode* pNode, int32* pNumber) ancestorChildNumber;
+				public new function HRESULT(IXTLRuntime *self, IXMLDOMNode* pNode, int32* pNumber) absoluteChildNumber;
+				public new function HRESULT(IXTLRuntime *self, int32 lIndex, BSTR bstrFormat, BSTR* pbstrFormattedString) formatIndex;
+				public new function HRESULT(IXTLRuntime *self, double dblNumber, BSTR bstrFormat, BSTR* pbstrFormattedString) formatNumber;
+				public new function HRESULT(IXTLRuntime *self, VARIANT varDate, BSTR bstrFormat, VARIANT varDestLocale, BSTR* pbstrFormattedString) formatDate;
+				public new function HRESULT(IXTLRuntime *self, VARIANT varTime, BSTR bstrFormat, VARIANT varDestLocale, BSTR* pbstrFormattedString) formatTime;
 			}
 		}
 		[CRepr]
@@ -1245,7 +1796,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3efaa427, 0x272f, 0x11d2, 0x83, 0x6f, 0x00, 0x00, 0xf8, 0x7a, 0x77, 0x82);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1256,24 +1808,81 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xed8c108d, 0x4349, 0x11d2, 0x91, 0xa4, 0x00, 0xc0, 0x4f, 0x79, 0x69, 0xe8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT open(BSTR bstrMethod, BSTR bstrUrl, VARIANT varAsync, VARIANT bstrUser, VARIANT bstrPassword) mut
+			{
+				return VT.open(&this, bstrMethod, bstrUrl, varAsync, bstrUser, bstrPassword);
+			}
+			public HRESULT setRequestHeader(BSTR bstrHeader, BSTR bstrValue) mut
+			{
+				return VT.setRequestHeader(&this, bstrHeader, bstrValue);
+			}
+			public HRESULT getResponseHeader(BSTR bstrHeader, BSTR* pbstrValue) mut
+			{
+				return VT.getResponseHeader(&this, bstrHeader, pbstrValue);
+			}
+			public HRESULT getAllResponseHeaders(BSTR* pbstrHeaders) mut
+			{
+				return VT.getAllResponseHeaders(&this, pbstrHeaders);
+			}
+			public HRESULT send(VARIANT varBody) mut
+			{
+				return VT.send(&this, varBody);
+			}
+			public HRESULT abort() mut
+			{
+				return VT.abort(&this);
+			}
+			public HRESULT get_status(int32* plStatus) mut
+			{
+				return VT.get_status(&this, plStatus);
+			}
+			public HRESULT get_statusText(BSTR* pbstrStatus) mut
+			{
+				return VT.get_statusText(&this, pbstrStatus);
+			}
+			public HRESULT get_responseXML(IDispatch** ppBody) mut
+			{
+				return VT.get_responseXML(&this, ppBody);
+			}
+			public HRESULT get_responseText(BSTR* pbstrBody) mut
+			{
+				return VT.get_responseText(&this, pbstrBody);
+			}
+			public HRESULT get_responseBody(VARIANT* pvarBody) mut
+			{
+				return VT.get_responseBody(&this, pvarBody);
+			}
+			public HRESULT get_responseStream(VARIANT* pvarBody) mut
+			{
+				return VT.get_responseStream(&this, pvarBody);
+			}
+			public HRESULT get_readyState(int32* plState) mut
+			{
+				return VT.get_readyState(&this, plState);
+			}
+			public HRESULT put_onreadystatechange(IDispatch* pReadyStateSink) mut
+			{
+				return VT.put_onreadystatechange(&this, pReadyStateSink);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IXMLHttpRequest *self, BSTR bstrMethod, BSTR bstrUrl, VARIANT varAsync, VARIANT bstrUser, VARIANT bstrPassword) open;
-				public function HRESULT(IXMLHttpRequest *self, BSTR bstrHeader, BSTR bstrValue) setRequestHeader;
-				public function HRESULT(IXMLHttpRequest *self, BSTR bstrHeader, BSTR* pbstrValue) getResponseHeader;
-				public function HRESULT(IXMLHttpRequest *self, BSTR* pbstrHeaders) getAllResponseHeaders;
-				public function HRESULT(IXMLHttpRequest *self, VARIANT varBody) send;
-				public function HRESULT(IXMLHttpRequest *self) abort;
-				public function HRESULT(IXMLHttpRequest *self, int32* plStatus) get_status;
-				public function HRESULT(IXMLHttpRequest *self, BSTR* pbstrStatus) get_statusText;
-				public function HRESULT(IXMLHttpRequest *self, IDispatch** ppBody) get_responseXML;
-				public function HRESULT(IXMLHttpRequest *self, BSTR* pbstrBody) get_responseText;
-				public function HRESULT(IXMLHttpRequest *self, VARIANT* pvarBody) get_responseBody;
-				public function HRESULT(IXMLHttpRequest *self, VARIANT* pvarBody) get_responseStream;
-				public function HRESULT(IXMLHttpRequest *self, int32* plState) get_readyState;
-				public function HRESULT(IXMLHttpRequest *self, IDispatch* pReadyStateSink) put_onreadystatechange;
+				public new function HRESULT(IXMLHttpRequest *self, BSTR bstrMethod, BSTR bstrUrl, VARIANT varAsync, VARIANT bstrUser, VARIANT bstrPassword) open;
+				public new function HRESULT(IXMLHttpRequest *self, BSTR bstrHeader, BSTR bstrValue) setRequestHeader;
+				public new function HRESULT(IXMLHttpRequest *self, BSTR bstrHeader, BSTR* pbstrValue) getResponseHeader;
+				public new function HRESULT(IXMLHttpRequest *self, BSTR* pbstrHeaders) getAllResponseHeaders;
+				public new function HRESULT(IXMLHttpRequest *self, VARIANT varBody) send;
+				public new function HRESULT(IXMLHttpRequest *self) abort;
+				public new function HRESULT(IXMLHttpRequest *self, int32* plStatus) get_status;
+				public new function HRESULT(IXMLHttpRequest *self, BSTR* pbstrStatus) get_statusText;
+				public new function HRESULT(IXMLHttpRequest *self, IDispatch** ppBody) get_responseXML;
+				public new function HRESULT(IXMLHttpRequest *self, BSTR* pbstrBody) get_responseText;
+				public new function HRESULT(IXMLHttpRequest *self, VARIANT* pvarBody) get_responseBody;
+				public new function HRESULT(IXMLHttpRequest *self, VARIANT* pvarBody) get_responseStream;
+				public new function HRESULT(IXMLHttpRequest *self, int32* plState) get_readyState;
+				public new function HRESULT(IXMLHttpRequest *self, IDispatch* pReadyStateSink) put_onreadystatechange;
 			}
 		}
 		[CRepr]
@@ -1281,15 +1890,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x310afa62, 0x0575, 0x11d2, 0x9c, 0xa9, 0x00, 0x60, 0xb0, 0xec, 0x3d, 0x39);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_XMLDocument(IXMLDOMDocument** ppDoc) mut
+			{
+				return VT.get_XMLDocument(&this, ppDoc);
+			}
+			public HRESULT put_XMLDocument(IXMLDOMDocument* ppDoc) mut
+			{
+				return VT.put_XMLDocument(&this, ppDoc);
+			}
+			public HRESULT get_JavaDSOCompatible(BOOL* fJavaDSOCompatible) mut
+			{
+				return VT.get_JavaDSOCompatible(&this, fJavaDSOCompatible);
+			}
+			public HRESULT put_JavaDSOCompatible(BOOL fJavaDSOCompatible) mut
+			{
+				return VT.put_JavaDSOCompatible(&this, fJavaDSOCompatible);
+			}
+			public HRESULT get_readyState(int32* state) mut
+			{
+				return VT.get_readyState(&this, state);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IXMLDSOControl *self, IXMLDOMDocument** ppDoc) get_XMLDocument;
-				public function HRESULT(IXMLDSOControl *self, IXMLDOMDocument* ppDoc) put_XMLDocument;
-				public function HRESULT(IXMLDSOControl *self, BOOL* fJavaDSOCompatible) get_JavaDSOCompatible;
-				public function HRESULT(IXMLDSOControl *self, BOOL fJavaDSOCompatible) put_JavaDSOCompatible;
-				public function HRESULT(IXMLDSOControl *self, int32* state) get_readyState;
+				public new function HRESULT(IXMLDSOControl *self, IXMLDOMDocument** ppDoc) get_XMLDocument;
+				public new function HRESULT(IXMLDSOControl *self, IXMLDOMDocument* ppDoc) put_XMLDocument;
+				public new function HRESULT(IXMLDSOControl *self, BOOL* fJavaDSOCompatible) get_JavaDSOCompatible;
+				public new function HRESULT(IXMLDSOControl *self, BOOL fJavaDSOCompatible) put_JavaDSOCompatible;
+				public new function HRESULT(IXMLDSOControl *self, int32* state) get_readyState;
 			}
 		}
 		[CRepr]
@@ -1297,14 +1927,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x65725580, 0x9b5d, 0x11d0, 0x9b, 0xfe, 0x00, 0xc0, 0x4f, 0xc9, 0x9c, 0x8e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT put_length(int32 v) mut
+			{
+				return VT.put_length(&this, v);
+			}
+			public HRESULT get_length(int32* p) mut
+			{
+				return VT.get_length(&this, p);
+			}
+			public HRESULT get__newEnum(IUnknown** ppUnk) mut
+			{
+				return VT.get__newEnum(&this, ppUnk);
+			}
+			public HRESULT item(VARIANT var1, VARIANT var2, IDispatch** ppDisp) mut
+			{
+				return VT.item(&this, var1, var2, ppDisp);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IXMLElementCollection *self, int32 v) put_length;
-				public function HRESULT(IXMLElementCollection *self, int32* p) get_length;
-				public function HRESULT(IXMLElementCollection *self, IUnknown** ppUnk) get__newEnum;
-				public function HRESULT(IXMLElementCollection *self, VARIANT var1, VARIANT var2, IDispatch** ppDisp) item;
+				public new function HRESULT(IXMLElementCollection *self, int32 v) put_length;
+				public new function HRESULT(IXMLElementCollection *self, int32* p) get_length;
+				public new function HRESULT(IXMLElementCollection *self, IUnknown** ppUnk) get__newEnum;
+				public new function HRESULT(IXMLElementCollection *self, VARIANT var1, VARIANT var2, IDispatch** ppDisp) item;
 			}
 		}
 		[CRepr]
@@ -1312,24 +1959,81 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf52e2b61, 0x18a1, 0x11d1, 0xb1, 0x05, 0x00, 0x80, 0x5f, 0x49, 0x91, 0x6b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_root(IXMLElement** p) mut
+			{
+				return VT.get_root(&this, p);
+			}
+			public HRESULT get_fileSize(BSTR* p) mut
+			{
+				return VT.get_fileSize(&this, p);
+			}
+			public HRESULT get_fileModifiedDate(BSTR* p) mut
+			{
+				return VT.get_fileModifiedDate(&this, p);
+			}
+			public HRESULT get_fileUpdatedDate(BSTR* p) mut
+			{
+				return VT.get_fileUpdatedDate(&this, p);
+			}
+			public HRESULT get_URL(BSTR* p) mut
+			{
+				return VT.get_URL(&this, p);
+			}
+			public HRESULT put_URL(BSTR p) mut
+			{
+				return VT.put_URL(&this, p);
+			}
+			public HRESULT get_mimeType(BSTR* p) mut
+			{
+				return VT.get_mimeType(&this, p);
+			}
+			public HRESULT get_readyState(int32* pl) mut
+			{
+				return VT.get_readyState(&this, pl);
+			}
+			public HRESULT get_charset(BSTR* p) mut
+			{
+				return VT.get_charset(&this, p);
+			}
+			public HRESULT put_charset(BSTR p) mut
+			{
+				return VT.put_charset(&this, p);
+			}
+			public HRESULT get_version(BSTR* p) mut
+			{
+				return VT.get_version(&this, p);
+			}
+			public HRESULT get_doctype(BSTR* p) mut
+			{
+				return VT.get_doctype(&this, p);
+			}
+			public HRESULT get_dtdURL(BSTR* p) mut
+			{
+				return VT.get_dtdURL(&this, p);
+			}
+			public HRESULT createElement(VARIANT vType, VARIANT var1, IXMLElement** ppElem) mut
+			{
+				return VT.createElement(&this, vType, var1, ppElem);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IXMLDocument *self, IXMLElement** p) get_root;
-				public function HRESULT(IXMLDocument *self, BSTR* p) get_fileSize;
-				public function HRESULT(IXMLDocument *self, BSTR* p) get_fileModifiedDate;
-				public function HRESULT(IXMLDocument *self, BSTR* p) get_fileUpdatedDate;
-				public function HRESULT(IXMLDocument *self, BSTR* p) get_URL;
-				public function HRESULT(IXMLDocument *self, BSTR p) put_URL;
-				public function HRESULT(IXMLDocument *self, BSTR* p) get_mimeType;
-				public function HRESULT(IXMLDocument *self, int32* pl) get_readyState;
-				public function HRESULT(IXMLDocument *self, BSTR* p) get_charset;
-				public function HRESULT(IXMLDocument *self, BSTR p) put_charset;
-				public function HRESULT(IXMLDocument *self, BSTR* p) get_version;
-				public function HRESULT(IXMLDocument *self, BSTR* p) get_doctype;
-				public function HRESULT(IXMLDocument *self, BSTR* p) get_dtdURL;
-				public function HRESULT(IXMLDocument *self, VARIANT vType, VARIANT var1, IXMLElement** ppElem) createElement;
+				public new function HRESULT(IXMLDocument *self, IXMLElement** p) get_root;
+				public new function HRESULT(IXMLDocument *self, BSTR* p) get_fileSize;
+				public new function HRESULT(IXMLDocument *self, BSTR* p) get_fileModifiedDate;
+				public new function HRESULT(IXMLDocument *self, BSTR* p) get_fileUpdatedDate;
+				public new function HRESULT(IXMLDocument *self, BSTR* p) get_URL;
+				public new function HRESULT(IXMLDocument *self, BSTR p) put_URL;
+				public new function HRESULT(IXMLDocument *self, BSTR* p) get_mimeType;
+				public new function HRESULT(IXMLDocument *self, int32* pl) get_readyState;
+				public new function HRESULT(IXMLDocument *self, BSTR* p) get_charset;
+				public new function HRESULT(IXMLDocument *self, BSTR p) put_charset;
+				public new function HRESULT(IXMLDocument *self, BSTR* p) get_version;
+				public new function HRESULT(IXMLDocument *self, BSTR* p) get_doctype;
+				public new function HRESULT(IXMLDocument *self, BSTR* p) get_dtdURL;
+				public new function HRESULT(IXMLDocument *self, VARIANT vType, VARIANT var1, IXMLElement** ppElem) createElement;
 			}
 		}
 		[CRepr]
@@ -1337,26 +2041,91 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2b8de2fe, 0x8d2d, 0x11d1, 0xb2, 0xfc, 0x00, 0xc0, 0x4f, 0xd9, 0x15, 0xa9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_root(IXMLElement2** p) mut
+			{
+				return VT.get_root(&this, p);
+			}
+			public HRESULT get_fileSize(BSTR* p) mut
+			{
+				return VT.get_fileSize(&this, p);
+			}
+			public HRESULT get_fileModifiedDate(BSTR* p) mut
+			{
+				return VT.get_fileModifiedDate(&this, p);
+			}
+			public HRESULT get_fileUpdatedDate(BSTR* p) mut
+			{
+				return VT.get_fileUpdatedDate(&this, p);
+			}
+			public HRESULT get_URL(BSTR* p) mut
+			{
+				return VT.get_URL(&this, p);
+			}
+			public HRESULT put_URL(BSTR p) mut
+			{
+				return VT.put_URL(&this, p);
+			}
+			public HRESULT get_mimeType(BSTR* p) mut
+			{
+				return VT.get_mimeType(&this, p);
+			}
+			public HRESULT get_readyState(int32* pl) mut
+			{
+				return VT.get_readyState(&this, pl);
+			}
+			public HRESULT get_charset(BSTR* p) mut
+			{
+				return VT.get_charset(&this, p);
+			}
+			public HRESULT put_charset(BSTR p) mut
+			{
+				return VT.put_charset(&this, p);
+			}
+			public HRESULT get_version(BSTR* p) mut
+			{
+				return VT.get_version(&this, p);
+			}
+			public HRESULT get_doctype(BSTR* p) mut
+			{
+				return VT.get_doctype(&this, p);
+			}
+			public HRESULT get_dtdURL(BSTR* p) mut
+			{
+				return VT.get_dtdURL(&this, p);
+			}
+			public HRESULT createElement(VARIANT vType, VARIANT var1, IXMLElement2** ppElem) mut
+			{
+				return VT.createElement(&this, vType, var1, ppElem);
+			}
+			public HRESULT get_async(int16* pf) mut
+			{
+				return VT.get_async(&this, pf);
+			}
+			public HRESULT put_async(int16 f) mut
+			{
+				return VT.put_async(&this, f);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IXMLDocument2 *self, IXMLElement2** p) get_root;
-				public function HRESULT(IXMLDocument2 *self, BSTR* p) get_fileSize;
-				public function HRESULT(IXMLDocument2 *self, BSTR* p) get_fileModifiedDate;
-				public function HRESULT(IXMLDocument2 *self, BSTR* p) get_fileUpdatedDate;
-				public function HRESULT(IXMLDocument2 *self, BSTR* p) get_URL;
-				public function HRESULT(IXMLDocument2 *self, BSTR p) put_URL;
-				public function HRESULT(IXMLDocument2 *self, BSTR* p) get_mimeType;
-				public function HRESULT(IXMLDocument2 *self, int32* pl) get_readyState;
-				public function HRESULT(IXMLDocument2 *self, BSTR* p) get_charset;
-				public function HRESULT(IXMLDocument2 *self, BSTR p) put_charset;
-				public function HRESULT(IXMLDocument2 *self, BSTR* p) get_version;
-				public function HRESULT(IXMLDocument2 *self, BSTR* p) get_doctype;
-				public function HRESULT(IXMLDocument2 *self, BSTR* p) get_dtdURL;
-				public function HRESULT(IXMLDocument2 *self, VARIANT vType, VARIANT var1, IXMLElement2** ppElem) createElement;
-				public function HRESULT(IXMLDocument2 *self, int16* pf) get_async;
-				public function HRESULT(IXMLDocument2 *self, int16 f) put_async;
+				public new function HRESULT(IXMLDocument2 *self, IXMLElement2** p) get_root;
+				public new function HRESULT(IXMLDocument2 *self, BSTR* p) get_fileSize;
+				public new function HRESULT(IXMLDocument2 *self, BSTR* p) get_fileModifiedDate;
+				public new function HRESULT(IXMLDocument2 *self, BSTR* p) get_fileUpdatedDate;
+				public new function HRESULT(IXMLDocument2 *self, BSTR* p) get_URL;
+				public new function HRESULT(IXMLDocument2 *self, BSTR p) put_URL;
+				public new function HRESULT(IXMLDocument2 *self, BSTR* p) get_mimeType;
+				public new function HRESULT(IXMLDocument2 *self, int32* pl) get_readyState;
+				public new function HRESULT(IXMLDocument2 *self, BSTR* p) get_charset;
+				public new function HRESULT(IXMLDocument2 *self, BSTR p) put_charset;
+				public new function HRESULT(IXMLDocument2 *self, BSTR* p) get_version;
+				public new function HRESULT(IXMLDocument2 *self, BSTR* p) get_doctype;
+				public new function HRESULT(IXMLDocument2 *self, BSTR* p) get_dtdURL;
+				public new function HRESULT(IXMLDocument2 *self, VARIANT vType, VARIANT var1, IXMLElement2** ppElem) createElement;
+				public new function HRESULT(IXMLDocument2 *self, int16* pf) get_async;
+				public new function HRESULT(IXMLDocument2 *self, int16 f) put_async;
 			}
 		}
 		[CRepr]
@@ -1364,22 +2133,71 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3f7f31ac, 0xe15f, 0x11d0, 0x9c, 0x25, 0x00, 0xc0, 0x4f, 0xc9, 0x9c, 0x8e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_tagName(BSTR* p) mut
+			{
+				return VT.get_tagName(&this, p);
+			}
+			public HRESULT put_tagName(BSTR p) mut
+			{
+				return VT.put_tagName(&this, p);
+			}
+			public HRESULT get_parent(IXMLElement** ppParent) mut
+			{
+				return VT.get_parent(&this, ppParent);
+			}
+			public HRESULT setAttribute(BSTR strPropertyName, VARIANT PropertyValue) mut
+			{
+				return VT.setAttribute(&this, strPropertyName, PropertyValue);
+			}
+			public HRESULT getAttribute(BSTR strPropertyName, VARIANT* PropertyValue) mut
+			{
+				return VT.getAttribute(&this, strPropertyName, PropertyValue);
+			}
+			public HRESULT removeAttribute(BSTR strPropertyName) mut
+			{
+				return VT.removeAttribute(&this, strPropertyName);
+			}
+			public HRESULT get_children(IXMLElementCollection** pp) mut
+			{
+				return VT.get_children(&this, pp);
+			}
+			public HRESULT get_type(int32* plType) mut
+			{
+				return VT.get_type(&this, plType);
+			}
+			public HRESULT get_text(BSTR* p) mut
+			{
+				return VT.get_text(&this, p);
+			}
+			public HRESULT put_text(BSTR p) mut
+			{
+				return VT.put_text(&this, p);
+			}
+			public HRESULT addChild(IXMLElement* pChildElem, int32 lIndex, int32 lReserved) mut
+			{
+				return VT.addChild(&this, pChildElem, lIndex, lReserved);
+			}
+			public HRESULT removeChild(IXMLElement* pChildElem) mut
+			{
+				return VT.removeChild(&this, pChildElem);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IXMLElement *self, BSTR* p) get_tagName;
-				public function HRESULT(IXMLElement *self, BSTR p) put_tagName;
-				public function HRESULT(IXMLElement *self, IXMLElement** ppParent) get_parent;
-				public function HRESULT(IXMLElement *self, BSTR strPropertyName, VARIANT PropertyValue) setAttribute;
-				public function HRESULT(IXMLElement *self, BSTR strPropertyName, VARIANT* PropertyValue) getAttribute;
-				public function HRESULT(IXMLElement *self, BSTR strPropertyName) removeAttribute;
-				public function HRESULT(IXMLElement *self, IXMLElementCollection** pp) get_children;
-				public function HRESULT(IXMLElement *self, int32* plType) get_type;
-				public function HRESULT(IXMLElement *self, BSTR* p) get_text;
-				public function HRESULT(IXMLElement *self, BSTR p) put_text;
-				public function HRESULT(IXMLElement *self, IXMLElement* pChildElem, int32 lIndex, int32 lReserved) addChild;
-				public function HRESULT(IXMLElement *self, IXMLElement* pChildElem) removeChild;
+				public new function HRESULT(IXMLElement *self, BSTR* p) get_tagName;
+				public new function HRESULT(IXMLElement *self, BSTR p) put_tagName;
+				public new function HRESULT(IXMLElement *self, IXMLElement** ppParent) get_parent;
+				public new function HRESULT(IXMLElement *self, BSTR strPropertyName, VARIANT PropertyValue) setAttribute;
+				public new function HRESULT(IXMLElement *self, BSTR strPropertyName, VARIANT* PropertyValue) getAttribute;
+				public new function HRESULT(IXMLElement *self, BSTR strPropertyName) removeAttribute;
+				public new function HRESULT(IXMLElement *self, IXMLElementCollection** pp) get_children;
+				public new function HRESULT(IXMLElement *self, int32* plType) get_type;
+				public new function HRESULT(IXMLElement *self, BSTR* p) get_text;
+				public new function HRESULT(IXMLElement *self, BSTR p) put_text;
+				public new function HRESULT(IXMLElement *self, IXMLElement* pChildElem, int32 lIndex, int32 lReserved) addChild;
+				public new function HRESULT(IXMLElement *self, IXMLElement* pChildElem) removeChild;
 			}
 		}
 		[CRepr]
@@ -1387,23 +2205,76 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2b8de2ff, 0x8d2d, 0x11d1, 0xb2, 0xfc, 0x00, 0xc0, 0x4f, 0xd9, 0x15, 0xa9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_tagName(BSTR* p) mut
+			{
+				return VT.get_tagName(&this, p);
+			}
+			public HRESULT put_tagName(BSTR p) mut
+			{
+				return VT.put_tagName(&this, p);
+			}
+			public HRESULT get_parent(IXMLElement2** ppParent) mut
+			{
+				return VT.get_parent(&this, ppParent);
+			}
+			public HRESULT setAttribute(BSTR strPropertyName, VARIANT PropertyValue) mut
+			{
+				return VT.setAttribute(&this, strPropertyName, PropertyValue);
+			}
+			public HRESULT getAttribute(BSTR strPropertyName, VARIANT* PropertyValue) mut
+			{
+				return VT.getAttribute(&this, strPropertyName, PropertyValue);
+			}
+			public HRESULT removeAttribute(BSTR strPropertyName) mut
+			{
+				return VT.removeAttribute(&this, strPropertyName);
+			}
+			public HRESULT get_children(IXMLElementCollection** pp) mut
+			{
+				return VT.get_children(&this, pp);
+			}
+			public HRESULT get_type(int32* plType) mut
+			{
+				return VT.get_type(&this, plType);
+			}
+			public HRESULT get_text(BSTR* p) mut
+			{
+				return VT.get_text(&this, p);
+			}
+			public HRESULT put_text(BSTR p) mut
+			{
+				return VT.put_text(&this, p);
+			}
+			public HRESULT addChild(IXMLElement2* pChildElem, int32 lIndex, int32 lReserved) mut
+			{
+				return VT.addChild(&this, pChildElem, lIndex, lReserved);
+			}
+			public HRESULT removeChild(IXMLElement2* pChildElem) mut
+			{
+				return VT.removeChild(&this, pChildElem);
+			}
+			public HRESULT get_attributes(IXMLElementCollection** pp) mut
+			{
+				return VT.get_attributes(&this, pp);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IXMLElement2 *self, BSTR* p) get_tagName;
-				public function HRESULT(IXMLElement2 *self, BSTR p) put_tagName;
-				public function HRESULT(IXMLElement2 *self, IXMLElement2** ppParent) get_parent;
-				public function HRESULT(IXMLElement2 *self, BSTR strPropertyName, VARIANT PropertyValue) setAttribute;
-				public function HRESULT(IXMLElement2 *self, BSTR strPropertyName, VARIANT* PropertyValue) getAttribute;
-				public function HRESULT(IXMLElement2 *self, BSTR strPropertyName) removeAttribute;
-				public function HRESULT(IXMLElement2 *self, IXMLElementCollection** pp) get_children;
-				public function HRESULT(IXMLElement2 *self, int32* plType) get_type;
-				public function HRESULT(IXMLElement2 *self, BSTR* p) get_text;
-				public function HRESULT(IXMLElement2 *self, BSTR p) put_text;
-				public function HRESULT(IXMLElement2 *self, IXMLElement2* pChildElem, int32 lIndex, int32 lReserved) addChild;
-				public function HRESULT(IXMLElement2 *self, IXMLElement2* pChildElem) removeChild;
-				public function HRESULT(IXMLElement2 *self, IXMLElementCollection** pp) get_attributes;
+				public new function HRESULT(IXMLElement2 *self, BSTR* p) get_tagName;
+				public new function HRESULT(IXMLElement2 *self, BSTR p) put_tagName;
+				public new function HRESULT(IXMLElement2 *self, IXMLElement2** ppParent) get_parent;
+				public new function HRESULT(IXMLElement2 *self, BSTR strPropertyName, VARIANT PropertyValue) setAttribute;
+				public new function HRESULT(IXMLElement2 *self, BSTR strPropertyName, VARIANT* PropertyValue) getAttribute;
+				public new function HRESULT(IXMLElement2 *self, BSTR strPropertyName) removeAttribute;
+				public new function HRESULT(IXMLElement2 *self, IXMLElementCollection** pp) get_children;
+				public new function HRESULT(IXMLElement2 *self, int32* plType) get_type;
+				public new function HRESULT(IXMLElement2 *self, BSTR* p) get_text;
+				public new function HRESULT(IXMLElement2 *self, BSTR p) put_text;
+				public new function HRESULT(IXMLElement2 *self, IXMLElement2* pChildElem, int32 lIndex, int32 lReserved) addChild;
+				public new function HRESULT(IXMLElement2 *self, IXMLElement2* pChildElem) removeChild;
+				public new function HRESULT(IXMLElement2 *self, IXMLElementCollection** pp) get_attributes;
 			}
 		}
 		[CRepr]
@@ -1411,12 +2282,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd4d4a0fc, 0x3b73, 0x11d1, 0xb2, 0xb4, 0x00, 0xc0, 0x4f, 0xb9, 0x25, 0x96);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_name(BSTR* n) mut
+			{
+				return VT.get_name(&this, n);
+			}
+			public HRESULT get_value(BSTR* v) mut
+			{
+				return VT.get_value(&this, v);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IXMLAttribute *self, BSTR* n) get_name;
-				public function HRESULT(IXMLAttribute *self, BSTR* v) get_value;
+				public new function HRESULT(IXMLAttribute *self, BSTR* n) get_name;
+				public new function HRESULT(IXMLAttribute *self, BSTR* v) get_value;
 			}
 		}
 		[CRepr]
@@ -1424,11 +2304,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x948c5ad3, 0xc58d, 0x11d0, 0x9c, 0x0b, 0x00, 0xc0, 0x4f, 0xc9, 0x9c, 0x8e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetErrorInfo(XML_ERROR* pErrorReturn) mut
+			{
+				return VT.GetErrorInfo(&this, pErrorReturn);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IXMLError *self, XML_ERROR* pErrorReturn) GetErrorInfo;
+				public new function HRESULT(IXMLError *self, XML_ERROR* pErrorReturn) GetErrorInfo;
 			}
 		}
 		[CRepr]
@@ -1436,16 +2321,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf95, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_namespaces(IXMLDOMSchemaCollection** namespaceCollection) mut
+			{
+				return VT.get_namespaces(&this, namespaceCollection);
+			}
+			public HRESULT get_schemas(VARIANT* otherCollection) mut
+			{
+				return VT.get_schemas(&this, otherCollection);
+			}
+			public HRESULT putref_schemas(VARIANT otherCollection) mut
+			{
+				return VT.putref_schemas(&this, otherCollection);
+			}
+			public HRESULT validate(IXMLDOMParseError** errorObj) mut
+			{
+				return VT.validate(&this, errorObj);
+			}
+			public HRESULT setProperty(BSTR name, VARIANT value) mut
+			{
+				return VT.setProperty(&this, name, value);
+			}
+			public HRESULT getProperty(BSTR name, VARIANT* value) mut
+			{
+				return VT.getProperty(&this, name, value);
+			}
 			[CRepr]
 			public struct VTable : IXMLDOMDocument.VTable
 			{
-				public function HRESULT(IXMLDOMDocument2 *self, IXMLDOMSchemaCollection** namespaceCollection) get_namespaces;
-				public function HRESULT(IXMLDOMDocument2 *self, VARIANT* otherCollection) get_schemas;
-				public function HRESULT(IXMLDOMDocument2 *self, VARIANT otherCollection) putref_schemas;
-				public function HRESULT(IXMLDOMDocument2 *self, IXMLDOMParseError** errorObj) validate;
-				public function HRESULT(IXMLDOMDocument2 *self, BSTR name, VARIANT value) setProperty;
-				public function HRESULT(IXMLDOMDocument2 *self, BSTR name, VARIANT* value) getProperty;
+				public new function HRESULT(IXMLDOMDocument2 *self, IXMLDOMSchemaCollection** namespaceCollection) get_namespaces;
+				public new function HRESULT(IXMLDOMDocument2 *self, VARIANT* otherCollection) get_schemas;
+				public new function HRESULT(IXMLDOMDocument2 *self, VARIANT otherCollection) putref_schemas;
+				public new function HRESULT(IXMLDOMDocument2 *self, IXMLDOMParseError** errorObj) validate;
+				public new function HRESULT(IXMLDOMDocument2 *self, BSTR name, VARIANT value) setProperty;
+				public new function HRESULT(IXMLDOMDocument2 *self, BSTR name, VARIANT* value) getProperty;
 			}
 		}
 		[CRepr]
@@ -1453,12 +2363,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf96, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT validateNode(IXMLDOMNode* node, IXMLDOMParseError** errorObj) mut
+			{
+				return VT.validateNode(&this, node, errorObj);
+			}
+			public HRESULT importNode(IXMLDOMNode* node, int16 deep, IXMLDOMNode** clone) mut
+			{
+				return VT.importNode(&this, node, deep, clone);
+			}
 			[CRepr]
 			public struct VTable : IXMLDOMDocument2.VTable
 			{
-				public function HRESULT(IXMLDOMDocument3 *self, IXMLDOMNode* node, IXMLDOMParseError** errorObj) validateNode;
-				public function HRESULT(IXMLDOMDocument3 *self, IXMLDOMNode* node, int16 deep, IXMLDOMNode** clone) importNode;
+				public new function HRESULT(IXMLDOMDocument3 *self, IXMLDOMNode* node, IXMLDOMParseError** errorObj) validateNode;
+				public new function HRESULT(IXMLDOMDocument3 *self, IXMLDOMNode* node, int16 deep, IXMLDOMNode** clone) importNode;
 			}
 		}
 		[CRepr]
@@ -1466,17 +2385,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x373984c8, 0xb845, 0x449b, 0x91, 0xe7, 0x45, 0xac, 0x83, 0x03, 0x6a, 0xde);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT add(BSTR namespaceURI, VARIANT @var) mut
+			{
+				return VT.add(&this, namespaceURI, @var);
+			}
+			public HRESULT get(BSTR namespaceURI, IXMLDOMNode** schemaNode) mut
+			{
+				return VT.get(&this, namespaceURI, schemaNode);
+			}
+			public HRESULT remove(BSTR namespaceURI) mut
+			{
+				return VT.remove(&this, namespaceURI);
+			}
+			public HRESULT get_length(int32* length) mut
+			{
+				return VT.get_length(&this, length);
+			}
+			public HRESULT get_namespaceURI(int32 index, BSTR* length) mut
+			{
+				return VT.get_namespaceURI(&this, index, length);
+			}
+			public HRESULT addCollection(IXMLDOMSchemaCollection* otherCollection) mut
+			{
+				return VT.addCollection(&this, otherCollection);
+			}
+			public HRESULT get__newEnum(IUnknown** ppUnk) mut
+			{
+				return VT.get__newEnum(&this, ppUnk);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IXMLDOMSchemaCollection *self, BSTR namespaceURI, VARIANT @var) add;
-				public function HRESULT(IXMLDOMSchemaCollection *self, BSTR namespaceURI, IXMLDOMNode** schemaNode) get;
-				public function HRESULT(IXMLDOMSchemaCollection *self, BSTR namespaceURI) remove;
-				public function HRESULT(IXMLDOMSchemaCollection *self, int32* length) get_length;
-				public function HRESULT(IXMLDOMSchemaCollection *self, int32 index, BSTR* length) get_namespaceURI;
-				public function HRESULT(IXMLDOMSchemaCollection *self, IXMLDOMSchemaCollection* otherCollection) addCollection;
-				public function HRESULT(IXMLDOMSchemaCollection *self, IUnknown** ppUnk) get__newEnum;
+				public new function HRESULT(IXMLDOMSchemaCollection *self, BSTR namespaceURI, VARIANT @var) add;
+				public new function HRESULT(IXMLDOMSchemaCollection *self, BSTR namespaceURI, IXMLDOMNode** schemaNode) get;
+				public new function HRESULT(IXMLDOMSchemaCollection *self, BSTR namespaceURI) remove;
+				public new function HRESULT(IXMLDOMSchemaCollection *self, int32* length) get_length;
+				public new function HRESULT(IXMLDOMSchemaCollection *self, int32 index, BSTR* length) get_namespaceURI;
+				public new function HRESULT(IXMLDOMSchemaCollection *self, IXMLDOMSchemaCollection* otherCollection) addCollection;
+				public new function HRESULT(IXMLDOMSchemaCollection *self, IUnknown** ppUnk) get__newEnum;
 			}
 		}
 		[CRepr]
@@ -1484,21 +2432,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xaa634fc7, 0x5888, 0x44a7, 0xa2, 0x57, 0x3a, 0x47, 0x15, 0x0d, 0x3a, 0x0e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_expr(BSTR* expression) mut
+			{
+				return VT.get_expr(&this, expression);
+			}
+			public HRESULT put_expr(BSTR expression) mut
+			{
+				return VT.put_expr(&this, expression);
+			}
+			public HRESULT get_context(IXMLDOMNode** ppNode) mut
+			{
+				return VT.get_context(&this, ppNode);
+			}
+			public HRESULT putref_context(IXMLDOMNode* pNode) mut
+			{
+				return VT.putref_context(&this, pNode);
+			}
+			public HRESULT peekNode(IXMLDOMNode** ppNode) mut
+			{
+				return VT.peekNode(&this, ppNode);
+			}
+			public HRESULT matches(IXMLDOMNode* pNode, IXMLDOMNode** ppNode) mut
+			{
+				return VT.matches(&this, pNode, ppNode);
+			}
+			public HRESULT removeNext(IXMLDOMNode** ppNode) mut
+			{
+				return VT.removeNext(&this, ppNode);
+			}
+			public HRESULT removeAll() mut
+			{
+				return VT.removeAll(&this);
+			}
+			public HRESULT clone(IXMLDOMSelection** ppNode) mut
+			{
+				return VT.clone(&this, ppNode);
+			}
+			public HRESULT getProperty(BSTR name, VARIANT* value) mut
+			{
+				return VT.getProperty(&this, name, value);
+			}
+			public HRESULT setProperty(BSTR name, VARIANT value) mut
+			{
+				return VT.setProperty(&this, name, value);
+			}
 			[CRepr]
 			public struct VTable : IXMLDOMNodeList.VTable
 			{
-				public function HRESULT(IXMLDOMSelection *self, BSTR* expression) get_expr;
-				public function HRESULT(IXMLDOMSelection *self, BSTR expression) put_expr;
-				public function HRESULT(IXMLDOMSelection *self, IXMLDOMNode** ppNode) get_context;
-				public function HRESULT(IXMLDOMSelection *self, IXMLDOMNode* pNode) putref_context;
-				public function HRESULT(IXMLDOMSelection *self, IXMLDOMNode** ppNode) peekNode;
-				public function HRESULT(IXMLDOMSelection *self, IXMLDOMNode* pNode, IXMLDOMNode** ppNode) matches;
-				public function HRESULT(IXMLDOMSelection *self, IXMLDOMNode** ppNode) removeNext;
-				public function HRESULT(IXMLDOMSelection *self) removeAll;
-				public function HRESULT(IXMLDOMSelection *self, IXMLDOMSelection** ppNode) clone;
-				public function HRESULT(IXMLDOMSelection *self, BSTR name, VARIANT* value) getProperty;
-				public function HRESULT(IXMLDOMSelection *self, BSTR name, VARIANT value) setProperty;
+				public new function HRESULT(IXMLDOMSelection *self, BSTR* expression) get_expr;
+				public new function HRESULT(IXMLDOMSelection *self, BSTR expression) put_expr;
+				public new function HRESULT(IXMLDOMSelection *self, IXMLDOMNode** ppNode) get_context;
+				public new function HRESULT(IXMLDOMSelection *self, IXMLDOMNode* pNode) putref_context;
+				public new function HRESULT(IXMLDOMSelection *self, IXMLDOMNode** ppNode) peekNode;
+				public new function HRESULT(IXMLDOMSelection *self, IXMLDOMNode* pNode, IXMLDOMNode** ppNode) matches;
+				public new function HRESULT(IXMLDOMSelection *self, IXMLDOMNode** ppNode) removeNext;
+				public new function HRESULT(IXMLDOMSelection *self) removeAll;
+				public new function HRESULT(IXMLDOMSelection *self, IXMLDOMSelection** ppNode) clone;
+				public new function HRESULT(IXMLDOMSelection *self, BSTR name, VARIANT* value) getProperty;
+				public new function HRESULT(IXMLDOMSelection *self, BSTR name, VARIANT value) setProperty;
 			}
 		}
 		[CRepr]
@@ -1506,14 +2499,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3efaa428, 0x272f, 0x11d2, 0x83, 0x6f, 0x00, 0x00, 0xf8, 0x7a, 0x77, 0x82);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_errorXPath(BSTR* xpathexpr) mut
+			{
+				return VT.get_errorXPath(&this, xpathexpr);
+			}
+			public HRESULT get_allErrors(IXMLDOMParseErrorCollection** allErrors) mut
+			{
+				return VT.get_allErrors(&this, allErrors);
+			}
+			public HRESULT errorParameters(int32 index, BSTR* param1) mut
+			{
+				return VT.errorParameters(&this, index, param1);
+			}
+			public HRESULT get_errorParametersCount(int32* count) mut
+			{
+				return VT.get_errorParametersCount(&this, count);
+			}
 			[CRepr]
 			public struct VTable : IXMLDOMParseError.VTable
 			{
-				public function HRESULT(IXMLDOMParseError2 *self, BSTR* xpathexpr) get_errorXPath;
-				public function HRESULT(IXMLDOMParseError2 *self, IXMLDOMParseErrorCollection** allErrors) get_allErrors;
-				public function HRESULT(IXMLDOMParseError2 *self, int32 index, BSTR* param1) errorParameters;
-				public function HRESULT(IXMLDOMParseError2 *self, int32* count) get_errorParametersCount;
+				public new function HRESULT(IXMLDOMParseError2 *self, BSTR* xpathexpr) get_errorXPath;
+				public new function HRESULT(IXMLDOMParseError2 *self, IXMLDOMParseErrorCollection** allErrors) get_allErrors;
+				public new function HRESULT(IXMLDOMParseError2 *self, int32 index, BSTR* param1) errorParameters;
+				public new function HRESULT(IXMLDOMParseError2 *self, int32* count) get_errorParametersCount;
 			}
 		}
 		[CRepr]
@@ -1521,15 +2531,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3efaa429, 0x272f, 0x11d2, 0x83, 0x6f, 0x00, 0x00, 0xf8, 0x7a, 0x77, 0x82);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_item(int32 index, IXMLDOMParseError2** error) mut
+			{
+				return VT.get_item(&this, index, error);
+			}
+			public HRESULT get_length(int32* length) mut
+			{
+				return VT.get_length(&this, length);
+			}
+			public HRESULT get_next(IXMLDOMParseError2** error) mut
+			{
+				return VT.get_next(&this, error);
+			}
+			public HRESULT reset() mut
+			{
+				return VT.reset(&this);
+			}
+			public HRESULT get__newEnum(IUnknown** ppunk) mut
+			{
+				return VT.get__newEnum(&this, ppunk);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IXMLDOMParseErrorCollection *self, int32 index, IXMLDOMParseError2** error) get_item;
-				public function HRESULT(IXMLDOMParseErrorCollection *self, int32* length) get_length;
-				public function HRESULT(IXMLDOMParseErrorCollection *self, IXMLDOMParseError2** error) get_next;
-				public function HRESULT(IXMLDOMParseErrorCollection *self) reset;
-				public function HRESULT(IXMLDOMParseErrorCollection *self, IUnknown** ppunk) get__newEnum;
+				public new function HRESULT(IXMLDOMParseErrorCollection *self, int32 index, IXMLDOMParseError2** error) get_item;
+				public new function HRESULT(IXMLDOMParseErrorCollection *self, int32* length) get_length;
+				public new function HRESULT(IXMLDOMParseErrorCollection *self, IXMLDOMParseError2** error) get_next;
+				public new function HRESULT(IXMLDOMParseErrorCollection *self) reset;
+				public new function HRESULT(IXMLDOMParseErrorCollection *self, IUnknown** ppunk) get__newEnum;
 			}
 		}
 		[CRepr]
@@ -1537,24 +2568,81 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf92, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT put_input(VARIANT @var) mut
+			{
+				return VT.put_input(&this, @var);
+			}
+			public HRESULT get_input(VARIANT* pVar) mut
+			{
+				return VT.get_input(&this, pVar);
+			}
+			public HRESULT get_ownerTemplate(IXSLTemplate** ppTemplate) mut
+			{
+				return VT.get_ownerTemplate(&this, ppTemplate);
+			}
+			public HRESULT setStartMode(BSTR mode, BSTR namespaceURI) mut
+			{
+				return VT.setStartMode(&this, mode, namespaceURI);
+			}
+			public HRESULT get_startMode(BSTR* mode) mut
+			{
+				return VT.get_startMode(&this, mode);
+			}
+			public HRESULT get_startModeURI(BSTR* namespaceURI) mut
+			{
+				return VT.get_startModeURI(&this, namespaceURI);
+			}
+			public HRESULT put_output(VARIANT output) mut
+			{
+				return VT.put_output(&this, output);
+			}
+			public HRESULT get_output(VARIANT* pOutput) mut
+			{
+				return VT.get_output(&this, pOutput);
+			}
+			public HRESULT transform(int16* pDone) mut
+			{
+				return VT.transform(&this, pDone);
+			}
+			public HRESULT reset() mut
+			{
+				return VT.reset(&this);
+			}
+			public HRESULT get_readyState(int32* pReadyState) mut
+			{
+				return VT.get_readyState(&this, pReadyState);
+			}
+			public HRESULT addParameter(BSTR baseName, VARIANT parameter, BSTR namespaceURI) mut
+			{
+				return VT.addParameter(&this, baseName, parameter, namespaceURI);
+			}
+			public HRESULT addObject(IDispatch* obj, BSTR namespaceURI) mut
+			{
+				return VT.addObject(&this, obj, namespaceURI);
+			}
+			public HRESULT get_stylesheet(IXMLDOMNode** stylesheet) mut
+			{
+				return VT.get_stylesheet(&this, stylesheet);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IXSLProcessor *self, VARIANT @var) put_input;
-				public function HRESULT(IXSLProcessor *self, VARIANT* pVar) get_input;
-				public function HRESULT(IXSLProcessor *self, IXSLTemplate** ppTemplate) get_ownerTemplate;
-				public function HRESULT(IXSLProcessor *self, BSTR mode, BSTR namespaceURI) setStartMode;
-				public function HRESULT(IXSLProcessor *self, BSTR* mode) get_startMode;
-				public function HRESULT(IXSLProcessor *self, BSTR* namespaceURI) get_startModeURI;
-				public function HRESULT(IXSLProcessor *self, VARIANT output) put_output;
-				public function HRESULT(IXSLProcessor *self, VARIANT* pOutput) get_output;
-				public function HRESULT(IXSLProcessor *self, int16* pDone) transform;
-				public function HRESULT(IXSLProcessor *self) reset;
-				public function HRESULT(IXSLProcessor *self, int32* pReadyState) get_readyState;
-				public function HRESULT(IXSLProcessor *self, BSTR baseName, VARIANT parameter, BSTR namespaceURI) addParameter;
-				public function HRESULT(IXSLProcessor *self, IDispatch* obj, BSTR namespaceURI) addObject;
-				public function HRESULT(IXSLProcessor *self, IXMLDOMNode** stylesheet) get_stylesheet;
+				public new function HRESULT(IXSLProcessor *self, VARIANT @var) put_input;
+				public new function HRESULT(IXSLProcessor *self, VARIANT* pVar) get_input;
+				public new function HRESULT(IXSLProcessor *self, IXSLTemplate** ppTemplate) get_ownerTemplate;
+				public new function HRESULT(IXSLProcessor *self, BSTR mode, BSTR namespaceURI) setStartMode;
+				public new function HRESULT(IXSLProcessor *self, BSTR* mode) get_startMode;
+				public new function HRESULT(IXSLProcessor *self, BSTR* namespaceURI) get_startModeURI;
+				public new function HRESULT(IXSLProcessor *self, VARIANT output) put_output;
+				public new function HRESULT(IXSLProcessor *self, VARIANT* pOutput) get_output;
+				public new function HRESULT(IXSLProcessor *self, int16* pDone) transform;
+				public new function HRESULT(IXSLProcessor *self) reset;
+				public new function HRESULT(IXSLProcessor *self, int32* pReadyState) get_readyState;
+				public new function HRESULT(IXSLProcessor *self, BSTR baseName, VARIANT parameter, BSTR namespaceURI) addParameter;
+				public new function HRESULT(IXSLProcessor *self, IDispatch* obj, BSTR namespaceURI) addObject;
+				public new function HRESULT(IXSLProcessor *self, IXMLDOMNode** stylesheet) get_stylesheet;
 			}
 		}
 		[CRepr]
@@ -1562,13 +2650,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2933bf93, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT putref_stylesheet(IXMLDOMNode* stylesheet) mut
+			{
+				return VT.putref_stylesheet(&this, stylesheet);
+			}
+			public HRESULT get_stylesheet(IXMLDOMNode** stylesheet) mut
+			{
+				return VT.get_stylesheet(&this, stylesheet);
+			}
+			public HRESULT createProcessor(IXSLProcessor** ppProcessor) mut
+			{
+				return VT.createProcessor(&this, ppProcessor);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IXSLTemplate *self, IXMLDOMNode* stylesheet) putref_stylesheet;
-				public function HRESULT(IXSLTemplate *self, IXMLDOMNode** stylesheet) get_stylesheet;
-				public function HRESULT(IXSLTemplate *self, IXSLProcessor** ppProcessor) createProcessor;
+				public new function HRESULT(IXSLTemplate *self, IXMLDOMNode* stylesheet) putref_stylesheet;
+				public new function HRESULT(IXSLTemplate *self, IXMLDOMNode** stylesheet) get_stylesheet;
+				public new function HRESULT(IXSLTemplate *self, IXSLProcessor** ppProcessor) createProcessor;
 			}
 		}
 		[CRepr]
@@ -1576,24 +2677,81 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xed8c108d, 0x4349, 0x11d2, 0x91, 0xa4, 0x00, 0xc0, 0x4f, 0x79, 0x69, 0xe8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT open(BSTR bstrMethod, BSTR bstrUrl, VARIANT varAsync, VARIANT bstrUser, VARIANT bstrPassword) mut
+			{
+				return VT.open(&this, bstrMethod, bstrUrl, varAsync, bstrUser, bstrPassword);
+			}
+			public HRESULT setRequestHeader(BSTR bstrHeader, BSTR bstrValue) mut
+			{
+				return VT.setRequestHeader(&this, bstrHeader, bstrValue);
+			}
+			public HRESULT getResponseHeader(BSTR bstrHeader, BSTR* pbstrValue) mut
+			{
+				return VT.getResponseHeader(&this, bstrHeader, pbstrValue);
+			}
+			public HRESULT getAllResponseHeaders(BSTR* pbstrHeaders) mut
+			{
+				return VT.getAllResponseHeaders(&this, pbstrHeaders);
+			}
+			public HRESULT send(VARIANT varBody) mut
+			{
+				return VT.send(&this, varBody);
+			}
+			public HRESULT abort() mut
+			{
+				return VT.abort(&this);
+			}
+			public HRESULT get_status(int32* plStatus) mut
+			{
+				return VT.get_status(&this, plStatus);
+			}
+			public HRESULT get_statusText(BSTR* pbstrStatus) mut
+			{
+				return VT.get_statusText(&this, pbstrStatus);
+			}
+			public HRESULT get_responseXML(IDispatch** ppBody) mut
+			{
+				return VT.get_responseXML(&this, ppBody);
+			}
+			public HRESULT get_responseText(BSTR* pbstrBody) mut
+			{
+				return VT.get_responseText(&this, pbstrBody);
+			}
+			public HRESULT get_responseBody(VARIANT* pvarBody) mut
+			{
+				return VT.get_responseBody(&this, pvarBody);
+			}
+			public HRESULT get_responseStream(VARIANT* pvarBody) mut
+			{
+				return VT.get_responseStream(&this, pvarBody);
+			}
+			public HRESULT get_readyState(int32* plState) mut
+			{
+				return VT.get_readyState(&this, plState);
+			}
+			public HRESULT put_onreadystatechange(IDispatch* pReadyStateSink) mut
+			{
+				return VT.put_onreadystatechange(&this, pReadyStateSink);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IXMLHTTPRequest *self, BSTR bstrMethod, BSTR bstrUrl, VARIANT varAsync, VARIANT bstrUser, VARIANT bstrPassword) open;
-				public function HRESULT(IXMLHTTPRequest *self, BSTR bstrHeader, BSTR bstrValue) setRequestHeader;
-				public function HRESULT(IXMLHTTPRequest *self, BSTR bstrHeader, BSTR* pbstrValue) getResponseHeader;
-				public function HRESULT(IXMLHTTPRequest *self, BSTR* pbstrHeaders) getAllResponseHeaders;
-				public function HRESULT(IXMLHTTPRequest *self, VARIANT varBody) send;
-				public function HRESULT(IXMLHTTPRequest *self) abort;
-				public function HRESULT(IXMLHTTPRequest *self, int32* plStatus) get_status;
-				public function HRESULT(IXMLHTTPRequest *self, BSTR* pbstrStatus) get_statusText;
-				public function HRESULT(IXMLHTTPRequest *self, IDispatch** ppBody) get_responseXML;
-				public function HRESULT(IXMLHTTPRequest *self, BSTR* pbstrBody) get_responseText;
-				public function HRESULT(IXMLHTTPRequest *self, VARIANT* pvarBody) get_responseBody;
-				public function HRESULT(IXMLHTTPRequest *self, VARIANT* pvarBody) get_responseStream;
-				public function HRESULT(IXMLHTTPRequest *self, int32* plState) get_readyState;
-				public function HRESULT(IXMLHTTPRequest *self, IDispatch* pReadyStateSink) put_onreadystatechange;
+				public new function HRESULT(IXMLHTTPRequest *self, BSTR bstrMethod, BSTR bstrUrl, VARIANT varAsync, VARIANT bstrUser, VARIANT bstrPassword) open;
+				public new function HRESULT(IXMLHTTPRequest *self, BSTR bstrHeader, BSTR bstrValue) setRequestHeader;
+				public new function HRESULT(IXMLHTTPRequest *self, BSTR bstrHeader, BSTR* pbstrValue) getResponseHeader;
+				public new function HRESULT(IXMLHTTPRequest *self, BSTR* pbstrHeaders) getAllResponseHeaders;
+				public new function HRESULT(IXMLHTTPRequest *self, VARIANT varBody) send;
+				public new function HRESULT(IXMLHTTPRequest *self) abort;
+				public new function HRESULT(IXMLHTTPRequest *self, int32* plStatus) get_status;
+				public new function HRESULT(IXMLHTTPRequest *self, BSTR* pbstrStatus) get_statusText;
+				public new function HRESULT(IXMLHTTPRequest *self, IDispatch** ppBody) get_responseXML;
+				public new function HRESULT(IXMLHTTPRequest *self, BSTR* pbstrBody) get_responseText;
+				public new function HRESULT(IXMLHTTPRequest *self, VARIANT* pvarBody) get_responseBody;
+				public new function HRESULT(IXMLHTTPRequest *self, VARIANT* pvarBody) get_responseStream;
+				public new function HRESULT(IXMLHTTPRequest *self, int32* plState) get_readyState;
+				public new function HRESULT(IXMLHTTPRequest *self, IDispatch* pReadyStateSink) put_onreadystatechange;
 			}
 		}
 		[CRepr]
@@ -1601,14 +2759,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2e9196bf, 0x13ba, 0x4dd4, 0x91, 0xca, 0x6c, 0x57, 0x1f, 0x28, 0x14, 0x95);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT setTimeouts(int32 resolveTimeout, int32 connectTimeout, int32 sendTimeout, int32 receiveTimeout) mut
+			{
+				return VT.setTimeouts(&this, resolveTimeout, connectTimeout, sendTimeout, receiveTimeout);
+			}
+			public HRESULT waitForResponse(VARIANT timeoutInSeconds, int16* isSuccessful) mut
+			{
+				return VT.waitForResponse(&this, timeoutInSeconds, isSuccessful);
+			}
+			public HRESULT getOption(SERVERXMLHTTP_OPTION option, VARIANT* value) mut
+			{
+				return VT.getOption(&this, option, value);
+			}
+			public HRESULT setOption(SERVERXMLHTTP_OPTION option, VARIANT value) mut
+			{
+				return VT.setOption(&this, option, value);
+			}
 			[CRepr]
 			public struct VTable : IXMLHTTPRequest.VTable
 			{
-				public function HRESULT(IServerXMLHTTPRequest *self, int32 resolveTimeout, int32 connectTimeout, int32 sendTimeout, int32 receiveTimeout) setTimeouts;
-				public function HRESULT(IServerXMLHTTPRequest *self, VARIANT timeoutInSeconds, int16* isSuccessful) waitForResponse;
-				public function HRESULT(IServerXMLHTTPRequest *self, SERVERXMLHTTP_OPTION option, VARIANT* value) getOption;
-				public function HRESULT(IServerXMLHTTPRequest *self, SERVERXMLHTTP_OPTION option, VARIANT value) setOption;
+				public new function HRESULT(IServerXMLHTTPRequest *self, int32 resolveTimeout, int32 connectTimeout, int32 sendTimeout, int32 receiveTimeout) setTimeouts;
+				public new function HRESULT(IServerXMLHTTPRequest *self, VARIANT timeoutInSeconds, int16* isSuccessful) waitForResponse;
+				public new function HRESULT(IServerXMLHTTPRequest *self, SERVERXMLHTTP_OPTION option, VARIANT* value) getOption;
+				public new function HRESULT(IServerXMLHTTPRequest *self, SERVERXMLHTTP_OPTION option, VARIANT value) setOption;
 			}
 		}
 		[CRepr]
@@ -1616,12 +2791,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2e01311b, 0xc322, 0x4b0a, 0xbd, 0x77, 0xb9, 0x0c, 0xfd, 0xc8, 0xdc, 0xe7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT setProxy(SXH_PROXY_SETTING proxySetting, VARIANT varProxyServer, VARIANT varBypassList) mut
+			{
+				return VT.setProxy(&this, proxySetting, varProxyServer, varBypassList);
+			}
+			public HRESULT setProxyCredentials(BSTR bstrUserName, BSTR bstrPassword) mut
+			{
+				return VT.setProxyCredentials(&this, bstrUserName, bstrPassword);
+			}
 			[CRepr]
 			public struct VTable : IServerXMLHTTPRequest.VTable
 			{
-				public function HRESULT(IServerXMLHTTPRequest2 *self, SXH_PROXY_SETTING proxySetting, VARIANT varProxyServer, VARIANT varBypassList) setProxy;
-				public function HRESULT(IServerXMLHTTPRequest2 *self, BSTR bstrUserName, BSTR bstrPassword) setProxyCredentials;
+				public new function HRESULT(IServerXMLHTTPRequest2 *self, SXH_PROXY_SETTING proxySetting, VARIANT varProxyServer, VARIANT varBypassList) setProxy;
+				public new function HRESULT(IServerXMLHTTPRequest2 *self, BSTR bstrUserName, BSTR bstrPassword) setProxyCredentials;
 			}
 		}
 		[CRepr]
@@ -1629,28 +2813,101 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa4f96ed0, 0xf829, 0x476e, 0x81, 0xc0, 0xcd, 0xc7, 0xbd, 0x2a, 0x08, 0x02);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT getFeature(PWSTR pwchName, int16* pvfValue) mut
+			{
+				return VT.getFeature(&this, pwchName, pvfValue);
+			}
+			public HRESULT putFeature(PWSTR pwchName, int16 vfValue) mut
+			{
+				return VT.putFeature(&this, pwchName, vfValue);
+			}
+			public HRESULT getProperty(PWSTR pwchName, VARIANT* pvarValue) mut
+			{
+				return VT.getProperty(&this, pwchName, pvarValue);
+			}
+			public HRESULT putProperty(PWSTR pwchName, VARIANT varValue) mut
+			{
+				return VT.putProperty(&this, pwchName, varValue);
+			}
+			public HRESULT getEntityResolver(ISAXEntityResolver** ppResolver) mut
+			{
+				return VT.getEntityResolver(&this, ppResolver);
+			}
+			public HRESULT putEntityResolver(ISAXEntityResolver* pResolver) mut
+			{
+				return VT.putEntityResolver(&this, pResolver);
+			}
+			public HRESULT getContentHandler(ISAXContentHandler** ppHandler) mut
+			{
+				return VT.getContentHandler(&this, ppHandler);
+			}
+			public HRESULT putContentHandler(ISAXContentHandler* pHandler) mut
+			{
+				return VT.putContentHandler(&this, pHandler);
+			}
+			public HRESULT getDTDHandler(ISAXDTDHandler** ppHandler) mut
+			{
+				return VT.getDTDHandler(&this, ppHandler);
+			}
+			public HRESULT putDTDHandler(ISAXDTDHandler* pHandler) mut
+			{
+				return VT.putDTDHandler(&this, pHandler);
+			}
+			public HRESULT getErrorHandler(ISAXErrorHandler** ppHandler) mut
+			{
+				return VT.getErrorHandler(&this, ppHandler);
+			}
+			public HRESULT putErrorHandler(ISAXErrorHandler* pHandler) mut
+			{
+				return VT.putErrorHandler(&this, pHandler);
+			}
+			public HRESULT getBaseURL(uint16** ppwchBaseUrl) mut
+			{
+				return VT.getBaseURL(&this, ppwchBaseUrl);
+			}
+			public HRESULT putBaseURL(PWSTR pwchBaseUrl) mut
+			{
+				return VT.putBaseURL(&this, pwchBaseUrl);
+			}
+			public HRESULT getSecureBaseURL(uint16** ppwchSecureBaseUrl) mut
+			{
+				return VT.getSecureBaseURL(&this, ppwchSecureBaseUrl);
+			}
+			public HRESULT putSecureBaseURL(PWSTR pwchSecureBaseUrl) mut
+			{
+				return VT.putSecureBaseURL(&this, pwchSecureBaseUrl);
+			}
+			public HRESULT parse(VARIANT varInput) mut
+			{
+				return VT.parse(&this, varInput);
+			}
+			public HRESULT parseURL(PWSTR pwchUrl) mut
+			{
+				return VT.parseURL(&this, pwchUrl);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISAXXMLReader *self, PWSTR pwchName, int16* pvfValue) getFeature;
-				public function HRESULT(ISAXXMLReader *self, PWSTR pwchName, int16 vfValue) putFeature;
-				public function HRESULT(ISAXXMLReader *self, PWSTR pwchName, VARIANT* pvarValue) getProperty;
-				public function HRESULT(ISAXXMLReader *self, PWSTR pwchName, VARIANT varValue) putProperty;
-				public function HRESULT(ISAXXMLReader *self, ISAXEntityResolver** ppResolver) getEntityResolver;
-				public function HRESULT(ISAXXMLReader *self, ISAXEntityResolver* pResolver) putEntityResolver;
-				public function HRESULT(ISAXXMLReader *self, ISAXContentHandler** ppHandler) getContentHandler;
-				public function HRESULT(ISAXXMLReader *self, ISAXContentHandler* pHandler) putContentHandler;
-				public function HRESULT(ISAXXMLReader *self, ISAXDTDHandler** ppHandler) getDTDHandler;
-				public function HRESULT(ISAXXMLReader *self, ISAXDTDHandler* pHandler) putDTDHandler;
-				public function HRESULT(ISAXXMLReader *self, ISAXErrorHandler** ppHandler) getErrorHandler;
-				public function HRESULT(ISAXXMLReader *self, ISAXErrorHandler* pHandler) putErrorHandler;
-				public function HRESULT(ISAXXMLReader *self, uint16** ppwchBaseUrl) getBaseURL;
-				public function HRESULT(ISAXXMLReader *self, PWSTR pwchBaseUrl) putBaseURL;
-				public function HRESULT(ISAXXMLReader *self, uint16** ppwchSecureBaseUrl) getSecureBaseURL;
-				public function HRESULT(ISAXXMLReader *self, PWSTR pwchSecureBaseUrl) putSecureBaseURL;
-				public function HRESULT(ISAXXMLReader *self, VARIANT varInput) parse;
-				public function HRESULT(ISAXXMLReader *self, PWSTR pwchUrl) parseURL;
+				public new function HRESULT(ISAXXMLReader *self, PWSTR pwchName, int16* pvfValue) getFeature;
+				public new function HRESULT(ISAXXMLReader *self, PWSTR pwchName, int16 vfValue) putFeature;
+				public new function HRESULT(ISAXXMLReader *self, PWSTR pwchName, VARIANT* pvarValue) getProperty;
+				public new function HRESULT(ISAXXMLReader *self, PWSTR pwchName, VARIANT varValue) putProperty;
+				public new function HRESULT(ISAXXMLReader *self, ISAXEntityResolver** ppResolver) getEntityResolver;
+				public new function HRESULT(ISAXXMLReader *self, ISAXEntityResolver* pResolver) putEntityResolver;
+				public new function HRESULT(ISAXXMLReader *self, ISAXContentHandler** ppHandler) getContentHandler;
+				public new function HRESULT(ISAXXMLReader *self, ISAXContentHandler* pHandler) putContentHandler;
+				public new function HRESULT(ISAXXMLReader *self, ISAXDTDHandler** ppHandler) getDTDHandler;
+				public new function HRESULT(ISAXXMLReader *self, ISAXDTDHandler* pHandler) putDTDHandler;
+				public new function HRESULT(ISAXXMLReader *self, ISAXErrorHandler** ppHandler) getErrorHandler;
+				public new function HRESULT(ISAXXMLReader *self, ISAXErrorHandler* pHandler) putErrorHandler;
+				public new function HRESULT(ISAXXMLReader *self, uint16** ppwchBaseUrl) getBaseURL;
+				public new function HRESULT(ISAXXMLReader *self, PWSTR pwchBaseUrl) putBaseURL;
+				public new function HRESULT(ISAXXMLReader *self, uint16** ppwchSecureBaseUrl) getSecureBaseURL;
+				public new function HRESULT(ISAXXMLReader *self, PWSTR pwchSecureBaseUrl) putSecureBaseURL;
+				public new function HRESULT(ISAXXMLReader *self, VARIANT varInput) parse;
+				public new function HRESULT(ISAXXMLReader *self, PWSTR pwchUrl) parseURL;
 			}
 		}
 		[CRepr]
@@ -1658,12 +2915,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x70409222, 0xca09, 0x4475, 0xac, 0xb8, 0x40, 0x31, 0x2f, 0xe8, 0xd1, 0x45);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT getParent(ISAXXMLReader** ppReader) mut
+			{
+				return VT.getParent(&this, ppReader);
+			}
+			public HRESULT putParent(ISAXXMLReader* pReader) mut
+			{
+				return VT.putParent(&this, pReader);
+			}
 			[CRepr]
 			public struct VTable : ISAXXMLReader.VTable
 			{
-				public function HRESULT(ISAXXMLFilter *self, ISAXXMLReader** ppReader) getParent;
-				public function HRESULT(ISAXXMLFilter *self, ISAXXMLReader* pReader) putParent;
+				public new function HRESULT(ISAXXMLFilter *self, ISAXXMLReader** ppReader) getParent;
+				public new function HRESULT(ISAXXMLFilter *self, ISAXXMLReader* pReader) putParent;
 			}
 		}
 		[CRepr]
@@ -1671,14 +2937,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9b7e472a, 0x0de4, 0x4640, 0xbf, 0xf3, 0x84, 0xd3, 0x8a, 0x05, 0x1c, 0x31);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT getColumnNumber(int32* pnColumn) mut
+			{
+				return VT.getColumnNumber(&this, pnColumn);
+			}
+			public HRESULT getLineNumber(int32* pnLine) mut
+			{
+				return VT.getLineNumber(&this, pnLine);
+			}
+			public HRESULT getPublicId(uint16** ppwchPublicId) mut
+			{
+				return VT.getPublicId(&this, ppwchPublicId);
+			}
+			public HRESULT getSystemId(uint16** ppwchSystemId) mut
+			{
+				return VT.getSystemId(&this, ppwchSystemId);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISAXLocator *self, int32* pnColumn) getColumnNumber;
-				public function HRESULT(ISAXLocator *self, int32* pnLine) getLineNumber;
-				public function HRESULT(ISAXLocator *self, uint16** ppwchPublicId) getPublicId;
-				public function HRESULT(ISAXLocator *self, uint16** ppwchSystemId) getSystemId;
+				public new function HRESULT(ISAXLocator *self, int32* pnColumn) getColumnNumber;
+				public new function HRESULT(ISAXLocator *self, int32* pnLine) getLineNumber;
+				public new function HRESULT(ISAXLocator *self, uint16** ppwchPublicId) getPublicId;
+				public new function HRESULT(ISAXLocator *self, uint16** ppwchSystemId) getSystemId;
 			}
 		}
 		[CRepr]
@@ -1686,11 +2969,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x99bca7bd, 0xe8c4, 0x4d5f, 0xa0, 0xcf, 0x6d, 0x90, 0x79, 0x01, 0xff, 0x07);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT resolveEntity(PWSTR pwchPublicId, PWSTR pwchSystemId, VARIANT* pvarInput) mut
+			{
+				return VT.resolveEntity(&this, pwchPublicId, pwchSystemId, pvarInput);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISAXEntityResolver *self, PWSTR pwchPublicId, PWSTR pwchSystemId, VARIANT* pvarInput) resolveEntity;
+				public new function HRESULT(ISAXEntityResolver *self, PWSTR pwchPublicId, PWSTR pwchSystemId, VARIANT* pvarInput) resolveEntity;
 			}
 		}
 		[CRepr]
@@ -1698,21 +2986,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1545cdfa, 0x9e4e, 0x4497, 0xa8, 0xa4, 0x2b, 0xf7, 0xd0, 0x11, 0x2c, 0x44);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT putDocumentLocator(ISAXLocator* pLocator) mut
+			{
+				return VT.putDocumentLocator(&this, pLocator);
+			}
+			public HRESULT startDocument() mut
+			{
+				return VT.startDocument(&this);
+			}
+			public HRESULT endDocument() mut
+			{
+				return VT.endDocument(&this);
+			}
+			public HRESULT startPrefixMapping(PWSTR pwchPrefix, int32 cchPrefix, PWSTR pwchUri, int32 cchUri) mut
+			{
+				return VT.startPrefixMapping(&this, pwchPrefix, cchPrefix, pwchUri, cchUri);
+			}
+			public HRESULT endPrefixMapping(PWSTR pwchPrefix, int32 cchPrefix) mut
+			{
+				return VT.endPrefixMapping(&this, pwchPrefix, cchPrefix);
+			}
+			public HRESULT startElement(PWSTR pwchNamespaceUri, int32 cchNamespaceUri, PWSTR pwchLocalName, int32 cchLocalName, PWSTR pwchQName, int32 cchQName, ISAXAttributes* pAttributes) mut
+			{
+				return VT.startElement(&this, pwchNamespaceUri, cchNamespaceUri, pwchLocalName, cchLocalName, pwchQName, cchQName, pAttributes);
+			}
+			public HRESULT endElement(PWSTR pwchNamespaceUri, int32 cchNamespaceUri, PWSTR pwchLocalName, int32 cchLocalName, PWSTR pwchQName, int32 cchQName) mut
+			{
+				return VT.endElement(&this, pwchNamespaceUri, cchNamespaceUri, pwchLocalName, cchLocalName, pwchQName, cchQName);
+			}
+			public HRESULT characters(PWSTR pwchChars, int32 cchChars) mut
+			{
+				return VT.characters(&this, pwchChars, cchChars);
+			}
+			public HRESULT ignorableWhitespace(PWSTR pwchChars, int32 cchChars) mut
+			{
+				return VT.ignorableWhitespace(&this, pwchChars, cchChars);
+			}
+			public HRESULT processingInstruction(PWSTR pwchTarget, int32 cchTarget, PWSTR pwchData, int32 cchData) mut
+			{
+				return VT.processingInstruction(&this, pwchTarget, cchTarget, pwchData, cchData);
+			}
+			public HRESULT skippedEntity(PWSTR pwchName, int32 cchName) mut
+			{
+				return VT.skippedEntity(&this, pwchName, cchName);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISAXContentHandler *self, ISAXLocator* pLocator) putDocumentLocator;
-				public function HRESULT(ISAXContentHandler *self) startDocument;
-				public function HRESULT(ISAXContentHandler *self) endDocument;
-				public function HRESULT(ISAXContentHandler *self, PWSTR pwchPrefix, int32 cchPrefix, PWSTR pwchUri, int32 cchUri) startPrefixMapping;
-				public function HRESULT(ISAXContentHandler *self, PWSTR pwchPrefix, int32 cchPrefix) endPrefixMapping;
-				public function HRESULT(ISAXContentHandler *self, PWSTR pwchNamespaceUri, int32 cchNamespaceUri, PWSTR pwchLocalName, int32 cchLocalName, PWSTR pwchQName, int32 cchQName, ISAXAttributes* pAttributes) startElement;
-				public function HRESULT(ISAXContentHandler *self, PWSTR pwchNamespaceUri, int32 cchNamespaceUri, PWSTR pwchLocalName, int32 cchLocalName, PWSTR pwchQName, int32 cchQName) endElement;
-				public function HRESULT(ISAXContentHandler *self, PWSTR pwchChars, int32 cchChars) characters;
-				public function HRESULT(ISAXContentHandler *self, PWSTR pwchChars, int32 cchChars) ignorableWhitespace;
-				public function HRESULT(ISAXContentHandler *self, PWSTR pwchTarget, int32 cchTarget, PWSTR pwchData, int32 cchData) processingInstruction;
-				public function HRESULT(ISAXContentHandler *self, PWSTR pwchName, int32 cchName) skippedEntity;
+				public new function HRESULT(ISAXContentHandler *self, ISAXLocator* pLocator) putDocumentLocator;
+				public new function HRESULT(ISAXContentHandler *self) startDocument;
+				public new function HRESULT(ISAXContentHandler *self) endDocument;
+				public new function HRESULT(ISAXContentHandler *self, PWSTR pwchPrefix, int32 cchPrefix, PWSTR pwchUri, int32 cchUri) startPrefixMapping;
+				public new function HRESULT(ISAXContentHandler *self, PWSTR pwchPrefix, int32 cchPrefix) endPrefixMapping;
+				public new function HRESULT(ISAXContentHandler *self, PWSTR pwchNamespaceUri, int32 cchNamespaceUri, PWSTR pwchLocalName, int32 cchLocalName, PWSTR pwchQName, int32 cchQName, ISAXAttributes* pAttributes) startElement;
+				public new function HRESULT(ISAXContentHandler *self, PWSTR pwchNamespaceUri, int32 cchNamespaceUri, PWSTR pwchLocalName, int32 cchLocalName, PWSTR pwchQName, int32 cchQName) endElement;
+				public new function HRESULT(ISAXContentHandler *self, PWSTR pwchChars, int32 cchChars) characters;
+				public new function HRESULT(ISAXContentHandler *self, PWSTR pwchChars, int32 cchChars) ignorableWhitespace;
+				public new function HRESULT(ISAXContentHandler *self, PWSTR pwchTarget, int32 cchTarget, PWSTR pwchData, int32 cchData) processingInstruction;
+				public new function HRESULT(ISAXContentHandler *self, PWSTR pwchName, int32 cchName) skippedEntity;
 			}
 		}
 		[CRepr]
@@ -1720,12 +3053,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe15c1baf, 0xafb3, 0x4d60, 0x8c, 0x36, 0x19, 0xa8, 0xc4, 0x5d, 0xef, 0xed);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT notationDecl(PWSTR pwchName, int32 cchName, PWSTR pwchPublicId, int32 cchPublicId, PWSTR pwchSystemId, int32 cchSystemId) mut
+			{
+				return VT.notationDecl(&this, pwchName, cchName, pwchPublicId, cchPublicId, pwchSystemId, cchSystemId);
+			}
+			public HRESULT unparsedEntityDecl(PWSTR pwchName, int32 cchName, PWSTR pwchPublicId, int32 cchPublicId, PWSTR pwchSystemId, int32 cchSystemId, PWSTR pwchNotationName, int32 cchNotationName) mut
+			{
+				return VT.unparsedEntityDecl(&this, pwchName, cchName, pwchPublicId, cchPublicId, pwchSystemId, cchSystemId, pwchNotationName, cchNotationName);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISAXDTDHandler *self, PWSTR pwchName, int32 cchName, PWSTR pwchPublicId, int32 cchPublicId, PWSTR pwchSystemId, int32 cchSystemId) notationDecl;
-				public function HRESULT(ISAXDTDHandler *self, PWSTR pwchName, int32 cchName, PWSTR pwchPublicId, int32 cchPublicId, PWSTR pwchSystemId, int32 cchSystemId, PWSTR pwchNotationName, int32 cchNotationName) unparsedEntityDecl;
+				public new function HRESULT(ISAXDTDHandler *self, PWSTR pwchName, int32 cchName, PWSTR pwchPublicId, int32 cchPublicId, PWSTR pwchSystemId, int32 cchSystemId) notationDecl;
+				public new function HRESULT(ISAXDTDHandler *self, PWSTR pwchName, int32 cchName, PWSTR pwchPublicId, int32 cchPublicId, PWSTR pwchSystemId, int32 cchSystemId, PWSTR pwchNotationName, int32 cchNotationName) unparsedEntityDecl;
 			}
 		}
 		[CRepr]
@@ -1733,13 +3075,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa60511c4, 0xccf5, 0x479e, 0x98, 0xa3, 0xdc, 0x8d, 0xc5, 0x45, 0xb7, 0xd0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT error(ISAXLocator* pLocator, PWSTR pwchErrorMessage, HRESULT hrErrorCode) mut
+			{
+				return VT.error(&this, pLocator, pwchErrorMessage, hrErrorCode);
+			}
+			public HRESULT fatalError(ISAXLocator* pLocator, PWSTR pwchErrorMessage, HRESULT hrErrorCode) mut
+			{
+				return VT.fatalError(&this, pLocator, pwchErrorMessage, hrErrorCode);
+			}
+			public HRESULT ignorableWarning(ISAXLocator* pLocator, PWSTR pwchErrorMessage, HRESULT hrErrorCode) mut
+			{
+				return VT.ignorableWarning(&this, pLocator, pwchErrorMessage, hrErrorCode);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISAXErrorHandler *self, ISAXLocator* pLocator, PWSTR pwchErrorMessage, HRESULT hrErrorCode) error;
-				public function HRESULT(ISAXErrorHandler *self, ISAXLocator* pLocator, PWSTR pwchErrorMessage, HRESULT hrErrorCode) fatalError;
-				public function HRESULT(ISAXErrorHandler *self, ISAXLocator* pLocator, PWSTR pwchErrorMessage, HRESULT hrErrorCode) ignorableWarning;
+				public new function HRESULT(ISAXErrorHandler *self, ISAXLocator* pLocator, PWSTR pwchErrorMessage, HRESULT hrErrorCode) error;
+				public new function HRESULT(ISAXErrorHandler *self, ISAXLocator* pLocator, PWSTR pwchErrorMessage, HRESULT hrErrorCode) fatalError;
+				public new function HRESULT(ISAXErrorHandler *self, ISAXLocator* pLocator, PWSTR pwchErrorMessage, HRESULT hrErrorCode) ignorableWarning;
 			}
 		}
 		[CRepr]
@@ -1747,17 +3102,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7f85d5f5, 0x47a8, 0x4497, 0xbd, 0xa5, 0x84, 0xba, 0x04, 0x81, 0x9e, 0xa6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT startDTD(PWSTR pwchName, int32 cchName, PWSTR pwchPublicId, int32 cchPublicId, PWSTR pwchSystemId, int32 cchSystemId) mut
+			{
+				return VT.startDTD(&this, pwchName, cchName, pwchPublicId, cchPublicId, pwchSystemId, cchSystemId);
+			}
+			public HRESULT endDTD() mut
+			{
+				return VT.endDTD(&this);
+			}
+			public HRESULT startEntity(PWSTR pwchName, int32 cchName) mut
+			{
+				return VT.startEntity(&this, pwchName, cchName);
+			}
+			public HRESULT endEntity(PWSTR pwchName, int32 cchName) mut
+			{
+				return VT.endEntity(&this, pwchName, cchName);
+			}
+			public HRESULT startCDATA() mut
+			{
+				return VT.startCDATA(&this);
+			}
+			public HRESULT endCDATA() mut
+			{
+				return VT.endCDATA(&this);
+			}
+			public HRESULT comment(PWSTR pwchChars, int32 cchChars) mut
+			{
+				return VT.comment(&this, pwchChars, cchChars);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISAXLexicalHandler *self, PWSTR pwchName, int32 cchName, PWSTR pwchPublicId, int32 cchPublicId, PWSTR pwchSystemId, int32 cchSystemId) startDTD;
-				public function HRESULT(ISAXLexicalHandler *self) endDTD;
-				public function HRESULT(ISAXLexicalHandler *self, PWSTR pwchName, int32 cchName) startEntity;
-				public function HRESULT(ISAXLexicalHandler *self, PWSTR pwchName, int32 cchName) endEntity;
-				public function HRESULT(ISAXLexicalHandler *self) startCDATA;
-				public function HRESULT(ISAXLexicalHandler *self) endCDATA;
-				public function HRESULT(ISAXLexicalHandler *self, PWSTR pwchChars, int32 cchChars) comment;
+				public new function HRESULT(ISAXLexicalHandler *self, PWSTR pwchName, int32 cchName, PWSTR pwchPublicId, int32 cchPublicId, PWSTR pwchSystemId, int32 cchSystemId) startDTD;
+				public new function HRESULT(ISAXLexicalHandler *self) endDTD;
+				public new function HRESULT(ISAXLexicalHandler *self, PWSTR pwchName, int32 cchName) startEntity;
+				public new function HRESULT(ISAXLexicalHandler *self, PWSTR pwchName, int32 cchName) endEntity;
+				public new function HRESULT(ISAXLexicalHandler *self) startCDATA;
+				public new function HRESULT(ISAXLexicalHandler *self) endCDATA;
+				public new function HRESULT(ISAXLexicalHandler *self, PWSTR pwchChars, int32 cchChars) comment;
 			}
 		}
 		[CRepr]
@@ -1765,14 +3149,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x862629ac, 0x771a, 0x47b2, 0x83, 0x37, 0x4e, 0x68, 0x43, 0xc1, 0xbe, 0x90);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT elementDecl(PWSTR pwchName, int32 cchName, PWSTR pwchModel, int32 cchModel) mut
+			{
+				return VT.elementDecl(&this, pwchName, cchName, pwchModel, cchModel);
+			}
+			public HRESULT attributeDecl(PWSTR pwchElementName, int32 cchElementName, PWSTR pwchAttributeName, int32 cchAttributeName, PWSTR pwchType, int32 cchType, PWSTR pwchValueDefault, int32 cchValueDefault, PWSTR pwchValue, int32 cchValue) mut
+			{
+				return VT.attributeDecl(&this, pwchElementName, cchElementName, pwchAttributeName, cchAttributeName, pwchType, cchType, pwchValueDefault, cchValueDefault, pwchValue, cchValue);
+			}
+			public HRESULT internalEntityDecl(PWSTR pwchName, int32 cchName, PWSTR pwchValue, int32 cchValue) mut
+			{
+				return VT.internalEntityDecl(&this, pwchName, cchName, pwchValue, cchValue);
+			}
+			public HRESULT externalEntityDecl(PWSTR pwchName, int32 cchName, PWSTR pwchPublicId, int32 cchPublicId, PWSTR pwchSystemId, int32 cchSystemId) mut
+			{
+				return VT.externalEntityDecl(&this, pwchName, cchName, pwchPublicId, cchPublicId, pwchSystemId, cchSystemId);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISAXDeclHandler *self, PWSTR pwchName, int32 cchName, PWSTR pwchModel, int32 cchModel) elementDecl;
-				public function HRESULT(ISAXDeclHandler *self, PWSTR pwchElementName, int32 cchElementName, PWSTR pwchAttributeName, int32 cchAttributeName, PWSTR pwchType, int32 cchType, PWSTR pwchValueDefault, int32 cchValueDefault, PWSTR pwchValue, int32 cchValue) attributeDecl;
-				public function HRESULT(ISAXDeclHandler *self, PWSTR pwchName, int32 cchName, PWSTR pwchValue, int32 cchValue) internalEntityDecl;
-				public function HRESULT(ISAXDeclHandler *self, PWSTR pwchName, int32 cchName, PWSTR pwchPublicId, int32 cchPublicId, PWSTR pwchSystemId, int32 cchSystemId) externalEntityDecl;
+				public new function HRESULT(ISAXDeclHandler *self, PWSTR pwchName, int32 cchName, PWSTR pwchModel, int32 cchModel) elementDecl;
+				public new function HRESULT(ISAXDeclHandler *self, PWSTR pwchElementName, int32 cchElementName, PWSTR pwchAttributeName, int32 cchAttributeName, PWSTR pwchType, int32 cchType, PWSTR pwchValueDefault, int32 cchValueDefault, PWSTR pwchValue, int32 cchValue) attributeDecl;
+				public new function HRESULT(ISAXDeclHandler *self, PWSTR pwchName, int32 cchName, PWSTR pwchValue, int32 cchValue) internalEntityDecl;
+				public new function HRESULT(ISAXDeclHandler *self, PWSTR pwchName, int32 cchName, PWSTR pwchPublicId, int32 cchPublicId, PWSTR pwchSystemId, int32 cchSystemId) externalEntityDecl;
 			}
 		}
 		[CRepr]
@@ -1780,23 +3181,76 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf078abe1, 0x45d2, 0x4832, 0x91, 0xea, 0x44, 0x66, 0xce, 0x2f, 0x25, 0xc9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT getLength(int32* pnLength) mut
+			{
+				return VT.getLength(&this, pnLength);
+			}
+			public HRESULT getURI(int32 nIndex, uint16** ppwchUri, int32* pcchUri) mut
+			{
+				return VT.getURI(&this, nIndex, ppwchUri, pcchUri);
+			}
+			public HRESULT getLocalName(int32 nIndex, uint16** ppwchLocalName, int32* pcchLocalName) mut
+			{
+				return VT.getLocalName(&this, nIndex, ppwchLocalName, pcchLocalName);
+			}
+			public HRESULT getQName(int32 nIndex, uint16** ppwchQName, int32* pcchQName) mut
+			{
+				return VT.getQName(&this, nIndex, ppwchQName, pcchQName);
+			}
+			public HRESULT getName(int32 nIndex, uint16** ppwchUri, int32* pcchUri, uint16** ppwchLocalName, int32* pcchLocalName, uint16** ppwchQName, int32* pcchQName) mut
+			{
+				return VT.getName(&this, nIndex, ppwchUri, pcchUri, ppwchLocalName, pcchLocalName, ppwchQName, pcchQName);
+			}
+			public HRESULT getIndexFromName(PWSTR pwchUri, int32 cchUri, PWSTR pwchLocalName, int32 cchLocalName, int32* pnIndex) mut
+			{
+				return VT.getIndexFromName(&this, pwchUri, cchUri, pwchLocalName, cchLocalName, pnIndex);
+			}
+			public HRESULT getIndexFromQName(PWSTR pwchQName, int32 cchQName, int32* pnIndex) mut
+			{
+				return VT.getIndexFromQName(&this, pwchQName, cchQName, pnIndex);
+			}
+			public HRESULT getType(int32 nIndex, uint16** ppwchType, int32* pcchType) mut
+			{
+				return VT.getType(&this, nIndex, ppwchType, pcchType);
+			}
+			public HRESULT getTypeFromName(PWSTR pwchUri, int32 cchUri, PWSTR pwchLocalName, int32 cchLocalName, uint16** ppwchType, int32* pcchType) mut
+			{
+				return VT.getTypeFromName(&this, pwchUri, cchUri, pwchLocalName, cchLocalName, ppwchType, pcchType);
+			}
+			public HRESULT getTypeFromQName(PWSTR pwchQName, int32 cchQName, uint16** ppwchType, int32* pcchType) mut
+			{
+				return VT.getTypeFromQName(&this, pwchQName, cchQName, ppwchType, pcchType);
+			}
+			public HRESULT getValue(int32 nIndex, uint16** ppwchValue, int32* pcchValue) mut
+			{
+				return VT.getValue(&this, nIndex, ppwchValue, pcchValue);
+			}
+			public HRESULT getValueFromName(PWSTR pwchUri, int32 cchUri, PWSTR pwchLocalName, int32 cchLocalName, uint16** ppwchValue, int32* pcchValue) mut
+			{
+				return VT.getValueFromName(&this, pwchUri, cchUri, pwchLocalName, cchLocalName, ppwchValue, pcchValue);
+			}
+			public HRESULT getValueFromQName(PWSTR pwchQName, int32 cchQName, uint16** ppwchValue, int32* pcchValue) mut
+			{
+				return VT.getValueFromQName(&this, pwchQName, cchQName, ppwchValue, pcchValue);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISAXAttributes *self, int32* pnLength) getLength;
-				public function HRESULT(ISAXAttributes *self, int32 nIndex, uint16** ppwchUri, int32* pcchUri) getURI;
-				public function HRESULT(ISAXAttributes *self, int32 nIndex, uint16** ppwchLocalName, int32* pcchLocalName) getLocalName;
-				public function HRESULT(ISAXAttributes *self, int32 nIndex, uint16** ppwchQName, int32* pcchQName) getQName;
-				public function HRESULT(ISAXAttributes *self, int32 nIndex, uint16** ppwchUri, int32* pcchUri, uint16** ppwchLocalName, int32* pcchLocalName, uint16** ppwchQName, int32* pcchQName) getName;
-				public function HRESULT(ISAXAttributes *self, PWSTR pwchUri, int32 cchUri, PWSTR pwchLocalName, int32 cchLocalName, int32* pnIndex) getIndexFromName;
-				public function HRESULT(ISAXAttributes *self, PWSTR pwchQName, int32 cchQName, int32* pnIndex) getIndexFromQName;
-				public function HRESULT(ISAXAttributes *self, int32 nIndex, uint16** ppwchType, int32* pcchType) getType;
-				public function HRESULT(ISAXAttributes *self, PWSTR pwchUri, int32 cchUri, PWSTR pwchLocalName, int32 cchLocalName, uint16** ppwchType, int32* pcchType) getTypeFromName;
-				public function HRESULT(ISAXAttributes *self, PWSTR pwchQName, int32 cchQName, uint16** ppwchType, int32* pcchType) getTypeFromQName;
-				public function HRESULT(ISAXAttributes *self, int32 nIndex, uint16** ppwchValue, int32* pcchValue) getValue;
-				public function HRESULT(ISAXAttributes *self, PWSTR pwchUri, int32 cchUri, PWSTR pwchLocalName, int32 cchLocalName, uint16** ppwchValue, int32* pcchValue) getValueFromName;
-				public function HRESULT(ISAXAttributes *self, PWSTR pwchQName, int32 cchQName, uint16** ppwchValue, int32* pcchValue) getValueFromQName;
+				public new function HRESULT(ISAXAttributes *self, int32* pnLength) getLength;
+				public new function HRESULT(ISAXAttributes *self, int32 nIndex, uint16** ppwchUri, int32* pcchUri) getURI;
+				public new function HRESULT(ISAXAttributes *self, int32 nIndex, uint16** ppwchLocalName, int32* pcchLocalName) getLocalName;
+				public new function HRESULT(ISAXAttributes *self, int32 nIndex, uint16** ppwchQName, int32* pcchQName) getQName;
+				public new function HRESULT(ISAXAttributes *self, int32 nIndex, uint16** ppwchUri, int32* pcchUri, uint16** ppwchLocalName, int32* pcchLocalName, uint16** ppwchQName, int32* pcchQName) getName;
+				public new function HRESULT(ISAXAttributes *self, PWSTR pwchUri, int32 cchUri, PWSTR pwchLocalName, int32 cchLocalName, int32* pnIndex) getIndexFromName;
+				public new function HRESULT(ISAXAttributes *self, PWSTR pwchQName, int32 cchQName, int32* pnIndex) getIndexFromQName;
+				public new function HRESULT(ISAXAttributes *self, int32 nIndex, uint16** ppwchType, int32* pcchType) getType;
+				public new function HRESULT(ISAXAttributes *self, PWSTR pwchUri, int32 cchUri, PWSTR pwchLocalName, int32 cchLocalName, uint16** ppwchType, int32* pcchType) getTypeFromName;
+				public new function HRESULT(ISAXAttributes *self, PWSTR pwchQName, int32 cchQName, uint16** ppwchType, int32* pcchType) getTypeFromQName;
+				public new function HRESULT(ISAXAttributes *self, int32 nIndex, uint16** ppwchValue, int32* pcchValue) getValue;
+				public new function HRESULT(ISAXAttributes *self, PWSTR pwchUri, int32 cchUri, PWSTR pwchLocalName, int32 cchLocalName, uint16** ppwchValue, int32* pcchValue) getValueFromName;
+				public new function HRESULT(ISAXAttributes *self, PWSTR pwchQName, int32 cchQName, uint16** ppwchValue, int32* pcchValue) getValueFromQName;
 			}
 		}
 		[CRepr]
@@ -1804,28 +3258,101 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8c033caa, 0x6cd6, 0x4f73, 0xb7, 0x28, 0x45, 0x31, 0xaf, 0x74, 0x94, 0x5f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT getFeature(BSTR strName, int16* fValue) mut
+			{
+				return VT.getFeature(&this, strName, fValue);
+			}
+			public HRESULT putFeature(BSTR strName, int16 fValue) mut
+			{
+				return VT.putFeature(&this, strName, fValue);
+			}
+			public HRESULT getProperty(BSTR strName, VARIANT* varValue) mut
+			{
+				return VT.getProperty(&this, strName, varValue);
+			}
+			public HRESULT putProperty(BSTR strName, VARIANT varValue) mut
+			{
+				return VT.putProperty(&this, strName, varValue);
+			}
+			public HRESULT get_entityResolver(IVBSAXEntityResolver** oResolver) mut
+			{
+				return VT.get_entityResolver(&this, oResolver);
+			}
+			public HRESULT putref_entityResolver(IVBSAXEntityResolver* oResolver) mut
+			{
+				return VT.putref_entityResolver(&this, oResolver);
+			}
+			public HRESULT get_contentHandler(IVBSAXContentHandler** oHandler) mut
+			{
+				return VT.get_contentHandler(&this, oHandler);
+			}
+			public HRESULT putref_contentHandler(IVBSAXContentHandler* oHandler) mut
+			{
+				return VT.putref_contentHandler(&this, oHandler);
+			}
+			public HRESULT get_dtdHandler(IVBSAXDTDHandler** oHandler) mut
+			{
+				return VT.get_dtdHandler(&this, oHandler);
+			}
+			public HRESULT putref_dtdHandler(IVBSAXDTDHandler* oHandler) mut
+			{
+				return VT.putref_dtdHandler(&this, oHandler);
+			}
+			public HRESULT get_errorHandler(IVBSAXErrorHandler** oHandler) mut
+			{
+				return VT.get_errorHandler(&this, oHandler);
+			}
+			public HRESULT putref_errorHandler(IVBSAXErrorHandler* oHandler) mut
+			{
+				return VT.putref_errorHandler(&this, oHandler);
+			}
+			public HRESULT get_baseURL(BSTR* strBaseURL) mut
+			{
+				return VT.get_baseURL(&this, strBaseURL);
+			}
+			public HRESULT put_baseURL(BSTR strBaseURL) mut
+			{
+				return VT.put_baseURL(&this, strBaseURL);
+			}
+			public HRESULT get_secureBaseURL(BSTR* strSecureBaseURL) mut
+			{
+				return VT.get_secureBaseURL(&this, strSecureBaseURL);
+			}
+			public HRESULT put_secureBaseURL(BSTR strSecureBaseURL) mut
+			{
+				return VT.put_secureBaseURL(&this, strSecureBaseURL);
+			}
+			public HRESULT parse(VARIANT varInput) mut
+			{
+				return VT.parse(&this, varInput);
+			}
+			public HRESULT parseURL(BSTR strURL) mut
+			{
+				return VT.parseURL(&this, strURL);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IVBSAXXMLReader *self, BSTR strName, int16* fValue) getFeature;
-				public function HRESULT(IVBSAXXMLReader *self, BSTR strName, int16 fValue) putFeature;
-				public function HRESULT(IVBSAXXMLReader *self, BSTR strName, VARIANT* varValue) getProperty;
-				public function HRESULT(IVBSAXXMLReader *self, BSTR strName, VARIANT varValue) putProperty;
-				public function HRESULT(IVBSAXXMLReader *self, IVBSAXEntityResolver** oResolver) get_entityResolver;
-				public function HRESULT(IVBSAXXMLReader *self, IVBSAXEntityResolver* oResolver) putref_entityResolver;
-				public function HRESULT(IVBSAXXMLReader *self, IVBSAXContentHandler** oHandler) get_contentHandler;
-				public function HRESULT(IVBSAXXMLReader *self, IVBSAXContentHandler* oHandler) putref_contentHandler;
-				public function HRESULT(IVBSAXXMLReader *self, IVBSAXDTDHandler** oHandler) get_dtdHandler;
-				public function HRESULT(IVBSAXXMLReader *self, IVBSAXDTDHandler* oHandler) putref_dtdHandler;
-				public function HRESULT(IVBSAXXMLReader *self, IVBSAXErrorHandler** oHandler) get_errorHandler;
-				public function HRESULT(IVBSAXXMLReader *self, IVBSAXErrorHandler* oHandler) putref_errorHandler;
-				public function HRESULT(IVBSAXXMLReader *self, BSTR* strBaseURL) get_baseURL;
-				public function HRESULT(IVBSAXXMLReader *self, BSTR strBaseURL) put_baseURL;
-				public function HRESULT(IVBSAXXMLReader *self, BSTR* strSecureBaseURL) get_secureBaseURL;
-				public function HRESULT(IVBSAXXMLReader *self, BSTR strSecureBaseURL) put_secureBaseURL;
-				public function HRESULT(IVBSAXXMLReader *self, VARIANT varInput) parse;
-				public function HRESULT(IVBSAXXMLReader *self, BSTR strURL) parseURL;
+				public new function HRESULT(IVBSAXXMLReader *self, BSTR strName, int16* fValue) getFeature;
+				public new function HRESULT(IVBSAXXMLReader *self, BSTR strName, int16 fValue) putFeature;
+				public new function HRESULT(IVBSAXXMLReader *self, BSTR strName, VARIANT* varValue) getProperty;
+				public new function HRESULT(IVBSAXXMLReader *self, BSTR strName, VARIANT varValue) putProperty;
+				public new function HRESULT(IVBSAXXMLReader *self, IVBSAXEntityResolver** oResolver) get_entityResolver;
+				public new function HRESULT(IVBSAXXMLReader *self, IVBSAXEntityResolver* oResolver) putref_entityResolver;
+				public new function HRESULT(IVBSAXXMLReader *self, IVBSAXContentHandler** oHandler) get_contentHandler;
+				public new function HRESULT(IVBSAXXMLReader *self, IVBSAXContentHandler* oHandler) putref_contentHandler;
+				public new function HRESULT(IVBSAXXMLReader *self, IVBSAXDTDHandler** oHandler) get_dtdHandler;
+				public new function HRESULT(IVBSAXXMLReader *self, IVBSAXDTDHandler* oHandler) putref_dtdHandler;
+				public new function HRESULT(IVBSAXXMLReader *self, IVBSAXErrorHandler** oHandler) get_errorHandler;
+				public new function HRESULT(IVBSAXXMLReader *self, IVBSAXErrorHandler* oHandler) putref_errorHandler;
+				public new function HRESULT(IVBSAXXMLReader *self, BSTR* strBaseURL) get_baseURL;
+				public new function HRESULT(IVBSAXXMLReader *self, BSTR strBaseURL) put_baseURL;
+				public new function HRESULT(IVBSAXXMLReader *self, BSTR* strSecureBaseURL) get_secureBaseURL;
+				public new function HRESULT(IVBSAXXMLReader *self, BSTR strSecureBaseURL) put_secureBaseURL;
+				public new function HRESULT(IVBSAXXMLReader *self, VARIANT varInput) parse;
+				public new function HRESULT(IVBSAXXMLReader *self, BSTR strURL) parseURL;
 			}
 		}
 		[CRepr]
@@ -1833,12 +3360,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1299eb1b, 0x5b88, 0x433e, 0x82, 0xde, 0x82, 0xca, 0x75, 0xad, 0x4e, 0x04);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_parent(IVBSAXXMLReader** oReader) mut
+			{
+				return VT.get_parent(&this, oReader);
+			}
+			public HRESULT putref_parent(IVBSAXXMLReader* oReader) mut
+			{
+				return VT.putref_parent(&this, oReader);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IVBSAXXMLFilter *self, IVBSAXXMLReader** oReader) get_parent;
-				public function HRESULT(IVBSAXXMLFilter *self, IVBSAXXMLReader* oReader) putref_parent;
+				public new function HRESULT(IVBSAXXMLFilter *self, IVBSAXXMLReader** oReader) get_parent;
+				public new function HRESULT(IVBSAXXMLFilter *self, IVBSAXXMLReader* oReader) putref_parent;
 			}
 		}
 		[CRepr]
@@ -1846,14 +3382,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x796e7ac5, 0x5aa2, 0x4eff, 0xac, 0xad, 0x3f, 0xaa, 0xf0, 0x1a, 0x32, 0x88);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_columnNumber(int32* nColumn) mut
+			{
+				return VT.get_columnNumber(&this, nColumn);
+			}
+			public HRESULT get_lineNumber(int32* nLine) mut
+			{
+				return VT.get_lineNumber(&this, nLine);
+			}
+			public HRESULT get_publicId(BSTR* strPublicId) mut
+			{
+				return VT.get_publicId(&this, strPublicId);
+			}
+			public HRESULT get_systemId(BSTR* strSystemId) mut
+			{
+				return VT.get_systemId(&this, strSystemId);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IVBSAXLocator *self, int32* nColumn) get_columnNumber;
-				public function HRESULT(IVBSAXLocator *self, int32* nLine) get_lineNumber;
-				public function HRESULT(IVBSAXLocator *self, BSTR* strPublicId) get_publicId;
-				public function HRESULT(IVBSAXLocator *self, BSTR* strSystemId) get_systemId;
+				public new function HRESULT(IVBSAXLocator *self, int32* nColumn) get_columnNumber;
+				public new function HRESULT(IVBSAXLocator *self, int32* nLine) get_lineNumber;
+				public new function HRESULT(IVBSAXLocator *self, BSTR* strPublicId) get_publicId;
+				public new function HRESULT(IVBSAXLocator *self, BSTR* strSystemId) get_systemId;
 			}
 		}
 		[CRepr]
@@ -1861,11 +3414,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c05d096, 0xf45b, 0x4aca, 0xad, 0x1a, 0xaa, 0x0b, 0xc2, 0x55, 0x18, 0xdc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT resolveEntity(BSTR* strPublicId, BSTR* strSystemId, VARIANT* varInput) mut
+			{
+				return VT.resolveEntity(&this, strPublicId, strSystemId, varInput);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IVBSAXEntityResolver *self, BSTR* strPublicId, BSTR* strSystemId, VARIANT* varInput) resolveEntity;
+				public new function HRESULT(IVBSAXEntityResolver *self, BSTR* strPublicId, BSTR* strSystemId, VARIANT* varInput) resolveEntity;
 			}
 		}
 		[CRepr]
@@ -1873,21 +3431,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2ed7290a, 0x4dd5, 0x4b46, 0xbb, 0x26, 0x4e, 0x41, 0x55, 0xe7, 0x7f, 0xaa);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT putref_documentLocator(IVBSAXLocator* oLocator) mut
+			{
+				return VT.putref_documentLocator(&this, oLocator);
+			}
+			public HRESULT startDocument() mut
+			{
+				return VT.startDocument(&this);
+			}
+			public HRESULT endDocument() mut
+			{
+				return VT.endDocument(&this);
+			}
+			public HRESULT startPrefixMapping(BSTR* strPrefix, BSTR* strURI) mut
+			{
+				return VT.startPrefixMapping(&this, strPrefix, strURI);
+			}
+			public HRESULT endPrefixMapping(BSTR* strPrefix) mut
+			{
+				return VT.endPrefixMapping(&this, strPrefix);
+			}
+			public HRESULT startElement(BSTR* strNamespaceURI, BSTR* strLocalName, BSTR* strQName, IVBSAXAttributes* oAttributes) mut
+			{
+				return VT.startElement(&this, strNamespaceURI, strLocalName, strQName, oAttributes);
+			}
+			public HRESULT endElement(BSTR* strNamespaceURI, BSTR* strLocalName, BSTR* strQName) mut
+			{
+				return VT.endElement(&this, strNamespaceURI, strLocalName, strQName);
+			}
+			public HRESULT characters(BSTR* strChars) mut
+			{
+				return VT.characters(&this, strChars);
+			}
+			public HRESULT ignorableWhitespace(BSTR* strChars) mut
+			{
+				return VT.ignorableWhitespace(&this, strChars);
+			}
+			public HRESULT processingInstruction(BSTR* strTarget, BSTR* strData) mut
+			{
+				return VT.processingInstruction(&this, strTarget, strData);
+			}
+			public HRESULT skippedEntity(BSTR* strName) mut
+			{
+				return VT.skippedEntity(&this, strName);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IVBSAXContentHandler *self, IVBSAXLocator* oLocator) putref_documentLocator;
-				public function HRESULT(IVBSAXContentHandler *self) startDocument;
-				public function HRESULT(IVBSAXContentHandler *self) endDocument;
-				public function HRESULT(IVBSAXContentHandler *self, BSTR* strPrefix, BSTR* strURI) startPrefixMapping;
-				public function HRESULT(IVBSAXContentHandler *self, BSTR* strPrefix) endPrefixMapping;
-				public function HRESULT(IVBSAXContentHandler *self, BSTR* strNamespaceURI, BSTR* strLocalName, BSTR* strQName, IVBSAXAttributes* oAttributes) startElement;
-				public function HRESULT(IVBSAXContentHandler *self, BSTR* strNamespaceURI, BSTR* strLocalName, BSTR* strQName) endElement;
-				public function HRESULT(IVBSAXContentHandler *self, BSTR* strChars) characters;
-				public function HRESULT(IVBSAXContentHandler *self, BSTR* strChars) ignorableWhitespace;
-				public function HRESULT(IVBSAXContentHandler *self, BSTR* strTarget, BSTR* strData) processingInstruction;
-				public function HRESULT(IVBSAXContentHandler *self, BSTR* strName) skippedEntity;
+				public new function HRESULT(IVBSAXContentHandler *self, IVBSAXLocator* oLocator) putref_documentLocator;
+				public new function HRESULT(IVBSAXContentHandler *self) startDocument;
+				public new function HRESULT(IVBSAXContentHandler *self) endDocument;
+				public new function HRESULT(IVBSAXContentHandler *self, BSTR* strPrefix, BSTR* strURI) startPrefixMapping;
+				public new function HRESULT(IVBSAXContentHandler *self, BSTR* strPrefix) endPrefixMapping;
+				public new function HRESULT(IVBSAXContentHandler *self, BSTR* strNamespaceURI, BSTR* strLocalName, BSTR* strQName, IVBSAXAttributes* oAttributes) startElement;
+				public new function HRESULT(IVBSAXContentHandler *self, BSTR* strNamespaceURI, BSTR* strLocalName, BSTR* strQName) endElement;
+				public new function HRESULT(IVBSAXContentHandler *self, BSTR* strChars) characters;
+				public new function HRESULT(IVBSAXContentHandler *self, BSTR* strChars) ignorableWhitespace;
+				public new function HRESULT(IVBSAXContentHandler *self, BSTR* strTarget, BSTR* strData) processingInstruction;
+				public new function HRESULT(IVBSAXContentHandler *self, BSTR* strName) skippedEntity;
 			}
 		}
 		[CRepr]
@@ -1895,12 +3498,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x24fb3297, 0x302d, 0x4620, 0xba, 0x39, 0x3a, 0x73, 0x2d, 0x85, 0x05, 0x58);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT notationDecl(BSTR* strName, BSTR* strPublicId, BSTR* strSystemId) mut
+			{
+				return VT.notationDecl(&this, strName, strPublicId, strSystemId);
+			}
+			public HRESULT unparsedEntityDecl(BSTR* strName, BSTR* strPublicId, BSTR* strSystemId, BSTR* strNotationName) mut
+			{
+				return VT.unparsedEntityDecl(&this, strName, strPublicId, strSystemId, strNotationName);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IVBSAXDTDHandler *self, BSTR* strName, BSTR* strPublicId, BSTR* strSystemId) notationDecl;
-				public function HRESULT(IVBSAXDTDHandler *self, BSTR* strName, BSTR* strPublicId, BSTR* strSystemId, BSTR* strNotationName) unparsedEntityDecl;
+				public new function HRESULT(IVBSAXDTDHandler *self, BSTR* strName, BSTR* strPublicId, BSTR* strSystemId) notationDecl;
+				public new function HRESULT(IVBSAXDTDHandler *self, BSTR* strName, BSTR* strPublicId, BSTR* strSystemId, BSTR* strNotationName) unparsedEntityDecl;
 			}
 		}
 		[CRepr]
@@ -1908,13 +3520,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd963d3fe, 0x173c, 0x4862, 0x90, 0x95, 0xb9, 0x2f, 0x66, 0x99, 0x5f, 0x52);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT error(IVBSAXLocator* oLocator, BSTR* strErrorMessage, int32 nErrorCode) mut
+			{
+				return VT.error(&this, oLocator, strErrorMessage, nErrorCode);
+			}
+			public HRESULT fatalError(IVBSAXLocator* oLocator, BSTR* strErrorMessage, int32 nErrorCode) mut
+			{
+				return VT.fatalError(&this, oLocator, strErrorMessage, nErrorCode);
+			}
+			public HRESULT ignorableWarning(IVBSAXLocator* oLocator, BSTR* strErrorMessage, int32 nErrorCode) mut
+			{
+				return VT.ignorableWarning(&this, oLocator, strErrorMessage, nErrorCode);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IVBSAXErrorHandler *self, IVBSAXLocator* oLocator, BSTR* strErrorMessage, int32 nErrorCode) error;
-				public function HRESULT(IVBSAXErrorHandler *self, IVBSAXLocator* oLocator, BSTR* strErrorMessage, int32 nErrorCode) fatalError;
-				public function HRESULT(IVBSAXErrorHandler *self, IVBSAXLocator* oLocator, BSTR* strErrorMessage, int32 nErrorCode) ignorableWarning;
+				public new function HRESULT(IVBSAXErrorHandler *self, IVBSAXLocator* oLocator, BSTR* strErrorMessage, int32 nErrorCode) error;
+				public new function HRESULT(IVBSAXErrorHandler *self, IVBSAXLocator* oLocator, BSTR* strErrorMessage, int32 nErrorCode) fatalError;
+				public new function HRESULT(IVBSAXErrorHandler *self, IVBSAXLocator* oLocator, BSTR* strErrorMessage, int32 nErrorCode) ignorableWarning;
 			}
 		}
 		[CRepr]
@@ -1922,17 +3547,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x032aac35, 0x8c0e, 0x4d9d, 0x97, 0x9f, 0xe3, 0xb7, 0x02, 0x93, 0x55, 0x76);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT startDTD(BSTR* strName, BSTR* strPublicId, BSTR* strSystemId) mut
+			{
+				return VT.startDTD(&this, strName, strPublicId, strSystemId);
+			}
+			public HRESULT endDTD() mut
+			{
+				return VT.endDTD(&this);
+			}
+			public HRESULT startEntity(BSTR* strName) mut
+			{
+				return VT.startEntity(&this, strName);
+			}
+			public HRESULT endEntity(BSTR* strName) mut
+			{
+				return VT.endEntity(&this, strName);
+			}
+			public HRESULT startCDATA() mut
+			{
+				return VT.startCDATA(&this);
+			}
+			public HRESULT endCDATA() mut
+			{
+				return VT.endCDATA(&this);
+			}
+			public HRESULT comment(BSTR* strChars) mut
+			{
+				return VT.comment(&this, strChars);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IVBSAXLexicalHandler *self, BSTR* strName, BSTR* strPublicId, BSTR* strSystemId) startDTD;
-				public function HRESULT(IVBSAXLexicalHandler *self) endDTD;
-				public function HRESULT(IVBSAXLexicalHandler *self, BSTR* strName) startEntity;
-				public function HRESULT(IVBSAXLexicalHandler *self, BSTR* strName) endEntity;
-				public function HRESULT(IVBSAXLexicalHandler *self) startCDATA;
-				public function HRESULT(IVBSAXLexicalHandler *self) endCDATA;
-				public function HRESULT(IVBSAXLexicalHandler *self, BSTR* strChars) comment;
+				public new function HRESULT(IVBSAXLexicalHandler *self, BSTR* strName, BSTR* strPublicId, BSTR* strSystemId) startDTD;
+				public new function HRESULT(IVBSAXLexicalHandler *self) endDTD;
+				public new function HRESULT(IVBSAXLexicalHandler *self, BSTR* strName) startEntity;
+				public new function HRESULT(IVBSAXLexicalHandler *self, BSTR* strName) endEntity;
+				public new function HRESULT(IVBSAXLexicalHandler *self) startCDATA;
+				public new function HRESULT(IVBSAXLexicalHandler *self) endCDATA;
+				public new function HRESULT(IVBSAXLexicalHandler *self, BSTR* strChars) comment;
 			}
 		}
 		[CRepr]
@@ -1940,14 +3594,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe8917260, 0x7579, 0x4be1, 0xb5, 0xdd, 0x7a, 0xfb, 0xfa, 0x6f, 0x07, 0x7b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT elementDecl(BSTR* strName, BSTR* strModel) mut
+			{
+				return VT.elementDecl(&this, strName, strModel);
+			}
+			public HRESULT attributeDecl(BSTR* strElementName, BSTR* strAttributeName, BSTR* strType, BSTR* strValueDefault, BSTR* strValue) mut
+			{
+				return VT.attributeDecl(&this, strElementName, strAttributeName, strType, strValueDefault, strValue);
+			}
+			public HRESULT internalEntityDecl(BSTR* strName, BSTR* strValue) mut
+			{
+				return VT.internalEntityDecl(&this, strName, strValue);
+			}
+			public HRESULT externalEntityDecl(BSTR* strName, BSTR* strPublicId, BSTR* strSystemId) mut
+			{
+				return VT.externalEntityDecl(&this, strName, strPublicId, strSystemId);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IVBSAXDeclHandler *self, BSTR* strName, BSTR* strModel) elementDecl;
-				public function HRESULT(IVBSAXDeclHandler *self, BSTR* strElementName, BSTR* strAttributeName, BSTR* strType, BSTR* strValueDefault, BSTR* strValue) attributeDecl;
-				public function HRESULT(IVBSAXDeclHandler *self, BSTR* strName, BSTR* strValue) internalEntityDecl;
-				public function HRESULT(IVBSAXDeclHandler *self, BSTR* strName, BSTR* strPublicId, BSTR* strSystemId) externalEntityDecl;
+				public new function HRESULT(IVBSAXDeclHandler *self, BSTR* strName, BSTR* strModel) elementDecl;
+				public new function HRESULT(IVBSAXDeclHandler *self, BSTR* strElementName, BSTR* strAttributeName, BSTR* strType, BSTR* strValueDefault, BSTR* strValue) attributeDecl;
+				public new function HRESULT(IVBSAXDeclHandler *self, BSTR* strName, BSTR* strValue) internalEntityDecl;
+				public new function HRESULT(IVBSAXDeclHandler *self, BSTR* strName, BSTR* strPublicId, BSTR* strSystemId) externalEntityDecl;
 			}
 		}
 		[CRepr]
@@ -1955,22 +3626,71 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x10dc0586, 0x132b, 0x4cac, 0x8b, 0xb3, 0xdb, 0x00, 0xac, 0x8b, 0x7e, 0xe0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_length(int32* nLength) mut
+			{
+				return VT.get_length(&this, nLength);
+			}
+			public HRESULT getURI(int32 nIndex, BSTR* strURI) mut
+			{
+				return VT.getURI(&this, nIndex, strURI);
+			}
+			public HRESULT getLocalName(int32 nIndex, BSTR* strLocalName) mut
+			{
+				return VT.getLocalName(&this, nIndex, strLocalName);
+			}
+			public HRESULT getQName(int32 nIndex, BSTR* strQName) mut
+			{
+				return VT.getQName(&this, nIndex, strQName);
+			}
+			public HRESULT getIndexFromName(BSTR strURI, BSTR strLocalName, int32* nIndex) mut
+			{
+				return VT.getIndexFromName(&this, strURI, strLocalName, nIndex);
+			}
+			public HRESULT getIndexFromQName(BSTR strQName, int32* nIndex) mut
+			{
+				return VT.getIndexFromQName(&this, strQName, nIndex);
+			}
+			public HRESULT getType(int32 nIndex, BSTR* strType) mut
+			{
+				return VT.getType(&this, nIndex, strType);
+			}
+			public HRESULT getTypeFromName(BSTR strURI, BSTR strLocalName, BSTR* strType) mut
+			{
+				return VT.getTypeFromName(&this, strURI, strLocalName, strType);
+			}
+			public HRESULT getTypeFromQName(BSTR strQName, BSTR* strType) mut
+			{
+				return VT.getTypeFromQName(&this, strQName, strType);
+			}
+			public HRESULT getValue(int32 nIndex, BSTR* strValue) mut
+			{
+				return VT.getValue(&this, nIndex, strValue);
+			}
+			public HRESULT getValueFromName(BSTR strURI, BSTR strLocalName, BSTR* strValue) mut
+			{
+				return VT.getValueFromName(&this, strURI, strLocalName, strValue);
+			}
+			public HRESULT getValueFromQName(BSTR strQName, BSTR* strValue) mut
+			{
+				return VT.getValueFromQName(&this, strQName, strValue);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IVBSAXAttributes *self, int32* nLength) get_length;
-				public function HRESULT(IVBSAXAttributes *self, int32 nIndex, BSTR* strURI) getURI;
-				public function HRESULT(IVBSAXAttributes *self, int32 nIndex, BSTR* strLocalName) getLocalName;
-				public function HRESULT(IVBSAXAttributes *self, int32 nIndex, BSTR* strQName) getQName;
-				public function HRESULT(IVBSAXAttributes *self, BSTR strURI, BSTR strLocalName, int32* nIndex) getIndexFromName;
-				public function HRESULT(IVBSAXAttributes *self, BSTR strQName, int32* nIndex) getIndexFromQName;
-				public function HRESULT(IVBSAXAttributes *self, int32 nIndex, BSTR* strType) getType;
-				public function HRESULT(IVBSAXAttributes *self, BSTR strURI, BSTR strLocalName, BSTR* strType) getTypeFromName;
-				public function HRESULT(IVBSAXAttributes *self, BSTR strQName, BSTR* strType) getTypeFromQName;
-				public function HRESULT(IVBSAXAttributes *self, int32 nIndex, BSTR* strValue) getValue;
-				public function HRESULT(IVBSAXAttributes *self, BSTR strURI, BSTR strLocalName, BSTR* strValue) getValueFromName;
-				public function HRESULT(IVBSAXAttributes *self, BSTR strQName, BSTR* strValue) getValueFromQName;
+				public new function HRESULT(IVBSAXAttributes *self, int32* nLength) get_length;
+				public new function HRESULT(IVBSAXAttributes *self, int32 nIndex, BSTR* strURI) getURI;
+				public new function HRESULT(IVBSAXAttributes *self, int32 nIndex, BSTR* strLocalName) getLocalName;
+				public new function HRESULT(IVBSAXAttributes *self, int32 nIndex, BSTR* strQName) getQName;
+				public new function HRESULT(IVBSAXAttributes *self, BSTR strURI, BSTR strLocalName, int32* nIndex) getIndexFromName;
+				public new function HRESULT(IVBSAXAttributes *self, BSTR strQName, int32* nIndex) getIndexFromQName;
+				public new function HRESULT(IVBSAXAttributes *self, int32 nIndex, BSTR* strType) getType;
+				public new function HRESULT(IVBSAXAttributes *self, BSTR strURI, BSTR strLocalName, BSTR* strType) getTypeFromName;
+				public new function HRESULT(IVBSAXAttributes *self, BSTR strQName, BSTR* strType) getTypeFromQName;
+				public new function HRESULT(IVBSAXAttributes *self, int32 nIndex, BSTR* strValue) getValue;
+				public new function HRESULT(IVBSAXAttributes *self, BSTR strURI, BSTR strLocalName, BSTR* strValue) getValueFromName;
+				public new function HRESULT(IVBSAXAttributes *self, BSTR strQName, BSTR* strValue) getValueFromQName;
 			}
 		}
 		[CRepr]
@@ -1978,27 +3698,96 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4d7ff4ba, 0x1565, 0x4ea8, 0x94, 0xe1, 0x6e, 0x72, 0x4a, 0x46, 0xf9, 0x8d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT put_output(VARIANT varDestination) mut
+			{
+				return VT.put_output(&this, varDestination);
+			}
+			public HRESULT get_output(VARIANT* varDestination) mut
+			{
+				return VT.get_output(&this, varDestination);
+			}
+			public HRESULT put_encoding(BSTR strEncoding) mut
+			{
+				return VT.put_encoding(&this, strEncoding);
+			}
+			public HRESULT get_encoding(BSTR* strEncoding) mut
+			{
+				return VT.get_encoding(&this, strEncoding);
+			}
+			public HRESULT put_byteOrderMark(int16 fWriteByteOrderMark) mut
+			{
+				return VT.put_byteOrderMark(&this, fWriteByteOrderMark);
+			}
+			public HRESULT get_byteOrderMark(int16* fWriteByteOrderMark) mut
+			{
+				return VT.get_byteOrderMark(&this, fWriteByteOrderMark);
+			}
+			public HRESULT put_indent(int16 fIndentMode) mut
+			{
+				return VT.put_indent(&this, fIndentMode);
+			}
+			public HRESULT get_indent(int16* fIndentMode) mut
+			{
+				return VT.get_indent(&this, fIndentMode);
+			}
+			public HRESULT put_standalone(int16 fValue) mut
+			{
+				return VT.put_standalone(&this, fValue);
+			}
+			public HRESULT get_standalone(int16* fValue) mut
+			{
+				return VT.get_standalone(&this, fValue);
+			}
+			public HRESULT put_omitXMLDeclaration(int16 fValue) mut
+			{
+				return VT.put_omitXMLDeclaration(&this, fValue);
+			}
+			public HRESULT get_omitXMLDeclaration(int16* fValue) mut
+			{
+				return VT.get_omitXMLDeclaration(&this, fValue);
+			}
+			public HRESULT put_version(BSTR strVersion) mut
+			{
+				return VT.put_version(&this, strVersion);
+			}
+			public HRESULT get_version(BSTR* strVersion) mut
+			{
+				return VT.get_version(&this, strVersion);
+			}
+			public HRESULT put_disableOutputEscaping(int16 fValue) mut
+			{
+				return VT.put_disableOutputEscaping(&this, fValue);
+			}
+			public HRESULT get_disableOutputEscaping(int16* fValue) mut
+			{
+				return VT.get_disableOutputEscaping(&this, fValue);
+			}
+			public HRESULT flush() mut
+			{
+				return VT.flush(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IMXWriter *self, VARIANT varDestination) put_output;
-				public function HRESULT(IMXWriter *self, VARIANT* varDestination) get_output;
-				public function HRESULT(IMXWriter *self, BSTR strEncoding) put_encoding;
-				public function HRESULT(IMXWriter *self, BSTR* strEncoding) get_encoding;
-				public function HRESULT(IMXWriter *self, int16 fWriteByteOrderMark) put_byteOrderMark;
-				public function HRESULT(IMXWriter *self, int16* fWriteByteOrderMark) get_byteOrderMark;
-				public function HRESULT(IMXWriter *self, int16 fIndentMode) put_indent;
-				public function HRESULT(IMXWriter *self, int16* fIndentMode) get_indent;
-				public function HRESULT(IMXWriter *self, int16 fValue) put_standalone;
-				public function HRESULT(IMXWriter *self, int16* fValue) get_standalone;
-				public function HRESULT(IMXWriter *self, int16 fValue) put_omitXMLDeclaration;
-				public function HRESULT(IMXWriter *self, int16* fValue) get_omitXMLDeclaration;
-				public function HRESULT(IMXWriter *self, BSTR strVersion) put_version;
-				public function HRESULT(IMXWriter *self, BSTR* strVersion) get_version;
-				public function HRESULT(IMXWriter *self, int16 fValue) put_disableOutputEscaping;
-				public function HRESULT(IMXWriter *self, int16* fValue) get_disableOutputEscaping;
-				public function HRESULT(IMXWriter *self) flush;
+				public new function HRESULT(IMXWriter *self, VARIANT varDestination) put_output;
+				public new function HRESULT(IMXWriter *self, VARIANT* varDestination) get_output;
+				public new function HRESULT(IMXWriter *self, BSTR strEncoding) put_encoding;
+				public new function HRESULT(IMXWriter *self, BSTR* strEncoding) get_encoding;
+				public new function HRESULT(IMXWriter *self, int16 fWriteByteOrderMark) put_byteOrderMark;
+				public new function HRESULT(IMXWriter *self, int16* fWriteByteOrderMark) get_byteOrderMark;
+				public new function HRESULT(IMXWriter *self, int16 fIndentMode) put_indent;
+				public new function HRESULT(IMXWriter *self, int16* fIndentMode) get_indent;
+				public new function HRESULT(IMXWriter *self, int16 fValue) put_standalone;
+				public new function HRESULT(IMXWriter *self, int16* fValue) get_standalone;
+				public new function HRESULT(IMXWriter *self, int16 fValue) put_omitXMLDeclaration;
+				public new function HRESULT(IMXWriter *self, int16* fValue) get_omitXMLDeclaration;
+				public new function HRESULT(IMXWriter *self, BSTR strVersion) put_version;
+				public new function HRESULT(IMXWriter *self, BSTR* strVersion) get_version;
+				public new function HRESULT(IMXWriter *self, int16 fValue) put_disableOutputEscaping;
+				public new function HRESULT(IMXWriter *self, int16* fValue) get_disableOutputEscaping;
+				public new function HRESULT(IMXWriter *self) flush;
 			}
 		}
 		[CRepr]
@@ -2006,21 +3795,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf10d27cc, 0x3ec0, 0x415c, 0x8e, 0xd8, 0x77, 0xab, 0x1c, 0x5e, 0x72, 0x62);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT addAttribute(BSTR strURI, BSTR strLocalName, BSTR strQName, BSTR strType, BSTR strValue) mut
+			{
+				return VT.addAttribute(&this, strURI, strLocalName, strQName, strType, strValue);
+			}
+			public HRESULT addAttributeFromIndex(VARIANT varAtts, int32 nIndex) mut
+			{
+				return VT.addAttributeFromIndex(&this, varAtts, nIndex);
+			}
+			public HRESULT clear() mut
+			{
+				return VT.clear(&this);
+			}
+			public HRESULT removeAttribute(int32 nIndex) mut
+			{
+				return VT.removeAttribute(&this, nIndex);
+			}
+			public HRESULT setAttribute(int32 nIndex, BSTR strURI, BSTR strLocalName, BSTR strQName, BSTR strType, BSTR strValue) mut
+			{
+				return VT.setAttribute(&this, nIndex, strURI, strLocalName, strQName, strType, strValue);
+			}
+			public HRESULT setAttributes(VARIANT varAtts) mut
+			{
+				return VT.setAttributes(&this, varAtts);
+			}
+			public HRESULT setLocalName(int32 nIndex, BSTR strLocalName) mut
+			{
+				return VT.setLocalName(&this, nIndex, strLocalName);
+			}
+			public HRESULT setQName(int32 nIndex, BSTR strQName) mut
+			{
+				return VT.setQName(&this, nIndex, strQName);
+			}
+			public HRESULT setType(int32 nIndex, BSTR strType) mut
+			{
+				return VT.setType(&this, nIndex, strType);
+			}
+			public HRESULT setURI(int32 nIndex, BSTR strURI) mut
+			{
+				return VT.setURI(&this, nIndex, strURI);
+			}
+			public HRESULT setValue(int32 nIndex, BSTR strValue) mut
+			{
+				return VT.setValue(&this, nIndex, strValue);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IMXAttributes *self, BSTR strURI, BSTR strLocalName, BSTR strQName, BSTR strType, BSTR strValue) addAttribute;
-				public function HRESULT(IMXAttributes *self, VARIANT varAtts, int32 nIndex) addAttributeFromIndex;
-				public function HRESULT(IMXAttributes *self) clear;
-				public function HRESULT(IMXAttributes *self, int32 nIndex) removeAttribute;
-				public function HRESULT(IMXAttributes *self, int32 nIndex, BSTR strURI, BSTR strLocalName, BSTR strQName, BSTR strType, BSTR strValue) setAttribute;
-				public function HRESULT(IMXAttributes *self, VARIANT varAtts) setAttributes;
-				public function HRESULT(IMXAttributes *self, int32 nIndex, BSTR strLocalName) setLocalName;
-				public function HRESULT(IMXAttributes *self, int32 nIndex, BSTR strQName) setQName;
-				public function HRESULT(IMXAttributes *self, int32 nIndex, BSTR strType) setType;
-				public function HRESULT(IMXAttributes *self, int32 nIndex, BSTR strURI) setURI;
-				public function HRESULT(IMXAttributes *self, int32 nIndex, BSTR strValue) setValue;
+				public new function HRESULT(IMXAttributes *self, BSTR strURI, BSTR strLocalName, BSTR strQName, BSTR strType, BSTR strValue) addAttribute;
+				public new function HRESULT(IMXAttributes *self, VARIANT varAtts, int32 nIndex) addAttributeFromIndex;
+				public new function HRESULT(IMXAttributes *self) clear;
+				public new function HRESULT(IMXAttributes *self, int32 nIndex) removeAttribute;
+				public new function HRESULT(IMXAttributes *self, int32 nIndex, BSTR strURI, BSTR strLocalName, BSTR strQName, BSTR strType, BSTR strValue) setAttribute;
+				public new function HRESULT(IMXAttributes *self, VARIANT varAtts) setAttributes;
+				public new function HRESULT(IMXAttributes *self, int32 nIndex, BSTR strLocalName) setLocalName;
+				public new function HRESULT(IMXAttributes *self, int32 nIndex, BSTR strQName) setQName;
+				public new function HRESULT(IMXAttributes *self, int32 nIndex, BSTR strType) setType;
+				public new function HRESULT(IMXAttributes *self, int32 nIndex, BSTR strURI) setURI;
+				public new function HRESULT(IMXAttributes *self, int32 nIndex, BSTR strValue) setValue;
 			}
 		}
 		[CRepr]
@@ -2028,13 +3862,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x808f4e35, 0x8d5a, 0x4fbe, 0x84, 0x66, 0x33, 0xa4, 0x12, 0x79, 0xed, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT abort() mut
+			{
+				return VT.abort(&this);
+			}
+			public HRESULT resume() mut
+			{
+				return VT.resume(&this);
+			}
+			public HRESULT suspend() mut
+			{
+				return VT.suspend(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IMXReaderControl *self) abort;
-				public function HRESULT(IMXReaderControl *self) resume;
-				public function HRESULT(IMXReaderControl *self) suspend;
+				public new function HRESULT(IMXReaderControl *self) abort;
+				public new function HRESULT(IMXReaderControl *self) resume;
+				public new function HRESULT(IMXReaderControl *self) suspend;
 			}
 		}
 		[CRepr]
@@ -2042,11 +3889,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfa4bb38c, 0xfaf9, 0x4cca, 0x93, 0x02, 0xd1, 0xdd, 0x0f, 0xe5, 0x20, 0xdb);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT schemaElementDecl(ISchemaElement* oSchemaElement) mut
+			{
+				return VT.schemaElementDecl(&this, oSchemaElement);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IMXSchemaDeclHandler *self, ISchemaElement* oSchemaElement) schemaElementDecl;
+				public new function HRESULT(IMXSchemaDeclHandler *self, ISchemaElement* oSchemaElement) schemaElementDecl;
 			}
 		}
 		[CRepr]
@@ -2054,13 +3906,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc90352f4, 0x643c, 0x4fbc, 0xbb, 0x23, 0xe9, 0x96, 0xeb, 0x2d, 0x51, 0xfd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_item(int32 index, BSTR* prefix) mut
+			{
+				return VT.get_item(&this, index, prefix);
+			}
+			public HRESULT get_length(int32* length) mut
+			{
+				return VT.get_length(&this, length);
+			}
+			public HRESULT get__newEnum(IUnknown** ppUnk) mut
+			{
+				return VT.get__newEnum(&this, ppUnk);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IMXNamespacePrefixes *self, int32 index, BSTR* prefix) get_item;
-				public function HRESULT(IMXNamespacePrefixes *self, int32* length) get_length;
-				public function HRESULT(IMXNamespacePrefixes *self, IUnknown** ppUnk) get__newEnum;
+				public new function HRESULT(IMXNamespacePrefixes *self, int32 index, BSTR* prefix) get_item;
+				public new function HRESULT(IMXNamespacePrefixes *self, int32* length) get_length;
+				public new function HRESULT(IMXNamespacePrefixes *self, IUnknown** ppUnk) get__newEnum;
 			}
 		}
 		[CRepr]
@@ -2068,21 +3933,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc90352f5, 0x643c, 0x4fbc, 0xbb, 0x23, 0xe9, 0x96, 0xeb, 0x2d, 0x51, 0xfd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT put_allowOverride(int16 fOverride) mut
+			{
+				return VT.put_allowOverride(&this, fOverride);
+			}
+			public HRESULT get_allowOverride(int16* fOverride) mut
+			{
+				return VT.get_allowOverride(&this, fOverride);
+			}
+			public HRESULT reset() mut
+			{
+				return VT.reset(&this);
+			}
+			public HRESULT pushContext() mut
+			{
+				return VT.pushContext(&this);
+			}
+			public HRESULT pushNodeContext(IXMLDOMNode* contextNode, int16 fDeep) mut
+			{
+				return VT.pushNodeContext(&this, contextNode, fDeep);
+			}
+			public HRESULT popContext() mut
+			{
+				return VT.popContext(&this);
+			}
+			public HRESULT declarePrefix(BSTR prefix, BSTR namespaceURI) mut
+			{
+				return VT.declarePrefix(&this, prefix, namespaceURI);
+			}
+			public HRESULT getDeclaredPrefixes(IMXNamespacePrefixes** prefixes) mut
+			{
+				return VT.getDeclaredPrefixes(&this, prefixes);
+			}
+			public HRESULT getPrefixes(BSTR namespaceURI, IMXNamespacePrefixes** prefixes) mut
+			{
+				return VT.getPrefixes(&this, namespaceURI, prefixes);
+			}
+			public HRESULT getURI(BSTR prefix, VARIANT* uri) mut
+			{
+				return VT.getURI(&this, prefix, uri);
+			}
+			public HRESULT getURIFromNode(BSTR strPrefix, IXMLDOMNode* contextNode, VARIANT* uri) mut
+			{
+				return VT.getURIFromNode(&this, strPrefix, contextNode, uri);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IVBMXNamespaceManager *self, int16 fOverride) put_allowOverride;
-				public function HRESULT(IVBMXNamespaceManager *self, int16* fOverride) get_allowOverride;
-				public function HRESULT(IVBMXNamespaceManager *self) reset;
-				public function HRESULT(IVBMXNamespaceManager *self) pushContext;
-				public function HRESULT(IVBMXNamespaceManager *self, IXMLDOMNode* contextNode, int16 fDeep) pushNodeContext;
-				public function HRESULT(IVBMXNamespaceManager *self) popContext;
-				public function HRESULT(IVBMXNamespaceManager *self, BSTR prefix, BSTR namespaceURI) declarePrefix;
-				public function HRESULT(IVBMXNamespaceManager *self, IMXNamespacePrefixes** prefixes) getDeclaredPrefixes;
-				public function HRESULT(IVBMXNamespaceManager *self, BSTR namespaceURI, IMXNamespacePrefixes** prefixes) getPrefixes;
-				public function HRESULT(IVBMXNamespaceManager *self, BSTR prefix, VARIANT* uri) getURI;
-				public function HRESULT(IVBMXNamespaceManager *self, BSTR strPrefix, IXMLDOMNode* contextNode, VARIANT* uri) getURIFromNode;
+				public new function HRESULT(IVBMXNamespaceManager *self, int16 fOverride) put_allowOverride;
+				public new function HRESULT(IVBMXNamespaceManager *self, int16* fOverride) get_allowOverride;
+				public new function HRESULT(IVBMXNamespaceManager *self) reset;
+				public new function HRESULT(IVBMXNamespaceManager *self) pushContext;
+				public new function HRESULT(IVBMXNamespaceManager *self, IXMLDOMNode* contextNode, int16 fDeep) pushNodeContext;
+				public new function HRESULT(IVBMXNamespaceManager *self) popContext;
+				public new function HRESULT(IVBMXNamespaceManager *self, BSTR prefix, BSTR namespaceURI) declarePrefix;
+				public new function HRESULT(IVBMXNamespaceManager *self, IMXNamespacePrefixes** prefixes) getDeclaredPrefixes;
+				public new function HRESULT(IVBMXNamespaceManager *self, BSTR namespaceURI, IMXNamespacePrefixes** prefixes) getPrefixes;
+				public new function HRESULT(IVBMXNamespaceManager *self, BSTR prefix, VARIANT* uri) getURI;
+				public new function HRESULT(IVBMXNamespaceManager *self, BSTR strPrefix, IXMLDOMNode* contextNode, VARIANT* uri) getURIFromNode;
 			}
 		}
 		[CRepr]
@@ -2090,20 +4000,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc90352f6, 0x643c, 0x4fbc, 0xbb, 0x23, 0xe9, 0x96, 0xeb, 0x2d, 0x51, 0xfd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT putAllowOverride(int16 fOverride) mut
+			{
+				return VT.putAllowOverride(&this, fOverride);
+			}
+			public HRESULT getAllowOverride(int16* fOverride) mut
+			{
+				return VT.getAllowOverride(&this, fOverride);
+			}
+			public HRESULT reset() mut
+			{
+				return VT.reset(&this);
+			}
+			public HRESULT pushContext() mut
+			{
+				return VT.pushContext(&this);
+			}
+			public HRESULT pushNodeContext(IXMLDOMNode* contextNode, int16 fDeep) mut
+			{
+				return VT.pushNodeContext(&this, contextNode, fDeep);
+			}
+			public HRESULT popContext() mut
+			{
+				return VT.popContext(&this);
+			}
+			public HRESULT declarePrefix(PWSTR prefix, PWSTR namespaceURI) mut
+			{
+				return VT.declarePrefix(&this, prefix, namespaceURI);
+			}
+			public HRESULT getDeclaredPrefix(int32 nIndex, char16* pwchPrefix, int32* pcchPrefix) mut
+			{
+				return VT.getDeclaredPrefix(&this, nIndex, pwchPrefix, pcchPrefix);
+			}
+			public HRESULT getPrefix(PWSTR pwszNamespaceURI, int32 nIndex, char16* pwchPrefix, int32* pcchPrefix) mut
+			{
+				return VT.getPrefix(&this, pwszNamespaceURI, nIndex, pwchPrefix, pcchPrefix);
+			}
+			public HRESULT getURI(PWSTR pwchPrefix, IXMLDOMNode* pContextNode, char16* pwchUri, int32* pcchUri) mut
+			{
+				return VT.getURI(&this, pwchPrefix, pContextNode, pwchUri, pcchUri);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IMXNamespaceManager *self, int16 fOverride) putAllowOverride;
-				public function HRESULT(IMXNamespaceManager *self, int16* fOverride) getAllowOverride;
-				public function HRESULT(IMXNamespaceManager *self) reset;
-				public function HRESULT(IMXNamespaceManager *self) pushContext;
-				public function HRESULT(IMXNamespaceManager *self, IXMLDOMNode* contextNode, int16 fDeep) pushNodeContext;
-				public function HRESULT(IMXNamespaceManager *self) popContext;
-				public function HRESULT(IMXNamespaceManager *self, PWSTR prefix, PWSTR namespaceURI) declarePrefix;
-				public function HRESULT(IMXNamespaceManager *self, int32 nIndex, char16* pwchPrefix, int32* pcchPrefix) getDeclaredPrefix;
-				public function HRESULT(IMXNamespaceManager *self, PWSTR pwszNamespaceURI, int32 nIndex, char16* pwchPrefix, int32* pcchPrefix) getPrefix;
-				public function HRESULT(IMXNamespaceManager *self, PWSTR pwchPrefix, IXMLDOMNode* pContextNode, char16* pwchUri, int32* pcchUri) getURI;
+				public new function HRESULT(IMXNamespaceManager *self, int16 fOverride) putAllowOverride;
+				public new function HRESULT(IMXNamespaceManager *self, int16* fOverride) getAllowOverride;
+				public new function HRESULT(IMXNamespaceManager *self) reset;
+				public new function HRESULT(IMXNamespaceManager *self) pushContext;
+				public new function HRESULT(IMXNamespaceManager *self, IXMLDOMNode* contextNode, int16 fDeep) pushNodeContext;
+				public new function HRESULT(IMXNamespaceManager *self) popContext;
+				public new function HRESULT(IMXNamespaceManager *self, PWSTR prefix, PWSTR namespaceURI) declarePrefix;
+				public new function HRESULT(IMXNamespaceManager *self, int32 nIndex, char16* pwchPrefix, int32* pcchPrefix) getDeclaredPrefix;
+				public new function HRESULT(IMXNamespaceManager *self, PWSTR pwszNamespaceURI, int32 nIndex, char16* pwchPrefix, int32* pcchPrefix) getPrefix;
+				public new function HRESULT(IMXNamespaceManager *self, PWSTR pwchPrefix, IXMLDOMNode* pContextNode, char16* pwchUri, int32* pcchUri) getURI;
 			}
 		}
 		[CRepr]
@@ -2111,22 +4062,71 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc90352f7, 0x643c, 0x4fbc, 0xbb, 0x23, 0xe9, 0x96, 0xeb, 0x2d, 0x51, 0xfd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT getFeature(BSTR strName, int16* fValue) mut
+			{
+				return VT.getFeature(&this, strName, fValue);
+			}
+			public HRESULT putFeature(BSTR strName, int16 fValue) mut
+			{
+				return VT.putFeature(&this, strName, fValue);
+			}
+			public HRESULT getProperty(BSTR strName, VARIANT* varValue) mut
+			{
+				return VT.getProperty(&this, strName, varValue);
+			}
+			public HRESULT putProperty(BSTR strName, VARIANT varValue) mut
+			{
+				return VT.putProperty(&this, strName, varValue);
+			}
+			public HRESULT get_entityResolver(IUnknown** oResolver) mut
+			{
+				return VT.get_entityResolver(&this, oResolver);
+			}
+			public HRESULT putref_entityResolver(IUnknown* oResolver) mut
+			{
+				return VT.putref_entityResolver(&this, oResolver);
+			}
+			public HRESULT get_contentHandler(IUnknown** oHandler) mut
+			{
+				return VT.get_contentHandler(&this, oHandler);
+			}
+			public HRESULT putref_contentHandler(IUnknown* oHandler) mut
+			{
+				return VT.putref_contentHandler(&this, oHandler);
+			}
+			public HRESULT get_dtdHandler(IUnknown** oHandler) mut
+			{
+				return VT.get_dtdHandler(&this, oHandler);
+			}
+			public HRESULT putref_dtdHandler(IUnknown* oHandler) mut
+			{
+				return VT.putref_dtdHandler(&this, oHandler);
+			}
+			public HRESULT get_errorHandler(IUnknown** oHandler) mut
+			{
+				return VT.get_errorHandler(&this, oHandler);
+			}
+			public HRESULT putref_errorHandler(IUnknown* oHandler) mut
+			{
+				return VT.putref_errorHandler(&this, oHandler);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IMXXMLFilter *self, BSTR strName, int16* fValue) getFeature;
-				public function HRESULT(IMXXMLFilter *self, BSTR strName, int16 fValue) putFeature;
-				public function HRESULT(IMXXMLFilter *self, BSTR strName, VARIANT* varValue) getProperty;
-				public function HRESULT(IMXXMLFilter *self, BSTR strName, VARIANT varValue) putProperty;
-				public function HRESULT(IMXXMLFilter *self, IUnknown** oResolver) get_entityResolver;
-				public function HRESULT(IMXXMLFilter *self, IUnknown* oResolver) putref_entityResolver;
-				public function HRESULT(IMXXMLFilter *self, IUnknown** oHandler) get_contentHandler;
-				public function HRESULT(IMXXMLFilter *self, IUnknown* oHandler) putref_contentHandler;
-				public function HRESULT(IMXXMLFilter *self, IUnknown** oHandler) get_dtdHandler;
-				public function HRESULT(IMXXMLFilter *self, IUnknown* oHandler) putref_dtdHandler;
-				public function HRESULT(IMXXMLFilter *self, IUnknown** oHandler) get_errorHandler;
-				public function HRESULT(IMXXMLFilter *self, IUnknown* oHandler) putref_errorHandler;
+				public new function HRESULT(IMXXMLFilter *self, BSTR strName, int16* fValue) getFeature;
+				public new function HRESULT(IMXXMLFilter *self, BSTR strName, int16 fValue) putFeature;
+				public new function HRESULT(IMXXMLFilter *self, BSTR strName, VARIANT* varValue) getProperty;
+				public new function HRESULT(IMXXMLFilter *self, BSTR strName, VARIANT varValue) putProperty;
+				public new function HRESULT(IMXXMLFilter *self, IUnknown** oResolver) get_entityResolver;
+				public new function HRESULT(IMXXMLFilter *self, IUnknown* oResolver) putref_entityResolver;
+				public new function HRESULT(IMXXMLFilter *self, IUnknown** oHandler) get_contentHandler;
+				public new function HRESULT(IMXXMLFilter *self, IUnknown* oHandler) putref_contentHandler;
+				public new function HRESULT(IMXXMLFilter *self, IUnknown** oHandler) get_dtdHandler;
+				public new function HRESULT(IMXXMLFilter *self, IUnknown* oHandler) putref_dtdHandler;
+				public new function HRESULT(IMXXMLFilter *self, IUnknown** oHandler) get_errorHandler;
+				public new function HRESULT(IMXXMLFilter *self, IUnknown* oHandler) putref_errorHandler;
 			}
 		}
 		[CRepr]
@@ -2134,15 +4134,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50ea08b0, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT validate() mut
+			{
+				return VT.validate(&this);
+			}
+			public HRESULT put_validateOnLoad(int16 validateOnLoad) mut
+			{
+				return VT.put_validateOnLoad(&this, validateOnLoad);
+			}
+			public HRESULT get_validateOnLoad(int16* validateOnLoad) mut
+			{
+				return VT.get_validateOnLoad(&this, validateOnLoad);
+			}
+			public HRESULT getSchema(BSTR namespaceURI, ISchema** schema) mut
+			{
+				return VT.getSchema(&this, namespaceURI, schema);
+			}
+			public HRESULT getDeclaration(IXMLDOMNode* node, ISchemaItem** item) mut
+			{
+				return VT.getDeclaration(&this, node, item);
+			}
 			[CRepr]
 			public struct VTable : IXMLDOMSchemaCollection.VTable
 			{
-				public function HRESULT(IXMLDOMSchemaCollection2 *self) validate;
-				public function HRESULT(IXMLDOMSchemaCollection2 *self, int16 validateOnLoad) put_validateOnLoad;
-				public function HRESULT(IXMLDOMSchemaCollection2 *self, int16* validateOnLoad) get_validateOnLoad;
-				public function HRESULT(IXMLDOMSchemaCollection2 *self, BSTR namespaceURI, ISchema** schema) getSchema;
-				public function HRESULT(IXMLDOMSchemaCollection2 *self, IXMLDOMNode* node, ISchemaItem** item) getDeclaration;
+				public new function HRESULT(IXMLDOMSchemaCollection2 *self) validate;
+				public new function HRESULT(IXMLDOMSchemaCollection2 *self, int16 validateOnLoad) put_validateOnLoad;
+				public new function HRESULT(IXMLDOMSchemaCollection2 *self, int16* validateOnLoad) get_validateOnLoad;
+				public new function HRESULT(IXMLDOMSchemaCollection2 *self, BSTR namespaceURI, ISchema** schema) getSchema;
+				public new function HRESULT(IXMLDOMSchemaCollection2 *self, IXMLDOMNode* node, ISchemaItem** item) getDeclaration;
 			}
 		}
 		[CRepr]
@@ -2150,13 +4171,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50ea08b1, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_item(int32 index, BSTR* bstr) mut
+			{
+				return VT.get_item(&this, index, bstr);
+			}
+			public HRESULT get_length(int32* length) mut
+			{
+				return VT.get_length(&this, length);
+			}
+			public HRESULT get__newEnum(IUnknown** ppunk) mut
+			{
+				return VT.get__newEnum(&this, ppunk);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISchemaStringCollection *self, int32 index, BSTR* bstr) get_item;
-				public function HRESULT(ISchemaStringCollection *self, int32* length) get_length;
-				public function HRESULT(ISchemaStringCollection *self, IUnknown** ppunk) get__newEnum;
+				public new function HRESULT(ISchemaStringCollection *self, int32 index, BSTR* bstr) get_item;
+				public new function HRESULT(ISchemaStringCollection *self, int32* length) get_length;
+				public new function HRESULT(ISchemaStringCollection *self, IUnknown** ppunk) get__newEnum;
 			}
 		}
 		[CRepr]
@@ -2164,15 +4198,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50ea08b2, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_item(int32 index, ISchemaItem** item) mut
+			{
+				return VT.get_item(&this, index, item);
+			}
+			public HRESULT itemByName(BSTR name, ISchemaItem** item) mut
+			{
+				return VT.itemByName(&this, name, item);
+			}
+			public HRESULT itemByQName(BSTR name, BSTR namespaceURI, ISchemaItem** item) mut
+			{
+				return VT.itemByQName(&this, name, namespaceURI, item);
+			}
+			public HRESULT get_length(int32* length) mut
+			{
+				return VT.get_length(&this, length);
+			}
+			public HRESULT get__newEnum(IUnknown** ppunk) mut
+			{
+				return VT.get__newEnum(&this, ppunk);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISchemaItemCollection *self, int32 index, ISchemaItem** item) get_item;
-				public function HRESULT(ISchemaItemCollection *self, BSTR name, ISchemaItem** item) itemByName;
-				public function HRESULT(ISchemaItemCollection *self, BSTR name, BSTR namespaceURI, ISchemaItem** item) itemByQName;
-				public function HRESULT(ISchemaItemCollection *self, int32* length) get_length;
-				public function HRESULT(ISchemaItemCollection *self, IUnknown** ppunk) get__newEnum;
+				public new function HRESULT(ISchemaItemCollection *self, int32 index, ISchemaItem** item) get_item;
+				public new function HRESULT(ISchemaItemCollection *self, BSTR name, ISchemaItem** item) itemByName;
+				public new function HRESULT(ISchemaItemCollection *self, BSTR name, BSTR namespaceURI, ISchemaItem** item) itemByQName;
+				public new function HRESULT(ISchemaItemCollection *self, int32* length) get_length;
+				public new function HRESULT(ISchemaItemCollection *self, IUnknown** ppunk) get__newEnum;
 			}
 		}
 		[CRepr]
@@ -2180,17 +4235,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50ea08b3, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_name(BSTR* name) mut
+			{
+				return VT.get_name(&this, name);
+			}
+			public HRESULT get_namespaceURI(BSTR* namespaceURI) mut
+			{
+				return VT.get_namespaceURI(&this, namespaceURI);
+			}
+			public HRESULT get_schema(ISchema** schema) mut
+			{
+				return VT.get_schema(&this, schema);
+			}
+			public HRESULT get_id(BSTR* id) mut
+			{
+				return VT.get_id(&this, id);
+			}
+			public HRESULT get_itemType(SOMITEMTYPE* itemType) mut
+			{
+				return VT.get_itemType(&this, itemType);
+			}
+			public HRESULT get_unhandledAttributes(IVBSAXAttributes** attributes) mut
+			{
+				return VT.get_unhandledAttributes(&this, attributes);
+			}
+			public HRESULT writeAnnotation(IUnknown* annotationSink, int16* isWritten) mut
+			{
+				return VT.writeAnnotation(&this, annotationSink, isWritten);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISchemaItem *self, BSTR* name) get_name;
-				public function HRESULT(ISchemaItem *self, BSTR* namespaceURI) get_namespaceURI;
-				public function HRESULT(ISchemaItem *self, ISchema** schema) get_schema;
-				public function HRESULT(ISchemaItem *self, BSTR* id) get_id;
-				public function HRESULT(ISchemaItem *self, SOMITEMTYPE* itemType) get_itemType;
-				public function HRESULT(ISchemaItem *self, IVBSAXAttributes** attributes) get_unhandledAttributes;
-				public function HRESULT(ISchemaItem *self, IUnknown* annotationSink, int16* isWritten) writeAnnotation;
+				public new function HRESULT(ISchemaItem *self, BSTR* name) get_name;
+				public new function HRESULT(ISchemaItem *self, BSTR* namespaceURI) get_namespaceURI;
+				public new function HRESULT(ISchemaItem *self, ISchema** schema) get_schema;
+				public new function HRESULT(ISchemaItem *self, BSTR* id) get_id;
+				public new function HRESULT(ISchemaItem *self, SOMITEMTYPE* itemType) get_itemType;
+				public new function HRESULT(ISchemaItem *self, IVBSAXAttributes** attributes) get_unhandledAttributes;
+				public new function HRESULT(ISchemaItem *self, IUnknown* annotationSink, int16* isWritten) writeAnnotation;
 			}
 		}
 		[CRepr]
@@ -2198,19 +4282,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50ea08b4, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_targetNamespace(BSTR* targetNamespace) mut
+			{
+				return VT.get_targetNamespace(&this, targetNamespace);
+			}
+			public HRESULT get_version(BSTR* version) mut
+			{
+				return VT.get_version(&this, version);
+			}
+			public HRESULT get_types(ISchemaItemCollection** types) mut
+			{
+				return VT.get_types(&this, types);
+			}
+			public HRESULT get_elements(ISchemaItemCollection** elements) mut
+			{
+				return VT.get_elements(&this, elements);
+			}
+			public HRESULT get_attributes(ISchemaItemCollection** attributes) mut
+			{
+				return VT.get_attributes(&this, attributes);
+			}
+			public HRESULT get_attributeGroups(ISchemaItemCollection** attributeGroups) mut
+			{
+				return VT.get_attributeGroups(&this, attributeGroups);
+			}
+			public HRESULT get_modelGroups(ISchemaItemCollection** modelGroups) mut
+			{
+				return VT.get_modelGroups(&this, modelGroups);
+			}
+			public HRESULT get_notations(ISchemaItemCollection** notations) mut
+			{
+				return VT.get_notations(&this, notations);
+			}
+			public HRESULT get_schemaLocations(ISchemaStringCollection** schemaLocations) mut
+			{
+				return VT.get_schemaLocations(&this, schemaLocations);
+			}
 			[CRepr]
 			public struct VTable : ISchemaItem.VTable
 			{
-				public function HRESULT(ISchema *self, BSTR* targetNamespace) get_targetNamespace;
-				public function HRESULT(ISchema *self, BSTR* version) get_version;
-				public function HRESULT(ISchema *self, ISchemaItemCollection** types) get_types;
-				public function HRESULT(ISchema *self, ISchemaItemCollection** elements) get_elements;
-				public function HRESULT(ISchema *self, ISchemaItemCollection** attributes) get_attributes;
-				public function HRESULT(ISchema *self, ISchemaItemCollection** attributeGroups) get_attributeGroups;
-				public function HRESULT(ISchema *self, ISchemaItemCollection** modelGroups) get_modelGroups;
-				public function HRESULT(ISchema *self, ISchemaItemCollection** notations) get_notations;
-				public function HRESULT(ISchema *self, ISchemaStringCollection** schemaLocations) get_schemaLocations;
+				public new function HRESULT(ISchema *self, BSTR* targetNamespace) get_targetNamespace;
+				public new function HRESULT(ISchema *self, BSTR* version) get_version;
+				public new function HRESULT(ISchema *self, ISchemaItemCollection** types) get_types;
+				public new function HRESULT(ISchema *self, ISchemaItemCollection** elements) get_elements;
+				public new function HRESULT(ISchema *self, ISchemaItemCollection** attributes) get_attributes;
+				public new function HRESULT(ISchema *self, ISchemaItemCollection** attributeGroups) get_attributeGroups;
+				public new function HRESULT(ISchema *self, ISchemaItemCollection** modelGroups) get_modelGroups;
+				public new function HRESULT(ISchema *self, ISchemaItemCollection** notations) get_notations;
+				public new function HRESULT(ISchema *self, ISchemaStringCollection** schemaLocations) get_schemaLocations;
 			}
 		}
 		[CRepr]
@@ -2218,12 +4339,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50ea08b5, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_minOccurs(VARIANT* minOccurs) mut
+			{
+				return VT.get_minOccurs(&this, minOccurs);
+			}
+			public HRESULT get_maxOccurs(VARIANT* maxOccurs) mut
+			{
+				return VT.get_maxOccurs(&this, maxOccurs);
+			}
 			[CRepr]
 			public struct VTable : ISchemaItem.VTable
 			{
-				public function HRESULT(ISchemaParticle *self, VARIANT* minOccurs) get_minOccurs;
-				public function HRESULT(ISchemaParticle *self, VARIANT* maxOccurs) get_maxOccurs;
+				public new function HRESULT(ISchemaParticle *self, VARIANT* minOccurs) get_minOccurs;
+				public new function HRESULT(ISchemaParticle *self, VARIANT* maxOccurs) get_maxOccurs;
 			}
 		}
 		[CRepr]
@@ -2231,16 +4361,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50ea08b6, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_type(ISchemaType** type) mut
+			{
+				return VT.get_type(&this, type);
+			}
+			public HRESULT get_scope(ISchemaComplexType** @scope) mut
+			{
+				return VT.get_scope(&this, @scope);
+			}
+			public HRESULT get_defaultValue(BSTR* defaultValue) mut
+			{
+				return VT.get_defaultValue(&this, defaultValue);
+			}
+			public HRESULT get_fixedValue(BSTR* fixedValue) mut
+			{
+				return VT.get_fixedValue(&this, fixedValue);
+			}
+			public HRESULT get_use(SCHEMAUSE* use) mut
+			{
+				return VT.get_use(&this, use);
+			}
+			public HRESULT get_isReference(int16* reference) mut
+			{
+				return VT.get_isReference(&this, reference);
+			}
 			[CRepr]
 			public struct VTable : ISchemaItem.VTable
 			{
-				public function HRESULT(ISchemaAttribute *self, ISchemaType** type) get_type;
-				public function HRESULT(ISchemaAttribute *self, ISchemaComplexType** @scope) get_scope;
-				public function HRESULT(ISchemaAttribute *self, BSTR* defaultValue) get_defaultValue;
-				public function HRESULT(ISchemaAttribute *self, BSTR* fixedValue) get_fixedValue;
-				public function HRESULT(ISchemaAttribute *self, SCHEMAUSE* use) get_use;
-				public function HRESULT(ISchemaAttribute *self, int16* reference) get_isReference;
+				public new function HRESULT(ISchemaAttribute *self, ISchemaType** type) get_type;
+				public new function HRESULT(ISchemaAttribute *self, ISchemaComplexType** @scope) get_scope;
+				public new function HRESULT(ISchemaAttribute *self, BSTR* defaultValue) get_defaultValue;
+				public new function HRESULT(ISchemaAttribute *self, BSTR* fixedValue) get_fixedValue;
+				public new function HRESULT(ISchemaAttribute *self, SCHEMAUSE* use) get_use;
+				public new function HRESULT(ISchemaAttribute *self, int16* reference) get_isReference;
 			}
 		}
 		[CRepr]
@@ -2248,21 +4403,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50ea08b7, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_type(ISchemaType** type) mut
+			{
+				return VT.get_type(&this, type);
+			}
+			public HRESULT get_scope(ISchemaComplexType** @scope) mut
+			{
+				return VT.get_scope(&this, @scope);
+			}
+			public HRESULT get_defaultValue(BSTR* defaultValue) mut
+			{
+				return VT.get_defaultValue(&this, defaultValue);
+			}
+			public HRESULT get_fixedValue(BSTR* fixedValue) mut
+			{
+				return VT.get_fixedValue(&this, fixedValue);
+			}
+			public HRESULT get_isNillable(int16* nillable) mut
+			{
+				return VT.get_isNillable(&this, nillable);
+			}
+			public HRESULT get_identityConstraints(ISchemaItemCollection** constraints) mut
+			{
+				return VT.get_identityConstraints(&this, constraints);
+			}
+			public HRESULT get_substitutionGroup(ISchemaElement** element) mut
+			{
+				return VT.get_substitutionGroup(&this, element);
+			}
+			public HRESULT get_substitutionGroupExclusions(SCHEMADERIVATIONMETHOD* exclusions) mut
+			{
+				return VT.get_substitutionGroupExclusions(&this, exclusions);
+			}
+			public HRESULT get_disallowedSubstitutions(SCHEMADERIVATIONMETHOD* disallowed) mut
+			{
+				return VT.get_disallowedSubstitutions(&this, disallowed);
+			}
+			public HRESULT get_isAbstract(int16* @abstract) mut
+			{
+				return VT.get_isAbstract(&this, @abstract);
+			}
+			public HRESULT get_isReference(int16* reference) mut
+			{
+				return VT.get_isReference(&this, reference);
+			}
 			[CRepr]
 			public struct VTable : ISchemaParticle.VTable
 			{
-				public function HRESULT(ISchemaElement *self, ISchemaType** type) get_type;
-				public function HRESULT(ISchemaElement *self, ISchemaComplexType** @scope) get_scope;
-				public function HRESULT(ISchemaElement *self, BSTR* defaultValue) get_defaultValue;
-				public function HRESULT(ISchemaElement *self, BSTR* fixedValue) get_fixedValue;
-				public function HRESULT(ISchemaElement *self, int16* nillable) get_isNillable;
-				public function HRESULT(ISchemaElement *self, ISchemaItemCollection** constraints) get_identityConstraints;
-				public function HRESULT(ISchemaElement *self, ISchemaElement** element) get_substitutionGroup;
-				public function HRESULT(ISchemaElement *self, SCHEMADERIVATIONMETHOD* exclusions) get_substitutionGroupExclusions;
-				public function HRESULT(ISchemaElement *self, SCHEMADERIVATIONMETHOD* disallowed) get_disallowedSubstitutions;
-				public function HRESULT(ISchemaElement *self, int16* @abstract) get_isAbstract;
-				public function HRESULT(ISchemaElement *self, int16* reference) get_isReference;
+				public new function HRESULT(ISchemaElement *self, ISchemaType** type) get_type;
+				public new function HRESULT(ISchemaElement *self, ISchemaComplexType** @scope) get_scope;
+				public new function HRESULT(ISchemaElement *self, BSTR* defaultValue) get_defaultValue;
+				public new function HRESULT(ISchemaElement *self, BSTR* fixedValue) get_fixedValue;
+				public new function HRESULT(ISchemaElement *self, int16* nillable) get_isNillable;
+				public new function HRESULT(ISchemaElement *self, ISchemaItemCollection** constraints) get_identityConstraints;
+				public new function HRESULT(ISchemaElement *self, ISchemaElement** element) get_substitutionGroup;
+				public new function HRESULT(ISchemaElement *self, SCHEMADERIVATIONMETHOD* exclusions) get_substitutionGroupExclusions;
+				public new function HRESULT(ISchemaElement *self, SCHEMADERIVATIONMETHOD* disallowed) get_disallowedSubstitutions;
+				public new function HRESULT(ISchemaElement *self, int16* @abstract) get_isAbstract;
+				public new function HRESULT(ISchemaElement *self, int16* reference) get_isReference;
 			}
 		}
 		[CRepr]
@@ -2270,27 +4470,96 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50ea08b8, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_baseTypes(ISchemaItemCollection** baseTypes) mut
+			{
+				return VT.get_baseTypes(&this, baseTypes);
+			}
+			public HRESULT get_final(SCHEMADERIVATIONMETHOD* final) mut
+			{
+				return VT.get_final(&this, final);
+			}
+			public HRESULT get_variety(SCHEMATYPEVARIETY* variety) mut
+			{
+				return VT.get_variety(&this, variety);
+			}
+			public HRESULT get_derivedBy(SCHEMADERIVATIONMETHOD* derivedBy) mut
+			{
+				return VT.get_derivedBy(&this, derivedBy);
+			}
+			public HRESULT isValid(BSTR data, int16* valid) mut
+			{
+				return VT.isValid(&this, data, valid);
+			}
+			public HRESULT get_minExclusive(BSTR* minExclusive) mut
+			{
+				return VT.get_minExclusive(&this, minExclusive);
+			}
+			public HRESULT get_minInclusive(BSTR* minInclusive) mut
+			{
+				return VT.get_minInclusive(&this, minInclusive);
+			}
+			public HRESULT get_maxExclusive(BSTR* maxExclusive) mut
+			{
+				return VT.get_maxExclusive(&this, maxExclusive);
+			}
+			public HRESULT get_maxInclusive(BSTR* maxInclusive) mut
+			{
+				return VT.get_maxInclusive(&this, maxInclusive);
+			}
+			public HRESULT get_totalDigits(VARIANT* totalDigits) mut
+			{
+				return VT.get_totalDigits(&this, totalDigits);
+			}
+			public HRESULT get_fractionDigits(VARIANT* fractionDigits) mut
+			{
+				return VT.get_fractionDigits(&this, fractionDigits);
+			}
+			public HRESULT get_length(VARIANT* length) mut
+			{
+				return VT.get_length(&this, length);
+			}
+			public HRESULT get_minLength(VARIANT* minLength) mut
+			{
+				return VT.get_minLength(&this, minLength);
+			}
+			public HRESULT get_maxLength(VARIANT* maxLength) mut
+			{
+				return VT.get_maxLength(&this, maxLength);
+			}
+			public HRESULT get_enumeration(ISchemaStringCollection** enumeration) mut
+			{
+				return VT.get_enumeration(&this, enumeration);
+			}
+			public HRESULT get_whitespace(SCHEMAWHITESPACE* whitespace) mut
+			{
+				return VT.get_whitespace(&this, whitespace);
+			}
+			public HRESULT get_patterns(ISchemaStringCollection** patterns) mut
+			{
+				return VT.get_patterns(&this, patterns);
+			}
 			[CRepr]
 			public struct VTable : ISchemaItem.VTable
 			{
-				public function HRESULT(ISchemaType *self, ISchemaItemCollection** baseTypes) get_baseTypes;
-				public function HRESULT(ISchemaType *self, SCHEMADERIVATIONMETHOD* final) get_final;
-				public function HRESULT(ISchemaType *self, SCHEMATYPEVARIETY* variety) get_variety;
-				public function HRESULT(ISchemaType *self, SCHEMADERIVATIONMETHOD* derivedBy) get_derivedBy;
-				public function HRESULT(ISchemaType *self, BSTR data, int16* valid) isValid;
-				public function HRESULT(ISchemaType *self, BSTR* minExclusive) get_minExclusive;
-				public function HRESULT(ISchemaType *self, BSTR* minInclusive) get_minInclusive;
-				public function HRESULT(ISchemaType *self, BSTR* maxExclusive) get_maxExclusive;
-				public function HRESULT(ISchemaType *self, BSTR* maxInclusive) get_maxInclusive;
-				public function HRESULT(ISchemaType *self, VARIANT* totalDigits) get_totalDigits;
-				public function HRESULT(ISchemaType *self, VARIANT* fractionDigits) get_fractionDigits;
-				public function HRESULT(ISchemaType *self, VARIANT* length) get_length;
-				public function HRESULT(ISchemaType *self, VARIANT* minLength) get_minLength;
-				public function HRESULT(ISchemaType *self, VARIANT* maxLength) get_maxLength;
-				public function HRESULT(ISchemaType *self, ISchemaStringCollection** enumeration) get_enumeration;
-				public function HRESULT(ISchemaType *self, SCHEMAWHITESPACE* whitespace) get_whitespace;
-				public function HRESULT(ISchemaType *self, ISchemaStringCollection** patterns) get_patterns;
+				public new function HRESULT(ISchemaType *self, ISchemaItemCollection** baseTypes) get_baseTypes;
+				public new function HRESULT(ISchemaType *self, SCHEMADERIVATIONMETHOD* final) get_final;
+				public new function HRESULT(ISchemaType *self, SCHEMATYPEVARIETY* variety) get_variety;
+				public new function HRESULT(ISchemaType *self, SCHEMADERIVATIONMETHOD* derivedBy) get_derivedBy;
+				public new function HRESULT(ISchemaType *self, BSTR data, int16* valid) isValid;
+				public new function HRESULT(ISchemaType *self, BSTR* minExclusive) get_minExclusive;
+				public new function HRESULT(ISchemaType *self, BSTR* minInclusive) get_minInclusive;
+				public new function HRESULT(ISchemaType *self, BSTR* maxExclusive) get_maxExclusive;
+				public new function HRESULT(ISchemaType *self, BSTR* maxInclusive) get_maxInclusive;
+				public new function HRESULT(ISchemaType *self, VARIANT* totalDigits) get_totalDigits;
+				public new function HRESULT(ISchemaType *self, VARIANT* fractionDigits) get_fractionDigits;
+				public new function HRESULT(ISchemaType *self, VARIANT* length) get_length;
+				public new function HRESULT(ISchemaType *self, VARIANT* minLength) get_minLength;
+				public new function HRESULT(ISchemaType *self, VARIANT* maxLength) get_maxLength;
+				public new function HRESULT(ISchemaType *self, ISchemaStringCollection** enumeration) get_enumeration;
+				public new function HRESULT(ISchemaType *self, SCHEMAWHITESPACE* whitespace) get_whitespace;
+				public new function HRESULT(ISchemaType *self, ISchemaStringCollection** patterns) get_patterns;
 			}
 		}
 		[CRepr]
@@ -2298,16 +4567,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50ea08b9, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_isAbstract(int16* @abstract) mut
+			{
+				return VT.get_isAbstract(&this, @abstract);
+			}
+			public HRESULT get_anyAttribute(ISchemaAny** anyAttribute) mut
+			{
+				return VT.get_anyAttribute(&this, anyAttribute);
+			}
+			public HRESULT get_attributes(ISchemaItemCollection** attributes) mut
+			{
+				return VT.get_attributes(&this, attributes);
+			}
+			public HRESULT get_contentType(SCHEMACONTENTTYPE* contentType) mut
+			{
+				return VT.get_contentType(&this, contentType);
+			}
+			public HRESULT get_contentModel(ISchemaModelGroup** contentModel) mut
+			{
+				return VT.get_contentModel(&this, contentModel);
+			}
+			public HRESULT get_prohibitedSubstitutions(SCHEMADERIVATIONMETHOD* prohibited) mut
+			{
+				return VT.get_prohibitedSubstitutions(&this, prohibited);
+			}
 			[CRepr]
 			public struct VTable : ISchemaType.VTable
 			{
-				public function HRESULT(ISchemaComplexType *self, int16* @abstract) get_isAbstract;
-				public function HRESULT(ISchemaComplexType *self, ISchemaAny** anyAttribute) get_anyAttribute;
-				public function HRESULT(ISchemaComplexType *self, ISchemaItemCollection** attributes) get_attributes;
-				public function HRESULT(ISchemaComplexType *self, SCHEMACONTENTTYPE* contentType) get_contentType;
-				public function HRESULT(ISchemaComplexType *self, ISchemaModelGroup** contentModel) get_contentModel;
-				public function HRESULT(ISchemaComplexType *self, SCHEMADERIVATIONMETHOD* prohibited) get_prohibitedSubstitutions;
+				public new function HRESULT(ISchemaComplexType *self, int16* @abstract) get_isAbstract;
+				public new function HRESULT(ISchemaComplexType *self, ISchemaAny** anyAttribute) get_anyAttribute;
+				public new function HRESULT(ISchemaComplexType *self, ISchemaItemCollection** attributes) get_attributes;
+				public new function HRESULT(ISchemaComplexType *self, SCHEMACONTENTTYPE* contentType) get_contentType;
+				public new function HRESULT(ISchemaComplexType *self, ISchemaModelGroup** contentModel) get_contentModel;
+				public new function HRESULT(ISchemaComplexType *self, SCHEMADERIVATIONMETHOD* prohibited) get_prohibitedSubstitutions;
 			}
 		}
 		[CRepr]
@@ -2315,12 +4609,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50ea08ba, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_anyAttribute(ISchemaAny** anyAttribute) mut
+			{
+				return VT.get_anyAttribute(&this, anyAttribute);
+			}
+			public HRESULT get_attributes(ISchemaItemCollection** attributes) mut
+			{
+				return VT.get_attributes(&this, attributes);
+			}
 			[CRepr]
 			public struct VTable : ISchemaItem.VTable
 			{
-				public function HRESULT(ISchemaAttributeGroup *self, ISchemaAny** anyAttribute) get_anyAttribute;
-				public function HRESULT(ISchemaAttributeGroup *self, ISchemaItemCollection** attributes) get_attributes;
+				public new function HRESULT(ISchemaAttributeGroup *self, ISchemaAny** anyAttribute) get_anyAttribute;
+				public new function HRESULT(ISchemaAttributeGroup *self, ISchemaItemCollection** attributes) get_attributes;
 			}
 		}
 		[CRepr]
@@ -2328,11 +4631,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50ea08bb, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_particles(ISchemaItemCollection** particles) mut
+			{
+				return VT.get_particles(&this, particles);
+			}
 			[CRepr]
 			public struct VTable : ISchemaParticle.VTable
 			{
-				public function HRESULT(ISchemaModelGroup *self, ISchemaItemCollection** particles) get_particles;
+				public new function HRESULT(ISchemaModelGroup *self, ISchemaItemCollection** particles) get_particles;
 			}
 		}
 		[CRepr]
@@ -2340,12 +4648,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50ea08bc, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_namespaces(ISchemaStringCollection** namespaces) mut
+			{
+				return VT.get_namespaces(&this, namespaces);
+			}
+			public HRESULT get_processContents(SCHEMAPROCESSCONTENTS* processContents) mut
+			{
+				return VT.get_processContents(&this, processContents);
+			}
 			[CRepr]
 			public struct VTable : ISchemaParticle.VTable
 			{
-				public function HRESULT(ISchemaAny *self, ISchemaStringCollection** namespaces) get_namespaces;
-				public function HRESULT(ISchemaAny *self, SCHEMAPROCESSCONTENTS* processContents) get_processContents;
+				public new function HRESULT(ISchemaAny *self, ISchemaStringCollection** namespaces) get_namespaces;
+				public new function HRESULT(ISchemaAny *self, SCHEMAPROCESSCONTENTS* processContents) get_processContents;
 			}
 		}
 		[CRepr]
@@ -2353,13 +4670,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50ea08bd, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_selector(BSTR* selector) mut
+			{
+				return VT.get_selector(&this, selector);
+			}
+			public HRESULT get_fields(ISchemaStringCollection** fields) mut
+			{
+				return VT.get_fields(&this, fields);
+			}
+			public HRESULT get_referencedKey(ISchemaIdentityConstraint** key) mut
+			{
+				return VT.get_referencedKey(&this, key);
+			}
 			[CRepr]
 			public struct VTable : ISchemaItem.VTable
 			{
-				public function HRESULT(ISchemaIdentityConstraint *self, BSTR* selector) get_selector;
-				public function HRESULT(ISchemaIdentityConstraint *self, ISchemaStringCollection** fields) get_fields;
-				public function HRESULT(ISchemaIdentityConstraint *self, ISchemaIdentityConstraint** key) get_referencedKey;
+				public new function HRESULT(ISchemaIdentityConstraint *self, BSTR* selector) get_selector;
+				public new function HRESULT(ISchemaIdentityConstraint *self, ISchemaStringCollection** fields) get_fields;
+				public new function HRESULT(ISchemaIdentityConstraint *self, ISchemaIdentityConstraint** key) get_referencedKey;
 			}
 		}
 		[CRepr]
@@ -2367,12 +4697,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50ea08be, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_systemIdentifier(BSTR* uri) mut
+			{
+				return VT.get_systemIdentifier(&this, uri);
+			}
+			public HRESULT get_publicIdentifier(BSTR* uri) mut
+			{
+				return VT.get_publicIdentifier(&this, uri);
+			}
 			[CRepr]
 			public struct VTable : ISchemaItem.VTable
 			{
-				public function HRESULT(ISchemaNotation *self, BSTR* uri) get_systemIdentifier;
-				public function HRESULT(ISchemaNotation *self, BSTR* uri) get_publicIdentifier;
+				public new function HRESULT(ISchemaNotation *self, BSTR* uri) get_systemIdentifier;
+				public new function HRESULT(ISchemaNotation *self, BSTR* uri) get_publicIdentifier;
 			}
 		}
 		[CRepr]
@@ -2380,15 +4719,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa44a9299, 0xe321, 0x40de, 0x88, 0x66, 0x34, 0x1b, 0x41, 0x66, 0x91, 0x62);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnRedirect(IXMLHTTPRequest2* pXHR, PWSTR pwszRedirectUrl) mut
+			{
+				return VT.OnRedirect(&this, pXHR, pwszRedirectUrl);
+			}
+			public HRESULT OnHeadersAvailable(IXMLHTTPRequest2* pXHR, uint32 dwStatus, PWSTR pwszStatus) mut
+			{
+				return VT.OnHeadersAvailable(&this, pXHR, dwStatus, pwszStatus);
+			}
+			public HRESULT OnDataAvailable(IXMLHTTPRequest2* pXHR, ISequentialStream* pResponseStream) mut
+			{
+				return VT.OnDataAvailable(&this, pXHR, pResponseStream);
+			}
+			public HRESULT OnResponseReceived(IXMLHTTPRequest2* pXHR, ISequentialStream* pResponseStream) mut
+			{
+				return VT.OnResponseReceived(&this, pXHR, pResponseStream);
+			}
+			public HRESULT OnError(IXMLHTTPRequest2* pXHR, HRESULT hrError) mut
+			{
+				return VT.OnError(&this, pXHR, hrError);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IXMLHTTPRequest2Callback *self, IXMLHTTPRequest2* pXHR, PWSTR pwszRedirectUrl) OnRedirect;
-				public function HRESULT(IXMLHTTPRequest2Callback *self, IXMLHTTPRequest2* pXHR, uint32 dwStatus, PWSTR pwszStatus) OnHeadersAvailable;
-				public function HRESULT(IXMLHTTPRequest2Callback *self, IXMLHTTPRequest2* pXHR, ISequentialStream* pResponseStream) OnDataAvailable;
-				public function HRESULT(IXMLHTTPRequest2Callback *self, IXMLHTTPRequest2* pXHR, ISequentialStream* pResponseStream) OnResponseReceived;
-				public function HRESULT(IXMLHTTPRequest2Callback *self, IXMLHTTPRequest2* pXHR, HRESULT hrError) OnError;
+				public new function HRESULT(IXMLHTTPRequest2Callback *self, IXMLHTTPRequest2* pXHR, PWSTR pwszRedirectUrl) OnRedirect;
+				public new function HRESULT(IXMLHTTPRequest2Callback *self, IXMLHTTPRequest2* pXHR, uint32 dwStatus, PWSTR pwszStatus) OnHeadersAvailable;
+				public new function HRESULT(IXMLHTTPRequest2Callback *self, IXMLHTTPRequest2* pXHR, ISequentialStream* pResponseStream) OnDataAvailable;
+				public new function HRESULT(IXMLHTTPRequest2Callback *self, IXMLHTTPRequest2* pXHR, ISequentialStream* pResponseStream) OnResponseReceived;
+				public new function HRESULT(IXMLHTTPRequest2Callback *self, IXMLHTTPRequest2* pXHR, HRESULT hrError) OnError;
 			}
 		}
 		[CRepr]
@@ -2396,20 +4756,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe5d37dc0, 0x552a, 0x4d52, 0x9c, 0xc0, 0xa1, 0x4d, 0x54, 0x6f, 0xbd, 0x04);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Open(PWSTR pwszMethod, PWSTR pwszUrl, IXMLHTTPRequest2Callback* pStatusCallback, PWSTR pwszUserName, PWSTR pwszPassword, PWSTR pwszProxyUserName, PWSTR pwszProxyPassword) mut
+			{
+				return VT.Open(&this, pwszMethod, pwszUrl, pStatusCallback, pwszUserName, pwszPassword, pwszProxyUserName, pwszProxyPassword);
+			}
+			public HRESULT Send(ISequentialStream* pBody, uint64 cbBody) mut
+			{
+				return VT.Send(&this, pBody, cbBody);
+			}
+			public HRESULT Abort() mut
+			{
+				return VT.Abort(&this);
+			}
+			public HRESULT SetCookie(XHR_COOKIE* pCookie, uint32* pdwCookieState) mut
+			{
+				return VT.SetCookie(&this, pCookie, pdwCookieState);
+			}
+			public HRESULT SetCustomResponseStream(ISequentialStream* pSequentialStream) mut
+			{
+				return VT.SetCustomResponseStream(&this, pSequentialStream);
+			}
+			public HRESULT SetProperty(XHR_PROPERTY eProperty, uint64 ullValue) mut
+			{
+				return VT.SetProperty(&this, eProperty, ullValue);
+			}
+			public HRESULT SetRequestHeader(PWSTR pwszHeader, PWSTR pwszValue) mut
+			{
+				return VT.SetRequestHeader(&this, pwszHeader, pwszValue);
+			}
+			public HRESULT GetAllResponseHeaders(uint16** ppwszHeaders) mut
+			{
+				return VT.GetAllResponseHeaders(&this, ppwszHeaders);
+			}
+			public HRESULT GetCookie(PWSTR pwszUrl, PWSTR pwszName, uint32 dwFlags, uint32* pcCookies, XHR_COOKIE** ppCookies) mut
+			{
+				return VT.GetCookie(&this, pwszUrl, pwszName, dwFlags, pcCookies, ppCookies);
+			}
+			public HRESULT GetResponseHeader(PWSTR pwszHeader, uint16** ppwszValue) mut
+			{
+				return VT.GetResponseHeader(&this, pwszHeader, ppwszValue);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IXMLHTTPRequest2 *self, PWSTR pwszMethod, PWSTR pwszUrl, IXMLHTTPRequest2Callback* pStatusCallback, PWSTR pwszUserName, PWSTR pwszPassword, PWSTR pwszProxyUserName, PWSTR pwszProxyPassword) Open;
-				public function HRESULT(IXMLHTTPRequest2 *self, ISequentialStream* pBody, uint64 cbBody) Send;
-				public function HRESULT(IXMLHTTPRequest2 *self) Abort;
-				public function HRESULT(IXMLHTTPRequest2 *self, XHR_COOKIE* pCookie, uint32* pdwCookieState) SetCookie;
-				public function HRESULT(IXMLHTTPRequest2 *self, ISequentialStream* pSequentialStream) SetCustomResponseStream;
-				public function HRESULT(IXMLHTTPRequest2 *self, XHR_PROPERTY eProperty, uint64 ullValue) SetProperty;
-				public function HRESULT(IXMLHTTPRequest2 *self, PWSTR pwszHeader, PWSTR pwszValue) SetRequestHeader;
-				public function HRESULT(IXMLHTTPRequest2 *self, uint16** ppwszHeaders) GetAllResponseHeaders;
-				public function HRESULT(IXMLHTTPRequest2 *self, PWSTR pwszUrl, PWSTR pwszName, uint32 dwFlags, uint32* pcCookies, XHR_COOKIE** ppCookies) GetCookie;
-				public function HRESULT(IXMLHTTPRequest2 *self, PWSTR pwszHeader, uint16** ppwszValue) GetResponseHeader;
+				public new function HRESULT(IXMLHTTPRequest2 *self, PWSTR pwszMethod, PWSTR pwszUrl, IXMLHTTPRequest2Callback* pStatusCallback, PWSTR pwszUserName, PWSTR pwszPassword, PWSTR pwszProxyUserName, PWSTR pwszProxyPassword) Open;
+				public new function HRESULT(IXMLHTTPRequest2 *self, ISequentialStream* pBody, uint64 cbBody) Send;
+				public new function HRESULT(IXMLHTTPRequest2 *self) Abort;
+				public new function HRESULT(IXMLHTTPRequest2 *self, XHR_COOKIE* pCookie, uint32* pdwCookieState) SetCookie;
+				public new function HRESULT(IXMLHTTPRequest2 *self, ISequentialStream* pSequentialStream) SetCustomResponseStream;
+				public new function HRESULT(IXMLHTTPRequest2 *self, XHR_PROPERTY eProperty, uint64 ullValue) SetProperty;
+				public new function HRESULT(IXMLHTTPRequest2 *self, PWSTR pwszHeader, PWSTR pwszValue) SetRequestHeader;
+				public new function HRESULT(IXMLHTTPRequest2 *self, uint16** ppwszHeaders) GetAllResponseHeaders;
+				public new function HRESULT(IXMLHTTPRequest2 *self, PWSTR pwszUrl, PWSTR pwszName, uint32 dwFlags, uint32* pcCookies, XHR_COOKIE** ppCookies) GetCookie;
+				public new function HRESULT(IXMLHTTPRequest2 *self, PWSTR pwszHeader, uint16** ppwszValue) GetResponseHeader;
 			}
 		}
 		[CRepr]
@@ -2417,12 +4818,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb9e57830, 0x8c6c, 0x4a6f, 0x9c, 0x13, 0x47, 0x77, 0x2b, 0xb0, 0x47, 0xbb);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnServerCertificateReceived(IXMLHTTPRequest3* pXHR, uint32 dwCertificateErrors, uint32 cServerCertificateChain, XHR_CERT* rgServerCertificateChain) mut
+			{
+				return VT.OnServerCertificateReceived(&this, pXHR, dwCertificateErrors, cServerCertificateChain, rgServerCertificateChain);
+			}
+			public HRESULT OnClientCertificateRequested(IXMLHTTPRequest3* pXHR, uint32 cIssuerList, uint16** rgpwszIssuerList) mut
+			{
+				return VT.OnClientCertificateRequested(&this, pXHR, cIssuerList, rgpwszIssuerList);
+			}
 			[CRepr]
 			public struct VTable : IXMLHTTPRequest2Callback.VTable
 			{
-				public function HRESULT(IXMLHTTPRequest3Callback *self, IXMLHTTPRequest3* pXHR, uint32 dwCertificateErrors, uint32 cServerCertificateChain, XHR_CERT* rgServerCertificateChain) OnServerCertificateReceived;
-				public function HRESULT(IXMLHTTPRequest3Callback *self, IXMLHTTPRequest3* pXHR, uint32 cIssuerList, uint16** rgpwszIssuerList) OnClientCertificateRequested;
+				public new function HRESULT(IXMLHTTPRequest3Callback *self, IXMLHTTPRequest3* pXHR, uint32 dwCertificateErrors, uint32 cServerCertificateChain, XHR_CERT* rgServerCertificateChain) OnServerCertificateReceived;
+				public new function HRESULT(IXMLHTTPRequest3Callback *self, IXMLHTTPRequest3* pXHR, uint32 cIssuerList, uint16** rgpwszIssuerList) OnClientCertificateRequested;
 			}
 		}
 		[CRepr]
@@ -2430,11 +4840,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa1c9feee, 0x0617, 0x4f23, 0x9d, 0x58, 0x89, 0x61, 0xea, 0x43, 0x56, 0x7c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetClientCertificate(uint32 cbClientCertificateHash, uint8* pbClientCertificateHash, PWSTR pwszPin) mut
+			{
+				return VT.SetClientCertificate(&this, cbClientCertificateHash, pbClientCertificateHash, pwszPin);
+			}
 			[CRepr]
 			public struct VTable : IXMLHTTPRequest2.VTable
 			{
-				public function HRESULT(IXMLHTTPRequest3 *self, uint32 cbClientCertificateHash, uint8* pbClientCertificateHash, PWSTR pwszPin) SetClientCertificate;
+				public new function HRESULT(IXMLHTTPRequest3 *self, uint32 cbClientCertificateHash, uint8* pbClientCertificateHash, PWSTR pwszPin) SetClientCertificate;
 			}
 		}
 		

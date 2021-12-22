@@ -1010,11 +1010,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6dd816d7, 0xe740, 0x4123, 0x9e, 0x24, 0x24, 0x44, 0x41, 0x26, 0x44, 0xd8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetNotify(IAMWMBufferPassCallback* pCallback) mut
+			{
+				return VT.SetNotify(&this, pCallback);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAMWMBufferPass *self, IAMWMBufferPassCallback* pCallback) SetNotify;
+				public new function HRESULT(IAMWMBufferPass *self, IAMWMBufferPassCallback* pCallback) SetNotify;
 			}
 		}
 		[CRepr]
@@ -1022,11 +1027,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb25b8372, 0xd2d2, 0x44b2, 0x86, 0x53, 0x1b, 0x8d, 0xae, 0x33, 0x24, 0x89);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Notify(INSSBuffer3* pNSSBuffer3, IPin* pPin, int64* prtStart, int64* prtEnd) mut
+			{
+				return VT.Notify(&this, pNSSBuffer3, pPin, prtStart, prtEnd);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAMWMBufferPassCallback *self, INSSBuffer3* pNSSBuffer3, IPin* pPin, int64* prtStart, int64* prtEnd) Notify;
+				public new function HRESULT(IAMWMBufferPassCallback *self, INSSBuffer3* pNSSBuffer3, IPin* pPin, int64* prtStart, int64* prtEnd) Notify;
 			}
 		}
 		[CRepr]
@@ -1034,15 +1044,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe1cd3524, 0x03d7, 0x11d2, 0x9e, 0xed, 0x00, 0x60, 0x97, 0xd2, 0xd7, 0xcf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetLength(uint32* pdwLength) mut
+			{
+				return VT.GetLength(&this, pdwLength);
+			}
+			public HRESULT SetLength(uint32 dwLength) mut
+			{
+				return VT.SetLength(&this, dwLength);
+			}
+			public HRESULT GetMaxLength(uint32* pdwLength) mut
+			{
+				return VT.GetMaxLength(&this, pdwLength);
+			}
+			public HRESULT GetBuffer(uint8** ppdwBuffer) mut
+			{
+				return VT.GetBuffer(&this, ppdwBuffer);
+			}
+			public HRESULT GetBufferAndLength(uint8** ppdwBuffer, uint32* pdwLength) mut
+			{
+				return VT.GetBufferAndLength(&this, ppdwBuffer, pdwLength);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(INSSBuffer *self, uint32* pdwLength) GetLength;
-				public function HRESULT(INSSBuffer *self, uint32 dwLength) SetLength;
-				public function HRESULT(INSSBuffer *self, uint32* pdwLength) GetMaxLength;
-				public function HRESULT(INSSBuffer *self, uint8** ppdwBuffer) GetBuffer;
-				public function HRESULT(INSSBuffer *self, uint8** ppdwBuffer, uint32* pdwLength) GetBufferAndLength;
+				public new function HRESULT(INSSBuffer *self, uint32* pdwLength) GetLength;
+				public new function HRESULT(INSSBuffer *self, uint32 dwLength) SetLength;
+				public new function HRESULT(INSSBuffer *self, uint32* pdwLength) GetMaxLength;
+				public new function HRESULT(INSSBuffer *self, uint8** ppdwBuffer) GetBuffer;
+				public new function HRESULT(INSSBuffer *self, uint8** ppdwBuffer, uint32* pdwLength) GetBufferAndLength;
 			}
 		}
 		[CRepr]
@@ -1050,12 +1081,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4f528693, 0x1035, 0x43fe, 0xb4, 0x28, 0x75, 0x75, 0x61, 0xad, 0x3a, 0x68);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSampleProperties(uint32 cbProperties, uint8* pbProperties) mut
+			{
+				return VT.GetSampleProperties(&this, cbProperties, pbProperties);
+			}
+			public HRESULT SetSampleProperties(uint32 cbProperties, uint8* pbProperties) mut
+			{
+				return VT.SetSampleProperties(&this, cbProperties, pbProperties);
+			}
 			[CRepr]
 			public struct VTable : INSSBuffer.VTable
 			{
-				public function HRESULT(INSSBuffer2 *self, uint32 cbProperties, uint8* pbProperties) GetSampleProperties;
-				public function HRESULT(INSSBuffer2 *self, uint32 cbProperties, uint8* pbProperties) SetSampleProperties;
+				public new function HRESULT(INSSBuffer2 *self, uint32 cbProperties, uint8* pbProperties) GetSampleProperties;
+				public new function HRESULT(INSSBuffer2 *self, uint32 cbProperties, uint8* pbProperties) SetSampleProperties;
 			}
 		}
 		[CRepr]
@@ -1063,12 +1103,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc87ceaaf, 0x75be, 0x4bc4, 0x84, 0xeb, 0xac, 0x27, 0x98, 0x50, 0x76, 0x72);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetProperty(Guid guidBufferProperty, void* pvBufferProperty, uint32 dwBufferPropertySize) mut
+			{
+				return VT.SetProperty(&this, guidBufferProperty, pvBufferProperty, dwBufferPropertySize);
+			}
+			public HRESULT GetProperty(Guid guidBufferProperty, void* pvBufferProperty, uint32* pdwBufferPropertySize) mut
+			{
+				return VT.GetProperty(&this, guidBufferProperty, pvBufferProperty, pdwBufferPropertySize);
+			}
 			[CRepr]
 			public struct VTable : INSSBuffer2.VTable
 			{
-				public function HRESULT(INSSBuffer3 *self, Guid guidBufferProperty, void* pvBufferProperty, uint32 dwBufferPropertySize) SetProperty;
-				public function HRESULT(INSSBuffer3 *self, Guid guidBufferProperty, void* pvBufferProperty, uint32* pdwBufferPropertySize) GetProperty;
+				public new function HRESULT(INSSBuffer3 *self, Guid guidBufferProperty, void* pvBufferProperty, uint32 dwBufferPropertySize) SetProperty;
+				public new function HRESULT(INSSBuffer3 *self, Guid guidBufferProperty, void* pvBufferProperty, uint32* pdwBufferPropertySize) GetProperty;
 			}
 		}
 		[CRepr]
@@ -1076,12 +1125,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb6b8fd5a, 0x32e2, 0x49d4, 0xa9, 0x10, 0xc2, 0x6c, 0xc8, 0x54, 0x65, 0xed);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPropertyCount(uint32* pcBufferProperties) mut
+			{
+				return VT.GetPropertyCount(&this, pcBufferProperties);
+			}
+			public HRESULT GetPropertyByIndex(uint32 dwBufferPropertyIndex, Guid* pguidBufferProperty, void* pvBufferProperty, uint32* pdwBufferPropertySize) mut
+			{
+				return VT.GetPropertyByIndex(&this, dwBufferPropertyIndex, pguidBufferProperty, pvBufferProperty, pdwBufferPropertySize);
+			}
 			[CRepr]
 			public struct VTable : INSSBuffer3.VTable
 			{
-				public function HRESULT(INSSBuffer4 *self, uint32* pcBufferProperties) GetPropertyCount;
-				public function HRESULT(INSSBuffer4 *self, uint32 dwBufferPropertyIndex, Guid* pguidBufferProperty, void* pvBufferProperty, uint32* pdwBufferPropertySize) GetPropertyByIndex;
+				public new function HRESULT(INSSBuffer4 *self, uint32* pcBufferProperties) GetPropertyCount;
+				public new function HRESULT(INSSBuffer4 *self, uint32 dwBufferPropertyIndex, Guid* pguidBufferProperty, void* pvBufferProperty, uint32* pdwBufferPropertySize) GetPropertyByIndex;
 			}
 		}
 		[CRepr]
@@ -1089,12 +1147,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x61103ca4, 0x2033, 0x11d2, 0x9e, 0xf1, 0x00, 0x60, 0x97, 0xd2, 0xd7, 0xcf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AllocateBuffer(uint32 dwMaxBufferSize, INSSBuffer** ppBuffer) mut
+			{
+				return VT.AllocateBuffer(&this, dwMaxBufferSize, ppBuffer);
+			}
+			public HRESULT AllocatePageSizeBuffer(uint32 dwMaxBufferSize, INSSBuffer** ppBuffer) mut
+			{
+				return VT.AllocatePageSizeBuffer(&this, dwMaxBufferSize, ppBuffer);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMSBufferAllocator *self, uint32 dwMaxBufferSize, INSSBuffer** ppBuffer) AllocateBuffer;
-				public function HRESULT(IWMSBufferAllocator *self, uint32 dwMaxBufferSize, INSSBuffer** ppBuffer) AllocatePageSizeBuffer;
+				public new function HRESULT(IWMSBufferAllocator *self, uint32 dwMaxBufferSize, INSSBuffer** ppBuffer) AllocateBuffer;
+				public new function HRESULT(IWMSBufferAllocator *self, uint32 dwMaxBufferSize, INSSBuffer** ppBuffer) AllocatePageSizeBuffer;
 			}
 		}
 		[CRepr]
@@ -1102,13 +1169,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406bce, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ComGetType(Guid* pguidType) mut
+			{
+				return VT.ComGetType(&this, pguidType);
+			}
+			public HRESULT GetMediaType(WM_MEDIA_TYPE* pType, uint32* pcbType) mut
+			{
+				return VT.GetMediaType(&this, pType, pcbType);
+			}
+			public HRESULT SetMediaType(WM_MEDIA_TYPE* pType) mut
+			{
+				return VT.SetMediaType(&this, pType);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMMediaProps *self, Guid* pguidType) GetType;
-				public function HRESULT(IWMMediaProps *self, WM_MEDIA_TYPE* pType, uint32* pcbType) GetMediaType;
-				public function HRESULT(IWMMediaProps *self, WM_MEDIA_TYPE* pType) SetMediaType;
+				public new function HRESULT(IWMMediaProps *self, Guid* pguidType) ComGetType;
+				public new function HRESULT(IWMMediaProps *self, WM_MEDIA_TYPE* pType, uint32* pcbType) GetMediaType;
+				public new function HRESULT(IWMMediaProps *self, WM_MEDIA_TYPE* pType) SetMediaType;
 			}
 		}
 		[CRepr]
@@ -1116,14 +1196,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406bcf, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetMaxKeyFrameSpacing(int64* pllTime) mut
+			{
+				return VT.GetMaxKeyFrameSpacing(&this, pllTime);
+			}
+			public HRESULT SetMaxKeyFrameSpacing(int64 llTime) mut
+			{
+				return VT.SetMaxKeyFrameSpacing(&this, llTime);
+			}
+			public HRESULT GetQuality(uint32* pdwQuality) mut
+			{
+				return VT.GetQuality(&this, pdwQuality);
+			}
+			public HRESULT SetQuality(uint32 dwQuality) mut
+			{
+				return VT.SetQuality(&this, dwQuality);
+			}
 			[CRepr]
 			public struct VTable : IWMMediaProps.VTable
 			{
-				public function HRESULT(IWMVideoMediaProps *self, int64* pllTime) GetMaxKeyFrameSpacing;
-				public function HRESULT(IWMVideoMediaProps *self, int64 llTime) SetMaxKeyFrameSpacing;
-				public function HRESULT(IWMVideoMediaProps *self, uint32* pdwQuality) GetQuality;
-				public function HRESULT(IWMVideoMediaProps *self, uint32 dwQuality) SetQuality;
+				public new function HRESULT(IWMVideoMediaProps *self, int64* pllTime) GetMaxKeyFrameSpacing;
+				public new function HRESULT(IWMVideoMediaProps *self, int64 llTime) SetMaxKeyFrameSpacing;
+				public new function HRESULT(IWMVideoMediaProps *self, uint32* pdwQuality) GetQuality;
+				public new function HRESULT(IWMVideoMediaProps *self, uint32 dwQuality) SetQuality;
 			}
 		}
 		[CRepr]
@@ -1131,23 +1228,76 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406bd4, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetProfileByID(Guid* guidProfile) mut
+			{
+				return VT.SetProfileByID(&this, guidProfile);
+			}
+			public HRESULT SetProfile(IWMProfile* pProfile) mut
+			{
+				return VT.SetProfile(&this, pProfile);
+			}
+			public HRESULT SetOutputFilename(PWSTR pwszFilename) mut
+			{
+				return VT.SetOutputFilename(&this, pwszFilename);
+			}
+			public HRESULT GetInputCount(uint32* pcInputs) mut
+			{
+				return VT.GetInputCount(&this, pcInputs);
+			}
+			public HRESULT GetInputProps(uint32 dwInputNum, IWMInputMediaProps** ppInput) mut
+			{
+				return VT.GetInputProps(&this, dwInputNum, ppInput);
+			}
+			public HRESULT SetInputProps(uint32 dwInputNum, IWMInputMediaProps* pInput) mut
+			{
+				return VT.SetInputProps(&this, dwInputNum, pInput);
+			}
+			public HRESULT GetInputFormatCount(uint32 dwInputNumber, uint32* pcFormats) mut
+			{
+				return VT.GetInputFormatCount(&this, dwInputNumber, pcFormats);
+			}
+			public HRESULT GetInputFormat(uint32 dwInputNumber, uint32 dwFormatNumber, IWMInputMediaProps** pProps) mut
+			{
+				return VT.GetInputFormat(&this, dwInputNumber, dwFormatNumber, pProps);
+			}
+			public HRESULT BeginWriting() mut
+			{
+				return VT.BeginWriting(&this);
+			}
+			public HRESULT EndWriting() mut
+			{
+				return VT.EndWriting(&this);
+			}
+			public HRESULT AllocateSample(uint32 dwSampleSize, INSSBuffer** ppSample) mut
+			{
+				return VT.AllocateSample(&this, dwSampleSize, ppSample);
+			}
+			public HRESULT WriteSample(uint32 dwInputNum, uint64 cnsSampleTime, uint32 dwFlags, INSSBuffer* pSample) mut
+			{
+				return VT.WriteSample(&this, dwInputNum, cnsSampleTime, dwFlags, pSample);
+			}
+			public HRESULT Flush() mut
+			{
+				return VT.Flush(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMWriter *self, Guid* guidProfile) SetProfileByID;
-				public function HRESULT(IWMWriter *self, IWMProfile* pProfile) SetProfile;
-				public function HRESULT(IWMWriter *self, PWSTR pwszFilename) SetOutputFilename;
-				public function HRESULT(IWMWriter *self, uint32* pcInputs) GetInputCount;
-				public function HRESULT(IWMWriter *self, uint32 dwInputNum, IWMInputMediaProps** ppInput) GetInputProps;
-				public function HRESULT(IWMWriter *self, uint32 dwInputNum, IWMInputMediaProps* pInput) SetInputProps;
-				public function HRESULT(IWMWriter *self, uint32 dwInputNumber, uint32* pcFormats) GetInputFormatCount;
-				public function HRESULT(IWMWriter *self, uint32 dwInputNumber, uint32 dwFormatNumber, IWMInputMediaProps** pProps) GetInputFormat;
-				public function HRESULT(IWMWriter *self) BeginWriting;
-				public function HRESULT(IWMWriter *self) EndWriting;
-				public function HRESULT(IWMWriter *self, uint32 dwSampleSize, INSSBuffer** ppSample) AllocateSample;
-				public function HRESULT(IWMWriter *self, uint32 dwInputNum, uint64 cnsSampleTime, uint32 dwFlags, INSSBuffer* pSample) WriteSample;
-				public function HRESULT(IWMWriter *self) Flush;
+				public new function HRESULT(IWMWriter *self, Guid* guidProfile) SetProfileByID;
+				public new function HRESULT(IWMWriter *self, IWMProfile* pProfile) SetProfile;
+				public new function HRESULT(IWMWriter *self, PWSTR pwszFilename) SetOutputFilename;
+				public new function HRESULT(IWMWriter *self, uint32* pcInputs) GetInputCount;
+				public new function HRESULT(IWMWriter *self, uint32 dwInputNum, IWMInputMediaProps** ppInput) GetInputProps;
+				public new function HRESULT(IWMWriter *self, uint32 dwInputNum, IWMInputMediaProps* pInput) SetInputProps;
+				public new function HRESULT(IWMWriter *self, uint32 dwInputNumber, uint32* pcFormats) GetInputFormatCount;
+				public new function HRESULT(IWMWriter *self, uint32 dwInputNumber, uint32 dwFormatNumber, IWMInputMediaProps** pProps) GetInputFormat;
+				public new function HRESULT(IWMWriter *self) BeginWriting;
+				public new function HRESULT(IWMWriter *self) EndWriting;
+				public new function HRESULT(IWMWriter *self, uint32 dwSampleSize, INSSBuffer** ppSample) AllocateSample;
+				public new function HRESULT(IWMWriter *self, uint32 dwInputNum, uint64 cnsSampleTime, uint32 dwFlags, INSSBuffer* pSample) WriteSample;
+				public new function HRESULT(IWMWriter *self) Flush;
 			}
 		}
 		[CRepr]
@@ -1155,14 +1305,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd6ea5dd0, 0x12a0, 0x43f4, 0x90, 0xab, 0xa3, 0xfd, 0x45, 0x1e, 0x6a, 0x07);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GenerateKeySeed(char16* pwszKeySeed, uint32* pcwchLength) mut
+			{
+				return VT.GenerateKeySeed(&this, pwszKeySeed, pcwchLength);
+			}
+			public HRESULT GenerateKeyID(char16* pwszKeyID, uint32* pcwchLength) mut
+			{
+				return VT.GenerateKeyID(&this, pwszKeyID, pcwchLength);
+			}
+			public HRESULT GenerateSigningKeyPair(char16* pwszPrivKey, uint32* pcwchPrivKeyLength, char16* pwszPubKey, uint32* pcwchPubKeyLength) mut
+			{
+				return VT.GenerateSigningKeyPair(&this, pwszPrivKey, pcwchPrivKeyLength, pwszPubKey, pcwchPubKeyLength);
+			}
+			public HRESULT SetDRMAttribute(uint16 wStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) mut
+			{
+				return VT.SetDRMAttribute(&this, wStreamNum, pszName, Type, pValue, cbLength);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMDRMWriter *self, char16* pwszKeySeed, uint32* pcwchLength) GenerateKeySeed;
-				public function HRESULT(IWMDRMWriter *self, char16* pwszKeyID, uint32* pcwchLength) GenerateKeyID;
-				public function HRESULT(IWMDRMWriter *self, char16* pwszPrivKey, uint32* pcwchPrivKeyLength, char16* pwszPubKey, uint32* pcwchPubKeyLength) GenerateSigningKeyPair;
-				public function HRESULT(IWMDRMWriter *self, uint16 wStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetDRMAttribute;
+				public new function HRESULT(IWMDRMWriter *self, char16* pwszKeySeed, uint32* pcwchLength) GenerateKeySeed;
+				public new function HRESULT(IWMDRMWriter *self, char16* pwszKeyID, uint32* pcwchLength) GenerateKeyID;
+				public new function HRESULT(IWMDRMWriter *self, char16* pwszPrivKey, uint32* pcwchPrivKeyLength, char16* pwszPubKey, uint32* pcwchPubKeyLength) GenerateSigningKeyPair;
+				public new function HRESULT(IWMDRMWriter *self, uint16 wStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetDRMAttribute;
 			}
 		}
 		[CRepr]
@@ -1170,11 +1337,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x38ee7a94, 0x40e2, 0x4e10, 0xaa, 0x3f, 0x33, 0xfd, 0x32, 0x10, 0xed, 0x5b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetWMDRMNetEncryption(BOOL fSamplesEncrypted, uint8* pbKeyID, uint32 cbKeyID) mut
+			{
+				return VT.SetWMDRMNetEncryption(&this, fSamplesEncrypted, pbKeyID, cbKeyID);
+			}
 			[CRepr]
 			public struct VTable : IWMDRMWriter.VTable
 			{
-				public function HRESULT(IWMDRMWriter2 *self, BOOL fSamplesEncrypted, uint8* pbKeyID, uint32 cbKeyID) SetWMDRMNetEncryption;
+				public new function HRESULT(IWMDRMWriter2 *self, BOOL fSamplesEncrypted, uint8* pbKeyID, uint32 cbKeyID) SetWMDRMNetEncryption;
 			}
 		}
 		[CRepr]
@@ -1182,11 +1354,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa7184082, 0xa4aa, 0x4dde, 0xac, 0x9c, 0xe7, 0x5d, 0xbd, 0x11, 0x17, 0xce);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetProtectStreamSamples(WMDRM_IMPORT_INIT_STRUCT* pImportInitStruct) mut
+			{
+				return VT.SetProtectStreamSamples(&this, pImportInitStruct);
+			}
 			[CRepr]
 			public struct VTable : IWMDRMWriter2.VTable
 			{
-				public function HRESULT(IWMDRMWriter3 *self, WMDRM_IMPORT_INIT_STRUCT* pImportInitStruct) SetProtectStreamSamples;
+				public new function HRESULT(IWMDRMWriter3 *self, WMDRM_IMPORT_INIT_STRUCT* pImportInitStruct) SetProtectStreamSamples;
 			}
 		}
 		[CRepr]
@@ -1194,12 +1371,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406bd5, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetConnectionName(char16* pwszName, uint16* pcchName) mut
+			{
+				return VT.GetConnectionName(&this, pwszName, pcchName);
+			}
+			public HRESULT GetGroupName(char16* pwszName, uint16* pcchName) mut
+			{
+				return VT.GetGroupName(&this, pwszName, pcchName);
+			}
 			[CRepr]
 			public struct VTable : IWMMediaProps.VTable
 			{
-				public function HRESULT(IWMInputMediaProps *self, char16* pwszName, uint16* pcchName) GetConnectionName;
-				public function HRESULT(IWMInputMediaProps *self, char16* pwszName, uint16* pcchName) GetGroupName;
+				public new function HRESULT(IWMInputMediaProps *self, char16* pwszName, uint16* pcchName) GetConnectionName;
+				public new function HRESULT(IWMInputMediaProps *self, char16* pwszName, uint16* pcchName) GetGroupName;
 			}
 		}
 		[CRepr]
@@ -1207,16 +1393,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x72995a79, 0x5090, 0x42a4, 0x9c, 0x8c, 0xd9, 0xd0, 0xb6, 0xd3, 0x4b, 0xe5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPropertyCount(uint32* pdwCount) mut
+			{
+				return VT.GetPropertyCount(&this, pdwCount);
+			}
+			public HRESULT GetPropertyByName(PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) mut
+			{
+				return VT.GetPropertyByName(&this, pszName, pType, pValue, pdwSize);
+			}
+			public HRESULT SetProperty(PWSTR pszName, WMT_ATTR_DATATYPE pType, uint8* pValue, uint32 dwSize) mut
+			{
+				return VT.SetProperty(&this, pszName, pType, pValue, dwSize);
+			}
+			public HRESULT GetPropertyByIndex(uint32 dwIndex, char16* pszName, uint32* pdwNameLen, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) mut
+			{
+				return VT.GetPropertyByIndex(&this, dwIndex, pszName, pdwNameLen, pType, pValue, pdwSize);
+			}
+			public HRESULT CopyPropertiesFrom(IWMPropertyVault* pIWMPropertyVault) mut
+			{
+				return VT.CopyPropertiesFrom(&this, pIWMPropertyVault);
+			}
+			public HRESULT Clear() mut
+			{
+				return VT.Clear(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMPropertyVault *self, uint32* pdwCount) GetPropertyCount;
-				public function HRESULT(IWMPropertyVault *self, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetPropertyByName;
-				public function HRESULT(IWMPropertyVault *self, PWSTR pszName, WMT_ATTR_DATATYPE pType, uint8* pValue, uint32 dwSize) SetProperty;
-				public function HRESULT(IWMPropertyVault *self, uint32 dwIndex, char16* pszName, uint32* pdwNameLen, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetPropertyByIndex;
-				public function HRESULT(IWMPropertyVault *self, IWMPropertyVault* pIWMPropertyVault) CopyPropertiesFrom;
-				public function HRESULT(IWMPropertyVault *self) Clear;
+				public new function HRESULT(IWMPropertyVault *self, uint32* pdwCount) GetPropertyCount;
+				public new function HRESULT(IWMPropertyVault *self, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetPropertyByName;
+				public new function HRESULT(IWMPropertyVault *self, PWSTR pszName, WMT_ATTR_DATATYPE pType, uint8* pValue, uint32 dwSize) SetProperty;
+				public new function HRESULT(IWMPropertyVault *self, uint32 dwIndex, char16* pszName, uint32* pdwNameLen, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetPropertyByIndex;
+				public new function HRESULT(IWMPropertyVault *self, IWMPropertyVault* pIWMPropertyVault) CopyPropertiesFrom;
+				public new function HRESULT(IWMPropertyVault *self) Clear;
 			}
 		}
 		[CRepr]
@@ -1224,11 +1435,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6816dad3, 0x2b4b, 0x4c8e, 0x81, 0x49, 0x87, 0x4c, 0x34, 0x83, 0xa7, 0x53);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetProperty(PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) mut
+			{
+				return VT.GetProperty(&this, pszName, pType, pValue, pdwSize);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMIStreamProps *self, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetProperty;
+				public new function HRESULT(IWMIStreamProps *self, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetProperty;
 			}
 		}
 		[CRepr]
@@ -1236,21 +1452,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406bd6, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Open(PWSTR pwszURL, IWMReaderCallback* pCallback, void* pvContext) mut
+			{
+				return VT.Open(&this, pwszURL, pCallback, pvContext);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
+			public HRESULT GetOutputCount(uint32* pcOutputs) mut
+			{
+				return VT.GetOutputCount(&this, pcOutputs);
+			}
+			public HRESULT GetOutputProps(uint32 dwOutputNum, IWMOutputMediaProps** ppOutput) mut
+			{
+				return VT.GetOutputProps(&this, dwOutputNum, ppOutput);
+			}
+			public HRESULT SetOutputProps(uint32 dwOutputNum, IWMOutputMediaProps* pOutput) mut
+			{
+				return VT.SetOutputProps(&this, dwOutputNum, pOutput);
+			}
+			public HRESULT GetOutputFormatCount(uint32 dwOutputNumber, uint32* pcFormats) mut
+			{
+				return VT.GetOutputFormatCount(&this, dwOutputNumber, pcFormats);
+			}
+			public HRESULT GetOutputFormat(uint32 dwOutputNumber, uint32 dwFormatNumber, IWMOutputMediaProps** ppProps) mut
+			{
+				return VT.GetOutputFormat(&this, dwOutputNumber, dwFormatNumber, ppProps);
+			}
+			public HRESULT Start(uint64 cnsStart, uint64 cnsDuration, float fRate, void* pvContext) mut
+			{
+				return VT.Start(&this, cnsStart, cnsDuration, fRate, pvContext);
+			}
+			public HRESULT Stop() mut
+			{
+				return VT.Stop(&this);
+			}
+			public HRESULT Pause() mut
+			{
+				return VT.Pause(&this);
+			}
+			public HRESULT Resume() mut
+			{
+				return VT.Resume(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMReader *self, PWSTR pwszURL, IWMReaderCallback* pCallback, void* pvContext) Open;
-				public function HRESULT(IWMReader *self) Close;
-				public function HRESULT(IWMReader *self, uint32* pcOutputs) GetOutputCount;
-				public function HRESULT(IWMReader *self, uint32 dwOutputNum, IWMOutputMediaProps** ppOutput) GetOutputProps;
-				public function HRESULT(IWMReader *self, uint32 dwOutputNum, IWMOutputMediaProps* pOutput) SetOutputProps;
-				public function HRESULT(IWMReader *self, uint32 dwOutputNumber, uint32* pcFormats) GetOutputFormatCount;
-				public function HRESULT(IWMReader *self, uint32 dwOutputNumber, uint32 dwFormatNumber, IWMOutputMediaProps** ppProps) GetOutputFormat;
-				public function HRESULT(IWMReader *self, uint64 cnsStart, uint64 cnsDuration, float fRate, void* pvContext) Start;
-				public function HRESULT(IWMReader *self) Stop;
-				public function HRESULT(IWMReader *self) Pause;
-				public function HRESULT(IWMReader *self) Resume;
+				public new function HRESULT(IWMReader *self, PWSTR pwszURL, IWMReaderCallback* pCallback, void* pvContext) Open;
+				public new function HRESULT(IWMReader *self) Close;
+				public new function HRESULT(IWMReader *self, uint32* pcOutputs) GetOutputCount;
+				public new function HRESULT(IWMReader *self, uint32 dwOutputNum, IWMOutputMediaProps** ppOutput) GetOutputProps;
+				public new function HRESULT(IWMReader *self, uint32 dwOutputNum, IWMOutputMediaProps* pOutput) SetOutputProps;
+				public new function HRESULT(IWMReader *self, uint32 dwOutputNumber, uint32* pcFormats) GetOutputFormatCount;
+				public new function HRESULT(IWMReader *self, uint32 dwOutputNumber, uint32 dwFormatNumber, IWMOutputMediaProps** ppProps) GetOutputFormat;
+				public new function HRESULT(IWMReader *self, uint64 cnsStart, uint64 cnsDuration, float fRate, void* pvContext) Start;
+				public new function HRESULT(IWMReader *self) Stop;
+				public new function HRESULT(IWMReader *self) Pause;
+				public new function HRESULT(IWMReader *self) Resume;
 			}
 		}
 		[CRepr]
@@ -1258,31 +1519,116 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9397f121, 0x7705, 0x4dc9, 0xb0, 0x49, 0x98, 0xb6, 0x98, 0x18, 0x84, 0x14);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Open(PWSTR pwszFilename) mut
+			{
+				return VT.Open(&this, pwszFilename);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
+			public HRESULT SetRange(uint64 cnsStartTime, int64 cnsDuration) mut
+			{
+				return VT.SetRange(&this, cnsStartTime, cnsDuration);
+			}
+			public HRESULT SetRangeByFrame(uint16 wStreamNum, uint64 qwFrameNumber, int64 cFramesToRead) mut
+			{
+				return VT.SetRangeByFrame(&this, wStreamNum, qwFrameNumber, cFramesToRead);
+			}
+			public HRESULT GetNextSample(uint16 wStreamNum, INSSBuffer** ppSample, uint64* pcnsSampleTime, uint64* pcnsDuration, uint32* pdwFlags, uint32* pdwOutputNum, uint16* pwStreamNum) mut
+			{
+				return VT.GetNextSample(&this, wStreamNum, ppSample, pcnsSampleTime, pcnsDuration, pdwFlags, pdwOutputNum, pwStreamNum);
+			}
+			public HRESULT SetStreamsSelected(uint16 cStreamCount, uint16* pwStreamNumbers, WMT_STREAM_SELECTION* pSelections) mut
+			{
+				return VT.SetStreamsSelected(&this, cStreamCount, pwStreamNumbers, pSelections);
+			}
+			public HRESULT GetStreamSelected(uint16 wStreamNum, WMT_STREAM_SELECTION* pSelection) mut
+			{
+				return VT.GetStreamSelected(&this, wStreamNum, pSelection);
+			}
+			public HRESULT SetReadStreamSamples(uint16 wStreamNum, BOOL fCompressed) mut
+			{
+				return VT.SetReadStreamSamples(&this, wStreamNum, fCompressed);
+			}
+			public HRESULT GetReadStreamSamples(uint16 wStreamNum, BOOL* pfCompressed) mut
+			{
+				return VT.GetReadStreamSamples(&this, wStreamNum, pfCompressed);
+			}
+			public HRESULT GetOutputSetting(uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) mut
+			{
+				return VT.GetOutputSetting(&this, dwOutputNum, pszName, pType, pValue, pcbLength);
+			}
+			public HRESULT SetOutputSetting(uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) mut
+			{
+				return VT.SetOutputSetting(&this, dwOutputNum, pszName, Type, pValue, cbLength);
+			}
+			public HRESULT GetOutputCount(uint32* pcOutputs) mut
+			{
+				return VT.GetOutputCount(&this, pcOutputs);
+			}
+			public HRESULT GetOutputProps(uint32 dwOutputNum, IWMOutputMediaProps** ppOutput) mut
+			{
+				return VT.GetOutputProps(&this, dwOutputNum, ppOutput);
+			}
+			public HRESULT SetOutputProps(uint32 dwOutputNum, IWMOutputMediaProps* pOutput) mut
+			{
+				return VT.SetOutputProps(&this, dwOutputNum, pOutput);
+			}
+			public HRESULT GetOutputFormatCount(uint32 dwOutputNum, uint32* pcFormats) mut
+			{
+				return VT.GetOutputFormatCount(&this, dwOutputNum, pcFormats);
+			}
+			public HRESULT GetOutputFormat(uint32 dwOutputNum, uint32 dwFormatNum, IWMOutputMediaProps** ppProps) mut
+			{
+				return VT.GetOutputFormat(&this, dwOutputNum, dwFormatNum, ppProps);
+			}
+			public HRESULT GetOutputNumberForStream(uint16 wStreamNum, uint32* pdwOutputNum) mut
+			{
+				return VT.GetOutputNumberForStream(&this, wStreamNum, pdwOutputNum);
+			}
+			public HRESULT GetStreamNumberForOutput(uint32 dwOutputNum, uint16* pwStreamNum) mut
+			{
+				return VT.GetStreamNumberForOutput(&this, dwOutputNum, pwStreamNum);
+			}
+			public HRESULT GetMaxOutputSampleSize(uint32 dwOutput, uint32* pcbMax) mut
+			{
+				return VT.GetMaxOutputSampleSize(&this, dwOutput, pcbMax);
+			}
+			public HRESULT GetMaxStreamSampleSize(uint16 wStream, uint32* pcbMax) mut
+			{
+				return VT.GetMaxStreamSampleSize(&this, wStream, pcbMax);
+			}
+			public HRESULT OpenStream(IStream* pStream) mut
+			{
+				return VT.OpenStream(&this, pStream);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMSyncReader *self, PWSTR pwszFilename) Open;
-				public function HRESULT(IWMSyncReader *self) Close;
-				public function HRESULT(IWMSyncReader *self, uint64 cnsStartTime, int64 cnsDuration) SetRange;
-				public function HRESULT(IWMSyncReader *self, uint16 wStreamNum, uint64 qwFrameNumber, int64 cFramesToRead) SetRangeByFrame;
-				public function HRESULT(IWMSyncReader *self, uint16 wStreamNum, INSSBuffer** ppSample, uint64* pcnsSampleTime, uint64* pcnsDuration, uint32* pdwFlags, uint32* pdwOutputNum, uint16* pwStreamNum) GetNextSample;
-				public function HRESULT(IWMSyncReader *self, uint16 cStreamCount, uint16* pwStreamNumbers, WMT_STREAM_SELECTION* pSelections) SetStreamsSelected;
-				public function HRESULT(IWMSyncReader *self, uint16 wStreamNum, WMT_STREAM_SELECTION* pSelection) GetStreamSelected;
-				public function HRESULT(IWMSyncReader *self, uint16 wStreamNum, BOOL fCompressed) SetReadStreamSamples;
-				public function HRESULT(IWMSyncReader *self, uint16 wStreamNum, BOOL* pfCompressed) GetReadStreamSamples;
-				public function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetOutputSetting;
-				public function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetOutputSetting;
-				public function HRESULT(IWMSyncReader *self, uint32* pcOutputs) GetOutputCount;
-				public function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, IWMOutputMediaProps** ppOutput) GetOutputProps;
-				public function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, IWMOutputMediaProps* pOutput) SetOutputProps;
-				public function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, uint32* pcFormats) GetOutputFormatCount;
-				public function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, uint32 dwFormatNum, IWMOutputMediaProps** ppProps) GetOutputFormat;
-				public function HRESULT(IWMSyncReader *self, uint16 wStreamNum, uint32* pdwOutputNum) GetOutputNumberForStream;
-				public function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, uint16* pwStreamNum) GetStreamNumberForOutput;
-				public function HRESULT(IWMSyncReader *self, uint32 dwOutput, uint32* pcbMax) GetMaxOutputSampleSize;
-				public function HRESULT(IWMSyncReader *self, uint16 wStream, uint32* pcbMax) GetMaxStreamSampleSize;
-				public function HRESULT(IWMSyncReader *self, IStream* pStream) OpenStream;
+				public new function HRESULT(IWMSyncReader *self, PWSTR pwszFilename) Open;
+				public new function HRESULT(IWMSyncReader *self) Close;
+				public new function HRESULT(IWMSyncReader *self, uint64 cnsStartTime, int64 cnsDuration) SetRange;
+				public new function HRESULT(IWMSyncReader *self, uint16 wStreamNum, uint64 qwFrameNumber, int64 cFramesToRead) SetRangeByFrame;
+				public new function HRESULT(IWMSyncReader *self, uint16 wStreamNum, INSSBuffer** ppSample, uint64* pcnsSampleTime, uint64* pcnsDuration, uint32* pdwFlags, uint32* pdwOutputNum, uint16* pwStreamNum) GetNextSample;
+				public new function HRESULT(IWMSyncReader *self, uint16 cStreamCount, uint16* pwStreamNumbers, WMT_STREAM_SELECTION* pSelections) SetStreamsSelected;
+				public new function HRESULT(IWMSyncReader *self, uint16 wStreamNum, WMT_STREAM_SELECTION* pSelection) GetStreamSelected;
+				public new function HRESULT(IWMSyncReader *self, uint16 wStreamNum, BOOL fCompressed) SetReadStreamSamples;
+				public new function HRESULT(IWMSyncReader *self, uint16 wStreamNum, BOOL* pfCompressed) GetReadStreamSamples;
+				public new function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetOutputSetting;
+				public new function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetOutputSetting;
+				public new function HRESULT(IWMSyncReader *self, uint32* pcOutputs) GetOutputCount;
+				public new function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, IWMOutputMediaProps** ppOutput) GetOutputProps;
+				public new function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, IWMOutputMediaProps* pOutput) SetOutputProps;
+				public new function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, uint32* pcFormats) GetOutputFormatCount;
+				public new function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, uint32 dwFormatNum, IWMOutputMediaProps** ppProps) GetOutputFormat;
+				public new function HRESULT(IWMSyncReader *self, uint16 wStreamNum, uint32* pdwOutputNum) GetOutputNumberForStream;
+				public new function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, uint16* pwStreamNum) GetStreamNumberForOutput;
+				public new function HRESULT(IWMSyncReader *self, uint32 dwOutput, uint32* pcbMax) GetMaxOutputSampleSize;
+				public new function HRESULT(IWMSyncReader *self, uint16 wStream, uint32* pcbMax) GetMaxStreamSampleSize;
+				public new function HRESULT(IWMSyncReader *self, IStream* pStream) OpenStream;
 			}
 		}
 		[CRepr]
@@ -1290,16 +1636,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfaed3d21, 0x1b6b, 0x4af7, 0x8c, 0xb6, 0x3e, 0x18, 0x9b, 0xbc, 0x18, 0x7b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetRangeByTimecode(uint16 wStreamNum, WMT_TIMECODE_EXTENSION_DATA* pStart, WMT_TIMECODE_EXTENSION_DATA* pEnd) mut
+			{
+				return VT.SetRangeByTimecode(&this, wStreamNum, pStart, pEnd);
+			}
+			public HRESULT SetRangeByFrameEx(uint16 wStreamNum, uint64 qwFrameNumber, int64 cFramesToRead, uint64* pcnsStartTime) mut
+			{
+				return VT.SetRangeByFrameEx(&this, wStreamNum, qwFrameNumber, cFramesToRead, pcnsStartTime);
+			}
+			public HRESULT SetAllocateForOutput(uint32 dwOutputNum, IWMReaderAllocatorEx* pAllocator) mut
+			{
+				return VT.SetAllocateForOutput(&this, dwOutputNum, pAllocator);
+			}
+			public HRESULT GetAllocateForOutput(uint32 dwOutputNum, IWMReaderAllocatorEx** ppAllocator) mut
+			{
+				return VT.GetAllocateForOutput(&this, dwOutputNum, ppAllocator);
+			}
+			public HRESULT SetAllocateForStream(uint16 wStreamNum, IWMReaderAllocatorEx* pAllocator) mut
+			{
+				return VT.SetAllocateForStream(&this, wStreamNum, pAllocator);
+			}
+			public HRESULT GetAllocateForStream(uint16 dwSreamNum, IWMReaderAllocatorEx** ppAllocator) mut
+			{
+				return VT.GetAllocateForStream(&this, dwSreamNum, ppAllocator);
+			}
 			[CRepr]
 			public struct VTable : IWMSyncReader.VTable
 			{
-				public function HRESULT(IWMSyncReader2 *self, uint16 wStreamNum, WMT_TIMECODE_EXTENSION_DATA* pStart, WMT_TIMECODE_EXTENSION_DATA* pEnd) SetRangeByTimecode;
-				public function HRESULT(IWMSyncReader2 *self, uint16 wStreamNum, uint64 qwFrameNumber, int64 cFramesToRead, uint64* pcnsStartTime) SetRangeByFrameEx;
-				public function HRESULT(IWMSyncReader2 *self, uint32 dwOutputNum, IWMReaderAllocatorEx* pAllocator) SetAllocateForOutput;
-				public function HRESULT(IWMSyncReader2 *self, uint32 dwOutputNum, IWMReaderAllocatorEx** ppAllocator) GetAllocateForOutput;
-				public function HRESULT(IWMSyncReader2 *self, uint16 wStreamNum, IWMReaderAllocatorEx* pAllocator) SetAllocateForStream;
-				public function HRESULT(IWMSyncReader2 *self, uint16 dwSreamNum, IWMReaderAllocatorEx** ppAllocator) GetAllocateForStream;
+				public new function HRESULT(IWMSyncReader2 *self, uint16 wStreamNum, WMT_TIMECODE_EXTENSION_DATA* pStart, WMT_TIMECODE_EXTENSION_DATA* pEnd) SetRangeByTimecode;
+				public new function HRESULT(IWMSyncReader2 *self, uint16 wStreamNum, uint64 qwFrameNumber, int64 cFramesToRead, uint64* pcnsStartTime) SetRangeByFrameEx;
+				public new function HRESULT(IWMSyncReader2 *self, uint32 dwOutputNum, IWMReaderAllocatorEx* pAllocator) SetAllocateForOutput;
+				public new function HRESULT(IWMSyncReader2 *self, uint32 dwOutputNum, IWMReaderAllocatorEx** ppAllocator) GetAllocateForOutput;
+				public new function HRESULT(IWMSyncReader2 *self, uint16 wStreamNum, IWMReaderAllocatorEx* pAllocator) SetAllocateForStream;
+				public new function HRESULT(IWMSyncReader2 *self, uint16 dwSreamNum, IWMReaderAllocatorEx** ppAllocator) GetAllocateForStream;
 			}
 		}
 		[CRepr]
@@ -1307,12 +1678,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406bd7, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetStreamGroupName(char16* pwszName, uint16* pcchName) mut
+			{
+				return VT.GetStreamGroupName(&this, pwszName, pcchName);
+			}
+			public HRESULT GetConnectionName(char16* pwszName, uint16* pcchName) mut
+			{
+				return VT.GetConnectionName(&this, pwszName, pcchName);
+			}
 			[CRepr]
 			public struct VTable : IWMMediaProps.VTable
 			{
-				public function HRESULT(IWMOutputMediaProps *self, char16* pwszName, uint16* pcchName) GetStreamGroupName;
-				public function HRESULT(IWMOutputMediaProps *self, char16* pwszName, uint16* pcchName) GetConnectionName;
+				public new function HRESULT(IWMOutputMediaProps *self, char16* pwszName, uint16* pcchName) GetStreamGroupName;
+				public new function HRESULT(IWMOutputMediaProps *self, char16* pwszName, uint16* pcchName) GetConnectionName;
 			}
 		}
 		[CRepr]
@@ -1320,11 +1700,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6d7cdc70, 0x9888, 0x11d3, 0x8e, 0xdc, 0x00, 0xc0, 0x4f, 0x61, 0x09, 0xcf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnStatus(WMT_STATUS Status, HRESULT hr, WMT_ATTR_DATATYPE dwType, uint8* pValue, void* pvContext) mut
+			{
+				return VT.OnStatus(&this, Status, hr, dwType, pValue, pvContext);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMStatusCallback *self, WMT_STATUS Status, HRESULT hr, WMT_ATTR_DATATYPE dwType, uint8* pValue, void* pvContext) OnStatus;
+				public new function HRESULT(IWMStatusCallback *self, WMT_STATUS Status, HRESULT hr, WMT_ATTR_DATATYPE dwType, uint8* pValue, void* pvContext) OnStatus;
 			}
 		}
 		[CRepr]
@@ -1332,11 +1717,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406bd8, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnSample(uint32 dwOutputNum, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, INSSBuffer* pSample, void* pvContext) mut
+			{
+				return VT.OnSample(&this, dwOutputNum, cnsSampleTime, cnsSampleDuration, dwFlags, pSample, pvContext);
+			}
 			[CRepr]
 			public struct VTable : IWMStatusCallback.VTable
 			{
-				public function HRESULT(IWMReaderCallback *self, uint32 dwOutputNum, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, INSSBuffer* pSample, void* pvContext) OnSample;
+				public new function HRESULT(IWMReaderCallback *self, uint32 dwOutputNum, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, INSSBuffer* pSample, void* pvContext) OnSample;
 			}
 		}
 		[CRepr]
@@ -1344,11 +1734,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x342e0eb7, 0xe651, 0x450c, 0x97, 0x5b, 0x2a, 0xce, 0x2c, 0x90, 0xc4, 0x8e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AcquireCredentials(PWSTR pwszRealm, PWSTR pwszSite, char16* pwszUser, uint32 cchUser, char16* pwszPassword, uint32 cchPassword, HRESULT hrStatus, uint32* pdwFlags) mut
+			{
+				return VT.AcquireCredentials(&this, pwszRealm, pwszSite, pwszUser, cchUser, pwszPassword, cchPassword, hrStatus, pdwFlags);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMCredentialCallback *self, PWSTR pwszRealm, PWSTR pwszSite, char16* pwszUser, uint32 cchUser, char16* pwszPassword, uint32 cchPassword, HRESULT hrStatus, uint32* pdwFlags) AcquireCredentials;
+				public new function HRESULT(IWMCredentialCallback *self, PWSTR pwszRealm, PWSTR pwszSite, char16* pwszUser, uint32 cchUser, char16* pwszPassword, uint32 cchPassword, HRESULT hrStatus, uint32* pdwFlags) AcquireCredentials;
 			}
 		}
 		[CRepr]
@@ -1356,13 +1751,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406bd9, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Open(PWSTR pwszFilename) mut
+			{
+				return VT.Open(&this, pwszFilename);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
+			public HRESULT Flush() mut
+			{
+				return VT.Flush(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMMetadataEditor *self, PWSTR pwszFilename) Open;
-				public function HRESULT(IWMMetadataEditor *self) Close;
-				public function HRESULT(IWMMetadataEditor *self) Flush;
+				public new function HRESULT(IWMMetadataEditor *self, PWSTR pwszFilename) Open;
+				public new function HRESULT(IWMMetadataEditor *self) Close;
+				public new function HRESULT(IWMMetadataEditor *self) Flush;
 			}
 		}
 		[CRepr]
@@ -1370,11 +1778,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x203cffe3, 0x2e18, 0x4fdf, 0xb5, 0x9d, 0x6e, 0x71, 0x53, 0x05, 0x34, 0xcf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OpenEx(PWSTR pwszFilename, uint32 dwDesiredAccess, uint32 dwShareMode) mut
+			{
+				return VT.OpenEx(&this, pwszFilename, dwDesiredAccess, dwShareMode);
+			}
 			[CRepr]
 			public struct VTable : IWMMetadataEditor.VTable
 			{
-				public function HRESULT(IWMMetadataEditor2 *self, PWSTR pwszFilename, uint32 dwDesiredAccess, uint32 dwShareMode) OpenEx;
+				public new function HRESULT(IWMMetadataEditor2 *self, PWSTR pwszFilename, uint32 dwDesiredAccess, uint32 dwShareMode) OpenEx;
 			}
 		}
 		[CRepr]
@@ -1382,11 +1795,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xff130ebc, 0xa6c3, 0x42a6, 0xb4, 0x01, 0xc3, 0x38, 0x2c, 0x3e, 0x08, 0xb3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDRMProperty(PWSTR pwstrName, WMT_ATTR_DATATYPE* pdwType, uint8* pValue, uint16* pcbLength) mut
+			{
+				return VT.GetDRMProperty(&this, pwstrName, pdwType, pValue, pcbLength);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMDRMEditor *self, PWSTR pwstrName, WMT_ATTR_DATATYPE* pdwType, uint8* pValue, uint16* pcbLength) GetDRMProperty;
+				public new function HRESULT(IWMDRMEditor *self, PWSTR pwstrName, WMT_ATTR_DATATYPE* pdwType, uint8* pValue, uint16* pcbLength) GetDRMProperty;
 			}
 		}
 		[CRepr]
@@ -1394,22 +1812,71 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406bda, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetAttributeCount(uint16 wStreamNum, uint16* pcAttributes) mut
+			{
+				return VT.GetAttributeCount(&this, wStreamNum, pcAttributes);
+			}
+			public HRESULT GetAttributeByIndex(uint16 wIndex, uint16* pwStreamNum, char16* pwszName, uint16* pcchNameLen, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) mut
+			{
+				return VT.GetAttributeByIndex(&this, wIndex, pwStreamNum, pwszName, pcchNameLen, pType, pValue, pcbLength);
+			}
+			public HRESULT GetAttributeByName(uint16* pwStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) mut
+			{
+				return VT.GetAttributeByName(&this, pwStreamNum, pszName, pType, pValue, pcbLength);
+			}
+			public HRESULT SetAttribute(uint16 wStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) mut
+			{
+				return VT.SetAttribute(&this, wStreamNum, pszName, Type, pValue, cbLength);
+			}
+			public HRESULT GetMarkerCount(uint16* pcMarkers) mut
+			{
+				return VT.GetMarkerCount(&this, pcMarkers);
+			}
+			public HRESULT GetMarker(uint16 wIndex, char16* pwszMarkerName, uint16* pcchMarkerNameLen, uint64* pcnsMarkerTime) mut
+			{
+				return VT.GetMarker(&this, wIndex, pwszMarkerName, pcchMarkerNameLen, pcnsMarkerTime);
+			}
+			public HRESULT AddMarker(PWSTR pwszMarkerName, uint64 cnsMarkerTime) mut
+			{
+				return VT.AddMarker(&this, pwszMarkerName, cnsMarkerTime);
+			}
+			public HRESULT RemoveMarker(uint16 wIndex) mut
+			{
+				return VT.RemoveMarker(&this, wIndex);
+			}
+			public HRESULT GetScriptCount(uint16* pcScripts) mut
+			{
+				return VT.GetScriptCount(&this, pcScripts);
+			}
+			public HRESULT GetScript(uint16 wIndex, char16* pwszType, uint16* pcchTypeLen, char16* pwszCommand, uint16* pcchCommandLen, uint64* pcnsScriptTime) mut
+			{
+				return VT.GetScript(&this, wIndex, pwszType, pcchTypeLen, pwszCommand, pcchCommandLen, pcnsScriptTime);
+			}
+			public HRESULT AddScript(PWSTR pwszType, PWSTR pwszCommand, uint64 cnsScriptTime) mut
+			{
+				return VT.AddScript(&this, pwszType, pwszCommand, cnsScriptTime);
+			}
+			public HRESULT RemoveScript(uint16 wIndex) mut
+			{
+				return VT.RemoveScript(&this, wIndex);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMHeaderInfo *self, uint16 wStreamNum, uint16* pcAttributes) GetAttributeCount;
-				public function HRESULT(IWMHeaderInfo *self, uint16 wIndex, uint16* pwStreamNum, char16* pwszName, uint16* pcchNameLen, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetAttributeByIndex;
-				public function HRESULT(IWMHeaderInfo *self, uint16* pwStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetAttributeByName;
-				public function HRESULT(IWMHeaderInfo *self, uint16 wStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetAttribute;
-				public function HRESULT(IWMHeaderInfo *self, uint16* pcMarkers) GetMarkerCount;
-				public function HRESULT(IWMHeaderInfo *self, uint16 wIndex, char16* pwszMarkerName, uint16* pcchMarkerNameLen, uint64* pcnsMarkerTime) GetMarker;
-				public function HRESULT(IWMHeaderInfo *self, PWSTR pwszMarkerName, uint64 cnsMarkerTime) AddMarker;
-				public function HRESULT(IWMHeaderInfo *self, uint16 wIndex) RemoveMarker;
-				public function HRESULT(IWMHeaderInfo *self, uint16* pcScripts) GetScriptCount;
-				public function HRESULT(IWMHeaderInfo *self, uint16 wIndex, char16* pwszType, uint16* pcchTypeLen, char16* pwszCommand, uint16* pcchCommandLen, uint64* pcnsScriptTime) GetScript;
-				public function HRESULT(IWMHeaderInfo *self, PWSTR pwszType, PWSTR pwszCommand, uint64 cnsScriptTime) AddScript;
-				public function HRESULT(IWMHeaderInfo *self, uint16 wIndex) RemoveScript;
+				public new function HRESULT(IWMHeaderInfo *self, uint16 wStreamNum, uint16* pcAttributes) GetAttributeCount;
+				public new function HRESULT(IWMHeaderInfo *self, uint16 wIndex, uint16* pwStreamNum, char16* pwszName, uint16* pcchNameLen, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetAttributeByIndex;
+				public new function HRESULT(IWMHeaderInfo *self, uint16* pwStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetAttributeByName;
+				public new function HRESULT(IWMHeaderInfo *self, uint16 wStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetAttribute;
+				public new function HRESULT(IWMHeaderInfo *self, uint16* pcMarkers) GetMarkerCount;
+				public new function HRESULT(IWMHeaderInfo *self, uint16 wIndex, char16* pwszMarkerName, uint16* pcchMarkerNameLen, uint64* pcnsMarkerTime) GetMarker;
+				public new function HRESULT(IWMHeaderInfo *self, PWSTR pwszMarkerName, uint64 cnsMarkerTime) AddMarker;
+				public new function HRESULT(IWMHeaderInfo *self, uint16 wIndex) RemoveMarker;
+				public new function HRESULT(IWMHeaderInfo *self, uint16* pcScripts) GetScriptCount;
+				public new function HRESULT(IWMHeaderInfo *self, uint16 wIndex, char16* pwszType, uint16* pcchTypeLen, char16* pwszCommand, uint16* pcchCommandLen, uint64* pcnsScriptTime) GetScript;
+				public new function HRESULT(IWMHeaderInfo *self, PWSTR pwszType, PWSTR pwszCommand, uint64 cnsScriptTime) AddScript;
+				public new function HRESULT(IWMHeaderInfo *self, uint16 wIndex) RemoveScript;
 			}
 		}
 		[CRepr]
@@ -1417,12 +1884,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x15cf9781, 0x454e, 0x482e, 0xb3, 0x93, 0x85, 0xfa, 0xe4, 0x87, 0xa8, 0x10);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCodecInfoCount(uint32* pcCodecInfos) mut
+			{
+				return VT.GetCodecInfoCount(&this, pcCodecInfos);
+			}
+			public HRESULT GetCodecInfo(uint32 wIndex, uint16* pcchName, char16* pwszName, uint16* pcchDescription, char16* pwszDescription, WMT_CODEC_INFO_TYPE* pCodecType, uint16* pcbCodecInfo, uint8* pbCodecInfo) mut
+			{
+				return VT.GetCodecInfo(&this, wIndex, pcchName, pwszName, pcchDescription, pwszDescription, pCodecType, pcbCodecInfo, pbCodecInfo);
+			}
 			[CRepr]
 			public struct VTable : IWMHeaderInfo.VTable
 			{
-				public function HRESULT(IWMHeaderInfo2 *self, uint32* pcCodecInfos) GetCodecInfoCount;
-				public function HRESULT(IWMHeaderInfo2 *self, uint32 wIndex, uint16* pcchName, char16* pwszName, uint16* pcchDescription, char16* pwszDescription, WMT_CODEC_INFO_TYPE* pCodecType, uint16* pcbCodecInfo, uint8* pbCodecInfo) GetCodecInfo;
+				public new function HRESULT(IWMHeaderInfo2 *self, uint32* pcCodecInfos) GetCodecInfoCount;
+				public new function HRESULT(IWMHeaderInfo2 *self, uint32 wIndex, uint16* pcchName, char16* pwszName, uint16* pcchDescription, char16* pwszDescription, WMT_CODEC_INFO_TYPE* pCodecType, uint16* pcbCodecInfo, uint8* pbCodecInfo) GetCodecInfo;
 			}
 		}
 		[CRepr]
@@ -1430,17 +1906,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x15cc68e3, 0x27cc, 0x4ecd, 0xb2, 0x22, 0x3f, 0x5d, 0x02, 0xd8, 0x0b, 0xd5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetAttributeCountEx(uint16 wStreamNum, uint16* pcAttributes) mut
+			{
+				return VT.GetAttributeCountEx(&this, wStreamNum, pcAttributes);
+			}
+			public HRESULT GetAttributeIndices(uint16 wStreamNum, PWSTR pwszName, uint16* pwLangIndex, uint16* pwIndices, uint16* pwCount) mut
+			{
+				return VT.GetAttributeIndices(&this, wStreamNum, pwszName, pwLangIndex, pwIndices, pwCount);
+			}
+			public HRESULT GetAttributeByIndexEx(uint16 wStreamNum, uint16 wIndex, char16* pwszName, uint16* pwNameLen, WMT_ATTR_DATATYPE* pType, uint16* pwLangIndex, uint8* pValue, uint32* pdwDataLength) mut
+			{
+				return VT.GetAttributeByIndexEx(&this, wStreamNum, wIndex, pwszName, pwNameLen, pType, pwLangIndex, pValue, pdwDataLength);
+			}
+			public HRESULT ModifyAttribute(uint16 wStreamNum, uint16 wIndex, WMT_ATTR_DATATYPE Type, uint16 wLangIndex, uint8* pValue, uint32 dwLength) mut
+			{
+				return VT.ModifyAttribute(&this, wStreamNum, wIndex, Type, wLangIndex, pValue, dwLength);
+			}
+			public HRESULT AddAttribute(uint16 wStreamNum, PWSTR pszName, uint16* pwIndex, WMT_ATTR_DATATYPE Type, uint16 wLangIndex, uint8* pValue, uint32 dwLength) mut
+			{
+				return VT.AddAttribute(&this, wStreamNum, pszName, pwIndex, Type, wLangIndex, pValue, dwLength);
+			}
+			public HRESULT DeleteAttribute(uint16 wStreamNum, uint16 wIndex) mut
+			{
+				return VT.DeleteAttribute(&this, wStreamNum, wIndex);
+			}
+			public HRESULT AddCodecInfo(PWSTR pwszName, PWSTR pwszDescription, WMT_CODEC_INFO_TYPE codecType, uint16 cbCodecInfo, uint8* pbCodecInfo) mut
+			{
+				return VT.AddCodecInfo(&this, pwszName, pwszDescription, codecType, cbCodecInfo, pbCodecInfo);
+			}
 			[CRepr]
 			public struct VTable : IWMHeaderInfo2.VTable
 			{
-				public function HRESULT(IWMHeaderInfo3 *self, uint16 wStreamNum, uint16* pcAttributes) GetAttributeCountEx;
-				public function HRESULT(IWMHeaderInfo3 *self, uint16 wStreamNum, PWSTR pwszName, uint16* pwLangIndex, uint16* pwIndices, uint16* pwCount) GetAttributeIndices;
-				public function HRESULT(IWMHeaderInfo3 *self, uint16 wStreamNum, uint16 wIndex, char16* pwszName, uint16* pwNameLen, WMT_ATTR_DATATYPE* pType, uint16* pwLangIndex, uint8* pValue, uint32* pdwDataLength) GetAttributeByIndexEx;
-				public function HRESULT(IWMHeaderInfo3 *self, uint16 wStreamNum, uint16 wIndex, WMT_ATTR_DATATYPE Type, uint16 wLangIndex, uint8* pValue, uint32 dwLength) ModifyAttribute;
-				public function HRESULT(IWMHeaderInfo3 *self, uint16 wStreamNum, PWSTR pszName, uint16* pwIndex, WMT_ATTR_DATATYPE Type, uint16 wLangIndex, uint8* pValue, uint32 dwLength) AddAttribute;
-				public function HRESULT(IWMHeaderInfo3 *self, uint16 wStreamNum, uint16 wIndex) DeleteAttribute;
-				public function HRESULT(IWMHeaderInfo3 *self, PWSTR pwszName, PWSTR pwszDescription, WMT_CODEC_INFO_TYPE codecType, uint16 cbCodecInfo, uint8* pbCodecInfo) AddCodecInfo;
+				public new function HRESULT(IWMHeaderInfo3 *self, uint16 wStreamNum, uint16* pcAttributes) GetAttributeCountEx;
+				public new function HRESULT(IWMHeaderInfo3 *self, uint16 wStreamNum, PWSTR pwszName, uint16* pwLangIndex, uint16* pwIndices, uint16* pwCount) GetAttributeIndices;
+				public new function HRESULT(IWMHeaderInfo3 *self, uint16 wStreamNum, uint16 wIndex, char16* pwszName, uint16* pwNameLen, WMT_ATTR_DATATYPE* pType, uint16* pwLangIndex, uint8* pValue, uint32* pdwDataLength) GetAttributeByIndexEx;
+				public new function HRESULT(IWMHeaderInfo3 *self, uint16 wStreamNum, uint16 wIndex, WMT_ATTR_DATATYPE Type, uint16 wLangIndex, uint8* pValue, uint32 dwLength) ModifyAttribute;
+				public new function HRESULT(IWMHeaderInfo3 *self, uint16 wStreamNum, PWSTR pszName, uint16* pwIndex, WMT_ATTR_DATATYPE Type, uint16 wLangIndex, uint8* pValue, uint32 dwLength) AddAttribute;
+				public new function HRESULT(IWMHeaderInfo3 *self, uint16 wStreamNum, uint16 wIndex) DeleteAttribute;
+				public new function HRESULT(IWMHeaderInfo3 *self, PWSTR pwszName, PWSTR pwszDescription, WMT_CODEC_INFO_TYPE codecType, uint16 cbCodecInfo, uint8* pbCodecInfo) AddCodecInfo;
 			}
 		}
 		[CRepr]
@@ -1448,16 +1953,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd16679f2, 0x6ca0, 0x472d, 0x8d, 0x31, 0x2f, 0x5d, 0x55, 0xae, 0xe1, 0x55);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateEmptyProfile(WMT_VERSION dwVersion, IWMProfile** ppProfile) mut
+			{
+				return VT.CreateEmptyProfile(&this, dwVersion, ppProfile);
+			}
+			public HRESULT LoadProfileByID(Guid* guidProfile, IWMProfile** ppProfile) mut
+			{
+				return VT.LoadProfileByID(&this, guidProfile, ppProfile);
+			}
+			public HRESULT LoadProfileByData(PWSTR pwszProfile, IWMProfile** ppProfile) mut
+			{
+				return VT.LoadProfileByData(&this, pwszProfile, ppProfile);
+			}
+			public HRESULT SaveProfile(IWMProfile* pIWMProfile, PWSTR pwszProfile, uint32* pdwLength) mut
+			{
+				return VT.SaveProfile(&this, pIWMProfile, pwszProfile, pdwLength);
+			}
+			public HRESULT GetSystemProfileCount(uint32* pcProfiles) mut
+			{
+				return VT.GetSystemProfileCount(&this, pcProfiles);
+			}
+			public HRESULT LoadSystemProfile(uint32 dwProfileIndex, IWMProfile** ppProfile) mut
+			{
+				return VT.LoadSystemProfile(&this, dwProfileIndex, ppProfile);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMProfileManager *self, WMT_VERSION dwVersion, IWMProfile** ppProfile) CreateEmptyProfile;
-				public function HRESULT(IWMProfileManager *self, Guid* guidProfile, IWMProfile** ppProfile) LoadProfileByID;
-				public function HRESULT(IWMProfileManager *self, PWSTR pwszProfile, IWMProfile** ppProfile) LoadProfileByData;
-				public function HRESULT(IWMProfileManager *self, IWMProfile* pIWMProfile, PWSTR pwszProfile, uint32* pdwLength) SaveProfile;
-				public function HRESULT(IWMProfileManager *self, uint32* pcProfiles) GetSystemProfileCount;
-				public function HRESULT(IWMProfileManager *self, uint32 dwProfileIndex, IWMProfile** ppProfile) LoadSystemProfile;
+				public new function HRESULT(IWMProfileManager *self, WMT_VERSION dwVersion, IWMProfile** ppProfile) CreateEmptyProfile;
+				public new function HRESULT(IWMProfileManager *self, Guid* guidProfile, IWMProfile** ppProfile) LoadProfileByID;
+				public new function HRESULT(IWMProfileManager *self, PWSTR pwszProfile, IWMProfile** ppProfile) LoadProfileByData;
+				public new function HRESULT(IWMProfileManager *self, IWMProfile* pIWMProfile, PWSTR pwszProfile, uint32* pdwLength) SaveProfile;
+				public new function HRESULT(IWMProfileManager *self, uint32* pcProfiles) GetSystemProfileCount;
+				public new function HRESULT(IWMProfileManager *self, uint32 dwProfileIndex, IWMProfile** ppProfile) LoadSystemProfile;
 			}
 		}
 		[CRepr]
@@ -1465,12 +1995,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7a924e51, 0x73c1, 0x494d, 0x80, 0x19, 0x23, 0xd3, 0x7e, 0xd9, 0xb8, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSystemProfileVersion(WMT_VERSION* pdwVersion) mut
+			{
+				return VT.GetSystemProfileVersion(&this, pdwVersion);
+			}
+			public HRESULT SetSystemProfileVersion(WMT_VERSION dwVersion) mut
+			{
+				return VT.SetSystemProfileVersion(&this, dwVersion);
+			}
 			[CRepr]
 			public struct VTable : IWMProfileManager.VTable
 			{
-				public function HRESULT(IWMProfileManager2 *self, WMT_VERSION* pdwVersion) GetSystemProfileVersion;
-				public function HRESULT(IWMProfileManager2 *self, WMT_VERSION dwVersion) SetSystemProfileVersion;
+				public new function HRESULT(IWMProfileManager2 *self, WMT_VERSION* pdwVersion) GetSystemProfileVersion;
+				public new function HRESULT(IWMProfileManager2 *self, WMT_VERSION dwVersion) SetSystemProfileVersion;
 			}
 		}
 		[CRepr]
@@ -1478,12 +2017,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xba4dcc78, 0x7ee0, 0x4ab8, 0xb2, 0x7a, 0xdb, 0xce, 0x8b, 0xc5, 0x14, 0x54);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetUserLanguageID(uint16* wLangID) mut
+			{
+				return VT.GetUserLanguageID(&this, wLangID);
+			}
+			public HRESULT SetUserLanguageID(uint16 wLangID) mut
+			{
+				return VT.SetUserLanguageID(&this, wLangID);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMProfileManagerLanguage *self, uint16* wLangID) GetUserLanguageID;
-				public function HRESULT(IWMProfileManagerLanguage *self, uint16 wLangID) SetUserLanguageID;
+				public new function HRESULT(IWMProfileManagerLanguage *self, uint16* wLangID) GetUserLanguageID;
+				public new function HRESULT(IWMProfileManagerLanguage *self, uint16 wLangID) SetUserLanguageID;
 			}
 		}
 		[CRepr]
@@ -1491,28 +2039,101 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406bdb, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetVersion(WMT_VERSION* pdwVersion) mut
+			{
+				return VT.GetVersion(&this, pdwVersion);
+			}
+			public HRESULT GetName(char16* pwszName, uint32* pcchName) mut
+			{
+				return VT.GetName(&this, pwszName, pcchName);
+			}
+			public HRESULT SetName(PWSTR pwszName) mut
+			{
+				return VT.SetName(&this, pwszName);
+			}
+			public HRESULT GetDescription(char16* pwszDescription, uint32* pcchDescription) mut
+			{
+				return VT.GetDescription(&this, pwszDescription, pcchDescription);
+			}
+			public HRESULT SetDescription(PWSTR pwszDescription) mut
+			{
+				return VT.SetDescription(&this, pwszDescription);
+			}
+			public HRESULT GetStreamCount(uint32* pcStreams) mut
+			{
+				return VT.GetStreamCount(&this, pcStreams);
+			}
+			public HRESULT GetStream(uint32 dwStreamIndex, IWMStreamConfig** ppConfig) mut
+			{
+				return VT.GetStream(&this, dwStreamIndex, ppConfig);
+			}
+			public HRESULT GetStreamByNumber(uint16 wStreamNum, IWMStreamConfig** ppConfig) mut
+			{
+				return VT.GetStreamByNumber(&this, wStreamNum, ppConfig);
+			}
+			public HRESULT RemoveStream(IWMStreamConfig* pConfig) mut
+			{
+				return VT.RemoveStream(&this, pConfig);
+			}
+			public HRESULT RemoveStreamByNumber(uint16 wStreamNum) mut
+			{
+				return VT.RemoveStreamByNumber(&this, wStreamNum);
+			}
+			public HRESULT AddStream(IWMStreamConfig* pConfig) mut
+			{
+				return VT.AddStream(&this, pConfig);
+			}
+			public HRESULT ReconfigStream(IWMStreamConfig* pConfig) mut
+			{
+				return VT.ReconfigStream(&this, pConfig);
+			}
+			public HRESULT CreateNewStream(Guid* guidStreamType, IWMStreamConfig** ppConfig) mut
+			{
+				return VT.CreateNewStream(&this, guidStreamType, ppConfig);
+			}
+			public HRESULT GetMutualExclusionCount(uint32* pcME) mut
+			{
+				return VT.GetMutualExclusionCount(&this, pcME);
+			}
+			public HRESULT GetMutualExclusion(uint32 dwMEIndex, IWMMutualExclusion** ppME) mut
+			{
+				return VT.GetMutualExclusion(&this, dwMEIndex, ppME);
+			}
+			public HRESULT RemoveMutualExclusion(IWMMutualExclusion* pME) mut
+			{
+				return VT.RemoveMutualExclusion(&this, pME);
+			}
+			public HRESULT AddMutualExclusion(IWMMutualExclusion* pME) mut
+			{
+				return VT.AddMutualExclusion(&this, pME);
+			}
+			public HRESULT CreateNewMutualExclusion(IWMMutualExclusion** ppME) mut
+			{
+				return VT.CreateNewMutualExclusion(&this, ppME);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMProfile *self, WMT_VERSION* pdwVersion) GetVersion;
-				public function HRESULT(IWMProfile *self, char16* pwszName, uint32* pcchName) GetName;
-				public function HRESULT(IWMProfile *self, PWSTR pwszName) SetName;
-				public function HRESULT(IWMProfile *self, char16* pwszDescription, uint32* pcchDescription) GetDescription;
-				public function HRESULT(IWMProfile *self, PWSTR pwszDescription) SetDescription;
-				public function HRESULT(IWMProfile *self, uint32* pcStreams) GetStreamCount;
-				public function HRESULT(IWMProfile *self, uint32 dwStreamIndex, IWMStreamConfig** ppConfig) GetStream;
-				public function HRESULT(IWMProfile *self, uint16 wStreamNum, IWMStreamConfig** ppConfig) GetStreamByNumber;
-				public function HRESULT(IWMProfile *self, IWMStreamConfig* pConfig) RemoveStream;
-				public function HRESULT(IWMProfile *self, uint16 wStreamNum) RemoveStreamByNumber;
-				public function HRESULT(IWMProfile *self, IWMStreamConfig* pConfig) AddStream;
-				public function HRESULT(IWMProfile *self, IWMStreamConfig* pConfig) ReconfigStream;
-				public function HRESULT(IWMProfile *self, Guid* guidStreamType, IWMStreamConfig** ppConfig) CreateNewStream;
-				public function HRESULT(IWMProfile *self, uint32* pcME) GetMutualExclusionCount;
-				public function HRESULT(IWMProfile *self, uint32 dwMEIndex, IWMMutualExclusion** ppME) GetMutualExclusion;
-				public function HRESULT(IWMProfile *self, IWMMutualExclusion* pME) RemoveMutualExclusion;
-				public function HRESULT(IWMProfile *self, IWMMutualExclusion* pME) AddMutualExclusion;
-				public function HRESULT(IWMProfile *self, IWMMutualExclusion** ppME) CreateNewMutualExclusion;
+				public new function HRESULT(IWMProfile *self, WMT_VERSION* pdwVersion) GetVersion;
+				public new function HRESULT(IWMProfile *self, char16* pwszName, uint32* pcchName) GetName;
+				public new function HRESULT(IWMProfile *self, PWSTR pwszName) SetName;
+				public new function HRESULT(IWMProfile *self, char16* pwszDescription, uint32* pcchDescription) GetDescription;
+				public new function HRESULT(IWMProfile *self, PWSTR pwszDescription) SetDescription;
+				public new function HRESULT(IWMProfile *self, uint32* pcStreams) GetStreamCount;
+				public new function HRESULT(IWMProfile *self, uint32 dwStreamIndex, IWMStreamConfig** ppConfig) GetStream;
+				public new function HRESULT(IWMProfile *self, uint16 wStreamNum, IWMStreamConfig** ppConfig) GetStreamByNumber;
+				public new function HRESULT(IWMProfile *self, IWMStreamConfig* pConfig) RemoveStream;
+				public new function HRESULT(IWMProfile *self, uint16 wStreamNum) RemoveStreamByNumber;
+				public new function HRESULT(IWMProfile *self, IWMStreamConfig* pConfig) AddStream;
+				public new function HRESULT(IWMProfile *self, IWMStreamConfig* pConfig) ReconfigStream;
+				public new function HRESULT(IWMProfile *self, Guid* guidStreamType, IWMStreamConfig** ppConfig) CreateNewStream;
+				public new function HRESULT(IWMProfile *self, uint32* pcME) GetMutualExclusionCount;
+				public new function HRESULT(IWMProfile *self, uint32 dwMEIndex, IWMMutualExclusion** ppME) GetMutualExclusion;
+				public new function HRESULT(IWMProfile *self, IWMMutualExclusion* pME) RemoveMutualExclusion;
+				public new function HRESULT(IWMProfile *self, IWMMutualExclusion* pME) AddMutualExclusion;
+				public new function HRESULT(IWMProfile *self, IWMMutualExclusion** ppME) CreateNewMutualExclusion;
 			}
 		}
 		[CRepr]
@@ -1520,11 +2141,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x07e72d33, 0xd94e, 0x4be7, 0x88, 0x43, 0x60, 0xae, 0x5f, 0xf7, 0xe5, 0xf5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetProfileID(Guid* pguidID) mut
+			{
+				return VT.GetProfileID(&this, pguidID);
+			}
 			[CRepr]
 			public struct VTable : IWMProfile.VTable
 			{
-				public function HRESULT(IWMProfile2 *self, Guid* pguidID) GetProfileID;
+				public new function HRESULT(IWMProfile2 *self, Guid* pguidID) GetProfileID;
 			}
 		}
 		[CRepr]
@@ -1532,22 +2158,71 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x00ef96cc, 0xa461, 0x4546, 0x8b, 0xcd, 0xc9, 0xa2, 0x8f, 0x0e, 0x06, 0xf5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetStorageFormat(WMT_STORAGE_FORMAT* pnStorageFormat) mut
+			{
+				return VT.GetStorageFormat(&this, pnStorageFormat);
+			}
+			public HRESULT SetStorageFormat(WMT_STORAGE_FORMAT nStorageFormat) mut
+			{
+				return VT.SetStorageFormat(&this, nStorageFormat);
+			}
+			public HRESULT GetBandwidthSharingCount(uint32* pcBS) mut
+			{
+				return VT.GetBandwidthSharingCount(&this, pcBS);
+			}
+			public HRESULT GetBandwidthSharing(uint32 dwBSIndex, IWMBandwidthSharing** ppBS) mut
+			{
+				return VT.GetBandwidthSharing(&this, dwBSIndex, ppBS);
+			}
+			public HRESULT RemoveBandwidthSharing(IWMBandwidthSharing* pBS) mut
+			{
+				return VT.RemoveBandwidthSharing(&this, pBS);
+			}
+			public HRESULT AddBandwidthSharing(IWMBandwidthSharing* pBS) mut
+			{
+				return VT.AddBandwidthSharing(&this, pBS);
+			}
+			public HRESULT CreateNewBandwidthSharing(IWMBandwidthSharing** ppBS) mut
+			{
+				return VT.CreateNewBandwidthSharing(&this, ppBS);
+			}
+			public HRESULT GetStreamPrioritization(IWMStreamPrioritization** ppSP) mut
+			{
+				return VT.GetStreamPrioritization(&this, ppSP);
+			}
+			public HRESULT SetStreamPrioritization(IWMStreamPrioritization* pSP) mut
+			{
+				return VT.SetStreamPrioritization(&this, pSP);
+			}
+			public HRESULT RemoveStreamPrioritization() mut
+			{
+				return VT.RemoveStreamPrioritization(&this);
+			}
+			public HRESULT CreateNewStreamPrioritization(IWMStreamPrioritization** ppSP) mut
+			{
+				return VT.CreateNewStreamPrioritization(&this, ppSP);
+			}
+			public HRESULT GetExpectedPacketCount(uint64 msDuration, uint64* pcPackets) mut
+			{
+				return VT.GetExpectedPacketCount(&this, msDuration, pcPackets);
+			}
 			[CRepr]
 			public struct VTable : IWMProfile2.VTable
 			{
-				public function HRESULT(IWMProfile3 *self, WMT_STORAGE_FORMAT* pnStorageFormat) GetStorageFormat;
-				public function HRESULT(IWMProfile3 *self, WMT_STORAGE_FORMAT nStorageFormat) SetStorageFormat;
-				public function HRESULT(IWMProfile3 *self, uint32* pcBS) GetBandwidthSharingCount;
-				public function HRESULT(IWMProfile3 *self, uint32 dwBSIndex, IWMBandwidthSharing** ppBS) GetBandwidthSharing;
-				public function HRESULT(IWMProfile3 *self, IWMBandwidthSharing* pBS) RemoveBandwidthSharing;
-				public function HRESULT(IWMProfile3 *self, IWMBandwidthSharing* pBS) AddBandwidthSharing;
-				public function HRESULT(IWMProfile3 *self, IWMBandwidthSharing** ppBS) CreateNewBandwidthSharing;
-				public function HRESULT(IWMProfile3 *self, IWMStreamPrioritization** ppSP) GetStreamPrioritization;
-				public function HRESULT(IWMProfile3 *self, IWMStreamPrioritization* pSP) SetStreamPrioritization;
-				public function HRESULT(IWMProfile3 *self) RemoveStreamPrioritization;
-				public function HRESULT(IWMProfile3 *self, IWMStreamPrioritization** ppSP) CreateNewStreamPrioritization;
-				public function HRESULT(IWMProfile3 *self, uint64 msDuration, uint64* pcPackets) GetExpectedPacketCount;
+				public new function HRESULT(IWMProfile3 *self, WMT_STORAGE_FORMAT* pnStorageFormat) GetStorageFormat;
+				public new function HRESULT(IWMProfile3 *self, WMT_STORAGE_FORMAT nStorageFormat) SetStorageFormat;
+				public new function HRESULT(IWMProfile3 *self, uint32* pcBS) GetBandwidthSharingCount;
+				public new function HRESULT(IWMProfile3 *self, uint32 dwBSIndex, IWMBandwidthSharing** ppBS) GetBandwidthSharing;
+				public new function HRESULT(IWMProfile3 *self, IWMBandwidthSharing* pBS) RemoveBandwidthSharing;
+				public new function HRESULT(IWMProfile3 *self, IWMBandwidthSharing* pBS) AddBandwidthSharing;
+				public new function HRESULT(IWMProfile3 *self, IWMBandwidthSharing** ppBS) CreateNewBandwidthSharing;
+				public new function HRESULT(IWMProfile3 *self, IWMStreamPrioritization** ppSP) GetStreamPrioritization;
+				public new function HRESULT(IWMProfile3 *self, IWMStreamPrioritization* pSP) SetStreamPrioritization;
+				public new function HRESULT(IWMProfile3 *self) RemoveStreamPrioritization;
+				public new function HRESULT(IWMProfile3 *self, IWMStreamPrioritization** ppSP) CreateNewStreamPrioritization;
+				public new function HRESULT(IWMProfile3 *self, uint64 msDuration, uint64* pcPackets) GetExpectedPacketCount;
 			}
 		}
 		[CRepr]
@@ -1555,21 +2230,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406bdc, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetStreamType(Guid* pguidStreamType) mut
+			{
+				return VT.GetStreamType(&this, pguidStreamType);
+			}
+			public HRESULT GetStreamNumber(uint16* pwStreamNum) mut
+			{
+				return VT.GetStreamNumber(&this, pwStreamNum);
+			}
+			public HRESULT SetStreamNumber(uint16 wStreamNum) mut
+			{
+				return VT.SetStreamNumber(&this, wStreamNum);
+			}
+			public HRESULT GetStreamName(char16* pwszStreamName, uint16* pcchStreamName) mut
+			{
+				return VT.GetStreamName(&this, pwszStreamName, pcchStreamName);
+			}
+			public HRESULT SetStreamName(PWSTR pwszStreamName) mut
+			{
+				return VT.SetStreamName(&this, pwszStreamName);
+			}
+			public HRESULT GetConnectionName(char16* pwszInputName, uint16* pcchInputName) mut
+			{
+				return VT.GetConnectionName(&this, pwszInputName, pcchInputName);
+			}
+			public HRESULT SetConnectionName(PWSTR pwszInputName) mut
+			{
+				return VT.SetConnectionName(&this, pwszInputName);
+			}
+			public HRESULT GetBitrate(uint32* pdwBitrate) mut
+			{
+				return VT.GetBitrate(&this, pdwBitrate);
+			}
+			public HRESULT SetBitrate(uint32 pdwBitrate) mut
+			{
+				return VT.SetBitrate(&this, pdwBitrate);
+			}
+			public HRESULT GetBufferWindow(uint32* pmsBufferWindow) mut
+			{
+				return VT.GetBufferWindow(&this, pmsBufferWindow);
+			}
+			public HRESULT SetBufferWindow(uint32 msBufferWindow) mut
+			{
+				return VT.SetBufferWindow(&this, msBufferWindow);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMStreamConfig *self, Guid* pguidStreamType) GetStreamType;
-				public function HRESULT(IWMStreamConfig *self, uint16* pwStreamNum) GetStreamNumber;
-				public function HRESULT(IWMStreamConfig *self, uint16 wStreamNum) SetStreamNumber;
-				public function HRESULT(IWMStreamConfig *self, char16* pwszStreamName, uint16* pcchStreamName) GetStreamName;
-				public function HRESULT(IWMStreamConfig *self, PWSTR pwszStreamName) SetStreamName;
-				public function HRESULT(IWMStreamConfig *self, char16* pwszInputName, uint16* pcchInputName) GetConnectionName;
-				public function HRESULT(IWMStreamConfig *self, PWSTR pwszInputName) SetConnectionName;
-				public function HRESULT(IWMStreamConfig *self, uint32* pdwBitrate) GetBitrate;
-				public function HRESULT(IWMStreamConfig *self, uint32 pdwBitrate) SetBitrate;
-				public function HRESULT(IWMStreamConfig *self, uint32* pmsBufferWindow) GetBufferWindow;
-				public function HRESULT(IWMStreamConfig *self, uint32 msBufferWindow) SetBufferWindow;
+				public new function HRESULT(IWMStreamConfig *self, Guid* pguidStreamType) GetStreamType;
+				public new function HRESULT(IWMStreamConfig *self, uint16* pwStreamNum) GetStreamNumber;
+				public new function HRESULT(IWMStreamConfig *self, uint16 wStreamNum) SetStreamNumber;
+				public new function HRESULT(IWMStreamConfig *self, char16* pwszStreamName, uint16* pcchStreamName) GetStreamName;
+				public new function HRESULT(IWMStreamConfig *self, PWSTR pwszStreamName) SetStreamName;
+				public new function HRESULT(IWMStreamConfig *self, char16* pwszInputName, uint16* pcchInputName) GetConnectionName;
+				public new function HRESULT(IWMStreamConfig *self, PWSTR pwszInputName) SetConnectionName;
+				public new function HRESULT(IWMStreamConfig *self, uint32* pdwBitrate) GetBitrate;
+				public new function HRESULT(IWMStreamConfig *self, uint32 pdwBitrate) SetBitrate;
+				public new function HRESULT(IWMStreamConfig *self, uint32* pmsBufferWindow) GetBufferWindow;
+				public new function HRESULT(IWMStreamConfig *self, uint32 msBufferWindow) SetBufferWindow;
 			}
 		}
 		[CRepr]
@@ -1577,16 +2297,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7688d8cb, 0xfc0d, 0x43bd, 0x94, 0x59, 0x5a, 0x8d, 0xec, 0x20, 0x0c, 0xfa);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetTransportType(WMT_TRANSPORT_TYPE* pnTransportType) mut
+			{
+				return VT.GetTransportType(&this, pnTransportType);
+			}
+			public HRESULT SetTransportType(WMT_TRANSPORT_TYPE nTransportType) mut
+			{
+				return VT.SetTransportType(&this, nTransportType);
+			}
+			public HRESULT AddDataUnitExtension(Guid guidExtensionSystemID, uint16 cbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32 cbExtensionSystemInfo) mut
+			{
+				return VT.AddDataUnitExtension(&this, guidExtensionSystemID, cbExtensionDataSize, pbExtensionSystemInfo, cbExtensionSystemInfo);
+			}
+			public HRESULT GetDataUnitExtensionCount(uint16* pcDataUnitExtensions) mut
+			{
+				return VT.GetDataUnitExtensionCount(&this, pcDataUnitExtensions);
+			}
+			public HRESULT GetDataUnitExtension(uint16 wDataUnitExtensionNumber, Guid* pguidExtensionSystemID, uint16* pcbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32* pcbExtensionSystemInfo) mut
+			{
+				return VT.GetDataUnitExtension(&this, wDataUnitExtensionNumber, pguidExtensionSystemID, pcbExtensionDataSize, pbExtensionSystemInfo, pcbExtensionSystemInfo);
+			}
+			public HRESULT RemoveAllDataUnitExtensions() mut
+			{
+				return VT.RemoveAllDataUnitExtensions(&this);
+			}
 			[CRepr]
 			public struct VTable : IWMStreamConfig.VTable
 			{
-				public function HRESULT(IWMStreamConfig2 *self, WMT_TRANSPORT_TYPE* pnTransportType) GetTransportType;
-				public function HRESULT(IWMStreamConfig2 *self, WMT_TRANSPORT_TYPE nTransportType) SetTransportType;
-				public function HRESULT(IWMStreamConfig2 *self, Guid guidExtensionSystemID, uint16 cbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32 cbExtensionSystemInfo) AddDataUnitExtension;
-				public function HRESULT(IWMStreamConfig2 *self, uint16* pcDataUnitExtensions) GetDataUnitExtensionCount;
-				public function HRESULT(IWMStreamConfig2 *self, uint16 wDataUnitExtensionNumber, Guid* pguidExtensionSystemID, uint16* pcbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32* pcbExtensionSystemInfo) GetDataUnitExtension;
-				public function HRESULT(IWMStreamConfig2 *self) RemoveAllDataUnitExtensions;
+				public new function HRESULT(IWMStreamConfig2 *self, WMT_TRANSPORT_TYPE* pnTransportType) GetTransportType;
+				public new function HRESULT(IWMStreamConfig2 *self, WMT_TRANSPORT_TYPE nTransportType) SetTransportType;
+				public new function HRESULT(IWMStreamConfig2 *self, Guid guidExtensionSystemID, uint16 cbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32 cbExtensionSystemInfo) AddDataUnitExtension;
+				public new function HRESULT(IWMStreamConfig2 *self, uint16* pcDataUnitExtensions) GetDataUnitExtensionCount;
+				public new function HRESULT(IWMStreamConfig2 *self, uint16 wDataUnitExtensionNumber, Guid* pguidExtensionSystemID, uint16* pcbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32* pcbExtensionSystemInfo) GetDataUnitExtension;
+				public new function HRESULT(IWMStreamConfig2 *self) RemoveAllDataUnitExtensions;
 			}
 		}
 		[CRepr]
@@ -1594,12 +2339,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xcb164104, 0x3aa9, 0x45a7, 0x9a, 0xc9, 0x4d, 0xae, 0xe1, 0x31, 0xd6, 0xe1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetLanguage(char16* pwszLanguageString, uint16* pcchLanguageStringLength) mut
+			{
+				return VT.GetLanguage(&this, pwszLanguageString, pcchLanguageStringLength);
+			}
+			public HRESULT SetLanguage(PWSTR pwszLanguageString) mut
+			{
+				return VT.SetLanguage(&this, pwszLanguageString);
+			}
 			[CRepr]
 			public struct VTable : IWMStreamConfig2.VTable
 			{
-				public function HRESULT(IWMStreamConfig3 *self, char16* pwszLanguageString, uint16* pcchLanguageStringLength) GetLanguage;
-				public function HRESULT(IWMStreamConfig3 *self, PWSTR pwszLanguageString) SetLanguage;
+				public new function HRESULT(IWMStreamConfig3 *self, char16* pwszLanguageString, uint16* pcchLanguageStringLength) GetLanguage;
+				public new function HRESULT(IWMStreamConfig3 *self, PWSTR pwszLanguageString) SetLanguage;
 			}
 		}
 		[CRepr]
@@ -1607,12 +2361,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xcdfb97ab, 0x188f, 0x40b3, 0xb6, 0x43, 0x5b, 0x79, 0x03, 0x97, 0x5c, 0x59);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetMaxPacketSize(uint32* pdwMaxPacketSize) mut
+			{
+				return VT.GetMaxPacketSize(&this, pdwMaxPacketSize);
+			}
+			public HRESULT SetMaxPacketSize(uint32 dwMaxPacketSize) mut
+			{
+				return VT.SetMaxPacketSize(&this, dwMaxPacketSize);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMPacketSize *self, uint32* pdwMaxPacketSize) GetMaxPacketSize;
-				public function HRESULT(IWMPacketSize *self, uint32 dwMaxPacketSize) SetMaxPacketSize;
+				public new function HRESULT(IWMPacketSize *self, uint32* pdwMaxPacketSize) GetMaxPacketSize;
+				public new function HRESULT(IWMPacketSize *self, uint32 dwMaxPacketSize) SetMaxPacketSize;
 			}
 		}
 		[CRepr]
@@ -1620,12 +2383,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8bfc2b9e, 0xb646, 0x4233, 0xa8, 0x77, 0x1c, 0x6a, 0x07, 0x96, 0x69, 0xdc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetMinPacketSize(uint32* pdwMinPacketSize) mut
+			{
+				return VT.GetMinPacketSize(&this, pdwMinPacketSize);
+			}
+			public HRESULT SetMinPacketSize(uint32 dwMinPacketSize) mut
+			{
+				return VT.SetMinPacketSize(&this, dwMinPacketSize);
+			}
 			[CRepr]
 			public struct VTable : IWMPacketSize.VTable
 			{
-				public function HRESULT(IWMPacketSize2 *self, uint32* pdwMinPacketSize) GetMinPacketSize;
-				public function HRESULT(IWMPacketSize2 *self, uint32 dwMinPacketSize) SetMinPacketSize;
+				public new function HRESULT(IWMPacketSize2 *self, uint32* pdwMinPacketSize) GetMinPacketSize;
+				public new function HRESULT(IWMPacketSize2 *self, uint32 dwMinPacketSize) SetMinPacketSize;
 			}
 		}
 		[CRepr]
@@ -1633,13 +2405,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406bdd, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetStreams(uint16* pwStreamNumArray, uint16* pcStreams) mut
+			{
+				return VT.GetStreams(&this, pwStreamNumArray, pcStreams);
+			}
+			public HRESULT AddStream(uint16 wStreamNum) mut
+			{
+				return VT.AddStream(&this, wStreamNum);
+			}
+			public HRESULT RemoveStream(uint16 wStreamNum) mut
+			{
+				return VT.RemoveStream(&this, wStreamNum);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMStreamList *self, uint16* pwStreamNumArray, uint16* pcStreams) GetStreams;
-				public function HRESULT(IWMStreamList *self, uint16 wStreamNum) AddStream;
-				public function HRESULT(IWMStreamList *self, uint16 wStreamNum) RemoveStream;
+				public new function HRESULT(IWMStreamList *self, uint16* pwStreamNumArray, uint16* pcStreams) GetStreams;
+				public new function HRESULT(IWMStreamList *self, uint16 wStreamNum) AddStream;
+				public new function HRESULT(IWMStreamList *self, uint16 wStreamNum) RemoveStream;
 			}
 		}
 		[CRepr]
@@ -1647,12 +2432,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406bde, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ComGetType(Guid* pguidType) mut
+			{
+				return VT.ComGetType(&this, pguidType);
+			}
+			public HRESULT SetType(Guid* guidType) mut
+			{
+				return VT.SetType(&this, guidType);
+			}
 			[CRepr]
 			public struct VTable : IWMStreamList.VTable
 			{
-				public function HRESULT(IWMMutualExclusion *self, Guid* pguidType) GetType;
-				public function HRESULT(IWMMutualExclusion *self, Guid* guidType) SetType;
+				public new function HRESULT(IWMMutualExclusion *self, Guid* pguidType) ComGetType;
+				public new function HRESULT(IWMMutualExclusion *self, Guid* guidType) SetType;
 			}
 		}
 		[CRepr]
@@ -1660,20 +2454,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0302b57d, 0x89d1, 0x4ba2, 0x85, 0xc9, 0x16, 0x6f, 0x2c, 0x53, 0xeb, 0x91);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetName(char16* pwszName, uint16* pcchName) mut
+			{
+				return VT.GetName(&this, pwszName, pcchName);
+			}
+			public HRESULT SetName(PWSTR pwszName) mut
+			{
+				return VT.SetName(&this, pwszName);
+			}
+			public HRESULT GetRecordCount(uint16* pwRecordCount) mut
+			{
+				return VT.GetRecordCount(&this, pwRecordCount);
+			}
+			public HRESULT AddRecord() mut
+			{
+				return VT.AddRecord(&this);
+			}
+			public HRESULT RemoveRecord(uint16 wRecordNumber) mut
+			{
+				return VT.RemoveRecord(&this, wRecordNumber);
+			}
+			public HRESULT GetRecordName(uint16 wRecordNumber, char16* pwszRecordName, uint16* pcchRecordName) mut
+			{
+				return VT.GetRecordName(&this, wRecordNumber, pwszRecordName, pcchRecordName);
+			}
+			public HRESULT SetRecordName(uint16 wRecordNumber, PWSTR pwszRecordName) mut
+			{
+				return VT.SetRecordName(&this, wRecordNumber, pwszRecordName);
+			}
+			public HRESULT GetStreamsForRecord(uint16 wRecordNumber, uint16* pwStreamNumArray, uint16* pcStreams) mut
+			{
+				return VT.GetStreamsForRecord(&this, wRecordNumber, pwStreamNumArray, pcStreams);
+			}
+			public HRESULT AddStreamForRecord(uint16 wRecordNumber, uint16 wStreamNumber) mut
+			{
+				return VT.AddStreamForRecord(&this, wRecordNumber, wStreamNumber);
+			}
+			public HRESULT RemoveStreamForRecord(uint16 wRecordNumber, uint16 wStreamNumber) mut
+			{
+				return VT.RemoveStreamForRecord(&this, wRecordNumber, wStreamNumber);
+			}
 			[CRepr]
 			public struct VTable : IWMMutualExclusion.VTable
 			{
-				public function HRESULT(IWMMutualExclusion2 *self, char16* pwszName, uint16* pcchName) GetName;
-				public function HRESULT(IWMMutualExclusion2 *self, PWSTR pwszName) SetName;
-				public function HRESULT(IWMMutualExclusion2 *self, uint16* pwRecordCount) GetRecordCount;
-				public function HRESULT(IWMMutualExclusion2 *self) AddRecord;
-				public function HRESULT(IWMMutualExclusion2 *self, uint16 wRecordNumber) RemoveRecord;
-				public function HRESULT(IWMMutualExclusion2 *self, uint16 wRecordNumber, char16* pwszRecordName, uint16* pcchRecordName) GetRecordName;
-				public function HRESULT(IWMMutualExclusion2 *self, uint16 wRecordNumber, PWSTR pwszRecordName) SetRecordName;
-				public function HRESULT(IWMMutualExclusion2 *self, uint16 wRecordNumber, uint16* pwStreamNumArray, uint16* pcStreams) GetStreamsForRecord;
-				public function HRESULT(IWMMutualExclusion2 *self, uint16 wRecordNumber, uint16 wStreamNumber) AddStreamForRecord;
-				public function HRESULT(IWMMutualExclusion2 *self, uint16 wRecordNumber, uint16 wStreamNumber) RemoveStreamForRecord;
+				public new function HRESULT(IWMMutualExclusion2 *self, char16* pwszName, uint16* pcchName) GetName;
+				public new function HRESULT(IWMMutualExclusion2 *self, PWSTR pwszName) SetName;
+				public new function HRESULT(IWMMutualExclusion2 *self, uint16* pwRecordCount) GetRecordCount;
+				public new function HRESULT(IWMMutualExclusion2 *self) AddRecord;
+				public new function HRESULT(IWMMutualExclusion2 *self, uint16 wRecordNumber) RemoveRecord;
+				public new function HRESULT(IWMMutualExclusion2 *self, uint16 wRecordNumber, char16* pwszRecordName, uint16* pcchRecordName) GetRecordName;
+				public new function HRESULT(IWMMutualExclusion2 *self, uint16 wRecordNumber, PWSTR pwszRecordName) SetRecordName;
+				public new function HRESULT(IWMMutualExclusion2 *self, uint16 wRecordNumber, uint16* pwStreamNumArray, uint16* pcStreams) GetStreamsForRecord;
+				public new function HRESULT(IWMMutualExclusion2 *self, uint16 wRecordNumber, uint16 wStreamNumber) AddStreamForRecord;
+				public new function HRESULT(IWMMutualExclusion2 *self, uint16 wRecordNumber, uint16 wStreamNumber) RemoveStreamForRecord;
 			}
 		}
 		[CRepr]
@@ -1681,14 +2516,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xad694af1, 0xf8d9, 0x42f8, 0xbc, 0x47, 0x70, 0x31, 0x1b, 0x0c, 0x4f, 0x9e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ComGetType(Guid* pguidType) mut
+			{
+				return VT.ComGetType(&this, pguidType);
+			}
+			public HRESULT SetType(Guid* guidType) mut
+			{
+				return VT.SetType(&this, guidType);
+			}
+			public HRESULT GetBandwidth(uint32* pdwBitrate, uint32* pmsBufferWindow) mut
+			{
+				return VT.GetBandwidth(&this, pdwBitrate, pmsBufferWindow);
+			}
+			public HRESULT SetBandwidth(uint32 dwBitrate, uint32 msBufferWindow) mut
+			{
+				return VT.SetBandwidth(&this, dwBitrate, msBufferWindow);
+			}
 			[CRepr]
 			public struct VTable : IWMStreamList.VTable
 			{
-				public function HRESULT(IWMBandwidthSharing *self, Guid* pguidType) GetType;
-				public function HRESULT(IWMBandwidthSharing *self, Guid* guidType) SetType;
-				public function HRESULT(IWMBandwidthSharing *self, uint32* pdwBitrate, uint32* pmsBufferWindow) GetBandwidth;
-				public function HRESULT(IWMBandwidthSharing *self, uint32 dwBitrate, uint32 msBufferWindow) SetBandwidth;
+				public new function HRESULT(IWMBandwidthSharing *self, Guid* pguidType) ComGetType;
+				public new function HRESULT(IWMBandwidthSharing *self, Guid* guidType) SetType;
+				public new function HRESULT(IWMBandwidthSharing *self, uint32* pdwBitrate, uint32* pmsBufferWindow) GetBandwidth;
+				public new function HRESULT(IWMBandwidthSharing *self, uint32 dwBitrate, uint32 msBufferWindow) SetBandwidth;
 			}
 		}
 		[CRepr]
@@ -1696,12 +2548,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8c1c6090, 0xf9a8, 0x4748, 0x8e, 0xc3, 0xdd, 0x11, 0x08, 0xba, 0x1e, 0x77);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPriorityRecords(WM_STREAM_PRIORITY_RECORD* pRecordArray, uint16* pcRecords) mut
+			{
+				return VT.GetPriorityRecords(&this, pRecordArray, pcRecords);
+			}
+			public HRESULT SetPriorityRecords(WM_STREAM_PRIORITY_RECORD* pRecordArray, uint16 cRecords) mut
+			{
+				return VT.SetPriorityRecords(&this, pRecordArray, cRecords);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMStreamPrioritization *self, WM_STREAM_PRIORITY_RECORD* pRecordArray, uint16* pcRecords) GetPriorityRecords;
-				public function HRESULT(IWMStreamPrioritization *self, WM_STREAM_PRIORITY_RECORD* pRecordArray, uint16 cRecords) SetPriorityRecords;
+				public new function HRESULT(IWMStreamPrioritization *self, WM_STREAM_PRIORITY_RECORD* pRecordArray, uint16* pcRecords) GetPriorityRecords;
+				public new function HRESULT(IWMStreamPrioritization *self, WM_STREAM_PRIORITY_RECORD* pRecordArray, uint16 cRecords) SetPriorityRecords;
 			}
 		}
 		[CRepr]
@@ -1709,21 +2570,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406be3, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSinkCount(uint32* pcSinks) mut
+			{
+				return VT.GetSinkCount(&this, pcSinks);
+			}
+			public HRESULT GetSink(uint32 dwSinkNum, IWMWriterSink** ppSink) mut
+			{
+				return VT.GetSink(&this, dwSinkNum, ppSink);
+			}
+			public HRESULT AddSink(IWMWriterSink* pSink) mut
+			{
+				return VT.AddSink(&this, pSink);
+			}
+			public HRESULT RemoveSink(IWMWriterSink* pSink) mut
+			{
+				return VT.RemoveSink(&this, pSink);
+			}
+			public HRESULT WriteStreamSample(uint16 wStreamNum, uint64 cnsSampleTime, uint32 msSampleSendTime, uint64 cnsSampleDuration, uint32 dwFlags, INSSBuffer* pSample) mut
+			{
+				return VT.WriteStreamSample(&this, wStreamNum, cnsSampleTime, msSampleSendTime, cnsSampleDuration, dwFlags, pSample);
+			}
+			public HRESULT SetLiveSource(BOOL fIsLiveSource) mut
+			{
+				return VT.SetLiveSource(&this, fIsLiveSource);
+			}
+			public HRESULT IsRealTime(BOOL* pfRealTime) mut
+			{
+				return VT.IsRealTime(&this, pfRealTime);
+			}
+			public HRESULT GetWriterTime(uint64* pcnsCurrentTime) mut
+			{
+				return VT.GetWriterTime(&this, pcnsCurrentTime);
+			}
+			public HRESULT GetStatistics(uint16 wStreamNum, WM_WRITER_STATISTICS* pStats) mut
+			{
+				return VT.GetStatistics(&this, wStreamNum, pStats);
+			}
+			public HRESULT SetSyncTolerance(uint32 msWindow) mut
+			{
+				return VT.SetSyncTolerance(&this, msWindow);
+			}
+			public HRESULT GetSyncTolerance(uint32* pmsWindow) mut
+			{
+				return VT.GetSyncTolerance(&this, pmsWindow);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMWriterAdvanced *self, uint32* pcSinks) GetSinkCount;
-				public function HRESULT(IWMWriterAdvanced *self, uint32 dwSinkNum, IWMWriterSink** ppSink) GetSink;
-				public function HRESULT(IWMWriterAdvanced *self, IWMWriterSink* pSink) AddSink;
-				public function HRESULT(IWMWriterAdvanced *self, IWMWriterSink* pSink) RemoveSink;
-				public function HRESULT(IWMWriterAdvanced *self, uint16 wStreamNum, uint64 cnsSampleTime, uint32 msSampleSendTime, uint64 cnsSampleDuration, uint32 dwFlags, INSSBuffer* pSample) WriteStreamSample;
-				public function HRESULT(IWMWriterAdvanced *self, BOOL fIsLiveSource) SetLiveSource;
-				public function HRESULT(IWMWriterAdvanced *self, BOOL* pfRealTime) IsRealTime;
-				public function HRESULT(IWMWriterAdvanced *self, uint64* pcnsCurrentTime) GetWriterTime;
-				public function HRESULT(IWMWriterAdvanced *self, uint16 wStreamNum, WM_WRITER_STATISTICS* pStats) GetStatistics;
-				public function HRESULT(IWMWriterAdvanced *self, uint32 msWindow) SetSyncTolerance;
-				public function HRESULT(IWMWriterAdvanced *self, uint32* pmsWindow) GetSyncTolerance;
+				public new function HRESULT(IWMWriterAdvanced *self, uint32* pcSinks) GetSinkCount;
+				public new function HRESULT(IWMWriterAdvanced *self, uint32 dwSinkNum, IWMWriterSink** ppSink) GetSink;
+				public new function HRESULT(IWMWriterAdvanced *self, IWMWriterSink* pSink) AddSink;
+				public new function HRESULT(IWMWriterAdvanced *self, IWMWriterSink* pSink) RemoveSink;
+				public new function HRESULT(IWMWriterAdvanced *self, uint16 wStreamNum, uint64 cnsSampleTime, uint32 msSampleSendTime, uint64 cnsSampleDuration, uint32 dwFlags, INSSBuffer* pSample) WriteStreamSample;
+				public new function HRESULT(IWMWriterAdvanced *self, BOOL fIsLiveSource) SetLiveSource;
+				public new function HRESULT(IWMWriterAdvanced *self, BOOL* pfRealTime) IsRealTime;
+				public new function HRESULT(IWMWriterAdvanced *self, uint64* pcnsCurrentTime) GetWriterTime;
+				public new function HRESULT(IWMWriterAdvanced *self, uint16 wStreamNum, WM_WRITER_STATISTICS* pStats) GetStatistics;
+				public new function HRESULT(IWMWriterAdvanced *self, uint32 msWindow) SetSyncTolerance;
+				public new function HRESULT(IWMWriterAdvanced *self, uint32* pmsWindow) GetSyncTolerance;
 			}
 		}
 		[CRepr]
@@ -1731,12 +2637,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x962dc1ec, 0xc046, 0x4db8, 0x9c, 0xc7, 0x26, 0xce, 0xae, 0x50, 0x08, 0x17);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetInputSetting(uint32 dwInputNum, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) mut
+			{
+				return VT.GetInputSetting(&this, dwInputNum, pszName, pType, pValue, pcbLength);
+			}
+			public HRESULT SetInputSetting(uint32 dwInputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) mut
+			{
+				return VT.SetInputSetting(&this, dwInputNum, pszName, Type, pValue, cbLength);
+			}
 			[CRepr]
 			public struct VTable : IWMWriterAdvanced.VTable
 			{
-				public function HRESULT(IWMWriterAdvanced2 *self, uint32 dwInputNum, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetInputSetting;
-				public function HRESULT(IWMWriterAdvanced2 *self, uint32 dwInputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetInputSetting;
+				public new function HRESULT(IWMWriterAdvanced2 *self, uint32 dwInputNum, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetInputSetting;
+				public new function HRESULT(IWMWriterAdvanced2 *self, uint32 dwInputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetInputSetting;
 			}
 		}
 		[CRepr]
@@ -1744,12 +2659,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2cd6492d, 0x7c37, 0x4e76, 0x9d, 0x3b, 0x59, 0x26, 0x11, 0x83, 0xa2, 0x2e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetStatisticsEx(uint16 wStreamNum, WM_WRITER_STATISTICS_EX* pStats) mut
+			{
+				return VT.GetStatisticsEx(&this, wStreamNum, pStats);
+			}
+			public HRESULT SetNonBlocking() mut
+			{
+				return VT.SetNonBlocking(&this);
+			}
 			[CRepr]
 			public struct VTable : IWMWriterAdvanced2.VTable
 			{
-				public function HRESULT(IWMWriterAdvanced3 *self, uint16 wStreamNum, WM_WRITER_STATISTICS_EX* pStats) GetStatisticsEx;
-				public function HRESULT(IWMWriterAdvanced3 *self) SetNonBlocking;
+				public new function HRESULT(IWMWriterAdvanced3 *self, uint16 wStreamNum, WM_WRITER_STATISTICS_EX* pStats) GetStatisticsEx;
+				public new function HRESULT(IWMWriterAdvanced3 *self) SetNonBlocking;
 			}
 		}
 		[CRepr]
@@ -1757,15 +2681,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfc54a285, 0x38c4, 0x45b5, 0xaa, 0x23, 0x85, 0xb9, 0xf7, 0xcb, 0x42, 0x4b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetMaxPreprocessingPasses(uint32 dwInputNum, uint32 dwFlags, uint32* pdwMaxNumPasses) mut
+			{
+				return VT.GetMaxPreprocessingPasses(&this, dwInputNum, dwFlags, pdwMaxNumPasses);
+			}
+			public HRESULT SetNumPreprocessingPasses(uint32 dwInputNum, uint32 dwFlags, uint32 dwNumPasses) mut
+			{
+				return VT.SetNumPreprocessingPasses(&this, dwInputNum, dwFlags, dwNumPasses);
+			}
+			public HRESULT BeginPreprocessingPass(uint32 dwInputNum, uint32 dwFlags) mut
+			{
+				return VT.BeginPreprocessingPass(&this, dwInputNum, dwFlags);
+			}
+			public HRESULT PreprocessSample(uint32 dwInputNum, uint64 cnsSampleTime, uint32 dwFlags, INSSBuffer* pSample) mut
+			{
+				return VT.PreprocessSample(&this, dwInputNum, cnsSampleTime, dwFlags, pSample);
+			}
+			public HRESULT EndPreprocessingPass(uint32 dwInputNum, uint32 dwFlags) mut
+			{
+				return VT.EndPreprocessingPass(&this, dwInputNum, dwFlags);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMWriterPreprocess *self, uint32 dwInputNum, uint32 dwFlags, uint32* pdwMaxNumPasses) GetMaxPreprocessingPasses;
-				public function HRESULT(IWMWriterPreprocess *self, uint32 dwInputNum, uint32 dwFlags, uint32 dwNumPasses) SetNumPreprocessingPasses;
-				public function HRESULT(IWMWriterPreprocess *self, uint32 dwInputNum, uint32 dwFlags) BeginPreprocessingPass;
-				public function HRESULT(IWMWriterPreprocess *self, uint32 dwInputNum, uint64 cnsSampleTime, uint32 dwFlags, INSSBuffer* pSample) PreprocessSample;
-				public function HRESULT(IWMWriterPreprocess *self, uint32 dwInputNum, uint32 dwFlags) EndPreprocessingPass;
+				public new function HRESULT(IWMWriterPreprocess *self, uint32 dwInputNum, uint32 dwFlags, uint32* pdwMaxNumPasses) GetMaxPreprocessingPasses;
+				public new function HRESULT(IWMWriterPreprocess *self, uint32 dwInputNum, uint32 dwFlags, uint32 dwNumPasses) SetNumPreprocessingPasses;
+				public new function HRESULT(IWMWriterPreprocess *self, uint32 dwInputNum, uint32 dwFlags) BeginPreprocessingPass;
+				public new function HRESULT(IWMWriterPreprocess *self, uint32 dwInputNum, uint64 cnsSampleTime, uint32 dwFlags, INSSBuffer* pSample) PreprocessSample;
+				public new function HRESULT(IWMWriterPreprocess *self, uint32 dwInputNum, uint32 dwFlags) EndPreprocessingPass;
 			}
 		}
 		[CRepr]
@@ -1773,12 +2718,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd9d6549d, 0xa193, 0x4f24, 0xb3, 0x08, 0x03, 0x12, 0x3d, 0x9b, 0x7f, 0x8d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnPostViewSample(uint16 wStreamNumber, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, INSSBuffer* pSample, void* pvContext) mut
+			{
+				return VT.OnPostViewSample(&this, wStreamNumber, cnsSampleTime, cnsSampleDuration, dwFlags, pSample, pvContext);
+			}
+			public HRESULT AllocateForPostView(uint16 wStreamNum, uint32 cbBuffer, INSSBuffer** ppBuffer, void* pvContext) mut
+			{
+				return VT.AllocateForPostView(&this, wStreamNum, cbBuffer, ppBuffer, pvContext);
+			}
 			[CRepr]
 			public struct VTable : IWMStatusCallback.VTable
 			{
-				public function HRESULT(IWMWriterPostViewCallback *self, uint16 wStreamNumber, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, INSSBuffer* pSample, void* pvContext) OnPostViewSample;
-				public function HRESULT(IWMWriterPostViewCallback *self, uint16 wStreamNum, uint32 cbBuffer, INSSBuffer** ppBuffer, void* pvContext) AllocateForPostView;
+				public new function HRESULT(IWMWriterPostViewCallback *self, uint16 wStreamNumber, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, INSSBuffer* pSample, void* pvContext) OnPostViewSample;
+				public new function HRESULT(IWMWriterPostViewCallback *self, uint16 wStreamNum, uint32 cbBuffer, INSSBuffer** ppBuffer, void* pvContext) AllocateForPostView;
 			}
 		}
 		[CRepr]
@@ -1786,19 +2740,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x81e20ce4, 0x75ef, 0x491a, 0x80, 0x04, 0xfc, 0x53, 0xc4, 0x5b, 0xdc, 0x3e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetPostViewCallback(IWMWriterPostViewCallback* pCallback, void* pvContext) mut
+			{
+				return VT.SetPostViewCallback(&this, pCallback, pvContext);
+			}
+			public HRESULT SetReceivePostViewSamples(uint16 wStreamNum, BOOL fReceivePostViewSamples) mut
+			{
+				return VT.SetReceivePostViewSamples(&this, wStreamNum, fReceivePostViewSamples);
+			}
+			public HRESULT GetReceivePostViewSamples(uint16 wStreamNum, BOOL* pfReceivePostViewSamples) mut
+			{
+				return VT.GetReceivePostViewSamples(&this, wStreamNum, pfReceivePostViewSamples);
+			}
+			public HRESULT GetPostViewProps(uint16 wStreamNumber, IWMMediaProps** ppOutput) mut
+			{
+				return VT.GetPostViewProps(&this, wStreamNumber, ppOutput);
+			}
+			public HRESULT SetPostViewProps(uint16 wStreamNumber, IWMMediaProps* pOutput) mut
+			{
+				return VT.SetPostViewProps(&this, wStreamNumber, pOutput);
+			}
+			public HRESULT GetPostViewFormatCount(uint16 wStreamNumber, uint32* pcFormats) mut
+			{
+				return VT.GetPostViewFormatCount(&this, wStreamNumber, pcFormats);
+			}
+			public HRESULT GetPostViewFormat(uint16 wStreamNumber, uint32 dwFormatNumber, IWMMediaProps** ppProps) mut
+			{
+				return VT.GetPostViewFormat(&this, wStreamNumber, dwFormatNumber, ppProps);
+			}
+			public HRESULT SetAllocateForPostView(uint16 wStreamNumber, BOOL fAllocate) mut
+			{
+				return VT.SetAllocateForPostView(&this, wStreamNumber, fAllocate);
+			}
+			public HRESULT GetAllocateForPostView(uint16 wStreamNumber, BOOL* pfAllocate) mut
+			{
+				return VT.GetAllocateForPostView(&this, wStreamNumber, pfAllocate);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMWriterPostView *self, IWMWriterPostViewCallback* pCallback, void* pvContext) SetPostViewCallback;
-				public function HRESULT(IWMWriterPostView *self, uint16 wStreamNum, BOOL fReceivePostViewSamples) SetReceivePostViewSamples;
-				public function HRESULT(IWMWriterPostView *self, uint16 wStreamNum, BOOL* pfReceivePostViewSamples) GetReceivePostViewSamples;
-				public function HRESULT(IWMWriterPostView *self, uint16 wStreamNumber, IWMMediaProps** ppOutput) GetPostViewProps;
-				public function HRESULT(IWMWriterPostView *self, uint16 wStreamNumber, IWMMediaProps* pOutput) SetPostViewProps;
-				public function HRESULT(IWMWriterPostView *self, uint16 wStreamNumber, uint32* pcFormats) GetPostViewFormatCount;
-				public function HRESULT(IWMWriterPostView *self, uint16 wStreamNumber, uint32 dwFormatNumber, IWMMediaProps** ppProps) GetPostViewFormat;
-				public function HRESULT(IWMWriterPostView *self, uint16 wStreamNumber, BOOL fAllocate) SetAllocateForPostView;
-				public function HRESULT(IWMWriterPostView *self, uint16 wStreamNumber, BOOL* pfAllocate) GetAllocateForPostView;
+				public new function HRESULT(IWMWriterPostView *self, IWMWriterPostViewCallback* pCallback, void* pvContext) SetPostViewCallback;
+				public new function HRESULT(IWMWriterPostView *self, uint16 wStreamNum, BOOL fReceivePostViewSamples) SetReceivePostViewSamples;
+				public new function HRESULT(IWMWriterPostView *self, uint16 wStreamNum, BOOL* pfReceivePostViewSamples) GetReceivePostViewSamples;
+				public new function HRESULT(IWMWriterPostView *self, uint16 wStreamNumber, IWMMediaProps** ppOutput) GetPostViewProps;
+				public new function HRESULT(IWMWriterPostView *self, uint16 wStreamNumber, IWMMediaProps* pOutput) SetPostViewProps;
+				public new function HRESULT(IWMWriterPostView *self, uint16 wStreamNumber, uint32* pcFormats) GetPostViewFormatCount;
+				public new function HRESULT(IWMWriterPostView *self, uint16 wStreamNumber, uint32 dwFormatNumber, IWMMediaProps** ppProps) GetPostViewFormat;
+				public new function HRESULT(IWMWriterPostView *self, uint16 wStreamNumber, BOOL fAllocate) SetAllocateForPostView;
+				public new function HRESULT(IWMWriterPostView *self, uint16 wStreamNumber, BOOL* pfAllocate) GetAllocateForPostView;
 			}
 		}
 		[CRepr]
@@ -1806,15 +2797,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406be4, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnHeader(INSSBuffer* pHeader) mut
+			{
+				return VT.OnHeader(&this, pHeader);
+			}
+			public HRESULT IsRealTime(BOOL* pfRealTime) mut
+			{
+				return VT.IsRealTime(&this, pfRealTime);
+			}
+			public HRESULT AllocateDataUnit(uint32 cbDataUnit, INSSBuffer** ppDataUnit) mut
+			{
+				return VT.AllocateDataUnit(&this, cbDataUnit, ppDataUnit);
+			}
+			public HRESULT OnDataUnit(INSSBuffer* pDataUnit) mut
+			{
+				return VT.OnDataUnit(&this, pDataUnit);
+			}
+			public HRESULT OnEndWriting() mut
+			{
+				return VT.OnEndWriting(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMWriterSink *self, INSSBuffer* pHeader) OnHeader;
-				public function HRESULT(IWMWriterSink *self, BOOL* pfRealTime) IsRealTime;
-				public function HRESULT(IWMWriterSink *self, uint32 cbDataUnit, INSSBuffer** ppDataUnit) AllocateDataUnit;
-				public function HRESULT(IWMWriterSink *self, INSSBuffer* pDataUnit) OnDataUnit;
-				public function HRESULT(IWMWriterSink *self) OnEndWriting;
+				public new function HRESULT(IWMWriterSink *self, INSSBuffer* pHeader) OnHeader;
+				public new function HRESULT(IWMWriterSink *self, BOOL* pfRealTime) IsRealTime;
+				public new function HRESULT(IWMWriterSink *self, uint32 cbDataUnit, INSSBuffer** ppDataUnit) AllocateDataUnit;
+				public new function HRESULT(IWMWriterSink *self, INSSBuffer* pDataUnit) OnDataUnit;
+				public new function HRESULT(IWMWriterSink *self) OnEndWriting;
 			}
 		}
 		[CRepr]
@@ -1822,12 +2834,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xcf4b1f99, 0x4de2, 0x4e49, 0xa3, 0x63, 0x25, 0x27, 0x40, 0xd9, 0x9b, 0xc1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Advise(IWMStatusCallback* pCallback, void* pvContext) mut
+			{
+				return VT.Advise(&this, pCallback, pvContext);
+			}
+			public HRESULT Unadvise(IWMStatusCallback* pCallback, void* pvContext) mut
+			{
+				return VT.Unadvise(&this, pCallback, pvContext);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMRegisterCallback *self, IWMStatusCallback* pCallback, void* pvContext) Advise;
-				public function HRESULT(IWMRegisterCallback *self, IWMStatusCallback* pCallback, void* pvContext) Unadvise;
+				public new function HRESULT(IWMRegisterCallback *self, IWMStatusCallback* pCallback, void* pvContext) Advise;
+				public new function HRESULT(IWMRegisterCallback *self, IWMStatusCallback* pCallback, void* pvContext) Unadvise;
 			}
 		}
 		[CRepr]
@@ -1835,11 +2856,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406be5, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Open(PWSTR pwszFilename) mut
+			{
+				return VT.Open(&this, pwszFilename);
+			}
 			[CRepr]
 			public struct VTable : IWMWriterSink.VTable
 			{
-				public function HRESULT(IWMWriterFileSink *self, PWSTR pwszFilename) Open;
+				public new function HRESULT(IWMWriterFileSink *self, PWSTR pwszFilename) Open;
 			}
 		}
 		[CRepr]
@@ -1847,17 +2873,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x14282ba7, 0x4aef, 0x4205, 0x8c, 0xe5, 0xc2, 0x29, 0x03, 0x5a, 0x05, 0xbc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Start(uint64 cnsStartTime) mut
+			{
+				return VT.Start(&this, cnsStartTime);
+			}
+			public HRESULT Stop(uint64 cnsStopTime) mut
+			{
+				return VT.Stop(&this, cnsStopTime);
+			}
+			public HRESULT IsStopped(BOOL* pfStopped) mut
+			{
+				return VT.IsStopped(&this, pfStopped);
+			}
+			public HRESULT GetFileDuration(uint64* pcnsDuration) mut
+			{
+				return VT.GetFileDuration(&this, pcnsDuration);
+			}
+			public HRESULT GetFileSize(uint64* pcbFile) mut
+			{
+				return VT.GetFileSize(&this, pcbFile);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
+			public HRESULT IsClosed(BOOL* pfClosed) mut
+			{
+				return VT.IsClosed(&this, pfClosed);
+			}
 			[CRepr]
 			public struct VTable : IWMWriterFileSink.VTable
 			{
-				public function HRESULT(IWMWriterFileSink2 *self, uint64 cnsStartTime) Start;
-				public function HRESULT(IWMWriterFileSink2 *self, uint64 cnsStopTime) Stop;
-				public function HRESULT(IWMWriterFileSink2 *self, BOOL* pfStopped) IsStopped;
-				public function HRESULT(IWMWriterFileSink2 *self, uint64* pcnsDuration) GetFileDuration;
-				public function HRESULT(IWMWriterFileSink2 *self, uint64* pcbFile) GetFileSize;
-				public function HRESULT(IWMWriterFileSink2 *self) Close;
-				public function HRESULT(IWMWriterFileSink2 *self, BOOL* pfClosed) IsClosed;
+				public new function HRESULT(IWMWriterFileSink2 *self, uint64 cnsStartTime) Start;
+				public new function HRESULT(IWMWriterFileSink2 *self, uint64 cnsStopTime) Stop;
+				public new function HRESULT(IWMWriterFileSink2 *self, BOOL* pfStopped) IsStopped;
+				public new function HRESULT(IWMWriterFileSink2 *self, uint64* pcnsDuration) GetFileDuration;
+				public new function HRESULT(IWMWriterFileSink2 *self, uint64* pcbFile) GetFileSize;
+				public new function HRESULT(IWMWriterFileSink2 *self) Close;
+				public new function HRESULT(IWMWriterFileSink2 *self, BOOL* pfClosed) IsClosed;
 			}
 		}
 		[CRepr]
@@ -1865,18 +2920,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3fea4feb, 0x2945, 0x47a7, 0xa1, 0xdd, 0xc5, 0x3a, 0x8f, 0xc4, 0xc4, 0x5c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetAutoIndexing(BOOL fDoAutoIndexing) mut
+			{
+				return VT.SetAutoIndexing(&this, fDoAutoIndexing);
+			}
+			public HRESULT GetAutoIndexing(BOOL* pfAutoIndexing) mut
+			{
+				return VT.GetAutoIndexing(&this, pfAutoIndexing);
+			}
+			public HRESULT SetControlStream(uint16 wStreamNumber, BOOL fShouldControlStartAndStop) mut
+			{
+				return VT.SetControlStream(&this, wStreamNumber, fShouldControlStartAndStop);
+			}
+			public HRESULT GetMode(uint32* pdwFileSinkMode) mut
+			{
+				return VT.GetMode(&this, pdwFileSinkMode);
+			}
+			public HRESULT OnDataUnitEx(WMT_FILESINK_DATA_UNIT* pFileSinkDataUnit) mut
+			{
+				return VT.OnDataUnitEx(&this, pFileSinkDataUnit);
+			}
+			public HRESULT SetUnbufferedIO(BOOL fUnbufferedIO, BOOL fRestrictMemUsage) mut
+			{
+				return VT.SetUnbufferedIO(&this, fUnbufferedIO, fRestrictMemUsage);
+			}
+			public HRESULT GetUnbufferedIO(BOOL* pfUnbufferedIO) mut
+			{
+				return VT.GetUnbufferedIO(&this, pfUnbufferedIO);
+			}
+			public HRESULT CompleteOperations() mut
+			{
+				return VT.CompleteOperations(&this);
+			}
 			[CRepr]
 			public struct VTable : IWMWriterFileSink2.VTable
 			{
-				public function HRESULT(IWMWriterFileSink3 *self, BOOL fDoAutoIndexing) SetAutoIndexing;
-				public function HRESULT(IWMWriterFileSink3 *self, BOOL* pfAutoIndexing) GetAutoIndexing;
-				public function HRESULT(IWMWriterFileSink3 *self, uint16 wStreamNumber, BOOL fShouldControlStartAndStop) SetControlStream;
-				public function HRESULT(IWMWriterFileSink3 *self, uint32* pdwFileSinkMode) GetMode;
-				public function HRESULT(IWMWriterFileSink3 *self, WMT_FILESINK_DATA_UNIT* pFileSinkDataUnit) OnDataUnitEx;
-				public function HRESULT(IWMWriterFileSink3 *self, BOOL fUnbufferedIO, BOOL fRestrictMemUsage) SetUnbufferedIO;
-				public function HRESULT(IWMWriterFileSink3 *self, BOOL* pfUnbufferedIO) GetUnbufferedIO;
-				public function HRESULT(IWMWriterFileSink3 *self) CompleteOperations;
+				public new function HRESULT(IWMWriterFileSink3 *self, BOOL fDoAutoIndexing) SetAutoIndexing;
+				public new function HRESULT(IWMWriterFileSink3 *self, BOOL* pfAutoIndexing) GetAutoIndexing;
+				public new function HRESULT(IWMWriterFileSink3 *self, uint16 wStreamNumber, BOOL fShouldControlStartAndStop) SetControlStream;
+				public new function HRESULT(IWMWriterFileSink3 *self, uint32* pdwFileSinkMode) GetMode;
+				public new function HRESULT(IWMWriterFileSink3 *self, WMT_FILESINK_DATA_UNIT* pFileSinkDataUnit) OnDataUnitEx;
+				public new function HRESULT(IWMWriterFileSink3 *self, BOOL fUnbufferedIO, BOOL fRestrictMemUsage) SetUnbufferedIO;
+				public new function HRESULT(IWMWriterFileSink3 *self, BOOL* pfUnbufferedIO) GetUnbufferedIO;
+				public new function HRESULT(IWMWriterFileSink3 *self) CompleteOperations;
 			}
 		}
 		[CRepr]
@@ -1884,18 +2972,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406be7, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetMaximumClients(uint32 dwMaxClients) mut
+			{
+				return VT.SetMaximumClients(&this, dwMaxClients);
+			}
+			public HRESULT GetMaximumClients(uint32* pdwMaxClients) mut
+			{
+				return VT.GetMaximumClients(&this, pdwMaxClients);
+			}
+			public HRESULT SetNetworkProtocol(WMT_NET_PROTOCOL protocol) mut
+			{
+				return VT.SetNetworkProtocol(&this, protocol);
+			}
+			public HRESULT GetNetworkProtocol(WMT_NET_PROTOCOL* pProtocol) mut
+			{
+				return VT.GetNetworkProtocol(&this, pProtocol);
+			}
+			public HRESULT GetHostURL(PWSTR pwszURL, uint32* pcchURL) mut
+			{
+				return VT.GetHostURL(&this, pwszURL, pcchURL);
+			}
+			public HRESULT Open(uint32* pdwPortNum) mut
+			{
+				return VT.Open(&this, pdwPortNum);
+			}
+			public HRESULT Disconnect() mut
+			{
+				return VT.Disconnect(&this);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
 			[CRepr]
 			public struct VTable : IWMWriterSink.VTable
 			{
-				public function HRESULT(IWMWriterNetworkSink *self, uint32 dwMaxClients) SetMaximumClients;
-				public function HRESULT(IWMWriterNetworkSink *self, uint32* pdwMaxClients) GetMaximumClients;
-				public function HRESULT(IWMWriterNetworkSink *self, WMT_NET_PROTOCOL protocol) SetNetworkProtocol;
-				public function HRESULT(IWMWriterNetworkSink *self, WMT_NET_PROTOCOL* pProtocol) GetNetworkProtocol;
-				public function HRESULT(IWMWriterNetworkSink *self, PWSTR pwszURL, uint32* pcchURL) GetHostURL;
-				public function HRESULT(IWMWriterNetworkSink *self, uint32* pdwPortNum) Open;
-				public function HRESULT(IWMWriterNetworkSink *self) Disconnect;
-				public function HRESULT(IWMWriterNetworkSink *self) Close;
+				public new function HRESULT(IWMWriterNetworkSink *self, uint32 dwMaxClients) SetMaximumClients;
+				public new function HRESULT(IWMWriterNetworkSink *self, uint32* pdwMaxClients) GetMaximumClients;
+				public new function HRESULT(IWMWriterNetworkSink *self, WMT_NET_PROTOCOL protocol) SetNetworkProtocol;
+				public new function HRESULT(IWMWriterNetworkSink *self, WMT_NET_PROTOCOL* pProtocol) GetNetworkProtocol;
+				public new function HRESULT(IWMWriterNetworkSink *self, PWSTR pwszURL, uint32* pcchURL) GetHostURL;
+				public new function HRESULT(IWMWriterNetworkSink *self, uint32* pdwPortNum) Open;
+				public new function HRESULT(IWMWriterNetworkSink *self) Disconnect;
+				public new function HRESULT(IWMWriterNetworkSink *self) Close;
 			}
 		}
 		[CRepr]
@@ -1903,12 +3024,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x73c66010, 0xa299, 0x41df, 0xb1, 0xf0, 0xcc, 0xf0, 0x3b, 0x09, 0xc1, 0xc6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetClientCount(uint32* pcClients) mut
+			{
+				return VT.GetClientCount(&this, pcClients);
+			}
+			public HRESULT GetClientProperties(uint32 dwClientNum, WM_CLIENT_PROPERTIES* pClientProperties) mut
+			{
+				return VT.GetClientProperties(&this, dwClientNum, pClientProperties);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMClientConnections *self, uint32* pcClients) GetClientCount;
-				public function HRESULT(IWMClientConnections *self, uint32 dwClientNum, WM_CLIENT_PROPERTIES* pClientProperties) GetClientProperties;
+				public new function HRESULT(IWMClientConnections *self, uint32* pcClients) GetClientCount;
+				public new function HRESULT(IWMClientConnections *self, uint32 dwClientNum, WM_CLIENT_PROPERTIES* pClientProperties) GetClientProperties;
 			}
 		}
 		[CRepr]
@@ -1916,11 +3046,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4091571e, 0x4701, 0x4593, 0xbb, 0x3d, 0xd5, 0xf5, 0xf0, 0xc7, 0x42, 0x46);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetClientInfo(uint32 dwClientNum, char16* pwszNetworkAddress, uint32* pcchNetworkAddress, char16* pwszPort, uint32* pcchPort, char16* pwszDNSName, uint32* pcchDNSName) mut
+			{
+				return VT.GetClientInfo(&this, dwClientNum, pwszNetworkAddress, pcchNetworkAddress, pwszPort, pcchPort, pwszDNSName, pcchDNSName);
+			}
 			[CRepr]
 			public struct VTable : IWMClientConnections.VTable
 			{
-				public function HRESULT(IWMClientConnections2 *self, uint32 dwClientNum, char16* pwszNetworkAddress, uint32* pcchNetworkAddress, char16* pwszPort, uint32* pcchPort, char16* pwszDNSName, uint32* pcchDNSName) GetClientInfo;
+				public new function HRESULT(IWMClientConnections2 *self, uint32 dwClientNum, char16* pwszNetworkAddress, uint32* pcchNetworkAddress, char16* pwszPort, uint32* pcchPort, char16* pwszDNSName, uint32* pcchDNSName) GetClientInfo;
 			}
 		}
 		[CRepr]
@@ -1928,30 +3063,111 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406bea, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetUserProvidedClock(BOOL fUserClock) mut
+			{
+				return VT.SetUserProvidedClock(&this, fUserClock);
+			}
+			public HRESULT GetUserProvidedClock(BOOL* pfUserClock) mut
+			{
+				return VT.GetUserProvidedClock(&this, pfUserClock);
+			}
+			public HRESULT DeliverTime(uint64 cnsTime) mut
+			{
+				return VT.DeliverTime(&this, cnsTime);
+			}
+			public HRESULT SetManualStreamSelection(BOOL fSelection) mut
+			{
+				return VT.SetManualStreamSelection(&this, fSelection);
+			}
+			public HRESULT GetManualStreamSelection(BOOL* pfSelection) mut
+			{
+				return VT.GetManualStreamSelection(&this, pfSelection);
+			}
+			public HRESULT SetStreamsSelected(uint16 cStreamCount, uint16* pwStreamNumbers, WMT_STREAM_SELECTION* pSelections) mut
+			{
+				return VT.SetStreamsSelected(&this, cStreamCount, pwStreamNumbers, pSelections);
+			}
+			public HRESULT GetStreamSelected(uint16 wStreamNum, WMT_STREAM_SELECTION* pSelection) mut
+			{
+				return VT.GetStreamSelected(&this, wStreamNum, pSelection);
+			}
+			public HRESULT SetReceiveSelectionCallbacks(BOOL fGetCallbacks) mut
+			{
+				return VT.SetReceiveSelectionCallbacks(&this, fGetCallbacks);
+			}
+			public HRESULT GetReceiveSelectionCallbacks(BOOL* pfGetCallbacks) mut
+			{
+				return VT.GetReceiveSelectionCallbacks(&this, pfGetCallbacks);
+			}
+			public HRESULT SetReceiveStreamSamples(uint16 wStreamNum, BOOL fReceiveStreamSamples) mut
+			{
+				return VT.SetReceiveStreamSamples(&this, wStreamNum, fReceiveStreamSamples);
+			}
+			public HRESULT GetReceiveStreamSamples(uint16 wStreamNum, BOOL* pfReceiveStreamSamples) mut
+			{
+				return VT.GetReceiveStreamSamples(&this, wStreamNum, pfReceiveStreamSamples);
+			}
+			public HRESULT SetAllocateForOutput(uint32 dwOutputNum, BOOL fAllocate) mut
+			{
+				return VT.SetAllocateForOutput(&this, dwOutputNum, fAllocate);
+			}
+			public HRESULT GetAllocateForOutput(uint32 dwOutputNum, BOOL* pfAllocate) mut
+			{
+				return VT.GetAllocateForOutput(&this, dwOutputNum, pfAllocate);
+			}
+			public HRESULT SetAllocateForStream(uint16 wStreamNum, BOOL fAllocate) mut
+			{
+				return VT.SetAllocateForStream(&this, wStreamNum, fAllocate);
+			}
+			public HRESULT GetAllocateForStream(uint16 dwSreamNum, BOOL* pfAllocate) mut
+			{
+				return VT.GetAllocateForStream(&this, dwSreamNum, pfAllocate);
+			}
+			public HRESULT GetStatistics(WM_READER_STATISTICS* pStatistics) mut
+			{
+				return VT.GetStatistics(&this, pStatistics);
+			}
+			public HRESULT SetClientInfo(WM_READER_CLIENTINFO* pClientInfo) mut
+			{
+				return VT.SetClientInfo(&this, pClientInfo);
+			}
+			public HRESULT GetMaxOutputSampleSize(uint32 dwOutput, uint32* pcbMax) mut
+			{
+				return VT.GetMaxOutputSampleSize(&this, dwOutput, pcbMax);
+			}
+			public HRESULT GetMaxStreamSampleSize(uint16 wStream, uint32* pcbMax) mut
+			{
+				return VT.GetMaxStreamSampleSize(&this, wStream, pcbMax);
+			}
+			public HRESULT NotifyLateDelivery(uint64 cnsLateness) mut
+			{
+				return VT.NotifyLateDelivery(&this, cnsLateness);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMReaderAdvanced *self, BOOL fUserClock) SetUserProvidedClock;
-				public function HRESULT(IWMReaderAdvanced *self, BOOL* pfUserClock) GetUserProvidedClock;
-				public function HRESULT(IWMReaderAdvanced *self, uint64 cnsTime) DeliverTime;
-				public function HRESULT(IWMReaderAdvanced *self, BOOL fSelection) SetManualStreamSelection;
-				public function HRESULT(IWMReaderAdvanced *self, BOOL* pfSelection) GetManualStreamSelection;
-				public function HRESULT(IWMReaderAdvanced *self, uint16 cStreamCount, uint16* pwStreamNumbers, WMT_STREAM_SELECTION* pSelections) SetStreamsSelected;
-				public function HRESULT(IWMReaderAdvanced *self, uint16 wStreamNum, WMT_STREAM_SELECTION* pSelection) GetStreamSelected;
-				public function HRESULT(IWMReaderAdvanced *self, BOOL fGetCallbacks) SetReceiveSelectionCallbacks;
-				public function HRESULT(IWMReaderAdvanced *self, BOOL* pfGetCallbacks) GetReceiveSelectionCallbacks;
-				public function HRESULT(IWMReaderAdvanced *self, uint16 wStreamNum, BOOL fReceiveStreamSamples) SetReceiveStreamSamples;
-				public function HRESULT(IWMReaderAdvanced *self, uint16 wStreamNum, BOOL* pfReceiveStreamSamples) GetReceiveStreamSamples;
-				public function HRESULT(IWMReaderAdvanced *self, uint32 dwOutputNum, BOOL fAllocate) SetAllocateForOutput;
-				public function HRESULT(IWMReaderAdvanced *self, uint32 dwOutputNum, BOOL* pfAllocate) GetAllocateForOutput;
-				public function HRESULT(IWMReaderAdvanced *self, uint16 wStreamNum, BOOL fAllocate) SetAllocateForStream;
-				public function HRESULT(IWMReaderAdvanced *self, uint16 dwSreamNum, BOOL* pfAllocate) GetAllocateForStream;
-				public function HRESULT(IWMReaderAdvanced *self, WM_READER_STATISTICS* pStatistics) GetStatistics;
-				public function HRESULT(IWMReaderAdvanced *self, WM_READER_CLIENTINFO* pClientInfo) SetClientInfo;
-				public function HRESULT(IWMReaderAdvanced *self, uint32 dwOutput, uint32* pcbMax) GetMaxOutputSampleSize;
-				public function HRESULT(IWMReaderAdvanced *self, uint16 wStream, uint32* pcbMax) GetMaxStreamSampleSize;
-				public function HRESULT(IWMReaderAdvanced *self, uint64 cnsLateness) NotifyLateDelivery;
+				public new function HRESULT(IWMReaderAdvanced *self, BOOL fUserClock) SetUserProvidedClock;
+				public new function HRESULT(IWMReaderAdvanced *self, BOOL* pfUserClock) GetUserProvidedClock;
+				public new function HRESULT(IWMReaderAdvanced *self, uint64 cnsTime) DeliverTime;
+				public new function HRESULT(IWMReaderAdvanced *self, BOOL fSelection) SetManualStreamSelection;
+				public new function HRESULT(IWMReaderAdvanced *self, BOOL* pfSelection) GetManualStreamSelection;
+				public new function HRESULT(IWMReaderAdvanced *self, uint16 cStreamCount, uint16* pwStreamNumbers, WMT_STREAM_SELECTION* pSelections) SetStreamsSelected;
+				public new function HRESULT(IWMReaderAdvanced *self, uint16 wStreamNum, WMT_STREAM_SELECTION* pSelection) GetStreamSelected;
+				public new function HRESULT(IWMReaderAdvanced *self, BOOL fGetCallbacks) SetReceiveSelectionCallbacks;
+				public new function HRESULT(IWMReaderAdvanced *self, BOOL* pfGetCallbacks) GetReceiveSelectionCallbacks;
+				public new function HRESULT(IWMReaderAdvanced *self, uint16 wStreamNum, BOOL fReceiveStreamSamples) SetReceiveStreamSamples;
+				public new function HRESULT(IWMReaderAdvanced *self, uint16 wStreamNum, BOOL* pfReceiveStreamSamples) GetReceiveStreamSamples;
+				public new function HRESULT(IWMReaderAdvanced *self, uint32 dwOutputNum, BOOL fAllocate) SetAllocateForOutput;
+				public new function HRESULT(IWMReaderAdvanced *self, uint32 dwOutputNum, BOOL* pfAllocate) GetAllocateForOutput;
+				public new function HRESULT(IWMReaderAdvanced *self, uint16 wStreamNum, BOOL fAllocate) SetAllocateForStream;
+				public new function HRESULT(IWMReaderAdvanced *self, uint16 dwSreamNum, BOOL* pfAllocate) GetAllocateForStream;
+				public new function HRESULT(IWMReaderAdvanced *self, WM_READER_STATISTICS* pStatistics) GetStatistics;
+				public new function HRESULT(IWMReaderAdvanced *self, WM_READER_CLIENTINFO* pClientInfo) SetClientInfo;
+				public new function HRESULT(IWMReaderAdvanced *self, uint32 dwOutput, uint32* pcbMax) GetMaxOutputSampleSize;
+				public new function HRESULT(IWMReaderAdvanced *self, uint16 wStream, uint32* pcbMax) GetMaxStreamSampleSize;
+				public new function HRESULT(IWMReaderAdvanced *self, uint64 cnsLateness) NotifyLateDelivery;
 			}
 		}
 		[CRepr]
@@ -1959,25 +3175,86 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xae14a945, 0xb90c, 0x4d0d, 0x91, 0x27, 0x80, 0xd6, 0x65, 0xf7, 0xd7, 0x3e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetPlayMode(WMT_PLAY_MODE Mode) mut
+			{
+				return VT.SetPlayMode(&this, Mode);
+			}
+			public HRESULT GetPlayMode(WMT_PLAY_MODE* pMode) mut
+			{
+				return VT.GetPlayMode(&this, pMode);
+			}
+			public HRESULT GetBufferProgress(uint32* pdwPercent, uint64* pcnsBuffering) mut
+			{
+				return VT.GetBufferProgress(&this, pdwPercent, pcnsBuffering);
+			}
+			public HRESULT GetDownloadProgress(uint32* pdwPercent, uint64* pqwBytesDownloaded, uint64* pcnsDownload) mut
+			{
+				return VT.GetDownloadProgress(&this, pdwPercent, pqwBytesDownloaded, pcnsDownload);
+			}
+			public HRESULT GetSaveAsProgress(uint32* pdwPercent) mut
+			{
+				return VT.GetSaveAsProgress(&this, pdwPercent);
+			}
+			public HRESULT SaveFileAs(PWSTR pwszFilename) mut
+			{
+				return VT.SaveFileAs(&this, pwszFilename);
+			}
+			public HRESULT GetProtocolName(char16* pwszProtocol, uint32* pcchProtocol) mut
+			{
+				return VT.GetProtocolName(&this, pwszProtocol, pcchProtocol);
+			}
+			public HRESULT StartAtMarker(uint16 wMarkerIndex, uint64 cnsDuration, float fRate, void* pvContext) mut
+			{
+				return VT.StartAtMarker(&this, wMarkerIndex, cnsDuration, fRate, pvContext);
+			}
+			public HRESULT GetOutputSetting(uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) mut
+			{
+				return VT.GetOutputSetting(&this, dwOutputNum, pszName, pType, pValue, pcbLength);
+			}
+			public HRESULT SetOutputSetting(uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) mut
+			{
+				return VT.SetOutputSetting(&this, dwOutputNum, pszName, Type, pValue, cbLength);
+			}
+			public HRESULT Preroll(uint64 cnsStart, uint64 cnsDuration, float fRate) mut
+			{
+				return VT.Preroll(&this, cnsStart, cnsDuration, fRate);
+			}
+			public HRESULT SetLogClientID(BOOL fLogClientID) mut
+			{
+				return VT.SetLogClientID(&this, fLogClientID);
+			}
+			public HRESULT GetLogClientID(BOOL* pfLogClientID) mut
+			{
+				return VT.GetLogClientID(&this, pfLogClientID);
+			}
+			public HRESULT StopBuffering() mut
+			{
+				return VT.StopBuffering(&this);
+			}
+			public HRESULT OpenStream(IStream* pStream, IWMReaderCallback* pCallback, void* pvContext) mut
+			{
+				return VT.OpenStream(&this, pStream, pCallback, pvContext);
+			}
 			[CRepr]
 			public struct VTable : IWMReaderAdvanced.VTable
 			{
-				public function HRESULT(IWMReaderAdvanced2 *self, WMT_PLAY_MODE Mode) SetPlayMode;
-				public function HRESULT(IWMReaderAdvanced2 *self, WMT_PLAY_MODE* pMode) GetPlayMode;
-				public function HRESULT(IWMReaderAdvanced2 *self, uint32* pdwPercent, uint64* pcnsBuffering) GetBufferProgress;
-				public function HRESULT(IWMReaderAdvanced2 *self, uint32* pdwPercent, uint64* pqwBytesDownloaded, uint64* pcnsDownload) GetDownloadProgress;
-				public function HRESULT(IWMReaderAdvanced2 *self, uint32* pdwPercent) GetSaveAsProgress;
-				public function HRESULT(IWMReaderAdvanced2 *self, PWSTR pwszFilename) SaveFileAs;
-				public function HRESULT(IWMReaderAdvanced2 *self, char16* pwszProtocol, uint32* pcchProtocol) GetProtocolName;
-				public function HRESULT(IWMReaderAdvanced2 *self, uint16 wMarkerIndex, uint64 cnsDuration, float fRate, void* pvContext) StartAtMarker;
-				public function HRESULT(IWMReaderAdvanced2 *self, uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetOutputSetting;
-				public function HRESULT(IWMReaderAdvanced2 *self, uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetOutputSetting;
-				public function HRESULT(IWMReaderAdvanced2 *self, uint64 cnsStart, uint64 cnsDuration, float fRate) Preroll;
-				public function HRESULT(IWMReaderAdvanced2 *self, BOOL fLogClientID) SetLogClientID;
-				public function HRESULT(IWMReaderAdvanced2 *self, BOOL* pfLogClientID) GetLogClientID;
-				public function HRESULT(IWMReaderAdvanced2 *self) StopBuffering;
-				public function HRESULT(IWMReaderAdvanced2 *self, IStream* pStream, IWMReaderCallback* pCallback, void* pvContext) OpenStream;
+				public new function HRESULT(IWMReaderAdvanced2 *self, WMT_PLAY_MODE Mode) SetPlayMode;
+				public new function HRESULT(IWMReaderAdvanced2 *self, WMT_PLAY_MODE* pMode) GetPlayMode;
+				public new function HRESULT(IWMReaderAdvanced2 *self, uint32* pdwPercent, uint64* pcnsBuffering) GetBufferProgress;
+				public new function HRESULT(IWMReaderAdvanced2 *self, uint32* pdwPercent, uint64* pqwBytesDownloaded, uint64* pcnsDownload) GetDownloadProgress;
+				public new function HRESULT(IWMReaderAdvanced2 *self, uint32* pdwPercent) GetSaveAsProgress;
+				public new function HRESULT(IWMReaderAdvanced2 *self, PWSTR pwszFilename) SaveFileAs;
+				public new function HRESULT(IWMReaderAdvanced2 *self, char16* pwszProtocol, uint32* pcchProtocol) GetProtocolName;
+				public new function HRESULT(IWMReaderAdvanced2 *self, uint16 wMarkerIndex, uint64 cnsDuration, float fRate, void* pvContext) StartAtMarker;
+				public new function HRESULT(IWMReaderAdvanced2 *self, uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetOutputSetting;
+				public new function HRESULT(IWMReaderAdvanced2 *self, uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetOutputSetting;
+				public new function HRESULT(IWMReaderAdvanced2 *self, uint64 cnsStart, uint64 cnsDuration, float fRate) Preroll;
+				public new function HRESULT(IWMReaderAdvanced2 *self, BOOL fLogClientID) SetLogClientID;
+				public new function HRESULT(IWMReaderAdvanced2 *self, BOOL* pfLogClientID) GetLogClientID;
+				public new function HRESULT(IWMReaderAdvanced2 *self) StopBuffering;
+				public new function HRESULT(IWMReaderAdvanced2 *self, IStream* pStream, IWMReaderCallback* pCallback, void* pvContext) OpenStream;
 			}
 		}
 		[CRepr]
@@ -1985,12 +3262,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5dc0674b, 0xf04b, 0x4a4e, 0x9f, 0x2a, 0xb1, 0xaf, 0xde, 0x2c, 0x81, 0x00);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT StopNetStreaming() mut
+			{
+				return VT.StopNetStreaming(&this);
+			}
+			public HRESULT StartAtPosition(uint16 wStreamNum, void* pvOffsetStart, void* pvDuration, WMT_OFFSET_FORMAT dwOffsetFormat, float fRate, void* pvContext) mut
+			{
+				return VT.StartAtPosition(&this, wStreamNum, pvOffsetStart, pvDuration, dwOffsetFormat, fRate, pvContext);
+			}
 			[CRepr]
 			public struct VTable : IWMReaderAdvanced2.VTable
 			{
-				public function HRESULT(IWMReaderAdvanced3 *self) StopNetStreaming;
-				public function HRESULT(IWMReaderAdvanced3 *self, uint16 wStreamNum, void* pvOffsetStart, void* pvDuration, WMT_OFFSET_FORMAT dwOffsetFormat, float fRate, void* pvContext) StartAtPosition;
+				public new function HRESULT(IWMReaderAdvanced3 *self) StopNetStreaming;
+				public new function HRESULT(IWMReaderAdvanced3 *self, uint16 wStreamNum, void* pvOffsetStart, void* pvDuration, WMT_OFFSET_FORMAT dwOffsetFormat, float fRate, void* pvContext) StartAtPosition;
 			}
 		}
 		[CRepr]
@@ -1998,19 +3284,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x945a76a2, 0x12ae, 0x4d48, 0xbd, 0x3c, 0xcd, 0x1d, 0x90, 0x39, 0x9b, 0x85);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetLanguageCount(uint32 dwOutputNum, uint16* pwLanguageCount) mut
+			{
+				return VT.GetLanguageCount(&this, dwOutputNum, pwLanguageCount);
+			}
+			public HRESULT GetLanguage(uint32 dwOutputNum, uint16 wLanguage, char16* pwszLanguageString, uint16* pcchLanguageStringLength) mut
+			{
+				return VT.GetLanguage(&this, dwOutputNum, wLanguage, pwszLanguageString, pcchLanguageStringLength);
+			}
+			public HRESULT GetMaxSpeedFactor(double* pdblFactor) mut
+			{
+				return VT.GetMaxSpeedFactor(&this, pdblFactor);
+			}
+			public HRESULT IsUsingFastCache(BOOL* pfUsingFastCache) mut
+			{
+				return VT.IsUsingFastCache(&this, pfUsingFastCache);
+			}
+			public HRESULT AddLogParam(PWSTR wszNameSpace, PWSTR wszName, PWSTR wszValue) mut
+			{
+				return VT.AddLogParam(&this, wszNameSpace, wszName, wszValue);
+			}
+			public HRESULT SendLogParams() mut
+			{
+				return VT.SendLogParams(&this);
+			}
+			public HRESULT CanSaveFileAs(BOOL* pfCanSave) mut
+			{
+				return VT.CanSaveFileAs(&this, pfCanSave);
+			}
+			public HRESULT CancelSaveFileAs() mut
+			{
+				return VT.CancelSaveFileAs(&this);
+			}
+			public HRESULT GetURL(char16* pwszURL, uint32* pcchURL) mut
+			{
+				return VT.GetURL(&this, pwszURL, pcchURL);
+			}
 			[CRepr]
 			public struct VTable : IWMReaderAdvanced3.VTable
 			{
-				public function HRESULT(IWMReaderAdvanced4 *self, uint32 dwOutputNum, uint16* pwLanguageCount) GetLanguageCount;
-				public function HRESULT(IWMReaderAdvanced4 *self, uint32 dwOutputNum, uint16 wLanguage, char16* pwszLanguageString, uint16* pcchLanguageStringLength) GetLanguage;
-				public function HRESULT(IWMReaderAdvanced4 *self, double* pdblFactor) GetMaxSpeedFactor;
-				public function HRESULT(IWMReaderAdvanced4 *self, BOOL* pfUsingFastCache) IsUsingFastCache;
-				public function HRESULT(IWMReaderAdvanced4 *self, PWSTR wszNameSpace, PWSTR wszName, PWSTR wszValue) AddLogParam;
-				public function HRESULT(IWMReaderAdvanced4 *self) SendLogParams;
-				public function HRESULT(IWMReaderAdvanced4 *self, BOOL* pfCanSave) CanSaveFileAs;
-				public function HRESULT(IWMReaderAdvanced4 *self) CancelSaveFileAs;
-				public function HRESULT(IWMReaderAdvanced4 *self, char16* pwszURL, uint32* pcchURL) GetURL;
+				public new function HRESULT(IWMReaderAdvanced4 *self, uint32 dwOutputNum, uint16* pwLanguageCount) GetLanguageCount;
+				public new function HRESULT(IWMReaderAdvanced4 *self, uint32 dwOutputNum, uint16 wLanguage, char16* pwszLanguageString, uint16* pcchLanguageStringLength) GetLanguage;
+				public new function HRESULT(IWMReaderAdvanced4 *self, double* pdblFactor) GetMaxSpeedFactor;
+				public new function HRESULT(IWMReaderAdvanced4 *self, BOOL* pfUsingFastCache) IsUsingFastCache;
+				public new function HRESULT(IWMReaderAdvanced4 *self, PWSTR wszNameSpace, PWSTR wszName, PWSTR wszValue) AddLogParam;
+				public new function HRESULT(IWMReaderAdvanced4 *self) SendLogParams;
+				public new function HRESULT(IWMReaderAdvanced4 *self, BOOL* pfCanSave) CanSaveFileAs;
+				public new function HRESULT(IWMReaderAdvanced4 *self) CancelSaveFileAs;
+				public new function HRESULT(IWMReaderAdvanced4 *self, char16* pwszURL, uint32* pcchURL) GetURL;
 			}
 		}
 		[CRepr]
@@ -2018,11 +3341,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x24c44db0, 0x55d1, 0x49ae, 0xa5, 0xcc, 0xf1, 0x38, 0x15, 0xe3, 0x63, 0x63);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetPlayerHook(uint32 dwOutputNum, IWMPlayerHook* pHook) mut
+			{
+				return VT.SetPlayerHook(&this, dwOutputNum, pHook);
+			}
 			[CRepr]
 			public struct VTable : IWMReaderAdvanced4.VTable
 			{
-				public function HRESULT(IWMReaderAdvanced5 *self, uint32 dwOutputNum, IWMPlayerHook* pHook) SetPlayerHook;
+				public new function HRESULT(IWMReaderAdvanced5 *self, uint32 dwOutputNum, IWMPlayerHook* pHook) SetPlayerHook;
 			}
 		}
 		[CRepr]
@@ -2030,11 +3358,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x18a2e7f8, 0x428f, 0x4acd, 0x8a, 0x00, 0xe6, 0x46, 0x39, 0xbc, 0x93, 0xde);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetProtectStreamSamples(uint8* pbCertificate, uint32 cbCertificate, uint32 dwCertificateType, uint32 dwFlags, uint8* pbInitializationVector, uint32* pcbInitializationVector) mut
+			{
+				return VT.SetProtectStreamSamples(&this, pbCertificate, cbCertificate, dwCertificateType, dwFlags, pbInitializationVector, pcbInitializationVector);
+			}
 			[CRepr]
 			public struct VTable : IWMReaderAdvanced5.VTable
 			{
-				public function HRESULT(IWMReaderAdvanced6 *self, uint8* pbCertificate, uint32 cbCertificate, uint32 dwCertificateType, uint32 dwFlags, uint8* pbInitializationVector, uint32* pcbInitializationVector) SetProtectStreamSamples;
+				public new function HRESULT(IWMReaderAdvanced6 *self, uint8* pbCertificate, uint32 cbCertificate, uint32 dwCertificateType, uint32 dwFlags, uint8* pbInitializationVector, uint32* pcbInitializationVector) SetProtectStreamSamples;
 			}
 		}
 		[CRepr]
@@ -2042,11 +3375,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe5b7ca9a, 0x0f1c, 0x4f66, 0x90, 0x02, 0x74, 0xec, 0x50, 0xd8, 0xb3, 0x04);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT PreDecode() mut
+			{
+				return VT.PreDecode(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMPlayerHook *self) PreDecode;
+				public new function HRESULT(IWMPlayerHook *self) PreDecode;
 			}
 		}
 		[CRepr]
@@ -2054,12 +3392,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9f762fa7, 0xa22e, 0x428d, 0x93, 0xc9, 0xac, 0x82, 0xf3, 0xaa, 0xfe, 0x5a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AllocateForStreamEx(uint16 wStreamNum, uint32 cbBuffer, INSSBuffer** ppBuffer, uint32 dwFlags, uint64 cnsSampleTime, uint64 cnsSampleDuration, void* pvContext) mut
+			{
+				return VT.AllocateForStreamEx(&this, wStreamNum, cbBuffer, ppBuffer, dwFlags, cnsSampleTime, cnsSampleDuration, pvContext);
+			}
+			public HRESULT AllocateForOutputEx(uint32 dwOutputNum, uint32 cbBuffer, INSSBuffer** ppBuffer, uint32 dwFlags, uint64 cnsSampleTime, uint64 cnsSampleDuration, void* pvContext) mut
+			{
+				return VT.AllocateForOutputEx(&this, dwOutputNum, cbBuffer, ppBuffer, dwFlags, cnsSampleTime, cnsSampleDuration, pvContext);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMReaderAllocatorEx *self, uint16 wStreamNum, uint32 cbBuffer, INSSBuffer** ppBuffer, uint32 dwFlags, uint64 cnsSampleTime, uint64 cnsSampleDuration, void* pvContext) AllocateForStreamEx;
-				public function HRESULT(IWMReaderAllocatorEx *self, uint32 dwOutputNum, uint32 cbBuffer, INSSBuffer** ppBuffer, uint32 dwFlags, uint64 cnsSampleTime, uint64 cnsSampleDuration, void* pvContext) AllocateForOutputEx;
+				public new function HRESULT(IWMReaderAllocatorEx *self, uint16 wStreamNum, uint32 cbBuffer, INSSBuffer** ppBuffer, uint32 dwFlags, uint64 cnsSampleTime, uint64 cnsSampleDuration, void* pvContext) AllocateForStreamEx;
+				public new function HRESULT(IWMReaderAllocatorEx *self, uint32 dwOutputNum, uint32 cbBuffer, INSSBuffer** ppBuffer, uint32 dwFlags, uint64 cnsSampleTime, uint64 cnsSampleDuration, void* pvContext) AllocateForOutputEx;
 			}
 		}
 		[CRepr]
@@ -2067,11 +3414,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfdbe5592, 0x81a1, 0x41ea, 0x93, 0xbd, 0x73, 0x5c, 0xad, 0x1a, 0xdc, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT TryOutputProps(uint32 dwOutputNum, IWMOutputMediaProps* pOutput) mut
+			{
+				return VT.TryOutputProps(&this, dwOutputNum, pOutput);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMReaderTypeNegotiation *self, uint32 dwOutputNum, IWMOutputMediaProps* pOutput) TryOutputProps;
+				public new function HRESULT(IWMReaderTypeNegotiation *self, uint32 dwOutputNum, IWMOutputMediaProps* pOutput) TryOutputProps;
 			}
 		}
 		[CRepr]
@@ -2079,16 +3431,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406beb, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnStreamSample(uint16 wStreamNum, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, INSSBuffer* pSample, void* pvContext) mut
+			{
+				return VT.OnStreamSample(&this, wStreamNum, cnsSampleTime, cnsSampleDuration, dwFlags, pSample, pvContext);
+			}
+			public HRESULT OnTime(uint64 cnsCurrentTime, void* pvContext) mut
+			{
+				return VT.OnTime(&this, cnsCurrentTime, pvContext);
+			}
+			public HRESULT OnStreamSelection(uint16 wStreamCount, uint16* pStreamNumbers, WMT_STREAM_SELECTION* pSelections, void* pvContext) mut
+			{
+				return VT.OnStreamSelection(&this, wStreamCount, pStreamNumbers, pSelections, pvContext);
+			}
+			public HRESULT OnOutputPropsChanged(uint32 dwOutputNum, WM_MEDIA_TYPE* pMediaType, void* pvContext) mut
+			{
+				return VT.OnOutputPropsChanged(&this, dwOutputNum, pMediaType, pvContext);
+			}
+			public HRESULT AllocateForStream(uint16 wStreamNum, uint32 cbBuffer, INSSBuffer** ppBuffer, void* pvContext) mut
+			{
+				return VT.AllocateForStream(&this, wStreamNum, cbBuffer, ppBuffer, pvContext);
+			}
+			public HRESULT AllocateForOutput(uint32 dwOutputNum, uint32 cbBuffer, INSSBuffer** ppBuffer, void* pvContext) mut
+			{
+				return VT.AllocateForOutput(&this, dwOutputNum, cbBuffer, ppBuffer, pvContext);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMReaderCallbackAdvanced *self, uint16 wStreamNum, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, INSSBuffer* pSample, void* pvContext) OnStreamSample;
-				public function HRESULT(IWMReaderCallbackAdvanced *self, uint64 cnsCurrentTime, void* pvContext) OnTime;
-				public function HRESULT(IWMReaderCallbackAdvanced *self, uint16 wStreamCount, uint16* pStreamNumbers, WMT_STREAM_SELECTION* pSelections, void* pvContext) OnStreamSelection;
-				public function HRESULT(IWMReaderCallbackAdvanced *self, uint32 dwOutputNum, WM_MEDIA_TYPE* pMediaType, void* pvContext) OnOutputPropsChanged;
-				public function HRESULT(IWMReaderCallbackAdvanced *self, uint16 wStreamNum, uint32 cbBuffer, INSSBuffer** ppBuffer, void* pvContext) AllocateForStream;
-				public function HRESULT(IWMReaderCallbackAdvanced *self, uint32 dwOutputNum, uint32 cbBuffer, INSSBuffer** ppBuffer, void* pvContext) AllocateForOutput;
+				public new function HRESULT(IWMReaderCallbackAdvanced *self, uint16 wStreamNum, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, INSSBuffer* pSample, void* pvContext) OnStreamSample;
+				public new function HRESULT(IWMReaderCallbackAdvanced *self, uint64 cnsCurrentTime, void* pvContext) OnTime;
+				public new function HRESULT(IWMReaderCallbackAdvanced *self, uint16 wStreamCount, uint16* pStreamNumbers, WMT_STREAM_SELECTION* pSelections, void* pvContext) OnStreamSelection;
+				public new function HRESULT(IWMReaderCallbackAdvanced *self, uint32 dwOutputNum, WM_MEDIA_TYPE* pMediaType, void* pvContext) OnOutputPropsChanged;
+				public new function HRESULT(IWMReaderCallbackAdvanced *self, uint16 wStreamNum, uint32 cbBuffer, INSSBuffer** ppBuffer, void* pvContext) AllocateForStream;
+				public new function HRESULT(IWMReaderCallbackAdvanced *self, uint32 dwOutputNum, uint32 cbBuffer, INSSBuffer** ppBuffer, void* pvContext) AllocateForOutput;
 			}
 		}
 		[CRepr]
@@ -2096,18 +3473,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd2827540, 0x3ee7, 0x432c, 0xb1, 0x4c, 0xdc, 0x17, 0xf0, 0x85, 0xd3, 0xb3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AcquireLicense(uint32 dwFlags) mut
+			{
+				return VT.AcquireLicense(&this, dwFlags);
+			}
+			public HRESULT CancelLicenseAcquisition() mut
+			{
+				return VT.CancelLicenseAcquisition(&this);
+			}
+			public HRESULT Individualize(uint32 dwFlags) mut
+			{
+				return VT.Individualize(&this, dwFlags);
+			}
+			public HRESULT CancelIndividualization() mut
+			{
+				return VT.CancelIndividualization(&this);
+			}
+			public HRESULT MonitorLicenseAcquisition() mut
+			{
+				return VT.MonitorLicenseAcquisition(&this);
+			}
+			public HRESULT CancelMonitorLicenseAcquisition() mut
+			{
+				return VT.CancelMonitorLicenseAcquisition(&this);
+			}
+			public HRESULT SetDRMProperty(PWSTR pwstrName, WMT_ATTR_DATATYPE dwType, uint8* pValue, uint16 cbLength) mut
+			{
+				return VT.SetDRMProperty(&this, pwstrName, dwType, pValue, cbLength);
+			}
+			public HRESULT GetDRMProperty(PWSTR pwstrName, WMT_ATTR_DATATYPE* pdwType, uint8* pValue, uint16* pcbLength) mut
+			{
+				return VT.GetDRMProperty(&this, pwstrName, pdwType, pValue, pcbLength);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMDRMReader *self, uint32 dwFlags) AcquireLicense;
-				public function HRESULT(IWMDRMReader *self) CancelLicenseAcquisition;
-				public function HRESULT(IWMDRMReader *self, uint32 dwFlags) Individualize;
-				public function HRESULT(IWMDRMReader *self) CancelIndividualization;
-				public function HRESULT(IWMDRMReader *self) MonitorLicenseAcquisition;
-				public function HRESULT(IWMDRMReader *self) CancelMonitorLicenseAcquisition;
-				public function HRESULT(IWMDRMReader *self, PWSTR pwstrName, WMT_ATTR_DATATYPE dwType, uint8* pValue, uint16 cbLength) SetDRMProperty;
-				public function HRESULT(IWMDRMReader *self, PWSTR pwstrName, WMT_ATTR_DATATYPE* pdwType, uint8* pValue, uint16* pcbLength) GetDRMProperty;
+				public new function HRESULT(IWMDRMReader *self, uint32 dwFlags) AcquireLicense;
+				public new function HRESULT(IWMDRMReader *self) CancelLicenseAcquisition;
+				public new function HRESULT(IWMDRMReader *self, uint32 dwFlags) Individualize;
+				public new function HRESULT(IWMDRMReader *self) CancelIndividualization;
+				public new function HRESULT(IWMDRMReader *self) MonitorLicenseAcquisition;
+				public new function HRESULT(IWMDRMReader *self) CancelMonitorLicenseAcquisition;
+				public new function HRESULT(IWMDRMReader *self, PWSTR pwstrName, WMT_ATTR_DATATYPE dwType, uint8* pValue, uint16 cbLength) SetDRMProperty;
+				public new function HRESULT(IWMDRMReader *self, PWSTR pwstrName, WMT_ATTR_DATATYPE* pdwType, uint8* pValue, uint16* pcbLength) GetDRMProperty;
 			}
 		}
 		[CRepr]
@@ -2115,14 +3525,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbefe7a75, 0x9f1d, 0x4075, 0xb9, 0xd9, 0xa3, 0xc3, 0x7b, 0xda, 0x49, 0xa0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetEvaluateOutputLevelLicenses(BOOL fEvaluate) mut
+			{
+				return VT.SetEvaluateOutputLevelLicenses(&this, fEvaluate);
+			}
+			public HRESULT GetPlayOutputLevels(DRM_PLAY_OPL* pPlayOPL, uint32* pcbLength, uint32* pdwMinAppComplianceLevel) mut
+			{
+				return VT.GetPlayOutputLevels(&this, pPlayOPL, pcbLength, pdwMinAppComplianceLevel);
+			}
+			public HRESULT GetCopyOutputLevels(DRM_COPY_OPL* pCopyOPL, uint32* pcbLength, uint32* pdwMinAppComplianceLevel) mut
+			{
+				return VT.GetCopyOutputLevels(&this, pCopyOPL, pcbLength, pdwMinAppComplianceLevel);
+			}
+			public HRESULT TryNextLicense() mut
+			{
+				return VT.TryNextLicense(&this);
+			}
 			[CRepr]
 			public struct VTable : IWMDRMReader.VTable
 			{
-				public function HRESULT(IWMDRMReader2 *self, BOOL fEvaluate) SetEvaluateOutputLevelLicenses;
-				public function HRESULT(IWMDRMReader2 *self, DRM_PLAY_OPL* pPlayOPL, uint32* pcbLength, uint32* pdwMinAppComplianceLevel) GetPlayOutputLevels;
-				public function HRESULT(IWMDRMReader2 *self, DRM_COPY_OPL* pCopyOPL, uint32* pcbLength, uint32* pdwMinAppComplianceLevel) GetCopyOutputLevels;
-				public function HRESULT(IWMDRMReader2 *self) TryNextLicense;
+				public new function HRESULT(IWMDRMReader2 *self, BOOL fEvaluate) SetEvaluateOutputLevelLicenses;
+				public new function HRESULT(IWMDRMReader2 *self, DRM_PLAY_OPL* pPlayOPL, uint32* pcbLength, uint32* pdwMinAppComplianceLevel) GetPlayOutputLevels;
+				public new function HRESULT(IWMDRMReader2 *self, DRM_COPY_OPL* pCopyOPL, uint32* pcbLength, uint32* pdwMinAppComplianceLevel) GetCopyOutputLevels;
+				public new function HRESULT(IWMDRMReader2 *self) TryNextLicense;
 			}
 		}
 		[CRepr]
@@ -2130,11 +3557,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe08672de, 0xf1e7, 0x4ff4, 0xa0, 0xa3, 0xfc, 0x4b, 0x08, 0xe4, 0xca, 0xf8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetInclusionList(Guid** ppGuids, uint32* pcGuids) mut
+			{
+				return VT.GetInclusionList(&this, ppGuids, pcGuids);
+			}
 			[CRepr]
 			public struct VTable : IWMDRMReader2.VTable
 			{
-				public function HRESULT(IWMDRMReader3 *self, Guid** ppGuids, uint32* pcGuids) GetInclusionList;
+				public new function HRESULT(IWMDRMReader3 *self, Guid** ppGuids, uint32* pcGuids) GetInclusionList;
 			}
 		}
 		[CRepr]
@@ -2142,14 +3574,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf28c0300, 0x9baa, 0x4477, 0xa8, 0x46, 0x17, 0x44, 0xd9, 0xcb, 0xf5, 0x33);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT InitPlaylistBurn(uint32 cFiles, PWSTR* ppwszFilenames, IWMStatusCallback* pCallback, void* pvContext) mut
+			{
+				return VT.InitPlaylistBurn(&this, cFiles, ppwszFilenames, pCallback, pvContext);
+			}
+			public HRESULT GetInitResults(uint32 cFiles, HRESULT* phrStati) mut
+			{
+				return VT.GetInitResults(&this, cFiles, phrStati);
+			}
+			public HRESULT Cancel() mut
+			{
+				return VT.Cancel(&this);
+			}
+			public HRESULT EndPlaylistBurn(HRESULT hrBurnResult) mut
+			{
+				return VT.EndPlaylistBurn(&this, hrBurnResult);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMReaderPlaylistBurn *self, uint32 cFiles, PWSTR* ppwszFilenames, IWMStatusCallback* pCallback, void* pvContext) InitPlaylistBurn;
-				public function HRESULT(IWMReaderPlaylistBurn *self, uint32 cFiles, HRESULT* phrStati) GetInitResults;
-				public function HRESULT(IWMReaderPlaylistBurn *self) Cancel;
-				public function HRESULT(IWMReaderPlaylistBurn *self, HRESULT hrBurnResult) EndPlaylistBurn;
+				public new function HRESULT(IWMReaderPlaylistBurn *self, uint32 cFiles, PWSTR* ppwszFilenames, IWMStatusCallback* pCallback, void* pvContext) InitPlaylistBurn;
+				public new function HRESULT(IWMReaderPlaylistBurn *self, uint32 cFiles, HRESULT* phrStati) GetInitResults;
+				public new function HRESULT(IWMReaderPlaylistBurn *self) Cancel;
+				public new function HRESULT(IWMReaderPlaylistBurn *self, HRESULT hrBurnResult) EndPlaylistBurn;
 			}
 		}
 		[CRepr]
@@ -2157,43 +3606,176 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406bec, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetBufferingTime(uint64* pcnsBufferingTime) mut
+			{
+				return VT.GetBufferingTime(&this, pcnsBufferingTime);
+			}
+			public HRESULT SetBufferingTime(uint64 cnsBufferingTime) mut
+			{
+				return VT.SetBufferingTime(&this, cnsBufferingTime);
+			}
+			public HRESULT GetUDPPortRanges(WM_PORT_NUMBER_RANGE* pRangeArray, uint32* pcRanges) mut
+			{
+				return VT.GetUDPPortRanges(&this, pRangeArray, pcRanges);
+			}
+			public HRESULT SetUDPPortRanges(WM_PORT_NUMBER_RANGE* pRangeArray, uint32 cRanges) mut
+			{
+				return VT.SetUDPPortRanges(&this, pRangeArray, cRanges);
+			}
+			public HRESULT GetProxySettings(PWSTR pwszProtocol, WMT_PROXY_SETTINGS* pProxySetting) mut
+			{
+				return VT.GetProxySettings(&this, pwszProtocol, pProxySetting);
+			}
+			public HRESULT SetProxySettings(PWSTR pwszProtocol, WMT_PROXY_SETTINGS ProxySetting) mut
+			{
+				return VT.SetProxySettings(&this, pwszProtocol, ProxySetting);
+			}
+			public HRESULT GetProxyHostName(PWSTR pwszProtocol, char16* pwszHostName, uint32* pcchHostName) mut
+			{
+				return VT.GetProxyHostName(&this, pwszProtocol, pwszHostName, pcchHostName);
+			}
+			public HRESULT SetProxyHostName(PWSTR pwszProtocol, PWSTR pwszHostName) mut
+			{
+				return VT.SetProxyHostName(&this, pwszProtocol, pwszHostName);
+			}
+			public HRESULT GetProxyPort(PWSTR pwszProtocol, uint32* pdwPort) mut
+			{
+				return VT.GetProxyPort(&this, pwszProtocol, pdwPort);
+			}
+			public HRESULT SetProxyPort(PWSTR pwszProtocol, uint32 dwPort) mut
+			{
+				return VT.SetProxyPort(&this, pwszProtocol, dwPort);
+			}
+			public HRESULT GetProxyExceptionList(PWSTR pwszProtocol, char16* pwszExceptionList, uint32* pcchExceptionList) mut
+			{
+				return VT.GetProxyExceptionList(&this, pwszProtocol, pwszExceptionList, pcchExceptionList);
+			}
+			public HRESULT SetProxyExceptionList(PWSTR pwszProtocol, PWSTR pwszExceptionList) mut
+			{
+				return VT.SetProxyExceptionList(&this, pwszProtocol, pwszExceptionList);
+			}
+			public HRESULT GetProxyBypassForLocal(PWSTR pwszProtocol, BOOL* pfBypassForLocal) mut
+			{
+				return VT.GetProxyBypassForLocal(&this, pwszProtocol, pfBypassForLocal);
+			}
+			public HRESULT SetProxyBypassForLocal(PWSTR pwszProtocol, BOOL fBypassForLocal) mut
+			{
+				return VT.SetProxyBypassForLocal(&this, pwszProtocol, fBypassForLocal);
+			}
+			public HRESULT GetForceRerunAutoProxyDetection(BOOL* pfForceRerunDetection) mut
+			{
+				return VT.GetForceRerunAutoProxyDetection(&this, pfForceRerunDetection);
+			}
+			public HRESULT SetForceRerunAutoProxyDetection(BOOL fForceRerunDetection) mut
+			{
+				return VT.SetForceRerunAutoProxyDetection(&this, fForceRerunDetection);
+			}
+			public HRESULT GetEnableMulticast(BOOL* pfEnableMulticast) mut
+			{
+				return VT.GetEnableMulticast(&this, pfEnableMulticast);
+			}
+			public HRESULT SetEnableMulticast(BOOL fEnableMulticast) mut
+			{
+				return VT.SetEnableMulticast(&this, fEnableMulticast);
+			}
+			public HRESULT GetEnableHTTP(BOOL* pfEnableHTTP) mut
+			{
+				return VT.GetEnableHTTP(&this, pfEnableHTTP);
+			}
+			public HRESULT SetEnableHTTP(BOOL fEnableHTTP) mut
+			{
+				return VT.SetEnableHTTP(&this, fEnableHTTP);
+			}
+			public HRESULT GetEnableUDP(BOOL* pfEnableUDP) mut
+			{
+				return VT.GetEnableUDP(&this, pfEnableUDP);
+			}
+			public HRESULT SetEnableUDP(BOOL fEnableUDP) mut
+			{
+				return VT.SetEnableUDP(&this, fEnableUDP);
+			}
+			public HRESULT GetEnableTCP(BOOL* pfEnableTCP) mut
+			{
+				return VT.GetEnableTCP(&this, pfEnableTCP);
+			}
+			public HRESULT SetEnableTCP(BOOL fEnableTCP) mut
+			{
+				return VT.SetEnableTCP(&this, fEnableTCP);
+			}
+			public HRESULT ResetProtocolRollover() mut
+			{
+				return VT.ResetProtocolRollover(&this);
+			}
+			public HRESULT GetConnectionBandwidth(uint32* pdwConnectionBandwidth) mut
+			{
+				return VT.GetConnectionBandwidth(&this, pdwConnectionBandwidth);
+			}
+			public HRESULT SetConnectionBandwidth(uint32 dwConnectionBandwidth) mut
+			{
+				return VT.SetConnectionBandwidth(&this, dwConnectionBandwidth);
+			}
+			public HRESULT GetNumProtocolsSupported(uint32* pcProtocols) mut
+			{
+				return VT.GetNumProtocolsSupported(&this, pcProtocols);
+			}
+			public HRESULT GetSupportedProtocolName(uint32 dwProtocolNum, char16* pwszProtocolName, uint32* pcchProtocolName) mut
+			{
+				return VT.GetSupportedProtocolName(&this, dwProtocolNum, pwszProtocolName, pcchProtocolName);
+			}
+			public HRESULT AddLoggingUrl(PWSTR pwszUrl) mut
+			{
+				return VT.AddLoggingUrl(&this, pwszUrl);
+			}
+			public HRESULT GetLoggingUrl(uint32 dwIndex, char16* pwszUrl, uint32* pcchUrl) mut
+			{
+				return VT.GetLoggingUrl(&this, dwIndex, pwszUrl, pcchUrl);
+			}
+			public HRESULT GetLoggingUrlCount(uint32* pdwUrlCount) mut
+			{
+				return VT.GetLoggingUrlCount(&this, pdwUrlCount);
+			}
+			public HRESULT ResetLoggingUrlList() mut
+			{
+				return VT.ResetLoggingUrlList(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMReaderNetworkConfig *self, uint64* pcnsBufferingTime) GetBufferingTime;
-				public function HRESULT(IWMReaderNetworkConfig *self, uint64 cnsBufferingTime) SetBufferingTime;
-				public function HRESULT(IWMReaderNetworkConfig *self, WM_PORT_NUMBER_RANGE* pRangeArray, uint32* pcRanges) GetUDPPortRanges;
-				public function HRESULT(IWMReaderNetworkConfig *self, WM_PORT_NUMBER_RANGE* pRangeArray, uint32 cRanges) SetUDPPortRanges;
-				public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, WMT_PROXY_SETTINGS* pProxySetting) GetProxySettings;
-				public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, WMT_PROXY_SETTINGS ProxySetting) SetProxySettings;
-				public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, char16* pwszHostName, uint32* pcchHostName) GetProxyHostName;
-				public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, PWSTR pwszHostName) SetProxyHostName;
-				public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, uint32* pdwPort) GetProxyPort;
-				public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, uint32 dwPort) SetProxyPort;
-				public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, char16* pwszExceptionList, uint32* pcchExceptionList) GetProxyExceptionList;
-				public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, PWSTR pwszExceptionList) SetProxyExceptionList;
-				public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, BOOL* pfBypassForLocal) GetProxyBypassForLocal;
-				public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, BOOL fBypassForLocal) SetProxyBypassForLocal;
-				public function HRESULT(IWMReaderNetworkConfig *self, BOOL* pfForceRerunDetection) GetForceRerunAutoProxyDetection;
-				public function HRESULT(IWMReaderNetworkConfig *self, BOOL fForceRerunDetection) SetForceRerunAutoProxyDetection;
-				public function HRESULT(IWMReaderNetworkConfig *self, BOOL* pfEnableMulticast) GetEnableMulticast;
-				public function HRESULT(IWMReaderNetworkConfig *self, BOOL fEnableMulticast) SetEnableMulticast;
-				public function HRESULT(IWMReaderNetworkConfig *self, BOOL* pfEnableHTTP) GetEnableHTTP;
-				public function HRESULT(IWMReaderNetworkConfig *self, BOOL fEnableHTTP) SetEnableHTTP;
-				public function HRESULT(IWMReaderNetworkConfig *self, BOOL* pfEnableUDP) GetEnableUDP;
-				public function HRESULT(IWMReaderNetworkConfig *self, BOOL fEnableUDP) SetEnableUDP;
-				public function HRESULT(IWMReaderNetworkConfig *self, BOOL* pfEnableTCP) GetEnableTCP;
-				public function HRESULT(IWMReaderNetworkConfig *self, BOOL fEnableTCP) SetEnableTCP;
-				public function HRESULT(IWMReaderNetworkConfig *self) ResetProtocolRollover;
-				public function HRESULT(IWMReaderNetworkConfig *self, uint32* pdwConnectionBandwidth) GetConnectionBandwidth;
-				public function HRESULT(IWMReaderNetworkConfig *self, uint32 dwConnectionBandwidth) SetConnectionBandwidth;
-				public function HRESULT(IWMReaderNetworkConfig *self, uint32* pcProtocols) GetNumProtocolsSupported;
-				public function HRESULT(IWMReaderNetworkConfig *self, uint32 dwProtocolNum, char16* pwszProtocolName, uint32* pcchProtocolName) GetSupportedProtocolName;
-				public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszUrl) AddLoggingUrl;
-				public function HRESULT(IWMReaderNetworkConfig *self, uint32 dwIndex, char16* pwszUrl, uint32* pcchUrl) GetLoggingUrl;
-				public function HRESULT(IWMReaderNetworkConfig *self, uint32* pdwUrlCount) GetLoggingUrlCount;
-				public function HRESULT(IWMReaderNetworkConfig *self) ResetLoggingUrlList;
+				public new function HRESULT(IWMReaderNetworkConfig *self, uint64* pcnsBufferingTime) GetBufferingTime;
+				public new function HRESULT(IWMReaderNetworkConfig *self, uint64 cnsBufferingTime) SetBufferingTime;
+				public new function HRESULT(IWMReaderNetworkConfig *self, WM_PORT_NUMBER_RANGE* pRangeArray, uint32* pcRanges) GetUDPPortRanges;
+				public new function HRESULT(IWMReaderNetworkConfig *self, WM_PORT_NUMBER_RANGE* pRangeArray, uint32 cRanges) SetUDPPortRanges;
+				public new function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, WMT_PROXY_SETTINGS* pProxySetting) GetProxySettings;
+				public new function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, WMT_PROXY_SETTINGS ProxySetting) SetProxySettings;
+				public new function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, char16* pwszHostName, uint32* pcchHostName) GetProxyHostName;
+				public new function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, PWSTR pwszHostName) SetProxyHostName;
+				public new function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, uint32* pdwPort) GetProxyPort;
+				public new function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, uint32 dwPort) SetProxyPort;
+				public new function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, char16* pwszExceptionList, uint32* pcchExceptionList) GetProxyExceptionList;
+				public new function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, PWSTR pwszExceptionList) SetProxyExceptionList;
+				public new function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, BOOL* pfBypassForLocal) GetProxyBypassForLocal;
+				public new function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, BOOL fBypassForLocal) SetProxyBypassForLocal;
+				public new function HRESULT(IWMReaderNetworkConfig *self, BOOL* pfForceRerunDetection) GetForceRerunAutoProxyDetection;
+				public new function HRESULT(IWMReaderNetworkConfig *self, BOOL fForceRerunDetection) SetForceRerunAutoProxyDetection;
+				public new function HRESULT(IWMReaderNetworkConfig *self, BOOL* pfEnableMulticast) GetEnableMulticast;
+				public new function HRESULT(IWMReaderNetworkConfig *self, BOOL fEnableMulticast) SetEnableMulticast;
+				public new function HRESULT(IWMReaderNetworkConfig *self, BOOL* pfEnableHTTP) GetEnableHTTP;
+				public new function HRESULT(IWMReaderNetworkConfig *self, BOOL fEnableHTTP) SetEnableHTTP;
+				public new function HRESULT(IWMReaderNetworkConfig *self, BOOL* pfEnableUDP) GetEnableUDP;
+				public new function HRESULT(IWMReaderNetworkConfig *self, BOOL fEnableUDP) SetEnableUDP;
+				public new function HRESULT(IWMReaderNetworkConfig *self, BOOL* pfEnableTCP) GetEnableTCP;
+				public new function HRESULT(IWMReaderNetworkConfig *self, BOOL fEnableTCP) SetEnableTCP;
+				public new function HRESULT(IWMReaderNetworkConfig *self) ResetProtocolRollover;
+				public new function HRESULT(IWMReaderNetworkConfig *self, uint32* pdwConnectionBandwidth) GetConnectionBandwidth;
+				public new function HRESULT(IWMReaderNetworkConfig *self, uint32 dwConnectionBandwidth) SetConnectionBandwidth;
+				public new function HRESULT(IWMReaderNetworkConfig *self, uint32* pcProtocols) GetNumProtocolsSupported;
+				public new function HRESULT(IWMReaderNetworkConfig *self, uint32 dwProtocolNum, char16* pwszProtocolName, uint32* pcchProtocolName) GetSupportedProtocolName;
+				public new function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszUrl) AddLoggingUrl;
+				public new function HRESULT(IWMReaderNetworkConfig *self, uint32 dwIndex, char16* pwszUrl, uint32* pcchUrl) GetLoggingUrl;
+				public new function HRESULT(IWMReaderNetworkConfig *self, uint32* pdwUrlCount) GetLoggingUrlCount;
+				public new function HRESULT(IWMReaderNetworkConfig *self) ResetLoggingUrlList;
 			}
 		}
 		[CRepr]
@@ -2201,23 +3783,76 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd979a853, 0x042b, 0x4050, 0x83, 0x87, 0xc9, 0x39, 0xdb, 0x22, 0x01, 0x3f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetEnableContentCaching(BOOL* pfEnableContentCaching) mut
+			{
+				return VT.GetEnableContentCaching(&this, pfEnableContentCaching);
+			}
+			public HRESULT SetEnableContentCaching(BOOL fEnableContentCaching) mut
+			{
+				return VT.SetEnableContentCaching(&this, fEnableContentCaching);
+			}
+			public HRESULT GetEnableFastCache(BOOL* pfEnableFastCache) mut
+			{
+				return VT.GetEnableFastCache(&this, pfEnableFastCache);
+			}
+			public HRESULT SetEnableFastCache(BOOL fEnableFastCache) mut
+			{
+				return VT.SetEnableFastCache(&this, fEnableFastCache);
+			}
+			public HRESULT GetAcceleratedStreamingDuration(uint64* pcnsAccelDuration) mut
+			{
+				return VT.GetAcceleratedStreamingDuration(&this, pcnsAccelDuration);
+			}
+			public HRESULT SetAcceleratedStreamingDuration(uint64 cnsAccelDuration) mut
+			{
+				return VT.SetAcceleratedStreamingDuration(&this, cnsAccelDuration);
+			}
+			public HRESULT GetAutoReconnectLimit(uint32* pdwAutoReconnectLimit) mut
+			{
+				return VT.GetAutoReconnectLimit(&this, pdwAutoReconnectLimit);
+			}
+			public HRESULT SetAutoReconnectLimit(uint32 dwAutoReconnectLimit) mut
+			{
+				return VT.SetAutoReconnectLimit(&this, dwAutoReconnectLimit);
+			}
+			public HRESULT GetEnableResends(BOOL* pfEnableResends) mut
+			{
+				return VT.GetEnableResends(&this, pfEnableResends);
+			}
+			public HRESULT SetEnableResends(BOOL fEnableResends) mut
+			{
+				return VT.SetEnableResends(&this, fEnableResends);
+			}
+			public HRESULT GetEnableThinning(BOOL* pfEnableThinning) mut
+			{
+				return VT.GetEnableThinning(&this, pfEnableThinning);
+			}
+			public HRESULT SetEnableThinning(BOOL fEnableThinning) mut
+			{
+				return VT.SetEnableThinning(&this, fEnableThinning);
+			}
+			public HRESULT GetMaxNetPacketSize(uint32* pdwMaxNetPacketSize) mut
+			{
+				return VT.GetMaxNetPacketSize(&this, pdwMaxNetPacketSize);
+			}
 			[CRepr]
 			public struct VTable : IWMReaderNetworkConfig.VTable
 			{
-				public function HRESULT(IWMReaderNetworkConfig2 *self, BOOL* pfEnableContentCaching) GetEnableContentCaching;
-				public function HRESULT(IWMReaderNetworkConfig2 *self, BOOL fEnableContentCaching) SetEnableContentCaching;
-				public function HRESULT(IWMReaderNetworkConfig2 *self, BOOL* pfEnableFastCache) GetEnableFastCache;
-				public function HRESULT(IWMReaderNetworkConfig2 *self, BOOL fEnableFastCache) SetEnableFastCache;
-				public function HRESULT(IWMReaderNetworkConfig2 *self, uint64* pcnsAccelDuration) GetAcceleratedStreamingDuration;
-				public function HRESULT(IWMReaderNetworkConfig2 *self, uint64 cnsAccelDuration) SetAcceleratedStreamingDuration;
-				public function HRESULT(IWMReaderNetworkConfig2 *self, uint32* pdwAutoReconnectLimit) GetAutoReconnectLimit;
-				public function HRESULT(IWMReaderNetworkConfig2 *self, uint32 dwAutoReconnectLimit) SetAutoReconnectLimit;
-				public function HRESULT(IWMReaderNetworkConfig2 *self, BOOL* pfEnableResends) GetEnableResends;
-				public function HRESULT(IWMReaderNetworkConfig2 *self, BOOL fEnableResends) SetEnableResends;
-				public function HRESULT(IWMReaderNetworkConfig2 *self, BOOL* pfEnableThinning) GetEnableThinning;
-				public function HRESULT(IWMReaderNetworkConfig2 *self, BOOL fEnableThinning) SetEnableThinning;
-				public function HRESULT(IWMReaderNetworkConfig2 *self, uint32* pdwMaxNetPacketSize) GetMaxNetPacketSize;
+				public new function HRESULT(IWMReaderNetworkConfig2 *self, BOOL* pfEnableContentCaching) GetEnableContentCaching;
+				public new function HRESULT(IWMReaderNetworkConfig2 *self, BOOL fEnableContentCaching) SetEnableContentCaching;
+				public new function HRESULT(IWMReaderNetworkConfig2 *self, BOOL* pfEnableFastCache) GetEnableFastCache;
+				public new function HRESULT(IWMReaderNetworkConfig2 *self, BOOL fEnableFastCache) SetEnableFastCache;
+				public new function HRESULT(IWMReaderNetworkConfig2 *self, uint64* pcnsAccelDuration) GetAcceleratedStreamingDuration;
+				public new function HRESULT(IWMReaderNetworkConfig2 *self, uint64 cnsAccelDuration) SetAcceleratedStreamingDuration;
+				public new function HRESULT(IWMReaderNetworkConfig2 *self, uint32* pdwAutoReconnectLimit) GetAutoReconnectLimit;
+				public new function HRESULT(IWMReaderNetworkConfig2 *self, uint32 dwAutoReconnectLimit) SetAutoReconnectLimit;
+				public new function HRESULT(IWMReaderNetworkConfig2 *self, BOOL* pfEnableResends) GetEnableResends;
+				public new function HRESULT(IWMReaderNetworkConfig2 *self, BOOL fEnableResends) SetEnableResends;
+				public new function HRESULT(IWMReaderNetworkConfig2 *self, BOOL* pfEnableThinning) GetEnableThinning;
+				public new function HRESULT(IWMReaderNetworkConfig2 *self, BOOL fEnableThinning) SetEnableThinning;
+				public new function HRESULT(IWMReaderNetworkConfig2 *self, uint32* pdwMaxNetPacketSize) GetMaxNetPacketSize;
 			}
 		}
 		[CRepr]
@@ -2225,13 +3860,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96406bed, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetTime(uint64* pcnsNow) mut
+			{
+				return VT.GetTime(&this, pcnsNow);
+			}
+			public HRESULT SetTimer(uint64 cnsWhen, void* pvParam, uint32* pdwTimerId) mut
+			{
+				return VT.SetTimer(&this, cnsWhen, pvParam, pdwTimerId);
+			}
+			public HRESULT KillTimer(uint32 dwTimerId) mut
+			{
+				return VT.KillTimer(&this, dwTimerId);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMReaderStreamClock *self, uint64* pcnsNow) GetTime;
-				public function HRESULT(IWMReaderStreamClock *self, uint64 cnsWhen, void* pvParam, uint32* pdwTimerId) SetTimer;
-				public function HRESULT(IWMReaderStreamClock *self, uint32 dwTimerId) KillTimer;
+				public new function HRESULT(IWMReaderStreamClock *self, uint64* pcnsNow) GetTime;
+				public new function HRESULT(IWMReaderStreamClock *self, uint64 cnsWhen, void* pvParam, uint32* pdwTimerId) SetTimer;
+				public new function HRESULT(IWMReaderStreamClock *self, uint32 dwTimerId) KillTimer;
 			}
 		}
 		[CRepr]
@@ -2239,12 +3887,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6d7cdc71, 0x9888, 0x11d3, 0x8e, 0xdc, 0x00, 0xc0, 0x4f, 0x61, 0x09, 0xcf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT StartIndexing(PWSTR pwszURL, IWMStatusCallback* pCallback, void* pvContext) mut
+			{
+				return VT.StartIndexing(&this, pwszURL, pCallback, pvContext);
+			}
+			public HRESULT Cancel() mut
+			{
+				return VT.Cancel(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMIndexer *self, PWSTR pwszURL, IWMStatusCallback* pCallback, void* pvContext) StartIndexing;
-				public function HRESULT(IWMIndexer *self) Cancel;
+				public new function HRESULT(IWMIndexer *self, PWSTR pwszURL, IWMStatusCallback* pCallback, void* pvContext) StartIndexing;
+				public new function HRESULT(IWMIndexer *self) Cancel;
 			}
 		}
 		[CRepr]
@@ -2252,11 +3909,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb70f1e42, 0x6255, 0x4df0, 0xa6, 0xb9, 0x02, 0xb2, 0x12, 0xd9, 0xe2, 0xbb);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Configure(uint16 wStreamNum, WMT_INDEXER_TYPE nIndexerType, void* pvInterval, void* pvIndexType) mut
+			{
+				return VT.Configure(&this, wStreamNum, nIndexerType, pvInterval, pvIndexType);
+			}
 			[CRepr]
 			public struct VTable : IWMIndexer.VTable
 			{
-				public function HRESULT(IWMIndexer2 *self, uint16 wStreamNum, WMT_INDEXER_TYPE nIndexerType, void* pvInterval, void* pvIndexType) Configure;
+				public new function HRESULT(IWMIndexer2 *self, uint16 wStreamNum, WMT_INDEXER_TYPE nIndexerType, void* pvInterval, void* pvIndexType) Configure;
 			}
 		}
 		[CRepr]
@@ -2264,12 +3926,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x05e5ac9f, 0x3fb6, 0x4508, 0xbb, 0x43, 0xa4, 0x06, 0x7b, 0xa1, 0xeb, 0xe8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT BackupLicenses(uint32 dwFlags, IWMStatusCallback* pCallback) mut
+			{
+				return VT.BackupLicenses(&this, dwFlags, pCallback);
+			}
+			public HRESULT CancelLicenseBackup() mut
+			{
+				return VT.CancelLicenseBackup(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMLicenseBackup *self, uint32 dwFlags, IWMStatusCallback* pCallback) BackupLicenses;
-				public function HRESULT(IWMLicenseBackup *self) CancelLicenseBackup;
+				public new function HRESULT(IWMLicenseBackup *self, uint32 dwFlags, IWMStatusCallback* pCallback) BackupLicenses;
+				public new function HRESULT(IWMLicenseBackup *self) CancelLicenseBackup;
 			}
 		}
 		[CRepr]
@@ -2277,12 +3948,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc70b6334, 0xa22e, 0x4efb, 0xa2, 0x45, 0x15, 0xe6, 0x5a, 0x00, 0x4a, 0x13);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RestoreLicenses(uint32 dwFlags, IWMStatusCallback* pCallback) mut
+			{
+				return VT.RestoreLicenses(&this, dwFlags, pCallback);
+			}
+			public HRESULT CancelLicenseRestore() mut
+			{
+				return VT.CancelLicenseRestore(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMLicenseRestore *self, uint32 dwFlags, IWMStatusCallback* pCallback) RestoreLicenses;
-				public function HRESULT(IWMLicenseRestore *self) CancelLicenseRestore;
+				public new function HRESULT(IWMLicenseRestore *self, uint32 dwFlags, IWMStatusCallback* pCallback) RestoreLicenses;
+				public new function HRESULT(IWMLicenseRestore *self) CancelLicenseRestore;
 			}
 		}
 		[CRepr]
@@ -2290,16 +3970,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3c8e0da6, 0x996f, 0x4ff3, 0xa1, 0xaf, 0x48, 0x38, 0xf9, 0x37, 0x7e, 0x2e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPropCount(uint16* pcProps) mut
+			{
+				return VT.GetPropCount(&this, pcProps);
+			}
+			public HRESULT GetPropByIndex(uint16 wIndex, char16* pwszName, uint16* pcchNameLen, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) mut
+			{
+				return VT.GetPropByIndex(&this, wIndex, pwszName, pcchNameLen, pType, pValue, pcbLength);
+			}
+			public HRESULT GetPropByName(PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) mut
+			{
+				return VT.GetPropByName(&this, pszName, pType, pValue, pcbLength);
+			}
+			public HRESULT SetProp(PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) mut
+			{
+				return VT.SetProp(&this, pszName, Type, pValue, cbLength);
+			}
+			public HRESULT RemoveProp(PWSTR pcwszName) mut
+			{
+				return VT.RemoveProp(&this, pcwszName);
+			}
+			public HRESULT RemoveAllProps() mut
+			{
+				return VT.RemoveAllProps(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMBackupRestoreProps *self, uint16* pcProps) GetPropCount;
-				public function HRESULT(IWMBackupRestoreProps *self, uint16 wIndex, char16* pwszName, uint16* pcchNameLen, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetPropByIndex;
-				public function HRESULT(IWMBackupRestoreProps *self, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetPropByName;
-				public function HRESULT(IWMBackupRestoreProps *self, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetProp;
-				public function HRESULT(IWMBackupRestoreProps *self, PWSTR pcwszName) RemoveProp;
-				public function HRESULT(IWMBackupRestoreProps *self) RemoveAllProps;
+				public new function HRESULT(IWMBackupRestoreProps *self, uint16* pcProps) GetPropCount;
+				public new function HRESULT(IWMBackupRestoreProps *self, uint16 wIndex, char16* pwszName, uint16* pcchNameLen, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetPropByIndex;
+				public new function HRESULT(IWMBackupRestoreProps *self, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetPropByName;
+				public new function HRESULT(IWMBackupRestoreProps *self, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetProp;
+				public new function HRESULT(IWMBackupRestoreProps *self, PWSTR pcwszName) RemoveProp;
+				public new function HRESULT(IWMBackupRestoreProps *self) RemoveAllProps;
 			}
 		}
 		[CRepr]
@@ -2307,13 +4012,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa970f41e, 0x34de, 0x4a98, 0xb3, 0xba, 0xe4, 0xb3, 0xca, 0x75, 0x28, 0xf0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCodecInfoCount(Guid* guidType, uint32* pcCodecs) mut
+			{
+				return VT.GetCodecInfoCount(&this, guidType, pcCodecs);
+			}
+			public HRESULT GetCodecFormatCount(Guid* guidType, uint32 dwCodecIndex, uint32* pcFormat) mut
+			{
+				return VT.GetCodecFormatCount(&this, guidType, dwCodecIndex, pcFormat);
+			}
+			public HRESULT GetCodecFormat(Guid* guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, IWMStreamConfig** ppIStreamConfig) mut
+			{
+				return VT.GetCodecFormat(&this, guidType, dwCodecIndex, dwFormatIndex, ppIStreamConfig);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMCodecInfo *self, Guid* guidType, uint32* pcCodecs) GetCodecInfoCount;
-				public function HRESULT(IWMCodecInfo *self, Guid* guidType, uint32 dwCodecIndex, uint32* pcFormat) GetCodecFormatCount;
-				public function HRESULT(IWMCodecInfo *self, Guid* guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, IWMStreamConfig** ppIStreamConfig) GetCodecFormat;
+				public new function HRESULT(IWMCodecInfo *self, Guid* guidType, uint32* pcCodecs) GetCodecInfoCount;
+				public new function HRESULT(IWMCodecInfo *self, Guid* guidType, uint32 dwCodecIndex, uint32* pcFormat) GetCodecFormatCount;
+				public new function HRESULT(IWMCodecInfo *self, Guid* guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, IWMStreamConfig** ppIStreamConfig) GetCodecFormat;
 			}
 		}
 		[CRepr]
@@ -2321,12 +4039,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xaa65e273, 0xb686, 0x4056, 0x91, 0xec, 0xdd, 0x76, 0x8d, 0x4d, 0xf7, 0x10);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCodecName(Guid* guidType, uint32 dwCodecIndex, char16* wszName, uint32* pcchName) mut
+			{
+				return VT.GetCodecName(&this, guidType, dwCodecIndex, wszName, pcchName);
+			}
+			public HRESULT GetCodecFormatDesc(Guid* guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, IWMStreamConfig** ppIStreamConfig, char16* wszDesc, uint32* pcchDesc) mut
+			{
+				return VT.GetCodecFormatDesc(&this, guidType, dwCodecIndex, dwFormatIndex, ppIStreamConfig, wszDesc, pcchDesc);
+			}
 			[CRepr]
 			public struct VTable : IWMCodecInfo.VTable
 			{
-				public function HRESULT(IWMCodecInfo2 *self, Guid* guidType, uint32 dwCodecIndex, char16* wszName, uint32* pcchName) GetCodecName;
-				public function HRESULT(IWMCodecInfo2 *self, Guid* guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, IWMStreamConfig** ppIStreamConfig, char16* wszDesc, uint32* pcchDesc) GetCodecFormatDesc;
+				public new function HRESULT(IWMCodecInfo2 *self, Guid* guidType, uint32 dwCodecIndex, char16* wszName, uint32* pcchName) GetCodecName;
+				public new function HRESULT(IWMCodecInfo2 *self, Guid* guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, IWMStreamConfig** ppIStreamConfig, char16* wszDesc, uint32* pcchDesc) GetCodecFormatDesc;
 			}
 		}
 		[CRepr]
@@ -2334,14 +4061,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7e51f487, 0x4d93, 0x4f98, 0x8a, 0xb4, 0x27, 0xd0, 0x56, 0x5a, 0xdc, 0x51);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCodecFormatProp(Guid* guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) mut
+			{
+				return VT.GetCodecFormatProp(&this, guidType, dwCodecIndex, dwFormatIndex, pszName, pType, pValue, pdwSize);
+			}
+			public HRESULT GetCodecProp(Guid* guidType, uint32 dwCodecIndex, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) mut
+			{
+				return VT.GetCodecProp(&this, guidType, dwCodecIndex, pszName, pType, pValue, pdwSize);
+			}
+			public HRESULT SetCodecEnumerationSetting(Guid* guidType, uint32 dwCodecIndex, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint32 dwSize) mut
+			{
+				return VT.SetCodecEnumerationSetting(&this, guidType, dwCodecIndex, pszName, Type, pValue, dwSize);
+			}
+			public HRESULT GetCodecEnumerationSetting(Guid* guidType, uint32 dwCodecIndex, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) mut
+			{
+				return VT.GetCodecEnumerationSetting(&this, guidType, dwCodecIndex, pszName, pType, pValue, pdwSize);
+			}
 			[CRepr]
 			public struct VTable : IWMCodecInfo2.VTable
 			{
-				public function HRESULT(IWMCodecInfo3 *self, Guid* guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetCodecFormatProp;
-				public function HRESULT(IWMCodecInfo3 *self, Guid* guidType, uint32 dwCodecIndex, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetCodecProp;
-				public function HRESULT(IWMCodecInfo3 *self, Guid* guidType, uint32 dwCodecIndex, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint32 dwSize) SetCodecEnumerationSetting;
-				public function HRESULT(IWMCodecInfo3 *self, Guid* guidType, uint32 dwCodecIndex, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetCodecEnumerationSetting;
+				public new function HRESULT(IWMCodecInfo3 *self, Guid* guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetCodecFormatProp;
+				public new function HRESULT(IWMCodecInfo3 *self, Guid* guidType, uint32 dwCodecIndex, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetCodecProp;
+				public new function HRESULT(IWMCodecInfo3 *self, Guid* guidType, uint32 dwCodecIndex, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint32 dwSize) SetCodecEnumerationSetting;
+				public new function HRESULT(IWMCodecInfo3 *self, Guid* guidType, uint32 dwCodecIndex, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetCodecEnumerationSetting;
 			}
 		}
 		[CRepr]
@@ -2349,13 +4093,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdf683f00, 0x2d49, 0x4d8e, 0x92, 0xb7, 0xfb, 0x19, 0xf6, 0xa0, 0xdc, 0x57);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetLanguageCount(uint16* pwCount) mut
+			{
+				return VT.GetLanguageCount(&this, pwCount);
+			}
+			public HRESULT GetLanguageDetails(uint16 wIndex, char16* pwszLanguageString, uint16* pcchLanguageStringLength) mut
+			{
+				return VT.GetLanguageDetails(&this, wIndex, pwszLanguageString, pcchLanguageStringLength);
+			}
+			public HRESULT AddLanguageByRFC1766String(PWSTR pwszLanguageString, uint16* pwIndex) mut
+			{
+				return VT.AddLanguageByRFC1766String(&this, pwszLanguageString, pwIndex);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMLanguageList *self, uint16* pwCount) GetLanguageCount;
-				public function HRESULT(IWMLanguageList *self, uint16 wIndex, char16* pwszLanguageString, uint16* pcchLanguageStringLength) GetLanguageDetails;
-				public function HRESULT(IWMLanguageList *self, PWSTR pwszLanguageString, uint16* pwIndex) AddLanguageByRFC1766String;
+				public new function HRESULT(IWMLanguageList *self, uint16* pwCount) GetLanguageCount;
+				public new function HRESULT(IWMLanguageList *self, uint16 wIndex, char16* pwszLanguageString, uint16* pcchLanguageStringLength) GetLanguageDetails;
+				public new function HRESULT(IWMLanguageList *self, PWSTR pwszLanguageString, uint16* pwIndex) AddLanguageByRFC1766String;
 			}
 		}
 		[CRepr]
@@ -2363,13 +4120,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdc10e6a5, 0x072c, 0x467d, 0xbf, 0x57, 0x63, 0x30, 0xa9, 0xdd, 0xe1, 0x2a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Connect(PWSTR pwszURL, PWSTR pwszTemplateURL, BOOL fAutoDestroy) mut
+			{
+				return VT.Connect(&this, pwszURL, pwszTemplateURL, fAutoDestroy);
+			}
+			public HRESULT Disconnect() mut
+			{
+				return VT.Disconnect(&this);
+			}
+			public HRESULT EndSession() mut
+			{
+				return VT.EndSession(&this);
+			}
 			[CRepr]
 			public struct VTable : IWMWriterSink.VTable
 			{
-				public function HRESULT(IWMWriterPushSink *self, PWSTR pwszURL, PWSTR pwszTemplateURL, BOOL fAutoDestroy) Connect;
-				public function HRESULT(IWMWriterPushSink *self) Disconnect;
-				public function HRESULT(IWMWriterPushSink *self) EndSession;
+				public new function HRESULT(IWMWriterPushSink *self, PWSTR pwszURL, PWSTR pwszTemplateURL, BOOL fAutoDestroy) Connect;
+				public new function HRESULT(IWMWriterPushSink *self) Disconnect;
+				public new function HRESULT(IWMWriterPushSink *self) EndSession;
 			}
 		}
 		[CRepr]
@@ -2377,16 +4147,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf6211f03, 0x8d21, 0x4e94, 0x93, 0xe6, 0x85, 0x10, 0x80, 0x5f, 0x2d, 0x99);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RegisterDevice(uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber, IWMRegisteredDevice** ppDevice) mut
+			{
+				return VT.RegisterDevice(&this, dwRegisterType, pbCertificate, cbCertificate, SerialNumber, ppDevice);
+			}
+			public HRESULT UnregisterDevice(uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber) mut
+			{
+				return VT.UnregisterDevice(&this, dwRegisterType, pbCertificate, cbCertificate, SerialNumber);
+			}
+			public HRESULT GetRegistrationStats(uint32 dwRegisterType, uint32* pcRegisteredDevices) mut
+			{
+				return VT.GetRegistrationStats(&this, dwRegisterType, pcRegisteredDevices);
+			}
+			public HRESULT GetFirstRegisteredDevice(uint32 dwRegisterType, IWMRegisteredDevice** ppDevice) mut
+			{
+				return VT.GetFirstRegisteredDevice(&this, dwRegisterType, ppDevice);
+			}
+			public HRESULT GetNextRegisteredDevice(IWMRegisteredDevice** ppDevice) mut
+			{
+				return VT.GetNextRegisteredDevice(&this, ppDevice);
+			}
+			public HRESULT GetRegisteredDeviceByID(uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber, IWMRegisteredDevice** ppDevice) mut
+			{
+				return VT.GetRegisteredDeviceByID(&this, dwRegisterType, pbCertificate, cbCertificate, SerialNumber, ppDevice);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMDeviceRegistration *self, uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber, IWMRegisteredDevice** ppDevice) RegisterDevice;
-				public function HRESULT(IWMDeviceRegistration *self, uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber) UnregisterDevice;
-				public function HRESULT(IWMDeviceRegistration *self, uint32 dwRegisterType, uint32* pcRegisteredDevices) GetRegistrationStats;
-				public function HRESULT(IWMDeviceRegistration *self, uint32 dwRegisterType, IWMRegisteredDevice** ppDevice) GetFirstRegisteredDevice;
-				public function HRESULT(IWMDeviceRegistration *self, IWMRegisteredDevice** ppDevice) GetNextRegisteredDevice;
-				public function HRESULT(IWMDeviceRegistration *self, uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber, IWMRegisteredDevice** ppDevice) GetRegisteredDeviceByID;
+				public new function HRESULT(IWMDeviceRegistration *self, uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber, IWMRegisteredDevice** ppDevice) RegisterDevice;
+				public new function HRESULT(IWMDeviceRegistration *self, uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber) UnregisterDevice;
+				public new function HRESULT(IWMDeviceRegistration *self, uint32 dwRegisterType, uint32* pcRegisteredDevices) GetRegistrationStats;
+				public new function HRESULT(IWMDeviceRegistration *self, uint32 dwRegisterType, IWMRegisteredDevice** ppDevice) GetFirstRegisteredDevice;
+				public new function HRESULT(IWMDeviceRegistration *self, IWMRegisteredDevice** ppDevice) GetNextRegisteredDevice;
+				public new function HRESULT(IWMDeviceRegistration *self, uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber, IWMRegisteredDevice** ppDevice) GetRegisteredDeviceByID;
 			}
 		}
 		[CRepr]
@@ -2394,24 +4189,81 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa4503bec, 0x5508, 0x4148, 0x97, 0xac, 0xbf, 0xa7, 0x57, 0x60, 0xa7, 0x0d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDeviceSerialNumber(DRM_VAL16* pSerialNumber) mut
+			{
+				return VT.GetDeviceSerialNumber(&this, pSerialNumber);
+			}
+			public HRESULT GetDeviceCertificate(INSSBuffer** ppCertificate) mut
+			{
+				return VT.GetDeviceCertificate(&this, ppCertificate);
+			}
+			public HRESULT GetDeviceType(uint32* pdwType) mut
+			{
+				return VT.GetDeviceType(&this, pdwType);
+			}
+			public HRESULT GetAttributeCount(uint32* pcAttributes) mut
+			{
+				return VT.GetAttributeCount(&this, pcAttributes);
+			}
+			public HRESULT GetAttributeByIndex(uint32 dwIndex, BSTR* pbstrName, BSTR* pbstrValue) mut
+			{
+				return VT.GetAttributeByIndex(&this, dwIndex, pbstrName, pbstrValue);
+			}
+			public HRESULT GetAttributeByName(BSTR bstrName, BSTR* pbstrValue) mut
+			{
+				return VT.GetAttributeByName(&this, bstrName, pbstrValue);
+			}
+			public HRESULT SetAttributeByName(BSTR bstrName, BSTR bstrValue) mut
+			{
+				return VT.SetAttributeByName(&this, bstrName, bstrValue);
+			}
+			public HRESULT Approve(BOOL fApprove) mut
+			{
+				return VT.Approve(&this, fApprove);
+			}
+			public HRESULT IsValid(BOOL* pfValid) mut
+			{
+				return VT.IsValid(&this, pfValid);
+			}
+			public HRESULT IsApproved(BOOL* pfApproved) mut
+			{
+				return VT.IsApproved(&this, pfApproved);
+			}
+			public HRESULT IsWmdrmCompliant(BOOL* pfCompliant) mut
+			{
+				return VT.IsWmdrmCompliant(&this, pfCompliant);
+			}
+			public HRESULT IsOpened(BOOL* pfOpened) mut
+			{
+				return VT.IsOpened(&this, pfOpened);
+			}
+			public HRESULT Open() mut
+			{
+				return VT.Open(&this);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMRegisteredDevice *self, DRM_VAL16* pSerialNumber) GetDeviceSerialNumber;
-				public function HRESULT(IWMRegisteredDevice *self, INSSBuffer** ppCertificate) GetDeviceCertificate;
-				public function HRESULT(IWMRegisteredDevice *self, uint32* pdwType) GetDeviceType;
-				public function HRESULT(IWMRegisteredDevice *self, uint32* pcAttributes) GetAttributeCount;
-				public function HRESULT(IWMRegisteredDevice *self, uint32 dwIndex, BSTR* pbstrName, BSTR* pbstrValue) GetAttributeByIndex;
-				public function HRESULT(IWMRegisteredDevice *self, BSTR bstrName, BSTR* pbstrValue) GetAttributeByName;
-				public function HRESULT(IWMRegisteredDevice *self, BSTR bstrName, BSTR bstrValue) SetAttributeByName;
-				public function HRESULT(IWMRegisteredDevice *self, BOOL fApprove) Approve;
-				public function HRESULT(IWMRegisteredDevice *self, BOOL* pfValid) IsValid;
-				public function HRESULT(IWMRegisteredDevice *self, BOOL* pfApproved) IsApproved;
-				public function HRESULT(IWMRegisteredDevice *self, BOOL* pfCompliant) IsWmdrmCompliant;
-				public function HRESULT(IWMRegisteredDevice *self, BOOL* pfOpened) IsOpened;
-				public function HRESULT(IWMRegisteredDevice *self) Open;
-				public function HRESULT(IWMRegisteredDevice *self) Close;
+				public new function HRESULT(IWMRegisteredDevice *self, DRM_VAL16* pSerialNumber) GetDeviceSerialNumber;
+				public new function HRESULT(IWMRegisteredDevice *self, INSSBuffer** ppCertificate) GetDeviceCertificate;
+				public new function HRESULT(IWMRegisteredDevice *self, uint32* pdwType) GetDeviceType;
+				public new function HRESULT(IWMRegisteredDevice *self, uint32* pcAttributes) GetAttributeCount;
+				public new function HRESULT(IWMRegisteredDevice *self, uint32 dwIndex, BSTR* pbstrName, BSTR* pbstrValue) GetAttributeByIndex;
+				public new function HRESULT(IWMRegisteredDevice *self, BSTR bstrName, BSTR* pbstrValue) GetAttributeByName;
+				public new function HRESULT(IWMRegisteredDevice *self, BSTR bstrName, BSTR bstrValue) SetAttributeByName;
+				public new function HRESULT(IWMRegisteredDevice *self, BOOL fApprove) Approve;
+				public new function HRESULT(IWMRegisteredDevice *self, BOOL* pfValid) IsValid;
+				public new function HRESULT(IWMRegisteredDevice *self, BOOL* pfApproved) IsApproved;
+				public new function HRESULT(IWMRegisteredDevice *self, BOOL* pfCompliant) IsWmdrmCompliant;
+				public new function HRESULT(IWMRegisteredDevice *self, BOOL* pfOpened) IsOpened;
+				public new function HRESULT(IWMRegisteredDevice *self) Open;
+				public new function HRESULT(IWMRegisteredDevice *self) Close;
 			}
 		}
 		[CRepr]
@@ -2419,11 +4271,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6a9fd8ee, 0xb651, 0x4bf0, 0xb8, 0x49, 0x7d, 0x4e, 0xce, 0x79, 0xa2, 0xb1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT StartDetection(uint8* pbRegistrationMsg, uint32 cbRegistrationMsg, uint8* pbLocalAddress, uint32 cbLocalAddress, uint32 dwExtraPortsAllowed, INSSBuffer** ppRegistrationResponseMsg, IWMStatusCallback* pCallback, void* pvContext) mut
+			{
+				return VT.StartDetection(&this, pbRegistrationMsg, cbRegistrationMsg, pbLocalAddress, cbLocalAddress, dwExtraPortsAllowed, ppRegistrationResponseMsg, pCallback, pvContext);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMProximityDetection *self, uint8* pbRegistrationMsg, uint32 cbRegistrationMsg, uint8* pbLocalAddress, uint32 cbLocalAddress, uint32 dwExtraPortsAllowed, INSSBuffer** ppRegistrationResponseMsg, IWMStatusCallback* pCallback, void* pvContext) StartDetection;
+				public new function HRESULT(IWMProximityDetection *self, uint8* pbRegistrationMsg, uint32 cbRegistrationMsg, uint8* pbLocalAddress, uint32 cbLocalAddress, uint32 dwExtraPortsAllowed, INSSBuffer** ppRegistrationResponseMsg, IWMStatusCallback* pCallback, void* pvContext) StartDetection;
 			}
 		}
 		[CRepr]
@@ -2431,12 +4288,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa73a0072, 0x25a0, 0x4c99, 0xb4, 0xa5, 0xed, 0xe8, 0x10, 0x1a, 0x6c, 0x39);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ParseRegistrationReqMsg(uint8* pbRegistrationReqMsg, uint32 cbRegistrationReqMsg, INSSBuffer** ppDeviceCert, DRM_VAL16* pDeviceSerialNumber) mut
+			{
+				return VT.ParseRegistrationReqMsg(&this, pbRegistrationReqMsg, cbRegistrationReqMsg, ppDeviceCert, pDeviceSerialNumber);
+			}
+			public HRESULT ParseLicenseRequestMsg(uint8* pbLicenseRequestMsg, uint32 cbLicenseRequestMsg, INSSBuffer** ppDeviceCert, DRM_VAL16* pDeviceSerialNumber, BSTR* pbstrAction) mut
+			{
+				return VT.ParseLicenseRequestMsg(&this, pbLicenseRequestMsg, cbLicenseRequestMsg, ppDeviceCert, pDeviceSerialNumber, pbstrAction);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMDRMMessageParser *self, uint8* pbRegistrationReqMsg, uint32 cbRegistrationReqMsg, INSSBuffer** ppDeviceCert, DRM_VAL16* pDeviceSerialNumber) ParseRegistrationReqMsg;
-				public function HRESULT(IWMDRMMessageParser *self, uint8* pbLicenseRequestMsg, uint32 cbLicenseRequestMsg, INSSBuffer** ppDeviceCert, DRM_VAL16* pDeviceSerialNumber, BSTR* pbstrAction) ParseLicenseRequestMsg;
+				public new function HRESULT(IWMDRMMessageParser *self, uint8* pbRegistrationReqMsg, uint32 cbRegistrationReqMsg, INSSBuffer** ppDeviceCert, DRM_VAL16* pDeviceSerialNumber) ParseRegistrationReqMsg;
+				public new function HRESULT(IWMDRMMessageParser *self, uint8* pbLicenseRequestMsg, uint32 cbLicenseRequestMsg, INSSBuffer** ppDeviceCert, DRM_VAL16* pDeviceSerialNumber, BSTR* pbstrAction) ParseLicenseRequestMsg;
 			}
 		}
 		[CRepr]
@@ -2444,14 +4310,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x69059850, 0x6e6f, 0x4bb2, 0x80, 0x6f, 0x71, 0x86, 0x3d, 0xdf, 0xc4, 0x71);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(BSTR bstrFileName, uint8* pbLicenseRequestMsg, uint32 cbLicenseRequestMsg, INSSBuffer** ppLicenseResponseMsg, IWMStatusCallback* pCallback, void* pvContext) mut
+			{
+				return VT.Initialize(&this, bstrFileName, pbLicenseRequestMsg, cbLicenseRequestMsg, ppLicenseResponseMsg, pCallback, pvContext);
+			}
+			public HRESULT Seek(uint64 hnsTime) mut
+			{
+				return VT.Seek(&this, hnsTime);
+			}
+			public HRESULT Read(uint8* pbData, uint32* pcbData) mut
+			{
+				return VT.Read(&this, pbData, pcbData);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMDRMTranscryptor *self, BSTR bstrFileName, uint8* pbLicenseRequestMsg, uint32 cbLicenseRequestMsg, INSSBuffer** ppLicenseResponseMsg, IWMStatusCallback* pCallback, void* pvContext) Initialize;
-				public function HRESULT(IWMDRMTranscryptor *self, uint64 hnsTime) Seek;
-				public function HRESULT(IWMDRMTranscryptor *self, uint8* pbData, uint32* pcbData) Read;
-				public function HRESULT(IWMDRMTranscryptor *self) Close;
+				public new function HRESULT(IWMDRMTranscryptor *self, BSTR bstrFileName, uint8* pbLicenseRequestMsg, uint32 cbLicenseRequestMsg, INSSBuffer** ppLicenseResponseMsg, IWMStatusCallback* pCallback, void* pvContext) Initialize;
+				public new function HRESULT(IWMDRMTranscryptor *self, uint64 hnsTime) Seek;
+				public new function HRESULT(IWMDRMTranscryptor *self, uint8* pbData, uint32* pcbData) Read;
+				public new function HRESULT(IWMDRMTranscryptor *self) Close;
 			}
 		}
 		[CRepr]
@@ -2459,14 +4342,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe0da439f, 0xd331, 0x496a, 0xbe, 0xce, 0x18, 0xe5, 0xba, 0xc5, 0xdd, 0x23);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SeekEx(uint64 cnsStartTime, uint64 cnsDuration, float flRate, BOOL fIncludeFileHeader) mut
+			{
+				return VT.SeekEx(&this, cnsStartTime, cnsDuration, flRate, fIncludeFileHeader);
+			}
+			public HRESULT ZeroAdjustTimestamps(BOOL fEnable) mut
+			{
+				return VT.ZeroAdjustTimestamps(&this, fEnable);
+			}
+			public HRESULT GetSeekStartTime(uint64* pcnsTime) mut
+			{
+				return VT.GetSeekStartTime(&this, pcnsTime);
+			}
+			public HRESULT GetDuration(uint64* pcnsDuration) mut
+			{
+				return VT.GetDuration(&this, pcnsDuration);
+			}
 			[CRepr]
 			public struct VTable : IWMDRMTranscryptor.VTable
 			{
-				public function HRESULT(IWMDRMTranscryptor2 *self, uint64 cnsStartTime, uint64 cnsDuration, float flRate, BOOL fIncludeFileHeader) SeekEx;
-				public function HRESULT(IWMDRMTranscryptor2 *self, BOOL fEnable) ZeroAdjustTimestamps;
-				public function HRESULT(IWMDRMTranscryptor2 *self, uint64* pcnsTime) GetSeekStartTime;
-				public function HRESULT(IWMDRMTranscryptor2 *self, uint64* pcnsDuration) GetDuration;
+				public new function HRESULT(IWMDRMTranscryptor2 *self, uint64 cnsStartTime, uint64 cnsDuration, float flRate, BOOL fIncludeFileHeader) SeekEx;
+				public new function HRESULT(IWMDRMTranscryptor2 *self, BOOL fEnable) ZeroAdjustTimestamps;
+				public new function HRESULT(IWMDRMTranscryptor2 *self, uint64* pcnsTime) GetSeekStartTime;
+				public new function HRESULT(IWMDRMTranscryptor2 *self, uint64* pcnsDuration) GetDuration;
 			}
 		}
 		[CRepr]
@@ -2474,11 +4374,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb1a887b2, 0xa4f0, 0x407a, 0xb0, 0x2e, 0xef, 0xbd, 0x23, 0xbb, 0xec, 0xdf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateTranscryptor(IWMDRMTranscryptor** ppTranscryptor) mut
+			{
+				return VT.CreateTranscryptor(&this, ppTranscryptor);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMDRMTranscryptionManager *self, IWMDRMTranscryptor** ppTranscryptor) CreateTranscryptor;
+				public new function HRESULT(IWMDRMTranscryptionManager *self, IWMDRMTranscryptor** ppTranscryptor) CreateTranscryptor;
 			}
 		}
 		[CRepr]
@@ -2486,12 +4391,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6f497062, 0xf2e2, 0x4624, 0x8e, 0xa7, 0x9d, 0xd4, 0x0d, 0x81, 0xfc, 0x8d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetWatermarkEntryCount(WMT_WATERMARK_ENTRY_TYPE wmetType, uint32* pdwCount) mut
+			{
+				return VT.GetWatermarkEntryCount(&this, wmetType, pdwCount);
+			}
+			public HRESULT GetWatermarkEntry(WMT_WATERMARK_ENTRY_TYPE wmetType, uint32 dwEntryNum, WMT_WATERMARK_ENTRY* pEntry) mut
+			{
+				return VT.GetWatermarkEntry(&this, wmetType, dwEntryNum, pEntry);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMWatermarkInfo *self, WMT_WATERMARK_ENTRY_TYPE wmetType, uint32* pdwCount) GetWatermarkEntryCount;
-				public function HRESULT(IWMWatermarkInfo *self, WMT_WATERMARK_ENTRY_TYPE wmetType, uint32 dwEntryNum, WMT_WATERMARK_ENTRY* pEntry) GetWatermarkEntry;
+				public new function HRESULT(IWMWatermarkInfo *self, WMT_WATERMARK_ENTRY_TYPE wmetType, uint32* pdwCount) GetWatermarkEntryCount;
+				public new function HRESULT(IWMWatermarkInfo *self, WMT_WATERMARK_ENTRY_TYPE wmetType, uint32 dwEntryNum, WMT_WATERMARK_ENTRY* pEntry) GetWatermarkEntry;
 			}
 		}
 		[CRepr]
@@ -2499,12 +4413,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbddc4d08, 0x944d, 0x4d52, 0xa6, 0x12, 0x46, 0xc3, 0xfd, 0xa0, 0x7d, 0xd4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCodecInterface(uint32 dwOutputNum, Guid* riid, void** ppvCodecInterface) mut
+			{
+				return VT.GetCodecInterface(&this, dwOutputNum, riid, ppvCodecInterface);
+			}
+			public HRESULT Notify(uint32 dwOutputNum, WM_MEDIA_TYPE* pSubtype) mut
+			{
+				return VT.Notify(&this, dwOutputNum, pSubtype);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMReaderAccelerator *self, uint32 dwOutputNum, Guid* riid, void** ppvCodecInterface) GetCodecInterface;
-				public function HRESULT(IWMReaderAccelerator *self, uint32 dwOutputNum, WM_MEDIA_TYPE* pSubtype) Notify;
+				public new function HRESULT(IWMReaderAccelerator *self, uint32 dwOutputNum, Guid* riid, void** ppvCodecInterface) GetCodecInterface;
+				public new function HRESULT(IWMReaderAccelerator *self, uint32 dwOutputNum, WM_MEDIA_TYPE* pSubtype) Notify;
 			}
 		}
 		[CRepr]
@@ -2512,12 +4435,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf369e2f0, 0xe081, 0x4fe6, 0x84, 0x50, 0xb8, 0x10, 0xb2, 0xf4, 0x10, 0xd1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetTimecodeRangeCount(uint16 wStreamNum, uint16* pwRangeCount) mut
+			{
+				return VT.GetTimecodeRangeCount(&this, wStreamNum, pwRangeCount);
+			}
+			public HRESULT GetTimecodeRangeBounds(uint16 wStreamNum, uint16 wRangeNum, uint32* pStartTimecode, uint32* pEndTimecode) mut
+			{
+				return VT.GetTimecodeRangeBounds(&this, wStreamNum, wRangeNum, pStartTimecode, pEndTimecode);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMReaderTimecode *self, uint16 wStreamNum, uint16* pwRangeCount) GetTimecodeRangeCount;
-				public function HRESULT(IWMReaderTimecode *self, uint16 wStreamNum, uint16 wRangeNum, uint32* pStartTimecode, uint32* pEndTimecode) GetTimecodeRangeBounds;
+				public new function HRESULT(IWMReaderTimecode *self, uint16 wStreamNum, uint16* pwRangeCount) GetTimecodeRangeCount;
+				public new function HRESULT(IWMReaderTimecode *self, uint16 wStreamNum, uint16 wRangeNum, uint32* pStartTimecode, uint32* pEndTimecode) GetTimecodeRangeBounds;
 			}
 		}
 		[CRepr]
@@ -2525,14 +4457,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbb3c6389, 0x1633, 0x4e92, 0xaf, 0x14, 0x9f, 0x31, 0x73, 0xba, 0x39, 0xd0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetAccessEntryCount(WM_AETYPE aeType, uint32* pcEntries) mut
+			{
+				return VT.GetAccessEntryCount(&this, aeType, pcEntries);
+			}
+			public HRESULT GetAccessEntry(WM_AETYPE aeType, uint32 dwEntryNum, WM_ADDRESS_ACCESSENTRY* pAddrAccessEntry) mut
+			{
+				return VT.GetAccessEntry(&this, aeType, dwEntryNum, pAddrAccessEntry);
+			}
+			public HRESULT AddAccessEntry(WM_AETYPE aeType, WM_ADDRESS_ACCESSENTRY* pAddrAccessEntry) mut
+			{
+				return VT.AddAccessEntry(&this, aeType, pAddrAccessEntry);
+			}
+			public HRESULT RemoveAccessEntry(WM_AETYPE aeType, uint32 dwEntryNum) mut
+			{
+				return VT.RemoveAccessEntry(&this, aeType, dwEntryNum);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMAddressAccess *self, WM_AETYPE aeType, uint32* pcEntries) GetAccessEntryCount;
-				public function HRESULT(IWMAddressAccess *self, WM_AETYPE aeType, uint32 dwEntryNum, WM_ADDRESS_ACCESSENTRY* pAddrAccessEntry) GetAccessEntry;
-				public function HRESULT(IWMAddressAccess *self, WM_AETYPE aeType, WM_ADDRESS_ACCESSENTRY* pAddrAccessEntry) AddAccessEntry;
-				public function HRESULT(IWMAddressAccess *self, WM_AETYPE aeType, uint32 dwEntryNum) RemoveAccessEntry;
+				public new function HRESULT(IWMAddressAccess *self, WM_AETYPE aeType, uint32* pcEntries) GetAccessEntryCount;
+				public new function HRESULT(IWMAddressAccess *self, WM_AETYPE aeType, uint32 dwEntryNum, WM_ADDRESS_ACCESSENTRY* pAddrAccessEntry) GetAccessEntry;
+				public new function HRESULT(IWMAddressAccess *self, WM_AETYPE aeType, WM_ADDRESS_ACCESSENTRY* pAddrAccessEntry) AddAccessEntry;
+				public new function HRESULT(IWMAddressAccess *self, WM_AETYPE aeType, uint32 dwEntryNum) RemoveAccessEntry;
 			}
 		}
 		[CRepr]
@@ -2540,12 +4489,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x65a83fc2, 0x3e98, 0x4d4d, 0x81, 0xb5, 0x2a, 0x74, 0x28, 0x86, 0xb3, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetAccessEntryEx(WM_AETYPE aeType, uint32 dwEntryNum, BSTR* pbstrAddress, BSTR* pbstrMask) mut
+			{
+				return VT.GetAccessEntryEx(&this, aeType, dwEntryNum, pbstrAddress, pbstrMask);
+			}
+			public HRESULT AddAccessEntryEx(WM_AETYPE aeType, BSTR bstrAddress, BSTR bstrMask) mut
+			{
+				return VT.AddAccessEntryEx(&this, aeType, bstrAddress, bstrMask);
+			}
 			[CRepr]
 			public struct VTable : IWMAddressAccess.VTable
 			{
-				public function HRESULT(IWMAddressAccess2 *self, WM_AETYPE aeType, uint32 dwEntryNum, BSTR* pbstrAddress, BSTR* pbstrMask) GetAccessEntryEx;
-				public function HRESULT(IWMAddressAccess2 *self, WM_AETYPE aeType, BSTR bstrAddress, BSTR bstrMask) AddAccessEntryEx;
+				public new function HRESULT(IWMAddressAccess2 *self, WM_AETYPE aeType, uint32 dwEntryNum, BSTR* pbstrAddress, BSTR* pbstrMask) GetAccessEntryEx;
+				public new function HRESULT(IWMAddressAccess2 *self, WM_AETYPE aeType, BSTR bstrAddress, BSTR bstrMask) AddAccessEntryEx;
 			}
 		}
 		[CRepr]
@@ -2553,12 +4511,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9f0aa3b6, 0x7267, 0x4d89, 0x88, 0xf2, 0xba, 0x91, 0x5a, 0xa5, 0xc4, 0xc6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetImageCount(uint32* pcImages) mut
+			{
+				return VT.GetImageCount(&this, pcImages);
+			}
+			public HRESULT GetImage(uint32 wIndex, uint16* pcchMIMEType, char16* pwszMIMEType, uint16* pcchDescription, char16* pwszDescription, uint16* pImageType, uint32* pcbImageData, uint8* pbImageData) mut
+			{
+				return VT.GetImage(&this, wIndex, pcchMIMEType, pwszMIMEType, pcchDescription, pwszDescription, pImageType, pcbImageData, pbImageData);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMImageInfo *self, uint32* pcImages) GetImageCount;
-				public function HRESULT(IWMImageInfo *self, uint32 wIndex, uint16* pcchMIMEType, char16* pwszMIMEType, uint16* pcchDescription, char16* pwszDescription, uint16* pImageType, uint32* pcbImageData, uint8* pbImageData) GetImage;
+				public new function HRESULT(IWMImageInfo *self, uint32* pcImages) GetImageCount;
+				public new function HRESULT(IWMImageInfo *self, uint32 wIndex, uint16* pcchMIMEType, char16* pwszMIMEType, uint16* pcchDescription, char16* pwszDescription, uint16* pImageType, uint32* pcbImageData, uint8* pbImageData) GetImage;
 			}
 		}
 		[CRepr]
@@ -2566,12 +4533,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6967f2c9, 0x4e26, 0x4b57, 0x88, 0x94, 0x79, 0x98, 0x80, 0xf7, 0xac, 0x7b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetLRBChallenge(uint8* pMachineID, uint32 dwMachineIDLength, uint8* pChallenge, uint32 dwChallengeLength, uint8* pChallengeOutput, uint32* pdwChallengeOutputLength) mut
+			{
+				return VT.GetLRBChallenge(&this, pMachineID, dwMachineIDLength, pChallenge, dwChallengeLength, pChallengeOutput, pdwChallengeOutputLength);
+			}
+			public HRESULT ProcessLRB(uint8* pSignedLRB, uint32 dwSignedLRBLength, uint8* pSignedACK, uint32* pdwSignedACKLength) mut
+			{
+				return VT.ProcessLRB(&this, pSignedLRB, dwSignedLRBLength, pSignedACK, pdwSignedACKLength);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMLicenseRevocationAgent *self, uint8* pMachineID, uint32 dwMachineIDLength, uint8* pChallenge, uint32 dwChallengeLength, uint8* pChallengeOutput, uint32* pdwChallengeOutputLength) GetLRBChallenge;
-				public function HRESULT(IWMLicenseRevocationAgent *self, uint8* pSignedLRB, uint32 dwSignedLRBLength, uint8* pSignedACK, uint32* pdwSignedACKLength) ProcessLRB;
+				public new function HRESULT(IWMLicenseRevocationAgent *self, uint8* pMachineID, uint32 dwMachineIDLength, uint8* pChallenge, uint32 dwChallengeLength, uint8* pChallengeOutput, uint32* pdwChallengeOutputLength) GetLRBChallenge;
+				public new function HRESULT(IWMLicenseRevocationAgent *self, uint8* pSignedLRB, uint32 dwSignedLRBLength, uint8* pSignedACK, uint32* pdwSignedACKLength) ProcessLRB;
 			}
 		}
 		[CRepr]
@@ -2579,13 +4555,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd9b67d36, 0xa9ad, 0x4eb4, 0xba, 0xef, 0xdb, 0x28, 0x4e, 0xf5, 0x50, 0x4c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCertCount(uint32* pcCerts) mut
+			{
+				return VT.GetCertCount(&this, pcCerts);
+			}
+			public HRESULT GetCert(uint32 dwIndex, uint8** ppbCertData) mut
+			{
+				return VT.GetCert(&this, dwIndex, ppbCertData);
+			}
+			public HRESULT GetSharedData(uint32 dwCertIndex, uint8* pbSharedData, uint8* pbCert, uint8** ppbSharedData) mut
+			{
+				return VT.GetSharedData(&this, dwCertIndex, pbSharedData, pbCert, ppbSharedData);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMAuthorizer *self, uint32* pcCerts) GetCertCount;
-				public function HRESULT(IWMAuthorizer *self, uint32 dwIndex, uint8** ppbCertData) GetCert;
-				public function HRESULT(IWMAuthorizer *self, uint32 dwCertIndex, uint8* pbSharedData, uint8* pbCert, uint8** ppbSharedData) GetSharedData;
+				public new function HRESULT(IWMAuthorizer *self, uint32* pcCerts) GetCertCount;
+				public new function HRESULT(IWMAuthorizer *self, uint32 dwIndex, uint8** ppbCertData) GetCert;
+				public new function HRESULT(IWMAuthorizer *self, uint32 dwCertIndex, uint8* pbSharedData, uint8* pbCert, uint8** ppbSharedData) GetSharedData;
 			}
 		}
 		[CRepr]
@@ -2593,21 +4582,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2720598a, 0xd0f2, 0x4189, 0xbd, 0x10, 0x91, 0xc4, 0x6e, 0xf0, 0x93, 0x6f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT WMSC_AddCertificate(IWMAuthorizer* pCert) mut
+			{
+				return VT.WMSC_AddCertificate(&this, pCert);
+			}
+			public HRESULT WMSC_AddSignature(uint8* pbCertSig, uint32 cbCertSig) mut
+			{
+				return VT.WMSC_AddSignature(&this, pbCertSig, cbCertSig);
+			}
+			public HRESULT WMSC_Connect(IWMSecureChannel* pOtherSide) mut
+			{
+				return VT.WMSC_Connect(&this, pOtherSide);
+			}
+			public HRESULT WMSC_IsConnected(BOOL* pfIsConnected) mut
+			{
+				return VT.WMSC_IsConnected(&this, pfIsConnected);
+			}
+			public HRESULT WMSC_Disconnect() mut
+			{
+				return VT.WMSC_Disconnect(&this);
+			}
+			public HRESULT WMSC_GetValidCertificate(uint8** ppbCertificate, uint32* pdwSignature) mut
+			{
+				return VT.WMSC_GetValidCertificate(&this, ppbCertificate, pdwSignature);
+			}
+			public HRESULT WMSC_Encrypt(uint8* pbData, uint32 cbData) mut
+			{
+				return VT.WMSC_Encrypt(&this, pbData, cbData);
+			}
+			public HRESULT WMSC_Decrypt(uint8* pbData, uint32 cbData) mut
+			{
+				return VT.WMSC_Decrypt(&this, pbData, cbData);
+			}
+			public HRESULT WMSC_Lock() mut
+			{
+				return VT.WMSC_Lock(&this);
+			}
+			public HRESULT WMSC_Unlock() mut
+			{
+				return VT.WMSC_Unlock(&this);
+			}
+			public HRESULT WMSC_SetSharedData(uint32 dwCertIndex, uint8* pbSharedData) mut
+			{
+				return VT.WMSC_SetSharedData(&this, dwCertIndex, pbSharedData);
+			}
 			[CRepr]
 			public struct VTable : IWMAuthorizer.VTable
 			{
-				public function HRESULT(IWMSecureChannel *self, IWMAuthorizer* pCert) WMSC_AddCertificate;
-				public function HRESULT(IWMSecureChannel *self, uint8* pbCertSig, uint32 cbCertSig) WMSC_AddSignature;
-				public function HRESULT(IWMSecureChannel *self, IWMSecureChannel* pOtherSide) WMSC_Connect;
-				public function HRESULT(IWMSecureChannel *self, BOOL* pfIsConnected) WMSC_IsConnected;
-				public function HRESULT(IWMSecureChannel *self) WMSC_Disconnect;
-				public function HRESULT(IWMSecureChannel *self, uint8** ppbCertificate, uint32* pdwSignature) WMSC_GetValidCertificate;
-				public function HRESULT(IWMSecureChannel *self, uint8* pbData, uint32 cbData) WMSC_Encrypt;
-				public function HRESULT(IWMSecureChannel *self, uint8* pbData, uint32 cbData) WMSC_Decrypt;
-				public function HRESULT(IWMSecureChannel *self) WMSC_Lock;
-				public function HRESULT(IWMSecureChannel *self) WMSC_Unlock;
-				public function HRESULT(IWMSecureChannel *self, uint32 dwCertIndex, uint8* pbSharedData) WMSC_SetSharedData;
+				public new function HRESULT(IWMSecureChannel *self, IWMAuthorizer* pCert) WMSC_AddCertificate;
+				public new function HRESULT(IWMSecureChannel *self, uint8* pbCertSig, uint32 cbCertSig) WMSC_AddSignature;
+				public new function HRESULT(IWMSecureChannel *self, IWMSecureChannel* pOtherSide) WMSC_Connect;
+				public new function HRESULT(IWMSecureChannel *self, BOOL* pfIsConnected) WMSC_IsConnected;
+				public new function HRESULT(IWMSecureChannel *self) WMSC_Disconnect;
+				public new function HRESULT(IWMSecureChannel *self, uint8** ppbCertificate, uint32* pdwSignature) WMSC_GetValidCertificate;
+				public new function HRESULT(IWMSecureChannel *self, uint8* pbData, uint32 cbData) WMSC_Encrypt;
+				public new function HRESULT(IWMSecureChannel *self, uint8* pbData, uint32 cbData) WMSC_Decrypt;
+				public new function HRESULT(IWMSecureChannel *self) WMSC_Lock;
+				public new function HRESULT(IWMSecureChannel *self) WMSC_Unlock;
+				public new function HRESULT(IWMSecureChannel *self, uint32 dwCertIndex, uint8* pbSharedData) WMSC_SetSharedData;
 			}
 		}
 		[CRepr]
@@ -2615,11 +4649,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x94bc0598, 0xc3d2, 0x11d3, 0xbe, 0xdf, 0x00, 0xc0, 0x4f, 0x61, 0x29, 0x86);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPeerSecureChannelInterface(IWMSecureChannel** ppPeer) mut
+			{
+				return VT.GetPeerSecureChannelInterface(&this, ppPeer);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMGetSecureChannel *self, IWMSecureChannel** ppPeer) GetPeerSecureChannelInterface;
+				public new function HRESULT(IWMGetSecureChannel *self, IWMSecureChannel** ppPeer) GetPeerSecureChannelInterface;
 			}
 		}
 		[CRepr]
@@ -2627,18 +4666,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c0e4080, 0x9081, 0x11d2, 0xbe, 0xec, 0x00, 0x60, 0x08, 0x2f, 0x20, 0x54);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize() mut
+			{
+				return VT.Initialize(&this);
+			}
+			public HRESULT CreateNetSource(PWSTR pszStreamName, IUnknown* pMonitor, uint8* pData, IUnknown* pUserContext, IUnknown* pCallback, uint64 qwContext) mut
+			{
+				return VT.CreateNetSource(&this, pszStreamName, pMonitor, pData, pUserContext, pCallback, qwContext);
+			}
+			public HRESULT GetNetSourceProperties(PWSTR pszStreamName, IUnknown** ppPropertiesNode) mut
+			{
+				return VT.GetNetSourceProperties(&this, pszStreamName, ppPropertiesNode);
+			}
+			public HRESULT GetNetSourceSharedNamespace(IUnknown** ppSharedNamespace) mut
+			{
+				return VT.GetNetSourceSharedNamespace(&this, ppSharedNamespace);
+			}
+			public HRESULT GetNetSourceAdminInterface(PWSTR pszStreamName, VARIANT* pVal) mut
+			{
+				return VT.GetNetSourceAdminInterface(&this, pszStreamName, pVal);
+			}
+			public HRESULT GetNumProtocolsSupported(uint32* pcProtocols) mut
+			{
+				return VT.GetNumProtocolsSupported(&this, pcProtocols);
+			}
+			public HRESULT GetProtocolName(uint32 dwProtocolNum, PWSTR pwszProtocolName, uint16* pcchProtocolName) mut
+			{
+				return VT.GetProtocolName(&this, dwProtocolNum, pwszProtocolName, pcchProtocolName);
+			}
+			public HRESULT Shutdown() mut
+			{
+				return VT.Shutdown(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(INSNetSourceCreator *self) Initialize;
-				public function HRESULT(INSNetSourceCreator *self, PWSTR pszStreamName, IUnknown* pMonitor, uint8* pData, IUnknown* pUserContext, IUnknown* pCallback, uint64 qwContext) CreateNetSource;
-				public function HRESULT(INSNetSourceCreator *self, PWSTR pszStreamName, IUnknown** ppPropertiesNode) GetNetSourceProperties;
-				public function HRESULT(INSNetSourceCreator *self, IUnknown** ppSharedNamespace) GetNetSourceSharedNamespace;
-				public function HRESULT(INSNetSourceCreator *self, PWSTR pszStreamName, VARIANT* pVal) GetNetSourceAdminInterface;
-				public function HRESULT(INSNetSourceCreator *self, uint32* pcProtocols) GetNumProtocolsSupported;
-				public function HRESULT(INSNetSourceCreator *self, uint32 dwProtocolNum, PWSTR pwszProtocolName, uint16* pcchProtocolName) GetProtocolName;
-				public function HRESULT(INSNetSourceCreator *self) Shutdown;
+				public new function HRESULT(INSNetSourceCreator *self) Initialize;
+				public new function HRESULT(INSNetSourceCreator *self, PWSTR pszStreamName, IUnknown* pMonitor, uint8* pData, IUnknown* pUserContext, IUnknown* pCallback, uint64 qwContext) CreateNetSource;
+				public new function HRESULT(INSNetSourceCreator *self, PWSTR pszStreamName, IUnknown** ppPropertiesNode) GetNetSourceProperties;
+				public new function HRESULT(INSNetSourceCreator *self, IUnknown** ppSharedNamespace) GetNetSourceSharedNamespace;
+				public new function HRESULT(INSNetSourceCreator *self, PWSTR pszStreamName, VARIANT* pVal) GetNetSourceAdminInterface;
+				public new function HRESULT(INSNetSourceCreator *self, uint32* pcProtocols) GetNumProtocolsSupported;
+				public new function HRESULT(INSNetSourceCreator *self, uint32 dwProtocolNum, PWSTR pwszProtocolName, uint16* pcchProtocolName) GetProtocolName;
+				public new function HRESULT(INSNetSourceCreator *self) Shutdown;
 			}
 		}
 		[CRepr]
@@ -2646,11 +4718,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x28580dda, 0xd98e, 0x48d0, 0xb7, 0xae, 0x69, 0xe4, 0x73, 0xa0, 0x28, 0x25);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT MapTimestamp(int64 rtIn, int64* prtOut) mut
+			{
+				return VT.MapTimestamp(&this, rtIn, prtOut);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMPlayerTimestampHook *self, int64 rtIn, int64* prtOut) MapTimestamp;
+				public new function HRESULT(IWMPlayerTimestampHook *self, int64 rtIn, int64* prtOut) MapTimestamp;
 			}
 		}
 		[CRepr]
@@ -2658,13 +4735,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd98ee251, 0x34e0, 0x4a2d, 0x93, 0x12, 0x9b, 0x4c, 0x78, 0x8d, 0x9f, 0xa1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetAcceleratorInterface(IAMVideoAccelerator* pIAMVA) mut
+			{
+				return VT.SetAcceleratorInterface(&this, pIAMVA);
+			}
+			public HRESULT NegotiateConnection(AM_MEDIA_TYPE* pMediaType) mut
+			{
+				return VT.NegotiateConnection(&this, pMediaType);
+			}
+			public HRESULT SetPlayerNotify(IWMPlayerTimestampHook* pHook) mut
+			{
+				return VT.SetPlayerNotify(&this, pHook);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMCodecAMVideoAccelerator *self, IAMVideoAccelerator* pIAMVA) SetAcceleratorInterface;
-				public function HRESULT(IWMCodecAMVideoAccelerator *self, AM_MEDIA_TYPE* pMediaType) NegotiateConnection;
-				public function HRESULT(IWMCodecAMVideoAccelerator *self, IWMPlayerTimestampHook* pHook) SetPlayerNotify;
+				public new function HRESULT(IWMCodecAMVideoAccelerator *self, IAMVideoAccelerator* pIAMVA) SetAcceleratorInterface;
+				public new function HRESULT(IWMCodecAMVideoAccelerator *self, AM_MEDIA_TYPE* pMediaType) NegotiateConnection;
+				public new function HRESULT(IWMCodecAMVideoAccelerator *self, IWMPlayerTimestampHook* pHook) SetPlayerNotify;
 			}
 		}
 		[CRepr]
@@ -2672,12 +4762,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x990641b0, 0x739f, 0x4e94, 0xa8, 0x08, 0x98, 0x88, 0xda, 0x8f, 0x75, 0xaf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT NegotiateConnection(IAMVideoAccelerator* pIAMVA, AM_MEDIA_TYPE* pMediaType) mut
+			{
+				return VT.NegotiateConnection(&this, pIAMVA, pMediaType);
+			}
+			public HRESULT SetPlayerNotify(IWMPlayerTimestampHook* pHook) mut
+			{
+				return VT.SetPlayerNotify(&this, pHook);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMCodecVideoAccelerator *self, IAMVideoAccelerator* pIAMVA, AM_MEDIA_TYPE* pMediaType) NegotiateConnection;
-				public function HRESULT(IWMCodecVideoAccelerator *self, IWMPlayerTimestampHook* pHook) SetPlayerNotify;
+				public new function HRESULT(IWMCodecVideoAccelerator *self, IAMVideoAccelerator* pIAMVA, AM_MEDIA_TYPE* pMediaType) NegotiateConnection;
+				public new function HRESULT(IWMCodecVideoAccelerator *self, IWMPlayerTimestampHook* pHook) SetPlayerNotify;
 			}
 		}
 		[CRepr]
@@ -2685,21 +4784,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8bb23e5f, 0xd127, 0x4afb, 0x8d, 0x02, 0xae, 0x5b, 0x66, 0xd5, 0x4c, 0x78);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(IUnknown* pSharedNamespace, IUnknown* pNamespaceNode, INSNetSourceCreator* pNetSourceCreator, BOOL fEmbeddedInServer) mut
+			{
+				return VT.Initialize(&this, pSharedNamespace, pNamespaceNode, pNetSourceCreator, fEmbeddedInServer);
+			}
+			public HRESULT GetNetSourceCreator(INSNetSourceCreator** ppNetSourceCreator) mut
+			{
+				return VT.GetNetSourceCreator(&this, ppNetSourceCreator);
+			}
+			public HRESULT SetCredentials(BSTR bstrRealm, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood) mut
+			{
+				return VT.SetCredentials(&this, bstrRealm, bstrName, bstrPassword, fPersist, fConfirmedGood);
+			}
+			public HRESULT GetCredentials(BSTR bstrRealm, BSTR* pbstrName, BSTR* pbstrPassword, BOOL* pfConfirmedGood) mut
+			{
+				return VT.GetCredentials(&this, bstrRealm, pbstrName, pbstrPassword, pfConfirmedGood);
+			}
+			public HRESULT DeleteCredentials(BSTR bstrRealm) mut
+			{
+				return VT.DeleteCredentials(&this, bstrRealm);
+			}
+			public HRESULT GetCredentialFlags(uint32* lpdwFlags) mut
+			{
+				return VT.GetCredentialFlags(&this, lpdwFlags);
+			}
+			public HRESULT SetCredentialFlags(uint32 dwFlags) mut
+			{
+				return VT.SetCredentialFlags(&this, dwFlags);
+			}
+			public HRESULT FindProxyForURL(BSTR bstrProtocol, BSTR bstrHost, BOOL* pfProxyEnabled, BSTR* pbstrProxyServer, uint32* pdwProxyPort, uint32* pdwProxyContext) mut
+			{
+				return VT.FindProxyForURL(&this, bstrProtocol, bstrHost, pfProxyEnabled, pbstrProxyServer, pdwProxyPort, pdwProxyContext);
+			}
+			public HRESULT RegisterProxyFailure(HRESULT hrParam, uint32 dwProxyContext) mut
+			{
+				return VT.RegisterProxyFailure(&this, hrParam, dwProxyContext);
+			}
+			public HRESULT ShutdownProxyContext(uint32 dwProxyContext) mut
+			{
+				return VT.ShutdownProxyContext(&this, dwProxyContext);
+			}
+			public HRESULT IsUsingIE(uint32 dwProxyContext, BOOL* pfIsUsingIE) mut
+			{
+				return VT.IsUsingIE(&this, dwProxyContext, pfIsUsingIE);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMSInternalAdminNetSource *self, IUnknown* pSharedNamespace, IUnknown* pNamespaceNode, INSNetSourceCreator* pNetSourceCreator, BOOL fEmbeddedInServer) Initialize;
-				public function HRESULT(IWMSInternalAdminNetSource *self, INSNetSourceCreator** ppNetSourceCreator) GetNetSourceCreator;
-				public function HRESULT(IWMSInternalAdminNetSource *self, BSTR bstrRealm, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood) SetCredentials;
-				public function HRESULT(IWMSInternalAdminNetSource *self, BSTR bstrRealm, BSTR* pbstrName, BSTR* pbstrPassword, BOOL* pfConfirmedGood) GetCredentials;
-				public function HRESULT(IWMSInternalAdminNetSource *self, BSTR bstrRealm) DeleteCredentials;
-				public function HRESULT(IWMSInternalAdminNetSource *self, uint32* lpdwFlags) GetCredentialFlags;
-				public function HRESULT(IWMSInternalAdminNetSource *self, uint32 dwFlags) SetCredentialFlags;
-				public function HRESULT(IWMSInternalAdminNetSource *self, BSTR bstrProtocol, BSTR bstrHost, BOOL* pfProxyEnabled, BSTR* pbstrProxyServer, uint32* pdwProxyPort, uint32* pdwProxyContext) FindProxyForURL;
-				public function HRESULT(IWMSInternalAdminNetSource *self, HRESULT hrParam, uint32 dwProxyContext) RegisterProxyFailure;
-				public function HRESULT(IWMSInternalAdminNetSource *self, uint32 dwProxyContext) ShutdownProxyContext;
-				public function HRESULT(IWMSInternalAdminNetSource *self, uint32 dwProxyContext, BOOL* pfIsUsingIE) IsUsingIE;
+				public new function HRESULT(IWMSInternalAdminNetSource *self, IUnknown* pSharedNamespace, IUnknown* pNamespaceNode, INSNetSourceCreator* pNetSourceCreator, BOOL fEmbeddedInServer) Initialize;
+				public new function HRESULT(IWMSInternalAdminNetSource *self, INSNetSourceCreator** ppNetSourceCreator) GetNetSourceCreator;
+				public new function HRESULT(IWMSInternalAdminNetSource *self, BSTR bstrRealm, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood) SetCredentials;
+				public new function HRESULT(IWMSInternalAdminNetSource *self, BSTR bstrRealm, BSTR* pbstrName, BSTR* pbstrPassword, BOOL* pfConfirmedGood) GetCredentials;
+				public new function HRESULT(IWMSInternalAdminNetSource *self, BSTR bstrRealm) DeleteCredentials;
+				public new function HRESULT(IWMSInternalAdminNetSource *self, uint32* lpdwFlags) GetCredentialFlags;
+				public new function HRESULT(IWMSInternalAdminNetSource *self, uint32 dwFlags) SetCredentialFlags;
+				public new function HRESULT(IWMSInternalAdminNetSource *self, BSTR bstrProtocol, BSTR bstrHost, BOOL* pfProxyEnabled, BSTR* pbstrProxyServer, uint32* pdwProxyPort, uint32* pdwProxyContext) FindProxyForURL;
+				public new function HRESULT(IWMSInternalAdminNetSource *self, HRESULT hrParam, uint32 dwProxyContext) RegisterProxyFailure;
+				public new function HRESULT(IWMSInternalAdminNetSource *self, uint32 dwProxyContext) ShutdownProxyContext;
+				public new function HRESULT(IWMSInternalAdminNetSource *self, uint32 dwProxyContext, BOOL* pfIsUsingIE) IsUsingIE;
 			}
 		}
 		[CRepr]
@@ -2707,14 +4851,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe74d58c3, 0xcf77, 0x4b51, 0xaf, 0x17, 0x74, 0x46, 0x87, 0xc4, 0x3e, 0xae);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetCredentialsEx(BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood) mut
+			{
+				return VT.SetCredentialsEx(&this, bstrRealm, bstrUrl, fProxy, bstrName, bstrPassword, fPersist, fConfirmedGood);
+			}
+			public HRESULT GetCredentialsEx(BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, NETSOURCE_URLCREDPOLICY_SETTINGS* pdwUrlPolicy, BSTR* pbstrName, BSTR* pbstrPassword, BOOL* pfConfirmedGood) mut
+			{
+				return VT.GetCredentialsEx(&this, bstrRealm, bstrUrl, fProxy, pdwUrlPolicy, pbstrName, pbstrPassword, pfConfirmedGood);
+			}
+			public HRESULT DeleteCredentialsEx(BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy) mut
+			{
+				return VT.DeleteCredentialsEx(&this, bstrRealm, bstrUrl, fProxy);
+			}
+			public HRESULT FindProxyForURLEx(BSTR bstrProtocol, BSTR bstrHost, BSTR bstrUrl, BOOL* pfProxyEnabled, BSTR* pbstrProxyServer, uint32* pdwProxyPort, uint32* pdwProxyContext) mut
+			{
+				return VT.FindProxyForURLEx(&this, bstrProtocol, bstrHost, bstrUrl, pfProxyEnabled, pbstrProxyServer, pdwProxyPort, pdwProxyContext);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWMSInternalAdminNetSource2 *self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood) SetCredentialsEx;
-				public function HRESULT(IWMSInternalAdminNetSource2 *self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, NETSOURCE_URLCREDPOLICY_SETTINGS* pdwUrlPolicy, BSTR* pbstrName, BSTR* pbstrPassword, BOOL* pfConfirmedGood) GetCredentialsEx;
-				public function HRESULT(IWMSInternalAdminNetSource2 *self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy) DeleteCredentialsEx;
-				public function HRESULT(IWMSInternalAdminNetSource2 *self, BSTR bstrProtocol, BSTR bstrHost, BSTR bstrUrl, BOOL* pfProxyEnabled, BSTR* pbstrProxyServer, uint32* pdwProxyPort, uint32* pdwProxyContext) FindProxyForURLEx;
+				public new function HRESULT(IWMSInternalAdminNetSource2 *self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood) SetCredentialsEx;
+				public new function HRESULT(IWMSInternalAdminNetSource2 *self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, NETSOURCE_URLCREDPOLICY_SETTINGS* pdwUrlPolicy, BSTR* pbstrName, BSTR* pbstrPassword, BOOL* pfConfirmedGood) GetCredentialsEx;
+				public new function HRESULT(IWMSInternalAdminNetSource2 *self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy) DeleteCredentialsEx;
+				public new function HRESULT(IWMSInternalAdminNetSource2 *self, BSTR bstrProtocol, BSTR bstrHost, BSTR bstrUrl, BOOL* pfProxyEnabled, BSTR* pbstrProxyServer, uint32* pdwProxyPort, uint32* pdwProxyContext) FindProxyForURLEx;
 			}
 		}
 		[CRepr]
@@ -2722,17 +4883,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6b63d08e, 0x4590, 0x44af, 0x9e, 0xb3, 0x57, 0xff, 0x1e, 0x73, 0xbf, 0x80);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetNetSourceCreator2(IUnknown** ppNetSourceCreator) mut
+			{
+				return VT.GetNetSourceCreator2(&this, ppNetSourceCreator);
+			}
+			public HRESULT FindProxyForURLEx2(BSTR bstrProtocol, BSTR bstrHost, BSTR bstrUrl, BOOL* pfProxyEnabled, BSTR* pbstrProxyServer, uint32* pdwProxyPort, uint64* pqwProxyContext) mut
+			{
+				return VT.FindProxyForURLEx2(&this, bstrProtocol, bstrHost, bstrUrl, pfProxyEnabled, pbstrProxyServer, pdwProxyPort, pqwProxyContext);
+			}
+			public HRESULT RegisterProxyFailure2(HRESULT hrParam, uint64 qwProxyContext) mut
+			{
+				return VT.RegisterProxyFailure2(&this, hrParam, qwProxyContext);
+			}
+			public HRESULT ShutdownProxyContext2(uint64 qwProxyContext) mut
+			{
+				return VT.ShutdownProxyContext2(&this, qwProxyContext);
+			}
+			public HRESULT IsUsingIE2(uint64 qwProxyContext, BOOL* pfIsUsingIE) mut
+			{
+				return VT.IsUsingIE2(&this, qwProxyContext, pfIsUsingIE);
+			}
+			public HRESULT SetCredentialsEx2(BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood, BOOL fClearTextAuthentication) mut
+			{
+				return VT.SetCredentialsEx2(&this, bstrRealm, bstrUrl, fProxy, bstrName, bstrPassword, fPersist, fConfirmedGood, fClearTextAuthentication);
+			}
+			public HRESULT GetCredentialsEx2(BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BOOL fClearTextAuthentication, NETSOURCE_URLCREDPOLICY_SETTINGS* pdwUrlPolicy, BSTR* pbstrName, BSTR* pbstrPassword, BOOL* pfConfirmedGood) mut
+			{
+				return VT.GetCredentialsEx2(&this, bstrRealm, bstrUrl, fProxy, fClearTextAuthentication, pdwUrlPolicy, pbstrName, pbstrPassword, pfConfirmedGood);
+			}
 			[CRepr]
 			public struct VTable : IWMSInternalAdminNetSource2.VTable
 			{
-				public function HRESULT(IWMSInternalAdminNetSource3 *self, IUnknown** ppNetSourceCreator) GetNetSourceCreator2;
-				public function HRESULT(IWMSInternalAdminNetSource3 *self, BSTR bstrProtocol, BSTR bstrHost, BSTR bstrUrl, BOOL* pfProxyEnabled, BSTR* pbstrProxyServer, uint32* pdwProxyPort, uint64* pqwProxyContext) FindProxyForURLEx2;
-				public function HRESULT(IWMSInternalAdminNetSource3 *self, HRESULT hrParam, uint64 qwProxyContext) RegisterProxyFailure2;
-				public function HRESULT(IWMSInternalAdminNetSource3 *self, uint64 qwProxyContext) ShutdownProxyContext2;
-				public function HRESULT(IWMSInternalAdminNetSource3 *self, uint64 qwProxyContext, BOOL* pfIsUsingIE) IsUsingIE2;
-				public function HRESULT(IWMSInternalAdminNetSource3 *self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood, BOOL fClearTextAuthentication) SetCredentialsEx2;
-				public function HRESULT(IWMSInternalAdminNetSource3 *self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BOOL fClearTextAuthentication, NETSOURCE_URLCREDPOLICY_SETTINGS* pdwUrlPolicy, BSTR* pbstrName, BSTR* pbstrPassword, BOOL* pfConfirmedGood) GetCredentialsEx2;
+				public new function HRESULT(IWMSInternalAdminNetSource3 *self, IUnknown** ppNetSourceCreator) GetNetSourceCreator2;
+				public new function HRESULT(IWMSInternalAdminNetSource3 *self, BSTR bstrProtocol, BSTR bstrHost, BSTR bstrUrl, BOOL* pfProxyEnabled, BSTR* pbstrProxyServer, uint32* pdwProxyPort, uint64* pqwProxyContext) FindProxyForURLEx2;
+				public new function HRESULT(IWMSInternalAdminNetSource3 *self, HRESULT hrParam, uint64 qwProxyContext) RegisterProxyFailure2;
+				public new function HRESULT(IWMSInternalAdminNetSource3 *self, uint64 qwProxyContext) ShutdownProxyContext2;
+				public new function HRESULT(IWMSInternalAdminNetSource3 *self, uint64 qwProxyContext, BOOL* pfIsUsingIE) IsUsingIE2;
+				public new function HRESULT(IWMSInternalAdminNetSource3 *self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood, BOOL fClearTextAuthentication) SetCredentialsEx2;
+				public new function HRESULT(IWMSInternalAdminNetSource3 *self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BOOL fClearTextAuthentication, NETSOURCE_URLCREDPOLICY_SETTINGS* pdwUrlPolicy, BSTR* pbstrName, BSTR* pbstrPassword, BOOL* pfConfirmedGood) GetCredentialsEx2;
 			}
 		}
 		

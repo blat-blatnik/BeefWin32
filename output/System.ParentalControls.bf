@@ -553,12 +553,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50b6a267, 0xc4bd, 0x450b, 0xad, 0xb5, 0x75, 0x90, 0x73, 0x83, 0x7c, 0x9e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Enable() mut
+			{
+				return VT.Enable(&this);
+			}
+			public HRESULT Disable() mut
+			{
+				return VT.Disable(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWPCProviderState *self) Enable;
-				public function HRESULT(IWPCProviderState *self) Disable;
+				public new function HRESULT(IWPCProviderState *self) Enable;
+				public new function HRESULT(IWPCProviderState *self) Disable;
 			}
 		}
 		[CRepr]
@@ -566,13 +575,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbef54196, 0x2d02, 0x4a26, 0xb6, 0xe5, 0xd6, 0x5a, 0xf2, 0x95, 0xd0, 0xf1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetUserSummary(BSTR bstrSID, BSTR* pbstrUserSummary) mut
+			{
+				return VT.GetUserSummary(&this, bstrSID, pbstrUserSummary);
+			}
+			public HRESULT Configure(HWND hWnd, BSTR bstrSID) mut
+			{
+				return VT.Configure(&this, hWnd, bstrSID);
+			}
+			public HRESULT RequestOverride(HWND hWnd, BSTR bstrPath, WPCFLAG_RESTRICTION dwFlags) mut
+			{
+				return VT.RequestOverride(&this, hWnd, bstrPath, dwFlags);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWPCProviderConfig *self, BSTR bstrSID, BSTR* pbstrUserSummary) GetUserSummary;
-				public function HRESULT(IWPCProviderConfig *self, HWND hWnd, BSTR bstrSID) Configure;
-				public function HRESULT(IWPCProviderConfig *self, HWND hWnd, BSTR bstrPath, WPCFLAG_RESTRICTION dwFlags) RequestOverride;
+				public new function HRESULT(IWPCProviderConfig *self, BSTR bstrSID, BSTR* pbstrUserSummary) GetUserSummary;
+				public new function HRESULT(IWPCProviderConfig *self, HWND hWnd, BSTR bstrSID) Configure;
+				public new function HRESULT(IWPCProviderConfig *self, HWND hWnd, BSTR bstrPath, WPCFLAG_RESTRICTION dwFlags) RequestOverride;
 			}
 		}
 		[CRepr]
@@ -580,13 +602,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8fdf6ca1, 0x0189, 0x47e4, 0xb6, 0x70, 0x1a, 0x8a, 0x46, 0x36, 0xe3, 0x40);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT IsLoggingRequired(BOOL* pfRequired) mut
+			{
+				return VT.IsLoggingRequired(&this, pfRequired);
+			}
+			public HRESULT GetLastSettingsChangeTime(SYSTEMTIME* pTime) mut
+			{
+				return VT.GetLastSettingsChangeTime(&this, pTime);
+			}
+			public HRESULT GetRestrictions(WPCFLAG_RESTRICTION* pdwRestrictions) mut
+			{
+				return VT.GetRestrictions(&this, pdwRestrictions);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWPCSettings *self, BOOL* pfRequired) IsLoggingRequired;
-				public function HRESULT(IWPCSettings *self, SYSTEMTIME* pTime) GetLastSettingsChangeTime;
-				public function HRESULT(IWPCSettings *self, WPCFLAG_RESTRICTION* pdwRestrictions) GetRestrictions;
+				public new function HRESULT(IWPCSettings *self, BOOL* pfRequired) IsLoggingRequired;
+				public new function HRESULT(IWPCSettings *self, SYSTEMTIME* pTime) GetLastSettingsChangeTime;
+				public new function HRESULT(IWPCSettings *self, WPCFLAG_RESTRICTION* pdwRestrictions) GetRestrictions;
 			}
 		}
 		[CRepr]
@@ -594,11 +629,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x95e87780, 0xe158, 0x489e, 0xb4, 0x52, 0xbb, 0xb8, 0x50, 0x79, 0x07, 0x15);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT IsBlocked(Guid guidAppID, uint32* pdwReasons) mut
+			{
+				return VT.IsBlocked(&this, guidAppID, pdwReasons);
+			}
 			[CRepr]
 			public struct VTable : IWPCSettings.VTable
 			{
-				public function HRESULT(IWPCGamesSettings *self, Guid guidAppID, uint32* pdwReasons) IsBlocked;
+				public new function HRESULT(IWPCGamesSettings *self, Guid guidAppID, uint32* pdwReasons) IsBlocked;
 			}
 		}
 		[CRepr]
@@ -606,12 +646,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xffccbdb8, 0x0992, 0x4c30, 0xb0, 0xf1, 0x1c, 0xbb, 0x09, 0xc2, 0x40, 0xaa);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSettings(WPCFLAG_WEB_SETTING* pdwSettings) mut
+			{
+				return VT.GetSettings(&this, pdwSettings);
+			}
+			public HRESULT RequestURLOverride(HWND hWnd, PWSTR pcszURL, uint32 cURLs, PWSTR* ppcszSubURLs, BOOL* pfChanged) mut
+			{
+				return VT.RequestURLOverride(&this, hWnd, pcszURL, cURLs, ppcszSubURLs, pfChanged);
+			}
 			[CRepr]
 			public struct VTable : IWPCSettings.VTable
 			{
-				public function HRESULT(IWPCWebSettings *self, WPCFLAG_WEB_SETTING* pdwSettings) GetSettings;
-				public function HRESULT(IWPCWebSettings *self, HWND hWnd, PWSTR pcszURL, uint32 cURLs, PWSTR* ppcszSubURLs, BOOL* pfChanged) RequestURLOverride;
+				public new function HRESULT(IWPCWebSettings *self, WPCFLAG_WEB_SETTING* pdwSettings) GetSettings;
+				public new function HRESULT(IWPCWebSettings *self, HWND hWnd, PWSTR pcszURL, uint32 cURLs, PWSTR* ppcszSubURLs, BOOL* pfChanged) RequestURLOverride;
 			}
 		}
 		[CRepr]
@@ -619,14 +668,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4ff40a0f, 0x3f3b, 0x4d7c, 0xa4, 0x1b, 0x4f, 0x39, 0xd7, 0xb4, 0x4d, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetVisibility(WPCFLAG_VISIBILITY* peVisibility) mut
+			{
+				return VT.GetVisibility(&this, peVisibility);
+			}
+			public HRESULT GetUserSettings(PWSTR pcszSID, IWPCSettings** ppSettings) mut
+			{
+				return VT.GetUserSettings(&this, pcszSID, ppSettings);
+			}
+			public HRESULT GetWebSettings(PWSTR pcszSID, IWPCWebSettings** ppSettings) mut
+			{
+				return VT.GetWebSettings(&this, pcszSID, ppSettings);
+			}
+			public HRESULT GetWebFilterInfo(Guid* pguidID, PWSTR* ppszName) mut
+			{
+				return VT.GetWebFilterInfo(&this, pguidID, ppszName);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWindowsParentalControlsCore *self, WPCFLAG_VISIBILITY* peVisibility) GetVisibility;
-				public function HRESULT(IWindowsParentalControlsCore *self, PWSTR pcszSID, IWPCSettings** ppSettings) GetUserSettings;
-				public function HRESULT(IWindowsParentalControlsCore *self, PWSTR pcszSID, IWPCWebSettings** ppSettings) GetWebSettings;
-				public function HRESULT(IWindowsParentalControlsCore *self, Guid* pguidID, PWSTR* ppszName) GetWebFilterInfo;
+				public new function HRESULT(IWindowsParentalControlsCore *self, WPCFLAG_VISIBILITY* peVisibility) GetVisibility;
+				public new function HRESULT(IWindowsParentalControlsCore *self, PWSTR pcszSID, IWPCSettings** ppSettings) GetUserSettings;
+				public new function HRESULT(IWindowsParentalControlsCore *self, PWSTR pcszSID, IWPCWebSettings** ppSettings) GetWebSettings;
+				public new function HRESULT(IWindowsParentalControlsCore *self, Guid* pguidID, PWSTR* ppszName) GetWebFilterInfo;
 			}
 		}
 		[CRepr]
@@ -634,11 +700,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x28b4d88b, 0xe072, 0x49e6, 0x80, 0x4d, 0x26, 0xed, 0xbe, 0x21, 0xa7, 0xb9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetGamesSettings(PWSTR pcszSID, IWPCGamesSettings** ppSettings) mut
+			{
+				return VT.GetGamesSettings(&this, pcszSID, ppSettings);
+			}
 			[CRepr]
 			public struct VTable : IWindowsParentalControlsCore.VTable
 			{
-				public function HRESULT(IWindowsParentalControls *self, PWSTR pcszSID, IWPCGamesSettings** ppSettings) GetGamesSettings;
+				public new function HRESULT(IWindowsParentalControls *self, PWSTR pcszSID, IWPCGamesSettings** ppSettings) GetGamesSettings;
 			}
 		}
 		[CRepr]
@@ -646,11 +717,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x41eba572, 0x23ed, 0x4779, 0xbe, 0xc1, 0x8d, 0xf9, 0x62, 0x06, 0xc4, 0x4c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCurrent(Guid* pguidProvider) mut
+			{
+				return VT.GetCurrent(&this, pguidProvider);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWPCProviderSupport *self, Guid* pguidProvider) GetCurrent;
+				public new function HRESULT(IWPCProviderSupport *self, Guid* pguidProvider) GetCurrent;
 			}
 		}
 		

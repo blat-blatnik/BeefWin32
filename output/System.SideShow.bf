@@ -145,12 +145,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe22331ee, 0x9e7d, 0x4922, 0x9f, 0xc2, 0xab, 0x7a, 0xa4, 0x1c, 0xe4, 0x91);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RegisterContent(Guid* in_applicationId, Guid* in_endpointId, ISideShowContentManager** out_ppIContent) mut
+			{
+				return VT.RegisterContent(&this, in_applicationId, in_endpointId, out_ppIContent);
+			}
+			public HRESULT RegisterNotifications(Guid* in_applicationId, ISideShowNotificationManager** out_ppINotification) mut
+			{
+				return VT.RegisterNotifications(&this, in_applicationId, out_ppINotification);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISideShowSession *self, Guid* in_applicationId, Guid* in_endpointId, ISideShowContentManager** out_ppIContent) RegisterContent;
-				public function HRESULT(ISideShowSession *self, Guid* in_applicationId, ISideShowNotificationManager** out_ppINotification) RegisterNotifications;
+				public new function HRESULT(ISideShowSession *self, Guid* in_applicationId, Guid* in_endpointId, ISideShowContentManager** out_ppIContent) RegisterContent;
+				public new function HRESULT(ISideShowSession *self, Guid* in_applicationId, ISideShowNotificationManager** out_ppINotification) RegisterNotifications;
 			}
 		}
 		[CRepr]
@@ -158,13 +167,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x63cea909, 0xf2b9, 0x4302, 0xb5, 0xe1, 0xc6, 0x8e, 0x6d, 0x9a, 0xb8, 0x33);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Show(ISideShowNotification* in_pINotification) mut
+			{
+				return VT.Show(&this, in_pINotification);
+			}
+			public HRESULT Revoke(uint32 in_notificationId) mut
+			{
+				return VT.Revoke(&this, in_notificationId);
+			}
+			public HRESULT RevokeAll() mut
+			{
+				return VT.RevokeAll(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISideShowNotificationManager *self, ISideShowNotification* in_pINotification) Show;
-				public function HRESULT(ISideShowNotificationManager *self, uint32 in_notificationId) Revoke;
-				public function HRESULT(ISideShowNotificationManager *self) RevokeAll;
+				public new function HRESULT(ISideShowNotificationManager *self, ISideShowNotification* in_pINotification) Show;
+				public new function HRESULT(ISideShowNotificationManager *self, uint32 in_notificationId) Revoke;
+				public new function HRESULT(ISideShowNotificationManager *self) RevokeAll;
 			}
 		}
 		[CRepr]
@@ -172,20 +194,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x03c93300, 0x8ab2, 0x41c5, 0x9b, 0x79, 0x46, 0x12, 0x7a, 0x30, 0xe1, 0x48);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_NotificationId(uint32* out_pNotificationId) mut
+			{
+				return VT.get_NotificationId(&this, out_pNotificationId);
+			}
+			public HRESULT put_NotificationId(uint32 in_notificationId) mut
+			{
+				return VT.put_NotificationId(&this, in_notificationId);
+			}
+			public HRESULT get_Title(PWSTR* out_ppwszTitle) mut
+			{
+				return VT.get_Title(&this, out_ppwszTitle);
+			}
+			public HRESULT put_Title(PWSTR in_pwszTitle) mut
+			{
+				return VT.put_Title(&this, in_pwszTitle);
+			}
+			public HRESULT get_Message(PWSTR* out_ppwszMessage) mut
+			{
+				return VT.get_Message(&this, out_ppwszMessage);
+			}
+			public HRESULT put_Message(PWSTR in_pwszMessage) mut
+			{
+				return VT.put_Message(&this, in_pwszMessage);
+			}
+			public HRESULT get_Image(HICON* out_phIcon) mut
+			{
+				return VT.get_Image(&this, out_phIcon);
+			}
+			public HRESULT put_Image(HICON in_hIcon) mut
+			{
+				return VT.put_Image(&this, in_hIcon);
+			}
+			public HRESULT get_ExpirationTime(SYSTEMTIME* out_pTime) mut
+			{
+				return VT.get_ExpirationTime(&this, out_pTime);
+			}
+			public HRESULT put_ExpirationTime(SYSTEMTIME* in_pTime) mut
+			{
+				return VT.put_ExpirationTime(&this, in_pTime);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISideShowNotification *self, uint32* out_pNotificationId) get_NotificationId;
-				public function HRESULT(ISideShowNotification *self, uint32 in_notificationId) put_NotificationId;
-				public function HRESULT(ISideShowNotification *self, PWSTR* out_ppwszTitle) get_Title;
-				public function HRESULT(ISideShowNotification *self, PWSTR in_pwszTitle) put_Title;
-				public function HRESULT(ISideShowNotification *self, PWSTR* out_ppwszMessage) get_Message;
-				public function HRESULT(ISideShowNotification *self, PWSTR in_pwszMessage) put_Message;
-				public function HRESULT(ISideShowNotification *self, HICON* out_phIcon) get_Image;
-				public function HRESULT(ISideShowNotification *self, HICON in_hIcon) put_Image;
-				public function HRESULT(ISideShowNotification *self, SYSTEMTIME* out_pTime) get_ExpirationTime;
-				public function HRESULT(ISideShowNotification *self, SYSTEMTIME* in_pTime) put_ExpirationTime;
+				public new function HRESULT(ISideShowNotification *self, uint32* out_pNotificationId) get_NotificationId;
+				public new function HRESULT(ISideShowNotification *self, uint32 in_notificationId) put_NotificationId;
+				public new function HRESULT(ISideShowNotification *self, PWSTR* out_ppwszTitle) get_Title;
+				public new function HRESULT(ISideShowNotification *self, PWSTR in_pwszTitle) put_Title;
+				public new function HRESULT(ISideShowNotification *self, PWSTR* out_ppwszMessage) get_Message;
+				public new function HRESULT(ISideShowNotification *self, PWSTR in_pwszMessage) put_Message;
+				public new function HRESULT(ISideShowNotification *self, HICON* out_phIcon) get_Image;
+				public new function HRESULT(ISideShowNotification *self, HICON in_hIcon) put_Image;
+				public new function HRESULT(ISideShowNotification *self, SYSTEMTIME* out_pTime) get_ExpirationTime;
+				public new function HRESULT(ISideShowNotification *self, SYSTEMTIME* in_pTime) put_ExpirationTime;
 			}
 		}
 		[CRepr]
@@ -193,15 +256,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa5d5b66b, 0xeef9, 0x41db, 0x8d, 0x7e, 0xe1, 0x7c, 0x33, 0xab, 0x10, 0xb0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Add(ISideShowContent* in_pIContent) mut
+			{
+				return VT.Add(&this, in_pIContent);
+			}
+			public HRESULT Remove(uint32 in_contentId) mut
+			{
+				return VT.Remove(&this, in_contentId);
+			}
+			public HRESULT RemoveAll() mut
+			{
+				return VT.RemoveAll(&this);
+			}
+			public HRESULT SetEventSink(ISideShowEvents* in_pIEvents) mut
+			{
+				return VT.SetEventSink(&this, in_pIEvents);
+			}
+			public HRESULT GetDeviceCapabilities(ISideShowCapabilitiesCollection** out_ppCollection) mut
+			{
+				return VT.GetDeviceCapabilities(&this, out_ppCollection);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISideShowContentManager *self, ISideShowContent* in_pIContent) Add;
-				public function HRESULT(ISideShowContentManager *self, uint32 in_contentId) Remove;
-				public function HRESULT(ISideShowContentManager *self) RemoveAll;
-				public function HRESULT(ISideShowContentManager *self, ISideShowEvents* in_pIEvents) SetEventSink;
-				public function HRESULT(ISideShowContentManager *self, ISideShowCapabilitiesCollection** out_ppCollection) GetDeviceCapabilities;
+				public new function HRESULT(ISideShowContentManager *self, ISideShowContent* in_pIContent) Add;
+				public new function HRESULT(ISideShowContentManager *self, uint32 in_contentId) Remove;
+				public new function HRESULT(ISideShowContentManager *self) RemoveAll;
+				public new function HRESULT(ISideShowContentManager *self, ISideShowEvents* in_pIEvents) SetEventSink;
+				public new function HRESULT(ISideShowContentManager *self, ISideShowCapabilitiesCollection** out_ppCollection) GetDeviceCapabilities;
 			}
 		}
 		[CRepr]
@@ -209,13 +293,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc18552ed, 0x74ff, 0x4fec, 0xbe, 0x07, 0x4c, 0xfe, 0xd2, 0x9d, 0x48, 0x87);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetContent(ISideShowCapabilities* in_pICapabilities, uint32* out_pdwSize, uint8** out_ppbData) mut
+			{
+				return VT.GetContent(&this, in_pICapabilities, out_pdwSize, out_ppbData);
+			}
+			public HRESULT get_ContentId(uint32* out_pcontentId) mut
+			{
+				return VT.get_ContentId(&this, out_pcontentId);
+			}
+			public HRESULT get_DifferentiateContent(BOOL* out_pfDifferentiateContent) mut
+			{
+				return VT.get_DifferentiateContent(&this, out_pfDifferentiateContent);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISideShowContent *self, ISideShowCapabilities* in_pICapabilities, uint32* out_pdwSize, uint8** out_ppbData) GetContent;
-				public function HRESULT(ISideShowContent *self, uint32* out_pcontentId) get_ContentId;
-				public function HRESULT(ISideShowContent *self, BOOL* out_pfDifferentiateContent) get_DifferentiateContent;
+				public new function HRESULT(ISideShowContent *self, ISideShowCapabilities* in_pICapabilities, uint32* out_pdwSize, uint8** out_ppbData) GetContent;
+				public new function HRESULT(ISideShowContent *self, uint32* out_pcontentId) get_ContentId;
+				public new function HRESULT(ISideShowContent *self, BOOL* out_pfDifferentiateContent) get_DifferentiateContent;
 			}
 		}
 		[CRepr]
@@ -223,14 +320,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x61feca4c, 0xdeb4, 0x4a7e, 0x8d, 0x75, 0x51, 0xf1, 0x13, 0x2d, 0x61, 0x5b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ContentMissing(uint32 in_contentId, ISideShowContent** out_ppIContent) mut
+			{
+				return VT.ContentMissing(&this, in_contentId, out_ppIContent);
+			}
+			public HRESULT ApplicationEvent(ISideShowCapabilities* in_pICapabilities, uint32 in_dwEventId, uint32 in_dwEventSize, uint8* in_pbEventData) mut
+			{
+				return VT.ApplicationEvent(&this, in_pICapabilities, in_dwEventId, in_dwEventSize, in_pbEventData);
+			}
+			public HRESULT DeviceAdded(ISideShowCapabilities* in_pIDevice) mut
+			{
+				return VT.DeviceAdded(&this, in_pIDevice);
+			}
+			public HRESULT DeviceRemoved(ISideShowCapabilities* in_pIDevice) mut
+			{
+				return VT.DeviceRemoved(&this, in_pIDevice);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISideShowEvents *self, uint32 in_contentId, ISideShowContent** out_ppIContent) ContentMissing;
-				public function HRESULT(ISideShowEvents *self, ISideShowCapabilities* in_pICapabilities, uint32 in_dwEventId, uint32 in_dwEventSize, uint8* in_pbEventData) ApplicationEvent;
-				public function HRESULT(ISideShowEvents *self, ISideShowCapabilities* in_pIDevice) DeviceAdded;
-				public function HRESULT(ISideShowEvents *self, ISideShowCapabilities* in_pIDevice) DeviceRemoved;
+				public new function HRESULT(ISideShowEvents *self, uint32 in_contentId, ISideShowContent** out_ppIContent) ContentMissing;
+				public new function HRESULT(ISideShowEvents *self, ISideShowCapabilities* in_pICapabilities, uint32 in_dwEventId, uint32 in_dwEventSize, uint8* in_pbEventData) ApplicationEvent;
+				public new function HRESULT(ISideShowEvents *self, ISideShowCapabilities* in_pIDevice) DeviceAdded;
+				public new function HRESULT(ISideShowEvents *self, ISideShowCapabilities* in_pIDevice) DeviceRemoved;
 			}
 		}
 		[CRepr]
@@ -238,11 +352,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x535e1379, 0xc09e, 0x4a54, 0xa5, 0x11, 0x59, 0x7b, 0xab, 0x3a, 0x72, 0xb8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCapability(PROPERTYKEY* in_keyCapability, PROPVARIANT* inout_pValue) mut
+			{
+				return VT.GetCapability(&this, in_keyCapability, inout_pValue);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISideShowCapabilities *self, PROPERTYKEY* in_keyCapability, PROPVARIANT* inout_pValue) GetCapability;
+				public new function HRESULT(ISideShowCapabilities *self, PROPERTYKEY* in_keyCapability, PROPVARIANT* inout_pValue) GetCapability;
 			}
 		}
 		[CRepr]
@@ -250,12 +369,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50305597, 0x5e0d, 0x4ff7, 0xb3, 0xaf, 0x33, 0xd0, 0xd9, 0xbd, 0x52, 0xdd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCount(uint32* out_pdwCount) mut
+			{
+				return VT.GetCount(&this, out_pdwCount);
+			}
+			public HRESULT GetAt(uint32 in_dwIndex, ISideShowCapabilities** out_ppCapabilities) mut
+			{
+				return VT.GetAt(&this, in_dwIndex, out_ppCapabilities);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISideShowCapabilitiesCollection *self, uint32* out_pdwCount) GetCount;
-				public function HRESULT(ISideShowCapabilitiesCollection *self, uint32 in_dwIndex, ISideShowCapabilities** out_ppCapabilities) GetAt;
+				public new function HRESULT(ISideShowCapabilitiesCollection *self, uint32* out_pdwCount) GetCount;
+				public new function HRESULT(ISideShowCapabilitiesCollection *self, uint32 in_dwIndex, ISideShowCapabilities** out_ppCapabilities) GetAt;
 			}
 		}
 		[CRepr]
@@ -263,11 +391,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3a2b7fbc, 0x3ad5, 0x48bd, 0xbb, 0xf1, 0x0e, 0x6c, 0xfb, 0xd1, 0x08, 0x07);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCapabilities(ISideShowKeyCollection* in_keyCollection, ISideShowPropVariantCollection** inout_pValues) mut
+			{
+				return VT.GetCapabilities(&this, in_keyCollection, inout_pValues);
+			}
 			[CRepr]
 			public struct VTable : ISideShowCapabilities.VTable
 			{
-				public function HRESULT(ISideShowBulkCapabilities *self, ISideShowKeyCollection* in_keyCollection, ISideShowPropVariantCollection** inout_pValues) GetCapabilities;
+				public new function HRESULT(ISideShowBulkCapabilities *self, ISideShowKeyCollection* in_keyCollection, ISideShowPropVariantCollection** inout_pValues) GetCapabilities;
 			}
 		}
 		[CRepr]
@@ -275,15 +408,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x045473bc, 0xa37b, 0x4957, 0xb1, 0x44, 0x68, 0x10, 0x54, 0x11, 0xed, 0x8e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Add(PROPERTYKEY* Key) mut
+			{
+				return VT.Add(&this, Key);
+			}
+			public HRESULT Clear() mut
+			{
+				return VT.Clear(&this);
+			}
+			public HRESULT GetAt(uint32 dwIndex, PROPERTYKEY* pKey) mut
+			{
+				return VT.GetAt(&this, dwIndex, pKey);
+			}
+			public HRESULT GetCount(uint32* pcElems) mut
+			{
+				return VT.GetCount(&this, pcElems);
+			}
+			public HRESULT RemoveAt(uint32 dwIndex) mut
+			{
+				return VT.RemoveAt(&this, dwIndex);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISideShowKeyCollection *self, PROPERTYKEY* Key) Add;
-				public function HRESULT(ISideShowKeyCollection *self) Clear;
-				public function HRESULT(ISideShowKeyCollection *self, uint32 dwIndex, PROPERTYKEY* pKey) GetAt;
-				public function HRESULT(ISideShowKeyCollection *self, uint32* pcElems) GetCount;
-				public function HRESULT(ISideShowKeyCollection *self, uint32 dwIndex) RemoveAt;
+				public new function HRESULT(ISideShowKeyCollection *self, PROPERTYKEY* Key) Add;
+				public new function HRESULT(ISideShowKeyCollection *self) Clear;
+				public new function HRESULT(ISideShowKeyCollection *self, uint32 dwIndex, PROPERTYKEY* pKey) GetAt;
+				public new function HRESULT(ISideShowKeyCollection *self, uint32* pcElems) GetCount;
+				public new function HRESULT(ISideShowKeyCollection *self, uint32 dwIndex) RemoveAt;
 			}
 		}
 		[CRepr]
@@ -291,15 +445,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2ea7a549, 0x7bff, 0x4aae, 0xba, 0xb0, 0x22, 0xd4, 0x31, 0x11, 0xde, 0x49);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Add(PROPVARIANT* pValue) mut
+			{
+				return VT.Add(&this, pValue);
+			}
+			public HRESULT Clear() mut
+			{
+				return VT.Clear(&this);
+			}
+			public HRESULT GetAt(uint32 dwIndex, PROPVARIANT* pValue) mut
+			{
+				return VT.GetAt(&this, dwIndex, pValue);
+			}
+			public HRESULT GetCount(uint32* pcElems) mut
+			{
+				return VT.GetCount(&this, pcElems);
+			}
+			public HRESULT RemoveAt(uint32 dwIndex) mut
+			{
+				return VT.RemoveAt(&this, dwIndex);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISideShowPropVariantCollection *self, PROPVARIANT* pValue) Add;
-				public function HRESULT(ISideShowPropVariantCollection *self) Clear;
-				public function HRESULT(ISideShowPropVariantCollection *self, uint32 dwIndex, PROPVARIANT* pValue) GetAt;
-				public function HRESULT(ISideShowPropVariantCollection *self, uint32* pcElems) GetCount;
-				public function HRESULT(ISideShowPropVariantCollection *self, uint32 dwIndex) RemoveAt;
+				public new function HRESULT(ISideShowPropVariantCollection *self, PROPVARIANT* pValue) Add;
+				public new function HRESULT(ISideShowPropVariantCollection *self) Clear;
+				public new function HRESULT(ISideShowPropVariantCollection *self, uint32 dwIndex, PROPVARIANT* pValue) GetAt;
+				public new function HRESULT(ISideShowPropVariantCollection *self, uint32* pcElems) GetCount;
+				public new function HRESULT(ISideShowPropVariantCollection *self, uint32 dwIndex) RemoveAt;
 			}
 		}
 		

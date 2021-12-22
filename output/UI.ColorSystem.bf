@@ -585,21 +585,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1cd63475, 0x07c4, 0x46fe, 0xa9, 0x03, 0xd6, 0x55, 0x31, 0x6d, 0x11, 0xfd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(BSTR bstrXml, uint32 cNumModels, uint32 iModelPosition) mut
+			{
+				return VT.Initialize(&this, bstrXml, cNumModels, iModelPosition);
+			}
+			public HRESULT GetNumChannels(uint32* pNumChannels) mut
+			{
+				return VT.GetNumChannels(&this, pNumChannels);
+			}
+			public HRESULT DeviceToColorimetricColors(uint32 cColors, uint32 cChannels, float* pDeviceValues, XYZColorF* pXYZColors) mut
+			{
+				return VT.DeviceToColorimetricColors(&this, cColors, cChannels, pDeviceValues, pXYZColors);
+			}
+			public HRESULT ColorimetricToDeviceColors(uint32 cColors, uint32 cChannels, XYZColorF* pXYZColors, float* pDeviceValues) mut
+			{
+				return VT.ColorimetricToDeviceColors(&this, cColors, cChannels, pXYZColors, pDeviceValues);
+			}
+			public HRESULT ColorimetricToDeviceColorsWithBlack(uint32 cColors, uint32 cChannels, XYZColorF* pXYZColors, BlackInformation* pBlackInformation, float* pDeviceValues) mut
+			{
+				return VT.ColorimetricToDeviceColorsWithBlack(&this, cColors, cChannels, pXYZColors, pBlackInformation, pDeviceValues);
+			}
+			public HRESULT SetTransformDeviceModelInfo(uint32 iModelPosition, IDeviceModelPlugIn* pIDeviceModelOther) mut
+			{
+				return VT.SetTransformDeviceModelInfo(&this, iModelPosition, pIDeviceModelOther);
+			}
+			public HRESULT GetPrimarySamples(PrimaryXYZColors* pPrimaryColor) mut
+			{
+				return VT.GetPrimarySamples(&this, pPrimaryColor);
+			}
+			public HRESULT GetGamutBoundaryMeshSize(uint32* pNumVertices, uint32* pNumTriangles) mut
+			{
+				return VT.GetGamutBoundaryMeshSize(&this, pNumVertices, pNumTriangles);
+			}
+			public HRESULT GetGamutBoundaryMesh(uint32 cChannels, uint32 cVertices, uint32 cTriangles, float* pVertices, GamutShellTriangle* pTriangles) mut
+			{
+				return VT.GetGamutBoundaryMesh(&this, cChannels, cVertices, cTriangles, pVertices, pTriangles);
+			}
+			public HRESULT GetNeutralAxisSize(uint32* pcColors) mut
+			{
+				return VT.GetNeutralAxisSize(&this, pcColors);
+			}
+			public HRESULT GetNeutralAxis(uint32 cColors, XYZColorF* pXYZColors) mut
+			{
+				return VT.GetNeutralAxis(&this, cColors, pXYZColors);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDeviceModelPlugIn *self, BSTR bstrXml, uint32 cNumModels, uint32 iModelPosition) Initialize;
-				public function HRESULT(IDeviceModelPlugIn *self, uint32* pNumChannels) GetNumChannels;
-				public function HRESULT(IDeviceModelPlugIn *self, uint32 cColors, uint32 cChannels, float* pDeviceValues, XYZColorF* pXYZColors) DeviceToColorimetricColors;
-				public function HRESULT(IDeviceModelPlugIn *self, uint32 cColors, uint32 cChannels, XYZColorF* pXYZColors, float* pDeviceValues) ColorimetricToDeviceColors;
-				public function HRESULT(IDeviceModelPlugIn *self, uint32 cColors, uint32 cChannels, XYZColorF* pXYZColors, BlackInformation* pBlackInformation, float* pDeviceValues) ColorimetricToDeviceColorsWithBlack;
-				public function HRESULT(IDeviceModelPlugIn *self, uint32 iModelPosition, IDeviceModelPlugIn* pIDeviceModelOther) SetTransformDeviceModelInfo;
-				public function HRESULT(IDeviceModelPlugIn *self, PrimaryXYZColors* pPrimaryColor) GetPrimarySamples;
-				public function HRESULT(IDeviceModelPlugIn *self, uint32* pNumVertices, uint32* pNumTriangles) GetGamutBoundaryMeshSize;
-				public function HRESULT(IDeviceModelPlugIn *self, uint32 cChannels, uint32 cVertices, uint32 cTriangles, float* pVertices, GamutShellTriangle* pTriangles) GetGamutBoundaryMesh;
-				public function HRESULT(IDeviceModelPlugIn *self, uint32* pcColors) GetNeutralAxisSize;
-				public function HRESULT(IDeviceModelPlugIn *self, uint32 cColors, XYZColorF* pXYZColors) GetNeutralAxis;
+				public new function HRESULT(IDeviceModelPlugIn *self, BSTR bstrXml, uint32 cNumModels, uint32 iModelPosition) Initialize;
+				public new function HRESULT(IDeviceModelPlugIn *self, uint32* pNumChannels) GetNumChannels;
+				public new function HRESULT(IDeviceModelPlugIn *self, uint32 cColors, uint32 cChannels, float* pDeviceValues, XYZColorF* pXYZColors) DeviceToColorimetricColors;
+				public new function HRESULT(IDeviceModelPlugIn *self, uint32 cColors, uint32 cChannels, XYZColorF* pXYZColors, float* pDeviceValues) ColorimetricToDeviceColors;
+				public new function HRESULT(IDeviceModelPlugIn *self, uint32 cColors, uint32 cChannels, XYZColorF* pXYZColors, BlackInformation* pBlackInformation, float* pDeviceValues) ColorimetricToDeviceColorsWithBlack;
+				public new function HRESULT(IDeviceModelPlugIn *self, uint32 iModelPosition, IDeviceModelPlugIn* pIDeviceModelOther) SetTransformDeviceModelInfo;
+				public new function HRESULT(IDeviceModelPlugIn *self, PrimaryXYZColors* pPrimaryColor) GetPrimarySamples;
+				public new function HRESULT(IDeviceModelPlugIn *self, uint32* pNumVertices, uint32* pNumTriangles) GetGamutBoundaryMeshSize;
+				public new function HRESULT(IDeviceModelPlugIn *self, uint32 cChannels, uint32 cVertices, uint32 cTriangles, float* pVertices, GamutShellTriangle* pTriangles) GetGamutBoundaryMesh;
+				public new function HRESULT(IDeviceModelPlugIn *self, uint32* pcColors) GetNeutralAxisSize;
+				public new function HRESULT(IDeviceModelPlugIn *self, uint32 cColors, XYZColorF* pXYZColors) GetNeutralAxis;
 			}
 		}
 		[CRepr]
@@ -607,12 +652,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2dd80115, 0xad1e, 0x41f6, 0xa2, 0x19, 0xa4, 0xf4, 0xb5, 0x83, 0xd1, 0xf9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(BSTR bstrXml, IDeviceModelPlugIn* pSrcPlugIn, IDeviceModelPlugIn* pDestPlugIn, GamutBoundaryDescription* pSrcGBD, GamutBoundaryDescription* pDestGBD) mut
+			{
+				return VT.Initialize(&this, bstrXml, pSrcPlugIn, pDestPlugIn, pSrcGBD, pDestGBD);
+			}
+			public HRESULT SourceToDestinationAppearanceColors(uint32 cColors, JChColorF* pInputColors, JChColorF* pOutputColors) mut
+			{
+				return VT.SourceToDestinationAppearanceColors(&this, cColors, pInputColors, pOutputColors);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IGamutMapModelPlugIn *self, BSTR bstrXml, IDeviceModelPlugIn* pSrcPlugIn, IDeviceModelPlugIn* pDestPlugIn, GamutBoundaryDescription* pSrcGBD, GamutBoundaryDescription* pDestGBD) Initialize;
-				public function HRESULT(IGamutMapModelPlugIn *self, uint32 cColors, JChColorF* pInputColors, JChColorF* pOutputColors) SourceToDestinationAppearanceColors;
+				public new function HRESULT(IGamutMapModelPlugIn *self, BSTR bstrXml, IDeviceModelPlugIn* pSrcPlugIn, IDeviceModelPlugIn* pDestPlugIn, GamutBoundaryDescription* pSrcGBD, GamutBoundaryDescription* pDestGBD) Initialize;
+				public new function HRESULT(IGamutMapModelPlugIn *self, uint32 cColors, JChColorF* pInputColors, JChColorF* pOutputColors) SourceToDestinationAppearanceColors;
 			}
 		}
 		

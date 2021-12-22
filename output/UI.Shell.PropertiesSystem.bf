@@ -383,11 +383,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb7d14566, 0x0509, 0x4cce, 0xa7, 0x1f, 0x0a, 0x55, 0x42, 0x33, 0xbd, 0x9b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(PWSTR pszFilePath, uint32 grfMode) mut
+			{
+				return VT.Initialize(&this, pszFilePath, grfMode);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IInitializeWithFile *self, PWSTR pszFilePath, uint32 grfMode) Initialize;
+				public new function HRESULT(IInitializeWithFile *self, PWSTR pszFilePath, uint32 grfMode) Initialize;
 			}
 		}
 		[CRepr]
@@ -395,11 +400,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb824b49d, 0x22ac, 0x4161, 0xac, 0x8a, 0x99, 0x16, 0xe8, 0xfa, 0x3f, 0x7f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(IStream* pstream, uint32 grfMode) mut
+			{
+				return VT.Initialize(&this, pstream, grfMode);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IInitializeWithStream *self, IStream* pstream, uint32 grfMode) Initialize;
+				public new function HRESULT(IInitializeWithStream *self, IStream* pstream, uint32 grfMode) Initialize;
 			}
 		}
 		[CRepr]
@@ -407,15 +417,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x886d8eeb, 0x8cf2, 0x4446, 0x8d, 0x02, 0xcd, 0xba, 0x1d, 0xbd, 0xcf, 0x99);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCount(uint32* cProps) mut
+			{
+				return VT.GetCount(&this, cProps);
+			}
+			public HRESULT GetAt(uint32 iProp, PROPERTYKEY* pkey) mut
+			{
+				return VT.GetAt(&this, iProp, pkey);
+			}
+			public HRESULT GetValue(PROPERTYKEY* key, PROPVARIANT* pv) mut
+			{
+				return VT.GetValue(&this, key, pv);
+			}
+			public HRESULT SetValue(PROPERTYKEY* key, PROPVARIANT* propvar) mut
+			{
+				return VT.SetValue(&this, key, propvar);
+			}
+			public HRESULT Commit() mut
+			{
+				return VT.Commit(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPropertyStore *self, uint32* cProps) GetCount;
-				public function HRESULT(IPropertyStore *self, uint32 iProp, PROPERTYKEY* pkey) GetAt;
-				public function HRESULT(IPropertyStore *self, PROPERTYKEY* key, PROPVARIANT* pv) GetValue;
-				public function HRESULT(IPropertyStore *self, PROPERTYKEY* key, PROPVARIANT* propvar) SetValue;
-				public function HRESULT(IPropertyStore *self) Commit;
+				public new function HRESULT(IPropertyStore *self, uint32* cProps) GetCount;
+				public new function HRESULT(IPropertyStore *self, uint32 iProp, PROPERTYKEY* pkey) GetAt;
+				public new function HRESULT(IPropertyStore *self, PROPERTYKEY* key, PROPVARIANT* pv) GetValue;
+				public new function HRESULT(IPropertyStore *self, PROPERTYKEY* key, PROPVARIANT* propvar) SetValue;
+				public new function HRESULT(IPropertyStore *self) Commit;
 			}
 		}
 		[CRepr]
@@ -423,14 +454,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x71604b0f, 0x97b0, 0x4764, 0x85, 0x77, 0x2f, 0x13, 0xe9, 0x8a, 0x14, 0x22);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetNamedValue(PWSTR pszName, PROPVARIANT* ppropvar) mut
+			{
+				return VT.GetNamedValue(&this, pszName, ppropvar);
+			}
+			public HRESULT SetNamedValue(PWSTR pszName, PROPVARIANT* propvar) mut
+			{
+				return VT.SetNamedValue(&this, pszName, propvar);
+			}
+			public HRESULT GetNameCount(uint32* pdwCount) mut
+			{
+				return VT.GetNameCount(&this, pdwCount);
+			}
+			public HRESULT GetNameAt(uint32 iProp, BSTR* pbstrName) mut
+			{
+				return VT.GetNameAt(&this, iProp, pbstrName);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(INamedPropertyStore *self, PWSTR pszName, PROPVARIANT* ppropvar) GetNamedValue;
-				public function HRESULT(INamedPropertyStore *self, PWSTR pszName, PROPVARIANT* propvar) SetNamedValue;
-				public function HRESULT(INamedPropertyStore *self, uint32* pdwCount) GetNameCount;
-				public function HRESULT(INamedPropertyStore *self, uint32 iProp, BSTR* pbstrName) GetNameAt;
+				public new function HRESULT(INamedPropertyStore *self, PWSTR pszName, PROPVARIANT* ppropvar) GetNamedValue;
+				public new function HRESULT(INamedPropertyStore *self, PWSTR pszName, PROPVARIANT* propvar) SetNamedValue;
+				public new function HRESULT(INamedPropertyStore *self, uint32* pdwCount) GetNameCount;
+				public new function HRESULT(INamedPropertyStore *self, uint32 iProp, BSTR* pbstrName) GetNameAt;
 			}
 		}
 		[CRepr]
@@ -438,12 +486,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfc0ca0a7, 0xc316, 0x4fd2, 0x90, 0x31, 0x3e, 0x62, 0x8e, 0x6d, 0x4f, 0x23);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetPropertyKey(PROPERTYKEY* key) mut
+			{
+				return VT.SetPropertyKey(&this, key);
+			}
+			public HRESULT GetPropertyKey(PROPERTYKEY* pkey) mut
+			{
+				return VT.GetPropertyKey(&this, pkey);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IObjectWithPropertyKey *self, PROPERTYKEY* key) SetPropertyKey;
-				public function HRESULT(IObjectWithPropertyKey *self, PROPERTYKEY* pkey) GetPropertyKey;
+				public new function HRESULT(IObjectWithPropertyKey *self, PROPERTYKEY* key) SetPropertyKey;
+				public new function HRESULT(IObjectWithPropertyKey *self, PROPERTYKEY* pkey) GetPropertyKey;
 			}
 		}
 		[CRepr]
@@ -451,11 +508,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf917bc8a, 0x1bba, 0x4478, 0xa2, 0x45, 0x1b, 0xde, 0x03, 0xeb, 0x94, 0x31);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ApplyToPropVariant(PROPVARIANT* propvarIn, PROPVARIANT* ppropvarOut) mut
+			{
+				return VT.ApplyToPropVariant(&this, propvarIn, ppropvarOut);
+			}
 			[CRepr]
 			public struct VTable : IObjectWithPropertyKey.VTable
 			{
-				public function HRESULT(IPropertyChange *self, PROPVARIANT* propvarIn, PROPVARIANT* ppropvarOut) ApplyToPropVariant;
+				public new function HRESULT(IPropertyChange *self, PROPVARIANT* propvarIn, PROPVARIANT* ppropvarOut) ApplyToPropVariant;
 			}
 		}
 		[CRepr]
@@ -463,17 +525,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x380f5cad, 0x1b5e, 0x42f2, 0x80, 0x5d, 0x63, 0x7f, 0xd3, 0x92, 0xd3, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCount(uint32* pcOperations) mut
+			{
+				return VT.GetCount(&this, pcOperations);
+			}
+			public HRESULT GetAt(uint32 iIndex, Guid* riid, void** ppv) mut
+			{
+				return VT.GetAt(&this, iIndex, riid, ppv);
+			}
+			public HRESULT InsertAt(uint32 iIndex, IPropertyChange* ppropChange) mut
+			{
+				return VT.InsertAt(&this, iIndex, ppropChange);
+			}
+			public HRESULT Append(IPropertyChange* ppropChange) mut
+			{
+				return VT.Append(&this, ppropChange);
+			}
+			public HRESULT AppendOrReplace(IPropertyChange* ppropChange) mut
+			{
+				return VT.AppendOrReplace(&this, ppropChange);
+			}
+			public HRESULT RemoveAt(uint32 iIndex) mut
+			{
+				return VT.RemoveAt(&this, iIndex);
+			}
+			public HRESULT IsKeyInArray(PROPERTYKEY* key) mut
+			{
+				return VT.IsKeyInArray(&this, key);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPropertyChangeArray *self, uint32* pcOperations) GetCount;
-				public function HRESULT(IPropertyChangeArray *self, uint32 iIndex, Guid* riid, void** ppv) GetAt;
-				public function HRESULT(IPropertyChangeArray *self, uint32 iIndex, IPropertyChange* ppropChange) InsertAt;
-				public function HRESULT(IPropertyChangeArray *self, IPropertyChange* ppropChange) Append;
-				public function HRESULT(IPropertyChangeArray *self, IPropertyChange* ppropChange) AppendOrReplace;
-				public function HRESULT(IPropertyChangeArray *self, uint32 iIndex) RemoveAt;
-				public function HRESULT(IPropertyChangeArray *self, PROPERTYKEY* key) IsKeyInArray;
+				public new function HRESULT(IPropertyChangeArray *self, uint32* pcOperations) GetCount;
+				public new function HRESULT(IPropertyChangeArray *self, uint32 iIndex, Guid* riid, void** ppv) GetAt;
+				public new function HRESULT(IPropertyChangeArray *self, uint32 iIndex, IPropertyChange* ppropChange) InsertAt;
+				public new function HRESULT(IPropertyChangeArray *self, IPropertyChange* ppropChange) Append;
+				public new function HRESULT(IPropertyChangeArray *self, IPropertyChange* ppropChange) AppendOrReplace;
+				public new function HRESULT(IPropertyChangeArray *self, uint32 iIndex) RemoveAt;
+				public new function HRESULT(IPropertyChangeArray *self, PROPERTYKEY* key) IsKeyInArray;
 			}
 		}
 		[CRepr]
@@ -481,11 +572,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc8e2d566, 0x186e, 0x4d49, 0xbf, 0x41, 0x69, 0x09, 0xea, 0xd5, 0x6a, 0xcc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT IsPropertyWritable(PROPERTYKEY* key) mut
+			{
+				return VT.IsPropertyWritable(&this, key);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPropertyStoreCapabilities *self, PROPERTYKEY* key) IsPropertyWritable;
+				public new function HRESULT(IPropertyStoreCapabilities *self, PROPERTYKEY* key) IsPropertyWritable;
 			}
 		}
 		[CRepr]
@@ -493,14 +589,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3017056d, 0x9a91, 0x4e90, 0x93, 0x7d, 0x74, 0x6c, 0x72, 0xab, 0xbf, 0x4f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetState(PROPERTYKEY* key, PSC_STATE* pstate) mut
+			{
+				return VT.GetState(&this, key, pstate);
+			}
+			public HRESULT GetValueAndState(PROPERTYKEY* key, PROPVARIANT* ppropvar, PSC_STATE* pstate) mut
+			{
+				return VT.GetValueAndState(&this, key, ppropvar, pstate);
+			}
+			public HRESULT SetState(PROPERTYKEY* key, PSC_STATE state) mut
+			{
+				return VT.SetState(&this, key, state);
+			}
+			public HRESULT SetValueAndState(PROPERTYKEY* key, PROPVARIANT* ppropvar, PSC_STATE state) mut
+			{
+				return VT.SetValueAndState(&this, key, ppropvar, state);
+			}
 			[CRepr]
 			public struct VTable : IPropertyStore.VTable
 			{
-				public function HRESULT(IPropertyStoreCache *self, PROPERTYKEY* key, PSC_STATE* pstate) GetState;
-				public function HRESULT(IPropertyStoreCache *self, PROPERTYKEY* key, PROPVARIANT* ppropvar, PSC_STATE* pstate) GetValueAndState;
-				public function HRESULT(IPropertyStoreCache *self, PROPERTYKEY* key, PSC_STATE state) SetState;
-				public function HRESULT(IPropertyStoreCache *self, PROPERTYKEY* key, PROPVARIANT* ppropvar, PSC_STATE state) SetValueAndState;
+				public new function HRESULT(IPropertyStoreCache *self, PROPERTYKEY* key, PSC_STATE* pstate) GetState;
+				public new function HRESULT(IPropertyStoreCache *self, PROPERTYKEY* key, PROPVARIANT* ppropvar, PSC_STATE* pstate) GetValueAndState;
+				public new function HRESULT(IPropertyStoreCache *self, PROPERTYKEY* key, PSC_STATE state) SetState;
+				public new function HRESULT(IPropertyStoreCache *self, PROPERTYKEY* key, PROPVARIANT* ppropvar, PSC_STATE state) SetValueAndState;
 			}
 		}
 		[CRepr]
@@ -508,15 +621,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x11e1fbf9, 0x2d56, 0x4a6b, 0x8d, 0xb3, 0x7c, 0xd1, 0x93, 0xa4, 0x71, 0xf2);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetEnumType(PROPENUMTYPE* penumtype) mut
+			{
+				return VT.GetEnumType(&this, penumtype);
+			}
+			public HRESULT GetValue(PROPVARIANT* ppropvar) mut
+			{
+				return VT.GetValue(&this, ppropvar);
+			}
+			public HRESULT GetRangeMinValue(PROPVARIANT* ppropvarMin) mut
+			{
+				return VT.GetRangeMinValue(&this, ppropvarMin);
+			}
+			public HRESULT GetRangeSetValue(PROPVARIANT* ppropvarSet) mut
+			{
+				return VT.GetRangeSetValue(&this, ppropvarSet);
+			}
+			public HRESULT GetDisplayText(PWSTR* ppszDisplay) mut
+			{
+				return VT.GetDisplayText(&this, ppszDisplay);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPropertyEnumType *self, PROPENUMTYPE* penumtype) GetEnumType;
-				public function HRESULT(IPropertyEnumType *self, PROPVARIANT* ppropvar) GetValue;
-				public function HRESULT(IPropertyEnumType *self, PROPVARIANT* ppropvarMin) GetRangeMinValue;
-				public function HRESULT(IPropertyEnumType *self, PROPVARIANT* ppropvarSet) GetRangeSetValue;
-				public function HRESULT(IPropertyEnumType *self, PWSTR* ppszDisplay) GetDisplayText;
+				public new function HRESULT(IPropertyEnumType *self, PROPENUMTYPE* penumtype) GetEnumType;
+				public new function HRESULT(IPropertyEnumType *self, PROPVARIANT* ppropvar) GetValue;
+				public new function HRESULT(IPropertyEnumType *self, PROPVARIANT* ppropvarMin) GetRangeMinValue;
+				public new function HRESULT(IPropertyEnumType *self, PROPVARIANT* ppropvarSet) GetRangeSetValue;
+				public new function HRESULT(IPropertyEnumType *self, PWSTR* ppszDisplay) GetDisplayText;
 			}
 		}
 		[CRepr]
@@ -524,11 +658,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9b6e051c, 0x5ddd, 0x4321, 0x90, 0x70, 0xfe, 0x2a, 0xcb, 0x55, 0xe7, 0x94);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetImageReference(PWSTR* ppszImageRes) mut
+			{
+				return VT.GetImageReference(&this, ppszImageRes);
+			}
 			[CRepr]
 			public struct VTable : IPropertyEnumType.VTable
 			{
-				public function HRESULT(IPropertyEnumType2 *self, PWSTR* ppszImageRes) GetImageReference;
+				public new function HRESULT(IPropertyEnumType2 *self, PWSTR* ppszImageRes) GetImageReference;
 			}
 		}
 		[CRepr]
@@ -536,14 +675,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa99400f4, 0x3d84, 0x4557, 0x94, 0xba, 0x12, 0x42, 0xfb, 0x2c, 0xc9, 0xa6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCount(uint32* pctypes) mut
+			{
+				return VT.GetCount(&this, pctypes);
+			}
+			public HRESULT GetAt(uint32 itype, Guid* riid, void** ppv) mut
+			{
+				return VT.GetAt(&this, itype, riid, ppv);
+			}
+			public HRESULT GetConditionAt(uint32 nIndex, Guid* riid, void** ppv) mut
+			{
+				return VT.GetConditionAt(&this, nIndex, riid, ppv);
+			}
+			public HRESULT FindMatchingIndex(PROPVARIANT* propvarCmp, uint32* pnIndex) mut
+			{
+				return VT.FindMatchingIndex(&this, propvarCmp, pnIndex);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPropertyEnumTypeList *self, uint32* pctypes) GetCount;
-				public function HRESULT(IPropertyEnumTypeList *self, uint32 itype, Guid* riid, void** ppv) GetAt;
-				public function HRESULT(IPropertyEnumTypeList *self, uint32 nIndex, Guid* riid, void** ppv) GetConditionAt;
-				public function HRESULT(IPropertyEnumTypeList *self, PROPVARIANT* propvarCmp, uint32* pnIndex) FindMatchingIndex;
+				public new function HRESULT(IPropertyEnumTypeList *self, uint32* pctypes) GetCount;
+				public new function HRESULT(IPropertyEnumTypeList *self, uint32 itype, Guid* riid, void** ppv) GetAt;
+				public new function HRESULT(IPropertyEnumTypeList *self, uint32 nIndex, Guid* riid, void** ppv) GetConditionAt;
+				public new function HRESULT(IPropertyEnumTypeList *self, PROPVARIANT* propvarCmp, uint32* pnIndex) FindMatchingIndex;
 			}
 		}
 		[CRepr]
@@ -551,31 +707,116 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6f79d558, 0x3e96, 0x4549, 0xa1, 0xd1, 0x7d, 0x75, 0xd2, 0x28, 0x88, 0x14);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPropertyKey(PROPERTYKEY* pkey) mut
+			{
+				return VT.GetPropertyKey(&this, pkey);
+			}
+			public HRESULT GetCanonicalName(PWSTR* ppszName) mut
+			{
+				return VT.GetCanonicalName(&this, ppszName);
+			}
+			public HRESULT GetPropertyType(uint16* pvartype) mut
+			{
+				return VT.GetPropertyType(&this, pvartype);
+			}
+			public HRESULT GetDisplayName(PWSTR* ppszName) mut
+			{
+				return VT.GetDisplayName(&this, ppszName);
+			}
+			public HRESULT GetEditInvitation(PWSTR* ppszInvite) mut
+			{
+				return VT.GetEditInvitation(&this, ppszInvite);
+			}
+			public HRESULT GetTypeFlags(PROPDESC_TYPE_FLAGS mask, PROPDESC_TYPE_FLAGS* ppdtFlags) mut
+			{
+				return VT.GetTypeFlags(&this, mask, ppdtFlags);
+			}
+			public HRESULT GetViewFlags(PROPDESC_VIEW_FLAGS* ppdvFlags) mut
+			{
+				return VT.GetViewFlags(&this, ppdvFlags);
+			}
+			public HRESULT GetDefaultColumnWidth(uint32* pcxChars) mut
+			{
+				return VT.GetDefaultColumnWidth(&this, pcxChars);
+			}
+			public HRESULT GetDisplayType(PROPDESC_DISPLAYTYPE* pdisplaytype) mut
+			{
+				return VT.GetDisplayType(&this, pdisplaytype);
+			}
+			public HRESULT GetColumnState(uint32* pcsFlags) mut
+			{
+				return VT.GetColumnState(&this, pcsFlags);
+			}
+			public HRESULT GetGroupingRange(PROPDESC_GROUPING_RANGE* pgr) mut
+			{
+				return VT.GetGroupingRange(&this, pgr);
+			}
+			public HRESULT GetRelativeDescriptionType(PROPDESC_RELATIVEDESCRIPTION_TYPE* prdt) mut
+			{
+				return VT.GetRelativeDescriptionType(&this, prdt);
+			}
+			public HRESULT GetRelativeDescription(PROPVARIANT* propvar1, PROPVARIANT* propvar2, PWSTR* ppszDesc1, PWSTR* ppszDesc2) mut
+			{
+				return VT.GetRelativeDescription(&this, propvar1, propvar2, ppszDesc1, ppszDesc2);
+			}
+			public HRESULT GetSortDescription(PROPDESC_SORTDESCRIPTION* psd) mut
+			{
+				return VT.GetSortDescription(&this, psd);
+			}
+			public HRESULT GetSortDescriptionLabel(BOOL fDescending, PWSTR* ppszDescription) mut
+			{
+				return VT.GetSortDescriptionLabel(&this, fDescending, ppszDescription);
+			}
+			public HRESULT GetAggregationType(PROPDESC_AGGREGATION_TYPE* paggtype) mut
+			{
+				return VT.GetAggregationType(&this, paggtype);
+			}
+			public HRESULT GetConditionType(PROPDESC_CONDITION_TYPE* pcontype, CONDITION_OPERATION* popDefault) mut
+			{
+				return VT.GetConditionType(&this, pcontype, popDefault);
+			}
+			public HRESULT GetEnumTypeList(Guid* riid, void** ppv) mut
+			{
+				return VT.GetEnumTypeList(&this, riid, ppv);
+			}
+			public HRESULT CoerceToCanonicalValue(PROPVARIANT* ppropvar) mut
+			{
+				return VT.CoerceToCanonicalValue(&this, ppropvar);
+			}
+			public HRESULT FormatForDisplay(PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdfFlags, PWSTR* ppszDisplay) mut
+			{
+				return VT.FormatForDisplay(&this, propvar, pdfFlags, ppszDisplay);
+			}
+			public HRESULT IsValueCanonical(PROPVARIANT* propvar) mut
+			{
+				return VT.IsValueCanonical(&this, propvar);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPropertyDescription *self, PROPERTYKEY* pkey) GetPropertyKey;
-				public function HRESULT(IPropertyDescription *self, PWSTR* ppszName) GetCanonicalName;
-				public function HRESULT(IPropertyDescription *self, uint16* pvartype) GetPropertyType;
-				public function HRESULT(IPropertyDescription *self, PWSTR* ppszName) GetDisplayName;
-				public function HRESULT(IPropertyDescription *self, PWSTR* ppszInvite) GetEditInvitation;
-				public function HRESULT(IPropertyDescription *self, PROPDESC_TYPE_FLAGS mask, PROPDESC_TYPE_FLAGS* ppdtFlags) GetTypeFlags;
-				public function HRESULT(IPropertyDescription *self, PROPDESC_VIEW_FLAGS* ppdvFlags) GetViewFlags;
-				public function HRESULT(IPropertyDescription *self, uint32* pcxChars) GetDefaultColumnWidth;
-				public function HRESULT(IPropertyDescription *self, PROPDESC_DISPLAYTYPE* pdisplaytype) GetDisplayType;
-				public function HRESULT(IPropertyDescription *self, uint32* pcsFlags) GetColumnState;
-				public function HRESULT(IPropertyDescription *self, PROPDESC_GROUPING_RANGE* pgr) GetGroupingRange;
-				public function HRESULT(IPropertyDescription *self, PROPDESC_RELATIVEDESCRIPTION_TYPE* prdt) GetRelativeDescriptionType;
-				public function HRESULT(IPropertyDescription *self, PROPVARIANT* propvar1, PROPVARIANT* propvar2, PWSTR* ppszDesc1, PWSTR* ppszDesc2) GetRelativeDescription;
-				public function HRESULT(IPropertyDescription *self, PROPDESC_SORTDESCRIPTION* psd) GetSortDescription;
-				public function HRESULT(IPropertyDescription *self, BOOL fDescending, PWSTR* ppszDescription) GetSortDescriptionLabel;
-				public function HRESULT(IPropertyDescription *self, PROPDESC_AGGREGATION_TYPE* paggtype) GetAggregationType;
-				public function HRESULT(IPropertyDescription *self, PROPDESC_CONDITION_TYPE* pcontype, CONDITION_OPERATION* popDefault) GetConditionType;
-				public function HRESULT(IPropertyDescription *self, Guid* riid, void** ppv) GetEnumTypeList;
-				public function HRESULT(IPropertyDescription *self, PROPVARIANT* ppropvar) CoerceToCanonicalValue;
-				public function HRESULT(IPropertyDescription *self, PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdfFlags, PWSTR* ppszDisplay) FormatForDisplay;
-				public function HRESULT(IPropertyDescription *self, PROPVARIANT* propvar) IsValueCanonical;
+				public new function HRESULT(IPropertyDescription *self, PROPERTYKEY* pkey) GetPropertyKey;
+				public new function HRESULT(IPropertyDescription *self, PWSTR* ppszName) GetCanonicalName;
+				public new function HRESULT(IPropertyDescription *self, uint16* pvartype) GetPropertyType;
+				public new function HRESULT(IPropertyDescription *self, PWSTR* ppszName) GetDisplayName;
+				public new function HRESULT(IPropertyDescription *self, PWSTR* ppszInvite) GetEditInvitation;
+				public new function HRESULT(IPropertyDescription *self, PROPDESC_TYPE_FLAGS mask, PROPDESC_TYPE_FLAGS* ppdtFlags) GetTypeFlags;
+				public new function HRESULT(IPropertyDescription *self, PROPDESC_VIEW_FLAGS* ppdvFlags) GetViewFlags;
+				public new function HRESULT(IPropertyDescription *self, uint32* pcxChars) GetDefaultColumnWidth;
+				public new function HRESULT(IPropertyDescription *self, PROPDESC_DISPLAYTYPE* pdisplaytype) GetDisplayType;
+				public new function HRESULT(IPropertyDescription *self, uint32* pcsFlags) GetColumnState;
+				public new function HRESULT(IPropertyDescription *self, PROPDESC_GROUPING_RANGE* pgr) GetGroupingRange;
+				public new function HRESULT(IPropertyDescription *self, PROPDESC_RELATIVEDESCRIPTION_TYPE* prdt) GetRelativeDescriptionType;
+				public new function HRESULT(IPropertyDescription *self, PROPVARIANT* propvar1, PROPVARIANT* propvar2, PWSTR* ppszDesc1, PWSTR* ppszDesc2) GetRelativeDescription;
+				public new function HRESULT(IPropertyDescription *self, PROPDESC_SORTDESCRIPTION* psd) GetSortDescription;
+				public new function HRESULT(IPropertyDescription *self, BOOL fDescending, PWSTR* ppszDescription) GetSortDescriptionLabel;
+				public new function HRESULT(IPropertyDescription *self, PROPDESC_AGGREGATION_TYPE* paggtype) GetAggregationType;
+				public new function HRESULT(IPropertyDescription *self, PROPDESC_CONDITION_TYPE* pcontype, CONDITION_OPERATION* popDefault) GetConditionType;
+				public new function HRESULT(IPropertyDescription *self, Guid* riid, void** ppv) GetEnumTypeList;
+				public new function HRESULT(IPropertyDescription *self, PROPVARIANT* ppropvar) CoerceToCanonicalValue;
+				public new function HRESULT(IPropertyDescription *self, PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdfFlags, PWSTR* ppszDisplay) FormatForDisplay;
+				public new function HRESULT(IPropertyDescription *self, PROPVARIANT* propvar) IsValueCanonical;
 			}
 		}
 		[CRepr]
@@ -583,11 +824,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x57d2eded, 0x5062, 0x400e, 0xb1, 0x07, 0x5d, 0xae, 0x79, 0xfe, 0x57, 0xa6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetImageReferenceForValue(PROPVARIANT* propvar, PWSTR* ppszImageRes) mut
+			{
+				return VT.GetImageReferenceForValue(&this, propvar, ppszImageRes);
+			}
 			[CRepr]
 			public struct VTable : IPropertyDescription.VTable
 			{
-				public function HRESULT(IPropertyDescription2 *self, PROPVARIANT* propvar, PWSTR* ppszImageRes) GetImageReferenceForValue;
+				public new function HRESULT(IPropertyDescription2 *self, PROPVARIANT* propvar, PWSTR* ppszImageRes) GetImageReferenceForValue;
 			}
 		}
 		[CRepr]
@@ -595,12 +841,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf67104fc, 0x2af9, 0x46fd, 0xb3, 0x2d, 0x24, 0x3c, 0x14, 0x04, 0xf3, 0xd1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSortByAlias(Guid* riid, void** ppv) mut
+			{
+				return VT.GetSortByAlias(&this, riid, ppv);
+			}
+			public HRESULT GetAdditionalSortByAliases(Guid* riid, void** ppv) mut
+			{
+				return VT.GetAdditionalSortByAliases(&this, riid, ppv);
+			}
 			[CRepr]
 			public struct VTable : IPropertyDescription.VTable
 			{
-				public function HRESULT(IPropertyDescriptionAliasInfo *self, Guid* riid, void** ppv) GetSortByAlias;
-				public function HRESULT(IPropertyDescriptionAliasInfo *self, Guid* riid, void** ppv) GetAdditionalSortByAliases;
+				public new function HRESULT(IPropertyDescriptionAliasInfo *self, Guid* riid, void** ppv) GetSortByAlias;
+				public new function HRESULT(IPropertyDescriptionAliasInfo *self, Guid* riid, void** ppv) GetAdditionalSortByAliases;
 			}
 		}
 		[CRepr]
@@ -608,14 +863,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x078f91bd, 0x29a2, 0x440f, 0x92, 0x4e, 0x46, 0xa2, 0x91, 0x52, 0x45, 0x20);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSearchInfoFlags(PROPDESC_SEARCHINFO_FLAGS* ppdsiFlags) mut
+			{
+				return VT.GetSearchInfoFlags(&this, ppdsiFlags);
+			}
+			public HRESULT GetColumnIndexType(PROPDESC_COLUMNINDEX_TYPE* ppdciType) mut
+			{
+				return VT.GetColumnIndexType(&this, ppdciType);
+			}
+			public HRESULT GetProjectionString(PWSTR* ppszProjection) mut
+			{
+				return VT.GetProjectionString(&this, ppszProjection);
+			}
+			public HRESULT GetMaxSize(uint32* pcbMaxSize) mut
+			{
+				return VT.GetMaxSize(&this, pcbMaxSize);
+			}
 			[CRepr]
 			public struct VTable : IPropertyDescription.VTable
 			{
-				public function HRESULT(IPropertyDescriptionSearchInfo *self, PROPDESC_SEARCHINFO_FLAGS* ppdsiFlags) GetSearchInfoFlags;
-				public function HRESULT(IPropertyDescriptionSearchInfo *self, PROPDESC_COLUMNINDEX_TYPE* ppdciType) GetColumnIndexType;
-				public function HRESULT(IPropertyDescriptionSearchInfo *self, PWSTR* ppszProjection) GetProjectionString;
-				public function HRESULT(IPropertyDescriptionSearchInfo *self, uint32* pcbMaxSize) GetMaxSize;
+				public new function HRESULT(IPropertyDescriptionSearchInfo *self, PROPDESC_SEARCHINFO_FLAGS* ppdsiFlags) GetSearchInfoFlags;
+				public new function HRESULT(IPropertyDescriptionSearchInfo *self, PROPDESC_COLUMNINDEX_TYPE* ppdciType) GetColumnIndexType;
+				public new function HRESULT(IPropertyDescriptionSearchInfo *self, PWSTR* ppszProjection) GetProjectionString;
+				public new function HRESULT(IPropertyDescriptionSearchInfo *self, uint32* pcbMaxSize) GetMaxSize;
 			}
 		}
 		[CRepr]
@@ -623,11 +895,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x507393f4, 0x2a3d, 0x4a60, 0xb5, 0x9e, 0xd9, 0xc7, 0x57, 0x16, 0xc2, 0xdd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetRelatedProperty(PWSTR pszRelationshipName, Guid* riid, void** ppv) mut
+			{
+				return VT.GetRelatedProperty(&this, pszRelationshipName, riid, ppv);
+			}
 			[CRepr]
 			public struct VTable : IPropertyDescription.VTable
 			{
-				public function HRESULT(IPropertyDescriptionRelatedPropertyInfo *self, PWSTR pszRelationshipName, Guid* riid, void** ppv) GetRelatedProperty;
+				public new function HRESULT(IPropertyDescriptionRelatedPropertyInfo *self, PWSTR pszRelationshipName, Guid* riid, void** ppv) GetRelatedProperty;
 			}
 		}
 		[CRepr]
@@ -635,19 +912,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xca724e8a, 0xc3e6, 0x442b, 0x88, 0xa4, 0x6f, 0xb0, 0xdb, 0x80, 0x35, 0xa3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPropertyDescription(PROPERTYKEY* propkey, Guid* riid, void** ppv) mut
+			{
+				return VT.GetPropertyDescription(&this, propkey, riid, ppv);
+			}
+			public HRESULT GetPropertyDescriptionByName(PWSTR pszCanonicalName, Guid* riid, void** ppv) mut
+			{
+				return VT.GetPropertyDescriptionByName(&this, pszCanonicalName, riid, ppv);
+			}
+			public HRESULT GetPropertyDescriptionListFromString(PWSTR pszPropList, Guid* riid, void** ppv) mut
+			{
+				return VT.GetPropertyDescriptionListFromString(&this, pszPropList, riid, ppv);
+			}
+			public HRESULT EnumeratePropertyDescriptions(PROPDESC_ENUMFILTER filterOn, Guid* riid, void** ppv) mut
+			{
+				return VT.EnumeratePropertyDescriptions(&this, filterOn, riid, ppv);
+			}
+			public HRESULT FormatForDisplay(PROPERTYKEY* key, PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, char16* pszText, uint32 cchText) mut
+			{
+				return VT.FormatForDisplay(&this, key, propvar, pdff, pszText, cchText);
+			}
+			public HRESULT FormatForDisplayAlloc(PROPERTYKEY* key, PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, PWSTR* ppszDisplay) mut
+			{
+				return VT.FormatForDisplayAlloc(&this, key, propvar, pdff, ppszDisplay);
+			}
+			public HRESULT RegisterPropertySchema(PWSTR pszPath) mut
+			{
+				return VT.RegisterPropertySchema(&this, pszPath);
+			}
+			public HRESULT UnregisterPropertySchema(PWSTR pszPath) mut
+			{
+				return VT.UnregisterPropertySchema(&this, pszPath);
+			}
+			public HRESULT RefreshPropertySchema() mut
+			{
+				return VT.RefreshPropertySchema(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPropertySystem *self, PROPERTYKEY* propkey, Guid* riid, void** ppv) GetPropertyDescription;
-				public function HRESULT(IPropertySystem *self, PWSTR pszCanonicalName, Guid* riid, void** ppv) GetPropertyDescriptionByName;
-				public function HRESULT(IPropertySystem *self, PWSTR pszPropList, Guid* riid, void** ppv) GetPropertyDescriptionListFromString;
-				public function HRESULT(IPropertySystem *self, PROPDESC_ENUMFILTER filterOn, Guid* riid, void** ppv) EnumeratePropertyDescriptions;
-				public function HRESULT(IPropertySystem *self, PROPERTYKEY* key, PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, char16* pszText, uint32 cchText) FormatForDisplay;
-				public function HRESULT(IPropertySystem *self, PROPERTYKEY* key, PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, PWSTR* ppszDisplay) FormatForDisplayAlloc;
-				public function HRESULT(IPropertySystem *self, PWSTR pszPath) RegisterPropertySchema;
-				public function HRESULT(IPropertySystem *self, PWSTR pszPath) UnregisterPropertySchema;
-				public function HRESULT(IPropertySystem *self) RefreshPropertySchema;
+				public new function HRESULT(IPropertySystem *self, PROPERTYKEY* propkey, Guid* riid, void** ppv) GetPropertyDescription;
+				public new function HRESULT(IPropertySystem *self, PWSTR pszCanonicalName, Guid* riid, void** ppv) GetPropertyDescriptionByName;
+				public new function HRESULT(IPropertySystem *self, PWSTR pszPropList, Guid* riid, void** ppv) GetPropertyDescriptionListFromString;
+				public new function HRESULT(IPropertySystem *self, PROPDESC_ENUMFILTER filterOn, Guid* riid, void** ppv) EnumeratePropertyDescriptions;
+				public new function HRESULT(IPropertySystem *self, PROPERTYKEY* key, PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, char16* pszText, uint32 cchText) FormatForDisplay;
+				public new function HRESULT(IPropertySystem *self, PROPERTYKEY* key, PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, PWSTR* ppszDisplay) FormatForDisplayAlloc;
+				public new function HRESULT(IPropertySystem *self, PWSTR pszPath) RegisterPropertySchema;
+				public new function HRESULT(IPropertySystem *self, PWSTR pszPath) UnregisterPropertySchema;
+				public new function HRESULT(IPropertySystem *self) RefreshPropertySchema;
 			}
 		}
 		[CRepr]
@@ -655,12 +969,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1f9fc1d0, 0xc39b, 0x4b26, 0x81, 0x7f, 0x01, 0x19, 0x67, 0xd3, 0x44, 0x0e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCount(uint32* pcElem) mut
+			{
+				return VT.GetCount(&this, pcElem);
+			}
+			public HRESULT GetAt(uint32 iElem, Guid* riid, void** ppv) mut
+			{
+				return VT.GetAt(&this, iElem, riid, ppv);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPropertyDescriptionList *self, uint32* pcElem) GetCount;
-				public function HRESULT(IPropertyDescriptionList *self, uint32 iElem, Guid* riid, void** ppv) GetAt;
+				public new function HRESULT(IPropertyDescriptionList *self, uint32* pcElem) GetCount;
+				public new function HRESULT(IPropertyDescriptionList *self, uint32 iElem, Guid* riid, void** ppv) GetAt;
 			}
 		}
 		[CRepr]
@@ -668,12 +991,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbc110b6d, 0x57e8, 0x4148, 0xa9, 0xc6, 0x91, 0x01, 0x5a, 0xb2, 0xf3, 0xa5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPropertyStore(GETPROPERTYSTOREFLAGS flags, IUnknown* pUnkFactory, Guid* riid, void** ppv) mut
+			{
+				return VT.GetPropertyStore(&this, flags, pUnkFactory, riid, ppv);
+			}
+			public HRESULT GetPropertyStoreForKeys(PROPERTYKEY* rgKeys, uint32 cKeys, GETPROPERTYSTOREFLAGS flags, Guid* riid, void** ppv) mut
+			{
+				return VT.GetPropertyStoreForKeys(&this, rgKeys, cKeys, flags, riid, ppv);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPropertyStoreFactory *self, GETPROPERTYSTOREFLAGS flags, IUnknown* pUnkFactory, Guid* riid, void** ppv) GetPropertyStore;
-				public function HRESULT(IPropertyStoreFactory *self, PROPERTYKEY* rgKeys, uint32 cKeys, GETPROPERTYSTOREFLAGS flags, Guid* riid, void** ppv) GetPropertyStoreForKeys;
+				public new function HRESULT(IPropertyStoreFactory *self, GETPROPERTYSTOREFLAGS flags, IUnknown* pUnkFactory, Guid* riid, void** ppv) GetPropertyStore;
+				public new function HRESULT(IPropertyStoreFactory *self, PROPERTYKEY* rgKeys, uint32 cKeys, GETPROPERTYSTOREFLAGS flags, Guid* riid, void** ppv) GetPropertyStoreForKeys;
 			}
 		}
 		[CRepr]
@@ -681,11 +1013,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x40d4577f, 0xe237, 0x4bdb, 0xbd, 0x69, 0x58, 0xf0, 0x89, 0x43, 0x1b, 0x6a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDelayedPropertyStore(GETPROPERTYSTOREFLAGS flags, uint32 dwStoreId, Guid* riid, void** ppv) mut
+			{
+				return VT.GetDelayedPropertyStore(&this, flags, dwStoreId, riid, ppv);
+			}
 			[CRepr]
 			public struct VTable : IPropertyStoreFactory.VTable
 			{
-				public function HRESULT(IDelayedPropertyStoreFactory *self, GETPROPERTYSTOREFLAGS flags, uint32 dwStoreId, Guid* riid, void** ppv) GetDelayedPropertyStore;
+				public new function HRESULT(IDelayedPropertyStoreFactory *self, GETPROPERTYSTOREFLAGS flags, uint32 dwStoreId, Guid* riid, void** ppv) GetDelayedPropertyStore;
 			}
 		}
 		[CRepr]
@@ -693,13 +1030,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe318ad57, 0x0aa0, 0x450f, 0xac, 0xa5, 0x6f, 0xab, 0x71, 0x03, 0xd9, 0x17);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetFlags(int32 flags) mut
+			{
+				return VT.SetFlags(&this, flags);
+			}
+			public HRESULT SetPropertyStorage(SERIALIZEDPROPSTORAGE* psps, uint32 cb) mut
+			{
+				return VT.SetPropertyStorage(&this, psps, cb);
+			}
+			public HRESULT GetPropertyStorage(SERIALIZEDPROPSTORAGE** ppsps, uint32* pcb) mut
+			{
+				return VT.GetPropertyStorage(&this, ppsps, pcb);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPersistSerializedPropStorage *self, int32 flags) SetFlags;
-				public function HRESULT(IPersistSerializedPropStorage *self, SERIALIZEDPROPSTORAGE* psps, uint32 cb) SetPropertyStorage;
-				public function HRESULT(IPersistSerializedPropStorage *self, SERIALIZEDPROPSTORAGE** ppsps, uint32* pcb) GetPropertyStorage;
+				public new function HRESULT(IPersistSerializedPropStorage *self, int32 flags) SetFlags;
+				public new function HRESULT(IPersistSerializedPropStorage *self, SERIALIZEDPROPSTORAGE* psps, uint32 cb) SetPropertyStorage;
+				public new function HRESULT(IPersistSerializedPropStorage *self, SERIALIZEDPROPSTORAGE** ppsps, uint32* pcb) GetPropertyStorage;
 			}
 		}
 		[CRepr]
@@ -707,12 +1057,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x77effa68, 0x4f98, 0x4366, 0xba, 0x72, 0x57, 0x3b, 0x3d, 0x88, 0x05, 0x71);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPropertyStorageSize(uint32* pcb) mut
+			{
+				return VT.GetPropertyStorageSize(&this, pcb);
+			}
+			public HRESULT GetPropertyStorageBuffer(SERIALIZEDPROPSTORAGE* psps, uint32 cb, uint32* pcbWritten) mut
+			{
+				return VT.GetPropertyStorageBuffer(&this, psps, cb, pcbWritten);
+			}
 			[CRepr]
 			public struct VTable : IPersistSerializedPropStorage.VTable
 			{
-				public function HRESULT(IPersistSerializedPropStorage2 *self, uint32* pcb) GetPropertyStorageSize;
-				public function HRESULT(IPersistSerializedPropStorage2 *self, SERIALIZEDPROPSTORAGE* psps, uint32 cb, uint32* pcbWritten) GetPropertyStorageBuffer;
+				public new function HRESULT(IPersistSerializedPropStorage2 *self, uint32* pcb) GetPropertyStorageSize;
+				public new function HRESULT(IPersistSerializedPropStorage2 *self, SERIALIZEDPROPSTORAGE* psps, uint32 cb, uint32* pcbWritten) GetPropertyStorageBuffer;
 			}
 		}
 		[CRepr]
@@ -720,11 +1079,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfa955fd9, 0x38be, 0x4879, 0xa6, 0xce, 0x82, 0x4c, 0xf5, 0x2d, 0x60, 0x9f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SchemaRefreshed() mut
+			{
+				return VT.SchemaRefreshed(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPropertySystemChangeNotify *self) SchemaRefreshed;
+				public new function HRESULT(IPropertySystemChangeNotify *self) SchemaRefreshed;
 			}
 		}
 		[CRepr]
@@ -732,11 +1096,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x75121952, 0xe0d0, 0x43e5, 0x93, 0x80, 0x1d, 0x80, 0x48, 0x3a, 0xcf, 0x72);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateObject(Guid* clsid, IUnknown* pUnkOuter, Guid* riid, void** ppv) mut
+			{
+				return VT.CreateObject(&this, clsid, pUnkOuter, riid, ppv);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ICreateObject *self, Guid* clsid, IUnknown* pUnkOuter, Guid* riid, void** ppv) CreateObject;
+				public new function HRESULT(ICreateObject *self, Guid* clsid, IUnknown* pUnkOuter, Guid* riid, void** ppv) CreateObject;
 			}
 		}
 		[CRepr]
@@ -744,18 +1113,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x757a7d9f, 0x919a, 0x4118, 0x99, 0xd7, 0xdb, 0xb2, 0x08, 0xc8, 0xcc, 0x66);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ParsePropertyName(PWSTR pszName, Guid* pfmtid, uint32* ppid, uint32* pchEaten) mut
+			{
+				return VT.ParsePropertyName(&this, pszName, pfmtid, ppid, pchEaten);
+			}
+			public HRESULT GetCannonicalName(Guid* fmtid, uint32 pid, char16* pwszText, uint32 cchText) mut
+			{
+				return VT.GetCannonicalName(&this, fmtid, pid, pwszText, cchText);
+			}
+			public HRESULT GetDisplayName(Guid* fmtid, uint32 pid, PROPERTYUI_NAME_FLAGS flags, char16* pwszText, uint32 cchText) mut
+			{
+				return VT.GetDisplayName(&this, fmtid, pid, flags, pwszText, cchText);
+			}
+			public HRESULT GetPropertyDescription(Guid* fmtid, uint32 pid, char16* pwszText, uint32 cchText) mut
+			{
+				return VT.GetPropertyDescription(&this, fmtid, pid, pwszText, cchText);
+			}
+			public HRESULT GetDefaultWidth(Guid* fmtid, uint32 pid, uint32* pcxChars) mut
+			{
+				return VT.GetDefaultWidth(&this, fmtid, pid, pcxChars);
+			}
+			public HRESULT ComGetFlags(Guid* fmtid, uint32 pid, PROPERTYUI_FLAGS* pflags) mut
+			{
+				return VT.ComGetFlags(&this, fmtid, pid, pflags);
+			}
+			public HRESULT FormatForDisplay(Guid* fmtid, uint32 pid, PROPVARIANT* ppropvar, PROPERTYUI_FORMAT_FLAGS puiff, char16* pwszText, uint32 cchText) mut
+			{
+				return VT.FormatForDisplay(&this, fmtid, pid, ppropvar, puiff, pwszText, cchText);
+			}
+			public HRESULT GetHelpInfo(Guid* fmtid, uint32 pid, char16* pwszHelpFile, uint32 cch, uint32* puHelpID) mut
+			{
+				return VT.GetHelpInfo(&this, fmtid, pid, pwszHelpFile, cch, puHelpID);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPropertyUI *self, PWSTR pszName, Guid* pfmtid, uint32* ppid, uint32* pchEaten) ParsePropertyName;
-				public function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, char16* pwszText, uint32 cchText) GetCannonicalName;
-				public function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, PROPERTYUI_NAME_FLAGS flags, char16* pwszText, uint32 cchText) GetDisplayName;
-				public function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, char16* pwszText, uint32 cchText) GetPropertyDescription;
-				public function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, uint32* pcxChars) GetDefaultWidth;
-				public function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, PROPERTYUI_FLAGS* pflags) GetFlags;
-				public function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, PROPVARIANT* ppropvar, PROPERTYUI_FORMAT_FLAGS puiff, char16* pwszText, uint32 cchText) FormatForDisplay;
-				public function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, char16* pwszHelpFile, uint32 cch, uint32* puHelpID) GetHelpInfo;
+				public new function HRESULT(IPropertyUI *self, PWSTR pszName, Guid* pfmtid, uint32* ppid, uint32* pchEaten) ParsePropertyName;
+				public new function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, char16* pwszText, uint32 cchText) GetCannonicalName;
+				public new function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, PROPERTYUI_NAME_FLAGS flags, char16* pwszText, uint32 cchText) GetDisplayName;
+				public new function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, char16* pwszText, uint32 cchText) GetPropertyDescription;
+				public new function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, uint32* pcxChars) GetDefaultWidth;
+				public new function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, PROPERTYUI_FLAGS* pflags) ComGetFlags;
+				public new function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, PROPVARIANT* ppropvar, PROPERTYUI_FORMAT_FLAGS puiff, char16* pwszText, uint32 cchText) FormatForDisplay;
+				public new function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, char16* pwszHelpFile, uint32 cch, uint32* puHelpID) GetHelpInfo;
 			}
 		}
 		

@@ -12,11 +12,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1b0535c9, 0x57ad, 0x45c1, 0x9d, 0x79, 0xad, 0x5c, 0x34, 0x36, 0x05, 0x13);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateForWindow(HWND hwnd, Guid* riid, void** ppv) mut
+			{
+				return VT.CreateForWindow(&this, hwnd, riid, ppv);
+			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public function HRESULT(IRadialControllerInterop *self, HWND hwnd, Guid* riid, void** ppv) CreateForWindow;
+				public new function HRESULT(IRadialControllerInterop *self, HWND hwnd, Guid* riid, void** ppv) CreateForWindow;
 			}
 		}
 		[CRepr]
@@ -24,11 +29,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x787cdaac, 0x3186, 0x476d, 0x87, 0xe4, 0xb9, 0x37, 0x4a, 0x7b, 0x99, 0x70);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetForWindow(HWND hwnd, Guid* riid, void** ppv) mut
+			{
+				return VT.GetForWindow(&this, hwnd, riid, ppv);
+			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public function HRESULT(IRadialControllerConfigurationInterop *self, HWND hwnd, Guid* riid, void** ppv) GetForWindow;
+				public new function HRESULT(IRadialControllerConfigurationInterop *self, HWND hwnd, Guid* riid, void** ppv) GetForWindow;
 			}
 		}
 		[CRepr]
@@ -36,11 +46,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3d577eff, 0x4cee, 0x11e6, 0xb5, 0x35, 0x00, 0x1b, 0xdc, 0x06, 0xab, 0x3b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateForWindow(HWND hwnd, Guid* riid, void** ppv) mut
+			{
+				return VT.CreateForWindow(&this, hwnd, riid, ppv);
+			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public function HRESULT(IRadialControllerIndependentInputSourceInterop *self, HWND hwnd, Guid* riid, void** ppv) CreateForWindow;
+				public new function HRESULT(IRadialControllerIndependentInputSourceInterop *self, HWND hwnd, Guid* riid, void** ppv) CreateForWindow;
 			}
 		}
 		

@@ -5740,22 +5740,71 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6ba73778, 0x36da, 0x4c39, 0x8a, 0x85, 0xbc, 0xfa, 0x7d, 0x00, 0x07, 0x93);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ProviderName(BSTR* pVal) mut
+			{
+				return VT.get_ProviderName(&this, pVal);
+			}
+			public HRESULT put_ProviderName(BSTR bstrVal) mut
+			{
+				return VT.put_ProviderName(&this, bstrVal);
+			}
+			public HRESULT get_Length(int32* pVal) mut
+			{
+				return VT.get_Length(&this, pVal);
+			}
+			public HRESULT put_Length(int32 lVal) mut
+			{
+				return VT.put_Length(&this, lVal);
+			}
+			public HRESULT get_Existing(int16* pVal) mut
+			{
+				return VT.get_Existing(&this, pVal);
+			}
+			public HRESULT put_Existing(int16 bVal) mut
+			{
+				return VT.put_Existing(&this, bVal);
+			}
+			public HRESULT get_ContainerName(BSTR* pVal) mut
+			{
+				return VT.get_ContainerName(&this, pVal);
+			}
+			public HRESULT put_ContainerName(BSTR bstrVal) mut
+			{
+				return VT.put_ContainerName(&this, bstrVal);
+			}
+			public HRESULT get_HashAlgorithm(BSTR* pVal) mut
+			{
+				return VT.get_HashAlgorithm(&this, pVal);
+			}
+			public HRESULT put_HashAlgorithm(BSTR bstrVal) mut
+			{
+				return VT.put_HashAlgorithm(&this, bstrVal);
+			}
+			public HRESULT get_ExistingCACertificate(VARIANT* pVal) mut
+			{
+				return VT.get_ExistingCACertificate(&this, pVal);
+			}
+			public HRESULT put_ExistingCACertificate(VARIANT varVal) mut
+			{
+				return VT.put_ExistingCACertificate(&this, varVal);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ICertSrvSetupKeyInformation *self, BSTR* pVal) get_ProviderName;
-				public function HRESULT(ICertSrvSetupKeyInformation *self, BSTR bstrVal) put_ProviderName;
-				public function HRESULT(ICertSrvSetupKeyInformation *self, int32* pVal) get_Length;
-				public function HRESULT(ICertSrvSetupKeyInformation *self, int32 lVal) put_Length;
-				public function HRESULT(ICertSrvSetupKeyInformation *self, int16* pVal) get_Existing;
-				public function HRESULT(ICertSrvSetupKeyInformation *self, int16 bVal) put_Existing;
-				public function HRESULT(ICertSrvSetupKeyInformation *self, BSTR* pVal) get_ContainerName;
-				public function HRESULT(ICertSrvSetupKeyInformation *self, BSTR bstrVal) put_ContainerName;
-				public function HRESULT(ICertSrvSetupKeyInformation *self, BSTR* pVal) get_HashAlgorithm;
-				public function HRESULT(ICertSrvSetupKeyInformation *self, BSTR bstrVal) put_HashAlgorithm;
-				public function HRESULT(ICertSrvSetupKeyInformation *self, VARIANT* pVal) get_ExistingCACertificate;
-				public function HRESULT(ICertSrvSetupKeyInformation *self, VARIANT varVal) put_ExistingCACertificate;
+				public new function HRESULT(ICertSrvSetupKeyInformation *self, BSTR* pVal) get_ProviderName;
+				public new function HRESULT(ICertSrvSetupKeyInformation *self, BSTR bstrVal) put_ProviderName;
+				public new function HRESULT(ICertSrvSetupKeyInformation *self, int32* pVal) get_Length;
+				public new function HRESULT(ICertSrvSetupKeyInformation *self, int32 lVal) put_Length;
+				public new function HRESULT(ICertSrvSetupKeyInformation *self, int16* pVal) get_Existing;
+				public new function HRESULT(ICertSrvSetupKeyInformation *self, int16 bVal) put_Existing;
+				public new function HRESULT(ICertSrvSetupKeyInformation *self, BSTR* pVal) get_ContainerName;
+				public new function HRESULT(ICertSrvSetupKeyInformation *self, BSTR bstrVal) put_ContainerName;
+				public new function HRESULT(ICertSrvSetupKeyInformation *self, BSTR* pVal) get_HashAlgorithm;
+				public new function HRESULT(ICertSrvSetupKeyInformation *self, BSTR bstrVal) put_HashAlgorithm;
+				public new function HRESULT(ICertSrvSetupKeyInformation *self, VARIANT* pVal) get_ExistingCACertificate;
+				public new function HRESULT(ICertSrvSetupKeyInformation *self, VARIANT varVal) put_ExistingCACertificate;
 			}
 		}
 		[CRepr]
@@ -5763,14 +5812,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe65c8b00, 0xe58f, 0x41f9, 0xa9, 0xec, 0xa2, 0x8d, 0x74, 0x27, 0xc8, 0x44);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get__NewEnum(IUnknown** ppVal) mut
+			{
+				return VT.get__NewEnum(&this, ppVal);
+			}
+			public HRESULT get_Item(int32 Index, VARIANT* pVal) mut
+			{
+				return VT.get_Item(&this, Index, pVal);
+			}
+			public HRESULT get_Count(int32* pVal) mut
+			{
+				return VT.get_Count(&this, pVal);
+			}
+			public HRESULT Add(ICertSrvSetupKeyInformation* pIKeyInformation) mut
+			{
+				return VT.Add(&this, pIKeyInformation);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ICertSrvSetupKeyInformationCollection *self, IUnknown** ppVal) get__NewEnum;
-				public function HRESULT(ICertSrvSetupKeyInformationCollection *self, int32 Index, VARIANT* pVal) get_Item;
-				public function HRESULT(ICertSrvSetupKeyInformationCollection *self, int32* pVal) get_Count;
-				public function HRESULT(ICertSrvSetupKeyInformationCollection *self, ICertSrvSetupKeyInformation* pIKeyInformation) Add;
+				public new function HRESULT(ICertSrvSetupKeyInformationCollection *self, IUnknown** ppVal) get__NewEnum;
+				public new function HRESULT(ICertSrvSetupKeyInformationCollection *self, int32 Index, VARIANT* pVal) get_Item;
+				public new function HRESULT(ICertSrvSetupKeyInformationCollection *self, int32* pVal) get_Count;
+				public new function HRESULT(ICertSrvSetupKeyInformationCollection *self, ICertSrvSetupKeyInformation* pIKeyInformation) Add;
 			}
 		}
 		[CRepr]
@@ -5778,30 +5844,111 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb760a1bb, 0x4784, 0x44c0, 0x8f, 0x12, 0x55, 0x5f, 0x07, 0x80, 0xff, 0x25);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CAErrorId(int32* pVal) mut
+			{
+				return VT.get_CAErrorId(&this, pVal);
+			}
+			public HRESULT get_CAErrorString(BSTR* pVal) mut
+			{
+				return VT.get_CAErrorString(&this, pVal);
+			}
+			public HRESULT InitializeDefaults(int16 bServer, int16 bClient) mut
+			{
+				return VT.InitializeDefaults(&this, bServer, bClient);
+			}
+			public HRESULT GetCASetupProperty(CASetupProperty propertyId, VARIANT* pPropertyValue) mut
+			{
+				return VT.GetCASetupProperty(&this, propertyId, pPropertyValue);
+			}
+			public HRESULT SetCASetupProperty(CASetupProperty propertyId, VARIANT* pPropertyValue) mut
+			{
+				return VT.SetCASetupProperty(&this, propertyId, pPropertyValue);
+			}
+			public HRESULT IsPropertyEditable(CASetupProperty propertyId, int16* pbEditable) mut
+			{
+				return VT.IsPropertyEditable(&this, propertyId, pbEditable);
+			}
+			public HRESULT GetSupportedCATypes(VARIANT* pCATypes) mut
+			{
+				return VT.GetSupportedCATypes(&this, pCATypes);
+			}
+			public HRESULT GetProviderNameList(VARIANT* pVal) mut
+			{
+				return VT.GetProviderNameList(&this, pVal);
+			}
+			public HRESULT GetKeyLengthList(BSTR bstrProviderName, VARIANT* pVal) mut
+			{
+				return VT.GetKeyLengthList(&this, bstrProviderName, pVal);
+			}
+			public HRESULT GetHashAlgorithmList(BSTR bstrProviderName, VARIANT* pVal) mut
+			{
+				return VT.GetHashAlgorithmList(&this, bstrProviderName, pVal);
+			}
+			public HRESULT GetPrivateKeyContainerList(BSTR bstrProviderName, VARIANT* pVal) mut
+			{
+				return VT.GetPrivateKeyContainerList(&this, bstrProviderName, pVal);
+			}
+			public HRESULT GetExistingCACertificates(ICertSrvSetupKeyInformationCollection** ppVal) mut
+			{
+				return VT.GetExistingCACertificates(&this, ppVal);
+			}
+			public HRESULT CAImportPFX(BSTR bstrFileName, BSTR bstrPasswd, int16 bOverwriteExistingKey, ICertSrvSetupKeyInformation** ppVal) mut
+			{
+				return VT.CAImportPFX(&this, bstrFileName, bstrPasswd, bOverwriteExistingKey, ppVal);
+			}
+			public HRESULT SetCADistinguishedName(BSTR bstrCADN, int16 bIgnoreUnicode, int16 bOverwriteExistingKey, int16 bOverwriteExistingCAInDS) mut
+			{
+				return VT.SetCADistinguishedName(&this, bstrCADN, bIgnoreUnicode, bOverwriteExistingKey, bOverwriteExistingCAInDS);
+			}
+			public HRESULT SetDatabaseInformation(BSTR bstrDBDirectory, BSTR bstrLogDirectory, BSTR bstrSharedFolder, int16 bForceOverwrite) mut
+			{
+				return VT.SetDatabaseInformation(&this, bstrDBDirectory, bstrLogDirectory, bstrSharedFolder, bForceOverwrite);
+			}
+			public HRESULT SetParentCAInformation(BSTR bstrCAConfiguration) mut
+			{
+				return VT.SetParentCAInformation(&this, bstrCAConfiguration);
+			}
+			public HRESULT SetWebCAInformation(BSTR bstrCAConfiguration) mut
+			{
+				return VT.SetWebCAInformation(&this, bstrCAConfiguration);
+			}
+			public HRESULT Install() mut
+			{
+				return VT.Install(&this);
+			}
+			public HRESULT PreUnInstall(int16 bClientOnly) mut
+			{
+				return VT.PreUnInstall(&this, bClientOnly);
+			}
+			public HRESULT PostUnInstall() mut
+			{
+				return VT.PostUnInstall(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ICertSrvSetup *self, int32* pVal) get_CAErrorId;
-				public function HRESULT(ICertSrvSetup *self, BSTR* pVal) get_CAErrorString;
-				public function HRESULT(ICertSrvSetup *self, int16 bServer, int16 bClient) InitializeDefaults;
-				public function HRESULT(ICertSrvSetup *self, CASetupProperty propertyId, VARIANT* pPropertyValue) GetCASetupProperty;
-				public function HRESULT(ICertSrvSetup *self, CASetupProperty propertyId, VARIANT* pPropertyValue) SetCASetupProperty;
-				public function HRESULT(ICertSrvSetup *self, CASetupProperty propertyId, int16* pbEditable) IsPropertyEditable;
-				public function HRESULT(ICertSrvSetup *self, VARIANT* pCATypes) GetSupportedCATypes;
-				public function HRESULT(ICertSrvSetup *self, VARIANT* pVal) GetProviderNameList;
-				public function HRESULT(ICertSrvSetup *self, BSTR bstrProviderName, VARIANT* pVal) GetKeyLengthList;
-				public function HRESULT(ICertSrvSetup *self, BSTR bstrProviderName, VARIANT* pVal) GetHashAlgorithmList;
-				public function HRESULT(ICertSrvSetup *self, BSTR bstrProviderName, VARIANT* pVal) GetPrivateKeyContainerList;
-				public function HRESULT(ICertSrvSetup *self, ICertSrvSetupKeyInformationCollection** ppVal) GetExistingCACertificates;
-				public function HRESULT(ICertSrvSetup *self, BSTR bstrFileName, BSTR bstrPasswd, int16 bOverwriteExistingKey, ICertSrvSetupKeyInformation** ppVal) CAImportPFX;
-				public function HRESULT(ICertSrvSetup *self, BSTR bstrCADN, int16 bIgnoreUnicode, int16 bOverwriteExistingKey, int16 bOverwriteExistingCAInDS) SetCADistinguishedName;
-				public function HRESULT(ICertSrvSetup *self, BSTR bstrDBDirectory, BSTR bstrLogDirectory, BSTR bstrSharedFolder, int16 bForceOverwrite) SetDatabaseInformation;
-				public function HRESULT(ICertSrvSetup *self, BSTR bstrCAConfiguration) SetParentCAInformation;
-				public function HRESULT(ICertSrvSetup *self, BSTR bstrCAConfiguration) SetWebCAInformation;
-				public function HRESULT(ICertSrvSetup *self) Install;
-				public function HRESULT(ICertSrvSetup *self, int16 bClientOnly) PreUnInstall;
-				public function HRESULT(ICertSrvSetup *self) PostUnInstall;
+				public new function HRESULT(ICertSrvSetup *self, int32* pVal) get_CAErrorId;
+				public new function HRESULT(ICertSrvSetup *self, BSTR* pVal) get_CAErrorString;
+				public new function HRESULT(ICertSrvSetup *self, int16 bServer, int16 bClient) InitializeDefaults;
+				public new function HRESULT(ICertSrvSetup *self, CASetupProperty propertyId, VARIANT* pPropertyValue) GetCASetupProperty;
+				public new function HRESULT(ICertSrvSetup *self, CASetupProperty propertyId, VARIANT* pPropertyValue) SetCASetupProperty;
+				public new function HRESULT(ICertSrvSetup *self, CASetupProperty propertyId, int16* pbEditable) IsPropertyEditable;
+				public new function HRESULT(ICertSrvSetup *self, VARIANT* pCATypes) GetSupportedCATypes;
+				public new function HRESULT(ICertSrvSetup *self, VARIANT* pVal) GetProviderNameList;
+				public new function HRESULT(ICertSrvSetup *self, BSTR bstrProviderName, VARIANT* pVal) GetKeyLengthList;
+				public new function HRESULT(ICertSrvSetup *self, BSTR bstrProviderName, VARIANT* pVal) GetHashAlgorithmList;
+				public new function HRESULT(ICertSrvSetup *self, BSTR bstrProviderName, VARIANT* pVal) GetPrivateKeyContainerList;
+				public new function HRESULT(ICertSrvSetup *self, ICertSrvSetupKeyInformationCollection** ppVal) GetExistingCACertificates;
+				public new function HRESULT(ICertSrvSetup *self, BSTR bstrFileName, BSTR bstrPasswd, int16 bOverwriteExistingKey, ICertSrvSetupKeyInformation** ppVal) CAImportPFX;
+				public new function HRESULT(ICertSrvSetup *self, BSTR bstrCADN, int16 bIgnoreUnicode, int16 bOverwriteExistingKey, int16 bOverwriteExistingCAInDS) SetCADistinguishedName;
+				public new function HRESULT(ICertSrvSetup *self, BSTR bstrDBDirectory, BSTR bstrLogDirectory, BSTR bstrSharedFolder, int16 bForceOverwrite) SetDatabaseInformation;
+				public new function HRESULT(ICertSrvSetup *self, BSTR bstrCAConfiguration) SetParentCAInformation;
+				public new function HRESULT(ICertSrvSetup *self, BSTR bstrCAConfiguration) SetWebCAInformation;
+				public new function HRESULT(ICertSrvSetup *self) Install;
+				public new function HRESULT(ICertSrvSetup *self, int16 bClientOnly) PreUnInstall;
+				public new function HRESULT(ICertSrvSetup *self) PostUnInstall;
 			}
 		}
 		[CRepr]
@@ -5809,22 +5956,71 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4f7761bb, 0x9f3b, 0x4592, 0x9e, 0xe0, 0x9a, 0x73, 0x25, 0x9c, 0x31, 0x3e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_MSCEPErrorId(int32* pVal) mut
+			{
+				return VT.get_MSCEPErrorId(&this, pVal);
+			}
+			public HRESULT get_MSCEPErrorString(BSTR* pVal) mut
+			{
+				return VT.get_MSCEPErrorString(&this, pVal);
+			}
+			public HRESULT InitializeDefaults() mut
+			{
+				return VT.InitializeDefaults(&this);
+			}
+			public HRESULT GetMSCEPSetupProperty(MSCEPSetupProperty propertyId, VARIANT* pVal) mut
+			{
+				return VT.GetMSCEPSetupProperty(&this, propertyId, pVal);
+			}
+			public HRESULT SetMSCEPSetupProperty(MSCEPSetupProperty propertyId, VARIANT* pPropertyValue) mut
+			{
+				return VT.SetMSCEPSetupProperty(&this, propertyId, pPropertyValue);
+			}
+			public HRESULT SetAccountInformation(BSTR bstrUserName, BSTR bstrPassword) mut
+			{
+				return VT.SetAccountInformation(&this, bstrUserName, bstrPassword);
+			}
+			public HRESULT IsMSCEPStoreEmpty(int16* pbEmpty) mut
+			{
+				return VT.IsMSCEPStoreEmpty(&this, pbEmpty);
+			}
+			public HRESULT GetProviderNameList(int16 bExchange, VARIANT* pVal) mut
+			{
+				return VT.GetProviderNameList(&this, bExchange, pVal);
+			}
+			public HRESULT GetKeyLengthList(int16 bExchange, BSTR bstrProviderName, VARIANT* pVal) mut
+			{
+				return VT.GetKeyLengthList(&this, bExchange, bstrProviderName, pVal);
+			}
+			public HRESULT Install() mut
+			{
+				return VT.Install(&this);
+			}
+			public HRESULT PreUnInstall() mut
+			{
+				return VT.PreUnInstall(&this);
+			}
+			public HRESULT PostUnInstall() mut
+			{
+				return VT.PostUnInstall(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IMSCEPSetup *self, int32* pVal) get_MSCEPErrorId;
-				public function HRESULT(IMSCEPSetup *self, BSTR* pVal) get_MSCEPErrorString;
-				public function HRESULT(IMSCEPSetup *self) InitializeDefaults;
-				public function HRESULT(IMSCEPSetup *self, MSCEPSetupProperty propertyId, VARIANT* pVal) GetMSCEPSetupProperty;
-				public function HRESULT(IMSCEPSetup *self, MSCEPSetupProperty propertyId, VARIANT* pPropertyValue) SetMSCEPSetupProperty;
-				public function HRESULT(IMSCEPSetup *self, BSTR bstrUserName, BSTR bstrPassword) SetAccountInformation;
-				public function HRESULT(IMSCEPSetup *self, int16* pbEmpty) IsMSCEPStoreEmpty;
-				public function HRESULT(IMSCEPSetup *self, int16 bExchange, VARIANT* pVal) GetProviderNameList;
-				public function HRESULT(IMSCEPSetup *self, int16 bExchange, BSTR bstrProviderName, VARIANT* pVal) GetKeyLengthList;
-				public function HRESULT(IMSCEPSetup *self) Install;
-				public function HRESULT(IMSCEPSetup *self) PreUnInstall;
-				public function HRESULT(IMSCEPSetup *self) PostUnInstall;
+				public new function HRESULT(IMSCEPSetup *self, int32* pVal) get_MSCEPErrorId;
+				public new function HRESULT(IMSCEPSetup *self, BSTR* pVal) get_MSCEPErrorString;
+				public new function HRESULT(IMSCEPSetup *self) InitializeDefaults;
+				public new function HRESULT(IMSCEPSetup *self, MSCEPSetupProperty propertyId, VARIANT* pVal) GetMSCEPSetupProperty;
+				public new function HRESULT(IMSCEPSetup *self, MSCEPSetupProperty propertyId, VARIANT* pPropertyValue) SetMSCEPSetupProperty;
+				public new function HRESULT(IMSCEPSetup *self, BSTR bstrUserName, BSTR bstrPassword) SetAccountInformation;
+				public new function HRESULT(IMSCEPSetup *self, int16* pbEmpty) IsMSCEPStoreEmpty;
+				public new function HRESULT(IMSCEPSetup *self, int16 bExchange, VARIANT* pVal) GetProviderNameList;
+				public new function HRESULT(IMSCEPSetup *self, int16 bExchange, BSTR bstrProviderName, VARIANT* pVal) GetKeyLengthList;
+				public new function HRESULT(IMSCEPSetup *self) Install;
+				public new function HRESULT(IMSCEPSetup *self) PreUnInstall;
+				public new function HRESULT(IMSCEPSetup *self) PostUnInstall;
 			}
 		}
 		[CRepr]
@@ -5832,17 +6028,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x70027fdb, 0x9dd9, 0x4921, 0x89, 0x44, 0xb3, 0x5c, 0xb3, 0x1b, 0xd2, 0xec);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ErrorString(BSTR* pVal) mut
+			{
+				return VT.get_ErrorString(&this, pVal);
+			}
+			public HRESULT InitializeInstallDefaults() mut
+			{
+				return VT.InitializeInstallDefaults(&this);
+			}
+			public HRESULT GetProperty(CESSetupProperty propertyId, VARIANT* pPropertyValue) mut
+			{
+				return VT.GetProperty(&this, propertyId, pPropertyValue);
+			}
+			public HRESULT SetProperty(CESSetupProperty propertyId, VARIANT* pPropertyValue) mut
+			{
+				return VT.SetProperty(&this, propertyId, pPropertyValue);
+			}
+			public HRESULT SetApplicationPoolCredentials(BSTR bstrUsername, BSTR bstrPassword) mut
+			{
+				return VT.SetApplicationPoolCredentials(&this, bstrUsername, bstrPassword);
+			}
+			public HRESULT Install() mut
+			{
+				return VT.Install(&this);
+			}
+			public HRESULT UnInstall(VARIANT* pCAConfig, VARIANT* pAuthentication) mut
+			{
+				return VT.UnInstall(&this, pCAConfig, pAuthentication);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ICertificateEnrollmentServerSetup *self, BSTR* pVal) get_ErrorString;
-				public function HRESULT(ICertificateEnrollmentServerSetup *self) InitializeInstallDefaults;
-				public function HRESULT(ICertificateEnrollmentServerSetup *self, CESSetupProperty propertyId, VARIANT* pPropertyValue) GetProperty;
-				public function HRESULT(ICertificateEnrollmentServerSetup *self, CESSetupProperty propertyId, VARIANT* pPropertyValue) SetProperty;
-				public function HRESULT(ICertificateEnrollmentServerSetup *self, BSTR bstrUsername, BSTR bstrPassword) SetApplicationPoolCredentials;
-				public function HRESULT(ICertificateEnrollmentServerSetup *self) Install;
-				public function HRESULT(ICertificateEnrollmentServerSetup *self, VARIANT* pCAConfig, VARIANT* pAuthentication) UnInstall;
+				public new function HRESULT(ICertificateEnrollmentServerSetup *self, BSTR* pVal) get_ErrorString;
+				public new function HRESULT(ICertificateEnrollmentServerSetup *self) InitializeInstallDefaults;
+				public new function HRESULT(ICertificateEnrollmentServerSetup *self, CESSetupProperty propertyId, VARIANT* pPropertyValue) GetProperty;
+				public new function HRESULT(ICertificateEnrollmentServerSetup *self, CESSetupProperty propertyId, VARIANT* pPropertyValue) SetProperty;
+				public new function HRESULT(ICertificateEnrollmentServerSetup *self, BSTR bstrUsername, BSTR bstrPassword) SetApplicationPoolCredentials;
+				public new function HRESULT(ICertificateEnrollmentServerSetup *self) Install;
+				public new function HRESULT(ICertificateEnrollmentServerSetup *self, VARIANT* pCAConfig, VARIANT* pAuthentication) UnInstall;
 			}
 		}
 		[CRepr]
@@ -5850,16 +6075,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x859252cc, 0x238c, 0x4a88, 0xb8, 0xfd, 0xa3, 0x7e, 0x7d, 0x04, 0xe6, 0x8b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ErrorString(BSTR* pVal) mut
+			{
+				return VT.get_ErrorString(&this, pVal);
+			}
+			public HRESULT InitializeInstallDefaults() mut
+			{
+				return VT.InitializeInstallDefaults(&this);
+			}
+			public HRESULT GetProperty(CEPSetupProperty propertyId, VARIANT* pPropertyValue) mut
+			{
+				return VT.GetProperty(&this, propertyId, pPropertyValue);
+			}
+			public HRESULT SetProperty(CEPSetupProperty propertyId, VARIANT* pPropertyValue) mut
+			{
+				return VT.SetProperty(&this, propertyId, pPropertyValue);
+			}
+			public HRESULT Install() mut
+			{
+				return VT.Install(&this);
+			}
+			public HRESULT UnInstall(VARIANT* pAuthKeyBasedRenewal) mut
+			{
+				return VT.UnInstall(&this, pAuthKeyBasedRenewal);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ICertificateEnrollmentPolicyServerSetup *self, BSTR* pVal) get_ErrorString;
-				public function HRESULT(ICertificateEnrollmentPolicyServerSetup *self) InitializeInstallDefaults;
-				public function HRESULT(ICertificateEnrollmentPolicyServerSetup *self, CEPSetupProperty propertyId, VARIANT* pPropertyValue) GetProperty;
-				public function HRESULT(ICertificateEnrollmentPolicyServerSetup *self, CEPSetupProperty propertyId, VARIANT* pPropertyValue) SetProperty;
-				public function HRESULT(ICertificateEnrollmentPolicyServerSetup *self) Install;
-				public function HRESULT(ICertificateEnrollmentPolicyServerSetup *self, VARIANT* pAuthKeyBasedRenewal) UnInstall;
+				public new function HRESULT(ICertificateEnrollmentPolicyServerSetup *self, BSTR* pVal) get_ErrorString;
+				public new function HRESULT(ICertificateEnrollmentPolicyServerSetup *self) InitializeInstallDefaults;
+				public new function HRESULT(ICertificateEnrollmentPolicyServerSetup *self, CEPSetupProperty propertyId, VARIANT* pPropertyValue) GetProperty;
+				public new function HRESULT(ICertificateEnrollmentPolicyServerSetup *self, CEPSetupProperty propertyId, VARIANT* pPropertyValue) SetProperty;
+				public new function HRESULT(ICertificateEnrollmentPolicyServerSetup *self) Install;
+				public new function HRESULT(ICertificateEnrollmentPolicyServerSetup *self, VARIANT* pAuthKeyBasedRenewal) UnInstall;
 			}
 		}
 		

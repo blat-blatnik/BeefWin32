@@ -72,12 +72,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1a1bb35f, 0xabb8, 0x451c, 0xa1, 0xae, 0x33, 0xd9, 0x8f, 0x1b, 0xef, 0x4a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ReportProgress(TPMVSCMGR_STATUS Status) mut
+			{
+				return VT.ReportProgress(&this, Status);
+			}
+			public HRESULT ReportError(TPMVSCMGR_ERROR Error) mut
+			{
+				return VT.ReportError(&this, Error);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ITpmVirtualSmartCardManagerStatusCallback *self, TPMVSCMGR_STATUS Status) ReportProgress;
-				public function HRESULT(ITpmVirtualSmartCardManagerStatusCallback *self, TPMVSCMGR_ERROR Error) ReportError;
+				public new function HRESULT(ITpmVirtualSmartCardManagerStatusCallback *self, TPMVSCMGR_STATUS Status) ReportProgress;
+				public new function HRESULT(ITpmVirtualSmartCardManagerStatusCallback *self, TPMVSCMGR_ERROR Error) ReportError;
 			}
 		}
 		[CRepr]
@@ -85,12 +94,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x112b1dff, 0xd9dc, 0x41f7, 0x86, 0x9f, 0xd6, 0x7f, 0xee, 0x7c, 0xb5, 0x91);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateVirtualSmartCard(PWSTR pszFriendlyName, uint8 bAdminAlgId, uint8* pbAdminKey, uint32 cbAdminKey, uint8* pbAdminKcv, uint32 cbAdminKcv, uint8* pbPuk, uint32 cbPuk, uint8* pbPin, uint32 cbPin, BOOL fGenerate, ITpmVirtualSmartCardManagerStatusCallback* pStatusCallback, PWSTR* ppszInstanceId, BOOL* pfNeedReboot) mut
+			{
+				return VT.CreateVirtualSmartCard(&this, pszFriendlyName, bAdminAlgId, pbAdminKey, cbAdminKey, pbAdminKcv, cbAdminKcv, pbPuk, cbPuk, pbPin, cbPin, fGenerate, pStatusCallback, ppszInstanceId, pfNeedReboot);
+			}
+			public HRESULT DestroyVirtualSmartCard(PWSTR pszInstanceId, ITpmVirtualSmartCardManagerStatusCallback* pStatusCallback, BOOL* pfNeedReboot) mut
+			{
+				return VT.DestroyVirtualSmartCard(&this, pszInstanceId, pStatusCallback, pfNeedReboot);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ITpmVirtualSmartCardManager *self, PWSTR pszFriendlyName, uint8 bAdminAlgId, uint8* pbAdminKey, uint32 cbAdminKey, uint8* pbAdminKcv, uint32 cbAdminKcv, uint8* pbPuk, uint32 cbPuk, uint8* pbPin, uint32 cbPin, BOOL fGenerate, ITpmVirtualSmartCardManagerStatusCallback* pStatusCallback, PWSTR* ppszInstanceId, BOOL* pfNeedReboot) CreateVirtualSmartCard;
-				public function HRESULT(ITpmVirtualSmartCardManager *self, PWSTR pszInstanceId, ITpmVirtualSmartCardManagerStatusCallback* pStatusCallback, BOOL* pfNeedReboot) DestroyVirtualSmartCard;
+				public new function HRESULT(ITpmVirtualSmartCardManager *self, PWSTR pszFriendlyName, uint8 bAdminAlgId, uint8* pbAdminKey, uint32 cbAdminKey, uint8* pbAdminKcv, uint32 cbAdminKcv, uint8* pbPuk, uint32 cbPuk, uint8* pbPin, uint32 cbPin, BOOL fGenerate, ITpmVirtualSmartCardManagerStatusCallback* pStatusCallback, PWSTR* ppszInstanceId, BOOL* pfNeedReboot) CreateVirtualSmartCard;
+				public new function HRESULT(ITpmVirtualSmartCardManager *self, PWSTR pszInstanceId, ITpmVirtualSmartCardManagerStatusCallback* pStatusCallback, BOOL* pfNeedReboot) DestroyVirtualSmartCard;
 			}
 		}
 		[CRepr]
@@ -98,11 +116,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfdf8a2b9, 0x02de, 0x47f4, 0xbc, 0x26, 0xaa, 0x85, 0xab, 0x5e, 0x52, 0x67);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateVirtualSmartCardWithPinPolicy(PWSTR pszFriendlyName, uint8 bAdminAlgId, uint8* pbAdminKey, uint32 cbAdminKey, uint8* pbAdminKcv, uint32 cbAdminKcv, uint8* pbPuk, uint32 cbPuk, uint8* pbPin, uint32 cbPin, uint8* pbPinPolicy, uint32 cbPinPolicy, BOOL fGenerate, ITpmVirtualSmartCardManagerStatusCallback* pStatusCallback, PWSTR* ppszInstanceId, BOOL* pfNeedReboot) mut
+			{
+				return VT.CreateVirtualSmartCardWithPinPolicy(&this, pszFriendlyName, bAdminAlgId, pbAdminKey, cbAdminKey, pbAdminKcv, cbAdminKcv, pbPuk, cbPuk, pbPin, cbPin, pbPinPolicy, cbPinPolicy, fGenerate, pStatusCallback, ppszInstanceId, pfNeedReboot);
+			}
 			[CRepr]
 			public struct VTable : ITpmVirtualSmartCardManager.VTable
 			{
-				public function HRESULT(ITpmVirtualSmartCardManager2 *self, PWSTR pszFriendlyName, uint8 bAdminAlgId, uint8* pbAdminKey, uint32 cbAdminKey, uint8* pbAdminKcv, uint32 cbAdminKcv, uint8* pbPuk, uint32 cbPuk, uint8* pbPin, uint32 cbPin, uint8* pbPinPolicy, uint32 cbPinPolicy, BOOL fGenerate, ITpmVirtualSmartCardManagerStatusCallback* pStatusCallback, PWSTR* ppszInstanceId, BOOL* pfNeedReboot) CreateVirtualSmartCardWithPinPolicy;
+				public new function HRESULT(ITpmVirtualSmartCardManager2 *self, PWSTR pszFriendlyName, uint8 bAdminAlgId, uint8* pbAdminKey, uint32 cbAdminKey, uint8* pbAdminKcv, uint32 cbAdminKcv, uint8* pbPuk, uint32 cbPuk, uint8* pbPin, uint32 cbPin, uint8* pbPinPolicy, uint32 cbPinPolicy, BOOL fGenerate, ITpmVirtualSmartCardManagerStatusCallback* pStatusCallback, PWSTR* ppszInstanceId, BOOL* pfNeedReboot) CreateVirtualSmartCardWithPinPolicy;
 			}
 		}
 		[CRepr]
@@ -110,11 +133,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3c745a97, 0xf375, 0x4150, 0xbe, 0x17, 0x59, 0x50, 0xf6, 0x94, 0xc6, 0x99);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateVirtualSmartCardWithAttestation(PWSTR pszFriendlyName, uint8 bAdminAlgId, uint8* pbAdminKey, uint32 cbAdminKey, uint8* pbAdminKcv, uint32 cbAdminKcv, uint8* pbPuk, uint32 cbPuk, uint8* pbPin, uint32 cbPin, uint8* pbPinPolicy, uint32 cbPinPolicy, TPMVSC_ATTESTATION_TYPE attestationType, BOOL fGenerate, ITpmVirtualSmartCardManagerStatusCallback* pStatusCallback, PWSTR* ppszInstanceId) mut
+			{
+				return VT.CreateVirtualSmartCardWithAttestation(&this, pszFriendlyName, bAdminAlgId, pbAdminKey, cbAdminKey, pbAdminKcv, cbAdminKcv, pbPuk, cbPuk, pbPin, cbPin, pbPinPolicy, cbPinPolicy, attestationType, fGenerate, pStatusCallback, ppszInstanceId);
+			}
 			[CRepr]
 			public struct VTable : ITpmVirtualSmartCardManager2.VTable
 			{
-				public function HRESULT(ITpmVirtualSmartCardManager3 *self, PWSTR pszFriendlyName, uint8 bAdminAlgId, uint8* pbAdminKey, uint32 cbAdminKey, uint8* pbAdminKcv, uint32 cbAdminKcv, uint8* pbPuk, uint32 cbPuk, uint8* pbPin, uint32 cbPin, uint8* pbPinPolicy, uint32 cbPinPolicy, TPMVSC_ATTESTATION_TYPE attestationType, BOOL fGenerate, ITpmVirtualSmartCardManagerStatusCallback* pStatusCallback, PWSTR* ppszInstanceId) CreateVirtualSmartCardWithAttestation;
+				public new function HRESULT(ITpmVirtualSmartCardManager3 *self, PWSTR pszFriendlyName, uint8 bAdminAlgId, uint8* pbAdminKey, uint32 cbAdminKey, uint8* pbAdminKcv, uint32 cbAdminKcv, uint8* pbPuk, uint32 cbPuk, uint8* pbPin, uint32 cbPin, uint8* pbPinPolicy, uint32 cbPinPolicy, TPMVSC_ATTESTATION_TYPE attestationType, BOOL fGenerate, ITpmVirtualSmartCardManagerStatusCallback* pStatusCallback, PWSTR* ppszInstanceId) CreateVirtualSmartCardWithAttestation;
 			}
 		}
 		

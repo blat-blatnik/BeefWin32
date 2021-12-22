@@ -182,33 +182,126 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7279fc81, 0x709d, 0x4095, 0xb6, 0x3d, 0x69, 0xfe, 0x4b, 0x0d, 0x90, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetInput(IUnknown* pInput) mut
+			{
+				return VT.SetInput(&this, pInput);
+			}
+			public HRESULT GetProperty(uint32 nProperty, int* ppValue) mut
+			{
+				return VT.GetProperty(&this, nProperty, ppValue);
+			}
+			public HRESULT SetProperty(uint32 nProperty, int pValue) mut
+			{
+				return VT.SetProperty(&this, nProperty, pValue);
+			}
+			public HRESULT Read(XmlNodeType* pNodeType) mut
+			{
+				return VT.Read(&this, pNodeType);
+			}
+			public HRESULT GetNodeType(XmlNodeType* pNodeType) mut
+			{
+				return VT.GetNodeType(&this, pNodeType);
+			}
+			public HRESULT MoveToFirstAttribute() mut
+			{
+				return VT.MoveToFirstAttribute(&this);
+			}
+			public HRESULT MoveToNextAttribute() mut
+			{
+				return VT.MoveToNextAttribute(&this);
+			}
+			public HRESULT MoveToAttributeByName(PWSTR pwszLocalName, PWSTR pwszNamespaceUri) mut
+			{
+				return VT.MoveToAttributeByName(&this, pwszLocalName, pwszNamespaceUri);
+			}
+			public HRESULT MoveToElement() mut
+			{
+				return VT.MoveToElement(&this);
+			}
+			public HRESULT GetQualifiedName(PWSTR* ppwszQualifiedName, uint32* pcwchQualifiedName) mut
+			{
+				return VT.GetQualifiedName(&this, ppwszQualifiedName, pcwchQualifiedName);
+			}
+			public HRESULT GetNamespaceUri(PWSTR* ppwszNamespaceUri, uint32* pcwchNamespaceUri) mut
+			{
+				return VT.GetNamespaceUri(&this, ppwszNamespaceUri, pcwchNamespaceUri);
+			}
+			public HRESULT GetLocalName(PWSTR* ppwszLocalName, uint32* pcwchLocalName) mut
+			{
+				return VT.GetLocalName(&this, ppwszLocalName, pcwchLocalName);
+			}
+			public HRESULT GetPrefix(PWSTR* ppwszPrefix, uint32* pcwchPrefix) mut
+			{
+				return VT.GetPrefix(&this, ppwszPrefix, pcwchPrefix);
+			}
+			public HRESULT GetValue(PWSTR* ppwszValue, uint32* pcwchValue) mut
+			{
+				return VT.GetValue(&this, ppwszValue, pcwchValue);
+			}
+			public HRESULT ReadValueChunk(char16* pwchBuffer, uint32 cwchChunkSize, uint32* pcwchRead) mut
+			{
+				return VT.ReadValueChunk(&this, pwchBuffer, cwchChunkSize, pcwchRead);
+			}
+			public HRESULT GetBaseUri(PWSTR* ppwszBaseUri, uint32* pcwchBaseUri) mut
+			{
+				return VT.GetBaseUri(&this, ppwszBaseUri, pcwchBaseUri);
+			}
+			public BOOL IsDefault() mut
+			{
+				return VT.IsDefault(&this);
+			}
+			public BOOL IsEmptyElement() mut
+			{
+				return VT.IsEmptyElement(&this);
+			}
+			public HRESULT GetLineNumber(uint32* pnLineNumber) mut
+			{
+				return VT.GetLineNumber(&this, pnLineNumber);
+			}
+			public HRESULT GetLinePosition(uint32* pnLinePosition) mut
+			{
+				return VT.GetLinePosition(&this, pnLinePosition);
+			}
+			public HRESULT GetAttributeCount(uint32* pnAttributeCount) mut
+			{
+				return VT.GetAttributeCount(&this, pnAttributeCount);
+			}
+			public HRESULT GetDepth(uint32* pnDepth) mut
+			{
+				return VT.GetDepth(&this, pnDepth);
+			}
+			public BOOL IsEOF() mut
+			{
+				return VT.IsEOF(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IXmlReader *self, IUnknown* pInput) SetInput;
-				public function HRESULT(IXmlReader *self, uint32 nProperty, int* ppValue) GetProperty;
-				public function HRESULT(IXmlReader *self, uint32 nProperty, int pValue) SetProperty;
-				public function HRESULT(IXmlReader *self, XmlNodeType* pNodeType) Read;
-				public function HRESULT(IXmlReader *self, XmlNodeType* pNodeType) GetNodeType;
-				public function HRESULT(IXmlReader *self) MoveToFirstAttribute;
-				public function HRESULT(IXmlReader *self) MoveToNextAttribute;
-				public function HRESULT(IXmlReader *self, PWSTR pwszLocalName, PWSTR pwszNamespaceUri) MoveToAttributeByName;
-				public function HRESULT(IXmlReader *self) MoveToElement;
-				public function HRESULT(IXmlReader *self, PWSTR* ppwszQualifiedName, uint32* pcwchQualifiedName) GetQualifiedName;
-				public function HRESULT(IXmlReader *self, PWSTR* ppwszNamespaceUri, uint32* pcwchNamespaceUri) GetNamespaceUri;
-				public function HRESULT(IXmlReader *self, PWSTR* ppwszLocalName, uint32* pcwchLocalName) GetLocalName;
-				public function HRESULT(IXmlReader *self, PWSTR* ppwszPrefix, uint32* pcwchPrefix) GetPrefix;
-				public function HRESULT(IXmlReader *self, PWSTR* ppwszValue, uint32* pcwchValue) GetValue;
-				public function HRESULT(IXmlReader *self, char16* pwchBuffer, uint32 cwchChunkSize, uint32* pcwchRead) ReadValueChunk;
-				public function HRESULT(IXmlReader *self, PWSTR* ppwszBaseUri, uint32* pcwchBaseUri) GetBaseUri;
-				public function BOOL(IXmlReader *self) IsDefault;
-				public function BOOL(IXmlReader *self) IsEmptyElement;
-				public function HRESULT(IXmlReader *self, uint32* pnLineNumber) GetLineNumber;
-				public function HRESULT(IXmlReader *self, uint32* pnLinePosition) GetLinePosition;
-				public function HRESULT(IXmlReader *self, uint32* pnAttributeCount) GetAttributeCount;
-				public function HRESULT(IXmlReader *self, uint32* pnDepth) GetDepth;
-				public function BOOL(IXmlReader *self) IsEOF;
+				public new function HRESULT(IXmlReader *self, IUnknown* pInput) SetInput;
+				public new function HRESULT(IXmlReader *self, uint32 nProperty, int* ppValue) GetProperty;
+				public new function HRESULT(IXmlReader *self, uint32 nProperty, int pValue) SetProperty;
+				public new function HRESULT(IXmlReader *self, XmlNodeType* pNodeType) Read;
+				public new function HRESULT(IXmlReader *self, XmlNodeType* pNodeType) GetNodeType;
+				public new function HRESULT(IXmlReader *self) MoveToFirstAttribute;
+				public new function HRESULT(IXmlReader *self) MoveToNextAttribute;
+				public new function HRESULT(IXmlReader *self, PWSTR pwszLocalName, PWSTR pwszNamespaceUri) MoveToAttributeByName;
+				public new function HRESULT(IXmlReader *self) MoveToElement;
+				public new function HRESULT(IXmlReader *self, PWSTR* ppwszQualifiedName, uint32* pcwchQualifiedName) GetQualifiedName;
+				public new function HRESULT(IXmlReader *self, PWSTR* ppwszNamespaceUri, uint32* pcwchNamespaceUri) GetNamespaceUri;
+				public new function HRESULT(IXmlReader *self, PWSTR* ppwszLocalName, uint32* pcwchLocalName) GetLocalName;
+				public new function HRESULT(IXmlReader *self, PWSTR* ppwszPrefix, uint32* pcwchPrefix) GetPrefix;
+				public new function HRESULT(IXmlReader *self, PWSTR* ppwszValue, uint32* pcwchValue) GetValue;
+				public new function HRESULT(IXmlReader *self, char16* pwchBuffer, uint32 cwchChunkSize, uint32* pcwchRead) ReadValueChunk;
+				public new function HRESULT(IXmlReader *self, PWSTR* ppwszBaseUri, uint32* pcwchBaseUri) GetBaseUri;
+				public new function BOOL(IXmlReader *self) IsDefault;
+				public new function BOOL(IXmlReader *self) IsEmptyElement;
+				public new function HRESULT(IXmlReader *self, uint32* pnLineNumber) GetLineNumber;
+				public new function HRESULT(IXmlReader *self, uint32* pnLinePosition) GetLinePosition;
+				public new function HRESULT(IXmlReader *self, uint32* pnAttributeCount) GetAttributeCount;
+				public new function HRESULT(IXmlReader *self, uint32* pnDepth) GetDepth;
+				public new function BOOL(IXmlReader *self) IsEOF;
 			}
 		}
 		[CRepr]
@@ -216,11 +309,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7279fc82, 0x709d, 0x4095, 0xb6, 0x3d, 0x69, 0xfe, 0x4b, 0x0d, 0x90, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ResolveUri(PWSTR pwszBaseUri, PWSTR pwszPublicIdentifier, PWSTR pwszSystemIdentifier, IUnknown** ppResolvedInput) mut
+			{
+				return VT.ResolveUri(&this, pwszBaseUri, pwszPublicIdentifier, pwszSystemIdentifier, ppResolvedInput);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IXmlResolver *self, PWSTR pwszBaseUri, PWSTR pwszPublicIdentifier, PWSTR pwszSystemIdentifier, IUnknown** ppResolvedInput) ResolveUri;
+				public new function HRESULT(IXmlResolver *self, PWSTR pwszBaseUri, PWSTR pwszPublicIdentifier, PWSTR pwszSystemIdentifier, IUnknown** ppResolvedInput) ResolveUri;
 			}
 		}
 		[CRepr]
@@ -228,39 +326,156 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7279fc88, 0x709d, 0x4095, 0xb6, 0x3d, 0x69, 0xfe, 0x4b, 0x0d, 0x90, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetOutput(IUnknown* pOutput) mut
+			{
+				return VT.SetOutput(&this, pOutput);
+			}
+			public HRESULT GetProperty(uint32 nProperty, int* ppValue) mut
+			{
+				return VT.GetProperty(&this, nProperty, ppValue);
+			}
+			public HRESULT SetProperty(uint32 nProperty, int pValue) mut
+			{
+				return VT.SetProperty(&this, nProperty, pValue);
+			}
+			public HRESULT WriteAttributes(IXmlReader* pReader, BOOL fWriteDefaultAttributes) mut
+			{
+				return VT.WriteAttributes(&this, pReader, fWriteDefaultAttributes);
+			}
+			public HRESULT WriteAttributeString(PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri, PWSTR pwszValue) mut
+			{
+				return VT.WriteAttributeString(&this, pwszPrefix, pwszLocalName, pwszNamespaceUri, pwszValue);
+			}
+			public HRESULT WriteCData(PWSTR pwszText) mut
+			{
+				return VT.WriteCData(&this, pwszText);
+			}
+			public HRESULT WriteCharEntity(char16 wch) mut
+			{
+				return VT.WriteCharEntity(&this, wch);
+			}
+			public HRESULT WriteChars(char16* pwch, uint32 cwch) mut
+			{
+				return VT.WriteChars(&this, pwch, cwch);
+			}
+			public HRESULT WriteComment(PWSTR pwszComment) mut
+			{
+				return VT.WriteComment(&this, pwszComment);
+			}
+			public HRESULT WriteDocType(PWSTR pwszName, PWSTR pwszPublicId, PWSTR pwszSystemId, PWSTR pwszSubset) mut
+			{
+				return VT.WriteDocType(&this, pwszName, pwszPublicId, pwszSystemId, pwszSubset);
+			}
+			public HRESULT WriteElementString(PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri, PWSTR pwszValue) mut
+			{
+				return VT.WriteElementString(&this, pwszPrefix, pwszLocalName, pwszNamespaceUri, pwszValue);
+			}
+			public HRESULT WriteEndDocument() mut
+			{
+				return VT.WriteEndDocument(&this);
+			}
+			public HRESULT WriteEndElement() mut
+			{
+				return VT.WriteEndElement(&this);
+			}
+			public HRESULT WriteEntityRef(PWSTR pwszName) mut
+			{
+				return VT.WriteEntityRef(&this, pwszName);
+			}
+			public HRESULT WriteFullEndElement() mut
+			{
+				return VT.WriteFullEndElement(&this);
+			}
+			public HRESULT WriteName(PWSTR pwszName) mut
+			{
+				return VT.WriteName(&this, pwszName);
+			}
+			public HRESULT WriteNmToken(PWSTR pwszNmToken) mut
+			{
+				return VT.WriteNmToken(&this, pwszNmToken);
+			}
+			public HRESULT WriteNode(IXmlReader* pReader, BOOL fWriteDefaultAttributes) mut
+			{
+				return VT.WriteNode(&this, pReader, fWriteDefaultAttributes);
+			}
+			public HRESULT WriteNodeShallow(IXmlReader* pReader, BOOL fWriteDefaultAttributes) mut
+			{
+				return VT.WriteNodeShallow(&this, pReader, fWriteDefaultAttributes);
+			}
+			public HRESULT WriteProcessingInstruction(PWSTR pwszName, PWSTR pwszText) mut
+			{
+				return VT.WriteProcessingInstruction(&this, pwszName, pwszText);
+			}
+			public HRESULT WriteQualifiedName(PWSTR pwszLocalName, PWSTR pwszNamespaceUri) mut
+			{
+				return VT.WriteQualifiedName(&this, pwszLocalName, pwszNamespaceUri);
+			}
+			public HRESULT WriteRaw(PWSTR pwszData) mut
+			{
+				return VT.WriteRaw(&this, pwszData);
+			}
+			public HRESULT WriteRawChars(char16* pwch, uint32 cwch) mut
+			{
+				return VT.WriteRawChars(&this, pwch, cwch);
+			}
+			public HRESULT WriteStartDocument(XmlStandalone standalone) mut
+			{
+				return VT.WriteStartDocument(&this, standalone);
+			}
+			public HRESULT WriteStartElement(PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri) mut
+			{
+				return VT.WriteStartElement(&this, pwszPrefix, pwszLocalName, pwszNamespaceUri);
+			}
+			public HRESULT WriteString(PWSTR pwszText) mut
+			{
+				return VT.WriteString(&this, pwszText);
+			}
+			public HRESULT WriteSurrogateCharEntity(char16 wchLow, char16 wchHigh) mut
+			{
+				return VT.WriteSurrogateCharEntity(&this, wchLow, wchHigh);
+			}
+			public HRESULT WriteWhitespace(PWSTR pwszWhitespace) mut
+			{
+				return VT.WriteWhitespace(&this, pwszWhitespace);
+			}
+			public HRESULT Flush() mut
+			{
+				return VT.Flush(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IXmlWriter *self, IUnknown* pOutput) SetOutput;
-				public function HRESULT(IXmlWriter *self, uint32 nProperty, int* ppValue) GetProperty;
-				public function HRESULT(IXmlWriter *self, uint32 nProperty, int pValue) SetProperty;
-				public function HRESULT(IXmlWriter *self, IXmlReader* pReader, BOOL fWriteDefaultAttributes) WriteAttributes;
-				public function HRESULT(IXmlWriter *self, PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri, PWSTR pwszValue) WriteAttributeString;
-				public function HRESULT(IXmlWriter *self, PWSTR pwszText) WriteCData;
-				public function HRESULT(IXmlWriter *self, char16 wch) WriteCharEntity;
-				public function HRESULT(IXmlWriter *self, char16* pwch, uint32 cwch) WriteChars;
-				public function HRESULT(IXmlWriter *self, PWSTR pwszComment) WriteComment;
-				public function HRESULT(IXmlWriter *self, PWSTR pwszName, PWSTR pwszPublicId, PWSTR pwszSystemId, PWSTR pwszSubset) WriteDocType;
-				public function HRESULT(IXmlWriter *self, PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri, PWSTR pwszValue) WriteElementString;
-				public function HRESULT(IXmlWriter *self) WriteEndDocument;
-				public function HRESULT(IXmlWriter *self) WriteEndElement;
-				public function HRESULT(IXmlWriter *self, PWSTR pwszName) WriteEntityRef;
-				public function HRESULT(IXmlWriter *self) WriteFullEndElement;
-				public function HRESULT(IXmlWriter *self, PWSTR pwszName) WriteName;
-				public function HRESULT(IXmlWriter *self, PWSTR pwszNmToken) WriteNmToken;
-				public function HRESULT(IXmlWriter *self, IXmlReader* pReader, BOOL fWriteDefaultAttributes) WriteNode;
-				public function HRESULT(IXmlWriter *self, IXmlReader* pReader, BOOL fWriteDefaultAttributes) WriteNodeShallow;
-				public function HRESULT(IXmlWriter *self, PWSTR pwszName, PWSTR pwszText) WriteProcessingInstruction;
-				public function HRESULT(IXmlWriter *self, PWSTR pwszLocalName, PWSTR pwszNamespaceUri) WriteQualifiedName;
-				public function HRESULT(IXmlWriter *self, PWSTR pwszData) WriteRaw;
-				public function HRESULT(IXmlWriter *self, char16* pwch, uint32 cwch) WriteRawChars;
-				public function HRESULT(IXmlWriter *self, XmlStandalone standalone) WriteStartDocument;
-				public function HRESULT(IXmlWriter *self, PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri) WriteStartElement;
-				public function HRESULT(IXmlWriter *self, PWSTR pwszText) WriteString;
-				public function HRESULT(IXmlWriter *self, char16 wchLow, char16 wchHigh) WriteSurrogateCharEntity;
-				public function HRESULT(IXmlWriter *self, PWSTR pwszWhitespace) WriteWhitespace;
-				public function HRESULT(IXmlWriter *self) Flush;
+				public new function HRESULT(IXmlWriter *self, IUnknown* pOutput) SetOutput;
+				public new function HRESULT(IXmlWriter *self, uint32 nProperty, int* ppValue) GetProperty;
+				public new function HRESULT(IXmlWriter *self, uint32 nProperty, int pValue) SetProperty;
+				public new function HRESULT(IXmlWriter *self, IXmlReader* pReader, BOOL fWriteDefaultAttributes) WriteAttributes;
+				public new function HRESULT(IXmlWriter *self, PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri, PWSTR pwszValue) WriteAttributeString;
+				public new function HRESULT(IXmlWriter *self, PWSTR pwszText) WriteCData;
+				public new function HRESULT(IXmlWriter *self, char16 wch) WriteCharEntity;
+				public new function HRESULT(IXmlWriter *self, char16* pwch, uint32 cwch) WriteChars;
+				public new function HRESULT(IXmlWriter *self, PWSTR pwszComment) WriteComment;
+				public new function HRESULT(IXmlWriter *self, PWSTR pwszName, PWSTR pwszPublicId, PWSTR pwszSystemId, PWSTR pwszSubset) WriteDocType;
+				public new function HRESULT(IXmlWriter *self, PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri, PWSTR pwszValue) WriteElementString;
+				public new function HRESULT(IXmlWriter *self) WriteEndDocument;
+				public new function HRESULT(IXmlWriter *self) WriteEndElement;
+				public new function HRESULT(IXmlWriter *self, PWSTR pwszName) WriteEntityRef;
+				public new function HRESULT(IXmlWriter *self) WriteFullEndElement;
+				public new function HRESULT(IXmlWriter *self, PWSTR pwszName) WriteName;
+				public new function HRESULT(IXmlWriter *self, PWSTR pwszNmToken) WriteNmToken;
+				public new function HRESULT(IXmlWriter *self, IXmlReader* pReader, BOOL fWriteDefaultAttributes) WriteNode;
+				public new function HRESULT(IXmlWriter *self, IXmlReader* pReader, BOOL fWriteDefaultAttributes) WriteNodeShallow;
+				public new function HRESULT(IXmlWriter *self, PWSTR pwszName, PWSTR pwszText) WriteProcessingInstruction;
+				public new function HRESULT(IXmlWriter *self, PWSTR pwszLocalName, PWSTR pwszNamespaceUri) WriteQualifiedName;
+				public new function HRESULT(IXmlWriter *self, PWSTR pwszData) WriteRaw;
+				public new function HRESULT(IXmlWriter *self, char16* pwch, uint32 cwch) WriteRawChars;
+				public new function HRESULT(IXmlWriter *self, XmlStandalone standalone) WriteStartDocument;
+				public new function HRESULT(IXmlWriter *self, PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri) WriteStartElement;
+				public new function HRESULT(IXmlWriter *self, PWSTR pwszText) WriteString;
+				public new function HRESULT(IXmlWriter *self, char16 wchLow, char16 wchHigh) WriteSurrogateCharEntity;
+				public new function HRESULT(IXmlWriter *self, PWSTR pwszWhitespace) WriteWhitespace;
+				public new function HRESULT(IXmlWriter *self) Flush;
 			}
 		}
 		[CRepr]
@@ -268,38 +483,151 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x862494c6, 0x1310, 0x4aad, 0xb3, 0xcd, 0x2d, 0xbe, 0xeb, 0xf6, 0x70, 0xd3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetOutput(IUnknown* pOutput) mut
+			{
+				return VT.SetOutput(&this, pOutput);
+			}
+			public HRESULT GetProperty(uint32 nProperty, int* ppValue) mut
+			{
+				return VT.GetProperty(&this, nProperty, ppValue);
+			}
+			public HRESULT SetProperty(uint32 nProperty, int pValue) mut
+			{
+				return VT.SetProperty(&this, nProperty, pValue);
+			}
+			public HRESULT WriteAttributes(IXmlReader* pReader, BOOL fWriteDefaultAttributes) mut
+			{
+				return VT.WriteAttributes(&this, pReader, fWriteDefaultAttributes);
+			}
+			public HRESULT WriteAttributeString(char16* pwszQName, uint32 cwszQName, char16* pwszValue, uint32 cwszValue) mut
+			{
+				return VT.WriteAttributeString(&this, pwszQName, cwszQName, pwszValue, cwszValue);
+			}
+			public HRESULT WriteCData(PWSTR pwszText) mut
+			{
+				return VT.WriteCData(&this, pwszText);
+			}
+			public HRESULT WriteCharEntity(char16 wch) mut
+			{
+				return VT.WriteCharEntity(&this, wch);
+			}
+			public HRESULT WriteChars(char16* pwch, uint32 cwch) mut
+			{
+				return VT.WriteChars(&this, pwch, cwch);
+			}
+			public HRESULT WriteComment(PWSTR pwszComment) mut
+			{
+				return VT.WriteComment(&this, pwszComment);
+			}
+			public HRESULT WriteDocType(PWSTR pwszName, PWSTR pwszPublicId, PWSTR pwszSystemId, PWSTR pwszSubset) mut
+			{
+				return VT.WriteDocType(&this, pwszName, pwszPublicId, pwszSystemId, pwszSubset);
+			}
+			public HRESULT WriteElementString(char16* pwszQName, uint32 cwszQName, PWSTR pwszValue) mut
+			{
+				return VT.WriteElementString(&this, pwszQName, cwszQName, pwszValue);
+			}
+			public HRESULT WriteEndDocument() mut
+			{
+				return VT.WriteEndDocument(&this);
+			}
+			public HRESULT WriteEndElement(char16* pwszQName, uint32 cwszQName) mut
+			{
+				return VT.WriteEndElement(&this, pwszQName, cwszQName);
+			}
+			public HRESULT WriteEntityRef(PWSTR pwszName) mut
+			{
+				return VT.WriteEntityRef(&this, pwszName);
+			}
+			public HRESULT WriteFullEndElement(char16* pwszQName, uint32 cwszQName) mut
+			{
+				return VT.WriteFullEndElement(&this, pwszQName, cwszQName);
+			}
+			public HRESULT WriteName(PWSTR pwszName) mut
+			{
+				return VT.WriteName(&this, pwszName);
+			}
+			public HRESULT WriteNmToken(PWSTR pwszNmToken) mut
+			{
+				return VT.WriteNmToken(&this, pwszNmToken);
+			}
+			public HRESULT WriteNode(IXmlReader* pReader, BOOL fWriteDefaultAttributes) mut
+			{
+				return VT.WriteNode(&this, pReader, fWriteDefaultAttributes);
+			}
+			public HRESULT WriteNodeShallow(IXmlReader* pReader, BOOL fWriteDefaultAttributes) mut
+			{
+				return VT.WriteNodeShallow(&this, pReader, fWriteDefaultAttributes);
+			}
+			public HRESULT WriteProcessingInstruction(PWSTR pwszName, PWSTR pwszText) mut
+			{
+				return VT.WriteProcessingInstruction(&this, pwszName, pwszText);
+			}
+			public HRESULT WriteRaw(PWSTR pwszData) mut
+			{
+				return VT.WriteRaw(&this, pwszData);
+			}
+			public HRESULT WriteRawChars(char16* pwch, uint32 cwch) mut
+			{
+				return VT.WriteRawChars(&this, pwch, cwch);
+			}
+			public HRESULT WriteStartDocument(XmlStandalone standalone) mut
+			{
+				return VT.WriteStartDocument(&this, standalone);
+			}
+			public HRESULT WriteStartElement(char16* pwszQName, uint32 cwszQName) mut
+			{
+				return VT.WriteStartElement(&this, pwszQName, cwszQName);
+			}
+			public HRESULT WriteString(PWSTR pwszText) mut
+			{
+				return VT.WriteString(&this, pwszText);
+			}
+			public HRESULT WriteSurrogateCharEntity(char16 wchLow, char16 wchHigh) mut
+			{
+				return VT.WriteSurrogateCharEntity(&this, wchLow, wchHigh);
+			}
+			public HRESULT WriteWhitespace(PWSTR pwszWhitespace) mut
+			{
+				return VT.WriteWhitespace(&this, pwszWhitespace);
+			}
+			public HRESULT Flush() mut
+			{
+				return VT.Flush(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IXmlWriterLite *self, IUnknown* pOutput) SetOutput;
-				public function HRESULT(IXmlWriterLite *self, uint32 nProperty, int* ppValue) GetProperty;
-				public function HRESULT(IXmlWriterLite *self, uint32 nProperty, int pValue) SetProperty;
-				public function HRESULT(IXmlWriterLite *self, IXmlReader* pReader, BOOL fWriteDefaultAttributes) WriteAttributes;
-				public function HRESULT(IXmlWriterLite *self, char16* pwszQName, uint32 cwszQName, char16* pwszValue, uint32 cwszValue) WriteAttributeString;
-				public function HRESULT(IXmlWriterLite *self, PWSTR pwszText) WriteCData;
-				public function HRESULT(IXmlWriterLite *self, char16 wch) WriteCharEntity;
-				public function HRESULT(IXmlWriterLite *self, char16* pwch, uint32 cwch) WriteChars;
-				public function HRESULT(IXmlWriterLite *self, PWSTR pwszComment) WriteComment;
-				public function HRESULT(IXmlWriterLite *self, PWSTR pwszName, PWSTR pwszPublicId, PWSTR pwszSystemId, PWSTR pwszSubset) WriteDocType;
-				public function HRESULT(IXmlWriterLite *self, char16* pwszQName, uint32 cwszQName, PWSTR pwszValue) WriteElementString;
-				public function HRESULT(IXmlWriterLite *self) WriteEndDocument;
-				public function HRESULT(IXmlWriterLite *self, char16* pwszQName, uint32 cwszQName) WriteEndElement;
-				public function HRESULT(IXmlWriterLite *self, PWSTR pwszName) WriteEntityRef;
-				public function HRESULT(IXmlWriterLite *self, char16* pwszQName, uint32 cwszQName) WriteFullEndElement;
-				public function HRESULT(IXmlWriterLite *self, PWSTR pwszName) WriteName;
-				public function HRESULT(IXmlWriterLite *self, PWSTR pwszNmToken) WriteNmToken;
-				public function HRESULT(IXmlWriterLite *self, IXmlReader* pReader, BOOL fWriteDefaultAttributes) WriteNode;
-				public function HRESULT(IXmlWriterLite *self, IXmlReader* pReader, BOOL fWriteDefaultAttributes) WriteNodeShallow;
-				public function HRESULT(IXmlWriterLite *self, PWSTR pwszName, PWSTR pwszText) WriteProcessingInstruction;
-				public function HRESULT(IXmlWriterLite *self, PWSTR pwszData) WriteRaw;
-				public function HRESULT(IXmlWriterLite *self, char16* pwch, uint32 cwch) WriteRawChars;
-				public function HRESULT(IXmlWriterLite *self, XmlStandalone standalone) WriteStartDocument;
-				public function HRESULT(IXmlWriterLite *self, char16* pwszQName, uint32 cwszQName) WriteStartElement;
-				public function HRESULT(IXmlWriterLite *self, PWSTR pwszText) WriteString;
-				public function HRESULT(IXmlWriterLite *self, char16 wchLow, char16 wchHigh) WriteSurrogateCharEntity;
-				public function HRESULT(IXmlWriterLite *self, PWSTR pwszWhitespace) WriteWhitespace;
-				public function HRESULT(IXmlWriterLite *self) Flush;
+				public new function HRESULT(IXmlWriterLite *self, IUnknown* pOutput) SetOutput;
+				public new function HRESULT(IXmlWriterLite *self, uint32 nProperty, int* ppValue) GetProperty;
+				public new function HRESULT(IXmlWriterLite *self, uint32 nProperty, int pValue) SetProperty;
+				public new function HRESULT(IXmlWriterLite *self, IXmlReader* pReader, BOOL fWriteDefaultAttributes) WriteAttributes;
+				public new function HRESULT(IXmlWriterLite *self, char16* pwszQName, uint32 cwszQName, char16* pwszValue, uint32 cwszValue) WriteAttributeString;
+				public new function HRESULT(IXmlWriterLite *self, PWSTR pwszText) WriteCData;
+				public new function HRESULT(IXmlWriterLite *self, char16 wch) WriteCharEntity;
+				public new function HRESULT(IXmlWriterLite *self, char16* pwch, uint32 cwch) WriteChars;
+				public new function HRESULT(IXmlWriterLite *self, PWSTR pwszComment) WriteComment;
+				public new function HRESULT(IXmlWriterLite *self, PWSTR pwszName, PWSTR pwszPublicId, PWSTR pwszSystemId, PWSTR pwszSubset) WriteDocType;
+				public new function HRESULT(IXmlWriterLite *self, char16* pwszQName, uint32 cwszQName, PWSTR pwszValue) WriteElementString;
+				public new function HRESULT(IXmlWriterLite *self) WriteEndDocument;
+				public new function HRESULT(IXmlWriterLite *self, char16* pwszQName, uint32 cwszQName) WriteEndElement;
+				public new function HRESULT(IXmlWriterLite *self, PWSTR pwszName) WriteEntityRef;
+				public new function HRESULT(IXmlWriterLite *self, char16* pwszQName, uint32 cwszQName) WriteFullEndElement;
+				public new function HRESULT(IXmlWriterLite *self, PWSTR pwszName) WriteName;
+				public new function HRESULT(IXmlWriterLite *self, PWSTR pwszNmToken) WriteNmToken;
+				public new function HRESULT(IXmlWriterLite *self, IXmlReader* pReader, BOOL fWriteDefaultAttributes) WriteNode;
+				public new function HRESULT(IXmlWriterLite *self, IXmlReader* pReader, BOOL fWriteDefaultAttributes) WriteNodeShallow;
+				public new function HRESULT(IXmlWriterLite *self, PWSTR pwszName, PWSTR pwszText) WriteProcessingInstruction;
+				public new function HRESULT(IXmlWriterLite *self, PWSTR pwszData) WriteRaw;
+				public new function HRESULT(IXmlWriterLite *self, char16* pwch, uint32 cwch) WriteRawChars;
+				public new function HRESULT(IXmlWriterLite *self, XmlStandalone standalone) WriteStartDocument;
+				public new function HRESULT(IXmlWriterLite *self, char16* pwszQName, uint32 cwszQName) WriteStartElement;
+				public new function HRESULT(IXmlWriterLite *self, PWSTR pwszText) WriteString;
+				public new function HRESULT(IXmlWriterLite *self, char16 wchLow, char16 wchHigh) WriteSurrogateCharEntity;
+				public new function HRESULT(IXmlWriterLite *self, PWSTR pwszWhitespace) WriteWhitespace;
+				public new function HRESULT(IXmlWriterLite *self) Flush;
 			}
 		}
 		

@@ -937,14 +937,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xaec22fb8, 0x76f3, 0x4639, 0x9b, 0xe0, 0x28, 0xeb, 0x43, 0xa6, 0x7a, 0x2e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetPrivateData(Guid* Name, uint32 DataSize, void* pData) mut
+			{
+				return VT.SetPrivateData(&this, Name, DataSize, pData);
+			}
+			public HRESULT SetPrivateDataInterface(Guid* Name, IUnknown* pUnknown) mut
+			{
+				return VT.SetPrivateDataInterface(&this, Name, pUnknown);
+			}
+			public HRESULT GetPrivateData(Guid* Name, uint32* pDataSize, void* pData) mut
+			{
+				return VT.GetPrivateData(&this, Name, pDataSize, pData);
+			}
+			public HRESULT GetParent(Guid* riid, void** ppParent) mut
+			{
+				return VT.GetParent(&this, riid, ppParent);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDXGIObject *self, Guid* Name, uint32 DataSize, void* pData) SetPrivateData;
-				public function HRESULT(IDXGIObject *self, Guid* Name, IUnknown* pUnknown) SetPrivateDataInterface;
-				public function HRESULT(IDXGIObject *self, Guid* Name, uint32* pDataSize, void* pData) GetPrivateData;
-				public function HRESULT(IDXGIObject *self, Guid* riid, void** ppParent) GetParent;
+				public new function HRESULT(IDXGIObject *self, Guid* Name, uint32 DataSize, void* pData) SetPrivateData;
+				public new function HRESULT(IDXGIObject *self, Guid* Name, IUnknown* pUnknown) SetPrivateDataInterface;
+				public new function HRESULT(IDXGIObject *self, Guid* Name, uint32* pDataSize, void* pData) GetPrivateData;
+				public new function HRESULT(IDXGIObject *self, Guid* riid, void** ppParent) GetParent;
 			}
 		}
 		[CRepr]
@@ -952,11 +969,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3d3e0379, 0xf9de, 0x4d58, 0xbb, 0x6c, 0x18, 0xd6, 0x29, 0x92, 0xf1, 0xa6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDevice(Guid* riid, void** ppDevice) mut
+			{
+				return VT.GetDevice(&this, riid, ppDevice);
+			}
 			[CRepr]
 			public struct VTable : IDXGIObject.VTable
 			{
-				public function HRESULT(IDXGIDeviceSubObject *self, Guid* riid, void** ppDevice) GetDevice;
+				public new function HRESULT(IDXGIDeviceSubObject *self, Guid* riid, void** ppDevice) GetDevice;
 			}
 		}
 		[CRepr]
@@ -964,14 +986,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x035f3ab4, 0x482e, 0x4e50, 0xb4, 0x1f, 0x8a, 0x7f, 0x8b, 0xd8, 0x96, 0x0b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSharedHandle(HANDLE* pSharedHandle) mut
+			{
+				return VT.GetSharedHandle(&this, pSharedHandle);
+			}
+			public HRESULT GetUsage(uint32* pUsage) mut
+			{
+				return VT.GetUsage(&this, pUsage);
+			}
+			public HRESULT SetEvictionPriority(DXGI_RESOURCE_PRIORITY EvictionPriority) mut
+			{
+				return VT.SetEvictionPriority(&this, EvictionPriority);
+			}
+			public HRESULT GetEvictionPriority(uint32* pEvictionPriority) mut
+			{
+				return VT.GetEvictionPriority(&this, pEvictionPriority);
+			}
 			[CRepr]
 			public struct VTable : IDXGIDeviceSubObject.VTable
 			{
-				public function HRESULT(IDXGIResource *self, HANDLE* pSharedHandle) GetSharedHandle;
-				public function HRESULT(IDXGIResource *self, uint32* pUsage) GetUsage;
-				public function HRESULT(IDXGIResource *self, DXGI_RESOURCE_PRIORITY EvictionPriority) SetEvictionPriority;
-				public function HRESULT(IDXGIResource *self, uint32* pEvictionPriority) GetEvictionPriority;
+				public new function HRESULT(IDXGIResource *self, HANDLE* pSharedHandle) GetSharedHandle;
+				public new function HRESULT(IDXGIResource *self, uint32* pUsage) GetUsage;
+				public new function HRESULT(IDXGIResource *self, DXGI_RESOURCE_PRIORITY EvictionPriority) SetEvictionPriority;
+				public new function HRESULT(IDXGIResource *self, uint32* pEvictionPriority) GetEvictionPriority;
 			}
 		}
 		[CRepr]
@@ -979,12 +1018,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9d8e1289, 0xd7b3, 0x465f, 0x81, 0x26, 0x25, 0x0e, 0x34, 0x9a, 0xf8, 0x5d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AcquireSync(uint64 Key, uint32 dwMilliseconds) mut
+			{
+				return VT.AcquireSync(&this, Key, dwMilliseconds);
+			}
+			public HRESULT ReleaseSync(uint64 Key) mut
+			{
+				return VT.ReleaseSync(&this, Key);
+			}
 			[CRepr]
 			public struct VTable : IDXGIDeviceSubObject.VTable
 			{
-				public function HRESULT(IDXGIKeyedMutex *self, uint64 Key, uint32 dwMilliseconds) AcquireSync;
-				public function HRESULT(IDXGIKeyedMutex *self, uint64 Key) ReleaseSync;
+				public new function HRESULT(IDXGIKeyedMutex *self, uint64 Key, uint32 dwMilliseconds) AcquireSync;
+				public new function HRESULT(IDXGIKeyedMutex *self, uint64 Key) ReleaseSync;
 			}
 		}
 		[CRepr]
@@ -992,13 +1040,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xcafcb56c, 0x6ac3, 0x4889, 0xbf, 0x47, 0x9e, 0x23, 0xbb, 0xd2, 0x60, 0xec);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDesc(DXGI_SURFACE_DESC* pDesc) mut
+			{
+				return VT.GetDesc(&this, pDesc);
+			}
+			public HRESULT Map(DXGI_MAPPED_RECT* pLockedRect, uint32 MapFlags) mut
+			{
+				return VT.Map(&this, pLockedRect, MapFlags);
+			}
+			public HRESULT Unmap() mut
+			{
+				return VT.Unmap(&this);
+			}
 			[CRepr]
 			public struct VTable : IDXGIDeviceSubObject.VTable
 			{
-				public function HRESULT(IDXGISurface *self, DXGI_SURFACE_DESC* pDesc) GetDesc;
-				public function HRESULT(IDXGISurface *self, DXGI_MAPPED_RECT* pLockedRect, uint32 MapFlags) Map;
-				public function HRESULT(IDXGISurface *self) Unmap;
+				public new function HRESULT(IDXGISurface *self, DXGI_SURFACE_DESC* pDesc) GetDesc;
+				public new function HRESULT(IDXGISurface *self, DXGI_MAPPED_RECT* pLockedRect, uint32 MapFlags) Map;
+				public new function HRESULT(IDXGISurface *self) Unmap;
 			}
 		}
 		[CRepr]
@@ -1006,12 +1067,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4ae63092, 0x6327, 0x4c1b, 0x80, 0xae, 0xbf, 0xe1, 0x2e, 0xa3, 0x2b, 0x86);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDC(BOOL Discard, HDC* phdc) mut
+			{
+				return VT.GetDC(&this, Discard, phdc);
+			}
+			public HRESULT ReleaseDC(RECT* pDirtyRect) mut
+			{
+				return VT.ReleaseDC(&this, pDirtyRect);
+			}
 			[CRepr]
 			public struct VTable : IDXGISurface.VTable
 			{
-				public function HRESULT(IDXGISurface1 *self, BOOL Discard, HDC* phdc) GetDC;
-				public function HRESULT(IDXGISurface1 *self, RECT* pDirtyRect) ReleaseDC;
+				public new function HRESULT(IDXGISurface1 *self, BOOL Discard, HDC* phdc) GetDC;
+				public new function HRESULT(IDXGISurface1 *self, RECT* pDirtyRect) ReleaseDC;
 			}
 		}
 		[CRepr]
@@ -1019,13 +1089,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2411e7e1, 0x12ac, 0x4ccf, 0xbd, 0x14, 0x97, 0x98, 0xe8, 0x53, 0x4d, 0xc0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT EnumOutputs(uint32 Output, IDXGIOutput** ppOutput) mut
+			{
+				return VT.EnumOutputs(&this, Output, ppOutput);
+			}
+			public HRESULT GetDesc(DXGI_ADAPTER_DESC* pDesc) mut
+			{
+				return VT.GetDesc(&this, pDesc);
+			}
+			public HRESULT CheckInterfaceSupport(Guid* InterfaceName, LARGE_INTEGER* pUMDVersion) mut
+			{
+				return VT.CheckInterfaceSupport(&this, InterfaceName, pUMDVersion);
+			}
 			[CRepr]
 			public struct VTable : IDXGIObject.VTable
 			{
-				public function HRESULT(IDXGIAdapter *self, uint32 Output, IDXGIOutput** ppOutput) EnumOutputs;
-				public function HRESULT(IDXGIAdapter *self, DXGI_ADAPTER_DESC* pDesc) GetDesc;
-				public function HRESULT(IDXGIAdapter *self, Guid* InterfaceName, LARGE_INTEGER* pUMDVersion) CheckInterfaceSupport;
+				public new function HRESULT(IDXGIAdapter *self, uint32 Output, IDXGIOutput** ppOutput) EnumOutputs;
+				public new function HRESULT(IDXGIAdapter *self, DXGI_ADAPTER_DESC* pDesc) GetDesc;
+				public new function HRESULT(IDXGIAdapter *self, Guid* InterfaceName, LARGE_INTEGER* pUMDVersion) CheckInterfaceSupport;
 			}
 		}
 		[CRepr]
@@ -1033,22 +1116,71 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xae02eedb, 0xc735, 0x4690, 0x8d, 0x52, 0x5a, 0x8d, 0xc2, 0x02, 0x13, 0xaa);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDesc(DXGI_OUTPUT_DESC* pDesc) mut
+			{
+				return VT.GetDesc(&this, pDesc);
+			}
+			public HRESULT GetDisplayModeList(DXGI_FORMAT EnumFormat, uint32 Flags, uint32* pNumModes, DXGI_MODE_DESC* pDesc) mut
+			{
+				return VT.GetDisplayModeList(&this, EnumFormat, Flags, pNumModes, pDesc);
+			}
+			public HRESULT FindClosestMatchingMode(DXGI_MODE_DESC* pModeToMatch, DXGI_MODE_DESC* pClosestMatch, IUnknown* pConcernedDevice) mut
+			{
+				return VT.FindClosestMatchingMode(&this, pModeToMatch, pClosestMatch, pConcernedDevice);
+			}
+			public HRESULT WaitForVBlank() mut
+			{
+				return VT.WaitForVBlank(&this);
+			}
+			public HRESULT TakeOwnership(IUnknown* pDevice, BOOL Exclusive) mut
+			{
+				return VT.TakeOwnership(&this, pDevice, Exclusive);
+			}
+			public void ReleaseOwnership() mut
+			{
+				VT.ReleaseOwnership(&this);
+			}
+			public HRESULT GetGammaControlCapabilities(DXGI_GAMMA_CONTROL_CAPABILITIES* pGammaCaps) mut
+			{
+				return VT.GetGammaControlCapabilities(&this, pGammaCaps);
+			}
+			public HRESULT SetGammaControl(DXGI_GAMMA_CONTROL* pArray) mut
+			{
+				return VT.SetGammaControl(&this, pArray);
+			}
+			public HRESULT GetGammaControl(DXGI_GAMMA_CONTROL* pArray) mut
+			{
+				return VT.GetGammaControl(&this, pArray);
+			}
+			public HRESULT SetDisplaySurface(IDXGISurface* pScanoutSurface) mut
+			{
+				return VT.SetDisplaySurface(&this, pScanoutSurface);
+			}
+			public HRESULT GetDisplaySurfaceData(IDXGISurface* pDestination) mut
+			{
+				return VT.GetDisplaySurfaceData(&this, pDestination);
+			}
+			public HRESULT GetFrameStatistics(DXGI_FRAME_STATISTICS* pStats) mut
+			{
+				return VT.GetFrameStatistics(&this, pStats);
+			}
 			[CRepr]
 			public struct VTable : IDXGIObject.VTable
 			{
-				public function HRESULT(IDXGIOutput *self, DXGI_OUTPUT_DESC* pDesc) GetDesc;
-				public function HRESULT(IDXGIOutput *self, DXGI_FORMAT EnumFormat, uint32 Flags, uint32* pNumModes, DXGI_MODE_DESC* pDesc) GetDisplayModeList;
-				public function HRESULT(IDXGIOutput *self, DXGI_MODE_DESC* pModeToMatch, DXGI_MODE_DESC* pClosestMatch, IUnknown* pConcernedDevice) FindClosestMatchingMode;
-				public function HRESULT(IDXGIOutput *self) WaitForVBlank;
-				public function HRESULT(IDXGIOutput *self, IUnknown* pDevice, BOOL Exclusive) TakeOwnership;
-				public function void(IDXGIOutput *self) ReleaseOwnership;
-				public function HRESULT(IDXGIOutput *self, DXGI_GAMMA_CONTROL_CAPABILITIES* pGammaCaps) GetGammaControlCapabilities;
-				public function HRESULT(IDXGIOutput *self, DXGI_GAMMA_CONTROL* pArray) SetGammaControl;
-				public function HRESULT(IDXGIOutput *self, DXGI_GAMMA_CONTROL* pArray) GetGammaControl;
-				public function HRESULT(IDXGIOutput *self, IDXGISurface* pScanoutSurface) SetDisplaySurface;
-				public function HRESULT(IDXGIOutput *self, IDXGISurface* pDestination) GetDisplaySurfaceData;
-				public function HRESULT(IDXGIOutput *self, DXGI_FRAME_STATISTICS* pStats) GetFrameStatistics;
+				public new function HRESULT(IDXGIOutput *self, DXGI_OUTPUT_DESC* pDesc) GetDesc;
+				public new function HRESULT(IDXGIOutput *self, DXGI_FORMAT EnumFormat, uint32 Flags, uint32* pNumModes, DXGI_MODE_DESC* pDesc) GetDisplayModeList;
+				public new function HRESULT(IDXGIOutput *self, DXGI_MODE_DESC* pModeToMatch, DXGI_MODE_DESC* pClosestMatch, IUnknown* pConcernedDevice) FindClosestMatchingMode;
+				public new function HRESULT(IDXGIOutput *self) WaitForVBlank;
+				public new function HRESULT(IDXGIOutput *self, IUnknown* pDevice, BOOL Exclusive) TakeOwnership;
+				public new function void(IDXGIOutput *self) ReleaseOwnership;
+				public new function HRESULT(IDXGIOutput *self, DXGI_GAMMA_CONTROL_CAPABILITIES* pGammaCaps) GetGammaControlCapabilities;
+				public new function HRESULT(IDXGIOutput *self, DXGI_GAMMA_CONTROL* pArray) SetGammaControl;
+				public new function HRESULT(IDXGIOutput *self, DXGI_GAMMA_CONTROL* pArray) GetGammaControl;
+				public new function HRESULT(IDXGIOutput *self, IDXGISurface* pScanoutSurface) SetDisplaySurface;
+				public new function HRESULT(IDXGIOutput *self, IDXGISurface* pDestination) GetDisplaySurfaceData;
+				public new function HRESULT(IDXGIOutput *self, DXGI_FRAME_STATISTICS* pStats) GetFrameStatistics;
 			}
 		}
 		[CRepr]
@@ -1056,20 +1188,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x310d36a0, 0xd2e7, 0x4c0a, 0xaa, 0x04, 0x6a, 0x9d, 0x23, 0xb8, 0x88, 0x6a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Present(uint32 SyncInterval, uint32 Flags) mut
+			{
+				return VT.Present(&this, SyncInterval, Flags);
+			}
+			public HRESULT GetBuffer(uint32 Buffer, Guid* riid, void** ppSurface) mut
+			{
+				return VT.GetBuffer(&this, Buffer, riid, ppSurface);
+			}
+			public HRESULT SetFullscreenState(BOOL Fullscreen, IDXGIOutput* pTarget) mut
+			{
+				return VT.SetFullscreenState(&this, Fullscreen, pTarget);
+			}
+			public HRESULT GetFullscreenState(BOOL* pFullscreen, IDXGIOutput** ppTarget) mut
+			{
+				return VT.GetFullscreenState(&this, pFullscreen, ppTarget);
+			}
+			public HRESULT GetDesc(DXGI_SWAP_CHAIN_DESC* pDesc) mut
+			{
+				return VT.GetDesc(&this, pDesc);
+			}
+			public HRESULT ResizeBuffers(uint32 BufferCount, uint32 Width, uint32 Height, DXGI_FORMAT NewFormat, uint32 SwapChainFlags) mut
+			{
+				return VT.ResizeBuffers(&this, BufferCount, Width, Height, NewFormat, SwapChainFlags);
+			}
+			public HRESULT ResizeTarget(DXGI_MODE_DESC* pNewTargetParameters) mut
+			{
+				return VT.ResizeTarget(&this, pNewTargetParameters);
+			}
+			public HRESULT GetContainingOutput(IDXGIOutput** ppOutput) mut
+			{
+				return VT.GetContainingOutput(&this, ppOutput);
+			}
+			public HRESULT GetFrameStatistics(DXGI_FRAME_STATISTICS* pStats) mut
+			{
+				return VT.GetFrameStatistics(&this, pStats);
+			}
+			public HRESULT GetLastPresentCount(uint32* pLastPresentCount) mut
+			{
+				return VT.GetLastPresentCount(&this, pLastPresentCount);
+			}
 			[CRepr]
 			public struct VTable : IDXGIDeviceSubObject.VTable
 			{
-				public function HRESULT(IDXGISwapChain *self, uint32 SyncInterval, uint32 Flags) Present;
-				public function HRESULT(IDXGISwapChain *self, uint32 Buffer, Guid* riid, void** ppSurface) GetBuffer;
-				public function HRESULT(IDXGISwapChain *self, BOOL Fullscreen, IDXGIOutput* pTarget) SetFullscreenState;
-				public function HRESULT(IDXGISwapChain *self, BOOL* pFullscreen, IDXGIOutput** ppTarget) GetFullscreenState;
-				public function HRESULT(IDXGISwapChain *self, DXGI_SWAP_CHAIN_DESC* pDesc) GetDesc;
-				public function HRESULT(IDXGISwapChain *self, uint32 BufferCount, uint32 Width, uint32 Height, DXGI_FORMAT NewFormat, uint32 SwapChainFlags) ResizeBuffers;
-				public function HRESULT(IDXGISwapChain *self, DXGI_MODE_DESC* pNewTargetParameters) ResizeTarget;
-				public function HRESULT(IDXGISwapChain *self, IDXGIOutput** ppOutput) GetContainingOutput;
-				public function HRESULT(IDXGISwapChain *self, DXGI_FRAME_STATISTICS* pStats) GetFrameStatistics;
-				public function HRESULT(IDXGISwapChain *self, uint32* pLastPresentCount) GetLastPresentCount;
+				public new function HRESULT(IDXGISwapChain *self, uint32 SyncInterval, uint32 Flags) Present;
+				public new function HRESULT(IDXGISwapChain *self, uint32 Buffer, Guid* riid, void** ppSurface) GetBuffer;
+				public new function HRESULT(IDXGISwapChain *self, BOOL Fullscreen, IDXGIOutput* pTarget) SetFullscreenState;
+				public new function HRESULT(IDXGISwapChain *self, BOOL* pFullscreen, IDXGIOutput** ppTarget) GetFullscreenState;
+				public new function HRESULT(IDXGISwapChain *self, DXGI_SWAP_CHAIN_DESC* pDesc) GetDesc;
+				public new function HRESULT(IDXGISwapChain *self, uint32 BufferCount, uint32 Width, uint32 Height, DXGI_FORMAT NewFormat, uint32 SwapChainFlags) ResizeBuffers;
+				public new function HRESULT(IDXGISwapChain *self, DXGI_MODE_DESC* pNewTargetParameters) ResizeTarget;
+				public new function HRESULT(IDXGISwapChain *self, IDXGIOutput** ppOutput) GetContainingOutput;
+				public new function HRESULT(IDXGISwapChain *self, DXGI_FRAME_STATISTICS* pStats) GetFrameStatistics;
+				public new function HRESULT(IDXGISwapChain *self, uint32* pLastPresentCount) GetLastPresentCount;
 			}
 		}
 		[CRepr]
@@ -1077,15 +1250,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7b7166ec, 0x21c7, 0x44ae, 0xb2, 0x1a, 0xc9, 0xae, 0x32, 0x1a, 0xe3, 0x69);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT EnumAdapters(uint32 Adapter, IDXGIAdapter** ppAdapter) mut
+			{
+				return VT.EnumAdapters(&this, Adapter, ppAdapter);
+			}
+			public HRESULT MakeWindowAssociation(HWND WindowHandle, uint32 Flags) mut
+			{
+				return VT.MakeWindowAssociation(&this, WindowHandle, Flags);
+			}
+			public HRESULT GetWindowAssociation(HWND* pWindowHandle) mut
+			{
+				return VT.GetWindowAssociation(&this, pWindowHandle);
+			}
+			public HRESULT CreateSwapChain(IUnknown* pDevice, DXGI_SWAP_CHAIN_DESC* pDesc, IDXGISwapChain** ppSwapChain) mut
+			{
+				return VT.CreateSwapChain(&this, pDevice, pDesc, ppSwapChain);
+			}
+			public HRESULT CreateSoftwareAdapter(HINSTANCE Module, IDXGIAdapter** ppAdapter) mut
+			{
+				return VT.CreateSoftwareAdapter(&this, Module, ppAdapter);
+			}
 			[CRepr]
 			public struct VTable : IDXGIObject.VTable
 			{
-				public function HRESULT(IDXGIFactory *self, uint32 Adapter, IDXGIAdapter** ppAdapter) EnumAdapters;
-				public function HRESULT(IDXGIFactory *self, HWND WindowHandle, uint32 Flags) MakeWindowAssociation;
-				public function HRESULT(IDXGIFactory *self, HWND* pWindowHandle) GetWindowAssociation;
-				public function HRESULT(IDXGIFactory *self, IUnknown* pDevice, DXGI_SWAP_CHAIN_DESC* pDesc, IDXGISwapChain** ppSwapChain) CreateSwapChain;
-				public function HRESULT(IDXGIFactory *self, HINSTANCE Module, IDXGIAdapter** ppAdapter) CreateSoftwareAdapter;
+				public new function HRESULT(IDXGIFactory *self, uint32 Adapter, IDXGIAdapter** ppAdapter) EnumAdapters;
+				public new function HRESULT(IDXGIFactory *self, HWND WindowHandle, uint32 Flags) MakeWindowAssociation;
+				public new function HRESULT(IDXGIFactory *self, HWND* pWindowHandle) GetWindowAssociation;
+				public new function HRESULT(IDXGIFactory *self, IUnknown* pDevice, DXGI_SWAP_CHAIN_DESC* pDesc, IDXGISwapChain** ppSwapChain) CreateSwapChain;
+				public new function HRESULT(IDXGIFactory *self, HINSTANCE Module, IDXGIAdapter** ppAdapter) CreateSoftwareAdapter;
 			}
 		}
 		[CRepr]
@@ -1093,15 +1287,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x54ec77fa, 0x1377, 0x44e6, 0x8c, 0x32, 0x88, 0xfd, 0x5f, 0x44, 0xc8, 0x4c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetAdapter(IDXGIAdapter** pAdapter) mut
+			{
+				return VT.GetAdapter(&this, pAdapter);
+			}
+			public HRESULT CreateSurface(DXGI_SURFACE_DESC* pDesc, uint32 NumSurfaces, uint32 Usage, DXGI_SHARED_RESOURCE* pSharedResource, IDXGISurface** ppSurface) mut
+			{
+				return VT.CreateSurface(&this, pDesc, NumSurfaces, Usage, pSharedResource, ppSurface);
+			}
+			public HRESULT QueryResourceResidency(IUnknown** ppResources, DXGI_RESIDENCY* pResidencyStatus, uint32 NumResources) mut
+			{
+				return VT.QueryResourceResidency(&this, ppResources, pResidencyStatus, NumResources);
+			}
+			public HRESULT SetGPUThreadPriority(int32 Priority) mut
+			{
+				return VT.SetGPUThreadPriority(&this, Priority);
+			}
+			public HRESULT GetGPUThreadPriority(int32* pPriority) mut
+			{
+				return VT.GetGPUThreadPriority(&this, pPriority);
+			}
 			[CRepr]
 			public struct VTable : IDXGIObject.VTable
 			{
-				public function HRESULT(IDXGIDevice *self, IDXGIAdapter** pAdapter) GetAdapter;
-				public function HRESULT(IDXGIDevice *self, DXGI_SURFACE_DESC* pDesc, uint32 NumSurfaces, uint32 Usage, DXGI_SHARED_RESOURCE* pSharedResource, IDXGISurface** ppSurface) CreateSurface;
-				public function HRESULT(IDXGIDevice *self, IUnknown** ppResources, DXGI_RESIDENCY* pResidencyStatus, uint32 NumResources) QueryResourceResidency;
-				public function HRESULT(IDXGIDevice *self, int32 Priority) SetGPUThreadPriority;
-				public function HRESULT(IDXGIDevice *self, int32* pPriority) GetGPUThreadPriority;
+				public new function HRESULT(IDXGIDevice *self, IDXGIAdapter** pAdapter) GetAdapter;
+				public new function HRESULT(IDXGIDevice *self, DXGI_SURFACE_DESC* pDesc, uint32 NumSurfaces, uint32 Usage, DXGI_SHARED_RESOURCE* pSharedResource, IDXGISurface** ppSurface) CreateSurface;
+				public new function HRESULT(IDXGIDevice *self, IUnknown** ppResources, DXGI_RESIDENCY* pResidencyStatus, uint32 NumResources) QueryResourceResidency;
+				public new function HRESULT(IDXGIDevice *self, int32 Priority) SetGPUThreadPriority;
+				public new function HRESULT(IDXGIDevice *self, int32* pPriority) GetGPUThreadPriority;
 			}
 		}
 		[CRepr]
@@ -1109,12 +1324,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x770aae78, 0xf26f, 0x4dba, 0xa8, 0x29, 0x25, 0x3c, 0x83, 0xd1, 0xb3, 0x87);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT EnumAdapters1(uint32 Adapter, IDXGIAdapter1** ppAdapter) mut
+			{
+				return VT.EnumAdapters1(&this, Adapter, ppAdapter);
+			}
+			public BOOL IsCurrent() mut
+			{
+				return VT.IsCurrent(&this);
+			}
 			[CRepr]
 			public struct VTable : IDXGIFactory.VTable
 			{
-				public function HRESULT(IDXGIFactory1 *self, uint32 Adapter, IDXGIAdapter1** ppAdapter) EnumAdapters1;
-				public function BOOL(IDXGIFactory1 *self) IsCurrent;
+				public new function HRESULT(IDXGIFactory1 *self, uint32 Adapter, IDXGIAdapter1** ppAdapter) EnumAdapters1;
+				public new function BOOL(IDXGIFactory1 *self) IsCurrent;
 			}
 		}
 		[CRepr]
@@ -1122,11 +1346,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x29038f61, 0x3839, 0x4626, 0x91, 0xfd, 0x08, 0x68, 0x79, 0x01, 0x1a, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDesc1(DXGI_ADAPTER_DESC1* pDesc) mut
+			{
+				return VT.GetDesc1(&this, pDesc);
+			}
 			[CRepr]
 			public struct VTable : IDXGIAdapter.VTable
 			{
-				public function HRESULT(IDXGIAdapter1 *self, DXGI_ADAPTER_DESC1* pDesc) GetDesc1;
+				public new function HRESULT(IDXGIAdapter1 *self, DXGI_ADAPTER_DESC1* pDesc) GetDesc1;
 			}
 		}
 		[CRepr]
@@ -1134,12 +1363,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x77db970f, 0x6276, 0x48ba, 0xba, 0x28, 0x07, 0x01, 0x43, 0xb4, 0x39, 0x2c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetMaximumFrameLatency(uint32 MaxLatency) mut
+			{
+				return VT.SetMaximumFrameLatency(&this, MaxLatency);
+			}
+			public HRESULT GetMaximumFrameLatency(uint32* pMaxLatency) mut
+			{
+				return VT.GetMaximumFrameLatency(&this, pMaxLatency);
+			}
 			[CRepr]
 			public struct VTable : IDXGIDevice.VTable
 			{
-				public function HRESULT(IDXGIDevice1 *self, uint32 MaxLatency) SetMaximumFrameLatency;
-				public function HRESULT(IDXGIDevice1 *self, uint32* pMaxLatency) GetMaximumFrameLatency;
+				public new function HRESULT(IDXGIDevice1 *self, uint32 MaxLatency) SetMaximumFrameLatency;
+				public new function HRESULT(IDXGIDevice1 *self, uint32* pMaxLatency) GetMaximumFrameLatency;
 			}
 		}
 		[CRepr]
@@ -1147,12 +1385,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xea9dbf1a, 0xc88e, 0x4486, 0x85, 0x4a, 0x98, 0xaa, 0x01, 0x38, 0xf3, 0x0c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public BOOL IsStereoEnabled() mut
+			{
+				return VT.IsStereoEnabled(&this);
+			}
+			public void SetStereoEnabled(BOOL enabled) mut
+			{
+				VT.SetStereoEnabled(&this, enabled);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function BOOL(IDXGIDisplayControl *self) IsStereoEnabled;
-				public function void(IDXGIDisplayControl *self, BOOL enabled) SetStereoEnabled;
+				public new function BOOL(IDXGIDisplayControl *self) IsStereoEnabled;
+				public new function void(IDXGIDisplayControl *self, BOOL enabled) SetStereoEnabled;
 			}
 		}
 		[CRepr]
@@ -1160,18 +1407,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x191cfac3, 0xa341, 0x470d, 0xb2, 0x6e, 0xa8, 0x64, 0xf4, 0x28, 0x31, 0x9c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void GetDesc(DXGI_OUTDUPL_DESC* pDesc) mut
+			{
+				VT.GetDesc(&this, pDesc);
+			}
+			public HRESULT AcquireNextFrame(uint32 TimeoutInMilliseconds, DXGI_OUTDUPL_FRAME_INFO* pFrameInfo, IDXGIResource** ppDesktopResource) mut
+			{
+				return VT.AcquireNextFrame(&this, TimeoutInMilliseconds, pFrameInfo, ppDesktopResource);
+			}
+			public HRESULT GetFrameDirtyRects(uint32 DirtyRectsBufferSize, RECT* pDirtyRectsBuffer, uint32* pDirtyRectsBufferSizeRequired) mut
+			{
+				return VT.GetFrameDirtyRects(&this, DirtyRectsBufferSize, pDirtyRectsBuffer, pDirtyRectsBufferSizeRequired);
+			}
+			public HRESULT GetFrameMoveRects(uint32 MoveRectsBufferSize, DXGI_OUTDUPL_MOVE_RECT* pMoveRectBuffer, uint32* pMoveRectsBufferSizeRequired) mut
+			{
+				return VT.GetFrameMoveRects(&this, MoveRectsBufferSize, pMoveRectBuffer, pMoveRectsBufferSizeRequired);
+			}
+			public HRESULT GetFramePointerShape(uint32 PointerShapeBufferSize, void* pPointerShapeBuffer, uint32* pPointerShapeBufferSizeRequired, DXGI_OUTDUPL_POINTER_SHAPE_INFO* pPointerShapeInfo) mut
+			{
+				return VT.GetFramePointerShape(&this, PointerShapeBufferSize, pPointerShapeBuffer, pPointerShapeBufferSizeRequired, pPointerShapeInfo);
+			}
+			public HRESULT MapDesktopSurface(DXGI_MAPPED_RECT* pLockedRect) mut
+			{
+				return VT.MapDesktopSurface(&this, pLockedRect);
+			}
+			public HRESULT UnMapDesktopSurface() mut
+			{
+				return VT.UnMapDesktopSurface(&this);
+			}
+			public HRESULT ReleaseFrame() mut
+			{
+				return VT.ReleaseFrame(&this);
+			}
 			[CRepr]
 			public struct VTable : IDXGIObject.VTable
 			{
-				public function void(IDXGIOutputDuplication *self, DXGI_OUTDUPL_DESC* pDesc) GetDesc;
-				public function HRESULT(IDXGIOutputDuplication *self, uint32 TimeoutInMilliseconds, DXGI_OUTDUPL_FRAME_INFO* pFrameInfo, IDXGIResource** ppDesktopResource) AcquireNextFrame;
-				public function HRESULT(IDXGIOutputDuplication *self, uint32 DirtyRectsBufferSize, RECT* pDirtyRectsBuffer, uint32* pDirtyRectsBufferSizeRequired) GetFrameDirtyRects;
-				public function HRESULT(IDXGIOutputDuplication *self, uint32 MoveRectsBufferSize, DXGI_OUTDUPL_MOVE_RECT* pMoveRectBuffer, uint32* pMoveRectsBufferSizeRequired) GetFrameMoveRects;
-				public function HRESULT(IDXGIOutputDuplication *self, uint32 PointerShapeBufferSize, void* pPointerShapeBuffer, uint32* pPointerShapeBufferSizeRequired, DXGI_OUTDUPL_POINTER_SHAPE_INFO* pPointerShapeInfo) GetFramePointerShape;
-				public function HRESULT(IDXGIOutputDuplication *self, DXGI_MAPPED_RECT* pLockedRect) MapDesktopSurface;
-				public function HRESULT(IDXGIOutputDuplication *self) UnMapDesktopSurface;
-				public function HRESULT(IDXGIOutputDuplication *self) ReleaseFrame;
+				public new function void(IDXGIOutputDuplication *self, DXGI_OUTDUPL_DESC* pDesc) GetDesc;
+				public new function HRESULT(IDXGIOutputDuplication *self, uint32 TimeoutInMilliseconds, DXGI_OUTDUPL_FRAME_INFO* pFrameInfo, IDXGIResource** ppDesktopResource) AcquireNextFrame;
+				public new function HRESULT(IDXGIOutputDuplication *self, uint32 DirtyRectsBufferSize, RECT* pDirtyRectsBuffer, uint32* pDirtyRectsBufferSizeRequired) GetFrameDirtyRects;
+				public new function HRESULT(IDXGIOutputDuplication *self, uint32 MoveRectsBufferSize, DXGI_OUTDUPL_MOVE_RECT* pMoveRectBuffer, uint32* pMoveRectsBufferSizeRequired) GetFrameMoveRects;
+				public new function HRESULT(IDXGIOutputDuplication *self, uint32 PointerShapeBufferSize, void* pPointerShapeBuffer, uint32* pPointerShapeBufferSizeRequired, DXGI_OUTDUPL_POINTER_SHAPE_INFO* pPointerShapeInfo) GetFramePointerShape;
+				public new function HRESULT(IDXGIOutputDuplication *self, DXGI_MAPPED_RECT* pLockedRect) MapDesktopSurface;
+				public new function HRESULT(IDXGIOutputDuplication *self) UnMapDesktopSurface;
+				public new function HRESULT(IDXGIOutputDuplication *self) ReleaseFrame;
 			}
 		}
 		[CRepr]
@@ -1179,11 +1459,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xaba496dd, 0xb617, 0x4cb8, 0xa8, 0x66, 0xbc, 0x44, 0xd7, 0xeb, 0x1f, 0xa2);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetResource(Guid* riid, void** ppParentResource, uint32* pSubresourceIndex) mut
+			{
+				return VT.GetResource(&this, riid, ppParentResource, pSubresourceIndex);
+			}
 			[CRepr]
 			public struct VTable : IDXGISurface1.VTable
 			{
-				public function HRESULT(IDXGISurface2 *self, Guid* riid, void** ppParentResource, uint32* pSubresourceIndex) GetResource;
+				public new function HRESULT(IDXGISurface2 *self, Guid* riid, void** ppParentResource, uint32* pSubresourceIndex) GetResource;
 			}
 		}
 		[CRepr]
@@ -1191,12 +1476,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x30961379, 0x4609, 0x4a41, 0x99, 0x8e, 0x54, 0xfe, 0x56, 0x7e, 0xe0, 0xc1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateSubresourceSurface(uint32 index, IDXGISurface2** ppSurface) mut
+			{
+				return VT.CreateSubresourceSurface(&this, index, ppSurface);
+			}
+			public HRESULT CreateSharedHandle(SECURITY_ATTRIBUTES* pAttributes, uint32 dwAccess, PWSTR lpName, HANDLE* pHandle) mut
+			{
+				return VT.CreateSharedHandle(&this, pAttributes, dwAccess, lpName, pHandle);
+			}
 			[CRepr]
 			public struct VTable : IDXGIResource.VTable
 			{
-				public function HRESULT(IDXGIResource1 *self, uint32 index, IDXGISurface2** ppSurface) CreateSubresourceSurface;
-				public function HRESULT(IDXGIResource1 *self, SECURITY_ATTRIBUTES* pAttributes, uint32 dwAccess, PWSTR lpName, HANDLE* pHandle) CreateSharedHandle;
+				public new function HRESULT(IDXGIResource1 *self, uint32 index, IDXGISurface2** ppSurface) CreateSubresourceSurface;
+				public new function HRESULT(IDXGIResource1 *self, SECURITY_ATTRIBUTES* pAttributes, uint32 dwAccess, PWSTR lpName, HANDLE* pHandle) CreateSharedHandle;
 			}
 		}
 		[CRepr]
@@ -1204,13 +1498,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x05008617, 0xfbfd, 0x4051, 0xa7, 0x90, 0x14, 0x48, 0x84, 0xb4, 0xf6, 0xa9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OfferResources(uint32 NumResources, IDXGIResource** ppResources, DXGI_OFFER_RESOURCE_PRIORITY Priority) mut
+			{
+				return VT.OfferResources(&this, NumResources, ppResources, Priority);
+			}
+			public HRESULT ReclaimResources(uint32 NumResources, IDXGIResource** ppResources, BOOL* pDiscarded) mut
+			{
+				return VT.ReclaimResources(&this, NumResources, ppResources, pDiscarded);
+			}
+			public HRESULT EnqueueSetEvent(HANDLE hEvent) mut
+			{
+				return VT.EnqueueSetEvent(&this, hEvent);
+			}
 			[CRepr]
 			public struct VTable : IDXGIDevice1.VTable
 			{
-				public function HRESULT(IDXGIDevice2 *self, uint32 NumResources, IDXGIResource** ppResources, DXGI_OFFER_RESOURCE_PRIORITY Priority) OfferResources;
-				public function HRESULT(IDXGIDevice2 *self, uint32 NumResources, IDXGIResource** ppResources, BOOL* pDiscarded) ReclaimResources;
-				public function HRESULT(IDXGIDevice2 *self, HANDLE hEvent) EnqueueSetEvent;
+				public new function HRESULT(IDXGIDevice2 *self, uint32 NumResources, IDXGIResource** ppResources, DXGI_OFFER_RESOURCE_PRIORITY Priority) OfferResources;
+				public new function HRESULT(IDXGIDevice2 *self, uint32 NumResources, IDXGIResource** ppResources, BOOL* pDiscarded) ReclaimResources;
+				public new function HRESULT(IDXGIDevice2 *self, HANDLE hEvent) EnqueueSetEvent;
 			}
 		}
 		[CRepr]
@@ -1218,21 +1525,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x790a45f7, 0x0d42, 0x4876, 0x98, 0x3a, 0x0a, 0x55, 0xcf, 0xe6, 0xf4, 0xaa);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDesc1(DXGI_SWAP_CHAIN_DESC1* pDesc) mut
+			{
+				return VT.GetDesc1(&this, pDesc);
+			}
+			public HRESULT GetFullscreenDesc(DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pDesc) mut
+			{
+				return VT.GetFullscreenDesc(&this, pDesc);
+			}
+			public HRESULT GetHwnd(HWND* pHwnd) mut
+			{
+				return VT.GetHwnd(&this, pHwnd);
+			}
+			public HRESULT GetCoreWindow(Guid* refiid, void** ppUnk) mut
+			{
+				return VT.GetCoreWindow(&this, refiid, ppUnk);
+			}
+			public HRESULT Present1(uint32 SyncInterval, uint32 PresentFlags, DXGI_PRESENT_PARAMETERS* pPresentParameters) mut
+			{
+				return VT.Present1(&this, SyncInterval, PresentFlags, pPresentParameters);
+			}
+			public BOOL IsTemporaryMonoSupported() mut
+			{
+				return VT.IsTemporaryMonoSupported(&this);
+			}
+			public HRESULT GetRestrictToOutput(IDXGIOutput** ppRestrictToOutput) mut
+			{
+				return VT.GetRestrictToOutput(&this, ppRestrictToOutput);
+			}
+			public HRESULT SetBackgroundColor(DXGI_RGBA* pColor) mut
+			{
+				return VT.SetBackgroundColor(&this, pColor);
+			}
+			public HRESULT GetBackgroundColor(DXGI_RGBA* pColor) mut
+			{
+				return VT.GetBackgroundColor(&this, pColor);
+			}
+			public HRESULT SetRotation(DXGI_MODE_ROTATION Rotation) mut
+			{
+				return VT.SetRotation(&this, Rotation);
+			}
+			public HRESULT GetRotation(DXGI_MODE_ROTATION* pRotation) mut
+			{
+				return VT.GetRotation(&this, pRotation);
+			}
 			[CRepr]
 			public struct VTable : IDXGISwapChain.VTable
 			{
-				public function HRESULT(IDXGISwapChain1 *self, DXGI_SWAP_CHAIN_DESC1* pDesc) GetDesc1;
-				public function HRESULT(IDXGISwapChain1 *self, DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pDesc) GetFullscreenDesc;
-				public function HRESULT(IDXGISwapChain1 *self, HWND* pHwnd) GetHwnd;
-				public function HRESULT(IDXGISwapChain1 *self, Guid* refiid, void** ppUnk) GetCoreWindow;
-				public function HRESULT(IDXGISwapChain1 *self, uint32 SyncInterval, uint32 PresentFlags, DXGI_PRESENT_PARAMETERS* pPresentParameters) Present1;
-				public function BOOL(IDXGISwapChain1 *self) IsTemporaryMonoSupported;
-				public function HRESULT(IDXGISwapChain1 *self, IDXGIOutput** ppRestrictToOutput) GetRestrictToOutput;
-				public function HRESULT(IDXGISwapChain1 *self, DXGI_RGBA* pColor) SetBackgroundColor;
-				public function HRESULT(IDXGISwapChain1 *self, DXGI_RGBA* pColor) GetBackgroundColor;
-				public function HRESULT(IDXGISwapChain1 *self, DXGI_MODE_ROTATION Rotation) SetRotation;
-				public function HRESULT(IDXGISwapChain1 *self, DXGI_MODE_ROTATION* pRotation) GetRotation;
+				public new function HRESULT(IDXGISwapChain1 *self, DXGI_SWAP_CHAIN_DESC1* pDesc) GetDesc1;
+				public new function HRESULT(IDXGISwapChain1 *self, DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pDesc) GetFullscreenDesc;
+				public new function HRESULT(IDXGISwapChain1 *self, HWND* pHwnd) GetHwnd;
+				public new function HRESULT(IDXGISwapChain1 *self, Guid* refiid, void** ppUnk) GetCoreWindow;
+				public new function HRESULT(IDXGISwapChain1 *self, uint32 SyncInterval, uint32 PresentFlags, DXGI_PRESENT_PARAMETERS* pPresentParameters) Present1;
+				public new function BOOL(IDXGISwapChain1 *self) IsTemporaryMonoSupported;
+				public new function HRESULT(IDXGISwapChain1 *self, IDXGIOutput** ppRestrictToOutput) GetRestrictToOutput;
+				public new function HRESULT(IDXGISwapChain1 *self, DXGI_RGBA* pColor) SetBackgroundColor;
+				public new function HRESULT(IDXGISwapChain1 *self, DXGI_RGBA* pColor) GetBackgroundColor;
+				public new function HRESULT(IDXGISwapChain1 *self, DXGI_MODE_ROTATION Rotation) SetRotation;
+				public new function HRESULT(IDXGISwapChain1 *self, DXGI_MODE_ROTATION* pRotation) GetRotation;
 			}
 		}
 		[CRepr]
@@ -1240,21 +1592,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50c83a1c, 0xe072, 0x4c48, 0x87, 0xb0, 0x36, 0x30, 0xfa, 0x36, 0xa6, 0xd0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public BOOL IsWindowedStereoEnabled() mut
+			{
+				return VT.IsWindowedStereoEnabled(&this);
+			}
+			public HRESULT CreateSwapChainForHwnd(IUnknown* pDevice, HWND hWnd, DXGI_SWAP_CHAIN_DESC1* pDesc, DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) mut
+			{
+				return VT.CreateSwapChainForHwnd(&this, pDevice, hWnd, pDesc, pFullscreenDesc, pRestrictToOutput, ppSwapChain);
+			}
+			public HRESULT CreateSwapChainForCoreWindow(IUnknown* pDevice, IUnknown* pWindow, DXGI_SWAP_CHAIN_DESC1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) mut
+			{
+				return VT.CreateSwapChainForCoreWindow(&this, pDevice, pWindow, pDesc, pRestrictToOutput, ppSwapChain);
+			}
+			public HRESULT GetSharedResourceAdapterLuid(HANDLE hResource, LUID* pLuid) mut
+			{
+				return VT.GetSharedResourceAdapterLuid(&this, hResource, pLuid);
+			}
+			public HRESULT RegisterStereoStatusWindow(HWND WindowHandle, uint32 wMsg, uint32* pdwCookie) mut
+			{
+				return VT.RegisterStereoStatusWindow(&this, WindowHandle, wMsg, pdwCookie);
+			}
+			public HRESULT RegisterStereoStatusEvent(HANDLE hEvent, uint32* pdwCookie) mut
+			{
+				return VT.RegisterStereoStatusEvent(&this, hEvent, pdwCookie);
+			}
+			public void UnregisterStereoStatus(uint32 dwCookie) mut
+			{
+				VT.UnregisterStereoStatus(&this, dwCookie);
+			}
+			public HRESULT RegisterOcclusionStatusWindow(HWND WindowHandle, uint32 wMsg, uint32* pdwCookie) mut
+			{
+				return VT.RegisterOcclusionStatusWindow(&this, WindowHandle, wMsg, pdwCookie);
+			}
+			public HRESULT RegisterOcclusionStatusEvent(HANDLE hEvent, uint32* pdwCookie) mut
+			{
+				return VT.RegisterOcclusionStatusEvent(&this, hEvent, pdwCookie);
+			}
+			public void UnregisterOcclusionStatus(uint32 dwCookie) mut
+			{
+				VT.UnregisterOcclusionStatus(&this, dwCookie);
+			}
+			public HRESULT CreateSwapChainForComposition(IUnknown* pDevice, DXGI_SWAP_CHAIN_DESC1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) mut
+			{
+				return VT.CreateSwapChainForComposition(&this, pDevice, pDesc, pRestrictToOutput, ppSwapChain);
+			}
 			[CRepr]
 			public struct VTable : IDXGIFactory1.VTable
 			{
-				public function BOOL(IDXGIFactory2 *self) IsWindowedStereoEnabled;
-				public function HRESULT(IDXGIFactory2 *self, IUnknown* pDevice, HWND hWnd, DXGI_SWAP_CHAIN_DESC1* pDesc, DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) CreateSwapChainForHwnd;
-				public function HRESULT(IDXGIFactory2 *self, IUnknown* pDevice, IUnknown* pWindow, DXGI_SWAP_CHAIN_DESC1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) CreateSwapChainForCoreWindow;
-				public function HRESULT(IDXGIFactory2 *self, HANDLE hResource, LUID* pLuid) GetSharedResourceAdapterLuid;
-				public function HRESULT(IDXGIFactory2 *self, HWND WindowHandle, uint32 wMsg, uint32* pdwCookie) RegisterStereoStatusWindow;
-				public function HRESULT(IDXGIFactory2 *self, HANDLE hEvent, uint32* pdwCookie) RegisterStereoStatusEvent;
-				public function void(IDXGIFactory2 *self, uint32 dwCookie) UnregisterStereoStatus;
-				public function HRESULT(IDXGIFactory2 *self, HWND WindowHandle, uint32 wMsg, uint32* pdwCookie) RegisterOcclusionStatusWindow;
-				public function HRESULT(IDXGIFactory2 *self, HANDLE hEvent, uint32* pdwCookie) RegisterOcclusionStatusEvent;
-				public function void(IDXGIFactory2 *self, uint32 dwCookie) UnregisterOcclusionStatus;
-				public function HRESULT(IDXGIFactory2 *self, IUnknown* pDevice, DXGI_SWAP_CHAIN_DESC1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) CreateSwapChainForComposition;
+				public new function BOOL(IDXGIFactory2 *self) IsWindowedStereoEnabled;
+				public new function HRESULT(IDXGIFactory2 *self, IUnknown* pDevice, HWND hWnd, DXGI_SWAP_CHAIN_DESC1* pDesc, DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) CreateSwapChainForHwnd;
+				public new function HRESULT(IDXGIFactory2 *self, IUnknown* pDevice, IUnknown* pWindow, DXGI_SWAP_CHAIN_DESC1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) CreateSwapChainForCoreWindow;
+				public new function HRESULT(IDXGIFactory2 *self, HANDLE hResource, LUID* pLuid) GetSharedResourceAdapterLuid;
+				public new function HRESULT(IDXGIFactory2 *self, HWND WindowHandle, uint32 wMsg, uint32* pdwCookie) RegisterStereoStatusWindow;
+				public new function HRESULT(IDXGIFactory2 *self, HANDLE hEvent, uint32* pdwCookie) RegisterStereoStatusEvent;
+				public new function void(IDXGIFactory2 *self, uint32 dwCookie) UnregisterStereoStatus;
+				public new function HRESULT(IDXGIFactory2 *self, HWND WindowHandle, uint32 wMsg, uint32* pdwCookie) RegisterOcclusionStatusWindow;
+				public new function HRESULT(IDXGIFactory2 *self, HANDLE hEvent, uint32* pdwCookie) RegisterOcclusionStatusEvent;
+				public new function void(IDXGIFactory2 *self, uint32 dwCookie) UnregisterOcclusionStatus;
+				public new function HRESULT(IDXGIFactory2 *self, IUnknown* pDevice, DXGI_SWAP_CHAIN_DESC1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) CreateSwapChainForComposition;
 			}
 		}
 		[CRepr]
@@ -1262,11 +1659,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0aa1ae0a, 0xfa0e, 0x4b84, 0x86, 0x44, 0xe0, 0x5f, 0xf8, 0xe5, 0xac, 0xb5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDesc2(DXGI_ADAPTER_DESC2* pDesc) mut
+			{
+				return VT.GetDesc2(&this, pDesc);
+			}
 			[CRepr]
 			public struct VTable : IDXGIAdapter1.VTable
 			{
-				public function HRESULT(IDXGIAdapter2 *self, DXGI_ADAPTER_DESC2* pDesc) GetDesc2;
+				public new function HRESULT(IDXGIAdapter2 *self, DXGI_ADAPTER_DESC2* pDesc) GetDesc2;
 			}
 		}
 		[CRepr]
@@ -1274,14 +1676,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x00cddea8, 0x939b, 0x4b83, 0xa3, 0x40, 0xa6, 0x85, 0x22, 0x66, 0x66, 0xcc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDisplayModeList1(DXGI_FORMAT EnumFormat, uint32 Flags, uint32* pNumModes, DXGI_MODE_DESC1* pDesc) mut
+			{
+				return VT.GetDisplayModeList1(&this, EnumFormat, Flags, pNumModes, pDesc);
+			}
+			public HRESULT FindClosestMatchingMode1(DXGI_MODE_DESC1* pModeToMatch, DXGI_MODE_DESC1* pClosestMatch, IUnknown* pConcernedDevice) mut
+			{
+				return VT.FindClosestMatchingMode1(&this, pModeToMatch, pClosestMatch, pConcernedDevice);
+			}
+			public HRESULT GetDisplaySurfaceData1(IDXGIResource* pDestination) mut
+			{
+				return VT.GetDisplaySurfaceData1(&this, pDestination);
+			}
+			public HRESULT DuplicateOutput(IUnknown* pDevice, IDXGIOutputDuplication** ppOutputDuplication) mut
+			{
+				return VT.DuplicateOutput(&this, pDevice, ppOutputDuplication);
+			}
 			[CRepr]
 			public struct VTable : IDXGIOutput.VTable
 			{
-				public function HRESULT(IDXGIOutput1 *self, DXGI_FORMAT EnumFormat, uint32 Flags, uint32* pNumModes, DXGI_MODE_DESC1* pDesc) GetDisplayModeList1;
-				public function HRESULT(IDXGIOutput1 *self, DXGI_MODE_DESC1* pModeToMatch, DXGI_MODE_DESC1* pClosestMatch, IUnknown* pConcernedDevice) FindClosestMatchingMode1;
-				public function HRESULT(IDXGIOutput1 *self, IDXGIResource* pDestination) GetDisplaySurfaceData1;
-				public function HRESULT(IDXGIOutput1 *self, IUnknown* pDevice, IDXGIOutputDuplication** ppOutputDuplication) DuplicateOutput;
+				public new function HRESULT(IDXGIOutput1 *self, DXGI_FORMAT EnumFormat, uint32 Flags, uint32* pNumModes, DXGI_MODE_DESC1* pDesc) GetDisplayModeList1;
+				public new function HRESULT(IDXGIOutput1 *self, DXGI_MODE_DESC1* pModeToMatch, DXGI_MODE_DESC1* pClosestMatch, IUnknown* pConcernedDevice) FindClosestMatchingMode1;
+				public new function HRESULT(IDXGIOutput1 *self, IDXGIResource* pDestination) GetDisplaySurfaceData1;
+				public new function HRESULT(IDXGIOutput1 *self, IUnknown* pDevice, IDXGIOutputDuplication** ppOutputDuplication) DuplicateOutput;
 			}
 		}
 		[CRepr]
@@ -1289,11 +1708,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6007896c, 0x3244, 0x4afd, 0xbf, 0x18, 0xa6, 0xd3, 0xbe, 0xda, 0x50, 0x23);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void Trim() mut
+			{
+				VT.Trim(&this);
+			}
 			[CRepr]
 			public struct VTable : IDXGIDevice2.VTable
 			{
-				public function void(IDXGIDevice3 *self) Trim;
+				public new function void(IDXGIDevice3 *self) Trim;
 			}
 		}
 		[CRepr]
@@ -1301,17 +1725,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa8be2ac4, 0x199f, 0x4946, 0xb3, 0x31, 0x79, 0x59, 0x9f, 0xb9, 0x8d, 0xe7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetSourceSize(uint32 Width, uint32 Height) mut
+			{
+				return VT.SetSourceSize(&this, Width, Height);
+			}
+			public HRESULT GetSourceSize(uint32* pWidth, uint32* pHeight) mut
+			{
+				return VT.GetSourceSize(&this, pWidth, pHeight);
+			}
+			public HRESULT SetMaximumFrameLatency(uint32 MaxLatency) mut
+			{
+				return VT.SetMaximumFrameLatency(&this, MaxLatency);
+			}
+			public HRESULT GetMaximumFrameLatency(uint32* pMaxLatency) mut
+			{
+				return VT.GetMaximumFrameLatency(&this, pMaxLatency);
+			}
+			public HANDLE GetFrameLatencyWaitableObject() mut
+			{
+				return VT.GetFrameLatencyWaitableObject(&this);
+			}
+			public HRESULT SetMatrixTransform(DXGI_MATRIX_3X2_F* pMatrix) mut
+			{
+				return VT.SetMatrixTransform(&this, pMatrix);
+			}
+			public HRESULT GetMatrixTransform(DXGI_MATRIX_3X2_F* pMatrix) mut
+			{
+				return VT.GetMatrixTransform(&this, pMatrix);
+			}
 			[CRepr]
 			public struct VTable : IDXGISwapChain1.VTable
 			{
-				public function HRESULT(IDXGISwapChain2 *self, uint32 Width, uint32 Height) SetSourceSize;
-				public function HRESULT(IDXGISwapChain2 *self, uint32* pWidth, uint32* pHeight) GetSourceSize;
-				public function HRESULT(IDXGISwapChain2 *self, uint32 MaxLatency) SetMaximumFrameLatency;
-				public function HRESULT(IDXGISwapChain2 *self, uint32* pMaxLatency) GetMaximumFrameLatency;
-				public function HANDLE(IDXGISwapChain2 *self) GetFrameLatencyWaitableObject;
-				public function HRESULT(IDXGISwapChain2 *self, DXGI_MATRIX_3X2_F* pMatrix) SetMatrixTransform;
-				public function HRESULT(IDXGISwapChain2 *self, DXGI_MATRIX_3X2_F* pMatrix) GetMatrixTransform;
+				public new function HRESULT(IDXGISwapChain2 *self, uint32 Width, uint32 Height) SetSourceSize;
+				public new function HRESULT(IDXGISwapChain2 *self, uint32* pWidth, uint32* pHeight) GetSourceSize;
+				public new function HRESULT(IDXGISwapChain2 *self, uint32 MaxLatency) SetMaximumFrameLatency;
+				public new function HRESULT(IDXGISwapChain2 *self, uint32* pMaxLatency) GetMaximumFrameLatency;
+				public new function HANDLE(IDXGISwapChain2 *self) GetFrameLatencyWaitableObject;
+				public new function HRESULT(IDXGISwapChain2 *self, DXGI_MATRIX_3X2_F* pMatrix) SetMatrixTransform;
+				public new function HRESULT(IDXGISwapChain2 *self, DXGI_MATRIX_3X2_F* pMatrix) GetMatrixTransform;
 			}
 		}
 		[CRepr]
@@ -1319,11 +1772,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x595e39d1, 0x2724, 0x4663, 0x99, 0xb1, 0xda, 0x96, 0x9d, 0xe2, 0x83, 0x64);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public BOOL SupportsOverlays() mut
+			{
+				return VT.SupportsOverlays(&this);
+			}
 			[CRepr]
 			public struct VTable : IDXGIOutput1.VTable
 			{
-				public function BOOL(IDXGIOutput2 *self) SupportsOverlays;
+				public new function BOOL(IDXGIOutput2 *self) SupportsOverlays;
 			}
 		}
 		[CRepr]
@@ -1331,11 +1789,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x25483823, 0xcd46, 0x4c7d, 0x86, 0xca, 0x47, 0xaa, 0x95, 0xb8, 0x37, 0xbd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public uint32 GetCreationFlags() mut
+			{
+				return VT.GetCreationFlags(&this);
+			}
 			[CRepr]
 			public struct VTable : IDXGIFactory2.VTable
 			{
-				public function uint32(IDXGIFactory3 *self) GetCreationFlags;
+				public new function uint32(IDXGIFactory3 *self) GetCreationFlags;
 			}
 		}
 		[CRepr]
@@ -1343,19 +1806,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2633066b, 0x4514, 0x4c7a, 0x8f, 0xd8, 0x12, 0xea, 0x98, 0x05, 0x9d, 0x18);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT PresentBuffer(uint32 BufferToPresent, uint32 SyncInterval, uint32 Flags) mut
+			{
+				return VT.PresentBuffer(&this, BufferToPresent, SyncInterval, Flags);
+			}
+			public HRESULT SetSourceRect(RECT* pRect) mut
+			{
+				return VT.SetSourceRect(&this, pRect);
+			}
+			public HRESULT SetTargetRect(RECT* pRect) mut
+			{
+				return VT.SetTargetRect(&this, pRect);
+			}
+			public HRESULT SetDestSize(uint32 Width, uint32 Height) mut
+			{
+				return VT.SetDestSize(&this, Width, Height);
+			}
+			public HRESULT GetSourceRect(RECT* pRect) mut
+			{
+				return VT.GetSourceRect(&this, pRect);
+			}
+			public HRESULT GetTargetRect(RECT* pRect) mut
+			{
+				return VT.GetTargetRect(&this, pRect);
+			}
+			public HRESULT GetDestSize(uint32* pWidth, uint32* pHeight) mut
+			{
+				return VT.GetDestSize(&this, pWidth, pHeight);
+			}
+			public HRESULT SetColorSpace(DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS ColorSpace) mut
+			{
+				return VT.SetColorSpace(&this, ColorSpace);
+			}
+			public DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS GetColorSpace() mut
+			{
+				return VT.GetColorSpace(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDXGIDecodeSwapChain *self, uint32 BufferToPresent, uint32 SyncInterval, uint32 Flags) PresentBuffer;
-				public function HRESULT(IDXGIDecodeSwapChain *self, RECT* pRect) SetSourceRect;
-				public function HRESULT(IDXGIDecodeSwapChain *self, RECT* pRect) SetTargetRect;
-				public function HRESULT(IDXGIDecodeSwapChain *self, uint32 Width, uint32 Height) SetDestSize;
-				public function HRESULT(IDXGIDecodeSwapChain *self, RECT* pRect) GetSourceRect;
-				public function HRESULT(IDXGIDecodeSwapChain *self, RECT* pRect) GetTargetRect;
-				public function HRESULT(IDXGIDecodeSwapChain *self, uint32* pWidth, uint32* pHeight) GetDestSize;
-				public function HRESULT(IDXGIDecodeSwapChain *self, DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS ColorSpace) SetColorSpace;
-				public function DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS(IDXGIDecodeSwapChain *self) GetColorSpace;
+				public new function HRESULT(IDXGIDecodeSwapChain *self, uint32 BufferToPresent, uint32 SyncInterval, uint32 Flags) PresentBuffer;
+				public new function HRESULT(IDXGIDecodeSwapChain *self, RECT* pRect) SetSourceRect;
+				public new function HRESULT(IDXGIDecodeSwapChain *self, RECT* pRect) SetTargetRect;
+				public new function HRESULT(IDXGIDecodeSwapChain *self, uint32 Width, uint32 Height) SetDestSize;
+				public new function HRESULT(IDXGIDecodeSwapChain *self, RECT* pRect) GetSourceRect;
+				public new function HRESULT(IDXGIDecodeSwapChain *self, RECT* pRect) GetTargetRect;
+				public new function HRESULT(IDXGIDecodeSwapChain *self, uint32* pWidth, uint32* pHeight) GetDestSize;
+				public new function HRESULT(IDXGIDecodeSwapChain *self, DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS ColorSpace) SetColorSpace;
+				public new function DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS(IDXGIDecodeSwapChain *self) GetColorSpace;
 			}
 		}
 		[CRepr]
@@ -1363,12 +1863,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x41e7d1f2, 0xa591, 0x4f7b, 0xa2, 0xe5, 0xfa, 0x9c, 0x84, 0x3e, 0x1c, 0x12);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateSwapChainForCompositionSurfaceHandle(IUnknown* pDevice, HANDLE hSurface, DXGI_SWAP_CHAIN_DESC1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) mut
+			{
+				return VT.CreateSwapChainForCompositionSurfaceHandle(&this, pDevice, hSurface, pDesc, pRestrictToOutput, ppSwapChain);
+			}
+			public HRESULT CreateDecodeSwapChainForCompositionSurfaceHandle(IUnknown* pDevice, HANDLE hSurface, DXGI_DECODE_SWAP_CHAIN_DESC* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) mut
+			{
+				return VT.CreateDecodeSwapChainForCompositionSurfaceHandle(&this, pDevice, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDXGIFactoryMedia *self, IUnknown* pDevice, HANDLE hSurface, DXGI_SWAP_CHAIN_DESC1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) CreateSwapChainForCompositionSurfaceHandle;
-				public function HRESULT(IDXGIFactoryMedia *self, IUnknown* pDevice, HANDLE hSurface, DXGI_DECODE_SWAP_CHAIN_DESC* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) CreateDecodeSwapChainForCompositionSurfaceHandle;
+				public new function HRESULT(IDXGIFactoryMedia *self, IUnknown* pDevice, HANDLE hSurface, DXGI_SWAP_CHAIN_DESC1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) CreateSwapChainForCompositionSurfaceHandle;
+				public new function HRESULT(IDXGIFactoryMedia *self, IUnknown* pDevice, HANDLE hSurface, DXGI_DECODE_SWAP_CHAIN_DESC* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) CreateDecodeSwapChainForCompositionSurfaceHandle;
 			}
 		}
 		[CRepr]
@@ -1376,13 +1885,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdd95b90b, 0xf05f, 0x4f6a, 0xbd, 0x65, 0x25, 0xbf, 0xb2, 0x64, 0xbd, 0x84);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetFrameStatisticsMedia(DXGI_FRAME_STATISTICS_MEDIA* pStats) mut
+			{
+				return VT.GetFrameStatisticsMedia(&this, pStats);
+			}
+			public HRESULT SetPresentDuration(uint32 Duration) mut
+			{
+				return VT.SetPresentDuration(&this, Duration);
+			}
+			public HRESULT CheckPresentDurationSupport(uint32 DesiredPresentDuration, uint32* pClosestSmallerPresentDuration, uint32* pClosestLargerPresentDuration) mut
+			{
+				return VT.CheckPresentDurationSupport(&this, DesiredPresentDuration, pClosestSmallerPresentDuration, pClosestLargerPresentDuration);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDXGISwapChainMedia *self, DXGI_FRAME_STATISTICS_MEDIA* pStats) GetFrameStatisticsMedia;
-				public function HRESULT(IDXGISwapChainMedia *self, uint32 Duration) SetPresentDuration;
-				public function HRESULT(IDXGISwapChainMedia *self, uint32 DesiredPresentDuration, uint32* pClosestSmallerPresentDuration, uint32* pClosestLargerPresentDuration) CheckPresentDurationSupport;
+				public new function HRESULT(IDXGISwapChainMedia *self, DXGI_FRAME_STATISTICS_MEDIA* pStats) GetFrameStatisticsMedia;
+				public new function HRESULT(IDXGISwapChainMedia *self, uint32 Duration) SetPresentDuration;
+				public new function HRESULT(IDXGISwapChainMedia *self, uint32 DesiredPresentDuration, uint32* pClosestSmallerPresentDuration, uint32* pClosestLargerPresentDuration) CheckPresentDurationSupport;
 			}
 		}
 		[CRepr]
@@ -1390,11 +1912,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8a6bb301, 0x7e7e, 0x41f4, 0xa8, 0xe0, 0x5b, 0x32, 0xf7, 0xf9, 0x9b, 0x18);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CheckOverlaySupport(DXGI_FORMAT EnumFormat, IUnknown* pConcernedDevice, uint32* pFlags) mut
+			{
+				return VT.CheckOverlaySupport(&this, EnumFormat, pConcernedDevice, pFlags);
+			}
 			[CRepr]
 			public struct VTable : IDXGIOutput2.VTable
 			{
-				public function HRESULT(IDXGIOutput3 *self, DXGI_FORMAT EnumFormat, IUnknown* pConcernedDevice, uint32* pFlags) CheckOverlaySupport;
+				public new function HRESULT(IDXGIOutput3 *self, DXGI_FORMAT EnumFormat, IUnknown* pConcernedDevice, uint32* pFlags) CheckOverlaySupport;
 			}
 		}
 		[CRepr]
@@ -1402,14 +1929,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x94d99bdb, 0xf1f8, 0x4ab0, 0xb2, 0x36, 0x7d, 0xa0, 0x17, 0x0e, 0xda, 0xb1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public uint32 GetCurrentBackBufferIndex() mut
+			{
+				return VT.GetCurrentBackBufferIndex(&this);
+			}
+			public HRESULT CheckColorSpaceSupport(DXGI_COLOR_SPACE_TYPE ColorSpace, uint32* pColorSpaceSupport) mut
+			{
+				return VT.CheckColorSpaceSupport(&this, ColorSpace, pColorSpaceSupport);
+			}
+			public HRESULT SetColorSpace1(DXGI_COLOR_SPACE_TYPE ColorSpace) mut
+			{
+				return VT.SetColorSpace1(&this, ColorSpace);
+			}
+			public HRESULT ResizeBuffers1(uint32 BufferCount, uint32 Width, uint32 Height, DXGI_FORMAT Format, uint32 SwapChainFlags, uint32* pCreationNodeMask, IUnknown** ppPresentQueue) mut
+			{
+				return VT.ResizeBuffers1(&this, BufferCount, Width, Height, Format, SwapChainFlags, pCreationNodeMask, ppPresentQueue);
+			}
 			[CRepr]
 			public struct VTable : IDXGISwapChain2.VTable
 			{
-				public function uint32(IDXGISwapChain3 *self) GetCurrentBackBufferIndex;
-				public function HRESULT(IDXGISwapChain3 *self, DXGI_COLOR_SPACE_TYPE ColorSpace, uint32* pColorSpaceSupport) CheckColorSpaceSupport;
-				public function HRESULT(IDXGISwapChain3 *self, DXGI_COLOR_SPACE_TYPE ColorSpace) SetColorSpace1;
-				public function HRESULT(IDXGISwapChain3 *self, uint32 BufferCount, uint32 Width, uint32 Height, DXGI_FORMAT Format, uint32 SwapChainFlags, uint32* pCreationNodeMask, IUnknown** ppPresentQueue) ResizeBuffers1;
+				public new function uint32(IDXGISwapChain3 *self) GetCurrentBackBufferIndex;
+				public new function HRESULT(IDXGISwapChain3 *self, DXGI_COLOR_SPACE_TYPE ColorSpace, uint32* pColorSpaceSupport) CheckColorSpaceSupport;
+				public new function HRESULT(IDXGISwapChain3 *self, DXGI_COLOR_SPACE_TYPE ColorSpace) SetColorSpace1;
+				public new function HRESULT(IDXGISwapChain3 *self, uint32 BufferCount, uint32 Width, uint32 Height, DXGI_FORMAT Format, uint32 SwapChainFlags, uint32* pCreationNodeMask, IUnknown** ppPresentQueue) ResizeBuffers1;
 			}
 		}
 		[CRepr]
@@ -1417,11 +1961,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdc7dca35, 0x2196, 0x414d, 0x9f, 0x53, 0x61, 0x78, 0x84, 0x03, 0x2a, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CheckOverlayColorSpaceSupport(DXGI_FORMAT Format, DXGI_COLOR_SPACE_TYPE ColorSpace, IUnknown* pConcernedDevice, uint32* pFlags) mut
+			{
+				return VT.CheckOverlayColorSpaceSupport(&this, Format, ColorSpace, pConcernedDevice, pFlags);
+			}
 			[CRepr]
 			public struct VTable : IDXGIOutput3.VTable
 			{
-				public function HRESULT(IDXGIOutput4 *self, DXGI_FORMAT Format, DXGI_COLOR_SPACE_TYPE ColorSpace, IUnknown* pConcernedDevice, uint32* pFlags) CheckOverlayColorSpaceSupport;
+				public new function HRESULT(IDXGIOutput4 *self, DXGI_FORMAT Format, DXGI_COLOR_SPACE_TYPE ColorSpace, IUnknown* pConcernedDevice, uint32* pFlags) CheckOverlayColorSpaceSupport;
 			}
 		}
 		[CRepr]
@@ -1429,12 +1978,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1bc6ea02, 0xef36, 0x464f, 0xbf, 0x0c, 0x21, 0xca, 0x39, 0xe5, 0x16, 0x8a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT EnumAdapterByLuid(LUID AdapterLuid, Guid* riid, void** ppvAdapter) mut
+			{
+				return VT.EnumAdapterByLuid(&this, AdapterLuid, riid, ppvAdapter);
+			}
+			public HRESULT EnumWarpAdapter(Guid* riid, void** ppvAdapter) mut
+			{
+				return VT.EnumWarpAdapter(&this, riid, ppvAdapter);
+			}
 			[CRepr]
 			public struct VTable : IDXGIFactory3.VTable
 			{
-				public function HRESULT(IDXGIFactory4 *self, LUID AdapterLuid, Guid* riid, void** ppvAdapter) EnumAdapterByLuid;
-				public function HRESULT(IDXGIFactory4 *self, Guid* riid, void** ppvAdapter) EnumWarpAdapter;
+				public new function HRESULT(IDXGIFactory4 *self, LUID AdapterLuid, Guid* riid, void** ppvAdapter) EnumAdapterByLuid;
+				public new function HRESULT(IDXGIFactory4 *self, Guid* riid, void** ppvAdapter) EnumWarpAdapter;
 			}
 		}
 		[CRepr]
@@ -1442,16 +2000,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x645967a4, 0x1392, 0x4310, 0xa7, 0x98, 0x80, 0x53, 0xce, 0x3e, 0x93, 0xfd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RegisterHardwareContentProtectionTeardownStatusEvent(HANDLE hEvent, uint32* pdwCookie) mut
+			{
+				return VT.RegisterHardwareContentProtectionTeardownStatusEvent(&this, hEvent, pdwCookie);
+			}
+			public void UnregisterHardwareContentProtectionTeardownStatus(uint32 dwCookie) mut
+			{
+				VT.UnregisterHardwareContentProtectionTeardownStatus(&this, dwCookie);
+			}
+			public HRESULT QueryVideoMemoryInfo(uint32 NodeIndex, DXGI_MEMORY_SEGMENT_GROUP MemorySegmentGroup, DXGI_QUERY_VIDEO_MEMORY_INFO* pVideoMemoryInfo) mut
+			{
+				return VT.QueryVideoMemoryInfo(&this, NodeIndex, MemorySegmentGroup, pVideoMemoryInfo);
+			}
+			public HRESULT SetVideoMemoryReservation(uint32 NodeIndex, DXGI_MEMORY_SEGMENT_GROUP MemorySegmentGroup, uint64 Reservation) mut
+			{
+				return VT.SetVideoMemoryReservation(&this, NodeIndex, MemorySegmentGroup, Reservation);
+			}
+			public HRESULT RegisterVideoMemoryBudgetChangeNotificationEvent(HANDLE hEvent, uint32* pdwCookie) mut
+			{
+				return VT.RegisterVideoMemoryBudgetChangeNotificationEvent(&this, hEvent, pdwCookie);
+			}
+			public void UnregisterVideoMemoryBudgetChangeNotification(uint32 dwCookie) mut
+			{
+				VT.UnregisterVideoMemoryBudgetChangeNotification(&this, dwCookie);
+			}
 			[CRepr]
 			public struct VTable : IDXGIAdapter2.VTable
 			{
-				public function HRESULT(IDXGIAdapter3 *self, HANDLE hEvent, uint32* pdwCookie) RegisterHardwareContentProtectionTeardownStatusEvent;
-				public function void(IDXGIAdapter3 *self, uint32 dwCookie) UnregisterHardwareContentProtectionTeardownStatus;
-				public function HRESULT(IDXGIAdapter3 *self, uint32 NodeIndex, DXGI_MEMORY_SEGMENT_GROUP MemorySegmentGroup, DXGI_QUERY_VIDEO_MEMORY_INFO* pVideoMemoryInfo) QueryVideoMemoryInfo;
-				public function HRESULT(IDXGIAdapter3 *self, uint32 NodeIndex, DXGI_MEMORY_SEGMENT_GROUP MemorySegmentGroup, uint64 Reservation) SetVideoMemoryReservation;
-				public function HRESULT(IDXGIAdapter3 *self, HANDLE hEvent, uint32* pdwCookie) RegisterVideoMemoryBudgetChangeNotificationEvent;
-				public function void(IDXGIAdapter3 *self, uint32 dwCookie) UnregisterVideoMemoryBudgetChangeNotification;
+				public new function HRESULT(IDXGIAdapter3 *self, HANDLE hEvent, uint32* pdwCookie) RegisterHardwareContentProtectionTeardownStatusEvent;
+				public new function void(IDXGIAdapter3 *self, uint32 dwCookie) UnregisterHardwareContentProtectionTeardownStatus;
+				public new function HRESULT(IDXGIAdapter3 *self, uint32 NodeIndex, DXGI_MEMORY_SEGMENT_GROUP MemorySegmentGroup, DXGI_QUERY_VIDEO_MEMORY_INFO* pVideoMemoryInfo) QueryVideoMemoryInfo;
+				public new function HRESULT(IDXGIAdapter3 *self, uint32 NodeIndex, DXGI_MEMORY_SEGMENT_GROUP MemorySegmentGroup, uint64 Reservation) SetVideoMemoryReservation;
+				public new function HRESULT(IDXGIAdapter3 *self, HANDLE hEvent, uint32* pdwCookie) RegisterVideoMemoryBudgetChangeNotificationEvent;
+				public new function void(IDXGIAdapter3 *self, uint32 dwCookie) UnregisterVideoMemoryBudgetChangeNotification;
 			}
 		}
 		[CRepr]
@@ -1459,11 +2042,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x80a07424, 0xab52, 0x42eb, 0x83, 0x3c, 0x0c, 0x42, 0xfd, 0x28, 0x2d, 0x98);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT DuplicateOutput1(IUnknown* pDevice, uint32 Flags, uint32 SupportedFormatsCount, DXGI_FORMAT* pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication) mut
+			{
+				return VT.DuplicateOutput1(&this, pDevice, Flags, SupportedFormatsCount, pSupportedFormats, ppOutputDuplication);
+			}
 			[CRepr]
 			public struct VTable : IDXGIOutput4.VTable
 			{
-				public function HRESULT(IDXGIOutput5 *self, IUnknown* pDevice, uint32 Flags, uint32 SupportedFormatsCount, DXGI_FORMAT* pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication) DuplicateOutput1;
+				public new function HRESULT(IDXGIOutput5 *self, IUnknown* pDevice, uint32 Flags, uint32 SupportedFormatsCount, DXGI_FORMAT* pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication) DuplicateOutput1;
 			}
 		}
 		[CRepr]
@@ -1471,11 +2059,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3d585d5a, 0xbd4a, 0x489e, 0xb1, 0xf4, 0x3d, 0xbc, 0xb6, 0x45, 0x2f, 0xfb);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetHDRMetaData(DXGI_HDR_METADATA_TYPE Type, uint32 Size, void* pMetaData) mut
+			{
+				return VT.SetHDRMetaData(&this, Type, Size, pMetaData);
+			}
 			[CRepr]
 			public struct VTable : IDXGISwapChain3.VTable
 			{
-				public function HRESULT(IDXGISwapChain4 *self, DXGI_HDR_METADATA_TYPE Type, uint32 Size, void* pMetaData) SetHDRMetaData;
+				public new function HRESULT(IDXGISwapChain4 *self, DXGI_HDR_METADATA_TYPE Type, uint32 Size, void* pMetaData) SetHDRMetaData;
 			}
 		}
 		[CRepr]
@@ -1483,12 +2076,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x95b4f95f, 0xd8da, 0x4ca4, 0x9e, 0xe6, 0x3b, 0x76, 0xd5, 0x96, 0x8a, 0x10);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OfferResources1(uint32 NumResources, IDXGIResource** ppResources, DXGI_OFFER_RESOURCE_PRIORITY Priority, uint32 Flags) mut
+			{
+				return VT.OfferResources1(&this, NumResources, ppResources, Priority, Flags);
+			}
+			public HRESULT ReclaimResources1(uint32 NumResources, IDXGIResource** ppResources, DXGI_RECLAIM_RESOURCE_RESULTS* pResults) mut
+			{
+				return VT.ReclaimResources1(&this, NumResources, ppResources, pResults);
+			}
 			[CRepr]
 			public struct VTable : IDXGIDevice3.VTable
 			{
-				public function HRESULT(IDXGIDevice4 *self, uint32 NumResources, IDXGIResource** ppResources, DXGI_OFFER_RESOURCE_PRIORITY Priority, uint32 Flags) OfferResources1;
-				public function HRESULT(IDXGIDevice4 *self, uint32 NumResources, IDXGIResource** ppResources, DXGI_RECLAIM_RESOURCE_RESULTS* pResults) ReclaimResources1;
+				public new function HRESULT(IDXGIDevice4 *self, uint32 NumResources, IDXGIResource** ppResources, DXGI_OFFER_RESOURCE_PRIORITY Priority, uint32 Flags) OfferResources1;
+				public new function HRESULT(IDXGIDevice4 *self, uint32 NumResources, IDXGIResource** ppResources, DXGI_RECLAIM_RESOURCE_RESULTS* pResults) ReclaimResources1;
 			}
 		}
 		[CRepr]
@@ -1496,11 +2098,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7632e1f5, 0xee65, 0x4dca, 0x87, 0xfd, 0x84, 0xcd, 0x75, 0xf8, 0x83, 0x8d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CheckFeatureSupport(DXGI_FEATURE Feature, void* pFeatureSupportData, uint32 FeatureSupportDataSize) mut
+			{
+				return VT.CheckFeatureSupport(&this, Feature, pFeatureSupportData, FeatureSupportDataSize);
+			}
 			[CRepr]
 			public struct VTable : IDXGIFactory4.VTable
 			{
-				public function HRESULT(IDXGIFactory5 *self, DXGI_FEATURE Feature, void* pFeatureSupportData, uint32 FeatureSupportDataSize) CheckFeatureSupport;
+				public new function HRESULT(IDXGIFactory5 *self, DXGI_FEATURE Feature, void* pFeatureSupportData, uint32 FeatureSupportDataSize) CheckFeatureSupport;
 			}
 		}
 		[CRepr]
@@ -1508,11 +2115,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3c8d99d1, 0x4fbf, 0x4181, 0xa8, 0x2c, 0xaf, 0x66, 0xbf, 0x7b, 0xd2, 0x4e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDesc3(DXGI_ADAPTER_DESC3* pDesc) mut
+			{
+				return VT.GetDesc3(&this, pDesc);
+			}
 			[CRepr]
 			public struct VTable : IDXGIAdapter3.VTable
 			{
-				public function HRESULT(IDXGIAdapter4 *self, DXGI_ADAPTER_DESC3* pDesc) GetDesc3;
+				public new function HRESULT(IDXGIAdapter4 *self, DXGI_ADAPTER_DESC3* pDesc) GetDesc3;
 			}
 		}
 		[CRepr]
@@ -1520,12 +2132,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x068346e8, 0xaaec, 0x4b84, 0xad, 0xd7, 0x13, 0x7f, 0x51, 0x3f, 0x77, 0xa1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDesc1(DXGI_OUTPUT_DESC1* pDesc) mut
+			{
+				return VT.GetDesc1(&this, pDesc);
+			}
+			public HRESULT CheckHardwareCompositionSupport(uint32* pFlags) mut
+			{
+				return VT.CheckHardwareCompositionSupport(&this, pFlags);
+			}
 			[CRepr]
 			public struct VTable : IDXGIOutput5.VTable
 			{
-				public function HRESULT(IDXGIOutput6 *self, DXGI_OUTPUT_DESC1* pDesc) GetDesc1;
-				public function HRESULT(IDXGIOutput6 *self, uint32* pFlags) CheckHardwareCompositionSupport;
+				public new function HRESULT(IDXGIOutput6 *self, DXGI_OUTPUT_DESC1* pDesc) GetDesc1;
+				public new function HRESULT(IDXGIOutput6 *self, uint32* pFlags) CheckHardwareCompositionSupport;
 			}
 		}
 		[CRepr]
@@ -1533,11 +2154,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc1b6694f, 0xff09, 0x44a9, 0xb0, 0x3c, 0x77, 0x90, 0x0a, 0x0a, 0x1d, 0x17);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT EnumAdapterByGpuPreference(uint32 Adapter, DXGI_GPU_PREFERENCE GpuPreference, Guid* riid, void** ppvAdapter) mut
+			{
+				return VT.EnumAdapterByGpuPreference(&this, Adapter, GpuPreference, riid, ppvAdapter);
+			}
 			[CRepr]
 			public struct VTable : IDXGIFactory5.VTable
 			{
-				public function HRESULT(IDXGIFactory6 *self, uint32 Adapter, DXGI_GPU_PREFERENCE GpuPreference, Guid* riid, void** ppvAdapter) EnumAdapterByGpuPreference;
+				public new function HRESULT(IDXGIFactory6 *self, uint32 Adapter, DXGI_GPU_PREFERENCE GpuPreference, Guid* riid, void** ppvAdapter) EnumAdapterByGpuPreference;
 			}
 		}
 		[CRepr]
@@ -1545,12 +2171,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa4966eed, 0x76db, 0x44da, 0x84, 0xc1, 0xee, 0x9a, 0x7a, 0xfb, 0x20, 0xa8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RegisterAdaptersChangedEvent(HANDLE hEvent, uint32* pdwCookie) mut
+			{
+				return VT.RegisterAdaptersChangedEvent(&this, hEvent, pdwCookie);
+			}
+			public HRESULT UnregisterAdaptersChangedEvent(uint32 dwCookie) mut
+			{
+				return VT.UnregisterAdaptersChangedEvent(&this, dwCookie);
+			}
 			[CRepr]
 			public struct VTable : IDXGIFactory6.VTable
 			{
-				public function HRESULT(IDXGIFactory7 *self, HANDLE hEvent, uint32* pdwCookie) RegisterAdaptersChangedEvent;
-				public function HRESULT(IDXGIFactory7 *self, uint32 dwCookie) UnregisterAdaptersChangedEvent;
+				public new function HRESULT(IDXGIFactory7 *self, HANDLE hEvent, uint32* pdwCookie) RegisterAdaptersChangedEvent;
+				public new function HRESULT(IDXGIFactory7 *self, uint32 dwCookie) UnregisterAdaptersChangedEvent;
 			}
 		}
 		[CRepr]
@@ -1558,47 +2193,196 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd67441c7, 0x672a, 0x476f, 0x9e, 0x82, 0xcd, 0x55, 0xb4, 0x49, 0x49, 0xce);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetMessageCountLimit(Guid Producer, uint64 MessageCountLimit) mut
+			{
+				return VT.SetMessageCountLimit(&this, Producer, MessageCountLimit);
+			}
+			public void ClearStoredMessages(Guid Producer) mut
+			{
+				VT.ClearStoredMessages(&this, Producer);
+			}
+			public HRESULT GetMessage(Guid Producer, uint64 MessageIndex, DXGI_INFO_QUEUE_MESSAGE* pMessage, uint* pMessageByteLength) mut
+			{
+				return VT.GetMessage(&this, Producer, MessageIndex, pMessage, pMessageByteLength);
+			}
+			public uint64 GetNumStoredMessagesAllowedByRetrievalFilters(Guid Producer) mut
+			{
+				return VT.GetNumStoredMessagesAllowedByRetrievalFilters(&this, Producer);
+			}
+			public uint64 GetNumStoredMessages(Guid Producer) mut
+			{
+				return VT.GetNumStoredMessages(&this, Producer);
+			}
+			public uint64 GetNumMessagesDiscardedByMessageCountLimit(Guid Producer) mut
+			{
+				return VT.GetNumMessagesDiscardedByMessageCountLimit(&this, Producer);
+			}
+			public uint64 GetMessageCountLimit(Guid Producer) mut
+			{
+				return VT.GetMessageCountLimit(&this, Producer);
+			}
+			public uint64 GetNumMessagesAllowedByStorageFilter(Guid Producer) mut
+			{
+				return VT.GetNumMessagesAllowedByStorageFilter(&this, Producer);
+			}
+			public uint64 GetNumMessagesDeniedByStorageFilter(Guid Producer) mut
+			{
+				return VT.GetNumMessagesDeniedByStorageFilter(&this, Producer);
+			}
+			public HRESULT AddStorageFilterEntries(Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter) mut
+			{
+				return VT.AddStorageFilterEntries(&this, Producer, pFilter);
+			}
+			public HRESULT GetStorageFilter(Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter, uint* pFilterByteLength) mut
+			{
+				return VT.GetStorageFilter(&this, Producer, pFilter, pFilterByteLength);
+			}
+			public void ClearStorageFilter(Guid Producer) mut
+			{
+				VT.ClearStorageFilter(&this, Producer);
+			}
+			public HRESULT PushEmptyStorageFilter(Guid Producer) mut
+			{
+				return VT.PushEmptyStorageFilter(&this, Producer);
+			}
+			public HRESULT PushDenyAllStorageFilter(Guid Producer) mut
+			{
+				return VT.PushDenyAllStorageFilter(&this, Producer);
+			}
+			public HRESULT PushCopyOfStorageFilter(Guid Producer) mut
+			{
+				return VT.PushCopyOfStorageFilter(&this, Producer);
+			}
+			public HRESULT PushStorageFilter(Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter) mut
+			{
+				return VT.PushStorageFilter(&this, Producer, pFilter);
+			}
+			public void PopStorageFilter(Guid Producer) mut
+			{
+				VT.PopStorageFilter(&this, Producer);
+			}
+			public uint32 GetStorageFilterStackSize(Guid Producer) mut
+			{
+				return VT.GetStorageFilterStackSize(&this, Producer);
+			}
+			public HRESULT AddRetrievalFilterEntries(Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter) mut
+			{
+				return VT.AddRetrievalFilterEntries(&this, Producer, pFilter);
+			}
+			public HRESULT GetRetrievalFilter(Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter, uint* pFilterByteLength) mut
+			{
+				return VT.GetRetrievalFilter(&this, Producer, pFilter, pFilterByteLength);
+			}
+			public void ClearRetrievalFilter(Guid Producer) mut
+			{
+				VT.ClearRetrievalFilter(&this, Producer);
+			}
+			public HRESULT PushEmptyRetrievalFilter(Guid Producer) mut
+			{
+				return VT.PushEmptyRetrievalFilter(&this, Producer);
+			}
+			public HRESULT PushDenyAllRetrievalFilter(Guid Producer) mut
+			{
+				return VT.PushDenyAllRetrievalFilter(&this, Producer);
+			}
+			public HRESULT PushCopyOfRetrievalFilter(Guid Producer) mut
+			{
+				return VT.PushCopyOfRetrievalFilter(&this, Producer);
+			}
+			public HRESULT PushRetrievalFilter(Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter) mut
+			{
+				return VT.PushRetrievalFilter(&this, Producer, pFilter);
+			}
+			public void PopRetrievalFilter(Guid Producer) mut
+			{
+				VT.PopRetrievalFilter(&this, Producer);
+			}
+			public uint32 GetRetrievalFilterStackSize(Guid Producer) mut
+			{
+				return VT.GetRetrievalFilterStackSize(&this, Producer);
+			}
+			public HRESULT AddMessage(Guid Producer, DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category, DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity, int32 ID, PSTR pDescription) mut
+			{
+				return VT.AddMessage(&this, Producer, Category, Severity, ID, pDescription);
+			}
+			public HRESULT AddApplicationMessage(DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity, PSTR pDescription) mut
+			{
+				return VT.AddApplicationMessage(&this, Severity, pDescription);
+			}
+			public HRESULT SetBreakOnCategory(Guid Producer, DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category, BOOL bEnable) mut
+			{
+				return VT.SetBreakOnCategory(&this, Producer, Category, bEnable);
+			}
+			public HRESULT SetBreakOnSeverity(Guid Producer, DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity, BOOL bEnable) mut
+			{
+				return VT.SetBreakOnSeverity(&this, Producer, Severity, bEnable);
+			}
+			public HRESULT SetBreakOnID(Guid Producer, int32 ID, BOOL bEnable) mut
+			{
+				return VT.SetBreakOnID(&this, Producer, ID, bEnable);
+			}
+			public BOOL GetBreakOnCategory(Guid Producer, DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category) mut
+			{
+				return VT.GetBreakOnCategory(&this, Producer, Category);
+			}
+			public BOOL GetBreakOnSeverity(Guid Producer, DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity) mut
+			{
+				return VT.GetBreakOnSeverity(&this, Producer, Severity);
+			}
+			public BOOL GetBreakOnID(Guid Producer, int32 ID) mut
+			{
+				return VT.GetBreakOnID(&this, Producer, ID);
+			}
+			public void SetMuteDebugOutput(Guid Producer, BOOL bMute) mut
+			{
+				VT.SetMuteDebugOutput(&this, Producer, bMute);
+			}
+			public BOOL GetMuteDebugOutput(Guid Producer) mut
+			{
+				return VT.GetMuteDebugOutput(&this, Producer);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDXGIInfoQueue *self, Guid Producer, uint64 MessageCountLimit) SetMessageCountLimit;
-				public function void(IDXGIInfoQueue *self, Guid Producer) ClearStoredMessages;
-				public function HRESULT(IDXGIInfoQueue *self, Guid Producer, uint64 MessageIndex, DXGI_INFO_QUEUE_MESSAGE* pMessage, uint* pMessageByteLength) GetMessage;
-				public function uint64(IDXGIInfoQueue *self, Guid Producer) GetNumStoredMessagesAllowedByRetrievalFilters;
-				public function uint64(IDXGIInfoQueue *self, Guid Producer) GetNumStoredMessages;
-				public function uint64(IDXGIInfoQueue *self, Guid Producer) GetNumMessagesDiscardedByMessageCountLimit;
-				public function uint64(IDXGIInfoQueue *self, Guid Producer) GetMessageCountLimit;
-				public function uint64(IDXGIInfoQueue *self, Guid Producer) GetNumMessagesAllowedByStorageFilter;
-				public function uint64(IDXGIInfoQueue *self, Guid Producer) GetNumMessagesDeniedByStorageFilter;
-				public function HRESULT(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter) AddStorageFilterEntries;
-				public function HRESULT(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter, uint* pFilterByteLength) GetStorageFilter;
-				public function void(IDXGIInfoQueue *self, Guid Producer) ClearStorageFilter;
-				public function HRESULT(IDXGIInfoQueue *self, Guid Producer) PushEmptyStorageFilter;
-				public function HRESULT(IDXGIInfoQueue *self, Guid Producer) PushDenyAllStorageFilter;
-				public function HRESULT(IDXGIInfoQueue *self, Guid Producer) PushCopyOfStorageFilter;
-				public function HRESULT(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter) PushStorageFilter;
-				public function void(IDXGIInfoQueue *self, Guid Producer) PopStorageFilter;
-				public function uint32(IDXGIInfoQueue *self, Guid Producer) GetStorageFilterStackSize;
-				public function HRESULT(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter) AddRetrievalFilterEntries;
-				public function HRESULT(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter, uint* pFilterByteLength) GetRetrievalFilter;
-				public function void(IDXGIInfoQueue *self, Guid Producer) ClearRetrievalFilter;
-				public function HRESULT(IDXGIInfoQueue *self, Guid Producer) PushEmptyRetrievalFilter;
-				public function HRESULT(IDXGIInfoQueue *self, Guid Producer) PushDenyAllRetrievalFilter;
-				public function HRESULT(IDXGIInfoQueue *self, Guid Producer) PushCopyOfRetrievalFilter;
-				public function HRESULT(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter) PushRetrievalFilter;
-				public function void(IDXGIInfoQueue *self, Guid Producer) PopRetrievalFilter;
-				public function uint32(IDXGIInfoQueue *self, Guid Producer) GetRetrievalFilterStackSize;
-				public function HRESULT(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category, DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity, int32 ID, PSTR pDescription) AddMessage;
-				public function HRESULT(IDXGIInfoQueue *self, DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity, PSTR pDescription) AddApplicationMessage;
-				public function HRESULT(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category, BOOL bEnable) SetBreakOnCategory;
-				public function HRESULT(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity, BOOL bEnable) SetBreakOnSeverity;
-				public function HRESULT(IDXGIInfoQueue *self, Guid Producer, int32 ID, BOOL bEnable) SetBreakOnID;
-				public function BOOL(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category) GetBreakOnCategory;
-				public function BOOL(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity) GetBreakOnSeverity;
-				public function BOOL(IDXGIInfoQueue *self, Guid Producer, int32 ID) GetBreakOnID;
-				public function void(IDXGIInfoQueue *self, Guid Producer, BOOL bMute) SetMuteDebugOutput;
-				public function BOOL(IDXGIInfoQueue *self, Guid Producer) GetMuteDebugOutput;
+				public new function HRESULT(IDXGIInfoQueue *self, Guid Producer, uint64 MessageCountLimit) SetMessageCountLimit;
+				public new function void(IDXGIInfoQueue *self, Guid Producer) ClearStoredMessages;
+				public new function HRESULT(IDXGIInfoQueue *self, Guid Producer, uint64 MessageIndex, DXGI_INFO_QUEUE_MESSAGE* pMessage, uint* pMessageByteLength) GetMessage;
+				public new function uint64(IDXGIInfoQueue *self, Guid Producer) GetNumStoredMessagesAllowedByRetrievalFilters;
+				public new function uint64(IDXGIInfoQueue *self, Guid Producer) GetNumStoredMessages;
+				public new function uint64(IDXGIInfoQueue *self, Guid Producer) GetNumMessagesDiscardedByMessageCountLimit;
+				public new function uint64(IDXGIInfoQueue *self, Guid Producer) GetMessageCountLimit;
+				public new function uint64(IDXGIInfoQueue *self, Guid Producer) GetNumMessagesAllowedByStorageFilter;
+				public new function uint64(IDXGIInfoQueue *self, Guid Producer) GetNumMessagesDeniedByStorageFilter;
+				public new function HRESULT(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter) AddStorageFilterEntries;
+				public new function HRESULT(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter, uint* pFilterByteLength) GetStorageFilter;
+				public new function void(IDXGIInfoQueue *self, Guid Producer) ClearStorageFilter;
+				public new function HRESULT(IDXGIInfoQueue *self, Guid Producer) PushEmptyStorageFilter;
+				public new function HRESULT(IDXGIInfoQueue *self, Guid Producer) PushDenyAllStorageFilter;
+				public new function HRESULT(IDXGIInfoQueue *self, Guid Producer) PushCopyOfStorageFilter;
+				public new function HRESULT(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter) PushStorageFilter;
+				public new function void(IDXGIInfoQueue *self, Guid Producer) PopStorageFilter;
+				public new function uint32(IDXGIInfoQueue *self, Guid Producer) GetStorageFilterStackSize;
+				public new function HRESULT(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter) AddRetrievalFilterEntries;
+				public new function HRESULT(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter, uint* pFilterByteLength) GetRetrievalFilter;
+				public new function void(IDXGIInfoQueue *self, Guid Producer) ClearRetrievalFilter;
+				public new function HRESULT(IDXGIInfoQueue *self, Guid Producer) PushEmptyRetrievalFilter;
+				public new function HRESULT(IDXGIInfoQueue *self, Guid Producer) PushDenyAllRetrievalFilter;
+				public new function HRESULT(IDXGIInfoQueue *self, Guid Producer) PushCopyOfRetrievalFilter;
+				public new function HRESULT(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter) PushRetrievalFilter;
+				public new function void(IDXGIInfoQueue *self, Guid Producer) PopRetrievalFilter;
+				public new function uint32(IDXGIInfoQueue *self, Guid Producer) GetRetrievalFilterStackSize;
+				public new function HRESULT(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category, DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity, int32 ID, PSTR pDescription) AddMessage;
+				public new function HRESULT(IDXGIInfoQueue *self, DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity, PSTR pDescription) AddApplicationMessage;
+				public new function HRESULT(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category, BOOL bEnable) SetBreakOnCategory;
+				public new function HRESULT(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity, BOOL bEnable) SetBreakOnSeverity;
+				public new function HRESULT(IDXGIInfoQueue *self, Guid Producer, int32 ID, BOOL bEnable) SetBreakOnID;
+				public new function BOOL(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category) GetBreakOnCategory;
+				public new function BOOL(IDXGIInfoQueue *self, Guid Producer, DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity) GetBreakOnSeverity;
+				public new function BOOL(IDXGIInfoQueue *self, Guid Producer, int32 ID) GetBreakOnID;
+				public new function void(IDXGIInfoQueue *self, Guid Producer, BOOL bMute) SetMuteDebugOutput;
+				public new function BOOL(IDXGIInfoQueue *self, Guid Producer) GetMuteDebugOutput;
 			}
 		}
 		[CRepr]
@@ -1606,11 +2390,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x119e7452, 0xde9e, 0x40fe, 0x88, 0x06, 0x88, 0xf9, 0x0c, 0x12, 0xb4, 0x41);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ReportLiveObjects(Guid apiid, DXGI_DEBUG_RLO_FLAGS flags) mut
+			{
+				return VT.ReportLiveObjects(&this, apiid, flags);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDXGIDebug *self, Guid apiid, DXGI_DEBUG_RLO_FLAGS flags) ReportLiveObjects;
+				public new function HRESULT(IDXGIDebug *self, Guid apiid, DXGI_DEBUG_RLO_FLAGS flags) ReportLiveObjects;
 			}
 		}
 		[CRepr]
@@ -1618,13 +2407,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc5a05f0c, 0x16f2, 0x4adf, 0x9f, 0x4d, 0xa8, 0xc4, 0xd5, 0x8a, 0xc5, 0x50);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void EnableLeakTrackingForThread() mut
+			{
+				VT.EnableLeakTrackingForThread(&this);
+			}
+			public void DisableLeakTrackingForThread() mut
+			{
+				VT.DisableLeakTrackingForThread(&this);
+			}
+			public BOOL IsLeakTrackingEnabledForThread() mut
+			{
+				return VT.IsLeakTrackingEnabledForThread(&this);
+			}
 			[CRepr]
 			public struct VTable : IDXGIDebug.VTable
 			{
-				public function void(IDXGIDebug1 *self) EnableLeakTrackingForThread;
-				public function void(IDXGIDebug1 *self) DisableLeakTrackingForThread;
-				public function BOOL(IDXGIDebug1 *self) IsLeakTrackingEnabledForThread;
+				public new function void(IDXGIDebug1 *self) EnableLeakTrackingForThread;
+				public new function void(IDXGIDebug1 *self) DisableLeakTrackingForThread;
+				public new function BOOL(IDXGIDebug1 *self) IsLeakTrackingEnabledForThread;
 			}
 		}
 		[CRepr]
@@ -1632,12 +2434,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9f251514, 0x9d4d, 0x4902, 0x9d, 0x60, 0x18, 0x98, 0x8a, 0xb7, 0xd4, 0xb5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void BeginCapture() mut
+			{
+				VT.BeginCapture(&this);
+			}
+			public void EndCapture() mut
+			{
+				VT.EndCapture(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function void(IDXGraphicsAnalysis *self) BeginCapture;
-				public function void(IDXGraphicsAnalysis *self) EndCapture;
+				public new function void(IDXGraphicsAnalysis *self) BeginCapture;
+				public new function void(IDXGraphicsAnalysis *self) EndCapture;
 			}
 		}
 		

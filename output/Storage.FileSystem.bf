@@ -3550,25 +3550,86 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7988b574, 0xec89, 0x11cf, 0x9c, 0x00, 0x00, 0xaa, 0x00, 0xa1, 0x4f, 0x56);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetID(uint32* pulID) mut
+			{
+				return VT.GetID(&this, pulID);
+			}
+			public HRESULT GetName(PWSTR pszAccountContainer, uint32 cchAccountContainer, PWSTR pszLogonName, uint32 cchLogonName, PWSTR pszDisplayName, uint32 cchDisplayName) mut
+			{
+				return VT.GetName(&this, pszAccountContainer, cchAccountContainer, pszLogonName, cchLogonName, pszDisplayName, cchDisplayName);
+			}
+			public HRESULT GetSidLength(uint32* pdwLength) mut
+			{
+				return VT.GetSidLength(&this, pdwLength);
+			}
+			public HRESULT GetSid(uint8* pbSidBuffer, uint32 cbSidBuffer) mut
+			{
+				return VT.GetSid(&this, pbSidBuffer, cbSidBuffer);
+			}
+			public HRESULT GetQuotaThreshold(int64* pllThreshold) mut
+			{
+				return VT.GetQuotaThreshold(&this, pllThreshold);
+			}
+			public HRESULT GetQuotaThresholdText(PWSTR pszText, uint32 cchText) mut
+			{
+				return VT.GetQuotaThresholdText(&this, pszText, cchText);
+			}
+			public HRESULT GetQuotaLimit(int64* pllLimit) mut
+			{
+				return VT.GetQuotaLimit(&this, pllLimit);
+			}
+			public HRESULT GetQuotaLimitText(PWSTR pszText, uint32 cchText) mut
+			{
+				return VT.GetQuotaLimitText(&this, pszText, cchText);
+			}
+			public HRESULT GetQuotaUsed(int64* pllUsed) mut
+			{
+				return VT.GetQuotaUsed(&this, pllUsed);
+			}
+			public HRESULT GetQuotaUsedText(PWSTR pszText, uint32 cchText) mut
+			{
+				return VT.GetQuotaUsedText(&this, pszText, cchText);
+			}
+			public HRESULT GetQuotaInformation(void* pbQuotaInfo, uint32 cbQuotaInfo) mut
+			{
+				return VT.GetQuotaInformation(&this, pbQuotaInfo, cbQuotaInfo);
+			}
+			public HRESULT SetQuotaThreshold(int64 llThreshold, BOOL fWriteThrough) mut
+			{
+				return VT.SetQuotaThreshold(&this, llThreshold, fWriteThrough);
+			}
+			public HRESULT SetQuotaLimit(int64 llLimit, BOOL fWriteThrough) mut
+			{
+				return VT.SetQuotaLimit(&this, llLimit, fWriteThrough);
+			}
+			public HRESULT Invalidate() mut
+			{
+				return VT.Invalidate(&this);
+			}
+			public HRESULT GetAccountStatus(uint32* pdwStatus) mut
+			{
+				return VT.GetAccountStatus(&this, pdwStatus);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDiskQuotaUser *self, uint32* pulID) GetID;
-				public function HRESULT(IDiskQuotaUser *self, PWSTR pszAccountContainer, uint32 cchAccountContainer, PWSTR pszLogonName, uint32 cchLogonName, PWSTR pszDisplayName, uint32 cchDisplayName) GetName;
-				public function HRESULT(IDiskQuotaUser *self, uint32* pdwLength) GetSidLength;
-				public function HRESULT(IDiskQuotaUser *self, uint8* pbSidBuffer, uint32 cbSidBuffer) GetSid;
-				public function HRESULT(IDiskQuotaUser *self, int64* pllThreshold) GetQuotaThreshold;
-				public function HRESULT(IDiskQuotaUser *self, PWSTR pszText, uint32 cchText) GetQuotaThresholdText;
-				public function HRESULT(IDiskQuotaUser *self, int64* pllLimit) GetQuotaLimit;
-				public function HRESULT(IDiskQuotaUser *self, PWSTR pszText, uint32 cchText) GetQuotaLimitText;
-				public function HRESULT(IDiskQuotaUser *self, int64* pllUsed) GetQuotaUsed;
-				public function HRESULT(IDiskQuotaUser *self, PWSTR pszText, uint32 cchText) GetQuotaUsedText;
-				public function HRESULT(IDiskQuotaUser *self, void* pbQuotaInfo, uint32 cbQuotaInfo) GetQuotaInformation;
-				public function HRESULT(IDiskQuotaUser *self, int64 llThreshold, BOOL fWriteThrough) SetQuotaThreshold;
-				public function HRESULT(IDiskQuotaUser *self, int64 llLimit, BOOL fWriteThrough) SetQuotaLimit;
-				public function HRESULT(IDiskQuotaUser *self) Invalidate;
-				public function HRESULT(IDiskQuotaUser *self, uint32* pdwStatus) GetAccountStatus;
+				public new function HRESULT(IDiskQuotaUser *self, uint32* pulID) GetID;
+				public new function HRESULT(IDiskQuotaUser *self, PWSTR pszAccountContainer, uint32 cchAccountContainer, PWSTR pszLogonName, uint32 cchLogonName, PWSTR pszDisplayName, uint32 cchDisplayName) GetName;
+				public new function HRESULT(IDiskQuotaUser *self, uint32* pdwLength) GetSidLength;
+				public new function HRESULT(IDiskQuotaUser *self, uint8* pbSidBuffer, uint32 cbSidBuffer) GetSid;
+				public new function HRESULT(IDiskQuotaUser *self, int64* pllThreshold) GetQuotaThreshold;
+				public new function HRESULT(IDiskQuotaUser *self, PWSTR pszText, uint32 cchText) GetQuotaThresholdText;
+				public new function HRESULT(IDiskQuotaUser *self, int64* pllLimit) GetQuotaLimit;
+				public new function HRESULT(IDiskQuotaUser *self, PWSTR pszText, uint32 cchText) GetQuotaLimitText;
+				public new function HRESULT(IDiskQuotaUser *self, int64* pllUsed) GetQuotaUsed;
+				public new function HRESULT(IDiskQuotaUser *self, PWSTR pszText, uint32 cchText) GetQuotaUsedText;
+				public new function HRESULT(IDiskQuotaUser *self, void* pbQuotaInfo, uint32 cbQuotaInfo) GetQuotaInformation;
+				public new function HRESULT(IDiskQuotaUser *self, int64 llThreshold, BOOL fWriteThrough) SetQuotaThreshold;
+				public new function HRESULT(IDiskQuotaUser *self, int64 llLimit, BOOL fWriteThrough) SetQuotaLimit;
+				public new function HRESULT(IDiskQuotaUser *self) Invalidate;
+				public new function HRESULT(IDiskQuotaUser *self, uint32* pdwStatus) GetAccountStatus;
 			}
 		}
 		[CRepr]
@@ -3576,14 +3637,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7988b577, 0xec89, 0x11cf, 0x9c, 0x00, 0x00, 0xaa, 0x00, 0xa1, 0x4f, 0x56);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 cUsers, IDiskQuotaUser** rgUsers, uint32* pcUsersFetched) mut
+			{
+				return VT.Next(&this, cUsers, rgUsers, pcUsersFetched);
+			}
+			public HRESULT Skip(uint32 cUsers) mut
+			{
+				return VT.Skip(&this, cUsers);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumDiskQuotaUsers** ppEnum) mut
+			{
+				return VT.Clone(&this, ppEnum);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumDiskQuotaUsers *self, uint32 cUsers, IDiskQuotaUser** rgUsers, uint32* pcUsersFetched) Next;
-				public function HRESULT(IEnumDiskQuotaUsers *self, uint32 cUsers) Skip;
-				public function HRESULT(IEnumDiskQuotaUsers *self) Reset;
-				public function HRESULT(IEnumDiskQuotaUsers *self, IEnumDiskQuotaUsers** ppEnum) Clone;
+				public new function HRESULT(IEnumDiskQuotaUsers *self, uint32 cUsers, IDiskQuotaUser** rgUsers, uint32* pcUsersFetched) Next;
+				public new function HRESULT(IEnumDiskQuotaUsers *self, uint32 cUsers) Skip;
+				public new function HRESULT(IEnumDiskQuotaUsers *self) Reset;
+				public new function HRESULT(IEnumDiskQuotaUsers *self, IEnumDiskQuotaUsers** ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -3591,14 +3669,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7988b576, 0xec89, 0x11cf, 0x9c, 0x00, 0x00, 0xaa, 0x00, 0xa1, 0x4f, 0x56);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Add(IDiskQuotaUser* pUser) mut
+			{
+				return VT.Add(&this, pUser);
+			}
+			public HRESULT Remove(IDiskQuotaUser* pUser) mut
+			{
+				return VT.Remove(&this, pUser);
+			}
+			public HRESULT RemoveAll() mut
+			{
+				return VT.RemoveAll(&this);
+			}
+			public HRESULT FlushToDisk() mut
+			{
+				return VT.FlushToDisk(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDiskQuotaUserBatch *self, IDiskQuotaUser* pUser) Add;
-				public function HRESULT(IDiskQuotaUserBatch *self, IDiskQuotaUser* pUser) Remove;
-				public function HRESULT(IDiskQuotaUserBatch *self) RemoveAll;
-				public function HRESULT(IDiskQuotaUserBatch *self) FlushToDisk;
+				public new function HRESULT(IDiskQuotaUserBatch *self, IDiskQuotaUser* pUser) Add;
+				public new function HRESULT(IDiskQuotaUserBatch *self, IDiskQuotaUser* pUser) Remove;
+				public new function HRESULT(IDiskQuotaUserBatch *self) RemoveAll;
+				public new function HRESULT(IDiskQuotaUserBatch *self) FlushToDisk;
 			}
 		}
 		[CRepr]
@@ -3606,31 +3701,116 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7988b572, 0xec89, 0x11cf, 0x9c, 0x00, 0x00, 0xaa, 0x00, 0xa1, 0x4f, 0x56);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(PWSTR pszPath, BOOL bReadWrite) mut
+			{
+				return VT.Initialize(&this, pszPath, bReadWrite);
+			}
+			public HRESULT SetQuotaState(uint32 dwState) mut
+			{
+				return VT.SetQuotaState(&this, dwState);
+			}
+			public HRESULT GetQuotaState(uint32* pdwState) mut
+			{
+				return VT.GetQuotaState(&this, pdwState);
+			}
+			public HRESULT SetQuotaLogFlags(uint32 dwFlags) mut
+			{
+				return VT.SetQuotaLogFlags(&this, dwFlags);
+			}
+			public HRESULT GetQuotaLogFlags(uint32* pdwFlags) mut
+			{
+				return VT.GetQuotaLogFlags(&this, pdwFlags);
+			}
+			public HRESULT SetDefaultQuotaThreshold(int64 llThreshold) mut
+			{
+				return VT.SetDefaultQuotaThreshold(&this, llThreshold);
+			}
+			public HRESULT GetDefaultQuotaThreshold(int64* pllThreshold) mut
+			{
+				return VT.GetDefaultQuotaThreshold(&this, pllThreshold);
+			}
+			public HRESULT GetDefaultQuotaThresholdText(PWSTR pszText, uint32 cchText) mut
+			{
+				return VT.GetDefaultQuotaThresholdText(&this, pszText, cchText);
+			}
+			public HRESULT SetDefaultQuotaLimit(int64 llLimit) mut
+			{
+				return VT.SetDefaultQuotaLimit(&this, llLimit);
+			}
+			public HRESULT GetDefaultQuotaLimit(int64* pllLimit) mut
+			{
+				return VT.GetDefaultQuotaLimit(&this, pllLimit);
+			}
+			public HRESULT GetDefaultQuotaLimitText(PWSTR pszText, uint32 cchText) mut
+			{
+				return VT.GetDefaultQuotaLimitText(&this, pszText, cchText);
+			}
+			public HRESULT AddUserSid(PSID pUserSid, DISKQUOTA_USERNAME_RESOLVE fNameResolution, IDiskQuotaUser** ppUser) mut
+			{
+				return VT.AddUserSid(&this, pUserSid, fNameResolution, ppUser);
+			}
+			public HRESULT AddUserName(PWSTR pszLogonName, DISKQUOTA_USERNAME_RESOLVE fNameResolution, IDiskQuotaUser** ppUser) mut
+			{
+				return VT.AddUserName(&this, pszLogonName, fNameResolution, ppUser);
+			}
+			public HRESULT DeleteUser(IDiskQuotaUser* pUser) mut
+			{
+				return VT.DeleteUser(&this, pUser);
+			}
+			public HRESULT FindUserSid(PSID pUserSid, DISKQUOTA_USERNAME_RESOLVE fNameResolution, IDiskQuotaUser** ppUser) mut
+			{
+				return VT.FindUserSid(&this, pUserSid, fNameResolution, ppUser);
+			}
+			public HRESULT FindUserName(PWSTR pszLogonName, IDiskQuotaUser** ppUser) mut
+			{
+				return VT.FindUserName(&this, pszLogonName, ppUser);
+			}
+			public HRESULT CreateEnumUsers(PSID* rgpUserSids, uint32 cpSids, DISKQUOTA_USERNAME_RESOLVE fNameResolution, IEnumDiskQuotaUsers** ppEnum) mut
+			{
+				return VT.CreateEnumUsers(&this, rgpUserSids, cpSids, fNameResolution, ppEnum);
+			}
+			public HRESULT CreateUserBatch(IDiskQuotaUserBatch** ppBatch) mut
+			{
+				return VT.CreateUserBatch(&this, ppBatch);
+			}
+			public HRESULT InvalidateSidNameCache() mut
+			{
+				return VT.InvalidateSidNameCache(&this);
+			}
+			public HRESULT GiveUserNameResolutionPriority(IDiskQuotaUser* pUser) mut
+			{
+				return VT.GiveUserNameResolutionPriority(&this, pUser);
+			}
+			public HRESULT ShutdownNameResolution() mut
+			{
+				return VT.ShutdownNameResolution(&this);
+			}
 			[CRepr]
 			public struct VTable : IConnectionPointContainer.VTable
 			{
-				public function HRESULT(IDiskQuotaControl *self, PWSTR pszPath, BOOL bReadWrite) Initialize;
-				public function HRESULT(IDiskQuotaControl *self, uint32 dwState) SetQuotaState;
-				public function HRESULT(IDiskQuotaControl *self, uint32* pdwState) GetQuotaState;
-				public function HRESULT(IDiskQuotaControl *self, uint32 dwFlags) SetQuotaLogFlags;
-				public function HRESULT(IDiskQuotaControl *self, uint32* pdwFlags) GetQuotaLogFlags;
-				public function HRESULT(IDiskQuotaControl *self, int64 llThreshold) SetDefaultQuotaThreshold;
-				public function HRESULT(IDiskQuotaControl *self, int64* pllThreshold) GetDefaultQuotaThreshold;
-				public function HRESULT(IDiskQuotaControl *self, PWSTR pszText, uint32 cchText) GetDefaultQuotaThresholdText;
-				public function HRESULT(IDiskQuotaControl *self, int64 llLimit) SetDefaultQuotaLimit;
-				public function HRESULT(IDiskQuotaControl *self, int64* pllLimit) GetDefaultQuotaLimit;
-				public function HRESULT(IDiskQuotaControl *self, PWSTR pszText, uint32 cchText) GetDefaultQuotaLimitText;
-				public function HRESULT(IDiskQuotaControl *self, PSID pUserSid, DISKQUOTA_USERNAME_RESOLVE fNameResolution, IDiskQuotaUser** ppUser) AddUserSid;
-				public function HRESULT(IDiskQuotaControl *self, PWSTR pszLogonName, DISKQUOTA_USERNAME_RESOLVE fNameResolution, IDiskQuotaUser** ppUser) AddUserName;
-				public function HRESULT(IDiskQuotaControl *self, IDiskQuotaUser* pUser) DeleteUser;
-				public function HRESULT(IDiskQuotaControl *self, PSID pUserSid, DISKQUOTA_USERNAME_RESOLVE fNameResolution, IDiskQuotaUser** ppUser) FindUserSid;
-				public function HRESULT(IDiskQuotaControl *self, PWSTR pszLogonName, IDiskQuotaUser** ppUser) FindUserName;
-				public function HRESULT(IDiskQuotaControl *self, PSID* rgpUserSids, uint32 cpSids, DISKQUOTA_USERNAME_RESOLVE fNameResolution, IEnumDiskQuotaUsers** ppEnum) CreateEnumUsers;
-				public function HRESULT(IDiskQuotaControl *self, IDiskQuotaUserBatch** ppBatch) CreateUserBatch;
-				public function HRESULT(IDiskQuotaControl *self) InvalidateSidNameCache;
-				public function HRESULT(IDiskQuotaControl *self, IDiskQuotaUser* pUser) GiveUserNameResolutionPriority;
-				public function HRESULT(IDiskQuotaControl *self) ShutdownNameResolution;
+				public new function HRESULT(IDiskQuotaControl *self, PWSTR pszPath, BOOL bReadWrite) Initialize;
+				public new function HRESULT(IDiskQuotaControl *self, uint32 dwState) SetQuotaState;
+				public new function HRESULT(IDiskQuotaControl *self, uint32* pdwState) GetQuotaState;
+				public new function HRESULT(IDiskQuotaControl *self, uint32 dwFlags) SetQuotaLogFlags;
+				public new function HRESULT(IDiskQuotaControl *self, uint32* pdwFlags) GetQuotaLogFlags;
+				public new function HRESULT(IDiskQuotaControl *self, int64 llThreshold) SetDefaultQuotaThreshold;
+				public new function HRESULT(IDiskQuotaControl *self, int64* pllThreshold) GetDefaultQuotaThreshold;
+				public new function HRESULT(IDiskQuotaControl *self, PWSTR pszText, uint32 cchText) GetDefaultQuotaThresholdText;
+				public new function HRESULT(IDiskQuotaControl *self, int64 llLimit) SetDefaultQuotaLimit;
+				public new function HRESULT(IDiskQuotaControl *self, int64* pllLimit) GetDefaultQuotaLimit;
+				public new function HRESULT(IDiskQuotaControl *self, PWSTR pszText, uint32 cchText) GetDefaultQuotaLimitText;
+				public new function HRESULT(IDiskQuotaControl *self, PSID pUserSid, DISKQUOTA_USERNAME_RESOLVE fNameResolution, IDiskQuotaUser** ppUser) AddUserSid;
+				public new function HRESULT(IDiskQuotaControl *self, PWSTR pszLogonName, DISKQUOTA_USERNAME_RESOLVE fNameResolution, IDiskQuotaUser** ppUser) AddUserName;
+				public new function HRESULT(IDiskQuotaControl *self, IDiskQuotaUser* pUser) DeleteUser;
+				public new function HRESULT(IDiskQuotaControl *self, PSID pUserSid, DISKQUOTA_USERNAME_RESOLVE fNameResolution, IDiskQuotaUser** ppUser) FindUserSid;
+				public new function HRESULT(IDiskQuotaControl *self, PWSTR pszLogonName, IDiskQuotaUser** ppUser) FindUserName;
+				public new function HRESULT(IDiskQuotaControl *self, PSID* rgpUserSids, uint32 cpSids, DISKQUOTA_USERNAME_RESOLVE fNameResolution, IEnumDiskQuotaUsers** ppEnum) CreateEnumUsers;
+				public new function HRESULT(IDiskQuotaControl *self, IDiskQuotaUserBatch** ppBatch) CreateUserBatch;
+				public new function HRESULT(IDiskQuotaControl *self) InvalidateSidNameCache;
+				public new function HRESULT(IDiskQuotaControl *self, IDiskQuotaUser* pUser) GiveUserNameResolutionPriority;
+				public new function HRESULT(IDiskQuotaControl *self) ShutdownNameResolution;
 			}
 		}
 		[CRepr]
@@ -3638,11 +3818,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7988b579, 0xec89, 0x11cf, 0x9c, 0x00, 0x00, 0xaa, 0x00, 0xa1, 0x4f, 0x56);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnUserNameChanged(IDiskQuotaUser* pUser) mut
+			{
+				return VT.OnUserNameChanged(&this, pUser);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDiskQuotaEvents *self, IDiskQuotaUser* pUser) OnUserNameChanged;
+				public new function HRESULT(IDiskQuotaEvents *self, IDiskQuotaUser* pUser) OnUserNameChanged;
 			}
 		}
 		

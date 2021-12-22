@@ -1036,70 +1036,311 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x03837520, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_DataCollectors(IDataCollectorCollection** collectors) mut
+			{
+				return VT.get_DataCollectors(&this, collectors);
+			}
+			public HRESULT get_Duration(uint32* seconds) mut
+			{
+				return VT.get_Duration(&this, seconds);
+			}
+			public HRESULT put_Duration(uint32 seconds) mut
+			{
+				return VT.put_Duration(&this, seconds);
+			}
+			public HRESULT get_Description(BSTR* description) mut
+			{
+				return VT.get_Description(&this, description);
+			}
+			public HRESULT put_Description(BSTR description) mut
+			{
+				return VT.put_Description(&this, description);
+			}
+			public HRESULT get_DescriptionUnresolved(BSTR* Descr) mut
+			{
+				return VT.get_DescriptionUnresolved(&this, Descr);
+			}
+			public HRESULT get_DisplayName(BSTR* DisplayName) mut
+			{
+				return VT.get_DisplayName(&this, DisplayName);
+			}
+			public HRESULT put_DisplayName(BSTR DisplayName) mut
+			{
+				return VT.put_DisplayName(&this, DisplayName);
+			}
+			public HRESULT get_DisplayNameUnresolved(BSTR* name) mut
+			{
+				return VT.get_DisplayNameUnresolved(&this, name);
+			}
+			public HRESULT get_Keywords(SAFEARRAY** keywords) mut
+			{
+				return VT.get_Keywords(&this, keywords);
+			}
+			public HRESULT put_Keywords(SAFEARRAY* keywords) mut
+			{
+				return VT.put_Keywords(&this, keywords);
+			}
+			public HRESULT get_LatestOutputLocation(BSTR* path) mut
+			{
+				return VT.get_LatestOutputLocation(&this, path);
+			}
+			public HRESULT put_LatestOutputLocation(BSTR path) mut
+			{
+				return VT.put_LatestOutputLocation(&this, path);
+			}
+			public HRESULT get_Name(BSTR* name) mut
+			{
+				return VT.get_Name(&this, name);
+			}
+			public HRESULT get_OutputLocation(BSTR* path) mut
+			{
+				return VT.get_OutputLocation(&this, path);
+			}
+			public HRESULT get_RootPath(BSTR* folder) mut
+			{
+				return VT.get_RootPath(&this, folder);
+			}
+			public HRESULT put_RootPath(BSTR folder) mut
+			{
+				return VT.put_RootPath(&this, folder);
+			}
+			public HRESULT get_Segment(int16* segment) mut
+			{
+				return VT.get_Segment(&this, segment);
+			}
+			public HRESULT put_Segment(int16 segment) mut
+			{
+				return VT.put_Segment(&this, segment);
+			}
+			public HRESULT get_SegmentMaxDuration(uint32* seconds) mut
+			{
+				return VT.get_SegmentMaxDuration(&this, seconds);
+			}
+			public HRESULT put_SegmentMaxDuration(uint32 seconds) mut
+			{
+				return VT.put_SegmentMaxDuration(&this, seconds);
+			}
+			public HRESULT get_SegmentMaxSize(uint32* size) mut
+			{
+				return VT.get_SegmentMaxSize(&this, size);
+			}
+			public HRESULT put_SegmentMaxSize(uint32 size) mut
+			{
+				return VT.put_SegmentMaxSize(&this, size);
+			}
+			public HRESULT get_SerialNumber(uint32* index) mut
+			{
+				return VT.get_SerialNumber(&this, index);
+			}
+			public HRESULT put_SerialNumber(uint32 index) mut
+			{
+				return VT.put_SerialNumber(&this, index);
+			}
+			public HRESULT get_Server(BSTR* server) mut
+			{
+				return VT.get_Server(&this, server);
+			}
+			public HRESULT get_Status(DataCollectorSetStatus* status) mut
+			{
+				return VT.get_Status(&this, status);
+			}
+			public HRESULT get_Subdirectory(BSTR* folder) mut
+			{
+				return VT.get_Subdirectory(&this, folder);
+			}
+			public HRESULT put_Subdirectory(BSTR folder) mut
+			{
+				return VT.put_Subdirectory(&this, folder);
+			}
+			public HRESULT get_SubdirectoryFormat(AutoPathFormat* format) mut
+			{
+				return VT.get_SubdirectoryFormat(&this, format);
+			}
+			public HRESULT put_SubdirectoryFormat(AutoPathFormat format) mut
+			{
+				return VT.put_SubdirectoryFormat(&this, format);
+			}
+			public HRESULT get_SubdirectoryFormatPattern(BSTR* pattern) mut
+			{
+				return VT.get_SubdirectoryFormatPattern(&this, pattern);
+			}
+			public HRESULT put_SubdirectoryFormatPattern(BSTR pattern) mut
+			{
+				return VT.put_SubdirectoryFormatPattern(&this, pattern);
+			}
+			public HRESULT get_Task(BSTR* task) mut
+			{
+				return VT.get_Task(&this, task);
+			}
+			public HRESULT put_Task(BSTR task) mut
+			{
+				return VT.put_Task(&this, task);
+			}
+			public HRESULT get_TaskRunAsSelf(int16* RunAsSelf) mut
+			{
+				return VT.get_TaskRunAsSelf(&this, RunAsSelf);
+			}
+			public HRESULT put_TaskRunAsSelf(int16 RunAsSelf) mut
+			{
+				return VT.put_TaskRunAsSelf(&this, RunAsSelf);
+			}
+			public HRESULT get_TaskArguments(BSTR* task) mut
+			{
+				return VT.get_TaskArguments(&this, task);
+			}
+			public HRESULT put_TaskArguments(BSTR task) mut
+			{
+				return VT.put_TaskArguments(&this, task);
+			}
+			public HRESULT get_TaskUserTextArguments(BSTR* UserText) mut
+			{
+				return VT.get_TaskUserTextArguments(&this, UserText);
+			}
+			public HRESULT put_TaskUserTextArguments(BSTR UserText) mut
+			{
+				return VT.put_TaskUserTextArguments(&this, UserText);
+			}
+			public HRESULT get_Schedules(IScheduleCollection** ppSchedules) mut
+			{
+				return VT.get_Schedules(&this, ppSchedules);
+			}
+			public HRESULT get_SchedulesEnabled(int16* enabled) mut
+			{
+				return VT.get_SchedulesEnabled(&this, enabled);
+			}
+			public HRESULT put_SchedulesEnabled(int16 enabled) mut
+			{
+				return VT.put_SchedulesEnabled(&this, enabled);
+			}
+			public HRESULT get_UserAccount(BSTR* user) mut
+			{
+				return VT.get_UserAccount(&this, user);
+			}
+			public HRESULT get_Xml(BSTR* xml) mut
+			{
+				return VT.get_Xml(&this, xml);
+			}
+			public HRESULT get_Security(BSTR* pbstrSecurity) mut
+			{
+				return VT.get_Security(&this, pbstrSecurity);
+			}
+			public HRESULT put_Security(BSTR bstrSecurity) mut
+			{
+				return VT.put_Security(&this, bstrSecurity);
+			}
+			public HRESULT get_StopOnCompletion(int16* Stop) mut
+			{
+				return VT.get_StopOnCompletion(&this, Stop);
+			}
+			public HRESULT put_StopOnCompletion(int16 Stop) mut
+			{
+				return VT.put_StopOnCompletion(&this, Stop);
+			}
+			public HRESULT get_DataManager(IDataManager** DataManager) mut
+			{
+				return VT.get_DataManager(&this, DataManager);
+			}
+			public HRESULT SetCredentials(BSTR user, BSTR password) mut
+			{
+				return VT.SetCredentials(&this, user, password);
+			}
+			public HRESULT Query(BSTR name, BSTR server) mut
+			{
+				return VT.Query(&this, name, server);
+			}
+			public HRESULT Commit(BSTR name, BSTR server, CommitMode mode, IValueMap** validation) mut
+			{
+				return VT.Commit(&this, name, server, mode, validation);
+			}
+			public HRESULT Delete() mut
+			{
+				return VT.Delete(&this);
+			}
+			public HRESULT Start(int16 Synchronous) mut
+			{
+				return VT.Start(&this, Synchronous);
+			}
+			public HRESULT Stop(int16 Synchronous) mut
+			{
+				return VT.Stop(&this, Synchronous);
+			}
+			public HRESULT SetXml(BSTR xml, IValueMap** validation) mut
+			{
+				return VT.SetXml(&this, xml, validation);
+			}
+			public HRESULT SetValue(BSTR key, BSTR value) mut
+			{
+				return VT.SetValue(&this, key, value);
+			}
+			public HRESULT GetValue(BSTR key, BSTR* value) mut
+			{
+				return VT.GetValue(&this, key, value);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IDataCollectorSet *self, IDataCollectorCollection** collectors) get_DataCollectors;
-				public function HRESULT(IDataCollectorSet *self, uint32* seconds) get_Duration;
-				public function HRESULT(IDataCollectorSet *self, uint32 seconds) put_Duration;
-				public function HRESULT(IDataCollectorSet *self, BSTR* description) get_Description;
-				public function HRESULT(IDataCollectorSet *self, BSTR description) put_Description;
-				public function HRESULT(IDataCollectorSet *self, BSTR* Descr) get_DescriptionUnresolved;
-				public function HRESULT(IDataCollectorSet *self, BSTR* DisplayName) get_DisplayName;
-				public function HRESULT(IDataCollectorSet *self, BSTR DisplayName) put_DisplayName;
-				public function HRESULT(IDataCollectorSet *self, BSTR* name) get_DisplayNameUnresolved;
-				public function HRESULT(IDataCollectorSet *self, SAFEARRAY** keywords) get_Keywords;
-				public function HRESULT(IDataCollectorSet *self, SAFEARRAY* keywords) put_Keywords;
-				public function HRESULT(IDataCollectorSet *self, BSTR* path) get_LatestOutputLocation;
-				public function HRESULT(IDataCollectorSet *self, BSTR path) put_LatestOutputLocation;
-				public function HRESULT(IDataCollectorSet *self, BSTR* name) get_Name;
-				public function HRESULT(IDataCollectorSet *self, BSTR* path) get_OutputLocation;
-				public function HRESULT(IDataCollectorSet *self, BSTR* folder) get_RootPath;
-				public function HRESULT(IDataCollectorSet *self, BSTR folder) put_RootPath;
-				public function HRESULT(IDataCollectorSet *self, int16* segment) get_Segment;
-				public function HRESULT(IDataCollectorSet *self, int16 segment) put_Segment;
-				public function HRESULT(IDataCollectorSet *self, uint32* seconds) get_SegmentMaxDuration;
-				public function HRESULT(IDataCollectorSet *self, uint32 seconds) put_SegmentMaxDuration;
-				public function HRESULT(IDataCollectorSet *self, uint32* size) get_SegmentMaxSize;
-				public function HRESULT(IDataCollectorSet *self, uint32 size) put_SegmentMaxSize;
-				public function HRESULT(IDataCollectorSet *self, uint32* index) get_SerialNumber;
-				public function HRESULT(IDataCollectorSet *self, uint32 index) put_SerialNumber;
-				public function HRESULT(IDataCollectorSet *self, BSTR* server) get_Server;
-				public function HRESULT(IDataCollectorSet *self, DataCollectorSetStatus* status) get_Status;
-				public function HRESULT(IDataCollectorSet *self, BSTR* folder) get_Subdirectory;
-				public function HRESULT(IDataCollectorSet *self, BSTR folder) put_Subdirectory;
-				public function HRESULT(IDataCollectorSet *self, AutoPathFormat* format) get_SubdirectoryFormat;
-				public function HRESULT(IDataCollectorSet *self, AutoPathFormat format) put_SubdirectoryFormat;
-				public function HRESULT(IDataCollectorSet *self, BSTR* pattern) get_SubdirectoryFormatPattern;
-				public function HRESULT(IDataCollectorSet *self, BSTR pattern) put_SubdirectoryFormatPattern;
-				public function HRESULT(IDataCollectorSet *self, BSTR* task) get_Task;
-				public function HRESULT(IDataCollectorSet *self, BSTR task) put_Task;
-				public function HRESULT(IDataCollectorSet *self, int16* RunAsSelf) get_TaskRunAsSelf;
-				public function HRESULT(IDataCollectorSet *self, int16 RunAsSelf) put_TaskRunAsSelf;
-				public function HRESULT(IDataCollectorSet *self, BSTR* task) get_TaskArguments;
-				public function HRESULT(IDataCollectorSet *self, BSTR task) put_TaskArguments;
-				public function HRESULT(IDataCollectorSet *self, BSTR* UserText) get_TaskUserTextArguments;
-				public function HRESULT(IDataCollectorSet *self, BSTR UserText) put_TaskUserTextArguments;
-				public function HRESULT(IDataCollectorSet *self, IScheduleCollection** ppSchedules) get_Schedules;
-				public function HRESULT(IDataCollectorSet *self, int16* enabled) get_SchedulesEnabled;
-				public function HRESULT(IDataCollectorSet *self, int16 enabled) put_SchedulesEnabled;
-				public function HRESULT(IDataCollectorSet *self, BSTR* user) get_UserAccount;
-				public function HRESULT(IDataCollectorSet *self, BSTR* xml) get_Xml;
-				public function HRESULT(IDataCollectorSet *self, BSTR* pbstrSecurity) get_Security;
-				public function HRESULT(IDataCollectorSet *self, BSTR bstrSecurity) put_Security;
-				public function HRESULT(IDataCollectorSet *self, int16* Stop) get_StopOnCompletion;
-				public function HRESULT(IDataCollectorSet *self, int16 Stop) put_StopOnCompletion;
-				public function HRESULT(IDataCollectorSet *self, IDataManager** DataManager) get_DataManager;
-				public function HRESULT(IDataCollectorSet *self, BSTR user, BSTR password) SetCredentials;
-				public function HRESULT(IDataCollectorSet *self, BSTR name, BSTR server) Query;
-				public function HRESULT(IDataCollectorSet *self, BSTR name, BSTR server, CommitMode mode, IValueMap** validation) Commit;
-				public function HRESULT(IDataCollectorSet *self) Delete;
-				public function HRESULT(IDataCollectorSet *self, int16 Synchronous) Start;
-				public function HRESULT(IDataCollectorSet *self, int16 Synchronous) Stop;
-				public function HRESULT(IDataCollectorSet *self, BSTR xml, IValueMap** validation) SetXml;
-				public function HRESULT(IDataCollectorSet *self, BSTR key, BSTR value) SetValue;
-				public function HRESULT(IDataCollectorSet *self, BSTR key, BSTR* value) GetValue;
+				public new function HRESULT(IDataCollectorSet *self, IDataCollectorCollection** collectors) get_DataCollectors;
+				public new function HRESULT(IDataCollectorSet *self, uint32* seconds) get_Duration;
+				public new function HRESULT(IDataCollectorSet *self, uint32 seconds) put_Duration;
+				public new function HRESULT(IDataCollectorSet *self, BSTR* description) get_Description;
+				public new function HRESULT(IDataCollectorSet *self, BSTR description) put_Description;
+				public new function HRESULT(IDataCollectorSet *self, BSTR* Descr) get_DescriptionUnresolved;
+				public new function HRESULT(IDataCollectorSet *self, BSTR* DisplayName) get_DisplayName;
+				public new function HRESULT(IDataCollectorSet *self, BSTR DisplayName) put_DisplayName;
+				public new function HRESULT(IDataCollectorSet *self, BSTR* name) get_DisplayNameUnresolved;
+				public new function HRESULT(IDataCollectorSet *self, SAFEARRAY** keywords) get_Keywords;
+				public new function HRESULT(IDataCollectorSet *self, SAFEARRAY* keywords) put_Keywords;
+				public new function HRESULT(IDataCollectorSet *self, BSTR* path) get_LatestOutputLocation;
+				public new function HRESULT(IDataCollectorSet *self, BSTR path) put_LatestOutputLocation;
+				public new function HRESULT(IDataCollectorSet *self, BSTR* name) get_Name;
+				public new function HRESULT(IDataCollectorSet *self, BSTR* path) get_OutputLocation;
+				public new function HRESULT(IDataCollectorSet *self, BSTR* folder) get_RootPath;
+				public new function HRESULT(IDataCollectorSet *self, BSTR folder) put_RootPath;
+				public new function HRESULT(IDataCollectorSet *self, int16* segment) get_Segment;
+				public new function HRESULT(IDataCollectorSet *self, int16 segment) put_Segment;
+				public new function HRESULT(IDataCollectorSet *self, uint32* seconds) get_SegmentMaxDuration;
+				public new function HRESULT(IDataCollectorSet *self, uint32 seconds) put_SegmentMaxDuration;
+				public new function HRESULT(IDataCollectorSet *self, uint32* size) get_SegmentMaxSize;
+				public new function HRESULT(IDataCollectorSet *self, uint32 size) put_SegmentMaxSize;
+				public new function HRESULT(IDataCollectorSet *self, uint32* index) get_SerialNumber;
+				public new function HRESULT(IDataCollectorSet *self, uint32 index) put_SerialNumber;
+				public new function HRESULT(IDataCollectorSet *self, BSTR* server) get_Server;
+				public new function HRESULT(IDataCollectorSet *self, DataCollectorSetStatus* status) get_Status;
+				public new function HRESULT(IDataCollectorSet *self, BSTR* folder) get_Subdirectory;
+				public new function HRESULT(IDataCollectorSet *self, BSTR folder) put_Subdirectory;
+				public new function HRESULT(IDataCollectorSet *self, AutoPathFormat* format) get_SubdirectoryFormat;
+				public new function HRESULT(IDataCollectorSet *self, AutoPathFormat format) put_SubdirectoryFormat;
+				public new function HRESULT(IDataCollectorSet *self, BSTR* pattern) get_SubdirectoryFormatPattern;
+				public new function HRESULT(IDataCollectorSet *self, BSTR pattern) put_SubdirectoryFormatPattern;
+				public new function HRESULT(IDataCollectorSet *self, BSTR* task) get_Task;
+				public new function HRESULT(IDataCollectorSet *self, BSTR task) put_Task;
+				public new function HRESULT(IDataCollectorSet *self, int16* RunAsSelf) get_TaskRunAsSelf;
+				public new function HRESULT(IDataCollectorSet *self, int16 RunAsSelf) put_TaskRunAsSelf;
+				public new function HRESULT(IDataCollectorSet *self, BSTR* task) get_TaskArguments;
+				public new function HRESULT(IDataCollectorSet *self, BSTR task) put_TaskArguments;
+				public new function HRESULT(IDataCollectorSet *self, BSTR* UserText) get_TaskUserTextArguments;
+				public new function HRESULT(IDataCollectorSet *self, BSTR UserText) put_TaskUserTextArguments;
+				public new function HRESULT(IDataCollectorSet *self, IScheduleCollection** ppSchedules) get_Schedules;
+				public new function HRESULT(IDataCollectorSet *self, int16* enabled) get_SchedulesEnabled;
+				public new function HRESULT(IDataCollectorSet *self, int16 enabled) put_SchedulesEnabled;
+				public new function HRESULT(IDataCollectorSet *self, BSTR* user) get_UserAccount;
+				public new function HRESULT(IDataCollectorSet *self, BSTR* xml) get_Xml;
+				public new function HRESULT(IDataCollectorSet *self, BSTR* pbstrSecurity) get_Security;
+				public new function HRESULT(IDataCollectorSet *self, BSTR bstrSecurity) put_Security;
+				public new function HRESULT(IDataCollectorSet *self, int16* Stop) get_StopOnCompletion;
+				public new function HRESULT(IDataCollectorSet *self, int16 Stop) put_StopOnCompletion;
+				public new function HRESULT(IDataCollectorSet *self, IDataManager** DataManager) get_DataManager;
+				public new function HRESULT(IDataCollectorSet *self, BSTR user, BSTR password) SetCredentials;
+				public new function HRESULT(IDataCollectorSet *self, BSTR name, BSTR server) Query;
+				public new function HRESULT(IDataCollectorSet *self, BSTR name, BSTR server, CommitMode mode, IValueMap** validation) Commit;
+				public new function HRESULT(IDataCollectorSet *self) Delete;
+				public new function HRESULT(IDataCollectorSet *self, int16 Synchronous) Start;
+				public new function HRESULT(IDataCollectorSet *self, int16 Synchronous) Stop;
+				public new function HRESULT(IDataCollectorSet *self, BSTR xml, IValueMap** validation) SetXml;
+				public new function HRESULT(IDataCollectorSet *self, BSTR key, BSTR value) SetValue;
+				public new function HRESULT(IDataCollectorSet *self, BSTR key, BSTR* value) GetValue;
 			}
 		}
 		[CRepr]
@@ -1107,35 +1348,136 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x03837541, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Enabled(int16* pfEnabled) mut
+			{
+				return VT.get_Enabled(&this, pfEnabled);
+			}
+			public HRESULT put_Enabled(int16 fEnabled) mut
+			{
+				return VT.put_Enabled(&this, fEnabled);
+			}
+			public HRESULT get_CheckBeforeRunning(int16* pfCheck) mut
+			{
+				return VT.get_CheckBeforeRunning(&this, pfCheck);
+			}
+			public HRESULT put_CheckBeforeRunning(int16 fCheck) mut
+			{
+				return VT.put_CheckBeforeRunning(&this, fCheck);
+			}
+			public HRESULT get_MinFreeDisk(uint32* MinFreeDisk) mut
+			{
+				return VT.get_MinFreeDisk(&this, MinFreeDisk);
+			}
+			public HRESULT put_MinFreeDisk(uint32 MinFreeDisk) mut
+			{
+				return VT.put_MinFreeDisk(&this, MinFreeDisk);
+			}
+			public HRESULT get_MaxSize(uint32* pulMaxSize) mut
+			{
+				return VT.get_MaxSize(&this, pulMaxSize);
+			}
+			public HRESULT put_MaxSize(uint32 ulMaxSize) mut
+			{
+				return VT.put_MaxSize(&this, ulMaxSize);
+			}
+			public HRESULT get_MaxFolderCount(uint32* pulMaxFolderCount) mut
+			{
+				return VT.get_MaxFolderCount(&this, pulMaxFolderCount);
+			}
+			public HRESULT put_MaxFolderCount(uint32 ulMaxFolderCount) mut
+			{
+				return VT.put_MaxFolderCount(&this, ulMaxFolderCount);
+			}
+			public HRESULT get_ResourcePolicy(ResourcePolicy* pPolicy) mut
+			{
+				return VT.get_ResourcePolicy(&this, pPolicy);
+			}
+			public HRESULT put_ResourcePolicy(ResourcePolicy Policy) mut
+			{
+				return VT.put_ResourcePolicy(&this, Policy);
+			}
+			public HRESULT get_FolderActions(IFolderActionCollection** Actions) mut
+			{
+				return VT.get_FolderActions(&this, Actions);
+			}
+			public HRESULT get_ReportSchema(BSTR* ReportSchema) mut
+			{
+				return VT.get_ReportSchema(&this, ReportSchema);
+			}
+			public HRESULT put_ReportSchema(BSTR ReportSchema) mut
+			{
+				return VT.put_ReportSchema(&this, ReportSchema);
+			}
+			public HRESULT get_ReportFileName(BSTR* pbstrFilename) mut
+			{
+				return VT.get_ReportFileName(&this, pbstrFilename);
+			}
+			public HRESULT put_ReportFileName(BSTR pbstrFilename) mut
+			{
+				return VT.put_ReportFileName(&this, pbstrFilename);
+			}
+			public HRESULT get_RuleTargetFileName(BSTR* Filename) mut
+			{
+				return VT.get_RuleTargetFileName(&this, Filename);
+			}
+			public HRESULT put_RuleTargetFileName(BSTR Filename) mut
+			{
+				return VT.put_RuleTargetFileName(&this, Filename);
+			}
+			public HRESULT get_EventsFileName(BSTR* pbstrFilename) mut
+			{
+				return VT.get_EventsFileName(&this, pbstrFilename);
+			}
+			public HRESULT put_EventsFileName(BSTR pbstrFilename) mut
+			{
+				return VT.put_EventsFileName(&this, pbstrFilename);
+			}
+			public HRESULT get_Rules(BSTR* pbstrXml) mut
+			{
+				return VT.get_Rules(&this, pbstrXml);
+			}
+			public HRESULT put_Rules(BSTR bstrXml) mut
+			{
+				return VT.put_Rules(&this, bstrXml);
+			}
+			public HRESULT Run(DataManagerSteps Steps, BSTR bstrFolder, IValueMap** Errors) mut
+			{
+				return VT.Run(&this, Steps, bstrFolder, Errors);
+			}
+			public HRESULT Extract(BSTR CabFilename, BSTR DestinationPath) mut
+			{
+				return VT.Extract(&this, CabFilename, DestinationPath);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IDataManager *self, int16* pfEnabled) get_Enabled;
-				public function HRESULT(IDataManager *self, int16 fEnabled) put_Enabled;
-				public function HRESULT(IDataManager *self, int16* pfCheck) get_CheckBeforeRunning;
-				public function HRESULT(IDataManager *self, int16 fCheck) put_CheckBeforeRunning;
-				public function HRESULT(IDataManager *self, uint32* MinFreeDisk) get_MinFreeDisk;
-				public function HRESULT(IDataManager *self, uint32 MinFreeDisk) put_MinFreeDisk;
-				public function HRESULT(IDataManager *self, uint32* pulMaxSize) get_MaxSize;
-				public function HRESULT(IDataManager *self, uint32 ulMaxSize) put_MaxSize;
-				public function HRESULT(IDataManager *self, uint32* pulMaxFolderCount) get_MaxFolderCount;
-				public function HRESULT(IDataManager *self, uint32 ulMaxFolderCount) put_MaxFolderCount;
-				public function HRESULT(IDataManager *self, ResourcePolicy* pPolicy) get_ResourcePolicy;
-				public function HRESULT(IDataManager *self, ResourcePolicy Policy) put_ResourcePolicy;
-				public function HRESULT(IDataManager *self, IFolderActionCollection** Actions) get_FolderActions;
-				public function HRESULT(IDataManager *self, BSTR* ReportSchema) get_ReportSchema;
-				public function HRESULT(IDataManager *self, BSTR ReportSchema) put_ReportSchema;
-				public function HRESULT(IDataManager *self, BSTR* pbstrFilename) get_ReportFileName;
-				public function HRESULT(IDataManager *self, BSTR pbstrFilename) put_ReportFileName;
-				public function HRESULT(IDataManager *self, BSTR* Filename) get_RuleTargetFileName;
-				public function HRESULT(IDataManager *self, BSTR Filename) put_RuleTargetFileName;
-				public function HRESULT(IDataManager *self, BSTR* pbstrFilename) get_EventsFileName;
-				public function HRESULT(IDataManager *self, BSTR pbstrFilename) put_EventsFileName;
-				public function HRESULT(IDataManager *self, BSTR* pbstrXml) get_Rules;
-				public function HRESULT(IDataManager *self, BSTR bstrXml) put_Rules;
-				public function HRESULT(IDataManager *self, DataManagerSteps Steps, BSTR bstrFolder, IValueMap** Errors) Run;
-				public function HRESULT(IDataManager *self, BSTR CabFilename, BSTR DestinationPath) Extract;
+				public new function HRESULT(IDataManager *self, int16* pfEnabled) get_Enabled;
+				public new function HRESULT(IDataManager *self, int16 fEnabled) put_Enabled;
+				public new function HRESULT(IDataManager *self, int16* pfCheck) get_CheckBeforeRunning;
+				public new function HRESULT(IDataManager *self, int16 fCheck) put_CheckBeforeRunning;
+				public new function HRESULT(IDataManager *self, uint32* MinFreeDisk) get_MinFreeDisk;
+				public new function HRESULT(IDataManager *self, uint32 MinFreeDisk) put_MinFreeDisk;
+				public new function HRESULT(IDataManager *self, uint32* pulMaxSize) get_MaxSize;
+				public new function HRESULT(IDataManager *self, uint32 ulMaxSize) put_MaxSize;
+				public new function HRESULT(IDataManager *self, uint32* pulMaxFolderCount) get_MaxFolderCount;
+				public new function HRESULT(IDataManager *self, uint32 ulMaxFolderCount) put_MaxFolderCount;
+				public new function HRESULT(IDataManager *self, ResourcePolicy* pPolicy) get_ResourcePolicy;
+				public new function HRESULT(IDataManager *self, ResourcePolicy Policy) put_ResourcePolicy;
+				public new function HRESULT(IDataManager *self, IFolderActionCollection** Actions) get_FolderActions;
+				public new function HRESULT(IDataManager *self, BSTR* ReportSchema) get_ReportSchema;
+				public new function HRESULT(IDataManager *self, BSTR ReportSchema) put_ReportSchema;
+				public new function HRESULT(IDataManager *self, BSTR* pbstrFilename) get_ReportFileName;
+				public new function HRESULT(IDataManager *self, BSTR pbstrFilename) put_ReportFileName;
+				public new function HRESULT(IDataManager *self, BSTR* Filename) get_RuleTargetFileName;
+				public new function HRESULT(IDataManager *self, BSTR Filename) put_RuleTargetFileName;
+				public new function HRESULT(IDataManager *self, BSTR* pbstrFilename) get_EventsFileName;
+				public new function HRESULT(IDataManager *self, BSTR pbstrFilename) put_EventsFileName;
+				public new function HRESULT(IDataManager *self, BSTR* pbstrXml) get_Rules;
+				public new function HRESULT(IDataManager *self, BSTR bstrXml) put_Rules;
+				public new function HRESULT(IDataManager *self, DataManagerSteps Steps, BSTR bstrFolder, IValueMap** Errors) Run;
+				public new function HRESULT(IDataManager *self, BSTR CabFilename, BSTR DestinationPath) Extract;
 			}
 		}
 		[CRepr]
@@ -1143,18 +1485,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x03837543, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Age(uint32* pulAge) mut
+			{
+				return VT.get_Age(&this, pulAge);
+			}
+			public HRESULT put_Age(uint32 ulAge) mut
+			{
+				return VT.put_Age(&this, ulAge);
+			}
+			public HRESULT get_Size(uint32* pulAge) mut
+			{
+				return VT.get_Size(&this, pulAge);
+			}
+			public HRESULT put_Size(uint32 ulAge) mut
+			{
+				return VT.put_Size(&this, ulAge);
+			}
+			public HRESULT get_Actions(FolderActionSteps* Steps) mut
+			{
+				return VT.get_Actions(&this, Steps);
+			}
+			public HRESULT put_Actions(FolderActionSteps Steps) mut
+			{
+				return VT.put_Actions(&this, Steps);
+			}
+			public HRESULT get_SendCabTo(BSTR* pbstrDestination) mut
+			{
+				return VT.get_SendCabTo(&this, pbstrDestination);
+			}
+			public HRESULT put_SendCabTo(BSTR bstrDestination) mut
+			{
+				return VT.put_SendCabTo(&this, bstrDestination);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFolderAction *self, uint32* pulAge) get_Age;
-				public function HRESULT(IFolderAction *self, uint32 ulAge) put_Age;
-				public function HRESULT(IFolderAction *self, uint32* pulAge) get_Size;
-				public function HRESULT(IFolderAction *self, uint32 ulAge) put_Size;
-				public function HRESULT(IFolderAction *self, FolderActionSteps* Steps) get_Actions;
-				public function HRESULT(IFolderAction *self, FolderActionSteps Steps) put_Actions;
-				public function HRESULT(IFolderAction *self, BSTR* pbstrDestination) get_SendCabTo;
-				public function HRESULT(IFolderAction *self, BSTR bstrDestination) put_SendCabTo;
+				public new function HRESULT(IFolderAction *self, uint32* pulAge) get_Age;
+				public new function HRESULT(IFolderAction *self, uint32 ulAge) put_Age;
+				public new function HRESULT(IFolderAction *self, uint32* pulAge) get_Size;
+				public new function HRESULT(IFolderAction *self, uint32 ulAge) put_Size;
+				public new function HRESULT(IFolderAction *self, FolderActionSteps* Steps) get_Actions;
+				public new function HRESULT(IFolderAction *self, FolderActionSteps Steps) put_Actions;
+				public new function HRESULT(IFolderAction *self, BSTR* pbstrDestination) get_SendCabTo;
+				public new function HRESULT(IFolderAction *self, BSTR bstrDestination) put_SendCabTo;
 			}
 		}
 		[CRepr]
@@ -1162,18 +1537,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x03837544, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(uint32* Count) mut
+			{
+				return VT.get_Count(&this, Count);
+			}
+			public HRESULT get_Item(VARIANT Index, IFolderAction** Action) mut
+			{
+				return VT.get_Item(&this, Index, Action);
+			}
+			public HRESULT get__NewEnum(IUnknown** Enum) mut
+			{
+				return VT.get__NewEnum(&this, Enum);
+			}
+			public HRESULT Add(IFolderAction* Action) mut
+			{
+				return VT.Add(&this, Action);
+			}
+			public HRESULT Remove(VARIANT Index) mut
+			{
+				return VT.Remove(&this, Index);
+			}
+			public HRESULT Clear() mut
+			{
+				return VT.Clear(&this);
+			}
+			public HRESULT AddRange(IFolderActionCollection* Actions) mut
+			{
+				return VT.AddRange(&this, Actions);
+			}
+			public HRESULT CreateFolderAction(IFolderAction** FolderAction) mut
+			{
+				return VT.CreateFolderAction(&this, FolderAction);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFolderActionCollection *self, uint32* Count) get_Count;
-				public function HRESULT(IFolderActionCollection *self, VARIANT Index, IFolderAction** Action) get_Item;
-				public function HRESULT(IFolderActionCollection *self, IUnknown** Enum) get__NewEnum;
-				public function HRESULT(IFolderActionCollection *self, IFolderAction* Action) Add;
-				public function HRESULT(IFolderActionCollection *self, VARIANT Index) Remove;
-				public function HRESULT(IFolderActionCollection *self) Clear;
-				public function HRESULT(IFolderActionCollection *self, IFolderActionCollection* Actions) AddRange;
-				public function HRESULT(IFolderActionCollection *self, IFolderAction** FolderAction) CreateFolderAction;
+				public new function HRESULT(IFolderActionCollection *self, uint32* Count) get_Count;
+				public new function HRESULT(IFolderActionCollection *self, VARIANT Index, IFolderAction** Action) get_Item;
+				public new function HRESULT(IFolderActionCollection *self, IUnknown** Enum) get__NewEnum;
+				public new function HRESULT(IFolderActionCollection *self, IFolderAction* Action) Add;
+				public new function HRESULT(IFolderActionCollection *self, VARIANT Index) Remove;
+				public new function HRESULT(IFolderActionCollection *self) Clear;
+				public new function HRESULT(IFolderActionCollection *self, IFolderActionCollection* Actions) AddRange;
+				public new function HRESULT(IFolderActionCollection *self, IFolderAction** FolderAction) CreateFolderAction;
 			}
 		}
 		[CRepr]
@@ -1181,35 +1589,136 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x038374ff, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_DataCollectorSet(IDataCollectorSet** group) mut
+			{
+				return VT.get_DataCollectorSet(&this, group);
+			}
+			public HRESULT put_DataCollectorSet(IDataCollectorSet* group) mut
+			{
+				return VT.put_DataCollectorSet(&this, group);
+			}
+			public HRESULT get_DataCollectorType(DataCollectorType* type) mut
+			{
+				return VT.get_DataCollectorType(&this, type);
+			}
+			public HRESULT get_FileName(BSTR* name) mut
+			{
+				return VT.get_FileName(&this, name);
+			}
+			public HRESULT put_FileName(BSTR name) mut
+			{
+				return VT.put_FileName(&this, name);
+			}
+			public HRESULT get_FileNameFormat(AutoPathFormat* format) mut
+			{
+				return VT.get_FileNameFormat(&this, format);
+			}
+			public HRESULT put_FileNameFormat(AutoPathFormat format) mut
+			{
+				return VT.put_FileNameFormat(&this, format);
+			}
+			public HRESULT get_FileNameFormatPattern(BSTR* pattern) mut
+			{
+				return VT.get_FileNameFormatPattern(&this, pattern);
+			}
+			public HRESULT put_FileNameFormatPattern(BSTR pattern) mut
+			{
+				return VT.put_FileNameFormatPattern(&this, pattern);
+			}
+			public HRESULT get_LatestOutputLocation(BSTR* path) mut
+			{
+				return VT.get_LatestOutputLocation(&this, path);
+			}
+			public HRESULT put_LatestOutputLocation(BSTR path) mut
+			{
+				return VT.put_LatestOutputLocation(&this, path);
+			}
+			public HRESULT get_LogAppend(int16* @append) mut
+			{
+				return VT.get_LogAppend(&this, @append);
+			}
+			public HRESULT put_LogAppend(int16 @append) mut
+			{
+				return VT.put_LogAppend(&this, @append);
+			}
+			public HRESULT get_LogCircular(int16* circular) mut
+			{
+				return VT.get_LogCircular(&this, circular);
+			}
+			public HRESULT put_LogCircular(int16 circular) mut
+			{
+				return VT.put_LogCircular(&this, circular);
+			}
+			public HRESULT get_LogOverwrite(int16* overwrite) mut
+			{
+				return VT.get_LogOverwrite(&this, overwrite);
+			}
+			public HRESULT put_LogOverwrite(int16 overwrite) mut
+			{
+				return VT.put_LogOverwrite(&this, overwrite);
+			}
+			public HRESULT get_Name(BSTR* name) mut
+			{
+				return VT.get_Name(&this, name);
+			}
+			public HRESULT put_Name(BSTR name) mut
+			{
+				return VT.put_Name(&this, name);
+			}
+			public HRESULT get_OutputLocation(BSTR* path) mut
+			{
+				return VT.get_OutputLocation(&this, path);
+			}
+			public HRESULT get_Index(int32* index) mut
+			{
+				return VT.get_Index(&this, index);
+			}
+			public HRESULT put_Index(int32 index) mut
+			{
+				return VT.put_Index(&this, index);
+			}
+			public HRESULT get_Xml(BSTR* Xml) mut
+			{
+				return VT.get_Xml(&this, Xml);
+			}
+			public HRESULT SetXml(BSTR Xml, IValueMap** Validation) mut
+			{
+				return VT.SetXml(&this, Xml, Validation);
+			}
+			public HRESULT CreateOutputLocation(int16 Latest, BSTR* Location) mut
+			{
+				return VT.CreateOutputLocation(&this, Latest, Location);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IDataCollector *self, IDataCollectorSet** group) get_DataCollectorSet;
-				public function HRESULT(IDataCollector *self, IDataCollectorSet* group) put_DataCollectorSet;
-				public function HRESULT(IDataCollector *self, DataCollectorType* type) get_DataCollectorType;
-				public function HRESULT(IDataCollector *self, BSTR* name) get_FileName;
-				public function HRESULT(IDataCollector *self, BSTR name) put_FileName;
-				public function HRESULT(IDataCollector *self, AutoPathFormat* format) get_FileNameFormat;
-				public function HRESULT(IDataCollector *self, AutoPathFormat format) put_FileNameFormat;
-				public function HRESULT(IDataCollector *self, BSTR* pattern) get_FileNameFormatPattern;
-				public function HRESULT(IDataCollector *self, BSTR pattern) put_FileNameFormatPattern;
-				public function HRESULT(IDataCollector *self, BSTR* path) get_LatestOutputLocation;
-				public function HRESULT(IDataCollector *self, BSTR path) put_LatestOutputLocation;
-				public function HRESULT(IDataCollector *self, int16* @append) get_LogAppend;
-				public function HRESULT(IDataCollector *self, int16 @append) put_LogAppend;
-				public function HRESULT(IDataCollector *self, int16* circular) get_LogCircular;
-				public function HRESULT(IDataCollector *self, int16 circular) put_LogCircular;
-				public function HRESULT(IDataCollector *self, int16* overwrite) get_LogOverwrite;
-				public function HRESULT(IDataCollector *self, int16 overwrite) put_LogOverwrite;
-				public function HRESULT(IDataCollector *self, BSTR* name) get_Name;
-				public function HRESULT(IDataCollector *self, BSTR name) put_Name;
-				public function HRESULT(IDataCollector *self, BSTR* path) get_OutputLocation;
-				public function HRESULT(IDataCollector *self, int32* index) get_Index;
-				public function HRESULT(IDataCollector *self, int32 index) put_Index;
-				public function HRESULT(IDataCollector *self, BSTR* Xml) get_Xml;
-				public function HRESULT(IDataCollector *self, BSTR Xml, IValueMap** Validation) SetXml;
-				public function HRESULT(IDataCollector *self, int16 Latest, BSTR* Location) CreateOutputLocation;
+				public new function HRESULT(IDataCollector *self, IDataCollectorSet** group) get_DataCollectorSet;
+				public new function HRESULT(IDataCollector *self, IDataCollectorSet* group) put_DataCollectorSet;
+				public new function HRESULT(IDataCollector *self, DataCollectorType* type) get_DataCollectorType;
+				public new function HRESULT(IDataCollector *self, BSTR* name) get_FileName;
+				public new function HRESULT(IDataCollector *self, BSTR name) put_FileName;
+				public new function HRESULT(IDataCollector *self, AutoPathFormat* format) get_FileNameFormat;
+				public new function HRESULT(IDataCollector *self, AutoPathFormat format) put_FileNameFormat;
+				public new function HRESULT(IDataCollector *self, BSTR* pattern) get_FileNameFormatPattern;
+				public new function HRESULT(IDataCollector *self, BSTR pattern) put_FileNameFormatPattern;
+				public new function HRESULT(IDataCollector *self, BSTR* path) get_LatestOutputLocation;
+				public new function HRESULT(IDataCollector *self, BSTR path) put_LatestOutputLocation;
+				public new function HRESULT(IDataCollector *self, int16* @append) get_LogAppend;
+				public new function HRESULT(IDataCollector *self, int16 @append) put_LogAppend;
+				public new function HRESULT(IDataCollector *self, int16* circular) get_LogCircular;
+				public new function HRESULT(IDataCollector *self, int16 circular) put_LogCircular;
+				public new function HRESULT(IDataCollector *self, int16* overwrite) get_LogOverwrite;
+				public new function HRESULT(IDataCollector *self, int16 overwrite) put_LogOverwrite;
+				public new function HRESULT(IDataCollector *self, BSTR* name) get_Name;
+				public new function HRESULT(IDataCollector *self, BSTR name) put_Name;
+				public new function HRESULT(IDataCollector *self, BSTR* path) get_OutputLocation;
+				public new function HRESULT(IDataCollector *self, int32* index) get_Index;
+				public new function HRESULT(IDataCollector *self, int32 index) put_Index;
+				public new function HRESULT(IDataCollector *self, BSTR* Xml) get_Xml;
+				public new function HRESULT(IDataCollector *self, BSTR Xml, IValueMap** Validation) SetXml;
+				public new function HRESULT(IDataCollector *self, int16 Latest, BSTR* Location) CreateOutputLocation;
 			}
 		}
 		[CRepr]
@@ -1217,20 +1726,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x03837506, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_DataSourceName(BSTR* dsn) mut
+			{
+				return VT.get_DataSourceName(&this, dsn);
+			}
+			public HRESULT put_DataSourceName(BSTR dsn) mut
+			{
+				return VT.put_DataSourceName(&this, dsn);
+			}
+			public HRESULT get_PerformanceCounters(SAFEARRAY** counters) mut
+			{
+				return VT.get_PerformanceCounters(&this, counters);
+			}
+			public HRESULT put_PerformanceCounters(SAFEARRAY* counters) mut
+			{
+				return VT.put_PerformanceCounters(&this, counters);
+			}
+			public HRESULT get_LogFileFormat(FileFormat* format) mut
+			{
+				return VT.get_LogFileFormat(&this, format);
+			}
+			public HRESULT put_LogFileFormat(FileFormat format) mut
+			{
+				return VT.put_LogFileFormat(&this, format);
+			}
+			public HRESULT get_SampleInterval(uint32* interval) mut
+			{
+				return VT.get_SampleInterval(&this, interval);
+			}
+			public HRESULT put_SampleInterval(uint32 interval) mut
+			{
+				return VT.put_SampleInterval(&this, interval);
+			}
+			public HRESULT get_SegmentMaxRecords(uint32* records) mut
+			{
+				return VT.get_SegmentMaxRecords(&this, records);
+			}
+			public HRESULT put_SegmentMaxRecords(uint32 records) mut
+			{
+				return VT.put_SegmentMaxRecords(&this, records);
+			}
 			[CRepr]
 			public struct VTable : IDataCollector.VTable
 			{
-				public function HRESULT(IPerformanceCounterDataCollector *self, BSTR* dsn) get_DataSourceName;
-				public function HRESULT(IPerformanceCounterDataCollector *self, BSTR dsn) put_DataSourceName;
-				public function HRESULT(IPerformanceCounterDataCollector *self, SAFEARRAY** counters) get_PerformanceCounters;
-				public function HRESULT(IPerformanceCounterDataCollector *self, SAFEARRAY* counters) put_PerformanceCounters;
-				public function HRESULT(IPerformanceCounterDataCollector *self, FileFormat* format) get_LogFileFormat;
-				public function HRESULT(IPerformanceCounterDataCollector *self, FileFormat format) put_LogFileFormat;
-				public function HRESULT(IPerformanceCounterDataCollector *self, uint32* interval) get_SampleInterval;
-				public function HRESULT(IPerformanceCounterDataCollector *self, uint32 interval) put_SampleInterval;
-				public function HRESULT(IPerformanceCounterDataCollector *self, uint32* records) get_SegmentMaxRecords;
-				public function HRESULT(IPerformanceCounterDataCollector *self, uint32 records) put_SegmentMaxRecords;
+				public new function HRESULT(IPerformanceCounterDataCollector *self, BSTR* dsn) get_DataSourceName;
+				public new function HRESULT(IPerformanceCounterDataCollector *self, BSTR dsn) put_DataSourceName;
+				public new function HRESULT(IPerformanceCounterDataCollector *self, SAFEARRAY** counters) get_PerformanceCounters;
+				public new function HRESULT(IPerformanceCounterDataCollector *self, SAFEARRAY* counters) put_PerformanceCounters;
+				public new function HRESULT(IPerformanceCounterDataCollector *self, FileFormat* format) get_LogFileFormat;
+				public new function HRESULT(IPerformanceCounterDataCollector *self, FileFormat format) put_LogFileFormat;
+				public new function HRESULT(IPerformanceCounterDataCollector *self, uint32* interval) get_SampleInterval;
+				public new function HRESULT(IPerformanceCounterDataCollector *self, uint32 interval) put_SampleInterval;
+				public new function HRESULT(IPerformanceCounterDataCollector *self, uint32* records) get_SegmentMaxRecords;
+				public new function HRESULT(IPerformanceCounterDataCollector *self, uint32 records) put_SegmentMaxRecords;
 			}
 		}
 		[CRepr]
@@ -1238,50 +1788,211 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0383750b, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_BufferSize(uint32* size) mut
+			{
+				return VT.get_BufferSize(&this, size);
+			}
+			public HRESULT put_BufferSize(uint32 size) mut
+			{
+				return VT.put_BufferSize(&this, size);
+			}
+			public HRESULT get_BuffersLost(uint32* buffers) mut
+			{
+				return VT.get_BuffersLost(&this, buffers);
+			}
+			public HRESULT put_BuffersLost(uint32 buffers) mut
+			{
+				return VT.put_BuffersLost(&this, buffers);
+			}
+			public HRESULT get_BuffersWritten(uint32* buffers) mut
+			{
+				return VT.get_BuffersWritten(&this, buffers);
+			}
+			public HRESULT put_BuffersWritten(uint32 buffers) mut
+			{
+				return VT.put_BuffersWritten(&this, buffers);
+			}
+			public HRESULT get_ClockType(ClockType* clock) mut
+			{
+				return VT.get_ClockType(&this, clock);
+			}
+			public HRESULT put_ClockType(ClockType clock) mut
+			{
+				return VT.put_ClockType(&this, clock);
+			}
+			public HRESULT get_EventsLost(uint32* events) mut
+			{
+				return VT.get_EventsLost(&this, events);
+			}
+			public HRESULT put_EventsLost(uint32 events) mut
+			{
+				return VT.put_EventsLost(&this, events);
+			}
+			public HRESULT get_ExtendedModes(uint32* mode) mut
+			{
+				return VT.get_ExtendedModes(&this, mode);
+			}
+			public HRESULT put_ExtendedModes(uint32 mode) mut
+			{
+				return VT.put_ExtendedModes(&this, mode);
+			}
+			public HRESULT get_FlushTimer(uint32* seconds) mut
+			{
+				return VT.get_FlushTimer(&this, seconds);
+			}
+			public HRESULT put_FlushTimer(uint32 seconds) mut
+			{
+				return VT.put_FlushTimer(&this, seconds);
+			}
+			public HRESULT get_FreeBuffers(uint32* buffers) mut
+			{
+				return VT.get_FreeBuffers(&this, buffers);
+			}
+			public HRESULT put_FreeBuffers(uint32 buffers) mut
+			{
+				return VT.put_FreeBuffers(&this, buffers);
+			}
+			public HRESULT get_Guid(Guid* guid) mut
+			{
+				return VT.get_Guid(&this, guid);
+			}
+			public HRESULT put_Guid(Guid guid) mut
+			{
+				return VT.put_Guid(&this, guid);
+			}
+			public HRESULT get_IsKernelTrace(int16* kernel) mut
+			{
+				return VT.get_IsKernelTrace(&this, kernel);
+			}
+			public HRESULT get_MaximumBuffers(uint32* buffers) mut
+			{
+				return VT.get_MaximumBuffers(&this, buffers);
+			}
+			public HRESULT put_MaximumBuffers(uint32 buffers) mut
+			{
+				return VT.put_MaximumBuffers(&this, buffers);
+			}
+			public HRESULT get_MinimumBuffers(uint32* buffers) mut
+			{
+				return VT.get_MinimumBuffers(&this, buffers);
+			}
+			public HRESULT put_MinimumBuffers(uint32 buffers) mut
+			{
+				return VT.put_MinimumBuffers(&this, buffers);
+			}
+			public HRESULT get_NumberOfBuffers(uint32* buffers) mut
+			{
+				return VT.get_NumberOfBuffers(&this, buffers);
+			}
+			public HRESULT put_NumberOfBuffers(uint32 buffers) mut
+			{
+				return VT.put_NumberOfBuffers(&this, buffers);
+			}
+			public HRESULT get_PreallocateFile(int16* allocate) mut
+			{
+				return VT.get_PreallocateFile(&this, allocate);
+			}
+			public HRESULT put_PreallocateFile(int16 allocate) mut
+			{
+				return VT.put_PreallocateFile(&this, allocate);
+			}
+			public HRESULT get_ProcessMode(int16* process) mut
+			{
+				return VT.get_ProcessMode(&this, process);
+			}
+			public HRESULT put_ProcessMode(int16 process) mut
+			{
+				return VT.put_ProcessMode(&this, process);
+			}
+			public HRESULT get_RealTimeBuffersLost(uint32* buffers) mut
+			{
+				return VT.get_RealTimeBuffersLost(&this, buffers);
+			}
+			public HRESULT put_RealTimeBuffersLost(uint32 buffers) mut
+			{
+				return VT.put_RealTimeBuffersLost(&this, buffers);
+			}
+			public HRESULT get_SessionId(uint64* id) mut
+			{
+				return VT.get_SessionId(&this, id);
+			}
+			public HRESULT put_SessionId(uint64 id) mut
+			{
+				return VT.put_SessionId(&this, id);
+			}
+			public HRESULT get_SessionName(BSTR* name) mut
+			{
+				return VT.get_SessionName(&this, name);
+			}
+			public HRESULT put_SessionName(BSTR name) mut
+			{
+				return VT.put_SessionName(&this, name);
+			}
+			public HRESULT get_SessionThreadId(uint32* tid) mut
+			{
+				return VT.get_SessionThreadId(&this, tid);
+			}
+			public HRESULT put_SessionThreadId(uint32 tid) mut
+			{
+				return VT.put_SessionThreadId(&this, tid);
+			}
+			public HRESULT get_StreamMode(StreamMode* mode) mut
+			{
+				return VT.get_StreamMode(&this, mode);
+			}
+			public HRESULT put_StreamMode(StreamMode mode) mut
+			{
+				return VT.put_StreamMode(&this, mode);
+			}
+			public HRESULT get_TraceDataProviders(ITraceDataProviderCollection** providers) mut
+			{
+				return VT.get_TraceDataProviders(&this, providers);
+			}
 			[CRepr]
 			public struct VTable : IDataCollector.VTable
 			{
-				public function HRESULT(ITraceDataCollector *self, uint32* size) get_BufferSize;
-				public function HRESULT(ITraceDataCollector *self, uint32 size) put_BufferSize;
-				public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_BuffersLost;
-				public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_BuffersLost;
-				public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_BuffersWritten;
-				public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_BuffersWritten;
-				public function HRESULT(ITraceDataCollector *self, ClockType* clock) get_ClockType;
-				public function HRESULT(ITraceDataCollector *self, ClockType clock) put_ClockType;
-				public function HRESULT(ITraceDataCollector *self, uint32* events) get_EventsLost;
-				public function HRESULT(ITraceDataCollector *self, uint32 events) put_EventsLost;
-				public function HRESULT(ITraceDataCollector *self, uint32* mode) get_ExtendedModes;
-				public function HRESULT(ITraceDataCollector *self, uint32 mode) put_ExtendedModes;
-				public function HRESULT(ITraceDataCollector *self, uint32* seconds) get_FlushTimer;
-				public function HRESULT(ITraceDataCollector *self, uint32 seconds) put_FlushTimer;
-				public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_FreeBuffers;
-				public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_FreeBuffers;
-				public function HRESULT(ITraceDataCollector *self, Guid* guid) get_Guid;
-				public function HRESULT(ITraceDataCollector *self, Guid guid) put_Guid;
-				public function HRESULT(ITraceDataCollector *self, int16* kernel) get_IsKernelTrace;
-				public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_MaximumBuffers;
-				public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_MaximumBuffers;
-				public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_MinimumBuffers;
-				public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_MinimumBuffers;
-				public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_NumberOfBuffers;
-				public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_NumberOfBuffers;
-				public function HRESULT(ITraceDataCollector *self, int16* allocate) get_PreallocateFile;
-				public function HRESULT(ITraceDataCollector *self, int16 allocate) put_PreallocateFile;
-				public function HRESULT(ITraceDataCollector *self, int16* process) get_ProcessMode;
-				public function HRESULT(ITraceDataCollector *self, int16 process) put_ProcessMode;
-				public function HRESULT(ITraceDataCollector *self, uint32* buffers) get_RealTimeBuffersLost;
-				public function HRESULT(ITraceDataCollector *self, uint32 buffers) put_RealTimeBuffersLost;
-				public function HRESULT(ITraceDataCollector *self, uint64* id) get_SessionId;
-				public function HRESULT(ITraceDataCollector *self, uint64 id) put_SessionId;
-				public function HRESULT(ITraceDataCollector *self, BSTR* name) get_SessionName;
-				public function HRESULT(ITraceDataCollector *self, BSTR name) put_SessionName;
-				public function HRESULT(ITraceDataCollector *self, uint32* tid) get_SessionThreadId;
-				public function HRESULT(ITraceDataCollector *self, uint32 tid) put_SessionThreadId;
-				public function HRESULT(ITraceDataCollector *self, StreamMode* mode) get_StreamMode;
-				public function HRESULT(ITraceDataCollector *self, StreamMode mode) put_StreamMode;
-				public function HRESULT(ITraceDataCollector *self, ITraceDataProviderCollection** providers) get_TraceDataProviders;
+				public new function HRESULT(ITraceDataCollector *self, uint32* size) get_BufferSize;
+				public new function HRESULT(ITraceDataCollector *self, uint32 size) put_BufferSize;
+				public new function HRESULT(ITraceDataCollector *self, uint32* buffers) get_BuffersLost;
+				public new function HRESULT(ITraceDataCollector *self, uint32 buffers) put_BuffersLost;
+				public new function HRESULT(ITraceDataCollector *self, uint32* buffers) get_BuffersWritten;
+				public new function HRESULT(ITraceDataCollector *self, uint32 buffers) put_BuffersWritten;
+				public new function HRESULT(ITraceDataCollector *self, ClockType* clock) get_ClockType;
+				public new function HRESULT(ITraceDataCollector *self, ClockType clock) put_ClockType;
+				public new function HRESULT(ITraceDataCollector *self, uint32* events) get_EventsLost;
+				public new function HRESULT(ITraceDataCollector *self, uint32 events) put_EventsLost;
+				public new function HRESULT(ITraceDataCollector *self, uint32* mode) get_ExtendedModes;
+				public new function HRESULT(ITraceDataCollector *self, uint32 mode) put_ExtendedModes;
+				public new function HRESULT(ITraceDataCollector *self, uint32* seconds) get_FlushTimer;
+				public new function HRESULT(ITraceDataCollector *self, uint32 seconds) put_FlushTimer;
+				public new function HRESULT(ITraceDataCollector *self, uint32* buffers) get_FreeBuffers;
+				public new function HRESULT(ITraceDataCollector *self, uint32 buffers) put_FreeBuffers;
+				public new function HRESULT(ITraceDataCollector *self, Guid* guid) get_Guid;
+				public new function HRESULT(ITraceDataCollector *self, Guid guid) put_Guid;
+				public new function HRESULT(ITraceDataCollector *self, int16* kernel) get_IsKernelTrace;
+				public new function HRESULT(ITraceDataCollector *self, uint32* buffers) get_MaximumBuffers;
+				public new function HRESULT(ITraceDataCollector *self, uint32 buffers) put_MaximumBuffers;
+				public new function HRESULT(ITraceDataCollector *self, uint32* buffers) get_MinimumBuffers;
+				public new function HRESULT(ITraceDataCollector *self, uint32 buffers) put_MinimumBuffers;
+				public new function HRESULT(ITraceDataCollector *self, uint32* buffers) get_NumberOfBuffers;
+				public new function HRESULT(ITraceDataCollector *self, uint32 buffers) put_NumberOfBuffers;
+				public new function HRESULT(ITraceDataCollector *self, int16* allocate) get_PreallocateFile;
+				public new function HRESULT(ITraceDataCollector *self, int16 allocate) put_PreallocateFile;
+				public new function HRESULT(ITraceDataCollector *self, int16* process) get_ProcessMode;
+				public new function HRESULT(ITraceDataCollector *self, int16 process) put_ProcessMode;
+				public new function HRESULT(ITraceDataCollector *self, uint32* buffers) get_RealTimeBuffersLost;
+				public new function HRESULT(ITraceDataCollector *self, uint32 buffers) put_RealTimeBuffersLost;
+				public new function HRESULT(ITraceDataCollector *self, uint64* id) get_SessionId;
+				public new function HRESULT(ITraceDataCollector *self, uint64 id) put_SessionId;
+				public new function HRESULT(ITraceDataCollector *self, BSTR* name) get_SessionName;
+				public new function HRESULT(ITraceDataCollector *self, BSTR name) put_SessionName;
+				public new function HRESULT(ITraceDataCollector *self, uint32* tid) get_SessionThreadId;
+				public new function HRESULT(ITraceDataCollector *self, uint32 tid) put_SessionThreadId;
+				public new function HRESULT(ITraceDataCollector *self, StreamMode* mode) get_StreamMode;
+				public new function HRESULT(ITraceDataCollector *self, StreamMode mode) put_StreamMode;
+				public new function HRESULT(ITraceDataCollector *self, ITraceDataProviderCollection** providers) get_TraceDataProviders;
 			}
 		}
 		[CRepr]
@@ -1289,28 +2000,101 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x03837514, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_FileMaxCount(uint32* count) mut
+			{
+				return VT.get_FileMaxCount(&this, count);
+			}
+			public HRESULT put_FileMaxCount(uint32 count) mut
+			{
+				return VT.put_FileMaxCount(&this, count);
+			}
+			public HRESULT get_FileMaxRecursiveDepth(uint32* depth) mut
+			{
+				return VT.get_FileMaxRecursiveDepth(&this, depth);
+			}
+			public HRESULT put_FileMaxRecursiveDepth(uint32 depth) mut
+			{
+				return VT.put_FileMaxRecursiveDepth(&this, depth);
+			}
+			public HRESULT get_FileMaxTotalSize(uint32* size) mut
+			{
+				return VT.get_FileMaxTotalSize(&this, size);
+			}
+			public HRESULT put_FileMaxTotalSize(uint32 size) mut
+			{
+				return VT.put_FileMaxTotalSize(&this, size);
+			}
+			public HRESULT get_Files(SAFEARRAY** Files) mut
+			{
+				return VT.get_Files(&this, Files);
+			}
+			public HRESULT put_Files(SAFEARRAY* Files) mut
+			{
+				return VT.put_Files(&this, Files);
+			}
+			public HRESULT get_ManagementQueries(SAFEARRAY** Queries) mut
+			{
+				return VT.get_ManagementQueries(&this, Queries);
+			}
+			public HRESULT put_ManagementQueries(SAFEARRAY* Queries) mut
+			{
+				return VT.put_ManagementQueries(&this, Queries);
+			}
+			public HRESULT get_QueryNetworkAdapters(int16* network) mut
+			{
+				return VT.get_QueryNetworkAdapters(&this, network);
+			}
+			public HRESULT put_QueryNetworkAdapters(int16 network) mut
+			{
+				return VT.put_QueryNetworkAdapters(&this, network);
+			}
+			public HRESULT get_RegistryKeys(SAFEARRAY** query) mut
+			{
+				return VT.get_RegistryKeys(&this, query);
+			}
+			public HRESULT put_RegistryKeys(SAFEARRAY* query) mut
+			{
+				return VT.put_RegistryKeys(&this, query);
+			}
+			public HRESULT get_RegistryMaxRecursiveDepth(uint32* depth) mut
+			{
+				return VT.get_RegistryMaxRecursiveDepth(&this, depth);
+			}
+			public HRESULT put_RegistryMaxRecursiveDepth(uint32 depth) mut
+			{
+				return VT.put_RegistryMaxRecursiveDepth(&this, depth);
+			}
+			public HRESULT get_SystemStateFile(BSTR* FileName) mut
+			{
+				return VT.get_SystemStateFile(&this, FileName);
+			}
+			public HRESULT put_SystemStateFile(BSTR FileName) mut
+			{
+				return VT.put_SystemStateFile(&this, FileName);
+			}
 			[CRepr]
 			public struct VTable : IDataCollector.VTable
 			{
-				public function HRESULT(IConfigurationDataCollector *self, uint32* count) get_FileMaxCount;
-				public function HRESULT(IConfigurationDataCollector *self, uint32 count) put_FileMaxCount;
-				public function HRESULT(IConfigurationDataCollector *self, uint32* depth) get_FileMaxRecursiveDepth;
-				public function HRESULT(IConfigurationDataCollector *self, uint32 depth) put_FileMaxRecursiveDepth;
-				public function HRESULT(IConfigurationDataCollector *self, uint32* size) get_FileMaxTotalSize;
-				public function HRESULT(IConfigurationDataCollector *self, uint32 size) put_FileMaxTotalSize;
-				public function HRESULT(IConfigurationDataCollector *self, SAFEARRAY** Files) get_Files;
-				public function HRESULT(IConfigurationDataCollector *self, SAFEARRAY* Files) put_Files;
-				public function HRESULT(IConfigurationDataCollector *self, SAFEARRAY** Queries) get_ManagementQueries;
-				public function HRESULT(IConfigurationDataCollector *self, SAFEARRAY* Queries) put_ManagementQueries;
-				public function HRESULT(IConfigurationDataCollector *self, int16* network) get_QueryNetworkAdapters;
-				public function HRESULT(IConfigurationDataCollector *self, int16 network) put_QueryNetworkAdapters;
-				public function HRESULT(IConfigurationDataCollector *self, SAFEARRAY** query) get_RegistryKeys;
-				public function HRESULT(IConfigurationDataCollector *self, SAFEARRAY* query) put_RegistryKeys;
-				public function HRESULT(IConfigurationDataCollector *self, uint32* depth) get_RegistryMaxRecursiveDepth;
-				public function HRESULT(IConfigurationDataCollector *self, uint32 depth) put_RegistryMaxRecursiveDepth;
-				public function HRESULT(IConfigurationDataCollector *self, BSTR* FileName) get_SystemStateFile;
-				public function HRESULT(IConfigurationDataCollector *self, BSTR FileName) put_SystemStateFile;
+				public new function HRESULT(IConfigurationDataCollector *self, uint32* count) get_FileMaxCount;
+				public new function HRESULT(IConfigurationDataCollector *self, uint32 count) put_FileMaxCount;
+				public new function HRESULT(IConfigurationDataCollector *self, uint32* depth) get_FileMaxRecursiveDepth;
+				public new function HRESULT(IConfigurationDataCollector *self, uint32 depth) put_FileMaxRecursiveDepth;
+				public new function HRESULT(IConfigurationDataCollector *self, uint32* size) get_FileMaxTotalSize;
+				public new function HRESULT(IConfigurationDataCollector *self, uint32 size) put_FileMaxTotalSize;
+				public new function HRESULT(IConfigurationDataCollector *self, SAFEARRAY** Files) get_Files;
+				public new function HRESULT(IConfigurationDataCollector *self, SAFEARRAY* Files) put_Files;
+				public new function HRESULT(IConfigurationDataCollector *self, SAFEARRAY** Queries) get_ManagementQueries;
+				public new function HRESULT(IConfigurationDataCollector *self, SAFEARRAY* Queries) put_ManagementQueries;
+				public new function HRESULT(IConfigurationDataCollector *self, int16* network) get_QueryNetworkAdapters;
+				public new function HRESULT(IConfigurationDataCollector *self, int16 network) put_QueryNetworkAdapters;
+				public new function HRESULT(IConfigurationDataCollector *self, SAFEARRAY** query) get_RegistryKeys;
+				public new function HRESULT(IConfigurationDataCollector *self, SAFEARRAY* query) put_RegistryKeys;
+				public new function HRESULT(IConfigurationDataCollector *self, uint32* depth) get_RegistryMaxRecursiveDepth;
+				public new function HRESULT(IConfigurationDataCollector *self, uint32 depth) put_RegistryMaxRecursiveDepth;
+				public new function HRESULT(IConfigurationDataCollector *self, BSTR* FileName) get_SystemStateFile;
+				public new function HRESULT(IConfigurationDataCollector *self, BSTR FileName) put_SystemStateFile;
 			}
 		}
 		[CRepr]
@@ -1318,26 +2102,91 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x03837516, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_AlertThresholds(SAFEARRAY** alerts) mut
+			{
+				return VT.get_AlertThresholds(&this, alerts);
+			}
+			public HRESULT put_AlertThresholds(SAFEARRAY* alerts) mut
+			{
+				return VT.put_AlertThresholds(&this, alerts);
+			}
+			public HRESULT get_EventLog(int16* log) mut
+			{
+				return VT.get_EventLog(&this, log);
+			}
+			public HRESULT put_EventLog(int16 log) mut
+			{
+				return VT.put_EventLog(&this, log);
+			}
+			public HRESULT get_SampleInterval(uint32* interval) mut
+			{
+				return VT.get_SampleInterval(&this, interval);
+			}
+			public HRESULT put_SampleInterval(uint32 interval) mut
+			{
+				return VT.put_SampleInterval(&this, interval);
+			}
+			public HRESULT get_Task(BSTR* task) mut
+			{
+				return VT.get_Task(&this, task);
+			}
+			public HRESULT put_Task(BSTR task) mut
+			{
+				return VT.put_Task(&this, task);
+			}
+			public HRESULT get_TaskRunAsSelf(int16* RunAsSelf) mut
+			{
+				return VT.get_TaskRunAsSelf(&this, RunAsSelf);
+			}
+			public HRESULT put_TaskRunAsSelf(int16 RunAsSelf) mut
+			{
+				return VT.put_TaskRunAsSelf(&this, RunAsSelf);
+			}
+			public HRESULT get_TaskArguments(BSTR* task) mut
+			{
+				return VT.get_TaskArguments(&this, task);
+			}
+			public HRESULT put_TaskArguments(BSTR task) mut
+			{
+				return VT.put_TaskArguments(&this, task);
+			}
+			public HRESULT get_TaskUserTextArguments(BSTR* task) mut
+			{
+				return VT.get_TaskUserTextArguments(&this, task);
+			}
+			public HRESULT put_TaskUserTextArguments(BSTR task) mut
+			{
+				return VT.put_TaskUserTextArguments(&this, task);
+			}
+			public HRESULT get_TriggerDataCollectorSet(BSTR* name) mut
+			{
+				return VT.get_TriggerDataCollectorSet(&this, name);
+			}
+			public HRESULT put_TriggerDataCollectorSet(BSTR name) mut
+			{
+				return VT.put_TriggerDataCollectorSet(&this, name);
+			}
 			[CRepr]
 			public struct VTable : IDataCollector.VTable
 			{
-				public function HRESULT(IAlertDataCollector *self, SAFEARRAY** alerts) get_AlertThresholds;
-				public function HRESULT(IAlertDataCollector *self, SAFEARRAY* alerts) put_AlertThresholds;
-				public function HRESULT(IAlertDataCollector *self, int16* log) get_EventLog;
-				public function HRESULT(IAlertDataCollector *self, int16 log) put_EventLog;
-				public function HRESULT(IAlertDataCollector *self, uint32* interval) get_SampleInterval;
-				public function HRESULT(IAlertDataCollector *self, uint32 interval) put_SampleInterval;
-				public function HRESULT(IAlertDataCollector *self, BSTR* task) get_Task;
-				public function HRESULT(IAlertDataCollector *self, BSTR task) put_Task;
-				public function HRESULT(IAlertDataCollector *self, int16* RunAsSelf) get_TaskRunAsSelf;
-				public function HRESULT(IAlertDataCollector *self, int16 RunAsSelf) put_TaskRunAsSelf;
-				public function HRESULT(IAlertDataCollector *self, BSTR* task) get_TaskArguments;
-				public function HRESULT(IAlertDataCollector *self, BSTR task) put_TaskArguments;
-				public function HRESULT(IAlertDataCollector *self, BSTR* task) get_TaskUserTextArguments;
-				public function HRESULT(IAlertDataCollector *self, BSTR task) put_TaskUserTextArguments;
-				public function HRESULT(IAlertDataCollector *self, BSTR* name) get_TriggerDataCollectorSet;
-				public function HRESULT(IAlertDataCollector *self, BSTR name) put_TriggerDataCollectorSet;
+				public new function HRESULT(IAlertDataCollector *self, SAFEARRAY** alerts) get_AlertThresholds;
+				public new function HRESULT(IAlertDataCollector *self, SAFEARRAY* alerts) put_AlertThresholds;
+				public new function HRESULT(IAlertDataCollector *self, int16* log) get_EventLog;
+				public new function HRESULT(IAlertDataCollector *self, int16 log) put_EventLog;
+				public new function HRESULT(IAlertDataCollector *self, uint32* interval) get_SampleInterval;
+				public new function HRESULT(IAlertDataCollector *self, uint32 interval) put_SampleInterval;
+				public new function HRESULT(IAlertDataCollector *self, BSTR* task) get_Task;
+				public new function HRESULT(IAlertDataCollector *self, BSTR task) put_Task;
+				public new function HRESULT(IAlertDataCollector *self, int16* RunAsSelf) get_TaskRunAsSelf;
+				public new function HRESULT(IAlertDataCollector *self, int16 RunAsSelf) put_TaskRunAsSelf;
+				public new function HRESULT(IAlertDataCollector *self, BSTR* task) get_TaskArguments;
+				public new function HRESULT(IAlertDataCollector *self, BSTR task) put_TaskArguments;
+				public new function HRESULT(IAlertDataCollector *self, BSTR* task) get_TaskUserTextArguments;
+				public new function HRESULT(IAlertDataCollector *self, BSTR task) put_TaskUserTextArguments;
+				public new function HRESULT(IAlertDataCollector *self, BSTR* name) get_TriggerDataCollectorSet;
+				public new function HRESULT(IAlertDataCollector *self, BSTR name) put_TriggerDataCollectorSet;
 			}
 		}
 		[CRepr]
@@ -1345,24 +2194,81 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0383751a, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_LogApiNamesOnly(int16* logapinames) mut
+			{
+				return VT.get_LogApiNamesOnly(&this, logapinames);
+			}
+			public HRESULT put_LogApiNamesOnly(int16 logapinames) mut
+			{
+				return VT.put_LogApiNamesOnly(&this, logapinames);
+			}
+			public HRESULT get_LogApisRecursively(int16* logrecursively) mut
+			{
+				return VT.get_LogApisRecursively(&this, logrecursively);
+			}
+			public HRESULT put_LogApisRecursively(int16 logrecursively) mut
+			{
+				return VT.put_LogApisRecursively(&this, logrecursively);
+			}
+			public HRESULT get_ExePath(BSTR* exepath) mut
+			{
+				return VT.get_ExePath(&this, exepath);
+			}
+			public HRESULT put_ExePath(BSTR exepath) mut
+			{
+				return VT.put_ExePath(&this, exepath);
+			}
+			public HRESULT get_LogFilePath(BSTR* logfilepath) mut
+			{
+				return VT.get_LogFilePath(&this, logfilepath);
+			}
+			public HRESULT put_LogFilePath(BSTR logfilepath) mut
+			{
+				return VT.put_LogFilePath(&this, logfilepath);
+			}
+			public HRESULT get_IncludeModules(SAFEARRAY** includemodules) mut
+			{
+				return VT.get_IncludeModules(&this, includemodules);
+			}
+			public HRESULT put_IncludeModules(SAFEARRAY* includemodules) mut
+			{
+				return VT.put_IncludeModules(&this, includemodules);
+			}
+			public HRESULT get_IncludeApis(SAFEARRAY** includeapis) mut
+			{
+				return VT.get_IncludeApis(&this, includeapis);
+			}
+			public HRESULT put_IncludeApis(SAFEARRAY* includeapis) mut
+			{
+				return VT.put_IncludeApis(&this, includeapis);
+			}
+			public HRESULT get_ExcludeApis(SAFEARRAY** excludeapis) mut
+			{
+				return VT.get_ExcludeApis(&this, excludeapis);
+			}
+			public HRESULT put_ExcludeApis(SAFEARRAY* excludeapis) mut
+			{
+				return VT.put_ExcludeApis(&this, excludeapis);
+			}
 			[CRepr]
 			public struct VTable : IDataCollector.VTable
 			{
-				public function HRESULT(IApiTracingDataCollector *self, int16* logapinames) get_LogApiNamesOnly;
-				public function HRESULT(IApiTracingDataCollector *self, int16 logapinames) put_LogApiNamesOnly;
-				public function HRESULT(IApiTracingDataCollector *self, int16* logrecursively) get_LogApisRecursively;
-				public function HRESULT(IApiTracingDataCollector *self, int16 logrecursively) put_LogApisRecursively;
-				public function HRESULT(IApiTracingDataCollector *self, BSTR* exepath) get_ExePath;
-				public function HRESULT(IApiTracingDataCollector *self, BSTR exepath) put_ExePath;
-				public function HRESULT(IApiTracingDataCollector *self, BSTR* logfilepath) get_LogFilePath;
-				public function HRESULT(IApiTracingDataCollector *self, BSTR logfilepath) put_LogFilePath;
-				public function HRESULT(IApiTracingDataCollector *self, SAFEARRAY** includemodules) get_IncludeModules;
-				public function HRESULT(IApiTracingDataCollector *self, SAFEARRAY* includemodules) put_IncludeModules;
-				public function HRESULT(IApiTracingDataCollector *self, SAFEARRAY** includeapis) get_IncludeApis;
-				public function HRESULT(IApiTracingDataCollector *self, SAFEARRAY* includeapis) put_IncludeApis;
-				public function HRESULT(IApiTracingDataCollector *self, SAFEARRAY** excludeapis) get_ExcludeApis;
-				public function HRESULT(IApiTracingDataCollector *self, SAFEARRAY* excludeapis) put_ExcludeApis;
+				public new function HRESULT(IApiTracingDataCollector *self, int16* logapinames) get_LogApiNamesOnly;
+				public new function HRESULT(IApiTracingDataCollector *self, int16 logapinames) put_LogApiNamesOnly;
+				public new function HRESULT(IApiTracingDataCollector *self, int16* logrecursively) get_LogApisRecursively;
+				public new function HRESULT(IApiTracingDataCollector *self, int16 logrecursively) put_LogApisRecursively;
+				public new function HRESULT(IApiTracingDataCollector *self, BSTR* exepath) get_ExePath;
+				public new function HRESULT(IApiTracingDataCollector *self, BSTR exepath) put_ExePath;
+				public new function HRESULT(IApiTracingDataCollector *self, BSTR* logfilepath) get_LogFilePath;
+				public new function HRESULT(IApiTracingDataCollector *self, BSTR logfilepath) put_LogFilePath;
+				public new function HRESULT(IApiTracingDataCollector *self, SAFEARRAY** includemodules) get_IncludeModules;
+				public new function HRESULT(IApiTracingDataCollector *self, SAFEARRAY* includemodules) put_IncludeModules;
+				public new function HRESULT(IApiTracingDataCollector *self, SAFEARRAY** includeapis) get_IncludeApis;
+				public new function HRESULT(IApiTracingDataCollector *self, SAFEARRAY* includeapis) put_IncludeApis;
+				public new function HRESULT(IApiTracingDataCollector *self, SAFEARRAY** excludeapis) get_ExcludeApis;
+				public new function HRESULT(IApiTracingDataCollector *self, SAFEARRAY* excludeapis) put_ExcludeApis;
 			}
 		}
 		[CRepr]
@@ -1370,19 +2276,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x03837502, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* retVal) mut
+			{
+				return VT.get_Count(&this, retVal);
+			}
+			public HRESULT get_Item(VARIANT index, IDataCollector** collector) mut
+			{
+				return VT.get_Item(&this, index, collector);
+			}
+			public HRESULT get__NewEnum(IUnknown** retVal) mut
+			{
+				return VT.get__NewEnum(&this, retVal);
+			}
+			public HRESULT Add(IDataCollector* collector) mut
+			{
+				return VT.Add(&this, collector);
+			}
+			public HRESULT Remove(VARIANT collector) mut
+			{
+				return VT.Remove(&this, collector);
+			}
+			public HRESULT Clear() mut
+			{
+				return VT.Clear(&this);
+			}
+			public HRESULT AddRange(IDataCollectorCollection* collectors) mut
+			{
+				return VT.AddRange(&this, collectors);
+			}
+			public HRESULT CreateDataCollectorFromXml(BSTR bstrXml, IValueMap** pValidation, IDataCollector** pCollector) mut
+			{
+				return VT.CreateDataCollectorFromXml(&this, bstrXml, pValidation, pCollector);
+			}
+			public HRESULT CreateDataCollector(DataCollectorType Type, IDataCollector** Collector) mut
+			{
+				return VT.CreateDataCollector(&this, Type, Collector);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IDataCollectorCollection *self, int32* retVal) get_Count;
-				public function HRESULT(IDataCollectorCollection *self, VARIANT index, IDataCollector** collector) get_Item;
-				public function HRESULT(IDataCollectorCollection *self, IUnknown** retVal) get__NewEnum;
-				public function HRESULT(IDataCollectorCollection *self, IDataCollector* collector) Add;
-				public function HRESULT(IDataCollectorCollection *self, VARIANT collector) Remove;
-				public function HRESULT(IDataCollectorCollection *self) Clear;
-				public function HRESULT(IDataCollectorCollection *self, IDataCollectorCollection* collectors) AddRange;
-				public function HRESULT(IDataCollectorCollection *self, BSTR bstrXml, IValueMap** pValidation, IDataCollector** pCollector) CreateDataCollectorFromXml;
-				public function HRESULT(IDataCollectorCollection *self, DataCollectorType Type, IDataCollector** Collector) CreateDataCollector;
+				public new function HRESULT(IDataCollectorCollection *self, int32* retVal) get_Count;
+				public new function HRESULT(IDataCollectorCollection *self, VARIANT index, IDataCollector** collector) get_Item;
+				public new function HRESULT(IDataCollectorCollection *self, IUnknown** retVal) get__NewEnum;
+				public new function HRESULT(IDataCollectorCollection *self, IDataCollector* collector) Add;
+				public new function HRESULT(IDataCollectorCollection *self, VARIANT collector) Remove;
+				public new function HRESULT(IDataCollectorCollection *self) Clear;
+				public new function HRESULT(IDataCollectorCollection *self, IDataCollectorCollection* collectors) AddRange;
+				public new function HRESULT(IDataCollectorCollection *self, BSTR bstrXml, IValueMap** pValidation, IDataCollector** pCollector) CreateDataCollectorFromXml;
+				public new function HRESULT(IDataCollectorCollection *self, DataCollectorType Type, IDataCollector** Collector) CreateDataCollector;
 			}
 		}
 		[CRepr]
@@ -1390,18 +2333,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x03837524, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* retVal) mut
+			{
+				return VT.get_Count(&this, retVal);
+			}
+			public HRESULT get_Item(VARIANT index, IDataCollectorSet** set) mut
+			{
+				return VT.get_Item(&this, index, set);
+			}
+			public HRESULT get__NewEnum(IUnknown** retVal) mut
+			{
+				return VT.get__NewEnum(&this, retVal);
+			}
+			public HRESULT Add(IDataCollectorSet* set) mut
+			{
+				return VT.Add(&this, set);
+			}
+			public HRESULT Remove(VARIANT set) mut
+			{
+				return VT.Remove(&this, set);
+			}
+			public HRESULT Clear() mut
+			{
+				return VT.Clear(&this);
+			}
+			public HRESULT AddRange(IDataCollectorSetCollection* sets) mut
+			{
+				return VT.AddRange(&this, sets);
+			}
+			public HRESULT GetDataCollectorSets(BSTR server, BSTR filter) mut
+			{
+				return VT.GetDataCollectorSets(&this, server, filter);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IDataCollectorSetCollection *self, int32* retVal) get_Count;
-				public function HRESULT(IDataCollectorSetCollection *self, VARIANT index, IDataCollectorSet** set) get_Item;
-				public function HRESULT(IDataCollectorSetCollection *self, IUnknown** retVal) get__NewEnum;
-				public function HRESULT(IDataCollectorSetCollection *self, IDataCollectorSet* set) Add;
-				public function HRESULT(IDataCollectorSetCollection *self, VARIANT set) Remove;
-				public function HRESULT(IDataCollectorSetCollection *self) Clear;
-				public function HRESULT(IDataCollectorSetCollection *self, IDataCollectorSetCollection* sets) AddRange;
-				public function HRESULT(IDataCollectorSetCollection *self, BSTR server, BSTR filter) GetDataCollectorSets;
+				public new function HRESULT(IDataCollectorSetCollection *self, int32* retVal) get_Count;
+				public new function HRESULT(IDataCollectorSetCollection *self, VARIANT index, IDataCollectorSet** set) get_Item;
+				public new function HRESULT(IDataCollectorSetCollection *self, IUnknown** retVal) get__NewEnum;
+				public new function HRESULT(IDataCollectorSetCollection *self, IDataCollectorSet* set) Add;
+				public new function HRESULT(IDataCollectorSetCollection *self, VARIANT set) Remove;
+				public new function HRESULT(IDataCollectorSetCollection *self) Clear;
+				public new function HRESULT(IDataCollectorSetCollection *self, IDataCollectorSetCollection* sets) AddRange;
+				public new function HRESULT(IDataCollectorSetCollection *self, BSTR server, BSTR filter) GetDataCollectorSets;
 			}
 		}
 		[CRepr]
@@ -1409,29 +2385,106 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x03837512, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_DisplayName(BSTR* name) mut
+			{
+				return VT.get_DisplayName(&this, name);
+			}
+			public HRESULT put_DisplayName(BSTR name) mut
+			{
+				return VT.put_DisplayName(&this, name);
+			}
+			public HRESULT get_Guid(Guid* guid) mut
+			{
+				return VT.get_Guid(&this, guid);
+			}
+			public HRESULT put_Guid(Guid guid) mut
+			{
+				return VT.put_Guid(&this, guid);
+			}
+			public HRESULT get_Level(IValueMap** ppLevel) mut
+			{
+				return VT.get_Level(&this, ppLevel);
+			}
+			public HRESULT get_KeywordsAny(IValueMap** ppKeywords) mut
+			{
+				return VT.get_KeywordsAny(&this, ppKeywords);
+			}
+			public HRESULT get_KeywordsAll(IValueMap** ppKeywords) mut
+			{
+				return VT.get_KeywordsAll(&this, ppKeywords);
+			}
+			public HRESULT get_Properties(IValueMap** ppProperties) mut
+			{
+				return VT.get_Properties(&this, ppProperties);
+			}
+			public HRESULT get_FilterEnabled(int16* FilterEnabled) mut
+			{
+				return VT.get_FilterEnabled(&this, FilterEnabled);
+			}
+			public HRESULT put_FilterEnabled(int16 FilterEnabled) mut
+			{
+				return VT.put_FilterEnabled(&this, FilterEnabled);
+			}
+			public HRESULT get_FilterType(uint32* pulType) mut
+			{
+				return VT.get_FilterType(&this, pulType);
+			}
+			public HRESULT put_FilterType(uint32 ulType) mut
+			{
+				return VT.put_FilterType(&this, ulType);
+			}
+			public HRESULT get_FilterData(SAFEARRAY** ppData) mut
+			{
+				return VT.get_FilterData(&this, ppData);
+			}
+			public HRESULT put_FilterData(SAFEARRAY* pData) mut
+			{
+				return VT.put_FilterData(&this, pData);
+			}
+			public HRESULT Query(BSTR bstrName, BSTR bstrServer) mut
+			{
+				return VT.Query(&this, bstrName, bstrServer);
+			}
+			public HRESULT Resolve(IDispatch* pFrom) mut
+			{
+				return VT.Resolve(&this, pFrom);
+			}
+			public HRESULT SetSecurity(BSTR Sddl) mut
+			{
+				return VT.SetSecurity(&this, Sddl);
+			}
+			public HRESULT GetSecurity(uint32 SecurityInfo, BSTR* Sddl) mut
+			{
+				return VT.GetSecurity(&this, SecurityInfo, Sddl);
+			}
+			public HRESULT GetRegisteredProcesses(IValueMap** Processes) mut
+			{
+				return VT.GetRegisteredProcesses(&this, Processes);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ITraceDataProvider *self, BSTR* name) get_DisplayName;
-				public function HRESULT(ITraceDataProvider *self, BSTR name) put_DisplayName;
-				public function HRESULT(ITraceDataProvider *self, Guid* guid) get_Guid;
-				public function HRESULT(ITraceDataProvider *self, Guid guid) put_Guid;
-				public function HRESULT(ITraceDataProvider *self, IValueMap** ppLevel) get_Level;
-				public function HRESULT(ITraceDataProvider *self, IValueMap** ppKeywords) get_KeywordsAny;
-				public function HRESULT(ITraceDataProvider *self, IValueMap** ppKeywords) get_KeywordsAll;
-				public function HRESULT(ITraceDataProvider *self, IValueMap** ppProperties) get_Properties;
-				public function HRESULT(ITraceDataProvider *self, int16* FilterEnabled) get_FilterEnabled;
-				public function HRESULT(ITraceDataProvider *self, int16 FilterEnabled) put_FilterEnabled;
-				public function HRESULT(ITraceDataProvider *self, uint32* pulType) get_FilterType;
-				public function HRESULT(ITraceDataProvider *self, uint32 ulType) put_FilterType;
-				public function HRESULT(ITraceDataProvider *self, SAFEARRAY** ppData) get_FilterData;
-				public function HRESULT(ITraceDataProvider *self, SAFEARRAY* pData) put_FilterData;
-				public function HRESULT(ITraceDataProvider *self, BSTR bstrName, BSTR bstrServer) Query;
-				public function HRESULT(ITraceDataProvider *self, IDispatch* pFrom) Resolve;
-				public function HRESULT(ITraceDataProvider *self, BSTR Sddl) SetSecurity;
-				public function HRESULT(ITraceDataProvider *self, uint32 SecurityInfo, BSTR* Sddl) GetSecurity;
-				public function HRESULT(ITraceDataProvider *self, IValueMap** Processes) GetRegisteredProcesses;
+				public new function HRESULT(ITraceDataProvider *self, BSTR* name) get_DisplayName;
+				public new function HRESULT(ITraceDataProvider *self, BSTR name) put_DisplayName;
+				public new function HRESULT(ITraceDataProvider *self, Guid* guid) get_Guid;
+				public new function HRESULT(ITraceDataProvider *self, Guid guid) put_Guid;
+				public new function HRESULT(ITraceDataProvider *self, IValueMap** ppLevel) get_Level;
+				public new function HRESULT(ITraceDataProvider *self, IValueMap** ppKeywords) get_KeywordsAny;
+				public new function HRESULT(ITraceDataProvider *self, IValueMap** ppKeywords) get_KeywordsAll;
+				public new function HRESULT(ITraceDataProvider *self, IValueMap** ppProperties) get_Properties;
+				public new function HRESULT(ITraceDataProvider *self, int16* FilterEnabled) get_FilterEnabled;
+				public new function HRESULT(ITraceDataProvider *self, int16 FilterEnabled) put_FilterEnabled;
+				public new function HRESULT(ITraceDataProvider *self, uint32* pulType) get_FilterType;
+				public new function HRESULT(ITraceDataProvider *self, uint32 ulType) put_FilterType;
+				public new function HRESULT(ITraceDataProvider *self, SAFEARRAY** ppData) get_FilterData;
+				public new function HRESULT(ITraceDataProvider *self, SAFEARRAY* pData) put_FilterData;
+				public new function HRESULT(ITraceDataProvider *self, BSTR bstrName, BSTR bstrServer) Query;
+				public new function HRESULT(ITraceDataProvider *self, IDispatch* pFrom) Resolve;
+				public new function HRESULT(ITraceDataProvider *self, BSTR Sddl) SetSecurity;
+				public new function HRESULT(ITraceDataProvider *self, uint32 SecurityInfo, BSTR* Sddl) GetSecurity;
+				public new function HRESULT(ITraceDataProvider *self, IValueMap** Processes) GetRegisteredProcesses;
 			}
 		}
 		[CRepr]
@@ -1439,20 +2492,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x03837510, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* retVal) mut
+			{
+				return VT.get_Count(&this, retVal);
+			}
+			public HRESULT get_Item(VARIANT index, ITraceDataProvider** ppProvider) mut
+			{
+				return VT.get_Item(&this, index, ppProvider);
+			}
+			public HRESULT get__NewEnum(IUnknown** retVal) mut
+			{
+				return VT.get__NewEnum(&this, retVal);
+			}
+			public HRESULT Add(ITraceDataProvider* pProvider) mut
+			{
+				return VT.Add(&this, pProvider);
+			}
+			public HRESULT Remove(VARIANT vProvider) mut
+			{
+				return VT.Remove(&this, vProvider);
+			}
+			public HRESULT Clear() mut
+			{
+				return VT.Clear(&this);
+			}
+			public HRESULT AddRange(ITraceDataProviderCollection* providers) mut
+			{
+				return VT.AddRange(&this, providers);
+			}
+			public HRESULT CreateTraceDataProvider(ITraceDataProvider** Provider) mut
+			{
+				return VT.CreateTraceDataProvider(&this, Provider);
+			}
+			public HRESULT GetTraceDataProviders(BSTR server) mut
+			{
+				return VT.GetTraceDataProviders(&this, server);
+			}
+			public HRESULT GetTraceDataProvidersByProcess(BSTR Server, uint32 Pid) mut
+			{
+				return VT.GetTraceDataProvidersByProcess(&this, Server, Pid);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ITraceDataProviderCollection *self, int32* retVal) get_Count;
-				public function HRESULT(ITraceDataProviderCollection *self, VARIANT index, ITraceDataProvider** ppProvider) get_Item;
-				public function HRESULT(ITraceDataProviderCollection *self, IUnknown** retVal) get__NewEnum;
-				public function HRESULT(ITraceDataProviderCollection *self, ITraceDataProvider* pProvider) Add;
-				public function HRESULT(ITraceDataProviderCollection *self, VARIANT vProvider) Remove;
-				public function HRESULT(ITraceDataProviderCollection *self) Clear;
-				public function HRESULT(ITraceDataProviderCollection *self, ITraceDataProviderCollection* providers) AddRange;
-				public function HRESULT(ITraceDataProviderCollection *self, ITraceDataProvider** Provider) CreateTraceDataProvider;
-				public function HRESULT(ITraceDataProviderCollection *self, BSTR server) GetTraceDataProviders;
-				public function HRESULT(ITraceDataProviderCollection *self, BSTR Server, uint32 Pid) GetTraceDataProvidersByProcess;
+				public new function HRESULT(ITraceDataProviderCollection *self, int32* retVal) get_Count;
+				public new function HRESULT(ITraceDataProviderCollection *self, VARIANT index, ITraceDataProvider** ppProvider) get_Item;
+				public new function HRESULT(ITraceDataProviderCollection *self, IUnknown** retVal) get__NewEnum;
+				public new function HRESULT(ITraceDataProviderCollection *self, ITraceDataProvider* pProvider) Add;
+				public new function HRESULT(ITraceDataProviderCollection *self, VARIANT vProvider) Remove;
+				public new function HRESULT(ITraceDataProviderCollection *self) Clear;
+				public new function HRESULT(ITraceDataProviderCollection *self, ITraceDataProviderCollection* providers) AddRange;
+				public new function HRESULT(ITraceDataProviderCollection *self, ITraceDataProvider** Provider) CreateTraceDataProvider;
+				public new function HRESULT(ITraceDataProviderCollection *self, BSTR server) GetTraceDataProviders;
+				public new function HRESULT(ITraceDataProviderCollection *self, BSTR Server, uint32 Pid) GetTraceDataProvidersByProcess;
 			}
 		}
 		[CRepr]
@@ -1460,18 +2554,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0383753a, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_StartDate(VARIANT* start) mut
+			{
+				return VT.get_StartDate(&this, start);
+			}
+			public HRESULT put_StartDate(VARIANT start) mut
+			{
+				return VT.put_StartDate(&this, start);
+			}
+			public HRESULT get_EndDate(VARIANT* end) mut
+			{
+				return VT.get_EndDate(&this, end);
+			}
+			public HRESULT put_EndDate(VARIANT end) mut
+			{
+				return VT.put_EndDate(&this, end);
+			}
+			public HRESULT get_StartTime(VARIANT* start) mut
+			{
+				return VT.get_StartTime(&this, start);
+			}
+			public HRESULT put_StartTime(VARIANT start) mut
+			{
+				return VT.put_StartTime(&this, start);
+			}
+			public HRESULT get_Days(WeekDays* days) mut
+			{
+				return VT.get_Days(&this, days);
+			}
+			public HRESULT put_Days(WeekDays days) mut
+			{
+				return VT.put_Days(&this, days);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISchedule *self, VARIANT* start) get_StartDate;
-				public function HRESULT(ISchedule *self, VARIANT start) put_StartDate;
-				public function HRESULT(ISchedule *self, VARIANT* end) get_EndDate;
-				public function HRESULT(ISchedule *self, VARIANT end) put_EndDate;
-				public function HRESULT(ISchedule *self, VARIANT* start) get_StartTime;
-				public function HRESULT(ISchedule *self, VARIANT start) put_StartTime;
-				public function HRESULT(ISchedule *self, WeekDays* days) get_Days;
-				public function HRESULT(ISchedule *self, WeekDays days) put_Days;
+				public new function HRESULT(ISchedule *self, VARIANT* start) get_StartDate;
+				public new function HRESULT(ISchedule *self, VARIANT start) put_StartDate;
+				public new function HRESULT(ISchedule *self, VARIANT* end) get_EndDate;
+				public new function HRESULT(ISchedule *self, VARIANT end) put_EndDate;
+				public new function HRESULT(ISchedule *self, VARIANT* start) get_StartTime;
+				public new function HRESULT(ISchedule *self, VARIANT start) put_StartTime;
+				public new function HRESULT(ISchedule *self, WeekDays* days) get_Days;
+				public new function HRESULT(ISchedule *self, WeekDays days) put_Days;
 			}
 		}
 		[CRepr]
@@ -1479,18 +2606,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0383753d, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* retVal) mut
+			{
+				return VT.get_Count(&this, retVal);
+			}
+			public HRESULT get_Item(VARIANT index, ISchedule** ppSchedule) mut
+			{
+				return VT.get_Item(&this, index, ppSchedule);
+			}
+			public HRESULT get__NewEnum(IUnknown** ienum) mut
+			{
+				return VT.get__NewEnum(&this, ienum);
+			}
+			public HRESULT Add(ISchedule* pSchedule) mut
+			{
+				return VT.Add(&this, pSchedule);
+			}
+			public HRESULT Remove(VARIANT vSchedule) mut
+			{
+				return VT.Remove(&this, vSchedule);
+			}
+			public HRESULT Clear() mut
+			{
+				return VT.Clear(&this);
+			}
+			public HRESULT AddRange(IScheduleCollection* pSchedules) mut
+			{
+				return VT.AddRange(&this, pSchedules);
+			}
+			public HRESULT CreateSchedule(ISchedule** Schedule) mut
+			{
+				return VT.CreateSchedule(&this, Schedule);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IScheduleCollection *self, int32* retVal) get_Count;
-				public function HRESULT(IScheduleCollection *self, VARIANT index, ISchedule** ppSchedule) get_Item;
-				public function HRESULT(IScheduleCollection *self, IUnknown** ienum) get__NewEnum;
-				public function HRESULT(IScheduleCollection *self, ISchedule* pSchedule) Add;
-				public function HRESULT(IScheduleCollection *self, VARIANT vSchedule) Remove;
-				public function HRESULT(IScheduleCollection *self) Clear;
-				public function HRESULT(IScheduleCollection *self, IScheduleCollection* pSchedules) AddRange;
-				public function HRESULT(IScheduleCollection *self, ISchedule** Schedule) CreateSchedule;
+				public new function HRESULT(IScheduleCollection *self, int32* retVal) get_Count;
+				public new function HRESULT(IScheduleCollection *self, VARIANT index, ISchedule** ppSchedule) get_Item;
+				public new function HRESULT(IScheduleCollection *self, IUnknown** ienum) get__NewEnum;
+				public new function HRESULT(IScheduleCollection *self, ISchedule* pSchedule) Add;
+				public new function HRESULT(IScheduleCollection *self, VARIANT vSchedule) Remove;
+				public new function HRESULT(IScheduleCollection *self) Clear;
+				public new function HRESULT(IScheduleCollection *self, IScheduleCollection* pSchedules) AddRange;
+				public new function HRESULT(IScheduleCollection *self, ISchedule** Schedule) CreateSchedule;
 			}
 		}
 		[CRepr]
@@ -1498,20 +2658,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x03837533, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Description(BSTR* description) mut
+			{
+				return VT.get_Description(&this, description);
+			}
+			public HRESULT put_Description(BSTR description) mut
+			{
+				return VT.put_Description(&this, description);
+			}
+			public HRESULT get_Enabled(int16* enabled) mut
+			{
+				return VT.get_Enabled(&this, enabled);
+			}
+			public HRESULT put_Enabled(int16 enabled) mut
+			{
+				return VT.put_Enabled(&this, enabled);
+			}
+			public HRESULT get_Key(BSTR* key) mut
+			{
+				return VT.get_Key(&this, key);
+			}
+			public HRESULT put_Key(BSTR key) mut
+			{
+				return VT.put_Key(&this, key);
+			}
+			public HRESULT get_Value(VARIANT* Value) mut
+			{
+				return VT.get_Value(&this, Value);
+			}
+			public HRESULT put_Value(VARIANT Value) mut
+			{
+				return VT.put_Value(&this, Value);
+			}
+			public HRESULT get_ValueMapType(ValueMapType* type) mut
+			{
+				return VT.get_ValueMapType(&this, type);
+			}
+			public HRESULT put_ValueMapType(ValueMapType type) mut
+			{
+				return VT.put_ValueMapType(&this, type);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IValueMapItem *self, BSTR* description) get_Description;
-				public function HRESULT(IValueMapItem *self, BSTR description) put_Description;
-				public function HRESULT(IValueMapItem *self, int16* enabled) get_Enabled;
-				public function HRESULT(IValueMapItem *self, int16 enabled) put_Enabled;
-				public function HRESULT(IValueMapItem *self, BSTR* key) get_Key;
-				public function HRESULT(IValueMapItem *self, BSTR key) put_Key;
-				public function HRESULT(IValueMapItem *self, VARIANT* Value) get_Value;
-				public function HRESULT(IValueMapItem *self, VARIANT Value) put_Value;
-				public function HRESULT(IValueMapItem *self, ValueMapType* type) get_ValueMapType;
-				public function HRESULT(IValueMapItem *self, ValueMapType type) put_ValueMapType;
+				public new function HRESULT(IValueMapItem *self, BSTR* description) get_Description;
+				public new function HRESULT(IValueMapItem *self, BSTR description) put_Description;
+				public new function HRESULT(IValueMapItem *self, int16* enabled) get_Enabled;
+				public new function HRESULT(IValueMapItem *self, int16 enabled) put_Enabled;
+				public new function HRESULT(IValueMapItem *self, BSTR* key) get_Key;
+				public new function HRESULT(IValueMapItem *self, BSTR key) put_Key;
+				public new function HRESULT(IValueMapItem *self, VARIANT* Value) get_Value;
+				public new function HRESULT(IValueMapItem *self, VARIANT Value) put_Value;
+				public new function HRESULT(IValueMapItem *self, ValueMapType* type) get_ValueMapType;
+				public new function HRESULT(IValueMapItem *self, ValueMapType type) put_ValueMapType;
 			}
 		}
 		[CRepr]
@@ -1519,24 +2720,81 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x03837534, 0x098b, 0x11d8, 0x94, 0x14, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* retVal) mut
+			{
+				return VT.get_Count(&this, retVal);
+			}
+			public HRESULT get_Item(VARIANT index, IValueMapItem** value) mut
+			{
+				return VT.get_Item(&this, index, value);
+			}
+			public HRESULT get__NewEnum(IUnknown** retVal) mut
+			{
+				return VT.get__NewEnum(&this, retVal);
+			}
+			public HRESULT get_Description(BSTR* description) mut
+			{
+				return VT.get_Description(&this, description);
+			}
+			public HRESULT put_Description(BSTR description) mut
+			{
+				return VT.put_Description(&this, description);
+			}
+			public HRESULT get_Value(VARIANT* Value) mut
+			{
+				return VT.get_Value(&this, Value);
+			}
+			public HRESULT put_Value(VARIANT Value) mut
+			{
+				return VT.put_Value(&this, Value);
+			}
+			public HRESULT get_ValueMapType(ValueMapType* type) mut
+			{
+				return VT.get_ValueMapType(&this, type);
+			}
+			public HRESULT put_ValueMapType(ValueMapType type) mut
+			{
+				return VT.put_ValueMapType(&this, type);
+			}
+			public HRESULT Add(VARIANT value) mut
+			{
+				return VT.Add(&this, value);
+			}
+			public HRESULT Remove(VARIANT value) mut
+			{
+				return VT.Remove(&this, value);
+			}
+			public HRESULT Clear() mut
+			{
+				return VT.Clear(&this);
+			}
+			public HRESULT AddRange(IValueMap* map) mut
+			{
+				return VT.AddRange(&this, map);
+			}
+			public HRESULT CreateValueMapItem(IValueMapItem** Item) mut
+			{
+				return VT.CreateValueMapItem(&this, Item);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IValueMap *self, int32* retVal) get_Count;
-				public function HRESULT(IValueMap *self, VARIANT index, IValueMapItem** value) get_Item;
-				public function HRESULT(IValueMap *self, IUnknown** retVal) get__NewEnum;
-				public function HRESULT(IValueMap *self, BSTR* description) get_Description;
-				public function HRESULT(IValueMap *self, BSTR description) put_Description;
-				public function HRESULT(IValueMap *self, VARIANT* Value) get_Value;
-				public function HRESULT(IValueMap *self, VARIANT Value) put_Value;
-				public function HRESULT(IValueMap *self, ValueMapType* type) get_ValueMapType;
-				public function HRESULT(IValueMap *self, ValueMapType type) put_ValueMapType;
-				public function HRESULT(IValueMap *self, VARIANT value) Add;
-				public function HRESULT(IValueMap *self, VARIANT value) Remove;
-				public function HRESULT(IValueMap *self) Clear;
-				public function HRESULT(IValueMap *self, IValueMap* map) AddRange;
-				public function HRESULT(IValueMap *self, IValueMapItem** Item) CreateValueMapItem;
+				public new function HRESULT(IValueMap *self, int32* retVal) get_Count;
+				public new function HRESULT(IValueMap *self, VARIANT index, IValueMapItem** value) get_Item;
+				public new function HRESULT(IValueMap *self, IUnknown** retVal) get__NewEnum;
+				public new function HRESULT(IValueMap *self, BSTR* description) get_Description;
+				public new function HRESULT(IValueMap *self, BSTR description) put_Description;
+				public new function HRESULT(IValueMap *self, VARIANT* Value) get_Value;
+				public new function HRESULT(IValueMap *self, VARIANT Value) put_Value;
+				public new function HRESULT(IValueMap *self, ValueMapType* type) get_ValueMapType;
+				public new function HRESULT(IValueMap *self, ValueMapType type) put_ValueMapType;
+				public new function HRESULT(IValueMap *self, VARIANT value) Add;
+				public new function HRESULT(IValueMap *self, VARIANT value) Remove;
+				public new function HRESULT(IValueMap *self) Clear;
+				public new function HRESULT(IValueMap *self, IValueMap* map) AddRange;
+				public new function HRESULT(IValueMap *self, IValueMapItem** Item) CreateValueMapItem;
 			}
 		}
 		[CRepr]
@@ -1544,22 +2802,71 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x771a9520, 0xee28, 0x11ce, 0x94, 0x1e, 0x00, 0x80, 0x29, 0x00, 0x43, 0x47);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Value(double* pdblValue) mut
+			{
+				return VT.get_Value(&this, pdblValue);
+			}
+			public HRESULT put_Color(uint32 Color) mut
+			{
+				return VT.put_Color(&this, Color);
+			}
+			public HRESULT get_Color(uint32* pColor) mut
+			{
+				return VT.get_Color(&this, pColor);
+			}
+			public HRESULT put_Width(int32 iWidth) mut
+			{
+				return VT.put_Width(&this, iWidth);
+			}
+			public HRESULT get_Width(int32* piValue) mut
+			{
+				return VT.get_Width(&this, piValue);
+			}
+			public HRESULT put_LineStyle(int32 iLineStyle) mut
+			{
+				return VT.put_LineStyle(&this, iLineStyle);
+			}
+			public HRESULT get_LineStyle(int32* piValue) mut
+			{
+				return VT.get_LineStyle(&this, piValue);
+			}
+			public HRESULT put_ScaleFactor(int32 iScale) mut
+			{
+				return VT.put_ScaleFactor(&this, iScale);
+			}
+			public HRESULT get_ScaleFactor(int32* piValue) mut
+			{
+				return VT.get_ScaleFactor(&this, piValue);
+			}
+			public HRESULT get_Path(BSTR* pstrValue) mut
+			{
+				return VT.get_Path(&this, pstrValue);
+			}
+			public HRESULT GetValue(double* Value, int32* Status) mut
+			{
+				return VT.GetValue(&this, Value, Status);
+			}
+			public HRESULT GetStatistics(double* Max, double* Min, double* Avg, int32* Status) mut
+			{
+				return VT.GetStatistics(&this, Max, Min, Avg, Status);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ICounterItem *self, double* pdblValue) get_Value;
-				public function HRESULT(ICounterItem *self, uint32 Color) put_Color;
-				public function HRESULT(ICounterItem *self, uint32* pColor) get_Color;
-				public function HRESULT(ICounterItem *self, int32 iWidth) put_Width;
-				public function HRESULT(ICounterItem *self, int32* piValue) get_Width;
-				public function HRESULT(ICounterItem *self, int32 iLineStyle) put_LineStyle;
-				public function HRESULT(ICounterItem *self, int32* piValue) get_LineStyle;
-				public function HRESULT(ICounterItem *self, int32 iScale) put_ScaleFactor;
-				public function HRESULT(ICounterItem *self, int32* piValue) get_ScaleFactor;
-				public function HRESULT(ICounterItem *self, BSTR* pstrValue) get_Path;
-				public function HRESULT(ICounterItem *self, double* Value, int32* Status) GetValue;
-				public function HRESULT(ICounterItem *self, double* Max, double* Min, double* Avg, int32* Status) GetStatistics;
+				public new function HRESULT(ICounterItem *self, double* pdblValue) get_Value;
+				public new function HRESULT(ICounterItem *self, uint32 Color) put_Color;
+				public new function HRESULT(ICounterItem *self, uint32* pColor) get_Color;
+				public new function HRESULT(ICounterItem *self, int32 iWidth) put_Width;
+				public new function HRESULT(ICounterItem *self, int32* piValue) get_Width;
+				public new function HRESULT(ICounterItem *self, int32 iLineStyle) put_LineStyle;
+				public new function HRESULT(ICounterItem *self, int32* piValue) get_LineStyle;
+				public new function HRESULT(ICounterItem *self, int32 iScale) put_ScaleFactor;
+				public new function HRESULT(ICounterItem *self, int32* piValue) get_ScaleFactor;
+				public new function HRESULT(ICounterItem *self, BSTR* pstrValue) get_Path;
+				public new function HRESULT(ICounterItem *self, double* Value, int32* Status) GetValue;
+				public new function HRESULT(ICounterItem *self, double* Max, double* Min, double* Avg, int32* Status) GetStatistics;
 			}
 		}
 		[CRepr]
@@ -1567,15 +2874,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xeefcd4e1, 0xea1c, 0x4435, 0xb7, 0xf4, 0xe3, 0x41, 0xba, 0x03, 0xb4, 0xf9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT put_Selected(int16 bState) mut
+			{
+				return VT.put_Selected(&this, bState);
+			}
+			public HRESULT get_Selected(int16* pbState) mut
+			{
+				return VT.get_Selected(&this, pbState);
+			}
+			public HRESULT put_Visible(int16 bState) mut
+			{
+				return VT.put_Visible(&this, bState);
+			}
+			public HRESULT get_Visible(int16* pbState) mut
+			{
+				return VT.get_Visible(&this, pbState);
+			}
+			public HRESULT GetDataAt(int32 iIndex, SysmonDataType iWhich, VARIANT* pVariant) mut
+			{
+				return VT.GetDataAt(&this, iIndex, iWhich, pVariant);
+			}
 			[CRepr]
 			public struct VTable : ICounterItem.VTable
 			{
-				public function HRESULT(ICounterItem2 *self, int16 bState) put_Selected;
-				public function HRESULT(ICounterItem2 *self, int16* pbState) get_Selected;
-				public function HRESULT(ICounterItem2 *self, int16 bState) put_Visible;
-				public function HRESULT(ICounterItem2 *self, int16* pbState) get_Visible;
-				public function HRESULT(ICounterItem2 *self, int32 iIndex, SysmonDataType iWhich, VARIANT* pVariant) GetDataAt;
+				public new function HRESULT(ICounterItem2 *self, int16 bState) put_Selected;
+				public new function HRESULT(ICounterItem2 *self, int16* pbState) get_Selected;
+				public new function HRESULT(ICounterItem2 *self, int16 bState) put_Visible;
+				public new function HRESULT(ICounterItem2 *self, int16* pbState) get_Visible;
+				public new function HRESULT(ICounterItem2 *self, int32 iIndex, SysmonDataType iWhich, VARIANT* pVariant) GetDataAt;
 			}
 		}
 		[CRepr]
@@ -1583,27 +2911,96 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xde1a6b74, 0x9182, 0x4c41, 0x8e, 0x2c, 0x24, 0xc2, 0xcd, 0x30, 0xee, 0x83);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Value(double* pdblValue) mut
+			{
+				return VT.get_Value(&this, pdblValue);
+			}
+			public HRESULT put_Color(uint32 Color) mut
+			{
+				return VT.put_Color(&this, Color);
+			}
+			public HRESULT get_Color(uint32* pColor) mut
+			{
+				return VT.get_Color(&this, pColor);
+			}
+			public HRESULT put_Width(int32 iWidth) mut
+			{
+				return VT.put_Width(&this, iWidth);
+			}
+			public HRESULT get_Width(int32* piValue) mut
+			{
+				return VT.get_Width(&this, piValue);
+			}
+			public HRESULT put_LineStyle(int32 iLineStyle) mut
+			{
+				return VT.put_LineStyle(&this, iLineStyle);
+			}
+			public HRESULT get_LineStyle(int32* piValue) mut
+			{
+				return VT.get_LineStyle(&this, piValue);
+			}
+			public HRESULT put_ScaleFactor(int32 iScale) mut
+			{
+				return VT.put_ScaleFactor(&this, iScale);
+			}
+			public HRESULT get_ScaleFactor(int32* piValue) mut
+			{
+				return VT.get_ScaleFactor(&this, piValue);
+			}
+			public HRESULT get_Path(BSTR* pstrValue) mut
+			{
+				return VT.get_Path(&this, pstrValue);
+			}
+			public HRESULT GetValue(double* Value, int32* Status) mut
+			{
+				return VT.GetValue(&this, Value, Status);
+			}
+			public HRESULT GetStatistics(double* Max, double* Min, double* Avg, int32* Status) mut
+			{
+				return VT.GetStatistics(&this, Max, Min, Avg, Status);
+			}
+			public HRESULT put_Selected(int16 bState) mut
+			{
+				return VT.put_Selected(&this, bState);
+			}
+			public HRESULT get_Selected(int16* pbState) mut
+			{
+				return VT.get_Selected(&this, pbState);
+			}
+			public HRESULT put_Visible(int16 bState) mut
+			{
+				return VT.put_Visible(&this, bState);
+			}
+			public HRESULT get_Visible(int16* pbState) mut
+			{
+				return VT.get_Visible(&this, pbState);
+			}
+			public HRESULT GetDataAt(int32 iIndex, SysmonDataType iWhich, VARIANT* pVariant) mut
+			{
+				return VT.GetDataAt(&this, iIndex, iWhich, pVariant);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(_ICounterItemUnion *self, double* pdblValue) get_Value;
-				public function HRESULT(_ICounterItemUnion *self, uint32 Color) put_Color;
-				public function HRESULT(_ICounterItemUnion *self, uint32* pColor) get_Color;
-				public function HRESULT(_ICounterItemUnion *self, int32 iWidth) put_Width;
-				public function HRESULT(_ICounterItemUnion *self, int32* piValue) get_Width;
-				public function HRESULT(_ICounterItemUnion *self, int32 iLineStyle) put_LineStyle;
-				public function HRESULT(_ICounterItemUnion *self, int32* piValue) get_LineStyle;
-				public function HRESULT(_ICounterItemUnion *self, int32 iScale) put_ScaleFactor;
-				public function HRESULT(_ICounterItemUnion *self, int32* piValue) get_ScaleFactor;
-				public function HRESULT(_ICounterItemUnion *self, BSTR* pstrValue) get_Path;
-				public function HRESULT(_ICounterItemUnion *self, double* Value, int32* Status) GetValue;
-				public function HRESULT(_ICounterItemUnion *self, double* Max, double* Min, double* Avg, int32* Status) GetStatistics;
-				public function HRESULT(_ICounterItemUnion *self, int16 bState) put_Selected;
-				public function HRESULT(_ICounterItemUnion *self, int16* pbState) get_Selected;
-				public function HRESULT(_ICounterItemUnion *self, int16 bState) put_Visible;
-				public function HRESULT(_ICounterItemUnion *self, int16* pbState) get_Visible;
-				public function HRESULT(_ICounterItemUnion *self, int32 iIndex, SysmonDataType iWhich, VARIANT* pVariant) GetDataAt;
+				public new function HRESULT(_ICounterItemUnion *self, double* pdblValue) get_Value;
+				public new function HRESULT(_ICounterItemUnion *self, uint32 Color) put_Color;
+				public new function HRESULT(_ICounterItemUnion *self, uint32* pColor) get_Color;
+				public new function HRESULT(_ICounterItemUnion *self, int32 iWidth) put_Width;
+				public new function HRESULT(_ICounterItemUnion *self, int32* piValue) get_Width;
+				public new function HRESULT(_ICounterItemUnion *self, int32 iLineStyle) put_LineStyle;
+				public new function HRESULT(_ICounterItemUnion *self, int32* piValue) get_LineStyle;
+				public new function HRESULT(_ICounterItemUnion *self, int32 iScale) put_ScaleFactor;
+				public new function HRESULT(_ICounterItemUnion *self, int32* piValue) get_ScaleFactor;
+				public new function HRESULT(_ICounterItemUnion *self, BSTR* pstrValue) get_Path;
+				public new function HRESULT(_ICounterItemUnion *self, double* Value, int32* Status) GetValue;
+				public new function HRESULT(_ICounterItemUnion *self, double* Max, double* Min, double* Avg, int32* Status) GetStatistics;
+				public new function HRESULT(_ICounterItemUnion *self, int16 bState) put_Selected;
+				public new function HRESULT(_ICounterItemUnion *self, int16* pbState) get_Selected;
+				public new function HRESULT(_ICounterItemUnion *self, int16 bState) put_Visible;
+				public new function HRESULT(_ICounterItemUnion *self, int16* pbState) get_Visible;
+				public new function HRESULT(_ICounterItemUnion *self, int32 iIndex, SysmonDataType iWhich, VARIANT* pVariant) GetDataAt;
 			}
 		}
 		[CRepr]
@@ -1611,7 +3008,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc08c4ff2, 0x0e2e, 0x11cf, 0x94, 0x2c, 0x00, 0x80, 0x29, 0x00, 0x43, 0x47);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1622,15 +3020,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x79167962, 0x28fc, 0x11cf, 0x94, 0x2f, 0x00, 0x80, 0x29, 0x00, 0x43, 0x47);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* pLong) mut
+			{
+				return VT.get_Count(&this, pLong);
+			}
+			public HRESULT get__NewEnum(IUnknown** ppIunk) mut
+			{
+				return VT.get__NewEnum(&this, ppIunk);
+			}
+			public HRESULT get_Item(VARIANT index, DICounterItem** ppI) mut
+			{
+				return VT.get_Item(&this, index, ppI);
+			}
+			public HRESULT Add(BSTR pathname, DICounterItem** ppI) mut
+			{
+				return VT.Add(&this, pathname, ppI);
+			}
+			public HRESULT Remove(VARIANT index) mut
+			{
+				return VT.Remove(&this, index);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ICounters *self, int32* pLong) get_Count;
-				public function HRESULT(ICounters *self, IUnknown** ppIunk) get__NewEnum;
-				public function HRESULT(ICounters *self, VARIANT index, DICounterItem** ppI) get_Item;
-				public function HRESULT(ICounters *self, BSTR pathname, DICounterItem** ppI) Add;
-				public function HRESULT(ICounters *self, VARIANT index) Remove;
+				public new function HRESULT(ICounters *self, int32* pLong) get_Count;
+				public new function HRESULT(ICounters *self, IUnknown** ppIunk) get__NewEnum;
+				public new function HRESULT(ICounters *self, VARIANT index, DICounterItem** ppI) get_Item;
+				public new function HRESULT(ICounters *self, BSTR pathname, DICounterItem** ppI) Add;
+				public new function HRESULT(ICounters *self, VARIANT index) Remove;
 			}
 		}
 		[CRepr]
@@ -1638,11 +3057,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd6b518dd, 0x05c7, 0x418a, 0x89, 0xe6, 0x4f, 0x9c, 0xe8, 0xc6, 0x84, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Path(BSTR* pstrValue) mut
+			{
+				return VT.get_Path(&this, pstrValue);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ILogFileItem *self, BSTR* pstrValue) get_Path;
+				public new function HRESULT(ILogFileItem *self, BSTR* pstrValue) get_Path;
 			}
 		}
 		[CRepr]
@@ -1650,7 +3074,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8d093ffc, 0xf777, 0x4917, 0x82, 0xd1, 0x83, 0x3f, 0xbc, 0x54, 0xc5, 0x8f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1661,15 +3086,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6a2a97e6, 0x6851, 0x41ea, 0x87, 0xad, 0x2a, 0x82, 0x25, 0x33, 0x58, 0x65);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* pLong) mut
+			{
+				return VT.get_Count(&this, pLong);
+			}
+			public HRESULT get__NewEnum(IUnknown** ppIunk) mut
+			{
+				return VT.get__NewEnum(&this, ppIunk);
+			}
+			public HRESULT get_Item(VARIANT index, DILogFileItem** ppI) mut
+			{
+				return VT.get_Item(&this, index, ppI);
+			}
+			public HRESULT Add(BSTR pathname, DILogFileItem** ppI) mut
+			{
+				return VT.Add(&this, pathname, ppI);
+			}
+			public HRESULT Remove(VARIANT index) mut
+			{
+				return VT.Remove(&this, index);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ILogFiles *self, int32* pLong) get_Count;
-				public function HRESULT(ILogFiles *self, IUnknown** ppIunk) get__NewEnum;
-				public function HRESULT(ILogFiles *self, VARIANT index, DILogFileItem** ppI) get_Item;
-				public function HRESULT(ILogFiles *self, BSTR pathname, DILogFileItem** ppI) Add;
-				public function HRESULT(ILogFiles *self, VARIANT index) Remove;
+				public new function HRESULT(ILogFiles *self, int32* pLong) get_Count;
+				public new function HRESULT(ILogFiles *self, IUnknown** ppIunk) get__NewEnum;
+				public new function HRESULT(ILogFiles *self, VARIANT index, DILogFileItem** ppI) get_Item;
+				public new function HRESULT(ILogFiles *self, BSTR pathname, DILogFileItem** ppI) Add;
+				public new function HRESULT(ILogFiles *self, VARIANT index) Remove;
 			}
 		}
 		[CRepr]
@@ -1677,86 +3123,391 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x194eb241, 0xc32c, 0x11cf, 0x93, 0x98, 0x00, 0xaa, 0x00, 0xa3, 0xdd, 0xea);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Appearance(int32* iAppearance) mut
+			{
+				return VT.get_Appearance(&this, iAppearance);
+			}
+			public HRESULT put_Appearance(int32 iAppearance) mut
+			{
+				return VT.put_Appearance(&this, iAppearance);
+			}
+			public HRESULT get_BackColor(uint32* pColor) mut
+			{
+				return VT.get_BackColor(&this, pColor);
+			}
+			public HRESULT put_BackColor(uint32 Color) mut
+			{
+				return VT.put_BackColor(&this, Color);
+			}
+			public HRESULT get_BorderStyle(int32* iBorderStyle) mut
+			{
+				return VT.get_BorderStyle(&this, iBorderStyle);
+			}
+			public HRESULT put_BorderStyle(int32 iBorderStyle) mut
+			{
+				return VT.put_BorderStyle(&this, iBorderStyle);
+			}
+			public HRESULT get_ForeColor(uint32* pColor) mut
+			{
+				return VT.get_ForeColor(&this, pColor);
+			}
+			public HRESULT put_ForeColor(uint32 Color) mut
+			{
+				return VT.put_ForeColor(&this, Color);
+			}
+			public HRESULT get_Font(IFontDisp** ppFont) mut
+			{
+				return VT.get_Font(&this, ppFont);
+			}
+			public HRESULT putref_Font(IFontDisp* pFont) mut
+			{
+				return VT.putref_Font(&this, pFont);
+			}
+			public HRESULT get_Counters(ICounters** ppICounters) mut
+			{
+				return VT.get_Counters(&this, ppICounters);
+			}
+			public HRESULT put_ShowVerticalGrid(int16 bState) mut
+			{
+				return VT.put_ShowVerticalGrid(&this, bState);
+			}
+			public HRESULT get_ShowVerticalGrid(int16* pbState) mut
+			{
+				return VT.get_ShowVerticalGrid(&this, pbState);
+			}
+			public HRESULT put_ShowHorizontalGrid(int16 bState) mut
+			{
+				return VT.put_ShowHorizontalGrid(&this, bState);
+			}
+			public HRESULT get_ShowHorizontalGrid(int16* pbState) mut
+			{
+				return VT.get_ShowHorizontalGrid(&this, pbState);
+			}
+			public HRESULT put_ShowLegend(int16 bState) mut
+			{
+				return VT.put_ShowLegend(&this, bState);
+			}
+			public HRESULT get_ShowLegend(int16* pbState) mut
+			{
+				return VT.get_ShowLegend(&this, pbState);
+			}
+			public HRESULT put_ShowScaleLabels(int16 bState) mut
+			{
+				return VT.put_ShowScaleLabels(&this, bState);
+			}
+			public HRESULT get_ShowScaleLabels(int16* pbState) mut
+			{
+				return VT.get_ShowScaleLabels(&this, pbState);
+			}
+			public HRESULT put_ShowValueBar(int16 bState) mut
+			{
+				return VT.put_ShowValueBar(&this, bState);
+			}
+			public HRESULT get_ShowValueBar(int16* pbState) mut
+			{
+				return VT.get_ShowValueBar(&this, pbState);
+			}
+			public HRESULT put_MaximumScale(int32 iValue) mut
+			{
+				return VT.put_MaximumScale(&this, iValue);
+			}
+			public HRESULT get_MaximumScale(int32* piValue) mut
+			{
+				return VT.get_MaximumScale(&this, piValue);
+			}
+			public HRESULT put_MinimumScale(int32 iValue) mut
+			{
+				return VT.put_MinimumScale(&this, iValue);
+			}
+			public HRESULT get_MinimumScale(int32* piValue) mut
+			{
+				return VT.get_MinimumScale(&this, piValue);
+			}
+			public HRESULT put_UpdateInterval(float fValue) mut
+			{
+				return VT.put_UpdateInterval(&this, fValue);
+			}
+			public HRESULT get_UpdateInterval(float* pfValue) mut
+			{
+				return VT.get_UpdateInterval(&this, pfValue);
+			}
+			public HRESULT put_DisplayType(DisplayTypeConstants eDisplayType) mut
+			{
+				return VT.put_DisplayType(&this, eDisplayType);
+			}
+			public HRESULT get_DisplayType(DisplayTypeConstants* peDisplayType) mut
+			{
+				return VT.get_DisplayType(&this, peDisplayType);
+			}
+			public HRESULT put_ManualUpdate(int16 bState) mut
+			{
+				return VT.put_ManualUpdate(&this, bState);
+			}
+			public HRESULT get_ManualUpdate(int16* pbState) mut
+			{
+				return VT.get_ManualUpdate(&this, pbState);
+			}
+			public HRESULT put_GraphTitle(BSTR bsTitle) mut
+			{
+				return VT.put_GraphTitle(&this, bsTitle);
+			}
+			public HRESULT get_GraphTitle(BSTR* pbsTitle) mut
+			{
+				return VT.get_GraphTitle(&this, pbsTitle);
+			}
+			public HRESULT put_YAxisLabel(BSTR bsTitle) mut
+			{
+				return VT.put_YAxisLabel(&this, bsTitle);
+			}
+			public HRESULT get_YAxisLabel(BSTR* pbsTitle) mut
+			{
+				return VT.get_YAxisLabel(&this, pbsTitle);
+			}
+			public HRESULT CollectSample() mut
+			{
+				return VT.CollectSample(&this);
+			}
+			public HRESULT UpdateGraph() mut
+			{
+				return VT.UpdateGraph(&this);
+			}
+			public HRESULT BrowseCounters() mut
+			{
+				return VT.BrowseCounters(&this);
+			}
+			public HRESULT DisplayProperties() mut
+			{
+				return VT.DisplayProperties(&this);
+			}
+			public HRESULT Counter(int32 iIndex, ICounterItem** ppICounter) mut
+			{
+				return VT.Counter(&this, iIndex, ppICounter);
+			}
+			public HRESULT AddCounter(BSTR bsPath, ICounterItem** ppICounter) mut
+			{
+				return VT.AddCounter(&this, bsPath, ppICounter);
+			}
+			public HRESULT DeleteCounter(ICounterItem* pCtr) mut
+			{
+				return VT.DeleteCounter(&this, pCtr);
+			}
+			public HRESULT get_BackColorCtl(uint32* pColor) mut
+			{
+				return VT.get_BackColorCtl(&this, pColor);
+			}
+			public HRESULT put_BackColorCtl(uint32 Color) mut
+			{
+				return VT.put_BackColorCtl(&this, Color);
+			}
+			public HRESULT put_LogFileName(BSTR bsFileName) mut
+			{
+				return VT.put_LogFileName(&this, bsFileName);
+			}
+			public HRESULT get_LogFileName(BSTR* bsFileName) mut
+			{
+				return VT.get_LogFileName(&this, bsFileName);
+			}
+			public HRESULT put_LogViewStart(double StartTime) mut
+			{
+				return VT.put_LogViewStart(&this, StartTime);
+			}
+			public HRESULT get_LogViewStart(double* StartTime) mut
+			{
+				return VT.get_LogViewStart(&this, StartTime);
+			}
+			public HRESULT put_LogViewStop(double StopTime) mut
+			{
+				return VT.put_LogViewStop(&this, StopTime);
+			}
+			public HRESULT get_LogViewStop(double* StopTime) mut
+			{
+				return VT.get_LogViewStop(&this, StopTime);
+			}
+			public HRESULT get_GridColor(uint32* pColor) mut
+			{
+				return VT.get_GridColor(&this, pColor);
+			}
+			public HRESULT put_GridColor(uint32 Color) mut
+			{
+				return VT.put_GridColor(&this, Color);
+			}
+			public HRESULT get_TimeBarColor(uint32* pColor) mut
+			{
+				return VT.get_TimeBarColor(&this, pColor);
+			}
+			public HRESULT put_TimeBarColor(uint32 Color) mut
+			{
+				return VT.put_TimeBarColor(&this, Color);
+			}
+			public HRESULT get_Highlight(int16* pbState) mut
+			{
+				return VT.get_Highlight(&this, pbState);
+			}
+			public HRESULT put_Highlight(int16 bState) mut
+			{
+				return VT.put_Highlight(&this, bState);
+			}
+			public HRESULT get_ShowToolbar(int16* pbState) mut
+			{
+				return VT.get_ShowToolbar(&this, pbState);
+			}
+			public HRESULT put_ShowToolbar(int16 bState) mut
+			{
+				return VT.put_ShowToolbar(&this, bState);
+			}
+			public HRESULT Paste() mut
+			{
+				return VT.Paste(&this);
+			}
+			public HRESULT Copy() mut
+			{
+				return VT.Copy(&this);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT put_ReadOnly(int16 bState) mut
+			{
+				return VT.put_ReadOnly(&this, bState);
+			}
+			public HRESULT get_ReadOnly(int16* pbState) mut
+			{
+				return VT.get_ReadOnly(&this, pbState);
+			}
+			public HRESULT put_ReportValueType(ReportValueTypeConstants eReportValueType) mut
+			{
+				return VT.put_ReportValueType(&this, eReportValueType);
+			}
+			public HRESULT get_ReportValueType(ReportValueTypeConstants* peReportValueType) mut
+			{
+				return VT.get_ReportValueType(&this, peReportValueType);
+			}
+			public HRESULT put_MonitorDuplicateInstances(int16 bState) mut
+			{
+				return VT.put_MonitorDuplicateInstances(&this, bState);
+			}
+			public HRESULT get_MonitorDuplicateInstances(int16* pbState) mut
+			{
+				return VT.get_MonitorDuplicateInstances(&this, pbState);
+			}
+			public HRESULT put_DisplayFilter(int32 iValue) mut
+			{
+				return VT.put_DisplayFilter(&this, iValue);
+			}
+			public HRESULT get_DisplayFilter(int32* piValue) mut
+			{
+				return VT.get_DisplayFilter(&this, piValue);
+			}
+			public HRESULT get_LogFiles(ILogFiles** ppILogFiles) mut
+			{
+				return VT.get_LogFiles(&this, ppILogFiles);
+			}
+			public HRESULT put_DataSourceType(DataSourceTypeConstants eDataSourceType) mut
+			{
+				return VT.put_DataSourceType(&this, eDataSourceType);
+			}
+			public HRESULT get_DataSourceType(DataSourceTypeConstants* peDataSourceType) mut
+			{
+				return VT.get_DataSourceType(&this, peDataSourceType);
+			}
+			public HRESULT put_SqlDsnName(BSTR bsSqlDsnName) mut
+			{
+				return VT.put_SqlDsnName(&this, bsSqlDsnName);
+			}
+			public HRESULT get_SqlDsnName(BSTR* bsSqlDsnName) mut
+			{
+				return VT.get_SqlDsnName(&this, bsSqlDsnName);
+			}
+			public HRESULT put_SqlLogSetName(BSTR bsSqlLogSetName) mut
+			{
+				return VT.put_SqlLogSetName(&this, bsSqlLogSetName);
+			}
+			public HRESULT get_SqlLogSetName(BSTR* bsSqlLogSetName) mut
+			{
+				return VT.get_SqlLogSetName(&this, bsSqlLogSetName);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISystemMonitor *self, int32* iAppearance) get_Appearance;
-				public function HRESULT(ISystemMonitor *self, int32 iAppearance) put_Appearance;
-				public function HRESULT(ISystemMonitor *self, uint32* pColor) get_BackColor;
-				public function HRESULT(ISystemMonitor *self, uint32 Color) put_BackColor;
-				public function HRESULT(ISystemMonitor *self, int32* iBorderStyle) get_BorderStyle;
-				public function HRESULT(ISystemMonitor *self, int32 iBorderStyle) put_BorderStyle;
-				public function HRESULT(ISystemMonitor *self, uint32* pColor) get_ForeColor;
-				public function HRESULT(ISystemMonitor *self, uint32 Color) put_ForeColor;
-				public function HRESULT(ISystemMonitor *self, IFontDisp** ppFont) get_Font;
-				public function HRESULT(ISystemMonitor *self, IFontDisp* pFont) putref_Font;
-				public function HRESULT(ISystemMonitor *self, ICounters** ppICounters) get_Counters;
-				public function HRESULT(ISystemMonitor *self, int16 bState) put_ShowVerticalGrid;
-				public function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowVerticalGrid;
-				public function HRESULT(ISystemMonitor *self, int16 bState) put_ShowHorizontalGrid;
-				public function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowHorizontalGrid;
-				public function HRESULT(ISystemMonitor *self, int16 bState) put_ShowLegend;
-				public function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowLegend;
-				public function HRESULT(ISystemMonitor *self, int16 bState) put_ShowScaleLabels;
-				public function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowScaleLabels;
-				public function HRESULT(ISystemMonitor *self, int16 bState) put_ShowValueBar;
-				public function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowValueBar;
-				public function HRESULT(ISystemMonitor *self, int32 iValue) put_MaximumScale;
-				public function HRESULT(ISystemMonitor *self, int32* piValue) get_MaximumScale;
-				public function HRESULT(ISystemMonitor *self, int32 iValue) put_MinimumScale;
-				public function HRESULT(ISystemMonitor *self, int32* piValue) get_MinimumScale;
-				public function HRESULT(ISystemMonitor *self, float fValue) put_UpdateInterval;
-				public function HRESULT(ISystemMonitor *self, float* pfValue) get_UpdateInterval;
-				public function HRESULT(ISystemMonitor *self, DisplayTypeConstants eDisplayType) put_DisplayType;
-				public function HRESULT(ISystemMonitor *self, DisplayTypeConstants* peDisplayType) get_DisplayType;
-				public function HRESULT(ISystemMonitor *self, int16 bState) put_ManualUpdate;
-				public function HRESULT(ISystemMonitor *self, int16* pbState) get_ManualUpdate;
-				public function HRESULT(ISystemMonitor *self, BSTR bsTitle) put_GraphTitle;
-				public function HRESULT(ISystemMonitor *self, BSTR* pbsTitle) get_GraphTitle;
-				public function HRESULT(ISystemMonitor *self, BSTR bsTitle) put_YAxisLabel;
-				public function HRESULT(ISystemMonitor *self, BSTR* pbsTitle) get_YAxisLabel;
-				public function HRESULT(ISystemMonitor *self) CollectSample;
-				public function HRESULT(ISystemMonitor *self) UpdateGraph;
-				public function HRESULT(ISystemMonitor *self) BrowseCounters;
-				public function HRESULT(ISystemMonitor *self) DisplayProperties;
-				public function HRESULT(ISystemMonitor *self, int32 iIndex, ICounterItem** ppICounter) Counter;
-				public function HRESULT(ISystemMonitor *self, BSTR bsPath, ICounterItem** ppICounter) AddCounter;
-				public function HRESULT(ISystemMonitor *self, ICounterItem* pCtr) DeleteCounter;
-				public function HRESULT(ISystemMonitor *self, uint32* pColor) get_BackColorCtl;
-				public function HRESULT(ISystemMonitor *self, uint32 Color) put_BackColorCtl;
-				public function HRESULT(ISystemMonitor *self, BSTR bsFileName) put_LogFileName;
-				public function HRESULT(ISystemMonitor *self, BSTR* bsFileName) get_LogFileName;
-				public function HRESULT(ISystemMonitor *self, double StartTime) put_LogViewStart;
-				public function HRESULT(ISystemMonitor *self, double* StartTime) get_LogViewStart;
-				public function HRESULT(ISystemMonitor *self, double StopTime) put_LogViewStop;
-				public function HRESULT(ISystemMonitor *self, double* StopTime) get_LogViewStop;
-				public function HRESULT(ISystemMonitor *self, uint32* pColor) get_GridColor;
-				public function HRESULT(ISystemMonitor *self, uint32 Color) put_GridColor;
-				public function HRESULT(ISystemMonitor *self, uint32* pColor) get_TimeBarColor;
-				public function HRESULT(ISystemMonitor *self, uint32 Color) put_TimeBarColor;
-				public function HRESULT(ISystemMonitor *self, int16* pbState) get_Highlight;
-				public function HRESULT(ISystemMonitor *self, int16 bState) put_Highlight;
-				public function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowToolbar;
-				public function HRESULT(ISystemMonitor *self, int16 bState) put_ShowToolbar;
-				public function HRESULT(ISystemMonitor *self) Paste;
-				public function HRESULT(ISystemMonitor *self) Copy;
-				public function HRESULT(ISystemMonitor *self) Reset;
-				public function HRESULT(ISystemMonitor *self, int16 bState) put_ReadOnly;
-				public function HRESULT(ISystemMonitor *self, int16* pbState) get_ReadOnly;
-				public function HRESULT(ISystemMonitor *self, ReportValueTypeConstants eReportValueType) put_ReportValueType;
-				public function HRESULT(ISystemMonitor *self, ReportValueTypeConstants* peReportValueType) get_ReportValueType;
-				public function HRESULT(ISystemMonitor *self, int16 bState) put_MonitorDuplicateInstances;
-				public function HRESULT(ISystemMonitor *self, int16* pbState) get_MonitorDuplicateInstances;
-				public function HRESULT(ISystemMonitor *self, int32 iValue) put_DisplayFilter;
-				public function HRESULT(ISystemMonitor *self, int32* piValue) get_DisplayFilter;
-				public function HRESULT(ISystemMonitor *self, ILogFiles** ppILogFiles) get_LogFiles;
-				public function HRESULT(ISystemMonitor *self, DataSourceTypeConstants eDataSourceType) put_DataSourceType;
-				public function HRESULT(ISystemMonitor *self, DataSourceTypeConstants* peDataSourceType) get_DataSourceType;
-				public function HRESULT(ISystemMonitor *self, BSTR bsSqlDsnName) put_SqlDsnName;
-				public function HRESULT(ISystemMonitor *self, BSTR* bsSqlDsnName) get_SqlDsnName;
-				public function HRESULT(ISystemMonitor *self, BSTR bsSqlLogSetName) put_SqlLogSetName;
-				public function HRESULT(ISystemMonitor *self, BSTR* bsSqlLogSetName) get_SqlLogSetName;
+				public new function HRESULT(ISystemMonitor *self, int32* iAppearance) get_Appearance;
+				public new function HRESULT(ISystemMonitor *self, int32 iAppearance) put_Appearance;
+				public new function HRESULT(ISystemMonitor *self, uint32* pColor) get_BackColor;
+				public new function HRESULT(ISystemMonitor *self, uint32 Color) put_BackColor;
+				public new function HRESULT(ISystemMonitor *self, int32* iBorderStyle) get_BorderStyle;
+				public new function HRESULT(ISystemMonitor *self, int32 iBorderStyle) put_BorderStyle;
+				public new function HRESULT(ISystemMonitor *self, uint32* pColor) get_ForeColor;
+				public new function HRESULT(ISystemMonitor *self, uint32 Color) put_ForeColor;
+				public new function HRESULT(ISystemMonitor *self, IFontDisp** ppFont) get_Font;
+				public new function HRESULT(ISystemMonitor *self, IFontDisp* pFont) putref_Font;
+				public new function HRESULT(ISystemMonitor *self, ICounters** ppICounters) get_Counters;
+				public new function HRESULT(ISystemMonitor *self, int16 bState) put_ShowVerticalGrid;
+				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowVerticalGrid;
+				public new function HRESULT(ISystemMonitor *self, int16 bState) put_ShowHorizontalGrid;
+				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowHorizontalGrid;
+				public new function HRESULT(ISystemMonitor *self, int16 bState) put_ShowLegend;
+				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowLegend;
+				public new function HRESULT(ISystemMonitor *self, int16 bState) put_ShowScaleLabels;
+				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowScaleLabels;
+				public new function HRESULT(ISystemMonitor *self, int16 bState) put_ShowValueBar;
+				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowValueBar;
+				public new function HRESULT(ISystemMonitor *self, int32 iValue) put_MaximumScale;
+				public new function HRESULT(ISystemMonitor *self, int32* piValue) get_MaximumScale;
+				public new function HRESULT(ISystemMonitor *self, int32 iValue) put_MinimumScale;
+				public new function HRESULT(ISystemMonitor *self, int32* piValue) get_MinimumScale;
+				public new function HRESULT(ISystemMonitor *self, float fValue) put_UpdateInterval;
+				public new function HRESULT(ISystemMonitor *self, float* pfValue) get_UpdateInterval;
+				public new function HRESULT(ISystemMonitor *self, DisplayTypeConstants eDisplayType) put_DisplayType;
+				public new function HRESULT(ISystemMonitor *self, DisplayTypeConstants* peDisplayType) get_DisplayType;
+				public new function HRESULT(ISystemMonitor *self, int16 bState) put_ManualUpdate;
+				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_ManualUpdate;
+				public new function HRESULT(ISystemMonitor *self, BSTR bsTitle) put_GraphTitle;
+				public new function HRESULT(ISystemMonitor *self, BSTR* pbsTitle) get_GraphTitle;
+				public new function HRESULT(ISystemMonitor *self, BSTR bsTitle) put_YAxisLabel;
+				public new function HRESULT(ISystemMonitor *self, BSTR* pbsTitle) get_YAxisLabel;
+				public new function HRESULT(ISystemMonitor *self) CollectSample;
+				public new function HRESULT(ISystemMonitor *self) UpdateGraph;
+				public new function HRESULT(ISystemMonitor *self) BrowseCounters;
+				public new function HRESULT(ISystemMonitor *self) DisplayProperties;
+				public new function HRESULT(ISystemMonitor *self, int32 iIndex, ICounterItem** ppICounter) Counter;
+				public new function HRESULT(ISystemMonitor *self, BSTR bsPath, ICounterItem** ppICounter) AddCounter;
+				public new function HRESULT(ISystemMonitor *self, ICounterItem* pCtr) DeleteCounter;
+				public new function HRESULT(ISystemMonitor *self, uint32* pColor) get_BackColorCtl;
+				public new function HRESULT(ISystemMonitor *self, uint32 Color) put_BackColorCtl;
+				public new function HRESULT(ISystemMonitor *self, BSTR bsFileName) put_LogFileName;
+				public new function HRESULT(ISystemMonitor *self, BSTR* bsFileName) get_LogFileName;
+				public new function HRESULT(ISystemMonitor *self, double StartTime) put_LogViewStart;
+				public new function HRESULT(ISystemMonitor *self, double* StartTime) get_LogViewStart;
+				public new function HRESULT(ISystemMonitor *self, double StopTime) put_LogViewStop;
+				public new function HRESULT(ISystemMonitor *self, double* StopTime) get_LogViewStop;
+				public new function HRESULT(ISystemMonitor *self, uint32* pColor) get_GridColor;
+				public new function HRESULT(ISystemMonitor *self, uint32 Color) put_GridColor;
+				public new function HRESULT(ISystemMonitor *self, uint32* pColor) get_TimeBarColor;
+				public new function HRESULT(ISystemMonitor *self, uint32 Color) put_TimeBarColor;
+				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_Highlight;
+				public new function HRESULT(ISystemMonitor *self, int16 bState) put_Highlight;
+				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowToolbar;
+				public new function HRESULT(ISystemMonitor *self, int16 bState) put_ShowToolbar;
+				public new function HRESULT(ISystemMonitor *self) Paste;
+				public new function HRESULT(ISystemMonitor *self) Copy;
+				public new function HRESULT(ISystemMonitor *self) Reset;
+				public new function HRESULT(ISystemMonitor *self, int16 bState) put_ReadOnly;
+				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_ReadOnly;
+				public new function HRESULT(ISystemMonitor *self, ReportValueTypeConstants eReportValueType) put_ReportValueType;
+				public new function HRESULT(ISystemMonitor *self, ReportValueTypeConstants* peReportValueType) get_ReportValueType;
+				public new function HRESULT(ISystemMonitor *self, int16 bState) put_MonitorDuplicateInstances;
+				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_MonitorDuplicateInstances;
+				public new function HRESULT(ISystemMonitor *self, int32 iValue) put_DisplayFilter;
+				public new function HRESULT(ISystemMonitor *self, int32* piValue) get_DisplayFilter;
+				public new function HRESULT(ISystemMonitor *self, ILogFiles** ppILogFiles) get_LogFiles;
+				public new function HRESULT(ISystemMonitor *self, DataSourceTypeConstants eDataSourceType) put_DataSourceType;
+				public new function HRESULT(ISystemMonitor *self, DataSourceTypeConstants* peDataSourceType) get_DataSourceType;
+				public new function HRESULT(ISystemMonitor *self, BSTR bsSqlDsnName) put_SqlDsnName;
+				public new function HRESULT(ISystemMonitor *self, BSTR* bsSqlDsnName) get_SqlDsnName;
+				public new function HRESULT(ISystemMonitor *self, BSTR bsSqlLogSetName) put_SqlLogSetName;
+				public new function HRESULT(ISystemMonitor *self, BSTR* bsSqlLogSetName) get_SqlLogSetName;
 			}
 		}
 		[CRepr]
@@ -1764,30 +3515,111 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x08e3206a, 0x5fd2, 0x4fde, 0xa8, 0xa5, 0x8c, 0xb3, 0xb6, 0x3d, 0x26, 0x77);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT put_EnableDigitGrouping(int16 bState) mut
+			{
+				return VT.put_EnableDigitGrouping(&this, bState);
+			}
+			public HRESULT get_EnableDigitGrouping(int16* pbState) mut
+			{
+				return VT.get_EnableDigitGrouping(&this, pbState);
+			}
+			public HRESULT put_EnableToolTips(int16 bState) mut
+			{
+				return VT.put_EnableToolTips(&this, bState);
+			}
+			public HRESULT get_EnableToolTips(int16* pbState) mut
+			{
+				return VT.get_EnableToolTips(&this, pbState);
+			}
+			public HRESULT put_ShowTimeAxisLabels(int16 bState) mut
+			{
+				return VT.put_ShowTimeAxisLabels(&this, bState);
+			}
+			public HRESULT get_ShowTimeAxisLabels(int16* pbState) mut
+			{
+				return VT.get_ShowTimeAxisLabels(&this, pbState);
+			}
+			public HRESULT put_ChartScroll(int16 bScroll) mut
+			{
+				return VT.put_ChartScroll(&this, bScroll);
+			}
+			public HRESULT get_ChartScroll(int16* pbScroll) mut
+			{
+				return VT.get_ChartScroll(&this, pbScroll);
+			}
+			public HRESULT put_DataPointCount(int32 iNewCount) mut
+			{
+				return VT.put_DataPointCount(&this, iNewCount);
+			}
+			public HRESULT get_DataPointCount(int32* piDataPointCount) mut
+			{
+				return VT.get_DataPointCount(&this, piDataPointCount);
+			}
+			public HRESULT ScaleToFit(int16 bSelectedCountersOnly) mut
+			{
+				return VT.ScaleToFit(&this, bSelectedCountersOnly);
+			}
+			public HRESULT SaveAs(BSTR bstrFileName, SysmonFileType eSysmonFileType) mut
+			{
+				return VT.SaveAs(&this, bstrFileName, eSysmonFileType);
+			}
+			public HRESULT Relog(BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) mut
+			{
+				return VT.Relog(&this, bstrFileName, eSysmonFileType, iFilter);
+			}
+			public HRESULT ClearData() mut
+			{
+				return VT.ClearData(&this);
+			}
+			public HRESULT get_LogSourceStartTime(double* pDate) mut
+			{
+				return VT.get_LogSourceStartTime(&this, pDate);
+			}
+			public HRESULT get_LogSourceStopTime(double* pDate) mut
+			{
+				return VT.get_LogSourceStopTime(&this, pDate);
+			}
+			public HRESULT SetLogViewRange(double StartTime, double StopTime) mut
+			{
+				return VT.SetLogViewRange(&this, StartTime, StopTime);
+			}
+			public HRESULT GetLogViewRange(double* StartTime, double* StopTime) mut
+			{
+				return VT.GetLogViewRange(&this, StartTime, StopTime);
+			}
+			public HRESULT BatchingLock(int16 fLock, SysmonBatchReason eBatchReason) mut
+			{
+				return VT.BatchingLock(&this, fLock, eBatchReason);
+			}
+			public HRESULT LoadSettings(BSTR bstrSettingFileName) mut
+			{
+				return VT.LoadSettings(&this, bstrSettingFileName);
+			}
 			[CRepr]
 			public struct VTable : ISystemMonitor.VTable
 			{
-				public function HRESULT(ISystemMonitor2 *self, int16 bState) put_EnableDigitGrouping;
-				public function HRESULT(ISystemMonitor2 *self, int16* pbState) get_EnableDigitGrouping;
-				public function HRESULT(ISystemMonitor2 *self, int16 bState) put_EnableToolTips;
-				public function HRESULT(ISystemMonitor2 *self, int16* pbState) get_EnableToolTips;
-				public function HRESULT(ISystemMonitor2 *self, int16 bState) put_ShowTimeAxisLabels;
-				public function HRESULT(ISystemMonitor2 *self, int16* pbState) get_ShowTimeAxisLabels;
-				public function HRESULT(ISystemMonitor2 *self, int16 bScroll) put_ChartScroll;
-				public function HRESULT(ISystemMonitor2 *self, int16* pbScroll) get_ChartScroll;
-				public function HRESULT(ISystemMonitor2 *self, int32 iNewCount) put_DataPointCount;
-				public function HRESULT(ISystemMonitor2 *self, int32* piDataPointCount) get_DataPointCount;
-				public function HRESULT(ISystemMonitor2 *self, int16 bSelectedCountersOnly) ScaleToFit;
-				public function HRESULT(ISystemMonitor2 *self, BSTR bstrFileName, SysmonFileType eSysmonFileType) SaveAs;
-				public function HRESULT(ISystemMonitor2 *self, BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) Relog;
-				public function HRESULT(ISystemMonitor2 *self) ClearData;
-				public function HRESULT(ISystemMonitor2 *self, double* pDate) get_LogSourceStartTime;
-				public function HRESULT(ISystemMonitor2 *self, double* pDate) get_LogSourceStopTime;
-				public function HRESULT(ISystemMonitor2 *self, double StartTime, double StopTime) SetLogViewRange;
-				public function HRESULT(ISystemMonitor2 *self, double* StartTime, double* StopTime) GetLogViewRange;
-				public function HRESULT(ISystemMonitor2 *self, int16 fLock, SysmonBatchReason eBatchReason) BatchingLock;
-				public function HRESULT(ISystemMonitor2 *self, BSTR bstrSettingFileName) LoadSettings;
+				public new function HRESULT(ISystemMonitor2 *self, int16 bState) put_EnableDigitGrouping;
+				public new function HRESULT(ISystemMonitor2 *self, int16* pbState) get_EnableDigitGrouping;
+				public new function HRESULT(ISystemMonitor2 *self, int16 bState) put_EnableToolTips;
+				public new function HRESULT(ISystemMonitor2 *self, int16* pbState) get_EnableToolTips;
+				public new function HRESULT(ISystemMonitor2 *self, int16 bState) put_ShowTimeAxisLabels;
+				public new function HRESULT(ISystemMonitor2 *self, int16* pbState) get_ShowTimeAxisLabels;
+				public new function HRESULT(ISystemMonitor2 *self, int16 bScroll) put_ChartScroll;
+				public new function HRESULT(ISystemMonitor2 *self, int16* pbScroll) get_ChartScroll;
+				public new function HRESULT(ISystemMonitor2 *self, int32 iNewCount) put_DataPointCount;
+				public new function HRESULT(ISystemMonitor2 *self, int32* piDataPointCount) get_DataPointCount;
+				public new function HRESULT(ISystemMonitor2 *self, int16 bSelectedCountersOnly) ScaleToFit;
+				public new function HRESULT(ISystemMonitor2 *self, BSTR bstrFileName, SysmonFileType eSysmonFileType) SaveAs;
+				public new function HRESULT(ISystemMonitor2 *self, BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) Relog;
+				public new function HRESULT(ISystemMonitor2 *self) ClearData;
+				public new function HRESULT(ISystemMonitor2 *self, double* pDate) get_LogSourceStartTime;
+				public new function HRESULT(ISystemMonitor2 *self, double* pDate) get_LogSourceStopTime;
+				public new function HRESULT(ISystemMonitor2 *self, double StartTime, double StopTime) SetLogViewRange;
+				public new function HRESULT(ISystemMonitor2 *self, double* StartTime, double* StopTime) GetLogViewRange;
+				public new function HRESULT(ISystemMonitor2 *self, int16 fLock, SysmonBatchReason eBatchReason) BatchingLock;
+				public new function HRESULT(ISystemMonitor2 *self, BSTR bstrSettingFileName) LoadSettings;
 			}
 		}
 		[CRepr]
@@ -1795,106 +3627,491 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc8a77338, 0x265f, 0x4de5, 0xaa, 0x25, 0xc7, 0xda, 0x1c, 0xe5, 0xa8, 0xf4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Appearance(int32* iAppearance) mut
+			{
+				return VT.get_Appearance(&this, iAppearance);
+			}
+			public HRESULT put_Appearance(int32 iAppearance) mut
+			{
+				return VT.put_Appearance(&this, iAppearance);
+			}
+			public HRESULT get_BackColor(uint32* pColor) mut
+			{
+				return VT.get_BackColor(&this, pColor);
+			}
+			public HRESULT put_BackColor(uint32 Color) mut
+			{
+				return VT.put_BackColor(&this, Color);
+			}
+			public HRESULT get_BorderStyle(int32* iBorderStyle) mut
+			{
+				return VT.get_BorderStyle(&this, iBorderStyle);
+			}
+			public HRESULT put_BorderStyle(int32 iBorderStyle) mut
+			{
+				return VT.put_BorderStyle(&this, iBorderStyle);
+			}
+			public HRESULT get_ForeColor(uint32* pColor) mut
+			{
+				return VT.get_ForeColor(&this, pColor);
+			}
+			public HRESULT put_ForeColor(uint32 Color) mut
+			{
+				return VT.put_ForeColor(&this, Color);
+			}
+			public HRESULT get_Font(IFontDisp** ppFont) mut
+			{
+				return VT.get_Font(&this, ppFont);
+			}
+			public HRESULT putref_Font(IFontDisp* pFont) mut
+			{
+				return VT.putref_Font(&this, pFont);
+			}
+			public HRESULT get_Counters(ICounters** ppICounters) mut
+			{
+				return VT.get_Counters(&this, ppICounters);
+			}
+			public HRESULT put_ShowVerticalGrid(int16 bState) mut
+			{
+				return VT.put_ShowVerticalGrid(&this, bState);
+			}
+			public HRESULT get_ShowVerticalGrid(int16* pbState) mut
+			{
+				return VT.get_ShowVerticalGrid(&this, pbState);
+			}
+			public HRESULT put_ShowHorizontalGrid(int16 bState) mut
+			{
+				return VT.put_ShowHorizontalGrid(&this, bState);
+			}
+			public HRESULT get_ShowHorizontalGrid(int16* pbState) mut
+			{
+				return VT.get_ShowHorizontalGrid(&this, pbState);
+			}
+			public HRESULT put_ShowLegend(int16 bState) mut
+			{
+				return VT.put_ShowLegend(&this, bState);
+			}
+			public HRESULT get_ShowLegend(int16* pbState) mut
+			{
+				return VT.get_ShowLegend(&this, pbState);
+			}
+			public HRESULT put_ShowScaleLabels(int16 bState) mut
+			{
+				return VT.put_ShowScaleLabels(&this, bState);
+			}
+			public HRESULT get_ShowScaleLabels(int16* pbState) mut
+			{
+				return VT.get_ShowScaleLabels(&this, pbState);
+			}
+			public HRESULT put_ShowValueBar(int16 bState) mut
+			{
+				return VT.put_ShowValueBar(&this, bState);
+			}
+			public HRESULT get_ShowValueBar(int16* pbState) mut
+			{
+				return VT.get_ShowValueBar(&this, pbState);
+			}
+			public HRESULT put_MaximumScale(int32 iValue) mut
+			{
+				return VT.put_MaximumScale(&this, iValue);
+			}
+			public HRESULT get_MaximumScale(int32* piValue) mut
+			{
+				return VT.get_MaximumScale(&this, piValue);
+			}
+			public HRESULT put_MinimumScale(int32 iValue) mut
+			{
+				return VT.put_MinimumScale(&this, iValue);
+			}
+			public HRESULT get_MinimumScale(int32* piValue) mut
+			{
+				return VT.get_MinimumScale(&this, piValue);
+			}
+			public HRESULT put_UpdateInterval(float fValue) mut
+			{
+				return VT.put_UpdateInterval(&this, fValue);
+			}
+			public HRESULT get_UpdateInterval(float* pfValue) mut
+			{
+				return VT.get_UpdateInterval(&this, pfValue);
+			}
+			public HRESULT put_DisplayType(DisplayTypeConstants eDisplayType) mut
+			{
+				return VT.put_DisplayType(&this, eDisplayType);
+			}
+			public HRESULT get_DisplayType(DisplayTypeConstants* peDisplayType) mut
+			{
+				return VT.get_DisplayType(&this, peDisplayType);
+			}
+			public HRESULT put_ManualUpdate(int16 bState) mut
+			{
+				return VT.put_ManualUpdate(&this, bState);
+			}
+			public HRESULT get_ManualUpdate(int16* pbState) mut
+			{
+				return VT.get_ManualUpdate(&this, pbState);
+			}
+			public HRESULT put_GraphTitle(BSTR bsTitle) mut
+			{
+				return VT.put_GraphTitle(&this, bsTitle);
+			}
+			public HRESULT get_GraphTitle(BSTR* pbsTitle) mut
+			{
+				return VT.get_GraphTitle(&this, pbsTitle);
+			}
+			public HRESULT put_YAxisLabel(BSTR bsTitle) mut
+			{
+				return VT.put_YAxisLabel(&this, bsTitle);
+			}
+			public HRESULT get_YAxisLabel(BSTR* pbsTitle) mut
+			{
+				return VT.get_YAxisLabel(&this, pbsTitle);
+			}
+			public HRESULT CollectSample() mut
+			{
+				return VT.CollectSample(&this);
+			}
+			public HRESULT UpdateGraph() mut
+			{
+				return VT.UpdateGraph(&this);
+			}
+			public HRESULT BrowseCounters() mut
+			{
+				return VT.BrowseCounters(&this);
+			}
+			public HRESULT DisplayProperties() mut
+			{
+				return VT.DisplayProperties(&this);
+			}
+			public HRESULT Counter(int32 iIndex, ICounterItem** ppICounter) mut
+			{
+				return VT.Counter(&this, iIndex, ppICounter);
+			}
+			public HRESULT AddCounter(BSTR bsPath, ICounterItem** ppICounter) mut
+			{
+				return VT.AddCounter(&this, bsPath, ppICounter);
+			}
+			public HRESULT DeleteCounter(ICounterItem* pCtr) mut
+			{
+				return VT.DeleteCounter(&this, pCtr);
+			}
+			public HRESULT get_BackColorCtl(uint32* pColor) mut
+			{
+				return VT.get_BackColorCtl(&this, pColor);
+			}
+			public HRESULT put_BackColorCtl(uint32 Color) mut
+			{
+				return VT.put_BackColorCtl(&this, Color);
+			}
+			public HRESULT put_LogFileName(BSTR bsFileName) mut
+			{
+				return VT.put_LogFileName(&this, bsFileName);
+			}
+			public HRESULT get_LogFileName(BSTR* bsFileName) mut
+			{
+				return VT.get_LogFileName(&this, bsFileName);
+			}
+			public HRESULT put_LogViewStart(double StartTime) mut
+			{
+				return VT.put_LogViewStart(&this, StartTime);
+			}
+			public HRESULT get_LogViewStart(double* StartTime) mut
+			{
+				return VT.get_LogViewStart(&this, StartTime);
+			}
+			public HRESULT put_LogViewStop(double StopTime) mut
+			{
+				return VT.put_LogViewStop(&this, StopTime);
+			}
+			public HRESULT get_LogViewStop(double* StopTime) mut
+			{
+				return VT.get_LogViewStop(&this, StopTime);
+			}
+			public HRESULT get_GridColor(uint32* pColor) mut
+			{
+				return VT.get_GridColor(&this, pColor);
+			}
+			public HRESULT put_GridColor(uint32 Color) mut
+			{
+				return VT.put_GridColor(&this, Color);
+			}
+			public HRESULT get_TimeBarColor(uint32* pColor) mut
+			{
+				return VT.get_TimeBarColor(&this, pColor);
+			}
+			public HRESULT put_TimeBarColor(uint32 Color) mut
+			{
+				return VT.put_TimeBarColor(&this, Color);
+			}
+			public HRESULT get_Highlight(int16* pbState) mut
+			{
+				return VT.get_Highlight(&this, pbState);
+			}
+			public HRESULT put_Highlight(int16 bState) mut
+			{
+				return VT.put_Highlight(&this, bState);
+			}
+			public HRESULT get_ShowToolbar(int16* pbState) mut
+			{
+				return VT.get_ShowToolbar(&this, pbState);
+			}
+			public HRESULT put_ShowToolbar(int16 bState) mut
+			{
+				return VT.put_ShowToolbar(&this, bState);
+			}
+			public HRESULT Paste() mut
+			{
+				return VT.Paste(&this);
+			}
+			public HRESULT Copy() mut
+			{
+				return VT.Copy(&this);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT put_ReadOnly(int16 bState) mut
+			{
+				return VT.put_ReadOnly(&this, bState);
+			}
+			public HRESULT get_ReadOnly(int16* pbState) mut
+			{
+				return VT.get_ReadOnly(&this, pbState);
+			}
+			public HRESULT put_ReportValueType(ReportValueTypeConstants eReportValueType) mut
+			{
+				return VT.put_ReportValueType(&this, eReportValueType);
+			}
+			public HRESULT get_ReportValueType(ReportValueTypeConstants* peReportValueType) mut
+			{
+				return VT.get_ReportValueType(&this, peReportValueType);
+			}
+			public HRESULT put_MonitorDuplicateInstances(int16 bState) mut
+			{
+				return VT.put_MonitorDuplicateInstances(&this, bState);
+			}
+			public HRESULT get_MonitorDuplicateInstances(int16* pbState) mut
+			{
+				return VT.get_MonitorDuplicateInstances(&this, pbState);
+			}
+			public HRESULT put_DisplayFilter(int32 iValue) mut
+			{
+				return VT.put_DisplayFilter(&this, iValue);
+			}
+			public HRESULT get_DisplayFilter(int32* piValue) mut
+			{
+				return VT.get_DisplayFilter(&this, piValue);
+			}
+			public HRESULT get_LogFiles(ILogFiles** ppILogFiles) mut
+			{
+				return VT.get_LogFiles(&this, ppILogFiles);
+			}
+			public HRESULT put_DataSourceType(DataSourceTypeConstants eDataSourceType) mut
+			{
+				return VT.put_DataSourceType(&this, eDataSourceType);
+			}
+			public HRESULT get_DataSourceType(DataSourceTypeConstants* peDataSourceType) mut
+			{
+				return VT.get_DataSourceType(&this, peDataSourceType);
+			}
+			public HRESULT put_SqlDsnName(BSTR bsSqlDsnName) mut
+			{
+				return VT.put_SqlDsnName(&this, bsSqlDsnName);
+			}
+			public HRESULT get_SqlDsnName(BSTR* bsSqlDsnName) mut
+			{
+				return VT.get_SqlDsnName(&this, bsSqlDsnName);
+			}
+			public HRESULT put_SqlLogSetName(BSTR bsSqlLogSetName) mut
+			{
+				return VT.put_SqlLogSetName(&this, bsSqlLogSetName);
+			}
+			public HRESULT get_SqlLogSetName(BSTR* bsSqlLogSetName) mut
+			{
+				return VT.get_SqlLogSetName(&this, bsSqlLogSetName);
+			}
+			public HRESULT put_EnableDigitGrouping(int16 bState) mut
+			{
+				return VT.put_EnableDigitGrouping(&this, bState);
+			}
+			public HRESULT get_EnableDigitGrouping(int16* pbState) mut
+			{
+				return VT.get_EnableDigitGrouping(&this, pbState);
+			}
+			public HRESULT put_EnableToolTips(int16 bState) mut
+			{
+				return VT.put_EnableToolTips(&this, bState);
+			}
+			public HRESULT get_EnableToolTips(int16* pbState) mut
+			{
+				return VT.get_EnableToolTips(&this, pbState);
+			}
+			public HRESULT put_ShowTimeAxisLabels(int16 bState) mut
+			{
+				return VT.put_ShowTimeAxisLabels(&this, bState);
+			}
+			public HRESULT get_ShowTimeAxisLabels(int16* pbState) mut
+			{
+				return VT.get_ShowTimeAxisLabels(&this, pbState);
+			}
+			public HRESULT put_ChartScroll(int16 bScroll) mut
+			{
+				return VT.put_ChartScroll(&this, bScroll);
+			}
+			public HRESULT get_ChartScroll(int16* pbScroll) mut
+			{
+				return VT.get_ChartScroll(&this, pbScroll);
+			}
+			public HRESULT put_DataPointCount(int32 iNewCount) mut
+			{
+				return VT.put_DataPointCount(&this, iNewCount);
+			}
+			public HRESULT get_DataPointCount(int32* piDataPointCount) mut
+			{
+				return VT.get_DataPointCount(&this, piDataPointCount);
+			}
+			public HRESULT ScaleToFit(int16 bSelectedCountersOnly) mut
+			{
+				return VT.ScaleToFit(&this, bSelectedCountersOnly);
+			}
+			public HRESULT SaveAs(BSTR bstrFileName, SysmonFileType eSysmonFileType) mut
+			{
+				return VT.SaveAs(&this, bstrFileName, eSysmonFileType);
+			}
+			public HRESULT Relog(BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) mut
+			{
+				return VT.Relog(&this, bstrFileName, eSysmonFileType, iFilter);
+			}
+			public HRESULT ClearData() mut
+			{
+				return VT.ClearData(&this);
+			}
+			public HRESULT get_LogSourceStartTime(double* pDate) mut
+			{
+				return VT.get_LogSourceStartTime(&this, pDate);
+			}
+			public HRESULT get_LogSourceStopTime(double* pDate) mut
+			{
+				return VT.get_LogSourceStopTime(&this, pDate);
+			}
+			public HRESULT SetLogViewRange(double StartTime, double StopTime) mut
+			{
+				return VT.SetLogViewRange(&this, StartTime, StopTime);
+			}
+			public HRESULT GetLogViewRange(double* StartTime, double* StopTime) mut
+			{
+				return VT.GetLogViewRange(&this, StartTime, StopTime);
+			}
+			public HRESULT BatchingLock(int16 fLock, SysmonBatchReason eBatchReason) mut
+			{
+				return VT.BatchingLock(&this, fLock, eBatchReason);
+			}
+			public HRESULT LoadSettings(BSTR bstrSettingFileName) mut
+			{
+				return VT.LoadSettings(&this, bstrSettingFileName);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(_ISystemMonitorUnion *self, int32* iAppearance) get_Appearance;
-				public function HRESULT(_ISystemMonitorUnion *self, int32 iAppearance) put_Appearance;
-				public function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_BackColor;
-				public function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_BackColor;
-				public function HRESULT(_ISystemMonitorUnion *self, int32* iBorderStyle) get_BorderStyle;
-				public function HRESULT(_ISystemMonitorUnion *self, int32 iBorderStyle) put_BorderStyle;
-				public function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_ForeColor;
-				public function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_ForeColor;
-				public function HRESULT(_ISystemMonitorUnion *self, IFontDisp** ppFont) get_Font;
-				public function HRESULT(_ISystemMonitorUnion *self, IFontDisp* pFont) putref_Font;
-				public function HRESULT(_ISystemMonitorUnion *self, ICounters** ppICounters) get_Counters;
-				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowVerticalGrid;
-				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowVerticalGrid;
-				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowHorizontalGrid;
-				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowHorizontalGrid;
-				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowLegend;
-				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowLegend;
-				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowScaleLabels;
-				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowScaleLabels;
-				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowValueBar;
-				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowValueBar;
-				public function HRESULT(_ISystemMonitorUnion *self, int32 iValue) put_MaximumScale;
-				public function HRESULT(_ISystemMonitorUnion *self, int32* piValue) get_MaximumScale;
-				public function HRESULT(_ISystemMonitorUnion *self, int32 iValue) put_MinimumScale;
-				public function HRESULT(_ISystemMonitorUnion *self, int32* piValue) get_MinimumScale;
-				public function HRESULT(_ISystemMonitorUnion *self, float fValue) put_UpdateInterval;
-				public function HRESULT(_ISystemMonitorUnion *self, float* pfValue) get_UpdateInterval;
-				public function HRESULT(_ISystemMonitorUnion *self, DisplayTypeConstants eDisplayType) put_DisplayType;
-				public function HRESULT(_ISystemMonitorUnion *self, DisplayTypeConstants* peDisplayType) get_DisplayType;
-				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ManualUpdate;
-				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ManualUpdate;
-				public function HRESULT(_ISystemMonitorUnion *self, BSTR bsTitle) put_GraphTitle;
-				public function HRESULT(_ISystemMonitorUnion *self, BSTR* pbsTitle) get_GraphTitle;
-				public function HRESULT(_ISystemMonitorUnion *self, BSTR bsTitle) put_YAxisLabel;
-				public function HRESULT(_ISystemMonitorUnion *self, BSTR* pbsTitle) get_YAxisLabel;
-				public function HRESULT(_ISystemMonitorUnion *self) CollectSample;
-				public function HRESULT(_ISystemMonitorUnion *self) UpdateGraph;
-				public function HRESULT(_ISystemMonitorUnion *self) BrowseCounters;
-				public function HRESULT(_ISystemMonitorUnion *self) DisplayProperties;
-				public function HRESULT(_ISystemMonitorUnion *self, int32 iIndex, ICounterItem** ppICounter) Counter;
-				public function HRESULT(_ISystemMonitorUnion *self, BSTR bsPath, ICounterItem** ppICounter) AddCounter;
-				public function HRESULT(_ISystemMonitorUnion *self, ICounterItem* pCtr) DeleteCounter;
-				public function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_BackColorCtl;
-				public function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_BackColorCtl;
-				public function HRESULT(_ISystemMonitorUnion *self, BSTR bsFileName) put_LogFileName;
-				public function HRESULT(_ISystemMonitorUnion *self, BSTR* bsFileName) get_LogFileName;
-				public function HRESULT(_ISystemMonitorUnion *self, double StartTime) put_LogViewStart;
-				public function HRESULT(_ISystemMonitorUnion *self, double* StartTime) get_LogViewStart;
-				public function HRESULT(_ISystemMonitorUnion *self, double StopTime) put_LogViewStop;
-				public function HRESULT(_ISystemMonitorUnion *self, double* StopTime) get_LogViewStop;
-				public function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_GridColor;
-				public function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_GridColor;
-				public function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_TimeBarColor;
-				public function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_TimeBarColor;
-				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_Highlight;
-				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_Highlight;
-				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowToolbar;
-				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowToolbar;
-				public function HRESULT(_ISystemMonitorUnion *self) Paste;
-				public function HRESULT(_ISystemMonitorUnion *self) Copy;
-				public function HRESULT(_ISystemMonitorUnion *self) Reset;
-				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ReadOnly;
-				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ReadOnly;
-				public function HRESULT(_ISystemMonitorUnion *self, ReportValueTypeConstants eReportValueType) put_ReportValueType;
-				public function HRESULT(_ISystemMonitorUnion *self, ReportValueTypeConstants* peReportValueType) get_ReportValueType;
-				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_MonitorDuplicateInstances;
-				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_MonitorDuplicateInstances;
-				public function HRESULT(_ISystemMonitorUnion *self, int32 iValue) put_DisplayFilter;
-				public function HRESULT(_ISystemMonitorUnion *self, int32* piValue) get_DisplayFilter;
-				public function HRESULT(_ISystemMonitorUnion *self, ILogFiles** ppILogFiles) get_LogFiles;
-				public function HRESULT(_ISystemMonitorUnion *self, DataSourceTypeConstants eDataSourceType) put_DataSourceType;
-				public function HRESULT(_ISystemMonitorUnion *self, DataSourceTypeConstants* peDataSourceType) get_DataSourceType;
-				public function HRESULT(_ISystemMonitorUnion *self, BSTR bsSqlDsnName) put_SqlDsnName;
-				public function HRESULT(_ISystemMonitorUnion *self, BSTR* bsSqlDsnName) get_SqlDsnName;
-				public function HRESULT(_ISystemMonitorUnion *self, BSTR bsSqlLogSetName) put_SqlLogSetName;
-				public function HRESULT(_ISystemMonitorUnion *self, BSTR* bsSqlLogSetName) get_SqlLogSetName;
-				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_EnableDigitGrouping;
-				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_EnableDigitGrouping;
-				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_EnableToolTips;
-				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_EnableToolTips;
-				public function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowTimeAxisLabels;
-				public function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowTimeAxisLabels;
-				public function HRESULT(_ISystemMonitorUnion *self, int16 bScroll) put_ChartScroll;
-				public function HRESULT(_ISystemMonitorUnion *self, int16* pbScroll) get_ChartScroll;
-				public function HRESULT(_ISystemMonitorUnion *self, int32 iNewCount) put_DataPointCount;
-				public function HRESULT(_ISystemMonitorUnion *self, int32* piDataPointCount) get_DataPointCount;
-				public function HRESULT(_ISystemMonitorUnion *self, int16 bSelectedCountersOnly) ScaleToFit;
-				public function HRESULT(_ISystemMonitorUnion *self, BSTR bstrFileName, SysmonFileType eSysmonFileType) SaveAs;
-				public function HRESULT(_ISystemMonitorUnion *self, BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) Relog;
-				public function HRESULT(_ISystemMonitorUnion *self) ClearData;
-				public function HRESULT(_ISystemMonitorUnion *self, double* pDate) get_LogSourceStartTime;
-				public function HRESULT(_ISystemMonitorUnion *self, double* pDate) get_LogSourceStopTime;
-				public function HRESULT(_ISystemMonitorUnion *self, double StartTime, double StopTime) SetLogViewRange;
-				public function HRESULT(_ISystemMonitorUnion *self, double* StartTime, double* StopTime) GetLogViewRange;
-				public function HRESULT(_ISystemMonitorUnion *self, int16 fLock, SysmonBatchReason eBatchReason) BatchingLock;
-				public function HRESULT(_ISystemMonitorUnion *self, BSTR bstrSettingFileName) LoadSettings;
+				public new function HRESULT(_ISystemMonitorUnion *self, int32* iAppearance) get_Appearance;
+				public new function HRESULT(_ISystemMonitorUnion *self, int32 iAppearance) put_Appearance;
+				public new function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_BackColor;
+				public new function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_BackColor;
+				public new function HRESULT(_ISystemMonitorUnion *self, int32* iBorderStyle) get_BorderStyle;
+				public new function HRESULT(_ISystemMonitorUnion *self, int32 iBorderStyle) put_BorderStyle;
+				public new function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_ForeColor;
+				public new function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_ForeColor;
+				public new function HRESULT(_ISystemMonitorUnion *self, IFontDisp** ppFont) get_Font;
+				public new function HRESULT(_ISystemMonitorUnion *self, IFontDisp* pFont) putref_Font;
+				public new function HRESULT(_ISystemMonitorUnion *self, ICounters** ppICounters) get_Counters;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowVerticalGrid;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowVerticalGrid;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowHorizontalGrid;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowHorizontalGrid;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowLegend;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowLegend;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowScaleLabels;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowScaleLabels;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowValueBar;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowValueBar;
+				public new function HRESULT(_ISystemMonitorUnion *self, int32 iValue) put_MaximumScale;
+				public new function HRESULT(_ISystemMonitorUnion *self, int32* piValue) get_MaximumScale;
+				public new function HRESULT(_ISystemMonitorUnion *self, int32 iValue) put_MinimumScale;
+				public new function HRESULT(_ISystemMonitorUnion *self, int32* piValue) get_MinimumScale;
+				public new function HRESULT(_ISystemMonitorUnion *self, float fValue) put_UpdateInterval;
+				public new function HRESULT(_ISystemMonitorUnion *self, float* pfValue) get_UpdateInterval;
+				public new function HRESULT(_ISystemMonitorUnion *self, DisplayTypeConstants eDisplayType) put_DisplayType;
+				public new function HRESULT(_ISystemMonitorUnion *self, DisplayTypeConstants* peDisplayType) get_DisplayType;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ManualUpdate;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ManualUpdate;
+				public new function HRESULT(_ISystemMonitorUnion *self, BSTR bsTitle) put_GraphTitle;
+				public new function HRESULT(_ISystemMonitorUnion *self, BSTR* pbsTitle) get_GraphTitle;
+				public new function HRESULT(_ISystemMonitorUnion *self, BSTR bsTitle) put_YAxisLabel;
+				public new function HRESULT(_ISystemMonitorUnion *self, BSTR* pbsTitle) get_YAxisLabel;
+				public new function HRESULT(_ISystemMonitorUnion *self) CollectSample;
+				public new function HRESULT(_ISystemMonitorUnion *self) UpdateGraph;
+				public new function HRESULT(_ISystemMonitorUnion *self) BrowseCounters;
+				public new function HRESULT(_ISystemMonitorUnion *self) DisplayProperties;
+				public new function HRESULT(_ISystemMonitorUnion *self, int32 iIndex, ICounterItem** ppICounter) Counter;
+				public new function HRESULT(_ISystemMonitorUnion *self, BSTR bsPath, ICounterItem** ppICounter) AddCounter;
+				public new function HRESULT(_ISystemMonitorUnion *self, ICounterItem* pCtr) DeleteCounter;
+				public new function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_BackColorCtl;
+				public new function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_BackColorCtl;
+				public new function HRESULT(_ISystemMonitorUnion *self, BSTR bsFileName) put_LogFileName;
+				public new function HRESULT(_ISystemMonitorUnion *self, BSTR* bsFileName) get_LogFileName;
+				public new function HRESULT(_ISystemMonitorUnion *self, double StartTime) put_LogViewStart;
+				public new function HRESULT(_ISystemMonitorUnion *self, double* StartTime) get_LogViewStart;
+				public new function HRESULT(_ISystemMonitorUnion *self, double StopTime) put_LogViewStop;
+				public new function HRESULT(_ISystemMonitorUnion *self, double* StopTime) get_LogViewStop;
+				public new function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_GridColor;
+				public new function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_GridColor;
+				public new function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_TimeBarColor;
+				public new function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_TimeBarColor;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_Highlight;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_Highlight;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowToolbar;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowToolbar;
+				public new function HRESULT(_ISystemMonitorUnion *self) Paste;
+				public new function HRESULT(_ISystemMonitorUnion *self) Copy;
+				public new function HRESULT(_ISystemMonitorUnion *self) Reset;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ReadOnly;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ReadOnly;
+				public new function HRESULT(_ISystemMonitorUnion *self, ReportValueTypeConstants eReportValueType) put_ReportValueType;
+				public new function HRESULT(_ISystemMonitorUnion *self, ReportValueTypeConstants* peReportValueType) get_ReportValueType;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_MonitorDuplicateInstances;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_MonitorDuplicateInstances;
+				public new function HRESULT(_ISystemMonitorUnion *self, int32 iValue) put_DisplayFilter;
+				public new function HRESULT(_ISystemMonitorUnion *self, int32* piValue) get_DisplayFilter;
+				public new function HRESULT(_ISystemMonitorUnion *self, ILogFiles** ppILogFiles) get_LogFiles;
+				public new function HRESULT(_ISystemMonitorUnion *self, DataSourceTypeConstants eDataSourceType) put_DataSourceType;
+				public new function HRESULT(_ISystemMonitorUnion *self, DataSourceTypeConstants* peDataSourceType) get_DataSourceType;
+				public new function HRESULT(_ISystemMonitorUnion *self, BSTR bsSqlDsnName) put_SqlDsnName;
+				public new function HRESULT(_ISystemMonitorUnion *self, BSTR* bsSqlDsnName) get_SqlDsnName;
+				public new function HRESULT(_ISystemMonitorUnion *self, BSTR bsSqlLogSetName) put_SqlLogSetName;
+				public new function HRESULT(_ISystemMonitorUnion *self, BSTR* bsSqlLogSetName) get_SqlLogSetName;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_EnableDigitGrouping;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_EnableDigitGrouping;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_EnableToolTips;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_EnableToolTips;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowTimeAxisLabels;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowTimeAxisLabels;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16 bScroll) put_ChartScroll;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbScroll) get_ChartScroll;
+				public new function HRESULT(_ISystemMonitorUnion *self, int32 iNewCount) put_DataPointCount;
+				public new function HRESULT(_ISystemMonitorUnion *self, int32* piDataPointCount) get_DataPointCount;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16 bSelectedCountersOnly) ScaleToFit;
+				public new function HRESULT(_ISystemMonitorUnion *self, BSTR bstrFileName, SysmonFileType eSysmonFileType) SaveAs;
+				public new function HRESULT(_ISystemMonitorUnion *self, BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) Relog;
+				public new function HRESULT(_ISystemMonitorUnion *self) ClearData;
+				public new function HRESULT(_ISystemMonitorUnion *self, double* pDate) get_LogSourceStartTime;
+				public new function HRESULT(_ISystemMonitorUnion *self, double* pDate) get_LogSourceStopTime;
+				public new function HRESULT(_ISystemMonitorUnion *self, double StartTime, double StopTime) SetLogViewRange;
+				public new function HRESULT(_ISystemMonitorUnion *self, double* StartTime, double* StopTime) GetLogViewRange;
+				public new function HRESULT(_ISystemMonitorUnion *self, int16 fLock, SysmonBatchReason eBatchReason) BatchingLock;
+				public new function HRESULT(_ISystemMonitorUnion *self, BSTR bstrSettingFileName) LoadSettings;
 			}
 		}
 		[CRepr]
@@ -1902,7 +4119,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x13d73d81, 0xc32e, 0x11cf, 0x93, 0x98, 0x00, 0xaa, 0x00, 0xa3, 0xdd, 0xea);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1913,7 +4131,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x194eb242, 0xc32c, 0x11cf, 0x93, 0x98, 0x00, 0xaa, 0x00, 0xa3, 0xdd, 0xea);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1924,15 +4143,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xee660ea0, 0x4abd, 0x11cf, 0x94, 0x3a, 0x00, 0x80, 0x29, 0x00, 0x43, 0x47);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void OnCounterSelected(int32 Index) mut
+			{
+				VT.OnCounterSelected(&this, Index);
+			}
+			public void OnCounterAdded(int32 Index) mut
+			{
+				VT.OnCounterAdded(&this, Index);
+			}
+			public void OnCounterDeleted(int32 Index) mut
+			{
+				VT.OnCounterDeleted(&this, Index);
+			}
+			public void OnSampleCollected() mut
+			{
+				VT.OnSampleCollected(&this);
+			}
+			public void OnDblClick(int32 Index) mut
+			{
+				VT.OnDblClick(&this, Index);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function void(ISystemMonitorEvents *self, int32 Index) OnCounterSelected;
-				public function void(ISystemMonitorEvents *self, int32 Index) OnCounterAdded;
-				public function void(ISystemMonitorEvents *self, int32 Index) OnCounterDeleted;
-				public function void(ISystemMonitorEvents *self) OnSampleCollected;
-				public function void(ISystemMonitorEvents *self, int32 Index) OnDblClick;
+				public new function void(ISystemMonitorEvents *self, int32 Index) OnCounterSelected;
+				public new function void(ISystemMonitorEvents *self, int32 Index) OnCounterAdded;
+				public new function void(ISystemMonitorEvents *self, int32 Index) OnCounterDeleted;
+				public new function void(ISystemMonitorEvents *self) OnSampleCollected;
+				public new function void(ISystemMonitorEvents *self, int32 Index) OnDblClick;
 			}
 		}
 		[CRepr]
@@ -1940,7 +4180,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x84979930, 0x4ab3, 0x11cf, 0x94, 0x3a, 0x00, 0x80, 0x29, 0x00, 0x43, 0x47);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{

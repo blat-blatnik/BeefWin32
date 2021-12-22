@@ -21,16 +21,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x00000003, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetUnmarshalClass(Guid* riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, Guid* pCid) mut
+			{
+				return VT.GetUnmarshalClass(&this, riid, pv, dwDestContext, pvDestContext, mshlflags, pCid);
+			}
+			public HRESULT GetMarshalSizeMax(Guid* riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, uint32* pSize) mut
+			{
+				return VT.GetMarshalSizeMax(&this, riid, pv, dwDestContext, pvDestContext, mshlflags, pSize);
+			}
+			public HRESULT MarshalInterface(IStream* pStm, Guid* riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags) mut
+			{
+				return VT.MarshalInterface(&this, pStm, riid, pv, dwDestContext, pvDestContext, mshlflags);
+			}
+			public HRESULT UnmarshalInterface(IStream* pStm, Guid* riid, void** ppv) mut
+			{
+				return VT.UnmarshalInterface(&this, pStm, riid, ppv);
+			}
+			public HRESULT ReleaseMarshalData(IStream* pStm) mut
+			{
+				return VT.ReleaseMarshalData(&this, pStm);
+			}
+			public HRESULT DisconnectObject(uint32 dwReserved) mut
+			{
+				return VT.DisconnectObject(&this, dwReserved);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IMarshal *self, Guid* riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, Guid* pCid) GetUnmarshalClass;
-				public function HRESULT(IMarshal *self, Guid* riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, uint32* pSize) GetMarshalSizeMax;
-				public function HRESULT(IMarshal *self, IStream* pStm, Guid* riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags) MarshalInterface;
-				public function HRESULT(IMarshal *self, IStream* pStm, Guid* riid, void** ppv) UnmarshalInterface;
-				public function HRESULT(IMarshal *self, IStream* pStm) ReleaseMarshalData;
-				public function HRESULT(IMarshal *self, uint32 dwReserved) DisconnectObject;
+				public new function HRESULT(IMarshal *self, Guid* riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, Guid* pCid) GetUnmarshalClass;
+				public new function HRESULT(IMarshal *self, Guid* riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, uint32* pSize) GetMarshalSizeMax;
+				public new function HRESULT(IMarshal *self, IStream* pStm, Guid* riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags) MarshalInterface;
+				public new function HRESULT(IMarshal *self, IStream* pStm, Guid* riid, void** ppv) UnmarshalInterface;
+				public new function HRESULT(IMarshal *self, IStream* pStm) ReleaseMarshalData;
+				public new function HRESULT(IMarshal *self, uint32 dwReserved) DisconnectObject;
 			}
 		}
 		[CRepr]
@@ -38,7 +63,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x000001cf, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IMarshal.VTable
 			{
@@ -49,11 +75,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd8f2f5e6, 0x6102, 0x4863, 0x9f, 0x26, 0x38, 0x9a, 0x46, 0x76, 0xef, 0xde);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetMarshalingContextAttribute(CO_MARSHALING_CONTEXT_ATTRIBUTES attribute, uint* pAttributeValue) mut
+			{
+				return VT.GetMarshalingContextAttribute(&this, attribute, pAttributeValue);
+			}
 			[CRepr]
 			public struct VTable : IStream.VTable
 			{
-				public function HRESULT(IMarshalingStream *self, CO_MARSHALING_CONTEXT_ATTRIBUTES attribute, uint* pAttributeValue) GetMarshalingContextAttribute;
+				public new function HRESULT(IMarshalingStream *self, CO_MARSHALING_CONTEXT_ATTRIBUTES attribute, uint* pAttributeValue) GetMarshalingContextAttribute;
 			}
 		}
 		

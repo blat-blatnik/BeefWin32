@@ -153,17 +153,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x965fc360, 0x16ff, 0x11d0, 0x91, 0xcb, 0x00, 0xaa, 0x00, 0xbb, 0xb7, 0x23);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetObjectInformation(SI_OBJECT_INFO* pObjectInfo) mut
+			{
+				return VT.GetObjectInformation(&this, pObjectInfo);
+			}
+			public HRESULT GetSecurity(OBJECT_SECURITY_INFORMATION RequestedInformation, SECURITY_DESCRIPTOR** ppSecurityDescriptor, BOOL fDefault) mut
+			{
+				return VT.GetSecurity(&this, RequestedInformation, ppSecurityDescriptor, fDefault);
+			}
+			public HRESULT SetSecurity(OBJECT_SECURITY_INFORMATION SecurityInformation, SECURITY_DESCRIPTOR* pSecurityDescriptor) mut
+			{
+				return VT.SetSecurity(&this, SecurityInformation, pSecurityDescriptor);
+			}
+			public HRESULT GetAccessRights(Guid* pguidObjectType, SECURITY_INFO_PAGE_FLAGS dwFlags, SI_ACCESS** ppAccess, uint32* pcAccesses, uint32* piDefaultAccess) mut
+			{
+				return VT.GetAccessRights(&this, pguidObjectType, dwFlags, ppAccess, pcAccesses, piDefaultAccess);
+			}
+			public HRESULT MapGeneric(Guid* pguidObjectType, uint8* pAceFlags, uint32* pMask) mut
+			{
+				return VT.MapGeneric(&this, pguidObjectType, pAceFlags, pMask);
+			}
+			public HRESULT GetInheritTypes(SI_INHERIT_TYPE** ppInheritTypes, uint32* pcInheritTypes) mut
+			{
+				return VT.GetInheritTypes(&this, ppInheritTypes, pcInheritTypes);
+			}
+			public HRESULT PropertySheetPageCallback(HWND hwnd, PSPCB_MESSAGE uMsg, SI_PAGE_TYPE uPage) mut
+			{
+				return VT.PropertySheetPageCallback(&this, hwnd, uMsg, uPage);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISecurityInformation *self, SI_OBJECT_INFO* pObjectInfo) GetObjectInformation;
-				public function HRESULT(ISecurityInformation *self, OBJECT_SECURITY_INFORMATION RequestedInformation, SECURITY_DESCRIPTOR** ppSecurityDescriptor, BOOL fDefault) GetSecurity;
-				public function HRESULT(ISecurityInformation *self, OBJECT_SECURITY_INFORMATION SecurityInformation, SECURITY_DESCRIPTOR* pSecurityDescriptor) SetSecurity;
-				public function HRESULT(ISecurityInformation *self, Guid* pguidObjectType, SECURITY_INFO_PAGE_FLAGS dwFlags, SI_ACCESS** ppAccess, uint32* pcAccesses, uint32* piDefaultAccess) GetAccessRights;
-				public function HRESULT(ISecurityInformation *self, Guid* pguidObjectType, uint8* pAceFlags, uint32* pMask) MapGeneric;
-				public function HRESULT(ISecurityInformation *self, SI_INHERIT_TYPE** ppInheritTypes, uint32* pcInheritTypes) GetInheritTypes;
-				public function HRESULT(ISecurityInformation *self, HWND hwnd, PSPCB_MESSAGE uMsg, SI_PAGE_TYPE uPage) PropertySheetPageCallback;
+				public new function HRESULT(ISecurityInformation *self, SI_OBJECT_INFO* pObjectInfo) GetObjectInformation;
+				public new function HRESULT(ISecurityInformation *self, OBJECT_SECURITY_INFORMATION RequestedInformation, SECURITY_DESCRIPTOR** ppSecurityDescriptor, BOOL fDefault) GetSecurity;
+				public new function HRESULT(ISecurityInformation *self, OBJECT_SECURITY_INFORMATION SecurityInformation, SECURITY_DESCRIPTOR* pSecurityDescriptor) SetSecurity;
+				public new function HRESULT(ISecurityInformation *self, Guid* pguidObjectType, SECURITY_INFO_PAGE_FLAGS dwFlags, SI_ACCESS** ppAccess, uint32* pcAccesses, uint32* piDefaultAccess) GetAccessRights;
+				public new function HRESULT(ISecurityInformation *self, Guid* pguidObjectType, uint8* pAceFlags, uint32* pMask) MapGeneric;
+				public new function HRESULT(ISecurityInformation *self, SI_INHERIT_TYPE** ppInheritTypes, uint32* pcInheritTypes) GetInheritTypes;
+				public new function HRESULT(ISecurityInformation *self, HWND hwnd, PSPCB_MESSAGE uMsg, SI_PAGE_TYPE uPage) PropertySheetPageCallback;
 			}
 		}
 		[CRepr]
@@ -171,12 +200,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc3ccfdb4, 0x6f88, 0x11d2, 0xa3, 0xce, 0x00, 0xc0, 0x4f, 0xb1, 0x78, 0x2a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public BOOL IsDaclCanonical(ACL* pDacl) mut
+			{
+				return VT.IsDaclCanonical(&this, pDacl);
+			}
+			public HRESULT LookupSids(uint32 cSids, PSID* rgpSids, IDataObject** ppdo) mut
+			{
+				return VT.LookupSids(&this, cSids, rgpSids, ppdo);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function BOOL(ISecurityInformation2 *self, ACL* pDacl) IsDaclCanonical;
-				public function HRESULT(ISecurityInformation2 *self, uint32 cSids, PSID* rgpSids, IDataObject** ppdo) LookupSids;
+				public new function BOOL(ISecurityInformation2 *self, ACL* pDacl) IsDaclCanonical;
+				public new function HRESULT(ISecurityInformation2 *self, uint32 cSids, PSID* rgpSids, IDataObject** ppdo) LookupSids;
 			}
 		}
 		[CRepr]
@@ -184,11 +222,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3853dc76, 0x9f35, 0x407c, 0x88, 0xa1, 0xd1, 0x93, 0x44, 0x36, 0x5f, 0xbc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetEffectivePermission(Guid* pguidObjectType, PSID pUserSid, PWSTR pszServerName, SECURITY_DESCRIPTOR* pSD, OBJECT_TYPE_LIST** ppObjectTypeList, uint32* pcObjectTypeListLength, uint32** ppGrantedAccessList, uint32* pcGrantedAccessListLength) mut
+			{
+				return VT.GetEffectivePermission(&this, pguidObjectType, pUserSid, pszServerName, pSD, ppObjectTypeList, pcObjectTypeListLength, ppGrantedAccessList, pcGrantedAccessListLength);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEffectivePermission *self, Guid* pguidObjectType, PSID pUserSid, PWSTR pszServerName, SECURITY_DESCRIPTOR* pSD, OBJECT_TYPE_LIST** ppObjectTypeList, uint32* pcObjectTypeListLength, uint32** ppGrantedAccessList, uint32* pcGrantedAccessListLength) GetEffectivePermission;
+				public new function HRESULT(IEffectivePermission *self, Guid* pguidObjectType, PSID pUserSid, PWSTR pszServerName, SECURITY_DESCRIPTOR* pSD, OBJECT_TYPE_LIST** ppObjectTypeList, uint32* pcObjectTypeListLength, uint32** ppGrantedAccessList, uint32* pcGrantedAccessListLength) GetEffectivePermission;
 			}
 		}
 		[CRepr]
@@ -196,11 +239,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfc3066eb, 0x79ef, 0x444b, 0x91, 0x11, 0xd1, 0x8a, 0x75, 0xeb, 0xf2, 0xfa);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetInheritSource(uint32 si, ACL* pACL, INHERITED_FROMA** ppInheritArray) mut
+			{
+				return VT.GetInheritSource(&this, si, pACL, ppInheritArray);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISecurityObjectTypeInfo *self, uint32 si, ACL* pACL, INHERITED_FROMA** ppInheritArray) GetInheritSource;
+				public new function HRESULT(ISecurityObjectTypeInfo *self, uint32 si, ACL* pACL, INHERITED_FROMA** ppInheritArray) GetInheritSource;
 			}
 		}
 		[CRepr]
@@ -208,12 +256,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe2cdc9cc, 0x31bd, 0x4f8f, 0x8c, 0x8b, 0xb6, 0x41, 0xaf, 0x51, 0x6a, 0x1a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetFullResourceName(PWSTR* ppszResourceName) mut
+			{
+				return VT.GetFullResourceName(&this, ppszResourceName);
+			}
+			public HRESULT OpenElevatedEditor(HWND hWnd, SI_PAGE_TYPE uPage) mut
+			{
+				return VT.OpenElevatedEditor(&this, hWnd, uPage);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISecurityInformation3 *self, PWSTR* ppszResourceName) GetFullResourceName;
-				public function HRESULT(ISecurityInformation3 *self, HWND hWnd, SI_PAGE_TYPE uPage) OpenElevatedEditor;
+				public new function HRESULT(ISecurityInformation3 *self, PWSTR* ppszResourceName) GetFullResourceName;
+				public new function HRESULT(ISecurityInformation3 *self, HWND hWnd, SI_PAGE_TYPE uPage) OpenElevatedEditor;
 			}
 		}
 		[CRepr]
@@ -221,11 +278,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xea961070, 0xcd14, 0x4621, 0xac, 0xe4, 0xf6, 0x3c, 0x03, 0xe5, 0x83, 0xe4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSecondarySecurity(SECURITY_OBJECT** pSecurityObjects, uint32* pSecurityObjectCount) mut
+			{
+				return VT.GetSecondarySecurity(&this, pSecurityObjects, pSecurityObjectCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISecurityInformation4 *self, SECURITY_OBJECT** pSecurityObjects, uint32* pSecurityObjectCount) GetSecondarySecurity;
+				public new function HRESULT(ISecurityInformation4 *self, SECURITY_OBJECT** pSecurityObjects, uint32* pSecurityObjectCount) GetSecondarySecurity;
 			}
 		}
 		[CRepr]
@@ -233,11 +295,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x941fabca, 0xdd47, 0x4fca, 0x90, 0xbb, 0xb0, 0xe1, 0x02, 0x55, 0xf2, 0x0d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ComputeEffectivePermissionWithSecondarySecurity(PSID pSid, PSID pDeviceSid, PWSTR pszServerName, SECURITY_OBJECT* pSecurityObjects, uint32 dwSecurityObjectCount, TOKEN_GROUPS* pUserGroups, AUTHZ_SID_OPERATION* pAuthzUserGroupsOperations, TOKEN_GROUPS* pDeviceGroups, AUTHZ_SID_OPERATION* pAuthzDeviceGroupsOperations, AUTHZ_SECURITY_ATTRIBUTES_INFORMATION* pAuthzUserClaims, AUTHZ_SECURITY_ATTRIBUTE_OPERATION* pAuthzUserClaimsOperations, AUTHZ_SECURITY_ATTRIBUTES_INFORMATION* pAuthzDeviceClaims, AUTHZ_SECURITY_ATTRIBUTE_OPERATION* pAuthzDeviceClaimsOperations, EFFPERM_RESULT_LIST* pEffpermResultLists) mut
+			{
+				return VT.ComputeEffectivePermissionWithSecondarySecurity(&this, pSid, pDeviceSid, pszServerName, pSecurityObjects, dwSecurityObjectCount, pUserGroups, pAuthzUserGroupsOperations, pDeviceGroups, pAuthzDeviceGroupsOperations, pAuthzUserClaims, pAuthzUserClaimsOperations, pAuthzDeviceClaims, pAuthzDeviceClaimsOperations, pEffpermResultLists);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEffectivePermission2 *self, PSID pSid, PSID pDeviceSid, PWSTR pszServerName, SECURITY_OBJECT* pSecurityObjects, uint32 dwSecurityObjectCount, TOKEN_GROUPS* pUserGroups, AUTHZ_SID_OPERATION* pAuthzUserGroupsOperations, TOKEN_GROUPS* pDeviceGroups, AUTHZ_SID_OPERATION* pAuthzDeviceGroupsOperations, AUTHZ_SECURITY_ATTRIBUTES_INFORMATION* pAuthzUserClaims, AUTHZ_SECURITY_ATTRIBUTE_OPERATION* pAuthzUserClaimsOperations, AUTHZ_SECURITY_ATTRIBUTES_INFORMATION* pAuthzDeviceClaims, AUTHZ_SECURITY_ATTRIBUTE_OPERATION* pAuthzDeviceClaimsOperations, EFFPERM_RESULT_LIST* pEffpermResultLists) ComputeEffectivePermissionWithSecondarySecurity;
+				public new function HRESULT(IEffectivePermission2 *self, PSID pSid, PSID pDeviceSid, PWSTR pszServerName, SECURITY_OBJECT* pSecurityObjects, uint32 dwSecurityObjectCount, TOKEN_GROUPS* pUserGroups, AUTHZ_SID_OPERATION* pAuthzUserGroupsOperations, TOKEN_GROUPS* pDeviceGroups, AUTHZ_SID_OPERATION* pAuthzDeviceGroupsOperations, AUTHZ_SECURITY_ATTRIBUTES_INFORMATION* pAuthzUserClaims, AUTHZ_SECURITY_ATTRIBUTE_OPERATION* pAuthzUserClaimsOperations, AUTHZ_SECURITY_ATTRIBUTES_INFORMATION* pAuthzDeviceClaims, AUTHZ_SECURITY_ATTRIBUTE_OPERATION* pAuthzDeviceClaimsOperations, EFFPERM_RESULT_LIST* pEffpermResultLists) ComputeEffectivePermissionWithSecondarySecurity;
 			}
 		}
 		

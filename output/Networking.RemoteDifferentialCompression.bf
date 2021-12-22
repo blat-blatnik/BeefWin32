@@ -169,14 +169,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96236a71, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetGeneratorParametersType(GeneratorParametersType* parametersType) mut
+			{
+				return VT.GetGeneratorParametersType(&this, parametersType);
+			}
+			public HRESULT GetParametersVersion(uint32* currentVersion, uint32* minimumCompatibleAppVersion) mut
+			{
+				return VT.GetParametersVersion(&this, currentVersion, minimumCompatibleAppVersion);
+			}
+			public HRESULT GetSerializeSize(uint32* size) mut
+			{
+				return VT.GetSerializeSize(&this, size);
+			}
+			public HRESULT Serialize(uint32 size, uint8* parametersBlob, uint32* bytesWritten) mut
+			{
+				return VT.Serialize(&this, size, parametersBlob, bytesWritten);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRdcGeneratorParameters *self, GeneratorParametersType* parametersType) GetGeneratorParametersType;
-				public function HRESULT(IRdcGeneratorParameters *self, uint32* currentVersion, uint32* minimumCompatibleAppVersion) GetParametersVersion;
-				public function HRESULT(IRdcGeneratorParameters *self, uint32* size) GetSerializeSize;
-				public function HRESULT(IRdcGeneratorParameters *self, uint32 size, uint8* parametersBlob, uint32* bytesWritten) Serialize;
+				public new function HRESULT(IRdcGeneratorParameters *self, GeneratorParametersType* parametersType) GetGeneratorParametersType;
+				public new function HRESULT(IRdcGeneratorParameters *self, uint32* currentVersion, uint32* minimumCompatibleAppVersion) GetParametersVersion;
+				public new function HRESULT(IRdcGeneratorParameters *self, uint32* size) GetSerializeSize;
+				public new function HRESULT(IRdcGeneratorParameters *self, uint32 size, uint8* parametersBlob, uint32* bytesWritten) Serialize;
 			}
 		}
 		[CRepr]
@@ -184,14 +201,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96236a72, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetHorizonSize(uint32* horizonSize) mut
+			{
+				return VT.GetHorizonSize(&this, horizonSize);
+			}
+			public HRESULT SetHorizonSize(uint32 horizonSize) mut
+			{
+				return VT.SetHorizonSize(&this, horizonSize);
+			}
+			public HRESULT GetHashWindowSize(uint32* hashWindowSize) mut
+			{
+				return VT.GetHashWindowSize(&this, hashWindowSize);
+			}
+			public HRESULT SetHashWindowSize(uint32 hashWindowSize) mut
+			{
+				return VT.SetHashWindowSize(&this, hashWindowSize);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRdcGeneratorFilterMaxParameters *self, uint32* horizonSize) GetHorizonSize;
-				public function HRESULT(IRdcGeneratorFilterMaxParameters *self, uint32 horizonSize) SetHorizonSize;
-				public function HRESULT(IRdcGeneratorFilterMaxParameters *self, uint32* hashWindowSize) GetHashWindowSize;
-				public function HRESULT(IRdcGeneratorFilterMaxParameters *self, uint32 hashWindowSize) SetHashWindowSize;
+				public new function HRESULT(IRdcGeneratorFilterMaxParameters *self, uint32* horizonSize) GetHorizonSize;
+				public new function HRESULT(IRdcGeneratorFilterMaxParameters *self, uint32 horizonSize) SetHorizonSize;
+				public new function HRESULT(IRdcGeneratorFilterMaxParameters *self, uint32* hashWindowSize) GetHashWindowSize;
+				public new function HRESULT(IRdcGeneratorFilterMaxParameters *self, uint32 hashWindowSize) SetHashWindowSize;
 			}
 		}
 		[CRepr]
@@ -199,12 +233,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96236a73, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetGeneratorParameters(uint32 level, IRdcGeneratorParameters** iGeneratorParameters) mut
+			{
+				return VT.GetGeneratorParameters(&this, level, iGeneratorParameters);
+			}
+			public HRESULT Process(BOOL endOfInput, BOOL* endOfOutput, RdcBufferPointer* inputBuffer, uint32 depth, RdcBufferPointer** outputBuffers, RDC_ErrorCode* rdc_ErrorCode) mut
+			{
+				return VT.Process(&this, endOfInput, endOfOutput, inputBuffer, depth, outputBuffers, rdc_ErrorCode);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRdcGenerator *self, uint32 level, IRdcGeneratorParameters** iGeneratorParameters) GetGeneratorParameters;
-				public function HRESULT(IRdcGenerator *self, BOOL endOfInput, BOOL* endOfOutput, RdcBufferPointer* inputBuffer, uint32 depth, RdcBufferPointer** outputBuffers, RDC_ErrorCode* rdc_ErrorCode) Process;
+				public new function HRESULT(IRdcGenerator *self, uint32 level, IRdcGeneratorParameters** iGeneratorParameters) GetGeneratorParameters;
+				public new function HRESULT(IRdcGenerator *self, BOOL endOfInput, BOOL* endOfOutput, RdcBufferPointer* inputBuffer, uint32 depth, RdcBufferPointer** outputBuffers, RDC_ErrorCode* rdc_ErrorCode) Process;
 			}
 		}
 		[CRepr]
@@ -212,13 +255,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96236a74, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetFileSize(uint64* fileSize) mut
+			{
+				return VT.GetFileSize(&this, fileSize);
+			}
+			public HRESULT Read(uint64 offsetFileStart, uint32 bytesToRead, uint32* bytesActuallyRead, uint8* buffer, BOOL* eof) mut
+			{
+				return VT.Read(&this, offsetFileStart, bytesToRead, bytesActuallyRead, buffer, eof);
+			}
+			public HRESULT GetFilePosition(uint64* offsetFromStart) mut
+			{
+				return VT.GetFilePosition(&this, offsetFromStart);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRdcFileReader *self, uint64* fileSize) GetFileSize;
-				public function HRESULT(IRdcFileReader *self, uint64 offsetFileStart, uint32 bytesToRead, uint32* bytesActuallyRead, uint8* buffer, BOOL* eof) Read;
-				public function HRESULT(IRdcFileReader *self, uint64* offsetFromStart) GetFilePosition;
+				public new function HRESULT(IRdcFileReader *self, uint64* fileSize) GetFileSize;
+				public new function HRESULT(IRdcFileReader *self, uint64 offsetFileStart, uint32 bytesToRead, uint32* bytesActuallyRead, uint8* buffer, BOOL* eof) Read;
+				public new function HRESULT(IRdcFileReader *self, uint64* offsetFromStart) GetFilePosition;
 			}
 		}
 		[CRepr]
@@ -226,13 +282,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96236a75, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Write(uint64 offsetFileStart, uint32 bytesToWrite, uint8* buffer) mut
+			{
+				return VT.Write(&this, offsetFileStart, bytesToWrite, buffer);
+			}
+			public HRESULT Truncate() mut
+			{
+				return VT.Truncate(&this);
+			}
+			public HRESULT DeleteOnClose() mut
+			{
+				return VT.DeleteOnClose(&this);
+			}
 			[CRepr]
 			public struct VTable : IRdcFileReader.VTable
 			{
-				public function HRESULT(IRdcFileWriter *self, uint64 offsetFileStart, uint32 bytesToWrite, uint8* buffer) Write;
-				public function HRESULT(IRdcFileWriter *self) Truncate;
-				public function HRESULT(IRdcFileWriter *self) DeleteOnClose;
+				public new function HRESULT(IRdcFileWriter *self, uint64 offsetFileStart, uint32 bytesToWrite, uint8* buffer) Write;
+				public new function HRESULT(IRdcFileWriter *self) Truncate;
+				public new function HRESULT(IRdcFileWriter *self) DeleteOnClose;
 			}
 		}
 		[CRepr]
@@ -240,12 +309,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96236a76, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ReadHeader(RDC_ErrorCode* rdc_ErrorCode) mut
+			{
+				return VT.ReadHeader(&this, rdc_ErrorCode);
+			}
+			public HRESULT ReadSignatures(RdcSignaturePointer* rdcSignaturePointer, BOOL* endOfOutput) mut
+			{
+				return VT.ReadSignatures(&this, rdcSignaturePointer, endOfOutput);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRdcSignatureReader *self, RDC_ErrorCode* rdc_ErrorCode) ReadHeader;
-				public function HRESULT(IRdcSignatureReader *self, RdcSignaturePointer* rdcSignaturePointer, BOOL* endOfOutput) ReadSignatures;
+				public new function HRESULT(IRdcSignatureReader *self, RDC_ErrorCode* rdc_ErrorCode) ReadHeader;
+				public new function HRESULT(IRdcSignatureReader *self, RdcSignaturePointer* rdcSignaturePointer, BOOL* endOfOutput) ReadSignatures;
 			}
 		}
 		[CRepr]
@@ -253,11 +331,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96236a77, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Process(BOOL endOfInput, BOOL* endOfOutput, RdcBufferPointer* inputBuffer, RdcNeedPointer* outputBuffer, RDC_ErrorCode* rdc_ErrorCode) mut
+			{
+				return VT.Process(&this, endOfInput, endOfOutput, inputBuffer, outputBuffer, rdc_ErrorCode);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRdcComparator *self, BOOL endOfInput, BOOL* endOfOutput, RdcBufferPointer* inputBuffer, RdcNeedPointer* outputBuffer, RDC_ErrorCode* rdc_ErrorCode) Process;
+				public new function HRESULT(IRdcComparator *self, BOOL endOfInput, BOOL* endOfOutput, RdcBufferPointer* inputBuffer, RdcNeedPointer* outputBuffer, RDC_ErrorCode* rdc_ErrorCode) Process;
 			}
 		}
 		[CRepr]
@@ -265,17 +348,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96236a78, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ComputeDefaultRecursionDepth(uint64 fileSize, uint32* depth) mut
+			{
+				return VT.ComputeDefaultRecursionDepth(&this, fileSize, depth);
+			}
+			public HRESULT CreateGeneratorParameters(GeneratorParametersType parametersType, uint32 level, IRdcGeneratorParameters** iGeneratorParameters) mut
+			{
+				return VT.CreateGeneratorParameters(&this, parametersType, level, iGeneratorParameters);
+			}
+			public HRESULT OpenGeneratorParameters(uint32 size, uint8* parametersBlob, IRdcGeneratorParameters** iGeneratorParameters) mut
+			{
+				return VT.OpenGeneratorParameters(&this, size, parametersBlob, iGeneratorParameters);
+			}
+			public HRESULT CreateGenerator(uint32 depth, IRdcGeneratorParameters** iGeneratorParametersArray, IRdcGenerator** iGenerator) mut
+			{
+				return VT.CreateGenerator(&this, depth, iGeneratorParametersArray, iGenerator);
+			}
+			public HRESULT CreateComparator(IRdcFileReader* iSeedSignaturesFile, uint32 comparatorBufferSize, IRdcComparator** iComparator) mut
+			{
+				return VT.CreateComparator(&this, iSeedSignaturesFile, comparatorBufferSize, iComparator);
+			}
+			public HRESULT CreateSignatureReader(IRdcFileReader* iFileReader, IRdcSignatureReader** iSignatureReader) mut
+			{
+				return VT.CreateSignatureReader(&this, iFileReader, iSignatureReader);
+			}
+			public HRESULT GetRDCVersion(uint32* currentVersion, uint32* minimumCompatibleAppVersion) mut
+			{
+				return VT.GetRDCVersion(&this, currentVersion, minimumCompatibleAppVersion);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRdcLibrary *self, uint64 fileSize, uint32* depth) ComputeDefaultRecursionDepth;
-				public function HRESULT(IRdcLibrary *self, GeneratorParametersType parametersType, uint32 level, IRdcGeneratorParameters** iGeneratorParameters) CreateGeneratorParameters;
-				public function HRESULT(IRdcLibrary *self, uint32 size, uint8* parametersBlob, IRdcGeneratorParameters** iGeneratorParameters) OpenGeneratorParameters;
-				public function HRESULT(IRdcLibrary *self, uint32 depth, IRdcGeneratorParameters** iGeneratorParametersArray, IRdcGenerator** iGenerator) CreateGenerator;
-				public function HRESULT(IRdcLibrary *self, IRdcFileReader* iSeedSignaturesFile, uint32 comparatorBufferSize, IRdcComparator** iComparator) CreateComparator;
-				public function HRESULT(IRdcLibrary *self, IRdcFileReader* iFileReader, IRdcSignatureReader** iSignatureReader) CreateSignatureReader;
-				public function HRESULT(IRdcLibrary *self, uint32* currentVersion, uint32* minimumCompatibleAppVersion) GetRDCVersion;
+				public new function HRESULT(IRdcLibrary *self, uint64 fileSize, uint32* depth) ComputeDefaultRecursionDepth;
+				public new function HRESULT(IRdcLibrary *self, GeneratorParametersType parametersType, uint32 level, IRdcGeneratorParameters** iGeneratorParameters) CreateGeneratorParameters;
+				public new function HRESULT(IRdcLibrary *self, uint32 size, uint8* parametersBlob, IRdcGeneratorParameters** iGeneratorParameters) OpenGeneratorParameters;
+				public new function HRESULT(IRdcLibrary *self, uint32 depth, IRdcGeneratorParameters** iGeneratorParametersArray, IRdcGenerator** iGenerator) CreateGenerator;
+				public new function HRESULT(IRdcLibrary *self, IRdcFileReader* iSeedSignaturesFile, uint32 comparatorBufferSize, IRdcComparator** iComparator) CreateComparator;
+				public new function HRESULT(IRdcLibrary *self, IRdcFileReader* iFileReader, IRdcSignatureReader** iSignatureReader) CreateSignatureReader;
+				public new function HRESULT(IRdcLibrary *self, uint32* currentVersion, uint32* minimumCompatibleAppVersion) GetRDCVersion;
 			}
 		}
 		[CRepr]
@@ -283,11 +395,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96236a7a, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ReportProgress(uint32 percentCompleted) mut
+			{
+				return VT.ReportProgress(&this, percentCompleted);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISimilarityReportProgress *self, uint32 percentCompleted) ReportProgress;
+				public new function HRESULT(ISimilarityReportProgress *self, uint32 percentCompleted) ReportProgress;
 			}
 		}
 		[CRepr]
@@ -295,11 +412,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96236a7b, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetNextData(uint32 resultsSize, uint32* resultsUsed, BOOL* eof, SimilarityDumpData* results) mut
+			{
+				return VT.GetNextData(&this, resultsSize, resultsUsed, eof, results);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISimilarityTableDumpState *self, uint32 resultsSize, uint32* resultsUsed, BOOL* eof, SimilarityDumpData* results) GetNextData;
+				public new function HRESULT(ISimilarityTableDumpState *self, uint32 resultsSize, uint32* resultsUsed, BOOL* eof, SimilarityDumpData* results) GetNextData;
 			}
 		}
 		[CRepr]
@@ -307,14 +429,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96236a7c, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Flush() mut
+			{
+				return VT.Flush(&this);
+			}
+			public HRESULT Unmap() mut
+			{
+				return VT.Unmap(&this);
+			}
+			public HRESULT Get(uint64 index, BOOL dirty, uint32 numElements, SimilarityMappedViewInfo* viewInfo) mut
+			{
+				return VT.Get(&this, index, dirty, numElements, viewInfo);
+			}
+			public void GetView(uint8** mappedPageBegin, uint8** mappedPageEnd) mut
+			{
+				VT.GetView(&this, mappedPageBegin, mappedPageEnd);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISimilarityTraitsMappedView *self) Flush;
-				public function HRESULT(ISimilarityTraitsMappedView *self) Unmap;
-				public function HRESULT(ISimilarityTraitsMappedView *self, uint64 index, BOOL dirty, uint32 numElements, SimilarityMappedViewInfo* viewInfo) Get;
-				public function void(ISimilarityTraitsMappedView *self, uint8** mappedPageBegin, uint8** mappedPageEnd) GetView;
+				public new function HRESULT(ISimilarityTraitsMappedView *self) Flush;
+				public new function HRESULT(ISimilarityTraitsMappedView *self) Unmap;
+				public new function HRESULT(ISimilarityTraitsMappedView *self, uint64 index, BOOL dirty, uint32 numElements, SimilarityMappedViewInfo* viewInfo) Get;
+				public new function void(ISimilarityTraitsMappedView *self, uint8** mappedPageBegin, uint8** mappedPageEnd) GetView;
 			}
 		}
 		[CRepr]
@@ -322,17 +461,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96236a7d, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void CloseMapping() mut
+			{
+				VT.CloseMapping(&this);
+			}
+			public HRESULT SetFileSize(uint64 fileSize) mut
+			{
+				return VT.SetFileSize(&this, fileSize);
+			}
+			public HRESULT GetFileSize(uint64* fileSize) mut
+			{
+				return VT.GetFileSize(&this, fileSize);
+			}
+			public HRESULT OpenMapping(RdcMappingAccessMode accessMode, uint64 begin, uint64 end, uint64* actualEnd) mut
+			{
+				return VT.OpenMapping(&this, accessMode, begin, end, actualEnd);
+			}
+			public HRESULT ResizeMapping(RdcMappingAccessMode accessMode, uint64 begin, uint64 end, uint64* actualEnd) mut
+			{
+				return VT.ResizeMapping(&this, accessMode, begin, end, actualEnd);
+			}
+			public void GetPageSize(uint32* pageSize) mut
+			{
+				VT.GetPageSize(&this, pageSize);
+			}
+			public HRESULT CreateView(uint32 minimumMappedPages, RdcMappingAccessMode accessMode, ISimilarityTraitsMappedView** mappedView) mut
+			{
+				return VT.CreateView(&this, minimumMappedPages, accessMode, mappedView);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function void(ISimilarityTraitsMapping *self) CloseMapping;
-				public function HRESULT(ISimilarityTraitsMapping *self, uint64 fileSize) SetFileSize;
-				public function HRESULT(ISimilarityTraitsMapping *self, uint64* fileSize) GetFileSize;
-				public function HRESULT(ISimilarityTraitsMapping *self, RdcMappingAccessMode accessMode, uint64 begin, uint64 end, uint64* actualEnd) OpenMapping;
-				public function HRESULT(ISimilarityTraitsMapping *self, RdcMappingAccessMode accessMode, uint64 begin, uint64 end, uint64* actualEnd) ResizeMapping;
-				public function void(ISimilarityTraitsMapping *self, uint32* pageSize) GetPageSize;
-				public function HRESULT(ISimilarityTraitsMapping *self, uint32 minimumMappedPages, RdcMappingAccessMode accessMode, ISimilarityTraitsMappedView** mappedView) CreateView;
+				public new function void(ISimilarityTraitsMapping *self) CloseMapping;
+				public new function HRESULT(ISimilarityTraitsMapping *self, uint64 fileSize) SetFileSize;
+				public new function HRESULT(ISimilarityTraitsMapping *self, uint64* fileSize) GetFileSize;
+				public new function HRESULT(ISimilarityTraitsMapping *self, RdcMappingAccessMode accessMode, uint64 begin, uint64 end, uint64* actualEnd) OpenMapping;
+				public new function HRESULT(ISimilarityTraitsMapping *self, RdcMappingAccessMode accessMode, uint64 begin, uint64 end, uint64* actualEnd) ResizeMapping;
+				public new function void(ISimilarityTraitsMapping *self, uint32* pageSize) GetPageSize;
+				public new function HRESULT(ISimilarityTraitsMapping *self, uint32 minimumMappedPages, RdcMappingAccessMode accessMode, ISimilarityTraitsMappedView** mappedView) CreateView;
 			}
 		}
 		[CRepr]
@@ -340,17 +508,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96236a7e, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateTable(PWSTR path, BOOL truncate, uint8* securityDescriptor, RdcCreatedTables* isNew) mut
+			{
+				return VT.CreateTable(&this, path, truncate, securityDescriptor, isNew);
+			}
+			public HRESULT CreateTableIndirect(ISimilarityTraitsMapping* mapping, BOOL truncate, RdcCreatedTables* isNew) mut
+			{
+				return VT.CreateTableIndirect(&this, mapping, truncate, isNew);
+			}
+			public HRESULT CloseTable(BOOL isValid) mut
+			{
+				return VT.CloseTable(&this, isValid);
+			}
+			public HRESULT Append(SimilarityData* data, uint32 fileIndex) mut
+			{
+				return VT.Append(&this, data, fileIndex);
+			}
+			public HRESULT FindSimilarFileIndex(SimilarityData* similarityData, uint16 numberOfMatchesRequired, FindSimilarFileIndexResults* findSimilarFileIndexResults, uint32 resultsSize, uint32* resultsUsed) mut
+			{
+				return VT.FindSimilarFileIndex(&this, similarityData, numberOfMatchesRequired, findSimilarFileIndexResults, resultsSize, resultsUsed);
+			}
+			public HRESULT BeginDump(ISimilarityTableDumpState** similarityTableDumpState) mut
+			{
+				return VT.BeginDump(&this, similarityTableDumpState);
+			}
+			public HRESULT GetLastIndex(uint32* fileIndex) mut
+			{
+				return VT.GetLastIndex(&this, fileIndex);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISimilarityTraitsTable *self, PWSTR path, BOOL truncate, uint8* securityDescriptor, RdcCreatedTables* isNew) CreateTable;
-				public function HRESULT(ISimilarityTraitsTable *self, ISimilarityTraitsMapping* mapping, BOOL truncate, RdcCreatedTables* isNew) CreateTableIndirect;
-				public function HRESULT(ISimilarityTraitsTable *self, BOOL isValid) CloseTable;
-				public function HRESULT(ISimilarityTraitsTable *self, SimilarityData* data, uint32 fileIndex) Append;
-				public function HRESULT(ISimilarityTraitsTable *self, SimilarityData* similarityData, uint16 numberOfMatchesRequired, FindSimilarFileIndexResults* findSimilarFileIndexResults, uint32 resultsSize, uint32* resultsUsed) FindSimilarFileIndex;
-				public function HRESULT(ISimilarityTraitsTable *self, ISimilarityTableDumpState** similarityTableDumpState) BeginDump;
-				public function HRESULT(ISimilarityTraitsTable *self, uint32* fileIndex) GetLastIndex;
+				public new function HRESULT(ISimilarityTraitsTable *self, PWSTR path, BOOL truncate, uint8* securityDescriptor, RdcCreatedTables* isNew) CreateTable;
+				public new function HRESULT(ISimilarityTraitsTable *self, ISimilarityTraitsMapping* mapping, BOOL truncate, RdcCreatedTables* isNew) CreateTableIndirect;
+				public new function HRESULT(ISimilarityTraitsTable *self, BOOL isValid) CloseTable;
+				public new function HRESULT(ISimilarityTraitsTable *self, SimilarityData* data, uint32 fileIndex) Append;
+				public new function HRESULT(ISimilarityTraitsTable *self, SimilarityData* similarityData, uint16 numberOfMatchesRequired, FindSimilarFileIndexResults* findSimilarFileIndexResults, uint32 resultsSize, uint32* resultsUsed) FindSimilarFileIndex;
+				public new function HRESULT(ISimilarityTraitsTable *self, ISimilarityTableDumpState** similarityTableDumpState) BeginDump;
+				public new function HRESULT(ISimilarityTraitsTable *self, uint32* fileIndex) GetLastIndex;
 			}
 		}
 		[CRepr]
@@ -358,17 +555,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96236a7f, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateTable(PWSTR path, BOOL truncate, uint8* securityDescriptor, uint32 recordSize, RdcCreatedTables* isNew) mut
+			{
+				return VT.CreateTable(&this, path, truncate, securityDescriptor, recordSize, isNew);
+			}
+			public HRESULT CreateTableIndirect(IRdcFileWriter* fileIdFile, BOOL truncate, uint32 recordSize, RdcCreatedTables* isNew) mut
+			{
+				return VT.CreateTableIndirect(&this, fileIdFile, truncate, recordSize, isNew);
+			}
+			public HRESULT CloseTable(BOOL isValid) mut
+			{
+				return VT.CloseTable(&this, isValid);
+			}
+			public HRESULT Append(SimilarityFileId* similarityFileId, uint32* similarityFileIndex) mut
+			{
+				return VT.Append(&this, similarityFileId, similarityFileIndex);
+			}
+			public HRESULT Lookup(uint32 similarityFileIndex, SimilarityFileId* similarityFileId) mut
+			{
+				return VT.Lookup(&this, similarityFileIndex, similarityFileId);
+			}
+			public HRESULT Invalidate(uint32 similarityFileIndex) mut
+			{
+				return VT.Invalidate(&this, similarityFileIndex);
+			}
+			public HRESULT GetRecordCount(uint32* recordCount) mut
+			{
+				return VT.GetRecordCount(&this, recordCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISimilarityFileIdTable *self, PWSTR path, BOOL truncate, uint8* securityDescriptor, uint32 recordSize, RdcCreatedTables* isNew) CreateTable;
-				public function HRESULT(ISimilarityFileIdTable *self, IRdcFileWriter* fileIdFile, BOOL truncate, uint32 recordSize, RdcCreatedTables* isNew) CreateTableIndirect;
-				public function HRESULT(ISimilarityFileIdTable *self, BOOL isValid) CloseTable;
-				public function HRESULT(ISimilarityFileIdTable *self, SimilarityFileId* similarityFileId, uint32* similarityFileIndex) Append;
-				public function HRESULT(ISimilarityFileIdTable *self, uint32 similarityFileIndex, SimilarityFileId* similarityFileId) Lookup;
-				public function HRESULT(ISimilarityFileIdTable *self, uint32 similarityFileIndex) Invalidate;
-				public function HRESULT(ISimilarityFileIdTable *self, uint32* recordCount) GetRecordCount;
+				public new function HRESULT(ISimilarityFileIdTable *self, PWSTR path, BOOL truncate, uint8* securityDescriptor, uint32 recordSize, RdcCreatedTables* isNew) CreateTable;
+				public new function HRESULT(ISimilarityFileIdTable *self, IRdcFileWriter* fileIdFile, BOOL truncate, uint32 recordSize, RdcCreatedTables* isNew) CreateTableIndirect;
+				public new function HRESULT(ISimilarityFileIdTable *self, BOOL isValid) CloseTable;
+				public new function HRESULT(ISimilarityFileIdTable *self, SimilarityFileId* similarityFileId, uint32* similarityFileIndex) Append;
+				public new function HRESULT(ISimilarityFileIdTable *self, uint32 similarityFileIndex, SimilarityFileId* similarityFileId) Lookup;
+				public new function HRESULT(ISimilarityFileIdTable *self, uint32 similarityFileIndex) Invalidate;
+				public new function HRESULT(ISimilarityFileIdTable *self, uint32* recordCount) GetRecordCount;
 			}
 		}
 		[CRepr]
@@ -376,12 +602,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96236a80, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT EnableSimilarity() mut
+			{
+				return VT.EnableSimilarity(&this);
+			}
+			public HRESULT Results(SimilarityData* similarityData) mut
+			{
+				return VT.Results(&this, similarityData);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRdcSimilarityGenerator *self) EnableSimilarity;
-				public function HRESULT(IRdcSimilarityGenerator *self, SimilarityData* similarityData) Results;
+				public new function HRESULT(IRdcSimilarityGenerator *self) EnableSimilarity;
+				public new function HRESULT(IRdcSimilarityGenerator *self, SimilarityData* similarityData) Results;
 			}
 		}
 		[CRepr]
@@ -389,12 +624,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96236a81, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSize(uint32* size) mut
+			{
+				return VT.GetSize(&this, size);
+			}
+			public HRESULT GetNextFileId(uint32* numTraitsMatched, SimilarityFileId* similarityFileId) mut
+			{
+				return VT.GetNextFileId(&this, numTraitsMatched, similarityFileId);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IFindSimilarResults *self, uint32* size) GetSize;
-				public function HRESULT(IFindSimilarResults *self, uint32* numTraitsMatched, SimilarityFileId* similarityFileId) GetNextFileId;
+				public new function HRESULT(IFindSimilarResults *self, uint32* size) GetSize;
+				public new function HRESULT(IFindSimilarResults *self, uint32* numTraitsMatched, SimilarityFileId* similarityFileId) GetNextFileId;
 			}
 		}
 		[CRepr]
@@ -402,17 +646,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x96236a83, 0x9dbc, 0x11da, 0x9e, 0x3f, 0x00, 0x11, 0x11, 0x4a, 0xe3, 0x11);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateTable(PWSTR path, BOOL truncate, uint8* securityDescriptor, uint32 recordSize, RdcCreatedTables* isNew) mut
+			{
+				return VT.CreateTable(&this, path, truncate, securityDescriptor, recordSize, isNew);
+			}
+			public HRESULT CreateTableIndirect(ISimilarityTraitsMapping* mapping, IRdcFileWriter* fileIdFile, BOOL truncate, uint32 recordSize, RdcCreatedTables* isNew) mut
+			{
+				return VT.CreateTableIndirect(&this, mapping, fileIdFile, truncate, recordSize, isNew);
+			}
+			public HRESULT CloseTable(BOOL isValid) mut
+			{
+				return VT.CloseTable(&this, isValid);
+			}
+			public HRESULT Append(SimilarityFileId* similarityFileId, SimilarityData* similarityData) mut
+			{
+				return VT.Append(&this, similarityFileId, similarityData);
+			}
+			public HRESULT FindSimilarFileId(SimilarityData* similarityData, uint16 numberOfMatchesRequired, uint32 resultsSize, IFindSimilarResults** findSimilarResults) mut
+			{
+				return VT.FindSimilarFileId(&this, similarityData, numberOfMatchesRequired, resultsSize, findSimilarResults);
+			}
+			public HRESULT CopyAndSwap(ISimilarity* newSimilarityTables, ISimilarityReportProgress* reportProgress) mut
+			{
+				return VT.CopyAndSwap(&this, newSimilarityTables, reportProgress);
+			}
+			public HRESULT GetRecordCount(uint32* recordCount) mut
+			{
+				return VT.GetRecordCount(&this, recordCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISimilarity *self, PWSTR path, BOOL truncate, uint8* securityDescriptor, uint32 recordSize, RdcCreatedTables* isNew) CreateTable;
-				public function HRESULT(ISimilarity *self, ISimilarityTraitsMapping* mapping, IRdcFileWriter* fileIdFile, BOOL truncate, uint32 recordSize, RdcCreatedTables* isNew) CreateTableIndirect;
-				public function HRESULT(ISimilarity *self, BOOL isValid) CloseTable;
-				public function HRESULT(ISimilarity *self, SimilarityFileId* similarityFileId, SimilarityData* similarityData) Append;
-				public function HRESULT(ISimilarity *self, SimilarityData* similarityData, uint16 numberOfMatchesRequired, uint32 resultsSize, IFindSimilarResults** findSimilarResults) FindSimilarFileId;
-				public function HRESULT(ISimilarity *self, ISimilarity* newSimilarityTables, ISimilarityReportProgress* reportProgress) CopyAndSwap;
-				public function HRESULT(ISimilarity *self, uint32* recordCount) GetRecordCount;
+				public new function HRESULT(ISimilarity *self, PWSTR path, BOOL truncate, uint8* securityDescriptor, uint32 recordSize, RdcCreatedTables* isNew) CreateTable;
+				public new function HRESULT(ISimilarity *self, ISimilarityTraitsMapping* mapping, IRdcFileWriter* fileIdFile, BOOL truncate, uint32 recordSize, RdcCreatedTables* isNew) CreateTableIndirect;
+				public new function HRESULT(ISimilarity *self, BOOL isValid) CloseTable;
+				public new function HRESULT(ISimilarity *self, SimilarityFileId* similarityFileId, SimilarityData* similarityData) Append;
+				public new function HRESULT(ISimilarity *self, SimilarityData* similarityData, uint16 numberOfMatchesRequired, uint32 resultsSize, IFindSimilarResults** findSimilarResults) FindSimilarFileId;
+				public new function HRESULT(ISimilarity *self, ISimilarity* newSimilarityTables, ISimilarityReportProgress* reportProgress) CopyAndSwap;
+				public new function HRESULT(ISimilarity *self, uint32* recordCount) GetRecordCount;
 			}
 		}
 		

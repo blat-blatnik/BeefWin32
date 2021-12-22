@@ -12,12 +12,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x969dc708, 0x5c76, 0x11d1, 0x8d, 0x86, 0x00, 0x00, 0xf8, 0x04, 0xb0, 0x57);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ExtractThumbnail(IStorage* pStg, uint32 ulLength, uint32 ulHeight, uint32* pulOutputLength, uint32* pulOutputHeight, HBITMAP* phOutputBitmap) mut
+			{
+				return VT.ExtractThumbnail(&this, pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmap);
+			}
+			public HRESULT OnFileUpdated(IStorage* pStg) mut
+			{
+				return VT.OnFileUpdated(&this, pStg);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IThumbnailExtractor *self, IStorage* pStg, uint32 ulLength, uint32 ulHeight, uint32* pulOutputLength, uint32* pulOutputHeight, HBITMAP* phOutputBitmap) ExtractThumbnail;
-				public function HRESULT(IThumbnailExtractor *self, IStorage* pStg) OnFileUpdated;
+				public new function HRESULT(IThumbnailExtractor *self, IStorage* pStg, uint32 ulLength, uint32 ulHeight, uint32* pulOutputLength, uint32* pulOutputHeight, HBITMAP* phOutputBitmap) ExtractThumbnail;
+				public new function HRESULT(IThumbnailExtractor *self, IStorage* pStg) OnFileUpdated;
 			}
 		}
 		[CRepr]
@@ -25,11 +34,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x947990de, 0xcc28, 0x11d2, 0xa0, 0xf7, 0x00, 0x80, 0x5f, 0x85, 0x8f, 0xb1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Dummy(HICON h1, HDC h2) mut
+			{
+				return VT.Dummy(&this, h1, h2);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDummyHICONIncluder *self, HICON h1, HDC h2) Dummy;
+				public new function HRESULT(IDummyHICONIncluder *self, HICON h1, HDC h2) Dummy;
 			}
 		}
 		

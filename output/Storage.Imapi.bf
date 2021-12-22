@@ -802,14 +802,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354130, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get__NewEnum(IEnumVARIANT** ppunk) mut
+			{
+				return VT.get__NewEnum(&this, ppunk);
+			}
+			public HRESULT get_Item(int32 index, BSTR* value) mut
+			{
+				return VT.get_Item(&this, index, value);
+			}
+			public HRESULT get_Count(int32* value) mut
+			{
+				return VT.get_Count(&this, value);
+			}
+			public HRESULT get_IsSupportedEnvironment(int16* value) mut
+			{
+				return VT.get_IsSupportedEnvironment(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IDiscMaster2 *self, IEnumVARIANT** ppunk) get__NewEnum;
-				public function HRESULT(IDiscMaster2 *self, int32 index, BSTR* value) get_Item;
-				public function HRESULT(IDiscMaster2 *self, int32* value) get_Count;
-				public function HRESULT(IDiscMaster2 *self, int16* value) get_IsSupportedEnvironment;
+				public new function HRESULT(IDiscMaster2 *self, IEnumVARIANT** ppunk) get__NewEnum;
+				public new function HRESULT(IDiscMaster2 *self, int32 index, BSTR* value) get_Item;
+				public new function HRESULT(IDiscMaster2 *self, int32* value) get_Count;
+				public new function HRESULT(IDiscMaster2 *self, int16* value) get_IsSupportedEnvironment;
 			}
 		}
 		[CRepr]
@@ -817,12 +834,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354131, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT NotifyDeviceAdded(IDispatch* object, BSTR uniqueId) mut
+			{
+				return VT.NotifyDeviceAdded(&this, object, uniqueId);
+			}
+			public HRESULT NotifyDeviceRemoved(IDispatch* object, BSTR uniqueId) mut
+			{
+				return VT.NotifyDeviceRemoved(&this, object, uniqueId);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(DDiscMaster2Events *self, IDispatch* object, BSTR uniqueId) NotifyDeviceAdded;
-				public function HRESULT(DDiscMaster2Events *self, IDispatch* object, BSTR uniqueId) NotifyDeviceRemoved;
+				public new function HRESULT(DDiscMaster2Events *self, IDispatch* object, BSTR uniqueId) NotifyDeviceAdded;
+				public new function HRESULT(DDiscMaster2Events *self, IDispatch* object, BSTR uniqueId) NotifyDeviceRemoved;
 			}
 		}
 		[CRepr]
@@ -830,28 +856,101 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354132, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SendCommandNoData(uint8* Cdb, uint32 CdbSize, uint8* SenseBuffer, uint32 Timeout) mut
+			{
+				return VT.SendCommandNoData(&this, Cdb, CdbSize, SenseBuffer, Timeout);
+			}
+			public HRESULT SendCommandSendDataToDevice(uint8* Cdb, uint32 CdbSize, uint8* SenseBuffer, uint32 Timeout, uint8* Buffer, uint32 BufferSize) mut
+			{
+				return VT.SendCommandSendDataToDevice(&this, Cdb, CdbSize, SenseBuffer, Timeout, Buffer, BufferSize);
+			}
+			public HRESULT SendCommandGetDataFromDevice(uint8* Cdb, uint32 CdbSize, uint8* SenseBuffer, uint32 Timeout, uint8* Buffer, uint32 BufferSize, uint32* BufferFetched) mut
+			{
+				return VT.SendCommandGetDataFromDevice(&this, Cdb, CdbSize, SenseBuffer, Timeout, Buffer, BufferSize, BufferFetched);
+			}
+			public HRESULT ReadDvdStructure(uint32 format, uint32 address, uint32 layer, uint32 agid, uint8** data, uint32* count) mut
+			{
+				return VT.ReadDvdStructure(&this, format, address, layer, agid, data, count);
+			}
+			public HRESULT SendDvdStructure(uint32 format, uint8* data, uint32 count) mut
+			{
+				return VT.SendDvdStructure(&this, format, data, count);
+			}
+			public HRESULT GetAdapterDescriptor(uint8** data, uint32* byteSize) mut
+			{
+				return VT.GetAdapterDescriptor(&this, data, byteSize);
+			}
+			public HRESULT GetDeviceDescriptor(uint8** data, uint32* byteSize) mut
+			{
+				return VT.GetDeviceDescriptor(&this, data, byteSize);
+			}
+			public HRESULT GetDiscInformation(uint8** discInformation, uint32* byteSize) mut
+			{
+				return VT.GetDiscInformation(&this, discInformation, byteSize);
+			}
+			public HRESULT GetTrackInformation(uint32 address, IMAPI_READ_TRACK_ADDRESS_TYPE addressType, uint8** trackInformation, uint32* byteSize) mut
+			{
+				return VT.GetTrackInformation(&this, address, addressType, trackInformation, byteSize);
+			}
+			public HRESULT GetFeaturePage(IMAPI_FEATURE_PAGE_TYPE requestedFeature, BOOLEAN currentFeatureOnly, uint8** featureData, uint32* byteSize) mut
+			{
+				return VT.GetFeaturePage(&this, requestedFeature, currentFeatureOnly, featureData, byteSize);
+			}
+			public HRESULT GetModePage(IMAPI_MODE_PAGE_TYPE requestedModePage, IMAPI_MODE_PAGE_REQUEST_TYPE requestType, uint8** modePageData, uint32* byteSize) mut
+			{
+				return VT.GetModePage(&this, requestedModePage, requestType, modePageData, byteSize);
+			}
+			public HRESULT SetModePage(IMAPI_MODE_PAGE_REQUEST_TYPE requestType, uint8* data, uint32 byteSize) mut
+			{
+				return VT.SetModePage(&this, requestType, data, byteSize);
+			}
+			public HRESULT GetSupportedFeaturePages(BOOLEAN currentFeatureOnly, IMAPI_FEATURE_PAGE_TYPE** featureData, uint32* byteSize) mut
+			{
+				return VT.GetSupportedFeaturePages(&this, currentFeatureOnly, featureData, byteSize);
+			}
+			public HRESULT GetSupportedProfiles(BOOLEAN currentOnly, IMAPI_PROFILE_TYPE** profileTypes, uint32* validProfiles) mut
+			{
+				return VT.GetSupportedProfiles(&this, currentOnly, profileTypes, validProfiles);
+			}
+			public HRESULT GetSupportedModePages(IMAPI_MODE_PAGE_REQUEST_TYPE requestType, IMAPI_MODE_PAGE_TYPE** modePageTypes, uint32* validPages) mut
+			{
+				return VT.GetSupportedModePages(&this, requestType, modePageTypes, validPages);
+			}
+			public HRESULT GetByteAlignmentMask(uint32* value) mut
+			{
+				return VT.GetByteAlignmentMask(&this, value);
+			}
+			public HRESULT GetMaximumNonPageAlignedTransferSize(uint32* value) mut
+			{
+				return VT.GetMaximumNonPageAlignedTransferSize(&this, value);
+			}
+			public HRESULT GetMaximumPageAlignedTransferSize(uint32* value) mut
+			{
+				return VT.GetMaximumPageAlignedTransferSize(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDiscRecorder2Ex *self, uint8* Cdb, uint32 CdbSize, uint8* SenseBuffer, uint32 Timeout) SendCommandNoData;
-				public function HRESULT(IDiscRecorder2Ex *self, uint8* Cdb, uint32 CdbSize, uint8* SenseBuffer, uint32 Timeout, uint8* Buffer, uint32 BufferSize) SendCommandSendDataToDevice;
-				public function HRESULT(IDiscRecorder2Ex *self, uint8* Cdb, uint32 CdbSize, uint8* SenseBuffer, uint32 Timeout, uint8* Buffer, uint32 BufferSize, uint32* BufferFetched) SendCommandGetDataFromDevice;
-				public function HRESULT(IDiscRecorder2Ex *self, uint32 format, uint32 address, uint32 layer, uint32 agid, uint8** data, uint32* count) ReadDvdStructure;
-				public function HRESULT(IDiscRecorder2Ex *self, uint32 format, uint8* data, uint32 count) SendDvdStructure;
-				public function HRESULT(IDiscRecorder2Ex *self, uint8** data, uint32* byteSize) GetAdapterDescriptor;
-				public function HRESULT(IDiscRecorder2Ex *self, uint8** data, uint32* byteSize) GetDeviceDescriptor;
-				public function HRESULT(IDiscRecorder2Ex *self, uint8** discInformation, uint32* byteSize) GetDiscInformation;
-				public function HRESULT(IDiscRecorder2Ex *self, uint32 address, IMAPI_READ_TRACK_ADDRESS_TYPE addressType, uint8** trackInformation, uint32* byteSize) GetTrackInformation;
-				public function HRESULT(IDiscRecorder2Ex *self, IMAPI_FEATURE_PAGE_TYPE requestedFeature, BOOLEAN currentFeatureOnly, uint8** featureData, uint32* byteSize) GetFeaturePage;
-				public function HRESULT(IDiscRecorder2Ex *self, IMAPI_MODE_PAGE_TYPE requestedModePage, IMAPI_MODE_PAGE_REQUEST_TYPE requestType, uint8** modePageData, uint32* byteSize) GetModePage;
-				public function HRESULT(IDiscRecorder2Ex *self, IMAPI_MODE_PAGE_REQUEST_TYPE requestType, uint8* data, uint32 byteSize) SetModePage;
-				public function HRESULT(IDiscRecorder2Ex *self, BOOLEAN currentFeatureOnly, IMAPI_FEATURE_PAGE_TYPE** featureData, uint32* byteSize) GetSupportedFeaturePages;
-				public function HRESULT(IDiscRecorder2Ex *self, BOOLEAN currentOnly, IMAPI_PROFILE_TYPE** profileTypes, uint32* validProfiles) GetSupportedProfiles;
-				public function HRESULT(IDiscRecorder2Ex *self, IMAPI_MODE_PAGE_REQUEST_TYPE requestType, IMAPI_MODE_PAGE_TYPE** modePageTypes, uint32* validPages) GetSupportedModePages;
-				public function HRESULT(IDiscRecorder2Ex *self, uint32* value) GetByteAlignmentMask;
-				public function HRESULT(IDiscRecorder2Ex *self, uint32* value) GetMaximumNonPageAlignedTransferSize;
-				public function HRESULT(IDiscRecorder2Ex *self, uint32* value) GetMaximumPageAlignedTransferSize;
+				public new function HRESULT(IDiscRecorder2Ex *self, uint8* Cdb, uint32 CdbSize, uint8* SenseBuffer, uint32 Timeout) SendCommandNoData;
+				public new function HRESULT(IDiscRecorder2Ex *self, uint8* Cdb, uint32 CdbSize, uint8* SenseBuffer, uint32 Timeout, uint8* Buffer, uint32 BufferSize) SendCommandSendDataToDevice;
+				public new function HRESULT(IDiscRecorder2Ex *self, uint8* Cdb, uint32 CdbSize, uint8* SenseBuffer, uint32 Timeout, uint8* Buffer, uint32 BufferSize, uint32* BufferFetched) SendCommandGetDataFromDevice;
+				public new function HRESULT(IDiscRecorder2Ex *self, uint32 format, uint32 address, uint32 layer, uint32 agid, uint8** data, uint32* count) ReadDvdStructure;
+				public new function HRESULT(IDiscRecorder2Ex *self, uint32 format, uint8* data, uint32 count) SendDvdStructure;
+				public new function HRESULT(IDiscRecorder2Ex *self, uint8** data, uint32* byteSize) GetAdapterDescriptor;
+				public new function HRESULT(IDiscRecorder2Ex *self, uint8** data, uint32* byteSize) GetDeviceDescriptor;
+				public new function HRESULT(IDiscRecorder2Ex *self, uint8** discInformation, uint32* byteSize) GetDiscInformation;
+				public new function HRESULT(IDiscRecorder2Ex *self, uint32 address, IMAPI_READ_TRACK_ADDRESS_TYPE addressType, uint8** trackInformation, uint32* byteSize) GetTrackInformation;
+				public new function HRESULT(IDiscRecorder2Ex *self, IMAPI_FEATURE_PAGE_TYPE requestedFeature, BOOLEAN currentFeatureOnly, uint8** featureData, uint32* byteSize) GetFeaturePage;
+				public new function HRESULT(IDiscRecorder2Ex *self, IMAPI_MODE_PAGE_TYPE requestedModePage, IMAPI_MODE_PAGE_REQUEST_TYPE requestType, uint8** modePageData, uint32* byteSize) GetModePage;
+				public new function HRESULT(IDiscRecorder2Ex *self, IMAPI_MODE_PAGE_REQUEST_TYPE requestType, uint8* data, uint32 byteSize) SetModePage;
+				public new function HRESULT(IDiscRecorder2Ex *self, BOOLEAN currentFeatureOnly, IMAPI_FEATURE_PAGE_TYPE** featureData, uint32* byteSize) GetSupportedFeaturePages;
+				public new function HRESULT(IDiscRecorder2Ex *self, BOOLEAN currentOnly, IMAPI_PROFILE_TYPE** profileTypes, uint32* validProfiles) GetSupportedProfiles;
+				public new function HRESULT(IDiscRecorder2Ex *self, IMAPI_MODE_PAGE_REQUEST_TYPE requestType, IMAPI_MODE_PAGE_TYPE** modePageTypes, uint32* validPages) GetSupportedModePages;
+				public new function HRESULT(IDiscRecorder2Ex *self, uint32* value) GetByteAlignmentMask;
+				public new function HRESULT(IDiscRecorder2Ex *self, uint32* value) GetMaximumNonPageAlignedTransferSize;
+				public new function HRESULT(IDiscRecorder2Ex *self, uint32* value) GetMaximumPageAlignedTransferSize;
 			}
 		}
 		[CRepr]
@@ -859,31 +958,116 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354133, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT EjectMedia() mut
+			{
+				return VT.EjectMedia(&this);
+			}
+			public HRESULT CloseTray() mut
+			{
+				return VT.CloseTray(&this);
+			}
+			public HRESULT AcquireExclusiveAccess(int16 force, BSTR __MIDL__IDiscRecorder20000) mut
+			{
+				return VT.AcquireExclusiveAccess(&this, force, __MIDL__IDiscRecorder20000);
+			}
+			public HRESULT ReleaseExclusiveAccess() mut
+			{
+				return VT.ReleaseExclusiveAccess(&this);
+			}
+			public HRESULT DisableMcn() mut
+			{
+				return VT.DisableMcn(&this);
+			}
+			public HRESULT EnableMcn() mut
+			{
+				return VT.EnableMcn(&this);
+			}
+			public HRESULT InitializeDiscRecorder(BSTR recorderUniqueId) mut
+			{
+				return VT.InitializeDiscRecorder(&this, recorderUniqueId);
+			}
+			public HRESULT get_ActiveDiscRecorder(BSTR* value) mut
+			{
+				return VT.get_ActiveDiscRecorder(&this, value);
+			}
+			public HRESULT get_VendorId(BSTR* value) mut
+			{
+				return VT.get_VendorId(&this, value);
+			}
+			public HRESULT get_ProductId(BSTR* value) mut
+			{
+				return VT.get_ProductId(&this, value);
+			}
+			public HRESULT get_ProductRevision(BSTR* value) mut
+			{
+				return VT.get_ProductRevision(&this, value);
+			}
+			public HRESULT get_VolumeName(BSTR* value) mut
+			{
+				return VT.get_VolumeName(&this, value);
+			}
+			public HRESULT get_VolumePathNames(SAFEARRAY** value) mut
+			{
+				return VT.get_VolumePathNames(&this, value);
+			}
+			public HRESULT get_DeviceCanLoadMedia(int16* value) mut
+			{
+				return VT.get_DeviceCanLoadMedia(&this, value);
+			}
+			public HRESULT get_LegacyDeviceNumber(int32* legacyDeviceNumber) mut
+			{
+				return VT.get_LegacyDeviceNumber(&this, legacyDeviceNumber);
+			}
+			public HRESULT get_SupportedFeaturePages(SAFEARRAY** value) mut
+			{
+				return VT.get_SupportedFeaturePages(&this, value);
+			}
+			public HRESULT get_CurrentFeaturePages(SAFEARRAY** value) mut
+			{
+				return VT.get_CurrentFeaturePages(&this, value);
+			}
+			public HRESULT get_SupportedProfiles(SAFEARRAY** value) mut
+			{
+				return VT.get_SupportedProfiles(&this, value);
+			}
+			public HRESULT get_CurrentProfiles(SAFEARRAY** value) mut
+			{
+				return VT.get_CurrentProfiles(&this, value);
+			}
+			public HRESULT get_SupportedModePages(SAFEARRAY** value) mut
+			{
+				return VT.get_SupportedModePages(&this, value);
+			}
+			public HRESULT get_ExclusiveAccessOwner(BSTR* value) mut
+			{
+				return VT.get_ExclusiveAccessOwner(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IDiscRecorder2 *self) EjectMedia;
-				public function HRESULT(IDiscRecorder2 *self) CloseTray;
-				public function HRESULT(IDiscRecorder2 *self, int16 force, BSTR __MIDL__IDiscRecorder20000) AcquireExclusiveAccess;
-				public function HRESULT(IDiscRecorder2 *self) ReleaseExclusiveAccess;
-				public function HRESULT(IDiscRecorder2 *self) DisableMcn;
-				public function HRESULT(IDiscRecorder2 *self) EnableMcn;
-				public function HRESULT(IDiscRecorder2 *self, BSTR recorderUniqueId) InitializeDiscRecorder;
-				public function HRESULT(IDiscRecorder2 *self, BSTR* value) get_ActiveDiscRecorder;
-				public function HRESULT(IDiscRecorder2 *self, BSTR* value) get_VendorId;
-				public function HRESULT(IDiscRecorder2 *self, BSTR* value) get_ProductId;
-				public function HRESULT(IDiscRecorder2 *self, BSTR* value) get_ProductRevision;
-				public function HRESULT(IDiscRecorder2 *self, BSTR* value) get_VolumeName;
-				public function HRESULT(IDiscRecorder2 *self, SAFEARRAY** value) get_VolumePathNames;
-				public function HRESULT(IDiscRecorder2 *self, int16* value) get_DeviceCanLoadMedia;
-				public function HRESULT(IDiscRecorder2 *self, int32* legacyDeviceNumber) get_LegacyDeviceNumber;
-				public function HRESULT(IDiscRecorder2 *self, SAFEARRAY** value) get_SupportedFeaturePages;
-				public function HRESULT(IDiscRecorder2 *self, SAFEARRAY** value) get_CurrentFeaturePages;
-				public function HRESULT(IDiscRecorder2 *self, SAFEARRAY** value) get_SupportedProfiles;
-				public function HRESULT(IDiscRecorder2 *self, SAFEARRAY** value) get_CurrentProfiles;
-				public function HRESULT(IDiscRecorder2 *self, SAFEARRAY** value) get_SupportedModePages;
-				public function HRESULT(IDiscRecorder2 *self, BSTR* value) get_ExclusiveAccessOwner;
+				public new function HRESULT(IDiscRecorder2 *self) EjectMedia;
+				public new function HRESULT(IDiscRecorder2 *self) CloseTray;
+				public new function HRESULT(IDiscRecorder2 *self, int16 force, BSTR __MIDL__IDiscRecorder20000) AcquireExclusiveAccess;
+				public new function HRESULT(IDiscRecorder2 *self) ReleaseExclusiveAccess;
+				public new function HRESULT(IDiscRecorder2 *self) DisableMcn;
+				public new function HRESULT(IDiscRecorder2 *self) EnableMcn;
+				public new function HRESULT(IDiscRecorder2 *self, BSTR recorderUniqueId) InitializeDiscRecorder;
+				public new function HRESULT(IDiscRecorder2 *self, BSTR* value) get_ActiveDiscRecorder;
+				public new function HRESULT(IDiscRecorder2 *self, BSTR* value) get_VendorId;
+				public new function HRESULT(IDiscRecorder2 *self, BSTR* value) get_ProductId;
+				public new function HRESULT(IDiscRecorder2 *self, BSTR* value) get_ProductRevision;
+				public new function HRESULT(IDiscRecorder2 *self, BSTR* value) get_VolumeName;
+				public new function HRESULT(IDiscRecorder2 *self, SAFEARRAY** value) get_VolumePathNames;
+				public new function HRESULT(IDiscRecorder2 *self, int16* value) get_DeviceCanLoadMedia;
+				public new function HRESULT(IDiscRecorder2 *self, int32* legacyDeviceNumber) get_LegacyDeviceNumber;
+				public new function HRESULT(IDiscRecorder2 *self, SAFEARRAY** value) get_SupportedFeaturePages;
+				public new function HRESULT(IDiscRecorder2 *self, SAFEARRAY** value) get_CurrentFeaturePages;
+				public new function HRESULT(IDiscRecorder2 *self, SAFEARRAY** value) get_SupportedProfiles;
+				public new function HRESULT(IDiscRecorder2 *self, SAFEARRAY** value) get_CurrentProfiles;
+				public new function HRESULT(IDiscRecorder2 *self, SAFEARRAY** value) get_SupportedModePages;
+				public new function HRESULT(IDiscRecorder2 *self, BSTR* value) get_ExclusiveAccessOwner;
 			}
 		}
 		[CRepr]
@@ -891,23 +1075,76 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354135, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT WriteSection(IStream* data, int32 startingBlockAddress, int32 numberOfBlocks) mut
+			{
+				return VT.WriteSection(&this, data, startingBlockAddress, numberOfBlocks);
+			}
+			public HRESULT CancelWrite() mut
+			{
+				return VT.CancelWrite(&this);
+			}
+			public HRESULT put_Recorder(IDiscRecorder2Ex* value) mut
+			{
+				return VT.put_Recorder(&this, value);
+			}
+			public HRESULT get_Recorder(IDiscRecorder2Ex** value) mut
+			{
+				return VT.get_Recorder(&this, value);
+			}
+			public HRESULT put_UseStreamingWrite12(int16 value) mut
+			{
+				return VT.put_UseStreamingWrite12(&this, value);
+			}
+			public HRESULT get_UseStreamingWrite12(int16* value) mut
+			{
+				return VT.get_UseStreamingWrite12(&this, value);
+			}
+			public HRESULT put_StartingSectorsPerSecond(int32 value) mut
+			{
+				return VT.put_StartingSectorsPerSecond(&this, value);
+			}
+			public HRESULT get_StartingSectorsPerSecond(int32* value) mut
+			{
+				return VT.get_StartingSectorsPerSecond(&this, value);
+			}
+			public HRESULT put_EndingSectorsPerSecond(int32 value) mut
+			{
+				return VT.put_EndingSectorsPerSecond(&this, value);
+			}
+			public HRESULT get_EndingSectorsPerSecond(int32* value) mut
+			{
+				return VT.get_EndingSectorsPerSecond(&this, value);
+			}
+			public HRESULT put_BytesPerSector(int32 value) mut
+			{
+				return VT.put_BytesPerSector(&this, value);
+			}
+			public HRESULT get_BytesPerSector(int32* value) mut
+			{
+				return VT.get_BytesPerSector(&this, value);
+			}
+			public HRESULT get_WriteInProgress(int16* value) mut
+			{
+				return VT.get_WriteInProgress(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IWriteEngine2 *self, IStream* data, int32 startingBlockAddress, int32 numberOfBlocks) WriteSection;
-				public function HRESULT(IWriteEngine2 *self) CancelWrite;
-				public function HRESULT(IWriteEngine2 *self, IDiscRecorder2Ex* value) put_Recorder;
-				public function HRESULT(IWriteEngine2 *self, IDiscRecorder2Ex** value) get_Recorder;
-				public function HRESULT(IWriteEngine2 *self, int16 value) put_UseStreamingWrite12;
-				public function HRESULT(IWriteEngine2 *self, int16* value) get_UseStreamingWrite12;
-				public function HRESULT(IWriteEngine2 *self, int32 value) put_StartingSectorsPerSecond;
-				public function HRESULT(IWriteEngine2 *self, int32* value) get_StartingSectorsPerSecond;
-				public function HRESULT(IWriteEngine2 *self, int32 value) put_EndingSectorsPerSecond;
-				public function HRESULT(IWriteEngine2 *self, int32* value) get_EndingSectorsPerSecond;
-				public function HRESULT(IWriteEngine2 *self, int32 value) put_BytesPerSector;
-				public function HRESULT(IWriteEngine2 *self, int32* value) get_BytesPerSector;
-				public function HRESULT(IWriteEngine2 *self, int16* value) get_WriteInProgress;
+				public new function HRESULT(IWriteEngine2 *self, IStream* data, int32 startingBlockAddress, int32 numberOfBlocks) WriteSection;
+				public new function HRESULT(IWriteEngine2 *self) CancelWrite;
+				public new function HRESULT(IWriteEngine2 *self, IDiscRecorder2Ex* value) put_Recorder;
+				public new function HRESULT(IWriteEngine2 *self, IDiscRecorder2Ex** value) get_Recorder;
+				public new function HRESULT(IWriteEngine2 *self, int16 value) put_UseStreamingWrite12;
+				public new function HRESULT(IWriteEngine2 *self, int16* value) get_UseStreamingWrite12;
+				public new function HRESULT(IWriteEngine2 *self, int32 value) put_StartingSectorsPerSecond;
+				public new function HRESULT(IWriteEngine2 *self, int32* value) get_StartingSectorsPerSecond;
+				public new function HRESULT(IWriteEngine2 *self, int32 value) put_EndingSectorsPerSecond;
+				public new function HRESULT(IWriteEngine2 *self, int32* value) get_EndingSectorsPerSecond;
+				public new function HRESULT(IWriteEngine2 *self, int32 value) put_BytesPerSector;
+				public new function HRESULT(IWriteEngine2 *self, int32* value) get_BytesPerSector;
+				public new function HRESULT(IWriteEngine2 *self, int16* value) get_WriteInProgress;
 			}
 		}
 		[CRepr]
@@ -915,17 +1152,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354136, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_StartLba(int32* value) mut
+			{
+				return VT.get_StartLba(&this, value);
+			}
+			public HRESULT get_SectorCount(int32* value) mut
+			{
+				return VT.get_SectorCount(&this, value);
+			}
+			public HRESULT get_LastReadLba(int32* value) mut
+			{
+				return VT.get_LastReadLba(&this, value);
+			}
+			public HRESULT get_LastWrittenLba(int32* value) mut
+			{
+				return VT.get_LastWrittenLba(&this, value);
+			}
+			public HRESULT get_TotalSystemBuffer(int32* value) mut
+			{
+				return VT.get_TotalSystemBuffer(&this, value);
+			}
+			public HRESULT get_UsedSystemBuffer(int32* value) mut
+			{
+				return VT.get_UsedSystemBuffer(&this, value);
+			}
+			public HRESULT get_FreeSystemBuffer(int32* value) mut
+			{
+				return VT.get_FreeSystemBuffer(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IWriteEngine2EventArgs *self, int32* value) get_StartLba;
-				public function HRESULT(IWriteEngine2EventArgs *self, int32* value) get_SectorCount;
-				public function HRESULT(IWriteEngine2EventArgs *self, int32* value) get_LastReadLba;
-				public function HRESULT(IWriteEngine2EventArgs *self, int32* value) get_LastWrittenLba;
-				public function HRESULT(IWriteEngine2EventArgs *self, int32* value) get_TotalSystemBuffer;
-				public function HRESULT(IWriteEngine2EventArgs *self, int32* value) get_UsedSystemBuffer;
-				public function HRESULT(IWriteEngine2EventArgs *self, int32* value) get_FreeSystemBuffer;
+				public new function HRESULT(IWriteEngine2EventArgs *self, int32* value) get_StartLba;
+				public new function HRESULT(IWriteEngine2EventArgs *self, int32* value) get_SectorCount;
+				public new function HRESULT(IWriteEngine2EventArgs *self, int32* value) get_LastReadLba;
+				public new function HRESULT(IWriteEngine2EventArgs *self, int32* value) get_LastWrittenLba;
+				public new function HRESULT(IWriteEngine2EventArgs *self, int32* value) get_TotalSystemBuffer;
+				public new function HRESULT(IWriteEngine2EventArgs *self, int32* value) get_UsedSystemBuffer;
+				public new function HRESULT(IWriteEngine2EventArgs *self, int32* value) get_FreeSystemBuffer;
 			}
 		}
 		[CRepr]
@@ -933,11 +1199,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354137, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Update(IDispatch* object, IDispatch* progress) mut
+			{
+				return VT.Update(&this, object, progress);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(DWriteEngine2Events *self, IDispatch* object, IDispatch* progress) Update;
+				public new function HRESULT(DWriteEngine2Events *self, IDispatch* object, IDispatch* progress) Update;
 			}
 		}
 		[CRepr]
@@ -945,15 +1216,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354152, 0x8f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT IsRecorderSupported(IDiscRecorder2* recorder, int16* value) mut
+			{
+				return VT.IsRecorderSupported(&this, recorder, value);
+			}
+			public HRESULT IsCurrentMediaSupported(IDiscRecorder2* recorder, int16* value) mut
+			{
+				return VT.IsCurrentMediaSupported(&this, recorder, value);
+			}
+			public HRESULT get_MediaPhysicallyBlank(int16* value) mut
+			{
+				return VT.get_MediaPhysicallyBlank(&this, value);
+			}
+			public HRESULT get_MediaHeuristicallyBlank(int16* value) mut
+			{
+				return VT.get_MediaHeuristicallyBlank(&this, value);
+			}
+			public HRESULT get_SupportedMediaTypes(SAFEARRAY** value) mut
+			{
+				return VT.get_SupportedMediaTypes(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IDiscFormat2 *self, IDiscRecorder2* recorder, int16* value) IsRecorderSupported;
-				public function HRESULT(IDiscFormat2 *self, IDiscRecorder2* recorder, int16* value) IsCurrentMediaSupported;
-				public function HRESULT(IDiscFormat2 *self, int16* value) get_MediaPhysicallyBlank;
-				public function HRESULT(IDiscFormat2 *self, int16* value) get_MediaHeuristicallyBlank;
-				public function HRESULT(IDiscFormat2 *self, SAFEARRAY** value) get_SupportedMediaTypes;
+				public new function HRESULT(IDiscFormat2 *self, IDiscRecorder2* recorder, int16* value) IsRecorderSupported;
+				public new function HRESULT(IDiscFormat2 *self, IDiscRecorder2* recorder, int16* value) IsCurrentMediaSupported;
+				public new function HRESULT(IDiscFormat2 *self, int16* value) get_MediaPhysicallyBlank;
+				public new function HRESULT(IDiscFormat2 *self, int16* value) get_MediaHeuristicallyBlank;
+				public new function HRESULT(IDiscFormat2 *self, SAFEARRAY** value) get_SupportedMediaTypes;
 			}
 		}
 		[CRepr]
@@ -961,18 +1253,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354156, 0x8f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT put_Recorder(IDiscRecorder2* value) mut
+			{
+				return VT.put_Recorder(&this, value);
+			}
+			public HRESULT get_Recorder(IDiscRecorder2** value) mut
+			{
+				return VT.get_Recorder(&this, value);
+			}
+			public HRESULT put_FullErase(int16 value) mut
+			{
+				return VT.put_FullErase(&this, value);
+			}
+			public HRESULT get_FullErase(int16* value) mut
+			{
+				return VT.get_FullErase(&this, value);
+			}
+			public HRESULT get_CurrentPhysicalMediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value) mut
+			{
+				return VT.get_CurrentPhysicalMediaType(&this, value);
+			}
+			public HRESULT put_ClientName(BSTR value) mut
+			{
+				return VT.put_ClientName(&this, value);
+			}
+			public HRESULT get_ClientName(BSTR* value) mut
+			{
+				return VT.get_ClientName(&this, value);
+			}
+			public HRESULT EraseMedia() mut
+			{
+				return VT.EraseMedia(&this);
+			}
 			[CRepr]
 			public struct VTable : IDiscFormat2.VTable
 			{
-				public function HRESULT(IDiscFormat2Erase *self, IDiscRecorder2* value) put_Recorder;
-				public function HRESULT(IDiscFormat2Erase *self, IDiscRecorder2** value) get_Recorder;
-				public function HRESULT(IDiscFormat2Erase *self, int16 value) put_FullErase;
-				public function HRESULT(IDiscFormat2Erase *self, int16* value) get_FullErase;
-				public function HRESULT(IDiscFormat2Erase *self, IMAPI_MEDIA_PHYSICAL_TYPE* value) get_CurrentPhysicalMediaType;
-				public function HRESULT(IDiscFormat2Erase *self, BSTR value) put_ClientName;
-				public function HRESULT(IDiscFormat2Erase *self, BSTR* value) get_ClientName;
-				public function HRESULT(IDiscFormat2Erase *self) EraseMedia;
+				public new function HRESULT(IDiscFormat2Erase *self, IDiscRecorder2* value) put_Recorder;
+				public new function HRESULT(IDiscFormat2Erase *self, IDiscRecorder2** value) get_Recorder;
+				public new function HRESULT(IDiscFormat2Erase *self, int16 value) put_FullErase;
+				public new function HRESULT(IDiscFormat2Erase *self, int16* value) get_FullErase;
+				public new function HRESULT(IDiscFormat2Erase *self, IMAPI_MEDIA_PHYSICAL_TYPE* value) get_CurrentPhysicalMediaType;
+				public new function HRESULT(IDiscFormat2Erase *self, BSTR value) put_ClientName;
+				public new function HRESULT(IDiscFormat2Erase *self, BSTR* value) get_ClientName;
+				public new function HRESULT(IDiscFormat2Erase *self) EraseMedia;
 			}
 		}
 		[CRepr]
@@ -980,11 +1305,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2735413a, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Update(IDispatch* object, int32 elapsedSeconds, int32 estimatedTotalSeconds) mut
+			{
+				return VT.Update(&this, object, elapsedSeconds, estimatedTotalSeconds);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(DDiscFormat2EraseEvents *self, IDispatch* object, int32 elapsedSeconds, int32 estimatedTotalSeconds) Update;
+				public new function HRESULT(DDiscFormat2EraseEvents *self, IDispatch* object, int32 elapsedSeconds, int32 estimatedTotalSeconds) Update;
 			}
 		}
 		[CRepr]
@@ -992,42 +1322,171 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354153, 0x9f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT put_Recorder(IDiscRecorder2* value) mut
+			{
+				return VT.put_Recorder(&this, value);
+			}
+			public HRESULT get_Recorder(IDiscRecorder2** value) mut
+			{
+				return VT.get_Recorder(&this, value);
+			}
+			public HRESULT put_BufferUnderrunFreeDisabled(int16 value) mut
+			{
+				return VT.put_BufferUnderrunFreeDisabled(&this, value);
+			}
+			public HRESULT get_BufferUnderrunFreeDisabled(int16* value) mut
+			{
+				return VT.get_BufferUnderrunFreeDisabled(&this, value);
+			}
+			public HRESULT put_PostgapAlreadyInImage(int16 value) mut
+			{
+				return VT.put_PostgapAlreadyInImage(&this, value);
+			}
+			public HRESULT get_PostgapAlreadyInImage(int16* value) mut
+			{
+				return VT.get_PostgapAlreadyInImage(&this, value);
+			}
+			public HRESULT get_CurrentMediaStatus(IMAPI_FORMAT2_DATA_MEDIA_STATE* value) mut
+			{
+				return VT.get_CurrentMediaStatus(&this, value);
+			}
+			public HRESULT get_WriteProtectStatus(IMAPI_MEDIA_WRITE_PROTECT_STATE* value) mut
+			{
+				return VT.get_WriteProtectStatus(&this, value);
+			}
+			public HRESULT get_TotalSectorsOnMedia(int32* value) mut
+			{
+				return VT.get_TotalSectorsOnMedia(&this, value);
+			}
+			public HRESULT get_FreeSectorsOnMedia(int32* value) mut
+			{
+				return VT.get_FreeSectorsOnMedia(&this, value);
+			}
+			public HRESULT get_NextWritableAddress(int32* value) mut
+			{
+				return VT.get_NextWritableAddress(&this, value);
+			}
+			public HRESULT get_StartAddressOfPreviousSession(int32* value) mut
+			{
+				return VT.get_StartAddressOfPreviousSession(&this, value);
+			}
+			public HRESULT get_LastWrittenAddressOfPreviousSession(int32* value) mut
+			{
+				return VT.get_LastWrittenAddressOfPreviousSession(&this, value);
+			}
+			public HRESULT put_ForceMediaToBeClosed(int16 value) mut
+			{
+				return VT.put_ForceMediaToBeClosed(&this, value);
+			}
+			public HRESULT get_ForceMediaToBeClosed(int16* value) mut
+			{
+				return VT.get_ForceMediaToBeClosed(&this, value);
+			}
+			public HRESULT put_DisableConsumerDvdCompatibilityMode(int16 value) mut
+			{
+				return VT.put_DisableConsumerDvdCompatibilityMode(&this, value);
+			}
+			public HRESULT get_DisableConsumerDvdCompatibilityMode(int16* value) mut
+			{
+				return VT.get_DisableConsumerDvdCompatibilityMode(&this, value);
+			}
+			public HRESULT get_CurrentPhysicalMediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value) mut
+			{
+				return VT.get_CurrentPhysicalMediaType(&this, value);
+			}
+			public HRESULT put_ClientName(BSTR value) mut
+			{
+				return VT.put_ClientName(&this, value);
+			}
+			public HRESULT get_ClientName(BSTR* value) mut
+			{
+				return VT.get_ClientName(&this, value);
+			}
+			public HRESULT get_RequestedWriteSpeed(int32* value) mut
+			{
+				return VT.get_RequestedWriteSpeed(&this, value);
+			}
+			public HRESULT get_RequestedRotationTypeIsPureCAV(int16* value) mut
+			{
+				return VT.get_RequestedRotationTypeIsPureCAV(&this, value);
+			}
+			public HRESULT get_CurrentWriteSpeed(int32* value) mut
+			{
+				return VT.get_CurrentWriteSpeed(&this, value);
+			}
+			public HRESULT get_CurrentRotationTypeIsPureCAV(int16* value) mut
+			{
+				return VT.get_CurrentRotationTypeIsPureCAV(&this, value);
+			}
+			public HRESULT get_SupportedWriteSpeeds(SAFEARRAY** supportedSpeeds) mut
+			{
+				return VT.get_SupportedWriteSpeeds(&this, supportedSpeeds);
+			}
+			public HRESULT get_SupportedWriteSpeedDescriptors(SAFEARRAY** supportedSpeedDescriptors) mut
+			{
+				return VT.get_SupportedWriteSpeedDescriptors(&this, supportedSpeedDescriptors);
+			}
+			public HRESULT put_ForceOverwrite(int16 value) mut
+			{
+				return VT.put_ForceOverwrite(&this, value);
+			}
+			public HRESULT get_ForceOverwrite(int16* value) mut
+			{
+				return VT.get_ForceOverwrite(&this, value);
+			}
+			public HRESULT get_MultisessionInterfaces(SAFEARRAY** value) mut
+			{
+				return VT.get_MultisessionInterfaces(&this, value);
+			}
+			public HRESULT Write(IStream* data) mut
+			{
+				return VT.Write(&this, data);
+			}
+			public HRESULT CancelWrite() mut
+			{
+				return VT.CancelWrite(&this);
+			}
+			public HRESULT SetWriteSpeed(int32 RequestedSectorsPerSecond, int16 RotationTypeIsPureCAV) mut
+			{
+				return VT.SetWriteSpeed(&this, RequestedSectorsPerSecond, RotationTypeIsPureCAV);
+			}
 			[CRepr]
 			public struct VTable : IDiscFormat2.VTable
 			{
-				public function HRESULT(IDiscFormat2Data *self, IDiscRecorder2* value) put_Recorder;
-				public function HRESULT(IDiscFormat2Data *self, IDiscRecorder2** value) get_Recorder;
-				public function HRESULT(IDiscFormat2Data *self, int16 value) put_BufferUnderrunFreeDisabled;
-				public function HRESULT(IDiscFormat2Data *self, int16* value) get_BufferUnderrunFreeDisabled;
-				public function HRESULT(IDiscFormat2Data *self, int16 value) put_PostgapAlreadyInImage;
-				public function HRESULT(IDiscFormat2Data *self, int16* value) get_PostgapAlreadyInImage;
-				public function HRESULT(IDiscFormat2Data *self, IMAPI_FORMAT2_DATA_MEDIA_STATE* value) get_CurrentMediaStatus;
-				public function HRESULT(IDiscFormat2Data *self, IMAPI_MEDIA_WRITE_PROTECT_STATE* value) get_WriteProtectStatus;
-				public function HRESULT(IDiscFormat2Data *self, int32* value) get_TotalSectorsOnMedia;
-				public function HRESULT(IDiscFormat2Data *self, int32* value) get_FreeSectorsOnMedia;
-				public function HRESULT(IDiscFormat2Data *self, int32* value) get_NextWritableAddress;
-				public function HRESULT(IDiscFormat2Data *self, int32* value) get_StartAddressOfPreviousSession;
-				public function HRESULT(IDiscFormat2Data *self, int32* value) get_LastWrittenAddressOfPreviousSession;
-				public function HRESULT(IDiscFormat2Data *self, int16 value) put_ForceMediaToBeClosed;
-				public function HRESULT(IDiscFormat2Data *self, int16* value) get_ForceMediaToBeClosed;
-				public function HRESULT(IDiscFormat2Data *self, int16 value) put_DisableConsumerDvdCompatibilityMode;
-				public function HRESULT(IDiscFormat2Data *self, int16* value) get_DisableConsumerDvdCompatibilityMode;
-				public function HRESULT(IDiscFormat2Data *self, IMAPI_MEDIA_PHYSICAL_TYPE* value) get_CurrentPhysicalMediaType;
-				public function HRESULT(IDiscFormat2Data *self, BSTR value) put_ClientName;
-				public function HRESULT(IDiscFormat2Data *self, BSTR* value) get_ClientName;
-				public function HRESULT(IDiscFormat2Data *self, int32* value) get_RequestedWriteSpeed;
-				public function HRESULT(IDiscFormat2Data *self, int16* value) get_RequestedRotationTypeIsPureCAV;
-				public function HRESULT(IDiscFormat2Data *self, int32* value) get_CurrentWriteSpeed;
-				public function HRESULT(IDiscFormat2Data *self, int16* value) get_CurrentRotationTypeIsPureCAV;
-				public function HRESULT(IDiscFormat2Data *self, SAFEARRAY** supportedSpeeds) get_SupportedWriteSpeeds;
-				public function HRESULT(IDiscFormat2Data *self, SAFEARRAY** supportedSpeedDescriptors) get_SupportedWriteSpeedDescriptors;
-				public function HRESULT(IDiscFormat2Data *self, int16 value) put_ForceOverwrite;
-				public function HRESULT(IDiscFormat2Data *self, int16* value) get_ForceOverwrite;
-				public function HRESULT(IDiscFormat2Data *self, SAFEARRAY** value) get_MultisessionInterfaces;
-				public function HRESULT(IDiscFormat2Data *self, IStream* data) Write;
-				public function HRESULT(IDiscFormat2Data *self) CancelWrite;
-				public function HRESULT(IDiscFormat2Data *self, int32 RequestedSectorsPerSecond, int16 RotationTypeIsPureCAV) SetWriteSpeed;
+				public new function HRESULT(IDiscFormat2Data *self, IDiscRecorder2* value) put_Recorder;
+				public new function HRESULT(IDiscFormat2Data *self, IDiscRecorder2** value) get_Recorder;
+				public new function HRESULT(IDiscFormat2Data *self, int16 value) put_BufferUnderrunFreeDisabled;
+				public new function HRESULT(IDiscFormat2Data *self, int16* value) get_BufferUnderrunFreeDisabled;
+				public new function HRESULT(IDiscFormat2Data *self, int16 value) put_PostgapAlreadyInImage;
+				public new function HRESULT(IDiscFormat2Data *self, int16* value) get_PostgapAlreadyInImage;
+				public new function HRESULT(IDiscFormat2Data *self, IMAPI_FORMAT2_DATA_MEDIA_STATE* value) get_CurrentMediaStatus;
+				public new function HRESULT(IDiscFormat2Data *self, IMAPI_MEDIA_WRITE_PROTECT_STATE* value) get_WriteProtectStatus;
+				public new function HRESULT(IDiscFormat2Data *self, int32* value) get_TotalSectorsOnMedia;
+				public new function HRESULT(IDiscFormat2Data *self, int32* value) get_FreeSectorsOnMedia;
+				public new function HRESULT(IDiscFormat2Data *self, int32* value) get_NextWritableAddress;
+				public new function HRESULT(IDiscFormat2Data *self, int32* value) get_StartAddressOfPreviousSession;
+				public new function HRESULT(IDiscFormat2Data *self, int32* value) get_LastWrittenAddressOfPreviousSession;
+				public new function HRESULT(IDiscFormat2Data *self, int16 value) put_ForceMediaToBeClosed;
+				public new function HRESULT(IDiscFormat2Data *self, int16* value) get_ForceMediaToBeClosed;
+				public new function HRESULT(IDiscFormat2Data *self, int16 value) put_DisableConsumerDvdCompatibilityMode;
+				public new function HRESULT(IDiscFormat2Data *self, int16* value) get_DisableConsumerDvdCompatibilityMode;
+				public new function HRESULT(IDiscFormat2Data *self, IMAPI_MEDIA_PHYSICAL_TYPE* value) get_CurrentPhysicalMediaType;
+				public new function HRESULT(IDiscFormat2Data *self, BSTR value) put_ClientName;
+				public new function HRESULT(IDiscFormat2Data *self, BSTR* value) get_ClientName;
+				public new function HRESULT(IDiscFormat2Data *self, int32* value) get_RequestedWriteSpeed;
+				public new function HRESULT(IDiscFormat2Data *self, int16* value) get_RequestedRotationTypeIsPureCAV;
+				public new function HRESULT(IDiscFormat2Data *self, int32* value) get_CurrentWriteSpeed;
+				public new function HRESULT(IDiscFormat2Data *self, int16* value) get_CurrentRotationTypeIsPureCAV;
+				public new function HRESULT(IDiscFormat2Data *self, SAFEARRAY** supportedSpeeds) get_SupportedWriteSpeeds;
+				public new function HRESULT(IDiscFormat2Data *self, SAFEARRAY** supportedSpeedDescriptors) get_SupportedWriteSpeedDescriptors;
+				public new function HRESULT(IDiscFormat2Data *self, int16 value) put_ForceOverwrite;
+				public new function HRESULT(IDiscFormat2Data *self, int16* value) get_ForceOverwrite;
+				public new function HRESULT(IDiscFormat2Data *self, SAFEARRAY** value) get_MultisessionInterfaces;
+				public new function HRESULT(IDiscFormat2Data *self, IStream* data) Write;
+				public new function HRESULT(IDiscFormat2Data *self) CancelWrite;
+				public new function HRESULT(IDiscFormat2Data *self, int32 RequestedSectorsPerSecond, int16 RotationTypeIsPureCAV) SetWriteSpeed;
 			}
 		}
 		[CRepr]
@@ -1035,11 +1494,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2735413c, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Update(IDispatch* object, IDispatch* progress) mut
+			{
+				return VT.Update(&this, object, progress);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(DDiscFormat2DataEvents *self, IDispatch* object, IDispatch* progress) Update;
+				public new function HRESULT(DDiscFormat2DataEvents *self, IDispatch* object, IDispatch* progress) Update;
 			}
 		}
 		[CRepr]
@@ -1047,14 +1511,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2735413d, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ElapsedTime(int32* value) mut
+			{
+				return VT.get_ElapsedTime(&this, value);
+			}
+			public HRESULT get_RemainingTime(int32* value) mut
+			{
+				return VT.get_RemainingTime(&this, value);
+			}
+			public HRESULT get_TotalTime(int32* value) mut
+			{
+				return VT.get_TotalTime(&this, value);
+			}
+			public HRESULT get_CurrentAction(IMAPI_FORMAT2_DATA_WRITE_ACTION* value) mut
+			{
+				return VT.get_CurrentAction(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IWriteEngine2EventArgs.VTable
 			{
-				public function HRESULT(IDiscFormat2DataEventArgs *self, int32* value) get_ElapsedTime;
-				public function HRESULT(IDiscFormat2DataEventArgs *self, int32* value) get_RemainingTime;
-				public function HRESULT(IDiscFormat2DataEventArgs *self, int32* value) get_TotalTime;
-				public function HRESULT(IDiscFormat2DataEventArgs *self, IMAPI_FORMAT2_DATA_WRITE_ACTION* value) get_CurrentAction;
+				public new function HRESULT(IDiscFormat2DataEventArgs *self, int32* value) get_ElapsedTime;
+				public new function HRESULT(IDiscFormat2DataEventArgs *self, int32* value) get_RemainingTime;
+				public new function HRESULT(IDiscFormat2DataEventArgs *self, int32* value) get_TotalTime;
+				public new function HRESULT(IDiscFormat2DataEventArgs *self, IMAPI_FORMAT2_DATA_WRITE_ACTION* value) get_CurrentAction;
 			}
 		}
 		[CRepr]
@@ -1062,35 +1543,136 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354154, 0x8f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT PrepareMedia() mut
+			{
+				return VT.PrepareMedia(&this);
+			}
+			public HRESULT AddAudioTrack(IStream* data) mut
+			{
+				return VT.AddAudioTrack(&this, data);
+			}
+			public HRESULT CancelAddTrack() mut
+			{
+				return VT.CancelAddTrack(&this);
+			}
+			public HRESULT ReleaseMedia() mut
+			{
+				return VT.ReleaseMedia(&this);
+			}
+			public HRESULT SetWriteSpeed(int32 RequestedSectorsPerSecond, int16 RotationTypeIsPureCAV) mut
+			{
+				return VT.SetWriteSpeed(&this, RequestedSectorsPerSecond, RotationTypeIsPureCAV);
+			}
+			public HRESULT put_Recorder(IDiscRecorder2* value) mut
+			{
+				return VT.put_Recorder(&this, value);
+			}
+			public HRESULT get_Recorder(IDiscRecorder2** value) mut
+			{
+				return VT.get_Recorder(&this, value);
+			}
+			public HRESULT put_BufferUnderrunFreeDisabled(int16 value) mut
+			{
+				return VT.put_BufferUnderrunFreeDisabled(&this, value);
+			}
+			public HRESULT get_BufferUnderrunFreeDisabled(int16* value) mut
+			{
+				return VT.get_BufferUnderrunFreeDisabled(&this, value);
+			}
+			public HRESULT get_NumberOfExistingTracks(int32* value) mut
+			{
+				return VT.get_NumberOfExistingTracks(&this, value);
+			}
+			public HRESULT get_TotalSectorsOnMedia(int32* value) mut
+			{
+				return VT.get_TotalSectorsOnMedia(&this, value);
+			}
+			public HRESULT get_FreeSectorsOnMedia(int32* value) mut
+			{
+				return VT.get_FreeSectorsOnMedia(&this, value);
+			}
+			public HRESULT get_UsedSectorsOnMedia(int32* value) mut
+			{
+				return VT.get_UsedSectorsOnMedia(&this, value);
+			}
+			public HRESULT put_DoNotFinalizeMedia(int16 value) mut
+			{
+				return VT.put_DoNotFinalizeMedia(&this, value);
+			}
+			public HRESULT get_DoNotFinalizeMedia(int16* value) mut
+			{
+				return VT.get_DoNotFinalizeMedia(&this, value);
+			}
+			public HRESULT get_ExpectedTableOfContents(SAFEARRAY** value) mut
+			{
+				return VT.get_ExpectedTableOfContents(&this, value);
+			}
+			public HRESULT get_CurrentPhysicalMediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value) mut
+			{
+				return VT.get_CurrentPhysicalMediaType(&this, value);
+			}
+			public HRESULT put_ClientName(BSTR value) mut
+			{
+				return VT.put_ClientName(&this, value);
+			}
+			public HRESULT get_ClientName(BSTR* value) mut
+			{
+				return VT.get_ClientName(&this, value);
+			}
+			public HRESULT get_RequestedWriteSpeed(int32* value) mut
+			{
+				return VT.get_RequestedWriteSpeed(&this, value);
+			}
+			public HRESULT get_RequestedRotationTypeIsPureCAV(int16* value) mut
+			{
+				return VT.get_RequestedRotationTypeIsPureCAV(&this, value);
+			}
+			public HRESULT get_CurrentWriteSpeed(int32* value) mut
+			{
+				return VT.get_CurrentWriteSpeed(&this, value);
+			}
+			public HRESULT get_CurrentRotationTypeIsPureCAV(int16* value) mut
+			{
+				return VT.get_CurrentRotationTypeIsPureCAV(&this, value);
+			}
+			public HRESULT get_SupportedWriteSpeeds(SAFEARRAY** supportedSpeeds) mut
+			{
+				return VT.get_SupportedWriteSpeeds(&this, supportedSpeeds);
+			}
+			public HRESULT get_SupportedWriteSpeedDescriptors(SAFEARRAY** supportedSpeedDescriptors) mut
+			{
+				return VT.get_SupportedWriteSpeedDescriptors(&this, supportedSpeedDescriptors);
+			}
 			[CRepr]
 			public struct VTable : IDiscFormat2.VTable
 			{
-				public function HRESULT(IDiscFormat2TrackAtOnce *self) PrepareMedia;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, IStream* data) AddAudioTrack;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self) CancelAddTrack;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self) ReleaseMedia;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, int32 RequestedSectorsPerSecond, int16 RotationTypeIsPureCAV) SetWriteSpeed;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, IDiscRecorder2* value) put_Recorder;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, IDiscRecorder2** value) get_Recorder;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, int16 value) put_BufferUnderrunFreeDisabled;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, int16* value) get_BufferUnderrunFreeDisabled;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, int32* value) get_NumberOfExistingTracks;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, int32* value) get_TotalSectorsOnMedia;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, int32* value) get_FreeSectorsOnMedia;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, int32* value) get_UsedSectorsOnMedia;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, int16 value) put_DoNotFinalizeMedia;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, int16* value) get_DoNotFinalizeMedia;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, SAFEARRAY** value) get_ExpectedTableOfContents;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, IMAPI_MEDIA_PHYSICAL_TYPE* value) get_CurrentPhysicalMediaType;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, BSTR value) put_ClientName;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, BSTR* value) get_ClientName;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, int32* value) get_RequestedWriteSpeed;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, int16* value) get_RequestedRotationTypeIsPureCAV;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, int32* value) get_CurrentWriteSpeed;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, int16* value) get_CurrentRotationTypeIsPureCAV;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, SAFEARRAY** supportedSpeeds) get_SupportedWriteSpeeds;
-				public function HRESULT(IDiscFormat2TrackAtOnce *self, SAFEARRAY** supportedSpeedDescriptors) get_SupportedWriteSpeedDescriptors;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self) PrepareMedia;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, IStream* data) AddAudioTrack;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self) CancelAddTrack;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self) ReleaseMedia;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, int32 RequestedSectorsPerSecond, int16 RotationTypeIsPureCAV) SetWriteSpeed;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, IDiscRecorder2* value) put_Recorder;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, IDiscRecorder2** value) get_Recorder;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, int16 value) put_BufferUnderrunFreeDisabled;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, int16* value) get_BufferUnderrunFreeDisabled;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, int32* value) get_NumberOfExistingTracks;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, int32* value) get_TotalSectorsOnMedia;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, int32* value) get_FreeSectorsOnMedia;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, int32* value) get_UsedSectorsOnMedia;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, int16 value) put_DoNotFinalizeMedia;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, int16* value) get_DoNotFinalizeMedia;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, SAFEARRAY** value) get_ExpectedTableOfContents;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, IMAPI_MEDIA_PHYSICAL_TYPE* value) get_CurrentPhysicalMediaType;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, BSTR value) put_ClientName;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, BSTR* value) get_ClientName;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, int32* value) get_RequestedWriteSpeed;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, int16* value) get_RequestedRotationTypeIsPureCAV;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, int32* value) get_CurrentWriteSpeed;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, int16* value) get_CurrentRotationTypeIsPureCAV;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, SAFEARRAY** supportedSpeeds) get_SupportedWriteSpeeds;
+				public new function HRESULT(IDiscFormat2TrackAtOnce *self, SAFEARRAY** supportedSpeedDescriptors) get_SupportedWriteSpeedDescriptors;
 			}
 		}
 		[CRepr]
@@ -1098,11 +1680,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2735413f, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Update(IDispatch* object, IDispatch* progress) mut
+			{
+				return VT.Update(&this, object, progress);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(DDiscFormat2TrackAtOnceEvents *self, IDispatch* object, IDispatch* progress) Update;
+				public new function HRESULT(DDiscFormat2TrackAtOnceEvents *self, IDispatch* object, IDispatch* progress) Update;
 			}
 		}
 		[CRepr]
@@ -1110,14 +1697,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354140, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CurrentTrackNumber(int32* value) mut
+			{
+				return VT.get_CurrentTrackNumber(&this, value);
+			}
+			public HRESULT get_CurrentAction(IMAPI_FORMAT2_TAO_WRITE_ACTION* value) mut
+			{
+				return VT.get_CurrentAction(&this, value);
+			}
+			public HRESULT get_ElapsedTime(int32* value) mut
+			{
+				return VT.get_ElapsedTime(&this, value);
+			}
+			public HRESULT get_RemainingTime(int32* value) mut
+			{
+				return VT.get_RemainingTime(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IWriteEngine2EventArgs.VTable
 			{
-				public function HRESULT(IDiscFormat2TrackAtOnceEventArgs *self, int32* value) get_CurrentTrackNumber;
-				public function HRESULT(IDiscFormat2TrackAtOnceEventArgs *self, IMAPI_FORMAT2_TAO_WRITE_ACTION* value) get_CurrentAction;
-				public function HRESULT(IDiscFormat2TrackAtOnceEventArgs *self, int32* value) get_ElapsedTime;
-				public function HRESULT(IDiscFormat2TrackAtOnceEventArgs *self, int32* value) get_RemainingTime;
+				public new function HRESULT(IDiscFormat2TrackAtOnceEventArgs *self, int32* value) get_CurrentTrackNumber;
+				public new function HRESULT(IDiscFormat2TrackAtOnceEventArgs *self, IMAPI_FORMAT2_TAO_WRITE_ACTION* value) get_CurrentAction;
+				public new function HRESULT(IDiscFormat2TrackAtOnceEventArgs *self, int32* value) get_ElapsedTime;
+				public new function HRESULT(IDiscFormat2TrackAtOnceEventArgs *self, int32* value) get_RemainingTime;
 			}
 		}
 		[CRepr]
@@ -1125,34 +1729,131 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354155, 0x8f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT PrepareMedia() mut
+			{
+				return VT.PrepareMedia(&this);
+			}
+			public HRESULT WriteMedia(IStream* data) mut
+			{
+				return VT.WriteMedia(&this, data);
+			}
+			public HRESULT WriteMedia2(IStream* data, int32 streamLeadInSectors) mut
+			{
+				return VT.WriteMedia2(&this, data, streamLeadInSectors);
+			}
+			public HRESULT CancelWrite() mut
+			{
+				return VT.CancelWrite(&this);
+			}
+			public HRESULT ReleaseMedia() mut
+			{
+				return VT.ReleaseMedia(&this);
+			}
+			public HRESULT SetWriteSpeed(int32 RequestedSectorsPerSecond, int16 RotationTypeIsPureCAV) mut
+			{
+				return VT.SetWriteSpeed(&this, RequestedSectorsPerSecond, RotationTypeIsPureCAV);
+			}
+			public HRESULT put_Recorder(IDiscRecorder2* value) mut
+			{
+				return VT.put_Recorder(&this, value);
+			}
+			public HRESULT get_Recorder(IDiscRecorder2** value) mut
+			{
+				return VT.get_Recorder(&this, value);
+			}
+			public HRESULT put_BufferUnderrunFreeDisabled(int16 value) mut
+			{
+				return VT.put_BufferUnderrunFreeDisabled(&this, value);
+			}
+			public HRESULT get_BufferUnderrunFreeDisabled(int16* value) mut
+			{
+				return VT.get_BufferUnderrunFreeDisabled(&this, value);
+			}
+			public HRESULT get_StartOfNextSession(int32* value) mut
+			{
+				return VT.get_StartOfNextSession(&this, value);
+			}
+			public HRESULT get_LastPossibleStartOfLeadout(int32* value) mut
+			{
+				return VT.get_LastPossibleStartOfLeadout(&this, value);
+			}
+			public HRESULT get_CurrentPhysicalMediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value) mut
+			{
+				return VT.get_CurrentPhysicalMediaType(&this, value);
+			}
+			public HRESULT get_SupportedSectorTypes(SAFEARRAY** value) mut
+			{
+				return VT.get_SupportedSectorTypes(&this, value);
+			}
+			public HRESULT put_RequestedSectorType(IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE value) mut
+			{
+				return VT.put_RequestedSectorType(&this, value);
+			}
+			public HRESULT get_RequestedSectorType(IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE* value) mut
+			{
+				return VT.get_RequestedSectorType(&this, value);
+			}
+			public HRESULT put_ClientName(BSTR value) mut
+			{
+				return VT.put_ClientName(&this, value);
+			}
+			public HRESULT get_ClientName(BSTR* value) mut
+			{
+				return VT.get_ClientName(&this, value);
+			}
+			public HRESULT get_RequestedWriteSpeed(int32* value) mut
+			{
+				return VT.get_RequestedWriteSpeed(&this, value);
+			}
+			public HRESULT get_RequestedRotationTypeIsPureCAV(int16* value) mut
+			{
+				return VT.get_RequestedRotationTypeIsPureCAV(&this, value);
+			}
+			public HRESULT get_CurrentWriteSpeed(int32* value) mut
+			{
+				return VT.get_CurrentWriteSpeed(&this, value);
+			}
+			public HRESULT get_CurrentRotationTypeIsPureCAV(int16* value) mut
+			{
+				return VT.get_CurrentRotationTypeIsPureCAV(&this, value);
+			}
+			public HRESULT get_SupportedWriteSpeeds(SAFEARRAY** supportedSpeeds) mut
+			{
+				return VT.get_SupportedWriteSpeeds(&this, supportedSpeeds);
+			}
+			public HRESULT get_SupportedWriteSpeedDescriptors(SAFEARRAY** supportedSpeedDescriptors) mut
+			{
+				return VT.get_SupportedWriteSpeedDescriptors(&this, supportedSpeedDescriptors);
+			}
 			[CRepr]
 			public struct VTable : IDiscFormat2.VTable
 			{
-				public function HRESULT(IDiscFormat2RawCD *self) PrepareMedia;
-				public function HRESULT(IDiscFormat2RawCD *self, IStream* data) WriteMedia;
-				public function HRESULT(IDiscFormat2RawCD *self, IStream* data, int32 streamLeadInSectors) WriteMedia2;
-				public function HRESULT(IDiscFormat2RawCD *self) CancelWrite;
-				public function HRESULT(IDiscFormat2RawCD *self) ReleaseMedia;
-				public function HRESULT(IDiscFormat2RawCD *self, int32 RequestedSectorsPerSecond, int16 RotationTypeIsPureCAV) SetWriteSpeed;
-				public function HRESULT(IDiscFormat2RawCD *self, IDiscRecorder2* value) put_Recorder;
-				public function HRESULT(IDiscFormat2RawCD *self, IDiscRecorder2** value) get_Recorder;
-				public function HRESULT(IDiscFormat2RawCD *self, int16 value) put_BufferUnderrunFreeDisabled;
-				public function HRESULT(IDiscFormat2RawCD *self, int16* value) get_BufferUnderrunFreeDisabled;
-				public function HRESULT(IDiscFormat2RawCD *self, int32* value) get_StartOfNextSession;
-				public function HRESULT(IDiscFormat2RawCD *self, int32* value) get_LastPossibleStartOfLeadout;
-				public function HRESULT(IDiscFormat2RawCD *self, IMAPI_MEDIA_PHYSICAL_TYPE* value) get_CurrentPhysicalMediaType;
-				public function HRESULT(IDiscFormat2RawCD *self, SAFEARRAY** value) get_SupportedSectorTypes;
-				public function HRESULT(IDiscFormat2RawCD *self, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE value) put_RequestedSectorType;
-				public function HRESULT(IDiscFormat2RawCD *self, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE* value) get_RequestedSectorType;
-				public function HRESULT(IDiscFormat2RawCD *self, BSTR value) put_ClientName;
-				public function HRESULT(IDiscFormat2RawCD *self, BSTR* value) get_ClientName;
-				public function HRESULT(IDiscFormat2RawCD *self, int32* value) get_RequestedWriteSpeed;
-				public function HRESULT(IDiscFormat2RawCD *self, int16* value) get_RequestedRotationTypeIsPureCAV;
-				public function HRESULT(IDiscFormat2RawCD *self, int32* value) get_CurrentWriteSpeed;
-				public function HRESULT(IDiscFormat2RawCD *self, int16* value) get_CurrentRotationTypeIsPureCAV;
-				public function HRESULT(IDiscFormat2RawCD *self, SAFEARRAY** supportedSpeeds) get_SupportedWriteSpeeds;
-				public function HRESULT(IDiscFormat2RawCD *self, SAFEARRAY** supportedSpeedDescriptors) get_SupportedWriteSpeedDescriptors;
+				public new function HRESULT(IDiscFormat2RawCD *self) PrepareMedia;
+				public new function HRESULT(IDiscFormat2RawCD *self, IStream* data) WriteMedia;
+				public new function HRESULT(IDiscFormat2RawCD *self, IStream* data, int32 streamLeadInSectors) WriteMedia2;
+				public new function HRESULT(IDiscFormat2RawCD *self) CancelWrite;
+				public new function HRESULT(IDiscFormat2RawCD *self) ReleaseMedia;
+				public new function HRESULT(IDiscFormat2RawCD *self, int32 RequestedSectorsPerSecond, int16 RotationTypeIsPureCAV) SetWriteSpeed;
+				public new function HRESULT(IDiscFormat2RawCD *self, IDiscRecorder2* value) put_Recorder;
+				public new function HRESULT(IDiscFormat2RawCD *self, IDiscRecorder2** value) get_Recorder;
+				public new function HRESULT(IDiscFormat2RawCD *self, int16 value) put_BufferUnderrunFreeDisabled;
+				public new function HRESULT(IDiscFormat2RawCD *self, int16* value) get_BufferUnderrunFreeDisabled;
+				public new function HRESULT(IDiscFormat2RawCD *self, int32* value) get_StartOfNextSession;
+				public new function HRESULT(IDiscFormat2RawCD *self, int32* value) get_LastPossibleStartOfLeadout;
+				public new function HRESULT(IDiscFormat2RawCD *self, IMAPI_MEDIA_PHYSICAL_TYPE* value) get_CurrentPhysicalMediaType;
+				public new function HRESULT(IDiscFormat2RawCD *self, SAFEARRAY** value) get_SupportedSectorTypes;
+				public new function HRESULT(IDiscFormat2RawCD *self, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE value) put_RequestedSectorType;
+				public new function HRESULT(IDiscFormat2RawCD *self, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE* value) get_RequestedSectorType;
+				public new function HRESULT(IDiscFormat2RawCD *self, BSTR value) put_ClientName;
+				public new function HRESULT(IDiscFormat2RawCD *self, BSTR* value) get_ClientName;
+				public new function HRESULT(IDiscFormat2RawCD *self, int32* value) get_RequestedWriteSpeed;
+				public new function HRESULT(IDiscFormat2RawCD *self, int16* value) get_RequestedRotationTypeIsPureCAV;
+				public new function HRESULT(IDiscFormat2RawCD *self, int32* value) get_CurrentWriteSpeed;
+				public new function HRESULT(IDiscFormat2RawCD *self, int16* value) get_CurrentRotationTypeIsPureCAV;
+				public new function HRESULT(IDiscFormat2RawCD *self, SAFEARRAY** supportedSpeeds) get_SupportedWriteSpeeds;
+				public new function HRESULT(IDiscFormat2RawCD *self, SAFEARRAY** supportedSpeedDescriptors) get_SupportedWriteSpeedDescriptors;
 			}
 		}
 		[CRepr]
@@ -1160,11 +1861,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354142, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Update(IDispatch* object, IDispatch* progress) mut
+			{
+				return VT.Update(&this, object, progress);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(DDiscFormat2RawCDEvents *self, IDispatch* object, IDispatch* progress) Update;
+				public new function HRESULT(DDiscFormat2RawCDEvents *self, IDispatch* object, IDispatch* progress) Update;
 			}
 		}
 		[CRepr]
@@ -1172,13 +1878,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354143, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CurrentAction(IMAPI_FORMAT2_RAW_CD_WRITE_ACTION* value) mut
+			{
+				return VT.get_CurrentAction(&this, value);
+			}
+			public HRESULT get_ElapsedTime(int32* value) mut
+			{
+				return VT.get_ElapsedTime(&this, value);
+			}
+			public HRESULT get_RemainingTime(int32* value) mut
+			{
+				return VT.get_RemainingTime(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IWriteEngine2EventArgs.VTable
 			{
-				public function HRESULT(IDiscFormat2RawCDEventArgs *self, IMAPI_FORMAT2_RAW_CD_WRITE_ACTION* value) get_CurrentAction;
-				public function HRESULT(IDiscFormat2RawCDEventArgs *self, int32* value) get_ElapsedTime;
-				public function HRESULT(IDiscFormat2RawCDEventArgs *self, int32* value) get_RemainingTime;
+				public new function HRESULT(IDiscFormat2RawCDEventArgs *self, IMAPI_FORMAT2_RAW_CD_WRITE_ACTION* value) get_CurrentAction;
+				public new function HRESULT(IDiscFormat2RawCDEventArgs *self, int32* value) get_ElapsedTime;
+				public new function HRESULT(IDiscFormat2RawCDEventArgs *self, int32* value) get_RemainingTime;
 			}
 		}
 		[CRepr]
@@ -1186,12 +1905,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd2ffd834, 0x958b, 0x426d, 0x84, 0x70, 0x2a, 0x13, 0x87, 0x9c, 0x6a, 0x91);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT put_BurnVerificationLevel(IMAPI_BURN_VERIFICATION_LEVEL value) mut
+			{
+				return VT.put_BurnVerificationLevel(&this, value);
+			}
+			public HRESULT get_BurnVerificationLevel(IMAPI_BURN_VERIFICATION_LEVEL* value) mut
+			{
+				return VT.get_BurnVerificationLevel(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IBurnVerification *self, IMAPI_BURN_VERIFICATION_LEVEL value) put_BurnVerificationLevel;
-				public function HRESULT(IBurnVerification *self, IMAPI_BURN_VERIFICATION_LEVEL* value) get_BurnVerificationLevel;
+				public new function HRESULT(IBurnVerification *self, IMAPI_BURN_VERIFICATION_LEVEL value) put_BurnVerificationLevel;
+				public new function HRESULT(IBurnVerification *self, IMAPI_BURN_VERIFICATION_LEVEL* value) get_BurnVerificationLevel;
 			}
 		}
 		[CRepr]
@@ -1199,13 +1927,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354144, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_MediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value) mut
+			{
+				return VT.get_MediaType(&this, value);
+			}
+			public HRESULT get_RotationTypeIsPureCAV(int16* value) mut
+			{
+				return VT.get_RotationTypeIsPureCAV(&this, value);
+			}
+			public HRESULT get_WriteSpeed(int32* value) mut
+			{
+				return VT.get_WriteSpeed(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IWriteSpeedDescriptor *self, IMAPI_MEDIA_PHYSICAL_TYPE* value) get_MediaType;
-				public function HRESULT(IWriteSpeedDescriptor *self, int16* value) get_RotationTypeIsPureCAV;
-				public function HRESULT(IWriteSpeedDescriptor *self, int32* value) get_WriteSpeed;
+				public new function HRESULT(IWriteSpeedDescriptor *self, IMAPI_MEDIA_PHYSICAL_TYPE* value) get_MediaType;
+				public new function HRESULT(IWriteSpeedDescriptor *self, int16* value) get_RotationTypeIsPureCAV;
+				public new function HRESULT(IWriteSpeedDescriptor *self, int32* value) get_WriteSpeed;
 			}
 		}
 		[CRepr]
@@ -1213,14 +1954,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354150, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_IsSupportedOnCurrentMediaState(int16* value) mut
+			{
+				return VT.get_IsSupportedOnCurrentMediaState(&this, value);
+			}
+			public HRESULT put_InUse(int16 value) mut
+			{
+				return VT.put_InUse(&this, value);
+			}
+			public HRESULT get_InUse(int16* value) mut
+			{
+				return VT.get_InUse(&this, value);
+			}
+			public HRESULT get_ImportRecorder(IDiscRecorder2** value) mut
+			{
+				return VT.get_ImportRecorder(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IMultisession *self, int16* value) get_IsSupportedOnCurrentMediaState;
-				public function HRESULT(IMultisession *self, int16 value) put_InUse;
-				public function HRESULT(IMultisession *self, int16* value) get_InUse;
-				public function HRESULT(IMultisession *self, IDiscRecorder2** value) get_ImportRecorder;
+				public new function HRESULT(IMultisession *self, int16* value) get_IsSupportedOnCurrentMediaState;
+				public new function HRESULT(IMultisession *self, int16 value) put_InUse;
+				public new function HRESULT(IMultisession *self, int16* value) get_InUse;
+				public new function HRESULT(IMultisession *self, IDiscRecorder2** value) get_ImportRecorder;
 			}
 		}
 		[CRepr]
@@ -1228,15 +1986,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354151, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_IsFirstDataSession(int16* value) mut
+			{
+				return VT.get_IsFirstDataSession(&this, value);
+			}
+			public HRESULT get_StartAddressOfPreviousSession(int32* value) mut
+			{
+				return VT.get_StartAddressOfPreviousSession(&this, value);
+			}
+			public HRESULT get_LastWrittenAddressOfPreviousSession(int32* value) mut
+			{
+				return VT.get_LastWrittenAddressOfPreviousSession(&this, value);
+			}
+			public HRESULT get_NextWritableAddress(int32* value) mut
+			{
+				return VT.get_NextWritableAddress(&this, value);
+			}
+			public HRESULT get_FreeSectorsOnMedia(int32* value) mut
+			{
+				return VT.get_FreeSectorsOnMedia(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IMultisession.VTable
 			{
-				public function HRESULT(IMultisessionSequential *self, int16* value) get_IsFirstDataSession;
-				public function HRESULT(IMultisessionSequential *self, int32* value) get_StartAddressOfPreviousSession;
-				public function HRESULT(IMultisessionSequential *self, int32* value) get_LastWrittenAddressOfPreviousSession;
-				public function HRESULT(IMultisessionSequential *self, int32* value) get_NextWritableAddress;
-				public function HRESULT(IMultisessionSequential *self, int32* value) get_FreeSectorsOnMedia;
+				public new function HRESULT(IMultisessionSequential *self, int16* value) get_IsFirstDataSession;
+				public new function HRESULT(IMultisessionSequential *self, int32* value) get_StartAddressOfPreviousSession;
+				public new function HRESULT(IMultisessionSequential *self, int32* value) get_LastWrittenAddressOfPreviousSession;
+				public new function HRESULT(IMultisessionSequential *self, int32* value) get_NextWritableAddress;
+				public new function HRESULT(IMultisessionSequential *self, int32* value) get_FreeSectorsOnMedia;
 			}
 		}
 		[CRepr]
@@ -1244,11 +2023,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb507ca22, 0x2204, 0x11dd, 0x96, 0x6a, 0x00, 0x1a, 0xa0, 0x1b, 0xbc, 0x58);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_WriteUnitSize(int32* value) mut
+			{
+				return VT.get_WriteUnitSize(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IMultisessionSequential.VTable
 			{
-				public function HRESULT(IMultisessionSequential2 *self, int32* value) get_WriteUnitSize;
+				public new function HRESULT(IMultisessionSequential2 *self, int32* value) get_WriteUnitSize;
 			}
 		}
 		[CRepr]
@@ -1256,13 +2040,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb507ca23, 0x2204, 0x11dd, 0x96, 0x6a, 0x00, 0x1a, 0xa0, 0x1b, 0xbc, 0x58);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_WriteUnitSize(int32* value) mut
+			{
+				return VT.get_WriteUnitSize(&this, value);
+			}
+			public HRESULT get_LastWrittenAddress(int32* value) mut
+			{
+				return VT.get_LastWrittenAddress(&this, value);
+			}
+			public HRESULT get_TotalSectorsOnMedia(int32* value) mut
+			{
+				return VT.get_TotalSectorsOnMedia(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IMultisession.VTable
 			{
-				public function HRESULT(IMultisessionRandomWrite *self, int32* value) get_WriteUnitSize;
-				public function HRESULT(IMultisessionRandomWrite *self, int32* value) get_LastWrittenAddress;
-				public function HRESULT(IMultisessionRandomWrite *self, int32* value) get_TotalSectorsOnMedia;
+				public new function HRESULT(IMultisessionRandomWrite *self, int32* value) get_WriteUnitSize;
+				public new function HRESULT(IMultisessionRandomWrite *self, int32* value) get_LastWrittenAddress;
+				public new function HRESULT(IMultisessionRandomWrite *self, int32* value) get_TotalSectorsOnMedia;
 			}
 		}
 		[CRepr]
@@ -1270,14 +2067,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354145, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT put_Seed(uint32 value) mut
+			{
+				return VT.put_Seed(&this, value);
+			}
+			public HRESULT get_Seed(uint32* value) mut
+			{
+				return VT.get_Seed(&this, value);
+			}
+			public HRESULT put_ExtendedSeed(uint32* values, uint32 eCount) mut
+			{
+				return VT.put_ExtendedSeed(&this, values, eCount);
+			}
+			public HRESULT get_ExtendedSeed(uint32** values, uint32* eCount) mut
+			{
+				return VT.get_ExtendedSeed(&this, values, eCount);
+			}
 			[CRepr]
 			public struct VTable : IStream.VTable
 			{
-				public function HRESULT(IStreamPseudoRandomBased *self, uint32 value) put_Seed;
-				public function HRESULT(IStreamPseudoRandomBased *self, uint32* value) get_Seed;
-				public function HRESULT(IStreamPseudoRandomBased *self, uint32* values, uint32 eCount) put_ExtendedSeed;
-				public function HRESULT(IStreamPseudoRandomBased *self, uint32** values, uint32* eCount) get_ExtendedSeed;
+				public new function HRESULT(IStreamPseudoRandomBased *self, uint32 value) put_Seed;
+				public new function HRESULT(IStreamPseudoRandomBased *self, uint32* value) get_Seed;
+				public new function HRESULT(IStreamPseudoRandomBased *self, uint32* values, uint32 eCount) put_ExtendedSeed;
+				public new function HRESULT(IStreamPseudoRandomBased *self, uint32** values, uint32* eCount) get_ExtendedSeed;
 			}
 		}
 		[CRepr]
@@ -1285,14 +2099,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354146, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(IStream* stream1, IStream* stream2) mut
+			{
+				return VT.Initialize(&this, stream1, stream2);
+			}
+			public HRESULT Initialize2(IStream** streams, uint32 streamCount) mut
+			{
+				return VT.Initialize2(&this, streams, streamCount);
+			}
+			public HRESULT Append(IStream* stream) mut
+			{
+				return VT.Append(&this, stream);
+			}
+			public HRESULT Append2(IStream** streams, uint32 streamCount) mut
+			{
+				return VT.Append2(&this, streams, streamCount);
+			}
 			[CRepr]
 			public struct VTable : IStream.VTable
 			{
-				public function HRESULT(IStreamConcatenate *self, IStream* stream1, IStream* stream2) Initialize;
-				public function HRESULT(IStreamConcatenate *self, IStream** streams, uint32 streamCount) Initialize2;
-				public function HRESULT(IStreamConcatenate *self, IStream* stream) Append;
-				public function HRESULT(IStreamConcatenate *self, IStream** streams, uint32 streamCount) Append2;
+				public new function HRESULT(IStreamConcatenate *self, IStream* stream1, IStream* stream2) Initialize;
+				public new function HRESULT(IStreamConcatenate *self, IStream** streams, uint32 streamCount) Initialize2;
+				public new function HRESULT(IStreamConcatenate *self, IStream* stream) Append;
+				public new function HRESULT(IStreamConcatenate *self, IStream** streams, uint32 streamCount) Append2;
 			}
 		}
 		[CRepr]
@@ -1300,11 +2131,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27354147, 0x7f64, 0x5b0f, 0x8f, 0x00, 0x5d, 0x77, 0xaf, 0xbe, 0x26, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(IStream** streams, uint32* interleaveSizes, uint32 streamCount) mut
+			{
+				return VT.Initialize(&this, streams, interleaveSizes, streamCount);
+			}
 			[CRepr]
 			public struct VTable : IStream.VTable
 			{
-				public function HRESULT(IStreamInterleave *self, IStream** streams, uint32* interleaveSizes, uint32 streamCount) Initialize;
+				public new function HRESULT(IStreamInterleave *self, IStream** streams, uint32* interleaveSizes, uint32 streamCount) Initialize;
 			}
 		}
 		[CRepr]
@@ -1312,29 +2148,106 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x25983550, 0x9d65, 0x49ce, 0xb3, 0x35, 0x40, 0x63, 0x0d, 0x90, 0x12, 0x27);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateResultImage(IStream** resultStream) mut
+			{
+				return VT.CreateResultImage(&this, resultStream);
+			}
+			public HRESULT AddTrack(IMAPI_CD_SECTOR_TYPE dataType, IStream* data, int32* trackIndex) mut
+			{
+				return VT.AddTrack(&this, dataType, data, trackIndex);
+			}
+			public HRESULT AddSpecialPregap(IStream* data) mut
+			{
+				return VT.AddSpecialPregap(&this, data);
+			}
+			public HRESULT AddSubcodeRWGenerator(IStream* subcode) mut
+			{
+				return VT.AddSubcodeRWGenerator(&this, subcode);
+			}
+			public HRESULT put_ResultingImageType(IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE value) mut
+			{
+				return VT.put_ResultingImageType(&this, value);
+			}
+			public HRESULT get_ResultingImageType(IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE* value) mut
+			{
+				return VT.get_ResultingImageType(&this, value);
+			}
+			public HRESULT get_StartOfLeadout(int32* value) mut
+			{
+				return VT.get_StartOfLeadout(&this, value);
+			}
+			public HRESULT put_StartOfLeadoutLimit(int32 value) mut
+			{
+				return VT.put_StartOfLeadoutLimit(&this, value);
+			}
+			public HRESULT get_StartOfLeadoutLimit(int32* value) mut
+			{
+				return VT.get_StartOfLeadoutLimit(&this, value);
+			}
+			public HRESULT put_DisableGaplessAudio(int16 value) mut
+			{
+				return VT.put_DisableGaplessAudio(&this, value);
+			}
+			public HRESULT get_DisableGaplessAudio(int16* value) mut
+			{
+				return VT.get_DisableGaplessAudio(&this, value);
+			}
+			public HRESULT put_MediaCatalogNumber(BSTR value) mut
+			{
+				return VT.put_MediaCatalogNumber(&this, value);
+			}
+			public HRESULT get_MediaCatalogNumber(BSTR* value) mut
+			{
+				return VT.get_MediaCatalogNumber(&this, value);
+			}
+			public HRESULT put_StartingTrackNumber(int32 value) mut
+			{
+				return VT.put_StartingTrackNumber(&this, value);
+			}
+			public HRESULT get_StartingTrackNumber(int32* value) mut
+			{
+				return VT.get_StartingTrackNumber(&this, value);
+			}
+			public HRESULT get_TrackInfo(int32 trackIndex, IRawCDImageTrackInfo** value) mut
+			{
+				return VT.get_TrackInfo(&this, trackIndex, value);
+			}
+			public HRESULT get_NumberOfExistingTracks(int32* value) mut
+			{
+				return VT.get_NumberOfExistingTracks(&this, value);
+			}
+			public HRESULT get_LastUsedUserSectorInImage(int32* value) mut
+			{
+				return VT.get_LastUsedUserSectorInImage(&this, value);
+			}
+			public HRESULT get_ExpectedTableOfContents(SAFEARRAY** value) mut
+			{
+				return VT.get_ExpectedTableOfContents(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IRawCDImageCreator *self, IStream** resultStream) CreateResultImage;
-				public function HRESULT(IRawCDImageCreator *self, IMAPI_CD_SECTOR_TYPE dataType, IStream* data, int32* trackIndex) AddTrack;
-				public function HRESULT(IRawCDImageCreator *self, IStream* data) AddSpecialPregap;
-				public function HRESULT(IRawCDImageCreator *self, IStream* subcode) AddSubcodeRWGenerator;
-				public function HRESULT(IRawCDImageCreator *self, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE value) put_ResultingImageType;
-				public function HRESULT(IRawCDImageCreator *self, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE* value) get_ResultingImageType;
-				public function HRESULT(IRawCDImageCreator *self, int32* value) get_StartOfLeadout;
-				public function HRESULT(IRawCDImageCreator *self, int32 value) put_StartOfLeadoutLimit;
-				public function HRESULT(IRawCDImageCreator *self, int32* value) get_StartOfLeadoutLimit;
-				public function HRESULT(IRawCDImageCreator *self, int16 value) put_DisableGaplessAudio;
-				public function HRESULT(IRawCDImageCreator *self, int16* value) get_DisableGaplessAudio;
-				public function HRESULT(IRawCDImageCreator *self, BSTR value) put_MediaCatalogNumber;
-				public function HRESULT(IRawCDImageCreator *self, BSTR* value) get_MediaCatalogNumber;
-				public function HRESULT(IRawCDImageCreator *self, int32 value) put_StartingTrackNumber;
-				public function HRESULT(IRawCDImageCreator *self, int32* value) get_StartingTrackNumber;
-				public function HRESULT(IRawCDImageCreator *self, int32 trackIndex, IRawCDImageTrackInfo** value) get_TrackInfo;
-				public function HRESULT(IRawCDImageCreator *self, int32* value) get_NumberOfExistingTracks;
-				public function HRESULT(IRawCDImageCreator *self, int32* value) get_LastUsedUserSectorInImage;
-				public function HRESULT(IRawCDImageCreator *self, SAFEARRAY** value) get_ExpectedTableOfContents;
+				public new function HRESULT(IRawCDImageCreator *self, IStream** resultStream) CreateResultImage;
+				public new function HRESULT(IRawCDImageCreator *self, IMAPI_CD_SECTOR_TYPE dataType, IStream* data, int32* trackIndex) AddTrack;
+				public new function HRESULT(IRawCDImageCreator *self, IStream* data) AddSpecialPregap;
+				public new function HRESULT(IRawCDImageCreator *self, IStream* subcode) AddSubcodeRWGenerator;
+				public new function HRESULT(IRawCDImageCreator *self, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE value) put_ResultingImageType;
+				public new function HRESULT(IRawCDImageCreator *self, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE* value) get_ResultingImageType;
+				public new function HRESULT(IRawCDImageCreator *self, int32* value) get_StartOfLeadout;
+				public new function HRESULT(IRawCDImageCreator *self, int32 value) put_StartOfLeadoutLimit;
+				public new function HRESULT(IRawCDImageCreator *self, int32* value) get_StartOfLeadoutLimit;
+				public new function HRESULT(IRawCDImageCreator *self, int16 value) put_DisableGaplessAudio;
+				public new function HRESULT(IRawCDImageCreator *self, int16* value) get_DisableGaplessAudio;
+				public new function HRESULT(IRawCDImageCreator *self, BSTR value) put_MediaCatalogNumber;
+				public new function HRESULT(IRawCDImageCreator *self, BSTR* value) get_MediaCatalogNumber;
+				public new function HRESULT(IRawCDImageCreator *self, int32 value) put_StartingTrackNumber;
+				public new function HRESULT(IRawCDImageCreator *self, int32* value) get_StartingTrackNumber;
+				public new function HRESULT(IRawCDImageCreator *self, int32 trackIndex, IRawCDImageTrackInfo** value) get_TrackInfo;
+				public new function HRESULT(IRawCDImageCreator *self, int32* value) get_NumberOfExistingTracks;
+				public new function HRESULT(IRawCDImageCreator *self, int32* value) get_LastUsedUserSectorInImage;
+				public new function HRESULT(IRawCDImageCreator *self, SAFEARRAY** value) get_ExpectedTableOfContents;
 			}
 		}
 		[CRepr]
@@ -1342,23 +2255,76 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x25983551, 0x9d65, 0x49ce, 0xb3, 0x35, 0x40, 0x63, 0x0d, 0x90, 0x12, 0x27);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_StartingLba(int32* value) mut
+			{
+				return VT.get_StartingLba(&this, value);
+			}
+			public HRESULT get_SectorCount(int32* value) mut
+			{
+				return VT.get_SectorCount(&this, value);
+			}
+			public HRESULT get_TrackNumber(int32* value) mut
+			{
+				return VT.get_TrackNumber(&this, value);
+			}
+			public HRESULT get_SectorType(IMAPI_CD_SECTOR_TYPE* value) mut
+			{
+				return VT.get_SectorType(&this, value);
+			}
+			public HRESULT get_ISRC(BSTR* value) mut
+			{
+				return VT.get_ISRC(&this, value);
+			}
+			public HRESULT put_ISRC(BSTR value) mut
+			{
+				return VT.put_ISRC(&this, value);
+			}
+			public HRESULT get_DigitalAudioCopySetting(IMAPI_CD_TRACK_DIGITAL_COPY_SETTING* value) mut
+			{
+				return VT.get_DigitalAudioCopySetting(&this, value);
+			}
+			public HRESULT put_DigitalAudioCopySetting(IMAPI_CD_TRACK_DIGITAL_COPY_SETTING value) mut
+			{
+				return VT.put_DigitalAudioCopySetting(&this, value);
+			}
+			public HRESULT get_AudioHasPreemphasis(int16* value) mut
+			{
+				return VT.get_AudioHasPreemphasis(&this, value);
+			}
+			public HRESULT put_AudioHasPreemphasis(int16 value) mut
+			{
+				return VT.put_AudioHasPreemphasis(&this, value);
+			}
+			public HRESULT get_TrackIndexes(SAFEARRAY** value) mut
+			{
+				return VT.get_TrackIndexes(&this, value);
+			}
+			public HRESULT AddTrackIndex(int32 lbaOffset) mut
+			{
+				return VT.AddTrackIndex(&this, lbaOffset);
+			}
+			public HRESULT ClearTrackIndex(int32 lbaOffset) mut
+			{
+				return VT.ClearTrackIndex(&this, lbaOffset);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IRawCDImageTrackInfo *self, int32* value) get_StartingLba;
-				public function HRESULT(IRawCDImageTrackInfo *self, int32* value) get_SectorCount;
-				public function HRESULT(IRawCDImageTrackInfo *self, int32* value) get_TrackNumber;
-				public function HRESULT(IRawCDImageTrackInfo *self, IMAPI_CD_SECTOR_TYPE* value) get_SectorType;
-				public function HRESULT(IRawCDImageTrackInfo *self, BSTR* value) get_ISRC;
-				public function HRESULT(IRawCDImageTrackInfo *self, BSTR value) put_ISRC;
-				public function HRESULT(IRawCDImageTrackInfo *self, IMAPI_CD_TRACK_DIGITAL_COPY_SETTING* value) get_DigitalAudioCopySetting;
-				public function HRESULT(IRawCDImageTrackInfo *self, IMAPI_CD_TRACK_DIGITAL_COPY_SETTING value) put_DigitalAudioCopySetting;
-				public function HRESULT(IRawCDImageTrackInfo *self, int16* value) get_AudioHasPreemphasis;
-				public function HRESULT(IRawCDImageTrackInfo *self, int16 value) put_AudioHasPreemphasis;
-				public function HRESULT(IRawCDImageTrackInfo *self, SAFEARRAY** value) get_TrackIndexes;
-				public function HRESULT(IRawCDImageTrackInfo *self, int32 lbaOffset) AddTrackIndex;
-				public function HRESULT(IRawCDImageTrackInfo *self, int32 lbaOffset) ClearTrackIndex;
+				public new function HRESULT(IRawCDImageTrackInfo *self, int32* value) get_StartingLba;
+				public new function HRESULT(IRawCDImageTrackInfo *self, int32* value) get_SectorCount;
+				public new function HRESULT(IRawCDImageTrackInfo *self, int32* value) get_TrackNumber;
+				public new function HRESULT(IRawCDImageTrackInfo *self, IMAPI_CD_SECTOR_TYPE* value) get_SectorType;
+				public new function HRESULT(IRawCDImageTrackInfo *self, BSTR* value) get_ISRC;
+				public new function HRESULT(IRawCDImageTrackInfo *self, BSTR value) put_ISRC;
+				public new function HRESULT(IRawCDImageTrackInfo *self, IMAPI_CD_TRACK_DIGITAL_COPY_SETTING* value) get_DigitalAudioCopySetting;
+				public new function HRESULT(IRawCDImageTrackInfo *self, IMAPI_CD_TRACK_DIGITAL_COPY_SETTING value) put_DigitalAudioCopySetting;
+				public new function HRESULT(IRawCDImageTrackInfo *self, int16* value) get_AudioHasPreemphasis;
+				public new function HRESULT(IRawCDImageTrackInfo *self, int16 value) put_AudioHasPreemphasis;
+				public new function HRESULT(IRawCDImageTrackInfo *self, SAFEARRAY** value) get_TrackIndexes;
+				public new function HRESULT(IRawCDImageTrackInfo *self, int32 lbaOffset) AddTrackIndex;
+				public new function HRESULT(IRawCDImageTrackInfo *self, int32 lbaOffset) ClearTrackIndex;
 			}
 		}
 		[CRepr]
@@ -1366,12 +2332,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb507ca25, 0x2204, 0x11dd, 0x96, 0x6a, 0x00, 0x1a, 0xa0, 0x1b, 0xbc, 0x58);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_StartLba(int32* value) mut
+			{
+				return VT.get_StartLba(&this, value);
+			}
+			public HRESULT get_EndLba(int32* value) mut
+			{
+				return VT.get_EndLba(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IBlockRange *self, int32* value) get_StartLba;
-				public function HRESULT(IBlockRange *self, int32* value) get_EndLba;
+				public new function HRESULT(IBlockRange *self, int32* value) get_StartLba;
+				public new function HRESULT(IBlockRange *self, int32* value) get_EndLba;
 			}
 		}
 		[CRepr]
@@ -1379,11 +2354,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb507ca26, 0x2204, 0x11dd, 0x96, 0x6a, 0x00, 0x1a, 0xa0, 0x1b, 0xbc, 0x58);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_BlockRanges(SAFEARRAY** value) mut
+			{
+				return VT.get_BlockRanges(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IBlockRangeList *self, SAFEARRAY** value) get_BlockRanges;
+				public new function HRESULT(IBlockRangeList *self, SAFEARRAY** value) get_BlockRanges;
 			}
 		}
 		[CRepr]
@@ -1391,19 +2371,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2c941fd4, 0x975b, 0x59be, 0xa9, 0x60, 0x9a, 0x2a, 0x26, 0x28, 0x53, 0xa5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_BootImage(IStream** pVal) mut
+			{
+				return VT.get_BootImage(&this, pVal);
+			}
+			public HRESULT get_Manufacturer(BSTR* pVal) mut
+			{
+				return VT.get_Manufacturer(&this, pVal);
+			}
+			public HRESULT put_Manufacturer(BSTR newVal) mut
+			{
+				return VT.put_Manufacturer(&this, newVal);
+			}
+			public HRESULT get_PlatformId(PlatformId* pVal) mut
+			{
+				return VT.get_PlatformId(&this, pVal);
+			}
+			public HRESULT put_PlatformId(PlatformId newVal) mut
+			{
+				return VT.put_PlatformId(&this, newVal);
+			}
+			public HRESULT get_Emulation(EmulationType* pVal) mut
+			{
+				return VT.get_Emulation(&this, pVal);
+			}
+			public HRESULT put_Emulation(EmulationType newVal) mut
+			{
+				return VT.put_Emulation(&this, newVal);
+			}
+			public HRESULT get_ImageSize(uint32* pVal) mut
+			{
+				return VT.get_ImageSize(&this, pVal);
+			}
+			public HRESULT AssignBootImage(IStream* newVal) mut
+			{
+				return VT.AssignBootImage(&this, newVal);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IBootOptions *self, IStream** pVal) get_BootImage;
-				public function HRESULT(IBootOptions *self, BSTR* pVal) get_Manufacturer;
-				public function HRESULT(IBootOptions *self, BSTR newVal) put_Manufacturer;
-				public function HRESULT(IBootOptions *self, PlatformId* pVal) get_PlatformId;
-				public function HRESULT(IBootOptions *self, PlatformId newVal) put_PlatformId;
-				public function HRESULT(IBootOptions *self, EmulationType* pVal) get_Emulation;
-				public function HRESULT(IBootOptions *self, EmulationType newVal) put_Emulation;
-				public function HRESULT(IBootOptions *self, uint32* pVal) get_ImageSize;
-				public function HRESULT(IBootOptions *self, IStream* newVal) AssignBootImage;
+				public new function HRESULT(IBootOptions *self, IStream** pVal) get_BootImage;
+				public new function HRESULT(IBootOptions *self, BSTR* pVal) get_Manufacturer;
+				public new function HRESULT(IBootOptions *self, BSTR newVal) put_Manufacturer;
+				public new function HRESULT(IBootOptions *self, PlatformId* pVal) get_PlatformId;
+				public new function HRESULT(IBootOptions *self, PlatformId newVal) put_PlatformId;
+				public new function HRESULT(IBootOptions *self, EmulationType* pVal) get_Emulation;
+				public new function HRESULT(IBootOptions *self, EmulationType newVal) put_Emulation;
+				public new function HRESULT(IBootOptions *self, uint32* pVal) get_ImageSize;
+				public new function HRESULT(IBootOptions *self, IStream* newVal) AssignBootImage;
 			}
 		}
 		[CRepr]
@@ -1411,14 +2428,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2c941fd5, 0x975b, 0x59be, 0xa9, 0x60, 0x9a, 0x2a, 0x26, 0x28, 0x53, 0xa5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Description(BSTR* desc) mut
+			{
+				return VT.get_Description(&this, desc);
+			}
+			public HRESULT get_FirstBlock(uint32* block) mut
+			{
+				return VT.get_FirstBlock(&this, block);
+			}
+			public HRESULT get_LastBlock(uint32* block) mut
+			{
+				return VT.get_LastBlock(&this, block);
+			}
+			public HRESULT get_BlockCount(uint32* blocks) mut
+			{
+				return VT.get_BlockCount(&this, blocks);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IProgressItem *self, BSTR* desc) get_Description;
-				public function HRESULT(IProgressItem *self, uint32* block) get_FirstBlock;
-				public function HRESULT(IProgressItem *self, uint32* block) get_LastBlock;
-				public function HRESULT(IProgressItem *self, uint32* blocks) get_BlockCount;
+				public new function HRESULT(IProgressItem *self, BSTR* desc) get_Description;
+				public new function HRESULT(IProgressItem *self, uint32* block) get_FirstBlock;
+				public new function HRESULT(IProgressItem *self, uint32* block) get_LastBlock;
+				public new function HRESULT(IProgressItem *self, uint32* blocks) get_BlockCount;
 			}
 		}
 		[CRepr]
@@ -1426,14 +2460,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2c941fd6, 0x975b, 0x59be, 0xa9, 0x60, 0x9a, 0x2a, 0x26, 0x28, 0x53, 0xa5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 celt, IProgressItem** rgelt, uint32* pceltFetched) mut
+			{
+				return VT.Next(&this, celt, rgelt, pceltFetched);
+			}
+			public HRESULT Skip(uint32 celt) mut
+			{
+				return VT.Skip(&this, celt);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumProgressItems** ppEnum) mut
+			{
+				return VT.Clone(&this, ppEnum);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumProgressItems *self, uint32 celt, IProgressItem** rgelt, uint32* pceltFetched) Next;
-				public function HRESULT(IEnumProgressItems *self, uint32 celt) Skip;
-				public function HRESULT(IEnumProgressItems *self) Reset;
-				public function HRESULT(IEnumProgressItems *self, IEnumProgressItems** ppEnum) Clone;
+				public new function HRESULT(IEnumProgressItems *self, uint32 celt, IProgressItem** rgelt, uint32* pceltFetched) Next;
+				public new function HRESULT(IEnumProgressItems *self, uint32 celt) Skip;
+				public new function HRESULT(IEnumProgressItems *self) Reset;
+				public new function HRESULT(IEnumProgressItems *self, IEnumProgressItems** ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -1441,16 +2492,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2c941fd7, 0x975b, 0x59be, 0xa9, 0x60, 0x9a, 0x2a, 0x26, 0x28, 0x53, 0xa5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get__NewEnum(IEnumVARIANT** NewEnum) mut
+			{
+				return VT.get__NewEnum(&this, NewEnum);
+			}
+			public HRESULT get_Item(int32 Index, IProgressItem** item) mut
+			{
+				return VT.get_Item(&this, Index, item);
+			}
+			public HRESULT get_Count(int32* Count) mut
+			{
+				return VT.get_Count(&this, Count);
+			}
+			public HRESULT ProgressItemFromBlock(uint32 block, IProgressItem** item) mut
+			{
+				return VT.ProgressItemFromBlock(&this, block, item);
+			}
+			public HRESULT ProgressItemFromDescription(BSTR description, IProgressItem** item) mut
+			{
+				return VT.ProgressItemFromDescription(&this, description, item);
+			}
+			public HRESULT get_EnumProgressItems(IEnumProgressItems** NewEnum) mut
+			{
+				return VT.get_EnumProgressItems(&this, NewEnum);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IProgressItems *self, IEnumVARIANT** NewEnum) get__NewEnum;
-				public function HRESULT(IProgressItems *self, int32 Index, IProgressItem** item) get_Item;
-				public function HRESULT(IProgressItems *self, int32* Count) get_Count;
-				public function HRESULT(IProgressItems *self, uint32 block, IProgressItem** item) ProgressItemFromBlock;
-				public function HRESULT(IProgressItems *self, BSTR description, IProgressItem** item) ProgressItemFromDescription;
-				public function HRESULT(IProgressItems *self, IEnumProgressItems** NewEnum) get_EnumProgressItems;
+				public new function HRESULT(IProgressItems *self, IEnumVARIANT** NewEnum) get__NewEnum;
+				public new function HRESULT(IProgressItems *self, int32 Index, IProgressItem** item) get_Item;
+				public new function HRESULT(IProgressItems *self, int32* Count) get_Count;
+				public new function HRESULT(IProgressItems *self, uint32 block, IProgressItem** item) ProgressItemFromBlock;
+				public new function HRESULT(IProgressItems *self, BSTR description, IProgressItem** item) ProgressItemFromDescription;
+				public new function HRESULT(IProgressItems *self, IEnumProgressItems** NewEnum) get_EnumProgressItems;
 			}
 		}
 		[CRepr]
@@ -1458,15 +2534,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2c941fd8, 0x975b, 0x59be, 0xa9, 0x60, 0x9a, 0x2a, 0x26, 0x28, 0x53, 0xa5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ImageStream(IStream** pVal) mut
+			{
+				return VT.get_ImageStream(&this, pVal);
+			}
+			public HRESULT get_ProgressItems(IProgressItems** pVal) mut
+			{
+				return VT.get_ProgressItems(&this, pVal);
+			}
+			public HRESULT get_TotalBlocks(int32* pVal) mut
+			{
+				return VT.get_TotalBlocks(&this, pVal);
+			}
+			public HRESULT get_BlockSize(int32* pVal) mut
+			{
+				return VT.get_BlockSize(&this, pVal);
+			}
+			public HRESULT get_DiscId(BSTR* pVal) mut
+			{
+				return VT.get_DiscId(&this, pVal);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFileSystemImageResult *self, IStream** pVal) get_ImageStream;
-				public function HRESULT(IFileSystemImageResult *self, IProgressItems** pVal) get_ProgressItems;
-				public function HRESULT(IFileSystemImageResult *self, int32* pVal) get_TotalBlocks;
-				public function HRESULT(IFileSystemImageResult *self, int32* pVal) get_BlockSize;
-				public function HRESULT(IFileSystemImageResult *self, BSTR* pVal) get_DiscId;
+				public new function HRESULT(IFileSystemImageResult *self, IStream** pVal) get_ImageStream;
+				public new function HRESULT(IFileSystemImageResult *self, IProgressItems** pVal) get_ProgressItems;
+				public new function HRESULT(IFileSystemImageResult *self, int32* pVal) get_TotalBlocks;
+				public new function HRESULT(IFileSystemImageResult *self, int32* pVal) get_BlockSize;
+				public new function HRESULT(IFileSystemImageResult *self, BSTR* pVal) get_DiscId;
 			}
 		}
 		[CRepr]
@@ -1474,11 +2571,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb507ca29, 0x2204, 0x11dd, 0x96, 0x6a, 0x00, 0x1a, 0xa0, 0x1b, 0xbc, 0x58);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ModifiedBlocks(IBlockRangeList** pVal) mut
+			{
+				return VT.get_ModifiedBlocks(&this, pVal);
+			}
 			[CRepr]
 			public struct VTable : IFileSystemImageResult.VTable
 			{
-				public function HRESULT(IFileSystemImageResult2 *self, IBlockRangeList** pVal) get_ModifiedBlocks;
+				public new function HRESULT(IFileSystemImageResult2 *self, IBlockRangeList** pVal) get_ModifiedBlocks;
 			}
 		}
 		[CRepr]
@@ -1486,22 +2588,71 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2c941fd9, 0x975b, 0x59be, 0xa9, 0x60, 0x9a, 0x2a, 0x26, 0x28, 0x53, 0xa5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Name(BSTR* pVal) mut
+			{
+				return VT.get_Name(&this, pVal);
+			}
+			public HRESULT get_FullPath(BSTR* pVal) mut
+			{
+				return VT.get_FullPath(&this, pVal);
+			}
+			public HRESULT get_CreationTime(double* pVal) mut
+			{
+				return VT.get_CreationTime(&this, pVal);
+			}
+			public HRESULT put_CreationTime(double newVal) mut
+			{
+				return VT.put_CreationTime(&this, newVal);
+			}
+			public HRESULT get_LastAccessedTime(double* pVal) mut
+			{
+				return VT.get_LastAccessedTime(&this, pVal);
+			}
+			public HRESULT put_LastAccessedTime(double newVal) mut
+			{
+				return VT.put_LastAccessedTime(&this, newVal);
+			}
+			public HRESULT get_LastModifiedTime(double* pVal) mut
+			{
+				return VT.get_LastModifiedTime(&this, pVal);
+			}
+			public HRESULT put_LastModifiedTime(double newVal) mut
+			{
+				return VT.put_LastModifiedTime(&this, newVal);
+			}
+			public HRESULT get_IsHidden(int16* pVal) mut
+			{
+				return VT.get_IsHidden(&this, pVal);
+			}
+			public HRESULT put_IsHidden(int16 newVal) mut
+			{
+				return VT.put_IsHidden(&this, newVal);
+			}
+			public HRESULT FileSystemName(FsiFileSystems fileSystem, BSTR* pVal) mut
+			{
+				return VT.FileSystemName(&this, fileSystem, pVal);
+			}
+			public HRESULT FileSystemPath(FsiFileSystems fileSystem, BSTR* pVal) mut
+			{
+				return VT.FileSystemPath(&this, fileSystem, pVal);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFsiItem *self, BSTR* pVal) get_Name;
-				public function HRESULT(IFsiItem *self, BSTR* pVal) get_FullPath;
-				public function HRESULT(IFsiItem *self, double* pVal) get_CreationTime;
-				public function HRESULT(IFsiItem *self, double newVal) put_CreationTime;
-				public function HRESULT(IFsiItem *self, double* pVal) get_LastAccessedTime;
-				public function HRESULT(IFsiItem *self, double newVal) put_LastAccessedTime;
-				public function HRESULT(IFsiItem *self, double* pVal) get_LastModifiedTime;
-				public function HRESULT(IFsiItem *self, double newVal) put_LastModifiedTime;
-				public function HRESULT(IFsiItem *self, int16* pVal) get_IsHidden;
-				public function HRESULT(IFsiItem *self, int16 newVal) put_IsHidden;
-				public function HRESULT(IFsiItem *self, FsiFileSystems fileSystem, BSTR* pVal) FileSystemName;
-				public function HRESULT(IFsiItem *self, FsiFileSystems fileSystem, BSTR* pVal) FileSystemPath;
+				public new function HRESULT(IFsiItem *self, BSTR* pVal) get_Name;
+				public new function HRESULT(IFsiItem *self, BSTR* pVal) get_FullPath;
+				public new function HRESULT(IFsiItem *self, double* pVal) get_CreationTime;
+				public new function HRESULT(IFsiItem *self, double newVal) put_CreationTime;
+				public new function HRESULT(IFsiItem *self, double* pVal) get_LastAccessedTime;
+				public new function HRESULT(IFsiItem *self, double newVal) put_LastAccessedTime;
+				public new function HRESULT(IFsiItem *self, double* pVal) get_LastModifiedTime;
+				public new function HRESULT(IFsiItem *self, double newVal) put_LastModifiedTime;
+				public new function HRESULT(IFsiItem *self, int16* pVal) get_IsHidden;
+				public new function HRESULT(IFsiItem *self, int16 newVal) put_IsHidden;
+				public new function HRESULT(IFsiItem *self, FsiFileSystems fileSystem, BSTR* pVal) FileSystemName;
+				public new function HRESULT(IFsiItem *self, FsiFileSystems fileSystem, BSTR* pVal) FileSystemPath;
 			}
 		}
 		[CRepr]
@@ -1509,14 +2660,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2c941fda, 0x975b, 0x59be, 0xa9, 0x60, 0x9a, 0x2a, 0x26, 0x28, 0x53, 0xa5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 celt, IFsiItem** rgelt, uint32* pceltFetched) mut
+			{
+				return VT.Next(&this, celt, rgelt, pceltFetched);
+			}
+			public HRESULT Skip(uint32 celt) mut
+			{
+				return VT.Skip(&this, celt);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumFsiItems** ppEnum) mut
+			{
+				return VT.Clone(&this, ppEnum);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumFsiItems *self, uint32 celt, IFsiItem** rgelt, uint32* pceltFetched) Next;
-				public function HRESULT(IEnumFsiItems *self, uint32 celt) Skip;
-				public function HRESULT(IEnumFsiItems *self) Reset;
-				public function HRESULT(IEnumFsiItems *self, IEnumFsiItems** ppEnum) Clone;
+				public new function HRESULT(IEnumFsiItems *self, uint32 celt, IFsiItem** rgelt, uint32* pceltFetched) Next;
+				public new function HRESULT(IEnumFsiItems *self, uint32 celt) Skip;
+				public new function HRESULT(IEnumFsiItems *self) Reset;
+				public new function HRESULT(IEnumFsiItems *self, IEnumFsiItems** ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -1524,15 +2692,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2c941fdb, 0x975b, 0x59be, 0xa9, 0x60, 0x9a, 0x2a, 0x26, 0x28, 0x53, 0xa5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_DataSize(int64* pVal) mut
+			{
+				return VT.get_DataSize(&this, pVal);
+			}
+			public HRESULT get_DataSize32BitLow(int32* pVal) mut
+			{
+				return VT.get_DataSize32BitLow(&this, pVal);
+			}
+			public HRESULT get_DataSize32BitHigh(int32* pVal) mut
+			{
+				return VT.get_DataSize32BitHigh(&this, pVal);
+			}
+			public HRESULT get_Data(IStream** pVal) mut
+			{
+				return VT.get_Data(&this, pVal);
+			}
+			public HRESULT put_Data(IStream* newVal) mut
+			{
+				return VT.put_Data(&this, newVal);
+			}
 			[CRepr]
 			public struct VTable : IFsiItem.VTable
 			{
-				public function HRESULT(IFsiFileItem *self, int64* pVal) get_DataSize;
-				public function HRESULT(IFsiFileItem *self, int32* pVal) get_DataSize32BitLow;
-				public function HRESULT(IFsiFileItem *self, int32* pVal) get_DataSize32BitHigh;
-				public function HRESULT(IFsiFileItem *self, IStream** pVal) get_Data;
-				public function HRESULT(IFsiFileItem *self, IStream* newVal) put_Data;
+				public new function HRESULT(IFsiFileItem *self, int64* pVal) get_DataSize;
+				public new function HRESULT(IFsiFileItem *self, int32* pVal) get_DataSize32BitLow;
+				public new function HRESULT(IFsiFileItem *self, int32* pVal) get_DataSize32BitHigh;
+				public new function HRESULT(IFsiFileItem *self, IStream** pVal) get_Data;
+				public new function HRESULT(IFsiFileItem *self, IStream* newVal) put_Data;
 			}
 		}
 		[CRepr]
@@ -1540,16 +2729,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x199d0c19, 0x11e1, 0x40eb, 0x8e, 0xc2, 0xc8, 0xc8, 0x22, 0xa0, 0x77, 0x92);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_FsiNamedStreams(IFsiNamedStreams** streams) mut
+			{
+				return VT.get_FsiNamedStreams(&this, streams);
+			}
+			public HRESULT get_IsNamedStream(int16* pVal) mut
+			{
+				return VT.get_IsNamedStream(&this, pVal);
+			}
+			public HRESULT AddStream(BSTR name, IStream* streamData) mut
+			{
+				return VT.AddStream(&this, name, streamData);
+			}
+			public HRESULT RemoveStream(BSTR name) mut
+			{
+				return VT.RemoveStream(&this, name);
+			}
+			public HRESULT get_IsRealTime(int16* pVal) mut
+			{
+				return VT.get_IsRealTime(&this, pVal);
+			}
+			public HRESULT put_IsRealTime(int16 newVal) mut
+			{
+				return VT.put_IsRealTime(&this, newVal);
+			}
 			[CRepr]
 			public struct VTable : IFsiFileItem.VTable
 			{
-				public function HRESULT(IFsiFileItem2 *self, IFsiNamedStreams** streams) get_FsiNamedStreams;
-				public function HRESULT(IFsiFileItem2 *self, int16* pVal) get_IsNamedStream;
-				public function HRESULT(IFsiFileItem2 *self, BSTR name, IStream* streamData) AddStream;
-				public function HRESULT(IFsiFileItem2 *self, BSTR name) RemoveStream;
-				public function HRESULT(IFsiFileItem2 *self, int16* pVal) get_IsRealTime;
-				public function HRESULT(IFsiFileItem2 *self, int16 newVal) put_IsRealTime;
+				public new function HRESULT(IFsiFileItem2 *self, IFsiNamedStreams** streams) get_FsiNamedStreams;
+				public new function HRESULT(IFsiFileItem2 *self, int16* pVal) get_IsNamedStream;
+				public new function HRESULT(IFsiFileItem2 *self, BSTR name, IStream* streamData) AddStream;
+				public new function HRESULT(IFsiFileItem2 *self, BSTR name) RemoveStream;
+				public new function HRESULT(IFsiFileItem2 *self, int16* pVal) get_IsRealTime;
+				public new function HRESULT(IFsiFileItem2 *self, int16 newVal) put_IsRealTime;
 			}
 		}
 		[CRepr]
@@ -1557,14 +2771,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xed79ba56, 0x5294, 0x4250, 0x8d, 0x46, 0xf9, 0xae, 0xce, 0xe2, 0x34, 0x59);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get__NewEnum(IEnumVARIANT** NewEnum) mut
+			{
+				return VT.get__NewEnum(&this, NewEnum);
+			}
+			public HRESULT get_Item(int32 index, IFsiFileItem2** item) mut
+			{
+				return VT.get_Item(&this, index, item);
+			}
+			public HRESULT get_Count(int32* count) mut
+			{
+				return VT.get_Count(&this, count);
+			}
+			public HRESULT get_EnumNamedStreams(IEnumFsiItems** NewEnum) mut
+			{
+				return VT.get_EnumNamedStreams(&this, NewEnum);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFsiNamedStreams *self, IEnumVARIANT** NewEnum) get__NewEnum;
-				public function HRESULT(IFsiNamedStreams *self, int32 index, IFsiFileItem2** item) get_Item;
-				public function HRESULT(IFsiNamedStreams *self, int32* count) get_Count;
-				public function HRESULT(IFsiNamedStreams *self, IEnumFsiItems** NewEnum) get_EnumNamedStreams;
+				public new function HRESULT(IFsiNamedStreams *self, IEnumVARIANT** NewEnum) get__NewEnum;
+				public new function HRESULT(IFsiNamedStreams *self, int32 index, IFsiFileItem2** item) get_Item;
+				public new function HRESULT(IFsiNamedStreams *self, int32* count) get_Count;
+				public new function HRESULT(IFsiNamedStreams *self, IEnumFsiItems** NewEnum) get_EnumNamedStreams;
 			}
 		}
 		[CRepr]
@@ -1572,20 +2803,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2c941fdc, 0x975b, 0x59be, 0xa9, 0x60, 0x9a, 0x2a, 0x26, 0x28, 0x53, 0xa5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get__NewEnum(IEnumVARIANT** NewEnum) mut
+			{
+				return VT.get__NewEnum(&this, NewEnum);
+			}
+			public HRESULT get_Item(BSTR path, IFsiItem** item) mut
+			{
+				return VT.get_Item(&this, path, item);
+			}
+			public HRESULT get_Count(int32* Count) mut
+			{
+				return VT.get_Count(&this, Count);
+			}
+			public HRESULT get_EnumFsiItems(IEnumFsiItems** NewEnum) mut
+			{
+				return VT.get_EnumFsiItems(&this, NewEnum);
+			}
+			public HRESULT AddDirectory(BSTR path) mut
+			{
+				return VT.AddDirectory(&this, path);
+			}
+			public HRESULT AddFile(BSTR path, IStream* fileData) mut
+			{
+				return VT.AddFile(&this, path, fileData);
+			}
+			public HRESULT AddTree(BSTR sourceDirectory, int16 includeBaseDirectory) mut
+			{
+				return VT.AddTree(&this, sourceDirectory, includeBaseDirectory);
+			}
+			public HRESULT Add(IFsiItem* item) mut
+			{
+				return VT.Add(&this, item);
+			}
+			public HRESULT Remove(BSTR path) mut
+			{
+				return VT.Remove(&this, path);
+			}
+			public HRESULT RemoveTree(BSTR path) mut
+			{
+				return VT.RemoveTree(&this, path);
+			}
 			[CRepr]
 			public struct VTable : IFsiItem.VTable
 			{
-				public function HRESULT(IFsiDirectoryItem *self, IEnumVARIANT** NewEnum) get__NewEnum;
-				public function HRESULT(IFsiDirectoryItem *self, BSTR path, IFsiItem** item) get_Item;
-				public function HRESULT(IFsiDirectoryItem *self, int32* Count) get_Count;
-				public function HRESULT(IFsiDirectoryItem *self, IEnumFsiItems** NewEnum) get_EnumFsiItems;
-				public function HRESULT(IFsiDirectoryItem *self, BSTR path) AddDirectory;
-				public function HRESULT(IFsiDirectoryItem *self, BSTR path, IStream* fileData) AddFile;
-				public function HRESULT(IFsiDirectoryItem *self, BSTR sourceDirectory, int16 includeBaseDirectory) AddTree;
-				public function HRESULT(IFsiDirectoryItem *self, IFsiItem* item) Add;
-				public function HRESULT(IFsiDirectoryItem *self, BSTR path) Remove;
-				public function HRESULT(IFsiDirectoryItem *self, BSTR path) RemoveTree;
+				public new function HRESULT(IFsiDirectoryItem *self, IEnumVARIANT** NewEnum) get__NewEnum;
+				public new function HRESULT(IFsiDirectoryItem *self, BSTR path, IFsiItem** item) get_Item;
+				public new function HRESULT(IFsiDirectoryItem *self, int32* Count) get_Count;
+				public new function HRESULT(IFsiDirectoryItem *self, IEnumFsiItems** NewEnum) get_EnumFsiItems;
+				public new function HRESULT(IFsiDirectoryItem *self, BSTR path) AddDirectory;
+				public new function HRESULT(IFsiDirectoryItem *self, BSTR path, IStream* fileData) AddFile;
+				public new function HRESULT(IFsiDirectoryItem *self, BSTR sourceDirectory, int16 includeBaseDirectory) AddTree;
+				public new function HRESULT(IFsiDirectoryItem *self, IFsiItem* item) Add;
+				public new function HRESULT(IFsiDirectoryItem *self, BSTR path) Remove;
+				public new function HRESULT(IFsiDirectoryItem *self, BSTR path) RemoveTree;
 			}
 		}
 		[CRepr]
@@ -1593,11 +2865,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf7fb4b9b, 0x6d96, 0x4d7b, 0x91, 0x15, 0x20, 0x1b, 0x14, 0x48, 0x11, 0xef);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddTreeWithNamedStreams(BSTR sourceDirectory, int16 includeBaseDirectory) mut
+			{
+				return VT.AddTreeWithNamedStreams(&this, sourceDirectory, includeBaseDirectory);
+			}
 			[CRepr]
 			public struct VTable : IFsiDirectoryItem.VTable
 			{
-				public function HRESULT(IFsiDirectoryItem2 *self, BSTR sourceDirectory, int16 includeBaseDirectory) AddTreeWithNamedStreams;
+				public new function HRESULT(IFsiDirectoryItem2 *self, BSTR sourceDirectory, int16 includeBaseDirectory) AddTreeWithNamedStreams;
 			}
 		}
 		[CRepr]
@@ -1605,60 +2882,261 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2c941fe1, 0x975b, 0x59be, 0xa9, 0x60, 0x9a, 0x2a, 0x26, 0x28, 0x53, 0xa5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Root(IFsiDirectoryItem** pVal) mut
+			{
+				return VT.get_Root(&this, pVal);
+			}
+			public HRESULT get_SessionStartBlock(int32* pVal) mut
+			{
+				return VT.get_SessionStartBlock(&this, pVal);
+			}
+			public HRESULT put_SessionStartBlock(int32 newVal) mut
+			{
+				return VT.put_SessionStartBlock(&this, newVal);
+			}
+			public HRESULT get_FreeMediaBlocks(int32* pVal) mut
+			{
+				return VT.get_FreeMediaBlocks(&this, pVal);
+			}
+			public HRESULT put_FreeMediaBlocks(int32 newVal) mut
+			{
+				return VT.put_FreeMediaBlocks(&this, newVal);
+			}
+			public HRESULT SetMaxMediaBlocksFromDevice(IDiscRecorder2* discRecorder) mut
+			{
+				return VT.SetMaxMediaBlocksFromDevice(&this, discRecorder);
+			}
+			public HRESULT get_UsedBlocks(int32* pVal) mut
+			{
+				return VT.get_UsedBlocks(&this, pVal);
+			}
+			public HRESULT get_VolumeName(BSTR* pVal) mut
+			{
+				return VT.get_VolumeName(&this, pVal);
+			}
+			public HRESULT put_VolumeName(BSTR newVal) mut
+			{
+				return VT.put_VolumeName(&this, newVal);
+			}
+			public HRESULT get_ImportedVolumeName(BSTR* pVal) mut
+			{
+				return VT.get_ImportedVolumeName(&this, pVal);
+			}
+			public HRESULT get_BootImageOptions(IBootOptions** pVal) mut
+			{
+				return VT.get_BootImageOptions(&this, pVal);
+			}
+			public HRESULT put_BootImageOptions(IBootOptions* newVal) mut
+			{
+				return VT.put_BootImageOptions(&this, newVal);
+			}
+			public HRESULT get_FileCount(int32* pVal) mut
+			{
+				return VT.get_FileCount(&this, pVal);
+			}
+			public HRESULT get_DirectoryCount(int32* pVal) mut
+			{
+				return VT.get_DirectoryCount(&this, pVal);
+			}
+			public HRESULT get_WorkingDirectory(BSTR* pVal) mut
+			{
+				return VT.get_WorkingDirectory(&this, pVal);
+			}
+			public HRESULT put_WorkingDirectory(BSTR newVal) mut
+			{
+				return VT.put_WorkingDirectory(&this, newVal);
+			}
+			public HRESULT get_ChangePoint(int32* pVal) mut
+			{
+				return VT.get_ChangePoint(&this, pVal);
+			}
+			public HRESULT get_StrictFileSystemCompliance(int16* pVal) mut
+			{
+				return VT.get_StrictFileSystemCompliance(&this, pVal);
+			}
+			public HRESULT put_StrictFileSystemCompliance(int16 newVal) mut
+			{
+				return VT.put_StrictFileSystemCompliance(&this, newVal);
+			}
+			public HRESULT get_UseRestrictedCharacterSet(int16* pVal) mut
+			{
+				return VT.get_UseRestrictedCharacterSet(&this, pVal);
+			}
+			public HRESULT put_UseRestrictedCharacterSet(int16 newVal) mut
+			{
+				return VT.put_UseRestrictedCharacterSet(&this, newVal);
+			}
+			public HRESULT get_FileSystemsToCreate(FsiFileSystems* pVal) mut
+			{
+				return VT.get_FileSystemsToCreate(&this, pVal);
+			}
+			public HRESULT put_FileSystemsToCreate(FsiFileSystems newVal) mut
+			{
+				return VT.put_FileSystemsToCreate(&this, newVal);
+			}
+			public HRESULT get_FileSystemsSupported(FsiFileSystems* pVal) mut
+			{
+				return VT.get_FileSystemsSupported(&this, pVal);
+			}
+			public HRESULT put_UDFRevision(int32 newVal) mut
+			{
+				return VT.put_UDFRevision(&this, newVal);
+			}
+			public HRESULT get_UDFRevision(int32* pVal) mut
+			{
+				return VT.get_UDFRevision(&this, pVal);
+			}
+			public HRESULT get_UDFRevisionsSupported(SAFEARRAY** pVal) mut
+			{
+				return VT.get_UDFRevisionsSupported(&this, pVal);
+			}
+			public HRESULT ChooseImageDefaults(IDiscRecorder2* discRecorder) mut
+			{
+				return VT.ChooseImageDefaults(&this, discRecorder);
+			}
+			public HRESULT ChooseImageDefaultsForMediaType(IMAPI_MEDIA_PHYSICAL_TYPE value) mut
+			{
+				return VT.ChooseImageDefaultsForMediaType(&this, value);
+			}
+			public HRESULT put_ISO9660InterchangeLevel(int32 newVal) mut
+			{
+				return VT.put_ISO9660InterchangeLevel(&this, newVal);
+			}
+			public HRESULT get_ISO9660InterchangeLevel(int32* pVal) mut
+			{
+				return VT.get_ISO9660InterchangeLevel(&this, pVal);
+			}
+			public HRESULT get_ISO9660InterchangeLevelsSupported(SAFEARRAY** pVal) mut
+			{
+				return VT.get_ISO9660InterchangeLevelsSupported(&this, pVal);
+			}
+			public HRESULT CreateResultImage(IFileSystemImageResult** resultStream) mut
+			{
+				return VT.CreateResultImage(&this, resultStream);
+			}
+			public HRESULT Exists(BSTR fullPath, FsiItemType* itemType) mut
+			{
+				return VT.Exists(&this, fullPath, itemType);
+			}
+			public HRESULT CalculateDiscIdentifier(BSTR* discIdentifier) mut
+			{
+				return VT.CalculateDiscIdentifier(&this, discIdentifier);
+			}
+			public HRESULT IdentifyFileSystemsOnDisc(IDiscRecorder2* discRecorder, FsiFileSystems* fileSystems) mut
+			{
+				return VT.IdentifyFileSystemsOnDisc(&this, discRecorder, fileSystems);
+			}
+			public HRESULT GetDefaultFileSystemForImport(FsiFileSystems fileSystems, FsiFileSystems* importDefault) mut
+			{
+				return VT.GetDefaultFileSystemForImport(&this, fileSystems, importDefault);
+			}
+			public HRESULT ImportFileSystem(FsiFileSystems* importedFileSystem) mut
+			{
+				return VT.ImportFileSystem(&this, importedFileSystem);
+			}
+			public HRESULT ImportSpecificFileSystem(FsiFileSystems fileSystemToUse) mut
+			{
+				return VT.ImportSpecificFileSystem(&this, fileSystemToUse);
+			}
+			public HRESULT RollbackToChangePoint(int32 changePoint) mut
+			{
+				return VT.RollbackToChangePoint(&this, changePoint);
+			}
+			public HRESULT LockInChangePoint() mut
+			{
+				return VT.LockInChangePoint(&this);
+			}
+			public HRESULT CreateDirectoryItem(BSTR name, IFsiDirectoryItem** newItem) mut
+			{
+				return VT.CreateDirectoryItem(&this, name, newItem);
+			}
+			public HRESULT CreateFileItem(BSTR name, IFsiFileItem** newItem) mut
+			{
+				return VT.CreateFileItem(&this, name, newItem);
+			}
+			public HRESULT get_VolumeNameUDF(BSTR* pVal) mut
+			{
+				return VT.get_VolumeNameUDF(&this, pVal);
+			}
+			public HRESULT get_VolumeNameJoliet(BSTR* pVal) mut
+			{
+				return VT.get_VolumeNameJoliet(&this, pVal);
+			}
+			public HRESULT get_VolumeNameISO9660(BSTR* pVal) mut
+			{
+				return VT.get_VolumeNameISO9660(&this, pVal);
+			}
+			public HRESULT get_StageFiles(int16* pVal) mut
+			{
+				return VT.get_StageFiles(&this, pVal);
+			}
+			public HRESULT put_StageFiles(int16 newVal) mut
+			{
+				return VT.put_StageFiles(&this, newVal);
+			}
+			public HRESULT get_MultisessionInterfaces(SAFEARRAY** pVal) mut
+			{
+				return VT.get_MultisessionInterfaces(&this, pVal);
+			}
+			public HRESULT put_MultisessionInterfaces(SAFEARRAY* newVal) mut
+			{
+				return VT.put_MultisessionInterfaces(&this, newVal);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFileSystemImage *self, IFsiDirectoryItem** pVal) get_Root;
-				public function HRESULT(IFileSystemImage *self, int32* pVal) get_SessionStartBlock;
-				public function HRESULT(IFileSystemImage *self, int32 newVal) put_SessionStartBlock;
-				public function HRESULT(IFileSystemImage *self, int32* pVal) get_FreeMediaBlocks;
-				public function HRESULT(IFileSystemImage *self, int32 newVal) put_FreeMediaBlocks;
-				public function HRESULT(IFileSystemImage *self, IDiscRecorder2* discRecorder) SetMaxMediaBlocksFromDevice;
-				public function HRESULT(IFileSystemImage *self, int32* pVal) get_UsedBlocks;
-				public function HRESULT(IFileSystemImage *self, BSTR* pVal) get_VolumeName;
-				public function HRESULT(IFileSystemImage *self, BSTR newVal) put_VolumeName;
-				public function HRESULT(IFileSystemImage *self, BSTR* pVal) get_ImportedVolumeName;
-				public function HRESULT(IFileSystemImage *self, IBootOptions** pVal) get_BootImageOptions;
-				public function HRESULT(IFileSystemImage *self, IBootOptions* newVal) put_BootImageOptions;
-				public function HRESULT(IFileSystemImage *self, int32* pVal) get_FileCount;
-				public function HRESULT(IFileSystemImage *self, int32* pVal) get_DirectoryCount;
-				public function HRESULT(IFileSystemImage *self, BSTR* pVal) get_WorkingDirectory;
-				public function HRESULT(IFileSystemImage *self, BSTR newVal) put_WorkingDirectory;
-				public function HRESULT(IFileSystemImage *self, int32* pVal) get_ChangePoint;
-				public function HRESULT(IFileSystemImage *self, int16* pVal) get_StrictFileSystemCompliance;
-				public function HRESULT(IFileSystemImage *self, int16 newVal) put_StrictFileSystemCompliance;
-				public function HRESULT(IFileSystemImage *self, int16* pVal) get_UseRestrictedCharacterSet;
-				public function HRESULT(IFileSystemImage *self, int16 newVal) put_UseRestrictedCharacterSet;
-				public function HRESULT(IFileSystemImage *self, FsiFileSystems* pVal) get_FileSystemsToCreate;
-				public function HRESULT(IFileSystemImage *self, FsiFileSystems newVal) put_FileSystemsToCreate;
-				public function HRESULT(IFileSystemImage *self, FsiFileSystems* pVal) get_FileSystemsSupported;
-				public function HRESULT(IFileSystemImage *self, int32 newVal) put_UDFRevision;
-				public function HRESULT(IFileSystemImage *self, int32* pVal) get_UDFRevision;
-				public function HRESULT(IFileSystemImage *self, SAFEARRAY** pVal) get_UDFRevisionsSupported;
-				public function HRESULT(IFileSystemImage *self, IDiscRecorder2* discRecorder) ChooseImageDefaults;
-				public function HRESULT(IFileSystemImage *self, IMAPI_MEDIA_PHYSICAL_TYPE value) ChooseImageDefaultsForMediaType;
-				public function HRESULT(IFileSystemImage *self, int32 newVal) put_ISO9660InterchangeLevel;
-				public function HRESULT(IFileSystemImage *self, int32* pVal) get_ISO9660InterchangeLevel;
-				public function HRESULT(IFileSystemImage *self, SAFEARRAY** pVal) get_ISO9660InterchangeLevelsSupported;
-				public function HRESULT(IFileSystemImage *self, IFileSystemImageResult** resultStream) CreateResultImage;
-				public function HRESULT(IFileSystemImage *self, BSTR fullPath, FsiItemType* itemType) Exists;
-				public function HRESULT(IFileSystemImage *self, BSTR* discIdentifier) CalculateDiscIdentifier;
-				public function HRESULT(IFileSystemImage *self, IDiscRecorder2* discRecorder, FsiFileSystems* fileSystems) IdentifyFileSystemsOnDisc;
-				public function HRESULT(IFileSystemImage *self, FsiFileSystems fileSystems, FsiFileSystems* importDefault) GetDefaultFileSystemForImport;
-				public function HRESULT(IFileSystemImage *self, FsiFileSystems* importedFileSystem) ImportFileSystem;
-				public function HRESULT(IFileSystemImage *self, FsiFileSystems fileSystemToUse) ImportSpecificFileSystem;
-				public function HRESULT(IFileSystemImage *self, int32 changePoint) RollbackToChangePoint;
-				public function HRESULT(IFileSystemImage *self) LockInChangePoint;
-				public function HRESULT(IFileSystemImage *self, BSTR name, IFsiDirectoryItem** newItem) CreateDirectoryItem;
-				public function HRESULT(IFileSystemImage *self, BSTR name, IFsiFileItem** newItem) CreateFileItem;
-				public function HRESULT(IFileSystemImage *self, BSTR* pVal) get_VolumeNameUDF;
-				public function HRESULT(IFileSystemImage *self, BSTR* pVal) get_VolumeNameJoliet;
-				public function HRESULT(IFileSystemImage *self, BSTR* pVal) get_VolumeNameISO9660;
-				public function HRESULT(IFileSystemImage *self, int16* pVal) get_StageFiles;
-				public function HRESULT(IFileSystemImage *self, int16 newVal) put_StageFiles;
-				public function HRESULT(IFileSystemImage *self, SAFEARRAY** pVal) get_MultisessionInterfaces;
-				public function HRESULT(IFileSystemImage *self, SAFEARRAY* newVal) put_MultisessionInterfaces;
+				public new function HRESULT(IFileSystemImage *self, IFsiDirectoryItem** pVal) get_Root;
+				public new function HRESULT(IFileSystemImage *self, int32* pVal) get_SessionStartBlock;
+				public new function HRESULT(IFileSystemImage *self, int32 newVal) put_SessionStartBlock;
+				public new function HRESULT(IFileSystemImage *self, int32* pVal) get_FreeMediaBlocks;
+				public new function HRESULT(IFileSystemImage *self, int32 newVal) put_FreeMediaBlocks;
+				public new function HRESULT(IFileSystemImage *self, IDiscRecorder2* discRecorder) SetMaxMediaBlocksFromDevice;
+				public new function HRESULT(IFileSystemImage *self, int32* pVal) get_UsedBlocks;
+				public new function HRESULT(IFileSystemImage *self, BSTR* pVal) get_VolumeName;
+				public new function HRESULT(IFileSystemImage *self, BSTR newVal) put_VolumeName;
+				public new function HRESULT(IFileSystemImage *self, BSTR* pVal) get_ImportedVolumeName;
+				public new function HRESULT(IFileSystemImage *self, IBootOptions** pVal) get_BootImageOptions;
+				public new function HRESULT(IFileSystemImage *self, IBootOptions* newVal) put_BootImageOptions;
+				public new function HRESULT(IFileSystemImage *self, int32* pVal) get_FileCount;
+				public new function HRESULT(IFileSystemImage *self, int32* pVal) get_DirectoryCount;
+				public new function HRESULT(IFileSystemImage *self, BSTR* pVal) get_WorkingDirectory;
+				public new function HRESULT(IFileSystemImage *self, BSTR newVal) put_WorkingDirectory;
+				public new function HRESULT(IFileSystemImage *self, int32* pVal) get_ChangePoint;
+				public new function HRESULT(IFileSystemImage *self, int16* pVal) get_StrictFileSystemCompliance;
+				public new function HRESULT(IFileSystemImage *self, int16 newVal) put_StrictFileSystemCompliance;
+				public new function HRESULT(IFileSystemImage *self, int16* pVal) get_UseRestrictedCharacterSet;
+				public new function HRESULT(IFileSystemImage *self, int16 newVal) put_UseRestrictedCharacterSet;
+				public new function HRESULT(IFileSystemImage *self, FsiFileSystems* pVal) get_FileSystemsToCreate;
+				public new function HRESULT(IFileSystemImage *self, FsiFileSystems newVal) put_FileSystemsToCreate;
+				public new function HRESULT(IFileSystemImage *self, FsiFileSystems* pVal) get_FileSystemsSupported;
+				public new function HRESULT(IFileSystemImage *self, int32 newVal) put_UDFRevision;
+				public new function HRESULT(IFileSystemImage *self, int32* pVal) get_UDFRevision;
+				public new function HRESULT(IFileSystemImage *self, SAFEARRAY** pVal) get_UDFRevisionsSupported;
+				public new function HRESULT(IFileSystemImage *self, IDiscRecorder2* discRecorder) ChooseImageDefaults;
+				public new function HRESULT(IFileSystemImage *self, IMAPI_MEDIA_PHYSICAL_TYPE value) ChooseImageDefaultsForMediaType;
+				public new function HRESULT(IFileSystemImage *self, int32 newVal) put_ISO9660InterchangeLevel;
+				public new function HRESULT(IFileSystemImage *self, int32* pVal) get_ISO9660InterchangeLevel;
+				public new function HRESULT(IFileSystemImage *self, SAFEARRAY** pVal) get_ISO9660InterchangeLevelsSupported;
+				public new function HRESULT(IFileSystemImage *self, IFileSystemImageResult** resultStream) CreateResultImage;
+				public new function HRESULT(IFileSystemImage *self, BSTR fullPath, FsiItemType* itemType) Exists;
+				public new function HRESULT(IFileSystemImage *self, BSTR* discIdentifier) CalculateDiscIdentifier;
+				public new function HRESULT(IFileSystemImage *self, IDiscRecorder2* discRecorder, FsiFileSystems* fileSystems) IdentifyFileSystemsOnDisc;
+				public new function HRESULT(IFileSystemImage *self, FsiFileSystems fileSystems, FsiFileSystems* importDefault) GetDefaultFileSystemForImport;
+				public new function HRESULT(IFileSystemImage *self, FsiFileSystems* importedFileSystem) ImportFileSystem;
+				public new function HRESULT(IFileSystemImage *self, FsiFileSystems fileSystemToUse) ImportSpecificFileSystem;
+				public new function HRESULT(IFileSystemImage *self, int32 changePoint) RollbackToChangePoint;
+				public new function HRESULT(IFileSystemImage *self) LockInChangePoint;
+				public new function HRESULT(IFileSystemImage *self, BSTR name, IFsiDirectoryItem** newItem) CreateDirectoryItem;
+				public new function HRESULT(IFileSystemImage *self, BSTR name, IFsiFileItem** newItem) CreateFileItem;
+				public new function HRESULT(IFileSystemImage *self, BSTR* pVal) get_VolumeNameUDF;
+				public new function HRESULT(IFileSystemImage *self, BSTR* pVal) get_VolumeNameJoliet;
+				public new function HRESULT(IFileSystemImage *self, BSTR* pVal) get_VolumeNameISO9660;
+				public new function HRESULT(IFileSystemImage *self, int16* pVal) get_StageFiles;
+				public new function HRESULT(IFileSystemImage *self, int16 newVal) put_StageFiles;
+				public new function HRESULT(IFileSystemImage *self, SAFEARRAY** pVal) get_MultisessionInterfaces;
+				public new function HRESULT(IFileSystemImage *self, SAFEARRAY* newVal) put_MultisessionInterfaces;
 			}
 		}
 		[CRepr]
@@ -1666,12 +3144,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd7644b2c, 0x1537, 0x4767, 0xb6, 0x2f, 0xf1, 0x38, 0x7b, 0x02, 0xdd, 0xfd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_BootImageOptionsArray(SAFEARRAY** pVal) mut
+			{
+				return VT.get_BootImageOptionsArray(&this, pVal);
+			}
+			public HRESULT put_BootImageOptionsArray(SAFEARRAY* newVal) mut
+			{
+				return VT.put_BootImageOptionsArray(&this, newVal);
+			}
 			[CRepr]
 			public struct VTable : IFileSystemImage.VTable
 			{
-				public function HRESULT(IFileSystemImage2 *self, SAFEARRAY** pVal) get_BootImageOptionsArray;
-				public function HRESULT(IFileSystemImage2 *self, SAFEARRAY* newVal) put_BootImageOptionsArray;
+				public new function HRESULT(IFileSystemImage2 *self, SAFEARRAY** pVal) get_BootImageOptionsArray;
+				public new function HRESULT(IFileSystemImage2 *self, SAFEARRAY* newVal) put_BootImageOptionsArray;
 			}
 		}
 		[CRepr]
@@ -1679,13 +3166,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7cff842c, 0x7e97, 0x4807, 0x83, 0x04, 0x91, 0x0d, 0xd8, 0xf7, 0xc0, 0x51);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CreateRedundantUdfMetadataFiles(int16* pVal) mut
+			{
+				return VT.get_CreateRedundantUdfMetadataFiles(&this, pVal);
+			}
+			public HRESULT put_CreateRedundantUdfMetadataFiles(int16 newVal) mut
+			{
+				return VT.put_CreateRedundantUdfMetadataFiles(&this, newVal);
+			}
+			public HRESULT ProbeSpecificFileSystem(FsiFileSystems fileSystemToProbe, int16* isAppendable) mut
+			{
+				return VT.ProbeSpecificFileSystem(&this, fileSystemToProbe, isAppendable);
+			}
 			[CRepr]
 			public struct VTable : IFileSystemImage2.VTable
 			{
-				public function HRESULT(IFileSystemImage3 *self, int16* pVal) get_CreateRedundantUdfMetadataFiles;
-				public function HRESULT(IFileSystemImage3 *self, int16 newVal) put_CreateRedundantUdfMetadataFiles;
-				public function HRESULT(IFileSystemImage3 *self, FsiFileSystems fileSystemToProbe, int16* isAppendable) ProbeSpecificFileSystem;
+				public new function HRESULT(IFileSystemImage3 *self, int16* pVal) get_CreateRedundantUdfMetadataFiles;
+				public new function HRESULT(IFileSystemImage3 *self, int16 newVal) put_CreateRedundantUdfMetadataFiles;
+				public new function HRESULT(IFileSystemImage3 *self, FsiFileSystems fileSystemToProbe, int16* isAppendable) ProbeSpecificFileSystem;
 			}
 		}
 		[CRepr]
@@ -1693,11 +3193,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2c941fdf, 0x975b, 0x59be, 0xa9, 0x60, 0x9a, 0x2a, 0x26, 0x28, 0x53, 0xa5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Update(IDispatch* object, BSTR currentFile, int32 copiedSectors, int32 totalSectors) mut
+			{
+				return VT.Update(&this, object, currentFile, copiedSectors, totalSectors);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(DFileSystemImageEvents *self, IDispatch* object, BSTR currentFile, int32 copiedSectors, int32 totalSectors) Update;
+				public new function HRESULT(DFileSystemImageEvents *self, IDispatch* object, BSTR currentFile, int32 copiedSectors, int32 totalSectors) Update;
 			}
 		}
 		[CRepr]
@@ -1705,11 +3210,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd25c30f9, 0x4087, 0x4366, 0x9e, 0x24, 0xe5, 0x5b, 0xe2, 0x86, 0x42, 0x4b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT UpdateImport(IDispatch* object, FsiFileSystems fileSystem, BSTR currentItem, int32 importedDirectoryItems, int32 totalDirectoryItems, int32 importedFileItems, int32 totalFileItems) mut
+			{
+				return VT.UpdateImport(&this, object, fileSystem, currentItem, importedDirectoryItems, totalDirectoryItems, importedFileItems, totalFileItems);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(DFileSystemImageImportEvents *self, IDispatch* object, FsiFileSystems fileSystem, BSTR currentItem, int32 importedDirectoryItems, int32 totalDirectoryItems, int32 importedFileItems, int32 totalFileItems) UpdateImport;
+				public new function HRESULT(DFileSystemImageImportEvents *self, IDispatch* object, FsiFileSystems fileSystem, BSTR currentItem, int32 importedDirectoryItems, int32 totalDirectoryItems, int32 importedFileItems, int32 totalFileItems) UpdateImport;
 			}
 		}
 		[CRepr]
@@ -1717,15 +3227,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6ca38be5, 0xfbbb, 0x4800, 0x95, 0xa1, 0xa4, 0x38, 0x86, 0x5e, 0xb0, 0xd4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Path(BSTR* pVal) mut
+			{
+				return VT.get_Path(&this, pVal);
+			}
+			public HRESULT get_Stream(IStream** data) mut
+			{
+				return VT.get_Stream(&this, data);
+			}
+			public HRESULT SetPath(BSTR Val) mut
+			{
+				return VT.SetPath(&this, Val);
+			}
+			public HRESULT SetStream(IStream* data) mut
+			{
+				return VT.SetStream(&this, data);
+			}
+			public HRESULT Validate() mut
+			{
+				return VT.Validate(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IIsoImageManager *self, BSTR* pVal) get_Path;
-				public function HRESULT(IIsoImageManager *self, IStream** data) get_Stream;
-				public function HRESULT(IIsoImageManager *self, BSTR Val) SetPath;
-				public function HRESULT(IIsoImageManager *self, IStream* data) SetStream;
-				public function HRESULT(IIsoImageManager *self) Validate;
+				public new function HRESULT(IIsoImageManager *self, BSTR* pVal) get_Path;
+				public new function HRESULT(IIsoImageManager *self, IStream** data) get_Stream;
+				public new function HRESULT(IIsoImageManager *self, BSTR Val) SetPath;
+				public new function HRESULT(IIsoImageManager *self, IStream* data) SetStream;
+				public new function HRESULT(IIsoImageManager *self) Validate;
 			}
 		}
 		[CRepr]
@@ -1733,25 +3264,86 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x85ac9776, 0xca88, 0x4cf2, 0x89, 0x4e, 0x09, 0x59, 0x8c, 0x07, 0x8a, 0x41);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Init(uint8* pbyUniqueID, uint32 nulIDSize, uint32 nulDriveNumber) mut
+			{
+				return VT.Init(&this, pbyUniqueID, nulIDSize, nulDriveNumber);
+			}
+			public HRESULT GetRecorderGUID(uint8* pbyUniqueID, uint32 ulBufferSize, uint32* pulReturnSizeRequired) mut
+			{
+				return VT.GetRecorderGUID(&this, pbyUniqueID, ulBufferSize, pulReturnSizeRequired);
+			}
+			public HRESULT GetRecorderType(RECORDER_TYPES* fTypeCode) mut
+			{
+				return VT.GetRecorderType(&this, fTypeCode);
+			}
+			public HRESULT GetDisplayNames(BSTR* pbstrVendorID, BSTR* pbstrProductID, BSTR* pbstrRevision) mut
+			{
+				return VT.GetDisplayNames(&this, pbstrVendorID, pbstrProductID, pbstrRevision);
+			}
+			public HRESULT GetBasePnPID(BSTR* pbstrBasePnPID) mut
+			{
+				return VT.GetBasePnPID(&this, pbstrBasePnPID);
+			}
+			public HRESULT GetPath(BSTR* pbstrPath) mut
+			{
+				return VT.GetPath(&this, pbstrPath);
+			}
+			public HRESULT GetRecorderProperties(IPropertyStorage** ppPropStg) mut
+			{
+				return VT.GetRecorderProperties(&this, ppPropStg);
+			}
+			public HRESULT SetRecorderProperties(IPropertyStorage* pPropStg) mut
+			{
+				return VT.SetRecorderProperties(&this, pPropStg);
+			}
+			public HRESULT GetRecorderState(DISC_RECORDER_STATE_FLAGS* pulDevStateFlags) mut
+			{
+				return VT.GetRecorderState(&this, pulDevStateFlags);
+			}
+			public HRESULT OpenExclusive() mut
+			{
+				return VT.OpenExclusive(&this);
+			}
+			public HRESULT QueryMediaType(MEDIA_TYPES* fMediaType, MEDIA_FLAGS* fMediaFlags) mut
+			{
+				return VT.QueryMediaType(&this, fMediaType, fMediaFlags);
+			}
+			public HRESULT QueryMediaInfo(uint8* pbSessions, uint8* pbLastTrack, uint32* ulStartAddress, uint32* ulNextWritable, uint32* ulFreeBlocks) mut
+			{
+				return VT.QueryMediaInfo(&this, pbSessions, pbLastTrack, ulStartAddress, ulNextWritable, ulFreeBlocks);
+			}
+			public HRESULT Eject() mut
+			{
+				return VT.Eject(&this);
+			}
+			public HRESULT Erase(uint8 bFullErase) mut
+			{
+				return VT.Erase(&this, bFullErase);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDiscRecorder *self, uint8* pbyUniqueID, uint32 nulIDSize, uint32 nulDriveNumber) Init;
-				public function HRESULT(IDiscRecorder *self, uint8* pbyUniqueID, uint32 ulBufferSize, uint32* pulReturnSizeRequired) GetRecorderGUID;
-				public function HRESULT(IDiscRecorder *self, RECORDER_TYPES* fTypeCode) GetRecorderType;
-				public function HRESULT(IDiscRecorder *self, BSTR* pbstrVendorID, BSTR* pbstrProductID, BSTR* pbstrRevision) GetDisplayNames;
-				public function HRESULT(IDiscRecorder *self, BSTR* pbstrBasePnPID) GetBasePnPID;
-				public function HRESULT(IDiscRecorder *self, BSTR* pbstrPath) GetPath;
-				public function HRESULT(IDiscRecorder *self, IPropertyStorage** ppPropStg) GetRecorderProperties;
-				public function HRESULT(IDiscRecorder *self, IPropertyStorage* pPropStg) SetRecorderProperties;
-				public function HRESULT(IDiscRecorder *self, DISC_RECORDER_STATE_FLAGS* pulDevStateFlags) GetRecorderState;
-				public function HRESULT(IDiscRecorder *self) OpenExclusive;
-				public function HRESULT(IDiscRecorder *self, MEDIA_TYPES* fMediaType, MEDIA_FLAGS* fMediaFlags) QueryMediaType;
-				public function HRESULT(IDiscRecorder *self, uint8* pbSessions, uint8* pbLastTrack, uint32* ulStartAddress, uint32* ulNextWritable, uint32* ulFreeBlocks) QueryMediaInfo;
-				public function HRESULT(IDiscRecorder *self) Eject;
-				public function HRESULT(IDiscRecorder *self, uint8 bFullErase) Erase;
-				public function HRESULT(IDiscRecorder *self) Close;
+				public new function HRESULT(IDiscRecorder *self, uint8* pbyUniqueID, uint32 nulIDSize, uint32 nulDriveNumber) Init;
+				public new function HRESULT(IDiscRecorder *self, uint8* pbyUniqueID, uint32 ulBufferSize, uint32* pulReturnSizeRequired) GetRecorderGUID;
+				public new function HRESULT(IDiscRecorder *self, RECORDER_TYPES* fTypeCode) GetRecorderType;
+				public new function HRESULT(IDiscRecorder *self, BSTR* pbstrVendorID, BSTR* pbstrProductID, BSTR* pbstrRevision) GetDisplayNames;
+				public new function HRESULT(IDiscRecorder *self, BSTR* pbstrBasePnPID) GetBasePnPID;
+				public new function HRESULT(IDiscRecorder *self, BSTR* pbstrPath) GetPath;
+				public new function HRESULT(IDiscRecorder *self, IPropertyStorage** ppPropStg) GetRecorderProperties;
+				public new function HRESULT(IDiscRecorder *self, IPropertyStorage* pPropStg) SetRecorderProperties;
+				public new function HRESULT(IDiscRecorder *self, DISC_RECORDER_STATE_FLAGS* pulDevStateFlags) GetRecorderState;
+				public new function HRESULT(IDiscRecorder *self) OpenExclusive;
+				public new function HRESULT(IDiscRecorder *self, MEDIA_TYPES* fMediaType, MEDIA_FLAGS* fMediaFlags) QueryMediaType;
+				public new function HRESULT(IDiscRecorder *self, uint8* pbSessions, uint8* pbLastTrack, uint32* ulStartAddress, uint32* ulNextWritable, uint32* ulFreeBlocks) QueryMediaInfo;
+				public new function HRESULT(IDiscRecorder *self) Eject;
+				public new function HRESULT(IDiscRecorder *self, uint8 bFullErase) Erase;
+				public new function HRESULT(IDiscRecorder *self) Close;
 			}
 		}
 		[CRepr]
@@ -1759,14 +3351,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9b1921e1, 0x54ac, 0x11d3, 0x91, 0x44, 0x00, 0x10, 0x4b, 0xa1, 0x1c, 0x5e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 cRecorders, IDiscRecorder** ppRecorder, uint32* pcFetched) mut
+			{
+				return VT.Next(&this, cRecorders, ppRecorder, pcFetched);
+			}
+			public HRESULT Skip(uint32 cRecorders) mut
+			{
+				return VT.Skip(&this, cRecorders);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumDiscRecorders** ppEnum) mut
+			{
+				return VT.Clone(&this, ppEnum);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumDiscRecorders *self, uint32 cRecorders, IDiscRecorder** ppRecorder, uint32* pcFetched) Next;
-				public function HRESULT(IEnumDiscRecorders *self, uint32 cRecorders) Skip;
-				public function HRESULT(IEnumDiscRecorders *self) Reset;
-				public function HRESULT(IEnumDiscRecorders *self, IEnumDiscRecorders** ppEnum) Clone;
+				public new function HRESULT(IEnumDiscRecorders *self, uint32 cRecorders, IDiscRecorder** ppRecorder, uint32* pcFetched) Next;
+				public new function HRESULT(IEnumDiscRecorders *self, uint32 cRecorders) Skip;
+				public new function HRESULT(IEnumDiscRecorders *self) Reset;
+				public new function HRESULT(IEnumDiscRecorders *self, IEnumDiscRecorders** ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -1774,14 +3383,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xddf445e1, 0x54ba, 0x11d3, 0x91, 0x44, 0x00, 0x10, 0x4b, 0xa1, 0x1c, 0x5e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 cFormats, Guid* lpiidFormatID, uint32* pcFetched) mut
+			{
+				return VT.Next(&this, cFormats, lpiidFormatID, pcFetched);
+			}
+			public HRESULT Skip(uint32 cFormats) mut
+			{
+				return VT.Skip(&this, cFormats);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumDiscMasterFormats** ppEnum) mut
+			{
+				return VT.Clone(&this, ppEnum);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumDiscMasterFormats *self, uint32 cFormats, Guid* lpiidFormatID, uint32* pcFetched) Next;
-				public function HRESULT(IEnumDiscMasterFormats *self, uint32 cFormats) Skip;
-				public function HRESULT(IEnumDiscMasterFormats *self) Reset;
-				public function HRESULT(IEnumDiscMasterFormats *self, IEnumDiscMasterFormats** ppEnum) Clone;
+				public new function HRESULT(IEnumDiscMasterFormats *self, uint32 cFormats, Guid* lpiidFormatID, uint32* pcFetched) Next;
+				public new function HRESULT(IEnumDiscMasterFormats *self, uint32 cFormats) Skip;
+				public new function HRESULT(IEnumDiscMasterFormats *self) Reset;
+				public new function HRESULT(IEnumDiscMasterFormats *self, IEnumDiscMasterFormats** ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -1789,18 +3415,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe3bc42cd, 0x4e5c, 0x11d3, 0x91, 0x44, 0x00, 0x10, 0x4b, 0xa1, 0x1c, 0x5e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetTotalAudioTracks(int32* pnTracks) mut
+			{
+				return VT.GetTotalAudioTracks(&this, pnTracks);
+			}
+			public HRESULT GetTotalAudioBlocks(int32* pnBlocks) mut
+			{
+				return VT.GetTotalAudioBlocks(&this, pnBlocks);
+			}
+			public HRESULT GetUsedAudioBlocks(int32* pnBlocks) mut
+			{
+				return VT.GetUsedAudioBlocks(&this, pnBlocks);
+			}
+			public HRESULT GetAvailableAudioTrackBlocks(int32* pnBlocks) mut
+			{
+				return VT.GetAvailableAudioTrackBlocks(&this, pnBlocks);
+			}
+			public HRESULT GetAudioBlockSize(int32* pnBlockBytes) mut
+			{
+				return VT.GetAudioBlockSize(&this, pnBlockBytes);
+			}
+			public HRESULT CreateAudioTrack(int32 nBlocks) mut
+			{
+				return VT.CreateAudioTrack(&this, nBlocks);
+			}
+			public HRESULT AddAudioTrackBlocks(uint8* pby, int32 cb) mut
+			{
+				return VT.AddAudioTrackBlocks(&this, pby, cb);
+			}
+			public HRESULT CloseAudioTrack() mut
+			{
+				return VT.CloseAudioTrack(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRedbookDiscMaster *self, int32* pnTracks) GetTotalAudioTracks;
-				public function HRESULT(IRedbookDiscMaster *self, int32* pnBlocks) GetTotalAudioBlocks;
-				public function HRESULT(IRedbookDiscMaster *self, int32* pnBlocks) GetUsedAudioBlocks;
-				public function HRESULT(IRedbookDiscMaster *self, int32* pnBlocks) GetAvailableAudioTrackBlocks;
-				public function HRESULT(IRedbookDiscMaster *self, int32* pnBlockBytes) GetAudioBlockSize;
-				public function HRESULT(IRedbookDiscMaster *self, int32 nBlocks) CreateAudioTrack;
-				public function HRESULT(IRedbookDiscMaster *self, uint8* pby, int32 cb) AddAudioTrackBlocks;
-				public function HRESULT(IRedbookDiscMaster *self) CloseAudioTrack;
+				public new function HRESULT(IRedbookDiscMaster *self, int32* pnTracks) GetTotalAudioTracks;
+				public new function HRESULT(IRedbookDiscMaster *self, int32* pnBlocks) GetTotalAudioBlocks;
+				public new function HRESULT(IRedbookDiscMaster *self, int32* pnBlocks) GetUsedAudioBlocks;
+				public new function HRESULT(IRedbookDiscMaster *self, int32* pnBlocks) GetAvailableAudioTrackBlocks;
+				public new function HRESULT(IRedbookDiscMaster *self, int32* pnBlockBytes) GetAudioBlockSize;
+				public new function HRESULT(IRedbookDiscMaster *self, int32 nBlocks) CreateAudioTrack;
+				public new function HRESULT(IRedbookDiscMaster *self, uint8* pby, int32 cb) AddAudioTrackBlocks;
+				public new function HRESULT(IRedbookDiscMaster *self) CloseAudioTrack;
 			}
 		}
 		[CRepr]
@@ -1808,16 +3467,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe3bc42ce, 0x4e5c, 0x11d3, 0x91, 0x44, 0x00, 0x10, 0x4b, 0xa1, 0x1c, 0x5e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetTotalDataBlocks(int32* pnBlocks) mut
+			{
+				return VT.GetTotalDataBlocks(&this, pnBlocks);
+			}
+			public HRESULT GetUsedDataBlocks(int32* pnBlocks) mut
+			{
+				return VT.GetUsedDataBlocks(&this, pnBlocks);
+			}
+			public HRESULT GetDataBlockSize(int32* pnBlockBytes) mut
+			{
+				return VT.GetDataBlockSize(&this, pnBlockBytes);
+			}
+			public HRESULT AddData(IStorage* pStorage, int32 lFileOverwrite) mut
+			{
+				return VT.AddData(&this, pStorage, lFileOverwrite);
+			}
+			public HRESULT GetJolietProperties(IPropertyStorage** ppPropStg) mut
+			{
+				return VT.GetJolietProperties(&this, ppPropStg);
+			}
+			public HRESULT SetJolietProperties(IPropertyStorage* pPropStg) mut
+			{
+				return VT.SetJolietProperties(&this, pPropStg);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IJolietDiscMaster *self, int32* pnBlocks) GetTotalDataBlocks;
-				public function HRESULT(IJolietDiscMaster *self, int32* pnBlocks) GetUsedDataBlocks;
-				public function HRESULT(IJolietDiscMaster *self, int32* pnBlockBytes) GetDataBlockSize;
-				public function HRESULT(IJolietDiscMaster *self, IStorage* pStorage, int32 lFileOverwrite) AddData;
-				public function HRESULT(IJolietDiscMaster *self, IPropertyStorage** ppPropStg) GetJolietProperties;
-				public function HRESULT(IJolietDiscMaster *self, IPropertyStorage* pPropStg) SetJolietProperties;
+				public new function HRESULT(IJolietDiscMaster *self, int32* pnBlocks) GetTotalDataBlocks;
+				public new function HRESULT(IJolietDiscMaster *self, int32* pnBlocks) GetUsedDataBlocks;
+				public new function HRESULT(IJolietDiscMaster *self, int32* pnBlockBytes) GetDataBlockSize;
+				public new function HRESULT(IJolietDiscMaster *self, IStorage* pStorage, int32 lFileOverwrite) AddData;
+				public new function HRESULT(IJolietDiscMaster *self, IPropertyStorage** ppPropStg) GetJolietProperties;
+				public new function HRESULT(IJolietDiscMaster *self, IPropertyStorage* pPropStg) SetJolietProperties;
 			}
 		}
 		[CRepr]
@@ -1825,19 +3509,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xec9e51c1, 0x4e5d, 0x11d3, 0x91, 0x44, 0x00, 0x10, 0x4b, 0xa1, 0x1c, 0x5e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT QueryCancel(uint8* pbCancel) mut
+			{
+				return VT.QueryCancel(&this, pbCancel);
+			}
+			public HRESULT NotifyPnPActivity() mut
+			{
+				return VT.NotifyPnPActivity(&this);
+			}
+			public HRESULT NotifyAddProgress(int32 nCompletedSteps, int32 nTotalSteps) mut
+			{
+				return VT.NotifyAddProgress(&this, nCompletedSteps, nTotalSteps);
+			}
+			public HRESULT NotifyBlockProgress(int32 nCompleted, int32 nTotal) mut
+			{
+				return VT.NotifyBlockProgress(&this, nCompleted, nTotal);
+			}
+			public HRESULT NotifyTrackProgress(int32 nCurrentTrack, int32 nTotalTracks) mut
+			{
+				return VT.NotifyTrackProgress(&this, nCurrentTrack, nTotalTracks);
+			}
+			public HRESULT NotifyPreparingBurn(int32 nEstimatedSeconds) mut
+			{
+				return VT.NotifyPreparingBurn(&this, nEstimatedSeconds);
+			}
+			public HRESULT NotifyClosingDisc(int32 nEstimatedSeconds) mut
+			{
+				return VT.NotifyClosingDisc(&this, nEstimatedSeconds);
+			}
+			public HRESULT NotifyBurnComplete(HRESULT status) mut
+			{
+				return VT.NotifyBurnComplete(&this, status);
+			}
+			public HRESULT NotifyEraseComplete(HRESULT status) mut
+			{
+				return VT.NotifyEraseComplete(&this, status);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDiscMasterProgressEvents *self, uint8* pbCancel) QueryCancel;
-				public function HRESULT(IDiscMasterProgressEvents *self) NotifyPnPActivity;
-				public function HRESULT(IDiscMasterProgressEvents *self, int32 nCompletedSteps, int32 nTotalSteps) NotifyAddProgress;
-				public function HRESULT(IDiscMasterProgressEvents *self, int32 nCompleted, int32 nTotal) NotifyBlockProgress;
-				public function HRESULT(IDiscMasterProgressEvents *self, int32 nCurrentTrack, int32 nTotalTracks) NotifyTrackProgress;
-				public function HRESULT(IDiscMasterProgressEvents *self, int32 nEstimatedSeconds) NotifyPreparingBurn;
-				public function HRESULT(IDiscMasterProgressEvents *self, int32 nEstimatedSeconds) NotifyClosingDisc;
-				public function HRESULT(IDiscMasterProgressEvents *self, HRESULT status) NotifyBurnComplete;
-				public function HRESULT(IDiscMasterProgressEvents *self, HRESULT status) NotifyEraseComplete;
+				public new function HRESULT(IDiscMasterProgressEvents *self, uint8* pbCancel) QueryCancel;
+				public new function HRESULT(IDiscMasterProgressEvents *self) NotifyPnPActivity;
+				public new function HRESULT(IDiscMasterProgressEvents *self, int32 nCompletedSteps, int32 nTotalSteps) NotifyAddProgress;
+				public new function HRESULT(IDiscMasterProgressEvents *self, int32 nCompleted, int32 nTotal) NotifyBlockProgress;
+				public new function HRESULT(IDiscMasterProgressEvents *self, int32 nCurrentTrack, int32 nTotalTracks) NotifyTrackProgress;
+				public new function HRESULT(IDiscMasterProgressEvents *self, int32 nEstimatedSeconds) NotifyPreparingBurn;
+				public new function HRESULT(IDiscMasterProgressEvents *self, int32 nEstimatedSeconds) NotifyClosingDisc;
+				public new function HRESULT(IDiscMasterProgressEvents *self, HRESULT status) NotifyBurnComplete;
+				public new function HRESULT(IDiscMasterProgressEvents *self, HRESULT status) NotifyEraseComplete;
 			}
 		}
 		[CRepr]
@@ -1845,22 +3566,71 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x520cca62, 0x51a5, 0x11d3, 0x91, 0x44, 0x00, 0x10, 0x4b, 0xa1, 0x1c, 0x5e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Open() mut
+			{
+				return VT.Open(&this);
+			}
+			public HRESULT EnumDiscMasterFormats(IEnumDiscMasterFormats** ppEnum) mut
+			{
+				return VT.EnumDiscMasterFormats(&this, ppEnum);
+			}
+			public HRESULT GetActiveDiscMasterFormat(Guid* lpiid) mut
+			{
+				return VT.GetActiveDiscMasterFormat(&this, lpiid);
+			}
+			public HRESULT SetActiveDiscMasterFormat(Guid* riid, void** ppUnk) mut
+			{
+				return VT.SetActiveDiscMasterFormat(&this, riid, ppUnk);
+			}
+			public HRESULT EnumDiscRecorders(IEnumDiscRecorders** ppEnum) mut
+			{
+				return VT.EnumDiscRecorders(&this, ppEnum);
+			}
+			public HRESULT GetActiveDiscRecorder(IDiscRecorder** ppRecorder) mut
+			{
+				return VT.GetActiveDiscRecorder(&this, ppRecorder);
+			}
+			public HRESULT SetActiveDiscRecorder(IDiscRecorder* pRecorder) mut
+			{
+				return VT.SetActiveDiscRecorder(&this, pRecorder);
+			}
+			public HRESULT ClearFormatContent() mut
+			{
+				return VT.ClearFormatContent(&this);
+			}
+			public HRESULT ProgressAdvise(IDiscMasterProgressEvents* pEvents, uint* pvCookie) mut
+			{
+				return VT.ProgressAdvise(&this, pEvents, pvCookie);
+			}
+			public HRESULT ProgressUnadvise(uint vCookie) mut
+			{
+				return VT.ProgressUnadvise(&this, vCookie);
+			}
+			public HRESULT RecordDisc(uint8 bSimulate, uint8 bEjectAfterBurn) mut
+			{
+				return VT.RecordDisc(&this, bSimulate, bEjectAfterBurn);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDiscMaster *self) Open;
-				public function HRESULT(IDiscMaster *self, IEnumDiscMasterFormats** ppEnum) EnumDiscMasterFormats;
-				public function HRESULT(IDiscMaster *self, Guid* lpiid) GetActiveDiscMasterFormat;
-				public function HRESULT(IDiscMaster *self, Guid* riid, void** ppUnk) SetActiveDiscMasterFormat;
-				public function HRESULT(IDiscMaster *self, IEnumDiscRecorders** ppEnum) EnumDiscRecorders;
-				public function HRESULT(IDiscMaster *self, IDiscRecorder** ppRecorder) GetActiveDiscRecorder;
-				public function HRESULT(IDiscMaster *self, IDiscRecorder* pRecorder) SetActiveDiscRecorder;
-				public function HRESULT(IDiscMaster *self) ClearFormatContent;
-				public function HRESULT(IDiscMaster *self, IDiscMasterProgressEvents* pEvents, uint* pvCookie) ProgressAdvise;
-				public function HRESULT(IDiscMaster *self, uint vCookie) ProgressUnadvise;
-				public function HRESULT(IDiscMaster *self, uint8 bSimulate, uint8 bEjectAfterBurn) RecordDisc;
-				public function HRESULT(IDiscMaster *self) Close;
+				public new function HRESULT(IDiscMaster *self) Open;
+				public new function HRESULT(IDiscMaster *self, IEnumDiscMasterFormats** ppEnum) EnumDiscMasterFormats;
+				public new function HRESULT(IDiscMaster *self, Guid* lpiid) GetActiveDiscMasterFormat;
+				public new function HRESULT(IDiscMaster *self, Guid* riid, void** ppUnk) SetActiveDiscMasterFormat;
+				public new function HRESULT(IDiscMaster *self, IEnumDiscRecorders** ppEnum) EnumDiscRecorders;
+				public new function HRESULT(IDiscMaster *self, IDiscRecorder** ppRecorder) GetActiveDiscRecorder;
+				public new function HRESULT(IDiscMaster *self, IDiscRecorder* pRecorder) SetActiveDiscRecorder;
+				public new function HRESULT(IDiscMaster *self) ClearFormatContent;
+				public new function HRESULT(IDiscMaster *self, IDiscMasterProgressEvents* pEvents, uint* pvCookie) ProgressAdvise;
+				public new function HRESULT(IDiscMaster *self, uint vCookie) ProgressUnadvise;
+				public new function HRESULT(IDiscMaster *self, uint8 bSimulate, uint8 bEjectAfterBurn) RecordDisc;
+				public new function HRESULT(IDiscMaster *self) Close;
 			}
 		}
 		

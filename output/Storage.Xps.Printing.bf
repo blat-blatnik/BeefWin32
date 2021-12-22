@@ -65,11 +65,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7a77dc5f, 0x45d6, 0x4dff, 0x93, 0x07, 0xd8, 0xcb, 0x84, 0x63, 0x47, 0xca);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
 			[CRepr]
 			public struct VTable : ISequentialStream.VTable
 			{
-				public function HRESULT(IXpsPrintJobStream *self) Close;
+				public new function HRESULT(IXpsPrintJobStream *self) Close;
 			}
 		}
 		[CRepr]
@@ -77,12 +82,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5ab89b06, 0x8194, 0x425f, 0xab, 0x3b, 0xd7, 0xa9, 0x6e, 0x35, 0x01, 0x61);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Cancel() mut
+			{
+				return VT.Cancel(&this);
+			}
+			public HRESULT GetJobStatus(XPS_JOB_STATUS* jobStatus) mut
+			{
+				return VT.GetJobStatus(&this, jobStatus);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IXpsPrintJob *self) Cancel;
-				public function HRESULT(IXpsPrintJob *self, XPS_JOB_STATUS* jobStatus) GetJobStatus;
+				public new function HRESULT(IXpsPrintJob *self) Cancel;
+				public new function HRESULT(IXpsPrintJob *self, XPS_JOB_STATUS* jobStatus) GetJobStatus;
 			}
 		}
 		[CRepr]
@@ -90,13 +104,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1b8efec4, 0x3019, 0x4c27, 0x96, 0x4e, 0x36, 0x72, 0x02, 0x15, 0x69, 0x06);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPackageTargetTypes(uint32* targetCount, Guid** targetTypes) mut
+			{
+				return VT.GetPackageTargetTypes(&this, targetCount, targetTypes);
+			}
+			public HRESULT GetPackageTarget(Guid* guidTargetType, Guid* riid, void** ppvTarget) mut
+			{
+				return VT.GetPackageTarget(&this, guidTargetType, riid, ppvTarget);
+			}
+			public HRESULT Cancel() mut
+			{
+				return VT.Cancel(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPrintDocumentPackageTarget *self, uint32* targetCount, Guid** targetTypes) GetPackageTargetTypes;
-				public function HRESULT(IPrintDocumentPackageTarget *self, Guid* guidTargetType, Guid* riid, void** ppvTarget) GetPackageTarget;
-				public function HRESULT(IPrintDocumentPackageTarget *self) Cancel;
+				public new function HRESULT(IPrintDocumentPackageTarget *self, uint32* targetCount, Guid** targetTypes) GetPackageTargetTypes;
+				public new function HRESULT(IPrintDocumentPackageTarget *self, Guid* guidTargetType, Guid* riid, void** ppvTarget) GetPackageTarget;
+				public new function HRESULT(IPrintDocumentPackageTarget *self) Cancel;
 			}
 		}
 		[CRepr]
@@ -104,11 +131,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xed90c8ad, 0x5c34, 0x4d05, 0xa1, 0xec, 0x0e, 0x8a, 0x9b, 0x3a, 0xd7, 0xaf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT PackageStatusUpdated(PrintDocumentPackageStatus* packageStatus) mut
+			{
+				return VT.PackageStatusUpdated(&this, packageStatus);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IPrintDocumentPackageStatusEvent *self, PrintDocumentPackageStatus* packageStatus) PackageStatusUpdated;
+				public new function HRESULT(IPrintDocumentPackageStatusEvent *self, PrintDocumentPackageStatus* packageStatus) PackageStatusUpdated;
 			}
 		}
 		[CRepr]
@@ -116,11 +148,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd2959bf7, 0xb31b, 0x4a3d, 0x96, 0x00, 0x71, 0x2e, 0xb1, 0x33, 0x5b, 0xa4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateDocumentPackageTargetForPrintJob(PWSTR printerName, PWSTR jobName, IStream* jobOutputStream, IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget) mut
+			{
+				return VT.CreateDocumentPackageTargetForPrintJob(&this, printerName, jobName, jobOutputStream, jobPrintTicketStream, docPackageTarget);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPrintDocumentPackageTargetFactory *self, PWSTR printerName, PWSTR jobName, IStream* jobOutputStream, IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget) CreateDocumentPackageTargetForPrintJob;
+				public new function HRESULT(IPrintDocumentPackageTargetFactory *self, PWSTR printerName, PWSTR jobName, IStream* jobOutputStream, IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget) CreateDocumentPackageTargetForPrintJob;
 			}
 		}
 		

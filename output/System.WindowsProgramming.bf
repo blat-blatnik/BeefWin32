@@ -1476,15 +1476,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1bfa0c2c, 0xfbcd, 0x4776, 0xbd, 0xa4, 0x88, 0xbf, 0x97, 0x4e, 0x74, 0xf4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void OnStartupComplete() mut
+			{
+				VT.OnStartupComplete(&this);
+			}
+			public void OnSuspendComplete() mut
+			{
+				VT.OnSuspendComplete(&this);
+			}
+			public void OnItemCaptured(PWSTR pszPath) mut
+			{
+				VT.OnItemCaptured(&this, pszPath);
+			}
+			public void OnItemDeleted(PWSTR pszPath) mut
+			{
+				VT.OnItemDeleted(&this, pszPath);
+			}
+			public void OnClosed() mut
+			{
+				VT.OnClosed(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function void(ICameraUIControlEventCallback *self) OnStartupComplete;
-				public function void(ICameraUIControlEventCallback *self) OnSuspendComplete;
-				public function void(ICameraUIControlEventCallback *self, PWSTR pszPath) OnItemCaptured;
-				public function void(ICameraUIControlEventCallback *self, PWSTR pszPath) OnItemDeleted;
-				public function void(ICameraUIControlEventCallback *self) OnClosed;
+				public new function void(ICameraUIControlEventCallback *self) OnStartupComplete;
+				public new function void(ICameraUIControlEventCallback *self) OnSuspendComplete;
+				public new function void(ICameraUIControlEventCallback *self, PWSTR pszPath) OnItemCaptured;
+				public new function void(ICameraUIControlEventCallback *self, PWSTR pszPath) OnItemDeleted;
+				public new function void(ICameraUIControlEventCallback *self) OnClosed;
 			}
 		}
 		[CRepr]
@@ -1492,18 +1513,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb8733adf, 0x3d68, 0x4b8f, 0xbb, 0x08, 0xe2, 0x8a, 0x0b, 0xed, 0x03, 0x76);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Show(IUnknown* pWindow, CameraUIControlMode mode, CameraUIControlLinearSelectionMode selectionMode, CameraUIControlCaptureMode captureMode, CameraUIControlPhotoFormat photoFormat, CameraUIControlVideoFormat videoFormat, BOOL bHasCloseButton, ICameraUIControlEventCallback* pEventCallback) mut
+			{
+				return VT.Show(&this, pWindow, mode, selectionMode, captureMode, photoFormat, videoFormat, bHasCloseButton, pEventCallback);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
+			public HRESULT Suspend(BOOL* pbDeferralRequired) mut
+			{
+				return VT.Suspend(&this, pbDeferralRequired);
+			}
+			public HRESULT Resume() mut
+			{
+				return VT.Resume(&this);
+			}
+			public HRESULT GetCurrentViewType(CameraUIControlViewType* pViewType) mut
+			{
+				return VT.GetCurrentViewType(&this, pViewType);
+			}
+			public HRESULT GetActiveItem(BSTR* pbstrActiveItemPath) mut
+			{
+				return VT.GetActiveItem(&this, pbstrActiveItemPath);
+			}
+			public HRESULT GetSelectedItems(SAFEARRAY** ppSelectedItemPaths) mut
+			{
+				return VT.GetSelectedItems(&this, ppSelectedItemPaths);
+			}
+			public HRESULT RemoveCapturedItem(PWSTR pszPath) mut
+			{
+				return VT.RemoveCapturedItem(&this, pszPath);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ICameraUIControl *self, IUnknown* pWindow, CameraUIControlMode mode, CameraUIControlLinearSelectionMode selectionMode, CameraUIControlCaptureMode captureMode, CameraUIControlPhotoFormat photoFormat, CameraUIControlVideoFormat videoFormat, BOOL bHasCloseButton, ICameraUIControlEventCallback* pEventCallback) Show;
-				public function HRESULT(ICameraUIControl *self) Close;
-				public function HRESULT(ICameraUIControl *self, BOOL* pbDeferralRequired) Suspend;
-				public function HRESULT(ICameraUIControl *self) Resume;
-				public function HRESULT(ICameraUIControl *self, CameraUIControlViewType* pViewType) GetCurrentViewType;
-				public function HRESULT(ICameraUIControl *self, BSTR* pbstrActiveItemPath) GetActiveItem;
-				public function HRESULT(ICameraUIControl *self, SAFEARRAY** ppSelectedItemPaths) GetSelectedItems;
-				public function HRESULT(ICameraUIControl *self, PWSTR pszPath) RemoveCapturedItem;
+				public new function HRESULT(ICameraUIControl *self, IUnknown* pWindow, CameraUIControlMode mode, CameraUIControlLinearSelectionMode selectionMode, CameraUIControlCaptureMode captureMode, CameraUIControlPhotoFormat photoFormat, CameraUIControlVideoFormat videoFormat, BOOL bHasCloseButton, ICameraUIControlEventCallback* pEventCallback) Show;
+				public new function HRESULT(ICameraUIControl *self) Close;
+				public new function HRESULT(ICameraUIControl *self, BOOL* pbDeferralRequired) Suspend;
+				public new function HRESULT(ICameraUIControl *self) Resume;
+				public new function HRESULT(ICameraUIControl *self, CameraUIControlViewType* pViewType) GetCurrentViewType;
+				public new function HRESULT(ICameraUIControl *self, BSTR* pbstrActiveItemPath) GetActiveItem;
+				public new function HRESULT(ICameraUIControl *self, SAFEARRAY** ppSelectedItemPaths) GetSelectedItems;
+				public new function HRESULT(ICameraUIControl *self, PWSTR pszPath) RemoveCapturedItem;
 			}
 		}
 		[CRepr]
@@ -1511,15 +1565,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd3e9e342, 0x5deb, 0x43b6, 0x84, 0x9e, 0x69, 0x13, 0xb8, 0x5d, 0x50, 0x3a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CanUpgrade(BOOL* isAllowed) mut
+			{
+				return VT.CanUpgrade(&this, isAllowed);
+			}
+			public HRESULT UpdateOperatingSystem(PWSTR contentId) mut
+			{
+				return VT.UpdateOperatingSystem(&this, contentId);
+			}
+			public HRESULT ShowProductKeyUI() mut
+			{
+				return VT.ShowProductKeyUI(&this);
+			}
+			public HRESULT GetOsProductContentId(PWSTR* contentId) mut
+			{
+				return VT.GetOsProductContentId(&this, contentId);
+			}
+			public HRESULT GetGenuineLocalStatus(BOOL* isGenuine) mut
+			{
+				return VT.GetGenuineLocalStatus(&this, isGenuine);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEditionUpgradeHelper *self, BOOL* isAllowed) CanUpgrade;
-				public function HRESULT(IEditionUpgradeHelper *self, PWSTR contentId) UpdateOperatingSystem;
-				public function HRESULT(IEditionUpgradeHelper *self) ShowProductKeyUI;
-				public function HRESULT(IEditionUpgradeHelper *self, PWSTR* contentId) GetOsProductContentId;
-				public function HRESULT(IEditionUpgradeHelper *self, BOOL* isGenuine) GetGenuineLocalStatus;
+				public new function HRESULT(IEditionUpgradeHelper *self, BOOL* isAllowed) CanUpgrade;
+				public new function HRESULT(IEditionUpgradeHelper *self, PWSTR contentId) UpdateOperatingSystem;
+				public new function HRESULT(IEditionUpgradeHelper *self) ShowProductKeyUI;
+				public new function HRESULT(IEditionUpgradeHelper *self, PWSTR* contentId) GetOsProductContentId;
+				public new function HRESULT(IEditionUpgradeHelper *self, BOOL* isGenuine) GetGenuineLocalStatus;
 			}
 		}
 		[CRepr]
@@ -1527,11 +1602,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf342d19e, 0xcc22, 0x4648, 0xbb, 0x5d, 0x03, 0xcc, 0xf7, 0x5b, 0x47, 0xc5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSMode(BOOL* isSmode) mut
+			{
+				return VT.GetSMode(&this, isSmode);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWindowsLockModeHelper *self, BOOL* isSmode) GetSMode;
+				public new function HRESULT(IWindowsLockModeHelper *self, BOOL* isSmode) GetSMode;
 			}
 		}
 		[CRepr]
@@ -1539,14 +1619,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xff19cbcf, 0x9455, 0x4937, 0xb8, 0x72, 0x6b, 0x79, 0x29, 0xa4, 0x60, 0xaf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT InitializeParentWindow(uint32 parentHandle) mut
+			{
+				return VT.InitializeParentWindow(&this, parentHandle);
+			}
+			public HRESULT UpdateOperatingSystem(BSTR parameter) mut
+			{
+				return VT.UpdateOperatingSystem(&this, parameter);
+			}
+			public HRESULT ShowProductKeyUI() mut
+			{
+				return VT.ShowProductKeyUI(&this);
+			}
+			public HRESULT CanUpgrade() mut
+			{
+				return VT.CanUpgrade(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEditionUpgradeBroker *self, uint32 parentHandle) InitializeParentWindow;
-				public function HRESULT(IEditionUpgradeBroker *self, BSTR parameter) UpdateOperatingSystem;
-				public function HRESULT(IEditionUpgradeBroker *self) ShowProductKeyUI;
-				public function HRESULT(IEditionUpgradeBroker *self) CanUpgrade;
+				public new function HRESULT(IEditionUpgradeBroker *self, uint32 parentHandle) InitializeParentWindow;
+				public new function HRESULT(IEditionUpgradeBroker *self, BSTR parameter) UpdateOperatingSystem;
+				public new function HRESULT(IEditionUpgradeBroker *self) ShowProductKeyUI;
+				public new function HRESULT(IEditionUpgradeBroker *self) CanUpgrade;
 			}
 		}
 		[CRepr]
@@ -1554,11 +1651,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb524f93f, 0x80d5, 0x4ec7, 0xae, 0x9e, 0xd6, 0x6e, 0x93, 0xad, 0xe1, 0xfa);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CanActivateClientVM(int16* isAllowed) mut
+			{
+				return VT.CanActivateClientVM(&this, isAllowed);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IContainerActivationHelper *self, int16* isAllowed) CanActivateClientVM;
+				public new function HRESULT(IContainerActivationHelper *self, int16* isAllowed) CanActivateClientVM;
 			}
 		}
 		[CRepr]
@@ -1566,11 +1668,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc39948f0, 0x6142, 0x44fd, 0x98, 0xca, 0xe1, 0x68, 0x1a, 0x8d, 0x68, 0xb5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ShowToast(BSTR titleText, BSTR bodyText, BSTR packageName, BSTR appId, BSTR launchCommand) mut
+			{
+				return VT.ShowToast(&this, titleText, bodyText, packageName, appId, launchCommand);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IClipServiceNotificationHelper *self, BSTR titleText, BSTR bodyText, BSTR packageName, BSTR appId, BSTR launchCommand) ShowToast;
+				public new function HRESULT(IClipServiceNotificationHelper *self, BSTR titleText, BSTR bodyText, BSTR packageName, BSTR appId, BSTR launchCommand) ShowToast;
 			}
 		}
 		[CRepr]
@@ -1578,11 +1685,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7a27faad, 0x5ae6, 0x4255, 0x90, 0x30, 0xc5, 0x30, 0x93, 0x62, 0x92, 0xe3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public BOOL IsEnabled() mut
+			{
+				return VT.IsEnabled(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function BOOL(IDefaultBrowserSyncSettings *self) IsEnabled;
+				public new function BOOL(IDefaultBrowserSyncSettings *self) IsEnabled;
 			}
 		}
 		[CRepr]
@@ -1590,11 +1702,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xcf38ed4b, 0x2be7, 0x4461, 0x8b, 0x5e, 0x9a, 0x46, 0x6d, 0xc8, 0x2a, 0xe3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT DeleteBrowsingHistory(uint32 dwFlags) mut
+			{
+				return VT.DeleteBrowsingHistory(&this, dwFlags);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDeleteBrowsingHistory *self, uint32 dwFlags) DeleteBrowsingHistory;
+				public new function HRESULT(IDeleteBrowsingHistory *self, uint32 dwFlags) DeleteBrowsingHistory;
 			}
 		}
 		

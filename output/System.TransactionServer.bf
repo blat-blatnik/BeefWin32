@@ -84,14 +84,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6eb22870, 0x8a19, 0x11d0, 0x81, 0xb6, 0x00, 0xa0, 0xc9, 0x23, 0x1c, 0x29);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCollection(BSTR bstrCollName, IDispatch** ppCatalogCollection) mut
+			{
+				return VT.GetCollection(&this, bstrCollName, ppCatalogCollection);
+			}
+			public HRESULT Connect(BSTR bstrConnectString, IDispatch** ppCatalogCollection) mut
+			{
+				return VT.Connect(&this, bstrConnectString, ppCatalogCollection);
+			}
+			public HRESULT get_MajorVersion(int32* retval) mut
+			{
+				return VT.get_MajorVersion(&this, retval);
+			}
+			public HRESULT get_MinorVersion(int32* retval) mut
+			{
+				return VT.get_MinorVersion(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ICatalog *self, BSTR bstrCollName, IDispatch** ppCatalogCollection) GetCollection;
-				public function HRESULT(ICatalog *self, BSTR bstrConnectString, IDispatch** ppCatalogCollection) Connect;
-				public function HRESULT(ICatalog *self, int32* retval) get_MajorVersion;
-				public function HRESULT(ICatalog *self, int32* retval) get_MinorVersion;
+				public new function HRESULT(ICatalog *self, BSTR bstrCollName, IDispatch** ppCatalogCollection) GetCollection;
+				public new function HRESULT(ICatalog *self, BSTR bstrConnectString, IDispatch** ppCatalogCollection) Connect;
+				public new function HRESULT(ICatalog *self, int32* retval) get_MajorVersion;
+				public new function HRESULT(ICatalog *self, int32* retval) get_MinorVersion;
 			}
 		}
 		[CRepr]
@@ -99,14 +116,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6eb22873, 0x8a19, 0x11d0, 0x81, 0xb6, 0x00, 0xa0, 0xc9, 0x23, 0x1c, 0x29);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT InstallComponent(BSTR bstrDLLFile, BSTR bstrTypelibFile, BSTR bstrProxyStubDLLFile) mut
+			{
+				return VT.InstallComponent(&this, bstrDLLFile, bstrTypelibFile, bstrProxyStubDLLFile);
+			}
+			public HRESULT ImportComponent(BSTR bstrCLSID) mut
+			{
+				return VT.ImportComponent(&this, bstrCLSID);
+			}
+			public HRESULT ImportComponentByName(BSTR bstrProgID) mut
+			{
+				return VT.ImportComponentByName(&this, bstrProgID);
+			}
+			public HRESULT GetCLSIDs(BSTR bstrDLLFile, BSTR bstrTypelibFile, SAFEARRAY** aCLSIDs) mut
+			{
+				return VT.GetCLSIDs(&this, bstrDLLFile, bstrTypelibFile, aCLSIDs);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IComponentUtil *self, BSTR bstrDLLFile, BSTR bstrTypelibFile, BSTR bstrProxyStubDLLFile) InstallComponent;
-				public function HRESULT(IComponentUtil *self, BSTR bstrCLSID) ImportComponent;
-				public function HRESULT(IComponentUtil *self, BSTR bstrProgID) ImportComponentByName;
-				public function HRESULT(IComponentUtil *self, BSTR bstrDLLFile, BSTR bstrTypelibFile, SAFEARRAY** aCLSIDs) GetCLSIDs;
+				public new function HRESULT(IComponentUtil *self, BSTR bstrDLLFile, BSTR bstrTypelibFile, BSTR bstrProxyStubDLLFile) InstallComponent;
+				public new function HRESULT(IComponentUtil *self, BSTR bstrCLSID) ImportComponent;
+				public new function HRESULT(IComponentUtil *self, BSTR bstrProgID) ImportComponentByName;
+				public new function HRESULT(IComponentUtil *self, BSTR bstrDLLFile, BSTR bstrTypelibFile, SAFEARRAY** aCLSIDs) GetCLSIDs;
 			}
 		}
 		[CRepr]
@@ -114,13 +148,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6eb22874, 0x8a19, 0x11d0, 0x81, 0xb6, 0x00, 0xa0, 0xc9, 0x23, 0x1c, 0x29);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT InstallPackage(BSTR bstrPackageFile, BSTR bstrInstallPath, int32 lOptions) mut
+			{
+				return VT.InstallPackage(&this, bstrPackageFile, bstrInstallPath, lOptions);
+			}
+			public HRESULT ExportPackage(BSTR bstrPackageID, BSTR bstrPackageFile, int32 lOptions) mut
+			{
+				return VT.ExportPackage(&this, bstrPackageID, bstrPackageFile, lOptions);
+			}
+			public HRESULT ShutdownPackage(BSTR bstrPackageID) mut
+			{
+				return VT.ShutdownPackage(&this, bstrPackageID);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IPackageUtil *self, BSTR bstrPackageFile, BSTR bstrInstallPath, int32 lOptions) InstallPackage;
-				public function HRESULT(IPackageUtil *self, BSTR bstrPackageID, BSTR bstrPackageFile, int32 lOptions) ExportPackage;
-				public function HRESULT(IPackageUtil *self, BSTR bstrPackageID) ShutdownPackage;
+				public new function HRESULT(IPackageUtil *self, BSTR bstrPackageFile, BSTR bstrInstallPath, int32 lOptions) InstallPackage;
+				public new function HRESULT(IPackageUtil *self, BSTR bstrPackageID, BSTR bstrPackageFile, int32 lOptions) ExportPackage;
+				public new function HRESULT(IPackageUtil *self, BSTR bstrPackageID) ShutdownPackage;
 			}
 		}
 		[CRepr]
@@ -128,12 +175,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6eb22875, 0x8a19, 0x11d0, 0x81, 0xb6, 0x00, 0xa0, 0xc9, 0x23, 0x1c, 0x29);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT InstallRemoteComponent(BSTR bstrServer, BSTR bstrPackageID, BSTR bstrCLSID) mut
+			{
+				return VT.InstallRemoteComponent(&this, bstrServer, bstrPackageID, bstrCLSID);
+			}
+			public HRESULT InstallRemoteComponentByName(BSTR bstrServer, BSTR bstrPackageName, BSTR bstrProgID) mut
+			{
+				return VT.InstallRemoteComponentByName(&this, bstrServer, bstrPackageName, bstrProgID);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IRemoteComponentUtil *self, BSTR bstrServer, BSTR bstrPackageID, BSTR bstrCLSID) InstallRemoteComponent;
-				public function HRESULT(IRemoteComponentUtil *self, BSTR bstrServer, BSTR bstrPackageName, BSTR bstrProgID) InstallRemoteComponentByName;
+				public new function HRESULT(IRemoteComponentUtil *self, BSTR bstrServer, BSTR bstrPackageID, BSTR bstrCLSID) InstallRemoteComponent;
+				public new function HRESULT(IRemoteComponentUtil *self, BSTR bstrServer, BSTR bstrPackageName, BSTR bstrProgID) InstallRemoteComponentByName;
 			}
 		}
 		[CRepr]
@@ -141,12 +197,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6eb22876, 0x8a19, 0x11d0, 0x81, 0xb6, 0x00, 0xa0, 0xc9, 0x23, 0x1c, 0x29);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AssociateRole(BSTR bstrRoleID) mut
+			{
+				return VT.AssociateRole(&this, bstrRoleID);
+			}
+			public HRESULT AssociateRoleByName(BSTR bstrRoleName) mut
+			{
+				return VT.AssociateRoleByName(&this, bstrRoleName);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IRoleAssociationUtil *self, BSTR bstrRoleID) AssociateRole;
-				public function HRESULT(IRoleAssociationUtil *self, BSTR bstrRoleName) AssociateRoleByName;
+				public new function HRESULT(IRoleAssociationUtil *self, BSTR bstrRoleID) AssociateRole;
+				public new function HRESULT(IRoleAssociationUtil *self, BSTR bstrRoleName) AssociateRoleByName;
 			}
 		}
 		

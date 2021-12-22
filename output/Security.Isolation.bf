@@ -25,11 +25,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf686878f, 0x7b42, 0x4cc4, 0x96, 0xfb, 0xf4, 0xf3, 0xb6, 0xe3, 0xd2, 0x4d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Launch(PWSTR appUserModelId, PWSTR arguments, IsolatedAppLauncherTelemetryParameters* telemetryParameters) mut
+			{
+				return VT.Launch(&this, appUserModelId, arguments, telemetryParameters);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IIsolatedAppLauncher *self, PWSTR appUserModelId, PWSTR arguments, IsolatedAppLauncherTelemetryParameters* telemetryParameters) Launch;
+				public new function HRESULT(IIsolatedAppLauncher *self, PWSTR appUserModelId, PWSTR arguments, IsolatedAppLauncherTelemetryParameters* telemetryParameters) Launch;
 			}
 		}
 		

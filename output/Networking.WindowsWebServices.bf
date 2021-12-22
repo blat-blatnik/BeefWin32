@@ -3524,12 +3524,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1b35a14a, 0x6094, 0x4799, 0xa6, 0x0e, 0xe4, 0x74, 0xe1, 0x5d, 0x4d, 0xc9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT TriggerContentPrefetcherTask(PWSTR packageFullName) mut
+			{
+				return VT.TriggerContentPrefetcherTask(&this, packageFullName);
+			}
+			public HRESULT IsRegisteredForContentPrefetch(PWSTR packageFullName, uint8* isRegistered) mut
+			{
+				return VT.IsRegisteredForContentPrefetch(&this, packageFullName, isRegistered);
+			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public function HRESULT(IContentPrefetcherTaskTrigger *self, PWSTR packageFullName) TriggerContentPrefetcherTask;
-				public function HRESULT(IContentPrefetcherTaskTrigger *self, PWSTR packageFullName, uint8* isRegistered) IsRegisteredForContentPrefetch;
+				public new function HRESULT(IContentPrefetcherTaskTrigger *self, PWSTR packageFullName) TriggerContentPrefetcherTask;
+				public new function HRESULT(IContentPrefetcherTaskTrigger *self, PWSTR packageFullName, uint8* isRegistered) IsRegisteredForContentPrefetch;
 			}
 		}
 		

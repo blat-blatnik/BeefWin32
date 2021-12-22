@@ -140,13 +140,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x59eff8b9, 0x938c, 0x4a26, 0x82, 0xf2, 0x95, 0xcb, 0x84, 0xcd, 0xc8, 0x37);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetLength(uint32 cbLength) mut
+			{
+				return VT.SetLength(&this, cbLength);
+			}
+			public HRESULT GetMaxLength(uint32* pcbMaxLength) mut
+			{
+				return VT.GetMaxLength(&this, pcbMaxLength);
+			}
+			public HRESULT GetBufferAndLength(uint8** ppBuffer, uint32* pcbLength) mut
+			{
+				return VT.GetBufferAndLength(&this, ppBuffer, pcbLength);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IMediaBuffer *self, uint32 cbLength) SetLength;
-				public function HRESULT(IMediaBuffer *self, uint32* pcbMaxLength) GetMaxLength;
-				public function HRESULT(IMediaBuffer *self, uint8** ppBuffer, uint32* pcbLength) GetBufferAndLength;
+				public new function HRESULT(IMediaBuffer *self, uint32 cbLength) SetLength;
+				public new function HRESULT(IMediaBuffer *self, uint32* pcbMaxLength) GetMaxLength;
+				public new function HRESULT(IMediaBuffer *self, uint8** ppBuffer, uint32* pcbLength) GetBufferAndLength;
 			}
 		}
 		[CRepr]
@@ -154,31 +167,116 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd8ad0f58, 0x5494, 0x4102, 0x97, 0xc5, 0xec, 0x79, 0x8e, 0x59, 0xbc, 0xf4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetStreamCount(uint32* pcInputStreams, uint32* pcOutputStreams) mut
+			{
+				return VT.GetStreamCount(&this, pcInputStreams, pcOutputStreams);
+			}
+			public HRESULT GetInputStreamInfo(uint32 dwInputStreamIndex, uint32* pdwFlags) mut
+			{
+				return VT.GetInputStreamInfo(&this, dwInputStreamIndex, pdwFlags);
+			}
+			public HRESULT GetOutputStreamInfo(uint32 dwOutputStreamIndex, uint32* pdwFlags) mut
+			{
+				return VT.GetOutputStreamInfo(&this, dwOutputStreamIndex, pdwFlags);
+			}
+			public HRESULT GetInputType(uint32 dwInputStreamIndex, uint32 dwTypeIndex, DMO_MEDIA_TYPE* pmt) mut
+			{
+				return VT.GetInputType(&this, dwInputStreamIndex, dwTypeIndex, pmt);
+			}
+			public HRESULT GetOutputType(uint32 dwOutputStreamIndex, uint32 dwTypeIndex, DMO_MEDIA_TYPE* pmt) mut
+			{
+				return VT.GetOutputType(&this, dwOutputStreamIndex, dwTypeIndex, pmt);
+			}
+			public HRESULT SetInputType(uint32 dwInputStreamIndex, DMO_MEDIA_TYPE* pmt, uint32 dwFlags) mut
+			{
+				return VT.SetInputType(&this, dwInputStreamIndex, pmt, dwFlags);
+			}
+			public HRESULT SetOutputType(uint32 dwOutputStreamIndex, DMO_MEDIA_TYPE* pmt, uint32 dwFlags) mut
+			{
+				return VT.SetOutputType(&this, dwOutputStreamIndex, pmt, dwFlags);
+			}
+			public HRESULT GetInputCurrentType(uint32 dwInputStreamIndex, DMO_MEDIA_TYPE* pmt) mut
+			{
+				return VT.GetInputCurrentType(&this, dwInputStreamIndex, pmt);
+			}
+			public HRESULT GetOutputCurrentType(uint32 dwOutputStreamIndex, DMO_MEDIA_TYPE* pmt) mut
+			{
+				return VT.GetOutputCurrentType(&this, dwOutputStreamIndex, pmt);
+			}
+			public HRESULT GetInputSizeInfo(uint32 dwInputStreamIndex, uint32* pcbSize, uint32* pcbMaxLookahead, uint32* pcbAlignment) mut
+			{
+				return VT.GetInputSizeInfo(&this, dwInputStreamIndex, pcbSize, pcbMaxLookahead, pcbAlignment);
+			}
+			public HRESULT GetOutputSizeInfo(uint32 dwOutputStreamIndex, uint32* pcbSize, uint32* pcbAlignment) mut
+			{
+				return VT.GetOutputSizeInfo(&this, dwOutputStreamIndex, pcbSize, pcbAlignment);
+			}
+			public HRESULT GetInputMaxLatency(uint32 dwInputStreamIndex, int64* prtMaxLatency) mut
+			{
+				return VT.GetInputMaxLatency(&this, dwInputStreamIndex, prtMaxLatency);
+			}
+			public HRESULT SetInputMaxLatency(uint32 dwInputStreamIndex, int64 rtMaxLatency) mut
+			{
+				return VT.SetInputMaxLatency(&this, dwInputStreamIndex, rtMaxLatency);
+			}
+			public HRESULT Flush() mut
+			{
+				return VT.Flush(&this);
+			}
+			public HRESULT Discontinuity(uint32 dwInputStreamIndex) mut
+			{
+				return VT.Discontinuity(&this, dwInputStreamIndex);
+			}
+			public HRESULT AllocateStreamingResources() mut
+			{
+				return VT.AllocateStreamingResources(&this);
+			}
+			public HRESULT FreeStreamingResources() mut
+			{
+				return VT.FreeStreamingResources(&this);
+			}
+			public HRESULT GetInputStatus(uint32 dwInputStreamIndex, uint32* dwFlags) mut
+			{
+				return VT.GetInputStatus(&this, dwInputStreamIndex, dwFlags);
+			}
+			public HRESULT ProcessInput(uint32 dwInputStreamIndex, IMediaBuffer* pBuffer, uint32 dwFlags, int64 rtTimestamp, int64 rtTimelength) mut
+			{
+				return VT.ProcessInput(&this, dwInputStreamIndex, pBuffer, dwFlags, rtTimestamp, rtTimelength);
+			}
+			public HRESULT ProcessOutput(uint32 dwFlags, uint32 cOutputBufferCount, DMO_OUTPUT_DATA_BUFFER* pOutputBuffers, uint32* pdwStatus) mut
+			{
+				return VT.ProcessOutput(&this, dwFlags, cOutputBufferCount, pOutputBuffers, pdwStatus);
+			}
+			public HRESULT Lock(int32 bLock) mut
+			{
+				return VT.Lock(&this, bLock);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IMediaObject *self, uint32* pcInputStreams, uint32* pcOutputStreams) GetStreamCount;
-				public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, uint32* pdwFlags) GetInputStreamInfo;
-				public function HRESULT(IMediaObject *self, uint32 dwOutputStreamIndex, uint32* pdwFlags) GetOutputStreamInfo;
-				public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, uint32 dwTypeIndex, DMO_MEDIA_TYPE* pmt) GetInputType;
-				public function HRESULT(IMediaObject *self, uint32 dwOutputStreamIndex, uint32 dwTypeIndex, DMO_MEDIA_TYPE* pmt) GetOutputType;
-				public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, DMO_MEDIA_TYPE* pmt, uint32 dwFlags) SetInputType;
-				public function HRESULT(IMediaObject *self, uint32 dwOutputStreamIndex, DMO_MEDIA_TYPE* pmt, uint32 dwFlags) SetOutputType;
-				public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, DMO_MEDIA_TYPE* pmt) GetInputCurrentType;
-				public function HRESULT(IMediaObject *self, uint32 dwOutputStreamIndex, DMO_MEDIA_TYPE* pmt) GetOutputCurrentType;
-				public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, uint32* pcbSize, uint32* pcbMaxLookahead, uint32* pcbAlignment) GetInputSizeInfo;
-				public function HRESULT(IMediaObject *self, uint32 dwOutputStreamIndex, uint32* pcbSize, uint32* pcbAlignment) GetOutputSizeInfo;
-				public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, int64* prtMaxLatency) GetInputMaxLatency;
-				public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, int64 rtMaxLatency) SetInputMaxLatency;
-				public function HRESULT(IMediaObject *self) Flush;
-				public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex) Discontinuity;
-				public function HRESULT(IMediaObject *self) AllocateStreamingResources;
-				public function HRESULT(IMediaObject *self) FreeStreamingResources;
-				public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, uint32* dwFlags) GetInputStatus;
-				public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, IMediaBuffer* pBuffer, uint32 dwFlags, int64 rtTimestamp, int64 rtTimelength) ProcessInput;
-				public function HRESULT(IMediaObject *self, uint32 dwFlags, uint32 cOutputBufferCount, DMO_OUTPUT_DATA_BUFFER* pOutputBuffers, uint32* pdwStatus) ProcessOutput;
-				public function HRESULT(IMediaObject *self, int32 bLock) Lock;
+				public new function HRESULT(IMediaObject *self, uint32* pcInputStreams, uint32* pcOutputStreams) GetStreamCount;
+				public new function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, uint32* pdwFlags) GetInputStreamInfo;
+				public new function HRESULT(IMediaObject *self, uint32 dwOutputStreamIndex, uint32* pdwFlags) GetOutputStreamInfo;
+				public new function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, uint32 dwTypeIndex, DMO_MEDIA_TYPE* pmt) GetInputType;
+				public new function HRESULT(IMediaObject *self, uint32 dwOutputStreamIndex, uint32 dwTypeIndex, DMO_MEDIA_TYPE* pmt) GetOutputType;
+				public new function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, DMO_MEDIA_TYPE* pmt, uint32 dwFlags) SetInputType;
+				public new function HRESULT(IMediaObject *self, uint32 dwOutputStreamIndex, DMO_MEDIA_TYPE* pmt, uint32 dwFlags) SetOutputType;
+				public new function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, DMO_MEDIA_TYPE* pmt) GetInputCurrentType;
+				public new function HRESULT(IMediaObject *self, uint32 dwOutputStreamIndex, DMO_MEDIA_TYPE* pmt) GetOutputCurrentType;
+				public new function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, uint32* pcbSize, uint32* pcbMaxLookahead, uint32* pcbAlignment) GetInputSizeInfo;
+				public new function HRESULT(IMediaObject *self, uint32 dwOutputStreamIndex, uint32* pcbSize, uint32* pcbAlignment) GetOutputSizeInfo;
+				public new function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, int64* prtMaxLatency) GetInputMaxLatency;
+				public new function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, int64 rtMaxLatency) SetInputMaxLatency;
+				public new function HRESULT(IMediaObject *self) Flush;
+				public new function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex) Discontinuity;
+				public new function HRESULT(IMediaObject *self) AllocateStreamingResources;
+				public new function HRESULT(IMediaObject *self) FreeStreamingResources;
+				public new function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, uint32* dwFlags) GetInputStatus;
+				public new function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, IMediaBuffer* pBuffer, uint32 dwFlags, int64 rtTimestamp, int64 rtTimelength) ProcessInput;
+				public new function HRESULT(IMediaObject *self, uint32 dwFlags, uint32 cOutputBufferCount, DMO_OUTPUT_DATA_BUFFER* pOutputBuffers, uint32* pdwStatus) ProcessOutput;
+				public new function HRESULT(IMediaObject *self, int32 bLock) Lock;
 			}
 		}
 		[CRepr]
@@ -186,14 +284,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2c3cd98a, 0x2bfa, 0x4a53, 0x9c, 0x27, 0x52, 0x49, 0xba, 0x64, 0xba, 0x0f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 cItemsToFetch, Guid* pCLSID, PWSTR* Names, uint32* pcItemsFetched) mut
+			{
+				return VT.Next(&this, cItemsToFetch, pCLSID, Names, pcItemsFetched);
+			}
+			public HRESULT Skip(uint32 cItemsToSkip) mut
+			{
+				return VT.Skip(&this, cItemsToSkip);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumDMO** ppEnum) mut
+			{
+				return VT.Clone(&this, ppEnum);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumDMO *self, uint32 cItemsToFetch, Guid* pCLSID, PWSTR* Names, uint32* pcItemsFetched) Next;
-				public function HRESULT(IEnumDMO *self, uint32 cItemsToSkip) Skip;
-				public function HRESULT(IEnumDMO *self) Reset;
-				public function HRESULT(IEnumDMO *self, IEnumDMO** ppEnum) Clone;
+				public new function HRESULT(IEnumDMO *self, uint32 cItemsToFetch, Guid* pCLSID, PWSTR* Names, uint32* pcItemsFetched) Next;
+				public new function HRESULT(IEnumDMO *self, uint32 cItemsToSkip) Skip;
+				public new function HRESULT(IEnumDMO *self) Reset;
+				public new function HRESULT(IEnumDMO *self, IEnumDMO** ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -201,13 +316,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x651b9ad0, 0x0fc7, 0x4aa9, 0x95, 0x38, 0xd8, 0x99, 0x31, 0x01, 0x07, 0x41);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Process(uint32 ulSize, uint8* pData, int64 refTimeStart, uint32 dwFlags) mut
+			{
+				return VT.Process(&this, ulSize, pData, refTimeStart, dwFlags);
+			}
+			public HRESULT Clone(IMediaObjectInPlace** ppMediaObject) mut
+			{
+				return VT.Clone(&this, ppMediaObject);
+			}
+			public HRESULT GetLatency(int64* pLatencyTime) mut
+			{
+				return VT.GetLatency(&this, pLatencyTime);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IMediaObjectInPlace *self, uint32 ulSize, uint8* pData, int64 refTimeStart, uint32 dwFlags) Process;
-				public function HRESULT(IMediaObjectInPlace *self, IMediaObjectInPlace** ppMediaObject) Clone;
-				public function HRESULT(IMediaObjectInPlace *self, int64* pLatencyTime) GetLatency;
+				public new function HRESULT(IMediaObjectInPlace *self, uint32 ulSize, uint8* pData, int64 refTimeStart, uint32 dwFlags) Process;
+				public new function HRESULT(IMediaObjectInPlace *self, IMediaObjectInPlace** ppMediaObject) Clone;
+				public new function HRESULT(IMediaObjectInPlace *self, int64* pLatencyTime) GetLatency;
 			}
 		}
 		[CRepr]
@@ -215,13 +343,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x65abea96, 0xcf36, 0x453f, 0xaf, 0x8a, 0x70, 0x5e, 0x98, 0xf1, 0x62, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetNow(int64 rtNow) mut
+			{
+				return VT.SetNow(&this, rtNow);
+			}
+			public HRESULT SetStatus(uint32 dwFlags) mut
+			{
+				return VT.SetStatus(&this, dwFlags);
+			}
+			public HRESULT GetStatus(uint32* pdwFlags) mut
+			{
+				return VT.GetStatus(&this, pdwFlags);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDMOQualityControl *self, int64 rtNow) SetNow;
-				public function HRESULT(IDMOQualityControl *self, uint32 dwFlags) SetStatus;
-				public function HRESULT(IDMOQualityControl *self, uint32* pdwFlags) GetStatus;
+				public new function HRESULT(IDMOQualityControl *self, int64 rtNow) SetNow;
+				public new function HRESULT(IDMOQualityControl *self, uint32 dwFlags) SetStatus;
+				public new function HRESULT(IDMOQualityControl *self, uint32* pdwFlags) GetStatus;
 			}
 		}
 		[CRepr]
@@ -229,14 +370,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbe8f4f4e, 0x5b16, 0x4d29, 0xb3, 0x50, 0x7f, 0x6b, 0x5d, 0x92, 0x98, 0xac);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT QueryOperationModePreferences(uint32 ulOutputStreamIndex, uint32* pdwRequestedCapabilities) mut
+			{
+				return VT.QueryOperationModePreferences(&this, ulOutputStreamIndex, pdwRequestedCapabilities);
+			}
+			public HRESULT SetOperationMode(uint32 ulOutputStreamIndex, uint32 dwEnabledFeatures) mut
+			{
+				return VT.SetOperationMode(&this, ulOutputStreamIndex, dwEnabledFeatures);
+			}
+			public HRESULT GetCurrentOperationMode(uint32 ulOutputStreamIndex, uint32* pdwEnabledFeatures) mut
+			{
+				return VT.GetCurrentOperationMode(&this, ulOutputStreamIndex, pdwEnabledFeatures);
+			}
+			public HRESULT GetCurrentSampleRequirements(uint32 ulOutputStreamIndex, uint32* pdwRequestedFeatures) mut
+			{
+				return VT.GetCurrentSampleRequirements(&this, ulOutputStreamIndex, pdwRequestedFeatures);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDMOVideoOutputOptimizations *self, uint32 ulOutputStreamIndex, uint32* pdwRequestedCapabilities) QueryOperationModePreferences;
-				public function HRESULT(IDMOVideoOutputOptimizations *self, uint32 ulOutputStreamIndex, uint32 dwEnabledFeatures) SetOperationMode;
-				public function HRESULT(IDMOVideoOutputOptimizations *self, uint32 ulOutputStreamIndex, uint32* pdwEnabledFeatures) GetCurrentOperationMode;
-				public function HRESULT(IDMOVideoOutputOptimizations *self, uint32 ulOutputStreamIndex, uint32* pdwRequestedFeatures) GetCurrentSampleRequirements;
+				public new function HRESULT(IDMOVideoOutputOptimizations *self, uint32 ulOutputStreamIndex, uint32* pdwRequestedCapabilities) QueryOperationModePreferences;
+				public new function HRESULT(IDMOVideoOutputOptimizations *self, uint32 ulOutputStreamIndex, uint32 dwEnabledFeatures) SetOperationMode;
+				public new function HRESULT(IDMOVideoOutputOptimizations *self, uint32 ulOutputStreamIndex, uint32* pdwEnabledFeatures) GetCurrentOperationMode;
+				public new function HRESULT(IDMOVideoOutputOptimizations *self, uint32 ulOutputStreamIndex, uint32* pdwRequestedFeatures) GetCurrentSampleRequirements;
 			}
 		}
 		

@@ -5670,15 +5670,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xcc907054, 0xc058, 0x101a, 0xb5, 0x54, 0x08, 0x00, 0x2b, 0x33, 0xb0, 0xe6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT PutWord(uint32 cwc, PWSTR pwcInBuf, uint32 cwcSrcLen, uint32 cwcSrcPos) mut
+			{
+				return VT.PutWord(&this, cwc, pwcInBuf, cwcSrcLen, cwcSrcPos);
+			}
+			public HRESULT PutAltWord(uint32 cwc, PWSTR pwcInBuf, uint32 cwcSrcLen, uint32 cwcSrcPos) mut
+			{
+				return VT.PutAltWord(&this, cwc, pwcInBuf, cwcSrcLen, cwcSrcPos);
+			}
+			public HRESULT StartAltPhrase() mut
+			{
+				return VT.StartAltPhrase(&this);
+			}
+			public HRESULT EndAltPhrase() mut
+			{
+				return VT.EndAltPhrase(&this);
+			}
+			public HRESULT PutBreak(WORDREP_BREAK_TYPE breakType) mut
+			{
+				return VT.PutBreak(&this, breakType);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWordSink *self, uint32 cwc, PWSTR pwcInBuf, uint32 cwcSrcLen, uint32 cwcSrcPos) PutWord;
-				public function HRESULT(IWordSink *self, uint32 cwc, PWSTR pwcInBuf, uint32 cwcSrcLen, uint32 cwcSrcPos) PutAltWord;
-				public function HRESULT(IWordSink *self) StartAltPhrase;
-				public function HRESULT(IWordSink *self) EndAltPhrase;
-				public function HRESULT(IWordSink *self, WORDREP_BREAK_TYPE breakType) PutBreak;
+				public new function HRESULT(IWordSink *self, uint32 cwc, PWSTR pwcInBuf, uint32 cwcSrcLen, uint32 cwcSrcPos) PutWord;
+				public new function HRESULT(IWordSink *self, uint32 cwc, PWSTR pwcInBuf, uint32 cwcSrcLen, uint32 cwcSrcPos) PutAltWord;
+				public new function HRESULT(IWordSink *self) StartAltPhrase;
+				public new function HRESULT(IWordSink *self) EndAltPhrase;
+				public new function HRESULT(IWordSink *self, WORDREP_BREAK_TYPE breakType) PutBreak;
 			}
 		}
 		[CRepr]
@@ -5686,14 +5707,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd53552c8, 0x77e3, 0x101a, 0xb5, 0x52, 0x08, 0x00, 0x2b, 0x33, 0xb0, 0xe6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Init(BOOL fQuery, uint32 ulMaxTokenSize, BOOL* pfLicense) mut
+			{
+				return VT.Init(&this, fQuery, ulMaxTokenSize, pfLicense);
+			}
+			public HRESULT BreakText(TEXT_SOURCE* pTextSource, IWordSink* pWordSink, IPhraseSink* pPhraseSink) mut
+			{
+				return VT.BreakText(&this, pTextSource, pWordSink, pPhraseSink);
+			}
+			public HRESULT ComposePhrase(PWSTR pwcNoun, uint32 cwcNoun, PWSTR pwcModifier, uint32 cwcModifier, uint32 ulAttachmentType, PWSTR pwcPhrase, uint32* pcwcPhrase) mut
+			{
+				return VT.ComposePhrase(&this, pwcNoun, cwcNoun, pwcModifier, cwcModifier, ulAttachmentType, pwcPhrase, pcwcPhrase);
+			}
+			public HRESULT GetLicenseToUse(uint16** ppwcsLicense) mut
+			{
+				return VT.GetLicenseToUse(&this, ppwcsLicense);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWordBreaker *self, BOOL fQuery, uint32 ulMaxTokenSize, BOOL* pfLicense) Init;
-				public function HRESULT(IWordBreaker *self, TEXT_SOURCE* pTextSource, IWordSink* pWordSink, IPhraseSink* pPhraseSink) BreakText;
-				public function HRESULT(IWordBreaker *self, PWSTR pwcNoun, uint32 cwcNoun, PWSTR pwcModifier, uint32 cwcModifier, uint32 ulAttachmentType, PWSTR pwcPhrase, uint32* pcwcPhrase) ComposePhrase;
-				public function HRESULT(IWordBreaker *self, uint16** ppwcsLicense) GetLicenseToUse;
+				public new function HRESULT(IWordBreaker *self, BOOL fQuery, uint32 ulMaxTokenSize, BOOL* pfLicense) Init;
+				public new function HRESULT(IWordBreaker *self, TEXT_SOURCE* pTextSource, IWordSink* pWordSink, IPhraseSink* pPhraseSink) BreakText;
+				public new function HRESULT(IWordBreaker *self, PWSTR pwcNoun, uint32 cwcNoun, PWSTR pwcModifier, uint32 cwcModifier, uint32 ulAttachmentType, PWSTR pwcPhrase, uint32* pcwcPhrase) ComposePhrase;
+				public new function HRESULT(IWordBreaker *self, uint16** ppwcsLicense) GetLicenseToUse;
 			}
 		}
 		[CRepr]
@@ -5701,12 +5739,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfe77c330, 0x7f42, 0x11ce, 0xbe, 0x57, 0x00, 0xaa, 0x00, 0x51, 0xfe, 0x20);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT PutAltWord(PWSTR pwcInBuf, uint32 cwc) mut
+			{
+				return VT.PutAltWord(&this, pwcInBuf, cwc);
+			}
+			public HRESULT PutWord(PWSTR pwcInBuf, uint32 cwc) mut
+			{
+				return VT.PutWord(&this, pwcInBuf, cwc);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWordFormSink *self, PWSTR pwcInBuf, uint32 cwc) PutAltWord;
-				public function HRESULT(IWordFormSink *self, PWSTR pwcInBuf, uint32 cwc) PutWord;
+				public new function HRESULT(IWordFormSink *self, PWSTR pwcInBuf, uint32 cwc) PutAltWord;
+				public new function HRESULT(IWordFormSink *self, PWSTR pwcInBuf, uint32 cwc) PutWord;
 			}
 		}
 		[CRepr]
@@ -5714,13 +5761,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xefbaf140, 0x7f42, 0x11ce, 0xbe, 0x57, 0x00, 0xaa, 0x00, 0x51, 0xfe, 0x20);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Init(uint32 ulMaxTokenSize, BOOL* pfLicense) mut
+			{
+				return VT.Init(&this, ulMaxTokenSize, pfLicense);
+			}
+			public HRESULT GenerateWordForms(PWSTR pwcInBuf, uint32 cwc, IWordFormSink* pStemSink) mut
+			{
+				return VT.GenerateWordForms(&this, pwcInBuf, cwc, pStemSink);
+			}
+			public HRESULT GetLicenseToUse(uint16** ppwcsLicense) mut
+			{
+				return VT.GetLicenseToUse(&this, ppwcsLicense);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IStemmer *self, uint32 ulMaxTokenSize, BOOL* pfLicense) Init;
-				public function HRESULT(IStemmer *self, PWSTR pwcInBuf, uint32 cwc, IWordFormSink* pStemSink) GenerateWordForms;
-				public function HRESULT(IStemmer *self, uint16** ppwcsLicense) GetLicenseToUse;
+				public new function HRESULT(IStemmer *self, uint32 ulMaxTokenSize, BOOL* pfLicense) Init;
+				public new function HRESULT(IStemmer *self, PWSTR pwcInBuf, uint32 cwc, IWordFormSink* pStemSink) GenerateWordForms;
+				public new function HRESULT(IStemmer *self, uint16** ppwcsLicense) GetLicenseToUse;
 			}
 		}
 		[CRepr]
@@ -5728,13 +5788,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5e341ab7, 0x02d0, 0x11d1, 0x90, 0x0c, 0x00, 0xa0, 0xc9, 0x06, 0x37, 0x96);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateICommand(IUnknown** ppIUnknown, IUnknown* pOuterUnk) mut
+			{
+				return VT.CreateICommand(&this, ppIUnknown, pOuterUnk);
+			}
+			public HRESULT VerifyCatalog(PWSTR pwszMachine, PWSTR pwszCatalogName) mut
+			{
+				return VT.VerifyCatalog(&this, pwszMachine, pwszCatalogName);
+			}
+			public HRESULT GetDefaultCatalog(PWSTR pwszCatalogName, uint32 cwcIn, uint32* pcwcOut) mut
+			{
+				return VT.GetDefaultCatalog(&this, pwszCatalogName, cwcIn, pcwcOut);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISimpleCommandCreator *self, IUnknown** ppIUnknown, IUnknown* pOuterUnk) CreateICommand;
-				public function HRESULT(ISimpleCommandCreator *self, PWSTR pwszMachine, PWSTR pwszCatalogName) VerifyCatalog;
-				public function HRESULT(ISimpleCommandCreator *self, PWSTR pwszCatalogName, uint32 cwcIn, uint32* pcwcOut) GetDefaultCatalog;
+				public new function HRESULT(ISimpleCommandCreator *self, IUnknown** ppIUnknown, IUnknown* pOuterUnk) CreateICommand;
+				public new function HRESULT(ISimpleCommandCreator *self, PWSTR pwszMachine, PWSTR pwszCatalogName) VerifyCatalog;
+				public new function HRESULT(ISimpleCommandCreator *self, PWSTR pwszCatalogName, uint32 cwcIn, uint32* pcwcOut) GetDefaultCatalog;
 			}
 		}
 		[CRepr]
@@ -5742,14 +5815,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0b63e37a, 0x9ccc, 0x11d0, 0xbc, 0xdb, 0x00, 0x80, 0x5f, 0xcc, 0xce, 0x04);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPropInfoFromName(PWSTR wcsPropName, DBID** ppPropId, uint16* pPropType, uint32* puiWidth) mut
+			{
+				return VT.GetPropInfoFromName(&this, wcsPropName, ppPropId, pPropType, puiWidth);
+			}
+			public HRESULT GetPropInfoFromId(DBID* pPropId, uint16** pwcsName, uint16* pPropType, uint32* puiWidth) mut
+			{
+				return VT.GetPropInfoFromId(&this, pPropId, pwcsName, pPropType, puiWidth);
+			}
+			public HRESULT EnumPropInfo(uint32 iEntry, uint16** pwcsName, DBID** ppPropId, uint16* pPropType, uint32* puiWidth) mut
+			{
+				return VT.EnumPropInfo(&this, iEntry, pwcsName, ppPropId, pPropType, puiWidth);
+			}
+			public HRESULT IsMapUpToDate() mut
+			{
+				return VT.IsMapUpToDate(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IColumnMapper *self, PWSTR wcsPropName, DBID** ppPropId, uint16* pPropType, uint32* puiWidth) GetPropInfoFromName;
-				public function HRESULT(IColumnMapper *self, DBID* pPropId, uint16** pwcsName, uint16* pPropType, uint32* puiWidth) GetPropInfoFromId;
-				public function HRESULT(IColumnMapper *self, uint32 iEntry, uint16** pwcsName, DBID** ppPropId, uint16* pPropType, uint32* puiWidth) EnumPropInfo;
-				public function HRESULT(IColumnMapper *self) IsMapUpToDate;
+				public new function HRESULT(IColumnMapper *self, PWSTR wcsPropName, DBID** ppPropId, uint16* pPropType, uint32* puiWidth) GetPropInfoFromName;
+				public new function HRESULT(IColumnMapper *self, DBID* pPropId, uint16** pwcsName, uint16* pPropType, uint32* puiWidth) GetPropInfoFromId;
+				public new function HRESULT(IColumnMapper *self, uint32 iEntry, uint16** pwcsName, DBID** ppPropId, uint16* pPropType, uint32* puiWidth) EnumPropInfo;
+				public new function HRESULT(IColumnMapper *self) IsMapUpToDate;
 			}
 		}
 		[CRepr]
@@ -5757,11 +5847,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0b63e37b, 0x9ccc, 0x11d0, 0xbc, 0xdb, 0x00, 0x80, 0x5f, 0xcc, 0xce, 0x04);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetColumnMapper(PWSTR wcsMachineName, PWSTR wcsCatalogName, IColumnMapper** ppColumnMapper) mut
+			{
+				return VT.GetColumnMapper(&this, wcsMachineName, wcsCatalogName, ppColumnMapper);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IColumnMapperCreator *self, PWSTR wcsMachineName, PWSTR wcsCatalogName, IColumnMapper** ppColumnMapper) GetColumnMapper;
+				public new function HRESULT(IColumnMapperCreator *self, PWSTR wcsMachineName, PWSTR wcsCatalogName, IColumnMapper** ppColumnMapper) GetColumnMapper;
 			}
 		}
 		[CRepr]
@@ -5769,13 +5864,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc7310722, 0xac80, 0x11d1, 0x8d, 0xf3, 0x00, 0xc0, 0x4f, 0xb6, 0xef, 0x4f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT LoadIFilter(PWSTR pwcsPath, FILTERED_DATA_SOURCES* pFilteredSources, IUnknown* pUnkOuter, BOOL fUseDefault, Guid* pFilterClsid, int32* SearchDecSize, uint16** pwcsSearchDesc, IFilter** ppIFilt) mut
+			{
+				return VT.LoadIFilter(&this, pwcsPath, pFilteredSources, pUnkOuter, fUseDefault, pFilterClsid, SearchDecSize, pwcsSearchDesc, ppIFilt);
+			}
+			public HRESULT LoadIFilterFromStorage(IStorage* pStg, IUnknown* pUnkOuter, PWSTR pwcsOverride, BOOL fUseDefault, Guid* pFilterClsid, int32* SearchDecSize, uint16** pwcsSearchDesc, IFilter** ppIFilt) mut
+			{
+				return VT.LoadIFilterFromStorage(&this, pStg, pUnkOuter, pwcsOverride, fUseDefault, pFilterClsid, SearchDecSize, pwcsSearchDesc, ppIFilt);
+			}
+			public HRESULT LoadIFilterFromStream(IStream* pStm, FILTERED_DATA_SOURCES* pFilteredSources, IUnknown* pUnkOuter, BOOL fUseDefault, Guid* pFilterClsid, int32* SearchDecSize, uint16** pwcsSearchDesc, IFilter** ppIFilt) mut
+			{
+				return VT.LoadIFilterFromStream(&this, pStm, pFilteredSources, pUnkOuter, fUseDefault, pFilterClsid, SearchDecSize, pwcsSearchDesc, ppIFilt);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ILoadFilter *self, PWSTR pwcsPath, FILTERED_DATA_SOURCES* pFilteredSources, IUnknown* pUnkOuter, BOOL fUseDefault, Guid* pFilterClsid, int32* SearchDecSize, uint16** pwcsSearchDesc, IFilter** ppIFilt) LoadIFilter;
-				public function HRESULT(ILoadFilter *self, IStorage* pStg, IUnknown* pUnkOuter, PWSTR pwcsOverride, BOOL fUseDefault, Guid* pFilterClsid, int32* SearchDecSize, uint16** pwcsSearchDesc, IFilter** ppIFilt) LoadIFilterFromStorage;
-				public function HRESULT(ILoadFilter *self, IStream* pStm, FILTERED_DATA_SOURCES* pFilteredSources, IUnknown* pUnkOuter, BOOL fUseDefault, Guid* pFilterClsid, int32* SearchDecSize, uint16** pwcsSearchDesc, IFilter** ppIFilt) LoadIFilterFromStream;
+				public new function HRESULT(ILoadFilter *self, PWSTR pwcsPath, FILTERED_DATA_SOURCES* pFilteredSources, IUnknown* pUnkOuter, BOOL fUseDefault, Guid* pFilterClsid, int32* SearchDecSize, uint16** pwcsSearchDesc, IFilter** ppIFilt) LoadIFilter;
+				public new function HRESULT(ILoadFilter *self, IStorage* pStg, IUnknown* pUnkOuter, PWSTR pwcsOverride, BOOL fUseDefault, Guid* pFilterClsid, int32* SearchDecSize, uint16** pwcsSearchDesc, IFilter** ppIFilt) LoadIFilterFromStorage;
+				public new function HRESULT(ILoadFilter *self, IStream* pStm, FILTERED_DATA_SOURCES* pFilteredSources, IUnknown* pUnkOuter, BOOL fUseDefault, Guid* pFilterClsid, int32* SearchDecSize, uint16** pwcsSearchDesc, IFilter** ppIFilt) LoadIFilterFromStream;
 			}
 		}
 		[CRepr]
@@ -5783,11 +5891,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x40bdbd34, 0x780b, 0x48d3, 0x9b, 0xb6, 0x12, 0xeb, 0xd4, 0xad, 0x2e, 0x75);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT LoadIFilterWithPrivateComActivation(FILTERED_DATA_SOURCES* filteredSources, BOOL useDefault, Guid* filterClsid, BOOL* isFilterPrivateComActivated, IFilter** filterObj) mut
+			{
+				return VT.LoadIFilterWithPrivateComActivation(&this, filteredSources, useDefault, filterClsid, isFilterPrivateComActivated, filterObj);
+			}
 			[CRepr]
 			public struct VTable : ILoadFilter.VTable
 			{
-				public function HRESULT(ILoadFilterWithPrivateComActivation *self, FILTERED_DATA_SOURCES* filteredSources, BOOL useDefault, Guid* filterClsid, BOOL* isFilterPrivateComActivated, IFilter** filterObj) LoadIFilterWithPrivateComActivation;
+				public new function HRESULT(ILoadFilterWithPrivateComActivation *self, FILTERED_DATA_SOURCES* filteredSources, BOOL useDefault, Guid* filterClsid, BOOL* isFilterPrivateComActivated, IFilter** filterObj) LoadIFilterWithPrivateComActivation;
 			}
 		}
 		[CRepr]
@@ -5795,11 +5908,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4fdef69c, 0xdbc9, 0x454e, 0x99, 0x10, 0xb3, 0x4f, 0x3c, 0x64, 0xb5, 0x10);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetData(uint32* pFirstPos, uint32* pLength, PWSTR* ppsz, PROPVARIANT* pValue) mut
+			{
+				return VT.GetData(&this, pFirstPos, pLength, ppsz, pValue);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRichChunk *self, uint32* pFirstPos, uint32* pLength, PWSTR* ppsz, PROPVARIANT* pValue) GetData;
+				public new function HRESULT(IRichChunk *self, uint32* pFirstPos, uint32* pLength, PWSTR* ppsz, PROPVARIANT* pValue) GetData;
 			}
 		}
 		[CRepr]
@@ -5807,17 +5925,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0fc988d4, 0xc935, 0x4b97, 0xa9, 0x73, 0x46, 0x28, 0x2e, 0xa1, 0x75, 0xc8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetConditionType(CONDITION_TYPE* pNodeType) mut
+			{
+				return VT.GetConditionType(&this, pNodeType);
+			}
+			public HRESULT GetSubConditions(Guid* riid, void** ppv) mut
+			{
+				return VT.GetSubConditions(&this, riid, ppv);
+			}
+			public HRESULT GetComparisonInfo(PWSTR* ppszPropertyName, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar) mut
+			{
+				return VT.GetComparisonInfo(&this, ppszPropertyName, pcop, ppropvar);
+			}
+			public HRESULT GetValueType(PWSTR* ppszValueTypeName) mut
+			{
+				return VT.GetValueType(&this, ppszValueTypeName);
+			}
+			public HRESULT GetValueNormalization(PWSTR* ppszNormalization) mut
+			{
+				return VT.GetValueNormalization(&this, ppszNormalization);
+			}
+			public HRESULT GetInputTerms(IRichChunk** ppPropertyTerm, IRichChunk** ppOperationTerm, IRichChunk** ppValueTerm) mut
+			{
+				return VT.GetInputTerms(&this, ppPropertyTerm, ppOperationTerm, ppValueTerm);
+			}
+			public HRESULT Clone(ICondition** ppc) mut
+			{
+				return VT.Clone(&this, ppc);
+			}
 			[CRepr]
 			public struct VTable : IPersistStream.VTable
 			{
-				public function HRESULT(ICondition *self, CONDITION_TYPE* pNodeType) GetConditionType;
-				public function HRESULT(ICondition *self, Guid* riid, void** ppv) GetSubConditions;
-				public function HRESULT(ICondition *self, PWSTR* ppszPropertyName, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar) GetComparisonInfo;
-				public function HRESULT(ICondition *self, PWSTR* ppszValueTypeName) GetValueType;
-				public function HRESULT(ICondition *self, PWSTR* ppszNormalization) GetValueNormalization;
-				public function HRESULT(ICondition *self, IRichChunk** ppPropertyTerm, IRichChunk** ppOperationTerm, IRichChunk** ppValueTerm) GetInputTerms;
-				public function HRESULT(ICondition *self, ICondition** ppc) Clone;
+				public new function HRESULT(ICondition *self, CONDITION_TYPE* pNodeType) GetConditionType;
+				public new function HRESULT(ICondition *self, Guid* riid, void** ppv) GetSubConditions;
+				public new function HRESULT(ICondition *self, PWSTR* ppszPropertyName, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar) GetComparisonInfo;
+				public new function HRESULT(ICondition *self, PWSTR* ppszValueTypeName) GetValueType;
+				public new function HRESULT(ICondition *self, PWSTR* ppszNormalization) GetValueNormalization;
+				public new function HRESULT(ICondition *self, IRichChunk** ppPropertyTerm, IRichChunk** ppOperationTerm, IRichChunk** ppValueTerm) GetInputTerms;
+				public new function HRESULT(ICondition *self, ICondition** ppc) Clone;
 			}
 		}
 		[CRepr]
@@ -5825,12 +5972,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0db8851d, 0x2e5b, 0x47eb, 0x92, 0x08, 0xd2, 0x8c, 0x32, 0x5a, 0x01, 0xd7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetLocale(PWSTR* ppszLocaleName) mut
+			{
+				return VT.GetLocale(&this, ppszLocaleName);
+			}
+			public HRESULT GetLeafConditionInfo(PROPERTYKEY* ppropkey, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar) mut
+			{
+				return VT.GetLeafConditionInfo(&this, ppropkey, pcop, ppropvar);
+			}
 			[CRepr]
 			public struct VTable : ICondition.VTable
 			{
-				public function HRESULT(ICondition2 *self, PWSTR* ppszLocaleName) GetLocale;
-				public function HRESULT(ICondition2 *self, PROPERTYKEY* ppropkey, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar) GetLeafConditionInfo;
+				public new function HRESULT(ICondition2 *self, PWSTR* ppszLocaleName) GetLocale;
+				public new function HRESULT(ICondition2 *self, PROPERTYKEY* ppropkey, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar) GetLeafConditionInfo;
 			}
 		}
 		[CRepr]
@@ -5838,14 +5994,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a8c, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddRefAccessor(uint hAccessor, uint32* pcRefCount) mut
+			{
+				return VT.AddRefAccessor(&this, hAccessor, pcRefCount);
+			}
+			public HRESULT CreateAccessor(uint32 dwAccessorFlags, uint cBindings, DBBINDING* rgBindings, uint cbRowSize, uint* phAccessor, uint32* rgStatus) mut
+			{
+				return VT.CreateAccessor(&this, dwAccessorFlags, cBindings, rgBindings, cbRowSize, phAccessor, rgStatus);
+			}
+			public HRESULT GetBindings(uint hAccessor, uint32* pdwAccessorFlags, uint* pcBindings, DBBINDING** prgBindings) mut
+			{
+				return VT.GetBindings(&this, hAccessor, pdwAccessorFlags, pcBindings, prgBindings);
+			}
+			public HRESULT ReleaseAccessor(uint hAccessor, uint32* pcRefCount) mut
+			{
+				return VT.ReleaseAccessor(&this, hAccessor, pcRefCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAccessor *self, uint hAccessor, uint32* pcRefCount) AddRefAccessor;
-				public function HRESULT(IAccessor *self, uint32 dwAccessorFlags, uint cBindings, DBBINDING* rgBindings, uint cbRowSize, uint* phAccessor, uint32* rgStatus) CreateAccessor;
-				public function HRESULT(IAccessor *self, uint hAccessor, uint32* pdwAccessorFlags, uint* pcBindings, DBBINDING** prgBindings) GetBindings;
-				public function HRESULT(IAccessor *self, uint hAccessor, uint32* pcRefCount) ReleaseAccessor;
+				public new function HRESULT(IAccessor *self, uint hAccessor, uint32* pcRefCount) AddRefAccessor;
+				public new function HRESULT(IAccessor *self, uint32 dwAccessorFlags, uint cBindings, DBBINDING* rgBindings, uint cbRowSize, uint* phAccessor, uint32* rgStatus) CreateAccessor;
+				public new function HRESULT(IAccessor *self, uint hAccessor, uint32* pdwAccessorFlags, uint* pcBindings, DBBINDING** prgBindings) GetBindings;
+				public new function HRESULT(IAccessor *self, uint hAccessor, uint32* pcRefCount) ReleaseAccessor;
 			}
 		}
 		[CRepr]
@@ -5853,15 +6026,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a7c, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddRefRows(uint cRows, uint* rghRows, uint32* rgRefCounts, uint32* rgRowStatus) mut
+			{
+				return VT.AddRefRows(&this, cRows, rghRows, rgRefCounts, rgRowStatus);
+			}
+			public HRESULT GetData(uint hRow, uint hAccessor, void* pData) mut
+			{
+				return VT.GetData(&this, hRow, hAccessor, pData);
+			}
+			public HRESULT GetNextRows(uint hReserved, int lRowsOffset, int cRows, uint* pcRowsObtained, uint** prghRows) mut
+			{
+				return VT.GetNextRows(&this, hReserved, lRowsOffset, cRows, pcRowsObtained, prghRows);
+			}
+			public HRESULT ReleaseRows(uint cRows, uint* rghRows, uint32* rgRowOptions, uint32* rgRefCounts, uint32* rgRowStatus) mut
+			{
+				return VT.ReleaseRows(&this, cRows, rghRows, rgRowOptions, rgRefCounts, rgRowStatus);
+			}
+			public HRESULT RestartPosition(uint hReserved) mut
+			{
+				return VT.RestartPosition(&this, hReserved);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowset *self, uint cRows, uint* rghRows, uint32* rgRefCounts, uint32* rgRowStatus) AddRefRows;
-				public function HRESULT(IRowset *self, uint hRow, uint hAccessor, void* pData) GetData;
-				public function HRESULT(IRowset *self, uint hReserved, int lRowsOffset, int cRows, uint* pcRowsObtained, uint** prghRows) GetNextRows;
-				public function HRESULT(IRowset *self, uint cRows, uint* rghRows, uint32* rgRowOptions, uint32* rgRefCounts, uint32* rgRowStatus) ReleaseRows;
-				public function HRESULT(IRowset *self, uint hReserved) RestartPosition;
+				public new function HRESULT(IRowset *self, uint cRows, uint* rghRows, uint32* rgRefCounts, uint32* rgRowStatus) AddRefRows;
+				public new function HRESULT(IRowset *self, uint hRow, uint hAccessor, void* pData) GetData;
+				public new function HRESULT(IRowset *self, uint hReserved, int lRowsOffset, int cRows, uint* pcRowsObtained, uint** prghRows) GetNextRows;
+				public new function HRESULT(IRowset *self, uint cRows, uint* rghRows, uint32* rgRowOptions, uint32* rgRefCounts, uint32* rgRowStatus) ReleaseRows;
+				public new function HRESULT(IRowset *self, uint hReserved) RestartPosition;
 			}
 		}
 		[CRepr]
@@ -5869,13 +6063,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a55, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetProperties(uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertySets, DBPROPSET** prgPropertySets) mut
+			{
+				return VT.GetProperties(&this, cPropertyIDSets, rgPropertyIDSets, pcPropertySets, prgPropertySets);
+			}
+			public HRESULT GetReferencedRowset(uint iOrdinal, Guid* riid, IUnknown** ppReferencedRowset) mut
+			{
+				return VT.GetReferencedRowset(&this, iOrdinal, riid, ppReferencedRowset);
+			}
+			public HRESULT GetSpecification(Guid* riid, IUnknown** ppSpecification) mut
+			{
+				return VT.GetSpecification(&this, riid, ppSpecification);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetInfo *self, uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertySets, DBPROPSET** prgPropertySets) GetProperties;
-				public function HRESULT(IRowsetInfo *self, uint iOrdinal, Guid* riid, IUnknown** ppReferencedRowset) GetReferencedRowset;
-				public function HRESULT(IRowsetInfo *self, Guid* riid, IUnknown** ppSpecification) GetSpecification;
+				public new function HRESULT(IRowsetInfo *self, uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertySets, DBPROPSET** prgPropertySets) GetProperties;
+				public new function HRESULT(IRowsetInfo *self, uint iOrdinal, Guid* riid, IUnknown** ppReferencedRowset) GetReferencedRowset;
+				public new function HRESULT(IRowsetInfo *self, Guid* riid, IUnknown** ppSpecification) GetSpecification;
 			}
 		}
 		[CRepr]
@@ -5883,14 +6090,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a7d, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Compare(uint hReserved, uint cbBookmark1, uint8* pBookmark1, uint cbBookmark2, uint8* pBookmark2, uint32* pComparison) mut
+			{
+				return VT.Compare(&this, hReserved, cbBookmark1, pBookmark1, cbBookmark2, pBookmark2, pComparison);
+			}
+			public HRESULT GetRowsAt(uint hReserved1, uint hReserved2, uint cbBookmark, uint8* pBookmark, int lRowsOffset, int cRows, uint* pcRowsObtained, uint** prghRows) mut
+			{
+				return VT.GetRowsAt(&this, hReserved1, hReserved2, cbBookmark, pBookmark, lRowsOffset, cRows, pcRowsObtained, prghRows);
+			}
+			public HRESULT GetRowsByBookmark(uint hReserved, uint cRows, uint* rgcbBookmarks, uint8** rgpBookmarks, uint* rghRows, uint32* rgRowStatus) mut
+			{
+				return VT.GetRowsByBookmark(&this, hReserved, cRows, rgcbBookmarks, rgpBookmarks, rghRows, rgRowStatus);
+			}
+			public HRESULT Hash(uint hReserved, uint cBookmarks, uint* rgcbBookmarks, uint8** rgpBookmarks, uint* rgHashedValues, uint32* rgBookmarkStatus) mut
+			{
+				return VT.Hash(&this, hReserved, cBookmarks, rgcbBookmarks, rgpBookmarks, rgHashedValues, rgBookmarkStatus);
+			}
 			[CRepr]
 			public struct VTable : IRowset.VTable
 			{
-				public function HRESULT(IRowsetLocate *self, uint hReserved, uint cbBookmark1, uint8* pBookmark1, uint cbBookmark2, uint8* pBookmark2, uint32* pComparison) Compare;
-				public function HRESULT(IRowsetLocate *self, uint hReserved1, uint hReserved2, uint cbBookmark, uint8* pBookmark, int lRowsOffset, int cRows, uint* pcRowsObtained, uint** prghRows) GetRowsAt;
-				public function HRESULT(IRowsetLocate *self, uint hReserved, uint cRows, uint* rgcbBookmarks, uint8** rgpBookmarks, uint* rghRows, uint32* rgRowStatus) GetRowsByBookmark;
-				public function HRESULT(IRowsetLocate *self, uint hReserved, uint cBookmarks, uint* rgcbBookmarks, uint8** rgpBookmarks, uint* rgHashedValues, uint32* rgBookmarkStatus) Hash;
+				public new function HRESULT(IRowsetLocate *self, uint hReserved, uint cbBookmark1, uint8* pBookmark1, uint cbBookmark2, uint8* pBookmark2, uint32* pComparison) Compare;
+				public new function HRESULT(IRowsetLocate *self, uint hReserved1, uint hReserved2, uint cbBookmark, uint8* pBookmark, int lRowsOffset, int cRows, uint* pcRowsObtained, uint** prghRows) GetRowsAt;
+				public new function HRESULT(IRowsetLocate *self, uint hReserved, uint cRows, uint* rgcbBookmarks, uint8** rgpBookmarks, uint* rghRows, uint32* rgRowStatus) GetRowsByBookmark;
+				public new function HRESULT(IRowsetLocate *self, uint hReserved, uint cBookmarks, uint* rgcbBookmarks, uint8** rgpBookmarks, uint* rgHashedValues, uint32* rgBookmarkStatus) Hash;
 			}
 		}
 		[CRepr]
@@ -5898,12 +6122,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a84, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetVisibleData(uint hRow, uint hAccessor, void* pData) mut
+			{
+				return VT.GetVisibleData(&this, hRow, hAccessor, pData);
+			}
+			public HRESULT ResynchRows(uint cRows, uint* rghRows, uint* pcRowsResynched, uint** prghRowsResynched, uint32** prgRowStatus) mut
+			{
+				return VT.ResynchRows(&this, cRows, rghRows, pcRowsResynched, prghRowsResynched, prgRowStatus);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetResynch *self, uint hRow, uint hAccessor, void* pData) GetVisibleData;
-				public function HRESULT(IRowsetResynch *self, uint cRows, uint* rghRows, uint* pcRowsResynched, uint** prghRowsResynched, uint32** prgRowStatus) ResynchRows;
+				public new function HRESULT(IRowsetResynch *self, uint hRow, uint hAccessor, void* pData) GetVisibleData;
+				public new function HRESULT(IRowsetResynch *self, uint cRows, uint* rghRows, uint* pcRowsResynched, uint** prghRowsResynched, uint32** prgRowStatus) ResynchRows;
 			}
 		}
 		[CRepr]
@@ -5911,12 +6144,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a7e, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetApproximatePosition(uint hReserved, uint cbBookmark, uint8* pBookmark, uint* pulPosition, uint* pcRows) mut
+			{
+				return VT.GetApproximatePosition(&this, hReserved, cbBookmark, pBookmark, pulPosition, pcRows);
+			}
+			public HRESULT GetRowsAtRatio(uint hReserved1, uint hReserved2, uint ulNumerator, uint ulDenominator, int cRows, uint* pcRowsObtained, uint** prghRows) mut
+			{
+				return VT.GetRowsAtRatio(&this, hReserved1, hReserved2, ulNumerator, ulDenominator, cRows, pcRowsObtained, prghRows);
+			}
 			[CRepr]
 			public struct VTable : IRowsetLocate.VTable
 			{
-				public function HRESULT(IRowsetScroll *self, uint hReserved, uint cbBookmark, uint8* pBookmark, uint* pulPosition, uint* pcRows) GetApproximatePosition;
-				public function HRESULT(IRowsetScroll *self, uint hReserved1, uint hReserved2, uint ulNumerator, uint ulDenominator, int cRows, uint* pcRowsObtained, uint** prghRows) GetRowsAtRatio;
+				public new function HRESULT(IRowsetScroll *self, uint hReserved, uint cbBookmark, uint8* pBookmark, uint* pulPosition, uint* pcRows) GetApproximatePosition;
+				public new function HRESULT(IRowsetScroll *self, uint hReserved1, uint hReserved2, uint ulNumerator, uint ulDenominator, int cRows, uint* pcRowsObtained, uint** prghRows) GetRowsAtRatio;
 			}
 		}
 		[CRepr]
@@ -5924,12 +6166,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a93, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddRefChapter(uint hChapter, uint32* pcRefCount) mut
+			{
+				return VT.AddRefChapter(&this, hChapter, pcRefCount);
+			}
+			public HRESULT ReleaseChapter(uint hChapter, uint32* pcRefCount) mut
+			{
+				return VT.ReleaseChapter(&this, hChapter, pcRefCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IChapteredRowset *self, uint hChapter, uint32* pcRefCount) AddRefChapter;
-				public function HRESULT(IChapteredRowset *self, uint hChapter, uint32* pcRefCount) ReleaseChapter;
+				public new function HRESULT(IChapteredRowset *self, uint hChapter, uint32* pcRefCount) AddRefChapter;
+				public new function HRESULT(IChapteredRowset *self, uint hChapter, uint32* pcRefCount) ReleaseChapter;
 			}
 		}
 		[CRepr]
@@ -5937,11 +6188,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a9d, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT FindNextRow(uint hChapter, uint hAccessor, void* pFindValue, uint32 CompareOp, uint cbBookmark, uint8* pBookmark, int lRowsOffset, int cRows, uint* pcRowsObtained, uint** prghRows) mut
+			{
+				return VT.FindNextRow(&this, hChapter, hAccessor, pFindValue, CompareOp, cbBookmark, pBookmark, lRowsOffset, cRows, pcRowsObtained, prghRows);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetFind *self, uint hChapter, uint hAccessor, void* pFindValue, uint32 CompareOp, uint cbBookmark, uint8* pBookmark, int lRowsOffset, int cRows, uint* pcRowsObtained, uint** prghRows) FindNextRow;
+				public new function HRESULT(IRowsetFind *self, uint hChapter, uint hAccessor, void* pFindValue, uint32 CompareOp, uint cbBookmark, uint8* pBookmark, int lRowsOffset, int cRows, uint* pcRowsObtained, uint** prghRows) FindNextRow;
 			}
 		}
 		[CRepr]
@@ -5949,15 +6205,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a94, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ClearRowPosition() mut
+			{
+				return VT.ClearRowPosition(&this);
+			}
+			public HRESULT GetRowPosition(uint* phChapter, uint* phRow, uint32* pdwPositionFlags) mut
+			{
+				return VT.GetRowPosition(&this, phChapter, phRow, pdwPositionFlags);
+			}
+			public HRESULT GetRowset(Guid* riid, IUnknown** ppRowset) mut
+			{
+				return VT.GetRowset(&this, riid, ppRowset);
+			}
+			public HRESULT Initialize(IUnknown* pRowset) mut
+			{
+				return VT.Initialize(&this, pRowset);
+			}
+			public HRESULT SetRowPosition(uint hChapter, uint hRow, uint32 dwPositionFlags) mut
+			{
+				return VT.SetRowPosition(&this, hChapter, hRow, dwPositionFlags);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowPosition *self) ClearRowPosition;
-				public function HRESULT(IRowPosition *self, uint* phChapter, uint* phRow, uint32* pdwPositionFlags) GetRowPosition;
-				public function HRESULT(IRowPosition *self, Guid* riid, IUnknown** ppRowset) GetRowset;
-				public function HRESULT(IRowPosition *self, IUnknown* pRowset) Initialize;
-				public function HRESULT(IRowPosition *self, uint hChapter, uint hRow, uint32 dwPositionFlags) SetRowPosition;
+				public new function HRESULT(IRowPosition *self) ClearRowPosition;
+				public new function HRESULT(IRowPosition *self, uint* phChapter, uint* phRow, uint32* pdwPositionFlags) GetRowPosition;
+				public new function HRESULT(IRowPosition *self, Guid* riid, IUnknown** ppRowset) GetRowset;
+				public new function HRESULT(IRowPosition *self, IUnknown* pRowset) Initialize;
+				public new function HRESULT(IRowPosition *self, uint hChapter, uint hRow, uint32 dwPositionFlags) SetRowPosition;
 			}
 		}
 		[CRepr]
@@ -5965,11 +6242,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0997a571, 0x126e, 0x11d0, 0x9f, 0x8a, 0x00, 0xa0, 0xc9, 0xa0, 0x63, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnRowPositionChange(uint32 eReason, uint32 ePhase, BOOL fCantDeny) mut
+			{
+				return VT.OnRowPositionChange(&this, eReason, ePhase, fCantDeny);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowPositionChange *self, uint32 eReason, uint32 ePhase, BOOL fCantDeny) OnRowPositionChange;
+				public new function HRESULT(IRowPositionChange *self, uint32 eReason, uint32 ePhase, BOOL fCantDeny) OnRowPositionChange;
 			}
 		}
 		[CRepr]
@@ -5977,12 +6259,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a97, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSpecification(Guid* riid, IUnknown** ppObject) mut
+			{
+				return VT.GetSpecification(&this, riid, ppObject);
+			}
+			public HRESULT OpenViewRowset(IUnknown* pUnkOuter, Guid* riid, IUnknown** ppRowset) mut
+			{
+				return VT.OpenViewRowset(&this, pUnkOuter, riid, ppRowset);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IViewRowset *self, Guid* riid, IUnknown** ppObject) GetSpecification;
-				public function HRESULT(IViewRowset *self, IUnknown* pUnkOuter, Guid* riid, IUnknown** ppRowset) OpenViewRowset;
+				public new function HRESULT(IViewRowset *self, Guid* riid, IUnknown** ppObject) GetSpecification;
+				public new function HRESULT(IViewRowset *self, IUnknown* pUnkOuter, Guid* riid, IUnknown** ppRowset) OpenViewRowset;
 			}
 		}
 		[CRepr]
@@ -5990,12 +6281,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a98, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSpecification(Guid* riid, IUnknown** ppRowset) mut
+			{
+				return VT.GetSpecification(&this, riid, ppRowset);
+			}
+			public HRESULT OpenViewChapter(uint hSource, uint* phViewChapter) mut
+			{
+				return VT.OpenViewChapter(&this, hSource, phViewChapter);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IViewChapter *self, Guid* riid, IUnknown** ppRowset) GetSpecification;
-				public function HRESULT(IViewChapter *self, uint hSource, uint* phViewChapter) OpenViewChapter;
+				public new function HRESULT(IViewChapter *self, Guid* riid, IUnknown** ppRowset) GetSpecification;
+				public new function HRESULT(IViewChapter *self, uint hSource, uint* phViewChapter) OpenViewChapter;
 			}
 		}
 		[CRepr]
@@ -6003,12 +6303,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a9a, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSortOrder(uint* pcValues, uint** prgColumns, uint32** prgOrders) mut
+			{
+				return VT.GetSortOrder(&this, pcValues, prgColumns, prgOrders);
+			}
+			public HRESULT SetSortOrder(uint cValues, uint* rgColumns, uint32* rgOrders) mut
+			{
+				return VT.SetSortOrder(&this, cValues, rgColumns, rgOrders);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IViewSort *self, uint* pcValues, uint** prgColumns, uint32** prgOrders) GetSortOrder;
-				public function HRESULT(IViewSort *self, uint cValues, uint* rgColumns, uint32* rgOrders) SetSortOrder;
+				public new function HRESULT(IViewSort *self, uint* pcValues, uint** prgColumns, uint32** prgOrders) GetSortOrder;
+				public new function HRESULT(IViewSort *self, uint cValues, uint* rgColumns, uint32* rgOrders) SetSortOrder;
 			}
 		}
 		[CRepr]
@@ -6016,13 +6325,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a9b, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetFilter(uint hAccessor, uint* pcRows, uint32** pCompareOps, void* pCriteriaData) mut
+			{
+				return VT.GetFilter(&this, hAccessor, pcRows, pCompareOps, pCriteriaData);
+			}
+			public HRESULT GetFilterBindings(uint* pcBindings, DBBINDING** prgBindings) mut
+			{
+				return VT.GetFilterBindings(&this, pcBindings, prgBindings);
+			}
+			public HRESULT SetFilter(uint hAccessor, uint cRows, uint32* CompareOps, void* pCriteriaData) mut
+			{
+				return VT.SetFilter(&this, hAccessor, cRows, CompareOps, pCriteriaData);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IViewFilter *self, uint hAccessor, uint* pcRows, uint32** pCompareOps, void* pCriteriaData) GetFilter;
-				public function HRESULT(IViewFilter *self, uint* pcBindings, DBBINDING** prgBindings) GetFilterBindings;
-				public function HRESULT(IViewFilter *self, uint hAccessor, uint cRows, uint32* CompareOps, void* pCriteriaData) SetFilter;
+				public new function HRESULT(IViewFilter *self, uint hAccessor, uint* pcRows, uint32** pCompareOps, void* pCriteriaData) GetFilter;
+				public new function HRESULT(IViewFilter *self, uint* pcBindings, DBBINDING** prgBindings) GetFilterBindings;
+				public new function HRESULT(IViewFilter *self, uint hAccessor, uint cRows, uint32* CompareOps, void* pCriteriaData) SetFilter;
 			}
 		}
 		[CRepr]
@@ -6030,12 +6352,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a99, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateView(IUnknown* pUnkOuter, Guid* riid, IUnknown** ppView) mut
+			{
+				return VT.CreateView(&this, pUnkOuter, riid, ppView);
+			}
+			public HRESULT GetView(uint hChapter, Guid* riid, uint* phChapterSource, IUnknown** ppView) mut
+			{
+				return VT.GetView(&this, hChapter, riid, phChapterSource, ppView);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetView *self, IUnknown* pUnkOuter, Guid* riid, IUnknown** ppView) CreateView;
-				public function HRESULT(IRowsetView *self, uint hChapter, Guid* riid, uint* phChapterSource, IUnknown** ppView) GetView;
+				public new function HRESULT(IRowsetView *self, IUnknown* pUnkOuter, Guid* riid, IUnknown** ppView) CreateView;
+				public new function HRESULT(IRowsetView *self, uint hChapter, Guid* riid, uint* phChapterSource, IUnknown** ppView) GetView;
 			}
 		}
 		[CRepr]
@@ -6043,13 +6374,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a05, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT DeleteRows(uint hReserved, uint cRows, uint* rghRows, uint32* rgRowStatus) mut
+			{
+				return VT.DeleteRows(&this, hReserved, cRows, rghRows, rgRowStatus);
+			}
+			public HRESULT SetData(uint hRow, uint hAccessor, void* pData) mut
+			{
+				return VT.SetData(&this, hRow, hAccessor, pData);
+			}
+			public HRESULT InsertRow(uint hReserved, uint hAccessor, void* pData, uint* phRow) mut
+			{
+				return VT.InsertRow(&this, hReserved, hAccessor, pData, phRow);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetChange *self, uint hReserved, uint cRows, uint* rghRows, uint32* rgRowStatus) DeleteRows;
-				public function HRESULT(IRowsetChange *self, uint hRow, uint hAccessor, void* pData) SetData;
-				public function HRESULT(IRowsetChange *self, uint hReserved, uint hAccessor, void* pData, uint* phRow) InsertRow;
+				public new function HRESULT(IRowsetChange *self, uint hReserved, uint cRows, uint* rghRows, uint32* rgRowStatus) DeleteRows;
+				public new function HRESULT(IRowsetChange *self, uint hRow, uint hAccessor, void* pData) SetData;
+				public new function HRESULT(IRowsetChange *self, uint hReserved, uint hAccessor, void* pData, uint* phRow) InsertRow;
 			}
 		}
 		[CRepr]
@@ -6057,15 +6401,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a6d, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetOriginalData(uint hRow, uint hAccessor, void* pData) mut
+			{
+				return VT.GetOriginalData(&this, hRow, hAccessor, pData);
+			}
+			public HRESULT GetPendingRows(uint hReserved, uint32 dwRowStatus, uint* pcPendingRows, uint** prgPendingRows, uint32** prgPendingStatus) mut
+			{
+				return VT.GetPendingRows(&this, hReserved, dwRowStatus, pcPendingRows, prgPendingRows, prgPendingStatus);
+			}
+			public HRESULT GetRowStatus(uint hReserved, uint cRows, uint* rghRows, uint32* rgPendingStatus) mut
+			{
+				return VT.GetRowStatus(&this, hReserved, cRows, rghRows, rgPendingStatus);
+			}
+			public HRESULT Undo(uint hReserved, uint cRows, uint* rghRows, uint* pcRowsUndone, uint** prgRowsUndone, uint32** prgRowStatus) mut
+			{
+				return VT.Undo(&this, hReserved, cRows, rghRows, pcRowsUndone, prgRowsUndone, prgRowStatus);
+			}
+			public HRESULT Update(uint hReserved, uint cRows, uint* rghRows, uint* pcRows, uint** prgRows, uint32** prgRowStatus) mut
+			{
+				return VT.Update(&this, hReserved, cRows, rghRows, pcRows, prgRows, prgRowStatus);
+			}
 			[CRepr]
 			public struct VTable : IRowsetChange.VTable
 			{
-				public function HRESULT(IRowsetUpdate *self, uint hRow, uint hAccessor, void* pData) GetOriginalData;
-				public function HRESULT(IRowsetUpdate *self, uint hReserved, uint32 dwRowStatus, uint* pcPendingRows, uint** prgPendingRows, uint32** prgPendingStatus) GetPendingRows;
-				public function HRESULT(IRowsetUpdate *self, uint hReserved, uint cRows, uint* rghRows, uint32* rgPendingStatus) GetRowStatus;
-				public function HRESULT(IRowsetUpdate *self, uint hReserved, uint cRows, uint* rghRows, uint* pcRowsUndone, uint** prgRowsUndone, uint32** prgRowStatus) Undo;
-				public function HRESULT(IRowsetUpdate *self, uint hReserved, uint cRows, uint* rghRows, uint* pcRows, uint** prgRows, uint32** prgRowStatus) Update;
+				public new function HRESULT(IRowsetUpdate *self, uint hRow, uint hAccessor, void* pData) GetOriginalData;
+				public new function HRESULT(IRowsetUpdate *self, uint hReserved, uint32 dwRowStatus, uint* pcPendingRows, uint** prgPendingRows, uint32** prgPendingStatus) GetPendingRows;
+				public new function HRESULT(IRowsetUpdate *self, uint hReserved, uint cRows, uint* rghRows, uint32* rgPendingStatus) GetRowStatus;
+				public new function HRESULT(IRowsetUpdate *self, uint hReserved, uint cRows, uint* rghRows, uint* pcRowsUndone, uint** prgRowsUndone, uint32** prgRowStatus) Undo;
+				public new function HRESULT(IRowsetUpdate *self, uint hReserved, uint cRows, uint* rghRows, uint* pcRows, uint** prgRows, uint32** prgRowStatus) Update;
 			}
 		}
 		[CRepr]
@@ -6073,11 +6438,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a09, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT IsSameRow(uint hThisRow, uint hThatRow) mut
+			{
+				return VT.IsSameRow(&this, hThisRow, hThatRow);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetIdentity *self, uint hThisRow, uint hThatRow) IsSameRow;
+				public new function HRESULT(IRowsetIdentity *self, uint hThisRow, uint hThatRow) IsSameRow;
 			}
 		}
 		[CRepr]
@@ -6085,13 +6455,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a83, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnFieldChange(IRowset* pRowset, uint hRow, uint cColumns, uint* rgColumns, uint32 eReason, uint32 ePhase, BOOL fCantDeny) mut
+			{
+				return VT.OnFieldChange(&this, pRowset, hRow, cColumns, rgColumns, eReason, ePhase, fCantDeny);
+			}
+			public HRESULT OnRowChange(IRowset* pRowset, uint cRows, uint* rghRows, uint32 eReason, uint32 ePhase, BOOL fCantDeny) mut
+			{
+				return VT.OnRowChange(&this, pRowset, cRows, rghRows, eReason, ePhase, fCantDeny);
+			}
+			public HRESULT OnRowsetChange(IRowset* pRowset, uint32 eReason, uint32 ePhase, BOOL fCantDeny) mut
+			{
+				return VT.OnRowsetChange(&this, pRowset, eReason, ePhase, fCantDeny);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetNotify *self, IRowset* pRowset, uint hRow, uint cColumns, uint* rgColumns, uint32 eReason, uint32 ePhase, BOOL fCantDeny) OnFieldChange;
-				public function HRESULT(IRowsetNotify *self, IRowset* pRowset, uint cRows, uint* rghRows, uint32 eReason, uint32 ePhase, BOOL fCantDeny) OnRowChange;
-				public function HRESULT(IRowsetNotify *self, IRowset* pRowset, uint32 eReason, uint32 ePhase, BOOL fCantDeny) OnRowsetChange;
+				public new function HRESULT(IRowsetNotify *self, IRowset* pRowset, uint hRow, uint cColumns, uint* rgColumns, uint32 eReason, uint32 ePhase, BOOL fCantDeny) OnFieldChange;
+				public new function HRESULT(IRowsetNotify *self, IRowset* pRowset, uint cRows, uint* rghRows, uint32 eReason, uint32 ePhase, BOOL fCantDeny) OnRowChange;
+				public new function HRESULT(IRowsetNotify *self, IRowset* pRowset, uint32 eReason, uint32 ePhase, BOOL fCantDeny) OnRowsetChange;
 			}
 		}
 		[CRepr]
@@ -6099,13 +6482,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a82, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetIndexInfo(uint* pcKeyColumns, DBINDEXCOLUMNDESC** prgIndexColumnDesc, uint32* pcIndexPropertySets, DBPROPSET** prgIndexPropertySets) mut
+			{
+				return VT.GetIndexInfo(&this, pcKeyColumns, prgIndexColumnDesc, pcIndexPropertySets, prgIndexPropertySets);
+			}
+			public HRESULT Seek(uint hAccessor, uint cKeyValues, void* pData, uint32 dwSeekOptions) mut
+			{
+				return VT.Seek(&this, hAccessor, cKeyValues, pData, dwSeekOptions);
+			}
+			public HRESULT SetRange(uint hAccessor, uint cStartKeyColumns, void* pStartData, uint cEndKeyColumns, void* pEndData, uint32 dwRangeOptions) mut
+			{
+				return VT.SetRange(&this, hAccessor, cStartKeyColumns, pStartData, cEndKeyColumns, pEndData, dwRangeOptions);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetIndex *self, uint* pcKeyColumns, DBINDEXCOLUMNDESC** prgIndexColumnDesc, uint32* pcIndexPropertySets, DBPROPSET** prgIndexPropertySets) GetIndexInfo;
-				public function HRESULT(IRowsetIndex *self, uint hAccessor, uint cKeyValues, void* pData, uint32 dwSeekOptions) Seek;
-				public function HRESULT(IRowsetIndex *self, uint hAccessor, uint cStartKeyColumns, void* pStartData, uint cEndKeyColumns, void* pEndData, uint32 dwRangeOptions) SetRange;
+				public new function HRESULT(IRowsetIndex *self, uint* pcKeyColumns, DBINDEXCOLUMNDESC** prgIndexColumnDesc, uint32* pcIndexPropertySets, DBPROPSET** prgIndexPropertySets) GetIndexInfo;
+				public new function HRESULT(IRowsetIndex *self, uint hAccessor, uint cKeyValues, void* pData, uint32 dwSeekOptions) Seek;
+				public new function HRESULT(IRowsetIndex *self, uint hAccessor, uint cStartKeyColumns, void* pStartData, uint cEndKeyColumns, void* pEndData, uint32 dwRangeOptions) SetRange;
 			}
 		}
 		[CRepr]
@@ -6113,13 +6509,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a63, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Cancel() mut
+			{
+				return VT.Cancel(&this);
+			}
+			public HRESULT Execute(IUnknown* pUnkOuter, Guid* riid, DBPARAMS* pParams, int* pcRowsAffected, IUnknown** ppRowset) mut
+			{
+				return VT.Execute(&this, pUnkOuter, riid, pParams, pcRowsAffected, ppRowset);
+			}
+			public HRESULT GetDBSession(Guid* riid, IUnknown** ppSession) mut
+			{
+				return VT.GetDBSession(&this, riid, ppSession);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ICommand *self) Cancel;
-				public function HRESULT(ICommand *self, IUnknown* pUnkOuter, Guid* riid, DBPARAMS* pParams, int* pcRowsAffected, IUnknown** ppRowset) Execute;
-				public function HRESULT(ICommand *self, Guid* riid, IUnknown** ppSession) GetDBSession;
+				public new function HRESULT(ICommand *self) Cancel;
+				public new function HRESULT(ICommand *self, IUnknown* pUnkOuter, Guid* riid, DBPARAMS* pParams, int* pcRowsAffected, IUnknown** ppRowset) Execute;
+				public new function HRESULT(ICommand *self, Guid* riid, IUnknown** ppSession) GetDBSession;
 			}
 		}
 		[CRepr]
@@ -6127,11 +6536,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a90, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetResult(IUnknown* pUnkOuter, int lResultFlag, Guid* riid, int* pcRowsAffected, IUnknown** ppRowset) mut
+			{
+				return VT.GetResult(&this, pUnkOuter, lResultFlag, riid, pcRowsAffected, ppRowset);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IMultipleResults *self, IUnknown* pUnkOuter, int lResultFlag, Guid* riid, int* pcRowsAffected, IUnknown** ppRowset) GetResult;
+				public new function HRESULT(IMultipleResults *self, IUnknown* pUnkOuter, int lResultFlag, Guid* riid, int* pcRowsAffected, IUnknown** ppRowset) GetResult;
 			}
 		}
 		[CRepr]
@@ -6139,11 +6553,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a88, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CanConvert(uint16 wFromType, uint16 wToType, uint32 dwConvertFlags) mut
+			{
+				return VT.CanConvert(&this, wFromType, wToType, dwConvertFlags);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IConvertType *self, uint16 wFromType, uint16 wToType, uint32 dwConvertFlags) CanConvert;
+				public new function HRESULT(IConvertType *self, uint16 wFromType, uint16 wToType, uint32 dwConvertFlags) CanConvert;
 			}
 		}
 		[CRepr]
@@ -6151,12 +6570,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a26, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Prepare(uint32 cExpectedRuns) mut
+			{
+				return VT.Prepare(&this, cExpectedRuns);
+			}
+			public HRESULT Unprepare() mut
+			{
+				return VT.Unprepare(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ICommandPrepare *self, uint32 cExpectedRuns) Prepare;
-				public function HRESULT(ICommandPrepare *self) Unprepare;
+				public new function HRESULT(ICommandPrepare *self, uint32 cExpectedRuns) Prepare;
+				public new function HRESULT(ICommandPrepare *self) Unprepare;
 			}
 		}
 		[CRepr]
@@ -6164,12 +6592,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a79, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetProperties(uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertySets, DBPROPSET** prgPropertySets) mut
+			{
+				return VT.GetProperties(&this, cPropertyIDSets, rgPropertyIDSets, pcPropertySets, prgPropertySets);
+			}
+			public HRESULT SetProperties(uint32 cPropertySets, DBPROPSET* rgPropertySets) mut
+			{
+				return VT.SetProperties(&this, cPropertySets, rgPropertySets);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ICommandProperties *self, uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertySets, DBPROPSET** prgPropertySets) GetProperties;
-				public function HRESULT(ICommandProperties *self, uint32 cPropertySets, DBPROPSET* rgPropertySets) SetProperties;
+				public new function HRESULT(ICommandProperties *self, uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertySets, DBPROPSET** prgPropertySets) GetProperties;
+				public new function HRESULT(ICommandProperties *self, uint32 cPropertySets, DBPROPSET* rgPropertySets) SetProperties;
 			}
 		}
 		[CRepr]
@@ -6177,12 +6614,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a27, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCommandText(Guid* pguidDialect, PWSTR* ppwszCommand) mut
+			{
+				return VT.GetCommandText(&this, pguidDialect, ppwszCommand);
+			}
+			public HRESULT SetCommandText(Guid* rguidDialect, PWSTR pwszCommand) mut
+			{
+				return VT.SetCommandText(&this, rguidDialect, pwszCommand);
+			}
 			[CRepr]
 			public struct VTable : ICommand.VTable
 			{
-				public function HRESULT(ICommandText *self, Guid* pguidDialect, PWSTR* ppwszCommand) GetCommandText;
-				public function HRESULT(ICommandText *self, Guid* rguidDialect, PWSTR pwszCommand) SetCommandText;
+				public new function HRESULT(ICommandText *self, Guid* pguidDialect, PWSTR* ppwszCommand) GetCommandText;
+				public new function HRESULT(ICommandText *self, Guid* rguidDialect, PWSTR pwszCommand) SetCommandText;
 			}
 		}
 		[CRepr]
@@ -6190,13 +6636,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a64, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetParameterInfo(uint* pcParams, DBPARAMINFO** prgParamInfo, uint16** ppNamesBuffer) mut
+			{
+				return VT.GetParameterInfo(&this, pcParams, prgParamInfo, ppNamesBuffer);
+			}
+			public HRESULT MapParameterNames(uint cParamNames, PWSTR* rgParamNames, int* rgParamOrdinals) mut
+			{
+				return VT.MapParameterNames(&this, cParamNames, rgParamNames, rgParamOrdinals);
+			}
+			public HRESULT SetParameterInfo(uint cParams, uint* rgParamOrdinals, DBPARAMBINDINFO* rgParamBindInfo) mut
+			{
+				return VT.SetParameterInfo(&this, cParams, rgParamOrdinals, rgParamBindInfo);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ICommandWithParameters *self, uint* pcParams, DBPARAMINFO** prgParamInfo, uint16** ppNamesBuffer) GetParameterInfo;
-				public function HRESULT(ICommandWithParameters *self, uint cParamNames, PWSTR* rgParamNames, int* rgParamOrdinals) MapParameterNames;
-				public function HRESULT(ICommandWithParameters *self, uint cParams, uint* rgParamOrdinals, DBPARAMBINDINFO* rgParamBindInfo) SetParameterInfo;
+				public new function HRESULT(ICommandWithParameters *self, uint* pcParams, DBPARAMINFO** prgParamInfo, uint16** ppNamesBuffer) GetParameterInfo;
+				public new function HRESULT(ICommandWithParameters *self, uint cParamNames, PWSTR* rgParamNames, int* rgParamOrdinals) MapParameterNames;
+				public new function HRESULT(ICommandWithParameters *self, uint cParams, uint* rgParamOrdinals, DBPARAMBINDINFO* rgParamBindInfo) SetParameterInfo;
 			}
 		}
 		[CRepr]
@@ -6204,12 +6663,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a10, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetAvailableColumns(uint* pcOptColumns, DBID** prgOptColumns) mut
+			{
+				return VT.GetAvailableColumns(&this, pcOptColumns, prgOptColumns);
+			}
+			public HRESULT GetColumnsRowset(IUnknown* pUnkOuter, uint cOptColumns, DBID* rgOptColumns, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown** ppColRowset) mut
+			{
+				return VT.GetColumnsRowset(&this, pUnkOuter, cOptColumns, rgOptColumns, riid, cPropertySets, rgPropertySets, ppColRowset);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IColumnsRowset *self, uint* pcOptColumns, DBID** prgOptColumns) GetAvailableColumns;
-				public function HRESULT(IColumnsRowset *self, IUnknown* pUnkOuter, uint cOptColumns, DBID* rgOptColumns, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown** ppColRowset) GetColumnsRowset;
+				public new function HRESULT(IColumnsRowset *self, uint* pcOptColumns, DBID** prgOptColumns) GetAvailableColumns;
+				public new function HRESULT(IColumnsRowset *self, IUnknown* pUnkOuter, uint cOptColumns, DBID* rgOptColumns, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown** ppColRowset) GetColumnsRowset;
 			}
 		}
 		[CRepr]
@@ -6217,12 +6685,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a11, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetColumnInfo(uint* pcColumns, DBCOLUMNINFO** prgInfo, uint16** ppStringsBuffer) mut
+			{
+				return VT.GetColumnInfo(&this, pcColumns, prgInfo, ppStringsBuffer);
+			}
+			public HRESULT MapColumnIDs(uint cColumnIDs, DBID* rgColumnIDs, uint* rgColumns) mut
+			{
+				return VT.MapColumnIDs(&this, cColumnIDs, rgColumnIDs, rgColumns);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IColumnsInfo *self, uint* pcColumns, DBCOLUMNINFO** prgInfo, uint16** ppStringsBuffer) GetColumnInfo;
-				public function HRESULT(IColumnsInfo *self, uint cColumnIDs, DBID* rgColumnIDs, uint* rgColumns) MapColumnIDs;
+				public new function HRESULT(IColumnsInfo *self, uint* pcColumns, DBCOLUMNINFO** prgInfo, uint16** ppStringsBuffer) GetColumnInfo;
+				public new function HRESULT(IColumnsInfo *self, uint cColumnIDs, DBID* rgColumnIDs, uint* rgColumns) MapColumnIDs;
 			}
 		}
 		[CRepr]
@@ -6230,11 +6707,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a1d, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateCommand(IUnknown* pUnkOuter, Guid* riid, IUnknown** ppCommand) mut
+			{
+				return VT.CreateCommand(&this, pUnkOuter, riid, ppCommand);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDBCreateCommand *self, IUnknown* pUnkOuter, Guid* riid, IUnknown** ppCommand) CreateCommand;
+				public new function HRESULT(IDBCreateCommand *self, IUnknown* pUnkOuter, Guid* riid, IUnknown** ppCommand) CreateCommand;
 			}
 		}
 		[CRepr]
@@ -6242,11 +6724,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a5d, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateSession(IUnknown* pUnkOuter, Guid* riid, IUnknown** ppDBSession) mut
+			{
+				return VT.CreateSession(&this, pUnkOuter, riid, ppDBSession);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDBCreateSession *self, IUnknown* pUnkOuter, Guid* riid, IUnknown** ppDBSession) CreateSession;
+				public new function HRESULT(IDBCreateSession *self, IUnknown* pUnkOuter, Guid* riid, IUnknown** ppDBSession) CreateSession;
 			}
 		}
 		[CRepr]
@@ -6254,11 +6741,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a1e, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSourcesRowset(IUnknown* pUnkOuter, Guid* riid, uint32 cPropertySets, DBPROPSET* rgProperties, IUnknown** ppSourcesRowset) mut
+			{
+				return VT.GetSourcesRowset(&this, pUnkOuter, riid, cPropertySets, rgProperties, ppSourcesRowset);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISourcesRowset *self, IUnknown* pUnkOuter, Guid* riid, uint32 cPropertySets, DBPROPSET* rgProperties, IUnknown** ppSourcesRowset) GetSourcesRowset;
+				public new function HRESULT(ISourcesRowset *self, IUnknown* pUnkOuter, Guid* riid, uint32 cPropertySets, DBPROPSET* rgProperties, IUnknown** ppSourcesRowset) GetSourcesRowset;
 			}
 		}
 		[CRepr]
@@ -6266,13 +6758,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a8a, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetProperties(uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertySets, DBPROPSET** prgPropertySets) mut
+			{
+				return VT.GetProperties(&this, cPropertyIDSets, rgPropertyIDSets, pcPropertySets, prgPropertySets);
+			}
+			public HRESULT GetPropertyInfo(uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertyInfoSets, DBPROPINFOSET** prgPropertyInfoSets, uint16** ppDescBuffer) mut
+			{
+				return VT.GetPropertyInfo(&this, cPropertyIDSets, rgPropertyIDSets, pcPropertyInfoSets, prgPropertyInfoSets, ppDescBuffer);
+			}
+			public HRESULT SetProperties(uint32 cPropertySets, DBPROPSET* rgPropertySets) mut
+			{
+				return VT.SetProperties(&this, cPropertySets, rgPropertySets);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDBProperties *self, uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertySets, DBPROPSET** prgPropertySets) GetProperties;
-				public function HRESULT(IDBProperties *self, uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertyInfoSets, DBPROPINFOSET** prgPropertyInfoSets, uint16** ppDescBuffer) GetPropertyInfo;
-				public function HRESULT(IDBProperties *self, uint32 cPropertySets, DBPROPSET* rgPropertySets) SetProperties;
+				public new function HRESULT(IDBProperties *self, uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertySets, DBPROPSET** prgPropertySets) GetProperties;
+				public new function HRESULT(IDBProperties *self, uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertyInfoSets, DBPROPINFOSET** prgPropertyInfoSets, uint16** ppDescBuffer) GetPropertyInfo;
+				public new function HRESULT(IDBProperties *self, uint32 cPropertySets, DBPROPSET* rgPropertySets) SetProperties;
 			}
 		}
 		[CRepr]
@@ -6280,12 +6785,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a8b, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize() mut
+			{
+				return VT.Initialize(&this);
+			}
+			public HRESULT Uninitialize() mut
+			{
+				return VT.Uninitialize(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDBInitialize *self) Initialize;
-				public function HRESULT(IDBInitialize *self) Uninitialize;
+				public new function HRESULT(IDBInitialize *self) Initialize;
+				public new function HRESULT(IDBInitialize *self) Uninitialize;
 			}
 		}
 		[CRepr]
@@ -6293,12 +6807,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a89, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetKeywords(PWSTR* ppwszKeywords) mut
+			{
+				return VT.GetKeywords(&this, ppwszKeywords);
+			}
+			public HRESULT GetLiteralInfo(uint32 cLiterals, uint32* rgLiterals, uint32* pcLiteralInfo, DBLITERALINFO** prgLiteralInfo, uint16** ppCharBuffer) mut
+			{
+				return VT.GetLiteralInfo(&this, cLiterals, rgLiterals, pcLiteralInfo, prgLiteralInfo, ppCharBuffer);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDBInfo *self, PWSTR* ppwszKeywords) GetKeywords;
-				public function HRESULT(IDBInfo *self, uint32 cLiterals, uint32* rgLiterals, uint32* pcLiteralInfo, DBLITERALINFO** prgLiteralInfo, uint16** ppCharBuffer) GetLiteralInfo;
+				public new function HRESULT(IDBInfo *self, PWSTR* ppwszKeywords) GetKeywords;
+				public new function HRESULT(IDBInfo *self, uint32 cLiterals, uint32* rgLiterals, uint32* pcLiteralInfo, DBLITERALINFO** prgLiteralInfo, uint16** ppCharBuffer) GetLiteralInfo;
 			}
 		}
 		[CRepr]
@@ -6306,14 +6829,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a7a, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateDataSource(uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown* pUnkOuter, Guid* riid, IUnknown** ppDBSession) mut
+			{
+				return VT.CreateDataSource(&this, cPropertySets, rgPropertySets, pUnkOuter, riid, ppDBSession);
+			}
+			public HRESULT DestroyDataSource() mut
+			{
+				return VT.DestroyDataSource(&this);
+			}
+			public HRESULT GetCreationProperties(uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertyInfoSets, DBPROPINFOSET** prgPropertyInfoSets, uint16** ppDescBuffer) mut
+			{
+				return VT.GetCreationProperties(&this, cPropertyIDSets, rgPropertyIDSets, pcPropertyInfoSets, prgPropertyInfoSets, ppDescBuffer);
+			}
+			public HRESULT ModifyDataSource(uint32 cPropertySets, DBPROPSET* rgPropertySets) mut
+			{
+				return VT.ModifyDataSource(&this, cPropertySets, rgPropertySets);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDBDataSourceAdmin *self, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown* pUnkOuter, Guid* riid, IUnknown** ppDBSession) CreateDataSource;
-				public function HRESULT(IDBDataSourceAdmin *self) DestroyDataSource;
-				public function HRESULT(IDBDataSourceAdmin *self, uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertyInfoSets, DBPROPINFOSET** prgPropertyInfoSets, uint16** ppDescBuffer) GetCreationProperties;
-				public function HRESULT(IDBDataSourceAdmin *self, uint32 cPropertySets, DBPROPSET* rgPropertySets) ModifyDataSource;
+				public new function HRESULT(IDBDataSourceAdmin *self, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown* pUnkOuter, Guid* riid, IUnknown** ppDBSession) CreateDataSource;
+				public new function HRESULT(IDBDataSourceAdmin *self) DestroyDataSource;
+				public new function HRESULT(IDBDataSourceAdmin *self, uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertyInfoSets, DBPROPINFOSET** prgPropertyInfoSets, uint16** ppDescBuffer) GetCreationProperties;
+				public new function HRESULT(IDBDataSourceAdmin *self, uint32 cPropertySets, DBPROPSET* rgPropertySets) ModifyDataSource;
 			}
 		}
 		[CRepr]
@@ -6321,13 +6861,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a96, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnLowResource(uint dwReserved) mut
+			{
+				return VT.OnLowResource(&this, dwReserved);
+			}
+			public HRESULT OnProgress(uint hChapter, uint32 eOperation, uint ulProgress, uint ulProgressMax, uint32 eAsynchPhase, PWSTR pwszStatusText) mut
+			{
+				return VT.OnProgress(&this, hChapter, eOperation, ulProgress, ulProgressMax, eAsynchPhase, pwszStatusText);
+			}
+			public HRESULT OnStop(uint hChapter, uint32 eOperation, HRESULT hrStatus, PWSTR pwszStatusText) mut
+			{
+				return VT.OnStop(&this, hChapter, eOperation, hrStatus, pwszStatusText);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDBAsynchNotify *self, uint dwReserved) OnLowResource;
-				public function HRESULT(IDBAsynchNotify *self, uint hChapter, uint32 eOperation, uint ulProgress, uint ulProgressMax, uint32 eAsynchPhase, PWSTR pwszStatusText) OnProgress;
-				public function HRESULT(IDBAsynchNotify *self, uint hChapter, uint32 eOperation, HRESULT hrStatus, PWSTR pwszStatusText) OnStop;
+				public new function HRESULT(IDBAsynchNotify *self, uint dwReserved) OnLowResource;
+				public new function HRESULT(IDBAsynchNotify *self, uint hChapter, uint32 eOperation, uint ulProgress, uint ulProgressMax, uint32 eAsynchPhase, PWSTR pwszStatusText) OnProgress;
+				public new function HRESULT(IDBAsynchNotify *self, uint hChapter, uint32 eOperation, HRESULT hrStatus, PWSTR pwszStatusText) OnStop;
 			}
 		}
 		[CRepr]
@@ -6335,12 +6888,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a95, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Abort(uint hChapter, uint32 eOperation) mut
+			{
+				return VT.Abort(&this, hChapter, eOperation);
+			}
+			public HRESULT GetStatus(uint hChapter, uint32 eOperation, uint* pulProgress, uint* pulProgressMax, uint32* peAsynchPhase, PWSTR* ppwszStatusText) mut
+			{
+				return VT.GetStatus(&this, hChapter, eOperation, pulProgress, pulProgressMax, peAsynchPhase, ppwszStatusText);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDBAsynchStatus *self, uint hChapter, uint32 eOperation) Abort;
-				public function HRESULT(IDBAsynchStatus *self, uint hChapter, uint32 eOperation, uint* pulProgress, uint* pulProgressMax, uint32* peAsynchPhase, PWSTR* ppwszStatusText) GetStatus;
+				public new function HRESULT(IDBAsynchStatus *self, uint hChapter, uint32 eOperation) Abort;
+				public new function HRESULT(IDBAsynchStatus *self, uint hChapter, uint32 eOperation, uint* pulProgress, uint* pulProgressMax, uint32* peAsynchPhase, PWSTR* ppwszStatusText) GetStatus;
 			}
 		}
 		[CRepr]
@@ -6348,12 +6910,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a85, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetProperties(uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertySets, DBPROPSET** prgPropertySets) mut
+			{
+				return VT.GetProperties(&this, cPropertyIDSets, rgPropertyIDSets, pcPropertySets, prgPropertySets);
+			}
+			public HRESULT SetProperties(uint32 cPropertySets, DBPROPSET* rgPropertySets) mut
+			{
+				return VT.SetProperties(&this, cPropertySets, rgPropertySets);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISessionProperties *self, uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertySets, DBPROPSET** prgPropertySets) GetProperties;
-				public function HRESULT(ISessionProperties *self, uint32 cPropertySets, DBPROPSET* rgPropertySets) SetProperties;
+				public new function HRESULT(ISessionProperties *self, uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertySets, DBPROPSET** prgPropertySets) GetProperties;
+				public new function HRESULT(ISessionProperties *self, uint32 cPropertySets, DBPROPSET* rgPropertySets) SetProperties;
 			}
 		}
 		[CRepr]
@@ -6361,12 +6932,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a68, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateIndex(DBID* pTableID, DBID* pIndexID, uint cIndexColumnDescs, DBINDEXCOLUMNDESC* rgIndexColumnDescs, uint32 cPropertySets, DBPROPSET* rgPropertySets, DBID** ppIndexID) mut
+			{
+				return VT.CreateIndex(&this, pTableID, pIndexID, cIndexColumnDescs, rgIndexColumnDescs, cPropertySets, rgPropertySets, ppIndexID);
+			}
+			public HRESULT DropIndex(DBID* pTableID, DBID* pIndexID) mut
+			{
+				return VT.DropIndex(&this, pTableID, pIndexID);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IIndexDefinition *self, DBID* pTableID, DBID* pIndexID, uint cIndexColumnDescs, DBINDEXCOLUMNDESC* rgIndexColumnDescs, uint32 cPropertySets, DBPROPSET* rgPropertySets, DBID** ppIndexID) CreateIndex;
-				public function HRESULT(IIndexDefinition *self, DBID* pTableID, DBID* pIndexID) DropIndex;
+				public new function HRESULT(IIndexDefinition *self, DBID* pTableID, DBID* pIndexID, uint cIndexColumnDescs, DBINDEXCOLUMNDESC* rgIndexColumnDescs, uint32 cPropertySets, DBPROPSET* rgPropertySets, DBID** ppIndexID) CreateIndex;
+				public new function HRESULT(IIndexDefinition *self, DBID* pTableID, DBID* pIndexID) DropIndex;
 			}
 		}
 		[CRepr]
@@ -6374,14 +6954,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a86, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateTable(IUnknown* pUnkOuter, DBID* pTableID, uint cColumnDescs, DBCOLUMNDESC* rgColumnDescs, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, DBID** ppTableID, IUnknown** ppRowset) mut
+			{
+				return VT.CreateTable(&this, pUnkOuter, pTableID, cColumnDescs, rgColumnDescs, riid, cPropertySets, rgPropertySets, ppTableID, ppRowset);
+			}
+			public HRESULT DropTable(DBID* pTableID) mut
+			{
+				return VT.DropTable(&this, pTableID);
+			}
+			public HRESULT AddColumn(DBID* pTableID, DBCOLUMNDESC* pColumnDesc, DBID** ppColumnID) mut
+			{
+				return VT.AddColumn(&this, pTableID, pColumnDesc, ppColumnID);
+			}
+			public HRESULT DropColumn(DBID* pTableID, DBID* pColumnID) mut
+			{
+				return VT.DropColumn(&this, pTableID, pColumnID);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ITableDefinition *self, IUnknown* pUnkOuter, DBID* pTableID, uint cColumnDescs, DBCOLUMNDESC* rgColumnDescs, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, DBID** ppTableID, IUnknown** ppRowset) CreateTable;
-				public function HRESULT(ITableDefinition *self, DBID* pTableID) DropTable;
-				public function HRESULT(ITableDefinition *self, DBID* pTableID, DBCOLUMNDESC* pColumnDesc, DBID** ppColumnID) AddColumn;
-				public function HRESULT(ITableDefinition *self, DBID* pTableID, DBID* pColumnID) DropColumn;
+				public new function HRESULT(ITableDefinition *self, IUnknown* pUnkOuter, DBID* pTableID, uint cColumnDescs, DBCOLUMNDESC* rgColumnDescs, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, DBID** ppTableID, IUnknown** ppRowset) CreateTable;
+				public new function HRESULT(ITableDefinition *self, DBID* pTableID) DropTable;
+				public new function HRESULT(ITableDefinition *self, DBID* pTableID, DBCOLUMNDESC* pColumnDesc, DBID** ppColumnID) AddColumn;
+				public new function HRESULT(ITableDefinition *self, DBID* pTableID, DBID* pColumnID) DropColumn;
 			}
 		}
 		[CRepr]
@@ -6389,11 +6986,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a69, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OpenRowset(IUnknown* pUnkOuter, DBID* pTableID, DBID* pIndexID, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown** ppRowset) mut
+			{
+				return VT.OpenRowset(&this, pUnkOuter, pTableID, pIndexID, riid, cPropertySets, rgPropertySets, ppRowset);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IOpenRowset *self, IUnknown* pUnkOuter, DBID* pTableID, DBID* pIndexID, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown** ppRowset) OpenRowset;
+				public new function HRESULT(IOpenRowset *self, IUnknown* pUnkOuter, DBID* pTableID, DBID* pIndexID, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown** ppRowset) OpenRowset;
 			}
 		}
 		[CRepr]
@@ -6401,12 +7003,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a7b, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetRowset(IUnknown* pUnkOuter, Guid* rguidSchema, uint32 cRestrictions, VARIANT* rgRestrictions, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown** ppRowset) mut
+			{
+				return VT.GetRowset(&this, pUnkOuter, rguidSchema, cRestrictions, rgRestrictions, riid, cPropertySets, rgPropertySets, ppRowset);
+			}
+			public HRESULT GetSchemas(uint32* pcSchemas, Guid** prgSchemas, uint32** prgRestrictionSupport) mut
+			{
+				return VT.GetSchemas(&this, pcSchemas, prgSchemas, prgRestrictionSupport);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDBSchemaRowset *self, IUnknown* pUnkOuter, Guid* rguidSchema, uint32 cRestrictions, VARIANT* rgRestrictions, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown** ppRowset) GetRowset;
-				public function HRESULT(IDBSchemaRowset *self, uint32* pcSchemas, Guid** prgSchemas, uint32** prgRestrictionSupport) GetSchemas;
+				public new function HRESULT(IDBSchemaRowset *self, IUnknown* pUnkOuter, Guid* rguidSchema, uint32 cRestrictions, VARIANT* rgRestrictions, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown** ppRowset) GetRowset;
+				public new function HRESULT(IDBSchemaRowset *self, uint32* pcSchemas, Guid** prgSchemas, uint32** prgRestrictionSupport) GetSchemas;
 			}
 		}
 		[CRepr]
@@ -6414,15 +7025,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa07cccd1, 0x8148, 0x11d0, 0x87, 0xbb, 0x00, 0xc0, 0x4f, 0xc3, 0x39, 0x42);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT FreeAxisInfo(uint cAxes, MDAXISINFO* rgAxisInfo) mut
+			{
+				return VT.FreeAxisInfo(&this, cAxes, rgAxisInfo);
+			}
+			public HRESULT GetAxisInfo(uint* pcAxes, MDAXISINFO** prgAxisInfo) mut
+			{
+				return VT.GetAxisInfo(&this, pcAxes, prgAxisInfo);
+			}
+			public HRESULT GetAxisRowset(IUnknown* pUnkOuter, uint iAxis, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown** ppRowset) mut
+			{
+				return VT.GetAxisRowset(&this, pUnkOuter, iAxis, riid, cPropertySets, rgPropertySets, ppRowset);
+			}
+			public HRESULT GetCellData(uint hAccessor, uint ulStartCell, uint ulEndCell, void* pData) mut
+			{
+				return VT.GetCellData(&this, hAccessor, ulStartCell, ulEndCell, pData);
+			}
+			public HRESULT GetSpecification(Guid* riid, IUnknown** ppSpecification) mut
+			{
+				return VT.GetSpecification(&this, riid, ppSpecification);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IMDDataset *self, uint cAxes, MDAXISINFO* rgAxisInfo) FreeAxisInfo;
-				public function HRESULT(IMDDataset *self, uint* pcAxes, MDAXISINFO** prgAxisInfo) GetAxisInfo;
-				public function HRESULT(IMDDataset *self, IUnknown* pUnkOuter, uint iAxis, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown** ppRowset) GetAxisRowset;
-				public function HRESULT(IMDDataset *self, uint hAccessor, uint ulStartCell, uint ulEndCell, void* pData) GetCellData;
-				public function HRESULT(IMDDataset *self, Guid* riid, IUnknown** ppSpecification) GetSpecification;
+				public new function HRESULT(IMDDataset *self, uint cAxes, MDAXISINFO* rgAxisInfo) FreeAxisInfo;
+				public new function HRESULT(IMDDataset *self, uint* pcAxes, MDAXISINFO** prgAxisInfo) GetAxisInfo;
+				public new function HRESULT(IMDDataset *self, IUnknown* pUnkOuter, uint iAxis, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown** ppRowset) GetAxisRowset;
+				public new function HRESULT(IMDDataset *self, uint hAccessor, uint ulStartCell, uint ulEndCell, void* pData) GetCellData;
+				public new function HRESULT(IMDDataset *self, Guid* riid, IUnknown** ppSpecification) GetSpecification;
 			}
 		}
 		[CRepr]
@@ -6430,12 +7062,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa07cccd2, 0x8148, 0x11d0, 0x87, 0xbb, 0x00, 0xc0, 0x4f, 0xc3, 0x39, 0x42);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT FindCell(uint ulStartingOrdinal, uint cMembers, PWSTR* rgpwszMember, uint* pulCellOrdinal) mut
+			{
+				return VT.FindCell(&this, ulStartingOrdinal, cMembers, rgpwszMember, pulCellOrdinal);
+			}
+			public HRESULT FindTuple(uint32 ulAxisIdentifier, uint ulStartingOrdinal, uint cMembers, PWSTR* rgpwszMember, uint32* pulTupleOrdinal) mut
+			{
+				return VT.FindTuple(&this, ulAxisIdentifier, ulStartingOrdinal, cMembers, rgpwszMember, pulTupleOrdinal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IMDFind *self, uint ulStartingOrdinal, uint cMembers, PWSTR* rgpwszMember, uint* pulCellOrdinal) FindCell;
-				public function HRESULT(IMDFind *self, uint32 ulAxisIdentifier, uint ulStartingOrdinal, uint cMembers, PWSTR* rgpwszMember, uint32* pulTupleOrdinal) FindTuple;
+				public new function HRESULT(IMDFind *self, uint ulStartingOrdinal, uint cMembers, PWSTR* rgpwszMember, uint* pulCellOrdinal) FindCell;
+				public new function HRESULT(IMDFind *self, uint32 ulAxisIdentifier, uint ulStartingOrdinal, uint cMembers, PWSTR* rgpwszMember, uint32* pulTupleOrdinal) FindTuple;
 			}
 		}
 		[CRepr]
@@ -6443,11 +7084,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733aa0, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetRangeRowset(IUnknown* pUnkOuter, uint ulStartCell, uint ulEndCell, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown** ppRowset) mut
+			{
+				return VT.GetRangeRowset(&this, pUnkOuter, ulStartCell, ulEndCell, riid, cPropertySets, rgPropertySets, ppRowset);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IMDRangeRowset *self, IUnknown* pUnkOuter, uint ulStartCell, uint ulEndCell, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown** ppRowset) GetRangeRowset;
+				public new function HRESULT(IMDRangeRowset *self, IUnknown* pUnkOuter, uint ulStartCell, uint ulEndCell, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown** ppRowset) GetRangeRowset;
 			}
 		}
 		[CRepr]
@@ -6455,12 +7101,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733aa5, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AlterColumn(DBID* pTableId, DBID* pColumnId, uint32 dwColumnDescFlags, DBCOLUMNDESC* pColumnDesc) mut
+			{
+				return VT.AlterColumn(&this, pTableId, pColumnId, dwColumnDescFlags, pColumnDesc);
+			}
+			public HRESULT AlterTable(DBID* pTableId, DBID* pNewTableId, uint32 cPropertySets, DBPROPSET* rgPropertySets) mut
+			{
+				return VT.AlterTable(&this, pTableId, pNewTableId, cPropertySets, rgPropertySets);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAlterTable *self, DBID* pTableId, DBID* pColumnId, uint32 dwColumnDescFlags, DBCOLUMNDESC* pColumnDesc) AlterColumn;
-				public function HRESULT(IAlterTable *self, DBID* pTableId, DBID* pNewTableId, uint32 cPropertySets, DBPROPSET* rgPropertySets) AlterTable;
+				public new function HRESULT(IAlterTable *self, DBID* pTableId, DBID* pColumnId, uint32 dwColumnDescFlags, DBCOLUMNDESC* pColumnDesc) AlterColumn;
+				public new function HRESULT(IAlterTable *self, DBID* pTableId, DBID* pNewTableId, uint32 cPropertySets, DBPROPSET* rgPropertySets) AlterTable;
 			}
 		}
 		[CRepr]
@@ -6468,11 +7123,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733aa6, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AlterIndex(DBID* pTableId, DBID* pIndexId, DBID* pNewIndexId, uint32 cPropertySets, DBPROPSET* rgPropertySets) mut
+			{
+				return VT.AlterIndex(&this, pTableId, pIndexId, pNewIndexId, cPropertySets, rgPropertySets);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAlterIndex *self, DBID* pTableId, DBID* pIndexId, DBID* pNewIndexId, uint32 cPropertySets, DBPROPSET* rgPropertySets) AlterIndex;
+				public new function HRESULT(IAlterIndex *self, DBID* pTableId, DBID* pIndexId, DBID* pNewIndexId, uint32 cPropertySets, DBPROPSET* rgPropertySets) AlterIndex;
 			}
 		}
 		[CRepr]
@@ -6480,11 +7140,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733aa8, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT IsRowInChapter(uint hChapter, uint hRow) mut
+			{
+				return VT.IsRowInChapter(&this, hChapter, hRow);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetChapterMember *self, uint hChapter, uint hRow) IsRowInChapter;
+				public new function HRESULT(IRowsetChapterMember *self, uint hChapter, uint hRow) IsRowInChapter;
 			}
 		}
 		[CRepr]
@@ -6492,14 +7157,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733aa7, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT DeleteCommand(DBID* pCommandID) mut
+			{
+				return VT.DeleteCommand(&this, pCommandID);
+			}
+			public HRESULT GetCurrentCommand(DBID** ppCommandID) mut
+			{
+				return VT.GetCurrentCommand(&this, ppCommandID);
+			}
+			public HRESULT LoadCommand(DBID* pCommandID, uint32 dwFlags) mut
+			{
+				return VT.LoadCommand(&this, pCommandID, dwFlags);
+			}
+			public HRESULT SaveCommand(DBID* pCommandID, uint32 dwFlags) mut
+			{
+				return VT.SaveCommand(&this, pCommandID, dwFlags);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ICommandPersist *self, DBID* pCommandID) DeleteCommand;
-				public function HRESULT(ICommandPersist *self, DBID** ppCommandID) GetCurrentCommand;
-				public function HRESULT(ICommandPersist *self, DBID* pCommandID, uint32 dwFlags) LoadCommand;
-				public function HRESULT(ICommandPersist *self, DBID* pCommandID, uint32 dwFlags) SaveCommand;
+				public new function HRESULT(ICommandPersist *self, DBID* pCommandID) DeleteCommand;
+				public new function HRESULT(ICommandPersist *self, DBID** ppCommandID) GetCurrentCommand;
+				public new function HRESULT(ICommandPersist *self, DBID* pCommandID, uint32 dwFlags) LoadCommand;
+				public new function HRESULT(ICommandPersist *self, DBID* pCommandID, uint32 dwFlags) SaveCommand;
 			}
 		}
 		[CRepr]
@@ -6507,12 +7189,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733aa9, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RefreshVisibleData(uint hChapter, uint cRows, uint* rghRows, BOOL fOverWrite, uint* pcRowsRefreshed, uint** prghRowsRefreshed, uint32** prgRowStatus) mut
+			{
+				return VT.RefreshVisibleData(&this, hChapter, cRows, rghRows, fOverWrite, pcRowsRefreshed, prghRowsRefreshed, prgRowStatus);
+			}
+			public HRESULT GetLastVisibleData(uint hRow, uint hAccessor, void* pData) mut
+			{
+				return VT.GetLastVisibleData(&this, hRow, hAccessor, pData);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetRefresh *self, uint hChapter, uint cRows, uint* rghRows, BOOL fOverWrite, uint* pcRowsRefreshed, uint** prghRowsRefreshed, uint32** prgRowStatus) RefreshVisibleData;
-				public function HRESULT(IRowsetRefresh *self, uint hRow, uint hAccessor, void* pData) GetLastVisibleData;
+				public new function HRESULT(IRowsetRefresh *self, uint hChapter, uint cRows, uint* rghRows, BOOL fOverWrite, uint* pcRowsRefreshed, uint** prghRowsRefreshed, uint32** prgRowStatus) RefreshVisibleData;
+				public new function HRESULT(IRowsetRefresh *self, uint hRow, uint hAccessor, void* pData) GetLastVisibleData;
 			}
 		}
 		[CRepr]
@@ -6520,11 +7211,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733aaa, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetChildRowset(IUnknown* pUnkOuter, uint iOrdinal, Guid* riid, IUnknown** ppRowset) mut
+			{
+				return VT.GetChildRowset(&this, pUnkOuter, iOrdinal, riid, ppRowset);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IParentRowset *self, IUnknown* pUnkOuter, uint iOrdinal, Guid* riid, IUnknown** ppRowset) GetChildRowset;
+				public new function HRESULT(IParentRowset *self, IUnknown* pUnkOuter, uint iOrdinal, Guid* riid, IUnknown** ppRowset) GetChildRowset;
 			}
 		}
 		[CRepr]
@@ -6532,16 +7228,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a67, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddErrorRecord(ERRORINFO* pErrorInfo, uint32 dwLookupID, DISPPARAMS* pdispparams, IUnknown* punkCustomError, uint32 dwDynamicErrorID) mut
+			{
+				return VT.AddErrorRecord(&this, pErrorInfo, dwLookupID, pdispparams, punkCustomError, dwDynamicErrorID);
+			}
+			public HRESULT GetBasicErrorInfo(uint32 ulRecordNum, ERRORINFO* pErrorInfo) mut
+			{
+				return VT.GetBasicErrorInfo(&this, ulRecordNum, pErrorInfo);
+			}
+			public HRESULT GetCustomErrorObject(uint32 ulRecordNum, Guid* riid, IUnknown** ppObject) mut
+			{
+				return VT.GetCustomErrorObject(&this, ulRecordNum, riid, ppObject);
+			}
+			public HRESULT GetErrorInfo(uint32 ulRecordNum, uint32 lcid, IErrorInfo** ppErrorInfo) mut
+			{
+				return VT.GetErrorInfo(&this, ulRecordNum, lcid, ppErrorInfo);
+			}
+			public HRESULT GetErrorParameters(uint32 ulRecordNum, DISPPARAMS* pdispparams) mut
+			{
+				return VT.GetErrorParameters(&this, ulRecordNum, pdispparams);
+			}
+			public HRESULT GetRecordCount(uint32* pcRecords) mut
+			{
+				return VT.GetRecordCount(&this, pcRecords);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IErrorRecords *self, ERRORINFO* pErrorInfo, uint32 dwLookupID, DISPPARAMS* pdispparams, IUnknown* punkCustomError, uint32 dwDynamicErrorID) AddErrorRecord;
-				public function HRESULT(IErrorRecords *self, uint32 ulRecordNum, ERRORINFO* pErrorInfo) GetBasicErrorInfo;
-				public function HRESULT(IErrorRecords *self, uint32 ulRecordNum, Guid* riid, IUnknown** ppObject) GetCustomErrorObject;
-				public function HRESULT(IErrorRecords *self, uint32 ulRecordNum, uint32 lcid, IErrorInfo** ppErrorInfo) GetErrorInfo;
-				public function HRESULT(IErrorRecords *self, uint32 ulRecordNum, DISPPARAMS* pdispparams) GetErrorParameters;
-				public function HRESULT(IErrorRecords *self, uint32* pcRecords) GetRecordCount;
+				public new function HRESULT(IErrorRecords *self, ERRORINFO* pErrorInfo, uint32 dwLookupID, DISPPARAMS* pdispparams, IUnknown* punkCustomError, uint32 dwDynamicErrorID) AddErrorRecord;
+				public new function HRESULT(IErrorRecords *self, uint32 ulRecordNum, ERRORINFO* pErrorInfo) GetBasicErrorInfo;
+				public new function HRESULT(IErrorRecords *self, uint32 ulRecordNum, Guid* riid, IUnknown** ppObject) GetCustomErrorObject;
+				public new function HRESULT(IErrorRecords *self, uint32 ulRecordNum, uint32 lcid, IErrorInfo** ppErrorInfo) GetErrorInfo;
+				public new function HRESULT(IErrorRecords *self, uint32 ulRecordNum, DISPPARAMS* pdispparams) GetErrorParameters;
+				public new function HRESULT(IErrorRecords *self, uint32* pcRecords) GetRecordCount;
 			}
 		}
 		[CRepr]
@@ -6549,13 +7270,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a66, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetErrorDescription(HRESULT hrError, uint32 dwLookupID, DISPPARAMS* pdispparams, uint32 lcid, BSTR* pbstrSource, BSTR* pbstrDescription) mut
+			{
+				return VT.GetErrorDescription(&this, hrError, dwLookupID, pdispparams, lcid, pbstrSource, pbstrDescription);
+			}
+			public HRESULT GetHelpInfo(HRESULT hrError, uint32 dwLookupID, uint32 lcid, BSTR* pbstrHelpFile, uint32* pdwHelpContext) mut
+			{
+				return VT.GetHelpInfo(&this, hrError, dwLookupID, lcid, pbstrHelpFile, pdwHelpContext);
+			}
+			public HRESULT ReleaseErrors(uint32 dwDynamicErrorID) mut
+			{
+				return VT.ReleaseErrors(&this, dwDynamicErrorID);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IErrorLookup *self, HRESULT hrError, uint32 dwLookupID, DISPPARAMS* pdispparams, uint32 lcid, BSTR* pbstrSource, BSTR* pbstrDescription) GetErrorDescription;
-				public function HRESULT(IErrorLookup *self, HRESULT hrError, uint32 dwLookupID, uint32 lcid, BSTR* pbstrHelpFile, uint32* pdwHelpContext) GetHelpInfo;
-				public function HRESULT(IErrorLookup *self, uint32 dwDynamicErrorID) ReleaseErrors;
+				public new function HRESULT(IErrorLookup *self, HRESULT hrError, uint32 dwLookupID, DISPPARAMS* pdispparams, uint32 lcid, BSTR* pbstrSource, BSTR* pbstrDescription) GetErrorDescription;
+				public new function HRESULT(IErrorLookup *self, HRESULT hrError, uint32 dwLookupID, uint32 lcid, BSTR* pbstrHelpFile, uint32* pdwHelpContext) GetHelpInfo;
+				public new function HRESULT(IErrorLookup *self, uint32 dwDynamicErrorID) ReleaseErrors;
 			}
 		}
 		[CRepr]
@@ -6563,11 +7297,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a74, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSQLInfo(BSTR* pbstrSQLState, int32* plNativeError) mut
+			{
+				return VT.GetSQLInfo(&this, pbstrSQLState, plNativeError);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISQLErrorInfo *self, BSTR* pbstrSQLState, int32* plNativeError) GetSQLInfo;
+				public new function HRESULT(ISQLErrorInfo *self, BSTR* pbstrSQLState, int32* plNativeError) GetSQLInfo;
 			}
 		}
 		[CRepr]
@@ -6575,11 +7314,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a75, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDataSource(Guid* riid, IUnknown** ppDataSource) mut
+			{
+				return VT.GetDataSource(&this, riid, ppDataSource);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IGetDataSource *self, Guid* riid, IUnknown** ppDataSource) GetDataSource;
+				public new function HRESULT(IGetDataSource *self, Guid* riid, IUnknown** ppDataSource) GetDataSource;
 			}
 		}
 		[CRepr]
@@ -6587,12 +7331,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a5f, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetOptionsObject(ITransactionOptions** ppOptions) mut
+			{
+				return VT.GetOptionsObject(&this, ppOptions);
+			}
+			public HRESULT StartTransaction(int32 isoLevel, uint32 isoFlags, ITransactionOptions* pOtherOptions, uint32* pulTransactionLevel) mut
+			{
+				return VT.StartTransaction(&this, isoLevel, isoFlags, pOtherOptions, pulTransactionLevel);
+			}
 			[CRepr]
 			public struct VTable : ITransaction.VTable
 			{
-				public function HRESULT(ITransactionLocal *self, ITransactionOptions** ppOptions) GetOptionsObject;
-				public function HRESULT(ITransactionLocal *self, int32 isoLevel, uint32 isoFlags, ITransactionOptions* pOtherOptions, uint32* pulTransactionLevel) StartTransaction;
+				public new function HRESULT(ITransactionLocal *self, ITransactionOptions** ppOptions) GetOptionsObject;
+				public new function HRESULT(ITransactionLocal *self, int32 isoLevel, uint32 isoFlags, ITransactionOptions* pOtherOptions, uint32* pulTransactionLevel) StartTransaction;
 			}
 		}
 		[CRepr]
@@ -6600,12 +7353,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a5e, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetOptionsObject(ITransactionOptions** ppOptions) mut
+			{
+				return VT.GetOptionsObject(&this, ppOptions);
+			}
+			public HRESULT JoinTransaction(IUnknown* punkTransactionCoord, int32 isoLevel, uint32 isoFlags, ITransactionOptions* pOtherOptions) mut
+			{
+				return VT.JoinTransaction(&this, punkTransactionCoord, isoLevel, isoFlags, pOtherOptions);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ITransactionJoin *self, ITransactionOptions** ppOptions) GetOptionsObject;
-				public function HRESULT(ITransactionJoin *self, IUnknown* punkTransactionCoord, int32 isoLevel, uint32 isoFlags, ITransactionOptions* pOtherOptions) JoinTransaction;
+				public new function HRESULT(ITransactionJoin *self, ITransactionOptions** ppOptions) GetOptionsObject;
+				public new function HRESULT(ITransactionJoin *self, IUnknown* punkTransactionCoord, int32 isoLevel, uint32 isoFlags, ITransactionOptions* pOtherOptions) JoinTransaction;
 			}
 		}
 		[CRepr]
@@ -6613,11 +7375,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a60, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetTransactionObject(uint32 ulTransactionLevel, ITransaction** ppTransactionObject) mut
+			{
+				return VT.GetTransactionObject(&this, ulTransactionLevel, ppTransactionObject);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ITransactionObject *self, uint32 ulTransactionLevel, ITransaction** ppTransactionObject) GetTransactionObject;
+				public new function HRESULT(ITransactionObject *self, uint32 ulTransactionLevel, ITransaction** ppTransactionObject) GetTransactionObject;
 			}
 		}
 		[CRepr]
@@ -6625,15 +7392,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733aa1, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CompareTrustees(TRUSTEE_W* pTrustee1, TRUSTEE_W* pTrustee2) mut
+			{
+				return VT.CompareTrustees(&this, pTrustee1, pTrustee2);
+			}
+			public HRESULT CreateTrustee(TRUSTEE_W* pTrustee, uint32 cPropertySets, DBPROPSET* rgPropertySets) mut
+			{
+				return VT.CreateTrustee(&this, pTrustee, cPropertySets, rgPropertySets);
+			}
+			public HRESULT DeleteTrustee(TRUSTEE_W* pTrustee) mut
+			{
+				return VT.DeleteTrustee(&this, pTrustee);
+			}
+			public HRESULT SetTrusteeProperties(TRUSTEE_W* pTrustee, uint32 cPropertySets, DBPROPSET* rgPropertySets) mut
+			{
+				return VT.SetTrusteeProperties(&this, pTrustee, cPropertySets, rgPropertySets);
+			}
+			public HRESULT GetTrusteeProperties(TRUSTEE_W* pTrustee, uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertySets, DBPROPSET** prgPropertySets) mut
+			{
+				return VT.GetTrusteeProperties(&this, pTrustee, cPropertyIDSets, rgPropertyIDSets, pcPropertySets, prgPropertySets);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ITrusteeAdmin *self, TRUSTEE_W* pTrustee1, TRUSTEE_W* pTrustee2) CompareTrustees;
-				public function HRESULT(ITrusteeAdmin *self, TRUSTEE_W* pTrustee, uint32 cPropertySets, DBPROPSET* rgPropertySets) CreateTrustee;
-				public function HRESULT(ITrusteeAdmin *self, TRUSTEE_W* pTrustee) DeleteTrustee;
-				public function HRESULT(ITrusteeAdmin *self, TRUSTEE_W* pTrustee, uint32 cPropertySets, DBPROPSET* rgPropertySets) SetTrusteeProperties;
-				public function HRESULT(ITrusteeAdmin *self, TRUSTEE_W* pTrustee, uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertySets, DBPROPSET** prgPropertySets) GetTrusteeProperties;
+				public new function HRESULT(ITrusteeAdmin *self, TRUSTEE_W* pTrustee1, TRUSTEE_W* pTrustee2) CompareTrustees;
+				public new function HRESULT(ITrusteeAdmin *self, TRUSTEE_W* pTrustee, uint32 cPropertySets, DBPROPSET* rgPropertySets) CreateTrustee;
+				public new function HRESULT(ITrusteeAdmin *self, TRUSTEE_W* pTrustee) DeleteTrustee;
+				public new function HRESULT(ITrusteeAdmin *self, TRUSTEE_W* pTrustee, uint32 cPropertySets, DBPROPSET* rgPropertySets) SetTrusteeProperties;
+				public new function HRESULT(ITrusteeAdmin *self, TRUSTEE_W* pTrustee, uint32 cPropertyIDSets, DBPROPIDSET* rgPropertyIDSets, uint32* pcPropertySets, DBPROPSET** prgPropertySets) GetTrusteeProperties;
 			}
 		}
 		[CRepr]
@@ -6641,15 +7429,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733aa2, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddMember(TRUSTEE_W* pMembershipTrustee, TRUSTEE_W* pMemberTrustee) mut
+			{
+				return VT.AddMember(&this, pMembershipTrustee, pMemberTrustee);
+			}
+			public HRESULT DeleteMember(TRUSTEE_W* pMembershipTrustee, TRUSTEE_W* pMemberTrustee) mut
+			{
+				return VT.DeleteMember(&this, pMembershipTrustee, pMemberTrustee);
+			}
+			public HRESULT IsMember(TRUSTEE_W* pMembershipTrustee, TRUSTEE_W* pMemberTrustee, BOOL* pfStatus) mut
+			{
+				return VT.IsMember(&this, pMembershipTrustee, pMemberTrustee, pfStatus);
+			}
+			public HRESULT GetMembers(TRUSTEE_W* pMembershipTrustee, uint32* pcMembers, TRUSTEE_W** prgMembers) mut
+			{
+				return VT.GetMembers(&this, pMembershipTrustee, pcMembers, prgMembers);
+			}
+			public HRESULT GetMemberships(TRUSTEE_W* pTrustee, uint32* pcMemberships, TRUSTEE_W** prgMemberships) mut
+			{
+				return VT.GetMemberships(&this, pTrustee, pcMemberships, prgMemberships);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ITrusteeGroupAdmin *self, TRUSTEE_W* pMembershipTrustee, TRUSTEE_W* pMemberTrustee) AddMember;
-				public function HRESULT(ITrusteeGroupAdmin *self, TRUSTEE_W* pMembershipTrustee, TRUSTEE_W* pMemberTrustee) DeleteMember;
-				public function HRESULT(ITrusteeGroupAdmin *self, TRUSTEE_W* pMembershipTrustee, TRUSTEE_W* pMemberTrustee, BOOL* pfStatus) IsMember;
-				public function HRESULT(ITrusteeGroupAdmin *self, TRUSTEE_W* pMembershipTrustee, uint32* pcMembers, TRUSTEE_W** prgMembers) GetMembers;
-				public function HRESULT(ITrusteeGroupAdmin *self, TRUSTEE_W* pTrustee, uint32* pcMemberships, TRUSTEE_W** prgMemberships) GetMemberships;
+				public new function HRESULT(ITrusteeGroupAdmin *self, TRUSTEE_W* pMembershipTrustee, TRUSTEE_W* pMemberTrustee) AddMember;
+				public new function HRESULT(ITrusteeGroupAdmin *self, TRUSTEE_W* pMembershipTrustee, TRUSTEE_W* pMemberTrustee) DeleteMember;
+				public new function HRESULT(ITrusteeGroupAdmin *self, TRUSTEE_W* pMembershipTrustee, TRUSTEE_W* pMemberTrustee, BOOL* pfStatus) IsMember;
+				public new function HRESULT(ITrusteeGroupAdmin *self, TRUSTEE_W* pMembershipTrustee, uint32* pcMembers, TRUSTEE_W** prgMembers) GetMembers;
+				public new function HRESULT(ITrusteeGroupAdmin *self, TRUSTEE_W* pTrustee, uint32* pcMemberships, TRUSTEE_W** prgMemberships) GetMemberships;
 			}
 		}
 		[CRepr]
@@ -6657,15 +7466,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733aa3, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetObjectAccessRights(SEC_OBJECT* pObject, uint32* pcAccessEntries, EXPLICIT_ACCESS_W** prgAccessEntries) mut
+			{
+				return VT.GetObjectAccessRights(&this, pObject, pcAccessEntries, prgAccessEntries);
+			}
+			public HRESULT GetObjectOwner(SEC_OBJECT* pObject, TRUSTEE_W** ppOwner) mut
+			{
+				return VT.GetObjectOwner(&this, pObject, ppOwner);
+			}
+			public HRESULT IsObjectAccessAllowed(SEC_OBJECT* pObject, EXPLICIT_ACCESS_W* pAccessEntry, BOOL* pfResult) mut
+			{
+				return VT.IsObjectAccessAllowed(&this, pObject, pAccessEntry, pfResult);
+			}
+			public HRESULT SetObjectAccessRights(SEC_OBJECT* pObject, uint32 cAccessEntries, EXPLICIT_ACCESS_W* prgAccessEntries) mut
+			{
+				return VT.SetObjectAccessRights(&this, pObject, cAccessEntries, prgAccessEntries);
+			}
+			public HRESULT SetObjectOwner(SEC_OBJECT* pObject, TRUSTEE_W* pOwner) mut
+			{
+				return VT.SetObjectOwner(&this, pObject, pOwner);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IObjectAccessControl *self, SEC_OBJECT* pObject, uint32* pcAccessEntries, EXPLICIT_ACCESS_W** prgAccessEntries) GetObjectAccessRights;
-				public function HRESULT(IObjectAccessControl *self, SEC_OBJECT* pObject, TRUSTEE_W** ppOwner) GetObjectOwner;
-				public function HRESULT(IObjectAccessControl *self, SEC_OBJECT* pObject, EXPLICIT_ACCESS_W* pAccessEntry, BOOL* pfResult) IsObjectAccessAllowed;
-				public function HRESULT(IObjectAccessControl *self, SEC_OBJECT* pObject, uint32 cAccessEntries, EXPLICIT_ACCESS_W* prgAccessEntries) SetObjectAccessRights;
-				public function HRESULT(IObjectAccessControl *self, SEC_OBJECT* pObject, TRUSTEE_W* pOwner) SetObjectOwner;
+				public new function HRESULT(IObjectAccessControl *self, SEC_OBJECT* pObject, uint32* pcAccessEntries, EXPLICIT_ACCESS_W** prgAccessEntries) GetObjectAccessRights;
+				public new function HRESULT(IObjectAccessControl *self, SEC_OBJECT* pObject, TRUSTEE_W** ppOwner) GetObjectOwner;
+				public new function HRESULT(IObjectAccessControl *self, SEC_OBJECT* pObject, EXPLICIT_ACCESS_W* pAccessEntry, BOOL* pfResult) IsObjectAccessAllowed;
+				public new function HRESULT(IObjectAccessControl *self, SEC_OBJECT* pObject, uint32 cAccessEntries, EXPLICIT_ACCESS_W* prgAccessEntries) SetObjectAccessRights;
+				public new function HRESULT(IObjectAccessControl *self, SEC_OBJECT* pObject, TRUSTEE_W* pOwner) SetObjectOwner;
 			}
 		}
 		[CRepr]
@@ -6673,13 +7503,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733aa4, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCurrentTrustee(TRUSTEE_W** ppTrustee) mut
+			{
+				return VT.GetCurrentTrustee(&this, ppTrustee);
+			}
+			public HRESULT GetObjectTypes(uint32* cObjectTypes, Guid** rgObjectTypes) mut
+			{
+				return VT.GetObjectTypes(&this, cObjectTypes, rgObjectTypes);
+			}
+			public HRESULT GetPermissions(Guid ObjectType, uint32* pPermissions) mut
+			{
+				return VT.GetPermissions(&this, ObjectType, pPermissions);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISecurityInfo *self, TRUSTEE_W** ppTrustee) GetCurrentTrustee;
-				public function HRESULT(ISecurityInfo *self, uint32* cObjectTypes, Guid** rgObjectTypes) GetObjectTypes;
-				public function HRESULT(ISecurityInfo *self, Guid ObjectType, uint32* pPermissions) GetPermissions;
+				public new function HRESULT(ISecurityInfo *self, TRUSTEE_W** ppTrustee) GetCurrentTrustee;
+				public new function HRESULT(ISecurityInfo *self, uint32* cObjectTypes, Guid** rgObjectTypes) GetObjectTypes;
+				public new function HRESULT(ISecurityInfo *self, Guid ObjectType, uint32* pPermissions) GetPermissions;
 			}
 		}
 		[CRepr]
@@ -6687,11 +7530,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733abc, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetTableDefinition(DBID* pTableID, uint* pcColumnDescs, DBCOLUMNDESC** prgColumnDescs, uint32* pcPropertySets, DBPROPSET** prgPropertySets, uint32* pcConstraintDescs, DBCONSTRAINTDESC** prgConstraintDescs, uint16** ppwszStringBuffer) mut
+			{
+				return VT.GetTableDefinition(&this, pTableID, pcColumnDescs, prgColumnDescs, pcPropertySets, prgPropertySets, pcConstraintDescs, prgConstraintDescs, ppwszStringBuffer);
+			}
 			[CRepr]
 			public struct VTable : ITableDefinition.VTable
 			{
-				public function HRESULT(ITableCreation *self, DBID* pTableID, uint* pcColumnDescs, DBCOLUMNDESC** prgColumnDescs, uint32* pcPropertySets, DBPROPSET** prgPropertySets, uint32* pcConstraintDescs, DBCONSTRAINTDESC** prgConstraintDescs, uint16** ppwszStringBuffer) GetTableDefinition;
+				public new function HRESULT(ITableCreation *self, DBID* pTableID, uint* pcColumnDescs, DBCOLUMNDESC** prgColumnDescs, uint32* pcPropertySets, DBPROPSET** prgPropertySets, uint32* pcConstraintDescs, DBCONSTRAINTDESC** prgConstraintDescs, uint16** ppwszStringBuffer) GetTableDefinition;
 			}
 		}
 		[CRepr]
@@ -6699,13 +7547,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733aab, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddConstraint(DBID* pTableID, DBCONSTRAINTDESC* pConstraintDesc) mut
+			{
+				return VT.AddConstraint(&this, pTableID, pConstraintDesc);
+			}
+			public HRESULT CreateTableWithConstraints(IUnknown* pUnkOuter, DBID* pTableID, uint cColumnDescs, DBCOLUMNDESC* rgColumnDescs, uint32 cConstraintDescs, DBCONSTRAINTDESC* rgConstraintDescs, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, DBID** ppTableID, IUnknown** ppRowset) mut
+			{
+				return VT.CreateTableWithConstraints(&this, pUnkOuter, pTableID, cColumnDescs, rgColumnDescs, cConstraintDescs, rgConstraintDescs, riid, cPropertySets, rgPropertySets, ppTableID, ppRowset);
+			}
+			public HRESULT DropConstraint(DBID* pTableID, DBID* pConstraintID) mut
+			{
+				return VT.DropConstraint(&this, pTableID, pConstraintID);
+			}
 			[CRepr]
 			public struct VTable : ITableCreation.VTable
 			{
-				public function HRESULT(ITableDefinitionWithConstraints *self, DBID* pTableID, DBCONSTRAINTDESC* pConstraintDesc) AddConstraint;
-				public function HRESULT(ITableDefinitionWithConstraints *self, IUnknown* pUnkOuter, DBID* pTableID, uint cColumnDescs, DBCOLUMNDESC* rgColumnDescs, uint32 cConstraintDescs, DBCONSTRAINTDESC* rgConstraintDescs, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, DBID** ppTableID, IUnknown** ppRowset) CreateTableWithConstraints;
-				public function HRESULT(ITableDefinitionWithConstraints *self, DBID* pTableID, DBID* pConstraintID) DropConstraint;
+				public new function HRESULT(ITableDefinitionWithConstraints *self, DBID* pTableID, DBCONSTRAINTDESC* pConstraintDesc) AddConstraint;
+				public new function HRESULT(ITableDefinitionWithConstraints *self, IUnknown* pUnkOuter, DBID* pTableID, uint cColumnDescs, DBCOLUMNDESC* rgColumnDescs, uint32 cConstraintDescs, DBCONSTRAINTDESC* rgConstraintDescs, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, DBID** ppTableID, IUnknown** ppRowset) CreateTableWithConstraints;
+				public new function HRESULT(ITableDefinitionWithConstraints *self, DBID* pTableID, DBID* pConstraintID) DropConstraint;
 			}
 		}
 		[CRepr]
@@ -6713,13 +7574,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733ab4, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetColumns(uint cColumns, DBCOLUMNACCESS* rgColumns) mut
+			{
+				return VT.GetColumns(&this, cColumns, rgColumns);
+			}
+			public HRESULT GetSourceRowset(Guid* riid, IUnknown** ppRowset, uint* phRow) mut
+			{
+				return VT.GetSourceRowset(&this, riid, ppRowset, phRow);
+			}
+			public HRESULT Open(IUnknown* pUnkOuter, DBID* pColumnID, Guid* rguidColumnType, uint32 dwBindFlags, Guid* riid, IUnknown** ppUnk) mut
+			{
+				return VT.Open(&this, pUnkOuter, pColumnID, rguidColumnType, dwBindFlags, riid, ppUnk);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRow *self, uint cColumns, DBCOLUMNACCESS* rgColumns) GetColumns;
-				public function HRESULT(IRow *self, Guid* riid, IUnknown** ppRowset, uint* phRow) GetSourceRowset;
-				public function HRESULT(IRow *self, IUnknown* pUnkOuter, DBID* pColumnID, Guid* rguidColumnType, uint32 dwBindFlags, Guid* riid, IUnknown** ppUnk) Open;
+				public new function HRESULT(IRow *self, uint cColumns, DBCOLUMNACCESS* rgColumns) GetColumns;
+				public new function HRESULT(IRow *self, Guid* riid, IUnknown** ppRowset, uint* phRow) GetSourceRowset;
+				public new function HRESULT(IRow *self, IUnknown* pUnkOuter, DBID* pColumnID, Guid* rguidColumnType, uint32 dwBindFlags, Guid* riid, IUnknown** ppUnk) Open;
 			}
 		}
 		[CRepr]
@@ -6727,11 +7601,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733ab5, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetColumns(uint cColumns, DBCOLUMNACCESS* rgColumns) mut
+			{
+				return VT.SetColumns(&this, cColumns, rgColumns);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowChange *self, uint cColumns, DBCOLUMNACCESS* rgColumns) SetColumns;
+				public new function HRESULT(IRowChange *self, uint cColumns, DBCOLUMNACCESS* rgColumns) SetColumns;
 			}
 		}
 		[CRepr]
@@ -6739,12 +7618,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733aae, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT DeleteColumns(uint cColumns, DBID* rgColumnIDs, uint32* rgdwStatus) mut
+			{
+				return VT.DeleteColumns(&this, cColumns, rgColumnIDs, rgdwStatus);
+			}
+			public HRESULT AddColumns(uint cColumns, DBCOLUMNINFO* rgNewColumnInfo, DBCOLUMNACCESS* rgColumns) mut
+			{
+				return VT.AddColumns(&this, cColumns, rgNewColumnInfo, rgColumns);
+			}
 			[CRepr]
 			public struct VTable : IRowChange.VTable
 			{
-				public function HRESULT(IRowSchemaChange *self, uint cColumns, DBID* rgColumnIDs, uint32* rgdwStatus) DeleteColumns;
-				public function HRESULT(IRowSchemaChange *self, uint cColumns, DBCOLUMNINFO* rgNewColumnInfo, DBCOLUMNACCESS* rgColumns) AddColumns;
+				public new function HRESULT(IRowSchemaChange *self, uint cColumns, DBID* rgColumnIDs, uint32* rgdwStatus) DeleteColumns;
+				public new function HRESULT(IRowSchemaChange *self, uint cColumns, DBCOLUMNINFO* rgNewColumnInfo, DBCOLUMNACCESS* rgColumns) AddColumns;
 			}
 		}
 		[CRepr]
@@ -6752,12 +7640,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733aaf, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetRowFromHROW(IUnknown* pUnkOuter, uint hRow, Guid* riid, IUnknown** ppUnk) mut
+			{
+				return VT.GetRowFromHROW(&this, pUnkOuter, hRow, riid, ppUnk);
+			}
+			public HRESULT GetURLFromHROW(uint hRow, PWSTR* ppwszURL) mut
+			{
+				return VT.GetURLFromHROW(&this, hRow, ppwszURL);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IGetRow *self, IUnknown* pUnkOuter, uint hRow, Guid* riid, IUnknown** ppUnk) GetRowFromHROW;
-				public function HRESULT(IGetRow *self, uint hRow, PWSTR* ppwszURL) GetURLFromHROW;
+				public new function HRESULT(IGetRow *self, IUnknown* pUnkOuter, uint hRow, Guid* riid, IUnknown** ppUnk) GetRowFromHROW;
+				public new function HRESULT(IGetRow *self, uint hRow, PWSTR* ppwszURL) GetURLFromHROW;
 			}
 		}
 		[CRepr]
@@ -6765,11 +7662,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733ab1, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Bind(IUnknown* pUnkOuter, PWSTR pwszURL, uint32 dwBindURLFlags, Guid* rguid, Guid* riid, IAuthenticate* pAuthenticate, DBIMPLICITSESSION* pImplSession, uint32* pdwBindStatus, IUnknown** ppUnk) mut
+			{
+				return VT.Bind(&this, pUnkOuter, pwszURL, dwBindURLFlags, rguid, riid, pAuthenticate, pImplSession, pdwBindStatus, ppUnk);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IBindResource *self, IUnknown* pUnkOuter, PWSTR pwszURL, uint32 dwBindURLFlags, Guid* rguid, Guid* riid, IAuthenticate* pAuthenticate, DBIMPLICITSESSION* pImplSession, uint32* pdwBindStatus, IUnknown** ppUnk) Bind;
+				public new function HRESULT(IBindResource *self, IUnknown* pUnkOuter, PWSTR pwszURL, uint32 dwBindURLFlags, Guid* rguid, Guid* riid, IAuthenticate* pAuthenticate, DBIMPLICITSESSION* pImplSession, uint32* pdwBindStatus, IUnknown** ppUnk) Bind;
 			}
 		}
 		[CRepr]
@@ -6777,14 +7679,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733ab0, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Copy(uint cRows, PWSTR* rgpwszSourceURLs, PWSTR* rgpwszDestURLs, uint32 dwCopyFlags, IAuthenticate* pAuthenticate, uint32* rgdwStatus, PWSTR* rgpwszNewURLs, uint16** ppStringsBuffer) mut
+			{
+				return VT.Copy(&this, cRows, rgpwszSourceURLs, rgpwszDestURLs, dwCopyFlags, pAuthenticate, rgdwStatus, rgpwszNewURLs, ppStringsBuffer);
+			}
+			public HRESULT Move(uint cRows, PWSTR* rgpwszSourceURLs, PWSTR* rgpwszDestURLs, uint32 dwMoveFlags, IAuthenticate* pAuthenticate, uint32* rgdwStatus, PWSTR* rgpwszNewURLs, uint16** ppStringsBuffer) mut
+			{
+				return VT.Move(&this, cRows, rgpwszSourceURLs, rgpwszDestURLs, dwMoveFlags, pAuthenticate, rgdwStatus, rgpwszNewURLs, ppStringsBuffer);
+			}
+			public HRESULT Delete(uint cRows, PWSTR* rgpwszURLs, uint32 dwDeleteFlags, uint32* rgdwStatus) mut
+			{
+				return VT.Delete(&this, cRows, rgpwszURLs, dwDeleteFlags, rgdwStatus);
+			}
+			public HRESULT OpenRowset(IUnknown* pUnkOuter, DBID* pTableID, DBID* pIndexID, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown** ppRowset) mut
+			{
+				return VT.OpenRowset(&this, pUnkOuter, pTableID, pIndexID, riid, cPropertySets, rgPropertySets, ppRowset);
+			}
 			[CRepr]
 			public struct VTable : IBindResource.VTable
 			{
-				public function HRESULT(IScopedOperations *self, uint cRows, PWSTR* rgpwszSourceURLs, PWSTR* rgpwszDestURLs, uint32 dwCopyFlags, IAuthenticate* pAuthenticate, uint32* rgdwStatus, PWSTR* rgpwszNewURLs, uint16** ppStringsBuffer) Copy;
-				public function HRESULT(IScopedOperations *self, uint cRows, PWSTR* rgpwszSourceURLs, PWSTR* rgpwszDestURLs, uint32 dwMoveFlags, IAuthenticate* pAuthenticate, uint32* rgdwStatus, PWSTR* rgpwszNewURLs, uint16** ppStringsBuffer) Move;
-				public function HRESULT(IScopedOperations *self, uint cRows, PWSTR* rgpwszURLs, uint32 dwDeleteFlags, uint32* rgdwStatus) Delete;
-				public function HRESULT(IScopedOperations *self, IUnknown* pUnkOuter, DBID* pTableID, DBID* pIndexID, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown** ppRowset) OpenRowset;
+				public new function HRESULT(IScopedOperations *self, uint cRows, PWSTR* rgpwszSourceURLs, PWSTR* rgpwszDestURLs, uint32 dwCopyFlags, IAuthenticate* pAuthenticate, uint32* rgdwStatus, PWSTR* rgpwszNewURLs, uint16** ppStringsBuffer) Copy;
+				public new function HRESULT(IScopedOperations *self, uint cRows, PWSTR* rgpwszSourceURLs, PWSTR* rgpwszDestURLs, uint32 dwMoveFlags, IAuthenticate* pAuthenticate, uint32* rgdwStatus, PWSTR* rgpwszNewURLs, uint16** ppStringsBuffer) Move;
+				public new function HRESULT(IScopedOperations *self, uint cRows, PWSTR* rgpwszURLs, uint32 dwDeleteFlags, uint32* rgdwStatus) Delete;
+				public new function HRESULT(IScopedOperations *self, IUnknown* pUnkOuter, DBID* pTableID, DBID* pIndexID, Guid* riid, uint32 cPropertySets, DBPROPSET* rgPropertySets, IUnknown** ppRowset) OpenRowset;
 			}
 		}
 		[CRepr]
@@ -6792,11 +7711,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733ab2, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateRow(IUnknown* pUnkOuter, PWSTR pwszURL, uint32 dwBindURLFlags, Guid* rguid, Guid* riid, IAuthenticate* pAuthenticate, DBIMPLICITSESSION* pImplSession, uint32* pdwBindStatus, PWSTR* ppwszNewURL, IUnknown** ppUnk) mut
+			{
+				return VT.CreateRow(&this, pUnkOuter, pwszURL, dwBindURLFlags, rguid, riid, pAuthenticate, pImplSession, pdwBindStatus, ppwszNewURL, ppUnk);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ICreateRow *self, IUnknown* pUnkOuter, PWSTR pwszURL, uint32 dwBindURLFlags, Guid* rguid, Guid* riid, IAuthenticate* pAuthenticate, DBIMPLICITSESSION* pImplSession, uint32* pdwBindStatus, PWSTR* ppwszNewURL, IUnknown** ppUnk) CreateRow;
+				public new function HRESULT(ICreateRow *self, IUnknown* pUnkOuter, PWSTR pwszURL, uint32 dwBindURLFlags, Guid* rguid, Guid* riid, IAuthenticate* pAuthenticate, DBIMPLICITSESSION* pImplSession, uint32* pdwBindStatus, PWSTR* ppwszNewURL, IUnknown** ppUnk) CreateRow;
 			}
 		}
 		[CRepr]
@@ -6804,11 +7728,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733ab3, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
 			[CRepr]
 			public struct VTable : IDBProperties.VTable
 			{
-				public function HRESULT(IDBBinderProperties *self) Reset;
+				public new function HRESULT(IDBBinderProperties *self) Reset;
 			}
 		}
 		[CRepr]
@@ -6816,11 +7745,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733ab8, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetRestrictedColumnInfo(uint cColumnIDMasks, DBID* rgColumnIDMasks, uint32 dwFlags, uint* pcColumns, DBID** prgColumnIDs, DBCOLUMNINFO** prgColumnInfo, uint16** ppStringsBuffer) mut
+			{
+				return VT.GetRestrictedColumnInfo(&this, cColumnIDMasks, rgColumnIDMasks, dwFlags, pcColumns, prgColumnIDs, prgColumnInfo, ppStringsBuffer);
+			}
 			[CRepr]
 			public struct VTable : IColumnsInfo.VTable
 			{
-				public function HRESULT(IColumnsInfo2 *self, uint cColumnIDMasks, DBID* rgColumnIDMasks, uint32 dwFlags, uint* pcColumns, DBID** prgColumnIDs, DBCOLUMNINFO** prgColumnInfo, uint16** ppStringsBuffer) GetRestrictedColumnInfo;
+				public new function HRESULT(IColumnsInfo2 *self, uint cColumnIDMasks, DBID* rgColumnIDMasks, uint32 dwFlags, uint* pcColumns, DBID** prgColumnIDs, DBCOLUMNINFO** prgColumnInfo, uint16** ppStringsBuffer) GetRestrictedColumnInfo;
 			}
 		}
 		[CRepr]
@@ -6828,13 +7762,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733ab9, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetURLMapping(PWSTR pwszURL, uint dwReserved, Guid* pclsidProvider) mut
+			{
+				return VT.GetURLMapping(&this, pwszURL, dwReserved, pclsidProvider);
+			}
+			public HRESULT SetURLMapping(PWSTR pwszURL, uint dwReserved, Guid* rclsidProvider) mut
+			{
+				return VT.SetURLMapping(&this, pwszURL, dwReserved, rclsidProvider);
+			}
+			public HRESULT UnregisterProvider(PWSTR pwszURL, uint dwReserved, Guid* rclsidProvider) mut
+			{
+				return VT.UnregisterProvider(&this, pwszURL, dwReserved, rclsidProvider);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRegisterProvider *self, PWSTR pwszURL, uint dwReserved, Guid* pclsidProvider) GetURLMapping;
-				public function HRESULT(IRegisterProvider *self, PWSTR pwszURL, uint dwReserved, Guid* rclsidProvider) SetURLMapping;
-				public function HRESULT(IRegisterProvider *self, PWSTR pwszURL, uint dwReserved, Guid* rclsidProvider) UnregisterProvider;
+				public new function HRESULT(IRegisterProvider *self, PWSTR pwszURL, uint dwReserved, Guid* pclsidProvider) GetURLMapping;
+				public new function HRESULT(IRegisterProvider *self, PWSTR pwszURL, uint dwReserved, Guid* rclsidProvider) SetURLMapping;
+				public new function HRESULT(IRegisterProvider *self, PWSTR pwszURL, uint dwReserved, Guid* rclsidProvider) UnregisterProvider;
 			}
 		}
 		[CRepr]
@@ -6842,11 +7789,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733aba, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSession(Guid* riid, IUnknown** ppSession) mut
+			{
+				return VT.GetSession(&this, riid, ppSession);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IGetSession *self, Guid* riid, IUnknown** ppSession) GetSession;
+				public new function HRESULT(IGetSession *self, Guid* riid, IUnknown** ppSession) GetSession;
 			}
 		}
 		[CRepr]
@@ -6854,11 +7806,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733abb, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSourceRow(Guid* riid, IUnknown** ppRow) mut
+			{
+				return VT.GetSourceRow(&this, riid, ppRow);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IGetSourceRow *self, Guid* riid, IUnknown** ppRow) GetSourceRow;
+				public new function HRESULT(IGetSourceRow *self, Guid* riid, IUnknown** ppRow) GetSourceRow;
 			}
 		}
 		[CRepr]
@@ -6866,12 +7823,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733abd, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetIndex(DBID** ppIndexID) mut
+			{
+				return VT.GetIndex(&this, ppIndexID);
+			}
+			public HRESULT SetIndex(DBID* pIndexID) mut
+			{
+				return VT.SetIndex(&this, pIndexID);
+			}
 			[CRepr]
 			public struct VTable : IRowsetIndex.VTable
 			{
-				public function HRESULT(IRowsetCurrentIndex *self, DBID** ppIndexID) GetIndex;
-				public function HRESULT(IRowsetCurrentIndex *self, DBID* pIndexID) SetIndex;
+				public new function HRESULT(IRowsetCurrentIndex *self, DBID** ppIndexID) GetIndex;
+				public new function HRESULT(IRowsetCurrentIndex *self, DBID* pIndexID) SetIndex;
 			}
 		}
 		[CRepr]
@@ -6879,12 +7845,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733abf, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCommandStream(Guid* piid, Guid* pguidDialect, IUnknown** ppCommandStream) mut
+			{
+				return VT.GetCommandStream(&this, piid, pguidDialect, ppCommandStream);
+			}
+			public HRESULT SetCommandStream(Guid* riid, Guid* rguidDialect, IUnknown* pCommandStream) mut
+			{
+				return VT.SetCommandStream(&this, riid, rguidDialect, pCommandStream);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ICommandStream *self, Guid* piid, Guid* pguidDialect, IUnknown** ppCommandStream) GetCommandStream;
-				public function HRESULT(ICommandStream *self, Guid* riid, Guid* rguidDialect, IUnknown* pCommandStream) SetCommandStream;
+				public new function HRESULT(ICommandStream *self, Guid* piid, Guid* pguidDialect, IUnknown** ppCommandStream) GetCommandStream;
+				public new function HRESULT(ICommandStream *self, Guid* riid, Guid* rguidDialect, IUnknown* pCommandStream) SetCommandStream;
 			}
 		}
 		[CRepr]
@@ -6892,11 +7867,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733ac2, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT PositionOnBookmark(uint hChapter, uint cbBookmark, uint8* pBookmark) mut
+			{
+				return VT.PositionOnBookmark(&this, hChapter, cbBookmark, pBookmark);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetBookmark *self, uint hChapter, uint cbBookmark, uint8* pBookmark) PositionOnBookmark;
+				public new function HRESULT(IRowsetBookmark *self, uint hChapter, uint cbBookmark, uint8* pBookmark) PositionOnBookmark;
 			}
 		}
 		[CRepr]
@@ -6904,18 +7884,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2ebdee67, 0x3505, 0x43f8, 0x99, 0x46, 0xea, 0x44, 0xab, 0xc8, 0xe5, 0xb0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Parse(PWSTR pszInputString, IEnumUnknown* pCustomProperties, IQuerySolution** ppSolution) mut
+			{
+				return VT.Parse(&this, pszInputString, pCustomProperties, ppSolution);
+			}
+			public HRESULT SetOption(STRUCTURED_QUERY_SINGLE_OPTION option, PROPVARIANT* pOptionValue) mut
+			{
+				return VT.SetOption(&this, option, pOptionValue);
+			}
+			public HRESULT GetOption(STRUCTURED_QUERY_SINGLE_OPTION option, PROPVARIANT* pOptionValue) mut
+			{
+				return VT.GetOption(&this, option, pOptionValue);
+			}
+			public HRESULT SetMultiOption(STRUCTURED_QUERY_MULTIOPTION option, PWSTR pszOptionKey, PROPVARIANT* pOptionValue) mut
+			{
+				return VT.SetMultiOption(&this, option, pszOptionKey, pOptionValue);
+			}
+			public HRESULT GetSchemaProvider(ISchemaProvider** ppSchemaProvider) mut
+			{
+				return VT.GetSchemaProvider(&this, ppSchemaProvider);
+			}
+			public HRESULT RestateToString(ICondition* pCondition, BOOL fUseEnglish, PWSTR* ppszQueryString) mut
+			{
+				return VT.RestateToString(&this, pCondition, fUseEnglish, ppszQueryString);
+			}
+			public HRESULT ParsePropertyValue(PWSTR pszPropertyName, PWSTR pszInputString, IQuerySolution** ppSolution) mut
+			{
+				return VT.ParsePropertyValue(&this, pszPropertyName, pszInputString, ppSolution);
+			}
+			public HRESULT RestatePropertyValueToString(ICondition* pCondition, BOOL fUseEnglish, PWSTR* ppszPropertyName, PWSTR* ppszQueryString) mut
+			{
+				return VT.RestatePropertyValueToString(&this, pCondition, fUseEnglish, ppszPropertyName, ppszQueryString);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IQueryParser *self, PWSTR pszInputString, IEnumUnknown* pCustomProperties, IQuerySolution** ppSolution) Parse;
-				public function HRESULT(IQueryParser *self, STRUCTURED_QUERY_SINGLE_OPTION option, PROPVARIANT* pOptionValue) SetOption;
-				public function HRESULT(IQueryParser *self, STRUCTURED_QUERY_SINGLE_OPTION option, PROPVARIANT* pOptionValue) GetOption;
-				public function HRESULT(IQueryParser *self, STRUCTURED_QUERY_MULTIOPTION option, PWSTR pszOptionKey, PROPVARIANT* pOptionValue) SetMultiOption;
-				public function HRESULT(IQueryParser *self, ISchemaProvider** ppSchemaProvider) GetSchemaProvider;
-				public function HRESULT(IQueryParser *self, ICondition* pCondition, BOOL fUseEnglish, PWSTR* ppszQueryString) RestateToString;
-				public function HRESULT(IQueryParser *self, PWSTR pszPropertyName, PWSTR pszInputString, IQuerySolution** ppSolution) ParsePropertyValue;
-				public function HRESULT(IQueryParser *self, ICondition* pCondition, BOOL fUseEnglish, PWSTR* ppszPropertyName, PWSTR* ppszQueryString) RestatePropertyValueToString;
+				public new function HRESULT(IQueryParser *self, PWSTR pszInputString, IEnumUnknown* pCustomProperties, IQuerySolution** ppSolution) Parse;
+				public new function HRESULT(IQueryParser *self, STRUCTURED_QUERY_SINGLE_OPTION option, PROPVARIANT* pOptionValue) SetOption;
+				public new function HRESULT(IQueryParser *self, STRUCTURED_QUERY_SINGLE_OPTION option, PROPVARIANT* pOptionValue) GetOption;
+				public new function HRESULT(IQueryParser *self, STRUCTURED_QUERY_MULTIOPTION option, PWSTR pszOptionKey, PROPVARIANT* pOptionValue) SetMultiOption;
+				public new function HRESULT(IQueryParser *self, ISchemaProvider** ppSchemaProvider) GetSchemaProvider;
+				public new function HRESULT(IQueryParser *self, ICondition* pCondition, BOOL fUseEnglish, PWSTR* ppszQueryString) RestateToString;
+				public new function HRESULT(IQueryParser *self, PWSTR pszPropertyName, PWSTR pszInputString, IQuerySolution** ppSolution) ParsePropertyValue;
+				public new function HRESULT(IQueryParser *self, ICondition* pCondition, BOOL fUseEnglish, PWSTR* ppszPropertyName, PWSTR* ppszQueryString) RestatePropertyValueToString;
 			}
 		}
 		[CRepr]
@@ -6923,14 +7936,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa5efe073, 0xb16f, 0x474f, 0x9f, 0x3e, 0x9f, 0x8b, 0x49, 0x7a, 0x3e, 0x08);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT MakeNot(ICondition* pcSub, BOOL fSimplify, ICondition** ppcResult) mut
+			{
+				return VT.MakeNot(&this, pcSub, fSimplify, ppcResult);
+			}
+			public HRESULT MakeAndOr(CONDITION_TYPE ct, IEnumUnknown* peuSubs, BOOL fSimplify, ICondition** ppcResult) mut
+			{
+				return VT.MakeAndOr(&this, ct, peuSubs, fSimplify, ppcResult);
+			}
+			public HRESULT MakeLeaf(PWSTR pszPropertyName, CONDITION_OPERATION cop, PWSTR pszValueType, PROPVARIANT* ppropvar, IRichChunk* pPropertyNameTerm, IRichChunk* pOperationTerm, IRichChunk* pValueTerm, BOOL fExpand, ICondition** ppcResult) mut
+			{
+				return VT.MakeLeaf(&this, pszPropertyName, cop, pszValueType, ppropvar, pPropertyNameTerm, pOperationTerm, pValueTerm, fExpand, ppcResult);
+			}
+			public HRESULT Resolve(ICondition* pc, STRUCTURED_QUERY_RESOLVE_OPTION sqro, SYSTEMTIME* pstReferenceTime, ICondition** ppcResolved) mut
+			{
+				return VT.Resolve(&this, pc, sqro, pstReferenceTime, ppcResolved);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IConditionFactory *self, ICondition* pcSub, BOOL fSimplify, ICondition** ppcResult) MakeNot;
-				public function HRESULT(IConditionFactory *self, CONDITION_TYPE ct, IEnumUnknown* peuSubs, BOOL fSimplify, ICondition** ppcResult) MakeAndOr;
-				public function HRESULT(IConditionFactory *self, PWSTR pszPropertyName, CONDITION_OPERATION cop, PWSTR pszValueType, PROPVARIANT* ppropvar, IRichChunk* pPropertyNameTerm, IRichChunk* pOperationTerm, IRichChunk* pValueTerm, BOOL fExpand, ICondition** ppcResult) MakeLeaf;
-				public function HRESULT(IConditionFactory *self, ICondition* pc, STRUCTURED_QUERY_RESOLVE_OPTION sqro, SYSTEMTIME* pstReferenceTime, ICondition** ppcResolved) Resolve;
+				public new function HRESULT(IConditionFactory *self, ICondition* pcSub, BOOL fSimplify, ICondition** ppcResult) MakeNot;
+				public new function HRESULT(IConditionFactory *self, CONDITION_TYPE ct, IEnumUnknown* peuSubs, BOOL fSimplify, ICondition** ppcResult) MakeAndOr;
+				public new function HRESULT(IConditionFactory *self, PWSTR pszPropertyName, CONDITION_OPERATION cop, PWSTR pszValueType, PROPVARIANT* ppropvar, IRichChunk* pPropertyNameTerm, IRichChunk* pOperationTerm, IRichChunk* pValueTerm, BOOL fExpand, ICondition** ppcResult) MakeLeaf;
+				public new function HRESULT(IConditionFactory *self, ICondition* pc, STRUCTURED_QUERY_RESOLVE_OPTION sqro, SYSTEMTIME* pstReferenceTime, ICondition** ppcResolved) Resolve;
 			}
 		}
 		[CRepr]
@@ -6938,13 +7968,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd6ebc66b, 0x8921, 0x4193, 0xaf, 0xdd, 0xa1, 0x78, 0x9f, 0xb7, 0xff, 0x57);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetQuery(ICondition** ppQueryNode, IEntity** ppMainType) mut
+			{
+				return VT.GetQuery(&this, ppQueryNode, ppMainType);
+			}
+			public HRESULT GetErrors(Guid* riid, void** ppParseErrors) mut
+			{
+				return VT.GetErrors(&this, riid, ppParseErrors);
+			}
+			public HRESULT GetLexicalData(PWSTR* ppszInputString, ITokenCollection** ppTokens, uint32* plcid, IUnknown** ppWordBreaker) mut
+			{
+				return VT.GetLexicalData(&this, ppszInputString, ppTokens, plcid, ppWordBreaker);
+			}
 			[CRepr]
 			public struct VTable : IConditionFactory.VTable
 			{
-				public function HRESULT(IQuerySolution *self, ICondition** ppQueryNode, IEntity** ppMainType) GetQuery;
-				public function HRESULT(IQuerySolution *self, Guid* riid, void** ppParseErrors) GetErrors;
-				public function HRESULT(IQuerySolution *self, PWSTR* ppszInputString, ITokenCollection** ppTokens, uint32* plcid, IUnknown** ppWordBreaker) GetLexicalData;
+				public new function HRESULT(IQuerySolution *self, ICondition** ppQueryNode, IEntity** ppMainType) GetQuery;
+				public new function HRESULT(IQuerySolution *self, Guid* riid, void** ppParseErrors) GetErrors;
+				public new function HRESULT(IQuerySolution *self, PWSTR* ppszInputString, ITokenCollection** ppTokens, uint32* plcid, IUnknown** ppWordBreaker) GetLexicalData;
 			}
 		}
 		[CRepr]
@@ -6952,19 +7995,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x71d222e1, 0x432f, 0x429e, 0x8c, 0x13, 0xb6, 0xda, 0xfd, 0xe5, 0x07, 0x7a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateTrueFalse(BOOL fVal, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) mut
+			{
+				return VT.CreateTrueFalse(&this, fVal, cco, riid, ppv);
+			}
+			public HRESULT CreateNegation(ICondition* pcSub, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) mut
+			{
+				return VT.CreateNegation(&this, pcSub, cco, riid, ppv);
+			}
+			public HRESULT CreateCompoundFromObjectArray(CONDITION_TYPE ct, IObjectArray* poaSubs, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) mut
+			{
+				return VT.CreateCompoundFromObjectArray(&this, ct, poaSubs, cco, riid, ppv);
+			}
+			public HRESULT CreateCompoundFromArray(CONDITION_TYPE ct, ICondition** ppcondSubs, uint32 cSubs, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) mut
+			{
+				return VT.CreateCompoundFromArray(&this, ct, ppcondSubs, cSubs, cco, riid, ppv);
+			}
+			public HRESULT CreateStringLeaf(PROPERTYKEY* propkey, CONDITION_OPERATION cop, PWSTR pszValue, PWSTR pszLocaleName, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) mut
+			{
+				return VT.CreateStringLeaf(&this, propkey, cop, pszValue, pszLocaleName, cco, riid, ppv);
+			}
+			public HRESULT CreateIntegerLeaf(PROPERTYKEY* propkey, CONDITION_OPERATION cop, int32 lValue, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) mut
+			{
+				return VT.CreateIntegerLeaf(&this, propkey, cop, lValue, cco, riid, ppv);
+			}
+			public HRESULT CreateBooleanLeaf(PROPERTYKEY* propkey, CONDITION_OPERATION cop, BOOL fValue, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) mut
+			{
+				return VT.CreateBooleanLeaf(&this, propkey, cop, fValue, cco, riid, ppv);
+			}
+			public HRESULT CreateLeaf(PROPERTYKEY* propkey, CONDITION_OPERATION cop, PROPVARIANT* propvar, PWSTR pszSemanticType, PWSTR pszLocaleName, IRichChunk* pPropertyNameTerm, IRichChunk* pOperationTerm, IRichChunk* pValueTerm, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) mut
+			{
+				return VT.CreateLeaf(&this, propkey, cop, propvar, pszSemanticType, pszLocaleName, pPropertyNameTerm, pOperationTerm, pValueTerm, cco, riid, ppv);
+			}
+			public HRESULT ResolveCondition(ICondition* pc, STRUCTURED_QUERY_RESOLVE_OPTION sqro, SYSTEMTIME* pstReferenceTime, Guid* riid, void** ppv) mut
+			{
+				return VT.ResolveCondition(&this, pc, sqro, pstReferenceTime, riid, ppv);
+			}
 			[CRepr]
 			public struct VTable : IConditionFactory.VTable
 			{
-				public function HRESULT(IConditionFactory2 *self, BOOL fVal, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) CreateTrueFalse;
-				public function HRESULT(IConditionFactory2 *self, ICondition* pcSub, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) CreateNegation;
-				public function HRESULT(IConditionFactory2 *self, CONDITION_TYPE ct, IObjectArray* poaSubs, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) CreateCompoundFromObjectArray;
-				public function HRESULT(IConditionFactory2 *self, CONDITION_TYPE ct, ICondition** ppcondSubs, uint32 cSubs, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) CreateCompoundFromArray;
-				public function HRESULT(IConditionFactory2 *self, PROPERTYKEY* propkey, CONDITION_OPERATION cop, PWSTR pszValue, PWSTR pszLocaleName, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) CreateStringLeaf;
-				public function HRESULT(IConditionFactory2 *self, PROPERTYKEY* propkey, CONDITION_OPERATION cop, int32 lValue, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) CreateIntegerLeaf;
-				public function HRESULT(IConditionFactory2 *self, PROPERTYKEY* propkey, CONDITION_OPERATION cop, BOOL fValue, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) CreateBooleanLeaf;
-				public function HRESULT(IConditionFactory2 *self, PROPERTYKEY* propkey, CONDITION_OPERATION cop, PROPVARIANT* propvar, PWSTR pszSemanticType, PWSTR pszLocaleName, IRichChunk* pPropertyNameTerm, IRichChunk* pOperationTerm, IRichChunk* pValueTerm, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) CreateLeaf;
-				public function HRESULT(IConditionFactory2 *self, ICondition* pc, STRUCTURED_QUERY_RESOLVE_OPTION sqro, SYSTEMTIME* pstReferenceTime, Guid* riid, void** ppv) ResolveCondition;
+				public new function HRESULT(IConditionFactory2 *self, BOOL fVal, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) CreateTrueFalse;
+				public new function HRESULT(IConditionFactory2 *self, ICondition* pcSub, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) CreateNegation;
+				public new function HRESULT(IConditionFactory2 *self, CONDITION_TYPE ct, IObjectArray* poaSubs, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) CreateCompoundFromObjectArray;
+				public new function HRESULT(IConditionFactory2 *self, CONDITION_TYPE ct, ICondition** ppcondSubs, uint32 cSubs, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) CreateCompoundFromArray;
+				public new function HRESULT(IConditionFactory2 *self, PROPERTYKEY* propkey, CONDITION_OPERATION cop, PWSTR pszValue, PWSTR pszLocaleName, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) CreateStringLeaf;
+				public new function HRESULT(IConditionFactory2 *self, PROPERTYKEY* propkey, CONDITION_OPERATION cop, int32 lValue, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) CreateIntegerLeaf;
+				public new function HRESULT(IConditionFactory2 *self, PROPERTYKEY* propkey, CONDITION_OPERATION cop, BOOL fValue, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) CreateBooleanLeaf;
+				public new function HRESULT(IConditionFactory2 *self, PROPERTYKEY* propkey, CONDITION_OPERATION cop, PROPVARIANT* propvar, PWSTR pszSemanticType, PWSTR pszLocaleName, IRichChunk* pPropertyNameTerm, IRichChunk* pOperationTerm, IRichChunk* pValueTerm, CONDITION_CREATION_OPTIONS cco, Guid* riid, void** ppv) CreateLeaf;
+				public new function HRESULT(IConditionFactory2 *self, ICondition* pc, STRUCTURED_QUERY_RESOLVE_OPTION sqro, SYSTEMTIME* pstReferenceTime, Guid* riid, void** ppv) ResolveCondition;
 			}
 		}
 		[CRepr]
@@ -6972,14 +8052,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x92d2cc58, 0x4386, 0x45a3, 0xb9, 0x8c, 0x7e, 0x0c, 0xe6, 0x4a, 0x41, 0x17);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(ISchemaProvider* pSchemaProvider) mut
+			{
+				return VT.Initialize(&this, pSchemaProvider);
+			}
+			public HRESULT RecognizeNamedEntities(PWSTR pszInputString, uint32 lcidUserLocale, ITokenCollection* pTokenCollection, INamedEntityCollector* pNamedEntities) mut
+			{
+				return VT.RecognizeNamedEntities(&this, pszInputString, lcidUserLocale, pTokenCollection, pNamedEntities);
+			}
+			public HRESULT GenerateForLeaf(IConditionFactory* pConditionFactory, PWSTR pszPropertyName, CONDITION_OPERATION cop, PWSTR pszValueType, PWSTR pszValue, PWSTR pszValue2, IRichChunk* pPropertyNameTerm, IRichChunk* pOperationTerm, IRichChunk* pValueTerm, BOOL automaticWildcard, BOOL* pNoStringQuery, ICondition** ppQueryExpression) mut
+			{
+				return VT.GenerateForLeaf(&this, pConditionFactory, pszPropertyName, cop, pszValueType, pszValue, pszValue2, pPropertyNameTerm, pOperationTerm, pValueTerm, automaticWildcard, pNoStringQuery, ppQueryExpression);
+			}
+			public HRESULT DefaultPhrase(PWSTR pszValueType, PROPVARIANT* ppropvar, BOOL fUseEnglish, PWSTR* ppszPhrase) mut
+			{
+				return VT.DefaultPhrase(&this, pszValueType, ppropvar, fUseEnglish, ppszPhrase);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IConditionGenerator *self, ISchemaProvider* pSchemaProvider) Initialize;
-				public function HRESULT(IConditionGenerator *self, PWSTR pszInputString, uint32 lcidUserLocale, ITokenCollection* pTokenCollection, INamedEntityCollector* pNamedEntities) RecognizeNamedEntities;
-				public function HRESULT(IConditionGenerator *self, IConditionFactory* pConditionFactory, PWSTR pszPropertyName, CONDITION_OPERATION cop, PWSTR pszValueType, PWSTR pszValue, PWSTR pszValue2, IRichChunk* pPropertyNameTerm, IRichChunk* pOperationTerm, IRichChunk* pValueTerm, BOOL automaticWildcard, BOOL* pNoStringQuery, ICondition** ppQueryExpression) GenerateForLeaf;
-				public function HRESULT(IConditionGenerator *self, PWSTR pszValueType, PROPVARIANT* ppropvar, BOOL fUseEnglish, PWSTR* ppszPhrase) DefaultPhrase;
+				public new function HRESULT(IConditionGenerator *self, ISchemaProvider* pSchemaProvider) Initialize;
+				public new function HRESULT(IConditionGenerator *self, PWSTR pszInputString, uint32 lcidUserLocale, ITokenCollection* pTokenCollection, INamedEntityCollector* pNamedEntities) RecognizeNamedEntities;
+				public new function HRESULT(IConditionGenerator *self, IConditionFactory* pConditionFactory, PWSTR pszPropertyName, CONDITION_OPERATION cop, PWSTR pszValueType, PWSTR pszValue, PWSTR pszValue2, IRichChunk* pPropertyNameTerm, IRichChunk* pOperationTerm, IRichChunk* pValueTerm, BOOL automaticWildcard, BOOL* pNoStringQuery, ICondition** ppQueryExpression) GenerateForLeaf;
+				public new function HRESULT(IConditionGenerator *self, PWSTR pszValueType, PROPVARIANT* ppropvar, BOOL fUseEnglish, PWSTR* ppszPhrase) DefaultPhrase;
 			}
 		}
 		[CRepr]
@@ -6987,11 +8084,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6bf0a714, 0x3c18, 0x430b, 0x8b, 0x5d, 0x83, 0xb1, 0xc2, 0x34, 0xd3, 0xdb);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetLimits(INTERVAL_LIMIT_KIND* pilkLower, PROPVARIANT* ppropvarLower, INTERVAL_LIMIT_KIND* pilkUpper, PROPVARIANT* ppropvarUpper) mut
+			{
+				return VT.GetLimits(&this, pilkLower, ppropvarLower, pilkUpper, ppropvarUpper);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IInterval *self, INTERVAL_LIMIT_KIND* pilkLower, PROPVARIANT* ppropvarLower, INTERVAL_LIMIT_KIND* pilkUpper, PROPVARIANT* ppropvarUpper) GetLimits;
+				public new function HRESULT(IInterval *self, INTERVAL_LIMIT_KIND* pilkLower, PROPVARIANT* ppropvarLower, INTERVAL_LIMIT_KIND* pilkUpper, PROPVARIANT* ppropvarUpper) GetLimits;
 			}
 		}
 		[CRepr]
@@ -6999,11 +8101,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x780102b0, 0xc43b, 0x4876, 0xbc, 0x7b, 0x5e, 0x9b, 0xa5, 0xc8, 0x87, 0x94);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetData(PWSTR* ppszKey, PWSTR* ppszValue) mut
+			{
+				return VT.GetData(&this, ppszKey, ppszValue);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IMetaData *self, PWSTR* ppszKey, PWSTR* ppszValue) GetData;
+				public new function HRESULT(IMetaData *self, PWSTR* ppszKey, PWSTR* ppszValue) GetData;
 			}
 		}
 		[CRepr]
@@ -7011,18 +8118,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x24264891, 0xe80b, 0x4fd3, 0xb7, 0xce, 0x4f, 0xf2, 0xfa, 0xe8, 0x93, 0x1f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Name(PWSTR* ppszName) mut
+			{
+				return VT.Name(&this, ppszName);
+			}
+			public HRESULT Base(IEntity** pBaseEntity) mut
+			{
+				return VT.Base(&this, pBaseEntity);
+			}
+			public HRESULT Relationships(Guid* riid, void** pRelationships) mut
+			{
+				return VT.Relationships(&this, riid, pRelationships);
+			}
+			public HRESULT GetRelationship(PWSTR pszRelationName, IRelationship** pRelationship) mut
+			{
+				return VT.GetRelationship(&this, pszRelationName, pRelationship);
+			}
+			public HRESULT MetaData(Guid* riid, void** pMetaData) mut
+			{
+				return VT.MetaData(&this, riid, pMetaData);
+			}
+			public HRESULT NamedEntities(Guid* riid, void** pNamedEntities) mut
+			{
+				return VT.NamedEntities(&this, riid, pNamedEntities);
+			}
+			public HRESULT GetNamedEntity(PWSTR pszValue, INamedEntity** ppNamedEntity) mut
+			{
+				return VT.GetNamedEntity(&this, pszValue, ppNamedEntity);
+			}
+			public HRESULT DefaultPhrase(PWSTR* ppszPhrase) mut
+			{
+				return VT.DefaultPhrase(&this, ppszPhrase);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEntity *self, PWSTR* ppszName) Name;
-				public function HRESULT(IEntity *self, IEntity** pBaseEntity) Base;
-				public function HRESULT(IEntity *self, Guid* riid, void** pRelationships) Relationships;
-				public function HRESULT(IEntity *self, PWSTR pszRelationName, IRelationship** pRelationship) GetRelationship;
-				public function HRESULT(IEntity *self, Guid* riid, void** pMetaData) MetaData;
-				public function HRESULT(IEntity *self, Guid* riid, void** pNamedEntities) NamedEntities;
-				public function HRESULT(IEntity *self, PWSTR pszValue, INamedEntity** ppNamedEntity) GetNamedEntity;
-				public function HRESULT(IEntity *self, PWSTR* ppszPhrase) DefaultPhrase;
+				public new function HRESULT(IEntity *self, PWSTR* ppszName) Name;
+				public new function HRESULT(IEntity *self, IEntity** pBaseEntity) Base;
+				public new function HRESULT(IEntity *self, Guid* riid, void** pRelationships) Relationships;
+				public new function HRESULT(IEntity *self, PWSTR pszRelationName, IRelationship** pRelationship) GetRelationship;
+				public new function HRESULT(IEntity *self, Guid* riid, void** pMetaData) MetaData;
+				public new function HRESULT(IEntity *self, Guid* riid, void** pNamedEntities) NamedEntities;
+				public new function HRESULT(IEntity *self, PWSTR pszValue, INamedEntity** ppNamedEntity) GetNamedEntity;
+				public new function HRESULT(IEntity *self, PWSTR* ppszPhrase) DefaultPhrase;
 			}
 		}
 		[CRepr]
@@ -7030,15 +8170,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2769280b, 0x5108, 0x498c, 0x9c, 0x7f, 0xa5, 0x12, 0x39, 0xb6, 0x31, 0x47);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Name(PWSTR* ppszName) mut
+			{
+				return VT.Name(&this, ppszName);
+			}
+			public HRESULT IsReal(BOOL* pIsReal) mut
+			{
+				return VT.IsReal(&this, pIsReal);
+			}
+			public HRESULT Destination(IEntity** pDestinationEntity) mut
+			{
+				return VT.Destination(&this, pDestinationEntity);
+			}
+			public HRESULT MetaData(Guid* riid, void** pMetaData) mut
+			{
+				return VT.MetaData(&this, riid, pMetaData);
+			}
+			public HRESULT DefaultPhrase(PWSTR* ppszPhrase) mut
+			{
+				return VT.DefaultPhrase(&this, ppszPhrase);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRelationship *self, PWSTR* ppszName) Name;
-				public function HRESULT(IRelationship *self, BOOL* pIsReal) IsReal;
-				public function HRESULT(IRelationship *self, IEntity** pDestinationEntity) Destination;
-				public function HRESULT(IRelationship *self, Guid* riid, void** pMetaData) MetaData;
-				public function HRESULT(IRelationship *self, PWSTR* ppszPhrase) DefaultPhrase;
+				public new function HRESULT(IRelationship *self, PWSTR* ppszName) Name;
+				public new function HRESULT(IRelationship *self, BOOL* pIsReal) IsReal;
+				public new function HRESULT(IRelationship *self, IEntity** pDestinationEntity) Destination;
+				public new function HRESULT(IRelationship *self, Guid* riid, void** pMetaData) MetaData;
+				public new function HRESULT(IRelationship *self, PWSTR* ppszPhrase) DefaultPhrase;
 			}
 		}
 		[CRepr]
@@ -7046,12 +8207,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xabdbd0b1, 0x7d54, 0x49fb, 0xab, 0x5c, 0xbf, 0xf4, 0x13, 0x00, 0x04, 0xcd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetValue(PWSTR* ppszValue) mut
+			{
+				return VT.GetValue(&this, ppszValue);
+			}
+			public HRESULT DefaultPhrase(PWSTR* ppszPhrase) mut
+			{
+				return VT.DefaultPhrase(&this, ppszPhrase);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(INamedEntity *self, PWSTR* ppszValue) GetValue;
-				public function HRESULT(INamedEntity *self, PWSTR* ppszPhrase) DefaultPhrase;
+				public new function HRESULT(INamedEntity *self, PWSTR* ppszValue) GetValue;
+				public new function HRESULT(INamedEntity *self, PWSTR* ppszPhrase) DefaultPhrase;
 			}
 		}
 		[CRepr]
@@ -7059,17 +8229,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8cf89bcb, 0x394c, 0x49b2, 0xae, 0x28, 0xa5, 0x9d, 0xd4, 0xed, 0x7f, 0x68);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Entities(Guid* riid, void** pEntities) mut
+			{
+				return VT.Entities(&this, riid, pEntities);
+			}
+			public HRESULT RootEntity(IEntity** pRootEntity) mut
+			{
+				return VT.RootEntity(&this, pRootEntity);
+			}
+			public HRESULT GetEntity(PWSTR pszEntityName, IEntity** pEntity) mut
+			{
+				return VT.GetEntity(&this, pszEntityName, pEntity);
+			}
+			public HRESULT MetaData(Guid* riid, void** pMetaData) mut
+			{
+				return VT.MetaData(&this, riid, pMetaData);
+			}
+			public HRESULT Localize(uint32 lcid, ISchemaLocalizerSupport* pSchemaLocalizerSupport) mut
+			{
+				return VT.Localize(&this, lcid, pSchemaLocalizerSupport);
+			}
+			public HRESULT SaveBinary(PWSTR pszSchemaBinaryPath) mut
+			{
+				return VT.SaveBinary(&this, pszSchemaBinaryPath);
+			}
+			public HRESULT LookupAuthoredNamedEntity(IEntity* pEntity, PWSTR pszInputString, ITokenCollection* pTokenCollection, uint32 cTokensBegin, uint32* pcTokensLength, PWSTR* ppszValue) mut
+			{
+				return VT.LookupAuthoredNamedEntity(&this, pEntity, pszInputString, pTokenCollection, cTokensBegin, pcTokensLength, ppszValue);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISchemaProvider *self, Guid* riid, void** pEntities) Entities;
-				public function HRESULT(ISchemaProvider *self, IEntity** pRootEntity) RootEntity;
-				public function HRESULT(ISchemaProvider *self, PWSTR pszEntityName, IEntity** pEntity) GetEntity;
-				public function HRESULT(ISchemaProvider *self, Guid* riid, void** pMetaData) MetaData;
-				public function HRESULT(ISchemaProvider *self, uint32 lcid, ISchemaLocalizerSupport* pSchemaLocalizerSupport) Localize;
-				public function HRESULT(ISchemaProvider *self, PWSTR pszSchemaBinaryPath) SaveBinary;
-				public function HRESULT(ISchemaProvider *self, IEntity* pEntity, PWSTR pszInputString, ITokenCollection* pTokenCollection, uint32 cTokensBegin, uint32* pcTokensLength, PWSTR* ppszValue) LookupAuthoredNamedEntity;
+				public new function HRESULT(ISchemaProvider *self, Guid* riid, void** pEntities) Entities;
+				public new function HRESULT(ISchemaProvider *self, IEntity** pRootEntity) RootEntity;
+				public new function HRESULT(ISchemaProvider *self, PWSTR pszEntityName, IEntity** pEntity) GetEntity;
+				public new function HRESULT(ISchemaProvider *self, Guid* riid, void** pMetaData) MetaData;
+				public new function HRESULT(ISchemaProvider *self, uint32 lcid, ISchemaLocalizerSupport* pSchemaLocalizerSupport) Localize;
+				public new function HRESULT(ISchemaProvider *self, PWSTR pszSchemaBinaryPath) SaveBinary;
+				public new function HRESULT(ISchemaProvider *self, IEntity* pEntity, PWSTR pszInputString, ITokenCollection* pTokenCollection, uint32 cTokensBegin, uint32* pcTokensLength, PWSTR* ppszValue) LookupAuthoredNamedEntity;
 			}
 		}
 		[CRepr]
@@ -7077,12 +8276,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x22d8b4f2, 0xf577, 0x4adb, 0xa3, 0x35, 0xc2, 0xae, 0x88, 0x41, 0x6f, 0xab);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT NumberOfTokens(uint32* pCount) mut
+			{
+				return VT.NumberOfTokens(&this, pCount);
+			}
+			public HRESULT GetToken(uint32 i, uint32* pBegin, uint32* pLength, PWSTR* ppsz) mut
+			{
+				return VT.GetToken(&this, i, pBegin, pLength, ppsz);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ITokenCollection *self, uint32* pCount) NumberOfTokens;
-				public function HRESULT(ITokenCollection *self, uint32 i, uint32* pBegin, uint32* pLength, PWSTR* ppsz) GetToken;
+				public new function HRESULT(ITokenCollection *self, uint32* pCount) NumberOfTokens;
+				public new function HRESULT(ITokenCollection *self, uint32 i, uint32* pBegin, uint32* pLength, PWSTR* ppsz) GetToken;
 			}
 		}
 		[CRepr]
@@ -7090,11 +8298,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xaf2440f6, 0x8afc, 0x47d0, 0x9a, 0x7f, 0x39, 0x6a, 0x0a, 0xcf, 0xb4, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Add(uint32 beginSpan, uint32 endSpan, uint32 beginActual, uint32 endActual, IEntity* pType, PWSTR pszValue, NAMED_ENTITY_CERTAINTY certainty) mut
+			{
+				return VT.Add(&this, beginSpan, endSpan, beginActual, endActual, pType, pszValue, certainty);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(INamedEntityCollector *self, uint32 beginSpan, uint32 endSpan, uint32 beginActual, uint32 endActual, IEntity* pType, PWSTR pszValue, NAMED_ENTITY_CERTAINTY certainty) Add;
+				public new function HRESULT(INamedEntityCollector *self, uint32 beginSpan, uint32 endSpan, uint32 beginActual, uint32 endActual, IEntity* pType, PWSTR pszValue, NAMED_ENTITY_CERTAINTY certainty) Add;
 			}
 		}
 		[CRepr]
@@ -7102,11 +8315,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xca3fdca2, 0xbfbe, 0x4eed, 0x90, 0xd7, 0x0c, 0xae, 0xf0, 0xa1, 0xbd, 0xa1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Localize(PWSTR pszGlobalString, PWSTR* ppszLocalString) mut
+			{
+				return VT.Localize(&this, pszGlobalString, ppszLocalString);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISchemaLocalizerSupport *self, PWSTR pszGlobalString, PWSTR* ppszLocalString) Localize;
+				public new function HRESULT(ISchemaLocalizerSupport *self, PWSTR pszGlobalString, PWSTR* ppszLocalString) Localize;
 			}
 		}
 		[CRepr]
@@ -7114,13 +8332,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa879e3c4, 0xaf77, 0x44fb, 0x8f, 0x37, 0xeb, 0xd1, 0x48, 0x7c, 0xf9, 0x20);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateLoadedParser(PWSTR pszCatalog, uint16 langidForKeywords, Guid* riid, void** ppQueryParser) mut
+			{
+				return VT.CreateLoadedParser(&this, pszCatalog, langidForKeywords, riid, ppQueryParser);
+			}
+			public HRESULT InitializeOptions(BOOL fUnderstandNQS, BOOL fAutoWildCard, IQueryParser* pQueryParser) mut
+			{
+				return VT.InitializeOptions(&this, fUnderstandNQS, fAutoWildCard, pQueryParser);
+			}
+			public HRESULT SetOption(QUERY_PARSER_MANAGER_OPTION option, PROPVARIANT* pOptionValue) mut
+			{
+				return VT.SetOption(&this, option, pOptionValue);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IQueryParserManager *self, PWSTR pszCatalog, uint16 langidForKeywords, Guid* riid, void** ppQueryParser) CreateLoadedParser;
-				public function HRESULT(IQueryParserManager *self, BOOL fUnderstandNQS, BOOL fAutoWildCard, IQueryParser* pQueryParser) InitializeOptions;
-				public function HRESULT(IQueryParserManager *self, QUERY_PARSER_MANAGER_OPTION option, PROPVARIANT* pOptionValue) SetOption;
+				public new function HRESULT(IQueryParserManager *self, PWSTR pszCatalog, uint16 langidForKeywords, Guid* riid, void** ppQueryParser) CreateLoadedParser;
+				public new function HRESULT(IQueryParserManager *self, BOOL fUnderstandNQS, BOOL fAutoWildCard, IQueryParser* pQueryParser) InitializeOptions;
+				public new function HRESULT(IQueryParserManager *self, QUERY_PARSER_MANAGER_OPTION option, PROPVARIANT* pOptionValue) SetOption;
 			}
 		}
 		[CRepr]
@@ -7128,23 +8359,76 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0b63e318, 0x9ccc, 0x11d0, 0xbc, 0xdb, 0x00, 0x80, 0x5f, 0xcc, 0xce, 0x04);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddRequestParameter(PROPSPEC* pSpec, PROPVARIANT* pVar) mut
+			{
+				return VT.AddRequestParameter(&this, pSpec, pVar);
+			}
+			public HRESULT GetDocFormat(char16* wszDocFormat, uint32 dwSize, uint32* pdwLength) mut
+			{
+				return VT.GetDocFormat(&this, wszDocFormat, dwSize, pdwLength);
+			}
+			public HRESULT GetCLSID(Guid* pClsid) mut
+			{
+				return VT.GetCLSID(&this, pClsid);
+			}
+			public HRESULT GetHost(char16* wszHost, uint32 dwSize, uint32* pdwLength) mut
+			{
+				return VT.GetHost(&this, wszHost, dwSize, pdwLength);
+			}
+			public HRESULT IsDirectory() mut
+			{
+				return VT.IsDirectory(&this);
+			}
+			public HRESULT GetSize(uint64* pllSize) mut
+			{
+				return VT.GetSize(&this, pllSize);
+			}
+			public HRESULT GetLastModified(FILETIME* pftLastModified) mut
+			{
+				return VT.GetLastModified(&this, pftLastModified);
+			}
+			public HRESULT GetFileName(char16* wszFileName, uint32 dwSize, uint32* pdwLength) mut
+			{
+				return VT.GetFileName(&this, wszFileName, dwSize, pdwLength);
+			}
+			public HRESULT GetSecurityDescriptor(uint8* pSD, uint32 dwSize, uint32* pdwLength) mut
+			{
+				return VT.GetSecurityDescriptor(&this, pSD, dwSize, pdwLength);
+			}
+			public HRESULT GetRedirectedURL(char16* wszRedirectedURL, uint32 dwSize, uint32* pdwLength) mut
+			{
+				return VT.GetRedirectedURL(&this, wszRedirectedURL, dwSize, pdwLength);
+			}
+			public HRESULT GetSecurityProvider(Guid* pSPClsid) mut
+			{
+				return VT.GetSecurityProvider(&this, pSPClsid);
+			}
+			public HRESULT BindToStream(IStream** ppStream) mut
+			{
+				return VT.BindToStream(&this, ppStream);
+			}
+			public HRESULT BindToFilter(IFilter** ppFilter) mut
+			{
+				return VT.BindToFilter(&this, ppFilter);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUrlAccessor *self, PROPSPEC* pSpec, PROPVARIANT* pVar) AddRequestParameter;
-				public function HRESULT(IUrlAccessor *self, char16* wszDocFormat, uint32 dwSize, uint32* pdwLength) GetDocFormat;
-				public function HRESULT(IUrlAccessor *self, Guid* pClsid) GetCLSID;
-				public function HRESULT(IUrlAccessor *self, char16* wszHost, uint32 dwSize, uint32* pdwLength) GetHost;
-				public function HRESULT(IUrlAccessor *self) IsDirectory;
-				public function HRESULT(IUrlAccessor *self, uint64* pllSize) GetSize;
-				public function HRESULT(IUrlAccessor *self, FILETIME* pftLastModified) GetLastModified;
-				public function HRESULT(IUrlAccessor *self, char16* wszFileName, uint32 dwSize, uint32* pdwLength) GetFileName;
-				public function HRESULT(IUrlAccessor *self, uint8* pSD, uint32 dwSize, uint32* pdwLength) GetSecurityDescriptor;
-				public function HRESULT(IUrlAccessor *self, char16* wszRedirectedURL, uint32 dwSize, uint32* pdwLength) GetRedirectedURL;
-				public function HRESULT(IUrlAccessor *self, Guid* pSPClsid) GetSecurityProvider;
-				public function HRESULT(IUrlAccessor *self, IStream** ppStream) BindToStream;
-				public function HRESULT(IUrlAccessor *self, IFilter** ppFilter) BindToFilter;
+				public new function HRESULT(IUrlAccessor *self, PROPSPEC* pSpec, PROPVARIANT* pVar) AddRequestParameter;
+				public new function HRESULT(IUrlAccessor *self, char16* wszDocFormat, uint32 dwSize, uint32* pdwLength) GetDocFormat;
+				public new function HRESULT(IUrlAccessor *self, Guid* pClsid) GetCLSID;
+				public new function HRESULT(IUrlAccessor *self, char16* wszHost, uint32 dwSize, uint32* pdwLength) GetHost;
+				public new function HRESULT(IUrlAccessor *self) IsDirectory;
+				public new function HRESULT(IUrlAccessor *self, uint64* pllSize) GetSize;
+				public new function HRESULT(IUrlAccessor *self, FILETIME* pftLastModified) GetLastModified;
+				public new function HRESULT(IUrlAccessor *self, char16* wszFileName, uint32 dwSize, uint32* pdwLength) GetFileName;
+				public new function HRESULT(IUrlAccessor *self, uint8* pSD, uint32 dwSize, uint32* pdwLength) GetSecurityDescriptor;
+				public new function HRESULT(IUrlAccessor *self, char16* wszRedirectedURL, uint32 dwSize, uint32* pdwLength) GetRedirectedURL;
+				public new function HRESULT(IUrlAccessor *self, Guid* pSPClsid) GetSecurityProvider;
+				public new function HRESULT(IUrlAccessor *self, IStream** ppStream) BindToStream;
+				public new function HRESULT(IUrlAccessor *self, IFilter** ppFilter) BindToFilter;
 			}
 		}
 		[CRepr]
@@ -7152,13 +8436,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc7310734, 0xac80, 0x11d1, 0x8d, 0xf3, 0x00, 0xc0, 0x4f, 0xb6, 0xef, 0x4f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDisplayUrl(char16* wszDocUrl, uint32 dwSize, uint32* pdwLength) mut
+			{
+				return VT.GetDisplayUrl(&this, wszDocUrl, dwSize, pdwLength);
+			}
+			public HRESULT IsDocument() mut
+			{
+				return VT.IsDocument(&this);
+			}
+			public HRESULT GetCodePage(char16* wszCodePage, uint32 dwSize, uint32* pdwLength) mut
+			{
+				return VT.GetCodePage(&this, wszCodePage, dwSize, pdwLength);
+			}
 			[CRepr]
 			public struct VTable : IUrlAccessor.VTable
 			{
-				public function HRESULT(IUrlAccessor2 *self, char16* wszDocUrl, uint32 dwSize, uint32* pdwLength) GetDisplayUrl;
-				public function HRESULT(IUrlAccessor2 *self) IsDocument;
-				public function HRESULT(IUrlAccessor2 *self, char16* wszCodePage, uint32 dwSize, uint32* pdwLength) GetCodePage;
+				public new function HRESULT(IUrlAccessor2 *self, char16* wszDocUrl, uint32 dwSize, uint32* pdwLength) GetDisplayUrl;
+				public new function HRESULT(IUrlAccessor2 *self) IsDocument;
+				public new function HRESULT(IUrlAccessor2 *self, char16* wszCodePage, uint32 dwSize, uint32* pdwLength) GetCodePage;
 			}
 		}
 		[CRepr]
@@ -7166,11 +8463,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6fbc7005, 0x0455, 0x4874, 0xb8, 0xff, 0x74, 0x39, 0x45, 0x02, 0x41, 0xa3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetImpersonationSidBlobs(PWSTR pcwszURL, uint32* pcSidCount, BLOB** ppSidBlobs) mut
+			{
+				return VT.GetImpersonationSidBlobs(&this, pcwszURL, pcSidCount, ppSidBlobs);
+			}
 			[CRepr]
 			public struct VTable : IUrlAccessor2.VTable
 			{
-				public function HRESULT(IUrlAccessor3 *self, PWSTR pcwszURL, uint32* pcSidCount, BLOB** ppSidBlobs) GetImpersonationSidBlobs;
+				public new function HRESULT(IUrlAccessor3 *self, PWSTR pcwszURL, uint32* pcSidCount, BLOB** ppSidBlobs) GetImpersonationSidBlobs;
 			}
 		}
 		[CRepr]
@@ -7178,12 +8480,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5cc51041, 0xc8d2, 0x41d7, 0xbc, 0xa3, 0x9e, 0x9e, 0x28, 0x62, 0x97, 0xdc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ShouldIndexItemContent(BOOL* pfIndexContent) mut
+			{
+				return VT.ShouldIndexItemContent(&this, pfIndexContent);
+			}
+			public HRESULT ShouldIndexProperty(PROPERTYKEY* key, BOOL* pfIndexProperty) mut
+			{
+				return VT.ShouldIndexProperty(&this, key, pfIndexProperty);
+			}
 			[CRepr]
 			public struct VTable : IUrlAccessor3.VTable
 			{
-				public function HRESULT(IUrlAccessor4 *self, BOOL* pfIndexContent) ShouldIndexItemContent;
-				public function HRESULT(IUrlAccessor4 *self, PROPERTYKEY* key, BOOL* pfIndexProperty) ShouldIndexProperty;
+				public new function HRESULT(IUrlAccessor4 *self, BOOL* pfIndexContent) ShouldIndexItemContent;
+				public new function HRESULT(IUrlAccessor4 *self, PROPERTYKEY* key, BOOL* pfIndexProperty) ShouldIndexProperty;
 			}
 		}
 		[CRepr]
@@ -7191,13 +8502,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc731065d, 0xac80, 0x11d1, 0x8d, 0xf3, 0x00, 0xc0, 0x4f, 0xb6, 0xef, 0x4f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT IsOplockValid(BOOL* pfIsOplockValid) mut
+			{
+				return VT.IsOplockValid(&this, pfIsOplockValid);
+			}
+			public HRESULT IsOplockBroken(BOOL* pfIsOplockBroken) mut
+			{
+				return VT.IsOplockBroken(&this, pfIsOplockBroken);
+			}
+			public HRESULT GetOplockEventHandle(HANDLE* phOplockEv) mut
+			{
+				return VT.GetOplockEventHandle(&this, phOplockEv);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IOpLockStatus *self, BOOL* pfIsOplockValid) IsOplockValid;
-				public function HRESULT(IOpLockStatus *self, BOOL* pfIsOplockBroken) IsOplockBroken;
-				public function HRESULT(IOpLockStatus *self, HANDLE* phOplockEv) GetOplockEventHandle;
+				public new function HRESULT(IOpLockStatus *self, BOOL* pfIsOplockValid) IsOplockValid;
+				public new function HRESULT(IOpLockStatus *self, BOOL* pfIsOplockBroken) IsOplockBroken;
+				public new function HRESULT(IOpLockStatus *self, HANDLE* phOplockEv) GetOplockEventHandle;
 			}
 		}
 		[CRepr]
@@ -7205,13 +8529,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc73106e1, 0xac80, 0x11d1, 0x8d, 0xf3, 0x00, 0xc0, 0x4f, 0xb6, 0xef, 0x4f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ThreadInit() mut
+			{
+				return VT.ThreadInit(&this);
+			}
+			public HRESULT ThreadShutdown() mut
+			{
+				return VT.ThreadShutdown(&this);
+			}
+			public HRESULT ThreadIdle(uint32 dwTimeElaspedSinceLastCallInMS) mut
+			{
+				return VT.ThreadIdle(&this, dwTimeElaspedSinceLastCallInMS);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISearchProtocolThreadContext *self) ThreadInit;
-				public function HRESULT(ISearchProtocolThreadContext *self) ThreadShutdown;
-				public function HRESULT(ISearchProtocolThreadContext *self, uint32 dwTimeElaspedSinceLastCallInMS) ThreadIdle;
+				public new function HRESULT(ISearchProtocolThreadContext *self) ThreadInit;
+				public new function HRESULT(ISearchProtocolThreadContext *self) ThreadShutdown;
+				public new function HRESULT(ISearchProtocolThreadContext *self, uint32 dwTimeElaspedSinceLastCallInMS) ThreadIdle;
 			}
 		}
 		[CRepr]
@@ -7219,14 +8556,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc73106ba, 0xac80, 0x11d1, 0x8d, 0xf3, 0x00, 0xc0, 0x4f, 0xb6, 0xef, 0x4f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Init(TIMEOUT_INFO* pTimeoutInfo, IProtocolHandlerSite* pProtocolHandlerSite, PROXY_INFO* pProxyInfo) mut
+			{
+				return VT.Init(&this, pTimeoutInfo, pProtocolHandlerSite, pProxyInfo);
+			}
+			public HRESULT CreateAccessor(PWSTR pcwszURL, AUTHENTICATION_INFO* pAuthenticationInfo, INCREMENTAL_ACCESS_INFO* pIncrementalAccessInfo, ITEM_INFO* pItemInfo, IUrlAccessor** ppAccessor) mut
+			{
+				return VT.CreateAccessor(&this, pcwszURL, pAuthenticationInfo, pIncrementalAccessInfo, pItemInfo, ppAccessor);
+			}
+			public HRESULT CloseAccessor(IUrlAccessor* pAccessor) mut
+			{
+				return VT.CloseAccessor(&this, pAccessor);
+			}
+			public HRESULT ShutDown() mut
+			{
+				return VT.ShutDown(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISearchProtocol *self, TIMEOUT_INFO* pTimeoutInfo, IProtocolHandlerSite* pProtocolHandlerSite, PROXY_INFO* pProxyInfo) Init;
-				public function HRESULT(ISearchProtocol *self, PWSTR pcwszURL, AUTHENTICATION_INFO* pAuthenticationInfo, INCREMENTAL_ACCESS_INFO* pIncrementalAccessInfo, ITEM_INFO* pItemInfo, IUrlAccessor** ppAccessor) CreateAccessor;
-				public function HRESULT(ISearchProtocol *self, IUrlAccessor* pAccessor) CloseAccessor;
-				public function HRESULT(ISearchProtocol *self) ShutDown;
+				public new function HRESULT(ISearchProtocol *self, TIMEOUT_INFO* pTimeoutInfo, IProtocolHandlerSite* pProtocolHandlerSite, PROXY_INFO* pProxyInfo) Init;
+				public new function HRESULT(ISearchProtocol *self, PWSTR pcwszURL, AUTHENTICATION_INFO* pAuthenticationInfo, INCREMENTAL_ACCESS_INFO* pIncrementalAccessInfo, ITEM_INFO* pItemInfo, IUrlAccessor** ppAccessor) CreateAccessor;
+				public new function HRESULT(ISearchProtocol *self, IUrlAccessor* pAccessor) CloseAccessor;
+				public new function HRESULT(ISearchProtocol *self) ShutDown;
 			}
 		}
 		[CRepr]
@@ -7234,11 +8588,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7789f0b2, 0xb5b2, 0x4722, 0x8b, 0x65, 0x5d, 0xbd, 0x15, 0x06, 0x97, 0xa9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateAccessorEx(PWSTR pcwszURL, AUTHENTICATION_INFO* pAuthenticationInfo, INCREMENTAL_ACCESS_INFO* pIncrementalAccessInfo, ITEM_INFO* pItemInfo, BLOB* pUserData, IUrlAccessor** ppAccessor) mut
+			{
+				return VT.CreateAccessorEx(&this, pcwszURL, pAuthenticationInfo, pIncrementalAccessInfo, pItemInfo, pUserData, ppAccessor);
+			}
 			[CRepr]
 			public struct VTable : ISearchProtocol.VTable
 			{
-				public function HRESULT(ISearchProtocol2 *self, PWSTR pcwszURL, AUTHENTICATION_INFO* pAuthenticationInfo, INCREMENTAL_ACCESS_INFO* pIncrementalAccessInfo, ITEM_INFO* pItemInfo, BLOB* pUserData, IUrlAccessor** ppAccessor) CreateAccessorEx;
+				public new function HRESULT(ISearchProtocol2 *self, PWSTR pcwszURL, AUTHENTICATION_INFO* pAuthenticationInfo, INCREMENTAL_ACCESS_INFO* pIncrementalAccessInfo, ITEM_INFO* pItemInfo, BLOB* pUserData, IUrlAccessor** ppAccessor) CreateAccessorEx;
 			}
 		}
 		[CRepr]
@@ -7246,11 +8605,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0b63e385, 0x9ccc, 0x11d0, 0xbc, 0xdb, 0x00, 0x80, 0x5f, 0xcc, 0xce, 0x04);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetFilter(Guid* pclsidObj, PWSTR pcwszContentType, PWSTR pcwszExtension, IFilter** ppFilter) mut
+			{
+				return VT.GetFilter(&this, pclsidObj, pcwszContentType, pcwszExtension, ppFilter);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IProtocolHandlerSite *self, Guid* pclsidObj, PWSTR pcwszContentType, PWSTR pcwszExtension, IFilter** ppFilter) GetFilter;
+				public new function HRESULT(IProtocolHandlerSite *self, Guid* pclsidObj, PWSTR pcwszContentType, PWSTR pcwszExtension, IFilter** ppFilter) GetFilter;
 			}
 		}
 		[CRepr]
@@ -7258,32 +8622,121 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x04c18ccf, 0x1f57, 0x4cbd, 0x88, 0xcc, 0x39, 0x00, 0xf5, 0x19, 0x5c, 0xe3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT put_Schedule(PWSTR pszTaskArg) mut
+			{
+				return VT.put_Schedule(&this, pszTaskArg);
+			}
+			public HRESULT get_Schedule(PWSTR* ppszTaskArg) mut
+			{
+				return VT.get_Schedule(&this, ppszTaskArg);
+			}
+			public HRESULT put_RootURL(PWSTR pszURL) mut
+			{
+				return VT.put_RootURL(&this, pszURL);
+			}
+			public HRESULT get_RootURL(PWSTR* ppszURL) mut
+			{
+				return VT.get_RootURL(&this, ppszURL);
+			}
+			public HRESULT put_IsHierarchical(BOOL fIsHierarchical) mut
+			{
+				return VT.put_IsHierarchical(&this, fIsHierarchical);
+			}
+			public HRESULT get_IsHierarchical(BOOL* pfIsHierarchical) mut
+			{
+				return VT.get_IsHierarchical(&this, pfIsHierarchical);
+			}
+			public HRESULT put_ProvidesNotifications(BOOL fProvidesNotifications) mut
+			{
+				return VT.put_ProvidesNotifications(&this, fProvidesNotifications);
+			}
+			public HRESULT get_ProvidesNotifications(BOOL* pfProvidesNotifications) mut
+			{
+				return VT.get_ProvidesNotifications(&this, pfProvidesNotifications);
+			}
+			public HRESULT put_UseNotificationsOnly(BOOL fUseNotificationsOnly) mut
+			{
+				return VT.put_UseNotificationsOnly(&this, fUseNotificationsOnly);
+			}
+			public HRESULT get_UseNotificationsOnly(BOOL* pfUseNotificationsOnly) mut
+			{
+				return VT.get_UseNotificationsOnly(&this, pfUseNotificationsOnly);
+			}
+			public HRESULT put_EnumerationDepth(uint32 dwDepth) mut
+			{
+				return VT.put_EnumerationDepth(&this, dwDepth);
+			}
+			public HRESULT get_EnumerationDepth(uint32* pdwDepth) mut
+			{
+				return VT.get_EnumerationDepth(&this, pdwDepth);
+			}
+			public HRESULT put_HostDepth(uint32 dwDepth) mut
+			{
+				return VT.put_HostDepth(&this, dwDepth);
+			}
+			public HRESULT get_HostDepth(uint32* pdwDepth) mut
+			{
+				return VT.get_HostDepth(&this, pdwDepth);
+			}
+			public HRESULT put_FollowDirectories(BOOL fFollowDirectories) mut
+			{
+				return VT.put_FollowDirectories(&this, fFollowDirectories);
+			}
+			public HRESULT get_FollowDirectories(BOOL* pfFollowDirectories) mut
+			{
+				return VT.get_FollowDirectories(&this, pfFollowDirectories);
+			}
+			public HRESULT put_AuthenticationType(AUTH_TYPE authType) mut
+			{
+				return VT.put_AuthenticationType(&this, authType);
+			}
+			public HRESULT get_AuthenticationType(AUTH_TYPE* pAuthType) mut
+			{
+				return VT.get_AuthenticationType(&this, pAuthType);
+			}
+			public HRESULT put_User(PWSTR pszUser) mut
+			{
+				return VT.put_User(&this, pszUser);
+			}
+			public HRESULT get_User(PWSTR* ppszUser) mut
+			{
+				return VT.get_User(&this, ppszUser);
+			}
+			public HRESULT put_Password(PWSTR pszPassword) mut
+			{
+				return VT.put_Password(&this, pszPassword);
+			}
+			public HRESULT get_Password(PWSTR* ppszPassword) mut
+			{
+				return VT.get_Password(&this, ppszPassword);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISearchRoot *self, PWSTR pszTaskArg) put_Schedule;
-				public function HRESULT(ISearchRoot *self, PWSTR* ppszTaskArg) get_Schedule;
-				public function HRESULT(ISearchRoot *self, PWSTR pszURL) put_RootURL;
-				public function HRESULT(ISearchRoot *self, PWSTR* ppszURL) get_RootURL;
-				public function HRESULT(ISearchRoot *self, BOOL fIsHierarchical) put_IsHierarchical;
-				public function HRESULT(ISearchRoot *self, BOOL* pfIsHierarchical) get_IsHierarchical;
-				public function HRESULT(ISearchRoot *self, BOOL fProvidesNotifications) put_ProvidesNotifications;
-				public function HRESULT(ISearchRoot *self, BOOL* pfProvidesNotifications) get_ProvidesNotifications;
-				public function HRESULT(ISearchRoot *self, BOOL fUseNotificationsOnly) put_UseNotificationsOnly;
-				public function HRESULT(ISearchRoot *self, BOOL* pfUseNotificationsOnly) get_UseNotificationsOnly;
-				public function HRESULT(ISearchRoot *self, uint32 dwDepth) put_EnumerationDepth;
-				public function HRESULT(ISearchRoot *self, uint32* pdwDepth) get_EnumerationDepth;
-				public function HRESULT(ISearchRoot *self, uint32 dwDepth) put_HostDepth;
-				public function HRESULT(ISearchRoot *self, uint32* pdwDepth) get_HostDepth;
-				public function HRESULT(ISearchRoot *self, BOOL fFollowDirectories) put_FollowDirectories;
-				public function HRESULT(ISearchRoot *self, BOOL* pfFollowDirectories) get_FollowDirectories;
-				public function HRESULT(ISearchRoot *self, AUTH_TYPE authType) put_AuthenticationType;
-				public function HRESULT(ISearchRoot *self, AUTH_TYPE* pAuthType) get_AuthenticationType;
-				public function HRESULT(ISearchRoot *self, PWSTR pszUser) put_User;
-				public function HRESULT(ISearchRoot *self, PWSTR* ppszUser) get_User;
-				public function HRESULT(ISearchRoot *self, PWSTR pszPassword) put_Password;
-				public function HRESULT(ISearchRoot *self, PWSTR* ppszPassword) get_Password;
+				public new function HRESULT(ISearchRoot *self, PWSTR pszTaskArg) put_Schedule;
+				public new function HRESULT(ISearchRoot *self, PWSTR* ppszTaskArg) get_Schedule;
+				public new function HRESULT(ISearchRoot *self, PWSTR pszURL) put_RootURL;
+				public new function HRESULT(ISearchRoot *self, PWSTR* ppszURL) get_RootURL;
+				public new function HRESULT(ISearchRoot *self, BOOL fIsHierarchical) put_IsHierarchical;
+				public new function HRESULT(ISearchRoot *self, BOOL* pfIsHierarchical) get_IsHierarchical;
+				public new function HRESULT(ISearchRoot *self, BOOL fProvidesNotifications) put_ProvidesNotifications;
+				public new function HRESULT(ISearchRoot *self, BOOL* pfProvidesNotifications) get_ProvidesNotifications;
+				public new function HRESULT(ISearchRoot *self, BOOL fUseNotificationsOnly) put_UseNotificationsOnly;
+				public new function HRESULT(ISearchRoot *self, BOOL* pfUseNotificationsOnly) get_UseNotificationsOnly;
+				public new function HRESULT(ISearchRoot *self, uint32 dwDepth) put_EnumerationDepth;
+				public new function HRESULT(ISearchRoot *self, uint32* pdwDepth) get_EnumerationDepth;
+				public new function HRESULT(ISearchRoot *self, uint32 dwDepth) put_HostDepth;
+				public new function HRESULT(ISearchRoot *self, uint32* pdwDepth) get_HostDepth;
+				public new function HRESULT(ISearchRoot *self, BOOL fFollowDirectories) put_FollowDirectories;
+				public new function HRESULT(ISearchRoot *self, BOOL* pfFollowDirectories) get_FollowDirectories;
+				public new function HRESULT(ISearchRoot *self, AUTH_TYPE authType) put_AuthenticationType;
+				public new function HRESULT(ISearchRoot *self, AUTH_TYPE* pAuthType) get_AuthenticationType;
+				public new function HRESULT(ISearchRoot *self, PWSTR pszUser) put_User;
+				public new function HRESULT(ISearchRoot *self, PWSTR* ppszUser) get_User;
+				public new function HRESULT(ISearchRoot *self, PWSTR pszPassword) put_Password;
+				public new function HRESULT(ISearchRoot *self, PWSTR* ppszPassword) get_Password;
 			}
 		}
 		[CRepr]
@@ -7291,14 +8744,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xab310581, 0xac80, 0x11d1, 0x8d, 0xf3, 0x00, 0xc0, 0x4f, 0xb6, 0xef, 0x52);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 celt, ISearchRoot** rgelt, uint32* pceltFetched) mut
+			{
+				return VT.Next(&this, celt, rgelt, pceltFetched);
+			}
+			public HRESULT Skip(uint32 celt) mut
+			{
+				return VT.Skip(&this, celt);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumSearchRoots** ppenum) mut
+			{
+				return VT.Clone(&this, ppenum);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumSearchRoots *self, uint32 celt, ISearchRoot** rgelt, uint32* pceltFetched) Next;
-				public function HRESULT(IEnumSearchRoots *self, uint32 celt) Skip;
-				public function HRESULT(IEnumSearchRoots *self) Reset;
-				public function HRESULT(IEnumSearchRoots *self, IEnumSearchRoots** ppenum) Clone;
+				public new function HRESULT(IEnumSearchRoots *self, uint32 celt, ISearchRoot** rgelt, uint32* pceltFetched) Next;
+				public new function HRESULT(IEnumSearchRoots *self, uint32 celt) Skip;
+				public new function HRESULT(IEnumSearchRoots *self) Reset;
+				public new function HRESULT(IEnumSearchRoots *self, IEnumSearchRoots** ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -7306,14 +8776,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xab310581, 0xac80, 0x11d1, 0x8d, 0xf3, 0x00, 0xc0, 0x4f, 0xb6, 0xef, 0x53);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_PatternOrURL(PWSTR* ppszPatternOrURL) mut
+			{
+				return VT.get_PatternOrURL(&this, ppszPatternOrURL);
+			}
+			public HRESULT get_IsIncluded(BOOL* pfIsIncluded) mut
+			{
+				return VT.get_IsIncluded(&this, pfIsIncluded);
+			}
+			public HRESULT get_IsDefault(BOOL* pfIsDefault) mut
+			{
+				return VT.get_IsDefault(&this, pfIsDefault);
+			}
+			public HRESULT get_FollowFlags(uint32* pFollowFlags) mut
+			{
+				return VT.get_FollowFlags(&this, pFollowFlags);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISearchScopeRule *self, PWSTR* ppszPatternOrURL) get_PatternOrURL;
-				public function HRESULT(ISearchScopeRule *self, BOOL* pfIsIncluded) get_IsIncluded;
-				public function HRESULT(ISearchScopeRule *self, BOOL* pfIsDefault) get_IsDefault;
-				public function HRESULT(ISearchScopeRule *self, uint32* pFollowFlags) get_FollowFlags;
+				public new function HRESULT(ISearchScopeRule *self, PWSTR* ppszPatternOrURL) get_PatternOrURL;
+				public new function HRESULT(ISearchScopeRule *self, BOOL* pfIsIncluded) get_IsIncluded;
+				public new function HRESULT(ISearchScopeRule *self, BOOL* pfIsDefault) get_IsDefault;
+				public new function HRESULT(ISearchScopeRule *self, uint32* pFollowFlags) get_FollowFlags;
 			}
 		}
 		[CRepr]
@@ -7321,14 +8808,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xab310581, 0xac80, 0x11d1, 0x8d, 0xf3, 0x00, 0xc0, 0x4f, 0xb6, 0xef, 0x54);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 celt, ISearchScopeRule** pprgelt, uint32* pceltFetched) mut
+			{
+				return VT.Next(&this, celt, pprgelt, pceltFetched);
+			}
+			public HRESULT Skip(uint32 celt) mut
+			{
+				return VT.Skip(&this, celt);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumSearchScopeRules** ppenum) mut
+			{
+				return VT.Clone(&this, ppenum);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumSearchScopeRules *self, uint32 celt, ISearchScopeRule** pprgelt, uint32* pceltFetched) Next;
-				public function HRESULT(IEnumSearchScopeRules *self, uint32 celt) Skip;
-				public function HRESULT(IEnumSearchScopeRules *self) Reset;
-				public function HRESULT(IEnumSearchScopeRules *self, IEnumSearchScopeRules** ppenum) Clone;
+				public new function HRESULT(IEnumSearchScopeRules *self, uint32 celt, ISearchScopeRule** pprgelt, uint32* pceltFetched) Next;
+				public new function HRESULT(IEnumSearchScopeRules *self, uint32 celt) Skip;
+				public new function HRESULT(IEnumSearchScopeRules *self) Reset;
+				public new function HRESULT(IEnumSearchScopeRules *self, IEnumSearchScopeRules** ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -7336,26 +8840,91 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xab310581, 0xac80, 0x11d1, 0x8d, 0xf3, 0x00, 0xc0, 0x4f, 0xb6, 0xef, 0x55);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddDefaultScopeRule(PWSTR pszURL, BOOL fInclude, uint32 fFollowFlags) mut
+			{
+				return VT.AddDefaultScopeRule(&this, pszURL, fInclude, fFollowFlags);
+			}
+			public HRESULT AddRoot(ISearchRoot* pSearchRoot) mut
+			{
+				return VT.AddRoot(&this, pSearchRoot);
+			}
+			public HRESULT RemoveRoot(PWSTR pszURL) mut
+			{
+				return VT.RemoveRoot(&this, pszURL);
+			}
+			public HRESULT EnumerateRoots(IEnumSearchRoots** ppSearchRoots) mut
+			{
+				return VT.EnumerateRoots(&this, ppSearchRoots);
+			}
+			public HRESULT AddHierarchicalScope(PWSTR pszURL, BOOL fInclude, BOOL fDefault, BOOL fOverrideChildren) mut
+			{
+				return VT.AddHierarchicalScope(&this, pszURL, fInclude, fDefault, fOverrideChildren);
+			}
+			public HRESULT AddUserScopeRule(PWSTR pszURL, BOOL fInclude, BOOL fOverrideChildren, uint32 fFollowFlags) mut
+			{
+				return VT.AddUserScopeRule(&this, pszURL, fInclude, fOverrideChildren, fFollowFlags);
+			}
+			public HRESULT RemoveScopeRule(PWSTR pszRule) mut
+			{
+				return VT.RemoveScopeRule(&this, pszRule);
+			}
+			public HRESULT EnumerateScopeRules(IEnumSearchScopeRules** ppSearchScopeRules) mut
+			{
+				return VT.EnumerateScopeRules(&this, ppSearchScopeRules);
+			}
+			public HRESULT HasParentScopeRule(PWSTR pszURL, BOOL* pfHasParentRule) mut
+			{
+				return VT.HasParentScopeRule(&this, pszURL, pfHasParentRule);
+			}
+			public HRESULT HasChildScopeRule(PWSTR pszURL, BOOL* pfHasChildRule) mut
+			{
+				return VT.HasChildScopeRule(&this, pszURL, pfHasChildRule);
+			}
+			public HRESULT IncludedInCrawlScope(PWSTR pszURL, BOOL* pfIsIncluded) mut
+			{
+				return VT.IncludedInCrawlScope(&this, pszURL, pfIsIncluded);
+			}
+			public HRESULT IncludedInCrawlScopeEx(PWSTR pszURL, BOOL* pfIsIncluded, CLUSION_REASON* pReason) mut
+			{
+				return VT.IncludedInCrawlScopeEx(&this, pszURL, pfIsIncluded, pReason);
+			}
+			public HRESULT RevertToDefaultScopes() mut
+			{
+				return VT.RevertToDefaultScopes(&this);
+			}
+			public HRESULT SaveAll() mut
+			{
+				return VT.SaveAll(&this);
+			}
+			public HRESULT GetParentScopeVersionId(PWSTR pszURL, int32* plScopeId) mut
+			{
+				return VT.GetParentScopeVersionId(&this, pszURL, plScopeId);
+			}
+			public HRESULT RemoveDefaultScopeRule(PWSTR pszURL) mut
+			{
+				return VT.RemoveDefaultScopeRule(&this, pszURL);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL, BOOL fInclude, uint32 fFollowFlags) AddDefaultScopeRule;
-				public function HRESULT(ISearchCrawlScopeManager *self, ISearchRoot* pSearchRoot) AddRoot;
-				public function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL) RemoveRoot;
-				public function HRESULT(ISearchCrawlScopeManager *self, IEnumSearchRoots** ppSearchRoots) EnumerateRoots;
-				public function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL, BOOL fInclude, BOOL fDefault, BOOL fOverrideChildren) AddHierarchicalScope;
-				public function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL, BOOL fInclude, BOOL fOverrideChildren, uint32 fFollowFlags) AddUserScopeRule;
-				public function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszRule) RemoveScopeRule;
-				public function HRESULT(ISearchCrawlScopeManager *self, IEnumSearchScopeRules** ppSearchScopeRules) EnumerateScopeRules;
-				public function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL, BOOL* pfHasParentRule) HasParentScopeRule;
-				public function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL, BOOL* pfHasChildRule) HasChildScopeRule;
-				public function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL, BOOL* pfIsIncluded) IncludedInCrawlScope;
-				public function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL, BOOL* pfIsIncluded, CLUSION_REASON* pReason) IncludedInCrawlScopeEx;
-				public function HRESULT(ISearchCrawlScopeManager *self) RevertToDefaultScopes;
-				public function HRESULT(ISearchCrawlScopeManager *self) SaveAll;
-				public function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL, int32* plScopeId) GetParentScopeVersionId;
-				public function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL) RemoveDefaultScopeRule;
+				public new function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL, BOOL fInclude, uint32 fFollowFlags) AddDefaultScopeRule;
+				public new function HRESULT(ISearchCrawlScopeManager *self, ISearchRoot* pSearchRoot) AddRoot;
+				public new function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL) RemoveRoot;
+				public new function HRESULT(ISearchCrawlScopeManager *self, IEnumSearchRoots** ppSearchRoots) EnumerateRoots;
+				public new function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL, BOOL fInclude, BOOL fDefault, BOOL fOverrideChildren) AddHierarchicalScope;
+				public new function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL, BOOL fInclude, BOOL fOverrideChildren, uint32 fFollowFlags) AddUserScopeRule;
+				public new function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszRule) RemoveScopeRule;
+				public new function HRESULT(ISearchCrawlScopeManager *self, IEnumSearchScopeRules** ppSearchScopeRules) EnumerateScopeRules;
+				public new function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL, BOOL* pfHasParentRule) HasParentScopeRule;
+				public new function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL, BOOL* pfHasChildRule) HasChildScopeRule;
+				public new function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL, BOOL* pfIsIncluded) IncludedInCrawlScope;
+				public new function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL, BOOL* pfIsIncluded, CLUSION_REASON* pReason) IncludedInCrawlScopeEx;
+				public new function HRESULT(ISearchCrawlScopeManager *self) RevertToDefaultScopes;
+				public new function HRESULT(ISearchCrawlScopeManager *self) SaveAll;
+				public new function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL, int32* plScopeId) GetParentScopeVersionId;
+				public new function HRESULT(ISearchCrawlScopeManager *self, PWSTR pszURL) RemoveDefaultScopeRule;
 			}
 		}
 		[CRepr]
@@ -7363,11 +8932,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6292f7ad, 0x4e19, 0x4717, 0xa5, 0x34, 0x8f, 0xc2, 0x2b, 0xcd, 0x5c, 0xcd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetVersion(int32** plVersion, HANDLE* phFileMapping) mut
+			{
+				return VT.GetVersion(&this, plVersion, phFileMapping);
+			}
 			[CRepr]
 			public struct VTable : ISearchCrawlScopeManager.VTable
 			{
-				public function HRESULT(ISearchCrawlScopeManager2 *self, int32** plVersion, HANDLE* phFileMapping) GetVersion;
+				public new function HRESULT(ISearchCrawlScopeManager2 *self, int32** plVersion, HANDLE* phFileMapping) GetVersion;
 			}
 		}
 		[CRepr]
@@ -7375,13 +8949,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xab310581, 0xac80, 0x11d1, 0x8d, 0xf3, 0x00, 0xc0, 0x4f, 0xb6, 0xef, 0x58);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT StartedMonitoringScope(PWSTR pszURL) mut
+			{
+				return VT.StartedMonitoringScope(&this, pszURL);
+			}
+			public HRESULT StoppedMonitoringScope(PWSTR pszURL) mut
+			{
+				return VT.StoppedMonitoringScope(&this, pszURL);
+			}
+			public HRESULT OnItemsChanged(uint32 dwNumberOfChanges, SEARCH_ITEM_CHANGE* rgDataChangeEntries, uint32* rgdwDocIds, HRESULT* rghrCompletionCodes) mut
+			{
+				return VT.OnItemsChanged(&this, dwNumberOfChanges, rgDataChangeEntries, rgdwDocIds, rghrCompletionCodes);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISearchItemsChangedSink *self, PWSTR pszURL) StartedMonitoringScope;
-				public function HRESULT(ISearchItemsChangedSink *self, PWSTR pszURL) StoppedMonitoringScope;
-				public function HRESULT(ISearchItemsChangedSink *self, uint32 dwNumberOfChanges, SEARCH_ITEM_CHANGE* rgDataChangeEntries, uint32* rgdwDocIds, HRESULT* rghrCompletionCodes) OnItemsChanged;
+				public new function HRESULT(ISearchItemsChangedSink *self, PWSTR pszURL) StartedMonitoringScope;
+				public new function HRESULT(ISearchItemsChangedSink *self, PWSTR pszURL) StoppedMonitoringScope;
+				public new function HRESULT(ISearchItemsChangedSink *self, uint32 dwNumberOfChanges, SEARCH_ITEM_CHANGE* rgDataChangeEntries, uint32* rgdwDocIds, HRESULT* rghrCompletionCodes) OnItemsChanged;
 			}
 		}
 		[CRepr]
@@ -7389,13 +8976,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa2ffdf9b, 0x4758, 0x4f84, 0xb7, 0x29, 0xdf, 0x81, 0xa1, 0xa0, 0x61, 0x2f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT StartedMonitoringScope(PWSTR pszURL) mut
+			{
+				return VT.StartedMonitoringScope(&this, pszURL);
+			}
+			public HRESULT StoppedMonitoringScope(PWSTR pszURL) mut
+			{
+				return VT.StoppedMonitoringScope(&this, pszURL);
+			}
+			public HRESULT OnItemsChanged(uint32 dwNumberOfChanges, SEARCH_ITEM_PERSISTENT_CHANGE* DataChangeEntries, HRESULT* hrCompletionCodes) mut
+			{
+				return VT.OnItemsChanged(&this, dwNumberOfChanges, DataChangeEntries, hrCompletionCodes);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISearchPersistentItemsChangedSink *self, PWSTR pszURL) StartedMonitoringScope;
-				public function HRESULT(ISearchPersistentItemsChangedSink *self, PWSTR pszURL) StoppedMonitoringScope;
-				public function HRESULT(ISearchPersistentItemsChangedSink *self, uint32 dwNumberOfChanges, SEARCH_ITEM_PERSISTENT_CHANGE* DataChangeEntries, HRESULT* hrCompletionCodes) OnItemsChanged;
+				public new function HRESULT(ISearchPersistentItemsChangedSink *self, PWSTR pszURL) StartedMonitoringScope;
+				public new function HRESULT(ISearchPersistentItemsChangedSink *self, PWSTR pszURL) StoppedMonitoringScope;
+				public new function HRESULT(ISearchPersistentItemsChangedSink *self, uint32 dwNumberOfChanges, SEARCH_ITEM_PERSISTENT_CHANGE* DataChangeEntries, HRESULT* hrCompletionCodes) OnItemsChanged;
 			}
 		}
 		[CRepr]
@@ -7403,11 +9003,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xab310581, 0xac80, 0x11d1, 0x8d, 0xf3, 0x00, 0xc0, 0x4f, 0xb6, 0xef, 0x65);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnChange(int32* pdwDocID, SEARCH_ITEM_CHANGE* pChange, BOOL* pfInView) mut
+			{
+				return VT.OnChange(&this, pdwDocID, pChange, pfInView);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISearchViewChangedSink *self, int32* pdwDocID, SEARCH_ITEM_CHANGE* pChange, BOOL* pfInView) OnChange;
+				public new function HRESULT(ISearchViewChangedSink *self, int32* pdwDocID, SEARCH_ITEM_CHANGE* pChange, BOOL* pfInView) OnChange;
 			}
 		}
 		[CRepr]
@@ -7415,12 +9020,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb5702e61, 0xe75c, 0x4b64, 0x82, 0xa1, 0x6c, 0xb4, 0xf8, 0x32, 0xfc, 0xcf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnItemIndexedStatusChange(SEARCH_INDEXING_PHASE sipStatus, uint32 dwNumEntries, SEARCH_ITEM_INDEXING_STATUS* rgItemStatusEntries) mut
+			{
+				return VT.OnItemIndexedStatusChange(&this, sipStatus, dwNumEntries, rgItemStatusEntries);
+			}
+			public HRESULT OnCatalogStatusChange(Guid* guidCatalogResetSignature, Guid* guidCheckPointSignature, uint32 dwLastCheckPointNumber) mut
+			{
+				return VT.OnCatalogStatusChange(&this, guidCatalogResetSignature, guidCheckPointSignature, dwLastCheckPointNumber);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISearchNotifyInlineSite *self, SEARCH_INDEXING_PHASE sipStatus, uint32 dwNumEntries, SEARCH_ITEM_INDEXING_STATUS* rgItemStatusEntries) OnItemIndexedStatusChange;
-				public function HRESULT(ISearchNotifyInlineSite *self, Guid* guidCatalogResetSignature, Guid* guidCheckPointSignature, uint32 dwLastCheckPointNumber) OnCatalogStatusChange;
+				public new function HRESULT(ISearchNotifyInlineSite *self, SEARCH_INDEXING_PHASE sipStatus, uint32 dwNumEntries, SEARCH_ITEM_INDEXING_STATUS* rgItemStatusEntries) OnItemIndexedStatusChange;
+				public new function HRESULT(ISearchNotifyInlineSite *self, Guid* guidCatalogResetSignature, Guid* guidCheckPointSignature, uint32 dwLastCheckPointNumber) OnCatalogStatusChange;
 			}
 		}
 		[CRepr]
@@ -7428,36 +9042,141 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xab310581, 0xac80, 0x11d1, 0x8d, 0xf3, 0x00, 0xc0, 0x4f, 0xb6, 0xef, 0x50);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Name(PWSTR* pszName) mut
+			{
+				return VT.get_Name(&this, pszName);
+			}
+			public HRESULT GetParameter(PWSTR pszName, PROPVARIANT** ppValue) mut
+			{
+				return VT.GetParameter(&this, pszName, ppValue);
+			}
+			public HRESULT SetParameter(PWSTR pszName, PROPVARIANT* pValue) mut
+			{
+				return VT.SetParameter(&this, pszName, pValue);
+			}
+			public HRESULT GetCatalogStatus(CatalogStatus* pStatus, CatalogPausedReason* pPausedReason) mut
+			{
+				return VT.GetCatalogStatus(&this, pStatus, pPausedReason);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Reindex() mut
+			{
+				return VT.Reindex(&this);
+			}
+			public HRESULT ReindexMatchingURLs(PWSTR pszPattern) mut
+			{
+				return VT.ReindexMatchingURLs(&this, pszPattern);
+			}
+			public HRESULT ReindexSearchRoot(PWSTR pszRootURL) mut
+			{
+				return VT.ReindexSearchRoot(&this, pszRootURL);
+			}
+			public HRESULT put_ConnectTimeout(uint32 dwConnectTimeout) mut
+			{
+				return VT.put_ConnectTimeout(&this, dwConnectTimeout);
+			}
+			public HRESULT get_ConnectTimeout(uint32* pdwConnectTimeout) mut
+			{
+				return VT.get_ConnectTimeout(&this, pdwConnectTimeout);
+			}
+			public HRESULT put_DataTimeout(uint32 dwDataTimeout) mut
+			{
+				return VT.put_DataTimeout(&this, dwDataTimeout);
+			}
+			public HRESULT get_DataTimeout(uint32* pdwDataTimeout) mut
+			{
+				return VT.get_DataTimeout(&this, pdwDataTimeout);
+			}
+			public HRESULT NumberOfItems(int32* plCount) mut
+			{
+				return VT.NumberOfItems(&this, plCount);
+			}
+			public HRESULT NumberOfItemsToIndex(int32* plIncrementalCount, int32* plNotificationQueue, int32* plHighPriorityQueue) mut
+			{
+				return VT.NumberOfItemsToIndex(&this, plIncrementalCount, plNotificationQueue, plHighPriorityQueue);
+			}
+			public HRESULT URLBeingIndexed(PWSTR* pszUrl) mut
+			{
+				return VT.URLBeingIndexed(&this, pszUrl);
+			}
+			public HRESULT GetURLIndexingState(PWSTR pszURL, uint32* pdwState) mut
+			{
+				return VT.GetURLIndexingState(&this, pszURL, pdwState);
+			}
+			public HRESULT GetPersistentItemsChangedSink(ISearchPersistentItemsChangedSink** ppISearchPersistentItemsChangedSink) mut
+			{
+				return VT.GetPersistentItemsChangedSink(&this, ppISearchPersistentItemsChangedSink);
+			}
+			public HRESULT RegisterViewForNotification(PWSTR pszView, ISearchViewChangedSink* pViewChangedSink, uint32* pdwCookie) mut
+			{
+				return VT.RegisterViewForNotification(&this, pszView, pViewChangedSink, pdwCookie);
+			}
+			public HRESULT GetItemsChangedSink(ISearchNotifyInlineSite* pISearchNotifyInlineSite, Guid* riid, void** ppv, Guid* pGUIDCatalogResetSignature, Guid* pGUIDCheckPointSignature, uint32* pdwLastCheckPointNumber) mut
+			{
+				return VT.GetItemsChangedSink(&this, pISearchNotifyInlineSite, riid, ppv, pGUIDCatalogResetSignature, pGUIDCheckPointSignature, pdwLastCheckPointNumber);
+			}
+			public HRESULT UnregisterViewForNotification(uint32 dwCookie) mut
+			{
+				return VT.UnregisterViewForNotification(&this, dwCookie);
+			}
+			public HRESULT SetExtensionClusion(PWSTR pszExtension, BOOL fExclude) mut
+			{
+				return VT.SetExtensionClusion(&this, pszExtension, fExclude);
+			}
+			public HRESULT EnumerateExcludedExtensions(IEnumString** ppExtensions) mut
+			{
+				return VT.EnumerateExcludedExtensions(&this, ppExtensions);
+			}
+			public HRESULT GetQueryHelper(ISearchQueryHelper** ppSearchQueryHelper) mut
+			{
+				return VT.GetQueryHelper(&this, ppSearchQueryHelper);
+			}
+			public HRESULT put_DiacriticSensitivity(BOOL fDiacriticSensitive) mut
+			{
+				return VT.put_DiacriticSensitivity(&this, fDiacriticSensitive);
+			}
+			public HRESULT get_DiacriticSensitivity(BOOL* pfDiacriticSensitive) mut
+			{
+				return VT.get_DiacriticSensitivity(&this, pfDiacriticSensitive);
+			}
+			public HRESULT GetCrawlScopeManager(ISearchCrawlScopeManager** ppCrawlScopeManager) mut
+			{
+				return VT.GetCrawlScopeManager(&this, ppCrawlScopeManager);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISearchCatalogManager *self, PWSTR* pszName) get_Name;
-				public function HRESULT(ISearchCatalogManager *self, PWSTR pszName, PROPVARIANT** ppValue) GetParameter;
-				public function HRESULT(ISearchCatalogManager *self, PWSTR pszName, PROPVARIANT* pValue) SetParameter;
-				public function HRESULT(ISearchCatalogManager *self, CatalogStatus* pStatus, CatalogPausedReason* pPausedReason) GetCatalogStatus;
-				public function HRESULT(ISearchCatalogManager *self) Reset;
-				public function HRESULT(ISearchCatalogManager *self) Reindex;
-				public function HRESULT(ISearchCatalogManager *self, PWSTR pszPattern) ReindexMatchingURLs;
-				public function HRESULT(ISearchCatalogManager *self, PWSTR pszRootURL) ReindexSearchRoot;
-				public function HRESULT(ISearchCatalogManager *self, uint32 dwConnectTimeout) put_ConnectTimeout;
-				public function HRESULT(ISearchCatalogManager *self, uint32* pdwConnectTimeout) get_ConnectTimeout;
-				public function HRESULT(ISearchCatalogManager *self, uint32 dwDataTimeout) put_DataTimeout;
-				public function HRESULT(ISearchCatalogManager *self, uint32* pdwDataTimeout) get_DataTimeout;
-				public function HRESULT(ISearchCatalogManager *self, int32* plCount) NumberOfItems;
-				public function HRESULT(ISearchCatalogManager *self, int32* plIncrementalCount, int32* plNotificationQueue, int32* plHighPriorityQueue) NumberOfItemsToIndex;
-				public function HRESULT(ISearchCatalogManager *self, PWSTR* pszUrl) URLBeingIndexed;
-				public function HRESULT(ISearchCatalogManager *self, PWSTR pszURL, uint32* pdwState) GetURLIndexingState;
-				public function HRESULT(ISearchCatalogManager *self, ISearchPersistentItemsChangedSink** ppISearchPersistentItemsChangedSink) GetPersistentItemsChangedSink;
-				public function HRESULT(ISearchCatalogManager *self, PWSTR pszView, ISearchViewChangedSink* pViewChangedSink, uint32* pdwCookie) RegisterViewForNotification;
-				public function HRESULT(ISearchCatalogManager *self, ISearchNotifyInlineSite* pISearchNotifyInlineSite, Guid* riid, void** ppv, Guid* pGUIDCatalogResetSignature, Guid* pGUIDCheckPointSignature, uint32* pdwLastCheckPointNumber) GetItemsChangedSink;
-				public function HRESULT(ISearchCatalogManager *self, uint32 dwCookie) UnregisterViewForNotification;
-				public function HRESULT(ISearchCatalogManager *self, PWSTR pszExtension, BOOL fExclude) SetExtensionClusion;
-				public function HRESULT(ISearchCatalogManager *self, IEnumString** ppExtensions) EnumerateExcludedExtensions;
-				public function HRESULT(ISearchCatalogManager *self, ISearchQueryHelper** ppSearchQueryHelper) GetQueryHelper;
-				public function HRESULT(ISearchCatalogManager *self, BOOL fDiacriticSensitive) put_DiacriticSensitivity;
-				public function HRESULT(ISearchCatalogManager *self, BOOL* pfDiacriticSensitive) get_DiacriticSensitivity;
-				public function HRESULT(ISearchCatalogManager *self, ISearchCrawlScopeManager** ppCrawlScopeManager) GetCrawlScopeManager;
+				public new function HRESULT(ISearchCatalogManager *self, PWSTR* pszName) get_Name;
+				public new function HRESULT(ISearchCatalogManager *self, PWSTR pszName, PROPVARIANT** ppValue) GetParameter;
+				public new function HRESULT(ISearchCatalogManager *self, PWSTR pszName, PROPVARIANT* pValue) SetParameter;
+				public new function HRESULT(ISearchCatalogManager *self, CatalogStatus* pStatus, CatalogPausedReason* pPausedReason) GetCatalogStatus;
+				public new function HRESULT(ISearchCatalogManager *self) Reset;
+				public new function HRESULT(ISearchCatalogManager *self) Reindex;
+				public new function HRESULT(ISearchCatalogManager *self, PWSTR pszPattern) ReindexMatchingURLs;
+				public new function HRESULT(ISearchCatalogManager *self, PWSTR pszRootURL) ReindexSearchRoot;
+				public new function HRESULT(ISearchCatalogManager *self, uint32 dwConnectTimeout) put_ConnectTimeout;
+				public new function HRESULT(ISearchCatalogManager *self, uint32* pdwConnectTimeout) get_ConnectTimeout;
+				public new function HRESULT(ISearchCatalogManager *self, uint32 dwDataTimeout) put_DataTimeout;
+				public new function HRESULT(ISearchCatalogManager *self, uint32* pdwDataTimeout) get_DataTimeout;
+				public new function HRESULT(ISearchCatalogManager *self, int32* plCount) NumberOfItems;
+				public new function HRESULT(ISearchCatalogManager *self, int32* plIncrementalCount, int32* plNotificationQueue, int32* plHighPriorityQueue) NumberOfItemsToIndex;
+				public new function HRESULT(ISearchCatalogManager *self, PWSTR* pszUrl) URLBeingIndexed;
+				public new function HRESULT(ISearchCatalogManager *self, PWSTR pszURL, uint32* pdwState) GetURLIndexingState;
+				public new function HRESULT(ISearchCatalogManager *self, ISearchPersistentItemsChangedSink** ppISearchPersistentItemsChangedSink) GetPersistentItemsChangedSink;
+				public new function HRESULT(ISearchCatalogManager *self, PWSTR pszView, ISearchViewChangedSink* pViewChangedSink, uint32* pdwCookie) RegisterViewForNotification;
+				public new function HRESULT(ISearchCatalogManager *self, ISearchNotifyInlineSite* pISearchNotifyInlineSite, Guid* riid, void** ppv, Guid* pGUIDCatalogResetSignature, Guid* pGUIDCheckPointSignature, uint32* pdwLastCheckPointNumber) GetItemsChangedSink;
+				public new function HRESULT(ISearchCatalogManager *self, uint32 dwCookie) UnregisterViewForNotification;
+				public new function HRESULT(ISearchCatalogManager *self, PWSTR pszExtension, BOOL fExclude) SetExtensionClusion;
+				public new function HRESULT(ISearchCatalogManager *self, IEnumString** ppExtensions) EnumerateExcludedExtensions;
+				public new function HRESULT(ISearchCatalogManager *self, ISearchQueryHelper** ppSearchQueryHelper) GetQueryHelper;
+				public new function HRESULT(ISearchCatalogManager *self, BOOL fDiacriticSensitive) put_DiacriticSensitivity;
+				public new function HRESULT(ISearchCatalogManager *self, BOOL* pfDiacriticSensitive) get_DiacriticSensitivity;
+				public new function HRESULT(ISearchCatalogManager *self, ISearchCrawlScopeManager** ppCrawlScopeManager) GetCrawlScopeManager;
 			}
 		}
 		[CRepr]
@@ -7465,11 +9184,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7ac3286d, 0x4d1d, 0x4817, 0x84, 0xfc, 0xc1, 0xc8, 0x5e, 0x3a, 0xf0, 0xd9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT PrioritizeMatchingURLs(PWSTR pszPattern, PRIORITIZE_FLAGS dwPrioritizeFlags) mut
+			{
+				return VT.PrioritizeMatchingURLs(&this, pszPattern, dwPrioritizeFlags);
+			}
 			[CRepr]
 			public struct VTable : ISearchCatalogManager.VTable
 			{
-				public function HRESULT(ISearchCatalogManager2 *self, PWSTR pszPattern, PRIORITIZE_FLAGS dwPrioritizeFlags) PrioritizeMatchingURLs;
+				public new function HRESULT(ISearchCatalogManager2 *self, PWSTR pszPattern, PRIORITIZE_FLAGS dwPrioritizeFlags) PrioritizeMatchingURLs;
 			}
 		}
 		[CRepr]
@@ -7477,31 +9201,116 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xab310581, 0xac80, 0x11d1, 0x8d, 0xf3, 0x00, 0xc0, 0x4f, 0xb6, 0xef, 0x63);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ConnectionString(PWSTR* pszConnectionString) mut
+			{
+				return VT.get_ConnectionString(&this, pszConnectionString);
+			}
+			public HRESULT put_QueryContentLocale(uint32 lcid) mut
+			{
+				return VT.put_QueryContentLocale(&this, lcid);
+			}
+			public HRESULT get_QueryContentLocale(uint32* plcid) mut
+			{
+				return VT.get_QueryContentLocale(&this, plcid);
+			}
+			public HRESULT put_QueryKeywordLocale(uint32 lcid) mut
+			{
+				return VT.put_QueryKeywordLocale(&this, lcid);
+			}
+			public HRESULT get_QueryKeywordLocale(uint32* plcid) mut
+			{
+				return VT.get_QueryKeywordLocale(&this, plcid);
+			}
+			public HRESULT put_QueryTermExpansion(SEARCH_TERM_EXPANSION expandTerms) mut
+			{
+				return VT.put_QueryTermExpansion(&this, expandTerms);
+			}
+			public HRESULT get_QueryTermExpansion(SEARCH_TERM_EXPANSION* pExpandTerms) mut
+			{
+				return VT.get_QueryTermExpansion(&this, pExpandTerms);
+			}
+			public HRESULT put_QuerySyntax(SEARCH_QUERY_SYNTAX querySyntax) mut
+			{
+				return VT.put_QuerySyntax(&this, querySyntax);
+			}
+			public HRESULT get_QuerySyntax(SEARCH_QUERY_SYNTAX* pQuerySyntax) mut
+			{
+				return VT.get_QuerySyntax(&this, pQuerySyntax);
+			}
+			public HRESULT put_QueryContentProperties(PWSTR pszContentProperties) mut
+			{
+				return VT.put_QueryContentProperties(&this, pszContentProperties);
+			}
+			public HRESULT get_QueryContentProperties(PWSTR* ppszContentProperties) mut
+			{
+				return VT.get_QueryContentProperties(&this, ppszContentProperties);
+			}
+			public HRESULT put_QuerySelectColumns(PWSTR pszSelectColumns) mut
+			{
+				return VT.put_QuerySelectColumns(&this, pszSelectColumns);
+			}
+			public HRESULT get_QuerySelectColumns(PWSTR* ppszSelectColumns) mut
+			{
+				return VT.get_QuerySelectColumns(&this, ppszSelectColumns);
+			}
+			public HRESULT put_QueryWhereRestrictions(PWSTR pszRestrictions) mut
+			{
+				return VT.put_QueryWhereRestrictions(&this, pszRestrictions);
+			}
+			public HRESULT get_QueryWhereRestrictions(PWSTR* ppszRestrictions) mut
+			{
+				return VT.get_QueryWhereRestrictions(&this, ppszRestrictions);
+			}
+			public HRESULT put_QuerySorting(PWSTR pszSorting) mut
+			{
+				return VT.put_QuerySorting(&this, pszSorting);
+			}
+			public HRESULT get_QuerySorting(PWSTR* ppszSorting) mut
+			{
+				return VT.get_QuerySorting(&this, ppszSorting);
+			}
+			public HRESULT GenerateSQLFromUserQuery(PWSTR pszQuery, PWSTR* ppszSQL) mut
+			{
+				return VT.GenerateSQLFromUserQuery(&this, pszQuery, ppszSQL);
+			}
+			public HRESULT WriteProperties(int32 itemID, uint32 dwNumberOfColumns, PROPERTYKEY* pColumns, SEARCH_COLUMN_PROPERTIES* pValues, FILETIME* pftGatherModifiedTime) mut
+			{
+				return VT.WriteProperties(&this, itemID, dwNumberOfColumns, pColumns, pValues, pftGatherModifiedTime);
+			}
+			public HRESULT put_QueryMaxResults(int32 cMaxResults) mut
+			{
+				return VT.put_QueryMaxResults(&this, cMaxResults);
+			}
+			public HRESULT get_QueryMaxResults(int32* pcMaxResults) mut
+			{
+				return VT.get_QueryMaxResults(&this, pcMaxResults);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISearchQueryHelper *self, PWSTR* pszConnectionString) get_ConnectionString;
-				public function HRESULT(ISearchQueryHelper *self, uint32 lcid) put_QueryContentLocale;
-				public function HRESULT(ISearchQueryHelper *self, uint32* plcid) get_QueryContentLocale;
-				public function HRESULT(ISearchQueryHelper *self, uint32 lcid) put_QueryKeywordLocale;
-				public function HRESULT(ISearchQueryHelper *self, uint32* plcid) get_QueryKeywordLocale;
-				public function HRESULT(ISearchQueryHelper *self, SEARCH_TERM_EXPANSION expandTerms) put_QueryTermExpansion;
-				public function HRESULT(ISearchQueryHelper *self, SEARCH_TERM_EXPANSION* pExpandTerms) get_QueryTermExpansion;
-				public function HRESULT(ISearchQueryHelper *self, SEARCH_QUERY_SYNTAX querySyntax) put_QuerySyntax;
-				public function HRESULT(ISearchQueryHelper *self, SEARCH_QUERY_SYNTAX* pQuerySyntax) get_QuerySyntax;
-				public function HRESULT(ISearchQueryHelper *self, PWSTR pszContentProperties) put_QueryContentProperties;
-				public function HRESULT(ISearchQueryHelper *self, PWSTR* ppszContentProperties) get_QueryContentProperties;
-				public function HRESULT(ISearchQueryHelper *self, PWSTR pszSelectColumns) put_QuerySelectColumns;
-				public function HRESULT(ISearchQueryHelper *self, PWSTR* ppszSelectColumns) get_QuerySelectColumns;
-				public function HRESULT(ISearchQueryHelper *self, PWSTR pszRestrictions) put_QueryWhereRestrictions;
-				public function HRESULT(ISearchQueryHelper *self, PWSTR* ppszRestrictions) get_QueryWhereRestrictions;
-				public function HRESULT(ISearchQueryHelper *self, PWSTR pszSorting) put_QuerySorting;
-				public function HRESULT(ISearchQueryHelper *self, PWSTR* ppszSorting) get_QuerySorting;
-				public function HRESULT(ISearchQueryHelper *self, PWSTR pszQuery, PWSTR* ppszSQL) GenerateSQLFromUserQuery;
-				public function HRESULT(ISearchQueryHelper *self, int32 itemID, uint32 dwNumberOfColumns, PROPERTYKEY* pColumns, SEARCH_COLUMN_PROPERTIES* pValues, FILETIME* pftGatherModifiedTime) WriteProperties;
-				public function HRESULT(ISearchQueryHelper *self, int32 cMaxResults) put_QueryMaxResults;
-				public function HRESULT(ISearchQueryHelper *self, int32* pcMaxResults) get_QueryMaxResults;
+				public new function HRESULT(ISearchQueryHelper *self, PWSTR* pszConnectionString) get_ConnectionString;
+				public new function HRESULT(ISearchQueryHelper *self, uint32 lcid) put_QueryContentLocale;
+				public new function HRESULT(ISearchQueryHelper *self, uint32* plcid) get_QueryContentLocale;
+				public new function HRESULT(ISearchQueryHelper *self, uint32 lcid) put_QueryKeywordLocale;
+				public new function HRESULT(ISearchQueryHelper *self, uint32* plcid) get_QueryKeywordLocale;
+				public new function HRESULT(ISearchQueryHelper *self, SEARCH_TERM_EXPANSION expandTerms) put_QueryTermExpansion;
+				public new function HRESULT(ISearchQueryHelper *self, SEARCH_TERM_EXPANSION* pExpandTerms) get_QueryTermExpansion;
+				public new function HRESULT(ISearchQueryHelper *self, SEARCH_QUERY_SYNTAX querySyntax) put_QuerySyntax;
+				public new function HRESULT(ISearchQueryHelper *self, SEARCH_QUERY_SYNTAX* pQuerySyntax) get_QuerySyntax;
+				public new function HRESULT(ISearchQueryHelper *self, PWSTR pszContentProperties) put_QueryContentProperties;
+				public new function HRESULT(ISearchQueryHelper *self, PWSTR* ppszContentProperties) get_QueryContentProperties;
+				public new function HRESULT(ISearchQueryHelper *self, PWSTR pszSelectColumns) put_QuerySelectColumns;
+				public new function HRESULT(ISearchQueryHelper *self, PWSTR* ppszSelectColumns) get_QuerySelectColumns;
+				public new function HRESULT(ISearchQueryHelper *self, PWSTR pszRestrictions) put_QueryWhereRestrictions;
+				public new function HRESULT(ISearchQueryHelper *self, PWSTR* ppszRestrictions) get_QueryWhereRestrictions;
+				public new function HRESULT(ISearchQueryHelper *self, PWSTR pszSorting) put_QuerySorting;
+				public new function HRESULT(ISearchQueryHelper *self, PWSTR* ppszSorting) get_QuerySorting;
+				public new function HRESULT(ISearchQueryHelper *self, PWSTR pszQuery, PWSTR* ppszSQL) GenerateSQLFromUserQuery;
+				public new function HRESULT(ISearchQueryHelper *self, int32 itemID, uint32 dwNumberOfColumns, PROPERTYKEY* pColumns, SEARCH_COLUMN_PROPERTIES* pValues, FILETIME* pftGatherModifiedTime) WriteProperties;
+				public new function HRESULT(ISearchQueryHelper *self, int32 cMaxResults) put_QueryMaxResults;
+				public new function HRESULT(ISearchQueryHelper *self, int32* pcMaxResults) get_QueryMaxResults;
 			}
 		}
 		[CRepr]
@@ -7509,13 +9318,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x42811652, 0x079d, 0x481b, 0x87, 0xa2, 0x09, 0xa6, 0x9e, 0xcc, 0x5f, 0x44);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetScopePriority(PRIORITY_LEVEL priority, uint32 scopeStatisticsEventFrequency) mut
+			{
+				return VT.SetScopePriority(&this, priority, scopeStatisticsEventFrequency);
+			}
+			public HRESULT GetScopePriority(PRIORITY_LEVEL* priority, uint32* scopeStatisticsEventFrequency) mut
+			{
+				return VT.GetScopePriority(&this, priority, scopeStatisticsEventFrequency);
+			}
+			public HRESULT GetScopeStatistics(uint32* indexedDocumentCount, uint32* oustandingAddCount, uint32* oustandingModifyCount) mut
+			{
+				return VT.GetScopeStatistics(&this, indexedDocumentCount, oustandingAddCount, oustandingModifyCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetPrioritization *self, PRIORITY_LEVEL priority, uint32 scopeStatisticsEventFrequency) SetScopePriority;
-				public function HRESULT(IRowsetPrioritization *self, PRIORITY_LEVEL* priority, uint32* scopeStatisticsEventFrequency) GetScopePriority;
-				public function HRESULT(IRowsetPrioritization *self, uint32* indexedDocumentCount, uint32* oustandingAddCount, uint32* oustandingModifyCount) GetScopeStatistics;
+				public new function HRESULT(IRowsetPrioritization *self, PRIORITY_LEVEL priority, uint32 scopeStatisticsEventFrequency) SetScopePriority;
+				public new function HRESULT(IRowsetPrioritization *self, PRIORITY_LEVEL* priority, uint32* scopeStatisticsEventFrequency) GetScopePriority;
+				public new function HRESULT(IRowsetPrioritization *self, uint32* indexedDocumentCount, uint32* oustandingAddCount, uint32* oustandingModifyCount) GetScopeStatistics;
 			}
 		}
 		[CRepr]
@@ -7523,14 +9345,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1551aea5, 0x5d66, 0x4b11, 0x86, 0xf5, 0xd5, 0x63, 0x4c, 0xb2, 0x11, 0xb9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnNewItem(PROPVARIANT* itemID, ROWSETEVENT_ITEMSTATE newItemState) mut
+			{
+				return VT.OnNewItem(&this, itemID, newItemState);
+			}
+			public HRESULT OnChangedItem(PROPVARIANT* itemID, ROWSETEVENT_ITEMSTATE rowsetItemState, ROWSETEVENT_ITEMSTATE changedItemState) mut
+			{
+				return VT.OnChangedItem(&this, itemID, rowsetItemState, changedItemState);
+			}
+			public HRESULT OnDeletedItem(PROPVARIANT* itemID, ROWSETEVENT_ITEMSTATE deletedItemState) mut
+			{
+				return VT.OnDeletedItem(&this, itemID, deletedItemState);
+			}
+			public HRESULT OnRowsetEvent(ROWSETEVENT_TYPE eventType, PROPVARIANT* eventData) mut
+			{
+				return VT.OnRowsetEvent(&this, eventType, eventData);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetEvents *self, PROPVARIANT* itemID, ROWSETEVENT_ITEMSTATE newItemState) OnNewItem;
-				public function HRESULT(IRowsetEvents *self, PROPVARIANT* itemID, ROWSETEVENT_ITEMSTATE rowsetItemState, ROWSETEVENT_ITEMSTATE changedItemState) OnChangedItem;
-				public function HRESULT(IRowsetEvents *self, PROPVARIANT* itemID, ROWSETEVENT_ITEMSTATE deletedItemState) OnDeletedItem;
-				public function HRESULT(IRowsetEvents *self, ROWSETEVENT_TYPE eventType, PROPVARIANT* eventData) OnRowsetEvent;
+				public new function HRESULT(IRowsetEvents *self, PROPVARIANT* itemID, ROWSETEVENT_ITEMSTATE newItemState) OnNewItem;
+				public new function HRESULT(IRowsetEvents *self, PROPVARIANT* itemID, ROWSETEVENT_ITEMSTATE rowsetItemState, ROWSETEVENT_ITEMSTATE changedItemState) OnChangedItem;
+				public new function HRESULT(IRowsetEvents *self, PROPVARIANT* itemID, ROWSETEVENT_ITEMSTATE deletedItemState) OnDeletedItem;
+				public new function HRESULT(IRowsetEvents *self, ROWSETEVENT_TYPE eventType, PROPVARIANT* eventData) OnRowsetEvent;
 			}
 		}
 		[CRepr]
@@ -7538,23 +9377,76 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xab310581, 0xac80, 0x11d1, 0x8d, 0xf3, 0x00, 0xc0, 0x4f, 0xb6, 0xef, 0x69);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetIndexerVersionStr(PWSTR* ppszVersionString) mut
+			{
+				return VT.GetIndexerVersionStr(&this, ppszVersionString);
+			}
+			public HRESULT GetIndexerVersion(uint32* pdwMajor, uint32* pdwMinor) mut
+			{
+				return VT.GetIndexerVersion(&this, pdwMajor, pdwMinor);
+			}
+			public HRESULT GetParameter(PWSTR pszName, PROPVARIANT** ppValue) mut
+			{
+				return VT.GetParameter(&this, pszName, ppValue);
+			}
+			public HRESULT SetParameter(PWSTR pszName, PROPVARIANT* pValue) mut
+			{
+				return VT.SetParameter(&this, pszName, pValue);
+			}
+			public HRESULT get_ProxyName(PWSTR* ppszProxyName) mut
+			{
+				return VT.get_ProxyName(&this, ppszProxyName);
+			}
+			public HRESULT get_BypassList(PWSTR* ppszBypassList) mut
+			{
+				return VT.get_BypassList(&this, ppszBypassList);
+			}
+			public HRESULT SetProxy(PROXY_ACCESS sUseProxy, BOOL fLocalByPassProxy, uint32 dwPortNumber, PWSTR pszProxyName, PWSTR pszByPassList) mut
+			{
+				return VT.SetProxy(&this, sUseProxy, fLocalByPassProxy, dwPortNumber, pszProxyName, pszByPassList);
+			}
+			public HRESULT GetCatalog(PWSTR pszCatalog, ISearchCatalogManager** ppCatalogManager) mut
+			{
+				return VT.GetCatalog(&this, pszCatalog, ppCatalogManager);
+			}
+			public HRESULT get_UserAgent(PWSTR* ppszUserAgent) mut
+			{
+				return VT.get_UserAgent(&this, ppszUserAgent);
+			}
+			public HRESULT put_UserAgent(PWSTR pszUserAgent) mut
+			{
+				return VT.put_UserAgent(&this, pszUserAgent);
+			}
+			public HRESULT get_UseProxy(PROXY_ACCESS* pUseProxy) mut
+			{
+				return VT.get_UseProxy(&this, pUseProxy);
+			}
+			public HRESULT get_LocalBypass(BOOL* pfLocalBypass) mut
+			{
+				return VT.get_LocalBypass(&this, pfLocalBypass);
+			}
+			public HRESULT get_PortNumber(uint32* pdwPortNumber) mut
+			{
+				return VT.get_PortNumber(&this, pdwPortNumber);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISearchManager *self, PWSTR* ppszVersionString) GetIndexerVersionStr;
-				public function HRESULT(ISearchManager *self, uint32* pdwMajor, uint32* pdwMinor) GetIndexerVersion;
-				public function HRESULT(ISearchManager *self, PWSTR pszName, PROPVARIANT** ppValue) GetParameter;
-				public function HRESULT(ISearchManager *self, PWSTR pszName, PROPVARIANT* pValue) SetParameter;
-				public function HRESULT(ISearchManager *self, PWSTR* ppszProxyName) get_ProxyName;
-				public function HRESULT(ISearchManager *self, PWSTR* ppszBypassList) get_BypassList;
-				public function HRESULT(ISearchManager *self, PROXY_ACCESS sUseProxy, BOOL fLocalByPassProxy, uint32 dwPortNumber, PWSTR pszProxyName, PWSTR pszByPassList) SetProxy;
-				public function HRESULT(ISearchManager *self, PWSTR pszCatalog, ISearchCatalogManager** ppCatalogManager) GetCatalog;
-				public function HRESULT(ISearchManager *self, PWSTR* ppszUserAgent) get_UserAgent;
-				public function HRESULT(ISearchManager *self, PWSTR pszUserAgent) put_UserAgent;
-				public function HRESULT(ISearchManager *self, PROXY_ACCESS* pUseProxy) get_UseProxy;
-				public function HRESULT(ISearchManager *self, BOOL* pfLocalBypass) get_LocalBypass;
-				public function HRESULT(ISearchManager *self, uint32* pdwPortNumber) get_PortNumber;
+				public new function HRESULT(ISearchManager *self, PWSTR* ppszVersionString) GetIndexerVersionStr;
+				public new function HRESULT(ISearchManager *self, uint32* pdwMajor, uint32* pdwMinor) GetIndexerVersion;
+				public new function HRESULT(ISearchManager *self, PWSTR pszName, PROPVARIANT** ppValue) GetParameter;
+				public new function HRESULT(ISearchManager *self, PWSTR pszName, PROPVARIANT* pValue) SetParameter;
+				public new function HRESULT(ISearchManager *self, PWSTR* ppszProxyName) get_ProxyName;
+				public new function HRESULT(ISearchManager *self, PWSTR* ppszBypassList) get_BypassList;
+				public new function HRESULT(ISearchManager *self, PROXY_ACCESS sUseProxy, BOOL fLocalByPassProxy, uint32 dwPortNumber, PWSTR pszProxyName, PWSTR pszByPassList) SetProxy;
+				public new function HRESULT(ISearchManager *self, PWSTR pszCatalog, ISearchCatalogManager** ppCatalogManager) GetCatalog;
+				public new function HRESULT(ISearchManager *self, PWSTR* ppszUserAgent) get_UserAgent;
+				public new function HRESULT(ISearchManager *self, PWSTR pszUserAgent) put_UserAgent;
+				public new function HRESULT(ISearchManager *self, PROXY_ACCESS* pUseProxy) get_UseProxy;
+				public new function HRESULT(ISearchManager *self, BOOL* pfLocalBypass) get_LocalBypass;
+				public new function HRESULT(ISearchManager *self, uint32* pdwPortNumber) get_PortNumber;
 			}
 		}
 		[CRepr]
@@ -7562,12 +9454,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdbab3f73, 0xdb19, 0x4a79, 0xbf, 0xc0, 0xa6, 0x1a, 0x93, 0x88, 0x6d, 0xdf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateCatalog(PWSTR pszCatalog, ISearchCatalogManager** ppCatalogManager) mut
+			{
+				return VT.CreateCatalog(&this, pszCatalog, ppCatalogManager);
+			}
+			public HRESULT DeleteCatalog(PWSTR pszCatalog) mut
+			{
+				return VT.DeleteCatalog(&this, pszCatalog);
+			}
 			[CRepr]
 			public struct VTable : ISearchManager.VTable
 			{
-				public function HRESULT(ISearchManager2 *self, PWSTR pszCatalog, ISearchCatalogManager** ppCatalogManager) CreateCatalog;
-				public function HRESULT(ISearchManager2 *self, PWSTR pszCatalog) DeleteCatalog;
+				public new function HRESULT(ISearchManager2 *self, PWSTR pszCatalog, ISearchCatalogManager** ppCatalogManager) CreateCatalog;
+				public new function HRESULT(ISearchManager2 *self, PWSTR pszCatalog) DeleteCatalog;
 			}
 		}
 		[CRepr]
@@ -7575,15 +9476,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x24c3cbaa, 0xebc1, 0x491a, 0x9e, 0xf1, 0x9f, 0x6d, 0x8d, 0xeb, 0x1b, 0x8f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetDiacriticSensitivity(BOOL fDiacriticSensitive) mut
+			{
+				return VT.SetDiacriticSensitivity(&this, fDiacriticSensitive);
+			}
+			public HRESULT GetDiacriticSensitivity(BOOL* pfDiacriticSensitive) mut
+			{
+				return VT.GetDiacriticSensitivity(&this, pfDiacriticSensitive);
+			}
+			public HRESULT LoadWordBreaker(uint32 lcid, Guid* riid, void** ppWordBreaker, uint32* pLcidUsed) mut
+			{
+				return VT.LoadWordBreaker(&this, lcid, riid, ppWordBreaker, pLcidUsed);
+			}
+			public HRESULT LoadStemmer(uint32 lcid, Guid* riid, void** ppStemmer, uint32* pLcidUsed) mut
+			{
+				return VT.LoadStemmer(&this, lcid, riid, ppStemmer, pLcidUsed);
+			}
+			public HRESULT IsPrefixNormalized(char16* pwcsQueryToken, uint32 cwcQueryToken, char16* pwcsDocumentToken, uint32 cwcDocumentToken, uint32* pulPrefixLength) mut
+			{
+				return VT.IsPrefixNormalized(&this, pwcsQueryToken, cwcQueryToken, pwcsDocumentToken, cwcDocumentToken, pulPrefixLength);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISearchLanguageSupport *self, BOOL fDiacriticSensitive) SetDiacriticSensitivity;
-				public function HRESULT(ISearchLanguageSupport *self, BOOL* pfDiacriticSensitive) GetDiacriticSensitivity;
-				public function HRESULT(ISearchLanguageSupport *self, uint32 lcid, Guid* riid, void** ppWordBreaker, uint32* pLcidUsed) LoadWordBreaker;
-				public function HRESULT(ISearchLanguageSupport *self, uint32 lcid, Guid* riid, void** ppStemmer, uint32* pLcidUsed) LoadStemmer;
-				public function HRESULT(ISearchLanguageSupport *self, char16* pwcsQueryToken, uint32 cwcQueryToken, char16* pwcsDocumentToken, uint32 cwcDocumentToken, uint32* pulPrefixLength) IsPrefixNormalized;
+				public new function HRESULT(ISearchLanguageSupport *self, BOOL fDiacriticSensitive) SetDiacriticSensitivity;
+				public new function HRESULT(ISearchLanguageSupport *self, BOOL* pfDiacriticSensitive) GetDiacriticSensitivity;
+				public new function HRESULT(ISearchLanguageSupport *self, uint32 lcid, Guid* riid, void** ppWordBreaker, uint32* pLcidUsed) LoadWordBreaker;
+				public new function HRESULT(ISearchLanguageSupport *self, uint32 lcid, Guid* riid, void** ppStemmer, uint32* pLcidUsed) LoadStemmer;
+				public new function HRESULT(ISearchLanguageSupport *self, char16* pwcsQueryToken, uint32 cwcQueryToken, char16* pwcsDocumentToken, uint32 cwcDocumentToken, uint32* pulPrefixLength) IsPrefixNormalized;
 			}
 		}
 		[CRepr]
@@ -7591,15 +9513,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf72c8d96, 0x6dbd, 0x11d1, 0xa1, 0xe8, 0x00, 0xc0, 0x4f, 0xc2, 0xfb, 0xe1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 celt, ITEMPROP* rgelt, uint32* pceltFetched) mut
+			{
+				return VT.Next(&this, celt, rgelt, pceltFetched);
+			}
+			public HRESULT Skip(uint32 celt) mut
+			{
+				return VT.Skip(&this, celt);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumItemProperties** ppenum) mut
+			{
+				return VT.Clone(&this, ppenum);
+			}
+			public HRESULT GetCount(uint32* pnCount) mut
+			{
+				return VT.GetCount(&this, pnCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumItemProperties *self, uint32 celt, ITEMPROP* rgelt, uint32* pceltFetched) Next;
-				public function HRESULT(IEnumItemProperties *self, uint32 celt) Skip;
-				public function HRESULT(IEnumItemProperties *self) Reset;
-				public function HRESULT(IEnumItemProperties *self, IEnumItemProperties** ppenum) Clone;
-				public function HRESULT(IEnumItemProperties *self, uint32* pnCount) GetCount;
+				public new function HRESULT(IEnumItemProperties *self, uint32 celt, ITEMPROP* rgelt, uint32* pceltFetched) Next;
+				public new function HRESULT(IEnumItemProperties *self, uint32 celt) Skip;
+				public new function HRESULT(IEnumItemProperties *self) Reset;
+				public new function HRESULT(IEnumItemProperties *self, IEnumItemProperties** ppenum) Clone;
+				public new function HRESULT(IEnumItemProperties *self, uint32* pnCount) GetCount;
 			}
 		}
 		[CRepr]
@@ -7607,17 +9550,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa97559f8, 0x6c4a, 0x11d1, 0xa1, 0xe8, 0x00, 0xc0, 0x4f, 0xc2, 0xfb, 0xe1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCookie(Guid* pCookie) mut
+			{
+				return VT.GetCookie(&this, pCookie);
+			}
+			public HRESULT GetSubscriptionItemInfo(SUBSCRIPTIONITEMINFO* pSubscriptionItemInfo) mut
+			{
+				return VT.GetSubscriptionItemInfo(&this, pSubscriptionItemInfo);
+			}
+			public HRESULT SetSubscriptionItemInfo(SUBSCRIPTIONITEMINFO* pSubscriptionItemInfo) mut
+			{
+				return VT.SetSubscriptionItemInfo(&this, pSubscriptionItemInfo);
+			}
+			public HRESULT ReadProperties(uint32 nCount, PWSTR* rgwszName, VARIANT* rgValue) mut
+			{
+				return VT.ReadProperties(&this, nCount, rgwszName, rgValue);
+			}
+			public HRESULT WriteProperties(uint32 nCount, PWSTR* rgwszName, VARIANT* rgValue) mut
+			{
+				return VT.WriteProperties(&this, nCount, rgwszName, rgValue);
+			}
+			public HRESULT EnumProperties(IEnumItemProperties** ppEnumItemProperties) mut
+			{
+				return VT.EnumProperties(&this, ppEnumItemProperties);
+			}
+			public HRESULT NotifyChanged() mut
+			{
+				return VT.NotifyChanged(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISubscriptionItem *self, Guid* pCookie) GetCookie;
-				public function HRESULT(ISubscriptionItem *self, SUBSCRIPTIONITEMINFO* pSubscriptionItemInfo) GetSubscriptionItemInfo;
-				public function HRESULT(ISubscriptionItem *self, SUBSCRIPTIONITEMINFO* pSubscriptionItemInfo) SetSubscriptionItemInfo;
-				public function HRESULT(ISubscriptionItem *self, uint32 nCount, PWSTR* rgwszName, VARIANT* rgValue) ReadProperties;
-				public function HRESULT(ISubscriptionItem *self, uint32 nCount, PWSTR* rgwszName, VARIANT* rgValue) WriteProperties;
-				public function HRESULT(ISubscriptionItem *self, IEnumItemProperties** ppEnumItemProperties) EnumProperties;
-				public function HRESULT(ISubscriptionItem *self) NotifyChanged;
+				public new function HRESULT(ISubscriptionItem *self, Guid* pCookie) GetCookie;
+				public new function HRESULT(ISubscriptionItem *self, SUBSCRIPTIONITEMINFO* pSubscriptionItemInfo) GetSubscriptionItemInfo;
+				public new function HRESULT(ISubscriptionItem *self, SUBSCRIPTIONITEMINFO* pSubscriptionItemInfo) SetSubscriptionItemInfo;
+				public new function HRESULT(ISubscriptionItem *self, uint32 nCount, PWSTR* rgwszName, VARIANT* rgValue) ReadProperties;
+				public new function HRESULT(ISubscriptionItem *self, uint32 nCount, PWSTR* rgwszName, VARIANT* rgValue) WriteProperties;
+				public new function HRESULT(ISubscriptionItem *self, IEnumItemProperties** ppEnumItemProperties) EnumProperties;
+				public new function HRESULT(ISubscriptionItem *self) NotifyChanged;
 			}
 		}
 		[CRepr]
@@ -7625,15 +9597,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf72c8d97, 0x6dbd, 0x11d1, 0xa1, 0xe8, 0x00, 0xc0, 0x4f, 0xc2, 0xfb, 0xe1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 celt, Guid* rgelt, uint32* pceltFetched) mut
+			{
+				return VT.Next(&this, celt, rgelt, pceltFetched);
+			}
+			public HRESULT Skip(uint32 celt) mut
+			{
+				return VT.Skip(&this, celt);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumSubscription** ppenum) mut
+			{
+				return VT.Clone(&this, ppenum);
+			}
+			public HRESULT GetCount(uint32* pnCount) mut
+			{
+				return VT.GetCount(&this, pnCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumSubscription *self, uint32 celt, Guid* rgelt, uint32* pceltFetched) Next;
-				public function HRESULT(IEnumSubscription *self, uint32 celt) Skip;
-				public function HRESULT(IEnumSubscription *self) Reset;
-				public function HRESULT(IEnumSubscription *self, IEnumSubscription** ppenum) Clone;
-				public function HRESULT(IEnumSubscription *self, uint32* pnCount) GetCount;
+				public new function HRESULT(IEnumSubscription *self, uint32 celt, Guid* rgelt, uint32* pceltFetched) Next;
+				public new function HRESULT(IEnumSubscription *self, uint32 celt) Skip;
+				public new function HRESULT(IEnumSubscription *self) Reset;
+				public new function HRESULT(IEnumSubscription *self, IEnumSubscription** ppenum) Clone;
+				public new function HRESULT(IEnumSubscription *self, uint32* pnCount) GetCount;
 			}
 		}
 		[CRepr]
@@ -7641,18 +9634,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x085fb2c0, 0x0df8, 0x11d1, 0x8f, 0x4b, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x3f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT DeleteSubscription(PWSTR pwszURL, HWND hwnd) mut
+			{
+				return VT.DeleteSubscription(&this, pwszURL, hwnd);
+			}
+			public HRESULT UpdateSubscription(PWSTR pwszURL) mut
+			{
+				return VT.UpdateSubscription(&this, pwszURL);
+			}
+			public HRESULT UpdateAll() mut
+			{
+				return VT.UpdateAll(&this);
+			}
+			public HRESULT IsSubscribed(PWSTR pwszURL, BOOL* pfSubscribed) mut
+			{
+				return VT.IsSubscribed(&this, pwszURL, pfSubscribed);
+			}
+			public HRESULT GetSubscriptionInfo(PWSTR pwszURL, SUBSCRIPTIONINFO* pInfo) mut
+			{
+				return VT.GetSubscriptionInfo(&this, pwszURL, pInfo);
+			}
+			public HRESULT GetDefaultInfo(SUBSCRIPTIONTYPE subType, SUBSCRIPTIONINFO* pInfo) mut
+			{
+				return VT.GetDefaultInfo(&this, subType, pInfo);
+			}
+			public HRESULT ShowSubscriptionProperties(PWSTR pwszURL, HWND hwnd) mut
+			{
+				return VT.ShowSubscriptionProperties(&this, pwszURL, hwnd);
+			}
+			public HRESULT CreateSubscription(HWND hwnd, PWSTR pwszURL, PWSTR pwszFriendlyName, uint32 dwFlags, SUBSCRIPTIONTYPE subsType, SUBSCRIPTIONINFO* pInfo) mut
+			{
+				return VT.CreateSubscription(&this, hwnd, pwszURL, pwszFriendlyName, dwFlags, subsType, pInfo);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISubscriptionMgr *self, PWSTR pwszURL, HWND hwnd) DeleteSubscription;
-				public function HRESULT(ISubscriptionMgr *self, PWSTR pwszURL) UpdateSubscription;
-				public function HRESULT(ISubscriptionMgr *self) UpdateAll;
-				public function HRESULT(ISubscriptionMgr *self, PWSTR pwszURL, BOOL* pfSubscribed) IsSubscribed;
-				public function HRESULT(ISubscriptionMgr *self, PWSTR pwszURL, SUBSCRIPTIONINFO* pInfo) GetSubscriptionInfo;
-				public function HRESULT(ISubscriptionMgr *self, SUBSCRIPTIONTYPE subType, SUBSCRIPTIONINFO* pInfo) GetDefaultInfo;
-				public function HRESULT(ISubscriptionMgr *self, PWSTR pwszURL, HWND hwnd) ShowSubscriptionProperties;
-				public function HRESULT(ISubscriptionMgr *self, HWND hwnd, PWSTR pwszURL, PWSTR pwszFriendlyName, uint32 dwFlags, SUBSCRIPTIONTYPE subsType, SUBSCRIPTIONINFO* pInfo) CreateSubscription;
+				public new function HRESULT(ISubscriptionMgr *self, PWSTR pwszURL, HWND hwnd) DeleteSubscription;
+				public new function HRESULT(ISubscriptionMgr *self, PWSTR pwszURL) UpdateSubscription;
+				public new function HRESULT(ISubscriptionMgr *self) UpdateAll;
+				public new function HRESULT(ISubscriptionMgr *self, PWSTR pwszURL, BOOL* pfSubscribed) IsSubscribed;
+				public new function HRESULT(ISubscriptionMgr *self, PWSTR pwszURL, SUBSCRIPTIONINFO* pInfo) GetSubscriptionInfo;
+				public new function HRESULT(ISubscriptionMgr *self, SUBSCRIPTIONTYPE subType, SUBSCRIPTIONINFO* pInfo) GetDefaultInfo;
+				public new function HRESULT(ISubscriptionMgr *self, PWSTR pwszURL, HWND hwnd) ShowSubscriptionProperties;
+				public new function HRESULT(ISubscriptionMgr *self, HWND hwnd, PWSTR pwszURL, PWSTR pwszFriendlyName, uint32 dwFlags, SUBSCRIPTIONTYPE subsType, SUBSCRIPTIONINFO* pInfo) CreateSubscription;
 			}
 		}
 		[CRepr]
@@ -7660,17 +9686,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x614bc270, 0xaedf, 0x11d1, 0xa1, 0xf9, 0x00, 0xc0, 0x4f, 0xc2, 0xfb, 0xe1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetItemFromURL(PWSTR pwszURL, ISubscriptionItem** ppSubscriptionItem) mut
+			{
+				return VT.GetItemFromURL(&this, pwszURL, ppSubscriptionItem);
+			}
+			public HRESULT GetItemFromCookie(Guid* pSubscriptionCookie, ISubscriptionItem** ppSubscriptionItem) mut
+			{
+				return VT.GetItemFromCookie(&this, pSubscriptionCookie, ppSubscriptionItem);
+			}
+			public HRESULT GetSubscriptionRunState(uint32 dwNumCookies, Guid* pCookies, uint32* pdwRunState) mut
+			{
+				return VT.GetSubscriptionRunState(&this, dwNumCookies, pCookies, pdwRunState);
+			}
+			public HRESULT EnumSubscriptions(uint32 dwFlags, IEnumSubscription** ppEnumSubscriptions) mut
+			{
+				return VT.EnumSubscriptions(&this, dwFlags, ppEnumSubscriptions);
+			}
+			public HRESULT UpdateItems(uint32 dwFlags, uint32 dwNumCookies, Guid* pCookies) mut
+			{
+				return VT.UpdateItems(&this, dwFlags, dwNumCookies, pCookies);
+			}
+			public HRESULT AbortItems(uint32 dwNumCookies, Guid* pCookies) mut
+			{
+				return VT.AbortItems(&this, dwNumCookies, pCookies);
+			}
+			public HRESULT AbortAll() mut
+			{
+				return VT.AbortAll(&this);
+			}
 			[CRepr]
 			public struct VTable : ISubscriptionMgr.VTable
 			{
-				public function HRESULT(ISubscriptionMgr2 *self, PWSTR pwszURL, ISubscriptionItem** ppSubscriptionItem) GetItemFromURL;
-				public function HRESULT(ISubscriptionMgr2 *self, Guid* pSubscriptionCookie, ISubscriptionItem** ppSubscriptionItem) GetItemFromCookie;
-				public function HRESULT(ISubscriptionMgr2 *self, uint32 dwNumCookies, Guid* pCookies, uint32* pdwRunState) GetSubscriptionRunState;
-				public function HRESULT(ISubscriptionMgr2 *self, uint32 dwFlags, IEnumSubscription** ppEnumSubscriptions) EnumSubscriptions;
-				public function HRESULT(ISubscriptionMgr2 *self, uint32 dwFlags, uint32 dwNumCookies, Guid* pCookies) UpdateItems;
-				public function HRESULT(ISubscriptionMgr2 *self, uint32 dwNumCookies, Guid* pCookies) AbortItems;
-				public function HRESULT(ISubscriptionMgr2 *self) AbortAll;
+				public new function HRESULT(ISubscriptionMgr2 *self, PWSTR pwszURL, ISubscriptionItem** ppSubscriptionItem) GetItemFromURL;
+				public new function HRESULT(ISubscriptionMgr2 *self, Guid* pSubscriptionCookie, ISubscriptionItem** ppSubscriptionItem) GetItemFromCookie;
+				public new function HRESULT(ISubscriptionMgr2 *self, uint32 dwNumCookies, Guid* pCookies, uint32* pdwRunState) GetSubscriptionRunState;
+				public new function HRESULT(ISubscriptionMgr2 *self, uint32 dwFlags, IEnumSubscription** ppEnumSubscriptions) EnumSubscriptions;
+				public new function HRESULT(ISubscriptionMgr2 *self, uint32 dwFlags, uint32 dwNumCookies, Guid* pCookies) UpdateItems;
+				public new function HRESULT(ISubscriptionMgr2 *self, uint32 dwNumCookies, Guid* pCookies) AbortItems;
+				public new function HRESULT(ISubscriptionMgr2 *self) AbortAll;
 			}
 		}
 		[CRepr]
@@ -7678,13 +9733,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a8d, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT DataConvert(uint16 wSrcType, uint16 wDstType, uint cbSrcLength, uint* pcbDstLength, void* pSrc, void* pDst, uint cbDstMaxLength, uint32 dbsSrcStatus, uint32* pdbsStatus, uint8 bPrecision, uint8 bScale, uint32 dwFlags) mut
+			{
+				return VT.DataConvert(&this, wSrcType, wDstType, cbSrcLength, pcbDstLength, pSrc, pDst, cbDstMaxLength, dbsSrcStatus, pdbsStatus, bPrecision, bScale, dwFlags);
+			}
+			public HRESULT CanConvert(uint16 wSrcType, uint16 wDstType) mut
+			{
+				return VT.CanConvert(&this, wSrcType, wDstType);
+			}
+			public HRESULT GetConversionSize(uint16 wSrcType, uint16 wDstType, uint* pcbSrcLength, uint* pcbDstLength, void* pSrc) mut
+			{
+				return VT.GetConversionSize(&this, wSrcType, wDstType, pcbSrcLength, pcbDstLength, pSrc);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDataConvert *self, uint16 wSrcType, uint16 wDstType, uint cbSrcLength, uint* pcbDstLength, void* pSrc, void* pDst, uint cbDstMaxLength, uint32 dbsSrcStatus, uint32* pdbsStatus, uint8 bPrecision, uint8 bScale, uint32 dwFlags) DataConvert;
-				public function HRESULT(IDataConvert *self, uint16 wSrcType, uint16 wDstType) CanConvert;
-				public function HRESULT(IDataConvert *self, uint16 wSrcType, uint16 wDstType, uint* pcbSrcLength, uint* pcbDstLength, void* pSrc) GetConversionSize;
+				public new function HRESULT(IDataConvert *self, uint16 wSrcType, uint16 wDstType, uint cbSrcLength, uint* pcbDstLength, void* pSrc, void* pDst, uint cbDstMaxLength, uint32 dbsSrcStatus, uint32* pdbsStatus, uint8 bPrecision, uint8 bScale, uint32 dwFlags) DataConvert;
+				public new function HRESULT(IDataConvert *self, uint16 wSrcType, uint16 wDstType) CanConvert;
+				public new function HRESULT(IDataConvert *self, uint16 wSrcType, uint16 wDstType, uint* pcbSrcLength, uint* pcbDstLength, void* pSrc) GetConversionSize;
 			}
 		}
 		[CRepr]
@@ -7692,12 +9760,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a9c, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetInfo(uint32 cInfo, uint32* rgeInfoType, DCINFO** prgInfo) mut
+			{
+				return VT.GetInfo(&this, cInfo, rgeInfoType, prgInfo);
+			}
+			public HRESULT SetInfo(uint32 cInfo, DCINFO* rgInfo) mut
+			{
+				return VT.SetInfo(&this, cInfo, rgInfo);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDCInfo *self, uint32 cInfo, uint32* rgeInfoType, DCINFO** prgInfo) GetInfo;
-				public function HRESULT(IDCInfo *self, uint32 cInfo, DCINFO* rgInfo) SetInfo;
+				public new function HRESULT(IDCInfo *self, uint32 cInfo, uint32* rgeInfoType, DCINFO** prgInfo) GetInfo;
+				public new function HRESULT(IDCInfo *self, uint32 cInfo, DCINFO* rgInfo) SetInfo;
 			}
 		}
 		[CRepr]
@@ -7705,13 +9782,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7c0ffab2, 0xcd84, 0x11d0, 0x94, 0x9a, 0x00, 0xa0, 0xc9, 0x11, 0x10, 0xed);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT dataMemberChanged(uint16* bstrDM) mut
+			{
+				return VT.dataMemberChanged(&this, bstrDM);
+			}
+			public HRESULT dataMemberAdded(uint16* bstrDM) mut
+			{
+				return VT.dataMemberAdded(&this, bstrDM);
+			}
+			public HRESULT dataMemberRemoved(uint16* bstrDM) mut
+			{
+				return VT.dataMemberRemoved(&this, bstrDM);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(DataSourceListener *self, uint16* bstrDM) dataMemberChanged;
-				public function HRESULT(DataSourceListener *self, uint16* bstrDM) dataMemberAdded;
-				public function HRESULT(DataSourceListener *self, uint16* bstrDM) dataMemberRemoved;
+				public new function HRESULT(DataSourceListener *self, uint16* bstrDM) dataMemberChanged;
+				public new function HRESULT(DataSourceListener *self, uint16* bstrDM) dataMemberAdded;
+				public new function HRESULT(DataSourceListener *self, uint16* bstrDM) dataMemberRemoved;
 			}
 		}
 		[CRepr]
@@ -7719,15 +9809,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7c0ffab3, 0xcd84, 0x11d0, 0x94, 0x9a, 0x00, 0xa0, 0xc9, 0x11, 0x10, 0xed);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT getDataMember(uint16* bstrDM, Guid* riid, IUnknown** ppunk) mut
+			{
+				return VT.getDataMember(&this, bstrDM, riid, ppunk);
+			}
+			public HRESULT getDataMemberName(int32 lIndex, uint16** pbstrDM) mut
+			{
+				return VT.getDataMemberName(&this, lIndex, pbstrDM);
+			}
+			public HRESULT getDataMemberCount(int32* plCount) mut
+			{
+				return VT.getDataMemberCount(&this, plCount);
+			}
+			public HRESULT addDataSourceListener(DataSourceListener* pDSL) mut
+			{
+				return VT.addDataSourceListener(&this, pDSL);
+			}
+			public HRESULT removeDataSourceListener(DataSourceListener* pDSL) mut
+			{
+				return VT.removeDataSourceListener(&this, pDSL);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(DataSource *self, uint16* bstrDM, Guid* riid, IUnknown** ppunk) getDataMember;
-				public function HRESULT(DataSource *self, int32 lIndex, uint16** pbstrDM) getDataMemberName;
-				public function HRESULT(DataSource *self, int32* plCount) getDataMemberCount;
-				public function HRESULT(DataSource *self, DataSourceListener* pDSL) addDataSourceListener;
-				public function HRESULT(DataSource *self, DataSourceListener* pDSL) removeDataSourceListener;
+				public new function HRESULT(DataSource *self, uint16* bstrDM, Guid* riid, IUnknown** ppunk) getDataMember;
+				public new function HRESULT(DataSource *self, int32 lIndex, uint16** pbstrDM) getDataMemberName;
+				public new function HRESULT(DataSource *self, int32* plCount) getDataMemberCount;
+				public new function HRESULT(DataSource *self, DataSourceListener* pDSL) addDataSourceListener;
+				public new function HRESULT(DataSource *self, DataSourceListener* pDSL) removeDataSourceListener;
 			}
 		}
 		[CRepr]
@@ -7735,18 +9846,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe0e270c1, 0xc0be, 0x11d0, 0x8f, 0xe4, 0x00, 0xa0, 0xc9, 0x0a, 0x63, 0x41);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT aboutToChangeCell(int iRow, int iColumn) mut
+			{
+				return VT.aboutToChangeCell(&this, iRow, iColumn);
+			}
+			public HRESULT cellChanged(int iRow, int iColumn) mut
+			{
+				return VT.cellChanged(&this, iRow, iColumn);
+			}
+			public HRESULT aboutToDeleteRows(int iRow, int cRows) mut
+			{
+				return VT.aboutToDeleteRows(&this, iRow, cRows);
+			}
+			public HRESULT deletedRows(int iRow, int cRows) mut
+			{
+				return VT.deletedRows(&this, iRow, cRows);
+			}
+			public HRESULT aboutToInsertRows(int iRow, int cRows) mut
+			{
+				return VT.aboutToInsertRows(&this, iRow, cRows);
+			}
+			public HRESULT insertedRows(int iRow, int cRows) mut
+			{
+				return VT.insertedRows(&this, iRow, cRows);
+			}
+			public HRESULT rowsAvailable(int iRow, int cRows) mut
+			{
+				return VT.rowsAvailable(&this, iRow, cRows);
+			}
+			public HRESULT transferComplete(OSPXFER xfer) mut
+			{
+				return VT.transferComplete(&this, xfer);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(OLEDBSimpleProviderListener *self, int iRow, int iColumn) aboutToChangeCell;
-				public function HRESULT(OLEDBSimpleProviderListener *self, int iRow, int iColumn) cellChanged;
-				public function HRESULT(OLEDBSimpleProviderListener *self, int iRow, int cRows) aboutToDeleteRows;
-				public function HRESULT(OLEDBSimpleProviderListener *self, int iRow, int cRows) deletedRows;
-				public function HRESULT(OLEDBSimpleProviderListener *self, int iRow, int cRows) aboutToInsertRows;
-				public function HRESULT(OLEDBSimpleProviderListener *self, int iRow, int cRows) insertedRows;
-				public function HRESULT(OLEDBSimpleProviderListener *self, int iRow, int cRows) rowsAvailable;
-				public function HRESULT(OLEDBSimpleProviderListener *self, OSPXFER xfer) transferComplete;
+				public new function HRESULT(OLEDBSimpleProviderListener *self, int iRow, int iColumn) aboutToChangeCell;
+				public new function HRESULT(OLEDBSimpleProviderListener *self, int iRow, int iColumn) cellChanged;
+				public new function HRESULT(OLEDBSimpleProviderListener *self, int iRow, int cRows) aboutToDeleteRows;
+				public new function HRESULT(OLEDBSimpleProviderListener *self, int iRow, int cRows) deletedRows;
+				public new function HRESULT(OLEDBSimpleProviderListener *self, int iRow, int cRows) aboutToInsertRows;
+				public new function HRESULT(OLEDBSimpleProviderListener *self, int iRow, int cRows) insertedRows;
+				public new function HRESULT(OLEDBSimpleProviderListener *self, int iRow, int cRows) rowsAvailable;
+				public new function HRESULT(OLEDBSimpleProviderListener *self, OSPXFER xfer) transferComplete;
 			}
 		}
 		[CRepr]
@@ -7754,24 +9898,81 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe0e270c0, 0xc0be, 0x11d0, 0x8f, 0xe4, 0x00, 0xa0, 0xc9, 0x0a, 0x63, 0x41);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT getRowCount(int* pcRows) mut
+			{
+				return VT.getRowCount(&this, pcRows);
+			}
+			public HRESULT getColumnCount(int* pcColumns) mut
+			{
+				return VT.getColumnCount(&this, pcColumns);
+			}
+			public HRESULT getRWStatus(int iRow, int iColumn, OSPRW* prwStatus) mut
+			{
+				return VT.getRWStatus(&this, iRow, iColumn, prwStatus);
+			}
+			public HRESULT getVariant(int iRow, int iColumn, OSPFORMAT format, VARIANT* pVar) mut
+			{
+				return VT.getVariant(&this, iRow, iColumn, format, pVar);
+			}
+			public HRESULT setVariant(int iRow, int iColumn, OSPFORMAT format, VARIANT Var) mut
+			{
+				return VT.setVariant(&this, iRow, iColumn, format, Var);
+			}
+			public HRESULT getLocale(BSTR* pbstrLocale) mut
+			{
+				return VT.getLocale(&this, pbstrLocale);
+			}
+			public HRESULT deleteRows(int iRow, int cRows, int* pcRowsDeleted) mut
+			{
+				return VT.deleteRows(&this, iRow, cRows, pcRowsDeleted);
+			}
+			public HRESULT insertRows(int iRow, int cRows, int* pcRowsInserted) mut
+			{
+				return VT.insertRows(&this, iRow, cRows, pcRowsInserted);
+			}
+			public HRESULT find(int iRowStart, int iColumn, VARIANT val, OSPFIND findFlags, OSPCOMP compType, int* piRowFound) mut
+			{
+				return VT.find(&this, iRowStart, iColumn, val, findFlags, compType, piRowFound);
+			}
+			public HRESULT addOLEDBSimpleProviderListener(OLEDBSimpleProviderListener* pospIListener) mut
+			{
+				return VT.addOLEDBSimpleProviderListener(&this, pospIListener);
+			}
+			public HRESULT removeOLEDBSimpleProviderListener(OLEDBSimpleProviderListener* pospIListener) mut
+			{
+				return VT.removeOLEDBSimpleProviderListener(&this, pospIListener);
+			}
+			public HRESULT isAsync(BOOL* pbAsynch) mut
+			{
+				return VT.isAsync(&this, pbAsynch);
+			}
+			public HRESULT getEstimatedRows(int* piRows) mut
+			{
+				return VT.getEstimatedRows(&this, piRows);
+			}
+			public HRESULT stopTransfer() mut
+			{
+				return VT.stopTransfer(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(OLEDBSimpleProvider *self, int* pcRows) getRowCount;
-				public function HRESULT(OLEDBSimpleProvider *self, int* pcColumns) getColumnCount;
-				public function HRESULT(OLEDBSimpleProvider *self, int iRow, int iColumn, OSPRW* prwStatus) getRWStatus;
-				public function HRESULT(OLEDBSimpleProvider *self, int iRow, int iColumn, OSPFORMAT format, VARIANT* pVar) getVariant;
-				public function HRESULT(OLEDBSimpleProvider *self, int iRow, int iColumn, OSPFORMAT format, VARIANT Var) setVariant;
-				public function HRESULT(OLEDBSimpleProvider *self, BSTR* pbstrLocale) getLocale;
-				public function HRESULT(OLEDBSimpleProvider *self, int iRow, int cRows, int* pcRowsDeleted) deleteRows;
-				public function HRESULT(OLEDBSimpleProvider *self, int iRow, int cRows, int* pcRowsInserted) insertRows;
-				public function HRESULT(OLEDBSimpleProvider *self, int iRowStart, int iColumn, VARIANT val, OSPFIND findFlags, OSPCOMP compType, int* piRowFound) find;
-				public function HRESULT(OLEDBSimpleProvider *self, OLEDBSimpleProviderListener* pospIListener) addOLEDBSimpleProviderListener;
-				public function HRESULT(OLEDBSimpleProvider *self, OLEDBSimpleProviderListener* pospIListener) removeOLEDBSimpleProviderListener;
-				public function HRESULT(OLEDBSimpleProvider *self, BOOL* pbAsynch) isAsync;
-				public function HRESULT(OLEDBSimpleProvider *self, int* piRows) getEstimatedRows;
-				public function HRESULT(OLEDBSimpleProvider *self) stopTransfer;
+				public new function HRESULT(OLEDBSimpleProvider *self, int* pcRows) getRowCount;
+				public new function HRESULT(OLEDBSimpleProvider *self, int* pcColumns) getColumnCount;
+				public new function HRESULT(OLEDBSimpleProvider *self, int iRow, int iColumn, OSPRW* prwStatus) getRWStatus;
+				public new function HRESULT(OLEDBSimpleProvider *self, int iRow, int iColumn, OSPFORMAT format, VARIANT* pVar) getVariant;
+				public new function HRESULT(OLEDBSimpleProvider *self, int iRow, int iColumn, OSPFORMAT format, VARIANT Var) setVariant;
+				public new function HRESULT(OLEDBSimpleProvider *self, BSTR* pbstrLocale) getLocale;
+				public new function HRESULT(OLEDBSimpleProvider *self, int iRow, int cRows, int* pcRowsDeleted) deleteRows;
+				public new function HRESULT(OLEDBSimpleProvider *self, int iRow, int cRows, int* pcRowsInserted) insertRows;
+				public new function HRESULT(OLEDBSimpleProvider *self, int iRowStart, int iColumn, VARIANT val, OSPFIND findFlags, OSPCOMP compType, int* piRowFound) find;
+				public new function HRESULT(OLEDBSimpleProvider *self, OLEDBSimpleProviderListener* pospIListener) addOLEDBSimpleProviderListener;
+				public new function HRESULT(OLEDBSimpleProvider *self, OLEDBSimpleProviderListener* pospIListener) removeOLEDBSimpleProviderListener;
+				public new function HRESULT(OLEDBSimpleProvider *self, BOOL* pbAsynch) isAsync;
+				public new function HRESULT(OLEDBSimpleProvider *self, int* piRows) getEstimatedRows;
+				public new function HRESULT(OLEDBSimpleProvider *self) stopTransfer;
 			}
 		}
 		[CRepr]
@@ -7779,7 +9980,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0ae9a4e4, 0x18d4, 0x11d1, 0xb3, 0xb3, 0x00, 0xaa, 0x00, 0xc1, 0xa9, 0x24);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -7790,11 +9992,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x06210e88, 0x01f5, 0x11d1, 0xb5, 0x12, 0x00, 0x80, 0xc7, 0x81, 0xc3, 0x84);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT InvokeService(IUnknown* pUnkInner) mut
+			{
+				return VT.InvokeService(&this, pUnkInner);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IService *self, IUnknown* pUnkInner) InvokeService;
+				public new function HRESULT(IService *self, IUnknown* pUnkInner) InvokeService;
 			}
 		}
 		[CRepr]
@@ -7802,12 +10009,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2206ccb0, 0x19c1, 0x11d1, 0x89, 0xe0, 0x00, 0xc0, 0x4f, 0xd7, 0xa8, 0x29);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT PromptDataSource(IUnknown* pUnkOuter, HWND hWndParent, uint32 dwPromptOptions, uint32 cSourceTypeFilter, uint32* rgSourceTypeFilter, PWSTR pwszszzProviderFilter, Guid* riid, IUnknown** ppDataSource) mut
+			{
+				return VT.PromptDataSource(&this, pUnkOuter, hWndParent, dwPromptOptions, cSourceTypeFilter, rgSourceTypeFilter, pwszszzProviderFilter, riid, ppDataSource);
+			}
+			public HRESULT PromptFileName(HWND hWndParent, uint32 dwPromptOptions, PWSTR pwszInitialDirectory, PWSTR pwszInitialFile, PWSTR* ppwszSelectedFile) mut
+			{
+				return VT.PromptFileName(&this, hWndParent, dwPromptOptions, pwszInitialDirectory, pwszInitialFile, ppwszSelectedFile);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDBPromptInitialize *self, IUnknown* pUnkOuter, HWND hWndParent, uint32 dwPromptOptions, uint32 cSourceTypeFilter, uint32* rgSourceTypeFilter, PWSTR pwszszzProviderFilter, Guid* riid, IUnknown** ppDataSource) PromptDataSource;
-				public function HRESULT(IDBPromptInitialize *self, HWND hWndParent, uint32 dwPromptOptions, PWSTR pwszInitialDirectory, PWSTR pwszInitialFile, PWSTR* ppwszSelectedFile) PromptFileName;
+				public new function HRESULT(IDBPromptInitialize *self, IUnknown* pUnkOuter, HWND hWndParent, uint32 dwPromptOptions, uint32 cSourceTypeFilter, uint32* rgSourceTypeFilter, PWSTR pwszszzProviderFilter, Guid* riid, IUnknown** ppDataSource) PromptDataSource;
+				public new function HRESULT(IDBPromptInitialize *self, HWND hWndParent, uint32 dwPromptOptions, PWSTR pwszInitialDirectory, PWSTR pwszInitialFile, PWSTR* ppwszSelectedFile) PromptFileName;
 			}
 		}
 		[CRepr]
@@ -7815,16 +10031,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2206ccb1, 0x19c1, 0x11d1, 0x89, 0xe0, 0x00, 0xc0, 0x4f, 0xd7, 0xa8, 0x29);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDataSource(IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszInitializationString, Guid* riid, IUnknown** ppDataSource) mut
+			{
+				return VT.GetDataSource(&this, pUnkOuter, dwClsCtx, pwszInitializationString, riid, ppDataSource);
+			}
+			public HRESULT GetInitializationString(IUnknown* pDataSource, uint8 fIncludePassword, PWSTR* ppwszInitString) mut
+			{
+				return VT.GetInitializationString(&this, pDataSource, fIncludePassword, ppwszInitString);
+			}
+			public HRESULT CreateDBInstance(Guid* clsidProvider, IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszReserved, Guid* riid, IUnknown** ppDataSource) mut
+			{
+				return VT.CreateDBInstance(&this, clsidProvider, pUnkOuter, dwClsCtx, pwszReserved, riid, ppDataSource);
+			}
+			public HRESULT CreateDBInstanceEx(Guid* clsidProvider, IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszReserved, COSERVERINFO* pServerInfo, uint32 cmq, MULTI_QI* rgmqResults) mut
+			{
+				return VT.CreateDBInstanceEx(&this, clsidProvider, pUnkOuter, dwClsCtx, pwszReserved, pServerInfo, cmq, rgmqResults);
+			}
+			public HRESULT LoadStringFromStorage(PWSTR pwszFileName, PWSTR* ppwszInitializationString) mut
+			{
+				return VT.LoadStringFromStorage(&this, pwszFileName, ppwszInitializationString);
+			}
+			public HRESULT WriteStringToStorage(PWSTR pwszFileName, PWSTR pwszInitializationString, uint32 dwCreationDisposition) mut
+			{
+				return VT.WriteStringToStorage(&this, pwszFileName, pwszInitializationString, dwCreationDisposition);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDataInitialize *self, IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszInitializationString, Guid* riid, IUnknown** ppDataSource) GetDataSource;
-				public function HRESULT(IDataInitialize *self, IUnknown* pDataSource, uint8 fIncludePassword, PWSTR* ppwszInitString) GetInitializationString;
-				public function HRESULT(IDataInitialize *self, Guid* clsidProvider, IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszReserved, Guid* riid, IUnknown** ppDataSource) CreateDBInstance;
-				public function HRESULT(IDataInitialize *self, Guid* clsidProvider, IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszReserved, COSERVERINFO* pServerInfo, uint32 cmq, MULTI_QI* rgmqResults) CreateDBInstanceEx;
-				public function HRESULT(IDataInitialize *self, PWSTR pwszFileName, PWSTR* ppwszInitializationString) LoadStringFromStorage;
-				public function HRESULT(IDataInitialize *self, PWSTR pwszFileName, PWSTR pwszInitializationString, uint32 dwCreationDisposition) WriteStringToStorage;
+				public new function HRESULT(IDataInitialize *self, IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszInitializationString, Guid* riid, IUnknown** ppDataSource) GetDataSource;
+				public new function HRESULT(IDataInitialize *self, IUnknown* pDataSource, uint8 fIncludePassword, PWSTR* ppwszInitString) GetInitializationString;
+				public new function HRESULT(IDataInitialize *self, Guid* clsidProvider, IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszReserved, Guid* riid, IUnknown** ppDataSource) CreateDBInstance;
+				public new function HRESULT(IDataInitialize *self, Guid* clsidProvider, IUnknown* pUnkOuter, uint32 dwClsCtx, PWSTR pwszReserved, COSERVERINFO* pServerInfo, uint32 cmq, MULTI_QI* rgmqResults) CreateDBInstanceEx;
+				public new function HRESULT(IDataInitialize *self, PWSTR pwszFileName, PWSTR* ppwszInitializationString) LoadStringFromStorage;
+				public new function HRESULT(IDataInitialize *self, PWSTR pwszFileName, PWSTR pwszInitializationString, uint32 dwCreationDisposition) WriteStringToStorage;
 			}
 		}
 		[CRepr]
@@ -7832,14 +10073,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2206ccb2, 0x19c1, 0x11d1, 0x89, 0xe0, 0x00, 0xc0, 0x4f, 0xd7, 0xa8, 0x29);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_hWnd(int64* phwndParent) mut
+			{
+				return VT.get_hWnd(&this, phwndParent);
+			}
+			public HRESULT put_hWnd(int64 hwndParent) mut
+			{
+				return VT.put_hWnd(&this, hwndParent);
+			}
+			public HRESULT PromptNew(IDispatch** ppADOConnection) mut
+			{
+				return VT.PromptNew(&this, ppADOConnection);
+			}
+			public HRESULT PromptEdit(IDispatch** ppADOConnection, int16* pbSuccess) mut
+			{
+				return VT.PromptEdit(&this, ppADOConnection, pbSuccess);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IDataSourceLocator *self, int64* phwndParent) get_hWnd;
-				public function HRESULT(IDataSourceLocator *self, int64 hwndParent) put_hWnd;
-				public function HRESULT(IDataSourceLocator *self, IDispatch** ppADOConnection) PromptNew;
-				public function HRESULT(IDataSourceLocator *self, IDispatch** ppADOConnection, int16* pbSuccess) PromptEdit;
+				public new function HRESULT(IDataSourceLocator *self, int64* phwndParent) get_hWnd;
+				public new function HRESULT(IDataSourceLocator *self, int64 hwndParent) put_hWnd;
+				public new function HRESULT(IDataSourceLocator *self, IDispatch** ppADOConnection) PromptNew;
+				public new function HRESULT(IDataSourceLocator *self, IDispatch** ppADOConnection, int16* pbSuccess) PromptEdit;
 			}
 		}
 		[CRepr]
@@ -7847,12 +10105,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a8f, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetOriginalRow(uint hReserved, uint hRow, uint* phRowOriginal) mut
+			{
+				return VT.GetOriginalRow(&this, hReserved, hRow, phRowOriginal);
+			}
+			public HRESULT GetPendingColumns(uint hReserved, uint hRow, uint32 cColumnOrdinals, uint32* rgiOrdinals, uint32* rgColumnStatus) mut
+			{
+				return VT.GetPendingColumns(&this, hReserved, hRow, cColumnOrdinals, rgiOrdinals, rgColumnStatus);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetChangeExtInfo *self, uint hReserved, uint hRow, uint* phRowOriginal) GetOriginalRow;
-				public function HRESULT(IRowsetChangeExtInfo *self, uint hReserved, uint hRow, uint32 cColumnOrdinals, uint32* rgiOrdinals, uint32* rgColumnStatus) GetPendingColumns;
+				public new function HRESULT(IRowsetChangeExtInfo *self, uint hReserved, uint hRow, uint* phRowOriginal) GetOriginalRow;
+				public new function HRESULT(IRowsetChangeExtInfo *self, uint hReserved, uint hRow, uint32 cColumnOrdinals, uint32* rgiOrdinals, uint32* rgColumnStatus) GetPendingColumns;
 			}
 		}
 		[CRepr]
@@ -7860,11 +10127,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x228972f0, 0xb5ff, 0x11d0, 0x8a, 0x80, 0x00, 0xc0, 0x4f, 0xd6, 0x11, 0xcd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RequestDiagFields(uint32 cDiagFields, KAGREQDIAG* rgDiagFields) mut
+			{
+				return VT.RequestDiagFields(&this, cDiagFields, rgDiagFields);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISQLRequestDiagFields *self, uint32 cDiagFields, KAGREQDIAG* rgDiagFields) RequestDiagFields;
+				public new function HRESULT(ISQLRequestDiagFields *self, uint32 cDiagFields, KAGREQDIAG* rgDiagFields) RequestDiagFields;
 			}
 		}
 		[CRepr]
@@ -7872,11 +10144,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x228972f1, 0xb5ff, 0x11d0, 0x8a, 0x80, 0x00, 0xc0, 0x4f, 0xd6, 0x11, 0xcd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDiagField(KAGGETDIAG* pDiagInfo) mut
+			{
+				return VT.GetDiagField(&this, pDiagInfo);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISQLGetDiagField *self, KAGGETDIAG* pDiagInfo) GetDiagField;
+				public new function HRESULT(ISQLGetDiagField *self, KAGGETDIAG* pDiagInfo) GetDiagField;
 			}
 		}
 		[CRepr]
@@ -7884,11 +10161,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a72, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetNextRowset(IUnknown* pUnkOuter, Guid* riid, IUnknown** ppNextRowset) mut
+			{
+				return VT.GetNextRowset(&this, pUnkOuter, riid, ppNextRowset);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetNextRowset *self, IUnknown* pUnkOuter, Guid* riid, IUnknown** ppNextRowset) GetNextRowset;
+				public new function HRESULT(IRowsetNextRowset *self, IUnknown* pUnkOuter, Guid* riid, IUnknown** ppNextRowset) GetNextRowset;
 			}
 		}
 		[CRepr]
@@ -7896,11 +10178,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a71, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetNewDataAfter(uint hChapter, uint32 cbbmPrevious, uint8* pbmPrevious, uint hAccessor, uint8* pData, uint* phRow) mut
+			{
+				return VT.SetNewDataAfter(&this, hChapter, cbbmPrevious, pbmPrevious, hAccessor, pData, phRow);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetNewRowAfter *self, uint hChapter, uint32 cbbmPrevious, uint8* pbmPrevious, uint hAccessor, uint8* pData, uint* phRow) SetNewDataAfter;
+				public new function HRESULT(IRowsetNewRowAfter *self, uint hChapter, uint32 cbbmPrevious, uint8* pbmPrevious, uint hAccessor, uint8* pData, uint* phRow) SetNewDataAfter;
 			}
 		}
 		[CRepr]
@@ -7908,12 +10195,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a6e, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetParameterInfo(uint* pcParams, DBPARAMINFO** prgParamInfo, uint16** ppNamesBuffer) mut
+			{
+				return VT.GetParameterInfo(&this, pcParams, prgParamInfo, ppNamesBuffer);
+			}
+			public HRESULT Requery(DBPARAMS* pParams, uint32* pulErrorParam, uint* phReserved) mut
+			{
+				return VT.Requery(&this, pParams, pulErrorParam, phReserved);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetWithParameters *self, uint* pcParams, DBPARAMINFO** prgParamInfo, uint16** ppNamesBuffer) GetParameterInfo;
-				public function HRESULT(IRowsetWithParameters *self, DBPARAMS* pParams, uint32* pulErrorParam, uint* phReserved) Requery;
+				public new function HRESULT(IRowsetWithParameters *self, uint* pcParams, DBPARAMINFO** prgParamInfo, uint16** ppNamesBuffer) GetParameterInfo;
+				public new function HRESULT(IRowsetWithParameters *self, DBPARAMS* pParams, uint32* pulErrorParam, uint* phReserved) Requery;
 			}
 		}
 		[CRepr]
@@ -7921,12 +10217,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a0f, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RatioFinished(uint* pulDenominator, uint* pulNumerator, uint* pcRows, BOOL* pfNewRows) mut
+			{
+				return VT.RatioFinished(&this, pulDenominator, pulNumerator, pcRows, pfNewRows);
+			}
+			public HRESULT Stop() mut
+			{
+				return VT.Stop(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetAsynch *self, uint* pulDenominator, uint* pulNumerator, uint* pcRows, BOOL* pfNewRows) RatioFinished;
-				public function HRESULT(IRowsetAsynch *self) Stop;
+				public new function HRESULT(IRowsetAsynch *self, uint* pulDenominator, uint* pulNumerator, uint* pcRows, BOOL* pfNewRows) RatioFinished;
+				public new function HRESULT(IRowsetAsynch *self) Stop;
 			}
 		}
 		[CRepr]
@@ -7934,11 +10239,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a12, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ListKeys(uint* pcColumns, uint** prgColumns) mut
+			{
+				return VT.ListKeys(&this, pcColumns, prgColumns);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetKeys *self, uint* pcColumns, uint** prgColumns) ListKeys;
+				public new function HRESULT(IRowsetKeys *self, uint* pcColumns, uint** prgColumns) ListKeys;
 			}
 		}
 		[CRepr]
@@ -7946,13 +10256,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a73, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Acknowledge() mut
+			{
+				return VT.Acknowledge(&this);
+			}
+			public HRESULT Start() mut
+			{
+				return VT.Start(&this);
+			}
+			public HRESULT StopWatching() mut
+			{
+				return VT.StopWatching(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetWatchAll *self) Acknowledge;
-				public function HRESULT(IRowsetWatchAll *self) Start;
-				public function HRESULT(IRowsetWatchAll *self) StopWatching;
+				public new function HRESULT(IRowsetWatchAll *self) Acknowledge;
+				public new function HRESULT(IRowsetWatchAll *self) Start;
+				public new function HRESULT(IRowsetWatchAll *self) StopWatching;
 			}
 		}
 		[CRepr]
@@ -7960,11 +10283,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a44, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnChange(IRowset* pRowset, uint32 eChangeReason) mut
+			{
+				return VT.OnChange(&this, pRowset, eChangeReason);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetWatchNotify *self, IRowset* pRowset, uint32 eChangeReason) OnChange;
+				public new function HRESULT(IRowsetWatchNotify *self, IRowset* pRowset, uint32 eChangeReason) OnChange;
 			}
 		}
 		[CRepr]
@@ -7972,16 +10300,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a45, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateWatchRegion(uint32 dwWatchMode, uint* phRegion) mut
+			{
+				return VT.CreateWatchRegion(&this, dwWatchMode, phRegion);
+			}
+			public HRESULT ChangeWatchMode(uint hRegion, uint32 dwWatchMode) mut
+			{
+				return VT.ChangeWatchMode(&this, hRegion, dwWatchMode);
+			}
+			public HRESULT DeleteWatchRegion(uint hRegion) mut
+			{
+				return VT.DeleteWatchRegion(&this, hRegion);
+			}
+			public HRESULT GetWatchRegionInfo(uint hRegion, uint32* pdwWatchMode, uint* phChapter, uint* pcbBookmark, uint8** ppBookmark, int* pcRows) mut
+			{
+				return VT.GetWatchRegionInfo(&this, hRegion, pdwWatchMode, phChapter, pcbBookmark, ppBookmark, pcRows);
+			}
+			public HRESULT Refresh(uint* pcChangesObtained, tagDBROWWATCHRANGE** prgChanges) mut
+			{
+				return VT.Refresh(&this, pcChangesObtained, prgChanges);
+			}
+			public HRESULT ShrinkWatchRegion(uint hRegion, uint hChapter, uint cbBookmark, uint8* pBookmark, int cRows) mut
+			{
+				return VT.ShrinkWatchRegion(&this, hRegion, hChapter, cbBookmark, pBookmark, cRows);
+			}
 			[CRepr]
 			public struct VTable : IRowsetWatchAll.VTable
 			{
-				public function HRESULT(IRowsetWatchRegion *self, uint32 dwWatchMode, uint* phRegion) CreateWatchRegion;
-				public function HRESULT(IRowsetWatchRegion *self, uint hRegion, uint32 dwWatchMode) ChangeWatchMode;
-				public function HRESULT(IRowsetWatchRegion *self, uint hRegion) DeleteWatchRegion;
-				public function HRESULT(IRowsetWatchRegion *self, uint hRegion, uint32* pdwWatchMode, uint* phChapter, uint* pcbBookmark, uint8** ppBookmark, int* pcRows) GetWatchRegionInfo;
-				public function HRESULT(IRowsetWatchRegion *self, uint* pcChangesObtained, tagDBROWWATCHRANGE** prgChanges) Refresh;
-				public function HRESULT(IRowsetWatchRegion *self, uint hRegion, uint hChapter, uint cbBookmark, uint8* pBookmark, int cRows) ShrinkWatchRegion;
+				public new function HRESULT(IRowsetWatchRegion *self, uint32 dwWatchMode, uint* phRegion) CreateWatchRegion;
+				public new function HRESULT(IRowsetWatchRegion *self, uint hRegion, uint32 dwWatchMode) ChangeWatchMode;
+				public new function HRESULT(IRowsetWatchRegion *self, uint hRegion) DeleteWatchRegion;
+				public new function HRESULT(IRowsetWatchRegion *self, uint hRegion, uint32* pdwWatchMode, uint* phChapter, uint* pcbBookmark, uint8** ppBookmark, int* pcRows) GetWatchRegionInfo;
+				public new function HRESULT(IRowsetWatchRegion *self, uint* pcChangesObtained, tagDBROWWATCHRANGE** prgChanges) Refresh;
+				public new function HRESULT(IRowsetWatchRegion *self, uint hRegion, uint hChapter, uint cbBookmark, uint8* pBookmark, int cRows) ShrinkWatchRegion;
 			}
 		}
 		[CRepr]
@@ -7989,14 +10342,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a6b, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CloseSource(uint16 hSourceID) mut
+			{
+				return VT.CloseSource(&this, hSourceID);
+			}
+			public HRESULT CopyByHROWS(uint16 hSourceID, uint hReserved, int cRows, uint* rghRows, uint32 bFlags) mut
+			{
+				return VT.CopyByHROWS(&this, hSourceID, hReserved, cRows, rghRows, bFlags);
+			}
+			public HRESULT CopyRows(uint16 hSourceID, uint hReserved, int cRows, uint32 bFlags, uint* pcRowsCopied) mut
+			{
+				return VT.CopyRows(&this, hSourceID, hReserved, cRows, bFlags, pcRowsCopied);
+			}
+			public HRESULT DefineSource(IRowset* pRowsetSource, uint cColIds, int* rgSourceColumns, int* rgTargetColumns, uint16* phSourceID) mut
+			{
+				return VT.DefineSource(&this, pRowsetSource, cColIds, rgSourceColumns, rgTargetColumns, phSourceID);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetCopyRows *self, uint16 hSourceID) CloseSource;
-				public function HRESULT(IRowsetCopyRows *self, uint16 hSourceID, uint hReserved, int cRows, uint* rghRows, uint32 bFlags) CopyByHROWS;
-				public function HRESULT(IRowsetCopyRows *self, uint16 hSourceID, uint hReserved, int cRows, uint32 bFlags, uint* pcRowsCopied) CopyRows;
-				public function HRESULT(IRowsetCopyRows *self, IRowset* pRowsetSource, uint cColIds, int* rgSourceColumns, int* rgTargetColumns, uint16* phSourceID) DefineSource;
+				public new function HRESULT(IRowsetCopyRows *self, uint16 hSourceID) CloseSource;
+				public new function HRESULT(IRowsetCopyRows *self, uint16 hSourceID, uint hReserved, int cRows, uint* rghRows, uint32 bFlags) CopyByHROWS;
+				public new function HRESULT(IRowsetCopyRows *self, uint16 hSourceID, uint hReserved, int cRows, uint32 bFlags, uint* pcRowsCopied) CopyRows;
+				public new function HRESULT(IRowsetCopyRows *self, IRowset* pRowsetSource, uint cColIds, int* rgSourceColumns, int* rgTargetColumns, uint16* phSourceID) DefineSource;
 			}
 		}
 		[CRepr]
@@ -8004,12 +10374,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a6a, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ReadData(uint hChapter, uint cbBookmark, uint8* pBookmark, int lRowsOffset, uint hAccessor, int cRows, uint* pcRowsObtained, uint8** ppFixedData, uint* pcbVariableTotal, uint8** ppVariableData) mut
+			{
+				return VT.ReadData(&this, hChapter, cbBookmark, pBookmark, lRowsOffset, hAccessor, cRows, pcRowsObtained, ppFixedData, pcbVariableTotal, ppVariableData);
+			}
+			public HRESULT ReleaseChapter(uint hChapter) mut
+			{
+				return VT.ReleaseChapter(&this, hChapter);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IReadData *self, uint hChapter, uint cbBookmark, uint8* pBookmark, int lRowsOffset, uint hAccessor, int cRows, uint* pcRowsObtained, uint8** ppFixedData, uint* pcbVariableTotal, uint8** ppVariableData) ReadData;
-				public function HRESULT(IReadData *self, uint hChapter) ReleaseChapter;
+				public new function HRESULT(IReadData *self, uint hChapter, uint cbBookmark, uint8* pBookmark, int lRowsOffset, uint hAccessor, int cRows, uint* pcRowsObtained, uint8** ppFixedData, uint* pcbVariableTotal, uint8** ppVariableData) ReadData;
+				public new function HRESULT(IReadData *self, uint hChapter) ReleaseChapter;
 			}
 		}
 		[CRepr]
@@ -8017,16 +10396,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a4e, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetAccumulatedCost(PWSTR pwszRowsetName, uint32* pcCostLimits, DBCOST** prgCostLimits) mut
+			{
+				return VT.GetAccumulatedCost(&this, pwszRowsetName, pcCostLimits, prgCostLimits);
+			}
+			public HRESULT GetCostEstimate(PWSTR pwszRowsetName, uint32* pcCostEstimates, DBCOST* prgCostEstimates) mut
+			{
+				return VT.GetCostEstimate(&this, pwszRowsetName, pcCostEstimates, prgCostEstimates);
+			}
+			public HRESULT GetCostGoals(PWSTR pwszRowsetName, uint32* pcCostGoals, DBCOST* prgCostGoals) mut
+			{
+				return VT.GetCostGoals(&this, pwszRowsetName, pcCostGoals, prgCostGoals);
+			}
+			public HRESULT GetCostLimits(PWSTR pwszRowsetName, uint32* pcCostLimits, DBCOST* prgCostLimits) mut
+			{
+				return VT.GetCostLimits(&this, pwszRowsetName, pcCostLimits, prgCostLimits);
+			}
+			public HRESULT SetCostGoals(PWSTR pwszRowsetName, uint32 cCostGoals, DBCOST* rgCostGoals) mut
+			{
+				return VT.SetCostGoals(&this, pwszRowsetName, cCostGoals, rgCostGoals);
+			}
+			public HRESULT SetCostLimits(PWSTR pwszRowsetName, uint32 cCostLimits, DBCOST* prgCostLimits, uint32 dwExecutionFlags) mut
+			{
+				return VT.SetCostLimits(&this, pwszRowsetName, cCostLimits, prgCostLimits, dwExecutionFlags);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ICommandCost *self, PWSTR pwszRowsetName, uint32* pcCostLimits, DBCOST** prgCostLimits) GetAccumulatedCost;
-				public function HRESULT(ICommandCost *self, PWSTR pwszRowsetName, uint32* pcCostEstimates, DBCOST* prgCostEstimates) GetCostEstimate;
-				public function HRESULT(ICommandCost *self, PWSTR pwszRowsetName, uint32* pcCostGoals, DBCOST* prgCostGoals) GetCostGoals;
-				public function HRESULT(ICommandCost *self, PWSTR pwszRowsetName, uint32* pcCostLimits, DBCOST* prgCostLimits) GetCostLimits;
-				public function HRESULT(ICommandCost *self, PWSTR pwszRowsetName, uint32 cCostGoals, DBCOST* rgCostGoals) SetCostGoals;
-				public function HRESULT(ICommandCost *self, PWSTR pwszRowsetName, uint32 cCostLimits, DBCOST* prgCostLimits, uint32 dwExecutionFlags) SetCostLimits;
+				public new function HRESULT(ICommandCost *self, PWSTR pwszRowsetName, uint32* pcCostLimits, DBCOST** prgCostLimits) GetAccumulatedCost;
+				public new function HRESULT(ICommandCost *self, PWSTR pwszRowsetName, uint32* pcCostEstimates, DBCOST* prgCostEstimates) GetCostEstimate;
+				public new function HRESULT(ICommandCost *self, PWSTR pwszRowsetName, uint32* pcCostGoals, DBCOST* prgCostGoals) GetCostGoals;
+				public new function HRESULT(ICommandCost *self, PWSTR pwszRowsetName, uint32* pcCostLimits, DBCOST* prgCostLimits) GetCostLimits;
+				public new function HRESULT(ICommandCost *self, PWSTR pwszRowsetName, uint32 cCostGoals, DBCOST* rgCostGoals) SetCostGoals;
+				public new function HRESULT(ICommandCost *self, PWSTR pwszRowsetName, uint32 cCostLimits, DBCOST* prgCostLimits, uint32 dwExecutionFlags) SetCostLimits;
 			}
 		}
 		[CRepr]
@@ -8034,12 +10438,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a18, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ValidateCompletely() mut
+			{
+				return VT.ValidateCompletely(&this);
+			}
+			public HRESULT ValidateSyntax() mut
+			{
+				return VT.ValidateSyntax(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ICommandValidate *self) ValidateCompletely;
-				public function HRESULT(ICommandValidate *self) ValidateSyntax;
+				public new function HRESULT(ICommandValidate *self) ValidateCompletely;
+				public new function HRESULT(ICommandValidate *self) ValidateSyntax;
 			}
 		}
 		[CRepr]
@@ -8047,12 +10460,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a77, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RenameColumn(DBID* pTableId, DBID* pOldColumnId, DBID* pNewColumnId) mut
+			{
+				return VT.RenameColumn(&this, pTableId, pOldColumnId, pNewColumnId);
+			}
+			public HRESULT RenameTable(DBID* pOldTableId, DBID* pOldIndexId, DBID* pNewTableId, DBID* pNewIndexId) mut
+			{
+				return VT.RenameTable(&this, pOldTableId, pOldIndexId, pNewTableId, pNewIndexId);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ITableRename *self, DBID* pTableId, DBID* pOldColumnId, DBID* pNewColumnId) RenameColumn;
-				public function HRESULT(ITableRename *self, DBID* pOldTableId, DBID* pOldIndexId, DBID* pNewTableId, DBID* pNewIndexId) RenameTable;
+				public new function HRESULT(ITableRename *self, DBID* pTableId, DBID* pOldColumnId, DBID* pNewColumnId) RenameColumn;
+				public new function HRESULT(ITableRename *self, DBID* pOldTableId, DBID* pOldIndexId, DBID* pNewTableId, DBID* pNewIndexId) RenameTable;
 			}
 		}
 		[CRepr]
@@ -8060,12 +10482,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a50, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCommand(IUnknown* pUnkOuter, Guid* rguidSchema, ICommand** ppCommand) mut
+			{
+				return VT.GetCommand(&this, pUnkOuter, rguidSchema, ppCommand);
+			}
+			public HRESULT GetSchemas(uint32* pcSchemas, Guid** prgSchemas) mut
+			{
+				return VT.GetSchemas(&this, pcSchemas, prgSchemas);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDBSchemaCommand *self, IUnknown* pUnkOuter, Guid* rguidSchema, ICommand** ppCommand) GetCommand;
-				public function HRESULT(IDBSchemaCommand *self, uint32* pcSchemas, Guid** prgSchemas) GetSchemas;
+				public new function HRESULT(IDBSchemaCommand *self, IUnknown* pUnkOuter, Guid* rguidSchema, ICommand** ppCommand) GetCommand;
+				public new function HRESULT(IDBSchemaCommand *self, uint32* pcSchemas, Guid** prgSchemas) GetSchemas;
 			}
 		}
 		[CRepr]
@@ -8073,11 +10504,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c733a4d, 0x2a1c, 0x11ce, 0xad, 0xe5, 0x00, 0xaa, 0x00, 0x44, 0x77, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetMoniker(IMoniker** ppIMoniker) mut
+			{
+				return VT.GetMoniker(&this, ppIMoniker);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IProvideMoniker *self, IMoniker** ppIMoniker) GetMoniker;
+				public new function HRESULT(IProvideMoniker *self, IMoniker** ppIMoniker) GetMoniker;
 			}
 		}
 		[CRepr]
@@ -8085,13 +10521,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xed8ce7e0, 0x106c, 0x11ce, 0x84, 0xe2, 0x00, 0xaa, 0x00, 0x4b, 0x99, 0x86);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public int32 Init(IFilter* pflt, uint32 ulFlags) mut
+			{
+				return VT.Init(&this, pflt, ulFlags);
+			}
+			public int32 NextHitMoniker(uint32* pcMnk, IMoniker*** papMnk) mut
+			{
+				return VT.NextHitMoniker(&this, pcMnk, papMnk);
+			}
+			public int32 NextHitOffset(uint32* pcRegion, FILTERREGION** paRegion) mut
+			{
+				return VT.NextHitOffset(&this, pcRegion, paRegion);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function int32(ISearchQueryHits *self, IFilter* pflt, uint32 ulFlags) Init;
-				public function int32(ISearchQueryHits *self, uint32* pcMnk, IMoniker*** papMnk) NextHitMoniker;
-				public function int32(ISearchQueryHits *self, uint32* pcRegion, FILTERREGION** paRegion) NextHitOffset;
+				public new function int32(ISearchQueryHits *self, IFilter* pflt, uint32 ulFlags) Init;
+				public new function int32(ISearchQueryHits *self, uint32* pcMnk, IMoniker*** papMnk) NextHitMoniker;
+				public new function int32(ISearchQueryHits *self, uint32* pcRegion, FILTERREGION** paRegion) NextHitOffset;
 			}
 		}
 		[CRepr]
@@ -8099,12 +10548,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa7ac77ed, 0xf8d7, 0x11ce, 0xa7, 0x98, 0x00, 0x20, 0xf8, 0x00, 0x80, 0x24);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetStatus(uint32* pdwStatus) mut
+			{
+				return VT.GetStatus(&this, pdwStatus);
+			}
+			public HRESULT GetStatusEx(uint32* pdwStatus, uint32* pcFilteredDocuments, uint32* pcDocumentsToFilter, uint* pdwRatioFinishedDenominator, uint* pdwRatioFinishedNumerator, uint cbBmk, uint8* pBmk, uint* piRowBmk, uint* pcRowsTotal) mut
+			{
+				return VT.GetStatusEx(&this, pdwStatus, pcFilteredDocuments, pcDocumentsToFilter, pdwRatioFinishedDenominator, pdwRatioFinishedNumerator, cbBmk, pBmk, piRowBmk, pcRowsTotal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetQueryStatus *self, uint32* pdwStatus) GetStatus;
-				public function HRESULT(IRowsetQueryStatus *self, uint32* pdwStatus, uint32* pcFilteredDocuments, uint32* pcDocumentsToFilter, uint* pdwRatioFinishedDenominator, uint* pdwRatioFinishedNumerator, uint cbBmk, uint8* pBmk, uint* piRowBmk, uint* pcRowsTotal) GetStatusEx;
+				public new function HRESULT(IRowsetQueryStatus *self, uint32* pdwStatus) GetStatus;
+				public new function HRESULT(IRowsetQueryStatus *self, uint32* pdwStatus, uint32* pcFilteredDocuments, uint32* pcDocumentsToFilter, uint* pdwRatioFinishedDenominator, uint* pdwRatioFinishedNumerator, uint cbBmk, uint8* pBmk, uint* piRowBmk, uint* pcRowsTotal) GetStatusEx;
 			}
 		}
 		[CRepr]
@@ -8112,26 +10570,52 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5cf4ca14, 0xef21, 0x11d0, 0x97, 0xe7, 0x00, 0xc0, 0x4f, 0xc2, 0xad, 0x98);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(void* pUMS) mut
+			{
+				return VT.Initialize(&this, pUMS);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUMSInitialize *self, void* pUMS) Initialize;
+				public new function HRESULT(IUMSInitialize *self, void* pUMS) Initialize;
 			}
 		}
 		[CRepr]
 		public struct IUMS
 		{
 			protected VTable* vt;
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void SqlUmsSuspend(uint32 ticks) mut
+			{
+				VT.SqlUmsSuspend(&this, ticks);
+			}
+			public void SqlUmsYield(uint32 ticks) mut
+			{
+				VT.SqlUmsYield(&this, ticks);
+			}
+			public void SqlUmsSwitchPremptive() mut
+			{
+				VT.SqlUmsSwitchPremptive(&this);
+			}
+			public void SqlUmsSwitchNonPremptive() mut
+			{
+				VT.SqlUmsSwitchNonPremptive(&this);
+			}
+			public BOOL SqlUmsFIsPremptive() mut
+			{
+				return VT.SqlUmsFIsPremptive(&this);
+			}
 			[CRepr]
 			public struct VTable
 			{
-				public function void(IUMS *self, uint32 ticks) SqlUmsSuspend;
-				public function void(IUMS *self, uint32 ticks) SqlUmsYield;
-				public function void(IUMS *self) SqlUmsSwitchPremptive;
-				public function void(IUMS *self) SqlUmsSwitchNonPremptive;
-				public function BOOL(IUMS *self) SqlUmsFIsPremptive;
+				public new function void(IUMS *self, uint32 ticks) SqlUmsSuspend;
+				public new function void(IUMS *self, uint32 ticks) SqlUmsYield;
+				public new function void(IUMS *self) SqlUmsSwitchPremptive;
+				public new function void(IUMS *self) SqlUmsSwitchNonPremptive;
+				public new function BOOL(IUMS *self) SqlUmsFIsPremptive;
 			}
 		}
 		[CRepr]
@@ -8139,11 +10623,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5cf4ca12, 0xef21, 0x11d0, 0x97, 0xe7, 0x00, 0xc0, 0x4f, 0xc2, 0xad, 0x98);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetErrorInfo(tagSSErrorInfo** ppErrorInfo, uint16** ppStringsBuffer) mut
+			{
+				return VT.GetErrorInfo(&this, ppErrorInfo, ppStringsBuffer);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISQLServerErrorInfo *self, tagSSErrorInfo** ppErrorInfo, uint16** ppStringsBuffer) GetErrorInfo;
+				public new function HRESULT(ISQLServerErrorInfo *self, tagSSErrorInfo** ppErrorInfo, uint16** ppStringsBuffer) GetErrorInfo;
 			}
 		}
 		[CRepr]
@@ -8151,12 +10640,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5cf4ca13, 0xef21, 0x11d0, 0x97, 0xe7, 0x00, 0xc0, 0x4f, 0xc2, 0xad, 0x98);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT InsertRow(uint hAccessor, void* pData) mut
+			{
+				return VT.InsertRow(&this, hAccessor, pData);
+			}
+			public HRESULT Commit(BOOL fDone) mut
+			{
+				return VT.Commit(&this, fDone);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRowsetFastLoad *self, uint hAccessor, void* pData) InsertRow;
-				public function HRESULT(IRowsetFastLoad *self, BOOL fDone) Commit;
+				public new function HRESULT(IRowsetFastLoad *self, uint hAccessor, void* pData) InsertRow;
+				public new function HRESULT(IRowsetFastLoad *self, BOOL fDone) Commit;
 			}
 		}
 		[CRepr]
@@ -8164,12 +10662,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4c2389fb, 0x2511, 0x11d4, 0xb2, 0x58, 0x00, 0xc0, 0x4f, 0x79, 0x71, 0xce);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSchemaLock(DBID* pTableID, uint32 lmMode, HANDLE* phLockHandle, uint64* pTableVersion) mut
+			{
+				return VT.GetSchemaLock(&this, pTableID, lmMode, phLockHandle, pTableVersion);
+			}
+			public HRESULT ReleaseSchemaLock(HANDLE hLockHandle) mut
+			{
+				return VT.ReleaseSchemaLock(&this, hLockHandle);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISchemaLock *self, DBID* pTableID, uint32 lmMode, HANDLE* phLockHandle, uint64* pTableVersion) GetSchemaLock;
-				public function HRESULT(ISchemaLock *self, HANDLE hLockHandle) ReleaseSchemaLock;
+				public new function HRESULT(ISchemaLock *self, DBID* pTableID, uint32 lmMode, HANDLE* phLockHandle, uint64* pTableVersion) GetSchemaLock;
+				public new function HRESULT(ISchemaLock *self, HANDLE hLockHandle) ReleaseSchemaLock;
 			}
 		}
 		

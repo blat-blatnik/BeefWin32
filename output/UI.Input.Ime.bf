@@ -1299,7 +1299,8 @@ namespace Win32
 		[CRepr]
 		public struct IFEClassFactory : IClassFactory
 		{
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IClassFactory.VTable
 			{
@@ -1310,14 +1311,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x019f7151, 0xe6db, 0x11d0, 0x83, 0xc3, 0x00, 0xc0, 0x4f, 0xdd, 0xb8, 0x2e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT IsDefaultIME(uint8* szName, int32 cszName) mut
+			{
+				return VT.IsDefaultIME(&this, szName, cszName);
+			}
+			public HRESULT SetDefaultIME() mut
+			{
+				return VT.SetDefaultIME(&this);
+			}
+			public HRESULT InvokeWordRegDialog(IMEDLG* pimedlg) mut
+			{
+				return VT.InvokeWordRegDialog(&this, pimedlg);
+			}
+			public HRESULT InvokeDictToolDialog(IMEDLG* pimedlg) mut
+			{
+				return VT.InvokeDictToolDialog(&this, pimedlg);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IFECommon *self, uint8* szName, int32 cszName) IsDefaultIME;
-				public function HRESULT(IFECommon *self) SetDefaultIME;
-				public function HRESULT(IFECommon *self, IMEDLG* pimedlg) InvokeWordRegDialog;
-				public function HRESULT(IFECommon *self, IMEDLG* pimedlg) InvokeDictToolDialog;
+				public new function HRESULT(IFECommon *self, uint8* szName, int32 cszName) IsDefaultIME;
+				public new function HRESULT(IFECommon *self) SetDefaultIME;
+				public new function HRESULT(IFECommon *self, IMEDLG* pimedlg) InvokeWordRegDialog;
+				public new function HRESULT(IFECommon *self, IMEDLG* pimedlg) InvokeDictToolDialog;
 			}
 		}
 		[CRepr]
@@ -1325,16 +1343,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x019f7152, 0xe6db, 0x11d0, 0x83, 0xc3, 0x00, 0xc0, 0x4f, 0xdd, 0xb8, 0x2e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Open() mut
+			{
+				return VT.Open(&this);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
+			public HRESULT GetJMorphResult(uint32 dwRequest, uint32 dwCMode, int32 cwchInput, PWSTR pwchInput, uint32* pfCInfo, MORRSLT** ppResult) mut
+			{
+				return VT.GetJMorphResult(&this, dwRequest, dwCMode, cwchInput, pwchInput, pfCInfo, ppResult);
+			}
+			public HRESULT GetConversionModeCaps(uint32* pdwCaps) mut
+			{
+				return VT.GetConversionModeCaps(&this, pdwCaps);
+			}
+			public HRESULT GetPhonetic(BSTR string, int32 start, int32 length, BSTR* phonetic) mut
+			{
+				return VT.GetPhonetic(&this, string, start, length, phonetic);
+			}
+			public HRESULT GetConversion(BSTR string, int32 start, int32 length, BSTR* result) mut
+			{
+				return VT.GetConversion(&this, string, start, length, result);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IFELanguage *self) Open;
-				public function HRESULT(IFELanguage *self) Close;
-				public function HRESULT(IFELanguage *self, uint32 dwRequest, uint32 dwCMode, int32 cwchInput, PWSTR pwchInput, uint32* pfCInfo, MORRSLT** ppResult) GetJMorphResult;
-				public function HRESULT(IFELanguage *self, uint32* pdwCaps) GetConversionModeCaps;
-				public function HRESULT(IFELanguage *self, BSTR string, int32 start, int32 length, BSTR* phonetic) GetPhonetic;
-				public function HRESULT(IFELanguage *self, BSTR string, int32 start, int32 length, BSTR* result) GetConversion;
+				public new function HRESULT(IFELanguage *self) Open;
+				public new function HRESULT(IFELanguage *self) Close;
+				public new function HRESULT(IFELanguage *self, uint32 dwRequest, uint32 dwCMode, int32 cwchInput, PWSTR pwchInput, uint32* pfCInfo, MORRSLT** ppResult) GetJMorphResult;
+				public new function HRESULT(IFELanguage *self, uint32* pdwCaps) GetConversionModeCaps;
+				public new function HRESULT(IFELanguage *self, BSTR string, int32 start, int32 length, BSTR* phonetic) GetPhonetic;
+				public new function HRESULT(IFELanguage *self, BSTR string, int32 start, int32 length, BSTR* result) GetConversion;
 			}
 		}
 		[CRepr]
@@ -1342,27 +1385,96 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x019f7153, 0xe6db, 0x11d0, 0x83, 0xc3, 0x00, 0xc0, 0x4f, 0xdd, 0xb8, 0x2e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Open(uint8* pchDictPath, IMESHF* pshf) mut
+			{
+				return VT.Open(&this, pchDictPath, pshf);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
+			public HRESULT GetHeader(uint8* pchDictPath, IMESHF* pshf, IMEFMT* pjfmt, uint32* pulType) mut
+			{
+				return VT.GetHeader(&this, pchDictPath, pshf, pjfmt, pulType);
+			}
+			public HRESULT DisplayProperty(HWND hwnd) mut
+			{
+				return VT.DisplayProperty(&this, hwnd);
+			}
+			public HRESULT GetPosTable(POSTBL** prgPosTbl, int32* pcPosTbl) mut
+			{
+				return VT.GetPosTable(&this, prgPosTbl, pcPosTbl);
+			}
+			public HRESULT GetWords(PWSTR pwchFirst, PWSTR pwchLast, PWSTR pwchDisplay, uint32 ulPos, uint32 ulSelect, uint32 ulWordSrc, uint8* pchBuffer, uint32 cbBuffer, uint32* pcWrd) mut
+			{
+				return VT.GetWords(&this, pwchFirst, pwchLast, pwchDisplay, ulPos, ulSelect, ulWordSrc, pchBuffer, cbBuffer, pcWrd);
+			}
+			public HRESULT NextWords(uint8* pchBuffer, uint32 cbBuffer, uint32* pcWrd) mut
+			{
+				return VT.NextWords(&this, pchBuffer, cbBuffer, pcWrd);
+			}
+			public HRESULT Create(PSTR pchDictPath, IMESHF* pshf) mut
+			{
+				return VT.Create(&this, pchDictPath, pshf);
+			}
+			public HRESULT SetHeader(IMESHF* pshf) mut
+			{
+				return VT.SetHeader(&this, pshf);
+			}
+			public HRESULT ExistWord(IMEWRD* pwrd) mut
+			{
+				return VT.ExistWord(&this, pwrd);
+			}
+			public HRESULT ExistDependency(IMEDP* pdp) mut
+			{
+				return VT.ExistDependency(&this, pdp);
+			}
+			public HRESULT RegisterWord(IMEREG reg, IMEWRD* pwrd) mut
+			{
+				return VT.RegisterWord(&this, reg, pwrd);
+			}
+			public HRESULT RegisterDependency(IMEREG reg, IMEDP* pdp) mut
+			{
+				return VT.RegisterDependency(&this, reg, pdp);
+			}
+			public HRESULT GetDependencies(PWSTR pwchKakariReading, PWSTR pwchKakariDisplay, uint32 ulKakariPos, PWSTR pwchUkeReading, PWSTR pwchUkeDisplay, uint32 ulUkePos, IMEREL jrel, uint32 ulWordSrc, uint8* pchBuffer, uint32 cbBuffer, uint32* pcdp) mut
+			{
+				return VT.GetDependencies(&this, pwchKakariReading, pwchKakariDisplay, ulKakariPos, pwchUkeReading, pwchUkeDisplay, ulUkePos, jrel, ulWordSrc, pchBuffer, cbBuffer, pcdp);
+			}
+			public HRESULT NextDependencies(uint8* pchBuffer, uint32 cbBuffer, uint32* pcDp) mut
+			{
+				return VT.NextDependencies(&this, pchBuffer, cbBuffer, pcDp);
+			}
+			public HRESULT ConvertFromOldMSIME(PSTR pchDic, PFNLOG pfnLog, IMEREG reg) mut
+			{
+				return VT.ConvertFromOldMSIME(&this, pchDic, pfnLog, reg);
+			}
+			public HRESULT ConvertFromUserToSys() mut
+			{
+				return VT.ConvertFromUserToSys(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IFEDictionary *self, uint8* pchDictPath, IMESHF* pshf) Open;
-				public function HRESULT(IFEDictionary *self) Close;
-				public function HRESULT(IFEDictionary *self, uint8* pchDictPath, IMESHF* pshf, IMEFMT* pjfmt, uint32* pulType) GetHeader;
-				public function HRESULT(IFEDictionary *self, HWND hwnd) DisplayProperty;
-				public function HRESULT(IFEDictionary *self, POSTBL** prgPosTbl, int32* pcPosTbl) GetPosTable;
-				public function HRESULT(IFEDictionary *self, PWSTR pwchFirst, PWSTR pwchLast, PWSTR pwchDisplay, uint32 ulPos, uint32 ulSelect, uint32 ulWordSrc, uint8* pchBuffer, uint32 cbBuffer, uint32* pcWrd) GetWords;
-				public function HRESULT(IFEDictionary *self, uint8* pchBuffer, uint32 cbBuffer, uint32* pcWrd) NextWords;
-				public function HRESULT(IFEDictionary *self, PSTR pchDictPath, IMESHF* pshf) Create;
-				public function HRESULT(IFEDictionary *self, IMESHF* pshf) SetHeader;
-				public function HRESULT(IFEDictionary *self, IMEWRD* pwrd) ExistWord;
-				public function HRESULT(IFEDictionary *self, IMEDP* pdp) ExistDependency;
-				public function HRESULT(IFEDictionary *self, IMEREG reg, IMEWRD* pwrd) RegisterWord;
-				public function HRESULT(IFEDictionary *self, IMEREG reg, IMEDP* pdp) RegisterDependency;
-				public function HRESULT(IFEDictionary *self, PWSTR pwchKakariReading, PWSTR pwchKakariDisplay, uint32 ulKakariPos, PWSTR pwchUkeReading, PWSTR pwchUkeDisplay, uint32 ulUkePos, IMEREL jrel, uint32 ulWordSrc, uint8* pchBuffer, uint32 cbBuffer, uint32* pcdp) GetDependencies;
-				public function HRESULT(IFEDictionary *self, uint8* pchBuffer, uint32 cbBuffer, uint32* pcDp) NextDependencies;
-				public function HRESULT(IFEDictionary *self, PSTR pchDic, PFNLOG pfnLog, IMEREG reg) ConvertFromOldMSIME;
-				public function HRESULT(IFEDictionary *self) ConvertFromUserToSys;
+				public new function HRESULT(IFEDictionary *self, uint8* pchDictPath, IMESHF* pshf) Open;
+				public new function HRESULT(IFEDictionary *self) Close;
+				public new function HRESULT(IFEDictionary *self, uint8* pchDictPath, IMESHF* pshf, IMEFMT* pjfmt, uint32* pulType) GetHeader;
+				public new function HRESULT(IFEDictionary *self, HWND hwnd) DisplayProperty;
+				public new function HRESULT(IFEDictionary *self, POSTBL** prgPosTbl, int32* pcPosTbl) GetPosTable;
+				public new function HRESULT(IFEDictionary *self, PWSTR pwchFirst, PWSTR pwchLast, PWSTR pwchDisplay, uint32 ulPos, uint32 ulSelect, uint32 ulWordSrc, uint8* pchBuffer, uint32 cbBuffer, uint32* pcWrd) GetWords;
+				public new function HRESULT(IFEDictionary *self, uint8* pchBuffer, uint32 cbBuffer, uint32* pcWrd) NextWords;
+				public new function HRESULT(IFEDictionary *self, PSTR pchDictPath, IMESHF* pshf) Create;
+				public new function HRESULT(IFEDictionary *self, IMESHF* pshf) SetHeader;
+				public new function HRESULT(IFEDictionary *self, IMEWRD* pwrd) ExistWord;
+				public new function HRESULT(IFEDictionary *self, IMEDP* pdp) ExistDependency;
+				public new function HRESULT(IFEDictionary *self, IMEREG reg, IMEWRD* pwrd) RegisterWord;
+				public new function HRESULT(IFEDictionary *self, IMEREG reg, IMEDP* pdp) RegisterDependency;
+				public new function HRESULT(IFEDictionary *self, PWSTR pwchKakariReading, PWSTR pwchKakariDisplay, uint32 ulKakariPos, PWSTR pwchUkeReading, PWSTR pwchUkeDisplay, uint32 ulUkePos, IMEREL jrel, uint32 ulWordSrc, uint8* pchBuffer, uint32 cbBuffer, uint32* pcdp) GetDependencies;
+				public new function HRESULT(IFEDictionary *self, uint8* pchBuffer, uint32 cbBuffer, uint32* pcDp) NextDependencies;
+				public new function HRESULT(IFEDictionary *self, PSTR pchDic, PFNLOG pfnLog, IMEREG reg) ConvertFromOldMSIME;
+				public new function HRESULT(IFEDictionary *self) ConvertFromUserToSys;
 			}
 		}
 		[CRepr]
@@ -1370,11 +1482,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5d8e643c, 0xc3a9, 0x11d1, 0xaf, 0xef, 0x00, 0x80, 0x5f, 0x0c, 0x8b, 0x6d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetAppletIIDList(Guid* refiid, APPLETIDLIST* lpIIDList) mut
+			{
+				return VT.GetAppletIIDList(&this, refiid, lpIIDList);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IImeSpecifyApplets *self, Guid* refiid, APPLETIDLIST* lpIIDList) GetAppletIIDList;
+				public new function HRESULT(IImeSpecifyApplets *self, Guid* refiid, APPLETIDLIST* lpIIDList) GetAppletIIDList;
 			}
 		}
 		[CRepr]
@@ -1382,15 +1499,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5d8e643b, 0xc3a9, 0x11d1, 0xaf, 0xef, 0x00, 0x80, 0x5f, 0x0c, 0x8b, 0x6d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(IUnknown* lpIImePad) mut
+			{
+				return VT.Initialize(&this, lpIImePad);
+			}
+			public HRESULT Terminate() mut
+			{
+				return VT.Terminate(&this);
+			}
+			public HRESULT GetAppletConfig(IMEAPPLETCFG* lpAppletCfg) mut
+			{
+				return VT.GetAppletConfig(&this, lpAppletCfg);
+			}
+			public HRESULT CreateUI(HWND hwndParent, IMEAPPLETUI* lpImeAppletUI) mut
+			{
+				return VT.CreateUI(&this, hwndParent, lpImeAppletUI);
+			}
+			public HRESULT Notify(IUnknown* lpImePad, int32 notify, WPARAM wParam, LPARAM lParam) mut
+			{
+				return VT.Notify(&this, lpImePad, notify, wParam, lParam);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IImePadApplet *self, IUnknown* lpIImePad) Initialize;
-				public function HRESULT(IImePadApplet *self) Terminate;
-				public function HRESULT(IImePadApplet *self, IMEAPPLETCFG* lpAppletCfg) GetAppletConfig;
-				public function HRESULT(IImePadApplet *self, HWND hwndParent, IMEAPPLETUI* lpImeAppletUI) CreateUI;
-				public function HRESULT(IImePadApplet *self, IUnknown* lpImePad, int32 notify, WPARAM wParam, LPARAM lParam) Notify;
+				public new function HRESULT(IImePadApplet *self, IUnknown* lpIImePad) Initialize;
+				public new function HRESULT(IImePadApplet *self) Terminate;
+				public new function HRESULT(IImePadApplet *self, IMEAPPLETCFG* lpAppletCfg) GetAppletConfig;
+				public new function HRESULT(IImePadApplet *self, HWND hwndParent, IMEAPPLETUI* lpImeAppletUI) CreateUI;
+				public new function HRESULT(IImePadApplet *self, IUnknown* lpImePad, int32 notify, WPARAM wParam, LPARAM lParam) Notify;
 			}
 		}
 		[CRepr]
@@ -1398,11 +1536,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5d8e643a, 0xc3a9, 0x11d1, 0xaf, 0xef, 0x00, 0x80, 0x5f, 0x0c, 0x8b, 0x6d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Request(IImePadApplet* pIImePadApplet, IME_PAD_REQUEST_FLAGS reqId, WPARAM wParam, LPARAM lParam) mut
+			{
+				return VT.Request(&this, pIImePadApplet, reqId, wParam, lParam);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IImePad *self, IImePadApplet* pIImePadApplet, IME_PAD_REQUEST_FLAGS reqId, WPARAM wParam, LPARAM lParam) Request;
+				public new function HRESULT(IImePad *self, IImePadApplet* pIImePadApplet, IME_PAD_REQUEST_FLAGS reqId, WPARAM wParam, LPARAM lParam) Request;
 			}
 		}
 		[CRepr]
@@ -1410,12 +1553,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x98752974, 0xb0a6, 0x489b, 0x8f, 0x6f, 0xbf, 0xf3, 0x76, 0x9c, 0x8e, 0xeb);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDictionariesInUse(SAFEARRAY** prgDictionaryGUID, SAFEARRAY** prgDateCreated, SAFEARRAY** prgfEncrypted) mut
+			{
+				return VT.GetDictionariesInUse(&this, prgDictionaryGUID, prgDateCreated, prgfEncrypted);
+			}
+			public HRESULT DeleteDictionary(BSTR bstrDictionaryGUID) mut
+			{
+				return VT.DeleteDictionary(&this, bstrDictionaryGUID);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IImePlugInDictDictionaryList *self, SAFEARRAY** prgDictionaryGUID, SAFEARRAY** prgDateCreated, SAFEARRAY** prgfEncrypted) GetDictionariesInUse;
-				public function HRESULT(IImePlugInDictDictionaryList *self, BSTR bstrDictionaryGUID) DeleteDictionary;
+				public new function HRESULT(IImePlugInDictDictionaryList *self, SAFEARRAY** prgDictionaryGUID, SAFEARRAY** prgDateCreated, SAFEARRAY** prgfEncrypted) GetDictionariesInUse;
+				public new function HRESULT(IImePlugInDictDictionaryList *self, BSTR bstrDictionaryGUID) DeleteDictionary;
 			}
 		}
 		[CRepr]
@@ -1423,14 +1575,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x08c03412, 0xf96b, 0x11d0, 0xa4, 0x75, 0x00, 0xaa, 0x00, 0x6b, 0xcc, 0x59);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Clone(IEnumRegisterWordA** ppEnum) mut
+			{
+				return VT.Clone(&this, ppEnum);
+			}
+			public HRESULT Next(uint32 ulCount, REGISTERWORDA* rgRegisterWord, uint32* pcFetched) mut
+			{
+				return VT.Next(&this, ulCount, rgRegisterWord, pcFetched);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Skip(uint32 ulCount) mut
+			{
+				return VT.Skip(&this, ulCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumRegisterWordA *self, IEnumRegisterWordA** ppEnum) Clone;
-				public function HRESULT(IEnumRegisterWordA *self, uint32 ulCount, REGISTERWORDA* rgRegisterWord, uint32* pcFetched) Next;
-				public function HRESULT(IEnumRegisterWordA *self) Reset;
-				public function HRESULT(IEnumRegisterWordA *self, uint32 ulCount) Skip;
+				public new function HRESULT(IEnumRegisterWordA *self, IEnumRegisterWordA** ppEnum) Clone;
+				public new function HRESULT(IEnumRegisterWordA *self, uint32 ulCount, REGISTERWORDA* rgRegisterWord, uint32* pcFetched) Next;
+				public new function HRESULT(IEnumRegisterWordA *self) Reset;
+				public new function HRESULT(IEnumRegisterWordA *self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -1438,14 +1607,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4955dd31, 0xb159, 0x11d0, 0x8f, 0xcf, 0x00, 0xaa, 0x00, 0x6b, 0xcc, 0x59);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Clone(IEnumRegisterWordW** ppEnum) mut
+			{
+				return VT.Clone(&this, ppEnum);
+			}
+			public HRESULT Next(uint32 ulCount, REGISTERWORDW* rgRegisterWord, uint32* pcFetched) mut
+			{
+				return VT.Next(&this, ulCount, rgRegisterWord, pcFetched);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Skip(uint32 ulCount) mut
+			{
+				return VT.Skip(&this, ulCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumRegisterWordW *self, IEnumRegisterWordW** ppEnum) Clone;
-				public function HRESULT(IEnumRegisterWordW *self, uint32 ulCount, REGISTERWORDW* rgRegisterWord, uint32* pcFetched) Next;
-				public function HRESULT(IEnumRegisterWordW *self) Reset;
-				public function HRESULT(IEnumRegisterWordW *self, uint32 ulCount) Skip;
+				public new function HRESULT(IEnumRegisterWordW *self, IEnumRegisterWordW** ppEnum) Clone;
+				public new function HRESULT(IEnumRegisterWordW *self, uint32 ulCount, REGISTERWORDW* rgRegisterWord, uint32* pcFetched) Next;
+				public new function HRESULT(IEnumRegisterWordW *self) Reset;
+				public new function HRESULT(IEnumRegisterWordW *self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -1453,14 +1639,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x09b5eab0, 0xf997, 0x11d1, 0x93, 0xd4, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Clone(IEnumInputContext** ppEnum) mut
+			{
+				return VT.Clone(&this, ppEnum);
+			}
+			public HRESULT Next(uint32 ulCount, HIMC* rgInputContext, uint32* pcFetched) mut
+			{
+				return VT.Next(&this, ulCount, rgInputContext, pcFetched);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Skip(uint32 ulCount) mut
+			{
+				return VT.Skip(&this, ulCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumInputContext *self, IEnumInputContext** ppEnum) Clone;
-				public function HRESULT(IEnumInputContext *self, uint32 ulCount, HIMC* rgInputContext, uint32* pcFetched) Next;
-				public function HRESULT(IEnumInputContext *self) Reset;
-				public function HRESULT(IEnumInputContext *self, uint32 ulCount) Skip;
+				public new function HRESULT(IEnumInputContext *self, IEnumInputContext** ppEnum) Clone;
+				public new function HRESULT(IEnumInputContext *self, uint32 ulCount, HIMC* rgInputContext, uint32* pcFetched) Next;
+				public new function HRESULT(IEnumInputContext *self) Reset;
+				public new function HRESULT(IEnumInputContext *self, uint32 ulCount) Skip;
 			}
 		}
 		[CRepr]
@@ -1468,12 +1671,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb3458082, 0xbd00, 0x11d1, 0x93, 0x9b, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RegisterIME(Guid* rclsid, uint16 lgid, PWSTR pszIconFile, PWSTR pszDesc) mut
+			{
+				return VT.RegisterIME(&this, rclsid, lgid, pszIconFile, pszDesc);
+			}
+			public HRESULT UnregisterIME(Guid* rclsid) mut
+			{
+				return VT.UnregisterIME(&this, rclsid);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IActiveIMMRegistrar *self, Guid* rclsid, uint16 lgid, PWSTR pszIconFile, PWSTR pszDesc) RegisterIME;
-				public function HRESULT(IActiveIMMRegistrar *self, Guid* rclsid) UnregisterIME;
+				public new function HRESULT(IActiveIMMRegistrar *self, Guid* rclsid, uint16 lgid, PWSTR pszIconFile, PWSTR pszDesc) RegisterIME;
+				public new function HRESULT(IActiveIMMRegistrar *self, Guid* rclsid) UnregisterIME;
 			}
 		}
 		[CRepr]
@@ -1481,15 +1693,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb5cf2cfa, 0x8aeb, 0x11d1, 0x93, 0x64, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Start() mut
+			{
+				return VT.Start(&this);
+			}
+			public HRESULT End() mut
+			{
+				return VT.End(&this);
+			}
+			public HRESULT OnTranslateMessage(MSG* pMsg) mut
+			{
+				return VT.OnTranslateMessage(&this, pMsg);
+			}
+			public HRESULT Pause(uint32* pdwCookie) mut
+			{
+				return VT.Pause(&this, pdwCookie);
+			}
+			public HRESULT Resume(uint32 dwCookie) mut
+			{
+				return VT.Resume(&this, dwCookie);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IActiveIMMMessagePumpOwner *self) Start;
-				public function HRESULT(IActiveIMMMessagePumpOwner *self) End;
-				public function HRESULT(IActiveIMMMessagePumpOwner *self, MSG* pMsg) OnTranslateMessage;
-				public function HRESULT(IActiveIMMMessagePumpOwner *self, uint32* pdwCookie) Pause;
-				public function HRESULT(IActiveIMMMessagePumpOwner *self, uint32 dwCookie) Resume;
+				public new function HRESULT(IActiveIMMMessagePumpOwner *self) Start;
+				public new function HRESULT(IActiveIMMMessagePumpOwner *self) End;
+				public new function HRESULT(IActiveIMMMessagePumpOwner *self, MSG* pMsg) OnTranslateMessage;
+				public new function HRESULT(IActiveIMMMessagePumpOwner *self, uint32* pdwCookie) Pause;
+				public new function HRESULT(IActiveIMMMessagePumpOwner *self, uint32 dwCookie) Resume;
 			}
 		}
 		[CRepr]
@@ -1497,78 +1730,351 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x08c0e040, 0x62d1, 0x11d1, 0x93, 0x26, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AssociateContext(HWND hWnd, HIMC hIME, HIMC* phPrev) mut
+			{
+				return VT.AssociateContext(&this, hWnd, hIME, phPrev);
+			}
+			public HRESULT ConfigureIMEA(HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDA* pData) mut
+			{
+				return VT.ConfigureIMEA(&this, hKL, hWnd, dwMode, pData);
+			}
+			public HRESULT ConfigureIMEW(HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDW* pData) mut
+			{
+				return VT.ConfigureIMEW(&this, hKL, hWnd, dwMode, pData);
+			}
+			public HRESULT CreateContext(HIMC* phIMC) mut
+			{
+				return VT.CreateContext(&this, phIMC);
+			}
+			public HRESULT DestroyContext(HIMC hIME) mut
+			{
+				return VT.DestroyContext(&this, hIME);
+			}
+			public HRESULT EnumRegisterWordA(HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister, void* pData, IEnumRegisterWordA** pEnum) mut
+			{
+				return VT.EnumRegisterWordA(&this, hKL, szReading, dwStyle, szRegister, pData, pEnum);
+			}
+			public HRESULT EnumRegisterWordW(HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister, void* pData, IEnumRegisterWordW** pEnum) mut
+			{
+				return VT.EnumRegisterWordW(&this, hKL, szReading, dwStyle, szRegister, pData, pEnum);
+			}
+			public HRESULT EscapeA(HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) mut
+			{
+				return VT.EscapeA(&this, hKL, hIMC, uEscape, pData, plResult);
+			}
+			public HRESULT EscapeW(HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) mut
+			{
+				return VT.EscapeW(&this, hKL, hIMC, uEscape, pData, plResult);
+			}
+			public HRESULT GetCandidateListA(HIMC hIMC, uint32 dwIndex, uint32 uBufLen, CANDIDATELIST* pCandList, uint32* puCopied) mut
+			{
+				return VT.GetCandidateListA(&this, hIMC, dwIndex, uBufLen, pCandList, puCopied);
+			}
+			public HRESULT GetCandidateListW(HIMC hIMC, uint32 dwIndex, uint32 uBufLen, CANDIDATELIST* pCandList, uint32* puCopied) mut
+			{
+				return VT.GetCandidateListW(&this, hIMC, dwIndex, uBufLen, pCandList, puCopied);
+			}
+			public HRESULT GetCandidateListCountA(HIMC hIMC, uint32* pdwListSize, uint32* pdwBufLen) mut
+			{
+				return VT.GetCandidateListCountA(&this, hIMC, pdwListSize, pdwBufLen);
+			}
+			public HRESULT GetCandidateListCountW(HIMC hIMC, uint32* pdwListSize, uint32* pdwBufLen) mut
+			{
+				return VT.GetCandidateListCountW(&this, hIMC, pdwListSize, pdwBufLen);
+			}
+			public HRESULT GetCandidateWindow(HIMC hIMC, uint32 dwIndex, CANDIDATEFORM* pCandidate) mut
+			{
+				return VT.GetCandidateWindow(&this, hIMC, dwIndex, pCandidate);
+			}
+			public HRESULT GetCompositionFontA(HIMC hIMC, LOGFONTA* plf) mut
+			{
+				return VT.GetCompositionFontA(&this, hIMC, plf);
+			}
+			public HRESULT GetCompositionFontW(HIMC hIMC, LOGFONTW* plf) mut
+			{
+				return VT.GetCompositionFontW(&this, hIMC, plf);
+			}
+			public HRESULT GetCompositionStringA(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, int32* plCopied, void* pBuf) mut
+			{
+				return VT.GetCompositionStringA(&this, hIMC, dwIndex, dwBufLen, plCopied, pBuf);
+			}
+			public HRESULT GetCompositionStringW(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, int32* plCopied, void* pBuf) mut
+			{
+				return VT.GetCompositionStringW(&this, hIMC, dwIndex, dwBufLen, plCopied, pBuf);
+			}
+			public HRESULT GetCompositionWindow(HIMC hIMC, COMPOSITIONFORM* pCompForm) mut
+			{
+				return VT.GetCompositionWindow(&this, hIMC, pCompForm);
+			}
+			public HRESULT GetContext(HWND hWnd, HIMC* phIMC) mut
+			{
+				return VT.GetContext(&this, hWnd, phIMC);
+			}
+			public HRESULT GetConversionListA(HKL hKL, HIMC hIMC, PSTR pSrc, uint32 uBufLen, uint32 uFlag, CANDIDATELIST* pDst, uint32* puCopied) mut
+			{
+				return VT.GetConversionListA(&this, hKL, hIMC, pSrc, uBufLen, uFlag, pDst, puCopied);
+			}
+			public HRESULT GetConversionListW(HKL hKL, HIMC hIMC, PWSTR pSrc, uint32 uBufLen, uint32 uFlag, CANDIDATELIST* pDst, uint32* puCopied) mut
+			{
+				return VT.GetConversionListW(&this, hKL, hIMC, pSrc, uBufLen, uFlag, pDst, puCopied);
+			}
+			public HRESULT GetConversionStatus(HIMC hIMC, uint32* pfdwConversion, uint32* pfdwSentence) mut
+			{
+				return VT.GetConversionStatus(&this, hIMC, pfdwConversion, pfdwSentence);
+			}
+			public HRESULT GetDefaultIMEWnd(HWND hWnd, HWND* phDefWnd) mut
+			{
+				return VT.GetDefaultIMEWnd(&this, hWnd, phDefWnd);
+			}
+			public HRESULT GetDescriptionA(HKL hKL, uint32 uBufLen, PSTR szDescription, uint32* puCopied) mut
+			{
+				return VT.GetDescriptionA(&this, hKL, uBufLen, szDescription, puCopied);
+			}
+			public HRESULT GetDescriptionW(HKL hKL, uint32 uBufLen, PWSTR szDescription, uint32* puCopied) mut
+			{
+				return VT.GetDescriptionW(&this, hKL, uBufLen, szDescription, puCopied);
+			}
+			public HRESULT GetGuideLineA(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PSTR pBuf, uint32* pdwResult) mut
+			{
+				return VT.GetGuideLineA(&this, hIMC, dwIndex, dwBufLen, pBuf, pdwResult);
+			}
+			public HRESULT GetGuideLineW(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PWSTR pBuf, uint32* pdwResult) mut
+			{
+				return VT.GetGuideLineW(&this, hIMC, dwIndex, dwBufLen, pBuf, pdwResult);
+			}
+			public HRESULT GetIMEFileNameA(HKL hKL, uint32 uBufLen, PSTR szFileName, uint32* puCopied) mut
+			{
+				return VT.GetIMEFileNameA(&this, hKL, uBufLen, szFileName, puCopied);
+			}
+			public HRESULT GetIMEFileNameW(HKL hKL, uint32 uBufLen, PWSTR szFileName, uint32* puCopied) mut
+			{
+				return VT.GetIMEFileNameW(&this, hKL, uBufLen, szFileName, puCopied);
+			}
+			public HRESULT GetOpenStatus(HIMC hIMC) mut
+			{
+				return VT.GetOpenStatus(&this, hIMC);
+			}
+			public HRESULT GetProperty(HKL hKL, uint32 fdwIndex, uint32* pdwProperty) mut
+			{
+				return VT.GetProperty(&this, hKL, fdwIndex, pdwProperty);
+			}
+			public HRESULT GetRegisterWordStyleA(HKL hKL, uint32 nItem, STYLEBUFA* pStyleBuf, uint32* puCopied) mut
+			{
+				return VT.GetRegisterWordStyleA(&this, hKL, nItem, pStyleBuf, puCopied);
+			}
+			public HRESULT GetRegisterWordStyleW(HKL hKL, uint32 nItem, STYLEBUFW* pStyleBuf, uint32* puCopied) mut
+			{
+				return VT.GetRegisterWordStyleW(&this, hKL, nItem, pStyleBuf, puCopied);
+			}
+			public HRESULT GetStatusWindowPos(HIMC hIMC, POINT* pptPos) mut
+			{
+				return VT.GetStatusWindowPos(&this, hIMC, pptPos);
+			}
+			public HRESULT GetVirtualKey(HWND hWnd, uint32* puVirtualKey) mut
+			{
+				return VT.GetVirtualKey(&this, hWnd, puVirtualKey);
+			}
+			public HRESULT InstallIMEA(PSTR szIMEFileName, PSTR szLayoutText, HKL* phKL) mut
+			{
+				return VT.InstallIMEA(&this, szIMEFileName, szLayoutText, phKL);
+			}
+			public HRESULT InstallIMEW(PWSTR szIMEFileName, PWSTR szLayoutText, HKL* phKL) mut
+			{
+				return VT.InstallIMEW(&this, szIMEFileName, szLayoutText, phKL);
+			}
+			public HRESULT IsIME(HKL hKL) mut
+			{
+				return VT.IsIME(&this, hKL);
+			}
+			public HRESULT IsUIMessageA(HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) mut
+			{
+				return VT.IsUIMessageA(&this, hWndIME, msg, wParam, lParam);
+			}
+			public HRESULT IsUIMessageW(HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) mut
+			{
+				return VT.IsUIMessageW(&this, hWndIME, msg, wParam, lParam);
+			}
+			public HRESULT NotifyIME(HIMC hIMC, uint32 dwAction, uint32 dwIndex, uint32 dwValue) mut
+			{
+				return VT.NotifyIME(&this, hIMC, dwAction, dwIndex, dwValue);
+			}
+			public HRESULT RegisterWordA(HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister) mut
+			{
+				return VT.RegisterWordA(&this, hKL, szReading, dwStyle, szRegister);
+			}
+			public HRESULT RegisterWordW(HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister) mut
+			{
+				return VT.RegisterWordW(&this, hKL, szReading, dwStyle, szRegister);
+			}
+			public HRESULT ReleaseContext(HWND hWnd, HIMC hIMC) mut
+			{
+				return VT.ReleaseContext(&this, hWnd, hIMC);
+			}
+			public HRESULT SetCandidateWindow(HIMC hIMC, CANDIDATEFORM* pCandidate) mut
+			{
+				return VT.SetCandidateWindow(&this, hIMC, pCandidate);
+			}
+			public HRESULT SetCompositionFontA(HIMC hIMC, LOGFONTA* plf) mut
+			{
+				return VT.SetCompositionFontA(&this, hIMC, plf);
+			}
+			public HRESULT SetCompositionFontW(HIMC hIMC, LOGFONTW* plf) mut
+			{
+				return VT.SetCompositionFontW(&this, hIMC, plf);
+			}
+			public HRESULT SetCompositionStringA(HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) mut
+			{
+				return VT.SetCompositionStringA(&this, hIMC, dwIndex, pComp, dwCompLen, pRead, dwReadLen);
+			}
+			public HRESULT SetCompositionStringW(HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) mut
+			{
+				return VT.SetCompositionStringW(&this, hIMC, dwIndex, pComp, dwCompLen, pRead, dwReadLen);
+			}
+			public HRESULT SetCompositionWindow(HIMC hIMC, COMPOSITIONFORM* pCompForm) mut
+			{
+				return VT.SetCompositionWindow(&this, hIMC, pCompForm);
+			}
+			public HRESULT SetConversionStatus(HIMC hIMC, uint32 fdwConversion, uint32 fdwSentence) mut
+			{
+				return VT.SetConversionStatus(&this, hIMC, fdwConversion, fdwSentence);
+			}
+			public HRESULT SetOpenStatus(HIMC hIMC, BOOL fOpen) mut
+			{
+				return VT.SetOpenStatus(&this, hIMC, fOpen);
+			}
+			public HRESULT SetStatusWindowPos(HIMC hIMC, POINT* pptPos) mut
+			{
+				return VT.SetStatusWindowPos(&this, hIMC, pptPos);
+			}
+			public HRESULT SimulateHotKey(HWND hWnd, uint32 dwHotKeyID) mut
+			{
+				return VT.SimulateHotKey(&this, hWnd, dwHotKeyID);
+			}
+			public HRESULT UnregisterWordA(HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szUnregister) mut
+			{
+				return VT.UnregisterWordA(&this, hKL, szReading, dwStyle, szUnregister);
+			}
+			public HRESULT UnregisterWordW(HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szUnregister) mut
+			{
+				return VT.UnregisterWordW(&this, hKL, szReading, dwStyle, szUnregister);
+			}
+			public HRESULT Activate(BOOL fRestoreLayout) mut
+			{
+				return VT.Activate(&this, fRestoreLayout);
+			}
+			public HRESULT Deactivate() mut
+			{
+				return VT.Deactivate(&this);
+			}
+			public HRESULT OnDefWindowProc(HWND hWnd, uint32 Msg, WPARAM wParam, LPARAM lParam, LRESULT* plResult) mut
+			{
+				return VT.OnDefWindowProc(&this, hWnd, Msg, wParam, lParam, plResult);
+			}
+			public HRESULT FilterClientWindows(uint16* aaClassList, uint32 uSize) mut
+			{
+				return VT.FilterClientWindows(&this, aaClassList, uSize);
+			}
+			public HRESULT GetCodePageA(HKL hKL, uint32* uCodePage) mut
+			{
+				return VT.GetCodePageA(&this, hKL, uCodePage);
+			}
+			public HRESULT GetLangId(HKL hKL, uint16* plid) mut
+			{
+				return VT.GetLangId(&this, hKL, plid);
+			}
+			public HRESULT AssociateContextEx(HWND hWnd, HIMC hIMC, uint32 dwFlags) mut
+			{
+				return VT.AssociateContextEx(&this, hWnd, hIMC, dwFlags);
+			}
+			public HRESULT DisableIME(uint32 idThread) mut
+			{
+				return VT.DisableIME(&this, idThread);
+			}
+			public HRESULT GetImeMenuItemsA(HIMC hIMC, uint32 dwFlags, uint32 dwType, IMEMENUITEMINFOA* pImeParentMenu, IMEMENUITEMINFOA* pImeMenu, uint32 dwSize, uint32* pdwResult) mut
+			{
+				return VT.GetImeMenuItemsA(&this, hIMC, dwFlags, dwType, pImeParentMenu, pImeMenu, dwSize, pdwResult);
+			}
+			public HRESULT GetImeMenuItemsW(HIMC hIMC, uint32 dwFlags, uint32 dwType, IMEMENUITEMINFOW* pImeParentMenu, IMEMENUITEMINFOW* pImeMenu, uint32 dwSize, uint32* pdwResult) mut
+			{
+				return VT.GetImeMenuItemsW(&this, hIMC, dwFlags, dwType, pImeParentMenu, pImeMenu, dwSize, pdwResult);
+			}
+			public HRESULT EnumInputContext(uint32 idThread, IEnumInputContext** ppEnum) mut
+			{
+				return VT.EnumInputContext(&this, idThread, ppEnum);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IActiveIMMApp *self, HWND hWnd, HIMC hIME, HIMC* phPrev) AssociateContext;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDA* pData) ConfigureIMEA;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDW* pData) ConfigureIMEW;
-				public function HRESULT(IActiveIMMApp *self, HIMC* phIMC) CreateContext;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIME) DestroyContext;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister, void* pData, IEnumRegisterWordA** pEnum) EnumRegisterWordA;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister, void* pData, IEnumRegisterWordW** pEnum) EnumRegisterWordW;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) EscapeA;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) EscapeW;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, uint32 uBufLen, CANDIDATELIST* pCandList, uint32* puCopied) GetCandidateListA;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, uint32 uBufLen, CANDIDATELIST* pCandList, uint32* puCopied) GetCandidateListW;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32* pdwListSize, uint32* pdwBufLen) GetCandidateListCountA;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32* pdwListSize, uint32* pdwBufLen) GetCandidateListCountW;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, CANDIDATEFORM* pCandidate) GetCandidateWindow;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, LOGFONTA* plf) GetCompositionFontA;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, LOGFONTW* plf) GetCompositionFontW;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, int32* plCopied, void* pBuf) GetCompositionStringA;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, int32* plCopied, void* pBuf) GetCompositionStringW;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, COMPOSITIONFORM* pCompForm) GetCompositionWindow;
-				public function HRESULT(IActiveIMMApp *self, HWND hWnd, HIMC* phIMC) GetContext;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, HIMC hIMC, PSTR pSrc, uint32 uBufLen, uint32 uFlag, CANDIDATELIST* pDst, uint32* puCopied) GetConversionListA;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, HIMC hIMC, PWSTR pSrc, uint32 uBufLen, uint32 uFlag, CANDIDATELIST* pDst, uint32* puCopied) GetConversionListW;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32* pfdwConversion, uint32* pfdwSentence) GetConversionStatus;
-				public function HRESULT(IActiveIMMApp *self, HWND hWnd, HWND* phDefWnd) GetDefaultIMEWnd;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 uBufLen, PSTR szDescription, uint32* puCopied) GetDescriptionA;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 uBufLen, PWSTR szDescription, uint32* puCopied) GetDescriptionW;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PSTR pBuf, uint32* pdwResult) GetGuideLineA;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PWSTR pBuf, uint32* pdwResult) GetGuideLineW;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 uBufLen, PSTR szFileName, uint32* puCopied) GetIMEFileNameA;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 uBufLen, PWSTR szFileName, uint32* puCopied) GetIMEFileNameW;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC) GetOpenStatus;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 fdwIndex, uint32* pdwProperty) GetProperty;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 nItem, STYLEBUFA* pStyleBuf, uint32* puCopied) GetRegisterWordStyleA;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 nItem, STYLEBUFW* pStyleBuf, uint32* puCopied) GetRegisterWordStyleW;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, POINT* pptPos) GetStatusWindowPos;
-				public function HRESULT(IActiveIMMApp *self, HWND hWnd, uint32* puVirtualKey) GetVirtualKey;
-				public function HRESULT(IActiveIMMApp *self, PSTR szIMEFileName, PSTR szLayoutText, HKL* phKL) InstallIMEA;
-				public function HRESULT(IActiveIMMApp *self, PWSTR szIMEFileName, PWSTR szLayoutText, HKL* phKL) InstallIMEW;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL) IsIME;
-				public function HRESULT(IActiveIMMApp *self, HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) IsUIMessageA;
-				public function HRESULT(IActiveIMMApp *self, HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) IsUIMessageW;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwAction, uint32 dwIndex, uint32 dwValue) NotifyIME;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister) RegisterWordA;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister) RegisterWordW;
-				public function HRESULT(IActiveIMMApp *self, HWND hWnd, HIMC hIMC) ReleaseContext;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, CANDIDATEFORM* pCandidate) SetCandidateWindow;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, LOGFONTA* plf) SetCompositionFontA;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, LOGFONTW* plf) SetCompositionFontW;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) SetCompositionStringA;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) SetCompositionStringW;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, COMPOSITIONFORM* pCompForm) SetCompositionWindow;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 fdwConversion, uint32 fdwSentence) SetConversionStatus;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, BOOL fOpen) SetOpenStatus;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, POINT* pptPos) SetStatusWindowPos;
-				public function HRESULT(IActiveIMMApp *self, HWND hWnd, uint32 dwHotKeyID) SimulateHotKey;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szUnregister) UnregisterWordA;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szUnregister) UnregisterWordW;
-				public function HRESULT(IActiveIMMApp *self, BOOL fRestoreLayout) Activate;
-				public function HRESULT(IActiveIMMApp *self) Deactivate;
-				public function HRESULT(IActiveIMMApp *self, HWND hWnd, uint32 Msg, WPARAM wParam, LPARAM lParam, LRESULT* plResult) OnDefWindowProc;
-				public function HRESULT(IActiveIMMApp *self, uint16* aaClassList, uint32 uSize) FilterClientWindows;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, uint32* uCodePage) GetCodePageA;
-				public function HRESULT(IActiveIMMApp *self, HKL hKL, uint16* plid) GetLangId;
-				public function HRESULT(IActiveIMMApp *self, HWND hWnd, HIMC hIMC, uint32 dwFlags) AssociateContextEx;
-				public function HRESULT(IActiveIMMApp *self, uint32 idThread) DisableIME;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwFlags, uint32 dwType, IMEMENUITEMINFOA* pImeParentMenu, IMEMENUITEMINFOA* pImeMenu, uint32 dwSize, uint32* pdwResult) GetImeMenuItemsA;
-				public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwFlags, uint32 dwType, IMEMENUITEMINFOW* pImeParentMenu, IMEMENUITEMINFOW* pImeMenu, uint32 dwSize, uint32* pdwResult) GetImeMenuItemsW;
-				public function HRESULT(IActiveIMMApp *self, uint32 idThread, IEnumInputContext** ppEnum) EnumInputContext;
+				public new function HRESULT(IActiveIMMApp *self, HWND hWnd, HIMC hIME, HIMC* phPrev) AssociateContext;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDA* pData) ConfigureIMEA;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDW* pData) ConfigureIMEW;
+				public new function HRESULT(IActiveIMMApp *self, HIMC* phIMC) CreateContext;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIME) DestroyContext;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister, void* pData, IEnumRegisterWordA** pEnum) EnumRegisterWordA;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister, void* pData, IEnumRegisterWordW** pEnum) EnumRegisterWordW;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) EscapeA;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) EscapeW;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, uint32 uBufLen, CANDIDATELIST* pCandList, uint32* puCopied) GetCandidateListA;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, uint32 uBufLen, CANDIDATELIST* pCandList, uint32* puCopied) GetCandidateListW;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32* pdwListSize, uint32* pdwBufLen) GetCandidateListCountA;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32* pdwListSize, uint32* pdwBufLen) GetCandidateListCountW;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, CANDIDATEFORM* pCandidate) GetCandidateWindow;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, LOGFONTA* plf) GetCompositionFontA;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, LOGFONTW* plf) GetCompositionFontW;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, int32* plCopied, void* pBuf) GetCompositionStringA;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, int32* plCopied, void* pBuf) GetCompositionStringW;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, COMPOSITIONFORM* pCompForm) GetCompositionWindow;
+				public new function HRESULT(IActiveIMMApp *self, HWND hWnd, HIMC* phIMC) GetContext;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, HIMC hIMC, PSTR pSrc, uint32 uBufLen, uint32 uFlag, CANDIDATELIST* pDst, uint32* puCopied) GetConversionListA;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, HIMC hIMC, PWSTR pSrc, uint32 uBufLen, uint32 uFlag, CANDIDATELIST* pDst, uint32* puCopied) GetConversionListW;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32* pfdwConversion, uint32* pfdwSentence) GetConversionStatus;
+				public new function HRESULT(IActiveIMMApp *self, HWND hWnd, HWND* phDefWnd) GetDefaultIMEWnd;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 uBufLen, PSTR szDescription, uint32* puCopied) GetDescriptionA;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 uBufLen, PWSTR szDescription, uint32* puCopied) GetDescriptionW;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PSTR pBuf, uint32* pdwResult) GetGuideLineA;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PWSTR pBuf, uint32* pdwResult) GetGuideLineW;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 uBufLen, PSTR szFileName, uint32* puCopied) GetIMEFileNameA;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 uBufLen, PWSTR szFileName, uint32* puCopied) GetIMEFileNameW;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC) GetOpenStatus;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 fdwIndex, uint32* pdwProperty) GetProperty;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 nItem, STYLEBUFA* pStyleBuf, uint32* puCopied) GetRegisterWordStyleA;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 nItem, STYLEBUFW* pStyleBuf, uint32* puCopied) GetRegisterWordStyleW;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, POINT* pptPos) GetStatusWindowPos;
+				public new function HRESULT(IActiveIMMApp *self, HWND hWnd, uint32* puVirtualKey) GetVirtualKey;
+				public new function HRESULT(IActiveIMMApp *self, PSTR szIMEFileName, PSTR szLayoutText, HKL* phKL) InstallIMEA;
+				public new function HRESULT(IActiveIMMApp *self, PWSTR szIMEFileName, PWSTR szLayoutText, HKL* phKL) InstallIMEW;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL) IsIME;
+				public new function HRESULT(IActiveIMMApp *self, HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) IsUIMessageA;
+				public new function HRESULT(IActiveIMMApp *self, HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) IsUIMessageW;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwAction, uint32 dwIndex, uint32 dwValue) NotifyIME;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister) RegisterWordA;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister) RegisterWordW;
+				public new function HRESULT(IActiveIMMApp *self, HWND hWnd, HIMC hIMC) ReleaseContext;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, CANDIDATEFORM* pCandidate) SetCandidateWindow;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, LOGFONTA* plf) SetCompositionFontA;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, LOGFONTW* plf) SetCompositionFontW;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) SetCompositionStringA;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) SetCompositionStringW;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, COMPOSITIONFORM* pCompForm) SetCompositionWindow;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 fdwConversion, uint32 fdwSentence) SetConversionStatus;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, BOOL fOpen) SetOpenStatus;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, POINT* pptPos) SetStatusWindowPos;
+				public new function HRESULT(IActiveIMMApp *self, HWND hWnd, uint32 dwHotKeyID) SimulateHotKey;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szUnregister) UnregisterWordA;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szUnregister) UnregisterWordW;
+				public new function HRESULT(IActiveIMMApp *self, BOOL fRestoreLayout) Activate;
+				public new function HRESULT(IActiveIMMApp *self) Deactivate;
+				public new function HRESULT(IActiveIMMApp *self, HWND hWnd, uint32 Msg, WPARAM wParam, LPARAM lParam, LRESULT* plResult) OnDefWindowProc;
+				public new function HRESULT(IActiveIMMApp *self, uint16* aaClassList, uint32 uSize) FilterClientWindows;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, uint32* uCodePage) GetCodePageA;
+				public new function HRESULT(IActiveIMMApp *self, HKL hKL, uint16* plid) GetLangId;
+				public new function HRESULT(IActiveIMMApp *self, HWND hWnd, HIMC hIMC, uint32 dwFlags) AssociateContextEx;
+				public new function HRESULT(IActiveIMMApp *self, uint32 idThread) DisableIME;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwFlags, uint32 dwType, IMEMENUITEMINFOA* pImeParentMenu, IMEMENUITEMINFOA* pImeMenu, uint32 dwSize, uint32* pdwResult) GetImeMenuItemsA;
+				public new function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwFlags, uint32 dwType, IMEMENUITEMINFOW* pImeParentMenu, IMEMENUITEMINFOW* pImeMenu, uint32 dwSize, uint32* pdwResult) GetImeMenuItemsW;
+				public new function HRESULT(IActiveIMMApp *self, uint32 idThread, IEnumInputContext** ppEnum) EnumInputContext;
 			}
 		}
 		[CRepr]
@@ -1576,98 +2082,451 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x08c03411, 0xf96b, 0x11d0, 0xa4, 0x75, 0x00, 0xaa, 0x00, 0x6b, 0xcc, 0x59);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AssociateContext(HWND hWnd, HIMC hIME, HIMC* phPrev) mut
+			{
+				return VT.AssociateContext(&this, hWnd, hIME, phPrev);
+			}
+			public HRESULT ConfigureIMEA(HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDA* pData) mut
+			{
+				return VT.ConfigureIMEA(&this, hKL, hWnd, dwMode, pData);
+			}
+			public HRESULT ConfigureIMEW(HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDW* pData) mut
+			{
+				return VT.ConfigureIMEW(&this, hKL, hWnd, dwMode, pData);
+			}
+			public HRESULT CreateContext(HIMC* phIMC) mut
+			{
+				return VT.CreateContext(&this, phIMC);
+			}
+			public HRESULT DestroyContext(HIMC hIME) mut
+			{
+				return VT.DestroyContext(&this, hIME);
+			}
+			public HRESULT EnumRegisterWordA(HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister, void* pData, IEnumRegisterWordA** pEnum) mut
+			{
+				return VT.EnumRegisterWordA(&this, hKL, szReading, dwStyle, szRegister, pData, pEnum);
+			}
+			public HRESULT EnumRegisterWordW(HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister, void* pData, IEnumRegisterWordW** pEnum) mut
+			{
+				return VT.EnumRegisterWordW(&this, hKL, szReading, dwStyle, szRegister, pData, pEnum);
+			}
+			public HRESULT EscapeA(HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) mut
+			{
+				return VT.EscapeA(&this, hKL, hIMC, uEscape, pData, plResult);
+			}
+			public HRESULT EscapeW(HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) mut
+			{
+				return VT.EscapeW(&this, hKL, hIMC, uEscape, pData, plResult);
+			}
+			public HRESULT GetCandidateListA(HIMC hIMC, uint32 dwIndex, uint32 uBufLen, CANDIDATELIST* pCandList, uint32* puCopied) mut
+			{
+				return VT.GetCandidateListA(&this, hIMC, dwIndex, uBufLen, pCandList, puCopied);
+			}
+			public HRESULT GetCandidateListW(HIMC hIMC, uint32 dwIndex, uint32 uBufLen, CANDIDATELIST* pCandList, uint32* puCopied) mut
+			{
+				return VT.GetCandidateListW(&this, hIMC, dwIndex, uBufLen, pCandList, puCopied);
+			}
+			public HRESULT GetCandidateListCountA(HIMC hIMC, uint32* pdwListSize, uint32* pdwBufLen) mut
+			{
+				return VT.GetCandidateListCountA(&this, hIMC, pdwListSize, pdwBufLen);
+			}
+			public HRESULT GetCandidateListCountW(HIMC hIMC, uint32* pdwListSize, uint32* pdwBufLen) mut
+			{
+				return VT.GetCandidateListCountW(&this, hIMC, pdwListSize, pdwBufLen);
+			}
+			public HRESULT GetCandidateWindow(HIMC hIMC, uint32 dwIndex, CANDIDATEFORM* pCandidate) mut
+			{
+				return VT.GetCandidateWindow(&this, hIMC, dwIndex, pCandidate);
+			}
+			public HRESULT GetCompositionFontA(HIMC hIMC, LOGFONTA* plf) mut
+			{
+				return VT.GetCompositionFontA(&this, hIMC, plf);
+			}
+			public HRESULT GetCompositionFontW(HIMC hIMC, LOGFONTW* plf) mut
+			{
+				return VT.GetCompositionFontW(&this, hIMC, plf);
+			}
+			public HRESULT GetCompositionStringA(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, int32* plCopied, void* pBuf) mut
+			{
+				return VT.GetCompositionStringA(&this, hIMC, dwIndex, dwBufLen, plCopied, pBuf);
+			}
+			public HRESULT GetCompositionStringW(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, int32* plCopied, void* pBuf) mut
+			{
+				return VT.GetCompositionStringW(&this, hIMC, dwIndex, dwBufLen, plCopied, pBuf);
+			}
+			public HRESULT GetCompositionWindow(HIMC hIMC, COMPOSITIONFORM* pCompForm) mut
+			{
+				return VT.GetCompositionWindow(&this, hIMC, pCompForm);
+			}
+			public HRESULT GetContext(HWND hWnd, HIMC* phIMC) mut
+			{
+				return VT.GetContext(&this, hWnd, phIMC);
+			}
+			public HRESULT GetConversionListA(HKL hKL, HIMC hIMC, PSTR pSrc, uint32 uBufLen, uint32 uFlag, CANDIDATELIST* pDst, uint32* puCopied) mut
+			{
+				return VT.GetConversionListA(&this, hKL, hIMC, pSrc, uBufLen, uFlag, pDst, puCopied);
+			}
+			public HRESULT GetConversionListW(HKL hKL, HIMC hIMC, PWSTR pSrc, uint32 uBufLen, uint32 uFlag, CANDIDATELIST* pDst, uint32* puCopied) mut
+			{
+				return VT.GetConversionListW(&this, hKL, hIMC, pSrc, uBufLen, uFlag, pDst, puCopied);
+			}
+			public HRESULT GetConversionStatus(HIMC hIMC, uint32* pfdwConversion, uint32* pfdwSentence) mut
+			{
+				return VT.GetConversionStatus(&this, hIMC, pfdwConversion, pfdwSentence);
+			}
+			public HRESULT GetDefaultIMEWnd(HWND hWnd, HWND* phDefWnd) mut
+			{
+				return VT.GetDefaultIMEWnd(&this, hWnd, phDefWnd);
+			}
+			public HRESULT GetDescriptionA(HKL hKL, uint32 uBufLen, PSTR szDescription, uint32* puCopied) mut
+			{
+				return VT.GetDescriptionA(&this, hKL, uBufLen, szDescription, puCopied);
+			}
+			public HRESULT GetDescriptionW(HKL hKL, uint32 uBufLen, PWSTR szDescription, uint32* puCopied) mut
+			{
+				return VT.GetDescriptionW(&this, hKL, uBufLen, szDescription, puCopied);
+			}
+			public HRESULT GetGuideLineA(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PSTR pBuf, uint32* pdwResult) mut
+			{
+				return VT.GetGuideLineA(&this, hIMC, dwIndex, dwBufLen, pBuf, pdwResult);
+			}
+			public HRESULT GetGuideLineW(HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PWSTR pBuf, uint32* pdwResult) mut
+			{
+				return VT.GetGuideLineW(&this, hIMC, dwIndex, dwBufLen, pBuf, pdwResult);
+			}
+			public HRESULT GetIMEFileNameA(HKL hKL, uint32 uBufLen, PSTR szFileName, uint32* puCopied) mut
+			{
+				return VT.GetIMEFileNameA(&this, hKL, uBufLen, szFileName, puCopied);
+			}
+			public HRESULT GetIMEFileNameW(HKL hKL, uint32 uBufLen, PWSTR szFileName, uint32* puCopied) mut
+			{
+				return VT.GetIMEFileNameW(&this, hKL, uBufLen, szFileName, puCopied);
+			}
+			public HRESULT GetOpenStatus(HIMC hIMC) mut
+			{
+				return VT.GetOpenStatus(&this, hIMC);
+			}
+			public HRESULT GetProperty(HKL hKL, uint32 fdwIndex, uint32* pdwProperty) mut
+			{
+				return VT.GetProperty(&this, hKL, fdwIndex, pdwProperty);
+			}
+			public HRESULT GetRegisterWordStyleA(HKL hKL, uint32 nItem, STYLEBUFA* pStyleBuf, uint32* puCopied) mut
+			{
+				return VT.GetRegisterWordStyleA(&this, hKL, nItem, pStyleBuf, puCopied);
+			}
+			public HRESULT GetRegisterWordStyleW(HKL hKL, uint32 nItem, STYLEBUFW* pStyleBuf, uint32* puCopied) mut
+			{
+				return VT.GetRegisterWordStyleW(&this, hKL, nItem, pStyleBuf, puCopied);
+			}
+			public HRESULT GetStatusWindowPos(HIMC hIMC, POINT* pptPos) mut
+			{
+				return VT.GetStatusWindowPos(&this, hIMC, pptPos);
+			}
+			public HRESULT GetVirtualKey(HWND hWnd, uint32* puVirtualKey) mut
+			{
+				return VT.GetVirtualKey(&this, hWnd, puVirtualKey);
+			}
+			public HRESULT InstallIMEA(PSTR szIMEFileName, PSTR szLayoutText, HKL* phKL) mut
+			{
+				return VT.InstallIMEA(&this, szIMEFileName, szLayoutText, phKL);
+			}
+			public HRESULT InstallIMEW(PWSTR szIMEFileName, PWSTR szLayoutText, HKL* phKL) mut
+			{
+				return VT.InstallIMEW(&this, szIMEFileName, szLayoutText, phKL);
+			}
+			public HRESULT IsIME(HKL hKL) mut
+			{
+				return VT.IsIME(&this, hKL);
+			}
+			public HRESULT IsUIMessageA(HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) mut
+			{
+				return VT.IsUIMessageA(&this, hWndIME, msg, wParam, lParam);
+			}
+			public HRESULT IsUIMessageW(HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) mut
+			{
+				return VT.IsUIMessageW(&this, hWndIME, msg, wParam, lParam);
+			}
+			public HRESULT NotifyIME(HIMC hIMC, uint32 dwAction, uint32 dwIndex, uint32 dwValue) mut
+			{
+				return VT.NotifyIME(&this, hIMC, dwAction, dwIndex, dwValue);
+			}
+			public HRESULT RegisterWordA(HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister) mut
+			{
+				return VT.RegisterWordA(&this, hKL, szReading, dwStyle, szRegister);
+			}
+			public HRESULT RegisterWordW(HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister) mut
+			{
+				return VT.RegisterWordW(&this, hKL, szReading, dwStyle, szRegister);
+			}
+			public HRESULT ReleaseContext(HWND hWnd, HIMC hIMC) mut
+			{
+				return VT.ReleaseContext(&this, hWnd, hIMC);
+			}
+			public HRESULT SetCandidateWindow(HIMC hIMC, CANDIDATEFORM* pCandidate) mut
+			{
+				return VT.SetCandidateWindow(&this, hIMC, pCandidate);
+			}
+			public HRESULT SetCompositionFontA(HIMC hIMC, LOGFONTA* plf) mut
+			{
+				return VT.SetCompositionFontA(&this, hIMC, plf);
+			}
+			public HRESULT SetCompositionFontW(HIMC hIMC, LOGFONTW* plf) mut
+			{
+				return VT.SetCompositionFontW(&this, hIMC, plf);
+			}
+			public HRESULT SetCompositionStringA(HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) mut
+			{
+				return VT.SetCompositionStringA(&this, hIMC, dwIndex, pComp, dwCompLen, pRead, dwReadLen);
+			}
+			public HRESULT SetCompositionStringW(HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) mut
+			{
+				return VT.SetCompositionStringW(&this, hIMC, dwIndex, pComp, dwCompLen, pRead, dwReadLen);
+			}
+			public HRESULT SetCompositionWindow(HIMC hIMC, COMPOSITIONFORM* pCompForm) mut
+			{
+				return VT.SetCompositionWindow(&this, hIMC, pCompForm);
+			}
+			public HRESULT SetConversionStatus(HIMC hIMC, uint32 fdwConversion, uint32 fdwSentence) mut
+			{
+				return VT.SetConversionStatus(&this, hIMC, fdwConversion, fdwSentence);
+			}
+			public HRESULT SetOpenStatus(HIMC hIMC, BOOL fOpen) mut
+			{
+				return VT.SetOpenStatus(&this, hIMC, fOpen);
+			}
+			public HRESULT SetStatusWindowPos(HIMC hIMC, POINT* pptPos) mut
+			{
+				return VT.SetStatusWindowPos(&this, hIMC, pptPos);
+			}
+			public HRESULT SimulateHotKey(HWND hWnd, uint32 dwHotKeyID) mut
+			{
+				return VT.SimulateHotKey(&this, hWnd, dwHotKeyID);
+			}
+			public HRESULT UnregisterWordA(HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szUnregister) mut
+			{
+				return VT.UnregisterWordA(&this, hKL, szReading, dwStyle, szUnregister);
+			}
+			public HRESULT UnregisterWordW(HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szUnregister) mut
+			{
+				return VT.UnregisterWordW(&this, hKL, szReading, dwStyle, szUnregister);
+			}
+			public HRESULT GenerateMessage(HIMC hIMC) mut
+			{
+				return VT.GenerateMessage(&this, hIMC);
+			}
+			public HRESULT LockIMC(HIMC hIMC, INPUTCONTEXT** ppIMC) mut
+			{
+				return VT.LockIMC(&this, hIMC, ppIMC);
+			}
+			public HRESULT UnlockIMC(HIMC hIMC) mut
+			{
+				return VT.UnlockIMC(&this, hIMC);
+			}
+			public HRESULT GetIMCLockCount(HIMC hIMC, uint32* pdwLockCount) mut
+			{
+				return VT.GetIMCLockCount(&this, hIMC, pdwLockCount);
+			}
+			public HRESULT CreateIMCC(uint32 dwSize, HIMCC* phIMCC) mut
+			{
+				return VT.CreateIMCC(&this, dwSize, phIMCC);
+			}
+			public HRESULT DestroyIMCC(HIMCC hIMCC) mut
+			{
+				return VT.DestroyIMCC(&this, hIMCC);
+			}
+			public HRESULT LockIMCC(HIMCC hIMCC, void** ppv) mut
+			{
+				return VT.LockIMCC(&this, hIMCC, ppv);
+			}
+			public HRESULT UnlockIMCC(HIMCC hIMCC) mut
+			{
+				return VT.UnlockIMCC(&this, hIMCC);
+			}
+			public HRESULT ReSizeIMCC(HIMCC hIMCC, uint32 dwSize, HIMCC* phIMCC) mut
+			{
+				return VT.ReSizeIMCC(&this, hIMCC, dwSize, phIMCC);
+			}
+			public HRESULT GetIMCCSize(HIMCC hIMCC, uint32* pdwSize) mut
+			{
+				return VT.GetIMCCSize(&this, hIMCC, pdwSize);
+			}
+			public HRESULT GetIMCCLockCount(HIMCC hIMCC, uint32* pdwLockCount) mut
+			{
+				return VT.GetIMCCLockCount(&this, hIMCC, pdwLockCount);
+			}
+			public HRESULT GetHotKey(uint32 dwHotKeyID, uint32* puModifiers, uint32* puVKey, HKL* phKL) mut
+			{
+				return VT.GetHotKey(&this, dwHotKeyID, puModifiers, puVKey, phKL);
+			}
+			public HRESULT SetHotKey(uint32 dwHotKeyID, uint32 uModifiers, uint32 uVKey, HKL hKL) mut
+			{
+				return VT.SetHotKey(&this, dwHotKeyID, uModifiers, uVKey, hKL);
+			}
+			public HRESULT CreateSoftKeyboard(uint32 uType, HWND hOwner, int32 x, int32 y, HWND* phSoftKbdWnd) mut
+			{
+				return VT.CreateSoftKeyboard(&this, uType, hOwner, x, y, phSoftKbdWnd);
+			}
+			public HRESULT DestroySoftKeyboard(HWND hSoftKbdWnd) mut
+			{
+				return VT.DestroySoftKeyboard(&this, hSoftKbdWnd);
+			}
+			public HRESULT ShowSoftKeyboard(HWND hSoftKbdWnd, int32 nCmdShow) mut
+			{
+				return VT.ShowSoftKeyboard(&this, hSoftKbdWnd, nCmdShow);
+			}
+			public HRESULT GetCodePageA(HKL hKL, uint32* uCodePage) mut
+			{
+				return VT.GetCodePageA(&this, hKL, uCodePage);
+			}
+			public HRESULT GetLangId(HKL hKL, uint16* plid) mut
+			{
+				return VT.GetLangId(&this, hKL, plid);
+			}
+			public HRESULT KeybdEvent(uint16 lgidIME, uint8 bVk, uint8 bScan, uint32 dwFlags, uint32 dwExtraInfo) mut
+			{
+				return VT.KeybdEvent(&this, lgidIME, bVk, bScan, dwFlags, dwExtraInfo);
+			}
+			public HRESULT LockModal() mut
+			{
+				return VT.LockModal(&this);
+			}
+			public HRESULT UnlockModal() mut
+			{
+				return VT.UnlockModal(&this);
+			}
+			public HRESULT AssociateContextEx(HWND hWnd, HIMC hIMC, uint32 dwFlags) mut
+			{
+				return VT.AssociateContextEx(&this, hWnd, hIMC, dwFlags);
+			}
+			public HRESULT DisableIME(uint32 idThread) mut
+			{
+				return VT.DisableIME(&this, idThread);
+			}
+			public HRESULT GetImeMenuItemsA(HIMC hIMC, uint32 dwFlags, uint32 dwType, IMEMENUITEMINFOA* pImeParentMenu, IMEMENUITEMINFOA* pImeMenu, uint32 dwSize, uint32* pdwResult) mut
+			{
+				return VT.GetImeMenuItemsA(&this, hIMC, dwFlags, dwType, pImeParentMenu, pImeMenu, dwSize, pdwResult);
+			}
+			public HRESULT GetImeMenuItemsW(HIMC hIMC, uint32 dwFlags, uint32 dwType, IMEMENUITEMINFOW* pImeParentMenu, IMEMENUITEMINFOW* pImeMenu, uint32 dwSize, uint32* pdwResult) mut
+			{
+				return VT.GetImeMenuItemsW(&this, hIMC, dwFlags, dwType, pImeParentMenu, pImeMenu, dwSize, pdwResult);
+			}
+			public HRESULT EnumInputContext(uint32 idThread, IEnumInputContext** ppEnum) mut
+			{
+				return VT.EnumInputContext(&this, idThread, ppEnum);
+			}
+			public HRESULT RequestMessageA(HIMC hIMC, WPARAM wParam, LPARAM lParam, LRESULT* plResult) mut
+			{
+				return VT.RequestMessageA(&this, hIMC, wParam, lParam, plResult);
+			}
+			public HRESULT RequestMessageW(HIMC hIMC, WPARAM wParam, LPARAM lParam, LRESULT* plResult) mut
+			{
+				return VT.RequestMessageW(&this, hIMC, wParam, lParam, plResult);
+			}
+			public HRESULT SendIMCA(HWND hWnd, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult) mut
+			{
+				return VT.SendIMCA(&this, hWnd, uMsg, wParam, lParam, plResult);
+			}
+			public HRESULT SendIMCW(HWND hWnd, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult) mut
+			{
+				return VT.SendIMCW(&this, hWnd, uMsg, wParam, lParam, plResult);
+			}
+			public HRESULT IsSleeping() mut
+			{
+				return VT.IsSleeping(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IActiveIMMIME *self, HWND hWnd, HIMC hIME, HIMC* phPrev) AssociateContext;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDA* pData) ConfigureIMEA;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDW* pData) ConfigureIMEW;
-				public function HRESULT(IActiveIMMIME *self, HIMC* phIMC) CreateContext;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIME) DestroyContext;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister, void* pData, IEnumRegisterWordA** pEnum) EnumRegisterWordA;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister, void* pData, IEnumRegisterWordW** pEnum) EnumRegisterWordW;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) EscapeA;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) EscapeW;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, uint32 uBufLen, CANDIDATELIST* pCandList, uint32* puCopied) GetCandidateListA;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, uint32 uBufLen, CANDIDATELIST* pCandList, uint32* puCopied) GetCandidateListW;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32* pdwListSize, uint32* pdwBufLen) GetCandidateListCountA;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32* pdwListSize, uint32* pdwBufLen) GetCandidateListCountW;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, CANDIDATEFORM* pCandidate) GetCandidateWindow;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, LOGFONTA* plf) GetCompositionFontA;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, LOGFONTW* plf) GetCompositionFontW;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, int32* plCopied, void* pBuf) GetCompositionStringA;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, int32* plCopied, void* pBuf) GetCompositionStringW;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, COMPOSITIONFORM* pCompForm) GetCompositionWindow;
-				public function HRESULT(IActiveIMMIME *self, HWND hWnd, HIMC* phIMC) GetContext;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, HIMC hIMC, PSTR pSrc, uint32 uBufLen, uint32 uFlag, CANDIDATELIST* pDst, uint32* puCopied) GetConversionListA;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, HIMC hIMC, PWSTR pSrc, uint32 uBufLen, uint32 uFlag, CANDIDATELIST* pDst, uint32* puCopied) GetConversionListW;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32* pfdwConversion, uint32* pfdwSentence) GetConversionStatus;
-				public function HRESULT(IActiveIMMIME *self, HWND hWnd, HWND* phDefWnd) GetDefaultIMEWnd;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 uBufLen, PSTR szDescription, uint32* puCopied) GetDescriptionA;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 uBufLen, PWSTR szDescription, uint32* puCopied) GetDescriptionW;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PSTR pBuf, uint32* pdwResult) GetGuideLineA;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PWSTR pBuf, uint32* pdwResult) GetGuideLineW;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 uBufLen, PSTR szFileName, uint32* puCopied) GetIMEFileNameA;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 uBufLen, PWSTR szFileName, uint32* puCopied) GetIMEFileNameW;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC) GetOpenStatus;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 fdwIndex, uint32* pdwProperty) GetProperty;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 nItem, STYLEBUFA* pStyleBuf, uint32* puCopied) GetRegisterWordStyleA;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 nItem, STYLEBUFW* pStyleBuf, uint32* puCopied) GetRegisterWordStyleW;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, POINT* pptPos) GetStatusWindowPos;
-				public function HRESULT(IActiveIMMIME *self, HWND hWnd, uint32* puVirtualKey) GetVirtualKey;
-				public function HRESULT(IActiveIMMIME *self, PSTR szIMEFileName, PSTR szLayoutText, HKL* phKL) InstallIMEA;
-				public function HRESULT(IActiveIMMIME *self, PWSTR szIMEFileName, PWSTR szLayoutText, HKL* phKL) InstallIMEW;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL) IsIME;
-				public function HRESULT(IActiveIMMIME *self, HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) IsUIMessageA;
-				public function HRESULT(IActiveIMMIME *self, HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) IsUIMessageW;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwAction, uint32 dwIndex, uint32 dwValue) NotifyIME;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister) RegisterWordA;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister) RegisterWordW;
-				public function HRESULT(IActiveIMMIME *self, HWND hWnd, HIMC hIMC) ReleaseContext;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, CANDIDATEFORM* pCandidate) SetCandidateWindow;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, LOGFONTA* plf) SetCompositionFontA;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, LOGFONTW* plf) SetCompositionFontW;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) SetCompositionStringA;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) SetCompositionStringW;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, COMPOSITIONFORM* pCompForm) SetCompositionWindow;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 fdwConversion, uint32 fdwSentence) SetConversionStatus;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, BOOL fOpen) SetOpenStatus;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, POINT* pptPos) SetStatusWindowPos;
-				public function HRESULT(IActiveIMMIME *self, HWND hWnd, uint32 dwHotKeyID) SimulateHotKey;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szUnregister) UnregisterWordA;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szUnregister) UnregisterWordW;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC) GenerateMessage;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, INPUTCONTEXT** ppIMC) LockIMC;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC) UnlockIMC;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32* pdwLockCount) GetIMCLockCount;
-				public function HRESULT(IActiveIMMIME *self, uint32 dwSize, HIMCC* phIMCC) CreateIMCC;
-				public function HRESULT(IActiveIMMIME *self, HIMCC hIMCC) DestroyIMCC;
-				public function HRESULT(IActiveIMMIME *self, HIMCC hIMCC, void** ppv) LockIMCC;
-				public function HRESULT(IActiveIMMIME *self, HIMCC hIMCC) UnlockIMCC;
-				public function HRESULT(IActiveIMMIME *self, HIMCC hIMCC, uint32 dwSize, HIMCC* phIMCC) ReSizeIMCC;
-				public function HRESULT(IActiveIMMIME *self, HIMCC hIMCC, uint32* pdwSize) GetIMCCSize;
-				public function HRESULT(IActiveIMMIME *self, HIMCC hIMCC, uint32* pdwLockCount) GetIMCCLockCount;
-				public function HRESULT(IActiveIMMIME *self, uint32 dwHotKeyID, uint32* puModifiers, uint32* puVKey, HKL* phKL) GetHotKey;
-				public function HRESULT(IActiveIMMIME *self, uint32 dwHotKeyID, uint32 uModifiers, uint32 uVKey, HKL hKL) SetHotKey;
-				public function HRESULT(IActiveIMMIME *self, uint32 uType, HWND hOwner, int32 x, int32 y, HWND* phSoftKbdWnd) CreateSoftKeyboard;
-				public function HRESULT(IActiveIMMIME *self, HWND hSoftKbdWnd) DestroySoftKeyboard;
-				public function HRESULT(IActiveIMMIME *self, HWND hSoftKbdWnd, int32 nCmdShow) ShowSoftKeyboard;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, uint32* uCodePage) GetCodePageA;
-				public function HRESULT(IActiveIMMIME *self, HKL hKL, uint16* plid) GetLangId;
-				public function HRESULT(IActiveIMMIME *self, uint16 lgidIME, uint8 bVk, uint8 bScan, uint32 dwFlags, uint32 dwExtraInfo) KeybdEvent;
-				public function HRESULT(IActiveIMMIME *self) LockModal;
-				public function HRESULT(IActiveIMMIME *self) UnlockModal;
-				public function HRESULT(IActiveIMMIME *self, HWND hWnd, HIMC hIMC, uint32 dwFlags) AssociateContextEx;
-				public function HRESULT(IActiveIMMIME *self, uint32 idThread) DisableIME;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwFlags, uint32 dwType, IMEMENUITEMINFOA* pImeParentMenu, IMEMENUITEMINFOA* pImeMenu, uint32 dwSize, uint32* pdwResult) GetImeMenuItemsA;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwFlags, uint32 dwType, IMEMENUITEMINFOW* pImeParentMenu, IMEMENUITEMINFOW* pImeMenu, uint32 dwSize, uint32* pdwResult) GetImeMenuItemsW;
-				public function HRESULT(IActiveIMMIME *self, uint32 idThread, IEnumInputContext** ppEnum) EnumInputContext;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, WPARAM wParam, LPARAM lParam, LRESULT* plResult) RequestMessageA;
-				public function HRESULT(IActiveIMMIME *self, HIMC hIMC, WPARAM wParam, LPARAM lParam, LRESULT* plResult) RequestMessageW;
-				public function HRESULT(IActiveIMMIME *self, HWND hWnd, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult) SendIMCA;
-				public function HRESULT(IActiveIMMIME *self, HWND hWnd, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult) SendIMCW;
-				public function HRESULT(IActiveIMMIME *self) IsSleeping;
+				public new function HRESULT(IActiveIMMIME *self, HWND hWnd, HIMC hIME, HIMC* phPrev) AssociateContext;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDA* pData) ConfigureIMEA;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDW* pData) ConfigureIMEW;
+				public new function HRESULT(IActiveIMMIME *self, HIMC* phIMC) CreateContext;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIME) DestroyContext;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister, void* pData, IEnumRegisterWordA** pEnum) EnumRegisterWordA;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister, void* pData, IEnumRegisterWordW** pEnum) EnumRegisterWordW;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) EscapeA;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) EscapeW;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, uint32 uBufLen, CANDIDATELIST* pCandList, uint32* puCopied) GetCandidateListA;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, uint32 uBufLen, CANDIDATELIST* pCandList, uint32* puCopied) GetCandidateListW;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32* pdwListSize, uint32* pdwBufLen) GetCandidateListCountA;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32* pdwListSize, uint32* pdwBufLen) GetCandidateListCountW;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, CANDIDATEFORM* pCandidate) GetCandidateWindow;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, LOGFONTA* plf) GetCompositionFontA;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, LOGFONTW* plf) GetCompositionFontW;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, int32* plCopied, void* pBuf) GetCompositionStringA;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, int32* plCopied, void* pBuf) GetCompositionStringW;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, COMPOSITIONFORM* pCompForm) GetCompositionWindow;
+				public new function HRESULT(IActiveIMMIME *self, HWND hWnd, HIMC* phIMC) GetContext;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, HIMC hIMC, PSTR pSrc, uint32 uBufLen, uint32 uFlag, CANDIDATELIST* pDst, uint32* puCopied) GetConversionListA;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, HIMC hIMC, PWSTR pSrc, uint32 uBufLen, uint32 uFlag, CANDIDATELIST* pDst, uint32* puCopied) GetConversionListW;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32* pfdwConversion, uint32* pfdwSentence) GetConversionStatus;
+				public new function HRESULT(IActiveIMMIME *self, HWND hWnd, HWND* phDefWnd) GetDefaultIMEWnd;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 uBufLen, PSTR szDescription, uint32* puCopied) GetDescriptionA;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 uBufLen, PWSTR szDescription, uint32* puCopied) GetDescriptionW;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PSTR pBuf, uint32* pdwResult) GetGuideLineA;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PWSTR pBuf, uint32* pdwResult) GetGuideLineW;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 uBufLen, PSTR szFileName, uint32* puCopied) GetIMEFileNameA;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 uBufLen, PWSTR szFileName, uint32* puCopied) GetIMEFileNameW;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC) GetOpenStatus;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 fdwIndex, uint32* pdwProperty) GetProperty;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 nItem, STYLEBUFA* pStyleBuf, uint32* puCopied) GetRegisterWordStyleA;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 nItem, STYLEBUFW* pStyleBuf, uint32* puCopied) GetRegisterWordStyleW;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, POINT* pptPos) GetStatusWindowPos;
+				public new function HRESULT(IActiveIMMIME *self, HWND hWnd, uint32* puVirtualKey) GetVirtualKey;
+				public new function HRESULT(IActiveIMMIME *self, PSTR szIMEFileName, PSTR szLayoutText, HKL* phKL) InstallIMEA;
+				public new function HRESULT(IActiveIMMIME *self, PWSTR szIMEFileName, PWSTR szLayoutText, HKL* phKL) InstallIMEW;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL) IsIME;
+				public new function HRESULT(IActiveIMMIME *self, HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) IsUIMessageA;
+				public new function HRESULT(IActiveIMMIME *self, HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) IsUIMessageW;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwAction, uint32 dwIndex, uint32 dwValue) NotifyIME;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister) RegisterWordA;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister) RegisterWordW;
+				public new function HRESULT(IActiveIMMIME *self, HWND hWnd, HIMC hIMC) ReleaseContext;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, CANDIDATEFORM* pCandidate) SetCandidateWindow;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, LOGFONTA* plf) SetCompositionFontA;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, LOGFONTW* plf) SetCompositionFontW;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) SetCompositionStringA;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) SetCompositionStringW;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, COMPOSITIONFORM* pCompForm) SetCompositionWindow;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 fdwConversion, uint32 fdwSentence) SetConversionStatus;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, BOOL fOpen) SetOpenStatus;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, POINT* pptPos) SetStatusWindowPos;
+				public new function HRESULT(IActiveIMMIME *self, HWND hWnd, uint32 dwHotKeyID) SimulateHotKey;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szUnregister) UnregisterWordA;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szUnregister) UnregisterWordW;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC) GenerateMessage;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, INPUTCONTEXT** ppIMC) LockIMC;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC) UnlockIMC;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32* pdwLockCount) GetIMCLockCount;
+				public new function HRESULT(IActiveIMMIME *self, uint32 dwSize, HIMCC* phIMCC) CreateIMCC;
+				public new function HRESULT(IActiveIMMIME *self, HIMCC hIMCC) DestroyIMCC;
+				public new function HRESULT(IActiveIMMIME *self, HIMCC hIMCC, void** ppv) LockIMCC;
+				public new function HRESULT(IActiveIMMIME *self, HIMCC hIMCC) UnlockIMCC;
+				public new function HRESULT(IActiveIMMIME *self, HIMCC hIMCC, uint32 dwSize, HIMCC* phIMCC) ReSizeIMCC;
+				public new function HRESULT(IActiveIMMIME *self, HIMCC hIMCC, uint32* pdwSize) GetIMCCSize;
+				public new function HRESULT(IActiveIMMIME *self, HIMCC hIMCC, uint32* pdwLockCount) GetIMCCLockCount;
+				public new function HRESULT(IActiveIMMIME *self, uint32 dwHotKeyID, uint32* puModifiers, uint32* puVKey, HKL* phKL) GetHotKey;
+				public new function HRESULT(IActiveIMMIME *self, uint32 dwHotKeyID, uint32 uModifiers, uint32 uVKey, HKL hKL) SetHotKey;
+				public new function HRESULT(IActiveIMMIME *self, uint32 uType, HWND hOwner, int32 x, int32 y, HWND* phSoftKbdWnd) CreateSoftKeyboard;
+				public new function HRESULT(IActiveIMMIME *self, HWND hSoftKbdWnd) DestroySoftKeyboard;
+				public new function HRESULT(IActiveIMMIME *self, HWND hSoftKbdWnd, int32 nCmdShow) ShowSoftKeyboard;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, uint32* uCodePage) GetCodePageA;
+				public new function HRESULT(IActiveIMMIME *self, HKL hKL, uint16* plid) GetLangId;
+				public new function HRESULT(IActiveIMMIME *self, uint16 lgidIME, uint8 bVk, uint8 bScan, uint32 dwFlags, uint32 dwExtraInfo) KeybdEvent;
+				public new function HRESULT(IActiveIMMIME *self) LockModal;
+				public new function HRESULT(IActiveIMMIME *self) UnlockModal;
+				public new function HRESULT(IActiveIMMIME *self, HWND hWnd, HIMC hIMC, uint32 dwFlags) AssociateContextEx;
+				public new function HRESULT(IActiveIMMIME *self, uint32 idThread) DisableIME;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwFlags, uint32 dwType, IMEMENUITEMINFOA* pImeParentMenu, IMEMENUITEMINFOA* pImeMenu, uint32 dwSize, uint32* pdwResult) GetImeMenuItemsA;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwFlags, uint32 dwType, IMEMENUITEMINFOW* pImeParentMenu, IMEMENUITEMINFOW* pImeMenu, uint32 dwSize, uint32* pdwResult) GetImeMenuItemsW;
+				public new function HRESULT(IActiveIMMIME *self, uint32 idThread, IEnumInputContext** ppEnum) EnumInputContext;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, WPARAM wParam, LPARAM lParam, LRESULT* plResult) RequestMessageA;
+				public new function HRESULT(IActiveIMMIME *self, HIMC hIMC, WPARAM wParam, LPARAM lParam, LRESULT* plResult) RequestMessageW;
+				public new function HRESULT(IActiveIMMIME *self, HWND hWnd, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult) SendIMCA;
+				public new function HRESULT(IActiveIMMIME *self, HWND hWnd, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult) SendIMCW;
+				public new function HRESULT(IActiveIMMIME *self) IsSleeping;
 			}
 		}
 		[CRepr]
@@ -1675,27 +2534,96 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6fe20962, 0xd077, 0x11d0, 0x8f, 0xe7, 0x00, 0xaa, 0x00, 0x6b, 0xcc, 0x59);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Inquire(uint32 dwSystemInfoFlags, IMEINFO* pIMEInfo, PWSTR szWndClass, uint32* pdwPrivate) mut
+			{
+				return VT.Inquire(&this, dwSystemInfoFlags, pIMEInfo, szWndClass, pdwPrivate);
+			}
+			public HRESULT ConversionList(HIMC hIMC, PWSTR szSource, uint32 uFlag, uint32 uBufLen, CANDIDATELIST* pDest, uint32* puCopied) mut
+			{
+				return VT.ConversionList(&this, hIMC, szSource, uFlag, uBufLen, pDest, puCopied);
+			}
+			public HRESULT Configure(HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDW* pRegisterWord) mut
+			{
+				return VT.Configure(&this, hKL, hWnd, dwMode, pRegisterWord);
+			}
+			public HRESULT Destroy(uint32 uReserved) mut
+			{
+				return VT.Destroy(&this, uReserved);
+			}
+			public HRESULT Escape(HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) mut
+			{
+				return VT.Escape(&this, hIMC, uEscape, pData, plResult);
+			}
+			public HRESULT SetActiveContext(HIMC hIMC, BOOL fFlag) mut
+			{
+				return VT.SetActiveContext(&this, hIMC, fFlag);
+			}
+			public HRESULT ProcessKey(HIMC hIMC, uint32 uVirKey, uint32 lParam, uint8* pbKeyState) mut
+			{
+				return VT.ProcessKey(&this, hIMC, uVirKey, lParam, pbKeyState);
+			}
+			public HRESULT Notify(HIMC hIMC, uint32 dwAction, uint32 dwIndex, uint32 dwValue) mut
+			{
+				return VT.Notify(&this, hIMC, dwAction, dwIndex, dwValue);
+			}
+			public HRESULT Select(HIMC hIMC, BOOL fSelect) mut
+			{
+				return VT.Select(&this, hIMC, fSelect);
+			}
+			public HRESULT SetCompositionString(HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) mut
+			{
+				return VT.SetCompositionString(&this, hIMC, dwIndex, pComp, dwCompLen, pRead, dwReadLen);
+			}
+			public HRESULT ToAsciiEx(uint32 uVirKey, uint32 uScanCode, uint8* pbKeyState, uint32 fuState, HIMC hIMC, uint32* pdwTransBuf, uint32* puSize) mut
+			{
+				return VT.ToAsciiEx(&this, uVirKey, uScanCode, pbKeyState, fuState, hIMC, pdwTransBuf, puSize);
+			}
+			public HRESULT RegisterWord(PWSTR szReading, uint32 dwStyle, PWSTR szString) mut
+			{
+				return VT.RegisterWord(&this, szReading, dwStyle, szString);
+			}
+			public HRESULT UnregisterWord(PWSTR szReading, uint32 dwStyle, PWSTR szString) mut
+			{
+				return VT.UnregisterWord(&this, szReading, dwStyle, szString);
+			}
+			public HRESULT GetRegisterWordStyle(uint32 nItem, STYLEBUFW* pStyleBuf, uint32* puBufSize) mut
+			{
+				return VT.GetRegisterWordStyle(&this, nItem, pStyleBuf, puBufSize);
+			}
+			public HRESULT EnumRegisterWord(PWSTR szReading, uint32 dwStyle, PWSTR szRegister, void* pData, IEnumRegisterWordW** ppEnum) mut
+			{
+				return VT.EnumRegisterWord(&this, szReading, dwStyle, szRegister, pData, ppEnum);
+			}
+			public HRESULT GetCodePageA(uint32* uCodePage) mut
+			{
+				return VT.GetCodePageA(&this, uCodePage);
+			}
+			public HRESULT GetLangId(uint16* plid) mut
+			{
+				return VT.GetLangId(&this, plid);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IActiveIME *self, uint32 dwSystemInfoFlags, IMEINFO* pIMEInfo, PWSTR szWndClass, uint32* pdwPrivate) Inquire;
-				public function HRESULT(IActiveIME *self, HIMC hIMC, PWSTR szSource, uint32 uFlag, uint32 uBufLen, CANDIDATELIST* pDest, uint32* puCopied) ConversionList;
-				public function HRESULT(IActiveIME *self, HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDW* pRegisterWord) Configure;
-				public function HRESULT(IActiveIME *self, uint32 uReserved) Destroy;
-				public function HRESULT(IActiveIME *self, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) Escape;
-				public function HRESULT(IActiveIME *self, HIMC hIMC, BOOL fFlag) SetActiveContext;
-				public function HRESULT(IActiveIME *self, HIMC hIMC, uint32 uVirKey, uint32 lParam, uint8* pbKeyState) ProcessKey;
-				public function HRESULT(IActiveIME *self, HIMC hIMC, uint32 dwAction, uint32 dwIndex, uint32 dwValue) Notify;
-				public function HRESULT(IActiveIME *self, HIMC hIMC, BOOL fSelect) Select;
-				public function HRESULT(IActiveIME *self, HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) SetCompositionString;
-				public function HRESULT(IActiveIME *self, uint32 uVirKey, uint32 uScanCode, uint8* pbKeyState, uint32 fuState, HIMC hIMC, uint32* pdwTransBuf, uint32* puSize) ToAsciiEx;
-				public function HRESULT(IActiveIME *self, PWSTR szReading, uint32 dwStyle, PWSTR szString) RegisterWord;
-				public function HRESULT(IActiveIME *self, PWSTR szReading, uint32 dwStyle, PWSTR szString) UnregisterWord;
-				public function HRESULT(IActiveIME *self, uint32 nItem, STYLEBUFW* pStyleBuf, uint32* puBufSize) GetRegisterWordStyle;
-				public function HRESULT(IActiveIME *self, PWSTR szReading, uint32 dwStyle, PWSTR szRegister, void* pData, IEnumRegisterWordW** ppEnum) EnumRegisterWord;
-				public function HRESULT(IActiveIME *self, uint32* uCodePage) GetCodePageA;
-				public function HRESULT(IActiveIME *self, uint16* plid) GetLangId;
+				public new function HRESULT(IActiveIME *self, uint32 dwSystemInfoFlags, IMEINFO* pIMEInfo, PWSTR szWndClass, uint32* pdwPrivate) Inquire;
+				public new function HRESULT(IActiveIME *self, HIMC hIMC, PWSTR szSource, uint32 uFlag, uint32 uBufLen, CANDIDATELIST* pDest, uint32* puCopied) ConversionList;
+				public new function HRESULT(IActiveIME *self, HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDW* pRegisterWord) Configure;
+				public new function HRESULT(IActiveIME *self, uint32 uReserved) Destroy;
+				public new function HRESULT(IActiveIME *self, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) Escape;
+				public new function HRESULT(IActiveIME *self, HIMC hIMC, BOOL fFlag) SetActiveContext;
+				public new function HRESULT(IActiveIME *self, HIMC hIMC, uint32 uVirKey, uint32 lParam, uint8* pbKeyState) ProcessKey;
+				public new function HRESULT(IActiveIME *self, HIMC hIMC, uint32 dwAction, uint32 dwIndex, uint32 dwValue) Notify;
+				public new function HRESULT(IActiveIME *self, HIMC hIMC, BOOL fSelect) Select;
+				public new function HRESULT(IActiveIME *self, HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) SetCompositionString;
+				public new function HRESULT(IActiveIME *self, uint32 uVirKey, uint32 uScanCode, uint8* pbKeyState, uint32 fuState, HIMC hIMC, uint32* pdwTransBuf, uint32* puSize) ToAsciiEx;
+				public new function HRESULT(IActiveIME *self, PWSTR szReading, uint32 dwStyle, PWSTR szString) RegisterWord;
+				public new function HRESULT(IActiveIME *self, PWSTR szReading, uint32 dwStyle, PWSTR szString) UnregisterWord;
+				public new function HRESULT(IActiveIME *self, uint32 nItem, STYLEBUFW* pStyleBuf, uint32* puBufSize) GetRegisterWordStyle;
+				public new function HRESULT(IActiveIME *self, PWSTR szReading, uint32 dwStyle, PWSTR szRegister, void* pData, IEnumRegisterWordW** ppEnum) EnumRegisterWord;
+				public new function HRESULT(IActiveIME *self, uint32* uCodePage) GetCodePageA;
+				public new function HRESULT(IActiveIME *self, uint16* plid) GetLangId;
 			}
 		}
 		[CRepr]
@@ -1703,12 +2631,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe1c4bf0e, 0x2d53, 0x11d2, 0x93, 0xe1, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Sleep() mut
+			{
+				return VT.Sleep(&this);
+			}
+			public HRESULT Unsleep(BOOL fDead) mut
+			{
+				return VT.Unsleep(&this, fDead);
+			}
 			[CRepr]
 			public struct VTable : IActiveIME.VTable
 			{
-				public function HRESULT(IActiveIME2 *self) Sleep;
-				public function HRESULT(IActiveIME2 *self, BOOL fDead) Unsleep;
+				public new function HRESULT(IActiveIME2 *self) Sleep;
+				public new function HRESULT(IActiveIME2 *self, BOOL fDead) Unsleep;
 			}
 		}
 		

@@ -12,12 +12,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9ca31010, 0x1484, 0x4587, 0xb2, 0x6b, 0xdd, 0xdf, 0x9f, 0x9c, 0xae, 0xcd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetForWindow(HWND appWindow, Guid* riid, void** printManager) mut
+			{
+				return VT.GetForWindow(&this, appWindow, riid, printManager);
+			}
+			public HRESULT ShowPrintUIForWindowAsync(HWND appWindow, Guid* riid, void** asyncOperation) mut
+			{
+				return VT.ShowPrintUIForWindowAsync(&this, appWindow, riid, asyncOperation);
+			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public function HRESULT(IPrinting3DManagerInterop *self, HWND appWindow, Guid* riid, void** printManager) GetForWindow;
-				public function HRESULT(IPrinting3DManagerInterop *self, HWND appWindow, Guid* riid, void** asyncOperation) ShowPrintUIForWindowAsync;
+				public new function HRESULT(IPrinting3DManagerInterop *self, HWND appWindow, Guid* riid, void** printManager) GetForWindow;
+				public new function HRESULT(IPrinting3DManagerInterop *self, HWND appWindow, Guid* riid, void** asyncOperation) ShowPrintUIForWindowAsync;
 			}
 		}
 		[CRepr]
@@ -25,12 +34,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc5435a42, 0x8d43, 0x4e7b, 0xa6, 0x8a, 0xef, 0x31, 0x1e, 0x39, 0x20, 0x87);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetForWindow(HWND appWindow, Guid* riid, void** printManager) mut
+			{
+				return VT.GetForWindow(&this, appWindow, riid, printManager);
+			}
+			public HRESULT ShowPrintUIForWindowAsync(HWND appWindow, Guid* riid, void** asyncOperation) mut
+			{
+				return VT.ShowPrintUIForWindowAsync(&this, appWindow, riid, asyncOperation);
+			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public function HRESULT(IPrintManagerInterop *self, HWND appWindow, Guid* riid, void** printManager) GetForWindow;
-				public function HRESULT(IPrintManagerInterop *self, HWND appWindow, Guid* riid, void** asyncOperation) ShowPrintUIForWindowAsync;
+				public new function HRESULT(IPrintManagerInterop *self, HWND appWindow, Guid* riid, void** printManager) GetForWindow;
+				public new function HRESULT(IPrintManagerInterop *self, HWND appWindow, Guid* riid, void** asyncOperation) ShowPrintUIForWindowAsync;
 			}
 		}
 		[CRepr]
@@ -38,15 +56,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x04097374, 0x77b8, 0x47f6, 0x81, 0x67, 0xaa, 0xe2, 0x9d, 0x4c, 0xf8, 0x4b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetDocumentSequencePrintTicket(IStream* documentSequencePrintTicket) mut
+			{
+				return VT.SetDocumentSequencePrintTicket(&this, documentSequencePrintTicket);
+			}
+			public HRESULT SetDocumentSequenceUri(PWSTR documentSequenceUri) mut
+			{
+				return VT.SetDocumentSequenceUri(&this, documentSequenceUri);
+			}
+			public HRESULT AddDocumentData(uint32 documentId, IStream* documentPrintTicket, PWSTR documentUri) mut
+			{
+				return VT.AddDocumentData(&this, documentId, documentPrintTicket, documentUri);
+			}
+			public HRESULT AddPage(uint32 documentId, uint32 pageId, IXpsOMPageReference* pageReference, PWSTR pageUri) mut
+			{
+				return VT.AddPage(&this, documentId, pageId, pageReference, pageUri);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPrintWorkflowXpsReceiver *self, IStream* documentSequencePrintTicket) SetDocumentSequencePrintTicket;
-				public function HRESULT(IPrintWorkflowXpsReceiver *self, PWSTR documentSequenceUri) SetDocumentSequenceUri;
-				public function HRESULT(IPrintWorkflowXpsReceiver *self, uint32 documentId, IStream* documentPrintTicket, PWSTR documentUri) AddDocumentData;
-				public function HRESULT(IPrintWorkflowXpsReceiver *self, uint32 documentId, uint32 pageId, IXpsOMPageReference* pageReference, PWSTR pageUri) AddPage;
-				public function HRESULT(IPrintWorkflowXpsReceiver *self) Close;
+				public new function HRESULT(IPrintWorkflowXpsReceiver *self, IStream* documentSequencePrintTicket) SetDocumentSequencePrintTicket;
+				public new function HRESULT(IPrintWorkflowXpsReceiver *self, PWSTR documentSequenceUri) SetDocumentSequenceUri;
+				public new function HRESULT(IPrintWorkflowXpsReceiver *self, uint32 documentId, IStream* documentPrintTicket, PWSTR documentUri) AddDocumentData;
+				public new function HRESULT(IPrintWorkflowXpsReceiver *self, uint32 documentId, uint32 pageId, IXpsOMPageReference* pageReference, PWSTR pageUri) AddPage;
+				public new function HRESULT(IPrintWorkflowXpsReceiver *self) Close;
 			}
 		}
 		[CRepr]
@@ -54,11 +93,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x023bcc0c, 0xdfab, 0x4a61, 0xb0, 0x74, 0x49, 0x0c, 0x69, 0x95, 0x58, 0x0d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Failed(HRESULT XpsError) mut
+			{
+				return VT.Failed(&this, XpsError);
+			}
 			[CRepr]
 			public struct VTable : IPrintWorkflowXpsReceiver.VTable
 			{
-				public function HRESULT(IPrintWorkflowXpsReceiver2 *self, HRESULT XpsError) Failed;
+				public new function HRESULT(IPrintWorkflowXpsReceiver2 *self, HRESULT XpsError) Failed;
 			}
 		}
 		[CRepr]
@@ -66,12 +110,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x68c9e477, 0x993e, 0x4052, 0x8a, 0xc6, 0x45, 0x4e, 0xff, 0x58, 0xdb, 0x9d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT StartXpsOMGeneration(IPrintWorkflowXpsReceiver* receiver) mut
+			{
+				return VT.StartXpsOMGeneration(&this, receiver);
+			}
+			public HRESULT get_ObjectFactory(IXpsOMObjectFactory1** value) mut
+			{
+				return VT.get_ObjectFactory(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPrintWorkflowObjectModelSourceFileContentNative *self, IPrintWorkflowXpsReceiver* receiver) StartXpsOMGeneration;
-				public function HRESULT(IPrintWorkflowObjectModelSourceFileContentNative *self, IXpsOMObjectFactory1** value) get_ObjectFactory;
+				public new function HRESULT(IPrintWorkflowObjectModelSourceFileContentNative *self, IPrintWorkflowXpsReceiver* receiver) StartXpsOMGeneration;
+				public new function HRESULT(IPrintWorkflowObjectModelSourceFileContentNative *self, IXpsOMObjectFactory1** value) get_ObjectFactory;
 			}
 		}
 		[CRepr]
@@ -79,11 +132,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7d96bc74, 0x9b54, 0x4ca1, 0xad, 0x3a, 0x97, 0x9c, 0x3d, 0x44, 0xdd, 0xac);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_DocumentPackageTarget(IXpsDocumentPackageTarget** value) mut
+			{
+				return VT.get_DocumentPackageTarget(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPrintWorkflowXpsObjectModelTargetPackageNative *self, IXpsDocumentPackageTarget** value) get_DocumentPackageTarget;
+				public new function HRESULT(IPrintWorkflowXpsObjectModelTargetPackageNative *self, IXpsDocumentPackageTarget** value) get_DocumentPackageTarget;
 			}
 		}
 		[CRepr]
@@ -91,13 +149,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc056be0a, 0x9ee2, 0x450a, 0x98, 0x23, 0x96, 0x4f, 0x00, 0x06, 0xf2, 0xbb);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_PrinterQueue(IPrinterQueue** value) mut
+			{
+				return VT.get_PrinterQueue(&this, value);
+			}
+			public HRESULT get_DriverProperties(IPrinterPropertyBag** value) mut
+			{
+				return VT.get_DriverProperties(&this, value);
+			}
+			public HRESULT get_UserProperties(IPrinterPropertyBag** value) mut
+			{
+				return VT.get_UserProperties(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPrintWorkflowConfigurationNative *self, IPrinterQueue** value) get_PrinterQueue;
-				public function HRESULT(IPrintWorkflowConfigurationNative *self, IPrinterPropertyBag** value) get_DriverProperties;
-				public function HRESULT(IPrintWorkflowConfigurationNative *self, IPrinterPropertyBag** value) get_UserProperties;
+				public new function HRESULT(IPrintWorkflowConfigurationNative *self, IPrinterQueue** value) get_PrinterQueue;
+				public new function HRESULT(IPrintWorkflowConfigurationNative *self, IPrinterPropertyBag** value) get_DriverProperties;
+				public new function HRESULT(IPrintWorkflowConfigurationNative *self, IPrinterPropertyBag** value) get_UserProperties;
 			}
 		}
 		

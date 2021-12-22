@@ -280,12 +280,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x09b224bd, 0x1335, 0x4631, 0xa7, 0xff, 0xcf, 0xd3, 0xa9, 0x26, 0x46, 0xd7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetACTs(IEnhancedStorageACT*** pppIEnhancedStorageACTs, uint32* pcEnhancedStorageACTs) mut
+			{
+				return VT.GetACTs(&this, pppIEnhancedStorageACTs, pcEnhancedStorageACTs);
+			}
+			public HRESULT GetMatchingACT(PWSTR szVolume, IEnhancedStorageACT** ppIEnhancedStorageACT) mut
+			{
+				return VT.GetMatchingACT(&this, szVolume, ppIEnhancedStorageACT);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumEnhancedStorageACT *self, IEnhancedStorageACT*** pppIEnhancedStorageACTs, uint32* pcEnhancedStorageACTs) GetACTs;
-				public function HRESULT(IEnumEnhancedStorageACT *self, PWSTR szVolume, IEnhancedStorageACT** ppIEnhancedStorageACT) GetMatchingACT;
+				public new function HRESULT(IEnumEnhancedStorageACT *self, IEnhancedStorageACT*** pppIEnhancedStorageACTs, uint32* pcEnhancedStorageACTs) GetACTs;
+				public new function HRESULT(IEnumEnhancedStorageACT *self, PWSTR szVolume, IEnhancedStorageACT** ppIEnhancedStorageACT) GetMatchingACT;
 			}
 		}
 		[CRepr]
@@ -293,16 +302,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6e7781f4, 0xe0f2, 0x4239, 0xb9, 0x76, 0xa0, 0x1a, 0xba, 0xb5, 0x29, 0x30);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Authorize(uint32 hwndParent, uint32 dwFlags) mut
+			{
+				return VT.Authorize(&this, hwndParent, dwFlags);
+			}
+			public HRESULT Unauthorize() mut
+			{
+				return VT.Unauthorize(&this);
+			}
+			public HRESULT GetAuthorizationState(ACT_AUTHORIZATION_STATE* pState) mut
+			{
+				return VT.GetAuthorizationState(&this, pState);
+			}
+			public HRESULT GetMatchingVolume(PWSTR* ppwszVolume) mut
+			{
+				return VT.GetMatchingVolume(&this, ppwszVolume);
+			}
+			public HRESULT GetUniqueIdentity(PWSTR* ppwszIdentity) mut
+			{
+				return VT.GetUniqueIdentity(&this, ppwszIdentity);
+			}
+			public HRESULT GetSilos(IEnhancedStorageSilo*** pppIEnhancedStorageSilos, uint32* pcEnhancedStorageSilos) mut
+			{
+				return VT.GetSilos(&this, pppIEnhancedStorageSilos, pcEnhancedStorageSilos);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnhancedStorageACT *self, uint32 hwndParent, uint32 dwFlags) Authorize;
-				public function HRESULT(IEnhancedStorageACT *self) Unauthorize;
-				public function HRESULT(IEnhancedStorageACT *self, ACT_AUTHORIZATION_STATE* pState) GetAuthorizationState;
-				public function HRESULT(IEnhancedStorageACT *self, PWSTR* ppwszVolume) GetMatchingVolume;
-				public function HRESULT(IEnhancedStorageACT *self, PWSTR* ppwszIdentity) GetUniqueIdentity;
-				public function HRESULT(IEnhancedStorageACT *self, IEnhancedStorageSilo*** pppIEnhancedStorageSilos, uint32* pcEnhancedStorageSilos) GetSilos;
+				public new function HRESULT(IEnhancedStorageACT *self, uint32 hwndParent, uint32 dwFlags) Authorize;
+				public new function HRESULT(IEnhancedStorageACT *self) Unauthorize;
+				public new function HRESULT(IEnhancedStorageACT *self, ACT_AUTHORIZATION_STATE* pState) GetAuthorizationState;
+				public new function HRESULT(IEnhancedStorageACT *self, PWSTR* ppwszVolume) GetMatchingVolume;
+				public new function HRESULT(IEnhancedStorageACT *self, PWSTR* ppwszIdentity) GetUniqueIdentity;
+				public new function HRESULT(IEnhancedStorageACT *self, IEnhancedStorageSilo*** pppIEnhancedStorageSilos, uint32* pcEnhancedStorageSilos) GetSilos;
 			}
 		}
 		[CRepr]
@@ -310,12 +344,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4da57d2e, 0x8eb3, 0x41f6, 0xa0, 0x7e, 0x98, 0xb5, 0x2b, 0x88, 0x24, 0x2b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDeviceName(PWSTR* ppwszDeviceName) mut
+			{
+				return VT.GetDeviceName(&this, ppwszDeviceName);
+			}
+			public HRESULT IsDeviceRemovable(BOOL* pIsDeviceRemovable) mut
+			{
+				return VT.IsDeviceRemovable(&this, pIsDeviceRemovable);
+			}
 			[CRepr]
 			public struct VTable : IEnhancedStorageACT.VTable
 			{
-				public function HRESULT(IEnhancedStorageACT2 *self, PWSTR* ppwszDeviceName) GetDeviceName;
-				public function HRESULT(IEnhancedStorageACT2 *self, BOOL* pIsDeviceRemovable) IsDeviceRemovable;
+				public new function HRESULT(IEnhancedStorageACT2 *self, PWSTR* ppwszDeviceName) GetDeviceName;
+				public new function HRESULT(IEnhancedStorageACT2 *self, BOOL* pIsDeviceRemovable) IsDeviceRemovable;
 			}
 		}
 		[CRepr]
@@ -323,13 +366,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x022150a1, 0x113d, 0x11df, 0xbb, 0x61, 0x00, 0x1a, 0xa0, 0x1b, 0xbc, 0x58);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT UnauthorizeEx(uint32 dwFlags) mut
+			{
+				return VT.UnauthorizeEx(&this, dwFlags);
+			}
+			public HRESULT IsQueueFrozen(BOOL* pIsQueueFrozen) mut
+			{
+				return VT.IsQueueFrozen(&this, pIsQueueFrozen);
+			}
+			public HRESULT GetShellExtSupport(BOOL* pShellExtSupport) mut
+			{
+				return VT.GetShellExtSupport(&this, pShellExtSupport);
+			}
 			[CRepr]
 			public struct VTable : IEnhancedStorageACT2.VTable
 			{
-				public function HRESULT(IEnhancedStorageACT3 *self, uint32 dwFlags) UnauthorizeEx;
-				public function HRESULT(IEnhancedStorageACT3 *self, BOOL* pIsQueueFrozen) IsQueueFrozen;
-				public function HRESULT(IEnhancedStorageACT3 *self, BOOL* pShellExtSupport) GetShellExtSupport;
+				public new function HRESULT(IEnhancedStorageACT3 *self, uint32 dwFlags) UnauthorizeEx;
+				public new function HRESULT(IEnhancedStorageACT3 *self, BOOL* pIsQueueFrozen) IsQueueFrozen;
+				public new function HRESULT(IEnhancedStorageACT3 *self, BOOL* pShellExtSupport) GetShellExtSupport;
 			}
 		}
 		[CRepr]
@@ -337,15 +393,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5aef78c6, 0x2242, 0x4703, 0xbf, 0x49, 0x44, 0xb2, 0x93, 0x57, 0xa3, 0x59);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetInfo(SILO_INFO* pSiloInfo) mut
+			{
+				return VT.GetInfo(&this, pSiloInfo);
+			}
+			public HRESULT GetActions(IEnhancedStorageSiloAction*** pppIEnhancedStorageSiloActions, uint32* pcEnhancedStorageSiloActions) mut
+			{
+				return VT.GetActions(&this, pppIEnhancedStorageSiloActions, pcEnhancedStorageSiloActions);
+			}
+			public HRESULT SendCommand(uint8 Command, uint8* pbCommandBuffer, uint32 cbCommandBuffer, uint8* pbResponseBuffer, uint32* pcbResponseBuffer) mut
+			{
+				return VT.SendCommand(&this, Command, pbCommandBuffer, cbCommandBuffer, pbResponseBuffer, pcbResponseBuffer);
+			}
+			public HRESULT GetPortableDevice(IPortableDevice** ppIPortableDevice) mut
+			{
+				return VT.GetPortableDevice(&this, ppIPortableDevice);
+			}
+			public HRESULT GetDevicePath(PWSTR* ppwszSiloDevicePath) mut
+			{
+				return VT.GetDevicePath(&this, ppwszSiloDevicePath);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnhancedStorageSilo *self, SILO_INFO* pSiloInfo) GetInfo;
-				public function HRESULT(IEnhancedStorageSilo *self, IEnhancedStorageSiloAction*** pppIEnhancedStorageSiloActions, uint32* pcEnhancedStorageSiloActions) GetActions;
-				public function HRESULT(IEnhancedStorageSilo *self, uint8 Command, uint8* pbCommandBuffer, uint32 cbCommandBuffer, uint8* pbResponseBuffer, uint32* pcbResponseBuffer) SendCommand;
-				public function HRESULT(IEnhancedStorageSilo *self, IPortableDevice** ppIPortableDevice) GetPortableDevice;
-				public function HRESULT(IEnhancedStorageSilo *self, PWSTR* ppwszSiloDevicePath) GetDevicePath;
+				public new function HRESULT(IEnhancedStorageSilo *self, SILO_INFO* pSiloInfo) GetInfo;
+				public new function HRESULT(IEnhancedStorageSilo *self, IEnhancedStorageSiloAction*** pppIEnhancedStorageSiloActions, uint32* pcEnhancedStorageSiloActions) GetActions;
+				public new function HRESULT(IEnhancedStorageSilo *self, uint8 Command, uint8* pbCommandBuffer, uint32 cbCommandBuffer, uint8* pbResponseBuffer, uint32* pcbResponseBuffer) SendCommand;
+				public new function HRESULT(IEnhancedStorageSilo *self, IPortableDevice** ppIPortableDevice) GetPortableDevice;
+				public new function HRESULT(IEnhancedStorageSilo *self, PWSTR* ppwszSiloDevicePath) GetDevicePath;
 			}
 		}
 		[CRepr]
@@ -353,13 +430,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb6f7f311, 0x206f, 0x4ff8, 0x9c, 0x4b, 0x27, 0xef, 0xee, 0x77, 0xa8, 0x6f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetName(PWSTR* ppwszActionName) mut
+			{
+				return VT.GetName(&this, ppwszActionName);
+			}
+			public HRESULT GetDescription(PWSTR* ppwszActionDescription) mut
+			{
+				return VT.GetDescription(&this, ppwszActionDescription);
+			}
+			public HRESULT Invoke() mut
+			{
+				return VT.Invoke(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnhancedStorageSiloAction *self, PWSTR* ppwszActionName) GetName;
-				public function HRESULT(IEnhancedStorageSiloAction *self, PWSTR* ppwszActionDescription) GetDescription;
-				public function HRESULT(IEnhancedStorageSiloAction *self) Invoke;
+				public new function HRESULT(IEnhancedStorageSiloAction *self, PWSTR* ppwszActionName) GetName;
+				public new function HRESULT(IEnhancedStorageSiloAction *self, PWSTR* ppwszActionDescription) GetDescription;
+				public new function HRESULT(IEnhancedStorageSiloAction *self) Invoke;
 			}
 		}
 		

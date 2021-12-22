@@ -103,13 +103,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5f6c1ba8, 0x5330, 0x422e, 0xa3, 0x68, 0x57, 0x2b, 0x24, 0x4d, 0x3f, 0x87);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnUpdate(QueryUpdateAction enumQueryUpdateAction, uint64 fdqcQueryContext, IFunctionInstance* pIFunctionInstance) mut
+			{
+				return VT.OnUpdate(&this, enumQueryUpdateAction, fdqcQueryContext, pIFunctionInstance);
+			}
+			public HRESULT OnError(HRESULT hr, uint64 fdqcQueryContext, PWSTR pszProvider) mut
+			{
+				return VT.OnError(&this, hr, fdqcQueryContext, pszProvider);
+			}
+			public HRESULT OnEvent(uint32 dwEventID, uint64 fdqcQueryContext, PWSTR pszProvider) mut
+			{
+				return VT.OnEvent(&this, dwEventID, fdqcQueryContext, pszProvider);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IFunctionDiscoveryNotification *self, QueryUpdateAction enumQueryUpdateAction, uint64 fdqcQueryContext, IFunctionInstance* pIFunctionInstance) OnUpdate;
-				public function HRESULT(IFunctionDiscoveryNotification *self, HRESULT hr, uint64 fdqcQueryContext, PWSTR pszProvider) OnError;
-				public function HRESULT(IFunctionDiscoveryNotification *self, uint32 dwEventID, uint64 fdqcQueryContext, PWSTR pszProvider) OnEvent;
+				public new function HRESULT(IFunctionDiscoveryNotification *self, QueryUpdateAction enumQueryUpdateAction, uint64 fdqcQueryContext, IFunctionInstance* pIFunctionInstance) OnUpdate;
+				public new function HRESULT(IFunctionDiscoveryNotification *self, HRESULT hr, uint64 fdqcQueryContext, PWSTR pszProvider) OnError;
+				public new function HRESULT(IFunctionDiscoveryNotification *self, uint32 dwEventID, uint64 fdqcQueryContext, PWSTR pszProvider) OnEvent;
 			}
 		}
 		[CRepr]
@@ -117,16 +130,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4df99b70, 0xe148, 0x4432, 0xb0, 0x04, 0x4c, 0x9e, 0xeb, 0x53, 0x5a, 0x5e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetInstanceCollection(PWSTR pszCategory, PWSTR pszSubCategory, BOOL fIncludeAllSubCategories, IFunctionInstanceCollection** ppIFunctionInstanceCollection) mut
+			{
+				return VT.GetInstanceCollection(&this, pszCategory, pszSubCategory, fIncludeAllSubCategories, ppIFunctionInstanceCollection);
+			}
+			public HRESULT GetInstance(PWSTR pszFunctionInstanceIdentity, IFunctionInstance** ppIFunctionInstance) mut
+			{
+				return VT.GetInstance(&this, pszFunctionInstanceIdentity, ppIFunctionInstance);
+			}
+			public HRESULT CreateInstanceCollectionQuery(PWSTR pszCategory, PWSTR pszSubCategory, BOOL fIncludeAllSubCategories, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification, uint64* pfdqcQueryContext, IFunctionInstanceCollectionQuery** ppIFunctionInstanceCollectionQuery) mut
+			{
+				return VT.CreateInstanceCollectionQuery(&this, pszCategory, pszSubCategory, fIncludeAllSubCategories, pIFunctionDiscoveryNotification, pfdqcQueryContext, ppIFunctionInstanceCollectionQuery);
+			}
+			public HRESULT CreateInstanceQuery(PWSTR pszFunctionInstanceIdentity, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification, uint64* pfdqcQueryContext, IFunctionInstanceQuery** ppIFunctionInstanceQuery) mut
+			{
+				return VT.CreateInstanceQuery(&this, pszFunctionInstanceIdentity, pIFunctionDiscoveryNotification, pfdqcQueryContext, ppIFunctionInstanceQuery);
+			}
+			public HRESULT AddInstance(SystemVisibilityFlags enumSystemVisibility, PWSTR pszCategory, PWSTR pszSubCategory, PWSTR pszCategoryIdentity, IFunctionInstance** ppIFunctionInstance) mut
+			{
+				return VT.AddInstance(&this, enumSystemVisibility, pszCategory, pszSubCategory, pszCategoryIdentity, ppIFunctionInstance);
+			}
+			public HRESULT RemoveInstance(SystemVisibilityFlags enumSystemVisibility, PWSTR pszCategory, PWSTR pszSubCategory, PWSTR pszCategoryIdentity) mut
+			{
+				return VT.RemoveInstance(&this, enumSystemVisibility, pszCategory, pszSubCategory, pszCategoryIdentity);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IFunctionDiscovery *self, PWSTR pszCategory, PWSTR pszSubCategory, BOOL fIncludeAllSubCategories, IFunctionInstanceCollection** ppIFunctionInstanceCollection) GetInstanceCollection;
-				public function HRESULT(IFunctionDiscovery *self, PWSTR pszFunctionInstanceIdentity, IFunctionInstance** ppIFunctionInstance) GetInstance;
-				public function HRESULT(IFunctionDiscovery *self, PWSTR pszCategory, PWSTR pszSubCategory, BOOL fIncludeAllSubCategories, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification, uint64* pfdqcQueryContext, IFunctionInstanceCollectionQuery** ppIFunctionInstanceCollectionQuery) CreateInstanceCollectionQuery;
-				public function HRESULT(IFunctionDiscovery *self, PWSTR pszFunctionInstanceIdentity, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification, uint64* pfdqcQueryContext, IFunctionInstanceQuery** ppIFunctionInstanceQuery) CreateInstanceQuery;
-				public function HRESULT(IFunctionDiscovery *self, SystemVisibilityFlags enumSystemVisibility, PWSTR pszCategory, PWSTR pszSubCategory, PWSTR pszCategoryIdentity, IFunctionInstance** ppIFunctionInstance) AddInstance;
-				public function HRESULT(IFunctionDiscovery *self, SystemVisibilityFlags enumSystemVisibility, PWSTR pszCategory, PWSTR pszSubCategory, PWSTR pszCategoryIdentity) RemoveInstance;
+				public new function HRESULT(IFunctionDiscovery *self, PWSTR pszCategory, PWSTR pszSubCategory, BOOL fIncludeAllSubCategories, IFunctionInstanceCollection** ppIFunctionInstanceCollection) GetInstanceCollection;
+				public new function HRESULT(IFunctionDiscovery *self, PWSTR pszFunctionInstanceIdentity, IFunctionInstance** ppIFunctionInstance) GetInstance;
+				public new function HRESULT(IFunctionDiscovery *self, PWSTR pszCategory, PWSTR pszSubCategory, BOOL fIncludeAllSubCategories, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification, uint64* pfdqcQueryContext, IFunctionInstanceCollectionQuery** ppIFunctionInstanceCollectionQuery) CreateInstanceCollectionQuery;
+				public new function HRESULT(IFunctionDiscovery *self, PWSTR pszFunctionInstanceIdentity, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification, uint64* pfdqcQueryContext, IFunctionInstanceQuery** ppIFunctionInstanceQuery) CreateInstanceQuery;
+				public new function HRESULT(IFunctionDiscovery *self, SystemVisibilityFlags enumSystemVisibility, PWSTR pszCategory, PWSTR pszSubCategory, PWSTR pszCategoryIdentity, IFunctionInstance** ppIFunctionInstance) AddInstance;
+				public new function HRESULT(IFunctionDiscovery *self, SystemVisibilityFlags enumSystemVisibility, PWSTR pszCategory, PWSTR pszSubCategory, PWSTR pszCategoryIdentity) RemoveInstance;
 			}
 		}
 		[CRepr]
@@ -134,14 +172,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x33591c10, 0x0bed, 0x4f02, 0xb0, 0xab, 0x15, 0x30, 0xd5, 0x53, 0x3e, 0xe9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetID(uint16** ppszCoMemIdentity) mut
+			{
+				return VT.GetID(&this, ppszCoMemIdentity);
+			}
+			public HRESULT GetProviderInstanceID(uint16** ppszCoMemProviderInstanceIdentity) mut
+			{
+				return VT.GetProviderInstanceID(&this, ppszCoMemProviderInstanceIdentity);
+			}
+			public HRESULT OpenPropertyStore(uint32 dwStgAccess, IPropertyStore** ppIPropertyStore) mut
+			{
+				return VT.OpenPropertyStore(&this, dwStgAccess, ppIPropertyStore);
+			}
+			public HRESULT GetCategory(uint16** ppszCoMemCategory, uint16** ppszCoMemSubCategory) mut
+			{
+				return VT.GetCategory(&this, ppszCoMemCategory, ppszCoMemSubCategory);
+			}
 			[CRepr]
 			public struct VTable : IServiceProvider.VTable
 			{
-				public function HRESULT(IFunctionInstance *self, uint16** ppszCoMemIdentity) GetID;
-				public function HRESULT(IFunctionInstance *self, uint16** ppszCoMemProviderInstanceIdentity) GetProviderInstanceID;
-				public function HRESULT(IFunctionInstance *self, uint32 dwStgAccess, IPropertyStore** ppIPropertyStore) OpenPropertyStore;
-				public function HRESULT(IFunctionInstance *self, uint16** ppszCoMemCategory, uint16** ppszCoMemSubCategory) GetCategory;
+				public new function HRESULT(IFunctionInstance *self, uint16** ppszCoMemIdentity) GetID;
+				public new function HRESULT(IFunctionInstance *self, uint16** ppszCoMemProviderInstanceIdentity) GetProviderInstanceID;
+				public new function HRESULT(IFunctionInstance *self, uint32 dwStgAccess, IPropertyStore** ppIPropertyStore) OpenPropertyStore;
+				public new function HRESULT(IFunctionInstance *self, uint16** ppszCoMemCategory, uint16** ppszCoMemSubCategory) GetCategory;
 			}
 		}
 		[CRepr]
@@ -149,17 +204,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf0a3d895, 0x855c, 0x42a2, 0x94, 0x8d, 0x2f, 0x97, 0xd4, 0x50, 0xec, 0xb1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCount(uint32* pdwCount) mut
+			{
+				return VT.GetCount(&this, pdwCount);
+			}
+			public HRESULT Get(PWSTR pszInstanceIdentity, uint32* pdwIndex, IFunctionInstance** ppIFunctionInstance) mut
+			{
+				return VT.Get(&this, pszInstanceIdentity, pdwIndex, ppIFunctionInstance);
+			}
+			public HRESULT Item(uint32 dwIndex, IFunctionInstance** ppIFunctionInstance) mut
+			{
+				return VT.Item(&this, dwIndex, ppIFunctionInstance);
+			}
+			public HRESULT Add(IFunctionInstance* pIFunctionInstance) mut
+			{
+				return VT.Add(&this, pIFunctionInstance);
+			}
+			public HRESULT Remove(uint32 dwIndex, IFunctionInstance** ppIFunctionInstance) mut
+			{
+				return VT.Remove(&this, dwIndex, ppIFunctionInstance);
+			}
+			public HRESULT Delete(uint32 dwIndex) mut
+			{
+				return VT.Delete(&this, dwIndex);
+			}
+			public HRESULT DeleteAll() mut
+			{
+				return VT.DeleteAll(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IFunctionInstanceCollection *self, uint32* pdwCount) GetCount;
-				public function HRESULT(IFunctionInstanceCollection *self, PWSTR pszInstanceIdentity, uint32* pdwIndex, IFunctionInstance** ppIFunctionInstance) Get;
-				public function HRESULT(IFunctionInstanceCollection *self, uint32 dwIndex, IFunctionInstance** ppIFunctionInstance) Item;
-				public function HRESULT(IFunctionInstanceCollection *self, IFunctionInstance* pIFunctionInstance) Add;
-				public function HRESULT(IFunctionInstanceCollection *self, uint32 dwIndex, IFunctionInstance** ppIFunctionInstance) Remove;
-				public function HRESULT(IFunctionInstanceCollection *self, uint32 dwIndex) Delete;
-				public function HRESULT(IFunctionInstanceCollection *self) DeleteAll;
+				public new function HRESULT(IFunctionInstanceCollection *self, uint32* pdwCount) GetCount;
+				public new function HRESULT(IFunctionInstanceCollection *self, PWSTR pszInstanceIdentity, uint32* pdwIndex, IFunctionInstance** ppIFunctionInstance) Get;
+				public new function HRESULT(IFunctionInstanceCollection *self, uint32 dwIndex, IFunctionInstance** ppIFunctionInstance) Item;
+				public new function HRESULT(IFunctionInstanceCollection *self, IFunctionInstance* pIFunctionInstance) Add;
+				public new function HRESULT(IFunctionInstanceCollection *self, uint32 dwIndex, IFunctionInstance** ppIFunctionInstance) Remove;
+				public new function HRESULT(IFunctionInstanceCollection *self, uint32 dwIndex) Delete;
+				public new function HRESULT(IFunctionInstanceCollection *self) DeleteAll;
 			}
 		}
 		[CRepr]
@@ -167,17 +251,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd14d9c30, 0x12d2, 0x42d8, 0xbc, 0xe4, 0xc6, 0x0c, 0x2b, 0xb2, 0x26, 0xfa);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCount(uint32* pdwCount) mut
+			{
+				return VT.GetCount(&this, pdwCount);
+			}
+			public HRESULT Get(PWSTR pszInstanceIdentity, uint32* pdwIndex, IPropertyStore** ppIPropertyStore) mut
+			{
+				return VT.Get(&this, pszInstanceIdentity, pdwIndex, ppIPropertyStore);
+			}
+			public HRESULT Item(uint32 dwIndex, IPropertyStore** ppIPropertyStore) mut
+			{
+				return VT.Item(&this, dwIndex, ppIPropertyStore);
+			}
+			public HRESULT Add(IPropertyStore* pIPropertyStore) mut
+			{
+				return VT.Add(&this, pIPropertyStore);
+			}
+			public HRESULT Remove(uint32 dwIndex, IPropertyStore** pIPropertyStore) mut
+			{
+				return VT.Remove(&this, dwIndex, pIPropertyStore);
+			}
+			public HRESULT Delete(uint32 dwIndex) mut
+			{
+				return VT.Delete(&this, dwIndex);
+			}
+			public HRESULT DeleteAll() mut
+			{
+				return VT.DeleteAll(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPropertyStoreCollection *self, uint32* pdwCount) GetCount;
-				public function HRESULT(IPropertyStoreCollection *self, PWSTR pszInstanceIdentity, uint32* pdwIndex, IPropertyStore** ppIPropertyStore) Get;
-				public function HRESULT(IPropertyStoreCollection *self, uint32 dwIndex, IPropertyStore** ppIPropertyStore) Item;
-				public function HRESULT(IPropertyStoreCollection *self, IPropertyStore* pIPropertyStore) Add;
-				public function HRESULT(IPropertyStoreCollection *self, uint32 dwIndex, IPropertyStore** pIPropertyStore) Remove;
-				public function HRESULT(IPropertyStoreCollection *self, uint32 dwIndex) Delete;
-				public function HRESULT(IPropertyStoreCollection *self) DeleteAll;
+				public new function HRESULT(IPropertyStoreCollection *self, uint32* pdwCount) GetCount;
+				public new function HRESULT(IPropertyStoreCollection *self, PWSTR pszInstanceIdentity, uint32* pdwIndex, IPropertyStore** ppIPropertyStore) Get;
+				public new function HRESULT(IPropertyStoreCollection *self, uint32 dwIndex, IPropertyStore** ppIPropertyStore) Item;
+				public new function HRESULT(IPropertyStoreCollection *self, IPropertyStore* pIPropertyStore) Add;
+				public new function HRESULT(IPropertyStoreCollection *self, uint32 dwIndex, IPropertyStore** pIPropertyStore) Remove;
+				public new function HRESULT(IPropertyStoreCollection *self, uint32 dwIndex) Delete;
+				public new function HRESULT(IPropertyStoreCollection *self) DeleteAll;
 			}
 		}
 		[CRepr]
@@ -185,11 +298,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6242bc6b, 0x90ec, 0x4b37, 0xbb, 0x46, 0xe2, 0x29, 0xfd, 0x84, 0xed, 0x95);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Execute(IFunctionInstance** ppIFunctionInstance) mut
+			{
+				return VT.Execute(&this, ppIFunctionInstance);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IFunctionInstanceQuery *self, IFunctionInstance** ppIFunctionInstance) Execute;
+				public new function HRESULT(IFunctionInstanceQuery *self, IFunctionInstance** ppIFunctionInstance) Execute;
 			}
 		}
 		[CRepr]
@@ -197,13 +315,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x57cc6fd2, 0xc09a, 0x4289, 0xbb, 0x72, 0x25, 0xf0, 0x41, 0x42, 0x05, 0x8e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddQueryConstraint(PWSTR pszConstraintName, PWSTR pszConstraintValue) mut
+			{
+				return VT.AddQueryConstraint(&this, pszConstraintName, pszConstraintValue);
+			}
+			public HRESULT AddPropertyConstraint(PROPERTYKEY* Key, PROPVARIANT* pv, PropertyConstraint enumPropertyConstraint) mut
+			{
+				return VT.AddPropertyConstraint(&this, Key, pv, enumPropertyConstraint);
+			}
+			public HRESULT Execute(IFunctionInstanceCollection** ppIFunctionInstanceCollection) mut
+			{
+				return VT.Execute(&this, ppIFunctionInstanceCollection);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IFunctionInstanceCollectionQuery *self, PWSTR pszConstraintName, PWSTR pszConstraintValue) AddQueryConstraint;
-				public function HRESULT(IFunctionInstanceCollectionQuery *self, PROPERTYKEY* Key, PROPVARIANT* pv, PropertyConstraint enumPropertyConstraint) AddPropertyConstraint;
-				public function HRESULT(IFunctionInstanceCollectionQuery *self, IFunctionInstanceCollection** ppIFunctionInstanceCollection) Execute;
+				public new function HRESULT(IFunctionInstanceCollectionQuery *self, PWSTR pszConstraintName, PWSTR pszConstraintValue) AddQueryConstraint;
+				public new function HRESULT(IFunctionInstanceCollectionQuery *self, PROPERTYKEY* Key, PROPVARIANT* pv, PropertyConstraint enumPropertyConstraint) AddPropertyConstraint;
+				public new function HRESULT(IFunctionInstanceCollectionQuery *self, IFunctionInstanceCollection** ppIFunctionInstanceCollection) Execute;
 			}
 		}
 		[CRepr]
@@ -211,18 +342,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdcde394f, 0x1478, 0x4813, 0xa4, 0x02, 0xf6, 0xfb, 0x10, 0x65, 0x72, 0x22);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(IFunctionDiscoveryProviderFactory* pIFunctionDiscoveryProviderFactory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification, uint32 lcidUserDefault, uint32* pdwStgAccessCapabilities) mut
+			{
+				return VT.Initialize(&this, pIFunctionDiscoveryProviderFactory, pIFunctionDiscoveryNotification, lcidUserDefault, pdwStgAccessCapabilities);
+			}
+			public HRESULT Query(IFunctionDiscoveryProviderQuery* pIFunctionDiscoveryProviderQuery, IFunctionInstanceCollection** ppIFunctionInstanceCollection) mut
+			{
+				return VT.Query(&this, pIFunctionDiscoveryProviderQuery, ppIFunctionInstanceCollection);
+			}
+			public HRESULT EndQuery() mut
+			{
+				return VT.EndQuery(&this);
+			}
+			public HRESULT InstancePropertyStoreValidateAccess(IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, uint32 dwStgAccess) mut
+			{
+				return VT.InstancePropertyStoreValidateAccess(&this, pIFunctionInstance, iProviderInstanceContext, dwStgAccess);
+			}
+			public HRESULT InstancePropertyStoreOpen(IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, uint32 dwStgAccess, IPropertyStore** ppIPropertyStore) mut
+			{
+				return VT.InstancePropertyStoreOpen(&this, pIFunctionInstance, iProviderInstanceContext, dwStgAccess, ppIPropertyStore);
+			}
+			public HRESULT InstancePropertyStoreFlush(IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext) mut
+			{
+				return VT.InstancePropertyStoreFlush(&this, pIFunctionInstance, iProviderInstanceContext);
+			}
+			public HRESULT InstanceQueryService(IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, Guid* guidService, Guid* riid, IUnknown** ppIUnknown) mut
+			{
+				return VT.InstanceQueryService(&this, pIFunctionInstance, iProviderInstanceContext, guidService, riid, ppIUnknown);
+			}
+			public HRESULT InstanceReleased(IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext) mut
+			{
+				return VT.InstanceReleased(&this, pIFunctionInstance, iProviderInstanceContext);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IFunctionDiscoveryProvider *self, IFunctionDiscoveryProviderFactory* pIFunctionDiscoveryProviderFactory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification, uint32 lcidUserDefault, uint32* pdwStgAccessCapabilities) Initialize;
-				public function HRESULT(IFunctionDiscoveryProvider *self, IFunctionDiscoveryProviderQuery* pIFunctionDiscoveryProviderQuery, IFunctionInstanceCollection** ppIFunctionInstanceCollection) Query;
-				public function HRESULT(IFunctionDiscoveryProvider *self) EndQuery;
-				public function HRESULT(IFunctionDiscoveryProvider *self, IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, uint32 dwStgAccess) InstancePropertyStoreValidateAccess;
-				public function HRESULT(IFunctionDiscoveryProvider *self, IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, uint32 dwStgAccess, IPropertyStore** ppIPropertyStore) InstancePropertyStoreOpen;
-				public function HRESULT(IFunctionDiscoveryProvider *self, IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext) InstancePropertyStoreFlush;
-				public function HRESULT(IFunctionDiscoveryProvider *self, IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, Guid* guidService, Guid* riid, IUnknown** ppIUnknown) InstanceQueryService;
-				public function HRESULT(IFunctionDiscoveryProvider *self, IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext) InstanceReleased;
+				public new function HRESULT(IFunctionDiscoveryProvider *self, IFunctionDiscoveryProviderFactory* pIFunctionDiscoveryProviderFactory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification, uint32 lcidUserDefault, uint32* pdwStgAccessCapabilities) Initialize;
+				public new function HRESULT(IFunctionDiscoveryProvider *self, IFunctionDiscoveryProviderQuery* pIFunctionDiscoveryProviderQuery, IFunctionInstanceCollection** ppIFunctionInstanceCollection) Query;
+				public new function HRESULT(IFunctionDiscoveryProvider *self) EndQuery;
+				public new function HRESULT(IFunctionDiscoveryProvider *self, IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, uint32 dwStgAccess) InstancePropertyStoreValidateAccess;
+				public new function HRESULT(IFunctionDiscoveryProvider *self, IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, uint32 dwStgAccess, IPropertyStore** ppIPropertyStore) InstancePropertyStoreOpen;
+				public new function HRESULT(IFunctionDiscoveryProvider *self, IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext) InstancePropertyStoreFlush;
+				public new function HRESULT(IFunctionDiscoveryProvider *self, IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, Guid* guidService, Guid* riid, IUnknown** ppIUnknown) InstanceQueryService;
+				public new function HRESULT(IFunctionDiscoveryProvider *self, IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext) InstanceReleased;
 			}
 		}
 		[CRepr]
@@ -230,14 +394,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xcf986ea6, 0x3b5f, 0x4c5f, 0xb8, 0x8a, 0x2f, 0x8b, 0x20, 0xce, 0xef, 0x17);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCount(IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, uint32* pdwCount) mut
+			{
+				return VT.GetCount(&this, pIFunctionInstance, iProviderInstanceContext, pdwCount);
+			}
+			public HRESULT GetAt(IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, uint32 dwIndex, PROPERTYKEY* pKey) mut
+			{
+				return VT.GetAt(&this, pIFunctionInstance, iProviderInstanceContext, dwIndex, pKey);
+			}
+			public HRESULT GetValue(IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, PROPERTYKEY* Key, PROPVARIANT* ppropVar) mut
+			{
+				return VT.GetValue(&this, pIFunctionInstance, iProviderInstanceContext, Key, ppropVar);
+			}
+			public HRESULT SetValue(IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, PROPERTYKEY* Key, PROPVARIANT* ppropVar) mut
+			{
+				return VT.SetValue(&this, pIFunctionInstance, iProviderInstanceContext, Key, ppropVar);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IProviderProperties *self, IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, uint32* pdwCount) GetCount;
-				public function HRESULT(IProviderProperties *self, IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, uint32 dwIndex, PROPERTYKEY* pKey) GetAt;
-				public function HRESULT(IProviderProperties *self, IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, PROPERTYKEY* Key, PROPVARIANT* ppropVar) GetValue;
-				public function HRESULT(IProviderProperties *self, IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, PROPERTYKEY* Key, PROPVARIANT* ppropVar) SetValue;
+				public new function HRESULT(IProviderProperties *self, IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, uint32* pdwCount) GetCount;
+				public new function HRESULT(IProviderProperties *self, IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, uint32 dwIndex, PROPERTYKEY* pKey) GetAt;
+				public new function HRESULT(IProviderProperties *self, IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, PROPERTYKEY* Key, PROPVARIANT* ppropVar) GetValue;
+				public new function HRESULT(IProviderProperties *self, IFunctionInstance* pIFunctionInstance, int iProviderInstanceContext, PROPERTYKEY* Key, PROPVARIANT* ppropVar) SetValue;
 			}
 		}
 		[CRepr]
@@ -245,12 +426,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xcd1b9a04, 0x206c, 0x4a05, 0xa0, 0xc8, 0x16, 0x35, 0xa2, 0x1a, 0x2b, 0x7c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateInstance(SystemVisibilityFlags enumVisibilityFlags, PWSTR pszSubCategory, PWSTR pszProviderInstanceIdentity, IFunctionInstance** ppIFunctionInstance) mut
+			{
+				return VT.CreateInstance(&this, enumVisibilityFlags, pszSubCategory, pszProviderInstanceIdentity, ppIFunctionInstance);
+			}
+			public HRESULT RemoveInstance(SystemVisibilityFlags enumVisibilityFlags, PWSTR pszSubCategory, PWSTR pszProviderInstanceIdentity) mut
+			{
+				return VT.RemoveInstance(&this, enumVisibilityFlags, pszSubCategory, pszProviderInstanceIdentity);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IProviderPublishing *self, SystemVisibilityFlags enumVisibilityFlags, PWSTR pszSubCategory, PWSTR pszProviderInstanceIdentity, IFunctionInstance** ppIFunctionInstance) CreateInstance;
-				public function HRESULT(IProviderPublishing *self, SystemVisibilityFlags enumVisibilityFlags, PWSTR pszSubCategory, PWSTR pszProviderInstanceIdentity) RemoveInstance;
+				public new function HRESULT(IProviderPublishing *self, SystemVisibilityFlags enumVisibilityFlags, PWSTR pszSubCategory, PWSTR pszProviderInstanceIdentity, IFunctionInstance** ppIFunctionInstance) CreateInstance;
+				public new function HRESULT(IProviderPublishing *self, SystemVisibilityFlags enumVisibilityFlags, PWSTR pszSubCategory, PWSTR pszProviderInstanceIdentity) RemoveInstance;
 			}
 		}
 		[CRepr]
@@ -258,13 +448,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x86443ff0, 0x1ad5, 0x4e68, 0xa4, 0x5a, 0x40, 0xc2, 0xc3, 0x29, 0xde, 0x3b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreatePropertyStore(IPropertyStore** ppIPropertyStore) mut
+			{
+				return VT.CreatePropertyStore(&this, ppIPropertyStore);
+			}
+			public HRESULT CreateInstance(PWSTR pszSubCategory, PWSTR pszProviderInstanceIdentity, int iProviderInstanceContext, IPropertyStore* pIPropertyStore, IFunctionDiscoveryProvider* pIFunctionDiscoveryProvider, IFunctionInstance** ppIFunctionInstance) mut
+			{
+				return VT.CreateInstance(&this, pszSubCategory, pszProviderInstanceIdentity, iProviderInstanceContext, pIPropertyStore, pIFunctionDiscoveryProvider, ppIFunctionInstance);
+			}
+			public HRESULT CreateFunctionInstanceCollection(IFunctionInstanceCollection** ppIFunctionInstanceCollection) mut
+			{
+				return VT.CreateFunctionInstanceCollection(&this, ppIFunctionInstanceCollection);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IFunctionDiscoveryProviderFactory *self, IPropertyStore** ppIPropertyStore) CreatePropertyStore;
-				public function HRESULT(IFunctionDiscoveryProviderFactory *self, PWSTR pszSubCategory, PWSTR pszProviderInstanceIdentity, int iProviderInstanceContext, IPropertyStore* pIPropertyStore, IFunctionDiscoveryProvider* pIFunctionDiscoveryProvider, IFunctionInstance** ppIFunctionInstance) CreateInstance;
-				public function HRESULT(IFunctionDiscoveryProviderFactory *self, IFunctionInstanceCollection** ppIFunctionInstanceCollection) CreateFunctionInstanceCollection;
+				public new function HRESULT(IFunctionDiscoveryProviderFactory *self, IPropertyStore** ppIPropertyStore) CreatePropertyStore;
+				public new function HRESULT(IFunctionDiscoveryProviderFactory *self, PWSTR pszSubCategory, PWSTR pszProviderInstanceIdentity, int iProviderInstanceContext, IPropertyStore* pIPropertyStore, IFunctionDiscoveryProvider* pIFunctionDiscoveryProvider, IFunctionInstance** ppIFunctionInstance) CreateInstance;
+				public new function HRESULT(IFunctionDiscoveryProviderFactory *self, IFunctionInstanceCollection** ppIFunctionInstanceCollection) CreateFunctionInstanceCollection;
 			}
 		}
 		[CRepr]
@@ -272,14 +475,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6876ea98, 0xbaec, 0x46db, 0xbc, 0x20, 0x75, 0xa7, 0x6e, 0x26, 0x7a, 0x3a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT IsInstanceQuery(BOOL* pisInstanceQuery, uint16** ppszConstraintValue) mut
+			{
+				return VT.IsInstanceQuery(&this, pisInstanceQuery, ppszConstraintValue);
+			}
+			public HRESULT IsSubcategoryQuery(BOOL* pisSubcategoryQuery, uint16** ppszConstraintValue) mut
+			{
+				return VT.IsSubcategoryQuery(&this, pisSubcategoryQuery, ppszConstraintValue);
+			}
+			public HRESULT GetQueryConstraints(IProviderQueryConstraintCollection** ppIProviderQueryConstraints) mut
+			{
+				return VT.GetQueryConstraints(&this, ppIProviderQueryConstraints);
+			}
+			public HRESULT GetPropertyConstraints(IProviderPropertyConstraintCollection** ppIProviderPropertyConstraints) mut
+			{
+				return VT.GetPropertyConstraints(&this, ppIProviderPropertyConstraints);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IFunctionDiscoveryProviderQuery *self, BOOL* pisInstanceQuery, uint16** ppszConstraintValue) IsInstanceQuery;
-				public function HRESULT(IFunctionDiscoveryProviderQuery *self, BOOL* pisSubcategoryQuery, uint16** ppszConstraintValue) IsSubcategoryQuery;
-				public function HRESULT(IFunctionDiscoveryProviderQuery *self, IProviderQueryConstraintCollection** ppIProviderQueryConstraints) GetQueryConstraints;
-				public function HRESULT(IFunctionDiscoveryProviderQuery *self, IProviderPropertyConstraintCollection** ppIProviderPropertyConstraints) GetPropertyConstraints;
+				public new function HRESULT(IFunctionDiscoveryProviderQuery *self, BOOL* pisInstanceQuery, uint16** ppszConstraintValue) IsInstanceQuery;
+				public new function HRESULT(IFunctionDiscoveryProviderQuery *self, BOOL* pisSubcategoryQuery, uint16** ppszConstraintValue) IsSubcategoryQuery;
+				public new function HRESULT(IFunctionDiscoveryProviderQuery *self, IProviderQueryConstraintCollection** ppIProviderQueryConstraints) GetQueryConstraints;
+				public new function HRESULT(IFunctionDiscoveryProviderQuery *self, IProviderPropertyConstraintCollection** ppIProviderPropertyConstraints) GetPropertyConstraints;
 			}
 		}
 		[CRepr]
@@ -287,16 +507,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9c243e11, 0x3261, 0x4bcd, 0xb9, 0x22, 0x84, 0xa8, 0x73, 0xd4, 0x60, 0xae);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCount(uint32* pdwCount) mut
+			{
+				return VT.GetCount(&this, pdwCount);
+			}
+			public HRESULT Get(PWSTR pszConstraintName, uint16** ppszConstraintValue) mut
+			{
+				return VT.Get(&this, pszConstraintName, ppszConstraintValue);
+			}
+			public HRESULT Item(uint32 dwIndex, uint16** ppszConstraintName, uint16** ppszConstraintValue) mut
+			{
+				return VT.Item(&this, dwIndex, ppszConstraintName, ppszConstraintValue);
+			}
+			public HRESULT Next(uint16** ppszConstraintName, uint16** ppszConstraintValue) mut
+			{
+				return VT.Next(&this, ppszConstraintName, ppszConstraintValue);
+			}
+			public HRESULT Skip() mut
+			{
+				return VT.Skip(&this);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IProviderQueryConstraintCollection *self, uint32* pdwCount) GetCount;
-				public function HRESULT(IProviderQueryConstraintCollection *self, PWSTR pszConstraintName, uint16** ppszConstraintValue) Get;
-				public function HRESULT(IProviderQueryConstraintCollection *self, uint32 dwIndex, uint16** ppszConstraintName, uint16** ppszConstraintValue) Item;
-				public function HRESULT(IProviderQueryConstraintCollection *self, uint16** ppszConstraintName, uint16** ppszConstraintValue) Next;
-				public function HRESULT(IProviderQueryConstraintCollection *self) Skip;
-				public function HRESULT(IProviderQueryConstraintCollection *self) Reset;
+				public new function HRESULT(IProviderQueryConstraintCollection *self, uint32* pdwCount) GetCount;
+				public new function HRESULT(IProviderQueryConstraintCollection *self, PWSTR pszConstraintName, uint16** ppszConstraintValue) Get;
+				public new function HRESULT(IProviderQueryConstraintCollection *self, uint32 dwIndex, uint16** ppszConstraintName, uint16** ppszConstraintValue) Item;
+				public new function HRESULT(IProviderQueryConstraintCollection *self, uint16** ppszConstraintName, uint16** ppszConstraintValue) Next;
+				public new function HRESULT(IProviderQueryConstraintCollection *self) Skip;
+				public new function HRESULT(IProviderQueryConstraintCollection *self) Reset;
 			}
 		}
 		[CRepr]
@@ -304,16 +549,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf4fae42f, 0x5778, 0x4a13, 0x85, 0x40, 0xb5, 0xfd, 0x8c, 0x13, 0x98, 0xdd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCount(uint32* pdwCount) mut
+			{
+				return VT.GetCount(&this, pdwCount);
+			}
+			public HRESULT Get(PROPERTYKEY* Key, PROPVARIANT* pPropVar, uint32* pdwPropertyConstraint) mut
+			{
+				return VT.Get(&this, Key, pPropVar, pdwPropertyConstraint);
+			}
+			public HRESULT Item(uint32 dwIndex, PROPERTYKEY* pKey, PROPVARIANT* pPropVar, uint32* pdwPropertyConstraint) mut
+			{
+				return VT.Item(&this, dwIndex, pKey, pPropVar, pdwPropertyConstraint);
+			}
+			public HRESULT Next(PROPERTYKEY* pKey, PROPVARIANT* pPropVar, uint32* pdwPropertyConstraint) mut
+			{
+				return VT.Next(&this, pKey, pPropVar, pdwPropertyConstraint);
+			}
+			public HRESULT Skip() mut
+			{
+				return VT.Skip(&this);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IProviderPropertyConstraintCollection *self, uint32* pdwCount) GetCount;
-				public function HRESULT(IProviderPropertyConstraintCollection *self, PROPERTYKEY* Key, PROPVARIANT* pPropVar, uint32* pdwPropertyConstraint) Get;
-				public function HRESULT(IProviderPropertyConstraintCollection *self, uint32 dwIndex, PROPERTYKEY* pKey, PROPVARIANT* pPropVar, uint32* pdwPropertyConstraint) Item;
-				public function HRESULT(IProviderPropertyConstraintCollection *self, PROPERTYKEY* pKey, PROPVARIANT* pPropVar, uint32* pdwPropertyConstraint) Next;
-				public function HRESULT(IProviderPropertyConstraintCollection *self) Skip;
-				public function HRESULT(IProviderPropertyConstraintCollection *self) Reset;
+				public new function HRESULT(IProviderPropertyConstraintCollection *self, uint32* pdwCount) GetCount;
+				public new function HRESULT(IProviderPropertyConstraintCollection *self, PROPERTYKEY* Key, PROPVARIANT* pPropVar, uint32* pdwPropertyConstraint) Get;
+				public new function HRESULT(IProviderPropertyConstraintCollection *self, uint32 dwIndex, PROPERTYKEY* pKey, PROPVARIANT* pPropVar, uint32* pdwPropertyConstraint) Item;
+				public new function HRESULT(IProviderPropertyConstraintCollection *self, PROPERTYKEY* pKey, PROPVARIANT* pPropVar, uint32* pdwPropertyConstraint) Next;
+				public new function HRESULT(IProviderPropertyConstraintCollection *self) Skip;
+				public new function HRESULT(IProviderPropertyConstraintCollection *self) Reset;
 			}
 		}
 		[CRepr]
@@ -321,11 +591,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4c81ed02, 0x1b04, 0x43f2, 0xa4, 0x51, 0x69, 0x96, 0x6c, 0xbc, 0xd1, 0xc2);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(IFunctionInstance* pIFunctionInstance, Guid* riid, void** ppv) mut
+			{
+				return VT.Initialize(&this, pIFunctionInstance, riid, ppv);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IFunctionDiscoveryServiceProvider *self, IFunctionInstance* pIFunctionInstance, Guid* riid, void** ppv) Initialize;
+				public new function HRESULT(IFunctionDiscoveryServiceProvider *self, IFunctionInstance* pIFunctionInstance, Guid* riid, void** ppv) Initialize;
 			}
 		}
 		[CRepr]
@@ -333,13 +608,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0bd7e521, 0x4da6, 0x42d5, 0x81, 0xba, 0x19, 0x81, 0xb6, 0xb9, 0x40, 0x75);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Associate(PWSTR pszSubcategory) mut
+			{
+				return VT.Associate(&this, pszSubcategory);
+			}
+			public HRESULT Unassociate(PWSTR pszSubcategory) mut
+			{
+				return VT.Unassociate(&this, pszSubcategory);
+			}
+			public HRESULT Delete(PWSTR pszSubcategory) mut
+			{
+				return VT.Delete(&this, pszSubcategory);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPNPXAssociation *self, PWSTR pszSubcategory) Associate;
-				public function HRESULT(IPNPXAssociation *self, PWSTR pszSubcategory) Unassociate;
-				public function HRESULT(IPNPXAssociation *self, PWSTR pszSubcategory) Delete;
+				public new function HRESULT(IPNPXAssociation *self, PWSTR pszSubcategory) Associate;
+				public new function HRESULT(IPNPXAssociation *self, PWSTR pszSubcategory) Unassociate;
+				public new function HRESULT(IPNPXAssociation *self, PWSTR pszSubcategory) Delete;
 			}
 		}
 		[CRepr]
@@ -347,13 +635,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xeed366d0, 0x35b8, 0x4fc5, 0x8d, 0x20, 0x7e, 0x5b, 0xd3, 0x1f, 0x6d, 0xed);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Associate(PWSTR pszSubCategory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification) mut
+			{
+				return VT.Associate(&this, pszSubCategory, pIFunctionDiscoveryNotification);
+			}
+			public HRESULT Unassociate(PWSTR pszSubCategory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification) mut
+			{
+				return VT.Unassociate(&this, pszSubCategory, pIFunctionDiscoveryNotification);
+			}
+			public HRESULT Delete(PWSTR pszSubcategory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification) mut
+			{
+				return VT.Delete(&this, pszSubcategory, pIFunctionDiscoveryNotification);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPNPXDeviceAssociation *self, PWSTR pszSubCategory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification) Associate;
-				public function HRESULT(IPNPXDeviceAssociation *self, PWSTR pszSubCategory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification) Unassociate;
-				public function HRESULT(IPNPXDeviceAssociation *self, PWSTR pszSubcategory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification) Delete;
+				public new function HRESULT(IPNPXDeviceAssociation *self, PWSTR pszSubCategory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification) Associate;
+				public new function HRESULT(IPNPXDeviceAssociation *self, PWSTR pszSubCategory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification) Unassociate;
+				public new function HRESULT(IPNPXDeviceAssociation *self, PWSTR pszSubcategory, IFunctionDiscoveryNotification* pIFunctionDiscoveryNotification) Delete;
 			}
 		}
 		

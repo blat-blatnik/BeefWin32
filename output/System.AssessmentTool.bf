@@ -58,13 +58,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0cd1c380, 0x52d3, 0x4678, 0xac, 0x6f, 0xe9, 0x29, 0xe4, 0x80, 0xbe, 0x9e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Score(float* score) mut
+			{
+				return VT.get_Score(&this, score);
+			}
+			public HRESULT get_Title(BSTR* title) mut
+			{
+				return VT.get_Title(&this, title);
+			}
+			public HRESULT get_Description(BSTR* description) mut
+			{
+				return VT.get_Description(&this, description);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IProvideWinSATAssessmentInfo *self, float* score) get_Score;
-				public function HRESULT(IProvideWinSATAssessmentInfo *self, BSTR* title) get_Title;
-				public function HRESULT(IProvideWinSATAssessmentInfo *self, BSTR* description) get_Description;
+				public new function HRESULT(IProvideWinSATAssessmentInfo *self, float* score) get_Score;
+				public new function HRESULT(IProvideWinSATAssessmentInfo *self, BSTR* title) get_Title;
+				public new function HRESULT(IProvideWinSATAssessmentInfo *self, BSTR* description) get_Description;
 			}
 		}
 		[CRepr]
@@ -72,15 +85,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf8334d5d, 0x568e, 0x4075, 0x87, 0x5f, 0x9d, 0xf3, 0x41, 0x50, 0x66, 0x40);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetAssessmentInfo(WINSAT_ASSESSMENT_TYPE assessment, IProvideWinSATAssessmentInfo** ppinfo) mut
+			{
+				return VT.GetAssessmentInfo(&this, assessment, ppinfo);
+			}
+			public HRESULT get_AssessmentState(WINSAT_ASSESSMENT_STATE* state) mut
+			{
+				return VT.get_AssessmentState(&this, state);
+			}
+			public HRESULT get_AssessmentDateTime(VARIANT* fileTime) mut
+			{
+				return VT.get_AssessmentDateTime(&this, fileTime);
+			}
+			public HRESULT get_SystemRating(float* level) mut
+			{
+				return VT.get_SystemRating(&this, level);
+			}
+			public HRESULT get_RatingStateDesc(BSTR* description) mut
+			{
+				return VT.get_RatingStateDesc(&this, description);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IProvideWinSATResultsInfo *self, WINSAT_ASSESSMENT_TYPE assessment, IProvideWinSATAssessmentInfo** ppinfo) GetAssessmentInfo;
-				public function HRESULT(IProvideWinSATResultsInfo *self, WINSAT_ASSESSMENT_STATE* state) get_AssessmentState;
-				public function HRESULT(IProvideWinSATResultsInfo *self, VARIANT* fileTime) get_AssessmentDateTime;
-				public function HRESULT(IProvideWinSATResultsInfo *self, float* level) get_SystemRating;
-				public function HRESULT(IProvideWinSATResultsInfo *self, BSTR* description) get_RatingStateDesc;
+				public new function HRESULT(IProvideWinSATResultsInfo *self, WINSAT_ASSESSMENT_TYPE assessment, IProvideWinSATAssessmentInfo** ppinfo) GetAssessmentInfo;
+				public new function HRESULT(IProvideWinSATResultsInfo *self, WINSAT_ASSESSMENT_STATE* state) get_AssessmentState;
+				public new function HRESULT(IProvideWinSATResultsInfo *self, VARIANT* fileTime) get_AssessmentDateTime;
+				public new function HRESULT(IProvideWinSATResultsInfo *self, float* level) get_SystemRating;
+				public new function HRESULT(IProvideWinSATResultsInfo *self, BSTR* description) get_RatingStateDesc;
 			}
 		}
 		[CRepr]
@@ -88,12 +122,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf8ad5d1f, 0x3b47, 0x4bdc, 0x93, 0x75, 0x7c, 0x6b, 0x1d, 0xa4, 0xec, 0xa7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_XML(BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) mut
+			{
+				return VT.get_XML(&this, xPath, namespaces, ppDomNodeList);
+			}
+			public HRESULT get_Info(IProvideWinSATResultsInfo** ppWinSATAssessmentInfo) mut
+			{
+				return VT.get_Info(&this, ppWinSATAssessmentInfo);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IQueryRecentWinSATAssessment *self, BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) get_XML;
-				public function HRESULT(IQueryRecentWinSATAssessment *self, IProvideWinSATResultsInfo** ppWinSATAssessmentInfo) get_Info;
+				public new function HRESULT(IQueryRecentWinSATAssessment *self, BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) get_XML;
+				public new function HRESULT(IQueryRecentWinSATAssessment *self, IProvideWinSATResultsInfo** ppWinSATAssessmentInfo) get_Info;
 			}
 		}
 		[CRepr]
@@ -101,11 +144,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa9f4ade0, 0x871a, 0x42a3, 0xb8, 0x13, 0x30, 0x78, 0xd2, 0x51, 0x62, 0xc9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Bitmap(WINSAT_BITMAP_SIZE bitmapSize, WINSAT_ASSESSMENT_STATE state, float rating, HBITMAP* pBitmap) mut
+			{
+				return VT.get_Bitmap(&this, bitmapSize, state, rating, pBitmap);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IProvideWinSATVisuals *self, WINSAT_BITMAP_SIZE bitmapSize, WINSAT_ASSESSMENT_STATE state, float rating, HBITMAP* pBitmap) get_Bitmap;
+				public new function HRESULT(IProvideWinSATVisuals *self, WINSAT_BITMAP_SIZE bitmapSize, WINSAT_ASSESSMENT_STATE state, float rating, HBITMAP* pBitmap) get_Bitmap;
 			}
 		}
 		[CRepr]
@@ -113,11 +161,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0b89ed1d, 0x6398, 0x4fea, 0x87, 0xfc, 0x56, 0x7d, 0x8d, 0x19, 0x17, 0x6f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_AllXML(BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) mut
+			{
+				return VT.get_AllXML(&this, xPath, namespaces, ppDomNodeList);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IQueryAllWinSATAssessments *self, BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) get_AllXML;
+				public new function HRESULT(IQueryAllWinSATAssessments *self, BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) get_AllXML;
 			}
 		}
 		[CRepr]
@@ -125,12 +178,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x262a1918, 0xba0d, 0x41d5, 0x92, 0xc2, 0xfa, 0xb4, 0x63, 0x3e, 0xe7, 0x4f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT WinSATComplete(HRESULT hresult, PWSTR strDescription) mut
+			{
+				return VT.WinSATComplete(&this, hresult, strDescription);
+			}
+			public HRESULT WinSATUpdate(uint32 uCurrentTick, uint32 uTickTotal, PWSTR strCurrentState) mut
+			{
+				return VT.WinSATUpdate(&this, uCurrentTick, uTickTotal, strCurrentState);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWinSATInitiateEvents *self, HRESULT hresult, PWSTR strDescription) WinSATComplete;
-				public function HRESULT(IWinSATInitiateEvents *self, uint32 uCurrentTick, uint32 uTickTotal, PWSTR strCurrentState) WinSATUpdate;
+				public new function HRESULT(IWinSATInitiateEvents *self, HRESULT hresult, PWSTR strDescription) WinSATComplete;
+				public new function HRESULT(IWinSATInitiateEvents *self, uint32 uCurrentTick, uint32 uTickTotal, PWSTR strCurrentState) WinSATUpdate;
 			}
 		}
 		[CRepr]
@@ -138,13 +200,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd983fc50, 0xf5bf, 0x49d5, 0xb5, 0xed, 0xcc, 0xcb, 0x18, 0xaa, 0x7f, 0xc1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT InitiateAssessment(PWSTR cmdLine, IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) mut
+			{
+				return VT.InitiateAssessment(&this, cmdLine, pCallbacks, callerHwnd);
+			}
+			public HRESULT InitiateFormalAssessment(IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) mut
+			{
+				return VT.InitiateFormalAssessment(&this, pCallbacks, callerHwnd);
+			}
+			public HRESULT CancelAssessment() mut
+			{
+				return VT.CancelAssessment(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IInitiateWinSATAssessment *self, PWSTR cmdLine, IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) InitiateAssessment;
-				public function HRESULT(IInitiateWinSATAssessment *self, IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) InitiateFormalAssessment;
-				public function HRESULT(IInitiateWinSATAssessment *self) CancelAssessment;
+				public new function HRESULT(IInitiateWinSATAssessment *self, PWSTR cmdLine, IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) InitiateAssessment;
+				public new function HRESULT(IInitiateWinSATAssessment *self, IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) InitiateFormalAssessment;
+				public new function HRESULT(IInitiateWinSATAssessment *self) CancelAssessment;
 			}
 		}
 		[CRepr]
@@ -152,11 +227,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x30e6018a, 0x94a8, 0x4ff8, 0xa6, 0x9a, 0x71, 0xb6, 0x74, 0x13, 0xf0, 0x7b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetAccessiblityData(PWSTR wsName, PWSTR wsValue, PWSTR wsDesc) mut
+			{
+				return VT.SetAccessiblityData(&this, wsName, wsValue, wsDesc);
+			}
 			[CRepr]
 			public struct VTable : IAccessible.VTable
 			{
-				public function HRESULT(IAccessibleWinSAT *self, PWSTR wsName, PWSTR wsValue, PWSTR wsDesc) SetAccessiblityData;
+				public new function HRESULT(IAccessibleWinSAT *self, PWSTR wsName, PWSTR wsValue, PWSTR wsDesc) SetAccessiblityData;
 			}
 		}
 		[CRepr]
@@ -164,11 +244,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbc9a6a9f, 0xad4e, 0x420e, 0x99, 0x53, 0xb3, 0x46, 0x71, 0xe9, 0xdf, 0x22);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetOEMPrePopulationInfo(WINSAT_OEM_DATA_TYPE* state) mut
+			{
+				return VT.GetOEMPrePopulationInfo(&this, state);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IQueryOEMWinSATCustomization *self, WINSAT_OEM_DATA_TYPE* state) GetOEMPrePopulationInfo;
+				public new function HRESULT(IQueryOEMWinSATCustomization *self, WINSAT_OEM_DATA_TYPE* state) GetOEMPrePopulationInfo;
 			}
 		}
 		

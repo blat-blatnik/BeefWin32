@@ -489,14 +489,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0000000d, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 celt, STATSTG* rgelt, uint32* pceltFetched) mut
+			{
+				return VT.Next(&this, celt, rgelt, pceltFetched);
+			}
+			public HRESULT Skip(uint32 celt) mut
+			{
+				return VT.Skip(&this, celt);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumSTATSTG** ppenum) mut
+			{
+				return VT.Clone(&this, ppenum);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumSTATSTG *self, uint32 celt, STATSTG* rgelt, uint32* pceltFetched) Next;
-				public function HRESULT(IEnumSTATSTG *self, uint32 celt) Skip;
-				public function HRESULT(IEnumSTATSTG *self) Reset;
-				public function HRESULT(IEnumSTATSTG *self, IEnumSTATSTG** ppenum) Clone;
+				public new function HRESULT(IEnumSTATSTG *self, uint32 celt, STATSTG* rgelt, uint32* pceltFetched) Next;
+				public new function HRESULT(IEnumSTATSTG *self, uint32 celt) Skip;
+				public new function HRESULT(IEnumSTATSTG *self) Reset;
+				public new function HRESULT(IEnumSTATSTG *self, IEnumSTATSTG** ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -504,25 +521,86 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0000000b, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateStream(PWSTR pwcsName, uint32 grfMode, uint32 reserved1, uint32 reserved2, IStream** ppstm) mut
+			{
+				return VT.CreateStream(&this, pwcsName, grfMode, reserved1, reserved2, ppstm);
+			}
+			public HRESULT OpenStream(PWSTR pwcsName, void* reserved1, uint32 grfMode, uint32 reserved2, IStream** ppstm) mut
+			{
+				return VT.OpenStream(&this, pwcsName, reserved1, grfMode, reserved2, ppstm);
+			}
+			public HRESULT CreateStorage(PWSTR pwcsName, uint32 grfMode, uint32 reserved1, uint32 reserved2, IStorage** ppstg) mut
+			{
+				return VT.CreateStorage(&this, pwcsName, grfMode, reserved1, reserved2, ppstg);
+			}
+			public HRESULT OpenStorage(PWSTR pwcsName, IStorage* pstgPriority, uint32 grfMode, uint16** snbExclude, uint32 reserved, IStorage** ppstg) mut
+			{
+				return VT.OpenStorage(&this, pwcsName, pstgPriority, grfMode, snbExclude, reserved, ppstg);
+			}
+			public HRESULT CopyTo(uint32 ciidExclude, Guid* rgiidExclude, uint16** snbExclude, IStorage* pstgDest) mut
+			{
+				return VT.CopyTo(&this, ciidExclude, rgiidExclude, snbExclude, pstgDest);
+			}
+			public HRESULT MoveElementTo(PWSTR pwcsName, IStorage* pstgDest, PWSTR pwcsNewName, uint32 grfFlags) mut
+			{
+				return VT.MoveElementTo(&this, pwcsName, pstgDest, pwcsNewName, grfFlags);
+			}
+			public HRESULT Commit(uint32 grfCommitFlags) mut
+			{
+				return VT.Commit(&this, grfCommitFlags);
+			}
+			public HRESULT Revert() mut
+			{
+				return VT.Revert(&this);
+			}
+			public HRESULT EnumElements(uint32 reserved1, void* reserved2, uint32 reserved3, IEnumSTATSTG** ppenum) mut
+			{
+				return VT.EnumElements(&this, reserved1, reserved2, reserved3, ppenum);
+			}
+			public HRESULT DestroyElement(PWSTR pwcsName) mut
+			{
+				return VT.DestroyElement(&this, pwcsName);
+			}
+			public HRESULT RenameElement(PWSTR pwcsOldName, PWSTR pwcsNewName) mut
+			{
+				return VT.RenameElement(&this, pwcsOldName, pwcsNewName);
+			}
+			public HRESULT SetElementTimes(PWSTR pwcsName, FILETIME* pctime, FILETIME* patime, FILETIME* pmtime) mut
+			{
+				return VT.SetElementTimes(&this, pwcsName, pctime, patime, pmtime);
+			}
+			public HRESULT SetClass(Guid* clsid) mut
+			{
+				return VT.SetClass(&this, clsid);
+			}
+			public HRESULT SetStateBits(uint32 grfStateBits, uint32 grfMask) mut
+			{
+				return VT.SetStateBits(&this, grfStateBits, grfMask);
+			}
+			public HRESULT Stat(STATSTG* pstatstg, uint32 grfStatFlag) mut
+			{
+				return VT.Stat(&this, pstatstg, grfStatFlag);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IStorage *self, PWSTR pwcsName, uint32 grfMode, uint32 reserved1, uint32 reserved2, IStream** ppstm) CreateStream;
-				public function HRESULT(IStorage *self, PWSTR pwcsName, void* reserved1, uint32 grfMode, uint32 reserved2, IStream** ppstm) OpenStream;
-				public function HRESULT(IStorage *self, PWSTR pwcsName, uint32 grfMode, uint32 reserved1, uint32 reserved2, IStorage** ppstg) CreateStorage;
-				public function HRESULT(IStorage *self, PWSTR pwcsName, IStorage* pstgPriority, uint32 grfMode, uint16** snbExclude, uint32 reserved, IStorage** ppstg) OpenStorage;
-				public function HRESULT(IStorage *self, uint32 ciidExclude, Guid* rgiidExclude, uint16** snbExclude, IStorage* pstgDest) CopyTo;
-				public function HRESULT(IStorage *self, PWSTR pwcsName, IStorage* pstgDest, PWSTR pwcsNewName, uint32 grfFlags) MoveElementTo;
-				public function HRESULT(IStorage *self, uint32 grfCommitFlags) Commit;
-				public function HRESULT(IStorage *self) Revert;
-				public function HRESULT(IStorage *self, uint32 reserved1, void* reserved2, uint32 reserved3, IEnumSTATSTG** ppenum) EnumElements;
-				public function HRESULT(IStorage *self, PWSTR pwcsName) DestroyElement;
-				public function HRESULT(IStorage *self, PWSTR pwcsOldName, PWSTR pwcsNewName) RenameElement;
-				public function HRESULT(IStorage *self, PWSTR pwcsName, FILETIME* pctime, FILETIME* patime, FILETIME* pmtime) SetElementTimes;
-				public function HRESULT(IStorage *self, Guid* clsid) SetClass;
-				public function HRESULT(IStorage *self, uint32 grfStateBits, uint32 grfMask) SetStateBits;
-				public function HRESULT(IStorage *self, STATSTG* pstatstg, uint32 grfStatFlag) Stat;
+				public new function HRESULT(IStorage *self, PWSTR pwcsName, uint32 grfMode, uint32 reserved1, uint32 reserved2, IStream** ppstm) CreateStream;
+				public new function HRESULT(IStorage *self, PWSTR pwcsName, void* reserved1, uint32 grfMode, uint32 reserved2, IStream** ppstm) OpenStream;
+				public new function HRESULT(IStorage *self, PWSTR pwcsName, uint32 grfMode, uint32 reserved1, uint32 reserved2, IStorage** ppstg) CreateStorage;
+				public new function HRESULT(IStorage *self, PWSTR pwcsName, IStorage* pstgPriority, uint32 grfMode, uint16** snbExclude, uint32 reserved, IStorage** ppstg) OpenStorage;
+				public new function HRESULT(IStorage *self, uint32 ciidExclude, Guid* rgiidExclude, uint16** snbExclude, IStorage* pstgDest) CopyTo;
+				public new function HRESULT(IStorage *self, PWSTR pwcsName, IStorage* pstgDest, PWSTR pwcsNewName, uint32 grfFlags) MoveElementTo;
+				public new function HRESULT(IStorage *self, uint32 grfCommitFlags) Commit;
+				public new function HRESULT(IStorage *self) Revert;
+				public new function HRESULT(IStorage *self, uint32 reserved1, void* reserved2, uint32 reserved3, IEnumSTATSTG** ppenum) EnumElements;
+				public new function HRESULT(IStorage *self, PWSTR pwcsName) DestroyElement;
+				public new function HRESULT(IStorage *self, PWSTR pwcsOldName, PWSTR pwcsNewName) RenameElement;
+				public new function HRESULT(IStorage *self, PWSTR pwcsName, FILETIME* pctime, FILETIME* patime, FILETIME* pmtime) SetElementTimes;
+				public new function HRESULT(IStorage *self, Guid* clsid) SetClass;
+				public new function HRESULT(IStorage *self, uint32 grfStateBits, uint32 grfMask) SetStateBits;
+				public new function HRESULT(IStorage *self, STATSTG* pstatstg, uint32 grfStatFlag) Stat;
 			}
 		}
 		[CRepr]
@@ -530,16 +608,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0000010a, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT IsDirty() mut
+			{
+				return VT.IsDirty(&this);
+			}
+			public HRESULT InitNew(IStorage* pStg) mut
+			{
+				return VT.InitNew(&this, pStg);
+			}
+			public HRESULT Load(IStorage* pStg) mut
+			{
+				return VT.Load(&this, pStg);
+			}
+			public HRESULT Save(IStorage* pStgSave, BOOL fSameAsLoad) mut
+			{
+				return VT.Save(&this, pStgSave, fSameAsLoad);
+			}
+			public HRESULT SaveCompleted(IStorage* pStgNew) mut
+			{
+				return VT.SaveCompleted(&this, pStgNew);
+			}
+			public HRESULT HandsOffStorage() mut
+			{
+				return VT.HandsOffStorage(&this);
+			}
 			[CRepr]
 			public struct VTable : IPersist.VTable
 			{
-				public function HRESULT(IPersistStorage *self) IsDirty;
-				public function HRESULT(IPersistStorage *self, IStorage* pStg) InitNew;
-				public function HRESULT(IPersistStorage *self, IStorage* pStg) Load;
-				public function HRESULT(IPersistStorage *self, IStorage* pStgSave, BOOL fSameAsLoad) Save;
-				public function HRESULT(IPersistStorage *self, IStorage* pStgNew) SaveCompleted;
-				public function HRESULT(IPersistStorage *self) HandsOffStorage;
+				public new function HRESULT(IPersistStorage *self) IsDirty;
+				public new function HRESULT(IPersistStorage *self, IStorage* pStg) InitNew;
+				public new function HRESULT(IPersistStorage *self, IStorage* pStg) Load;
+				public new function HRESULT(IPersistStorage *self, IStorage* pStgSave, BOOL fSameAsLoad) Save;
+				public new function HRESULT(IPersistStorage *self, IStorage* pStgNew) SaveCompleted;
+				public new function HRESULT(IPersistStorage *self) HandsOffStorage;
 			}
 		}
 		[CRepr]
@@ -547,17 +650,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0000000a, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ReadAt(ULARGE_INTEGER ulOffset, void* pv, uint32 cb, uint32* pcbRead) mut
+			{
+				return VT.ReadAt(&this, ulOffset, pv, cb, pcbRead);
+			}
+			public HRESULT WriteAt(ULARGE_INTEGER ulOffset, void* pv, uint32 cb, uint32* pcbWritten) mut
+			{
+				return VT.WriteAt(&this, ulOffset, pv, cb, pcbWritten);
+			}
+			public HRESULT Flush() mut
+			{
+				return VT.Flush(&this);
+			}
+			public HRESULT SetSize(ULARGE_INTEGER cb) mut
+			{
+				return VT.SetSize(&this, cb);
+			}
+			public HRESULT LockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) mut
+			{
+				return VT.LockRegion(&this, libOffset, cb, dwLockType);
+			}
+			public HRESULT UnlockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) mut
+			{
+				return VT.UnlockRegion(&this, libOffset, cb, dwLockType);
+			}
+			public HRESULT Stat(STATSTG* pstatstg, uint32 grfStatFlag) mut
+			{
+				return VT.Stat(&this, pstatstg, grfStatFlag);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ILockBytes *self, ULARGE_INTEGER ulOffset, void* pv, uint32 cb, uint32* pcbRead) ReadAt;
-				public function HRESULT(ILockBytes *self, ULARGE_INTEGER ulOffset, void* pv, uint32 cb, uint32* pcbWritten) WriteAt;
-				public function HRESULT(ILockBytes *self) Flush;
-				public function HRESULT(ILockBytes *self, ULARGE_INTEGER cb) SetSize;
-				public function HRESULT(ILockBytes *self, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) LockRegion;
-				public function HRESULT(ILockBytes *self, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) UnlockRegion;
-				public function HRESULT(ILockBytes *self, STATSTG* pstatstg, uint32 grfStatFlag) Stat;
+				public new function HRESULT(ILockBytes *self, ULARGE_INTEGER ulOffset, void* pv, uint32 cb, uint32* pcbRead) ReadAt;
+				public new function HRESULT(ILockBytes *self, ULARGE_INTEGER ulOffset, void* pv, uint32 cb, uint32* pcbWritten) WriteAt;
+				public new function HRESULT(ILockBytes *self) Flush;
+				public new function HRESULT(ILockBytes *self, ULARGE_INTEGER cb) SetSize;
+				public new function HRESULT(ILockBytes *self, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) LockRegion;
+				public new function HRESULT(ILockBytes *self, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) UnlockRegion;
+				public new function HRESULT(ILockBytes *self, STATSTG* pstatstg, uint32 grfStatFlag) Stat;
 			}
 		}
 		[CRepr]
@@ -565,11 +697,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x00000012, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SwitchToFile(PWSTR pszFile) mut
+			{
+				return VT.SwitchToFile(&this, pszFile);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IRootStorage *self, PWSTR pszFile) SwitchToFile;
+				public new function HRESULT(IRootStorage *self, PWSTR pszFile) SwitchToFile;
 			}
 		}
 		[CRepr]
@@ -577,14 +714,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x99caf010, 0x415e, 0x11cf, 0x88, 0x14, 0x00, 0xaa, 0x00, 0xb5, 0x69, 0xf5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT FillAppend(void* pv, uint32 cb, uint32* pcbWritten) mut
+			{
+				return VT.FillAppend(&this, pv, cb, pcbWritten);
+			}
+			public HRESULT FillAt(ULARGE_INTEGER ulOffset, void* pv, uint32 cb, uint32* pcbWritten) mut
+			{
+				return VT.FillAt(&this, ulOffset, pv, cb, pcbWritten);
+			}
+			public HRESULT SetFillSize(ULARGE_INTEGER ulSize) mut
+			{
+				return VT.SetFillSize(&this, ulSize);
+			}
+			public HRESULT Terminate(BOOL bCanceled) mut
+			{
+				return VT.Terminate(&this, bCanceled);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IFillLockBytes *self, void* pv, uint32 cb, uint32* pcbWritten) FillAppend;
-				public function HRESULT(IFillLockBytes *self, ULARGE_INTEGER ulOffset, void* pv, uint32 cb, uint32* pcbWritten) FillAt;
-				public function HRESULT(IFillLockBytes *self, ULARGE_INTEGER ulSize) SetFillSize;
-				public function HRESULT(IFillLockBytes *self, BOOL bCanceled) Terminate;
+				public new function HRESULT(IFillLockBytes *self, void* pv, uint32 cb, uint32* pcbWritten) FillAppend;
+				public new function HRESULT(IFillLockBytes *self, ULARGE_INTEGER ulOffset, void* pv, uint32 cb, uint32* pcbWritten) FillAt;
+				public new function HRESULT(IFillLockBytes *self, ULARGE_INTEGER ulSize) SetFillSize;
+				public new function HRESULT(IFillLockBytes *self, BOOL bCanceled) Terminate;
 			}
 		}
 		[CRepr]
@@ -592,15 +746,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0e6d4d90, 0x6738, 0x11cf, 0x96, 0x08, 0x00, 0xaa, 0x00, 0x68, 0x0d, 0xb4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT LayoutScript(StorageLayout* pStorageLayout, uint32 nEntries, uint32 glfInterleavedFlag) mut
+			{
+				return VT.LayoutScript(&this, pStorageLayout, nEntries, glfInterleavedFlag);
+			}
+			public HRESULT BeginMonitor() mut
+			{
+				return VT.BeginMonitor(&this);
+			}
+			public HRESULT EndMonitor() mut
+			{
+				return VT.EndMonitor(&this);
+			}
+			public HRESULT ReLayoutDocfile(PWSTR pwcsNewDfName) mut
+			{
+				return VT.ReLayoutDocfile(&this, pwcsNewDfName);
+			}
+			public HRESULT ReLayoutDocfileOnILockBytes(ILockBytes* pILockBytes) mut
+			{
+				return VT.ReLayoutDocfileOnILockBytes(&this, pILockBytes);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ILayoutStorage *self, StorageLayout* pStorageLayout, uint32 nEntries, uint32 glfInterleavedFlag) LayoutScript;
-				public function HRESULT(ILayoutStorage *self) BeginMonitor;
-				public function HRESULT(ILayoutStorage *self) EndMonitor;
-				public function HRESULT(ILayoutStorage *self, PWSTR pwcsNewDfName) ReLayoutDocfile;
-				public function HRESULT(ILayoutStorage *self, ILockBytes* pILockBytes) ReLayoutDocfileOnILockBytes;
+				public new function HRESULT(ILayoutStorage *self, StorageLayout* pStorageLayout, uint32 nEntries, uint32 glfInterleavedFlag) LayoutScript;
+				public new function HRESULT(ILayoutStorage *self) BeginMonitor;
+				public new function HRESULT(ILayoutStorage *self) EndMonitor;
+				public new function HRESULT(ILayoutStorage *self, PWSTR pwcsNewDfName) ReLayoutDocfile;
+				public new function HRESULT(ILayoutStorage *self, ILockBytes* pILockBytes) ReLayoutDocfileOnILockBytes;
 			}
 		}
 		[CRepr]
@@ -608,13 +783,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0e6d4d92, 0x6738, 0x11cf, 0x96, 0x08, 0x00, 0xaa, 0x00, 0x68, 0x0d, 0xb4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT WaitForWriteAccess(uint32 dwTimeout) mut
+			{
+				return VT.WaitForWriteAccess(&this, dwTimeout);
+			}
+			public HRESULT ReleaseWriteAccess() mut
+			{
+				return VT.ReleaseWriteAccess(&this);
+			}
+			public HRESULT HaveWriteAccess() mut
+			{
+				return VT.HaveWriteAccess(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectWriterLock *self, uint32 dwTimeout) WaitForWriteAccess;
-				public function HRESULT(IDirectWriterLock *self) ReleaseWriteAccess;
-				public function HRESULT(IDirectWriterLock *self) HaveWriteAccess;
+				public new function HRESULT(IDirectWriterLock *self, uint32 dwTimeout) WaitForWriteAccess;
+				public new function HRESULT(IDirectWriterLock *self) ReleaseWriteAccess;
+				public new function HRESULT(IDirectWriterLock *self) HaveWriteAccess;
 			}
 		}
 		[CRepr]
@@ -622,22 +810,71 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x00000138, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ReadMultiple(uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar) mut
+			{
+				return VT.ReadMultiple(&this, cpspec, rgpspec, rgpropvar);
+			}
+			public HRESULT WriteMultiple(uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar, uint32 propidNameFirst) mut
+			{
+				return VT.WriteMultiple(&this, cpspec, rgpspec, rgpropvar, propidNameFirst);
+			}
+			public HRESULT DeleteMultiple(uint32 cpspec, PROPSPEC* rgpspec) mut
+			{
+				return VT.DeleteMultiple(&this, cpspec, rgpspec);
+			}
+			public HRESULT ReadPropertyNames(uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) mut
+			{
+				return VT.ReadPropertyNames(&this, cpropid, rgpropid, rglpwstrName);
+			}
+			public HRESULT WritePropertyNames(uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) mut
+			{
+				return VT.WritePropertyNames(&this, cpropid, rgpropid, rglpwstrName);
+			}
+			public HRESULT DeletePropertyNames(uint32 cpropid, uint32* rgpropid) mut
+			{
+				return VT.DeletePropertyNames(&this, cpropid, rgpropid);
+			}
+			public HRESULT Commit(uint32 grfCommitFlags) mut
+			{
+				return VT.Commit(&this, grfCommitFlags);
+			}
+			public HRESULT Revert() mut
+			{
+				return VT.Revert(&this);
+			}
+			public HRESULT Enum(IEnumSTATPROPSTG** ppenum) mut
+			{
+				return VT.Enum(&this, ppenum);
+			}
+			public HRESULT SetTimes(FILETIME* pctime, FILETIME* patime, FILETIME* pmtime) mut
+			{
+				return VT.SetTimes(&this, pctime, patime, pmtime);
+			}
+			public HRESULT SetClass(Guid* clsid) mut
+			{
+				return VT.SetClass(&this, clsid);
+			}
+			public HRESULT Stat(STATPROPSETSTG* pstatpsstg) mut
+			{
+				return VT.Stat(&this, pstatpsstg);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar) ReadMultiple;
-				public function HRESULT(IPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar, uint32 propidNameFirst) WriteMultiple;
-				public function HRESULT(IPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec) DeleteMultiple;
-				public function HRESULT(IPropertyStorage *self, uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) ReadPropertyNames;
-				public function HRESULT(IPropertyStorage *self, uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) WritePropertyNames;
-				public function HRESULT(IPropertyStorage *self, uint32 cpropid, uint32* rgpropid) DeletePropertyNames;
-				public function HRESULT(IPropertyStorage *self, uint32 grfCommitFlags) Commit;
-				public function HRESULT(IPropertyStorage *self) Revert;
-				public function HRESULT(IPropertyStorage *self, IEnumSTATPROPSTG** ppenum) Enum;
-				public function HRESULT(IPropertyStorage *self, FILETIME* pctime, FILETIME* patime, FILETIME* pmtime) SetTimes;
-				public function HRESULT(IPropertyStorage *self, Guid* clsid) SetClass;
-				public function HRESULT(IPropertyStorage *self, STATPROPSETSTG* pstatpsstg) Stat;
+				public new function HRESULT(IPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar) ReadMultiple;
+				public new function HRESULT(IPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar, uint32 propidNameFirst) WriteMultiple;
+				public new function HRESULT(IPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec) DeleteMultiple;
+				public new function HRESULT(IPropertyStorage *self, uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) ReadPropertyNames;
+				public new function HRESULT(IPropertyStorage *self, uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) WritePropertyNames;
+				public new function HRESULT(IPropertyStorage *self, uint32 cpropid, uint32* rgpropid) DeletePropertyNames;
+				public new function HRESULT(IPropertyStorage *self, uint32 grfCommitFlags) Commit;
+				public new function HRESULT(IPropertyStorage *self) Revert;
+				public new function HRESULT(IPropertyStorage *self, IEnumSTATPROPSTG** ppenum) Enum;
+				public new function HRESULT(IPropertyStorage *self, FILETIME* pctime, FILETIME* patime, FILETIME* pmtime) SetTimes;
+				public new function HRESULT(IPropertyStorage *self, Guid* clsid) SetClass;
+				public new function HRESULT(IPropertyStorage *self, STATPROPSETSTG* pstatpsstg) Stat;
 			}
 		}
 		[CRepr]
@@ -645,14 +882,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0000013a, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Create(Guid* rfmtid, Guid* pclsid, uint32 grfFlags, uint32 grfMode, IPropertyStorage** ppprstg) mut
+			{
+				return VT.Create(&this, rfmtid, pclsid, grfFlags, grfMode, ppprstg);
+			}
+			public HRESULT Open(Guid* rfmtid, uint32 grfMode, IPropertyStorage** ppprstg) mut
+			{
+				return VT.Open(&this, rfmtid, grfMode, ppprstg);
+			}
+			public HRESULT Delete(Guid* rfmtid) mut
+			{
+				return VT.Delete(&this, rfmtid);
+			}
+			public HRESULT Enum(IEnumSTATPROPSETSTG** ppenum) mut
+			{
+				return VT.Enum(&this, ppenum);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPropertySetStorage *self, Guid* rfmtid, Guid* pclsid, uint32 grfFlags, uint32 grfMode, IPropertyStorage** ppprstg) Create;
-				public function HRESULT(IPropertySetStorage *self, Guid* rfmtid, uint32 grfMode, IPropertyStorage** ppprstg) Open;
-				public function HRESULT(IPropertySetStorage *self, Guid* rfmtid) Delete;
-				public function HRESULT(IPropertySetStorage *self, IEnumSTATPROPSETSTG** ppenum) Enum;
+				public new function HRESULT(IPropertySetStorage *self, Guid* rfmtid, Guid* pclsid, uint32 grfFlags, uint32 grfMode, IPropertyStorage** ppprstg) Create;
+				public new function HRESULT(IPropertySetStorage *self, Guid* rfmtid, uint32 grfMode, IPropertyStorage** ppprstg) Open;
+				public new function HRESULT(IPropertySetStorage *self, Guid* rfmtid) Delete;
+				public new function HRESULT(IPropertySetStorage *self, IEnumSTATPROPSETSTG** ppenum) Enum;
 			}
 		}
 		[CRepr]
@@ -660,14 +914,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x00000139, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 celt, STATPROPSTG* rgelt, uint32* pceltFetched) mut
+			{
+				return VT.Next(&this, celt, rgelt, pceltFetched);
+			}
+			public HRESULT Skip(uint32 celt) mut
+			{
+				return VT.Skip(&this, celt);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumSTATPROPSTG** ppenum) mut
+			{
+				return VT.Clone(&this, ppenum);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumSTATPROPSTG *self, uint32 celt, STATPROPSTG* rgelt, uint32* pceltFetched) Next;
-				public function HRESULT(IEnumSTATPROPSTG *self, uint32 celt) Skip;
-				public function HRESULT(IEnumSTATPROPSTG *self) Reset;
-				public function HRESULT(IEnumSTATPROPSTG *self, IEnumSTATPROPSTG** ppenum) Clone;
+				public new function HRESULT(IEnumSTATPROPSTG *self, uint32 celt, STATPROPSTG* rgelt, uint32* pceltFetched) Next;
+				public new function HRESULT(IEnumSTATPROPSTG *self, uint32 celt) Skip;
+				public new function HRESULT(IEnumSTATPROPSTG *self) Reset;
+				public new function HRESULT(IEnumSTATPROPSTG *self, IEnumSTATPROPSTG** ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -675,14 +946,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0000013b, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 celt, STATPROPSETSTG* rgelt, uint32* pceltFetched) mut
+			{
+				return VT.Next(&this, celt, rgelt, pceltFetched);
+			}
+			public HRESULT Skip(uint32 celt) mut
+			{
+				return VT.Skip(&this, celt);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumSTATPROPSETSTG** ppenum) mut
+			{
+				return VT.Clone(&this, ppenum);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumSTATPROPSETSTG *self, uint32 celt, STATPROPSETSTG* rgelt, uint32* pceltFetched) Next;
-				public function HRESULT(IEnumSTATPROPSETSTG *self, uint32 celt) Skip;
-				public function HRESULT(IEnumSTATPROPSETSTG *self) Reset;
-				public function HRESULT(IEnumSTATPROPSETSTG *self, IEnumSTATPROPSETSTG** ppenum) Clone;
+				public new function HRESULT(IEnumSTATPROPSETSTG *self, uint32 celt, STATPROPSETSTG* rgelt, uint32* pceltFetched) Next;
+				public new function HRESULT(IEnumSTATPROPSETSTG *self, uint32 celt) Skip;
+				public new function HRESULT(IEnumSTATPROPSETSTG *self) Reset;
+				public new function HRESULT(IEnumSTATPROPSETSTG *self, IEnumSTATPROPSETSTG** ppenum) Clone;
 			}
 		}
 		[CRepr]
@@ -690,12 +978,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x55272a00, 0x42cb, 0x11ce, 0x81, 0x35, 0x00, 0xaa, 0x00, 0x4b, 0xb8, 0x51);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Read(PWSTR pszPropName, VARIANT* pVar, IErrorLog* pErrorLog) mut
+			{
+				return VT.Read(&this, pszPropName, pVar, pErrorLog);
+			}
+			public HRESULT Write(PWSTR pszPropName, VARIANT* pVar) mut
+			{
+				return VT.Write(&this, pszPropName, pVar);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPropertyBag *self, PWSTR pszPropName, VARIANT* pVar, IErrorLog* pErrorLog) Read;
-				public function HRESULT(IPropertyBag *self, PWSTR pszPropName, VARIANT* pVar) Write;
+				public new function HRESULT(IPropertyBag *self, PWSTR pszPropName, VARIANT* pVar, IErrorLog* pErrorLog) Read;
+				public new function HRESULT(IPropertyBag *self, PWSTR pszPropName, VARIANT* pVar) Write;
 			}
 		}
 		[CRepr]
@@ -703,15 +1000,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x22f55882, 0x280b, 0x11d0, 0xa8, 0xa9, 0x00, 0xa0, 0xc9, 0x0c, 0x20, 0x04);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Read(uint32 cProperties, PROPBAG2* pPropBag, IErrorLog* pErrLog, VARIANT* pvarValue, HRESULT* phrError) mut
+			{
+				return VT.Read(&this, cProperties, pPropBag, pErrLog, pvarValue, phrError);
+			}
+			public HRESULT Write(uint32 cProperties, PROPBAG2* pPropBag, VARIANT* pvarValue) mut
+			{
+				return VT.Write(&this, cProperties, pPropBag, pvarValue);
+			}
+			public HRESULT CountProperties(uint32* pcProperties) mut
+			{
+				return VT.CountProperties(&this, pcProperties);
+			}
+			public HRESULT GetPropertyInfo(uint32 iProperty, uint32 cProperties, PROPBAG2* pPropBag, uint32* pcProperties) mut
+			{
+				return VT.GetPropertyInfo(&this, iProperty, cProperties, pPropBag, pcProperties);
+			}
+			public HRESULT LoadObject(PWSTR pstrName, uint32 dwHint, IUnknown* pUnkObject, IErrorLog* pErrLog) mut
+			{
+				return VT.LoadObject(&this, pstrName, dwHint, pUnkObject, pErrLog);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPropertyBag2 *self, uint32 cProperties, PROPBAG2* pPropBag, IErrorLog* pErrLog, VARIANT* pvarValue, HRESULT* phrError) Read;
-				public function HRESULT(IPropertyBag2 *self, uint32 cProperties, PROPBAG2* pPropBag, VARIANT* pvarValue) Write;
-				public function HRESULT(IPropertyBag2 *self, uint32* pcProperties) CountProperties;
-				public function HRESULT(IPropertyBag2 *self, uint32 iProperty, uint32 cProperties, PROPBAG2* pPropBag, uint32* pcProperties) GetPropertyInfo;
-				public function HRESULT(IPropertyBag2 *self, PWSTR pstrName, uint32 dwHint, IUnknown* pUnkObject, IErrorLog* pErrLog) LoadObject;
+				public new function HRESULT(IPropertyBag2 *self, uint32 cProperties, PROPBAG2* pPropBag, IErrorLog* pErrLog, VARIANT* pvarValue, HRESULT* phrError) Read;
+				public new function HRESULT(IPropertyBag2 *self, uint32 cProperties, PROPBAG2* pPropBag, VARIANT* pvarValue) Write;
+				public new function HRESULT(IPropertyBag2 *self, uint32* pcProperties) CountProperties;
+				public new function HRESULT(IPropertyBag2 *self, uint32 iProperty, uint32 cProperties, PROPBAG2* pPropBag, uint32* pcProperties) GetPropertyInfo;
+				public new function HRESULT(IPropertyBag2 *self, PWSTR pstrName, uint32 dwHint, IUnknown* pUnkObject, IErrorLog* pErrLog) LoadObject;
 			}
 		}
 		

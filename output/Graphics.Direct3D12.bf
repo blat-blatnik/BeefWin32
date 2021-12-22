@@ -4819,14 +4819,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc4fec28f, 0x7966, 0x4e95, 0x9f, 0x94, 0xf4, 0x31, 0xcb, 0x56, 0xc3, 0xb8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPrivateData(Guid* guid, uint32* pDataSize, void* pData) mut
+			{
+				return VT.GetPrivateData(&this, guid, pDataSize, pData);
+			}
+			public HRESULT SetPrivateData(Guid* guid, uint32 DataSize, void* pData) mut
+			{
+				return VT.SetPrivateData(&this, guid, DataSize, pData);
+			}
+			public HRESULT SetPrivateDataInterface(Guid* guid, IUnknown* pData) mut
+			{
+				return VT.SetPrivateDataInterface(&this, guid, pData);
+			}
+			public HRESULT SetName(PWSTR Name) mut
+			{
+				return VT.SetName(&this, Name);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ID3D12Object *self, Guid* guid, uint32* pDataSize, void* pData) GetPrivateData;
-				public function HRESULT(ID3D12Object *self, Guid* guid, uint32 DataSize, void* pData) SetPrivateData;
-				public function HRESULT(ID3D12Object *self, Guid* guid, IUnknown* pData) SetPrivateDataInterface;
-				public function HRESULT(ID3D12Object *self, PWSTR Name) SetName;
+				public new function HRESULT(ID3D12Object *self, Guid* guid, uint32* pDataSize, void* pData) GetPrivateData;
+				public new function HRESULT(ID3D12Object *self, Guid* guid, uint32 DataSize, void* pData) SetPrivateData;
+				public new function HRESULT(ID3D12Object *self, Guid* guid, IUnknown* pData) SetPrivateDataInterface;
+				public new function HRESULT(ID3D12Object *self, PWSTR Name) SetName;
 			}
 		}
 		[CRepr]
@@ -4834,11 +4851,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x905db94b, 0xa00c, 0x4140, 0x9d, 0xf5, 0x2b, 0x64, 0xca, 0x9e, 0xa3, 0x57);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDevice(Guid* riid, void** ppvDevice) mut
+			{
+				return VT.GetDevice(&this, riid, ppvDevice);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Object.VTable
 			{
-				public function HRESULT(ID3D12DeviceChild *self, Guid* riid, void** ppvDevice) GetDevice;
+				public new function HRESULT(ID3D12DeviceChild *self, Guid* riid, void** ppvDevice) GetDevice;
 			}
 		}
 		[CRepr]
@@ -4846,7 +4868,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc54a6b66, 0x72df, 0x4ee8, 0x8b, 0xe5, 0xa9, 0x46, 0xa1, 0x42, 0x92, 0x14);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : ID3D12DeviceChild.VTable
 			{
@@ -4857,11 +4880,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x34ab647b, 0x3cc8, 0x46ac, 0x84, 0x1b, 0xc0, 0x96, 0x56, 0x45, 0xc0, 0x46);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public D3D12_ROOT_SIGNATURE_DESC* GetRootSignatureDesc() mut
+			{
+				return VT.GetRootSignatureDesc(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function D3D12_ROOT_SIGNATURE_DESC*(ID3D12RootSignatureDeserializer *self) GetRootSignatureDesc;
+				public new function D3D12_ROOT_SIGNATURE_DESC*(ID3D12RootSignatureDeserializer *self) GetRootSignatureDesc;
 			}
 		}
 		[CRepr]
@@ -4869,12 +4897,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7f91ce67, 0x090c, 0x4bb7, 0xb7, 0x8e, 0xed, 0x8f, 0xf2, 0xe3, 0x1d, 0xa0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetRootSignatureDescAtVersion(D3D_ROOT_SIGNATURE_VERSION convertToVersion, D3D12_VERSIONED_ROOT_SIGNATURE_DESC** ppDesc) mut
+			{
+				return VT.GetRootSignatureDescAtVersion(&this, convertToVersion, ppDesc);
+			}
+			public D3D12_VERSIONED_ROOT_SIGNATURE_DESC* GetUnconvertedRootSignatureDesc() mut
+			{
+				return VT.GetUnconvertedRootSignatureDesc(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ID3D12VersionedRootSignatureDeserializer *self, D3D_ROOT_SIGNATURE_VERSION convertToVersion, D3D12_VERSIONED_ROOT_SIGNATURE_DESC** ppDesc) GetRootSignatureDescAtVersion;
-				public function D3D12_VERSIONED_ROOT_SIGNATURE_DESC*(ID3D12VersionedRootSignatureDeserializer *self) GetUnconvertedRootSignatureDesc;
+				public new function HRESULT(ID3D12VersionedRootSignatureDeserializer *self, D3D_ROOT_SIGNATURE_VERSION convertToVersion, D3D12_VERSIONED_ROOT_SIGNATURE_DESC** ppDesc) GetRootSignatureDescAtVersion;
+				public new function D3D12_VERSIONED_ROOT_SIGNATURE_DESC*(ID3D12VersionedRootSignatureDeserializer *self) GetUnconvertedRootSignatureDesc;
 			}
 		}
 		[CRepr]
@@ -4882,7 +4919,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x63ee58fb, 0x1268, 0x4835, 0x86, 0xda, 0xf0, 0x08, 0xce, 0x62, 0xf0, 0xd6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : ID3D12DeviceChild.VTable
 			{
@@ -4893,11 +4931,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6b3b2502, 0x6e51, 0x45b3, 0x90, 0xee, 0x98, 0x84, 0x26, 0x5e, 0x8d, 0xf3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public D3D12_HEAP_DESC GetDesc() mut
+			{
+				return VT.GetDesc(&this);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public function D3D12_HEAP_DESC(ID3D12Heap *self) GetDesc;
+				public new function D3D12_HEAP_DESC(ID3D12Heap *self) GetDesc;
 			}
 		}
 		[CRepr]
@@ -4905,17 +4948,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x696442be, 0xa72e, 0x4059, 0xbc, 0x79, 0x5b, 0x5c, 0x98, 0x04, 0x0f, 0xad);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Map(uint32 Subresource, D3D12_RANGE* pReadRange, void** ppData) mut
+			{
+				return VT.Map(&this, Subresource, pReadRange, ppData);
+			}
+			public void Unmap(uint32 Subresource, D3D12_RANGE* pWrittenRange) mut
+			{
+				VT.Unmap(&this, Subresource, pWrittenRange);
+			}
+			public D3D12_RESOURCE_DESC GetDesc() mut
+			{
+				return VT.GetDesc(&this);
+			}
+			public uint64 GetGPUVirtualAddress() mut
+			{
+				return VT.GetGPUVirtualAddress(&this);
+			}
+			public HRESULT WriteToSubresource(uint32 DstSubresource, D3D12_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch) mut
+			{
+				return VT.WriteToSubresource(&this, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
+			}
+			public HRESULT ReadFromSubresource(void* pDstData, uint32 DstRowPitch, uint32 DstDepthPitch, uint32 SrcSubresource, D3D12_BOX* pSrcBox) mut
+			{
+				return VT.ReadFromSubresource(&this, pDstData, DstRowPitch, DstDepthPitch, SrcSubresource, pSrcBox);
+			}
+			public HRESULT GetHeapProperties(D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS* pHeapFlags) mut
+			{
+				return VT.GetHeapProperties(&this, pHeapProperties, pHeapFlags);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public function HRESULT(ID3D12Resource *self, uint32 Subresource, D3D12_RANGE* pReadRange, void** ppData) Map;
-				public function void(ID3D12Resource *self, uint32 Subresource, D3D12_RANGE* pWrittenRange) Unmap;
-				public function D3D12_RESOURCE_DESC(ID3D12Resource *self) GetDesc;
-				public function uint64(ID3D12Resource *self) GetGPUVirtualAddress;
-				public function HRESULT(ID3D12Resource *self, uint32 DstSubresource, D3D12_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch) WriteToSubresource;
-				public function HRESULT(ID3D12Resource *self, void* pDstData, uint32 DstRowPitch, uint32 DstDepthPitch, uint32 SrcSubresource, D3D12_BOX* pSrcBox) ReadFromSubresource;
-				public function HRESULT(ID3D12Resource *self, D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS* pHeapFlags) GetHeapProperties;
+				public new function HRESULT(ID3D12Resource *self, uint32 Subresource, D3D12_RANGE* pReadRange, void** ppData) Map;
+				public new function void(ID3D12Resource *self, uint32 Subresource, D3D12_RANGE* pWrittenRange) Unmap;
+				public new function D3D12_RESOURCE_DESC(ID3D12Resource *self) GetDesc;
+				public new function uint64(ID3D12Resource *self) GetGPUVirtualAddress;
+				public new function HRESULT(ID3D12Resource *self, uint32 DstSubresource, D3D12_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch) WriteToSubresource;
+				public new function HRESULT(ID3D12Resource *self, void* pDstData, uint32 DstRowPitch, uint32 DstDepthPitch, uint32 SrcSubresource, D3D12_BOX* pSrcBox) ReadFromSubresource;
+				public new function HRESULT(ID3D12Resource *self, D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS* pHeapFlags) GetHeapProperties;
 			}
 		}
 		[CRepr]
@@ -4923,11 +4995,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6102dee4, 0xaf59, 0x4b09, 0xb9, 0x99, 0xb4, 0x4d, 0x73, 0xf0, 0x9b, 0x24);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public function HRESULT(ID3D12CommandAllocator *self) Reset;
+				public new function HRESULT(ID3D12CommandAllocator *self) Reset;
 			}
 		}
 		[CRepr]
@@ -4935,13 +5012,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0a753dcf, 0xc4d8, 0x4b91, 0xad, 0xf6, 0xbe, 0x5a, 0x60, 0xd9, 0x5a, 0x76);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public uint64 GetCompletedValue() mut
+			{
+				return VT.GetCompletedValue(&this);
+			}
+			public HRESULT SetEventOnCompletion(uint64 Value, HANDLE hEvent) mut
+			{
+				return VT.SetEventOnCompletion(&this, Value, hEvent);
+			}
+			public HRESULT Signal(uint64 Value) mut
+			{
+				return VT.Signal(&this, Value);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public function uint64(ID3D12Fence *self) GetCompletedValue;
-				public function HRESULT(ID3D12Fence *self, uint64 Value, HANDLE hEvent) SetEventOnCompletion;
-				public function HRESULT(ID3D12Fence *self, uint64 Value) Signal;
+				public new function uint64(ID3D12Fence *self) GetCompletedValue;
+				public new function HRESULT(ID3D12Fence *self, uint64 Value, HANDLE hEvent) SetEventOnCompletion;
+				public new function HRESULT(ID3D12Fence *self, uint64 Value) Signal;
 			}
 		}
 		[CRepr]
@@ -4949,11 +5039,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x433685fe, 0xe22b, 0x4ca0, 0xa8, 0xdb, 0xb5, 0xb4, 0xf4, 0xdd, 0x0e, 0x4a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public D3D12_FENCE_FLAGS GetCreationFlags() mut
+			{
+				return VT.GetCreationFlags(&this);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Fence.VTable
 			{
-				public function D3D12_FENCE_FLAGS(ID3D12Fence1 *self) GetCreationFlags;
+				public new function D3D12_FENCE_FLAGS(ID3D12Fence1 *self) GetCreationFlags;
 			}
 		}
 		[CRepr]
@@ -4961,11 +5056,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x765a30f3, 0xf624, 0x4c6f, 0xa8, 0x28, 0xac, 0xe9, 0x48, 0x62, 0x24, 0x45);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCachedBlob(ID3DBlob** ppBlob) mut
+			{
+				return VT.GetCachedBlob(&this, ppBlob);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public function HRESULT(ID3D12PipelineState *self, ID3DBlob** ppBlob) GetCachedBlob;
+				public new function HRESULT(ID3D12PipelineState *self, ID3DBlob** ppBlob) GetCachedBlob;
 			}
 		}
 		[CRepr]
@@ -4973,13 +5073,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8efb471d, 0x616c, 0x4f49, 0x90, 0xf7, 0x12, 0x7b, 0xb7, 0x63, 0xfa, 0x51);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public D3D12_DESCRIPTOR_HEAP_DESC GetDesc() mut
+			{
+				return VT.GetDesc(&this);
+			}
+			public D3D12_CPU_DESCRIPTOR_HANDLE GetCPUDescriptorHandleForHeapStart() mut
+			{
+				return VT.GetCPUDescriptorHandleForHeapStart(&this);
+			}
+			public D3D12_GPU_DESCRIPTOR_HANDLE GetGPUDescriptorHandleForHeapStart() mut
+			{
+				return VT.GetGPUDescriptorHandleForHeapStart(&this);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public function D3D12_DESCRIPTOR_HEAP_DESC(ID3D12DescriptorHeap *self) GetDesc;
-				public function D3D12_CPU_DESCRIPTOR_HANDLE(ID3D12DescriptorHeap *self) GetCPUDescriptorHandleForHeapStart;
-				public function D3D12_GPU_DESCRIPTOR_HANDLE(ID3D12DescriptorHeap *self) GetGPUDescriptorHandleForHeapStart;
+				public new function D3D12_DESCRIPTOR_HEAP_DESC(ID3D12DescriptorHeap *self) GetDesc;
+				public new function D3D12_CPU_DESCRIPTOR_HANDLE(ID3D12DescriptorHeap *self) GetCPUDescriptorHandleForHeapStart;
+				public new function D3D12_GPU_DESCRIPTOR_HANDLE(ID3D12DescriptorHeap *self) GetGPUDescriptorHandleForHeapStart;
 			}
 		}
 		[CRepr]
@@ -4987,7 +5100,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0d9658ae, 0xed45, 0x469e, 0xa6, 0x1d, 0x97, 0x0e, 0xc5, 0x83, 0xca, 0xb4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
@@ -4998,7 +5112,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc36a797c, 0xec80, 0x4f0a, 0x89, 0x85, 0xa7, 0xb2, 0x47, 0x50, 0x82, 0xd1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
@@ -5009,11 +5124,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7116d91c, 0xe7e4, 0x47ce, 0xb8, 0xc6, 0xec, 0x81, 0x68, 0xf4, 0x37, 0xe5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public D3D12_COMMAND_LIST_TYPE ComGetType() mut
+			{
+				return VT.ComGetType(&this);
+			}
 			[CRepr]
 			public struct VTable : ID3D12DeviceChild.VTable
 			{
-				public function D3D12_COMMAND_LIST_TYPE(ID3D12CommandList *self) GetType;
+				public new function D3D12_COMMAND_LIST_TYPE(ID3D12CommandList *self) ComGetType;
 			}
 		}
 		[CRepr]
@@ -5021,61 +5141,266 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5b160d0f, 0xac1b, 0x4185, 0x8b, 0xa8, 0xb3, 0xae, 0x42, 0xa5, 0xa4, 0x55);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
+			public HRESULT Reset(ID3D12CommandAllocator* pAllocator, ID3D12PipelineState* pInitialState) mut
+			{
+				return VT.Reset(&this, pAllocator, pInitialState);
+			}
+			public void ClearState(ID3D12PipelineState* pPipelineState) mut
+			{
+				VT.ClearState(&this, pPipelineState);
+			}
+			public void DrawInstanced(uint32 VertexCountPerInstance, uint32 InstanceCount, uint32 StartVertexLocation, uint32 StartInstanceLocation) mut
+			{
+				VT.DrawInstanced(&this, VertexCountPerInstance, InstanceCount, StartVertexLocation, StartInstanceLocation);
+			}
+			public void DrawIndexedInstanced(uint32 IndexCountPerInstance, uint32 InstanceCount, uint32 StartIndexLocation, int32 BaseVertexLocation, uint32 StartInstanceLocation) mut
+			{
+				VT.DrawIndexedInstanced(&this, IndexCountPerInstance, InstanceCount, StartIndexLocation, BaseVertexLocation, StartInstanceLocation);
+			}
+			public void Dispatch(uint32 ThreadGroupCountX, uint32 ThreadGroupCountY, uint32 ThreadGroupCountZ) mut
+			{
+				VT.Dispatch(&this, ThreadGroupCountX, ThreadGroupCountY, ThreadGroupCountZ);
+			}
+			public void CopyBufferRegion(ID3D12Resource* pDstBuffer, uint64 DstOffset, ID3D12Resource* pSrcBuffer, uint64 SrcOffset, uint64 NumBytes) mut
+			{
+				VT.CopyBufferRegion(&this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, NumBytes);
+			}
+			public void CopyTextureRegion(D3D12_TEXTURE_COPY_LOCATION* pDst, uint32 DstX, uint32 DstY, uint32 DstZ, D3D12_TEXTURE_COPY_LOCATION* pSrc, D3D12_BOX* pSrcBox) mut
+			{
+				VT.CopyTextureRegion(&this, pDst, DstX, DstY, DstZ, pSrc, pSrcBox);
+			}
+			public void CopyResource(ID3D12Resource* pDstResource, ID3D12Resource* pSrcResource) mut
+			{
+				VT.CopyResource(&this, pDstResource, pSrcResource);
+			}
+			public void CopyTiles(ID3D12Resource* pTiledResource, D3D12_TILED_RESOURCE_COORDINATE* pTileRegionStartCoordinate, D3D12_TILE_REGION_SIZE* pTileRegionSize, ID3D12Resource* pBuffer, uint64 BufferStartOffsetInBytes, D3D12_TILE_COPY_FLAGS Flags) mut
+			{
+				VT.CopyTiles(&this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
+			}
+			public void ResolveSubresource(ID3D12Resource* pDstResource, uint32 DstSubresource, ID3D12Resource* pSrcResource, uint32 SrcSubresource, DXGI_FORMAT Format) mut
+			{
+				VT.ResolveSubresource(&this, pDstResource, DstSubresource, pSrcResource, SrcSubresource, Format);
+			}
+			public void IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY PrimitiveTopology) mut
+			{
+				VT.IASetPrimitiveTopology(&this, PrimitiveTopology);
+			}
+			public void RSSetViewports(uint32 NumViewports, D3D12_VIEWPORT* pViewports) mut
+			{
+				VT.RSSetViewports(&this, NumViewports, pViewports);
+			}
+			public void RSSetScissorRects(uint32 NumRects, RECT* pRects) mut
+			{
+				VT.RSSetScissorRects(&this, NumRects, pRects);
+			}
+			public void OMSetBlendFactor(float* BlendFactor) mut
+			{
+				VT.OMSetBlendFactor(&this, BlendFactor);
+			}
+			public void OMSetStencilRef(uint32 StencilRef) mut
+			{
+				VT.OMSetStencilRef(&this, StencilRef);
+			}
+			public void SetPipelineState(ID3D12PipelineState* pPipelineState) mut
+			{
+				VT.SetPipelineState(&this, pPipelineState);
+			}
+			public void ResourceBarrier(uint32 NumBarriers, D3D12_RESOURCE_BARRIER* pBarriers) mut
+			{
+				VT.ResourceBarrier(&this, NumBarriers, pBarriers);
+			}
+			public void ExecuteBundle(ID3D12GraphicsCommandList* pCommandList) mut
+			{
+				VT.ExecuteBundle(&this, pCommandList);
+			}
+			public void SetDescriptorHeaps(uint32 NumDescriptorHeaps, ID3D12DescriptorHeap** ppDescriptorHeaps) mut
+			{
+				VT.SetDescriptorHeaps(&this, NumDescriptorHeaps, ppDescriptorHeaps);
+			}
+			public void SetComputeRootSignature(ID3D12RootSignature* pRootSignature) mut
+			{
+				VT.SetComputeRootSignature(&this, pRootSignature);
+			}
+			public void SetGraphicsRootSignature(ID3D12RootSignature* pRootSignature) mut
+			{
+				VT.SetGraphicsRootSignature(&this, pRootSignature);
+			}
+			public void SetComputeRootDescriptorTable(uint32 RootParameterIndex, D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor) mut
+			{
+				VT.SetComputeRootDescriptorTable(&this, RootParameterIndex, BaseDescriptor);
+			}
+			public void SetGraphicsRootDescriptorTable(uint32 RootParameterIndex, D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor) mut
+			{
+				VT.SetGraphicsRootDescriptorTable(&this, RootParameterIndex, BaseDescriptor);
+			}
+			public void SetComputeRoot32BitConstant(uint32 RootParameterIndex, uint32 SrcData, uint32 DestOffsetIn32BitValues) mut
+			{
+				VT.SetComputeRoot32BitConstant(&this, RootParameterIndex, SrcData, DestOffsetIn32BitValues);
+			}
+			public void SetGraphicsRoot32BitConstant(uint32 RootParameterIndex, uint32 SrcData, uint32 DestOffsetIn32BitValues) mut
+			{
+				VT.SetGraphicsRoot32BitConstant(&this, RootParameterIndex, SrcData, DestOffsetIn32BitValues);
+			}
+			public void SetComputeRoot32BitConstants(uint32 RootParameterIndex, uint32 Num32BitValuesToSet, void* pSrcData, uint32 DestOffsetIn32BitValues) mut
+			{
+				VT.SetComputeRoot32BitConstants(&this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
+			}
+			public void SetGraphicsRoot32BitConstants(uint32 RootParameterIndex, uint32 Num32BitValuesToSet, void* pSrcData, uint32 DestOffsetIn32BitValues) mut
+			{
+				VT.SetGraphicsRoot32BitConstants(&this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
+			}
+			public void SetComputeRootConstantBufferView(uint32 RootParameterIndex, uint64 BufferLocation) mut
+			{
+				VT.SetComputeRootConstantBufferView(&this, RootParameterIndex, BufferLocation);
+			}
+			public void SetGraphicsRootConstantBufferView(uint32 RootParameterIndex, uint64 BufferLocation) mut
+			{
+				VT.SetGraphicsRootConstantBufferView(&this, RootParameterIndex, BufferLocation);
+			}
+			public void SetComputeRootShaderResourceView(uint32 RootParameterIndex, uint64 BufferLocation) mut
+			{
+				VT.SetComputeRootShaderResourceView(&this, RootParameterIndex, BufferLocation);
+			}
+			public void SetGraphicsRootShaderResourceView(uint32 RootParameterIndex, uint64 BufferLocation) mut
+			{
+				VT.SetGraphicsRootShaderResourceView(&this, RootParameterIndex, BufferLocation);
+			}
+			public void SetComputeRootUnorderedAccessView(uint32 RootParameterIndex, uint64 BufferLocation) mut
+			{
+				VT.SetComputeRootUnorderedAccessView(&this, RootParameterIndex, BufferLocation);
+			}
+			public void SetGraphicsRootUnorderedAccessView(uint32 RootParameterIndex, uint64 BufferLocation) mut
+			{
+				VT.SetGraphicsRootUnorderedAccessView(&this, RootParameterIndex, BufferLocation);
+			}
+			public void IASetIndexBuffer(D3D12_INDEX_BUFFER_VIEW* pView) mut
+			{
+				VT.IASetIndexBuffer(&this, pView);
+			}
+			public void IASetVertexBuffers(uint32 StartSlot, uint32 NumViews, D3D12_VERTEX_BUFFER_VIEW* pViews) mut
+			{
+				VT.IASetVertexBuffers(&this, StartSlot, NumViews, pViews);
+			}
+			public void SOSetTargets(uint32 StartSlot, uint32 NumViews, D3D12_STREAM_OUTPUT_BUFFER_VIEW* pViews) mut
+			{
+				VT.SOSetTargets(&this, StartSlot, NumViews, pViews);
+			}
+			public void OMSetRenderTargets(uint32 NumRenderTargetDescriptors, D3D12_CPU_DESCRIPTOR_HANDLE* pRenderTargetDescriptors, BOOL RTsSingleHandleToDescriptorRange, D3D12_CPU_DESCRIPTOR_HANDLE* pDepthStencilDescriptor) mut
+			{
+				VT.OMSetRenderTargets(&this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
+			}
+			public void ClearDepthStencilView(D3D12_CPU_DESCRIPTOR_HANDLE DepthStencilView, D3D12_CLEAR_FLAGS ClearFlags, float Depth, uint8 Stencil, uint32 NumRects, RECT* pRects) mut
+			{
+				VT.ClearDepthStencilView(&this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRects);
+			}
+			public void ClearRenderTargetView(D3D12_CPU_DESCRIPTOR_HANDLE RenderTargetView, float* ColorRGBA, uint32 NumRects, RECT* pRects) mut
+			{
+				VT.ClearRenderTargetView(&this, RenderTargetView, ColorRGBA, NumRects, pRects);
+			}
+			public void ClearUnorderedAccessViewUint(D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, uint32* Values, uint32 NumRects, RECT* pRects) mut
+			{
+				VT.ClearUnorderedAccessViewUint(&this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
+			}
+			public void ClearUnorderedAccessViewFloat(D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, float* Values, uint32 NumRects, RECT* pRects) mut
+			{
+				VT.ClearUnorderedAccessViewFloat(&this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
+			}
+			public void DiscardResource(ID3D12Resource* pResource, D3D12_DISCARD_REGION* pRegion) mut
+			{
+				VT.DiscardResource(&this, pResource, pRegion);
+			}
+			public void BeginQuery(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) mut
+			{
+				VT.BeginQuery(&this, pQueryHeap, Type, Index);
+			}
+			public void EndQuery(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) mut
+			{
+				VT.EndQuery(&this, pQueryHeap, Type, Index);
+			}
+			public void ResolveQueryData(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ID3D12Resource* pDestinationBuffer, uint64 AlignedDestinationBufferOffset) mut
+			{
+				VT.ResolveQueryData(&this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
+			}
+			public void SetPredication(ID3D12Resource* pBuffer, uint64 AlignedBufferOffset, D3D12_PREDICATION_OP Operation) mut
+			{
+				VT.SetPredication(&this, pBuffer, AlignedBufferOffset, Operation);
+			}
+			public void SetMarker(uint32 Metadata, void* pData, uint32 Size) mut
+			{
+				VT.SetMarker(&this, Metadata, pData, Size);
+			}
+			public void BeginEvent(uint32 Metadata, void* pData, uint32 Size) mut
+			{
+				VT.BeginEvent(&this, Metadata, pData, Size);
+			}
+			public void EndEvent() mut
+			{
+				VT.EndEvent(&this);
+			}
+			public void ExecuteIndirect(ID3D12CommandSignature* pCommandSignature, uint32 MaxCommandCount, ID3D12Resource* pArgumentBuffer, uint64 ArgumentBufferOffset, ID3D12Resource* pCountBuffer, uint64 CountBufferOffset) mut
+			{
+				VT.ExecuteIndirect(&this, pCommandSignature, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
+			}
 			[CRepr]
 			public struct VTable : ID3D12CommandList.VTable
 			{
-				public function HRESULT(ID3D12GraphicsCommandList *self) Close;
-				public function HRESULT(ID3D12GraphicsCommandList *self, ID3D12CommandAllocator* pAllocator, ID3D12PipelineState* pInitialState) Reset;
-				public function void(ID3D12GraphicsCommandList *self, ID3D12PipelineState* pPipelineState) ClearState;
-				public function void(ID3D12GraphicsCommandList *self, uint32 VertexCountPerInstance, uint32 InstanceCount, uint32 StartVertexLocation, uint32 StartInstanceLocation) DrawInstanced;
-				public function void(ID3D12GraphicsCommandList *self, uint32 IndexCountPerInstance, uint32 InstanceCount, uint32 StartIndexLocation, int32 BaseVertexLocation, uint32 StartInstanceLocation) DrawIndexedInstanced;
-				public function void(ID3D12GraphicsCommandList *self, uint32 ThreadGroupCountX, uint32 ThreadGroupCountY, uint32 ThreadGroupCountZ) Dispatch;
-				public function void(ID3D12GraphicsCommandList *self, ID3D12Resource* pDstBuffer, uint64 DstOffset, ID3D12Resource* pSrcBuffer, uint64 SrcOffset, uint64 NumBytes) CopyBufferRegion;
-				public function void(ID3D12GraphicsCommandList *self, D3D12_TEXTURE_COPY_LOCATION* pDst, uint32 DstX, uint32 DstY, uint32 DstZ, D3D12_TEXTURE_COPY_LOCATION* pSrc, D3D12_BOX* pSrcBox) CopyTextureRegion;
-				public function void(ID3D12GraphicsCommandList *self, ID3D12Resource* pDstResource, ID3D12Resource* pSrcResource) CopyResource;
-				public function void(ID3D12GraphicsCommandList *self, ID3D12Resource* pTiledResource, D3D12_TILED_RESOURCE_COORDINATE* pTileRegionStartCoordinate, D3D12_TILE_REGION_SIZE* pTileRegionSize, ID3D12Resource* pBuffer, uint64 BufferStartOffsetInBytes, D3D12_TILE_COPY_FLAGS Flags) CopyTiles;
-				public function void(ID3D12GraphicsCommandList *self, ID3D12Resource* pDstResource, uint32 DstSubresource, ID3D12Resource* pSrcResource, uint32 SrcSubresource, DXGI_FORMAT Format) ResolveSubresource;
-				public function void(ID3D12GraphicsCommandList *self, D3D_PRIMITIVE_TOPOLOGY PrimitiveTopology) IASetPrimitiveTopology;
-				public function void(ID3D12GraphicsCommandList *self, uint32 NumViewports, D3D12_VIEWPORT* pViewports) RSSetViewports;
-				public function void(ID3D12GraphicsCommandList *self, uint32 NumRects, RECT* pRects) RSSetScissorRects;
-				public function void(ID3D12GraphicsCommandList *self, float* BlendFactor) OMSetBlendFactor;
-				public function void(ID3D12GraphicsCommandList *self, uint32 StencilRef) OMSetStencilRef;
-				public function void(ID3D12GraphicsCommandList *self, ID3D12PipelineState* pPipelineState) SetPipelineState;
-				public function void(ID3D12GraphicsCommandList *self, uint32 NumBarriers, D3D12_RESOURCE_BARRIER* pBarriers) ResourceBarrier;
-				public function void(ID3D12GraphicsCommandList *self, ID3D12GraphicsCommandList* pCommandList) ExecuteBundle;
-				public function void(ID3D12GraphicsCommandList *self, uint32 NumDescriptorHeaps, ID3D12DescriptorHeap** ppDescriptorHeaps) SetDescriptorHeaps;
-				public function void(ID3D12GraphicsCommandList *self, ID3D12RootSignature* pRootSignature) SetComputeRootSignature;
-				public function void(ID3D12GraphicsCommandList *self, ID3D12RootSignature* pRootSignature) SetGraphicsRootSignature;
-				public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor) SetComputeRootDescriptorTable;
-				public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor) SetGraphicsRootDescriptorTable;
-				public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint32 SrcData, uint32 DestOffsetIn32BitValues) SetComputeRoot32BitConstant;
-				public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint32 SrcData, uint32 DestOffsetIn32BitValues) SetGraphicsRoot32BitConstant;
-				public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint32 Num32BitValuesToSet, void* pSrcData, uint32 DestOffsetIn32BitValues) SetComputeRoot32BitConstants;
-				public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint32 Num32BitValuesToSet, void* pSrcData, uint32 DestOffsetIn32BitValues) SetGraphicsRoot32BitConstants;
-				public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint64 BufferLocation) SetComputeRootConstantBufferView;
-				public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint64 BufferLocation) SetGraphicsRootConstantBufferView;
-				public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint64 BufferLocation) SetComputeRootShaderResourceView;
-				public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint64 BufferLocation) SetGraphicsRootShaderResourceView;
-				public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint64 BufferLocation) SetComputeRootUnorderedAccessView;
-				public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint64 BufferLocation) SetGraphicsRootUnorderedAccessView;
-				public function void(ID3D12GraphicsCommandList *self, D3D12_INDEX_BUFFER_VIEW* pView) IASetIndexBuffer;
-				public function void(ID3D12GraphicsCommandList *self, uint32 StartSlot, uint32 NumViews, D3D12_VERTEX_BUFFER_VIEW* pViews) IASetVertexBuffers;
-				public function void(ID3D12GraphicsCommandList *self, uint32 StartSlot, uint32 NumViews, D3D12_STREAM_OUTPUT_BUFFER_VIEW* pViews) SOSetTargets;
-				public function void(ID3D12GraphicsCommandList *self, uint32 NumRenderTargetDescriptors, D3D12_CPU_DESCRIPTOR_HANDLE* pRenderTargetDescriptors, BOOL RTsSingleHandleToDescriptorRange, D3D12_CPU_DESCRIPTOR_HANDLE* pDepthStencilDescriptor) OMSetRenderTargets;
-				public function void(ID3D12GraphicsCommandList *self, D3D12_CPU_DESCRIPTOR_HANDLE DepthStencilView, D3D12_CLEAR_FLAGS ClearFlags, float Depth, uint8 Stencil, uint32 NumRects, RECT* pRects) ClearDepthStencilView;
-				public function void(ID3D12GraphicsCommandList *self, D3D12_CPU_DESCRIPTOR_HANDLE RenderTargetView, float* ColorRGBA, uint32 NumRects, RECT* pRects) ClearRenderTargetView;
-				public function void(ID3D12GraphicsCommandList *self, D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, uint32* Values, uint32 NumRects, RECT* pRects) ClearUnorderedAccessViewUint;
-				public function void(ID3D12GraphicsCommandList *self, D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, float* Values, uint32 NumRects, RECT* pRects) ClearUnorderedAccessViewFloat;
-				public function void(ID3D12GraphicsCommandList *self, ID3D12Resource* pResource, D3D12_DISCARD_REGION* pRegion) DiscardResource;
-				public function void(ID3D12GraphicsCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) BeginQuery;
-				public function void(ID3D12GraphicsCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) EndQuery;
-				public function void(ID3D12GraphicsCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ID3D12Resource* pDestinationBuffer, uint64 AlignedDestinationBufferOffset) ResolveQueryData;
-				public function void(ID3D12GraphicsCommandList *self, ID3D12Resource* pBuffer, uint64 AlignedBufferOffset, D3D12_PREDICATION_OP Operation) SetPredication;
-				public function void(ID3D12GraphicsCommandList *self, uint32 Metadata, void* pData, uint32 Size) SetMarker;
-				public function void(ID3D12GraphicsCommandList *self, uint32 Metadata, void* pData, uint32 Size) BeginEvent;
-				public function void(ID3D12GraphicsCommandList *self) EndEvent;
-				public function void(ID3D12GraphicsCommandList *self, ID3D12CommandSignature* pCommandSignature, uint32 MaxCommandCount, ID3D12Resource* pArgumentBuffer, uint64 ArgumentBufferOffset, ID3D12Resource* pCountBuffer, uint64 CountBufferOffset) ExecuteIndirect;
+				public new function HRESULT(ID3D12GraphicsCommandList *self) Close;
+				public new function HRESULT(ID3D12GraphicsCommandList *self, ID3D12CommandAllocator* pAllocator, ID3D12PipelineState* pInitialState) Reset;
+				public new function void(ID3D12GraphicsCommandList *self, ID3D12PipelineState* pPipelineState) ClearState;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 VertexCountPerInstance, uint32 InstanceCount, uint32 StartVertexLocation, uint32 StartInstanceLocation) DrawInstanced;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 IndexCountPerInstance, uint32 InstanceCount, uint32 StartIndexLocation, int32 BaseVertexLocation, uint32 StartInstanceLocation) DrawIndexedInstanced;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 ThreadGroupCountX, uint32 ThreadGroupCountY, uint32 ThreadGroupCountZ) Dispatch;
+				public new function void(ID3D12GraphicsCommandList *self, ID3D12Resource* pDstBuffer, uint64 DstOffset, ID3D12Resource* pSrcBuffer, uint64 SrcOffset, uint64 NumBytes) CopyBufferRegion;
+				public new function void(ID3D12GraphicsCommandList *self, D3D12_TEXTURE_COPY_LOCATION* pDst, uint32 DstX, uint32 DstY, uint32 DstZ, D3D12_TEXTURE_COPY_LOCATION* pSrc, D3D12_BOX* pSrcBox) CopyTextureRegion;
+				public new function void(ID3D12GraphicsCommandList *self, ID3D12Resource* pDstResource, ID3D12Resource* pSrcResource) CopyResource;
+				public new function void(ID3D12GraphicsCommandList *self, ID3D12Resource* pTiledResource, D3D12_TILED_RESOURCE_COORDINATE* pTileRegionStartCoordinate, D3D12_TILE_REGION_SIZE* pTileRegionSize, ID3D12Resource* pBuffer, uint64 BufferStartOffsetInBytes, D3D12_TILE_COPY_FLAGS Flags) CopyTiles;
+				public new function void(ID3D12GraphicsCommandList *self, ID3D12Resource* pDstResource, uint32 DstSubresource, ID3D12Resource* pSrcResource, uint32 SrcSubresource, DXGI_FORMAT Format) ResolveSubresource;
+				public new function void(ID3D12GraphicsCommandList *self, D3D_PRIMITIVE_TOPOLOGY PrimitiveTopology) IASetPrimitiveTopology;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 NumViewports, D3D12_VIEWPORT* pViewports) RSSetViewports;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 NumRects, RECT* pRects) RSSetScissorRects;
+				public new function void(ID3D12GraphicsCommandList *self, float* BlendFactor) OMSetBlendFactor;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 StencilRef) OMSetStencilRef;
+				public new function void(ID3D12GraphicsCommandList *self, ID3D12PipelineState* pPipelineState) SetPipelineState;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 NumBarriers, D3D12_RESOURCE_BARRIER* pBarriers) ResourceBarrier;
+				public new function void(ID3D12GraphicsCommandList *self, ID3D12GraphicsCommandList* pCommandList) ExecuteBundle;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 NumDescriptorHeaps, ID3D12DescriptorHeap** ppDescriptorHeaps) SetDescriptorHeaps;
+				public new function void(ID3D12GraphicsCommandList *self, ID3D12RootSignature* pRootSignature) SetComputeRootSignature;
+				public new function void(ID3D12GraphicsCommandList *self, ID3D12RootSignature* pRootSignature) SetGraphicsRootSignature;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor) SetComputeRootDescriptorTable;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor) SetGraphicsRootDescriptorTable;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint32 SrcData, uint32 DestOffsetIn32BitValues) SetComputeRoot32BitConstant;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint32 SrcData, uint32 DestOffsetIn32BitValues) SetGraphicsRoot32BitConstant;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint32 Num32BitValuesToSet, void* pSrcData, uint32 DestOffsetIn32BitValues) SetComputeRoot32BitConstants;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint32 Num32BitValuesToSet, void* pSrcData, uint32 DestOffsetIn32BitValues) SetGraphicsRoot32BitConstants;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint64 BufferLocation) SetComputeRootConstantBufferView;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint64 BufferLocation) SetGraphicsRootConstantBufferView;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint64 BufferLocation) SetComputeRootShaderResourceView;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint64 BufferLocation) SetGraphicsRootShaderResourceView;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint64 BufferLocation) SetComputeRootUnorderedAccessView;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint64 BufferLocation) SetGraphicsRootUnorderedAccessView;
+				public new function void(ID3D12GraphicsCommandList *self, D3D12_INDEX_BUFFER_VIEW* pView) IASetIndexBuffer;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 StartSlot, uint32 NumViews, D3D12_VERTEX_BUFFER_VIEW* pViews) IASetVertexBuffers;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 StartSlot, uint32 NumViews, D3D12_STREAM_OUTPUT_BUFFER_VIEW* pViews) SOSetTargets;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 NumRenderTargetDescriptors, D3D12_CPU_DESCRIPTOR_HANDLE* pRenderTargetDescriptors, BOOL RTsSingleHandleToDescriptorRange, D3D12_CPU_DESCRIPTOR_HANDLE* pDepthStencilDescriptor) OMSetRenderTargets;
+				public new function void(ID3D12GraphicsCommandList *self, D3D12_CPU_DESCRIPTOR_HANDLE DepthStencilView, D3D12_CLEAR_FLAGS ClearFlags, float Depth, uint8 Stencil, uint32 NumRects, RECT* pRects) ClearDepthStencilView;
+				public new function void(ID3D12GraphicsCommandList *self, D3D12_CPU_DESCRIPTOR_HANDLE RenderTargetView, float* ColorRGBA, uint32 NumRects, RECT* pRects) ClearRenderTargetView;
+				public new function void(ID3D12GraphicsCommandList *self, D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, uint32* Values, uint32 NumRects, RECT* pRects) ClearUnorderedAccessViewUint;
+				public new function void(ID3D12GraphicsCommandList *self, D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, float* Values, uint32 NumRects, RECT* pRects) ClearUnorderedAccessViewFloat;
+				public new function void(ID3D12GraphicsCommandList *self, ID3D12Resource* pResource, D3D12_DISCARD_REGION* pRegion) DiscardResource;
+				public new function void(ID3D12GraphicsCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) BeginQuery;
+				public new function void(ID3D12GraphicsCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) EndQuery;
+				public new function void(ID3D12GraphicsCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ID3D12Resource* pDestinationBuffer, uint64 AlignedDestinationBufferOffset) ResolveQueryData;
+				public new function void(ID3D12GraphicsCommandList *self, ID3D12Resource* pBuffer, uint64 AlignedBufferOffset, D3D12_PREDICATION_OP Operation) SetPredication;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 Metadata, void* pData, uint32 Size) SetMarker;
+				public new function void(ID3D12GraphicsCommandList *self, uint32 Metadata, void* pData, uint32 Size) BeginEvent;
+				public new function void(ID3D12GraphicsCommandList *self) EndEvent;
+				public new function void(ID3D12GraphicsCommandList *self, ID3D12CommandSignature* pCommandSignature, uint32 MaxCommandCount, ID3D12Resource* pArgumentBuffer, uint64 ArgumentBufferOffset, ID3D12Resource* pCountBuffer, uint64 CountBufferOffset) ExecuteIndirect;
 			}
 		}
 		[CRepr]
@@ -5083,16 +5408,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x553103fb, 0x1fe7, 0x4557, 0xbb, 0x38, 0x94, 0x6d, 0x7d, 0x0e, 0x7c, 0xa7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, uint64 DstOffset, ID3D12Resource* pSrcBuffer, uint64 SrcOffset, uint32 Dependencies, ID3D12Resource** ppDependentResources, D3D12_SUBRESOURCE_RANGE_UINT64* pDependentSubresourceRanges) mut
+			{
+				VT.AtomicCopyBufferUINT(&this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
+			}
+			public void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, uint64 DstOffset, ID3D12Resource* pSrcBuffer, uint64 SrcOffset, uint32 Dependencies, ID3D12Resource** ppDependentResources, D3D12_SUBRESOURCE_RANGE_UINT64* pDependentSubresourceRanges) mut
+			{
+				VT.AtomicCopyBufferUINT64(&this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
+			}
+			public void OMSetDepthBounds(float Min, float Max) mut
+			{
+				VT.OMSetDepthBounds(&this, Min, Max);
+			}
+			public void SetSamplePositions(uint32 NumSamplesPerPixel, uint32 NumPixels, D3D12_SAMPLE_POSITION* pSamplePositions) mut
+			{
+				VT.SetSamplePositions(&this, NumSamplesPerPixel, NumPixels, pSamplePositions);
+			}
+			public void ResolveSubresourceRegion(ID3D12Resource* pDstResource, uint32 DstSubresource, uint32 DstX, uint32 DstY, ID3D12Resource* pSrcResource, uint32 SrcSubresource, RECT* pSrcRect, DXGI_FORMAT Format, D3D12_RESOLVE_MODE ResolveMode) mut
+			{
+				VT.ResolveSubresourceRegion(&this, pDstResource, DstSubresource, DstX, DstY, pSrcResource, SrcSubresource, pSrcRect, Format, ResolveMode);
+			}
+			public void SetViewInstanceMask(uint32 Mask) mut
+			{
+				VT.SetViewInstanceMask(&this, Mask);
+			}
 			[CRepr]
 			public struct VTable : ID3D12GraphicsCommandList.VTable
 			{
-				public function void(ID3D12GraphicsCommandList1 *self, ID3D12Resource* pDstBuffer, uint64 DstOffset, ID3D12Resource* pSrcBuffer, uint64 SrcOffset, uint32 Dependencies, ID3D12Resource** ppDependentResources, D3D12_SUBRESOURCE_RANGE_UINT64* pDependentSubresourceRanges) AtomicCopyBufferUINT;
-				public function void(ID3D12GraphicsCommandList1 *self, ID3D12Resource* pDstBuffer, uint64 DstOffset, ID3D12Resource* pSrcBuffer, uint64 SrcOffset, uint32 Dependencies, ID3D12Resource** ppDependentResources, D3D12_SUBRESOURCE_RANGE_UINT64* pDependentSubresourceRanges) AtomicCopyBufferUINT64;
-				public function void(ID3D12GraphicsCommandList1 *self, float Min, float Max) OMSetDepthBounds;
-				public function void(ID3D12GraphicsCommandList1 *self, uint32 NumSamplesPerPixel, uint32 NumPixels, D3D12_SAMPLE_POSITION* pSamplePositions) SetSamplePositions;
-				public function void(ID3D12GraphicsCommandList1 *self, ID3D12Resource* pDstResource, uint32 DstSubresource, uint32 DstX, uint32 DstY, ID3D12Resource* pSrcResource, uint32 SrcSubresource, RECT* pSrcRect, DXGI_FORMAT Format, D3D12_RESOLVE_MODE ResolveMode) ResolveSubresourceRegion;
-				public function void(ID3D12GraphicsCommandList1 *self, uint32 Mask) SetViewInstanceMask;
+				public new function void(ID3D12GraphicsCommandList1 *self, ID3D12Resource* pDstBuffer, uint64 DstOffset, ID3D12Resource* pSrcBuffer, uint64 SrcOffset, uint32 Dependencies, ID3D12Resource** ppDependentResources, D3D12_SUBRESOURCE_RANGE_UINT64* pDependentSubresourceRanges) AtomicCopyBufferUINT;
+				public new function void(ID3D12GraphicsCommandList1 *self, ID3D12Resource* pDstBuffer, uint64 DstOffset, ID3D12Resource* pSrcBuffer, uint64 SrcOffset, uint32 Dependencies, ID3D12Resource** ppDependentResources, D3D12_SUBRESOURCE_RANGE_UINT64* pDependentSubresourceRanges) AtomicCopyBufferUINT64;
+				public new function void(ID3D12GraphicsCommandList1 *self, float Min, float Max) OMSetDepthBounds;
+				public new function void(ID3D12GraphicsCommandList1 *self, uint32 NumSamplesPerPixel, uint32 NumPixels, D3D12_SAMPLE_POSITION* pSamplePositions) SetSamplePositions;
+				public new function void(ID3D12GraphicsCommandList1 *self, ID3D12Resource* pDstResource, uint32 DstSubresource, uint32 DstX, uint32 DstY, ID3D12Resource* pSrcResource, uint32 SrcSubresource, RECT* pSrcRect, DXGI_FORMAT Format, D3D12_RESOLVE_MODE ResolveMode) ResolveSubresourceRegion;
+				public new function void(ID3D12GraphicsCommandList1 *self, uint32 Mask) SetViewInstanceMask;
 			}
 		}
 		[CRepr]
@@ -5100,11 +5450,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x38c3e585, 0xff17, 0x412c, 0x91, 0x50, 0x4f, 0xc6, 0xf9, 0xd7, 0x2a, 0x28);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void WriteBufferImmediate(uint32 Count, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes) mut
+			{
+				VT.WriteBufferImmediate(&this, Count, pParams, pModes);
+			}
 			[CRepr]
 			public struct VTable : ID3D12GraphicsCommandList1.VTable
 			{
-				public function void(ID3D12GraphicsCommandList2 *self, uint32 Count, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes) WriteBufferImmediate;
+				public new function void(ID3D12GraphicsCommandList2 *self, uint32 Count, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes) WriteBufferImmediate;
 			}
 		}
 		[CRepr]
@@ -5112,21 +5467,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0ec870a6, 0x5d7e, 0x4c22, 0x8c, 0xfc, 0x5b, 0xaa, 0xe0, 0x76, 0x16, 0xed);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void UpdateTileMappings(ID3D12Resource* pResource, uint32 NumResourceRegions, D3D12_TILED_RESOURCE_COORDINATE* pResourceRegionStartCoordinates, D3D12_TILE_REGION_SIZE* pResourceRegionSizes, ID3D12Heap* pHeap, uint32 NumRanges, D3D12_TILE_RANGE_FLAGS* pRangeFlags, uint32* pHeapRangeStartOffsets, uint32* pRangeTileCounts, D3D12_TILE_MAPPING_FLAGS Flags) mut
+			{
+				VT.UpdateTileMappings(&this, pResource, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, pHeap, NumRanges, pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+			}
+			public void CopyTileMappings(ID3D12Resource* pDstResource, D3D12_TILED_RESOURCE_COORDINATE* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, D3D12_TILED_RESOURCE_COORDINATE* pSrcRegionStartCoordinate, D3D12_TILE_REGION_SIZE* pRegionSize, D3D12_TILE_MAPPING_FLAGS Flags) mut
+			{
+				VT.CopyTileMappings(&this, pDstResource, pDstRegionStartCoordinate, pSrcResource, pSrcRegionStartCoordinate, pRegionSize, Flags);
+			}
+			public void ExecuteCommandLists(uint32 NumCommandLists, ID3D12CommandList** ppCommandLists) mut
+			{
+				VT.ExecuteCommandLists(&this, NumCommandLists, ppCommandLists);
+			}
+			public void SetMarker(uint32 Metadata, void* pData, uint32 Size) mut
+			{
+				VT.SetMarker(&this, Metadata, pData, Size);
+			}
+			public void BeginEvent(uint32 Metadata, void* pData, uint32 Size) mut
+			{
+				VT.BeginEvent(&this, Metadata, pData, Size);
+			}
+			public void EndEvent() mut
+			{
+				VT.EndEvent(&this);
+			}
+			public HRESULT Signal(ID3D12Fence* pFence, uint64 Value) mut
+			{
+				return VT.Signal(&this, pFence, Value);
+			}
+			public HRESULT Wait(ID3D12Fence* pFence, uint64 Value) mut
+			{
+				return VT.Wait(&this, pFence, Value);
+			}
+			public HRESULT GetTimestampFrequency(uint64* pFrequency) mut
+			{
+				return VT.GetTimestampFrequency(&this, pFrequency);
+			}
+			public HRESULT GetClockCalibration(uint64* pGpuTimestamp, uint64* pCpuTimestamp) mut
+			{
+				return VT.GetClockCalibration(&this, pGpuTimestamp, pCpuTimestamp);
+			}
+			public D3D12_COMMAND_QUEUE_DESC GetDesc() mut
+			{
+				return VT.GetDesc(&this);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public function void(ID3D12CommandQueue *self, ID3D12Resource* pResource, uint32 NumResourceRegions, D3D12_TILED_RESOURCE_COORDINATE* pResourceRegionStartCoordinates, D3D12_TILE_REGION_SIZE* pResourceRegionSizes, ID3D12Heap* pHeap, uint32 NumRanges, D3D12_TILE_RANGE_FLAGS* pRangeFlags, uint32* pHeapRangeStartOffsets, uint32* pRangeTileCounts, D3D12_TILE_MAPPING_FLAGS Flags) UpdateTileMappings;
-				public function void(ID3D12CommandQueue *self, ID3D12Resource* pDstResource, D3D12_TILED_RESOURCE_COORDINATE* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, D3D12_TILED_RESOURCE_COORDINATE* pSrcRegionStartCoordinate, D3D12_TILE_REGION_SIZE* pRegionSize, D3D12_TILE_MAPPING_FLAGS Flags) CopyTileMappings;
-				public function void(ID3D12CommandQueue *self, uint32 NumCommandLists, ID3D12CommandList** ppCommandLists) ExecuteCommandLists;
-				public function void(ID3D12CommandQueue *self, uint32 Metadata, void* pData, uint32 Size) SetMarker;
-				public function void(ID3D12CommandQueue *self, uint32 Metadata, void* pData, uint32 Size) BeginEvent;
-				public function void(ID3D12CommandQueue *self) EndEvent;
-				public function HRESULT(ID3D12CommandQueue *self, ID3D12Fence* pFence, uint64 Value) Signal;
-				public function HRESULT(ID3D12CommandQueue *self, ID3D12Fence* pFence, uint64 Value) Wait;
-				public function HRESULT(ID3D12CommandQueue *self, uint64* pFrequency) GetTimestampFrequency;
-				public function HRESULT(ID3D12CommandQueue *self, uint64* pGpuTimestamp, uint64* pCpuTimestamp) GetClockCalibration;
-				public function D3D12_COMMAND_QUEUE_DESC(ID3D12CommandQueue *self) GetDesc;
+				public new function void(ID3D12CommandQueue *self, ID3D12Resource* pResource, uint32 NumResourceRegions, D3D12_TILED_RESOURCE_COORDINATE* pResourceRegionStartCoordinates, D3D12_TILE_REGION_SIZE* pResourceRegionSizes, ID3D12Heap* pHeap, uint32 NumRanges, D3D12_TILE_RANGE_FLAGS* pRangeFlags, uint32* pHeapRangeStartOffsets, uint32* pRangeTileCounts, D3D12_TILE_MAPPING_FLAGS Flags) UpdateTileMappings;
+				public new function void(ID3D12CommandQueue *self, ID3D12Resource* pDstResource, D3D12_TILED_RESOURCE_COORDINATE* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, D3D12_TILED_RESOURCE_COORDINATE* pSrcRegionStartCoordinate, D3D12_TILE_REGION_SIZE* pRegionSize, D3D12_TILE_MAPPING_FLAGS Flags) CopyTileMappings;
+				public new function void(ID3D12CommandQueue *self, uint32 NumCommandLists, ID3D12CommandList** ppCommandLists) ExecuteCommandLists;
+				public new function void(ID3D12CommandQueue *self, uint32 Metadata, void* pData, uint32 Size) SetMarker;
+				public new function void(ID3D12CommandQueue *self, uint32 Metadata, void* pData, uint32 Size) BeginEvent;
+				public new function void(ID3D12CommandQueue *self) EndEvent;
+				public new function HRESULT(ID3D12CommandQueue *self, ID3D12Fence* pFence, uint64 Value) Signal;
+				public new function HRESULT(ID3D12CommandQueue *self, ID3D12Fence* pFence, uint64 Value) Wait;
+				public new function HRESULT(ID3D12CommandQueue *self, uint64* pFrequency) GetTimestampFrequency;
+				public new function HRESULT(ID3D12CommandQueue *self, uint64* pGpuTimestamp, uint64* pCpuTimestamp) GetClockCalibration;
+				public new function D3D12_COMMAND_QUEUE_DESC(ID3D12CommandQueue *self) GetDesc;
 			}
 		}
 		[CRepr]
@@ -5134,47 +5534,196 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x189819f1, 0x1db6, 0x4b57, 0xbe, 0x54, 0x18, 0x21, 0x33, 0x9b, 0x85, 0xf7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public uint32 GetNodeCount() mut
+			{
+				return VT.GetNodeCount(&this);
+			}
+			public HRESULT CreateCommandQueue(D3D12_COMMAND_QUEUE_DESC* pDesc, Guid* riid, void** ppCommandQueue) mut
+			{
+				return VT.CreateCommandQueue(&this, pDesc, riid, ppCommandQueue);
+			}
+			public HRESULT CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE type, Guid* riid, void** ppCommandAllocator) mut
+			{
+				return VT.CreateCommandAllocator(&this, type, riid, ppCommandAllocator);
+			}
+			public HRESULT CreateGraphicsPipelineState(D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, Guid* riid, void** ppPipelineState) mut
+			{
+				return VT.CreateGraphicsPipelineState(&this, pDesc, riid, ppPipelineState);
+			}
+			public HRESULT CreateComputePipelineState(D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, Guid* riid, void** ppPipelineState) mut
+			{
+				return VT.CreateComputePipelineState(&this, pDesc, riid, ppPipelineState);
+			}
+			public HRESULT CreateCommandList(uint32 nodeMask, D3D12_COMMAND_LIST_TYPE type, ID3D12CommandAllocator* pCommandAllocator, ID3D12PipelineState* pInitialState, Guid* riid, void** ppCommandList) mut
+			{
+				return VT.CreateCommandList(&this, nodeMask, type, pCommandAllocator, pInitialState, riid, ppCommandList);
+			}
+			public HRESULT CheckFeatureSupport(D3D12_FEATURE Feature, void* pFeatureSupportData, uint32 FeatureSupportDataSize) mut
+			{
+				return VT.CheckFeatureSupport(&this, Feature, pFeatureSupportData, FeatureSupportDataSize);
+			}
+			public HRESULT CreateDescriptorHeap(D3D12_DESCRIPTOR_HEAP_DESC* pDescriptorHeapDesc, Guid* riid, void** ppvHeap) mut
+			{
+				return VT.CreateDescriptorHeap(&this, pDescriptorHeapDesc, riid, ppvHeap);
+			}
+			public uint32 GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapType) mut
+			{
+				return VT.GetDescriptorHandleIncrementSize(&this, DescriptorHeapType);
+			}
+			public HRESULT CreateRootSignature(uint32 nodeMask, void* pBlobWithRootSignature, uint blobLengthInBytes, Guid* riid, void** ppvRootSignature) mut
+			{
+				return VT.CreateRootSignature(&this, nodeMask, pBlobWithRootSignature, blobLengthInBytes, riid, ppvRootSignature);
+			}
+			public void CreateConstantBufferView(D3D12_CONSTANT_BUFFER_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) mut
+			{
+				VT.CreateConstantBufferView(&this, pDesc, DestDescriptor);
+			}
+			public void CreateShaderResourceView(ID3D12Resource* pResource, D3D12_SHADER_RESOURCE_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) mut
+			{
+				VT.CreateShaderResourceView(&this, pResource, pDesc, DestDescriptor);
+			}
+			public void CreateUnorderedAccessView(ID3D12Resource* pResource, ID3D12Resource* pCounterResource, D3D12_UNORDERED_ACCESS_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) mut
+			{
+				VT.CreateUnorderedAccessView(&this, pResource, pCounterResource, pDesc, DestDescriptor);
+			}
+			public void CreateRenderTargetView(ID3D12Resource* pResource, D3D12_RENDER_TARGET_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) mut
+			{
+				VT.CreateRenderTargetView(&this, pResource, pDesc, DestDescriptor);
+			}
+			public void CreateDepthStencilView(ID3D12Resource* pResource, D3D12_DEPTH_STENCIL_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) mut
+			{
+				VT.CreateDepthStencilView(&this, pResource, pDesc, DestDescriptor);
+			}
+			public void CreateSampler(D3D12_SAMPLER_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) mut
+			{
+				VT.CreateSampler(&this, pDesc, DestDescriptor);
+			}
+			public void CopyDescriptors(uint32 NumDestDescriptorRanges, D3D12_CPU_DESCRIPTOR_HANDLE* pDestDescriptorRangeStarts, uint32* pDestDescriptorRangeSizes, uint32 NumSrcDescriptorRanges, D3D12_CPU_DESCRIPTOR_HANDLE* pSrcDescriptorRangeStarts, uint32* pSrcDescriptorRangeSizes, D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType) mut
+			{
+				VT.CopyDescriptors(&this, NumDestDescriptorRanges, pDestDescriptorRangeStarts, pDestDescriptorRangeSizes, NumSrcDescriptorRanges, pSrcDescriptorRangeStarts, pSrcDescriptorRangeSizes, DescriptorHeapsType);
+			}
+			public void CopyDescriptorsSimple(uint32 NumDescriptors, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptorRangeStart, D3D12_CPU_DESCRIPTOR_HANDLE SrcDescriptorRangeStart, D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType) mut
+			{
+				VT.CopyDescriptorsSimple(&this, NumDescriptors, DestDescriptorRangeStart, SrcDescriptorRangeStart, DescriptorHeapsType);
+			}
+			public D3D12_RESOURCE_ALLOCATION_INFO GetResourceAllocationInfo(uint32 visibleMask, uint32 numResourceDescs, D3D12_RESOURCE_DESC* pResourceDescs) mut
+			{
+				return VT.GetResourceAllocationInfo(&this, visibleMask, numResourceDescs, pResourceDescs);
+			}
+			public D3D12_HEAP_PROPERTIES GetCustomHeapProperties(uint32 nodeMask, D3D12_HEAP_TYPE heapType) mut
+			{
+				return VT.GetCustomHeapProperties(&this, nodeMask, heapType);
+			}
+			public HRESULT CreateCommittedResource(D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS HeapFlags, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialResourceState, D3D12_CLEAR_VALUE* pOptimizedClearValue, Guid* riidResource, void** ppvResource) mut
+			{
+				return VT.CreateCommittedResource(&this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, riidResource, ppvResource);
+			}
+			public HRESULT CreateHeap(D3D12_HEAP_DESC* pDesc, Guid* riid, void** ppvHeap) mut
+			{
+				return VT.CreateHeap(&this, pDesc, riid, ppvHeap);
+			}
+			public HRESULT CreatePlacedResource(ID3D12Heap* pHeap, uint64 HeapOffset, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialState, D3D12_CLEAR_VALUE* pOptimizedClearValue, Guid* riid, void** ppvResource) mut
+			{
+				return VT.CreatePlacedResource(&this, pHeap, HeapOffset, pDesc, InitialState, pOptimizedClearValue, riid, ppvResource);
+			}
+			public HRESULT CreateReservedResource(D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialState, D3D12_CLEAR_VALUE* pOptimizedClearValue, Guid* riid, void** ppvResource) mut
+			{
+				return VT.CreateReservedResource(&this, pDesc, InitialState, pOptimizedClearValue, riid, ppvResource);
+			}
+			public HRESULT CreateSharedHandle(ID3D12DeviceChild* pObject, SECURITY_ATTRIBUTES* pAttributes, uint32 Access, PWSTR Name, HANDLE* pHandle) mut
+			{
+				return VT.CreateSharedHandle(&this, pObject, pAttributes, Access, Name, pHandle);
+			}
+			public HRESULT OpenSharedHandle(HANDLE NTHandle, Guid* riid, void** ppvObj) mut
+			{
+				return VT.OpenSharedHandle(&this, NTHandle, riid, ppvObj);
+			}
+			public HRESULT OpenSharedHandleByName(PWSTR Name, uint32 Access, HANDLE* pNTHandle) mut
+			{
+				return VT.OpenSharedHandleByName(&this, Name, Access, pNTHandle);
+			}
+			public HRESULT MakeResident(uint32 NumObjects, ID3D12Pageable** ppObjects) mut
+			{
+				return VT.MakeResident(&this, NumObjects, ppObjects);
+			}
+			public HRESULT Evict(uint32 NumObjects, ID3D12Pageable** ppObjects) mut
+			{
+				return VT.Evict(&this, NumObjects, ppObjects);
+			}
+			public HRESULT CreateFence(uint64 InitialValue, D3D12_FENCE_FLAGS Flags, Guid* riid, void** ppFence) mut
+			{
+				return VT.CreateFence(&this, InitialValue, Flags, riid, ppFence);
+			}
+			public HRESULT GetDeviceRemovedReason() mut
+			{
+				return VT.GetDeviceRemovedReason(&this);
+			}
+			public void GetCopyableFootprints(D3D12_RESOURCE_DESC* pResourceDesc, uint32 FirstSubresource, uint32 NumSubresources, uint64 BaseOffset, D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, uint32* pNumRows, uint64* pRowSizeInBytes, uint64* pTotalBytes) mut
+			{
+				VT.GetCopyableFootprints(&this, pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, pLayouts, pNumRows, pRowSizeInBytes, pTotalBytes);
+			}
+			public HRESULT CreateQueryHeap(D3D12_QUERY_HEAP_DESC* pDesc, Guid* riid, void** ppvHeap) mut
+			{
+				return VT.CreateQueryHeap(&this, pDesc, riid, ppvHeap);
+			}
+			public HRESULT SetStablePowerState(BOOL Enable) mut
+			{
+				return VT.SetStablePowerState(&this, Enable);
+			}
+			public HRESULT CreateCommandSignature(D3D12_COMMAND_SIGNATURE_DESC* pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, void** ppvCommandSignature) mut
+			{
+				return VT.CreateCommandSignature(&this, pDesc, pRootSignature, riid, ppvCommandSignature);
+			}
+			public void GetResourceTiling(ID3D12Resource* pTiledResource, uint32* pNumTilesForEntireResource, D3D12_PACKED_MIP_INFO* pPackedMipDesc, D3D12_TILE_SHAPE* pStandardTileShapeForNonPackedMips, uint32* pNumSubresourceTilings, uint32 FirstSubresourceTilingToGet, D3D12_SUBRESOURCE_TILING* pSubresourceTilingsForNonPackedMips) mut
+			{
+				VT.GetResourceTiling(&this, pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+			}
+			public LUID GetAdapterLuid() mut
+			{
+				return VT.GetAdapterLuid(&this);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Object.VTable
 			{
-				public function uint32(ID3D12Device *self) GetNodeCount;
-				public function HRESULT(ID3D12Device *self, D3D12_COMMAND_QUEUE_DESC* pDesc, Guid* riid, void** ppCommandQueue) CreateCommandQueue;
-				public function HRESULT(ID3D12Device *self, D3D12_COMMAND_LIST_TYPE type, Guid* riid, void** ppCommandAllocator) CreateCommandAllocator;
-				public function HRESULT(ID3D12Device *self, D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, Guid* riid, void** ppPipelineState) CreateGraphicsPipelineState;
-				public function HRESULT(ID3D12Device *self, D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, Guid* riid, void** ppPipelineState) CreateComputePipelineState;
-				public function HRESULT(ID3D12Device *self, uint32 nodeMask, D3D12_COMMAND_LIST_TYPE type, ID3D12CommandAllocator* pCommandAllocator, ID3D12PipelineState* pInitialState, Guid* riid, void** ppCommandList) CreateCommandList;
-				public function HRESULT(ID3D12Device *self, D3D12_FEATURE Feature, void* pFeatureSupportData, uint32 FeatureSupportDataSize) CheckFeatureSupport;
-				public function HRESULT(ID3D12Device *self, D3D12_DESCRIPTOR_HEAP_DESC* pDescriptorHeapDesc, Guid* riid, void** ppvHeap) CreateDescriptorHeap;
-				public function uint32(ID3D12Device *self, D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapType) GetDescriptorHandleIncrementSize;
-				public function HRESULT(ID3D12Device *self, uint32 nodeMask, void* pBlobWithRootSignature, uint blobLengthInBytes, Guid* riid, void** ppvRootSignature) CreateRootSignature;
-				public function void(ID3D12Device *self, D3D12_CONSTANT_BUFFER_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateConstantBufferView;
-				public function void(ID3D12Device *self, ID3D12Resource* pResource, D3D12_SHADER_RESOURCE_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateShaderResourceView;
-				public function void(ID3D12Device *self, ID3D12Resource* pResource, ID3D12Resource* pCounterResource, D3D12_UNORDERED_ACCESS_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateUnorderedAccessView;
-				public function void(ID3D12Device *self, ID3D12Resource* pResource, D3D12_RENDER_TARGET_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateRenderTargetView;
-				public function void(ID3D12Device *self, ID3D12Resource* pResource, D3D12_DEPTH_STENCIL_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateDepthStencilView;
-				public function void(ID3D12Device *self, D3D12_SAMPLER_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateSampler;
-				public function void(ID3D12Device *self, uint32 NumDestDescriptorRanges, D3D12_CPU_DESCRIPTOR_HANDLE* pDestDescriptorRangeStarts, uint32* pDestDescriptorRangeSizes, uint32 NumSrcDescriptorRanges, D3D12_CPU_DESCRIPTOR_HANDLE* pSrcDescriptorRangeStarts, uint32* pSrcDescriptorRangeSizes, D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType) CopyDescriptors;
-				public function void(ID3D12Device *self, uint32 NumDescriptors, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptorRangeStart, D3D12_CPU_DESCRIPTOR_HANDLE SrcDescriptorRangeStart, D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType) CopyDescriptorsSimple;
-				public function D3D12_RESOURCE_ALLOCATION_INFO(ID3D12Device *self, uint32 visibleMask, uint32 numResourceDescs, D3D12_RESOURCE_DESC* pResourceDescs) GetResourceAllocationInfo;
-				public function D3D12_HEAP_PROPERTIES(ID3D12Device *self, uint32 nodeMask, D3D12_HEAP_TYPE heapType) GetCustomHeapProperties;
-				public function HRESULT(ID3D12Device *self, D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS HeapFlags, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialResourceState, D3D12_CLEAR_VALUE* pOptimizedClearValue, Guid* riidResource, void** ppvResource) CreateCommittedResource;
-				public function HRESULT(ID3D12Device *self, D3D12_HEAP_DESC* pDesc, Guid* riid, void** ppvHeap) CreateHeap;
-				public function HRESULT(ID3D12Device *self, ID3D12Heap* pHeap, uint64 HeapOffset, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialState, D3D12_CLEAR_VALUE* pOptimizedClearValue, Guid* riid, void** ppvResource) CreatePlacedResource;
-				public function HRESULT(ID3D12Device *self, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialState, D3D12_CLEAR_VALUE* pOptimizedClearValue, Guid* riid, void** ppvResource) CreateReservedResource;
-				public function HRESULT(ID3D12Device *self, ID3D12DeviceChild* pObject, SECURITY_ATTRIBUTES* pAttributes, uint32 Access, PWSTR Name, HANDLE* pHandle) CreateSharedHandle;
-				public function HRESULT(ID3D12Device *self, HANDLE NTHandle, Guid* riid, void** ppvObj) OpenSharedHandle;
-				public function HRESULT(ID3D12Device *self, PWSTR Name, uint32 Access, HANDLE* pNTHandle) OpenSharedHandleByName;
-				public function HRESULT(ID3D12Device *self, uint32 NumObjects, ID3D12Pageable** ppObjects) MakeResident;
-				public function HRESULT(ID3D12Device *self, uint32 NumObjects, ID3D12Pageable** ppObjects) Evict;
-				public function HRESULT(ID3D12Device *self, uint64 InitialValue, D3D12_FENCE_FLAGS Flags, Guid* riid, void** ppFence) CreateFence;
-				public function HRESULT(ID3D12Device *self) GetDeviceRemovedReason;
-				public function void(ID3D12Device *self, D3D12_RESOURCE_DESC* pResourceDesc, uint32 FirstSubresource, uint32 NumSubresources, uint64 BaseOffset, D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, uint32* pNumRows, uint64* pRowSizeInBytes, uint64* pTotalBytes) GetCopyableFootprints;
-				public function HRESULT(ID3D12Device *self, D3D12_QUERY_HEAP_DESC* pDesc, Guid* riid, void** ppvHeap) CreateQueryHeap;
-				public function HRESULT(ID3D12Device *self, BOOL Enable) SetStablePowerState;
-				public function HRESULT(ID3D12Device *self, D3D12_COMMAND_SIGNATURE_DESC* pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, void** ppvCommandSignature) CreateCommandSignature;
-				public function void(ID3D12Device *self, ID3D12Resource* pTiledResource, uint32* pNumTilesForEntireResource, D3D12_PACKED_MIP_INFO* pPackedMipDesc, D3D12_TILE_SHAPE* pStandardTileShapeForNonPackedMips, uint32* pNumSubresourceTilings, uint32 FirstSubresourceTilingToGet, D3D12_SUBRESOURCE_TILING* pSubresourceTilingsForNonPackedMips) GetResourceTiling;
-				public function LUID(ID3D12Device *self) GetAdapterLuid;
+				public new function uint32(ID3D12Device *self) GetNodeCount;
+				public new function HRESULT(ID3D12Device *self, D3D12_COMMAND_QUEUE_DESC* pDesc, Guid* riid, void** ppCommandQueue) CreateCommandQueue;
+				public new function HRESULT(ID3D12Device *self, D3D12_COMMAND_LIST_TYPE type, Guid* riid, void** ppCommandAllocator) CreateCommandAllocator;
+				public new function HRESULT(ID3D12Device *self, D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, Guid* riid, void** ppPipelineState) CreateGraphicsPipelineState;
+				public new function HRESULT(ID3D12Device *self, D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, Guid* riid, void** ppPipelineState) CreateComputePipelineState;
+				public new function HRESULT(ID3D12Device *self, uint32 nodeMask, D3D12_COMMAND_LIST_TYPE type, ID3D12CommandAllocator* pCommandAllocator, ID3D12PipelineState* pInitialState, Guid* riid, void** ppCommandList) CreateCommandList;
+				public new function HRESULT(ID3D12Device *self, D3D12_FEATURE Feature, void* pFeatureSupportData, uint32 FeatureSupportDataSize) CheckFeatureSupport;
+				public new function HRESULT(ID3D12Device *self, D3D12_DESCRIPTOR_HEAP_DESC* pDescriptorHeapDesc, Guid* riid, void** ppvHeap) CreateDescriptorHeap;
+				public new function uint32(ID3D12Device *self, D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapType) GetDescriptorHandleIncrementSize;
+				public new function HRESULT(ID3D12Device *self, uint32 nodeMask, void* pBlobWithRootSignature, uint blobLengthInBytes, Guid* riid, void** ppvRootSignature) CreateRootSignature;
+				public new function void(ID3D12Device *self, D3D12_CONSTANT_BUFFER_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateConstantBufferView;
+				public new function void(ID3D12Device *self, ID3D12Resource* pResource, D3D12_SHADER_RESOURCE_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateShaderResourceView;
+				public new function void(ID3D12Device *self, ID3D12Resource* pResource, ID3D12Resource* pCounterResource, D3D12_UNORDERED_ACCESS_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateUnorderedAccessView;
+				public new function void(ID3D12Device *self, ID3D12Resource* pResource, D3D12_RENDER_TARGET_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateRenderTargetView;
+				public new function void(ID3D12Device *self, ID3D12Resource* pResource, D3D12_DEPTH_STENCIL_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateDepthStencilView;
+				public new function void(ID3D12Device *self, D3D12_SAMPLER_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateSampler;
+				public new function void(ID3D12Device *self, uint32 NumDestDescriptorRanges, D3D12_CPU_DESCRIPTOR_HANDLE* pDestDescriptorRangeStarts, uint32* pDestDescriptorRangeSizes, uint32 NumSrcDescriptorRanges, D3D12_CPU_DESCRIPTOR_HANDLE* pSrcDescriptorRangeStarts, uint32* pSrcDescriptorRangeSizes, D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType) CopyDescriptors;
+				public new function void(ID3D12Device *self, uint32 NumDescriptors, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptorRangeStart, D3D12_CPU_DESCRIPTOR_HANDLE SrcDescriptorRangeStart, D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType) CopyDescriptorsSimple;
+				public new function D3D12_RESOURCE_ALLOCATION_INFO(ID3D12Device *self, uint32 visibleMask, uint32 numResourceDescs, D3D12_RESOURCE_DESC* pResourceDescs) GetResourceAllocationInfo;
+				public new function D3D12_HEAP_PROPERTIES(ID3D12Device *self, uint32 nodeMask, D3D12_HEAP_TYPE heapType) GetCustomHeapProperties;
+				public new function HRESULT(ID3D12Device *self, D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS HeapFlags, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialResourceState, D3D12_CLEAR_VALUE* pOptimizedClearValue, Guid* riidResource, void** ppvResource) CreateCommittedResource;
+				public new function HRESULT(ID3D12Device *self, D3D12_HEAP_DESC* pDesc, Guid* riid, void** ppvHeap) CreateHeap;
+				public new function HRESULT(ID3D12Device *self, ID3D12Heap* pHeap, uint64 HeapOffset, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialState, D3D12_CLEAR_VALUE* pOptimizedClearValue, Guid* riid, void** ppvResource) CreatePlacedResource;
+				public new function HRESULT(ID3D12Device *self, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialState, D3D12_CLEAR_VALUE* pOptimizedClearValue, Guid* riid, void** ppvResource) CreateReservedResource;
+				public new function HRESULT(ID3D12Device *self, ID3D12DeviceChild* pObject, SECURITY_ATTRIBUTES* pAttributes, uint32 Access, PWSTR Name, HANDLE* pHandle) CreateSharedHandle;
+				public new function HRESULT(ID3D12Device *self, HANDLE NTHandle, Guid* riid, void** ppvObj) OpenSharedHandle;
+				public new function HRESULT(ID3D12Device *self, PWSTR Name, uint32 Access, HANDLE* pNTHandle) OpenSharedHandleByName;
+				public new function HRESULT(ID3D12Device *self, uint32 NumObjects, ID3D12Pageable** ppObjects) MakeResident;
+				public new function HRESULT(ID3D12Device *self, uint32 NumObjects, ID3D12Pageable** ppObjects) Evict;
+				public new function HRESULT(ID3D12Device *self, uint64 InitialValue, D3D12_FENCE_FLAGS Flags, Guid* riid, void** ppFence) CreateFence;
+				public new function HRESULT(ID3D12Device *self) GetDeviceRemovedReason;
+				public new function void(ID3D12Device *self, D3D12_RESOURCE_DESC* pResourceDesc, uint32 FirstSubresource, uint32 NumSubresources, uint64 BaseOffset, D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, uint32* pNumRows, uint64* pRowSizeInBytes, uint64* pTotalBytes) GetCopyableFootprints;
+				public new function HRESULT(ID3D12Device *self, D3D12_QUERY_HEAP_DESC* pDesc, Guid* riid, void** ppvHeap) CreateQueryHeap;
+				public new function HRESULT(ID3D12Device *self, BOOL Enable) SetStablePowerState;
+				public new function HRESULT(ID3D12Device *self, D3D12_COMMAND_SIGNATURE_DESC* pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, void** ppvCommandSignature) CreateCommandSignature;
+				public new function void(ID3D12Device *self, ID3D12Resource* pTiledResource, uint32* pNumTilesForEntireResource, D3D12_PACKED_MIP_INFO* pPackedMipDesc, D3D12_TILE_SHAPE* pStandardTileShapeForNonPackedMips, uint32* pNumSubresourceTilings, uint32 FirstSubresourceTilingToGet, D3D12_SUBRESOURCE_TILING* pSubresourceTilingsForNonPackedMips) GetResourceTiling;
+				public new function LUID(ID3D12Device *self) GetAdapterLuid;
 			}
 		}
 		[CRepr]
@@ -5182,15 +5731,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc64226a8, 0x9201, 0x46af, 0xb4, 0xcc, 0x53, 0xfb, 0x9f, 0xf7, 0x41, 0x4f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT StorePipeline(PWSTR pName, ID3D12PipelineState* pPipeline) mut
+			{
+				return VT.StorePipeline(&this, pName, pPipeline);
+			}
+			public HRESULT LoadGraphicsPipeline(PWSTR pName, D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, Guid* riid, void** ppPipelineState) mut
+			{
+				return VT.LoadGraphicsPipeline(&this, pName, pDesc, riid, ppPipelineState);
+			}
+			public HRESULT LoadComputePipeline(PWSTR pName, D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, Guid* riid, void** ppPipelineState) mut
+			{
+				return VT.LoadComputePipeline(&this, pName, pDesc, riid, ppPipelineState);
+			}
+			public uint GetSerializedSize() mut
+			{
+				return VT.GetSerializedSize(&this);
+			}
+			public HRESULT Serialize(void* pData, uint DataSizeInBytes) mut
+			{
+				return VT.Serialize(&this, pData, DataSizeInBytes);
+			}
 			[CRepr]
 			public struct VTable : ID3D12DeviceChild.VTable
 			{
-				public function HRESULT(ID3D12PipelineLibrary *self, PWSTR pName, ID3D12PipelineState* pPipeline) StorePipeline;
-				public function HRESULT(ID3D12PipelineLibrary *self, PWSTR pName, D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, Guid* riid, void** ppPipelineState) LoadGraphicsPipeline;
-				public function HRESULT(ID3D12PipelineLibrary *self, PWSTR pName, D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, Guid* riid, void** ppPipelineState) LoadComputePipeline;
-				public function uint(ID3D12PipelineLibrary *self) GetSerializedSize;
-				public function HRESULT(ID3D12PipelineLibrary *self, void* pData, uint DataSizeInBytes) Serialize;
+				public new function HRESULT(ID3D12PipelineLibrary *self, PWSTR pName, ID3D12PipelineState* pPipeline) StorePipeline;
+				public new function HRESULT(ID3D12PipelineLibrary *self, PWSTR pName, D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, Guid* riid, void** ppPipelineState) LoadGraphicsPipeline;
+				public new function HRESULT(ID3D12PipelineLibrary *self, PWSTR pName, D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, Guid* riid, void** ppPipelineState) LoadComputePipeline;
+				public new function uint(ID3D12PipelineLibrary *self) GetSerializedSize;
+				public new function HRESULT(ID3D12PipelineLibrary *self, void* pData, uint DataSizeInBytes) Serialize;
 			}
 		}
 		[CRepr]
@@ -5198,11 +5768,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x80eabf42, 0x2568, 0x4e5e, 0xbd, 0x82, 0xc3, 0x7f, 0x86, 0x96, 0x1d, 0xc3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT LoadPipeline(PWSTR pName, D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, Guid* riid, void** ppPipelineState) mut
+			{
+				return VT.LoadPipeline(&this, pName, pDesc, riid, ppPipelineState);
+			}
 			[CRepr]
 			public struct VTable : ID3D12PipelineLibrary.VTable
 			{
-				public function HRESULT(ID3D12PipelineLibrary1 *self, PWSTR pName, D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, Guid* riid, void** ppPipelineState) LoadPipeline;
+				public new function HRESULT(ID3D12PipelineLibrary1 *self, PWSTR pName, D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, Guid* riid, void** ppPipelineState) LoadPipeline;
 			}
 		}
 		[CRepr]
@@ -5210,13 +5785,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x77acce80, 0x638e, 0x4e65, 0x88, 0x95, 0xc1, 0xf2, 0x33, 0x86, 0x86, 0x3e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreatePipelineLibrary(void* pLibraryBlob, uint BlobLength, Guid* riid, void** ppPipelineLibrary) mut
+			{
+				return VT.CreatePipelineLibrary(&this, pLibraryBlob, BlobLength, riid, ppPipelineLibrary);
+			}
+			public HRESULT SetEventOnMultipleFenceCompletion(ID3D12Fence** ppFences, uint64* pFenceValues, uint32 NumFences, D3D12_MULTIPLE_FENCE_WAIT_FLAGS Flags, HANDLE hEvent) mut
+			{
+				return VT.SetEventOnMultipleFenceCompletion(&this, ppFences, pFenceValues, NumFences, Flags, hEvent);
+			}
+			public HRESULT SetResidencyPriority(uint32 NumObjects, ID3D12Pageable** ppObjects, D3D12_RESIDENCY_PRIORITY* pPriorities) mut
+			{
+				return VT.SetResidencyPriority(&this, NumObjects, ppObjects, pPriorities);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Device.VTable
 			{
-				public function HRESULT(ID3D12Device1 *self, void* pLibraryBlob, uint BlobLength, Guid* riid, void** ppPipelineLibrary) CreatePipelineLibrary;
-				public function HRESULT(ID3D12Device1 *self, ID3D12Fence** ppFences, uint64* pFenceValues, uint32 NumFences, D3D12_MULTIPLE_FENCE_WAIT_FLAGS Flags, HANDLE hEvent) SetEventOnMultipleFenceCompletion;
-				public function HRESULT(ID3D12Device1 *self, uint32 NumObjects, ID3D12Pageable** ppObjects, D3D12_RESIDENCY_PRIORITY* pPriorities) SetResidencyPriority;
+				public new function HRESULT(ID3D12Device1 *self, void* pLibraryBlob, uint BlobLength, Guid* riid, void** ppPipelineLibrary) CreatePipelineLibrary;
+				public new function HRESULT(ID3D12Device1 *self, ID3D12Fence** ppFences, uint64* pFenceValues, uint32 NumFences, D3D12_MULTIPLE_FENCE_WAIT_FLAGS Flags, HANDLE hEvent) SetEventOnMultipleFenceCompletion;
+				public new function HRESULT(ID3D12Device1 *self, uint32 NumObjects, ID3D12Pageable** ppObjects, D3D12_RESIDENCY_PRIORITY* pPriorities) SetResidencyPriority;
 			}
 		}
 		[CRepr]
@@ -5224,11 +5812,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x30baa41e, 0xb15b, 0x475c, 0xa0, 0xbb, 0x1a, 0xf5, 0xc5, 0xb6, 0x43, 0x28);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreatePipelineState(D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, Guid* riid, void** ppPipelineState) mut
+			{
+				return VT.CreatePipelineState(&this, pDesc, riid, ppPipelineState);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Device1.VTable
 			{
-				public function HRESULT(ID3D12Device2 *self, D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, Guid* riid, void** ppPipelineState) CreatePipelineState;
+				public new function HRESULT(ID3D12Device2 *self, D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, Guid* riid, void** ppPipelineState) CreatePipelineState;
 			}
 		}
 		[CRepr]
@@ -5236,13 +5829,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x81dadc15, 0x2bad, 0x4392, 0x93, 0xc5, 0x10, 0x13, 0x45, 0xc4, 0xaa, 0x98);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OpenExistingHeapFromAddress(void* pAddress, Guid* riid, void** ppvHeap) mut
+			{
+				return VT.OpenExistingHeapFromAddress(&this, pAddress, riid, ppvHeap);
+			}
+			public HRESULT OpenExistingHeapFromFileMapping(HANDLE hFileMapping, Guid* riid, void** ppvHeap) mut
+			{
+				return VT.OpenExistingHeapFromFileMapping(&this, hFileMapping, riid, ppvHeap);
+			}
+			public HRESULT EnqueueMakeResident(D3D12_RESIDENCY_FLAGS Flags, uint32 NumObjects, ID3D12Pageable** ppObjects, ID3D12Fence* pFenceToSignal, uint64 FenceValueToSignal) mut
+			{
+				return VT.EnqueueMakeResident(&this, Flags, NumObjects, ppObjects, pFenceToSignal, FenceValueToSignal);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Device2.VTable
 			{
-				public function HRESULT(ID3D12Device3 *self, void* pAddress, Guid* riid, void** ppvHeap) OpenExistingHeapFromAddress;
-				public function HRESULT(ID3D12Device3 *self, HANDLE hFileMapping, Guid* riid, void** ppvHeap) OpenExistingHeapFromFileMapping;
-				public function HRESULT(ID3D12Device3 *self, D3D12_RESIDENCY_FLAGS Flags, uint32 NumObjects, ID3D12Pageable** ppObjects, ID3D12Fence* pFenceToSignal, uint64 FenceValueToSignal) EnqueueMakeResident;
+				public new function HRESULT(ID3D12Device3 *self, void* pAddress, Guid* riid, void** ppvHeap) OpenExistingHeapFromAddress;
+				public new function HRESULT(ID3D12Device3 *self, HANDLE hFileMapping, Guid* riid, void** ppvHeap) OpenExistingHeapFromFileMapping;
+				public new function HRESULT(ID3D12Device3 *self, D3D12_RESIDENCY_FLAGS Flags, uint32 NumObjects, ID3D12Pageable** ppObjects, ID3D12Fence* pFenceToSignal, uint64 FenceValueToSignal) EnqueueMakeResident;
 			}
 		}
 		[CRepr]
@@ -5250,12 +5856,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa1533d18, 0x0ac1, 0x4084, 0x85, 0xb9, 0x89, 0xa9, 0x61, 0x16, 0x80, 0x6b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetStatusFence(Guid* riid, void** ppFence) mut
+			{
+				return VT.GetStatusFence(&this, riid, ppFence);
+			}
+			public D3D12_PROTECTED_SESSION_STATUS GetSessionStatus() mut
+			{
+				return VT.GetSessionStatus(&this);
+			}
 			[CRepr]
 			public struct VTable : ID3D12DeviceChild.VTable
 			{
-				public function HRESULT(ID3D12ProtectedSession *self, Guid* riid, void** ppFence) GetStatusFence;
-				public function D3D12_PROTECTED_SESSION_STATUS(ID3D12ProtectedSession *self) GetSessionStatus;
+				public new function HRESULT(ID3D12ProtectedSession *self, Guid* riid, void** ppFence) GetStatusFence;
+				public new function D3D12_PROTECTED_SESSION_STATUS(ID3D12ProtectedSession *self) GetSessionStatus;
 			}
 		}
 		[CRepr]
@@ -5263,11 +5878,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6cd696f4, 0xf289, 0x40cc, 0x80, 0x91, 0x5a, 0x6c, 0x0a, 0x09, 0x9c, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public D3D12_PROTECTED_RESOURCE_SESSION_DESC GetDesc() mut
+			{
+				return VT.GetDesc(&this);
+			}
 			[CRepr]
 			public struct VTable : ID3D12ProtectedSession.VTable
 			{
-				public function D3D12_PROTECTED_RESOURCE_SESSION_DESC(ID3D12ProtectedResourceSession *self) GetDesc;
+				public new function D3D12_PROTECTED_RESOURCE_SESSION_DESC(ID3D12ProtectedResourceSession *self) GetDesc;
 			}
 		}
 		[CRepr]
@@ -5275,16 +5895,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe865df17, 0xa9ee, 0x46f9, 0xa4, 0x63, 0x30, 0x98, 0x31, 0x5a, 0xa2, 0xe5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateCommandList1(uint32 nodeMask, D3D12_COMMAND_LIST_TYPE type, D3D12_COMMAND_LIST_FLAGS flags, Guid* riid, void** ppCommandList) mut
+			{
+				return VT.CreateCommandList1(&this, nodeMask, type, flags, riid, ppCommandList);
+			}
+			public HRESULT CreateProtectedResourceSession(D3D12_PROTECTED_RESOURCE_SESSION_DESC* pDesc, Guid* riid, void** ppSession) mut
+			{
+				return VT.CreateProtectedResourceSession(&this, pDesc, riid, ppSession);
+			}
+			public HRESULT CreateCommittedResource1(D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS HeapFlags, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialResourceState, D3D12_CLEAR_VALUE* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource) mut
+			{
+				return VT.CreateCommittedResource1(&this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, riidResource, ppvResource);
+			}
+			public HRESULT CreateHeap1(D3D12_HEAP_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvHeap) mut
+			{
+				return VT.CreateHeap1(&this, pDesc, pProtectedSession, riid, ppvHeap);
+			}
+			public HRESULT CreateReservedResource1(D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialState, D3D12_CLEAR_VALUE* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource) mut
+			{
+				return VT.CreateReservedResource1(&this, pDesc, InitialState, pOptimizedClearValue, pProtectedSession, riid, ppvResource);
+			}
+			public D3D12_RESOURCE_ALLOCATION_INFO GetResourceAllocationInfo1(uint32 visibleMask, uint32 numResourceDescs, D3D12_RESOURCE_DESC* pResourceDescs, D3D12_RESOURCE_ALLOCATION_INFO1* pResourceAllocationInfo1) mut
+			{
+				return VT.GetResourceAllocationInfo1(&this, visibleMask, numResourceDescs, pResourceDescs, pResourceAllocationInfo1);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Device3.VTable
 			{
-				public function HRESULT(ID3D12Device4 *self, uint32 nodeMask, D3D12_COMMAND_LIST_TYPE type, D3D12_COMMAND_LIST_FLAGS flags, Guid* riid, void** ppCommandList) CreateCommandList1;
-				public function HRESULT(ID3D12Device4 *self, D3D12_PROTECTED_RESOURCE_SESSION_DESC* pDesc, Guid* riid, void** ppSession) CreateProtectedResourceSession;
-				public function HRESULT(ID3D12Device4 *self, D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS HeapFlags, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialResourceState, D3D12_CLEAR_VALUE* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource) CreateCommittedResource1;
-				public function HRESULT(ID3D12Device4 *self, D3D12_HEAP_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvHeap) CreateHeap1;
-				public function HRESULT(ID3D12Device4 *self, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialState, D3D12_CLEAR_VALUE* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource) CreateReservedResource1;
-				public function D3D12_RESOURCE_ALLOCATION_INFO(ID3D12Device4 *self, uint32 visibleMask, uint32 numResourceDescs, D3D12_RESOURCE_DESC* pResourceDescs, D3D12_RESOURCE_ALLOCATION_INFO1* pResourceAllocationInfo1) GetResourceAllocationInfo1;
+				public new function HRESULT(ID3D12Device4 *self, uint32 nodeMask, D3D12_COMMAND_LIST_TYPE type, D3D12_COMMAND_LIST_FLAGS flags, Guid* riid, void** ppCommandList) CreateCommandList1;
+				public new function HRESULT(ID3D12Device4 *self, D3D12_PROTECTED_RESOURCE_SESSION_DESC* pDesc, Guid* riid, void** ppSession) CreateProtectedResourceSession;
+				public new function HRESULT(ID3D12Device4 *self, D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS HeapFlags, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialResourceState, D3D12_CLEAR_VALUE* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource) CreateCommittedResource1;
+				public new function HRESULT(ID3D12Device4 *self, D3D12_HEAP_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvHeap) CreateHeap1;
+				public new function HRESULT(ID3D12Device4 *self, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialState, D3D12_CLEAR_VALUE* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource) CreateReservedResource1;
+				public new function D3D12_RESOURCE_ALLOCATION_INFO(ID3D12Device4 *self, uint32 visibleMask, uint32 numResourceDescs, D3D12_RESOURCE_DESC* pResourceDescs, D3D12_RESOURCE_ALLOCATION_INFO1* pResourceAllocationInfo1) GetResourceAllocationInfo1;
 			}
 		}
 		[CRepr]
@@ -5292,11 +5937,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe667af9f, 0xcd56, 0x4f46, 0x83, 0xce, 0x03, 0x2e, 0x59, 0x5d, 0x70, 0xa8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void LifetimeStateUpdated(D3D12_LIFETIME_STATE NewState) mut
+			{
+				VT.LifetimeStateUpdated(&this, NewState);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function void(ID3D12LifetimeOwner *self, D3D12_LIFETIME_STATE NewState) LifetimeStateUpdated;
+				public new function void(ID3D12LifetimeOwner *self, D3D12_LIFETIME_STATE NewState) LifetimeStateUpdated;
 			}
 		}
 		[CRepr]
@@ -5304,14 +5954,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf1df64b6, 0x57fd, 0x49cd, 0x88, 0x07, 0xc0, 0xeb, 0x88, 0xb4, 0x5c, 0x8f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public LUID GetLUID() mut
+			{
+				return VT.GetLUID(&this);
+			}
+			public HRESULT GetSwapChainObject(Guid* riid, void** ppv) mut
+			{
+				return VT.GetSwapChainObject(&this, riid, ppv);
+			}
+			public HRESULT GetCurrentResourceAndCommandQueue(Guid* riidResource, void** ppvResource, Guid* riidQueue, void** ppvQueue) mut
+			{
+				return VT.GetCurrentResourceAndCommandQueue(&this, riidResource, ppvResource, riidQueue, ppvQueue);
+			}
+			public HRESULT InsertImplicitSync() mut
+			{
+				return VT.InsertImplicitSync(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function LUID(ID3D12SwapChainAssistant *self) GetLUID;
-				public function HRESULT(ID3D12SwapChainAssistant *self, Guid* riid, void** ppv) GetSwapChainObject;
-				public function HRESULT(ID3D12SwapChainAssistant *self, Guid* riidResource, void** ppvResource, Guid* riidQueue, void** ppvQueue) GetCurrentResourceAndCommandQueue;
-				public function HRESULT(ID3D12SwapChainAssistant *self) InsertImplicitSync;
+				public new function LUID(ID3D12SwapChainAssistant *self) GetLUID;
+				public new function HRESULT(ID3D12SwapChainAssistant *self, Guid* riid, void** ppv) GetSwapChainObject;
+				public new function HRESULT(ID3D12SwapChainAssistant *self, Guid* riidResource, void** ppvResource, Guid* riidQueue, void** ppvQueue) GetCurrentResourceAndCommandQueue;
+				public new function HRESULT(ID3D12SwapChainAssistant *self) InsertImplicitSync;
 			}
 		}
 		[CRepr]
@@ -5319,11 +5986,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3fd03d36, 0x4eb1, 0x424a, 0xa5, 0x82, 0x49, 0x4e, 0xcb, 0x8b, 0xa8, 0x13);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT DestroyOwnedObject(ID3D12DeviceChild* pObject) mut
+			{
+				return VT.DestroyOwnedObject(&this, pObject);
+			}
 			[CRepr]
 			public struct VTable : ID3D12DeviceChild.VTable
 			{
-				public function HRESULT(ID3D12LifetimeTracker *self, ID3D12DeviceChild* pObject) DestroyOwnedObject;
+				public new function HRESULT(ID3D12LifetimeTracker *self, ID3D12DeviceChild* pObject) DestroyOwnedObject;
 			}
 		}
 		[CRepr]
@@ -5331,7 +6003,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x47016943, 0xfca8, 0x4594, 0x93, 0xea, 0xaf, 0x25, 0x8b, 0x55, 0x34, 0x6d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
@@ -5342,14 +6015,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xde5fa827, 0x9bf9, 0x4f26, 0x89, 0xff, 0xd7, 0xf5, 0x6f, 0xde, 0x38, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void* GetShaderIdentifier(PWSTR pExportName) mut
+			{
+				return VT.GetShaderIdentifier(&this, pExportName);
+			}
+			public uint64 GetShaderStackSize(PWSTR pExportName) mut
+			{
+				return VT.GetShaderStackSize(&this, pExportName);
+			}
+			public uint64 GetPipelineStackSize() mut
+			{
+				return VT.GetPipelineStackSize(&this);
+			}
+			public void SetPipelineStackSize(uint64 PipelineStackSizeInBytes) mut
+			{
+				VT.SetPipelineStackSize(&this, PipelineStackSizeInBytes);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function void*(ID3D12StateObjectProperties *self, PWSTR pExportName) GetShaderIdentifier;
-				public function uint64(ID3D12StateObjectProperties *self, PWSTR pExportName) GetShaderStackSize;
-				public function uint64(ID3D12StateObjectProperties *self) GetPipelineStackSize;
-				public function void(ID3D12StateObjectProperties *self, uint64 PipelineStackSizeInBytes) SetPipelineStackSize;
+				public new function void*(ID3D12StateObjectProperties *self, PWSTR pExportName) GetShaderIdentifier;
+				public new function uint64(ID3D12StateObjectProperties *self, PWSTR pExportName) GetShaderStackSize;
+				public new function uint64(ID3D12StateObjectProperties *self) GetPipelineStackSize;
+				public new function void(ID3D12StateObjectProperties *self, uint64 PipelineStackSizeInBytes) SetPipelineStackSize;
 			}
 		}
 		[CRepr]
@@ -5357,18 +6047,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8b4f173b, 0x2fea, 0x4b80, 0x8f, 0x58, 0x43, 0x07, 0x19, 0x1a, 0xb9, 0x5d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateLifetimeTracker(ID3D12LifetimeOwner* pOwner, Guid* riid, void** ppvTracker) mut
+			{
+				return VT.CreateLifetimeTracker(&this, pOwner, riid, ppvTracker);
+			}
+			public void RemoveDevice() mut
+			{
+				VT.RemoveDevice(&this);
+			}
+			public HRESULT EnumerateMetaCommands(uint32* pNumMetaCommands, D3D12_META_COMMAND_DESC* pDescs) mut
+			{
+				return VT.EnumerateMetaCommands(&this, pNumMetaCommands, pDescs);
+			}
+			public HRESULT EnumerateMetaCommandParameters(Guid* CommandId, D3D12_META_COMMAND_PARAMETER_STAGE Stage, uint32* pTotalStructureSizeInBytes, uint32* pParameterCount, D3D12_META_COMMAND_PARAMETER_DESC* pParameterDescs) mut
+			{
+				return VT.EnumerateMetaCommandParameters(&this, CommandId, Stage, pTotalStructureSizeInBytes, pParameterCount, pParameterDescs);
+			}
+			public HRESULT CreateMetaCommand(Guid* CommandId, uint32 NodeMask, void* pCreationParametersData, uint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand) mut
+			{
+				return VT.CreateMetaCommand(&this, CommandId, NodeMask, pCreationParametersData, CreationParametersDataSizeInBytes, riid, ppMetaCommand);
+			}
+			public HRESULT CreateStateObject(D3D12_STATE_OBJECT_DESC* pDesc, Guid* riid, void** ppStateObject) mut
+			{
+				return VT.CreateStateObject(&this, pDesc, riid, ppStateObject);
+			}
+			public void GetRaytracingAccelerationStructurePrebuildInfo(D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS* pDesc, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO* pInfo) mut
+			{
+				VT.GetRaytracingAccelerationStructurePrebuildInfo(&this, pDesc, pInfo);
+			}
+			public D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS CheckDriverMatchingIdentifier(D3D12_SERIALIZED_DATA_TYPE SerializedDataType, D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER* pIdentifierToCheck) mut
+			{
+				return VT.CheckDriverMatchingIdentifier(&this, SerializedDataType, pIdentifierToCheck);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Device4.VTable
 			{
-				public function HRESULT(ID3D12Device5 *self, ID3D12LifetimeOwner* pOwner, Guid* riid, void** ppvTracker) CreateLifetimeTracker;
-				public function void(ID3D12Device5 *self) RemoveDevice;
-				public function HRESULT(ID3D12Device5 *self, uint32* pNumMetaCommands, D3D12_META_COMMAND_DESC* pDescs) EnumerateMetaCommands;
-				public function HRESULT(ID3D12Device5 *self, Guid* CommandId, D3D12_META_COMMAND_PARAMETER_STAGE Stage, uint32* pTotalStructureSizeInBytes, uint32* pParameterCount, D3D12_META_COMMAND_PARAMETER_DESC* pParameterDescs) EnumerateMetaCommandParameters;
-				public function HRESULT(ID3D12Device5 *self, Guid* CommandId, uint32 NodeMask, void* pCreationParametersData, uint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand) CreateMetaCommand;
-				public function HRESULT(ID3D12Device5 *self, D3D12_STATE_OBJECT_DESC* pDesc, Guid* riid, void** ppStateObject) CreateStateObject;
-				public function void(ID3D12Device5 *self, D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS* pDesc, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO* pInfo) GetRaytracingAccelerationStructurePrebuildInfo;
-				public function D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS(ID3D12Device5 *self, D3D12_SERIALIZED_DATA_TYPE SerializedDataType, D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER* pIdentifierToCheck) CheckDriverMatchingIdentifier;
+				public new function HRESULT(ID3D12Device5 *self, ID3D12LifetimeOwner* pOwner, Guid* riid, void** ppvTracker) CreateLifetimeTracker;
+				public new function void(ID3D12Device5 *self) RemoveDevice;
+				public new function HRESULT(ID3D12Device5 *self, uint32* pNumMetaCommands, D3D12_META_COMMAND_DESC* pDescs) EnumerateMetaCommands;
+				public new function HRESULT(ID3D12Device5 *self, Guid* CommandId, D3D12_META_COMMAND_PARAMETER_STAGE Stage, uint32* pTotalStructureSizeInBytes, uint32* pParameterCount, D3D12_META_COMMAND_PARAMETER_DESC* pParameterDescs) EnumerateMetaCommandParameters;
+				public new function HRESULT(ID3D12Device5 *self, Guid* CommandId, uint32 NodeMask, void* pCreationParametersData, uint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand) CreateMetaCommand;
+				public new function HRESULT(ID3D12Device5 *self, D3D12_STATE_OBJECT_DESC* pDesc, Guid* riid, void** ppStateObject) CreateStateObject;
+				public new function void(ID3D12Device5 *self, D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS* pDesc, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO* pInfo) GetRaytracingAccelerationStructurePrebuildInfo;
+				public new function D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS(ID3D12Device5 *self, D3D12_SERIALIZED_DATA_TYPE SerializedDataType, D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER* pIdentifierToCheck) CheckDriverMatchingIdentifier;
 			}
 		}
 		[CRepr]
@@ -5376,13 +6099,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x82bc481c, 0x6b9b, 0x4030, 0xae, 0xdb, 0x7e, 0xe3, 0xd1, 0xdf, 0x1e, 0x63);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void SetAutoBreadcrumbsEnablement(D3D12_DRED_ENABLEMENT Enablement) mut
+			{
+				VT.SetAutoBreadcrumbsEnablement(&this, Enablement);
+			}
+			public void SetPageFaultEnablement(D3D12_DRED_ENABLEMENT Enablement) mut
+			{
+				VT.SetPageFaultEnablement(&this, Enablement);
+			}
+			public void SetWatsonDumpEnablement(D3D12_DRED_ENABLEMENT Enablement) mut
+			{
+				VT.SetWatsonDumpEnablement(&this, Enablement);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function void(ID3D12DeviceRemovedExtendedDataSettings *self, D3D12_DRED_ENABLEMENT Enablement) SetAutoBreadcrumbsEnablement;
-				public function void(ID3D12DeviceRemovedExtendedDataSettings *self, D3D12_DRED_ENABLEMENT Enablement) SetPageFaultEnablement;
-				public function void(ID3D12DeviceRemovedExtendedDataSettings *self, D3D12_DRED_ENABLEMENT Enablement) SetWatsonDumpEnablement;
+				public new function void(ID3D12DeviceRemovedExtendedDataSettings *self, D3D12_DRED_ENABLEMENT Enablement) SetAutoBreadcrumbsEnablement;
+				public new function void(ID3D12DeviceRemovedExtendedDataSettings *self, D3D12_DRED_ENABLEMENT Enablement) SetPageFaultEnablement;
+				public new function void(ID3D12DeviceRemovedExtendedDataSettings *self, D3D12_DRED_ENABLEMENT Enablement) SetWatsonDumpEnablement;
 			}
 		}
 		[CRepr]
@@ -5390,11 +6126,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdbd5ae51, 0x3317, 0x4f0a, 0xad, 0xf9, 0x1d, 0x7c, 0xed, 0xca, 0xae, 0x0b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void SetBreadcrumbContextEnablement(D3D12_DRED_ENABLEMENT Enablement) mut
+			{
+				VT.SetBreadcrumbContextEnablement(&this, Enablement);
+			}
 			[CRepr]
 			public struct VTable : ID3D12DeviceRemovedExtendedDataSettings.VTable
 			{
-				public function void(ID3D12DeviceRemovedExtendedDataSettings1 *self, D3D12_DRED_ENABLEMENT Enablement) SetBreadcrumbContextEnablement;
+				public new function void(ID3D12DeviceRemovedExtendedDataSettings1 *self, D3D12_DRED_ENABLEMENT Enablement) SetBreadcrumbContextEnablement;
 			}
 		}
 		[CRepr]
@@ -5402,12 +6143,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x98931d33, 0x5ae8, 0x4791, 0xaa, 0x3c, 0x1a, 0x73, 0xa2, 0x93, 0x4e, 0x71);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetAutoBreadcrumbsOutput(D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT* pOutput) mut
+			{
+				return VT.GetAutoBreadcrumbsOutput(&this, pOutput);
+			}
+			public HRESULT GetPageFaultAllocationOutput(D3D12_DRED_PAGE_FAULT_OUTPUT* pOutput) mut
+			{
+				return VT.GetPageFaultAllocationOutput(&this, pOutput);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ID3D12DeviceRemovedExtendedData *self, D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT* pOutput) GetAutoBreadcrumbsOutput;
-				public function HRESULT(ID3D12DeviceRemovedExtendedData *self, D3D12_DRED_PAGE_FAULT_OUTPUT* pOutput) GetPageFaultAllocationOutput;
+				public new function HRESULT(ID3D12DeviceRemovedExtendedData *self, D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT* pOutput) GetAutoBreadcrumbsOutput;
+				public new function HRESULT(ID3D12DeviceRemovedExtendedData *self, D3D12_DRED_PAGE_FAULT_OUTPUT* pOutput) GetPageFaultAllocationOutput;
 			}
 		}
 		[CRepr]
@@ -5415,12 +6165,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9727a022, 0xcf1d, 0x4dda, 0x9e, 0xba, 0xef, 0xfa, 0x65, 0x3f, 0xc5, 0x06);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetAutoBreadcrumbsOutput1(D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1* pOutput) mut
+			{
+				return VT.GetAutoBreadcrumbsOutput1(&this, pOutput);
+			}
+			public HRESULT GetPageFaultAllocationOutput1(D3D12_DRED_PAGE_FAULT_OUTPUT1* pOutput) mut
+			{
+				return VT.GetPageFaultAllocationOutput1(&this, pOutput);
+			}
 			[CRepr]
 			public struct VTable : ID3D12DeviceRemovedExtendedData.VTable
 			{
-				public function HRESULT(ID3D12DeviceRemovedExtendedData1 *self, D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1* pOutput) GetAutoBreadcrumbsOutput1;
-				public function HRESULT(ID3D12DeviceRemovedExtendedData1 *self, D3D12_DRED_PAGE_FAULT_OUTPUT1* pOutput) GetPageFaultAllocationOutput1;
+				public new function HRESULT(ID3D12DeviceRemovedExtendedData1 *self, D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1* pOutput) GetAutoBreadcrumbsOutput1;
+				public new function HRESULT(ID3D12DeviceRemovedExtendedData1 *self, D3D12_DRED_PAGE_FAULT_OUTPUT1* pOutput) GetPageFaultAllocationOutput1;
 			}
 		}
 		[CRepr]
@@ -5428,12 +6187,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x67fc5816, 0xe4ca, 0x4915, 0xbf, 0x18, 0x42, 0x54, 0x12, 0x72, 0xda, 0x54);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPageFaultAllocationOutput2(D3D12_DRED_PAGE_FAULT_OUTPUT2* pOutput) mut
+			{
+				return VT.GetPageFaultAllocationOutput2(&this, pOutput);
+			}
+			public D3D12_DRED_DEVICE_STATE GetDeviceState() mut
+			{
+				return VT.GetDeviceState(&this);
+			}
 			[CRepr]
 			public struct VTable : ID3D12DeviceRemovedExtendedData1.VTable
 			{
-				public function HRESULT(ID3D12DeviceRemovedExtendedData2 *self, D3D12_DRED_PAGE_FAULT_OUTPUT2* pOutput) GetPageFaultAllocationOutput2;
-				public function D3D12_DRED_DEVICE_STATE(ID3D12DeviceRemovedExtendedData2 *self) GetDeviceState;
+				public new function HRESULT(ID3D12DeviceRemovedExtendedData2 *self, D3D12_DRED_PAGE_FAULT_OUTPUT2* pOutput) GetPageFaultAllocationOutput2;
+				public new function D3D12_DRED_DEVICE_STATE(ID3D12DeviceRemovedExtendedData2 *self) GetDeviceState;
 			}
 		}
 		[CRepr]
@@ -5441,11 +6209,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc70b221b, 0x40e4, 0x4a17, 0x89, 0xaf, 0x02, 0x5a, 0x07, 0x27, 0xa6, 0xdc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetBackgroundProcessingMode(D3D12_BACKGROUND_PROCESSING_MODE Mode, D3D12_MEASUREMENTS_ACTION MeasurementsAction, HANDLE hEventToSignalUponCompletion, BOOL* pbFurtherMeasurementsDesired) mut
+			{
+				return VT.SetBackgroundProcessingMode(&this, Mode, MeasurementsAction, hEventToSignalUponCompletion, pbFurtherMeasurementsDesired);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Device5.VTable
 			{
-				public function HRESULT(ID3D12Device6 *self, D3D12_BACKGROUND_PROCESSING_MODE Mode, D3D12_MEASUREMENTS_ACTION MeasurementsAction, HANDLE hEventToSignalUponCompletion, BOOL* pbFurtherMeasurementsDesired) SetBackgroundProcessingMode;
+				public new function HRESULT(ID3D12Device6 *self, D3D12_BACKGROUND_PROCESSING_MODE Mode, D3D12_MEASUREMENTS_ACTION MeasurementsAction, HANDLE hEventToSignalUponCompletion, BOOL* pbFurtherMeasurementsDesired) SetBackgroundProcessingMode;
 			}
 		}
 		[CRepr]
@@ -5453,11 +6226,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd6f12dd6, 0x76fb, 0x406e, 0x89, 0x61, 0x42, 0x96, 0xee, 0xfc, 0x04, 0x09);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public D3D12_PROTECTED_RESOURCE_SESSION_DESC1 GetDesc1() mut
+			{
+				return VT.GetDesc1(&this);
+			}
 			[CRepr]
 			public struct VTable : ID3D12ProtectedResourceSession.VTable
 			{
-				public function D3D12_PROTECTED_RESOURCE_SESSION_DESC1(ID3D12ProtectedResourceSession1 *self) GetDesc1;
+				public new function D3D12_PROTECTED_RESOURCE_SESSION_DESC1(ID3D12ProtectedResourceSession1 *self) GetDesc1;
 			}
 		}
 		[CRepr]
@@ -5465,12 +6243,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5c014b53, 0x68a1, 0x4b9b, 0x8b, 0xd1, 0xdd, 0x60, 0x46, 0xb9, 0x35, 0x8b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddToStateObject(D3D12_STATE_OBJECT_DESC* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject) mut
+			{
+				return VT.AddToStateObject(&this, pAddition, pStateObjectToGrowFrom, riid, ppNewStateObject);
+			}
+			public HRESULT CreateProtectedResourceSession1(D3D12_PROTECTED_RESOURCE_SESSION_DESC1* pDesc, Guid* riid, void** ppSession) mut
+			{
+				return VT.CreateProtectedResourceSession1(&this, pDesc, riid, ppSession);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Device6.VTable
 			{
-				public function HRESULT(ID3D12Device7 *self, D3D12_STATE_OBJECT_DESC* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject) AddToStateObject;
-				public function HRESULT(ID3D12Device7 *self, D3D12_PROTECTED_RESOURCE_SESSION_DESC1* pDesc, Guid* riid, void** ppSession) CreateProtectedResourceSession1;
+				public new function HRESULT(ID3D12Device7 *self, D3D12_STATE_OBJECT_DESC* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject) AddToStateObject;
+				public new function HRESULT(ID3D12Device7 *self, D3D12_PROTECTED_RESOURCE_SESSION_DESC1* pDesc, Guid* riid, void** ppSession) CreateProtectedResourceSession1;
 			}
 		}
 		[CRepr]
@@ -5478,15 +6265,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9218e6bb, 0xf944, 0x4f7e, 0xa7, 0x5c, 0xb1, 0xb2, 0xc7, 0xb7, 0x01, 0xf3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public D3D12_RESOURCE_ALLOCATION_INFO GetResourceAllocationInfo2(uint32 visibleMask, uint32 numResourceDescs, D3D12_RESOURCE_DESC1* pResourceDescs, D3D12_RESOURCE_ALLOCATION_INFO1* pResourceAllocationInfo1) mut
+			{
+				return VT.GetResourceAllocationInfo2(&this, visibleMask, numResourceDescs, pResourceDescs, pResourceAllocationInfo1);
+			}
+			public HRESULT CreateCommittedResource2(D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS HeapFlags, D3D12_RESOURCE_DESC1* pDesc, D3D12_RESOURCE_STATES InitialResourceState, D3D12_CLEAR_VALUE* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource) mut
+			{
+				return VT.CreateCommittedResource2(&this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, riidResource, ppvResource);
+			}
+			public HRESULT CreatePlacedResource1(ID3D12Heap* pHeap, uint64 HeapOffset, D3D12_RESOURCE_DESC1* pDesc, D3D12_RESOURCE_STATES InitialState, D3D12_CLEAR_VALUE* pOptimizedClearValue, Guid* riid, void** ppvResource) mut
+			{
+				return VT.CreatePlacedResource1(&this, pHeap, HeapOffset, pDesc, InitialState, pOptimizedClearValue, riid, ppvResource);
+			}
+			public void CreateSamplerFeedbackUnorderedAccessView(ID3D12Resource* pTargetedResource, ID3D12Resource* pFeedbackResource, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) mut
+			{
+				VT.CreateSamplerFeedbackUnorderedAccessView(&this, pTargetedResource, pFeedbackResource, DestDescriptor);
+			}
+			public void GetCopyableFootprints1(D3D12_RESOURCE_DESC1* pResourceDesc, uint32 FirstSubresource, uint32 NumSubresources, uint64 BaseOffset, D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, uint32* pNumRows, uint64* pRowSizeInBytes, uint64* pTotalBytes) mut
+			{
+				VT.GetCopyableFootprints1(&this, pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, pLayouts, pNumRows, pRowSizeInBytes, pTotalBytes);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Device7.VTable
 			{
-				public function D3D12_RESOURCE_ALLOCATION_INFO(ID3D12Device8 *self, uint32 visibleMask, uint32 numResourceDescs, D3D12_RESOURCE_DESC1* pResourceDescs, D3D12_RESOURCE_ALLOCATION_INFO1* pResourceAllocationInfo1) GetResourceAllocationInfo2;
-				public function HRESULT(ID3D12Device8 *self, D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS HeapFlags, D3D12_RESOURCE_DESC1* pDesc, D3D12_RESOURCE_STATES InitialResourceState, D3D12_CLEAR_VALUE* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource) CreateCommittedResource2;
-				public function HRESULT(ID3D12Device8 *self, ID3D12Heap* pHeap, uint64 HeapOffset, D3D12_RESOURCE_DESC1* pDesc, D3D12_RESOURCE_STATES InitialState, D3D12_CLEAR_VALUE* pOptimizedClearValue, Guid* riid, void** ppvResource) CreatePlacedResource1;
-				public function void(ID3D12Device8 *self, ID3D12Resource* pTargetedResource, ID3D12Resource* pFeedbackResource, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateSamplerFeedbackUnorderedAccessView;
-				public function void(ID3D12Device8 *self, D3D12_RESOURCE_DESC1* pResourceDesc, uint32 FirstSubresource, uint32 NumSubresources, uint64 BaseOffset, D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, uint32* pNumRows, uint64* pRowSizeInBytes, uint64* pTotalBytes) GetCopyableFootprints1;
+				public new function D3D12_RESOURCE_ALLOCATION_INFO(ID3D12Device8 *self, uint32 visibleMask, uint32 numResourceDescs, D3D12_RESOURCE_DESC1* pResourceDescs, D3D12_RESOURCE_ALLOCATION_INFO1* pResourceAllocationInfo1) GetResourceAllocationInfo2;
+				public new function HRESULT(ID3D12Device8 *self, D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS HeapFlags, D3D12_RESOURCE_DESC1* pDesc, D3D12_RESOURCE_STATES InitialResourceState, D3D12_CLEAR_VALUE* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource) CreateCommittedResource2;
+				public new function HRESULT(ID3D12Device8 *self, ID3D12Heap* pHeap, uint64 HeapOffset, D3D12_RESOURCE_DESC1* pDesc, D3D12_RESOURCE_STATES InitialState, D3D12_CLEAR_VALUE* pOptimizedClearValue, Guid* riid, void** ppvResource) CreatePlacedResource1;
+				public new function void(ID3D12Device8 *self, ID3D12Resource* pTargetedResource, ID3D12Resource* pFeedbackResource, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateSamplerFeedbackUnorderedAccessView;
+				public new function void(ID3D12Device8 *self, D3D12_RESOURCE_DESC1* pResourceDesc, uint32 FirstSubresource, uint32 NumSubresources, uint64 BaseOffset, D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, uint32* pNumRows, uint64* pRowSizeInBytes, uint64* pTotalBytes) GetCopyableFootprints1;
 			}
 		}
 		[CRepr]
@@ -5494,11 +6302,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9d5e227a, 0x4430, 0x4161, 0x88, 0xb3, 0x3e, 0xca, 0x6b, 0xb1, 0x6e, 0x19);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetProtectedResourceSession(Guid* riid, void** ppProtectedSession) mut
+			{
+				return VT.GetProtectedResourceSession(&this, riid, ppProtectedSession);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Resource.VTable
 			{
-				public function HRESULT(ID3D12Resource1 *self, Guid* riid, void** ppProtectedSession) GetProtectedResourceSession;
+				public new function HRESULT(ID3D12Resource1 *self, Guid* riid, void** ppProtectedSession) GetProtectedResourceSession;
 			}
 		}
 		[CRepr]
@@ -5506,11 +6319,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbe36ec3b, 0xea85, 0x4aeb, 0xa4, 0x5a, 0xe9, 0xd7, 0x64, 0x04, 0xa4, 0x95);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public D3D12_RESOURCE_DESC1 GetDesc1() mut
+			{
+				return VT.GetDesc1(&this);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Resource1.VTable
 			{
-				public function D3D12_RESOURCE_DESC1(ID3D12Resource2 *self) GetDesc1;
+				public new function D3D12_RESOURCE_DESC1(ID3D12Resource2 *self) GetDesc1;
 			}
 		}
 		[CRepr]
@@ -5518,11 +6336,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x572f7389, 0x2168, 0x49e3, 0x96, 0x93, 0xd6, 0xdf, 0x58, 0x71, 0xbf, 0x6d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetProtectedResourceSession(Guid* riid, void** ppProtectedSession) mut
+			{
+				return VT.GetProtectedResourceSession(&this, riid, ppProtectedSession);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Heap.VTable
 			{
-				public function HRESULT(ID3D12Heap1 *self, Guid* riid, void** ppProtectedSession) GetProtectedResourceSession;
+				public new function HRESULT(ID3D12Heap1 *self, Guid* riid, void** ppProtectedSession) GetProtectedResourceSession;
 			}
 		}
 		[CRepr]
@@ -5530,11 +6353,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6fda83a7, 0xb84c, 0x4e38, 0x9a, 0xc8, 0xc7, 0xbd, 0x22, 0x01, 0x6b, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void SetProtectedResourceSession(ID3D12ProtectedResourceSession* pProtectedResourceSession) mut
+			{
+				VT.SetProtectedResourceSession(&this, pProtectedResourceSession);
+			}
 			[CRepr]
 			public struct VTable : ID3D12GraphicsCommandList2.VTable
 			{
-				public function void(ID3D12GraphicsCommandList3 *self, ID3D12ProtectedResourceSession* pProtectedResourceSession) SetProtectedResourceSession;
+				public new function void(ID3D12GraphicsCommandList3 *self, ID3D12ProtectedResourceSession* pProtectedResourceSession) SetProtectedResourceSession;
 			}
 		}
 		[CRepr]
@@ -5542,11 +6370,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdbb84c27, 0x36ce, 0x4fc9, 0xb8, 0x01, 0xf0, 0x48, 0xc4, 0x6a, 0xc5, 0x70);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public uint64 GetRequiredParameterResourceSize(D3D12_META_COMMAND_PARAMETER_STAGE Stage, uint32 ParameterIndex) mut
+			{
+				return VT.GetRequiredParameterResourceSize(&this, Stage, ParameterIndex);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public function uint64(ID3D12MetaCommand *self, D3D12_META_COMMAND_PARAMETER_STAGE Stage, uint32 ParameterIndex) GetRequiredParameterResourceSize;
+				public new function uint64(ID3D12MetaCommand *self, D3D12_META_COMMAND_PARAMETER_STAGE Stage, uint32 ParameterIndex) GetRequiredParameterResourceSize;
 			}
 		}
 		[CRepr]
@@ -5554,19 +6387,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8754318e, 0xd3a9, 0x4541, 0x98, 0xcf, 0x64, 0x5b, 0x50, 0xdc, 0x48, 0x74);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void BeginRenderPass(uint32 NumRenderTargets, D3D12_RENDER_PASS_RENDER_TARGET_DESC* pRenderTargets, D3D12_RENDER_PASS_DEPTH_STENCIL_DESC* pDepthStencil, D3D12_RENDER_PASS_FLAGS Flags) mut
+			{
+				VT.BeginRenderPass(&this, NumRenderTargets, pRenderTargets, pDepthStencil, Flags);
+			}
+			public void EndRenderPass() mut
+			{
+				VT.EndRenderPass(&this);
+			}
+			public void InitializeMetaCommand(ID3D12MetaCommand* pMetaCommand, void* pInitializationParametersData, uint InitializationParametersDataSizeInBytes) mut
+			{
+				VT.InitializeMetaCommand(&this, pMetaCommand, pInitializationParametersData, InitializationParametersDataSizeInBytes);
+			}
+			public void ExecuteMetaCommand(ID3D12MetaCommand* pMetaCommand, void* pExecutionParametersData, uint ExecutionParametersDataSizeInBytes) mut
+			{
+				VT.ExecuteMetaCommand(&this, pMetaCommand, pExecutionParametersData, ExecutionParametersDataSizeInBytes);
+			}
+			public void BuildRaytracingAccelerationStructure(D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC* pDesc, uint32 NumPostbuildInfoDescs, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC* pPostbuildInfoDescs) mut
+			{
+				VT.BuildRaytracingAccelerationStructure(&this, pDesc, NumPostbuildInfoDescs, pPostbuildInfoDescs);
+			}
+			public void EmitRaytracingAccelerationStructurePostbuildInfo(D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC* pDesc, uint32 NumSourceAccelerationStructures, uint64* pSourceAccelerationStructureData) mut
+			{
+				VT.EmitRaytracingAccelerationStructurePostbuildInfo(&this, pDesc, NumSourceAccelerationStructures, pSourceAccelerationStructureData);
+			}
+			public void CopyRaytracingAccelerationStructure(uint64 DestAccelerationStructureData, uint64 SourceAccelerationStructureData, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_COPY_MODE Mode) mut
+			{
+				VT.CopyRaytracingAccelerationStructure(&this, DestAccelerationStructureData, SourceAccelerationStructureData, Mode);
+			}
+			public void SetPipelineState1(ID3D12StateObject* pStateObject) mut
+			{
+				VT.SetPipelineState1(&this, pStateObject);
+			}
+			public void DispatchRays(D3D12_DISPATCH_RAYS_DESC* pDesc) mut
+			{
+				VT.DispatchRays(&this, pDesc);
+			}
 			[CRepr]
 			public struct VTable : ID3D12GraphicsCommandList3.VTable
 			{
-				public function void(ID3D12GraphicsCommandList4 *self, uint32 NumRenderTargets, D3D12_RENDER_PASS_RENDER_TARGET_DESC* pRenderTargets, D3D12_RENDER_PASS_DEPTH_STENCIL_DESC* pDepthStencil, D3D12_RENDER_PASS_FLAGS Flags) BeginRenderPass;
-				public function void(ID3D12GraphicsCommandList4 *self) EndRenderPass;
-				public function void(ID3D12GraphicsCommandList4 *self, ID3D12MetaCommand* pMetaCommand, void* pInitializationParametersData, uint InitializationParametersDataSizeInBytes) InitializeMetaCommand;
-				public function void(ID3D12GraphicsCommandList4 *self, ID3D12MetaCommand* pMetaCommand, void* pExecutionParametersData, uint ExecutionParametersDataSizeInBytes) ExecuteMetaCommand;
-				public function void(ID3D12GraphicsCommandList4 *self, D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC* pDesc, uint32 NumPostbuildInfoDescs, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC* pPostbuildInfoDescs) BuildRaytracingAccelerationStructure;
-				public function void(ID3D12GraphicsCommandList4 *self, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC* pDesc, uint32 NumSourceAccelerationStructures, uint64* pSourceAccelerationStructureData) EmitRaytracingAccelerationStructurePostbuildInfo;
-				public function void(ID3D12GraphicsCommandList4 *self, uint64 DestAccelerationStructureData, uint64 SourceAccelerationStructureData, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_COPY_MODE Mode) CopyRaytracingAccelerationStructure;
-				public function void(ID3D12GraphicsCommandList4 *self, ID3D12StateObject* pStateObject) SetPipelineState1;
-				public function void(ID3D12GraphicsCommandList4 *self, D3D12_DISPATCH_RAYS_DESC* pDesc) DispatchRays;
+				public new function void(ID3D12GraphicsCommandList4 *self, uint32 NumRenderTargets, D3D12_RENDER_PASS_RENDER_TARGET_DESC* pRenderTargets, D3D12_RENDER_PASS_DEPTH_STENCIL_DESC* pDepthStencil, D3D12_RENDER_PASS_FLAGS Flags) BeginRenderPass;
+				public new function void(ID3D12GraphicsCommandList4 *self) EndRenderPass;
+				public new function void(ID3D12GraphicsCommandList4 *self, ID3D12MetaCommand* pMetaCommand, void* pInitializationParametersData, uint InitializationParametersDataSizeInBytes) InitializeMetaCommand;
+				public new function void(ID3D12GraphicsCommandList4 *self, ID3D12MetaCommand* pMetaCommand, void* pExecutionParametersData, uint ExecutionParametersDataSizeInBytes) ExecuteMetaCommand;
+				public new function void(ID3D12GraphicsCommandList4 *self, D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC* pDesc, uint32 NumPostbuildInfoDescs, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC* pPostbuildInfoDescs) BuildRaytracingAccelerationStructure;
+				public new function void(ID3D12GraphicsCommandList4 *self, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC* pDesc, uint32 NumSourceAccelerationStructures, uint64* pSourceAccelerationStructureData) EmitRaytracingAccelerationStructurePostbuildInfo;
+				public new function void(ID3D12GraphicsCommandList4 *self, uint64 DestAccelerationStructureData, uint64 SourceAccelerationStructureData, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_COPY_MODE Mode) CopyRaytracingAccelerationStructure;
+				public new function void(ID3D12GraphicsCommandList4 *self, ID3D12StateObject* pStateObject) SetPipelineState1;
+				public new function void(ID3D12GraphicsCommandList4 *self, D3D12_DISPATCH_RAYS_DESC* pDesc) DispatchRays;
 			}
 		}
 		[CRepr]
@@ -5574,14 +6444,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x28e2495d, 0x0f64, 0x4ae4, 0xa6, 0xec, 0x12, 0x92, 0x55, 0xdc, 0x49, 0xa8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT FindValue(void* pKey, uint32 KeySize, void* pValue, uint32* pValueSize) mut
+			{
+				return VT.FindValue(&this, pKey, KeySize, pValue, pValueSize);
+			}
+			public HRESULT StoreValue(void* pKey, uint32 KeySize, void* pValue, uint32 ValueSize) mut
+			{
+				return VT.StoreValue(&this, pKey, KeySize, pValue, ValueSize);
+			}
+			public void SetDeleteOnDestroy() mut
+			{
+				VT.SetDeleteOnDestroy(&this);
+			}
+			public D3D12_SHADER_CACHE_SESSION_DESC GetDesc() mut
+			{
+				return VT.GetDesc(&this);
+			}
 			[CRepr]
 			public struct VTable : ID3D12DeviceChild.VTable
 			{
-				public function HRESULT(ID3D12ShaderCacheSession *self, void* pKey, uint32 KeySize, void* pValue, uint32* pValueSize) FindValue;
-				public function HRESULT(ID3D12ShaderCacheSession *self, void* pKey, uint32 KeySize, void* pValue, uint32 ValueSize) StoreValue;
-				public function void(ID3D12ShaderCacheSession *self) SetDeleteOnDestroy;
-				public function D3D12_SHADER_CACHE_SESSION_DESC(ID3D12ShaderCacheSession *self) GetDesc;
+				public new function HRESULT(ID3D12ShaderCacheSession *self, void* pKey, uint32 KeySize, void* pValue, uint32* pValueSize) FindValue;
+				public new function HRESULT(ID3D12ShaderCacheSession *self, void* pKey, uint32 KeySize, void* pValue, uint32 ValueSize) StoreValue;
+				public new function void(ID3D12ShaderCacheSession *self) SetDeleteOnDestroy;
+				public new function D3D12_SHADER_CACHE_SESSION_DESC(ID3D12ShaderCacheSession *self) GetDesc;
 			}
 		}
 		[CRepr]
@@ -5589,13 +6476,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4c80e962, 0xf032, 0x4f60, 0xbc, 0x9e, 0xeb, 0xc2, 0xcf, 0xa1, 0xd8, 0x3c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateShaderCacheSession(D3D12_SHADER_CACHE_SESSION_DESC* pDesc, Guid* riid, void** ppvSession) mut
+			{
+				return VT.CreateShaderCacheSession(&this, pDesc, riid, ppvSession);
+			}
+			public HRESULT ShaderCacheControl(D3D12_SHADER_CACHE_KIND_FLAGS Kinds, D3D12_SHADER_CACHE_CONTROL_FLAGS Control) mut
+			{
+				return VT.ShaderCacheControl(&this, Kinds, Control);
+			}
+			public HRESULT CreateCommandQueue1(D3D12_COMMAND_QUEUE_DESC* pDesc, Guid* CreatorID, Guid* riid, void** ppCommandQueue) mut
+			{
+				return VT.CreateCommandQueue1(&this, pDesc, CreatorID, riid, ppCommandQueue);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Device8.VTable
 			{
-				public function HRESULT(ID3D12Device9 *self, D3D12_SHADER_CACHE_SESSION_DESC* pDesc, Guid* riid, void** ppvSession) CreateShaderCacheSession;
-				public function HRESULT(ID3D12Device9 *self, D3D12_SHADER_CACHE_KIND_FLAGS Kinds, D3D12_SHADER_CACHE_CONTROL_FLAGS Control) ShaderCacheControl;
-				public function HRESULT(ID3D12Device9 *self, D3D12_COMMAND_QUEUE_DESC* pDesc, Guid* CreatorID, Guid* riid, void** ppCommandQueue) CreateCommandQueue1;
+				public new function HRESULT(ID3D12Device9 *self, D3D12_SHADER_CACHE_SESSION_DESC* pDesc, Guid* riid, void** ppvSession) CreateShaderCacheSession;
+				public new function HRESULT(ID3D12Device9 *self, D3D12_SHADER_CACHE_KIND_FLAGS Kinds, D3D12_SHADER_CACHE_CONTROL_FLAGS Control) ShaderCacheControl;
+				public new function HRESULT(ID3D12Device9 *self, D3D12_COMMAND_QUEUE_DESC* pDesc, Guid* CreatorID, Guid* riid, void** ppCommandQueue) CreateCommandQueue1;
 			}
 		}
 		[CRepr]
@@ -5603,12 +6503,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7071e1f0, 0xe84b, 0x4b33, 0x97, 0x4f, 0x12, 0xfa, 0x49, 0xde, 0x65, 0xc5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void EnableShaderInstrumentation(BOOL bEnable) mut
+			{
+				VT.EnableShaderInstrumentation(&this, bEnable);
+			}
+			public BOOL ShaderInstrumentationEnabled() mut
+			{
+				return VT.ShaderInstrumentationEnabled(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function void(ID3D12Tools *self, BOOL bEnable) EnableShaderInstrumentation;
-				public function BOOL(ID3D12Tools *self) ShaderInstrumentationEnabled;
+				public new function void(ID3D12Tools *self, BOOL bEnable) EnableShaderInstrumentation;
+				public new function BOOL(ID3D12Tools *self) ShaderInstrumentationEnabled;
 			}
 		}
 		[CRepr]
@@ -5616,11 +6525,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x344488b7, 0x6846, 0x474b, 0xb9, 0x89, 0xf0, 0x27, 0x44, 0x82, 0x45, 0xe0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void EnableDebugLayer() mut
+			{
+				VT.EnableDebugLayer(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function void(ID3D12Debug *self) EnableDebugLayer;
+				public new function void(ID3D12Debug *self) EnableDebugLayer;
 			}
 		}
 		[CRepr]
@@ -5628,13 +6542,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xaffaa4ca, 0x63fe, 0x4d8e, 0xb8, 0xad, 0x15, 0x90, 0x00, 0xaf, 0x43, 0x04);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void EnableDebugLayer() mut
+			{
+				VT.EnableDebugLayer(&this);
+			}
+			public void SetEnableGPUBasedValidation(BOOL Enable) mut
+			{
+				VT.SetEnableGPUBasedValidation(&this, Enable);
+			}
+			public void SetEnableSynchronizedCommandQueueValidation(BOOL Enable) mut
+			{
+				VT.SetEnableSynchronizedCommandQueueValidation(&this, Enable);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function void(ID3D12Debug1 *self) EnableDebugLayer;
-				public function void(ID3D12Debug1 *self, BOOL Enable) SetEnableGPUBasedValidation;
-				public function void(ID3D12Debug1 *self, BOOL Enable) SetEnableSynchronizedCommandQueueValidation;
+				public new function void(ID3D12Debug1 *self) EnableDebugLayer;
+				public new function void(ID3D12Debug1 *self, BOOL Enable) SetEnableGPUBasedValidation;
+				public new function void(ID3D12Debug1 *self, BOOL Enable) SetEnableSynchronizedCommandQueueValidation;
 			}
 		}
 		[CRepr]
@@ -5642,11 +6569,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x93a665c4, 0xa3b2, 0x4e5d, 0xb6, 0x92, 0xa2, 0x6a, 0xe1, 0x4e, 0x33, 0x74);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void SetGPUBasedValidationFlags(D3D12_GPU_BASED_VALIDATION_FLAGS Flags) mut
+			{
+				VT.SetGPUBasedValidationFlags(&this, Flags);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function void(ID3D12Debug2 *self, D3D12_GPU_BASED_VALIDATION_FLAGS Flags) SetGPUBasedValidationFlags;
+				public new function void(ID3D12Debug2 *self, D3D12_GPU_BASED_VALIDATION_FLAGS Flags) SetGPUBasedValidationFlags;
 			}
 		}
 		[CRepr]
@@ -5654,13 +6586,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5cf4e58f, 0xf671, 0x4ff1, 0xa5, 0x42, 0x36, 0x86, 0xe3, 0xd1, 0x53, 0xd1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void SetEnableGPUBasedValidation(BOOL Enable) mut
+			{
+				VT.SetEnableGPUBasedValidation(&this, Enable);
+			}
+			public void SetEnableSynchronizedCommandQueueValidation(BOOL Enable) mut
+			{
+				VT.SetEnableSynchronizedCommandQueueValidation(&this, Enable);
+			}
+			public void SetGPUBasedValidationFlags(D3D12_GPU_BASED_VALIDATION_FLAGS Flags) mut
+			{
+				VT.SetGPUBasedValidationFlags(&this, Flags);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Debug.VTable
 			{
-				public function void(ID3D12Debug3 *self, BOOL Enable) SetEnableGPUBasedValidation;
-				public function void(ID3D12Debug3 *self, BOOL Enable) SetEnableSynchronizedCommandQueueValidation;
-				public function void(ID3D12Debug3 *self, D3D12_GPU_BASED_VALIDATION_FLAGS Flags) SetGPUBasedValidationFlags;
+				public new function void(ID3D12Debug3 *self, BOOL Enable) SetEnableGPUBasedValidation;
+				public new function void(ID3D12Debug3 *self, BOOL Enable) SetEnableSynchronizedCommandQueueValidation;
+				public new function void(ID3D12Debug3 *self, D3D12_GPU_BASED_VALIDATION_FLAGS Flags) SetGPUBasedValidationFlags;
 			}
 		}
 		[CRepr]
@@ -5668,11 +6613,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x014b816e, 0x9ec5, 0x4a2f, 0xa8, 0x45, 0xff, 0xbe, 0x44, 0x1c, 0xe1, 0x3a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void DisableDebugLayer() mut
+			{
+				VT.DisableDebugLayer(&this);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Debug3.VTable
 			{
-				public function void(ID3D12Debug4 *self) DisableDebugLayer;
+				public new function void(ID3D12Debug4 *self) DisableDebugLayer;
 			}
 		}
 		[CRepr]
@@ -5680,11 +6630,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x548d6b12, 0x09fa, 0x40e0, 0x90, 0x69, 0x5d, 0xcd, 0x58, 0x9a, 0x52, 0xc9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void SetEnableAutoName(BOOL Enable) mut
+			{
+				VT.SetEnableAutoName(&this, Enable);
+			}
 			[CRepr]
 			public struct VTable : ID3D12Debug4.VTable
 			{
-				public function void(ID3D12Debug5 *self, BOOL Enable) SetEnableAutoName;
+				public new function void(ID3D12Debug5 *self, BOOL Enable) SetEnableAutoName;
 			}
 		}
 		[CRepr]
@@ -5692,13 +6647,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa9b71770, 0xd099, 0x4a65, 0xa6, 0x98, 0x3d, 0xee, 0x10, 0x02, 0x0f, 0x88);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint32 DataSize) mut
+			{
+				return VT.SetDebugParameter(&this, Type, pData, DataSize);
+			}
+			public HRESULT GetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint32 DataSize) mut
+			{
+				return VT.GetDebugParameter(&this, Type, pData, DataSize);
+			}
+			public HRESULT ReportLiveDeviceObjects(D3D12_RLDO_FLAGS Flags) mut
+			{
+				return VT.ReportLiveDeviceObjects(&this, Flags);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ID3D12DebugDevice1 *self, D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint32 DataSize) SetDebugParameter;
-				public function HRESULT(ID3D12DebugDevice1 *self, D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint32 DataSize) GetDebugParameter;
-				public function HRESULT(ID3D12DebugDevice1 *self, D3D12_RLDO_FLAGS Flags) ReportLiveDeviceObjects;
+				public new function HRESULT(ID3D12DebugDevice1 *self, D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint32 DataSize) SetDebugParameter;
+				public new function HRESULT(ID3D12DebugDevice1 *self, D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint32 DataSize) GetDebugParameter;
+				public new function HRESULT(ID3D12DebugDevice1 *self, D3D12_RLDO_FLAGS Flags) ReportLiveDeviceObjects;
 			}
 		}
 		[CRepr]
@@ -5706,13 +6674,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3febd6dd, 0x4973, 0x4787, 0x81, 0x94, 0xe4, 0x5f, 0x9e, 0x28, 0x92, 0x3e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetFeatureMask(D3D12_DEBUG_FEATURE Mask) mut
+			{
+				return VT.SetFeatureMask(&this, Mask);
+			}
+			public D3D12_DEBUG_FEATURE GetFeatureMask() mut
+			{
+				return VT.GetFeatureMask(&this);
+			}
+			public HRESULT ReportLiveDeviceObjects(D3D12_RLDO_FLAGS Flags) mut
+			{
+				return VT.ReportLiveDeviceObjects(&this, Flags);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ID3D12DebugDevice *self, D3D12_DEBUG_FEATURE Mask) SetFeatureMask;
-				public function D3D12_DEBUG_FEATURE(ID3D12DebugDevice *self) GetFeatureMask;
-				public function HRESULT(ID3D12DebugDevice *self, D3D12_RLDO_FLAGS Flags) ReportLiveDeviceObjects;
+				public new function HRESULT(ID3D12DebugDevice *self, D3D12_DEBUG_FEATURE Mask) SetFeatureMask;
+				public new function D3D12_DEBUG_FEATURE(ID3D12DebugDevice *self) GetFeatureMask;
+				public new function HRESULT(ID3D12DebugDevice *self, D3D12_RLDO_FLAGS Flags) ReportLiveDeviceObjects;
 			}
 		}
 		[CRepr]
@@ -5720,12 +6701,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x60eccbc1, 0x378d, 0x4df1, 0x89, 0x4c, 0xf8, 0xac, 0x5c, 0xe4, 0xd7, 0xdd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint32 DataSize) mut
+			{
+				return VT.SetDebugParameter(&this, Type, pData, DataSize);
+			}
+			public HRESULT GetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint32 DataSize) mut
+			{
+				return VT.GetDebugParameter(&this, Type, pData, DataSize);
+			}
 			[CRepr]
 			public struct VTable : ID3D12DebugDevice.VTable
 			{
-				public function HRESULT(ID3D12DebugDevice2 *self, D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint32 DataSize) SetDebugParameter;
-				public function HRESULT(ID3D12DebugDevice2 *self, D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint32 DataSize) GetDebugParameter;
+				public new function HRESULT(ID3D12DebugDevice2 *self, D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint32 DataSize) SetDebugParameter;
+				public new function HRESULT(ID3D12DebugDevice2 *self, D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint32 DataSize) GetDebugParameter;
 			}
 		}
 		[CRepr]
@@ -5733,11 +6723,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x09e0bf36, 0x54ac, 0x484f, 0x88, 0x47, 0x4b, 0xae, 0xea, 0xb6, 0x05, 0x3a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public BOOL AssertResourceState(ID3D12Resource* pResource, uint32 Subresource, uint32 State) mut
+			{
+				return VT.AssertResourceState(&this, pResource, Subresource, State);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function BOOL(ID3D12DebugCommandQueue *self, ID3D12Resource* pResource, uint32 Subresource, uint32 State) AssertResourceState;
+				public new function BOOL(ID3D12DebugCommandQueue *self, ID3D12Resource* pResource, uint32 Subresource, uint32 State) AssertResourceState;
 			}
 		}
 		[CRepr]
@@ -5745,13 +6740,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x102ca951, 0x311b, 0x4b01, 0xb1, 0x1f, 0xec, 0xb8, 0x3e, 0x06, 0x1b, 0x37);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public BOOL AssertResourceState(ID3D12Resource* pResource, uint32 Subresource, uint32 State) mut
+			{
+				return VT.AssertResourceState(&this, pResource, Subresource, State);
+			}
+			public HRESULT SetDebugParameter(D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint32 DataSize) mut
+			{
+				return VT.SetDebugParameter(&this, Type, pData, DataSize);
+			}
+			public HRESULT GetDebugParameter(D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint32 DataSize) mut
+			{
+				return VT.GetDebugParameter(&this, Type, pData, DataSize);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function BOOL(ID3D12DebugCommandList1 *self, ID3D12Resource* pResource, uint32 Subresource, uint32 State) AssertResourceState;
-				public function HRESULT(ID3D12DebugCommandList1 *self, D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint32 DataSize) SetDebugParameter;
-				public function HRESULT(ID3D12DebugCommandList1 *self, D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint32 DataSize) GetDebugParameter;
+				public new function BOOL(ID3D12DebugCommandList1 *self, ID3D12Resource* pResource, uint32 Subresource, uint32 State) AssertResourceState;
+				public new function HRESULT(ID3D12DebugCommandList1 *self, D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint32 DataSize) SetDebugParameter;
+				public new function HRESULT(ID3D12DebugCommandList1 *self, D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint32 DataSize) GetDebugParameter;
 			}
 		}
 		[CRepr]
@@ -5759,13 +6767,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x09e0bf36, 0x54ac, 0x484f, 0x88, 0x47, 0x4b, 0xae, 0xea, 0xb6, 0x05, 0x3f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public BOOL AssertResourceState(ID3D12Resource* pResource, uint32 Subresource, uint32 State) mut
+			{
+				return VT.AssertResourceState(&this, pResource, Subresource, State);
+			}
+			public HRESULT SetFeatureMask(D3D12_DEBUG_FEATURE Mask) mut
+			{
+				return VT.SetFeatureMask(&this, Mask);
+			}
+			public D3D12_DEBUG_FEATURE GetFeatureMask() mut
+			{
+				return VT.GetFeatureMask(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function BOOL(ID3D12DebugCommandList *self, ID3D12Resource* pResource, uint32 Subresource, uint32 State) AssertResourceState;
-				public function HRESULT(ID3D12DebugCommandList *self, D3D12_DEBUG_FEATURE Mask) SetFeatureMask;
-				public function D3D12_DEBUG_FEATURE(ID3D12DebugCommandList *self) GetFeatureMask;
+				public new function BOOL(ID3D12DebugCommandList *self, ID3D12Resource* pResource, uint32 Subresource, uint32 State) AssertResourceState;
+				public new function HRESULT(ID3D12DebugCommandList *self, D3D12_DEBUG_FEATURE Mask) SetFeatureMask;
+				public new function D3D12_DEBUG_FEATURE(ID3D12DebugCommandList *self) GetFeatureMask;
 			}
 		}
 		[CRepr]
@@ -5773,12 +6794,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xaeb575cf, 0x4e06, 0x48be, 0xba, 0x3b, 0xc4, 0x50, 0xfc, 0x96, 0x65, 0x2e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetDebugParameter(D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint32 DataSize) mut
+			{
+				return VT.SetDebugParameter(&this, Type, pData, DataSize);
+			}
+			public HRESULT GetDebugParameter(D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint32 DataSize) mut
+			{
+				return VT.GetDebugParameter(&this, Type, pData, DataSize);
+			}
 			[CRepr]
 			public struct VTable : ID3D12DebugCommandList.VTable
 			{
-				public function HRESULT(ID3D12DebugCommandList2 *self, D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint32 DataSize) SetDebugParameter;
-				public function HRESULT(ID3D12DebugCommandList2 *self, D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint32 DataSize) GetDebugParameter;
+				public new function HRESULT(ID3D12DebugCommandList2 *self, D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint32 DataSize) SetDebugParameter;
+				public new function HRESULT(ID3D12DebugCommandList2 *self, D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint32 DataSize) GetDebugParameter;
 			}
 		}
 		[CRepr]
@@ -5786,14 +6816,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0adf7d52, 0x929c, 0x4e61, 0xad, 0xdb, 0xff, 0xed, 0x30, 0xde, 0x66, 0xef);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void Present(ID3D12Resource* pResource, uint32 Subresource, HWND window) mut
+			{
+				VT.Present(&this, pResource, Subresource, window);
+			}
+			public void SharedFenceSignal(ID3D12Fence* pFence, uint64 FenceValue) mut
+			{
+				VT.SharedFenceSignal(&this, pFence, FenceValue);
+			}
+			public void BeginCapturableWork(Guid* guid) mut
+			{
+				VT.BeginCapturableWork(&this, guid);
+			}
+			public void EndCapturableWork(Guid* guid) mut
+			{
+				VT.EndCapturableWork(&this, guid);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function void(ID3D12SharingContract *self, ID3D12Resource* pResource, uint32 Subresource, HWND window) Present;
-				public function void(ID3D12SharingContract *self, ID3D12Fence* pFence, uint64 FenceValue) SharedFenceSignal;
-				public function void(ID3D12SharingContract *self, Guid* guid) BeginCapturableWork;
-				public function void(ID3D12SharingContract *self, Guid* guid) EndCapturableWork;
+				public new function void(ID3D12SharingContract *self, ID3D12Resource* pResource, uint32 Subresource, HWND window) Present;
+				public new function void(ID3D12SharingContract *self, ID3D12Fence* pFence, uint64 FenceValue) SharedFenceSignal;
+				public new function void(ID3D12SharingContract *self, Guid* guid) BeginCapturableWork;
+				public new function void(ID3D12SharingContract *self, Guid* guid) EndCapturableWork;
 			}
 		}
 		[CRepr]
@@ -5801,45 +6848,186 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0742a90b, 0xc387, 0x483f, 0xb9, 0x46, 0x30, 0xa7, 0xe4, 0xe6, 0x14, 0x58);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetMessageCountLimit(uint64 MessageCountLimit) mut
+			{
+				return VT.SetMessageCountLimit(&this, MessageCountLimit);
+			}
+			public void ClearStoredMessages() mut
+			{
+				VT.ClearStoredMessages(&this);
+			}
+			public HRESULT GetMessage(uint64 MessageIndex, D3D12_MESSAGE* pMessage, uint* pMessageByteLength) mut
+			{
+				return VT.GetMessage(&this, MessageIndex, pMessage, pMessageByteLength);
+			}
+			public uint64 GetNumMessagesAllowedByStorageFilter() mut
+			{
+				return VT.GetNumMessagesAllowedByStorageFilter(&this);
+			}
+			public uint64 GetNumMessagesDeniedByStorageFilter() mut
+			{
+				return VT.GetNumMessagesDeniedByStorageFilter(&this);
+			}
+			public uint64 GetNumStoredMessages() mut
+			{
+				return VT.GetNumStoredMessages(&this);
+			}
+			public uint64 GetNumStoredMessagesAllowedByRetrievalFilter() mut
+			{
+				return VT.GetNumStoredMessagesAllowedByRetrievalFilter(&this);
+			}
+			public uint64 GetNumMessagesDiscardedByMessageCountLimit() mut
+			{
+				return VT.GetNumMessagesDiscardedByMessageCountLimit(&this);
+			}
+			public uint64 GetMessageCountLimit() mut
+			{
+				return VT.GetMessageCountLimit(&this);
+			}
+			public HRESULT AddStorageFilterEntries(D3D12_INFO_QUEUE_FILTER* pFilter) mut
+			{
+				return VT.AddStorageFilterEntries(&this, pFilter);
+			}
+			public HRESULT GetStorageFilter(D3D12_INFO_QUEUE_FILTER* pFilter, uint* pFilterByteLength) mut
+			{
+				return VT.GetStorageFilter(&this, pFilter, pFilterByteLength);
+			}
+			public void ClearStorageFilter() mut
+			{
+				VT.ClearStorageFilter(&this);
+			}
+			public HRESULT PushEmptyStorageFilter() mut
+			{
+				return VT.PushEmptyStorageFilter(&this);
+			}
+			public HRESULT PushCopyOfStorageFilter() mut
+			{
+				return VT.PushCopyOfStorageFilter(&this);
+			}
+			public HRESULT PushStorageFilter(D3D12_INFO_QUEUE_FILTER* pFilter) mut
+			{
+				return VT.PushStorageFilter(&this, pFilter);
+			}
+			public void PopStorageFilter() mut
+			{
+				VT.PopStorageFilter(&this);
+			}
+			public uint32 GetStorageFilterStackSize() mut
+			{
+				return VT.GetStorageFilterStackSize(&this);
+			}
+			public HRESULT AddRetrievalFilterEntries(D3D12_INFO_QUEUE_FILTER* pFilter) mut
+			{
+				return VT.AddRetrievalFilterEntries(&this, pFilter);
+			}
+			public HRESULT GetRetrievalFilter(D3D12_INFO_QUEUE_FILTER* pFilter, uint* pFilterByteLength) mut
+			{
+				return VT.GetRetrievalFilter(&this, pFilter, pFilterByteLength);
+			}
+			public void ClearRetrievalFilter() mut
+			{
+				VT.ClearRetrievalFilter(&this);
+			}
+			public HRESULT PushEmptyRetrievalFilter() mut
+			{
+				return VT.PushEmptyRetrievalFilter(&this);
+			}
+			public HRESULT PushCopyOfRetrievalFilter() mut
+			{
+				return VT.PushCopyOfRetrievalFilter(&this);
+			}
+			public HRESULT PushRetrievalFilter(D3D12_INFO_QUEUE_FILTER* pFilter) mut
+			{
+				return VT.PushRetrievalFilter(&this, pFilter);
+			}
+			public void PopRetrievalFilter() mut
+			{
+				VT.PopRetrievalFilter(&this);
+			}
+			public uint32 GetRetrievalFilterStackSize() mut
+			{
+				return VT.GetRetrievalFilterStackSize(&this);
+			}
+			public HRESULT AddMessage(D3D12_MESSAGE_CATEGORY Category, D3D12_MESSAGE_SEVERITY Severity, D3D12_MESSAGE_ID ID, PSTR pDescription) mut
+			{
+				return VT.AddMessage(&this, Category, Severity, ID, pDescription);
+			}
+			public HRESULT AddApplicationMessage(D3D12_MESSAGE_SEVERITY Severity, PSTR pDescription) mut
+			{
+				return VT.AddApplicationMessage(&this, Severity, pDescription);
+			}
+			public HRESULT SetBreakOnCategory(D3D12_MESSAGE_CATEGORY Category, BOOL bEnable) mut
+			{
+				return VT.SetBreakOnCategory(&this, Category, bEnable);
+			}
+			public HRESULT SetBreakOnSeverity(D3D12_MESSAGE_SEVERITY Severity, BOOL bEnable) mut
+			{
+				return VT.SetBreakOnSeverity(&this, Severity, bEnable);
+			}
+			public HRESULT SetBreakOnID(D3D12_MESSAGE_ID ID, BOOL bEnable) mut
+			{
+				return VT.SetBreakOnID(&this, ID, bEnable);
+			}
+			public BOOL GetBreakOnCategory(D3D12_MESSAGE_CATEGORY Category) mut
+			{
+				return VT.GetBreakOnCategory(&this, Category);
+			}
+			public BOOL GetBreakOnSeverity(D3D12_MESSAGE_SEVERITY Severity) mut
+			{
+				return VT.GetBreakOnSeverity(&this, Severity);
+			}
+			public BOOL GetBreakOnID(D3D12_MESSAGE_ID ID) mut
+			{
+				return VT.GetBreakOnID(&this, ID);
+			}
+			public void SetMuteDebugOutput(BOOL bMute) mut
+			{
+				VT.SetMuteDebugOutput(&this, bMute);
+			}
+			public BOOL GetMuteDebugOutput() mut
+			{
+				return VT.GetMuteDebugOutput(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ID3D12InfoQueue *self, uint64 MessageCountLimit) SetMessageCountLimit;
-				public function void(ID3D12InfoQueue *self) ClearStoredMessages;
-				public function HRESULT(ID3D12InfoQueue *self, uint64 MessageIndex, D3D12_MESSAGE* pMessage, uint* pMessageByteLength) GetMessage;
-				public function uint64(ID3D12InfoQueue *self) GetNumMessagesAllowedByStorageFilter;
-				public function uint64(ID3D12InfoQueue *self) GetNumMessagesDeniedByStorageFilter;
-				public function uint64(ID3D12InfoQueue *self) GetNumStoredMessages;
-				public function uint64(ID3D12InfoQueue *self) GetNumStoredMessagesAllowedByRetrievalFilter;
-				public function uint64(ID3D12InfoQueue *self) GetNumMessagesDiscardedByMessageCountLimit;
-				public function uint64(ID3D12InfoQueue *self) GetMessageCountLimit;
-				public function HRESULT(ID3D12InfoQueue *self, D3D12_INFO_QUEUE_FILTER* pFilter) AddStorageFilterEntries;
-				public function HRESULT(ID3D12InfoQueue *self, D3D12_INFO_QUEUE_FILTER* pFilter, uint* pFilterByteLength) GetStorageFilter;
-				public function void(ID3D12InfoQueue *self) ClearStorageFilter;
-				public function HRESULT(ID3D12InfoQueue *self) PushEmptyStorageFilter;
-				public function HRESULT(ID3D12InfoQueue *self) PushCopyOfStorageFilter;
-				public function HRESULT(ID3D12InfoQueue *self, D3D12_INFO_QUEUE_FILTER* pFilter) PushStorageFilter;
-				public function void(ID3D12InfoQueue *self) PopStorageFilter;
-				public function uint32(ID3D12InfoQueue *self) GetStorageFilterStackSize;
-				public function HRESULT(ID3D12InfoQueue *self, D3D12_INFO_QUEUE_FILTER* pFilter) AddRetrievalFilterEntries;
-				public function HRESULT(ID3D12InfoQueue *self, D3D12_INFO_QUEUE_FILTER* pFilter, uint* pFilterByteLength) GetRetrievalFilter;
-				public function void(ID3D12InfoQueue *self) ClearRetrievalFilter;
-				public function HRESULT(ID3D12InfoQueue *self) PushEmptyRetrievalFilter;
-				public function HRESULT(ID3D12InfoQueue *self) PushCopyOfRetrievalFilter;
-				public function HRESULT(ID3D12InfoQueue *self, D3D12_INFO_QUEUE_FILTER* pFilter) PushRetrievalFilter;
-				public function void(ID3D12InfoQueue *self) PopRetrievalFilter;
-				public function uint32(ID3D12InfoQueue *self) GetRetrievalFilterStackSize;
-				public function HRESULT(ID3D12InfoQueue *self, D3D12_MESSAGE_CATEGORY Category, D3D12_MESSAGE_SEVERITY Severity, D3D12_MESSAGE_ID ID, PSTR pDescription) AddMessage;
-				public function HRESULT(ID3D12InfoQueue *self, D3D12_MESSAGE_SEVERITY Severity, PSTR pDescription) AddApplicationMessage;
-				public function HRESULT(ID3D12InfoQueue *self, D3D12_MESSAGE_CATEGORY Category, BOOL bEnable) SetBreakOnCategory;
-				public function HRESULT(ID3D12InfoQueue *self, D3D12_MESSAGE_SEVERITY Severity, BOOL bEnable) SetBreakOnSeverity;
-				public function HRESULT(ID3D12InfoQueue *self, D3D12_MESSAGE_ID ID, BOOL bEnable) SetBreakOnID;
-				public function BOOL(ID3D12InfoQueue *self, D3D12_MESSAGE_CATEGORY Category) GetBreakOnCategory;
-				public function BOOL(ID3D12InfoQueue *self, D3D12_MESSAGE_SEVERITY Severity) GetBreakOnSeverity;
-				public function BOOL(ID3D12InfoQueue *self, D3D12_MESSAGE_ID ID) GetBreakOnID;
-				public function void(ID3D12InfoQueue *self, BOOL bMute) SetMuteDebugOutput;
-				public function BOOL(ID3D12InfoQueue *self) GetMuteDebugOutput;
+				public new function HRESULT(ID3D12InfoQueue *self, uint64 MessageCountLimit) SetMessageCountLimit;
+				public new function void(ID3D12InfoQueue *self) ClearStoredMessages;
+				public new function HRESULT(ID3D12InfoQueue *self, uint64 MessageIndex, D3D12_MESSAGE* pMessage, uint* pMessageByteLength) GetMessage;
+				public new function uint64(ID3D12InfoQueue *self) GetNumMessagesAllowedByStorageFilter;
+				public new function uint64(ID3D12InfoQueue *self) GetNumMessagesDeniedByStorageFilter;
+				public new function uint64(ID3D12InfoQueue *self) GetNumStoredMessages;
+				public new function uint64(ID3D12InfoQueue *self) GetNumStoredMessagesAllowedByRetrievalFilter;
+				public new function uint64(ID3D12InfoQueue *self) GetNumMessagesDiscardedByMessageCountLimit;
+				public new function uint64(ID3D12InfoQueue *self) GetMessageCountLimit;
+				public new function HRESULT(ID3D12InfoQueue *self, D3D12_INFO_QUEUE_FILTER* pFilter) AddStorageFilterEntries;
+				public new function HRESULT(ID3D12InfoQueue *self, D3D12_INFO_QUEUE_FILTER* pFilter, uint* pFilterByteLength) GetStorageFilter;
+				public new function void(ID3D12InfoQueue *self) ClearStorageFilter;
+				public new function HRESULT(ID3D12InfoQueue *self) PushEmptyStorageFilter;
+				public new function HRESULT(ID3D12InfoQueue *self) PushCopyOfStorageFilter;
+				public new function HRESULT(ID3D12InfoQueue *self, D3D12_INFO_QUEUE_FILTER* pFilter) PushStorageFilter;
+				public new function void(ID3D12InfoQueue *self) PopStorageFilter;
+				public new function uint32(ID3D12InfoQueue *self) GetStorageFilterStackSize;
+				public new function HRESULT(ID3D12InfoQueue *self, D3D12_INFO_QUEUE_FILTER* pFilter) AddRetrievalFilterEntries;
+				public new function HRESULT(ID3D12InfoQueue *self, D3D12_INFO_QUEUE_FILTER* pFilter, uint* pFilterByteLength) GetRetrievalFilter;
+				public new function void(ID3D12InfoQueue *self) ClearRetrievalFilter;
+				public new function HRESULT(ID3D12InfoQueue *self) PushEmptyRetrievalFilter;
+				public new function HRESULT(ID3D12InfoQueue *self) PushCopyOfRetrievalFilter;
+				public new function HRESULT(ID3D12InfoQueue *self, D3D12_INFO_QUEUE_FILTER* pFilter) PushRetrievalFilter;
+				public new function void(ID3D12InfoQueue *self) PopRetrievalFilter;
+				public new function uint32(ID3D12InfoQueue *self) GetRetrievalFilterStackSize;
+				public new function HRESULT(ID3D12InfoQueue *self, D3D12_MESSAGE_CATEGORY Category, D3D12_MESSAGE_SEVERITY Severity, D3D12_MESSAGE_ID ID, PSTR pDescription) AddMessage;
+				public new function HRESULT(ID3D12InfoQueue *self, D3D12_MESSAGE_SEVERITY Severity, PSTR pDescription) AddApplicationMessage;
+				public new function HRESULT(ID3D12InfoQueue *self, D3D12_MESSAGE_CATEGORY Category, BOOL bEnable) SetBreakOnCategory;
+				public new function HRESULT(ID3D12InfoQueue *self, D3D12_MESSAGE_SEVERITY Severity, BOOL bEnable) SetBreakOnSeverity;
+				public new function HRESULT(ID3D12InfoQueue *self, D3D12_MESSAGE_ID ID, BOOL bEnable) SetBreakOnID;
+				public new function BOOL(ID3D12InfoQueue *self, D3D12_MESSAGE_CATEGORY Category) GetBreakOnCategory;
+				public new function BOOL(ID3D12InfoQueue *self, D3D12_MESSAGE_SEVERITY Severity) GetBreakOnSeverity;
+				public new function BOOL(ID3D12InfoQueue *self, D3D12_MESSAGE_ID ID) GetBreakOnID;
+				public new function void(ID3D12InfoQueue *self, BOOL bMute) SetMuteDebugOutput;
+				public new function BOOL(ID3D12InfoQueue *self) GetMuteDebugOutput;
 			}
 		}
 		[CRepr]
@@ -5847,12 +7035,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2852dd88, 0xb484, 0x4c0c, 0xb6, 0xb1, 0x67, 0x16, 0x85, 0x00, 0xe6, 0x00);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RegisterMessageCallback(D3D12MessageFunc CallbackFunc, D3D12_MESSAGE_CALLBACK_FLAGS CallbackFilterFlags, void* pContext, uint32* pCallbackCookie) mut
+			{
+				return VT.RegisterMessageCallback(&this, CallbackFunc, CallbackFilterFlags, pContext, pCallbackCookie);
+			}
+			public HRESULT UnregisterMessageCallback(uint32 CallbackCookie) mut
+			{
+				return VT.UnregisterMessageCallback(&this, CallbackCookie);
+			}
 			[CRepr]
 			public struct VTable : ID3D12InfoQueue.VTable
 			{
-				public function HRESULT(ID3D12InfoQueue1 *self, D3D12MessageFunc CallbackFunc, D3D12_MESSAGE_CALLBACK_FLAGS CallbackFilterFlags, void* pContext, uint32* pCallbackCookie) RegisterMessageCallback;
-				public function HRESULT(ID3D12InfoQueue1 *self, uint32 CallbackCookie) UnregisterMessageCallback;
+				public new function HRESULT(ID3D12InfoQueue1 *self, D3D12MessageFunc CallbackFunc, D3D12_MESSAGE_CALLBACK_FLAGS CallbackFilterFlags, void* pContext, uint32* pCallbackCookie) RegisterMessageCallback;
+				public new function HRESULT(ID3D12InfoQueue1 *self, uint32 CallbackCookie) UnregisterMessageCallback;
 			}
 		}
 		[CRepr]
@@ -5860,11 +7057,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe9eb5314, 0x33aa, 0x42b2, 0xa7, 0x18, 0xd7, 0x7f, 0x58, 0xb1, 0xf1, 0xc7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetSDKVersion(uint32 SDKVersion, PSTR SDKPath) mut
+			{
+				return VT.SetSDKVersion(&this, SDKVersion, SDKPath);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ID3D12SDKConfiguration *self, uint32 SDKVersion, PSTR SDKPath) SetSDKVersion;
+				public new function HRESULT(ID3D12SDKConfiguration *self, uint32 SDKVersion, PSTR SDKPath) SetSDKVersion;
 			}
 		}
 		[CRepr]
@@ -5872,12 +7074,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x55050859, 0x4024, 0x474c, 0x87, 0xf5, 0x64, 0x72, 0xea, 0xee, 0x44, 0xea);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void RSSetShadingRate(D3D12_SHADING_RATE baseShadingRate, D3D12_SHADING_RATE_COMBINER* combiners) mut
+			{
+				VT.RSSetShadingRate(&this, baseShadingRate, combiners);
+			}
+			public void RSSetShadingRateImage(ID3D12Resource* shadingRateImage) mut
+			{
+				VT.RSSetShadingRateImage(&this, shadingRateImage);
+			}
 			[CRepr]
 			public struct VTable : ID3D12GraphicsCommandList4.VTable
 			{
-				public function void(ID3D12GraphicsCommandList5 *self, D3D12_SHADING_RATE baseShadingRate, D3D12_SHADING_RATE_COMBINER* combiners) RSSetShadingRate;
-				public function void(ID3D12GraphicsCommandList5 *self, ID3D12Resource* shadingRateImage) RSSetShadingRateImage;
+				public new function void(ID3D12GraphicsCommandList5 *self, D3D12_SHADING_RATE baseShadingRate, D3D12_SHADING_RATE_COMBINER* combiners) RSSetShadingRate;
+				public new function void(ID3D12GraphicsCommandList5 *self, ID3D12Resource* shadingRateImage) RSSetShadingRateImage;
 			}
 		}
 		[CRepr]
@@ -5885,11 +7096,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc3827890, 0xe548, 0x4cfa, 0x96, 0xcf, 0x56, 0x89, 0xa9, 0x37, 0x0f, 0x80);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void DispatchMesh(uint32 ThreadGroupCountX, uint32 ThreadGroupCountY, uint32 ThreadGroupCountZ) mut
+			{
+				VT.DispatchMesh(&this, ThreadGroupCountX, ThreadGroupCountY, ThreadGroupCountZ);
+			}
 			[CRepr]
 			public struct VTable : ID3D12GraphicsCommandList5.VTable
 			{
-				public function void(ID3D12GraphicsCommandList6 *self, uint32 ThreadGroupCountX, uint32 ThreadGroupCountY, uint32 ThreadGroupCountZ) DispatchMesh;
+				public new function void(ID3D12GraphicsCommandList6 *self, uint32 ThreadGroupCountX, uint32 ThreadGroupCountY, uint32 ThreadGroupCountZ) DispatchMesh;
 			}
 		}
 		[CRepr]
@@ -5898,21 +7114,66 @@ namespace Win32
 			public const new Guid IID = .(0xe913c351, 0x783d, 0x48ca, 0xa1, 0xd1, 0x4f, 0x30, 0x62, 0x84, 0xad, 0x56);
 			
 			protected VTable* vt;
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDesc(D3D12_SHADER_TYPE_DESC* pDesc) mut
+			{
+				return VT.GetDesc(&this, pDesc);
+			}
+			public ID3D12ShaderReflectionType* GetMemberTypeByIndex(uint32 Index) mut
+			{
+				return VT.GetMemberTypeByIndex(&this, Index);
+			}
+			public ID3D12ShaderReflectionType* GetMemberTypeByName(PSTR Name) mut
+			{
+				return VT.GetMemberTypeByName(&this, Name);
+			}
+			public PSTR GetMemberTypeName(uint32 Index) mut
+			{
+				return VT.GetMemberTypeName(&this, Index);
+			}
+			public HRESULT IsEqual(ID3D12ShaderReflectionType* pType) mut
+			{
+				return VT.IsEqual(&this, pType);
+			}
+			public ID3D12ShaderReflectionType* GetSubType() mut
+			{
+				return VT.GetSubType(&this);
+			}
+			public ID3D12ShaderReflectionType* GetBaseClass() mut
+			{
+				return VT.GetBaseClass(&this);
+			}
+			public uint32 GetNumInterfaces() mut
+			{
+				return VT.GetNumInterfaces(&this);
+			}
+			public ID3D12ShaderReflectionType* GetInterfaceByIndex(uint32 uIndex) mut
+			{
+				return VT.GetInterfaceByIndex(&this, uIndex);
+			}
+			public HRESULT IsOfType(ID3D12ShaderReflectionType* pType) mut
+			{
+				return VT.IsOfType(&this, pType);
+			}
+			public HRESULT ImplementsInterface(ID3D12ShaderReflectionType* pBase) mut
+			{
+				return VT.ImplementsInterface(&this, pBase);
+			}
 			[CRepr]
 			public struct VTable
 			{
-				public function HRESULT(ID3D12ShaderReflectionType *self, D3D12_SHADER_TYPE_DESC* pDesc) GetDesc;
-				public function ID3D12ShaderReflectionType*(ID3D12ShaderReflectionType *self, uint32 Index) GetMemberTypeByIndex;
-				public function ID3D12ShaderReflectionType*(ID3D12ShaderReflectionType *self, PSTR Name) GetMemberTypeByName;
-				public function PSTR(ID3D12ShaderReflectionType *self, uint32 Index) GetMemberTypeName;
-				public function HRESULT(ID3D12ShaderReflectionType *self, ID3D12ShaderReflectionType* pType) IsEqual;
-				public function ID3D12ShaderReflectionType*(ID3D12ShaderReflectionType *self) GetSubType;
-				public function ID3D12ShaderReflectionType*(ID3D12ShaderReflectionType *self) GetBaseClass;
-				public function uint32(ID3D12ShaderReflectionType *self) GetNumInterfaces;
-				public function ID3D12ShaderReflectionType*(ID3D12ShaderReflectionType *self, uint32 uIndex) GetInterfaceByIndex;
-				public function HRESULT(ID3D12ShaderReflectionType *self, ID3D12ShaderReflectionType* pType) IsOfType;
-				public function HRESULT(ID3D12ShaderReflectionType *self, ID3D12ShaderReflectionType* pBase) ImplementsInterface;
+				public new function HRESULT(ID3D12ShaderReflectionType *self, D3D12_SHADER_TYPE_DESC* pDesc) GetDesc;
+				public new function ID3D12ShaderReflectionType*(ID3D12ShaderReflectionType *self, uint32 Index) GetMemberTypeByIndex;
+				public new function ID3D12ShaderReflectionType*(ID3D12ShaderReflectionType *self, PSTR Name) GetMemberTypeByName;
+				public new function PSTR(ID3D12ShaderReflectionType *self, uint32 Index) GetMemberTypeName;
+				public new function HRESULT(ID3D12ShaderReflectionType *self, ID3D12ShaderReflectionType* pType) IsEqual;
+				public new function ID3D12ShaderReflectionType*(ID3D12ShaderReflectionType *self) GetSubType;
+				public new function ID3D12ShaderReflectionType*(ID3D12ShaderReflectionType *self) GetBaseClass;
+				public new function uint32(ID3D12ShaderReflectionType *self) GetNumInterfaces;
+				public new function ID3D12ShaderReflectionType*(ID3D12ShaderReflectionType *self, uint32 uIndex) GetInterfaceByIndex;
+				public new function HRESULT(ID3D12ShaderReflectionType *self, ID3D12ShaderReflectionType* pType) IsOfType;
+				public new function HRESULT(ID3D12ShaderReflectionType *self, ID3D12ShaderReflectionType* pBase) ImplementsInterface;
 			}
 		}
 		[CRepr]
@@ -5921,14 +7182,31 @@ namespace Win32
 			public const new Guid IID = .(0x8337a8a6, 0xa216, 0x444a, 0xb2, 0xf4, 0x31, 0x47, 0x33, 0xa7, 0x3a, 0xea);
 			
 			protected VTable* vt;
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDesc(D3D12_SHADER_VARIABLE_DESC* pDesc) mut
+			{
+				return VT.GetDesc(&this, pDesc);
+			}
+			public ID3D12ShaderReflectionType* ComGetType() mut
+			{
+				return VT.ComGetType(&this);
+			}
+			public ID3D12ShaderReflectionConstantBuffer* GetBuffer() mut
+			{
+				return VT.GetBuffer(&this);
+			}
+			public uint32 GetInterfaceSlot(uint32 uArrayIndex) mut
+			{
+				return VT.GetInterfaceSlot(&this, uArrayIndex);
+			}
 			[CRepr]
 			public struct VTable
 			{
-				public function HRESULT(ID3D12ShaderReflectionVariable *self, D3D12_SHADER_VARIABLE_DESC* pDesc) GetDesc;
-				public function ID3D12ShaderReflectionType*(ID3D12ShaderReflectionVariable *self) GetType;
-				public function ID3D12ShaderReflectionConstantBuffer*(ID3D12ShaderReflectionVariable *self) GetBuffer;
-				public function uint32(ID3D12ShaderReflectionVariable *self, uint32 uArrayIndex) GetInterfaceSlot;
+				public new function HRESULT(ID3D12ShaderReflectionVariable *self, D3D12_SHADER_VARIABLE_DESC* pDesc) GetDesc;
+				public new function ID3D12ShaderReflectionType*(ID3D12ShaderReflectionVariable *self) ComGetType;
+				public new function ID3D12ShaderReflectionConstantBuffer*(ID3D12ShaderReflectionVariable *self) GetBuffer;
+				public new function uint32(ID3D12ShaderReflectionVariable *self, uint32 uArrayIndex) GetInterfaceSlot;
 			}
 		}
 		[CRepr]
@@ -5937,13 +7215,26 @@ namespace Win32
 			public const new Guid IID = .(0xc59598b4, 0x48b3, 0x4869, 0xb9, 0xb1, 0xb1, 0x61, 0x8b, 0x14, 0xa8, 0xb7);
 			
 			protected VTable* vt;
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDesc(D3D12_SHADER_BUFFER_DESC* pDesc) mut
+			{
+				return VT.GetDesc(&this, pDesc);
+			}
+			public ID3D12ShaderReflectionVariable* GetVariableByIndex(uint32 Index) mut
+			{
+				return VT.GetVariableByIndex(&this, Index);
+			}
+			public ID3D12ShaderReflectionVariable* GetVariableByName(PSTR Name) mut
+			{
+				return VT.GetVariableByName(&this, Name);
+			}
 			[CRepr]
 			public struct VTable
 			{
-				public function HRESULT(ID3D12ShaderReflectionConstantBuffer *self, D3D12_SHADER_BUFFER_DESC* pDesc) GetDesc;
-				public function ID3D12ShaderReflectionVariable*(ID3D12ShaderReflectionConstantBuffer *self, uint32 Index) GetVariableByIndex;
-				public function ID3D12ShaderReflectionVariable*(ID3D12ShaderReflectionConstantBuffer *self, PSTR Name) GetVariableByName;
+				public new function HRESULT(ID3D12ShaderReflectionConstantBuffer *self, D3D12_SHADER_BUFFER_DESC* pDesc) GetDesc;
+				public new function ID3D12ShaderReflectionVariable*(ID3D12ShaderReflectionConstantBuffer *self, uint32 Index) GetVariableByIndex;
+				public new function ID3D12ShaderReflectionVariable*(ID3D12ShaderReflectionConstantBuffer *self, PSTR Name) GetVariableByName;
 			}
 		}
 		[CRepr]
@@ -5951,29 +7242,106 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5a58797d, 0xa72c, 0x478d, 0x8b, 0xa2, 0xef, 0xc6, 0xb0, 0xef, 0xe8, 0x8e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDesc(D3D12_SHADER_DESC* pDesc) mut
+			{
+				return VT.GetDesc(&this, pDesc);
+			}
+			public ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint32 Index) mut
+			{
+				return VT.GetConstantBufferByIndex(&this, Index);
+			}
+			public ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByName(PSTR Name) mut
+			{
+				return VT.GetConstantBufferByName(&this, Name);
+			}
+			public HRESULT GetResourceBindingDesc(uint32 ResourceIndex, D3D12_SHADER_INPUT_BIND_DESC* pDesc) mut
+			{
+				return VT.GetResourceBindingDesc(&this, ResourceIndex, pDesc);
+			}
+			public HRESULT GetInputParameterDesc(uint32 ParameterIndex, D3D12_SIGNATURE_PARAMETER_DESC* pDesc) mut
+			{
+				return VT.GetInputParameterDesc(&this, ParameterIndex, pDesc);
+			}
+			public HRESULT GetOutputParameterDesc(uint32 ParameterIndex, D3D12_SIGNATURE_PARAMETER_DESC* pDesc) mut
+			{
+				return VT.GetOutputParameterDesc(&this, ParameterIndex, pDesc);
+			}
+			public HRESULT GetPatchConstantParameterDesc(uint32 ParameterIndex, D3D12_SIGNATURE_PARAMETER_DESC* pDesc) mut
+			{
+				return VT.GetPatchConstantParameterDesc(&this, ParameterIndex, pDesc);
+			}
+			public ID3D12ShaderReflectionVariable* GetVariableByName(PSTR Name) mut
+			{
+				return VT.GetVariableByName(&this, Name);
+			}
+			public HRESULT GetResourceBindingDescByName(PSTR Name, D3D12_SHADER_INPUT_BIND_DESC* pDesc) mut
+			{
+				return VT.GetResourceBindingDescByName(&this, Name, pDesc);
+			}
+			public uint32 GetMovInstructionCount() mut
+			{
+				return VT.GetMovInstructionCount(&this);
+			}
+			public uint32 GetMovcInstructionCount() mut
+			{
+				return VT.GetMovcInstructionCount(&this);
+			}
+			public uint32 GetConversionInstructionCount() mut
+			{
+				return VT.GetConversionInstructionCount(&this);
+			}
+			public uint32 GetBitwiseInstructionCount() mut
+			{
+				return VT.GetBitwiseInstructionCount(&this);
+			}
+			public D3D_PRIMITIVE GetGSInputPrimitive() mut
+			{
+				return VT.GetGSInputPrimitive(&this);
+			}
+			public BOOL IsSampleFrequencyShader() mut
+			{
+				return VT.IsSampleFrequencyShader(&this);
+			}
+			public uint32 GetNumInterfaceSlots() mut
+			{
+				return VT.GetNumInterfaceSlots(&this);
+			}
+			public HRESULT GetMinFeatureLevel(D3D_FEATURE_LEVEL* pLevel) mut
+			{
+				return VT.GetMinFeatureLevel(&this, pLevel);
+			}
+			public uint32 GetThreadGroupSize(uint32* pSizeX, uint32* pSizeY, uint32* pSizeZ) mut
+			{
+				return VT.GetThreadGroupSize(&this, pSizeX, pSizeY, pSizeZ);
+			}
+			public uint64 GetRequiresFlags() mut
+			{
+				return VT.GetRequiresFlags(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ID3D12ShaderReflection *self, D3D12_SHADER_DESC* pDesc) GetDesc;
-				public function ID3D12ShaderReflectionConstantBuffer*(ID3D12ShaderReflection *self, uint32 Index) GetConstantBufferByIndex;
-				public function ID3D12ShaderReflectionConstantBuffer*(ID3D12ShaderReflection *self, PSTR Name) GetConstantBufferByName;
-				public function HRESULT(ID3D12ShaderReflection *self, uint32 ResourceIndex, D3D12_SHADER_INPUT_BIND_DESC* pDesc) GetResourceBindingDesc;
-				public function HRESULT(ID3D12ShaderReflection *self, uint32 ParameterIndex, D3D12_SIGNATURE_PARAMETER_DESC* pDesc) GetInputParameterDesc;
-				public function HRESULT(ID3D12ShaderReflection *self, uint32 ParameterIndex, D3D12_SIGNATURE_PARAMETER_DESC* pDesc) GetOutputParameterDesc;
-				public function HRESULT(ID3D12ShaderReflection *self, uint32 ParameterIndex, D3D12_SIGNATURE_PARAMETER_DESC* pDesc) GetPatchConstantParameterDesc;
-				public function ID3D12ShaderReflectionVariable*(ID3D12ShaderReflection *self, PSTR Name) GetVariableByName;
-				public function HRESULT(ID3D12ShaderReflection *self, PSTR Name, D3D12_SHADER_INPUT_BIND_DESC* pDesc) GetResourceBindingDescByName;
-				public function uint32(ID3D12ShaderReflection *self) GetMovInstructionCount;
-				public function uint32(ID3D12ShaderReflection *self) GetMovcInstructionCount;
-				public function uint32(ID3D12ShaderReflection *self) GetConversionInstructionCount;
-				public function uint32(ID3D12ShaderReflection *self) GetBitwiseInstructionCount;
-				public function D3D_PRIMITIVE(ID3D12ShaderReflection *self) GetGSInputPrimitive;
-				public function BOOL(ID3D12ShaderReflection *self) IsSampleFrequencyShader;
-				public function uint32(ID3D12ShaderReflection *self) GetNumInterfaceSlots;
-				public function HRESULT(ID3D12ShaderReflection *self, D3D_FEATURE_LEVEL* pLevel) GetMinFeatureLevel;
-				public function uint32(ID3D12ShaderReflection *self, uint32* pSizeX, uint32* pSizeY, uint32* pSizeZ) GetThreadGroupSize;
-				public function uint64(ID3D12ShaderReflection *self) GetRequiresFlags;
+				public new function HRESULT(ID3D12ShaderReflection *self, D3D12_SHADER_DESC* pDesc) GetDesc;
+				public new function ID3D12ShaderReflectionConstantBuffer*(ID3D12ShaderReflection *self, uint32 Index) GetConstantBufferByIndex;
+				public new function ID3D12ShaderReflectionConstantBuffer*(ID3D12ShaderReflection *self, PSTR Name) GetConstantBufferByName;
+				public new function HRESULT(ID3D12ShaderReflection *self, uint32 ResourceIndex, D3D12_SHADER_INPUT_BIND_DESC* pDesc) GetResourceBindingDesc;
+				public new function HRESULT(ID3D12ShaderReflection *self, uint32 ParameterIndex, D3D12_SIGNATURE_PARAMETER_DESC* pDesc) GetInputParameterDesc;
+				public new function HRESULT(ID3D12ShaderReflection *self, uint32 ParameterIndex, D3D12_SIGNATURE_PARAMETER_DESC* pDesc) GetOutputParameterDesc;
+				public new function HRESULT(ID3D12ShaderReflection *self, uint32 ParameterIndex, D3D12_SIGNATURE_PARAMETER_DESC* pDesc) GetPatchConstantParameterDesc;
+				public new function ID3D12ShaderReflectionVariable*(ID3D12ShaderReflection *self, PSTR Name) GetVariableByName;
+				public new function HRESULT(ID3D12ShaderReflection *self, PSTR Name, D3D12_SHADER_INPUT_BIND_DESC* pDesc) GetResourceBindingDescByName;
+				public new function uint32(ID3D12ShaderReflection *self) GetMovInstructionCount;
+				public new function uint32(ID3D12ShaderReflection *self) GetMovcInstructionCount;
+				public new function uint32(ID3D12ShaderReflection *self) GetConversionInstructionCount;
+				public new function uint32(ID3D12ShaderReflection *self) GetBitwiseInstructionCount;
+				public new function D3D_PRIMITIVE(ID3D12ShaderReflection *self) GetGSInputPrimitive;
+				public new function BOOL(ID3D12ShaderReflection *self) IsSampleFrequencyShader;
+				public new function uint32(ID3D12ShaderReflection *self) GetNumInterfaceSlots;
+				public new function HRESULT(ID3D12ShaderReflection *self, D3D_FEATURE_LEVEL* pLevel) GetMinFeatureLevel;
+				public new function uint32(ID3D12ShaderReflection *self, uint32* pSizeX, uint32* pSizeY, uint32* pSizeZ) GetThreadGroupSize;
+				public new function uint64(ID3D12ShaderReflection *self) GetRequiresFlags;
 			}
 		}
 		[CRepr]
@@ -5981,12 +7349,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8e349d19, 0x54db, 0x4a56, 0x9d, 0xc9, 0x11, 0x9d, 0x87, 0xbd, 0xb8, 0x04);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDesc(D3D12_LIBRARY_DESC* pDesc) mut
+			{
+				return VT.GetDesc(&this, pDesc);
+			}
+			public ID3D12FunctionReflection* GetFunctionByIndex(int32 FunctionIndex) mut
+			{
+				return VT.GetFunctionByIndex(&this, FunctionIndex);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ID3D12LibraryReflection *self, D3D12_LIBRARY_DESC* pDesc) GetDesc;
-				public function ID3D12FunctionReflection*(ID3D12LibraryReflection *self, int32 FunctionIndex) GetFunctionByIndex;
+				public new function HRESULT(ID3D12LibraryReflection *self, D3D12_LIBRARY_DESC* pDesc) GetDesc;
+				public new function ID3D12FunctionReflection*(ID3D12LibraryReflection *self, int32 FunctionIndex) GetFunctionByIndex;
 			}
 		}
 		[CRepr]
@@ -5995,17 +7372,46 @@ namespace Win32
 			public const new Guid IID = .(0x1108795c, 0x2772, 0x4ba9, 0xb2, 0xa8, 0xd4, 0x64, 0xdc, 0x7e, 0x27, 0x99);
 			
 			protected VTable* vt;
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDesc(D3D12_FUNCTION_DESC* pDesc) mut
+			{
+				return VT.GetDesc(&this, pDesc);
+			}
+			public ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint32 BufferIndex) mut
+			{
+				return VT.GetConstantBufferByIndex(&this, BufferIndex);
+			}
+			public ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByName(PSTR Name) mut
+			{
+				return VT.GetConstantBufferByName(&this, Name);
+			}
+			public HRESULT GetResourceBindingDesc(uint32 ResourceIndex, D3D12_SHADER_INPUT_BIND_DESC* pDesc) mut
+			{
+				return VT.GetResourceBindingDesc(&this, ResourceIndex, pDesc);
+			}
+			public ID3D12ShaderReflectionVariable* GetVariableByName(PSTR Name) mut
+			{
+				return VT.GetVariableByName(&this, Name);
+			}
+			public HRESULT GetResourceBindingDescByName(PSTR Name, D3D12_SHADER_INPUT_BIND_DESC* pDesc) mut
+			{
+				return VT.GetResourceBindingDescByName(&this, Name, pDesc);
+			}
+			public ID3D12FunctionParameterReflection* GetFunctionParameter(int32 ParameterIndex) mut
+			{
+				return VT.GetFunctionParameter(&this, ParameterIndex);
+			}
 			[CRepr]
 			public struct VTable
 			{
-				public function HRESULT(ID3D12FunctionReflection *self, D3D12_FUNCTION_DESC* pDesc) GetDesc;
-				public function ID3D12ShaderReflectionConstantBuffer*(ID3D12FunctionReflection *self, uint32 BufferIndex) GetConstantBufferByIndex;
-				public function ID3D12ShaderReflectionConstantBuffer*(ID3D12FunctionReflection *self, PSTR Name) GetConstantBufferByName;
-				public function HRESULT(ID3D12FunctionReflection *self, uint32 ResourceIndex, D3D12_SHADER_INPUT_BIND_DESC* pDesc) GetResourceBindingDesc;
-				public function ID3D12ShaderReflectionVariable*(ID3D12FunctionReflection *self, PSTR Name) GetVariableByName;
-				public function HRESULT(ID3D12FunctionReflection *self, PSTR Name, D3D12_SHADER_INPUT_BIND_DESC* pDesc) GetResourceBindingDescByName;
-				public function ID3D12FunctionParameterReflection*(ID3D12FunctionReflection *self, int32 ParameterIndex) GetFunctionParameter;
+				public new function HRESULT(ID3D12FunctionReflection *self, D3D12_FUNCTION_DESC* pDesc) GetDesc;
+				public new function ID3D12ShaderReflectionConstantBuffer*(ID3D12FunctionReflection *self, uint32 BufferIndex) GetConstantBufferByIndex;
+				public new function ID3D12ShaderReflectionConstantBuffer*(ID3D12FunctionReflection *self, PSTR Name) GetConstantBufferByName;
+				public new function HRESULT(ID3D12FunctionReflection *self, uint32 ResourceIndex, D3D12_SHADER_INPUT_BIND_DESC* pDesc) GetResourceBindingDesc;
+				public new function ID3D12ShaderReflectionVariable*(ID3D12FunctionReflection *self, PSTR Name) GetVariableByName;
+				public new function HRESULT(ID3D12FunctionReflection *self, PSTR Name, D3D12_SHADER_INPUT_BIND_DESC* pDesc) GetResourceBindingDescByName;
+				public new function ID3D12FunctionParameterReflection*(ID3D12FunctionReflection *self, int32 ParameterIndex) GetFunctionParameter;
 			}
 		}
 		[CRepr]
@@ -6014,11 +7420,16 @@ namespace Win32
 			public const new Guid IID = .(0xec25f42d, 0x7006, 0x4f2b, 0xb3, 0x3e, 0x02, 0xcc, 0x33, 0x75, 0x73, 0x3f);
 			
 			protected VTable* vt;
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDesc(D3D12_PARAMETER_DESC* pDesc) mut
+			{
+				return VT.GetDesc(&this, pDesc);
+			}
 			[CRepr]
 			public struct VTable
 			{
-				public function HRESULT(ID3D12FunctionParameterReflection *self, D3D12_PARAMETER_DESC* pDesc) GetDesc;
+				public new function HRESULT(ID3D12FunctionParameterReflection *self, D3D12_PARAMETER_DESC* pDesc) GetDesc;
 			}
 		}
 		

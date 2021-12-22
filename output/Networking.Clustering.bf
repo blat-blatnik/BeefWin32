@@ -3299,14 +3299,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x97dede50, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetClusterName(BSTR lpszName, int32* pcchName) mut
+			{
+				return VT.GetClusterName(&this, lpszName, pcchName);
+			}
+			public uint32 GetLocale() mut
+			{
+				return VT.GetLocale(&this);
+			}
+			public HFONT GetFont() mut
+			{
+				return VT.GetFont(&this);
+			}
+			public HICON GetIcon() mut
+			{
+				return VT.GetIcon(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IGetClusterUIInfo *self, BSTR lpszName, int32* pcchName) GetClusterName;
-				public function uint32(IGetClusterUIInfo *self) GetLocale;
-				public function HFONT(IGetClusterUIInfo *self) GetFont;
-				public function HICON(IGetClusterUIInfo *self) GetIcon;
+				public new function HRESULT(IGetClusterUIInfo *self, BSTR lpszName, int32* pcchName) GetClusterName;
+				public new function uint32(IGetClusterUIInfo *self) GetLocale;
+				public new function HFONT(IGetClusterUIInfo *self) GetFont;
+				public new function HICON(IGetClusterUIInfo *self) GetIcon;
 			}
 		}
 		[CRepr]
@@ -3314,13 +3331,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x97dede51, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetClusterName(BSTR lpszName, int32* pcchName) mut
+			{
+				return VT.GetClusterName(&this, lpszName, pcchName);
+			}
+			public _HCLUSTER* GetClusterHandle() mut
+			{
+				return VT.GetClusterHandle(&this);
+			}
+			public int32 GetObjectCount() mut
+			{
+				return VT.GetObjectCount(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IGetClusterDataInfo *self, BSTR lpszName, int32* pcchName) GetClusterName;
-				public function _HCLUSTER*(IGetClusterDataInfo *self) GetClusterHandle;
-				public function int32(IGetClusterDataInfo *self) GetObjectCount;
+				public new function HRESULT(IGetClusterDataInfo *self, BSTR lpszName, int32* pcchName) GetClusterName;
+				public new function _HCLUSTER*(IGetClusterDataInfo *self) GetClusterHandle;
+				public new function int32(IGetClusterDataInfo *self) GetObjectCount;
 			}
 		}
 		[CRepr]
@@ -3328,12 +3358,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x97dede52, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetObjectName(int32 lObjIndex, BSTR lpszName, int32* pcchName) mut
+			{
+				return VT.GetObjectName(&this, lObjIndex, lpszName, pcchName);
+			}
+			public CLUADMEX_OBJECT_TYPE GetObjectType(int32 lObjIndex) mut
+			{
+				return VT.GetObjectType(&this, lObjIndex);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IGetClusterObjectInfo *self, int32 lObjIndex, BSTR lpszName, int32* pcchName) GetObjectName;
-				public function CLUADMEX_OBJECT_TYPE(IGetClusterObjectInfo *self, int32 lObjIndex) GetObjectType;
+				public new function HRESULT(IGetClusterObjectInfo *self, int32 lObjIndex, BSTR lpszName, int32* pcchName) GetObjectName;
+				public new function CLUADMEX_OBJECT_TYPE(IGetClusterObjectInfo *self, int32 lObjIndex) GetObjectType;
 			}
 		}
 		[CRepr]
@@ -3341,11 +3380,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x97dede53, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public _HNODE* GetNodeHandle(int32 lObjIndex) mut
+			{
+				return VT.GetNodeHandle(&this, lObjIndex);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function _HNODE*(IGetClusterNodeInfo *self, int32 lObjIndex) GetNodeHandle;
+				public new function _HNODE*(IGetClusterNodeInfo *self, int32 lObjIndex) GetNodeHandle;
 			}
 		}
 		[CRepr]
@@ -3353,11 +3397,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x97dede54, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public _HGROUP* GetGroupHandle(int32 lObjIndex) mut
+			{
+				return VT.GetGroupHandle(&this, lObjIndex);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function _HGROUP*(IGetClusterGroupInfo *self, int32 lObjIndex) GetGroupHandle;
+				public new function _HGROUP*(IGetClusterGroupInfo *self, int32 lObjIndex) GetGroupHandle;
 			}
 		}
 		[CRepr]
@@ -3365,13 +3414,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x97dede55, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public _HRESOURCE* GetResourceHandle(int32 lObjIndex) mut
+			{
+				return VT.GetResourceHandle(&this, lObjIndex);
+			}
+			public HRESULT GetResourceTypeName(int32 lObjIndex, BSTR lpszResTypeName, int32* pcchResTypeName) mut
+			{
+				return VT.GetResourceTypeName(&this, lObjIndex, lpszResTypeName, pcchResTypeName);
+			}
+			public BOOL GetResourceNetworkName(int32 lObjIndex, BSTR lpszNetName, uint32* pcchNetName) mut
+			{
+				return VT.GetResourceNetworkName(&this, lObjIndex, lpszNetName, pcchNetName);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function _HRESOURCE*(IGetClusterResourceInfo *self, int32 lObjIndex) GetResourceHandle;
-				public function HRESULT(IGetClusterResourceInfo *self, int32 lObjIndex, BSTR lpszResTypeName, int32* pcchResTypeName) GetResourceTypeName;
-				public function BOOL(IGetClusterResourceInfo *self, int32 lObjIndex, BSTR lpszNetName, uint32* pcchNetName) GetResourceNetworkName;
+				public new function _HRESOURCE*(IGetClusterResourceInfo *self, int32 lObjIndex) GetResourceHandle;
+				public new function HRESULT(IGetClusterResourceInfo *self, int32 lObjIndex, BSTR lpszResTypeName, int32* pcchResTypeName) GetResourceTypeName;
+				public new function BOOL(IGetClusterResourceInfo *self, int32 lObjIndex, BSTR lpszNetName, uint32* pcchNetName) GetResourceNetworkName;
 			}
 		}
 		[CRepr]
@@ -3379,11 +3441,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x97dede56, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public _HNETWORK* GetNetworkHandle(int32 lObjIndex) mut
+			{
+				return VT.GetNetworkHandle(&this, lObjIndex);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function _HNETWORK*(IGetClusterNetworkInfo *self, int32 lObjIndex) GetNetworkHandle;
+				public new function _HNETWORK*(IGetClusterNetworkInfo *self, int32 lObjIndex) GetNetworkHandle;
 			}
 		}
 		[CRepr]
@@ -3391,11 +3458,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x97dede57, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public _HNETINTERFACE* GetNetInterfaceHandle(int32 lObjIndex) mut
+			{
+				return VT.GetNetInterfaceHandle(&this, lObjIndex);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function _HNETINTERFACE*(IGetClusterNetInterfaceInfo *self, int32 lObjIndex) GetNetInterfaceHandle;
+				public new function _HNETINTERFACE*(IGetClusterNetInterfaceInfo *self, int32 lObjIndex) GetNetInterfaceHandle;
 			}
 		}
 		[CRepr]
@@ -3403,11 +3475,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x97dede60, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddPropertySheetPage(int32* hpage) mut
+			{
+				return VT.AddPropertySheetPage(&this, hpage);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWCPropertySheetCallback *self, int32* hpage) AddPropertySheetPage;
+				public new function HRESULT(IWCPropertySheetCallback *self, int32* hpage) AddPropertySheetPage;
 			}
 		}
 		[CRepr]
@@ -3415,11 +3492,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x97dede61, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreatePropertySheetPages(IUnknown* piData, IWCPropertySheetCallback* piCallback) mut
+			{
+				return VT.CreatePropertySheetPages(&this, piData, piCallback);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWEExtendPropertySheet *self, IUnknown* piData, IWCPropertySheetCallback* piCallback) CreatePropertySheetPages;
+				public new function HRESULT(IWEExtendPropertySheet *self, IUnknown* piData, IWCPropertySheetCallback* piCallback) CreatePropertySheetPages;
 			}
 		}
 		[CRepr]
@@ -3427,12 +3509,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x97dede62, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddWizardPage(int32* hpage) mut
+			{
+				return VT.AddWizardPage(&this, hpage);
+			}
+			public HRESULT EnableNext(int32* hpage, BOOL bEnable) mut
+			{
+				return VT.EnableNext(&this, hpage, bEnable);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWCWizardCallback *self, int32* hpage) AddWizardPage;
-				public function HRESULT(IWCWizardCallback *self, int32* hpage, BOOL bEnable) EnableNext;
+				public new function HRESULT(IWCWizardCallback *self, int32* hpage) AddWizardPage;
+				public new function HRESULT(IWCWizardCallback *self, int32* hpage, BOOL bEnable) EnableNext;
 			}
 		}
 		[CRepr]
@@ -3440,11 +3531,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x97dede63, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateWizardPages(IUnknown* piData, IWCWizardCallback* piCallback) mut
+			{
+				return VT.CreateWizardPages(&this, piData, piCallback);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWEExtendWizard *self, IUnknown* piData, IWCWizardCallback* piCallback) CreateWizardPages;
+				public new function HRESULT(IWEExtendWizard *self, IUnknown* piData, IWCWizardCallback* piCallback) CreateWizardPages;
 			}
 		}
 		[CRepr]
@@ -3452,11 +3548,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x97dede64, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddExtensionMenuItem(BSTR lpszName, BSTR lpszStatusBarText, uint32 nCommandID, uint32 nSubmenuCommandID, uint32 uFlags) mut
+			{
+				return VT.AddExtensionMenuItem(&this, lpszName, lpszStatusBarText, nCommandID, nSubmenuCommandID, uFlags);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWCContextMenuCallback *self, BSTR lpszName, BSTR lpszStatusBarText, uint32 nCommandID, uint32 nSubmenuCommandID, uint32 uFlags) AddExtensionMenuItem;
+				public new function HRESULT(IWCContextMenuCallback *self, BSTR lpszName, BSTR lpszStatusBarText, uint32 nCommandID, uint32 nSubmenuCommandID, uint32 uFlags) AddExtensionMenuItem;
 			}
 		}
 		[CRepr]
@@ -3464,11 +3565,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x97dede65, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddContextMenuItems(IUnknown* piData, IWCContextMenuCallback* piCallback) mut
+			{
+				return VT.AddContextMenuItems(&this, piData, piCallback);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWEExtendContextMenu *self, IUnknown* piData, IWCContextMenuCallback* piCallback) AddContextMenuItems;
+				public new function HRESULT(IWEExtendContextMenu *self, IUnknown* piData, IWCContextMenuCallback* piCallback) AddContextMenuItems;
 			}
 		}
 		[CRepr]
@@ -3476,11 +3582,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x97dede66, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT InvokeCommand(uint32 nCommandID, IUnknown* piData) mut
+			{
+				return VT.InvokeCommand(&this, nCommandID, piData);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWEInvokeCommand *self, uint32 nCommandID, IUnknown* piData) InvokeCommand;
+				public new function HRESULT(IWEInvokeCommand *self, uint32 nCommandID, IUnknown* piData) InvokeCommand;
 			}
 		}
 		[CRepr]
@@ -3488,12 +3599,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x97dede67, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddWizard97Page(int32* hpage) mut
+			{
+				return VT.AddWizard97Page(&this, hpage);
+			}
+			public HRESULT EnableNext(int32* hpage, BOOL bEnable) mut
+			{
+				return VT.EnableNext(&this, hpage, bEnable);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWCWizard97Callback *self, int32* hpage) AddWizard97Page;
-				public function HRESULT(IWCWizard97Callback *self, int32* hpage, BOOL bEnable) EnableNext;
+				public new function HRESULT(IWCWizard97Callback *self, int32* hpage) AddWizard97Page;
+				public new function HRESULT(IWCWizard97Callback *self, int32* hpage, BOOL bEnable) EnableNext;
 			}
 		}
 		[CRepr]
@@ -3501,11 +3621,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x97dede68, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateWizard97Pages(IUnknown* piData, IWCWizard97Callback* piCallback) mut
+			{
+				return VT.CreateWizard97Pages(&this, piData, piCallback);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IWEExtendWizard97 *self, IUnknown* piData, IWCWizard97Callback* piCallback) CreateWizard97Pages;
+				public new function HRESULT(IWEExtendWizard97 *self, IUnknown* piData, IWCWizard97Callback* piCallback) CreateWizard97Pages;
 			}
 		}
 		[CRepr]
@@ -3513,13 +3638,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e606e6, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_DomainNames(ISDomainNames** ppDomains) mut
+			{
+				return VT.get_DomainNames(&this, ppDomains);
+			}
+			public HRESULT get_ClusterNames(BSTR bstrDomainName, ISClusterNames** ppClusters) mut
+			{
+				return VT.get_ClusterNames(&this, bstrDomainName, ppClusters);
+			}
+			public HRESULT OpenCluster(BSTR bstrClusterName, ISCluster** pCluster) mut
+			{
+				return VT.OpenCluster(&this, bstrClusterName, pCluster);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusApplication *self, ISDomainNames** ppDomains) get_DomainNames;
-				public function HRESULT(ISClusApplication *self, BSTR bstrDomainName, ISClusterNames** ppClusters) get_ClusterNames;
-				public function HRESULT(ISClusApplication *self, BSTR bstrClusterName, ISCluster** pCluster) OpenCluster;
+				public new function HRESULT(ISClusApplication *self, ISDomainNames** ppDomains) get_DomainNames;
+				public new function HRESULT(ISClusApplication *self, BSTR bstrDomainName, ISClusterNames** ppClusters) get_ClusterNames;
+				public new function HRESULT(ISClusApplication *self, BSTR bstrClusterName, ISCluster** pCluster) OpenCluster;
 			}
 		}
 		[CRepr]
@@ -3527,14 +3665,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e606e2, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, BSTR* pbstrDomainName) mut
+			{
+				return VT.get_Item(&this, varIndex, pbstrDomainName);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISDomainNames *self, int32* plCount) get_Count;
-				public function HRESULT(ISDomainNames *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISDomainNames *self) Refresh;
-				public function HRESULT(ISDomainNames *self, VARIANT varIndex, BSTR* pbstrDomainName) get_Item;
+				public new function HRESULT(ISDomainNames *self, int32* plCount) get_Count;
+				public new function HRESULT(ISDomainNames *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISDomainNames *self) Refresh;
+				public new function HRESULT(ISDomainNames *self, VARIANT varIndex, BSTR* pbstrDomainName) get_Item;
 			}
 		}
 		[CRepr]
@@ -3542,15 +3697,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e606ec, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, BSTR* pbstrClusterName) mut
+			{
+				return VT.get_Item(&this, varIndex, pbstrClusterName);
+			}
+			public HRESULT get_DomainName(BSTR* pbstrDomainName) mut
+			{
+				return VT.get_DomainName(&this, pbstrDomainName);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusterNames *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusterNames *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusterNames *self) Refresh;
-				public function HRESULT(ISClusterNames *self, VARIANT varIndex, BSTR* pbstrClusterName) get_Item;
-				public function HRESULT(ISClusterNames *self, BSTR* pbstrDomainName) get_DomainName;
+				public new function HRESULT(ISClusterNames *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusterNames *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusterNames *self) Refresh;
+				public new function HRESULT(ISClusterNames *self, VARIANT varIndex, BSTR* pbstrClusterName) get_Item;
+				public new function HRESULT(ISClusterNames *self, BSTR* pbstrDomainName) get_DomainName;
 			}
 		}
 		[CRepr]
@@ -3558,11 +3734,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e60702, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Handle(uint* phandle) mut
+			{
+				return VT.get_Handle(&this, phandle);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusRefObject *self, uint* phandle) get_Handle;
+				public new function HRESULT(ISClusRefObject *self, uint* phandle) get_Handle;
 			}
 		}
 		[CRepr]
@@ -3570,20 +3751,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e60716, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Name(BSTR* pbstrClusterName) mut
+			{
+				return VT.get_Name(&this, pbstrClusterName);
+			}
+			public HRESULT get_MajorVersion(int32* pnMajorVersion) mut
+			{
+				return VT.get_MajorVersion(&this, pnMajorVersion);
+			}
+			public HRESULT get_MinorVersion(int32* pnMinorVersion) mut
+			{
+				return VT.get_MinorVersion(&this, pnMinorVersion);
+			}
+			public HRESULT get_BuildNumber(int16* pnBuildNumber) mut
+			{
+				return VT.get_BuildNumber(&this, pnBuildNumber);
+			}
+			public HRESULT get_VendorId(BSTR* pbstrVendorId) mut
+			{
+				return VT.get_VendorId(&this, pbstrVendorId);
+			}
+			public HRESULT get_CSDVersion(BSTR* pbstrCSDVersion) mut
+			{
+				return VT.get_CSDVersion(&this, pbstrCSDVersion);
+			}
+			public HRESULT get_ClusterHighestVersion(int32* pnClusterHighestVersion) mut
+			{
+				return VT.get_ClusterHighestVersion(&this, pnClusterHighestVersion);
+			}
+			public HRESULT get_ClusterLowestVersion(int32* pnClusterLowestVersion) mut
+			{
+				return VT.get_ClusterLowestVersion(&this, pnClusterLowestVersion);
+			}
+			public HRESULT get_Flags(int32* pnFlags) mut
+			{
+				return VT.get_Flags(&this, pnFlags);
+			}
+			public HRESULT get_MixedVersion(VARIANT* pvarMixedVersion) mut
+			{
+				return VT.get_MixedVersion(&this, pvarMixedVersion);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusVersion *self, BSTR* pbstrClusterName) get_Name;
-				public function HRESULT(ISClusVersion *self, int32* pnMajorVersion) get_MajorVersion;
-				public function HRESULT(ISClusVersion *self, int32* pnMinorVersion) get_MinorVersion;
-				public function HRESULT(ISClusVersion *self, int16* pnBuildNumber) get_BuildNumber;
-				public function HRESULT(ISClusVersion *self, BSTR* pbstrVendorId) get_VendorId;
-				public function HRESULT(ISClusVersion *self, BSTR* pbstrCSDVersion) get_CSDVersion;
-				public function HRESULT(ISClusVersion *self, int32* pnClusterHighestVersion) get_ClusterHighestVersion;
-				public function HRESULT(ISClusVersion *self, int32* pnClusterLowestVersion) get_ClusterLowestVersion;
-				public function HRESULT(ISClusVersion *self, int32* pnFlags) get_Flags;
-				public function HRESULT(ISClusVersion *self, VARIANT* pvarMixedVersion) get_MixedVersion;
+				public new function HRESULT(ISClusVersion *self, BSTR* pbstrClusterName) get_Name;
+				public new function HRESULT(ISClusVersion *self, int32* pnMajorVersion) get_MajorVersion;
+				public new function HRESULT(ISClusVersion *self, int32* pnMinorVersion) get_MinorVersion;
+				public new function HRESULT(ISClusVersion *self, int16* pnBuildNumber) get_BuildNumber;
+				public new function HRESULT(ISClusVersion *self, BSTR* pbstrVendorId) get_VendorId;
+				public new function HRESULT(ISClusVersion *self, BSTR* pbstrCSDVersion) get_CSDVersion;
+				public new function HRESULT(ISClusVersion *self, int32* pnClusterHighestVersion) get_ClusterHighestVersion;
+				public new function HRESULT(ISClusVersion *self, int32* pnClusterLowestVersion) get_ClusterLowestVersion;
+				public new function HRESULT(ISClusVersion *self, int32* pnFlags) get_Flags;
+				public new function HRESULT(ISClusVersion *self, VARIANT* pvarMixedVersion) get_MixedVersion;
 			}
 		}
 		[CRepr]
@@ -3591,31 +3813,116 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e606e4, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CommonProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_CommonProperties(&this, ppProperties);
+			}
+			public HRESULT get_PrivateProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_PrivateProperties(&this, ppProperties);
+			}
+			public HRESULT get_CommonROProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_CommonROProperties(&this, ppProperties);
+			}
+			public HRESULT get_PrivateROProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_PrivateROProperties(&this, ppProperties);
+			}
+			public HRESULT get_Handle(uint* phandle) mut
+			{
+				return VT.get_Handle(&this, phandle);
+			}
+			public HRESULT Open(BSTR bstrClusterName) mut
+			{
+				return VT.Open(&this, bstrClusterName);
+			}
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
+			public HRESULT put_Name(BSTR bstrClusterName) mut
+			{
+				return VT.put_Name(&this, bstrClusterName);
+			}
+			public HRESULT get_Version(ISClusVersion** ppClusVersion) mut
+			{
+				return VT.get_Version(&this, ppClusVersion);
+			}
+			public HRESULT put_QuorumResource(ISClusResource* pClusterResource) mut
+			{
+				return VT.put_QuorumResource(&this, pClusterResource);
+			}
+			public HRESULT get_QuorumResource(ISClusResource** pClusterResource) mut
+			{
+				return VT.get_QuorumResource(&this, pClusterResource);
+			}
+			public HRESULT get_QuorumLogSize(int32* pnLogSize) mut
+			{
+				return VT.get_QuorumLogSize(&this, pnLogSize);
+			}
+			public HRESULT put_QuorumLogSize(int32 nLogSize) mut
+			{
+				return VT.put_QuorumLogSize(&this, nLogSize);
+			}
+			public HRESULT get_QuorumPath(BSTR* ppPath) mut
+			{
+				return VT.get_QuorumPath(&this, ppPath);
+			}
+			public HRESULT put_QuorumPath(BSTR pPath) mut
+			{
+				return VT.put_QuorumPath(&this, pPath);
+			}
+			public HRESULT get_Nodes(ISClusNodes** ppNodes) mut
+			{
+				return VT.get_Nodes(&this, ppNodes);
+			}
+			public HRESULT get_ResourceGroups(ISClusResGroups** ppClusterResourceGroups) mut
+			{
+				return VT.get_ResourceGroups(&this, ppClusterResourceGroups);
+			}
+			public HRESULT get_Resources(ISClusResources** ppClusterResources) mut
+			{
+				return VT.get_Resources(&this, ppClusterResources);
+			}
+			public HRESULT get_ResourceTypes(ISClusResTypes** ppResourceTypes) mut
+			{
+				return VT.get_ResourceTypes(&this, ppResourceTypes);
+			}
+			public HRESULT get_Networks(ISClusNetworks** ppNetworks) mut
+			{
+				return VT.get_Networks(&this, ppNetworks);
+			}
+			public HRESULT get_NetInterfaces(ISClusNetInterfaces** ppNetInterfaces) mut
+			{
+				return VT.get_NetInterfaces(&this, ppNetInterfaces);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISCluster *self, ISClusProperties** ppProperties) get_CommonProperties;
-				public function HRESULT(ISCluster *self, ISClusProperties** ppProperties) get_PrivateProperties;
-				public function HRESULT(ISCluster *self, ISClusProperties** ppProperties) get_CommonROProperties;
-				public function HRESULT(ISCluster *self, ISClusProperties** ppProperties) get_PrivateROProperties;
-				public function HRESULT(ISCluster *self, uint* phandle) get_Handle;
-				public function HRESULT(ISCluster *self, BSTR bstrClusterName) Open;
-				public function HRESULT(ISCluster *self, BSTR* pbstrName) get_Name;
-				public function HRESULT(ISCluster *self, BSTR bstrClusterName) put_Name;
-				public function HRESULT(ISCluster *self, ISClusVersion** ppClusVersion) get_Version;
-				public function HRESULT(ISCluster *self, ISClusResource* pClusterResource) put_QuorumResource;
-				public function HRESULT(ISCluster *self, ISClusResource** pClusterResource) get_QuorumResource;
-				public function HRESULT(ISCluster *self, int32* pnLogSize) get_QuorumLogSize;
-				public function HRESULT(ISCluster *self, int32 nLogSize) put_QuorumLogSize;
-				public function HRESULT(ISCluster *self, BSTR* ppPath) get_QuorumPath;
-				public function HRESULT(ISCluster *self, BSTR pPath) put_QuorumPath;
-				public function HRESULT(ISCluster *self, ISClusNodes** ppNodes) get_Nodes;
-				public function HRESULT(ISCluster *self, ISClusResGroups** ppClusterResourceGroups) get_ResourceGroups;
-				public function HRESULT(ISCluster *self, ISClusResources** ppClusterResources) get_Resources;
-				public function HRESULT(ISCluster *self, ISClusResTypes** ppResourceTypes) get_ResourceTypes;
-				public function HRESULT(ISCluster *self, ISClusNetworks** ppNetworks) get_Networks;
-				public function HRESULT(ISCluster *self, ISClusNetInterfaces** ppNetInterfaces) get_NetInterfaces;
+				public new function HRESULT(ISCluster *self, ISClusProperties** ppProperties) get_CommonProperties;
+				public new function HRESULT(ISCluster *self, ISClusProperties** ppProperties) get_PrivateProperties;
+				public new function HRESULT(ISCluster *self, ISClusProperties** ppProperties) get_CommonROProperties;
+				public new function HRESULT(ISCluster *self, ISClusProperties** ppProperties) get_PrivateROProperties;
+				public new function HRESULT(ISCluster *self, uint* phandle) get_Handle;
+				public new function HRESULT(ISCluster *self, BSTR bstrClusterName) Open;
+				public new function HRESULT(ISCluster *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(ISCluster *self, BSTR bstrClusterName) put_Name;
+				public new function HRESULT(ISCluster *self, ISClusVersion** ppClusVersion) get_Version;
+				public new function HRESULT(ISCluster *self, ISClusResource* pClusterResource) put_QuorumResource;
+				public new function HRESULT(ISCluster *self, ISClusResource** pClusterResource) get_QuorumResource;
+				public new function HRESULT(ISCluster *self, int32* pnLogSize) get_QuorumLogSize;
+				public new function HRESULT(ISCluster *self, int32 nLogSize) put_QuorumLogSize;
+				public new function HRESULT(ISCluster *self, BSTR* ppPath) get_QuorumPath;
+				public new function HRESULT(ISCluster *self, BSTR pPath) put_QuorumPath;
+				public new function HRESULT(ISCluster *self, ISClusNodes** ppNodes) get_Nodes;
+				public new function HRESULT(ISCluster *self, ISClusResGroups** ppClusterResourceGroups) get_ResourceGroups;
+				public new function HRESULT(ISCluster *self, ISClusResources** ppClusterResources) get_Resources;
+				public new function HRESULT(ISCluster *self, ISClusResTypes** ppResourceTypes) get_ResourceTypes;
+				public new function HRESULT(ISCluster *self, ISClusNetworks** ppNetworks) get_Networks;
+				public new function HRESULT(ISCluster *self, ISClusNetInterfaces** ppNetInterfaces) get_NetInterfaces;
 			}
 		}
 		[CRepr]
@@ -3623,24 +3930,81 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e606f8, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CommonProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_CommonProperties(&this, ppProperties);
+			}
+			public HRESULT get_PrivateProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_PrivateProperties(&this, ppProperties);
+			}
+			public HRESULT get_CommonROProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_CommonROProperties(&this, ppProperties);
+			}
+			public HRESULT get_PrivateROProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_PrivateROProperties(&this, ppProperties);
+			}
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
+			public HRESULT get_Handle(uint* phandle) mut
+			{
+				return VT.get_Handle(&this, phandle);
+			}
+			public HRESULT get_NodeID(BSTR* pbstrNodeID) mut
+			{
+				return VT.get_NodeID(&this, pbstrNodeID);
+			}
+			public HRESULT get_State(CLUSTER_NODE_STATE* dwState) mut
+			{
+				return VT.get_State(&this, dwState);
+			}
+			public HRESULT Pause() mut
+			{
+				return VT.Pause(&this);
+			}
+			public HRESULT Resume() mut
+			{
+				return VT.Resume(&this);
+			}
+			public HRESULT Evict() mut
+			{
+				return VT.Evict(&this);
+			}
+			public HRESULT get_ResourceGroups(ISClusResGroups** ppResourceGroups) mut
+			{
+				return VT.get_ResourceGroups(&this, ppResourceGroups);
+			}
+			public HRESULT get_Cluster(ISCluster** ppCluster) mut
+			{
+				return VT.get_Cluster(&this, ppCluster);
+			}
+			public HRESULT get_NetInterfaces(ISClusNodeNetInterfaces** ppClusNetInterfaces) mut
+			{
+				return VT.get_NetInterfaces(&this, ppClusNetInterfaces);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusNode *self, ISClusProperties** ppProperties) get_CommonProperties;
-				public function HRESULT(ISClusNode *self, ISClusProperties** ppProperties) get_PrivateProperties;
-				public function HRESULT(ISClusNode *self, ISClusProperties** ppProperties) get_CommonROProperties;
-				public function HRESULT(ISClusNode *self, ISClusProperties** ppProperties) get_PrivateROProperties;
-				public function HRESULT(ISClusNode *self, BSTR* pbstrName) get_Name;
-				public function HRESULT(ISClusNode *self, uint* phandle) get_Handle;
-				public function HRESULT(ISClusNode *self, BSTR* pbstrNodeID) get_NodeID;
-				public function HRESULT(ISClusNode *self, CLUSTER_NODE_STATE* dwState) get_State;
-				public function HRESULT(ISClusNode *self) Pause;
-				public function HRESULT(ISClusNode *self) Resume;
-				public function HRESULT(ISClusNode *self) Evict;
-				public function HRESULT(ISClusNode *self, ISClusResGroups** ppResourceGroups) get_ResourceGroups;
-				public function HRESULT(ISClusNode *self, ISCluster** ppCluster) get_Cluster;
-				public function HRESULT(ISClusNode *self, ISClusNodeNetInterfaces** ppClusNetInterfaces) get_NetInterfaces;
+				public new function HRESULT(ISClusNode *self, ISClusProperties** ppProperties) get_CommonProperties;
+				public new function HRESULT(ISClusNode *self, ISClusProperties** ppProperties) get_PrivateProperties;
+				public new function HRESULT(ISClusNode *self, ISClusProperties** ppProperties) get_CommonROProperties;
+				public new function HRESULT(ISClusNode *self, ISClusProperties** ppProperties) get_PrivateROProperties;
+				public new function HRESULT(ISClusNode *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(ISClusNode *self, uint* phandle) get_Handle;
+				public new function HRESULT(ISClusNode *self, BSTR* pbstrNodeID) get_NodeID;
+				public new function HRESULT(ISClusNode *self, CLUSTER_NODE_STATE* dwState) get_State;
+				public new function HRESULT(ISClusNode *self) Pause;
+				public new function HRESULT(ISClusNode *self) Resume;
+				public new function HRESULT(ISClusNode *self) Evict;
+				public new function HRESULT(ISClusNode *self, ISClusResGroups** ppResourceGroups) get_ResourceGroups;
+				public new function HRESULT(ISClusNode *self, ISCluster** ppCluster) get_Cluster;
+				public new function HRESULT(ISClusNode *self, ISClusNodeNetInterfaces** ppClusNetInterfaces) get_NetInterfaces;
 			}
 		}
 		[CRepr]
@@ -3648,14 +4012,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e606fa, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusNode** ppNode) mut
+			{
+				return VT.get_Item(&this, varIndex, ppNode);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusNodes *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusNodes *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusNodes *self) Refresh;
-				public function HRESULT(ISClusNodes *self, VARIANT varIndex, ISClusNode** ppNode) get_Item;
+				public new function HRESULT(ISClusNodes *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusNodes *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusNodes *self) Refresh;
+				public new function HRESULT(ISClusNodes *self, VARIANT varIndex, ISClusNode** ppNode) get_Item;
 			}
 		}
 		[CRepr]
@@ -3663,21 +4044,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e606f2, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CommonProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_CommonProperties(&this, ppProperties);
+			}
+			public HRESULT get_PrivateProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_PrivateProperties(&this, ppProperties);
+			}
+			public HRESULT get_CommonROProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_CommonROProperties(&this, ppProperties);
+			}
+			public HRESULT get_PrivateROProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_PrivateROProperties(&this, ppProperties);
+			}
+			public HRESULT get_Handle(uint* phandle) mut
+			{
+				return VT.get_Handle(&this, phandle);
+			}
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
+			public HRESULT put_Name(BSTR bstrNetworkName) mut
+			{
+				return VT.put_Name(&this, bstrNetworkName);
+			}
+			public HRESULT get_NetworkID(BSTR* pbstrNetworkID) mut
+			{
+				return VT.get_NetworkID(&this, pbstrNetworkID);
+			}
+			public HRESULT get_State(CLUSTER_NETWORK_STATE* dwState) mut
+			{
+				return VT.get_State(&this, dwState);
+			}
+			public HRESULT get_NetInterfaces(ISClusNetworkNetInterfaces** ppClusNetInterfaces) mut
+			{
+				return VT.get_NetInterfaces(&this, ppClusNetInterfaces);
+			}
+			public HRESULT get_Cluster(ISCluster** ppCluster) mut
+			{
+				return VT.get_Cluster(&this, ppCluster);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusNetwork *self, ISClusProperties** ppProperties) get_CommonProperties;
-				public function HRESULT(ISClusNetwork *self, ISClusProperties** ppProperties) get_PrivateProperties;
-				public function HRESULT(ISClusNetwork *self, ISClusProperties** ppProperties) get_CommonROProperties;
-				public function HRESULT(ISClusNetwork *self, ISClusProperties** ppProperties) get_PrivateROProperties;
-				public function HRESULT(ISClusNetwork *self, uint* phandle) get_Handle;
-				public function HRESULT(ISClusNetwork *self, BSTR* pbstrName) get_Name;
-				public function HRESULT(ISClusNetwork *self, BSTR bstrNetworkName) put_Name;
-				public function HRESULT(ISClusNetwork *self, BSTR* pbstrNetworkID) get_NetworkID;
-				public function HRESULT(ISClusNetwork *self, CLUSTER_NETWORK_STATE* dwState) get_State;
-				public function HRESULT(ISClusNetwork *self, ISClusNetworkNetInterfaces** ppClusNetInterfaces) get_NetInterfaces;
-				public function HRESULT(ISClusNetwork *self, ISCluster** ppCluster) get_Cluster;
+				public new function HRESULT(ISClusNetwork *self, ISClusProperties** ppProperties) get_CommonProperties;
+				public new function HRESULT(ISClusNetwork *self, ISClusProperties** ppProperties) get_PrivateProperties;
+				public new function HRESULT(ISClusNetwork *self, ISClusProperties** ppProperties) get_CommonROProperties;
+				public new function HRESULT(ISClusNetwork *self, ISClusProperties** ppProperties) get_PrivateROProperties;
+				public new function HRESULT(ISClusNetwork *self, uint* phandle) get_Handle;
+				public new function HRESULT(ISClusNetwork *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(ISClusNetwork *self, BSTR bstrNetworkName) put_Name;
+				public new function HRESULT(ISClusNetwork *self, BSTR* pbstrNetworkID) get_NetworkID;
+				public new function HRESULT(ISClusNetwork *self, CLUSTER_NETWORK_STATE* dwState) get_State;
+				public new function HRESULT(ISClusNetwork *self, ISClusNetworkNetInterfaces** ppClusNetInterfaces) get_NetInterfaces;
+				public new function HRESULT(ISClusNetwork *self, ISCluster** ppCluster) get_Cluster;
 			}
 		}
 		[CRepr]
@@ -3685,14 +4111,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e606f4, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusNetwork** ppClusNetwork) mut
+			{
+				return VT.get_Item(&this, varIndex, ppClusNetwork);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusNetworks *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusNetworks *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusNetworks *self) Refresh;
-				public function HRESULT(ISClusNetworks *self, VARIANT varIndex, ISClusNetwork** ppClusNetwork) get_Item;
+				public new function HRESULT(ISClusNetworks *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusNetworks *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusNetworks *self) Refresh;
+				public new function HRESULT(ISClusNetworks *self, VARIANT varIndex, ISClusNetwork** ppClusNetwork) get_Item;
 			}
 		}
 		[CRepr]
@@ -3700,18 +4143,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e606ee, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CommonProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_CommonProperties(&this, ppProperties);
+			}
+			public HRESULT get_PrivateProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_PrivateProperties(&this, ppProperties);
+			}
+			public HRESULT get_CommonROProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_CommonROProperties(&this, ppProperties);
+			}
+			public HRESULT get_PrivateROProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_PrivateROProperties(&this, ppProperties);
+			}
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
+			public HRESULT get_Handle(uint* phandle) mut
+			{
+				return VT.get_Handle(&this, phandle);
+			}
+			public HRESULT get_State(CLUSTER_NETINTERFACE_STATE* dwState) mut
+			{
+				return VT.get_State(&this, dwState);
+			}
+			public HRESULT get_Cluster(ISCluster** ppCluster) mut
+			{
+				return VT.get_Cluster(&this, ppCluster);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusNetInterface *self, ISClusProperties** ppProperties) get_CommonProperties;
-				public function HRESULT(ISClusNetInterface *self, ISClusProperties** ppProperties) get_PrivateProperties;
-				public function HRESULT(ISClusNetInterface *self, ISClusProperties** ppProperties) get_CommonROProperties;
-				public function HRESULT(ISClusNetInterface *self, ISClusProperties** ppProperties) get_PrivateROProperties;
-				public function HRESULT(ISClusNetInterface *self, BSTR* pbstrName) get_Name;
-				public function HRESULT(ISClusNetInterface *self, uint* phandle) get_Handle;
-				public function HRESULT(ISClusNetInterface *self, CLUSTER_NETINTERFACE_STATE* dwState) get_State;
-				public function HRESULT(ISClusNetInterface *self, ISCluster** ppCluster) get_Cluster;
+				public new function HRESULT(ISClusNetInterface *self, ISClusProperties** ppProperties) get_CommonProperties;
+				public new function HRESULT(ISClusNetInterface *self, ISClusProperties** ppProperties) get_PrivateProperties;
+				public new function HRESULT(ISClusNetInterface *self, ISClusProperties** ppProperties) get_CommonROProperties;
+				public new function HRESULT(ISClusNetInterface *self, ISClusProperties** ppProperties) get_PrivateROProperties;
+				public new function HRESULT(ISClusNetInterface *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(ISClusNetInterface *self, uint* phandle) get_Handle;
+				public new function HRESULT(ISClusNetInterface *self, CLUSTER_NETINTERFACE_STATE* dwState) get_State;
+				public new function HRESULT(ISClusNetInterface *self, ISCluster** ppCluster) get_Cluster;
 			}
 		}
 		[CRepr]
@@ -3719,14 +4195,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e606f0, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusNetInterface** ppClusNetInterface) mut
+			{
+				return VT.get_Item(&this, varIndex, ppClusNetInterface);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusNetInterfaces *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusNetInterfaces *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusNetInterfaces *self) Refresh;
-				public function HRESULT(ISClusNetInterfaces *self, VARIANT varIndex, ISClusNetInterface** ppClusNetInterface) get_Item;
+				public new function HRESULT(ISClusNetInterfaces *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusNetInterfaces *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusNetInterfaces *self) Refresh;
+				public new function HRESULT(ISClusNetInterfaces *self, VARIANT varIndex, ISClusNetInterface** ppClusNetInterface) get_Item;
 			}
 		}
 		[CRepr]
@@ -3734,14 +4227,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e606fc, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusNetInterface** ppClusNetInterface) mut
+			{
+				return VT.get_Item(&this, varIndex, ppClusNetInterface);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusNodeNetInterfaces *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusNodeNetInterfaces *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusNodeNetInterfaces *self) Refresh;
-				public function HRESULT(ISClusNodeNetInterfaces *self, VARIANT varIndex, ISClusNetInterface** ppClusNetInterface) get_Item;
+				public new function HRESULT(ISClusNodeNetInterfaces *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusNodeNetInterfaces *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusNodeNetInterfaces *self) Refresh;
+				public new function HRESULT(ISClusNodeNetInterfaces *self, VARIANT varIndex, ISClusNetInterface** ppClusNetInterface) get_Item;
 			}
 		}
 		[CRepr]
@@ -3749,14 +4259,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e606f6, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusNetInterface** ppClusNetInterface) mut
+			{
+				return VT.get_Item(&this, varIndex, ppClusNetInterface);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusNetworkNetInterfaces *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusNetworkNetInterfaces *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusNetworkNetInterfaces *self) Refresh;
-				public function HRESULT(ISClusNetworkNetInterfaces *self, VARIANT varIndex, ISClusNetInterface** ppClusNetInterface) get_Item;
+				public new function HRESULT(ISClusNetworkNetInterfaces *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusNetworkNetInterfaces *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusNetworkNetInterfaces *self) Refresh;
+				public new function HRESULT(ISClusNetworkNetInterfaces *self, VARIANT varIndex, ISClusNetInterface** ppClusNetInterface) get_Item;
 			}
 		}
 		[CRepr]
@@ -3764,26 +4291,91 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e60706, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CommonProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_CommonProperties(&this, ppProperties);
+			}
+			public HRESULT get_PrivateProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_PrivateProperties(&this, ppProperties);
+			}
+			public HRESULT get_CommonROProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_CommonROProperties(&this, ppProperties);
+			}
+			public HRESULT get_PrivateROProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_PrivateROProperties(&this, ppProperties);
+			}
+			public HRESULT get_Handle(uint* phandle) mut
+			{
+				return VT.get_Handle(&this, phandle);
+			}
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
+			public HRESULT put_Name(BSTR bstrGroupName) mut
+			{
+				return VT.put_Name(&this, bstrGroupName);
+			}
+			public HRESULT get_State(CLUSTER_GROUP_STATE* dwState) mut
+			{
+				return VT.get_State(&this, dwState);
+			}
+			public HRESULT get_OwnerNode(ISClusNode** ppOwnerNode) mut
+			{
+				return VT.get_OwnerNode(&this, ppOwnerNode);
+			}
+			public HRESULT get_Resources(ISClusResGroupResources** ppClusterGroupResources) mut
+			{
+				return VT.get_Resources(&this, ppClusterGroupResources);
+			}
+			public HRESULT get_PreferredOwnerNodes(ISClusResGroupPreferredOwnerNodes** ppOwnerNodes) mut
+			{
+				return VT.get_PreferredOwnerNodes(&this, ppOwnerNodes);
+			}
+			public HRESULT Delete() mut
+			{
+				return VT.Delete(&this);
+			}
+			public HRESULT Online(VARIANT varTimeout, VARIANT varNode, VARIANT* pvarPending) mut
+			{
+				return VT.Online(&this, varTimeout, varNode, pvarPending);
+			}
+			public HRESULT Move(VARIANT varTimeout, VARIANT varNode, VARIANT* pvarPending) mut
+			{
+				return VT.Move(&this, varTimeout, varNode, pvarPending);
+			}
+			public HRESULT Offline(VARIANT varTimeout, VARIANT* pvarPending) mut
+			{
+				return VT.Offline(&this, varTimeout, pvarPending);
+			}
+			public HRESULT get_Cluster(ISCluster** ppCluster) mut
+			{
+				return VT.get_Cluster(&this, ppCluster);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusResGroup *self, ISClusProperties** ppProperties) get_CommonProperties;
-				public function HRESULT(ISClusResGroup *self, ISClusProperties** ppProperties) get_PrivateProperties;
-				public function HRESULT(ISClusResGroup *self, ISClusProperties** ppProperties) get_CommonROProperties;
-				public function HRESULT(ISClusResGroup *self, ISClusProperties** ppProperties) get_PrivateROProperties;
-				public function HRESULT(ISClusResGroup *self, uint* phandle) get_Handle;
-				public function HRESULT(ISClusResGroup *self, BSTR* pbstrName) get_Name;
-				public function HRESULT(ISClusResGroup *self, BSTR bstrGroupName) put_Name;
-				public function HRESULT(ISClusResGroup *self, CLUSTER_GROUP_STATE* dwState) get_State;
-				public function HRESULT(ISClusResGroup *self, ISClusNode** ppOwnerNode) get_OwnerNode;
-				public function HRESULT(ISClusResGroup *self, ISClusResGroupResources** ppClusterGroupResources) get_Resources;
-				public function HRESULT(ISClusResGroup *self, ISClusResGroupPreferredOwnerNodes** ppOwnerNodes) get_PreferredOwnerNodes;
-				public function HRESULT(ISClusResGroup *self) Delete;
-				public function HRESULT(ISClusResGroup *self, VARIANT varTimeout, VARIANT varNode, VARIANT* pvarPending) Online;
-				public function HRESULT(ISClusResGroup *self, VARIANT varTimeout, VARIANT varNode, VARIANT* pvarPending) Move;
-				public function HRESULT(ISClusResGroup *self, VARIANT varTimeout, VARIANT* pvarPending) Offline;
-				public function HRESULT(ISClusResGroup *self, ISCluster** ppCluster) get_Cluster;
+				public new function HRESULT(ISClusResGroup *self, ISClusProperties** ppProperties) get_CommonProperties;
+				public new function HRESULT(ISClusResGroup *self, ISClusProperties** ppProperties) get_PrivateProperties;
+				public new function HRESULT(ISClusResGroup *self, ISClusProperties** ppProperties) get_CommonROProperties;
+				public new function HRESULT(ISClusResGroup *self, ISClusProperties** ppProperties) get_PrivateROProperties;
+				public new function HRESULT(ISClusResGroup *self, uint* phandle) get_Handle;
+				public new function HRESULT(ISClusResGroup *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(ISClusResGroup *self, BSTR bstrGroupName) put_Name;
+				public new function HRESULT(ISClusResGroup *self, CLUSTER_GROUP_STATE* dwState) get_State;
+				public new function HRESULT(ISClusResGroup *self, ISClusNode** ppOwnerNode) get_OwnerNode;
+				public new function HRESULT(ISClusResGroup *self, ISClusResGroupResources** ppClusterGroupResources) get_Resources;
+				public new function HRESULT(ISClusResGroup *self, ISClusResGroupPreferredOwnerNodes** ppOwnerNodes) get_PreferredOwnerNodes;
+				public new function HRESULT(ISClusResGroup *self) Delete;
+				public new function HRESULT(ISClusResGroup *self, VARIANT varTimeout, VARIANT varNode, VARIANT* pvarPending) Online;
+				public new function HRESULT(ISClusResGroup *self, VARIANT varTimeout, VARIANT varNode, VARIANT* pvarPending) Move;
+				public new function HRESULT(ISClusResGroup *self, VARIANT varTimeout, VARIANT* pvarPending) Offline;
+				public new function HRESULT(ISClusResGroup *self, ISCluster** ppCluster) get_Cluster;
 			}
 		}
 		[CRepr]
@@ -3791,16 +4383,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e60708, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusResGroup** ppClusResGroup) mut
+			{
+				return VT.get_Item(&this, varIndex, ppClusResGroup);
+			}
+			public HRESULT CreateItem(BSTR bstrResourceGroupName, ISClusResGroup** ppResourceGroup) mut
+			{
+				return VT.CreateItem(&this, bstrResourceGroupName, ppResourceGroup);
+			}
+			public HRESULT DeleteItem(VARIANT varIndex) mut
+			{
+				return VT.DeleteItem(&this, varIndex);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusResGroups *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusResGroups *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusResGroups *self) Refresh;
-				public function HRESULT(ISClusResGroups *self, VARIANT varIndex, ISClusResGroup** ppClusResGroup) get_Item;
-				public function HRESULT(ISClusResGroups *self, BSTR bstrResourceGroupName, ISClusResGroup** ppResourceGroup) CreateItem;
-				public function HRESULT(ISClusResGroups *self, VARIANT varIndex) DeleteItem;
+				public new function HRESULT(ISClusResGroups *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusResGroups *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusResGroups *self) Refresh;
+				public new function HRESULT(ISClusResGroups *self, VARIANT varIndex, ISClusResGroup** ppClusResGroup) get_Item;
+				public new function HRESULT(ISClusResGroups *self, BSTR bstrResourceGroupName, ISClusResGroup** ppResourceGroup) CreateItem;
+				public new function HRESULT(ISClusResGroups *self, VARIANT varIndex) DeleteItem;
 			}
 		}
 		[CRepr]
@@ -3808,42 +4425,171 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e6070a, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CommonProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_CommonProperties(&this, ppProperties);
+			}
+			public HRESULT get_PrivateProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_PrivateProperties(&this, ppProperties);
+			}
+			public HRESULT get_CommonROProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_CommonROProperties(&this, ppProperties);
+			}
+			public HRESULT get_PrivateROProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_PrivateROProperties(&this, ppProperties);
+			}
+			public HRESULT get_Handle(uint* phandle) mut
+			{
+				return VT.get_Handle(&this, phandle);
+			}
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
+			public HRESULT put_Name(BSTR bstrResourceName) mut
+			{
+				return VT.put_Name(&this, bstrResourceName);
+			}
+			public HRESULT get_State(CLUSTER_RESOURCE_STATE* dwState) mut
+			{
+				return VT.get_State(&this, dwState);
+			}
+			public HRESULT get_CoreFlag(CLUS_FLAGS* dwCoreFlag) mut
+			{
+				return VT.get_CoreFlag(&this, dwCoreFlag);
+			}
+			public HRESULT BecomeQuorumResource(BSTR bstrDevicePath, int32 lMaxLogSize) mut
+			{
+				return VT.BecomeQuorumResource(&this, bstrDevicePath, lMaxLogSize);
+			}
+			public HRESULT Delete() mut
+			{
+				return VT.Delete(&this);
+			}
+			public HRESULT Fail() mut
+			{
+				return VT.Fail(&this);
+			}
+			public HRESULT Online(int32 nTimeout, VARIANT* pvarPending) mut
+			{
+				return VT.Online(&this, nTimeout, pvarPending);
+			}
+			public HRESULT Offline(int32 nTimeout, VARIANT* pvarPending) mut
+			{
+				return VT.Offline(&this, nTimeout, pvarPending);
+			}
+			public HRESULT ChangeResourceGroup(ISClusResGroup* pResourceGroup) mut
+			{
+				return VT.ChangeResourceGroup(&this, pResourceGroup);
+			}
+			public HRESULT AddResourceNode(ISClusNode* pNode) mut
+			{
+				return VT.AddResourceNode(&this, pNode);
+			}
+			public HRESULT RemoveResourceNode(ISClusNode* pNode) mut
+			{
+				return VT.RemoveResourceNode(&this, pNode);
+			}
+			public HRESULT CanResourceBeDependent(ISClusResource* pResource, VARIANT* pvarDependent) mut
+			{
+				return VT.CanResourceBeDependent(&this, pResource, pvarDependent);
+			}
+			public HRESULT get_PossibleOwnerNodes(ISClusResPossibleOwnerNodes** ppOwnerNodes) mut
+			{
+				return VT.get_PossibleOwnerNodes(&this, ppOwnerNodes);
+			}
+			public HRESULT get_Dependencies(ISClusResDependencies** ppResDependencies) mut
+			{
+				return VT.get_Dependencies(&this, ppResDependencies);
+			}
+			public HRESULT get_Dependents(ISClusResDependents** ppResDependents) mut
+			{
+				return VT.get_Dependents(&this, ppResDependents);
+			}
+			public HRESULT get_Group(ISClusResGroup** ppResGroup) mut
+			{
+				return VT.get_Group(&this, ppResGroup);
+			}
+			public HRESULT get_OwnerNode(ISClusNode** ppOwnerNode) mut
+			{
+				return VT.get_OwnerNode(&this, ppOwnerNode);
+			}
+			public HRESULT get_Cluster(ISCluster** ppCluster) mut
+			{
+				return VT.get_Cluster(&this, ppCluster);
+			}
+			public HRESULT get_ClassInfo(CLUSTER_RESOURCE_CLASS* prcClassInfo) mut
+			{
+				return VT.get_ClassInfo(&this, prcClassInfo);
+			}
+			public HRESULT get_Disk(ISClusDisk** ppDisk) mut
+			{
+				return VT.get_Disk(&this, ppDisk);
+			}
+			public HRESULT get_RegistryKeys(ISClusRegistryKeys** ppRegistryKeys) mut
+			{
+				return VT.get_RegistryKeys(&this, ppRegistryKeys);
+			}
+			public HRESULT get_CryptoKeys(ISClusCryptoKeys** ppCryptoKeys) mut
+			{
+				return VT.get_CryptoKeys(&this, ppCryptoKeys);
+			}
+			public HRESULT get_TypeName(BSTR* pbstrTypeName) mut
+			{
+				return VT.get_TypeName(&this, pbstrTypeName);
+			}
+			public HRESULT get_Type(ISClusResType** ppResourceType) mut
+			{
+				return VT.get_Type(&this, ppResourceType);
+			}
+			public HRESULT get_MaintenanceMode(BOOL* pbMaintenanceMode) mut
+			{
+				return VT.get_MaintenanceMode(&this, pbMaintenanceMode);
+			}
+			public HRESULT put_MaintenanceMode(BOOL bMaintenanceMode) mut
+			{
+				return VT.put_MaintenanceMode(&this, bMaintenanceMode);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusResource *self, ISClusProperties** ppProperties) get_CommonProperties;
-				public function HRESULT(ISClusResource *self, ISClusProperties** ppProperties) get_PrivateProperties;
-				public function HRESULT(ISClusResource *self, ISClusProperties** ppProperties) get_CommonROProperties;
-				public function HRESULT(ISClusResource *self, ISClusProperties** ppProperties) get_PrivateROProperties;
-				public function HRESULT(ISClusResource *self, uint* phandle) get_Handle;
-				public function HRESULT(ISClusResource *self, BSTR* pbstrName) get_Name;
-				public function HRESULT(ISClusResource *self, BSTR bstrResourceName) put_Name;
-				public function HRESULT(ISClusResource *self, CLUSTER_RESOURCE_STATE* dwState) get_State;
-				public function HRESULT(ISClusResource *self, CLUS_FLAGS* dwCoreFlag) get_CoreFlag;
-				public function HRESULT(ISClusResource *self, BSTR bstrDevicePath, int32 lMaxLogSize) BecomeQuorumResource;
-				public function HRESULT(ISClusResource *self) Delete;
-				public function HRESULT(ISClusResource *self) Fail;
-				public function HRESULT(ISClusResource *self, int32 nTimeout, VARIANT* pvarPending) Online;
-				public function HRESULT(ISClusResource *self, int32 nTimeout, VARIANT* pvarPending) Offline;
-				public function HRESULT(ISClusResource *self, ISClusResGroup* pResourceGroup) ChangeResourceGroup;
-				public function HRESULT(ISClusResource *self, ISClusNode* pNode) AddResourceNode;
-				public function HRESULT(ISClusResource *self, ISClusNode* pNode) RemoveResourceNode;
-				public function HRESULT(ISClusResource *self, ISClusResource* pResource, VARIANT* pvarDependent) CanResourceBeDependent;
-				public function HRESULT(ISClusResource *self, ISClusResPossibleOwnerNodes** ppOwnerNodes) get_PossibleOwnerNodes;
-				public function HRESULT(ISClusResource *self, ISClusResDependencies** ppResDependencies) get_Dependencies;
-				public function HRESULT(ISClusResource *self, ISClusResDependents** ppResDependents) get_Dependents;
-				public function HRESULT(ISClusResource *self, ISClusResGroup** ppResGroup) get_Group;
-				public function HRESULT(ISClusResource *self, ISClusNode** ppOwnerNode) get_OwnerNode;
-				public function HRESULT(ISClusResource *self, ISCluster** ppCluster) get_Cluster;
-				public function HRESULT(ISClusResource *self, CLUSTER_RESOURCE_CLASS* prcClassInfo) get_ClassInfo;
-				public function HRESULT(ISClusResource *self, ISClusDisk** ppDisk) get_Disk;
-				public function HRESULT(ISClusResource *self, ISClusRegistryKeys** ppRegistryKeys) get_RegistryKeys;
-				public function HRESULT(ISClusResource *self, ISClusCryptoKeys** ppCryptoKeys) get_CryptoKeys;
-				public function HRESULT(ISClusResource *self, BSTR* pbstrTypeName) get_TypeName;
-				public function HRESULT(ISClusResource *self, ISClusResType** ppResourceType) get_Type;
-				public function HRESULT(ISClusResource *self, BOOL* pbMaintenanceMode) get_MaintenanceMode;
-				public function HRESULT(ISClusResource *self, BOOL bMaintenanceMode) put_MaintenanceMode;
+				public new function HRESULT(ISClusResource *self, ISClusProperties** ppProperties) get_CommonProperties;
+				public new function HRESULT(ISClusResource *self, ISClusProperties** ppProperties) get_PrivateProperties;
+				public new function HRESULT(ISClusResource *self, ISClusProperties** ppProperties) get_CommonROProperties;
+				public new function HRESULT(ISClusResource *self, ISClusProperties** ppProperties) get_PrivateROProperties;
+				public new function HRESULT(ISClusResource *self, uint* phandle) get_Handle;
+				public new function HRESULT(ISClusResource *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(ISClusResource *self, BSTR bstrResourceName) put_Name;
+				public new function HRESULT(ISClusResource *self, CLUSTER_RESOURCE_STATE* dwState) get_State;
+				public new function HRESULT(ISClusResource *self, CLUS_FLAGS* dwCoreFlag) get_CoreFlag;
+				public new function HRESULT(ISClusResource *self, BSTR bstrDevicePath, int32 lMaxLogSize) BecomeQuorumResource;
+				public new function HRESULT(ISClusResource *self) Delete;
+				public new function HRESULT(ISClusResource *self) Fail;
+				public new function HRESULT(ISClusResource *self, int32 nTimeout, VARIANT* pvarPending) Online;
+				public new function HRESULT(ISClusResource *self, int32 nTimeout, VARIANT* pvarPending) Offline;
+				public new function HRESULT(ISClusResource *self, ISClusResGroup* pResourceGroup) ChangeResourceGroup;
+				public new function HRESULT(ISClusResource *self, ISClusNode* pNode) AddResourceNode;
+				public new function HRESULT(ISClusResource *self, ISClusNode* pNode) RemoveResourceNode;
+				public new function HRESULT(ISClusResource *self, ISClusResource* pResource, VARIANT* pvarDependent) CanResourceBeDependent;
+				public new function HRESULT(ISClusResource *self, ISClusResPossibleOwnerNodes** ppOwnerNodes) get_PossibleOwnerNodes;
+				public new function HRESULT(ISClusResource *self, ISClusResDependencies** ppResDependencies) get_Dependencies;
+				public new function HRESULT(ISClusResource *self, ISClusResDependents** ppResDependents) get_Dependents;
+				public new function HRESULT(ISClusResource *self, ISClusResGroup** ppResGroup) get_Group;
+				public new function HRESULT(ISClusResource *self, ISClusNode** ppOwnerNode) get_OwnerNode;
+				public new function HRESULT(ISClusResource *self, ISCluster** ppCluster) get_Cluster;
+				public new function HRESULT(ISClusResource *self, CLUSTER_RESOURCE_CLASS* prcClassInfo) get_ClassInfo;
+				public new function HRESULT(ISClusResource *self, ISClusDisk** ppDisk) get_Disk;
+				public new function HRESULT(ISClusResource *self, ISClusRegistryKeys** ppRegistryKeys) get_RegistryKeys;
+				public new function HRESULT(ISClusResource *self, ISClusCryptoKeys** ppCryptoKeys) get_CryptoKeys;
+				public new function HRESULT(ISClusResource *self, BSTR* pbstrTypeName) get_TypeName;
+				public new function HRESULT(ISClusResource *self, ISClusResType** ppResourceType) get_Type;
+				public new function HRESULT(ISClusResource *self, BOOL* pbMaintenanceMode) get_MaintenanceMode;
+				public new function HRESULT(ISClusResource *self, BOOL bMaintenanceMode) put_MaintenanceMode;
 			}
 		}
 		[CRepr]
@@ -3851,18 +4597,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e60704, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusResource** ppClusResource) mut
+			{
+				return VT.get_Item(&this, varIndex, ppClusResource);
+			}
+			public HRESULT CreateItem(BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) mut
+			{
+				return VT.CreateItem(&this, bstrResourceName, bstrResourceType, dwFlags, ppClusterResource);
+			}
+			public HRESULT DeleteItem(VARIANT varIndex) mut
+			{
+				return VT.DeleteItem(&this, varIndex);
+			}
+			public HRESULT AddItem(ISClusResource* pResource) mut
+			{
+				return VT.AddItem(&this, pResource);
+			}
+			public HRESULT RemoveItem(VARIANT varIndex) mut
+			{
+				return VT.RemoveItem(&this, varIndex);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusResDependencies *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusResDependencies *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusResDependencies *self) Refresh;
-				public function HRESULT(ISClusResDependencies *self, VARIANT varIndex, ISClusResource** ppClusResource) get_Item;
-				public function HRESULT(ISClusResDependencies *self, BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) CreateItem;
-				public function HRESULT(ISClusResDependencies *self, VARIANT varIndex) DeleteItem;
-				public function HRESULT(ISClusResDependencies *self, ISClusResource* pResource) AddItem;
-				public function HRESULT(ISClusResDependencies *self, VARIANT varIndex) RemoveItem;
+				public new function HRESULT(ISClusResDependencies *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusResDependencies *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusResDependencies *self) Refresh;
+				public new function HRESULT(ISClusResDependencies *self, VARIANT varIndex, ISClusResource** ppClusResource) get_Item;
+				public new function HRESULT(ISClusResDependencies *self, BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) CreateItem;
+				public new function HRESULT(ISClusResDependencies *self, VARIANT varIndex) DeleteItem;
+				public new function HRESULT(ISClusResDependencies *self, ISClusResource* pResource) AddItem;
+				public new function HRESULT(ISClusResDependencies *self, VARIANT varIndex) RemoveItem;
 			}
 		}
 		[CRepr]
@@ -3870,16 +4649,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e606ea, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusResource** ppClusResource) mut
+			{
+				return VT.get_Item(&this, varIndex, ppClusResource);
+			}
+			public HRESULT CreateItem(BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) mut
+			{
+				return VT.CreateItem(&this, bstrResourceName, bstrResourceType, dwFlags, ppClusterResource);
+			}
+			public HRESULT DeleteItem(VARIANT varIndex) mut
+			{
+				return VT.DeleteItem(&this, varIndex);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusResGroupResources *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusResGroupResources *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusResGroupResources *self) Refresh;
-				public function HRESULT(ISClusResGroupResources *self, VARIANT varIndex, ISClusResource** ppClusResource) get_Item;
-				public function HRESULT(ISClusResGroupResources *self, BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) CreateItem;
-				public function HRESULT(ISClusResGroupResources *self, VARIANT varIndex) DeleteItem;
+				public new function HRESULT(ISClusResGroupResources *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusResGroupResources *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusResGroupResources *self) Refresh;
+				public new function HRESULT(ISClusResGroupResources *self, VARIANT varIndex, ISClusResource** ppClusResource) get_Item;
+				public new function HRESULT(ISClusResGroupResources *self, BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) CreateItem;
+				public new function HRESULT(ISClusResGroupResources *self, VARIANT varIndex) DeleteItem;
 			}
 		}
 		[CRepr]
@@ -3887,16 +4691,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e60714, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusResource** ppClusResource) mut
+			{
+				return VT.get_Item(&this, varIndex, ppClusResource);
+			}
+			public HRESULT CreateItem(BSTR bstrResourceName, BSTR bstrGroupName, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) mut
+			{
+				return VT.CreateItem(&this, bstrResourceName, bstrGroupName, dwFlags, ppClusterResource);
+			}
+			public HRESULT DeleteItem(VARIANT varIndex) mut
+			{
+				return VT.DeleteItem(&this, varIndex);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusResTypeResources *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusResTypeResources *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusResTypeResources *self) Refresh;
-				public function HRESULT(ISClusResTypeResources *self, VARIANT varIndex, ISClusResource** ppClusResource) get_Item;
-				public function HRESULT(ISClusResTypeResources *self, BSTR bstrResourceName, BSTR bstrGroupName, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) CreateItem;
-				public function HRESULT(ISClusResTypeResources *self, VARIANT varIndex) DeleteItem;
+				public new function HRESULT(ISClusResTypeResources *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusResTypeResources *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusResTypeResources *self) Refresh;
+				public new function HRESULT(ISClusResTypeResources *self, VARIANT varIndex, ISClusResource** ppClusResource) get_Item;
+				public new function HRESULT(ISClusResTypeResources *self, BSTR bstrResourceName, BSTR bstrGroupName, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) CreateItem;
+				public new function HRESULT(ISClusResTypeResources *self, VARIANT varIndex) DeleteItem;
 			}
 		}
 		[CRepr]
@@ -3904,16 +4733,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e6070c, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusResource** ppClusResource) mut
+			{
+				return VT.get_Item(&this, varIndex, ppClusResource);
+			}
+			public HRESULT CreateItem(BSTR bstrResourceName, BSTR bstrResourceType, BSTR bstrGroupName, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) mut
+			{
+				return VT.CreateItem(&this, bstrResourceName, bstrResourceType, bstrGroupName, dwFlags, ppClusterResource);
+			}
+			public HRESULT DeleteItem(VARIANT varIndex) mut
+			{
+				return VT.DeleteItem(&this, varIndex);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusResources *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusResources *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusResources *self) Refresh;
-				public function HRESULT(ISClusResources *self, VARIANT varIndex, ISClusResource** ppClusResource) get_Item;
-				public function HRESULT(ISClusResources *self, BSTR bstrResourceName, BSTR bstrResourceType, BSTR bstrGroupName, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) CreateItem;
-				public function HRESULT(ISClusResources *self, VARIANT varIndex) DeleteItem;
+				public new function HRESULT(ISClusResources *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusResources *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusResources *self) Refresh;
+				public new function HRESULT(ISClusResources *self, VARIANT varIndex, ISClusResource** ppClusResource) get_Item;
+				public new function HRESULT(ISClusResources *self, BSTR bstrResourceName, BSTR bstrResourceType, BSTR bstrGroupName, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) CreateItem;
+				public new function HRESULT(ISClusResources *self, VARIANT varIndex) DeleteItem;
 			}
 		}
 		[CRepr]
@@ -3921,19 +4775,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e606e8, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusNode** ppNode) mut
+			{
+				return VT.get_Item(&this, varIndex, ppNode);
+			}
+			public HRESULT InsertItem(ISClusNode* pNode, int32 nPosition) mut
+			{
+				return VT.InsertItem(&this, pNode, nPosition);
+			}
+			public HRESULT RemoveItem(VARIANT varIndex) mut
+			{
+				return VT.RemoveItem(&this, varIndex);
+			}
+			public HRESULT get_Modified(VARIANT* pvarModified) mut
+			{
+				return VT.get_Modified(&this, pvarModified);
+			}
+			public HRESULT SaveChanges() mut
+			{
+				return VT.SaveChanges(&this);
+			}
+			public HRESULT AddItem(ISClusNode* pNode) mut
+			{
+				return VT.AddItem(&this, pNode);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusResGroupPreferredOwnerNodes *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusResGroupPreferredOwnerNodes *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusResGroupPreferredOwnerNodes *self) Refresh;
-				public function HRESULT(ISClusResGroupPreferredOwnerNodes *self, VARIANT varIndex, ISClusNode** ppNode) get_Item;
-				public function HRESULT(ISClusResGroupPreferredOwnerNodes *self, ISClusNode* pNode, int32 nPosition) InsertItem;
-				public function HRESULT(ISClusResGroupPreferredOwnerNodes *self, VARIANT varIndex) RemoveItem;
-				public function HRESULT(ISClusResGroupPreferredOwnerNodes *self, VARIANT* pvarModified) get_Modified;
-				public function HRESULT(ISClusResGroupPreferredOwnerNodes *self) SaveChanges;
-				public function HRESULT(ISClusResGroupPreferredOwnerNodes *self, ISClusNode* pNode) AddItem;
+				public new function HRESULT(ISClusResGroupPreferredOwnerNodes *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusResGroupPreferredOwnerNodes *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusResGroupPreferredOwnerNodes *self) Refresh;
+				public new function HRESULT(ISClusResGroupPreferredOwnerNodes *self, VARIANT varIndex, ISClusNode** ppNode) get_Item;
+				public new function HRESULT(ISClusResGroupPreferredOwnerNodes *self, ISClusNode* pNode, int32 nPosition) InsertItem;
+				public new function HRESULT(ISClusResGroupPreferredOwnerNodes *self, VARIANT varIndex) RemoveItem;
+				public new function HRESULT(ISClusResGroupPreferredOwnerNodes *self, VARIANT* pvarModified) get_Modified;
+				public new function HRESULT(ISClusResGroupPreferredOwnerNodes *self) SaveChanges;
+				public new function HRESULT(ISClusResGroupPreferredOwnerNodes *self, ISClusNode* pNode) AddItem;
 			}
 		}
 		[CRepr]
@@ -3941,17 +4832,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e6070e, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusNode** ppNode) mut
+			{
+				return VT.get_Item(&this, varIndex, ppNode);
+			}
+			public HRESULT AddItem(ISClusNode* pNode) mut
+			{
+				return VT.AddItem(&this, pNode);
+			}
+			public HRESULT RemoveItem(VARIANT varIndex) mut
+			{
+				return VT.RemoveItem(&this, varIndex);
+			}
+			public HRESULT get_Modified(VARIANT* pvarModified) mut
+			{
+				return VT.get_Modified(&this, pvarModified);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusResPossibleOwnerNodes *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusResPossibleOwnerNodes *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusResPossibleOwnerNodes *self) Refresh;
-				public function HRESULT(ISClusResPossibleOwnerNodes *self, VARIANT varIndex, ISClusNode** ppNode) get_Item;
-				public function HRESULT(ISClusResPossibleOwnerNodes *self, ISClusNode* pNode) AddItem;
-				public function HRESULT(ISClusResPossibleOwnerNodes *self, VARIANT varIndex) RemoveItem;
-				public function HRESULT(ISClusResPossibleOwnerNodes *self, VARIANT* pvarModified) get_Modified;
+				public new function HRESULT(ISClusResPossibleOwnerNodes *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusResPossibleOwnerNodes *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusResPossibleOwnerNodes *self) Refresh;
+				public new function HRESULT(ISClusResPossibleOwnerNodes *self, VARIANT varIndex, ISClusNode** ppNode) get_Item;
+				public new function HRESULT(ISClusResPossibleOwnerNodes *self, ISClusNode* pNode) AddItem;
+				public new function HRESULT(ISClusResPossibleOwnerNodes *self, VARIANT varIndex) RemoveItem;
+				public new function HRESULT(ISClusResPossibleOwnerNodes *self, VARIANT* pvarModified) get_Modified;
 			}
 		}
 		[CRepr]
@@ -3959,14 +4879,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e60718, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusNode** ppNode) mut
+			{
+				return VT.get_Item(&this, varIndex, ppNode);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusResTypePossibleOwnerNodes *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusResTypePossibleOwnerNodes *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusResTypePossibleOwnerNodes *self) Refresh;
-				public function HRESULT(ISClusResTypePossibleOwnerNodes *self, VARIANT varIndex, ISClusNode** ppNode) get_Item;
+				public new function HRESULT(ISClusResTypePossibleOwnerNodes *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusResTypePossibleOwnerNodes *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusResTypePossibleOwnerNodes *self) Refresh;
+				public new function HRESULT(ISClusResTypePossibleOwnerNodes *self, VARIANT varIndex, ISClusNode** ppNode) get_Item;
 			}
 		}
 		[CRepr]
@@ -3974,20 +4911,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e60710, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CommonProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_CommonProperties(&this, ppProperties);
+			}
+			public HRESULT get_PrivateProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_PrivateProperties(&this, ppProperties);
+			}
+			public HRESULT get_CommonROProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_CommonROProperties(&this, ppProperties);
+			}
+			public HRESULT get_PrivateROProperties(ISClusProperties** ppProperties) mut
+			{
+				return VT.get_PrivateROProperties(&this, ppProperties);
+			}
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
+			public HRESULT Delete() mut
+			{
+				return VT.Delete(&this);
+			}
+			public HRESULT get_Cluster(ISCluster** ppCluster) mut
+			{
+				return VT.get_Cluster(&this, ppCluster);
+			}
+			public HRESULT get_Resources(ISClusResTypeResources** ppClusterResTypeResources) mut
+			{
+				return VT.get_Resources(&this, ppClusterResTypeResources);
+			}
+			public HRESULT get_PossibleOwnerNodes(ISClusResTypePossibleOwnerNodes** ppOwnerNodes) mut
+			{
+				return VT.get_PossibleOwnerNodes(&this, ppOwnerNodes);
+			}
+			public HRESULT get_AvailableDisks(ISClusDisks** ppAvailableDisks) mut
+			{
+				return VT.get_AvailableDisks(&this, ppAvailableDisks);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusResType *self, ISClusProperties** ppProperties) get_CommonProperties;
-				public function HRESULT(ISClusResType *self, ISClusProperties** ppProperties) get_PrivateProperties;
-				public function HRESULT(ISClusResType *self, ISClusProperties** ppProperties) get_CommonROProperties;
-				public function HRESULT(ISClusResType *self, ISClusProperties** ppProperties) get_PrivateROProperties;
-				public function HRESULT(ISClusResType *self, BSTR* pbstrName) get_Name;
-				public function HRESULT(ISClusResType *self) Delete;
-				public function HRESULT(ISClusResType *self, ISCluster** ppCluster) get_Cluster;
-				public function HRESULT(ISClusResType *self, ISClusResTypeResources** ppClusterResTypeResources) get_Resources;
-				public function HRESULT(ISClusResType *self, ISClusResTypePossibleOwnerNodes** ppOwnerNodes) get_PossibleOwnerNodes;
-				public function HRESULT(ISClusResType *self, ISClusDisks** ppAvailableDisks) get_AvailableDisks;
+				public new function HRESULT(ISClusResType *self, ISClusProperties** ppProperties) get_CommonProperties;
+				public new function HRESULT(ISClusResType *self, ISClusProperties** ppProperties) get_PrivateProperties;
+				public new function HRESULT(ISClusResType *self, ISClusProperties** ppProperties) get_CommonROProperties;
+				public new function HRESULT(ISClusResType *self, ISClusProperties** ppProperties) get_PrivateROProperties;
+				public new function HRESULT(ISClusResType *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(ISClusResType *self) Delete;
+				public new function HRESULT(ISClusResType *self, ISCluster** ppCluster) get_Cluster;
+				public new function HRESULT(ISClusResType *self, ISClusResTypeResources** ppClusterResTypeResources) get_Resources;
+				public new function HRESULT(ISClusResType *self, ISClusResTypePossibleOwnerNodes** ppOwnerNodes) get_PossibleOwnerNodes;
+				public new function HRESULT(ISClusResType *self, ISClusDisks** ppAvailableDisks) get_AvailableDisks;
 			}
 		}
 		[CRepr]
@@ -3995,16 +4973,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e60712, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusResType** ppClusResType) mut
+			{
+				return VT.get_Item(&this, varIndex, ppClusResType);
+			}
+			public HRESULT CreateItem(BSTR bstrResourceTypeName, BSTR bstrDisplayName, BSTR bstrResourceTypeDll, int32 dwLooksAlivePollInterval, int32 dwIsAlivePollInterval, ISClusResType** ppResourceType) mut
+			{
+				return VT.CreateItem(&this, bstrResourceTypeName, bstrDisplayName, bstrResourceTypeDll, dwLooksAlivePollInterval, dwIsAlivePollInterval, ppResourceType);
+			}
+			public HRESULT DeleteItem(VARIANT varIndex) mut
+			{
+				return VT.DeleteItem(&this, varIndex);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusResTypes *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusResTypes *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusResTypes *self) Refresh;
-				public function HRESULT(ISClusResTypes *self, VARIANT varIndex, ISClusResType** ppClusResType) get_Item;
-				public function HRESULT(ISClusResTypes *self, BSTR bstrResourceTypeName, BSTR bstrDisplayName, BSTR bstrResourceTypeDll, int32 dwLooksAlivePollInterval, int32 dwIsAlivePollInterval, ISClusResType** ppResourceType) CreateItem;
-				public function HRESULT(ISClusResTypes *self, VARIANT varIndex) DeleteItem;
+				public new function HRESULT(ISClusResTypes *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusResTypes *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusResTypes *self) Refresh;
+				public new function HRESULT(ISClusResTypes *self, VARIANT varIndex, ISClusResType** ppClusResType) get_Item;
+				public new function HRESULT(ISClusResTypes *self, BSTR bstrResourceTypeName, BSTR bstrDisplayName, BSTR bstrResourceTypeDll, int32 dwLooksAlivePollInterval, int32 dwIsAlivePollInterval, ISClusResType** ppResourceType) CreateItem;
+				public new function HRESULT(ISClusResTypes *self, VARIANT varIndex) DeleteItem;
 			}
 		}
 		[CRepr]
@@ -4012,25 +5015,86 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e606fe, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
+			public HRESULT get_Length(int32* pLength) mut
+			{
+				return VT.get_Length(&this, pLength);
+			}
+			public HRESULT get_ValueCount(int32* pCount) mut
+			{
+				return VT.get_ValueCount(&this, pCount);
+			}
+			public HRESULT get_Values(ISClusPropertyValues** ppClusterPropertyValues) mut
+			{
+				return VT.get_Values(&this, ppClusterPropertyValues);
+			}
+			public HRESULT get_Value(VARIANT* pvarValue) mut
+			{
+				return VT.get_Value(&this, pvarValue);
+			}
+			public HRESULT put_Value(VARIANT varValue) mut
+			{
+				return VT.put_Value(&this, varValue);
+			}
+			public HRESULT get_Type(CLUSTER_PROPERTY_TYPE* pType) mut
+			{
+				return VT.get_Type(&this, pType);
+			}
+			public HRESULT put_Type(CLUSTER_PROPERTY_TYPE Type) mut
+			{
+				return VT.put_Type(&this, Type);
+			}
+			public HRESULT get_Format(CLUSTER_PROPERTY_FORMAT* pFormat) mut
+			{
+				return VT.get_Format(&this, pFormat);
+			}
+			public HRESULT put_Format(CLUSTER_PROPERTY_FORMAT Format) mut
+			{
+				return VT.put_Format(&this, Format);
+			}
+			public HRESULT get_ReadOnly(VARIANT* pvarReadOnly) mut
+			{
+				return VT.get_ReadOnly(&this, pvarReadOnly);
+			}
+			public HRESULT get_Private(VARIANT* pvarPrivate) mut
+			{
+				return VT.get_Private(&this, pvarPrivate);
+			}
+			public HRESULT get_Common(VARIANT* pvarCommon) mut
+			{
+				return VT.get_Common(&this, pvarCommon);
+			}
+			public HRESULT get_Modified(VARIANT* pvarModified) mut
+			{
+				return VT.get_Modified(&this, pvarModified);
+			}
+			public HRESULT UseDefaultValue() mut
+			{
+				return VT.UseDefaultValue(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusProperty *self, BSTR* pbstrName) get_Name;
-				public function HRESULT(ISClusProperty *self, int32* pLength) get_Length;
-				public function HRESULT(ISClusProperty *self, int32* pCount) get_ValueCount;
-				public function HRESULT(ISClusProperty *self, ISClusPropertyValues** ppClusterPropertyValues) get_Values;
-				public function HRESULT(ISClusProperty *self, VARIANT* pvarValue) get_Value;
-				public function HRESULT(ISClusProperty *self, VARIANT varValue) put_Value;
-				public function HRESULT(ISClusProperty *self, CLUSTER_PROPERTY_TYPE* pType) get_Type;
-				public function HRESULT(ISClusProperty *self, CLUSTER_PROPERTY_TYPE Type) put_Type;
-				public function HRESULT(ISClusProperty *self, CLUSTER_PROPERTY_FORMAT* pFormat) get_Format;
-				public function HRESULT(ISClusProperty *self, CLUSTER_PROPERTY_FORMAT Format) put_Format;
-				public function HRESULT(ISClusProperty *self, VARIANT* pvarReadOnly) get_ReadOnly;
-				public function HRESULT(ISClusProperty *self, VARIANT* pvarPrivate) get_Private;
-				public function HRESULT(ISClusProperty *self, VARIANT* pvarCommon) get_Common;
-				public function HRESULT(ISClusProperty *self, VARIANT* pvarModified) get_Modified;
-				public function HRESULT(ISClusProperty *self) UseDefaultValue;
+				public new function HRESULT(ISClusProperty *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(ISClusProperty *self, int32* pLength) get_Length;
+				public new function HRESULT(ISClusProperty *self, int32* pCount) get_ValueCount;
+				public new function HRESULT(ISClusProperty *self, ISClusPropertyValues** ppClusterPropertyValues) get_Values;
+				public new function HRESULT(ISClusProperty *self, VARIANT* pvarValue) get_Value;
+				public new function HRESULT(ISClusProperty *self, VARIANT varValue) put_Value;
+				public new function HRESULT(ISClusProperty *self, CLUSTER_PROPERTY_TYPE* pType) get_Type;
+				public new function HRESULT(ISClusProperty *self, CLUSTER_PROPERTY_TYPE Type) put_Type;
+				public new function HRESULT(ISClusProperty *self, CLUSTER_PROPERTY_FORMAT* pFormat) get_Format;
+				public new function HRESULT(ISClusProperty *self, CLUSTER_PROPERTY_FORMAT Format) put_Format;
+				public new function HRESULT(ISClusProperty *self, VARIANT* pvarReadOnly) get_ReadOnly;
+				public new function HRESULT(ISClusProperty *self, VARIANT* pvarPrivate) get_Private;
+				public new function HRESULT(ISClusProperty *self, VARIANT* pvarCommon) get_Common;
+				public new function HRESULT(ISClusProperty *self, VARIANT* pvarModified) get_Modified;
+				public new function HRESULT(ISClusProperty *self) UseDefaultValue;
 			}
 		}
 		[CRepr]
@@ -4038,19 +5102,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e6071a, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Value(VARIANT* pvarValue) mut
+			{
+				return VT.get_Value(&this, pvarValue);
+			}
+			public HRESULT put_Value(VARIANT varValue) mut
+			{
+				return VT.put_Value(&this, varValue);
+			}
+			public HRESULT get_Type(CLUSTER_PROPERTY_TYPE* pType) mut
+			{
+				return VT.get_Type(&this, pType);
+			}
+			public HRESULT put_Type(CLUSTER_PROPERTY_TYPE Type) mut
+			{
+				return VT.put_Type(&this, Type);
+			}
+			public HRESULT get_Format(CLUSTER_PROPERTY_FORMAT* pFormat) mut
+			{
+				return VT.get_Format(&this, pFormat);
+			}
+			public HRESULT put_Format(CLUSTER_PROPERTY_FORMAT Format) mut
+			{
+				return VT.put_Format(&this, Format);
+			}
+			public HRESULT get_Length(int32* pLength) mut
+			{
+				return VT.get_Length(&this, pLength);
+			}
+			public HRESULT get_DataCount(int32* pCount) mut
+			{
+				return VT.get_DataCount(&this, pCount);
+			}
+			public HRESULT get_Data(ISClusPropertyValueData** ppClusterPropertyValueData) mut
+			{
+				return VT.get_Data(&this, ppClusterPropertyValueData);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusPropertyValue *self, VARIANT* pvarValue) get_Value;
-				public function HRESULT(ISClusPropertyValue *self, VARIANT varValue) put_Value;
-				public function HRESULT(ISClusPropertyValue *self, CLUSTER_PROPERTY_TYPE* pType) get_Type;
-				public function HRESULT(ISClusPropertyValue *self, CLUSTER_PROPERTY_TYPE Type) put_Type;
-				public function HRESULT(ISClusPropertyValue *self, CLUSTER_PROPERTY_FORMAT* pFormat) get_Format;
-				public function HRESULT(ISClusPropertyValue *self, CLUSTER_PROPERTY_FORMAT Format) put_Format;
-				public function HRESULT(ISClusPropertyValue *self, int32* pLength) get_Length;
-				public function HRESULT(ISClusPropertyValue *self, int32* pCount) get_DataCount;
-				public function HRESULT(ISClusPropertyValue *self, ISClusPropertyValueData** ppClusterPropertyValueData) get_Data;
+				public new function HRESULT(ISClusPropertyValue *self, VARIANT* pvarValue) get_Value;
+				public new function HRESULT(ISClusPropertyValue *self, VARIANT varValue) put_Value;
+				public new function HRESULT(ISClusPropertyValue *self, CLUSTER_PROPERTY_TYPE* pType) get_Type;
+				public new function HRESULT(ISClusPropertyValue *self, CLUSTER_PROPERTY_TYPE Type) put_Type;
+				public new function HRESULT(ISClusPropertyValue *self, CLUSTER_PROPERTY_FORMAT* pFormat) get_Format;
+				public new function HRESULT(ISClusPropertyValue *self, CLUSTER_PROPERTY_FORMAT Format) put_Format;
+				public new function HRESULT(ISClusPropertyValue *self, int32* pLength) get_Length;
+				public new function HRESULT(ISClusPropertyValue *self, int32* pCount) get_DataCount;
+				public new function HRESULT(ISClusPropertyValue *self, ISClusPropertyValueData** ppClusterPropertyValueData) get_Data;
 			}
 		}
 		[CRepr]
@@ -4058,15 +5159,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e6071c, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusPropertyValue** ppPropertyValue) mut
+			{
+				return VT.get_Item(&this, varIndex, ppPropertyValue);
+			}
+			public HRESULT CreateItem(BSTR bstrName, VARIANT varValue, ISClusPropertyValue** ppPropertyValue) mut
+			{
+				return VT.CreateItem(&this, bstrName, varValue, ppPropertyValue);
+			}
+			public HRESULT RemoveItem(VARIANT varIndex) mut
+			{
+				return VT.RemoveItem(&this, varIndex);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusPropertyValues *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusPropertyValues *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusPropertyValues *self, VARIANT varIndex, ISClusPropertyValue** ppPropertyValue) get_Item;
-				public function HRESULT(ISClusPropertyValues *self, BSTR bstrName, VARIANT varValue, ISClusPropertyValue** ppPropertyValue) CreateItem;
-				public function HRESULT(ISClusPropertyValues *self, VARIANT varIndex) RemoveItem;
+				public new function HRESULT(ISClusPropertyValues *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusPropertyValues *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusPropertyValues *self, VARIANT varIndex, ISClusPropertyValue** ppPropertyValue) get_Item;
+				public new function HRESULT(ISClusPropertyValues *self, BSTR bstrName, VARIANT varValue, ISClusPropertyValue** ppPropertyValue) CreateItem;
+				public new function HRESULT(ISClusPropertyValues *self, VARIANT varIndex) RemoveItem;
 			}
 		}
 		[CRepr]
@@ -4074,21 +5196,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e60700, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusProperty** ppClusProperty) mut
+			{
+				return VT.get_Item(&this, varIndex, ppClusProperty);
+			}
+			public HRESULT CreateItem(BSTR bstrName, VARIANT varValue, ISClusProperty** pProperty) mut
+			{
+				return VT.CreateItem(&this, bstrName, varValue, pProperty);
+			}
+			public HRESULT UseDefaultValue(VARIANT varIndex) mut
+			{
+				return VT.UseDefaultValue(&this, varIndex);
+			}
+			public HRESULT SaveChanges(VARIANT* pvarStatusCode) mut
+			{
+				return VT.SaveChanges(&this, pvarStatusCode);
+			}
+			public HRESULT get_ReadOnly(VARIANT* pvarReadOnly) mut
+			{
+				return VT.get_ReadOnly(&this, pvarReadOnly);
+			}
+			public HRESULT get_Private(VARIANT* pvarPrivate) mut
+			{
+				return VT.get_Private(&this, pvarPrivate);
+			}
+			public HRESULT get_Common(VARIANT* pvarCommon) mut
+			{
+				return VT.get_Common(&this, pvarCommon);
+			}
+			public HRESULT get_Modified(VARIANT* pvarModified) mut
+			{
+				return VT.get_Modified(&this, pvarModified);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusProperties *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusProperties *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusProperties *self) Refresh;
-				public function HRESULT(ISClusProperties *self, VARIANT varIndex, ISClusProperty** ppClusProperty) get_Item;
-				public function HRESULT(ISClusProperties *self, BSTR bstrName, VARIANT varValue, ISClusProperty** pProperty) CreateItem;
-				public function HRESULT(ISClusProperties *self, VARIANT varIndex) UseDefaultValue;
-				public function HRESULT(ISClusProperties *self, VARIANT* pvarStatusCode) SaveChanges;
-				public function HRESULT(ISClusProperties *self, VARIANT* pvarReadOnly) get_ReadOnly;
-				public function HRESULT(ISClusProperties *self, VARIANT* pvarPrivate) get_Private;
-				public function HRESULT(ISClusProperties *self, VARIANT* pvarCommon) get_Common;
-				public function HRESULT(ISClusProperties *self, VARIANT* pvarModified) get_Modified;
+				public new function HRESULT(ISClusProperties *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusProperties *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusProperties *self) Refresh;
+				public new function HRESULT(ISClusProperties *self, VARIANT varIndex, ISClusProperty** ppClusProperty) get_Item;
+				public new function HRESULT(ISClusProperties *self, BSTR bstrName, VARIANT varValue, ISClusProperty** pProperty) CreateItem;
+				public new function HRESULT(ISClusProperties *self, VARIANT varIndex) UseDefaultValue;
+				public new function HRESULT(ISClusProperties *self, VARIANT* pvarStatusCode) SaveChanges;
+				public new function HRESULT(ISClusProperties *self, VARIANT* pvarReadOnly) get_ReadOnly;
+				public new function HRESULT(ISClusProperties *self, VARIANT* pvarPrivate) get_Private;
+				public new function HRESULT(ISClusProperties *self, VARIANT* pvarCommon) get_Common;
+				public new function HRESULT(ISClusProperties *self, VARIANT* pvarModified) get_Modified;
 			}
 		}
 		[CRepr]
@@ -4096,15 +5263,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e6071e, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT get_Item(VARIANT varIndex, VARIANT* pvarValue) mut
+			{
+				return VT.get_Item(&this, varIndex, pvarValue);
+			}
+			public HRESULT CreateItem(VARIANT varValue, VARIANT* pvarData) mut
+			{
+				return VT.CreateItem(&this, varValue, pvarData);
+			}
+			public HRESULT RemoveItem(VARIANT varIndex) mut
+			{
+				return VT.RemoveItem(&this, varIndex);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusPropertyValueData *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusPropertyValueData *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusPropertyValueData *self, VARIANT varIndex, VARIANT* pvarValue) get_Item;
-				public function HRESULT(ISClusPropertyValueData *self, VARIANT varValue, VARIANT* pvarData) CreateItem;
-				public function HRESULT(ISClusPropertyValueData *self, VARIANT varIndex) RemoveItem;
+				public new function HRESULT(ISClusPropertyValueData *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusPropertyValueData *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusPropertyValueData *self, VARIANT varIndex, VARIANT* pvarValue) get_Item;
+				public new function HRESULT(ISClusPropertyValueData *self, VARIANT varValue, VARIANT* pvarData) CreateItem;
+				public new function HRESULT(ISClusPropertyValueData *self, VARIANT varIndex) RemoveItem;
 			}
 		}
 		[CRepr]
@@ -4112,17 +5300,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e60720, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Flags(int32* plFlags) mut
+			{
+				return VT.get_Flags(&this, plFlags);
+			}
+			public HRESULT get_DeviceName(BSTR* pbstrDeviceName) mut
+			{
+				return VT.get_DeviceName(&this, pbstrDeviceName);
+			}
+			public HRESULT get_VolumeLabel(BSTR* pbstrVolumeLabel) mut
+			{
+				return VT.get_VolumeLabel(&this, pbstrVolumeLabel);
+			}
+			public HRESULT get_SerialNumber(int32* plSerialNumber) mut
+			{
+				return VT.get_SerialNumber(&this, plSerialNumber);
+			}
+			public HRESULT get_MaximumComponentLength(int32* plMaximumComponentLength) mut
+			{
+				return VT.get_MaximumComponentLength(&this, plMaximumComponentLength);
+			}
+			public HRESULT get_FileSystemFlags(int32* plFileSystemFlags) mut
+			{
+				return VT.get_FileSystemFlags(&this, plFileSystemFlags);
+			}
+			public HRESULT get_FileSystem(BSTR* pbstrFileSystem) mut
+			{
+				return VT.get_FileSystem(&this, pbstrFileSystem);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusPartition *self, int32* plFlags) get_Flags;
-				public function HRESULT(ISClusPartition *self, BSTR* pbstrDeviceName) get_DeviceName;
-				public function HRESULT(ISClusPartition *self, BSTR* pbstrVolumeLabel) get_VolumeLabel;
-				public function HRESULT(ISClusPartition *self, int32* plSerialNumber) get_SerialNumber;
-				public function HRESULT(ISClusPartition *self, int32* plMaximumComponentLength) get_MaximumComponentLength;
-				public function HRESULT(ISClusPartition *self, int32* plFileSystemFlags) get_FileSystemFlags;
-				public function HRESULT(ISClusPartition *self, BSTR* pbstrFileSystem) get_FileSystem;
+				public new function HRESULT(ISClusPartition *self, int32* plFlags) get_Flags;
+				public new function HRESULT(ISClusPartition *self, BSTR* pbstrDeviceName) get_DeviceName;
+				public new function HRESULT(ISClusPartition *self, BSTR* pbstrVolumeLabel) get_VolumeLabel;
+				public new function HRESULT(ISClusPartition *self, int32* plSerialNumber) get_SerialNumber;
+				public new function HRESULT(ISClusPartition *self, int32* plMaximumComponentLength) get_MaximumComponentLength;
+				public new function HRESULT(ISClusPartition *self, int32* plFileSystemFlags) get_FileSystemFlags;
+				public new function HRESULT(ISClusPartition *self, BSTR* pbstrFileSystem) get_FileSystem;
 			}
 		}
 		[CRepr]
@@ -4130,15 +5347,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8802d4fe, 0xb32e, 0x4ad1, 0x9d, 0xbd, 0x64, 0xf1, 0x8e, 0x11, 0x66, 0xce);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_TotalSize(int32* plTotalSize) mut
+			{
+				return VT.get_TotalSize(&this, plTotalSize);
+			}
+			public HRESULT get_FreeSpace(int32* plFreeSpace) mut
+			{
+				return VT.get_FreeSpace(&this, plFreeSpace);
+			}
+			public HRESULT get_DeviceNumber(int32* plDeviceNumber) mut
+			{
+				return VT.get_DeviceNumber(&this, plDeviceNumber);
+			}
+			public HRESULT get_PartitionNumber(int32* plPartitionNumber) mut
+			{
+				return VT.get_PartitionNumber(&this, plPartitionNumber);
+			}
+			public HRESULT get_VolumeGuid(BSTR* pbstrVolumeGuid) mut
+			{
+				return VT.get_VolumeGuid(&this, pbstrVolumeGuid);
+			}
 			[CRepr]
 			public struct VTable : ISClusPartition.VTable
 			{
-				public function HRESULT(ISClusPartitionEx *self, int32* plTotalSize) get_TotalSize;
-				public function HRESULT(ISClusPartitionEx *self, int32* plFreeSpace) get_FreeSpace;
-				public function HRESULT(ISClusPartitionEx *self, int32* plDeviceNumber) get_DeviceNumber;
-				public function HRESULT(ISClusPartitionEx *self, int32* plPartitionNumber) get_PartitionNumber;
-				public function HRESULT(ISClusPartitionEx *self, BSTR* pbstrVolumeGuid) get_VolumeGuid;
+				public new function HRESULT(ISClusPartitionEx *self, int32* plTotalSize) get_TotalSize;
+				public new function HRESULT(ISClusPartitionEx *self, int32* plFreeSpace) get_FreeSpace;
+				public new function HRESULT(ISClusPartitionEx *self, int32* plDeviceNumber) get_DeviceNumber;
+				public new function HRESULT(ISClusPartitionEx *self, int32* plPartitionNumber) get_PartitionNumber;
+				public new function HRESULT(ISClusPartitionEx *self, BSTR* pbstrVolumeGuid) get_VolumeGuid;
 			}
 		}
 		[CRepr]
@@ -4146,13 +5384,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e60722, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusPartition** ppPartition) mut
+			{
+				return VT.get_Item(&this, varIndex, ppPartition);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusPartitions *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusPartitions *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusPartitions *self, VARIANT varIndex, ISClusPartition** ppPartition) get_Item;
+				public new function HRESULT(ISClusPartitions *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusPartitions *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusPartitions *self, VARIANT varIndex, ISClusPartition** ppPartition) get_Item;
 			}
 		}
 		[CRepr]
@@ -4160,14 +5411,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e60724, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Signature(int32* plSignature) mut
+			{
+				return VT.get_Signature(&this, plSignature);
+			}
+			public HRESULT get_ScsiAddress(ISClusScsiAddress** ppScsiAddress) mut
+			{
+				return VT.get_ScsiAddress(&this, ppScsiAddress);
+			}
+			public HRESULT get_DiskNumber(int32* plDiskNumber) mut
+			{
+				return VT.get_DiskNumber(&this, plDiskNumber);
+			}
+			public HRESULT get_Partitions(ISClusPartitions** ppPartitions) mut
+			{
+				return VT.get_Partitions(&this, ppPartitions);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusDisk *self, int32* plSignature) get_Signature;
-				public function HRESULT(ISClusDisk *self, ISClusScsiAddress** ppScsiAddress) get_ScsiAddress;
-				public function HRESULT(ISClusDisk *self, int32* plDiskNumber) get_DiskNumber;
-				public function HRESULT(ISClusDisk *self, ISClusPartitions** ppPartitions) get_Partitions;
+				public new function HRESULT(ISClusDisk *self, int32* plSignature) get_Signature;
+				public new function HRESULT(ISClusDisk *self, ISClusScsiAddress** ppScsiAddress) get_ScsiAddress;
+				public new function HRESULT(ISClusDisk *self, int32* plDiskNumber) get_DiskNumber;
+				public new function HRESULT(ISClusDisk *self, ISClusPartitions** ppPartitions) get_Partitions;
 			}
 		}
 		[CRepr]
@@ -4175,13 +5443,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e60726, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusDisk** ppDisk) mut
+			{
+				return VT.get_Item(&this, varIndex, ppDisk);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusDisks *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusDisks *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusDisks *self, VARIANT varIndex, ISClusDisk** ppDisk) get_Item;
+				public new function HRESULT(ISClusDisks *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusDisks *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusDisks *self, VARIANT varIndex, ISClusDisk** ppDisk) get_Item;
 			}
 		}
 		[CRepr]
@@ -4189,14 +5470,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e60728, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_PortNumber(VARIANT* pvarPortNumber) mut
+			{
+				return VT.get_PortNumber(&this, pvarPortNumber);
+			}
+			public HRESULT get_PathId(VARIANT* pvarPathId) mut
+			{
+				return VT.get_PathId(&this, pvarPathId);
+			}
+			public HRESULT get_TargetId(VARIANT* pvarTargetId) mut
+			{
+				return VT.get_TargetId(&this, pvarTargetId);
+			}
+			public HRESULT get_Lun(VARIANT* pvarLun) mut
+			{
+				return VT.get_Lun(&this, pvarLun);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusScsiAddress *self, VARIANT* pvarPortNumber) get_PortNumber;
-				public function HRESULT(ISClusScsiAddress *self, VARIANT* pvarPathId) get_PathId;
-				public function HRESULT(ISClusScsiAddress *self, VARIANT* pvarTargetId) get_TargetId;
-				public function HRESULT(ISClusScsiAddress *self, VARIANT* pvarLun) get_Lun;
+				public new function HRESULT(ISClusScsiAddress *self, VARIANT* pvarPortNumber) get_PortNumber;
+				public new function HRESULT(ISClusScsiAddress *self, VARIANT* pvarPathId) get_PathId;
+				public new function HRESULT(ISClusScsiAddress *self, VARIANT* pvarTargetId) get_TargetId;
+				public new function HRESULT(ISClusScsiAddress *self, VARIANT* pvarLun) get_Lun;
 			}
 		}
 		[CRepr]
@@ -4204,16 +5502,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e6072a, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, BSTR* pbstrRegistryKey) mut
+			{
+				return VT.get_Item(&this, varIndex, pbstrRegistryKey);
+			}
+			public HRESULT AddItem(BSTR bstrRegistryKey) mut
+			{
+				return VT.AddItem(&this, bstrRegistryKey);
+			}
+			public HRESULT RemoveItem(VARIANT varIndex) mut
+			{
+				return VT.RemoveItem(&this, varIndex);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusRegistryKeys *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusRegistryKeys *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusRegistryKeys *self) Refresh;
-				public function HRESULT(ISClusRegistryKeys *self, VARIANT varIndex, BSTR* pbstrRegistryKey) get_Item;
-				public function HRESULT(ISClusRegistryKeys *self, BSTR bstrRegistryKey) AddItem;
-				public function HRESULT(ISClusRegistryKeys *self, VARIANT varIndex) RemoveItem;
+				public new function HRESULT(ISClusRegistryKeys *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusRegistryKeys *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusRegistryKeys *self) Refresh;
+				public new function HRESULT(ISClusRegistryKeys *self, VARIANT varIndex, BSTR* pbstrRegistryKey) get_Item;
+				public new function HRESULT(ISClusRegistryKeys *self, BSTR bstrRegistryKey) AddItem;
+				public new function HRESULT(ISClusRegistryKeys *self, VARIANT varIndex) RemoveItem;
 			}
 		}
 		[CRepr]
@@ -4221,16 +5544,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e6072c, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, BSTR* pbstrCyrptoKey) mut
+			{
+				return VT.get_Item(&this, varIndex, pbstrCyrptoKey);
+			}
+			public HRESULT AddItem(BSTR bstrCryptoKey) mut
+			{
+				return VT.AddItem(&this, bstrCryptoKey);
+			}
+			public HRESULT RemoveItem(VARIANT varIndex) mut
+			{
+				return VT.RemoveItem(&this, varIndex);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusCryptoKeys *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusCryptoKeys *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusCryptoKeys *self) Refresh;
-				public function HRESULT(ISClusCryptoKeys *self, VARIANT varIndex, BSTR* pbstrCyrptoKey) get_Item;
-				public function HRESULT(ISClusCryptoKeys *self, BSTR bstrCryptoKey) AddItem;
-				public function HRESULT(ISClusCryptoKeys *self, VARIANT varIndex) RemoveItem;
+				public new function HRESULT(ISClusCryptoKeys *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusCryptoKeys *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusCryptoKeys *self) Refresh;
+				public new function HRESULT(ISClusCryptoKeys *self, VARIANT varIndex, BSTR* pbstrCyrptoKey) get_Item;
+				public new function HRESULT(ISClusCryptoKeys *self, BSTR bstrCryptoKey) AddItem;
+				public new function HRESULT(ISClusCryptoKeys *self, VARIANT varIndex) RemoveItem;
 			}
 		}
 		[CRepr]
@@ -4238,18 +5586,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf2e6072e, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT get_Item(VARIANT varIndex, ISClusResource** ppClusResource) mut
+			{
+				return VT.get_Item(&this, varIndex, ppClusResource);
+			}
+			public HRESULT CreateItem(BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) mut
+			{
+				return VT.CreateItem(&this, bstrResourceName, bstrResourceType, dwFlags, ppClusterResource);
+			}
+			public HRESULT DeleteItem(VARIANT varIndex) mut
+			{
+				return VT.DeleteItem(&this, varIndex);
+			}
+			public HRESULT AddItem(ISClusResource* pResource) mut
+			{
+				return VT.AddItem(&this, pResource);
+			}
+			public HRESULT RemoveItem(VARIANT varIndex) mut
+			{
+				return VT.RemoveItem(&this, varIndex);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISClusResDependents *self, int32* plCount) get_Count;
-				public function HRESULT(ISClusResDependents *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ISClusResDependents *self) Refresh;
-				public function HRESULT(ISClusResDependents *self, VARIANT varIndex, ISClusResource** ppClusResource) get_Item;
-				public function HRESULT(ISClusResDependents *self, BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) CreateItem;
-				public function HRESULT(ISClusResDependents *self, VARIANT varIndex) DeleteItem;
-				public function HRESULT(ISClusResDependents *self, ISClusResource* pResource) AddItem;
-				public function HRESULT(ISClusResDependents *self, VARIANT varIndex) RemoveItem;
+				public new function HRESULT(ISClusResDependents *self, int32* plCount) get_Count;
+				public new function HRESULT(ISClusResDependents *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ISClusResDependents *self) Refresh;
+				public new function HRESULT(ISClusResDependents *self, VARIANT varIndex, ISClusResource** ppClusResource) get_Item;
+				public new function HRESULT(ISClusResDependents *self, BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) CreateItem;
+				public new function HRESULT(ISClusResDependents *self, VARIANT varIndex) DeleteItem;
+				public new function HRESULT(ISClusResDependents *self, ISClusResource* pResource) AddItem;
+				public new function HRESULT(ISClusResDependents *self, VARIANT varIndex) RemoveItem;
 			}
 		}
 		

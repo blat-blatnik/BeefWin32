@@ -16,11 +16,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x94bc8415, 0x04ea, 0x4b2e, 0xaf, 0x13, 0x4d, 0xe9, 0x5a, 0xa8, 0x98, 0xeb);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetData(Guid* riid, void** ppv) mut
+			{
+				return VT.GetData(&this, riid, ppv);
+			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public function HRESULT(ISoftwareBitmapNative *self, Guid* riid, void** ppv) GetData;
+				public new function HRESULT(ISoftwareBitmapNative *self, Guid* riid, void** ppv) GetData;
 			}
 		}
 		[CRepr]
@@ -28,12 +33,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc3c181ec, 0x2914, 0x4791, 0xaf, 0x02, 0x02, 0xd2, 0x24, 0xa1, 0x0b, 0x43);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateFromWICBitmap(IWICBitmap* data, BOOL forceReadOnly, Guid* riid, void** ppv) mut
+			{
+				return VT.CreateFromWICBitmap(&this, data, forceReadOnly, riid, ppv);
+			}
+			public HRESULT CreateFromMF2DBuffer2(IMF2DBuffer2* data, Guid* subtype, uint32 width, uint32 height, BOOL forceReadOnly, MFVideoArea* minDisplayAperture, Guid* riid, void** ppv) mut
+			{
+				return VT.CreateFromMF2DBuffer2(&this, data, subtype, width, height, forceReadOnly, minDisplayAperture, riid, ppv);
+			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public function HRESULT(ISoftwareBitmapNativeFactory *self, IWICBitmap* data, BOOL forceReadOnly, Guid* riid, void** ppv) CreateFromWICBitmap;
-				public function HRESULT(ISoftwareBitmapNativeFactory *self, IMF2DBuffer2* data, Guid* subtype, uint32 width, uint32 height, BOOL forceReadOnly, MFVideoArea* minDisplayAperture, Guid* riid, void** ppv) CreateFromMF2DBuffer2;
+				public new function HRESULT(ISoftwareBitmapNativeFactory *self, IWICBitmap* data, BOOL forceReadOnly, Guid* riid, void** ppv) CreateFromWICBitmap;
+				public new function HRESULT(ISoftwareBitmapNativeFactory *self, IMF2DBuffer2* data, Guid* subtype, uint32 width, uint32 height, BOOL forceReadOnly, MFVideoArea* minDisplayAperture, Guid* riid, void** ppv) CreateFromMF2DBuffer2;
 			}
 		}
 		

@@ -374,15 +374,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbd77db67, 0x45a8, 0x42dc, 0x8d, 0x00, 0x6d, 0xcf, 0x15, 0xf8, 0x37, 0x7a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetSensorsByCategory(Guid* sensorCategory, ISensorCollection** ppSensorsFound) mut
+			{
+				return VT.GetSensorsByCategory(&this, sensorCategory, ppSensorsFound);
+			}
+			public HRESULT GetSensorsByType(Guid* sensorType, ISensorCollection** ppSensorsFound) mut
+			{
+				return VT.GetSensorsByType(&this, sensorType, ppSensorsFound);
+			}
+			public HRESULT GetSensorByID(Guid* sensorID, ISensor** ppSensor) mut
+			{
+				return VT.GetSensorByID(&this, sensorID, ppSensor);
+			}
+			public HRESULT SetEventSink(ISensorManagerEvents* pEvents) mut
+			{
+				return VT.SetEventSink(&this, pEvents);
+			}
+			public HRESULT RequestPermissions(HWND hParent, ISensorCollection* pSensors, BOOL fModal) mut
+			{
+				return VT.RequestPermissions(&this, hParent, pSensors, fModal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISensorManager *self, Guid* sensorCategory, ISensorCollection** ppSensorsFound) GetSensorsByCategory;
-				public function HRESULT(ISensorManager *self, Guid* sensorType, ISensorCollection** ppSensorsFound) GetSensorsByType;
-				public function HRESULT(ISensorManager *self, Guid* sensorID, ISensor** ppSensor) GetSensorByID;
-				public function HRESULT(ISensorManager *self, ISensorManagerEvents* pEvents) SetEventSink;
-				public function HRESULT(ISensorManager *self, HWND hParent, ISensorCollection* pSensors, BOOL fModal) RequestPermissions;
+				public new function HRESULT(ISensorManager *self, Guid* sensorCategory, ISensorCollection** ppSensorsFound) GetSensorsByCategory;
+				public new function HRESULT(ISensorManager *self, Guid* sensorType, ISensorCollection** ppSensorsFound) GetSensorsByType;
+				public new function HRESULT(ISensorManager *self, Guid* sensorID, ISensor** ppSensor) GetSensorByID;
+				public new function HRESULT(ISensorManager *self, ISensorManagerEvents* pEvents) SetEventSink;
+				public new function HRESULT(ISensorManager *self, HWND hParent, ISensorCollection* pSensors, BOOL fModal) RequestPermissions;
 			}
 		}
 		[CRepr]
@@ -390,12 +411,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd5fb0a7f, 0xe74e, 0x44f5, 0x8e, 0x02, 0x48, 0x06, 0x86, 0x3a, 0x27, 0x4f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetGlobalLocationPermission(BOOL* pfEnabled) mut
+			{
+				return VT.GetGlobalLocationPermission(&this, pfEnabled);
+			}
+			public HRESULT CheckLocationCapability(uint32 dwClientThreadId) mut
+			{
+				return VT.CheckLocationCapability(&this, dwClientThreadId);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ILocationPermissions *self, BOOL* pfEnabled) GetGlobalLocationPermission;
-				public function HRESULT(ILocationPermissions *self, uint32 dwClientThreadId) CheckLocationCapability;
+				public new function HRESULT(ILocationPermissions *self, BOOL* pfEnabled) GetGlobalLocationPermission;
+				public new function HRESULT(ILocationPermissions *self, uint32 dwClientThreadId) CheckLocationCapability;
 			}
 		}
 		[CRepr]
@@ -403,16 +433,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x23571e11, 0xe545, 0x4dd8, 0xa3, 0x37, 0xb8, 0x9b, 0xf4, 0x4b, 0x10, 0xdf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetAt(uint32 ulIndex, ISensor** ppSensor) mut
+			{
+				return VT.GetAt(&this, ulIndex, ppSensor);
+			}
+			public HRESULT GetCount(uint32* pCount) mut
+			{
+				return VT.GetCount(&this, pCount);
+			}
+			public HRESULT Add(ISensor* pSensor) mut
+			{
+				return VT.Add(&this, pSensor);
+			}
+			public HRESULT Remove(ISensor* pSensor) mut
+			{
+				return VT.Remove(&this, pSensor);
+			}
+			public HRESULT RemoveByID(Guid* sensorID) mut
+			{
+				return VT.RemoveByID(&this, sensorID);
+			}
+			public HRESULT Clear() mut
+			{
+				return VT.Clear(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISensorCollection *self, uint32 ulIndex, ISensor** ppSensor) GetAt;
-				public function HRESULT(ISensorCollection *self, uint32* pCount) GetCount;
-				public function HRESULT(ISensorCollection *self, ISensor* pSensor) Add;
-				public function HRESULT(ISensorCollection *self, ISensor* pSensor) Remove;
-				public function HRESULT(ISensorCollection *self, Guid* sensorID) RemoveByID;
-				public function HRESULT(ISensorCollection *self) Clear;
+				public new function HRESULT(ISensorCollection *self, uint32 ulIndex, ISensor** ppSensor) GetAt;
+				public new function HRESULT(ISensorCollection *self, uint32* pCount) GetCount;
+				public new function HRESULT(ISensorCollection *self, ISensor* pSensor) Add;
+				public new function HRESULT(ISensorCollection *self, ISensor* pSensor) Remove;
+				public new function HRESULT(ISensorCollection *self, Guid* sensorID) RemoveByID;
+				public new function HRESULT(ISensorCollection *self) Clear;
 			}
 		}
 		[CRepr]
@@ -420,25 +475,86 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5fa08f80, 0x2657, 0x458e, 0xaf, 0x75, 0x46, 0xf7, 0x3f, 0xa6, 0xac, 0x5c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetID(Guid* pID) mut
+			{
+				return VT.GetID(&this, pID);
+			}
+			public HRESULT GetCategory(Guid* pSensorCategory) mut
+			{
+				return VT.GetCategory(&this, pSensorCategory);
+			}
+			public HRESULT ComGetType(Guid* pSensorType) mut
+			{
+				return VT.ComGetType(&this, pSensorType);
+			}
+			public HRESULT GetFriendlyName(BSTR* pFriendlyName) mut
+			{
+				return VT.GetFriendlyName(&this, pFriendlyName);
+			}
+			public HRESULT GetProperty(PROPERTYKEY* key, PROPVARIANT* pProperty) mut
+			{
+				return VT.GetProperty(&this, key, pProperty);
+			}
+			public HRESULT GetProperties(IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppProperties) mut
+			{
+				return VT.GetProperties(&this, pKeys, ppProperties);
+			}
+			public HRESULT GetSupportedDataFields(IPortableDeviceKeyCollection** ppDataFields) mut
+			{
+				return VT.GetSupportedDataFields(&this, ppDataFields);
+			}
+			public HRESULT SetProperties(IPortableDeviceValues* pProperties, IPortableDeviceValues** ppResults) mut
+			{
+				return VT.SetProperties(&this, pProperties, ppResults);
+			}
+			public HRESULT SupportsDataField(PROPERTYKEY* key, int16* pIsSupported) mut
+			{
+				return VT.SupportsDataField(&this, key, pIsSupported);
+			}
+			public HRESULT GetState(SensorState* pState) mut
+			{
+				return VT.GetState(&this, pState);
+			}
+			public HRESULT GetData(ISensorDataReport** ppDataReport) mut
+			{
+				return VT.GetData(&this, ppDataReport);
+			}
+			public HRESULT SupportsEvent(Guid* eventGuid, int16* pIsSupported) mut
+			{
+				return VT.SupportsEvent(&this, eventGuid, pIsSupported);
+			}
+			public HRESULT GetEventInterest(Guid** ppValues, uint32* pCount) mut
+			{
+				return VT.GetEventInterest(&this, ppValues, pCount);
+			}
+			public HRESULT SetEventInterest(Guid* pValues, uint32 count) mut
+			{
+				return VT.SetEventInterest(&this, pValues, count);
+			}
+			public HRESULT SetEventSink(ISensorEvents* pEvents) mut
+			{
+				return VT.SetEventSink(&this, pEvents);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISensor *self, Guid* pID) GetID;
-				public function HRESULT(ISensor *self, Guid* pSensorCategory) GetCategory;
-				public function HRESULT(ISensor *self, Guid* pSensorType) GetType;
-				public function HRESULT(ISensor *self, BSTR* pFriendlyName) GetFriendlyName;
-				public function HRESULT(ISensor *self, PROPERTYKEY* key, PROPVARIANT* pProperty) GetProperty;
-				public function HRESULT(ISensor *self, IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppProperties) GetProperties;
-				public function HRESULT(ISensor *self, IPortableDeviceKeyCollection** ppDataFields) GetSupportedDataFields;
-				public function HRESULT(ISensor *self, IPortableDeviceValues* pProperties, IPortableDeviceValues** ppResults) SetProperties;
-				public function HRESULT(ISensor *self, PROPERTYKEY* key, int16* pIsSupported) SupportsDataField;
-				public function HRESULT(ISensor *self, SensorState* pState) GetState;
-				public function HRESULT(ISensor *self, ISensorDataReport** ppDataReport) GetData;
-				public function HRESULT(ISensor *self, Guid* eventGuid, int16* pIsSupported) SupportsEvent;
-				public function HRESULT(ISensor *self, Guid** ppValues, uint32* pCount) GetEventInterest;
-				public function HRESULT(ISensor *self, Guid* pValues, uint32 count) SetEventInterest;
-				public function HRESULT(ISensor *self, ISensorEvents* pEvents) SetEventSink;
+				public new function HRESULT(ISensor *self, Guid* pID) GetID;
+				public new function HRESULT(ISensor *self, Guid* pSensorCategory) GetCategory;
+				public new function HRESULT(ISensor *self, Guid* pSensorType) ComGetType;
+				public new function HRESULT(ISensor *self, BSTR* pFriendlyName) GetFriendlyName;
+				public new function HRESULT(ISensor *self, PROPERTYKEY* key, PROPVARIANT* pProperty) GetProperty;
+				public new function HRESULT(ISensor *self, IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppProperties) GetProperties;
+				public new function HRESULT(ISensor *self, IPortableDeviceKeyCollection** ppDataFields) GetSupportedDataFields;
+				public new function HRESULT(ISensor *self, IPortableDeviceValues* pProperties, IPortableDeviceValues** ppResults) SetProperties;
+				public new function HRESULT(ISensor *self, PROPERTYKEY* key, int16* pIsSupported) SupportsDataField;
+				public new function HRESULT(ISensor *self, SensorState* pState) GetState;
+				public new function HRESULT(ISensor *self, ISensorDataReport** ppDataReport) GetData;
+				public new function HRESULT(ISensor *self, Guid* eventGuid, int16* pIsSupported) SupportsEvent;
+				public new function HRESULT(ISensor *self, Guid** ppValues, uint32* pCount) GetEventInterest;
+				public new function HRESULT(ISensor *self, Guid* pValues, uint32 count) SetEventInterest;
+				public new function HRESULT(ISensor *self, ISensorEvents* pEvents) SetEventSink;
 			}
 		}
 		[CRepr]
@@ -446,13 +562,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0ab9df9b, 0xc4b5, 0x4796, 0x88, 0x98, 0x04, 0x70, 0x70, 0x6a, 0x2e, 0x1d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetTimestamp(SYSTEMTIME* pTimeStamp) mut
+			{
+				return VT.GetTimestamp(&this, pTimeStamp);
+			}
+			public HRESULT GetSensorValue(PROPERTYKEY* pKey, PROPVARIANT* pValue) mut
+			{
+				return VT.GetSensorValue(&this, pKey, pValue);
+			}
+			public HRESULT GetSensorValues(IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppValues) mut
+			{
+				return VT.GetSensorValues(&this, pKeys, ppValues);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISensorDataReport *self, SYSTEMTIME* pTimeStamp) GetTimestamp;
-				public function HRESULT(ISensorDataReport *self, PROPERTYKEY* pKey, PROPVARIANT* pValue) GetSensorValue;
-				public function HRESULT(ISensorDataReport *self, IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppValues) GetSensorValues;
+				public new function HRESULT(ISensorDataReport *self, SYSTEMTIME* pTimeStamp) GetTimestamp;
+				public new function HRESULT(ISensorDataReport *self, PROPERTYKEY* pKey, PROPVARIANT* pValue) GetSensorValue;
+				public new function HRESULT(ISensorDataReport *self, IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppValues) GetSensorValues;
 			}
 		}
 		[CRepr]
@@ -460,11 +589,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9b3b0b86, 0x266a, 0x4aad, 0xb2, 0x1f, 0xfd, 0xe5, 0x50, 0x10, 0x01, 0xb7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnSensorEnter(ISensor* pSensor, SensorState state) mut
+			{
+				return VT.OnSensorEnter(&this, pSensor, state);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISensorManagerEvents *self, ISensor* pSensor, SensorState state) OnSensorEnter;
+				public new function HRESULT(ISensorManagerEvents *self, ISensor* pSensor, SensorState state) OnSensorEnter;
 			}
 		}
 		[CRepr]
@@ -472,14 +606,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5d8dcc91, 0x4641, 0x47e7, 0xb7, 0xc3, 0xb7, 0x4f, 0x48, 0xa6, 0xc3, 0x91);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnStateChanged(ISensor* pSensor, SensorState state) mut
+			{
+				return VT.OnStateChanged(&this, pSensor, state);
+			}
+			public HRESULT OnDataUpdated(ISensor* pSensor, ISensorDataReport* pNewData) mut
+			{
+				return VT.OnDataUpdated(&this, pSensor, pNewData);
+			}
+			public HRESULT OnEvent(ISensor* pSensor, Guid* eventID, IPortableDeviceValues* pEventData) mut
+			{
+				return VT.OnEvent(&this, pSensor, eventID, pEventData);
+			}
+			public HRESULT OnLeave(Guid* ID) mut
+			{
+				return VT.OnLeave(&this, ID);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISensorEvents *self, ISensor* pSensor, SensorState state) OnStateChanged;
-				public function HRESULT(ISensorEvents *self, ISensor* pSensor, ISensorDataReport* pNewData) OnDataUpdated;
-				public function HRESULT(ISensorEvents *self, ISensor* pSensor, Guid* eventID, IPortableDeviceValues* pEventData) OnEvent;
-				public function HRESULT(ISensorEvents *self, Guid* ID) OnLeave;
+				public new function HRESULT(ISensorEvents *self, ISensor* pSensor, SensorState state) OnStateChanged;
+				public new function HRESULT(ISensorEvents *self, ISensor* pSensor, ISensorDataReport* pNewData) OnDataUpdated;
+				public new function HRESULT(ISensorEvents *self, ISensor* pSensor, Guid* eventID, IPortableDeviceValues* pEventData) OnEvent;
+				public new function HRESULT(ISensorEvents *self, Guid* ID) OnLeave;
 			}
 		}
 		

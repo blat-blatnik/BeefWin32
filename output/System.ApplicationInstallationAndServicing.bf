@@ -1836,17 +1836,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe482e5c6, 0xe31e, 0x4143, 0xa2, 0xe6, 0xdb, 0xc3, 0xd8, 0xe4, 0xb8, 0xd3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OpenDatabase(PWSTR szDatabase) mut
+			{
+				return VT.OpenDatabase(&this, szDatabase);
+			}
+			public HRESULT OpenCUB(PWSTR szCUBFile) mut
+			{
+				return VT.OpenCUB(&this, szCUBFile);
+			}
+			public HRESULT CloseDatabase() mut
+			{
+				return VT.CloseDatabase(&this);
+			}
+			public HRESULT CloseCUB() mut
+			{
+				return VT.CloseCUB(&this);
+			}
+			public HRESULT SetDisplay(LPDISPLAYVAL pDisplayFunction, void* pContext) mut
+			{
+				return VT.SetDisplay(&this, pDisplayFunction, pContext);
+			}
+			public HRESULT SetStatus(LPEVALCOMCALLBACK pStatusFunction, void* pContext) mut
+			{
+				return VT.SetStatus(&this, pStatusFunction, pContext);
+			}
+			public HRESULT Validate(PWSTR wzICEs) mut
+			{
+				return VT.Validate(&this, wzICEs);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IValidate *self, PWSTR szDatabase) OpenDatabase;
-				public function HRESULT(IValidate *self, PWSTR szCUBFile) OpenCUB;
-				public function HRESULT(IValidate *self) CloseDatabase;
-				public function HRESULT(IValidate *self) CloseCUB;
-				public function HRESULT(IValidate *self, LPDISPLAYVAL pDisplayFunction, void* pContext) SetDisplay;
-				public function HRESULT(IValidate *self, LPEVALCOMCALLBACK pStatusFunction, void* pContext) SetStatus;
-				public function HRESULT(IValidate *self, PWSTR wzICEs) Validate;
+				public new function HRESULT(IValidate *self, PWSTR szDatabase) OpenDatabase;
+				public new function HRESULT(IValidate *self, PWSTR szCUBFile) OpenCUB;
+				public new function HRESULT(IValidate *self) CloseDatabase;
+				public new function HRESULT(IValidate *self) CloseCUB;
+				public new function HRESULT(IValidate *self, LPDISPLAYVAL pDisplayFunction, void* pContext) SetDisplay;
+				public new function HRESULT(IValidate *self, LPEVALCOMCALLBACK pStatusFunction, void* pContext) SetStatus;
+				public new function HRESULT(IValidate *self, PWSTR wzICEs) Validate;
 			}
 		}
 		[CRepr]
@@ -1854,14 +1883,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0adda826, 0x2c26, 0x11d2, 0xad, 0x65, 0x00, 0xa0, 0xc9, 0xaf, 0x11, 0xa6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 cFetch, BSTR* rgbstrStrings, uint32* pcFetched) mut
+			{
+				return VT.Next(&this, cFetch, rgbstrStrings, pcFetched);
+			}
+			public HRESULT Skip(uint32 cSkip) mut
+			{
+				return VT.Skip(&this, cSkip);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumMsmString** pemsmStrings) mut
+			{
+				return VT.Clone(&this, pemsmStrings);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumMsmString *self, uint32 cFetch, BSTR* rgbstrStrings, uint32* pcFetched) Next;
-				public function HRESULT(IEnumMsmString *self, uint32 cSkip) Skip;
-				public function HRESULT(IEnumMsmString *self) Reset;
-				public function HRESULT(IEnumMsmString *self, IEnumMsmString** pemsmStrings) Clone;
+				public new function HRESULT(IEnumMsmString *self, uint32 cFetch, BSTR* rgbstrStrings, uint32* pcFetched) Next;
+				public new function HRESULT(IEnumMsmString *self, uint32 cSkip) Skip;
+				public new function HRESULT(IEnumMsmString *self) Reset;
+				public new function HRESULT(IEnumMsmString *self, IEnumMsmString** pemsmStrings) Clone;
 			}
 		}
 		[CRepr]
@@ -1869,13 +1915,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0adda827, 0x2c26, 0x11d2, 0xad, 0x65, 0x00, 0xa0, 0xc9, 0xaf, 0x11, 0xa6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 Item, BSTR* Return) mut
+			{
+				return VT.get_Item(&this, Item, Return);
+			}
+			public HRESULT get_Count(int32* Count) mut
+			{
+				return VT.get_Count(&this, Count);
+			}
+			public HRESULT get__NewEnum(IUnknown** NewEnum) mut
+			{
+				return VT.get__NewEnum(&this, NewEnum);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IMsmStrings *self, int32 Item, BSTR* Return) get_Item;
-				public function HRESULT(IMsmStrings *self, int32* Count) get_Count;
-				public function HRESULT(IMsmStrings *self, IUnknown** NewEnum) get__NewEnum;
+				public new function HRESULT(IMsmStrings *self, int32 Item, BSTR* Return) get_Item;
+				public new function HRESULT(IMsmStrings *self, int32* Count) get_Count;
+				public new function HRESULT(IMsmStrings *self, IUnknown** NewEnum) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1883,17 +1942,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0adda828, 0x2c26, 0x11d2, 0xad, 0x65, 0x00, 0xa0, 0xc9, 0xaf, 0x11, 0xa6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Type(msmErrorType* ErrorType) mut
+			{
+				return VT.get_Type(&this, ErrorType);
+			}
+			public HRESULT get_Path(BSTR* ErrorPath) mut
+			{
+				return VT.get_Path(&this, ErrorPath);
+			}
+			public HRESULT get_Language(int16* ErrorLanguage) mut
+			{
+				return VT.get_Language(&this, ErrorLanguage);
+			}
+			public HRESULT get_DatabaseTable(BSTR* ErrorTable) mut
+			{
+				return VT.get_DatabaseTable(&this, ErrorTable);
+			}
+			public HRESULT get_DatabaseKeys(IMsmStrings** ErrorKeys) mut
+			{
+				return VT.get_DatabaseKeys(&this, ErrorKeys);
+			}
+			public HRESULT get_ModuleTable(BSTR* ErrorTable) mut
+			{
+				return VT.get_ModuleTable(&this, ErrorTable);
+			}
+			public HRESULT get_ModuleKeys(IMsmStrings** ErrorKeys) mut
+			{
+				return VT.get_ModuleKeys(&this, ErrorKeys);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IMsmError *self, msmErrorType* ErrorType) get_Type;
-				public function HRESULT(IMsmError *self, BSTR* ErrorPath) get_Path;
-				public function HRESULT(IMsmError *self, int16* ErrorLanguage) get_Language;
-				public function HRESULT(IMsmError *self, BSTR* ErrorTable) get_DatabaseTable;
-				public function HRESULT(IMsmError *self, IMsmStrings** ErrorKeys) get_DatabaseKeys;
-				public function HRESULT(IMsmError *self, BSTR* ErrorTable) get_ModuleTable;
-				public function HRESULT(IMsmError *self, IMsmStrings** ErrorKeys) get_ModuleKeys;
+				public new function HRESULT(IMsmError *self, msmErrorType* ErrorType) get_Type;
+				public new function HRESULT(IMsmError *self, BSTR* ErrorPath) get_Path;
+				public new function HRESULT(IMsmError *self, int16* ErrorLanguage) get_Language;
+				public new function HRESULT(IMsmError *self, BSTR* ErrorTable) get_DatabaseTable;
+				public new function HRESULT(IMsmError *self, IMsmStrings** ErrorKeys) get_DatabaseKeys;
+				public new function HRESULT(IMsmError *self, BSTR* ErrorTable) get_ModuleTable;
+				public new function HRESULT(IMsmError *self, IMsmStrings** ErrorKeys) get_ModuleKeys;
 			}
 		}
 		[CRepr]
@@ -1901,14 +1989,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0adda829, 0x2c26, 0x11d2, 0xad, 0x65, 0x00, 0xa0, 0xc9, 0xaf, 0x11, 0xa6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 cFetch, IMsmError** rgmsmErrors, uint32* pcFetched) mut
+			{
+				return VT.Next(&this, cFetch, rgmsmErrors, pcFetched);
+			}
+			public HRESULT Skip(uint32 cSkip) mut
+			{
+				return VT.Skip(&this, cSkip);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumMsmError** pemsmErrors) mut
+			{
+				return VT.Clone(&this, pemsmErrors);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumMsmError *self, uint32 cFetch, IMsmError** rgmsmErrors, uint32* pcFetched) Next;
-				public function HRESULT(IEnumMsmError *self, uint32 cSkip) Skip;
-				public function HRESULT(IEnumMsmError *self) Reset;
-				public function HRESULT(IEnumMsmError *self, IEnumMsmError** pemsmErrors) Clone;
+				public new function HRESULT(IEnumMsmError *self, uint32 cFetch, IMsmError** rgmsmErrors, uint32* pcFetched) Next;
+				public new function HRESULT(IEnumMsmError *self, uint32 cSkip) Skip;
+				public new function HRESULT(IEnumMsmError *self) Reset;
+				public new function HRESULT(IEnumMsmError *self, IEnumMsmError** pemsmErrors) Clone;
 			}
 		}
 		[CRepr]
@@ -1916,13 +2021,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0adda82a, 0x2c26, 0x11d2, 0xad, 0x65, 0x00, 0xa0, 0xc9, 0xaf, 0x11, 0xa6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 Item, IMsmError** Return) mut
+			{
+				return VT.get_Item(&this, Item, Return);
+			}
+			public HRESULT get_Count(int32* Count) mut
+			{
+				return VT.get_Count(&this, Count);
+			}
+			public HRESULT get__NewEnum(IUnknown** NewEnum) mut
+			{
+				return VT.get__NewEnum(&this, NewEnum);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IMsmErrors *self, int32 Item, IMsmError** Return) get_Item;
-				public function HRESULT(IMsmErrors *self, int32* Count) get_Count;
-				public function HRESULT(IMsmErrors *self, IUnknown** NewEnum) get__NewEnum;
+				public new function HRESULT(IMsmErrors *self, int32 Item, IMsmError** Return) get_Item;
+				public new function HRESULT(IMsmErrors *self, int32* Count) get_Count;
+				public new function HRESULT(IMsmErrors *self, IUnknown** NewEnum) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1930,13 +2048,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0adda82b, 0x2c26, 0x11d2, 0xad, 0x65, 0x00, 0xa0, 0xc9, 0xaf, 0x11, 0xa6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Module(BSTR* Module) mut
+			{
+				return VT.get_Module(&this, Module);
+			}
+			public HRESULT get_Language(int16* Language) mut
+			{
+				return VT.get_Language(&this, Language);
+			}
+			public HRESULT get_Version(BSTR* Version) mut
+			{
+				return VT.get_Version(&this, Version);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IMsmDependency *self, BSTR* Module) get_Module;
-				public function HRESULT(IMsmDependency *self, int16* Language) get_Language;
-				public function HRESULT(IMsmDependency *self, BSTR* Version) get_Version;
+				public new function HRESULT(IMsmDependency *self, BSTR* Module) get_Module;
+				public new function HRESULT(IMsmDependency *self, int16* Language) get_Language;
+				public new function HRESULT(IMsmDependency *self, BSTR* Version) get_Version;
 			}
 		}
 		[CRepr]
@@ -1944,14 +2075,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0adda82c, 0x2c26, 0x11d2, 0xad, 0x65, 0x00, 0xa0, 0xc9, 0xaf, 0x11, 0xa6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 cFetch, IMsmDependency** rgmsmDependencies, uint32* pcFetched) mut
+			{
+				return VT.Next(&this, cFetch, rgmsmDependencies, pcFetched);
+			}
+			public HRESULT Skip(uint32 cSkip) mut
+			{
+				return VT.Skip(&this, cSkip);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumMsmDependency** pemsmDependencies) mut
+			{
+				return VT.Clone(&this, pemsmDependencies);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumMsmDependency *self, uint32 cFetch, IMsmDependency** rgmsmDependencies, uint32* pcFetched) Next;
-				public function HRESULT(IEnumMsmDependency *self, uint32 cSkip) Skip;
-				public function HRESULT(IEnumMsmDependency *self) Reset;
-				public function HRESULT(IEnumMsmDependency *self, IEnumMsmDependency** pemsmDependencies) Clone;
+				public new function HRESULT(IEnumMsmDependency *self, uint32 cFetch, IMsmDependency** rgmsmDependencies, uint32* pcFetched) Next;
+				public new function HRESULT(IEnumMsmDependency *self, uint32 cSkip) Skip;
+				public new function HRESULT(IEnumMsmDependency *self) Reset;
+				public new function HRESULT(IEnumMsmDependency *self, IEnumMsmDependency** pemsmDependencies) Clone;
 			}
 		}
 		[CRepr]
@@ -1959,13 +2107,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0adda82d, 0x2c26, 0x11d2, 0xad, 0x65, 0x00, 0xa0, 0xc9, 0xaf, 0x11, 0xa6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 Item, IMsmDependency** Return) mut
+			{
+				return VT.get_Item(&this, Item, Return);
+			}
+			public HRESULT get_Count(int32* Count) mut
+			{
+				return VT.get_Count(&this, Count);
+			}
+			public HRESULT get__NewEnum(IUnknown** NewEnum) mut
+			{
+				return VT.get__NewEnum(&this, NewEnum);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IMsmDependencies *self, int32 Item, IMsmDependency** Return) get_Item;
-				public function HRESULT(IMsmDependencies *self, int32* Count) get_Count;
-				public function HRESULT(IMsmDependencies *self, IUnknown** NewEnum) get__NewEnum;
+				public new function HRESULT(IMsmDependencies *self, int32 Item, IMsmDependency** Return) get_Item;
+				public new function HRESULT(IMsmDependencies *self, int32* Count) get_Count;
+				public new function HRESULT(IMsmDependencies *self, IUnknown** NewEnum) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1973,23 +2134,76 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0adda82e, 0x2c26, 0x11d2, 0xad, 0x65, 0x00, 0xa0, 0xc9, 0xaf, 0x11, 0xa6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OpenDatabase(BSTR Path) mut
+			{
+				return VT.OpenDatabase(&this, Path);
+			}
+			public HRESULT OpenModule(BSTR Path, int16 Language) mut
+			{
+				return VT.OpenModule(&this, Path, Language);
+			}
+			public HRESULT CloseDatabase(int16 Commit) mut
+			{
+				return VT.CloseDatabase(&this, Commit);
+			}
+			public HRESULT CloseModule() mut
+			{
+				return VT.CloseModule(&this);
+			}
+			public HRESULT OpenLog(BSTR Path) mut
+			{
+				return VT.OpenLog(&this, Path);
+			}
+			public HRESULT CloseLog() mut
+			{
+				return VT.CloseLog(&this);
+			}
+			public HRESULT Log(BSTR Message) mut
+			{
+				return VT.Log(&this, Message);
+			}
+			public HRESULT get_Errors(IMsmErrors** Errors) mut
+			{
+				return VT.get_Errors(&this, Errors);
+			}
+			public HRESULT get_Dependencies(IMsmDependencies** Dependencies) mut
+			{
+				return VT.get_Dependencies(&this, Dependencies);
+			}
+			public HRESULT Merge(BSTR Feature, BSTR RedirectDir) mut
+			{
+				return VT.Merge(&this, Feature, RedirectDir);
+			}
+			public HRESULT Connect(BSTR Feature) mut
+			{
+				return VT.Connect(&this, Feature);
+			}
+			public HRESULT ExtractCAB(BSTR FileName) mut
+			{
+				return VT.ExtractCAB(&this, FileName);
+			}
+			public HRESULT ExtractFiles(BSTR Path) mut
+			{
+				return VT.ExtractFiles(&this, Path);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IMsmMerge *self, BSTR Path) OpenDatabase;
-				public function HRESULT(IMsmMerge *self, BSTR Path, int16 Language) OpenModule;
-				public function HRESULT(IMsmMerge *self, int16 Commit) CloseDatabase;
-				public function HRESULT(IMsmMerge *self) CloseModule;
-				public function HRESULT(IMsmMerge *self, BSTR Path) OpenLog;
-				public function HRESULT(IMsmMerge *self) CloseLog;
-				public function HRESULT(IMsmMerge *self, BSTR Message) Log;
-				public function HRESULT(IMsmMerge *self, IMsmErrors** Errors) get_Errors;
-				public function HRESULT(IMsmMerge *self, IMsmDependencies** Dependencies) get_Dependencies;
-				public function HRESULT(IMsmMerge *self, BSTR Feature, BSTR RedirectDir) Merge;
-				public function HRESULT(IMsmMerge *self, BSTR Feature) Connect;
-				public function HRESULT(IMsmMerge *self, BSTR FileName) ExtractCAB;
-				public function HRESULT(IMsmMerge *self, BSTR Path) ExtractFiles;
+				public new function HRESULT(IMsmMerge *self, BSTR Path) OpenDatabase;
+				public new function HRESULT(IMsmMerge *self, BSTR Path, int16 Language) OpenModule;
+				public new function HRESULT(IMsmMerge *self, int16 Commit) CloseDatabase;
+				public new function HRESULT(IMsmMerge *self) CloseModule;
+				public new function HRESULT(IMsmMerge *self, BSTR Path) OpenLog;
+				public new function HRESULT(IMsmMerge *self) CloseLog;
+				public new function HRESULT(IMsmMerge *self, BSTR Message) Log;
+				public new function HRESULT(IMsmMerge *self, IMsmErrors** Errors) get_Errors;
+				public new function HRESULT(IMsmMerge *self, IMsmDependencies** Dependencies) get_Dependencies;
+				public new function HRESULT(IMsmMerge *self, BSTR Feature, BSTR RedirectDir) Merge;
+				public new function HRESULT(IMsmMerge *self, BSTR Feature) Connect;
+				public new function HRESULT(IMsmMerge *self, BSTR FileName) ExtractCAB;
+				public new function HRESULT(IMsmMerge *self, BSTR Path) ExtractFiles;
 			}
 		}
 		[CRepr]
@@ -1997,11 +2211,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7041ae26, 0x2d78, 0x11d2, 0x88, 0x8a, 0x00, 0xa0, 0xc9, 0x81, 0xb0, 0x15);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ModuleFiles(IMsmStrings** Files) mut
+			{
+				return VT.get_ModuleFiles(&this, Files);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IMsmGetFiles *self, IMsmStrings** Files) get_ModuleFiles;
+				public new function HRESULT(IMsmGetFiles *self, IMsmStrings** Files) get_ModuleFiles;
 			}
 		}
 		[CRepr]
@@ -2009,19 +2228,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xcd193bc0, 0xb4bc, 0x11d2, 0x98, 0x33, 0x00, 0xc0, 0x4f, 0xc3, 0x1d, 0x2e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetProperty(uint32 PropertyId, void* pvProperty, uint32 cbProperty) mut
+			{
+				return VT.SetProperty(&this, PropertyId, pvProperty, cbProperty);
+			}
+			public HRESULT GetProperty(uint32 PropertyId, void* pvProperty, uint32* pcbProperty) mut
+			{
+				return VT.GetProperty(&this, PropertyId, pvProperty, pcbProperty);
+			}
+			public HRESULT Finalize() mut
+			{
+				return VT.Finalize(&this);
+			}
+			public HRESULT GetDisplayName(char16* szDisplayName, uint32* pccDisplayName, uint32 dwDisplayFlags) mut
+			{
+				return VT.GetDisplayName(&this, szDisplayName, pccDisplayName, dwDisplayFlags);
+			}
+			public HRESULT Reserved(Guid* refIID, IUnknown* pUnkReserved1, IUnknown* pUnkReserved2, PWSTR szReserved, int64 llReserved, void* pvReserved, uint32 cbReserved, void** ppReserved) mut
+			{
+				return VT.Reserved(&this, refIID, pUnkReserved1, pUnkReserved2, szReserved, llReserved, pvReserved, cbReserved, ppReserved);
+			}
+			public HRESULT GetName(uint32* lpcwBuffer, char16* pwzName) mut
+			{
+				return VT.GetName(&this, lpcwBuffer, pwzName);
+			}
+			public HRESULT GetVersion(uint32* pdwVersionHi, uint32* pdwVersionLow) mut
+			{
+				return VT.GetVersion(&this, pdwVersionHi, pdwVersionLow);
+			}
+			public HRESULT IsEqual(IAssemblyName* pName, uint32 dwCmpFlags) mut
+			{
+				return VT.IsEqual(&this, pName, dwCmpFlags);
+			}
+			public HRESULT Clone(IAssemblyName** pName) mut
+			{
+				return VT.Clone(&this, pName);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAssemblyName *self, uint32 PropertyId, void* pvProperty, uint32 cbProperty) SetProperty;
-				public function HRESULT(IAssemblyName *self, uint32 PropertyId, void* pvProperty, uint32* pcbProperty) GetProperty;
-				public function HRESULT(IAssemblyName *self) Finalize;
-				public function HRESULT(IAssemblyName *self, char16* szDisplayName, uint32* pccDisplayName, uint32 dwDisplayFlags) GetDisplayName;
-				public function HRESULT(IAssemblyName *self, Guid* refIID, IUnknown* pUnkReserved1, IUnknown* pUnkReserved2, PWSTR szReserved, int64 llReserved, void* pvReserved, uint32 cbReserved, void** ppReserved) Reserved;
-				public function HRESULT(IAssemblyName *self, uint32* lpcwBuffer, char16* pwzName) GetName;
-				public function HRESULT(IAssemblyName *self, uint32* pdwVersionHi, uint32* pdwVersionLow) GetVersion;
-				public function HRESULT(IAssemblyName *self, IAssemblyName* pName, uint32 dwCmpFlags) IsEqual;
-				public function HRESULT(IAssemblyName *self, IAssemblyName** pName) Clone;
+				public new function HRESULT(IAssemblyName *self, uint32 PropertyId, void* pvProperty, uint32 cbProperty) SetProperty;
+				public new function HRESULT(IAssemblyName *self, uint32 PropertyId, void* pvProperty, uint32* pcbProperty) GetProperty;
+				public new function HRESULT(IAssemblyName *self) Finalize;
+				public new function HRESULT(IAssemblyName *self, char16* szDisplayName, uint32* pccDisplayName, uint32 dwDisplayFlags) GetDisplayName;
+				public new function HRESULT(IAssemblyName *self, Guid* refIID, IUnknown* pUnkReserved1, IUnknown* pUnkReserved2, PWSTR szReserved, int64 llReserved, void* pvReserved, uint32 cbReserved, void** ppReserved) Reserved;
+				public new function HRESULT(IAssemblyName *self, uint32* lpcwBuffer, char16* pwzName) GetName;
+				public new function HRESULT(IAssemblyName *self, uint32* pdwVersionHi, uint32* pdwVersionLow) GetVersion;
+				public new function HRESULT(IAssemblyName *self, IAssemblyName* pName, uint32 dwCmpFlags) IsEqual;
+				public new function HRESULT(IAssemblyName *self, IAssemblyName** pName) Clone;
 			}
 		}
 		[CRepr]
@@ -2029,13 +2285,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9e3aaeb4, 0xd1cd, 0x11d2, 0xba, 0xb9, 0x00, 0xc0, 0x4f, 0x8e, 0xce, 0xae);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateStream(uint32 dwFlags, PWSTR pszStreamName, uint32 dwFormat, uint32 dwFormatFlags, IStream** ppIStream, ULARGE_INTEGER* puliMaxSize) mut
+			{
+				return VT.CreateStream(&this, dwFlags, pszStreamName, dwFormat, dwFormatFlags, ppIStream, puliMaxSize);
+			}
+			public HRESULT Commit(uint32 dwFlags, uint32* pulDisposition) mut
+			{
+				return VT.Commit(&this, dwFlags, pulDisposition);
+			}
+			public HRESULT AbortItem() mut
+			{
+				return VT.AbortItem(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAssemblyCacheItem *self, uint32 dwFlags, PWSTR pszStreamName, uint32 dwFormat, uint32 dwFormatFlags, IStream** ppIStream, ULARGE_INTEGER* puliMaxSize) CreateStream;
-				public function HRESULT(IAssemblyCacheItem *self, uint32 dwFlags, uint32* pulDisposition) Commit;
-				public function HRESULT(IAssemblyCacheItem *self) AbortItem;
+				public new function HRESULT(IAssemblyCacheItem *self, uint32 dwFlags, PWSTR pszStreamName, uint32 dwFormat, uint32 dwFormatFlags, IStream** ppIStream, ULARGE_INTEGER* puliMaxSize) CreateStream;
+				public new function HRESULT(IAssemblyCacheItem *self, uint32 dwFlags, uint32* pulDisposition) Commit;
+				public new function HRESULT(IAssemblyCacheItem *self) AbortItem;
 			}
 		}
 		[CRepr]
@@ -2043,15 +2312,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe707dcde, 0xd1cd, 0x11d2, 0xba, 0xb9, 0x00, 0xc0, 0x4f, 0x8e, 0xce, 0xae);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT UninstallAssembly(uint32 dwFlags, PWSTR pszAssemblyName, FUSION_INSTALL_REFERENCE* pRefData, IASSEMBLYCACHE_UNINSTALL_DISPOSITION* pulDisposition) mut
+			{
+				return VT.UninstallAssembly(&this, dwFlags, pszAssemblyName, pRefData, pulDisposition);
+			}
+			public HRESULT QueryAssemblyInfo(QUERYASMINFO_FLAGS dwFlags, PWSTR pszAssemblyName, ASSEMBLY_INFO* pAsmInfo) mut
+			{
+				return VT.QueryAssemblyInfo(&this, dwFlags, pszAssemblyName, pAsmInfo);
+			}
+			public HRESULT CreateAssemblyCacheItem(uint32 dwFlags, void* pvReserved, IAssemblyCacheItem** ppAsmItem, PWSTR pszAssemblyName) mut
+			{
+				return VT.CreateAssemblyCacheItem(&this, dwFlags, pvReserved, ppAsmItem, pszAssemblyName);
+			}
+			public HRESULT Reserved(IUnknown** ppUnk) mut
+			{
+				return VT.Reserved(&this, ppUnk);
+			}
+			public HRESULT InstallAssembly(uint32 dwFlags, PWSTR pszManifestFilePath, FUSION_INSTALL_REFERENCE* pRefData) mut
+			{
+				return VT.InstallAssembly(&this, dwFlags, pszManifestFilePath, pRefData);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IAssemblyCache *self, uint32 dwFlags, PWSTR pszAssemblyName, FUSION_INSTALL_REFERENCE* pRefData, IASSEMBLYCACHE_UNINSTALL_DISPOSITION* pulDisposition) UninstallAssembly;
-				public function HRESULT(IAssemblyCache *self, QUERYASMINFO_FLAGS dwFlags, PWSTR pszAssemblyName, ASSEMBLY_INFO* pAsmInfo) QueryAssemblyInfo;
-				public function HRESULT(IAssemblyCache *self, uint32 dwFlags, void* pvReserved, IAssemblyCacheItem** ppAsmItem, PWSTR pszAssemblyName) CreateAssemblyCacheItem;
-				public function HRESULT(IAssemblyCache *self, IUnknown** ppUnk) Reserved;
-				public function HRESULT(IAssemblyCache *self, uint32 dwFlags, PWSTR pszManifestFilePath, FUSION_INSTALL_REFERENCE* pRefData) InstallAssembly;
+				public new function HRESULT(IAssemblyCache *self, uint32 dwFlags, PWSTR pszAssemblyName, FUSION_INSTALL_REFERENCE* pRefData, IASSEMBLYCACHE_UNINSTALL_DISPOSITION* pulDisposition) UninstallAssembly;
+				public new function HRESULT(IAssemblyCache *self, QUERYASMINFO_FLAGS dwFlags, PWSTR pszAssemblyName, ASSEMBLY_INFO* pAsmInfo) QueryAssemblyInfo;
+				public new function HRESULT(IAssemblyCache *self, uint32 dwFlags, void* pvReserved, IAssemblyCacheItem** ppAsmItem, PWSTR pszAssemblyName) CreateAssemblyCacheItem;
+				public new function HRESULT(IAssemblyCache *self, IUnknown** ppUnk) Reserved;
+				public new function HRESULT(IAssemblyCache *self, uint32 dwFlags, PWSTR pszManifestFilePath, FUSION_INSTALL_REFERENCE* pRefData) InstallAssembly;
 			}
 		}
 		[CRepr]
@@ -2059,65 +2349,286 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x50afb58a, 0x438c, 0x4088, 0x97, 0x89, 0xf8, 0xc4, 0x89, 0x98, 0x29, 0xc7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ProductID(Guid* pProductID) mut
+			{
+				return VT.get_ProductID(&this, pProductID);
+			}
+			public HRESULT get_InstanceID(Guid* pInstanceID) mut
+			{
+				return VT.get_InstanceID(&this, pInstanceID);
+			}
+			public HRESULT get_OfferID(Guid* pOfferID) mut
+			{
+				return VT.get_OfferID(&this, pOfferID);
+			}
+			public HRESULT get_DefaultTask(BSTR* pDefaultTask) mut
+			{
+				return VT.get_DefaultTask(&this, pDefaultTask);
+			}
+			public HRESULT get_AppTitle(BSTR* pAppTitle) mut
+			{
+				return VT.get_AppTitle(&this, pAppTitle);
+			}
+			public HRESULT get_IconPath(BSTR* pAppIconPath) mut
+			{
+				return VT.get_IconPath(&this, pAppIconPath);
+			}
+			public HRESULT get_NotificationState(BOOL* pIsNotified) mut
+			{
+				return VT.get_NotificationState(&this, pIsNotified);
+			}
+			public HRESULT get_AppInstallType(PM_APPLICATION_INSTALL_TYPE* pAppInstallType) mut
+			{
+				return VT.get_AppInstallType(&this, pAppInstallType);
+			}
+			public HRESULT get_State(PM_APPLICATION_STATE* pState) mut
+			{
+				return VT.get_State(&this, pState);
+			}
+			public HRESULT get_IsRevoked(BOOL* pIsRevoked) mut
+			{
+				return VT.get_IsRevoked(&this, pIsRevoked);
+			}
+			public HRESULT get_UpdateAvailable(BOOL* pIsUpdateAvailable) mut
+			{
+				return VT.get_UpdateAvailable(&this, pIsUpdateAvailable);
+			}
+			public HRESULT get_InstallDate(FILETIME* pInstallDate) mut
+			{
+				return VT.get_InstallDate(&this, pInstallDate);
+			}
+			public HRESULT get_IsUninstallable(BOOL* pIsUninstallable) mut
+			{
+				return VT.get_IsUninstallable(&this, pIsUninstallable);
+			}
+			public HRESULT get_IsThemable(BOOL* pIsThemable) mut
+			{
+				return VT.get_IsThemable(&this, pIsThemable);
+			}
+			public HRESULT get_IsTrial(BOOL* pIsTrial) mut
+			{
+				return VT.get_IsTrial(&this, pIsTrial);
+			}
+			public HRESULT get_InstallPath(BSTR* pInstallPath) mut
+			{
+				return VT.get_InstallPath(&this, pInstallPath);
+			}
+			public HRESULT get_DataRoot(BSTR* pDataRoot) mut
+			{
+				return VT.get_DataRoot(&this, pDataRoot);
+			}
+			public HRESULT get_Genre(PM_APP_GENRE* pGenre) mut
+			{
+				return VT.get_Genre(&this, pGenre);
+			}
+			public HRESULT get_Publisher(BSTR* pPublisher) mut
+			{
+				return VT.get_Publisher(&this, pPublisher);
+			}
+			public HRESULT get_Author(BSTR* pAuthor) mut
+			{
+				return VT.get_Author(&this, pAuthor);
+			}
+			public HRESULT get_Description(BSTR* pDescription) mut
+			{
+				return VT.get_Description(&this, pDescription);
+			}
+			public HRESULT get_Version(BSTR* pVersion) mut
+			{
+				return VT.get_Version(&this, pVersion);
+			}
+			public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut
+			{
+				return VT.get_InvocationInfo(&this, pImageUrn, pParameters);
+			}
+			public HRESULT get_AppPlatMajorVersion(uint8* pMajorVer) mut
+			{
+				return VT.get_AppPlatMajorVersion(&this, pMajorVer);
+			}
+			public HRESULT get_AppPlatMinorVersion(uint8* pMinorVer) mut
+			{
+				return VT.get_AppPlatMinorVersion(&this, pMinorVer);
+			}
+			public HRESULT get_PublisherID(Guid* pPublisherID) mut
+			{
+				return VT.get_PublisherID(&this, pPublisherID);
+			}
+			public HRESULT get_IsMultiCore(BOOL* pIsMultiCore) mut
+			{
+				return VT.get_IsMultiCore(&this, pIsMultiCore);
+			}
+			public HRESULT get_SID(BSTR* pSID) mut
+			{
+				return VT.get_SID(&this, pSID);
+			}
+			public HRESULT get_AppPlatMajorVersionLightUp(uint8* pMajorVer) mut
+			{
+				return VT.get_AppPlatMajorVersionLightUp(&this, pMajorVer);
+			}
+			public HRESULT get_AppPlatMinorVersionLightUp(uint8* pMinorVer) mut
+			{
+				return VT.get_AppPlatMinorVersionLightUp(&this, pMinorVer);
+			}
+			public HRESULT set_UpdateAvailable(BOOL IsUpdateAvailable) mut
+			{
+				return VT.set_UpdateAvailable(&this, IsUpdateAvailable);
+			}
+			public HRESULT set_NotificationState(BOOL IsNotified) mut
+			{
+				return VT.set_NotificationState(&this, IsNotified);
+			}
+			public HRESULT set_IconPath(BSTR AppIconPath) mut
+			{
+				return VT.set_IconPath(&this, AppIconPath);
+			}
+			public HRESULT set_UninstallableState(BOOL IsUninstallable) mut
+			{
+				return VT.set_UninstallableState(&this, IsUninstallable);
+			}
+			public HRESULT get_IsPinableOnKidZone(BOOL* pIsPinable) mut
+			{
+				return VT.get_IsPinableOnKidZone(&this, pIsPinable);
+			}
+			public HRESULT get_IsOriginallyPreInstalled(BOOL* pIsPreinstalled) mut
+			{
+				return VT.get_IsOriginallyPreInstalled(&this, pIsPreinstalled);
+			}
+			public HRESULT get_IsInstallOnSD(BOOL* pIsInstallOnSD) mut
+			{
+				return VT.get_IsInstallOnSD(&this, pIsInstallOnSD);
+			}
+			public HRESULT get_IsOptoutOnSD(BOOL* pIsOptoutOnSD) mut
+			{
+				return VT.get_IsOptoutOnSD(&this, pIsOptoutOnSD);
+			}
+			public HRESULT get_IsOptoutBackupRestore(BOOL* pIsOptoutBackupRestore) mut
+			{
+				return VT.get_IsOptoutBackupRestore(&this, pIsOptoutBackupRestore);
+			}
+			public HRESULT set_EnterpriseDisabled(BOOL IsDisabled) mut
+			{
+				return VT.set_EnterpriseDisabled(&this, IsDisabled);
+			}
+			public HRESULT set_EnterpriseUninstallable(BOOL IsUninstallable) mut
+			{
+				return VT.set_EnterpriseUninstallable(&this, IsUninstallable);
+			}
+			public HRESULT get_EnterpriseDisabled(BOOL* IsDisabled) mut
+			{
+				return VT.get_EnterpriseDisabled(&this, IsDisabled);
+			}
+			public HRESULT get_EnterpriseUninstallable(BOOL* IsUninstallable) mut
+			{
+				return VT.get_EnterpriseUninstallable(&this, IsUninstallable);
+			}
+			public HRESULT get_IsVisibleOnAppList(BOOL* pIsVisible) mut
+			{
+				return VT.get_IsVisibleOnAppList(&this, pIsVisible);
+			}
+			public HRESULT get_IsInboxApp(BOOL* pIsInboxApp) mut
+			{
+				return VT.get_IsInboxApp(&this, pIsInboxApp);
+			}
+			public HRESULT get_StorageID(Guid* pStorageID) mut
+			{
+				return VT.get_StorageID(&this, pStorageID);
+			}
+			public HRESULT get_StartAppBlob(PM_STARTAPPBLOB* pBlob) mut
+			{
+				return VT.get_StartAppBlob(&this, pBlob);
+			}
+			public HRESULT get_IsMovable(BOOL* pIsMovable) mut
+			{
+				return VT.get_IsMovable(&this, pIsMovable);
+			}
+			public HRESULT get_DeploymentAppEnumerationHubFilter(PM_TILE_HUBTYPE* HubType) mut
+			{
+				return VT.get_DeploymentAppEnumerationHubFilter(&this, HubType);
+			}
+			public HRESULT get_ModifiedDate(FILETIME* pModifiedDate) mut
+			{
+				return VT.get_ModifiedDate(&this, pModifiedDate);
+			}
+			public HRESULT get_IsOriginallyRestored(BOOL* pIsRestored) mut
+			{
+				return VT.get_IsOriginallyRestored(&this, pIsRestored);
+			}
+			public HRESULT get_ShouldDeferMdilBind(BOOL* pfDeferMdilBind) mut
+			{
+				return VT.get_ShouldDeferMdilBind(&this, pfDeferMdilBind);
+			}
+			public HRESULT get_IsFullyPreInstall(BOOL* pfIsFullyPreInstall) mut
+			{
+				return VT.get_IsFullyPreInstall(&this, pfIsFullyPreInstall);
+			}
+			public HRESULT set_IsMdilMaintenanceNeeded(BOOL fIsMdilMaintenanceNeeded) mut
+			{
+				return VT.set_IsMdilMaintenanceNeeded(&this, fIsMdilMaintenanceNeeded);
+			}
+			public HRESULT set_Title(BSTR AppTitle) mut
+			{
+				return VT.set_Title(&this, AppTitle);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMApplicationInfo *self, Guid* pProductID) get_ProductID;
-				public function HRESULT(IPMApplicationInfo *self, Guid* pInstanceID) get_InstanceID;
-				public function HRESULT(IPMApplicationInfo *self, Guid* pOfferID) get_OfferID;
-				public function HRESULT(IPMApplicationInfo *self, BSTR* pDefaultTask) get_DefaultTask;
-				public function HRESULT(IPMApplicationInfo *self, BSTR* pAppTitle) get_AppTitle;
-				public function HRESULT(IPMApplicationInfo *self, BSTR* pAppIconPath) get_IconPath;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* pIsNotified) get_NotificationState;
-				public function HRESULT(IPMApplicationInfo *self, PM_APPLICATION_INSTALL_TYPE* pAppInstallType) get_AppInstallType;
-				public function HRESULT(IPMApplicationInfo *self, PM_APPLICATION_STATE* pState) get_State;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* pIsRevoked) get_IsRevoked;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* pIsUpdateAvailable) get_UpdateAvailable;
-				public function HRESULT(IPMApplicationInfo *self, FILETIME* pInstallDate) get_InstallDate;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* pIsUninstallable) get_IsUninstallable;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* pIsThemable) get_IsThemable;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* pIsTrial) get_IsTrial;
-				public function HRESULT(IPMApplicationInfo *self, BSTR* pInstallPath) get_InstallPath;
-				public function HRESULT(IPMApplicationInfo *self, BSTR* pDataRoot) get_DataRoot;
-				public function HRESULT(IPMApplicationInfo *self, PM_APP_GENRE* pGenre) get_Genre;
-				public function HRESULT(IPMApplicationInfo *self, BSTR* pPublisher) get_Publisher;
-				public function HRESULT(IPMApplicationInfo *self, BSTR* pAuthor) get_Author;
-				public function HRESULT(IPMApplicationInfo *self, BSTR* pDescription) get_Description;
-				public function HRESULT(IPMApplicationInfo *self, BSTR* pVersion) get_Version;
-				public function HRESULT(IPMApplicationInfo *self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
-				public function HRESULT(IPMApplicationInfo *self, uint8* pMajorVer) get_AppPlatMajorVersion;
-				public function HRESULT(IPMApplicationInfo *self, uint8* pMinorVer) get_AppPlatMinorVersion;
-				public function HRESULT(IPMApplicationInfo *self, Guid* pPublisherID) get_PublisherID;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* pIsMultiCore) get_IsMultiCore;
-				public function HRESULT(IPMApplicationInfo *self, BSTR* pSID) get_SID;
-				public function HRESULT(IPMApplicationInfo *self, uint8* pMajorVer) get_AppPlatMajorVersionLightUp;
-				public function HRESULT(IPMApplicationInfo *self, uint8* pMinorVer) get_AppPlatMinorVersionLightUp;
-				public function HRESULT(IPMApplicationInfo *self, BOOL IsUpdateAvailable) set_UpdateAvailable;
-				public function HRESULT(IPMApplicationInfo *self, BOOL IsNotified) set_NotificationState;
-				public function HRESULT(IPMApplicationInfo *self, BSTR AppIconPath) set_IconPath;
-				public function HRESULT(IPMApplicationInfo *self, BOOL IsUninstallable) set_UninstallableState;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* pIsPinable) get_IsPinableOnKidZone;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* pIsPreinstalled) get_IsOriginallyPreInstalled;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* pIsInstallOnSD) get_IsInstallOnSD;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* pIsOptoutOnSD) get_IsOptoutOnSD;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* pIsOptoutBackupRestore) get_IsOptoutBackupRestore;
-				public function HRESULT(IPMApplicationInfo *self, BOOL IsDisabled) set_EnterpriseDisabled;
-				public function HRESULT(IPMApplicationInfo *self, BOOL IsUninstallable) set_EnterpriseUninstallable;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* IsDisabled) get_EnterpriseDisabled;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* IsUninstallable) get_EnterpriseUninstallable;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* pIsVisible) get_IsVisibleOnAppList;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* pIsInboxApp) get_IsInboxApp;
-				public function HRESULT(IPMApplicationInfo *self, Guid* pStorageID) get_StorageID;
-				public function HRESULT(IPMApplicationInfo *self, PM_STARTAPPBLOB* pBlob) get_StartAppBlob;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* pIsMovable) get_IsMovable;
-				public function HRESULT(IPMApplicationInfo *self, PM_TILE_HUBTYPE* HubType) get_DeploymentAppEnumerationHubFilter;
-				public function HRESULT(IPMApplicationInfo *self, FILETIME* pModifiedDate) get_ModifiedDate;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* pIsRestored) get_IsOriginallyRestored;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* pfDeferMdilBind) get_ShouldDeferMdilBind;
-				public function HRESULT(IPMApplicationInfo *self, BOOL* pfIsFullyPreInstall) get_IsFullyPreInstall;
-				public function HRESULT(IPMApplicationInfo *self, BOOL fIsMdilMaintenanceNeeded) set_IsMdilMaintenanceNeeded;
-				public function HRESULT(IPMApplicationInfo *self, BSTR AppTitle) set_Title;
+				public new function HRESULT(IPMApplicationInfo *self, Guid* pProductID) get_ProductID;
+				public new function HRESULT(IPMApplicationInfo *self, Guid* pInstanceID) get_InstanceID;
+				public new function HRESULT(IPMApplicationInfo *self, Guid* pOfferID) get_OfferID;
+				public new function HRESULT(IPMApplicationInfo *self, BSTR* pDefaultTask) get_DefaultTask;
+				public new function HRESULT(IPMApplicationInfo *self, BSTR* pAppTitle) get_AppTitle;
+				public new function HRESULT(IPMApplicationInfo *self, BSTR* pAppIconPath) get_IconPath;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* pIsNotified) get_NotificationState;
+				public new function HRESULT(IPMApplicationInfo *self, PM_APPLICATION_INSTALL_TYPE* pAppInstallType) get_AppInstallType;
+				public new function HRESULT(IPMApplicationInfo *self, PM_APPLICATION_STATE* pState) get_State;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* pIsRevoked) get_IsRevoked;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* pIsUpdateAvailable) get_UpdateAvailable;
+				public new function HRESULT(IPMApplicationInfo *self, FILETIME* pInstallDate) get_InstallDate;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* pIsUninstallable) get_IsUninstallable;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* pIsThemable) get_IsThemable;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* pIsTrial) get_IsTrial;
+				public new function HRESULT(IPMApplicationInfo *self, BSTR* pInstallPath) get_InstallPath;
+				public new function HRESULT(IPMApplicationInfo *self, BSTR* pDataRoot) get_DataRoot;
+				public new function HRESULT(IPMApplicationInfo *self, PM_APP_GENRE* pGenre) get_Genre;
+				public new function HRESULT(IPMApplicationInfo *self, BSTR* pPublisher) get_Publisher;
+				public new function HRESULT(IPMApplicationInfo *self, BSTR* pAuthor) get_Author;
+				public new function HRESULT(IPMApplicationInfo *self, BSTR* pDescription) get_Description;
+				public new function HRESULT(IPMApplicationInfo *self, BSTR* pVersion) get_Version;
+				public new function HRESULT(IPMApplicationInfo *self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
+				public new function HRESULT(IPMApplicationInfo *self, uint8* pMajorVer) get_AppPlatMajorVersion;
+				public new function HRESULT(IPMApplicationInfo *self, uint8* pMinorVer) get_AppPlatMinorVersion;
+				public new function HRESULT(IPMApplicationInfo *self, Guid* pPublisherID) get_PublisherID;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* pIsMultiCore) get_IsMultiCore;
+				public new function HRESULT(IPMApplicationInfo *self, BSTR* pSID) get_SID;
+				public new function HRESULT(IPMApplicationInfo *self, uint8* pMajorVer) get_AppPlatMajorVersionLightUp;
+				public new function HRESULT(IPMApplicationInfo *self, uint8* pMinorVer) get_AppPlatMinorVersionLightUp;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL IsUpdateAvailable) set_UpdateAvailable;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL IsNotified) set_NotificationState;
+				public new function HRESULT(IPMApplicationInfo *self, BSTR AppIconPath) set_IconPath;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL IsUninstallable) set_UninstallableState;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* pIsPinable) get_IsPinableOnKidZone;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* pIsPreinstalled) get_IsOriginallyPreInstalled;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* pIsInstallOnSD) get_IsInstallOnSD;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* pIsOptoutOnSD) get_IsOptoutOnSD;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* pIsOptoutBackupRestore) get_IsOptoutBackupRestore;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL IsDisabled) set_EnterpriseDisabled;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL IsUninstallable) set_EnterpriseUninstallable;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* IsDisabled) get_EnterpriseDisabled;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* IsUninstallable) get_EnterpriseUninstallable;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* pIsVisible) get_IsVisibleOnAppList;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* pIsInboxApp) get_IsInboxApp;
+				public new function HRESULT(IPMApplicationInfo *self, Guid* pStorageID) get_StorageID;
+				public new function HRESULT(IPMApplicationInfo *self, PM_STARTAPPBLOB* pBlob) get_StartAppBlob;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* pIsMovable) get_IsMovable;
+				public new function HRESULT(IPMApplicationInfo *self, PM_TILE_HUBTYPE* HubType) get_DeploymentAppEnumerationHubFilter;
+				public new function HRESULT(IPMApplicationInfo *self, FILETIME* pModifiedDate) get_ModifiedDate;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* pIsRestored) get_IsOriginallyRestored;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* pfDeferMdilBind) get_ShouldDeferMdilBind;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL* pfIsFullyPreInstall) get_IsFullyPreInstall;
+				public new function HRESULT(IPMApplicationInfo *self, BOOL fIsMdilMaintenanceNeeded) set_IsMdilMaintenanceNeeded;
+				public new function HRESULT(IPMApplicationInfo *self, BSTR AppTitle) set_Title;
 			}
 		}
 		[CRepr]
@@ -2125,13 +2636,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6c2b8017, 0x1efa, 0x42a7, 0x86, 0xc0, 0x6d, 0x4b, 0x64, 0x0b, 0xf5, 0x28);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_PropertyID(uint32* pPropID) mut
+			{
+				return VT.get_PropertyID(&this, pPropID);
+			}
+			public HRESULT get_PropertyValue(BSTR* pPropValue) mut
+			{
+				return VT.get_PropertyValue(&this, pPropValue);
+			}
+			public HRESULT set_Property(BSTR PropValue) mut
+			{
+				return VT.set_Property(&this, PropValue);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMTilePropertyInfo *self, uint32* pPropID) get_PropertyID;
-				public function HRESULT(IPMTilePropertyInfo *self, BSTR* pPropValue) get_PropertyValue;
-				public function HRESULT(IPMTilePropertyInfo *self, BSTR PropValue) set_Property;
+				public new function HRESULT(IPMTilePropertyInfo *self, uint32* pPropID) get_PropertyID;
+				public new function HRESULT(IPMTilePropertyInfo *self, BSTR* pPropValue) get_PropertyValue;
+				public new function HRESULT(IPMTilePropertyInfo *self, BSTR PropValue) set_Property;
 			}
 		}
 		[CRepr]
@@ -2139,11 +2663,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xcc4cd629, 0x9047, 0x4250, 0xaa, 0xc8, 0x93, 0x0e, 0x47, 0x81, 0x24, 0x21);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Next(IPMTilePropertyInfo** ppPropInfo) mut
+			{
+				return VT.get_Next(&this, ppPropInfo);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMTilePropertyEnumerator *self, IPMTilePropertyInfo** ppPropInfo) get_Next;
+				public new function HRESULT(IPMTilePropertyEnumerator *self, IPMTilePropertyInfo** ppPropInfo) get_Next;
 			}
 		}
 		[CRepr]
@@ -2151,34 +2680,131 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd1604833, 0x2b08, 0x4001, 0x82, 0xcd, 0x18, 0x3a, 0xd7, 0x34, 0xf7, 0x52);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ProductID(Guid* pProductID) mut
+			{
+				return VT.get_ProductID(&this, pProductID);
+			}
+			public HRESULT get_TileID(BSTR* pTileID) mut
+			{
+				return VT.get_TileID(&this, pTileID);
+			}
+			public HRESULT get_TemplateType(TILE_TEMPLATE_TYPE* pTemplateType) mut
+			{
+				return VT.get_TemplateType(&this, pTemplateType);
+			}
+			public HRESULT get_HubPinnedState(PM_TILE_HUBTYPE HubType, BOOL* pPinned) mut
+			{
+				return VT.get_HubPinnedState(&this, HubType, pPinned);
+			}
+			public HRESULT get_HubPosition(PM_TILE_HUBTYPE HubType, uint32* pPosition) mut
+			{
+				return VT.get_HubPosition(&this, HubType, pPosition);
+			}
+			public HRESULT get_IsNotified(BOOL* pIsNotified) mut
+			{
+				return VT.get_IsNotified(&this, pIsNotified);
+			}
+			public HRESULT get_IsDefault(BOOL* pIsDefault) mut
+			{
+				return VT.get_IsDefault(&this, pIsDefault);
+			}
+			public HRESULT get_TaskID(BSTR* pTaskID) mut
+			{
+				return VT.get_TaskID(&this, pTaskID);
+			}
+			public HRESULT get_TileType(PM_STARTTILE_TYPE* pStartTileType) mut
+			{
+				return VT.get_TileType(&this, pStartTileType);
+			}
+			public HRESULT get_IsThemable(BOOL* pIsThemable) mut
+			{
+				return VT.get_IsThemable(&this, pIsThemable);
+			}
+			public HRESULT get_PropertyById(uint32 PropID, IPMTilePropertyInfo** ppPropInfo) mut
+			{
+				return VT.get_PropertyById(&this, PropID, ppPropInfo);
+			}
+			public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut
+			{
+				return VT.get_InvocationInfo(&this, pImageUrn, pParameters);
+			}
+			public HRESULT get_PropertyEnum(IPMTilePropertyEnumerator** ppTilePropEnum) mut
+			{
+				return VT.get_PropertyEnum(&this, ppTilePropEnum);
+			}
+			public HRESULT get_HubTileSize(PM_TILE_HUBTYPE HubType, PM_TILE_SIZE* pSize) mut
+			{
+				return VT.get_HubTileSize(&this, HubType, pSize);
+			}
+			public HRESULT set_HubPosition(PM_TILE_HUBTYPE HubType, uint32 Position) mut
+			{
+				return VT.set_HubPosition(&this, HubType, Position);
+			}
+			public HRESULT set_NotifiedState(BOOL Notified) mut
+			{
+				return VT.set_NotifiedState(&this, Notified);
+			}
+			public HRESULT set_HubPinnedState(PM_TILE_HUBTYPE HubType, BOOL Pinned) mut
+			{
+				return VT.set_HubPinnedState(&this, HubType, Pinned);
+			}
+			public HRESULT set_HubTileSize(PM_TILE_HUBTYPE HubType, PM_TILE_SIZE Size) mut
+			{
+				return VT.set_HubTileSize(&this, HubType, Size);
+			}
+			public HRESULT set_InvocationInfo(BSTR TaskName, BSTR TaskParameters) mut
+			{
+				return VT.set_InvocationInfo(&this, TaskName, TaskParameters);
+			}
+			public HRESULT get_StartTileBlob(PM_STARTTILEBLOB* pBlob) mut
+			{
+				return VT.get_StartTileBlob(&this, pBlob);
+			}
+			public HRESULT get_IsRestoring(BOOL* pIsRestoring) mut
+			{
+				return VT.get_IsRestoring(&this, pIsRestoring);
+			}
+			public HRESULT get_IsAutoRestoreDisabled(BOOL* pIsAutoRestoreDisabled) mut
+			{
+				return VT.get_IsAutoRestoreDisabled(&this, pIsAutoRestoreDisabled);
+			}
+			public HRESULT set_IsRestoring(BOOL Restoring) mut
+			{
+				return VT.set_IsRestoring(&this, Restoring);
+			}
+			public HRESULT set_IsAutoRestoreDisabled(BOOL AutoRestoreDisabled) mut
+			{
+				return VT.set_IsAutoRestoreDisabled(&this, AutoRestoreDisabled);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMTileInfo *self, Guid* pProductID) get_ProductID;
-				public function HRESULT(IPMTileInfo *self, BSTR* pTileID) get_TileID;
-				public function HRESULT(IPMTileInfo *self, TILE_TEMPLATE_TYPE* pTemplateType) get_TemplateType;
-				public function HRESULT(IPMTileInfo *self, PM_TILE_HUBTYPE HubType, BOOL* pPinned) get_HubPinnedState;
-				public function HRESULT(IPMTileInfo *self, PM_TILE_HUBTYPE HubType, uint32* pPosition) get_HubPosition;
-				public function HRESULT(IPMTileInfo *self, BOOL* pIsNotified) get_IsNotified;
-				public function HRESULT(IPMTileInfo *self, BOOL* pIsDefault) get_IsDefault;
-				public function HRESULT(IPMTileInfo *self, BSTR* pTaskID) get_TaskID;
-				public function HRESULT(IPMTileInfo *self, PM_STARTTILE_TYPE* pStartTileType) get_TileType;
-				public function HRESULT(IPMTileInfo *self, BOOL* pIsThemable) get_IsThemable;
-				public function HRESULT(IPMTileInfo *self, uint32 PropID, IPMTilePropertyInfo** ppPropInfo) get_PropertyById;
-				public function HRESULT(IPMTileInfo *self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
-				public function HRESULT(IPMTileInfo *self, IPMTilePropertyEnumerator** ppTilePropEnum) get_PropertyEnum;
-				public function HRESULT(IPMTileInfo *self, PM_TILE_HUBTYPE HubType, PM_TILE_SIZE* pSize) get_HubTileSize;
-				public function HRESULT(IPMTileInfo *self, PM_TILE_HUBTYPE HubType, uint32 Position) set_HubPosition;
-				public function HRESULT(IPMTileInfo *self, BOOL Notified) set_NotifiedState;
-				public function HRESULT(IPMTileInfo *self, PM_TILE_HUBTYPE HubType, BOOL Pinned) set_HubPinnedState;
-				public function HRESULT(IPMTileInfo *self, PM_TILE_HUBTYPE HubType, PM_TILE_SIZE Size) set_HubTileSize;
-				public function HRESULT(IPMTileInfo *self, BSTR TaskName, BSTR TaskParameters) set_InvocationInfo;
-				public function HRESULT(IPMTileInfo *self, PM_STARTTILEBLOB* pBlob) get_StartTileBlob;
-				public function HRESULT(IPMTileInfo *self, BOOL* pIsRestoring) get_IsRestoring;
-				public function HRESULT(IPMTileInfo *self, BOOL* pIsAutoRestoreDisabled) get_IsAutoRestoreDisabled;
-				public function HRESULT(IPMTileInfo *self, BOOL Restoring) set_IsRestoring;
-				public function HRESULT(IPMTileInfo *self, BOOL AutoRestoreDisabled) set_IsAutoRestoreDisabled;
+				public new function HRESULT(IPMTileInfo *self, Guid* pProductID) get_ProductID;
+				public new function HRESULT(IPMTileInfo *self, BSTR* pTileID) get_TileID;
+				public new function HRESULT(IPMTileInfo *self, TILE_TEMPLATE_TYPE* pTemplateType) get_TemplateType;
+				public new function HRESULT(IPMTileInfo *self, PM_TILE_HUBTYPE HubType, BOOL* pPinned) get_HubPinnedState;
+				public new function HRESULT(IPMTileInfo *self, PM_TILE_HUBTYPE HubType, uint32* pPosition) get_HubPosition;
+				public new function HRESULT(IPMTileInfo *self, BOOL* pIsNotified) get_IsNotified;
+				public new function HRESULT(IPMTileInfo *self, BOOL* pIsDefault) get_IsDefault;
+				public new function HRESULT(IPMTileInfo *self, BSTR* pTaskID) get_TaskID;
+				public new function HRESULT(IPMTileInfo *self, PM_STARTTILE_TYPE* pStartTileType) get_TileType;
+				public new function HRESULT(IPMTileInfo *self, BOOL* pIsThemable) get_IsThemable;
+				public new function HRESULT(IPMTileInfo *self, uint32 PropID, IPMTilePropertyInfo** ppPropInfo) get_PropertyById;
+				public new function HRESULT(IPMTileInfo *self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
+				public new function HRESULT(IPMTileInfo *self, IPMTilePropertyEnumerator** ppTilePropEnum) get_PropertyEnum;
+				public new function HRESULT(IPMTileInfo *self, PM_TILE_HUBTYPE HubType, PM_TILE_SIZE* pSize) get_HubTileSize;
+				public new function HRESULT(IPMTileInfo *self, PM_TILE_HUBTYPE HubType, uint32 Position) set_HubPosition;
+				public new function HRESULT(IPMTileInfo *self, BOOL Notified) set_NotifiedState;
+				public new function HRESULT(IPMTileInfo *self, PM_TILE_HUBTYPE HubType, BOOL Pinned) set_HubPinnedState;
+				public new function HRESULT(IPMTileInfo *self, PM_TILE_HUBTYPE HubType, PM_TILE_SIZE Size) set_HubTileSize;
+				public new function HRESULT(IPMTileInfo *self, BSTR TaskName, BSTR TaskParameters) set_InvocationInfo;
+				public new function HRESULT(IPMTileInfo *self, PM_STARTTILEBLOB* pBlob) get_StartTileBlob;
+				public new function HRESULT(IPMTileInfo *self, BOOL* pIsRestoring) get_IsRestoring;
+				public new function HRESULT(IPMTileInfo *self, BOOL* pIsAutoRestoreDisabled) get_IsAutoRestoreDisabled;
+				public new function HRESULT(IPMTileInfo *self, BOOL Restoring) set_IsRestoring;
+				public new function HRESULT(IPMTileInfo *self, BOOL AutoRestoreDisabled) set_IsAutoRestoreDisabled;
 			}
 		}
 		[CRepr]
@@ -2186,11 +2812,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xded83065, 0xe462, 0x4b2c, 0xac, 0xb5, 0xe3, 0x9c, 0xea, 0x61, 0xc8, 0x74);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Next(IPMTileInfo** ppTileInfo) mut
+			{
+				return VT.get_Next(&this, ppTileInfo);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMTileInfoEnumerator *self, IPMTileInfo** ppTileInfo) get_Next;
+				public new function HRESULT(IPMTileInfoEnumerator *self, IPMTileInfo** ppTileInfo) get_Next;
 			}
 		}
 		[CRepr]
@@ -2198,11 +2829,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0ec42a96, 0x4d46, 0x4dc6, 0xa3, 0xd9, 0xa7, 0xac, 0xaa, 0xc0, 0xf5, 0xfa);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Next(IPMApplicationInfo** ppAppInfo) mut
+			{
+				return VT.get_Next(&this, ppAppInfo);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMApplicationInfoEnumerator *self, IPMApplicationInfo** ppAppInfo) get_Next;
+				public new function HRESULT(IPMApplicationInfoEnumerator *self, IPMApplicationInfo** ppAppInfo) get_Next;
 			}
 		}
 		[CRepr]
@@ -2210,34 +2846,131 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6009a81f, 0x4710, 0x4697, 0xb5, 0xf6, 0x22, 0x08, 0xf6, 0x05, 0x7b, 0x8e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ProductID(Guid* pProductID) mut
+			{
+				return VT.get_ProductID(&this, pProductID);
+			}
+			public HRESULT get_TileID(BSTR* pTileID) mut
+			{
+				return VT.get_TileID(&this, pTileID);
+			}
+			public HRESULT get_NextSchedule(FILETIME* pNextSchedule) mut
+			{
+				return VT.get_NextSchedule(&this, pNextSchedule);
+			}
+			public HRESULT set_NextSchedule(FILETIME ftNextSchedule) mut
+			{
+				return VT.set_NextSchedule(&this, ftNextSchedule);
+			}
+			public HRESULT get_StartSchedule(FILETIME* pStartSchedule) mut
+			{
+				return VT.get_StartSchedule(&this, pStartSchedule);
+			}
+			public HRESULT set_StartSchedule(FILETIME ftStartSchedule) mut
+			{
+				return VT.set_StartSchedule(&this, ftStartSchedule);
+			}
+			public HRESULT get_IntervalDuration(uint32* pIntervalDuration) mut
+			{
+				return VT.get_IntervalDuration(&this, pIntervalDuration);
+			}
+			public HRESULT set_IntervalDuration(uint32 ulIntervalDuration) mut
+			{
+				return VT.set_IntervalDuration(&this, ulIntervalDuration);
+			}
+			public HRESULT get_RunForever(BOOL* IsRunForever) mut
+			{
+				return VT.get_RunForever(&this, IsRunForever);
+			}
+			public HRESULT set_RunForever(BOOL fRunForever) mut
+			{
+				return VT.set_RunForever(&this, fRunForever);
+			}
+			public HRESULT get_MaxRunCount(uint32* pMaxRunCount) mut
+			{
+				return VT.get_MaxRunCount(&this, pMaxRunCount);
+			}
+			public HRESULT set_MaxRunCount(uint32 ulMaxRunCount) mut
+			{
+				return VT.set_MaxRunCount(&this, ulMaxRunCount);
+			}
+			public HRESULT get_RunCount(uint32* pRunCount) mut
+			{
+				return VT.get_RunCount(&this, pRunCount);
+			}
+			public HRESULT set_RunCount(uint32 ulRunCount) mut
+			{
+				return VT.set_RunCount(&this, ulRunCount);
+			}
+			public HRESULT get_RecurrenceType(uint32* pRecurrenceType) mut
+			{
+				return VT.get_RecurrenceType(&this, pRecurrenceType);
+			}
+			public HRESULT set_RecurrenceType(uint32 ulRecurrenceType) mut
+			{
+				return VT.set_RecurrenceType(&this, ulRecurrenceType);
+			}
+			public HRESULT get_TileXML(uint8** pTileXml, uint32* pcbTileXml) mut
+			{
+				return VT.get_TileXML(&this, pTileXml, pcbTileXml);
+			}
+			public HRESULT set_TileXML(uint8* pTileXml, uint32 cbTileXml) mut
+			{
+				return VT.set_TileXML(&this, pTileXml, cbTileXml);
+			}
+			public HRESULT get_UrlXML(uint8** pUrlXML, uint32* pcbUrlXML) mut
+			{
+				return VT.get_UrlXML(&this, pUrlXML, pcbUrlXML);
+			}
+			public HRESULT set_UrlXML(uint8* pUrlXML, uint32 cbUrlXML) mut
+			{
+				return VT.set_UrlXML(&this, pUrlXML, cbUrlXML);
+			}
+			public HRESULT get_AttemptCount(uint32* pAttemptCount) mut
+			{
+				return VT.get_AttemptCount(&this, pAttemptCount);
+			}
+			public HRESULT set_AttemptCount(uint32 ulAttemptCount) mut
+			{
+				return VT.set_AttemptCount(&this, ulAttemptCount);
+			}
+			public HRESULT get_DownloadState(uint32* pDownloadState) mut
+			{
+				return VT.get_DownloadState(&this, pDownloadState);
+			}
+			public HRESULT set_DownloadState(uint32 ulDownloadState) mut
+			{
+				return VT.set_DownloadState(&this, ulDownloadState);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMLiveTileJobInfo *self, Guid* pProductID) get_ProductID;
-				public function HRESULT(IPMLiveTileJobInfo *self, BSTR* pTileID) get_TileID;
-				public function HRESULT(IPMLiveTileJobInfo *self, FILETIME* pNextSchedule) get_NextSchedule;
-				public function HRESULT(IPMLiveTileJobInfo *self, FILETIME ftNextSchedule) set_NextSchedule;
-				public function HRESULT(IPMLiveTileJobInfo *self, FILETIME* pStartSchedule) get_StartSchedule;
-				public function HRESULT(IPMLiveTileJobInfo *self, FILETIME ftStartSchedule) set_StartSchedule;
-				public function HRESULT(IPMLiveTileJobInfo *self, uint32* pIntervalDuration) get_IntervalDuration;
-				public function HRESULT(IPMLiveTileJobInfo *self, uint32 ulIntervalDuration) set_IntervalDuration;
-				public function HRESULT(IPMLiveTileJobInfo *self, BOOL* IsRunForever) get_RunForever;
-				public function HRESULT(IPMLiveTileJobInfo *self, BOOL fRunForever) set_RunForever;
-				public function HRESULT(IPMLiveTileJobInfo *self, uint32* pMaxRunCount) get_MaxRunCount;
-				public function HRESULT(IPMLiveTileJobInfo *self, uint32 ulMaxRunCount) set_MaxRunCount;
-				public function HRESULT(IPMLiveTileJobInfo *self, uint32* pRunCount) get_RunCount;
-				public function HRESULT(IPMLiveTileJobInfo *self, uint32 ulRunCount) set_RunCount;
-				public function HRESULT(IPMLiveTileJobInfo *self, uint32* pRecurrenceType) get_RecurrenceType;
-				public function HRESULT(IPMLiveTileJobInfo *self, uint32 ulRecurrenceType) set_RecurrenceType;
-				public function HRESULT(IPMLiveTileJobInfo *self, uint8** pTileXml, uint32* pcbTileXml) get_TileXML;
-				public function HRESULT(IPMLiveTileJobInfo *self, uint8* pTileXml, uint32 cbTileXml) set_TileXML;
-				public function HRESULT(IPMLiveTileJobInfo *self, uint8** pUrlXML, uint32* pcbUrlXML) get_UrlXML;
-				public function HRESULT(IPMLiveTileJobInfo *self, uint8* pUrlXML, uint32 cbUrlXML) set_UrlXML;
-				public function HRESULT(IPMLiveTileJobInfo *self, uint32* pAttemptCount) get_AttemptCount;
-				public function HRESULT(IPMLiveTileJobInfo *self, uint32 ulAttemptCount) set_AttemptCount;
-				public function HRESULT(IPMLiveTileJobInfo *self, uint32* pDownloadState) get_DownloadState;
-				public function HRESULT(IPMLiveTileJobInfo *self, uint32 ulDownloadState) set_DownloadState;
+				public new function HRESULT(IPMLiveTileJobInfo *self, Guid* pProductID) get_ProductID;
+				public new function HRESULT(IPMLiveTileJobInfo *self, BSTR* pTileID) get_TileID;
+				public new function HRESULT(IPMLiveTileJobInfo *self, FILETIME* pNextSchedule) get_NextSchedule;
+				public new function HRESULT(IPMLiveTileJobInfo *self, FILETIME ftNextSchedule) set_NextSchedule;
+				public new function HRESULT(IPMLiveTileJobInfo *self, FILETIME* pStartSchedule) get_StartSchedule;
+				public new function HRESULT(IPMLiveTileJobInfo *self, FILETIME ftStartSchedule) set_StartSchedule;
+				public new function HRESULT(IPMLiveTileJobInfo *self, uint32* pIntervalDuration) get_IntervalDuration;
+				public new function HRESULT(IPMLiveTileJobInfo *self, uint32 ulIntervalDuration) set_IntervalDuration;
+				public new function HRESULT(IPMLiveTileJobInfo *self, BOOL* IsRunForever) get_RunForever;
+				public new function HRESULT(IPMLiveTileJobInfo *self, BOOL fRunForever) set_RunForever;
+				public new function HRESULT(IPMLiveTileJobInfo *self, uint32* pMaxRunCount) get_MaxRunCount;
+				public new function HRESULT(IPMLiveTileJobInfo *self, uint32 ulMaxRunCount) set_MaxRunCount;
+				public new function HRESULT(IPMLiveTileJobInfo *self, uint32* pRunCount) get_RunCount;
+				public new function HRESULT(IPMLiveTileJobInfo *self, uint32 ulRunCount) set_RunCount;
+				public new function HRESULT(IPMLiveTileJobInfo *self, uint32* pRecurrenceType) get_RecurrenceType;
+				public new function HRESULT(IPMLiveTileJobInfo *self, uint32 ulRecurrenceType) set_RecurrenceType;
+				public new function HRESULT(IPMLiveTileJobInfo *self, uint8** pTileXml, uint32* pcbTileXml) get_TileXML;
+				public new function HRESULT(IPMLiveTileJobInfo *self, uint8* pTileXml, uint32 cbTileXml) set_TileXML;
+				public new function HRESULT(IPMLiveTileJobInfo *self, uint8** pUrlXML, uint32* pcbUrlXML) get_UrlXML;
+				public new function HRESULT(IPMLiveTileJobInfo *self, uint8* pUrlXML, uint32 cbUrlXML) set_UrlXML;
+				public new function HRESULT(IPMLiveTileJobInfo *self, uint32* pAttemptCount) get_AttemptCount;
+				public new function HRESULT(IPMLiveTileJobInfo *self, uint32 ulAttemptCount) set_AttemptCount;
+				public new function HRESULT(IPMLiveTileJobInfo *self, uint32* pDownloadState) get_DownloadState;
+				public new function HRESULT(IPMLiveTileJobInfo *self, uint32 ulDownloadState) set_DownloadState;
 			}
 		}
 		[CRepr]
@@ -2245,11 +2978,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbc042582, 0x9415, 0x4f36, 0x9f, 0x99, 0x06, 0xf1, 0x04, 0xc0, 0x7c, 0x03);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Next(IPMLiveTileJobInfo** ppLiveTileJobInfo) mut
+			{
+				return VT.get_Next(&this, ppLiveTileJobInfo);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMLiveTileJobInfoEnumerator *self, IPMLiveTileJobInfo** ppLiveTileJobInfo) get_Next;
+				public new function HRESULT(IPMLiveTileJobInfoEnumerator *self, IPMLiveTileJobInfo** ppLiveTileJobInfo) get_Next;
 			}
 		}
 		[CRepr]
@@ -2257,45 +2995,186 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x35f785fa, 0x1979, 0x4a8b, 0xbc, 0x8f, 0xfd, 0x70, 0xeb, 0x0d, 0x15, 0x44);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ReportDownloadBegin(Guid productID) mut
+			{
+				return VT.ReportDownloadBegin(&this, productID);
+			}
+			public HRESULT ReportDownloadProgress(Guid productID, uint16 usProgress) mut
+			{
+				return VT.ReportDownloadProgress(&this, productID, usProgress);
+			}
+			public HRESULT ReportDownloadComplete(Guid productID, HRESULT hrResult) mut
+			{
+				return VT.ReportDownloadComplete(&this, productID, hrResult);
+			}
+			public HRESULT BeginInstall(PM_INSTALLINFO* pInstallInfo) mut
+			{
+				return VT.BeginInstall(&this, pInstallInfo);
+			}
+			public HRESULT BeginUpdate(PM_UPDATEINFO* pUpdateInfo) mut
+			{
+				return VT.BeginUpdate(&this, pUpdateInfo);
+			}
+			public HRESULT BeginDeployPackage(PM_INSTALLINFO* pInstallInfo) mut
+			{
+				return VT.BeginDeployPackage(&this, pInstallInfo);
+			}
+			public HRESULT BeginUpdateDeployedPackageLegacy(PM_UPDATEINFO_LEGACY* pUpdateInfo) mut
+			{
+				return VT.BeginUpdateDeployedPackageLegacy(&this, pUpdateInfo);
+			}
+			public HRESULT BeginUninstall(Guid productID) mut
+			{
+				return VT.BeginUninstall(&this, productID);
+			}
+			public HRESULT BeginEnterpriseAppInstall(PM_INSTALLINFO* pInstallInfo) mut
+			{
+				return VT.BeginEnterpriseAppInstall(&this, pInstallInfo);
+			}
+			public HRESULT BeginEnterpriseAppUpdate(PM_UPDATEINFO* pUpdateInfo) mut
+			{
+				return VT.BeginEnterpriseAppUpdate(&this, pUpdateInfo);
+			}
+			public HRESULT BeginUpdateLicense(Guid productID, Guid offerID, uint8* pbLicense, uint32 cbLicense) mut
+			{
+				return VT.BeginUpdateLicense(&this, productID, offerID, pbLicense, cbLicense);
+			}
+			public HRESULT GetLicenseChallenge(BSTR PackagePath, uint8** ppbChallenge, uint32* pcbChallenge, uint8** ppbKID, uint32* pcbKID, uint8** ppbDeviceID, uint32* pcbDeviceID, uint8** ppbSaltValue, uint32* pcbSaltValue, uint8** ppbKGVValue, uint32* pcbKGVValue) mut
+			{
+				return VT.GetLicenseChallenge(&this, PackagePath, ppbChallenge, pcbChallenge, ppbKID, pcbKID, ppbDeviceID, pcbDeviceID, ppbSaltValue, pcbSaltValue, ppbKGVValue, pcbKGVValue);
+			}
+			public HRESULT GetLicenseChallengeByProductID(Guid ProductID, uint8** ppbChallenge, uint32* pcbLicense) mut
+			{
+				return VT.GetLicenseChallengeByProductID(&this, ProductID, ppbChallenge, pcbLicense);
+			}
+			public HRESULT GetLicenseChallengeByProductID2(Guid ProductID, uint8** ppbChallenge, uint32* pcbLicense, uint8** ppbKID, uint32* pcbKID, uint8** ppbDeviceID, uint32* pcbDeviceID, uint8** ppbSaltValue, uint32* pcbSaltValue, uint8** ppbKGVValue, uint32* pcbKGVValue) mut
+			{
+				return VT.GetLicenseChallengeByProductID2(&this, ProductID, ppbChallenge, pcbLicense, ppbKID, pcbKID, ppbDeviceID, pcbDeviceID, ppbSaltValue, pcbSaltValue, ppbKGVValue, pcbKGVValue);
+			}
+			public HRESULT RevokeLicense(Guid productID) mut
+			{
+				return VT.RevokeLicense(&this, productID);
+			}
+			public HRESULT RebindMdilBinaries(Guid ProductID, SAFEARRAY* FileNames) mut
+			{
+				return VT.RebindMdilBinaries(&this, ProductID, FileNames);
+			}
+			public HRESULT RebindAllMdilBinaries(Guid ProductID, Guid InstanceID) mut
+			{
+				return VT.RebindAllMdilBinaries(&this, ProductID, InstanceID);
+			}
+			public HRESULT RegenerateXbf(Guid ProductID, SAFEARRAY* AssemblyPaths) mut
+			{
+				return VT.RegenerateXbf(&this, ProductID, AssemblyPaths);
+			}
+			public HRESULT GenerateXbfForCurrentLocale(Guid ProductID) mut
+			{
+				return VT.GenerateXbfForCurrentLocale(&this, ProductID);
+			}
+			public HRESULT BeginProvision(Guid ProductID, BSTR XMLpath) mut
+			{
+				return VT.BeginProvision(&this, ProductID, XMLpath);
+			}
+			public HRESULT BeginDeprovision(Guid ProductID) mut
+			{
+				return VT.BeginDeprovision(&this, ProductID);
+			}
+			public HRESULT ReindexSQLCEDatabases(Guid ProductID) mut
+			{
+				return VT.ReindexSQLCEDatabases(&this, ProductID);
+			}
+			public HRESULT SetApplicationsNeedMaintenance(uint32 RequiredMaintenanceOperations, uint32* pcApplications) mut
+			{
+				return VT.SetApplicationsNeedMaintenance(&this, RequiredMaintenanceOperations, pcApplications);
+			}
+			public HRESULT UpdateChamberProfile(Guid ProductID) mut
+			{
+				return VT.UpdateChamberProfile(&this, ProductID);
+			}
+			public HRESULT EnterprisePolicyIsApplicationAllowed(Guid productId, PWSTR publisherName, BOOL* pIsAllowed) mut
+			{
+				return VT.EnterprisePolicyIsApplicationAllowed(&this, productId, publisherName, pIsAllowed);
+			}
+			public HRESULT BeginUpdateDeployedPackage(PM_UPDATEINFO* pUpdateInfo) mut
+			{
+				return VT.BeginUpdateDeployedPackage(&this, pUpdateInfo);
+			}
+			public HRESULT ReportRestoreCancelled(Guid productID) mut
+			{
+				return VT.ReportRestoreCancelled(&this, productID);
+			}
+			public HRESULT ResolveResourceString(PWSTR resourceString, BSTR* pResolvedResourceString) mut
+			{
+				return VT.ResolveResourceString(&this, resourceString, pResolvedResourceString);
+			}
+			public HRESULT UpdateCapabilitiesForModernApps() mut
+			{
+				return VT.UpdateCapabilitiesForModernApps(&this);
+			}
+			public HRESULT ReportDownloadStatusUpdate(Guid productId) mut
+			{
+				return VT.ReportDownloadStatusUpdate(&this, productId);
+			}
+			public HRESULT BeginUninstallWithOptions(Guid productID, uint32 removalOptions) mut
+			{
+				return VT.BeginUninstallWithOptions(&this, productID, removalOptions);
+			}
+			public HRESULT BindDeferredMdilBinaries() mut
+			{
+				return VT.BindDeferredMdilBinaries(&this);
+			}
+			public HRESULT GenerateXamlLightupXbfForCurrentLocale(BSTR PackageFamilyName) mut
+			{
+				return VT.GenerateXamlLightupXbfForCurrentLocale(&this, PackageFamilyName);
+			}
+			public HRESULT AddLicenseForAppx(Guid productID, uint8* pbLicense, uint32 cbLicense, uint8* pbPlayReadyHeader, uint32 cbPlayReadyHeader) mut
+			{
+				return VT.AddLicenseForAppx(&this, productID, pbLicense, cbLicense, pbPlayReadyHeader, cbPlayReadyHeader);
+			}
+			public HRESULT FixJunctionsForAppsOnSDCard() mut
+			{
+				return VT.FixJunctionsForAppsOnSDCard(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMDeploymentManager *self, Guid productID) ReportDownloadBegin;
-				public function HRESULT(IPMDeploymentManager *self, Guid productID, uint16 usProgress) ReportDownloadProgress;
-				public function HRESULT(IPMDeploymentManager *self, Guid productID, HRESULT hrResult) ReportDownloadComplete;
-				public function HRESULT(IPMDeploymentManager *self, PM_INSTALLINFO* pInstallInfo) BeginInstall;
-				public function HRESULT(IPMDeploymentManager *self, PM_UPDATEINFO* pUpdateInfo) BeginUpdate;
-				public function HRESULT(IPMDeploymentManager *self, PM_INSTALLINFO* pInstallInfo) BeginDeployPackage;
-				public function HRESULT(IPMDeploymentManager *self, PM_UPDATEINFO_LEGACY* pUpdateInfo) BeginUpdateDeployedPackageLegacy;
-				public function HRESULT(IPMDeploymentManager *self, Guid productID) BeginUninstall;
-				public function HRESULT(IPMDeploymentManager *self, PM_INSTALLINFO* pInstallInfo) BeginEnterpriseAppInstall;
-				public function HRESULT(IPMDeploymentManager *self, PM_UPDATEINFO* pUpdateInfo) BeginEnterpriseAppUpdate;
-				public function HRESULT(IPMDeploymentManager *self, Guid productID, Guid offerID, uint8* pbLicense, uint32 cbLicense) BeginUpdateLicense;
-				public function HRESULT(IPMDeploymentManager *self, BSTR PackagePath, uint8** ppbChallenge, uint32* pcbChallenge, uint8** ppbKID, uint32* pcbKID, uint8** ppbDeviceID, uint32* pcbDeviceID, uint8** ppbSaltValue, uint32* pcbSaltValue, uint8** ppbKGVValue, uint32* pcbKGVValue) GetLicenseChallenge;
-				public function HRESULT(IPMDeploymentManager *self, Guid ProductID, uint8** ppbChallenge, uint32* pcbLicense) GetLicenseChallengeByProductID;
-				public function HRESULT(IPMDeploymentManager *self, Guid ProductID, uint8** ppbChallenge, uint32* pcbLicense, uint8** ppbKID, uint32* pcbKID, uint8** ppbDeviceID, uint32* pcbDeviceID, uint8** ppbSaltValue, uint32* pcbSaltValue, uint8** ppbKGVValue, uint32* pcbKGVValue) GetLicenseChallengeByProductID2;
-				public function HRESULT(IPMDeploymentManager *self, Guid productID) RevokeLicense;
-				public function HRESULT(IPMDeploymentManager *self, Guid ProductID, SAFEARRAY* FileNames) RebindMdilBinaries;
-				public function HRESULT(IPMDeploymentManager *self, Guid ProductID, Guid InstanceID) RebindAllMdilBinaries;
-				public function HRESULT(IPMDeploymentManager *self, Guid ProductID, SAFEARRAY* AssemblyPaths) RegenerateXbf;
-				public function HRESULT(IPMDeploymentManager *self, Guid ProductID) GenerateXbfForCurrentLocale;
-				public function HRESULT(IPMDeploymentManager *self, Guid ProductID, BSTR XMLpath) BeginProvision;
-				public function HRESULT(IPMDeploymentManager *self, Guid ProductID) BeginDeprovision;
-				public function HRESULT(IPMDeploymentManager *self, Guid ProductID) ReindexSQLCEDatabases;
-				public function HRESULT(IPMDeploymentManager *self, uint32 RequiredMaintenanceOperations, uint32* pcApplications) SetApplicationsNeedMaintenance;
-				public function HRESULT(IPMDeploymentManager *self, Guid ProductID) UpdateChamberProfile;
-				public function HRESULT(IPMDeploymentManager *self, Guid productId, PWSTR publisherName, BOOL* pIsAllowed) EnterprisePolicyIsApplicationAllowed;
-				public function HRESULT(IPMDeploymentManager *self, PM_UPDATEINFO* pUpdateInfo) BeginUpdateDeployedPackage;
-				public function HRESULT(IPMDeploymentManager *self, Guid productID) ReportRestoreCancelled;
-				public function HRESULT(IPMDeploymentManager *self, PWSTR resourceString, BSTR* pResolvedResourceString) ResolveResourceString;
-				public function HRESULT(IPMDeploymentManager *self) UpdateCapabilitiesForModernApps;
-				public function HRESULT(IPMDeploymentManager *self, Guid productId) ReportDownloadStatusUpdate;
-				public function HRESULT(IPMDeploymentManager *self, Guid productID, uint32 removalOptions) BeginUninstallWithOptions;
-				public function HRESULT(IPMDeploymentManager *self) BindDeferredMdilBinaries;
-				public function HRESULT(IPMDeploymentManager *self, BSTR PackageFamilyName) GenerateXamlLightupXbfForCurrentLocale;
-				public function HRESULT(IPMDeploymentManager *self, Guid productID, uint8* pbLicense, uint32 cbLicense, uint8* pbPlayReadyHeader, uint32 cbPlayReadyHeader) AddLicenseForAppx;
-				public function HRESULT(IPMDeploymentManager *self) FixJunctionsForAppsOnSDCard;
+				public new function HRESULT(IPMDeploymentManager *self, Guid productID) ReportDownloadBegin;
+				public new function HRESULT(IPMDeploymentManager *self, Guid productID, uint16 usProgress) ReportDownloadProgress;
+				public new function HRESULT(IPMDeploymentManager *self, Guid productID, HRESULT hrResult) ReportDownloadComplete;
+				public new function HRESULT(IPMDeploymentManager *self, PM_INSTALLINFO* pInstallInfo) BeginInstall;
+				public new function HRESULT(IPMDeploymentManager *self, PM_UPDATEINFO* pUpdateInfo) BeginUpdate;
+				public new function HRESULT(IPMDeploymentManager *self, PM_INSTALLINFO* pInstallInfo) BeginDeployPackage;
+				public new function HRESULT(IPMDeploymentManager *self, PM_UPDATEINFO_LEGACY* pUpdateInfo) BeginUpdateDeployedPackageLegacy;
+				public new function HRESULT(IPMDeploymentManager *self, Guid productID) BeginUninstall;
+				public new function HRESULT(IPMDeploymentManager *self, PM_INSTALLINFO* pInstallInfo) BeginEnterpriseAppInstall;
+				public new function HRESULT(IPMDeploymentManager *self, PM_UPDATEINFO* pUpdateInfo) BeginEnterpriseAppUpdate;
+				public new function HRESULT(IPMDeploymentManager *self, Guid productID, Guid offerID, uint8* pbLicense, uint32 cbLicense) BeginUpdateLicense;
+				public new function HRESULT(IPMDeploymentManager *self, BSTR PackagePath, uint8** ppbChallenge, uint32* pcbChallenge, uint8** ppbKID, uint32* pcbKID, uint8** ppbDeviceID, uint32* pcbDeviceID, uint8** ppbSaltValue, uint32* pcbSaltValue, uint8** ppbKGVValue, uint32* pcbKGVValue) GetLicenseChallenge;
+				public new function HRESULT(IPMDeploymentManager *self, Guid ProductID, uint8** ppbChallenge, uint32* pcbLicense) GetLicenseChallengeByProductID;
+				public new function HRESULT(IPMDeploymentManager *self, Guid ProductID, uint8** ppbChallenge, uint32* pcbLicense, uint8** ppbKID, uint32* pcbKID, uint8** ppbDeviceID, uint32* pcbDeviceID, uint8** ppbSaltValue, uint32* pcbSaltValue, uint8** ppbKGVValue, uint32* pcbKGVValue) GetLicenseChallengeByProductID2;
+				public new function HRESULT(IPMDeploymentManager *self, Guid productID) RevokeLicense;
+				public new function HRESULT(IPMDeploymentManager *self, Guid ProductID, SAFEARRAY* FileNames) RebindMdilBinaries;
+				public new function HRESULT(IPMDeploymentManager *self, Guid ProductID, Guid InstanceID) RebindAllMdilBinaries;
+				public new function HRESULT(IPMDeploymentManager *self, Guid ProductID, SAFEARRAY* AssemblyPaths) RegenerateXbf;
+				public new function HRESULT(IPMDeploymentManager *self, Guid ProductID) GenerateXbfForCurrentLocale;
+				public new function HRESULT(IPMDeploymentManager *self, Guid ProductID, BSTR XMLpath) BeginProvision;
+				public new function HRESULT(IPMDeploymentManager *self, Guid ProductID) BeginDeprovision;
+				public new function HRESULT(IPMDeploymentManager *self, Guid ProductID) ReindexSQLCEDatabases;
+				public new function HRESULT(IPMDeploymentManager *self, uint32 RequiredMaintenanceOperations, uint32* pcApplications) SetApplicationsNeedMaintenance;
+				public new function HRESULT(IPMDeploymentManager *self, Guid ProductID) UpdateChamberProfile;
+				public new function HRESULT(IPMDeploymentManager *self, Guid productId, PWSTR publisherName, BOOL* pIsAllowed) EnterprisePolicyIsApplicationAllowed;
+				public new function HRESULT(IPMDeploymentManager *self, PM_UPDATEINFO* pUpdateInfo) BeginUpdateDeployedPackage;
+				public new function HRESULT(IPMDeploymentManager *self, Guid productID) ReportRestoreCancelled;
+				public new function HRESULT(IPMDeploymentManager *self, PWSTR resourceString, BSTR* pResolvedResourceString) ResolveResourceString;
+				public new function HRESULT(IPMDeploymentManager *self) UpdateCapabilitiesForModernApps;
+				public new function HRESULT(IPMDeploymentManager *self, Guid productId) ReportDownloadStatusUpdate;
+				public new function HRESULT(IPMDeploymentManager *self, Guid productID, uint32 removalOptions) BeginUninstallWithOptions;
+				public new function HRESULT(IPMDeploymentManager *self) BindDeferredMdilBinaries;
+				public new function HRESULT(IPMDeploymentManager *self, BSTR PackageFamilyName) GenerateXamlLightupXbfForCurrentLocale;
+				public new function HRESULT(IPMDeploymentManager *self, Guid productID, uint8* pbLicense, uint32 cbLicense, uint8* pbPlayReadyHeader, uint32 cbPlayReadyHeader) AddLicenseForAppx;
+				public new function HRESULT(IPMDeploymentManager *self) FixJunctionsForAppsOnSDCard;
 			}
 		}
 		[CRepr]
@@ -2303,28 +3182,101 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x698d57c2, 0x292d, 0x4cf3, 0xb7, 0x3c, 0xd9, 0x5a, 0x69, 0x22, 0xed, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_AllApplications(IPMApplicationInfoEnumerator** ppAppEnum, PM_ENUM_FILTER Filter) mut
+			{
+				return VT.get_AllApplications(&this, ppAppEnum, Filter);
+			}
+			public HRESULT get_AllTiles(IPMTileInfoEnumerator** ppTileEnum, PM_ENUM_FILTER Filter) mut
+			{
+				return VT.get_AllTiles(&this, ppTileEnum, Filter);
+			}
+			public HRESULT get_AllTasks(IPMTaskInfoEnumerator** ppTaskEnum, PM_ENUM_FILTER Filter) mut
+			{
+				return VT.get_AllTasks(&this, ppTaskEnum, Filter);
+			}
+			public HRESULT get_AllExtensions(IPMExtensionInfoEnumerator** ppExtensionEnum, PM_ENUM_FILTER Filter) mut
+			{
+				return VT.get_AllExtensions(&this, ppExtensionEnum, Filter);
+			}
+			public HRESULT get_AllBackgroundServiceAgents(IPMBackgroundServiceAgentInfoEnumerator** ppBSAEnum, PM_ENUM_FILTER Filter) mut
+			{
+				return VT.get_AllBackgroundServiceAgents(&this, ppBSAEnum, Filter);
+			}
+			public HRESULT get_AllBackgroundWorkers(IPMBackgroundWorkerInfoEnumerator** ppBSWEnum, PM_ENUM_FILTER Filter) mut
+			{
+				return VT.get_AllBackgroundWorkers(&this, ppBSWEnum, Filter);
+			}
+			public HRESULT get_ApplicationInfo(Guid ProductID, IPMApplicationInfo** ppAppInfo) mut
+			{
+				return VT.get_ApplicationInfo(&this, ProductID, ppAppInfo);
+			}
+			public HRESULT get_TileInfo(Guid ProductID, BSTR TileID, IPMTileInfo** ppTileInfo) mut
+			{
+				return VT.get_TileInfo(&this, ProductID, TileID, ppTileInfo);
+			}
+			public HRESULT get_TaskInfo(Guid ProductID, BSTR TaskID, IPMTaskInfo** ppTaskInfo) mut
+			{
+				return VT.get_TaskInfo(&this, ProductID, TaskID, ppTaskInfo);
+			}
+			public HRESULT get_TaskInfoEx(Guid ProductID, PWSTR TaskID, IPMTaskInfo** ppTaskInfo) mut
+			{
+				return VT.get_TaskInfoEx(&this, ProductID, TaskID, ppTaskInfo);
+			}
+			public HRESULT get_BackgroundServiceAgentInfo(uint32 BSAID, IPMBackgroundServiceAgentInfo** ppTaskInfo) mut
+			{
+				return VT.get_BackgroundServiceAgentInfo(&this, BSAID, ppTaskInfo);
+			}
+			public HRESULT get_AllLiveTileJobs(IPMLiveTileJobInfoEnumerator** ppLiveTileJobEnum) mut
+			{
+				return VT.get_AllLiveTileJobs(&this, ppLiveTileJobEnum);
+			}
+			public HRESULT get_LiveTileJob(Guid ProductID, BSTR TileID, PM_LIVETILE_RECURRENCE_TYPE RecurrenceType, IPMLiveTileJobInfo** ppLiveTileJobInfo) mut
+			{
+				return VT.get_LiveTileJob(&this, ProductID, TileID, RecurrenceType, ppLiveTileJobInfo);
+			}
+			public HRESULT get_ApplicationInfoExternal(Guid ProductID, IPMApplicationInfo** ppAppInfo) mut
+			{
+				return VT.get_ApplicationInfoExternal(&this, ProductID, ppAppInfo);
+			}
+			public HRESULT get_FileHandlerGenericLogo(BSTR FileType, PM_LOGO_SIZE LogoSize, BSTR* pLogo) mut
+			{
+				return VT.get_FileHandlerGenericLogo(&this, FileType, LogoSize, pLogo);
+			}
+			public HRESULT get_ApplicationInfoFromAccessClaims(BSTR SysAppID0, BSTR SysAppID1, IPMApplicationInfo** ppAppInfo) mut
+			{
+				return VT.get_ApplicationInfoFromAccessClaims(&this, SysAppID0, SysAppID1, ppAppInfo);
+			}
+			public HRESULT get_StartTileEnumeratorBlob(PM_ENUM_FILTER Filter, uint32* pcTiles, PM_STARTTILEBLOB** ppTileBlobs) mut
+			{
+				return VT.get_StartTileEnumeratorBlob(&this, Filter, pcTiles, ppTileBlobs);
+			}
+			public HRESULT get_StartAppEnumeratorBlob(PM_ENUM_FILTER Filter, uint32* pcApps, PM_STARTAPPBLOB** ppAppBlobs) mut
+			{
+				return VT.get_StartAppEnumeratorBlob(&this, Filter, pcApps, ppAppBlobs);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMEnumerationManager *self, IPMApplicationInfoEnumerator** ppAppEnum, PM_ENUM_FILTER Filter) get_AllApplications;
-				public function HRESULT(IPMEnumerationManager *self, IPMTileInfoEnumerator** ppTileEnum, PM_ENUM_FILTER Filter) get_AllTiles;
-				public function HRESULT(IPMEnumerationManager *self, IPMTaskInfoEnumerator** ppTaskEnum, PM_ENUM_FILTER Filter) get_AllTasks;
-				public function HRESULT(IPMEnumerationManager *self, IPMExtensionInfoEnumerator** ppExtensionEnum, PM_ENUM_FILTER Filter) get_AllExtensions;
-				public function HRESULT(IPMEnumerationManager *self, IPMBackgroundServiceAgentInfoEnumerator** ppBSAEnum, PM_ENUM_FILTER Filter) get_AllBackgroundServiceAgents;
-				public function HRESULT(IPMEnumerationManager *self, IPMBackgroundWorkerInfoEnumerator** ppBSWEnum, PM_ENUM_FILTER Filter) get_AllBackgroundWorkers;
-				public function HRESULT(IPMEnumerationManager *self, Guid ProductID, IPMApplicationInfo** ppAppInfo) get_ApplicationInfo;
-				public function HRESULT(IPMEnumerationManager *self, Guid ProductID, BSTR TileID, IPMTileInfo** ppTileInfo) get_TileInfo;
-				public function HRESULT(IPMEnumerationManager *self, Guid ProductID, BSTR TaskID, IPMTaskInfo** ppTaskInfo) get_TaskInfo;
-				public function HRESULT(IPMEnumerationManager *self, Guid ProductID, PWSTR TaskID, IPMTaskInfo** ppTaskInfo) get_TaskInfoEx;
-				public function HRESULT(IPMEnumerationManager *self, uint32 BSAID, IPMBackgroundServiceAgentInfo** ppTaskInfo) get_BackgroundServiceAgentInfo;
-				public function HRESULT(IPMEnumerationManager *self, IPMLiveTileJobInfoEnumerator** ppLiveTileJobEnum) get_AllLiveTileJobs;
-				public function HRESULT(IPMEnumerationManager *self, Guid ProductID, BSTR TileID, PM_LIVETILE_RECURRENCE_TYPE RecurrenceType, IPMLiveTileJobInfo** ppLiveTileJobInfo) get_LiveTileJob;
-				public function HRESULT(IPMEnumerationManager *self, Guid ProductID, IPMApplicationInfo** ppAppInfo) get_ApplicationInfoExternal;
-				public function HRESULT(IPMEnumerationManager *self, BSTR FileType, PM_LOGO_SIZE LogoSize, BSTR* pLogo) get_FileHandlerGenericLogo;
-				public function HRESULT(IPMEnumerationManager *self, BSTR SysAppID0, BSTR SysAppID1, IPMApplicationInfo** ppAppInfo) get_ApplicationInfoFromAccessClaims;
-				public function HRESULT(IPMEnumerationManager *self, PM_ENUM_FILTER Filter, uint32* pcTiles, PM_STARTTILEBLOB** ppTileBlobs) get_StartTileEnumeratorBlob;
-				public function HRESULT(IPMEnumerationManager *self, PM_ENUM_FILTER Filter, uint32* pcApps, PM_STARTAPPBLOB** ppAppBlobs) get_StartAppEnumeratorBlob;
+				public new function HRESULT(IPMEnumerationManager *self, IPMApplicationInfoEnumerator** ppAppEnum, PM_ENUM_FILTER Filter) get_AllApplications;
+				public new function HRESULT(IPMEnumerationManager *self, IPMTileInfoEnumerator** ppTileEnum, PM_ENUM_FILTER Filter) get_AllTiles;
+				public new function HRESULT(IPMEnumerationManager *self, IPMTaskInfoEnumerator** ppTaskEnum, PM_ENUM_FILTER Filter) get_AllTasks;
+				public new function HRESULT(IPMEnumerationManager *self, IPMExtensionInfoEnumerator** ppExtensionEnum, PM_ENUM_FILTER Filter) get_AllExtensions;
+				public new function HRESULT(IPMEnumerationManager *self, IPMBackgroundServiceAgentInfoEnumerator** ppBSAEnum, PM_ENUM_FILTER Filter) get_AllBackgroundServiceAgents;
+				public new function HRESULT(IPMEnumerationManager *self, IPMBackgroundWorkerInfoEnumerator** ppBSWEnum, PM_ENUM_FILTER Filter) get_AllBackgroundWorkers;
+				public new function HRESULT(IPMEnumerationManager *self, Guid ProductID, IPMApplicationInfo** ppAppInfo) get_ApplicationInfo;
+				public new function HRESULT(IPMEnumerationManager *self, Guid ProductID, BSTR TileID, IPMTileInfo** ppTileInfo) get_TileInfo;
+				public new function HRESULT(IPMEnumerationManager *self, Guid ProductID, BSTR TaskID, IPMTaskInfo** ppTaskInfo) get_TaskInfo;
+				public new function HRESULT(IPMEnumerationManager *self, Guid ProductID, PWSTR TaskID, IPMTaskInfo** ppTaskInfo) get_TaskInfoEx;
+				public new function HRESULT(IPMEnumerationManager *self, uint32 BSAID, IPMBackgroundServiceAgentInfo** ppTaskInfo) get_BackgroundServiceAgentInfo;
+				public new function HRESULT(IPMEnumerationManager *self, IPMLiveTileJobInfoEnumerator** ppLiveTileJobEnum) get_AllLiveTileJobs;
+				public new function HRESULT(IPMEnumerationManager *self, Guid ProductID, BSTR TileID, PM_LIVETILE_RECURRENCE_TYPE RecurrenceType, IPMLiveTileJobInfo** ppLiveTileJobInfo) get_LiveTileJob;
+				public new function HRESULT(IPMEnumerationManager *self, Guid ProductID, IPMApplicationInfo** ppAppInfo) get_ApplicationInfoExternal;
+				public new function HRESULT(IPMEnumerationManager *self, BSTR FileType, PM_LOGO_SIZE LogoSize, BSTR* pLogo) get_FileHandlerGenericLogo;
+				public new function HRESULT(IPMEnumerationManager *self, BSTR SysAppID0, BSTR SysAppID1, IPMApplicationInfo** ppAppInfo) get_ApplicationInfoFromAccessClaims;
+				public new function HRESULT(IPMEnumerationManager *self, PM_ENUM_FILTER Filter, uint32* pcTiles, PM_STARTTILEBLOB** ppTileBlobs) get_StartTileEnumeratorBlob;
+				public new function HRESULT(IPMEnumerationManager *self, PM_ENUM_FILTER Filter, uint32* pcApps, PM_STARTAPPBLOB** ppAppBlobs) get_StartAppEnumeratorBlob;
 			}
 		}
 		[CRepr]
@@ -2332,31 +3284,116 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbf1d8c33, 0x1bf5, 0x4ee0, 0xb5, 0x49, 0x6b, 0x9d, 0xd3, 0x83, 0x49, 0x42);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ProductID(Guid* pProductID) mut
+			{
+				return VT.get_ProductID(&this, pProductID);
+			}
+			public HRESULT get_TaskID(BSTR* pTaskID) mut
+			{
+				return VT.get_TaskID(&this, pTaskID);
+			}
+			public HRESULT get_NavigationPage(BSTR* pNavigationPage) mut
+			{
+				return VT.get_NavigationPage(&this, pNavigationPage);
+			}
+			public HRESULT get_TaskTransition(PM_TASK_TRANSITION* pTaskTransition) mut
+			{
+				return VT.get_TaskTransition(&this, pTaskTransition);
+			}
+			public HRESULT get_RuntimeType(PACKMAN_RUNTIME* pRuntimetype) mut
+			{
+				return VT.get_RuntimeType(&this, pRuntimetype);
+			}
+			public HRESULT get_ActivationPolicy(PM_ACTIVATION_POLICY* pActivationPolicy) mut
+			{
+				return VT.get_ActivationPolicy(&this, pActivationPolicy);
+			}
+			public HRESULT get_TaskType(PM_TASK_TYPE* pTaskType) mut
+			{
+				return VT.get_TaskType(&this, pTaskType);
+			}
+			public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut
+			{
+				return VT.get_InvocationInfo(&this, pImageUrn, pParameters);
+			}
+			public HRESULT get_ImagePath(BSTR* pImagePath) mut
+			{
+				return VT.get_ImagePath(&this, pImagePath);
+			}
+			public HRESULT get_ImageParams(BSTR* pImageParams) mut
+			{
+				return VT.get_ImageParams(&this, pImageParams);
+			}
+			public HRESULT get_InstallRootFolder(BSTR* pInstallRootFolder) mut
+			{
+				return VT.get_InstallRootFolder(&this, pInstallRootFolder);
+			}
+			public HRESULT get_DataRootFolder(BSTR* pDataRootFolder) mut
+			{
+				return VT.get_DataRootFolder(&this, pDataRootFolder);
+			}
+			public HRESULT get_IsSingleInstanceHost(BOOL* pIsSingleInstanceHost) mut
+			{
+				return VT.get_IsSingleInstanceHost(&this, pIsSingleInstanceHost);
+			}
+			public HRESULT get_IsInteropEnabled(BOOL* pIsInteropEnabled) mut
+			{
+				return VT.get_IsInteropEnabled(&this, pIsInteropEnabled);
+			}
+			public HRESULT get_ApplicationState(PM_APPLICATION_STATE* pApplicationState) mut
+			{
+				return VT.get_ApplicationState(&this, pApplicationState);
+			}
+			public HRESULT get_InstallType(PM_APPLICATION_INSTALL_TYPE* pInstallType) mut
+			{
+				return VT.get_InstallType(&this, pInstallType);
+			}
+			public HRESULT get_Version(uint8* pTargetMajorVersion, uint8* pTargetMinorVersion) mut
+			{
+				return VT.get_Version(&this, pTargetMajorVersion, pTargetMinorVersion);
+			}
+			public HRESULT get_BitsPerPixel(uint16* pBitsPerPixel) mut
+			{
+				return VT.get_BitsPerPixel(&this, pBitsPerPixel);
+			}
+			public HRESULT get_SuppressesDehydration(BOOL* pSuppressesDehydration) mut
+			{
+				return VT.get_SuppressesDehydration(&this, pSuppressesDehydration);
+			}
+			public HRESULT get_BackgroundExecutionAbilities(BSTR* pBackgroundExecutionAbilities) mut
+			{
+				return VT.get_BackgroundExecutionAbilities(&this, pBackgroundExecutionAbilities);
+			}
+			public HRESULT get_IsOptedForExtendedMem(BOOL* pIsOptedIn) mut
+			{
+				return VT.get_IsOptedForExtendedMem(&this, pIsOptedIn);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMTaskInfo *self, Guid* pProductID) get_ProductID;
-				public function HRESULT(IPMTaskInfo *self, BSTR* pTaskID) get_TaskID;
-				public function HRESULT(IPMTaskInfo *self, BSTR* pNavigationPage) get_NavigationPage;
-				public function HRESULT(IPMTaskInfo *self, PM_TASK_TRANSITION* pTaskTransition) get_TaskTransition;
-				public function HRESULT(IPMTaskInfo *self, PACKMAN_RUNTIME* pRuntimetype) get_RuntimeType;
-				public function HRESULT(IPMTaskInfo *self, PM_ACTIVATION_POLICY* pActivationPolicy) get_ActivationPolicy;
-				public function HRESULT(IPMTaskInfo *self, PM_TASK_TYPE* pTaskType) get_TaskType;
-				public function HRESULT(IPMTaskInfo *self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
-				public function HRESULT(IPMTaskInfo *self, BSTR* pImagePath) get_ImagePath;
-				public function HRESULT(IPMTaskInfo *self, BSTR* pImageParams) get_ImageParams;
-				public function HRESULT(IPMTaskInfo *self, BSTR* pInstallRootFolder) get_InstallRootFolder;
-				public function HRESULT(IPMTaskInfo *self, BSTR* pDataRootFolder) get_DataRootFolder;
-				public function HRESULT(IPMTaskInfo *self, BOOL* pIsSingleInstanceHost) get_IsSingleInstanceHost;
-				public function HRESULT(IPMTaskInfo *self, BOOL* pIsInteropEnabled) get_IsInteropEnabled;
-				public function HRESULT(IPMTaskInfo *self, PM_APPLICATION_STATE* pApplicationState) get_ApplicationState;
-				public function HRESULT(IPMTaskInfo *self, PM_APPLICATION_INSTALL_TYPE* pInstallType) get_InstallType;
-				public function HRESULT(IPMTaskInfo *self, uint8* pTargetMajorVersion, uint8* pTargetMinorVersion) get_Version;
-				public function HRESULT(IPMTaskInfo *self, uint16* pBitsPerPixel) get_BitsPerPixel;
-				public function HRESULT(IPMTaskInfo *self, BOOL* pSuppressesDehydration) get_SuppressesDehydration;
-				public function HRESULT(IPMTaskInfo *self, BSTR* pBackgroundExecutionAbilities) get_BackgroundExecutionAbilities;
-				public function HRESULT(IPMTaskInfo *self, BOOL* pIsOptedIn) get_IsOptedForExtendedMem;
+				public new function HRESULT(IPMTaskInfo *self, Guid* pProductID) get_ProductID;
+				public new function HRESULT(IPMTaskInfo *self, BSTR* pTaskID) get_TaskID;
+				public new function HRESULT(IPMTaskInfo *self, BSTR* pNavigationPage) get_NavigationPage;
+				public new function HRESULT(IPMTaskInfo *self, PM_TASK_TRANSITION* pTaskTransition) get_TaskTransition;
+				public new function HRESULT(IPMTaskInfo *self, PACKMAN_RUNTIME* pRuntimetype) get_RuntimeType;
+				public new function HRESULT(IPMTaskInfo *self, PM_ACTIVATION_POLICY* pActivationPolicy) get_ActivationPolicy;
+				public new function HRESULT(IPMTaskInfo *self, PM_TASK_TYPE* pTaskType) get_TaskType;
+				public new function HRESULT(IPMTaskInfo *self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
+				public new function HRESULT(IPMTaskInfo *self, BSTR* pImagePath) get_ImagePath;
+				public new function HRESULT(IPMTaskInfo *self, BSTR* pImageParams) get_ImageParams;
+				public new function HRESULT(IPMTaskInfo *self, BSTR* pInstallRootFolder) get_InstallRootFolder;
+				public new function HRESULT(IPMTaskInfo *self, BSTR* pDataRootFolder) get_DataRootFolder;
+				public new function HRESULT(IPMTaskInfo *self, BOOL* pIsSingleInstanceHost) get_IsSingleInstanceHost;
+				public new function HRESULT(IPMTaskInfo *self, BOOL* pIsInteropEnabled) get_IsInteropEnabled;
+				public new function HRESULT(IPMTaskInfo *self, PM_APPLICATION_STATE* pApplicationState) get_ApplicationState;
+				public new function HRESULT(IPMTaskInfo *self, PM_APPLICATION_INSTALL_TYPE* pInstallType) get_InstallType;
+				public new function HRESULT(IPMTaskInfo *self, uint8* pTargetMajorVersion, uint8* pTargetMinorVersion) get_Version;
+				public new function HRESULT(IPMTaskInfo *self, uint16* pBitsPerPixel) get_BitsPerPixel;
+				public new function HRESULT(IPMTaskInfo *self, BOOL* pSuppressesDehydration) get_SuppressesDehydration;
+				public new function HRESULT(IPMTaskInfo *self, BSTR* pBackgroundExecutionAbilities) get_BackgroundExecutionAbilities;
+				public new function HRESULT(IPMTaskInfo *self, BOOL* pIsOptedIn) get_IsOptedForExtendedMem;
 			}
 		}
 		[CRepr]
@@ -2364,11 +3401,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0630b0f8, 0x0bbc, 0x4821, 0xbe, 0x74, 0xc7, 0x99, 0x51, 0x66, 0xed, 0x2a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Next(IPMTaskInfo** ppTaskInfo) mut
+			{
+				return VT.get_Next(&this, ppTaskInfo);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMTaskInfoEnumerator *self, IPMTaskInfo** ppTaskInfo) get_Next;
+				public new function HRESULT(IPMTaskInfoEnumerator *self, IPMTaskInfo** ppTaskInfo) get_Next;
 			}
 		}
 		[CRepr]
@@ -2376,16 +3418,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x49acde79, 0x9788, 0x4d0a, 0x8a, 0xa0, 0x17, 0x46, 0xaf, 0xdb, 0x9e, 0x9d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_SupplierPID(Guid* pSupplierPID) mut
+			{
+				return VT.get_SupplierPID(&this, pSupplierPID);
+			}
+			public HRESULT get_SupplierTaskID(BSTR* pSupplierTID) mut
+			{
+				return VT.get_SupplierTaskID(&this, pSupplierTID);
+			}
+			public HRESULT get_Title(BSTR* pTitle) mut
+			{
+				return VT.get_Title(&this, pTitle);
+			}
+			public HRESULT get_IconPath(BSTR* pIconPath) mut
+			{
+				return VT.get_IconPath(&this, pIconPath);
+			}
+			public HRESULT get_ExtraFile(BSTR* pFilePath) mut
+			{
+				return VT.get_ExtraFile(&this, pFilePath);
+			}
+			public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut
+			{
+				return VT.get_InvocationInfo(&this, pImageUrn, pParameters);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMExtensionInfo *self, Guid* pSupplierPID) get_SupplierPID;
-				public function HRESULT(IPMExtensionInfo *self, BSTR* pSupplierTID) get_SupplierTaskID;
-				public function HRESULT(IPMExtensionInfo *self, BSTR* pTitle) get_Title;
-				public function HRESULT(IPMExtensionInfo *self, BSTR* pIconPath) get_IconPath;
-				public function HRESULT(IPMExtensionInfo *self, BSTR* pFilePath) get_ExtraFile;
-				public function HRESULT(IPMExtensionInfo *self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
+				public new function HRESULT(IPMExtensionInfo *self, Guid* pSupplierPID) get_SupplierPID;
+				public new function HRESULT(IPMExtensionInfo *self, BSTR* pSupplierTID) get_SupplierTaskID;
+				public new function HRESULT(IPMExtensionInfo *self, BSTR* pTitle) get_Title;
+				public new function HRESULT(IPMExtensionInfo *self, BSTR* pIconPath) get_IconPath;
+				public new function HRESULT(IPMExtensionInfo *self, BSTR* pFilePath) get_ExtraFile;
+				public new function HRESULT(IPMExtensionInfo *self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
 			}
 		}
 		[CRepr]
@@ -2393,17 +3460,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6b87cb6c, 0x0b88, 0x4989, 0xa4, 0xec, 0x03, 0x37, 0x14, 0xf7, 0x10, 0xd4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Name(BSTR* pName) mut
+			{
+				return VT.get_Name(&this, pName);
+			}
+			public HRESULT get_DisplayName(BSTR* pDisplayName) mut
+			{
+				return VT.get_DisplayName(&this, pDisplayName);
+			}
+			public HRESULT get_Logo(PM_LOGO_SIZE LogoSize, BSTR* pLogo) mut
+			{
+				return VT.get_Logo(&this, LogoSize, pLogo);
+			}
+			public HRESULT get_ContentType(BSTR FileType, BSTR* pContentType) mut
+			{
+				return VT.get_ContentType(&this, FileType, pContentType);
+			}
+			public HRESULT get_FileType(BSTR ContentType, BSTR* pFileType) mut
+			{
+				return VT.get_FileType(&this, ContentType, pFileType);
+			}
+			public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut
+			{
+				return VT.get_InvocationInfo(&this, pImageUrn, pParameters);
+			}
+			public HRESULT get_AllFileTypes(uint32* pcbTypes, BSTR** ppTypes) mut
+			{
+				return VT.get_AllFileTypes(&this, pcbTypes, ppTypes);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMExtensionFileExtensionInfo *self, BSTR* pName) get_Name;
-				public function HRESULT(IPMExtensionFileExtensionInfo *self, BSTR* pDisplayName) get_DisplayName;
-				public function HRESULT(IPMExtensionFileExtensionInfo *self, PM_LOGO_SIZE LogoSize, BSTR* pLogo) get_Logo;
-				public function HRESULT(IPMExtensionFileExtensionInfo *self, BSTR FileType, BSTR* pContentType) get_ContentType;
-				public function HRESULT(IPMExtensionFileExtensionInfo *self, BSTR ContentType, BSTR* pFileType) get_FileType;
-				public function HRESULT(IPMExtensionFileExtensionInfo *self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
-				public function HRESULT(IPMExtensionFileExtensionInfo *self, uint32* pcbTypes, BSTR** ppTypes) get_AllFileTypes;
+				public new function HRESULT(IPMExtensionFileExtensionInfo *self, BSTR* pName) get_Name;
+				public new function HRESULT(IPMExtensionFileExtensionInfo *self, BSTR* pDisplayName) get_DisplayName;
+				public new function HRESULT(IPMExtensionFileExtensionInfo *self, PM_LOGO_SIZE LogoSize, BSTR* pLogo) get_Logo;
+				public new function HRESULT(IPMExtensionFileExtensionInfo *self, BSTR FileType, BSTR* pContentType) get_ContentType;
+				public new function HRESULT(IPMExtensionFileExtensionInfo *self, BSTR ContentType, BSTR* pFileType) get_FileType;
+				public new function HRESULT(IPMExtensionFileExtensionInfo *self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
+				public new function HRESULT(IPMExtensionFileExtensionInfo *self, uint32* pcbTypes, BSTR** ppTypes) get_AllFileTypes;
 			}
 		}
 		[CRepr]
@@ -2411,12 +3507,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1e3fa036, 0x51eb, 0x4453, 0xba, 0xff, 0xb8, 0xd8, 0xe4, 0xb4, 0x6c, 0x8e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Protocol(BSTR* pProtocol) mut
+			{
+				return VT.get_Protocol(&this, pProtocol);
+			}
+			public HRESULT get_InvocationInfo(BSTR* pImageUrn, BSTR* pParameters) mut
+			{
+				return VT.get_InvocationInfo(&this, pImageUrn, pParameters);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMExtensionProtocolInfo *self, BSTR* pProtocol) get_Protocol;
-				public function HRESULT(IPMExtensionProtocolInfo *self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
+				public new function HRESULT(IPMExtensionProtocolInfo *self, BSTR* pProtocol) get_Protocol;
+				public new function HRESULT(IPMExtensionProtocolInfo *self, BSTR* pImageUrn, BSTR* pParameters) get_InvocationInfo;
 			}
 		}
 		[CRepr]
@@ -2424,13 +3529,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5471f48b, 0xc65c, 0x4656, 0x8c, 0x70, 0x24, 0x2e, 0x31, 0x19, 0x5f, 0xea);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_AllFileTypes(uint32* pcTypes, BSTR** ppTypes) mut
+			{
+				return VT.get_AllFileTypes(&this, pcTypes, ppTypes);
+			}
+			public HRESULT get_AllDataFormats(uint32* pcDataFormats, BSTR** ppDataFormats) mut
+			{
+				return VT.get_AllDataFormats(&this, pcDataFormats, ppDataFormats);
+			}
+			public HRESULT get_SupportsAllFileTypes(BOOL* pSupportsAllTypes) mut
+			{
+				return VT.get_SupportsAllFileTypes(&this, pSupportsAllTypes);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMExtensionShareTargetInfo *self, uint32* pcTypes, BSTR** ppTypes) get_AllFileTypes;
-				public function HRESULT(IPMExtensionShareTargetInfo *self, uint32* pcDataFormats, BSTR** ppDataFormats) get_AllDataFormats;
-				public function HRESULT(IPMExtensionShareTargetInfo *self, BOOL* pSupportsAllTypes) get_SupportsAllFileTypes;
+				public new function HRESULT(IPMExtensionShareTargetInfo *self, uint32* pcTypes, BSTR** ppTypes) get_AllFileTypes;
+				public new function HRESULT(IPMExtensionShareTargetInfo *self, uint32* pcDataFormats, BSTR** ppDataFormats) get_AllDataFormats;
+				public new function HRESULT(IPMExtensionShareTargetInfo *self, BOOL* pSupportsAllTypes) get_SupportsAllFileTypes;
 			}
 		}
 		[CRepr]
@@ -2438,11 +3556,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe5666373, 0x7ba1, 0x467c, 0xb8, 0x19, 0xb1, 0x75, 0xdb, 0x1c, 0x29, 0x5b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_InvocationInfo(BSTR* pAUMID, BSTR* pArgs) mut
+			{
+				return VT.get_InvocationInfo(&this, pAUMID, pArgs);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMExtensionContractInfo *self, BSTR* pAUMID, BSTR* pArgs) get_InvocationInfo;
+				public new function HRESULT(IPMExtensionContractInfo *self, BSTR* pAUMID, BSTR* pArgs) get_InvocationInfo;
 			}
 		}
 		[CRepr]
@@ -2450,12 +3573,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6dc91d25, 0x9606, 0x420c, 0x9a, 0x78, 0xe0, 0x34, 0xa3, 0x41, 0x83, 0x45);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_AllFileTypes(uint32* pcTypes, BSTR** ppTypes) mut
+			{
+				return VT.get_AllFileTypes(&this, pcTypes, ppTypes);
+			}
+			public HRESULT get_SupportsAllFileTypes(BOOL* pSupportsAllTypes) mut
+			{
+				return VT.get_SupportsAllFileTypes(&this, pSupportsAllTypes);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMExtensionFileOpenPickerInfo *self, uint32* pcTypes, BSTR** ppTypes) get_AllFileTypes;
-				public function HRESULT(IPMExtensionFileOpenPickerInfo *self, BOOL* pSupportsAllTypes) get_SupportsAllFileTypes;
+				public new function HRESULT(IPMExtensionFileOpenPickerInfo *self, uint32* pcTypes, BSTR** ppTypes) get_AllFileTypes;
+				public new function HRESULT(IPMExtensionFileOpenPickerInfo *self, BOOL* pSupportsAllTypes) get_SupportsAllFileTypes;
 			}
 		}
 		[CRepr]
@@ -2463,12 +3595,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x38005cba, 0xf81a, 0x493e, 0xa0, 0xf8, 0x92, 0x2c, 0x86, 0x80, 0xda, 0x43);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_AllFileTypes(uint32* pcTypes, BSTR** ppTypes) mut
+			{
+				return VT.get_AllFileTypes(&this, pcTypes, ppTypes);
+			}
+			public HRESULT get_SupportsAllFileTypes(BOOL* pSupportsAllTypes) mut
+			{
+				return VT.get_SupportsAllFileTypes(&this, pSupportsAllTypes);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMExtensionFileSavePickerInfo *self, uint32* pcTypes, BSTR** ppTypes) get_AllFileTypes;
-				public function HRESULT(IPMExtensionFileSavePickerInfo *self, BOOL* pSupportsAllTypes) get_SupportsAllFileTypes;
+				public new function HRESULT(IPMExtensionFileSavePickerInfo *self, uint32* pcTypes, BSTR** ppTypes) get_AllFileTypes;
+				public new function HRESULT(IPMExtensionFileSavePickerInfo *self, BOOL* pSupportsAllTypes) get_SupportsAllFileTypes;
 			}
 		}
 		[CRepr]
@@ -2476,11 +3617,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe2d77509, 0x4e58, 0x4ba9, 0xaf, 0x7e, 0xb6, 0x42, 0xe3, 0x70, 0xe1, 0xb0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_SupportsUpdates(BOOL* pSupportsUpdates) mut
+			{
+				return VT.get_SupportsUpdates(&this, pSupportsUpdates);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMExtensionCachedFileUpdaterInfo *self, BOOL* pSupportsUpdates) get_SupportsUpdates;
+				public new function HRESULT(IPMExtensionCachedFileUpdaterInfo *self, BOOL* pSupportsUpdates) get_SupportsUpdates;
 			}
 		}
 		[CRepr]
@@ -2488,11 +3634,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x403b9e82, 0x1171, 0x4573, 0x8e, 0x6f, 0x6f, 0x33, 0xf3, 0x9b, 0x83, 0xdd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Next(IPMExtensionInfo** ppExtensionInfo) mut
+			{
+				return VT.get_Next(&this, ppExtensionInfo);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMExtensionInfoEnumerator *self, IPMExtensionInfo** ppExtensionInfo) get_Next;
+				public new function HRESULT(IPMExtensionInfoEnumerator *self, IPMExtensionInfo** ppExtensionInfo) get_Next;
 			}
 		}
 		[CRepr]
@@ -2500,24 +3651,81 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3a8b46da, 0x928c, 0x4879, 0x99, 0x8c, 0x09, 0xdc, 0x96, 0xf3, 0xd4, 0x90);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ProductID(Guid* pProductID) mut
+			{
+				return VT.get_ProductID(&this, pProductID);
+			}
+			public HRESULT get_TaskID(BSTR* pTaskID) mut
+			{
+				return VT.get_TaskID(&this, pTaskID);
+			}
+			public HRESULT get_BSAID(uint32* pBSAID) mut
+			{
+				return VT.get_BSAID(&this, pBSAID);
+			}
+			public HRESULT get_BGSpecifier(BSTR* pBGSpecifier) mut
+			{
+				return VT.get_BGSpecifier(&this, pBGSpecifier);
+			}
+			public HRESULT get_BGName(BSTR* pBGName) mut
+			{
+				return VT.get_BGName(&this, pBGName);
+			}
+			public HRESULT get_BGSource(BSTR* pBGSource) mut
+			{
+				return VT.get_BGSource(&this, pBGSource);
+			}
+			public HRESULT get_BGType(BSTR* pBGType) mut
+			{
+				return VT.get_BGType(&this, pBGType);
+			}
+			public HRESULT get_IsPeriodic(BOOL* pIsPeriodic) mut
+			{
+				return VT.get_IsPeriodic(&this, pIsPeriodic);
+			}
+			public HRESULT get_IsScheduled(BOOL* pIsScheduled) mut
+			{
+				return VT.get_IsScheduled(&this, pIsScheduled);
+			}
+			public HRESULT get_IsScheduleAllowed(BOOL* pIsScheduleAllowed) mut
+			{
+				return VT.get_IsScheduleAllowed(&this, pIsScheduleAllowed);
+			}
+			public HRESULT get_Description(BSTR* pDescription) mut
+			{
+				return VT.get_Description(&this, pDescription);
+			}
+			public HRESULT get_IsLaunchOnBoot(BOOL* pLaunchOnBoot) mut
+			{
+				return VT.get_IsLaunchOnBoot(&this, pLaunchOnBoot);
+			}
+			public HRESULT set_IsScheduled(BOOL IsScheduled) mut
+			{
+				return VT.set_IsScheduled(&this, IsScheduled);
+			}
+			public HRESULT set_IsScheduleAllowed(BOOL IsScheduleAllowed) mut
+			{
+				return VT.set_IsScheduleAllowed(&this, IsScheduleAllowed);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMBackgroundServiceAgentInfo *self, Guid* pProductID) get_ProductID;
-				public function HRESULT(IPMBackgroundServiceAgentInfo *self, BSTR* pTaskID) get_TaskID;
-				public function HRESULT(IPMBackgroundServiceAgentInfo *self, uint32* pBSAID) get_BSAID;
-				public function HRESULT(IPMBackgroundServiceAgentInfo *self, BSTR* pBGSpecifier) get_BGSpecifier;
-				public function HRESULT(IPMBackgroundServiceAgentInfo *self, BSTR* pBGName) get_BGName;
-				public function HRESULT(IPMBackgroundServiceAgentInfo *self, BSTR* pBGSource) get_BGSource;
-				public function HRESULT(IPMBackgroundServiceAgentInfo *self, BSTR* pBGType) get_BGType;
-				public function HRESULT(IPMBackgroundServiceAgentInfo *self, BOOL* pIsPeriodic) get_IsPeriodic;
-				public function HRESULT(IPMBackgroundServiceAgentInfo *self, BOOL* pIsScheduled) get_IsScheduled;
-				public function HRESULT(IPMBackgroundServiceAgentInfo *self, BOOL* pIsScheduleAllowed) get_IsScheduleAllowed;
-				public function HRESULT(IPMBackgroundServiceAgentInfo *self, BSTR* pDescription) get_Description;
-				public function HRESULT(IPMBackgroundServiceAgentInfo *self, BOOL* pLaunchOnBoot) get_IsLaunchOnBoot;
-				public function HRESULT(IPMBackgroundServiceAgentInfo *self, BOOL IsScheduled) set_IsScheduled;
-				public function HRESULT(IPMBackgroundServiceAgentInfo *self, BOOL IsScheduleAllowed) set_IsScheduleAllowed;
+				public new function HRESULT(IPMBackgroundServiceAgentInfo *self, Guid* pProductID) get_ProductID;
+				public new function HRESULT(IPMBackgroundServiceAgentInfo *self, BSTR* pTaskID) get_TaskID;
+				public new function HRESULT(IPMBackgroundServiceAgentInfo *self, uint32* pBSAID) get_BSAID;
+				public new function HRESULT(IPMBackgroundServiceAgentInfo *self, BSTR* pBGSpecifier) get_BGSpecifier;
+				public new function HRESULT(IPMBackgroundServiceAgentInfo *self, BSTR* pBGName) get_BGName;
+				public new function HRESULT(IPMBackgroundServiceAgentInfo *self, BSTR* pBGSource) get_BGSource;
+				public new function HRESULT(IPMBackgroundServiceAgentInfo *self, BSTR* pBGType) get_BGType;
+				public new function HRESULT(IPMBackgroundServiceAgentInfo *self, BOOL* pIsPeriodic) get_IsPeriodic;
+				public new function HRESULT(IPMBackgroundServiceAgentInfo *self, BOOL* pIsScheduled) get_IsScheduled;
+				public new function HRESULT(IPMBackgroundServiceAgentInfo *self, BOOL* pIsScheduleAllowed) get_IsScheduleAllowed;
+				public new function HRESULT(IPMBackgroundServiceAgentInfo *self, BSTR* pDescription) get_Description;
+				public new function HRESULT(IPMBackgroundServiceAgentInfo *self, BOOL* pLaunchOnBoot) get_IsLaunchOnBoot;
+				public new function HRESULT(IPMBackgroundServiceAgentInfo *self, BOOL IsScheduled) set_IsScheduled;
+				public new function HRESULT(IPMBackgroundServiceAgentInfo *self, BOOL IsScheduleAllowed) set_IsScheduleAllowed;
 			}
 		}
 		[CRepr]
@@ -2525,16 +3733,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7dd4531b, 0xd3bf, 0x4b6b, 0x94, 0xf3, 0x69, 0xc0, 0x98, 0xb1, 0x49, 0x7d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ProductID(Guid* pProductID) mut
+			{
+				return VT.get_ProductID(&this, pProductID);
+			}
+			public HRESULT get_TaskID(BSTR* pTaskID) mut
+			{
+				return VT.get_TaskID(&this, pTaskID);
+			}
+			public HRESULT get_BGName(BSTR* pBGName) mut
+			{
+				return VT.get_BGName(&this, pBGName);
+			}
+			public HRESULT get_MaxStartupLatency(uint32* pMaxStartupLatency) mut
+			{
+				return VT.get_MaxStartupLatency(&this, pMaxStartupLatency);
+			}
+			public HRESULT get_ExpectedRuntime(uint32* pExpectedRuntime) mut
+			{
+				return VT.get_ExpectedRuntime(&this, pExpectedRuntime);
+			}
+			public HRESULT get_IsBootWorker(BOOL* pIsBootWorker) mut
+			{
+				return VT.get_IsBootWorker(&this, pIsBootWorker);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMBackgroundWorkerInfo *self, Guid* pProductID) get_ProductID;
-				public function HRESULT(IPMBackgroundWorkerInfo *self, BSTR* pTaskID) get_TaskID;
-				public function HRESULT(IPMBackgroundWorkerInfo *self, BSTR* pBGName) get_BGName;
-				public function HRESULT(IPMBackgroundWorkerInfo *self, uint32* pMaxStartupLatency) get_MaxStartupLatency;
-				public function HRESULT(IPMBackgroundWorkerInfo *self, uint32* pExpectedRuntime) get_ExpectedRuntime;
-				public function HRESULT(IPMBackgroundWorkerInfo *self, BOOL* pIsBootWorker) get_IsBootWorker;
+				public new function HRESULT(IPMBackgroundWorkerInfo *self, Guid* pProductID) get_ProductID;
+				public new function HRESULT(IPMBackgroundWorkerInfo *self, BSTR* pTaskID) get_TaskID;
+				public new function HRESULT(IPMBackgroundWorkerInfo *self, BSTR* pBGName) get_BGName;
+				public new function HRESULT(IPMBackgroundWorkerInfo *self, uint32* pMaxStartupLatency) get_MaxStartupLatency;
+				public new function HRESULT(IPMBackgroundWorkerInfo *self, uint32* pExpectedRuntime) get_ExpectedRuntime;
+				public new function HRESULT(IPMBackgroundWorkerInfo *self, BOOL* pIsBootWorker) get_IsBootWorker;
 			}
 		}
 		[CRepr]
@@ -2542,11 +3775,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x18eb2072, 0xab56, 0x43b3, 0x87, 0x2c, 0xbe, 0xaf, 0xb7, 0xa6, 0xb3, 0x91);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Next(IPMBackgroundServiceAgentInfo** ppBSAInfo) mut
+			{
+				return VT.get_Next(&this, ppBSAInfo);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMBackgroundServiceAgentInfoEnumerator *self, IPMBackgroundServiceAgentInfo** ppBSAInfo) get_Next;
+				public new function HRESULT(IPMBackgroundServiceAgentInfoEnumerator *self, IPMBackgroundServiceAgentInfo** ppBSAInfo) get_Next;
 			}
 		}
 		[CRepr]
@@ -2554,11 +3792,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x87f479f8, 0x90d8, 0x4ec7, 0x92, 0xb9, 0x72, 0x78, 0x7e, 0x2f, 0x63, 0x6b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Next(IPMBackgroundWorkerInfo** ppBWInfo) mut
+			{
+				return VT.get_Next(&this, ppBWInfo);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPMBackgroundWorkerInfoEnumerator *self, IPMBackgroundWorkerInfo** ppBWInfo) get_Next;
+				public new function HRESULT(IPMBackgroundWorkerInfoEnumerator *self, IPMBackgroundWorkerInfo** ppBWInfo) get_Next;
 			}
 		}
 		

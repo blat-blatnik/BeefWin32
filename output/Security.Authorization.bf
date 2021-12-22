@@ -838,61 +838,266 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xedbd9ca9, 0x9b82, 0x4f6a, 0x9e, 0x8b, 0x98, 0x30, 0x1e, 0x45, 0x0f, 0x14);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Description(BSTR* pbstrDescription) mut
+			{
+				return VT.get_Description(&this, pbstrDescription);
+			}
+			public HRESULT put_Description(BSTR bstrDescription) mut
+			{
+				return VT.put_Description(&this, bstrDescription);
+			}
+			public HRESULT get_ApplicationData(BSTR* pbstrApplicationData) mut
+			{
+				return VT.get_ApplicationData(&this, pbstrApplicationData);
+			}
+			public HRESULT put_ApplicationData(BSTR bstrApplicationData) mut
+			{
+				return VT.put_ApplicationData(&this, bstrApplicationData);
+			}
+			public HRESULT get_DomainTimeout(int32* plProp) mut
+			{
+				return VT.get_DomainTimeout(&this, plProp);
+			}
+			public HRESULT put_DomainTimeout(int32 lProp) mut
+			{
+				return VT.put_DomainTimeout(&this, lProp);
+			}
+			public HRESULT get_ScriptEngineTimeout(int32* plProp) mut
+			{
+				return VT.get_ScriptEngineTimeout(&this, plProp);
+			}
+			public HRESULT put_ScriptEngineTimeout(int32 lProp) mut
+			{
+				return VT.put_ScriptEngineTimeout(&this, lProp);
+			}
+			public HRESULT get_MaxScriptEngines(int32* plProp) mut
+			{
+				return VT.get_MaxScriptEngines(&this, plProp);
+			}
+			public HRESULT put_MaxScriptEngines(int32 lProp) mut
+			{
+				return VT.put_MaxScriptEngines(&this, lProp);
+			}
+			public HRESULT get_GenerateAudits(BOOL* pbProp) mut
+			{
+				return VT.get_GenerateAudits(&this, pbProp);
+			}
+			public HRESULT put_GenerateAudits(BOOL bProp) mut
+			{
+				return VT.put_GenerateAudits(&this, bProp);
+			}
+			public HRESULT get_Writable(BOOL* pfProp) mut
+			{
+				return VT.get_Writable(&this, pfProp);
+			}
+			public HRESULT GetProperty(int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) mut
+			{
+				return VT.GetProperty(&this, lPropId, varReserved, pvarProp);
+			}
+			public HRESULT SetProperty(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.SetProperty(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT AddPropertyItem(AZ_PROP_CONSTANTS lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.AddPropertyItem(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT DeletePropertyItem(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.DeletePropertyItem(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT get_PolicyAdministrators(VARIANT* pvarAdmins) mut
+			{
+				return VT.get_PolicyAdministrators(&this, pvarAdmins);
+			}
+			public HRESULT get_PolicyReaders(VARIANT* pvarReaders) mut
+			{
+				return VT.get_PolicyReaders(&this, pvarReaders);
+			}
+			public HRESULT AddPolicyAdministrator(BSTR bstrAdmin, VARIANT varReserved) mut
+			{
+				return VT.AddPolicyAdministrator(&this, bstrAdmin, varReserved);
+			}
+			public HRESULT DeletePolicyAdministrator(BSTR bstrAdmin, VARIANT varReserved) mut
+			{
+				return VT.DeletePolicyAdministrator(&this, bstrAdmin, varReserved);
+			}
+			public HRESULT AddPolicyReader(BSTR bstrReader, VARIANT varReserved) mut
+			{
+				return VT.AddPolicyReader(&this, bstrReader, varReserved);
+			}
+			public HRESULT DeletePolicyReader(BSTR bstrReader, VARIANT varReserved) mut
+			{
+				return VT.DeletePolicyReader(&this, bstrReader, varReserved);
+			}
+			public HRESULT Initialize(AZ_PROP_CONSTANTS lFlags, BSTR bstrPolicyURL, VARIANT varReserved) mut
+			{
+				return VT.Initialize(&this, lFlags, bstrPolicyURL, varReserved);
+			}
+			public HRESULT UpdateCache(VARIANT varReserved) mut
+			{
+				return VT.UpdateCache(&this, varReserved);
+			}
+			public HRESULT Delete(VARIANT varReserved) mut
+			{
+				return VT.Delete(&this, varReserved);
+			}
+			public HRESULT get_Applications(IAzApplications** ppAppCollection) mut
+			{
+				return VT.get_Applications(&this, ppAppCollection);
+			}
+			public HRESULT OpenApplication(BSTR bstrApplicationName, VARIANT varReserved, IAzApplication** ppApplication) mut
+			{
+				return VT.OpenApplication(&this, bstrApplicationName, varReserved, ppApplication);
+			}
+			public HRESULT CreateApplication(BSTR bstrApplicationName, VARIANT varReserved, IAzApplication** ppApplication) mut
+			{
+				return VT.CreateApplication(&this, bstrApplicationName, varReserved, ppApplication);
+			}
+			public HRESULT DeleteApplication(BSTR bstrApplicationName, VARIANT varReserved) mut
+			{
+				return VT.DeleteApplication(&this, bstrApplicationName, varReserved);
+			}
+			public HRESULT get_ApplicationGroups(IAzApplicationGroups** ppGroupCollection) mut
+			{
+				return VT.get_ApplicationGroups(&this, ppGroupCollection);
+			}
+			public HRESULT CreateApplicationGroup(BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) mut
+			{
+				return VT.CreateApplicationGroup(&this, bstrGroupName, varReserved, ppGroup);
+			}
+			public HRESULT OpenApplicationGroup(BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) mut
+			{
+				return VT.OpenApplicationGroup(&this, bstrGroupName, varReserved, ppGroup);
+			}
+			public HRESULT DeleteApplicationGroup(BSTR bstrGroupName, VARIANT varReserved) mut
+			{
+				return VT.DeleteApplicationGroup(&this, bstrGroupName, varReserved);
+			}
+			public HRESULT Submit(int32 lFlags, VARIANT varReserved) mut
+			{
+				return VT.Submit(&this, lFlags, varReserved);
+			}
+			public HRESULT get_DelegatedPolicyUsers(VARIANT* pvarDelegatedPolicyUsers) mut
+			{
+				return VT.get_DelegatedPolicyUsers(&this, pvarDelegatedPolicyUsers);
+			}
+			public HRESULT AddDelegatedPolicyUser(BSTR bstrDelegatedPolicyUser, VARIANT varReserved) mut
+			{
+				return VT.AddDelegatedPolicyUser(&this, bstrDelegatedPolicyUser, varReserved);
+			}
+			public HRESULT DeleteDelegatedPolicyUser(BSTR bstrDelegatedPolicyUser, VARIANT varReserved) mut
+			{
+				return VT.DeleteDelegatedPolicyUser(&this, bstrDelegatedPolicyUser, varReserved);
+			}
+			public HRESULT get_TargetMachine(BSTR* pbstrTargetMachine) mut
+			{
+				return VT.get_TargetMachine(&this, pbstrTargetMachine);
+			}
+			public HRESULT get_ApplyStoreSacl(BOOL* pbApplyStoreSacl) mut
+			{
+				return VT.get_ApplyStoreSacl(&this, pbApplyStoreSacl);
+			}
+			public HRESULT put_ApplyStoreSacl(BOOL bApplyStoreSacl) mut
+			{
+				return VT.put_ApplyStoreSacl(&this, bApplyStoreSacl);
+			}
+			public HRESULT get_PolicyAdministratorsName(VARIANT* pvarAdmins) mut
+			{
+				return VT.get_PolicyAdministratorsName(&this, pvarAdmins);
+			}
+			public HRESULT get_PolicyReadersName(VARIANT* pvarReaders) mut
+			{
+				return VT.get_PolicyReadersName(&this, pvarReaders);
+			}
+			public HRESULT AddPolicyAdministratorName(BSTR bstrAdmin, VARIANT varReserved) mut
+			{
+				return VT.AddPolicyAdministratorName(&this, bstrAdmin, varReserved);
+			}
+			public HRESULT DeletePolicyAdministratorName(BSTR bstrAdmin, VARIANT varReserved) mut
+			{
+				return VT.DeletePolicyAdministratorName(&this, bstrAdmin, varReserved);
+			}
+			public HRESULT AddPolicyReaderName(BSTR bstrReader, VARIANT varReserved) mut
+			{
+				return VT.AddPolicyReaderName(&this, bstrReader, varReserved);
+			}
+			public HRESULT DeletePolicyReaderName(BSTR bstrReader, VARIANT varReserved) mut
+			{
+				return VT.DeletePolicyReaderName(&this, bstrReader, varReserved);
+			}
+			public HRESULT get_DelegatedPolicyUsersName(VARIANT* pvarDelegatedPolicyUsers) mut
+			{
+				return VT.get_DelegatedPolicyUsersName(&this, pvarDelegatedPolicyUsers);
+			}
+			public HRESULT AddDelegatedPolicyUserName(BSTR bstrDelegatedPolicyUser, VARIANT varReserved) mut
+			{
+				return VT.AddDelegatedPolicyUserName(&this, bstrDelegatedPolicyUser, varReserved);
+			}
+			public HRESULT DeleteDelegatedPolicyUserName(BSTR bstrDelegatedPolicyUser, VARIANT varReserved) mut
+			{
+				return VT.DeleteDelegatedPolicyUserName(&this, bstrDelegatedPolicyUser, varReserved);
+			}
+			public HRESULT CloseApplication(BSTR bstrApplicationName, int32 lFlag) mut
+			{
+				return VT.CloseApplication(&this, bstrApplicationName, lFlag);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzAuthorizationStore *self, BSTR* pbstrDescription) get_Description;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrDescription) put_Description;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR* pbstrApplicationData) get_ApplicationData;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrApplicationData) put_ApplicationData;
-				public function HRESULT(IAzAuthorizationStore *self, int32* plProp) get_DomainTimeout;
-				public function HRESULT(IAzAuthorizationStore *self, int32 lProp) put_DomainTimeout;
-				public function HRESULT(IAzAuthorizationStore *self, int32* plProp) get_ScriptEngineTimeout;
-				public function HRESULT(IAzAuthorizationStore *self, int32 lProp) put_ScriptEngineTimeout;
-				public function HRESULT(IAzAuthorizationStore *self, int32* plProp) get_MaxScriptEngines;
-				public function HRESULT(IAzAuthorizationStore *self, int32 lProp) put_MaxScriptEngines;
-				public function HRESULT(IAzAuthorizationStore *self, BOOL* pbProp) get_GenerateAudits;
-				public function HRESULT(IAzAuthorizationStore *self, BOOL bProp) put_GenerateAudits;
-				public function HRESULT(IAzAuthorizationStore *self, BOOL* pfProp) get_Writable;
-				public function HRESULT(IAzAuthorizationStore *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
-				public function HRESULT(IAzAuthorizationStore *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
-				public function HRESULT(IAzAuthorizationStore *self, AZ_PROP_CONSTANTS lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
-				public function HRESULT(IAzAuthorizationStore *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
-				public function HRESULT(IAzAuthorizationStore *self, VARIANT* pvarAdmins) get_PolicyAdministrators;
-				public function HRESULT(IAzAuthorizationStore *self, VARIANT* pvarReaders) get_PolicyReaders;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministrator;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministrator;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrReader, VARIANT varReserved) AddPolicyReader;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReader;
-				public function HRESULT(IAzAuthorizationStore *self, AZ_PROP_CONSTANTS lFlags, BSTR bstrPolicyURL, VARIANT varReserved) Initialize;
-				public function HRESULT(IAzAuthorizationStore *self, VARIANT varReserved) UpdateCache;
-				public function HRESULT(IAzAuthorizationStore *self, VARIANT varReserved) Delete;
-				public function HRESULT(IAzAuthorizationStore *self, IAzApplications** ppAppCollection) get_Applications;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrApplicationName, VARIANT varReserved, IAzApplication** ppApplication) OpenApplication;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrApplicationName, VARIANT varReserved, IAzApplication** ppApplication) CreateApplication;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrApplicationName, VARIANT varReserved) DeleteApplication;
-				public function HRESULT(IAzAuthorizationStore *self, IAzApplicationGroups** ppGroupCollection) get_ApplicationGroups;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) CreateApplicationGroup;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) OpenApplicationGroup;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrGroupName, VARIANT varReserved) DeleteApplicationGroup;
-				public function HRESULT(IAzAuthorizationStore *self, int32 lFlags, VARIANT varReserved) Submit;
-				public function HRESULT(IAzAuthorizationStore *self, VARIANT* pvarDelegatedPolicyUsers) get_DelegatedPolicyUsers;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) AddDelegatedPolicyUser;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) DeleteDelegatedPolicyUser;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR* pbstrTargetMachine) get_TargetMachine;
-				public function HRESULT(IAzAuthorizationStore *self, BOOL* pbApplyStoreSacl) get_ApplyStoreSacl;
-				public function HRESULT(IAzAuthorizationStore *self, BOOL bApplyStoreSacl) put_ApplyStoreSacl;
-				public function HRESULT(IAzAuthorizationStore *self, VARIANT* pvarAdmins) get_PolicyAdministratorsName;
-				public function HRESULT(IAzAuthorizationStore *self, VARIANT* pvarReaders) get_PolicyReadersName;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministratorName;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministratorName;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrReader, VARIANT varReserved) AddPolicyReaderName;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReaderName;
-				public function HRESULT(IAzAuthorizationStore *self, VARIANT* pvarDelegatedPolicyUsers) get_DelegatedPolicyUsersName;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) AddDelegatedPolicyUserName;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) DeleteDelegatedPolicyUserName;
-				public function HRESULT(IAzAuthorizationStore *self, BSTR bstrApplicationName, int32 lFlag) CloseApplication;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR* pbstrDescription) get_Description;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrDescription) put_Description;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR* pbstrApplicationData) get_ApplicationData;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrApplicationData) put_ApplicationData;
+				public new function HRESULT(IAzAuthorizationStore *self, int32* plProp) get_DomainTimeout;
+				public new function HRESULT(IAzAuthorizationStore *self, int32 lProp) put_DomainTimeout;
+				public new function HRESULT(IAzAuthorizationStore *self, int32* plProp) get_ScriptEngineTimeout;
+				public new function HRESULT(IAzAuthorizationStore *self, int32 lProp) put_ScriptEngineTimeout;
+				public new function HRESULT(IAzAuthorizationStore *self, int32* plProp) get_MaxScriptEngines;
+				public new function HRESULT(IAzAuthorizationStore *self, int32 lProp) put_MaxScriptEngines;
+				public new function HRESULT(IAzAuthorizationStore *self, BOOL* pbProp) get_GenerateAudits;
+				public new function HRESULT(IAzAuthorizationStore *self, BOOL bProp) put_GenerateAudits;
+				public new function HRESULT(IAzAuthorizationStore *self, BOOL* pfProp) get_Writable;
+				public new function HRESULT(IAzAuthorizationStore *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
+				public new function HRESULT(IAzAuthorizationStore *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
+				public new function HRESULT(IAzAuthorizationStore *self, AZ_PROP_CONSTANTS lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
+				public new function HRESULT(IAzAuthorizationStore *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
+				public new function HRESULT(IAzAuthorizationStore *self, VARIANT* pvarAdmins) get_PolicyAdministrators;
+				public new function HRESULT(IAzAuthorizationStore *self, VARIANT* pvarReaders) get_PolicyReaders;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministrator;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministrator;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrReader, VARIANT varReserved) AddPolicyReader;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReader;
+				public new function HRESULT(IAzAuthorizationStore *self, AZ_PROP_CONSTANTS lFlags, BSTR bstrPolicyURL, VARIANT varReserved) Initialize;
+				public new function HRESULT(IAzAuthorizationStore *self, VARIANT varReserved) UpdateCache;
+				public new function HRESULT(IAzAuthorizationStore *self, VARIANT varReserved) Delete;
+				public new function HRESULT(IAzAuthorizationStore *self, IAzApplications** ppAppCollection) get_Applications;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrApplicationName, VARIANT varReserved, IAzApplication** ppApplication) OpenApplication;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrApplicationName, VARIANT varReserved, IAzApplication** ppApplication) CreateApplication;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrApplicationName, VARIANT varReserved) DeleteApplication;
+				public new function HRESULT(IAzAuthorizationStore *self, IAzApplicationGroups** ppGroupCollection) get_ApplicationGroups;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) CreateApplicationGroup;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) OpenApplicationGroup;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrGroupName, VARIANT varReserved) DeleteApplicationGroup;
+				public new function HRESULT(IAzAuthorizationStore *self, int32 lFlags, VARIANT varReserved) Submit;
+				public new function HRESULT(IAzAuthorizationStore *self, VARIANT* pvarDelegatedPolicyUsers) get_DelegatedPolicyUsers;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) AddDelegatedPolicyUser;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) DeleteDelegatedPolicyUser;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR* pbstrTargetMachine) get_TargetMachine;
+				public new function HRESULT(IAzAuthorizationStore *self, BOOL* pbApplyStoreSacl) get_ApplyStoreSacl;
+				public new function HRESULT(IAzAuthorizationStore *self, BOOL bApplyStoreSacl) put_ApplyStoreSacl;
+				public new function HRESULT(IAzAuthorizationStore *self, VARIANT* pvarAdmins) get_PolicyAdministratorsName;
+				public new function HRESULT(IAzAuthorizationStore *self, VARIANT* pvarReaders) get_PolicyReadersName;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministratorName;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministratorName;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrReader, VARIANT varReserved) AddPolicyReaderName;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReaderName;
+				public new function HRESULT(IAzAuthorizationStore *self, VARIANT* pvarDelegatedPolicyUsers) get_DelegatedPolicyUsersName;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) AddDelegatedPolicyUserName;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) DeleteDelegatedPolicyUserName;
+				public new function HRESULT(IAzAuthorizationStore *self, BSTR bstrApplicationName, int32 lFlag) CloseApplication;
 			}
 		}
 		[CRepr]
@@ -900,12 +1105,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb11e5584, 0xd577, 0x4273, 0xb6, 0xc5, 0x09, 0x73, 0xe0, 0xf8, 0xe8, 0x0d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OpenApplication2(BSTR bstrApplicationName, VARIANT varReserved, IAzApplication2** ppApplication) mut
+			{
+				return VT.OpenApplication2(&this, bstrApplicationName, varReserved, ppApplication);
+			}
+			public HRESULT CreateApplication2(BSTR bstrApplicationName, VARIANT varReserved, IAzApplication2** ppApplication) mut
+			{
+				return VT.CreateApplication2(&this, bstrApplicationName, varReserved, ppApplication);
+			}
 			[CRepr]
 			public struct VTable : IAzAuthorizationStore.VTable
 			{
-				public function HRESULT(IAzAuthorizationStore2 *self, BSTR bstrApplicationName, VARIANT varReserved, IAzApplication2** ppApplication) OpenApplication2;
-				public function HRESULT(IAzAuthorizationStore2 *self, BSTR bstrApplicationName, VARIANT varReserved, IAzApplication2** ppApplication) CreateApplication2;
+				public new function HRESULT(IAzAuthorizationStore2 *self, BSTR bstrApplicationName, VARIANT varReserved, IAzApplication2** ppApplication) OpenApplication2;
+				public new function HRESULT(IAzAuthorizationStore2 *self, BSTR bstrApplicationName, VARIANT varReserved, IAzApplication2** ppApplication) CreateApplication2;
 			}
 		}
 		[CRepr]
@@ -913,15 +1127,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xabc08425, 0x0c86, 0x4fa0, 0x9b, 0xe3, 0x71, 0x89, 0x95, 0x6c, 0x92, 0x6e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT IsUpdateNeeded(int16* pbIsUpdateNeeded) mut
+			{
+				return VT.IsUpdateNeeded(&this, pbIsUpdateNeeded);
+			}
+			public HRESULT BizruleGroupSupported(int16* pbSupported) mut
+			{
+				return VT.BizruleGroupSupported(&this, pbSupported);
+			}
+			public HRESULT UpgradeStoresFunctionalLevel(int32 lFunctionalLevel) mut
+			{
+				return VT.UpgradeStoresFunctionalLevel(&this, lFunctionalLevel);
+			}
+			public HRESULT IsFunctionalLevelUpgradeSupported(int32 lFunctionalLevel, int16* pbSupported) mut
+			{
+				return VT.IsFunctionalLevelUpgradeSupported(&this, lFunctionalLevel, pbSupported);
+			}
+			public HRESULT GetSchemaVersion(int32* plMajorVersion, int32* plMinorVersion) mut
+			{
+				return VT.GetSchemaVersion(&this, plMajorVersion, plMinorVersion);
+			}
 			[CRepr]
 			public struct VTable : IAzAuthorizationStore2.VTable
 			{
-				public function HRESULT(IAzAuthorizationStore3 *self, int16* pbIsUpdateNeeded) IsUpdateNeeded;
-				public function HRESULT(IAzAuthorizationStore3 *self, int16* pbSupported) BizruleGroupSupported;
-				public function HRESULT(IAzAuthorizationStore3 *self, int32 lFunctionalLevel) UpgradeStoresFunctionalLevel;
-				public function HRESULT(IAzAuthorizationStore3 *self, int32 lFunctionalLevel, int16* pbSupported) IsFunctionalLevelUpgradeSupported;
-				public function HRESULT(IAzAuthorizationStore3 *self, int32* plMajorVersion, int32* plMinorVersion) GetSchemaVersion;
+				public new function HRESULT(IAzAuthorizationStore3 *self, int16* pbIsUpdateNeeded) IsUpdateNeeded;
+				public new function HRESULT(IAzAuthorizationStore3 *self, int16* pbSupported) BizruleGroupSupported;
+				public new function HRESULT(IAzAuthorizationStore3 *self, int32 lFunctionalLevel) UpgradeStoresFunctionalLevel;
+				public new function HRESULT(IAzAuthorizationStore3 *self, int32 lFunctionalLevel, int16* pbSupported) IsFunctionalLevelUpgradeSupported;
+				public new function HRESULT(IAzAuthorizationStore3 *self, int32* plMajorVersion, int32* plMinorVersion) GetSchemaVersion;
 			}
 		}
 		[CRepr]
@@ -929,71 +1164,316 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x987bc7c7, 0xb813, 0x4d27, 0xbe, 0xde, 0x6b, 0xa5, 0xae, 0x86, 0x7e, 0x95);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
+			public HRESULT put_Name(BSTR bstrName) mut
+			{
+				return VT.put_Name(&this, bstrName);
+			}
+			public HRESULT get_Description(BSTR* pbstrDescription) mut
+			{
+				return VT.get_Description(&this, pbstrDescription);
+			}
+			public HRESULT put_Description(BSTR bstrDescription) mut
+			{
+				return VT.put_Description(&this, bstrDescription);
+			}
+			public HRESULT get_ApplicationData(BSTR* pbstrApplicationData) mut
+			{
+				return VT.get_ApplicationData(&this, pbstrApplicationData);
+			}
+			public HRESULT put_ApplicationData(BSTR bstrApplicationData) mut
+			{
+				return VT.put_ApplicationData(&this, bstrApplicationData);
+			}
+			public HRESULT get_AuthzInterfaceClsid(BSTR* pbstrProp) mut
+			{
+				return VT.get_AuthzInterfaceClsid(&this, pbstrProp);
+			}
+			public HRESULT put_AuthzInterfaceClsid(BSTR bstrProp) mut
+			{
+				return VT.put_AuthzInterfaceClsid(&this, bstrProp);
+			}
+			public HRESULT get_Version(BSTR* pbstrProp) mut
+			{
+				return VT.get_Version(&this, pbstrProp);
+			}
+			public HRESULT put_Version(BSTR bstrProp) mut
+			{
+				return VT.put_Version(&this, bstrProp);
+			}
+			public HRESULT get_GenerateAudits(BOOL* pbProp) mut
+			{
+				return VT.get_GenerateAudits(&this, pbProp);
+			}
+			public HRESULT put_GenerateAudits(BOOL bProp) mut
+			{
+				return VT.put_GenerateAudits(&this, bProp);
+			}
+			public HRESULT get_ApplyStoreSacl(BOOL* pbProp) mut
+			{
+				return VT.get_ApplyStoreSacl(&this, pbProp);
+			}
+			public HRESULT put_ApplyStoreSacl(BOOL bProp) mut
+			{
+				return VT.put_ApplyStoreSacl(&this, bProp);
+			}
+			public HRESULT get_Writable(BOOL* pfProp) mut
+			{
+				return VT.get_Writable(&this, pfProp);
+			}
+			public HRESULT GetProperty(int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) mut
+			{
+				return VT.GetProperty(&this, lPropId, varReserved, pvarProp);
+			}
+			public HRESULT SetProperty(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.SetProperty(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT get_PolicyAdministrators(VARIANT* pvarAdmins) mut
+			{
+				return VT.get_PolicyAdministrators(&this, pvarAdmins);
+			}
+			public HRESULT get_PolicyReaders(VARIANT* pvarReaders) mut
+			{
+				return VT.get_PolicyReaders(&this, pvarReaders);
+			}
+			public HRESULT AddPolicyAdministrator(BSTR bstrAdmin, VARIANT varReserved) mut
+			{
+				return VT.AddPolicyAdministrator(&this, bstrAdmin, varReserved);
+			}
+			public HRESULT DeletePolicyAdministrator(BSTR bstrAdmin, VARIANT varReserved) mut
+			{
+				return VT.DeletePolicyAdministrator(&this, bstrAdmin, varReserved);
+			}
+			public HRESULT AddPolicyReader(BSTR bstrReader, VARIANT varReserved) mut
+			{
+				return VT.AddPolicyReader(&this, bstrReader, varReserved);
+			}
+			public HRESULT DeletePolicyReader(BSTR bstrReader, VARIANT varReserved) mut
+			{
+				return VT.DeletePolicyReader(&this, bstrReader, varReserved);
+			}
+			public HRESULT get_Scopes(IAzScopes** ppScopeCollection) mut
+			{
+				return VT.get_Scopes(&this, ppScopeCollection);
+			}
+			public HRESULT OpenScope(BSTR bstrScopeName, VARIANT varReserved, IAzScope** ppScope) mut
+			{
+				return VT.OpenScope(&this, bstrScopeName, varReserved, ppScope);
+			}
+			public HRESULT CreateScope(BSTR bstrScopeName, VARIANT varReserved, IAzScope** ppScope) mut
+			{
+				return VT.CreateScope(&this, bstrScopeName, varReserved, ppScope);
+			}
+			public HRESULT DeleteScope(BSTR bstrScopeName, VARIANT varReserved) mut
+			{
+				return VT.DeleteScope(&this, bstrScopeName, varReserved);
+			}
+			public HRESULT get_Operations(IAzOperations** ppOperationCollection) mut
+			{
+				return VT.get_Operations(&this, ppOperationCollection);
+			}
+			public HRESULT OpenOperation(BSTR bstrOperationName, VARIANT varReserved, IAzOperation** ppOperation) mut
+			{
+				return VT.OpenOperation(&this, bstrOperationName, varReserved, ppOperation);
+			}
+			public HRESULT CreateOperation(BSTR bstrOperationName, VARIANT varReserved, IAzOperation** ppOperation) mut
+			{
+				return VT.CreateOperation(&this, bstrOperationName, varReserved, ppOperation);
+			}
+			public HRESULT DeleteOperation(BSTR bstrOperationName, VARIANT varReserved) mut
+			{
+				return VT.DeleteOperation(&this, bstrOperationName, varReserved);
+			}
+			public HRESULT get_Tasks(IAzTasks** ppTaskCollection) mut
+			{
+				return VT.get_Tasks(&this, ppTaskCollection);
+			}
+			public HRESULT OpenTask(BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) mut
+			{
+				return VT.OpenTask(&this, bstrTaskName, varReserved, ppTask);
+			}
+			public HRESULT CreateTask(BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) mut
+			{
+				return VT.CreateTask(&this, bstrTaskName, varReserved, ppTask);
+			}
+			public HRESULT DeleteTask(BSTR bstrTaskName, VARIANT varReserved) mut
+			{
+				return VT.DeleteTask(&this, bstrTaskName, varReserved);
+			}
+			public HRESULT get_ApplicationGroups(IAzApplicationGroups** ppGroupCollection) mut
+			{
+				return VT.get_ApplicationGroups(&this, ppGroupCollection);
+			}
+			public HRESULT OpenApplicationGroup(BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) mut
+			{
+				return VT.OpenApplicationGroup(&this, bstrGroupName, varReserved, ppGroup);
+			}
+			public HRESULT CreateApplicationGroup(BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) mut
+			{
+				return VT.CreateApplicationGroup(&this, bstrGroupName, varReserved, ppGroup);
+			}
+			public HRESULT DeleteApplicationGroup(BSTR bstrGroupName, VARIANT varReserved) mut
+			{
+				return VT.DeleteApplicationGroup(&this, bstrGroupName, varReserved);
+			}
+			public HRESULT get_Roles(IAzRoles** ppRoleCollection) mut
+			{
+				return VT.get_Roles(&this, ppRoleCollection);
+			}
+			public HRESULT OpenRole(BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) mut
+			{
+				return VT.OpenRole(&this, bstrRoleName, varReserved, ppRole);
+			}
+			public HRESULT CreateRole(BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) mut
+			{
+				return VT.CreateRole(&this, bstrRoleName, varReserved, ppRole);
+			}
+			public HRESULT DeleteRole(BSTR bstrRoleName, VARIANT varReserved) mut
+			{
+				return VT.DeleteRole(&this, bstrRoleName, varReserved);
+			}
+			public HRESULT InitializeClientContextFromToken(uint64 ullTokenHandle, VARIANT varReserved, IAzClientContext** ppClientContext) mut
+			{
+				return VT.InitializeClientContextFromToken(&this, ullTokenHandle, varReserved, ppClientContext);
+			}
+			public HRESULT AddPropertyItem(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.AddPropertyItem(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT DeletePropertyItem(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.DeletePropertyItem(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT Submit(int32 lFlags, VARIANT varReserved) mut
+			{
+				return VT.Submit(&this, lFlags, varReserved);
+			}
+			public HRESULT InitializeClientContextFromName(BSTR ClientName, BSTR DomainName, VARIANT varReserved, IAzClientContext** ppClientContext) mut
+			{
+				return VT.InitializeClientContextFromName(&this, ClientName, DomainName, varReserved, ppClientContext);
+			}
+			public HRESULT get_DelegatedPolicyUsers(VARIANT* pvarDelegatedPolicyUsers) mut
+			{
+				return VT.get_DelegatedPolicyUsers(&this, pvarDelegatedPolicyUsers);
+			}
+			public HRESULT AddDelegatedPolicyUser(BSTR bstrDelegatedPolicyUser, VARIANT varReserved) mut
+			{
+				return VT.AddDelegatedPolicyUser(&this, bstrDelegatedPolicyUser, varReserved);
+			}
+			public HRESULT DeleteDelegatedPolicyUser(BSTR bstrDelegatedPolicyUser, VARIANT varReserved) mut
+			{
+				return VT.DeleteDelegatedPolicyUser(&this, bstrDelegatedPolicyUser, varReserved);
+			}
+			public HRESULT InitializeClientContextFromStringSid(BSTR SidString, int32 lOptions, VARIANT varReserved, IAzClientContext** ppClientContext) mut
+			{
+				return VT.InitializeClientContextFromStringSid(&this, SidString, lOptions, varReserved, ppClientContext);
+			}
+			public HRESULT get_PolicyAdministratorsName(VARIANT* pvarAdmins) mut
+			{
+				return VT.get_PolicyAdministratorsName(&this, pvarAdmins);
+			}
+			public HRESULT get_PolicyReadersName(VARIANT* pvarReaders) mut
+			{
+				return VT.get_PolicyReadersName(&this, pvarReaders);
+			}
+			public HRESULT AddPolicyAdministratorName(BSTR bstrAdmin, VARIANT varReserved) mut
+			{
+				return VT.AddPolicyAdministratorName(&this, bstrAdmin, varReserved);
+			}
+			public HRESULT DeletePolicyAdministratorName(BSTR bstrAdmin, VARIANT varReserved) mut
+			{
+				return VT.DeletePolicyAdministratorName(&this, bstrAdmin, varReserved);
+			}
+			public HRESULT AddPolicyReaderName(BSTR bstrReader, VARIANT varReserved) mut
+			{
+				return VT.AddPolicyReaderName(&this, bstrReader, varReserved);
+			}
+			public HRESULT DeletePolicyReaderName(BSTR bstrReader, VARIANT varReserved) mut
+			{
+				return VT.DeletePolicyReaderName(&this, bstrReader, varReserved);
+			}
+			public HRESULT get_DelegatedPolicyUsersName(VARIANT* pvarDelegatedPolicyUsers) mut
+			{
+				return VT.get_DelegatedPolicyUsersName(&this, pvarDelegatedPolicyUsers);
+			}
+			public HRESULT AddDelegatedPolicyUserName(BSTR bstrDelegatedPolicyUser, VARIANT varReserved) mut
+			{
+				return VT.AddDelegatedPolicyUserName(&this, bstrDelegatedPolicyUser, varReserved);
+			}
+			public HRESULT DeleteDelegatedPolicyUserName(BSTR bstrDelegatedPolicyUser, VARIANT varReserved) mut
+			{
+				return VT.DeleteDelegatedPolicyUserName(&this, bstrDelegatedPolicyUser, varReserved);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzApplication *self, BSTR* pbstrName) get_Name;
-				public function HRESULT(IAzApplication *self, BSTR bstrName) put_Name;
-				public function HRESULT(IAzApplication *self, BSTR* pbstrDescription) get_Description;
-				public function HRESULT(IAzApplication *self, BSTR bstrDescription) put_Description;
-				public function HRESULT(IAzApplication *self, BSTR* pbstrApplicationData) get_ApplicationData;
-				public function HRESULT(IAzApplication *self, BSTR bstrApplicationData) put_ApplicationData;
-				public function HRESULT(IAzApplication *self, BSTR* pbstrProp) get_AuthzInterfaceClsid;
-				public function HRESULT(IAzApplication *self, BSTR bstrProp) put_AuthzInterfaceClsid;
-				public function HRESULT(IAzApplication *self, BSTR* pbstrProp) get_Version;
-				public function HRESULT(IAzApplication *self, BSTR bstrProp) put_Version;
-				public function HRESULT(IAzApplication *self, BOOL* pbProp) get_GenerateAudits;
-				public function HRESULT(IAzApplication *self, BOOL bProp) put_GenerateAudits;
-				public function HRESULT(IAzApplication *self, BOOL* pbProp) get_ApplyStoreSacl;
-				public function HRESULT(IAzApplication *self, BOOL bProp) put_ApplyStoreSacl;
-				public function HRESULT(IAzApplication *self, BOOL* pfProp) get_Writable;
-				public function HRESULT(IAzApplication *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
-				public function HRESULT(IAzApplication *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
-				public function HRESULT(IAzApplication *self, VARIANT* pvarAdmins) get_PolicyAdministrators;
-				public function HRESULT(IAzApplication *self, VARIANT* pvarReaders) get_PolicyReaders;
-				public function HRESULT(IAzApplication *self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministrator;
-				public function HRESULT(IAzApplication *self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministrator;
-				public function HRESULT(IAzApplication *self, BSTR bstrReader, VARIANT varReserved) AddPolicyReader;
-				public function HRESULT(IAzApplication *self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReader;
-				public function HRESULT(IAzApplication *self, IAzScopes** ppScopeCollection) get_Scopes;
-				public function HRESULT(IAzApplication *self, BSTR bstrScopeName, VARIANT varReserved, IAzScope** ppScope) OpenScope;
-				public function HRESULT(IAzApplication *self, BSTR bstrScopeName, VARIANT varReserved, IAzScope** ppScope) CreateScope;
-				public function HRESULT(IAzApplication *self, BSTR bstrScopeName, VARIANT varReserved) DeleteScope;
-				public function HRESULT(IAzApplication *self, IAzOperations** ppOperationCollection) get_Operations;
-				public function HRESULT(IAzApplication *self, BSTR bstrOperationName, VARIANT varReserved, IAzOperation** ppOperation) OpenOperation;
-				public function HRESULT(IAzApplication *self, BSTR bstrOperationName, VARIANT varReserved, IAzOperation** ppOperation) CreateOperation;
-				public function HRESULT(IAzApplication *self, BSTR bstrOperationName, VARIANT varReserved) DeleteOperation;
-				public function HRESULT(IAzApplication *self, IAzTasks** ppTaskCollection) get_Tasks;
-				public function HRESULT(IAzApplication *self, BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) OpenTask;
-				public function HRESULT(IAzApplication *self, BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) CreateTask;
-				public function HRESULT(IAzApplication *self, BSTR bstrTaskName, VARIANT varReserved) DeleteTask;
-				public function HRESULT(IAzApplication *self, IAzApplicationGroups** ppGroupCollection) get_ApplicationGroups;
-				public function HRESULT(IAzApplication *self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) OpenApplicationGroup;
-				public function HRESULT(IAzApplication *self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) CreateApplicationGroup;
-				public function HRESULT(IAzApplication *self, BSTR bstrGroupName, VARIANT varReserved) DeleteApplicationGroup;
-				public function HRESULT(IAzApplication *self, IAzRoles** ppRoleCollection) get_Roles;
-				public function HRESULT(IAzApplication *self, BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) OpenRole;
-				public function HRESULT(IAzApplication *self, BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) CreateRole;
-				public function HRESULT(IAzApplication *self, BSTR bstrRoleName, VARIANT varReserved) DeleteRole;
-				public function HRESULT(IAzApplication *self, uint64 ullTokenHandle, VARIANT varReserved, IAzClientContext** ppClientContext) InitializeClientContextFromToken;
-				public function HRESULT(IAzApplication *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
-				public function HRESULT(IAzApplication *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
-				public function HRESULT(IAzApplication *self, int32 lFlags, VARIANT varReserved) Submit;
-				public function HRESULT(IAzApplication *self, BSTR ClientName, BSTR DomainName, VARIANT varReserved, IAzClientContext** ppClientContext) InitializeClientContextFromName;
-				public function HRESULT(IAzApplication *self, VARIANT* pvarDelegatedPolicyUsers) get_DelegatedPolicyUsers;
-				public function HRESULT(IAzApplication *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) AddDelegatedPolicyUser;
-				public function HRESULT(IAzApplication *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) DeleteDelegatedPolicyUser;
-				public function HRESULT(IAzApplication *self, BSTR SidString, int32 lOptions, VARIANT varReserved, IAzClientContext** ppClientContext) InitializeClientContextFromStringSid;
-				public function HRESULT(IAzApplication *self, VARIANT* pvarAdmins) get_PolicyAdministratorsName;
-				public function HRESULT(IAzApplication *self, VARIANT* pvarReaders) get_PolicyReadersName;
-				public function HRESULT(IAzApplication *self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministratorName;
-				public function HRESULT(IAzApplication *self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministratorName;
-				public function HRESULT(IAzApplication *self, BSTR bstrReader, VARIANT varReserved) AddPolicyReaderName;
-				public function HRESULT(IAzApplication *self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReaderName;
-				public function HRESULT(IAzApplication *self, VARIANT* pvarDelegatedPolicyUsers) get_DelegatedPolicyUsersName;
-				public function HRESULT(IAzApplication *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) AddDelegatedPolicyUserName;
-				public function HRESULT(IAzApplication *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) DeleteDelegatedPolicyUserName;
+				public new function HRESULT(IAzApplication *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(IAzApplication *self, BSTR bstrName) put_Name;
+				public new function HRESULT(IAzApplication *self, BSTR* pbstrDescription) get_Description;
+				public new function HRESULT(IAzApplication *self, BSTR bstrDescription) put_Description;
+				public new function HRESULT(IAzApplication *self, BSTR* pbstrApplicationData) get_ApplicationData;
+				public new function HRESULT(IAzApplication *self, BSTR bstrApplicationData) put_ApplicationData;
+				public new function HRESULT(IAzApplication *self, BSTR* pbstrProp) get_AuthzInterfaceClsid;
+				public new function HRESULT(IAzApplication *self, BSTR bstrProp) put_AuthzInterfaceClsid;
+				public new function HRESULT(IAzApplication *self, BSTR* pbstrProp) get_Version;
+				public new function HRESULT(IAzApplication *self, BSTR bstrProp) put_Version;
+				public new function HRESULT(IAzApplication *self, BOOL* pbProp) get_GenerateAudits;
+				public new function HRESULT(IAzApplication *self, BOOL bProp) put_GenerateAudits;
+				public new function HRESULT(IAzApplication *self, BOOL* pbProp) get_ApplyStoreSacl;
+				public new function HRESULT(IAzApplication *self, BOOL bProp) put_ApplyStoreSacl;
+				public new function HRESULT(IAzApplication *self, BOOL* pfProp) get_Writable;
+				public new function HRESULT(IAzApplication *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
+				public new function HRESULT(IAzApplication *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
+				public new function HRESULT(IAzApplication *self, VARIANT* pvarAdmins) get_PolicyAdministrators;
+				public new function HRESULT(IAzApplication *self, VARIANT* pvarReaders) get_PolicyReaders;
+				public new function HRESULT(IAzApplication *self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministrator;
+				public new function HRESULT(IAzApplication *self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministrator;
+				public new function HRESULT(IAzApplication *self, BSTR bstrReader, VARIANT varReserved) AddPolicyReader;
+				public new function HRESULT(IAzApplication *self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReader;
+				public new function HRESULT(IAzApplication *self, IAzScopes** ppScopeCollection) get_Scopes;
+				public new function HRESULT(IAzApplication *self, BSTR bstrScopeName, VARIANT varReserved, IAzScope** ppScope) OpenScope;
+				public new function HRESULT(IAzApplication *self, BSTR bstrScopeName, VARIANT varReserved, IAzScope** ppScope) CreateScope;
+				public new function HRESULT(IAzApplication *self, BSTR bstrScopeName, VARIANT varReserved) DeleteScope;
+				public new function HRESULT(IAzApplication *self, IAzOperations** ppOperationCollection) get_Operations;
+				public new function HRESULT(IAzApplication *self, BSTR bstrOperationName, VARIANT varReserved, IAzOperation** ppOperation) OpenOperation;
+				public new function HRESULT(IAzApplication *self, BSTR bstrOperationName, VARIANT varReserved, IAzOperation** ppOperation) CreateOperation;
+				public new function HRESULT(IAzApplication *self, BSTR bstrOperationName, VARIANT varReserved) DeleteOperation;
+				public new function HRESULT(IAzApplication *self, IAzTasks** ppTaskCollection) get_Tasks;
+				public new function HRESULT(IAzApplication *self, BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) OpenTask;
+				public new function HRESULT(IAzApplication *self, BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) CreateTask;
+				public new function HRESULT(IAzApplication *self, BSTR bstrTaskName, VARIANT varReserved) DeleteTask;
+				public new function HRESULT(IAzApplication *self, IAzApplicationGroups** ppGroupCollection) get_ApplicationGroups;
+				public new function HRESULT(IAzApplication *self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) OpenApplicationGroup;
+				public new function HRESULT(IAzApplication *self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) CreateApplicationGroup;
+				public new function HRESULT(IAzApplication *self, BSTR bstrGroupName, VARIANT varReserved) DeleteApplicationGroup;
+				public new function HRESULT(IAzApplication *self, IAzRoles** ppRoleCollection) get_Roles;
+				public new function HRESULT(IAzApplication *self, BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) OpenRole;
+				public new function HRESULT(IAzApplication *self, BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) CreateRole;
+				public new function HRESULT(IAzApplication *self, BSTR bstrRoleName, VARIANT varReserved) DeleteRole;
+				public new function HRESULT(IAzApplication *self, uint64 ullTokenHandle, VARIANT varReserved, IAzClientContext** ppClientContext) InitializeClientContextFromToken;
+				public new function HRESULT(IAzApplication *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
+				public new function HRESULT(IAzApplication *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
+				public new function HRESULT(IAzApplication *self, int32 lFlags, VARIANT varReserved) Submit;
+				public new function HRESULT(IAzApplication *self, BSTR ClientName, BSTR DomainName, VARIANT varReserved, IAzClientContext** ppClientContext) InitializeClientContextFromName;
+				public new function HRESULT(IAzApplication *self, VARIANT* pvarDelegatedPolicyUsers) get_DelegatedPolicyUsers;
+				public new function HRESULT(IAzApplication *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) AddDelegatedPolicyUser;
+				public new function HRESULT(IAzApplication *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) DeleteDelegatedPolicyUser;
+				public new function HRESULT(IAzApplication *self, BSTR SidString, int32 lOptions, VARIANT varReserved, IAzClientContext** ppClientContext) InitializeClientContextFromStringSid;
+				public new function HRESULT(IAzApplication *self, VARIANT* pvarAdmins) get_PolicyAdministratorsName;
+				public new function HRESULT(IAzApplication *self, VARIANT* pvarReaders) get_PolicyReadersName;
+				public new function HRESULT(IAzApplication *self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministratorName;
+				public new function HRESULT(IAzApplication *self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministratorName;
+				public new function HRESULT(IAzApplication *self, BSTR bstrReader, VARIANT varReserved) AddPolicyReaderName;
+				public new function HRESULT(IAzApplication *self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReaderName;
+				public new function HRESULT(IAzApplication *self, VARIANT* pvarDelegatedPolicyUsers) get_DelegatedPolicyUsersName;
+				public new function HRESULT(IAzApplication *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) AddDelegatedPolicyUserName;
+				public new function HRESULT(IAzApplication *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) DeleteDelegatedPolicyUserName;
 			}
 		}
 		[CRepr]
@@ -1001,12 +1481,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x086a68af, 0xa249, 0x437c, 0xb1, 0x8d, 0xd4, 0xd8, 0x6d, 0x6a, 0x96, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT InitializeClientContextFromToken2(uint32 ulTokenHandleLowPart, uint32 ulTokenHandleHighPart, VARIANT varReserved, IAzClientContext2** ppClientContext) mut
+			{
+				return VT.InitializeClientContextFromToken2(&this, ulTokenHandleLowPart, ulTokenHandleHighPart, varReserved, ppClientContext);
+			}
+			public HRESULT InitializeClientContext2(BSTR IdentifyingString, VARIANT varReserved, IAzClientContext2** ppClientContext) mut
+			{
+				return VT.InitializeClientContext2(&this, IdentifyingString, varReserved, ppClientContext);
+			}
 			[CRepr]
 			public struct VTable : IAzApplication.VTable
 			{
-				public function HRESULT(IAzApplication2 *self, uint32 ulTokenHandleLowPart, uint32 ulTokenHandleHighPart, VARIANT varReserved, IAzClientContext2** ppClientContext) InitializeClientContextFromToken2;
-				public function HRESULT(IAzApplication2 *self, BSTR IdentifyingString, VARIANT varReserved, IAzClientContext2** ppClientContext) InitializeClientContext2;
+				public new function HRESULT(IAzApplication2 *self, uint32 ulTokenHandleLowPart, uint32 ulTokenHandleHighPart, VARIANT varReserved, IAzClientContext2** ppClientContext) InitializeClientContextFromToken2;
+				public new function HRESULT(IAzApplication2 *self, BSTR IdentifyingString, VARIANT varReserved, IAzClientContext2** ppClientContext) InitializeClientContext2;
 			}
 		}
 		[CRepr]
@@ -1014,13 +1503,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x929b11a9, 0x95c5, 0x4a84, 0xa2, 0x9a, 0x20, 0xad, 0x42, 0xc2, 0xf1, 0x6c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 Index, VARIANT* pvarObtPtr) mut
+			{
+				return VT.get_Item(&this, Index, pvarObtPtr);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** ppEnumPtr) mut
+			{
+				return VT.get__NewEnum(&this, ppEnumPtr);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzApplications *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
-				public function HRESULT(IAzApplications *self, int32* plCount) get_Count;
-				public function HRESULT(IAzApplications *self, IUnknown** ppEnumPtr) get__NewEnum;
+				public new function HRESULT(IAzApplications *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
+				public new function HRESULT(IAzApplications *self, int32* plCount) get_Count;
+				public new function HRESULT(IAzApplications *self, IUnknown** ppEnumPtr) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1028,22 +1530,71 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5e56b24f, 0xea01, 0x4d61, 0xbe, 0x44, 0xc4, 0x9b, 0x5e, 0x4e, 0xaf, 0x74);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
+			public HRESULT put_Name(BSTR bstrName) mut
+			{
+				return VT.put_Name(&this, bstrName);
+			}
+			public HRESULT get_Description(BSTR* pbstrDescription) mut
+			{
+				return VT.get_Description(&this, pbstrDescription);
+			}
+			public HRESULT put_Description(BSTR bstrDescription) mut
+			{
+				return VT.put_Description(&this, bstrDescription);
+			}
+			public HRESULT get_ApplicationData(BSTR* pbstrApplicationData) mut
+			{
+				return VT.get_ApplicationData(&this, pbstrApplicationData);
+			}
+			public HRESULT put_ApplicationData(BSTR bstrApplicationData) mut
+			{
+				return VT.put_ApplicationData(&this, bstrApplicationData);
+			}
+			public HRESULT get_OperationID(int32* plProp) mut
+			{
+				return VT.get_OperationID(&this, plProp);
+			}
+			public HRESULT put_OperationID(int32 lProp) mut
+			{
+				return VT.put_OperationID(&this, lProp);
+			}
+			public HRESULT get_Writable(BOOL* pfProp) mut
+			{
+				return VT.get_Writable(&this, pfProp);
+			}
+			public HRESULT GetProperty(int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) mut
+			{
+				return VT.GetProperty(&this, lPropId, varReserved, pvarProp);
+			}
+			public HRESULT SetProperty(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.SetProperty(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT Submit(int32 lFlags, VARIANT varReserved) mut
+			{
+				return VT.Submit(&this, lFlags, varReserved);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzOperation *self, BSTR* pbstrName) get_Name;
-				public function HRESULT(IAzOperation *self, BSTR bstrName) put_Name;
-				public function HRESULT(IAzOperation *self, BSTR* pbstrDescription) get_Description;
-				public function HRESULT(IAzOperation *self, BSTR bstrDescription) put_Description;
-				public function HRESULT(IAzOperation *self, BSTR* pbstrApplicationData) get_ApplicationData;
-				public function HRESULT(IAzOperation *self, BSTR bstrApplicationData) put_ApplicationData;
-				public function HRESULT(IAzOperation *self, int32* plProp) get_OperationID;
-				public function HRESULT(IAzOperation *self, int32 lProp) put_OperationID;
-				public function HRESULT(IAzOperation *self, BOOL* pfProp) get_Writable;
-				public function HRESULT(IAzOperation *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
-				public function HRESULT(IAzOperation *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
-				public function HRESULT(IAzOperation *self, int32 lFlags, VARIANT varReserved) Submit;
+				public new function HRESULT(IAzOperation *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(IAzOperation *self, BSTR bstrName) put_Name;
+				public new function HRESULT(IAzOperation *self, BSTR* pbstrDescription) get_Description;
+				public new function HRESULT(IAzOperation *self, BSTR bstrDescription) put_Description;
+				public new function HRESULT(IAzOperation *self, BSTR* pbstrApplicationData) get_ApplicationData;
+				public new function HRESULT(IAzOperation *self, BSTR bstrApplicationData) put_ApplicationData;
+				public new function HRESULT(IAzOperation *self, int32* plProp) get_OperationID;
+				public new function HRESULT(IAzOperation *self, int32 lProp) put_OperationID;
+				public new function HRESULT(IAzOperation *self, BOOL* pfProp) get_Writable;
+				public new function HRESULT(IAzOperation *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
+				public new function HRESULT(IAzOperation *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
+				public new function HRESULT(IAzOperation *self, int32 lFlags, VARIANT varReserved) Submit;
 			}
 		}
 		[CRepr]
@@ -1051,13 +1602,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x90ef9c07, 0x9706, 0x49d9, 0xaf, 0x80, 0x04, 0x38, 0xa5, 0xf3, 0xec, 0x35);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 Index, VARIANT* pvarObtPtr) mut
+			{
+				return VT.get_Item(&this, Index, pvarObtPtr);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** ppEnumPtr) mut
+			{
+				return VT.get__NewEnum(&this, ppEnumPtr);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzOperations *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
-				public function HRESULT(IAzOperations *self, int32* plCount) get_Count;
-				public function HRESULT(IAzOperations *self, IUnknown** ppEnumPtr) get__NewEnum;
+				public new function HRESULT(IAzOperations *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
+				public new function HRESULT(IAzOperations *self, int32* plCount) get_Count;
+				public new function HRESULT(IAzOperations *self, IUnknown** ppEnumPtr) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1065,36 +1629,141 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xcb94e592, 0x2e0e, 0x4a6c, 0xa3, 0x36, 0xb8, 0x9a, 0x6d, 0xc1, 0xe3, 0x88);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
+			public HRESULT put_Name(BSTR bstrName) mut
+			{
+				return VT.put_Name(&this, bstrName);
+			}
+			public HRESULT get_Description(BSTR* pbstrDescription) mut
+			{
+				return VT.get_Description(&this, pbstrDescription);
+			}
+			public HRESULT put_Description(BSTR bstrDescription) mut
+			{
+				return VT.put_Description(&this, bstrDescription);
+			}
+			public HRESULT get_ApplicationData(BSTR* pbstrApplicationData) mut
+			{
+				return VT.get_ApplicationData(&this, pbstrApplicationData);
+			}
+			public HRESULT put_ApplicationData(BSTR bstrApplicationData) mut
+			{
+				return VT.put_ApplicationData(&this, bstrApplicationData);
+			}
+			public HRESULT get_BizRule(BSTR* pbstrProp) mut
+			{
+				return VT.get_BizRule(&this, pbstrProp);
+			}
+			public HRESULT put_BizRule(BSTR bstrProp) mut
+			{
+				return VT.put_BizRule(&this, bstrProp);
+			}
+			public HRESULT get_BizRuleLanguage(BSTR* pbstrProp) mut
+			{
+				return VT.get_BizRuleLanguage(&this, pbstrProp);
+			}
+			public HRESULT put_BizRuleLanguage(BSTR bstrProp) mut
+			{
+				return VT.put_BizRuleLanguage(&this, bstrProp);
+			}
+			public HRESULT get_BizRuleImportedPath(BSTR* pbstrProp) mut
+			{
+				return VT.get_BizRuleImportedPath(&this, pbstrProp);
+			}
+			public HRESULT put_BizRuleImportedPath(BSTR bstrProp) mut
+			{
+				return VT.put_BizRuleImportedPath(&this, bstrProp);
+			}
+			public HRESULT get_IsRoleDefinition(BOOL* pfProp) mut
+			{
+				return VT.get_IsRoleDefinition(&this, pfProp);
+			}
+			public HRESULT put_IsRoleDefinition(BOOL fProp) mut
+			{
+				return VT.put_IsRoleDefinition(&this, fProp);
+			}
+			public HRESULT get_Operations(VARIANT* pvarProp) mut
+			{
+				return VT.get_Operations(&this, pvarProp);
+			}
+			public HRESULT get_Tasks(VARIANT* pvarProp) mut
+			{
+				return VT.get_Tasks(&this, pvarProp);
+			}
+			public HRESULT AddOperation(BSTR bstrOp, VARIANT varReserved) mut
+			{
+				return VT.AddOperation(&this, bstrOp, varReserved);
+			}
+			public HRESULT DeleteOperation(BSTR bstrOp, VARIANT varReserved) mut
+			{
+				return VT.DeleteOperation(&this, bstrOp, varReserved);
+			}
+			public HRESULT AddTask(BSTR bstrTask, VARIANT varReserved) mut
+			{
+				return VT.AddTask(&this, bstrTask, varReserved);
+			}
+			public HRESULT DeleteTask(BSTR bstrTask, VARIANT varReserved) mut
+			{
+				return VT.DeleteTask(&this, bstrTask, varReserved);
+			}
+			public HRESULT get_Writable(BOOL* pfProp) mut
+			{
+				return VT.get_Writable(&this, pfProp);
+			}
+			public HRESULT GetProperty(int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) mut
+			{
+				return VT.GetProperty(&this, lPropId, varReserved, pvarProp);
+			}
+			public HRESULT SetProperty(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.SetProperty(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT AddPropertyItem(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.AddPropertyItem(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT DeletePropertyItem(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.DeletePropertyItem(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT Submit(int32 lFlags, VARIANT varReserved) mut
+			{
+				return VT.Submit(&this, lFlags, varReserved);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzTask *self, BSTR* pbstrName) get_Name;
-				public function HRESULT(IAzTask *self, BSTR bstrName) put_Name;
-				public function HRESULT(IAzTask *self, BSTR* pbstrDescription) get_Description;
-				public function HRESULT(IAzTask *self, BSTR bstrDescription) put_Description;
-				public function HRESULT(IAzTask *self, BSTR* pbstrApplicationData) get_ApplicationData;
-				public function HRESULT(IAzTask *self, BSTR bstrApplicationData) put_ApplicationData;
-				public function HRESULT(IAzTask *self, BSTR* pbstrProp) get_BizRule;
-				public function HRESULT(IAzTask *self, BSTR bstrProp) put_BizRule;
-				public function HRESULT(IAzTask *self, BSTR* pbstrProp) get_BizRuleLanguage;
-				public function HRESULT(IAzTask *self, BSTR bstrProp) put_BizRuleLanguage;
-				public function HRESULT(IAzTask *self, BSTR* pbstrProp) get_BizRuleImportedPath;
-				public function HRESULT(IAzTask *self, BSTR bstrProp) put_BizRuleImportedPath;
-				public function HRESULT(IAzTask *self, BOOL* pfProp) get_IsRoleDefinition;
-				public function HRESULT(IAzTask *self, BOOL fProp) put_IsRoleDefinition;
-				public function HRESULT(IAzTask *self, VARIANT* pvarProp) get_Operations;
-				public function HRESULT(IAzTask *self, VARIANT* pvarProp) get_Tasks;
-				public function HRESULT(IAzTask *self, BSTR bstrOp, VARIANT varReserved) AddOperation;
-				public function HRESULT(IAzTask *self, BSTR bstrOp, VARIANT varReserved) DeleteOperation;
-				public function HRESULT(IAzTask *self, BSTR bstrTask, VARIANT varReserved) AddTask;
-				public function HRESULT(IAzTask *self, BSTR bstrTask, VARIANT varReserved) DeleteTask;
-				public function HRESULT(IAzTask *self, BOOL* pfProp) get_Writable;
-				public function HRESULT(IAzTask *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
-				public function HRESULT(IAzTask *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
-				public function HRESULT(IAzTask *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
-				public function HRESULT(IAzTask *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
-				public function HRESULT(IAzTask *self, int32 lFlags, VARIANT varReserved) Submit;
+				public new function HRESULT(IAzTask *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(IAzTask *self, BSTR bstrName) put_Name;
+				public new function HRESULT(IAzTask *self, BSTR* pbstrDescription) get_Description;
+				public new function HRESULT(IAzTask *self, BSTR bstrDescription) put_Description;
+				public new function HRESULT(IAzTask *self, BSTR* pbstrApplicationData) get_ApplicationData;
+				public new function HRESULT(IAzTask *self, BSTR bstrApplicationData) put_ApplicationData;
+				public new function HRESULT(IAzTask *self, BSTR* pbstrProp) get_BizRule;
+				public new function HRESULT(IAzTask *self, BSTR bstrProp) put_BizRule;
+				public new function HRESULT(IAzTask *self, BSTR* pbstrProp) get_BizRuleLanguage;
+				public new function HRESULT(IAzTask *self, BSTR bstrProp) put_BizRuleLanguage;
+				public new function HRESULT(IAzTask *self, BSTR* pbstrProp) get_BizRuleImportedPath;
+				public new function HRESULT(IAzTask *self, BSTR bstrProp) put_BizRuleImportedPath;
+				public new function HRESULT(IAzTask *self, BOOL* pfProp) get_IsRoleDefinition;
+				public new function HRESULT(IAzTask *self, BOOL fProp) put_IsRoleDefinition;
+				public new function HRESULT(IAzTask *self, VARIANT* pvarProp) get_Operations;
+				public new function HRESULT(IAzTask *self, VARIANT* pvarProp) get_Tasks;
+				public new function HRESULT(IAzTask *self, BSTR bstrOp, VARIANT varReserved) AddOperation;
+				public new function HRESULT(IAzTask *self, BSTR bstrOp, VARIANT varReserved) DeleteOperation;
+				public new function HRESULT(IAzTask *self, BSTR bstrTask, VARIANT varReserved) AddTask;
+				public new function HRESULT(IAzTask *self, BSTR bstrTask, VARIANT varReserved) DeleteTask;
+				public new function HRESULT(IAzTask *self, BOOL* pfProp) get_Writable;
+				public new function HRESULT(IAzTask *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
+				public new function HRESULT(IAzTask *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
+				public new function HRESULT(IAzTask *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
+				public new function HRESULT(IAzTask *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
+				public new function HRESULT(IAzTask *self, int32 lFlags, VARIANT varReserved) Submit;
 			}
 		}
 		[CRepr]
@@ -1102,13 +1771,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb338ccab, 0x4c85, 0x4388, 0x8c, 0x0a, 0xc5, 0x85, 0x92, 0xba, 0xd3, 0x98);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 Index, VARIANT* pvarObtPtr) mut
+			{
+				return VT.get_Item(&this, Index, pvarObtPtr);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** ppEnumPtr) mut
+			{
+				return VT.get__NewEnum(&this, ppEnumPtr);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzTasks *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
-				public function HRESULT(IAzTasks *self, int32* plCount) get_Count;
-				public function HRESULT(IAzTasks *self, IUnknown** ppEnumPtr) get__NewEnum;
+				public new function HRESULT(IAzTasks *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
+				public new function HRESULT(IAzTasks *self, int32* plCount) get_Count;
+				public new function HRESULT(IAzTasks *self, IUnknown** ppEnumPtr) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1116,48 +1798,201 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x00e52487, 0xe08d, 0x4514, 0xb6, 0x2e, 0x87, 0x7d, 0x56, 0x45, 0xf5, 0xab);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
+			public HRESULT put_Name(BSTR bstrName) mut
+			{
+				return VT.put_Name(&this, bstrName);
+			}
+			public HRESULT get_Description(BSTR* pbstrDescription) mut
+			{
+				return VT.get_Description(&this, pbstrDescription);
+			}
+			public HRESULT put_Description(BSTR bstrDescription) mut
+			{
+				return VT.put_Description(&this, bstrDescription);
+			}
+			public HRESULT get_ApplicationData(BSTR* pbstrApplicationData) mut
+			{
+				return VT.get_ApplicationData(&this, pbstrApplicationData);
+			}
+			public HRESULT put_ApplicationData(BSTR bstrApplicationData) mut
+			{
+				return VT.put_ApplicationData(&this, bstrApplicationData);
+			}
+			public HRESULT get_Writable(BOOL* pfProp) mut
+			{
+				return VT.get_Writable(&this, pfProp);
+			}
+			public HRESULT GetProperty(int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) mut
+			{
+				return VT.GetProperty(&this, lPropId, varReserved, pvarProp);
+			}
+			public HRESULT SetProperty(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.SetProperty(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT AddPropertyItem(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.AddPropertyItem(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT DeletePropertyItem(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.DeletePropertyItem(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT get_PolicyAdministrators(VARIANT* pvarAdmins) mut
+			{
+				return VT.get_PolicyAdministrators(&this, pvarAdmins);
+			}
+			public HRESULT get_PolicyReaders(VARIANT* pvarReaders) mut
+			{
+				return VT.get_PolicyReaders(&this, pvarReaders);
+			}
+			public HRESULT AddPolicyAdministrator(BSTR bstrAdmin, VARIANT varReserved) mut
+			{
+				return VT.AddPolicyAdministrator(&this, bstrAdmin, varReserved);
+			}
+			public HRESULT DeletePolicyAdministrator(BSTR bstrAdmin, VARIANT varReserved) mut
+			{
+				return VT.DeletePolicyAdministrator(&this, bstrAdmin, varReserved);
+			}
+			public HRESULT AddPolicyReader(BSTR bstrReader, VARIANT varReserved) mut
+			{
+				return VT.AddPolicyReader(&this, bstrReader, varReserved);
+			}
+			public HRESULT DeletePolicyReader(BSTR bstrReader, VARIANT varReserved) mut
+			{
+				return VT.DeletePolicyReader(&this, bstrReader, varReserved);
+			}
+			public HRESULT get_ApplicationGroups(IAzApplicationGroups** ppGroupCollection) mut
+			{
+				return VT.get_ApplicationGroups(&this, ppGroupCollection);
+			}
+			public HRESULT OpenApplicationGroup(BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) mut
+			{
+				return VT.OpenApplicationGroup(&this, bstrGroupName, varReserved, ppGroup);
+			}
+			public HRESULT CreateApplicationGroup(BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) mut
+			{
+				return VT.CreateApplicationGroup(&this, bstrGroupName, varReserved, ppGroup);
+			}
+			public HRESULT DeleteApplicationGroup(BSTR bstrGroupName, VARIANT varReserved) mut
+			{
+				return VT.DeleteApplicationGroup(&this, bstrGroupName, varReserved);
+			}
+			public HRESULT get_Roles(IAzRoles** ppRoleCollection) mut
+			{
+				return VT.get_Roles(&this, ppRoleCollection);
+			}
+			public HRESULT OpenRole(BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) mut
+			{
+				return VT.OpenRole(&this, bstrRoleName, varReserved, ppRole);
+			}
+			public HRESULT CreateRole(BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) mut
+			{
+				return VT.CreateRole(&this, bstrRoleName, varReserved, ppRole);
+			}
+			public HRESULT DeleteRole(BSTR bstrRoleName, VARIANT varReserved) mut
+			{
+				return VT.DeleteRole(&this, bstrRoleName, varReserved);
+			}
+			public HRESULT get_Tasks(IAzTasks** ppTaskCollection) mut
+			{
+				return VT.get_Tasks(&this, ppTaskCollection);
+			}
+			public HRESULT OpenTask(BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) mut
+			{
+				return VT.OpenTask(&this, bstrTaskName, varReserved, ppTask);
+			}
+			public HRESULT CreateTask(BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) mut
+			{
+				return VT.CreateTask(&this, bstrTaskName, varReserved, ppTask);
+			}
+			public HRESULT DeleteTask(BSTR bstrTaskName, VARIANT varReserved) mut
+			{
+				return VT.DeleteTask(&this, bstrTaskName, varReserved);
+			}
+			public HRESULT Submit(int32 lFlags, VARIANT varReserved) mut
+			{
+				return VT.Submit(&this, lFlags, varReserved);
+			}
+			public HRESULT get_CanBeDelegated(BOOL* pfProp) mut
+			{
+				return VT.get_CanBeDelegated(&this, pfProp);
+			}
+			public HRESULT get_BizrulesWritable(BOOL* pfProp) mut
+			{
+				return VT.get_BizrulesWritable(&this, pfProp);
+			}
+			public HRESULT get_PolicyAdministratorsName(VARIANT* pvarAdmins) mut
+			{
+				return VT.get_PolicyAdministratorsName(&this, pvarAdmins);
+			}
+			public HRESULT get_PolicyReadersName(VARIANT* pvarReaders) mut
+			{
+				return VT.get_PolicyReadersName(&this, pvarReaders);
+			}
+			public HRESULT AddPolicyAdministratorName(BSTR bstrAdmin, VARIANT varReserved) mut
+			{
+				return VT.AddPolicyAdministratorName(&this, bstrAdmin, varReserved);
+			}
+			public HRESULT DeletePolicyAdministratorName(BSTR bstrAdmin, VARIANT varReserved) mut
+			{
+				return VT.DeletePolicyAdministratorName(&this, bstrAdmin, varReserved);
+			}
+			public HRESULT AddPolicyReaderName(BSTR bstrReader, VARIANT varReserved) mut
+			{
+				return VT.AddPolicyReaderName(&this, bstrReader, varReserved);
+			}
+			public HRESULT DeletePolicyReaderName(BSTR bstrReader, VARIANT varReserved) mut
+			{
+				return VT.DeletePolicyReaderName(&this, bstrReader, varReserved);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzScope *self, BSTR* pbstrName) get_Name;
-				public function HRESULT(IAzScope *self, BSTR bstrName) put_Name;
-				public function HRESULT(IAzScope *self, BSTR* pbstrDescription) get_Description;
-				public function HRESULT(IAzScope *self, BSTR bstrDescription) put_Description;
-				public function HRESULT(IAzScope *self, BSTR* pbstrApplicationData) get_ApplicationData;
-				public function HRESULT(IAzScope *self, BSTR bstrApplicationData) put_ApplicationData;
-				public function HRESULT(IAzScope *self, BOOL* pfProp) get_Writable;
-				public function HRESULT(IAzScope *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
-				public function HRESULT(IAzScope *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
-				public function HRESULT(IAzScope *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
-				public function HRESULT(IAzScope *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
-				public function HRESULT(IAzScope *self, VARIANT* pvarAdmins) get_PolicyAdministrators;
-				public function HRESULT(IAzScope *self, VARIANT* pvarReaders) get_PolicyReaders;
-				public function HRESULT(IAzScope *self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministrator;
-				public function HRESULT(IAzScope *self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministrator;
-				public function HRESULT(IAzScope *self, BSTR bstrReader, VARIANT varReserved) AddPolicyReader;
-				public function HRESULT(IAzScope *self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReader;
-				public function HRESULT(IAzScope *self, IAzApplicationGroups** ppGroupCollection) get_ApplicationGroups;
-				public function HRESULT(IAzScope *self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) OpenApplicationGroup;
-				public function HRESULT(IAzScope *self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) CreateApplicationGroup;
-				public function HRESULT(IAzScope *self, BSTR bstrGroupName, VARIANT varReserved) DeleteApplicationGroup;
-				public function HRESULT(IAzScope *self, IAzRoles** ppRoleCollection) get_Roles;
-				public function HRESULT(IAzScope *self, BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) OpenRole;
-				public function HRESULT(IAzScope *self, BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) CreateRole;
-				public function HRESULT(IAzScope *self, BSTR bstrRoleName, VARIANT varReserved) DeleteRole;
-				public function HRESULT(IAzScope *self, IAzTasks** ppTaskCollection) get_Tasks;
-				public function HRESULT(IAzScope *self, BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) OpenTask;
-				public function HRESULT(IAzScope *self, BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) CreateTask;
-				public function HRESULT(IAzScope *self, BSTR bstrTaskName, VARIANT varReserved) DeleteTask;
-				public function HRESULT(IAzScope *self, int32 lFlags, VARIANT varReserved) Submit;
-				public function HRESULT(IAzScope *self, BOOL* pfProp) get_CanBeDelegated;
-				public function HRESULT(IAzScope *self, BOOL* pfProp) get_BizrulesWritable;
-				public function HRESULT(IAzScope *self, VARIANT* pvarAdmins) get_PolicyAdministratorsName;
-				public function HRESULT(IAzScope *self, VARIANT* pvarReaders) get_PolicyReadersName;
-				public function HRESULT(IAzScope *self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministratorName;
-				public function HRESULT(IAzScope *self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministratorName;
-				public function HRESULT(IAzScope *self, BSTR bstrReader, VARIANT varReserved) AddPolicyReaderName;
-				public function HRESULT(IAzScope *self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReaderName;
+				public new function HRESULT(IAzScope *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(IAzScope *self, BSTR bstrName) put_Name;
+				public new function HRESULT(IAzScope *self, BSTR* pbstrDescription) get_Description;
+				public new function HRESULT(IAzScope *self, BSTR bstrDescription) put_Description;
+				public new function HRESULT(IAzScope *self, BSTR* pbstrApplicationData) get_ApplicationData;
+				public new function HRESULT(IAzScope *self, BSTR bstrApplicationData) put_ApplicationData;
+				public new function HRESULT(IAzScope *self, BOOL* pfProp) get_Writable;
+				public new function HRESULT(IAzScope *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
+				public new function HRESULT(IAzScope *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
+				public new function HRESULT(IAzScope *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
+				public new function HRESULT(IAzScope *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
+				public new function HRESULT(IAzScope *self, VARIANT* pvarAdmins) get_PolicyAdministrators;
+				public new function HRESULT(IAzScope *self, VARIANT* pvarReaders) get_PolicyReaders;
+				public new function HRESULT(IAzScope *self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministrator;
+				public new function HRESULT(IAzScope *self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministrator;
+				public new function HRESULT(IAzScope *self, BSTR bstrReader, VARIANT varReserved) AddPolicyReader;
+				public new function HRESULT(IAzScope *self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReader;
+				public new function HRESULT(IAzScope *self, IAzApplicationGroups** ppGroupCollection) get_ApplicationGroups;
+				public new function HRESULT(IAzScope *self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) OpenApplicationGroup;
+				public new function HRESULT(IAzScope *self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) CreateApplicationGroup;
+				public new function HRESULT(IAzScope *self, BSTR bstrGroupName, VARIANT varReserved) DeleteApplicationGroup;
+				public new function HRESULT(IAzScope *self, IAzRoles** ppRoleCollection) get_Roles;
+				public new function HRESULT(IAzScope *self, BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) OpenRole;
+				public new function HRESULT(IAzScope *self, BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) CreateRole;
+				public new function HRESULT(IAzScope *self, BSTR bstrRoleName, VARIANT varReserved) DeleteRole;
+				public new function HRESULT(IAzScope *self, IAzTasks** ppTaskCollection) get_Tasks;
+				public new function HRESULT(IAzScope *self, BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) OpenTask;
+				public new function HRESULT(IAzScope *self, BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) CreateTask;
+				public new function HRESULT(IAzScope *self, BSTR bstrTaskName, VARIANT varReserved) DeleteTask;
+				public new function HRESULT(IAzScope *self, int32 lFlags, VARIANT varReserved) Submit;
+				public new function HRESULT(IAzScope *self, BOOL* pfProp) get_CanBeDelegated;
+				public new function HRESULT(IAzScope *self, BOOL* pfProp) get_BizrulesWritable;
+				public new function HRESULT(IAzScope *self, VARIANT* pvarAdmins) get_PolicyAdministratorsName;
+				public new function HRESULT(IAzScope *self, VARIANT* pvarReaders) get_PolicyReadersName;
+				public new function HRESULT(IAzScope *self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministratorName;
+				public new function HRESULT(IAzScope *self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministratorName;
+				public new function HRESULT(IAzScope *self, BSTR bstrReader, VARIANT varReserved) AddPolicyReaderName;
+				public new function HRESULT(IAzScope *self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReaderName;
 			}
 		}
 		[CRepr]
@@ -1165,13 +2000,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x78e14853, 0x9f5e, 0x406d, 0x9b, 0x91, 0x6b, 0xdb, 0xa6, 0x97, 0x35, 0x10);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 Index, VARIANT* pvarObtPtr) mut
+			{
+				return VT.get_Item(&this, Index, pvarObtPtr);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** ppEnumPtr) mut
+			{
+				return VT.get__NewEnum(&this, ppEnumPtr);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzScopes *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
-				public function HRESULT(IAzScopes *self, int32* plCount) get_Count;
-				public function HRESULT(IAzScopes *self, IUnknown** ppEnumPtr) get__NewEnum;
+				public new function HRESULT(IAzScopes *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
+				public new function HRESULT(IAzScopes *self, int32* plCount) get_Count;
+				public new function HRESULT(IAzScopes *self, IUnknown** ppEnumPtr) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1179,42 +2027,171 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf1b744cd, 0x58a6, 0x4e06, 0x9f, 0xbf, 0x36, 0xf6, 0xd7, 0x79, 0xe2, 0x1e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
+			public HRESULT put_Name(BSTR bstrName) mut
+			{
+				return VT.put_Name(&this, bstrName);
+			}
+			public HRESULT get_Type(int32* plProp) mut
+			{
+				return VT.get_Type(&this, plProp);
+			}
+			public HRESULT put_Type(int32 lProp) mut
+			{
+				return VT.put_Type(&this, lProp);
+			}
+			public HRESULT get_LdapQuery(BSTR* pbstrProp) mut
+			{
+				return VT.get_LdapQuery(&this, pbstrProp);
+			}
+			public HRESULT put_LdapQuery(BSTR bstrProp) mut
+			{
+				return VT.put_LdapQuery(&this, bstrProp);
+			}
+			public HRESULT get_AppMembers(VARIANT* pvarProp) mut
+			{
+				return VT.get_AppMembers(&this, pvarProp);
+			}
+			public HRESULT get_AppNonMembers(VARIANT* pvarProp) mut
+			{
+				return VT.get_AppNonMembers(&this, pvarProp);
+			}
+			public HRESULT get_Members(VARIANT* pvarProp) mut
+			{
+				return VT.get_Members(&this, pvarProp);
+			}
+			public HRESULT get_NonMembers(VARIANT* pvarProp) mut
+			{
+				return VT.get_NonMembers(&this, pvarProp);
+			}
+			public HRESULT get_Description(BSTR* pbstrDescription) mut
+			{
+				return VT.get_Description(&this, pbstrDescription);
+			}
+			public HRESULT put_Description(BSTR bstrDescription) mut
+			{
+				return VT.put_Description(&this, bstrDescription);
+			}
+			public HRESULT AddAppMember(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.AddAppMember(&this, bstrProp, varReserved);
+			}
+			public HRESULT DeleteAppMember(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.DeleteAppMember(&this, bstrProp, varReserved);
+			}
+			public HRESULT AddAppNonMember(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.AddAppNonMember(&this, bstrProp, varReserved);
+			}
+			public HRESULT DeleteAppNonMember(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.DeleteAppNonMember(&this, bstrProp, varReserved);
+			}
+			public HRESULT AddMember(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.AddMember(&this, bstrProp, varReserved);
+			}
+			public HRESULT DeleteMember(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.DeleteMember(&this, bstrProp, varReserved);
+			}
+			public HRESULT AddNonMember(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.AddNonMember(&this, bstrProp, varReserved);
+			}
+			public HRESULT DeleteNonMember(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.DeleteNonMember(&this, bstrProp, varReserved);
+			}
+			public HRESULT get_Writable(BOOL* pfProp) mut
+			{
+				return VT.get_Writable(&this, pfProp);
+			}
+			public HRESULT GetProperty(int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) mut
+			{
+				return VT.GetProperty(&this, lPropId, varReserved, pvarProp);
+			}
+			public HRESULT SetProperty(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.SetProperty(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT AddPropertyItem(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.AddPropertyItem(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT DeletePropertyItem(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.DeletePropertyItem(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT Submit(int32 lFlags, VARIANT varReserved) mut
+			{
+				return VT.Submit(&this, lFlags, varReserved);
+			}
+			public HRESULT AddMemberName(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.AddMemberName(&this, bstrProp, varReserved);
+			}
+			public HRESULT DeleteMemberName(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.DeleteMemberName(&this, bstrProp, varReserved);
+			}
+			public HRESULT AddNonMemberName(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.AddNonMemberName(&this, bstrProp, varReserved);
+			}
+			public HRESULT DeleteNonMemberName(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.DeleteNonMemberName(&this, bstrProp, varReserved);
+			}
+			public HRESULT get_MembersName(VARIANT* pvarProp) mut
+			{
+				return VT.get_MembersName(&this, pvarProp);
+			}
+			public HRESULT get_NonMembersName(VARIANT* pvarProp) mut
+			{
+				return VT.get_NonMembersName(&this, pvarProp);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzApplicationGroup *self, BSTR* pbstrName) get_Name;
-				public function HRESULT(IAzApplicationGroup *self, BSTR bstrName) put_Name;
-				public function HRESULT(IAzApplicationGroup *self, int32* plProp) get_Type;
-				public function HRESULT(IAzApplicationGroup *self, int32 lProp) put_Type;
-				public function HRESULT(IAzApplicationGroup *self, BSTR* pbstrProp) get_LdapQuery;
-				public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp) put_LdapQuery;
-				public function HRESULT(IAzApplicationGroup *self, VARIANT* pvarProp) get_AppMembers;
-				public function HRESULT(IAzApplicationGroup *self, VARIANT* pvarProp) get_AppNonMembers;
-				public function HRESULT(IAzApplicationGroup *self, VARIANT* pvarProp) get_Members;
-				public function HRESULT(IAzApplicationGroup *self, VARIANT* pvarProp) get_NonMembers;
-				public function HRESULT(IAzApplicationGroup *self, BSTR* pbstrDescription) get_Description;
-				public function HRESULT(IAzApplicationGroup *self, BSTR bstrDescription) put_Description;
-				public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) AddAppMember;
-				public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) DeleteAppMember;
-				public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) AddAppNonMember;
-				public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) DeleteAppNonMember;
-				public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) AddMember;
-				public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) DeleteMember;
-				public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) AddNonMember;
-				public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) DeleteNonMember;
-				public function HRESULT(IAzApplicationGroup *self, BOOL* pfProp) get_Writable;
-				public function HRESULT(IAzApplicationGroup *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
-				public function HRESULT(IAzApplicationGroup *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
-				public function HRESULT(IAzApplicationGroup *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
-				public function HRESULT(IAzApplicationGroup *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
-				public function HRESULT(IAzApplicationGroup *self, int32 lFlags, VARIANT varReserved) Submit;
-				public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) AddMemberName;
-				public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) DeleteMemberName;
-				public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) AddNonMemberName;
-				public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) DeleteNonMemberName;
-				public function HRESULT(IAzApplicationGroup *self, VARIANT* pvarProp) get_MembersName;
-				public function HRESULT(IAzApplicationGroup *self, VARIANT* pvarProp) get_NonMembersName;
+				public new function HRESULT(IAzApplicationGroup *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(IAzApplicationGroup *self, BSTR bstrName) put_Name;
+				public new function HRESULT(IAzApplicationGroup *self, int32* plProp) get_Type;
+				public new function HRESULT(IAzApplicationGroup *self, int32 lProp) put_Type;
+				public new function HRESULT(IAzApplicationGroup *self, BSTR* pbstrProp) get_LdapQuery;
+				public new function HRESULT(IAzApplicationGroup *self, BSTR bstrProp) put_LdapQuery;
+				public new function HRESULT(IAzApplicationGroup *self, VARIANT* pvarProp) get_AppMembers;
+				public new function HRESULT(IAzApplicationGroup *self, VARIANT* pvarProp) get_AppNonMembers;
+				public new function HRESULT(IAzApplicationGroup *self, VARIANT* pvarProp) get_Members;
+				public new function HRESULT(IAzApplicationGroup *self, VARIANT* pvarProp) get_NonMembers;
+				public new function HRESULT(IAzApplicationGroup *self, BSTR* pbstrDescription) get_Description;
+				public new function HRESULT(IAzApplicationGroup *self, BSTR bstrDescription) put_Description;
+				public new function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) AddAppMember;
+				public new function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) DeleteAppMember;
+				public new function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) AddAppNonMember;
+				public new function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) DeleteAppNonMember;
+				public new function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) AddMember;
+				public new function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) DeleteMember;
+				public new function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) AddNonMember;
+				public new function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) DeleteNonMember;
+				public new function HRESULT(IAzApplicationGroup *self, BOOL* pfProp) get_Writable;
+				public new function HRESULT(IAzApplicationGroup *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
+				public new function HRESULT(IAzApplicationGroup *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
+				public new function HRESULT(IAzApplicationGroup *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
+				public new function HRESULT(IAzApplicationGroup *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
+				public new function HRESULT(IAzApplicationGroup *self, int32 lFlags, VARIANT varReserved) Submit;
+				public new function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) AddMemberName;
+				public new function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) DeleteMemberName;
+				public new function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) AddNonMemberName;
+				public new function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) DeleteNonMemberName;
+				public new function HRESULT(IAzApplicationGroup *self, VARIANT* pvarProp) get_MembersName;
+				public new function HRESULT(IAzApplicationGroup *self, VARIANT* pvarProp) get_NonMembersName;
 			}
 		}
 		[CRepr]
@@ -1222,13 +2199,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4ce66ad5, 0x9f3c, 0x469d, 0xa9, 0x11, 0xb9, 0x98, 0x87, 0xa7, 0xe6, 0x85);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 Index, VARIANT* pvarObtPtr) mut
+			{
+				return VT.get_Item(&this, Index, pvarObtPtr);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** ppEnumPtr) mut
+			{
+				return VT.get__NewEnum(&this, ppEnumPtr);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzApplicationGroups *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
-				public function HRESULT(IAzApplicationGroups *self, int32* plCount) get_Count;
-				public function HRESULT(IAzApplicationGroups *self, IUnknown** ppEnumPtr) get__NewEnum;
+				public new function HRESULT(IAzApplicationGroups *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
+				public new function HRESULT(IAzApplicationGroups *self, int32* plCount) get_Count;
+				public new function HRESULT(IAzApplicationGroups *self, IUnknown** ppEnumPtr) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1236,37 +2226,146 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x859e0d8d, 0x62d7, 0x41d8, 0xa0, 0x34, 0xc0, 0xcd, 0x5d, 0x43, 0xfd, 0xfa);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
+			public HRESULT put_Name(BSTR bstrName) mut
+			{
+				return VT.put_Name(&this, bstrName);
+			}
+			public HRESULT get_Description(BSTR* pbstrDescription) mut
+			{
+				return VT.get_Description(&this, pbstrDescription);
+			}
+			public HRESULT put_Description(BSTR bstrDescription) mut
+			{
+				return VT.put_Description(&this, bstrDescription);
+			}
+			public HRESULT get_ApplicationData(BSTR* pbstrApplicationData) mut
+			{
+				return VT.get_ApplicationData(&this, pbstrApplicationData);
+			}
+			public HRESULT put_ApplicationData(BSTR bstrApplicationData) mut
+			{
+				return VT.put_ApplicationData(&this, bstrApplicationData);
+			}
+			public HRESULT AddAppMember(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.AddAppMember(&this, bstrProp, varReserved);
+			}
+			public HRESULT DeleteAppMember(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.DeleteAppMember(&this, bstrProp, varReserved);
+			}
+			public HRESULT AddTask(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.AddTask(&this, bstrProp, varReserved);
+			}
+			public HRESULT DeleteTask(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.DeleteTask(&this, bstrProp, varReserved);
+			}
+			public HRESULT AddOperation(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.AddOperation(&this, bstrProp, varReserved);
+			}
+			public HRESULT DeleteOperation(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.DeleteOperation(&this, bstrProp, varReserved);
+			}
+			public HRESULT AddMember(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.AddMember(&this, bstrProp, varReserved);
+			}
+			public HRESULT DeleteMember(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.DeleteMember(&this, bstrProp, varReserved);
+			}
+			public HRESULT get_Writable(BOOL* pfProp) mut
+			{
+				return VT.get_Writable(&this, pfProp);
+			}
+			public HRESULT GetProperty(int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) mut
+			{
+				return VT.GetProperty(&this, lPropId, varReserved, pvarProp);
+			}
+			public HRESULT SetProperty(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.SetProperty(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT get_AppMembers(VARIANT* pvarProp) mut
+			{
+				return VT.get_AppMembers(&this, pvarProp);
+			}
+			public HRESULT get_Members(VARIANT* pvarProp) mut
+			{
+				return VT.get_Members(&this, pvarProp);
+			}
+			public HRESULT get_Operations(VARIANT* pvarProp) mut
+			{
+				return VT.get_Operations(&this, pvarProp);
+			}
+			public HRESULT get_Tasks(VARIANT* pvarProp) mut
+			{
+				return VT.get_Tasks(&this, pvarProp);
+			}
+			public HRESULT AddPropertyItem(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.AddPropertyItem(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT DeletePropertyItem(int32 lPropId, VARIANT varProp, VARIANT varReserved) mut
+			{
+				return VT.DeletePropertyItem(&this, lPropId, varProp, varReserved);
+			}
+			public HRESULT Submit(int32 lFlags, VARIANT varReserved) mut
+			{
+				return VT.Submit(&this, lFlags, varReserved);
+			}
+			public HRESULT AddMemberName(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.AddMemberName(&this, bstrProp, varReserved);
+			}
+			public HRESULT DeleteMemberName(BSTR bstrProp, VARIANT varReserved) mut
+			{
+				return VT.DeleteMemberName(&this, bstrProp, varReserved);
+			}
+			public HRESULT get_MembersName(VARIANT* pvarProp) mut
+			{
+				return VT.get_MembersName(&this, pvarProp);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzRole *self, BSTR* pbstrName) get_Name;
-				public function HRESULT(IAzRole *self, BSTR bstrName) put_Name;
-				public function HRESULT(IAzRole *self, BSTR* pbstrDescription) get_Description;
-				public function HRESULT(IAzRole *self, BSTR bstrDescription) put_Description;
-				public function HRESULT(IAzRole *self, BSTR* pbstrApplicationData) get_ApplicationData;
-				public function HRESULT(IAzRole *self, BSTR bstrApplicationData) put_ApplicationData;
-				public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) AddAppMember;
-				public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) DeleteAppMember;
-				public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) AddTask;
-				public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) DeleteTask;
-				public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) AddOperation;
-				public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) DeleteOperation;
-				public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) AddMember;
-				public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) DeleteMember;
-				public function HRESULT(IAzRole *self, BOOL* pfProp) get_Writable;
-				public function HRESULT(IAzRole *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
-				public function HRESULT(IAzRole *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
-				public function HRESULT(IAzRole *self, VARIANT* pvarProp) get_AppMembers;
-				public function HRESULT(IAzRole *self, VARIANT* pvarProp) get_Members;
-				public function HRESULT(IAzRole *self, VARIANT* pvarProp) get_Operations;
-				public function HRESULT(IAzRole *self, VARIANT* pvarProp) get_Tasks;
-				public function HRESULT(IAzRole *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
-				public function HRESULT(IAzRole *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
-				public function HRESULT(IAzRole *self, int32 lFlags, VARIANT varReserved) Submit;
-				public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) AddMemberName;
-				public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) DeleteMemberName;
-				public function HRESULT(IAzRole *self, VARIANT* pvarProp) get_MembersName;
+				public new function HRESULT(IAzRole *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(IAzRole *self, BSTR bstrName) put_Name;
+				public new function HRESULT(IAzRole *self, BSTR* pbstrDescription) get_Description;
+				public new function HRESULT(IAzRole *self, BSTR bstrDescription) put_Description;
+				public new function HRESULT(IAzRole *self, BSTR* pbstrApplicationData) get_ApplicationData;
+				public new function HRESULT(IAzRole *self, BSTR bstrApplicationData) put_ApplicationData;
+				public new function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) AddAppMember;
+				public new function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) DeleteAppMember;
+				public new function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) AddTask;
+				public new function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) DeleteTask;
+				public new function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) AddOperation;
+				public new function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) DeleteOperation;
+				public new function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) AddMember;
+				public new function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) DeleteMember;
+				public new function HRESULT(IAzRole *self, BOOL* pfProp) get_Writable;
+				public new function HRESULT(IAzRole *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
+				public new function HRESULT(IAzRole *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
+				public new function HRESULT(IAzRole *self, VARIANT* pvarProp) get_AppMembers;
+				public new function HRESULT(IAzRole *self, VARIANT* pvarProp) get_Members;
+				public new function HRESULT(IAzRole *self, VARIANT* pvarProp) get_Operations;
+				public new function HRESULT(IAzRole *self, VARIANT* pvarProp) get_Tasks;
+				public new function HRESULT(IAzRole *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
+				public new function HRESULT(IAzRole *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
+				public new function HRESULT(IAzRole *self, int32 lFlags, VARIANT varReserved) Submit;
+				public new function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) AddMemberName;
+				public new function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) DeleteMemberName;
+				public new function HRESULT(IAzRole *self, VARIANT* pvarProp) get_MembersName;
 			}
 		}
 		[CRepr]
@@ -1274,13 +2373,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x95e0f119, 0x13b4, 0x4dae, 0xb6, 0x5f, 0x2f, 0x7d, 0x60, 0xd8, 0x22, 0xe4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 Index, VARIANT* pvarObtPtr) mut
+			{
+				return VT.get_Item(&this, Index, pvarObtPtr);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** ppEnumPtr) mut
+			{
+				return VT.get__NewEnum(&this, ppEnumPtr);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzRoles *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
-				public function HRESULT(IAzRoles *self, int32* plCount) get_Count;
-				public function HRESULT(IAzRoles *self, IUnknown** ppEnumPtr) get__NewEnum;
+				public new function HRESULT(IAzRoles *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
+				public new function HRESULT(IAzRoles *self, int32* plCount) get_Count;
+				public new function HRESULT(IAzRoles *self, IUnknown** ppEnumPtr) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1288,23 +2400,76 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xeff1f00b, 0x488a, 0x466d, 0xaf, 0xd9, 0xa4, 0x01, 0xc5, 0xf9, 0xee, 0xf5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AccessCheck(BSTR bstrObjectName, VARIANT varScopeNames, VARIANT varOperations, VARIANT varParameterNames, VARIANT varParameterValues, VARIANT varInterfaceNames, VARIANT varInterfaceFlags, VARIANT varInterfaces, VARIANT* pvarResults) mut
+			{
+				return VT.AccessCheck(&this, bstrObjectName, varScopeNames, varOperations, varParameterNames, varParameterValues, varInterfaceNames, varInterfaceFlags, varInterfaces, pvarResults);
+			}
+			public HRESULT GetBusinessRuleString(BSTR* pbstrBusinessRuleString) mut
+			{
+				return VT.GetBusinessRuleString(&this, pbstrBusinessRuleString);
+			}
+			public HRESULT get_UserDn(BSTR* pbstrProp) mut
+			{
+				return VT.get_UserDn(&this, pbstrProp);
+			}
+			public HRESULT get_UserSamCompat(BSTR* pbstrProp) mut
+			{
+				return VT.get_UserSamCompat(&this, pbstrProp);
+			}
+			public HRESULT get_UserDisplay(BSTR* pbstrProp) mut
+			{
+				return VT.get_UserDisplay(&this, pbstrProp);
+			}
+			public HRESULT get_UserGuid(BSTR* pbstrProp) mut
+			{
+				return VT.get_UserGuid(&this, pbstrProp);
+			}
+			public HRESULT get_UserCanonical(BSTR* pbstrProp) mut
+			{
+				return VT.get_UserCanonical(&this, pbstrProp);
+			}
+			public HRESULT get_UserUpn(BSTR* pbstrProp) mut
+			{
+				return VT.get_UserUpn(&this, pbstrProp);
+			}
+			public HRESULT get_UserDnsSamCompat(BSTR* pbstrProp) mut
+			{
+				return VT.get_UserDnsSamCompat(&this, pbstrProp);
+			}
+			public HRESULT GetProperty(int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) mut
+			{
+				return VT.GetProperty(&this, lPropId, varReserved, pvarProp);
+			}
+			public HRESULT GetRoles(BSTR bstrScopeName, VARIANT* pvarRoleNames) mut
+			{
+				return VT.GetRoles(&this, bstrScopeName, pvarRoleNames);
+			}
+			public HRESULT get_RoleForAccessCheck(BSTR* pbstrProp) mut
+			{
+				return VT.get_RoleForAccessCheck(&this, pbstrProp);
+			}
+			public HRESULT put_RoleForAccessCheck(BSTR bstrProp) mut
+			{
+				return VT.put_RoleForAccessCheck(&this, bstrProp);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzClientContext *self, BSTR bstrObjectName, VARIANT varScopeNames, VARIANT varOperations, VARIANT varParameterNames, VARIANT varParameterValues, VARIANT varInterfaceNames, VARIANT varInterfaceFlags, VARIANT varInterfaces, VARIANT* pvarResults) AccessCheck;
-				public function HRESULT(IAzClientContext *self, BSTR* pbstrBusinessRuleString) GetBusinessRuleString;
-				public function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserDn;
-				public function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserSamCompat;
-				public function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserDisplay;
-				public function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserGuid;
-				public function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserCanonical;
-				public function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserUpn;
-				public function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserDnsSamCompat;
-				public function HRESULT(IAzClientContext *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
-				public function HRESULT(IAzClientContext *self, BSTR bstrScopeName, VARIANT* pvarRoleNames) GetRoles;
-				public function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_RoleForAccessCheck;
-				public function HRESULT(IAzClientContext *self, BSTR bstrProp) put_RoleForAccessCheck;
+				public new function HRESULT(IAzClientContext *self, BSTR bstrObjectName, VARIANT varScopeNames, VARIANT varOperations, VARIANT varParameterNames, VARIANT varParameterValues, VARIANT varInterfaceNames, VARIANT varInterfaceFlags, VARIANT varInterfaces, VARIANT* pvarResults) AccessCheck;
+				public new function HRESULT(IAzClientContext *self, BSTR* pbstrBusinessRuleString) GetBusinessRuleString;
+				public new function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserDn;
+				public new function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserSamCompat;
+				public new function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserDisplay;
+				public new function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserGuid;
+				public new function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserCanonical;
+				public new function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserUpn;
+				public new function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserDnsSamCompat;
+				public new function HRESULT(IAzClientContext *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
+				public new function HRESULT(IAzClientContext *self, BSTR bstrScopeName, VARIANT* pvarRoleNames) GetRoles;
+				public new function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_RoleForAccessCheck;
+				public new function HRESULT(IAzClientContext *self, BSTR bstrProp) put_RoleForAccessCheck;
 			}
 		}
 		[CRepr]
@@ -1312,16 +2477,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2b0c92b8, 0x208a, 0x488a, 0x8f, 0x81, 0xe4, 0xed, 0xb2, 0x21, 0x11, 0xcd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetAssignedScopesPage(int32 lOptions, int32 PageSize, VARIANT* pvarCursor, VARIANT* pvarScopeNames) mut
+			{
+				return VT.GetAssignedScopesPage(&this, lOptions, PageSize, pvarCursor, pvarScopeNames);
+			}
+			public HRESULT AddRoles(VARIANT varRoles, BSTR bstrScopeName) mut
+			{
+				return VT.AddRoles(&this, varRoles, bstrScopeName);
+			}
+			public HRESULT AddApplicationGroups(VARIANT varApplicationGroups) mut
+			{
+				return VT.AddApplicationGroups(&this, varApplicationGroups);
+			}
+			public HRESULT AddStringSids(VARIANT varStringSids) mut
+			{
+				return VT.AddStringSids(&this, varStringSids);
+			}
+			public HRESULT put_LDAPQueryDN(BSTR bstrLDAPQueryDN) mut
+			{
+				return VT.put_LDAPQueryDN(&this, bstrLDAPQueryDN);
+			}
+			public HRESULT get_LDAPQueryDN(BSTR* pbstrLDAPQueryDN) mut
+			{
+				return VT.get_LDAPQueryDN(&this, pbstrLDAPQueryDN);
+			}
 			[CRepr]
 			public struct VTable : IAzClientContext.VTable
 			{
-				public function HRESULT(IAzClientContext2 *self, int32 lOptions, int32 PageSize, VARIANT* pvarCursor, VARIANT* pvarScopeNames) GetAssignedScopesPage;
-				public function HRESULT(IAzClientContext2 *self, VARIANT varRoles, BSTR bstrScopeName) AddRoles;
-				public function HRESULT(IAzClientContext2 *self, VARIANT varApplicationGroups) AddApplicationGroups;
-				public function HRESULT(IAzClientContext2 *self, VARIANT varStringSids) AddStringSids;
-				public function HRESULT(IAzClientContext2 *self, BSTR bstrLDAPQueryDN) put_LDAPQueryDN;
-				public function HRESULT(IAzClientContext2 *self, BSTR* pbstrLDAPQueryDN) get_LDAPQueryDN;
+				public new function HRESULT(IAzClientContext2 *self, int32 lOptions, int32 PageSize, VARIANT* pvarCursor, VARIANT* pvarScopeNames) GetAssignedScopesPage;
+				public new function HRESULT(IAzClientContext2 *self, VARIANT varRoles, BSTR bstrScopeName) AddRoles;
+				public new function HRESULT(IAzClientContext2 *self, VARIANT varApplicationGroups) AddApplicationGroups;
+				public new function HRESULT(IAzClientContext2 *self, VARIANT varStringSids) AddStringSids;
+				public new function HRESULT(IAzClientContext2 *self, BSTR bstrLDAPQueryDN) put_LDAPQueryDN;
+				public new function HRESULT(IAzClientContext2 *self, BSTR* pbstrLDAPQueryDN) get_LDAPQueryDN;
 			}
 		}
 		[CRepr]
@@ -1329,14 +2519,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe192f17d, 0xd59f, 0x455e, 0xa1, 0x52, 0x94, 0x03, 0x16, 0xcd, 0x77, 0xb2);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT put_BusinessRuleResult(BOOL bResult) mut
+			{
+				return VT.put_BusinessRuleResult(&this, bResult);
+			}
+			public HRESULT put_BusinessRuleString(BSTR bstrBusinessRuleString) mut
+			{
+				return VT.put_BusinessRuleString(&this, bstrBusinessRuleString);
+			}
+			public HRESULT get_BusinessRuleString(BSTR* pbstrBusinessRuleString) mut
+			{
+				return VT.get_BusinessRuleString(&this, pbstrBusinessRuleString);
+			}
+			public HRESULT GetParameter(BSTR bstrParameterName, VARIANT* pvarParameterValue) mut
+			{
+				return VT.GetParameter(&this, bstrParameterName, pvarParameterValue);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzBizRuleContext *self, BOOL bResult) put_BusinessRuleResult;
-				public function HRESULT(IAzBizRuleContext *self, BSTR bstrBusinessRuleString) put_BusinessRuleString;
-				public function HRESULT(IAzBizRuleContext *self, BSTR* pbstrBusinessRuleString) get_BusinessRuleString;
-				public function HRESULT(IAzBizRuleContext *self, BSTR bstrParameterName, VARIANT* pvarParameterValue) GetParameter;
+				public new function HRESULT(IAzBizRuleContext *self, BOOL bResult) put_BusinessRuleResult;
+				public new function HRESULT(IAzBizRuleContext *self, BSTR bstrBusinessRuleString) put_BusinessRuleString;
+				public new function HRESULT(IAzBizRuleContext *self, BSTR* pbstrBusinessRuleString) get_BusinessRuleString;
+				public new function HRESULT(IAzBizRuleContext *self, BSTR bstrParameterName, VARIANT* pvarParameterValue) GetParameter;
 			}
 		}
 		[CRepr]
@@ -1344,16 +2551,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfc17685f, 0xe25d, 0x4dcd, 0xba, 0xe1, 0x27, 0x6e, 0xc9, 0x53, 0x3c, 0xb5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddParameter(BSTR bstrParameterName, VARIANT varParameterValue) mut
+			{
+				return VT.AddParameter(&this, bstrParameterName, varParameterValue);
+			}
+			public HRESULT AddParameters(VARIANT varParameterNames, VARIANT varParameterValues) mut
+			{
+				return VT.AddParameters(&this, varParameterNames, varParameterValues);
+			}
+			public HRESULT GetParameterValue(BSTR bstrParameterName, VARIANT* pvarParameterValue) mut
+			{
+				return VT.GetParameterValue(&this, bstrParameterName, pvarParameterValue);
+			}
+			public HRESULT Remove(BSTR varParameterName) mut
+			{
+				return VT.Remove(&this, varParameterName);
+			}
+			public HRESULT RemoveAll() mut
+			{
+				return VT.RemoveAll(&this);
+			}
+			public HRESULT get_Count(uint32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzBizRuleParameters *self, BSTR bstrParameterName, VARIANT varParameterValue) AddParameter;
-				public function HRESULT(IAzBizRuleParameters *self, VARIANT varParameterNames, VARIANT varParameterValues) AddParameters;
-				public function HRESULT(IAzBizRuleParameters *self, BSTR bstrParameterName, VARIANT* pvarParameterValue) GetParameterValue;
-				public function HRESULT(IAzBizRuleParameters *self, BSTR varParameterName) Remove;
-				public function HRESULT(IAzBizRuleParameters *self) RemoveAll;
-				public function HRESULT(IAzBizRuleParameters *self, uint32* plCount) get_Count;
+				public new function HRESULT(IAzBizRuleParameters *self, BSTR bstrParameterName, VARIANT varParameterValue) AddParameter;
+				public new function HRESULT(IAzBizRuleParameters *self, VARIANT varParameterNames, VARIANT varParameterValues) AddParameters;
+				public new function HRESULT(IAzBizRuleParameters *self, BSTR bstrParameterName, VARIANT* pvarParameterValue) GetParameterValue;
+				public new function HRESULT(IAzBizRuleParameters *self, BSTR varParameterName) Remove;
+				public new function HRESULT(IAzBizRuleParameters *self) RemoveAll;
+				public new function HRESULT(IAzBizRuleParameters *self, uint32* plCount) get_Count;
 			}
 		}
 		[CRepr]
@@ -1361,16 +2593,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe94128c7, 0xe9da, 0x44cc, 0xb0, 0xbd, 0x53, 0x03, 0x6f, 0x3a, 0xab, 0x3d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddInterface(BSTR bstrInterfaceName, int32 lInterfaceFlag, VARIANT varInterface) mut
+			{
+				return VT.AddInterface(&this, bstrInterfaceName, lInterfaceFlag, varInterface);
+			}
+			public HRESULT AddInterfaces(VARIANT varInterfaceNames, VARIANT varInterfaceFlags, VARIANT varInterfaces) mut
+			{
+				return VT.AddInterfaces(&this, varInterfaceNames, varInterfaceFlags, varInterfaces);
+			}
+			public HRESULT GetInterfaceValue(BSTR bstrInterfaceName, int32* lInterfaceFlag, VARIANT* varInterface) mut
+			{
+				return VT.GetInterfaceValue(&this, bstrInterfaceName, lInterfaceFlag, varInterface);
+			}
+			public HRESULT Remove(BSTR bstrInterfaceName) mut
+			{
+				return VT.Remove(&this, bstrInterfaceName);
+			}
+			public HRESULT RemoveAll() mut
+			{
+				return VT.RemoveAll(&this);
+			}
+			public HRESULT get_Count(uint32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzBizRuleInterfaces *self, BSTR bstrInterfaceName, int32 lInterfaceFlag, VARIANT varInterface) AddInterface;
-				public function HRESULT(IAzBizRuleInterfaces *self, VARIANT varInterfaceNames, VARIANT varInterfaceFlags, VARIANT varInterfaces) AddInterfaces;
-				public function HRESULT(IAzBizRuleInterfaces *self, BSTR bstrInterfaceName, int32* lInterfaceFlag, VARIANT* varInterface) GetInterfaceValue;
-				public function HRESULT(IAzBizRuleInterfaces *self, BSTR bstrInterfaceName) Remove;
-				public function HRESULT(IAzBizRuleInterfaces *self) RemoveAll;
-				public function HRESULT(IAzBizRuleInterfaces *self, uint32* plCount) get_Count;
+				public new function HRESULT(IAzBizRuleInterfaces *self, BSTR bstrInterfaceName, int32 lInterfaceFlag, VARIANT varInterface) AddInterface;
+				public new function HRESULT(IAzBizRuleInterfaces *self, VARIANT varInterfaceNames, VARIANT varInterfaceFlags, VARIANT varInterfaces) AddInterfaces;
+				public new function HRESULT(IAzBizRuleInterfaces *self, BSTR bstrInterfaceName, int32* lInterfaceFlag, VARIANT* varInterface) GetInterfaceValue;
+				public new function HRESULT(IAzBizRuleInterfaces *self, BSTR bstrInterfaceName) Remove;
+				public new function HRESULT(IAzBizRuleInterfaces *self) RemoveAll;
+				public new function HRESULT(IAzBizRuleInterfaces *self, uint32* plCount) get_Count;
 			}
 		}
 		[CRepr]
@@ -1378,18 +2635,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x11894fde, 0x1deb, 0x4b4b, 0x89, 0x07, 0x6d, 0x1c, 0xda, 0x1f, 0x5d, 0x4f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AccessCheck2(BSTR bstrObjectName, BSTR bstrScopeName, int32 lOperation, uint32* plResult) mut
+			{
+				return VT.AccessCheck2(&this, bstrObjectName, bstrScopeName, lOperation, plResult);
+			}
+			public HRESULT IsInRoleAssignment(BSTR bstrScopeName, BSTR bstrRoleName, int16* pbIsInRole) mut
+			{
+				return VT.IsInRoleAssignment(&this, bstrScopeName, bstrRoleName, pbIsInRole);
+			}
+			public HRESULT GetOperations(BSTR bstrScopeName, IAzOperations** ppOperationCollection) mut
+			{
+				return VT.GetOperations(&this, bstrScopeName, ppOperationCollection);
+			}
+			public HRESULT GetTasks(BSTR bstrScopeName, IAzTasks** ppTaskCollection) mut
+			{
+				return VT.GetTasks(&this, bstrScopeName, ppTaskCollection);
+			}
+			public HRESULT get_BizRuleParameters(IAzBizRuleParameters** ppBizRuleParam) mut
+			{
+				return VT.get_BizRuleParameters(&this, ppBizRuleParam);
+			}
+			public HRESULT get_BizRuleInterfaces(IAzBizRuleInterfaces** ppBizRuleInterfaces) mut
+			{
+				return VT.get_BizRuleInterfaces(&this, ppBizRuleInterfaces);
+			}
+			public HRESULT GetGroups(BSTR bstrScopeName, AZ_PROP_CONSTANTS ulOptions, VARIANT* pGroupArray) mut
+			{
+				return VT.GetGroups(&this, bstrScopeName, ulOptions, pGroupArray);
+			}
+			public HRESULT get_Sids(VARIANT* pStringSidArray) mut
+			{
+				return VT.get_Sids(&this, pStringSidArray);
+			}
 			[CRepr]
 			public struct VTable : IAzClientContext2.VTable
 			{
-				public function HRESULT(IAzClientContext3 *self, BSTR bstrObjectName, BSTR bstrScopeName, int32 lOperation, uint32* plResult) AccessCheck2;
-				public function HRESULT(IAzClientContext3 *self, BSTR bstrScopeName, BSTR bstrRoleName, int16* pbIsInRole) IsInRoleAssignment;
-				public function HRESULT(IAzClientContext3 *self, BSTR bstrScopeName, IAzOperations** ppOperationCollection) GetOperations;
-				public function HRESULT(IAzClientContext3 *self, BSTR bstrScopeName, IAzTasks** ppTaskCollection) GetTasks;
-				public function HRESULT(IAzClientContext3 *self, IAzBizRuleParameters** ppBizRuleParam) get_BizRuleParameters;
-				public function HRESULT(IAzClientContext3 *self, IAzBizRuleInterfaces** ppBizRuleInterfaces) get_BizRuleInterfaces;
-				public function HRESULT(IAzClientContext3 *self, BSTR bstrScopeName, AZ_PROP_CONSTANTS ulOptions, VARIANT* pGroupArray) GetGroups;
-				public function HRESULT(IAzClientContext3 *self, VARIANT* pStringSidArray) get_Sids;
+				public new function HRESULT(IAzClientContext3 *self, BSTR bstrObjectName, BSTR bstrScopeName, int32 lOperation, uint32* plResult) AccessCheck2;
+				public new function HRESULT(IAzClientContext3 *self, BSTR bstrScopeName, BSTR bstrRoleName, int16* pbIsInRole) IsInRoleAssignment;
+				public new function HRESULT(IAzClientContext3 *self, BSTR bstrScopeName, IAzOperations** ppOperationCollection) GetOperations;
+				public new function HRESULT(IAzClientContext3 *self, BSTR bstrScopeName, IAzTasks** ppTaskCollection) GetTasks;
+				public new function HRESULT(IAzClientContext3 *self, IAzBizRuleParameters** ppBizRuleParam) get_BizRuleParameters;
+				public new function HRESULT(IAzClientContext3 *self, IAzBizRuleInterfaces** ppBizRuleInterfaces) get_BizRuleInterfaces;
+				public new function HRESULT(IAzClientContext3 *self, BSTR bstrScopeName, AZ_PROP_CONSTANTS ulOptions, VARIANT* pGroupArray) GetGroups;
+				public new function HRESULT(IAzClientContext3 *self, VARIANT* pStringSidArray) get_Sids;
 			}
 		}
 		[CRepr]
@@ -1397,18 +2687,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xee9fe8c9, 0xc9f3, 0x40e2, 0xaa, 0x12, 0xd1, 0xd8, 0x59, 0x97, 0x27, 0xfd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_RoleDefinitions(IAzRoleDefinitions** ppRoleDefinitions) mut
+			{
+				return VT.get_RoleDefinitions(&this, ppRoleDefinitions);
+			}
+			public HRESULT CreateRoleDefinition(BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) mut
+			{
+				return VT.CreateRoleDefinition(&this, bstrRoleDefinitionName, ppRoleDefinitions);
+			}
+			public HRESULT OpenRoleDefinition(BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) mut
+			{
+				return VT.OpenRoleDefinition(&this, bstrRoleDefinitionName, ppRoleDefinitions);
+			}
+			public HRESULT DeleteRoleDefinition(BSTR bstrRoleDefinitionName) mut
+			{
+				return VT.DeleteRoleDefinition(&this, bstrRoleDefinitionName);
+			}
+			public HRESULT get_RoleAssignments(IAzRoleAssignments** ppRoleAssignments) mut
+			{
+				return VT.get_RoleAssignments(&this, ppRoleAssignments);
+			}
+			public HRESULT CreateRoleAssignment(BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) mut
+			{
+				return VT.CreateRoleAssignment(&this, bstrRoleAssignmentName, ppRoleAssignment);
+			}
+			public HRESULT OpenRoleAssignment(BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) mut
+			{
+				return VT.OpenRoleAssignment(&this, bstrRoleAssignmentName, ppRoleAssignment);
+			}
+			public HRESULT DeleteRoleAssignment(BSTR bstrRoleAssignmentName) mut
+			{
+				return VT.DeleteRoleAssignment(&this, bstrRoleAssignmentName);
+			}
 			[CRepr]
 			public struct VTable : IAzScope.VTable
 			{
-				public function HRESULT(IAzScope2 *self, IAzRoleDefinitions** ppRoleDefinitions) get_RoleDefinitions;
-				public function HRESULT(IAzScope2 *self, BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) CreateRoleDefinition;
-				public function HRESULT(IAzScope2 *self, BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) OpenRoleDefinition;
-				public function HRESULT(IAzScope2 *self, BSTR bstrRoleDefinitionName) DeleteRoleDefinition;
-				public function HRESULT(IAzScope2 *self, IAzRoleAssignments** ppRoleAssignments) get_RoleAssignments;
-				public function HRESULT(IAzScope2 *self, BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) CreateRoleAssignment;
-				public function HRESULT(IAzScope2 *self, BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) OpenRoleAssignment;
-				public function HRESULT(IAzScope2 *self, BSTR bstrRoleAssignmentName) DeleteRoleAssignment;
+				public new function HRESULT(IAzScope2 *self, IAzRoleDefinitions** ppRoleDefinitions) get_RoleDefinitions;
+				public new function HRESULT(IAzScope2 *self, BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) CreateRoleDefinition;
+				public new function HRESULT(IAzScope2 *self, BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) OpenRoleDefinition;
+				public new function HRESULT(IAzScope2 *self, BSTR bstrRoleDefinitionName) DeleteRoleDefinition;
+				public new function HRESULT(IAzScope2 *self, IAzRoleAssignments** ppRoleAssignments) get_RoleAssignments;
+				public new function HRESULT(IAzScope2 *self, BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) CreateRoleAssignment;
+				public new function HRESULT(IAzScope2 *self, BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) OpenRoleAssignment;
+				public new function HRESULT(IAzScope2 *self, BSTR bstrRoleAssignmentName) DeleteRoleAssignment;
 			}
 		}
 		[CRepr]
@@ -1416,24 +2739,81 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x181c845e, 0x7196, 0x4a7d, 0xac, 0x2e, 0x02, 0x0c, 0x0b, 0xb7, 0xa3, 0x03);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ScopeExists(BSTR bstrScopeName, int16* pbExist) mut
+			{
+				return VT.ScopeExists(&this, bstrScopeName, pbExist);
+			}
+			public HRESULT OpenScope2(BSTR bstrScopeName, IAzScope2** ppScope2) mut
+			{
+				return VT.OpenScope2(&this, bstrScopeName, ppScope2);
+			}
+			public HRESULT CreateScope2(BSTR bstrScopeName, IAzScope2** ppScope2) mut
+			{
+				return VT.CreateScope2(&this, bstrScopeName, ppScope2);
+			}
+			public HRESULT DeleteScope2(BSTR bstrScopeName) mut
+			{
+				return VT.DeleteScope2(&this, bstrScopeName);
+			}
+			public HRESULT get_RoleDefinitions(IAzRoleDefinitions** ppRoleDefinitions) mut
+			{
+				return VT.get_RoleDefinitions(&this, ppRoleDefinitions);
+			}
+			public HRESULT CreateRoleDefinition(BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) mut
+			{
+				return VT.CreateRoleDefinition(&this, bstrRoleDefinitionName, ppRoleDefinitions);
+			}
+			public HRESULT OpenRoleDefinition(BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) mut
+			{
+				return VT.OpenRoleDefinition(&this, bstrRoleDefinitionName, ppRoleDefinitions);
+			}
+			public HRESULT DeleteRoleDefinition(BSTR bstrRoleDefinitionName) mut
+			{
+				return VT.DeleteRoleDefinition(&this, bstrRoleDefinitionName);
+			}
+			public HRESULT get_RoleAssignments(IAzRoleAssignments** ppRoleAssignments) mut
+			{
+				return VT.get_RoleAssignments(&this, ppRoleAssignments);
+			}
+			public HRESULT CreateRoleAssignment(BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) mut
+			{
+				return VT.CreateRoleAssignment(&this, bstrRoleAssignmentName, ppRoleAssignment);
+			}
+			public HRESULT OpenRoleAssignment(BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) mut
+			{
+				return VT.OpenRoleAssignment(&this, bstrRoleAssignmentName, ppRoleAssignment);
+			}
+			public HRESULT DeleteRoleAssignment(BSTR bstrRoleAssignmentName) mut
+			{
+				return VT.DeleteRoleAssignment(&this, bstrRoleAssignmentName);
+			}
+			public HRESULT get_BizRulesEnabled(int16* pbEnabled) mut
+			{
+				return VT.get_BizRulesEnabled(&this, pbEnabled);
+			}
+			public HRESULT put_BizRulesEnabled(int16 bEnabled) mut
+			{
+				return VT.put_BizRulesEnabled(&this, bEnabled);
+			}
 			[CRepr]
 			public struct VTable : IAzApplication2.VTable
 			{
-				public function HRESULT(IAzApplication3 *self, BSTR bstrScopeName, int16* pbExist) ScopeExists;
-				public function HRESULT(IAzApplication3 *self, BSTR bstrScopeName, IAzScope2** ppScope2) OpenScope2;
-				public function HRESULT(IAzApplication3 *self, BSTR bstrScopeName, IAzScope2** ppScope2) CreateScope2;
-				public function HRESULT(IAzApplication3 *self, BSTR bstrScopeName) DeleteScope2;
-				public function HRESULT(IAzApplication3 *self, IAzRoleDefinitions** ppRoleDefinitions) get_RoleDefinitions;
-				public function HRESULT(IAzApplication3 *self, BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) CreateRoleDefinition;
-				public function HRESULT(IAzApplication3 *self, BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) OpenRoleDefinition;
-				public function HRESULT(IAzApplication3 *self, BSTR bstrRoleDefinitionName) DeleteRoleDefinition;
-				public function HRESULT(IAzApplication3 *self, IAzRoleAssignments** ppRoleAssignments) get_RoleAssignments;
-				public function HRESULT(IAzApplication3 *self, BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) CreateRoleAssignment;
-				public function HRESULT(IAzApplication3 *self, BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) OpenRoleAssignment;
-				public function HRESULT(IAzApplication3 *self, BSTR bstrRoleAssignmentName) DeleteRoleAssignment;
-				public function HRESULT(IAzApplication3 *self, int16* pbEnabled) get_BizRulesEnabled;
-				public function HRESULT(IAzApplication3 *self, int16 bEnabled) put_BizRulesEnabled;
+				public new function HRESULT(IAzApplication3 *self, BSTR bstrScopeName, int16* pbExist) ScopeExists;
+				public new function HRESULT(IAzApplication3 *self, BSTR bstrScopeName, IAzScope2** ppScope2) OpenScope2;
+				public new function HRESULT(IAzApplication3 *self, BSTR bstrScopeName, IAzScope2** ppScope2) CreateScope2;
+				public new function HRESULT(IAzApplication3 *self, BSTR bstrScopeName) DeleteScope2;
+				public new function HRESULT(IAzApplication3 *self, IAzRoleDefinitions** ppRoleDefinitions) get_RoleDefinitions;
+				public new function HRESULT(IAzApplication3 *self, BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) CreateRoleDefinition;
+				public new function HRESULT(IAzApplication3 *self, BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) OpenRoleDefinition;
+				public new function HRESULT(IAzApplication3 *self, BSTR bstrRoleDefinitionName) DeleteRoleDefinition;
+				public new function HRESULT(IAzApplication3 *self, IAzRoleAssignments** ppRoleAssignments) get_RoleAssignments;
+				public new function HRESULT(IAzApplication3 *self, BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) CreateRoleAssignment;
+				public new function HRESULT(IAzApplication3 *self, BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) OpenRoleAssignment;
+				public new function HRESULT(IAzApplication3 *self, BSTR bstrRoleAssignmentName) DeleteRoleAssignment;
+				public new function HRESULT(IAzApplication3 *self, int16* pbEnabled) get_BizRulesEnabled;
+				public new function HRESULT(IAzApplication3 *self, int16 bEnabled) put_BizRulesEnabled;
 			}
 		}
 		[CRepr]
@@ -1441,11 +2821,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1f5ea01f, 0x44a2, 0x4184, 0x9c, 0x48, 0xa7, 0x5b, 0x4d, 0xcc, 0x8c, 0xcc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RoleAssignments(BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) mut
+			{
+				return VT.RoleAssignments(&this, bstrScopeName, bRecursive, ppRoleAssignments);
+			}
 			[CRepr]
 			public struct VTable : IAzOperation.VTable
 			{
-				public function HRESULT(IAzOperation2 *self, BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) RoleAssignments;
+				public new function HRESULT(IAzOperation2 *self, BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) RoleAssignments;
 			}
 		}
 		[CRepr]
@@ -1453,13 +2838,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x881f25a5, 0xd755, 0x4550, 0x95, 0x7a, 0xd5, 0x03, 0xa3, 0xb3, 0x40, 0x01);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 Index, VARIANT* pvarObtPtr) mut
+			{
+				return VT.get_Item(&this, Index, pvarObtPtr);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** ppEnumPtr) mut
+			{
+				return VT.get__NewEnum(&this, ppEnumPtr);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzRoleDefinitions *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
-				public function HRESULT(IAzRoleDefinitions *self, int32* plCount) get_Count;
-				public function HRESULT(IAzRoleDefinitions *self, IUnknown** ppEnumPtr) get__NewEnum;
+				public new function HRESULT(IAzRoleDefinitions *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
+				public new function HRESULT(IAzRoleDefinitions *self, int32* plCount) get_Count;
+				public new function HRESULT(IAzRoleDefinitions *self, IUnknown** ppEnumPtr) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1467,14 +2865,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd97fcea1, 0x2599, 0x44f1, 0x9f, 0xc3, 0x58, 0xe9, 0xfb, 0xe0, 0x94, 0x66);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RoleAssignments(BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) mut
+			{
+				return VT.RoleAssignments(&this, bstrScopeName, bRecursive, ppRoleAssignments);
+			}
+			public HRESULT AddRoleDefinition(BSTR bstrRoleDefinition) mut
+			{
+				return VT.AddRoleDefinition(&this, bstrRoleDefinition);
+			}
+			public HRESULT DeleteRoleDefinition(BSTR bstrRoleDefinition) mut
+			{
+				return VT.DeleteRoleDefinition(&this, bstrRoleDefinition);
+			}
+			public HRESULT get_RoleDefinitions(IAzRoleDefinitions** ppRoleDefinitions) mut
+			{
+				return VT.get_RoleDefinitions(&this, ppRoleDefinitions);
+			}
 			[CRepr]
 			public struct VTable : IAzTask.VTable
 			{
-				public function HRESULT(IAzRoleDefinition *self, BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) RoleAssignments;
-				public function HRESULT(IAzRoleDefinition *self, BSTR bstrRoleDefinition) AddRoleDefinition;
-				public function HRESULT(IAzRoleDefinition *self, BSTR bstrRoleDefinition) DeleteRoleDefinition;
-				public function HRESULT(IAzRoleDefinition *self, IAzRoleDefinitions** ppRoleDefinitions) get_RoleDefinitions;
+				public new function HRESULT(IAzRoleDefinition *self, BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) RoleAssignments;
+				public new function HRESULT(IAzRoleDefinition *self, BSTR bstrRoleDefinition) AddRoleDefinition;
+				public new function HRESULT(IAzRoleDefinition *self, BSTR bstrRoleDefinition) DeleteRoleDefinition;
+				public new function HRESULT(IAzRoleDefinition *self, IAzRoleDefinitions** ppRoleDefinitions) get_RoleDefinitions;
 			}
 		}
 		[CRepr]
@@ -1482,14 +2897,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x55647d31, 0x0d5a, 0x4fa3, 0xb4, 0xac, 0x2b, 0x5f, 0x9a, 0xd5, 0xab, 0x76);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddRoleDefinition(BSTR bstrRoleDefinition) mut
+			{
+				return VT.AddRoleDefinition(&this, bstrRoleDefinition);
+			}
+			public HRESULT DeleteRoleDefinition(BSTR bstrRoleDefinition) mut
+			{
+				return VT.DeleteRoleDefinition(&this, bstrRoleDefinition);
+			}
+			public HRESULT get_RoleDefinitions(IAzRoleDefinitions** ppRoleDefinitions) mut
+			{
+				return VT.get_RoleDefinitions(&this, ppRoleDefinitions);
+			}
+			public HRESULT get_Scope(IAzScope** ppScope) mut
+			{
+				return VT.get_Scope(&this, ppScope);
+			}
 			[CRepr]
 			public struct VTable : IAzRole.VTable
 			{
-				public function HRESULT(IAzRoleAssignment *self, BSTR bstrRoleDefinition) AddRoleDefinition;
-				public function HRESULT(IAzRoleAssignment *self, BSTR bstrRoleDefinition) DeleteRoleDefinition;
-				public function HRESULT(IAzRoleAssignment *self, IAzRoleDefinitions** ppRoleDefinitions) get_RoleDefinitions;
-				public function HRESULT(IAzRoleAssignment *self, IAzScope** ppScope) get_Scope;
+				public new function HRESULT(IAzRoleAssignment *self, BSTR bstrRoleDefinition) AddRoleDefinition;
+				public new function HRESULT(IAzRoleAssignment *self, BSTR bstrRoleDefinition) DeleteRoleDefinition;
+				public new function HRESULT(IAzRoleAssignment *self, IAzRoleDefinitions** ppRoleDefinitions) get_RoleDefinitions;
+				public new function HRESULT(IAzRoleAssignment *self, IAzScope** ppScope) get_Scope;
 			}
 		}
 		[CRepr]
@@ -1497,13 +2929,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9c80b900, 0xfceb, 0x4d73, 0xa0, 0xf4, 0xc8, 0x3b, 0x0b, 0xbf, 0x24, 0x81);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 Index, VARIANT* pvarObtPtr) mut
+			{
+				return VT.get_Item(&this, Index, pvarObtPtr);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get__NewEnum(IUnknown** ppEnumPtr) mut
+			{
+				return VT.get__NewEnum(&this, ppEnumPtr);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzRoleAssignments *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
-				public function HRESULT(IAzRoleAssignments *self, int32* plCount) get_Count;
-				public function HRESULT(IAzRoleAssignments *self, IUnknown** ppEnumPtr) get__NewEnum;
+				public new function HRESULT(IAzRoleAssignments *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
+				public new function HRESULT(IAzRoleAssignments *self, int32* plCount) get_Count;
+				public new function HRESULT(IAzRoleAssignments *self, IUnknown** ppEnumPtr) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1511,12 +2956,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe5c3507d, 0xad6a, 0x4992, 0x9c, 0x7f, 0x74, 0xab, 0x48, 0x0b, 0x44, 0xcc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_NameResolver(IAzNameResolver** ppNameResolver) mut
+			{
+				return VT.get_NameResolver(&this, ppNameResolver);
+			}
+			public HRESULT get_ObjectPicker(IAzObjectPicker** ppObjectPicker) mut
+			{
+				return VT.get_ObjectPicker(&this, ppObjectPicker);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzPrincipalLocator *self, IAzNameResolver** ppNameResolver) get_NameResolver;
-				public function HRESULT(IAzPrincipalLocator *self, IAzObjectPicker** ppObjectPicker) get_ObjectPicker;
+				public new function HRESULT(IAzPrincipalLocator *self, IAzNameResolver** ppNameResolver) get_NameResolver;
+				public new function HRESULT(IAzPrincipalLocator *self, IAzObjectPicker** ppObjectPicker) get_ObjectPicker;
 			}
 		}
 		[CRepr]
@@ -1524,12 +2978,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x504d0f15, 0x73e2, 0x43df, 0xa8, 0x70, 0xa6, 0x4f, 0x40, 0x71, 0x4f, 0x53);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT NameFromSid(BSTR bstrSid, int32* pSidType, BSTR* pbstrName) mut
+			{
+				return VT.NameFromSid(&this, bstrSid, pSidType, pbstrName);
+			}
+			public HRESULT NamesFromSids(VARIANT vSids, VARIANT* pvSidTypes, VARIANT* pvNames) mut
+			{
+				return VT.NamesFromSids(&this, vSids, pvSidTypes, pvNames);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzNameResolver *self, BSTR bstrSid, int32* pSidType, BSTR* pbstrName) NameFromSid;
-				public function HRESULT(IAzNameResolver *self, VARIANT vSids, VARIANT* pvSidTypes, VARIANT* pvNames) NamesFromSids;
+				public new function HRESULT(IAzNameResolver *self, BSTR bstrSid, int32* pSidType, BSTR* pbstrName) NameFromSid;
+				public new function HRESULT(IAzNameResolver *self, VARIANT vSids, VARIANT* pvSidTypes, VARIANT* pvNames) NamesFromSids;
 			}
 		}
 		[CRepr]
@@ -1537,12 +3000,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x63130a48, 0x699a, 0x42d8, 0xbf, 0x01, 0xc6, 0x2a, 0xc3, 0xfb, 0x79, 0xf9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPrincipals(HWND hParentWnd, BSTR bstrTitle, VARIANT* pvSidTypes, VARIANT* pvNames, VARIANT* pvSids) mut
+			{
+				return VT.GetPrincipals(&this, hParentWnd, bstrTitle, pvSidTypes, pvNames, pvSids);
+			}
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAzObjectPicker *self, HWND hParentWnd, BSTR bstrTitle, VARIANT* pvSidTypes, VARIANT* pvNames, VARIANT* pvSids) GetPrincipals;
-				public function HRESULT(IAzObjectPicker *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(IAzObjectPicker *self, HWND hParentWnd, BSTR bstrTitle, VARIANT* pvSidTypes, VARIANT* pvNames, VARIANT* pvSids) GetPrincipals;
+				public new function HRESULT(IAzObjectPicker *self, BSTR* pbstrName) get_Name;
 			}
 		}
 		[CRepr]
@@ -1550,17 +3022,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3f0613fc, 0xb71a, 0x464e, 0xa1, 0x1d, 0x5b, 0x88, 0x1a, 0x56, 0xce, 0xfa);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_BizRule(BSTR* pbstrProp) mut
+			{
+				return VT.get_BizRule(&this, pbstrProp);
+			}
+			public HRESULT put_BizRule(BSTR bstrProp) mut
+			{
+				return VT.put_BizRule(&this, bstrProp);
+			}
+			public HRESULT get_BizRuleLanguage(BSTR* pbstrProp) mut
+			{
+				return VT.get_BizRuleLanguage(&this, pbstrProp);
+			}
+			public HRESULT put_BizRuleLanguage(BSTR bstrProp) mut
+			{
+				return VT.put_BizRuleLanguage(&this, bstrProp);
+			}
+			public HRESULT get_BizRuleImportedPath(BSTR* pbstrProp) mut
+			{
+				return VT.get_BizRuleImportedPath(&this, pbstrProp);
+			}
+			public HRESULT put_BizRuleImportedPath(BSTR bstrProp) mut
+			{
+				return VT.put_BizRuleImportedPath(&this, bstrProp);
+			}
+			public HRESULT RoleAssignments(BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) mut
+			{
+				return VT.RoleAssignments(&this, bstrScopeName, bRecursive, ppRoleAssignments);
+			}
 			[CRepr]
 			public struct VTable : IAzApplicationGroup.VTable
 			{
-				public function HRESULT(IAzApplicationGroup2 *self, BSTR* pbstrProp) get_BizRule;
-				public function HRESULT(IAzApplicationGroup2 *self, BSTR bstrProp) put_BizRule;
-				public function HRESULT(IAzApplicationGroup2 *self, BSTR* pbstrProp) get_BizRuleLanguage;
-				public function HRESULT(IAzApplicationGroup2 *self, BSTR bstrProp) put_BizRuleLanguage;
-				public function HRESULT(IAzApplicationGroup2 *self, BSTR* pbstrProp) get_BizRuleImportedPath;
-				public function HRESULT(IAzApplicationGroup2 *self, BSTR bstrProp) put_BizRuleImportedPath;
-				public function HRESULT(IAzApplicationGroup2 *self, BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) RoleAssignments;
+				public new function HRESULT(IAzApplicationGroup2 *self, BSTR* pbstrProp) get_BizRule;
+				public new function HRESULT(IAzApplicationGroup2 *self, BSTR bstrProp) put_BizRule;
+				public new function HRESULT(IAzApplicationGroup2 *self, BSTR* pbstrProp) get_BizRuleLanguage;
+				public new function HRESULT(IAzApplicationGroup2 *self, BSTR bstrProp) put_BizRuleLanguage;
+				public new function HRESULT(IAzApplicationGroup2 *self, BSTR* pbstrProp) get_BizRuleImportedPath;
+				public new function HRESULT(IAzApplicationGroup2 *self, BSTR bstrProp) put_BizRuleImportedPath;
+				public new function HRESULT(IAzApplicationGroup2 *self, BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) RoleAssignments;
 			}
 		}
 		[CRepr]
@@ -1568,11 +3069,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x03a9a5ee, 0x48c8, 0x4832, 0x90, 0x25, 0xaa, 0xd5, 0x03, 0xc4, 0x65, 0x26);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RoleAssignments(BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) mut
+			{
+				return VT.RoleAssignments(&this, bstrScopeName, bRecursive, ppRoleAssignments);
+			}
 			[CRepr]
 			public struct VTable : IAzTask.VTable
 			{
-				public function HRESULT(IAzTask2 *self, BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) RoleAssignments;
+				public new function HRESULT(IAzTask2 *self, BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) RoleAssignments;
 			}
 		}
 		

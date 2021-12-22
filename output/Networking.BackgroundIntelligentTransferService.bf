@@ -449,13 +449,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x01b7bd23, 0xfb88, 0x4a77, 0x84, 0x90, 0x58, 0x91, 0xd3, 0xe4, 0x65, 0x3a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetRemoteName(PWSTR* pVal) mut
+			{
+				return VT.GetRemoteName(&this, pVal);
+			}
+			public HRESULT GetLocalName(PWSTR* pVal) mut
+			{
+				return VT.GetLocalName(&this, pVal);
+			}
+			public HRESULT GetProgress(BG_FILE_PROGRESS* pVal) mut
+			{
+				return VT.GetProgress(&this, pVal);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IBackgroundCopyFile *self, PWSTR* pVal) GetRemoteName;
-				public function HRESULT(IBackgroundCopyFile *self, PWSTR* pVal) GetLocalName;
-				public function HRESULT(IBackgroundCopyFile *self, BG_FILE_PROGRESS* pVal) GetProgress;
+				public new function HRESULT(IBackgroundCopyFile *self, PWSTR* pVal) GetRemoteName;
+				public new function HRESULT(IBackgroundCopyFile *self, PWSTR* pVal) GetLocalName;
+				public new function HRESULT(IBackgroundCopyFile *self, BG_FILE_PROGRESS* pVal) GetProgress;
 			}
 		}
 		[CRepr]
@@ -463,15 +476,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xca51e165, 0xc365, 0x424c, 0x8d, 0x41, 0x24, 0xaa, 0xa4, 0xff, 0x3c, 0x40);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 celt, IBackgroundCopyFile** rgelt, uint32* pceltFetched) mut
+			{
+				return VT.Next(&this, celt, rgelt, pceltFetched);
+			}
+			public HRESULT Skip(uint32 celt) mut
+			{
+				return VT.Skip(&this, celt);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumBackgroundCopyFiles** ppenum) mut
+			{
+				return VT.Clone(&this, ppenum);
+			}
+			public HRESULT GetCount(uint32* puCount) mut
+			{
+				return VT.GetCount(&this, puCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumBackgroundCopyFiles *self, uint32 celt, IBackgroundCopyFile** rgelt, uint32* pceltFetched) Next;
-				public function HRESULT(IEnumBackgroundCopyFiles *self, uint32 celt) Skip;
-				public function HRESULT(IEnumBackgroundCopyFiles *self) Reset;
-				public function HRESULT(IEnumBackgroundCopyFiles *self, IEnumBackgroundCopyFiles** ppenum) Clone;
-				public function HRESULT(IEnumBackgroundCopyFiles *self, uint32* puCount) GetCount;
+				public new function HRESULT(IEnumBackgroundCopyFiles *self, uint32 celt, IBackgroundCopyFile** rgelt, uint32* pceltFetched) Next;
+				public new function HRESULT(IEnumBackgroundCopyFiles *self, uint32 celt) Skip;
+				public new function HRESULT(IEnumBackgroundCopyFiles *self) Reset;
+				public new function HRESULT(IEnumBackgroundCopyFiles *self, IEnumBackgroundCopyFiles** ppenum) Clone;
+				public new function HRESULT(IEnumBackgroundCopyFiles *self, uint32* puCount) GetCount;
 			}
 		}
 		[CRepr]
@@ -479,15 +513,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x19c613a0, 0xfcb8, 0x4f28, 0x81, 0xae, 0x89, 0x7c, 0x3d, 0x07, 0x8f, 0x81);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetError(BG_ERROR_CONTEXT* pContext, HRESULT* pCode) mut
+			{
+				return VT.GetError(&this, pContext, pCode);
+			}
+			public HRESULT GetFile(IBackgroundCopyFile** pVal) mut
+			{
+				return VT.GetFile(&this, pVal);
+			}
+			public HRESULT GetErrorDescription(uint32 LanguageId, PWSTR* pErrorDescription) mut
+			{
+				return VT.GetErrorDescription(&this, LanguageId, pErrorDescription);
+			}
+			public HRESULT GetErrorContextDescription(uint32 LanguageId, PWSTR* pContextDescription) mut
+			{
+				return VT.GetErrorContextDescription(&this, LanguageId, pContextDescription);
+			}
+			public HRESULT GetProtocol(PWSTR* pProtocol) mut
+			{
+				return VT.GetProtocol(&this, pProtocol);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IBackgroundCopyError *self, BG_ERROR_CONTEXT* pContext, HRESULT* pCode) GetError;
-				public function HRESULT(IBackgroundCopyError *self, IBackgroundCopyFile** pVal) GetFile;
-				public function HRESULT(IBackgroundCopyError *self, uint32 LanguageId, PWSTR* pErrorDescription) GetErrorDescription;
-				public function HRESULT(IBackgroundCopyError *self, uint32 LanguageId, PWSTR* pContextDescription) GetErrorContextDescription;
-				public function HRESULT(IBackgroundCopyError *self, PWSTR* pProtocol) GetProtocol;
+				public new function HRESULT(IBackgroundCopyError *self, BG_ERROR_CONTEXT* pContext, HRESULT* pCode) GetError;
+				public new function HRESULT(IBackgroundCopyError *self, IBackgroundCopyFile** pVal) GetFile;
+				public new function HRESULT(IBackgroundCopyError *self, uint32 LanguageId, PWSTR* pErrorDescription) GetErrorDescription;
+				public new function HRESULT(IBackgroundCopyError *self, uint32 LanguageId, PWSTR* pContextDescription) GetErrorContextDescription;
+				public new function HRESULT(IBackgroundCopyError *self, PWSTR* pProtocol) GetProtocol;
 			}
 		}
 		[CRepr]
@@ -495,42 +550,171 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x37668d37, 0x507e, 0x4160, 0x93, 0x16, 0x26, 0x30, 0x6d, 0x15, 0x0b, 0x12);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddFileSet(uint32 cFileCount, BG_FILE_INFO* pFileSet) mut
+			{
+				return VT.AddFileSet(&this, cFileCount, pFileSet);
+			}
+			public HRESULT AddFile(PWSTR RemoteUrl, PWSTR LocalName) mut
+			{
+				return VT.AddFile(&this, RemoteUrl, LocalName);
+			}
+			public HRESULT EnumFiles(IEnumBackgroundCopyFiles** pEnum) mut
+			{
+				return VT.EnumFiles(&this, pEnum);
+			}
+			public HRESULT Suspend() mut
+			{
+				return VT.Suspend(&this);
+			}
+			public HRESULT Resume() mut
+			{
+				return VT.Resume(&this);
+			}
+			public HRESULT Cancel() mut
+			{
+				return VT.Cancel(&this);
+			}
+			public HRESULT Complete() mut
+			{
+				return VT.Complete(&this);
+			}
+			public HRESULT GetId(Guid* pVal) mut
+			{
+				return VT.GetId(&this, pVal);
+			}
+			public HRESULT ComGetType(BG_JOB_TYPE* pVal) mut
+			{
+				return VT.ComGetType(&this, pVal);
+			}
+			public HRESULT GetProgress(BG_JOB_PROGRESS* pVal) mut
+			{
+				return VT.GetProgress(&this, pVal);
+			}
+			public HRESULT GetTimes(BG_JOB_TIMES* pVal) mut
+			{
+				return VT.GetTimes(&this, pVal);
+			}
+			public HRESULT GetState(BG_JOB_STATE* pVal) mut
+			{
+				return VT.GetState(&this, pVal);
+			}
+			public HRESULT GetError(IBackgroundCopyError** ppError) mut
+			{
+				return VT.GetError(&this, ppError);
+			}
+			public HRESULT GetOwner(PWSTR* pVal) mut
+			{
+				return VT.GetOwner(&this, pVal);
+			}
+			public HRESULT SetDisplayName(PWSTR Val) mut
+			{
+				return VT.SetDisplayName(&this, Val);
+			}
+			public HRESULT GetDisplayName(PWSTR* pVal) mut
+			{
+				return VT.GetDisplayName(&this, pVal);
+			}
+			public HRESULT SetDescription(PWSTR Val) mut
+			{
+				return VT.SetDescription(&this, Val);
+			}
+			public HRESULT GetDescription(PWSTR* pVal) mut
+			{
+				return VT.GetDescription(&this, pVal);
+			}
+			public HRESULT SetPriority(BG_JOB_PRIORITY Val) mut
+			{
+				return VT.SetPriority(&this, Val);
+			}
+			public HRESULT GetPriority(BG_JOB_PRIORITY* pVal) mut
+			{
+				return VT.GetPriority(&this, pVal);
+			}
+			public HRESULT SetNotifyFlags(uint32 Val) mut
+			{
+				return VT.SetNotifyFlags(&this, Val);
+			}
+			public HRESULT GetNotifyFlags(uint32* pVal) mut
+			{
+				return VT.GetNotifyFlags(&this, pVal);
+			}
+			public HRESULT SetNotifyInterface(IUnknown* Val) mut
+			{
+				return VT.SetNotifyInterface(&this, Val);
+			}
+			public HRESULT GetNotifyInterface(IUnknown** pVal) mut
+			{
+				return VT.GetNotifyInterface(&this, pVal);
+			}
+			public HRESULT SetMinimumRetryDelay(uint32 Seconds) mut
+			{
+				return VT.SetMinimumRetryDelay(&this, Seconds);
+			}
+			public HRESULT GetMinimumRetryDelay(uint32* Seconds) mut
+			{
+				return VT.GetMinimumRetryDelay(&this, Seconds);
+			}
+			public HRESULT SetNoProgressTimeout(uint32 Seconds) mut
+			{
+				return VT.SetNoProgressTimeout(&this, Seconds);
+			}
+			public HRESULT GetNoProgressTimeout(uint32* Seconds) mut
+			{
+				return VT.GetNoProgressTimeout(&this, Seconds);
+			}
+			public HRESULT GetErrorCount(uint32* Errors) mut
+			{
+				return VT.GetErrorCount(&this, Errors);
+			}
+			public HRESULT SetProxySettings(BG_JOB_PROXY_USAGE ProxyUsage, PWSTR ProxyList, PWSTR ProxyBypassList) mut
+			{
+				return VT.SetProxySettings(&this, ProxyUsage, ProxyList, ProxyBypassList);
+			}
+			public HRESULT GetProxySettings(BG_JOB_PROXY_USAGE* pProxyUsage, PWSTR* pProxyList, PWSTR* pProxyBypassList) mut
+			{
+				return VT.GetProxySettings(&this, pProxyUsage, pProxyList, pProxyBypassList);
+			}
+			public HRESULT TakeOwnership() mut
+			{
+				return VT.TakeOwnership(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IBackgroundCopyJob *self, uint32 cFileCount, BG_FILE_INFO* pFileSet) AddFileSet;
-				public function HRESULT(IBackgroundCopyJob *self, PWSTR RemoteUrl, PWSTR LocalName) AddFile;
-				public function HRESULT(IBackgroundCopyJob *self, IEnumBackgroundCopyFiles** pEnum) EnumFiles;
-				public function HRESULT(IBackgroundCopyJob *self) Suspend;
-				public function HRESULT(IBackgroundCopyJob *self) Resume;
-				public function HRESULT(IBackgroundCopyJob *self) Cancel;
-				public function HRESULT(IBackgroundCopyJob *self) Complete;
-				public function HRESULT(IBackgroundCopyJob *self, Guid* pVal) GetId;
-				public function HRESULT(IBackgroundCopyJob *self, BG_JOB_TYPE* pVal) GetType;
-				public function HRESULT(IBackgroundCopyJob *self, BG_JOB_PROGRESS* pVal) GetProgress;
-				public function HRESULT(IBackgroundCopyJob *self, BG_JOB_TIMES* pVal) GetTimes;
-				public function HRESULT(IBackgroundCopyJob *self, BG_JOB_STATE* pVal) GetState;
-				public function HRESULT(IBackgroundCopyJob *self, IBackgroundCopyError** ppError) GetError;
-				public function HRESULT(IBackgroundCopyJob *self, PWSTR* pVal) GetOwner;
-				public function HRESULT(IBackgroundCopyJob *self, PWSTR Val) SetDisplayName;
-				public function HRESULT(IBackgroundCopyJob *self, PWSTR* pVal) GetDisplayName;
-				public function HRESULT(IBackgroundCopyJob *self, PWSTR Val) SetDescription;
-				public function HRESULT(IBackgroundCopyJob *self, PWSTR* pVal) GetDescription;
-				public function HRESULT(IBackgroundCopyJob *self, BG_JOB_PRIORITY Val) SetPriority;
-				public function HRESULT(IBackgroundCopyJob *self, BG_JOB_PRIORITY* pVal) GetPriority;
-				public function HRESULT(IBackgroundCopyJob *self, uint32 Val) SetNotifyFlags;
-				public function HRESULT(IBackgroundCopyJob *self, uint32* pVal) GetNotifyFlags;
-				public function HRESULT(IBackgroundCopyJob *self, IUnknown* Val) SetNotifyInterface;
-				public function HRESULT(IBackgroundCopyJob *self, IUnknown** pVal) GetNotifyInterface;
-				public function HRESULT(IBackgroundCopyJob *self, uint32 Seconds) SetMinimumRetryDelay;
-				public function HRESULT(IBackgroundCopyJob *self, uint32* Seconds) GetMinimumRetryDelay;
-				public function HRESULT(IBackgroundCopyJob *self, uint32 Seconds) SetNoProgressTimeout;
-				public function HRESULT(IBackgroundCopyJob *self, uint32* Seconds) GetNoProgressTimeout;
-				public function HRESULT(IBackgroundCopyJob *self, uint32* Errors) GetErrorCount;
-				public function HRESULT(IBackgroundCopyJob *self, BG_JOB_PROXY_USAGE ProxyUsage, PWSTR ProxyList, PWSTR ProxyBypassList) SetProxySettings;
-				public function HRESULT(IBackgroundCopyJob *self, BG_JOB_PROXY_USAGE* pProxyUsage, PWSTR* pProxyList, PWSTR* pProxyBypassList) GetProxySettings;
-				public function HRESULT(IBackgroundCopyJob *self) TakeOwnership;
+				public new function HRESULT(IBackgroundCopyJob *self, uint32 cFileCount, BG_FILE_INFO* pFileSet) AddFileSet;
+				public new function HRESULT(IBackgroundCopyJob *self, PWSTR RemoteUrl, PWSTR LocalName) AddFile;
+				public new function HRESULT(IBackgroundCopyJob *self, IEnumBackgroundCopyFiles** pEnum) EnumFiles;
+				public new function HRESULT(IBackgroundCopyJob *self) Suspend;
+				public new function HRESULT(IBackgroundCopyJob *self) Resume;
+				public new function HRESULT(IBackgroundCopyJob *self) Cancel;
+				public new function HRESULT(IBackgroundCopyJob *self) Complete;
+				public new function HRESULT(IBackgroundCopyJob *self, Guid* pVal) GetId;
+				public new function HRESULT(IBackgroundCopyJob *self, BG_JOB_TYPE* pVal) ComGetType;
+				public new function HRESULT(IBackgroundCopyJob *self, BG_JOB_PROGRESS* pVal) GetProgress;
+				public new function HRESULT(IBackgroundCopyJob *self, BG_JOB_TIMES* pVal) GetTimes;
+				public new function HRESULT(IBackgroundCopyJob *self, BG_JOB_STATE* pVal) GetState;
+				public new function HRESULT(IBackgroundCopyJob *self, IBackgroundCopyError** ppError) GetError;
+				public new function HRESULT(IBackgroundCopyJob *self, PWSTR* pVal) GetOwner;
+				public new function HRESULT(IBackgroundCopyJob *self, PWSTR Val) SetDisplayName;
+				public new function HRESULT(IBackgroundCopyJob *self, PWSTR* pVal) GetDisplayName;
+				public new function HRESULT(IBackgroundCopyJob *self, PWSTR Val) SetDescription;
+				public new function HRESULT(IBackgroundCopyJob *self, PWSTR* pVal) GetDescription;
+				public new function HRESULT(IBackgroundCopyJob *self, BG_JOB_PRIORITY Val) SetPriority;
+				public new function HRESULT(IBackgroundCopyJob *self, BG_JOB_PRIORITY* pVal) GetPriority;
+				public new function HRESULT(IBackgroundCopyJob *self, uint32 Val) SetNotifyFlags;
+				public new function HRESULT(IBackgroundCopyJob *self, uint32* pVal) GetNotifyFlags;
+				public new function HRESULT(IBackgroundCopyJob *self, IUnknown* Val) SetNotifyInterface;
+				public new function HRESULT(IBackgroundCopyJob *self, IUnknown** pVal) GetNotifyInterface;
+				public new function HRESULT(IBackgroundCopyJob *self, uint32 Seconds) SetMinimumRetryDelay;
+				public new function HRESULT(IBackgroundCopyJob *self, uint32* Seconds) GetMinimumRetryDelay;
+				public new function HRESULT(IBackgroundCopyJob *self, uint32 Seconds) SetNoProgressTimeout;
+				public new function HRESULT(IBackgroundCopyJob *self, uint32* Seconds) GetNoProgressTimeout;
+				public new function HRESULT(IBackgroundCopyJob *self, uint32* Errors) GetErrorCount;
+				public new function HRESULT(IBackgroundCopyJob *self, BG_JOB_PROXY_USAGE ProxyUsage, PWSTR ProxyList, PWSTR ProxyBypassList) SetProxySettings;
+				public new function HRESULT(IBackgroundCopyJob *self, BG_JOB_PROXY_USAGE* pProxyUsage, PWSTR* pProxyList, PWSTR* pProxyBypassList) GetProxySettings;
+				public new function HRESULT(IBackgroundCopyJob *self) TakeOwnership;
 			}
 		}
 		[CRepr]
@@ -538,15 +722,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1af4f612, 0x3b71, 0x466f, 0x8f, 0x58, 0x7b, 0x6f, 0x73, 0xac, 0x57, 0xad);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 celt, IBackgroundCopyJob** rgelt, uint32* pceltFetched) mut
+			{
+				return VT.Next(&this, celt, rgelt, pceltFetched);
+			}
+			public HRESULT Skip(uint32 celt) mut
+			{
+				return VT.Skip(&this, celt);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumBackgroundCopyJobs** ppenum) mut
+			{
+				return VT.Clone(&this, ppenum);
+			}
+			public HRESULT GetCount(uint32* puCount) mut
+			{
+				return VT.GetCount(&this, puCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumBackgroundCopyJobs *self, uint32 celt, IBackgroundCopyJob** rgelt, uint32* pceltFetched) Next;
-				public function HRESULT(IEnumBackgroundCopyJobs *self, uint32 celt) Skip;
-				public function HRESULT(IEnumBackgroundCopyJobs *self) Reset;
-				public function HRESULT(IEnumBackgroundCopyJobs *self, IEnumBackgroundCopyJobs** ppenum) Clone;
-				public function HRESULT(IEnumBackgroundCopyJobs *self, uint32* puCount) GetCount;
+				public new function HRESULT(IEnumBackgroundCopyJobs *self, uint32 celt, IBackgroundCopyJob** rgelt, uint32* pceltFetched) Next;
+				public new function HRESULT(IEnumBackgroundCopyJobs *self, uint32 celt) Skip;
+				public new function HRESULT(IEnumBackgroundCopyJobs *self) Reset;
+				public new function HRESULT(IEnumBackgroundCopyJobs *self, IEnumBackgroundCopyJobs** ppenum) Clone;
+				public new function HRESULT(IEnumBackgroundCopyJobs *self, uint32* puCount) GetCount;
 			}
 		}
 		[CRepr]
@@ -554,13 +759,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x97ea99c7, 0x0186, 0x4ad4, 0x8d, 0xf9, 0xc5, 0xb4, 0xe0, 0xed, 0x6b, 0x22);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT JobTransferred(IBackgroundCopyJob* pJob) mut
+			{
+				return VT.JobTransferred(&this, pJob);
+			}
+			public HRESULT JobError(IBackgroundCopyJob* pJob, IBackgroundCopyError* pError) mut
+			{
+				return VT.JobError(&this, pJob, pError);
+			}
+			public HRESULT JobModification(IBackgroundCopyJob* pJob, uint32 dwReserved) mut
+			{
+				return VT.JobModification(&this, pJob, dwReserved);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IBackgroundCopyCallback *self, IBackgroundCopyJob* pJob) JobTransferred;
-				public function HRESULT(IBackgroundCopyCallback *self, IBackgroundCopyJob* pJob, IBackgroundCopyError* pError) JobError;
-				public function HRESULT(IBackgroundCopyCallback *self, IBackgroundCopyJob* pJob, uint32 dwReserved) JobModification;
+				public new function HRESULT(IBackgroundCopyCallback *self, IBackgroundCopyJob* pJob) JobTransferred;
+				public new function HRESULT(IBackgroundCopyCallback *self, IBackgroundCopyJob* pJob, IBackgroundCopyError* pError) JobError;
+				public new function HRESULT(IBackgroundCopyCallback *self, IBackgroundCopyJob* pJob, uint32 dwReserved) JobModification;
 			}
 		}
 		[CRepr]
@@ -568,16 +786,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xca29d251, 0xb4bb, 0x4679, 0xa3, 0xd9, 0xae, 0x80, 0x06, 0x11, 0x9d, 0x54);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Begin_JobTransferred(IBackgroundCopyJob* pJob) mut
+			{
+				return VT.Begin_JobTransferred(&this, pJob);
+			}
+			public HRESULT Finish_JobTransferred() mut
+			{
+				return VT.Finish_JobTransferred(&this);
+			}
+			public HRESULT Begin_JobError(IBackgroundCopyJob* pJob, IBackgroundCopyError* pError) mut
+			{
+				return VT.Begin_JobError(&this, pJob, pError);
+			}
+			public HRESULT Finish_JobError() mut
+			{
+				return VT.Finish_JobError(&this);
+			}
+			public HRESULT Begin_JobModification(IBackgroundCopyJob* pJob, uint32 dwReserved) mut
+			{
+				return VT.Begin_JobModification(&this, pJob, dwReserved);
+			}
+			public HRESULT Finish_JobModification() mut
+			{
+				return VT.Finish_JobModification(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(AsyncIBackgroundCopyCallback *self, IBackgroundCopyJob* pJob) Begin_JobTransferred;
-				public function HRESULT(AsyncIBackgroundCopyCallback *self) Finish_JobTransferred;
-				public function HRESULT(AsyncIBackgroundCopyCallback *self, IBackgroundCopyJob* pJob, IBackgroundCopyError* pError) Begin_JobError;
-				public function HRESULT(AsyncIBackgroundCopyCallback *self) Finish_JobError;
-				public function HRESULT(AsyncIBackgroundCopyCallback *self, IBackgroundCopyJob* pJob, uint32 dwReserved) Begin_JobModification;
-				public function HRESULT(AsyncIBackgroundCopyCallback *self) Finish_JobModification;
+				public new function HRESULT(AsyncIBackgroundCopyCallback *self, IBackgroundCopyJob* pJob) Begin_JobTransferred;
+				public new function HRESULT(AsyncIBackgroundCopyCallback *self) Finish_JobTransferred;
+				public new function HRESULT(AsyncIBackgroundCopyCallback *self, IBackgroundCopyJob* pJob, IBackgroundCopyError* pError) Begin_JobError;
+				public new function HRESULT(AsyncIBackgroundCopyCallback *self) Finish_JobError;
+				public new function HRESULT(AsyncIBackgroundCopyCallback *self, IBackgroundCopyJob* pJob, uint32 dwReserved) Begin_JobModification;
+				public new function HRESULT(AsyncIBackgroundCopyCallback *self) Finish_JobModification;
 			}
 		}
 		[CRepr]
@@ -585,14 +828,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5ce34c0d, 0x0dc9, 0x4c1f, 0x89, 0x7c, 0xda, 0xa1, 0xb7, 0x8c, 0xee, 0x7c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateJob(PWSTR DisplayName, BG_JOB_TYPE Type, Guid* pJobId, IBackgroundCopyJob** ppJob) mut
+			{
+				return VT.CreateJob(&this, DisplayName, Type, pJobId, ppJob);
+			}
+			public HRESULT GetJob(Guid* jobID, IBackgroundCopyJob** ppJob) mut
+			{
+				return VT.GetJob(&this, jobID, ppJob);
+			}
+			public HRESULT EnumJobs(uint32 dwFlags, IEnumBackgroundCopyJobs** ppEnum) mut
+			{
+				return VT.EnumJobs(&this, dwFlags, ppEnum);
+			}
+			public HRESULT GetErrorDescription(HRESULT hResult, uint32 LanguageId, PWSTR* pErrorDescription) mut
+			{
+				return VT.GetErrorDescription(&this, hResult, LanguageId, pErrorDescription);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IBackgroundCopyManager *self, PWSTR DisplayName, BG_JOB_TYPE Type, Guid* pJobId, IBackgroundCopyJob** ppJob) CreateJob;
-				public function HRESULT(IBackgroundCopyManager *self, Guid* jobID, IBackgroundCopyJob** ppJob) GetJob;
-				public function HRESULT(IBackgroundCopyManager *self, uint32 dwFlags, IEnumBackgroundCopyJobs** ppEnum) EnumJobs;
-				public function HRESULT(IBackgroundCopyManager *self, HRESULT hResult, uint32 LanguageId, PWSTR* pErrorDescription) GetErrorDescription;
+				public new function HRESULT(IBackgroundCopyManager *self, PWSTR DisplayName, BG_JOB_TYPE Type, Guid* pJobId, IBackgroundCopyJob** ppJob) CreateJob;
+				public new function HRESULT(IBackgroundCopyManager *self, Guid* jobID, IBackgroundCopyJob** ppJob) GetJob;
+				public new function HRESULT(IBackgroundCopyManager *self, uint32 dwFlags, IEnumBackgroundCopyJobs** ppEnum) EnumJobs;
+				public new function HRESULT(IBackgroundCopyManager *self, HRESULT hResult, uint32 LanguageId, PWSTR* pErrorDescription) GetErrorDescription;
 			}
 		}
 		[CRepr]
@@ -600,18 +860,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x54b50739, 0x686f, 0x45eb, 0x9d, 0xff, 0xd6, 0xa9, 0xa0, 0xfa, 0xa9, 0xaf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetNotifyCmdLine(PWSTR Program, PWSTR Parameters) mut
+			{
+				return VT.SetNotifyCmdLine(&this, Program, Parameters);
+			}
+			public HRESULT GetNotifyCmdLine(PWSTR* pProgram, PWSTR* pParameters) mut
+			{
+				return VT.GetNotifyCmdLine(&this, pProgram, pParameters);
+			}
+			public HRESULT GetReplyProgress(BG_JOB_REPLY_PROGRESS* pProgress) mut
+			{
+				return VT.GetReplyProgress(&this, pProgress);
+			}
+			public HRESULT GetReplyData(uint8** ppBuffer, uint64* pLength) mut
+			{
+				return VT.GetReplyData(&this, ppBuffer, pLength);
+			}
+			public HRESULT SetReplyFileName(PWSTR ReplyFileName) mut
+			{
+				return VT.SetReplyFileName(&this, ReplyFileName);
+			}
+			public HRESULT GetReplyFileName(PWSTR* pReplyFileName) mut
+			{
+				return VT.GetReplyFileName(&this, pReplyFileName);
+			}
+			public HRESULT SetCredentials(BG_AUTH_CREDENTIALS* credentials) mut
+			{
+				return VT.SetCredentials(&this, credentials);
+			}
+			public HRESULT RemoveCredentials(BG_AUTH_TARGET Target, BG_AUTH_SCHEME Scheme) mut
+			{
+				return VT.RemoveCredentials(&this, Target, Scheme);
+			}
 			[CRepr]
 			public struct VTable : IBackgroundCopyJob.VTable
 			{
-				public function HRESULT(IBackgroundCopyJob2 *self, PWSTR Program, PWSTR Parameters) SetNotifyCmdLine;
-				public function HRESULT(IBackgroundCopyJob2 *self, PWSTR* pProgram, PWSTR* pParameters) GetNotifyCmdLine;
-				public function HRESULT(IBackgroundCopyJob2 *self, BG_JOB_REPLY_PROGRESS* pProgress) GetReplyProgress;
-				public function HRESULT(IBackgroundCopyJob2 *self, uint8** ppBuffer, uint64* pLength) GetReplyData;
-				public function HRESULT(IBackgroundCopyJob2 *self, PWSTR ReplyFileName) SetReplyFileName;
-				public function HRESULT(IBackgroundCopyJob2 *self, PWSTR* pReplyFileName) GetReplyFileName;
-				public function HRESULT(IBackgroundCopyJob2 *self, BG_AUTH_CREDENTIALS* credentials) SetCredentials;
-				public function HRESULT(IBackgroundCopyJob2 *self, BG_AUTH_TARGET Target, BG_AUTH_SCHEME Scheme) RemoveCredentials;
+				public new function HRESULT(IBackgroundCopyJob2 *self, PWSTR Program, PWSTR Parameters) SetNotifyCmdLine;
+				public new function HRESULT(IBackgroundCopyJob2 *self, PWSTR* pProgram, PWSTR* pParameters) GetNotifyCmdLine;
+				public new function HRESULT(IBackgroundCopyJob2 *self, BG_JOB_REPLY_PROGRESS* pProgress) GetReplyProgress;
+				public new function HRESULT(IBackgroundCopyJob2 *self, uint8** ppBuffer, uint64* pLength) GetReplyData;
+				public new function HRESULT(IBackgroundCopyJob2 *self, PWSTR ReplyFileName) SetReplyFileName;
+				public new function HRESULT(IBackgroundCopyJob2 *self, PWSTR* pReplyFileName) GetReplyFileName;
+				public new function HRESULT(IBackgroundCopyJob2 *self, BG_AUTH_CREDENTIALS* credentials) SetCredentials;
+				public new function HRESULT(IBackgroundCopyJob2 *self, BG_AUTH_TARGET Target, BG_AUTH_SCHEME Scheme) RemoveCredentials;
 			}
 		}
 		[CRepr]
@@ -619,14 +912,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x443c8934, 0x90ff, 0x48ed, 0xbc, 0xde, 0x26, 0xf5, 0xc7, 0x45, 0x00, 0x42);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ReplaceRemotePrefix(PWSTR OldPrefix, PWSTR NewPrefix) mut
+			{
+				return VT.ReplaceRemotePrefix(&this, OldPrefix, NewPrefix);
+			}
+			public HRESULT AddFileWithRanges(PWSTR RemoteUrl, PWSTR LocalName, uint32 RangeCount, BG_FILE_RANGE* Ranges) mut
+			{
+				return VT.AddFileWithRanges(&this, RemoteUrl, LocalName, RangeCount, Ranges);
+			}
+			public HRESULT SetFileACLFlags(uint32 Flags) mut
+			{
+				return VT.SetFileACLFlags(&this, Flags);
+			}
+			public HRESULT GetFileACLFlags(uint32* Flags) mut
+			{
+				return VT.GetFileACLFlags(&this, Flags);
+			}
 			[CRepr]
 			public struct VTable : IBackgroundCopyJob2.VTable
 			{
-				public function HRESULT(IBackgroundCopyJob3 *self, PWSTR OldPrefix, PWSTR NewPrefix) ReplaceRemotePrefix;
-				public function HRESULT(IBackgroundCopyJob3 *self, PWSTR RemoteUrl, PWSTR LocalName, uint32 RangeCount, BG_FILE_RANGE* Ranges) AddFileWithRanges;
-				public function HRESULT(IBackgroundCopyJob3 *self, uint32 Flags) SetFileACLFlags;
-				public function HRESULT(IBackgroundCopyJob3 *self, uint32* Flags) GetFileACLFlags;
+				public new function HRESULT(IBackgroundCopyJob3 *self, PWSTR OldPrefix, PWSTR NewPrefix) ReplaceRemotePrefix;
+				public new function HRESULT(IBackgroundCopyJob3 *self, PWSTR RemoteUrl, PWSTR LocalName, uint32 RangeCount, BG_FILE_RANGE* Ranges) AddFileWithRanges;
+				public new function HRESULT(IBackgroundCopyJob3 *self, uint32 Flags) SetFileACLFlags;
+				public new function HRESULT(IBackgroundCopyJob3 *self, uint32* Flags) GetFileACLFlags;
 			}
 		}
 		[CRepr]
@@ -634,12 +944,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x83e81b93, 0x0873, 0x474d, 0x8a, 0x8c, 0xf2, 0x01, 0x8b, 0x1a, 0x93, 0x9c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetFileRanges(uint32* RangeCount, BG_FILE_RANGE** Ranges) mut
+			{
+				return VT.GetFileRanges(&this, RangeCount, Ranges);
+			}
+			public HRESULT SetRemoteName(PWSTR Val) mut
+			{
+				return VT.SetRemoteName(&this, Val);
+			}
 			[CRepr]
 			public struct VTable : IBackgroundCopyFile.VTable
 			{
-				public function HRESULT(IBackgroundCopyFile2 *self, uint32* RangeCount, BG_FILE_RANGE** Ranges) GetFileRanges;
-				public function HRESULT(IBackgroundCopyFile2 *self, PWSTR Val) SetRemoteName;
+				public new function HRESULT(IBackgroundCopyFile2 *self, uint32* RangeCount, BG_FILE_RANGE** Ranges) GetFileRanges;
+				public new function HRESULT(IBackgroundCopyFile2 *self, PWSTR Val) SetRemoteName;
 			}
 		}
 		[CRepr]
@@ -647,18 +966,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf1bd1079, 0x9f01, 0x4bdc, 0x80, 0x36, 0xf0, 0x9b, 0x70, 0x09, 0x50, 0x66);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetClientCertificateByID(BG_CERT_STORE_LOCATION StoreLocation, PWSTR StoreName, uint8* pCertHashBlob) mut
+			{
+				return VT.SetClientCertificateByID(&this, StoreLocation, StoreName, pCertHashBlob);
+			}
+			public HRESULT SetClientCertificateByName(BG_CERT_STORE_LOCATION StoreLocation, PWSTR StoreName, PWSTR SubjectName) mut
+			{
+				return VT.SetClientCertificateByName(&this, StoreLocation, StoreName, SubjectName);
+			}
+			public HRESULT RemoveClientCertificate() mut
+			{
+				return VT.RemoveClientCertificate(&this);
+			}
+			public HRESULT GetClientCertificate(BG_CERT_STORE_LOCATION* pStoreLocation, PWSTR* pStoreName, uint8** ppCertHashBlob, PWSTR* pSubjectName) mut
+			{
+				return VT.GetClientCertificate(&this, pStoreLocation, pStoreName, ppCertHashBlob, pSubjectName);
+			}
+			public HRESULT SetCustomHeaders(PWSTR RequestHeaders) mut
+			{
+				return VT.SetCustomHeaders(&this, RequestHeaders);
+			}
+			public HRESULT GetCustomHeaders(PWSTR* pRequestHeaders) mut
+			{
+				return VT.GetCustomHeaders(&this, pRequestHeaders);
+			}
+			public HRESULT SetSecurityFlags(uint32 Flags) mut
+			{
+				return VT.SetSecurityFlags(&this, Flags);
+			}
+			public HRESULT GetSecurityFlags(uint32* pFlags) mut
+			{
+				return VT.GetSecurityFlags(&this, pFlags);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IBackgroundCopyJobHttpOptions *self, BG_CERT_STORE_LOCATION StoreLocation, PWSTR StoreName, uint8* pCertHashBlob) SetClientCertificateByID;
-				public function HRESULT(IBackgroundCopyJobHttpOptions *self, BG_CERT_STORE_LOCATION StoreLocation, PWSTR StoreName, PWSTR SubjectName) SetClientCertificateByName;
-				public function HRESULT(IBackgroundCopyJobHttpOptions *self) RemoveClientCertificate;
-				public function HRESULT(IBackgroundCopyJobHttpOptions *self, BG_CERT_STORE_LOCATION* pStoreLocation, PWSTR* pStoreName, uint8** ppCertHashBlob, PWSTR* pSubjectName) GetClientCertificate;
-				public function HRESULT(IBackgroundCopyJobHttpOptions *self, PWSTR RequestHeaders) SetCustomHeaders;
-				public function HRESULT(IBackgroundCopyJobHttpOptions *self, PWSTR* pRequestHeaders) GetCustomHeaders;
-				public function HRESULT(IBackgroundCopyJobHttpOptions *self, uint32 Flags) SetSecurityFlags;
-				public function HRESULT(IBackgroundCopyJobHttpOptions *self, uint32* pFlags) GetSecurityFlags;
+				public new function HRESULT(IBackgroundCopyJobHttpOptions *self, BG_CERT_STORE_LOCATION StoreLocation, PWSTR StoreName, uint8* pCertHashBlob) SetClientCertificateByID;
+				public new function HRESULT(IBackgroundCopyJobHttpOptions *self, BG_CERT_STORE_LOCATION StoreLocation, PWSTR StoreName, PWSTR SubjectName) SetClientCertificateByName;
+				public new function HRESULT(IBackgroundCopyJobHttpOptions *self) RemoveClientCertificate;
+				public new function HRESULT(IBackgroundCopyJobHttpOptions *self, BG_CERT_STORE_LOCATION* pStoreLocation, PWSTR* pStoreName, uint8** ppCertHashBlob, PWSTR* pSubjectName) GetClientCertificate;
+				public new function HRESULT(IBackgroundCopyJobHttpOptions *self, PWSTR RequestHeaders) SetCustomHeaders;
+				public new function HRESULT(IBackgroundCopyJobHttpOptions *self, PWSTR* pRequestHeaders) GetCustomHeaders;
+				public new function HRESULT(IBackgroundCopyJobHttpOptions *self, uint32 Flags) SetSecurityFlags;
+				public new function HRESULT(IBackgroundCopyJobHttpOptions *self, uint32* pFlags) GetSecurityFlags;
 			}
 		}
 		[CRepr]
@@ -666,17 +1018,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x659cdeaf, 0x489e, 0x11d9, 0xa9, 0xcd, 0x00, 0x0d, 0x56, 0x96, 0x52, 0x51);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetId(Guid* pVal) mut
+			{
+				return VT.GetId(&this, pVal);
+			}
+			public HRESULT GetOriginUrl(PWSTR* pVal) mut
+			{
+				return VT.GetOriginUrl(&this, pVal);
+			}
+			public HRESULT GetFileSize(uint64* pVal) mut
+			{
+				return VT.GetFileSize(&this, pVal);
+			}
+			public HRESULT GetFileModificationTime(FILETIME* pVal) mut
+			{
+				return VT.GetFileModificationTime(&this, pVal);
+			}
+			public HRESULT GetLastAccessTime(FILETIME* pVal) mut
+			{
+				return VT.GetLastAccessTime(&this, pVal);
+			}
+			public HRESULT IsFileValidated() mut
+			{
+				return VT.IsFileValidated(&this);
+			}
+			public HRESULT GetFileRanges(uint32* pRangeCount, BG_FILE_RANGE** ppRanges) mut
+			{
+				return VT.GetFileRanges(&this, pRangeCount, ppRanges);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IBitsPeerCacheRecord *self, Guid* pVal) GetId;
-				public function HRESULT(IBitsPeerCacheRecord *self, PWSTR* pVal) GetOriginUrl;
-				public function HRESULT(IBitsPeerCacheRecord *self, uint64* pVal) GetFileSize;
-				public function HRESULT(IBitsPeerCacheRecord *self, FILETIME* pVal) GetFileModificationTime;
-				public function HRESULT(IBitsPeerCacheRecord *self, FILETIME* pVal) GetLastAccessTime;
-				public function HRESULT(IBitsPeerCacheRecord *self) IsFileValidated;
-				public function HRESULT(IBitsPeerCacheRecord *self, uint32* pRangeCount, BG_FILE_RANGE** ppRanges) GetFileRanges;
+				public new function HRESULT(IBitsPeerCacheRecord *self, Guid* pVal) GetId;
+				public new function HRESULT(IBitsPeerCacheRecord *self, PWSTR* pVal) GetOriginUrl;
+				public new function HRESULT(IBitsPeerCacheRecord *self, uint64* pVal) GetFileSize;
+				public new function HRESULT(IBitsPeerCacheRecord *self, FILETIME* pVal) GetFileModificationTime;
+				public new function HRESULT(IBitsPeerCacheRecord *self, FILETIME* pVal) GetLastAccessTime;
+				public new function HRESULT(IBitsPeerCacheRecord *self) IsFileValidated;
+				public new function HRESULT(IBitsPeerCacheRecord *self, uint32* pRangeCount, BG_FILE_RANGE** ppRanges) GetFileRanges;
 			}
 		}
 		[CRepr]
@@ -684,15 +1065,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x659cdea4, 0x489e, 0x11d9, 0xa9, 0xcd, 0x00, 0x0d, 0x56, 0x96, 0x52, 0x51);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 celt, IBitsPeerCacheRecord** rgelt, uint32* pceltFetched) mut
+			{
+				return VT.Next(&this, celt, rgelt, pceltFetched);
+			}
+			public HRESULT Skip(uint32 celt) mut
+			{
+				return VT.Skip(&this, celt);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumBitsPeerCacheRecords** ppenum) mut
+			{
+				return VT.Clone(&this, ppenum);
+			}
+			public HRESULT GetCount(uint32* puCount) mut
+			{
+				return VT.GetCount(&this, puCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumBitsPeerCacheRecords *self, uint32 celt, IBitsPeerCacheRecord** rgelt, uint32* pceltFetched) Next;
-				public function HRESULT(IEnumBitsPeerCacheRecords *self, uint32 celt) Skip;
-				public function HRESULT(IEnumBitsPeerCacheRecords *self) Reset;
-				public function HRESULT(IEnumBitsPeerCacheRecords *self, IEnumBitsPeerCacheRecords** ppenum) Clone;
-				public function HRESULT(IEnumBitsPeerCacheRecords *self, uint32* puCount) GetCount;
+				public new function HRESULT(IEnumBitsPeerCacheRecords *self, uint32 celt, IBitsPeerCacheRecord** rgelt, uint32* pceltFetched) Next;
+				public new function HRESULT(IEnumBitsPeerCacheRecords *self, uint32 celt) Skip;
+				public new function HRESULT(IEnumBitsPeerCacheRecords *self) Reset;
+				public new function HRESULT(IEnumBitsPeerCacheRecords *self, IEnumBitsPeerCacheRecords** ppenum) Clone;
+				public new function HRESULT(IEnumBitsPeerCacheRecords *self, uint32* puCount) GetCount;
 			}
 		}
 		[CRepr]
@@ -700,13 +1102,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x659cdea2, 0x489e, 0x11d9, 0xa9, 0xcd, 0x00, 0x0d, 0x56, 0x96, 0x52, 0x51);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPeerName(PWSTR* pName) mut
+			{
+				return VT.GetPeerName(&this, pName);
+			}
+			public HRESULT IsAuthenticated(BOOL* pAuth) mut
+			{
+				return VT.IsAuthenticated(&this, pAuth);
+			}
+			public HRESULT IsAvailable(BOOL* pOnline) mut
+			{
+				return VT.IsAvailable(&this, pOnline);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IBitsPeer *self, PWSTR* pName) GetPeerName;
-				public function HRESULT(IBitsPeer *self, BOOL* pAuth) IsAuthenticated;
-				public function HRESULT(IBitsPeer *self, BOOL* pOnline) IsAvailable;
+				public new function HRESULT(IBitsPeer *self, PWSTR* pName) GetPeerName;
+				public new function HRESULT(IBitsPeer *self, BOOL* pAuth) IsAuthenticated;
+				public new function HRESULT(IBitsPeer *self, BOOL* pOnline) IsAvailable;
 			}
 		}
 		[CRepr]
@@ -714,15 +1129,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x659cdea5, 0x489e, 0x11d9, 0xa9, 0xcd, 0x00, 0x0d, 0x56, 0x96, 0x52, 0x51);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 celt, IBitsPeer** rgelt, uint32* pceltFetched) mut
+			{
+				return VT.Next(&this, celt, rgelt, pceltFetched);
+			}
+			public HRESULT Skip(uint32 celt) mut
+			{
+				return VT.Skip(&this, celt);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumBitsPeers** ppenum) mut
+			{
+				return VT.Clone(&this, ppenum);
+			}
+			public HRESULT GetCount(uint32* puCount) mut
+			{
+				return VT.GetCount(&this, puCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumBitsPeers *self, uint32 celt, IBitsPeer** rgelt, uint32* pceltFetched) Next;
-				public function HRESULT(IEnumBitsPeers *self, uint32 celt) Skip;
-				public function HRESULT(IEnumBitsPeers *self) Reset;
-				public function HRESULT(IEnumBitsPeers *self, IEnumBitsPeers** ppenum) Clone;
-				public function HRESULT(IEnumBitsPeers *self, uint32* puCount) GetCount;
+				public new function HRESULT(IEnumBitsPeers *self, uint32 celt, IBitsPeer** rgelt, uint32* pceltFetched) Next;
+				public new function HRESULT(IEnumBitsPeers *self, uint32 celt) Skip;
+				public new function HRESULT(IEnumBitsPeers *self) Reset;
+				public new function HRESULT(IEnumBitsPeers *self, IEnumBitsPeers** ppenum) Clone;
+				public new function HRESULT(IEnumBitsPeers *self, uint32* puCount) GetCount;
 			}
 		}
 		[CRepr]
@@ -730,24 +1166,81 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x659cdead, 0x489e, 0x11d9, 0xa9, 0xcd, 0x00, 0x0d, 0x56, 0x96, 0x52, 0x51);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetMaximumCacheSize(uint32* pBytes) mut
+			{
+				return VT.GetMaximumCacheSize(&this, pBytes);
+			}
+			public HRESULT SetMaximumCacheSize(uint32 Bytes) mut
+			{
+				return VT.SetMaximumCacheSize(&this, Bytes);
+			}
+			public HRESULT GetMaximumContentAge(uint32* pSeconds) mut
+			{
+				return VT.GetMaximumContentAge(&this, pSeconds);
+			}
+			public HRESULT SetMaximumContentAge(uint32 Seconds) mut
+			{
+				return VT.SetMaximumContentAge(&this, Seconds);
+			}
+			public HRESULT GetConfigurationFlags(uint32* pFlags) mut
+			{
+				return VT.GetConfigurationFlags(&this, pFlags);
+			}
+			public HRESULT SetConfigurationFlags(uint32 Flags) mut
+			{
+				return VT.SetConfigurationFlags(&this, Flags);
+			}
+			public HRESULT EnumRecords(IEnumBitsPeerCacheRecords** ppEnum) mut
+			{
+				return VT.EnumRecords(&this, ppEnum);
+			}
+			public HRESULT GetRecord(Guid* id, IBitsPeerCacheRecord** ppRecord) mut
+			{
+				return VT.GetRecord(&this, id, ppRecord);
+			}
+			public HRESULT ClearRecords() mut
+			{
+				return VT.ClearRecords(&this);
+			}
+			public HRESULT DeleteRecord(Guid* id) mut
+			{
+				return VT.DeleteRecord(&this, id);
+			}
+			public HRESULT DeleteUrl(PWSTR url) mut
+			{
+				return VT.DeleteUrl(&this, url);
+			}
+			public HRESULT EnumPeers(IEnumBitsPeers** ppEnum) mut
+			{
+				return VT.EnumPeers(&this, ppEnum);
+			}
+			public HRESULT ClearPeers() mut
+			{
+				return VT.ClearPeers(&this);
+			}
+			public HRESULT DiscoverPeers() mut
+			{
+				return VT.DiscoverPeers(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IBitsPeerCacheAdministration *self, uint32* pBytes) GetMaximumCacheSize;
-				public function HRESULT(IBitsPeerCacheAdministration *self, uint32 Bytes) SetMaximumCacheSize;
-				public function HRESULT(IBitsPeerCacheAdministration *self, uint32* pSeconds) GetMaximumContentAge;
-				public function HRESULT(IBitsPeerCacheAdministration *self, uint32 Seconds) SetMaximumContentAge;
-				public function HRESULT(IBitsPeerCacheAdministration *self, uint32* pFlags) GetConfigurationFlags;
-				public function HRESULT(IBitsPeerCacheAdministration *self, uint32 Flags) SetConfigurationFlags;
-				public function HRESULT(IBitsPeerCacheAdministration *self, IEnumBitsPeerCacheRecords** ppEnum) EnumRecords;
-				public function HRESULT(IBitsPeerCacheAdministration *self, Guid* id, IBitsPeerCacheRecord** ppRecord) GetRecord;
-				public function HRESULT(IBitsPeerCacheAdministration *self) ClearRecords;
-				public function HRESULT(IBitsPeerCacheAdministration *self, Guid* id) DeleteRecord;
-				public function HRESULT(IBitsPeerCacheAdministration *self, PWSTR url) DeleteUrl;
-				public function HRESULT(IBitsPeerCacheAdministration *self, IEnumBitsPeers** ppEnum) EnumPeers;
-				public function HRESULT(IBitsPeerCacheAdministration *self) ClearPeers;
-				public function HRESULT(IBitsPeerCacheAdministration *self) DiscoverPeers;
+				public new function HRESULT(IBitsPeerCacheAdministration *self, uint32* pBytes) GetMaximumCacheSize;
+				public new function HRESULT(IBitsPeerCacheAdministration *self, uint32 Bytes) SetMaximumCacheSize;
+				public new function HRESULT(IBitsPeerCacheAdministration *self, uint32* pSeconds) GetMaximumContentAge;
+				public new function HRESULT(IBitsPeerCacheAdministration *self, uint32 Seconds) SetMaximumContentAge;
+				public new function HRESULT(IBitsPeerCacheAdministration *self, uint32* pFlags) GetConfigurationFlags;
+				public new function HRESULT(IBitsPeerCacheAdministration *self, uint32 Flags) SetConfigurationFlags;
+				public new function HRESULT(IBitsPeerCacheAdministration *self, IEnumBitsPeerCacheRecords** ppEnum) EnumRecords;
+				public new function HRESULT(IBitsPeerCacheAdministration *self, Guid* id, IBitsPeerCacheRecord** ppRecord) GetRecord;
+				public new function HRESULT(IBitsPeerCacheAdministration *self) ClearRecords;
+				public new function HRESULT(IBitsPeerCacheAdministration *self, Guid* id) DeleteRecord;
+				public new function HRESULT(IBitsPeerCacheAdministration *self, PWSTR url) DeleteUrl;
+				public new function HRESULT(IBitsPeerCacheAdministration *self, IEnumBitsPeers** ppEnum) EnumPeers;
+				public new function HRESULT(IBitsPeerCacheAdministration *self) ClearPeers;
+				public new function HRESULT(IBitsPeerCacheAdministration *self) DiscoverPeers;
 			}
 		}
 		[CRepr]
@@ -755,16 +1248,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x659cdeae, 0x489e, 0x11d9, 0xa9, 0xcd, 0x00, 0x0d, 0x56, 0x96, 0x52, 0x51);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetPeerCachingFlags(uint32 Flags) mut
+			{
+				return VT.SetPeerCachingFlags(&this, Flags);
+			}
+			public HRESULT GetPeerCachingFlags(uint32* pFlags) mut
+			{
+				return VT.GetPeerCachingFlags(&this, pFlags);
+			}
+			public HRESULT GetOwnerIntegrityLevel(uint32* pLevel) mut
+			{
+				return VT.GetOwnerIntegrityLevel(&this, pLevel);
+			}
+			public HRESULT GetOwnerElevationState(BOOL* pElevated) mut
+			{
+				return VT.GetOwnerElevationState(&this, pElevated);
+			}
+			public HRESULT SetMaximumDownloadTime(uint32 Timeout) mut
+			{
+				return VT.SetMaximumDownloadTime(&this, Timeout);
+			}
+			public HRESULT GetMaximumDownloadTime(uint32* pTimeout) mut
+			{
+				return VT.GetMaximumDownloadTime(&this, pTimeout);
+			}
 			[CRepr]
 			public struct VTable : IBackgroundCopyJob3.VTable
 			{
-				public function HRESULT(IBackgroundCopyJob4 *self, uint32 Flags) SetPeerCachingFlags;
-				public function HRESULT(IBackgroundCopyJob4 *self, uint32* pFlags) GetPeerCachingFlags;
-				public function HRESULT(IBackgroundCopyJob4 *self, uint32* pLevel) GetOwnerIntegrityLevel;
-				public function HRESULT(IBackgroundCopyJob4 *self, BOOL* pElevated) GetOwnerElevationState;
-				public function HRESULT(IBackgroundCopyJob4 *self, uint32 Timeout) SetMaximumDownloadTime;
-				public function HRESULT(IBackgroundCopyJob4 *self, uint32* pTimeout) GetMaximumDownloadTime;
+				public new function HRESULT(IBackgroundCopyJob4 *self, uint32 Flags) SetPeerCachingFlags;
+				public new function HRESULT(IBackgroundCopyJob4 *self, uint32* pFlags) GetPeerCachingFlags;
+				public new function HRESULT(IBackgroundCopyJob4 *self, uint32* pLevel) GetOwnerIntegrityLevel;
+				public new function HRESULT(IBackgroundCopyJob4 *self, BOOL* pElevated) GetOwnerElevationState;
+				public new function HRESULT(IBackgroundCopyJob4 *self, uint32 Timeout) SetMaximumDownloadTime;
+				public new function HRESULT(IBackgroundCopyJob4 *self, uint32* pTimeout) GetMaximumDownloadTime;
 			}
 		}
 		[CRepr]
@@ -772,14 +1290,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x659cdeaa, 0x489e, 0x11d9, 0xa9, 0xcd, 0x00, 0x0d, 0x56, 0x96, 0x52, 0x51);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetTemporaryName(PWSTR* pFilename) mut
+			{
+				return VT.GetTemporaryName(&this, pFilename);
+			}
+			public HRESULT SetValidationState(BOOL state) mut
+			{
+				return VT.SetValidationState(&this, state);
+			}
+			public HRESULT GetValidationState(BOOL* pState) mut
+			{
+				return VT.GetValidationState(&this, pState);
+			}
+			public HRESULT IsDownloadedFromPeer(BOOL* pVal) mut
+			{
+				return VT.IsDownloadedFromPeer(&this, pVal);
+			}
 			[CRepr]
 			public struct VTable : IBackgroundCopyFile2.VTable
 			{
-				public function HRESULT(IBackgroundCopyFile3 *self, PWSTR* pFilename) GetTemporaryName;
-				public function HRESULT(IBackgroundCopyFile3 *self, BOOL state) SetValidationState;
-				public function HRESULT(IBackgroundCopyFile3 *self, BOOL* pState) GetValidationState;
-				public function HRESULT(IBackgroundCopyFile3 *self, BOOL* pVal) IsDownloadedFromPeer;
+				public new function HRESULT(IBackgroundCopyFile3 *self, PWSTR* pFilename) GetTemporaryName;
+				public new function HRESULT(IBackgroundCopyFile3 *self, BOOL state) SetValidationState;
+				public new function HRESULT(IBackgroundCopyFile3 *self, BOOL* pState) GetValidationState;
+				public new function HRESULT(IBackgroundCopyFile3 *self, BOOL* pVal) IsDownloadedFromPeer;
 			}
 		}
 		[CRepr]
@@ -787,11 +1322,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x659cdeac, 0x489e, 0x11d9, 0xa9, 0xcd, 0x00, 0x0d, 0x56, 0x96, 0x52, 0x51);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT FileTransferred(IBackgroundCopyJob* pJob, IBackgroundCopyFile* pFile) mut
+			{
+				return VT.FileTransferred(&this, pJob, pFile);
+			}
 			[CRepr]
 			public struct VTable : IBackgroundCopyCallback.VTable
 			{
-				public function HRESULT(IBackgroundCopyCallback2 *self, IBackgroundCopyJob* pJob, IBackgroundCopyFile* pFile) FileTransferred;
+				public new function HRESULT(IBackgroundCopyCallback2 *self, IBackgroundCopyJob* pJob, IBackgroundCopyFile* pFile) FileTransferred;
 			}
 		}
 		[CRepr]
@@ -799,15 +1339,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9a2584c3, 0xf7d2, 0x457a, 0x9a, 0x5e, 0x22, 0xb6, 0x7b, 0xff, 0xc7, 0xd2);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetHelperTokenFlags(BG_TOKEN UsageFlags) mut
+			{
+				return VT.SetHelperTokenFlags(&this, UsageFlags);
+			}
+			public HRESULT GetHelperTokenFlags(BG_TOKEN* pFlags) mut
+			{
+				return VT.GetHelperTokenFlags(&this, pFlags);
+			}
+			public HRESULT SetHelperToken() mut
+			{
+				return VT.SetHelperToken(&this);
+			}
+			public HRESULT ClearHelperToken() mut
+			{
+				return VT.ClearHelperToken(&this);
+			}
+			public HRESULT GetHelperTokenSid(PWSTR* pSid) mut
+			{
+				return VT.GetHelperTokenSid(&this, pSid);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IBitsTokenOptions *self, BG_TOKEN UsageFlags) SetHelperTokenFlags;
-				public function HRESULT(IBitsTokenOptions *self, BG_TOKEN* pFlags) GetHelperTokenFlags;
-				public function HRESULT(IBitsTokenOptions *self) SetHelperToken;
-				public function HRESULT(IBitsTokenOptions *self) ClearHelperToken;
-				public function HRESULT(IBitsTokenOptions *self, PWSTR* pSid) GetHelperTokenSid;
+				public new function HRESULT(IBitsTokenOptions *self, BG_TOKEN UsageFlags) SetHelperTokenFlags;
+				public new function HRESULT(IBitsTokenOptions *self, BG_TOKEN* pFlags) GetHelperTokenFlags;
+				public new function HRESULT(IBitsTokenOptions *self) SetHelperToken;
+				public new function HRESULT(IBitsTokenOptions *self) ClearHelperToken;
+				public new function HRESULT(IBitsTokenOptions *self, PWSTR* pSid) GetHelperTokenSid;
 			}
 		}
 		[CRepr]
@@ -815,11 +1376,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xef7e0655, 0x7888, 0x4960, 0xb0, 0xe5, 0x73, 0x08, 0x46, 0xe0, 0x34, 0x92);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPeerDownloadStats(uint64* pFromOrigin, uint64* pFromPeers) mut
+			{
+				return VT.GetPeerDownloadStats(&this, pFromOrigin, pFromPeers);
+			}
 			[CRepr]
 			public struct VTable : IBackgroundCopyFile3.VTable
 			{
-				public function HRESULT(IBackgroundCopyFile4 *self, uint64* pFromOrigin, uint64* pFromPeers) GetPeerDownloadStats;
+				public new function HRESULT(IBackgroundCopyFile4 *self, uint64* pFromOrigin, uint64* pFromPeers) GetPeerDownloadStats;
 			}
 		}
 		[CRepr]
@@ -827,12 +1393,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe847030c, 0xbbba, 0x4657, 0xaf, 0x6d, 0x48, 0x4a, 0xa4, 0x2b, 0xf1, 0xfe);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetProperty(BITS_JOB_PROPERTY_ID PropertyId, BITS_JOB_PROPERTY_VALUE PropertyValue) mut
+			{
+				return VT.SetProperty(&this, PropertyId, PropertyValue);
+			}
+			public HRESULT GetProperty(BITS_JOB_PROPERTY_ID PropertyId, BITS_JOB_PROPERTY_VALUE* PropertyValue) mut
+			{
+				return VT.GetProperty(&this, PropertyId, PropertyValue);
+			}
 			[CRepr]
 			public struct VTable : IBackgroundCopyJob4.VTable
 			{
-				public function HRESULT(IBackgroundCopyJob5 *self, BITS_JOB_PROPERTY_ID PropertyId, BITS_JOB_PROPERTY_VALUE PropertyValue) SetProperty;
-				public function HRESULT(IBackgroundCopyJob5 *self, BITS_JOB_PROPERTY_ID PropertyId, BITS_JOB_PROPERTY_VALUE* PropertyValue) GetProperty;
+				public new function HRESULT(IBackgroundCopyJob5 *self, BITS_JOB_PROPERTY_ID PropertyId, BITS_JOB_PROPERTY_VALUE PropertyValue) SetProperty;
+				public new function HRESULT(IBackgroundCopyJob5 *self, BITS_JOB_PROPERTY_ID PropertyId, BITS_JOB_PROPERTY_VALUE* PropertyValue) GetProperty;
 			}
 		}
 		[CRepr]
@@ -840,12 +1415,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x85c1657f, 0xdafc, 0x40e8, 0x88, 0x34, 0xdf, 0x18, 0xea, 0x25, 0x71, 0x7e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetProperty(BITS_FILE_PROPERTY_ID PropertyId, BITS_FILE_PROPERTY_VALUE PropertyValue) mut
+			{
+				return VT.SetProperty(&this, PropertyId, PropertyValue);
+			}
+			public HRESULT GetProperty(BITS_FILE_PROPERTY_ID PropertyId, BITS_FILE_PROPERTY_VALUE* PropertyValue) mut
+			{
+				return VT.GetProperty(&this, PropertyId, PropertyValue);
+			}
 			[CRepr]
 			public struct VTable : IBackgroundCopyFile4.VTable
 			{
-				public function HRESULT(IBackgroundCopyFile5 *self, BITS_FILE_PROPERTY_ID PropertyId, BITS_FILE_PROPERTY_VALUE PropertyValue) SetProperty;
-				public function HRESULT(IBackgroundCopyFile5 *self, BITS_FILE_PROPERTY_ID PropertyId, BITS_FILE_PROPERTY_VALUE* PropertyValue) GetProperty;
+				public new function HRESULT(IBackgroundCopyFile5 *self, BITS_FILE_PROPERTY_ID PropertyId, BITS_FILE_PROPERTY_VALUE PropertyValue) SetProperty;
+				public new function HRESULT(IBackgroundCopyFile5 *self, BITS_FILE_PROPERTY_ID PropertyId, BITS_FILE_PROPERTY_VALUE* PropertyValue) GetProperty;
 			}
 		}
 		[CRepr]
@@ -853,11 +1437,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x98c97bd2, 0xe32b, 0x4ad8, 0xa5, 0x28, 0x95, 0xfd, 0x8b, 0x16, 0xbd, 0x42);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT FileRangesTransferred(IBackgroundCopyJob* job, IBackgroundCopyFile* file, uint32 rangeCount, BG_FILE_RANGE* ranges) mut
+			{
+				return VT.FileRangesTransferred(&this, job, file, rangeCount, ranges);
+			}
 			[CRepr]
 			public struct VTable : IBackgroundCopyCallback2.VTable
 			{
-				public function HRESULT(IBackgroundCopyCallback3 *self, IBackgroundCopyJob* job, IBackgroundCopyFile* file, uint32 rangeCount, BG_FILE_RANGE* ranges) FileRangesTransferred;
+				public new function HRESULT(IBackgroundCopyCallback3 *self, IBackgroundCopyJob* job, IBackgroundCopyFile* file, uint32 rangeCount, BG_FILE_RANGE* ranges) FileRangesTransferred;
 			}
 		}
 		[CRepr]
@@ -865,13 +1454,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xcf6784f7, 0xd677, 0x49fd, 0x93, 0x68, 0xcb, 0x47, 0xae, 0xe9, 0xd1, 0xad);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT UpdateDownloadPosition(uint64 offset) mut
+			{
+				return VT.UpdateDownloadPosition(&this, offset);
+			}
+			public HRESULT RequestFileRanges(uint32 rangeCount, BG_FILE_RANGE* ranges) mut
+			{
+				return VT.RequestFileRanges(&this, rangeCount, ranges);
+			}
+			public HRESULT GetFilledFileRanges(uint32* rangeCount, BG_FILE_RANGE** ranges) mut
+			{
+				return VT.GetFilledFileRanges(&this, rangeCount, ranges);
+			}
 			[CRepr]
 			public struct VTable : IBackgroundCopyFile5.VTable
 			{
-				public function HRESULT(IBackgroundCopyFile6 *self, uint64 offset) UpdateDownloadPosition;
-				public function HRESULT(IBackgroundCopyFile6 *self, uint32 rangeCount, BG_FILE_RANGE* ranges) RequestFileRanges;
-				public function HRESULT(IBackgroundCopyFile6 *self, uint32* rangeCount, BG_FILE_RANGE** ranges) GetFilledFileRanges;
+				public new function HRESULT(IBackgroundCopyFile6 *self, uint64 offset) UpdateDownloadPosition;
+				public new function HRESULT(IBackgroundCopyFile6 *self, uint32 rangeCount, BG_FILE_RANGE* ranges) RequestFileRanges;
+				public new function HRESULT(IBackgroundCopyFile6 *self, uint32* rangeCount, BG_FILE_RANGE** ranges) GetFilledFileRanges;
 			}
 		}
 		[CRepr]
@@ -879,12 +1481,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb591a192, 0xa405, 0x4fc3, 0x83, 0x23, 0x4c, 0x5c, 0x54, 0x25, 0x78, 0xfc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetHttpMethod(PWSTR method) mut
+			{
+				return VT.SetHttpMethod(&this, method);
+			}
+			public HRESULT GetHttpMethod(PWSTR* method) mut
+			{
+				return VT.GetHttpMethod(&this, method);
+			}
 			[CRepr]
 			public struct VTable : IBackgroundCopyJobHttpOptions.VTable
 			{
-				public function HRESULT(IBackgroundCopyJobHttpOptions2 *self, PWSTR method) SetHttpMethod;
-				public function HRESULT(IBackgroundCopyJobHttpOptions2 *self, PWSTR* method) GetHttpMethod;
+				public new function HRESULT(IBackgroundCopyJobHttpOptions2 *self, PWSTR method) SetHttpMethod;
+				public new function HRESULT(IBackgroundCopyJobHttpOptions2 *self, PWSTR* method) GetHttpMethod;
 			}
 		}
 		[CRepr]
@@ -892,11 +1503,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4cec0d02, 0xdef7, 0x4158, 0x81, 0x3a, 0xc3, 0x2a, 0x46, 0x94, 0x5f, 0xf7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ValidateServerCertificate(IBackgroundCopyJob* job, IBackgroundCopyFile* file, uint32 certLength, uint8* certData, uint32 certEncodingType, uint32 certStoreLength, uint8* certStoreData) mut
+			{
+				return VT.ValidateServerCertificate(&this, job, file, certLength, certData, certEncodingType, certStoreLength, certStoreData);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IBackgroundCopyServerCertificateValidationCallback *self, IBackgroundCopyJob* job, IBackgroundCopyFile* file, uint32 certLength, uint8* certData, uint32 certEncodingType, uint32 certStoreLength, uint8* certStoreData) ValidateServerCertificate;
+				public new function HRESULT(IBackgroundCopyServerCertificateValidationCallback *self, IBackgroundCopyJob* job, IBackgroundCopyFile* file, uint32 certLength, uint8* certData, uint32 certEncodingType, uint32 certStoreLength, uint8* certStoreData) ValidateServerCertificate;
 			}
 		}
 		[CRepr]
@@ -904,12 +1520,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8a9263d3, 0xfd4c, 0x4eda, 0x9b, 0x28, 0x30, 0x13, 0x2a, 0x4d, 0x4e, 0x3c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetServerCertificateValidationInterface(IUnknown* certValidationCallback) mut
+			{
+				return VT.SetServerCertificateValidationInterface(&this, certValidationCallback);
+			}
+			public HRESULT MakeCustomHeadersWriteOnly() mut
+			{
+				return VT.MakeCustomHeadersWriteOnly(&this);
+			}
 			[CRepr]
 			public struct VTable : IBackgroundCopyJobHttpOptions2.VTable
 			{
-				public function HRESULT(IBackgroundCopyJobHttpOptions3 *self, IUnknown* certValidationCallback) SetServerCertificateValidationInterface;
-				public function HRESULT(IBackgroundCopyJobHttpOptions3 *self) MakeCustomHeadersWriteOnly;
+				public new function HRESULT(IBackgroundCopyJobHttpOptions3 *self, IUnknown* certValidationCallback) SetServerCertificateValidationInterface;
+				public new function HRESULT(IBackgroundCopyJobHttpOptions3 *self) MakeCustomHeadersWriteOnly;
 			}
 		}
 		[CRepr]
@@ -917,14 +1542,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x29cfbbf7, 0x09e4, 0x4b97, 0xb0, 0xbc, 0xf2, 0x28, 0x7e, 0x3d, 0x8e, 0xb3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT EnableBITSUploads() mut
+			{
+				return VT.EnableBITSUploads(&this);
+			}
+			public HRESULT DisableBITSUploads() mut
+			{
+				return VT.DisableBITSUploads(&this);
+			}
+			public HRESULT GetCleanupTaskName(BSTR* pTaskName) mut
+			{
+				return VT.GetCleanupTaskName(&this, pTaskName);
+			}
+			public HRESULT GetCleanupTask(Guid* riid, IUnknown** ppUnk) mut
+			{
+				return VT.GetCleanupTask(&this, riid, ppUnk);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IBITSExtensionSetup *self) EnableBITSUploads;
-				public function HRESULT(IBITSExtensionSetup *self) DisableBITSUploads;
-				public function HRESULT(IBITSExtensionSetup *self, BSTR* pTaskName) GetCleanupTaskName;
-				public function HRESULT(IBITSExtensionSetup *self, Guid* riid, IUnknown** ppUnk) GetCleanupTask;
+				public new function HRESULT(IBITSExtensionSetup *self) EnableBITSUploads;
+				public new function HRESULT(IBITSExtensionSetup *self) DisableBITSUploads;
+				public new function HRESULT(IBITSExtensionSetup *self, BSTR* pTaskName) GetCleanupTaskName;
+				public new function HRESULT(IBITSExtensionSetup *self, Guid* riid, IUnknown** ppUnk) GetCleanupTask;
 			}
 		}
 		[CRepr]
@@ -932,11 +1574,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd5d2d542, 0x5503, 0x4e64, 0x8b, 0x48, 0x72, 0xef, 0x91, 0xa3, 0x2e, 0xe1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetObject(BSTR Path, IBITSExtensionSetup** ppExtensionSetup) mut
+			{
+				return VT.GetObject(&this, Path, ppExtensionSetup);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IBITSExtensionSetupFactory *self, BSTR Path, IBITSExtensionSetup** ppExtensionSetup) GetObject;
+				public new function HRESULT(IBITSExtensionSetupFactory *self, BSTR Path, IBITSExtensionSetup** ppExtensionSetup) GetObject;
 			}
 		}
 		[CRepr]
@@ -944,18 +1591,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x59f5553c, 0x2031, 0x4629, 0xbb, 0x18, 0x26, 0x45, 0xa6, 0x97, 0x09, 0x47);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CancelJob() mut
+			{
+				return VT.CancelJob(&this);
+			}
+			public HRESULT GetProgress(uint32 dwFlags, uint32* pdwProgress) mut
+			{
+				return VT.GetProgress(&this, dwFlags, pdwProgress);
+			}
+			public HRESULT GetStatus(uint32* pdwStatus, uint32* pdwWin32Result, uint32* pdwTransportResult, uint32* pdwNumOfRetries) mut
+			{
+				return VT.GetStatus(&this, pdwStatus, pdwWin32Result, pdwTransportResult, pdwNumOfRetries);
+			}
+			public HRESULT AddFiles(uint32 cFileCount, FILESETINFO** ppFileSet) mut
+			{
+				return VT.AddFiles(&this, cFileCount, ppFileSet);
+			}
+			public HRESULT GetFile(uint32 cFileIndex, FILESETINFO* pFileInfo) mut
+			{
+				return VT.GetFile(&this, cFileIndex, pFileInfo);
+			}
+			public HRESULT GetFileCount(uint32* pdwFileCount) mut
+			{
+				return VT.GetFileCount(&this, pdwFileCount);
+			}
+			public HRESULT SwitchToForeground() mut
+			{
+				return VT.SwitchToForeground(&this);
+			}
+			public HRESULT get_JobID(Guid* pguidJobID) mut
+			{
+				return VT.get_JobID(&this, pguidJobID);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IBackgroundCopyJob1 *self) CancelJob;
-				public function HRESULT(IBackgroundCopyJob1 *self, uint32 dwFlags, uint32* pdwProgress) GetProgress;
-				public function HRESULT(IBackgroundCopyJob1 *self, uint32* pdwStatus, uint32* pdwWin32Result, uint32* pdwTransportResult, uint32* pdwNumOfRetries) GetStatus;
-				public function HRESULT(IBackgroundCopyJob1 *self, uint32 cFileCount, FILESETINFO** ppFileSet) AddFiles;
-				public function HRESULT(IBackgroundCopyJob1 *self, uint32 cFileIndex, FILESETINFO* pFileInfo) GetFile;
-				public function HRESULT(IBackgroundCopyJob1 *self, uint32* pdwFileCount) GetFileCount;
-				public function HRESULT(IBackgroundCopyJob1 *self) SwitchToForeground;
-				public function HRESULT(IBackgroundCopyJob1 *self, Guid* pguidJobID) get_JobID;
+				public new function HRESULT(IBackgroundCopyJob1 *self) CancelJob;
+				public new function HRESULT(IBackgroundCopyJob1 *self, uint32 dwFlags, uint32* pdwProgress) GetProgress;
+				public new function HRESULT(IBackgroundCopyJob1 *self, uint32* pdwStatus, uint32* pdwWin32Result, uint32* pdwTransportResult, uint32* pdwNumOfRetries) GetStatus;
+				public new function HRESULT(IBackgroundCopyJob1 *self, uint32 cFileCount, FILESETINFO** ppFileSet) AddFiles;
+				public new function HRESULT(IBackgroundCopyJob1 *self, uint32 cFileIndex, FILESETINFO* pFileInfo) GetFile;
+				public new function HRESULT(IBackgroundCopyJob1 *self, uint32* pdwFileCount) GetFileCount;
+				public new function HRESULT(IBackgroundCopyJob1 *self) SwitchToForeground;
+				public new function HRESULT(IBackgroundCopyJob1 *self, Guid* pguidJobID) get_JobID;
 			}
 		}
 		[CRepr]
@@ -963,15 +1643,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8baeba9d, 0x8f1c, 0x42c4, 0xb8, 0x2c, 0x09, 0xae, 0x79, 0x98, 0x0d, 0x25);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 celt, Guid* rgelt, uint32* pceltFetched) mut
+			{
+				return VT.Next(&this, celt, rgelt, pceltFetched);
+			}
+			public HRESULT Skip(uint32 celt) mut
+			{
+				return VT.Skip(&this, celt);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumBackgroundCopyJobs1** ppenum) mut
+			{
+				return VT.Clone(&this, ppenum);
+			}
+			public HRESULT GetCount(uint32* puCount) mut
+			{
+				return VT.GetCount(&this, puCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumBackgroundCopyJobs1 *self, uint32 celt, Guid* rgelt, uint32* pceltFetched) Next;
-				public function HRESULT(IEnumBackgroundCopyJobs1 *self, uint32 celt) Skip;
-				public function HRESULT(IEnumBackgroundCopyJobs1 *self) Reset;
-				public function HRESULT(IEnumBackgroundCopyJobs1 *self, IEnumBackgroundCopyJobs1** ppenum) Clone;
-				public function HRESULT(IEnumBackgroundCopyJobs1 *self, uint32* puCount) GetCount;
+				public new function HRESULT(IEnumBackgroundCopyJobs1 *self, uint32 celt, Guid* rgelt, uint32* pceltFetched) Next;
+				public new function HRESULT(IEnumBackgroundCopyJobs1 *self, uint32 celt) Skip;
+				public new function HRESULT(IEnumBackgroundCopyJobs1 *self) Reset;
+				public new function HRESULT(IEnumBackgroundCopyJobs1 *self, IEnumBackgroundCopyJobs1** ppenum) Clone;
+				public new function HRESULT(IEnumBackgroundCopyJobs1 *self, uint32* puCount) GetCount;
 			}
 		}
 		[CRepr]
@@ -979,25 +1680,86 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1ded80a7, 0x53ea, 0x424f, 0x8a, 0x04, 0x17, 0xfe, 0xa9, 0xad, 0xc4, 0xf5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetProp(GROUPPROP propID, VARIANT* pvarVal) mut
+			{
+				return VT.GetProp(&this, propID, pvarVal);
+			}
+			public HRESULT SetProp(GROUPPROP propID, VARIANT* pvarVal) mut
+			{
+				return VT.SetProp(&this, propID, pvarVal);
+			}
+			public HRESULT GetProgress(uint32 dwFlags, uint32* pdwProgress) mut
+			{
+				return VT.GetProgress(&this, dwFlags, pdwProgress);
+			}
+			public HRESULT GetStatus(uint32* pdwStatus, uint32* pdwJobIndex) mut
+			{
+				return VT.GetStatus(&this, pdwStatus, pdwJobIndex);
+			}
+			public HRESULT GetJob(Guid jobID, IBackgroundCopyJob1** ppJob) mut
+			{
+				return VT.GetJob(&this, jobID, ppJob);
+			}
+			public HRESULT SuspendGroup() mut
+			{
+				return VT.SuspendGroup(&this);
+			}
+			public HRESULT ResumeGroup() mut
+			{
+				return VT.ResumeGroup(&this);
+			}
+			public HRESULT CancelGroup() mut
+			{
+				return VT.CancelGroup(&this);
+			}
+			public HRESULT get_Size(uint32* pdwSize) mut
+			{
+				return VT.get_Size(&this, pdwSize);
+			}
+			public HRESULT get_GroupID(Guid* pguidGroupID) mut
+			{
+				return VT.get_GroupID(&this, pguidGroupID);
+			}
+			public HRESULT CreateJob(Guid guidJobID, IBackgroundCopyJob1** ppJob) mut
+			{
+				return VT.CreateJob(&this, guidJobID, ppJob);
+			}
+			public HRESULT EnumJobs(uint32 dwFlags, IEnumBackgroundCopyJobs1** ppEnumJobs) mut
+			{
+				return VT.EnumJobs(&this, dwFlags, ppEnumJobs);
+			}
+			public HRESULT SwitchToForeground() mut
+			{
+				return VT.SwitchToForeground(&this);
+			}
+			public HRESULT QueryNewJobInterface(Guid* iid, IUnknown** pUnk) mut
+			{
+				return VT.QueryNewJobInterface(&this, iid, pUnk);
+			}
+			public HRESULT SetNotificationPointer(Guid* iid, IUnknown* pUnk) mut
+			{
+				return VT.SetNotificationPointer(&this, iid, pUnk);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IBackgroundCopyGroup *self, GROUPPROP propID, VARIANT* pvarVal) GetProp;
-				public function HRESULT(IBackgroundCopyGroup *self, GROUPPROP propID, VARIANT* pvarVal) SetProp;
-				public function HRESULT(IBackgroundCopyGroup *self, uint32 dwFlags, uint32* pdwProgress) GetProgress;
-				public function HRESULT(IBackgroundCopyGroup *self, uint32* pdwStatus, uint32* pdwJobIndex) GetStatus;
-				public function HRESULT(IBackgroundCopyGroup *self, Guid jobID, IBackgroundCopyJob1** ppJob) GetJob;
-				public function HRESULT(IBackgroundCopyGroup *self) SuspendGroup;
-				public function HRESULT(IBackgroundCopyGroup *self) ResumeGroup;
-				public function HRESULT(IBackgroundCopyGroup *self) CancelGroup;
-				public function HRESULT(IBackgroundCopyGroup *self, uint32* pdwSize) get_Size;
-				public function HRESULT(IBackgroundCopyGroup *self, Guid* pguidGroupID) get_GroupID;
-				public function HRESULT(IBackgroundCopyGroup *self, Guid guidJobID, IBackgroundCopyJob1** ppJob) CreateJob;
-				public function HRESULT(IBackgroundCopyGroup *self, uint32 dwFlags, IEnumBackgroundCopyJobs1** ppEnumJobs) EnumJobs;
-				public function HRESULT(IBackgroundCopyGroup *self) SwitchToForeground;
-				public function HRESULT(IBackgroundCopyGroup *self, Guid* iid, IUnknown** pUnk) QueryNewJobInterface;
-				public function HRESULT(IBackgroundCopyGroup *self, Guid* iid, IUnknown* pUnk) SetNotificationPointer;
+				public new function HRESULT(IBackgroundCopyGroup *self, GROUPPROP propID, VARIANT* pvarVal) GetProp;
+				public new function HRESULT(IBackgroundCopyGroup *self, GROUPPROP propID, VARIANT* pvarVal) SetProp;
+				public new function HRESULT(IBackgroundCopyGroup *self, uint32 dwFlags, uint32* pdwProgress) GetProgress;
+				public new function HRESULT(IBackgroundCopyGroup *self, uint32* pdwStatus, uint32* pdwJobIndex) GetStatus;
+				public new function HRESULT(IBackgroundCopyGroup *self, Guid jobID, IBackgroundCopyJob1** ppJob) GetJob;
+				public new function HRESULT(IBackgroundCopyGroup *self) SuspendGroup;
+				public new function HRESULT(IBackgroundCopyGroup *self) ResumeGroup;
+				public new function HRESULT(IBackgroundCopyGroup *self) CancelGroup;
+				public new function HRESULT(IBackgroundCopyGroup *self, uint32* pdwSize) get_Size;
+				public new function HRESULT(IBackgroundCopyGroup *self, Guid* pguidGroupID) get_GroupID;
+				public new function HRESULT(IBackgroundCopyGroup *self, Guid guidJobID, IBackgroundCopyJob1** ppJob) CreateJob;
+				public new function HRESULT(IBackgroundCopyGroup *self, uint32 dwFlags, IEnumBackgroundCopyJobs1** ppEnumJobs) EnumJobs;
+				public new function HRESULT(IBackgroundCopyGroup *self) SwitchToForeground;
+				public new function HRESULT(IBackgroundCopyGroup *self, Guid* iid, IUnknown** pUnk) QueryNewJobInterface;
+				public new function HRESULT(IBackgroundCopyGroup *self, Guid* iid, IUnknown* pUnk) SetNotificationPointer;
 			}
 		}
 		[CRepr]
@@ -1005,15 +1767,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd993e603, 0x4aa4, 0x47c5, 0x86, 0x65, 0xc2, 0x0d, 0x39, 0xc2, 0xba, 0x4f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 celt, Guid* rgelt, uint32* pceltFetched) mut
+			{
+				return VT.Next(&this, celt, rgelt, pceltFetched);
+			}
+			public HRESULT Skip(uint32 celt) mut
+			{
+				return VT.Skip(&this, celt);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumBackgroundCopyGroups** ppenum) mut
+			{
+				return VT.Clone(&this, ppenum);
+			}
+			public HRESULT GetCount(uint32* puCount) mut
+			{
+				return VT.GetCount(&this, puCount);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumBackgroundCopyGroups *self, uint32 celt, Guid* rgelt, uint32* pceltFetched) Next;
-				public function HRESULT(IEnumBackgroundCopyGroups *self, uint32 celt) Skip;
-				public function HRESULT(IEnumBackgroundCopyGroups *self) Reset;
-				public function HRESULT(IEnumBackgroundCopyGroups *self, IEnumBackgroundCopyGroups** ppenum) Clone;
-				public function HRESULT(IEnumBackgroundCopyGroups *self, uint32* puCount) GetCount;
+				public new function HRESULT(IEnumBackgroundCopyGroups *self, uint32 celt, Guid* rgelt, uint32* pceltFetched) Next;
+				public new function HRESULT(IEnumBackgroundCopyGroups *self, uint32 celt) Skip;
+				public new function HRESULT(IEnumBackgroundCopyGroups *self) Reset;
+				public new function HRESULT(IEnumBackgroundCopyGroups *self, IEnumBackgroundCopyGroups** ppenum) Clone;
+				public new function HRESULT(IEnumBackgroundCopyGroups *self, uint32* puCount) GetCount;
 			}
 		}
 		[CRepr]
@@ -1021,13 +1804,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x084f6593, 0x3800, 0x4e08, 0x9b, 0x59, 0x99, 0xfa, 0x59, 0xad, 0xdf, 0x82);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnStatus(IBackgroundCopyGroup* pGroup, IBackgroundCopyJob1* pJob, uint32 dwFileIndex, uint32 dwStatus, uint32 dwNumOfRetries, uint32 dwWin32Result, uint32 dwTransportResult) mut
+			{
+				return VT.OnStatus(&this, pGroup, pJob, dwFileIndex, dwStatus, dwNumOfRetries, dwWin32Result, dwTransportResult);
+			}
+			public HRESULT OnProgress(uint32 ProgressType, IBackgroundCopyGroup* pGroup, IBackgroundCopyJob1* pJob, uint32 dwFileIndex, uint32 dwProgressValue) mut
+			{
+				return VT.OnProgress(&this, ProgressType, pGroup, pJob, dwFileIndex, dwProgressValue);
+			}
+			public HRESULT OnProgressEx(uint32 ProgressType, IBackgroundCopyGroup* pGroup, IBackgroundCopyJob1* pJob, uint32 dwFileIndex, uint32 dwProgressValue, uint32 dwByteArraySize, uint8* pByte) mut
+			{
+				return VT.OnProgressEx(&this, ProgressType, pGroup, pJob, dwFileIndex, dwProgressValue, dwByteArraySize, pByte);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IBackgroundCopyCallback1 *self, IBackgroundCopyGroup* pGroup, IBackgroundCopyJob1* pJob, uint32 dwFileIndex, uint32 dwStatus, uint32 dwNumOfRetries, uint32 dwWin32Result, uint32 dwTransportResult) OnStatus;
-				public function HRESULT(IBackgroundCopyCallback1 *self, uint32 ProgressType, IBackgroundCopyGroup* pGroup, IBackgroundCopyJob1* pJob, uint32 dwFileIndex, uint32 dwProgressValue) OnProgress;
-				public function HRESULT(IBackgroundCopyCallback1 *self, uint32 ProgressType, IBackgroundCopyGroup* pGroup, IBackgroundCopyJob1* pJob, uint32 dwFileIndex, uint32 dwProgressValue, uint32 dwByteArraySize, uint8* pByte) OnProgressEx;
+				public new function HRESULT(IBackgroundCopyCallback1 *self, IBackgroundCopyGroup* pGroup, IBackgroundCopyJob1* pJob, uint32 dwFileIndex, uint32 dwStatus, uint32 dwNumOfRetries, uint32 dwWin32Result, uint32 dwTransportResult) OnStatus;
+				public new function HRESULT(IBackgroundCopyCallback1 *self, uint32 ProgressType, IBackgroundCopyGroup* pGroup, IBackgroundCopyJob1* pJob, uint32 dwFileIndex, uint32 dwProgressValue) OnProgress;
+				public new function HRESULT(IBackgroundCopyCallback1 *self, uint32 ProgressType, IBackgroundCopyGroup* pGroup, IBackgroundCopyJob1* pJob, uint32 dwFileIndex, uint32 dwProgressValue, uint32 dwByteArraySize, uint8* pByte) OnProgressEx;
 			}
 		}
 		[CRepr]
@@ -1035,13 +1831,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x16f41c69, 0x09f5, 0x41d2, 0x8c, 0xd8, 0x3c, 0x08, 0xc4, 0x7b, 0xc8, 0xa8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateGroup(Guid guidGroupID, IBackgroundCopyGroup** ppGroup) mut
+			{
+				return VT.CreateGroup(&this, guidGroupID, ppGroup);
+			}
+			public HRESULT GetGroup(Guid groupID, IBackgroundCopyGroup** ppGroup) mut
+			{
+				return VT.GetGroup(&this, groupID, ppGroup);
+			}
+			public HRESULT EnumGroups(uint32 dwFlags, IEnumBackgroundCopyGroups** ppEnumGroups) mut
+			{
+				return VT.EnumGroups(&this, dwFlags, ppEnumGroups);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IBackgroundCopyQMgr *self, Guid guidGroupID, IBackgroundCopyGroup** ppGroup) CreateGroup;
-				public function HRESULT(IBackgroundCopyQMgr *self, Guid groupID, IBackgroundCopyGroup** ppGroup) GetGroup;
-				public function HRESULT(IBackgroundCopyQMgr *self, uint32 dwFlags, IEnumBackgroundCopyGroups** ppEnumGroups) EnumGroups;
+				public new function HRESULT(IBackgroundCopyQMgr *self, Guid guidGroupID, IBackgroundCopyGroup** ppGroup) CreateGroup;
+				public new function HRESULT(IBackgroundCopyQMgr *self, Guid groupID, IBackgroundCopyGroup** ppGroup) GetGroup;
+				public new function HRESULT(IBackgroundCopyQMgr *self, uint32 dwFlags, IEnumBackgroundCopyGroups** ppEnumGroups) EnumGroups;
 			}
 		}
 		

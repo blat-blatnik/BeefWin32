@@ -60,11 +60,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x999bad24, 0x9acd, 0x45bb, 0x86, 0x69, 0x2a, 0x2f, 0xc0, 0x28, 0x8b, 0x04);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Invoke(HRESULT requestResult, uint32 bytesReturned) mut
+			{
+				return VT.Invoke(&this, requestResult, bytesReturned);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDeviceRequestCompletionCallback *self, HRESULT requestResult, uint32 bytesReturned) Invoke;
+				public new function HRESULT(IDeviceRequestCompletionCallback *self, HRESULT requestResult, uint32 bytesReturned) Invoke;
 			}
 		}
 		[CRepr]
@@ -72,13 +77,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9eefe161, 0x23ab, 0x4f18, 0x9b, 0x49, 0x99, 0x1b, 0x58, 0x6a, 0xe9, 0x70);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT DeviceIoControlSync(uint32 ioControlCode, uint8* inputBuffer, uint32 inputBufferSize, uint8* outputBuffer, uint32 outputBufferSize, uint32* bytesReturned) mut
+			{
+				return VT.DeviceIoControlSync(&this, ioControlCode, inputBuffer, inputBufferSize, outputBuffer, outputBufferSize, bytesReturned);
+			}
+			public HRESULT DeviceIoControlAsync(uint32 ioControlCode, uint8* inputBuffer, uint32 inputBufferSize, uint8* outputBuffer, uint32 outputBufferSize, IDeviceRequestCompletionCallback* requestCompletionCallback, uint* cancelContext) mut
+			{
+				return VT.DeviceIoControlAsync(&this, ioControlCode, inputBuffer, inputBufferSize, outputBuffer, outputBufferSize, requestCompletionCallback, cancelContext);
+			}
+			public HRESULT CancelOperation(uint cancelContext) mut
+			{
+				return VT.CancelOperation(&this, cancelContext);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDeviceIoControl *self, uint32 ioControlCode, uint8* inputBuffer, uint32 inputBufferSize, uint8* outputBuffer, uint32 outputBufferSize, uint32* bytesReturned) DeviceIoControlSync;
-				public function HRESULT(IDeviceIoControl *self, uint32 ioControlCode, uint8* inputBuffer, uint32 inputBufferSize, uint8* outputBuffer, uint32 outputBufferSize, IDeviceRequestCompletionCallback* requestCompletionCallback, uint* cancelContext) DeviceIoControlAsync;
-				public function HRESULT(IDeviceIoControl *self, uint cancelContext) CancelOperation;
+				public new function HRESULT(IDeviceIoControl *self, uint32 ioControlCode, uint8* inputBuffer, uint32 inputBufferSize, uint8* outputBuffer, uint32 outputBufferSize, uint32* bytesReturned) DeviceIoControlSync;
+				public new function HRESULT(IDeviceIoControl *self, uint32 ioControlCode, uint8* inputBuffer, uint32 inputBufferSize, uint8* outputBuffer, uint32 outputBufferSize, IDeviceRequestCompletionCallback* requestCompletionCallback, uint* cancelContext) DeviceIoControlAsync;
+				public new function HRESULT(IDeviceIoControl *self, uint cancelContext) CancelOperation;
 			}
 		}
 		[CRepr]
@@ -86,14 +104,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3474628f, 0x683d, 0x42d2, 0xab, 0xcb, 0xdb, 0x01, 0x8c, 0x65, 0x03, 0xbc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Cancel() mut
+			{
+				return VT.Cancel(&this);
+			}
+			public HRESULT Wait(uint32 timeout) mut
+			{
+				return VT.Wait(&this, timeout);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
+			public HRESULT GetResult(Guid* riid, void** deviceAccess) mut
+			{
+				return VT.GetResult(&this, riid, deviceAccess);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ICreateDeviceAccessAsync *self) Cancel;
-				public function HRESULT(ICreateDeviceAccessAsync *self, uint32 timeout) Wait;
-				public function HRESULT(ICreateDeviceAccessAsync *self) Close;
-				public function HRESULT(ICreateDeviceAccessAsync *self, Guid* riid, void** deviceAccess) GetResult;
+				public new function HRESULT(ICreateDeviceAccessAsync *self) Cancel;
+				public new function HRESULT(ICreateDeviceAccessAsync *self, uint32 timeout) Wait;
+				public new function HRESULT(ICreateDeviceAccessAsync *self) Close;
+				public new function HRESULT(ICreateDeviceAccessAsync *self, Guid* riid, void** deviceAccess) GetResult;
 			}
 		}
 		

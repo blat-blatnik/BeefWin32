@@ -661,11 +661,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa976c28d, 0x75a1, 0x42aa, 0x94, 0xae, 0x8a, 0xf8, 0xb8, 0x72, 0x08, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT LockDown(int32 flags) mut
+			{
+				return VT.LockDown(&this, flags);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IUpdateLockdown *self, int32 flags) LockDown;
+				public new function HRESULT(IUpdateLockdown *self, int32 flags) LockDown;
 			}
 		}
 		[CRepr]
@@ -673,20 +678,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xeff90582, 0x2ddc, 0x480f, 0xa0, 0x6d, 0x60, 0xf3, 0xfb, 0xc3, 0x62, 0xc3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 index, BSTR* retval) mut
+			{
+				return VT.get_Item(&this, index, retval);
+			}
+			public HRESULT put_Item(int32 index, BSTR value) mut
+			{
+				return VT.put_Item(&this, index, value);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT get_Count(int32* retval) mut
+			{
+				return VT.get_Count(&this, retval);
+			}
+			public HRESULT get_ReadOnly(int16* retval) mut
+			{
+				return VT.get_ReadOnly(&this, retval);
+			}
+			public HRESULT Add(BSTR value, int32* retval) mut
+			{
+				return VT.Add(&this, value, retval);
+			}
+			public HRESULT Clear() mut
+			{
+				return VT.Clear(&this);
+			}
+			public HRESULT Copy(IStringCollection** retval) mut
+			{
+				return VT.Copy(&this, retval);
+			}
+			public HRESULT Insert(int32 index, BSTR value) mut
+			{
+				return VT.Insert(&this, index, value);
+			}
+			public HRESULT RemoveAt(int32 index) mut
+			{
+				return VT.RemoveAt(&this, index);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IStringCollection *self, int32 index, BSTR* retval) get_Item;
-				public function HRESULT(IStringCollection *self, int32 index, BSTR value) put_Item;
-				public function HRESULT(IStringCollection *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(IStringCollection *self, int32* retval) get_Count;
-				public function HRESULT(IStringCollection *self, int16* retval) get_ReadOnly;
-				public function HRESULT(IStringCollection *self, BSTR value, int32* retval) Add;
-				public function HRESULT(IStringCollection *self) Clear;
-				public function HRESULT(IStringCollection *self, IStringCollection** retval) Copy;
-				public function HRESULT(IStringCollection *self, int32 index, BSTR value) Insert;
-				public function HRESULT(IStringCollection *self, int32 index) RemoveAt;
+				public new function HRESULT(IStringCollection *self, int32 index, BSTR* retval) get_Item;
+				public new function HRESULT(IStringCollection *self, int32 index, BSTR value) put_Item;
+				public new function HRESULT(IStringCollection *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(IStringCollection *self, int32* retval) get_Count;
+				public new function HRESULT(IStringCollection *self, int16* retval) get_ReadOnly;
+				public new function HRESULT(IStringCollection *self, BSTR value, int32* retval) Add;
+				public new function HRESULT(IStringCollection *self) Clear;
+				public new function HRESULT(IStringCollection *self, IStringCollection** retval) Copy;
+				public new function HRESULT(IStringCollection *self, int32 index, BSTR value) Insert;
+				public new function HRESULT(IStringCollection *self, int32 index) RemoveAt;
 			}
 		}
 		[CRepr]
@@ -694,24 +740,81 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x174c81fe, 0xaecd, 0x4dae, 0xb8, 0xa0, 0x2c, 0x63, 0x18, 0xdd, 0x86, 0xa8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Address(BSTR* retval) mut
+			{
+				return VT.get_Address(&this, retval);
+			}
+			public HRESULT put_Address(BSTR value) mut
+			{
+				return VT.put_Address(&this, value);
+			}
+			public HRESULT get_BypassList(IStringCollection** retval) mut
+			{
+				return VT.get_BypassList(&this, retval);
+			}
+			public HRESULT put_BypassList(IStringCollection* value) mut
+			{
+				return VT.put_BypassList(&this, value);
+			}
+			public HRESULT get_BypassProxyOnLocal(int16* retval) mut
+			{
+				return VT.get_BypassProxyOnLocal(&this, retval);
+			}
+			public HRESULT put_BypassProxyOnLocal(int16 value) mut
+			{
+				return VT.put_BypassProxyOnLocal(&this, value);
+			}
+			public HRESULT get_ReadOnly(int16* retval) mut
+			{
+				return VT.get_ReadOnly(&this, retval);
+			}
+			public HRESULT get_UserName(BSTR* retval) mut
+			{
+				return VT.get_UserName(&this, retval);
+			}
+			public HRESULT put_UserName(BSTR value) mut
+			{
+				return VT.put_UserName(&this, value);
+			}
+			public HRESULT SetPassword(BSTR value) mut
+			{
+				return VT.SetPassword(&this, value);
+			}
+			public HRESULT PromptForCredentials(IUnknown* parentWindow, BSTR title) mut
+			{
+				return VT.PromptForCredentials(&this, parentWindow, title);
+			}
+			public HRESULT PromptForCredentialsFromHwnd(HWND parentWindow, BSTR title) mut
+			{
+				return VT.PromptForCredentialsFromHwnd(&this, parentWindow, title);
+			}
+			public HRESULT get_AutoDetect(int16* retval) mut
+			{
+				return VT.get_AutoDetect(&this, retval);
+			}
+			public HRESULT put_AutoDetect(int16 value) mut
+			{
+				return VT.put_AutoDetect(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IWebProxy *self, BSTR* retval) get_Address;
-				public function HRESULT(IWebProxy *self, BSTR value) put_Address;
-				public function HRESULT(IWebProxy *self, IStringCollection** retval) get_BypassList;
-				public function HRESULT(IWebProxy *self, IStringCollection* value) put_BypassList;
-				public function HRESULT(IWebProxy *self, int16* retval) get_BypassProxyOnLocal;
-				public function HRESULT(IWebProxy *self, int16 value) put_BypassProxyOnLocal;
-				public function HRESULT(IWebProxy *self, int16* retval) get_ReadOnly;
-				public function HRESULT(IWebProxy *self, BSTR* retval) get_UserName;
-				public function HRESULT(IWebProxy *self, BSTR value) put_UserName;
-				public function HRESULT(IWebProxy *self, BSTR value) SetPassword;
-				public function HRESULT(IWebProxy *self, IUnknown* parentWindow, BSTR title) PromptForCredentials;
-				public function HRESULT(IWebProxy *self, HWND parentWindow, BSTR title) PromptForCredentialsFromHwnd;
-				public function HRESULT(IWebProxy *self, int16* retval) get_AutoDetect;
-				public function HRESULT(IWebProxy *self, int16 value) put_AutoDetect;
+				public new function HRESULT(IWebProxy *self, BSTR* retval) get_Address;
+				public new function HRESULT(IWebProxy *self, BSTR value) put_Address;
+				public new function HRESULT(IWebProxy *self, IStringCollection** retval) get_BypassList;
+				public new function HRESULT(IWebProxy *self, IStringCollection* value) put_BypassList;
+				public new function HRESULT(IWebProxy *self, int16* retval) get_BypassProxyOnLocal;
+				public new function HRESULT(IWebProxy *self, int16 value) put_BypassProxyOnLocal;
+				public new function HRESULT(IWebProxy *self, int16* retval) get_ReadOnly;
+				public new function HRESULT(IWebProxy *self, BSTR* retval) get_UserName;
+				public new function HRESULT(IWebProxy *self, BSTR value) put_UserName;
+				public new function HRESULT(IWebProxy *self, BSTR value) SetPassword;
+				public new function HRESULT(IWebProxy *self, IUnknown* parentWindow, BSTR title) PromptForCredentials;
+				public new function HRESULT(IWebProxy *self, HWND parentWindow, BSTR title) PromptForCredentialsFromHwnd;
+				public new function HRESULT(IWebProxy *self, int16* retval) get_AutoDetect;
+				public new function HRESULT(IWebProxy *self, int16 value) put_AutoDetect;
 			}
 		}
 		[CRepr]
@@ -719,12 +822,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xade87bf7, 0x7b56, 0x4275, 0x8f, 0xab, 0xb9, 0xb0, 0xe5, 0x91, 0x84, 0x4b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_OemHardwareSupportLink(BSTR* retval) mut
+			{
+				return VT.get_OemHardwareSupportLink(&this, retval);
+			}
+			public HRESULT get_RebootRequired(int16* retval) mut
+			{
+				return VT.get_RebootRequired(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISystemInformation *self, BSTR* retval) get_OemHardwareSupportLink;
-				public function HRESULT(ISystemInformation *self, int16* retval) get_RebootRequired;
+				public new function HRESULT(ISystemInformation *self, BSTR* retval) get_OemHardwareSupportLink;
+				public new function HRESULT(ISystemInformation *self, int16* retval) get_RebootRequired;
 			}
 		}
 		[CRepr]
@@ -732,11 +844,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x85713fa1, 0x7796, 0x4fa2, 0xbe, 0x3b, 0xe2, 0xd6, 0x12, 0x4d, 0xd3, 0x73);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetInfo(VARIANT varInfoIdentifier, VARIANT* retval) mut
+			{
+				return VT.GetInfo(&this, varInfoIdentifier, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IWindowsUpdateAgentInfo *self, VARIANT varInfoIdentifier, VARIANT* retval) GetInfo;
+				public new function HRESULT(IWindowsUpdateAgentInfo *self, VARIANT varInfoIdentifier, VARIANT* retval) GetInfo;
 			}
 		}
 		[CRepr]
@@ -744,12 +861,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe7a4d634, 0x7942, 0x4dd9, 0xa1, 0x11, 0x82, 0x22, 0x8b, 0xa3, 0x39, 0x01);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_LastSearchSuccessDate(VARIANT* retval) mut
+			{
+				return VT.get_LastSearchSuccessDate(&this, retval);
+			}
+			public HRESULT get_LastInstallationSuccessDate(VARIANT* retval) mut
+			{
+				return VT.get_LastInstallationSuccessDate(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAutomaticUpdatesResults *self, VARIANT* retval) get_LastSearchSuccessDate;
-				public function HRESULT(IAutomaticUpdatesResults *self, VARIANT* retval) get_LastInstallationSuccessDate;
+				public new function HRESULT(IAutomaticUpdatesResults *self, VARIANT* retval) get_LastSearchSuccessDate;
+				public new function HRESULT(IAutomaticUpdatesResults *self, VARIANT* retval) get_LastInstallationSuccessDate;
 			}
 		}
 		[CRepr]
@@ -757,20 +883,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2ee48f22, 0xaf3c, 0x405f, 0x89, 0x70, 0xf7, 0x1b, 0xe1, 0x2e, 0xe9, 0xa2);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_NotificationLevel(AutomaticUpdatesNotificationLevel* retval) mut
+			{
+				return VT.get_NotificationLevel(&this, retval);
+			}
+			public HRESULT put_NotificationLevel(AutomaticUpdatesNotificationLevel value) mut
+			{
+				return VT.put_NotificationLevel(&this, value);
+			}
+			public HRESULT get_ReadOnly(int16* retval) mut
+			{
+				return VT.get_ReadOnly(&this, retval);
+			}
+			public HRESULT get_Required(int16* retval) mut
+			{
+				return VT.get_Required(&this, retval);
+			}
+			public HRESULT get_ScheduledInstallationDay(AutomaticUpdatesScheduledInstallationDay* retval) mut
+			{
+				return VT.get_ScheduledInstallationDay(&this, retval);
+			}
+			public HRESULT put_ScheduledInstallationDay(AutomaticUpdatesScheduledInstallationDay value) mut
+			{
+				return VT.put_ScheduledInstallationDay(&this, value);
+			}
+			public HRESULT get_ScheduledInstallationTime(int32* retval) mut
+			{
+				return VT.get_ScheduledInstallationTime(&this, retval);
+			}
+			public HRESULT put_ScheduledInstallationTime(int32 value) mut
+			{
+				return VT.put_ScheduledInstallationTime(&this, value);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT Save() mut
+			{
+				return VT.Save(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAutomaticUpdatesSettings *self, AutomaticUpdatesNotificationLevel* retval) get_NotificationLevel;
-				public function HRESULT(IAutomaticUpdatesSettings *self, AutomaticUpdatesNotificationLevel value) put_NotificationLevel;
-				public function HRESULT(IAutomaticUpdatesSettings *self, int16* retval) get_ReadOnly;
-				public function HRESULT(IAutomaticUpdatesSettings *self, int16* retval) get_Required;
-				public function HRESULT(IAutomaticUpdatesSettings *self, AutomaticUpdatesScheduledInstallationDay* retval) get_ScheduledInstallationDay;
-				public function HRESULT(IAutomaticUpdatesSettings *self, AutomaticUpdatesScheduledInstallationDay value) put_ScheduledInstallationDay;
-				public function HRESULT(IAutomaticUpdatesSettings *self, int32* retval) get_ScheduledInstallationTime;
-				public function HRESULT(IAutomaticUpdatesSettings *self, int32 value) put_ScheduledInstallationTime;
-				public function HRESULT(IAutomaticUpdatesSettings *self) Refresh;
-				public function HRESULT(IAutomaticUpdatesSettings *self) Save;
+				public new function HRESULT(IAutomaticUpdatesSettings *self, AutomaticUpdatesNotificationLevel* retval) get_NotificationLevel;
+				public new function HRESULT(IAutomaticUpdatesSettings *self, AutomaticUpdatesNotificationLevel value) put_NotificationLevel;
+				public new function HRESULT(IAutomaticUpdatesSettings *self, int16* retval) get_ReadOnly;
+				public new function HRESULT(IAutomaticUpdatesSettings *self, int16* retval) get_Required;
+				public new function HRESULT(IAutomaticUpdatesSettings *self, AutomaticUpdatesScheduledInstallationDay* retval) get_ScheduledInstallationDay;
+				public new function HRESULT(IAutomaticUpdatesSettings *self, AutomaticUpdatesScheduledInstallationDay value) put_ScheduledInstallationDay;
+				public new function HRESULT(IAutomaticUpdatesSettings *self, int32* retval) get_ScheduledInstallationTime;
+				public new function HRESULT(IAutomaticUpdatesSettings *self, int32 value) put_ScheduledInstallationTime;
+				public new function HRESULT(IAutomaticUpdatesSettings *self) Refresh;
+				public new function HRESULT(IAutomaticUpdatesSettings *self) Save;
 			}
 		}
 		[CRepr]
@@ -778,13 +945,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6abc136a, 0xc3ca, 0x4384, 0x81, 0x71, 0xcb, 0x2b, 0x1e, 0x59, 0xb8, 0xdc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_IncludeRecommendedUpdates(int16* retval) mut
+			{
+				return VT.get_IncludeRecommendedUpdates(&this, retval);
+			}
+			public HRESULT put_IncludeRecommendedUpdates(int16 value) mut
+			{
+				return VT.put_IncludeRecommendedUpdates(&this, value);
+			}
+			public HRESULT CheckPermission(AutomaticUpdatesUserType userType, AutomaticUpdatesPermissionType permissionType, int16* userHasPermission) mut
+			{
+				return VT.CheckPermission(&this, userType, permissionType, userHasPermission);
+			}
 			[CRepr]
 			public struct VTable : IAutomaticUpdatesSettings.VTable
 			{
-				public function HRESULT(IAutomaticUpdatesSettings2 *self, int16* retval) get_IncludeRecommendedUpdates;
-				public function HRESULT(IAutomaticUpdatesSettings2 *self, int16 value) put_IncludeRecommendedUpdates;
-				public function HRESULT(IAutomaticUpdatesSettings2 *self, AutomaticUpdatesUserType userType, AutomaticUpdatesPermissionType permissionType, int16* userHasPermission) CheckPermission;
+				public new function HRESULT(IAutomaticUpdatesSettings2 *self, int16* retval) get_IncludeRecommendedUpdates;
+				public new function HRESULT(IAutomaticUpdatesSettings2 *self, int16 value) put_IncludeRecommendedUpdates;
+				public new function HRESULT(IAutomaticUpdatesSettings2 *self, AutomaticUpdatesUserType userType, AutomaticUpdatesPermissionType permissionType, int16* userHasPermission) CheckPermission;
 			}
 		}
 		[CRepr]
@@ -792,14 +972,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb587f5c3, 0xf57e, 0x485f, 0xbb, 0xf5, 0x0d, 0x18, 0x1c, 0x5c, 0xd0, 0xdc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_NonAdministratorsElevated(int16* retval) mut
+			{
+				return VT.get_NonAdministratorsElevated(&this, retval);
+			}
+			public HRESULT put_NonAdministratorsElevated(int16 value) mut
+			{
+				return VT.put_NonAdministratorsElevated(&this, value);
+			}
+			public HRESULT get_FeaturedUpdatesEnabled(int16* retval) mut
+			{
+				return VT.get_FeaturedUpdatesEnabled(&this, retval);
+			}
+			public HRESULT put_FeaturedUpdatesEnabled(int16 value) mut
+			{
+				return VT.put_FeaturedUpdatesEnabled(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IAutomaticUpdatesSettings2.VTable
 			{
-				public function HRESULT(IAutomaticUpdatesSettings3 *self, int16* retval) get_NonAdministratorsElevated;
-				public function HRESULT(IAutomaticUpdatesSettings3 *self, int16 value) put_NonAdministratorsElevated;
-				public function HRESULT(IAutomaticUpdatesSettings3 *self, int16* retval) get_FeaturedUpdatesEnabled;
-				public function HRESULT(IAutomaticUpdatesSettings3 *self, int16 value) put_FeaturedUpdatesEnabled;
+				public new function HRESULT(IAutomaticUpdatesSettings3 *self, int16* retval) get_NonAdministratorsElevated;
+				public new function HRESULT(IAutomaticUpdatesSettings3 *self, int16 value) put_NonAdministratorsElevated;
+				public new function HRESULT(IAutomaticUpdatesSettings3 *self, int16* retval) get_FeaturedUpdatesEnabled;
+				public new function HRESULT(IAutomaticUpdatesSettings3 *self, int16 value) put_FeaturedUpdatesEnabled;
 			}
 		}
 		[CRepr]
@@ -807,17 +1004,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x673425bf, 0xc082, 0x4c7c, 0xbd, 0xfd, 0x56, 0x94, 0x64, 0xb8, 0xe0, 0xce);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT DetectNow() mut
+			{
+				return VT.DetectNow(&this);
+			}
+			public HRESULT Pause() mut
+			{
+				return VT.Pause(&this);
+			}
+			public HRESULT Resume() mut
+			{
+				return VT.Resume(&this);
+			}
+			public HRESULT ShowSettingsDialog() mut
+			{
+				return VT.ShowSettingsDialog(&this);
+			}
+			public HRESULT get_Settings(IAutomaticUpdatesSettings** retval) mut
+			{
+				return VT.get_Settings(&this, retval);
+			}
+			public HRESULT get_ServiceEnabled(int16* retval) mut
+			{
+				return VT.get_ServiceEnabled(&this, retval);
+			}
+			public HRESULT EnableService() mut
+			{
+				return VT.EnableService(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IAutomaticUpdates *self) DetectNow;
-				public function HRESULT(IAutomaticUpdates *self) Pause;
-				public function HRESULT(IAutomaticUpdates *self) Resume;
-				public function HRESULT(IAutomaticUpdates *self) ShowSettingsDialog;
-				public function HRESULT(IAutomaticUpdates *self, IAutomaticUpdatesSettings** retval) get_Settings;
-				public function HRESULT(IAutomaticUpdates *self, int16* retval) get_ServiceEnabled;
-				public function HRESULT(IAutomaticUpdates *self) EnableService;
+				public new function HRESULT(IAutomaticUpdates *self) DetectNow;
+				public new function HRESULT(IAutomaticUpdates *self) Pause;
+				public new function HRESULT(IAutomaticUpdates *self) Resume;
+				public new function HRESULT(IAutomaticUpdates *self) ShowSettingsDialog;
+				public new function HRESULT(IAutomaticUpdates *self, IAutomaticUpdatesSettings** retval) get_Settings;
+				public new function HRESULT(IAutomaticUpdates *self, int16* retval) get_ServiceEnabled;
+				public new function HRESULT(IAutomaticUpdates *self) EnableService;
 			}
 		}
 		[CRepr]
@@ -825,11 +1051,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4a2f5c31, 0xcfd9, 0x410e, 0xb7, 0xfb, 0x29, 0xa6, 0x53, 0x97, 0x3a, 0x0f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Results(IAutomaticUpdatesResults** retval) mut
+			{
+				return VT.get_Results(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IAutomaticUpdates.VTable
 			{
-				public function HRESULT(IAutomaticUpdates2 *self, IAutomaticUpdatesResults** retval) get_Results;
+				public new function HRESULT(IAutomaticUpdates2 *self, IAutomaticUpdatesResults** retval) get_Results;
 			}
 		}
 		[CRepr]
@@ -837,12 +1068,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x46297823, 0x9940, 0x4c09, 0xae, 0xd9, 0xcd, 0x3e, 0xa6, 0xd0, 0x59, 0x68);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_RevisionNumber(int32* retval) mut
+			{
+				return VT.get_RevisionNumber(&this, retval);
+			}
+			public HRESULT get_UpdateID(BSTR* retval) mut
+			{
+				return VT.get_UpdateID(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdateIdentity *self, int32* retval) get_RevisionNumber;
-				public function HRESULT(IUpdateIdentity *self, BSTR* retval) get_UpdateID;
+				public new function HRESULT(IUpdateIdentity *self, int32* retval) get_RevisionNumber;
+				public new function HRESULT(IUpdateIdentity *self, BSTR* retval) get_UpdateID;
 			}
 		}
 		[CRepr]
@@ -850,14 +1090,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7c907864, 0x346c, 0x4aeb, 0x8f, 0x3f, 0x57, 0xda, 0x28, 0x9f, 0x96, 0x9f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_AltText(BSTR* retval) mut
+			{
+				return VT.get_AltText(&this, retval);
+			}
+			public HRESULT get_Height(int32* retval) mut
+			{
+				return VT.get_Height(&this, retval);
+			}
+			public HRESULT get_Source(BSTR* retval) mut
+			{
+				return VT.get_Source(&this, retval);
+			}
+			public HRESULT get_Width(int32* retval) mut
+			{
+				return VT.get_Width(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IImageInformation *self, BSTR* retval) get_AltText;
-				public function HRESULT(IImageInformation *self, int32* retval) get_Height;
-				public function HRESULT(IImageInformation *self, BSTR* retval) get_Source;
-				public function HRESULT(IImageInformation *self, int32* retval) get_Width;
+				public new function HRESULT(IImageInformation *self, BSTR* retval) get_AltText;
+				public new function HRESULT(IImageInformation *self, int32* retval) get_Height;
+				public new function HRESULT(IImageInformation *self, BSTR* retval) get_Source;
+				public new function HRESULT(IImageInformation *self, int32* retval) get_Width;
 			}
 		}
 		[CRepr]
@@ -865,19 +1122,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x81ddc1b8, 0x9d35, 0x47a6, 0xb4, 0x71, 0x5b, 0x80, 0xf5, 0x19, 0x22, 0x3b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Name(BSTR* retval) mut
+			{
+				return VT.get_Name(&this, retval);
+			}
+			public HRESULT get_CategoryID(BSTR* retval) mut
+			{
+				return VT.get_CategoryID(&this, retval);
+			}
+			public HRESULT get_Children(ICategoryCollection** retval) mut
+			{
+				return VT.get_Children(&this, retval);
+			}
+			public HRESULT get_Description(BSTR* retval) mut
+			{
+				return VT.get_Description(&this, retval);
+			}
+			public HRESULT get_Image(IImageInformation** retval) mut
+			{
+				return VT.get_Image(&this, retval);
+			}
+			public HRESULT get_Order(int32* retval) mut
+			{
+				return VT.get_Order(&this, retval);
+			}
+			public HRESULT get_Parent(ICategory** retval) mut
+			{
+				return VT.get_Parent(&this, retval);
+			}
+			public HRESULT get_Type(BSTR* retval) mut
+			{
+				return VT.get_Type(&this, retval);
+			}
+			public HRESULT get_Updates(IUpdateCollection** retval) mut
+			{
+				return VT.get_Updates(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ICategory *self, BSTR* retval) get_Name;
-				public function HRESULT(ICategory *self, BSTR* retval) get_CategoryID;
-				public function HRESULT(ICategory *self, ICategoryCollection** retval) get_Children;
-				public function HRESULT(ICategory *self, BSTR* retval) get_Description;
-				public function HRESULT(ICategory *self, IImageInformation** retval) get_Image;
-				public function HRESULT(ICategory *self, int32* retval) get_Order;
-				public function HRESULT(ICategory *self, ICategory** retval) get_Parent;
-				public function HRESULT(ICategory *self, BSTR* retval) get_Type;
-				public function HRESULT(ICategory *self, IUpdateCollection** retval) get_Updates;
+				public new function HRESULT(ICategory *self, BSTR* retval) get_Name;
+				public new function HRESULT(ICategory *self, BSTR* retval) get_CategoryID;
+				public new function HRESULT(ICategory *self, ICategoryCollection** retval) get_Children;
+				public new function HRESULT(ICategory *self, BSTR* retval) get_Description;
+				public new function HRESULT(ICategory *self, IImageInformation** retval) get_Image;
+				public new function HRESULT(ICategory *self, int32* retval) get_Order;
+				public new function HRESULT(ICategory *self, ICategory** retval) get_Parent;
+				public new function HRESULT(ICategory *self, BSTR* retval) get_Type;
+				public new function HRESULT(ICategory *self, IUpdateCollection** retval) get_Updates;
 			}
 		}
 		[CRepr]
@@ -885,13 +1179,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3a56bfb8, 0x576c, 0x43f7, 0x93, 0x35, 0xfe, 0x48, 0x38, 0xfd, 0x7e, 0x37);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 index, ICategory** retval) mut
+			{
+				return VT.get_Item(&this, index, retval);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT get_Count(int32* retval) mut
+			{
+				return VT.get_Count(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ICategoryCollection *self, int32 index, ICategory** retval) get_Item;
-				public function HRESULT(ICategoryCollection *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(ICategoryCollection *self, int32* retval) get_Count;
+				public new function HRESULT(ICategoryCollection *self, int32 index, ICategory** retval) get_Item;
+				public new function HRESULT(ICategoryCollection *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ICategoryCollection *self, int32* retval) get_Count;
 			}
 		}
 		[CRepr]
@@ -899,14 +1206,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd9a59339, 0xe245, 0x4dbd, 0x96, 0x86, 0x4d, 0x57, 0x63, 0xe3, 0x96, 0x24);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CanRequestUserInput(int16* retval) mut
+			{
+				return VT.get_CanRequestUserInput(&this, retval);
+			}
+			public HRESULT get_Impact(InstallationImpact* retval) mut
+			{
+				return VT.get_Impact(&this, retval);
+			}
+			public HRESULT get_RebootBehavior(InstallationRebootBehavior* retval) mut
+			{
+				return VT.get_RebootBehavior(&this, retval);
+			}
+			public HRESULT get_RequiresNetworkConnectivity(int16* retval) mut
+			{
+				return VT.get_RequiresNetworkConnectivity(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IInstallationBehavior *self, int16* retval) get_CanRequestUserInput;
-				public function HRESULT(IInstallationBehavior *self, InstallationImpact* retval) get_Impact;
-				public function HRESULT(IInstallationBehavior *self, InstallationRebootBehavior* retval) get_RebootBehavior;
-				public function HRESULT(IInstallationBehavior *self, int16* retval) get_RequiresNetworkConnectivity;
+				public new function HRESULT(IInstallationBehavior *self, int16* retval) get_CanRequestUserInput;
+				public new function HRESULT(IInstallationBehavior *self, InstallationImpact* retval) get_Impact;
+				public new function HRESULT(IInstallationBehavior *self, InstallationRebootBehavior* retval) get_RebootBehavior;
+				public new function HRESULT(IInstallationBehavior *self, int16* retval) get_RequiresNetworkConnectivity;
 			}
 		}
 		[CRepr]
@@ -914,11 +1238,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x54a2cb2d, 0x9a0c, 0x48b6, 0x8a, 0x50, 0x9a, 0xbb, 0x69, 0xee, 0x2d, 0x02);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_DownloadUrl(BSTR* retval) mut
+			{
+				return VT.get_DownloadUrl(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdateDownloadContent *self, BSTR* retval) get_DownloadUrl;
+				public new function HRESULT(IUpdateDownloadContent *self, BSTR* retval) get_DownloadUrl;
 			}
 		}
 		[CRepr]
@@ -926,11 +1255,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc97ad11b, 0xf257, 0x420b, 0x9d, 0x9f, 0x37, 0x7f, 0x73, 0x3f, 0x6f, 0x68);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_IsDeltaCompressedContent(int16* retval) mut
+			{
+				return VT.get_IsDeltaCompressedContent(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IUpdateDownloadContent.VTable
 			{
-				public function HRESULT(IUpdateDownloadContent2 *self, int16* retval) get_IsDeltaCompressedContent;
+				public new function HRESULT(IUpdateDownloadContent2 *self, int16* retval) get_IsDeltaCompressedContent;
 			}
 		}
 		[CRepr]
@@ -938,13 +1272,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbc5513c8, 0xb3b8, 0x4bf7, 0xa4, 0xd4, 0x36, 0x1c, 0x0d, 0x8c, 0x88, 0xba);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 index, IUpdateDownloadContent** retval) mut
+			{
+				return VT.get_Item(&this, index, retval);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT get_Count(int32* retval) mut
+			{
+				return VT.get_Count(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdateDownloadContentCollection *self, int32 index, IUpdateDownloadContent** retval) get_Item;
-				public function HRESULT(IUpdateDownloadContentCollection *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(IUpdateDownloadContentCollection *self, int32* retval) get_Count;
+				public new function HRESULT(IUpdateDownloadContentCollection *self, int32 index, IUpdateDownloadContent** retval) get_Item;
+				public new function HRESULT(IUpdateDownloadContentCollection *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(IUpdateDownloadContentCollection *self, int32* retval) get_Count;
 			}
 		}
 		[CRepr]
@@ -952,55 +1299,236 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6a92b07a, 0xd821, 0x4682, 0xb4, 0x23, 0x5c, 0x80, 0x50, 0x22, 0xcc, 0x4d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Title(BSTR* retval) mut
+			{
+				return VT.get_Title(&this, retval);
+			}
+			public HRESULT get_AutoSelectOnWebSites(int16* retval) mut
+			{
+				return VT.get_AutoSelectOnWebSites(&this, retval);
+			}
+			public HRESULT get_BundledUpdates(IUpdateCollection** retval) mut
+			{
+				return VT.get_BundledUpdates(&this, retval);
+			}
+			public HRESULT get_CanRequireSource(int16* retval) mut
+			{
+				return VT.get_CanRequireSource(&this, retval);
+			}
+			public HRESULT get_Categories(ICategoryCollection** retval) mut
+			{
+				return VT.get_Categories(&this, retval);
+			}
+			public HRESULT get_Deadline(VARIANT* retval) mut
+			{
+				return VT.get_Deadline(&this, retval);
+			}
+			public HRESULT get_DeltaCompressedContentAvailable(int16* retval) mut
+			{
+				return VT.get_DeltaCompressedContentAvailable(&this, retval);
+			}
+			public HRESULT get_DeltaCompressedContentPreferred(int16* retval) mut
+			{
+				return VT.get_DeltaCompressedContentPreferred(&this, retval);
+			}
+			public HRESULT get_Description(BSTR* retval) mut
+			{
+				return VT.get_Description(&this, retval);
+			}
+			public HRESULT get_EulaAccepted(int16* retval) mut
+			{
+				return VT.get_EulaAccepted(&this, retval);
+			}
+			public HRESULT get_EulaText(BSTR* retval) mut
+			{
+				return VT.get_EulaText(&this, retval);
+			}
+			public HRESULT get_HandlerID(BSTR* retval) mut
+			{
+				return VT.get_HandlerID(&this, retval);
+			}
+			public HRESULT get_Identity(IUpdateIdentity** retval) mut
+			{
+				return VT.get_Identity(&this, retval);
+			}
+			public HRESULT get_Image(IImageInformation** retval) mut
+			{
+				return VT.get_Image(&this, retval);
+			}
+			public HRESULT get_InstallationBehavior(IInstallationBehavior** retval) mut
+			{
+				return VT.get_InstallationBehavior(&this, retval);
+			}
+			public HRESULT get_IsBeta(int16* retval) mut
+			{
+				return VT.get_IsBeta(&this, retval);
+			}
+			public HRESULT get_IsDownloaded(int16* retval) mut
+			{
+				return VT.get_IsDownloaded(&this, retval);
+			}
+			public HRESULT get_IsHidden(int16* retval) mut
+			{
+				return VT.get_IsHidden(&this, retval);
+			}
+			public HRESULT put_IsHidden(int16 value) mut
+			{
+				return VT.put_IsHidden(&this, value);
+			}
+			public HRESULT get_IsInstalled(int16* retval) mut
+			{
+				return VT.get_IsInstalled(&this, retval);
+			}
+			public HRESULT get_IsMandatory(int16* retval) mut
+			{
+				return VT.get_IsMandatory(&this, retval);
+			}
+			public HRESULT get_IsUninstallable(int16* retval) mut
+			{
+				return VT.get_IsUninstallable(&this, retval);
+			}
+			public HRESULT get_Languages(IStringCollection** retval) mut
+			{
+				return VT.get_Languages(&this, retval);
+			}
+			public HRESULT get_LastDeploymentChangeTime(double* retval) mut
+			{
+				return VT.get_LastDeploymentChangeTime(&this, retval);
+			}
+			public HRESULT get_MaxDownloadSize(DECIMAL* retval) mut
+			{
+				return VT.get_MaxDownloadSize(&this, retval);
+			}
+			public HRESULT get_MinDownloadSize(DECIMAL* retval) mut
+			{
+				return VT.get_MinDownloadSize(&this, retval);
+			}
+			public HRESULT get_MoreInfoUrls(IStringCollection** retval) mut
+			{
+				return VT.get_MoreInfoUrls(&this, retval);
+			}
+			public HRESULT get_MsrcSeverity(BSTR* retval) mut
+			{
+				return VT.get_MsrcSeverity(&this, retval);
+			}
+			public HRESULT get_RecommendedCpuSpeed(int32* retval) mut
+			{
+				return VT.get_RecommendedCpuSpeed(&this, retval);
+			}
+			public HRESULT get_RecommendedHardDiskSpace(int32* retval) mut
+			{
+				return VT.get_RecommendedHardDiskSpace(&this, retval);
+			}
+			public HRESULT get_RecommendedMemory(int32* retval) mut
+			{
+				return VT.get_RecommendedMemory(&this, retval);
+			}
+			public HRESULT get_ReleaseNotes(BSTR* retval) mut
+			{
+				return VT.get_ReleaseNotes(&this, retval);
+			}
+			public HRESULT get_SecurityBulletinIDs(IStringCollection** retval) mut
+			{
+				return VT.get_SecurityBulletinIDs(&this, retval);
+			}
+			public HRESULT get_SupersededUpdateIDs(IStringCollection** retval) mut
+			{
+				return VT.get_SupersededUpdateIDs(&this, retval);
+			}
+			public HRESULT get_SupportUrl(BSTR* retval) mut
+			{
+				return VT.get_SupportUrl(&this, retval);
+			}
+			public HRESULT get_Type(UpdateType* retval) mut
+			{
+				return VT.get_Type(&this, retval);
+			}
+			public HRESULT get_UninstallationNotes(BSTR* retval) mut
+			{
+				return VT.get_UninstallationNotes(&this, retval);
+			}
+			public HRESULT get_UninstallationBehavior(IInstallationBehavior** retval) mut
+			{
+				return VT.get_UninstallationBehavior(&this, retval);
+			}
+			public HRESULT get_UninstallationSteps(IStringCollection** retval) mut
+			{
+				return VT.get_UninstallationSteps(&this, retval);
+			}
+			public HRESULT get_KBArticleIDs(IStringCollection** retval) mut
+			{
+				return VT.get_KBArticleIDs(&this, retval);
+			}
+			public HRESULT AcceptEula() mut
+			{
+				return VT.AcceptEula(&this);
+			}
+			public HRESULT get_DeploymentAction(DeploymentAction* retval) mut
+			{
+				return VT.get_DeploymentAction(&this, retval);
+			}
+			public HRESULT CopyFromCache(BSTR path, int16 toExtractCabFiles) mut
+			{
+				return VT.CopyFromCache(&this, path, toExtractCabFiles);
+			}
+			public HRESULT get_DownloadPriority(DownloadPriority* retval) mut
+			{
+				return VT.get_DownloadPriority(&this, retval);
+			}
+			public HRESULT get_DownloadContents(IUpdateDownloadContentCollection** retval) mut
+			{
+				return VT.get_DownloadContents(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdate *self, BSTR* retval) get_Title;
-				public function HRESULT(IUpdate *self, int16* retval) get_AutoSelectOnWebSites;
-				public function HRESULT(IUpdate *self, IUpdateCollection** retval) get_BundledUpdates;
-				public function HRESULT(IUpdate *self, int16* retval) get_CanRequireSource;
-				public function HRESULT(IUpdate *self, ICategoryCollection** retval) get_Categories;
-				public function HRESULT(IUpdate *self, VARIANT* retval) get_Deadline;
-				public function HRESULT(IUpdate *self, int16* retval) get_DeltaCompressedContentAvailable;
-				public function HRESULT(IUpdate *self, int16* retval) get_DeltaCompressedContentPreferred;
-				public function HRESULT(IUpdate *self, BSTR* retval) get_Description;
-				public function HRESULT(IUpdate *self, int16* retval) get_EulaAccepted;
-				public function HRESULT(IUpdate *self, BSTR* retval) get_EulaText;
-				public function HRESULT(IUpdate *self, BSTR* retval) get_HandlerID;
-				public function HRESULT(IUpdate *self, IUpdateIdentity** retval) get_Identity;
-				public function HRESULT(IUpdate *self, IImageInformation** retval) get_Image;
-				public function HRESULT(IUpdate *self, IInstallationBehavior** retval) get_InstallationBehavior;
-				public function HRESULT(IUpdate *self, int16* retval) get_IsBeta;
-				public function HRESULT(IUpdate *self, int16* retval) get_IsDownloaded;
-				public function HRESULT(IUpdate *self, int16* retval) get_IsHidden;
-				public function HRESULT(IUpdate *self, int16 value) put_IsHidden;
-				public function HRESULT(IUpdate *self, int16* retval) get_IsInstalled;
-				public function HRESULT(IUpdate *self, int16* retval) get_IsMandatory;
-				public function HRESULT(IUpdate *self, int16* retval) get_IsUninstallable;
-				public function HRESULT(IUpdate *self, IStringCollection** retval) get_Languages;
-				public function HRESULT(IUpdate *self, double* retval) get_LastDeploymentChangeTime;
-				public function HRESULT(IUpdate *self, DECIMAL* retval) get_MaxDownloadSize;
-				public function HRESULT(IUpdate *self, DECIMAL* retval) get_MinDownloadSize;
-				public function HRESULT(IUpdate *self, IStringCollection** retval) get_MoreInfoUrls;
-				public function HRESULT(IUpdate *self, BSTR* retval) get_MsrcSeverity;
-				public function HRESULT(IUpdate *self, int32* retval) get_RecommendedCpuSpeed;
-				public function HRESULT(IUpdate *self, int32* retval) get_RecommendedHardDiskSpace;
-				public function HRESULT(IUpdate *self, int32* retval) get_RecommendedMemory;
-				public function HRESULT(IUpdate *self, BSTR* retval) get_ReleaseNotes;
-				public function HRESULT(IUpdate *self, IStringCollection** retval) get_SecurityBulletinIDs;
-				public function HRESULT(IUpdate *self, IStringCollection** retval) get_SupersededUpdateIDs;
-				public function HRESULT(IUpdate *self, BSTR* retval) get_SupportUrl;
-				public function HRESULT(IUpdate *self, UpdateType* retval) get_Type;
-				public function HRESULT(IUpdate *self, BSTR* retval) get_UninstallationNotes;
-				public function HRESULT(IUpdate *self, IInstallationBehavior** retval) get_UninstallationBehavior;
-				public function HRESULT(IUpdate *self, IStringCollection** retval) get_UninstallationSteps;
-				public function HRESULT(IUpdate *self, IStringCollection** retval) get_KBArticleIDs;
-				public function HRESULT(IUpdate *self) AcceptEula;
-				public function HRESULT(IUpdate *self, DeploymentAction* retval) get_DeploymentAction;
-				public function HRESULT(IUpdate *self, BSTR path, int16 toExtractCabFiles) CopyFromCache;
-				public function HRESULT(IUpdate *self, DownloadPriority* retval) get_DownloadPriority;
-				public function HRESULT(IUpdate *self, IUpdateDownloadContentCollection** retval) get_DownloadContents;
+				public new function HRESULT(IUpdate *self, BSTR* retval) get_Title;
+				public new function HRESULT(IUpdate *self, int16* retval) get_AutoSelectOnWebSites;
+				public new function HRESULT(IUpdate *self, IUpdateCollection** retval) get_BundledUpdates;
+				public new function HRESULT(IUpdate *self, int16* retval) get_CanRequireSource;
+				public new function HRESULT(IUpdate *self, ICategoryCollection** retval) get_Categories;
+				public new function HRESULT(IUpdate *self, VARIANT* retval) get_Deadline;
+				public new function HRESULT(IUpdate *self, int16* retval) get_DeltaCompressedContentAvailable;
+				public new function HRESULT(IUpdate *self, int16* retval) get_DeltaCompressedContentPreferred;
+				public new function HRESULT(IUpdate *self, BSTR* retval) get_Description;
+				public new function HRESULT(IUpdate *self, int16* retval) get_EulaAccepted;
+				public new function HRESULT(IUpdate *self, BSTR* retval) get_EulaText;
+				public new function HRESULT(IUpdate *self, BSTR* retval) get_HandlerID;
+				public new function HRESULT(IUpdate *self, IUpdateIdentity** retval) get_Identity;
+				public new function HRESULT(IUpdate *self, IImageInformation** retval) get_Image;
+				public new function HRESULT(IUpdate *self, IInstallationBehavior** retval) get_InstallationBehavior;
+				public new function HRESULT(IUpdate *self, int16* retval) get_IsBeta;
+				public new function HRESULT(IUpdate *self, int16* retval) get_IsDownloaded;
+				public new function HRESULT(IUpdate *self, int16* retval) get_IsHidden;
+				public new function HRESULT(IUpdate *self, int16 value) put_IsHidden;
+				public new function HRESULT(IUpdate *self, int16* retval) get_IsInstalled;
+				public new function HRESULT(IUpdate *self, int16* retval) get_IsMandatory;
+				public new function HRESULT(IUpdate *self, int16* retval) get_IsUninstallable;
+				public new function HRESULT(IUpdate *self, IStringCollection** retval) get_Languages;
+				public new function HRESULT(IUpdate *self, double* retval) get_LastDeploymentChangeTime;
+				public new function HRESULT(IUpdate *self, DECIMAL* retval) get_MaxDownloadSize;
+				public new function HRESULT(IUpdate *self, DECIMAL* retval) get_MinDownloadSize;
+				public new function HRESULT(IUpdate *self, IStringCollection** retval) get_MoreInfoUrls;
+				public new function HRESULT(IUpdate *self, BSTR* retval) get_MsrcSeverity;
+				public new function HRESULT(IUpdate *self, int32* retval) get_RecommendedCpuSpeed;
+				public new function HRESULT(IUpdate *self, int32* retval) get_RecommendedHardDiskSpace;
+				public new function HRESULT(IUpdate *self, int32* retval) get_RecommendedMemory;
+				public new function HRESULT(IUpdate *self, BSTR* retval) get_ReleaseNotes;
+				public new function HRESULT(IUpdate *self, IStringCollection** retval) get_SecurityBulletinIDs;
+				public new function HRESULT(IUpdate *self, IStringCollection** retval) get_SupersededUpdateIDs;
+				public new function HRESULT(IUpdate *self, BSTR* retval) get_SupportUrl;
+				public new function HRESULT(IUpdate *self, UpdateType* retval) get_Type;
+				public new function HRESULT(IUpdate *self, BSTR* retval) get_UninstallationNotes;
+				public new function HRESULT(IUpdate *self, IInstallationBehavior** retval) get_UninstallationBehavior;
+				public new function HRESULT(IUpdate *self, IStringCollection** retval) get_UninstallationSteps;
+				public new function HRESULT(IUpdate *self, IStringCollection** retval) get_KBArticleIDs;
+				public new function HRESULT(IUpdate *self) AcceptEula;
+				public new function HRESULT(IUpdate *self, DeploymentAction* retval) get_DeploymentAction;
+				public new function HRESULT(IUpdate *self, BSTR path, int16 toExtractCabFiles) CopyFromCache;
+				public new function HRESULT(IUpdate *self, DownloadPriority* retval) get_DownloadPriority;
+				public new function HRESULT(IUpdate *self, IUpdateDownloadContentCollection** retval) get_DownloadContents;
 			}
 		}
 		[CRepr]
@@ -1008,18 +1536,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb383cd1a, 0x5ce9, 0x4504, 0x9f, 0x63, 0x76, 0x4b, 0x12, 0x36, 0xf1, 0x91);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_DriverClass(BSTR* retval) mut
+			{
+				return VT.get_DriverClass(&this, retval);
+			}
+			public HRESULT get_DriverHardwareID(BSTR* retval) mut
+			{
+				return VT.get_DriverHardwareID(&this, retval);
+			}
+			public HRESULT get_DriverManufacturer(BSTR* retval) mut
+			{
+				return VT.get_DriverManufacturer(&this, retval);
+			}
+			public HRESULT get_DriverModel(BSTR* retval) mut
+			{
+				return VT.get_DriverModel(&this, retval);
+			}
+			public HRESULT get_DriverProvider(BSTR* retval) mut
+			{
+				return VT.get_DriverProvider(&this, retval);
+			}
+			public HRESULT get_DriverVerDate(double* retval) mut
+			{
+				return VT.get_DriverVerDate(&this, retval);
+			}
+			public HRESULT get_DeviceProblemNumber(int32* retval) mut
+			{
+				return VT.get_DeviceProblemNumber(&this, retval);
+			}
+			public HRESULT get_DeviceStatus(int32* retval) mut
+			{
+				return VT.get_DeviceStatus(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IUpdate.VTable
 			{
-				public function HRESULT(IWindowsDriverUpdate *self, BSTR* retval) get_DriverClass;
-				public function HRESULT(IWindowsDriverUpdate *self, BSTR* retval) get_DriverHardwareID;
-				public function HRESULT(IWindowsDriverUpdate *self, BSTR* retval) get_DriverManufacturer;
-				public function HRESULT(IWindowsDriverUpdate *self, BSTR* retval) get_DriverModel;
-				public function HRESULT(IWindowsDriverUpdate *self, BSTR* retval) get_DriverProvider;
-				public function HRESULT(IWindowsDriverUpdate *self, double* retval) get_DriverVerDate;
-				public function HRESULT(IWindowsDriverUpdate *self, int32* retval) get_DeviceProblemNumber;
-				public function HRESULT(IWindowsDriverUpdate *self, int32* retval) get_DeviceStatus;
+				public new function HRESULT(IWindowsDriverUpdate *self, BSTR* retval) get_DriverClass;
+				public new function HRESULT(IWindowsDriverUpdate *self, BSTR* retval) get_DriverHardwareID;
+				public new function HRESULT(IWindowsDriverUpdate *self, BSTR* retval) get_DriverManufacturer;
+				public new function HRESULT(IWindowsDriverUpdate *self, BSTR* retval) get_DriverModel;
+				public new function HRESULT(IWindowsDriverUpdate *self, BSTR* retval) get_DriverProvider;
+				public new function HRESULT(IWindowsDriverUpdate *self, double* retval) get_DriverVerDate;
+				public new function HRESULT(IWindowsDriverUpdate *self, int32* retval) get_DeviceProblemNumber;
+				public new function HRESULT(IWindowsDriverUpdate *self, int32* retval) get_DeviceStatus;
 			}
 		}
 		[CRepr]
@@ -1027,14 +1588,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x144fe9b0, 0xd23d, 0x4a8b, 0x86, 0x34, 0xfb, 0x44, 0x57, 0x53, 0x3b, 0x7a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_RebootRequired(int16* retval) mut
+			{
+				return VT.get_RebootRequired(&this, retval);
+			}
+			public HRESULT get_IsPresent(int16* retval) mut
+			{
+				return VT.get_IsPresent(&this, retval);
+			}
+			public HRESULT get_CveIDs(IStringCollection** retval) mut
+			{
+				return VT.get_CveIDs(&this, retval);
+			}
+			public HRESULT CopyToCache(IStringCollection* pFiles) mut
+			{
+				return VT.CopyToCache(&this, pFiles);
+			}
 			[CRepr]
 			public struct VTable : IUpdate.VTable
 			{
-				public function HRESULT(IUpdate2 *self, int16* retval) get_RebootRequired;
-				public function HRESULT(IUpdate2 *self, int16* retval) get_IsPresent;
-				public function HRESULT(IUpdate2 *self, IStringCollection** retval) get_CveIDs;
-				public function HRESULT(IUpdate2 *self, IStringCollection* pFiles) CopyToCache;
+				public new function HRESULT(IUpdate2 *self, int16* retval) get_RebootRequired;
+				public new function HRESULT(IUpdate2 *self, int16* retval) get_IsPresent;
+				public new function HRESULT(IUpdate2 *self, IStringCollection** retval) get_CveIDs;
+				public new function HRESULT(IUpdate2 *self, IStringCollection* pFiles) CopyToCache;
 			}
 		}
 		[CRepr]
@@ -1042,11 +1620,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x112eda6b, 0x95b3, 0x476f, 0x9d, 0x90, 0xae, 0xe8, 0x2c, 0x6b, 0x81, 0x81);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_BrowseOnly(int16* retval) mut
+			{
+				return VT.get_BrowseOnly(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IUpdate2.VTable
 			{
-				public function HRESULT(IUpdate3 *self, int16* retval) get_BrowseOnly;
+				public new function HRESULT(IUpdate3 *self, int16* retval) get_BrowseOnly;
 			}
 		}
 		[CRepr]
@@ -1054,11 +1637,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27e94b0d, 0x5139, 0x49a2, 0x9a, 0x61, 0x93, 0x52, 0x2d, 0xc5, 0x46, 0x52);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_PerUser(int16* retval) mut
+			{
+				return VT.get_PerUser(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IUpdate3.VTable
 			{
-				public function HRESULT(IUpdate4 *self, int16* retval) get_PerUser;
+				public new function HRESULT(IUpdate4 *self, int16* retval) get_PerUser;
 			}
 		}
 		[CRepr]
@@ -1066,12 +1654,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc1c2f21a, 0xd2f4, 0x4902, 0xb5, 0xc6, 0x8a, 0x08, 0x1c, 0x19, 0xa8, 0x90);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_AutoSelection(AutoSelectionMode* retval) mut
+			{
+				return VT.get_AutoSelection(&this, retval);
+			}
+			public HRESULT get_AutoDownload(AutoDownloadMode* retval) mut
+			{
+				return VT.get_AutoDownload(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IUpdate4.VTable
 			{
-				public function HRESULT(IUpdate5 *self, AutoSelectionMode* retval) get_AutoSelection;
-				public function HRESULT(IUpdate5 *self, AutoDownloadMode* retval) get_AutoDownload;
+				public new function HRESULT(IUpdate5 *self, AutoSelectionMode* retval) get_AutoSelection;
+				public new function HRESULT(IUpdate5 *self, AutoDownloadMode* retval) get_AutoDownload;
 			}
 		}
 		[CRepr]
@@ -1079,14 +1676,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x615c4269, 0x7a48, 0x43bd, 0x96, 0xb7, 0xbf, 0x6c, 0xa2, 0x7d, 0x6c, 0x3e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_RebootRequired(int16* retval) mut
+			{
+				return VT.get_RebootRequired(&this, retval);
+			}
+			public HRESULT get_IsPresent(int16* retval) mut
+			{
+				return VT.get_IsPresent(&this, retval);
+			}
+			public HRESULT get_CveIDs(IStringCollection** retval) mut
+			{
+				return VT.get_CveIDs(&this, retval);
+			}
+			public HRESULT CopyToCache(IStringCollection* pFiles) mut
+			{
+				return VT.CopyToCache(&this, pFiles);
+			}
 			[CRepr]
 			public struct VTable : IWindowsDriverUpdate.VTable
 			{
-				public function HRESULT(IWindowsDriverUpdate2 *self, int16* retval) get_RebootRequired;
-				public function HRESULT(IWindowsDriverUpdate2 *self, int16* retval) get_IsPresent;
-				public function HRESULT(IWindowsDriverUpdate2 *self, IStringCollection** retval) get_CveIDs;
-				public function HRESULT(IWindowsDriverUpdate2 *self, IStringCollection* pFiles) CopyToCache;
+				public new function HRESULT(IWindowsDriverUpdate2 *self, int16* retval) get_RebootRequired;
+				public new function HRESULT(IWindowsDriverUpdate2 *self, int16* retval) get_IsPresent;
+				public new function HRESULT(IWindowsDriverUpdate2 *self, IStringCollection** retval) get_CveIDs;
+				public new function HRESULT(IWindowsDriverUpdate2 *self, IStringCollection* pFiles) CopyToCache;
 			}
 		}
 		[CRepr]
@@ -1094,11 +1708,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x49ebd502, 0x4a96, 0x41bd, 0x9e, 0x3e, 0x4c, 0x50, 0x57, 0xf4, 0x25, 0x0c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_BrowseOnly(int16* retval) mut
+			{
+				return VT.get_BrowseOnly(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IWindowsDriverUpdate2.VTable
 			{
-				public function HRESULT(IWindowsDriverUpdate3 *self, int16* retval) get_BrowseOnly;
+				public new function HRESULT(IWindowsDriverUpdate3 *self, int16* retval) get_BrowseOnly;
 			}
 		}
 		[CRepr]
@@ -1106,18 +1725,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xed8bfe40, 0xa60b, 0x42ea, 0x96, 0x52, 0x81, 0x7d, 0xfc, 0xfa, 0x23, 0xec);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_DriverClass(BSTR* retval) mut
+			{
+				return VT.get_DriverClass(&this, retval);
+			}
+			public HRESULT get_DriverHardwareID(BSTR* retval) mut
+			{
+				return VT.get_DriverHardwareID(&this, retval);
+			}
+			public HRESULT get_DriverManufacturer(BSTR* retval) mut
+			{
+				return VT.get_DriverManufacturer(&this, retval);
+			}
+			public HRESULT get_DriverModel(BSTR* retval) mut
+			{
+				return VT.get_DriverModel(&this, retval);
+			}
+			public HRESULT get_DriverProvider(BSTR* retval) mut
+			{
+				return VT.get_DriverProvider(&this, retval);
+			}
+			public HRESULT get_DriverVerDate(double* retval) mut
+			{
+				return VT.get_DriverVerDate(&this, retval);
+			}
+			public HRESULT get_DeviceProblemNumber(int32* retval) mut
+			{
+				return VT.get_DeviceProblemNumber(&this, retval);
+			}
+			public HRESULT get_DeviceStatus(int32* retval) mut
+			{
+				return VT.get_DeviceStatus(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IWindowsDriverUpdateEntry *self, BSTR* retval) get_DriverClass;
-				public function HRESULT(IWindowsDriverUpdateEntry *self, BSTR* retval) get_DriverHardwareID;
-				public function HRESULT(IWindowsDriverUpdateEntry *self, BSTR* retval) get_DriverManufacturer;
-				public function HRESULT(IWindowsDriverUpdateEntry *self, BSTR* retval) get_DriverModel;
-				public function HRESULT(IWindowsDriverUpdateEntry *self, BSTR* retval) get_DriverProvider;
-				public function HRESULT(IWindowsDriverUpdateEntry *self, double* retval) get_DriverVerDate;
-				public function HRESULT(IWindowsDriverUpdateEntry *self, int32* retval) get_DeviceProblemNumber;
-				public function HRESULT(IWindowsDriverUpdateEntry *self, int32* retval) get_DeviceStatus;
+				public new function HRESULT(IWindowsDriverUpdateEntry *self, BSTR* retval) get_DriverClass;
+				public new function HRESULT(IWindowsDriverUpdateEntry *self, BSTR* retval) get_DriverHardwareID;
+				public new function HRESULT(IWindowsDriverUpdateEntry *self, BSTR* retval) get_DriverManufacturer;
+				public new function HRESULT(IWindowsDriverUpdateEntry *self, BSTR* retval) get_DriverModel;
+				public new function HRESULT(IWindowsDriverUpdateEntry *self, BSTR* retval) get_DriverProvider;
+				public new function HRESULT(IWindowsDriverUpdateEntry *self, double* retval) get_DriverVerDate;
+				public new function HRESULT(IWindowsDriverUpdateEntry *self, int32* retval) get_DeviceProblemNumber;
+				public new function HRESULT(IWindowsDriverUpdateEntry *self, int32* retval) get_DeviceStatus;
 			}
 		}
 		[CRepr]
@@ -1125,13 +1777,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0d521700, 0xa372, 0x4bef, 0x82, 0x8b, 0x3d, 0x00, 0xc1, 0x0a, 0xde, 0xbd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 index, IWindowsDriverUpdateEntry** retval) mut
+			{
+				return VT.get_Item(&this, index, retval);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT get_Count(int32* retval) mut
+			{
+				return VT.get_Count(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IWindowsDriverUpdateEntryCollection *self, int32 index, IWindowsDriverUpdateEntry** retval) get_Item;
-				public function HRESULT(IWindowsDriverUpdateEntryCollection *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(IWindowsDriverUpdateEntryCollection *self, int32* retval) get_Count;
+				public new function HRESULT(IWindowsDriverUpdateEntryCollection *self, int32 index, IWindowsDriverUpdateEntry** retval) get_Item;
+				public new function HRESULT(IWindowsDriverUpdateEntryCollection *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(IWindowsDriverUpdateEntryCollection *self, int32* retval) get_Count;
 			}
 		}
 		[CRepr]
@@ -1139,12 +1804,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x004c6a2b, 0x0c19, 0x4c69, 0x9f, 0x5c, 0xa2, 0x69, 0xb2, 0x56, 0x0d, 0xb9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_WindowsDriverUpdateEntries(IWindowsDriverUpdateEntryCollection** retval) mut
+			{
+				return VT.get_WindowsDriverUpdateEntries(&this, retval);
+			}
+			public HRESULT get_PerUser(int16* retval) mut
+			{
+				return VT.get_PerUser(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IWindowsDriverUpdate3.VTable
 			{
-				public function HRESULT(IWindowsDriverUpdate4 *self, IWindowsDriverUpdateEntryCollection** retval) get_WindowsDriverUpdateEntries;
-				public function HRESULT(IWindowsDriverUpdate4 *self, int16* retval) get_PerUser;
+				public new function HRESULT(IWindowsDriverUpdate4 *self, IWindowsDriverUpdateEntryCollection** retval) get_WindowsDriverUpdateEntries;
+				public new function HRESULT(IWindowsDriverUpdate4 *self, int16* retval) get_PerUser;
 			}
 		}
 		[CRepr]
@@ -1152,12 +1826,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x70cf5c82, 0x8642, 0x42bb, 0x9d, 0xbc, 0x0c, 0xfd, 0x26, 0x3c, 0x6c, 0x4f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_AutoSelection(AutoSelectionMode* retval) mut
+			{
+				return VT.get_AutoSelection(&this, retval);
+			}
+			public HRESULT get_AutoDownload(AutoDownloadMode* retval) mut
+			{
+				return VT.get_AutoDownload(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IWindowsDriverUpdate4.VTable
 			{
-				public function HRESULT(IWindowsDriverUpdate5 *self, AutoSelectionMode* retval) get_AutoSelection;
-				public function HRESULT(IWindowsDriverUpdate5 *self, AutoDownloadMode* retval) get_AutoDownload;
+				public new function HRESULT(IWindowsDriverUpdate5 *self, AutoSelectionMode* retval) get_AutoSelection;
+				public new function HRESULT(IWindowsDriverUpdate5 *self, AutoDownloadMode* retval) get_AutoDownload;
 			}
 		}
 		[CRepr]
@@ -1165,20 +1848,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x07f7438c, 0x7709, 0x4ca5, 0xb5, 0x18, 0x91, 0x27, 0x92, 0x88, 0x13, 0x4e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 index, IUpdate** retval) mut
+			{
+				return VT.get_Item(&this, index, retval);
+			}
+			public HRESULT put_Item(int32 index, IUpdate* value) mut
+			{
+				return VT.put_Item(&this, index, value);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT get_Count(int32* retval) mut
+			{
+				return VT.get_Count(&this, retval);
+			}
+			public HRESULT get_ReadOnly(int16* retval) mut
+			{
+				return VT.get_ReadOnly(&this, retval);
+			}
+			public HRESULT Add(IUpdate* value, int32* retval) mut
+			{
+				return VT.Add(&this, value, retval);
+			}
+			public HRESULT Clear() mut
+			{
+				return VT.Clear(&this);
+			}
+			public HRESULT Copy(IUpdateCollection** retval) mut
+			{
+				return VT.Copy(&this, retval);
+			}
+			public HRESULT Insert(int32 index, IUpdate* value) mut
+			{
+				return VT.Insert(&this, index, value);
+			}
+			public HRESULT RemoveAt(int32 index) mut
+			{
+				return VT.RemoveAt(&this, index);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdateCollection *self, int32 index, IUpdate** retval) get_Item;
-				public function HRESULT(IUpdateCollection *self, int32 index, IUpdate* value) put_Item;
-				public function HRESULT(IUpdateCollection *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(IUpdateCollection *self, int32* retval) get_Count;
-				public function HRESULT(IUpdateCollection *self, int16* retval) get_ReadOnly;
-				public function HRESULT(IUpdateCollection *self, IUpdate* value, int32* retval) Add;
-				public function HRESULT(IUpdateCollection *self) Clear;
-				public function HRESULT(IUpdateCollection *self, IUpdateCollection** retval) Copy;
-				public function HRESULT(IUpdateCollection *self, int32 index, IUpdate* value) Insert;
-				public function HRESULT(IUpdateCollection *self, int32 index) RemoveAt;
+				public new function HRESULT(IUpdateCollection *self, int32 index, IUpdate** retval) get_Item;
+				public new function HRESULT(IUpdateCollection *self, int32 index, IUpdate* value) put_Item;
+				public new function HRESULT(IUpdateCollection *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(IUpdateCollection *self, int32* retval) get_Count;
+				public new function HRESULT(IUpdateCollection *self, int16* retval) get_ReadOnly;
+				public new function HRESULT(IUpdateCollection *self, IUpdate* value, int32* retval) Add;
+				public new function HRESULT(IUpdateCollection *self) Clear;
+				public new function HRESULT(IUpdateCollection *self, IUpdateCollection** retval) Copy;
+				public new function HRESULT(IUpdateCollection *self, int32 index, IUpdate* value) Insert;
+				public new function HRESULT(IUpdateCollection *self, int32 index) RemoveAt;
 			}
 		}
 		[CRepr]
@@ -1186,13 +1910,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa376dd5e, 0x09d4, 0x427f, 0xaf, 0x7c, 0xfe, 0xd5, 0xb6, 0xe1, 0xc1, 0xd6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Message(BSTR* retval) mut
+			{
+				return VT.get_Message(&this, retval);
+			}
+			public HRESULT get_HResult(int32* retval) mut
+			{
+				return VT.get_HResult(&this, retval);
+			}
+			public HRESULT get_Context(UpdateExceptionContext* retval) mut
+			{
+				return VT.get_Context(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdateException *self, BSTR* retval) get_Message;
-				public function HRESULT(IUpdateException *self, int32* retval) get_HResult;
-				public function HRESULT(IUpdateException *self, UpdateExceptionContext* retval) get_Context;
+				public new function HRESULT(IUpdateException *self, BSTR* retval) get_Message;
+				public new function HRESULT(IUpdateException *self, int32* retval) get_HResult;
+				public new function HRESULT(IUpdateException *self, UpdateExceptionContext* retval) get_Context;
 			}
 		}
 		[CRepr]
@@ -1200,11 +1937,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa37d00f5, 0x7bb0, 0x4953, 0xb4, 0x14, 0xf9, 0xe9, 0x83, 0x26, 0xf2, 0xe8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Product(BSTR* retval) mut
+			{
+				return VT.get_Product(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IUpdateException.VTable
 			{
-				public function HRESULT(IInvalidProductLicenseException *self, BSTR* retval) get_Product;
+				public new function HRESULT(IInvalidProductLicenseException *self, BSTR* retval) get_Product;
 			}
 		}
 		[CRepr]
@@ -1212,13 +1954,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x503626a3, 0x8e14, 0x4729, 0x93, 0x55, 0x0f, 0xe6, 0x64, 0xbd, 0x23, 0x21);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 index, IUpdateException** retval) mut
+			{
+				return VT.get_Item(&this, index, retval);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT get_Count(int32* retval) mut
+			{
+				return VT.get_Count(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdateExceptionCollection *self, int32 index, IUpdateException** retval) get_Item;
-				public function HRESULT(IUpdateExceptionCollection *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(IUpdateExceptionCollection *self, int32* retval) get_Count;
+				public new function HRESULT(IUpdateExceptionCollection *self, int32 index, IUpdateException** retval) get_Item;
+				public new function HRESULT(IUpdateExceptionCollection *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(IUpdateExceptionCollection *self, int32* retval) get_Count;
 			}
 		}
 		[CRepr]
@@ -1226,14 +1981,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd40cff62, 0xe08c, 0x4498, 0x94, 0x1a, 0x01, 0xe2, 0x5f, 0x0f, 0xd3, 0x3c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ResultCode(OperationResultCode* retval) mut
+			{
+				return VT.get_ResultCode(&this, retval);
+			}
+			public HRESULT get_RootCategories(ICategoryCollection** retval) mut
+			{
+				return VT.get_RootCategories(&this, retval);
+			}
+			public HRESULT get_Updates(IUpdateCollection** retval) mut
+			{
+				return VT.get_Updates(&this, retval);
+			}
+			public HRESULT get_Warnings(IUpdateExceptionCollection** retval) mut
+			{
+				return VT.get_Warnings(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISearchResult *self, OperationResultCode* retval) get_ResultCode;
-				public function HRESULT(ISearchResult *self, ICategoryCollection** retval) get_RootCategories;
-				public function HRESULT(ISearchResult *self, IUpdateCollection** retval) get_Updates;
-				public function HRESULT(ISearchResult *self, IUpdateExceptionCollection** retval) get_Warnings;
+				public new function HRESULT(ISearchResult *self, OperationResultCode* retval) get_ResultCode;
+				public new function HRESULT(ISearchResult *self, ICategoryCollection** retval) get_RootCategories;
+				public new function HRESULT(ISearchResult *self, IUpdateCollection** retval) get_Updates;
+				public new function HRESULT(ISearchResult *self, IUpdateExceptionCollection** retval) get_Warnings;
 			}
 		}
 		[CRepr]
@@ -1241,14 +2013,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7366ea16, 0x7a1a, 0x4ea2, 0xb0, 0x42, 0x97, 0x3d, 0x3e, 0x9c, 0xd9, 0x9b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_AsyncState(VARIANT* retval) mut
+			{
+				return VT.get_AsyncState(&this, retval);
+			}
+			public HRESULT get_IsCompleted(int16* retval) mut
+			{
+				return VT.get_IsCompleted(&this, retval);
+			}
+			public HRESULT CleanUp() mut
+			{
+				return VT.CleanUp(&this);
+			}
+			public HRESULT RequestAbort() mut
+			{
+				return VT.RequestAbort(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(ISearchJob *self, VARIANT* retval) get_AsyncState;
-				public function HRESULT(ISearchJob *self, int16* retval) get_IsCompleted;
-				public function HRESULT(ISearchJob *self) CleanUp;
-				public function HRESULT(ISearchJob *self) RequestAbort;
+				public new function HRESULT(ISearchJob *self, VARIANT* retval) get_AsyncState;
+				public new function HRESULT(ISearchJob *self, int16* retval) get_IsCompleted;
+				public new function HRESULT(ISearchJob *self) CleanUp;
+				public new function HRESULT(ISearchJob *self) RequestAbort;
 			}
 		}
 		[CRepr]
@@ -1256,7 +2045,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa700a634, 0x2850, 0x4c47, 0x93, 0x8a, 0x9e, 0x4b, 0x6e, 0x5a, 0xf9, 0xa6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1267,11 +2057,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x88aee058, 0xd4b0, 0x4725, 0xa2, 0xf1, 0x81, 0x4a, 0x67, 0xae, 0x96, 0x4c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Invoke(ISearchJob* searchJob, ISearchCompletedCallbackArgs* callbackArgs) mut
+			{
+				return VT.Invoke(&this, searchJob, callbackArgs);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ISearchCompletedCallback *self, ISearchJob* searchJob, ISearchCompletedCallbackArgs* callbackArgs) Invoke;
+				public new function HRESULT(ISearchCompletedCallback *self, ISearchJob* searchJob, ISearchCompletedCallbackArgs* callbackArgs) Invoke;
 			}
 		}
 		[CRepr]
@@ -1279,24 +2074,81 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbe56a644, 0xaf0e, 0x4e0e, 0xa3, 0x11, 0xc1, 0xd8, 0xe6, 0x95, 0xcb, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Operation(UpdateOperation* retval) mut
+			{
+				return VT.get_Operation(&this, retval);
+			}
+			public HRESULT get_ResultCode(OperationResultCode* retval) mut
+			{
+				return VT.get_ResultCode(&this, retval);
+			}
+			public HRESULT get_HResult(int32* retval) mut
+			{
+				return VT.get_HResult(&this, retval);
+			}
+			public HRESULT get_Date(double* retval) mut
+			{
+				return VT.get_Date(&this, retval);
+			}
+			public HRESULT get_UpdateIdentity(IUpdateIdentity** retval) mut
+			{
+				return VT.get_UpdateIdentity(&this, retval);
+			}
+			public HRESULT get_Title(BSTR* retval) mut
+			{
+				return VT.get_Title(&this, retval);
+			}
+			public HRESULT get_Description(BSTR* retval) mut
+			{
+				return VT.get_Description(&this, retval);
+			}
+			public HRESULT get_UnmappedResultCode(int32* retval) mut
+			{
+				return VT.get_UnmappedResultCode(&this, retval);
+			}
+			public HRESULT get_ClientApplicationID(BSTR* retval) mut
+			{
+				return VT.get_ClientApplicationID(&this, retval);
+			}
+			public HRESULT get_ServerSelection(ServerSelection* retval) mut
+			{
+				return VT.get_ServerSelection(&this, retval);
+			}
+			public HRESULT get_ServiceID(BSTR* retval) mut
+			{
+				return VT.get_ServiceID(&this, retval);
+			}
+			public HRESULT get_UninstallationSteps(IStringCollection** retval) mut
+			{
+				return VT.get_UninstallationSteps(&this, retval);
+			}
+			public HRESULT get_UninstallationNotes(BSTR* retval) mut
+			{
+				return VT.get_UninstallationNotes(&this, retval);
+			}
+			public HRESULT get_SupportUrl(BSTR* retval) mut
+			{
+				return VT.get_SupportUrl(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdateHistoryEntry *self, UpdateOperation* retval) get_Operation;
-				public function HRESULT(IUpdateHistoryEntry *self, OperationResultCode* retval) get_ResultCode;
-				public function HRESULT(IUpdateHistoryEntry *self, int32* retval) get_HResult;
-				public function HRESULT(IUpdateHistoryEntry *self, double* retval) get_Date;
-				public function HRESULT(IUpdateHistoryEntry *self, IUpdateIdentity** retval) get_UpdateIdentity;
-				public function HRESULT(IUpdateHistoryEntry *self, BSTR* retval) get_Title;
-				public function HRESULT(IUpdateHistoryEntry *self, BSTR* retval) get_Description;
-				public function HRESULT(IUpdateHistoryEntry *self, int32* retval) get_UnmappedResultCode;
-				public function HRESULT(IUpdateHistoryEntry *self, BSTR* retval) get_ClientApplicationID;
-				public function HRESULT(IUpdateHistoryEntry *self, ServerSelection* retval) get_ServerSelection;
-				public function HRESULT(IUpdateHistoryEntry *self, BSTR* retval) get_ServiceID;
-				public function HRESULT(IUpdateHistoryEntry *self, IStringCollection** retval) get_UninstallationSteps;
-				public function HRESULT(IUpdateHistoryEntry *self, BSTR* retval) get_UninstallationNotes;
-				public function HRESULT(IUpdateHistoryEntry *self, BSTR* retval) get_SupportUrl;
+				public new function HRESULT(IUpdateHistoryEntry *self, UpdateOperation* retval) get_Operation;
+				public new function HRESULT(IUpdateHistoryEntry *self, OperationResultCode* retval) get_ResultCode;
+				public new function HRESULT(IUpdateHistoryEntry *self, int32* retval) get_HResult;
+				public new function HRESULT(IUpdateHistoryEntry *self, double* retval) get_Date;
+				public new function HRESULT(IUpdateHistoryEntry *self, IUpdateIdentity** retval) get_UpdateIdentity;
+				public new function HRESULT(IUpdateHistoryEntry *self, BSTR* retval) get_Title;
+				public new function HRESULT(IUpdateHistoryEntry *self, BSTR* retval) get_Description;
+				public new function HRESULT(IUpdateHistoryEntry *self, int32* retval) get_UnmappedResultCode;
+				public new function HRESULT(IUpdateHistoryEntry *self, BSTR* retval) get_ClientApplicationID;
+				public new function HRESULT(IUpdateHistoryEntry *self, ServerSelection* retval) get_ServerSelection;
+				public new function HRESULT(IUpdateHistoryEntry *self, BSTR* retval) get_ServiceID;
+				public new function HRESULT(IUpdateHistoryEntry *self, IStringCollection** retval) get_UninstallationSteps;
+				public new function HRESULT(IUpdateHistoryEntry *self, BSTR* retval) get_UninstallationNotes;
+				public new function HRESULT(IUpdateHistoryEntry *self, BSTR* retval) get_SupportUrl;
 			}
 		}
 		[CRepr]
@@ -1304,11 +2156,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc2bfb780, 0x4539, 0x4132, 0xab, 0x8c, 0x0a, 0x87, 0x72, 0x01, 0x3a, 0xb6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Categories(ICategoryCollection** retval) mut
+			{
+				return VT.get_Categories(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IUpdateHistoryEntry.VTable
 			{
-				public function HRESULT(IUpdateHistoryEntry2 *self, ICategoryCollection** retval) get_Categories;
+				public new function HRESULT(IUpdateHistoryEntry2 *self, ICategoryCollection** retval) get_Categories;
 			}
 		}
 		[CRepr]
@@ -1316,13 +2173,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa7f04f3c, 0xa290, 0x435b, 0xaa, 0xdf, 0xa1, 0x16, 0xc3, 0x35, 0x7a, 0x5c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 index, IUpdateHistoryEntry** retval) mut
+			{
+				return VT.get_Item(&this, index, retval);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT get_Count(int32* retval) mut
+			{
+				return VT.get_Count(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdateHistoryEntryCollection *self, int32 index, IUpdateHistoryEntry** retval) get_Item;
-				public function HRESULT(IUpdateHistoryEntryCollection *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(IUpdateHistoryEntryCollection *self, int32* retval) get_Count;
+				public new function HRESULT(IUpdateHistoryEntryCollection *self, int32 index, IUpdateHistoryEntry** retval) get_Item;
+				public new function HRESULT(IUpdateHistoryEntryCollection *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(IUpdateHistoryEntryCollection *self, int32* retval) get_Count;
 			}
 		}
 		[CRepr]
@@ -1330,28 +2200,101 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8f45abf1, 0xf9ae, 0x4b95, 0xa9, 0x33, 0xf0, 0xf6, 0x6e, 0x50, 0x56, 0xea);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CanAutomaticallyUpgradeService(int16* retval) mut
+			{
+				return VT.get_CanAutomaticallyUpgradeService(&this, retval);
+			}
+			public HRESULT put_CanAutomaticallyUpgradeService(int16 value) mut
+			{
+				return VT.put_CanAutomaticallyUpgradeService(&this, value);
+			}
+			public HRESULT get_ClientApplicationID(BSTR* retval) mut
+			{
+				return VT.get_ClientApplicationID(&this, retval);
+			}
+			public HRESULT put_ClientApplicationID(BSTR value) mut
+			{
+				return VT.put_ClientApplicationID(&this, value);
+			}
+			public HRESULT get_IncludePotentiallySupersededUpdates(int16* retval) mut
+			{
+				return VT.get_IncludePotentiallySupersededUpdates(&this, retval);
+			}
+			public HRESULT put_IncludePotentiallySupersededUpdates(int16 value) mut
+			{
+				return VT.put_IncludePotentiallySupersededUpdates(&this, value);
+			}
+			public HRESULT get_ServerSelection(ServerSelection* retval) mut
+			{
+				return VT.get_ServerSelection(&this, retval);
+			}
+			public HRESULT put_ServerSelection(ServerSelection value) mut
+			{
+				return VT.put_ServerSelection(&this, value);
+			}
+			public HRESULT BeginSearch(BSTR criteria, IUnknown* onCompleted, VARIANT state, ISearchJob** retval) mut
+			{
+				return VT.BeginSearch(&this, criteria, onCompleted, state, retval);
+			}
+			public HRESULT EndSearch(ISearchJob* searchJob, ISearchResult** retval) mut
+			{
+				return VT.EndSearch(&this, searchJob, retval);
+			}
+			public HRESULT EscapeString(BSTR unescaped, BSTR* retval) mut
+			{
+				return VT.EscapeString(&this, unescaped, retval);
+			}
+			public HRESULT QueryHistory(int32 startIndex, int32 count, IUpdateHistoryEntryCollection** retval) mut
+			{
+				return VT.QueryHistory(&this, startIndex, count, retval);
+			}
+			public HRESULT Search(BSTR criteria, ISearchResult** retval) mut
+			{
+				return VT.Search(&this, criteria, retval);
+			}
+			public HRESULT get_Online(int16* retval) mut
+			{
+				return VT.get_Online(&this, retval);
+			}
+			public HRESULT put_Online(int16 value) mut
+			{
+				return VT.put_Online(&this, value);
+			}
+			public HRESULT GetTotalHistoryCount(int32* retval) mut
+			{
+				return VT.GetTotalHistoryCount(&this, retval);
+			}
+			public HRESULT get_ServiceID(BSTR* retval) mut
+			{
+				return VT.get_ServiceID(&this, retval);
+			}
+			public HRESULT put_ServiceID(BSTR value) mut
+			{
+				return VT.put_ServiceID(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdateSearcher *self, int16* retval) get_CanAutomaticallyUpgradeService;
-				public function HRESULT(IUpdateSearcher *self, int16 value) put_CanAutomaticallyUpgradeService;
-				public function HRESULT(IUpdateSearcher *self, BSTR* retval) get_ClientApplicationID;
-				public function HRESULT(IUpdateSearcher *self, BSTR value) put_ClientApplicationID;
-				public function HRESULT(IUpdateSearcher *self, int16* retval) get_IncludePotentiallySupersededUpdates;
-				public function HRESULT(IUpdateSearcher *self, int16 value) put_IncludePotentiallySupersededUpdates;
-				public function HRESULT(IUpdateSearcher *self, ServerSelection* retval) get_ServerSelection;
-				public function HRESULT(IUpdateSearcher *self, ServerSelection value) put_ServerSelection;
-				public function HRESULT(IUpdateSearcher *self, BSTR criteria, IUnknown* onCompleted, VARIANT state, ISearchJob** retval) BeginSearch;
-				public function HRESULT(IUpdateSearcher *self, ISearchJob* searchJob, ISearchResult** retval) EndSearch;
-				public function HRESULT(IUpdateSearcher *self, BSTR unescaped, BSTR* retval) EscapeString;
-				public function HRESULT(IUpdateSearcher *self, int32 startIndex, int32 count, IUpdateHistoryEntryCollection** retval) QueryHistory;
-				public function HRESULT(IUpdateSearcher *self, BSTR criteria, ISearchResult** retval) Search;
-				public function HRESULT(IUpdateSearcher *self, int16* retval) get_Online;
-				public function HRESULT(IUpdateSearcher *self, int16 value) put_Online;
-				public function HRESULT(IUpdateSearcher *self, int32* retval) GetTotalHistoryCount;
-				public function HRESULT(IUpdateSearcher *self, BSTR* retval) get_ServiceID;
-				public function HRESULT(IUpdateSearcher *self, BSTR value) put_ServiceID;
+				public new function HRESULT(IUpdateSearcher *self, int16* retval) get_CanAutomaticallyUpgradeService;
+				public new function HRESULT(IUpdateSearcher *self, int16 value) put_CanAutomaticallyUpgradeService;
+				public new function HRESULT(IUpdateSearcher *self, BSTR* retval) get_ClientApplicationID;
+				public new function HRESULT(IUpdateSearcher *self, BSTR value) put_ClientApplicationID;
+				public new function HRESULT(IUpdateSearcher *self, int16* retval) get_IncludePotentiallySupersededUpdates;
+				public new function HRESULT(IUpdateSearcher *self, int16 value) put_IncludePotentiallySupersededUpdates;
+				public new function HRESULT(IUpdateSearcher *self, ServerSelection* retval) get_ServerSelection;
+				public new function HRESULT(IUpdateSearcher *self, ServerSelection value) put_ServerSelection;
+				public new function HRESULT(IUpdateSearcher *self, BSTR criteria, IUnknown* onCompleted, VARIANT state, ISearchJob** retval) BeginSearch;
+				public new function HRESULT(IUpdateSearcher *self, ISearchJob* searchJob, ISearchResult** retval) EndSearch;
+				public new function HRESULT(IUpdateSearcher *self, BSTR unescaped, BSTR* retval) EscapeString;
+				public new function HRESULT(IUpdateSearcher *self, int32 startIndex, int32 count, IUpdateHistoryEntryCollection** retval) QueryHistory;
+				public new function HRESULT(IUpdateSearcher *self, BSTR criteria, ISearchResult** retval) Search;
+				public new function HRESULT(IUpdateSearcher *self, int16* retval) get_Online;
+				public new function HRESULT(IUpdateSearcher *self, int16 value) put_Online;
+				public new function HRESULT(IUpdateSearcher *self, int32* retval) GetTotalHistoryCount;
+				public new function HRESULT(IUpdateSearcher *self, BSTR* retval) get_ServiceID;
+				public new function HRESULT(IUpdateSearcher *self, BSTR value) put_ServiceID;
 			}
 		}
 		[CRepr]
@@ -1359,12 +2302,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4cbdcb2d, 0x1589, 0x4beb, 0xbd, 0x1c, 0x3e, 0x58, 0x2f, 0xf0, 0xad, 0xd0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_IgnoreDownloadPriority(int16* retval) mut
+			{
+				return VT.get_IgnoreDownloadPriority(&this, retval);
+			}
+			public HRESULT put_IgnoreDownloadPriority(int16 value) mut
+			{
+				return VT.put_IgnoreDownloadPriority(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IUpdateSearcher.VTable
 			{
-				public function HRESULT(IUpdateSearcher2 *self, int16* retval) get_IgnoreDownloadPriority;
-				public function HRESULT(IUpdateSearcher2 *self, int16 value) put_IgnoreDownloadPriority;
+				public new function HRESULT(IUpdateSearcher2 *self, int16* retval) get_IgnoreDownloadPriority;
+				public new function HRESULT(IUpdateSearcher2 *self, int16 value) put_IgnoreDownloadPriority;
 			}
 		}
 		[CRepr]
@@ -1372,12 +2324,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x04c6895d, 0xeaf2, 0x4034, 0x97, 0xf3, 0x31, 0x1d, 0xe9, 0xbe, 0x41, 0x3a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_SearchScope(SearchScope* retval) mut
+			{
+				return VT.get_SearchScope(&this, retval);
+			}
+			public HRESULT put_SearchScope(SearchScope value) mut
+			{
+				return VT.put_SearchScope(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IUpdateSearcher2.VTable
 			{
-				public function HRESULT(IUpdateSearcher3 *self, SearchScope* retval) get_SearchScope;
-				public function HRESULT(IUpdateSearcher3 *self, SearchScope value) put_SearchScope;
+				public new function HRESULT(IUpdateSearcher3 *self, SearchScope* retval) get_SearchScope;
+				public new function HRESULT(IUpdateSearcher3 *self, SearchScope value) put_SearchScope;
 			}
 		}
 		[CRepr]
@@ -1385,12 +2346,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbf99af76, 0xb575, 0x42ad, 0x8a, 0xa4, 0x33, 0xcb, 0xb5, 0x47, 0x7a, 0xf1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_HResult(int32* retval) mut
+			{
+				return VT.get_HResult(&this, retval);
+			}
+			public HRESULT get_ResultCode(OperationResultCode* retval) mut
+			{
+				return VT.get_ResultCode(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdateDownloadResult *self, int32* retval) get_HResult;
-				public function HRESULT(IUpdateDownloadResult *self, OperationResultCode* retval) get_ResultCode;
+				public new function HRESULT(IUpdateDownloadResult *self, int32* retval) get_HResult;
+				public new function HRESULT(IUpdateDownloadResult *self, OperationResultCode* retval) get_ResultCode;
 			}
 		}
 		[CRepr]
@@ -1398,13 +2368,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdaa4fdd0, 0x4727, 0x4dbe, 0xa1, 0xe7, 0x74, 0x5d, 0xca, 0x31, 0x71, 0x44);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_HResult(int32* retval) mut
+			{
+				return VT.get_HResult(&this, retval);
+			}
+			public HRESULT get_ResultCode(OperationResultCode* retval) mut
+			{
+				return VT.get_ResultCode(&this, retval);
+			}
+			public HRESULT GetUpdateResult(int32 updateIndex, IUpdateDownloadResult** retval) mut
+			{
+				return VT.GetUpdateResult(&this, updateIndex, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IDownloadResult *self, int32* retval) get_HResult;
-				public function HRESULT(IDownloadResult *self, OperationResultCode* retval) get_ResultCode;
-				public function HRESULT(IDownloadResult *self, int32 updateIndex, IUpdateDownloadResult** retval) GetUpdateResult;
+				public new function HRESULT(IDownloadResult *self, int32* retval) get_HResult;
+				public new function HRESULT(IDownloadResult *self, OperationResultCode* retval) get_ResultCode;
+				public new function HRESULT(IDownloadResult *self, int32 updateIndex, IUpdateDownloadResult** retval) GetUpdateResult;
 			}
 		}
 		[CRepr]
@@ -1412,19 +2395,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd31a5bac, 0xf719, 0x4178, 0x9d, 0xbb, 0x5e, 0x2c, 0xb4, 0x7f, 0xd1, 0x8a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CurrentUpdateBytesDownloaded(DECIMAL* retval) mut
+			{
+				return VT.get_CurrentUpdateBytesDownloaded(&this, retval);
+			}
+			public HRESULT get_CurrentUpdateBytesToDownload(DECIMAL* retval) mut
+			{
+				return VT.get_CurrentUpdateBytesToDownload(&this, retval);
+			}
+			public HRESULT get_CurrentUpdateIndex(int32* retval) mut
+			{
+				return VT.get_CurrentUpdateIndex(&this, retval);
+			}
+			public HRESULT get_PercentComplete(int32* retval) mut
+			{
+				return VT.get_PercentComplete(&this, retval);
+			}
+			public HRESULT get_TotalBytesDownloaded(DECIMAL* retval) mut
+			{
+				return VT.get_TotalBytesDownloaded(&this, retval);
+			}
+			public HRESULT get_TotalBytesToDownload(DECIMAL* retval) mut
+			{
+				return VT.get_TotalBytesToDownload(&this, retval);
+			}
+			public HRESULT GetUpdateResult(int32 updateIndex, IUpdateDownloadResult** retval) mut
+			{
+				return VT.GetUpdateResult(&this, updateIndex, retval);
+			}
+			public HRESULT get_CurrentUpdateDownloadPhase(DownloadPhase* retval) mut
+			{
+				return VT.get_CurrentUpdateDownloadPhase(&this, retval);
+			}
+			public HRESULT get_CurrentUpdatePercentComplete(int32* retval) mut
+			{
+				return VT.get_CurrentUpdatePercentComplete(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IDownloadProgress *self, DECIMAL* retval) get_CurrentUpdateBytesDownloaded;
-				public function HRESULT(IDownloadProgress *self, DECIMAL* retval) get_CurrentUpdateBytesToDownload;
-				public function HRESULT(IDownloadProgress *self, int32* retval) get_CurrentUpdateIndex;
-				public function HRESULT(IDownloadProgress *self, int32* retval) get_PercentComplete;
-				public function HRESULT(IDownloadProgress *self, DECIMAL* retval) get_TotalBytesDownloaded;
-				public function HRESULT(IDownloadProgress *self, DECIMAL* retval) get_TotalBytesToDownload;
-				public function HRESULT(IDownloadProgress *self, int32 updateIndex, IUpdateDownloadResult** retval) GetUpdateResult;
-				public function HRESULT(IDownloadProgress *self, DownloadPhase* retval) get_CurrentUpdateDownloadPhase;
-				public function HRESULT(IDownloadProgress *self, int32* retval) get_CurrentUpdatePercentComplete;
+				public new function HRESULT(IDownloadProgress *self, DECIMAL* retval) get_CurrentUpdateBytesDownloaded;
+				public new function HRESULT(IDownloadProgress *self, DECIMAL* retval) get_CurrentUpdateBytesToDownload;
+				public new function HRESULT(IDownloadProgress *self, int32* retval) get_CurrentUpdateIndex;
+				public new function HRESULT(IDownloadProgress *self, int32* retval) get_PercentComplete;
+				public new function HRESULT(IDownloadProgress *self, DECIMAL* retval) get_TotalBytesDownloaded;
+				public new function HRESULT(IDownloadProgress *self, DECIMAL* retval) get_TotalBytesToDownload;
+				public new function HRESULT(IDownloadProgress *self, int32 updateIndex, IUpdateDownloadResult** retval) GetUpdateResult;
+				public new function HRESULT(IDownloadProgress *self, DownloadPhase* retval) get_CurrentUpdateDownloadPhase;
+				public new function HRESULT(IDownloadProgress *self, int32* retval) get_CurrentUpdatePercentComplete;
 			}
 		}
 		[CRepr]
@@ -1432,16 +2452,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc574de85, 0x7358, 0x43f6, 0xaa, 0xe8, 0x86, 0x97, 0xe6, 0x2d, 0x8b, 0xa7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_AsyncState(VARIANT* retval) mut
+			{
+				return VT.get_AsyncState(&this, retval);
+			}
+			public HRESULT get_IsCompleted(int16* retval) mut
+			{
+				return VT.get_IsCompleted(&this, retval);
+			}
+			public HRESULT get_Updates(IUpdateCollection** retval) mut
+			{
+				return VT.get_Updates(&this, retval);
+			}
+			public HRESULT CleanUp() mut
+			{
+				return VT.CleanUp(&this);
+			}
+			public HRESULT GetProgress(IDownloadProgress** retval) mut
+			{
+				return VT.GetProgress(&this, retval);
+			}
+			public HRESULT RequestAbort() mut
+			{
+				return VT.RequestAbort(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IDownloadJob *self, VARIANT* retval) get_AsyncState;
-				public function HRESULT(IDownloadJob *self, int16* retval) get_IsCompleted;
-				public function HRESULT(IDownloadJob *self, IUpdateCollection** retval) get_Updates;
-				public function HRESULT(IDownloadJob *self) CleanUp;
-				public function HRESULT(IDownloadJob *self, IDownloadProgress** retval) GetProgress;
-				public function HRESULT(IDownloadJob *self) RequestAbort;
+				public new function HRESULT(IDownloadJob *self, VARIANT* retval) get_AsyncState;
+				public new function HRESULT(IDownloadJob *self, int16* retval) get_IsCompleted;
+				public new function HRESULT(IDownloadJob *self, IUpdateCollection** retval) get_Updates;
+				public new function HRESULT(IDownloadJob *self) CleanUp;
+				public new function HRESULT(IDownloadJob *self, IDownloadProgress** retval) GetProgress;
+				public new function HRESULT(IDownloadJob *self) RequestAbort;
 			}
 		}
 		[CRepr]
@@ -1449,7 +2494,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfa565b23, 0x498c, 0x47a0, 0x97, 0x9d, 0xe7, 0xd5, 0xb1, 0x81, 0x33, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1460,11 +2506,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x77254866, 0x9f5b, 0x4c8e, 0xb9, 0xe2, 0xc7, 0x7a, 0x85, 0x30, 0xd6, 0x4b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Invoke(IDownloadJob* downloadJob, IDownloadCompletedCallbackArgs* callbackArgs) mut
+			{
+				return VT.Invoke(&this, downloadJob, callbackArgs);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDownloadCompletedCallback *self, IDownloadJob* downloadJob, IDownloadCompletedCallbackArgs* callbackArgs) Invoke;
+				public new function HRESULT(IDownloadCompletedCallback *self, IDownloadJob* downloadJob, IDownloadCompletedCallbackArgs* callbackArgs) Invoke;
 			}
 		}
 		[CRepr]
@@ -1472,11 +2523,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x324ff2c6, 0x4981, 0x4b04, 0x94, 0x12, 0x57, 0x48, 0x17, 0x45, 0xab, 0x24);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Progress(IDownloadProgress** retval) mut
+			{
+				return VT.get_Progress(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IDownloadProgressChangedCallbackArgs *self, IDownloadProgress** retval) get_Progress;
+				public new function HRESULT(IDownloadProgressChangedCallbackArgs *self, IDownloadProgress** retval) get_Progress;
 			}
 		}
 		[CRepr]
@@ -1484,11 +2540,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8c3f1cdd, 0x6173, 0x4591, 0xae, 0xbd, 0xa5, 0x6a, 0x53, 0xca, 0x77, 0xc1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Invoke(IDownloadJob* downloadJob, IDownloadProgressChangedCallbackArgs* callbackArgs) mut
+			{
+				return VT.Invoke(&this, downloadJob, callbackArgs);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDownloadProgressChangedCallback *self, IDownloadJob* downloadJob, IDownloadProgressChangedCallbackArgs* callbackArgs) Invoke;
+				public new function HRESULT(IDownloadProgressChangedCallback *self, IDownloadJob* downloadJob, IDownloadProgressChangedCallbackArgs* callbackArgs) Invoke;
 			}
 		}
 		[CRepr]
@@ -1496,21 +2557,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x68f1c6f9, 0x7ecc, 0x4666, 0xa4, 0x64, 0x24, 0x7f, 0xe1, 0x24, 0x96, 0xc3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ClientApplicationID(BSTR* retval) mut
+			{
+				return VT.get_ClientApplicationID(&this, retval);
+			}
+			public HRESULT put_ClientApplicationID(BSTR value) mut
+			{
+				return VT.put_ClientApplicationID(&this, value);
+			}
+			public HRESULT get_IsForced(int16* retval) mut
+			{
+				return VT.get_IsForced(&this, retval);
+			}
+			public HRESULT put_IsForced(int16 value) mut
+			{
+				return VT.put_IsForced(&this, value);
+			}
+			public HRESULT get_Priority(DownloadPriority* retval) mut
+			{
+				return VT.get_Priority(&this, retval);
+			}
+			public HRESULT put_Priority(DownloadPriority value) mut
+			{
+				return VT.put_Priority(&this, value);
+			}
+			public HRESULT get_Updates(IUpdateCollection** retval) mut
+			{
+				return VT.get_Updates(&this, retval);
+			}
+			public HRESULT put_Updates(IUpdateCollection* value) mut
+			{
+				return VT.put_Updates(&this, value);
+			}
+			public HRESULT BeginDownload(IUnknown* onProgressChanged, IUnknown* onCompleted, VARIANT state, IDownloadJob** retval) mut
+			{
+				return VT.BeginDownload(&this, onProgressChanged, onCompleted, state, retval);
+			}
+			public HRESULT Download(IDownloadResult** retval) mut
+			{
+				return VT.Download(&this, retval);
+			}
+			public HRESULT EndDownload(IDownloadJob* value, IDownloadResult** retval) mut
+			{
+				return VT.EndDownload(&this, value, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdateDownloader *self, BSTR* retval) get_ClientApplicationID;
-				public function HRESULT(IUpdateDownloader *self, BSTR value) put_ClientApplicationID;
-				public function HRESULT(IUpdateDownloader *self, int16* retval) get_IsForced;
-				public function HRESULT(IUpdateDownloader *self, int16 value) put_IsForced;
-				public function HRESULT(IUpdateDownloader *self, DownloadPriority* retval) get_Priority;
-				public function HRESULT(IUpdateDownloader *self, DownloadPriority value) put_Priority;
-				public function HRESULT(IUpdateDownloader *self, IUpdateCollection** retval) get_Updates;
-				public function HRESULT(IUpdateDownloader *self, IUpdateCollection* value) put_Updates;
-				public function HRESULT(IUpdateDownloader *self, IUnknown* onProgressChanged, IUnknown* onCompleted, VARIANT state, IDownloadJob** retval) BeginDownload;
-				public function HRESULT(IUpdateDownloader *self, IDownloadResult** retval) Download;
-				public function HRESULT(IUpdateDownloader *self, IDownloadJob* value, IDownloadResult** retval) EndDownload;
+				public new function HRESULT(IUpdateDownloader *self, BSTR* retval) get_ClientApplicationID;
+				public new function HRESULT(IUpdateDownloader *self, BSTR value) put_ClientApplicationID;
+				public new function HRESULT(IUpdateDownloader *self, int16* retval) get_IsForced;
+				public new function HRESULT(IUpdateDownloader *self, int16 value) put_IsForced;
+				public new function HRESULT(IUpdateDownloader *self, DownloadPriority* retval) get_Priority;
+				public new function HRESULT(IUpdateDownloader *self, DownloadPriority value) put_Priority;
+				public new function HRESULT(IUpdateDownloader *self, IUpdateCollection** retval) get_Updates;
+				public new function HRESULT(IUpdateDownloader *self, IUpdateCollection* value) put_Updates;
+				public new function HRESULT(IUpdateDownloader *self, IUnknown* onProgressChanged, IUnknown* onCompleted, VARIANT state, IDownloadJob** retval) BeginDownload;
+				public new function HRESULT(IUpdateDownloader *self, IDownloadResult** retval) Download;
+				public new function HRESULT(IUpdateDownloader *self, IDownloadJob* value, IDownloadResult** retval) EndDownload;
 			}
 		}
 		[CRepr]
@@ -1518,13 +2624,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd940f0f8, 0x3cbb, 0x4fd0, 0x99, 0x3f, 0x47, 0x1e, 0x7f, 0x23, 0x28, 0xad);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_HResult(int32* retval) mut
+			{
+				return VT.get_HResult(&this, retval);
+			}
+			public HRESULT get_RebootRequired(int16* retval) mut
+			{
+				return VT.get_RebootRequired(&this, retval);
+			}
+			public HRESULT get_ResultCode(OperationResultCode* retval) mut
+			{
+				return VT.get_ResultCode(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdateInstallationResult *self, int32* retval) get_HResult;
-				public function HRESULT(IUpdateInstallationResult *self, int16* retval) get_RebootRequired;
-				public function HRESULT(IUpdateInstallationResult *self, OperationResultCode* retval) get_ResultCode;
+				public new function HRESULT(IUpdateInstallationResult *self, int32* retval) get_HResult;
+				public new function HRESULT(IUpdateInstallationResult *self, int16* retval) get_RebootRequired;
+				public new function HRESULT(IUpdateInstallationResult *self, OperationResultCode* retval) get_ResultCode;
 			}
 		}
 		[CRepr]
@@ -1532,14 +2651,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa43c56d6, 0x7451, 0x48d4, 0xaf, 0x96, 0xb6, 0xcd, 0x2d, 0x0d, 0x9b, 0x7a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_HResult(int32* retval) mut
+			{
+				return VT.get_HResult(&this, retval);
+			}
+			public HRESULT get_RebootRequired(int16* retval) mut
+			{
+				return VT.get_RebootRequired(&this, retval);
+			}
+			public HRESULT get_ResultCode(OperationResultCode* retval) mut
+			{
+				return VT.get_ResultCode(&this, retval);
+			}
+			public HRESULT GetUpdateResult(int32 updateIndex, IUpdateInstallationResult** retval) mut
+			{
+				return VT.GetUpdateResult(&this, updateIndex, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IInstallationResult *self, int32* retval) get_HResult;
-				public function HRESULT(IInstallationResult *self, int16* retval) get_RebootRequired;
-				public function HRESULT(IInstallationResult *self, OperationResultCode* retval) get_ResultCode;
-				public function HRESULT(IInstallationResult *self, int32 updateIndex, IUpdateInstallationResult** retval) GetUpdateResult;
+				public new function HRESULT(IInstallationResult *self, int32* retval) get_HResult;
+				public new function HRESULT(IInstallationResult *self, int16* retval) get_RebootRequired;
+				public new function HRESULT(IInstallationResult *self, OperationResultCode* retval) get_ResultCode;
+				public new function HRESULT(IInstallationResult *self, int32 updateIndex, IUpdateInstallationResult** retval) GetUpdateResult;
 			}
 		}
 		[CRepr]
@@ -1547,14 +2683,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x345c8244, 0x43a3, 0x4e32, 0xa3, 0x68, 0x65, 0xf0, 0x73, 0xb7, 0x6f, 0x36);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CurrentUpdateIndex(int32* retval) mut
+			{
+				return VT.get_CurrentUpdateIndex(&this, retval);
+			}
+			public HRESULT get_CurrentUpdatePercentComplete(int32* retval) mut
+			{
+				return VT.get_CurrentUpdatePercentComplete(&this, retval);
+			}
+			public HRESULT get_PercentComplete(int32* retval) mut
+			{
+				return VT.get_PercentComplete(&this, retval);
+			}
+			public HRESULT GetUpdateResult(int32 updateIndex, IUpdateInstallationResult** retval) mut
+			{
+				return VT.GetUpdateResult(&this, updateIndex, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IInstallationProgress *self, int32* retval) get_CurrentUpdateIndex;
-				public function HRESULT(IInstallationProgress *self, int32* retval) get_CurrentUpdatePercentComplete;
-				public function HRESULT(IInstallationProgress *self, int32* retval) get_PercentComplete;
-				public function HRESULT(IInstallationProgress *self, int32 updateIndex, IUpdateInstallationResult** retval) GetUpdateResult;
+				public new function HRESULT(IInstallationProgress *self, int32* retval) get_CurrentUpdateIndex;
+				public new function HRESULT(IInstallationProgress *self, int32* retval) get_CurrentUpdatePercentComplete;
+				public new function HRESULT(IInstallationProgress *self, int32* retval) get_PercentComplete;
+				public new function HRESULT(IInstallationProgress *self, int32 updateIndex, IUpdateInstallationResult** retval) GetUpdateResult;
 			}
 		}
 		[CRepr]
@@ -1562,16 +2715,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5c209f0b, 0xbad5, 0x432a, 0x95, 0x56, 0x46, 0x99, 0xbe, 0xd2, 0x63, 0x8a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_AsyncState(VARIANT* retval) mut
+			{
+				return VT.get_AsyncState(&this, retval);
+			}
+			public HRESULT get_IsCompleted(int16* retval) mut
+			{
+				return VT.get_IsCompleted(&this, retval);
+			}
+			public HRESULT get_Updates(IUpdateCollection** retval) mut
+			{
+				return VT.get_Updates(&this, retval);
+			}
+			public HRESULT CleanUp() mut
+			{
+				return VT.CleanUp(&this);
+			}
+			public HRESULT GetProgress(IInstallationProgress** retval) mut
+			{
+				return VT.GetProgress(&this, retval);
+			}
+			public HRESULT RequestAbort() mut
+			{
+				return VT.RequestAbort(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IInstallationJob *self, VARIANT* retval) get_AsyncState;
-				public function HRESULT(IInstallationJob *self, int16* retval) get_IsCompleted;
-				public function HRESULT(IInstallationJob *self, IUpdateCollection** retval) get_Updates;
-				public function HRESULT(IInstallationJob *self) CleanUp;
-				public function HRESULT(IInstallationJob *self, IInstallationProgress** retval) GetProgress;
-				public function HRESULT(IInstallationJob *self) RequestAbort;
+				public new function HRESULT(IInstallationJob *self, VARIANT* retval) get_AsyncState;
+				public new function HRESULT(IInstallationJob *self, int16* retval) get_IsCompleted;
+				public new function HRESULT(IInstallationJob *self, IUpdateCollection** retval) get_Updates;
+				public new function HRESULT(IInstallationJob *self) CleanUp;
+				public new function HRESULT(IInstallationJob *self, IInstallationProgress** retval) GetProgress;
+				public new function HRESULT(IInstallationJob *self) RequestAbort;
 			}
 		}
 		[CRepr]
@@ -1579,7 +2757,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x250e2106, 0x8efb, 0x4705, 0x96, 0x53, 0xef, 0x13, 0xc5, 0x81, 0xb6, 0xa1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -1590,11 +2769,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x45f4f6f3, 0xd602, 0x4f98, 0x9a, 0x8a, 0x3e, 0xfa, 0x15, 0x2a, 0xd2, 0xd3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Invoke(IInstallationJob* installationJob, IInstallationCompletedCallbackArgs* callbackArgs) mut
+			{
+				return VT.Invoke(&this, installationJob, callbackArgs);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IInstallationCompletedCallback *self, IInstallationJob* installationJob, IInstallationCompletedCallbackArgs* callbackArgs) Invoke;
+				public new function HRESULT(IInstallationCompletedCallback *self, IInstallationJob* installationJob, IInstallationCompletedCallbackArgs* callbackArgs) Invoke;
 			}
 		}
 		[CRepr]
@@ -1602,11 +2786,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe4f14e1e, 0x689d, 0x4218, 0xa0, 0xb9, 0xbc, 0x18, 0x9c, 0x48, 0x4a, 0x01);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Progress(IInstallationProgress** retval) mut
+			{
+				return VT.get_Progress(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IInstallationProgressChangedCallbackArgs *self, IInstallationProgress** retval) get_Progress;
+				public new function HRESULT(IInstallationProgressChangedCallbackArgs *self, IInstallationProgress** retval) get_Progress;
 			}
 		}
 		[CRepr]
@@ -1614,11 +2803,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe01402d5, 0xf8da, 0x43ba, 0xa0, 0x12, 0x38, 0x89, 0x4b, 0xd0, 0x48, 0xf1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Invoke(IInstallationJob* installationJob, IInstallationProgressChangedCallbackArgs* callbackArgs) mut
+			{
+				return VT.Invoke(&this, installationJob, callbackArgs);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IInstallationProgressChangedCallback *self, IInstallationJob* installationJob, IInstallationProgressChangedCallbackArgs* callbackArgs) Invoke;
+				public new function HRESULT(IInstallationProgressChangedCallback *self, IInstallationJob* installationJob, IInstallationProgressChangedCallbackArgs* callbackArgs) Invoke;
 			}
 		}
 		[CRepr]
@@ -1626,31 +2820,116 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7b929c68, 0xccdc, 0x4226, 0x96, 0xb1, 0x87, 0x24, 0x60, 0x0b, 0x54, 0xc2);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ClientApplicationID(BSTR* retval) mut
+			{
+				return VT.get_ClientApplicationID(&this, retval);
+			}
+			public HRESULT put_ClientApplicationID(BSTR value) mut
+			{
+				return VT.put_ClientApplicationID(&this, value);
+			}
+			public HRESULT get_IsForced(int16* retval) mut
+			{
+				return VT.get_IsForced(&this, retval);
+			}
+			public HRESULT put_IsForced(int16 value) mut
+			{
+				return VT.put_IsForced(&this, value);
+			}
+			public HRESULT get_ParentHwnd(HWND* retval) mut
+			{
+				return VT.get_ParentHwnd(&this, retval);
+			}
+			public HRESULT put_ParentHwnd(HWND value) mut
+			{
+				return VT.put_ParentHwnd(&this, value);
+			}
+			public HRESULT put_ParentWindow(IUnknown* value) mut
+			{
+				return VT.put_ParentWindow(&this, value);
+			}
+			public HRESULT get_ParentWindow(IUnknown** retval) mut
+			{
+				return VT.get_ParentWindow(&this, retval);
+			}
+			public HRESULT get_Updates(IUpdateCollection** retval) mut
+			{
+				return VT.get_Updates(&this, retval);
+			}
+			public HRESULT put_Updates(IUpdateCollection* value) mut
+			{
+				return VT.put_Updates(&this, value);
+			}
+			public HRESULT BeginInstall(IUnknown* onProgressChanged, IUnknown* onCompleted, VARIANT state, IInstallationJob** retval) mut
+			{
+				return VT.BeginInstall(&this, onProgressChanged, onCompleted, state, retval);
+			}
+			public HRESULT BeginUninstall(IUnknown* onProgressChanged, IUnknown* onCompleted, VARIANT state, IInstallationJob** retval) mut
+			{
+				return VT.BeginUninstall(&this, onProgressChanged, onCompleted, state, retval);
+			}
+			public HRESULT EndInstall(IInstallationJob* value, IInstallationResult** retval) mut
+			{
+				return VT.EndInstall(&this, value, retval);
+			}
+			public HRESULT EndUninstall(IInstallationJob* value, IInstallationResult** retval) mut
+			{
+				return VT.EndUninstall(&this, value, retval);
+			}
+			public HRESULT Install(IInstallationResult** retval) mut
+			{
+				return VT.Install(&this, retval);
+			}
+			public HRESULT RunWizard(BSTR dialogTitle, IInstallationResult** retval) mut
+			{
+				return VT.RunWizard(&this, dialogTitle, retval);
+			}
+			public HRESULT get_IsBusy(int16* retval) mut
+			{
+				return VT.get_IsBusy(&this, retval);
+			}
+			public HRESULT Uninstall(IInstallationResult** retval) mut
+			{
+				return VT.Uninstall(&this, retval);
+			}
+			public HRESULT get_AllowSourcePrompts(int16* retval) mut
+			{
+				return VT.get_AllowSourcePrompts(&this, retval);
+			}
+			public HRESULT put_AllowSourcePrompts(int16 value) mut
+			{
+				return VT.put_AllowSourcePrompts(&this, value);
+			}
+			public HRESULT get_RebootRequiredBeforeInstallation(int16* retval) mut
+			{
+				return VT.get_RebootRequiredBeforeInstallation(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdateInstaller *self, BSTR* retval) get_ClientApplicationID;
-				public function HRESULT(IUpdateInstaller *self, BSTR value) put_ClientApplicationID;
-				public function HRESULT(IUpdateInstaller *self, int16* retval) get_IsForced;
-				public function HRESULT(IUpdateInstaller *self, int16 value) put_IsForced;
-				public function HRESULT(IUpdateInstaller *self, HWND* retval) get_ParentHwnd;
-				public function HRESULT(IUpdateInstaller *self, HWND value) put_ParentHwnd;
-				public function HRESULT(IUpdateInstaller *self, IUnknown* value) put_ParentWindow;
-				public function HRESULT(IUpdateInstaller *self, IUnknown** retval) get_ParentWindow;
-				public function HRESULT(IUpdateInstaller *self, IUpdateCollection** retval) get_Updates;
-				public function HRESULT(IUpdateInstaller *self, IUpdateCollection* value) put_Updates;
-				public function HRESULT(IUpdateInstaller *self, IUnknown* onProgressChanged, IUnknown* onCompleted, VARIANT state, IInstallationJob** retval) BeginInstall;
-				public function HRESULT(IUpdateInstaller *self, IUnknown* onProgressChanged, IUnknown* onCompleted, VARIANT state, IInstallationJob** retval) BeginUninstall;
-				public function HRESULT(IUpdateInstaller *self, IInstallationJob* value, IInstallationResult** retval) EndInstall;
-				public function HRESULT(IUpdateInstaller *self, IInstallationJob* value, IInstallationResult** retval) EndUninstall;
-				public function HRESULT(IUpdateInstaller *self, IInstallationResult** retval) Install;
-				public function HRESULT(IUpdateInstaller *self, BSTR dialogTitle, IInstallationResult** retval) RunWizard;
-				public function HRESULT(IUpdateInstaller *self, int16* retval) get_IsBusy;
-				public function HRESULT(IUpdateInstaller *self, IInstallationResult** retval) Uninstall;
-				public function HRESULT(IUpdateInstaller *self, int16* retval) get_AllowSourcePrompts;
-				public function HRESULT(IUpdateInstaller *self, int16 value) put_AllowSourcePrompts;
-				public function HRESULT(IUpdateInstaller *self, int16* retval) get_RebootRequiredBeforeInstallation;
+				public new function HRESULT(IUpdateInstaller *self, BSTR* retval) get_ClientApplicationID;
+				public new function HRESULT(IUpdateInstaller *self, BSTR value) put_ClientApplicationID;
+				public new function HRESULT(IUpdateInstaller *self, int16* retval) get_IsForced;
+				public new function HRESULT(IUpdateInstaller *self, int16 value) put_IsForced;
+				public new function HRESULT(IUpdateInstaller *self, HWND* retval) get_ParentHwnd;
+				public new function HRESULT(IUpdateInstaller *self, HWND value) put_ParentHwnd;
+				public new function HRESULT(IUpdateInstaller *self, IUnknown* value) put_ParentWindow;
+				public new function HRESULT(IUpdateInstaller *self, IUnknown** retval) get_ParentWindow;
+				public new function HRESULT(IUpdateInstaller *self, IUpdateCollection** retval) get_Updates;
+				public new function HRESULT(IUpdateInstaller *self, IUpdateCollection* value) put_Updates;
+				public new function HRESULT(IUpdateInstaller *self, IUnknown* onProgressChanged, IUnknown* onCompleted, VARIANT state, IInstallationJob** retval) BeginInstall;
+				public new function HRESULT(IUpdateInstaller *self, IUnknown* onProgressChanged, IUnknown* onCompleted, VARIANT state, IInstallationJob** retval) BeginUninstall;
+				public new function HRESULT(IUpdateInstaller *self, IInstallationJob* value, IInstallationResult** retval) EndInstall;
+				public new function HRESULT(IUpdateInstaller *self, IInstallationJob* value, IInstallationResult** retval) EndUninstall;
+				public new function HRESULT(IUpdateInstaller *self, IInstallationResult** retval) Install;
+				public new function HRESULT(IUpdateInstaller *self, BSTR dialogTitle, IInstallationResult** retval) RunWizard;
+				public new function HRESULT(IUpdateInstaller *self, int16* retval) get_IsBusy;
+				public new function HRESULT(IUpdateInstaller *self, IInstallationResult** retval) Uninstall;
+				public new function HRESULT(IUpdateInstaller *self, int16* retval) get_AllowSourcePrompts;
+				public new function HRESULT(IUpdateInstaller *self, int16 value) put_AllowSourcePrompts;
+				public new function HRESULT(IUpdateInstaller *self, int16* retval) get_RebootRequiredBeforeInstallation;
 			}
 		}
 		[CRepr]
@@ -1658,12 +2937,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3442d4fe, 0x224d, 0x4cee, 0x98, 0xcf, 0x30, 0xe0, 0xc4, 0xd2, 0x29, 0xe6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ForceQuiet(int16* retval) mut
+			{
+				return VT.get_ForceQuiet(&this, retval);
+			}
+			public HRESULT put_ForceQuiet(int16 value) mut
+			{
+				return VT.put_ForceQuiet(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IUpdateInstaller.VTable
 			{
-				public function HRESULT(IUpdateInstaller2 *self, int16* retval) get_ForceQuiet;
-				public function HRESULT(IUpdateInstaller2 *self, int16 value) put_ForceQuiet;
+				public new function HRESULT(IUpdateInstaller2 *self, int16* retval) get_ForceQuiet;
+				public new function HRESULT(IUpdateInstaller2 *self, int16 value) put_ForceQuiet;
 			}
 		}
 		[CRepr]
@@ -1671,12 +2959,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x16d11c35, 0x099a, 0x48d0, 0x83, 0x38, 0x5f, 0xae, 0x64, 0x04, 0x7f, 0x8e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_AttemptCloseAppsIfNecessary(int16* retval) mut
+			{
+				return VT.get_AttemptCloseAppsIfNecessary(&this, retval);
+			}
+			public HRESULT put_AttemptCloseAppsIfNecessary(int16 value) mut
+			{
+				return VT.put_AttemptCloseAppsIfNecessary(&this, value);
+			}
 			[CRepr]
 			public struct VTable : IUpdateInstaller2.VTable
 			{
-				public function HRESULT(IUpdateInstaller3 *self, int16* retval) get_AttemptCloseAppsIfNecessary;
-				public function HRESULT(IUpdateInstaller3 *self, int16 value) put_AttemptCloseAppsIfNecessary;
+				public new function HRESULT(IUpdateInstaller3 *self, int16* retval) get_AttemptCloseAppsIfNecessary;
+				public new function HRESULT(IUpdateInstaller3 *self, int16 value) put_AttemptCloseAppsIfNecessary;
 			}
 		}
 		[CRepr]
@@ -1684,11 +2981,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xef8208ea, 0x2304, 0x492d, 0x91, 0x09, 0x23, 0x81, 0x3b, 0x09, 0x58, 0xe1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Commit(uint32 dwFlags) mut
+			{
+				return VT.Commit(&this, dwFlags);
+			}
 			[CRepr]
 			public struct VTable : IUpdateInstaller3.VTable
 			{
-				public function HRESULT(IUpdateInstaller4 *self, uint32 dwFlags) Commit;
+				public new function HRESULT(IUpdateInstaller4 *self, uint32 dwFlags) Commit;
 			}
 		}
 		[CRepr]
@@ -1696,18 +2998,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x816858a4, 0x260d, 0x4260, 0x93, 0x3a, 0x25, 0x85, 0xf1, 0xab, 0xc7, 0x6b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ClientApplicationID(BSTR* retval) mut
+			{
+				return VT.get_ClientApplicationID(&this, retval);
+			}
+			public HRESULT put_ClientApplicationID(BSTR value) mut
+			{
+				return VT.put_ClientApplicationID(&this, value);
+			}
+			public HRESULT get_ReadOnly(int16* retval) mut
+			{
+				return VT.get_ReadOnly(&this, retval);
+			}
+			public HRESULT get_WebProxy(IWebProxy** retval) mut
+			{
+				return VT.get_WebProxy(&this, retval);
+			}
+			public HRESULT put_WebProxy(IWebProxy* value) mut
+			{
+				return VT.put_WebProxy(&this, value);
+			}
+			public HRESULT CreateUpdateSearcher(IUpdateSearcher** retval) mut
+			{
+				return VT.CreateUpdateSearcher(&this, retval);
+			}
+			public HRESULT CreateUpdateDownloader(IUpdateDownloader** retval) mut
+			{
+				return VT.CreateUpdateDownloader(&this, retval);
+			}
+			public HRESULT CreateUpdateInstaller(IUpdateInstaller** retval) mut
+			{
+				return VT.CreateUpdateInstaller(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdateSession *self, BSTR* retval) get_ClientApplicationID;
-				public function HRESULT(IUpdateSession *self, BSTR value) put_ClientApplicationID;
-				public function HRESULT(IUpdateSession *self, int16* retval) get_ReadOnly;
-				public function HRESULT(IUpdateSession *self, IWebProxy** retval) get_WebProxy;
-				public function HRESULT(IUpdateSession *self, IWebProxy* value) put_WebProxy;
-				public function HRESULT(IUpdateSession *self, IUpdateSearcher** retval) CreateUpdateSearcher;
-				public function HRESULT(IUpdateSession *self, IUpdateDownloader** retval) CreateUpdateDownloader;
-				public function HRESULT(IUpdateSession *self, IUpdateInstaller** retval) CreateUpdateInstaller;
+				public new function HRESULT(IUpdateSession *self, BSTR* retval) get_ClientApplicationID;
+				public new function HRESULT(IUpdateSession *self, BSTR value) put_ClientApplicationID;
+				public new function HRESULT(IUpdateSession *self, int16* retval) get_ReadOnly;
+				public new function HRESULT(IUpdateSession *self, IWebProxy** retval) get_WebProxy;
+				public new function HRESULT(IUpdateSession *self, IWebProxy* value) put_WebProxy;
+				public new function HRESULT(IUpdateSession *self, IUpdateSearcher** retval) CreateUpdateSearcher;
+				public new function HRESULT(IUpdateSession *self, IUpdateDownloader** retval) CreateUpdateDownloader;
+				public new function HRESULT(IUpdateSession *self, IUpdateInstaller** retval) CreateUpdateInstaller;
 			}
 		}
 		[CRepr]
@@ -1715,12 +3050,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x91caf7b0, 0xeb23, 0x49ed, 0x99, 0x37, 0xc5, 0x2d, 0x81, 0x7f, 0x46, 0xf7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_UserLocale(uint32* retval) mut
+			{
+				return VT.get_UserLocale(&this, retval);
+			}
+			public HRESULT put_UserLocale(uint32 lcid) mut
+			{
+				return VT.put_UserLocale(&this, lcid);
+			}
 			[CRepr]
 			public struct VTable : IUpdateSession.VTable
 			{
-				public function HRESULT(IUpdateSession2 *self, uint32* retval) get_UserLocale;
-				public function HRESULT(IUpdateSession2 *self, uint32 lcid) put_UserLocale;
+				public new function HRESULT(IUpdateSession2 *self, uint32* retval) get_UserLocale;
+				public new function HRESULT(IUpdateSession2 *self, uint32 lcid) put_UserLocale;
 			}
 		}
 		[CRepr]
@@ -1728,12 +3072,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x918efd1e, 0xb5d8, 0x4c90, 0x85, 0x40, 0xae, 0xb9, 0xbd, 0xc5, 0x6f, 0x9d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateUpdateServiceManager(IUpdateServiceManager2** retval) mut
+			{
+				return VT.CreateUpdateServiceManager(&this, retval);
+			}
+			public HRESULT QueryHistory(BSTR criteria, int32 startIndex, int32 count, IUpdateHistoryEntryCollection** retval) mut
+			{
+				return VT.QueryHistory(&this, criteria, startIndex, count, retval);
+			}
 			[CRepr]
 			public struct VTable : IUpdateSession2.VTable
 			{
-				public function HRESULT(IUpdateSession3 *self, IUpdateServiceManager2** retval) CreateUpdateServiceManager;
-				public function HRESULT(IUpdateSession3 *self, BSTR criteria, int32 startIndex, int32 count, IUpdateHistoryEntryCollection** retval) QueryHistory;
+				public new function HRESULT(IUpdateSession3 *self, IUpdateServiceManager2** retval) CreateUpdateServiceManager;
+				public new function HRESULT(IUpdateSession3 *self, BSTR criteria, int32 startIndex, int32 count, IUpdateHistoryEntryCollection** retval) QueryHistory;
 			}
 		}
 		[CRepr]
@@ -1741,23 +3094,76 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x76b3b17e, 0xaed6, 0x4da5, 0x85, 0xf0, 0x83, 0x58, 0x7f, 0x81, 0xab, 0xe3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Name(BSTR* retval) mut
+			{
+				return VT.get_Name(&this, retval);
+			}
+			public HRESULT get_ContentValidationCert(VARIANT* retval) mut
+			{
+				return VT.get_ContentValidationCert(&this, retval);
+			}
+			public HRESULT get_ExpirationDate(double* retval) mut
+			{
+				return VT.get_ExpirationDate(&this, retval);
+			}
+			public HRESULT get_IsManaged(int16* retval) mut
+			{
+				return VT.get_IsManaged(&this, retval);
+			}
+			public HRESULT get_IsRegisteredWithAU(int16* retval) mut
+			{
+				return VT.get_IsRegisteredWithAU(&this, retval);
+			}
+			public HRESULT get_IssueDate(double* retval) mut
+			{
+				return VT.get_IssueDate(&this, retval);
+			}
+			public HRESULT get_OffersWindowsUpdates(int16* retval) mut
+			{
+				return VT.get_OffersWindowsUpdates(&this, retval);
+			}
+			public HRESULT get_RedirectUrls(IStringCollection** retval) mut
+			{
+				return VT.get_RedirectUrls(&this, retval);
+			}
+			public HRESULT get_ServiceID(BSTR* retval) mut
+			{
+				return VT.get_ServiceID(&this, retval);
+			}
+			public HRESULT get_IsScanPackageService(int16* retval) mut
+			{
+				return VT.get_IsScanPackageService(&this, retval);
+			}
+			public HRESULT get_CanRegisterWithAU(int16* retval) mut
+			{
+				return VT.get_CanRegisterWithAU(&this, retval);
+			}
+			public HRESULT get_ServiceUrl(BSTR* retval) mut
+			{
+				return VT.get_ServiceUrl(&this, retval);
+			}
+			public HRESULT get_SetupPrefix(BSTR* retval) mut
+			{
+				return VT.get_SetupPrefix(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdateService *self, BSTR* retval) get_Name;
-				public function HRESULT(IUpdateService *self, VARIANT* retval) get_ContentValidationCert;
-				public function HRESULT(IUpdateService *self, double* retval) get_ExpirationDate;
-				public function HRESULT(IUpdateService *self, int16* retval) get_IsManaged;
-				public function HRESULT(IUpdateService *self, int16* retval) get_IsRegisteredWithAU;
-				public function HRESULT(IUpdateService *self, double* retval) get_IssueDate;
-				public function HRESULT(IUpdateService *self, int16* retval) get_OffersWindowsUpdates;
-				public function HRESULT(IUpdateService *self, IStringCollection** retval) get_RedirectUrls;
-				public function HRESULT(IUpdateService *self, BSTR* retval) get_ServiceID;
-				public function HRESULT(IUpdateService *self, int16* retval) get_IsScanPackageService;
-				public function HRESULT(IUpdateService *self, int16* retval) get_CanRegisterWithAU;
-				public function HRESULT(IUpdateService *self, BSTR* retval) get_ServiceUrl;
-				public function HRESULT(IUpdateService *self, BSTR* retval) get_SetupPrefix;
+				public new function HRESULT(IUpdateService *self, BSTR* retval) get_Name;
+				public new function HRESULT(IUpdateService *self, VARIANT* retval) get_ContentValidationCert;
+				public new function HRESULT(IUpdateService *self, double* retval) get_ExpirationDate;
+				public new function HRESULT(IUpdateService *self, int16* retval) get_IsManaged;
+				public new function HRESULT(IUpdateService *self, int16* retval) get_IsRegisteredWithAU;
+				public new function HRESULT(IUpdateService *self, double* retval) get_IssueDate;
+				public new function HRESULT(IUpdateService *self, int16* retval) get_OffersWindowsUpdates;
+				public new function HRESULT(IUpdateService *self, IStringCollection** retval) get_RedirectUrls;
+				public new function HRESULT(IUpdateService *self, BSTR* retval) get_ServiceID;
+				public new function HRESULT(IUpdateService *self, int16* retval) get_IsScanPackageService;
+				public new function HRESULT(IUpdateService *self, int16* retval) get_CanRegisterWithAU;
+				public new function HRESULT(IUpdateService *self, BSTR* retval) get_ServiceUrl;
+				public new function HRESULT(IUpdateService *self, BSTR* retval) get_SetupPrefix;
 			}
 		}
 		[CRepr]
@@ -1765,11 +3171,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1518b460, 0x6518, 0x4172, 0x94, 0x0f, 0xc7, 0x58, 0x83, 0xb2, 0x4c, 0xeb);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_IsDefaultAUService(int16* retval) mut
+			{
+				return VT.get_IsDefaultAUService(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IUpdateService.VTable
 			{
-				public function HRESULT(IUpdateService2 *self, int16* retval) get_IsDefaultAUService;
+				public new function HRESULT(IUpdateService2 *self, int16* retval) get_IsDefaultAUService;
 			}
 		}
 		[CRepr]
@@ -1777,13 +3188,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9b0353aa, 0x0e52, 0x44ff, 0xb8, 0xb0, 0x1f, 0x7f, 0xa0, 0x43, 0x7f, 0x88);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Item(int32 index, IUpdateService** retval) mut
+			{
+				return VT.get_Item(&this, index, retval);
+			}
+			public HRESULT get__NewEnum(IUnknown** retval) mut
+			{
+				return VT.get__NewEnum(&this, retval);
+			}
+			public HRESULT get_Count(int32* retval) mut
+			{
+				return VT.get_Count(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdateServiceCollection *self, int32 index, IUpdateService** retval) get_Item;
-				public function HRESULT(IUpdateServiceCollection *self, IUnknown** retval) get__NewEnum;
-				public function HRESULT(IUpdateServiceCollection *self, int32* retval) get_Count;
+				public new function HRESULT(IUpdateServiceCollection *self, int32 index, IUpdateService** retval) get_Item;
+				public new function HRESULT(IUpdateServiceCollection *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(IUpdateServiceCollection *self, int32* retval) get_Count;
 			}
 		}
 		[CRepr]
@@ -1791,14 +3215,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdde02280, 0x12b3, 0x4e0b, 0x93, 0x7b, 0x67, 0x47, 0xf6, 0xac, 0xb2, 0x86);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_RegistrationState(UpdateServiceRegistrationState* retval) mut
+			{
+				return VT.get_RegistrationState(&this, retval);
+			}
+			public HRESULT get_ServiceID(BSTR* retval) mut
+			{
+				return VT.get_ServiceID(&this, retval);
+			}
+			public HRESULT get_IsPendingRegistrationWithAU(int16* retval) mut
+			{
+				return VT.get_IsPendingRegistrationWithAU(&this, retval);
+			}
+			public HRESULT get_Service(IUpdateService2** retval) mut
+			{
+				return VT.get_Service(&this, retval);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdateServiceRegistration *self, UpdateServiceRegistrationState* retval) get_RegistrationState;
-				public function HRESULT(IUpdateServiceRegistration *self, BSTR* retval) get_ServiceID;
-				public function HRESULT(IUpdateServiceRegistration *self, int16* retval) get_IsPendingRegistrationWithAU;
-				public function HRESULT(IUpdateServiceRegistration *self, IUpdateService2** retval) get_Service;
+				public new function HRESULT(IUpdateServiceRegistration *self, UpdateServiceRegistrationState* retval) get_RegistrationState;
+				public new function HRESULT(IUpdateServiceRegistration *self, BSTR* retval) get_ServiceID;
+				public new function HRESULT(IUpdateServiceRegistration *self, int16* retval) get_IsPendingRegistrationWithAU;
+				public new function HRESULT(IUpdateServiceRegistration *self, IUpdateService2** retval) get_Service;
 			}
 		}
 		[CRepr]
@@ -1806,17 +3247,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x23857e3c, 0x02ba, 0x44a3, 0x94, 0x23, 0xb1, 0xc9, 0x00, 0x80, 0x5f, 0x37);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Services(IUpdateServiceCollection** retval) mut
+			{
+				return VT.get_Services(&this, retval);
+			}
+			public HRESULT AddService(BSTR serviceID, BSTR authorizationCabPath, IUpdateService** retval) mut
+			{
+				return VT.AddService(&this, serviceID, authorizationCabPath, retval);
+			}
+			public HRESULT RegisterServiceWithAU(BSTR serviceID) mut
+			{
+				return VT.RegisterServiceWithAU(&this, serviceID);
+			}
+			public HRESULT RemoveService(BSTR serviceID) mut
+			{
+				return VT.RemoveService(&this, serviceID);
+			}
+			public HRESULT UnregisterServiceWithAU(BSTR serviceID) mut
+			{
+				return VT.UnregisterServiceWithAU(&this, serviceID);
+			}
+			public HRESULT AddScanPackageService(BSTR serviceName, BSTR scanFileLocation, int32 flags, IUpdateService** ppService) mut
+			{
+				return VT.AddScanPackageService(&this, serviceName, scanFileLocation, flags, ppService);
+			}
+			public HRESULT SetOption(BSTR optionName, VARIANT optionValue) mut
+			{
+				return VT.SetOption(&this, optionName, optionValue);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IUpdateServiceManager *self, IUpdateServiceCollection** retval) get_Services;
-				public function HRESULT(IUpdateServiceManager *self, BSTR serviceID, BSTR authorizationCabPath, IUpdateService** retval) AddService;
-				public function HRESULT(IUpdateServiceManager *self, BSTR serviceID) RegisterServiceWithAU;
-				public function HRESULT(IUpdateServiceManager *self, BSTR serviceID) RemoveService;
-				public function HRESULT(IUpdateServiceManager *self, BSTR serviceID) UnregisterServiceWithAU;
-				public function HRESULT(IUpdateServiceManager *self, BSTR serviceName, BSTR scanFileLocation, int32 flags, IUpdateService** ppService) AddScanPackageService;
-				public function HRESULT(IUpdateServiceManager *self, BSTR optionName, VARIANT optionValue) SetOption;
+				public new function HRESULT(IUpdateServiceManager *self, IUpdateServiceCollection** retval) get_Services;
+				public new function HRESULT(IUpdateServiceManager *self, BSTR serviceID, BSTR authorizationCabPath, IUpdateService** retval) AddService;
+				public new function HRESULT(IUpdateServiceManager *self, BSTR serviceID) RegisterServiceWithAU;
+				public new function HRESULT(IUpdateServiceManager *self, BSTR serviceID) RemoveService;
+				public new function HRESULT(IUpdateServiceManager *self, BSTR serviceID) UnregisterServiceWithAU;
+				public new function HRESULT(IUpdateServiceManager *self, BSTR serviceName, BSTR scanFileLocation, int32 flags, IUpdateService** ppService) AddScanPackageService;
+				public new function HRESULT(IUpdateServiceManager *self, BSTR optionName, VARIANT optionValue) SetOption;
 			}
 		}
 		[CRepr]
@@ -1824,14 +3294,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0bb8531d, 0x7e8d, 0x424f, 0x98, 0x6c, 0xa0, 0xb8, 0xf6, 0x0a, 0x3e, 0x7b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_ClientApplicationID(BSTR* retval) mut
+			{
+				return VT.get_ClientApplicationID(&this, retval);
+			}
+			public HRESULT put_ClientApplicationID(BSTR value) mut
+			{
+				return VT.put_ClientApplicationID(&this, value);
+			}
+			public HRESULT QueryServiceRegistration(BSTR serviceID, IUpdateServiceRegistration** retval) mut
+			{
+				return VT.QueryServiceRegistration(&this, serviceID, retval);
+			}
+			public HRESULT AddService2(BSTR serviceID, int32 flags, BSTR authorizationCabPath, IUpdateServiceRegistration** retval) mut
+			{
+				return VT.AddService2(&this, serviceID, flags, authorizationCabPath, retval);
+			}
 			[CRepr]
 			public struct VTable : IUpdateServiceManager.VTable
 			{
-				public function HRESULT(IUpdateServiceManager2 *self, BSTR* retval) get_ClientApplicationID;
-				public function HRESULT(IUpdateServiceManager2 *self, BSTR value) put_ClientApplicationID;
-				public function HRESULT(IUpdateServiceManager2 *self, BSTR serviceID, IUpdateServiceRegistration** retval) QueryServiceRegistration;
-				public function HRESULT(IUpdateServiceManager2 *self, BSTR serviceID, int32 flags, BSTR authorizationCabPath, IUpdateServiceRegistration** retval) AddService2;
+				public new function HRESULT(IUpdateServiceManager2 *self, BSTR* retval) get_ClientApplicationID;
+				public new function HRESULT(IUpdateServiceManager2 *self, BSTR value) put_ClientApplicationID;
+				public new function HRESULT(IUpdateServiceManager2 *self, BSTR serviceID, IUpdateServiceRegistration** retval) QueryServiceRegistration;
+				public new function HRESULT(IUpdateServiceManager2 *self, BSTR serviceID, int32 flags, BSTR authorizationCabPath, IUpdateServiceRegistration** retval) AddService2;
 			}
 		}
 		[CRepr]
@@ -1839,11 +3326,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x925cbc18, 0xa2ea, 0x4648, 0xbf, 0x1c, 0xec, 0x8b, 0xad, 0xcf, 0xe2, 0x0a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RecordInstallationResult(BSTR installationResultCookie, int32 hresult, IStringCollection* extendedReportingData) mut
+			{
+				return VT.RecordInstallationResult(&this, installationResultCookie, hresult, extendedReportingData);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IInstallationAgent *self, BSTR installationResultCookie, int32 hresult, IStringCollection* extendedReportingData) RecordInstallationResult;
+				public new function HRESULT(IInstallationAgent *self, BSTR installationResultCookie, int32 hresult, IStringCollection* extendedReportingData) RecordInstallationResult;
 			}
 		}
 		

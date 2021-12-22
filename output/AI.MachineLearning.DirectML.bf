@@ -1802,14 +1802,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc8263aac, 0x9e0c, 0x4a2d, 0x9b, 0x8e, 0x00, 0x75, 0x21, 0xa3, 0x31, 0x7c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPrivateData(Guid* guid, uint32* dataSize, void* data) mut
+			{
+				return VT.GetPrivateData(&this, guid, dataSize, data);
+			}
+			public HRESULT SetPrivateData(Guid* guid, uint32 dataSize, void* data) mut
+			{
+				return VT.SetPrivateData(&this, guid, dataSize, data);
+			}
+			public HRESULT SetPrivateDataInterface(Guid* guid, IUnknown* data) mut
+			{
+				return VT.SetPrivateDataInterface(&this, guid, data);
+			}
+			public HRESULT SetName(PWSTR name) mut
+			{
+				return VT.SetName(&this, name);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDMLObject *self, Guid* guid, uint32* dataSize, void* data) GetPrivateData;
-				public function HRESULT(IDMLObject *self, Guid* guid, uint32 dataSize, void* data) SetPrivateData;
-				public function HRESULT(IDMLObject *self, Guid* guid, IUnknown* data) SetPrivateDataInterface;
-				public function HRESULT(IDMLObject *self, PWSTR name) SetName;
+				public new function HRESULT(IDMLObject *self, Guid* guid, uint32* dataSize, void* data) GetPrivateData;
+				public new function HRESULT(IDMLObject *self, Guid* guid, uint32 dataSize, void* data) SetPrivateData;
+				public new function HRESULT(IDMLObject *self, Guid* guid, IUnknown* data) SetPrivateDataInterface;
+				public new function HRESULT(IDMLObject *self, PWSTR name) SetName;
 			}
 		}
 		[CRepr]
@@ -1817,20 +1834,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6dbd6437, 0x96fd, 0x423f, 0xa9, 0x8c, 0xae, 0x5e, 0x7c, 0x2a, 0x57, 0x3f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CheckFeatureSupport(DML_FEATURE feature, uint32 featureQueryDataSize, void* featureQueryData, uint32 featureSupportDataSize, void* featureSupportData) mut
+			{
+				return VT.CheckFeatureSupport(&this, feature, featureQueryDataSize, featureQueryData, featureSupportDataSize, featureSupportData);
+			}
+			public HRESULT CreateOperator(DML_OPERATOR_DESC* desc, Guid* riid, void** ppv) mut
+			{
+				return VT.CreateOperator(&this, desc, riid, ppv);
+			}
+			public HRESULT CompileOperator(IDMLOperator* op, DML_EXECUTION_FLAGS flags, Guid* riid, void** ppv) mut
+			{
+				return VT.CompileOperator(&this, op, flags, riid, ppv);
+			}
+			public HRESULT CreateOperatorInitializer(uint32 operatorCount, IDMLCompiledOperator** operators, Guid* riid, void** ppv) mut
+			{
+				return VT.CreateOperatorInitializer(&this, operatorCount, operators, riid, ppv);
+			}
+			public HRESULT CreateCommandRecorder(Guid* riid, void** ppv) mut
+			{
+				return VT.CreateCommandRecorder(&this, riid, ppv);
+			}
+			public HRESULT CreateBindingTable(DML_BINDING_TABLE_DESC* desc, Guid* riid, void** ppv) mut
+			{
+				return VT.CreateBindingTable(&this, desc, riid, ppv);
+			}
+			public HRESULT Evict(uint32 count, IDMLPageable** ppObjects) mut
+			{
+				return VT.Evict(&this, count, ppObjects);
+			}
+			public HRESULT MakeResident(uint32 count, IDMLPageable** ppObjects) mut
+			{
+				return VT.MakeResident(&this, count, ppObjects);
+			}
+			public HRESULT GetDeviceRemovedReason() mut
+			{
+				return VT.GetDeviceRemovedReason(&this);
+			}
+			public HRESULT GetParentDevice(Guid* riid, void** ppv) mut
+			{
+				return VT.GetParentDevice(&this, riid, ppv);
+			}
 			[CRepr]
 			public struct VTable : IDMLObject.VTable
 			{
-				public function HRESULT(IDMLDevice *self, DML_FEATURE feature, uint32 featureQueryDataSize, void* featureQueryData, uint32 featureSupportDataSize, void* featureSupportData) CheckFeatureSupport;
-				public function HRESULT(IDMLDevice *self, DML_OPERATOR_DESC* desc, Guid* riid, void** ppv) CreateOperator;
-				public function HRESULT(IDMLDevice *self, IDMLOperator* op, DML_EXECUTION_FLAGS flags, Guid* riid, void** ppv) CompileOperator;
-				public function HRESULT(IDMLDevice *self, uint32 operatorCount, IDMLCompiledOperator** operators, Guid* riid, void** ppv) CreateOperatorInitializer;
-				public function HRESULT(IDMLDevice *self, Guid* riid, void** ppv) CreateCommandRecorder;
-				public function HRESULT(IDMLDevice *self, DML_BINDING_TABLE_DESC* desc, Guid* riid, void** ppv) CreateBindingTable;
-				public function HRESULT(IDMLDevice *self, uint32 count, IDMLPageable** ppObjects) Evict;
-				public function HRESULT(IDMLDevice *self, uint32 count, IDMLPageable** ppObjects) MakeResident;
-				public function HRESULT(IDMLDevice *self) GetDeviceRemovedReason;
-				public function HRESULT(IDMLDevice *self, Guid* riid, void** ppv) GetParentDevice;
+				public new function HRESULT(IDMLDevice *self, DML_FEATURE feature, uint32 featureQueryDataSize, void* featureQueryData, uint32 featureSupportDataSize, void* featureSupportData) CheckFeatureSupport;
+				public new function HRESULT(IDMLDevice *self, DML_OPERATOR_DESC* desc, Guid* riid, void** ppv) CreateOperator;
+				public new function HRESULT(IDMLDevice *self, IDMLOperator* op, DML_EXECUTION_FLAGS flags, Guid* riid, void** ppv) CompileOperator;
+				public new function HRESULT(IDMLDevice *self, uint32 operatorCount, IDMLCompiledOperator** operators, Guid* riid, void** ppv) CreateOperatorInitializer;
+				public new function HRESULT(IDMLDevice *self, Guid* riid, void** ppv) CreateCommandRecorder;
+				public new function HRESULT(IDMLDevice *self, DML_BINDING_TABLE_DESC* desc, Guid* riid, void** ppv) CreateBindingTable;
+				public new function HRESULT(IDMLDevice *self, uint32 count, IDMLPageable** ppObjects) Evict;
+				public new function HRESULT(IDMLDevice *self, uint32 count, IDMLPageable** ppObjects) MakeResident;
+				public new function HRESULT(IDMLDevice *self) GetDeviceRemovedReason;
+				public new function HRESULT(IDMLDevice *self, Guid* riid, void** ppv) GetParentDevice;
 			}
 		}
 		[CRepr]
@@ -1838,11 +1896,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x27e83142, 0x8165, 0x49e3, 0x97, 0x4e, 0x2f, 0xd6, 0x6e, 0x4c, 0xb6, 0x9d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDevice(Guid* riid, void** ppv) mut
+			{
+				return VT.GetDevice(&this, riid, ppv);
+			}
 			[CRepr]
 			public struct VTable : IDMLObject.VTable
 			{
-				public function HRESULT(IDMLDeviceChild *self, Guid* riid, void** ppv) GetDevice;
+				public new function HRESULT(IDMLDeviceChild *self, Guid* riid, void** ppv) GetDevice;
 			}
 		}
 		[CRepr]
@@ -1850,7 +1913,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb1ab0825, 0x4542, 0x4a4b, 0x86, 0x17, 0x6d, 0xde, 0x6e, 0x8f, 0x62, 0x01);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IDMLDeviceChild.VTable
 			{
@@ -1861,7 +1925,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x26caae7a, 0x3081, 0x4633, 0x95, 0x81, 0x22, 0x6f, 0xbe, 0x57, 0x69, 0x5d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IDMLDeviceChild.VTable
 			{
@@ -1872,11 +1937,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdcb821a8, 0x1039, 0x441e, 0x9f, 0x1c, 0xb1, 0x75, 0x9c, 0x2f, 0x3c, 0xec);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public DML_BINDING_PROPERTIES GetBindingProperties() mut
+			{
+				return VT.GetBindingProperties(&this);
+			}
 			[CRepr]
 			public struct VTable : IDMLPageable.VTable
 			{
-				public function DML_BINDING_PROPERTIES(IDMLDispatchable *self) GetBindingProperties;
+				public new function DML_BINDING_PROPERTIES(IDMLDispatchable *self) GetBindingProperties;
 			}
 		}
 		[CRepr]
@@ -1884,7 +1954,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6b15e56a, 0xbf5c, 0x4902, 0x92, 0xd8, 0xda, 0x3a, 0x65, 0x0a, 0xfe, 0xa4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IDMLDispatchable.VTable
 			{
@@ -1895,11 +1966,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x427c1113, 0x435c, 0x469c, 0x86, 0x76, 0x4d, 0x5d, 0xd0, 0x72, 0xf8, 0x13);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Reset(uint32 operatorCount, IDMLCompiledOperator** operators) mut
+			{
+				return VT.Reset(&this, operatorCount, operators);
+			}
 			[CRepr]
 			public struct VTable : IDMLDispatchable.VTable
 			{
-				public function HRESULT(IDMLOperatorInitializer *self, uint32 operatorCount, IDMLCompiledOperator** operators) Reset;
+				public new function HRESULT(IDMLOperatorInitializer *self, uint32 operatorCount, IDMLCompiledOperator** operators) Reset;
 			}
 		}
 		[CRepr]
@@ -1907,15 +1983,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x29c687dc, 0xde74, 0x4e3b, 0xab, 0x00, 0x11, 0x68, 0xf2, 0xfc, 0x3c, 0xfc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void BindInputs(uint32 bindingCount, DML_BINDING_DESC* bindings) mut
+			{
+				VT.BindInputs(&this, bindingCount, bindings);
+			}
+			public void BindOutputs(uint32 bindingCount, DML_BINDING_DESC* bindings) mut
+			{
+				VT.BindOutputs(&this, bindingCount, bindings);
+			}
+			public void BindTemporaryResource(DML_BINDING_DESC* binding) mut
+			{
+				VT.BindTemporaryResource(&this, binding);
+			}
+			public void BindPersistentResource(DML_BINDING_DESC* binding) mut
+			{
+				VT.BindPersistentResource(&this, binding);
+			}
+			public HRESULT Reset(DML_BINDING_TABLE_DESC* desc) mut
+			{
+				return VT.Reset(&this, desc);
+			}
 			[CRepr]
 			public struct VTable : IDMLDeviceChild.VTable
 			{
-				public function void(IDMLBindingTable *self, uint32 bindingCount, DML_BINDING_DESC* bindings) BindInputs;
-				public function void(IDMLBindingTable *self, uint32 bindingCount, DML_BINDING_DESC* bindings) BindOutputs;
-				public function void(IDMLBindingTable *self, DML_BINDING_DESC* binding) BindTemporaryResource;
-				public function void(IDMLBindingTable *self, DML_BINDING_DESC* binding) BindPersistentResource;
-				public function HRESULT(IDMLBindingTable *self, DML_BINDING_TABLE_DESC* desc) Reset;
+				public new function void(IDMLBindingTable *self, uint32 bindingCount, DML_BINDING_DESC* bindings) BindInputs;
+				public new function void(IDMLBindingTable *self, uint32 bindingCount, DML_BINDING_DESC* bindings) BindOutputs;
+				public new function void(IDMLBindingTable *self, DML_BINDING_DESC* binding) BindTemporaryResource;
+				public new function void(IDMLBindingTable *self, DML_BINDING_DESC* binding) BindPersistentResource;
+				public new function HRESULT(IDMLBindingTable *self, DML_BINDING_TABLE_DESC* desc) Reset;
 			}
 		}
 		[CRepr]
@@ -1923,11 +2020,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe6857a76, 0x2e3e, 0x4fdd, 0xbf, 0xf4, 0x5d, 0x2b, 0xa1, 0x0f, 0xb4, 0x53);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void RecordDispatch(ID3D12CommandList* commandList, IDMLDispatchable* dispatchable, IDMLBindingTable* bindings) mut
+			{
+				VT.RecordDispatch(&this, commandList, dispatchable, bindings);
+			}
 			[CRepr]
 			public struct VTable : IDMLDeviceChild.VTable
 			{
-				public function void(IDMLCommandRecorder *self, ID3D12CommandList* commandList, IDMLDispatchable* dispatchable, IDMLBindingTable* bindings) RecordDispatch;
+				public new function void(IDMLCommandRecorder *self, ID3D12CommandList* commandList, IDMLDispatchable* dispatchable, IDMLBindingTable* bindings) RecordDispatch;
 			}
 		}
 		[CRepr]
@@ -1935,11 +2037,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7d6f3ac9, 0x394a, 0x4ac3, 0x92, 0xa7, 0x39, 0x0c, 0xc5, 0x7a, 0x82, 0x17);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void SetMuteDebugOutput(BOOL mute) mut
+			{
+				VT.SetMuteDebugOutput(&this, mute);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function void(IDMLDebugDevice *self, BOOL mute) SetMuteDebugOutput;
+				public new function void(IDMLDebugDevice *self, BOOL mute) SetMuteDebugOutput;
 			}
 		}
 		[CRepr]
@@ -1947,11 +2054,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa0884f9a, 0xd2be, 0x4355, 0xaa, 0x5d, 0x59, 0x01, 0x28, 0x1a, 0xd1, 0xd2);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CompileGraph(DML_GRAPH_DESC* desc, DML_EXECUTION_FLAGS flags, Guid* riid, void** ppv) mut
+			{
+				return VT.CompileGraph(&this, desc, flags, riid, ppv);
+			}
 			[CRepr]
 			public struct VTable : IDMLDevice.VTable
 			{
-				public function HRESULT(IDMLDevice1 *self, DML_GRAPH_DESC* desc, DML_EXECUTION_FLAGS flags, Guid* riid, void** ppv) CompileGraph;
+				public new function HRESULT(IDMLDevice1 *self, DML_GRAPH_DESC* desc, DML_EXECUTION_FLAGS flags, Guid* riid, void** ppv) CompileGraph;
 			}
 		}
 		

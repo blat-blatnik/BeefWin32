@@ -106,20 +106,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf0db4c7f, 0xfe5a, 0x42a2, 0xbd, 0x62, 0xf2, 0xa6, 0xcf, 0x6f, 0xc8, 0x3e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public Boolean IsValid() mut
+			{
+				return VT.IsValid(&this);
+			}
+			public Boolean IsAttributeSupported(Guid* attributeGUID) mut
+			{
+				return VT.IsAttributeSupported(&this, attributeGUID);
+			}
+			public Boolean IsPropertySupported(DXCoreAdapterProperty property) mut
+			{
+				return VT.IsPropertySupported(&this, property);
+			}
+			public HRESULT GetProperty(DXCoreAdapterProperty property, uint bufferSize, void* propertyData) mut
+			{
+				return VT.GetProperty(&this, property, bufferSize, propertyData);
+			}
+			public HRESULT GetPropertySize(DXCoreAdapterProperty property, uint* bufferSize) mut
+			{
+				return VT.GetPropertySize(&this, property, bufferSize);
+			}
+			public Boolean IsQueryStateSupported(DXCoreAdapterState property) mut
+			{
+				return VT.IsQueryStateSupported(&this, property);
+			}
+			public HRESULT QueryState(DXCoreAdapterState state, uint inputStateDetailsSize, void* inputStateDetails, uint outputBufferSize, void* outputBuffer) mut
+			{
+				return VT.QueryState(&this, state, inputStateDetailsSize, inputStateDetails, outputBufferSize, outputBuffer);
+			}
+			public Boolean IsSetStateSupported(DXCoreAdapterState property) mut
+			{
+				return VT.IsSetStateSupported(&this, property);
+			}
+			public HRESULT SetState(DXCoreAdapterState state, uint inputStateDetailsSize, void* inputStateDetails, uint inputDataSize, void* inputData) mut
+			{
+				return VT.SetState(&this, state, inputStateDetailsSize, inputStateDetails, inputDataSize, inputData);
+			}
+			public HRESULT GetFactory(Guid* riid, void** ppvFactory) mut
+			{
+				return VT.GetFactory(&this, riid, ppvFactory);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function Boolean(IDXCoreAdapter *self) IsValid;
-				public function Boolean(IDXCoreAdapter *self, Guid* attributeGUID) IsAttributeSupported;
-				public function Boolean(IDXCoreAdapter *self, DXCoreAdapterProperty property) IsPropertySupported;
-				public function HRESULT(IDXCoreAdapter *self, DXCoreAdapterProperty property, uint bufferSize, void* propertyData) GetProperty;
-				public function HRESULT(IDXCoreAdapter *self, DXCoreAdapterProperty property, uint* bufferSize) GetPropertySize;
-				public function Boolean(IDXCoreAdapter *self, DXCoreAdapterState property) IsQueryStateSupported;
-				public function HRESULT(IDXCoreAdapter *self, DXCoreAdapterState state, uint inputStateDetailsSize, void* inputStateDetails, uint outputBufferSize, void* outputBuffer) QueryState;
-				public function Boolean(IDXCoreAdapter *self, DXCoreAdapterState property) IsSetStateSupported;
-				public function HRESULT(IDXCoreAdapter *self, DXCoreAdapterState state, uint inputStateDetailsSize, void* inputStateDetails, uint inputDataSize, void* inputData) SetState;
-				public function HRESULT(IDXCoreAdapter *self, Guid* riid, void** ppvFactory) GetFactory;
+				public new function Boolean(IDXCoreAdapter *self) IsValid;
+				public new function Boolean(IDXCoreAdapter *self, Guid* attributeGUID) IsAttributeSupported;
+				public new function Boolean(IDXCoreAdapter *self, DXCoreAdapterProperty property) IsPropertySupported;
+				public new function HRESULT(IDXCoreAdapter *self, DXCoreAdapterProperty property, uint bufferSize, void* propertyData) GetProperty;
+				public new function HRESULT(IDXCoreAdapter *self, DXCoreAdapterProperty property, uint* bufferSize) GetPropertySize;
+				public new function Boolean(IDXCoreAdapter *self, DXCoreAdapterState property) IsQueryStateSupported;
+				public new function HRESULT(IDXCoreAdapter *self, DXCoreAdapterState state, uint inputStateDetailsSize, void* inputStateDetails, uint outputBufferSize, void* outputBuffer) QueryState;
+				public new function Boolean(IDXCoreAdapter *self, DXCoreAdapterState property) IsSetStateSupported;
+				public new function HRESULT(IDXCoreAdapter *self, DXCoreAdapterState state, uint inputStateDetailsSize, void* inputStateDetails, uint inputDataSize, void* inputData) SetState;
+				public new function HRESULT(IDXCoreAdapter *self, Guid* riid, void** ppvFactory) GetFactory;
 			}
 		}
 		[CRepr]
@@ -127,16 +168,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x526c7776, 0x40e9, 0x459b, 0xb7, 0x11, 0xf3, 0x2a, 0xd7, 0x6d, 0xfc, 0x28);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetAdapter(uint32 index, Guid* riid, void** ppvAdapter) mut
+			{
+				return VT.GetAdapter(&this, index, riid, ppvAdapter);
+			}
+			public uint32 GetAdapterCount() mut
+			{
+				return VT.GetAdapterCount(&this);
+			}
+			public Boolean IsStale() mut
+			{
+				return VT.IsStale(&this);
+			}
+			public HRESULT GetFactory(Guid* riid, void** ppvFactory) mut
+			{
+				return VT.GetFactory(&this, riid, ppvFactory);
+			}
+			public HRESULT Sort(uint32 numPreferences, DXCoreAdapterPreference* preferences) mut
+			{
+				return VT.Sort(&this, numPreferences, preferences);
+			}
+			public Boolean IsAdapterPreferenceSupported(DXCoreAdapterPreference preference) mut
+			{
+				return VT.IsAdapterPreferenceSupported(&this, preference);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDXCoreAdapterList *self, uint32 index, Guid* riid, void** ppvAdapter) GetAdapter;
-				public function uint32(IDXCoreAdapterList *self) GetAdapterCount;
-				public function Boolean(IDXCoreAdapterList *self) IsStale;
-				public function HRESULT(IDXCoreAdapterList *self, Guid* riid, void** ppvFactory) GetFactory;
-				public function HRESULT(IDXCoreAdapterList *self, uint32 numPreferences, DXCoreAdapterPreference* preferences) Sort;
-				public function Boolean(IDXCoreAdapterList *self, DXCoreAdapterPreference preference) IsAdapterPreferenceSupported;
+				public new function HRESULT(IDXCoreAdapterList *self, uint32 index, Guid* riid, void** ppvAdapter) GetAdapter;
+				public new function uint32(IDXCoreAdapterList *self) GetAdapterCount;
+				public new function Boolean(IDXCoreAdapterList *self) IsStale;
+				public new function HRESULT(IDXCoreAdapterList *self, Guid* riid, void** ppvFactory) GetFactory;
+				public new function HRESULT(IDXCoreAdapterList *self, uint32 numPreferences, DXCoreAdapterPreference* preferences) Sort;
+				public new function Boolean(IDXCoreAdapterList *self, DXCoreAdapterPreference preference) IsAdapterPreferenceSupported;
 			}
 		}
 		[CRepr]
@@ -144,15 +210,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x78ee5945, 0xc36e, 0x4b13, 0xa6, 0x69, 0x00, 0x5d, 0xd1, 0x1c, 0x0f, 0x06);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateAdapterList(uint32 numAttributes, Guid* filterAttributes, Guid* riid, void** ppvAdapterList) mut
+			{
+				return VT.CreateAdapterList(&this, numAttributes, filterAttributes, riid, ppvAdapterList);
+			}
+			public HRESULT GetAdapterByLuid(LUID* adapterLUID, Guid* riid, void** ppvAdapter) mut
+			{
+				return VT.GetAdapterByLuid(&this, adapterLUID, riid, ppvAdapter);
+			}
+			public Boolean IsNotificationTypeSupported(DXCoreNotificationType notificationType) mut
+			{
+				return VT.IsNotificationTypeSupported(&this, notificationType);
+			}
+			public HRESULT RegisterEventNotification(IUnknown* dxCoreObject, DXCoreNotificationType notificationType, PFN_DXCORE_NOTIFICATION_CALLBACK callbackFunction, void* callbackContext, uint32* eventCookie) mut
+			{
+				return VT.RegisterEventNotification(&this, dxCoreObject, notificationType, callbackFunction, callbackContext, eventCookie);
+			}
+			public HRESULT UnregisterEventNotification(uint32 eventCookie) mut
+			{
+				return VT.UnregisterEventNotification(&this, eventCookie);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDXCoreAdapterFactory *self, uint32 numAttributes, Guid* filterAttributes, Guid* riid, void** ppvAdapterList) CreateAdapterList;
-				public function HRESULT(IDXCoreAdapterFactory *self, LUID* adapterLUID, Guid* riid, void** ppvAdapter) GetAdapterByLuid;
-				public function Boolean(IDXCoreAdapterFactory *self, DXCoreNotificationType notificationType) IsNotificationTypeSupported;
-				public function HRESULT(IDXCoreAdapterFactory *self, IUnknown* dxCoreObject, DXCoreNotificationType notificationType, PFN_DXCORE_NOTIFICATION_CALLBACK callbackFunction, void* callbackContext, uint32* eventCookie) RegisterEventNotification;
-				public function HRESULT(IDXCoreAdapterFactory *self, uint32 eventCookie) UnregisterEventNotification;
+				public new function HRESULT(IDXCoreAdapterFactory *self, uint32 numAttributes, Guid* filterAttributes, Guid* riid, void** ppvAdapterList) CreateAdapterList;
+				public new function HRESULT(IDXCoreAdapterFactory *self, LUID* adapterLUID, Guid* riid, void** ppvAdapter) GetAdapterByLuid;
+				public new function Boolean(IDXCoreAdapterFactory *self, DXCoreNotificationType notificationType) IsNotificationTypeSupported;
+				public new function HRESULT(IDXCoreAdapterFactory *self, IUnknown* dxCoreObject, DXCoreNotificationType notificationType, PFN_DXCORE_NOTIFICATION_CALLBACK callbackFunction, void* callbackContext, uint32* eventCookie) RegisterEventNotification;
+				public new function HRESULT(IDXCoreAdapterFactory *self, uint32 eventCookie) UnregisterEventNotification;
 			}
 		}
 		

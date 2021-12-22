@@ -1199,27 +1199,96 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8b86f485, 0xfd7f, 0x4824, 0x88, 0x6b, 0x40, 0xc5, 0xca, 0xa6, 0x17, 0xcc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Status(FAX_JOB_STATUS_ENUM* pStatus) mut
+			{
+				return VT.get_Status(&this, pStatus);
+			}
+			public HRESULT get_Pages(int32* plPages) mut
+			{
+				return VT.get_Pages(&this, plPages);
+			}
+			public HRESULT get_Size(int32* plSize) mut
+			{
+				return VT.get_Size(&this, plSize);
+			}
+			public HRESULT get_CurrentPage(int32* plCurrentPage) mut
+			{
+				return VT.get_CurrentPage(&this, plCurrentPage);
+			}
+			public HRESULT get_DeviceId(int32* plDeviceId) mut
+			{
+				return VT.get_DeviceId(&this, plDeviceId);
+			}
+			public HRESULT get_CSID(BSTR* pbstrCSID) mut
+			{
+				return VT.get_CSID(&this, pbstrCSID);
+			}
+			public HRESULT get_TSID(BSTR* pbstrTSID) mut
+			{
+				return VT.get_TSID(&this, pbstrTSID);
+			}
+			public HRESULT get_ExtendedStatusCode(FAX_JOB_EXTENDED_STATUS_ENUM* pExtendedStatusCode) mut
+			{
+				return VT.get_ExtendedStatusCode(&this, pExtendedStatusCode);
+			}
+			public HRESULT get_ExtendedStatus(BSTR* pbstrExtendedStatus) mut
+			{
+				return VT.get_ExtendedStatus(&this, pbstrExtendedStatus);
+			}
+			public HRESULT get_AvailableOperations(FAX_JOB_OPERATIONS_ENUM* pAvailableOperations) mut
+			{
+				return VT.get_AvailableOperations(&this, pAvailableOperations);
+			}
+			public HRESULT get_Retries(int32* plRetries) mut
+			{
+				return VT.get_Retries(&this, plRetries);
+			}
+			public HRESULT get_JobType(FAX_JOB_TYPE_ENUM* pJobType) mut
+			{
+				return VT.get_JobType(&this, pJobType);
+			}
+			public HRESULT get_ScheduledTime(double* pdateScheduledTime) mut
+			{
+				return VT.get_ScheduledTime(&this, pdateScheduledTime);
+			}
+			public HRESULT get_TransmissionStart(double* pdateTransmissionStart) mut
+			{
+				return VT.get_TransmissionStart(&this, pdateTransmissionStart);
+			}
+			public HRESULT get_TransmissionEnd(double* pdateTransmissionEnd) mut
+			{
+				return VT.get_TransmissionEnd(&this, pdateTransmissionEnd);
+			}
+			public HRESULT get_CallerId(BSTR* pbstrCallerId) mut
+			{
+				return VT.get_CallerId(&this, pbstrCallerId);
+			}
+			public HRESULT get_RoutingInformation(BSTR* pbstrRoutingInformation) mut
+			{
+				return VT.get_RoutingInformation(&this, pbstrRoutingInformation);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxJobStatus *self, FAX_JOB_STATUS_ENUM* pStatus) get_Status;
-				public function HRESULT(IFaxJobStatus *self, int32* plPages) get_Pages;
-				public function HRESULT(IFaxJobStatus *self, int32* plSize) get_Size;
-				public function HRESULT(IFaxJobStatus *self, int32* plCurrentPage) get_CurrentPage;
-				public function HRESULT(IFaxJobStatus *self, int32* plDeviceId) get_DeviceId;
-				public function HRESULT(IFaxJobStatus *self, BSTR* pbstrCSID) get_CSID;
-				public function HRESULT(IFaxJobStatus *self, BSTR* pbstrTSID) get_TSID;
-				public function HRESULT(IFaxJobStatus *self, FAX_JOB_EXTENDED_STATUS_ENUM* pExtendedStatusCode) get_ExtendedStatusCode;
-				public function HRESULT(IFaxJobStatus *self, BSTR* pbstrExtendedStatus) get_ExtendedStatus;
-				public function HRESULT(IFaxJobStatus *self, FAX_JOB_OPERATIONS_ENUM* pAvailableOperations) get_AvailableOperations;
-				public function HRESULT(IFaxJobStatus *self, int32* plRetries) get_Retries;
-				public function HRESULT(IFaxJobStatus *self, FAX_JOB_TYPE_ENUM* pJobType) get_JobType;
-				public function HRESULT(IFaxJobStatus *self, double* pdateScheduledTime) get_ScheduledTime;
-				public function HRESULT(IFaxJobStatus *self, double* pdateTransmissionStart) get_TransmissionStart;
-				public function HRESULT(IFaxJobStatus *self, double* pdateTransmissionEnd) get_TransmissionEnd;
-				public function HRESULT(IFaxJobStatus *self, BSTR* pbstrCallerId) get_CallerId;
-				public function HRESULT(IFaxJobStatus *self, BSTR* pbstrRoutingInformation) get_RoutingInformation;
+				public new function HRESULT(IFaxJobStatus *self, FAX_JOB_STATUS_ENUM* pStatus) get_Status;
+				public new function HRESULT(IFaxJobStatus *self, int32* plPages) get_Pages;
+				public new function HRESULT(IFaxJobStatus *self, int32* plSize) get_Size;
+				public new function HRESULT(IFaxJobStatus *self, int32* plCurrentPage) get_CurrentPage;
+				public new function HRESULT(IFaxJobStatus *self, int32* plDeviceId) get_DeviceId;
+				public new function HRESULT(IFaxJobStatus *self, BSTR* pbstrCSID) get_CSID;
+				public new function HRESULT(IFaxJobStatus *self, BSTR* pbstrTSID) get_TSID;
+				public new function HRESULT(IFaxJobStatus *self, FAX_JOB_EXTENDED_STATUS_ENUM* pExtendedStatusCode) get_ExtendedStatusCode;
+				public new function HRESULT(IFaxJobStatus *self, BSTR* pbstrExtendedStatus) get_ExtendedStatus;
+				public new function HRESULT(IFaxJobStatus *self, FAX_JOB_OPERATIONS_ENUM* pAvailableOperations) get_AvailableOperations;
+				public new function HRESULT(IFaxJobStatus *self, int32* plRetries) get_Retries;
+				public new function HRESULT(IFaxJobStatus *self, FAX_JOB_TYPE_ENUM* pJobType) get_JobType;
+				public new function HRESULT(IFaxJobStatus *self, double* pdateScheduledTime) get_ScheduledTime;
+				public new function HRESULT(IFaxJobStatus *self, double* pdateTransmissionStart) get_TransmissionStart;
+				public new function HRESULT(IFaxJobStatus *self, double* pdateTransmissionEnd) get_TransmissionEnd;
+				public new function HRESULT(IFaxJobStatus *self, BSTR* pbstrCallerId) get_CallerId;
+				public new function HRESULT(IFaxJobStatus *self, BSTR* pbstrRoutingInformation) get_RoutingInformation;
 			}
 		}
 		[CRepr]
@@ -1227,36 +1296,141 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x475b6469, 0x90a5, 0x4878, 0xa5, 0x77, 0x17, 0xa8, 0x6e, 0x8e, 0x34, 0x62);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Connect(BSTR bstrServerName) mut
+			{
+				return VT.Connect(&this, bstrServerName);
+			}
+			public HRESULT get_ServerName(BSTR* pbstrServerName) mut
+			{
+				return VT.get_ServerName(&this, pbstrServerName);
+			}
+			public HRESULT GetDeviceProviders(IFaxDeviceProviders** ppFaxDeviceProviders) mut
+			{
+				return VT.GetDeviceProviders(&this, ppFaxDeviceProviders);
+			}
+			public HRESULT GetDevices(IFaxDevices** ppFaxDevices) mut
+			{
+				return VT.GetDevices(&this, ppFaxDevices);
+			}
+			public HRESULT get_InboundRouting(IFaxInboundRouting** ppFaxInboundRouting) mut
+			{
+				return VT.get_InboundRouting(&this, ppFaxInboundRouting);
+			}
+			public HRESULT get_Folders(IFaxFolders** pFaxFolders) mut
+			{
+				return VT.get_Folders(&this, pFaxFolders);
+			}
+			public HRESULT get_LoggingOptions(IFaxLoggingOptions** ppFaxLoggingOptions) mut
+			{
+				return VT.get_LoggingOptions(&this, ppFaxLoggingOptions);
+			}
+			public HRESULT get_MajorVersion(int32* plMajorVersion) mut
+			{
+				return VT.get_MajorVersion(&this, plMajorVersion);
+			}
+			public HRESULT get_MinorVersion(int32* plMinorVersion) mut
+			{
+				return VT.get_MinorVersion(&this, plMinorVersion);
+			}
+			public HRESULT get_MajorBuild(int32* plMajorBuild) mut
+			{
+				return VT.get_MajorBuild(&this, plMajorBuild);
+			}
+			public HRESULT get_MinorBuild(int32* plMinorBuild) mut
+			{
+				return VT.get_MinorBuild(&this, plMinorBuild);
+			}
+			public HRESULT get_Debug(int16* pbDebug) mut
+			{
+				return VT.get_Debug(&this, pbDebug);
+			}
+			public HRESULT get_Activity(IFaxActivity** ppFaxActivity) mut
+			{
+				return VT.get_Activity(&this, ppFaxActivity);
+			}
+			public HRESULT get_OutboundRouting(IFaxOutboundRouting** ppFaxOutboundRouting) mut
+			{
+				return VT.get_OutboundRouting(&this, ppFaxOutboundRouting);
+			}
+			public HRESULT get_ReceiptOptions(IFaxReceiptOptions** ppFaxReceiptOptions) mut
+			{
+				return VT.get_ReceiptOptions(&this, ppFaxReceiptOptions);
+			}
+			public HRESULT get_Security(IFaxSecurity** ppFaxSecurity) mut
+			{
+				return VT.get_Security(&this, ppFaxSecurity);
+			}
+			public HRESULT Disconnect() mut
+			{
+				return VT.Disconnect(&this);
+			}
+			public HRESULT GetExtensionProperty(BSTR bstrGUID, VARIANT* pvProperty) mut
+			{
+				return VT.GetExtensionProperty(&this, bstrGUID, pvProperty);
+			}
+			public HRESULT SetExtensionProperty(BSTR bstrGUID, VARIANT vProperty) mut
+			{
+				return VT.SetExtensionProperty(&this, bstrGUID, vProperty);
+			}
+			public HRESULT ListenToServerEvents(FAX_SERVER_EVENTS_TYPE_ENUM EventTypes) mut
+			{
+				return VT.ListenToServerEvents(&this, EventTypes);
+			}
+			public HRESULT RegisterDeviceProvider(BSTR bstrGUID, BSTR bstrFriendlyName, BSTR bstrImageName, BSTR TspName, int32 lFSPIVersion) mut
+			{
+				return VT.RegisterDeviceProvider(&this, bstrGUID, bstrFriendlyName, bstrImageName, TspName, lFSPIVersion);
+			}
+			public HRESULT UnregisterDeviceProvider(BSTR bstrUniqueName) mut
+			{
+				return VT.UnregisterDeviceProvider(&this, bstrUniqueName);
+			}
+			public HRESULT RegisterInboundRoutingExtension(BSTR bstrExtensionName, BSTR bstrFriendlyName, BSTR bstrImageName, VARIANT vMethods) mut
+			{
+				return VT.RegisterInboundRoutingExtension(&this, bstrExtensionName, bstrFriendlyName, bstrImageName, vMethods);
+			}
+			public HRESULT UnregisterInboundRoutingExtension(BSTR bstrExtensionUniqueName) mut
+			{
+				return VT.UnregisterInboundRoutingExtension(&this, bstrExtensionUniqueName);
+			}
+			public HRESULT get_RegisteredEvents(FAX_SERVER_EVENTS_TYPE_ENUM* pEventTypes) mut
+			{
+				return VT.get_RegisteredEvents(&this, pEventTypes);
+			}
+			public HRESULT get_APIVersion(FAX_SERVER_APIVERSION_ENUM* pAPIVersion) mut
+			{
+				return VT.get_APIVersion(&this, pAPIVersion);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxServer *self, BSTR bstrServerName) Connect;
-				public function HRESULT(IFaxServer *self, BSTR* pbstrServerName) get_ServerName;
-				public function HRESULT(IFaxServer *self, IFaxDeviceProviders** ppFaxDeviceProviders) GetDeviceProviders;
-				public function HRESULT(IFaxServer *self, IFaxDevices** ppFaxDevices) GetDevices;
-				public function HRESULT(IFaxServer *self, IFaxInboundRouting** ppFaxInboundRouting) get_InboundRouting;
-				public function HRESULT(IFaxServer *self, IFaxFolders** pFaxFolders) get_Folders;
-				public function HRESULT(IFaxServer *self, IFaxLoggingOptions** ppFaxLoggingOptions) get_LoggingOptions;
-				public function HRESULT(IFaxServer *self, int32* plMajorVersion) get_MajorVersion;
-				public function HRESULT(IFaxServer *self, int32* plMinorVersion) get_MinorVersion;
-				public function HRESULT(IFaxServer *self, int32* plMajorBuild) get_MajorBuild;
-				public function HRESULT(IFaxServer *self, int32* plMinorBuild) get_MinorBuild;
-				public function HRESULT(IFaxServer *self, int16* pbDebug) get_Debug;
-				public function HRESULT(IFaxServer *self, IFaxActivity** ppFaxActivity) get_Activity;
-				public function HRESULT(IFaxServer *self, IFaxOutboundRouting** ppFaxOutboundRouting) get_OutboundRouting;
-				public function HRESULT(IFaxServer *self, IFaxReceiptOptions** ppFaxReceiptOptions) get_ReceiptOptions;
-				public function HRESULT(IFaxServer *self, IFaxSecurity** ppFaxSecurity) get_Security;
-				public function HRESULT(IFaxServer *self) Disconnect;
-				public function HRESULT(IFaxServer *self, BSTR bstrGUID, VARIANT* pvProperty) GetExtensionProperty;
-				public function HRESULT(IFaxServer *self, BSTR bstrGUID, VARIANT vProperty) SetExtensionProperty;
-				public function HRESULT(IFaxServer *self, FAX_SERVER_EVENTS_TYPE_ENUM EventTypes) ListenToServerEvents;
-				public function HRESULT(IFaxServer *self, BSTR bstrGUID, BSTR bstrFriendlyName, BSTR bstrImageName, BSTR TspName, int32 lFSPIVersion) RegisterDeviceProvider;
-				public function HRESULT(IFaxServer *self, BSTR bstrUniqueName) UnregisterDeviceProvider;
-				public function HRESULT(IFaxServer *self, BSTR bstrExtensionName, BSTR bstrFriendlyName, BSTR bstrImageName, VARIANT vMethods) RegisterInboundRoutingExtension;
-				public function HRESULT(IFaxServer *self, BSTR bstrExtensionUniqueName) UnregisterInboundRoutingExtension;
-				public function HRESULT(IFaxServer *self, FAX_SERVER_EVENTS_TYPE_ENUM* pEventTypes) get_RegisteredEvents;
-				public function HRESULT(IFaxServer *self, FAX_SERVER_APIVERSION_ENUM* pAPIVersion) get_APIVersion;
+				public new function HRESULT(IFaxServer *self, BSTR bstrServerName) Connect;
+				public new function HRESULT(IFaxServer *self, BSTR* pbstrServerName) get_ServerName;
+				public new function HRESULT(IFaxServer *self, IFaxDeviceProviders** ppFaxDeviceProviders) GetDeviceProviders;
+				public new function HRESULT(IFaxServer *self, IFaxDevices** ppFaxDevices) GetDevices;
+				public new function HRESULT(IFaxServer *self, IFaxInboundRouting** ppFaxInboundRouting) get_InboundRouting;
+				public new function HRESULT(IFaxServer *self, IFaxFolders** pFaxFolders) get_Folders;
+				public new function HRESULT(IFaxServer *self, IFaxLoggingOptions** ppFaxLoggingOptions) get_LoggingOptions;
+				public new function HRESULT(IFaxServer *self, int32* plMajorVersion) get_MajorVersion;
+				public new function HRESULT(IFaxServer *self, int32* plMinorVersion) get_MinorVersion;
+				public new function HRESULT(IFaxServer *self, int32* plMajorBuild) get_MajorBuild;
+				public new function HRESULT(IFaxServer *self, int32* plMinorBuild) get_MinorBuild;
+				public new function HRESULT(IFaxServer *self, int16* pbDebug) get_Debug;
+				public new function HRESULT(IFaxServer *self, IFaxActivity** ppFaxActivity) get_Activity;
+				public new function HRESULT(IFaxServer *self, IFaxOutboundRouting** ppFaxOutboundRouting) get_OutboundRouting;
+				public new function HRESULT(IFaxServer *self, IFaxReceiptOptions** ppFaxReceiptOptions) get_ReceiptOptions;
+				public new function HRESULT(IFaxServer *self, IFaxSecurity** ppFaxSecurity) get_Security;
+				public new function HRESULT(IFaxServer *self) Disconnect;
+				public new function HRESULT(IFaxServer *self, BSTR bstrGUID, VARIANT* pvProperty) GetExtensionProperty;
+				public new function HRESULT(IFaxServer *self, BSTR bstrGUID, VARIANT vProperty) SetExtensionProperty;
+				public new function HRESULT(IFaxServer *self, FAX_SERVER_EVENTS_TYPE_ENUM EventTypes) ListenToServerEvents;
+				public new function HRESULT(IFaxServer *self, BSTR bstrGUID, BSTR bstrFriendlyName, BSTR bstrImageName, BSTR TspName, int32 lFSPIVersion) RegisterDeviceProvider;
+				public new function HRESULT(IFaxServer *self, BSTR bstrUniqueName) UnregisterDeviceProvider;
+				public new function HRESULT(IFaxServer *self, BSTR bstrExtensionName, BSTR bstrFriendlyName, BSTR bstrImageName, VARIANT vMethods) RegisterInboundRoutingExtension;
+				public new function HRESULT(IFaxServer *self, BSTR bstrExtensionUniqueName) UnregisterInboundRoutingExtension;
+				public new function HRESULT(IFaxServer *self, FAX_SERVER_EVENTS_TYPE_ENUM* pEventTypes) get_RegisteredEvents;
+				public new function HRESULT(IFaxServer *self, FAX_SERVER_APIVERSION_ENUM* pAPIVersion) get_APIVersion;
 			}
 		}
 		[CRepr]
@@ -1264,13 +1438,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9fb76f62, 0x4c7e, 0x43a5, 0xb6, 0xfd, 0x50, 0x28, 0x93, 0xf7, 0xe1, 0x3e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
+			{
+				return VT.get__NewEnum(&this, ppUnk);
+			}
+			public HRESULT get_Item(VARIANT vIndex, IFaxDeviceProvider** pFaxDeviceProvider) mut
+			{
+				return VT.get_Item(&this, vIndex, pFaxDeviceProvider);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxDeviceProviders *self, IUnknown** ppUnk) get__NewEnum;
-				public function HRESULT(IFaxDeviceProviders *self, VARIANT vIndex, IFaxDeviceProvider** pFaxDeviceProvider) get_Item;
-				public function HRESULT(IFaxDeviceProviders *self, int32* plCount) get_Count;
+				public new function HRESULT(IFaxDeviceProviders *self, IUnknown** ppUnk) get__NewEnum;
+				public new function HRESULT(IFaxDeviceProviders *self, VARIANT vIndex, IFaxDeviceProvider** pFaxDeviceProvider) get_Item;
+				public new function HRESULT(IFaxDeviceProviders *self, int32* plCount) get_Count;
 			}
 		}
 		[CRepr]
@@ -1278,14 +1465,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9e46783e, 0xf34f, 0x482e, 0xa3, 0x60, 0x04, 0x16, 0xbe, 0xcb, 0xbd, 0x96);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
+			{
+				return VT.get__NewEnum(&this, ppUnk);
+			}
+			public HRESULT get_Item(VARIANT vIndex, IFaxDevice** pFaxDevice) mut
+			{
+				return VT.get_Item(&this, vIndex, pFaxDevice);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT get_ItemById(int32 lId, IFaxDevice** ppFaxDevice) mut
+			{
+				return VT.get_ItemById(&this, lId, ppFaxDevice);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxDevices *self, IUnknown** ppUnk) get__NewEnum;
-				public function HRESULT(IFaxDevices *self, VARIANT vIndex, IFaxDevice** pFaxDevice) get_Item;
-				public function HRESULT(IFaxDevices *self, int32* plCount) get_Count;
-				public function HRESULT(IFaxDevices *self, int32 lId, IFaxDevice** ppFaxDevice) get_ItemById;
+				public new function HRESULT(IFaxDevices *self, IUnknown** ppUnk) get__NewEnum;
+				public new function HRESULT(IFaxDevices *self, VARIANT vIndex, IFaxDevice** pFaxDevice) get_Item;
+				public new function HRESULT(IFaxDevices *self, int32* plCount) get_Count;
+				public new function HRESULT(IFaxDevices *self, int32 lId, IFaxDevice** ppFaxDevice) get_ItemById;
 			}
 		}
 		[CRepr]
@@ -1293,12 +1497,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8148c20f, 0x9d52, 0x45b1, 0xbf, 0x96, 0x38, 0xfc, 0x12, 0x71, 0x35, 0x27);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetExtensions(IFaxInboundRoutingExtensions** pFaxInboundRoutingExtensions) mut
+			{
+				return VT.GetExtensions(&this, pFaxInboundRoutingExtensions);
+			}
+			public HRESULT GetMethods(IFaxInboundRoutingMethods** pFaxInboundRoutingMethods) mut
+			{
+				return VT.GetMethods(&this, pFaxInboundRoutingMethods);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxInboundRouting *self, IFaxInboundRoutingExtensions** pFaxInboundRoutingExtensions) GetExtensions;
-				public function HRESULT(IFaxInboundRouting *self, IFaxInboundRoutingMethods** pFaxInboundRoutingMethods) GetMethods;
+				public new function HRESULT(IFaxInboundRouting *self, IFaxInboundRoutingExtensions** pFaxInboundRoutingExtensions) GetExtensions;
+				public new function HRESULT(IFaxInboundRouting *self, IFaxInboundRoutingMethods** pFaxInboundRoutingMethods) GetMethods;
 			}
 		}
 		[CRepr]
@@ -1306,14 +1519,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdce3b2a8, 0xa7ab, 0x42bc, 0x9d, 0x0a, 0x31, 0x49, 0x45, 0x72, 0x61, 0xa0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_OutgoingQueue(IFaxOutgoingQueue** pFaxOutgoingQueue) mut
+			{
+				return VT.get_OutgoingQueue(&this, pFaxOutgoingQueue);
+			}
+			public HRESULT get_IncomingQueue(IFaxIncomingQueue** pFaxIncomingQueue) mut
+			{
+				return VT.get_IncomingQueue(&this, pFaxIncomingQueue);
+			}
+			public HRESULT get_IncomingArchive(IFaxIncomingArchive** pFaxIncomingArchive) mut
+			{
+				return VT.get_IncomingArchive(&this, pFaxIncomingArchive);
+			}
+			public HRESULT get_OutgoingArchive(IFaxOutgoingArchive** pFaxOutgoingArchive) mut
+			{
+				return VT.get_OutgoingArchive(&this, pFaxOutgoingArchive);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxFolders *self, IFaxOutgoingQueue** pFaxOutgoingQueue) get_OutgoingQueue;
-				public function HRESULT(IFaxFolders *self, IFaxIncomingQueue** pFaxIncomingQueue) get_IncomingQueue;
-				public function HRESULT(IFaxFolders *self, IFaxIncomingArchive** pFaxIncomingArchive) get_IncomingArchive;
-				public function HRESULT(IFaxFolders *self, IFaxOutgoingArchive** pFaxOutgoingArchive) get_OutgoingArchive;
+				public new function HRESULT(IFaxFolders *self, IFaxOutgoingQueue** pFaxOutgoingQueue) get_OutgoingQueue;
+				public new function HRESULT(IFaxFolders *self, IFaxIncomingQueue** pFaxIncomingQueue) get_IncomingQueue;
+				public new function HRESULT(IFaxFolders *self, IFaxIncomingArchive** pFaxIncomingArchive) get_IncomingArchive;
+				public new function HRESULT(IFaxFolders *self, IFaxOutgoingArchive** pFaxOutgoingArchive) get_OutgoingArchive;
 			}
 		}
 		[CRepr]
@@ -1321,12 +1551,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x34e64fb9, 0x6b31, 0x4d32, 0x8b, 0x27, 0xd2, 0x86, 0xc0, 0xc3, 0x36, 0x06);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_EventLogging(IFaxEventLogging** pFaxEventLogging) mut
+			{
+				return VT.get_EventLogging(&this, pFaxEventLogging);
+			}
+			public HRESULT get_ActivityLogging(IFaxActivityLogging** pFaxActivityLogging) mut
+			{
+				return VT.get_ActivityLogging(&this, pFaxActivityLogging);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxLoggingOptions *self, IFaxEventLogging** pFaxEventLogging) get_EventLogging;
-				public function HRESULT(IFaxLoggingOptions *self, IFaxActivityLogging** pFaxActivityLogging) get_ActivityLogging;
+				public new function HRESULT(IFaxLoggingOptions *self, IFaxEventLogging** pFaxEventLogging) get_EventLogging;
+				public new function HRESULT(IFaxLoggingOptions *self, IFaxActivityLogging** pFaxActivityLogging) get_ActivityLogging;
 			}
 		}
 		[CRepr]
@@ -1334,15 +1573,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x4b106f97, 0x3df5, 0x40f2, 0xbc, 0x3c, 0x44, 0xcb, 0x81, 0x15, 0xeb, 0xdf);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_IncomingMessages(int32* plIncomingMessages) mut
+			{
+				return VT.get_IncomingMessages(&this, plIncomingMessages);
+			}
+			public HRESULT get_RoutingMessages(int32* plRoutingMessages) mut
+			{
+				return VT.get_RoutingMessages(&this, plRoutingMessages);
+			}
+			public HRESULT get_OutgoingMessages(int32* plOutgoingMessages) mut
+			{
+				return VT.get_OutgoingMessages(&this, plOutgoingMessages);
+			}
+			public HRESULT get_QueuedMessages(int32* plQueuedMessages) mut
+			{
+				return VT.get_QueuedMessages(&this, plQueuedMessages);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxActivity *self, int32* plIncomingMessages) get_IncomingMessages;
-				public function HRESULT(IFaxActivity *self, int32* plRoutingMessages) get_RoutingMessages;
-				public function HRESULT(IFaxActivity *self, int32* plOutgoingMessages) get_OutgoingMessages;
-				public function HRESULT(IFaxActivity *self, int32* plQueuedMessages) get_QueuedMessages;
-				public function HRESULT(IFaxActivity *self) Refresh;
+				public new function HRESULT(IFaxActivity *self, int32* plIncomingMessages) get_IncomingMessages;
+				public new function HRESULT(IFaxActivity *self, int32* plRoutingMessages) get_RoutingMessages;
+				public new function HRESULT(IFaxActivity *self, int32* plOutgoingMessages) get_OutgoingMessages;
+				public new function HRESULT(IFaxActivity *self, int32* plQueuedMessages) get_QueuedMessages;
+				public new function HRESULT(IFaxActivity *self) Refresh;
 			}
 		}
 		[CRepr]
@@ -1350,12 +1610,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x25dc05a4, 0x9909, 0x41bd, 0xa9, 0x5b, 0x7e, 0x5d, 0x1d, 0xec, 0x1d, 0x43);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetGroups(IFaxOutboundRoutingGroups** pFaxOutboundRoutingGroups) mut
+			{
+				return VT.GetGroups(&this, pFaxOutboundRoutingGroups);
+			}
+			public HRESULT GetRules(IFaxOutboundRoutingRules** pFaxOutboundRoutingRules) mut
+			{
+				return VT.GetRules(&this, pFaxOutboundRoutingRules);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxOutboundRouting *self, IFaxOutboundRoutingGroups** pFaxOutboundRoutingGroups) GetGroups;
-				public function HRESULT(IFaxOutboundRouting *self, IFaxOutboundRoutingRules** pFaxOutboundRoutingRules) GetRules;
+				public new function HRESULT(IFaxOutboundRouting *self, IFaxOutboundRoutingGroups** pFaxOutboundRoutingGroups) GetGroups;
+				public new function HRESULT(IFaxOutboundRouting *self, IFaxOutboundRoutingRules** pFaxOutboundRoutingRules) GetRules;
 			}
 		}
 		[CRepr]
@@ -1363,28 +1632,101 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x378efaeb, 0x5fcb, 0x4afb, 0xb2, 0xee, 0xe1, 0x6e, 0x80, 0x61, 0x44, 0x87);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_AuthenticationType(FAX_SMTP_AUTHENTICATION_TYPE_ENUM* pType) mut
+			{
+				return VT.get_AuthenticationType(&this, pType);
+			}
+			public HRESULT put_AuthenticationType(FAX_SMTP_AUTHENTICATION_TYPE_ENUM Type) mut
+			{
+				return VT.put_AuthenticationType(&this, Type);
+			}
+			public HRESULT get_SMTPServer(BSTR* pbstrSMTPServer) mut
+			{
+				return VT.get_SMTPServer(&this, pbstrSMTPServer);
+			}
+			public HRESULT put_SMTPServer(BSTR bstrSMTPServer) mut
+			{
+				return VT.put_SMTPServer(&this, bstrSMTPServer);
+			}
+			public HRESULT get_SMTPPort(int32* plSMTPPort) mut
+			{
+				return VT.get_SMTPPort(&this, plSMTPPort);
+			}
+			public HRESULT put_SMTPPort(int32 lSMTPPort) mut
+			{
+				return VT.put_SMTPPort(&this, lSMTPPort);
+			}
+			public HRESULT get_SMTPSender(BSTR* pbstrSMTPSender) mut
+			{
+				return VT.get_SMTPSender(&this, pbstrSMTPSender);
+			}
+			public HRESULT put_SMTPSender(BSTR bstrSMTPSender) mut
+			{
+				return VT.put_SMTPSender(&this, bstrSMTPSender);
+			}
+			public HRESULT get_SMTPUser(BSTR* pbstrSMTPUser) mut
+			{
+				return VT.get_SMTPUser(&this, pbstrSMTPUser);
+			}
+			public HRESULT put_SMTPUser(BSTR bstrSMTPUser) mut
+			{
+				return VT.put_SMTPUser(&this, bstrSMTPUser);
+			}
+			public HRESULT get_AllowedReceipts(FAX_RECEIPT_TYPE_ENUM* pAllowedReceipts) mut
+			{
+				return VT.get_AllowedReceipts(&this, pAllowedReceipts);
+			}
+			public HRESULT put_AllowedReceipts(FAX_RECEIPT_TYPE_ENUM AllowedReceipts) mut
+			{
+				return VT.put_AllowedReceipts(&this, AllowedReceipts);
+			}
+			public HRESULT get_SMTPPassword(BSTR* pbstrSMTPPassword) mut
+			{
+				return VT.get_SMTPPassword(&this, pbstrSMTPPassword);
+			}
+			public HRESULT put_SMTPPassword(BSTR bstrSMTPPassword) mut
+			{
+				return VT.put_SMTPPassword(&this, bstrSMTPPassword);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT Save() mut
+			{
+				return VT.Save(&this);
+			}
+			public HRESULT get_UseForInboundRouting(int16* pbUseForInboundRouting) mut
+			{
+				return VT.get_UseForInboundRouting(&this, pbUseForInboundRouting);
+			}
+			public HRESULT put_UseForInboundRouting(int16 bUseForInboundRouting) mut
+			{
+				return VT.put_UseForInboundRouting(&this, bUseForInboundRouting);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxReceiptOptions *self, FAX_SMTP_AUTHENTICATION_TYPE_ENUM* pType) get_AuthenticationType;
-				public function HRESULT(IFaxReceiptOptions *self, FAX_SMTP_AUTHENTICATION_TYPE_ENUM Type) put_AuthenticationType;
-				public function HRESULT(IFaxReceiptOptions *self, BSTR* pbstrSMTPServer) get_SMTPServer;
-				public function HRESULT(IFaxReceiptOptions *self, BSTR bstrSMTPServer) put_SMTPServer;
-				public function HRESULT(IFaxReceiptOptions *self, int32* plSMTPPort) get_SMTPPort;
-				public function HRESULT(IFaxReceiptOptions *self, int32 lSMTPPort) put_SMTPPort;
-				public function HRESULT(IFaxReceiptOptions *self, BSTR* pbstrSMTPSender) get_SMTPSender;
-				public function HRESULT(IFaxReceiptOptions *self, BSTR bstrSMTPSender) put_SMTPSender;
-				public function HRESULT(IFaxReceiptOptions *self, BSTR* pbstrSMTPUser) get_SMTPUser;
-				public function HRESULT(IFaxReceiptOptions *self, BSTR bstrSMTPUser) put_SMTPUser;
-				public function HRESULT(IFaxReceiptOptions *self, FAX_RECEIPT_TYPE_ENUM* pAllowedReceipts) get_AllowedReceipts;
-				public function HRESULT(IFaxReceiptOptions *self, FAX_RECEIPT_TYPE_ENUM AllowedReceipts) put_AllowedReceipts;
-				public function HRESULT(IFaxReceiptOptions *self, BSTR* pbstrSMTPPassword) get_SMTPPassword;
-				public function HRESULT(IFaxReceiptOptions *self, BSTR bstrSMTPPassword) put_SMTPPassword;
-				public function HRESULT(IFaxReceiptOptions *self) Refresh;
-				public function HRESULT(IFaxReceiptOptions *self) Save;
-				public function HRESULT(IFaxReceiptOptions *self, int16* pbUseForInboundRouting) get_UseForInboundRouting;
-				public function HRESULT(IFaxReceiptOptions *self, int16 bUseForInboundRouting) put_UseForInboundRouting;
+				public new function HRESULT(IFaxReceiptOptions *self, FAX_SMTP_AUTHENTICATION_TYPE_ENUM* pType) get_AuthenticationType;
+				public new function HRESULT(IFaxReceiptOptions *self, FAX_SMTP_AUTHENTICATION_TYPE_ENUM Type) put_AuthenticationType;
+				public new function HRESULT(IFaxReceiptOptions *self, BSTR* pbstrSMTPServer) get_SMTPServer;
+				public new function HRESULT(IFaxReceiptOptions *self, BSTR bstrSMTPServer) put_SMTPServer;
+				public new function HRESULT(IFaxReceiptOptions *self, int32* plSMTPPort) get_SMTPPort;
+				public new function HRESULT(IFaxReceiptOptions *self, int32 lSMTPPort) put_SMTPPort;
+				public new function HRESULT(IFaxReceiptOptions *self, BSTR* pbstrSMTPSender) get_SMTPSender;
+				public new function HRESULT(IFaxReceiptOptions *self, BSTR bstrSMTPSender) put_SMTPSender;
+				public new function HRESULT(IFaxReceiptOptions *self, BSTR* pbstrSMTPUser) get_SMTPUser;
+				public new function HRESULT(IFaxReceiptOptions *self, BSTR bstrSMTPUser) put_SMTPUser;
+				public new function HRESULT(IFaxReceiptOptions *self, FAX_RECEIPT_TYPE_ENUM* pAllowedReceipts) get_AllowedReceipts;
+				public new function HRESULT(IFaxReceiptOptions *self, FAX_RECEIPT_TYPE_ENUM AllowedReceipts) put_AllowedReceipts;
+				public new function HRESULT(IFaxReceiptOptions *self, BSTR* pbstrSMTPPassword) get_SMTPPassword;
+				public new function HRESULT(IFaxReceiptOptions *self, BSTR bstrSMTPPassword) put_SMTPPassword;
+				public new function HRESULT(IFaxReceiptOptions *self) Refresh;
+				public new function HRESULT(IFaxReceiptOptions *self) Save;
+				public new function HRESULT(IFaxReceiptOptions *self, int16* pbUseForInboundRouting) get_UseForInboundRouting;
+				public new function HRESULT(IFaxReceiptOptions *self, int16 bUseForInboundRouting) put_UseForInboundRouting;
 			}
 		}
 		[CRepr]
@@ -1392,17 +1734,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x77b508c1, 0x09c0, 0x47a2, 0x91, 0xeb, 0xfc, 0xe7, 0xfd, 0xf2, 0x69, 0x0e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Descriptor(VARIANT* pvDescriptor) mut
+			{
+				return VT.get_Descriptor(&this, pvDescriptor);
+			}
+			public HRESULT put_Descriptor(VARIANT vDescriptor) mut
+			{
+				return VT.put_Descriptor(&this, vDescriptor);
+			}
+			public HRESULT get_GrantedRights(FAX_ACCESS_RIGHTS_ENUM* pGrantedRights) mut
+			{
+				return VT.get_GrantedRights(&this, pGrantedRights);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT Save() mut
+			{
+				return VT.Save(&this);
+			}
+			public HRESULT get_InformationType(int32* plInformationType) mut
+			{
+				return VT.get_InformationType(&this, plInformationType);
+			}
+			public HRESULT put_InformationType(int32 lInformationType) mut
+			{
+				return VT.put_InformationType(&this, lInformationType);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxSecurity *self, VARIANT* pvDescriptor) get_Descriptor;
-				public function HRESULT(IFaxSecurity *self, VARIANT vDescriptor) put_Descriptor;
-				public function HRESULT(IFaxSecurity *self, FAX_ACCESS_RIGHTS_ENUM* pGrantedRights) get_GrantedRights;
-				public function HRESULT(IFaxSecurity *self) Refresh;
-				public function HRESULT(IFaxSecurity *self) Save;
-				public function HRESULT(IFaxSecurity *self, int32* plInformationType) get_InformationType;
-				public function HRESULT(IFaxSecurity *self, int32 lInformationType) put_InformationType;
+				public new function HRESULT(IFaxSecurity *self, VARIANT* pvDescriptor) get_Descriptor;
+				public new function HRESULT(IFaxSecurity *self, VARIANT vDescriptor) put_Descriptor;
+				public new function HRESULT(IFaxSecurity *self, FAX_ACCESS_RIGHTS_ENUM* pGrantedRights) get_GrantedRights;
+				public new function HRESULT(IFaxSecurity *self) Refresh;
+				public new function HRESULT(IFaxSecurity *self) Save;
+				public new function HRESULT(IFaxSecurity *self, int32* plInformationType) get_InformationType;
+				public new function HRESULT(IFaxSecurity *self, int32 lInformationType) put_InformationType;
 			}
 		}
 		[CRepr]
@@ -1410,44 +1781,181 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb207a246, 0x09e3, 0x4a4e, 0xa7, 0xdc, 0xfe, 0xa3, 0x1d, 0x29, 0x45, 0x8f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Body(BSTR* pbstrBody) mut
+			{
+				return VT.get_Body(&this, pbstrBody);
+			}
+			public HRESULT put_Body(BSTR bstrBody) mut
+			{
+				return VT.put_Body(&this, bstrBody);
+			}
+			public HRESULT get_Sender(IFaxSender** ppFaxSender) mut
+			{
+				return VT.get_Sender(&this, ppFaxSender);
+			}
+			public HRESULT get_Recipients(IFaxRecipients** ppFaxRecipients) mut
+			{
+				return VT.get_Recipients(&this, ppFaxRecipients);
+			}
+			public HRESULT get_CoverPage(BSTR* pbstrCoverPage) mut
+			{
+				return VT.get_CoverPage(&this, pbstrCoverPage);
+			}
+			public HRESULT put_CoverPage(BSTR bstrCoverPage) mut
+			{
+				return VT.put_CoverPage(&this, bstrCoverPage);
+			}
+			public HRESULT get_Subject(BSTR* pbstrSubject) mut
+			{
+				return VT.get_Subject(&this, pbstrSubject);
+			}
+			public HRESULT put_Subject(BSTR bstrSubject) mut
+			{
+				return VT.put_Subject(&this, bstrSubject);
+			}
+			public HRESULT get_Note(BSTR* pbstrNote) mut
+			{
+				return VT.get_Note(&this, pbstrNote);
+			}
+			public HRESULT put_Note(BSTR bstrNote) mut
+			{
+				return VT.put_Note(&this, bstrNote);
+			}
+			public HRESULT get_ScheduleTime(double* pdateScheduleTime) mut
+			{
+				return VT.get_ScheduleTime(&this, pdateScheduleTime);
+			}
+			public HRESULT put_ScheduleTime(double dateScheduleTime) mut
+			{
+				return VT.put_ScheduleTime(&this, dateScheduleTime);
+			}
+			public HRESULT get_ReceiptAddress(BSTR* pbstrReceiptAddress) mut
+			{
+				return VT.get_ReceiptAddress(&this, pbstrReceiptAddress);
+			}
+			public HRESULT put_ReceiptAddress(BSTR bstrReceiptAddress) mut
+			{
+				return VT.put_ReceiptAddress(&this, bstrReceiptAddress);
+			}
+			public HRESULT get_DocumentName(BSTR* pbstrDocumentName) mut
+			{
+				return VT.get_DocumentName(&this, pbstrDocumentName);
+			}
+			public HRESULT put_DocumentName(BSTR bstrDocumentName) mut
+			{
+				return VT.put_DocumentName(&this, bstrDocumentName);
+			}
+			public HRESULT get_CallHandle(int32* plCallHandle) mut
+			{
+				return VT.get_CallHandle(&this, plCallHandle);
+			}
+			public HRESULT put_CallHandle(int32 lCallHandle) mut
+			{
+				return VT.put_CallHandle(&this, lCallHandle);
+			}
+			public HRESULT get_CoverPageType(FAX_COVERPAGE_TYPE_ENUM* pCoverPageType) mut
+			{
+				return VT.get_CoverPageType(&this, pCoverPageType);
+			}
+			public HRESULT put_CoverPageType(FAX_COVERPAGE_TYPE_ENUM CoverPageType) mut
+			{
+				return VT.put_CoverPageType(&this, CoverPageType);
+			}
+			public HRESULT get_ScheduleType(FAX_SCHEDULE_TYPE_ENUM* pScheduleType) mut
+			{
+				return VT.get_ScheduleType(&this, pScheduleType);
+			}
+			public HRESULT put_ScheduleType(FAX_SCHEDULE_TYPE_ENUM ScheduleType) mut
+			{
+				return VT.put_ScheduleType(&this, ScheduleType);
+			}
+			public HRESULT get_ReceiptType(FAX_RECEIPT_TYPE_ENUM* pReceiptType) mut
+			{
+				return VT.get_ReceiptType(&this, pReceiptType);
+			}
+			public HRESULT put_ReceiptType(FAX_RECEIPT_TYPE_ENUM ReceiptType) mut
+			{
+				return VT.put_ReceiptType(&this, ReceiptType);
+			}
+			public HRESULT get_GroupBroadcastReceipts(int16* pbUseGrouping) mut
+			{
+				return VT.get_GroupBroadcastReceipts(&this, pbUseGrouping);
+			}
+			public HRESULT put_GroupBroadcastReceipts(int16 bUseGrouping) mut
+			{
+				return VT.put_GroupBroadcastReceipts(&this, bUseGrouping);
+			}
+			public HRESULT get_Priority(FAX_PRIORITY_TYPE_ENUM* pPriority) mut
+			{
+				return VT.get_Priority(&this, pPriority);
+			}
+			public HRESULT put_Priority(FAX_PRIORITY_TYPE_ENUM Priority) mut
+			{
+				return VT.put_Priority(&this, Priority);
+			}
+			public HRESULT get_TapiConnection(IDispatch** ppTapiConnection) mut
+			{
+				return VT.get_TapiConnection(&this, ppTapiConnection);
+			}
+			public HRESULT putref_TapiConnection(IDispatch* pTapiConnection) mut
+			{
+				return VT.putref_TapiConnection(&this, pTapiConnection);
+			}
+			public HRESULT Submit(BSTR bstrFaxServerName, VARIANT* pvFaxOutgoingJobIDs) mut
+			{
+				return VT.Submit(&this, bstrFaxServerName, pvFaxOutgoingJobIDs);
+			}
+			public HRESULT ConnectedSubmit(IFaxServer* pFaxServer, VARIANT* pvFaxOutgoingJobIDs) mut
+			{
+				return VT.ConnectedSubmit(&this, pFaxServer, pvFaxOutgoingJobIDs);
+			}
+			public HRESULT get_AttachFaxToReceipt(int16* pbAttachFax) mut
+			{
+				return VT.get_AttachFaxToReceipt(&this, pbAttachFax);
+			}
+			public HRESULT put_AttachFaxToReceipt(int16 bAttachFax) mut
+			{
+				return VT.put_AttachFaxToReceipt(&this, bAttachFax);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxDocument *self, BSTR* pbstrBody) get_Body;
-				public function HRESULT(IFaxDocument *self, BSTR bstrBody) put_Body;
-				public function HRESULT(IFaxDocument *self, IFaxSender** ppFaxSender) get_Sender;
-				public function HRESULT(IFaxDocument *self, IFaxRecipients** ppFaxRecipients) get_Recipients;
-				public function HRESULT(IFaxDocument *self, BSTR* pbstrCoverPage) get_CoverPage;
-				public function HRESULT(IFaxDocument *self, BSTR bstrCoverPage) put_CoverPage;
-				public function HRESULT(IFaxDocument *self, BSTR* pbstrSubject) get_Subject;
-				public function HRESULT(IFaxDocument *self, BSTR bstrSubject) put_Subject;
-				public function HRESULT(IFaxDocument *self, BSTR* pbstrNote) get_Note;
-				public function HRESULT(IFaxDocument *self, BSTR bstrNote) put_Note;
-				public function HRESULT(IFaxDocument *self, double* pdateScheduleTime) get_ScheduleTime;
-				public function HRESULT(IFaxDocument *self, double dateScheduleTime) put_ScheduleTime;
-				public function HRESULT(IFaxDocument *self, BSTR* pbstrReceiptAddress) get_ReceiptAddress;
-				public function HRESULT(IFaxDocument *self, BSTR bstrReceiptAddress) put_ReceiptAddress;
-				public function HRESULT(IFaxDocument *self, BSTR* pbstrDocumentName) get_DocumentName;
-				public function HRESULT(IFaxDocument *self, BSTR bstrDocumentName) put_DocumentName;
-				public function HRESULT(IFaxDocument *self, int32* plCallHandle) get_CallHandle;
-				public function HRESULT(IFaxDocument *self, int32 lCallHandle) put_CallHandle;
-				public function HRESULT(IFaxDocument *self, FAX_COVERPAGE_TYPE_ENUM* pCoverPageType) get_CoverPageType;
-				public function HRESULT(IFaxDocument *self, FAX_COVERPAGE_TYPE_ENUM CoverPageType) put_CoverPageType;
-				public function HRESULT(IFaxDocument *self, FAX_SCHEDULE_TYPE_ENUM* pScheduleType) get_ScheduleType;
-				public function HRESULT(IFaxDocument *self, FAX_SCHEDULE_TYPE_ENUM ScheduleType) put_ScheduleType;
-				public function HRESULT(IFaxDocument *self, FAX_RECEIPT_TYPE_ENUM* pReceiptType) get_ReceiptType;
-				public function HRESULT(IFaxDocument *self, FAX_RECEIPT_TYPE_ENUM ReceiptType) put_ReceiptType;
-				public function HRESULT(IFaxDocument *self, int16* pbUseGrouping) get_GroupBroadcastReceipts;
-				public function HRESULT(IFaxDocument *self, int16 bUseGrouping) put_GroupBroadcastReceipts;
-				public function HRESULT(IFaxDocument *self, FAX_PRIORITY_TYPE_ENUM* pPriority) get_Priority;
-				public function HRESULT(IFaxDocument *self, FAX_PRIORITY_TYPE_ENUM Priority) put_Priority;
-				public function HRESULT(IFaxDocument *self, IDispatch** ppTapiConnection) get_TapiConnection;
-				public function HRESULT(IFaxDocument *self, IDispatch* pTapiConnection) putref_TapiConnection;
-				public function HRESULT(IFaxDocument *self, BSTR bstrFaxServerName, VARIANT* pvFaxOutgoingJobIDs) Submit;
-				public function HRESULT(IFaxDocument *self, IFaxServer* pFaxServer, VARIANT* pvFaxOutgoingJobIDs) ConnectedSubmit;
-				public function HRESULT(IFaxDocument *self, int16* pbAttachFax) get_AttachFaxToReceipt;
-				public function HRESULT(IFaxDocument *self, int16 bAttachFax) put_AttachFaxToReceipt;
+				public new function HRESULT(IFaxDocument *self, BSTR* pbstrBody) get_Body;
+				public new function HRESULT(IFaxDocument *self, BSTR bstrBody) put_Body;
+				public new function HRESULT(IFaxDocument *self, IFaxSender** ppFaxSender) get_Sender;
+				public new function HRESULT(IFaxDocument *self, IFaxRecipients** ppFaxRecipients) get_Recipients;
+				public new function HRESULT(IFaxDocument *self, BSTR* pbstrCoverPage) get_CoverPage;
+				public new function HRESULT(IFaxDocument *self, BSTR bstrCoverPage) put_CoverPage;
+				public new function HRESULT(IFaxDocument *self, BSTR* pbstrSubject) get_Subject;
+				public new function HRESULT(IFaxDocument *self, BSTR bstrSubject) put_Subject;
+				public new function HRESULT(IFaxDocument *self, BSTR* pbstrNote) get_Note;
+				public new function HRESULT(IFaxDocument *self, BSTR bstrNote) put_Note;
+				public new function HRESULT(IFaxDocument *self, double* pdateScheduleTime) get_ScheduleTime;
+				public new function HRESULT(IFaxDocument *self, double dateScheduleTime) put_ScheduleTime;
+				public new function HRESULT(IFaxDocument *self, BSTR* pbstrReceiptAddress) get_ReceiptAddress;
+				public new function HRESULT(IFaxDocument *self, BSTR bstrReceiptAddress) put_ReceiptAddress;
+				public new function HRESULT(IFaxDocument *self, BSTR* pbstrDocumentName) get_DocumentName;
+				public new function HRESULT(IFaxDocument *self, BSTR bstrDocumentName) put_DocumentName;
+				public new function HRESULT(IFaxDocument *self, int32* plCallHandle) get_CallHandle;
+				public new function HRESULT(IFaxDocument *self, int32 lCallHandle) put_CallHandle;
+				public new function HRESULT(IFaxDocument *self, FAX_COVERPAGE_TYPE_ENUM* pCoverPageType) get_CoverPageType;
+				public new function HRESULT(IFaxDocument *self, FAX_COVERPAGE_TYPE_ENUM CoverPageType) put_CoverPageType;
+				public new function HRESULT(IFaxDocument *self, FAX_SCHEDULE_TYPE_ENUM* pScheduleType) get_ScheduleType;
+				public new function HRESULT(IFaxDocument *self, FAX_SCHEDULE_TYPE_ENUM ScheduleType) put_ScheduleType;
+				public new function HRESULT(IFaxDocument *self, FAX_RECEIPT_TYPE_ENUM* pReceiptType) get_ReceiptType;
+				public new function HRESULT(IFaxDocument *self, FAX_RECEIPT_TYPE_ENUM ReceiptType) put_ReceiptType;
+				public new function HRESULT(IFaxDocument *self, int16* pbUseGrouping) get_GroupBroadcastReceipts;
+				public new function HRESULT(IFaxDocument *self, int16 bUseGrouping) put_GroupBroadcastReceipts;
+				public new function HRESULT(IFaxDocument *self, FAX_PRIORITY_TYPE_ENUM* pPriority) get_Priority;
+				public new function HRESULT(IFaxDocument *self, FAX_PRIORITY_TYPE_ENUM Priority) put_Priority;
+				public new function HRESULT(IFaxDocument *self, IDispatch** ppTapiConnection) get_TapiConnection;
+				public new function HRESULT(IFaxDocument *self, IDispatch* pTapiConnection) putref_TapiConnection;
+				public new function HRESULT(IFaxDocument *self, BSTR bstrFaxServerName, VARIANT* pvFaxOutgoingJobIDs) Submit;
+				public new function HRESULT(IFaxDocument *self, IFaxServer* pFaxServer, VARIANT* pvFaxOutgoingJobIDs) ConnectedSubmit;
+				public new function HRESULT(IFaxDocument *self, int16* pbAttachFax) get_AttachFaxToReceipt;
+				public new function HRESULT(IFaxDocument *self, int16 bAttachFax) put_AttachFaxToReceipt;
 			}
 		}
 		[CRepr]
@@ -1455,44 +1963,181 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0d879d7d, 0xf57a, 0x4cc6, 0xa6, 0xf9, 0x3e, 0xe5, 0xd5, 0x27, 0xb4, 0x6a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_BillingCode(BSTR* pbstrBillingCode) mut
+			{
+				return VT.get_BillingCode(&this, pbstrBillingCode);
+			}
+			public HRESULT put_BillingCode(BSTR bstrBillingCode) mut
+			{
+				return VT.put_BillingCode(&this, bstrBillingCode);
+			}
+			public HRESULT get_City(BSTR* pbstrCity) mut
+			{
+				return VT.get_City(&this, pbstrCity);
+			}
+			public HRESULT put_City(BSTR bstrCity) mut
+			{
+				return VT.put_City(&this, bstrCity);
+			}
+			public HRESULT get_Company(BSTR* pbstrCompany) mut
+			{
+				return VT.get_Company(&this, pbstrCompany);
+			}
+			public HRESULT put_Company(BSTR bstrCompany) mut
+			{
+				return VT.put_Company(&this, bstrCompany);
+			}
+			public HRESULT get_Country(BSTR* pbstrCountry) mut
+			{
+				return VT.get_Country(&this, pbstrCountry);
+			}
+			public HRESULT put_Country(BSTR bstrCountry) mut
+			{
+				return VT.put_Country(&this, bstrCountry);
+			}
+			public HRESULT get_Department(BSTR* pbstrDepartment) mut
+			{
+				return VT.get_Department(&this, pbstrDepartment);
+			}
+			public HRESULT put_Department(BSTR bstrDepartment) mut
+			{
+				return VT.put_Department(&this, bstrDepartment);
+			}
+			public HRESULT get_Email(BSTR* pbstrEmail) mut
+			{
+				return VT.get_Email(&this, pbstrEmail);
+			}
+			public HRESULT put_Email(BSTR bstrEmail) mut
+			{
+				return VT.put_Email(&this, bstrEmail);
+			}
+			public HRESULT get_FaxNumber(BSTR* pbstrFaxNumber) mut
+			{
+				return VT.get_FaxNumber(&this, pbstrFaxNumber);
+			}
+			public HRESULT put_FaxNumber(BSTR bstrFaxNumber) mut
+			{
+				return VT.put_FaxNumber(&this, bstrFaxNumber);
+			}
+			public HRESULT get_HomePhone(BSTR* pbstrHomePhone) mut
+			{
+				return VT.get_HomePhone(&this, pbstrHomePhone);
+			}
+			public HRESULT put_HomePhone(BSTR bstrHomePhone) mut
+			{
+				return VT.put_HomePhone(&this, bstrHomePhone);
+			}
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
+			public HRESULT put_Name(BSTR bstrName) mut
+			{
+				return VT.put_Name(&this, bstrName);
+			}
+			public HRESULT get_TSID(BSTR* pbstrTSID) mut
+			{
+				return VT.get_TSID(&this, pbstrTSID);
+			}
+			public HRESULT put_TSID(BSTR bstrTSID) mut
+			{
+				return VT.put_TSID(&this, bstrTSID);
+			}
+			public HRESULT get_OfficePhone(BSTR* pbstrOfficePhone) mut
+			{
+				return VT.get_OfficePhone(&this, pbstrOfficePhone);
+			}
+			public HRESULT put_OfficePhone(BSTR bstrOfficePhone) mut
+			{
+				return VT.put_OfficePhone(&this, bstrOfficePhone);
+			}
+			public HRESULT get_OfficeLocation(BSTR* pbstrOfficeLocation) mut
+			{
+				return VT.get_OfficeLocation(&this, pbstrOfficeLocation);
+			}
+			public HRESULT put_OfficeLocation(BSTR bstrOfficeLocation) mut
+			{
+				return VT.put_OfficeLocation(&this, bstrOfficeLocation);
+			}
+			public HRESULT get_State(BSTR* pbstrState) mut
+			{
+				return VT.get_State(&this, pbstrState);
+			}
+			public HRESULT put_State(BSTR bstrState) mut
+			{
+				return VT.put_State(&this, bstrState);
+			}
+			public HRESULT get_StreetAddress(BSTR* pbstrStreetAddress) mut
+			{
+				return VT.get_StreetAddress(&this, pbstrStreetAddress);
+			}
+			public HRESULT put_StreetAddress(BSTR bstrStreetAddress) mut
+			{
+				return VT.put_StreetAddress(&this, bstrStreetAddress);
+			}
+			public HRESULT get_Title(BSTR* pbstrTitle) mut
+			{
+				return VT.get_Title(&this, pbstrTitle);
+			}
+			public HRESULT put_Title(BSTR bstrTitle) mut
+			{
+				return VT.put_Title(&this, bstrTitle);
+			}
+			public HRESULT get_ZipCode(BSTR* pbstrZipCode) mut
+			{
+				return VT.get_ZipCode(&this, pbstrZipCode);
+			}
+			public HRESULT put_ZipCode(BSTR bstrZipCode) mut
+			{
+				return VT.put_ZipCode(&this, bstrZipCode);
+			}
+			public HRESULT LoadDefaultSender() mut
+			{
+				return VT.LoadDefaultSender(&this);
+			}
+			public HRESULT SaveDefaultSender() mut
+			{
+				return VT.SaveDefaultSender(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxSender *self, BSTR* pbstrBillingCode) get_BillingCode;
-				public function HRESULT(IFaxSender *self, BSTR bstrBillingCode) put_BillingCode;
-				public function HRESULT(IFaxSender *self, BSTR* pbstrCity) get_City;
-				public function HRESULT(IFaxSender *self, BSTR bstrCity) put_City;
-				public function HRESULT(IFaxSender *self, BSTR* pbstrCompany) get_Company;
-				public function HRESULT(IFaxSender *self, BSTR bstrCompany) put_Company;
-				public function HRESULT(IFaxSender *self, BSTR* pbstrCountry) get_Country;
-				public function HRESULT(IFaxSender *self, BSTR bstrCountry) put_Country;
-				public function HRESULT(IFaxSender *self, BSTR* pbstrDepartment) get_Department;
-				public function HRESULT(IFaxSender *self, BSTR bstrDepartment) put_Department;
-				public function HRESULT(IFaxSender *self, BSTR* pbstrEmail) get_Email;
-				public function HRESULT(IFaxSender *self, BSTR bstrEmail) put_Email;
-				public function HRESULT(IFaxSender *self, BSTR* pbstrFaxNumber) get_FaxNumber;
-				public function HRESULT(IFaxSender *self, BSTR bstrFaxNumber) put_FaxNumber;
-				public function HRESULT(IFaxSender *self, BSTR* pbstrHomePhone) get_HomePhone;
-				public function HRESULT(IFaxSender *self, BSTR bstrHomePhone) put_HomePhone;
-				public function HRESULT(IFaxSender *self, BSTR* pbstrName) get_Name;
-				public function HRESULT(IFaxSender *self, BSTR bstrName) put_Name;
-				public function HRESULT(IFaxSender *self, BSTR* pbstrTSID) get_TSID;
-				public function HRESULT(IFaxSender *self, BSTR bstrTSID) put_TSID;
-				public function HRESULT(IFaxSender *self, BSTR* pbstrOfficePhone) get_OfficePhone;
-				public function HRESULT(IFaxSender *self, BSTR bstrOfficePhone) put_OfficePhone;
-				public function HRESULT(IFaxSender *self, BSTR* pbstrOfficeLocation) get_OfficeLocation;
-				public function HRESULT(IFaxSender *self, BSTR bstrOfficeLocation) put_OfficeLocation;
-				public function HRESULT(IFaxSender *self, BSTR* pbstrState) get_State;
-				public function HRESULT(IFaxSender *self, BSTR bstrState) put_State;
-				public function HRESULT(IFaxSender *self, BSTR* pbstrStreetAddress) get_StreetAddress;
-				public function HRESULT(IFaxSender *self, BSTR bstrStreetAddress) put_StreetAddress;
-				public function HRESULT(IFaxSender *self, BSTR* pbstrTitle) get_Title;
-				public function HRESULT(IFaxSender *self, BSTR bstrTitle) put_Title;
-				public function HRESULT(IFaxSender *self, BSTR* pbstrZipCode) get_ZipCode;
-				public function HRESULT(IFaxSender *self, BSTR bstrZipCode) put_ZipCode;
-				public function HRESULT(IFaxSender *self) LoadDefaultSender;
-				public function HRESULT(IFaxSender *self) SaveDefaultSender;
+				public new function HRESULT(IFaxSender *self, BSTR* pbstrBillingCode) get_BillingCode;
+				public new function HRESULT(IFaxSender *self, BSTR bstrBillingCode) put_BillingCode;
+				public new function HRESULT(IFaxSender *self, BSTR* pbstrCity) get_City;
+				public new function HRESULT(IFaxSender *self, BSTR bstrCity) put_City;
+				public new function HRESULT(IFaxSender *self, BSTR* pbstrCompany) get_Company;
+				public new function HRESULT(IFaxSender *self, BSTR bstrCompany) put_Company;
+				public new function HRESULT(IFaxSender *self, BSTR* pbstrCountry) get_Country;
+				public new function HRESULT(IFaxSender *self, BSTR bstrCountry) put_Country;
+				public new function HRESULT(IFaxSender *self, BSTR* pbstrDepartment) get_Department;
+				public new function HRESULT(IFaxSender *self, BSTR bstrDepartment) put_Department;
+				public new function HRESULT(IFaxSender *self, BSTR* pbstrEmail) get_Email;
+				public new function HRESULT(IFaxSender *self, BSTR bstrEmail) put_Email;
+				public new function HRESULT(IFaxSender *self, BSTR* pbstrFaxNumber) get_FaxNumber;
+				public new function HRESULT(IFaxSender *self, BSTR bstrFaxNumber) put_FaxNumber;
+				public new function HRESULT(IFaxSender *self, BSTR* pbstrHomePhone) get_HomePhone;
+				public new function HRESULT(IFaxSender *self, BSTR bstrHomePhone) put_HomePhone;
+				public new function HRESULT(IFaxSender *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(IFaxSender *self, BSTR bstrName) put_Name;
+				public new function HRESULT(IFaxSender *self, BSTR* pbstrTSID) get_TSID;
+				public new function HRESULT(IFaxSender *self, BSTR bstrTSID) put_TSID;
+				public new function HRESULT(IFaxSender *self, BSTR* pbstrOfficePhone) get_OfficePhone;
+				public new function HRESULT(IFaxSender *self, BSTR bstrOfficePhone) put_OfficePhone;
+				public new function HRESULT(IFaxSender *self, BSTR* pbstrOfficeLocation) get_OfficeLocation;
+				public new function HRESULT(IFaxSender *self, BSTR bstrOfficeLocation) put_OfficeLocation;
+				public new function HRESULT(IFaxSender *self, BSTR* pbstrState) get_State;
+				public new function HRESULT(IFaxSender *self, BSTR bstrState) put_State;
+				public new function HRESULT(IFaxSender *self, BSTR* pbstrStreetAddress) get_StreetAddress;
+				public new function HRESULT(IFaxSender *self, BSTR bstrStreetAddress) put_StreetAddress;
+				public new function HRESULT(IFaxSender *self, BSTR* pbstrTitle) get_Title;
+				public new function HRESULT(IFaxSender *self, BSTR bstrTitle) put_Title;
+				public new function HRESULT(IFaxSender *self, BSTR* pbstrZipCode) get_ZipCode;
+				public new function HRESULT(IFaxSender *self, BSTR bstrZipCode) put_ZipCode;
+				public new function HRESULT(IFaxSender *self) LoadDefaultSender;
+				public new function HRESULT(IFaxSender *self) SaveDefaultSender;
 			}
 		}
 		[CRepr]
@@ -1500,14 +2145,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9a3da3a0, 0x538d, 0x42b6, 0x94, 0x44, 0xaa, 0xa5, 0x7d, 0x0c, 0xe2, 0xbc);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_FaxNumber(BSTR* pbstrFaxNumber) mut
+			{
+				return VT.get_FaxNumber(&this, pbstrFaxNumber);
+			}
+			public HRESULT put_FaxNumber(BSTR bstrFaxNumber) mut
+			{
+				return VT.put_FaxNumber(&this, bstrFaxNumber);
+			}
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
+			public HRESULT put_Name(BSTR bstrName) mut
+			{
+				return VT.put_Name(&this, bstrName);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxRecipient *self, BSTR* pbstrFaxNumber) get_FaxNumber;
-				public function HRESULT(IFaxRecipient *self, BSTR bstrFaxNumber) put_FaxNumber;
-				public function HRESULT(IFaxRecipient *self, BSTR* pbstrName) get_Name;
-				public function HRESULT(IFaxRecipient *self, BSTR bstrName) put_Name;
+				public new function HRESULT(IFaxRecipient *self, BSTR* pbstrFaxNumber) get_FaxNumber;
+				public new function HRESULT(IFaxRecipient *self, BSTR bstrFaxNumber) put_FaxNumber;
+				public new function HRESULT(IFaxRecipient *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(IFaxRecipient *self, BSTR bstrName) put_Name;
 			}
 		}
 		[CRepr]
@@ -1515,15 +2177,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb9c9de5a, 0x894e, 0x4492, 0x9f, 0xa3, 0x08, 0xc6, 0x27, 0xc1, 0x1d, 0x5d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
+			{
+				return VT.get__NewEnum(&this, ppUnk);
+			}
+			public HRESULT get_Item(int32 lIndex, IFaxRecipient** ppFaxRecipient) mut
+			{
+				return VT.get_Item(&this, lIndex, ppFaxRecipient);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT Add(BSTR bstrFaxNumber, BSTR bstrRecipientName, IFaxRecipient** ppFaxRecipient) mut
+			{
+				return VT.Add(&this, bstrFaxNumber, bstrRecipientName, ppFaxRecipient);
+			}
+			public HRESULT Remove(int32 lIndex) mut
+			{
+				return VT.Remove(&this, lIndex);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxRecipients *self, IUnknown** ppUnk) get__NewEnum;
-				public function HRESULT(IFaxRecipients *self, int32 lIndex, IFaxRecipient** ppFaxRecipient) get_Item;
-				public function HRESULT(IFaxRecipients *self, int32* plCount) get_Count;
-				public function HRESULT(IFaxRecipients *self, BSTR bstrFaxNumber, BSTR bstrRecipientName, IFaxRecipient** ppFaxRecipient) Add;
-				public function HRESULT(IFaxRecipients *self, int32 lIndex) Remove;
+				public new function HRESULT(IFaxRecipients *self, IUnknown** ppUnk) get__NewEnum;
+				public new function HRESULT(IFaxRecipients *self, int32 lIndex, IFaxRecipient** ppFaxRecipient) get_Item;
+				public new function HRESULT(IFaxRecipients *self, int32* plCount) get_Count;
+				public new function HRESULT(IFaxRecipients *self, BSTR bstrFaxNumber, BSTR bstrRecipientName, IFaxRecipient** ppFaxRecipient) Add;
+				public new function HRESULT(IFaxRecipients *self, int32 lIndex) Remove;
 			}
 		}
 		[CRepr]
@@ -1531,28 +2214,101 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x76062cc7, 0xf714, 0x4fbd, 0xaa, 0x06, 0xed, 0x6e, 0x4a, 0x4b, 0x70, 0xf3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_UseArchive(int16* pbUseArchive) mut
+			{
+				return VT.get_UseArchive(&this, pbUseArchive);
+			}
+			public HRESULT put_UseArchive(int16 bUseArchive) mut
+			{
+				return VT.put_UseArchive(&this, bUseArchive);
+			}
+			public HRESULT get_ArchiveFolder(BSTR* pbstrArchiveFolder) mut
+			{
+				return VT.get_ArchiveFolder(&this, pbstrArchiveFolder);
+			}
+			public HRESULT put_ArchiveFolder(BSTR bstrArchiveFolder) mut
+			{
+				return VT.put_ArchiveFolder(&this, bstrArchiveFolder);
+			}
+			public HRESULT get_SizeQuotaWarning(int16* pbSizeQuotaWarning) mut
+			{
+				return VT.get_SizeQuotaWarning(&this, pbSizeQuotaWarning);
+			}
+			public HRESULT put_SizeQuotaWarning(int16 bSizeQuotaWarning) mut
+			{
+				return VT.put_SizeQuotaWarning(&this, bSizeQuotaWarning);
+			}
+			public HRESULT get_HighQuotaWaterMark(int32* plHighQuotaWaterMark) mut
+			{
+				return VT.get_HighQuotaWaterMark(&this, plHighQuotaWaterMark);
+			}
+			public HRESULT put_HighQuotaWaterMark(int32 lHighQuotaWaterMark) mut
+			{
+				return VT.put_HighQuotaWaterMark(&this, lHighQuotaWaterMark);
+			}
+			public HRESULT get_LowQuotaWaterMark(int32* plLowQuotaWaterMark) mut
+			{
+				return VT.get_LowQuotaWaterMark(&this, plLowQuotaWaterMark);
+			}
+			public HRESULT put_LowQuotaWaterMark(int32 lLowQuotaWaterMark) mut
+			{
+				return VT.put_LowQuotaWaterMark(&this, lLowQuotaWaterMark);
+			}
+			public HRESULT get_AgeLimit(int32* plAgeLimit) mut
+			{
+				return VT.get_AgeLimit(&this, plAgeLimit);
+			}
+			public HRESULT put_AgeLimit(int32 lAgeLimit) mut
+			{
+				return VT.put_AgeLimit(&this, lAgeLimit);
+			}
+			public HRESULT get_SizeLow(int32* plSizeLow) mut
+			{
+				return VT.get_SizeLow(&this, plSizeLow);
+			}
+			public HRESULT get_SizeHigh(int32* plSizeHigh) mut
+			{
+				return VT.get_SizeHigh(&this, plSizeHigh);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT Save() mut
+			{
+				return VT.Save(&this);
+			}
+			public HRESULT GetMessages(int32 lPrefetchSize, IFaxIncomingMessageIterator** pFaxIncomingMessageIterator) mut
+			{
+				return VT.GetMessages(&this, lPrefetchSize, pFaxIncomingMessageIterator);
+			}
+			public HRESULT GetMessage(BSTR bstrMessageId, IFaxIncomingMessage** pFaxIncomingMessage) mut
+			{
+				return VT.GetMessage(&this, bstrMessageId, pFaxIncomingMessage);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxIncomingArchive *self, int16* pbUseArchive) get_UseArchive;
-				public function HRESULT(IFaxIncomingArchive *self, int16 bUseArchive) put_UseArchive;
-				public function HRESULT(IFaxIncomingArchive *self, BSTR* pbstrArchiveFolder) get_ArchiveFolder;
-				public function HRESULT(IFaxIncomingArchive *self, BSTR bstrArchiveFolder) put_ArchiveFolder;
-				public function HRESULT(IFaxIncomingArchive *self, int16* pbSizeQuotaWarning) get_SizeQuotaWarning;
-				public function HRESULT(IFaxIncomingArchive *self, int16 bSizeQuotaWarning) put_SizeQuotaWarning;
-				public function HRESULT(IFaxIncomingArchive *self, int32* plHighQuotaWaterMark) get_HighQuotaWaterMark;
-				public function HRESULT(IFaxIncomingArchive *self, int32 lHighQuotaWaterMark) put_HighQuotaWaterMark;
-				public function HRESULT(IFaxIncomingArchive *self, int32* plLowQuotaWaterMark) get_LowQuotaWaterMark;
-				public function HRESULT(IFaxIncomingArchive *self, int32 lLowQuotaWaterMark) put_LowQuotaWaterMark;
-				public function HRESULT(IFaxIncomingArchive *self, int32* plAgeLimit) get_AgeLimit;
-				public function HRESULT(IFaxIncomingArchive *self, int32 lAgeLimit) put_AgeLimit;
-				public function HRESULT(IFaxIncomingArchive *self, int32* plSizeLow) get_SizeLow;
-				public function HRESULT(IFaxIncomingArchive *self, int32* plSizeHigh) get_SizeHigh;
-				public function HRESULT(IFaxIncomingArchive *self) Refresh;
-				public function HRESULT(IFaxIncomingArchive *self) Save;
-				public function HRESULT(IFaxIncomingArchive *self, int32 lPrefetchSize, IFaxIncomingMessageIterator** pFaxIncomingMessageIterator) GetMessages;
-				public function HRESULT(IFaxIncomingArchive *self, BSTR bstrMessageId, IFaxIncomingMessage** pFaxIncomingMessage) GetMessage;
+				public new function HRESULT(IFaxIncomingArchive *self, int16* pbUseArchive) get_UseArchive;
+				public new function HRESULT(IFaxIncomingArchive *self, int16 bUseArchive) put_UseArchive;
+				public new function HRESULT(IFaxIncomingArchive *self, BSTR* pbstrArchiveFolder) get_ArchiveFolder;
+				public new function HRESULT(IFaxIncomingArchive *self, BSTR bstrArchiveFolder) put_ArchiveFolder;
+				public new function HRESULT(IFaxIncomingArchive *self, int16* pbSizeQuotaWarning) get_SizeQuotaWarning;
+				public new function HRESULT(IFaxIncomingArchive *self, int16 bSizeQuotaWarning) put_SizeQuotaWarning;
+				public new function HRESULT(IFaxIncomingArchive *self, int32* plHighQuotaWaterMark) get_HighQuotaWaterMark;
+				public new function HRESULT(IFaxIncomingArchive *self, int32 lHighQuotaWaterMark) put_HighQuotaWaterMark;
+				public new function HRESULT(IFaxIncomingArchive *self, int32* plLowQuotaWaterMark) get_LowQuotaWaterMark;
+				public new function HRESULT(IFaxIncomingArchive *self, int32 lLowQuotaWaterMark) put_LowQuotaWaterMark;
+				public new function HRESULT(IFaxIncomingArchive *self, int32* plAgeLimit) get_AgeLimit;
+				public new function HRESULT(IFaxIncomingArchive *self, int32 lAgeLimit) put_AgeLimit;
+				public new function HRESULT(IFaxIncomingArchive *self, int32* plSizeLow) get_SizeLow;
+				public new function HRESULT(IFaxIncomingArchive *self, int32* plSizeHigh) get_SizeHigh;
+				public new function HRESULT(IFaxIncomingArchive *self) Refresh;
+				public new function HRESULT(IFaxIncomingArchive *self) Save;
+				public new function HRESULT(IFaxIncomingArchive *self, int32 lPrefetchSize, IFaxIncomingMessageIterator** pFaxIncomingMessageIterator) GetMessages;
+				public new function HRESULT(IFaxIncomingArchive *self, BSTR bstrMessageId, IFaxIncomingMessage** pFaxIncomingMessage) GetMessage;
 			}
 		}
 		[CRepr]
@@ -1560,16 +2316,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x902e64ef, 0x8fd8, 0x4b75, 0x97, 0x25, 0x60, 0x14, 0xdf, 0x16, 0x15, 0x45);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Blocked(int16* pbBlocked) mut
+			{
+				return VT.get_Blocked(&this, pbBlocked);
+			}
+			public HRESULT put_Blocked(int16 bBlocked) mut
+			{
+				return VT.put_Blocked(&this, bBlocked);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT Save() mut
+			{
+				return VT.Save(&this);
+			}
+			public HRESULT GetJobs(IFaxIncomingJobs** pFaxIncomingJobs) mut
+			{
+				return VT.GetJobs(&this, pFaxIncomingJobs);
+			}
+			public HRESULT GetJob(BSTR bstrJobId, IFaxIncomingJob** pFaxIncomingJob) mut
+			{
+				return VT.GetJob(&this, bstrJobId, pFaxIncomingJob);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxIncomingQueue *self, int16* pbBlocked) get_Blocked;
-				public function HRESULT(IFaxIncomingQueue *self, int16 bBlocked) put_Blocked;
-				public function HRESULT(IFaxIncomingQueue *self) Refresh;
-				public function HRESULT(IFaxIncomingQueue *self) Save;
-				public function HRESULT(IFaxIncomingQueue *self, IFaxIncomingJobs** pFaxIncomingJobs) GetJobs;
-				public function HRESULT(IFaxIncomingQueue *self, BSTR bstrJobId, IFaxIncomingJob** pFaxIncomingJob) GetJob;
+				public new function HRESULT(IFaxIncomingQueue *self, int16* pbBlocked) get_Blocked;
+				public new function HRESULT(IFaxIncomingQueue *self, int16 bBlocked) put_Blocked;
+				public new function HRESULT(IFaxIncomingQueue *self) Refresh;
+				public new function HRESULT(IFaxIncomingQueue *self) Save;
+				public new function HRESULT(IFaxIncomingQueue *self, IFaxIncomingJobs** pFaxIncomingJobs) GetJobs;
+				public new function HRESULT(IFaxIncomingQueue *self, BSTR bstrJobId, IFaxIncomingJob** pFaxIncomingJob) GetJob;
 			}
 		}
 		[CRepr]
@@ -1577,28 +2358,101 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xc9c28f40, 0x8d80, 0x4e53, 0x81, 0x0f, 0x9a, 0x79, 0x91, 0x9b, 0x49, 0xfd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_UseArchive(int16* pbUseArchive) mut
+			{
+				return VT.get_UseArchive(&this, pbUseArchive);
+			}
+			public HRESULT put_UseArchive(int16 bUseArchive) mut
+			{
+				return VT.put_UseArchive(&this, bUseArchive);
+			}
+			public HRESULT get_ArchiveFolder(BSTR* pbstrArchiveFolder) mut
+			{
+				return VT.get_ArchiveFolder(&this, pbstrArchiveFolder);
+			}
+			public HRESULT put_ArchiveFolder(BSTR bstrArchiveFolder) mut
+			{
+				return VT.put_ArchiveFolder(&this, bstrArchiveFolder);
+			}
+			public HRESULT get_SizeQuotaWarning(int16* pbSizeQuotaWarning) mut
+			{
+				return VT.get_SizeQuotaWarning(&this, pbSizeQuotaWarning);
+			}
+			public HRESULT put_SizeQuotaWarning(int16 bSizeQuotaWarning) mut
+			{
+				return VT.put_SizeQuotaWarning(&this, bSizeQuotaWarning);
+			}
+			public HRESULT get_HighQuotaWaterMark(int32* plHighQuotaWaterMark) mut
+			{
+				return VT.get_HighQuotaWaterMark(&this, plHighQuotaWaterMark);
+			}
+			public HRESULT put_HighQuotaWaterMark(int32 lHighQuotaWaterMark) mut
+			{
+				return VT.put_HighQuotaWaterMark(&this, lHighQuotaWaterMark);
+			}
+			public HRESULT get_LowQuotaWaterMark(int32* plLowQuotaWaterMark) mut
+			{
+				return VT.get_LowQuotaWaterMark(&this, plLowQuotaWaterMark);
+			}
+			public HRESULT put_LowQuotaWaterMark(int32 lLowQuotaWaterMark) mut
+			{
+				return VT.put_LowQuotaWaterMark(&this, lLowQuotaWaterMark);
+			}
+			public HRESULT get_AgeLimit(int32* plAgeLimit) mut
+			{
+				return VT.get_AgeLimit(&this, plAgeLimit);
+			}
+			public HRESULT put_AgeLimit(int32 lAgeLimit) mut
+			{
+				return VT.put_AgeLimit(&this, lAgeLimit);
+			}
+			public HRESULT get_SizeLow(int32* plSizeLow) mut
+			{
+				return VT.get_SizeLow(&this, plSizeLow);
+			}
+			public HRESULT get_SizeHigh(int32* plSizeHigh) mut
+			{
+				return VT.get_SizeHigh(&this, plSizeHigh);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT Save() mut
+			{
+				return VT.Save(&this);
+			}
+			public HRESULT GetMessages(int32 lPrefetchSize, IFaxOutgoingMessageIterator** pFaxOutgoingMessageIterator) mut
+			{
+				return VT.GetMessages(&this, lPrefetchSize, pFaxOutgoingMessageIterator);
+			}
+			public HRESULT GetMessage(BSTR bstrMessageId, IFaxOutgoingMessage** pFaxOutgoingMessage) mut
+			{
+				return VT.GetMessage(&this, bstrMessageId, pFaxOutgoingMessage);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxOutgoingArchive *self, int16* pbUseArchive) get_UseArchive;
-				public function HRESULT(IFaxOutgoingArchive *self, int16 bUseArchive) put_UseArchive;
-				public function HRESULT(IFaxOutgoingArchive *self, BSTR* pbstrArchiveFolder) get_ArchiveFolder;
-				public function HRESULT(IFaxOutgoingArchive *self, BSTR bstrArchiveFolder) put_ArchiveFolder;
-				public function HRESULT(IFaxOutgoingArchive *self, int16* pbSizeQuotaWarning) get_SizeQuotaWarning;
-				public function HRESULT(IFaxOutgoingArchive *self, int16 bSizeQuotaWarning) put_SizeQuotaWarning;
-				public function HRESULT(IFaxOutgoingArchive *self, int32* plHighQuotaWaterMark) get_HighQuotaWaterMark;
-				public function HRESULT(IFaxOutgoingArchive *self, int32 lHighQuotaWaterMark) put_HighQuotaWaterMark;
-				public function HRESULT(IFaxOutgoingArchive *self, int32* plLowQuotaWaterMark) get_LowQuotaWaterMark;
-				public function HRESULT(IFaxOutgoingArchive *self, int32 lLowQuotaWaterMark) put_LowQuotaWaterMark;
-				public function HRESULT(IFaxOutgoingArchive *self, int32* plAgeLimit) get_AgeLimit;
-				public function HRESULT(IFaxOutgoingArchive *self, int32 lAgeLimit) put_AgeLimit;
-				public function HRESULT(IFaxOutgoingArchive *self, int32* plSizeLow) get_SizeLow;
-				public function HRESULT(IFaxOutgoingArchive *self, int32* plSizeHigh) get_SizeHigh;
-				public function HRESULT(IFaxOutgoingArchive *self) Refresh;
-				public function HRESULT(IFaxOutgoingArchive *self) Save;
-				public function HRESULT(IFaxOutgoingArchive *self, int32 lPrefetchSize, IFaxOutgoingMessageIterator** pFaxOutgoingMessageIterator) GetMessages;
-				public function HRESULT(IFaxOutgoingArchive *self, BSTR bstrMessageId, IFaxOutgoingMessage** pFaxOutgoingMessage) GetMessage;
+				public new function HRESULT(IFaxOutgoingArchive *self, int16* pbUseArchive) get_UseArchive;
+				public new function HRESULT(IFaxOutgoingArchive *self, int16 bUseArchive) put_UseArchive;
+				public new function HRESULT(IFaxOutgoingArchive *self, BSTR* pbstrArchiveFolder) get_ArchiveFolder;
+				public new function HRESULT(IFaxOutgoingArchive *self, BSTR bstrArchiveFolder) put_ArchiveFolder;
+				public new function HRESULT(IFaxOutgoingArchive *self, int16* pbSizeQuotaWarning) get_SizeQuotaWarning;
+				public new function HRESULT(IFaxOutgoingArchive *self, int16 bSizeQuotaWarning) put_SizeQuotaWarning;
+				public new function HRESULT(IFaxOutgoingArchive *self, int32* plHighQuotaWaterMark) get_HighQuotaWaterMark;
+				public new function HRESULT(IFaxOutgoingArchive *self, int32 lHighQuotaWaterMark) put_HighQuotaWaterMark;
+				public new function HRESULT(IFaxOutgoingArchive *self, int32* plLowQuotaWaterMark) get_LowQuotaWaterMark;
+				public new function HRESULT(IFaxOutgoingArchive *self, int32 lLowQuotaWaterMark) put_LowQuotaWaterMark;
+				public new function HRESULT(IFaxOutgoingArchive *self, int32* plAgeLimit) get_AgeLimit;
+				public new function HRESULT(IFaxOutgoingArchive *self, int32 lAgeLimit) put_AgeLimit;
+				public new function HRESULT(IFaxOutgoingArchive *self, int32* plSizeLow) get_SizeLow;
+				public new function HRESULT(IFaxOutgoingArchive *self, int32* plSizeHigh) get_SizeHigh;
+				public new function HRESULT(IFaxOutgoingArchive *self) Refresh;
+				public new function HRESULT(IFaxOutgoingArchive *self) Save;
+				public new function HRESULT(IFaxOutgoingArchive *self, int32 lPrefetchSize, IFaxOutgoingMessageIterator** pFaxOutgoingMessageIterator) GetMessages;
+				public new function HRESULT(IFaxOutgoingArchive *self, BSTR bstrMessageId, IFaxOutgoingMessage** pFaxOutgoingMessage) GetMessage;
 			}
 		}
 		[CRepr]
@@ -1606,34 +2460,131 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x80b1df24, 0xd9ac, 0x4333, 0xb3, 0x73, 0x48, 0x7c, 0xed, 0xc8, 0x0c, 0xe5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Blocked(int16* pbBlocked) mut
+			{
+				return VT.get_Blocked(&this, pbBlocked);
+			}
+			public HRESULT put_Blocked(int16 bBlocked) mut
+			{
+				return VT.put_Blocked(&this, bBlocked);
+			}
+			public HRESULT get_Paused(int16* pbPaused) mut
+			{
+				return VT.get_Paused(&this, pbPaused);
+			}
+			public HRESULT put_Paused(int16 bPaused) mut
+			{
+				return VT.put_Paused(&this, bPaused);
+			}
+			public HRESULT get_AllowPersonalCoverPages(int16* pbAllowPersonalCoverPages) mut
+			{
+				return VT.get_AllowPersonalCoverPages(&this, pbAllowPersonalCoverPages);
+			}
+			public HRESULT put_AllowPersonalCoverPages(int16 bAllowPersonalCoverPages) mut
+			{
+				return VT.put_AllowPersonalCoverPages(&this, bAllowPersonalCoverPages);
+			}
+			public HRESULT get_UseDeviceTSID(int16* pbUseDeviceTSID) mut
+			{
+				return VT.get_UseDeviceTSID(&this, pbUseDeviceTSID);
+			}
+			public HRESULT put_UseDeviceTSID(int16 bUseDeviceTSID) mut
+			{
+				return VT.put_UseDeviceTSID(&this, bUseDeviceTSID);
+			}
+			public HRESULT get_Retries(int32* plRetries) mut
+			{
+				return VT.get_Retries(&this, plRetries);
+			}
+			public HRESULT put_Retries(int32 lRetries) mut
+			{
+				return VT.put_Retries(&this, lRetries);
+			}
+			public HRESULT get_RetryDelay(int32* plRetryDelay) mut
+			{
+				return VT.get_RetryDelay(&this, plRetryDelay);
+			}
+			public HRESULT put_RetryDelay(int32 lRetryDelay) mut
+			{
+				return VT.put_RetryDelay(&this, lRetryDelay);
+			}
+			public HRESULT get_DiscountRateStart(double* pdateDiscountRateStart) mut
+			{
+				return VT.get_DiscountRateStart(&this, pdateDiscountRateStart);
+			}
+			public HRESULT put_DiscountRateStart(double dateDiscountRateStart) mut
+			{
+				return VT.put_DiscountRateStart(&this, dateDiscountRateStart);
+			}
+			public HRESULT get_DiscountRateEnd(double* pdateDiscountRateEnd) mut
+			{
+				return VT.get_DiscountRateEnd(&this, pdateDiscountRateEnd);
+			}
+			public HRESULT put_DiscountRateEnd(double dateDiscountRateEnd) mut
+			{
+				return VT.put_DiscountRateEnd(&this, dateDiscountRateEnd);
+			}
+			public HRESULT get_AgeLimit(int32* plAgeLimit) mut
+			{
+				return VT.get_AgeLimit(&this, plAgeLimit);
+			}
+			public HRESULT put_AgeLimit(int32 lAgeLimit) mut
+			{
+				return VT.put_AgeLimit(&this, lAgeLimit);
+			}
+			public HRESULT get_Branding(int16* pbBranding) mut
+			{
+				return VT.get_Branding(&this, pbBranding);
+			}
+			public HRESULT put_Branding(int16 bBranding) mut
+			{
+				return VT.put_Branding(&this, bBranding);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT Save() mut
+			{
+				return VT.Save(&this);
+			}
+			public HRESULT GetJobs(IFaxOutgoingJobs** pFaxOutgoingJobs) mut
+			{
+				return VT.GetJobs(&this, pFaxOutgoingJobs);
+			}
+			public HRESULT GetJob(BSTR bstrJobId, IFaxOutgoingJob** pFaxOutgoingJob) mut
+			{
+				return VT.GetJob(&this, bstrJobId, pFaxOutgoingJob);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxOutgoingQueue *self, int16* pbBlocked) get_Blocked;
-				public function HRESULT(IFaxOutgoingQueue *self, int16 bBlocked) put_Blocked;
-				public function HRESULT(IFaxOutgoingQueue *self, int16* pbPaused) get_Paused;
-				public function HRESULT(IFaxOutgoingQueue *self, int16 bPaused) put_Paused;
-				public function HRESULT(IFaxOutgoingQueue *self, int16* pbAllowPersonalCoverPages) get_AllowPersonalCoverPages;
-				public function HRESULT(IFaxOutgoingQueue *self, int16 bAllowPersonalCoverPages) put_AllowPersonalCoverPages;
-				public function HRESULT(IFaxOutgoingQueue *self, int16* pbUseDeviceTSID) get_UseDeviceTSID;
-				public function HRESULT(IFaxOutgoingQueue *self, int16 bUseDeviceTSID) put_UseDeviceTSID;
-				public function HRESULT(IFaxOutgoingQueue *self, int32* plRetries) get_Retries;
-				public function HRESULT(IFaxOutgoingQueue *self, int32 lRetries) put_Retries;
-				public function HRESULT(IFaxOutgoingQueue *self, int32* plRetryDelay) get_RetryDelay;
-				public function HRESULT(IFaxOutgoingQueue *self, int32 lRetryDelay) put_RetryDelay;
-				public function HRESULT(IFaxOutgoingQueue *self, double* pdateDiscountRateStart) get_DiscountRateStart;
-				public function HRESULT(IFaxOutgoingQueue *self, double dateDiscountRateStart) put_DiscountRateStart;
-				public function HRESULT(IFaxOutgoingQueue *self, double* pdateDiscountRateEnd) get_DiscountRateEnd;
-				public function HRESULT(IFaxOutgoingQueue *self, double dateDiscountRateEnd) put_DiscountRateEnd;
-				public function HRESULT(IFaxOutgoingQueue *self, int32* plAgeLimit) get_AgeLimit;
-				public function HRESULT(IFaxOutgoingQueue *self, int32 lAgeLimit) put_AgeLimit;
-				public function HRESULT(IFaxOutgoingQueue *self, int16* pbBranding) get_Branding;
-				public function HRESULT(IFaxOutgoingQueue *self, int16 bBranding) put_Branding;
-				public function HRESULT(IFaxOutgoingQueue *self) Refresh;
-				public function HRESULT(IFaxOutgoingQueue *self) Save;
-				public function HRESULT(IFaxOutgoingQueue *self, IFaxOutgoingJobs** pFaxOutgoingJobs) GetJobs;
-				public function HRESULT(IFaxOutgoingQueue *self, BSTR bstrJobId, IFaxOutgoingJob** pFaxOutgoingJob) GetJob;
+				public new function HRESULT(IFaxOutgoingQueue *self, int16* pbBlocked) get_Blocked;
+				public new function HRESULT(IFaxOutgoingQueue *self, int16 bBlocked) put_Blocked;
+				public new function HRESULT(IFaxOutgoingQueue *self, int16* pbPaused) get_Paused;
+				public new function HRESULT(IFaxOutgoingQueue *self, int16 bPaused) put_Paused;
+				public new function HRESULT(IFaxOutgoingQueue *self, int16* pbAllowPersonalCoverPages) get_AllowPersonalCoverPages;
+				public new function HRESULT(IFaxOutgoingQueue *self, int16 bAllowPersonalCoverPages) put_AllowPersonalCoverPages;
+				public new function HRESULT(IFaxOutgoingQueue *self, int16* pbUseDeviceTSID) get_UseDeviceTSID;
+				public new function HRESULT(IFaxOutgoingQueue *self, int16 bUseDeviceTSID) put_UseDeviceTSID;
+				public new function HRESULT(IFaxOutgoingQueue *self, int32* plRetries) get_Retries;
+				public new function HRESULT(IFaxOutgoingQueue *self, int32 lRetries) put_Retries;
+				public new function HRESULT(IFaxOutgoingQueue *self, int32* plRetryDelay) get_RetryDelay;
+				public new function HRESULT(IFaxOutgoingQueue *self, int32 lRetryDelay) put_RetryDelay;
+				public new function HRESULT(IFaxOutgoingQueue *self, double* pdateDiscountRateStart) get_DiscountRateStart;
+				public new function HRESULT(IFaxOutgoingQueue *self, double dateDiscountRateStart) put_DiscountRateStart;
+				public new function HRESULT(IFaxOutgoingQueue *self, double* pdateDiscountRateEnd) get_DiscountRateEnd;
+				public new function HRESULT(IFaxOutgoingQueue *self, double dateDiscountRateEnd) put_DiscountRateEnd;
+				public new function HRESULT(IFaxOutgoingQueue *self, int32* plAgeLimit) get_AgeLimit;
+				public new function HRESULT(IFaxOutgoingQueue *self, int32 lAgeLimit) put_AgeLimit;
+				public new function HRESULT(IFaxOutgoingQueue *self, int16* pbBranding) get_Branding;
+				public new function HRESULT(IFaxOutgoingQueue *self, int16 bBranding) put_Branding;
+				public new function HRESULT(IFaxOutgoingQueue *self) Refresh;
+				public new function HRESULT(IFaxOutgoingQueue *self) Save;
+				public new function HRESULT(IFaxOutgoingQueue *self, IFaxOutgoingJobs** pFaxOutgoingJobs) GetJobs;
+				public new function HRESULT(IFaxOutgoingQueue *self, BSTR bstrJobId, IFaxOutgoingJob** pFaxOutgoingJob) GetJob;
 			}
 		}
 		[CRepr]
@@ -1641,16 +2592,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xfd73ecc4, 0x6f06, 0x4f52, 0x82, 0xa8, 0xf7, 0xba, 0x06, 0xae, 0x31, 0x08);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Message(IFaxIncomingMessage** pFaxIncomingMessage) mut
+			{
+				return VT.get_Message(&this, pFaxIncomingMessage);
+			}
+			public HRESULT get_PrefetchSize(int32* plPrefetchSize) mut
+			{
+				return VT.get_PrefetchSize(&this, plPrefetchSize);
+			}
+			public HRESULT put_PrefetchSize(int32 lPrefetchSize) mut
+			{
+				return VT.put_PrefetchSize(&this, lPrefetchSize);
+			}
+			public HRESULT get_AtEOF(int16* pbEOF) mut
+			{
+				return VT.get_AtEOF(&this, pbEOF);
+			}
+			public HRESULT MoveFirst() mut
+			{
+				return VT.MoveFirst(&this);
+			}
+			public HRESULT MoveNext() mut
+			{
+				return VT.MoveNext(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxIncomingMessageIterator *self, IFaxIncomingMessage** pFaxIncomingMessage) get_Message;
-				public function HRESULT(IFaxIncomingMessageIterator *self, int32* plPrefetchSize) get_PrefetchSize;
-				public function HRESULT(IFaxIncomingMessageIterator *self, int32 lPrefetchSize) put_PrefetchSize;
-				public function HRESULT(IFaxIncomingMessageIterator *self, int16* pbEOF) get_AtEOF;
-				public function HRESULT(IFaxIncomingMessageIterator *self) MoveFirst;
-				public function HRESULT(IFaxIncomingMessageIterator *self) MoveNext;
+				public new function HRESULT(IFaxIncomingMessageIterator *self, IFaxIncomingMessage** pFaxIncomingMessage) get_Message;
+				public new function HRESULT(IFaxIncomingMessageIterator *self, int32* plPrefetchSize) get_PrefetchSize;
+				public new function HRESULT(IFaxIncomingMessageIterator *self, int32 lPrefetchSize) put_PrefetchSize;
+				public new function HRESULT(IFaxIncomingMessageIterator *self, int16* pbEOF) get_AtEOF;
+				public new function HRESULT(IFaxIncomingMessageIterator *self) MoveFirst;
+				public new function HRESULT(IFaxIncomingMessageIterator *self) MoveNext;
 			}
 		}
 		[CRepr]
@@ -1658,23 +2634,76 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7cab88fa, 0x2ef9, 0x4851, 0xb2, 0xf3, 0x1d, 0x14, 0x8f, 0xed, 0x84, 0x47);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Id(BSTR* pbstrId) mut
+			{
+				return VT.get_Id(&this, pbstrId);
+			}
+			public HRESULT get_Pages(int32* plPages) mut
+			{
+				return VT.get_Pages(&this, plPages);
+			}
+			public HRESULT get_Size(int32* plSize) mut
+			{
+				return VT.get_Size(&this, plSize);
+			}
+			public HRESULT get_DeviceName(BSTR* pbstrDeviceName) mut
+			{
+				return VT.get_DeviceName(&this, pbstrDeviceName);
+			}
+			public HRESULT get_Retries(int32* plRetries) mut
+			{
+				return VT.get_Retries(&this, plRetries);
+			}
+			public HRESULT get_TransmissionStart(double* pdateTransmissionStart) mut
+			{
+				return VT.get_TransmissionStart(&this, pdateTransmissionStart);
+			}
+			public HRESULT get_TransmissionEnd(double* pdateTransmissionEnd) mut
+			{
+				return VT.get_TransmissionEnd(&this, pdateTransmissionEnd);
+			}
+			public HRESULT get_CSID(BSTR* pbstrCSID) mut
+			{
+				return VT.get_CSID(&this, pbstrCSID);
+			}
+			public HRESULT get_TSID(BSTR* pbstrTSID) mut
+			{
+				return VT.get_TSID(&this, pbstrTSID);
+			}
+			public HRESULT get_CallerId(BSTR* pbstrCallerId) mut
+			{
+				return VT.get_CallerId(&this, pbstrCallerId);
+			}
+			public HRESULT get_RoutingInformation(BSTR* pbstrRoutingInformation) mut
+			{
+				return VT.get_RoutingInformation(&this, pbstrRoutingInformation);
+			}
+			public HRESULT CopyTiff(BSTR bstrTiffPath) mut
+			{
+				return VT.CopyTiff(&this, bstrTiffPath);
+			}
+			public HRESULT Delete() mut
+			{
+				return VT.Delete(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxIncomingMessage *self, BSTR* pbstrId) get_Id;
-				public function HRESULT(IFaxIncomingMessage *self, int32* plPages) get_Pages;
-				public function HRESULT(IFaxIncomingMessage *self, int32* plSize) get_Size;
-				public function HRESULT(IFaxIncomingMessage *self, BSTR* pbstrDeviceName) get_DeviceName;
-				public function HRESULT(IFaxIncomingMessage *self, int32* plRetries) get_Retries;
-				public function HRESULT(IFaxIncomingMessage *self, double* pdateTransmissionStart) get_TransmissionStart;
-				public function HRESULT(IFaxIncomingMessage *self, double* pdateTransmissionEnd) get_TransmissionEnd;
-				public function HRESULT(IFaxIncomingMessage *self, BSTR* pbstrCSID) get_CSID;
-				public function HRESULT(IFaxIncomingMessage *self, BSTR* pbstrTSID) get_TSID;
-				public function HRESULT(IFaxIncomingMessage *self, BSTR* pbstrCallerId) get_CallerId;
-				public function HRESULT(IFaxIncomingMessage *self, BSTR* pbstrRoutingInformation) get_RoutingInformation;
-				public function HRESULT(IFaxIncomingMessage *self, BSTR bstrTiffPath) CopyTiff;
-				public function HRESULT(IFaxIncomingMessage *self) Delete;
+				public new function HRESULT(IFaxIncomingMessage *self, BSTR* pbstrId) get_Id;
+				public new function HRESULT(IFaxIncomingMessage *self, int32* plPages) get_Pages;
+				public new function HRESULT(IFaxIncomingMessage *self, int32* plSize) get_Size;
+				public new function HRESULT(IFaxIncomingMessage *self, BSTR* pbstrDeviceName) get_DeviceName;
+				public new function HRESULT(IFaxIncomingMessage *self, int32* plRetries) get_Retries;
+				public new function HRESULT(IFaxIncomingMessage *self, double* pdateTransmissionStart) get_TransmissionStart;
+				public new function HRESULT(IFaxIncomingMessage *self, double* pdateTransmissionEnd) get_TransmissionEnd;
+				public new function HRESULT(IFaxIncomingMessage *self, BSTR* pbstrCSID) get_CSID;
+				public new function HRESULT(IFaxIncomingMessage *self, BSTR* pbstrTSID) get_TSID;
+				public new function HRESULT(IFaxIncomingMessage *self, BSTR* pbstrCallerId) get_CallerId;
+				public new function HRESULT(IFaxIncomingMessage *self, BSTR* pbstrRoutingInformation) get_RoutingInformation;
+				public new function HRESULT(IFaxIncomingMessage *self, BSTR bstrTiffPath) CopyTiff;
+				public new function HRESULT(IFaxIncomingMessage *self) Delete;
 			}
 		}
 		[CRepr]
@@ -1682,13 +2711,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2c56d8e6, 0x8c2f, 0x4573, 0x94, 0x4c, 0xe5, 0x05, 0xf8, 0xf5, 0xae, 0xed);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
+			{
+				return VT.get__NewEnum(&this, ppUnk);
+			}
+			public HRESULT get_Item(VARIANT vIndex, IFaxOutgoingJob** pFaxOutgoingJob) mut
+			{
+				return VT.get_Item(&this, vIndex, pFaxOutgoingJob);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxOutgoingJobs *self, IUnknown** ppUnk) get__NewEnum;
-				public function HRESULT(IFaxOutgoingJobs *self, VARIANT vIndex, IFaxOutgoingJob** pFaxOutgoingJob) get_Item;
-				public function HRESULT(IFaxOutgoingJobs *self, int32* plCount) get_Count;
+				public new function HRESULT(IFaxOutgoingJobs *self, IUnknown** ppUnk) get__NewEnum;
+				public new function HRESULT(IFaxOutgoingJobs *self, VARIANT vIndex, IFaxOutgoingJob** pFaxOutgoingJob) get_Item;
+				public new function HRESULT(IFaxOutgoingJobs *self, int32* plCount) get_Count;
 			}
 		}
 		[CRepr]
@@ -1696,41 +2738,166 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6356daad, 0x6614, 0x4583, 0xbf, 0x7a, 0x3a, 0xd6, 0x7b, 0xbf, 0xc7, 0x1c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Subject(BSTR* pbstrSubject) mut
+			{
+				return VT.get_Subject(&this, pbstrSubject);
+			}
+			public HRESULT get_DocumentName(BSTR* pbstrDocumentName) mut
+			{
+				return VT.get_DocumentName(&this, pbstrDocumentName);
+			}
+			public HRESULT get_Pages(int32* plPages) mut
+			{
+				return VT.get_Pages(&this, plPages);
+			}
+			public HRESULT get_Size(int32* plSize) mut
+			{
+				return VT.get_Size(&this, plSize);
+			}
+			public HRESULT get_SubmissionId(BSTR* pbstrSubmissionId) mut
+			{
+				return VT.get_SubmissionId(&this, pbstrSubmissionId);
+			}
+			public HRESULT get_Id(BSTR* pbstrId) mut
+			{
+				return VT.get_Id(&this, pbstrId);
+			}
+			public HRESULT get_OriginalScheduledTime(double* pdateOriginalScheduledTime) mut
+			{
+				return VT.get_OriginalScheduledTime(&this, pdateOriginalScheduledTime);
+			}
+			public HRESULT get_SubmissionTime(double* pdateSubmissionTime) mut
+			{
+				return VT.get_SubmissionTime(&this, pdateSubmissionTime);
+			}
+			public HRESULT get_ReceiptType(FAX_RECEIPT_TYPE_ENUM* pReceiptType) mut
+			{
+				return VT.get_ReceiptType(&this, pReceiptType);
+			}
+			public HRESULT get_Priority(FAX_PRIORITY_TYPE_ENUM* pPriority) mut
+			{
+				return VT.get_Priority(&this, pPriority);
+			}
+			public HRESULT get_Sender(IFaxSender** ppFaxSender) mut
+			{
+				return VT.get_Sender(&this, ppFaxSender);
+			}
+			public HRESULT get_Recipient(IFaxRecipient** ppFaxRecipient) mut
+			{
+				return VT.get_Recipient(&this, ppFaxRecipient);
+			}
+			public HRESULT get_CurrentPage(int32* plCurrentPage) mut
+			{
+				return VT.get_CurrentPage(&this, plCurrentPage);
+			}
+			public HRESULT get_DeviceId(int32* plDeviceId) mut
+			{
+				return VT.get_DeviceId(&this, plDeviceId);
+			}
+			public HRESULT get_Status(FAX_JOB_STATUS_ENUM* pStatus) mut
+			{
+				return VT.get_Status(&this, pStatus);
+			}
+			public HRESULT get_ExtendedStatusCode(FAX_JOB_EXTENDED_STATUS_ENUM* pExtendedStatusCode) mut
+			{
+				return VT.get_ExtendedStatusCode(&this, pExtendedStatusCode);
+			}
+			public HRESULT get_ExtendedStatus(BSTR* pbstrExtendedStatus) mut
+			{
+				return VT.get_ExtendedStatus(&this, pbstrExtendedStatus);
+			}
+			public HRESULT get_AvailableOperations(FAX_JOB_OPERATIONS_ENUM* pAvailableOperations) mut
+			{
+				return VT.get_AvailableOperations(&this, pAvailableOperations);
+			}
+			public HRESULT get_Retries(int32* plRetries) mut
+			{
+				return VT.get_Retries(&this, plRetries);
+			}
+			public HRESULT get_ScheduledTime(double* pdateScheduledTime) mut
+			{
+				return VT.get_ScheduledTime(&this, pdateScheduledTime);
+			}
+			public HRESULT get_TransmissionStart(double* pdateTransmissionStart) mut
+			{
+				return VT.get_TransmissionStart(&this, pdateTransmissionStart);
+			}
+			public HRESULT get_TransmissionEnd(double* pdateTransmissionEnd) mut
+			{
+				return VT.get_TransmissionEnd(&this, pdateTransmissionEnd);
+			}
+			public HRESULT get_CSID(BSTR* pbstrCSID) mut
+			{
+				return VT.get_CSID(&this, pbstrCSID);
+			}
+			public HRESULT get_TSID(BSTR* pbstrTSID) mut
+			{
+				return VT.get_TSID(&this, pbstrTSID);
+			}
+			public HRESULT get_GroupBroadcastReceipts(int16* pbGroupBroadcastReceipts) mut
+			{
+				return VT.get_GroupBroadcastReceipts(&this, pbGroupBroadcastReceipts);
+			}
+			public HRESULT Pause() mut
+			{
+				return VT.Pause(&this);
+			}
+			public HRESULT Resume() mut
+			{
+				return VT.Resume(&this);
+			}
+			public HRESULT Restart() mut
+			{
+				return VT.Restart(&this);
+			}
+			public HRESULT CopyTiff(BSTR bstrTiffPath) mut
+			{
+				return VT.CopyTiff(&this, bstrTiffPath);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT Cancel() mut
+			{
+				return VT.Cancel(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrSubject) get_Subject;
-				public function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrDocumentName) get_DocumentName;
-				public function HRESULT(IFaxOutgoingJob *self, int32* plPages) get_Pages;
-				public function HRESULT(IFaxOutgoingJob *self, int32* plSize) get_Size;
-				public function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrSubmissionId) get_SubmissionId;
-				public function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrId) get_Id;
-				public function HRESULT(IFaxOutgoingJob *self, double* pdateOriginalScheduledTime) get_OriginalScheduledTime;
-				public function HRESULT(IFaxOutgoingJob *self, double* pdateSubmissionTime) get_SubmissionTime;
-				public function HRESULT(IFaxOutgoingJob *self, FAX_RECEIPT_TYPE_ENUM* pReceiptType) get_ReceiptType;
-				public function HRESULT(IFaxOutgoingJob *self, FAX_PRIORITY_TYPE_ENUM* pPriority) get_Priority;
-				public function HRESULT(IFaxOutgoingJob *self, IFaxSender** ppFaxSender) get_Sender;
-				public function HRESULT(IFaxOutgoingJob *self, IFaxRecipient** ppFaxRecipient) get_Recipient;
-				public function HRESULT(IFaxOutgoingJob *self, int32* plCurrentPage) get_CurrentPage;
-				public function HRESULT(IFaxOutgoingJob *self, int32* plDeviceId) get_DeviceId;
-				public function HRESULT(IFaxOutgoingJob *self, FAX_JOB_STATUS_ENUM* pStatus) get_Status;
-				public function HRESULT(IFaxOutgoingJob *self, FAX_JOB_EXTENDED_STATUS_ENUM* pExtendedStatusCode) get_ExtendedStatusCode;
-				public function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrExtendedStatus) get_ExtendedStatus;
-				public function HRESULT(IFaxOutgoingJob *self, FAX_JOB_OPERATIONS_ENUM* pAvailableOperations) get_AvailableOperations;
-				public function HRESULT(IFaxOutgoingJob *self, int32* plRetries) get_Retries;
-				public function HRESULT(IFaxOutgoingJob *self, double* pdateScheduledTime) get_ScheduledTime;
-				public function HRESULT(IFaxOutgoingJob *self, double* pdateTransmissionStart) get_TransmissionStart;
-				public function HRESULT(IFaxOutgoingJob *self, double* pdateTransmissionEnd) get_TransmissionEnd;
-				public function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrCSID) get_CSID;
-				public function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrTSID) get_TSID;
-				public function HRESULT(IFaxOutgoingJob *self, int16* pbGroupBroadcastReceipts) get_GroupBroadcastReceipts;
-				public function HRESULT(IFaxOutgoingJob *self) Pause;
-				public function HRESULT(IFaxOutgoingJob *self) Resume;
-				public function HRESULT(IFaxOutgoingJob *self) Restart;
-				public function HRESULT(IFaxOutgoingJob *self, BSTR bstrTiffPath) CopyTiff;
-				public function HRESULT(IFaxOutgoingJob *self) Refresh;
-				public function HRESULT(IFaxOutgoingJob *self) Cancel;
+				public new function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrSubject) get_Subject;
+				public new function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrDocumentName) get_DocumentName;
+				public new function HRESULT(IFaxOutgoingJob *self, int32* plPages) get_Pages;
+				public new function HRESULT(IFaxOutgoingJob *self, int32* plSize) get_Size;
+				public new function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrSubmissionId) get_SubmissionId;
+				public new function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrId) get_Id;
+				public new function HRESULT(IFaxOutgoingJob *self, double* pdateOriginalScheduledTime) get_OriginalScheduledTime;
+				public new function HRESULT(IFaxOutgoingJob *self, double* pdateSubmissionTime) get_SubmissionTime;
+				public new function HRESULT(IFaxOutgoingJob *self, FAX_RECEIPT_TYPE_ENUM* pReceiptType) get_ReceiptType;
+				public new function HRESULT(IFaxOutgoingJob *self, FAX_PRIORITY_TYPE_ENUM* pPriority) get_Priority;
+				public new function HRESULT(IFaxOutgoingJob *self, IFaxSender** ppFaxSender) get_Sender;
+				public new function HRESULT(IFaxOutgoingJob *self, IFaxRecipient** ppFaxRecipient) get_Recipient;
+				public new function HRESULT(IFaxOutgoingJob *self, int32* plCurrentPage) get_CurrentPage;
+				public new function HRESULT(IFaxOutgoingJob *self, int32* plDeviceId) get_DeviceId;
+				public new function HRESULT(IFaxOutgoingJob *self, FAX_JOB_STATUS_ENUM* pStatus) get_Status;
+				public new function HRESULT(IFaxOutgoingJob *self, FAX_JOB_EXTENDED_STATUS_ENUM* pExtendedStatusCode) get_ExtendedStatusCode;
+				public new function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrExtendedStatus) get_ExtendedStatus;
+				public new function HRESULT(IFaxOutgoingJob *self, FAX_JOB_OPERATIONS_ENUM* pAvailableOperations) get_AvailableOperations;
+				public new function HRESULT(IFaxOutgoingJob *self, int32* plRetries) get_Retries;
+				public new function HRESULT(IFaxOutgoingJob *self, double* pdateScheduledTime) get_ScheduledTime;
+				public new function HRESULT(IFaxOutgoingJob *self, double* pdateTransmissionStart) get_TransmissionStart;
+				public new function HRESULT(IFaxOutgoingJob *self, double* pdateTransmissionEnd) get_TransmissionEnd;
+				public new function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrCSID) get_CSID;
+				public new function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrTSID) get_TSID;
+				public new function HRESULT(IFaxOutgoingJob *self, int16* pbGroupBroadcastReceipts) get_GroupBroadcastReceipts;
+				public new function HRESULT(IFaxOutgoingJob *self) Pause;
+				public new function HRESULT(IFaxOutgoingJob *self) Resume;
+				public new function HRESULT(IFaxOutgoingJob *self) Restart;
+				public new function HRESULT(IFaxOutgoingJob *self, BSTR bstrTiffPath) CopyTiff;
+				public new function HRESULT(IFaxOutgoingJob *self) Refresh;
+				public new function HRESULT(IFaxOutgoingJob *self) Cancel;
 			}
 		}
 		[CRepr]
@@ -1738,16 +2905,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf5ec5d4f, 0xb840, 0x432f, 0x99, 0x80, 0x11, 0x2f, 0xe4, 0x2a, 0x9b, 0x7a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Message(IFaxOutgoingMessage** pFaxOutgoingMessage) mut
+			{
+				return VT.get_Message(&this, pFaxOutgoingMessage);
+			}
+			public HRESULT get_AtEOF(int16* pbEOF) mut
+			{
+				return VT.get_AtEOF(&this, pbEOF);
+			}
+			public HRESULT get_PrefetchSize(int32* plPrefetchSize) mut
+			{
+				return VT.get_PrefetchSize(&this, plPrefetchSize);
+			}
+			public HRESULT put_PrefetchSize(int32 lPrefetchSize) mut
+			{
+				return VT.put_PrefetchSize(&this, lPrefetchSize);
+			}
+			public HRESULT MoveFirst() mut
+			{
+				return VT.MoveFirst(&this);
+			}
+			public HRESULT MoveNext() mut
+			{
+				return VT.MoveNext(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxOutgoingMessageIterator *self, IFaxOutgoingMessage** pFaxOutgoingMessage) get_Message;
-				public function HRESULT(IFaxOutgoingMessageIterator *self, int16* pbEOF) get_AtEOF;
-				public function HRESULT(IFaxOutgoingMessageIterator *self, int32* plPrefetchSize) get_PrefetchSize;
-				public function HRESULT(IFaxOutgoingMessageIterator *self, int32 lPrefetchSize) put_PrefetchSize;
-				public function HRESULT(IFaxOutgoingMessageIterator *self) MoveFirst;
-				public function HRESULT(IFaxOutgoingMessageIterator *self) MoveNext;
+				public new function HRESULT(IFaxOutgoingMessageIterator *self, IFaxOutgoingMessage** pFaxOutgoingMessage) get_Message;
+				public new function HRESULT(IFaxOutgoingMessageIterator *self, int16* pbEOF) get_AtEOF;
+				public new function HRESULT(IFaxOutgoingMessageIterator *self, int32* plPrefetchSize) get_PrefetchSize;
+				public new function HRESULT(IFaxOutgoingMessageIterator *self, int32 lPrefetchSize) put_PrefetchSize;
+				public new function HRESULT(IFaxOutgoingMessageIterator *self) MoveFirst;
+				public new function HRESULT(IFaxOutgoingMessageIterator *self) MoveNext;
 			}
 		}
 		[CRepr]
@@ -1755,29 +2947,106 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf0ea35de, 0xcaa5, 0x4a7c, 0x82, 0xc7, 0x2b, 0x60, 0xba, 0x5f, 0x2b, 0xe2);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_SubmissionId(BSTR* pbstrSubmissionId) mut
+			{
+				return VT.get_SubmissionId(&this, pbstrSubmissionId);
+			}
+			public HRESULT get_Id(BSTR* pbstrId) mut
+			{
+				return VT.get_Id(&this, pbstrId);
+			}
+			public HRESULT get_Subject(BSTR* pbstrSubject) mut
+			{
+				return VT.get_Subject(&this, pbstrSubject);
+			}
+			public HRESULT get_DocumentName(BSTR* pbstrDocumentName) mut
+			{
+				return VT.get_DocumentName(&this, pbstrDocumentName);
+			}
+			public HRESULT get_Retries(int32* plRetries) mut
+			{
+				return VT.get_Retries(&this, plRetries);
+			}
+			public HRESULT get_Pages(int32* plPages) mut
+			{
+				return VT.get_Pages(&this, plPages);
+			}
+			public HRESULT get_Size(int32* plSize) mut
+			{
+				return VT.get_Size(&this, plSize);
+			}
+			public HRESULT get_OriginalScheduledTime(double* pdateOriginalScheduledTime) mut
+			{
+				return VT.get_OriginalScheduledTime(&this, pdateOriginalScheduledTime);
+			}
+			public HRESULT get_SubmissionTime(double* pdateSubmissionTime) mut
+			{
+				return VT.get_SubmissionTime(&this, pdateSubmissionTime);
+			}
+			public HRESULT get_Priority(FAX_PRIORITY_TYPE_ENUM* pPriority) mut
+			{
+				return VT.get_Priority(&this, pPriority);
+			}
+			public HRESULT get_Sender(IFaxSender** ppFaxSender) mut
+			{
+				return VT.get_Sender(&this, ppFaxSender);
+			}
+			public HRESULT get_Recipient(IFaxRecipient** ppFaxRecipient) mut
+			{
+				return VT.get_Recipient(&this, ppFaxRecipient);
+			}
+			public HRESULT get_DeviceName(BSTR* pbstrDeviceName) mut
+			{
+				return VT.get_DeviceName(&this, pbstrDeviceName);
+			}
+			public HRESULT get_TransmissionStart(double* pdateTransmissionStart) mut
+			{
+				return VT.get_TransmissionStart(&this, pdateTransmissionStart);
+			}
+			public HRESULT get_TransmissionEnd(double* pdateTransmissionEnd) mut
+			{
+				return VT.get_TransmissionEnd(&this, pdateTransmissionEnd);
+			}
+			public HRESULT get_CSID(BSTR* pbstrCSID) mut
+			{
+				return VT.get_CSID(&this, pbstrCSID);
+			}
+			public HRESULT get_TSID(BSTR* pbstrTSID) mut
+			{
+				return VT.get_TSID(&this, pbstrTSID);
+			}
+			public HRESULT CopyTiff(BSTR bstrTiffPath) mut
+			{
+				return VT.CopyTiff(&this, bstrTiffPath);
+			}
+			public HRESULT Delete() mut
+			{
+				return VT.Delete(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrSubmissionId) get_SubmissionId;
-				public function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrId) get_Id;
-				public function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrSubject) get_Subject;
-				public function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrDocumentName) get_DocumentName;
-				public function HRESULT(IFaxOutgoingMessage *self, int32* plRetries) get_Retries;
-				public function HRESULT(IFaxOutgoingMessage *self, int32* plPages) get_Pages;
-				public function HRESULT(IFaxOutgoingMessage *self, int32* plSize) get_Size;
-				public function HRESULT(IFaxOutgoingMessage *self, double* pdateOriginalScheduledTime) get_OriginalScheduledTime;
-				public function HRESULT(IFaxOutgoingMessage *self, double* pdateSubmissionTime) get_SubmissionTime;
-				public function HRESULT(IFaxOutgoingMessage *self, FAX_PRIORITY_TYPE_ENUM* pPriority) get_Priority;
-				public function HRESULT(IFaxOutgoingMessage *self, IFaxSender** ppFaxSender) get_Sender;
-				public function HRESULT(IFaxOutgoingMessage *self, IFaxRecipient** ppFaxRecipient) get_Recipient;
-				public function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrDeviceName) get_DeviceName;
-				public function HRESULT(IFaxOutgoingMessage *self, double* pdateTransmissionStart) get_TransmissionStart;
-				public function HRESULT(IFaxOutgoingMessage *self, double* pdateTransmissionEnd) get_TransmissionEnd;
-				public function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrCSID) get_CSID;
-				public function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrTSID) get_TSID;
-				public function HRESULT(IFaxOutgoingMessage *self, BSTR bstrTiffPath) CopyTiff;
-				public function HRESULT(IFaxOutgoingMessage *self) Delete;
+				public new function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrSubmissionId) get_SubmissionId;
+				public new function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrId) get_Id;
+				public new function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrSubject) get_Subject;
+				public new function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrDocumentName) get_DocumentName;
+				public new function HRESULT(IFaxOutgoingMessage *self, int32* plRetries) get_Retries;
+				public new function HRESULT(IFaxOutgoingMessage *self, int32* plPages) get_Pages;
+				public new function HRESULT(IFaxOutgoingMessage *self, int32* plSize) get_Size;
+				public new function HRESULT(IFaxOutgoingMessage *self, double* pdateOriginalScheduledTime) get_OriginalScheduledTime;
+				public new function HRESULT(IFaxOutgoingMessage *self, double* pdateSubmissionTime) get_SubmissionTime;
+				public new function HRESULT(IFaxOutgoingMessage *self, FAX_PRIORITY_TYPE_ENUM* pPriority) get_Priority;
+				public new function HRESULT(IFaxOutgoingMessage *self, IFaxSender** ppFaxSender) get_Sender;
+				public new function HRESULT(IFaxOutgoingMessage *self, IFaxRecipient** ppFaxRecipient) get_Recipient;
+				public new function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrDeviceName) get_DeviceName;
+				public new function HRESULT(IFaxOutgoingMessage *self, double* pdateTransmissionStart) get_TransmissionStart;
+				public new function HRESULT(IFaxOutgoingMessage *self, double* pdateTransmissionEnd) get_TransmissionEnd;
+				public new function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrCSID) get_CSID;
+				public new function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrTSID) get_TSID;
+				public new function HRESULT(IFaxOutgoingMessage *self, BSTR bstrTiffPath) CopyTiff;
+				public new function HRESULT(IFaxOutgoingMessage *self) Delete;
 			}
 		}
 		[CRepr]
@@ -1785,13 +3054,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x011f04e9, 0x4fd6, 0x4c23, 0x95, 0x13, 0xb6, 0xb6, 0x6b, 0xb2, 0x6b, 0xe9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
+			{
+				return VT.get__NewEnum(&this, ppUnk);
+			}
+			public HRESULT get_Item(VARIANT vIndex, IFaxIncomingJob** pFaxIncomingJob) mut
+			{
+				return VT.get_Item(&this, vIndex, pFaxIncomingJob);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxIncomingJobs *self, IUnknown** ppUnk) get__NewEnum;
-				public function HRESULT(IFaxIncomingJobs *self, VARIANT vIndex, IFaxIncomingJob** pFaxIncomingJob) get_Item;
-				public function HRESULT(IFaxIncomingJobs *self, int32* plCount) get_Count;
+				public new function HRESULT(IFaxIncomingJobs *self, IUnknown** ppUnk) get__NewEnum;
+				public new function HRESULT(IFaxIncomingJobs *self, VARIANT vIndex, IFaxIncomingJob** pFaxIncomingJob) get_Item;
+				public new function HRESULT(IFaxIncomingJobs *self, int32* plCount) get_Count;
 			}
 		}
 		[CRepr]
@@ -1799,29 +3081,106 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x207529e6, 0x654a, 0x4916, 0x9f, 0x88, 0x4d, 0x23, 0x2e, 0xe8, 0xa1, 0x07);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Size(int32* plSize) mut
+			{
+				return VT.get_Size(&this, plSize);
+			}
+			public HRESULT get_Id(BSTR* pbstrId) mut
+			{
+				return VT.get_Id(&this, pbstrId);
+			}
+			public HRESULT get_CurrentPage(int32* plCurrentPage) mut
+			{
+				return VT.get_CurrentPage(&this, plCurrentPage);
+			}
+			public HRESULT get_DeviceId(int32* plDeviceId) mut
+			{
+				return VT.get_DeviceId(&this, plDeviceId);
+			}
+			public HRESULT get_Status(FAX_JOB_STATUS_ENUM* pStatus) mut
+			{
+				return VT.get_Status(&this, pStatus);
+			}
+			public HRESULT get_ExtendedStatusCode(FAX_JOB_EXTENDED_STATUS_ENUM* pExtendedStatusCode) mut
+			{
+				return VT.get_ExtendedStatusCode(&this, pExtendedStatusCode);
+			}
+			public HRESULT get_ExtendedStatus(BSTR* pbstrExtendedStatus) mut
+			{
+				return VT.get_ExtendedStatus(&this, pbstrExtendedStatus);
+			}
+			public HRESULT get_AvailableOperations(FAX_JOB_OPERATIONS_ENUM* pAvailableOperations) mut
+			{
+				return VT.get_AvailableOperations(&this, pAvailableOperations);
+			}
+			public HRESULT get_Retries(int32* plRetries) mut
+			{
+				return VT.get_Retries(&this, plRetries);
+			}
+			public HRESULT get_TransmissionStart(double* pdateTransmissionStart) mut
+			{
+				return VT.get_TransmissionStart(&this, pdateTransmissionStart);
+			}
+			public HRESULT get_TransmissionEnd(double* pdateTransmissionEnd) mut
+			{
+				return VT.get_TransmissionEnd(&this, pdateTransmissionEnd);
+			}
+			public HRESULT get_CSID(BSTR* pbstrCSID) mut
+			{
+				return VT.get_CSID(&this, pbstrCSID);
+			}
+			public HRESULT get_TSID(BSTR* pbstrTSID) mut
+			{
+				return VT.get_TSID(&this, pbstrTSID);
+			}
+			public HRESULT get_CallerId(BSTR* pbstrCallerId) mut
+			{
+				return VT.get_CallerId(&this, pbstrCallerId);
+			}
+			public HRESULT get_RoutingInformation(BSTR* pbstrRoutingInformation) mut
+			{
+				return VT.get_RoutingInformation(&this, pbstrRoutingInformation);
+			}
+			public HRESULT get_JobType(FAX_JOB_TYPE_ENUM* pJobType) mut
+			{
+				return VT.get_JobType(&this, pJobType);
+			}
+			public HRESULT Cancel() mut
+			{
+				return VT.Cancel(&this);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT CopyTiff(BSTR bstrTiffPath) mut
+			{
+				return VT.CopyTiff(&this, bstrTiffPath);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxIncomingJob *self, int32* plSize) get_Size;
-				public function HRESULT(IFaxIncomingJob *self, BSTR* pbstrId) get_Id;
-				public function HRESULT(IFaxIncomingJob *self, int32* plCurrentPage) get_CurrentPage;
-				public function HRESULT(IFaxIncomingJob *self, int32* plDeviceId) get_DeviceId;
-				public function HRESULT(IFaxIncomingJob *self, FAX_JOB_STATUS_ENUM* pStatus) get_Status;
-				public function HRESULT(IFaxIncomingJob *self, FAX_JOB_EXTENDED_STATUS_ENUM* pExtendedStatusCode) get_ExtendedStatusCode;
-				public function HRESULT(IFaxIncomingJob *self, BSTR* pbstrExtendedStatus) get_ExtendedStatus;
-				public function HRESULT(IFaxIncomingJob *self, FAX_JOB_OPERATIONS_ENUM* pAvailableOperations) get_AvailableOperations;
-				public function HRESULT(IFaxIncomingJob *self, int32* plRetries) get_Retries;
-				public function HRESULT(IFaxIncomingJob *self, double* pdateTransmissionStart) get_TransmissionStart;
-				public function HRESULT(IFaxIncomingJob *self, double* pdateTransmissionEnd) get_TransmissionEnd;
-				public function HRESULT(IFaxIncomingJob *self, BSTR* pbstrCSID) get_CSID;
-				public function HRESULT(IFaxIncomingJob *self, BSTR* pbstrTSID) get_TSID;
-				public function HRESULT(IFaxIncomingJob *self, BSTR* pbstrCallerId) get_CallerId;
-				public function HRESULT(IFaxIncomingJob *self, BSTR* pbstrRoutingInformation) get_RoutingInformation;
-				public function HRESULT(IFaxIncomingJob *self, FAX_JOB_TYPE_ENUM* pJobType) get_JobType;
-				public function HRESULT(IFaxIncomingJob *self) Cancel;
-				public function HRESULT(IFaxIncomingJob *self) Refresh;
-				public function HRESULT(IFaxIncomingJob *self, BSTR bstrTiffPath) CopyTiff;
+				public new function HRESULT(IFaxIncomingJob *self, int32* plSize) get_Size;
+				public new function HRESULT(IFaxIncomingJob *self, BSTR* pbstrId) get_Id;
+				public new function HRESULT(IFaxIncomingJob *self, int32* plCurrentPage) get_CurrentPage;
+				public new function HRESULT(IFaxIncomingJob *self, int32* plDeviceId) get_DeviceId;
+				public new function HRESULT(IFaxIncomingJob *self, FAX_JOB_STATUS_ENUM* pStatus) get_Status;
+				public new function HRESULT(IFaxIncomingJob *self, FAX_JOB_EXTENDED_STATUS_ENUM* pExtendedStatusCode) get_ExtendedStatusCode;
+				public new function HRESULT(IFaxIncomingJob *self, BSTR* pbstrExtendedStatus) get_ExtendedStatus;
+				public new function HRESULT(IFaxIncomingJob *self, FAX_JOB_OPERATIONS_ENUM* pAvailableOperations) get_AvailableOperations;
+				public new function HRESULT(IFaxIncomingJob *self, int32* plRetries) get_Retries;
+				public new function HRESULT(IFaxIncomingJob *self, double* pdateTransmissionStart) get_TransmissionStart;
+				public new function HRESULT(IFaxIncomingJob *self, double* pdateTransmissionEnd) get_TransmissionEnd;
+				public new function HRESULT(IFaxIncomingJob *self, BSTR* pbstrCSID) get_CSID;
+				public new function HRESULT(IFaxIncomingJob *self, BSTR* pbstrTSID) get_TSID;
+				public new function HRESULT(IFaxIncomingJob *self, BSTR* pbstrCallerId) get_CallerId;
+				public new function HRESULT(IFaxIncomingJob *self, BSTR* pbstrRoutingInformation) get_RoutingInformation;
+				public new function HRESULT(IFaxIncomingJob *self, FAX_JOB_TYPE_ENUM* pJobType) get_JobType;
+				public new function HRESULT(IFaxIncomingJob *self) Cancel;
+				public new function HRESULT(IFaxIncomingJob *self) Refresh;
+				public new function HRESULT(IFaxIncomingJob *self, BSTR bstrTiffPath) CopyTiff;
 			}
 		}
 		[CRepr]
@@ -1829,22 +3188,71 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x290eac63, 0x83ec, 0x449c, 0x84, 0x17, 0xf1, 0x48, 0xdf, 0x8c, 0x68, 0x2a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_FriendlyName(BSTR* pbstrFriendlyName) mut
+			{
+				return VT.get_FriendlyName(&this, pbstrFriendlyName);
+			}
+			public HRESULT get_ImageName(BSTR* pbstrImageName) mut
+			{
+				return VT.get_ImageName(&this, pbstrImageName);
+			}
+			public HRESULT get_UniqueName(BSTR* pbstrUniqueName) mut
+			{
+				return VT.get_UniqueName(&this, pbstrUniqueName);
+			}
+			public HRESULT get_TapiProviderName(BSTR* pbstrTapiProviderName) mut
+			{
+				return VT.get_TapiProviderName(&this, pbstrTapiProviderName);
+			}
+			public HRESULT get_MajorVersion(int32* plMajorVersion) mut
+			{
+				return VT.get_MajorVersion(&this, plMajorVersion);
+			}
+			public HRESULT get_MinorVersion(int32* plMinorVersion) mut
+			{
+				return VT.get_MinorVersion(&this, plMinorVersion);
+			}
+			public HRESULT get_MajorBuild(int32* plMajorBuild) mut
+			{
+				return VT.get_MajorBuild(&this, plMajorBuild);
+			}
+			public HRESULT get_MinorBuild(int32* plMinorBuild) mut
+			{
+				return VT.get_MinorBuild(&this, plMinorBuild);
+			}
+			public HRESULT get_Debug(int16* pbDebug) mut
+			{
+				return VT.get_Debug(&this, pbDebug);
+			}
+			public HRESULT get_Status(FAX_PROVIDER_STATUS_ENUM* pStatus) mut
+			{
+				return VT.get_Status(&this, pStatus);
+			}
+			public HRESULT get_InitErrorCode(int32* plInitErrorCode) mut
+			{
+				return VT.get_InitErrorCode(&this, plInitErrorCode);
+			}
+			public HRESULT get_DeviceIds(VARIANT* pvDeviceIds) mut
+			{
+				return VT.get_DeviceIds(&this, pvDeviceIds);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxDeviceProvider *self, BSTR* pbstrFriendlyName) get_FriendlyName;
-				public function HRESULT(IFaxDeviceProvider *self, BSTR* pbstrImageName) get_ImageName;
-				public function HRESULT(IFaxDeviceProvider *self, BSTR* pbstrUniqueName) get_UniqueName;
-				public function HRESULT(IFaxDeviceProvider *self, BSTR* pbstrTapiProviderName) get_TapiProviderName;
-				public function HRESULT(IFaxDeviceProvider *self, int32* plMajorVersion) get_MajorVersion;
-				public function HRESULT(IFaxDeviceProvider *self, int32* plMinorVersion) get_MinorVersion;
-				public function HRESULT(IFaxDeviceProvider *self, int32* plMajorBuild) get_MajorBuild;
-				public function HRESULT(IFaxDeviceProvider *self, int32* plMinorBuild) get_MinorBuild;
-				public function HRESULT(IFaxDeviceProvider *self, int16* pbDebug) get_Debug;
-				public function HRESULT(IFaxDeviceProvider *self, FAX_PROVIDER_STATUS_ENUM* pStatus) get_Status;
-				public function HRESULT(IFaxDeviceProvider *self, int32* plInitErrorCode) get_InitErrorCode;
-				public function HRESULT(IFaxDeviceProvider *self, VARIANT* pvDeviceIds) get_DeviceIds;
+				public new function HRESULT(IFaxDeviceProvider *self, BSTR* pbstrFriendlyName) get_FriendlyName;
+				public new function HRESULT(IFaxDeviceProvider *self, BSTR* pbstrImageName) get_ImageName;
+				public new function HRESULT(IFaxDeviceProvider *self, BSTR* pbstrUniqueName) get_UniqueName;
+				public new function HRESULT(IFaxDeviceProvider *self, BSTR* pbstrTapiProviderName) get_TapiProviderName;
+				public new function HRESULT(IFaxDeviceProvider *self, int32* plMajorVersion) get_MajorVersion;
+				public new function HRESULT(IFaxDeviceProvider *self, int32* plMinorVersion) get_MinorVersion;
+				public new function HRESULT(IFaxDeviceProvider *self, int32* plMajorBuild) get_MajorBuild;
+				public new function HRESULT(IFaxDeviceProvider *self, int32* plMinorBuild) get_MinorBuild;
+				public new function HRESULT(IFaxDeviceProvider *self, int16* pbDebug) get_Debug;
+				public new function HRESULT(IFaxDeviceProvider *self, FAX_PROVIDER_STATUS_ENUM* pStatus) get_Status;
+				public new function HRESULT(IFaxDeviceProvider *self, int32* plInitErrorCode) get_InitErrorCode;
+				public new function HRESULT(IFaxDeviceProvider *self, VARIANT* pvDeviceIds) get_DeviceIds;
 			}
 		}
 		[CRepr]
@@ -1852,36 +3260,141 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x49306c59, 0xb52e, 0x4867, 0x9d, 0xf4, 0xca, 0x58, 0x41, 0xc9, 0x56, 0xd0);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Id(int32* plId) mut
+			{
+				return VT.get_Id(&this, plId);
+			}
+			public HRESULT get_DeviceName(BSTR* pbstrDeviceName) mut
+			{
+				return VT.get_DeviceName(&this, pbstrDeviceName);
+			}
+			public HRESULT get_ProviderUniqueName(BSTR* pbstrProviderUniqueName) mut
+			{
+				return VT.get_ProviderUniqueName(&this, pbstrProviderUniqueName);
+			}
+			public HRESULT get_PoweredOff(int16* pbPoweredOff) mut
+			{
+				return VT.get_PoweredOff(&this, pbPoweredOff);
+			}
+			public HRESULT get_ReceivingNow(int16* pbReceivingNow) mut
+			{
+				return VT.get_ReceivingNow(&this, pbReceivingNow);
+			}
+			public HRESULT get_SendingNow(int16* pbSendingNow) mut
+			{
+				return VT.get_SendingNow(&this, pbSendingNow);
+			}
+			public HRESULT get_UsedRoutingMethods(VARIANT* pvUsedRoutingMethods) mut
+			{
+				return VT.get_UsedRoutingMethods(&this, pvUsedRoutingMethods);
+			}
+			public HRESULT get_Description(BSTR* pbstrDescription) mut
+			{
+				return VT.get_Description(&this, pbstrDescription);
+			}
+			public HRESULT put_Description(BSTR bstrDescription) mut
+			{
+				return VT.put_Description(&this, bstrDescription);
+			}
+			public HRESULT get_SendEnabled(int16* pbSendEnabled) mut
+			{
+				return VT.get_SendEnabled(&this, pbSendEnabled);
+			}
+			public HRESULT put_SendEnabled(int16 bSendEnabled) mut
+			{
+				return VT.put_SendEnabled(&this, bSendEnabled);
+			}
+			public HRESULT get_ReceiveMode(FAX_DEVICE_RECEIVE_MODE_ENUM* pReceiveMode) mut
+			{
+				return VT.get_ReceiveMode(&this, pReceiveMode);
+			}
+			public HRESULT put_ReceiveMode(FAX_DEVICE_RECEIVE_MODE_ENUM ReceiveMode) mut
+			{
+				return VT.put_ReceiveMode(&this, ReceiveMode);
+			}
+			public HRESULT get_RingsBeforeAnswer(int32* plRingsBeforeAnswer) mut
+			{
+				return VT.get_RingsBeforeAnswer(&this, plRingsBeforeAnswer);
+			}
+			public HRESULT put_RingsBeforeAnswer(int32 lRingsBeforeAnswer) mut
+			{
+				return VT.put_RingsBeforeAnswer(&this, lRingsBeforeAnswer);
+			}
+			public HRESULT get_CSID(BSTR* pbstrCSID) mut
+			{
+				return VT.get_CSID(&this, pbstrCSID);
+			}
+			public HRESULT put_CSID(BSTR bstrCSID) mut
+			{
+				return VT.put_CSID(&this, bstrCSID);
+			}
+			public HRESULT get_TSID(BSTR* pbstrTSID) mut
+			{
+				return VT.get_TSID(&this, pbstrTSID);
+			}
+			public HRESULT put_TSID(BSTR bstrTSID) mut
+			{
+				return VT.put_TSID(&this, bstrTSID);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT Save() mut
+			{
+				return VT.Save(&this);
+			}
+			public HRESULT GetExtensionProperty(BSTR bstrGUID, VARIANT* pvProperty) mut
+			{
+				return VT.GetExtensionProperty(&this, bstrGUID, pvProperty);
+			}
+			public HRESULT SetExtensionProperty(BSTR bstrGUID, VARIANT vProperty) mut
+			{
+				return VT.SetExtensionProperty(&this, bstrGUID, vProperty);
+			}
+			public HRESULT UseRoutingMethod(BSTR bstrMethodGUID, int16 bUse) mut
+			{
+				return VT.UseRoutingMethod(&this, bstrMethodGUID, bUse);
+			}
+			public HRESULT get_RingingNow(int16* pbRingingNow) mut
+			{
+				return VT.get_RingingNow(&this, pbRingingNow);
+			}
+			public HRESULT AnswerCall() mut
+			{
+				return VT.AnswerCall(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxDevice *self, int32* plId) get_Id;
-				public function HRESULT(IFaxDevice *self, BSTR* pbstrDeviceName) get_DeviceName;
-				public function HRESULT(IFaxDevice *self, BSTR* pbstrProviderUniqueName) get_ProviderUniqueName;
-				public function HRESULT(IFaxDevice *self, int16* pbPoweredOff) get_PoweredOff;
-				public function HRESULT(IFaxDevice *self, int16* pbReceivingNow) get_ReceivingNow;
-				public function HRESULT(IFaxDevice *self, int16* pbSendingNow) get_SendingNow;
-				public function HRESULT(IFaxDevice *self, VARIANT* pvUsedRoutingMethods) get_UsedRoutingMethods;
-				public function HRESULT(IFaxDevice *self, BSTR* pbstrDescription) get_Description;
-				public function HRESULT(IFaxDevice *self, BSTR bstrDescription) put_Description;
-				public function HRESULT(IFaxDevice *self, int16* pbSendEnabled) get_SendEnabled;
-				public function HRESULT(IFaxDevice *self, int16 bSendEnabled) put_SendEnabled;
-				public function HRESULT(IFaxDevice *self, FAX_DEVICE_RECEIVE_MODE_ENUM* pReceiveMode) get_ReceiveMode;
-				public function HRESULT(IFaxDevice *self, FAX_DEVICE_RECEIVE_MODE_ENUM ReceiveMode) put_ReceiveMode;
-				public function HRESULT(IFaxDevice *self, int32* plRingsBeforeAnswer) get_RingsBeforeAnswer;
-				public function HRESULT(IFaxDevice *self, int32 lRingsBeforeAnswer) put_RingsBeforeAnswer;
-				public function HRESULT(IFaxDevice *self, BSTR* pbstrCSID) get_CSID;
-				public function HRESULT(IFaxDevice *self, BSTR bstrCSID) put_CSID;
-				public function HRESULT(IFaxDevice *self, BSTR* pbstrTSID) get_TSID;
-				public function HRESULT(IFaxDevice *self, BSTR bstrTSID) put_TSID;
-				public function HRESULT(IFaxDevice *self) Refresh;
-				public function HRESULT(IFaxDevice *self) Save;
-				public function HRESULT(IFaxDevice *self, BSTR bstrGUID, VARIANT* pvProperty) GetExtensionProperty;
-				public function HRESULT(IFaxDevice *self, BSTR bstrGUID, VARIANT vProperty) SetExtensionProperty;
-				public function HRESULT(IFaxDevice *self, BSTR bstrMethodGUID, int16 bUse) UseRoutingMethod;
-				public function HRESULT(IFaxDevice *self, int16* pbRingingNow) get_RingingNow;
-				public function HRESULT(IFaxDevice *self) AnswerCall;
+				public new function HRESULT(IFaxDevice *self, int32* plId) get_Id;
+				public new function HRESULT(IFaxDevice *self, BSTR* pbstrDeviceName) get_DeviceName;
+				public new function HRESULT(IFaxDevice *self, BSTR* pbstrProviderUniqueName) get_ProviderUniqueName;
+				public new function HRESULT(IFaxDevice *self, int16* pbPoweredOff) get_PoweredOff;
+				public new function HRESULT(IFaxDevice *self, int16* pbReceivingNow) get_ReceivingNow;
+				public new function HRESULT(IFaxDevice *self, int16* pbSendingNow) get_SendingNow;
+				public new function HRESULT(IFaxDevice *self, VARIANT* pvUsedRoutingMethods) get_UsedRoutingMethods;
+				public new function HRESULT(IFaxDevice *self, BSTR* pbstrDescription) get_Description;
+				public new function HRESULT(IFaxDevice *self, BSTR bstrDescription) put_Description;
+				public new function HRESULT(IFaxDevice *self, int16* pbSendEnabled) get_SendEnabled;
+				public new function HRESULT(IFaxDevice *self, int16 bSendEnabled) put_SendEnabled;
+				public new function HRESULT(IFaxDevice *self, FAX_DEVICE_RECEIVE_MODE_ENUM* pReceiveMode) get_ReceiveMode;
+				public new function HRESULT(IFaxDevice *self, FAX_DEVICE_RECEIVE_MODE_ENUM ReceiveMode) put_ReceiveMode;
+				public new function HRESULT(IFaxDevice *self, int32* plRingsBeforeAnswer) get_RingsBeforeAnswer;
+				public new function HRESULT(IFaxDevice *self, int32 lRingsBeforeAnswer) put_RingsBeforeAnswer;
+				public new function HRESULT(IFaxDevice *self, BSTR* pbstrCSID) get_CSID;
+				public new function HRESULT(IFaxDevice *self, BSTR bstrCSID) put_CSID;
+				public new function HRESULT(IFaxDevice *self, BSTR* pbstrTSID) get_TSID;
+				public new function HRESULT(IFaxDevice *self, BSTR bstrTSID) put_TSID;
+				public new function HRESULT(IFaxDevice *self) Refresh;
+				public new function HRESULT(IFaxDevice *self) Save;
+				public new function HRESULT(IFaxDevice *self, BSTR bstrGUID, VARIANT* pvProperty) GetExtensionProperty;
+				public new function HRESULT(IFaxDevice *self, BSTR bstrGUID, VARIANT vProperty) SetExtensionProperty;
+				public new function HRESULT(IFaxDevice *self, BSTR bstrMethodGUID, int16 bUse) UseRoutingMethod;
+				public new function HRESULT(IFaxDevice *self, int16* pbRingingNow) get_RingingNow;
+				public new function HRESULT(IFaxDevice *self) AnswerCall;
 			}
 		}
 		[CRepr]
@@ -1889,18 +3402,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1e29078b, 0x5a69, 0x497b, 0x95, 0x92, 0x49, 0xb7, 0xe7, 0xfa, 0xdd, 0xb5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_LogIncoming(int16* pbLogIncoming) mut
+			{
+				return VT.get_LogIncoming(&this, pbLogIncoming);
+			}
+			public HRESULT put_LogIncoming(int16 bLogIncoming) mut
+			{
+				return VT.put_LogIncoming(&this, bLogIncoming);
+			}
+			public HRESULT get_LogOutgoing(int16* pbLogOutgoing) mut
+			{
+				return VT.get_LogOutgoing(&this, pbLogOutgoing);
+			}
+			public HRESULT put_LogOutgoing(int16 bLogOutgoing) mut
+			{
+				return VT.put_LogOutgoing(&this, bLogOutgoing);
+			}
+			public HRESULT get_DatabasePath(BSTR* pbstrDatabasePath) mut
+			{
+				return VT.get_DatabasePath(&this, pbstrDatabasePath);
+			}
+			public HRESULT put_DatabasePath(BSTR bstrDatabasePath) mut
+			{
+				return VT.put_DatabasePath(&this, bstrDatabasePath);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT Save() mut
+			{
+				return VT.Save(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxActivityLogging *self, int16* pbLogIncoming) get_LogIncoming;
-				public function HRESULT(IFaxActivityLogging *self, int16 bLogIncoming) put_LogIncoming;
-				public function HRESULT(IFaxActivityLogging *self, int16* pbLogOutgoing) get_LogOutgoing;
-				public function HRESULT(IFaxActivityLogging *self, int16 bLogOutgoing) put_LogOutgoing;
-				public function HRESULT(IFaxActivityLogging *self, BSTR* pbstrDatabasePath) get_DatabasePath;
-				public function HRESULT(IFaxActivityLogging *self, BSTR bstrDatabasePath) put_DatabasePath;
-				public function HRESULT(IFaxActivityLogging *self) Refresh;
-				public function HRESULT(IFaxActivityLogging *self) Save;
+				public new function HRESULT(IFaxActivityLogging *self, int16* pbLogIncoming) get_LogIncoming;
+				public new function HRESULT(IFaxActivityLogging *self, int16 bLogIncoming) put_LogIncoming;
+				public new function HRESULT(IFaxActivityLogging *self, int16* pbLogOutgoing) get_LogOutgoing;
+				public new function HRESULT(IFaxActivityLogging *self, int16 bLogOutgoing) put_LogOutgoing;
+				public new function HRESULT(IFaxActivityLogging *self, BSTR* pbstrDatabasePath) get_DatabasePath;
+				public new function HRESULT(IFaxActivityLogging *self, BSTR bstrDatabasePath) put_DatabasePath;
+				public new function HRESULT(IFaxActivityLogging *self) Refresh;
+				public new function HRESULT(IFaxActivityLogging *self) Save;
 			}
 		}
 		[CRepr]
@@ -1908,20 +3454,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0880d965, 0x20e8, 0x42e4, 0x8e, 0x17, 0x94, 0x4f, 0x19, 0x2c, 0xaa, 0xd4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_InitEventsLevel(FAX_LOG_LEVEL_ENUM* pInitEventLevel) mut
+			{
+				return VT.get_InitEventsLevel(&this, pInitEventLevel);
+			}
+			public HRESULT put_InitEventsLevel(FAX_LOG_LEVEL_ENUM InitEventLevel) mut
+			{
+				return VT.put_InitEventsLevel(&this, InitEventLevel);
+			}
+			public HRESULT get_InboundEventsLevel(FAX_LOG_LEVEL_ENUM* pInboundEventLevel) mut
+			{
+				return VT.get_InboundEventsLevel(&this, pInboundEventLevel);
+			}
+			public HRESULT put_InboundEventsLevel(FAX_LOG_LEVEL_ENUM InboundEventLevel) mut
+			{
+				return VT.put_InboundEventsLevel(&this, InboundEventLevel);
+			}
+			public HRESULT get_OutboundEventsLevel(FAX_LOG_LEVEL_ENUM* pOutboundEventLevel) mut
+			{
+				return VT.get_OutboundEventsLevel(&this, pOutboundEventLevel);
+			}
+			public HRESULT put_OutboundEventsLevel(FAX_LOG_LEVEL_ENUM OutboundEventLevel) mut
+			{
+				return VT.put_OutboundEventsLevel(&this, OutboundEventLevel);
+			}
+			public HRESULT get_GeneralEventsLevel(FAX_LOG_LEVEL_ENUM* pGeneralEventLevel) mut
+			{
+				return VT.get_GeneralEventsLevel(&this, pGeneralEventLevel);
+			}
+			public HRESULT put_GeneralEventsLevel(FAX_LOG_LEVEL_ENUM GeneralEventLevel) mut
+			{
+				return VT.put_GeneralEventsLevel(&this, GeneralEventLevel);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT Save() mut
+			{
+				return VT.Save(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM* pInitEventLevel) get_InitEventsLevel;
-				public function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM InitEventLevel) put_InitEventsLevel;
-				public function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM* pInboundEventLevel) get_InboundEventsLevel;
-				public function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM InboundEventLevel) put_InboundEventsLevel;
-				public function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM* pOutboundEventLevel) get_OutboundEventsLevel;
-				public function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM OutboundEventLevel) put_OutboundEventsLevel;
-				public function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM* pGeneralEventLevel) get_GeneralEventsLevel;
-				public function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM GeneralEventLevel) put_GeneralEventsLevel;
-				public function HRESULT(IFaxEventLogging *self) Refresh;
-				public function HRESULT(IFaxEventLogging *self) Save;
+				public new function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM* pInitEventLevel) get_InitEventsLevel;
+				public new function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM InitEventLevel) put_InitEventsLevel;
+				public new function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM* pInboundEventLevel) get_InboundEventsLevel;
+				public new function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM InboundEventLevel) put_InboundEventsLevel;
+				public new function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM* pOutboundEventLevel) get_OutboundEventsLevel;
+				public new function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM OutboundEventLevel) put_OutboundEventsLevel;
+				public new function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM* pGeneralEventLevel) get_GeneralEventsLevel;
+				public new function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM GeneralEventLevel) put_GeneralEventsLevel;
+				public new function HRESULT(IFaxEventLogging *self) Refresh;
+				public new function HRESULT(IFaxEventLogging *self) Save;
 			}
 		}
 		[CRepr]
@@ -1929,15 +3516,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x235cbef7, 0xc2de, 0x4bfd, 0xb8, 0xda, 0x75, 0x09, 0x7c, 0x82, 0xc8, 0x7f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
+			{
+				return VT.get__NewEnum(&this, ppUnk);
+			}
+			public HRESULT get_Item(VARIANT vIndex, IFaxOutboundRoutingGroup** pFaxOutboundRoutingGroup) mut
+			{
+				return VT.get_Item(&this, vIndex, pFaxOutboundRoutingGroup);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT Add(BSTR bstrName, IFaxOutboundRoutingGroup** pFaxOutboundRoutingGroup) mut
+			{
+				return VT.Add(&this, bstrName, pFaxOutboundRoutingGroup);
+			}
+			public HRESULT Remove(VARIANT vIndex) mut
+			{
+				return VT.Remove(&this, vIndex);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxOutboundRoutingGroups *self, IUnknown** ppUnk) get__NewEnum;
-				public function HRESULT(IFaxOutboundRoutingGroups *self, VARIANT vIndex, IFaxOutboundRoutingGroup** pFaxOutboundRoutingGroup) get_Item;
-				public function HRESULT(IFaxOutboundRoutingGroups *self, int32* plCount) get_Count;
-				public function HRESULT(IFaxOutboundRoutingGroups *self, BSTR bstrName, IFaxOutboundRoutingGroup** pFaxOutboundRoutingGroup) Add;
-				public function HRESULT(IFaxOutboundRoutingGroups *self, VARIANT vIndex) Remove;
+				public new function HRESULT(IFaxOutboundRoutingGroups *self, IUnknown** ppUnk) get__NewEnum;
+				public new function HRESULT(IFaxOutboundRoutingGroups *self, VARIANT vIndex, IFaxOutboundRoutingGroup** pFaxOutboundRoutingGroup) get_Item;
+				public new function HRESULT(IFaxOutboundRoutingGroups *self, int32* plCount) get_Count;
+				public new function HRESULT(IFaxOutboundRoutingGroups *self, BSTR bstrName, IFaxOutboundRoutingGroup** pFaxOutboundRoutingGroup) Add;
+				public new function HRESULT(IFaxOutboundRoutingGroups *self, VARIANT vIndex) Remove;
 			}
 		}
 		[CRepr]
@@ -1945,13 +3553,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xca6289a1, 0x7e25, 0x4f87, 0x9a, 0x0b, 0x93, 0x36, 0x57, 0x34, 0x96, 0x2c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
+			public HRESULT get_Status(FAX_GROUP_STATUS_ENUM* pStatus) mut
+			{
+				return VT.get_Status(&this, pStatus);
+			}
+			public HRESULT get_DeviceIds(IFaxDeviceIds** pFaxDeviceIds) mut
+			{
+				return VT.get_DeviceIds(&this, pFaxDeviceIds);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxOutboundRoutingGroup *self, BSTR* pbstrName) get_Name;
-				public function HRESULT(IFaxOutboundRoutingGroup *self, FAX_GROUP_STATUS_ENUM* pStatus) get_Status;
-				public function HRESULT(IFaxOutboundRoutingGroup *self, IFaxDeviceIds** pFaxDeviceIds) get_DeviceIds;
+				public new function HRESULT(IFaxOutboundRoutingGroup *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(IFaxOutboundRoutingGroup *self, FAX_GROUP_STATUS_ENUM* pStatus) get_Status;
+				public new function HRESULT(IFaxOutboundRoutingGroup *self, IFaxDeviceIds** pFaxDeviceIds) get_DeviceIds;
 			}
 		}
 		[CRepr]
@@ -1959,16 +3580,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2f0f813f, 0x4ce9, 0x443e, 0x8c, 0xa1, 0x73, 0x8c, 0xfa, 0xee, 0xe1, 0x49);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
+			{
+				return VT.get__NewEnum(&this, ppUnk);
+			}
+			public HRESULT get_Item(int32 lIndex, int32* plDeviceId) mut
+			{
+				return VT.get_Item(&this, lIndex, plDeviceId);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT Add(int32 lDeviceId) mut
+			{
+				return VT.Add(&this, lDeviceId);
+			}
+			public HRESULT Remove(int32 lIndex) mut
+			{
+				return VT.Remove(&this, lIndex);
+			}
+			public HRESULT SetOrder(int32 lDeviceId, int32 lNewOrder) mut
+			{
+				return VT.SetOrder(&this, lDeviceId, lNewOrder);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxDeviceIds *self, IUnknown** ppUnk) get__NewEnum;
-				public function HRESULT(IFaxDeviceIds *self, int32 lIndex, int32* plDeviceId) get_Item;
-				public function HRESULT(IFaxDeviceIds *self, int32* plCount) get_Count;
-				public function HRESULT(IFaxDeviceIds *self, int32 lDeviceId) Add;
-				public function HRESULT(IFaxDeviceIds *self, int32 lIndex) Remove;
-				public function HRESULT(IFaxDeviceIds *self, int32 lDeviceId, int32 lNewOrder) SetOrder;
+				public new function HRESULT(IFaxDeviceIds *self, IUnknown** ppUnk) get__NewEnum;
+				public new function HRESULT(IFaxDeviceIds *self, int32 lIndex, int32* plDeviceId) get_Item;
+				public new function HRESULT(IFaxDeviceIds *self, int32* plCount) get_Count;
+				public new function HRESULT(IFaxDeviceIds *self, int32 lDeviceId) Add;
+				public new function HRESULT(IFaxDeviceIds *self, int32 lIndex) Remove;
+				public new function HRESULT(IFaxDeviceIds *self, int32 lDeviceId, int32 lNewOrder) SetOrder;
 			}
 		}
 		[CRepr]
@@ -1976,17 +3622,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdcefa1e7, 0xae7d, 0x4ed6, 0x85, 0x21, 0x36, 0x9e, 0xdc, 0xca, 0x51, 0x20);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
+			{
+				return VT.get__NewEnum(&this, ppUnk);
+			}
+			public HRESULT get_Item(int32 lIndex, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) mut
+			{
+				return VT.get_Item(&this, lIndex, pFaxOutboundRoutingRule);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
+			public HRESULT ItemByCountryAndArea(int32 lCountryCode, int32 lAreaCode, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) mut
+			{
+				return VT.ItemByCountryAndArea(&this, lCountryCode, lAreaCode, pFaxOutboundRoutingRule);
+			}
+			public HRESULT RemoveByCountryAndArea(int32 lCountryCode, int32 lAreaCode) mut
+			{
+				return VT.RemoveByCountryAndArea(&this, lCountryCode, lAreaCode);
+			}
+			public HRESULT Remove(int32 lIndex) mut
+			{
+				return VT.Remove(&this, lIndex);
+			}
+			public HRESULT Add(int32 lCountryCode, int32 lAreaCode, int16 bUseDevice, BSTR bstrGroupName, int32 lDeviceId, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) mut
+			{
+				return VT.Add(&this, lCountryCode, lAreaCode, bUseDevice, bstrGroupName, lDeviceId, pFaxOutboundRoutingRule);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxOutboundRoutingRules *self, IUnknown** ppUnk) get__NewEnum;
-				public function HRESULT(IFaxOutboundRoutingRules *self, int32 lIndex, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) get_Item;
-				public function HRESULT(IFaxOutboundRoutingRules *self, int32* plCount) get_Count;
-				public function HRESULT(IFaxOutboundRoutingRules *self, int32 lCountryCode, int32 lAreaCode, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) ItemByCountryAndArea;
-				public function HRESULT(IFaxOutboundRoutingRules *self, int32 lCountryCode, int32 lAreaCode) RemoveByCountryAndArea;
-				public function HRESULT(IFaxOutboundRoutingRules *self, int32 lIndex) Remove;
-				public function HRESULT(IFaxOutboundRoutingRules *self, int32 lCountryCode, int32 lAreaCode, int16 bUseDevice, BSTR bstrGroupName, int32 lDeviceId, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) Add;
+				public new function HRESULT(IFaxOutboundRoutingRules *self, IUnknown** ppUnk) get__NewEnum;
+				public new function HRESULT(IFaxOutboundRoutingRules *self, int32 lIndex, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) get_Item;
+				public new function HRESULT(IFaxOutboundRoutingRules *self, int32* plCount) get_Count;
+				public new function HRESULT(IFaxOutboundRoutingRules *self, int32 lCountryCode, int32 lAreaCode, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) ItemByCountryAndArea;
+				public new function HRESULT(IFaxOutboundRoutingRules *self, int32 lCountryCode, int32 lAreaCode) RemoveByCountryAndArea;
+				public new function HRESULT(IFaxOutboundRoutingRules *self, int32 lIndex) Remove;
+				public new function HRESULT(IFaxOutboundRoutingRules *self, int32 lCountryCode, int32 lAreaCode, int16 bUseDevice, BSTR bstrGroupName, int32 lDeviceId, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) Add;
 			}
 		}
 		[CRepr]
@@ -1994,21 +3669,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe1f795d5, 0x07c2, 0x469f, 0xb0, 0x27, 0xac, 0xac, 0xc2, 0x32, 0x19, 0xda);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_CountryCode(int32* plCountryCode) mut
+			{
+				return VT.get_CountryCode(&this, plCountryCode);
+			}
+			public HRESULT get_AreaCode(int32* plAreaCode) mut
+			{
+				return VT.get_AreaCode(&this, plAreaCode);
+			}
+			public HRESULT get_Status(FAX_RULE_STATUS_ENUM* pStatus) mut
+			{
+				return VT.get_Status(&this, pStatus);
+			}
+			public HRESULT get_UseDevice(int16* pbUseDevice) mut
+			{
+				return VT.get_UseDevice(&this, pbUseDevice);
+			}
+			public HRESULT put_UseDevice(int16 bUseDevice) mut
+			{
+				return VT.put_UseDevice(&this, bUseDevice);
+			}
+			public HRESULT get_DeviceId(int32* plDeviceId) mut
+			{
+				return VT.get_DeviceId(&this, plDeviceId);
+			}
+			public HRESULT put_DeviceId(int32 DeviceId) mut
+			{
+				return VT.put_DeviceId(&this, DeviceId);
+			}
+			public HRESULT get_GroupName(BSTR* pbstrGroupName) mut
+			{
+				return VT.get_GroupName(&this, pbstrGroupName);
+			}
+			public HRESULT put_GroupName(BSTR bstrGroupName) mut
+			{
+				return VT.put_GroupName(&this, bstrGroupName);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT Save() mut
+			{
+				return VT.Save(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxOutboundRoutingRule *self, int32* plCountryCode) get_CountryCode;
-				public function HRESULT(IFaxOutboundRoutingRule *self, int32* plAreaCode) get_AreaCode;
-				public function HRESULT(IFaxOutboundRoutingRule *self, FAX_RULE_STATUS_ENUM* pStatus) get_Status;
-				public function HRESULT(IFaxOutboundRoutingRule *self, int16* pbUseDevice) get_UseDevice;
-				public function HRESULT(IFaxOutboundRoutingRule *self, int16 bUseDevice) put_UseDevice;
-				public function HRESULT(IFaxOutboundRoutingRule *self, int32* plDeviceId) get_DeviceId;
-				public function HRESULT(IFaxOutboundRoutingRule *self, int32 DeviceId) put_DeviceId;
-				public function HRESULT(IFaxOutboundRoutingRule *self, BSTR* pbstrGroupName) get_GroupName;
-				public function HRESULT(IFaxOutboundRoutingRule *self, BSTR bstrGroupName) put_GroupName;
-				public function HRESULT(IFaxOutboundRoutingRule *self) Refresh;
-				public function HRESULT(IFaxOutboundRoutingRule *self) Save;
+				public new function HRESULT(IFaxOutboundRoutingRule *self, int32* plCountryCode) get_CountryCode;
+				public new function HRESULT(IFaxOutboundRoutingRule *self, int32* plAreaCode) get_AreaCode;
+				public new function HRESULT(IFaxOutboundRoutingRule *self, FAX_RULE_STATUS_ENUM* pStatus) get_Status;
+				public new function HRESULT(IFaxOutboundRoutingRule *self, int16* pbUseDevice) get_UseDevice;
+				public new function HRESULT(IFaxOutboundRoutingRule *self, int16 bUseDevice) put_UseDevice;
+				public new function HRESULT(IFaxOutboundRoutingRule *self, int32* plDeviceId) get_DeviceId;
+				public new function HRESULT(IFaxOutboundRoutingRule *self, int32 DeviceId) put_DeviceId;
+				public new function HRESULT(IFaxOutboundRoutingRule *self, BSTR* pbstrGroupName) get_GroupName;
+				public new function HRESULT(IFaxOutboundRoutingRule *self, BSTR bstrGroupName) put_GroupName;
+				public new function HRESULT(IFaxOutboundRoutingRule *self) Refresh;
+				public new function HRESULT(IFaxOutboundRoutingRule *self) Save;
 			}
 		}
 		[CRepr]
@@ -2016,13 +3736,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2f6c9673, 0x7b26, 0x42de, 0x8e, 0xb0, 0x91, 0x5d, 0xcd, 0x2a, 0x4f, 0x4c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
+			{
+				return VT.get__NewEnum(&this, ppUnk);
+			}
+			public HRESULT get_Item(VARIANT vIndex, IFaxInboundRoutingExtension** pFaxInboundRoutingExtension) mut
+			{
+				return VT.get_Item(&this, vIndex, pFaxInboundRoutingExtension);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxInboundRoutingExtensions *self, IUnknown** ppUnk) get__NewEnum;
-				public function HRESULT(IFaxInboundRoutingExtensions *self, VARIANT vIndex, IFaxInboundRoutingExtension** pFaxInboundRoutingExtension) get_Item;
-				public function HRESULT(IFaxInboundRoutingExtensions *self, int32* plCount) get_Count;
+				public new function HRESULT(IFaxInboundRoutingExtensions *self, IUnknown** ppUnk) get__NewEnum;
+				public new function HRESULT(IFaxInboundRoutingExtensions *self, VARIANT vIndex, IFaxInboundRoutingExtension** pFaxInboundRoutingExtension) get_Item;
+				public new function HRESULT(IFaxInboundRoutingExtensions *self, int32* plCount) get_Count;
 			}
 		}
 		[CRepr]
@@ -2030,21 +3763,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x885b5e08, 0xc26c, 0x4ef9, 0xaf, 0x83, 0x51, 0x58, 0x0a, 0x75, 0x0b, 0xe1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_FriendlyName(BSTR* pbstrFriendlyName) mut
+			{
+				return VT.get_FriendlyName(&this, pbstrFriendlyName);
+			}
+			public HRESULT get_ImageName(BSTR* pbstrImageName) mut
+			{
+				return VT.get_ImageName(&this, pbstrImageName);
+			}
+			public HRESULT get_UniqueName(BSTR* pbstrUniqueName) mut
+			{
+				return VT.get_UniqueName(&this, pbstrUniqueName);
+			}
+			public HRESULT get_MajorVersion(int32* plMajorVersion) mut
+			{
+				return VT.get_MajorVersion(&this, plMajorVersion);
+			}
+			public HRESULT get_MinorVersion(int32* plMinorVersion) mut
+			{
+				return VT.get_MinorVersion(&this, plMinorVersion);
+			}
+			public HRESULT get_MajorBuild(int32* plMajorBuild) mut
+			{
+				return VT.get_MajorBuild(&this, plMajorBuild);
+			}
+			public HRESULT get_MinorBuild(int32* plMinorBuild) mut
+			{
+				return VT.get_MinorBuild(&this, plMinorBuild);
+			}
+			public HRESULT get_Debug(int16* pbDebug) mut
+			{
+				return VT.get_Debug(&this, pbDebug);
+			}
+			public HRESULT get_Status(FAX_PROVIDER_STATUS_ENUM* pStatus) mut
+			{
+				return VT.get_Status(&this, pStatus);
+			}
+			public HRESULT get_InitErrorCode(int32* plInitErrorCode) mut
+			{
+				return VT.get_InitErrorCode(&this, plInitErrorCode);
+			}
+			public HRESULT get_Methods(VARIANT* pvMethods) mut
+			{
+				return VT.get_Methods(&this, pvMethods);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxInboundRoutingExtension *self, BSTR* pbstrFriendlyName) get_FriendlyName;
-				public function HRESULT(IFaxInboundRoutingExtension *self, BSTR* pbstrImageName) get_ImageName;
-				public function HRESULT(IFaxInboundRoutingExtension *self, BSTR* pbstrUniqueName) get_UniqueName;
-				public function HRESULT(IFaxInboundRoutingExtension *self, int32* plMajorVersion) get_MajorVersion;
-				public function HRESULT(IFaxInboundRoutingExtension *self, int32* plMinorVersion) get_MinorVersion;
-				public function HRESULT(IFaxInboundRoutingExtension *self, int32* plMajorBuild) get_MajorBuild;
-				public function HRESULT(IFaxInboundRoutingExtension *self, int32* plMinorBuild) get_MinorBuild;
-				public function HRESULT(IFaxInboundRoutingExtension *self, int16* pbDebug) get_Debug;
-				public function HRESULT(IFaxInboundRoutingExtension *self, FAX_PROVIDER_STATUS_ENUM* pStatus) get_Status;
-				public function HRESULT(IFaxInboundRoutingExtension *self, int32* plInitErrorCode) get_InitErrorCode;
-				public function HRESULT(IFaxInboundRoutingExtension *self, VARIANT* pvMethods) get_Methods;
+				public new function HRESULT(IFaxInboundRoutingExtension *self, BSTR* pbstrFriendlyName) get_FriendlyName;
+				public new function HRESULT(IFaxInboundRoutingExtension *self, BSTR* pbstrImageName) get_ImageName;
+				public new function HRESULT(IFaxInboundRoutingExtension *self, BSTR* pbstrUniqueName) get_UniqueName;
+				public new function HRESULT(IFaxInboundRoutingExtension *self, int32* plMajorVersion) get_MajorVersion;
+				public new function HRESULT(IFaxInboundRoutingExtension *self, int32* plMinorVersion) get_MinorVersion;
+				public new function HRESULT(IFaxInboundRoutingExtension *self, int32* plMajorBuild) get_MajorBuild;
+				public new function HRESULT(IFaxInboundRoutingExtension *self, int32* plMinorBuild) get_MinorBuild;
+				public new function HRESULT(IFaxInboundRoutingExtension *self, int16* pbDebug) get_Debug;
+				public new function HRESULT(IFaxInboundRoutingExtension *self, FAX_PROVIDER_STATUS_ENUM* pStatus) get_Status;
+				public new function HRESULT(IFaxInboundRoutingExtension *self, int32* plInitErrorCode) get_InitErrorCode;
+				public new function HRESULT(IFaxInboundRoutingExtension *self, VARIANT* pvMethods) get_Methods;
 			}
 		}
 		[CRepr]
@@ -2052,13 +3830,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x783fca10, 0x8908, 0x4473, 0x9d, 0x69, 0xf6, 0x7f, 0xbe, 0xa0, 0xc6, 0xb9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
+			{
+				return VT.get__NewEnum(&this, ppUnk);
+			}
+			public HRESULT get_Item(VARIANT vIndex, IFaxInboundRoutingMethod** pFaxInboundRoutingMethod) mut
+			{
+				return VT.get_Item(&this, vIndex, pFaxInboundRoutingMethod);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxInboundRoutingMethods *self, IUnknown** ppUnk) get__NewEnum;
-				public function HRESULT(IFaxInboundRoutingMethods *self, VARIANT vIndex, IFaxInboundRoutingMethod** pFaxInboundRoutingMethod) get_Item;
-				public function HRESULT(IFaxInboundRoutingMethods *self, int32* plCount) get_Count;
+				public new function HRESULT(IFaxInboundRoutingMethods *self, IUnknown** ppUnk) get__NewEnum;
+				public new function HRESULT(IFaxInboundRoutingMethods *self, VARIANT vIndex, IFaxInboundRoutingMethod** pFaxInboundRoutingMethod) get_Item;
+				public new function HRESULT(IFaxInboundRoutingMethods *self, int32* plCount) get_Count;
 			}
 		}
 		[CRepr]
@@ -2066,19 +3857,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x45700061, 0xad9d, 0x4776, 0xa8, 0xc4, 0x64, 0x06, 0x54, 0x92, 0xcf, 0x4b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Name(BSTR* pbstrName) mut
+			{
+				return VT.get_Name(&this, pbstrName);
+			}
+			public HRESULT get_GUID(BSTR* pbstrGUID) mut
+			{
+				return VT.get_GUID(&this, pbstrGUID);
+			}
+			public HRESULT get_FunctionName(BSTR* pbstrFunctionName) mut
+			{
+				return VT.get_FunctionName(&this, pbstrFunctionName);
+			}
+			public HRESULT get_ExtensionFriendlyName(BSTR* pbstrExtensionFriendlyName) mut
+			{
+				return VT.get_ExtensionFriendlyName(&this, pbstrExtensionFriendlyName);
+			}
+			public HRESULT get_ExtensionImageName(BSTR* pbstrExtensionImageName) mut
+			{
+				return VT.get_ExtensionImageName(&this, pbstrExtensionImageName);
+			}
+			public HRESULT get_Priority(int32* plPriority) mut
+			{
+				return VT.get_Priority(&this, plPriority);
+			}
+			public HRESULT put_Priority(int32 lPriority) mut
+			{
+				return VT.put_Priority(&this, lPriority);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT Save() mut
+			{
+				return VT.Save(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxInboundRoutingMethod *self, BSTR* pbstrName) get_Name;
-				public function HRESULT(IFaxInboundRoutingMethod *self, BSTR* pbstrGUID) get_GUID;
-				public function HRESULT(IFaxInboundRoutingMethod *self, BSTR* pbstrFunctionName) get_FunctionName;
-				public function HRESULT(IFaxInboundRoutingMethod *self, BSTR* pbstrExtensionFriendlyName) get_ExtensionFriendlyName;
-				public function HRESULT(IFaxInboundRoutingMethod *self, BSTR* pbstrExtensionImageName) get_ExtensionImageName;
-				public function HRESULT(IFaxInboundRoutingMethod *self, int32* plPriority) get_Priority;
-				public function HRESULT(IFaxInboundRoutingMethod *self, int32 lPriority) put_Priority;
-				public function HRESULT(IFaxInboundRoutingMethod *self) Refresh;
-				public function HRESULT(IFaxInboundRoutingMethod *self) Save;
+				public new function HRESULT(IFaxInboundRoutingMethod *self, BSTR* pbstrName) get_Name;
+				public new function HRESULT(IFaxInboundRoutingMethod *self, BSTR* pbstrGUID) get_GUID;
+				public new function HRESULT(IFaxInboundRoutingMethod *self, BSTR* pbstrFunctionName) get_FunctionName;
+				public new function HRESULT(IFaxInboundRoutingMethod *self, BSTR* pbstrExtensionFriendlyName) get_ExtensionFriendlyName;
+				public new function HRESULT(IFaxInboundRoutingMethod *self, BSTR* pbstrExtensionImageName) get_ExtensionImageName;
+				public new function HRESULT(IFaxInboundRoutingMethod *self, int32* plPriority) get_Priority;
+				public new function HRESULT(IFaxInboundRoutingMethod *self, int32 lPriority) put_Priority;
+				public new function HRESULT(IFaxInboundRoutingMethod *self) Refresh;
+				public new function HRESULT(IFaxInboundRoutingMethod *self) Save;
 			}
 		}
 		[CRepr]
@@ -2086,15 +3914,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe1347661, 0xf9ef, 0x4d6d, 0xb4, 0xa5, 0xc0, 0xa0, 0x68, 0xb6, 0x5c, 0xff);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_SubmissionId(BSTR* pbstrSubmissionId) mut
+			{
+				return VT.get_SubmissionId(&this, pbstrSubmissionId);
+			}
+			public HRESULT get_Bodies(VARIANT* pvBodies) mut
+			{
+				return VT.get_Bodies(&this, pvBodies);
+			}
+			public HRESULT put_Bodies(VARIANT vBodies) mut
+			{
+				return VT.put_Bodies(&this, vBodies);
+			}
+			public HRESULT Submit2(BSTR bstrFaxServerName, VARIANT* pvFaxOutgoingJobIDs, int32* plErrorBodyFile) mut
+			{
+				return VT.Submit2(&this, bstrFaxServerName, pvFaxOutgoingJobIDs, plErrorBodyFile);
+			}
+			public HRESULT ConnectedSubmit2(IFaxServer* pFaxServer, VARIANT* pvFaxOutgoingJobIDs, int32* plErrorBodyFile) mut
+			{
+				return VT.ConnectedSubmit2(&this, pFaxServer, pvFaxOutgoingJobIDs, plErrorBodyFile);
+			}
 			[CRepr]
 			public struct VTable : IFaxDocument.VTable
 			{
-				public function HRESULT(IFaxDocument2 *self, BSTR* pbstrSubmissionId) get_SubmissionId;
-				public function HRESULT(IFaxDocument2 *self, VARIANT* pvBodies) get_Bodies;
-				public function HRESULT(IFaxDocument2 *self, VARIANT vBodies) put_Bodies;
-				public function HRESULT(IFaxDocument2 *self, BSTR bstrFaxServerName, VARIANT* pvFaxOutgoingJobIDs, int32* plErrorBodyFile) Submit2;
-				public function HRESULT(IFaxDocument2 *self, IFaxServer* pFaxServer, VARIANT* pvFaxOutgoingJobIDs, int32* plErrorBodyFile) ConnectedSubmit2;
+				public new function HRESULT(IFaxDocument2 *self, BSTR* pbstrSubmissionId) get_SubmissionId;
+				public new function HRESULT(IFaxDocument2 *self, VARIANT* pvBodies) get_Bodies;
+				public new function HRESULT(IFaxDocument2 *self, VARIANT vBodies) put_Bodies;
+				public new function HRESULT(IFaxDocument2 *self, BSTR bstrFaxServerName, VARIANT* pvFaxOutgoingJobIDs, int32* plErrorBodyFile) Submit2;
+				public new function HRESULT(IFaxDocument2 *self, IFaxServer* pFaxServer, VARIANT* pvFaxOutgoingJobIDs, int32* plErrorBodyFile) ConnectedSubmit2;
 			}
 		}
 		[CRepr]
@@ -2102,52 +3951,221 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x10f4d0f7, 0x0994, 0x4543, 0xab, 0x6e, 0x50, 0x69, 0x49, 0x12, 0x8c, 0x40);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_UseArchive(int16* pbUseArchive) mut
+			{
+				return VT.get_UseArchive(&this, pbUseArchive);
+			}
+			public HRESULT put_UseArchive(int16 bUseArchive) mut
+			{
+				return VT.put_UseArchive(&this, bUseArchive);
+			}
+			public HRESULT get_ArchiveLocation(BSTR* pbstrArchiveLocation) mut
+			{
+				return VT.get_ArchiveLocation(&this, pbstrArchiveLocation);
+			}
+			public HRESULT put_ArchiveLocation(BSTR bstrArchiveLocation) mut
+			{
+				return VT.put_ArchiveLocation(&this, bstrArchiveLocation);
+			}
+			public HRESULT get_SizeQuotaWarning(int16* pbSizeQuotaWarning) mut
+			{
+				return VT.get_SizeQuotaWarning(&this, pbSizeQuotaWarning);
+			}
+			public HRESULT put_SizeQuotaWarning(int16 bSizeQuotaWarning) mut
+			{
+				return VT.put_SizeQuotaWarning(&this, bSizeQuotaWarning);
+			}
+			public HRESULT get_HighQuotaWaterMark(int32* plHighQuotaWaterMark) mut
+			{
+				return VT.get_HighQuotaWaterMark(&this, plHighQuotaWaterMark);
+			}
+			public HRESULT put_HighQuotaWaterMark(int32 lHighQuotaWaterMark) mut
+			{
+				return VT.put_HighQuotaWaterMark(&this, lHighQuotaWaterMark);
+			}
+			public HRESULT get_LowQuotaWaterMark(int32* plLowQuotaWaterMark) mut
+			{
+				return VT.get_LowQuotaWaterMark(&this, plLowQuotaWaterMark);
+			}
+			public HRESULT put_LowQuotaWaterMark(int32 lLowQuotaWaterMark) mut
+			{
+				return VT.put_LowQuotaWaterMark(&this, lLowQuotaWaterMark);
+			}
+			public HRESULT get_ArchiveAgeLimit(int32* plArchiveAgeLimit) mut
+			{
+				return VT.get_ArchiveAgeLimit(&this, plArchiveAgeLimit);
+			}
+			public HRESULT put_ArchiveAgeLimit(int32 lArchiveAgeLimit) mut
+			{
+				return VT.put_ArchiveAgeLimit(&this, lArchiveAgeLimit);
+			}
+			public HRESULT get_ArchiveSizeLow(int32* plSizeLow) mut
+			{
+				return VT.get_ArchiveSizeLow(&this, plSizeLow);
+			}
+			public HRESULT get_ArchiveSizeHigh(int32* plSizeHigh) mut
+			{
+				return VT.get_ArchiveSizeHigh(&this, plSizeHigh);
+			}
+			public HRESULT get_OutgoingQueueBlocked(int16* pbOutgoingBlocked) mut
+			{
+				return VT.get_OutgoingQueueBlocked(&this, pbOutgoingBlocked);
+			}
+			public HRESULT put_OutgoingQueueBlocked(int16 bOutgoingBlocked) mut
+			{
+				return VT.put_OutgoingQueueBlocked(&this, bOutgoingBlocked);
+			}
+			public HRESULT get_OutgoingQueuePaused(int16* pbOutgoingPaused) mut
+			{
+				return VT.get_OutgoingQueuePaused(&this, pbOutgoingPaused);
+			}
+			public HRESULT put_OutgoingQueuePaused(int16 bOutgoingPaused) mut
+			{
+				return VT.put_OutgoingQueuePaused(&this, bOutgoingPaused);
+			}
+			public HRESULT get_AllowPersonalCoverPages(int16* pbAllowPersonalCoverPages) mut
+			{
+				return VT.get_AllowPersonalCoverPages(&this, pbAllowPersonalCoverPages);
+			}
+			public HRESULT put_AllowPersonalCoverPages(int16 bAllowPersonalCoverPages) mut
+			{
+				return VT.put_AllowPersonalCoverPages(&this, bAllowPersonalCoverPages);
+			}
+			public HRESULT get_UseDeviceTSID(int16* pbUseDeviceTSID) mut
+			{
+				return VT.get_UseDeviceTSID(&this, pbUseDeviceTSID);
+			}
+			public HRESULT put_UseDeviceTSID(int16 bUseDeviceTSID) mut
+			{
+				return VT.put_UseDeviceTSID(&this, bUseDeviceTSID);
+			}
+			public HRESULT get_Retries(int32* plRetries) mut
+			{
+				return VT.get_Retries(&this, plRetries);
+			}
+			public HRESULT put_Retries(int32 lRetries) mut
+			{
+				return VT.put_Retries(&this, lRetries);
+			}
+			public HRESULT get_RetryDelay(int32* plRetryDelay) mut
+			{
+				return VT.get_RetryDelay(&this, plRetryDelay);
+			}
+			public HRESULT put_RetryDelay(int32 lRetryDelay) mut
+			{
+				return VT.put_RetryDelay(&this, lRetryDelay);
+			}
+			public HRESULT get_DiscountRateStart(double* pdateDiscountRateStart) mut
+			{
+				return VT.get_DiscountRateStart(&this, pdateDiscountRateStart);
+			}
+			public HRESULT put_DiscountRateStart(double dateDiscountRateStart) mut
+			{
+				return VT.put_DiscountRateStart(&this, dateDiscountRateStart);
+			}
+			public HRESULT get_DiscountRateEnd(double* pdateDiscountRateEnd) mut
+			{
+				return VT.get_DiscountRateEnd(&this, pdateDiscountRateEnd);
+			}
+			public HRESULT put_DiscountRateEnd(double dateDiscountRateEnd) mut
+			{
+				return VT.put_DiscountRateEnd(&this, dateDiscountRateEnd);
+			}
+			public HRESULT get_OutgoingQueueAgeLimit(int32* plOutgoingQueueAgeLimit) mut
+			{
+				return VT.get_OutgoingQueueAgeLimit(&this, plOutgoingQueueAgeLimit);
+			}
+			public HRESULT put_OutgoingQueueAgeLimit(int32 lOutgoingQueueAgeLimit) mut
+			{
+				return VT.put_OutgoingQueueAgeLimit(&this, lOutgoingQueueAgeLimit);
+			}
+			public HRESULT get_Branding(int16* pbBranding) mut
+			{
+				return VT.get_Branding(&this, pbBranding);
+			}
+			public HRESULT put_Branding(int16 bBranding) mut
+			{
+				return VT.put_Branding(&this, bBranding);
+			}
+			public HRESULT get_IncomingQueueBlocked(int16* pbIncomingBlocked) mut
+			{
+				return VT.get_IncomingQueueBlocked(&this, pbIncomingBlocked);
+			}
+			public HRESULT put_IncomingQueueBlocked(int16 bIncomingBlocked) mut
+			{
+				return VT.put_IncomingQueueBlocked(&this, bIncomingBlocked);
+			}
+			public HRESULT get_AutoCreateAccountOnConnect(int16* pbAutoCreateAccountOnConnect) mut
+			{
+				return VT.get_AutoCreateAccountOnConnect(&this, pbAutoCreateAccountOnConnect);
+			}
+			public HRESULT put_AutoCreateAccountOnConnect(int16 bAutoCreateAccountOnConnect) mut
+			{
+				return VT.put_AutoCreateAccountOnConnect(&this, bAutoCreateAccountOnConnect);
+			}
+			public HRESULT get_IncomingFaxesArePublic(int16* pbIncomingFaxesArePublic) mut
+			{
+				return VT.get_IncomingFaxesArePublic(&this, pbIncomingFaxesArePublic);
+			}
+			public HRESULT put_IncomingFaxesArePublic(int16 bIncomingFaxesArePublic) mut
+			{
+				return VT.put_IncomingFaxesArePublic(&this, bIncomingFaxesArePublic);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT Save() mut
+			{
+				return VT.Save(&this);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxConfiguration *self, int16* pbUseArchive) get_UseArchive;
-				public function HRESULT(IFaxConfiguration *self, int16 bUseArchive) put_UseArchive;
-				public function HRESULT(IFaxConfiguration *self, BSTR* pbstrArchiveLocation) get_ArchiveLocation;
-				public function HRESULT(IFaxConfiguration *self, BSTR bstrArchiveLocation) put_ArchiveLocation;
-				public function HRESULT(IFaxConfiguration *self, int16* pbSizeQuotaWarning) get_SizeQuotaWarning;
-				public function HRESULT(IFaxConfiguration *self, int16 bSizeQuotaWarning) put_SizeQuotaWarning;
-				public function HRESULT(IFaxConfiguration *self, int32* plHighQuotaWaterMark) get_HighQuotaWaterMark;
-				public function HRESULT(IFaxConfiguration *self, int32 lHighQuotaWaterMark) put_HighQuotaWaterMark;
-				public function HRESULT(IFaxConfiguration *self, int32* plLowQuotaWaterMark) get_LowQuotaWaterMark;
-				public function HRESULT(IFaxConfiguration *self, int32 lLowQuotaWaterMark) put_LowQuotaWaterMark;
-				public function HRESULT(IFaxConfiguration *self, int32* plArchiveAgeLimit) get_ArchiveAgeLimit;
-				public function HRESULT(IFaxConfiguration *self, int32 lArchiveAgeLimit) put_ArchiveAgeLimit;
-				public function HRESULT(IFaxConfiguration *self, int32* plSizeLow) get_ArchiveSizeLow;
-				public function HRESULT(IFaxConfiguration *self, int32* plSizeHigh) get_ArchiveSizeHigh;
-				public function HRESULT(IFaxConfiguration *self, int16* pbOutgoingBlocked) get_OutgoingQueueBlocked;
-				public function HRESULT(IFaxConfiguration *self, int16 bOutgoingBlocked) put_OutgoingQueueBlocked;
-				public function HRESULT(IFaxConfiguration *self, int16* pbOutgoingPaused) get_OutgoingQueuePaused;
-				public function HRESULT(IFaxConfiguration *self, int16 bOutgoingPaused) put_OutgoingQueuePaused;
-				public function HRESULT(IFaxConfiguration *self, int16* pbAllowPersonalCoverPages) get_AllowPersonalCoverPages;
-				public function HRESULT(IFaxConfiguration *self, int16 bAllowPersonalCoverPages) put_AllowPersonalCoverPages;
-				public function HRESULT(IFaxConfiguration *self, int16* pbUseDeviceTSID) get_UseDeviceTSID;
-				public function HRESULT(IFaxConfiguration *self, int16 bUseDeviceTSID) put_UseDeviceTSID;
-				public function HRESULT(IFaxConfiguration *self, int32* plRetries) get_Retries;
-				public function HRESULT(IFaxConfiguration *self, int32 lRetries) put_Retries;
-				public function HRESULT(IFaxConfiguration *self, int32* plRetryDelay) get_RetryDelay;
-				public function HRESULT(IFaxConfiguration *self, int32 lRetryDelay) put_RetryDelay;
-				public function HRESULT(IFaxConfiguration *self, double* pdateDiscountRateStart) get_DiscountRateStart;
-				public function HRESULT(IFaxConfiguration *self, double dateDiscountRateStart) put_DiscountRateStart;
-				public function HRESULT(IFaxConfiguration *self, double* pdateDiscountRateEnd) get_DiscountRateEnd;
-				public function HRESULT(IFaxConfiguration *self, double dateDiscountRateEnd) put_DiscountRateEnd;
-				public function HRESULT(IFaxConfiguration *self, int32* plOutgoingQueueAgeLimit) get_OutgoingQueueAgeLimit;
-				public function HRESULT(IFaxConfiguration *self, int32 lOutgoingQueueAgeLimit) put_OutgoingQueueAgeLimit;
-				public function HRESULT(IFaxConfiguration *self, int16* pbBranding) get_Branding;
-				public function HRESULT(IFaxConfiguration *self, int16 bBranding) put_Branding;
-				public function HRESULT(IFaxConfiguration *self, int16* pbIncomingBlocked) get_IncomingQueueBlocked;
-				public function HRESULT(IFaxConfiguration *self, int16 bIncomingBlocked) put_IncomingQueueBlocked;
-				public function HRESULT(IFaxConfiguration *self, int16* pbAutoCreateAccountOnConnect) get_AutoCreateAccountOnConnect;
-				public function HRESULT(IFaxConfiguration *self, int16 bAutoCreateAccountOnConnect) put_AutoCreateAccountOnConnect;
-				public function HRESULT(IFaxConfiguration *self, int16* pbIncomingFaxesArePublic) get_IncomingFaxesArePublic;
-				public function HRESULT(IFaxConfiguration *self, int16 bIncomingFaxesArePublic) put_IncomingFaxesArePublic;
-				public function HRESULT(IFaxConfiguration *self) Refresh;
-				public function HRESULT(IFaxConfiguration *self) Save;
+				public new function HRESULT(IFaxConfiguration *self, int16* pbUseArchive) get_UseArchive;
+				public new function HRESULT(IFaxConfiguration *self, int16 bUseArchive) put_UseArchive;
+				public new function HRESULT(IFaxConfiguration *self, BSTR* pbstrArchiveLocation) get_ArchiveLocation;
+				public new function HRESULT(IFaxConfiguration *self, BSTR bstrArchiveLocation) put_ArchiveLocation;
+				public new function HRESULT(IFaxConfiguration *self, int16* pbSizeQuotaWarning) get_SizeQuotaWarning;
+				public new function HRESULT(IFaxConfiguration *self, int16 bSizeQuotaWarning) put_SizeQuotaWarning;
+				public new function HRESULT(IFaxConfiguration *self, int32* plHighQuotaWaterMark) get_HighQuotaWaterMark;
+				public new function HRESULT(IFaxConfiguration *self, int32 lHighQuotaWaterMark) put_HighQuotaWaterMark;
+				public new function HRESULT(IFaxConfiguration *self, int32* plLowQuotaWaterMark) get_LowQuotaWaterMark;
+				public new function HRESULT(IFaxConfiguration *self, int32 lLowQuotaWaterMark) put_LowQuotaWaterMark;
+				public new function HRESULT(IFaxConfiguration *self, int32* plArchiveAgeLimit) get_ArchiveAgeLimit;
+				public new function HRESULT(IFaxConfiguration *self, int32 lArchiveAgeLimit) put_ArchiveAgeLimit;
+				public new function HRESULT(IFaxConfiguration *self, int32* plSizeLow) get_ArchiveSizeLow;
+				public new function HRESULT(IFaxConfiguration *self, int32* plSizeHigh) get_ArchiveSizeHigh;
+				public new function HRESULT(IFaxConfiguration *self, int16* pbOutgoingBlocked) get_OutgoingQueueBlocked;
+				public new function HRESULT(IFaxConfiguration *self, int16 bOutgoingBlocked) put_OutgoingQueueBlocked;
+				public new function HRESULT(IFaxConfiguration *self, int16* pbOutgoingPaused) get_OutgoingQueuePaused;
+				public new function HRESULT(IFaxConfiguration *self, int16 bOutgoingPaused) put_OutgoingQueuePaused;
+				public new function HRESULT(IFaxConfiguration *self, int16* pbAllowPersonalCoverPages) get_AllowPersonalCoverPages;
+				public new function HRESULT(IFaxConfiguration *self, int16 bAllowPersonalCoverPages) put_AllowPersonalCoverPages;
+				public new function HRESULT(IFaxConfiguration *self, int16* pbUseDeviceTSID) get_UseDeviceTSID;
+				public new function HRESULT(IFaxConfiguration *self, int16 bUseDeviceTSID) put_UseDeviceTSID;
+				public new function HRESULT(IFaxConfiguration *self, int32* plRetries) get_Retries;
+				public new function HRESULT(IFaxConfiguration *self, int32 lRetries) put_Retries;
+				public new function HRESULT(IFaxConfiguration *self, int32* plRetryDelay) get_RetryDelay;
+				public new function HRESULT(IFaxConfiguration *self, int32 lRetryDelay) put_RetryDelay;
+				public new function HRESULT(IFaxConfiguration *self, double* pdateDiscountRateStart) get_DiscountRateStart;
+				public new function HRESULT(IFaxConfiguration *self, double dateDiscountRateStart) put_DiscountRateStart;
+				public new function HRESULT(IFaxConfiguration *self, double* pdateDiscountRateEnd) get_DiscountRateEnd;
+				public new function HRESULT(IFaxConfiguration *self, double dateDiscountRateEnd) put_DiscountRateEnd;
+				public new function HRESULT(IFaxConfiguration *self, int32* plOutgoingQueueAgeLimit) get_OutgoingQueueAgeLimit;
+				public new function HRESULT(IFaxConfiguration *self, int32 lOutgoingQueueAgeLimit) put_OutgoingQueueAgeLimit;
+				public new function HRESULT(IFaxConfiguration *self, int16* pbBranding) get_Branding;
+				public new function HRESULT(IFaxConfiguration *self, int16 bBranding) put_Branding;
+				public new function HRESULT(IFaxConfiguration *self, int16* pbIncomingBlocked) get_IncomingQueueBlocked;
+				public new function HRESULT(IFaxConfiguration *self, int16 bIncomingBlocked) put_IncomingQueueBlocked;
+				public new function HRESULT(IFaxConfiguration *self, int16* pbAutoCreateAccountOnConnect) get_AutoCreateAccountOnConnect;
+				public new function HRESULT(IFaxConfiguration *self, int16 bAutoCreateAccountOnConnect) put_AutoCreateAccountOnConnect;
+				public new function HRESULT(IFaxConfiguration *self, int16* pbIncomingFaxesArePublic) get_IncomingFaxesArePublic;
+				public new function HRESULT(IFaxConfiguration *self, int16 bIncomingFaxesArePublic) put_IncomingFaxesArePublic;
+				public new function HRESULT(IFaxConfiguration *self) Refresh;
+				public new function HRESULT(IFaxConfiguration *self) Save;
 			}
 		}
 		[CRepr]
@@ -2155,14 +4173,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x571ced0f, 0x5609, 0x4f40, 0x91, 0x76, 0x54, 0x7e, 0x3a, 0x72, 0xca, 0x7c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Configuration(IFaxConfiguration** ppFaxConfiguration) mut
+			{
+				return VT.get_Configuration(&this, ppFaxConfiguration);
+			}
+			public HRESULT get_CurrentAccount(IFaxAccount** ppCurrentAccount) mut
+			{
+				return VT.get_CurrentAccount(&this, ppCurrentAccount);
+			}
+			public HRESULT get_FaxAccountSet(IFaxAccountSet** ppFaxAccountSet) mut
+			{
+				return VT.get_FaxAccountSet(&this, ppFaxAccountSet);
+			}
+			public HRESULT get_Security2(IFaxSecurity2** ppFaxSecurity2) mut
+			{
+				return VT.get_Security2(&this, ppFaxSecurity2);
+			}
 			[CRepr]
 			public struct VTable : IFaxServer.VTable
 			{
-				public function HRESULT(IFaxServer2 *self, IFaxConfiguration** ppFaxConfiguration) get_Configuration;
-				public function HRESULT(IFaxServer2 *self, IFaxAccount** ppCurrentAccount) get_CurrentAccount;
-				public function HRESULT(IFaxServer2 *self, IFaxAccountSet** ppFaxAccountSet) get_FaxAccountSet;
-				public function HRESULT(IFaxServer2 *self, IFaxSecurity2** ppFaxSecurity2) get_Security2;
+				public new function HRESULT(IFaxServer2 *self, IFaxConfiguration** ppFaxConfiguration) get_Configuration;
+				public new function HRESULT(IFaxServer2 *self, IFaxAccount** ppCurrentAccount) get_CurrentAccount;
+				public new function HRESULT(IFaxServer2 *self, IFaxAccountSet** ppFaxAccountSet) get_FaxAccountSet;
+				public new function HRESULT(IFaxServer2 *self, IFaxSecurity2** ppFaxSecurity2) get_Security2;
 			}
 		}
 		[CRepr]
@@ -2170,14 +4205,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x7428fbae, 0x841e, 0x47b8, 0x86, 0xf4, 0x22, 0x88, 0x94, 0x6d, 0xca, 0x1b);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetAccounts(IFaxAccounts** ppFaxAccounts) mut
+			{
+				return VT.GetAccounts(&this, ppFaxAccounts);
+			}
+			public HRESULT GetAccount(BSTR bstrAccountName, IFaxAccount** pFaxAccount) mut
+			{
+				return VT.GetAccount(&this, bstrAccountName, pFaxAccount);
+			}
+			public HRESULT AddAccount(BSTR bstrAccountName, IFaxAccount** pFaxAccount) mut
+			{
+				return VT.AddAccount(&this, bstrAccountName, pFaxAccount);
+			}
+			public HRESULT RemoveAccount(BSTR bstrAccountName) mut
+			{
+				return VT.RemoveAccount(&this, bstrAccountName);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxAccountSet *self, IFaxAccounts** ppFaxAccounts) GetAccounts;
-				public function HRESULT(IFaxAccountSet *self, BSTR bstrAccountName, IFaxAccount** pFaxAccount) GetAccount;
-				public function HRESULT(IFaxAccountSet *self, BSTR bstrAccountName, IFaxAccount** pFaxAccount) AddAccount;
-				public function HRESULT(IFaxAccountSet *self, BSTR bstrAccountName) RemoveAccount;
+				public new function HRESULT(IFaxAccountSet *self, IFaxAccounts** ppFaxAccounts) GetAccounts;
+				public new function HRESULT(IFaxAccountSet *self, BSTR bstrAccountName, IFaxAccount** pFaxAccount) GetAccount;
+				public new function HRESULT(IFaxAccountSet *self, BSTR bstrAccountName, IFaxAccount** pFaxAccount) AddAccount;
+				public new function HRESULT(IFaxAccountSet *self, BSTR bstrAccountName) RemoveAccount;
 			}
 		}
 		[CRepr]
@@ -2185,13 +4237,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x93ea8162, 0x8be7, 0x42d1, 0xae, 0x7b, 0xec, 0x74, 0xe2, 0xd9, 0x89, 0xda);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
+			{
+				return VT.get__NewEnum(&this, ppUnk);
+			}
+			public HRESULT get_Item(VARIANT vIndex, IFaxAccount** pFaxAccount) mut
+			{
+				return VT.get_Item(&this, vIndex, pFaxAccount);
+			}
+			public HRESULT get_Count(int32* plCount) mut
+			{
+				return VT.get_Count(&this, plCount);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxAccounts *self, IUnknown** ppUnk) get__NewEnum;
-				public function HRESULT(IFaxAccounts *self, VARIANT vIndex, IFaxAccount** pFaxAccount) get_Item;
-				public function HRESULT(IFaxAccounts *self, int32* plCount) get_Count;
+				public new function HRESULT(IFaxAccounts *self, IUnknown** ppUnk) get__NewEnum;
+				public new function HRESULT(IFaxAccounts *self, VARIANT vIndex, IFaxAccount** pFaxAccount) get_Item;
+				public new function HRESULT(IFaxAccounts *self, int32* plCount) get_Count;
 			}
 		}
 		[CRepr]
@@ -2199,14 +4264,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x68535b33, 0x5dc4, 0x4086, 0xbe, 0x26, 0xb7, 0x6f, 0x9b, 0x71, 0x10, 0x06);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_AccountName(BSTR* pbstrAccountName) mut
+			{
+				return VT.get_AccountName(&this, pbstrAccountName);
+			}
+			public HRESULT get_Folders(IFaxAccountFolders** ppFolders) mut
+			{
+				return VT.get_Folders(&this, ppFolders);
+			}
+			public HRESULT ListenToAccountEvents(FAX_ACCOUNT_EVENTS_TYPE_ENUM EventTypes) mut
+			{
+				return VT.ListenToAccountEvents(&this, EventTypes);
+			}
+			public HRESULT get_RegisteredEvents(FAX_ACCOUNT_EVENTS_TYPE_ENUM* pRegisteredEvents) mut
+			{
+				return VT.get_RegisteredEvents(&this, pRegisteredEvents);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxAccount *self, BSTR* pbstrAccountName) get_AccountName;
-				public function HRESULT(IFaxAccount *self, IFaxAccountFolders** ppFolders) get_Folders;
-				public function HRESULT(IFaxAccount *self, FAX_ACCOUNT_EVENTS_TYPE_ENUM EventTypes) ListenToAccountEvents;
-				public function HRESULT(IFaxAccount *self, FAX_ACCOUNT_EVENTS_TYPE_ENUM* pRegisteredEvents) get_RegisteredEvents;
+				public new function HRESULT(IFaxAccount *self, BSTR* pbstrAccountName) get_AccountName;
+				public new function HRESULT(IFaxAccount *self, IFaxAccountFolders** ppFolders) get_Folders;
+				public new function HRESULT(IFaxAccount *self, FAX_ACCOUNT_EVENTS_TYPE_ENUM EventTypes) ListenToAccountEvents;
+				public new function HRESULT(IFaxAccount *self, FAX_ACCOUNT_EVENTS_TYPE_ENUM* pRegisteredEvents) get_RegisteredEvents;
 			}
 		}
 		[CRepr]
@@ -2214,13 +4296,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x418a8d96, 0x59a0, 0x4789, 0xb1, 0x76, 0xed, 0xf3, 0xdc, 0x8f, 0xa8, 0xf7);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_HasCoverPage(int16* pbHasCoverPage) mut
+			{
+				return VT.get_HasCoverPage(&this, pbHasCoverPage);
+			}
+			public HRESULT get_ReceiptAddress(BSTR* pbstrReceiptAddress) mut
+			{
+				return VT.get_ReceiptAddress(&this, pbstrReceiptAddress);
+			}
+			public HRESULT get_ScheduleType(FAX_SCHEDULE_TYPE_ENUM* pScheduleType) mut
+			{
+				return VT.get_ScheduleType(&this, pScheduleType);
+			}
 			[CRepr]
 			public struct VTable : IFaxOutgoingJob.VTable
 			{
-				public function HRESULT(IFaxOutgoingJob2 *self, int16* pbHasCoverPage) get_HasCoverPage;
-				public function HRESULT(IFaxOutgoingJob2 *self, BSTR* pbstrReceiptAddress) get_ReceiptAddress;
-				public function HRESULT(IFaxOutgoingJob2 *self, FAX_SCHEDULE_TYPE_ENUM* pScheduleType) get_ScheduleType;
+				public new function HRESULT(IFaxOutgoingJob2 *self, int16* pbHasCoverPage) get_HasCoverPage;
+				public new function HRESULT(IFaxOutgoingJob2 *self, BSTR* pbstrReceiptAddress) get_ReceiptAddress;
+				public new function HRESULT(IFaxOutgoingJob2 *self, FAX_SCHEDULE_TYPE_ENUM* pScheduleType) get_ScheduleType;
 			}
 		}
 		[CRepr]
@@ -2228,14 +4323,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6463f89d, 0x23d8, 0x46a9, 0x8f, 0x86, 0xc4, 0x7b, 0x77, 0xca, 0x79, 0x26);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_OutgoingQueue(IFaxAccountOutgoingQueue** pFaxOutgoingQueue) mut
+			{
+				return VT.get_OutgoingQueue(&this, pFaxOutgoingQueue);
+			}
+			public HRESULT get_IncomingQueue(IFaxAccountIncomingQueue** pFaxIncomingQueue) mut
+			{
+				return VT.get_IncomingQueue(&this, pFaxIncomingQueue);
+			}
+			public HRESULT get_IncomingArchive(IFaxAccountIncomingArchive** pFaxIncomingArchive) mut
+			{
+				return VT.get_IncomingArchive(&this, pFaxIncomingArchive);
+			}
+			public HRESULT get_OutgoingArchive(IFaxAccountOutgoingArchive** pFaxOutgoingArchive) mut
+			{
+				return VT.get_OutgoingArchive(&this, pFaxOutgoingArchive);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxAccountFolders *self, IFaxAccountOutgoingQueue** pFaxOutgoingQueue) get_OutgoingQueue;
-				public function HRESULT(IFaxAccountFolders *self, IFaxAccountIncomingQueue** pFaxIncomingQueue) get_IncomingQueue;
-				public function HRESULT(IFaxAccountFolders *self, IFaxAccountIncomingArchive** pFaxIncomingArchive) get_IncomingArchive;
-				public function HRESULT(IFaxAccountFolders *self, IFaxAccountOutgoingArchive** pFaxOutgoingArchive) get_OutgoingArchive;
+				public new function HRESULT(IFaxAccountFolders *self, IFaxAccountOutgoingQueue** pFaxOutgoingQueue) get_OutgoingQueue;
+				public new function HRESULT(IFaxAccountFolders *self, IFaxAccountIncomingQueue** pFaxIncomingQueue) get_IncomingQueue;
+				public new function HRESULT(IFaxAccountFolders *self, IFaxAccountIncomingArchive** pFaxIncomingArchive) get_IncomingArchive;
+				public new function HRESULT(IFaxAccountFolders *self, IFaxAccountOutgoingArchive** pFaxOutgoingArchive) get_OutgoingArchive;
 			}
 		}
 		[CRepr]
@@ -2243,12 +4355,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xdd142d92, 0x0186, 0x4a95, 0xa0, 0x90, 0xcb, 0xc3, 0xea, 0xdb, 0xa6, 0xb4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetJobs(IFaxIncomingJobs** pFaxIncomingJobs) mut
+			{
+				return VT.GetJobs(&this, pFaxIncomingJobs);
+			}
+			public HRESULT GetJob(BSTR bstrJobId, IFaxIncomingJob** pFaxIncomingJob) mut
+			{
+				return VT.GetJob(&this, bstrJobId, pFaxIncomingJob);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxAccountIncomingQueue *self, IFaxIncomingJobs** pFaxIncomingJobs) GetJobs;
-				public function HRESULT(IFaxAccountIncomingQueue *self, BSTR bstrJobId, IFaxIncomingJob** pFaxIncomingJob) GetJob;
+				public new function HRESULT(IFaxAccountIncomingQueue *self, IFaxIncomingJobs** pFaxIncomingJobs) GetJobs;
+				public new function HRESULT(IFaxAccountIncomingQueue *self, BSTR bstrJobId, IFaxIncomingJob** pFaxIncomingJob) GetJob;
 			}
 		}
 		[CRepr]
@@ -2256,12 +4377,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0f1424e9, 0xf22d, 0x4553, 0xb7, 0xa5, 0x0d, 0x24, 0xbd, 0x0d, 0x7e, 0x46);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetJobs(IFaxOutgoingJobs** pFaxOutgoingJobs) mut
+			{
+				return VT.GetJobs(&this, pFaxOutgoingJobs);
+			}
+			public HRESULT GetJob(BSTR bstrJobId, IFaxOutgoingJob** pFaxOutgoingJob) mut
+			{
+				return VT.GetJob(&this, bstrJobId, pFaxOutgoingJob);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxAccountOutgoingQueue *self, IFaxOutgoingJobs** pFaxOutgoingJobs) GetJobs;
-				public function HRESULT(IFaxAccountOutgoingQueue *self, BSTR bstrJobId, IFaxOutgoingJob** pFaxOutgoingJob) GetJob;
+				public new function HRESULT(IFaxAccountOutgoingQueue *self, IFaxOutgoingJobs** pFaxOutgoingJobs) GetJobs;
+				public new function HRESULT(IFaxAccountOutgoingQueue *self, BSTR bstrJobId, IFaxOutgoingJob** pFaxOutgoingJob) GetJob;
 			}
 		}
 		[CRepr]
@@ -2269,17 +4399,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb37df687, 0xbc88, 0x4b46, 0xb3, 0xbe, 0xb4, 0x58, 0xb3, 0xea, 0x9e, 0x7f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_HasCoverPage(int16* pbHasCoverPage) mut
+			{
+				return VT.get_HasCoverPage(&this, pbHasCoverPage);
+			}
+			public HRESULT get_ReceiptType(FAX_RECEIPT_TYPE_ENUM* pReceiptType) mut
+			{
+				return VT.get_ReceiptType(&this, pReceiptType);
+			}
+			public HRESULT get_ReceiptAddress(BSTR* pbstrReceiptAddress) mut
+			{
+				return VT.get_ReceiptAddress(&this, pbstrReceiptAddress);
+			}
+			public HRESULT get_Read(int16* pbRead) mut
+			{
+				return VT.get_Read(&this, pbRead);
+			}
+			public HRESULT put_Read(int16 bRead) mut
+			{
+				return VT.put_Read(&this, bRead);
+			}
+			public HRESULT Save() mut
+			{
+				return VT.Save(&this);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
 			[CRepr]
 			public struct VTable : IFaxOutgoingMessage.VTable
 			{
-				public function HRESULT(IFaxOutgoingMessage2 *self, int16* pbHasCoverPage) get_HasCoverPage;
-				public function HRESULT(IFaxOutgoingMessage2 *self, FAX_RECEIPT_TYPE_ENUM* pReceiptType) get_ReceiptType;
-				public function HRESULT(IFaxOutgoingMessage2 *self, BSTR* pbstrReceiptAddress) get_ReceiptAddress;
-				public function HRESULT(IFaxOutgoingMessage2 *self, int16* pbRead) get_Read;
-				public function HRESULT(IFaxOutgoingMessage2 *self, int16 bRead) put_Read;
-				public function HRESULT(IFaxOutgoingMessage2 *self) Save;
-				public function HRESULT(IFaxOutgoingMessage2 *self) Refresh;
+				public new function HRESULT(IFaxOutgoingMessage2 *self, int16* pbHasCoverPage) get_HasCoverPage;
+				public new function HRESULT(IFaxOutgoingMessage2 *self, FAX_RECEIPT_TYPE_ENUM* pReceiptType) get_ReceiptType;
+				public new function HRESULT(IFaxOutgoingMessage2 *self, BSTR* pbstrReceiptAddress) get_ReceiptAddress;
+				public new function HRESULT(IFaxOutgoingMessage2 *self, int16* pbRead) get_Read;
+				public new function HRESULT(IFaxOutgoingMessage2 *self, int16 bRead) put_Read;
+				public new function HRESULT(IFaxOutgoingMessage2 *self) Save;
+				public new function HRESULT(IFaxOutgoingMessage2 *self) Refresh;
 			}
 		}
 		[CRepr]
@@ -2287,15 +4446,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa8a5b6ef, 0xe0d6, 0x4aee, 0x95, 0x5c, 0x91, 0x62, 0x5b, 0xec, 0x9d, 0xb4);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_SizeLow(int32* plSizeLow) mut
+			{
+				return VT.get_SizeLow(&this, plSizeLow);
+			}
+			public HRESULT get_SizeHigh(int32* plSizeHigh) mut
+			{
+				return VT.get_SizeHigh(&this, plSizeHigh);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT GetMessages(int32 lPrefetchSize, IFaxIncomingMessageIterator** pFaxIncomingMessageIterator) mut
+			{
+				return VT.GetMessages(&this, lPrefetchSize, pFaxIncomingMessageIterator);
+			}
+			public HRESULT GetMessage(BSTR bstrMessageId, IFaxIncomingMessage** pFaxIncomingMessage) mut
+			{
+				return VT.GetMessage(&this, bstrMessageId, pFaxIncomingMessage);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxAccountIncomingArchive *self, int32* plSizeLow) get_SizeLow;
-				public function HRESULT(IFaxAccountIncomingArchive *self, int32* plSizeHigh) get_SizeHigh;
-				public function HRESULT(IFaxAccountIncomingArchive *self) Refresh;
-				public function HRESULT(IFaxAccountIncomingArchive *self, int32 lPrefetchSize, IFaxIncomingMessageIterator** pFaxIncomingMessageIterator) GetMessages;
-				public function HRESULT(IFaxAccountIncomingArchive *self, BSTR bstrMessageId, IFaxIncomingMessage** pFaxIncomingMessage) GetMessage;
+				public new function HRESULT(IFaxAccountIncomingArchive *self, int32* plSizeLow) get_SizeLow;
+				public new function HRESULT(IFaxAccountIncomingArchive *self, int32* plSizeHigh) get_SizeHigh;
+				public new function HRESULT(IFaxAccountIncomingArchive *self) Refresh;
+				public new function HRESULT(IFaxAccountIncomingArchive *self, int32 lPrefetchSize, IFaxIncomingMessageIterator** pFaxIncomingMessageIterator) GetMessages;
+				public new function HRESULT(IFaxAccountIncomingArchive *self, BSTR bstrMessageId, IFaxIncomingMessage** pFaxIncomingMessage) GetMessage;
 			}
 		}
 		[CRepr]
@@ -2303,15 +4483,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5463076d, 0xec14, 0x491f, 0x92, 0x6e, 0xb3, 0xce, 0xda, 0x5e, 0x56, 0x62);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_SizeLow(int32* plSizeLow) mut
+			{
+				return VT.get_SizeLow(&this, plSizeLow);
+			}
+			public HRESULT get_SizeHigh(int32* plSizeHigh) mut
+			{
+				return VT.get_SizeHigh(&this, plSizeHigh);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT GetMessages(int32 lPrefetchSize, IFaxOutgoingMessageIterator** pFaxOutgoingMessageIterator) mut
+			{
+				return VT.GetMessages(&this, lPrefetchSize, pFaxOutgoingMessageIterator);
+			}
+			public HRESULT GetMessage(BSTR bstrMessageId, IFaxOutgoingMessage** pFaxOutgoingMessage) mut
+			{
+				return VT.GetMessage(&this, bstrMessageId, pFaxOutgoingMessage);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxAccountOutgoingArchive *self, int32* plSizeLow) get_SizeLow;
-				public function HRESULT(IFaxAccountOutgoingArchive *self, int32* plSizeHigh) get_SizeHigh;
-				public function HRESULT(IFaxAccountOutgoingArchive *self) Refresh;
-				public function HRESULT(IFaxAccountOutgoingArchive *self, int32 lPrefetchSize, IFaxOutgoingMessageIterator** pFaxOutgoingMessageIterator) GetMessages;
-				public function HRESULT(IFaxAccountOutgoingArchive *self, BSTR bstrMessageId, IFaxOutgoingMessage** pFaxOutgoingMessage) GetMessage;
+				public new function HRESULT(IFaxAccountOutgoingArchive *self, int32* plSizeLow) get_SizeLow;
+				public new function HRESULT(IFaxAccountOutgoingArchive *self, int32* plSizeHigh) get_SizeHigh;
+				public new function HRESULT(IFaxAccountOutgoingArchive *self) Refresh;
+				public new function HRESULT(IFaxAccountOutgoingArchive *self, int32 lPrefetchSize, IFaxOutgoingMessageIterator** pFaxOutgoingMessageIterator) GetMessages;
+				public new function HRESULT(IFaxAccountOutgoingArchive *self, BSTR bstrMessageId, IFaxOutgoingMessage** pFaxOutgoingMessage) GetMessage;
 			}
 		}
 		[CRepr]
@@ -2319,17 +4520,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x17d851f4, 0xd09b, 0x48fc, 0x99, 0xc9, 0x8f, 0x24, 0xc4, 0xdb, 0x9a, 0xb1);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Descriptor(VARIANT* pvDescriptor) mut
+			{
+				return VT.get_Descriptor(&this, pvDescriptor);
+			}
+			public HRESULT put_Descriptor(VARIANT vDescriptor) mut
+			{
+				return VT.put_Descriptor(&this, vDescriptor);
+			}
+			public HRESULT get_GrantedRights(FAX_ACCESS_RIGHTS_ENUM_2* pGrantedRights) mut
+			{
+				return VT.get_GrantedRights(&this, pGrantedRights);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
+			public HRESULT Save() mut
+			{
+				return VT.Save(&this);
+			}
+			public HRESULT get_InformationType(int32* plInformationType) mut
+			{
+				return VT.get_InformationType(&this, plInformationType);
+			}
+			public HRESULT put_InformationType(int32 lInformationType) mut
+			{
+				return VT.put_InformationType(&this, lInformationType);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(IFaxSecurity2 *self, VARIANT* pvDescriptor) get_Descriptor;
-				public function HRESULT(IFaxSecurity2 *self, VARIANT vDescriptor) put_Descriptor;
-				public function HRESULT(IFaxSecurity2 *self, FAX_ACCESS_RIGHTS_ENUM_2* pGrantedRights) get_GrantedRights;
-				public function HRESULT(IFaxSecurity2 *self) Refresh;
-				public function HRESULT(IFaxSecurity2 *self) Save;
-				public function HRESULT(IFaxSecurity2 *self, int32* plInformationType) get_InformationType;
-				public function HRESULT(IFaxSecurity2 *self, int32 lInformationType) put_InformationType;
+				public new function HRESULT(IFaxSecurity2 *self, VARIANT* pvDescriptor) get_Descriptor;
+				public new function HRESULT(IFaxSecurity2 *self, VARIANT vDescriptor) put_Descriptor;
+				public new function HRESULT(IFaxSecurity2 *self, FAX_ACCESS_RIGHTS_ENUM_2* pGrantedRights) get_GrantedRights;
+				public new function HRESULT(IFaxSecurity2 *self) Refresh;
+				public new function HRESULT(IFaxSecurity2 *self) Save;
+				public new function HRESULT(IFaxSecurity2 *self, int32* plInformationType) get_InformationType;
+				public new function HRESULT(IFaxSecurity2 *self, int32 lInformationType) put_InformationType;
 			}
 		}
 		[CRepr]
@@ -2337,26 +4567,91 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf9208503, 0xe2bc, 0x48f3, 0x9e, 0xc0, 0xe6, 0x23, 0x6f, 0x9b, 0x50, 0x9a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT get_Subject(BSTR* pbstrSubject) mut
+			{
+				return VT.get_Subject(&this, pbstrSubject);
+			}
+			public HRESULT put_Subject(BSTR bstrSubject) mut
+			{
+				return VT.put_Subject(&this, bstrSubject);
+			}
+			public HRESULT get_SenderName(BSTR* pbstrSenderName) mut
+			{
+				return VT.get_SenderName(&this, pbstrSenderName);
+			}
+			public HRESULT put_SenderName(BSTR bstrSenderName) mut
+			{
+				return VT.put_SenderName(&this, bstrSenderName);
+			}
+			public HRESULT get_SenderFaxNumber(BSTR* pbstrSenderFaxNumber) mut
+			{
+				return VT.get_SenderFaxNumber(&this, pbstrSenderFaxNumber);
+			}
+			public HRESULT put_SenderFaxNumber(BSTR bstrSenderFaxNumber) mut
+			{
+				return VT.put_SenderFaxNumber(&this, bstrSenderFaxNumber);
+			}
+			public HRESULT get_HasCoverPage(int16* pbHasCoverPage) mut
+			{
+				return VT.get_HasCoverPage(&this, pbHasCoverPage);
+			}
+			public HRESULT put_HasCoverPage(int16 bHasCoverPage) mut
+			{
+				return VT.put_HasCoverPage(&this, bHasCoverPage);
+			}
+			public HRESULT get_Recipients(BSTR* pbstrRecipients) mut
+			{
+				return VT.get_Recipients(&this, pbstrRecipients);
+			}
+			public HRESULT put_Recipients(BSTR bstrRecipients) mut
+			{
+				return VT.put_Recipients(&this, bstrRecipients);
+			}
+			public HRESULT get_WasReAssigned(int16* pbWasReAssigned) mut
+			{
+				return VT.get_WasReAssigned(&this, pbWasReAssigned);
+			}
+			public HRESULT get_Read(int16* pbRead) mut
+			{
+				return VT.get_Read(&this, pbRead);
+			}
+			public HRESULT put_Read(int16 bRead) mut
+			{
+				return VT.put_Read(&this, bRead);
+			}
+			public HRESULT ReAssign() mut
+			{
+				return VT.ReAssign(&this);
+			}
+			public HRESULT Save() mut
+			{
+				return VT.Save(&this);
+			}
+			public HRESULT Refresh() mut
+			{
+				return VT.Refresh(&this);
+			}
 			[CRepr]
 			public struct VTable : IFaxIncomingMessage.VTable
 			{
-				public function HRESULT(IFaxIncomingMessage2 *self, BSTR* pbstrSubject) get_Subject;
-				public function HRESULT(IFaxIncomingMessage2 *self, BSTR bstrSubject) put_Subject;
-				public function HRESULT(IFaxIncomingMessage2 *self, BSTR* pbstrSenderName) get_SenderName;
-				public function HRESULT(IFaxIncomingMessage2 *self, BSTR bstrSenderName) put_SenderName;
-				public function HRESULT(IFaxIncomingMessage2 *self, BSTR* pbstrSenderFaxNumber) get_SenderFaxNumber;
-				public function HRESULT(IFaxIncomingMessage2 *self, BSTR bstrSenderFaxNumber) put_SenderFaxNumber;
-				public function HRESULT(IFaxIncomingMessage2 *self, int16* pbHasCoverPage) get_HasCoverPage;
-				public function HRESULT(IFaxIncomingMessage2 *self, int16 bHasCoverPage) put_HasCoverPage;
-				public function HRESULT(IFaxIncomingMessage2 *self, BSTR* pbstrRecipients) get_Recipients;
-				public function HRESULT(IFaxIncomingMessage2 *self, BSTR bstrRecipients) put_Recipients;
-				public function HRESULT(IFaxIncomingMessage2 *self, int16* pbWasReAssigned) get_WasReAssigned;
-				public function HRESULT(IFaxIncomingMessage2 *self, int16* pbRead) get_Read;
-				public function HRESULT(IFaxIncomingMessage2 *self, int16 bRead) put_Read;
-				public function HRESULT(IFaxIncomingMessage2 *self) ReAssign;
-				public function HRESULT(IFaxIncomingMessage2 *self) Save;
-				public function HRESULT(IFaxIncomingMessage2 *self) Refresh;
+				public new function HRESULT(IFaxIncomingMessage2 *self, BSTR* pbstrSubject) get_Subject;
+				public new function HRESULT(IFaxIncomingMessage2 *self, BSTR bstrSubject) put_Subject;
+				public new function HRESULT(IFaxIncomingMessage2 *self, BSTR* pbstrSenderName) get_SenderName;
+				public new function HRESULT(IFaxIncomingMessage2 *self, BSTR bstrSenderName) put_SenderName;
+				public new function HRESULT(IFaxIncomingMessage2 *self, BSTR* pbstrSenderFaxNumber) get_SenderFaxNumber;
+				public new function HRESULT(IFaxIncomingMessage2 *self, BSTR bstrSenderFaxNumber) put_SenderFaxNumber;
+				public new function HRESULT(IFaxIncomingMessage2 *self, int16* pbHasCoverPage) get_HasCoverPage;
+				public new function HRESULT(IFaxIncomingMessage2 *self, int16 bHasCoverPage) put_HasCoverPage;
+				public new function HRESULT(IFaxIncomingMessage2 *self, BSTR* pbstrRecipients) get_Recipients;
+				public new function HRESULT(IFaxIncomingMessage2 *self, BSTR bstrRecipients) put_Recipients;
+				public new function HRESULT(IFaxIncomingMessage2 *self, int16* pbWasReAssigned) get_WasReAssigned;
+				public new function HRESULT(IFaxIncomingMessage2 *self, int16* pbRead) get_Read;
+				public new function HRESULT(IFaxIncomingMessage2 *self, int16 bRead) put_Read;
+				public new function HRESULT(IFaxIncomingMessage2 *self) ReAssign;
+				public new function HRESULT(IFaxIncomingMessage2 *self) Save;
+				public new function HRESULT(IFaxIncomingMessage2 *self) Refresh;
 			}
 		}
 		[CRepr]
@@ -2364,7 +4659,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2e037b27, 0xcf8a, 0x4abd, 0xb1, 0xe0, 0x57, 0x04, 0x94, 0x3b, 0xea, 0x6f);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2375,36 +4671,141 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xec9c69b9, 0x5fe7, 0x4805, 0x94, 0x67, 0x82, 0xfc, 0xd9, 0x6a, 0xf9, 0x03);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnIncomingJobAdded(IFaxServer2* pFaxServer, BSTR bstrJobId) mut
+			{
+				return VT.OnIncomingJobAdded(&this, pFaxServer, bstrJobId);
+			}
+			public HRESULT OnIncomingJobRemoved(IFaxServer2* pFaxServer, BSTR bstrJobId) mut
+			{
+				return VT.OnIncomingJobRemoved(&this, pFaxServer, bstrJobId);
+			}
+			public HRESULT OnIncomingJobChanged(IFaxServer2* pFaxServer, BSTR bstrJobId, IFaxJobStatus* pJobStatus) mut
+			{
+				return VT.OnIncomingJobChanged(&this, pFaxServer, bstrJobId, pJobStatus);
+			}
+			public HRESULT OnOutgoingJobAdded(IFaxServer2* pFaxServer, BSTR bstrJobId) mut
+			{
+				return VT.OnOutgoingJobAdded(&this, pFaxServer, bstrJobId);
+			}
+			public HRESULT OnOutgoingJobRemoved(IFaxServer2* pFaxServer, BSTR bstrJobId) mut
+			{
+				return VT.OnOutgoingJobRemoved(&this, pFaxServer, bstrJobId);
+			}
+			public HRESULT OnOutgoingJobChanged(IFaxServer2* pFaxServer, BSTR bstrJobId, IFaxJobStatus* pJobStatus) mut
+			{
+				return VT.OnOutgoingJobChanged(&this, pFaxServer, bstrJobId, pJobStatus);
+			}
+			public HRESULT OnIncomingMessageAdded(IFaxServer2* pFaxServer, BSTR bstrMessageId) mut
+			{
+				return VT.OnIncomingMessageAdded(&this, pFaxServer, bstrMessageId);
+			}
+			public HRESULT OnIncomingMessageRemoved(IFaxServer2* pFaxServer, BSTR bstrMessageId) mut
+			{
+				return VT.OnIncomingMessageRemoved(&this, pFaxServer, bstrMessageId);
+			}
+			public HRESULT OnOutgoingMessageAdded(IFaxServer2* pFaxServer, BSTR bstrMessageId) mut
+			{
+				return VT.OnOutgoingMessageAdded(&this, pFaxServer, bstrMessageId);
+			}
+			public HRESULT OnOutgoingMessageRemoved(IFaxServer2* pFaxServer, BSTR bstrMessageId) mut
+			{
+				return VT.OnOutgoingMessageRemoved(&this, pFaxServer, bstrMessageId);
+			}
+			public HRESULT OnReceiptOptionsChange(IFaxServer2* pFaxServer) mut
+			{
+				return VT.OnReceiptOptionsChange(&this, pFaxServer);
+			}
+			public HRESULT OnActivityLoggingConfigChange(IFaxServer2* pFaxServer) mut
+			{
+				return VT.OnActivityLoggingConfigChange(&this, pFaxServer);
+			}
+			public HRESULT OnSecurityConfigChange(IFaxServer2* pFaxServer) mut
+			{
+				return VT.OnSecurityConfigChange(&this, pFaxServer);
+			}
+			public HRESULT OnEventLoggingConfigChange(IFaxServer2* pFaxServer) mut
+			{
+				return VT.OnEventLoggingConfigChange(&this, pFaxServer);
+			}
+			public HRESULT OnOutgoingQueueConfigChange(IFaxServer2* pFaxServer) mut
+			{
+				return VT.OnOutgoingQueueConfigChange(&this, pFaxServer);
+			}
+			public HRESULT OnOutgoingArchiveConfigChange(IFaxServer2* pFaxServer) mut
+			{
+				return VT.OnOutgoingArchiveConfigChange(&this, pFaxServer);
+			}
+			public HRESULT OnIncomingArchiveConfigChange(IFaxServer2* pFaxServer) mut
+			{
+				return VT.OnIncomingArchiveConfigChange(&this, pFaxServer);
+			}
+			public HRESULT OnDevicesConfigChange(IFaxServer2* pFaxServer) mut
+			{
+				return VT.OnDevicesConfigChange(&this, pFaxServer);
+			}
+			public HRESULT OnOutboundRoutingGroupsConfigChange(IFaxServer2* pFaxServer) mut
+			{
+				return VT.OnOutboundRoutingGroupsConfigChange(&this, pFaxServer);
+			}
+			public HRESULT OnOutboundRoutingRulesConfigChange(IFaxServer2* pFaxServer) mut
+			{
+				return VT.OnOutboundRoutingRulesConfigChange(&this, pFaxServer);
+			}
+			public HRESULT OnServerActivityChange(IFaxServer2* pFaxServer, int32 lIncomingMessages, int32 lRoutingMessages, int32 lOutgoingMessages, int32 lQueuedMessages) mut
+			{
+				return VT.OnServerActivityChange(&this, pFaxServer, lIncomingMessages, lRoutingMessages, lOutgoingMessages, lQueuedMessages);
+			}
+			public HRESULT OnQueuesStatusChange(IFaxServer2* pFaxServer, int16 bOutgoingQueueBlocked, int16 bOutgoingQueuePaused, int16 bIncomingQueueBlocked) mut
+			{
+				return VT.OnQueuesStatusChange(&this, pFaxServer, bOutgoingQueueBlocked, bOutgoingQueuePaused, bIncomingQueueBlocked);
+			}
+			public HRESULT OnNewCall(IFaxServer2* pFaxServer, int32 lCallId, int32 lDeviceId, BSTR bstrCallerId) mut
+			{
+				return VT.OnNewCall(&this, pFaxServer, lCallId, lDeviceId, bstrCallerId);
+			}
+			public HRESULT OnServerShutDown(IFaxServer2* pFaxServer) mut
+			{
+				return VT.OnServerShutDown(&this, pFaxServer);
+			}
+			public HRESULT OnDeviceStatusChange(IFaxServer2* pFaxServer, int32 lDeviceId, int16 bPoweredOff, int16 bSending, int16 bReceiving, int16 bRinging) mut
+			{
+				return VT.OnDeviceStatusChange(&this, pFaxServer, lDeviceId, bPoweredOff, bSending, bReceiving, bRinging);
+			}
+			public HRESULT OnGeneralServerConfigChanged(IFaxServer2* pFaxServer) mut
+			{
+				return VT.OnGeneralServerConfigChanged(&this, pFaxServer);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrJobId) OnIncomingJobAdded;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrJobId) OnIncomingJobRemoved;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrJobId, IFaxJobStatus* pJobStatus) OnIncomingJobChanged;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrJobId) OnOutgoingJobAdded;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrJobId) OnOutgoingJobRemoved;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrJobId, IFaxJobStatus* pJobStatus) OnOutgoingJobChanged;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrMessageId) OnIncomingMessageAdded;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrMessageId) OnIncomingMessageRemoved;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrMessageId) OnOutgoingMessageAdded;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrMessageId) OnOutgoingMessageRemoved;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnReceiptOptionsChange;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnActivityLoggingConfigChange;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnSecurityConfigChange;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnEventLoggingConfigChange;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnOutgoingQueueConfigChange;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnOutgoingArchiveConfigChange;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnIncomingArchiveConfigChange;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnDevicesConfigChange;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnOutboundRoutingGroupsConfigChange;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnOutboundRoutingRulesConfigChange;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, int32 lIncomingMessages, int32 lRoutingMessages, int32 lOutgoingMessages, int32 lQueuedMessages) OnServerActivityChange;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, int16 bOutgoingQueueBlocked, int16 bOutgoingQueuePaused, int16 bIncomingQueueBlocked) OnQueuesStatusChange;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, int32 lCallId, int32 lDeviceId, BSTR bstrCallerId) OnNewCall;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnServerShutDown;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, int32 lDeviceId, int16 bPoweredOff, int16 bSending, int16 bReceiving, int16 bRinging) OnDeviceStatusChange;
-				public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnGeneralServerConfigChanged;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrJobId) OnIncomingJobAdded;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrJobId) OnIncomingJobRemoved;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrJobId, IFaxJobStatus* pJobStatus) OnIncomingJobChanged;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrJobId) OnOutgoingJobAdded;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrJobId) OnOutgoingJobRemoved;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrJobId, IFaxJobStatus* pJobStatus) OnOutgoingJobChanged;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrMessageId) OnIncomingMessageAdded;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrMessageId) OnIncomingMessageRemoved;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrMessageId) OnOutgoingMessageAdded;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrMessageId) OnOutgoingMessageRemoved;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnReceiptOptionsChange;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnActivityLoggingConfigChange;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnSecurityConfigChange;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnEventLoggingConfigChange;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnOutgoingQueueConfigChange;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnOutgoingArchiveConfigChange;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnIncomingArchiveConfigChange;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnDevicesConfigChange;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnOutboundRoutingGroupsConfigChange;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnOutboundRoutingRulesConfigChange;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, int32 lIncomingMessages, int32 lRoutingMessages, int32 lOutgoingMessages, int32 lQueuedMessages) OnServerActivityChange;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, int16 bOutgoingQueueBlocked, int16 bOutgoingQueuePaused, int16 bIncomingQueueBlocked) OnQueuesStatusChange;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, int32 lCallId, int32 lDeviceId, BSTR bstrCallerId) OnNewCall;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnServerShutDown;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, int32 lDeviceId, int16 bPoweredOff, int16 bSending, int16 bReceiving, int16 bRinging) OnDeviceStatusChange;
+				public new function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnGeneralServerConfigChanged;
 			}
 		}
 		[CRepr]
@@ -2412,7 +4813,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x616ca8d6, 0xa77a, 0x4062, 0xab, 0xfd, 0x0e, 0x47, 0x12, 0x41, 0xc7, 0xaa);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2423,21 +4825,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xb9b3bc81, 0xac1b, 0x46f3, 0xb3, 0x9d, 0x0a, 0xdc, 0x30, 0xe1, 0xb7, 0x88);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnIncomingJobAdded(IFaxAccount* pFaxAccount, BSTR bstrJobId) mut
+			{
+				return VT.OnIncomingJobAdded(&this, pFaxAccount, bstrJobId);
+			}
+			public HRESULT OnIncomingJobRemoved(IFaxAccount* pFaxAccount, BSTR bstrJobId) mut
+			{
+				return VT.OnIncomingJobRemoved(&this, pFaxAccount, bstrJobId);
+			}
+			public HRESULT OnIncomingJobChanged(IFaxAccount* pFaxAccount, BSTR bstrJobId, IFaxJobStatus* pJobStatus) mut
+			{
+				return VT.OnIncomingJobChanged(&this, pFaxAccount, bstrJobId, pJobStatus);
+			}
+			public HRESULT OnOutgoingJobAdded(IFaxAccount* pFaxAccount, BSTR bstrJobId) mut
+			{
+				return VT.OnOutgoingJobAdded(&this, pFaxAccount, bstrJobId);
+			}
+			public HRESULT OnOutgoingJobRemoved(IFaxAccount* pFaxAccount, BSTR bstrJobId) mut
+			{
+				return VT.OnOutgoingJobRemoved(&this, pFaxAccount, bstrJobId);
+			}
+			public HRESULT OnOutgoingJobChanged(IFaxAccount* pFaxAccount, BSTR bstrJobId, IFaxJobStatus* pJobStatus) mut
+			{
+				return VT.OnOutgoingJobChanged(&this, pFaxAccount, bstrJobId, pJobStatus);
+			}
+			public HRESULT OnIncomingMessageAdded(IFaxAccount* pFaxAccount, BSTR bstrMessageId, int16 fAddedToReceiveFolder) mut
+			{
+				return VT.OnIncomingMessageAdded(&this, pFaxAccount, bstrMessageId, fAddedToReceiveFolder);
+			}
+			public HRESULT OnIncomingMessageRemoved(IFaxAccount* pFaxAccount, BSTR bstrMessageId, int16 fRemovedFromReceiveFolder) mut
+			{
+				return VT.OnIncomingMessageRemoved(&this, pFaxAccount, bstrMessageId, fRemovedFromReceiveFolder);
+			}
+			public HRESULT OnOutgoingMessageAdded(IFaxAccount* pFaxAccount, BSTR bstrMessageId) mut
+			{
+				return VT.OnOutgoingMessageAdded(&this, pFaxAccount, bstrMessageId);
+			}
+			public HRESULT OnOutgoingMessageRemoved(IFaxAccount* pFaxAccount, BSTR bstrMessageId) mut
+			{
+				return VT.OnOutgoingMessageRemoved(&this, pFaxAccount, bstrMessageId);
+			}
+			public HRESULT OnServerShutDown(IFaxServer2* pFaxServer) mut
+			{
+				return VT.OnServerShutDown(&this, pFaxServer);
+			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrJobId) OnIncomingJobAdded;
-				public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrJobId) OnIncomingJobRemoved;
-				public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrJobId, IFaxJobStatus* pJobStatus) OnIncomingJobChanged;
-				public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrJobId) OnOutgoingJobAdded;
-				public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrJobId) OnOutgoingJobRemoved;
-				public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrJobId, IFaxJobStatus* pJobStatus) OnOutgoingJobChanged;
-				public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrMessageId, int16 fAddedToReceiveFolder) OnIncomingMessageAdded;
-				public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrMessageId, int16 fRemovedFromReceiveFolder) OnIncomingMessageRemoved;
-				public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrMessageId) OnOutgoingMessageAdded;
-				public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrMessageId) OnOutgoingMessageRemoved;
-				public function HRESULT(_IFaxAccountNotify *self, IFaxServer2* pFaxServer) OnServerShutDown;
+				public new function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrJobId) OnIncomingJobAdded;
+				public new function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrJobId) OnIncomingJobRemoved;
+				public new function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrJobId, IFaxJobStatus* pJobStatus) OnIncomingJobChanged;
+				public new function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrJobId) OnOutgoingJobAdded;
+				public new function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrJobId) OnOutgoingJobRemoved;
+				public new function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrJobId, IFaxJobStatus* pJobStatus) OnOutgoingJobChanged;
+				public new function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrMessageId, int16 fAddedToReceiveFolder) OnIncomingMessageAdded;
+				public new function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrMessageId, int16 fRemovedFromReceiveFolder) OnIncomingMessageRemoved;
+				public new function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrMessageId) OnOutgoingMessageAdded;
+				public new function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrMessageId) OnOutgoingMessageRemoved;
+				public new function HRESULT(_IFaxAccountNotify *self, IFaxServer2* pFaxServer) OnServerShutDown;
 			}
 		}
 		[CRepr]
@@ -2445,7 +4892,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0b5e5bd1, 0xb8a9, 0x47a0, 0xa3, 0x23, 0xef, 0x4a, 0x29, 0x3b, 0xa0, 0x6a);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
@@ -2456,25 +4904,86 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x641bd880, 0x2dc8, 0x11d0, 0x90, 0xea, 0x00, 0xaa, 0x00, 0x60, 0xf8, 0x6c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(HINSTANCE hinst, uint32 dwVersion) mut
+			{
+				return VT.Initialize(&this, hinst, dwVersion);
+			}
+			public HRESULT GetDeviceList(uint32 dwType, uint32 dwFlags, uint32* pdwItemsReturned, void** ppBuffer) mut
+			{
+				return VT.GetDeviceList(&this, dwType, dwFlags, pdwItemsReturned, ppBuffer);
+			}
+			public HRESULT GetDeviceInfo(PWSTR pwszDeviceName, void** ppBuffer) mut
+			{
+				return VT.GetDeviceInfo(&this, pwszDeviceName, ppBuffer);
+			}
+			public HRESULT CreateDevice(PWSTR pwszDeviceName, uint32 dwMode, IStiDevice** pDevice, IUnknown* punkOuter) mut
+			{
+				return VT.CreateDevice(&this, pwszDeviceName, dwMode, pDevice, punkOuter);
+			}
+			public HRESULT GetDeviceValue(PWSTR pwszDeviceName, PWSTR pValueName, uint32* pType, uint8* pData, uint32* cbData) mut
+			{
+				return VT.GetDeviceValue(&this, pwszDeviceName, pValueName, pType, pData, cbData);
+			}
+			public HRESULT SetDeviceValue(PWSTR pwszDeviceName, PWSTR pValueName, uint32 Type, uint8* pData, uint32 cbData) mut
+			{
+				return VT.SetDeviceValue(&this, pwszDeviceName, pValueName, Type, pData, cbData);
+			}
+			public HRESULT GetSTILaunchInformation(char16* pwszDeviceName, uint32* pdwEventCode, char16* pwszEventName) mut
+			{
+				return VT.GetSTILaunchInformation(&this, pwszDeviceName, pdwEventCode, pwszEventName);
+			}
+			public HRESULT RegisterLaunchApplication(PWSTR pwszAppName, PWSTR pwszCommandLine) mut
+			{
+				return VT.RegisterLaunchApplication(&this, pwszAppName, pwszCommandLine);
+			}
+			public HRESULT UnregisterLaunchApplication(PWSTR pwszAppName) mut
+			{
+				return VT.UnregisterLaunchApplication(&this, pwszAppName);
+			}
+			public HRESULT EnableHwNotifications(PWSTR pwszDeviceName, BOOL bNewState) mut
+			{
+				return VT.EnableHwNotifications(&this, pwszDeviceName, bNewState);
+			}
+			public HRESULT GetHwNotificationState(PWSTR pwszDeviceName, BOOL* pbCurrentState) mut
+			{
+				return VT.GetHwNotificationState(&this, pwszDeviceName, pbCurrentState);
+			}
+			public HRESULT RefreshDeviceBus(PWSTR pwszDeviceName) mut
+			{
+				return VT.RefreshDeviceBus(&this, pwszDeviceName);
+			}
+			public HRESULT LaunchApplicationForDevice(PWSTR pwszDeviceName, PWSTR pwszAppName, STINOTIFY* pStiNotify) mut
+			{
+				return VT.LaunchApplicationForDevice(&this, pwszDeviceName, pwszAppName, pStiNotify);
+			}
+			public HRESULT SetupDeviceParameters(STI_DEVICE_INFORMATIONW* param0) mut
+			{
+				return VT.SetupDeviceParameters(&this, param0);
+			}
+			public HRESULT WriteToErrorLog(uint32 dwMessageType, PWSTR pszMessage) mut
+			{
+				return VT.WriteToErrorLog(&this, dwMessageType, pszMessage);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IStillImageW *self, HINSTANCE hinst, uint32 dwVersion) Initialize;
-				public function HRESULT(IStillImageW *self, uint32 dwType, uint32 dwFlags, uint32* pdwItemsReturned, void** ppBuffer) GetDeviceList;
-				public function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, void** ppBuffer) GetDeviceInfo;
-				public function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, uint32 dwMode, IStiDevice** pDevice, IUnknown* punkOuter) CreateDevice;
-				public function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, PWSTR pValueName, uint32* pType, uint8* pData, uint32* cbData) GetDeviceValue;
-				public function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, PWSTR pValueName, uint32 Type, uint8* pData, uint32 cbData) SetDeviceValue;
-				public function HRESULT(IStillImageW *self, char16* pwszDeviceName, uint32* pdwEventCode, char16* pwszEventName) GetSTILaunchInformation;
-				public function HRESULT(IStillImageW *self, PWSTR pwszAppName, PWSTR pwszCommandLine) RegisterLaunchApplication;
-				public function HRESULT(IStillImageW *self, PWSTR pwszAppName) UnregisterLaunchApplication;
-				public function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, BOOL bNewState) EnableHwNotifications;
-				public function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, BOOL* pbCurrentState) GetHwNotificationState;
-				public function HRESULT(IStillImageW *self, PWSTR pwszDeviceName) RefreshDeviceBus;
-				public function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, PWSTR pwszAppName, STINOTIFY* pStiNotify) LaunchApplicationForDevice;
-				public function HRESULT(IStillImageW *self, STI_DEVICE_INFORMATIONW* param0) SetupDeviceParameters;
-				public function HRESULT(IStillImageW *self, uint32 dwMessageType, PWSTR pszMessage) WriteToErrorLog;
+				public new function HRESULT(IStillImageW *self, HINSTANCE hinst, uint32 dwVersion) Initialize;
+				public new function HRESULT(IStillImageW *self, uint32 dwType, uint32 dwFlags, uint32* pdwItemsReturned, void** ppBuffer) GetDeviceList;
+				public new function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, void** ppBuffer) GetDeviceInfo;
+				public new function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, uint32 dwMode, IStiDevice** pDevice, IUnknown* punkOuter) CreateDevice;
+				public new function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, PWSTR pValueName, uint32* pType, uint8* pData, uint32* cbData) GetDeviceValue;
+				public new function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, PWSTR pValueName, uint32 Type, uint8* pData, uint32 cbData) SetDeviceValue;
+				public new function HRESULT(IStillImageW *self, char16* pwszDeviceName, uint32* pdwEventCode, char16* pwszEventName) GetSTILaunchInformation;
+				public new function HRESULT(IStillImageW *self, PWSTR pwszAppName, PWSTR pwszCommandLine) RegisterLaunchApplication;
+				public new function HRESULT(IStillImageW *self, PWSTR pwszAppName) UnregisterLaunchApplication;
+				public new function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, BOOL bNewState) EnableHwNotifications;
+				public new function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, BOOL* pbCurrentState) GetHwNotificationState;
+				public new function HRESULT(IStillImageW *self, PWSTR pwszDeviceName) RefreshDeviceBus;
+				public new function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, PWSTR pwszAppName, STINOTIFY* pStiNotify) LaunchApplicationForDevice;
+				public new function HRESULT(IStillImageW *self, STI_DEVICE_INFORMATIONW* param0) SetupDeviceParameters;
+				public new function HRESULT(IStillImageW *self, uint32 dwMessageType, PWSTR pszMessage) WriteToErrorLog;
 			}
 		}
 		[CRepr]
@@ -2482,27 +4991,96 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6cfa5a80, 0x2dc8, 0x11d0, 0x90, 0xea, 0x00, 0xaa, 0x00, 0x60, 0xf8, 0x6c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(HINSTANCE hinst, PWSTR pwszDeviceName, uint32 dwVersion, uint32 dwMode) mut
+			{
+				return VT.Initialize(&this, hinst, pwszDeviceName, dwVersion, dwMode);
+			}
+			public HRESULT GetCapabilities(STI_DEV_CAPS* pDevCaps) mut
+			{
+				return VT.GetCapabilities(&this, pDevCaps);
+			}
+			public HRESULT GetStatus(STI_DEVICE_STATUS* pDevStatus) mut
+			{
+				return VT.GetStatus(&this, pDevStatus);
+			}
+			public HRESULT DeviceReset() mut
+			{
+				return VT.DeviceReset(&this);
+			}
+			public HRESULT Diagnostic(STI_DIAG* pBuffer) mut
+			{
+				return VT.Diagnostic(&this, pBuffer);
+			}
+			public HRESULT Escape(uint32 EscapeFunction, void* lpInData, uint32 cbInDataSize, void* pOutData, uint32 dwOutDataSize, uint32* pdwActualData) mut
+			{
+				return VT.Escape(&this, EscapeFunction, lpInData, cbInDataSize, pOutData, dwOutDataSize, pdwActualData);
+			}
+			public HRESULT GetLastError(uint32* pdwLastDeviceError) mut
+			{
+				return VT.GetLastError(&this, pdwLastDeviceError);
+			}
+			public HRESULT LockDevice(uint32 dwTimeOut) mut
+			{
+				return VT.LockDevice(&this, dwTimeOut);
+			}
+			public HRESULT UnLockDevice() mut
+			{
+				return VT.UnLockDevice(&this);
+			}
+			public HRESULT RawReadData(void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) mut
+			{
+				return VT.RawReadData(&this, lpBuffer, lpdwNumberOfBytes, lpOverlapped);
+			}
+			public HRESULT RawWriteData(void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) mut
+			{
+				return VT.RawWriteData(&this, lpBuffer, nNumberOfBytes, lpOverlapped);
+			}
+			public HRESULT RawReadCommand(void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) mut
+			{
+				return VT.RawReadCommand(&this, lpBuffer, lpdwNumberOfBytes, lpOverlapped);
+			}
+			public HRESULT RawWriteCommand(void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) mut
+			{
+				return VT.RawWriteCommand(&this, lpBuffer, nNumberOfBytes, lpOverlapped);
+			}
+			public HRESULT Subscribe(STISUBSCRIBE* lpSubsribe) mut
+			{
+				return VT.Subscribe(&this, lpSubsribe);
+			}
+			public HRESULT GetLastNotificationData(STINOTIFY* lpNotify) mut
+			{
+				return VT.GetLastNotificationData(&this, lpNotify);
+			}
+			public HRESULT UnSubscribe() mut
+			{
+				return VT.UnSubscribe(&this);
+			}
+			public HRESULT GetLastErrorInfo(_ERROR_INFOW* pLastErrorInfo) mut
+			{
+				return VT.GetLastErrorInfo(&this, pLastErrorInfo);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IStiDevice *self, HINSTANCE hinst, PWSTR pwszDeviceName, uint32 dwVersion, uint32 dwMode) Initialize;
-				public function HRESULT(IStiDevice *self, STI_DEV_CAPS* pDevCaps) GetCapabilities;
-				public function HRESULT(IStiDevice *self, STI_DEVICE_STATUS* pDevStatus) GetStatus;
-				public function HRESULT(IStiDevice *self) DeviceReset;
-				public function HRESULT(IStiDevice *self, STI_DIAG* pBuffer) Diagnostic;
-				public function HRESULT(IStiDevice *self, uint32 EscapeFunction, void* lpInData, uint32 cbInDataSize, void* pOutData, uint32 dwOutDataSize, uint32* pdwActualData) Escape;
-				public function HRESULT(IStiDevice *self, uint32* pdwLastDeviceError) GetLastError;
-				public function HRESULT(IStiDevice *self, uint32 dwTimeOut) LockDevice;
-				public function HRESULT(IStiDevice *self) UnLockDevice;
-				public function HRESULT(IStiDevice *self, void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) RawReadData;
-				public function HRESULT(IStiDevice *self, void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) RawWriteData;
-				public function HRESULT(IStiDevice *self, void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) RawReadCommand;
-				public function HRESULT(IStiDevice *self, void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) RawWriteCommand;
-				public function HRESULT(IStiDevice *self, STISUBSCRIBE* lpSubsribe) Subscribe;
-				public function HRESULT(IStiDevice *self, STINOTIFY* lpNotify) GetLastNotificationData;
-				public function HRESULT(IStiDevice *self) UnSubscribe;
-				public function HRESULT(IStiDevice *self, _ERROR_INFOW* pLastErrorInfo) GetLastErrorInfo;
+				public new function HRESULT(IStiDevice *self, HINSTANCE hinst, PWSTR pwszDeviceName, uint32 dwVersion, uint32 dwMode) Initialize;
+				public new function HRESULT(IStiDevice *self, STI_DEV_CAPS* pDevCaps) GetCapabilities;
+				public new function HRESULT(IStiDevice *self, STI_DEVICE_STATUS* pDevStatus) GetStatus;
+				public new function HRESULT(IStiDevice *self) DeviceReset;
+				public new function HRESULT(IStiDevice *self, STI_DIAG* pBuffer) Diagnostic;
+				public new function HRESULT(IStiDevice *self, uint32 EscapeFunction, void* lpInData, uint32 cbInDataSize, void* pOutData, uint32 dwOutDataSize, uint32* pdwActualData) Escape;
+				public new function HRESULT(IStiDevice *self, uint32* pdwLastDeviceError) GetLastError;
+				public new function HRESULT(IStiDevice *self, uint32 dwTimeOut) LockDevice;
+				public new function HRESULT(IStiDevice *self) UnLockDevice;
+				public new function HRESULT(IStiDevice *self, void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) RawReadData;
+				public new function HRESULT(IStiDevice *self, void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) RawWriteData;
+				public new function HRESULT(IStiDevice *self, void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) RawReadCommand;
+				public new function HRESULT(IStiDevice *self, void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) RawWriteCommand;
+				public new function HRESULT(IStiDevice *self, STISUBSCRIBE* lpSubsribe) Subscribe;
+				public new function HRESULT(IStiDevice *self, STINOTIFY* lpNotify) GetLastNotificationData;
+				public new function HRESULT(IStiDevice *self) UnSubscribe;
+				public new function HRESULT(IStiDevice *self, _ERROR_INFOW* pLastErrorInfo) GetLastErrorInfo;
 			}
 		}
 		[CRepr]
@@ -2510,21 +5088,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x128a9860, 0x52dc, 0x11d0, 0x9e, 0xdf, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(uint32 dwDeviceType, uint32 dwMode, PWSTR pwszPortName, uint32 dwFlags) mut
+			{
+				return VT.Initialize(&this, dwDeviceType, dwMode, pwszPortName, dwFlags);
+			}
+			public HRESULT RawReadData(void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) mut
+			{
+				return VT.RawReadData(&this, lpBuffer, lpdwNumberOfBytes, lpOverlapped);
+			}
+			public HRESULT RawWriteData(void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) mut
+			{
+				return VT.RawWriteData(&this, lpBuffer, nNumberOfBytes, lpOverlapped);
+			}
+			public HRESULT RawReadCommand(void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) mut
+			{
+				return VT.RawReadCommand(&this, lpBuffer, lpdwNumberOfBytes, lpOverlapped);
+			}
+			public HRESULT RawWriteCommand(void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) mut
+			{
+				return VT.RawWriteCommand(&this, lpBuffer, nNumberOfBytes, lpOverlapped);
+			}
+			public HRESULT RawDeviceControl(uint32 EscapeFunction, void* lpInData, uint32 cbInDataSize, void* pOutData, uint32 dwOutDataSize, uint32* pdwActualData) mut
+			{
+				return VT.RawDeviceControl(&this, EscapeFunction, lpInData, cbInDataSize, pOutData, dwOutDataSize, pdwActualData);
+			}
+			public HRESULT GetLastError(uint32* lpdwLastError) mut
+			{
+				return VT.GetLastError(&this, lpdwLastError);
+			}
+			public HRESULT GetMyDevicePortName(char16* lpszDevicePath, uint32 cwDevicePathSize) mut
+			{
+				return VT.GetMyDevicePortName(&this, lpszDevicePath, cwDevicePathSize);
+			}
+			public HRESULT GetMyDeviceHandle(HANDLE* lph) mut
+			{
+				return VT.GetMyDeviceHandle(&this, lph);
+			}
+			public HRESULT GetMyDeviceOpenMode(uint32* pdwOpenMode) mut
+			{
+				return VT.GetMyDeviceOpenMode(&this, pdwOpenMode);
+			}
+			public HRESULT WriteToErrorLog(uint32 dwMessageType, PWSTR pszMessage, uint32 dwErrorCode) mut
+			{
+				return VT.WriteToErrorLog(&this, dwMessageType, pszMessage, dwErrorCode);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IStiDeviceControl *self, uint32 dwDeviceType, uint32 dwMode, PWSTR pwszPortName, uint32 dwFlags) Initialize;
-				public function HRESULT(IStiDeviceControl *self, void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) RawReadData;
-				public function HRESULT(IStiDeviceControl *self, void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) RawWriteData;
-				public function HRESULT(IStiDeviceControl *self, void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) RawReadCommand;
-				public function HRESULT(IStiDeviceControl *self, void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) RawWriteCommand;
-				public function HRESULT(IStiDeviceControl *self, uint32 EscapeFunction, void* lpInData, uint32 cbInDataSize, void* pOutData, uint32 dwOutDataSize, uint32* pdwActualData) RawDeviceControl;
-				public function HRESULT(IStiDeviceControl *self, uint32* lpdwLastError) GetLastError;
-				public function HRESULT(IStiDeviceControl *self, char16* lpszDevicePath, uint32 cwDevicePathSize) GetMyDevicePortName;
-				public function HRESULT(IStiDeviceControl *self, HANDLE* lph) GetMyDeviceHandle;
-				public function HRESULT(IStiDeviceControl *self, uint32* pdwOpenMode) GetMyDeviceOpenMode;
-				public function HRESULT(IStiDeviceControl *self, uint32 dwMessageType, PWSTR pszMessage, uint32 dwErrorCode) WriteToErrorLog;
+				public new function HRESULT(IStiDeviceControl *self, uint32 dwDeviceType, uint32 dwMode, PWSTR pwszPortName, uint32 dwFlags) Initialize;
+				public new function HRESULT(IStiDeviceControl *self, void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) RawReadData;
+				public new function HRESULT(IStiDeviceControl *self, void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) RawWriteData;
+				public new function HRESULT(IStiDeviceControl *self, void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) RawReadCommand;
+				public new function HRESULT(IStiDeviceControl *self, void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) RawWriteCommand;
+				public new function HRESULT(IStiDeviceControl *self, uint32 EscapeFunction, void* lpInData, uint32 cbInDataSize, void* pOutData, uint32 dwOutDataSize, uint32* pdwActualData) RawDeviceControl;
+				public new function HRESULT(IStiDeviceControl *self, uint32* lpdwLastError) GetLastError;
+				public new function HRESULT(IStiDeviceControl *self, char16* lpszDevicePath, uint32 cwDevicePathSize) GetMyDevicePortName;
+				public new function HRESULT(IStiDeviceControl *self, HANDLE* lph) GetMyDeviceHandle;
+				public new function HRESULT(IStiDeviceControl *self, uint32* pdwOpenMode) GetMyDeviceOpenMode;
+				public new function HRESULT(IStiDeviceControl *self, uint32 dwMessageType, PWSTR pszMessage, uint32 dwErrorCode) WriteToErrorLog;
 			}
 		}
 		[CRepr]
@@ -2532,26 +5155,91 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x0c9bb460, 0x51ac, 0x11d0, 0x90, 0xea, 0x00, 0xaa, 0x00, 0x60, 0xf8, 0x6c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(IStiDeviceControl* pHelDcb, uint32 dwStiVersion, HKEY hParametersKey) mut
+			{
+				return VT.Initialize(&this, pHelDcb, dwStiVersion, hParametersKey);
+			}
+			public HRESULT GetCapabilities(STI_USD_CAPS* pDevCaps) mut
+			{
+				return VT.GetCapabilities(&this, pDevCaps);
+			}
+			public HRESULT GetStatus(STI_DEVICE_STATUS* pDevStatus) mut
+			{
+				return VT.GetStatus(&this, pDevStatus);
+			}
+			public HRESULT DeviceReset() mut
+			{
+				return VT.DeviceReset(&this);
+			}
+			public HRESULT Diagnostic(STI_DIAG* pBuffer) mut
+			{
+				return VT.Diagnostic(&this, pBuffer);
+			}
+			public HRESULT Escape(uint32 EscapeFunction, void* lpInData, uint32 cbInDataSize, void* pOutData, uint32 cbOutDataSize, uint32* pdwActualData) mut
+			{
+				return VT.Escape(&this, EscapeFunction, lpInData, cbInDataSize, pOutData, cbOutDataSize, pdwActualData);
+			}
+			public HRESULT GetLastError(uint32* pdwLastDeviceError) mut
+			{
+				return VT.GetLastError(&this, pdwLastDeviceError);
+			}
+			public HRESULT LockDevice() mut
+			{
+				return VT.LockDevice(&this);
+			}
+			public HRESULT UnLockDevice() mut
+			{
+				return VT.UnLockDevice(&this);
+			}
+			public HRESULT RawReadData(void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) mut
+			{
+				return VT.RawReadData(&this, lpBuffer, lpdwNumberOfBytes, lpOverlapped);
+			}
+			public HRESULT RawWriteData(void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) mut
+			{
+				return VT.RawWriteData(&this, lpBuffer, nNumberOfBytes, lpOverlapped);
+			}
+			public HRESULT RawReadCommand(void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) mut
+			{
+				return VT.RawReadCommand(&this, lpBuffer, lpdwNumberOfBytes, lpOverlapped);
+			}
+			public HRESULT RawWriteCommand(void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) mut
+			{
+				return VT.RawWriteCommand(&this, lpBuffer, nNumberOfBytes, lpOverlapped);
+			}
+			public HRESULT SetNotificationHandle(HANDLE hEvent) mut
+			{
+				return VT.SetNotificationHandle(&this, hEvent);
+			}
+			public HRESULT GetNotificationData(STINOTIFY* lpNotify) mut
+			{
+				return VT.GetNotificationData(&this, lpNotify);
+			}
+			public HRESULT GetLastErrorInfo(_ERROR_INFOW* pLastErrorInfo) mut
+			{
+				return VT.GetLastErrorInfo(&this, pLastErrorInfo);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IStiUSD *self, IStiDeviceControl* pHelDcb, uint32 dwStiVersion, HKEY hParametersKey) Initialize;
-				public function HRESULT(IStiUSD *self, STI_USD_CAPS* pDevCaps) GetCapabilities;
-				public function HRESULT(IStiUSD *self, STI_DEVICE_STATUS* pDevStatus) GetStatus;
-				public function HRESULT(IStiUSD *self) DeviceReset;
-				public function HRESULT(IStiUSD *self, STI_DIAG* pBuffer) Diagnostic;
-				public function HRESULT(IStiUSD *self, uint32 EscapeFunction, void* lpInData, uint32 cbInDataSize, void* pOutData, uint32 cbOutDataSize, uint32* pdwActualData) Escape;
-				public function HRESULT(IStiUSD *self, uint32* pdwLastDeviceError) GetLastError;
-				public function HRESULT(IStiUSD *self) LockDevice;
-				public function HRESULT(IStiUSD *self) UnLockDevice;
-				public function HRESULT(IStiUSD *self, void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) RawReadData;
-				public function HRESULT(IStiUSD *self, void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) RawWriteData;
-				public function HRESULT(IStiUSD *self, void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) RawReadCommand;
-				public function HRESULT(IStiUSD *self, void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) RawWriteCommand;
-				public function HRESULT(IStiUSD *self, HANDLE hEvent) SetNotificationHandle;
-				public function HRESULT(IStiUSD *self, STINOTIFY* lpNotify) GetNotificationData;
-				public function HRESULT(IStiUSD *self, _ERROR_INFOW* pLastErrorInfo) GetLastErrorInfo;
+				public new function HRESULT(IStiUSD *self, IStiDeviceControl* pHelDcb, uint32 dwStiVersion, HKEY hParametersKey) Initialize;
+				public new function HRESULT(IStiUSD *self, STI_USD_CAPS* pDevCaps) GetCapabilities;
+				public new function HRESULT(IStiUSD *self, STI_DEVICE_STATUS* pDevStatus) GetStatus;
+				public new function HRESULT(IStiUSD *self) DeviceReset;
+				public new function HRESULT(IStiUSD *self, STI_DIAG* pBuffer) Diagnostic;
+				public new function HRESULT(IStiUSD *self, uint32 EscapeFunction, void* lpInData, uint32 cbInDataSize, void* pOutData, uint32 cbOutDataSize, uint32* pdwActualData) Escape;
+				public new function HRESULT(IStiUSD *self, uint32* pdwLastDeviceError) GetLastError;
+				public new function HRESULT(IStiUSD *self) LockDevice;
+				public new function HRESULT(IStiUSD *self) UnLockDevice;
+				public new function HRESULT(IStiUSD *self, void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) RawReadData;
+				public new function HRESULT(IStiUSD *self, void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) RawWriteData;
+				public new function HRESULT(IStiUSD *self, void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) RawReadCommand;
+				public new function HRESULT(IStiUSD *self, void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) RawWriteCommand;
+				public new function HRESULT(IStiUSD *self, HANDLE hEvent) SetNotificationHandle;
+				public new function HRESULT(IStiUSD *self, STINOTIFY* lpNotify) GetNotificationData;
+				public new function HRESULT(IStiUSD *self, _ERROR_INFOW* pLastErrorInfo) GetLastErrorInfo;
 			}
 		}
 		

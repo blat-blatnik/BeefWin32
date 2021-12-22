@@ -3601,20 +3601,61 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xe7e1f7c0, 0x88d2, 0x11d0, 0x9a, 0xd0, 0x00, 0xa0, 0xc9, 0xa0, 0x6e, 0x35);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(HINSTANCE param0, uint32 param1, Guid* param2) mut
+			{
+				return VT.Initialize(&this, param0, param1, param2);
+			}
+			public HRESULT GetEffectGuid(Guid* param0) mut
+			{
+				return VT.GetEffectGuid(&this, param0);
+			}
+			public HRESULT GetParameters(DIEFFECT* param0, uint32 param1) mut
+			{
+				return VT.GetParameters(&this, param0, param1);
+			}
+			public HRESULT SetParameters(DIEFFECT* param0, uint32 param1) mut
+			{
+				return VT.SetParameters(&this, param0, param1);
+			}
+			public HRESULT Start(uint32 param0, uint32 param1) mut
+			{
+				return VT.Start(&this, param0, param1);
+			}
+			public HRESULT Stop() mut
+			{
+				return VT.Stop(&this);
+			}
+			public HRESULT GetEffectStatus(uint32* param0) mut
+			{
+				return VT.GetEffectStatus(&this, param0);
+			}
+			public HRESULT Download() mut
+			{
+				return VT.Download(&this);
+			}
+			public HRESULT Unload() mut
+			{
+				return VT.Unload(&this);
+			}
+			public HRESULT Escape(DIEFFESCAPE* param0) mut
+			{
+				return VT.Escape(&this, param0);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectInputEffect *self, HINSTANCE param0, uint32 param1, Guid* param2) Initialize;
-				public function HRESULT(IDirectInputEffect *self, Guid* param0) GetEffectGuid;
-				public function HRESULT(IDirectInputEffect *self, DIEFFECT* param0, uint32 param1) GetParameters;
-				public function HRESULT(IDirectInputEffect *self, DIEFFECT* param0, uint32 param1) SetParameters;
-				public function HRESULT(IDirectInputEffect *self, uint32 param0, uint32 param1) Start;
-				public function HRESULT(IDirectInputEffect *self) Stop;
-				public function HRESULT(IDirectInputEffect *self, uint32* param0) GetEffectStatus;
-				public function HRESULT(IDirectInputEffect *self) Download;
-				public function HRESULT(IDirectInputEffect *self) Unload;
-				public function HRESULT(IDirectInputEffect *self, DIEFFESCAPE* param0) Escape;
+				public new function HRESULT(IDirectInputEffect *self, HINSTANCE param0, uint32 param1, Guid* param2) Initialize;
+				public new function HRESULT(IDirectInputEffect *self, Guid* param0) GetEffectGuid;
+				public new function HRESULT(IDirectInputEffect *self, DIEFFECT* param0, uint32 param1) GetParameters;
+				public new function HRESULT(IDirectInputEffect *self, DIEFFECT* param0, uint32 param1) SetParameters;
+				public new function HRESULT(IDirectInputEffect *self, uint32 param0, uint32 param1) Start;
+				public new function HRESULT(IDirectInputEffect *self) Stop;
+				public new function HRESULT(IDirectInputEffect *self, uint32* param0) GetEffectStatus;
+				public new function HRESULT(IDirectInputEffect *self) Download;
+				public new function HRESULT(IDirectInputEffect *self) Unload;
+				public new function HRESULT(IDirectInputEffect *self, DIEFFESCAPE* param0) Escape;
 			}
 		}
 		[CRepr]
@@ -3622,25 +3663,86 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5944e681, 0xc92e, 0x11cf, 0xbf, 0xc7, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCapabilities(DIDEVCAPS* param0) mut
+			{
+				return VT.GetCapabilities(&this, param0);
+			}
+			public HRESULT EnumObjects(LPDIENUMDEVICEOBJECTSCALLBACKW param0, void* param1, uint32 param2) mut
+			{
+				return VT.EnumObjects(&this, param0, param1, param2);
+			}
+			public HRESULT GetProperty(Guid* param0, DIPROPHEADER* param1) mut
+			{
+				return VT.GetProperty(&this, param0, param1);
+			}
+			public HRESULT SetProperty(Guid* param0, DIPROPHEADER* param1) mut
+			{
+				return VT.SetProperty(&this, param0, param1);
+			}
+			public HRESULT Acquire() mut
+			{
+				return VT.Acquire(&this);
+			}
+			public HRESULT Unacquire() mut
+			{
+				return VT.Unacquire(&this);
+			}
+			public HRESULT GetDeviceState(uint32 param0, void* param1) mut
+			{
+				return VT.GetDeviceState(&this, param0, param1);
+			}
+			public HRESULT GetDeviceData(uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) mut
+			{
+				return VT.GetDeviceData(&this, param0, param1, param2, param3);
+			}
+			public HRESULT SetDataFormat(DIDATAFORMAT* param0) mut
+			{
+				return VT.SetDataFormat(&this, param0);
+			}
+			public HRESULT SetEventNotification(HANDLE param0) mut
+			{
+				return VT.SetEventNotification(&this, param0);
+			}
+			public HRESULT SetCooperativeLevel(HWND param0, uint32 param1) mut
+			{
+				return VT.SetCooperativeLevel(&this, param0, param1);
+			}
+			public HRESULT GetObjectInfo(DIDEVICEOBJECTINSTANCEW* param0, uint32 param1, uint32 param2) mut
+			{
+				return VT.GetObjectInfo(&this, param0, param1, param2);
+			}
+			public HRESULT GetDeviceInfo(DIDEVICEINSTANCEW* param0) mut
+			{
+				return VT.GetDeviceInfo(&this, param0);
+			}
+			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut
+			{
+				return VT.RunControlPanel(&this, param0, param1);
+			}
+			public HRESULT Initialize(HINSTANCE param0, uint32 param1, Guid* param2) mut
+			{
+				return VT.Initialize(&this, param0, param1, param2);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectInputDeviceW *self, DIDEVCAPS* param0) GetCapabilities;
-				public function HRESULT(IDirectInputDeviceW *self, LPDIENUMDEVICEOBJECTSCALLBACKW param0, void* param1, uint32 param2) EnumObjects;
-				public function HRESULT(IDirectInputDeviceW *self, Guid* param0, DIPROPHEADER* param1) GetProperty;
-				public function HRESULT(IDirectInputDeviceW *self, Guid* param0, DIPROPHEADER* param1) SetProperty;
-				public function HRESULT(IDirectInputDeviceW *self) Acquire;
-				public function HRESULT(IDirectInputDeviceW *self) Unacquire;
-				public function HRESULT(IDirectInputDeviceW *self, uint32 param0, void* param1) GetDeviceState;
-				public function HRESULT(IDirectInputDeviceW *self, uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) GetDeviceData;
-				public function HRESULT(IDirectInputDeviceW *self, DIDATAFORMAT* param0) SetDataFormat;
-				public function HRESULT(IDirectInputDeviceW *self, HANDLE param0) SetEventNotification;
-				public function HRESULT(IDirectInputDeviceW *self, HWND param0, uint32 param1) SetCooperativeLevel;
-				public function HRESULT(IDirectInputDeviceW *self, DIDEVICEOBJECTINSTANCEW* param0, uint32 param1, uint32 param2) GetObjectInfo;
-				public function HRESULT(IDirectInputDeviceW *self, DIDEVICEINSTANCEW* param0) GetDeviceInfo;
-				public function HRESULT(IDirectInputDeviceW *self, HWND param0, uint32 param1) RunControlPanel;
-				public function HRESULT(IDirectInputDeviceW *self, HINSTANCE param0, uint32 param1, Guid* param2) Initialize;
+				public new function HRESULT(IDirectInputDeviceW *self, DIDEVCAPS* param0) GetCapabilities;
+				public new function HRESULT(IDirectInputDeviceW *self, LPDIENUMDEVICEOBJECTSCALLBACKW param0, void* param1, uint32 param2) EnumObjects;
+				public new function HRESULT(IDirectInputDeviceW *self, Guid* param0, DIPROPHEADER* param1) GetProperty;
+				public new function HRESULT(IDirectInputDeviceW *self, Guid* param0, DIPROPHEADER* param1) SetProperty;
+				public new function HRESULT(IDirectInputDeviceW *self) Acquire;
+				public new function HRESULT(IDirectInputDeviceW *self) Unacquire;
+				public new function HRESULT(IDirectInputDeviceW *self, uint32 param0, void* param1) GetDeviceState;
+				public new function HRESULT(IDirectInputDeviceW *self, uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) GetDeviceData;
+				public new function HRESULT(IDirectInputDeviceW *self, DIDATAFORMAT* param0) SetDataFormat;
+				public new function HRESULT(IDirectInputDeviceW *self, HANDLE param0) SetEventNotification;
+				public new function HRESULT(IDirectInputDeviceW *self, HWND param0, uint32 param1) SetCooperativeLevel;
+				public new function HRESULT(IDirectInputDeviceW *self, DIDEVICEOBJECTINSTANCEW* param0, uint32 param1, uint32 param2) GetObjectInfo;
+				public new function HRESULT(IDirectInputDeviceW *self, DIDEVICEINSTANCEW* param0) GetDeviceInfo;
+				public new function HRESULT(IDirectInputDeviceW *self, HWND param0, uint32 param1) RunControlPanel;
+				public new function HRESULT(IDirectInputDeviceW *self, HINSTANCE param0, uint32 param1, Guid* param2) Initialize;
 			}
 		}
 		[CRepr]
@@ -3648,25 +3750,86 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5944e680, 0xc92e, 0x11cf, 0xbf, 0xc7, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCapabilities(DIDEVCAPS* param0) mut
+			{
+				return VT.GetCapabilities(&this, param0);
+			}
+			public HRESULT EnumObjects(LPDIENUMDEVICEOBJECTSCALLBACKA param0, void* param1, uint32 param2) mut
+			{
+				return VT.EnumObjects(&this, param0, param1, param2);
+			}
+			public HRESULT GetProperty(Guid* param0, DIPROPHEADER* param1) mut
+			{
+				return VT.GetProperty(&this, param0, param1);
+			}
+			public HRESULT SetProperty(Guid* param0, DIPROPHEADER* param1) mut
+			{
+				return VT.SetProperty(&this, param0, param1);
+			}
+			public HRESULT Acquire() mut
+			{
+				return VT.Acquire(&this);
+			}
+			public HRESULT Unacquire() mut
+			{
+				return VT.Unacquire(&this);
+			}
+			public HRESULT GetDeviceState(uint32 param0, void* param1) mut
+			{
+				return VT.GetDeviceState(&this, param0, param1);
+			}
+			public HRESULT GetDeviceData(uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) mut
+			{
+				return VT.GetDeviceData(&this, param0, param1, param2, param3);
+			}
+			public HRESULT SetDataFormat(DIDATAFORMAT* param0) mut
+			{
+				return VT.SetDataFormat(&this, param0);
+			}
+			public HRESULT SetEventNotification(HANDLE param0) mut
+			{
+				return VT.SetEventNotification(&this, param0);
+			}
+			public HRESULT SetCooperativeLevel(HWND param0, uint32 param1) mut
+			{
+				return VT.SetCooperativeLevel(&this, param0, param1);
+			}
+			public HRESULT GetObjectInfo(DIDEVICEOBJECTINSTANCEA* param0, uint32 param1, uint32 param2) mut
+			{
+				return VT.GetObjectInfo(&this, param0, param1, param2);
+			}
+			public HRESULT GetDeviceInfo(DIDEVICEINSTANCEA* param0) mut
+			{
+				return VT.GetDeviceInfo(&this, param0);
+			}
+			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut
+			{
+				return VT.RunControlPanel(&this, param0, param1);
+			}
+			public HRESULT Initialize(HINSTANCE param0, uint32 param1, Guid* param2) mut
+			{
+				return VT.Initialize(&this, param0, param1, param2);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectInputDeviceA *self, DIDEVCAPS* param0) GetCapabilities;
-				public function HRESULT(IDirectInputDeviceA *self, LPDIENUMDEVICEOBJECTSCALLBACKA param0, void* param1, uint32 param2) EnumObjects;
-				public function HRESULT(IDirectInputDeviceA *self, Guid* param0, DIPROPHEADER* param1) GetProperty;
-				public function HRESULT(IDirectInputDeviceA *self, Guid* param0, DIPROPHEADER* param1) SetProperty;
-				public function HRESULT(IDirectInputDeviceA *self) Acquire;
-				public function HRESULT(IDirectInputDeviceA *self) Unacquire;
-				public function HRESULT(IDirectInputDeviceA *self, uint32 param0, void* param1) GetDeviceState;
-				public function HRESULT(IDirectInputDeviceA *self, uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) GetDeviceData;
-				public function HRESULT(IDirectInputDeviceA *self, DIDATAFORMAT* param0) SetDataFormat;
-				public function HRESULT(IDirectInputDeviceA *self, HANDLE param0) SetEventNotification;
-				public function HRESULT(IDirectInputDeviceA *self, HWND param0, uint32 param1) SetCooperativeLevel;
-				public function HRESULT(IDirectInputDeviceA *self, DIDEVICEOBJECTINSTANCEA* param0, uint32 param1, uint32 param2) GetObjectInfo;
-				public function HRESULT(IDirectInputDeviceA *self, DIDEVICEINSTANCEA* param0) GetDeviceInfo;
-				public function HRESULT(IDirectInputDeviceA *self, HWND param0, uint32 param1) RunControlPanel;
-				public function HRESULT(IDirectInputDeviceA *self, HINSTANCE param0, uint32 param1, Guid* param2) Initialize;
+				public new function HRESULT(IDirectInputDeviceA *self, DIDEVCAPS* param0) GetCapabilities;
+				public new function HRESULT(IDirectInputDeviceA *self, LPDIENUMDEVICEOBJECTSCALLBACKA param0, void* param1, uint32 param2) EnumObjects;
+				public new function HRESULT(IDirectInputDeviceA *self, Guid* param0, DIPROPHEADER* param1) GetProperty;
+				public new function HRESULT(IDirectInputDeviceA *self, Guid* param0, DIPROPHEADER* param1) SetProperty;
+				public new function HRESULT(IDirectInputDeviceA *self) Acquire;
+				public new function HRESULT(IDirectInputDeviceA *self) Unacquire;
+				public new function HRESULT(IDirectInputDeviceA *self, uint32 param0, void* param1) GetDeviceState;
+				public new function HRESULT(IDirectInputDeviceA *self, uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) GetDeviceData;
+				public new function HRESULT(IDirectInputDeviceA *self, DIDATAFORMAT* param0) SetDataFormat;
+				public new function HRESULT(IDirectInputDeviceA *self, HANDLE param0) SetEventNotification;
+				public new function HRESULT(IDirectInputDeviceA *self, HWND param0, uint32 param1) SetCooperativeLevel;
+				public new function HRESULT(IDirectInputDeviceA *self, DIDEVICEOBJECTINSTANCEA* param0, uint32 param1, uint32 param2) GetObjectInfo;
+				public new function HRESULT(IDirectInputDeviceA *self, DIDEVICEINSTANCEA* param0) GetDeviceInfo;
+				public new function HRESULT(IDirectInputDeviceA *self, HWND param0, uint32 param1) RunControlPanel;
+				public new function HRESULT(IDirectInputDeviceA *self, HINSTANCE param0, uint32 param1, Guid* param2) Initialize;
 			}
 		}
 		[CRepr]
@@ -3674,19 +3837,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5944e683, 0xc92e, 0x11cf, 0xbf, 0xc7, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateEffect(Guid* param0, DIEFFECT* param1, IDirectInputEffect** param2, IUnknown* param3) mut
+			{
+				return VT.CreateEffect(&this, param0, param1, param2, param3);
+			}
+			public HRESULT EnumEffects(LPDIENUMEFFECTSCALLBACKW param0, void* param1, uint32 param2) mut
+			{
+				return VT.EnumEffects(&this, param0, param1, param2);
+			}
+			public HRESULT GetEffectInfo(DIEFFECTINFOW* param0, Guid* param1) mut
+			{
+				return VT.GetEffectInfo(&this, param0, param1);
+			}
+			public HRESULT GetForceFeedbackState(uint32* param0) mut
+			{
+				return VT.GetForceFeedbackState(&this, param0);
+			}
+			public HRESULT SendForceFeedbackCommand(uint32 param0) mut
+			{
+				return VT.SendForceFeedbackCommand(&this, param0);
+			}
+			public HRESULT EnumCreatedEffectObjects(LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) mut
+			{
+				return VT.EnumCreatedEffectObjects(&this, param0, param1, param2);
+			}
+			public HRESULT Escape(DIEFFESCAPE* param0) mut
+			{
+				return VT.Escape(&this, param0);
+			}
+			public HRESULT Poll() mut
+			{
+				return VT.Poll(&this);
+			}
+			public HRESULT SendDeviceData(uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) mut
+			{
+				return VT.SendDeviceData(&this, param0, param1, param2, param3);
+			}
 			[CRepr]
 			public struct VTable : IDirectInputDeviceW.VTable
 			{
-				public function HRESULT(IDirectInputDevice2W *self, Guid* param0, DIEFFECT* param1, IDirectInputEffect** param2, IUnknown* param3) CreateEffect;
-				public function HRESULT(IDirectInputDevice2W *self, LPDIENUMEFFECTSCALLBACKW param0, void* param1, uint32 param2) EnumEffects;
-				public function HRESULT(IDirectInputDevice2W *self, DIEFFECTINFOW* param0, Guid* param1) GetEffectInfo;
-				public function HRESULT(IDirectInputDevice2W *self, uint32* param0) GetForceFeedbackState;
-				public function HRESULT(IDirectInputDevice2W *self, uint32 param0) SendForceFeedbackCommand;
-				public function HRESULT(IDirectInputDevice2W *self, LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) EnumCreatedEffectObjects;
-				public function HRESULT(IDirectInputDevice2W *self, DIEFFESCAPE* param0) Escape;
-				public function HRESULT(IDirectInputDevice2W *self) Poll;
-				public function HRESULT(IDirectInputDevice2W *self, uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) SendDeviceData;
+				public new function HRESULT(IDirectInputDevice2W *self, Guid* param0, DIEFFECT* param1, IDirectInputEffect** param2, IUnknown* param3) CreateEffect;
+				public new function HRESULT(IDirectInputDevice2W *self, LPDIENUMEFFECTSCALLBACKW param0, void* param1, uint32 param2) EnumEffects;
+				public new function HRESULT(IDirectInputDevice2W *self, DIEFFECTINFOW* param0, Guid* param1) GetEffectInfo;
+				public new function HRESULT(IDirectInputDevice2W *self, uint32* param0) GetForceFeedbackState;
+				public new function HRESULT(IDirectInputDevice2W *self, uint32 param0) SendForceFeedbackCommand;
+				public new function HRESULT(IDirectInputDevice2W *self, LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) EnumCreatedEffectObjects;
+				public new function HRESULT(IDirectInputDevice2W *self, DIEFFESCAPE* param0) Escape;
+				public new function HRESULT(IDirectInputDevice2W *self) Poll;
+				public new function HRESULT(IDirectInputDevice2W *self, uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) SendDeviceData;
 			}
 		}
 		[CRepr]
@@ -3694,19 +3894,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5944e682, 0xc92e, 0x11cf, 0xbf, 0xc7, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateEffect(Guid* param0, DIEFFECT* param1, IDirectInputEffect** param2, IUnknown* param3) mut
+			{
+				return VT.CreateEffect(&this, param0, param1, param2, param3);
+			}
+			public HRESULT EnumEffects(LPDIENUMEFFECTSCALLBACKA param0, void* param1, uint32 param2) mut
+			{
+				return VT.EnumEffects(&this, param0, param1, param2);
+			}
+			public HRESULT GetEffectInfo(DIEFFECTINFOA* param0, Guid* param1) mut
+			{
+				return VT.GetEffectInfo(&this, param0, param1);
+			}
+			public HRESULT GetForceFeedbackState(uint32* param0) mut
+			{
+				return VT.GetForceFeedbackState(&this, param0);
+			}
+			public HRESULT SendForceFeedbackCommand(uint32 param0) mut
+			{
+				return VT.SendForceFeedbackCommand(&this, param0);
+			}
+			public HRESULT EnumCreatedEffectObjects(LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) mut
+			{
+				return VT.EnumCreatedEffectObjects(&this, param0, param1, param2);
+			}
+			public HRESULT Escape(DIEFFESCAPE* param0) mut
+			{
+				return VT.Escape(&this, param0);
+			}
+			public HRESULT Poll() mut
+			{
+				return VT.Poll(&this);
+			}
+			public HRESULT SendDeviceData(uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) mut
+			{
+				return VT.SendDeviceData(&this, param0, param1, param2, param3);
+			}
 			[CRepr]
 			public struct VTable : IDirectInputDeviceA.VTable
 			{
-				public function HRESULT(IDirectInputDevice2A *self, Guid* param0, DIEFFECT* param1, IDirectInputEffect** param2, IUnknown* param3) CreateEffect;
-				public function HRESULT(IDirectInputDevice2A *self, LPDIENUMEFFECTSCALLBACKA param0, void* param1, uint32 param2) EnumEffects;
-				public function HRESULT(IDirectInputDevice2A *self, DIEFFECTINFOA* param0, Guid* param1) GetEffectInfo;
-				public function HRESULT(IDirectInputDevice2A *self, uint32* param0) GetForceFeedbackState;
-				public function HRESULT(IDirectInputDevice2A *self, uint32 param0) SendForceFeedbackCommand;
-				public function HRESULT(IDirectInputDevice2A *self, LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) EnumCreatedEffectObjects;
-				public function HRESULT(IDirectInputDevice2A *self, DIEFFESCAPE* param0) Escape;
-				public function HRESULT(IDirectInputDevice2A *self) Poll;
-				public function HRESULT(IDirectInputDevice2A *self, uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) SendDeviceData;
+				public new function HRESULT(IDirectInputDevice2A *self, Guid* param0, DIEFFECT* param1, IDirectInputEffect** param2, IUnknown* param3) CreateEffect;
+				public new function HRESULT(IDirectInputDevice2A *self, LPDIENUMEFFECTSCALLBACKA param0, void* param1, uint32 param2) EnumEffects;
+				public new function HRESULT(IDirectInputDevice2A *self, DIEFFECTINFOA* param0, Guid* param1) GetEffectInfo;
+				public new function HRESULT(IDirectInputDevice2A *self, uint32* param0) GetForceFeedbackState;
+				public new function HRESULT(IDirectInputDevice2A *self, uint32 param0) SendForceFeedbackCommand;
+				public new function HRESULT(IDirectInputDevice2A *self, LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) EnumCreatedEffectObjects;
+				public new function HRESULT(IDirectInputDevice2A *self, DIEFFESCAPE* param0) Escape;
+				public new function HRESULT(IDirectInputDevice2A *self) Poll;
+				public new function HRESULT(IDirectInputDevice2A *self, uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) SendDeviceData;
 			}
 		}
 		[CRepr]
@@ -3714,12 +3951,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x57d7c6bd, 0x2356, 0x11d3, 0x8e, 0x9d, 0x00, 0xc0, 0x4f, 0x68, 0x44, 0xae);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT EnumEffectsInFile(PWSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) mut
+			{
+				return VT.EnumEffectsInFile(&this, param0, param1, param2, param3);
+			}
+			public HRESULT WriteEffectToFile(PWSTR param0, uint32 param1, DIFILEEFFECT* param2, uint32 param3) mut
+			{
+				return VT.WriteEffectToFile(&this, param0, param1, param2, param3);
+			}
 			[CRepr]
 			public struct VTable : IDirectInputDevice2W.VTable
 			{
-				public function HRESULT(IDirectInputDevice7W *self, PWSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) EnumEffectsInFile;
-				public function HRESULT(IDirectInputDevice7W *self, PWSTR param0, uint32 param1, DIFILEEFFECT* param2, uint32 param3) WriteEffectToFile;
+				public new function HRESULT(IDirectInputDevice7W *self, PWSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) EnumEffectsInFile;
+				public new function HRESULT(IDirectInputDevice7W *self, PWSTR param0, uint32 param1, DIFILEEFFECT* param2, uint32 param3) WriteEffectToFile;
 			}
 		}
 		[CRepr]
@@ -3727,12 +3973,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x57d7c6bc, 0x2356, 0x11d3, 0x8e, 0x9d, 0x00, 0xc0, 0x4f, 0x68, 0x44, 0xae);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT EnumEffectsInFile(PSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) mut
+			{
+				return VT.EnumEffectsInFile(&this, param0, param1, param2, param3);
+			}
+			public HRESULT WriteEffectToFile(PSTR param0, uint32 param1, DIFILEEFFECT* param2, uint32 param3) mut
+			{
+				return VT.WriteEffectToFile(&this, param0, param1, param2, param3);
+			}
 			[CRepr]
 			public struct VTable : IDirectInputDevice2A.VTable
 			{
-				public function HRESULT(IDirectInputDevice7A *self, PSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) EnumEffectsInFile;
-				public function HRESULT(IDirectInputDevice7A *self, PSTR param0, uint32 param1, DIFILEEFFECT* param2, uint32 param3) WriteEffectToFile;
+				public new function HRESULT(IDirectInputDevice7A *self, PSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) EnumEffectsInFile;
+				public new function HRESULT(IDirectInputDevice7A *self, PSTR param0, uint32 param1, DIFILEEFFECT* param2, uint32 param3) WriteEffectToFile;
 			}
 		}
 		[CRepr]
@@ -3740,39 +3995,156 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x54d41081, 0xdc15, 0x4833, 0xa4, 0x1b, 0x74, 0x8f, 0x73, 0xa3, 0x81, 0x79);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCapabilities(DIDEVCAPS* param0) mut
+			{
+				return VT.GetCapabilities(&this, param0);
+			}
+			public HRESULT EnumObjects(LPDIENUMDEVICEOBJECTSCALLBACKW param0, void* param1, uint32 param2) mut
+			{
+				return VT.EnumObjects(&this, param0, param1, param2);
+			}
+			public HRESULT GetProperty(Guid* param0, DIPROPHEADER* param1) mut
+			{
+				return VT.GetProperty(&this, param0, param1);
+			}
+			public HRESULT SetProperty(Guid* param0, DIPROPHEADER* param1) mut
+			{
+				return VT.SetProperty(&this, param0, param1);
+			}
+			public HRESULT Acquire() mut
+			{
+				return VT.Acquire(&this);
+			}
+			public HRESULT Unacquire() mut
+			{
+				return VT.Unacquire(&this);
+			}
+			public HRESULT GetDeviceState(uint32 param0, void* param1) mut
+			{
+				return VT.GetDeviceState(&this, param0, param1);
+			}
+			public HRESULT GetDeviceData(uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) mut
+			{
+				return VT.GetDeviceData(&this, param0, param1, param2, param3);
+			}
+			public HRESULT SetDataFormat(DIDATAFORMAT* param0) mut
+			{
+				return VT.SetDataFormat(&this, param0);
+			}
+			public HRESULT SetEventNotification(HANDLE param0) mut
+			{
+				return VT.SetEventNotification(&this, param0);
+			}
+			public HRESULT SetCooperativeLevel(HWND param0, uint32 param1) mut
+			{
+				return VT.SetCooperativeLevel(&this, param0, param1);
+			}
+			public HRESULT GetObjectInfo(DIDEVICEOBJECTINSTANCEW* param0, uint32 param1, uint32 param2) mut
+			{
+				return VT.GetObjectInfo(&this, param0, param1, param2);
+			}
+			public HRESULT GetDeviceInfo(DIDEVICEINSTANCEW* param0) mut
+			{
+				return VT.GetDeviceInfo(&this, param0);
+			}
+			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut
+			{
+				return VT.RunControlPanel(&this, param0, param1);
+			}
+			public HRESULT Initialize(HINSTANCE param0, uint32 param1, Guid* param2) mut
+			{
+				return VT.Initialize(&this, param0, param1, param2);
+			}
+			public HRESULT CreateEffect(Guid* param0, DIEFFECT* param1, IDirectInputEffect** param2, IUnknown* param3) mut
+			{
+				return VT.CreateEffect(&this, param0, param1, param2, param3);
+			}
+			public HRESULT EnumEffects(LPDIENUMEFFECTSCALLBACKW param0, void* param1, uint32 param2) mut
+			{
+				return VT.EnumEffects(&this, param0, param1, param2);
+			}
+			public HRESULT GetEffectInfo(DIEFFECTINFOW* param0, Guid* param1) mut
+			{
+				return VT.GetEffectInfo(&this, param0, param1);
+			}
+			public HRESULT GetForceFeedbackState(uint32* param0) mut
+			{
+				return VT.GetForceFeedbackState(&this, param0);
+			}
+			public HRESULT SendForceFeedbackCommand(uint32 param0) mut
+			{
+				return VT.SendForceFeedbackCommand(&this, param0);
+			}
+			public HRESULT EnumCreatedEffectObjects(LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) mut
+			{
+				return VT.EnumCreatedEffectObjects(&this, param0, param1, param2);
+			}
+			public HRESULT Escape(DIEFFESCAPE* param0) mut
+			{
+				return VT.Escape(&this, param0);
+			}
+			public HRESULT Poll() mut
+			{
+				return VT.Poll(&this);
+			}
+			public HRESULT SendDeviceData(uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) mut
+			{
+				return VT.SendDeviceData(&this, param0, param1, param2, param3);
+			}
+			public HRESULT EnumEffectsInFile(PWSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) mut
+			{
+				return VT.EnumEffectsInFile(&this, param0, param1, param2, param3);
+			}
+			public HRESULT WriteEffectToFile(PWSTR param0, uint32 param1, DIFILEEFFECT* param2, uint32 param3) mut
+			{
+				return VT.WriteEffectToFile(&this, param0, param1, param2, param3);
+			}
+			public HRESULT BuildActionMap(DIACTIONFORMATW* param0, PWSTR param1, uint32 param2) mut
+			{
+				return VT.BuildActionMap(&this, param0, param1, param2);
+			}
+			public HRESULT SetActionMap(DIACTIONFORMATW* param0, PWSTR param1, uint32 param2) mut
+			{
+				return VT.SetActionMap(&this, param0, param1, param2);
+			}
+			public HRESULT GetImageInfo(DIDEVICEIMAGEINFOHEADERW* param0) mut
+			{
+				return VT.GetImageInfo(&this, param0);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectInputDevice8W *self, DIDEVCAPS* param0) GetCapabilities;
-				public function HRESULT(IDirectInputDevice8W *self, LPDIENUMDEVICEOBJECTSCALLBACKW param0, void* param1, uint32 param2) EnumObjects;
-				public function HRESULT(IDirectInputDevice8W *self, Guid* param0, DIPROPHEADER* param1) GetProperty;
-				public function HRESULT(IDirectInputDevice8W *self, Guid* param0, DIPROPHEADER* param1) SetProperty;
-				public function HRESULT(IDirectInputDevice8W *self) Acquire;
-				public function HRESULT(IDirectInputDevice8W *self) Unacquire;
-				public function HRESULT(IDirectInputDevice8W *self, uint32 param0, void* param1) GetDeviceState;
-				public function HRESULT(IDirectInputDevice8W *self, uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) GetDeviceData;
-				public function HRESULT(IDirectInputDevice8W *self, DIDATAFORMAT* param0) SetDataFormat;
-				public function HRESULT(IDirectInputDevice8W *self, HANDLE param0) SetEventNotification;
-				public function HRESULT(IDirectInputDevice8W *self, HWND param0, uint32 param1) SetCooperativeLevel;
-				public function HRESULT(IDirectInputDevice8W *self, DIDEVICEOBJECTINSTANCEW* param0, uint32 param1, uint32 param2) GetObjectInfo;
-				public function HRESULT(IDirectInputDevice8W *self, DIDEVICEINSTANCEW* param0) GetDeviceInfo;
-				public function HRESULT(IDirectInputDevice8W *self, HWND param0, uint32 param1) RunControlPanel;
-				public function HRESULT(IDirectInputDevice8W *self, HINSTANCE param0, uint32 param1, Guid* param2) Initialize;
-				public function HRESULT(IDirectInputDevice8W *self, Guid* param0, DIEFFECT* param1, IDirectInputEffect** param2, IUnknown* param3) CreateEffect;
-				public function HRESULT(IDirectInputDevice8W *self, LPDIENUMEFFECTSCALLBACKW param0, void* param1, uint32 param2) EnumEffects;
-				public function HRESULT(IDirectInputDevice8W *self, DIEFFECTINFOW* param0, Guid* param1) GetEffectInfo;
-				public function HRESULT(IDirectInputDevice8W *self, uint32* param0) GetForceFeedbackState;
-				public function HRESULT(IDirectInputDevice8W *self, uint32 param0) SendForceFeedbackCommand;
-				public function HRESULT(IDirectInputDevice8W *self, LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) EnumCreatedEffectObjects;
-				public function HRESULT(IDirectInputDevice8W *self, DIEFFESCAPE* param0) Escape;
-				public function HRESULT(IDirectInputDevice8W *self) Poll;
-				public function HRESULT(IDirectInputDevice8W *self, uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) SendDeviceData;
-				public function HRESULT(IDirectInputDevice8W *self, PWSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) EnumEffectsInFile;
-				public function HRESULT(IDirectInputDevice8W *self, PWSTR param0, uint32 param1, DIFILEEFFECT* param2, uint32 param3) WriteEffectToFile;
-				public function HRESULT(IDirectInputDevice8W *self, DIACTIONFORMATW* param0, PWSTR param1, uint32 param2) BuildActionMap;
-				public function HRESULT(IDirectInputDevice8W *self, DIACTIONFORMATW* param0, PWSTR param1, uint32 param2) SetActionMap;
-				public function HRESULT(IDirectInputDevice8W *self, DIDEVICEIMAGEINFOHEADERW* param0) GetImageInfo;
+				public new function HRESULT(IDirectInputDevice8W *self, DIDEVCAPS* param0) GetCapabilities;
+				public new function HRESULT(IDirectInputDevice8W *self, LPDIENUMDEVICEOBJECTSCALLBACKW param0, void* param1, uint32 param2) EnumObjects;
+				public new function HRESULT(IDirectInputDevice8W *self, Guid* param0, DIPROPHEADER* param1) GetProperty;
+				public new function HRESULT(IDirectInputDevice8W *self, Guid* param0, DIPROPHEADER* param1) SetProperty;
+				public new function HRESULT(IDirectInputDevice8W *self) Acquire;
+				public new function HRESULT(IDirectInputDevice8W *self) Unacquire;
+				public new function HRESULT(IDirectInputDevice8W *self, uint32 param0, void* param1) GetDeviceState;
+				public new function HRESULT(IDirectInputDevice8W *self, uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) GetDeviceData;
+				public new function HRESULT(IDirectInputDevice8W *self, DIDATAFORMAT* param0) SetDataFormat;
+				public new function HRESULT(IDirectInputDevice8W *self, HANDLE param0) SetEventNotification;
+				public new function HRESULT(IDirectInputDevice8W *self, HWND param0, uint32 param1) SetCooperativeLevel;
+				public new function HRESULT(IDirectInputDevice8W *self, DIDEVICEOBJECTINSTANCEW* param0, uint32 param1, uint32 param2) GetObjectInfo;
+				public new function HRESULT(IDirectInputDevice8W *self, DIDEVICEINSTANCEW* param0) GetDeviceInfo;
+				public new function HRESULT(IDirectInputDevice8W *self, HWND param0, uint32 param1) RunControlPanel;
+				public new function HRESULT(IDirectInputDevice8W *self, HINSTANCE param0, uint32 param1, Guid* param2) Initialize;
+				public new function HRESULT(IDirectInputDevice8W *self, Guid* param0, DIEFFECT* param1, IDirectInputEffect** param2, IUnknown* param3) CreateEffect;
+				public new function HRESULT(IDirectInputDevice8W *self, LPDIENUMEFFECTSCALLBACKW param0, void* param1, uint32 param2) EnumEffects;
+				public new function HRESULT(IDirectInputDevice8W *self, DIEFFECTINFOW* param0, Guid* param1) GetEffectInfo;
+				public new function HRESULT(IDirectInputDevice8W *self, uint32* param0) GetForceFeedbackState;
+				public new function HRESULT(IDirectInputDevice8W *self, uint32 param0) SendForceFeedbackCommand;
+				public new function HRESULT(IDirectInputDevice8W *self, LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) EnumCreatedEffectObjects;
+				public new function HRESULT(IDirectInputDevice8W *self, DIEFFESCAPE* param0) Escape;
+				public new function HRESULT(IDirectInputDevice8W *self) Poll;
+				public new function HRESULT(IDirectInputDevice8W *self, uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) SendDeviceData;
+				public new function HRESULT(IDirectInputDevice8W *self, PWSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) EnumEffectsInFile;
+				public new function HRESULT(IDirectInputDevice8W *self, PWSTR param0, uint32 param1, DIFILEEFFECT* param2, uint32 param3) WriteEffectToFile;
+				public new function HRESULT(IDirectInputDevice8W *self, DIACTIONFORMATW* param0, PWSTR param1, uint32 param2) BuildActionMap;
+				public new function HRESULT(IDirectInputDevice8W *self, DIACTIONFORMATW* param0, PWSTR param1, uint32 param2) SetActionMap;
+				public new function HRESULT(IDirectInputDevice8W *self, DIDEVICEIMAGEINFOHEADERW* param0) GetImageInfo;
 			}
 		}
 		[CRepr]
@@ -3780,39 +4152,156 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x54d41080, 0xdc15, 0x4833, 0xa4, 0x1b, 0x74, 0x8f, 0x73, 0xa3, 0x81, 0x79);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCapabilities(DIDEVCAPS* param0) mut
+			{
+				return VT.GetCapabilities(&this, param0);
+			}
+			public HRESULT EnumObjects(LPDIENUMDEVICEOBJECTSCALLBACKA param0, void* param1, uint32 param2) mut
+			{
+				return VT.EnumObjects(&this, param0, param1, param2);
+			}
+			public HRESULT GetProperty(Guid* param0, DIPROPHEADER* param1) mut
+			{
+				return VT.GetProperty(&this, param0, param1);
+			}
+			public HRESULT SetProperty(Guid* param0, DIPROPHEADER* param1) mut
+			{
+				return VT.SetProperty(&this, param0, param1);
+			}
+			public HRESULT Acquire() mut
+			{
+				return VT.Acquire(&this);
+			}
+			public HRESULT Unacquire() mut
+			{
+				return VT.Unacquire(&this);
+			}
+			public HRESULT GetDeviceState(uint32 param0, void* param1) mut
+			{
+				return VT.GetDeviceState(&this, param0, param1);
+			}
+			public HRESULT GetDeviceData(uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) mut
+			{
+				return VT.GetDeviceData(&this, param0, param1, param2, param3);
+			}
+			public HRESULT SetDataFormat(DIDATAFORMAT* param0) mut
+			{
+				return VT.SetDataFormat(&this, param0);
+			}
+			public HRESULT SetEventNotification(HANDLE param0) mut
+			{
+				return VT.SetEventNotification(&this, param0);
+			}
+			public HRESULT SetCooperativeLevel(HWND param0, uint32 param1) mut
+			{
+				return VT.SetCooperativeLevel(&this, param0, param1);
+			}
+			public HRESULT GetObjectInfo(DIDEVICEOBJECTINSTANCEA* param0, uint32 param1, uint32 param2) mut
+			{
+				return VT.GetObjectInfo(&this, param0, param1, param2);
+			}
+			public HRESULT GetDeviceInfo(DIDEVICEINSTANCEA* param0) mut
+			{
+				return VT.GetDeviceInfo(&this, param0);
+			}
+			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut
+			{
+				return VT.RunControlPanel(&this, param0, param1);
+			}
+			public HRESULT Initialize(HINSTANCE param0, uint32 param1, Guid* param2) mut
+			{
+				return VT.Initialize(&this, param0, param1, param2);
+			}
+			public HRESULT CreateEffect(Guid* param0, DIEFFECT* param1, IDirectInputEffect** param2, IUnknown* param3) mut
+			{
+				return VT.CreateEffect(&this, param0, param1, param2, param3);
+			}
+			public HRESULT EnumEffects(LPDIENUMEFFECTSCALLBACKA param0, void* param1, uint32 param2) mut
+			{
+				return VT.EnumEffects(&this, param0, param1, param2);
+			}
+			public HRESULT GetEffectInfo(DIEFFECTINFOA* param0, Guid* param1) mut
+			{
+				return VT.GetEffectInfo(&this, param0, param1);
+			}
+			public HRESULT GetForceFeedbackState(uint32* param0) mut
+			{
+				return VT.GetForceFeedbackState(&this, param0);
+			}
+			public HRESULT SendForceFeedbackCommand(uint32 param0) mut
+			{
+				return VT.SendForceFeedbackCommand(&this, param0);
+			}
+			public HRESULT EnumCreatedEffectObjects(LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) mut
+			{
+				return VT.EnumCreatedEffectObjects(&this, param0, param1, param2);
+			}
+			public HRESULT Escape(DIEFFESCAPE* param0) mut
+			{
+				return VT.Escape(&this, param0);
+			}
+			public HRESULT Poll() mut
+			{
+				return VT.Poll(&this);
+			}
+			public HRESULT SendDeviceData(uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) mut
+			{
+				return VT.SendDeviceData(&this, param0, param1, param2, param3);
+			}
+			public HRESULT EnumEffectsInFile(PSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) mut
+			{
+				return VT.EnumEffectsInFile(&this, param0, param1, param2, param3);
+			}
+			public HRESULT WriteEffectToFile(PSTR param0, uint32 param1, DIFILEEFFECT* param2, uint32 param3) mut
+			{
+				return VT.WriteEffectToFile(&this, param0, param1, param2, param3);
+			}
+			public HRESULT BuildActionMap(DIACTIONFORMATA* param0, PSTR param1, uint32 param2) mut
+			{
+				return VT.BuildActionMap(&this, param0, param1, param2);
+			}
+			public HRESULT SetActionMap(DIACTIONFORMATA* param0, PSTR param1, uint32 param2) mut
+			{
+				return VT.SetActionMap(&this, param0, param1, param2);
+			}
+			public HRESULT GetImageInfo(DIDEVICEIMAGEINFOHEADERA* param0) mut
+			{
+				return VT.GetImageInfo(&this, param0);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectInputDevice8A *self, DIDEVCAPS* param0) GetCapabilities;
-				public function HRESULT(IDirectInputDevice8A *self, LPDIENUMDEVICEOBJECTSCALLBACKA param0, void* param1, uint32 param2) EnumObjects;
-				public function HRESULT(IDirectInputDevice8A *self, Guid* param0, DIPROPHEADER* param1) GetProperty;
-				public function HRESULT(IDirectInputDevice8A *self, Guid* param0, DIPROPHEADER* param1) SetProperty;
-				public function HRESULT(IDirectInputDevice8A *self) Acquire;
-				public function HRESULT(IDirectInputDevice8A *self) Unacquire;
-				public function HRESULT(IDirectInputDevice8A *self, uint32 param0, void* param1) GetDeviceState;
-				public function HRESULT(IDirectInputDevice8A *self, uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) GetDeviceData;
-				public function HRESULT(IDirectInputDevice8A *self, DIDATAFORMAT* param0) SetDataFormat;
-				public function HRESULT(IDirectInputDevice8A *self, HANDLE param0) SetEventNotification;
-				public function HRESULT(IDirectInputDevice8A *self, HWND param0, uint32 param1) SetCooperativeLevel;
-				public function HRESULT(IDirectInputDevice8A *self, DIDEVICEOBJECTINSTANCEA* param0, uint32 param1, uint32 param2) GetObjectInfo;
-				public function HRESULT(IDirectInputDevice8A *self, DIDEVICEINSTANCEA* param0) GetDeviceInfo;
-				public function HRESULT(IDirectInputDevice8A *self, HWND param0, uint32 param1) RunControlPanel;
-				public function HRESULT(IDirectInputDevice8A *self, HINSTANCE param0, uint32 param1, Guid* param2) Initialize;
-				public function HRESULT(IDirectInputDevice8A *self, Guid* param0, DIEFFECT* param1, IDirectInputEffect** param2, IUnknown* param3) CreateEffect;
-				public function HRESULT(IDirectInputDevice8A *self, LPDIENUMEFFECTSCALLBACKA param0, void* param1, uint32 param2) EnumEffects;
-				public function HRESULT(IDirectInputDevice8A *self, DIEFFECTINFOA* param0, Guid* param1) GetEffectInfo;
-				public function HRESULT(IDirectInputDevice8A *self, uint32* param0) GetForceFeedbackState;
-				public function HRESULT(IDirectInputDevice8A *self, uint32 param0) SendForceFeedbackCommand;
-				public function HRESULT(IDirectInputDevice8A *self, LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) EnumCreatedEffectObjects;
-				public function HRESULT(IDirectInputDevice8A *self, DIEFFESCAPE* param0) Escape;
-				public function HRESULT(IDirectInputDevice8A *self) Poll;
-				public function HRESULT(IDirectInputDevice8A *self, uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) SendDeviceData;
-				public function HRESULT(IDirectInputDevice8A *self, PSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) EnumEffectsInFile;
-				public function HRESULT(IDirectInputDevice8A *self, PSTR param0, uint32 param1, DIFILEEFFECT* param2, uint32 param3) WriteEffectToFile;
-				public function HRESULT(IDirectInputDevice8A *self, DIACTIONFORMATA* param0, PSTR param1, uint32 param2) BuildActionMap;
-				public function HRESULT(IDirectInputDevice8A *self, DIACTIONFORMATA* param0, PSTR param1, uint32 param2) SetActionMap;
-				public function HRESULT(IDirectInputDevice8A *self, DIDEVICEIMAGEINFOHEADERA* param0) GetImageInfo;
+				public new function HRESULT(IDirectInputDevice8A *self, DIDEVCAPS* param0) GetCapabilities;
+				public new function HRESULT(IDirectInputDevice8A *self, LPDIENUMDEVICEOBJECTSCALLBACKA param0, void* param1, uint32 param2) EnumObjects;
+				public new function HRESULT(IDirectInputDevice8A *self, Guid* param0, DIPROPHEADER* param1) GetProperty;
+				public new function HRESULT(IDirectInputDevice8A *self, Guid* param0, DIPROPHEADER* param1) SetProperty;
+				public new function HRESULT(IDirectInputDevice8A *self) Acquire;
+				public new function HRESULT(IDirectInputDevice8A *self) Unacquire;
+				public new function HRESULT(IDirectInputDevice8A *self, uint32 param0, void* param1) GetDeviceState;
+				public new function HRESULT(IDirectInputDevice8A *self, uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) GetDeviceData;
+				public new function HRESULT(IDirectInputDevice8A *self, DIDATAFORMAT* param0) SetDataFormat;
+				public new function HRESULT(IDirectInputDevice8A *self, HANDLE param0) SetEventNotification;
+				public new function HRESULT(IDirectInputDevice8A *self, HWND param0, uint32 param1) SetCooperativeLevel;
+				public new function HRESULT(IDirectInputDevice8A *self, DIDEVICEOBJECTINSTANCEA* param0, uint32 param1, uint32 param2) GetObjectInfo;
+				public new function HRESULT(IDirectInputDevice8A *self, DIDEVICEINSTANCEA* param0) GetDeviceInfo;
+				public new function HRESULT(IDirectInputDevice8A *self, HWND param0, uint32 param1) RunControlPanel;
+				public new function HRESULT(IDirectInputDevice8A *self, HINSTANCE param0, uint32 param1, Guid* param2) Initialize;
+				public new function HRESULT(IDirectInputDevice8A *self, Guid* param0, DIEFFECT* param1, IDirectInputEffect** param2, IUnknown* param3) CreateEffect;
+				public new function HRESULT(IDirectInputDevice8A *self, LPDIENUMEFFECTSCALLBACKA param0, void* param1, uint32 param2) EnumEffects;
+				public new function HRESULT(IDirectInputDevice8A *self, DIEFFECTINFOA* param0, Guid* param1) GetEffectInfo;
+				public new function HRESULT(IDirectInputDevice8A *self, uint32* param0) GetForceFeedbackState;
+				public new function HRESULT(IDirectInputDevice8A *self, uint32 param0) SendForceFeedbackCommand;
+				public new function HRESULT(IDirectInputDevice8A *self, LPDIENUMCREATEDEFFECTOBJECTSCALLBACK param0, void* param1, uint32 param2) EnumCreatedEffectObjects;
+				public new function HRESULT(IDirectInputDevice8A *self, DIEFFESCAPE* param0) Escape;
+				public new function HRESULT(IDirectInputDevice8A *self) Poll;
+				public new function HRESULT(IDirectInputDevice8A *self, uint32 param0, DIDEVICEOBJECTDATA* param1, uint32* param2, uint32 param3) SendDeviceData;
+				public new function HRESULT(IDirectInputDevice8A *self, PSTR param0, LPDIENUMEFFECTSINFILECALLBACK param1, void* param2, uint32 param3) EnumEffectsInFile;
+				public new function HRESULT(IDirectInputDevice8A *self, PSTR param0, uint32 param1, DIFILEEFFECT* param2, uint32 param3) WriteEffectToFile;
+				public new function HRESULT(IDirectInputDevice8A *self, DIACTIONFORMATA* param0, PSTR param1, uint32 param2) BuildActionMap;
+				public new function HRESULT(IDirectInputDevice8A *self, DIACTIONFORMATA* param0, PSTR param1, uint32 param2) SetActionMap;
+				public new function HRESULT(IDirectInputDevice8A *self, DIDEVICEIMAGEINFOHEADERA* param0) GetImageInfo;
 			}
 		}
 		[CRepr]
@@ -3820,15 +4309,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x89521361, 0xaa8a, 0x11cf, 0xbf, 0xc7, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateDevice(Guid* param0, IDirectInputDeviceW** param1, IUnknown* param2) mut
+			{
+				return VT.CreateDevice(&this, param0, param1, param2);
+			}
+			public HRESULT EnumDevices(uint32 param0, LPDIENUMDEVICESCALLBACKW param1, void* param2, uint32 param3) mut
+			{
+				return VT.EnumDevices(&this, param0, param1, param2, param3);
+			}
+			public HRESULT GetDeviceStatus(Guid* param0) mut
+			{
+				return VT.GetDeviceStatus(&this, param0);
+			}
+			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut
+			{
+				return VT.RunControlPanel(&this, param0, param1);
+			}
+			public HRESULT Initialize(HINSTANCE param0, uint32 param1) mut
+			{
+				return VT.Initialize(&this, param0, param1);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectInputW *self, Guid* param0, IDirectInputDeviceW** param1, IUnknown* param2) CreateDevice;
-				public function HRESULT(IDirectInputW *self, uint32 param0, LPDIENUMDEVICESCALLBACKW param1, void* param2, uint32 param3) EnumDevices;
-				public function HRESULT(IDirectInputW *self, Guid* param0) GetDeviceStatus;
-				public function HRESULT(IDirectInputW *self, HWND param0, uint32 param1) RunControlPanel;
-				public function HRESULT(IDirectInputW *self, HINSTANCE param0, uint32 param1) Initialize;
+				public new function HRESULT(IDirectInputW *self, Guid* param0, IDirectInputDeviceW** param1, IUnknown* param2) CreateDevice;
+				public new function HRESULT(IDirectInputW *self, uint32 param0, LPDIENUMDEVICESCALLBACKW param1, void* param2, uint32 param3) EnumDevices;
+				public new function HRESULT(IDirectInputW *self, Guid* param0) GetDeviceStatus;
+				public new function HRESULT(IDirectInputW *self, HWND param0, uint32 param1) RunControlPanel;
+				public new function HRESULT(IDirectInputW *self, HINSTANCE param0, uint32 param1) Initialize;
 			}
 		}
 		[CRepr]
@@ -3836,15 +4346,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x89521360, 0xaa8a, 0x11cf, 0xbf, 0xc7, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateDevice(Guid* param0, IDirectInputDeviceA** param1, IUnknown* param2) mut
+			{
+				return VT.CreateDevice(&this, param0, param1, param2);
+			}
+			public HRESULT EnumDevices(uint32 param0, LPDIENUMDEVICESCALLBACKA param1, void* param2, uint32 param3) mut
+			{
+				return VT.EnumDevices(&this, param0, param1, param2, param3);
+			}
+			public HRESULT GetDeviceStatus(Guid* param0) mut
+			{
+				return VT.GetDeviceStatus(&this, param0);
+			}
+			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut
+			{
+				return VT.RunControlPanel(&this, param0, param1);
+			}
+			public HRESULT Initialize(HINSTANCE param0, uint32 param1) mut
+			{
+				return VT.Initialize(&this, param0, param1);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectInputA *self, Guid* param0, IDirectInputDeviceA** param1, IUnknown* param2) CreateDevice;
-				public function HRESULT(IDirectInputA *self, uint32 param0, LPDIENUMDEVICESCALLBACKA param1, void* param2, uint32 param3) EnumDevices;
-				public function HRESULT(IDirectInputA *self, Guid* param0) GetDeviceStatus;
-				public function HRESULT(IDirectInputA *self, HWND param0, uint32 param1) RunControlPanel;
-				public function HRESULT(IDirectInputA *self, HINSTANCE param0, uint32 param1) Initialize;
+				public new function HRESULT(IDirectInputA *self, Guid* param0, IDirectInputDeviceA** param1, IUnknown* param2) CreateDevice;
+				public new function HRESULT(IDirectInputA *self, uint32 param0, LPDIENUMDEVICESCALLBACKA param1, void* param2, uint32 param3) EnumDevices;
+				public new function HRESULT(IDirectInputA *self, Guid* param0) GetDeviceStatus;
+				public new function HRESULT(IDirectInputA *self, HWND param0, uint32 param1) RunControlPanel;
+				public new function HRESULT(IDirectInputA *self, HINSTANCE param0, uint32 param1) Initialize;
 			}
 		}
 		[CRepr]
@@ -3852,11 +4383,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5944e663, 0xaa8a, 0x11cf, 0xbf, 0xc7, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT FindDevice(Guid* param0, PWSTR param1, Guid* param2) mut
+			{
+				return VT.FindDevice(&this, param0, param1, param2);
+			}
 			[CRepr]
 			public struct VTable : IDirectInputW.VTable
 			{
-				public function HRESULT(IDirectInput2W *self, Guid* param0, PWSTR param1, Guid* param2) FindDevice;
+				public new function HRESULT(IDirectInput2W *self, Guid* param0, PWSTR param1, Guid* param2) FindDevice;
 			}
 		}
 		[CRepr]
@@ -3864,11 +4400,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5944e662, 0xaa8a, 0x11cf, 0xbf, 0xc7, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT FindDevice(Guid* param0, PSTR param1, Guid* param2) mut
+			{
+				return VT.FindDevice(&this, param0, param1, param2);
+			}
 			[CRepr]
 			public struct VTable : IDirectInputA.VTable
 			{
-				public function HRESULT(IDirectInput2A *self, Guid* param0, PSTR param1, Guid* param2) FindDevice;
+				public new function HRESULT(IDirectInput2A *self, Guid* param0, PSTR param1, Guid* param2) FindDevice;
 			}
 		}
 		[CRepr]
@@ -3876,11 +4417,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9a4cb685, 0x236d, 0x11d3, 0x8e, 0x9d, 0x00, 0xc0, 0x4f, 0x68, 0x44, 0xae);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateDeviceEx(Guid* param0, Guid* param1, void** param2, IUnknown* param3) mut
+			{
+				return VT.CreateDeviceEx(&this, param0, param1, param2, param3);
+			}
 			[CRepr]
 			public struct VTable : IDirectInput2W.VTable
 			{
-				public function HRESULT(IDirectInput7W *self, Guid* param0, Guid* param1, void** param2, IUnknown* param3) CreateDeviceEx;
+				public new function HRESULT(IDirectInput7W *self, Guid* param0, Guid* param1, void** param2, IUnknown* param3) CreateDeviceEx;
 			}
 		}
 		[CRepr]
@@ -3888,11 +4434,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x9a4cb684, 0x236d, 0x11d3, 0x8e, 0x9d, 0x00, 0xc0, 0x4f, 0x68, 0x44, 0xae);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateDeviceEx(Guid* param0, Guid* param1, void** param2, IUnknown* param3) mut
+			{
+				return VT.CreateDeviceEx(&this, param0, param1, param2, param3);
+			}
 			[CRepr]
 			public struct VTable : IDirectInput2A.VTable
 			{
-				public function HRESULT(IDirectInput7A *self, Guid* param0, Guid* param1, void** param2, IUnknown* param3) CreateDeviceEx;
+				public new function HRESULT(IDirectInput7A *self, Guid* param0, Guid* param1, void** param2, IUnknown* param3) CreateDeviceEx;
 			}
 		}
 		[CRepr]
@@ -3900,18 +4451,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbf798031, 0x483a, 0x4da2, 0xaa, 0x99, 0x5d, 0x64, 0xed, 0x36, 0x97, 0x00);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateDevice(Guid* param0, IDirectInputDevice8W** param1, IUnknown* param2) mut
+			{
+				return VT.CreateDevice(&this, param0, param1, param2);
+			}
+			public HRESULT EnumDevices(uint32 param0, LPDIENUMDEVICESCALLBACKW param1, void* param2, uint32 param3) mut
+			{
+				return VT.EnumDevices(&this, param0, param1, param2, param3);
+			}
+			public HRESULT GetDeviceStatus(Guid* param0) mut
+			{
+				return VT.GetDeviceStatus(&this, param0);
+			}
+			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut
+			{
+				return VT.RunControlPanel(&this, param0, param1);
+			}
+			public HRESULT Initialize(HINSTANCE param0, uint32 param1) mut
+			{
+				return VT.Initialize(&this, param0, param1);
+			}
+			public HRESULT FindDevice(Guid* param0, PWSTR param1, Guid* param2) mut
+			{
+				return VT.FindDevice(&this, param0, param1, param2);
+			}
+			public HRESULT EnumDevicesBySemantics(PWSTR param0, DIACTIONFORMATW* param1, LPDIENUMDEVICESBYSEMANTICSCBW param2, void* param3, uint32 param4) mut
+			{
+				return VT.EnumDevicesBySemantics(&this, param0, param1, param2, param3, param4);
+			}
+			public HRESULT ConfigureDevices(LPDICONFIGUREDEVICESCALLBACK param0, DICONFIGUREDEVICESPARAMSW* param1, uint32 param2, void* param3) mut
+			{
+				return VT.ConfigureDevices(&this, param0, param1, param2, param3);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectInput8W *self, Guid* param0, IDirectInputDevice8W** param1, IUnknown* param2) CreateDevice;
-				public function HRESULT(IDirectInput8W *self, uint32 param0, LPDIENUMDEVICESCALLBACKW param1, void* param2, uint32 param3) EnumDevices;
-				public function HRESULT(IDirectInput8W *self, Guid* param0) GetDeviceStatus;
-				public function HRESULT(IDirectInput8W *self, HWND param0, uint32 param1) RunControlPanel;
-				public function HRESULT(IDirectInput8W *self, HINSTANCE param0, uint32 param1) Initialize;
-				public function HRESULT(IDirectInput8W *self, Guid* param0, PWSTR param1, Guid* param2) FindDevice;
-				public function HRESULT(IDirectInput8W *self, PWSTR param0, DIACTIONFORMATW* param1, LPDIENUMDEVICESBYSEMANTICSCBW param2, void* param3, uint32 param4) EnumDevicesBySemantics;
-				public function HRESULT(IDirectInput8W *self, LPDICONFIGUREDEVICESCALLBACK param0, DICONFIGUREDEVICESPARAMSW* param1, uint32 param2, void* param3) ConfigureDevices;
+				public new function HRESULT(IDirectInput8W *self, Guid* param0, IDirectInputDevice8W** param1, IUnknown* param2) CreateDevice;
+				public new function HRESULT(IDirectInput8W *self, uint32 param0, LPDIENUMDEVICESCALLBACKW param1, void* param2, uint32 param3) EnumDevices;
+				public new function HRESULT(IDirectInput8W *self, Guid* param0) GetDeviceStatus;
+				public new function HRESULT(IDirectInput8W *self, HWND param0, uint32 param1) RunControlPanel;
+				public new function HRESULT(IDirectInput8W *self, HINSTANCE param0, uint32 param1) Initialize;
+				public new function HRESULT(IDirectInput8W *self, Guid* param0, PWSTR param1, Guid* param2) FindDevice;
+				public new function HRESULT(IDirectInput8W *self, PWSTR param0, DIACTIONFORMATW* param1, LPDIENUMDEVICESBYSEMANTICSCBW param2, void* param3, uint32 param4) EnumDevicesBySemantics;
+				public new function HRESULT(IDirectInput8W *self, LPDICONFIGUREDEVICESCALLBACK param0, DICONFIGUREDEVICESPARAMSW* param1, uint32 param2, void* param3) ConfigureDevices;
 			}
 		}
 		[CRepr]
@@ -3919,18 +4503,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xbf798030, 0x483a, 0x4da2, 0xaa, 0x99, 0x5d, 0x64, 0xed, 0x36, 0x97, 0x00);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateDevice(Guid* param0, IDirectInputDevice8A** param1, IUnknown* param2) mut
+			{
+				return VT.CreateDevice(&this, param0, param1, param2);
+			}
+			public HRESULT EnumDevices(uint32 param0, LPDIENUMDEVICESCALLBACKA param1, void* param2, uint32 param3) mut
+			{
+				return VT.EnumDevices(&this, param0, param1, param2, param3);
+			}
+			public HRESULT GetDeviceStatus(Guid* param0) mut
+			{
+				return VT.GetDeviceStatus(&this, param0);
+			}
+			public HRESULT RunControlPanel(HWND param0, uint32 param1) mut
+			{
+				return VT.RunControlPanel(&this, param0, param1);
+			}
+			public HRESULT Initialize(HINSTANCE param0, uint32 param1) mut
+			{
+				return VT.Initialize(&this, param0, param1);
+			}
+			public HRESULT FindDevice(Guid* param0, PSTR param1, Guid* param2) mut
+			{
+				return VT.FindDevice(&this, param0, param1, param2);
+			}
+			public HRESULT EnumDevicesBySemantics(PSTR param0, DIACTIONFORMATA* param1, LPDIENUMDEVICESBYSEMANTICSCBA param2, void* param3, uint32 param4) mut
+			{
+				return VT.EnumDevicesBySemantics(&this, param0, param1, param2, param3, param4);
+			}
+			public HRESULT ConfigureDevices(LPDICONFIGUREDEVICESCALLBACK param0, DICONFIGUREDEVICESPARAMSA* param1, uint32 param2, void* param3) mut
+			{
+				return VT.ConfigureDevices(&this, param0, param1, param2, param3);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectInput8A *self, Guid* param0, IDirectInputDevice8A** param1, IUnknown* param2) CreateDevice;
-				public function HRESULT(IDirectInput8A *self, uint32 param0, LPDIENUMDEVICESCALLBACKA param1, void* param2, uint32 param3) EnumDevices;
-				public function HRESULT(IDirectInput8A *self, Guid* param0) GetDeviceStatus;
-				public function HRESULT(IDirectInput8A *self, HWND param0, uint32 param1) RunControlPanel;
-				public function HRESULT(IDirectInput8A *self, HINSTANCE param0, uint32 param1) Initialize;
-				public function HRESULT(IDirectInput8A *self, Guid* param0, PSTR param1, Guid* param2) FindDevice;
-				public function HRESULT(IDirectInput8A *self, PSTR param0, DIACTIONFORMATA* param1, LPDIENUMDEVICESBYSEMANTICSCBA param2, void* param3, uint32 param4) EnumDevicesBySemantics;
-				public function HRESULT(IDirectInput8A *self, LPDICONFIGUREDEVICESCALLBACK param0, DICONFIGUREDEVICESPARAMSA* param1, uint32 param2, void* param3) ConfigureDevices;
+				public new function HRESULT(IDirectInput8A *self, Guid* param0, IDirectInputDevice8A** param1, IUnknown* param2) CreateDevice;
+				public new function HRESULT(IDirectInput8A *self, uint32 param0, LPDIENUMDEVICESCALLBACKA param1, void* param2, uint32 param3) EnumDevices;
+				public new function HRESULT(IDirectInput8A *self, Guid* param0) GetDeviceStatus;
+				public new function HRESULT(IDirectInput8A *self, HWND param0, uint32 param1) RunControlPanel;
+				public new function HRESULT(IDirectInput8A *self, HINSTANCE param0, uint32 param1) Initialize;
+				public new function HRESULT(IDirectInput8A *self, Guid* param0, PSTR param1, Guid* param2) FindDevice;
+				public new function HRESULT(IDirectInput8A *self, PSTR param0, DIACTIONFORMATA* param1, LPDIENUMDEVICESBYSEMANTICSCBA param2, void* param3, uint32 param4) EnumDevicesBySemantics;
+				public new function HRESULT(IDirectInput8A *self, LPDICONFIGUREDEVICESCALLBACK param0, DICONFIGUREDEVICESPARAMSA* param1, uint32 param2, void* param3) ConfigureDevices;
 			}
 		}
 		[CRepr]
@@ -3938,21 +4555,66 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x02538130, 0x898f, 0x11d0, 0x9a, 0xd0, 0x00, 0xa0, 0xc9, 0xa0, 0x6e, 0x35);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT DeviceID(uint32 param0, uint32 param1, uint32 param2, uint32 param3, void* param4) mut
+			{
+				return VT.DeviceID(&this, param0, param1, param2, param3, param4);
+			}
+			public HRESULT GetVersions(DIDRIVERVERSIONS* param0) mut
+			{
+				return VT.GetVersions(&this, param0);
+			}
+			public HRESULT Escape(uint32 param0, uint32 param1, DIEFFESCAPE* param2) mut
+			{
+				return VT.Escape(&this, param0, param1, param2);
+			}
+			public HRESULT SetGain(uint32 param0, uint32 param1) mut
+			{
+				return VT.SetGain(&this, param0, param1);
+			}
+			public HRESULT SendForceFeedbackCommand(uint32 param0, uint32 param1) mut
+			{
+				return VT.SendForceFeedbackCommand(&this, param0, param1);
+			}
+			public HRESULT GetForceFeedbackState(uint32 param0, DIDEVICESTATE* param1) mut
+			{
+				return VT.GetForceFeedbackState(&this, param0, param1);
+			}
+			public HRESULT DownloadEffect(uint32 param0, uint32 param1, uint32* param2, DIEFFECT* param3, uint32 param4) mut
+			{
+				return VT.DownloadEffect(&this, param0, param1, param2, param3, param4);
+			}
+			public HRESULT DestroyEffect(uint32 param0, uint32 param1) mut
+			{
+				return VT.DestroyEffect(&this, param0, param1);
+			}
+			public HRESULT StartEffect(uint32 param0, uint32 param1, uint32 param2, uint32 param3) mut
+			{
+				return VT.StartEffect(&this, param0, param1, param2, param3);
+			}
+			public HRESULT StopEffect(uint32 param0, uint32 param1) mut
+			{
+				return VT.StopEffect(&this, param0, param1);
+			}
+			public HRESULT GetEffectStatus(uint32 param0, uint32 param1, uint32* param2) mut
+			{
+				return VT.GetEffectStatus(&this, param0, param1, param2);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectInputEffectDriver *self, uint32 param0, uint32 param1, uint32 param2, uint32 param3, void* param4) DeviceID;
-				public function HRESULT(IDirectInputEffectDriver *self, DIDRIVERVERSIONS* param0) GetVersions;
-				public function HRESULT(IDirectInputEffectDriver *self, uint32 param0, uint32 param1, DIEFFESCAPE* param2) Escape;
-				public function HRESULT(IDirectInputEffectDriver *self, uint32 param0, uint32 param1) SetGain;
-				public function HRESULT(IDirectInputEffectDriver *self, uint32 param0, uint32 param1) SendForceFeedbackCommand;
-				public function HRESULT(IDirectInputEffectDriver *self, uint32 param0, DIDEVICESTATE* param1) GetForceFeedbackState;
-				public function HRESULT(IDirectInputEffectDriver *self, uint32 param0, uint32 param1, uint32* param2, DIEFFECT* param3, uint32 param4) DownloadEffect;
-				public function HRESULT(IDirectInputEffectDriver *self, uint32 param0, uint32 param1) DestroyEffect;
-				public function HRESULT(IDirectInputEffectDriver *self, uint32 param0, uint32 param1, uint32 param2, uint32 param3) StartEffect;
-				public function HRESULT(IDirectInputEffectDriver *self, uint32 param0, uint32 param1) StopEffect;
-				public function HRESULT(IDirectInputEffectDriver *self, uint32 param0, uint32 param1, uint32* param2) GetEffectStatus;
+				public new function HRESULT(IDirectInputEffectDriver *self, uint32 param0, uint32 param1, uint32 param2, uint32 param3, void* param4) DeviceID;
+				public new function HRESULT(IDirectInputEffectDriver *self, DIDRIVERVERSIONS* param0) GetVersions;
+				public new function HRESULT(IDirectInputEffectDriver *self, uint32 param0, uint32 param1, DIEFFESCAPE* param2) Escape;
+				public new function HRESULT(IDirectInputEffectDriver *self, uint32 param0, uint32 param1) SetGain;
+				public new function HRESULT(IDirectInputEffectDriver *self, uint32 param0, uint32 param1) SendForceFeedbackCommand;
+				public new function HRESULT(IDirectInputEffectDriver *self, uint32 param0, DIDEVICESTATE* param1) GetForceFeedbackState;
+				public new function HRESULT(IDirectInputEffectDriver *self, uint32 param0, uint32 param1, uint32* param2, DIEFFECT* param3, uint32 param4) DownloadEffect;
+				public new function HRESULT(IDirectInputEffectDriver *self, uint32 param0, uint32 param1) DestroyEffect;
+				public new function HRESULT(IDirectInputEffectDriver *self, uint32 param0, uint32 param1, uint32 param2, uint32 param3) StartEffect;
+				public new function HRESULT(IDirectInputEffectDriver *self, uint32 param0, uint32 param1) StopEffect;
+				public new function HRESULT(IDirectInputEffectDriver *self, uint32 param0, uint32 param1, uint32* param2) GetEffectStatus;
 			}
 		}
 		[CRepr]
@@ -3960,26 +4622,91 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x1de12ab1, 0xc9f5, 0x11cf, 0xbf, 0xc7, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Acquire() mut
+			{
+				return VT.Acquire(&this);
+			}
+			public HRESULT Unacquire() mut
+			{
+				return VT.Unacquire(&this);
+			}
+			public HRESULT SetCooperativeLevel(HWND param0, uint32 param1) mut
+			{
+				return VT.SetCooperativeLevel(&this, param0, param1);
+			}
+			public HRESULT SendNotify() mut
+			{
+				return VT.SendNotify(&this);
+			}
+			public HRESULT EnumTypes(LPDIJOYTYPECALLBACK param0, void* param1) mut
+			{
+				return VT.EnumTypes(&this, param0, param1);
+			}
+			public HRESULT GetTypeInfo(PWSTR param0, DIJOYTYPEINFO* param1, uint32 param2) mut
+			{
+				return VT.GetTypeInfo(&this, param0, param1, param2);
+			}
+			public HRESULT SetTypeInfo(PWSTR param0, DIJOYTYPEINFO* param1, uint32 param2) mut
+			{
+				return VT.SetTypeInfo(&this, param0, param1, param2);
+			}
+			public HRESULT DeleteType(PWSTR param0) mut
+			{
+				return VT.DeleteType(&this, param0);
+			}
+			public HRESULT GetConfig(uint32 param0, DIJOYCONFIG* param1, uint32 param2) mut
+			{
+				return VT.GetConfig(&this, param0, param1, param2);
+			}
+			public HRESULT SetConfig(uint32 param0, DIJOYCONFIG* param1, uint32 param2) mut
+			{
+				return VT.SetConfig(&this, param0, param1, param2);
+			}
+			public HRESULT DeleteConfig(uint32 param0) mut
+			{
+				return VT.DeleteConfig(&this, param0);
+			}
+			public HRESULT GetUserValues(DIJOYUSERVALUES* param0, uint32 param1) mut
+			{
+				return VT.GetUserValues(&this, param0, param1);
+			}
+			public HRESULT SetUserValues(DIJOYUSERVALUES* param0, uint32 param1) mut
+			{
+				return VT.SetUserValues(&this, param0, param1);
+			}
+			public HRESULT AddNewHardware(HWND param0, Guid* param1) mut
+			{
+				return VT.AddNewHardware(&this, param0, param1);
+			}
+			public HRESULT OpenTypeKey(PWSTR param0, uint32 param1, HKEY* param2) mut
+			{
+				return VT.OpenTypeKey(&this, param0, param1, param2);
+			}
+			public HRESULT OpenConfigKey(uint32 param0, uint32 param1, HKEY* param2) mut
+			{
+				return VT.OpenConfigKey(&this, param0, param1, param2);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectInputJoyConfig *self) Acquire;
-				public function HRESULT(IDirectInputJoyConfig *self) Unacquire;
-				public function HRESULT(IDirectInputJoyConfig *self, HWND param0, uint32 param1) SetCooperativeLevel;
-				public function HRESULT(IDirectInputJoyConfig *self) SendNotify;
-				public function HRESULT(IDirectInputJoyConfig *self, LPDIJOYTYPECALLBACK param0, void* param1) EnumTypes;
-				public function HRESULT(IDirectInputJoyConfig *self, PWSTR param0, DIJOYTYPEINFO* param1, uint32 param2) GetTypeInfo;
-				public function HRESULT(IDirectInputJoyConfig *self, PWSTR param0, DIJOYTYPEINFO* param1, uint32 param2) SetTypeInfo;
-				public function HRESULT(IDirectInputJoyConfig *self, PWSTR param0) DeleteType;
-				public function HRESULT(IDirectInputJoyConfig *self, uint32 param0, DIJOYCONFIG* param1, uint32 param2) GetConfig;
-				public function HRESULT(IDirectInputJoyConfig *self, uint32 param0, DIJOYCONFIG* param1, uint32 param2) SetConfig;
-				public function HRESULT(IDirectInputJoyConfig *self, uint32 param0) DeleteConfig;
-				public function HRESULT(IDirectInputJoyConfig *self, DIJOYUSERVALUES* param0, uint32 param1) GetUserValues;
-				public function HRESULT(IDirectInputJoyConfig *self, DIJOYUSERVALUES* param0, uint32 param1) SetUserValues;
-				public function HRESULT(IDirectInputJoyConfig *self, HWND param0, Guid* param1) AddNewHardware;
-				public function HRESULT(IDirectInputJoyConfig *self, PWSTR param0, uint32 param1, HKEY* param2) OpenTypeKey;
-				public function HRESULT(IDirectInputJoyConfig *self, uint32 param0, uint32 param1, HKEY* param2) OpenConfigKey;
+				public new function HRESULT(IDirectInputJoyConfig *self) Acquire;
+				public new function HRESULT(IDirectInputJoyConfig *self) Unacquire;
+				public new function HRESULT(IDirectInputJoyConfig *self, HWND param0, uint32 param1) SetCooperativeLevel;
+				public new function HRESULT(IDirectInputJoyConfig *self) SendNotify;
+				public new function HRESULT(IDirectInputJoyConfig *self, LPDIJOYTYPECALLBACK param0, void* param1) EnumTypes;
+				public new function HRESULT(IDirectInputJoyConfig *self, PWSTR param0, DIJOYTYPEINFO* param1, uint32 param2) GetTypeInfo;
+				public new function HRESULT(IDirectInputJoyConfig *self, PWSTR param0, DIJOYTYPEINFO* param1, uint32 param2) SetTypeInfo;
+				public new function HRESULT(IDirectInputJoyConfig *self, PWSTR param0) DeleteType;
+				public new function HRESULT(IDirectInputJoyConfig *self, uint32 param0, DIJOYCONFIG* param1, uint32 param2) GetConfig;
+				public new function HRESULT(IDirectInputJoyConfig *self, uint32 param0, DIJOYCONFIG* param1, uint32 param2) SetConfig;
+				public new function HRESULT(IDirectInputJoyConfig *self, uint32 param0) DeleteConfig;
+				public new function HRESULT(IDirectInputJoyConfig *self, DIJOYUSERVALUES* param0, uint32 param1) GetUserValues;
+				public new function HRESULT(IDirectInputJoyConfig *self, DIJOYUSERVALUES* param0, uint32 param1) SetUserValues;
+				public new function HRESULT(IDirectInputJoyConfig *self, HWND param0, Guid* param1) AddNewHardware;
+				public new function HRESULT(IDirectInputJoyConfig *self, PWSTR param0, uint32 param1, HKEY* param2) OpenTypeKey;
+				public new function HRESULT(IDirectInputJoyConfig *self, uint32 param0, uint32 param1, HKEY* param2) OpenConfigKey;
 			}
 		}
 		[CRepr]
@@ -3987,26 +4714,91 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xeb0d7dfa, 0x1990, 0x4f27, 0xb4, 0xd6, 0xed, 0xf2, 0xee, 0xc4, 0xa4, 0x4c);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Acquire() mut
+			{
+				return VT.Acquire(&this);
+			}
+			public HRESULT Unacquire() mut
+			{
+				return VT.Unacquire(&this);
+			}
+			public HRESULT SetCooperativeLevel(HWND param0, uint32 param1) mut
+			{
+				return VT.SetCooperativeLevel(&this, param0, param1);
+			}
+			public HRESULT SendNotify() mut
+			{
+				return VT.SendNotify(&this);
+			}
+			public HRESULT EnumTypes(LPDIJOYTYPECALLBACK param0, void* param1) mut
+			{
+				return VT.EnumTypes(&this, param0, param1);
+			}
+			public HRESULT GetTypeInfo(PWSTR param0, DIJOYTYPEINFO* param1, uint32 param2) mut
+			{
+				return VT.GetTypeInfo(&this, param0, param1, param2);
+			}
+			public HRESULT SetTypeInfo(PWSTR param0, DIJOYTYPEINFO* param1, uint32 param2, PWSTR param3) mut
+			{
+				return VT.SetTypeInfo(&this, param0, param1, param2, param3);
+			}
+			public HRESULT DeleteType(PWSTR param0) mut
+			{
+				return VT.DeleteType(&this, param0);
+			}
+			public HRESULT GetConfig(uint32 param0, DIJOYCONFIG* param1, uint32 param2) mut
+			{
+				return VT.GetConfig(&this, param0, param1, param2);
+			}
+			public HRESULT SetConfig(uint32 param0, DIJOYCONFIG* param1, uint32 param2) mut
+			{
+				return VT.SetConfig(&this, param0, param1, param2);
+			}
+			public HRESULT DeleteConfig(uint32 param0) mut
+			{
+				return VT.DeleteConfig(&this, param0);
+			}
+			public HRESULT GetUserValues(DIJOYUSERVALUES* param0, uint32 param1) mut
+			{
+				return VT.GetUserValues(&this, param0, param1);
+			}
+			public HRESULT SetUserValues(DIJOYUSERVALUES* param0, uint32 param1) mut
+			{
+				return VT.SetUserValues(&this, param0, param1);
+			}
+			public HRESULT AddNewHardware(HWND param0, Guid* param1) mut
+			{
+				return VT.AddNewHardware(&this, param0, param1);
+			}
+			public HRESULT OpenTypeKey(PWSTR param0, uint32 param1, HKEY* param2) mut
+			{
+				return VT.OpenTypeKey(&this, param0, param1, param2);
+			}
+			public HRESULT OpenAppStatusKey(HKEY* param0) mut
+			{
+				return VT.OpenAppStatusKey(&this, param0);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectInputJoyConfig8 *self) Acquire;
-				public function HRESULT(IDirectInputJoyConfig8 *self) Unacquire;
-				public function HRESULT(IDirectInputJoyConfig8 *self, HWND param0, uint32 param1) SetCooperativeLevel;
-				public function HRESULT(IDirectInputJoyConfig8 *self) SendNotify;
-				public function HRESULT(IDirectInputJoyConfig8 *self, LPDIJOYTYPECALLBACK param0, void* param1) EnumTypes;
-				public function HRESULT(IDirectInputJoyConfig8 *self, PWSTR param0, DIJOYTYPEINFO* param1, uint32 param2) GetTypeInfo;
-				public function HRESULT(IDirectInputJoyConfig8 *self, PWSTR param0, DIJOYTYPEINFO* param1, uint32 param2, PWSTR param3) SetTypeInfo;
-				public function HRESULT(IDirectInputJoyConfig8 *self, PWSTR param0) DeleteType;
-				public function HRESULT(IDirectInputJoyConfig8 *self, uint32 param0, DIJOYCONFIG* param1, uint32 param2) GetConfig;
-				public function HRESULT(IDirectInputJoyConfig8 *self, uint32 param0, DIJOYCONFIG* param1, uint32 param2) SetConfig;
-				public function HRESULT(IDirectInputJoyConfig8 *self, uint32 param0) DeleteConfig;
-				public function HRESULT(IDirectInputJoyConfig8 *self, DIJOYUSERVALUES* param0, uint32 param1) GetUserValues;
-				public function HRESULT(IDirectInputJoyConfig8 *self, DIJOYUSERVALUES* param0, uint32 param1) SetUserValues;
-				public function HRESULT(IDirectInputJoyConfig8 *self, HWND param0, Guid* param1) AddNewHardware;
-				public function HRESULT(IDirectInputJoyConfig8 *self, PWSTR param0, uint32 param1, HKEY* param2) OpenTypeKey;
-				public function HRESULT(IDirectInputJoyConfig8 *self, HKEY* param0) OpenAppStatusKey;
+				public new function HRESULT(IDirectInputJoyConfig8 *self) Acquire;
+				public new function HRESULT(IDirectInputJoyConfig8 *self) Unacquire;
+				public new function HRESULT(IDirectInputJoyConfig8 *self, HWND param0, uint32 param1) SetCooperativeLevel;
+				public new function HRESULT(IDirectInputJoyConfig8 *self) SendNotify;
+				public new function HRESULT(IDirectInputJoyConfig8 *self, LPDIJOYTYPECALLBACK param0, void* param1) EnumTypes;
+				public new function HRESULT(IDirectInputJoyConfig8 *self, PWSTR param0, DIJOYTYPEINFO* param1, uint32 param2) GetTypeInfo;
+				public new function HRESULT(IDirectInputJoyConfig8 *self, PWSTR param0, DIJOYTYPEINFO* param1, uint32 param2, PWSTR param3) SetTypeInfo;
+				public new function HRESULT(IDirectInputJoyConfig8 *self, PWSTR param0) DeleteType;
+				public new function HRESULT(IDirectInputJoyConfig8 *self, uint32 param0, DIJOYCONFIG* param1, uint32 param2) GetConfig;
+				public new function HRESULT(IDirectInputJoyConfig8 *self, uint32 param0, DIJOYCONFIG* param1, uint32 param2) SetConfig;
+				public new function HRESULT(IDirectInputJoyConfig8 *self, uint32 param0) DeleteConfig;
+				public new function HRESULT(IDirectInputJoyConfig8 *self, DIJOYUSERVALUES* param0, uint32 param1) GetUserValues;
+				public new function HRESULT(IDirectInputJoyConfig8 *self, DIJOYUSERVALUES* param0, uint32 param1) SetUserValues;
+				public new function HRESULT(IDirectInputJoyConfig8 *self, HWND param0, Guid* param1) AddNewHardware;
+				public new function HRESULT(IDirectInputJoyConfig8 *self, PWSTR param0, uint32 param1, HKEY* param2) OpenTypeKey;
+				public new function HRESULT(IDirectInputJoyConfig8 *self, HKEY* param0) OpenAppStatusKey;
 			}
 		}
 		

@@ -781,12 +781,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8ba5fb08, 0x5195, 0x40e2, 0xac, 0x58, 0x0d, 0x98, 0x9c, 0x3a, 0x01, 0x02);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public void* GetBufferPointer() mut
+			{
+				return VT.GetBufferPointer(&this);
+			}
+			public uint GetBufferSize() mut
+			{
+				return VT.GetBufferSize(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function void*(ID3DBlob *self) GetBufferPointer;
-				public function uint(ID3DBlob *self) GetBufferSize;
+				public new function void*(ID3DBlob *self) GetBufferPointer;
+				public new function uint(ID3DBlob *self) GetBufferSize;
 			}
 		}
 		[CRepr]
@@ -794,24 +803,42 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xa06eb39a, 0x50da, 0x425b, 0x8c, 0x31, 0x4e, 0xec, 0xd6, 0xc2, 0x70, 0xf3);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT RegisterDestructionCallback(PFN_DESTRUCTION_CALLBACK callbackFn, void* pData, uint32* pCallbackID) mut
+			{
+				return VT.RegisterDestructionCallback(&this, callbackFn, pData, pCallbackID);
+			}
+			public HRESULT UnregisterDestructionCallback(uint32 callbackID) mut
+			{
+				return VT.UnregisterDestructionCallback(&this, callbackID);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ID3DDestructionNotifier *self, PFN_DESTRUCTION_CALLBACK callbackFn, void* pData, uint32* pCallbackID) RegisterDestructionCallback;
-				public function HRESULT(ID3DDestructionNotifier *self, uint32 callbackID) UnregisterDestructionCallback;
+				public new function HRESULT(ID3DDestructionNotifier *self, PFN_DESTRUCTION_CALLBACK callbackFn, void* pData, uint32* pCallbackID) RegisterDestructionCallback;
+				public new function HRESULT(ID3DDestructionNotifier *self, uint32 callbackID) UnregisterDestructionCallback;
 			}
 		}
 		[CRepr]
 		public struct ID3DInclude
 		{
 			protected VTable* vt;
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Open(D3D_INCLUDE_TYPE IncludeType, PSTR pFileName, void* pParentData, void** ppData, uint32* pBytes) mut
+			{
+				return VT.Open(&this, IncludeType, pFileName, pParentData, ppData, pBytes);
+			}
+			public HRESULT Close(void* pData) mut
+			{
+				return VT.Close(&this, pData);
+			}
 			[CRepr]
 			public struct VTable
 			{
-				public function HRESULT(ID3DInclude *self, D3D_INCLUDE_TYPE IncludeType, PSTR pFileName, void* pParentData, void** ppData, uint32* pBytes) Open;
-				public function HRESULT(ID3DInclude *self, void* pData) Close;
+				public new function HRESULT(ID3DInclude *self, D3D_INCLUDE_TYPE IncludeType, PSTR pFileName, void* pParentData, void** ppData, uint32* pBytes) Open;
+				public new function HRESULT(ID3DInclude *self, void* pData) Close;
 			}
 		}
 		

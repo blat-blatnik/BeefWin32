@@ -739,19 +739,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x6536115a, 0x7b2d, 0x11d2, 0xba, 0x18, 0x00, 0x00, 0xf8, 0x75, 0xac, 0x12);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT EnumPort(uint32 dwIndex, DMUS_PORTCAPS* pPortCaps) mut
+			{
+				return VT.EnumPort(&this, dwIndex, pPortCaps);
+			}
+			public HRESULT CreateMusicBuffer(DMUS_BUFFERDESC* pBufferDesc, IDirectMusicBuffer** ppBuffer, IUnknown* pUnkOuter) mut
+			{
+				return VT.CreateMusicBuffer(&this, pBufferDesc, ppBuffer, pUnkOuter);
+			}
+			public HRESULT CreatePort(Guid* rclsidPort, DMUS_PORTPARAMS8* pPortParams, IDirectMusicPort** ppPort, IUnknown* pUnkOuter) mut
+			{
+				return VT.CreatePort(&this, rclsidPort, pPortParams, ppPort, pUnkOuter);
+			}
+			public HRESULT EnumMasterClock(uint32 dwIndex, DMUS_CLOCKINFO8* lpClockInfo) mut
+			{
+				return VT.EnumMasterClock(&this, dwIndex, lpClockInfo);
+			}
+			public HRESULT GetMasterClock(Guid* pguidClock, IReferenceClock** ppReferenceClock) mut
+			{
+				return VT.GetMasterClock(&this, pguidClock, ppReferenceClock);
+			}
+			public HRESULT SetMasterClock(Guid* rguidClock) mut
+			{
+				return VT.SetMasterClock(&this, rguidClock);
+			}
+			public HRESULT Activate(BOOL fEnable) mut
+			{
+				return VT.Activate(&this, fEnable);
+			}
+			public HRESULT GetDefaultPort(Guid* pguidPort) mut
+			{
+				return VT.GetDefaultPort(&this, pguidPort);
+			}
+			public HRESULT SetDirectSound(IDirectSound* pDirectSound, HWND hWnd) mut
+			{
+				return VT.SetDirectSound(&this, pDirectSound, hWnd);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectMusic *self, uint32 dwIndex, DMUS_PORTCAPS* pPortCaps) EnumPort;
-				public function HRESULT(IDirectMusic *self, DMUS_BUFFERDESC* pBufferDesc, IDirectMusicBuffer** ppBuffer, IUnknown* pUnkOuter) CreateMusicBuffer;
-				public function HRESULT(IDirectMusic *self, Guid* rclsidPort, DMUS_PORTPARAMS8* pPortParams, IDirectMusicPort** ppPort, IUnknown* pUnkOuter) CreatePort;
-				public function HRESULT(IDirectMusic *self, uint32 dwIndex, DMUS_CLOCKINFO8* lpClockInfo) EnumMasterClock;
-				public function HRESULT(IDirectMusic *self, Guid* pguidClock, IReferenceClock** ppReferenceClock) GetMasterClock;
-				public function HRESULT(IDirectMusic *self, Guid* rguidClock) SetMasterClock;
-				public function HRESULT(IDirectMusic *self, BOOL fEnable) Activate;
-				public function HRESULT(IDirectMusic *self, Guid* pguidPort) GetDefaultPort;
-				public function HRESULT(IDirectMusic *self, IDirectSound* pDirectSound, HWND hWnd) SetDirectSound;
+				public new function HRESULT(IDirectMusic *self, uint32 dwIndex, DMUS_PORTCAPS* pPortCaps) EnumPort;
+				public new function HRESULT(IDirectMusic *self, DMUS_BUFFERDESC* pBufferDesc, IDirectMusicBuffer** ppBuffer, IUnknown* pUnkOuter) CreateMusicBuffer;
+				public new function HRESULT(IDirectMusic *self, Guid* rclsidPort, DMUS_PORTPARAMS8* pPortParams, IDirectMusicPort** ppPort, IUnknown* pUnkOuter) CreatePort;
+				public new function HRESULT(IDirectMusic *self, uint32 dwIndex, DMUS_CLOCKINFO8* lpClockInfo) EnumMasterClock;
+				public new function HRESULT(IDirectMusic *self, Guid* pguidClock, IReferenceClock** ppReferenceClock) GetMasterClock;
+				public new function HRESULT(IDirectMusic *self, Guid* rguidClock) SetMasterClock;
+				public new function HRESULT(IDirectMusic *self, BOOL fEnable) Activate;
+				public new function HRESULT(IDirectMusic *self, Guid* pguidPort) GetDefaultPort;
+				public new function HRESULT(IDirectMusic *self, IDirectSound* pDirectSound, HWND hWnd) SetDirectSound;
 			}
 		}
 		[CRepr]
@@ -759,11 +796,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2d3629f7, 0x813d, 0x4939, 0x85, 0x08, 0xf0, 0x5c, 0x6b, 0x75, 0xfd, 0x97);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetExternalMasterClock(IReferenceClock* pClock) mut
+			{
+				return VT.SetExternalMasterClock(&this, pClock);
+			}
 			[CRepr]
 			public struct VTable : IDirectMusic.VTable
 			{
-				public function HRESULT(IDirectMusic8 *self, IReferenceClock* pClock) SetExternalMasterClock;
+				public new function HRESULT(IDirectMusic8 *self, IReferenceClock* pClock) SetExternalMasterClock;
 			}
 		}
 		[CRepr]
@@ -771,23 +813,76 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd2ac2878, 0xb39b, 0x11d1, 0x87, 0x04, 0x00, 0x60, 0x08, 0x93, 0xb1, 0xbd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Flush() mut
+			{
+				return VT.Flush(&this);
+			}
+			public HRESULT TotalTime(int64* prtTime) mut
+			{
+				return VT.TotalTime(&this, prtTime);
+			}
+			public HRESULT PackStructured(int64 rt, uint32 dwChannelGroup, uint32 dwChannelMessage) mut
+			{
+				return VT.PackStructured(&this, rt, dwChannelGroup, dwChannelMessage);
+			}
+			public HRESULT PackUnstructured(int64 rt, uint32 dwChannelGroup, uint32 cb, uint8* lpb) mut
+			{
+				return VT.PackUnstructured(&this, rt, dwChannelGroup, cb, lpb);
+			}
+			public HRESULT ResetReadPtr() mut
+			{
+				return VT.ResetReadPtr(&this);
+			}
+			public HRESULT GetNextEvent(int64* prt, uint32* pdwChannelGroup, uint32* pdwLength, uint8** ppData) mut
+			{
+				return VT.GetNextEvent(&this, prt, pdwChannelGroup, pdwLength, ppData);
+			}
+			public HRESULT GetRawBufferPtr(uint8** ppData) mut
+			{
+				return VT.GetRawBufferPtr(&this, ppData);
+			}
+			public HRESULT GetStartTime(int64* prt) mut
+			{
+				return VT.GetStartTime(&this, prt);
+			}
+			public HRESULT GetUsedBytes(uint32* pcb) mut
+			{
+				return VT.GetUsedBytes(&this, pcb);
+			}
+			public HRESULT GetMaxBytes(uint32* pcb) mut
+			{
+				return VT.GetMaxBytes(&this, pcb);
+			}
+			public HRESULT GetBufferFormat(Guid* pGuidFormat) mut
+			{
+				return VT.GetBufferFormat(&this, pGuidFormat);
+			}
+			public HRESULT SetStartTime(int64 rt) mut
+			{
+				return VT.SetStartTime(&this, rt);
+			}
+			public HRESULT SetUsedBytes(uint32 cb) mut
+			{
+				return VT.SetUsedBytes(&this, cb);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectMusicBuffer *self) Flush;
-				public function HRESULT(IDirectMusicBuffer *self, int64* prtTime) TotalTime;
-				public function HRESULT(IDirectMusicBuffer *self, int64 rt, uint32 dwChannelGroup, uint32 dwChannelMessage) PackStructured;
-				public function HRESULT(IDirectMusicBuffer *self, int64 rt, uint32 dwChannelGroup, uint32 cb, uint8* lpb) PackUnstructured;
-				public function HRESULT(IDirectMusicBuffer *self) ResetReadPtr;
-				public function HRESULT(IDirectMusicBuffer *self, int64* prt, uint32* pdwChannelGroup, uint32* pdwLength, uint8** ppData) GetNextEvent;
-				public function HRESULT(IDirectMusicBuffer *self, uint8** ppData) GetRawBufferPtr;
-				public function HRESULT(IDirectMusicBuffer *self, int64* prt) GetStartTime;
-				public function HRESULT(IDirectMusicBuffer *self, uint32* pcb) GetUsedBytes;
-				public function HRESULT(IDirectMusicBuffer *self, uint32* pcb) GetMaxBytes;
-				public function HRESULT(IDirectMusicBuffer *self, Guid* pGuidFormat) GetBufferFormat;
-				public function HRESULT(IDirectMusicBuffer *self, int64 rt) SetStartTime;
-				public function HRESULT(IDirectMusicBuffer *self, uint32 cb) SetUsedBytes;
+				public new function HRESULT(IDirectMusicBuffer *self) Flush;
+				public new function HRESULT(IDirectMusicBuffer *self, int64* prtTime) TotalTime;
+				public new function HRESULT(IDirectMusicBuffer *self, int64 rt, uint32 dwChannelGroup, uint32 dwChannelMessage) PackStructured;
+				public new function HRESULT(IDirectMusicBuffer *self, int64 rt, uint32 dwChannelGroup, uint32 cb, uint8* lpb) PackUnstructured;
+				public new function HRESULT(IDirectMusicBuffer *self) ResetReadPtr;
+				public new function HRESULT(IDirectMusicBuffer *self, int64* prt, uint32* pdwChannelGroup, uint32* pdwLength, uint8** ppData) GetNextEvent;
+				public new function HRESULT(IDirectMusicBuffer *self, uint8** ppData) GetRawBufferPtr;
+				public new function HRESULT(IDirectMusicBuffer *self, int64* prt) GetStartTime;
+				public new function HRESULT(IDirectMusicBuffer *self, uint32* pcb) GetUsedBytes;
+				public new function HRESULT(IDirectMusicBuffer *self, uint32* pcb) GetMaxBytes;
+				public new function HRESULT(IDirectMusicBuffer *self, Guid* pGuidFormat) GetBufferFormat;
+				public new function HRESULT(IDirectMusicBuffer *self, int64 rt) SetStartTime;
+				public new function HRESULT(IDirectMusicBuffer *self, uint32 cb) SetUsedBytes;
 			}
 		}
 		[CRepr]
@@ -795,12 +890,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd2ac287d, 0xb39b, 0x11d1, 0x87, 0x04, 0x00, 0x60, 0x08, 0x93, 0xb1, 0xbd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetPatch(uint32* pdwPatch) mut
+			{
+				return VT.GetPatch(&this, pdwPatch);
+			}
+			public HRESULT SetPatch(uint32 dwPatch) mut
+			{
+				return VT.SetPatch(&this, dwPatch);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectMusicInstrument *self, uint32* pdwPatch) GetPatch;
-				public function HRESULT(IDirectMusicInstrument *self, uint32 dwPatch) SetPatch;
+				public new function HRESULT(IDirectMusicInstrument *self, uint32* pdwPatch) GetPatch;
+				public new function HRESULT(IDirectMusicInstrument *self, uint32 dwPatch) SetPatch;
 			}
 		}
 		[CRepr]
@@ -808,7 +912,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd2ac287e, 0xb39b, 0x11d1, 0x87, 0x04, 0x00, 0x60, 0x08, 0x93, 0xb1, 0xbd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
@@ -819,12 +924,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd2ac287c, 0xb39b, 0x11d1, 0x87, 0x04, 0x00, 0x60, 0x08, 0x93, 0xb1, 0xbd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetInstrument(uint32 dwPatch, IDirectMusicInstrument** ppInstrument) mut
+			{
+				return VT.GetInstrument(&this, dwPatch, ppInstrument);
+			}
+			public HRESULT EnumInstrument(uint32 dwIndex, uint32* pdwPatch, PWSTR pwszName, uint32 dwNameLen) mut
+			{
+				return VT.EnumInstrument(&this, dwIndex, pdwPatch, pwszName, dwNameLen);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectMusicCollection *self, uint32 dwPatch, IDirectMusicInstrument** ppInstrument) GetInstrument;
-				public function HRESULT(IDirectMusicCollection *self, uint32 dwIndex, uint32* pdwPatch, PWSTR pwszName, uint32 dwNameLen) EnumInstrument;
+				public new function HRESULT(IDirectMusicCollection *self, uint32 dwPatch, IDirectMusicInstrument** ppInstrument) GetInstrument;
+				public new function HRESULT(IDirectMusicCollection *self, uint32 dwIndex, uint32* pdwPatch, PWSTR pwszName, uint32 dwNameLen) EnumInstrument;
 			}
 		}
 		[CRepr]
@@ -832,11 +946,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd2ac287b, 0xb39b, 0x11d1, 0x87, 0x04, 0x00, 0x60, 0x08, 0x93, 0xb1, 0xbd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetBuffer(void** ppvBuffer, uint32* pdwSize) mut
+			{
+				return VT.GetBuffer(&this, ppvBuffer, pdwSize);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectMusicDownload *self, void** ppvBuffer, uint32* pdwSize) GetBuffer;
+				public new function HRESULT(IDirectMusicDownload *self, void** ppvBuffer, uint32* pdwSize) GetBuffer;
 			}
 		}
 		[CRepr]
@@ -844,16 +963,41 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xd2ac287a, 0xb39b, 0x11d1, 0x87, 0x04, 0x00, 0x60, 0x08, 0x93, 0xb1, 0xbd);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetBuffer(uint32 dwDLId, IDirectMusicDownload** ppIDMDownload) mut
+			{
+				return VT.GetBuffer(&this, dwDLId, ppIDMDownload);
+			}
+			public HRESULT AllocateBuffer(uint32 dwSize, IDirectMusicDownload** ppIDMDownload) mut
+			{
+				return VT.AllocateBuffer(&this, dwSize, ppIDMDownload);
+			}
+			public HRESULT GetDLId(uint32* pdwStartDLId, uint32 dwCount) mut
+			{
+				return VT.GetDLId(&this, pdwStartDLId, dwCount);
+			}
+			public HRESULT GetAppend(uint32* pdwAppend) mut
+			{
+				return VT.GetAppend(&this, pdwAppend);
+			}
+			public HRESULT Download(IDirectMusicDownload* pIDMDownload) mut
+			{
+				return VT.Download(&this, pIDMDownload);
+			}
+			public HRESULT Unload(IDirectMusicDownload* pIDMDownload) mut
+			{
+				return VT.Unload(&this, pIDMDownload);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectMusicPortDownload *self, uint32 dwDLId, IDirectMusicDownload** ppIDMDownload) GetBuffer;
-				public function HRESULT(IDirectMusicPortDownload *self, uint32 dwSize, IDirectMusicDownload** ppIDMDownload) AllocateBuffer;
-				public function HRESULT(IDirectMusicPortDownload *self, uint32* pdwStartDLId, uint32 dwCount) GetDLId;
-				public function HRESULT(IDirectMusicPortDownload *self, uint32* pdwAppend) GetAppend;
-				public function HRESULT(IDirectMusicPortDownload *self, IDirectMusicDownload* pIDMDownload) Download;
-				public function HRESULT(IDirectMusicPortDownload *self, IDirectMusicDownload* pIDMDownload) Unload;
+				public new function HRESULT(IDirectMusicPortDownload *self, uint32 dwDLId, IDirectMusicDownload** ppIDMDownload) GetBuffer;
+				public new function HRESULT(IDirectMusicPortDownload *self, uint32 dwSize, IDirectMusicDownload** ppIDMDownload) AllocateBuffer;
+				public new function HRESULT(IDirectMusicPortDownload *self, uint32* pdwStartDLId, uint32 dwCount) GetDLId;
+				public new function HRESULT(IDirectMusicPortDownload *self, uint32* pdwAppend) GetAppend;
+				public new function HRESULT(IDirectMusicPortDownload *self, IDirectMusicDownload* pIDMDownload) Download;
+				public new function HRESULT(IDirectMusicPortDownload *self, IDirectMusicDownload* pIDMDownload) Unload;
 			}
 		}
 		[CRepr]
@@ -861,27 +1005,96 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x08f2d8c9, 0x37c2, 0x11d2, 0xb9, 0xf9, 0x00, 0x00, 0xf8, 0x75, 0xac, 0x12);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT PlayBuffer(IDirectMusicBuffer* pBuffer) mut
+			{
+				return VT.PlayBuffer(&this, pBuffer);
+			}
+			public HRESULT SetReadNotificationHandle(HANDLE hEvent) mut
+			{
+				return VT.SetReadNotificationHandle(&this, hEvent);
+			}
+			public HRESULT Read(IDirectMusicBuffer* pBuffer) mut
+			{
+				return VT.Read(&this, pBuffer);
+			}
+			public HRESULT DownloadInstrument(IDirectMusicInstrument* pInstrument, IDirectMusicDownloadedInstrument** ppDownloadedInstrument, DMUS_NOTERANGE* pNoteRanges, uint32 dwNumNoteRanges) mut
+			{
+				return VT.DownloadInstrument(&this, pInstrument, ppDownloadedInstrument, pNoteRanges, dwNumNoteRanges);
+			}
+			public HRESULT UnloadInstrument(IDirectMusicDownloadedInstrument* pDownloadedInstrument) mut
+			{
+				return VT.UnloadInstrument(&this, pDownloadedInstrument);
+			}
+			public HRESULT GetLatencyClock(IReferenceClock** ppClock) mut
+			{
+				return VT.GetLatencyClock(&this, ppClock);
+			}
+			public HRESULT GetRunningStats(DMUS_SYNTHSTATS* pStats) mut
+			{
+				return VT.GetRunningStats(&this, pStats);
+			}
+			public HRESULT Compact() mut
+			{
+				return VT.Compact(&this);
+			}
+			public HRESULT GetCaps(DMUS_PORTCAPS* pPortCaps) mut
+			{
+				return VT.GetCaps(&this, pPortCaps);
+			}
+			public HRESULT DeviceIoControl(uint32 dwIoControlCode, void* lpInBuffer, uint32 nInBufferSize, void* lpOutBuffer, uint32 nOutBufferSize, uint32* lpBytesReturned, OVERLAPPED* lpOverlapped) mut
+			{
+				return VT.DeviceIoControl(&this, dwIoControlCode, lpInBuffer, nInBufferSize, lpOutBuffer, nOutBufferSize, lpBytesReturned, lpOverlapped);
+			}
+			public HRESULT SetNumChannelGroups(uint32 dwChannelGroups) mut
+			{
+				return VT.SetNumChannelGroups(&this, dwChannelGroups);
+			}
+			public HRESULT GetNumChannelGroups(uint32* pdwChannelGroups) mut
+			{
+				return VT.GetNumChannelGroups(&this, pdwChannelGroups);
+			}
+			public HRESULT Activate(BOOL fActive) mut
+			{
+				return VT.Activate(&this, fActive);
+			}
+			public HRESULT SetChannelPriority(uint32 dwChannelGroup, uint32 dwChannel, uint32 dwPriority) mut
+			{
+				return VT.SetChannelPriority(&this, dwChannelGroup, dwChannel, dwPriority);
+			}
+			public HRESULT GetChannelPriority(uint32 dwChannelGroup, uint32 dwChannel, uint32* pdwPriority) mut
+			{
+				return VT.GetChannelPriority(&this, dwChannelGroup, dwChannel, pdwPriority);
+			}
+			public HRESULT SetDirectSound(IDirectSound* pDirectSound, IDirectSoundBuffer* pDirectSoundBuffer) mut
+			{
+				return VT.SetDirectSound(&this, pDirectSound, pDirectSoundBuffer);
+			}
+			public HRESULT GetFormat(WAVEFORMATEX* pWaveFormatEx, uint32* pdwWaveFormatExSize, uint32* pdwBufferSize) mut
+			{
+				return VT.GetFormat(&this, pWaveFormatEx, pdwWaveFormatExSize, pdwBufferSize);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectMusicPort *self, IDirectMusicBuffer* pBuffer) PlayBuffer;
-				public function HRESULT(IDirectMusicPort *self, HANDLE hEvent) SetReadNotificationHandle;
-				public function HRESULT(IDirectMusicPort *self, IDirectMusicBuffer* pBuffer) Read;
-				public function HRESULT(IDirectMusicPort *self, IDirectMusicInstrument* pInstrument, IDirectMusicDownloadedInstrument** ppDownloadedInstrument, DMUS_NOTERANGE* pNoteRanges, uint32 dwNumNoteRanges) DownloadInstrument;
-				public function HRESULT(IDirectMusicPort *self, IDirectMusicDownloadedInstrument* pDownloadedInstrument) UnloadInstrument;
-				public function HRESULT(IDirectMusicPort *self, IReferenceClock** ppClock) GetLatencyClock;
-				public function HRESULT(IDirectMusicPort *self, DMUS_SYNTHSTATS* pStats) GetRunningStats;
-				public function HRESULT(IDirectMusicPort *self) Compact;
-				public function HRESULT(IDirectMusicPort *self, DMUS_PORTCAPS* pPortCaps) GetCaps;
-				public function HRESULT(IDirectMusicPort *self, uint32 dwIoControlCode, void* lpInBuffer, uint32 nInBufferSize, void* lpOutBuffer, uint32 nOutBufferSize, uint32* lpBytesReturned, OVERLAPPED* lpOverlapped) DeviceIoControl;
-				public function HRESULT(IDirectMusicPort *self, uint32 dwChannelGroups) SetNumChannelGroups;
-				public function HRESULT(IDirectMusicPort *self, uint32* pdwChannelGroups) GetNumChannelGroups;
-				public function HRESULT(IDirectMusicPort *self, BOOL fActive) Activate;
-				public function HRESULT(IDirectMusicPort *self, uint32 dwChannelGroup, uint32 dwChannel, uint32 dwPriority) SetChannelPriority;
-				public function HRESULT(IDirectMusicPort *self, uint32 dwChannelGroup, uint32 dwChannel, uint32* pdwPriority) GetChannelPriority;
-				public function HRESULT(IDirectMusicPort *self, IDirectSound* pDirectSound, IDirectSoundBuffer* pDirectSoundBuffer) SetDirectSound;
-				public function HRESULT(IDirectMusicPort *self, WAVEFORMATEX* pWaveFormatEx, uint32* pdwWaveFormatExSize, uint32* pdwBufferSize) GetFormat;
+				public new function HRESULT(IDirectMusicPort *self, IDirectMusicBuffer* pBuffer) PlayBuffer;
+				public new function HRESULT(IDirectMusicPort *self, HANDLE hEvent) SetReadNotificationHandle;
+				public new function HRESULT(IDirectMusicPort *self, IDirectMusicBuffer* pBuffer) Read;
+				public new function HRESULT(IDirectMusicPort *self, IDirectMusicInstrument* pInstrument, IDirectMusicDownloadedInstrument** ppDownloadedInstrument, DMUS_NOTERANGE* pNoteRanges, uint32 dwNumNoteRanges) DownloadInstrument;
+				public new function HRESULT(IDirectMusicPort *self, IDirectMusicDownloadedInstrument* pDownloadedInstrument) UnloadInstrument;
+				public new function HRESULT(IDirectMusicPort *self, IReferenceClock** ppClock) GetLatencyClock;
+				public new function HRESULT(IDirectMusicPort *self, DMUS_SYNTHSTATS* pStats) GetRunningStats;
+				public new function HRESULT(IDirectMusicPort *self) Compact;
+				public new function HRESULT(IDirectMusicPort *self, DMUS_PORTCAPS* pPortCaps) GetCaps;
+				public new function HRESULT(IDirectMusicPort *self, uint32 dwIoControlCode, void* lpInBuffer, uint32 nInBufferSize, void* lpOutBuffer, uint32 nOutBufferSize, uint32* lpBytesReturned, OVERLAPPED* lpOverlapped) DeviceIoControl;
+				public new function HRESULT(IDirectMusicPort *self, uint32 dwChannelGroups) SetNumChannelGroups;
+				public new function HRESULT(IDirectMusicPort *self, uint32* pdwChannelGroups) GetNumChannelGroups;
+				public new function HRESULT(IDirectMusicPort *self, BOOL fActive) Activate;
+				public new function HRESULT(IDirectMusicPort *self, uint32 dwChannelGroup, uint32 dwChannel, uint32 dwPriority) SetChannelPriority;
+				public new function HRESULT(IDirectMusicPort *self, uint32 dwChannelGroup, uint32 dwChannel, uint32* pdwPriority) GetChannelPriority;
+				public new function HRESULT(IDirectMusicPort *self, IDirectSound* pDirectSound, IDirectSoundBuffer* pDirectSoundBuffer) SetDirectSound;
+				public new function HRESULT(IDirectMusicPort *self, WAVEFORMATEX* pWaveFormatEx, uint32* pdwWaveFormatExSize, uint32* pdwBufferSize) GetFormat;
 			}
 		}
 		[CRepr]
@@ -889,11 +1102,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xced153e7, 0x3606, 0x11d2, 0xb9, 0xf9, 0x00, 0x00, 0xf8, 0x75, 0xac, 0x12);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT ThruChannel(uint32 dwSourceChannelGroup, uint32 dwSourceChannel, uint32 dwDestinationChannelGroup, uint32 dwDestinationChannel, IDirectMusicPort* pDestinationPort) mut
+			{
+				return VT.ThruChannel(&this, dwSourceChannelGroup, dwSourceChannel, dwDestinationChannelGroup, dwDestinationChannel, pDestinationPort);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectMusicThru *self, uint32 dwSourceChannelGroup, uint32 dwSourceChannel, uint32 dwDestinationChannelGroup, uint32 dwDestinationChannel, IDirectMusicPort* pDestinationPort) ThruChannel;
+				public new function HRESULT(IDirectMusicThru *self, uint32 dwSourceChannelGroup, uint32 dwSourceChannel, uint32 dwDestinationChannelGroup, uint32 dwDestinationChannel, IDirectMusicPort* pDestinationPort) ThruChannel;
 			}
 		}
 		[CRepr]
@@ -901,27 +1119,96 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x09823661, 0x5c85, 0x11d2, 0xaf, 0xa6, 0x00, 0xaa, 0x00, 0x24, 0xd8, 0xb6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Open(DMUS_PORTPARAMS8* pPortParams) mut
+			{
+				return VT.Open(&this, pPortParams);
+			}
+			public HRESULT Close() mut
+			{
+				return VT.Close(&this);
+			}
+			public HRESULT SetNumChannelGroups(uint32 dwGroups) mut
+			{
+				return VT.SetNumChannelGroups(&this, dwGroups);
+			}
+			public HRESULT Download(HANDLE* phDownload, void* pvData, int32* pbFree) mut
+			{
+				return VT.Download(&this, phDownload, pvData, pbFree);
+			}
+			public HRESULT Unload(HANDLE hDownload, int lpFreeHandle, HANDLE hUserData) mut
+			{
+				return VT.Unload(&this, hDownload, lpFreeHandle, hUserData);
+			}
+			public HRESULT PlayBuffer(int64 rt, uint8* pbBuffer, uint32 cbBuffer) mut
+			{
+				return VT.PlayBuffer(&this, rt, pbBuffer, cbBuffer);
+			}
+			public HRESULT GetRunningStats(DMUS_SYNTHSTATS* pStats) mut
+			{
+				return VT.GetRunningStats(&this, pStats);
+			}
+			public HRESULT GetPortCaps(DMUS_PORTCAPS* pCaps) mut
+			{
+				return VT.GetPortCaps(&this, pCaps);
+			}
+			public HRESULT SetMasterClock(IReferenceClock* pClock) mut
+			{
+				return VT.SetMasterClock(&this, pClock);
+			}
+			public HRESULT GetLatencyClock(IReferenceClock** ppClock) mut
+			{
+				return VT.GetLatencyClock(&this, ppClock);
+			}
+			public HRESULT Activate(BOOL fEnable) mut
+			{
+				return VT.Activate(&this, fEnable);
+			}
+			public HRESULT SetSynthSink(IDirectMusicSynthSink* pSynthSink) mut
+			{
+				return VT.SetSynthSink(&this, pSynthSink);
+			}
+			public HRESULT Render(int16* pBuffer, uint32 dwLength, int64 llPosition) mut
+			{
+				return VT.Render(&this, pBuffer, dwLength, llPosition);
+			}
+			public HRESULT SetChannelPriority(uint32 dwChannelGroup, uint32 dwChannel, uint32 dwPriority) mut
+			{
+				return VT.SetChannelPriority(&this, dwChannelGroup, dwChannel, dwPriority);
+			}
+			public HRESULT GetChannelPriority(uint32 dwChannelGroup, uint32 dwChannel, uint32* pdwPriority) mut
+			{
+				return VT.GetChannelPriority(&this, dwChannelGroup, dwChannel, pdwPriority);
+			}
+			public HRESULT GetFormat(WAVEFORMATEX* pWaveFormatEx, uint32* pdwWaveFormatExSize) mut
+			{
+				return VT.GetFormat(&this, pWaveFormatEx, pdwWaveFormatExSize);
+			}
+			public HRESULT GetAppend(uint32* pdwAppend) mut
+			{
+				return VT.GetAppend(&this, pdwAppend);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectMusicSynth *self, DMUS_PORTPARAMS8* pPortParams) Open;
-				public function HRESULT(IDirectMusicSynth *self) Close;
-				public function HRESULT(IDirectMusicSynth *self, uint32 dwGroups) SetNumChannelGroups;
-				public function HRESULT(IDirectMusicSynth *self, HANDLE* phDownload, void* pvData, int32* pbFree) Download;
-				public function HRESULT(IDirectMusicSynth *self, HANDLE hDownload, int lpFreeHandle, HANDLE hUserData) Unload;
-				public function HRESULT(IDirectMusicSynth *self, int64 rt, uint8* pbBuffer, uint32 cbBuffer) PlayBuffer;
-				public function HRESULT(IDirectMusicSynth *self, DMUS_SYNTHSTATS* pStats) GetRunningStats;
-				public function HRESULT(IDirectMusicSynth *self, DMUS_PORTCAPS* pCaps) GetPortCaps;
-				public function HRESULT(IDirectMusicSynth *self, IReferenceClock* pClock) SetMasterClock;
-				public function HRESULT(IDirectMusicSynth *self, IReferenceClock** ppClock) GetLatencyClock;
-				public function HRESULT(IDirectMusicSynth *self, BOOL fEnable) Activate;
-				public function HRESULT(IDirectMusicSynth *self, IDirectMusicSynthSink* pSynthSink) SetSynthSink;
-				public function HRESULT(IDirectMusicSynth *self, int16* pBuffer, uint32 dwLength, int64 llPosition) Render;
-				public function HRESULT(IDirectMusicSynth *self, uint32 dwChannelGroup, uint32 dwChannel, uint32 dwPriority) SetChannelPriority;
-				public function HRESULT(IDirectMusicSynth *self, uint32 dwChannelGroup, uint32 dwChannel, uint32* pdwPriority) GetChannelPriority;
-				public function HRESULT(IDirectMusicSynth *self, WAVEFORMATEX* pWaveFormatEx, uint32* pdwWaveFormatExSize) GetFormat;
-				public function HRESULT(IDirectMusicSynth *self, uint32* pdwAppend) GetAppend;
+				public new function HRESULT(IDirectMusicSynth *self, DMUS_PORTPARAMS8* pPortParams) Open;
+				public new function HRESULT(IDirectMusicSynth *self) Close;
+				public new function HRESULT(IDirectMusicSynth *self, uint32 dwGroups) SetNumChannelGroups;
+				public new function HRESULT(IDirectMusicSynth *self, HANDLE* phDownload, void* pvData, int32* pbFree) Download;
+				public new function HRESULT(IDirectMusicSynth *self, HANDLE hDownload, int lpFreeHandle, HANDLE hUserData) Unload;
+				public new function HRESULT(IDirectMusicSynth *self, int64 rt, uint8* pbBuffer, uint32 cbBuffer) PlayBuffer;
+				public new function HRESULT(IDirectMusicSynth *self, DMUS_SYNTHSTATS* pStats) GetRunningStats;
+				public new function HRESULT(IDirectMusicSynth *self, DMUS_PORTCAPS* pCaps) GetPortCaps;
+				public new function HRESULT(IDirectMusicSynth *self, IReferenceClock* pClock) SetMasterClock;
+				public new function HRESULT(IDirectMusicSynth *self, IReferenceClock** ppClock) GetLatencyClock;
+				public new function HRESULT(IDirectMusicSynth *self, BOOL fEnable) Activate;
+				public new function HRESULT(IDirectMusicSynth *self, IDirectMusicSynthSink* pSynthSink) SetSynthSink;
+				public new function HRESULT(IDirectMusicSynth *self, int16* pBuffer, uint32 dwLength, int64 llPosition) Render;
+				public new function HRESULT(IDirectMusicSynth *self, uint32 dwChannelGroup, uint32 dwChannel, uint32 dwPriority) SetChannelPriority;
+				public new function HRESULT(IDirectMusicSynth *self, uint32 dwChannelGroup, uint32 dwChannel, uint32* pdwPriority) GetChannelPriority;
+				public new function HRESULT(IDirectMusicSynth *self, WAVEFORMATEX* pWaveFormatEx, uint32* pdwWaveFormatExSize) GetFormat;
+				public new function HRESULT(IDirectMusicSynth *self, uint32* pdwAppend) GetAppend;
 			}
 		}
 		[CRepr]
@@ -929,15 +1216,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x53cab625, 0x2711, 0x4c9f, 0x9d, 0xe7, 0x1b, 0x7f, 0x92, 0x5f, 0x6f, 0xc8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT PlayVoice(int64 rt, uint32 dwVoiceId, uint32 dwChannelGroup, uint32 dwChannel, uint32 dwDLId, int32 prPitch, int32 vrVolume, uint64 stVoiceStart, uint64 stLoopStart, uint64 stLoopEnd) mut
+			{
+				return VT.PlayVoice(&this, rt, dwVoiceId, dwChannelGroup, dwChannel, dwDLId, prPitch, vrVolume, stVoiceStart, stLoopStart, stLoopEnd);
+			}
+			public HRESULT StopVoice(int64 rt, uint32 dwVoiceId) mut
+			{
+				return VT.StopVoice(&this, rt, dwVoiceId);
+			}
+			public HRESULT GetVoiceState(uint32* dwVoice, uint32 cbVoice, DMUS_VOICE_STATE* dwVoiceState) mut
+			{
+				return VT.GetVoiceState(&this, dwVoice, cbVoice, dwVoiceState);
+			}
+			public HRESULT Refresh(uint32 dwDownloadID, uint32 dwFlags) mut
+			{
+				return VT.Refresh(&this, dwDownloadID, dwFlags);
+			}
+			public HRESULT AssignChannelToBuses(uint32 dwChannelGroup, uint32 dwChannel, uint32* pdwBuses, uint32 cBuses) mut
+			{
+				return VT.AssignChannelToBuses(&this, dwChannelGroup, dwChannel, pdwBuses, cBuses);
+			}
 			[CRepr]
 			public struct VTable : IDirectMusicSynth.VTable
 			{
-				public function HRESULT(IDirectMusicSynth8 *self, int64 rt, uint32 dwVoiceId, uint32 dwChannelGroup, uint32 dwChannel, uint32 dwDLId, int32 prPitch, int32 vrVolume, uint64 stVoiceStart, uint64 stLoopStart, uint64 stLoopEnd) PlayVoice;
-				public function HRESULT(IDirectMusicSynth8 *self, int64 rt, uint32 dwVoiceId) StopVoice;
-				public function HRESULT(IDirectMusicSynth8 *self, uint32* dwVoice, uint32 cbVoice, DMUS_VOICE_STATE* dwVoiceState) GetVoiceState;
-				public function HRESULT(IDirectMusicSynth8 *self, uint32 dwDownloadID, uint32 dwFlags) Refresh;
-				public function HRESULT(IDirectMusicSynth8 *self, uint32 dwChannelGroup, uint32 dwChannel, uint32* pdwBuses, uint32 cBuses) AssignChannelToBuses;
+				public new function HRESULT(IDirectMusicSynth8 *self, int64 rt, uint32 dwVoiceId, uint32 dwChannelGroup, uint32 dwChannel, uint32 dwDLId, int32 prPitch, int32 vrVolume, uint64 stVoiceStart, uint64 stLoopStart, uint64 stLoopEnd) PlayVoice;
+				public new function HRESULT(IDirectMusicSynth8 *self, int64 rt, uint32 dwVoiceId) StopVoice;
+				public new function HRESULT(IDirectMusicSynth8 *self, uint32* dwVoice, uint32 cbVoice, DMUS_VOICE_STATE* dwVoiceState) GetVoiceState;
+				public new function HRESULT(IDirectMusicSynth8 *self, uint32 dwDownloadID, uint32 dwFlags) Refresh;
+				public new function HRESULT(IDirectMusicSynth8 *self, uint32 dwChannelGroup, uint32 dwChannel, uint32* pdwBuses, uint32 cBuses) AssignChannelToBuses;
 			}
 		}
 		[CRepr]
@@ -945,18 +1253,51 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x09823663, 0x5c85, 0x11d2, 0xaf, 0xa6, 0x00, 0xaa, 0x00, 0x24, 0xd8, 0xb6);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Init(IDirectMusicSynth* pSynth) mut
+			{
+				return VT.Init(&this, pSynth);
+			}
+			public HRESULT SetMasterClock(IReferenceClock* pClock) mut
+			{
+				return VT.SetMasterClock(&this, pClock);
+			}
+			public HRESULT GetLatencyClock(IReferenceClock** ppClock) mut
+			{
+				return VT.GetLatencyClock(&this, ppClock);
+			}
+			public HRESULT Activate(BOOL fEnable) mut
+			{
+				return VT.Activate(&this, fEnable);
+			}
+			public HRESULT SampleToRefTime(int64 llSampleTime, int64* prfTime) mut
+			{
+				return VT.SampleToRefTime(&this, llSampleTime, prfTime);
+			}
+			public HRESULT RefTimeToSample(int64 rfTime, int64* pllSampleTime) mut
+			{
+				return VT.RefTimeToSample(&this, rfTime, pllSampleTime);
+			}
+			public HRESULT SetDirectSound(IDirectSound* pDirectSound, IDirectSoundBuffer* pDirectSoundBuffer) mut
+			{
+				return VT.SetDirectSound(&this, pDirectSound, pDirectSoundBuffer);
+			}
+			public HRESULT GetDesiredBufferSize(uint32* pdwBufferSizeInSamples) mut
+			{
+				return VT.GetDesiredBufferSize(&this, pdwBufferSizeInSamples);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDirectMusicSynthSink *self, IDirectMusicSynth* pSynth) Init;
-				public function HRESULT(IDirectMusicSynthSink *self, IReferenceClock* pClock) SetMasterClock;
-				public function HRESULT(IDirectMusicSynthSink *self, IReferenceClock** ppClock) GetLatencyClock;
-				public function HRESULT(IDirectMusicSynthSink *self, BOOL fEnable) Activate;
-				public function HRESULT(IDirectMusicSynthSink *self, int64 llSampleTime, int64* prfTime) SampleToRefTime;
-				public function HRESULT(IDirectMusicSynthSink *self, int64 rfTime, int64* pllSampleTime) RefTimeToSample;
-				public function HRESULT(IDirectMusicSynthSink *self, IDirectSound* pDirectSound, IDirectSoundBuffer* pDirectSoundBuffer) SetDirectSound;
-				public function HRESULT(IDirectMusicSynthSink *self, uint32* pdwBufferSizeInSamples) GetDesiredBufferSize;
+				public new function HRESULT(IDirectMusicSynthSink *self, IDirectMusicSynth* pSynth) Init;
+				public new function HRESULT(IDirectMusicSynthSink *self, IReferenceClock* pClock) SetMasterClock;
+				public new function HRESULT(IDirectMusicSynthSink *self, IReferenceClock** ppClock) GetLatencyClock;
+				public new function HRESULT(IDirectMusicSynthSink *self, BOOL fEnable) Activate;
+				public new function HRESULT(IDirectMusicSynthSink *self, int64 llSampleTime, int64* prfTime) SampleToRefTime;
+				public new function HRESULT(IDirectMusicSynthSink *self, int64 rfTime, int64* pllSampleTime) RefTimeToSample;
+				public new function HRESULT(IDirectMusicSynthSink *self, IDirectSound* pDirectSound, IDirectSoundBuffer* pDirectSoundBuffer) SetDirectSound;
+				public new function HRESULT(IDirectMusicSynthSink *self, uint32* pdwBufferSizeInSamples) GetDesiredBufferSize;
 			}
 		}
 		

@@ -1977,22 +1977,71 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8cc97f40, 0x9028, 0x4ff3, 0x9b, 0x62, 0x7d, 0x1f, 0x79, 0xca, 0x7b, 0xcb);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Clone(ITraceEvent** NewEvent) mut
+			{
+				return VT.Clone(&this, NewEvent);
+			}
+			public HRESULT GetUserContext(void** UserContext) mut
+			{
+				return VT.GetUserContext(&this, UserContext);
+			}
+			public HRESULT GetEventRecord(EVENT_RECORD** EventRecord) mut
+			{
+				return VT.GetEventRecord(&this, EventRecord);
+			}
+			public HRESULT SetPayload(uint8* Payload, uint32 PayloadSize) mut
+			{
+				return VT.SetPayload(&this, Payload, PayloadSize);
+			}
+			public HRESULT SetEventDescriptor(EVENT_DESCRIPTOR* EventDescriptor) mut
+			{
+				return VT.SetEventDescriptor(&this, EventDescriptor);
+			}
+			public HRESULT SetProcessId(uint32 ProcessId) mut
+			{
+				return VT.SetProcessId(&this, ProcessId);
+			}
+			public HRESULT SetProcessorIndex(uint32 ProcessorIndex) mut
+			{
+				return VT.SetProcessorIndex(&this, ProcessorIndex);
+			}
+			public HRESULT SetThreadId(uint32 ThreadId) mut
+			{
+				return VT.SetThreadId(&this, ThreadId);
+			}
+			public HRESULT SetThreadTimes(uint32 KernelTime, uint32 UserTime) mut
+			{
+				return VT.SetThreadTimes(&this, KernelTime, UserTime);
+			}
+			public HRESULT SetActivityId(Guid* ActivityId) mut
+			{
+				return VT.SetActivityId(&this, ActivityId);
+			}
+			public HRESULT SetTimeStamp(LARGE_INTEGER* TimeStamp) mut
+			{
+				return VT.SetTimeStamp(&this, TimeStamp);
+			}
+			public HRESULT SetProviderId(Guid* ProviderId) mut
+			{
+				return VT.SetProviderId(&this, ProviderId);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ITraceEvent *self, ITraceEvent** NewEvent) Clone;
-				public function HRESULT(ITraceEvent *self, void** UserContext) GetUserContext;
-				public function HRESULT(ITraceEvent *self, EVENT_RECORD** EventRecord) GetEventRecord;
-				public function HRESULT(ITraceEvent *self, uint8* Payload, uint32 PayloadSize) SetPayload;
-				public function HRESULT(ITraceEvent *self, EVENT_DESCRIPTOR* EventDescriptor) SetEventDescriptor;
-				public function HRESULT(ITraceEvent *self, uint32 ProcessId) SetProcessId;
-				public function HRESULT(ITraceEvent *self, uint32 ProcessorIndex) SetProcessorIndex;
-				public function HRESULT(ITraceEvent *self, uint32 ThreadId) SetThreadId;
-				public function HRESULT(ITraceEvent *self, uint32 KernelTime, uint32 UserTime) SetThreadTimes;
-				public function HRESULT(ITraceEvent *self, Guid* ActivityId) SetActivityId;
-				public function HRESULT(ITraceEvent *self, LARGE_INTEGER* TimeStamp) SetTimeStamp;
-				public function HRESULT(ITraceEvent *self, Guid* ProviderId) SetProviderId;
+				public new function HRESULT(ITraceEvent *self, ITraceEvent** NewEvent) Clone;
+				public new function HRESULT(ITraceEvent *self, void** UserContext) GetUserContext;
+				public new function HRESULT(ITraceEvent *self, EVENT_RECORD** EventRecord) GetEventRecord;
+				public new function HRESULT(ITraceEvent *self, uint8* Payload, uint32 PayloadSize) SetPayload;
+				public new function HRESULT(ITraceEvent *self, EVENT_DESCRIPTOR* EventDescriptor) SetEventDescriptor;
+				public new function HRESULT(ITraceEvent *self, uint32 ProcessId) SetProcessId;
+				public new function HRESULT(ITraceEvent *self, uint32 ProcessorIndex) SetProcessorIndex;
+				public new function HRESULT(ITraceEvent *self, uint32 ThreadId) SetThreadId;
+				public new function HRESULT(ITraceEvent *self, uint32 KernelTime, uint32 UserTime) SetThreadTimes;
+				public new function HRESULT(ITraceEvent *self, Guid* ActivityId) SetActivityId;
+				public new function HRESULT(ITraceEvent *self, LARGE_INTEGER* TimeStamp) SetTimeStamp;
+				public new function HRESULT(ITraceEvent *self, Guid* ProviderId) SetProviderId;
 			}
 		}
 		[CRepr]
@@ -2000,13 +2049,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x3ed25501, 0x593f, 0x43e9, 0x8f, 0x38, 0x3a, 0xb4, 0x6f, 0x5a, 0x4a, 0x52);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnBeginProcessTrace(ITraceEvent* HeaderEvent, ITraceRelogger* Relogger) mut
+			{
+				return VT.OnBeginProcessTrace(&this, HeaderEvent, Relogger);
+			}
+			public HRESULT OnFinalizeProcessTrace(ITraceRelogger* Relogger) mut
+			{
+				return VT.OnFinalizeProcessTrace(&this, Relogger);
+			}
+			public HRESULT OnEvent(ITraceEvent* Event, ITraceRelogger* Relogger) mut
+			{
+				return VT.OnEvent(&this, Event, Relogger);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ITraceEventCallback *self, ITraceEvent* HeaderEvent, ITraceRelogger* Relogger) OnBeginProcessTrace;
-				public function HRESULT(ITraceEventCallback *self, ITraceRelogger* Relogger) OnFinalizeProcessTrace;
-				public function HRESULT(ITraceEventCallback *self, ITraceEvent* Event, ITraceRelogger* Relogger) OnEvent;
+				public new function HRESULT(ITraceEventCallback *self, ITraceEvent* HeaderEvent, ITraceRelogger* Relogger) OnBeginProcessTrace;
+				public new function HRESULT(ITraceEventCallback *self, ITraceRelogger* Relogger) OnFinalizeProcessTrace;
+				public new function HRESULT(ITraceEventCallback *self, ITraceEvent* Event, ITraceRelogger* Relogger) OnEvent;
 			}
 		}
 		[CRepr]
@@ -2014,19 +2076,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xf754ad43, 0x3bcc, 0x4286, 0x80, 0x09, 0x9c, 0x5d, 0xa2, 0x14, 0xe8, 0x4e);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT AddLogfileTraceStream(BSTR LogfileName, void* UserContext, uint64* TraceHandle) mut
+			{
+				return VT.AddLogfileTraceStream(&this, LogfileName, UserContext, TraceHandle);
+			}
+			public HRESULT AddRealtimeTraceStream(BSTR LoggerName, void* UserContext, uint64* TraceHandle) mut
+			{
+				return VT.AddRealtimeTraceStream(&this, LoggerName, UserContext, TraceHandle);
+			}
+			public HRESULT RegisterCallback(ITraceEventCallback* Callback) mut
+			{
+				return VT.RegisterCallback(&this, Callback);
+			}
+			public HRESULT Inject(ITraceEvent* Event) mut
+			{
+				return VT.Inject(&this, Event);
+			}
+			public HRESULT CreateEventInstance(uint64 TraceHandle, uint32 Flags, ITraceEvent** Event) mut
+			{
+				return VT.CreateEventInstance(&this, TraceHandle, Flags, Event);
+			}
+			public HRESULT ProcessTrace() mut
+			{
+				return VT.ProcessTrace(&this);
+			}
+			public HRESULT SetOutputFilename(BSTR LogfileName) mut
+			{
+				return VT.SetOutputFilename(&this, LogfileName);
+			}
+			public HRESULT SetCompressionMode(BOOLEAN CompressionMode) mut
+			{
+				return VT.SetCompressionMode(&this, CompressionMode);
+			}
+			public HRESULT Cancel() mut
+			{
+				return VT.Cancel(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(ITraceRelogger *self, BSTR LogfileName, void* UserContext, uint64* TraceHandle) AddLogfileTraceStream;
-				public function HRESULT(ITraceRelogger *self, BSTR LoggerName, void* UserContext, uint64* TraceHandle) AddRealtimeTraceStream;
-				public function HRESULT(ITraceRelogger *self, ITraceEventCallback* Callback) RegisterCallback;
-				public function HRESULT(ITraceRelogger *self, ITraceEvent* Event) Inject;
-				public function HRESULT(ITraceRelogger *self, uint64 TraceHandle, uint32 Flags, ITraceEvent** Event) CreateEventInstance;
-				public function HRESULT(ITraceRelogger *self) ProcessTrace;
-				public function HRESULT(ITraceRelogger *self, BSTR LogfileName) SetOutputFilename;
-				public function HRESULT(ITraceRelogger *self, BOOLEAN CompressionMode) SetCompressionMode;
-				public function HRESULT(ITraceRelogger *self) Cancel;
+				public new function HRESULT(ITraceRelogger *self, BSTR LogfileName, void* UserContext, uint64* TraceHandle) AddLogfileTraceStream;
+				public new function HRESULT(ITraceRelogger *self, BSTR LoggerName, void* UserContext, uint64* TraceHandle) AddRealtimeTraceStream;
+				public new function HRESULT(ITraceRelogger *self, ITraceEventCallback* Callback) RegisterCallback;
+				public new function HRESULT(ITraceRelogger *self, ITraceEvent* Event) Inject;
+				public new function HRESULT(ITraceRelogger *self, uint64 TraceHandle, uint32 Flags, ITraceEvent** Event) CreateEventInstance;
+				public new function HRESULT(ITraceRelogger *self) ProcessTrace;
+				public new function HRESULT(ITraceRelogger *self, BSTR LogfileName) SetOutputFilename;
+				public new function HRESULT(ITraceRelogger *self, BOOLEAN CompressionMode) SetCompressionMode;
+				public new function HRESULT(ITraceRelogger *self) Cancel;
 			}
 		}
 		

@@ -677,13 +677,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x5852a2c3, 0x6530, 0x11d1, 0xb6, 0xa3, 0x00, 0x00, 0xf8, 0x75, 0x7b, 0xf9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT InitDone() mut
+			{
+				return VT.InitDone(&this);
+			}
+			public HRESULT SelectionChange() mut
+			{
+				return VT.SelectionChange(&this);
+			}
+			public HRESULT HandleMessage(HWND hDlg, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* pResult) mut
+			{
+				return VT.HandleMessage(&this, hDlg, uMsg, wParam, lParam, pResult);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPrintDialogCallback *self) InitDone;
-				public function HRESULT(IPrintDialogCallback *self) SelectionChange;
-				public function HRESULT(IPrintDialogCallback *self, HWND hDlg, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* pResult) HandleMessage;
+				public new function HRESULT(IPrintDialogCallback *self) InitDone;
+				public new function HRESULT(IPrintDialogCallback *self) SelectionChange;
+				public new function HRESULT(IPrintDialogCallback *self, HWND hDlg, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* pResult) HandleMessage;
 			}
 		}
 		[CRepr]
@@ -691,13 +704,26 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x509aaeda, 0x5639, 0x11d1, 0xb6, 0xa1, 0x00, 0x00, 0xf8, 0x75, 0x7b, 0xf9);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCurrentDevMode(DEVMODEA* pDevMode, uint32* pcbSize) mut
+			{
+				return VT.GetCurrentDevMode(&this, pDevMode, pcbSize);
+			}
+			public HRESULT GetCurrentPrinterName(char16* pPrinterName, uint32* pcchSize) mut
+			{
+				return VT.GetCurrentPrinterName(&this, pPrinterName, pcchSize);
+			}
+			public HRESULT GetCurrentPortName(char16* pPortName, uint32* pcchSize) mut
+			{
+				return VT.GetCurrentPortName(&this, pPortName, pcchSize);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IPrintDialogServices *self, DEVMODEA* pDevMode, uint32* pcbSize) GetCurrentDevMode;
-				public function HRESULT(IPrintDialogServices *self, char16* pPrinterName, uint32* pcchSize) GetCurrentPrinterName;
-				public function HRESULT(IPrintDialogServices *self, char16* pPortName, uint32* pcchSize) GetCurrentPortName;
+				public new function HRESULT(IPrintDialogServices *self, DEVMODEA* pDevMode, uint32* pcbSize) GetCurrentDevMode;
+				public new function HRESULT(IPrintDialogServices *self, char16* pPrinterName, uint32* pcchSize) GetCurrentPrinterName;
+				public new function HRESULT(IPrintDialogServices *self, char16* pPortName, uint32* pcchSize) GetCurrentPortName;
 			}
 		}
 		

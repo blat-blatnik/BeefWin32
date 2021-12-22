@@ -1945,11 +1945,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x2d86f4ff, 0x6e2d, 0x4488, 0xb2, 0xe9, 0x69, 0x34, 0xaf, 0xd4, 0x1b, 0xea);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnEvent(uint32 dwEvent, uint32 dwStatus) mut
+			{
+				return VT.OnEvent(&this, dwEvent, dwStatus);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDialEventSink *self, uint32 dwEvent, uint32 dwStatus) OnEvent;
+				public new function HRESULT(IDialEventSink *self, uint32 dwEvent, uint32 dwStatus) OnEvent;
 			}
 		}
 		[CRepr]
@@ -1957,17 +1962,46 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x39fd782b, 0x7905, 0x40d5, 0x91, 0x48, 0x3c, 0x9b, 0x19, 0x04, 0x23, 0xd5);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(PWSTR pwzConnectoid, IDialEventSink* pIDES) mut
+			{
+				return VT.Initialize(&this, pwzConnectoid, pIDES);
+			}
+			public HRESULT GetProperty(PWSTR pwzProperty, PWSTR pwzValue, uint32 dwBufSize) mut
+			{
+				return VT.GetProperty(&this, pwzProperty, pwzValue, dwBufSize);
+			}
+			public HRESULT SetProperty(PWSTR pwzProperty, PWSTR pwzValue) mut
+			{
+				return VT.SetProperty(&this, pwzProperty, pwzValue);
+			}
+			public HRESULT Dial() mut
+			{
+				return VT.Dial(&this);
+			}
+			public HRESULT HangUp() mut
+			{
+				return VT.HangUp(&this);
+			}
+			public HRESULT GetConnectedState(uint32* pdwState) mut
+			{
+				return VT.GetConnectedState(&this, pdwState);
+			}
+			public HRESULT GetConnectHandle(uint* pdwHandle) mut
+			{
+				return VT.GetConnectHandle(&this, pdwHandle);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDialEngine *self, PWSTR pwzConnectoid, IDialEventSink* pIDES) Initialize;
-				public function HRESULT(IDialEngine *self, PWSTR pwzProperty, PWSTR pwzValue, uint32 dwBufSize) GetProperty;
-				public function HRESULT(IDialEngine *self, PWSTR pwzProperty, PWSTR pwzValue) SetProperty;
-				public function HRESULT(IDialEngine *self) Dial;
-				public function HRESULT(IDialEngine *self) HangUp;
-				public function HRESULT(IDialEngine *self, uint32* pdwState) GetConnectedState;
-				public function HRESULT(IDialEngine *self, uint* pdwHandle) GetConnectHandle;
+				public new function HRESULT(IDialEngine *self, PWSTR pwzConnectoid, IDialEventSink* pIDES) Initialize;
+				public new function HRESULT(IDialEngine *self, PWSTR pwzProperty, PWSTR pwzValue, uint32 dwBufSize) GetProperty;
+				public new function HRESULT(IDialEngine *self, PWSTR pwzProperty, PWSTR pwzValue) SetProperty;
+				public new function HRESULT(IDialEngine *self) Dial;
+				public new function HRESULT(IDialEngine *self) HangUp;
+				public new function HRESULT(IDialEngine *self, uint32* pdwState) GetConnectedState;
+				public new function HRESULT(IDialEngine *self, uint* pdwHandle) GetConnectHandle;
 			}
 		}
 		[CRepr]
@@ -1975,12 +2009,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8aecafa9, 0x4306, 0x43cc, 0x8c, 0x5a, 0x76, 0x5f, 0x29, 0x79, 0xcc, 0x16);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Initialize(PWSTR pwzConnectoid) mut
+			{
+				return VT.Initialize(&this, pwzConnectoid);
+			}
+			public HRESULT GetBitmap(uint32 dwIndex, HBITMAP* phBitmap) mut
+			{
+				return VT.GetBitmap(&this, dwIndex, phBitmap);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDialBranding *self, PWSTR pwzConnectoid) Initialize;
-				public function HRESULT(IDialBranding *self, uint32 dwIndex, HBITMAP* phBitmap) GetBitmap;
+				public new function HRESULT(IDialBranding *self, PWSTR pwzConnectoid) Initialize;
+				public new function HRESULT(IDialBranding *self, uint32 dwIndex, HBITMAP* phBitmap) GetBitmap;
 			}
 		}
 		[CRepr]
@@ -1988,11 +2031,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xcdaece56, 0x4edf, 0x43df, 0xb1, 0x13, 0x88, 0xe4, 0x55, 0x6f, 0xa1, 0xbb);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCookieInfoForUri(PWSTR uri, uint32* cookieInfoCount, ProofOfPossessionCookieInfo** cookieInfo) mut
+			{
+				return VT.GetCookieInfoForUri(&this, uri, cookieInfoCount, cookieInfo);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IProofOfPossessionCookieInfoManager *self, PWSTR uri, uint32* cookieInfoCount, ProofOfPossessionCookieInfo** cookieInfo) GetCookieInfoForUri;
+				public new function HRESULT(IProofOfPossessionCookieInfoManager *self, PWSTR uri, uint32* cookieInfoCount, ProofOfPossessionCookieInfo** cookieInfo) GetCookieInfoForUri;
 			}
 		}
 		[CRepr]
@@ -2000,11 +2048,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x15e41407, 0xb42f, 0x4ae7, 0x99, 0x66, 0x34, 0xa0, 0x87, 0xb2, 0xd7, 0x13);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetCookieInfoWithUriForAccount(IInspectable* webAccount, PWSTR uri, uint32* cookieInfoCount, ProofOfPossessionCookieInfo** cookieInfo) mut
+			{
+				return VT.GetCookieInfoWithUriForAccount(&this, webAccount, uri, cookieInfoCount, cookieInfo);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IProofOfPossessionCookieInfoManager2 *self, IInspectable* webAccount, PWSTR uri, uint32* cookieInfoCount, ProofOfPossessionCookieInfo** cookieInfo) GetCookieInfoWithUriForAccount;
+				public new function HRESULT(IProofOfPossessionCookieInfoManager2 *self, IInspectable* webAccount, PWSTR uri, uint32* cookieInfoCount, ProofOfPossessionCookieInfo** cookieInfo) GetCookieInfoWithUriForAccount;
 			}
 		}
 		

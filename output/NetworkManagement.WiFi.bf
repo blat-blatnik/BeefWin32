@@ -3912,15 +3912,36 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8f10cc26, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT CreateNetwork(PWSTR Name, PWSTR Password, int32 GeographicalId, IDot11AdHocInterface* pInterface, IDot11AdHocSecuritySettings* pSecurity, Guid* pContextGuid, IDot11AdHocNetwork** pIAdHoc) mut
+			{
+				return VT.CreateNetwork(&this, Name, Password, GeographicalId, pInterface, pSecurity, pContextGuid, pIAdHoc);
+			}
+			public HRESULT CommitCreatedNetwork(IDot11AdHocNetwork* pIAdHoc, BOOLEAN fSaveProfile, BOOLEAN fMakeSavedProfileUserSpecific) mut
+			{
+				return VT.CommitCreatedNetwork(&this, pIAdHoc, fSaveProfile, fMakeSavedProfileUserSpecific);
+			}
+			public HRESULT GetIEnumDot11AdHocNetworks(Guid* pContextGuid, IEnumDot11AdHocNetworks** ppEnum) mut
+			{
+				return VT.GetIEnumDot11AdHocNetworks(&this, pContextGuid, ppEnum);
+			}
+			public HRESULT GetIEnumDot11AdHocInterfaces(IEnumDot11AdHocInterfaces** ppEnum) mut
+			{
+				return VT.GetIEnumDot11AdHocInterfaces(&this, ppEnum);
+			}
+			public HRESULT GetNetwork(Guid* NetworkSignature, IDot11AdHocNetwork** pNetwork) mut
+			{
+				return VT.GetNetwork(&this, NetworkSignature, pNetwork);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDot11AdHocManager *self, PWSTR Name, PWSTR Password, int32 GeographicalId, IDot11AdHocInterface* pInterface, IDot11AdHocSecuritySettings* pSecurity, Guid* pContextGuid, IDot11AdHocNetwork** pIAdHoc) CreateNetwork;
-				public function HRESULT(IDot11AdHocManager *self, IDot11AdHocNetwork* pIAdHoc, BOOLEAN fSaveProfile, BOOLEAN fMakeSavedProfileUserSpecific) CommitCreatedNetwork;
-				public function HRESULT(IDot11AdHocManager *self, Guid* pContextGuid, IEnumDot11AdHocNetworks** ppEnum) GetIEnumDot11AdHocNetworks;
-				public function HRESULT(IDot11AdHocManager *self, IEnumDot11AdHocInterfaces** ppEnum) GetIEnumDot11AdHocInterfaces;
-				public function HRESULT(IDot11AdHocManager *self, Guid* NetworkSignature, IDot11AdHocNetwork** pNetwork) GetNetwork;
+				public new function HRESULT(IDot11AdHocManager *self, PWSTR Name, PWSTR Password, int32 GeographicalId, IDot11AdHocInterface* pInterface, IDot11AdHocSecuritySettings* pSecurity, Guid* pContextGuid, IDot11AdHocNetwork** pIAdHoc) CreateNetwork;
+				public new function HRESULT(IDot11AdHocManager *self, IDot11AdHocNetwork* pIAdHoc, BOOLEAN fSaveProfile, BOOLEAN fMakeSavedProfileUserSpecific) CommitCreatedNetwork;
+				public new function HRESULT(IDot11AdHocManager *self, Guid* pContextGuid, IEnumDot11AdHocNetworks** ppEnum) GetIEnumDot11AdHocNetworks;
+				public new function HRESULT(IDot11AdHocManager *self, IEnumDot11AdHocInterfaces** ppEnum) GetIEnumDot11AdHocInterfaces;
+				public new function HRESULT(IDot11AdHocManager *self, Guid* NetworkSignature, IDot11AdHocNetwork** pNetwork) GetNetwork;
 			}
 		}
 		[CRepr]
@@ -3928,14 +3949,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8f10cc27, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnNetworkAdd(IDot11AdHocNetwork* pIAdHocNetwork) mut
+			{
+				return VT.OnNetworkAdd(&this, pIAdHocNetwork);
+			}
+			public HRESULT OnNetworkRemove(Guid* Signature) mut
+			{
+				return VT.OnNetworkRemove(&this, Signature);
+			}
+			public HRESULT OnInterfaceAdd(IDot11AdHocInterface* pIAdHocInterface) mut
+			{
+				return VT.OnInterfaceAdd(&this, pIAdHocInterface);
+			}
+			public HRESULT OnInterfaceRemove(Guid* Signature) mut
+			{
+				return VT.OnInterfaceRemove(&this, Signature);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDot11AdHocManagerNotificationSink *self, IDot11AdHocNetwork* pIAdHocNetwork) OnNetworkAdd;
-				public function HRESULT(IDot11AdHocManagerNotificationSink *self, Guid* Signature) OnNetworkRemove;
-				public function HRESULT(IDot11AdHocManagerNotificationSink *self, IDot11AdHocInterface* pIAdHocInterface) OnInterfaceAdd;
-				public function HRESULT(IDot11AdHocManagerNotificationSink *self, Guid* Signature) OnInterfaceRemove;
+				public new function HRESULT(IDot11AdHocManagerNotificationSink *self, IDot11AdHocNetwork* pIAdHocNetwork) OnNetworkAdd;
+				public new function HRESULT(IDot11AdHocManagerNotificationSink *self, Guid* Signature) OnNetworkRemove;
+				public new function HRESULT(IDot11AdHocManagerNotificationSink *self, IDot11AdHocInterface* pIAdHocInterface) OnInterfaceAdd;
+				public new function HRESULT(IDot11AdHocManagerNotificationSink *self, Guid* Signature) OnInterfaceRemove;
 			}
 		}
 		[CRepr]
@@ -3943,14 +3981,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8f10cc28, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 cElt, IDot11AdHocNetwork** rgElt, uint32* pcEltFetched) mut
+			{
+				return VT.Next(&this, cElt, rgElt, pcEltFetched);
+			}
+			public HRESULT Skip(uint32 cElt) mut
+			{
+				return VT.Skip(&this, cElt);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumDot11AdHocNetworks** ppEnum) mut
+			{
+				return VT.Clone(&this, ppEnum);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumDot11AdHocNetworks *self, uint32 cElt, IDot11AdHocNetwork** rgElt, uint32* pcEltFetched) Next;
-				public function HRESULT(IEnumDot11AdHocNetworks *self, uint32 cElt) Skip;
-				public function HRESULT(IEnumDot11AdHocNetworks *self) Reset;
-				public function HRESULT(IEnumDot11AdHocNetworks *self, IEnumDot11AdHocNetworks** ppEnum) Clone;
+				public new function HRESULT(IEnumDot11AdHocNetworks *self, uint32 cElt, IDot11AdHocNetwork** rgElt, uint32* pcEltFetched) Next;
+				public new function HRESULT(IEnumDot11AdHocNetworks *self, uint32 cElt) Skip;
+				public new function HRESULT(IEnumDot11AdHocNetworks *self) Reset;
+				public new function HRESULT(IEnumDot11AdHocNetworks *self, IEnumDot11AdHocNetworks** ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -3958,22 +4013,71 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8f10cc29, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetStatus(DOT11_ADHOC_NETWORK_CONNECTION_STATUS* eStatus) mut
+			{
+				return VT.GetStatus(&this, eStatus);
+			}
+			public HRESULT GetSSID(PWSTR* ppszwSSID) mut
+			{
+				return VT.GetSSID(&this, ppszwSSID);
+			}
+			public HRESULT HasProfile(uint8* pf11d) mut
+			{
+				return VT.HasProfile(&this, pf11d);
+			}
+			public HRESULT GetProfileName(PWSTR* ppszwProfileName) mut
+			{
+				return VT.GetProfileName(&this, ppszwProfileName);
+			}
+			public HRESULT DeleteProfile() mut
+			{
+				return VT.DeleteProfile(&this);
+			}
+			public HRESULT GetSignalQuality(uint32* puStrengthValue, uint32* puStrengthMax) mut
+			{
+				return VT.GetSignalQuality(&this, puStrengthValue, puStrengthMax);
+			}
+			public HRESULT GetSecuritySetting(IDot11AdHocSecuritySettings** pAdHocSecuritySetting) mut
+			{
+				return VT.GetSecuritySetting(&this, pAdHocSecuritySetting);
+			}
+			public HRESULT GetContextGuid(Guid* pContextGuid) mut
+			{
+				return VT.GetContextGuid(&this, pContextGuid);
+			}
+			public HRESULT GetSignature(Guid* pSignature) mut
+			{
+				return VT.GetSignature(&this, pSignature);
+			}
+			public HRESULT GetInterface(IDot11AdHocInterface** pAdHocInterface) mut
+			{
+				return VT.GetInterface(&this, pAdHocInterface);
+			}
+			public HRESULT Connect(PWSTR Passphrase, int32 GeographicalId, BOOLEAN fSaveProfile, BOOLEAN fMakeSavedProfileUserSpecific) mut
+			{
+				return VT.Connect(&this, Passphrase, GeographicalId, fSaveProfile, fMakeSavedProfileUserSpecific);
+			}
+			public HRESULT Disconnect() mut
+			{
+				return VT.Disconnect(&this);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDot11AdHocNetwork *self, DOT11_ADHOC_NETWORK_CONNECTION_STATUS* eStatus) GetStatus;
-				public function HRESULT(IDot11AdHocNetwork *self, PWSTR* ppszwSSID) GetSSID;
-				public function HRESULT(IDot11AdHocNetwork *self, uint8* pf11d) HasProfile;
-				public function HRESULT(IDot11AdHocNetwork *self, PWSTR* ppszwProfileName) GetProfileName;
-				public function HRESULT(IDot11AdHocNetwork *self) DeleteProfile;
-				public function HRESULT(IDot11AdHocNetwork *self, uint32* puStrengthValue, uint32* puStrengthMax) GetSignalQuality;
-				public function HRESULT(IDot11AdHocNetwork *self, IDot11AdHocSecuritySettings** pAdHocSecuritySetting) GetSecuritySetting;
-				public function HRESULT(IDot11AdHocNetwork *self, Guid* pContextGuid) GetContextGuid;
-				public function HRESULT(IDot11AdHocNetwork *self, Guid* pSignature) GetSignature;
-				public function HRESULT(IDot11AdHocNetwork *self, IDot11AdHocInterface** pAdHocInterface) GetInterface;
-				public function HRESULT(IDot11AdHocNetwork *self, PWSTR Passphrase, int32 GeographicalId, BOOLEAN fSaveProfile, BOOLEAN fMakeSavedProfileUserSpecific) Connect;
-				public function HRESULT(IDot11AdHocNetwork *self) Disconnect;
+				public new function HRESULT(IDot11AdHocNetwork *self, DOT11_ADHOC_NETWORK_CONNECTION_STATUS* eStatus) GetStatus;
+				public new function HRESULT(IDot11AdHocNetwork *self, PWSTR* ppszwSSID) GetSSID;
+				public new function HRESULT(IDot11AdHocNetwork *self, uint8* pf11d) HasProfile;
+				public new function HRESULT(IDot11AdHocNetwork *self, PWSTR* ppszwProfileName) GetProfileName;
+				public new function HRESULT(IDot11AdHocNetwork *self) DeleteProfile;
+				public new function HRESULT(IDot11AdHocNetwork *self, uint32* puStrengthValue, uint32* puStrengthMax) GetSignalQuality;
+				public new function HRESULT(IDot11AdHocNetwork *self, IDot11AdHocSecuritySettings** pAdHocSecuritySetting) GetSecuritySetting;
+				public new function HRESULT(IDot11AdHocNetwork *self, Guid* pContextGuid) GetContextGuid;
+				public new function HRESULT(IDot11AdHocNetwork *self, Guid* pSignature) GetSignature;
+				public new function HRESULT(IDot11AdHocNetwork *self, IDot11AdHocInterface** pAdHocInterface) GetInterface;
+				public new function HRESULT(IDot11AdHocNetwork *self, PWSTR Passphrase, int32 GeographicalId, BOOLEAN fSaveProfile, BOOLEAN fMakeSavedProfileUserSpecific) Connect;
+				public new function HRESULT(IDot11AdHocNetwork *self) Disconnect;
 			}
 		}
 		[CRepr]
@@ -3981,12 +4085,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8f10cc2a, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnStatusChange(DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) mut
+			{
+				return VT.OnStatusChange(&this, eStatus);
+			}
+			public HRESULT OnConnectFail(DOT11_ADHOC_CONNECT_FAIL_REASON eFailReason) mut
+			{
+				return VT.OnConnectFail(&this, eFailReason);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDot11AdHocNetworkNotificationSink *self, DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) OnStatusChange;
-				public function HRESULT(IDot11AdHocNetworkNotificationSink *self, DOT11_ADHOC_CONNECT_FAIL_REASON eFailReason) OnConnectFail;
+				public new function HRESULT(IDot11AdHocNetworkNotificationSink *self, DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) OnStatusChange;
+				public new function HRESULT(IDot11AdHocNetworkNotificationSink *self, DOT11_ADHOC_CONNECT_FAIL_REASON eFailReason) OnConnectFail;
 			}
 		}
 		[CRepr]
@@ -3994,19 +4107,56 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8f10cc2b, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDeviceSignature(Guid* pSignature) mut
+			{
+				return VT.GetDeviceSignature(&this, pSignature);
+			}
+			public HRESULT GetFriendlyName(PWSTR* ppszName) mut
+			{
+				return VT.GetFriendlyName(&this, ppszName);
+			}
+			public HRESULT IsDot11d(uint8* pf11d) mut
+			{
+				return VT.IsDot11d(&this, pf11d);
+			}
+			public HRESULT IsAdHocCapable(uint8* pfAdHocCapable) mut
+			{
+				return VT.IsAdHocCapable(&this, pfAdHocCapable);
+			}
+			public HRESULT IsRadioOn(uint8* pfIsRadioOn) mut
+			{
+				return VT.IsRadioOn(&this, pfIsRadioOn);
+			}
+			public HRESULT GetActiveNetwork(IDot11AdHocNetwork** ppNetwork) mut
+			{
+				return VT.GetActiveNetwork(&this, ppNetwork);
+			}
+			public HRESULT GetIEnumSecuritySettings(IEnumDot11AdHocSecuritySettings** ppEnum) mut
+			{
+				return VT.GetIEnumSecuritySettings(&this, ppEnum);
+			}
+			public HRESULT GetIEnumDot11AdHocNetworks(Guid* pFilterGuid, IEnumDot11AdHocNetworks** ppEnum) mut
+			{
+				return VT.GetIEnumDot11AdHocNetworks(&this, pFilterGuid, ppEnum);
+			}
+			public HRESULT GetStatus(DOT11_ADHOC_NETWORK_CONNECTION_STATUS* pState) mut
+			{
+				return VT.GetStatus(&this, pState);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDot11AdHocInterface *self, Guid* pSignature) GetDeviceSignature;
-				public function HRESULT(IDot11AdHocInterface *self, PWSTR* ppszName) GetFriendlyName;
-				public function HRESULT(IDot11AdHocInterface *self, uint8* pf11d) IsDot11d;
-				public function HRESULT(IDot11AdHocInterface *self, uint8* pfAdHocCapable) IsAdHocCapable;
-				public function HRESULT(IDot11AdHocInterface *self, uint8* pfIsRadioOn) IsRadioOn;
-				public function HRESULT(IDot11AdHocInterface *self, IDot11AdHocNetwork** ppNetwork) GetActiveNetwork;
-				public function HRESULT(IDot11AdHocInterface *self, IEnumDot11AdHocSecuritySettings** ppEnum) GetIEnumSecuritySettings;
-				public function HRESULT(IDot11AdHocInterface *self, Guid* pFilterGuid, IEnumDot11AdHocNetworks** ppEnum) GetIEnumDot11AdHocNetworks;
-				public function HRESULT(IDot11AdHocInterface *self, DOT11_ADHOC_NETWORK_CONNECTION_STATUS* pState) GetStatus;
+				public new function HRESULT(IDot11AdHocInterface *self, Guid* pSignature) GetDeviceSignature;
+				public new function HRESULT(IDot11AdHocInterface *self, PWSTR* ppszName) GetFriendlyName;
+				public new function HRESULT(IDot11AdHocInterface *self, uint8* pf11d) IsDot11d;
+				public new function HRESULT(IDot11AdHocInterface *self, uint8* pfAdHocCapable) IsAdHocCapable;
+				public new function HRESULT(IDot11AdHocInterface *self, uint8* pfIsRadioOn) IsRadioOn;
+				public new function HRESULT(IDot11AdHocInterface *self, IDot11AdHocNetwork** ppNetwork) GetActiveNetwork;
+				public new function HRESULT(IDot11AdHocInterface *self, IEnumDot11AdHocSecuritySettings** ppEnum) GetIEnumSecuritySettings;
+				public new function HRESULT(IDot11AdHocInterface *self, Guid* pFilterGuid, IEnumDot11AdHocNetworks** ppEnum) GetIEnumDot11AdHocNetworks;
+				public new function HRESULT(IDot11AdHocInterface *self, DOT11_ADHOC_NETWORK_CONNECTION_STATUS* pState) GetStatus;
 			}
 		}
 		[CRepr]
@@ -4014,14 +4164,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8f10cc2c, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 cElt, IDot11AdHocInterface** rgElt, uint32* pcEltFetched) mut
+			{
+				return VT.Next(&this, cElt, rgElt, pcEltFetched);
+			}
+			public HRESULT Skip(uint32 cElt) mut
+			{
+				return VT.Skip(&this, cElt);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumDot11AdHocInterfaces** ppEnum) mut
+			{
+				return VT.Clone(&this, ppEnum);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumDot11AdHocInterfaces *self, uint32 cElt, IDot11AdHocInterface** rgElt, uint32* pcEltFetched) Next;
-				public function HRESULT(IEnumDot11AdHocInterfaces *self, uint32 cElt) Skip;
-				public function HRESULT(IEnumDot11AdHocInterfaces *self) Reset;
-				public function HRESULT(IEnumDot11AdHocInterfaces *self, IEnumDot11AdHocInterfaces** ppEnum) Clone;
+				public new function HRESULT(IEnumDot11AdHocInterfaces *self, uint32 cElt, IDot11AdHocInterface** rgElt, uint32* pcEltFetched) Next;
+				public new function HRESULT(IEnumDot11AdHocInterfaces *self, uint32 cElt) Skip;
+				public new function HRESULT(IEnumDot11AdHocInterfaces *self) Reset;
+				public new function HRESULT(IEnumDot11AdHocInterfaces *self, IEnumDot11AdHocInterfaces** ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -4029,14 +4196,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8f10cc2d, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT Next(uint32 cElt, IDot11AdHocSecuritySettings** rgElt, uint32* pcEltFetched) mut
+			{
+				return VT.Next(&this, cElt, rgElt, pcEltFetched);
+			}
+			public HRESULT Skip(uint32 cElt) mut
+			{
+				return VT.Skip(&this, cElt);
+			}
+			public HRESULT Reset() mut
+			{
+				return VT.Reset(&this);
+			}
+			public HRESULT Clone(IEnumDot11AdHocSecuritySettings** ppEnum) mut
+			{
+				return VT.Clone(&this, ppEnum);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IEnumDot11AdHocSecuritySettings *self, uint32 cElt, IDot11AdHocSecuritySettings** rgElt, uint32* pcEltFetched) Next;
-				public function HRESULT(IEnumDot11AdHocSecuritySettings *self, uint32 cElt) Skip;
-				public function HRESULT(IEnumDot11AdHocSecuritySettings *self) Reset;
-				public function HRESULT(IEnumDot11AdHocSecuritySettings *self, IEnumDot11AdHocSecuritySettings** ppEnum) Clone;
+				public new function HRESULT(IEnumDot11AdHocSecuritySettings *self, uint32 cElt, IDot11AdHocSecuritySettings** rgElt, uint32* pcEltFetched) Next;
+				public new function HRESULT(IEnumDot11AdHocSecuritySettings *self, uint32 cElt) Skip;
+				public new function HRESULT(IEnumDot11AdHocSecuritySettings *self) Reset;
+				public new function HRESULT(IEnumDot11AdHocSecuritySettings *self, IEnumDot11AdHocSecuritySettings** ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -4044,12 +4228,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8f10cc2e, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetDot11AuthAlgorithm(DOT11_ADHOC_AUTH_ALGORITHM* pAuth) mut
+			{
+				return VT.GetDot11AuthAlgorithm(&this, pAuth);
+			}
+			public HRESULT GetDot11CipherAlgorithm(DOT11_ADHOC_CIPHER_ALGORITHM* pCipher) mut
+			{
+				return VT.GetDot11CipherAlgorithm(&this, pCipher);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDot11AdHocSecuritySettings *self, DOT11_ADHOC_AUTH_ALGORITHM* pAuth) GetDot11AuthAlgorithm;
-				public function HRESULT(IDot11AdHocSecuritySettings *self, DOT11_ADHOC_CIPHER_ALGORITHM* pCipher) GetDot11CipherAlgorithm;
+				public new function HRESULT(IDot11AdHocSecuritySettings *self, DOT11_ADHOC_AUTH_ALGORITHM* pAuth) GetDot11AuthAlgorithm;
+				public new function HRESULT(IDot11AdHocSecuritySettings *self, DOT11_ADHOC_CIPHER_ALGORITHM* pCipher) GetDot11CipherAlgorithm;
 			}
 		}
 		[CRepr]
@@ -4057,11 +4250,16 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x8f10cc2f, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT OnConnectionStatusChange(DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) mut
+			{
+				return VT.OnConnectionStatusChange(&this, eStatus);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IDot11AdHocInterfaceNotificationSink *self, DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) OnConnectionStatusChange;
+				public new function HRESULT(IDot11AdHocInterfaceNotificationSink *self, DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) OnConnectionStatusChange;
 			}
 		}
 		

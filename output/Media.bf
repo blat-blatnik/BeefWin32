@@ -200,14 +200,31 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x56a86897, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT GetTime(int64* pTime) mut
+			{
+				return VT.GetTime(&this, pTime);
+			}
+			public HRESULT AdviseTime(int64 baseTime, int64 streamTime, HANDLE hEvent, uint* pdwAdviseCookie) mut
+			{
+				return VT.AdviseTime(&this, baseTime, streamTime, hEvent, pdwAdviseCookie);
+			}
+			public HRESULT AdvisePeriodic(int64 startTime, int64 periodTime, HANDLE hSemaphore, uint* pdwAdviseCookie) mut
+			{
+				return VT.AdvisePeriodic(&this, startTime, periodTime, hSemaphore, pdwAdviseCookie);
+			}
+			public HRESULT Unadvise(uint dwAdviseCookie) mut
+			{
+				return VT.Unadvise(&this, dwAdviseCookie);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IReferenceClock *self, int64* pTime) GetTime;
-				public function HRESULT(IReferenceClock *self, int64 baseTime, int64 streamTime, HANDLE hEvent, uint* pdwAdviseCookie) AdviseTime;
-				public function HRESULT(IReferenceClock *self, int64 startTime, int64 periodTime, HANDLE hSemaphore, uint* pdwAdviseCookie) AdvisePeriodic;
-				public function HRESULT(IReferenceClock *self, uint dwAdviseCookie) Unadvise;
+				public new function HRESULT(IReferenceClock *self, int64* pTime) GetTime;
+				public new function HRESULT(IReferenceClock *self, int64 baseTime, int64 streamTime, HANDLE hEvent, uint* pdwAdviseCookie) AdviseTime;
+				public new function HRESULT(IReferenceClock *self, int64 startTime, int64 periodTime, HANDLE hSemaphore, uint* pdwAdviseCookie) AdvisePeriodic;
+				public new function HRESULT(IReferenceClock *self, uint dwAdviseCookie) Unadvise;
 			}
 		}
 		[CRepr]
@@ -215,12 +232,21 @@ namespace Win32
 		{
 			public const new Guid IID = .(0xebec459c, 0x2eca, 0x4d42, 0xa8, 0xaf, 0x30, 0xdf, 0x55, 0x76, 0x14, 0xb8);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
+			public HRESULT SetDefaultTimerResolution(int64 timerResolution) mut
+			{
+				return VT.SetDefaultTimerResolution(&this, timerResolution);
+			}
+			public HRESULT GetDefaultTimerResolution(int64* pTimerResolution) mut
+			{
+				return VT.GetDefaultTimerResolution(&this, pTimerResolution);
+			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public function HRESULT(IReferenceClockTimerControl *self, int64 timerResolution) SetDefaultTimerResolution;
-				public function HRESULT(IReferenceClockTimerControl *self, int64* pTimerResolution) GetDefaultTimerResolution;
+				public new function HRESULT(IReferenceClockTimerControl *self, int64 timerResolution) SetDefaultTimerResolution;
+				public new function HRESULT(IReferenceClockTimerControl *self, int64* pTimerResolution) GetDefaultTimerResolution;
 			}
 		}
 		[CRepr]
@@ -228,7 +254,8 @@ namespace Win32
 		{
 			public const new Guid IID = .(0x36b73885, 0xc2c8, 0x11cf, 0x8b, 0x46, 0x00, 0x80, 0x5f, 0x6c, 0xef, 0x60);
 			
-			public VTable* VT { get => (.)vt; }			
+			public new VTable* VT { get => (.)vt; }
+			
 			[CRepr]
 			public struct VTable : IReferenceClock.VTable
 			{
