@@ -6,7 +6,7 @@ This is a **mostly untested work in progress**. Use at your own peril.
 
 ## Current state
 
-- All the types, constants, functions, and COM classes should be working at the moment (I've only tested some).
+- All the types, constants, functions, and COM classes should be working at the moment (I've only tested a few).
 - DirectInput API is not present in the win32 metadata at all - Microsoft is trying to kill DI. I still plan to add manual bindings to it.
 - All the generated code is placed into a single static class - `Win32`. I might decide to group them in some other way later.
 - Some types had name conflicts. When that happens, I rename one of them `XYZ -> XYZ_ALT` or `XyzAbc -> XyzAbcAlt`.
