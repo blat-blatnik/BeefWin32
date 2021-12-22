@@ -19,6 +19,8 @@ This is a **mostly untested work in progress**. Use at your own peril.
 
 Copy the `output` directory into your Beef project's `src` directory (You can also rename it to `Win32` instead of `output` if you want). You can then access all of the Win32 types, constants, and functions through the `Win32` class inside of the `Win32` namespace.
 
+## Examples
+
 Here's an example using QueryPerformanceCounter:
 
 ```c#
