@@ -17,7 +17,7 @@ This is a **mostly untested work in progress**. Use at your own peril.
 
 ## How to use
 
-Copy the `output` directory into your Beef project's `src` directory (You can also rename it to `Win32` instead of `output` if you want). You can then access all of the Win32 types, constants, and functions through the `Win32` class inside of the `Win32` namespace.
+Copy the `output/` directory into your Beef project's `src/` directory (You can also rename it to `Win32` instead of `output` if you want). You can then access all of the Win32 types, constants, and functions through the `Win32` class inside of the `Win32` namespace.
 
 ## Examples
 
@@ -26,7 +26,7 @@ Here's an example using QueryPerformanceCounter:
 ```c#
 using System;
 using Win32;
-namespace Test {
+namespace Example {
     class Program {
         public static void Main() {
             Win32.LARGE_INTEGER qpc = ?, first = ?;
@@ -55,11 +55,11 @@ namespace Example {
             Win32.IFileOpenDialog* dialog = null;
             var iid = Win32.IFileOpenDialog.IID;
             var cid = Win32.CLSID_FileOpenDialog;
-            Win32.CoCreateInstance(&cid, null, .CLSCTX_ALL, &iid, (void**)&dialog);
+            Win32.CoCreateInstance(&cid, null, .ALL, &iid, (void**)&dialog);
 
             Win32._FILEOPENDIALOGOPTIONS options = ?;
             dialog.GetOptions((uint32*)&options);
-            options |= .FOS_PICKFOLDERS | .FOS_PATHMUSTEXIST;
+            options |= .PICKFOLDERS | .PATHMUSTEXIST;
             dialog.SetOptions((uint32)options);
             dialog.SetTitle("Hello Win32".ToScopedNativeWChar!());
             dialog.Show(0);
@@ -67,7 +67,7 @@ namespace Example {
             Win32.IShellItem* resultFolder = null;
             if (0 < dialog.GetResult(&resultFolder)) {
                 char16* result16 = null;
-                resultFolder.GetDisplayName(.SIGDN_FILESYSPATH, &result16);
+                resultFolder.GetDisplayName(.FILESYSPATH, &result16);
 
                 String result = scope .(result16);
                 Console.WriteLine($"You chose '{result}'");
@@ -87,7 +87,7 @@ namespace Example {
 $ python3 generator.py
 ```
 
-This will parse JSON files from `./json/`, and the output Beef files will be placed at `./output/`. You need Python 3.9+ to run this.
+This will parse JSON files from `json/`, and the output Beef files will be placed at `output/`. You need Python 3.9+ to run this.
 
 ## How it works
 
